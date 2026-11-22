@@ -77,8 +77,9 @@ def bankcounter(view, cells, masked):
     return c
 
 
-@tex("Things/HH/Bank/NightSafe", "multi", (1, 1), doc="Night safe: steel safe with dial and deposit chute, 1x1")
+@tex("Things/HH/Bank/NightSafe", "single", (1, 1), doc="Night safe: steel safe with dial and deposit chute, 1x1 (def uses a single texture)")
 def nightsafe(view, cells, masked):
+    view = "south"
     c = canvas_for_(cells, view, masked)
     body = P["dsteel"]
     face = cabinet(c, view, body, cap=24, margin=8, side_accent=dark(body, .15))
@@ -105,7 +106,7 @@ def nightsafe(view, cells, masked):
 
 
 # ---------------------------------------------------------------- brand logos (128 px, flat)
-@tex("UI/HH/Bank/Logo_SL_SilverlineMutual", "single", (1, 1), ppc=128, grain=0, doc="Logo: Silverline Mutual (emerald shield, silver sweep)")
+@tex("UI/HH/Bank/Logo_SL_Mutual", "single", (1, 1), ppc=128, grain=0, doc="Logo: Silverline Mutual (emerald shield, silver sweep)")
 def logo_mutual(view, cells, masked):
     c = _icon(cells, masked)
     c.poly(shield_pts(16, 10, 96, 108), EM, sw=4)

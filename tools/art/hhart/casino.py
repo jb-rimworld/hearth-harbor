@@ -102,7 +102,7 @@ def roulette(view, cells, masked):
     return c
 
 
-@tex("Things/HH/Casino/BlackjackTable", "multi", (2, 2), doc="Semicircle blackjack table with card spots, 2x2")
+@tex("Things/HH/Casino/BlackjackTable", "multi", (3, 2), doc="Half-oval blackjack table with card spots, 3x2")
 def blackjack(view, cells, masked):
     c = canvas_for_(cells, view)
     ap = 16
