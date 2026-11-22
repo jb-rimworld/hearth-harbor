@@ -1,0 +1,64 @@
+{
+ "summary": "Clawback Mutual is playable in the insurance worktree. You can sign twelve policies (eleven plus the Anomaly one) in three tiers, and premiums are debited every 5 days from the bank account, otherwise the till or silver in storage. Claims run end to end: a destroyed building, a lost limb, a death or a caravan injury opens a claim, which gets a review, a decision letter with a clause, optional negotiation and a payout into the bank or a silver capsule. Cancelling works through the retention dialog, notice period, form error and special cancellation. The UI is a stand-alone window (\"Call Clawback Mutual\" on the comms console) and a bank tab via BankTabs.Register, with the satire elements from the brief. All 13 in-game suites pass (390 checks, run 14), as do 149 unit tests. I never saw the UI on screen because screenshot access was denied; it is only verified to draw without errors in the test game. Not built: insurance desk building, Panic button, accident pension rider and hospital daily rider, in-kind medicine and the Vehicle Framework and bionic cover, guest sales via reception.",
+ "implemented": [
+  "Pure maths in Source/Hearth.Core/Pure/Insurance: tier table (deductible, replacement, threshold, payout delay), denial probability, expected payout ratio, premium formula, no-claims classes 0-10, bundle discount (3rd policy -10 %), hazard groups, property payout with under-insurance, progression 225/350/500 %, invalidity stages, accident benefit, negotiation chance, cancellation effective tick, courtesy credit, pre-ticked rider count, and the full Gliedertaxe table with tag fallbacks for foreign bodies",
+  "149 xunit tests (Source/Tests/InsuranceTests.cs) including every worked example of Anhang B.5",
+  "12 policy defs (SL_PolicyDef) with tiers, riders and triggers; 15 clause defs (SL_ClauseDef); SL_LimbScheduleDef for extra body parts; 3 letter defs; English Keyed file HH_Insurance.xml",
+  "Contracts (PolicyContract) in their own GameComponent: sign, first premium at signing, recurring billing, three missed bills lapse the cover, waiting period, no-claims rollover, premium-increase special cancel window, retention discount, automatic renewal notice",
+  "Claims engine: filing, merging per event, review time, clause evaluation, denial/partial/approved roll with Kulanz, payout schedule, negotiation (3 rounds, 3 approaches, sealed RNG), in-kind materials option, clause 22 regrowth claw-back and debt, clause 23 death before assessment",
+  "Triggers: Thing.Kill (buildings by raid, fire, vehicle, anomaly, self-inflicted), Pawn.Kill (accidental death, travel death), AddHediff (lost body part; surgery excluded; caravan injuries), RegisterCondition (cold snap, toxic fallout); ClawbackApi.ReportFine/Liability/Closure/Loss for other modules",
+  "Accident assessment from the real body: top-most missing parts, prosthetics, scars, pre-existing grade deducted, Brain/Spine by capacity, shared eye/ear/lung/kidney values, 4-armed bodies pay as 2",
+  "Daily accruals: Golden Years pension, Rim Health Plan bedridden days, travel head-days; yearly letter 'Your Clawback year' with sales-trick costs and Courtesy credit above the cap",
+  "Money flows via ledger account insurer:clawback: bank account first, then till, then silver in storage; payouts to bank or drop capsule plus till fraction",
+  "UI: logo header, rotating slogans, bundle banner, policy cards with three tier columns and gold-highlighted Premium with badge, pre-ticked add-ons with Basic only and Customize, fine print expander, Sign now, tiny Cancel policy link; My policies, Claims and Fine print / Schedule of Limbs pages; negotiation and cancel/retention dialogs; ClaimLetter with Accept / Negotiate / Open desk buttons",
+  "Settings with 9.2 tier anchors: claims attitude, loading, sales pressure, waiting period, notice period, billing interval, form error, retention dialogs, assessment days, negotiation, research gating, trick cap, per-trick switches (follows / on / off), max sums",
+  "Dev: caretaker check, diagnosis lines, PrepareRemoval, in-game suites insurance.math, buy, claim.building, claim.limb, cancel, negotiate, travel, exploit, ui, save, tricks, plus insurance.shots (only with HH_SHOTS=1)"
+ ],
+ "not_done": [
+  "Insurance desk building (SL_InsuranceDesk): needs the HH_Bank designation category and research prerequisites from the bank agent; the code already counts a def named SL_InsuranceDesk (one review day shorter)",
+  "Panic button (3 mercenaries), accident pension rider (2-20 silver/day), hospital daily allowance, medicine and tow-drone in-kind benefits, Anwaeltin Brix as guest, Rim Health OfferExternalTreatment: the benefit texts avoid promising them but they are not wired",
+  "Muffalo & Machine Cover covers only vehicle-like buildings (class name contains Shuttle/Vehicle); bionic parts lost are not covered, and Vehicle Framework is not integrated",
+  "Wanderlust for guests (reception sales, Selbst tragen, provision) and Regress on stolen guest bags: belong to the Inn module in Hearth.dll",
+  "Overbooked and harder extras not done: premium re-tick on renewal, unreported danger cutting the benefit (clause 26), stolen goods and illness benefits for caravans, 'Why?' ungated 1-year notice only via setting",
+  "Premium Plus is only a greyed hint; payment mode (yearly -6 %, daily +8 %) and the beneficiary / hazard-group extra fields are not implemented",
+  "The UI was never seen on screen (screenshot access was denied); it only draws without errors in the test game, so layout and fonts need a human look",
+  "Premium calibration (baseRisk values) is a first guess and needs long-run balancing; the test colony was too small to check realistic prices"
+ ],
+ "tests": [
+  "insurance.math: PASS - defs, settings anchors, keys, Gliedertaxe on a real human body, tier prices, bundle",
+  "insurance.buy: PASS - premium from till, silver in storage and a fake bank account, ledger balanced, refusal when the purse is empty, bundle",
+  "insurance.claim.building: PASS - raid destroys an insured stool: claim letter, payout at most the value, waiting-period denial (clause 1), self-inflicted (clause 11), merged claims, fire policy",
+  "insurance.claim.limb: PASS - Bare Minimum hand 55 % x sum, thumb 20 %, 225 % progression, surgery excluded, pre-existing eye (B.5), accidental death 20 %",
+  "insurance.cancel: PASS - notice period, withdrawal, special cancel, form error on Standard Room vs Overbooked, Legal Shield, retention",
+  "insurance.negotiate: PASS - round limits, partial 40-70 %, offer never above claim, no money moved",
+  "insurance.travel: PASS - tier coverage, caravan injury and death claims, head-day billing",
+  "insurance.exploit: PASS - premium above expected payout, payout at most loss, sum caps, threat blocks signing, no sign-and-cancel gain",
+  "insurance.ui: PASS - window and both dialogs draw without errors",
+  "insurance.save: PASS - Scribe round trip of contracts and claims",
+  "insurance.tricks: PASS - courtesy credit, rider prices, fines via Legal Shield, Golden Years pension",
+  "xunit Source/Tests/run.sh: 149 PASS",
+  "Last full run: tools/run_test.sh all insurance14 gave RESULT PASS suites=13 checks=390 failures=0 errorsInLog=0 (smoke included)"
+ ],
+ "contract_requests": [
+  "Research defs SL_Insurance and SL_Actuarial belong to the bank agent (KONZEPT 7.3). I only look them up by name; if missing, all policies are unlocked",
+  "Bank window: please render BankTabs entry Id=insurance (already registered via BankTabs.Register at OnDefsLoaded; Draw = InsuranceUI.Draw)",
+  "Bank agent: premiums use ledger.Post(BankApi.Impl.ColonyAccount, 'insurer:clawback', ...) and payouts post the other way directly instead of calling IBankImpl.Deposit/Withdraw. If the bank keeps its own statement lines, add a ledger Changed listener for account insurer:clawback",
+  "Designation category HH_Bank (needed for the optional SL_InsuranceDesk building)",
+  "Inn module: guest travel insurance can call ClawbackApi.ReportLoss/ReportLiability and InsurancePricing.QuoteFor; the reception sale is not built"
+ ],
+ "integration_notes": [
+  "Defs use full class names in XML: <Silverline.SL_PolicyDef>, <Silverline.SL_ClauseDef>, <Silverline.SL_LimbScheduleDef>. Short names are not found by the game loader",
+  "InsuranceModule is a second HearthModuleBase with Id=ModuleId.Bank next to BankModule. Both are created by reflection; it registers settings (prefix insurance.), the bank tab and a caretaker check. Do not remove it when merging the bank's own module",
+  "Everything is in namespace Silverline (Source/Silverline/Insurance) plus pure code in namespace Hearth.Insurance (Source/Hearth.Core/Pure/Insurance). No reference to Hearth.dll",
+  "InsuranceComponent is a GameComponent saved on its own; ClaimLetter is a ChoiceLetter subclass (letterClass Silverline.ClaimLetter); removing the mod only drops those letters",
+  "Harmony patches: Thing.Kill (prefix, Building only), Pawn.Kill (prefix+postfix), Pawn_HealthTracker.AddHediff (postfix), GameConditionManager.RegisterCondition, Building_CommsConsole.GetFloatMenuOptions; all return early when Bank is off or the instigator is not our faction",
+  "Public hooks for other modules: ClawbackApi.ReportFine / ReportLiability / ReportClosure / ReportLoss, InsurancePricing.QuoteFor, InsuranceComponent.Instance.Sign/CanSign",
+  "Textures: only UI/HH/Insurance/ClawbackLogo; placeholder created locally and not committed (Common/Textures)",
+  "Debug-level lines go to HearthHarbor.log under channel Bank; tests: tools/run_test.sh all <label>; screenshots only with HH_SHOTS=1 insurance.shots",
+  "The tracked DLLs in 1.7/Assemblies show as modified in this worktree; I did not commit them"
+ ],
+ "textures": [
+  "UI/HH/Insurance/ClawbackLogo Graphic_Single drawn as a 64x64 icon in the desk header (placeholder generated; real art needed: friendly crab claw with an umbrella)"
+ ],
+ "commit": "e7c47bc"
+}

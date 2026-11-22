@@ -1,0 +1,77 @@
+{
+ "summary": "The casino module is built and tested, and all eight in-game suites pass on the final run with no red errors. The 70 unit tests pass too, including 1,000,000-round simulations for every game. Guests now gamble at slot machines and at roulette, blackjack and Rimdeck tables, and tables only run while a colonist with Serving work staffs them. A guest buys in with real silver through Payments into the house account, plays with a purse, cashes out in whole coins, and the house surplus moves to the colony till when the casino closes. Colonists gamble for joy with free house chips, never lose silver, and can become addicted through vanilla's drug and addiction system with a drug policy line \"gambling\". The player gets a practice window per device with the help hint, plus a Casino page in the Hearth main tab. Not done: progressive jackpot, slot upgrade stages, converting vanilla poker tables, the Casino time block, and 1.5/1.6 builds. The foundation's `Source/build.sh` hides compiler errors (its sed strips the messages), so I added `tools/hb.sh`, which shows them; run it before trusting `run_test.sh`.",
+ "implemented": [
+  "Pure maths in Source/Hearth.Core/Pure/Casino: slots (3 reels, 7 symbols, exact RTP by enumeration, Low/Medium/High volatility, scale factor to the target RTP), roulette (single or double zero, la partage, all 154 bets, every bet has exactly the target edge), blackjack (infinite-deck DP solver, exact edge and sigma, accuracy-mixed policy, interactive API), Rimdeck poker (skill-tilted win chances, capped rake), gambling addiction maths, house ruin protection",
+  "70 unit tests in Source/Tests/CasinoTests.cs: exact RTP and edge per tier, 1M-round simulations for slots/roulette/blackjack/Rimdeck within 5 SE, 60-day ruin probability under 1% for the adaptive max bet, the KONZEPT addiction examples and a seeded loop, a guest-fairness check",
+  "Buildings HH_SlotMachine (1x1, power), HH_RouletteTable, HH_BlackjackTable, HH_PokerTable (3x2 each), HH_CashierCage (2x2, also a till spot), item HH_CasinoChips; build category HH_Casino; research HH_Casino_Slots and HH_Casino_Tables in tab HH_Hospitality; VenueTypeDef HH_Venue_Casino",
+  "Guest activity 'casino.play': desire from budget and personality (Greedy, Ascetic, Gambler trait if present), cards for Intellect 8+ and sober, slots for drunk or dim guests; walks to a free seat, buys in, plays, stops at -40% or +50% or after the time limit, cashes out",
+  "Money flow: buy-in via Payments.TryCharge (virtual for vanilla visitors without silver), purse in the saved session, cash-out in whole coins with unbiased rounding, chips taken home with a cage, house float from the till, closing sweep to the till, house account = Venue.Account in a casino venue else house:casino:<map>",
+  "Croupier: WorkGiver and job for the Serving work type; tables only run for guests while staffed; guests give up after 900 ticks without one; colonist play needs no croupier",
+  "Per-device books: rounds, staked, paid, expected house win and variance, luck in sigma, today's numbers, lifetime edge versus design; Pit Boss lines in the inspect pane, volatility toggle, open-to-guests toggle, 'simulate 10,000 rounds' on paper",
+  "Colonist gambling for joy: JoyKindDef HH_Gambling, JoyGiver, JobDriver with free house chips, joy x2.5 and tolerance x0.6 as settings, thought 'won at the tables' (+3, stacks 3x) and 'lost at the tables'",
+  "Addiction: ChemicalDef, Hediff_GamblingAddiction (depth, 5 stages, abstinence cure of 10 days per stage, 60-day craving with 0.5 relapse), Need_Gambling with stage-dependent fall, withdrawal moods -10 to -40, gambling-spree mental state with think trees, need-driven job at stage 3+, virtual drug HH_GamblingSession with a policy line (default: allowed for joy, at most every 1.5 days), 3-day session counter, children excluded, fatal despair is a no-op setting stub",
+  "Help hint (K28): HelpHintDef with both links in XML, shown in the practice window, the Casino page and the addiction tooltip and letters; left click opens the helpline, right click offers to hide it (core.helpHint)",
+  "Casino page in the main tab (hidden until a device exists): houses with drawer and today's net, table-limit toggle, balance badge or losing-game warning, payout actual versus design per game with luck sigma, colonists who gamble with their counters",
+  "Settings: about 30 keys under casino.* (RTP, roulette edge, blackjack pay and H17, rake and cap, min and max bet, ruin protection, croupier requirement, rounds per hour, house float, guest behaviour, chips, joy and tolerance, addiction p0 with tier anchors, free sessions, growth, abstinence days)",
+  "Practice window for the player at every device: slots, roulette bets, interactive blackjack, Rimdeck; sealed random streams",
+  "In-game suites: casino.defs, casino.slots, casino.tables, casino.joy, casino.addiction, casino.hint, casino.save, plus casino.shots (screenshots, not part of normal runs); docs/casino.md; tools/hb.sh"
+ ],
+ "not_done": [
+  "Progressive jackpot (1-2% of stakes): skipped, the pure maths has no pool yet",
+  "N47 upgrade stages (lever, video and holo slots with different spin rates, failures every 15 days): only a volatility toggle; spin rate is a setting",
+  "N49 'Convert to card table' for existing vanilla poker tables, and hiding the vanilla PokerTable in the build menu: no venue hide-list def exists yet, so it is only logged",
+  "Time block 'Casino' (TimeAssignmentDef), the 'Gambling: Always/Casino time only/Never' column, and the Concierge warning at n3 = 2 (the counter shows on the Casino page instead)",
+  "Gesprächstherapie x1.5, Ideology precept 'Gambling', Casino night and Poker night gatherings, colony lottery, prisoner bets, optional colonist pocket money",
+  "Cheating from both sides, card counting, free drinks, responsible-gaming switch for guests, extra Pit Boss views (formula, histogram, CSV export)",
+  "Cage mechanics beyond the marker role: no buy-chips interaction, no counterfeit chips (Underworld, later); chips are only handed to guests as taken-home float",
+  "Separate 'Wellbeing' page: merged into the Casino page",
+  "Builds for 1.6 and 1.5 not verified: RW17/RW16 #if guards are in place, but the foundation's 1.6 build fails on a duplicate TargetFramework attribute in obj/1.6",
+  "casino.slots does not create a venue sign in a real casino room: HH_VenueSign does not exist in this worktree, so the map house account is tested; the Venue.Account path is untested",
+  "Guests only reach the casino through GuestActivities.TryPick; the vanilla-visitor think-node patch belongs to the Inn module and is not in this worktree, so tests start the job directly",
+  "casino.hint cannot always observe real frames when the game window is occluded; it then checks ShowsHelpHint and a direct draw instead"
+ ],
+ "tests": [
+  "Source/Tests/run.sh (unit): PASS, 70 tests: exact RTP/edge, 1M-round simulations for all four games, addiction examples, ruin < 1% adaptive, guest fairness",
+  "smoke: PASS (12 checks)",
+  "casino.defs: PASS (169 checks): DefOfs, texture loading, config errors, settings anchors, policy line, spawn and interaction cells of all five buildings",
+  "casino.slots: PASS (21 checks): about 600 spins by 3 vanilla visitors, the ledger sums to zero, guest silver loss equals house plus till, house win within 6 sigma, day book matches machine books, closing sweep, power and open flags",
+  "casino.tables: PASS (15 checks): no rounds and a leaving guest without a croupier, colonists on Serving staff tables, at least two tables run rounds, 6-sigma checks, ledger intact",
+  "casino.joy: PASS (14 checks): joy 0.10 to 1.00, tolerance builds, no colony silver and no till change, policy gating, one session counted",
+  "casino.addiction: PASS (374 checks): 800 seeded runs match the formula, hediff and need appear, fall rate, withdrawal mood -22 at stage 3, cure after 31 days, craving and relapse about 0.5 one stage lower, children excluded, fatal-despair stub off",
+  "casino.hint: PASS (10 checks): hint text, helpline url, window carries the hint, off means nothing drawn, hiding works, tab registered",
+  "casino.save: PASS (11 checks): real game save contains sessions, purse, account, device settings, books, gambler record and the addiction hediff",
+  "Last full run casino12: RESULT PASS suites=8 checks=626 failures=0 errorsInLog=0, 0 red errors in the player log"
+ ],
+ "contract_requests": [
+  "A shared DesignationCategoryDef HH_Hospitality is not defined by the foundation. I added my own category HH_Casino in Common/Defs/Casino/Casino_Buildings.xml; the integrator may switch the five buildings to the shared category and delete mine.",
+  "HH_VenueSign and a venue hide-list def do not exist yet: the vanilla PokerTable is not hidden (logged at startup), and the venue room path is untested",
+  "GuestApi has no refund call: CasinoBank.CashOut edits GuestInfo.Budget and Spent directly after a cash-out. A GuestApi.Refund(pawn, amount) would be cleaner."
+ ],
+ "integration_notes": [
+  "Compile errors: Source/build.sh hides them (sed strips the message), and run_test.sh only greps 'error' in that output. Use tools/hb.sh (my addition) to see them before running tests.",
+  "Entry points: CasinoModule : HearthModuleBase (ModuleId.Casino) registers settings, the guest activity 'casino.play', the 'casino' main-tab page, and caretaker checks Casino.DrugPolicy and Casino.Sessions. State lives in the GameComponent CasinoComponent (sessions, gambler records, day book, houses, initialised policy ids).",
+  "The Inn/guest brain must call GuestActivities.TryPick for guests to gamble. Guests read GuestApi.Info(p).Budget and I edit Budget and Spent directly on cash-out.",
+  "Defs added: VenueTypeDef HH_Venue_Casino (iconPath UI/HH/Casino/VenueCasino), JoyKindDef HH_Gambling, JoyGiverDef HH_PlayCasinoJoy, JobDefs HH_PlayCasino and HH_RunCasinoTable, WorkGiverDef HH_RunCasinoTable (Serving), ChemicalDef HH_GamblingChemical, NeedDef HH_Need_Gambling, HediffDef HH_GamblingAddiction, MentalStateDef HH_GamblingSpree, ThoughtDefs, two ThinkTreeDefs injected at Humanlike_PostMentalState and Humanlike_PreMain, HelpHintDef HH_HelpHint_Gambling, research HH_Casino_Slots and HH_Casino_Tables (view positions 6/4 and 6/3 may need moving).",
+  "The virtual drug HH_GamblingSession is a real ThingDef (category Item, IsDrug) so it shows as a row in every drug policy even when the module is off for a save; the row itself cannot be hidden by XML.",
+  "The cashier's cage carries Hearth.CompProperties_TillSpot, so the nightly till silver is put down at the cage.",
+  "Translate quirk: a string argument that follows ': ' in a Keyed text gets its first letter capitalised, so links and odds use {LINK}/{ODDS} with String.Replace instead of {0}.",
+  "The poker table is HH_PokerTable (defName of the 3x2 replacement). Vanilla PokerTable is still in the Furniture menu; add 'PokerTable' to the venues hide-list when that mechanism exists.",
+  "Settings keys start with 'casino.'; the fatal-despair key casino.fatalDespair is a stub with no effect. Game rounds use JRand.Sealed('casino.<game>'); stakes and cash-out rounding use 'casino.stake' and 'casino.cashout'; addiction rolls use JRand.Stream('casino.addiction').",
+  "Underworld later: fake chips can reuse HH_CasinoChips with a quality and a forged flag on a new ThingComp; chips already carry tradeability None and MarketValue 0.",
+  "Check the casino tab and demo windows with casino.shots (not in normal runs): HH_TEST=casino.shots, screenshots end up in /private/tmp/claude-501/hh_tests/casino_shots when the game saves them."
+ ],
+ "textures": [
+  "Things/HH/Casino/SlotMachine Graphic_Multi (north/east/south) 1x1",
+  "Things/HH/Casino/RouletteTable Graphic_Multi (north/east/south) 3x2, drawSize (3,2)",
+  "Things/HH/Casino/BlackjackTable Graphic_Multi (north/east/south) 3x2, drawSize (3,2)",
+  "Things/HH/Casino/PokerTable Graphic_Multi (north/east/south) 3x2, drawSize (3,2)",
+  "Things/HH/Casino/CashierCage Graphic_Multi (north/east/south) 2x2, drawSize (2,2)",
+  "Things/HH/Casino/Chips Graphic_Single, item about 1x1 (also used by the virtual drug def)",
+  "UI/HH/Casino/VenueCasino Graphic_Single, venue type icon about 64x64",
+  "UI/HH/Casino/Volatility Graphic_Single command icon about 64x64",
+  "UI/HH/Casino/OpenToGuests Graphic_Single command icon about 64x64",
+  "UI/HH/Casino/Practice Graphic_Single command icon about 64x64",
+  "UI/HH/Casino/Simulate Graphic_Single command icon about 64x64"
+ ],
+ "commit": "46d5d65"
+}

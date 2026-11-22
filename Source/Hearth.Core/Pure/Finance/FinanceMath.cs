@@ -9,7 +9,7 @@ namespace Hearth
     /// Deterministic exp/ln/pow built only from + - * / (8.11: Math.Exp/Log/Pow may differ in the last bit between
     /// macOS-arm64 and Windows-x64, which would desync multiplayer). Accurate to ~1e-13 relative error in the used range.
     /// </summary>
-    public static class DetMath
+    public static class FinDetMath
     {
         const double Ln2 = 0.6931471805599453094172321215;
 
@@ -54,11 +54,11 @@ namespace Hearth
 
         // --- yields -------------------------------------------------------------------------------------
         /// <summary>Daily growth factor for a yearly multiple M (1.2 → +20 % per game year → M^(1/60) per day).</summary>
-        public static double DailyFactor(double yearlyMultiple) => yearlyMultiple <= 0 ? 0 : DetMath.Pow(yearlyMultiple, 1.0 / DaysPerYear);
+        public static double DailyFactor(double yearlyMultiple) => yearlyMultiple <= 0 ? 0 : FinDetMath.Pow(yearlyMultiple, 1.0 / DaysPerYear);
 
         /// <summary>Yearly multiple of the account: ln M_acc = beta · bankMod · ln M (M = profitability slider).</summary>
         public static double AccountYearlyMultiple(double m, double beta, double bankMod)
-            => m <= 0 ? 0 : DetMath.Pow(m, beta * bankMod);
+            => m <= 0 ? 0 : FinDetMath.Pow(m, beta * bankMod);
 
         public static double AccountDailyFactor(double m, double beta, double bankMod) => DailyFactor(AccountYearlyMultiple(m, beta, bankMod));
 
@@ -74,7 +74,7 @@ namespace Hearth
         }
 
         /// <summary>The "1,000 silver → 1,200 after one game year" preview of the slider (8.8).</summary>
-        public static double GrowthAfterYears(double startSilver, double m, double years) => startSilver * DetMath.Pow(m <= 0 ? 0 : m, years);
+        public static double GrowthAfterYears(double startSilver, double m, double years) => startSilver * FinDetMath.Pow(m <= 0 ? 0 : m, years);
 
         /// <summary>Linear interpolation of 7 tier anchors in log space (Bank M, research cost, …). Anchors must be positive.</summary>
         public static double LogInterp(double[] anchors, double tier)
@@ -82,7 +82,7 @@ namespace Hearth
             tier = Math.Max(0, Math.Min(anchors.Length - 1, tier));
             int i = (int)Math.Floor(tier); if (i >= anchors.Length - 1) return anchors[anchors.Length - 1];
             double t = tier - i;
-            return DetMath.Exp(DetMath.Ln(anchors[i]) + (DetMath.Ln(anchors[i + 1]) - DetMath.Ln(anchors[i])) * t);
+            return FinDetMath.Exp(FinDetMath.Ln(anchors[i]) + (FinDetMath.Ln(anchors[i + 1]) - FinDetMath.Ln(anchors[i])) * t);
         }
 
         // --- loans --------------------------------------------------------------------------------------
@@ -93,7 +93,7 @@ namespace Hearth
         public static double LoanYearlyRate(double m, double spread) => LoanBaseRate(m) + spread;
 
         /// <summary>Growth factor of a debt over <paramref name="days"/> days at the yearly rate (compounded per game year).</summary>
-        public static double LoanFactor(double yearlyRate, double days) => DetMath.Pow(1.0 + yearlyRate, days / DaysPerYear);
+        public static double LoanFactor(double yearlyRate, double days) => FinDetMath.Pow(1.0 + yearlyRate, days / DaysPerYear);
 
         public static int InstallmentCount(int termDays, int intervalDays) => Math.Max(1, (int)Math.Ceiling(termDays / (double)Math.Max(1, intervalDays)));
 
@@ -103,7 +103,7 @@ namespace Hearth
             int n = InstallmentCount(termDays, intervalDays);
             double g = LoanFactor(yearlyRate, intervalDays);
             if (g <= 1.0 + 1e-12) return principalSilver / n;
-            double gn = DetMath.Pow(g, n);
+            double gn = FinDetMath.Pow(g, n);
             return principalSilver * gn * (g - 1.0) / (gn - 1.0);
         }
 
@@ -116,7 +116,7 @@ namespace Hearth
         public const int ScoreOnTime = 4, ScoreLateDay = -6, ScoreDefault = -120, ScoreLateStage = -30, ScoreHighUtilisation = -20;
 
         /// <summary>+20·log10(wealth/10 000), zero below 1 000 silver (never a punishment for a young colony).</summary>
-        public static double WealthScoreBonus(double wealthSilver) => wealthSilver < 1000 ? 0 : 20.0 * DetMath.Ln(wealthSilver / 10000.0) / 2.302585092994046;
+        public static double WealthScoreBonus(double wealthSilver) => wealthSilver < 1000 ? 0 : 20.0 * FinDetMath.Ln(wealthSilver / 10000.0) / 2.302585092994046;
 
         /// <summary>Private loan limit: 0.15 · wealth · (score − 300) / 550, never negative.</summary>
         public static double CreditLimit(double wealthSilver, int score)

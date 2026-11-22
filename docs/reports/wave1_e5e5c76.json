@@ -1,0 +1,81 @@
+{
+ "summary": "The venues part of Shops & Food works end to end and is tested in the real game: 9 suites, 148 checks, all green, passing in the last three runs (including `tools/run_test.sh all`), with no red errors in the log. A Venue Sign (free-standing or wall-mounted) turns a roofed room into a tavern, shop, restaurant, casino, spa or lounge. The sign has controls for kind, opening hours (presets plus hour pickers and a 24-hour strip), prices, \"colony may take goods\" and renaming. It also shows a readiness checklist and outlines the room when selected. Colonists with Serving work tend venues for shifts at the counter or next to the sign; taverns and the other staffed types are open only while someone is on duty. Guests wait for service or ring the night bell (surcharge, minimum charge, \"Rang the bell. Nobody came.\"). Shopping, drinking in the tavern and the powered vending machine all charge through GuestApi.ChargeGuest into the colony till, and the item goes into the guest's bag or is drunk on the spot. Goods on sale are forbidden for colonists unless the sign allows taking them. A forced market day sends several trader caravans plus visitor groups with one \"Market day\" letter. Replaced vanilla furniture can be hidden from the architect menu with a setting and an XML/code mechanism. Not built: the colony buying with its own silver, the sign pushing filters onto shelves, and the market's stall and renown rules.",
+ "implemented": [
+  "HH_VenueSign (free-standing, 1x1, Graphic_Multi, wood/metal/stone, 10 stuff) and HH_VenueSignWall (isAttachment, Placeworker_AttachedToWall, wall-lamp drawOffsets), both in architect tab HH_Hospitality.",
+  "CompVenueSignHH (subclass of the contract CompVenueSign): gizmos for venue type (float menu limited to types whose module is on and research is done), opening hours dialog, price dialog, colony-may-take toggle (N45), rename dialog.",
+  "CompVenueSignHH also provides the room outline when selected, the name label when zoomed in, sales statistics (today and total, saved), and an inspect string with hours, state, staff, prices, stock and a checklist.",
+  "Six VenueTypeDefs (tavern, shop, restaurant, casino, spa, lounge) with icons, default hours, price factors and a VenueSaleExtension (sells Goods, Drinks or None).",
+  "HH_ShopCounter (2x1, interaction cell = tender's post, doubles as a till spot via CompProperties_TillSpot).",
+  "Staffing: work giver HH_ServeVenue, JobDriver_TendVenue (shift length from settings, Social XP, ends at closing or when the venue is no longer wanted) and VenueState (staff pings, bell). Opening and staffing rules live in VenueApi.Gate/IsOpenForBusiness.",
+  "Staffing rules: a venue that needs staff is open only while staffed. A venue that needs none and has nobody on duty runs as self-service at a discount. The staffing rule setting is PerVenueType, NeverRequired or AlwaysRequired.",
+  "Waiting and night bell (5.13): JobDriver_WaitAtVenue (waits for an unstaffed open venue or rings the bell when closed), a lounge as waiting spot that halves the annoyance, bell surcharge percent, bell minimum charge, bell patience, and the annoyed guest after giving up.",
+  "Shopping activity venues.shop: browse time, price tolerance by wealth and difficulty anchors, KONZEPT 6.1 price thoughts as satisfaction, max purchases per stay, stack buying, payment via GuestApi.ChargeGuest, item into the guest's inventory.",
+  "Tavern activity venues.drink (drinks only, ordered and drunk via vanilla Ingest from the bag, gap between drinks) and a service-quality satisfaction bonus when a tender is present.",
+  "HH_VendingMachine (Building_Storage, food/drugs/medicine, needs power, 4 per cell) with activity venues.vending (no staff, any hour, colonists use it free).",
+  "N45: VenueMapComp forbids goods for sale (vanilla CompForbiddable) every 250 ticks; it remembers only what it forbade (saved) and releases only those items. Includes a caretaker check and PrepareRemoval.",
+  "Big market (N48): VenuesGame component (saved schedule, interval setting default 15 days +-20 %, only with at least one goods-selling shop), VenueMarket.Hold with vanilla TraderCaravanArrival and VisitorGroup incidents with forced factions and silenced letters, one 'Market day' letter, debug actions in Hearth & Harbor.",
+  "N49: VanillaReplacementDef (XML) and VanillaHiding.Register/Unregister/Refresh. It removes the vanilla Designator_Build (or dropdown element) from the category list and restores it when research is missing, the module is off or the setting is off. Refresh runs at startup, game load, after research finishes and every 2500 ticks. Setting venues.hideVanilla is global.",
+  "GuestFallback: while the Inn module is off, idle vanilla visitors in LordToil_DefendPoint are offered GuestActivities every 90 ticks.",
+  "24 settings with English labels and descriptions (prices, tolerance with 7 difficulty anchors, staffing, hours presets, bell, market, hide vanilla).",
+  "Common/Patches/Venues_DesignationCategory.xml: conditionally adds the HH_Hospitality architect tab if no other file defines it.",
+  "Harmony: Patch_RoomOfSign_Attachment (workaround so wall-mounted signs find their room) and Patch_ResearchFinished (refresh the hidden-furniture list).",
+  "Keyed/HH_Venues.xml (116 keys, generated by tools/gen_venues_keyed.py), docs/venues.md and Venues_Replacements.xml (documented, empty)."
+ ],
+ "not_done": [
+  "Colonists shopping with colony silver when there are no guests (KONZEPT 6.8, marked optional): left out to keep the till and colony balances clean.",
+  "The sign pushing its goods filter and 'Important' priority onto all stockpiles in the room (N45 'Auffuellen'), and display shelves with a per-item maximum: not in the task list.",
+  "Big market conditions of 6.10 (at least 4 market stalls, renown at least 20, stall fee, announcement with postpone/cancel, thieves and brawls): fixed interval plus 'at least one shop' used instead, as the task allowed. Market stalls and the Market venue type do not exist yet.",
+  "Last orders 30 minutes before closing, the staff roster tab, point-based auto-assignment of tenders, and Bouncer/Croupier/etc. roles: only the generic tend job exists.",
+  "Market / plaza customer sharing (+15 %) and Hemogen/xenotype shops (N50).",
+  "Real art: all textures are placeholders from tools/placeholder_textures.py and are not committed.",
+  "Building the 1.6 and 1.5 DLLs: not verified, and a 1.6 attempt hit a foundation build error in Hearth.Core. Only 1.7 was built and tested.",
+  "Dialogs and overlays were exercised only by opening them and checking for red errors; nobody has looked at them with eyes."
+ ],
+ "tests": [
+  "smoke: PASS (12 checks) - core alive, ledger, random streams.",
+  "venues.sign: PASS (39 checks) - sign in a walled room is found by Venues.All with the right room, overnight/day/always hour logic, type change moves default hours, gate logic and staff rule setting, pricing, wall-mounted sign found, gizmos, inspect string and checklist, dialogs and overlay draw without errors.",
+  "venues.shop: PASS (16 checks) - stockpile items are for sale, colony forbidden and released again, a visitor group buys, till rises, goods leave the shelves, item in guest's bag, sign stats recorded.",
+  "venues.staff: PASS (24 checks) - colonist staffs an open tavern by himself, venue closed outside hours and tender leaves, night bell answered, surcharge and minimum charge.",
+  "venues.tavern: PASS (9 checks) - tavern sells drinks only, guest buys and drinks (alcohol hediff), till rises.",
+  "venues.vending: PASS (10 checks) - machine works only when powered, guest pays and the meal leaves, colonists can use it.",
+  "venues.market: PASS (12 checks) - forced market day spawns 3 caravans plus visitors, trader lords on map, friendly guests, one letter, interval follows setting.",
+  "venues.hidden: PASS (11 checks) - HH_Hospitality tab and our buildings, vanilla shelf hidden/restored, research-gated pair, unknown def skipped, setting toggle, no duplicate designators.",
+  "venues.wait: PASS (15 checks) - lounge as waiting spot, guests wait then give up annoyed, bell rung and answered with surcharge.",
+  "Last runs (venues13, venues14): RESULT PASS suites=9 checks=148 failures=0 errorsInLog=0, 0 red errors in the player log."
+ ],
+ "contract_requests": [
+  "Venues.RoomOfSign (Source/Hearth/Contracts/Venues.cs): for attachments it jumps to the wall cell (no room, so a wall sign is never found). Placeworker_AttachedToWall puts the attachment on the floor cell facing the wall, so the sign's own cell is the right room. Fix the contract and drop Patch_RoomOfSign_Attachment from VanillaHiding.cs.",
+  "DesignationCategoryDef HH_Hospitality is not defined by the foundation. It is added conditionally by my Common/Patches/Venues_DesignationCategory.xml; the owner (UI/Inn module) should define it in Defs/Core and then the patch becomes a no-op.",
+  "Hearth.Core does not build for 1.6 (net472): CS0579 duplicate TargetFrameworkAttribute, so 1.6 and 1.5 DLLs could not be checked. (Note: source/build.sh only prints lines containing 'error', so a German-locale build prints a mangled line.)",
+  "GuestApi: the docs say a small think-node patch offers activities to vanilla visitors when Inn is off. Nobody provides it yet, so my GuestFallback does it; the Inn agent should either take it over (set GuestFallback.Enabled = false) or keep it."
+ ],
+ "integration_notes": [
+  "Namespace is Hearth.ShopsFood (not Hearth.Venues, which clashes with the contract class Hearth.Venues). Module entry is VenuesModule (Id ShopsFood); the kitchen agent has its own HearthModuleBase with the same id, which is fine (the module list holds both). My settings use the key prefix 'venues.'.",
+  "Other modules must ask VenueApi.Gate(venue) / IsOpenForBusiness(venue) before serving: it includes opening hours, staff presence and the bell. Venue.IsOpenNow from the contract is hours only. Also useful: NeedsStaff, IsStaffed, Staffer, PostCell, CounterOf, PriceMultiplier, PriceOf, VenueOfSign.",
+  "A VenueTypeDef selling from stock needs <modExtensions><li Class=\"Hearth.ShopsFood.VenueSaleExtension\"><sells>Goods|Drinks|None</sells></li></modExtensions>; restaurant, casino, spa and lounge are set to None so their rooms' goods are never forbidden. The kitchen agent's dishes in a restaurant room are untouched.",
+  "Casino module: add vanilla replacements with VanillaHiding.Register(\"PokerTable\", \"HH_CardTable\") in OnDefsLoaded or a <Hearth.ShopsFood.VanillaReplacementDef> (vanillaDefName / replacementDefName strings). HH_Venue_Casino and HH_Venue_Spa have module Casino / Wellness and need staff, so their signs only offer them when that module is on.",
+  "Types with needsStaff (tavern, restaurant, casino, spa) make my work giver send colonists to stand at the sign/counter during opening hours; a module with its own staff jobs should keep the same VenueState.PingStaff convention or set needsStaff false in its def.",
+  "Items in the room of a Shop/Tavern sign are forbidden for the colony by vanilla forbidding (venues.* sync every 250 ticks). Venue type must not sell if a module wants the colony to use its shelves freely.",
+  "My tests assume the harness default colony; they call SetPriority on all work types of one colonist and clear leftover visitors (VenueTestKit.ClearGuests). Guest suites take 1-4 minutes of game time each.",
+  "GuestFallback.Enabled can be set false if the Inn module takes over driving vanilla visitors through GuestActivities.",
+  "Vending machine research prerequisite is vanilla 'Electricity'; replace with the HH research tree entry when it exists.",
+  "Textures are not committed; run tools/placeholder_textures.py to create placeholders."
+ ],
+ "textures": [
+  "Things/HH/Venues/VenueSign Graphic_Multi 1x1 (north/east/south)",
+  "Things/HH/Venues/VenueSignWall Graphic_Multi 1x1, wall-mounted, drawn offset 0.9 onto the wall (north/east/south)",
+  "Things/HH/Venues/ShopCounter Graphic_Multi 2x1 (north/east/south)",
+  "Things/HH/Venues/VendingMachine Graphic_Multi 1x1 (north/east/south)",
+  "UI/HH/Venues/Type_Tavern (Graphic_Single UI icon)",
+  "UI/HH/Venues/Type_Shop",
+  "UI/HH/Venues/Type_Restaurant",
+  "UI/HH/Venues/Type_Casino",
+  "UI/HH/Venues/Type_Spa",
+  "UI/HH/Venues/Type_Lounge",
+  "UI/HH/Venues/Cmd_Hours (gizmo icon)",
+  "UI/HH/Venues/Cmd_Price (gizmo icon)",
+  "UI/HH/Venues/Cmd_TakeGoods (gizmo icon)",
+  "UI/HH/Venues/Cmd_Rename (gizmo icon)"
+ ],
+ "commit": "e5e5c76 (branch wt/venues, /Users/julius/Documents/Coding/22_RimWorld/HH_wt/venues)"
+}

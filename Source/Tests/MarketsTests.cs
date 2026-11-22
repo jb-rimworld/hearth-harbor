@@ -7,7 +7,7 @@ using Hearth;
 using Hearth.Markets;
 using Xunit;
 
-public class DetMathTests
+public class MarketsDetMathTests
 {
     [Fact]
     public void ExpMatchesSystemMath()

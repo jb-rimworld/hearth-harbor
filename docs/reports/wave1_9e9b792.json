@@ -1,0 +1,77 @@
+{
+ "summary": "The kitchen module is built and tested. A cook now works any of 100 base dishes (plus 5 fish dishes with Odyssey) at 10 new kitchen devices, the vanilla stoves or the campfire. Every dish has three bill forms: Everyday, Fine and Signature, 315 recipes in all. The plate carries the dish and quality and has its own freshness clock. Eating gives full nutrition, a Well fed hediff (hunger 40 % slower) and a mood thought by level and quality. A cook with Cooking 4+ in a clean Kitchen room never poisons a plate. Unlearned dishes are hidden from the bill list by the research levels HH_Cooking_L1..L4, recipe books, a test-kitchen recipe, or the \"all dishes known\" setting. Hungry guests pick a plate from a dining room or Restaurant venue, eat it and pay the menu price into the till. There is also a Colony cookbook page and 8 settings. The in-game suite run (9 suites, 258 checks) passes with 0 red errors; the 30 extra recipes for other mods (VCE, VPE, Kenshi Cuisine) are untested because those mods are not installed locally. The 1.5 and 1.6 builds compile but I did not run them in game.",
+ "implemented": [
+  "DishDef (Def subclass) with all Anhang A fields, plus IngredientShare, DishRecipeExtension and StationExtension. tools/dishes/make_dishes.py parses Anhang A and writes Dishes_L1..L4.xml (21/31/29/19 = 100 base dishes), Dishes_Mods.xml (30 extra recipes with MayRequire), Plates.xml and Thoughts_Dishes.xml.",
+  "10 kitchen devices as production work tables (prep counter, stock pot, grill, oven, wok station, deep fryer, smoker, steamer, dough bench, cold station) with wood fuel or power like vanilla stoves. The WorkGiverDef HH_DoBillsKitchen lets cooks and robots work them. Devices are gated by research where it exists (Smoker/Oven -> HH_Innkeeping, Steamer/Wok/Cold station -> HH_Gastronomy, Deep fryer -> HH_HotelManagement), otherwise by HH_Cooking_L2/L3. Each device shows the other devices in reach in its inspect pane.",
+  "Main-device rule from 6.4: the last device of a dish carries the bill; the other devices must stand in the same room within 8 cells. The bill pauses and its status line says 'Missing: Prep counter'. Both vanilla stoves count as 'Stove', plus the campfire and butcher table. Foreign devices count via building tags HH_Stove, HH_Oven, HH_Grill and so on.",
+  "12 plate items HH_Plate_<Kind> carrying CompDish: label override ('Muffalo bourguignon (excellent)'), description, own freshness clock, vanilla CompQuality, CompRottable driven from the dish clock, CompIngredients and food poisonable. Plates do not stack and have a soft per-dish tint.",
+  "Ingredient classes resolved at startup against all loaded defs: meat, insect, human and twisted meat, fish, eggs, milk and the vanilla plant foods, plus VCE/VPE/Kenshi foods matched by name and package. Everyday plates use 0.5 nutrition x level scale x share. Beer and hemogen count one piece per share. Fine is x1.5 plus one finishing touch with one extra quality roll at skill+3. Signature is x2 plus two finishing touches with two extra rolls at skill+5, and needs HH_Cooking_L4. Everyone gets the right 'do until X' count per dish.",
+  "Learning: HH_Cooking_L1..L4 in the HH_Hospitality tab (L1 finished at game start). Recipes of unlearned dishes are hidden by a patch on RecipeDef.AvailableNow. Single dishes are learned from HH_Cookbook recipe books (added to outlander traders by a patch) or from the HH_TestKitchen recipe at the prep counter (p = 0.15 + 0.02 x (Cooking - minimum), failures become Awful plates). Settings: all dishes known, dark menu for the long-pork dishes, Fine/Signature on/off.",
+  "Eating: full nutrition (0.9), HH_WellFed hediff with 4/6/8/10 h x 0.6..1.8 by quality, hunger factor via a Need_Food patch scaled by a setting, mood thought HH_AteDish with 28 stages (+4/+6/+9/+12, quality -2..+4, max +16). Stale plates (past their shelf life) still feed but give neither Well fed nor a thought.",
+  "Poison rule N46: no roll for our plates when the cook has Cooking 4+ (machines use their fixed level), the room has the Kitchen role and cleanliness is -0.2 or better. Vanilla meals are untouched. Note a dirt floor has cleanliness -1, so a kitchen needs a floor.",
+  "Restaurant: guest activity kitchen.eat. Restaurant spots come from HH_Venue_Restaurant venues, or from dining rooms when no restaurant sign exists. The guest takes a fresh plate in the room, eats it with the vanilla Ingest job, and pays dish x quality x form x venue factor through GuestApi.ChargeGuest. Guest satisfaction changes, and unpaid meals are counted.",
+  "Colony cookbook page in the main tab (known dishes in full, unknown ones as ??? with a hint on where to learn them, search and filter). Keyed/HH_Kitchen.xml with all texts and setting labels. docs/kitchen.md documents the module for the integrator.",
+  "Tests (in-game suites): kitchen.defs, kitchen.rules, kitchen.cook, kitchen.eat, kitchen.poison, kitchen.restaurant, kitchen.learn, kitchen.save."
+ ],
+ "not_done": [
+  "Dishes with other mods (VCE, VPE, Kenshi Cuisine) are untested: none of those mods are installed locally. The DishDefs exist, but their recipes only appear when the ingredient names and package ids match; the name matching has unit checks only. Fish dishes were tested with Odyssey.",
+  "The restaurant is only a basic loop. Left out: the 0-100 dish rating with Passung, wait penalty and ambience, critics, pre-cooking before opening, buffet and room service, tips, and cuisine and taste matching. A quick 'Gerichtsbewertung' is not implemented.",
+  "No Variety Matters adapter yet, and no Static Quality / Quality Factors display hooks (the quality rolls go through the vanilla function, so they apply automatically).",
+  "The deep fryer has the 'small fire risk' only as Flammability 1.0 and its text, with no actual ignition comp.",
+  "Guests with Cooking 8+ revealing a dish of their region (10 % per stay) is not implemented; it belongs with the Inn module. Recipe books come from outlander traders only.",
+  "Devices use designationCategory Production, not HH_Hospitality. The Kitchen room role of vanilla requires Production, and HH_Hospitality was not defined in my worktree.",
+  "Fine dining (service, dress code), the Colony cookbook as a separate window and the learn-from-the-Venue-sign flow.",
+  "1.5 and 1.6 builds compile but were not run in game. The Source/build.sh 'all' mode fails in the foundation (duplicate TargetFrameworkAttribute from obj/ globbing); building each version from a clean obj/ works."
+ ],
+ "tests": [
+  "smoke: PASS, last run kitchenfinal (12 checks).",
+  "kitchen.defs: PASS (132 checks) - 100 base dishes loaded, 0 config errors, every base dish has recipes, 12 plates, 315 recipes valid, 10 devices, research and research gating, thought stages, settings and Keyed texts, learning gates, name matching for mod foods.",
+  "kitchen.cook: PASS (25 checks) - a colonist with Cooking 8 cooks Berry compote at the stock pot and a plate with CompDish and quality appears. Side-device pausing, the 8-cell limit, the 'do until' counter, the AvailableNow gate and the test-kitchen recipe via a real bill are covered.",
+  "kitchen.eat: PASS (13 checks) - eating gives full nutrition, Well fed 9.6 h (level 3, good), the mood thought +10, hunger factor 0.6, strength setting scaling, stale plate gives nothing.",
+  "kitchen.poison: PASS (12 checks) - 0 of 3000 plates poisoned for a skilled cook in a clean kitchen, skill thresholds, rule off, dirty kitchen and non-kitchen room not covered by the rule.",
+  "kitchen.restaurant: PASS (16 checks) - a vanilla visitor picks a plate from a dining room, eats it and pays; the till grows by the menu price (coins round up); stale plates and plates in other rooms are not for sale; budget and ledger stay consistent.",
+  "kitchen.rules: PASS (17 checks); kitchen.learn: PASS (20 checks); kitchen.save: PASS (11 checks).",
+  "Last full run (tools/run_test.sh all kitchenfinal): RESULT PASS suites=9 checks=258 failures=0 errorsInLog=0, 0 red errors in the player log."
+ ],
+ "contract_requests": [
+  "Core/Defs: HH_Innkeeping, HH_Gastronomy, HH_HotelManagement and HH_FineDining research are expected by the device gating. If the research owner defines them, no change on my side is needed (fallback to my HH_Cooking_L2/L3 is automatic). If the integrator prefers the kitchen levels to be those projects, retarget HH_Cooking_L2..L4 or tell DishKnowledge.LevelResearch which def to use.",
+  "Foundation build: Hearth.Core obj/ globbing breaks multi-version builds (duplicate TargetFrameworkAttribute). Directory.Build.props 'Compile Remove obj/**' is evaluated before the default globs; use DefaultItemExcludes or set it in each csproj. This also hides compile errors from build.sh: it greps for the English word 'error' while dotnet prints localised errors."
+ ],
+ "integration_notes": [
+  "Kitchen module class KitchenModule : HearthModuleBase with Id ShopsFood, next to the venues module's own ShopsFood module class (two module objects with the same id work).",
+  "Set Restaurant.OpenGate = VenueApi.IsOpenForBusiness and Restaurant.VenuePriceFactor = VenueApi.PriceMultiplier once the venues module is merged. HH_Venue_Restaurant is looked up by name; without it the dining rooms act as restaurants.",
+  "Recipes are generated at startup in HearthStartup via KitchenModule.OnDefsLoaded: IngredientClasses.Resolve(), Stations.AssignResearch(), RecipeBuilder.BuildAll(). They use DefDatabase<RecipeDef>.Add and reset ThingDef.allRecipesCached for the main devices.",
+  "Harmony patch classes (all check Modules.On(ShopsFood) or a DishRecipeExtension first): RecipeDef.AvailableNow getter, Bill_Production.ShouldDoNow and its StatusString getter, GenRecipe.PostProcessProduct (two postfixes), CompFoodPoisonable.Notify_RecipeProduced prefix (only our HH_Plate_* things), Need_Food.FoodFallPerTickAssumingCategory postfix, CompRottable.CompInspectStringExtra postfix (plates only).",
+  "Guest activity 'kitchen.eat' is registered via GuestActivities.Register. Without the Inn module it still needs the vanilla-visitor think-node patch of the integrator; my tests start the job by hand.",
+  "Settings added: kitchen.shelfLife, kitchen.wellFedStrength, kitchen.wellFedDuration, kitchen.menuPrice, kitchen.poisonRule, kitchen.variants, kitchen.allKnown, kitchen.darkMenu. Page 'kitchen' (Cookbook) registered with HearthTabs.",
+  "Test hook DishKnowledge.TestLevelLock exists only with HH_TESTS (the quick-test game has no cooking research finished beyond what the module does). Do not rely on it in release builds.",
+  "Common/Patches/Kitchen_Traders.xml adds a StockGenerator_Tag for tradeTag HH_Cookbook to three outlander trader kinds (success=Always).",
+  "Other modules that define VenueTypeDef etc. are untouched. Tests clean up after themselves in the areas center+(+-14..22,..), but they use the map around the centre, so run suites sequentially (run_test.sh does)."
+ ],
+ "textures": [
+  "Things/HH/Kitchen/PrepCounter Graphic_Multi 2x1",
+  "Things/HH/Kitchen/StockPot Graphic_Multi 1x1",
+  "Things/HH/Kitchen/Grill Graphic_Multi 2x1",
+  "Things/HH/Kitchen/Oven Graphic_Multi 2x1",
+  "Things/HH/Kitchen/WokStation Graphic_Multi 1x1",
+  "Things/HH/Kitchen/DeepFryer Graphic_Multi 1x1",
+  "Things/HH/Kitchen/Smoker Graphic_Multi 1x1",
+  "Things/HH/Kitchen/Steamer Graphic_Multi 1x1",
+  "Things/HH/Kitchen/DoughBench Graphic_Multi 2x1",
+  "Things/HH/Kitchen/ColdStation Graphic_Multi 2x1",
+  "Things/HH/Kitchen/Plate_Soup Graphic_Single 1x1",
+  "Things/HH/Kitchen/Plate_Stew Graphic_Single 1x1",
+  "Things/HH/Kitchen/Plate_Grill Graphic_Single 1x1",
+  "Things/HH/Kitchen/Plate_Noodles Graphic_Single 1x1",
+  "Things/HH/Kitchen/Plate_Rice Graphic_Single 1x1",
+  "Things/HH/Kitchen/Plate_Bake Graphic_Single 1x1",
+  "Things/HH/Kitchen/Plate_Fry Graphic_Single 1x1",
+  "Things/HH/Kitchen/Plate_Salad Graphic_Single 1x1",
+  "Things/HH/Kitchen/Plate_Raw Graphic_Single 1x1",
+  "Things/HH/Kitchen/Plate_Breakfast Graphic_Single 1x1",
+  "Things/HH/Kitchen/Plate_Dessert Graphic_Single 1x1",
+  "Things/HH/Kitchen/Plate_StreetFood Graphic_Single 1x1",
+  "Things/HH/Kitchen/Cookbook Graphic_Single 1x1 (the HH_Cookbook item; also not in the original list)"
+ ],
+ "commit": "9e9b792"
+}

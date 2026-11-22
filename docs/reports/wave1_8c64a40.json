@@ -1,0 +1,79 @@
+{
+ "summary": "The bank Silverline works end to end and passes 13 in-game suites (225 checks, 0 red errors) plus 91 unit tests. You can open an account at one of six banks via the comms console (\"Call Silverline\"), an ATM or a bank counter. Deposits take silver from storage or the trade beacon, withdrawals arrive by drop pod or instantly at an ATM. The account earns interest from the profitability slider (default 1.2 per 60-day year), and the night safe and direct deposit empty the tills into the account at midnight. Loans run on 5-day instalments and the collection ladder is capped by difficulty (stage 4 on Standard Room). The bank balance counts towards the storyteller wealth, and the mood thought, the research (free basic level, three projects, \"research off\" switch), about 25 settings and the Too Big To Fail bailout are all in. The window (lobby, loans, history, terms plus tabs from other modules) was checked visually through screenshots. Not done: routing vanilla trade income to the account, colonists using ATMs on their own, and the 1.6/1.5 builds (foundation build error, not tested). The comms-console entry, the Black Ledger gating and the real seizure/raid spawn (stages 5-7) are test-covered.",
+ "implemented": [
+  "SL_BankDef (Silverline.SL_BankDef) and Bank_Banks.xml: six banks (Silverline Mutual, First Rim Bank of Too Big To Fail, Imperial Treasury [Royalty], Orbital Exchange [Odyssey], The Black Ledger [Underworld module on AND UnderworldDiscovered], First Church of Compound Interest [Ideology]) with fees, interestMod, loanSpread, slogans, perks and iconPath UI/HH/Bank/Logo_<defName>",
+  "BankGameComp (GameComponent, saved): colony account bank:colony, bank:transit, bank:loans; open account; switch bank for 50 silver (setting); history samples for the chart; BankImpl sets BankApi.Impl; BankTillSink sets Tills.BankSink (direct deposit setting, default on, fee setting default 0.5 %)",
+  "Interest: daily factor M^(1/60), M from bank.profit (log interpolation of the 7 tier anchors 100/2.0/1.5/1.2/1.0/0.7/0.1 until the player overrides it), times bank.accountBeta (default 1.0) and the bank's interestMod; negative interest and M=0 work; per-quadrum account fee; Black Ledger 1 % per quadrum seizure risk (25 % of the balance); Too Big To Fail bailout (interest-free 60-day loan, once per game year, max 10 % of the 60-day peak)",
+  "Deposit/withdraw: silver from beacon range or storage (never forbidden); deposit instant at counter/ATM else after 1 h (money in bank:transit); withdraw instantly at ATM (2 + 1 %, 500/day limit) or counter, otherwise drop pods after 2-12 h (1 %, min 5); every fee scales with bank.feeFactor",
+  "Buildings: SL_ATM (Graphic_Multi 1x1, powered), SL_BankCounter (Graphic_Multi 3x1, powered), SL_NightSafe (Graphic_Single 1x1, no power, CompProperties_TillSpot, direct-deposit toggle gizmo), JobDef SL_UseBank + JobDriver, designation category HH_Bank, comms console entry 'Call Silverline' via a Harmony postfix on Building_CommsConsole.GetCommTargets",
+  "Window_Bank: walnut/brass/green lobby; open-account page with all banks, slogans and perks; tab strip from BankTabs (lobby, loans, history, terms registered here); rolling balance, 30-day chart, deposit/withdraw with slider + number field + presets, recent activity, bank strip with direct-deposit toggle and Window_ChooseBank, Clerk Ottoline quips, 5-decimal history and tooltips with formulas on every number",
+  "Loans: Ledger Score 300-850, credit limit from balance + a quarter of colony wealth + score + starter credit, annuity instalments every 5 days, rate = max(2 %, M-1) + bank spread (variable with the slider), repay, caretaker check for the loan ledger",
+  "Collection ladder 1-7 (days 1/4/7/10/15/20/30): reminder letter, late fee + score -30, 50 % offset against deposits and blocked credit, two unarmed bowler-hat visitors of the hidden faction SL_CollectionsAgency who stand around (-2 mood nearby, leave when paid), seizure team with allow/refuse dialog (120 % of the debt in valuables), collection raid, bounty (raid x1.5); capped by bank.maxCollectionStage (anchors 0,1,2,4,5,6,7); Comped quietly defers instalments",
+  "Wealth: Harmony postfix on Map.PlayerWealthForStoryteller adds the balance (+ in transit) x bank.wealthShare (0-150 %), spread over player maps by map wealth, skipped in fixed-wealth mode",
+  "Mood: ThoughtDefs SL_Finances (ascetic/greedy nullified) and SL_FinancesGreedy (doubled) by net-worth tier with the one-day hold, setting bank.moodOn, tier thresholds scaled by bank.moodScale and colonists/3",
+  "Research: ResearchProjectDefs SL_Banking (ATM, night safe), SL_Branches (counter), SL_Credit (loans) in tab HH_Banking; account via comms console is free; bank.researchMode=Off completes them (caretaker)",
+  "Pure finance maths Source/Hearth.Core/Pure/Finance/FinanceMath.cs (deterministic exp/ln/pow, yields, annuity, score, limits, ladder stages, wealth tiers, bailout, fees) with 91 unit tests (Source/Tests/FinanceTests.cs)",
+  "In-game suites: bank.account, bank.interest, bank.withdraw, bank.sink, bank.loan, bank.collect, bank.wealth, bank.mood, bank.ui, bank.save, bank.buildings, bank.banks, plus bank.shots (manual screenshots, not in normal runs)",
+  "tools/gen_bank_keys.py generates Keyed/HH_Bank.xml (215 keys) from the L.T(\"Key\", \"English\") calls; docs/bank/DEVELOPER.md"
+ ],
+ "not_done": [
+  "K4 part 'route vanilla trade income to the account' (patch on the trade settlement): only the till sink is done; needs a postfix on the trade execution that diverts the silver sold, plus a virtual 'Bank balance' payment item, with the TradeHelper/DTI test",
+  "Colonists and visitors using ATMs on their own (optional polish); card-paying guests withdrawing cash needs the guest module",
+  "Bank-faction goodwill effects of collection stages and Imperial honour perks; Black Ledger underworld products, Church faith funds and Orbital market access are product features of later modules (investments); only fees/spreads/risk of those banks are implemented",
+  "Products Dispo, Baukredit, Quick Silver, Hypothek, guest loans from 8.9: only the private loan with bank spread exists",
+  "Bounty (stage 7) is the stage 6 raid x1.5 every 3 days plus a letter, no bounty hunters in later raids",
+  "Settings window shows bank.profit with the generic linear slider (the log slider lives in the bank window, Terms tab)",
+  "Builds for 1.6 and 1.5 were not verified: the foundation build fails there with CS0579 (duplicate TargetFrameworkAttribute) and leaves obj/1.6 which then breaks the 1.7 build until deleted",
+  "DefInjected/other languages: only English keyed texts; bank def labels/slogans are plain in the defs (dynamic keys Bank.<defName>.Name/.Slogan are read but not generated)"
+ ],
+ "tests": [
+  "Unit (Source/Tests/run.sh): PASS 91 tests incl. FinanceTests (DetMath precision, tier daily rates, annuity pays off to ~0, ladder stages/caps, wealth tiers, bailout, fees)",
+  "smoke: PASS (12 checks)",
+  "bank.account: PASS (29) open account, deposit 500 from stockpile (stockpile -500, in transit, ledger balanced, balance 500 after delay), branch instant deposit, bank switch costs 50",
+  "bank.interest: PASS (10) 60 days at M=1.2 gives 12000.00049 vs 12000 (within 0.01 %), 3 days through the tick loop, M=0.7/1.0/0, quadrum fee",
+  "bank.withdraw: PASS (15) pod delivery of 300 silver, fee 5, ATM instant, 2+1 %, daily limit",
+  "bank.sink: PASS (13) till into account minus 0.5 % fee at the flush and at real midnight, direct deposit off or no account leaves silver on the floor, IBankImpl.Deposit",
+  "bank.loan: PASS (47) loan, instalment, missed payments, ladder stages 1-4 capped at Standard Room, stages 5-7 on hard tiers, Comped deferral, tier caps 0,1,2,4,5,6,7, repay, caretaker",
+  "bank.collect: PASS (12) real hidden faction + team spawn, hostile and housekeeping, collector mood thought, real seizure of gold pays the loan",
+  "bank.wealth: PASS (8) balance counts 100/50/150/0 %, world wealth, raid points, module off",
+  "bank.mood: PASS (21) all 9 tiers, greedy doubling, setting off, tier follows net worth with one-day hold",
+  "bank.ui: PASS (18) windows open/draw all tabs without logged errors, custom tabs",
+  "bank.save: PASS (6) loan/pending/sample scribe round trips and a real game save with the component",
+  "bank.buildings: PASS (14) comms console entry, colonist walks to an ATM and the window opens, night safe as till spot, architect category",
+  "bank.banks: PASS (20) Black Ledger gating, ignores score, seizure, Imperial title rule, Orbital fees, fee level, bailout once per year, normal bank no bailout",
+  "Last run: smoke + 12 bank suites = RESULT PASS suites=13 checks=225 failures=0 errorsInLog=0 (label bank13); 0 red errors in the player log"
+ ],
+ "contract_requests": [
+  "Foundation build: 1.6/1.5 builds fail with CS0579 duplicate TargetFrameworkAttribute (Hearth.Core/obj/1.6), and a leftover obj/1.6 then breaks the 1.7 build; please fix BaseIntermediateOutputPath/Compile Remove handling in Directory.Build.props",
+  "Settings UI: bank.profit is a log-scale value (0.01 to 100, 0 allowed): the generic linear slider should offer log scaling for it; Settings also has TierAnchors interpolated linearly whereas Bank M uses log interpolation (BankSettings.ProfitM does this itself)",
+  "If the integrator wants the key HH.Bank.* texts of other modules in my Keyed file, they must use their own HH_<Module>.xml; HH_Bank.xml is generated from code and must not be edited by hand",
+  "Core could expose a tick-independent 'midnight' event; the sink currently relies on Tills.FlushAll in HearthGame (works, tested through a real midnight)"
+ ],
+ "integration_notes": [
+  "Defs other modules may use: DesignationCategoryDef HH_Bank (defined in Common/Defs/Bank/Bank_Buildings.xml: the insurance agent must NOT define it again), ResearchProjectDefs SL_Banking, SL_Branches, SL_Credit in tab HH_Banking, ThingDefs SL_ATM, SL_BankCounter, SL_NightSafe, FactionDef SL_CollectionsAgency, SL_BankDef bank defs",
+  "BankTabs: built-in tab orders lobby 10, loans 20, history 30, terms 40; insurance/investments/lottery should register with order 50 and up. The window wraps tab Draw in Guard.Run and sets Window_Bank.Active (Map, Site, At) for tabs that need the current map or building",
+  "Ledger accounts: bank:colony, bank:transit, bank:loans (negative = debt). Other modules should not post to bank:colony directly: use BankApi.Impl.Deposit/Withdraw or BankGameComp.Current.Credit (applies fee, collection offset and keeps the ledger balanced)",
+  "BankGameComp.Current is the saved component (Silverline.BankGameComp, GameComponent); everything is saved in it, no fields on vanilla classes; module removal leaves ledger entries only",
+  "Harmony patches: Patch_CommsConsole_Targets (Building_CommsConsole.GetCommTargets postfix) and Patch_PlayerWealth (Map.PlayerWealthForStoryteller getter postfix with re-entrancy guard); both return early when Modules.On(Bank) is false",
+  "Settings registered (all ModuleId.Bank): bank.profit, accountBeta, directDepositFee, directDeposit, feeFactor, switchFee, depositDelayHours, podMinHours, podMaxHours, atmDailyLimit, podMaxLoad, researchMode, wealthShare, moodOn, moodScale, loanFloor, loanIntervalDays, loanMaxTermDays, lateFee, defaultFactor (payment default factor, not used by the bank itself: for guest payments), maxCollectionStage, collectionAnger, bailout, seizureShare. Read bank.profit through BankSettings.ProfitM",
+  "The bank module reads HearthProfile.UnderworldDiscovered and Modules.On(ModuleId.Underworld) for The Black Ledger",
+  "Test conventions found: a yield after Find.TickManager.DebugSetTicksGame is measured from before the jump (use jump; yield 1; yield n), and suite MaxTicks counts jumped ticks",
+  "Buildings spawned by tests need SetFaction(Faction.OfPlayer) to appear in allBuildingsColonist (TillSpot and the pod target use that list)",
+  "BankSilver.Depositable(map) is the one place that decides which silver a deposit may take (beacon range or storage, not forbidden)",
+  "Texture/Keyed: run tools/gen_bank_keys.py after changing any L.T text and commit Keyed/HH_Bank.xml"
+ ],
+ "textures": [
+  "Things/HH/Bank/ATM  Graphic_Multi  draw 1x1 (north/east/south)",
+  "Things/HH/Bank/BankCounter  Graphic_Multi  draw 3x1 (north/east/south)",
+  "Things/HH/Bank/NightSafe  Graphic_Single  draw 1x1",
+  "UI/HH/Bank/Logo_SL_Mutual  UI texture, shown 58-64 px (256x256 recommended)",
+  "UI/HH/Bank/Logo_SL_TooBigToFail  UI texture, shown 58-64 px",
+  "UI/HH/Bank/Logo_SL_ImperialTreasury  UI texture, shown 58-64 px",
+  "UI/HH/Bank/Logo_SL_OrbitalExchange  UI texture, shown 58-64 px",
+  "UI/HH/Bank/Logo_SL_BlackLedger  UI texture, shown 58-64 px",
+  "UI/HH/Bank/Logo_SL_CompoundInterest  UI texture, shown 58-64 px",
+  "UI/HH/Bank/Ottoline  portrait of Clerk Ottoline, shown 48x48 (128x128 recommended)",
+  "UI/HH/Bank/DirectDeposit  gizmo icon of the night safe toggle, 64x64"
+ ],
+ "commit": "8c64a40"
+}

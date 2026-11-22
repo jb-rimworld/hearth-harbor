@@ -7,21 +7,21 @@ public class DetMathTests
 {
     [Theory]
     [InlineData(0.01)] [InlineData(0.5)] [InlineData(1.0)] [InlineData(1.2)] [InlineData(2.0)] [InlineData(100.0)] [InlineData(12345.678)]
-    public void LnMatchesMath(double x) => Assert.InRange(Math.Abs(DetMath.Ln(x) - Math.Log(x)), 0, 1e-12);
+    public void LnMatchesMath(double x) => Assert.InRange(Math.Abs(FinDetMath.Ln(x) - Math.Log(x)), 0, 1e-12);
 
     [Theory]
     [InlineData(-20.0)] [InlineData(-1.0)] [InlineData(0.0)] [InlineData(0.003)] [InlineData(1.0)] [InlineData(4.6)] [InlineData(30.0)]
-    public void ExpMatchesMath(double y) => Assert.InRange(Math.Abs(DetMath.Exp(y) / Math.Exp(y) - 1.0), 0, 1e-12);
+    public void ExpMatchesMath(double y) => Assert.InRange(Math.Abs(FinDetMath.Exp(y) / Math.Exp(y) - 1.0), 0, 1e-12);
 
     [Theory]
     [InlineData(1.2, 1.0 / 60)] [InlineData(100.0, 1.0 / 60)] [InlineData(0.1, 1.0 / 60)] [InlineData(2.0, 10.0)] [InlineData(0.7, 3.5)]
-    public void PowMatchesMath(double x, double y) => Assert.InRange(Math.Abs(DetMath.Pow(x, y) / Math.Pow(x, y) - 1.0), 0, 1e-12);
+    public void PowMatchesMath(double x, double y) => Assert.InRange(Math.Abs(FinDetMath.Pow(x, y) / Math.Pow(x, y) - 1.0), 0, 1e-12);
 
     [Fact] public void PowEdgeCases()
     {
-        Assert.Equal(0.0, DetMath.Pow(0, 0.5));
-        Assert.Equal(1.0, DetMath.Pow(5, 0));
-        Assert.Equal(double.NegativeInfinity, DetMath.Ln(0));
+        Assert.Equal(0.0, FinDetMath.Pow(0, 0.5));
+        Assert.Equal(1.0, FinDetMath.Pow(5, 0));
+        Assert.Equal(double.NegativeInfinity, FinDetMath.Ln(0));
     }
 }
 
