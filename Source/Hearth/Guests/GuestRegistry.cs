@@ -27,6 +27,8 @@ namespace Hearth.Guests
         int nextGroupId = 1;
         public float Renown = StartRenown;
         public float Whispers;
+        /// <summary>Door policy / guest filters (5.9).</summary>
+        public DoorPolicy Door = new DoorPolicy();
         public int GroupsHosted, GuestsHosted, ArrivalsAnnounced;
         public Money LifetimeIncome;
         Dictionary<string, int> goodwillByQuadrum = new Dictionary<string, int>();
@@ -90,6 +92,9 @@ namespace Hearth.Guests
                 ArrivedTick = Find.TickManager.TicksGame, PlannedLeaveTick = plannedLeaveTick, NightsPlanned = g.Kind == StayKind.Overnight ? nights : 0,
             };
             r.Wealth = GuestEconomy.RollWealth(p, g.Faction, Renown, rng);
+            // wealth band of the door policy (N28): re-roll a few times, then clamp into the band
+            for (int i = 0; i < DoorPolicy.Retries && !Door.WealthOk(r.Wealth); i++) r.Wealth = GuestEconomy.RollWealth(p, g.Faction, Renown, rng);
+            r.Wealth = Door.ClampWealth(r.Wealth);
             float days = g.Kind == StayKind.Overnight ? nights + 0.5f : 0.35f;
             r.Budget = forceBudget ?? GuestEconomy.RollBudget(p, r.Wealth, days, g.ByPod, rng);
             r.StartBudget = r.Budget;
@@ -477,14 +482,29 @@ namespace Hearth.Guests
         }
 
         /// <summary>Changes renown, respecting the floor on easy tiers (never below the start value up to Standard Room).</summary>
-        public float ChangeRenown(float delta)
+        public float ChangeRenown(float delta) => ChangeRenown(delta, null);
+
+        public float ChangeRenown(float delta, string reason)
         {
             float before = Renown;
             Renown = Mathf.Clamp(Renown + delta, 0f, 100f);
             float tier = HearthProfile.Current?.Tier ?? 3f;
             if (tier <= 3.001f && Renown < StartRenown && before >= StartRenown) Renown = StartRenown;
             if (tier <= 3.001f && Renown < before && before < StartRenown) Renown = before;
+            if (!reason.NullOrEmpty() && Math.Abs(Renown - before) > 0.0001f) HLog.Info("Inn", $"Renown {Renown - before:+0.0;-0.0} ({reason}) → {Renown:0.0}");
             return Renown - before;
+        }
+
+        /// <summary>Whispers as other modules see them: the Underworld module owns them while it is on; otherwise the Inn keeps its own count.</summary>
+        public float CurrentWhispers => UnderworldOn ? Hearth.Underworld.Underworld.Whispers : Whispers;
+
+        static bool UnderworldOn => Modules.On(ModuleId.Underworld) && Hearth.Underworld.Underworld.Comp != null;
+
+        /// <summary>Raises (or lowers) whispers: forwarded to the Underworld module when it runs, else kept here.</summary>
+        public void AddWhispers(float delta, string reason)
+        {
+            if (UnderworldOn) { Hearth.Underworld.Underworld.AddWhispers(delta, reason); return; }
+            Whispers = Mathf.Clamp(Whispers + delta, 0f, 100f);
         }
 
         static int QuadrumIndex => Find.TickManager.TicksAbs / 900000;
@@ -627,14 +647,14 @@ namespace Hearth.Guests
                 case PawnLostCondition.Killed:
                     r.Log("HH.Inn.Event.Died".TranslateOr("Died during the stay."));
                     ChangeRenown(-Math.Min(3f, HSettings.Get(InnSettings.RenownLossCap) + 1f));
-                    Whispers = Math.Min(100f, Whispers + 4f);
+                    AddWhispers(4f, "guest died during the stay");
                     foreach (var m in Members(g ?? new GuestGroup { Id = -9 })) if (m != r) m.Incidents += 0.03f;
                     r.Settled = true; r.GoodwillPoints = 0;
                     break;
                 case PawnLostCondition.MadePrisoner:
                     r.Log("HH.Inn.Event.Arrested".TranslateOr("Was arrested."));
                     ChangeRenown(-Math.Min(8f, HSettings.Get(InnSettings.RenownLossCap) * 1.5f + 1f));
-                    Whispers = Math.Min(100f, Whispers + 5f);
+                    AddWhispers(5f, "guest arrested");
                     r.Settled = true;
                     break;
                 default:
@@ -812,6 +832,7 @@ namespace Hearth.Guests
             Scribe_Values.Look(ref nextGroupId, "nextGroupId", 1);
             Scribe_Values.Look(ref Renown, "renown", StartRenown);
             Scribe_Values.Look(ref Whispers, "whispers");
+            Scribe_Deep.Look(ref Door, "doorPolicy");
             Scribe_Values.Look(ref GroupsHosted, "groupsHosted");
             Scribe_Values.Look(ref GuestsHosted, "guestsHosted");
             Scribe_Values.Look(ref ArrivalsAnnounced, "arrivalsAnnounced");
@@ -823,6 +844,7 @@ namespace Hearth.Guests
                 records = records ?? new List<GuestRecord>();
                 groups = groups ?? new List<GuestGroup>();
                 goodwillByQuadrum = goodwillByQuadrum ?? new Dictionary<string, int>();
+                Door = Door ?? new DoorPolicy();
                 records.RemoveAll(x => x == null);
                 groups.RemoveAll(x => x == null);
                 Instance = this;

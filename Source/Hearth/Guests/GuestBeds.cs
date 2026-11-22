@@ -108,8 +108,10 @@ namespace Hearth.Guests
             if (!IsGuestBed) return "HH.Inn.GuestBed.Inactive".TranslateOr("Guest bed (inactive while medical, prisoner or slave bed)");
             var q = GuestBedPricing.Quote(Bed);
             if (q == null) return "HH.Inn.GuestBed.Label".TranslateOr("Guest bed");
-            return "HH.Inn.GuestBed.Inspect".TranslateOr("Guest bed: {0} silver/night ({1})")
+            string s = "HH.Inn.GuestBed.Inspect".TranslateOr("Guest bed: {0} silver/night ({1})")
                 .Replace("{0}", q.Price.WholeSilver.ToString()).Replace("{1}", q.Breakdown);
+            string wing = WingStatus.LineAt(parent.Map, parent.Position);
+            return wing == null ? s : s + "\n" + wing;
         }
     }
 

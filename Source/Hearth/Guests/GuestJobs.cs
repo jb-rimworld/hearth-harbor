@@ -305,8 +305,24 @@ namespace Hearth.Guests
                 var sch = Map.GetComponent<MapComponent_HH_GuestScheduler>();
                 var next = sch?.NextArrival();
                 if (next != null) line += "\n" + "HH.Inn.Desk.Next".TranslateOr("Next guests: {0}").Replace("{0}", next.Describe(Map));
+                foreach (var w in WingStatus.Lines(Map)) line += "\n" + w;
             }
+            var door = DoorPolicyHub.Current;
+            if (door != null && !door.IsDefault) line += "\n" + "HH.Inn.Desk.Door".TranslateOr("Door policy: {0}").Replace("{0}", door.AllowAll ? "HH.Inn.Door.Everyone".TranslateOr("Everyone") : string.Join(", ", door.Restricting()));
             return s.NullOrEmpty() ? line : s + "\n" + line;
+        }
+
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach (var g in base.GetGizmos()) yield return g;
+            if (!Modules.On(ModuleId.Inn) || Faction != Faction.OfPlayer) yield break;
+            yield return new Command_Action
+            {
+                defaultLabel = "HH.Inn.Door.Gizmo".TranslateOr("Door policy"),
+                defaultDesc = "HH.Inn.Door.GizmoDesc".TranslateOr("Choose who may stay: factions, xenotypes, gender, age, royal titles, tech level, wealth and kind of stay. Filters apply when guests are planned and generated."),
+                icon = InnTex.DoorPolicy,
+                action = DoorPolicyHub.Open,
+            };
         }
 
         public override void ExposeData()

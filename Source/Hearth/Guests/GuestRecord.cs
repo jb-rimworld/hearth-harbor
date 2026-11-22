@@ -58,6 +58,8 @@ namespace Hearth.Guests
         public bool Insulted;
         public bool SentAway;
         public bool Settled;
+        /// <summary>Shady / outlaw stay (5.2), marked for the Underworld module.</summary>
+        public bool Shady;
         public int GoodwillPoints;
         public string Outcome;
 
@@ -133,6 +135,7 @@ namespace Hearth.Guests
             Scribe_Values.Look(ref Insulted, "insulted");
             Scribe_Values.Look(ref SentAway, "sentAway");
             Scribe_Values.Look(ref Settled, "settled");
+            Scribe_Values.Look(ref Shady, "shady");
             Scribe_Values.Look(ref GoodwillPoints, "goodwillPoints");
             Scribe_Values.Look(ref Outcome, "outcome");
             Scribe_Values.Look(ref Highlight, "highlight");

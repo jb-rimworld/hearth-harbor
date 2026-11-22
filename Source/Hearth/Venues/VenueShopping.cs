@@ -360,36 +360,5 @@ namespace Hearth.ShopsFood
         public override Job TryGiveJob(Pawn guest, GuestInfo info) => VenueShopping.TryVendingJob(guest, info);
     }
 
-    /// <summary>
-    /// Stand-in for the guest brain when the Inn module is not providing one (KONZEPT 5: without Inn, vanilla visitors act as guests).
-    /// Every 90 ticks it offers idle visitors an activity. Silent as soon as GuestApi.Impl exists and the Inn module is on.
-    /// </summary>
-    public static class GuestFallback
-    {
-        /// <summary>Set to false if another module already drives vanilla visitors through GuestActivities.</summary>
-        public static bool Enabled = true;
-        static HashSet<JobDef> idleJobs;
-
-        static bool Idle(Pawn p)
-        {
-            if (p.CurJob == null) return true;
-            if (idleJobs == null) idleJobs = new HashSet<JobDef> { JobDefOf.Wait_Wander, JobDefOf.GotoWander, JobDefOf.Wait, JobDefOf.Wait_MaintainPosture };
-            return idleJobs.Contains(p.CurJobDef) && !p.CurJob.playerForced;
-        }
-
-        public static void Run(Map map)
-        {
-            if (!Enabled || (GuestApi.Impl != null && Modules.On(ModuleId.Inn))) return;
-            int now = Find.TickManager.TicksGame;
-            foreach (var p in GuestApi.GuestsOn(map))
-            {
-                if (now < GuestMemory.NextOffer(p) || !Idle(p) || !p.Awake() || p.Downed) continue;
-                if (!(p.GetLord()?.CurLordToil is LordToil_DefendPoint)) continue;
-                var info = GuestApi.Info(p); if (info == null) continue;
-                GuestMemory.SetNextOffer(p, now + Rand.RangeInclusive(240, 600));
-                var job = GuestActivities.TryPick(p, info);
-                if (job != null) p.jobs.StartJob(job, JobCondition.InterruptOptional);
-            }
-        }
-    }
+    // GuestFallback (the vanilla-visitor activity driver) lives in GuestFallback.cs (owned by the Inn module).
 }

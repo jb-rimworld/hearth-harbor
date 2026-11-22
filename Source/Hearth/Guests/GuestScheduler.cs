@@ -84,7 +84,8 @@ namespace Hearth.Guests
         void Tick()
         {
             int now = Find.TickManager.TicksGame;
-            bool night = OvernightPossible, day = DayVisitsPossible;
+            var door = GuestRegistry.Instance?.Door;
+            bool night = OvernightPossible && (door == null || door.KindOk(StayKind.Overnight)), day = DayVisitsPossible && (door == null || door.KindOk(StayKind.DayVisitor));
             if (!map.IsPlayerHome || (!night && !day))
             {
                 if (forecast.Count > 0) { forecast.Clear(); HLog.Debug("Inn", "Forecast cleared: no guest bed and no venue on " + map); }
@@ -217,13 +218,23 @@ namespace Hearth.Guests
         /// <summary>Weighted by goodwill; never a faction hostile to one that will be (or is) here at the same time (5.8).</summary>
         Faction PickFaction(int from, int to, RngStream rng)
         {
-            var cands = Find.FactionManager.AllFactionsListForReading.Where(f => FactionCanVisit(f, map)).ToList();
+            var door = GuestRegistry.Instance?.Door;
+            var cands = Find.FactionManager.AllFactionsListForReading.Where(f => FactionCanVisit(f, map) && (door == null || door.FactionOk(f))).ToList();
             cands.RemoveAll(f => forecast.Any(g => g.Faction != null && g.Faction.HostileTo(f) && Overlaps(g, from, to)));
             if (cands.Count == 0) return null;
-            float total = cands.Sum(f => 1f + Mathf.Max(0, f.PlayerGoodwill) / 25f);
+            float total = cands.Sum(f => FactionWeight(f));
             double roll = rng.NextDouble() * total;
-            foreach (var f in cands) { roll -= 1f + Mathf.Max(0, f.PlayerGoodwill) / 25f; if (roll <= 0) return f; }
+            foreach (var f in cands) { roll -= FactionWeight(f); if (roll <= 0) return f; }
             return cands[cands.Count - 1];
+        }
+
+        /// <summary>Goodwill weight; with a visible underworld, respectable factions × exp(−N/40), rough ones × (0.2 + N/50) (5.14 Whispers).</summary>
+        public static float FactionWeight(Faction f)
+        {
+            float w = 1f + Mathf.Max(0, f.PlayerGoodwill) / 25f;
+            if (Modules.On(ModuleId.Underworld) && Hearth.Underworld.Underworld.Visible)
+                w *= GuestArrival.IsRoughFaction(f) ? Hearth.Underworld.Underworld.OutlawArrivalFactor : Hearth.Underworld.Underworld.RespectableArrivalFactor;
+            return Mathf.Max(0.01f, w);
         }
 
         static bool Overlaps(PlannedGroup g, int from, int to)
@@ -244,9 +255,11 @@ namespace Hearth.Guests
         bool TryArrive(PlannedGroup g)
         {
             var f = g.Faction;
-            if (!FactionCanVisit(f, map) || EnemyPresent(map, f))
+            var door = GuestRegistry.Instance?.Door;
+            if (door != null && !door.KindOk(g.Kind)) return false;
+            if (!FactionCanVisit(f, map) || EnemyPresent(map, f) || (door != null && !door.FactionOk(f)))
             {
-                var alt = Find.FactionManager.AllFactionsListForReading.Where(x => FactionCanVisit(x, map) && !EnemyPresent(map, x)).ToList();
+                var alt = Find.FactionManager.AllFactionsListForReading.Where(x => FactionCanVisit(x, map) && !EnemyPresent(map, x) && (door == null || door.FactionOk(x))).ToList();
                 if (alt.Count == 0) return false;
                 f = alt.RandomElement();
             }

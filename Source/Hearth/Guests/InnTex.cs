@@ -13,5 +13,7 @@ namespace Hearth.Guests
         public static readonly Texture2D Handling_Accompany = ContentFinder<Texture2D>.Get("UI/HH/Inn/Handling_Accompany", false) ?? BaseContent.BadTex;
         public static readonly Texture2D Handling_Recruit = ContentFinder<Texture2D>.Get("UI/HH/Inn/Handling_Recruit", false) ?? BaseContent.BadTex;
         public static readonly Texture2D SendAway = ContentFinder<Texture2D>.Get("UI/HH/Inn/SendAway", false) ?? BaseContent.BadTex;
+        public static readonly Texture2D DoorPolicy = ContentFinder<Texture2D>.Get("UI/HH/Inn/DoorPolicy", false) ?? BaseContent.BadTex;
+        public static readonly Texture2D NightBell = ContentFinder<Texture2D>.Get("UI/HH/Inn/NightBell", false) ?? BaseContent.BadTex;
     }
 }
