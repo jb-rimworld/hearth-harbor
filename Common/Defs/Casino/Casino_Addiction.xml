@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Gambling addiction: a full citizen of vanilla's chemical addiction system (6.12). -->
+  <ChemicalDef>
+    <defName>HH_GamblingChemical</defName>
+    <label>gambling</label>
+    <addictionHediff>HH_GamblingAddiction</addictionHediff>
+  </ChemicalDef>
+
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>HH_Need_Gambling</defName>
+    <needClass>Hearth.Casino.Need_Gambling</needClass>
+    <label>gambling</label>
+    <description>Because of a gambling addiction, this person needs to sit at a table or a machine regularly. The deeper the addiction, the faster the need falls.</description>
+    <listPriority>34</listPriority>
+    <fallPerDay>0.5</fallPerDay>
+  </NeedDef>
+
+  <HediffDef ParentName="AddictionBase">
+    <defName>HH_GamblingAddiction</defName>
+    <label>gambling addiction</label>
+    <description>The tables have taken hold. Without regular play the withdrawal sets in: bad mood, short temper and, at the deepest stages, gambling sprees. Only time without a single session cures it, and a relapse is easy during the craving period afterwards.\n\nIt costs no silver, only time, mood and nerves.</description>
+    <hediffClass>Hearth.Casino.Hediff_GamblingAddiction</hediffClass>
+    <chemicalNeed>HH_Need_Gambling</chemicalNeed>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+      </li>
+      <li>
+        <label>withdrawal (mild)</label>
+        <statOffsets><MentalBreakThreshold>0.05</MentalBreakThreshold></statOffsets>
+        <socialFightChanceFactor>1.2</socialFightChanceFactor>
+      </li>
+      <li>
+        <label>withdrawal (moderate)</label>
+        <statOffsets><MentalBreakThreshold>0.08</MentalBreakThreshold></statOffsets>
+        <socialFightChanceFactor>1.4</socialFightChanceFactor>
+      </li>
+      <li>
+        <label>withdrawal (strong)</label>
+        <statOffsets><MentalBreakThreshold>0.12</MentalBreakThreshold></statOffsets>
+        <socialFightChanceFactor>1.7</socialFightChanceFactor>
+      </li>
+      <li>
+        <label>withdrawal (severe)</label>
+        <statOffsets><MentalBreakThreshold>0.16</MentalBreakThreshold></statOffsets>
+        <socialFightChanceFactor>2.0</socialFightChanceFactor>
+      </li>
+      <li>
+        <label>withdrawal (extreme)</label>
+        <statOffsets><MentalBreakThreshold>0.20</MentalBreakThreshold></statOffsets>
+        <socialFightChanceFactor>2.5</socialFightChanceFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>HH_GamblingWithdrawal</defName>
+    <workerClass>Hearth.Casino.ThoughtWorker_GamblingWithdrawal</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>gambling withdrawal (mild)</label>
+        <description>I keep thinking about the tables. One game would not hurt.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+      <li>
+        <label>gambling withdrawal (moderate)</label>
+        <description>I cannot concentrate. I need to play.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+      <li>
+        <label>gambling withdrawal (strong)</label>
+        <description>Everything is grey except the wheel.</description>
+        <baseMoodEffect>-22</baseMoodEffect>
+      </li>
+      <li>
+        <label>gambling withdrawal (severe)</label>
+        <description>My hands shake. Somebody must have a deck of cards.</description>
+        <baseMoodEffect>-30</baseMoodEffect>
+      </li>
+      <li>
+        <label>gambling withdrawal (extreme)</label>
+        <description>Nothing else matters.</description>
+        <baseMoodEffect>-40</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>HH_GamblingSpree</defName>
+    <label>gambling spree</label>
+    <category>Misc</category>
+    <colonistsOnly>true</colonistsOnly>
+    <prisonersCanDo>false</prisonersCanDo>
+    <minTicksBeforeRecovery>6000</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>14000</maxTicksBeforeRecovery>
+    <recoveryMtbDays>0.15</recoveryMtbDays>
+    <recoverFromSleep>true</recoverFromSleep>
+    <moodRecoveryThought>Catharsis</moodRecoveryThought>
+    <nameColor>(0.9, 0.75, 0.3)</nameColor>
+    <beginLetterLabel>gambling spree</beginLetterLabel>
+    <beginLetter>{0} cannot stay away from the tables any longer and is going on a gambling spree, ignoring every rule of the drug policy.</beginLetter>
+    <beginLetterDef>NegativeEvent</beginLetterDef>
+    <recoveryMessage>{0} has come down from the gambling spree.</recoveryMessage>
+    <baseInspectLine>Mental state: Gambling spree</baseInspectLine>
+    <escapingPrisonersIgnore>true</escapingPrisonersIgnore>
+  </MentalStateDef>
+
+  <!-- Behaviour of the spree, and the addict's need pulling them off their work at stage 3+. -->
+  <ThinkTreeDef>
+    <defName>HH_GamblingSpreeTree</defName>
+    <insertTag>Humanlike_PostMentalState</insertTag>
+    <insertPriority>100</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalMentalState">
+          <state>HH_GamblingSpree</state>
+          <subNodes>
+            <li Class="Hearth.Casino.JobGiver_GamblingSpree"/>
+            <li Class="JobGiver_WanderColony"/>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <ThinkTreeDef>
+    <defName>HH_GamblingNeedTree</defName>
+    <insertTag>Humanlike_PreMain</insertTag>
+    <insertPriority>60</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="Hearth.Casino.JobGiver_SatisfyGamblingNeed"/>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <!-- Links of the real-life help hint (K28): change them here without touching code. -->
+  <Hearth.Casino.HelpHintDef>
+    <defName>HH_HelpHint_Gambling</defName>
+    <label>gambling help hint</label>
+    <description>Shown quietly on every screen where you gamble.</description>
+    <primaryUrl>https://findahelpline.com</primaryUrl>
+    <primaryLabel>findahelpline.com</primaryLabel>
+    <secondaryUrl>https://www.gamblingtherapy.org</secondaryUrl>
+    <secondaryLabel>gamblingtherapy.org</secondaryLabel>
+  </Hearth.Casino.HelpHintDef>
+</Defs>

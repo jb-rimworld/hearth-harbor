@@ -280,7 +280,7 @@ namespace Hearth.CasinoMath
         {
             public readonly List<int> Player = new List<int>();
             public readonly List<int> Dealer = new List<int>();
-            public bool Doubled, DealerBlackjack, PlayerBlackjack;
+            public bool Doubled, DealerBlackjack, PlayerBlackjack, Done;
             public double Result;                 // net result in stakes
             public BlackjackOutcome Outcome;
             public int PlayerTotal, DealerTotal;
@@ -324,6 +324,35 @@ namespace Hearth.CasinoMath
             return r;
         }
 
+        /// <summary>Deals a hand for an interactive player. Naturals are settled at once (round.Done); otherwise the player acts with Hit / Stand / DoubleDown.</summary>
+        public Round Deal(RngStream rng)
+        {
+            var r = new Round();
+            int c1 = DrawCard(rng), c2 = DrawCard(rng), up = DrawCard(rng), hole = DrawCard(rng);
+            r.Player.Add(c1); r.Player.Add(c2); r.Dealer.Add(up); r.Dealer.Add(hole);
+            bool pBj = (c1 == 1 && c2 == 10) || (c1 == 10 && c2 == 1);
+            bool dBj = (up == 1 && hole == 10) || (up == 10 && hole == 1);
+            r.PlayerBlackjack = pBj; r.DealerBlackjack = dBj;
+            if (dBj) { r.Result = pBj ? 0 : -1; r.Outcome = pBj ? BlackjackOutcome.Push : BlackjackOutcome.DealerBlackjack; Finish(r); }
+            else if (pBj) { r.Result = Rules.BlackjackPays; r.Outcome = BlackjackOutcome.Blackjack; Finish(r); }
+            return r;
+        }
+
+        public void Hit(Round r, RngStream rng)
+        {
+            if (r.Done) return;
+            r.Player.Add(DrawCard(rng));
+            if (HandTotal(r.Player) >= 21) Settle(r, rng);
+        }
+
+        public void Stand(Round r, RngStream rng) { if (!r.Done) Settle(r, rng); }
+
+        public void DoubleDown(Round r, RngStream rng)
+        {
+            if (r.Done) return;
+            r.Doubled = true; r.Player.Add(DrawCard(rng)); Settle(r, rng);
+        }
+
         /// <summary>Plays the dealer's hand and settles the round (also used by the interactive window).</summary>
         public void Settle(Round r, RngStream rng)
         {
@@ -346,7 +375,7 @@ namespace Hearth.CasinoMath
             Finish(r);
         }
 
-        static void Finish(Round r) { Total(r.Player, out r.PlayerTotal, out _); Total(r.Dealer, out r.DealerTotal, out _); }
+        static void Finish(Round r) { Total(r.Player, out r.PlayerTotal, out _); Total(r.Dealer, out r.DealerTotal, out _); r.Done = true; }
 
         /// <summary>Strategy accuracy of a player (KONZEPT 6.6): a = clamp(0.25 + 0.0375·S, 0.25, 1), S = (0.75·Intellect + 0.25·Social)·Consciousness.</summary>
         public static double AccuracyFor(double intellect, double social, double consciousness = 1.0)

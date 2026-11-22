@@ -21,10 +21,10 @@ namespace Hearth.CasinoMath
         public const double RelapseChance = 0.5;
 
         /// <summary>Chance of becoming addicted after a session, given sessions in the last three days (including this one).</summary>
-        public static double AddictionChance(int sessionsInWindow, double p0, double factor)
+        public static double AddictionChance(int sessionsInWindow, double p0, double factor, double growth = Growth, int freeSessions = FreeSessions)
         {
-            if (sessionsInWindow < FreeSessions || p0 <= 0 || factor <= 0) return 0;
-            double p = p0 * Math.Pow(Growth, sessionsInWindow - FreeSessions) * factor;
+            if (sessionsInWindow < freeSessions || p0 <= 0 || factor <= 0) return 0;
+            double p = p0 * Math.Pow(growth, sessionsInWindow - freeSessions) * factor;
             return Math.Min(MaxChance, p);
         }
 

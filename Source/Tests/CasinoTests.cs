@@ -241,6 +241,27 @@ public class BlackjackTests
     }
 
     [Fact]
+    public void InteractiveApiSettlesLikeTheAutoPlayer()
+    {
+        var s = BlackjackSolver.Get(BlackjackRules.Standard, 1.0);
+        var rng = new RngStream(99, 99);
+        double sum = 0; int n = 200_000;
+        for (int i = 0; i < n; i++)
+        {
+            var r = s.Deal(rng);
+            while (!r.Done)
+            {
+                int t = BlackjackSolver.HandTotal(r.Player); bool soft = r.Player.Contains(1) && t != r.Player.Sum();
+                var a = s.BestAction(t, soft, r.Player.Count == 2, r.Dealer[0], out _);
+                if (a == BlackjackAction.Hit) s.Hit(r, rng); else if (a == BlackjackAction.Double) s.DoubleDown(r, rng); else s.Stand(r, rng);
+            }
+            sum += r.Result;
+        }
+        double se = 1.11 / Math.Sqrt(n);
+        Assert.InRange(sum / n, s.ExpectedValue - 5 * se, s.ExpectedValue + 5 * se);
+    }
+
+    [Fact]
     public void RoundResultsAreConsistent()
     {
         var s = BlackjackSolver.Get(BlackjackRules.Standard, 0.7);
@@ -252,7 +273,7 @@ public class BlackjackTests
             if (r.PlayerBlackjack && !r.DealerBlackjack) Assert.Equal(1.5, r.Result, 9);
             if (r.PlayerTotal > 21) Assert.True(r.Result < 0);
             Assert.InRange(r.Result, -2, 2);
-            if (r.Doubled) Assert.Equal(3, r.Player.Count > 2 ? 3 : 3 + (r.Player.Count - 3));
+            if (r.Doubled) Assert.Equal(3, r.Player.Count);
         }
     }
 }

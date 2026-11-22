@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Main tab -->
+  <HH.Tab.Casino>Casino</HH.Tab.Casino>
+  <HH.Casino.TabTitle>Casino</HH.Casino.TabTitle>
+  <HH.Casino.LimitsToggle>Enforce table limits (bets {0}–{1} silver)</HH.Casino.LimitsToggle>
+  <HH.Casino.Houses>Houses</HH.Casino.Houses>
+  <HH.Casino.NoHouses>No guest has gambled yet. A house opens its books with the first buy-in.</HH.Casino.NoHouses>
+  <HH.Casino.HouseOfMap>Casino of {0}</HH.Casino.HouseOfMap>
+  <HH.Casino.Drawer>Drawer: {0}</HH.Casino.Drawer>
+  <HH.Casino.TodayNet>Today: {0}</HH.Casino.TodayNet>
+  <HH.Casino.HouseTip>Guests are playing with {0} silver right now. The house keeps a float of {1} silver; everything above it goes to the colony till when the casino closes.</HH.Casino.HouseTip>
+  <HH.Casino.Games>Games: payout as played against payout as designed</HH.Casino.Games>
+  <HH.Casino.ColGame>Game</HH.Casino.ColGame>
+  <HH.Casino.ColRounds>Rounds</HH.Casino.ColRounds>
+  <HH.Casino.ColStaked>Staked</HH.Casino.ColStaked>
+  <HH.Casino.ColRtp>Payout (actual)</HH.Casino.ColRtp>
+  <HH.Casino.ColExpected>Payout (design)</HH.Casino.ColExpected>
+  <HH.Casino.ColLuck>Luck</HH.Casino.ColLuck>
+  <HH.Casino.ColHouse>House result</HH.Casino.ColHouse>
+  <HH.Casino.Game.Slots>Slot machines</HH.Casino.Game.Slots>
+  <HH.Casino.Game.Roulette>Roulette</HH.Casino.Game.Roulette>
+  <HH.Casino.Game.Blackjack>Blackjack</HH.Casino.Game.Blackjack>
+  <HH.Casino.Game.Poker>Rimdeck</HH.Casino.Game.Poker>
+  <HH.Casino.Gamblers>Colonists who gamble</HH.Casino.Gamblers>
+  <HH.Casino.NoGamblers>Nobody in the colony has played yet.</HH.Casino.NoGamblers>
+
+  <!-- Devices -->
+  <HH.Casino.InspectGame>{0}: {1} of {2} seats taken</HH.Casino.InspectGame>
+  <HH.Casino.InspectBooks>{0} rounds · house {1} · actual edge {2} % (designed {3} %)</HH.Casino.InspectBooks>
+  <HH.Casino.Staffed>croupier at work</HH.Casino.Staffed>
+  <HH.Casino.NoCroupier>no croupier</HH.Casino.NoCroupier>
+  <HH.Casino.Vol.Low>low volatility</HH.Casino.Vol.Low>
+  <HH.Casino.Vol.Medium>medium volatility</HH.Casino.Vol.Medium>
+  <HH.Casino.Vol.High>high volatility</HH.Casino.Vol.High>
+  <HH.Casino.VolDesc>Click to change how the machine pays. Hit rate {0}, spread {1} stakes, jackpot ×{2}, payout {3} % in every setting.</HH.Casino.VolDesc>
+  <HH.Casino.OpenToGuests>Open to guests</HH.Casino.OpenToGuests>
+  <HH.Casino.OpenToGuestsDesc>If off, only colonists may use this device.</HH.Casino.OpenToGuestsDesc>
+  <HH.Casino.TryDemo>Try it (practice chips)</HH.Casino.TryDemo>
+  <HH.Casino.TryDemoDesc>Play a few rounds yourself with practice chips. No silver is involved.</HH.Casino.TryDemoDesc>
+  <HH.Casino.Simulate>Simulate 10,000 rounds</HH.Casino.Simulate>
+  <HH.Casino.SimulateDesc>Pit Boss: plays 10,000 rounds on paper with the current odds and reports what comes back. Nothing is booked.</HH.Casino.SimulateDesc>
+  <HH.Casino.SimResult>Pit Boss: {0} rounds on paper paid back {1} % of the stakes (designed: {2} %).</HH.Casino.SimResult>
+  <HH.Casino.LuckNoData>too few rounds so far</HH.Casino.LuckNoData>
+  <HH.Casino.LuckNormal>normal luck</HH.Casino.LuckNormal>
+  <HH.Casino.LuckHouseUp>house lucky</HH.Casino.LuckHouseUp>
+  <HH.Casino.LuckHouseDown>house unlucky</HH.Casino.LuckHouseDown>
+  <HH.Casino.LuckHouseWayUp>house very lucky</HH.Casino.LuckHouseWayUp>
+  <HH.Casino.LuckHouseWayDown>house very unlucky</HH.Casino.LuckHouseWayDown>
+  <HH.Casino.BigWin>{0} hit a big win at the {2}: {1} silver worth of chips.</HH.Casino.BigWin>
+
+  <!-- Practice window -->
+  <HH.Casino.DemoInfo>Practice chips only, nothing here costs silver. Odds as set in this colony: {0}. Your stake is sealed: reloading does not change the result.</HH.Casino.DemoInfo>
+  <HH.Casino.DemoChips>Practice chips: {0} · rounds: {1}</HH.Casino.DemoChips>
+  <HH.Casino.DemoReset>Start over</HH.Casino.DemoReset>
+  <HH.Casino.DemoStake>Stake</HH.Casino.DemoStake>
+  <HH.Casino.DemoBet>Bet</HH.Casino.DemoBet>
+  <HH.Casino.DemoBroke>You are out of practice chips for that stake.</HH.Casino.DemoBroke>
+  <HH.Casino.DemoPays>pays ×{0}</HH.Casino.DemoPays>
+  <HH.Casino.DemoNoWin>no win</HH.Casino.DemoNoWin>
+  <HH.Casino.DemoPoker>You sit with three regulars. Everybody antes the stake; the house keeps the rake.</HH.Casino.DemoPoker>
+  <HH.Casino.DemoStats>Paid back so far: {0} % of the stakes (designed: {1} %)</HH.Casino.DemoStats>
+  <HH.Casino.Spin>Spin</HH.Casino.Spin>
+  <HH.Casino.Deal>Deal</HH.Casino.Deal>
+  <HH.Casino.Hit>Hit</HH.Casino.Hit>
+  <HH.Casino.Stand>Stand</HH.Casino.Stand>
+  <HH.Casino.DoubleDown>Double</HH.Casino.DoubleDown>
+
+  <!-- Help hint (K28): short, quiet, never funny -->
+  <HH.Casino.HelpHint>If gambling is a problem in real life, help is available: {0}</HH.Casino.HelpHint>
+  <HH.Casino.HelpHintTip>Click to open the helpline. Right click to hide this line (it can be turned back on in the mod settings).</HH.Casino.HelpHintTip>
+  <HH.Casino.HideHint>Hide this hint</HH.Casino.HideHint>
+  <HH.Casino.OpenHelpline>Open the helpline</HH.Casino.OpenHelpline>
+
+  <!-- Addiction -->
+  <HH.Casino.AddictionBrackets>stage {0}, {1} of {2} days clean</HH.Casino.AddictionBrackets>
+  <HH.Casino.AddictionTip>Addiction stage {0}. Days without any session: {1} of {2} needed. Needs about {3} sessions per day to stay content. Only abstinence cures it.</HH.Casino.AddictionTip>
+  <HH.Casino.AddictedTitle>{0}: gambling addiction</HH.Casino.AddictedTitle>
+  <HH.Casino.AddictedText>{0} has played one session too many and is now addicted to gambling. Without regular play the withdrawal will wear on {PAWN_objective}: bad mood and, in the deeper stages, gambling sprees. No silver was lost, the chips were free, but time and nerves are not.\n\nOnly a long stretch without any session cures it. You can change what {PAWN_nameDef} may do in the drug policy (the row "gambling").</HH.Casino.AddictedText>
+  <HH.Casino.RelapseTitle>{0}: relapse</HH.Casino.RelapseTitle>
+  <HH.Casino.RelapseText>{0} sat down at the tables during the craving period after the cure, and the addiction is back (one stage lower than before). Another long stretch without any session is needed.</HH.Casino.RelapseText>
+  <HH.Casino.CuredMessage>{0} has kicked the gambling habit. For the next {1} days any session risks a relapse.</HH.Casino.CuredMessage>
+  <HH.Casino.SpreeReason>gambling withdrawal</HH.Casino.SpreeReason>
+  <HH.Casino.Counter>{0} of {1} sessions in 3 days.</HH.Casino.Counter>
+  <HH.Casino.CounterNext>{0} of {1} sessions in 3 days – the next one risks addiction.</HH.Casino.CounterNext>
+  <HH.Casino.CounterRisk>{0} sessions in 3 days – the next one carries an addiction risk of {1}.</HH.Casino.CounterRisk>
+  <HH.Casino.CounterAddicted>Addicted. {0} sessions in the last 3 days.</HH.Casino.CounterAddicted>
+</LanguageData>

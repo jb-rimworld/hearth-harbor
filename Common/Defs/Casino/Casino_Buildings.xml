@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Own build menu category (the shared Hospitality category may replace it later). -->
+  <DesignationCategoryDef>
+    <defName>HH_Casino</defName>
+    <label>casino</label>
+    <description>Slot machines, gaming tables and a cashier's cage.</description>
+    <order>455</order>
+  </DesignationCategoryDef>
+
+  <!-- ===================== Slot machine ===================== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_SlotMachine</defName>
+    <label>one-armed muffalo</label>
+    <description>A coin-guzzling slot machine with three reels and a lever shaped like a muffalo horn. The odds are fixed by the house, the lights are not. Guests play without a croupier; colonists play with worthless house chips.\n\nChoose its volatility (how often and how big it pays) with the button on the machine.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/HH/Casino/SlotMachine</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData><volume>(0.7, 0.6, 0.5)</volume></shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <fillPercent>0.45</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <size>(1,1)</size>
+    <tickerType>Normal</tickerType>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designationCategory>HH_Casino</designationCategory>
+    <uiOrder>2100</uiOrder>
+    <thingCategories><li>BuildingsJoy</li></thingCategories>
+    <researchPrerequisites><li>HH_Casino_Slots</li></researchPrerequisites>
+    <costList>
+      <Steel>90</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToBuild>9000</WorkToBuild>
+      <Flammability>0.7</Flammability>
+      <Mass>60</Mass>
+      <Beauty>3</Beauty>
+      <JoyGainFactor>1.3</JoyGainFactor>
+    </statBases>
+    <building>
+      <joyKind>HH_Gambling</joyKind>
+      <paintable>true</paintable>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(255,190,90,0)</glowColor>
+      </li>
+      <li Class="Hearth.Casino.CompProperties_CasinoGame">
+        <game>Slots</game>
+        <seats>1</seats>
+        <needsCroupier>false</needsCroupier>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ===================== Tables ===================== -->
+  <ThingDef Name="HH_CasinoTableBase" ParentName="BuildingBase" Abstract="True">
+    <thingClass>Building</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <fillPercent>0.40</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>60</pathCost>
+    <size>(3,2)</size>
+    <tickerType>Normal</tickerType>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designationCategory>HH_Casino</designationCategory>
+    <thingCategories><li>BuildingsJoy</li></thingCategories>
+    <researchPrerequisites><li>HH_Casino_Tables</li></researchPrerequisites>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>12000</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Mass>45</Mass>
+      <Beauty>2</Beauty>
+      <JoyGainFactor>1.3</JoyGainFactor>
+    </statBases>
+    <building>
+      <joyKind>HH_Gambling</joyKind>
+      <buildingSizeCategory>Large</buildingSizeCategory>
+      <paintable>true</paintable>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="HH_CasinoTableBase">
+    <defName>HH_RouletteTable</defName>
+    <label>roulette table</label>
+    <description>A felt layout with a wheel set into it. Place your chips; the ball decides. Needs a croupier (a colonist working the Serving work type) to run for guests. Colonists can play for joy with house chips without one.</description>
+    <graphicData>
+      <texPath>Things/HH/Casino/RouletteTable</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+      <shadowData><volume>(2.7, 0.4, 1.7)</volume></shadowData>
+    </graphicData>
+    <uiOrder>2110</uiOrder>
+    <costList>
+      <Steel>60</Steel>
+      <WoodLog>80</WoodLog>
+      <Cloth>40</Cloth>
+    </costList>
+    <comps>
+      <li Class="Hearth.Casino.CompProperties_CasinoGame">
+        <game>Roulette</game>
+        <seats>4</seats>
+        <needsCroupier>true</needsCroupier>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="HH_CasinoTableBase">
+    <defName>HH_BlackjackTable</defName>
+    <label>blackjack table</label>
+    <description>A half-moon table with a card shoe. Get closer to 21 than the dealer without going over. Good players lose less; the house edge depends on the rules and on how well the player plays. Needs a croupier for guests.</description>
+    <graphicData>
+      <texPath>Things/HH/Casino/BlackjackTable</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+      <shadowData><volume>(2.7, 0.4, 1.7)</volume></shadowData>
+    </graphicData>
+    <uiOrder>2120</uiOrder>
+    <costList>
+      <WoodLog>70</WoodLog>
+      <Cloth>50</Cloth>
+    </costList>
+    <comps>
+      <li Class="Hearth.Casino.CompProperties_CasinoGame">
+        <game>Blackjack</game>
+        <seats>4</seats>
+        <needsCroupier>true</needsCroupier>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="HH_CasinoTableBase">
+    <defName>HH_PokerTable</defName>
+    <label>Rimdeck table</label>
+    <description>The house deals Rimdeck, a card game played against the other players: the house only keeps a small rake from every pot. Clever and sociable players win more often. Replaces the vanilla poker table. Needs a croupier for guests.</description>
+    <graphicData>
+      <texPath>Things/HH/Casino/PokerTable</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+      <shadowData><volume>(2.7, 0.4, 1.7)</volume></shadowData>
+    </graphicData>
+    <uiOrder>2130</uiOrder>
+    <costList>
+      <WoodLog>60</WoodLog>
+      <Cloth>40</Cloth>
+    </costList>
+    <comps>
+      <li Class="Hearth.Casino.CompProperties_CasinoGame">
+        <game>Poker</game>
+        <seats>4</seats>
+        <needsCroupier>true</needsCroupier>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ===================== Cashier's cage ===================== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_CashierCage</defName>
+    <label>cashier's cage</label>
+    <description>A barred window where silver becomes chips and back. With a cage in the colony, guests play with chips: they bring about 5 % more and a few leave with chips that are worthless outside the house (the chip float stays in the till). The nightly takings of the casino are put down here as silver.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/HH/Casino/CashierCage</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData><volume>(1.8, 0.6, 1.2)</volume></shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <fillPercent>0.5</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>60</pathCost>
+    <size>(2,2)</size>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designationCategory>HH_Casino</designationCategory>
+    <uiOrder>2140</uiOrder>
+    <thingCategories><li>BuildingsMisc</li></thingCategories>
+    <researchPrerequisites><li>HH_Casino_Tables</li></researchPrerequisites>
+    <costList>
+      <Steel>100</Steel>
+      <WoodLog>40</WoodLog>
+    </costList>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Mass>40</Mass>
+      <Beauty>1</Beauty>
+    </statBases>
+    <building>
+      <paintable>true</paintable>
+    </building>
+    <comps>
+      <li Class="Hearth.CompProperties_TillSpot"/>
+    </comps>
+  </ThingDef>
+
+  <!-- ===================== Chips ===================== -->
+  <ThingDef>
+    <defName>HH_CasinoChips</defName>
+    <label>casino chip</label>
+    <description>A clay chip stamped with the mark of a house. Worth one silver at the cage that sold it and nothing anywhere else: traders will not touch it and it does not count toward your wealth.</description>
+    <category>Item</category>
+    <thingClass>ThingWithComps</thingClass>
+    <graphicData>
+      <texPath>Things/HH/Casino/Chips</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <altitudeLayer>Item</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <selectable>true</selectable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <stackLimit>200</stackLimit>
+    <tradeability>None</tradeability>
+    <pathCost>14</pathCost>
+    <statBases>
+      <MarketValue>0</MarketValue>
+      <Mass>0.005</Mass>
+    </statBases>
+  </ThingDef>
+
+  <!-- The virtual drug "gambling": it exists only so that drug policies can manage gambling. Never made, found or traded. -->
+  <ThingDef>
+    <defName>HH_GamblingSession</defName>
+    <label>gambling</label>
+    <description>A session at the tables, managed through drug policies like a drug: whether it is allowed for fun, how often, and whether people who are addicted may play. This is not an item and never exists in the world.</description>
+    <category>Item</category>
+    <thingClass>ThingWithComps</thingClass>
+    <graphicData>
+      <texPath>Things/HH/Casino/Chips</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <altitudeLayer>Item</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <selectable>false</selectable>
+    <stackLimit>1</stackLimit>
+    <tradeability>None</tradeability>
+    <statBases>
+      <MarketValue>0</MarketValue>
+      <Mass>0</Mass>
+    </statBases>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <preferability>NeverForNutrition</preferability>
+      <drugCategory>Social</drugCategory>
+      <joyKind>HH_Gambling</joyKind>
+      <joy>0.2</joy>
+      <nurseable>false</nurseable>
+      <ingestCommandString>Gamble</ingestCommandString>
+      <ingestReportString>Gambling.</ingestReportString>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>HH_GamblingChemical</chemical>
+        <addictiveness>0.01</addictiveness>
+        <minToleranceToAddict>0</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0</existingAddictionSeverityOffset>
+        <needLevelOffset>0.35</needLevelOffset>
+        <listOrder>900</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>
