@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Guest's verdict on last night's room (5.11): (room score + 10·comfort − expected score) / 15 -->
+  <ThoughtDef>
+    <defName>HH_GuestRoomVerdict</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>awful guest room</label>
+        <description>I paid for that? I have slept better in a ditch, and the ditch did not charge.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+      <li>
+        <label>disappointing guest room</label>
+        <description>The room was below what I expected. Well below.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+      <li>
+        <label>so-so guest room</label>
+        <description>The room was fine, if you squint.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>decent guest room</label>
+        <description>A proper bed and a door that closes. That is all I ask.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>good guest room</label>
+        <description>A lovely room. I slept well.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>splendid guest room</label>
+        <description>A room like that makes the whole journey worth it.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HH_GuestAccompanied</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>0.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>awkward company</label>
+        <description>One of the hosts kept me company. We talked about the weather. At length.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>good company</label>
+        <description>One of the hosts showed me around and kept me company.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>charming company</label>
+        <description>The host was a delight. I may have laughed out loud.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>wonderful company</label>
+        <description>I have not been looked after this well in years.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HH_GuestPestered</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>pestered to join</label>
+        <description>I came here to sleep, not to be recruited.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+        <baseOpinionOffset>-15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HH_HostedWell</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>4</durationDays>
+    <stackLimit>6</stackLimit>
+    <stackLimitForSameOtherPawn>6</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>good talks</label>
+        <description>We have had some good conversations.</description>
+        <baseMoodEffect>0</baseMoodEffect>
+        <baseOpinionOffset>6</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

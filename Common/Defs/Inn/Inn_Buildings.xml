@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Front desk (6.2): guests check in here; the nightly takings are put down next to it (till spot). -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_FrontDesk</defName>
+    <label>front desk</label>
+    <description>A counter with a ledger, a bell and a pen on a string. Arriving guests check in here, pay their first night and are given a bed. The day's takings are put down beside it at midnight.\n\nWithout a front desk guests find their rooms on their own, which they do with visible reluctance.</description>
+    <thingClass>Hearth.Guests.Building_FrontDesk</thingClass>
+    <graphicData>
+      <texPath>Things/HH/Inn/FrontDesk</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,1)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <size>(2,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.4</staticSunShadowHeight>
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <stuffCategories>
+      <li>Woody</li>
+      <li>Metallic</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>40</costStuffCount>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+      <Mass>20</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>2</Beauty>
+    </statBases>
+    <designationCategory>Furniture</designationCategory>
+    <uiOrder>2950</uiOrder>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <building>
+      <paintable>true</paintable>
+    </building>
+    <comps>
+      <li Class="Hearth.CompProperties_TillSpot" />
+    </comps>
+  </ThingDef>
+</Defs>

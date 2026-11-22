@@ -1,0 +1,236 @@
+// SPDX-License-Identifier: MIT
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using RimWorld;
+using UnityEngine;
+using Verse;
+using Verse.AI;
+using Verse.AI.Group;
+
+namespace Hearth.Guests
+{
+    public sealed class GuestArrivalRequest
+    {
+        public Faction Faction;
+        public int Size = 2;
+        public StayKind Kind = StayKind.Overnight;
+        public int Nights = 1;
+        public bool? ForceDigital;
+        public Money? ForceBudget;
+        public bool? ForcePod;
+        public bool Silent;
+        public int? StayTicksOverride;
+    }
+
+    /// <summary>
+    /// Arrival of a guest group (5.4) as its own incident, fired by the scheduler (never by the storyteller: base chance 0).
+    /// Also usable from the dev "execute incident" menu.
+    /// </summary>
+    public class IncidentWorker_HH_GuestGroupArrival : IncidentWorker
+    {
+        public static GuestArrivalRequest Pending;
+        public static GuestGroup LastGroup;
+
+        protected override bool CanFireNowSub(IncidentParms parms)
+        {
+            if (!Modules.On(ModuleId.Inn)) return false;
+            var map = parms.target as Map;
+            return map != null && map.IsPlayerHome;
+        }
+
+        protected override bool TryExecuteWorker(IncidentParms parms)
+        {
+            var map = (Map)parms.target;
+            var req = Pending ?? new GuestArrivalRequest
+            {
+                Faction = parms.faction,
+                Kind = GuestBeds.CountOn(map) > 0 ? StayKind.Overnight : StayKind.DayVisitor,
+                Size = Rand.RangeInclusive(1, 3),
+                Nights = Rand.RangeInclusive(Math.Max(1, HSettings.GetInt(InnSettings.StayNightsMin)), Math.Max(1, HSettings.GetInt(InnSettings.StayNightsMax))),
+            };
+            Pending = null;
+            if (req.Faction == null) req.Faction = parms.faction;
+            if (req.Faction == null)
+            {
+                var c = Find.FactionManager.AllFactionsListForReading.Where(f => MapComponent_HH_GuestScheduler.FactionCanVisit(f, map) && !MapComponent_HH_GuestScheduler.EnemyPresent(map, f)).ToList();
+                if (c.Count == 0) return false;
+                req.Faction = c.RandomElement();
+            }
+            LastGroup = GuestArrival.Arrive(map, req);
+            return LastGroup != null;
+        }
+    }
+
+    public static class GuestArrival
+    {
+        /// <summary>Fires the incident def (so other mods see a normal incident) with this request.</summary>
+        public static GuestGroup TryFire(Map map, GuestArrivalRequest req)
+        {
+            var def = InnDefOf.HH_GuestGroupArrival;
+            var parms = new IncidentParms { target = map, faction = req.Faction, forced = true, points = 100f };
+            IncidentWorker_HH_GuestGroupArrival.Pending = req;
+            IncidentWorker_HH_GuestGroupArrival.LastGroup = null;
+            bool ok = Guard.Run(ModuleId.Inn, "Inn.ArrivalIncident", () => def.Worker.TryExecute(parms), false);
+            IncidentWorker_HH_GuestGroupArrival.Pending = null;
+            return ok ? IncidentWorker_HH_GuestGroupArrival.LastGroup : null;
+        }
+
+        /// <summary>Generates, spawns and registers the group and gives it its lord. Returns null when nothing could be spawned.</summary>
+        public static GuestGroup Arrive(Map map, GuestArrivalRequest req)
+        {
+            var f = req.Faction;
+            if (f == null || !MapComponent_HH_GuestScheduler.FactionCanVisit(f, map)) { HLog.Warn("Inn", "Arrival refused: faction cannot visit (" + f + ")"); return null; }
+            var pawns = GeneratePawns(f, map, Math.Max(1, req.Size));
+            if (pawns.Count == 0) { HLog.Warn("Inn", "Arrival: no pawns could be generated for " + f.Name); return null; }
+
+            IntVec3 target = TargetSpot(map);
+            bool pod = req.ForcePod ?? false;
+            IntVec3 entry = IntVec3.Invalid;
+            if (!pod)
+            {
+                entry = EntryCellNear(map, target, out int dist);
+                bool canPod = f.def.techLevel >= TechLevel.Industrial;
+                if (canPod && (!entry.IsValid || dist > HSettings.GetInt(InnSettings.PodDistance))) pod = true;
+                if (!entry.IsValid && !canPod && !RCellFinder.TryFindRandomPawnEntryCell(out entry, map, CellFinder.EdgeRoadChance_Neutral)) { Discard(pawns); return null; }
+            }
+            if (!pod && !entry.IsValid) { Discard(pawns); return null; }
+
+            var reg = GuestRegistry.Instance;
+            var group = reg.NewGroup(f, map, req.Kind, pod);
+            int now = Find.TickManager.TicksGame;
+            int leave;
+            if (req.StayTicksOverride.HasValue) leave = now + req.StayTicksOverride.Value;
+            else if (req.Kind == StayKind.Overnight) leave = GuestRegistry.PlannedCheckout(map, Math.Max(1, req.Nights));
+            else
+            {
+                map.GetComponent<MapComponent_HH_GuestScheduler>().OpeningWindow(out int open, out int close);
+                float h = GenLocalDate.HourFloat(map);
+                float stayH = Mathf.Clamp(Rand.Range(3f, 6f), 1f, Mathf.Max(1f, close - 1f - h));
+                leave = now + (int)(stayH * 2500);
+            }
+
+            if (pod)
+            {
+                IntVec3 drop = DropSpotNear(map, target);
+                DropPodUtility.DropThingsNear(drop, map, pawns.Cast<Thing>(), 110, canInstaDropDuringInit: false, leaveSlag: false, canRoofPunch: false, forbid: false, allowFogged: false, faction: f);
+            }
+            else
+            {
+                foreach (var p in pawns) GenSpawn.Spawn(p, CellFinder.RandomClosewalkCellNear(entry, map, 4), map);
+            }
+            foreach (var p in pawns) reg.Register(p, group, map, req.Nights, leave, req.ForceDigital, req.ForceBudget);
+            var desk = reg.FindDesk(map);
+            IntVec3 spot = desk != null ? desk.InteractionCell : target;
+            LordMaker.MakeNewLord(f, new LordJob_HH_GuestStay(f, spot, group.Id), map, pawns);
+            if (!req.Silent) Announce(map, group, pawns);
+            HLog.Info("Inn", $"Guests arrived on {map}: {pawns.Count}× {f.Name}, {req.Kind}, nights {req.Nights}, by {(pod ? "drop pod" : "foot")}");
+            return group;
+        }
+
+        static void Discard(List<Pawn> pawns) { foreach (var p in pawns) if (!p.Spawned && !p.Destroyed) Find.WorldPawns.PassToWorld(p, RimWorld.Planet.PawnDiscardDecideMode.Discard); }
+
+        static PawnKindDef PickKind(Faction f)
+        {
+            var maker = f.def.pawnGroupMakers?.Where(m => m.kindDef == PawnGroupKindDefOf.Peaceful).RandomElementWithFallback();
+            IEnumerable<PawnGenOption> opts = maker?.options;
+            if (opts == null || !opts.Any())
+            {
+                var trader = f.def.pawnGroupMakers?.FirstOrDefault(m => m.kindDef == PawnGroupKindDefOf.Trader);
+                opts = trader?.guards;
+            }
+            var list = opts?.Where(o => o.kind?.RaceProps?.Humanlike == true && !o.kind.factionLeader).ToList();
+            if (list == null || list.Count == 0) return f.RandomPawnKind();
+            return list.RandomElementByWeight(o => o.selectionWeight).kind;
+        }
+
+        static List<Pawn> GeneratePawns(Faction f, Map map, int size)
+        {
+            var res = new List<Pawn>();
+            for (int i = 0; i < size; i++)
+            {
+                try
+                {
+                    var kind = PickKind(f);
+                    if (kind == null || !kind.RaceProps.Humanlike) continue;
+                    var req = new PawnGenerationRequest(kind, f, PawnGenerationContext.NonPlayer, tile: map.Tile, mustBeCapableOfViolence: false,
+                        developmentalStages: DevelopmentalStage.Adult, allowFood: true);
+                    var p = PawnGenerator.GeneratePawn(req);
+                    if (p == null) continue;
+                    if (p.IsCreepJoiner || p.IsMutant || p.IsPrisoner || p.IsSlave || !p.RaceProps.Humanlike) { Find.WorldPawns.PassToWorld(p, RimWorld.Planet.PawnDiscardDecideMode.Discard); continue; }
+                    res.Add(p);
+                }
+                catch (Exception e) { HLog.Error("Inn", "Guest generation failed for " + f?.Name, e); }
+            }
+            return res;
+        }
+
+        /// <summary>Where guests head first: the front desk, else a guest bed, else the colony centre.</summary>
+        public static IntVec3 TargetSpot(Map map)
+        {
+            var desk = GuestRegistry.Instance?.FindDesk(map);
+            if (desk != null) return desk.InteractionCell;
+            var bed = GuestBeds.On(map).FirstOrDefault();
+            if (bed != null) return bed.Position;
+            var v = Venues.All(map).FirstOrDefault();
+            if (v != null) return v.Sign.Position;
+            var col = map.mapPawns.FreeColonistsSpawned.FirstOrDefault();
+            return col?.Position ?? map.Center;
+        }
+
+        /// <summary>Nearest reachable, unfogged edge cell to the target (5.13 "nearest reachable edge to the sign").</summary>
+        public static IntVec3 EntryCellNear(Map map, IntVec3 target, out int distance)
+        {
+            distance = int.MaxValue;
+            var cands = new List<IntVec3>();
+            var rect = CellRect.WholeMap(map);
+            foreach (var c in rect.EdgeCells)
+            {
+                if ((c.x + c.z) % 3 != 0) continue;
+                if (!c.Standable(map) || c.Fogged(map) || c.Roofed(map)) continue;
+                cands.Add(c);
+            }
+            cands.Sort((a, b) => a.DistanceToSquared(target).CompareTo(b.DistanceToSquared(target)));
+            int tries = 0;
+            foreach (var c in cands)
+            {
+                if (++tries > 40) break;
+                if (map.reachability.CanReach(c, target, PathEndMode.OnCell, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly)))
+                {
+                    distance = (int)c.DistanceTo(target);
+                    return c;
+                }
+            }
+            return IntVec3.Invalid;
+        }
+
+        static IntVec3 DropSpotNear(Map map, IntVec3 target)
+        {
+            if (DropCellFinder.TryFindDropSpotNear(target, map, out var c, allowFogged: false, canRoofPunch: false, allowIndoors: false)) return c;
+            return DropCellFinder.TradeDropSpot(map);
+        }
+
+        static void Announce(Map map, GuestGroup g, List<Pawn> pawns)
+        {
+            if (!HSettings.GetBool(InnSettings.ArrivalNotice)) return;
+            var reg = GuestRegistry.Instance;
+            int budget = 0;
+            foreach (var p in pawns) { var r = reg.Get(p); if (r != null) budget += r.Budget.WholeSilver; }
+            string names = pawns.Count == 1 ? pawns[0].LabelShort : string.Join(", ", pawns.Take(pawns.Count - 1).Select(p => p.LabelShort)) + " " + "HH.Inn.And".TranslateOr("and") + " " + pawns[pawns.Count - 1].LabelShort;
+            string stay = g.Kind == StayKind.Overnight
+                ? "HH.Inn.Arrival.Overnight".TranslateOr("They want to stay the night.")
+                : "HH.Inn.Arrival.Day".TranslateOr("They have come for the day.");
+            string text = "HH.Inn.Arrival.Text".TranslateOr("{0} from {1} have arrived. {2} Between them they carry about {3} silver.")
+                .Replace("{0}", names).Replace("{1}", g.Faction.Name).Replace("{2}", stay).Replace("{3}", budget.ToString());
+            if (reg.ArrivalsAnnounced < 3)
+            {
+                reg.ArrivalsAnnounced++;
+                string extra = reg.FindDesk(map) == null
+                    ? "\n\n" + "HH.Inn.Arrival.TipDesk".TranslateOr("Tip: a front desk lets guests check in properly; without one they find their beds themselves.")
+                    : "";
+                Find.LetterStack.ReceiveLetter("HH.Inn.Arrival.Label".TranslateOr("Guests: {0}").Replace("{0}", g.Faction.Name), text + extra, LetterDefOf.NeutralEvent, new LookTargets(pawns));
+            }
+            else Messages.Message(text, new LookTargets(pawns), MessageTypeDefOf.NeutralEvent, false);
+        }
+    }
+}
