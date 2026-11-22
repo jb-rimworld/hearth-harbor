@@ -1,0 +1,67 @@
+{
+ "summary": "The DLC module is built and tested at commit 20fff08. The in-game suites pass with all DLC (288 checks), Ideology only (198), Royalty+Biotech (188) and no DLC (105), each with 0 red errors in the player log. The 25 pure-maths unit tests pass. Defs, texts and patches load cleanly without any DLC. The 1.6 and 1.5 builds compile; they were not run in-game. The textures are placeholders, so art is still open.",
+ "implemented": [
+  "Traits (no DLC needed): 14 TraitDefs (Lucky, Unlucky, Gambling-averse, Gambler, Born host, Grump, Penny-pincher, Silver tongue, Eagle eye, Steady hands, Caregiver, Peacemaker, Gossip, Kid magnet) with 20 new pawn StatDefs. Effects: service-quality satisfaction on successful chats with guests, hosting XP x1.5 only while on Hosting work, and trait spawn commonality that follows the serving module and the settings dlc.traitSpawn and dlc.traitRarity.",
+  "Luck API: Hearth.Dlc.LuckApi.RtpShiftFor(Pawn) and AdjustRtp(baseRtp, Pawn). Lucky gets +1.5 pp, Unlucky -1.5 pp (setting dlc.luckShift), capped below 100 % and never lifting an already generous plan. Also WillGamble, JoyFactor, AddictionFactor, LottoTicketIsFree (every 10th ticket for Lucky) and NoteResult (Lucky streak / Of course I lost thoughts). Gambling-averse pawns get -3 in open casino rooms.",
+  "Genes (Biotech only): Hospitable, Addiction-proof reward circuit, Compulsive, Dexterous fingers, Refined palate, Number sense, Tireless smile, plus Silver tongue and High roller. Tireless smile really slows rest drain by 0.7 while Serving (Harmony on Need_Rest.NeedInterval). Gene defs are gated per element, so they do not load without Biotech.",
+  "Public hooks for other modules: Hearth.Dlc.DlcApi (service quality, guest expectation, tip factor, fraud detection, theft, brawl risk, rumour spread, care progress, bank fee factor, negotiation, recruit price, table skill, dexterity, dish quality lift). The full table is in docs/DLC.md.",
+  "Indulgences and paid ascension (Ideology): two IssueDefs with five PreceptDefs each (Not a thing, Abhorrent, Disapproved, Accepted, Sacred), thoughts through vanilla precept comps, and history events HH_BoughtIndulgence and HH_BoughtAscension. 10 IndulgenceDefs: Express Absolution, Minor Mercy, Certificate of Unshaken Faith, Greater Mercy, ascension ranks I-IV, Reform Tithe, and Psychic Ascension (added by a patch only when Royalty and Ideology are both active).",
+  "Purchases: IndulgenceApi (CanBuy, PriceFor, TryBuy, TempleBalance) with price = list price x factor x stance x 1.5^repeats and the quadrum/year/colony/ideology caps. Payment goes through Payments, then colony silver. Money lands in the ledger accounts faith:divine:<ideoId>, faith:faction:<id> (+goodwill) or house:temple:<ideoId>. A gizmo on vanilla altars, ideograms and the guest altar buys for a selected colonist; a second gizmo switches where colonist offerings go.",
+  "Ascension effects: ranks are saved per pawn, Sacred gives mood +1..+4 and +5 opinion of higher ranks, Disapproved gives -5 opinion of ranked co-believers, and Sacred gives +5 % certainty gain (Harmony on Pawn_IdeoTracker.OffsetCertainty).",
+  "AI ideoligions: every non-player, non-fixed ideoligion gets one deterministic meme-weighted roll per theme (setting dlc.aiIdeoPrecepts), also in existing saves. Fixed-faction ideoligions are untouched.",
+  "Guest shrines (11.6): ThingDef HH_GuestAltar (Building_GuestAltar) dedicated to a chosen ideoligion, with an ideology-coloured tint. Quality comes from impressiveness, seats and style share. ShrineApi.Visit gives the PlaceToPray memory (+2 to +6), guest satisfaction, certainty, a donation of 1-3 % of the budget to the temple fund, and a possible indulgence purchase by guests of Accepted/Sacred faiths. PrayActivity is registered with GuestActivities and runs a real HH_PrayAtShrine job. Zealot colonists get -1..-3 'heretic shrine' and ideoligions with diversity precepts react to foreign shrines (setting dlc.shrineReactions).",
+  "Xenotype hospitality (11.5): data def Hearth.XenotypeHospitalityDef (xenotypes, anyGenes/allGenes, light/temperature/filth/indoor preferences, price tolerance, expectation offset, spend factor, interests, rejects, event ids) with 13 entries (11 xenotypes plus Hemogenic and UV-sensitive gene entries). The most specific entry wins; Baseliner is the fallback at priority -95. XenotypeHospitality gives RoomScore, InterestWeight, SpendFactor, and a satisfaction nudge every 6 hours.",
+  "Nobles (11.7, Royalty): NobleDemands computes demands from the RoyalTitleDef (bedroom labels, area, impressiveness, food, price per day) and offers MaxTitleServedBy(room). Incidents HH_NobleStay (paid, 2-5 days, only with a suitable bedroom) and HH_ImperialBilleting (only on hard tiers or with dlc.mandatoryBilleting) send a choice letter. Accepting spawns an Empire party as visitors. Settlement: pay = base x (1+0.15 x seniority/100) x satisfaction factor x money factor, honor for the title holder, billeting compensation 25 % at Overbooked, 10 % at One-Star, 0 at Why?, goodwill penalty for badly lodged guests. Refusing a billeting costs -25 goodwill and -2 honor.",
+  "PrepareRemoval hook: removes our traits from all pawns, drops ranks and resets both money issues to Not a thing.",
+  "tools/run_test_nodlc.sh runs the suites with no DLC (NO_DLC=1, default) or a subset (DLCS=royalty,biotech). All five expansions are listed as known so RimWorld does not auto-enable them.",
+  "Pure maths in Source/Hearth.Core/Pure/DlcMath.cs with 25 xunit tests in Source/Tests/DlcMathTests.cs. Docs in docs/DLC.md. Keyed texts in Common/Languages/English/Keyed/HH_Dlc.xml (39 keys)."
+ ],
+ "not_done": [
+  "Xenotype events (Midnight soiree, Tunnel tour, Truffle fair and so on) are only stored as eventIds strings in the data defs. No IncidentDefs exist for them. The Hemogen minibar, Deathrest lounge and the other xenotype shop items need the Shops/Kitchen modules.",
+  "Noble parties arrive on foot from the map edge. A shuttle arrival, an audience in the throne room and the 'suitable up to' button on the bed UI are missing; the bed button is only available as the API NobleDemands.MaxTitleServedBy.",
+  "Shrine room style (ThingStyleDef per ideology) and the symbol drawn on the altar are not done. The altar only takes the ideology colour. Chapel quality uses a radius of 6 around the altar, not the full Venue-sign room. Pilgrim-season events and demolition effects beyond a goodwill hit are missing; own colonists of the shrine's faith do not use it as an altar yet.",
+  "No window for faith purchases (only float menus on the gizmo). No Bank-tab 'Pay' button, no Offering box building (the temple fund is a ledger account only), and no payout of the temple fund as silver.",
+  "Guests' 'Faith' wish category in budgets, inspections by Anomaly/Odyssey, and the exploit suite from KONZEPT 11.4 are not done.",
+  "Genes use placeholder icons. Genetic xenotype template 'Hospitaller' and the gene symbol pack are not done.",
+  "The 1.6 and 1.5 builds compile but were not run in-game.",
+  "Trait effects that live in other modules (theft, brawl risk, rumour spread, care progress, bank fee, dish quality, croupier skill and so on) exist only as stats and API calls until those modules call them.",
+  "Dev-mode rimworld save/load round trip of the new GameComponent was reviewed but not exercised in-game."
+ ],
+ "tests": [
+  "Unit: Source/Tests/run.sh, 25 tests pass (DlcMathTests: pricing, repeat surcharge, goodwill cap, AI weights, luck cap, shrine maths, noble pay, billeting).",
+  "In-game (tools/run_test.sh, all DLC): smoke, dlc.defs, dlc.traits, dlc.genes, dlc.indulgence, dlc.shrine, dlc.noble, dlc.removal. PASS 288 checks, 0 failures, 0 red errors (run dlc7).",
+  "In-game, no DLC (tools/run_test_nodlc.sh NO_DLC=1): same suites PASS 105 checks; confirms clean load with only Core.",
+  "In-game, Ideology only: PASS 198 checks. Royalty+Biotech: PASS 188 checks.",
+  "dlc.traits covers trait stats, luck shift and cap, lotto every 10th, streak thoughts, module-off neutrality, spawn commonality, hosting XP only while hosting, chat satisfaction and its throttle. dlc.genes covers every gene stat, tireless smile in-game, xenotype matching and room scores. dlc.indulgence covers price, repeat x1.5, caps, minor/greater mercy, stance rules, colony silver, ranks, mood/opinion thoughts, certainty x1.05, psychic ascension, reform tithe, AI roll and the altar comps. dlc.shrine covers the guest altar, prayer effects, the prayer job and colony reactions. dlc.noble covers demands by title, billeting gating, offers and letter, incident eligibility, party arrival, settlement by satisfaction and tier, honor and goodwill. dlc.removal covers PrepareRemoval."
+ ],
+ "contract_requests": [
+  "Contract Guest-Wish: an optional GuestInfo field or API for the wish category 'Faith' (8.16) so indulgences count in guest budgets; for now guests buy at the altar from their remaining budget.",
+  "Contract Venues: a VenueTypeDef for the guest chapel (6.1 sign pattern). HH_GuestAltar works standalone, but its room, opening hours and ratings should come from a Venue Sign once Venues exists.",
+  "Core: a DesignationCategoryDef HH_Hospitality (AGENTS rule 9). The guest altar currently sits in the vanilla Ideology category and should move there when it exists.",
+  "Contract Inn: GuestInfo.PlannedLeaveTick extension is used for the shrine stay bonus (+0.5 day, overnight guests only). The Inn module should honour changes to it."
+ ],
+ "integration_notes": [
+  "The module class DlcModule uses ModuleId.Core (always on). Each feature checks the module it serves: Casino for luck, Inn for hosting and nobles, CityLife for shrines/indulgences/ascension, Bank for the Penny-pincher spawn weight.",
+  "Other modules must call: LuckApi.RtpShiftFor / AdjustRtp (casino payout plan), LuckApi.LottoTicketIsFree (lotto), DlcApi.* (see docs/DLC.md table), NobleDemands.MaxTitleServedBy (bed button), XenotypeHospitality.* (guest rooms/menus), IndulgenceApi and ShrineApi (UI). Nothing else is needed for the already wired effects.",
+  "Patches (Harmony classes, each with an early-out): Patch_TraitCommonality, Patch_HostingLearn, Patch_ServeRest, Patch_ServiceQualityChat, Patch_AscensionCertainty.",
+  "New files outside Source/Hearth/Dlc and Common/Defs/Dlc: Source/Hearth.Core/Pure/DlcMath.cs, Source/Tests/DlcMathTests.cs, Common/Patches/Dlc_IdeologyOffices.xml, Common/Patches/Dlc_PsychicAscension.xml, tools/run_test_nodlc.sh, docs/DLC.md. No existing files were edited.",
+  "XML defs use the class names Hearth.IndulgenceDef, Hearth.XenotypeHospitalityDef and Hearth.PreceptStanceExt (namespace Hearth, like VenueTypeDef), not HH_-prefixed C# names.",
+  "Settings registered: dlc.traitSpawn, dlc.traitRarity, dlc.luckShift, dlc.indulgenceFactor, dlc.indulgenceCapScale, dlc.fundDestination, dlc.aiIdeoPrecepts, dlc.shrineReactions, dlc.nobleStays, dlc.nobleBasePrice, dlc.nobleMoneyFactor (7 tier anchors from 9.2), dlc.mandatoryBilleting, dlc.xenoHospitality. dlc.mandatoryBilleting is my own key; if the Inn module registers the global 'mandatory hospitality' switch, it should replace it.",
+  "Placeholder PNGs live only in the worktree (not committed); regenerate them with uv run --with pillow python3 tools/placeholder_textures.py."
+ ],
+ "textures": [
+  "Things/HH/Dlc/GuestAltar - Graphic_Single, 128x128 (drawn tinted with the ideoligion colour)",
+  "UI/HH/Dlc/Issues/Indulgences - icon 128x128 (issue icon and gizmo icon)",
+  "UI/HH/Dlc/Issues/PaidAscension - icon 128x128 (issue icon and gizmo icon)",
+  "UI/HH/Dlc/Genes/Hospitable - gene icon 128x128",
+  "UI/HH/Dlc/Genes/AddictionProof - gene icon 128x128",
+  "UI/HH/Dlc/Genes/Compulsive - gene icon 128x128",
+  "UI/HH/Dlc/Genes/Dexterous - gene icon 128x128",
+  "UI/HH/Dlc/Genes/RefinedPalate - gene icon 128x128",
+  "UI/HH/Dlc/Genes/NumberSense - gene icon 128x128",
+  "UI/HH/Dlc/Genes/TirelessSmile - gene icon 128x128",
+  "UI/HH/Dlc/Genes/SilverTongue - gene icon 128x128",
+  "UI/HH/Dlc/Genes/HighRoller - gene icon 128x128"
+ ],
+ "commit": "20fff08 (branch wt/dlc, worktree /Users/julius/Documents/Coding/22_RimWorld/HH_wt/dlc)"
+}
