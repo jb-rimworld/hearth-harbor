@@ -51,6 +51,7 @@ namespace Hearth
             RaiseGameInit();
             HLog.Info("Core", "New game: profile copied from template, tier " + Profile.Tier.ToString("0.00"));
             foreach (var m in HearthMod.ModuleObjects) Guard.Run(m.Id, m.GetType().Name + ".OnGameStarted", m.OnGameStarted);
+            Guard.Run(ModuleId.Core, "ResearchGate.Apply", () => ResearchGate.Apply());
             initialized = true;
         }
 
@@ -70,6 +71,7 @@ namespace Hearth
             HLog.Info("Core", $"Game loaded: tier {Profile.Tier:0.00}, modules {string.Join(",", Modules.All)}");
             foreach (var m in HearthMod.ModuleObjects) Guard.Run(m.Id, m.GetType().Name + ".OnGameLoaded", m.OnGameLoaded);
             Caretaker.RunAll();
+            Guard.Run(ModuleId.Core, "ResearchGate.Apply", () => ResearchGate.Apply());
             initialized = true;
         }
 
@@ -91,6 +93,7 @@ namespace Hearth
                 catch (Exception e) { Guard.Fail(m.Id, m.GetType().Name + ".GameTick", e); }
             }
             Caretaker.Tick(t);
+            if (t % 600 == 29) ResearchGate.Apply();   // the research mode may change in the middle of a game
             if (t % 60000 == 1234) Ledger.DailyCheck();
             // midnight (local time of the first player home map): empty tills
             var home = Find.AnyPlayerHomeMap;

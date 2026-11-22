@@ -7,9 +7,9 @@
     <baseCost>700</baseCost>
     <techLevel>Industrial</techLevel>
     <tab>HH_Hospitality</tab>
-    <prerequisites><li>Electricity</li></prerequisites>
-    <researchViewX>6.00</researchViewX>
-    <researchViewY>4.00</researchViewY>
+    <prerequisites><li>HH_Casino_Tables</li><li>Electricity</li></prerequisites>
+    <researchViewX>3.0</researchViewX>
+    <researchViewY>0.7</researchViewY>
   </ResearchProjectDef>
 
   <ResearchProjectDef>
@@ -19,22 +19,8 @@
     <baseCost>500</baseCost>
     <techLevel>Medieval</techLevel>
     <tab>HH_Hospitality</tab>
-    <prerequisites><li>ComplexFurniture</li></prerequisites>
-    <researchViewX>6.00</researchViewX>
-    <researchViewY>3.00</researchViewY>
+    <prerequisites><li>HH_Innkeeping</li><li>ComplexFurniture</li></prerequisites>
+    <researchViewX>2.0</researchViewX>
+    <researchViewY>0.7</researchViewY>
   </ResearchProjectDef>
-
-  <Hearth.VenueTypeDef>
-    <defName>HH_Venue_Casino</defName>
-    <label>casino</label>
-    <description>Slot machines and gaming tables where guests gamble. The house keeps its own cash drawer and pays the colony its takings when it closes.</description>
-    <module>Casino</module>
-    <defaultOpenHour>18</defaultOpenHour>
-    <defaultCloseHour>4</defaultCloseHour>
-    <needsStaff>false</needsStaff>
-    <staffWorkType>HH_Serving</staffWorkType>
-    <priceFactor>1</priceFactor>
-    <iconPath>UI/HH/Casino/VenueCasino</iconPath>
-    <color>(0.78, 0.25, 0.2)</color>
-  </Hearth.VenueTypeDef>
 </Defs>

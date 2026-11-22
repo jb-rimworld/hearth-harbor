@@ -135,7 +135,7 @@
     <modExtensions>
       <li Class="Hearth.Kitchen.StationExtension">
         <kind>Oven</kind>
-        <researchHint>HH_Innkeeping</researchHint><fallbackResearch>HH_Cooking_L2</fallbackResearch>
+        <researchHint>HH_Innkeeping</researchHint>
       </li>
     </modExtensions>
   </ThingDef>
@@ -165,7 +165,7 @@
     <modExtensions>
       <li Class="Hearth.Kitchen.StationExtension">
         <kind>Wok</kind>
-        <researchHint>HH_Gastronomy</researchHint><fallbackResearch>HH_Cooking_L3</fallbackResearch>
+        <researchHint>HH_Gastronomy</researchHint>
       </li>
     </modExtensions>
   </ThingDef>
@@ -194,7 +194,7 @@
     <modExtensions>
       <li Class="Hearth.Kitchen.StationExtension">
         <kind>Fryer</kind>
-        <researchHint>HH_HotelManagement</researchHint><fallbackResearch>HH_Cooking_L3</fallbackResearch>
+        <researchHint>HH_HotelManagement</researchHint>
       </li>
     </modExtensions>
   </ThingDef>
@@ -224,7 +224,7 @@
     <modExtensions>
       <li Class="Hearth.Kitchen.StationExtension">
         <kind>Smoker</kind>
-        <researchHint>HH_Innkeeping</researchHint><fallbackResearch>HH_Cooking_L2</fallbackResearch>
+        <researchHint>HH_Innkeeping</researchHint>
       </li>
     </modExtensions>
   </ThingDef>
@@ -254,7 +254,7 @@
     <modExtensions>
       <li Class="Hearth.Kitchen.StationExtension">
         <kind>Steamer</kind>
-        <researchHint>HH_Gastronomy</researchHint><fallbackResearch>HH_Cooking_L3</fallbackResearch>
+        <researchHint>HH_Gastronomy</researchHint>
       </li>
     </modExtensions>
   </ThingDef>
@@ -308,7 +308,7 @@
     <modExtensions>
       <li Class="Hearth.Kitchen.StationExtension">
         <kind>ColdStation</kind>
-        <researchHint>HH_Gastronomy</researchHint><fallbackResearch>HH_Cooking_L3</fallbackResearch>
+        <researchHint>HH_Gastronomy</researchHint>
       </li>
     </modExtensions>
   </ThingDef>

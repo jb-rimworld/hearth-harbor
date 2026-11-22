@@ -141,11 +141,36 @@ namespace Hearth
         }
     }
 
+    /// <summary>One research mode for the whole mod (KONZEPT 7.1): Full = the trees of Hearth &amp; Harbor and Silverline, Off = everything is available.</summary>
+    public enum CoreResearchMode { Full = 0, Off = 1 }
+
     /// <summary>Settings of the core itself.</summary>
     public static class CoreSettings
     {
+        public const string ResearchModeKey = "core.researchMode";
+
+        /// <summary>
+        /// True when research gating is off for every module: the shared setting core.researchMode = Off, or its older shortcut
+        /// core.noResearchGating (registered by the UI module). Modules combine this with their own old key (bank.researchMode, city.researchMode).
+        /// </summary>
+        public static bool ResearchOff
+        {
+            get
+            {
+                try
+                {
+                    if (HSettings.Find(ResearchModeKey) != null && HSettings.GetInt(ResearchModeKey) == (int)CoreResearchMode.Off) return true;
+                    if (HSettings.Find("core.noResearchGating") != null && HSettings.GetBool("core.noResearchGating")) return true;
+                }
+                catch (Exception e) { HLog.Once("core.researchOff", LogLevel.Warn, "Core", "Could not read the research mode: " + e.Message); }
+                return false;
+            }
+        }
+
         public static void Register()
         {
+            HSettings.Enum(ModuleId.Core, "Research", ResearchModeKey, CoreResearchMode.Full, "Research mode",
+                "Full: the Hearth & Harbor and Silverline research trees gate their buildings and features. Off: everything is available from the start (the dark projects of the underworld still need their discovery).");
             HSettings.Enum(ModuleId.Core, "Randomness", "core.rngAlgorithm", RngAlgorithm.SplitMix64, "Random number algorithm",
                 "Algorithm for all Hearth & Harbor random streams. Same odds for all, only the sequence differs. ChaCha8 is cryptographic (paranoid), SplitMix64 is fastest.", nerd: true);
             HSettings.Bool(ModuleId.Core, "Randomness", "core.sealedFate", false, "Sealed fate",

@@ -63,6 +63,7 @@
     </comps>
     <constructEffect>ConstructMetal</constructEffect>
     <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_City</designatorDropdown>
     <uiOrder>300</uiOrder>
     <researchPrerequisites>
       <li>HH_CityLife_1</li>
@@ -122,6 +123,7 @@
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
     </placeWorkers>
     <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_City</designatorDropdown>
     <uiOrder>310</uiOrder>
     <researchPrerequisites>
       <li>HH_CityLife_1</li>
@@ -173,6 +175,7 @@
       <paintable>true</paintable>
     </building>
     <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_City</designatorDropdown>
     <uiOrder>320</uiOrder>
   </ThingDef>
 
@@ -215,6 +218,7 @@
     </comps>
     <constructEffect>ConstructMetal</constructEffect>
     <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_City</designatorDropdown>
     <uiOrder>330</uiOrder>
     <researchPrerequisites>
       <li>HH_CityLife_2</li>

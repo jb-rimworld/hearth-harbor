@@ -7,8 +7,9 @@
     <baseCost>600</baseCost>
     <techLevel>Medieval</techLevel>
     <tab>HH_Hospitality</tab>
-    <researchViewX>6.0</researchViewX>
-    <researchViewY>2.0</researchViewY>
+    <prerequisites><li>HH_Innkeeping</li></prerequisites>
+    <researchViewX>2.0</researchViewX>
+    <researchViewY>1.4</researchViewY>
   </ResearchProjectDef>
   <ResearchProjectDef>
     <defName>HH_Wellness</defName>
@@ -21,7 +22,7 @@
       <li>HH_Bathhouse</li>
       <li>Electricity</li>
     </prerequisites>
-    <researchViewX>7.0</researchViewX>
-    <researchViewY>2.0</researchViewY>
+    <researchViewX>3.0</researchViewX>
+    <researchViewY>1.4</researchViewY>
   </ResearchProjectDef>
 </Defs>

@@ -35,7 +35,7 @@ namespace Silverline
             HSettings.Float(B, "Services", "bank.podMaxHours", 12f, 0.1f, 48f, "Drop pod delivery: latest (hours)", "... and at most this long.", hardMin: 0.01f, hardMax: 240f);
             HSettings.Silver(B, "Services", "bank.atmDailyLimit", 500, 100, 5000, "ATM daily limit", "The most silver you can take out of ATMs per day.");
             HSettings.Silver(B, "Services", "bank.podMaxLoad", 2000, 500, 20000, "Largest single withdrawal", "The most silver one withdrawal may cover. Drop pods split big loads into several pods.", nerd: true);
-            HSettings.Enum(B, "Research", "bank.researchMode", BankResearchMode.Full, "Banking research", "Full: ATMs, night safes, branches and loans need their research. Off: everything is available from the start.");
+            HSettings.Enum(B, "Research", "bank.researchMode", BankResearchMode.Full, "Banking research", "Full: ATMs, night safes, branches and loans need their research. Off: everything is available from the start. (The global Research mode in the core settings does the same for every module.)");
             // Wealth and mood (8.4, 8.10)
             HSettings.Percent(B, "Wealth and mood", "bank.wealthShare", 1.0f, 0f, 1.5f, "Bank balance counts for the storyteller (%)",
                 "How much of the account counts towards the colony wealth that the storyteller uses for raid points. 100 % = fair: depositing money does not make raids smaller. 0 = the bank is a hiding place.", hardMin: 0f, hardMax: 1.5f);
@@ -71,7 +71,7 @@ namespace Silverline
         public static double DefaultProfitFor(float tier) => FinanceMath.LogInterp(ProfitAnchors, tier);
 
         public static int MaxCollectionStage => HSettings.GetInt("bank.maxCollectionStage");
-        public static bool ResearchOff => HSettings.GetInt("bank.researchMode") == (int)BankResearchMode.Off;
+        public static bool ResearchOff => CoreSettings.ResearchOff || HSettings.GetInt("bank.researchMode") == (int)BankResearchMode.Off;
         public static double AccountBeta => HSettings.Get("bank.accountBeta");
         public static double FeeFactor => HSettings.Get("bank.feeFactor");
     }

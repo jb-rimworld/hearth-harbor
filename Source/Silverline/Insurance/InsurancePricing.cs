@@ -26,7 +26,7 @@ namespace Silverline
 
         static bool ResearchDone(string defName)
         {
-            if (!HSettings.GetBool(InsSettings.RequireResearch)) return true;
+            if (CoreSettings.ResearchOff || !HSettings.GetBool(InsSettings.RequireResearch)) return true;
             var r = DefDatabase<ResearchProjectDef>.GetNamedSilentFail(defName);
             return r == null || r.IsFinished;   // research def not present (standalone/early build): do not lock the player out
         }

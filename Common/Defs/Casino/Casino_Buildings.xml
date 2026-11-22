@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- Own build menu category (the shared Hospitality category may replace it later). -->
-  <DesignationCategoryDef>
-    <defName>HH_Casino</defName>
-    <label>casino</label>
-    <description>Slot machines, gaming tables and a cashier's cage.</description>
-    <order>455</order>
-  </DesignationCategoryDef>
-
   <!-- ===================== Slot machine ===================== -->
   <ThingDef ParentName="BuildingBase">
     <defName>HH_SlotMachine</defName>
@@ -32,8 +24,9 @@
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <socialPropernessMatters>true</socialPropernessMatters>
     <minifiedDef>MinifiedThing</minifiedDef>
-    <designationCategory>HH_Casino</designationCategory>
-    <uiOrder>2100</uiOrder>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_Casino</designatorDropdown>
+    <uiOrder>500</uiOrder>
     <thingCategories><li>BuildingsJoy</li></thingCategories>
     <researchPrerequisites><li>HH_Casino_Slots</li></researchPrerequisites>
     <costList>
@@ -85,7 +78,8 @@
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <socialPropernessMatters>true</socialPropernessMatters>
     <minifiedDef>MinifiedThing</minifiedDef>
-    <designationCategory>HH_Casino</designationCategory>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_Casino</designatorDropdown>
     <thingCategories><li>BuildingsJoy</li></thingCategories>
     <researchPrerequisites><li>HH_Casino_Tables</li></researchPrerequisites>
     <statBases>
@@ -113,7 +107,7 @@
       <drawSize>(3,2)</drawSize>
       <shadowData><volume>(2.7, 0.4, 1.7)</volume></shadowData>
     </graphicData>
-    <uiOrder>2110</uiOrder>
+    <uiOrder>510</uiOrder>
     <costList>
       <Steel>60</Steel>
       <WoodLog>80</WoodLog>
@@ -138,7 +132,7 @@
       <drawSize>(3,2)</drawSize>
       <shadowData><volume>(2.7, 0.4, 1.7)</volume></shadowData>
     </graphicData>
-    <uiOrder>2120</uiOrder>
+    <uiOrder>520</uiOrder>
     <costList>
       <WoodLog>70</WoodLog>
       <Cloth>50</Cloth>
@@ -162,7 +156,7 @@
       <drawSize>(3,2)</drawSize>
       <shadowData><volume>(2.7, 0.4, 1.7)</volume></shadowData>
     </graphicData>
-    <uiOrder>2130</uiOrder>
+    <uiOrder>530</uiOrder>
     <costList>
       <WoodLog>60</WoodLog>
       <Cloth>40</Cloth>
@@ -198,8 +192,9 @@
     <hasInteractionCell>true</hasInteractionCell>
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <minifiedDef>MinifiedThing</minifiedDef>
-    <designationCategory>HH_Casino</designationCategory>
-    <uiOrder>2140</uiOrder>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_Casino</designatorDropdown>
+    <uiOrder>540</uiOrder>
     <thingCategories><li>BuildingsMisc</li></thingCategories>
     <researchPrerequisites><li>HH_Casino_Tables</li></researchPrerequisites>
     <costList>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- The insurance branch of the banking tree (KONZEPT 7.3). Row 1.4 of tab HH_Banking. Stands on the bank alone (no hotel projects). -->
+  <ResearchProjectDef>
+    <defName>SL_Insurance</defName>
+    <label>insurance</label>
+    <description>A policy for every misfortune, sold by a mutual that has never lost an argument. Unlocks the insurance office and the policies of the basic cover levels "Bare Minimum" and "Good Enough".</description>
+    <baseCost>900</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>HH_Banking</tab>
+    <prerequisites><li>SL_Banking</li></prerequisites>
+    <researchViewX>1.0</researchViewX>
+    <researchViewY>1.4</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>SL_Actuarial</defName>
+    <label>actuarial science</label>
+    <description>Tables of how likely everything is to go wrong, and what that is worth. Unlocks the top cover level "Premium of Premium", the premium policies and the services of the mutual.</description>
+    <baseCost>1400</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>HH_Banking</tab>
+    <prerequisites><li>SL_Insurance</li><li>SL_Credit</li></prerequisites>
+    <researchViewX>2.0</researchViewX>
+    <researchViewY>1.0</researchViewY>
+  </ResearchProjectDef>
+</Defs>

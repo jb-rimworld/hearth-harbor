@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- The shared spine of the Hospitality research tree (KONZEPT 7.2). The other branches live next to their module
+       (Casino_, Wellness_, City_, Underworld_Research.xml, Kitchen/Research_Hediff.xml) and hang on these.
+       Layout: columns (researchViewX) run left to right with the era, rows (researchViewY) are one branch each.
+         row 0.0 kitchen and hotel   row 0.7 casino and city life   row 1.4 wellness   row 3.0 underworld (hidden until discovered)
+       Everything the first inn needs is free (no research): guest beds, the Ledger stump, the venue sign, the campfire cookout, the prep
+       counter, stock pot, grill and dough bench, and learning level 1.
+       core.researchMode = Off finishes all of these quietly. -->
+  <ResearchProjectDef>
+    <defName>HH_Innkeeping</defName>
+    <label>innkeeping</label>
+    <description>Room classes, price tiers, the tavern, the front desk, the hitching post and the first paid dishes. Everything a house needs once the first guests stay a second night. Unlocks the smoker, the oven, the guest altar and learning level 2 of the kitchen.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <tab>HH_Hospitality</tab>
+    <prerequisites><li>HH_Cooking_L1</li></prerequisites>
+    <researchViewX>1.0</researchViewX>
+    <researchViewY>0.0</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->innkeeping</li>
+        <li>subject_story->kept a ledger of who owed what</li>
+        <li>subject_gerund->running an inn</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>HH_Gastronomy</defName>
+    <label>gastronomy</label>
+    <description>Menus, waiters, kitchen styles and a proper dining room. Unlocks the steamer, the wok station, the cold station and learning level 3 of the kitchen.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>HH_Hospitality</tab>
+    <prerequisites><li>HH_Innkeeping</li><li>ComplexFurniture</li></prerequisites>
+    <researchViewX>2.0</researchViewX>
+    <researchViewY>0.0</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->gastronomy</li>
+        <li>subject_story->plated a dish like it mattered</li>
+        <li>subject_gerund->plating dishes</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>HH_HotelManagement</defName>
+    <label>hotel management</label>
+    <description>Booking terminals, arrival forecasts, shifts and the deep fryer. The difference between an inn and a hotel is that a hotel knows who is coming.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>HH_Hospitality</tab>
+    <prerequisites><li>HH_Gastronomy</li><li>Electricity</li></prerequisites>
+    <researchViewX>3.0</researchViewX>
+    <researchViewY>0.0</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->hotel management</li>
+        <li>subject_story->overbooked a hotel and survived</li>
+        <li>subject_gerund->booking rooms</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>HH_FineDining</defName>
+    <label>fine dining</label>
+    <description>Linen, sommeliers and critics. Learning level 4 of the kitchen: the Signature form of every dish.</description>
+    <baseCost>1600</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>HH_Hospitality</tab>
+    <prerequisites><li>HH_Gastronomy</li><li>HH_HotelManagement</li></prerequisites>
+    <researchViewX>4.0</researchViewX>
+    <researchViewY>0.0</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->fine dining</li>
+        <li>subject_story->earned a star for a single soup</li>
+        <li>subject_gerund->tasting wine</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+</Defs>
