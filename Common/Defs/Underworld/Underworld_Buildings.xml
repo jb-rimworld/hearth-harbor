@@ -14,7 +14,9 @@
     </graphicData>
     <uiIconPath>Things/HH/Underworld/BackRoomDoor</uiIconPath>
     <costStuffCount>30</costStuffCount>
-    <designationCategory>HH_Underworld</designationCategory>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_Underworld</designatorDropdown>
+    <uiOrder>900</uiOrder>
     <designationHotKey>Misc2</designationHotKey>
     <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
@@ -50,7 +52,9 @@
     </statBases>
     <costList><WoodLog>30</WoodLog></costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <designationCategory>HH_Underworld</designationCategory>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_Underworld</designatorDropdown>
+    <uiOrder>910</uiOrder>
     <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
     <comps><li Class="Hearth.Underworld.CompProperties_FightPit" /></comps>
@@ -89,7 +93,9 @@
       <Beauty>-1</Beauty>
     </statBases>
     <costList><WoodLog>60</WoodLog><Steel>10</Steel></costList>
-    <designationCategory>HH_Underworld</designationCategory>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_Underworld</designatorDropdown>
+    <uiOrder>920</uiOrder>
     <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
     <comps><li Class="Hearth.Underworld.CompProperties_FenceStock" /></comps>
@@ -122,7 +128,9 @@
     </statBases>
     <costList><Steel>80</Steel></costList>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-    <designationCategory>HH_Underworld</designationCategory>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_Underworld</designatorDropdown>
+    <uiOrder>930</uiOrder>
     <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
@@ -154,7 +162,9 @@
     </statBases>
     <costList><WoodLog>30</WoodLog></costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <designationCategory>HH_Underworld</designationCategory>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_Underworld</designatorDropdown>
+    <uiOrder>940</uiOrder>
     <researchPrerequisites><li>HH_TheHunt</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
     <comps><li Class="Hearth.Underworld.CompProperties_HuntingGround" /></comps>
@@ -174,7 +184,9 @@
     </graphicData>
     <uiIconPath>Things/HH/Underworld/OrganClinic</uiIconPath>
     <size>(2,1)</size>
-    <designationCategory>HH_Underworld</designationCategory>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_Underworld</designatorDropdown>
+    <uiOrder>950</uiOrder>
     <researchPrerequisites Inherit="False"><li>HH_BlackClinic</li></researchPrerequisites>
     <costStuffCount>20</costStuffCount>
     <costList><ComponentIndustrial>2</ComponentIndustrial></costList>

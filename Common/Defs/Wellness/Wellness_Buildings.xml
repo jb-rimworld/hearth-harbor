@@ -25,6 +25,8 @@
     <socialPropernessMatters>true</socialPropernessMatters>
     <canOverlapZones>false</canOverlapZones>
     <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_Wellness</designatorDropdown>
+    <uiOrder>400</uiOrder>
     <researchPrerequisites><li>HH_Wellness</li></researchPrerequisites>
     <minifiedDef>MinifiedThing</minifiedDef>
     <thingCategories><li>BuildingsJoy</li></thingCategories>
@@ -86,6 +88,8 @@
     <drawerType>RealtimeOnly</drawerType>
     <socialPropernessMatters>true</socialPropernessMatters>
     <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_Wellness</designatorDropdown>
+    <uiOrder>410</uiOrder>
     <researchPrerequisites><li>HH_Bathhouse</li></researchPrerequisites>
     <placeWorkers>
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
@@ -159,6 +163,8 @@
     <interactionCellOffset>(0,0,1)</interactionCellOffset>
     <socialPropernessMatters>true</socialPropernessMatters>
     <designationCategory>HH_Hospitality</designationCategory>
+    <designatorDropdown>HH_Group_Wellness</designatorDropdown>
+    <uiOrder>420</uiOrder>
     <researchPrerequisites><li>HH_Bathhouse</li></researchPrerequisites>
     <placeWorkers><li>PlaceWorker_PreventInteractionSpotOverlap</li></placeWorkers>
     <thingCategories><li>BuildingsJoy</li></thingCategories>

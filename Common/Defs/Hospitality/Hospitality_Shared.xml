@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- Work types and research tab shared by the guest modules (5.17, 6.5). They live here, not in Core, so the standalone
+  <!-- Work types, architect tab and research tab shared by the guest modules (5.17, 6.5). They live here, not in Core, so the standalone
        Silverline bank (Core + Bank + Insurance defs) does not bring hosting work types into the game. -->
   <WorkTypeDef>
     <defName>HH_Hosting</defName>
@@ -27,8 +27,52 @@
     <relevantSkills><li>Social</li></relevantSkills>
   </WorkTypeDef>
 
+  <!-- THE architect tab for everything guests use (casino, wellness, city life, back room, venue signs, counters, machines). Defined once,
+       here. Kitchen stations stay in Production (vanilla kitchen room role); the bank has its own tab HH_Bank (Core_Banking.xml).
+       Sorted after Joy (order 100); vanilla sorts the tabs from high to low order. -->
+  <DesignationCategoryDef>
+    <defName>HH_Hospitality</defName>
+    <label>Hospitality</label>
+    <description>Signs, counters, shelves, tables and machines for guests: taverns, shops, casinos, spas, cinemas and, once you have found it, the back room.</description>
+    <order>95</order>
+    <specialDesignatorClasses>
+      <li>Designator_Cancel</li>
+      <li>Designator_Deconstruct</li>
+    </specialDesignatorClasses>
+  </DesignationCategoryDef>
+
+  <!-- Dropdown groups keep the tab tidy: one button per business. -->
+  <DesignatorDropdownGroupDef>
+    <defName>HH_Group_Casino</defName>
+    <label>casino</label>
+    <description>Slot machines, gaming tables and the cashier's cage.</description>
+    <iconSource>Placed</iconSource>
+    <useGridMenu>true</useGridMenu>
+  </DesignatorDropdownGroupDef>
+  <DesignatorDropdownGroupDef>
+    <defName>HH_Group_Wellness</defName>
+    <label>wellness</label>
+    <description>Saunas, hot tubs and massage tables.</description>
+    <iconSource>Placed</iconSource>
+    <useGridMenu>true</useGridMenu>
+  </DesignatorDropdownGroupDef>
+  <DesignatorDropdownGroupDef>
+    <defName>HH_Group_City</defName>
+    <label>city life</label>
+    <description>Cinema screens, salon chairs, park benches and the taxi stand.</description>
+    <iconSource>Placed</iconSource>
+    <useGridMenu>true</useGridMenu>
+  </DesignatorDropdownGroupDef>
+  <DesignatorDropdownGroupDef>
+    <defName>HH_Group_Underworld</defName>
+    <label>back room</label>
+    <description>Doors, pits, counters and docks for the things nobody talks about. Only shown once you have discovered the underworld.</description>
+    <iconSource>Placed</iconSource>
+    <useGridMenu>true</useGridMenu>
+  </DesignatorDropdownGroupDef>
+
   <ResearchTabDef>
     <defName>HH_Hospitality</defName>
-    <label>hospitality</label>
+    <label>Hospitality</label>
   </ResearchTabDef>
 </Defs>

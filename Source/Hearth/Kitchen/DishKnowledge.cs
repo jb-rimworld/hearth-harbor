@@ -9,7 +9,7 @@ namespace Hearth.Kitchen
 {
     /// <summary>
     /// What the colony knows how to cook (KONZEPT 6.4, N46). Level 1 is known from the start; levels 2–4 come with the research
-    /// HH_Cooking_L2..L4; single dishes can be learned from cookbooks and guests. Saved in the game; removing the mod leaves nothing behind.
+    /// HH_Innkeeping, HH_Gastronomy, HH_FineDining; single dishes can be learned from cookbooks and guests. Saved in the game; removing the mod leaves nothing behind.
     /// </summary>
     public sealed class DishKnowledge : GameComponent
     {
@@ -29,7 +29,12 @@ namespace Hearth.Kitchen
             if (learned == null) learned = new HashSet<string>();
         }
 
-        public static ResearchProjectDef LevelResearch(int level) => level <= 1 ? null : DefDatabase<ResearchProjectDef>.GetNamedSilentFail("HH_Cooking_L" + level);
+        /// <summary>The learning levels follow the hospitality tree (KONZEPT 7.2): 2 = Innkeeping, 3 = Gastronomy, 4 = Fine dining; level 1 is free.</summary>
+        public static ResearchProjectDef LevelResearch(int level)
+        {
+            string name = level == 2 ? "HH_Innkeeping" : level == 3 ? "HH_Gastronomy" : level >= 4 ? "HH_FineDining" : null;
+            return name == null ? null : DefDatabase<ResearchProjectDef>.GetNamedSilentFail(name);
+        }
 
 #if HH_TESTS
         /// <summary>Tests only: pretend levels are locked (the quick-test game has all research finished).</summary>
@@ -38,7 +43,7 @@ namespace Hearth.Kitchen
 
         public static bool LevelUnlocked(int level)
         {
-            if (level <= 1) return true;
+            if (level <= 1 || CoreSettings.ResearchOff) return true;
 #if HH_TESTS
             if (TestLevelLock != null) return TestLevelLock(level);
 #endif

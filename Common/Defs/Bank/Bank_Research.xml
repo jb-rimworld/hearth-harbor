@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!-- Banking tree, the small version (KONZEPT 7.3). The basic level is free: an account via the comms console, deposits,
-       withdrawals by drop pod, the night safe's cousin the nightly direct deposit. Setting bank.researchMode = Off makes everything available. -->
+       withdrawals by drop pod, the night safe's cousin the nightly direct deposit. The shared research mode "Off" (core settings) makes everything available. -->
   <ResearchProjectDef>
     <defName>SL_Banking</defName>
     <label>automated tellers</label>
@@ -10,8 +10,8 @@
     <techLevel>Industrial</techLevel>
     <tab>HH_Banking</tab>
     <prerequisites><li>Electricity</li></prerequisites>
-    <researchViewX>1.0</researchViewX>
-    <researchViewY>0.2</researchViewY>
+    <researchViewX>0.0</researchViewX>
+    <researchViewY>0.7</researchViewY>
   </ResearchProjectDef>
 
   <ResearchProjectDef>
@@ -22,7 +22,7 @@
     <techLevel>Industrial</techLevel>
     <tab>HH_Banking</tab>
     <prerequisites><li>SL_Banking</li></prerequisites>
-    <researchViewX>2.0</researchViewX>
+    <researchViewX>1.0</researchViewX>
     <researchViewY>0.0</researchViewY>
   </ResearchProjectDef>
 
@@ -34,7 +34,7 @@
     <techLevel>Industrial</techLevel>
     <tab>HH_Banking</tab>
     <prerequisites><li>SL_Banking</li></prerequisites>
-    <researchViewX>2.0</researchViewX>
-    <researchViewY>0.4</researchViewY>
+    <researchViewX>1.0</researchViewX>
+    <researchViewY>0.7</researchViewY>
   </ResearchProjectDef>
 </Defs>

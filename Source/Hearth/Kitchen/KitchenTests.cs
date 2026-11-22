@@ -151,7 +151,7 @@ namespace Hearth.Kitchen.Tests
             var rendang = KT.Dish("Rendang"); t.Check(Math.Abs(rendang.recipes[0].ingredients.Sum(i => i.GetBaseCount()) - 0.75f) < 0.01f, "L4 Everyday: 0.75 nutrition (x1.5)");
             t.Check(rendang.recipes.Count == 3 && rendang.recipes[2].ingredients.Count == rendang.recipes[0].ingredients.Count + 2, "Signature form needs two finishing touches");
             t.Check(Math.Abs(rendang.recipes[1].ingredients.Take(rendang.ingredients.Count).Sum(i => i.GetBaseCount()) - 1.125f) < 0.01f, "Fine form: x1.5");
-            t.Check(rendang.recipes[2].researchPrerequisite?.defName == "HH_Cooking_L4", "Signature form needs HH_Cooking_L4");
+            t.Check(rendang.recipes[2].researchPrerequisite?.defName == "HH_FineDining", "Signature form needs HH_FineDining");
             var bratwurst = KT.Dish("BratwurstAndBeer"); var beerCount = bratwurst.recipes[0].ingredients.First(i => i.filter.AllowedThingDefs.Any(td => td.defName == "Beer"));
             t.Check(beerCount.CountRequiredOfFor(ThingDefOf.Beer ?? DefDatabase<ThingDef>.GetNamed("Beer"), bratwurst.recipes[0]) == 1, "beer is one piece per share");
 
@@ -173,7 +173,8 @@ namespace Hearth.Kitchen.Tests
             t.Check(DefDatabase<ThingDef>.GetNamed("FueledStove").AllRecipes.Any(r => DishRecipeExtension.Of(r) != null) && DefDatabase<ThingDef>.GetNamed("Campfire").AllRecipes.Any(r => DishRecipeExtension.Of(r) != null), "vanilla stove and campfire carry dish recipes");
 
             // research, hediff, thought
-            for (int l = 1; l <= 4; l++) { var r = DefDatabase<ResearchProjectDef>.GetNamedSilentFail("HH_Cooking_L" + l); t.Check(r != null && r.tab?.defName == "HH_Hospitality", "research HH_Cooking_L" + l + " in the HH_Hospitality tab"); }
+            foreach (var rn in new[] { "HH_Cooking_L1", "HH_Innkeeping", "HH_Gastronomy", "HH_FineDining" }) { var r = DefDatabase<ResearchProjectDef>.GetNamedSilentFail(rn); t.Check(r != null && r.tab?.defName == "HH_Hospitality", "research " + rn + " in the HH_Hospitality tab"); }
+            for (int l = 2; l <= 4; l++) t.Check(DishKnowledge.LevelResearch(l) != null, "level " + l + " has a research project");
             var thought = DefDatabase<ThoughtDef>.GetNamed("HH_AteDish");
             t.Check(thought.stages.Count == 28, "thought has 28 stages (4 levels x 7 qualities)");
             t.Check(thought.stages[0].baseMoodEffect == 2 && thought.stages[6].baseMoodEffect == 8 && thought.stages[27].baseMoodEffect == 16 && thought.stages.All(s => s.baseMoodEffect <= 16), "mood +4/+6/+9/+12, quality -2..+4, at most +16");

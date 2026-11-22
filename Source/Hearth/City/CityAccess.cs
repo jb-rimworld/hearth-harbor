@@ -18,23 +18,8 @@ namespace Hearth.City
             get
             {
                 if (HSettings.GetEnum<CityResearchMode>(CitySettings.ResearchMode) == CityResearchMode.Off) return true;
-                return GlobalResearchOff();
+                return CoreSettings.ResearchOff;
             }
-        }
-
-        /// <summary>Soft link to a shared research mode of other modules, if one exists ("core.researchMode" enum with an Off member, or "core.researchOff" bool).</summary>
-        static bool GlobalResearchOff()
-        {
-            try
-            {
-                var b = HSettings.Find("core.researchOff");
-                if (b != null && HSettings.Get(b) >= 0.5f) return true;
-                var e = HSettings.Find("core.researchMode");
-                if (e != null && e.Kind == SettingKind.Enum && e.EnumType != null)
-                    return string.Equals(Enum.GetName(e.EnumType, (int)Math.Round(HSettings.Get(e))), "Off", StringComparison.OrdinalIgnoreCase);
-            }
-            catch (Exception ex) { HLog.Once("city.globalResearch", LogLevel.Warn, "City", "Could not read the shared research mode: " + ex.Message); }
-            return false;
         }
 
         static bool Done(ResearchProjectDef p) => p == null || p.IsFinished || ResearchOff;

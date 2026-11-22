@@ -141,7 +141,7 @@ namespace Hearth.Kitchen
             };
             ingredientGetterField.SetValue(r, typeof(IngredientValueGetter_Nutrition));
             r.workerCounterClass = typeof(RecipeWorkerCounter_Dish);
-            if (variant == 2) r.researchPrerequisite = DefDatabase<ResearchProjectDef>.GetNamedSilentFail("HH_Cooking_L4");
+            if (variant == 2) r.researchPrerequisite = DefDatabase<ResearchProjectDef>.GetNamedSilentFail("HH_FineDining");
             r.conceptLearned = null;
 
             float pool = BaseNutrition * LevelScale[Mathf.Clamp(dish.level, 1, 4)] * VariantScale[variant];

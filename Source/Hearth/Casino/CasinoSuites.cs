@@ -101,7 +101,7 @@ namespace Hearth.Casino.Tests
             {
                 t.Check(!d.label.NullOrEmpty() && !d.description.NullOrEmpty(), d.defName + " has label and description");
                 t.Check(d.graphic != null && !d.graphic.MatSingle.name.Contains("BadMat"), d.defName + " graphic loads");
-                t.Check(d.designationCategory == DefDatabase<DesignationCategoryDef>.GetNamed("HH_Casino"), d.defName + " in the casino build menu");
+                t.Check(d.designationCategory == DefDatabase<DesignationCategoryDef>.GetNamed("HH_Hospitality") && d.designatorDropdown?.defName == "HH_Group_Casino", d.defName + " in the Hospitality tab, casino group");
                 t.Check(d.researchPrerequisites != null && d.researchPrerequisites.Count == 1, d.defName + " needs research");
                 t.Check(d.hasInteractionCell, d.defName + " has an interaction cell");
             }

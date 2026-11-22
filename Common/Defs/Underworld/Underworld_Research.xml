@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!-- The dark side (KONZEPT 6.11, D04). Hidden until discovered ("Show me") and until the content intensity allows it.
-       Research view coordinates are far out on purpose so they never collide with the other modules; the UI/integration pass lays the tree out. -->
-  <DesignationCategoryDef>
-    <defName>HH_Underworld</defName>
-    <label>back room</label>
-    <description>Doors, pits, counters and docks for the things nobody talks about. Only shown once you have discovered the underworld.</description>
-    <order>2950</order>
-  </DesignationCategoryDef>
-
+       Row 3.0 of the Hospitality tree. The projects carry a gate extension: the research mode "Off" never finishes them. -->
   <ResearchProjectDef>
     <defName>HH_Underworld_Discovery</defName>
     <label>a back room (key)</label>
@@ -16,8 +9,8 @@
     <baseCost>1</baseCost>
     <techLevel>Medieval</techLevel>
     <tab>HH_Hospitality</tab>
-    <researchViewX>31.0</researchViewX>
-    <researchViewY>0.0</researchViewY>
+    <researchViewX>0.0</researchViewX>
+    <researchViewY>3.0</researchViewY>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><alwaysHidden>true</alwaysHidden></li></modExtensions>
   </ResearchProjectDef>
 
@@ -29,8 +22,8 @@
     <techLevel>Medieval</techLevel>
     <tab>HH_Hospitality</tab>
     <hiddenPrerequisites><li>HH_Underworld_Discovery</li></hiddenPrerequisites>
-    <researchViewX>22.6</researchViewX>
-    <researchViewY>11.3</researchViewY>
+    <researchViewX>1.0</researchViewX>
+    <researchViewY>3.0</researchViewY>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
   </ResearchProjectDef>
 
@@ -42,8 +35,8 @@
     <techLevel>Industrial</techLevel>
     <tab>HH_Hospitality</tab>
     <prerequisites><li>HH_Underworld_1</li><li>Gunsmithing</li></prerequisites>
-    <researchViewX>24.2</researchViewX>
-    <researchViewY>12.4</researchViewY>
+    <researchViewX>2.0</researchViewX>
+    <researchViewY>3.6</researchViewY>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
   </ResearchProjectDef>
 
@@ -55,8 +48,8 @@
     <techLevel>Industrial</techLevel>
     <tab>HH_Hospitality</tab>
     <prerequisites><li>HH_Underworld_1</li><li>MedicineProduction</li></prerequisites>
-    <researchViewX>24.2</researchViewX>
-    <researchViewY>10.2</researchViewY>
+    <researchViewX>2.0</researchViewX>
+    <researchViewY>2.4</researchViewY>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Dark</minContent></li></modExtensions>
   </ResearchProjectDef>
 </Defs>

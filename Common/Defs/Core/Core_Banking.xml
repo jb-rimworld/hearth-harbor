@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- Research tab of the bank. Stays in Core because the standalone Silverline ships Core + Bank + Insurance defs. -->
+  <!-- Architect tab and research tab of the bank. They stay in Core because the standalone Silverline ships Core + Bank + Insurance defs.
+       Sorted next to the Hospitality tab, after Joy. -->
+  <DesignationCategoryDef>
+    <defName>HH_Bank</defName>
+    <label>Bank</label>
+    <description>Cash machines, counters and night safes of the bank, and the desks of its insurance office.</description>
+    <order>90</order>
+    <specialDesignatorClasses>
+      <li>Designator_Cancel</li>
+      <li>Designator_Deconstruct</li>
+    </specialDesignatorClasses>
+  </DesignationCategoryDef>
+
   <ResearchTabDef>
     <defName>HH_Banking</defName>
-    <label>banking</label>
+    <label>Banking</label>
   </ResearchTabDef>
 </Defs>

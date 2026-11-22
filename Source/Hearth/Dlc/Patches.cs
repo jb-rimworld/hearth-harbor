@@ -77,7 +77,7 @@ namespace Hearth.Dlc
         {
             if (!__result || recipient == null || !Modules.On(ModuleId.Inn)) return;
             var host = PawnRef(__instance);
-            if (host == null || host.Faction != Faction.OfPlayer || !host.RaceProps.Humanlike || host.IsPrisoner) return;
+            if (host == null || host.Faction == null || host.Faction != Faction.OfPlayerSilentFail || !host.RaceProps.Humanlike || host.IsPrisoner) return;
             float q = DlcApi.ServiceQuality(host);
             if (Math.Abs(q) < 0.001f || !GuestApi.IsGuest(recipient)) return;
             int now = Find.TickManager.TicksGame;

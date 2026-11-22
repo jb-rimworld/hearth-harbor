@@ -18,8 +18,9 @@
     <rotatable>true</rotatable>
     <hasInteractionCell>true</hasInteractionCell>
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
-    <designationCategory>Ideology</designationCategory>
-    <uiOrder>2090</uiOrder>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <uiOrder>600</uiOrder>
+    <researchPrerequisites><li>HH_Innkeeping</li></researchPrerequisites>
     <canGenerateDefaultDesignator>true</canGenerateDefaultDesignator>
     <statBases>
       <MaxHitPoints>80</MaxHitPoints>
