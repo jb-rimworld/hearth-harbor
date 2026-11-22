@@ -56,6 +56,9 @@ namespace Silverline
         public bool CancelPending => cancelEffectiveTick >= 0 && !ended;
         public string Label => (Def?.LabelCap ?? defName) + (holder != null ? " (" + (holder.LabelShortCap) + ")" : !holderName.NullOrEmpty() ? " (" + holderName + ")" : "");
 
+        /// <summary>Rider effects held by this contract (payoutBoost, fastReview, plusProgression, deathSum).</summary>
+        public bool HasEffect(string effect) => Def?.riders != null && riders.Any(k => Def.riders.Any(r => r.key == k && r.effect == effect));
+        public double BoostShare => Def?.riders == null ? 0 : riders.Sum(k => Def.riders.Where(r => r.key == k && r.effect == "payoutBoost").Sum(r => (double)r.premiumShare));
         public double HistoryPerQuadrum => damageHistory.Count == 0 ? 0 : damageHistory.Average();
 
         public void ExposeData()

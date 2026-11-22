@@ -51,6 +51,8 @@ namespace Silverline
             var cr = ClauseEngine.Evaluate(cl);
             days += cr.extraDays;
             if (InsurancePricing.DeskCount() > 0) days = Math.Max(0, days - 1);
+            var ct = InsuranceComponent.Instance?.Get(cl.contractId);
+            if (ct != null && ct.HasEffect("fastReview")) days = Math.Max(0, days - 1);
             if (minDaysOverride >= 0) days = Math.Max(days, minDaysOverride);
             cl.decideTick = Ins.Now + days * Day;
         }
@@ -67,7 +69,7 @@ namespace Silverline
             if (isNew)
             {
                 cl = Open(c, trig, label, map, eventTick);
-                cl.realValue = InsurancePricing.RealValue(c.Def, map, null);
+                cl.realValue = c.Def.sumFollowsWealth ? InsurancePricing.RealValue(c.Def, map, null) : c.sum;
             }
             else cl.subject = Ins.T("Claim.Several", cl.items.Count + 1);
             cl.items.Add(label);
@@ -82,7 +84,7 @@ namespace Silverline
                     if (idx >= 0) { n += int.Parse(cl.materials[idx].Substring(prefix.Length)); cl.materials[idx] = prefix + n; }
                     else cl.materials.Add(prefix + n);
                 }
-            cl.gross = InsuranceMath.PropertyPayout(cl.lossValue, c.sum, cl.realValue, c.tier);
+            cl.gross = Math.Min(cl.lossValue, InsuranceMath.PropertyPayout(cl.lossValue, c.sum, cl.realValue, c.tier) * (1.0 + c.BoostShare));
             cl.offered = cl.gross;
             if (isNew) { ScheduleReview(cl); ClaimLetters.Filed(cl); }
             return cl;
@@ -93,7 +95,7 @@ namespace Silverline
         {
             var cl = Open(c, trig, subject, map, Ins.Now);
             cl.lossValue = loss; cl.realValue = loss;
-            cl.gross = grossOverride ?? loss * c.Def.ShareFor(c.tier);
+            cl.gross = grossOverride ?? Math.Min(loss, loss * c.Def.ShareFor(c.tier) * (1.0 + c.BoostShare));
             cl.offered = cl.gross;
             if (hints != null) foreach (var h in hints) cl.AddHint(h);
             ScheduleReview(cl);
@@ -106,7 +108,7 @@ namespace Silverline
             var comp = InsuranceComponent.Instance;
             var cl = Open(c, travel ? ClaimTrigger.TravelDeath : ClaimTrigger.PawnDeath, Ins.T("Claim.Death", pawn.LabelShortCap), pawn.MapHeld ?? InsurerBooks.HomeMap, Ins.Now);
             cl.death = true; cl.pawn = pawn; cl.pawnName = pawn.LabelShortCap;
-            double death = travel ? c.sum : InsuranceMath.DeathBenefit(c.sum, c.riders.Contains("deathSum") ? 0.30 : 0.20);
+            double death = travel ? c.sum : InsuranceMath.DeathBenefit(c.sum, c.HasEffect("deathSum") ? 0.30 : 0.20);
             cl.lossValue = c.sum; cl.realValue = c.sum;
             if (illness) cl.AddHint("Illness");
             if (!travel)
@@ -157,7 +159,7 @@ namespace Silverline
             double net = InsuranceMath.NetGrade(g, cl.preGrade);
             cl.grade = net; cl.lost = detail; cl.partialOnly = partialOnly;
             cl.contributed = LimbGrader.Contributed(cl.pawn, detail);
-            double benefit = InsuranceMath.AccidentBenefit(c.sum, c.tier, net, c.riders.Contains("plusProgression"), partialOnly);
+            double benefit = InsuranceMath.AccidentBenefit(c.sum, c.tier, net, c.HasEffect("plusProgression"), partialOnly);
             if (cl.contributed && InsSettings.Hard) benefit = InsuranceMath.ContributionCut(benefit, true);
             cl.gross = benefit; cl.offered = benefit;
             if (detail.Any(d => d.label.Contains("bionic", StringComparison.OrdinalIgnoreCase))) cl.AddHint("Bionic");
@@ -193,7 +195,7 @@ namespace Silverline
                 foreach (var l in cl.lost) cl.breakdown.Add(Ins.T("Bd.Part", l.label, l.value.ToString("0.#"), l.comment));
                 if (cl.preGrade > 0.01) cl.breakdown.Add(Ins.T("Bd.PreExisting", cl.preGrade.ToString("0.#")));
                 if (cl.gross <= 0) cl.breakdown.Add(cl.partialOnly && cl.tier == CoverTier.BareMinimum ? Ins.T("Bd.PartialNotPaid") : Ins.T("Bd.BelowThreshold", InsuranceMath.InvalidityThreshold(cl.tier).ToString("0.#")));
-                else cl.breakdown.Add(Ins.T("Bd.Progression", Ins.TierName(cl.tier), Ins.Pct(InsuranceMath.Progression(InsuranceMath.ModelFor(cl.tier, c.riders.Contains("plusProgression")), cl.grade) / 100.0), Ins.Silver(c.sum), Ins.Silver(cl.gross)));
+                else cl.breakdown.Add(Ins.T("Bd.Progression", Ins.TierName(cl.tier), Ins.Pct(InsuranceMath.Progression(InsuranceMath.ModelFor(cl.tier, c.HasEffect("plusProgression")), cl.grade) / 100.0), Ins.Silver(c.sum), Ins.Silver(cl.gross)));
                 if (cl.contributed && InsSettings.Hard && cl.gross > 0) cl.breakdown.Add(Ins.T("Bd.Contributed"));
             }
             else if (cl.trigger == ClaimTrigger.PawnDeath || cl.trigger == ClaimTrigger.TravelDeath)

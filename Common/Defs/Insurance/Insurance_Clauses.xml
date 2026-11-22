@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- The fifteen clauses of the fine print (Anhang B.7). trigger = what makes the clause apply; exclusion = excludes outright;
+       greyZone = denial gets more likely. standardScope / hardScope: where the clause is on (All, BareOnly, Off). Hard = Overbooked and up. -->
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_1</defName><label>waiting period</label><description>Cover begins after the waiting period.</description>
+    <number>1</number><text>Cover begins after the waiting period, which begins after cover begins.</text>
+    <trigger>Waiting</trigger><exclusion>true</exclusion>
+  </Silverline.SL_ClauseDef>
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_3_2</defName><label>accidents and cooking</label><description>Illness is not an accident.</description>
+    <number>3.2</number><text>An accident is a sudden external event. Thrumbos are external. Your cooking is not.</text>
+    <trigger>NotAccident</trigger><exclusion>true</exclusion>
+  </Silverline.SL_ClauseDef>
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_4</defName><label>acts of the storyteller</label><description>Weather damage is a grey zone.</description>
+    <number>4</number><text>Acts of Storyteller are excluded unless the Storyteller acted reasonably.</text>
+    <trigger>Weather</trigger><greyZone>true</greyZone><standardScope>BareOnly</standardScope>
+  </Silverline.SL_ClauseDef>
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_7b</defName><label>raids and sieges</label><description>Sieges and mechanoid clusters are a grey zone.</description>
+    <number>7b</number><text>Raids are not war. Sieges are war. Mechanoid clusters are weather.</text>
+    <trigger>Siege</trigger><greyZone>true</greyZone>
+  </Silverline.SL_ClauseDef>
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_9</defName><label>pre-existing conditions</label><description>Damage that was there before is deducted.</description>
+    <number>9</number><text>Pre-existing conditions include conditions that existed before, during or shortly after this policy.</text>
+    <trigger>PreExisting</trigger>
+  </Silverline.SL_ClauseDef>
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_11</defName><label>self-inflicted damage</label><description>Damage done by your own people is excluded.</description>
+    <number>11</number><text>Self-inflicted damage includes damage by you, your colonists, your animals, your turrets and anyone standing near them.</text>
+    <trigger>SelfInflicted</trigger><exclusion>true</exclusion>
+  </Silverline.SL_ClauseDef>
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_14b</defName><label>walls and doors</label><description>A broken door is a grey zone.</description>
+    <number>14b</number><text>Walls must be walls. A wall with a door in it is a door.</text>
+    <trigger>BrokenDoor</trigger><greyZone>true</greyZone>
+  </Silverline.SL_ClauseDef>
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_17</defName><label>the other clause</label><description>One more day of review. From Overbooked a grey zone.</description>
+    <number>17</number><text>Clause 17 is attached separately, in Thrumbo.</text>
+    <trigger>Review</trigger><extraReviewDays>1</extraReviewDays><greyZone>true</greyZone><greyOnlyHard>true</greyOnlyHard>
+  </Silverline.SL_ClauseDef>
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_21</defName><label>bionic parts</label><description>Bionics are equipment.</description>
+    <number>21</number><text>Bionic parts are equipment and are insured under Muffalo &amp; Machine Cover, which you do not have.</text>
+    <trigger>Bionics</trigger>
+  </Silverline.SL_ClauseDef>
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_22</defName><label>regrowth</label><description>If a lost part grows back, so does the claim.</description>
+    <number>22</number><text>If a lost part grows back, so does our claim.</text>
+    <trigger>Regrowth</trigger>
+  </Silverline.SL_ClauseDef>
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_23</defName><label>assessment and death</label><description>Dying before the assessment ends the assessment.</description>
+    <number>23</number><text>Dying before the assessment ends the assessment.</text>
+    <trigger>DeathBeforeAssessment</trigger>
+  </Silverline.SL_ClauseDef>
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_26</defName><label>changes in risk</label><description>Premiums follow the danger.</description>
+    <number>26</number><text>Changes in risk must be reported within one day. This includes swords.</text>
+    <trigger>RiskChange</trigger>
+  </Silverline.SL_ClauseDef>
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_30</defName><label>form C-7</label><description>Cancellations can come back with a form error.</description>
+    <number>30</number><text>Cancellations require Form C-7, signed in triplicate, in an ink colour we have on file.</text>
+    <trigger>CancelForm</trigger>
+  </Silverline.SL_ClauseDef>
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_31</defName><label>automatic renewal</label><description>Policies renew themselves.</description>
+    <number>31</number><text>Your policy renews automatically to spare you the burden of deciding.</text>
+    <trigger>AutoRenew</trigger>
+  </Silverline.SL_ClauseDef>
+  <Silverline.SL_ClauseDef>
+    <defName>SL_Clause_40</defName><label>conflict of interest</label><description>From Overbooked, Legal Shield does not help against Clawback Mutual.</description>
+    <number>40</number><text>Legal Shield does not cover disputes with Clawback Mutual, for reasons we are not required to explain.</text>
+    <trigger>Conflict</trigger><standardScope>Off</standardScope>
+  </Silverline.SL_ClauseDef>
+
+  <!-- Extra lines for the Schedule of Limbs go here; mods add their own (key = body part def name, fingers and toes by label). -->
+  <Silverline.SL_LimbScheduleDef>
+    <defName>SL_LimbSchedule_Standard</defName>
+    <label>Schedule of Limbs</label>
+    <description>The standard schedule (Anhang B.2) is built in. Add lines for modded body parts here.</description>
+    <tagTotals>
+      <li><tag>SightSource</tag><total>100</total></li>
+      <li><tag>HearingSource</tag><total>60</total></li>
+      <li><tag>BreathingSource</tag><total>50</total></li>
+    </tagTotals>
+  </Silverline.SL_LimbScheduleDef>
+</Defs>

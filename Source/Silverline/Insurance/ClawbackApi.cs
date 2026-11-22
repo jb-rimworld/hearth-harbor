@@ -76,7 +76,7 @@ namespace Silverline
             try { cost = b.def.CostListAdjusted(b.Stuff, false); } catch { }
             var chain = new List<ClaimTrigger> { trig };
             if (trig == ClaimTrigger.VehicleBuilding || trig == ClaimTrigger.AnomalyBuilding) chain.Add(ClaimTrigger.RaidBuilding);
-            if (trig == ClaimTrigger.RaidBuilding && hints.Contains("Self")) chain.Add(ClaimTrigger.FireBuilding);
+            if (hints.Contains("Self")) chain.Add(trig == ClaimTrigger.RaidBuilding ? ClaimTrigger.FireBuilding : ClaimTrigger.RaidBuilding);
             PolicyContract contract = null; ClaimTrigger used = trig;
             foreach (var t in chain) { contract = Contracts(t).FirstOrDefault(); if (contract != null) { used = t; break; } }
             if (contract == null) { InsuranceComponent.Instance.CouldHaveBeen(trig, b.LabelNoCount); return; }

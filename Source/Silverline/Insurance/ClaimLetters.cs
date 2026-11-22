@@ -54,14 +54,14 @@ namespace Silverline
             return "\n\n<color=#8a96a8><size=11>" + Ins.Slogan(i) + "</size></color>";
         }
 
-        static void Send(string title, string text, LetterDef def, LookTargets look = default, bool neutral = false)
+        static void Send(string title, string text, LetterDef def, LookTargets look = null, bool neutral = false)
         {
             if (!HSettings.GetBool(InsSettings.ClaimLetters)) { Messages.Message(title, MessageTypeDefOf.NeutralEvent, false); return; }
             var comp = InsuranceComponent.Instance; if (comp != null) comp.letterCounter++;
-            Find.LetterStack.ReceiveLetter(title, text + Footer(neutral), def ?? SLInsuranceDefOf.SL_ClawbackNotice, look.IsValid ? look : LookTargets.Invalid);
+            Find.LetterStack.ReceiveLetter(title, text + Footer(neutral), def ?? SLInsuranceDefOf.SL_ClawbackNotice, look != null && look.IsValid ? look : LookTargets.Invalid);
         }
 
-        public static void Notice(string title, string text, bool neutral = false, bool bad = false, LookTargets look = default)
+        public static void Notice(string title, string text, bool neutral = false, bool bad = false, LookTargets look = null)
             => Send(title, text, bad ? SLInsuranceDefOf.SL_ClawbackBad : SLInsuranceDefOf.SL_ClawbackNotice, look, neutral);
 
         public static void Welcome(PolicyContract c, Quote q, string paidFrom)

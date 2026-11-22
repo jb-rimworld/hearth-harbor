@@ -73,10 +73,12 @@ namespace Silverline
         /// <summary>Wanderlust Travel Cover: all tiers need SL_Actuarial.</summary>
         public bool needsActuarial;
         public int order = 100;
+        /// <summary>Premium follows the age of the insured colonist (Golden Years: cheap while young).</summary>
+        public bool ageSensitive;
         public string iconPath;
-        /// <summary>Daily payment to retired colonists (Golden Years): silver per day at Good Enough, x1.5 Premium.</summary>
+        /// <summary>Daily pension of retired colonists (Golden Years): share of the sum insured per day at Good Enough, x1.5 Premium.</summary>
         public float dailyAnnuity;
-        /// <summary>Lump sum of the Bare Minimum retirement/health plan, in silver.</summary>
+        /// <summary>Bare Minimum pays this share of the sum insured once when the colonist turns 60.</summary>
         public float lumpSum;
         /// <summary>Flat benefit per bedridden day (Rim Health Plan): silver per day at Bare Minimum.</summary>
         public float dailyBenefit;

@@ -113,6 +113,7 @@ namespace Silverline
                 case RiskModel.PerTravelDay:
                     return def.baseRisk * InsuranceMath.DaysPerQuadrum;   // one head travelling the whole quadrum
                 default:
+                    if (def.ageSensitive && pawn != null) { float age = pawn.ageTracker.AgeBiologicalYears; hazard *= age >= 60 ? 1.0 : age >= 50 ? 0.6 : 0.25; }
                     return InsuranceMath.ExpectedDamage(sum, def.baseRisk, hazard, def.kind == PolicyKind.Colony ? DangerMult(map) : 1.0, history);
             }
         }

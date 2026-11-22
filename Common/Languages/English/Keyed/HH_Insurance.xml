@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Ins.Slogan.1>Clawback Mutual. We've got you covered.*  (*see clauses 1 to infinity)</HH.Ins.Slogan.1>
+  <HH.Ins.Slogan.2>Peace of mind, payable quarterly.</HH.Ins.Slogan.2>
+  <HH.Ins.Slogan.3>Accidents happen. Payouts, occasionally.</HH.Ins.Slogan.3>
+  <HH.Ins.Slogan.4>We're there when you need us. Office hours apply.</HH.Ins.Slogan.4>
+  <HH.Ins.Slogan.5>Every limb has a price. We wrote it down.</HH.Ins.Slogan.5>
+  <HH.Ins.Slogan.6>Your claim is important to us. Please hold.</HH.Ins.Slogan.6>
+  <HH.Ins.Slogan.7>Comprehensive cover, comprehensively explained in 400 pages.</HH.Ins.Slogan.7>
+  <HH.Ins.Slogan.8>Most colonies choose Premium. Most colonies are still waiting.</HH.Ins.Slogan.8>
+  <HH.Ins.Tier.Bare>Bare Minimum</HH.Ins.Tier.Bare>
+  <HH.Ins.Tier.Good>Good Enough</HH.Ins.Tier.Good>
+  <HH.Ins.Tier.Premium>Premium of Premium</HH.Ins.Tier.Premium>
+  <HH.Ins.Outcome.Pending>Pending</HH.Ins.Outcome.Pending>
+  <HH.Ins.Outcome.Approved>Approved</HH.Ins.Outcome.Approved>
+  <HH.Ins.Outcome.Partial>Partly approved</HH.Ins.Outcome.Partial>
+  <HH.Ins.Outcome.Denied>Denied</HH.Ins.Outcome.Denied>
+  <HH.Ins.Stage.0>Unscathed</HH.Ins.Stage.0>
+  <HH.Ins.Stage.1>Flesh wound</HH.Ins.Stage.1>
+  <HH.Ins.Stage.2>Inconvenienced</HH.Ins.Stage.2>
+  <HH.Ins.Stage.3>Significantly reimagined</HH.Ins.Stage.3>
+  <HH.Ins.Stage.4>Mostly paperwork</HH.Ins.Stage.4>
+  <HH.Ins.Stage.5>Total and permanent</HH.Ins.Stage.5>
+  <HH.Ins.Tab.Bank>Insurance</HH.Ins.Tab.Bank>
+  <HH.Ins.Tab.Shop>Policies</HH.Ins.Tab.Shop>
+  <HH.Ins.Tab.Mine>My policies ({0})</HH.Ins.Tab.Mine>
+  <HH.Ins.Tab.Claims>Claims ({0})</HH.Ins.Tab.Claims>
+  <HH.Ins.Tab.FinePrint>Fine print</HH.Ins.Tab.FinePrint>
+  <HH.Ins.Menu.Call>Call Clawback Mutual</HH.Ins.Menu.Call>
+  <HH.Ins.Btn.Accept>Accept</HH.Ins.Btn.Accept>
+  <HH.Ins.Btn.Negotiate>Negotiate</HH.Ins.Btn.Negotiate>
+  <HH.Ins.Btn.OpenDesk>Open the Clawback desk</HH.Ins.Btn.OpenDesk>
+  <HH.Ins.Btn.Dismiss>Dismiss</HH.Ins.Btn.Dismiss>
+  <HH.Ins.Btn.Close>Close</HH.Ins.Btn.Close>
+  <HH.Ins.Btn.Materials>Take materials instead of silver</HH.Ins.Btn.Materials>
+  <HH.Ins.Source.Bank>your bank account</HH.Ins.Source.Bank>
+  <HH.Ins.Source.Till>the till</HH.Ins.Source.Till>
+  <HH.Ins.Source.Silver>silver in storage</HH.Ins.Source.Silver>
+  <HH.Ins.Source.Free>nothing (it was free)</HH.Ins.Source.Free>
+  <HH.Ins.Source.PaidBank>into your bank account</HH.Ins.Source.PaidBank>
+  <HH.Ins.Source.PaidTill>into the till</HH.Ins.Source.PaidTill>
+  <HH.Ins.Source.PaidCapsule>{0} silver in a drop capsule</HH.Ins.Source.PaidCapsule>
+  <HH.Ins.Source.PaidMaterials>materials by capsule: {0}</HH.Ins.Source.PaidMaterials>
+  <HH.Ins.Sign.Off>Clawback Mutual is not open for business in this game.</HH.Ins.Sign.Off>
+  <HH.Ins.Sign.NoHolder>Pick a colonist first.</HH.Ins.Sign.NoHolder>
+  <HH.Ins.Sign.Duplicate>You already hold this policy. We checked twice.</HH.Ins.Sign.Duplicate>
+  <HH.Ins.Sign.Debt>No new policies until you have settled the {0} we are owed from clause 22.</HH.Ins.Sign.Debt>
+  <HH.Ins.Sign.NoMap>We could not find your colony. This is unusual.</HH.Ins.Sign.NoMap>
+  <HH.Ins.Sign.Threat>Clawback Mutual does not sign cover while a threat, a raid or a large fire is on. We would hate to be unfair to ourselves.</HH.Ins.Sign.Threat>
+  <HH.Ins.Sign.CannotPay>The first instalment of {0} could not be debited. Even we cannot insure an empty purse.</HH.Ins.Sign.CannotPay>
+  <HH.Ins.Locked.Insurance>Needs the research project Insurance</HH.Ins.Locked.Insurance>
+  <HH.Ins.Locked.Actuarial>Needs the research project Actuarial Science</HH.Ins.Locked.Actuarial>
+  <HH.Ins.Log.Signed>Signed {0} ({1}).</HH.Ins.Log.Signed>
+  <HH.Ins.Log.Ended>{0} ended: {1}.</HH.Ins.Log.Ended>
+  <HH.Ins.Log.Filed>Claim #{0} filed: {1}.</HH.Ins.Log.Filed>
+  <HH.Ins.Log.Decided>Claim #{0} decided: {1} ({2}).</HH.Ins.Log.Decided>
+  <HH.Ins.Log.Paid>Claim #{0} paid: {1}.</HH.Ins.Log.Paid>
+  <HH.Ins.Log.Negotiated>Claim #{0}, round {1}: {2}.</HH.Ins.Log.Negotiated>
+  <HH.Ins.Log.CancelFiled>{0}: cancellation filed, effective in {1}.</HH.Ins.Log.CancelFiled>
+  <HH.Ins.Log.Retained>{0}: kept with {1} off.</HH.Ins.Log.Retained>
+  <HH.Ins.Log.Settled>Clause 22 settlement paid: {0}.</HH.Ins.Log.Settled>
+  <HH.Ins.Log.Regrowth>Claim #{0}: a part grew back, {1} claimed back.</HH.Ins.Log.Regrowth>
+  <HH.Ins.Claim.Several>{0} buildings</HH.Ins.Claim.Several>
+  <HH.Ins.Claim.Death>Death of {0}</HH.Ins.Claim.Death>
+  <HH.Ins.Claim.Limb>Accident of {0}</HH.Ins.Claim.Limb>
+  <HH.Ins.Claim.Retirement>Pension of {0}</HH.Ins.Claim.Retirement>
+  <HH.Ins.Claim.BedRest>Sickbed days</HH.Ins.Claim.BedRest>
+  <HH.Ins.Claim.Scratches>{0} injuries on the road</HH.Ins.Claim.Scratches>
+  <HH.Ins.Claim.Crop>Crops lost to {0}</HH.Ins.Claim.Crop>
+  <HH.Ins.End.Cancelled>cancelled by you</HH.Ins.End.Cancelled>
+  <HH.Ins.End.Holder>the insured person is no longer with us</HH.Ins.End.Holder>
+  <HH.Ins.End.Insurer>cancelled by Clawback Mutual</HH.Ins.End.Insurer>
+  <HH.Ins.End.Lapsed>premiums unpaid</HH.Ins.End.Lapsed>
+  <HH.Ins.Clause.Exclusion>This is an exclusion, not a decision. We merely read it out.</HH.Ins.Clause.Exclusion>
+  <HH.Ins.Quote.Damage>Expected damage per quadrum: {0}</HH.Ins.Quote.Damage>
+  <HH.Ins.Quote.Payout>Expected share we pay: {0}</HH.Ins.Quote.Payout>
+  <HH.Ins.Quote.Loading>Our loading: +{0}</HH.Ins.Quote.Loading>
+  <HH.Ins.Quote.NoClaims>No-claims discount: -{0}</HH.Ins.Quote.NoClaims>
+  <HH.Ins.Quote.Bundle>Bundle discount: -{0}</HH.Ins.Quote.Bundle>
+  <HH.Ins.Quote.Riders>Add-ons: +{0}</HH.Ins.Quote.Riders>
+  <HH.Ins.Quote.Discount>Retention discount: -{0}</HH.Ins.Quote.Discount>
+  <HH.Ins.Bd.Grade>Invalidity grade {0} % ({1}).</HH.Ins.Bd.Grade>
+  <HH.Ins.Bd.Part>{0}: {1} %. {2}</HH.Ins.Bd.Part>
+  <HH.Ins.Bd.PreExisting>Deducted: {0} % that was there when you signed (clause 9).</HH.Ins.Bd.PreExisting>
+  <HH.Ins.Bd.PartialNotPaid>Partial losses are not paid at Bare Minimum.</HH.Ins.Bd.PartialNotPaid>
+  <HH.Ins.Bd.BelowThreshold>The grade is below the threshold of {0} % for your tier. Benefit: 0 silver. Congratulations.</HH.Ins.Bd.BelowThreshold>
+  <HH.Ins.Bd.Progression>{0}: progression gives {1} of the basic sum of {2}. Benefit before the fine print: {3}.</HH.Ins.Bd.Progression>
+  <HH.Ins.Bd.Contributed>An old ailment on the same part cuts the benefit by 25 % (clause 9, from Overbooked).</HH.Ins.Bd.Contributed>
+  <HH.Ins.Bd.Death>Death benefit: {0}.</HH.Ins.Bd.Death>
+  <HH.Ins.Bd.DeathAssess>Claim #{0} ended with the death (clause 23): the higher of both is paid.</HH.Ins.Bd.DeathAssess>
+  <HH.Ins.Bd.Loss>{0} item(s) lost, value {1}.</HH.Ins.Bd.Loss>
+  <HH.Ins.Bd.Replacement>Replacement basis {0}, your own share {1}.</HH.Ins.Bd.Replacement>
+  <HH.Ins.Bd.UnderInsured>Under-insured: sum {0} against a value of {1}. We pay {2} of it, proudly.</HH.Ins.Bd.UnderInsured>
+  <HH.Ins.Bd.Gross>Benefit before the fine print: {0}.</HH.Ins.Bd.Gross>
+  <HH.Ins.Bd.Flat>Loss {0}, we pay {1}: {2}.</HH.Ins.Bd.Flat>
+  <HH.Ins.Bd.Kulanz>Goodwill gesture (once a year, Premium only). Do not get used to it.</HH.Ins.Bd.Kulanz>
+  <HH.Ins.Bd.Legal>Legal Shield made us less enthusiastic about denying this.</HH.Ins.Bd.Legal>
+  <HH.Ins.Bd.Offset>Offset against an earlier claw-back: {0}.</HH.Ins.Bd.Offset>
+  <HH.Ins.Letter.From.Claims>Claims Department, Floor -2</HH.Ins.Letter.From.Claims>
+  <HH.Ins.Letter.From.Neutral>Clawback Mutual</HH.Ins.Letter.From.Neutral>
+  <HH.Ins.Letter.Welcome.Title>Welcome to Clawback Mutual: {0}</HH.Ins.Letter.Welcome.Title>
+  <HH.Ins.Letter.Welcome.Body>Dear policyholder,
+
+thank you for choosing {0} at {1}. Your premium of {2} will be debited automatically every {3} days. You need to do nothing, ever, which is the idea.</HH.Ins.Letter.Welcome.Body>
+  <HH.Ins.Letter.Welcome.Waiting>Cover begins after a waiting period of {0} days. The waiting period begins when cover begins. Please see clause 1.</HH.Ins.Letter.Welcome.Waiting>
+  <HH.Ins.Letter.Welcome.Riders>To save you time, these add-ons were included for you: {0}. You can remove them in the desk whenever you like, in principle.</HH.Ins.Letter.Welcome.Riders>
+  <HH.Ins.Letter.Welcome.Paid>The first instalment was debited from {0}.</HH.Ins.Letter.Welcome.Paid>
+  <HH.Ins.Letter.Filed.Title>Claim #{0} received</HH.Ins.Letter.Filed.Title>
+  <HH.Ins.Letter.Filed.Body>We have received your claim #{0} ({1}) under {2}. It is important to us. Our Claims Department will look at it in one to three days, depending on how it looks back.</HH.Ins.Letter.Filed.Body>
+  <HH.Ins.Letter.Filed.Death>We are sorry for your loss. Claim ({0}) has been received and will be handled with care.</HH.Ins.Letter.Filed.Death>
+  <HH.Ins.Letter.Filed.Assessment>Accident cover is assessed {0} after the accident, when the damage has settled. Preview of the benefit today: {1}.</HH.Ins.Letter.Filed.Assessment>
+  <HH.Ins.Letter.Filed.Waiting>Please note that the event happened during the waiting period. We say this kindly.</HH.Ins.Letter.Filed.Waiting>
+  <HH.Ins.Letter.Decision.TitleApproved>Claim #{0}: approved</HH.Ins.Letter.Decision.TitleApproved>
+  <HH.Ins.Letter.Decision.TitlePartial>Claim #{0}: partly approved</HH.Ins.Letter.Decision.TitlePartial>
+  <HH.Ins.Letter.Decision.TitleDenied>Claim #{0}: denied</HH.Ins.Letter.Decision.TitleDenied>
+  <HH.Ins.Letter.Decision.Approved>Good news. Your claim is approved: {0}.</HH.Ins.Letter.Decision.Approved>
+  <HH.Ins.Letter.Decision.Partial>Your claim is partly approved: {0} of {1}. We are very proud of the part we approved.</HH.Ins.Letter.Decision.Partial>
+  <HH.Ins.Letter.Decision.Denied>After careful consideration, which took some time, your claim is denied.</HH.Ins.Letter.Decision.Denied>
+  <HH.Ins.Letter.Decision.DeniedHow>Nothing will be paid. {0}</HH.Ins.Letter.Decision.DeniedHow>
+  <HH.Ins.Letter.Decision.CanNegotiate>You may negotiate within ten days; our door is open, in a manner of speaking.</HH.Ins.Letter.Decision.CanNegotiate>
+  <HH.Ins.Letter.Decision.PayNow>Payment follows at once.</HH.Ins.Letter.Decision.PayNow>
+  <HH.Ins.Letter.Decision.PayLater>Payment follows in {0}. Processing times are not a promise, they are a hope.</HH.Ins.Letter.Decision.PayLater>
+  <HH.Ins.Letter.Decision.InKind>You may also take building materials by capsule instead of silver (open the desk).</HH.Ins.Letter.Decision.InKind>
+  <HH.Ins.Letter.Clause.Cited>Reason: {0}</HH.Ins.Letter.Clause.Cited>
+  <HH.Ins.Letter.Clause.Neutral>Basis of the decision: {0}.</HH.Ins.Letter.Clause.Neutral>
+  <HH.Ins.Letter.Paid.Title>Claim #{0}: paid</HH.Ins.Letter.Paid.Title>
+  <HH.Ins.Letter.Paid.Body>Claim #{0} has been paid: {1}, {2}. Thank you for being a customer. We will remember it at your next premium.</HH.Ins.Letter.Paid.Body>
+  <HH.Ins.Letter.Paid.Neutral>The benefit of {0} has been paid, {1}. We wish you strength.</HH.Ins.Letter.Paid.Neutral>
+  <HH.Ins.Letter.Ended.Title>{0}: ended</HH.Ins.Letter.Ended.Title>
+  <HH.Ins.Letter.Ended.Body>Your policy {0} has ended: {1}.
+
+{2}</HH.Ins.Letter.Ended.Body>
+  <HH.Ins.Letter.Ended.Debt>A claw-back of {0} (clause 22) remains open. New policies need it settled first.</HH.Ins.Letter.Ended.Debt>
+  <HH.Ins.Letter.Missed.Title>{0}: premium not received</HH.Ins.Letter.Missed.Title>
+  <HH.Ins.Letter.Missed.Body>We could not debit {1} for {0}. A friendly reminder: we will try again tomorrow, and the day after. Then we will stop being friendly.</HH.Ins.Letter.Missed.Body>
+  <HH.Ins.Letter.Lapsed.Title>{0}: lapsed</HH.Ins.Letter.Lapsed.Title>
+  <HH.Ins.Letter.Lapsed.Body>Your policy {0} has lapsed after three missed instalments ({1} each). Your cover ended, which is a sad thing for us to write and an efficient thing to bill.</HH.Ins.Letter.Lapsed.Body>
+  <HH.Ins.Letter.Premium.Title>{0}: premium adjusted</HH.Ins.Letter.Premium.Title>
+  <HH.Ins.Letter.Premium.Body>Your premium for {0} was adjusted from {1} to {2} per quadrum to reflect your circumstances. For five days you may cancel it at once, which we mention because the law makes us.</HH.Ins.Letter.Premium.Body>
+  <HH.Ins.Letter.Regrowth.Title>{0}: a part grew back</HH.Ins.Letter.Regrowth.Title>
+  <HH.Ins.Letter.Regrowth.Body>We were pleased to learn that a part of {0} has grown back. We claim back {1}. {2} {3}</HH.Ins.Letter.Regrowth.Body>
+  <HH.Ins.Letter.Regrowth.Offset>It will be offset against future benefits.</HH.Ins.Letter.Regrowth.Offset>
+  <HH.Ins.Letter.Regrowth.Debt>It is open as a debt; no new policies until it is settled.</HH.Ins.Letter.Regrowth.Debt>
+  <HH.Ins.Letter.Renew.Title>{0}: renewal notice</HH.Ins.Letter.Renew.Title>
+  <HH.Ins.Letter.Renew.Body>Your policy {0} renews in three days. {1}</HH.Ins.Letter.Renew.Body>
+  <HH.Ins.Letter.Retro.Title>Bundle discount recalculated</HH.Ins.Letter.Retro.Title>
+  <HH.Ins.Letter.Retro.Body>Because you left, the bundle discount of the running quadrum was recalculated. We debited {0}. It is on the last page.</HH.Ins.Letter.Retro.Body>
+  <HH.Ins.Letter.Uncovered.Title>You could have been covered.</HH.Ins.Letter.Uncovered.Title>
+  <HH.Ins.Letter.Uncovered.Body>We noticed the loss of {0}. It was not insured. {1} would have been happy to help. It still is, for a premium.</HH.Ins.Letter.Uncovered.Body>
+  <HH.Ins.Letter.Year.Title>Your Clawback year</HH.Ins.Letter.Year.Title>
+  <HH.Ins.Letter.Year.Intro>A year with Clawback Mutual: {0} in premiums over {1} active policies. Here is what our sales tricks cost you.</HH.Ins.Letter.Year.Intro>
+  <HH.Ins.Letter.Year.Trick>{0}: pre-ticked add-ons ({1}) cost {2}.</HH.Ins.Letter.Year.Trick>
+  <HH.Ins.Letter.Year.Total>Together: {0}, which is {1} of your yearly premiums (cap: {2}).</HH.Ins.Letter.Year.Total>
+  <HH.Ins.Letter.Year.Credit>Courtesy credit: {0} paid back to you, {1}.</HH.Ins.Letter.Year.Credit>
+  <HH.Ins.Letter.Year.NoCredit>Everything is within the cap. We call that fair.</HH.Ins.Letter.Year.NoCredit>
+  <HH.Ins.Upsell.Title>Clawback Mutual suggests</HH.Ins.Upsell.Title>
+  <HH.Ins.Upsell.Body>Your {0} at {1} is lovely. Most colonies choose Premium.</HH.Ins.Upsell.Body>
+  <HH.Ins.Neg.Title>Negotiating claim #{0}</HH.Ins.Neg.Title>
+  <HH.Ins.Neg.Lead>{0}. Offer now: {1} (claim value {2}). Up to three rounds. Choose the tone.</HH.Ins.Neg.Lead>
+  <HH.Ins.Neg.Negotiator>Your negotiator: {0} (negotiation {1})</HH.Ins.Neg.Negotiator>
+  <HH.Ins.Neg.NoNegotiator>Nobody in the colony can talk right now.</HH.Ins.Neg.NoNegotiator>
+  <HH.Ins.Neg.Rounds>Rounds left: {0}</HH.Ins.Neg.Rounds>
+  <HH.Ins.Neg.Approach.Decency>Appeal to common decency</HH.Ins.Neg.Approach.Decency>
+  <HH.Ins.Neg.Approach.Quote>Quote the contract back at them</HH.Ins.Neg.Approach.Quote>
+  <HH.Ins.Neg.Approach.Lawyers>Mention the lawyers</HH.Ins.Neg.Approach.Lawyers>
+  <HH.Ins.Neg.HintDecency>Polite and unspectacular.</HH.Ins.Neg.HintDecency>
+  <HH.Ins.Neg.HintQuote>Works best against a clause that is open to interpretation. Hopeless against an exclusion.</HH.Ins.Neg.HintQuote>
+  <HH.Ins.Neg.HintLawyers>Legal Shield is on your side. Brix &amp; Partners adore a dispute.</HH.Ins.Neg.HintLawyers>
+  <HH.Ins.Neg.HintNoLawyers>You have no Legal Shield; they will notice.</HH.Ins.Neg.HintNoLawyers>
+  <HH.Ins.Neg.Odds>odds: {0}</HH.Ins.Neg.Odds>
+  <HH.Ins.Neg.Odds.Slim>slim</HH.Ins.Neg.Odds.Slim>
+  <HH.Ins.Neg.Odds.Fair>fair</HH.Ins.Neg.Odds.Fair>
+  <HH.Ins.Neg.Odds.Decent>decent</HH.Ins.Neg.Odds.Decent>
+  <HH.Ins.Neg.Odds.Good>good</HH.Ins.Neg.Odds.Good>
+  <HH.Ins.Neg.Odds.Excellent>excellent</HH.Ins.Neg.Odds.Excellent>
+  <HH.Ins.Neg.Try>Try this</HH.Ins.Neg.Try>
+  <HH.Ins.Neg.Won>won</HH.Ins.Neg.Won>
+  <HH.Ins.Neg.Part>partly won</HH.Ins.Neg.Part>
+  <HH.Ins.Neg.Lost>lost</HH.Ins.Neg.Lost>
+  <HH.Ins.Neg.Success>They gave in. Possibly a first. The full benefit is yours: {0}.</HH.Ins.Neg.Success>
+  <HH.Ins.Neg.Partial>After some sighing they offer {0} ({1} of the benefit). Take it or try again.</HH.Ins.Neg.Partial>
+  <HH.Ins.Neg.Fail>The Claims Department thanks you for your input and keeps its decision.</HH.Ins.Neg.Fail>
+  <HH.Ins.Neg.NotPossible>This claim cannot be negotiated any more.</HH.Ins.Neg.NotPossible>
+  <HH.Ins.Neg.Cancelled>As you were rude about the clauses, Clawback Mutual has decided to part ways with you. The policy is cancelled.</HH.Ins.Neg.Cancelled>
+  <HH.Ins.Neg.Free>On this difficulty, negotiating never costs you anything.</HH.Ins.Neg.Free>
+  <HH.Ins.Neg.RiskHard>Harder levels: a third failed round can make them cancel your policy.</HH.Ins.Neg.RiskHard>
+  <HH.Ins.Cancel.Title>Cancel policy</HH.Ins.Cancel.Title>
+  <HH.Ins.Cancel.Back>Never mind</HH.Ins.Cancel.Back>
+  <HH.Ins.Cancel.Confirm>File Form C-7</HH.Ins.Cancel.Confirm>
+  <HH.Ins.Cancel.When>The cancellation takes effect in about {0} days: at the next quadrum change at least {1} days after you file it.</HH.Ins.Cancel.When>
+  <HH.Ins.Cancel.When.Special>Special cancellation: this is effective immediately, because of a settled claim or a premium increase.</HH.Ins.Cancel.When.Special>
+  <HH.Ins.Cancel.Bundle>Leaving raises your other premiums by {0}. {1}</HH.Ins.Cancel.Bundle>
+  <HH.Ins.Cancel.Bundle.Future>The bundle discount drops from now on, not backwards.</HH.Ins.Cancel.Bundle.Future>
+  <HH.Ins.Cancel.Bundle.Retro>The discount of the running quadrum will be recalculated and charged.</HH.Ins.Cancel.Bundle.Retro>
+  <HH.Ins.Cancel.FormNote>Cancellations need Form C-7. Occasionally one comes back. {0}</HH.Ins.Cancel.FormNote>
+  <HH.Ins.Cancel.Owed>Open claw-back on this policy: {0}. It will be settled in the final account.</HH.Ins.Cancel.Owed>
+  <HH.Ins.Cancel.Filed>Your cancellation is filed. It will be effective in {0}. We are sorry to see you go and will try to see you again.</HH.Ins.Cancel.Filed>
+  <HH.Ins.Cancel.Special>Special cancellation filed. The policy ends now.</HH.Ins.Cancel.Special>
+  <HH.Ins.Cancel.FormErrorSoft>Your Form C-7 came back with a form error. We re-filed it for you, so your deadline is safe. You are welcome.</HH.Ins.Cancel.FormErrorSoft>
+  <HH.Ins.Cancel.FormErrorHard>Your Form C-7 came back with an error (ink colour). The deadline was missed and slips by one quadrum. We have no further comment.</HH.Ins.Cancel.FormErrorHard>
+  <HH.Ins.Retention.Title>Before you go</HH.Ins.Retention.Title>
+  <HH.Ins.Retention.Title2>One more thing</HH.Ins.Retention.Title2>
+  <HH.Ins.Retention.Title3>Desmond is on the line</HH.Ins.Retention.Title3>
+  <HH.Ins.Retention.From>Desmond Tally, Senior Retention Specialist</HH.Ins.Retention.From>
+  <HH.Ins.Retention.Body>We are sad to see {0} go. What if we made it {1} cheaper for {2} quadrums? Honest offer, no strings. (There are some strings. They are quite thin.)</HH.Ins.Retention.Body>
+  <HH.Ins.Retention.Body2>That was a good offer. This one is better: {1} off {0} for {2} quadrums. Please do not think of it as a trap.</HH.Ins.Retention.Body2>
+  <HH.Ins.Retention.Body3>I have been passed your file. {0} for {1} off, {2} quadrums. I will personally forward your cancellation to a colleague who is on holiday.</HH.Ins.Retention.Body3>
+  <HH.Ins.Retention.MinTerm>Discount means a new minimum term: you cannot leave until it is over.</HH.Ins.Retention.MinTerm>
+  <HH.Ins.Retention.Keep>Keep my policy at {0} off</HH.Ins.Retention.Keep>
+  <HH.Ins.Retention.Still>No thanks, I still want to cancel</HH.Ins.Retention.Still>
+  <HH.Ins.Retention.Kept>Welcome back. Your discount is {0} for {1} quadrums.</HH.Ins.Retention.Kept>
+  <HH.Ins.UI.NoGame>Clawback Mutual is closed outside a game.</HH.Ins.UI.NoGame>
+  <HH.Ins.UI.Footer>Insurance is a promise. We keep the part that is in writing.</HH.Ins.UI.Footer>
+  <HH.Ins.UI.Spendable>To pay with: {0}</HH.Ins.UI.Spendable>
+  <HH.Ins.UI.PayFrom>Premiums are debited from {0}.</HH.Ins.UI.PayFrom>
+  <HH.Ins.UI.Running>Running premiums: {0} per day</HH.Ins.UI.Running>
+  <HH.Ins.UI.Bundle.Title>Bundle:</HH.Ins.UI.Bundle.Title>
+  <HH.Ins.UI.Bundle.None>Your first policy is the hardest. The third gives 10 % off all of them.</HH.Ins.UI.Bundle.None>
+  <HH.Ins.UI.Bundle.Some>{0} active policies, {1} off. The third gives {2}.</HH.Ins.UI.Bundle.Some>
+  <HH.Ins.UI.Bundle.Full>{0} active policies: {1} off all premiums.</HH.Ins.UI.Bundle.Full>
+  <HH.Ins.UI.Bundle.Retro>(Leaving recalculates the running quadrum.)</HH.Ins.UI.Bundle.Retro>
+  <HH.Ins.UI.Covers>Covers:</HH.Ins.UI.Covers>
+  <HH.Ins.UI.Badge>Most colonies choose Premium</HH.Ins.UI.Badge>
+  <HH.Ins.UI.Price>{0} every {1} days</HH.Ins.UI.Price>
+  <HH.Ins.UI.Price.Travel>{0} per head and travel day</HH.Ins.UI.Price.Travel>
+  <HH.Ins.UI.Price.Tip>How the price is made
+{0}
+
+Per quadrum: {1}</HH.Ins.UI.Price.Tip>
+  <HH.Ins.UI.Mech.Property>Own share {0}, pays {1} of the value.</HH.Ins.UI.Mech.Property>
+  <HH.Ins.UI.Mech.Person>From {0} % invalidity, up to {1} of the sum.</HH.Ins.UI.Mech.Person>
+  <HH.Ins.UI.Pay.Instant>Paid instantly.</HH.Ins.UI.Pay.Instant>
+  <HH.Ins.UI.Pay.Days>Paid in {0}-{1} days.</HH.Ins.UI.Pay.Days>
+  <HH.Ins.UI.SignNow>Sign now</HH.Ins.UI.SignNow>
+  <HH.Ins.UI.Signed>Signed</HH.Ins.UI.Signed>
+  <HH.Ins.UI.SignedOther>You have {0}</HH.Ins.UI.SignedOther>
+  <HH.Ins.UI.SignedMsg>Signed {0} ({1}). Welcome to Clawback Mutual.</HH.Ins.UI.SignedMsg>
+  <HH.Ins.UI.For>For: {0}</HH.Ins.UI.For>
+  <HH.Ins.UI.Insured>insured</HH.Ins.UI.Insured>
+  <HH.Ins.UI.SumProperty>Sum insured: {0}</HH.Ins.UI.SumProperty>
+  <HH.Ins.UI.SumPerson>Basic sum: {0}</HH.Ins.UI.SumPerson>
+  <HH.Ins.UI.SumCap>Cap per claim: {0}</HH.Ins.UI.SumCap>
+  <HH.Ins.UI.Customize>Customize</HH.Ins.UI.Customize>
+  <HH.Ins.UI.Riders.Hidden>{0} add-on(s) selected for you.</HH.Ins.UI.Riders.Hidden>
+  <HH.Ins.UI.Riders.Pre>(ticked for you)</HH.Ins.UI.Riders.Pre>
+  <HH.Ins.UI.Riders.Sum>Add-ons: +{0}</HH.Ins.UI.Riders.Sum>
+  <HH.Ins.UI.Riders.BasicOnly>Basic only</HH.Ins.UI.Riders.BasicOnly>
+  <HH.Ins.UI.FinePrint>Fine print</HH.Ins.UI.FinePrint>
+  <HH.Ins.UI.Fine.Intro>Terms of {0} (abridged for your convenience):</HH.Ins.UI.Fine.Intro>
+  <HH.Ins.UI.Fine.Tail>The full terms are the 400 pages mentioned in our slogan. See also the Fine print tab.</HH.Ins.UI.Fine.Tail>
+  <HH.Ins.UI.Mine.None>You have no policy yet. It is the one thing we are sure about.</HH.Ins.UI.Mine.None>
+  <HH.Ins.UI.Mine.Sum>Sum: {0}</HH.Ins.UI.Mine.Sum>
+  <HH.Ins.UI.Mine.NoClaims>No-claims class {0} (-{1})</HH.Ins.UI.Mine.NoClaims>
+  <HH.Ins.UI.Mine.Waiting>waiting period: {0} left</HH.Ins.UI.Mine.Waiting>
+  <HH.Ins.UI.Mine.Discount>retention discount -{0}</HH.Ins.UI.Mine.Discount>
+  <HH.Ins.UI.Mine.Owed>open claw-back {0}</HH.Ins.UI.Mine.Owed>
+  <HH.Ins.UI.Mine.Paid>Premiums paid: {0}  ·  Benefits received: {1}</HH.Ins.UI.Mine.Paid>
+  <HH.Ins.UI.Mine.Ended>Ended: {0}</HH.Ins.UI.Mine.Ended>
+  <HH.Ins.UI.Mine.Upsell>Most colonies choose Premium.</HH.Ins.UI.Mine.Upsell>
+  <HH.Ins.UI.Mine.CancelLink>Cancel policy</HH.Ins.UI.Mine.CancelLink>
+  <HH.Ins.UI.Mine.CancelPending>Cancellation takes effect in {0}</HH.Ins.UI.Mine.CancelPending>
+  <HH.Ins.UI.Mine.FormError>(form error)</HH.Ins.UI.Mine.FormError>
+  <HH.Ins.UI.Mine.Withdraw>Withdraw cancellation</HH.Ins.UI.Mine.Withdraw>
+  <HH.Ins.UI.Mine.Foot>Policies renew automatically (clause 31). Special cancellation: after a settled claim or a premium increase you can leave within five days, immediately.</HH.Ins.UI.Mine.Foot>
+  <HH.Ins.UI.Debt>You owe Clawback Mutual {0} from clause 22.</HH.Ins.UI.Debt>
+  <HH.Ins.UI.Debt.Settle>Settle now</HH.Ins.UI.Debt.Settle>
+  <HH.Ins.UI.Debt.Cannot>You cannot pay that right now.</HH.Ins.UI.Debt.Cannot>
+  <HH.Ins.UI.Claims.None>No claims. Clawback Mutual is delighted and a little suspicious.</HH.Ins.UI.Claims.None>
+  <HH.Ins.UI.Claims.Log>Timeline</HH.Ins.UI.Claims.Log>
+  <HH.Ins.UI.Claim.Review>In review: {0} left</HH.Ins.UI.Claim.Review>
+  <HH.Ins.UI.Claim.Window>negotiation window: {0}</HH.Ins.UI.Claim.Window>
+  <HH.Ins.UI.Claim.PaysIn>pays in {0}</HH.Ins.UI.Claim.PaysIn>
+  <HH.Ins.UI.Claim.Paid>Paid: {0}</HH.Ins.UI.Claim.Paid>
+  <HH.Ins.UI.Claim.Closed>Closed</HH.Ins.UI.Claim.Closed>
+  <HH.Ins.UI.Claim.Line>{0}  ·  loss {1}  ·  claim {2}  ·  offer {3}</HH.Ins.UI.Claim.Line>
+  <HH.Ins.UI.Claim.Preview>Preview: grade {0} %, benefit {1}, assessment in {2}</HH.Ins.UI.Claim.Preview>
+  <HH.Ins.UI.Claim.Details>Details</HH.Ins.UI.Claim.Details>
+  <HH.Ins.UI.Fine.Title>The fine print</HH.Ins.UI.Fine.Title>
+  <HH.Ins.UI.Fine.Lead>Fifteen clauses, as printed. From a certain level of sales pressure they are shown only as references. Clauses in grey are not active on your difficulty.</HH.Ins.UI.Fine.Lead>
+  <HH.Ins.UI.Fine.Inactive>inactive here</HH.Ins.UI.Fine.Inactive>
+  <HH.Ins.UI.Limbs.Title>Schedule of Limbs</HH.Ins.UI.Limbs.Title>
+  <HH.Ins.UI.Limbs.Lead>Values in percent of the basic sum, per side. A lost part counts its value and replaces the values of its children; several parts add up to at most 100 %.</HH.Ins.UI.Limbs.Lead>
+  <HH.Enum.TrickMode.Follows>Follows sales pressure</HH.Enum.TrickMode.Follows>
+  <HH.Enum.TrickMode.On>Always on</HH.Enum.TrickMode.On>
+  <HH.Enum.TrickMode.Off>Off</HH.Enum.TrickMode.Off>
+</LanguageData>

@@ -382,9 +382,9 @@ namespace Silverline
                 {
                     if (c.tier == CoverTier.BareMinimum)
                     {
-                        if (c.accruedSince < 0 && c.accrued <= 0 && c.benefitPaid <= 0.001) { c.accrued = def.lumpSum; c.accruedSince = now - InsSettings.Billing * ClaimEngine.Day; }
+                        if (c.accruedSince < 0 && c.accrued <= 0 && c.benefitPaid <= 0.001 && !claims.Any(x => x.contractId == c.id)) { c.accrued = c.sum * def.lumpSum; c.accruedSince = now - InsSettings.Billing * ClaimEngine.Day; }
                     }
-                    else { c.accrued += def.dailyAnnuity * (c.tier == CoverTier.Premium ? 1.5 : 1.0); if (c.accruedSince < 0) c.accruedSince = now; }
+                    else { c.accrued += c.sum * def.dailyAnnuity * (c.tier == CoverTier.Premium ? 1.5 : 1.0); if (c.accruedSince < 0) c.accruedSince = now; }
                 }
                 if (c.accrued > 0.001 && c.accruedSince >= 0 && now - c.accruedSince >= InsSettings.Billing * ClaimEngine.Day)
                 {
@@ -406,7 +406,7 @@ namespace Silverline
                 double net = InsuranceMath.NetGrade(g, cl.preGrade);
                 if (net < cl.paidGrade - 0.5)
                 {
-                    double newBenefit = InsuranceMath.AccidentBenefit(c.sum, c.tier, net, c.riders.Contains("plusProgression"), po);
+                    double newBenefit = InsuranceMath.AccidentBenefit(c.sum, c.tier, net, c.HasEffect("plusProgression"), po);
                     double back = Math.Max(0, cl.paid - newBenefit);
                     cl.paid = newBenefit; cl.paidGrade = net;
                     if (back > 0.01)
