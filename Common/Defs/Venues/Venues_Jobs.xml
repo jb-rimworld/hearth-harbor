@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>HH_TendVenue</defName>
+    <driverClass>Hearth.ShopsFood.JobDriver_TendVenue</driverClass>
+    <reportString>tending the venue.</reportString>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>HH_BuyGoods</defName>
+    <driverClass>Hearth.ShopsFood.JobDriver_BuyGoods</driverClass>
+    <reportString>shopping for TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>HH_BuyDrink</defName>
+    <driverClass>Hearth.ShopsFood.JobDriver_BuyGoods</driverClass>
+    <reportString>ordering TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>HH_WaitAtVenue</defName>
+    <driverClass>Hearth.ShopsFood.JobDriver_WaitAtVenue</driverClass>
+    <reportString>waiting for service.</reportString>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+  </JobDef>
+
+  <WorkGiverDef>
+    <defName>HH_ServeVenue</defName>
+    <label>tend venues</label>
+    <giverClass>Hearth.ShopsFood.WorkGiver_ServeVenue</giverClass>
+    <workType>HH_Serving</workType>
+    <verb>tend</verb>
+    <gerund>tending</gerund>
+    <priorityInType>50</priorityInType>
+    <requiredCapacities>
+      <li>Talking</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+</Defs>

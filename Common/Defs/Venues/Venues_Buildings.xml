@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ===== Venue Sign, free-standing (KONZEPT 6.1) ===== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_VenueSign</defName>
+    <label>venue sign</label>
+    <description>A sign that turns the room it stands in into a business: tavern, shop, restaurant, casino, spa or lounge. Choose the kind of business, opening hours and prices in the sign's controls. Without a sign, a room is just a room.</description>
+    <graphicData>
+      <texPath>Things/HH/Venues/VenueSign</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>30</pathCost>
+    <fillPercent>0.25</fillPercent>
+    <rotatable>true</rotatable>
+    <size>(1,1)</size>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories><li>BuildingsMisc</li></thingCategories>
+    <stuffCategories>
+      <li>Woody</li>
+      <li>Metallic</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>10</costStuffCount>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <WorkToBuild>300</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Mass>3</Mass>
+      <Beauty>1</Beauty>
+    </statBases>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <uiOrder>100</uiOrder>
+    <comps>
+      <li Class="Hearth.ShopsFood.CompProperties_VenueSignHH" />
+    </comps>
+  </ThingDef>
+
+  <!-- ===== Venue Sign, wall-mounted (works like the vanilla wall lamp; the room in front of it is the business) ===== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_VenueSignWall</defName>
+    <label>venue sign (wall)</label>
+    <description>The same sign, hung on a wall. The room it faces becomes the business. Choose the kind of business, opening hours and prices in the sign's controls.</description>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/HH/Venues/VenueSignWall</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+      <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+      <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+      <damageData><enabled>false</enabled></damageData>
+    </graphicData>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded IsNull="True" />
+    <pathCost>0</pathCost>
+    <overrideMinifiedRot>North</overrideMinifiedRot>
+    <minifiedDrawOffset>(0, 0, 0.2)</minifiedDrawOffset>
+    <stuffCategories>
+      <li>Woody</li>
+      <li>Metallic</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>10</costStuffCount>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <WorkToBuild>300</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Mass>2</Mass>
+    </statBases>
+    <building>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+    </building>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <uiOrder>101</uiOrder>
+    <comps>
+      <li Class="Hearth.ShopsFood.CompProperties_VenueSignHH"><wallMounted>true</wallMounted></li>
+    </comps>
+  </ThingDef>
+
+  <!-- ===== Shop counter: where the shopkeeper or bartender stands; doubles as the till spot ===== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_ShopCounter</defName>
+    <label>shop counter</label>
+    <description>A counter for a shopkeeper or bartender. Whoever tends the venue stands behind it, and the day's takings are put down as silver here at midnight. A counter is optional: without one, the tender stands next to the sign.</description>
+    <graphicData>
+      <texPath>Things/HH/Venues/ShopCounter</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>60</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <size>(2,1)</size>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories><li>BuildingsFurniture</li></thingCategories>
+    <stuffCategories>
+      <li>Woody</li>
+      <li>Metallic</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>30</costStuffCount>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToBuild>600</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Mass>12</Mass>
+      <Beauty>1</Beauty>
+    </statBases>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <uiOrder>110</uiOrder>
+    <comps>
+      <li Class="Hearth.CompProperties_TillSpot" />
+    </comps>
+  </ThingDef>
+
+  <!-- ===== Vending machine: storage guests buy from without any staff ===== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_VendingMachine</defName>
+    <label>vending machine</label>
+    <description>A powered cabinet that holds food, drinks, drugs and medicine. Guests buy from it at any hour without any staff, at market value. Haulers fill it like a shelf. Colonists may help themselves for free; the machine only charges guests. Needs power to sell.</description>
+    <thingClass>Building_Storage</thingClass>
+    <graphicData>
+      <texPath>Things/HH/Venues/VendingMachine</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <size>(1,1)</size>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories><li>BuildingsFurniture</li></thingCategories>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <costList>
+      <Steel>70</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <MaxHitPoints>140</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Mass>40</Mass>
+      <Beauty>0</Beauty>
+    </statBases>
+    <researchPrerequisites><li>Electricity</li></researchPrerequisites>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <maxItemsInCell>4</maxItemsInCell>
+      <blueprintClass>Blueprint_Storage</blueprintClass>
+      <storageGroupTag>HH_VendingMachine</storageGroupTag>
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>FoodMeals</li>
+            <li>Drugs</li>
+            <li>Medicine</li>
+          </categories>
+          <specialFiltersToDisallow>
+            <li>AllowLargeCorpses</li>
+          </specialFiltersToDisallow>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Preferred</priority>
+        <filter>
+          <categories>
+            <li>FoodMeals</li>
+            <li>Drugs</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <uiOrder>120</uiOrder>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>90</basePowerConsumption>
+        <shortCircuitInRain>true</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable" />
+    </comps>
+  </ThingDef>
+</Defs>
