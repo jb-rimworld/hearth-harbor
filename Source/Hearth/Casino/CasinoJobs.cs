@@ -47,7 +47,11 @@ namespace Hearth.Casino
             var cells = comp.PlayCells().Where(x => pawn.CanReserveSittableOrSpot(x) && pawn.CanReach(x, PathEndMode.OnCell, Danger.Some)).ToList();
             if (cells.Count == 0) return null;
             // prefer a cell with a chair, otherwise the nearest
-            cell = cells.FirstOrDefault(x => { var e = x.GetEdifice(pawn.Map); return e != null && e.def.building.isSittable; });
+            foreach (var x in cells)
+            {
+                var e = x.GetEdifice(pawn.Map);
+                if (e != null && e.def.building != null && e.def.building.isSittable) { cell = x; break; }
+            }
             if (!cell.IsValid) cell = cells.MinBy(x => (x - pawn.Position).LengthManhattan);
             var job = JobMaker.MakeJob(CasinoDefOf.HH_PlayCasino, comp.parent, cell);
             return job;
@@ -161,7 +165,7 @@ namespace Hearth.Casino
 #endif
             work.handlingFacing = true;
             work.defaultCompleteMode = ToilCompleteMode.Delay;
-            work.defaultDuration = 6000;
+            work.defaultDuration = 20000;   // ends earlier when nobody waits any more (idle > 600 ticks)
             work.activeSkill = () => SkillDefOf.Social;
             yield return work;
         }

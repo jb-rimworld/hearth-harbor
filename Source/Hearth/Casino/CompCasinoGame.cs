@@ -9,6 +9,15 @@ using Hearth.CasinoMath;
 
 namespace Hearth.Casino
 {
+    [StaticConstructorOnStartup]
+    public static class CasinoIcons
+    {
+        public static readonly Texture2D Volatility = ContentFinder<Texture2D>.Get("UI/HH/Casino/Volatility", false) ?? BaseContent.BadTex;
+        public static readonly Texture2D OpenToGuests = ContentFinder<Texture2D>.Get("UI/HH/Casino/OpenToGuests", false) ?? BaseContent.BadTex;
+        public static readonly Texture2D Practice = ContentFinder<Texture2D>.Get("UI/HH/Casino/Practice", false) ?? BaseContent.BadTex;
+        public static readonly Texture2D Simulate = ContentFinder<Texture2D>.Get("UI/HH/Casino/Simulate", false) ?? BaseContent.BadTex;
+    }
+
     public class CompProperties_CasinoGame : CompProperties
     {
         public CasinoGame game;
@@ -246,7 +255,7 @@ namespace Hearth.Casino
                 {
                     defaultLabel = ("HH.Casino.Vol." + Volatility).Translate(),
                     defaultDesc = "HH.Casino.VolDesc".Translate(Paytable.HitRate.ToString("P0"), Paytable.Sigma.ToString("0.0"), Paytable.MaxMultiplier.ToString("0"), (Paytable.Rtp * 100).ToString("0.#")),
-                    icon = TexCommand.ToggleVent,
+                    icon = CasinoIcons.Volatility,
                     action = () => { Volatility = (SlotVolatility)(((int)Volatility + 1) % 3); paytable = null; }
                 };
             }
@@ -254,7 +263,7 @@ namespace Hearth.Casino
             {
                 defaultLabel = "HH.Casino.OpenToGuests".Translate(),
                 defaultDesc = "HH.Casino.OpenToGuestsDesc".Translate(),
-                icon = TexCommand.ForbidOff,
+                icon = CasinoIcons.OpenToGuests,
                 isActive = () => GuestsAllowed,
                 toggleAction = () => GuestsAllowed = !GuestsAllowed
             };
@@ -262,14 +271,14 @@ namespace Hearth.Casino
             {
                 defaultLabel = "HH.Casino.TryDemo".Translate(),
                 defaultDesc = "HH.Casino.TryDemoDesc".Translate(),
-                icon = TexCommand.Attack,
+                icon = CasinoIcons.Practice,
                 action = () => Find.WindowStack.Add(new Dialog_CasinoDemo(this))
             };
             yield return new Command_Action
             {
                 defaultLabel = "HH.Casino.Simulate".Translate(),
                 defaultDesc = "HH.Casino.SimulateDesc".Translate(),
-                icon = TexCommand.DesirePower,
+                icon = CasinoIcons.Simulate,
                 action = () => Messages.Message(CasinoEngine.Simulate(this, 10000), parent, MessageTypeDefOf.NeutralEvent, false)
             };
             if (DebugSettings.godMode)

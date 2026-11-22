@@ -93,7 +93,7 @@ namespace Hearth.Casino
                 // gambling spree in deep withdrawal
                 if (InWithdrawal && !pawn.InMentalState && !pawn.Downed && pawn.Spawned && Gambling.IsColonist(pawn))
                 {
-                    double mtb = GamblingMath.SpreeMtbDays(Stage);
+                    double mtb = (HearthProfile.Current?.Tier ?? 3f) >= 2.5f ? GamblingMath.SpreeMtbDays(Stage) : 0;   // Bed & Breakfast and easier: no withdrawal breakdowns
                     if (mtb > 0 && Rand.MTBEventOccurs((float)mtb, 60000f, 150f))
                         pawn.mindState.mentalStateHandler.TryStartMentalState(CasinoDefOf.HH_GamblingSpree, "HH.Casino.SpreeReason".Translate().ToString(), forced: false);
                 }

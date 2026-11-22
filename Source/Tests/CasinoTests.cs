@@ -70,6 +70,41 @@ public class SlotTests
     }
 }
 
+public class GuestFairnessTests
+{
+    readonly ITestOutputHelper o;
+    public GuestFairnessTests(ITestOutputHelper o) { this.o = o; }
+
+    // KONZEPT 6.6: expected loss per visit is 5-15 % of the silver a guest brings (the calculator warns outside 3-25 %).
+    // One session is tested here; a guest plays up to three sessions per stay, so a visit costs roughly 2-3 times as much.
+    [Theory]
+    [InlineData(0.95, 0.02, 0.12)] [InlineData(0.92, 0.04, 0.15)] [InlineData(0.88, 0.05, 0.20)]
+    public void ExpectedLossPerVisitIsInTheFairnessBand(double rtp, double lo, double hi)
+    {
+        foreach (SlotVolatility v in Enum.GetValues(typeof(SlotVolatility)))
+        {
+            var table = SlotPaytable.For(v, rtp);
+            var rng = new RngStream(77, RngStream.HashString("casino.fairness." + v + rtp));
+            double budget = 120, reserve = Math.Min(20, budget * 0.2), bankroll = Math.Floor(Math.Min(budget * 0.25, budget - reserve));
+            double stake = Math.Max(0.5, Math.Round(bankroll * 0.03 / 0.05) * 0.05);
+            int sessions = 6000; double lossSum = 0;
+            for (int s = 0; s < sessions; s++)
+            {
+                double purse = bankroll;
+                for (int spin = 0; spin < 240 && purse >= stake; spin++)
+                {
+                    purse += stake * (table.Spin(rng, out _, out _, out _) - 1);
+                    if (purse <= bankroll * 0.6 || purse >= bankroll * 1.5) break;
+                }
+                lossSum += bankroll - purse;
+            }
+            double meanLoss = lossSum / sessions / budget;
+            o.WriteLine($"RTP {rtp:P0} {v}: guest loses {meanLoss:P1} of the budget per visit");
+            Assert.InRange(meanLoss, lo, hi);
+        }
+    }
+}
+
 public class RouletteTests
 {
     readonly ITestOutputHelper o;

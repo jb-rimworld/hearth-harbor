@@ -90,6 +90,8 @@ namespace Hearth.Casino
         static readonly string[] rouletteBets = { "Red", "Black", "Odd", "Even", "Low 1-18", "High 19-36", "Dozen 1", "Dozen 2", "Dozen 3", "Column 1", "Column 2", "Column 3", "Straight…" };
 
         public override Vector2 InitialSize => new Vector2(560f, 520f);
+        /// <summary>True when this window reserves its quiet help line (core.helpHint is on).</summary>
+        public bool ShowsHelpHint => CasinoUI.HelpHintText() != null;
 
         public Dialog_CasinoDemo(CompCasinoGame comp)
         {
@@ -357,17 +359,17 @@ namespace Hearth.Casino
             Widgets.Label(new Rect(0, y, w, 24f), "<b>" + title + "</b>"); y += 22f; Widgets.DrawLineHorizontal(0, y, w); y += 4f;
         }
 
-        static readonly float[] cols = { 0, 130, 210, 300, 390, 490, 600 };
+        static readonly float[] cols = { 0, 130, 205, 285, 385, 495, 600 };
         static void DrawGameHeader(ref float y)
         {
             GUI.color = new Color(0.75f, 0.75f, 0.75f);
             string[] h = { "HH.Casino.ColGame", "HH.Casino.ColRounds", "HH.Casino.ColStaked", "HH.Casino.ColRtp", "HH.Casino.ColExpected", "HH.Casino.ColLuck", "HH.Casino.ColHouse" };
-            for (int i = 0; i < h.Length; i++) Widgets.Label(new Rect(cols[i], y, 110f, 22f), h[i].Translate());
+            for (int i = 0; i < h.Length; i++) Widgets.Label(new Rect(cols[i], y, (i + 1 < cols.Length ? cols[i + 1] - cols[i] : 110f) - 4f, 22f), h[i].Translate());
             GUI.color = Color.white; y += 22f;
         }
         static void DrawGameRow(ref float y, string game, int rounds, long staked, long paid, double rtp, double expected, double? z, double houseWin)
         {
-            Widgets.Label(new Rect(cols[0], y, 120f, 22f), ("HH.Casino.Game." + game).Translate());
+            Widgets.Label(new Rect(cols[0], y, 126f, 22f), ("HH.Casino.Game." + game).Translate());
             Widgets.Label(new Rect(cols[1], y, 80f, 22f), rounds.ToString("N0"));
             Widgets.Label(new Rect(cols[2], y, 90f, 22f), (staked / (double)Money.PerSilver).ToString("N0"));
             Widgets.Label(new Rect(cols[3], y, 90f, 22f), staked > 0 ? (rtp * 100).ToString("0.0") + " %" : "–");

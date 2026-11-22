@@ -5,6 +5,10 @@
     <defName>HH_GamblingChemical</defName>
     <label>gambling</label>
     <addictionHediff>HH_GamblingAddiction</addictionHediff>
+    <!-- Only the tables create this addiction: never generated on new pawns, no bingeing on a drug, no addiction genes. -->
+    <canBeAddicted>false</canBeAddicted>
+    <canBinge>false</canBinge>
+    <generateAddictionGenes>false</generateAddictionGenes>
   </ChemicalDef>
 
   <NeedDef ParentName="DrugAddictionNeedBase">
