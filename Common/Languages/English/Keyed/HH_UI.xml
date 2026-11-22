@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.UI.Page.Overview>Overview</HH.UI.Page.Overview>
+  <HH.UI.Page.Guests>Guests</HH.UI.Page.Guests>
+  <HH.UI.Page.Modules>Modules</HH.UI.Page.Modules>
+  <HH.UI.Page.Difficulty>Difficulty</HH.UI.Page.Difficulty>
+  <HH.UI.Page.General>General</HH.UI.Page.General>
+  <HH.UI.Page.Diagnosis>Diagnosis</HH.UI.Page.Diagnosis>
+  <HH.UI.Page.About>About</HH.UI.Page.About>
+  <HH.UI.Silver>silver</HH.UI.Silver>
+  <HH.UI.Tab.Settings>Settings</HH.UI.Tab.Settings>
+  <HH.UI.Tab.Guide>Guide</HH.UI.Tab.Guide>
+  <HH.UI.Tab.GuideTip>Show or hide the little lesson panel at the top right.</HH.UI.Tab.GuideTip>
+  <HH.UI.Tab.NoPages>Nothing to show yet.</HH.UI.Tab.NoPages>
+  <HH.UI.Settings.ThisSave>This save</HH.UI.Settings.ThisSave>
+  <HH.UI.Settings.Template>Template</HH.UI.Settings.Template>
+  <HH.UI.Settings.ThisSaveTip>Edit the settings of the running colony. They are saved with it.</HH.UI.Settings.ThisSaveTip>
+  <HH.UI.Settings.TemplateTip>Edit the template that new colonies start from. The running colony is not changed.</HH.UI.Settings.TemplateTip>
+  <HH.UI.Settings.TemplateOnly>Template for new games. Each new colony gets its own copy.</HH.UI.Settings.TemplateOnly>
+  <HH.UI.Settings.EditingTemplate>Editing the template for new games. The running colony is not changed.</HH.UI.Settings.EditingTemplate>
+  <HH.UI.Settings.SaveAsTemplate>Save colony as template</HH.UI.Settings.SaveAsTemplate>
+  <HH.UI.Settings.SaveAsTemplateTip>Copies modules, difficulty and all settings of this colony into the template for new games.</HH.UI.Settings.SaveAsTemplateTip>
+  <HH.UI.Settings.SaveAsTemplateConfirm>Replace the template for new games with the settings of this colony?</HH.UI.Settings.SaveAsTemplateConfirm>
+  <HH.UI.Settings.ApplyTemplate>Apply template to colony</HH.UI.Settings.ApplyTemplate>
+  <HH.UI.Settings.ApplyTemplateTip>Replaces the settings of this colony with the template.</HH.UI.Settings.ApplyTemplateTip>
+  <HH.UI.Settings.ApplyTemplateConfirm>Replace modules, difficulty and all settings of this colony with the template? This cannot be undone.</HH.UI.Settings.ApplyTemplateConfirm>
+  <HH.UI.Settings.TemplateSaved>Template for new games saved.</HH.UI.Settings.TemplateSaved>
+  <HH.UI.Settings.TemplateApplied>Template applied to this colony.</HH.UI.Settings.TemplateApplied>
+  <HH.UI.Settings.Search>Search settings...</HH.UI.Settings.Search>
+  <HH.UI.Settings.SearchResults>Search results</HH.UI.Settings.SearchResults>
+  <HH.UI.Settings.NoMatch>No setting matches. Nerd settings are hidden unless you switch them on.</HH.UI.Settings.NoMatch>
+  <HH.UI.Settings.Nerd>Show nerd settings</HH.UI.Settings.Nerd>
+  <HH.UI.Settings.NerdTip>Shows the settings meant for people who like numbers. Everything else is unchanged.</HH.UI.Settings.NerdTip>
+  <HH.UI.Settings.Off>off</HH.UI.Settings.Off>
+  <HH.UI.Settings.Yes>yes</HH.UI.Settings.Yes>
+  <HH.UI.Settings.No>no</HH.UI.Settings.No>
+  <HH.UI.Settings.ResetModule>Reset module</HH.UI.Settings.ResetModule>
+  <HH.UI.Settings.ResetModuleConfirm>Reset every setting of {0} to its default?</HH.UI.Settings.ResetModuleConfirm>
+  <HH.UI.Settings.ModuleIsOff>This module is switched off for this colony. Its settings have no effect.</HH.UI.Settings.ModuleIsOff>
+  <HH.UI.Settings.SwitchOn>Switch on</HH.UI.Settings.SwitchOn>
+  <HH.UI.Row.On>on</HH.UI.Row.On>
+  <HH.UI.Row.Off>off</HH.UI.Row.Off>
+  <HH.UI.Row.Free>Free</HH.UI.Row.Free>
+  <HH.UI.Row.FreeTip>Free entry: type any number up to the technical limit of the game.</HH.UI.Row.FreeTip>
+  <HH.UI.Row.Reset>reset</HH.UI.Row.Reset>
+  <HH.UI.Row.Nerd>nerd</HH.UI.Row.Nerd>
+  <HH.UI.Row.Beyond>Beyond the slider range. Free entry allows this.</HH.UI.Row.Beyond>
+  <HH.UI.Row.Limited>limit {0}</HH.UI.Row.Limited>
+  <HH.UI.Row.Limit>Technical limit</HH.UI.Row.Limit>
+  <HH.UI.Row.LimitGeneric>The game cannot use this value, so the nearest possible one is used.</HH.UI.Row.LimitGeneric>
+  <HH.UI.Row.FollowsTier>The default follows the hosting difficulty.</HH.UI.Row.FollowsTier>
+  <HH.UI.General.Interface>Interface</HH.UI.General.Interface>
+  <HH.UI.General.ShowCard>Show the first-start card in every new game</HH.UI.General.ShowCard>
+  <HH.UI.General.ShowCardTip>Off: new games quietly use the template and no card appears.</HH.UI.General.ShowCardTip>
+  <HH.UI.General.Tutorial>Tutorial</HH.UI.General.Tutorial>
+  <HH.UI.General.Verbose>Verbose log (HearthHarbor.log)</HH.UI.General.Verbose>
+  <HH.UI.Modules.IntroSave>Modules can be switched per colony. A module that is off has no visible effect at all.</HH.UI.Modules.IntroSave>
+  <HH.UI.Modules.IntroTemplate>Modules for new colonies. Each colony can still change its own.</HH.UI.Modules.IntroTemplate>
+  <HH.UI.Modules.NotInstalled>not part of this installation</HH.UI.Modules.NotInstalled>
+  <HH.UI.Modules.BankHint>Bank: use the bank inside Hearth &amp; Harbor and switch all guest modules off. You do not need the standalone entry.</HH.UI.Modules.BankHint>
+  <HH.UI.Modules.Content>Content intensity</HH.UI.Modules.Content>
+  <HH.UI.Modules.ContentDesc>How dark the optional content may get. Never sexual content, whatever you pick.</HH.UI.Modules.ContentDesc>
+  <HH.UI.Content.Cozy>Cozy</HH.UI.Content.Cozy>
+  <HH.UI.Content.Cozy.Tip>Mild stories and consequences only.</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Standard>Standard</HH.UI.Content.Standard>
+  <HH.UI.Content.Standard.Tip>The default. Rough edges, nothing nasty.</HH.UI.Content.Standard.Tip>
+  <HH.UI.Content.Dark>Dark</HH.UI.Content.Dark>
+  <HH.UI.Content.Dark.Tip>Crime, debts and violence may show up.</HH.UI.Content.Dark.Tip>
+  <HH.UI.Content.Grim>Grim</HH.UI.Content.Grim>
+  <HH.UI.Content.Grim.Tip>Everything the game offers, in full.</HH.UI.Content.Grim.Tip>
+  <HH.UI.Underworld.Discover>Discover in game</HH.UI.Underworld.Discover>
+  <HH.UI.Underworld.On>On</HH.UI.Underworld.On>
+  <HH.UI.Underworld.Off>Off</HH.UI.Underworld.Off>
+  <HH.UI.Underworld.Discover.Tip>Off the radar until a shady stranger turns up in your game.</HH.UI.Underworld.Discover.Tip>
+  <HH.UI.Underworld.On.Tip>Available from the start.</HH.UI.Underworld.On.Tip>
+  <HH.UI.Underworld.Off.Tip>Never available. The shady stranger stays away too.</HH.UI.Underworld.Off.Tip>
+  <HH.UI.ModuleDesc.Inn>Guests, guest beds, wings, reception, travellers and recruiting.</HH.UI.ModuleDesc.Inn>
+  <HH.UI.ModuleDesc.ShopsFood>Venue signs, shops, vending, markets, restaurants and dishes.</HH.UI.ModuleDesc.ShopsFood>
+  <HH.UI.ModuleDesc.Casino>Tables, slot machines, chips and the risks of gambling for guests and colonists.</HH.UI.ModuleDesc.Casino>
+  <HH.UI.ModuleDesc.Wellness>Spa, sauna and rehabilitation stays.</HH.UI.ModuleDesc.Wellness>
+  <HH.UI.ModuleDesc.CityLife>Cinema, mall, salon, temples, taxis and security.</HH.UI.ModuleDesc.CityLife>
+  <HH.UI.ModuleDesc.Underworld>A discreet back room, a fight pit and a fence. Found in game, never forced.</HH.UI.ModuleDesc.Underworld>
+  <HH.UI.ModuleDesc.Bank>Silverline: accounts, payments, ATMs, investments, loans, insurance and lottery.</HH.UI.ModuleDesc.Bank>
+  <HH.UI.ModuleDesc.AiFlavour>Optional flavour texts written by an AI through a relay. Off by default.</HH.UI.ModuleDesc.AiFlavour>
+  <HH.UI.Diff.Title>Hosting difficulty</HH.UI.Diff.Title>
+  <HH.UI.Diff.Intensity>Hosting intensity {0} %</HH.UI.Diff.Intensity>
+  <HH.UI.Diff.ChipTip>{0}: about {1} % hosting intensity.</HH.UI.Diff.ChipTip>
+  <HH.UI.Diff.Calculator>What this tier means for you</HH.UI.Diff.Calculator>
+  <HH.UI.Diff.Ladder>What can go wrong</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.Special>Special switches</HH.UI.Diff.Special>
+  <HH.UI.Diff.ShowAll>Show all {0} values that follow the difficulty</HH.UI.Diff.ShowAll>
+  <HH.UI.Diff.WarnHard>From Overbooked on, real consequences are switched on: fines, licence loss and worse.</HH.UI.Diff.WarnHard>
+  <HH.UI.Diff.WarnEasy>This tier is very forgiving. Money comes easy and nothing goes wrong.</HH.UI.Diff.WarnEasy>
+  <HH.UI.Diff.WarnBreaks>This breaks the game balance. On purpose?</HH.UI.Diff.WarnBreaks>
+  <HH.UI.Calc.StandardIs>Standard Room: {0}</HH.UI.Calc.StandardIs>
+  <HH.UI.Calc.Reference>reference value</HH.UI.Calc.Reference>
+  <HH.UI.Calc.SetByYou>You changed this value yourself, so it does not follow the slider.</HH.UI.Calc.SetByYou>
+  <HH.UI.Calc.NoEffectInfinite>No effect while Infinite guest money is on.</HH.UI.Calc.NoEffectInfinite>
+  <HH.UI.Feel.0>Everything is on the house.</HH.UI.Feel.0>
+  <HH.UI.Feel.1>Money flows and nothing goes wrong.</HH.UI.Feel.1>
+  <HH.UI.Feel.2>Gentle and generous.</HH.UI.Feel.2>
+  <HH.UI.Feel.3>Small losses are possible. Profit takes work.</HH.UI.Feel.3>
+  <HH.UI.Feel.4>Consequences switch on: quarrels, fines, licence loss.</HH.UI.Feel.4>
+  <HH.UI.Feel.5>Feuds, contracts, strict inspectors, revenge raids.</HH.UI.Feel.5>
+  <HH.UI.Feel.6>Everything is hard and nothing is capped.</HH.UI.Feel.6>
+  <HH.UI.Calc.guestMoney>Guest money</HH.UI.Calc.guestMoney>
+  <HH.UI.Calc.guestMoney.Desc>Multiplies what guests carry and are willing to spend.</HH.UI.Calc.guestMoney.Desc>
+  <HH.UI.Calc.priceTolerance>Price tolerance</HH.UI.Calc.priceTolerance>
+  <HH.UI.Calc.priceTolerance.Desc>How far above a fair price guests still buy.</HH.UI.Calc.priceTolerance.Desc>
+  <HH.UI.Calc.arrivalRate>Arrival rate</HH.UI.Calc.arrivalRate>
+  <HH.UI.Calc.arrivalRate.Desc>How often guests turn up.</HH.UI.Calc.arrivalRate.Desc>
+  <HH.UI.Calc.expectation>Guest expectation</HH.UI.Calc.expectation>
+  <HH.UI.Calc.expectation.Desc>Added to what every guest expects. Higher is harder to satisfy.</HH.UI.Calc.expectation.Desc>
+  <HH.UI.Calc.trouble>Trouble danger</HH.UI.Calc.trouble>
+  <HH.UI.Calc.trouble.Desc>Chance and weight of quarrels, fights and thefts among guests.</HH.UI.Calc.trouble.Desc>
+  <HH.UI.Calc.stage>Highest consequence</HH.UI.Calc.stage>
+  <HH.UI.Calc.stage.Desc>The worst thing a bad stay can do to you at this tier.</HH.UI.Calc.stage.Desc>
+  <HH.UI.Calc.slotEdge>Slot machine house edge</HH.UI.Calc.slotEdge>
+  <HH.UI.Calc.slotEdge.Desc>Share of every bet a slot machine keeps on average.</HH.UI.Calc.slotEdge.Desc>
+  <HH.UI.Calc.bankM>Bank market return (M per year)</HH.UI.Calc.bankM>
+  <HH.UI.Calc.bankM.Desc>Yearly multiplier of the Silverline market. 1.2 means plus twenty percent.</HH.UI.Calc.bankM.Desc>
+  <HH.UI.Calc.defaultFactor>Payment defaults</HH.UI.Calc.defaultFactor>
+  <HH.UI.Calc.defaultFactor.Desc>How often customers fail to pay what they owe.</HH.UI.Calc.defaultFactor.Desc>
+  <HH.UI.Calc.collectionStage>Highest collection stage</HH.UI.Calc.collectionStage>
+  <HH.UI.Calc.collectionStage.Desc>How rough debt collection can get when you owe money.</HH.UI.Calc.collectionStage.Desc>
+  <HH.UI.Calc.researchCost>Research cost</HH.UI.Calc.researchCost>
+  <HH.UI.Calc.researchCost.Desc>Multiplies the cost of Hearth &amp; Harbor and Silverline research.</HH.UI.Calc.researchCost.Desc>
+  <HH.UI.Calc.upkeep>Upkeep</HH.UI.Calc.upkeep>
+  <HH.UI.Calc.upkeep.Desc>Multiplies the running costs of your venues and rooms.</HH.UI.Calc.upkeep.Desc>
+  <HH.UI.Calc.insuranceLoading>Insurance loading</HH.UI.Calc.insuranceLoading>
+  <HH.UI.Calc.insuranceLoading.Desc>The insurer's markup on top of a fair premium.</HH.UI.Calc.insuranceLoading.Desc>
+  <HH.UI.Calc.salesPressure>Insurance sales pressure</HH.UI.Calc.salesPressure>
+  <HH.UI.Calc.salesPressure.Desc>How pushy the insurer's sales tricks get.</HH.UI.Calc.salesPressure.Desc>
+  <HH.UI.Calc.addiction>Gambling addiction chance</HH.UI.Calc.addiction>
+  <HH.UI.Calc.addiction.Desc>Base chance that a colonist who gambles a lot becomes addicted.</HH.UI.Calc.addiction.Desc>
+  <HH.UI.Calc.detection>Cheat detection rate</HH.UI.Calc.detection>
+  <HH.UI.Calc.detection.Desc>How quickly cheating at a table is noticed.</HH.UI.Calc.detection.Desc>
+  <HH.UI.Stage.0>No harm</HH.UI.Stage.0>
+  <HH.UI.Stage.1>Mood</HH.UI.Stage.1>
+  <HH.UI.Stage.2>Renown</HH.UI.Stage.2>
+  <HH.UI.Stage.3>Goodwill</HH.UI.Stage.3>
+  <HH.UI.Stage.4>Money</HH.UI.Stage.4>
+  <HH.UI.Stage.5>Licence</HH.UI.Stage.5>
+  <HH.UI.Stage.6>Raids</HH.UI.Stage.6>
+  <HH.UI.Stage.7>Bounty</HH.UI.Stage.7>
+  <HH.UI.Ladder.Goodwill>Goodwill loss per bad stay (cap)</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>The most goodwill one faction can take away from you per incident.</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Renown>Renown loss per incident (cap)</HH.UI.Ladder.Renown>
+  <HH.UI.Ladder.Renown.Desc>The most renown one incident can cost you.</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Fine>Fines (cap, silver)</HH.UI.Ladder.Fine>
+  <HH.UI.Ladder.Fine.Desc>The most a single inspection or incident can fine you.</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Raids>Retaliation raids</HH.UI.Ladder.Raids>
+  <HH.UI.Ladder.Raids.Desc>Whether angry factions or mercenaries may come after you.</HH.UI.Ladder.Raids.Desc>
+  <HH.UI.Ladder.No>no</HH.UI.Ladder.No>
+  <HH.UI.Ladder.Yes>yes</HH.UI.Ladder.Yes>
+  <HH.UI.Ladder.Footer>Higher tiers unlock more consequences instead of just raising the odds.</HH.UI.Ladder.Footer>
+  <HH.UI.Diag.Copy>Copy diagnosis to clipboard</HH.UI.Diag.Copy>
+  <HH.UI.Diag.Copied>Diagnosis copied to the clipboard.</HH.UI.Diag.Copied>
+  <HH.UI.Diag.PrepareRemoval>Prepare removal</HH.UI.Diag.PrepareRemoval>
+  <HH.UI.Diag.PrepareRemovalTip>Gets the colony ready for taking the mod out: guests go home, open accounts are settled, special items are cleaned up.</HH.UI.Diag.PrepareRemovalTip>
+  <HH.UI.Diag.PrepareRemovalConfirm>Prepare this colony for removing Hearth &amp; Harbor? Guests are sent home and accounts are settled. Save a backup first.</HH.UI.Diag.PrepareRemovalConfirm>
+  <HH.UI.Diag.RemovalTitle>Prepare removal</HH.UI.Diag.RemovalTitle>
+  <HH.UI.Diag.RemovalDone>Done. Save the game, then remove the mod.</HH.UI.Diag.RemovalDone>
+  <HH.UI.Diag.NothingToDo>Nothing needed cleaning up.</HH.UI.Diag.NothingToDo>
+  <HH.UI.Diag.NeedsSave>Open a colony first. Preparing removal works on a running game.</HH.UI.Diag.NeedsSave>
+  <HH.UI.Diag.Summary>{0} settings registered · {1} warnings · {2} errors in the log</HH.UI.Diag.Summary>
+  <HH.UI.Diag.Modules>Modules</HH.UI.Diag.Modules>
+  <HH.UI.Diag.Paused>paused after errors</HH.UI.Diag.Paused>
+  <HH.UI.Diag.Resume>Resume</HH.UI.Diag.Resume>
+  <HH.UI.Diag.Caretaker>Caretaker (repairs so far: {0})</HH.UI.Diag.Caretaker>
+  <HH.UI.Diag.NoChecks>No checks registered.</HH.UI.Diag.NoChecks>
+  <HH.UI.Diag.Fixes>last run {0} · total {1}</HH.UI.Diag.Fixes>
+  <HH.UI.Diag.Patches>Patches ({0} skipped)</HH.UI.Diag.Patches>
+  <HH.UI.Diag.PatchesOk>All patch classes applied.</HH.UI.Diag.PatchesOk>
+  <HH.UI.Diag.Log>Latest log lines</HH.UI.Diag.Log>
+  <HH.UI.About.Body>Hearth &amp; Harbor turns your colony into a host: guests, inns and hotels, shops and restaurants, a casino, a spa, city life, a discreet back room and Silverline, a full bank. Nothing is forced on you. Until you mark a guest bed or put up a sign, the game plays like vanilla.</HH.UI.About.Body>
+  <HH.UI.About.Parts>Parts</HH.UI.About.Parts>
+  <HH.UI.About.PartsBody>Silverline bank included: {0}. Guest modules included: {1}.</HH.UI.About.PartsBody>
+  <HH.UI.About.Project>Open the project page</HH.UI.About.Project>
+  <HH.UI.About.License>MIT licence. Made by juliusberger00.</HH.UI.About.License>
+  <HH.UI.Card.Title>Welcome to Hearth &amp; Harbor</HH.UI.Card.Title>
+  <HH.UI.Card.Sub>Pick your hosting style. Everything can be changed later in the mod settings.</HH.UI.Card.Sub>
+  <HH.UI.Card.TitleJoined>Hearth &amp; Harbor joined this colony</HH.UI.Card.TitleJoined>
+  <HH.UI.Card.SubJoined>Nothing changes until you build something for guests. Pick how you want to host.</HH.UI.Card.SubJoined>
+  <HH.UI.Card.Modules>Modules</HH.UI.Card.Modules>
+  <HH.UI.Card.Difficulty>Difficulty and tutorial</HH.UI.Card.Difficulty>
+  <HH.UI.Card.DifficultyLine>Hosting difficulty: {0} · {1} %</HH.UI.Card.DifficultyLine>
+  <HH.UI.Card.Change>Change...</HH.UI.Card.Change>
+  <HH.UI.Card.UseForAll>Use these choices for all future games</HH.UI.Card.UseForAll>
+  <HH.UI.Card.UseForAllTip>Copies modules, difficulty and tutorial level into the template that new games start from.</HH.UI.Card.UseForAllTip>
+  <HH.UI.Card.Start>Start</HH.UI.Card.Start>
+  <HH.UI.Preset.JustWork>Just work</HH.UI.Preset.JustWork>
+  <HH.UI.Preset.JustWork.Desc>Standard difficulty, everything on. Start building, we explain on the way.</HH.UI.Preset.JustWork.Desc>
+  <HH.UI.Preset.CozyInn>Cozy inn</HH.UI.Preset.CozyInn>
+  <HH.UI.Preset.CozyInn.Desc>Gentler, with fewer ways to lose: no casino and no underworld.</HH.UI.Preset.CozyInn.Desc>
+  <HH.UI.Preset.Tycoon>Tycoon</HH.UI.Preset.Tycoon>
+  <HH.UI.Preset.Tycoon.Desc>Everything on with a short guide. Staff, bookings and the ledger are yours to run.</HH.UI.Preset.Tycoon.Desc>
+  <HH.UI.Preset.Nerd>Nerd</HH.UI.Preset.Nerd>
+  <HH.UI.Preset.Nerd.Desc>Every slider, formulas and nerd settings. No guide.</HH.UI.Preset.Nerd.Desc>
+  <HH.UI.Tutorial.Off>Off</HH.UI.Tutorial.Off>
+  <HH.UI.Tutorial.Off.Tip>Nothing opens by itself.</HH.UI.Tutorial.Off.Tip>
+  <HH.UI.Tutorial.Short>Short</HH.UI.Tutorial.Short>
+  <HH.UI.Tutorial.Short.Tip>Guide topics start folded.</HH.UI.Tutorial.Short.Tip>
+  <HH.UI.Tutorial.FullFirstTime>Full first time, then short</HH.UI.Tutorial.FullFirstTime>
+  <HH.UI.Tutorial.FullFirstTime.Tip>Full guide in the first colony with this mod, short afterwards.</HH.UI.Tutorial.FullFirstTime.Tip>
+  <HH.UI.Tutorial.AlwaysFull>Always full</HH.UI.Tutorial.AlwaysFull>
+  <HH.UI.Tutorial.AlwaysFull.Tip>Topics open on first contact, every time.</HH.UI.Tutorial.AlwaysFull.Tip>
+  <HH.UI.Tutorial.Full>Full this time</HH.UI.Tutorial.Full>
+  <HH.UI.Storyteller.Head>HOSTING DIFFICULTY · {0} %</HH.UI.Storyteller.Head>
+  <HH.UI.Storyteller.Button>Hosting difficulty...</HH.UI.Storyteller.Button>
+  <HH.UI.Storyteller.Tip>How hard hosting guests gets in this colony. It is separate from the raid difficulty above.</HH.UI.Storyteller.Tip>
+  <HH.UI.Overview.Guests>Guests here</HH.UI.Overview.Guests>
+  <HH.UI.Overview.GuestsTip>Guests on the current map.</HH.UI.Overview.GuestsTip>
+  <HH.UI.Overview.Income>Income today</HH.UI.Overview.Income>
+  <HH.UI.Overview.IncomeTip>Silver paid into your tills since dawn.</HH.UI.Overview.IncomeTip>
+  <HH.UI.Overview.Venues>Venues</HH.UI.Overview.Venues>
+  <HH.UI.Overview.VenuesTip>Rooms with a venue sign on the current map.</HH.UI.Overview.VenuesTip>
+  <HH.UI.Overview.Bank>Bank balance</HH.UI.Overview.Bank>
+  <HH.UI.Overview.BankTip>Balance of the colony account at Silverline.</HH.UI.Overview.BankTip>
+  <HH.UI.Overview.IncomeHead>Money</HH.UI.Overview.IncomeHead>
+  <HH.UI.Overview.Today>Today</HH.UI.Overview.Today>
+  <HH.UI.Overview.Yesterday>Yesterday</HH.UI.Overview.Yesterday>
+  <HH.UI.Overview.Sources>Income by source so far</HH.UI.Overview.Sources>
+  <HH.UI.Overview.NoIncome>No income yet. It shows up here as soon as a guest pays.</HH.UI.Overview.NoIncome>
+  <HH.UI.Guests.Head>Guests · {0} here · {1} day guests</HH.UI.Guests.Head>
+  <HH.UI.Guests.None>Nobody is staying right now.</HH.UI.Guests.None>
+  <HH.UI.Guests.VanillaNote>The Inn module is off, so ordinary visitors are shown.</HH.UI.Guests.VanillaNote>
+  <HH.UI.Guests.SatTip>How happy this guest is, from -1 to +1. Latest reasons:</HH.UI.Guests.SatTip>
+  <HH.UI.Guests.Col.Name>Guest</HH.UI.Guests.Col.Name>
+  <HH.UI.Guests.Col.Faction>Faction</HH.UI.Guests.Col.Faction>
+  <HH.UI.Guests.Col.Stay>Stay</HH.UI.Guests.Col.Stay>
+  <HH.UI.Guests.Col.Mood>Mood</HH.UI.Guests.Col.Mood>
+  <HH.UI.Guests.Col.Satisfaction>Satisfaction</HH.UI.Guests.Col.Satisfaction>
+  <HH.UI.Guests.Col.Budget>Budget left</HH.UI.Guests.Col.Budget>
+  <HH.UI.Guests.Col.Spent>Spent</HH.UI.Guests.Col.Spent>
+  <HH.UI.Guests.Col.Wing>Wing</HH.UI.Guests.Col.Wing>
+  <HH.UI.Guests.Col.Leaves>Leaves in</HH.UI.Guests.Col.Leaves>
+  <HH.UI.Kind.DayVisitor>Day guest</HH.UI.Kind.DayVisitor>
+  <HH.UI.Kind.Overnight>Overnight</HH.UI.Kind.Overnight>
+  <HH.UI.Kind.Traveler>Traveller</HH.UI.Kind.Traveler>
+  <HH.UI.Kind.Caravan>Caravan</HH.UI.Kind.Caravan>
+  <HH.UI.Kind.Lodger>Lodger</HH.UI.Kind.Lodger>
+  <HH.UI.Kind.Patient>Patient</HH.UI.Kind.Patient>
+  <HH.UI.GuestTab.Label>Guest</HH.UI.GuestTab.Label>
+  <HH.UI.GuestTab.NoInfo>No guest record for this pawn.</HH.UI.GuestTab.NoInfo>
+  <HH.UI.GuestTab.Stay>Stay</HH.UI.GuestTab.Stay>
+  <HH.UI.GuestTab.Faction>Faction</HH.UI.GuestTab.Faction>
+  <HH.UI.GuestTab.Kind>Stay type</HH.UI.GuestTab.Kind>
+  <HH.UI.GuestTab.Wing>Wing</HH.UI.GuestTab.Wing>
+  <HH.UI.GuestTab.Arrived>Arrived</HH.UI.GuestTab.Arrived>
+  <HH.UI.GuestTab.Ago>{0} ago</HH.UI.GuestTab.Ago>
+  <HH.UI.GuestTab.Leaves>Leaves</HH.UI.GuestTab.Leaves>
+  <HH.UI.GuestTab.In>in {0}</HH.UI.GuestTab.In>
+  <HH.UI.GuestTab.Payment>Pays with</HH.UI.GuestTab.Payment>
+  <HH.UI.GuestTab.Card>card</HH.UI.GuestTab.Card>
+  <HH.UI.GuestTab.Purse>purse</HH.UI.GuestTab.Purse>
+  <HH.UI.GuestTab.Satisfaction>Satisfaction</HH.UI.GuestTab.Satisfaction>
+  <HH.UI.GuestTab.SatisfactionTip>From -1 (furious) to +1 (delighted). It drives renown, goodwill and whether the guest comes back.</HH.UI.GuestTab.SatisfactionTip>
+  <HH.UI.GuestTab.Reasons>What this guest thinks</HH.UI.GuestTab.Reasons>
+  <HH.UI.GuestTab.NoReasons>Nothing remarkable yet.</HH.UI.GuestTab.NoReasons>
+  <HH.UI.GuestTab.Money>Money</HH.UI.GuestTab.Money>
+  <HH.UI.GuestTab.Budget>Budget left</HH.UI.GuestTab.Budget>
+  <HH.UI.GuestTab.Spent>Spent so far</HH.UI.GuestTab.Spent>
+  <HH.UI.GuestTab.Handling>Handling</HH.UI.GuestTab.Handling>
+  <HH.UI.Handling.Basics>Basics</HH.UI.Handling.Basics>
+  <HH.UI.Handling.Basics.Tip>Paid services only, no entertainment. Costs no colonist time.</HH.UI.Handling.Basics.Tip>
+  <HH.UI.Handling.Accompany>Accompany</HH.UI.Handling.Accompany>
+  <HH.UI.Handling.Accompany.Tip>Colonists on Hosting entertain this guest and show them around: mood +1 to +4 by social skill. Costs colonist time. Without a colonist on Hosting it stays Basics.</HH.UI.Handling.Accompany.Tip>
+  <HH.UI.Handling.Recruit>Recruit</HH.UI.Handling.Recruit>
+  <HH.UI.Handling.Recruit.Tip>Like Accompany, plus recruitment talks. A clumsy talk can offend: mood -6, 30 % less spending, leaves half a day early.</HH.UI.Handling.Recruit.Tip>
+  <HH.UI.Guide.Title>Hearth &amp; Harbor Guide</HH.UI.Guide.Title>
+  <HH.UI.Guide.TitleTip>Right-click to hide. You can bring it back in the Hearth &amp; Harbor tab or the settings.</HH.UI.Guide.TitleTip>
+  <HH.UI.Guide.Hidden>Guide hidden. Bring it back with the Guide button in the Hearth &amp; Harbor tab or in the settings.</HH.UI.Guide.Hidden>
+  <HH.UI.Guide.More>+{0} more topics follow</HH.UI.Guide.More>
+  <HH.UI.Guide.Done>Done ({0})</HH.UI.Guide.Done>
+  <HH.UI.Guide.ClickJump>Click to go there.</HH.UI.Guide.ClickJump>
+  <HH.Setting.core.consequenceStage>Highest consequence stage</HH.Setting.core.consequenceStage>
+  <HH.Setting.core.consequenceStage.Desc>How far bad outcomes can climb: 1 mood, 2 renown, 3 goodwill, 4 money, 5 licence, 6 raids, 7 bounty. Follows the hosting difficulty.</HH.Setting.core.consequenceStage.Desc>
+  <HH.Setting.core.researchCost>Research cost factor</HH.Setting.core.researchCost>
+  <HH.Setting.core.researchCost.Desc>Multiplies the cost of Hearth &amp; Harbor and Silverline research projects. Follows the hosting difficulty.</HH.Setting.core.researchCost.Desc>
+  <HH.Setting.core.upkeep>Upkeep factor</HH.Setting.core.upkeep>
+  <HH.Setting.core.upkeep.Desc>Multiplies the running costs of your venues and rooms. Follows the hosting difficulty.</HH.Setting.core.upkeep.Desc>
+  <HH.Setting.core.neverDie>Guests never die</HH.Setting.core.neverDie>
+  <HH.Setting.core.neverDie.Desc>Guests are knocked down instead of killed and are rescued for free.</HH.Setting.core.neverDie.Desc>
+  <HH.Setting.core.noHostile>No hostile guests ever</HH.Setting.core.noHostile>
+  <HH.Setting.core.noHostile.Desc>Guests never turn hostile, whatever their faction thinks of you.</HH.Setting.core.noHostile.Desc>
+  <HH.Setting.core.infiniteMoney>Infinite guest money</HH.Setting.core.infiniteMoney>
+  <HH.Setting.core.infiniteMoney.Desc>Guests always have enough to pay. The guest money factor has no effect while this is on.</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.picky>Picky guests</HH.Setting.core.picky>
+  <HH.Setting.core.picky.Desc>Guests expect a little more from every stay (expectation +0.1).</HH.Setting.core.picky.Desc>
+  <HH.Setting.core.feuding>Feuding factions</HH.Setting.core.feuding>
+  <HH.Setting.core.feuding.Desc>Hostile factions dislike each other twice as much when they share a roof.</HH.Setting.core.feuding.Desc>
+  <HH.Setting.core.mandatory>Mandatory hospitality</HH.Setting.core.mandatory>
+  <HH.Setting.core.mandatory.Desc>Contracts and billeting are forced on you, even below the Overbooked tier.</HH.Setting.core.mandatory.Desc>
+  <HH.Setting.core.strictInspectors>Strict inspectors</HH.Setting.core.strictInspectors>
+  <HH.Setting.core.strictInspectors.Desc>Inspectors check three times as often.</HH.Setting.core.strictInspectors.Desc>
+  <HH.Setting.core.realConsequences>Real consequences</HH.Setting.core.realConsequences>
+  <HH.Setting.core.realConsequences.Desc>Raises the consequence ladder by one stage.</HH.Setting.core.realConsequences.Desc>
+  <HH.Setting.core.ironBank>Iron purse / Iron bank</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank.Desc>No bailout, no overdraft, compound interest without mercy.</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.noResearchGating>No research gating</HH.Setting.core.noResearchGating>
+  <HH.Setting.core.noResearchGating.Desc>Everything on the Hearth &amp; Harbor and Silverline trees is available from the start.</HH.Setting.core.noResearchGating.Desc>
+  <HH.Setting.core.peacefulUnderworld>Peaceful underworld</HH.Setting.core.peacefulUnderworld>
+  <HH.Setting.core.peacefulUnderworld.Desc>Dark venues work without violence.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.showMath>Show me the math</HH.Setting.core.showMath>
+  <HH.Setting.core.showMath.Desc>Shows nerd settings and formulas everywhere.</HH.Setting.core.showMath.Desc>
+  <HH.Setting.core.perfMode>Performance mode</HH.Setting.core.perfMode>
+  <HH.Setting.core.perfMode.Desc>Fewer guests at once and simpler guest behaviour on slow computers.</HH.Setting.core.perfMode.Desc>
+  <HH.Setting.core.houseStyle>House style</HH.Setting.core.houseStyle>
+  <HH.Setting.core.houseStyle.Desc>The look of furniture and signs. Automatic follows your ideology style, otherwise your highest researched era. Looks only: guests and prices are not affected.</HH.Setting.core.houseStyle.Desc>
+  <HH.Setting.core.keepBuiltStyle>Built furniture keeps its old style</HH.Setting.core.keepBuiltStyle>
+  <HH.Setting.core.keepBuiltStyle.Desc>When the house style changes with a new era, already built furniture keeps its look.</HH.Setting.core.keepBuiltStyle.Desc>
+  <HH.Enum.HouseStyle.Automatic>Automatic</HH.Enum.HouseStyle.Automatic>
+  <HH.Enum.HouseStyle.StoneAge>Stone age</HH.Enum.HouseStyle.StoneAge>
+  <HH.Enum.HouseStyle.Medieval>Medieval</HH.Enum.HouseStyle.Medieval>
+  <HH.Enum.HouseStyle.Industrial>Industrial</HH.Enum.HouseStyle.Industrial>
+  <HH.Enum.HouseStyle.Spacer>Spacer</HH.Enum.HouseStyle.Spacer>
+  <HH.Enum.HouseStyle.Ultra>Ultra</HH.Enum.HouseStyle.Ultra>
+</LanguageData>
