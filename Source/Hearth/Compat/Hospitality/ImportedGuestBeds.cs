@@ -199,10 +199,10 @@ namespace Hearth.Compat.Hospitality
 
         static Type innCompType; static bool innCompLooked;
 
-        /// <summary>Soft bridge to the Inn module (type by name "Hearth.Guests.CompGuestBed"): sets a guest bed flag and fee if they exist.</summary>
+        /// <summary>Soft bridge to the Inn module (type by name "Hearth.Guests.CompHH_GuestBed"): sets a guest bed flag and fee if they exist.</summary>
         static bool TryMarkInnComp(Building_Bed bed, int fee)
         {
-            if (!innCompLooked) { innCompLooked = true; innCompType = GenTypes.GetTypeInAnyAssembly("Hearth.Guests.CompGuestBed"); }
+            if (!innCompLooked) { innCompLooked = true; innCompType = GenTypes.GetTypeInAnyAssembly("Hearth.Guests.CompHH_GuestBed"); }
             if (innCompType == null) return false;
             ThingComp comp = null;
             foreach (var c in bed.AllComps) if (innCompType.IsInstanceOfType(c)) { comp = c; break; }

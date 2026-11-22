@@ -1,0 +1,44 @@
+{
+ "summary": "The venues test group now runs and passes. `smoke,venues.*` ran once with 11 suites, 214 checks and 0 failures. The only red errors in that log are 24 x \"Could not find player faction\", from Silverline's `Patch_AddHediff`, not from the venues code. One condition applies: that run had the duplicate `HH_Venue_Casino` def removed from `Casino_Research.xml` in the working tree. That removal is not committed (see notes). The work is in commit ea5e2ab on branch int/venues. The 1.7 build is clean and the 410 unit tests pass. The old \"NO RESULT\" came from the shop, tavern and vending suites each waiting out 22000 ticks because nothing drove day visitors while the Inn module is on; I did not isolate the original hang itself. Test visitors are now driven by a test helper, which is a workaround until the inn agent fixes `GuestFallback`.",
+ "implemented": [
+  "Venues.RoomOfSign: a wall-mounted sign now belongs to the room of its own cell (Placeworker_AttachedToWall puts the wall at Position + FacingCell). Neighbouring cells are tried only if its own cell has no room or is a doorway. Patch_RoomOfSign_Attachment is removed from VanillaHiding.cs.",
+  "Staffing query for other modules: Venues.IsStaffed(Venue), Venues.Staffer, Venues.NeedsStaff, Venues.IsOpenAndStaffed and the property Venue.OpenAndStaffed. Also Venues.RenownGetter (a Func<float>) and Venues.Renown(), which returns 50 until some module sets the getter.",
+  "Venue types: Cinema and Gallery (City) and DrugLounge (Underworld) are already defined in those modules' defs, so no copy was added. I added HH_Venue_Chapel (Ideology only, module Core) and kept HH_Venue_Spa with module Wellness. The sign menu now hides the drug lounge while the underworld gate is closed (UwDefs.Open).",
+  "HH_Venue_Casino exists exactly once, in the Venues defs. A test checks that it is defined once, but only passes once the casino copy is removed (see notes).",
+  "Hide list: HH_Replaces_PokerTable pairs the vanilla PokerTable with HH_PokerTable. It is hidden once the Rimdeck table is researched; the hidden suite tests this.",
+  "Restock (N45): an opt-in 'Restock' button on the sign opens a window with a goods filter and an on/off switch. When on, every storage place in the room (stockpile zones and shelves, any owner) gets the filter and priority Important. The old settings are saved, written to the save file, and put back on switch-off, sign removal, a venue type that sells nothing, or module removal. It re-syncs every 250 ticks. The vending machine is excluded.",
+  "Last orders: a window before closing (setting 'venues.lastOrdersMinutes', default 30). Browsing time is cut to a third, shoppers want to shop 1.5 times as much, a guest may order another drink after half the usual gap, and the inspect text says 'last orders'. A purchase already under way is still served for a quarter of an hour after closing.",
+  "Night bell fixes: once somebody answers the bell, the venue stays open at least 1500 ticks. Guests only wait or ring when they would accept the price including the bell surcharge. Before this, guests rang, waited, then refused the price.",
+  "Market conditions (6.10): needs a shop, at least 4 HH_MarketStall (setting) and renown of at least 20 (setting). Each trader caravan pays a stall fee of 25 silver into the colony till, and caravans are capped by the number of stalls. The log says why a market is postponed, and the market letter mentions the fees.",
+  "HH_MarketStall: new 2x1 free-standing building with Graphic_Multi texture Things/HH/Venues/MarketStall.",
+  "New settings: lastOrdersMinutes, marketStalls, marketRenown, stallFee. HH_Venues.xml was regenerated with tools/gen_venues_keyed.py (+19 keys).",
+  "Tests: new suites venues.restock (16 checks) and venues.last (15), plus additions to venues.sign (63), venues.market (18) and venues.hidden (13)."
+ ],
+ "not_done": [
+  "Market: no announcement window with postpone/cancel. Interval by renown, Lerp(60,20,Renown/100), is not done; the setting's fixed interval (15 days) is kept. The market has no thieves, brawls or crowding, and traders do not walk to a particular stall.",
+  "HH_MarketStall has no research prerequisite and no HH_Markets research def exists in this tree. No tradable stall commission or sales for visitors at stalls.",
+  "Restock has no per-shelf maximum quantity ('Display shelves') and no 'convert to card table' (N49).",
+  "HH_Venue_Chapel does not yet tie the guest altar to the venue room; the altar still uses a radius of 6 (a DLC-module change).",
+  "Venues.All does not skip back rooms (BackRoom.IsBackRoom); a sign inside a back room still counts as a venue.",
+  "GuestFallback was not changed (inn agent owns it)."
+ ],
+ "tests": [
+  "Source/build.sh 1.7 --tests: clean.",
+  "Source/Tests/run.sh: 410 passed, 0 failed.",
+  "tools/run_test.sh 'smoke,venues.*' vfull4: RESULT PASS, 11 suites, 214 checks, 0 failures. The log has only 24 x 'Could not find player faction' (Silverline Patch_AddHediff while pawns are generated at startup), no red errors from the venues code, and no more NullReferenceExceptions from ducks and chickens.",
+  "Earlier runs (vfull1 to vfull3) failed only in venues.restock, venues.tavern and venues.wait. Causes: a 3x1 shelf broke the test room's wall, colonists took more than 6000 ticks to walk to far-away test rooms, and guests refused the bell price. All three were fixed in the code or tests.",
+  "Wait: the bell-service check had to be steered: the venues.wait test sets priceFactor to 0.8 so all test guests accept the bell price. The bell now holds the venue open after an answer, and guests only ring when they would pay."
+ ],
+ "notes_for_integrator": [
+  "DUPLICATE HH_Venue_Casino: delete the <Hearth.VenueTypeDef> HH_Venue_Casino block from Common/Defs/Casino/Casino_Research.xml (the one with iconPath UI/HH/Casino/VenueCasino). I left it untouched because it is outside my scope. Until it is removed, the game logs 'has multiple Hearth.VenueTypeDefs named HH_Venue_Casino. Skipping.' on startup. The Casino module uses the Venues def, which has needsStaff=true; the casino gate is not used by the casino module, so nothing changes for it.",
+  "GuestFallback.Run stays silent while GuestApi.Impl exists and the Inn module is on, so vanilla day visitors never get an activity offer: nobody drives them. That is why the shop, tavern and vending tests produced nothing in the old matrix run. The inn agent should make the Inn brain, or GuestFallback, also drive vanilla visitors that are not in the Inn guest registry. In this tree the class sits at the end of Source/Hearth/Venues/VenueShopping.cs, not in its own file. My edits there are only in the middle of the file, so a merge should be clean. My tests use VenueTestKit.Drive (the same offer loop) so they pass either way.",
+  "Please set Venues.RenownGetter = () => <renown 0..100> in the module that owns renown (Inn). Without it the market renown check treats the colony as 50. Use the new Venues.IsStaffed / OpenAndStaffed in City Life, Kitchen (Restaurant.OpenGate = VenueApi.IsOpenForBusiness) and elsewhere instead of estimating staffing.",
+  "Silverline Patch_AddHediff.Postfix calls Faction.OfPlayer during pawn generation (world gen, no player faction yet): 24 x 'Could not find player faction' red errors on every game start. This needs a null-safe check in the bank agent's file, for example Find.FactionManager?.OfPlayer != null.",
+  "The Common/Patches/Venues_DesignationCategory.xml mentioned in the old request is not in this tree: HH_Hospitality is already defined by the foundation. Another agent may still ship a conditional patch for it.",
+  "Placeholder textures I generated (not committed): Things/HH/Venues/MarketStall_*.png, UI/HH/Venues/Cmd_Restock.png, UI/HH/Venues/Type_Chapel.png. The art agent needs to replace them.",
+  "Chapel (module Core, Ideology only) is already listed in the sign menu once Ideology is active. The Dlc module has no module switch of its own.",
+  "VenueTestKit.Relocate and Build in VenueTests.cs: Build now destroys wild animals near the site instead of teleporting them. Teleporting them threw NullReferenceExceptions (vanilla stack, but red errors).",
+  "1.7/Assemblies/Hearth.dll is tracked in git and shows as modified in the worktree; I did not commit it (build output)."
+ ],
+ "commit": "ea5e2ab"
+}

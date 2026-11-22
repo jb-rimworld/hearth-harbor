@@ -1,0 +1,24 @@
+{
+ "keyed": {
+  "HH.Compat.DialogTitle": "Hospitality is active alongside Hearth & Harbor. Disable it for you?",
+  "HH.Compat.DialogBody": "Hearth & Harbor replaces Hospitality and its add-ons. While both are active, Hearth & Harbor has switched Hospitality off for this session: its patches, events, buildings and guest tab do nothing. Your Hospitality guest beds and areas are kept and taken over when Hospitality is gone.",
+  "HH.Compat.DialogListHeader": "These mods will be disabled:",
+  "HH.Compat.DialogMentionHeader": "These guest mods stay as they are; their visitors remain theirs:",
+  "HH.Compat.DialogFailed": "The mod list could not be changed automatically ({0}). Please do it by hand:",
+  "HH.Compat.DialogStep1": "1. Main menu → Mods",
+  "HH.Compat.DialogStep2": "2. Untick the mods listed above",
+  "HH.Compat.DialogStep3": "3. Save the mod list and restart the game",
+  "HH.Compat.Yes": "Yes, disable and restart",
+  "HH.Compat.OpenMods": "Open the mod list",
+  "HH.Compat.Later": "Later",
+  "HH.Compat.Never": "Don't ask again",
+  "HH.Compat.ImportLetterTitle": "Imported from Hospitality",
+  "HH.Compat.ImportLetterText": "This colony was played with Hospitality. Hearth & Harbor took over what it could.\\n\\nImported: {0}.\\nDropped: {1}.\\n\\nImported guest beds are normal beds again and are remembered as guest beds; the guest part of Hearth & Harbor picks them up. Nothing else in your colony changed.",
+  "HH.Compat.ImportNothing": "nothing",
+  "HH.Setting.compat.hospitalityNeverAsk": "Don't offer to disable Hospitality",
+  "HH.Setting.compat.hospitalityNeverAsk.Desc": "When Hospitality runs alongside Hearth & Harbor, Hearth & Harbor switches it off for the session and offers to disable it in the main menu. On: no more offers (the switch-off still happens).",
+  "HH.Setting.compat.importLetter": "Letter after importing a Hospitality save",
+  "HH.Setting.compat.importLetter.Desc": "After loading a save that was played with Hospitality, a letter lists what Hearth & Harbor took over (guest beds, areas, visitors) and what was dropped."
+ },
+ "defs": {}
+}

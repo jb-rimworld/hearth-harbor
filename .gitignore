@@ -5,3 +5,6 @@ Source/**/bin/
 /_scratch/
 /tools/out/
 Source/Tests/bin/
+/1.5/Assemblies/
+/1.6/Assemblies/
+/1.7/Assemblies/

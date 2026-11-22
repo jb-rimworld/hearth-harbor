@@ -1,0 +1,44 @@
+{
+ "summary": "Defs integration done on branch int/defs (worktree i_defs). tools/check_defs.py is clean, the 1.7 --tests build is clean, unit tests pass (410), and smoke, ui.diag, core.defs and all five *.defs suites pass. The load log has no red errors: the 13+ \"Could not find player faction\" errors and the duplicate HH_Venue_Casino are gone. Two earlier defs-related failures are fixed: the ui.diag translation keys and the casino.defs tab assertion. Bank, insurance, underworld, city, wellness, kitchen and dlc suites run in the same game as other suites show a few failures. They are guest-behaviour failures like those in the m1 matrix (e.g. dlc.shrine temple fund, casino.slots/tables, kitchen.restaurant) or order-dependent flakes (insurance.claim.limb, underworld.hunt, kitchen.cook, wellness.massage, city.cinema pass when run alone). No guest-behaviour failure was traced to the defs changes.",
+ "implemented": [
+  "One architect tab HH_Hospitality (label Hospitality, order 95, after Joy) defined once in Hospitality_Shared.xml; one HH_Bank tab (order 90) defined once in Core_Banking.xml. The three conditional DesignationCategory patches and the HH_Casino and HH_Underworld categories are removed.",
+  "Casino, wellness, city, underworld and the guest altar are in HH_Hospitality; bank buildings are in HH_Bank; kitchen stations stay in Production. Dropdown groups HH_Group_Casino, _Wellness, _City and _Underworld keep the tab tidy, and uiOrder values are set per business. The underworld group stays hidden by the existing gate. HH_GuestAltar moved from Ideology into HH_Hospitality.",
+  "New research projects HH_Innkeeping, HH_Gastronomy, HH_HotelManagement and HH_FineDining (Hospitality_Research.xml), plus SL_Insurance and SL_Actuarial (Insurance_Research.xml). Kitchen levels 2, 3 and 4 now map to Innkeeping, Gastronomy and FineDining (DishKnowledge.LevelResearch, RecipeBuilder Signature form). HH_Cooking_L2 to L4 are removed; HH_Cooking_L1 stays as the free root.",
+  "Research layout: kitchen/hotel row 0.0, casino and city row 0.7, wellness row 1.4, underworld row 3.0 (hidden). Bank tree: SL_Banking, SL_Branches, SL_Credit, SL_Insurance, SL_Actuarial. Prerequisites flow left to right with no overlaps, and the bank tree has no hotel dependencies. CityLife_1 now needs HotelManagement, Casino_Slots needs Casino_Tables, Bathhouse needs Innkeeping, Casino_Tables needs Innkeeping.",
+  "Shared setting core.researchMode (Full/Off) is registered in CoreSettings with CoreSettings.ResearchOff. core.noResearchGating is kept as an alias, and bank.researchMode and city.researchMode still work. Bank, City, Insurance and Kitchen read it. A new ResearchGate class finishes all non-underworld projects of the two tabs at game start, on load and every 600 ticks, so every def-level research gate opens. Underworld projects, found via the UwGateExtension, stay gated by discovery and content intensity.",
+  "Startup red errors: Faction.OfPlayer calls in the Harmony patches of InsurancePatches.cs and Dlc/Patches.cs now use OfPlayerSilentFail with a null check. The duplicate HH_Venue_Casino copy is removed from Casino_Research.xml.",
+  "Translations: Keyed entries for dlc.traitSpawn and dlc.traitRarity (name and description) in HH_Dlc.xml. New file HH_Research.xml holds the core.researchMode texts and the enum labels. ui.diag passes.",
+  "tools/check_defs.py (new): checks duplicate defNames per def type, prefixes, labels and descriptions, missing HH_/SL_ references in XML and C#, research overlap and left-to-right flow, bank independence, Keyed duplicates and missing keys, and leftover conditional category patches.",
+  "New in-game suite core.defs (Source/Hearth.Core/Testing/CoreDefsTests.cs): tab uniqueness, research tree layout, and the research mode Off/Full including restoring the state afterwards.",
+  "Test edits: KitchenTests and CasinoSuites assertions updated to the new research names and the casino dropdown group."
+ ],
+ "not_done": [
+  "SL_InsuranceDesk (insurance desk building) was not created. It needs a texture, and Common/Textures is the art agent's. InsurancePricing counts it only if present.",
+  "Concept projects without content in the mod are not defined: HH_Markets, HH_TableGames, HH_ChipsAndCage, HH_CasinoGaming, HH_Lotteries, HH_Rehab, HH_Cinema, HH_Tourism, SL_Securities and others. The shipped content hangs on the existing projects (HH_Casino_Tables, HH_Casino_Slots and so on).",
+  "Not changed (outside my scope): HH_FrontDesk is still in Furniture (Inn defs), and HH_VendingMachine still needs vanilla Electricity (Venues defs).",
+  "core.noResearchGating is still registered by the UI module and shown in DifficultyPanel, so there are two controls for one thing for now.",
+  "No in-game check that the research tree renders without overlap in the real research screen; layout is verified numerically only.",
+  "Full guest-behaviour test matrix not re-run on this branch. Failures seen on the branch are listed in the summary."
+ ],
+ "tests": [
+  "Source/build.sh 1.7 --tests: clean",
+  "Source/Tests/run.sh: 410 passed",
+  "python3 tools/check_defs.py: 0 errors, 7 warnings (only dynamic name prefixes, HH_Underworld/SL_InsuranceDesk lookups)",
+  "defs5 (final build): smoke, ui.diag, core.defs, casino.defs, city.defs, wellness.defs, dlc.defs and kitchen.defs all PASS, no ERROR lines in the log",
+  "defs2: all bank.* PASS; underworld.* PASS except underworld.hunt (quarry count 4 vs 3, flake) in that run; insurance.* PASS except insurance.claim.limb (grade 54.8 vs 55). Both PASS when run alone (defs3, defs4)",
+  "defs6/defs7 (kitchen, casino, city, wellness, dlc): remaining failures are guest-related or order-dependent. kitchen.cook, wellness.massage and city.cinema PASS alone (defs8, defs9). dlc.shrine still fails on the temple-fund donation, as in the m1 matrix"
+ ],
+ "notes_for_integrator": [
+  "Inn agent: move HH_FrontDesk to designationCategory HH_Hospitality (uiOrder around 105, after the venue signs) in Common/Defs/Inn/Inn_Buildings.xml. core.defs currently tolerates Furniture with a note; tighten it afterwards.",
+  "Venues agent: venue buildings already use HH_Hospitality and uiOrder 100-120. HH_VendingMachine should require HH_HotelManagement instead of Electricity, and the shop counter could require a market project if one is added. Venue types may use the new projects via researchPrerequisite.",
+  "UI agent: replace the core.noResearchGating switch in UiModule/DifficultyPanel with core.researchMode (HSettings enum, keys HH.Setting.core.researchMode, HH.Enum.CoreResearchMode.*, in HH_Research.xml). The old key still works as an alias through CoreSettings.ResearchOff, so remove it and its Keyed entries in HH_UI.xml together.",
+  "Kitchen: HH_Cooking_L2 to L4 no longer exist. DishKnowledge.LevelResearch maps levels 2/3/4 to HH_Innkeeping/HH_Gastronomy/HH_FineDining, and the Signature form needs HH_FineDining. docs/kitchen.md still mentions the old projects and fallbackResearch; StationExtension.fallbackResearch is now unused (defs no longer set it).",
+  "Research mode Off finishes every project in tabs HH_Hospitality and HH_Banking except those with UwGateExtension. If another module adds research in those tabs, it is gated by this automatically.",
+  "Per-module research keys bank.researchMode and city.researchMode still exist and are OR-ed with core.researchMode. Insurance 'needs research' (ins.RequireResearch) is also bypassed by core Off.",
+  "New defs: DesignationCategory HH_Hospitality/HH_Bank, DesignatorDropdownGroupDef HH_Group_Casino/Wellness/City/Underworld; research HH_Innkeeping, HH_Gastronomy, HH_HotelManagement, HH_FineDining, SL_Insurance, SL_Actuarial.",
+  "Run tools/check_defs.py after merging all branches; it will catch duplicate defs, leftover conditional category patches, missing references and layout overlaps.",
+  "Test order matters: several suites (insurance.claim.limb, underworld.hunt, kitchen.cook, wellness.massage) can fail when run in one game after other suites, and pass alone. Run them individually when judging them.",
+  "1.7/Assemblies/*.dll show as modified in git status; I did not commit them."
+ ],
+ "commit": "63e4d6c (int/defs); earlier commit 9e6698b"
+}

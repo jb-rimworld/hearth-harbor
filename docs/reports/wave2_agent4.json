@@ -1,0 +1,35 @@
+{
+ "summary": "Bank integration round is done and committed on int/bank (bf83ac5). Finance and insurance suites now pass. The last full run (smoke, bank.*, insurance.*, finance.*) was cut off before insurance.ui and smoke, probably killed by another agent, and showed 0 failures in the 34 suites it finished. A separate run of smoke, insurance.ui and bank.tabs then passed, and unit tests pass (410). I did not look at the bank window on screen: the new test draws every tab into the bank window without errors, but the visual consistency is only reasoned, not eyeballed.",
+ "implemented": [
+  "Finance tests: FinTest.Account() opens a real Silverline account (direct deposit off) and Fund() calls it, so finance.buy/omen/projects/lottery/ui/save trade against the real bank account. The products already used FinanceAccounts.Colony = BankApi.Impl.ColonyAccount.",
+  "Insurance failures: the m1 NullReferenceException was an unchecked Sign() result (tricks and ui suites). Both now check and print the sign error. The insurance.buy failures were bank state leaking between suites: InsTest.Reset now closes the bank account, and the 'bank account takes precedence' section uses the real account instead of FakeBank (removed).",
+  "BankApi.TryPay(to, amount, memo) and BankApi.Receive(from, amount, memo) added as fee-free helpers that invalidate the net-worth cache. InsurerBooks premiums and payouts use them.",
+  "Bank window tabs: lobby, loans, history, terms, invest, lottery and insurance are all visible and draw without exceptions. Orders are now unique: invest 50, lottery 55, insurance 60 (invest used to collide with terms at 40). Inside the bank window the insurance pages use the lobby palette (walnut, brass, green) through InsuranceUI.DrawInBank. The stand-alone Clawback window keeps its blue.",
+  "New SettingKind.LogFloat in HSettings.cs: log-space tier-anchor interpolation, a log slider (ToSlider/FromSlider/SliderLo/SliderHi, values rounded to 3 significant digits) and a LegacyKey/LegacyToValue save-compatibility mechanism. The simple settings window uses the log slider.",
+  "bank.profit is now LogFloat (stored values unchanged; BankSettings.ProfitM just reads the setting). finance.profitLog is replaced by finance.profit (plain M, LogFloat, slider 0.1 to 100). Old saves that stored ln(M) under finance.profitLog are still read correctly (exp) until the new key is set; Set and Reset clear both keys.",
+  "K4 trade income: new Source/Silverline/Bank/BankTrade.cs with a Harmony prefix on Tradeable.ResolveTrade. When an account and direct deposit are on, the silver the colony receives from a trader is removed from the trader's goods and credited to the account after the direct deposit fee. A message is shown. Caravan negotiators and gift mode are left to vanilla. New setting bank.tradeDeposit (default on). Keyed file regenerated with tools/gen_bank_keys.py.",
+  "New suites in Source/Silverline/Bank/BankIntegrationTests.cs. bank.tabs (16 checks) covers the BankApi helpers, premium and benefit going through the bank account, tab list and order, drawing all tabs including the four insurance and four invest pages, and the skin reset. bank.trade (12 checks) covers diversion, fee, partial deals, the no-account, setting-off, direct-deposit-off and caravan cases, and ledger balance. finance.math now also tests log interpolation, the slider mapping and legacy ln(M) reading."
+ ],
+ "not_done": [
+  "Item 5 (colonists using the ATM on their own when carrying silver) was skipped as optional.",
+  "No 'Bank balance' virtual payment item for buying from traders with account money. Only trade income is routed to the account.",
+  "The finance and lottery tabs still use their own FinUi style: translucent black panels and white text on the walnut background, not brass headings. It is calm but not fully the lobby palette. Not checked on screen.",
+  "Finance products post to the ledger directly; only insurance was moved onto the BankApi helpers.",
+  "The 'Terms' tab still has its own log slider for bank.profit; it could now use the shared setting widget."
+ ],
+ "tests": [
+  "Source/build.sh 1.7 --tests: clean.",
+  "Source/Tests/run.sh: 410 passed.",
+  "Last full run (smoke, bank.*, insurance.*, finance.*): 0 failures in the 34 suites it completed, among them bank.tabs, bank.trade, finance.* and insurance.* (tricks included). The game was cut off before insurance.ui and smoke finished, probably killed by another agent.",
+  "Re-run of smoke, insurance.ui and bank.tabs: PASS (36 checks)."
+ ],
+ "notes_for_integrator": [
+  "Source/Hearth/UI/SettingRowUI.cs (UI agent) and Source/Hearth/UI/TierMath.cs are not log-aware yet. The settings screen that actually shows bank.profit and finance.profit still draws a linear slider for them. SettingRowUI.Value and IsOverridden read the store directly, so they also miss the legacy key. Fix: use s.StoredIn(store) and s.IsStoredIn(store) instead of store.TryGet(s.Key) and store.Has(s.Key). Slider: pass s.ToSlider(val) with s.SliderLo and s.SliderHi, step -1 when s.IsLog, and write back s.FromSlider(nv). TierMath line 120 has the same direct-store read.",
+  "SettingKind.LogFloat was appended to the enum, so existing values are unaffected. HSettings.Reset and Set now also clear the legacy key, and HSetting.Format handles LogFloat.",
+  "Test hygiene: InsTest.Reset now calls BankGameComp.Current.TestReset(false), so insurance suites start without a bank account. The bank.* suites end with an open account (TestReset(true)), which is how the insurance leakage appeared.",
+  "Settings key change: finance.profitLog is replaced by finance.profit (it is only read through the legacy path now). Anything that references the old key should switch.",
+  "Tab orders: invest 50, lottery 55, insurance 60.",
+  "A game killed mid-run leaves no result file, so a fully queued run can look hung. The int5 run showed this."
+ ],
+ "commit": "bf83ac5"
+}

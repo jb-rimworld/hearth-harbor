@@ -27,6 +27,8 @@ sed -i '' '/<incompatibleWith>/,/<\/incompatibleWith>/d' $SD/mod/About/About.xml
 ln -sfn $SD/mod "$G/Mods/_hh_slot$slot"
 FH=$SD/home; C="$FH/Library/Application Support/RimWorld/Config"; rm -rf "$FH"; mkdir -p "$C"
 cp "$HOME/Library/Application Support/RimWorld/Config/Prefs.xml" "$C/" 2>/dev/null
+# hidden test windows never draw the autosave screen in 1.7 → the game would stall at the first autosave; tests never autosave
+sed -i '' -e "s#<autosaveIntervalDays>[^<]*</autosaveIntervalDays>#<autosaveIntervalDays>1000</autosaveIntervalDays>#" -e "s#<runInBackground>[^<]*</runInBackground>#<runInBackground>True</runInBackground>#" "$C/Prefs.xml" 2>/dev/null
 V=$(sed -n 's/.*<version>\(.*\)<\/version>.*/\1/p' "$HOME/Library/Application Support/RimWorld/Config/ModsConfig.xml")
 { echo '<?xml version="1.0" encoding="utf-8"?><ModsConfigData><version>'$V'</version><activeMods>'
   for p in brrainz.harmony ludeon.rimworld ludeon.rimworld.royalty ludeon.rimworld.ideology ludeon.rimworld.biotech ludeon.rimworld.anomaly ludeon.rimworld.odyssey "$@" juliusberger00.hearthharbor.slot$slot; do echo "<li>$p</li>"; done

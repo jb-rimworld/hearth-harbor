@@ -393,7 +393,7 @@ namespace Hearth.Shell.Tests
             {
                 t.Note("venue sign def present: " + signDef.defName + " (placement needs a roofed room; covered by the probe checks above)");
             }
-            if (GenTypes.GetTypeInAnyAssembly("Hearth.Guests.CompGuestBed") == null) t.Note("SKIP real guest bed: no guest bed comp exists in this build yet; the Inn module registers HearthUI.GuestBedProbe");
+            if (GenTypes.GetTypeInAnyAssembly("Hearth.Guests.CompHH_GuestBed") == null) t.Note("SKIP real guest bed: no guest bed comp exists in this build yet; the Inn module registers HearthUI.GuestBedProbe");
             t.Check(!HearthUI.IsUsedInColony() || startedUsed, "state restored: hidden again");
             // visible only on the home map screen
             t.Check(HearthUI.GuestsViaInn == (GuestApi.Impl != null && Modules.On(ModuleId.Inn)), "vanilla visitors alone never reveal the tab");

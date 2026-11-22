@@ -1,0 +1,34 @@
+{
+ "summary": "All 104 referenced texture paths now have real generated art. tools/placeholder_textures.py creates 0 placeholders and the new audit tools/art/needs.py reports no problems (all pixel sizes match the defs). Module contact sheets and a 32/64 px icon readability sheet were reviewed. Both Workshop previews are committed. The build is clean (1.7 with tests) and 410 unit tests pass. An in-game run of smoke plus wellness, city and underworld suites had no texture errors and 0 errors in the log, but 6 checks failed in logic suites (underworld.discovery, underworld.jobs, underworld.smuggler, wellness.massage) that this branch does not touch.",
+ "implemented": [
+  "Audit tool tools/art/needs.py: compares every texPath, iconPath, uiIconPath and ContentFinder literal against the generator registry, the def sizes and the PNG pixel sizes; exits 1 if anything is missing or mismatched",
+  "Things: ParkBench, ProjectorScreen, SalonChair (multi, 3 views), TaxiStand, TaxiCab (single), GuestAltar, Cookbook, BackRoomDoor, FightPit, HuntingGround, FenceCounter, OrganClinic (sealed cold cases, nothing graphic), SmugglerDock 3x3, HotTub 2x2, MassageTable, SaunaStove",
+  "Size and kind fixes to existing art: BlackjackTable now 3x2, Oven redrawn as 2x1, NightSafe is a single texture (old _east/_north/_south files removed), Logo_SL_SilverlineMutual renamed to Logo_SL_Mutual to match the def (old file removed)",
+  "UI icons, 128 px, no text: venue commands (hours, price, rename, take goods), casino (open to guests, practice, simulate, volatility, venue type), bank (direct deposit, Clerk Ottoline portrait), finance (news chance, news you), guest wing (expand, clear, send away), city venue types (cinema, gallery, salon), back-room lounge, wellness (colonists/guests may use), 9 gene icons, 2 issue icons",
+  "build.py now writes one sheet per module (tools/art/out/module_*.png, all views) and readability.png; README updated",
+  "tools/art/previews.py renders About/Preview.png (1280x720, 159 KB, ribbon 'Main Mod', otherwise no text) and About/Silverline_Preview.png (1280x720, 140 KB, no text) from the generator's own sprites at 120 px per cell"
+ ],
+ "not_done": [
+  "Epoch and Ideology style variants (README plan, KONZEPT 14.7) are not generated",
+  "Colour-blind patterns for guest bed covers: no bed texture exists in our defs, so nothing was drawn",
+  "Wallet, TravelBag and UI/Guide are registered and drawn but nothing references them (kept, no harm)",
+  "Previews were checked by eye only; no check in the Workshop uploader",
+  "The 6 in-game failures listed in the summary were not investigated (outside the art scope)"
+ ],
+ "tests": [
+  "Source/build.sh 1.7 --tests: clean",
+  "Source/Tests/run.sh: 410 passed, 0 failed",
+  "tools/art/needs.py: 105 referenced paths, 0 problems",
+  "tools/placeholder_textures.py: 0 placeholders created",
+  "run_test.sh smoke,wellness.*,city.*,underworld.* (label art1): 30 suites, 623 checks, 6 failures, errorsInLog=0, newErrors=0. The failures are underworld.discovery, underworld.jobs, underworld.smuggler and wellness.massage; the visible ones are logic checks (no stranger, tour job, crate drop, no-masseur behaviour), none about textures"
+ ],
+ "notes_for_integrator": [
+  "BackRoomDoor.png is only the left half of a door leaf. Building_Door draws the texture twice (once mirrored) and slides both apart, so the half image is intended. The def also uses it as uiIconPath, so the build menu icon shows a half leaf. If that matters, give HH_BackRoomDoor its own icon path and I can draw a full-door icon.",
+  "NightSafe: the def uses Graphic_Single, so the art is now a single south-view texture and the old _east/_north/_south PNGs are deleted. If the def ever becomes rotatable, change the @tex kind in tools/art/hhart/bank.py back to multi.",
+  "TaxiCab is rendered at 192 px (96 px per cell) and the def draws it at drawSize 2.2. The texture has no outline mask or alpha tricks beyond the normal cutout.",
+  "Defs with their own size must stay in sync with tools/art/hhart (BlackjackTable 3x2, Oven 2x1, FenceCounter/OrganClinic 2x1, SmugglerDock 3x3, TaxiStand 2x2). Run tools/art/needs.py after any def size change.",
+  "Common/Textures is committed only by this branch; other branches should not add PNGs there.",
+  "tools/out/placeholders.txt is not tracked and is now stale; ignore it."
+ ],
+ "commit": "39320ba"
+}

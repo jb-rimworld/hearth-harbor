@@ -1,0 +1,9 @@
+{
+ "keyed": {
+  "HH.Setting.core.researchMode": "Research mode",
+  "HH.Setting.core.researchMode.Desc": "Full: the Hearth & Harbor and Silverline research trees gate their buildings and features. Off: everything is available from the start (the dark projects of the underworld still need their discovery).",
+  "HH.Enum.CoreResearchMode.Full": "Full",
+  "HH.Enum.CoreResearchMode.Off": "Off"
+ },
+ "defs": {}
+}
