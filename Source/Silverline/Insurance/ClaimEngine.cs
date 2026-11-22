@@ -326,6 +326,15 @@ namespace Silverline
         }
 
         // ---- negotiation (K8) -------------------------------------------------------------------------------------------------------------
+        /// <summary>NegotiationAbility of a pawn, 0 for pawns who cannot do social work (the stat is disabled for them and asking it logs a red error).</summary>
+        public static float NegotiationOf(Pawn p)
+        {
+            if (p == null) return 0f;
+            var stat = StatDefOf.NegotiationAbility;
+            if (stat.Worker.IsDisabledFor(p)) return 0f;
+            return p.GetStatValue(stat);
+        }
+
         public static Pawn BestNegotiator(Map map)
         {
             map = map ?? InsurerBooks.HomeMap;
@@ -333,7 +342,8 @@ namespace Silverline
             foreach (var p in (map?.mapPawns?.FreeColonistsSpawned ?? new List<Pawn>()))
             {
                 if (p.Downed || p.Dead || !p.health.capacities.CapableOf(PawnCapacityDefOf.Talking)) continue;
-                float v = p.GetStatValue(StatDefOf.NegotiationAbility);
+                if (StatDefOf.NegotiationAbility.Worker.IsDisabledFor(p)) continue;
+                float v = NegotiationOf(p);
                 if (v > bv) { bv = v; best = p; }
             }
             return best;
@@ -357,7 +367,7 @@ namespace Silverline
 
         public static double RoundChance(Claim cl, NegApproach a, Pawn negotiator, out string hint)
         {
-            double neg = negotiator != null ? negotiator.GetStatValue(StatDefOf.NegotiationAbility) : 0.6;
+            double neg = negotiator != null ? NegotiationOf(negotiator) : 0.6;
             double slacker = InsSettings.Attitude * InsuranceMath.SlackerFactor(cl.tier);
             double extra = ApproachExtra(cl, a, out hint);
             return InsuranceMath.NegotiationChance(neg, slacker, cl.tier == CoverTier.Premium, 600.0, extra);

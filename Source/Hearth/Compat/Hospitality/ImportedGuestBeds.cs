@@ -97,6 +97,8 @@ namespace Hearth.Compat.Hospitality
             return bedIndex.TryGetValue(id, out var r) ? r : null;
         }
 
+        /// <summary>Was this bed imported from Hospitality (whether or not the Inn module has adopted it since)?</summary>
+        public bool WasImported(Thing t) => t != null && GetBed(t.thingIDNumber) != null;
         public bool IsGuestBed(Thing t) => t != null && GetBed(t.thingIDNumber) is BedRecord r && !r.Adopted;
         public int FeeOf(Thing t) => t == null ? 0 : GetBed(t.thingIDNumber)?.Fee ?? 0;
 
@@ -174,6 +176,8 @@ namespace Hearth.Compat.Hospitality
         /// <summary>Raised once per imported guest bed (bed, rental fee in silver per night).</summary>
         public static event Action<Building_Bed, int> GuestBedImported;
 
+        /// <summary>True for every bed that came from Hospitality, also after the Inn module adopted it (then it is a real Inn guest bed).</summary>
+        public static bool WasImported(Thing t) => ImportedGuestBeds.Current?.WasImported(t) ?? false;
         public static bool IsImportedGuestBed(Thing t) => ImportedGuestBeds.Current?.IsGuestBed(t) ?? false;
         public static int RentalFee(Thing t) => ImportedGuestBeds.Current?.FeeOf(t) ?? 0;
 

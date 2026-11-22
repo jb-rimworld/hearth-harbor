@@ -121,6 +121,8 @@ namespace Hearth.Wellness.Tests
             t.Check(pawn != null, "have a colonist");
             var area = map.Center + new IntVec3(12, 0, 10);
             WT.Clear(map, area, 6);
+            // vanilla's joy givers refuse outdoor play in rain/cold/heat, and the weather of the test game is random: put a roof over the tub
+            foreach (var c in CellRect.CenteredOn(area, 6).Cells) if (c.InBounds(map)) map.roofGrid.SetRoof(c, RoofDefOf.RoofConstructed);
             var tub = WT.Spawn(map, WellnessDefOf.HH_HotTub, area);
             var comp = tub.TryGetComp<CompWellnessFacility>();
             t.Check(comp != null, "tub spawned with comp");
@@ -136,6 +138,7 @@ namespace Hearth.Wellness.Tests
             float restBefore = pawn.needs.rest.CurLevel = 0.4f;
             var giver = DefDatabase<JoyGiverDef>.GetNamed("HH_Joy_HotTub").Worker;
             var job = giver.TryGiveJob(pawn);
+            if (job == null) t.Note($"no offer: pawn {pawn.LabelShort} at {pawn.Position}, joy {pawn.needs.joy.CurLevel:0.00}, usable {comp.UsableNow(out var w0)} ({w0}), allows {comp.AllowsUser(pawn)}, reach {pawn.CanReach(tub, PathEndMode.Touch, Danger.None)}, forbidden {tub.IsForbidden(pawn)}, weather {map.weatherManager.curWeather.defName}, temp {map.mapTemperature.OutdoorTemp:0}, inBed {pawn.InBed()}, mental {pawn.InMentalState}");
             t.Check(job != null && job.def == WellnessDefOf.HH_UseHotTub, "joy giver offers the hot tub");
             if (job == null) yield break;
             comp.colonistsMayUse = false;
@@ -253,7 +256,16 @@ namespace Hearth.Wellness.Tests
             masseur.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
             masseur.workSettings.SetPriority(WellnessDefOf.HH_Serving, 1);
             t.Check(WellnessStaff.MasseurAvailable(map, client), "a masseur is available");
-            masseur.workSettings.SetPriority(WellnessDefOf.HH_Serving, 0);
+            // "Nobody has Serving on" must be true for every colonist: with the Inn, shops and casino active the other colonists of the test
+            // colony have Serving switched on by default (and earlier suites' work settings stay), so remember and switch them all off.
+            var saved = new List<KeyValuePair<Pawn, int>>();
+            foreach (var c in map.mapPawns.FreeColonistsSpawned.ToList())
+            {
+                if (c.workSettings == null) continue;
+                c.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
+                saved.Add(new KeyValuePair<Pawn, int>(c, c.workSettings.GetPriority(WellnessDefOf.HH_Serving)));
+                c.workSettings.SetPriority(WellnessDefOf.HH_Serving, 0);
+            }
             t.Check(!WellnessStaff.MasseurAvailable(map, client), "no masseur when nobody has Serving on");
             var giver = DefDatabase<JoyGiverDef>.GetNamed("HH_Joy_Massage").Worker;
             client.needs.joy.CurLevel = 0.1f;
@@ -299,6 +311,7 @@ namespace Hearth.Wellness.Tests
             t.Check(client.CurJob?.def != WellnessDefOf.HH_ReceiveMassage, "client gives up waiting");
             t.Check(comp.recipient == null, "table freed after giving up");
             HSettings.Set(WellnessSettings.MassageWait, 0.7f);
+            foreach (var kv in saved) if (kv.Key.workSettings != null) kv.Key.workSettings.SetPriority(WellnessDefOf.HH_Serving, kv.Value);
             WT.ClearJob(client); WT.ClearJob(masseur);
             table.Destroy();
         }
@@ -374,7 +387,8 @@ namespace Hearth.Wellness.Tests
             t.Check(job != null && job.def == WellnessDefOf.HH_UseHotTub, "tub job for the guest");
             WT.ClearJob(guest);
             guest.jobs.StartJob(job, JobCondition.InterruptForced);
-            foreach (var x in WT.WaitUntil(() => guest.CurJob?.def != WellnessDefOf.HH_UseHotTub && WellnessState.Current.sessionsHotTub > 0, 6000, 50)) yield return x;
+            // the visitor may walk across the map first, and earlier suites already counted soaks: wait for THIS guest's finished session
+            foreach (var x in WT.WaitUntil(() => WellnessState.Current.lastSession.ContainsKey(guest.thingIDNumber) || guest.CurJob?.def != WellnessDefOf.HH_UseHotTub, 14000, 50)) yield return x;
             t.Check(WellnessState.Current.sessionsHotTub >= 1, "guest finished a soak");
             t.Check(Ledger.Current.Balance(till) > tillBefore, "colony till earned money: " + (Ledger.Current.Balance(till) - tillBefore));
             t.Check(info.Budget < budgetBefore, "guest budget reduced");

@@ -77,7 +77,14 @@ namespace Silverline
 
         public static void LoseParts(Pawn p, params BodyPartRecord[] parts)
         {
-            foreach (var part in parts) p.health.AddHediff(HediffDefOf.MissingBodyPart, part);
+            foreach (var part in parts)
+            {
+                // the colonists are shared by the suites of one game: a part an earlier suite took off is restored first
+                // (adding a hediff to a missing part is a red error in vanilla)
+                foreach (var old in p.health.hediffSet.hediffs.Where(h => h.def == HediffDefOf.MissingBodyPart && h.Part == part).ToList()) p.health.RemoveHediff(old);
+                if (p.health.hediffSet.PartIsMissing(part)) continue; // a parent part is missing: nothing more to lose
+                p.health.AddHediff(HediffDefOf.MissingBodyPart, part);
+            }
         }
 
         public static void ClearFires() { foreach (var f in Map.listerThings.ThingsOfDef(ThingDefOf.Fire).ToList()) f.Destroy(); }

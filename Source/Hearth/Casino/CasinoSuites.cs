@@ -186,6 +186,8 @@ namespace Hearth.Casino.Tests
             var map = t.Map; var ledger = Ledger.Current;
             HSettings.Set(CS.RoundsSlot, 600); HSettings.Set(CS.HouseFloat, 0);
             HSettings.Set(CS.Croupier, 1);
+            // earlier suites of the same game may have left machines standing: guests pick the least used machine, so they would play those instead of ours
+            foreach (var old in CasinoBank.AllDevices(map).ToList()) if (old.parent != null && !old.parent.Destroyed) old.parent.Destroy();
             var col = Kit.Colonist(t);
             var machine = Kit.Spawn(t, CasinoDefOf.HH_SlotMachine, Rot4.South, col.Position);
             t.Check(machine != null, "machine spawned");
@@ -215,8 +217,11 @@ namespace Hearth.Casino.Tests
                     if (g.Spawned && !g.Dead && g.CurJob?.def != CasinoDefOf.HH_PlayCasino && CasinoComponent.Get().SessionOf(g) == null && Kit.StartGuestJob(g)) started++;
                 yield return 60;
             }
-            // let running sessions finish
+            // let running sessions finish. Visiting guests re-queue for the machine on their own (guest activity scheduler),
+            // so the machine is closed to new guests while it drains (sessions in progress continue).
+            comp.GuestsAllowed = false;
             for (int i = 0; i < 80 && CasinoComponent.Get().Sessions.Count > 0; i++) yield return 60;
+            comp.GuestsAllowed = true;
             t.Check(started >= 1, "guests started sessions: " + started);
             t.Check(comp.Rounds >= 50, "at least 50 rounds played: " + comp.Rounds);
             t.Check(CasinoComponent.Get().Sessions.Count == 0, "all sessions settled");
