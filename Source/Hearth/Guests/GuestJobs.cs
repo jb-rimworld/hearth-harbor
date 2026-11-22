@@ -21,6 +21,17 @@ namespace Hearth.Guests
             var desk = reg.FindDesk(pawn.Map);
             if (desk == null || r.CheckInFailures >= 2 || !pawn.CanReach(desk.InteractionCell, PathEndMode.OnCell, Danger.Some))
             {
+                // self check-in: walk to the guest rooms first, then take a bed (5.4)
+                var target = GuestArrival.TargetSpot(pawn.Map);
+                if (r.CheckInFailures < 4 && target.IsValid && !pawn.Position.InHorDistOf(target, 9f) && pawn.CanReach(target, PathEndMode.Touch, Danger.Some))
+                {
+                    var go = JobMaker.MakeJob(JobDefOf.Goto, target);
+                    go.locomotionUrgency = LocomotionUrgency.Walk;
+                    go.expiryInterval = 4000;
+                    go.checkOverrideOnExpire = true;
+                    r.CheckInFailures++;
+                    return go;
+                }
                 reg.CheckIn(pawn, null);
                 return null;
             }

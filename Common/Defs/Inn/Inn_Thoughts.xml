@@ -87,15 +87,15 @@
   <ThoughtDef>
     <defName>HH_HostedWell</defName>
     <thoughtClass>Thought_MemorySocial</thoughtClass>
-    <durationDays>4</durationDays>
-    <stackLimit>6</stackLimit>
-    <stackLimitForSameOtherPawn>6</stackLimitForSameOtherPawn>
+    <durationDays>5</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
     <stages>
       <li>
         <label>good talks</label>
         <description>We have had some good conversations.</description>
         <baseMoodEffect>0</baseMoodEffect>
-        <baseOpinionOffset>6</baseOpinionOffset>
+        <baseOpinionOffset>8</baseOpinionOffset>
       </li>
     </stages>
   </ThoughtDef>

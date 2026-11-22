@@ -36,6 +36,11 @@ namespace Hearth.Guests
             Caretaker.Register(ModuleId.Inn, "Inn.GuestRecords", () => GuestRegistry.Instance?.CaretakerRecords() ?? 0);
             Caretaker.Register(ModuleId.Inn, "Inn.GuestBedOwners", () => GuestRegistry.Instance?.CaretakerBeds() ?? 0);
             LongEventHandler.ExecuteWhenFinished(AddDesignators);
+            GuestOverviewPage.Register();
+            // 12.6: Hospitality alongside us is a mistake; the takeover dialog lives in the HospCompat module. We only note it.
+            foreach (var id in new[] { "Orion.Hospitality", "Mlie.HospitalityContinued", "Orion.Hospitality.Continued" })
+                if (ModLister.GetActiveModWithIdentifier(id, ignorePostfix: true) != null)
+                    HLog.Warn("Inn", "Hospitality (" + id + ") is active alongside Hearth & Harbor. Inn guests are ours; Hospitality's visitors are left alone. The takeover dialog explains how to switch it off.");
             HLog.Info("Inn", $"Guest bed switch added to {beds} bed types; guest API, card payments and caretaker checks registered");
         }
 

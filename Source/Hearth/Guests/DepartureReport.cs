@@ -87,7 +87,7 @@ namespace Hearth.Guests
             if (g.LeaveReason == "sentAway") outcome = "fine";
             var members = reg.Members(g).ToList();
             float vBar = members.Count > 0 ? members.Average(x => x.Value) : 0.5f;
-            int stars = StarsFor(vBar);
+            int stars = outcome == "great" ? 5 : outcome == "good" ? 4 : outcome == "fine" ? 3 : outcome == "poor" ? 2 : 1;
             string firstName = g.Names.FirstOrDefault() ?? "?";
             string room = members.Select(m => m.RoomLabel).FirstOrDefault(x => !x.NullOrEmpty()) ?? "HH.Inn.Report.Premises".TranslateOr("premises");
 

@@ -100,7 +100,7 @@ namespace Hearth.Guests
             return roomScore * (0.5f + wealth / 100f) - 100f * (float)price.Silver / (0.35f * b * tol) * (1.5f - wealth / 100f) + (nearGroup ? 10f : 0f);
         }
 
-        /// <summary>Most a guest wants to pay per night before grumbling.</summary>
-        public static Money ComfortPrice(int wealth) => Money.FromSilver(0.35 * DailyBudget(wealth) * Math.Max(0.05f, HSettings.Get(InnSettings.PriceTolerance)));
+        /// <summary>Most a guest pays per night without grumbling: 60 % of the daily budget × price tolerance.</summary>
+        public static Money ComfortPrice(int wealth) => Money.FromSilver(0.6 * DailyBudget(wealth) * Math.Max(0.05f, HSettings.Get(InnSettings.PriceTolerance)));
     }
 }

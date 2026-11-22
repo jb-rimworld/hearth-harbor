@@ -350,9 +350,10 @@ namespace Hearth.Guests
                 {
                     if (r.Bed == null) TryReassignBed(r);
                     // morning verdict on last night's bed
-                    if (r.Bed != null && hour >= 6f && hour < 10f && now - r.CheckInTick > 2500 * 8 && now - r.LastVerdictTick > 2500 * 16) GiveNightVerdict(r);
+                    if (r.Bed != null && hour >= 6f && hour < 10f && now - r.CheckInTick > 2500 * 4 && now - r.LastVerdictTick > 2500 * 16) GiveNightVerdict(r);
                     // evening charge for another night
-                    if (hour >= 18f && r.NightsPaid < r.NightsPlanned && now - r.LastNightTick > 2500 * 14 && r.PlannedLeaveTick - now > 2500 * 8)
+                    // a paid night is only charged again once it has been slept (check-in pays for tonight)
+                    if (hour >= 18f && r.NightsPaid < r.NightsPlanned && r.NightsSlept >= r.NightsPaid && now - r.LastNightTick > 2500 * 10 && r.PlannedLeaveTick - now > 2500 * 8)
                     {
                         if (!ChargeNight(r)) { r.Log("HH.Inn.Event.CouldNotPay".TranslateOr("Could not pay for the night.")); wantLeave = true; reason = "money"; }
                     }
@@ -536,7 +537,7 @@ namespace Hearth.Guests
             var colonists = map.mapPawns.FreeColonistsSpawned;
             int bond = Bond(p, map, out int threshold);
             if (bond < threshold) { r.Log("HH.Inn.Event.BondTooLow".TranslateOr("Liked the place, but not enough to stay (bond {0}/{1}).").Replace("{0}", bond.ToString()).Replace("{1}", threshold.ToString()), 5); return; }
-            float chance = Mathf.Clamp(0.35f + 0.5f * s + 0.01f * (bond - threshold), 0.05f, 0.9f);
+            float chance = RecruitChanceOverride ?? Mathf.Clamp(0.35f + 0.5f * s + 0.01f * (bond - threshold), 0.05f, 0.9f);
             if (!JRand.Stream("inn.recruit").Chance(chance)) { r.Log("HH.Inn.Event.Declined".TranslateOr("Thought about staying for good, then went home."), 5); return; }
             var recruiter = colonists.Where(c => c.relations != null).OrderByDescending(c => c.relations.OpinionOf(p)).FirstOrDefault();
             if (recruiter == null) return;
@@ -833,6 +834,8 @@ namespace Hearth.Guests
         public override void FinalizeInit() { Instance = this; RebuildIndex(); }
 
         // test helpers ---------------------------------------------------------------
+        /// <summary>Tests only: makes the recruitment roll deterministic.</summary>
+        internal static float? RecruitChanceOverride;
         internal void ResetGoodwillBookForTests() => goodwillByQuadrum.Clear();
         internal void ForceRemoveAllForTests() { foreach (var r in records.ToList()) Unregister(r, "test cleanup"); groups.Clear(); }
         internal void AddRawRecordForTests(GuestRecord r) { records.Add(r); if (r.Pawn != null) Index(r); }

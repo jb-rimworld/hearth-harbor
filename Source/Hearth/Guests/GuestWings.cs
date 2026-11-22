@@ -136,6 +136,13 @@ namespace Hearth.Guests
             // a guest's own bed and the front desk are always allowed
             var r = GuestRegistry.Instance?.Get(p);
             if (r?.Bed != null && r.Bed.OccupiedRect().Contains(c)) return true;
+            // guests may shop in every open venue room, inside a wing or not (4.5)
+            var room = c.GetRoom(p.Map);
+            if (room != null && !room.PsychologicallyOutdoors)
+            {
+                var venues = Venues.All(p.Map);
+                for (int i = 0; i < venues.Count; i++) if (venues[i].Room == room) return true;
+            }
             return false;
         }
 

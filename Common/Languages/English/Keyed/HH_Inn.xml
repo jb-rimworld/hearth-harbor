@@ -111,6 +111,14 @@
   <HH.Inn.SendAway.Confirm>Send {0}'s group away?</HH.Inn.SendAway.Confirm>
   <HH.Inn.SendAway.Desc>Ask this guest's whole group to leave now. Nights already paid are kept, no goodwill is gained, renown −1.</HH.Inn.SendAway.Desc>
   <HH.Inn.SendAway.Label>Send away</HH.Inn.SendAway.Label>
+  <HH.Inn.Tab.Forecast>Expected arrivals</HH.Inn.Tab.Forecast>
+  <HH.Inn.Tab.Inactive>Nobody is coming: mark a bed as guest bed or open a venue.</HH.Inn.Tab.Inactive>
+  <HH.Inn.Tab.NoGuests>No guests at the moment.</HH.Inn.Tab.NoGuests>
+  <HH.Inn.Tab.NoRoom>no room yet</HH.Inn.Tab.NoRoom>
+  <HH.Inn.Tab.NoneYet>No groups planned yet.</HH.Inn.Tab.NoneYet>
+  <HH.Inn.Tab.Staying>Staying now</HH.Inn.Tab.Staying>
+  <HH.Inn.Tab.Summary>Renown {0} · Whispers {1} · {2} groups hosted · {3} guest beds ({4} free)</HH.Inn.Tab.Summary>
+  <HH.Inn.Tab.Title>Guests</HH.Inn.Tab.Title>
   <HH.Inn.Verdict.0>Slept badly and blamed the room.</HH.Inn.Verdict.0>
   <HH.Inn.Verdict.1>Found the room below their standard.</HH.Inn.Verdict.1>
   <HH.Inn.Verdict.2>Slept so-so.</HH.Inn.Verdict.2>
