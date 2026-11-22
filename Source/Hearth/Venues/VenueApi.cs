@@ -57,7 +57,7 @@ namespace Hearth.ShopsFood
             switch (HSettings.GetEnum<StaffRule>(VS.StaffRuleKey))
             {
                 case StaffRule.NeverRequired: return false;
-                case StaffRule.AlwaysRequired: return v.Type.module != ModuleId.Core;
+                case StaffRule.AlwaysRequired: return v.Type != HHVenueDefOf.HH_Venue_Lounge;
                 default: return v.Type.needsStaff;
             }
         }

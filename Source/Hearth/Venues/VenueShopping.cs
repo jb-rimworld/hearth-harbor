@@ -211,7 +211,14 @@ namespace Hearth.ShopsFood
             if (venue != null)
             {
                 (venue.Comp as CompVenueSignHH)?.RecordSale(price, count);
-                venue.Staffer()?.skills?.Learn(SkillDefOf.Social, 25f, false);
+                var staffer = venue.Staffer();
+                if (staffer != null)
+                {
+                    staffer.skills?.Learn(SkillDefOf.Social, 25f, false);
+                    // a friendly, skilled tender makes the purchase a little nicer (6.5 service quality, simplified)
+                    int social = staffer.skills?.GetSkill(SkillDefOf.Social)?.Level ?? 5;
+                    GuestApi.AddSatisfaction(pawn, 0.004f + 0.016f * Mathf.Clamp01(social / 20f), "HH.Venue.GoodService".TranslateOr("Friendly service"));
+                }
             }
             float delta = VenueShopping.SatisfactionFor(rho, out string reason);
             if (delta != 0f) GuestApi.AddSatisfaction(pawn, delta, reason);

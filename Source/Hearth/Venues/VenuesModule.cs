@@ -22,9 +22,26 @@ namespace Hearth.ShopsFood
             GuestActivities.Register(new ShopActivity());
             GuestActivities.Register(new DrinkActivity());
             GuestActivities.Register(new VendingActivity());
-            Caretaker.Register(ModuleId.ShopsFood, "venues.forbidSync", () => 0);
+            Caretaker.Register(ModuleId.ShopsFood, "venues.releaseOrphans", RepairForbidden);
             // designators are resolved after the long loading event; hide replaced furniture once they exist
             LongEventHandler.ExecuteWhenFinished(() => Guard.Run(ModuleId.ShopsFood, "VanillaHiding.Refresh(startup)", VanillaHiding.Refresh));
+        }
+
+        /// <summary>Caretaker (S8): goods we forbade that are no longer for sale (sign gone, type changed, thing moved) are released.</summary>
+        static int RepairForbidden()
+        {
+            int fixedCount = 0;
+            foreach (var map in Find.Maps)
+            {
+                var comp = map.GetComponent<VenueMapComp>(); if (comp == null) continue;
+                int before = comp.ForbiddenCount;
+                if (before == 0) continue;
+                VenueSales.ClearCaches();
+                comp.SyncForbidden();
+                int released = before - comp.ForbiddenCount;
+                if (released > 0) { fixedCount += released; Caretaker.Fixed("venues.releaseOrphans", released + " goods forbidden by a venue that no longer sells them"); }
+            }
+            return fixedCount;
         }
 
         public override void OnGameStarted() { VenueState.Clear(); VanillaHiding.Refresh(); }

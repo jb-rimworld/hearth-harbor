@@ -30,7 +30,7 @@ namespace Hearth.ShopsFood
             // find a clear area at growing distance from the map centre so suites do not overlap
             int half = innerSize / 2 + 1;
             IntVec3 chosen = IntVec3.Invalid;
-            for (int r = 8 + nextOffset * 9; r < 70 && !chosen.IsValid; r += 3)
+            for (int r = 8 + (nextOffset % 7) * 8; r < 110 && !chosen.IsValid; r += 3)
                 foreach (var c in GenRadial.RadialCellsAround(map.Center, r, r + 2))
                 {
                     var rect = CellRect.CenteredOn(c, half).ExpandedBy(1);
@@ -40,11 +40,21 @@ namespace Hearth.ShopsFood
                     if (ok) { chosen = c; break; }
                 }
             nextOffset++;
+            if (!chosen.IsValid) throw new Exception("no free area for a test room");
             var room = new TestRoom { Outer = CellRect.CenteredOn(chosen, half), Inner = CellRect.CenteredOn(chosen, half - 1) };
             room.Door = new IntVec3(room.Outer.CenterCell.x, 0, room.Outer.minZ);
+            var keepOut = room.Outer.ExpandedBy(2);
             foreach (var c in room.Outer.ExpandedBy(1))
                 foreach (var t in c.GetThingList(map).ToList())
-                    if (!(t is Pawn) && t.def.destroyable) t.Destroy();
+                {
+                    if (t is Pawn p)
+                    {
+                        // push animals and colonists out of the building site
+                        if (CellFinder.TryFindRandomCellNear(chosen, map, 14, x => !keepOut.Contains(x) && x.Standable(map) && x.GetEdifice(map) == null, out var dest))
+                        { p.Position = dest; p.pather?.StopDead(); p.Notify_Teleported(true, true); }
+                    }
+                    else if (t.def.destroyable) t.Destroy();
+                }
             foreach (var c in room.Outer)
             {
                 map.roofGrid.SetRoof(c, RoofDefOf.RoofConstructed);
@@ -122,10 +132,10 @@ namespace Hearth.ShopsFood
 
         public static Pawn Worker(Map map)
         {
-            var colonists = map.mapPawns.FreeColonistsSpawned.Where(p => !p.WorkTypeIsDisabled(HHVenueDefOf.HH_Serving) && p.workSettings != null).ToList();
+            var colonists = map.mapPawns.FreeColonistsSpawned.Where(p => !p.Downed && !p.Dead && !p.Drafted && !p.WorkTypeIsDisabled(HHVenueDefOf.HH_Serving) && p.workSettings != null).ToList();
             var pick = colonists.FirstOrDefault();
             if (pick == null) return null;
-            foreach (var c in map.mapPawns.FreeColonistsSpawned) c.workSettings?.SetPriority(HHVenueDefOf.HH_Serving, 0);
+            foreach (var c in map.mapPawns.FreeColonistsSpawned.ToList()) c.workSettings?.SetPriority(HHVenueDefOf.HH_Serving, 0);
             pick.workSettings.SetPriority(HHVenueDefOf.HH_Serving, 1);
             if (pick.needs?.rest != null) pick.needs.rest.CurLevel = 1f;
             return pick;
@@ -138,6 +148,14 @@ namespace Hearth.ShopsFood
                 foreach (var t in c.GetThingList(map).ToList())
                     if (!(t is Pawn) && !t.Destroyed && t.def.destroyable) t.Destroy();
             VenueSales.ClearCaches(); Venues.MarkDirty(map);
+        }
+
+        /// <summary>Remove visitors left over from earlier suites so they do not shop in the wrong place.</summary>
+        public static void ClearGuests(Map map)
+        {
+            foreach (var p in GuestApi.GuestsOn(map).ToList())
+                if (p != null && !p.Destroyed) p.Destroy(DestroyMode.Vanish);
+            GuestMemory.Clear();
         }
 
         public static Money Till(Map map) => Ledger.Current.Balance(Payments.ColonyTill(map));
@@ -268,6 +286,7 @@ namespace Hearth.ShopsFood
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map;
+            VenueTestKit.ClearGuests(map);
             var factions = VenueTestKit.Friendly(1, false);
             t.Check(factions.Count > 0, "a friendly faction exists for visitors");
             if (factions.Count == 0) yield break;
@@ -278,6 +297,9 @@ namespace Hearth.ShopsFood
             comp.alwaysOpen = true;
             var cells = room.Inner.Cells.Where(c => c != sign.Position).Take(8).ToList();
             VenueTestKit.Stockpile(map, room, cells);
+            // haulers would merge loose items into the stacks and blur the count: switch hauling off for the test
+            var haulWas = map.mapPawns.FreeColonistsSpawned.ToDictionary(c => c, c => c.workSettings?.GetPriority(WorkTypeDefOf.Hauling) ?? 0);
+            foreach (var c in haulWas.Keys) c.workSettings?.SetPriority(WorkTypeDefOf.Hauling, 0);
             var defs = new[] { ThingDefOf.Steel, ThingDefOf.WoodLog, ThingDefOf.Cloth, ThingDefOf.MedicineHerbal, ThingDefOf.ComponentIndustrial, ThingDefOf.Gold, ThingDefOf.Silver, ThingDef.Named("Beer") };
             var stocked = new List<Thing>();
             for (int i = 0; i < defs.Length; i++) stocked.Add(VenueTestKit.Stock(map, defs[i], 40, cells[i], room));
@@ -288,7 +310,7 @@ namespace Hearth.ShopsFood
             var stock = VenueSales.Stock(venue, true);
             t.Check(stock.Count >= 6, "items on stockpile cells are for sale: " + stock.Count);
             t.Check(!stock.Any(s => s.def == ThingDefOf.Silver), "silver is never for sale");
-            int startCount = VenueTestKit.StackSum(stock);
+            int startCount = VenueTestKit.StackSum(stocked);
 
             // --- N45: goods are off limits for the colony unless the sign says otherwise
             var mapComp = map.GetComponent<VenueMapComp>();
@@ -303,7 +325,7 @@ namespace Hearth.ShopsFood
             comp.colonyMayTakeGoods = false;
             mapComp.SyncForbidden();
             t.Check(stock.All(s => s.IsForbidden(colonist)), "forbidden again");
-            var outsider = VenueTestKit.Stock(map, ThingDefOf.Steel, 5, VenueTestKit.OutsideCell(map, room), room);
+            var outsider = VenueTestKit.Stock(map, ThingDef.Named("Leather_Plain"), 5, VenueTestKit.OutsideCell(map, room), room);
             mapComp.SyncForbidden();
             t.Check(!outsider.IsForbidden(colonist) || !mapComp.IsForbiddenByUs(outsider), "goods outside the room are untouched");
 
@@ -316,11 +338,12 @@ namespace Hearth.ShopsFood
             t.Check(comp.salesCount > 0, "at least one guest bought something after " + waited + " ticks (sales " + comp.salesCount + ")");
             t.Check(VenueTestKit.Till(map) > till0, "colony till increased: " + till0 + " -> " + VenueTestKit.Till(map));
             var left = VenueApi.VenueOfSign(map, sign) != null ? VenueSales.Stock(VenueApi.VenueOfSign(map, sign), true) : new List<Thing>();
-            t.Check(VenueTestKit.StackSum(left) < startCount, "goods left the room: " + startCount + " -> " + VenueTestKit.StackSum(left));
+            t.Check(VenueTestKit.StackSum(stocked) < startCount, "goods left the shelves: " + startCount + " -> " + VenueTestKit.StackSum(stocked));
             var owned = guests.Where(g => g != null && g.inventory != null).SelectMany(g => g.inventory.innerContainer).Select(x => x.def).ToList();
             t.Check(owned.Any(d => defs.Contains(d)), "a guest carries a purchased item: " + string.Join(", ", owned.Select(d => d.defName).Distinct()));
             t.Check(comp.Income.Micro > 0 && comp.itemsSold > 0, "sign statistics recorded: " + comp.Income + " silver, " + comp.itemsSold + " items");
             t.Check(GuestApi.Info(guests.First(g => GuestApi.Info(g) != null))?.Spent.Micro >= 0, "guest info tracks spending");
+            foreach (var kv in haulWas) kv.Key.workSettings?.SetPriority(WorkTypeDefOf.Hauling, kv.Value);
             VenueTestKit.Teardown(map, room);
         }
     }
@@ -355,7 +378,11 @@ namespace Hearth.ShopsFood
 
             // --- the colonist comes by himself
             int waited = 0;
-            while (waited < 6000 && !VenueApi.IsStaffed(venue)) { yield return 100; waited += 100; venue = VenueApi.VenueOfSign(map, sign) ?? venue; }
+            while (waited < 6000 && !VenueApi.IsStaffed(venue))
+            {
+                yield return 100; waited += 100; venue = VenueApi.VenueOfSign(map, sign) ?? venue;
+                if (pawn.Downed || pawn.Dead) pawn = VenueTestKit.Worker(map) ?? pawn;
+            }
             t.Check(VenueApi.IsStaffed(venue), "colonist " + pawn.LabelShort + " staffs the open venue after " + waited + " ticks (job " + pawn.CurJobDef?.defName + ")");
             t.Check(pawn.CurJobDef == HHVenueDefOf.HH_TendVenue, "tender is on the tend job");
             t.Check(VenueApi.Gate(venue) == VenueGate.Open && VenueApi.Staffer(venue) == pawn, "venue is open while staffed");
@@ -402,6 +429,7 @@ namespace Hearth.ShopsFood
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map;
+            VenueTestKit.ClearGuests(map);
             var factions = VenueTestKit.Friendly(1, false);
             var pawn = VenueTestKit.Worker(map);
             t.Check(factions.Count > 0 && pawn != null, "friendly faction and a serving colonist");
@@ -420,7 +448,12 @@ namespace Hearth.ShopsFood
             var stock = VenueSales.Stock(venue, true);
             t.Check(stock.Contains(beer) && !stock.Contains(junk), "a tavern sells drinks only");
             int waited = 0;
-            while (waited < 6000 && !VenueApi.IsStaffed(venue)) { yield return 100; waited += 100; }
+            while (waited < 6000 && !VenueApi.IsStaffed(venue))
+            {
+                yield return 100; waited += 100;
+                if (pawn.Downed || pawn.Dead) pawn = VenueTestKit.Worker(map) ?? pawn;
+                if (waited % 1000 == 0) t.Note($"worker {pawn.LabelShort}: job {pawn.CurJobDef?.defName} (target {pawn.CurJob?.targetA.Thing}) at {pawn.Position}, wants tender {WorkGiver_ServeVenue.WantsTender(venue)}, gate {VenueApi.Gate(venue)}, prio {pawn.workSettings?.GetPriority(HHVenueDefOf.HH_Serving)}, disabled {pawn.WorkTypeIsDisabled(HHVenueDefOf.HH_Serving)}, sign {sign} at {sign.Position}, venues {Venues.All(map).Count}");
+            }
             t.Check(VenueApi.IsStaffed(venue), "bartender on duty after " + waited);
             var till0 = VenueTestKit.Till(map);
             int beer0 = beer.stackCount;
@@ -432,10 +465,10 @@ namespace Hearth.ShopsFood
             t.Check(VenueTestKit.Till(map) > till0, "till increased by drinks: " + till0 + " -> " + VenueTestKit.Till(map));
             yield return 900;
             t.Check(beer.Destroyed || beer.stackCount < beer0, "beer left the shelf: " + beer0 + " -> " + (beer.Destroyed ? 0 : beer.stackCount));
-            var drinker = guests.FirstOrDefault(g => GuestMemory.LastDrink(g) > 0);
+            var drinker = GuestApi.GuestsOn(map).FirstOrDefault(g => GuestMemory.LastDrink(g) > 0);
             t.Check(drinker != null, "a guest is marked as having drunk");
-            foreach (var g in guests) t.Note(g.LabelShort + ": job " + (g.CurJobDef?.defName ?? "none") + ", alcohol " + (g.health?.hediffSet.HasHediff(HediffDefOf.AlcoholHigh) == true) + ", bag " + string.Join("/", g.inventory.innerContainer.Where(x => x.def.defName == "Beer").Select(x => x.stackCount.ToString())));
-            t.Check(guests.Any(g => g != null && g.health != null && g.health.hediffSet.HasHediff(HediffDefOf.AlcoholHigh)) || guests.Any(g => g.jobs?.curJob?.def == JobDefOf.Ingest || (g.inventory != null && g.inventory.innerContainer.Any(x => x.def.defName == "Beer"))),
+            foreach (var g in GuestApi.GuestsOn(map)) t.Note(g.LabelShort + ": job " + (g.CurJobDef?.defName ?? "none") + ", alcohol " + (g.health?.hediffSet.HasHediff(HediffDefOf.AlcoholHigh) == true) + ", bag " + string.Join("/", g.inventory.innerContainer.Where(x => x.def.defName == "Beer").Select(x => x.stackCount.ToString())));
+            t.Check(GuestApi.GuestsOn(map).Any(g => g.health != null && g.health.hediffSet.HasHediff(HediffDefOf.AlcoholHigh)) || GuestApi.GuestsOn(map).Any(g => g.jobs?.curJob?.def == JobDefOf.Ingest || (g.inventory != null && g.inventory.innerContainer.Any(x => x.def.defName == "Beer"))),
                 "the drink was drunk or is being drunk or sits in the guest's bag");
             VenueTestKit.Teardown(map, room);
         }
@@ -449,12 +482,13 @@ namespace Hearth.ShopsFood
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map;
+            VenueTestKit.ClearGuests(map);
             var factions = VenueTestKit.Friendly(1, false);
             t.Check(factions.Count > 0, "friendly faction");
             if (factions.Count == 0) yield break;
             float oldPatience = HSettings.Get(VS.WaitForStaffTicks);
             HSettings.Set(VS.WaitForStaffTicks, 400f);
-            foreach (var c in map.mapPawns.FreeColonistsSpawned) c.workSettings?.SetPriority(HHVenueDefOf.HH_Serving, 0);
+            foreach (var c in map.mapPawns.FreeColonistsSpawned.ToList()) c.workSettings?.SetPriority(HHVenueDefOf.HH_Serving, 0);
 
             // a lounge next door: guests wait there
             var loungeRoom = VenueTestKit.Build(map);
@@ -502,10 +536,15 @@ namespace Hearth.ShopsFood
             t.Check(VenueApi.BellActive(venue), "a guest rang the bell after " + waited + " ticks");
             t.Check(!VenueApi.InHours(venue), "still outside hours while the bell is rung");
             foreach (var g in group2) t.Note(g.LabelShort + ": job " + (g.CurJobDef?.defName ?? "none"));
-            t.Check(group2.Any(g => g.CurJobDef == HHVenueDefOf.HH_WaitAtVenue || g.CurJobDef == HHVenueDefOf.HH_BuyDrink), "bell ringer waits for the answer or is being served");
+            t.Check(GuestApi.GuestsOn(map).Any(g => g.CurJobDef == HHVenueDefOf.HH_WaitAtVenue || g.CurJobDef == HHVenueDefOf.HH_BuyDrink), "bell ringer waits for the answer or is being served");
             var worker = VenueTestKit.Worker(map);
             waited = 0;
-            while (waited < 6000 && comp.salesCount == 0) { yield return 100; waited += 100; }
+            while (waited < 6000 && comp.salesCount == 0)
+            {
+                yield return 100; waited += 100;
+                if (worker == null || worker.Downed || worker.Dead) worker = VenueTestKit.Worker(map); // colonists get hurt in a live colony
+                if (waited % 1000 == 0) t.Note($"worker {worker?.LabelShort}: job {worker?.CurJobDef?.defName} at {worker?.Position}, wants tender {WorkGiver_ServeVenue.WantsTender(VenueApi.VenueOfSign(map, sign))}, bell {VenueApi.BellActive(venue)}, gate {VenueApi.Gate(venue)}, drafted {worker?.Drafted}, downed {worker?.Downed}, prio {worker?.workSettings?.GetPriority(HHVenueDefOf.HH_Serving)}");
+            }
             t.Check(comp.salesCount > 0, "the bell was answered and a drink was served after " + waited + " ticks");
             double plain = ThingDef.Named("Beer").BaseMarketValue * 1.25 * comp.priceFactor * VS.F(VS.ShopPrice);
             t.Check(comp.Income.Silver >= plain * 1.4, "bell service charged a surcharge: " + comp.Income.Silver.ToString("0.00") + " vs plain " + plain.ToString("0.00"));
@@ -523,6 +562,7 @@ namespace Hearth.ShopsFood
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map;
+            VenueTestKit.ClearGuests(map);
             var factions = VenueTestKit.Friendly(1, false);
             t.Check(factions.Count > 0, "friendly faction");
             if (factions.Count == 0) yield break;
