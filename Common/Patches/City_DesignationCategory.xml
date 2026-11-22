@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- The architect tab "Hospitality" is shared by every Hearth & Harbor module. Whichever module ships it first wins;
+       this patch only adds it when no other file in the mod has defined it, so City Life also works on its own. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/DesignationCategoryDef[defName="HH_Hospitality"]</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+        <DesignationCategoryDef>
+          <defName>HH_Hospitality</defName>
+          <label>hospitality</label>
+          <description>Signs, counters, shelves, tables and machines for guests: taverns, shops, restaurants and everything in between.</description>
+          <order>480</order>
+        </DesignationCategoryDef>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>
