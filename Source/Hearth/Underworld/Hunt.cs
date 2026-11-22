@@ -99,7 +99,8 @@ namespace Hearth.Underworld
             var cells = ground.ArenaInfo().Cells.Where(c => c.Standable(map)).ToList();
             for (int i = 0; i < count && kinds.Count > 0 && cells.Count > 0; i++)
             {
-                var p = PawnGenerator.GeneratePawn(kinds.RandomElement(), null);
+                // owned by the house: wild animals walk through fences, house animals stay inside the ground
+                var p = PawnGenerator.GeneratePawn(kinds.RandomElement(), Faction.OfPlayer);
                 GenSpawn.Spawn(p, cells.RandomElement(), map);
                 list.Add(p);
             }

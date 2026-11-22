@@ -437,7 +437,7 @@ namespace Hearth.Underworld
             t.Check(new FenceActivity_Probe().Desire(seller) > 0f, "shady seller with loot wants to visit the fence");
             var ord = UwKit.Guests(map, 1, f)[0];
             t.Check(new FenceActivity_Probe().Desire(ord) == 0f, "ordinary guest does not");
-            float w0 = Underworld.Whispers; int s0 = UwKit.Silver(seller);
+            float w0 = Underworld.Whispers; int s0 = UwKit.Silver(seller); int db0 = Underworld.Comp.DealsBought, ds0 = Underworld.Comp.DealsSold;
             t.Check(FenceTrade.BuyFrom(fs, seller, item, out string why), "fence buys the loot (" + why + ")");
             int expect = (int)Math.Floor(mv * 0.4 + 1e-6);
             int paid = UwKit.Silver(seller) - s0;
@@ -453,7 +453,7 @@ namespace Hearth.Underworld
             t.Check(b0 - UwKit.Silver(buyer) == (int)Math.Ceiling(salePrice.Silver - 1e-9), "buyer paid 70 %");
             t.Check(buyer.inventory.innerContainer.Any(x => x.def == ThingDefOf.MedicineIndustrial), "buyer carries the goods away");
             t.Check(fs.Stock.Count == 0, "stock empty");
-            t.Check(Underworld.Comp.DealsBought == 1 && Underworld.Comp.DealsSold >= 1, "deal counters");
+            t.Check(Underworld.Comp.DealsBought == db0 + 1 && Underworld.Comp.DealsSold == ds0 + 1, "deal counters");
             t.Check(ledger.SumAll() == 0, "ledger balanced after selling");
             t.Check(Underworld.Comp.FenceProfitMicro > 0, "profit tracked: " + new Money(Underworld.Comp.FenceProfitMicro));
             // cash box cap: surplus goes back to the till
@@ -530,11 +530,12 @@ namespace Hearth.Underworld
             if (!prisoner.DevelopmentalStage.Adult()) { prisoner.ageTracker.AgeBiologicalTicks = 25L * 3600000L; prisoner.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
             GenSpawn.Spawn(prisoner, CellFinder.RandomClosewalkCellNear(map.Center, map, 10), map); UwKit.Track(prisoner);
             prisoner.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
+            int tr0 = Underworld.Comp.Tours;
             Interrogation.Apply(member, prisoner);
             t.Check(prisoner.needs.mood.thoughts.memories.GetFirstMemoryOfDef(UwDefs.ThoughtInterrogated) != null, "prisoner remembers the questioning");
             t.Check(!prisoner.health.hediffSet.hediffs.Any(h => h.def == UwDefs.Bruise), "Standard: no bruises");
             t.Check(!prisoner.Dead && prisoner.health.summaryHealth.SummaryHealthPercent > 0.9f, "prisoner unharmed");
-            t.Check(Underworld.Comp.Tours == 1, "tour counted");
+            t.Check(Underworld.Comp.Tours == tr0 + 1, "tour counted");
             HSettings.Set("underworld.gang.prisonAccess", 0f);
             // a child is never questioned
             var child = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Villager, f, PawnGenerationContext.NonPlayer, map.Tile, forceGenerateNewPawn: true, fixedBiologicalAge: 9f, fixedChronologicalAge: 9f));
@@ -726,7 +727,7 @@ namespace Hearth.Underworld
             var outside = new IntVec3(gateCell.x, 0, gateCell.z - 3);
             var a = UwKit.TameAnimal(map, outside, "Boar", "Muffalo"); var b = UwKit.TameAnimal(map, outside + new IntVec3(1, 0, 0), "Boar", "Muffalo");
             var guests = UwKit.Guests(map, 3, f);
-            var till0 = UwKit.Till(map);
+            var till0 = UwKit.Till(map); long take0 = Underworld.Comp.HouseTakeMicro;
             t.Check(FightBout.TryStartFor(pit, true, out string why), "a bout starts through the normal path (" + why + ")");
             var bout = FightBout.OfPit(pit);
             t.Check(bout != null && bout.phase == FightBout.Phase.Assemble, "bout is assembling");
@@ -751,7 +752,7 @@ namespace Hearth.Underworld
             t.Check(bout.WinnerSide != -2, "outcome recorded: side " + bout.WinnerSide);
             t.Check(bout.Bets.Count >= 1, "spectators placed bets on arrival: " + bout.Bets.Count);
             t.Check(Ledger.Current.Balance(Underworld.PitAccount(map)).Micro == 0 && Ledger.Current.SumAll() == 0, "ledger balanced, pit account empty");
-            if (bout.Result != null) t.Check(UwKit.Till(map) - till0 == new Money(bout.Result.HouseMicro), "till got the house take: " + new Money(bout.Result.HouseMicro));
+            if (bout.Result != null) t.Check(Underworld.Comp.HouseTakeMicro - take0 == bout.Result.HouseMicro, "house take booked: " + new Money(bout.Result.HouseMicro));
             t.Check(!a.Dead && !b.Dead, "both fighters alive");
             UwKit.End();
         }
@@ -810,21 +811,23 @@ namespace Hearth.Underworld
             var seller = UwKit.Guests(map, 1, f, shady: true)[0];
             var item = ThingMaker.MakeThing(ThingDefOf.MedicineIndustrial); item.stackCount = 8; seller.inventory.innerContainer.TryAdd(item, false); Underworld.Comp.MarkStolen(item, f);
             seller.Position = counter.InteractionCell; seller.Notify_Teleported(true, true);
+            int bought0 = Underworld.Comp.DealsBought;
             var act = new Activities.FenceActivity();
             var job = act.TryGiveJob(seller, GuestApi.Info(seller));
             t.Check(job != null && job.def == UwDefs.JobFenceDeal, "fence activity offers a fence deal job");
             seller.jobs.StartJob(job, JobCondition.InterruptForced);
             yield return 500;
-            t.Check(Underworld.Comp.DealsBought == 1 && fs.Stock.Count == 1, "the job ran: loot bought and stocked");
+            t.Check(Underworld.Comp.DealsBought == bought0 + 1 && fs.Stock.Count == 1, "the job ran: loot bought and stocked");
             t.Check(Ledger.Current.SumAll() == 0, "ledger balanced");
             // lounge job
             var guest = UwKit.Guests(map, 10, f).FirstOrDefault(g => Lounge.AllowedLevel(g) > 0) ?? UwKit.Guests(map, 1, f)[0];
             if (Lounge.AllowedLevel(guest) > 0 && DefDatabase<ThingDef>.GetNamedSilentFail("SmokeleafJoint") != null)
             {
                 var cell = t.FreeCellNearCenter(); guest.Position = cell; guest.Notify_Teleported(true, true);
+                int ls0 = Underworld.Comp.LoungeSessions;
                 guest.jobs.StartJob(JobMaker.MakeJob(UwDefs.JobLounge, cell), JobCondition.InterruptForced);
                 yield return 1400;
-                t.Check(Underworld.Comp.LoungeSessions == 1, "the lounge job completed a session");
+                t.Check(Underworld.Comp.LoungeSessions == ls0 + 1, "the lounge job completed a session");
             }
             else t.Note("test guest cannot use drugs; lounge job skipped");
             // holding cells tour as a real job
@@ -835,9 +838,10 @@ namespace Hearth.Underworld
             GenSpawn.Spawn(prisoner, CellFinder.RandomClosewalkCellNear(map.Center, map, 10), map); UwKit.Track(prisoner);
             prisoner.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
             visitor.Position = prisoner.Position + new IntVec3(2, 0, 0); visitor.Notify_Teleported(true, true);
+            int tours0 = Underworld.Comp.Tours;
             var tj = Interrogation.MakeJob(visitor);
             t.Check(tj != null, "the tour job is offered when allowed");
-            if (tj != null) { visitor.jobs.StartJob(tj, JobCondition.InterruptForced); yield return 3200; t.Check(Underworld.Comp.Tours >= 1, "the tour job ran to the end"); }
+            if (tj != null) { visitor.jobs.StartJob(tj, JobCondition.InterruptForced); yield return 3200; t.Check(Underworld.Comp.Tours == tours0 + 1, "the tour job ran to the end"); }
             HSettings.Set("underworld.gang.prisonAccess", 0f);
             // smuggler offer dialog
             var dockCell = UwKit.TryFindRect(map, 3, 3, out var dr) ? dr.CenterCell : t.FreeCellNearCenter();
