@@ -40,4 +40,8 @@
   <HH.Dlc.Reason.ReformReady>reform is already possible</HH.Dlc.Reason.ReformReady>
   <HH.Dlc.ShrineQuality>Faith: {0}. Chapel quality: {1}.</HH.Dlc.ShrineQuality>
   <HH.Dlc.TempleFund>Temple fund: {0} silver</HH.Dlc.TempleFund>
+  <HH.Setting.dlc.traitSpawn>New traits appear on generated people</HH.Setting.dlc.traitSpawn>
+  <HH.Setting.dlc.traitSpawn.Desc>Lucky, Unlucky, Born host and the other Hearth &amp; Harbor traits can show up on newly generated pawns. Existing pawns keep theirs. Off: only added by hand or editor.</HH.Setting.dlc.traitSpawn.Desc>
+  <HH.Setting.dlc.traitRarity>Trait frequency</HH.Setting.dlc.traitRarity>
+  <HH.Setting.dlc.traitRarity.Desc>Multiplier on how often our traits are rolled for new pawns (1 = same rarity as most vanilla traits).</HH.Setting.dlc.traitRarity.Desc>
 </LanguageData>
