@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- What a staying guest does (5.1): check in → sleep at night → eat packed food → activities of all modules → recreation → wander in the wing. -->
+  <DutyDef>
+    <defName>HH_GuestStay</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="Hearth.Guests.JobGiver_HH_CheckIn" />
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>SatisfyingNeeds</tagToGive>
+          <subNodes>
+            <li Class="Hearth.Guests.JobGiver_HH_GuestSleep" />
+            <li Class="Hearth.Guests.JobGiver_HH_EatPacked" />
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>Misc</tagToGive>
+          <subNodes>
+            <li Class="Hearth.Guests.JobGiver_HH_GuestActivity" />
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>Idle</tagToGive>
+          <subNodes>
+            <li Class="Hearth.Guests.JobGiver_HH_GuestJoy" />
+            <li Class="Hearth.Guests.JobGiver_HH_WanderWing" />
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <JobDef>
+    <defName>HH_CheckIn</defName>
+    <driverClass>Hearth.Guests.JobDriver_HH_CheckIn</driverClass>
+    <reportString>checking in at TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>HH_AccompanyGuest</defName>
+    <driverClass>Hearth.Guests.JobDriver_HH_AccompanyGuest</driverClass>
+    <reportString>keeping TargetA company.</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+
+  <WorkGiverDef>
+    <defName>HH_AccompanyGuest</defName>
+    <label>keep guests company</label>
+    <giverClass>Hearth.Guests.WorkGiver_HH_AccompanyGuest</giverClass>
+    <workType>HH_Hosting</workType>
+    <priorityInType>50</priorityInType>
+    <verb>keep company</verb>
+    <gerund>keeping company</gerund>
+    <workTags>
+      <li>Social</li>
+    </workTags>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+  </WorkGiverDef>
+
+  <IncidentDef>
+    <defName>HH_GuestGroupArrival</defName>
+    <label>guest group arrival</label>
+    <description>A group of guests arrives to stay at your inn. Planned by Hearth &amp; Harbor's arrival schedule; never chosen by the storyteller.</description>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>Hearth.Guests.IncidentWorker_HH_GuestGroupArrival</workerClass>
+    <category>Misc</category>
+    <baseChance>0</baseChance>
+    <pointsScaleable>false</pointsScaleable>
+  </IncidentDef>
+
+  <HistoryEventDef>
+    <defName>HH_HostedGuests</defName>
+    <label>hosted guests</label>
+  </HistoryEventDef>
+</Defs>
