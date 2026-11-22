@@ -34,6 +34,11 @@ namespace Hearth.ShopsFood
         public const string MarketDays = "venues.marketDays";
         public const string MarketCaravans = "venues.marketCaravans";
         public const string MarketVisitors = "venues.marketVisitors";
+        public const string MarketStalls = "venues.marketStalls";
+        public const string MarketRenown = "venues.marketRenown";
+        public const string StallFee = "venues.stallFee";
+        // Last orders
+        public const string LastOrders = "venues.lastOrdersMinutes";
         // Furniture
         public const string HideVanilla = "venues.hideVanilla";
 
@@ -73,6 +78,8 @@ namespace Hearth.ShopsFood
             HSettings.Int(M, "Staffing", NightBellWaitHours, 1, 1, 4, "Night bell patience (hours)",
                 "How long a guest waits after ringing before giving up ('Rang the bell. Nobody came.').", hardMax: 12);
 
+            HSettings.Int(M, "Opening hours", LastOrders, 30, 0, 120, "Last orders (minutes before closing)",
+                "In this last stretch before closing time guests in a hurry buy one more round, no guest starts a long browse and a purchase already under way is still served after closing. 0 = no last orders.", hardMax: 600);
             HSettings.Int(M, "Opening hours", DayOpen, 8, 0, 23, "Day preset opens", "Hour the 'Day' preset in the sign's hours dialog opens.", hardMax: 23);
             HSettings.Int(M, "Opening hours", DayClose, 22, 0, 23, "Day preset closes", "Hour the 'Day' preset closes.", hardMax: 23);
             HSettings.Int(M, "Opening hours", EveningOpen, 17, 0, 23, "Evening preset opens", "Hour the 'Evening' preset opens.", hardMax: 23);
@@ -88,6 +95,13 @@ namespace Hearth.ShopsFood
                 "How many trader caravans come on market day (fewer if few factions are friendly).", hardMin: 1, hardMax: 20);
             HSettings.Int(M, "Market", MarketVisitors, 2, 0, 4, "Visitor groups per market",
                 "How many groups of day visitors come on market day, to shop in your venues.", hardMin: 0, hardMax: 20);
+
+            HSettings.Int(M, "Market", MarketStalls, 4, 1, 12, "Market stalls needed",
+                "The big market only happens once you own this many free-standing market stalls (traders set up at them). With fewer stalls fewer caravans come.", hardMin: 1, hardMax: 100);
+            HSettings.Int(M, "Market", MarketRenown, 20, 0, 100, "Renown needed for the market",
+                "Minimum renown (0-100) before traders and visitors want to hold a market with you. Without a renown system the colony counts as neutral (50).", hardMax: 100);
+            HSettings.Silver(M, "Market", StallFee, 25, 0, 200, "Stall fee per trader",
+                "Every trader caravan pays this much silver for its stall on market day (it goes into the colony till).");
 
             var hide = HSettings.Bool(M, "Furniture", HideVanilla, true, "Hide replaced vanilla furniture",
                 "When a Hearth & Harbor building replaces a vanilla one (for example the card table for the poker table), the vanilla one disappears from the build menu once the replacement is available. Buildings you already placed stay. Takes effect after a restart or the next game load.");

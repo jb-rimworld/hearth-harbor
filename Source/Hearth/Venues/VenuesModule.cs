@@ -55,8 +55,12 @@ namespace Hearth.ShopsFood
                 var comp = map.GetComponent<VenueMapComp>();
                 n += comp?.ReleaseAll() ?? 0;
             }
+            int restored = 0;
+            foreach (var map in Find.Maps)
+                foreach (var v in Venues.All(map))
+                    if (v.Comp is CompVenueSignHH c && c.RestockPlaces > 0) { restored += c.RestockPlaces; c.restockOn = false; c.RestoreRestock(map); }
             VanillaHiding.Refresh();
-            report.Add($"Venues: {n} forbidden goods released, hidden vanilla furniture restored.");
+            report.Add($"Venues: {n} forbidden goods released, {restored} storage places given back, hidden vanilla furniture restored.");
         }
 
         public override IEnumerable<string> Diagnosis()
@@ -96,6 +100,7 @@ namespace Hearth.ShopsFood
             if (!Modules.On(ModuleId.ShopsFood) || !map.IsPlayerHome) return;
             int t = Find.TickManager.TicksGame;
             if (t % 250 == 40) Guard.Run(ModuleId.ShopsFood, "Venues.SyncForbidden", SyncForbidden);
+            if (t % 250 == 140) Guard.Run(ModuleId.ShopsFood, "Venues.Restock", SyncRestock);
             if (t % 90 == 0) Guard.Run(ModuleId.ShopsFood, "Venues.GuestFallback", () => GuestFallback.Run(map));
             if (t % 2500 == 2000) GuestMemory.Prune(id => !map.mapPawns.AllPawnsSpawned.Any(p => p.thingIDNumber == id));
         }
@@ -126,6 +131,13 @@ namespace Hearth.ShopsFood
                 if (cf != null && cf.Forbidden) cf.Forbidden = false;
                 forbiddenByUs.RemoveAt(i);
             }
+        }
+
+        /// <summary>"Restock" signs keep the storage of their room in line (N45).</summary>
+        public void SyncRestock()
+        {
+            foreach (var v in Venues.All(map))
+                if (v.Comp is CompVenueSignHH c && c.restockOn) c.SyncRestock();
         }
 
         /// <summary>Release everything we forbade (module removal, tests).</summary>

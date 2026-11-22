@@ -20,4 +20,12 @@
     From code: VanillaHiding.Register("PokerTable", "HH_CardTable");
     A vanilla def that does not exist (missing DLC) is skipped silently.
   -->
+
+  <!-- Casino: the Rimdeck table replaces the vanilla poker table once Casino tables are researched (N49). -->
+  <Hearth.ShopsFood.VanillaReplacementDef>
+    <defName>HH_Replaces_PokerTable</defName>
+    <label>Rimdeck table replaces poker table</label>
+    <vanillaDefName>PokerTable</vanillaDefName>
+    <replacementDefName>HH_PokerTable</replacementDefName>
+  </Hearth.ShopsFood.VanillaReplacementDef>
 </Defs>

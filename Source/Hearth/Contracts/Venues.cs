@@ -53,6 +53,8 @@ namespace Hearth
         public Map Map => Sign.Map;
         public string Account => "house:venue:" + Sign.thingIDNumber;
         public bool IsOpenNow => Comp.IsOpenAt(GenLocalDate.HourOfDay(Sign.Map));
+        /// <summary>Open for business right now: inside the hours (or answering the night bell) and, if the type needs somebody on duty, somebody is. Same answer as the gate the venue's own shops use.</summary>
+        public bool OpenAndStaffed => Hearth.ShopsFood.VenueApi.IsOpenForBusiness(this);
         public bool Contains(IntVec3 c) { var r = Room; return r != null && Sign.Spawned && c.GetRoom(Sign.Map) == r; }
     }
 
@@ -209,21 +211,48 @@ namespace Hearth
             return true;
         }
 
-        /// <summary>Wall-mounted signs belong to the room in front of them (like a wall lamp); free-standing ones to their own cell's room.</summary>
+        /// <summary>
+        /// The room a sign belongs to. A wall-mounted sign (building.isAttachment, like the vanilla wall lamp) stands on the floor cell
+        /// in front of its wall (Placeworker_AttachedToWall: the wall is at Position + Rotation.FacingCell), so its own cell is the right room.
+        /// If that cell has no room (or is a doorway) the neighbouring cells are tried, the cell in front of the sign first.
+        /// </summary>
         public static Room RoomOfSign(Thing sign)
         {
-            var map = sign.Map;
+            var map = sign?.Map;
             if (map == null) return null;
             var cell = sign.Position;
             var room = cell.GetRoom(map);
-            bool wallMounted = sign.def.building?.isAttachment == true || sign.TryGetComp<CompVenueSign>()?.Props.wallMounted == true;
-            if (room == null || wallMounted || room.IsDoorway)
+            if (room != null && !room.IsDoorway) return room;
+            Room fallback = room;
+            var rot = sign.Rotation;
+            // the wall side is the one an attachment leans on: look away from it first
+            var order = new[] { rot.Opposite.FacingCell, rot.Rotated(RotationDirection.Clockwise).FacingCell, rot.Rotated(RotationDirection.Counterclockwise).FacingCell, rot.FacingCell };
+            for (int i = 0; i < order.Length; i++)
             {
-                var front = sign.Position + sign.Rotation.FacingCell;
-                if (front.InBounds(map)) room = front.GetRoom(map);
+                var c = cell + order[i];
+                if (!c.InBounds(map)) continue;
+                var r = c.GetRoom(map);
+                if (r == null || r.IsDoorway) continue;
+                return r;
             }
-            return room;
+            return fallback;
         }
+
+        /// <summary>Somebody is on duty at this venue right now (a colonist standing at the sign or counter). A venue that needs nobody is not "staffed" by this rule; ask <see cref="Venue.OpenAndStaffed"/> for "can serve".</summary>
+        public static bool IsStaffed(Venue v) => Hearth.ShopsFood.VenueApi.IsStaffed(v);
+        /// <summary>The pawn on duty, if any.</summary>
+        public static Pawn Staffer(Venue v) => Hearth.ShopsFood.VenueApi.Staffer(v);
+        /// <summary>Does the venue need somebody on duty to serve (type and staffing rule)?</summary>
+        public static bool NeedsStaff(Venue v) => Hearth.ShopsFood.VenueApi.NeedsStaff(v);
+        /// <summary>Shorthand for <see cref="Venue.OpenAndStaffed"/>.</summary>
+        public static bool IsOpenAndStaffed(Venue v) => v != null && v.OpenAndStaffed;
+
+        /// <summary>
+        /// Renown of the colony, 0-100. Set by the module that owns renown (Inn/Renown) with a function; until then the colony counts as neutral (50)
+        /// so nothing that asks for a minimum renown is blocked.
+        /// </summary>
+        public static Func<float> RenownGetter;
+        public static float Renown() { try { return RenownGetter != null ? Mathf.Clamp(RenownGetter(), 0f, 100f) : 50f; } catch (Exception e) { HLog.Once("venues.renown", LogLevel.Warn, "Venues", "Renown getter failed: " + e.Message); return 50f; } }
 
         public static IEnumerable<Venue> OfType(Map map, VenueTypeDef type) => All(map).Where(v => v.Type == type);
         public static Venue At(IntVec3 cell, Map map)

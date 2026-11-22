@@ -97,7 +97,14 @@ namespace Hearth.ShopsFood
             var tend = ToilMaker.MakeToil("TendVenue");
             tend.defaultCompleteMode = ToilCompleteMode.Delay;
             tend.defaultDuration = Math.Max(1, VS.I(VS.TendHours)) * GenDate.TicksPerHour;
-            tend.initAction = () => { VenueState.PingStaff(Sign, pawn); pawn.pather.StopDead(); };
+            tend.initAction = () =>
+            {
+                VenueState.PingStaff(Sign, pawn);
+                pawn.pather.StopDead();
+                // the bell was answered: the business stays open for a service window, so the guest who rang is served even if the bell was rung long ago
+                var v = VenueApi.VenueOfSign(pawn.Map, Sign);
+                if (v != null && !VenueApi.InHours(v) && VenueApi.BellActive(v)) VenueState.RingBell(Sign, VenueState.BellServiceTicks);
+            };
             tend.tickAction = () =>
             {
                 if (pawn.IsHashIntervalTick(30)) VenueState.PingStaff(Sign, pawn);

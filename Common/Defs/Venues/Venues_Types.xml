@@ -104,4 +104,22 @@
       <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>None</sells></li>
     </modExtensions>
   </Hearth.VenueTypeDef>
+
+  <!-- Guest chapel (KONZEPT 6.9). Needs Ideology (the guest altar is an Ideology building). Always module Core: the Dlc module has no module switch of its own. -->
+  <Hearth.VenueTypeDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>HH_Venue_Chapel</defName>
+    <label>guest chapel</label>
+    <description>A quiet room with a guest altar where visitors of every faith come to pray. Guests pay nothing but leave calmer; a chapel with a handsome altar and a few pews is a good neighbour for an inn. Always open during the day, no staff needed.</description>
+    <module>Core</module>
+    <defaultOpenHour>7</defaultOpenHour>
+    <defaultCloseHour>21</defaultCloseHour>
+    <iconPath>UI/HH/Venues/Type_Chapel</iconPath>
+    <needsStaff>false</needsStaff>
+    <staffWorkType>HH_Serving</staffWorkType>
+    <priceFactor>1</priceFactor>
+    <color>(0.62,0.58,0.80)</color>
+    <modExtensions>
+      <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>None</sells></li>
+    </modExtensions>
+  </Hearth.VenueTypeDef>
 </Defs>

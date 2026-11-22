@@ -15,12 +15,18 @@
   <HH.Setting.venues.eveningOpen.Desc>Hour the 'Evening' preset opens.</HH.Setting.venues.eveningOpen.Desc>
   <HH.Setting.venues.hideVanilla>Hide replaced vanilla furniture</HH.Setting.venues.hideVanilla>
   <HH.Setting.venues.hideVanilla.Desc>When a Hearth &amp; Harbor building replaces a vanilla one (for example the card table for the poker table), the vanilla one disappears from the build menu once the replacement is available. Buildings you already placed stay. Takes effect after a restart or the next game load.</HH.Setting.venues.hideVanilla.Desc>
+  <HH.Setting.venues.lastOrdersMinutes>Last orders (minutes before closing)</HH.Setting.venues.lastOrdersMinutes>
+  <HH.Setting.venues.lastOrdersMinutes.Desc>In this last stretch before closing time guests in a hurry buy one more round, no guest starts a long browse and a purchase already under way is still served after closing. 0 = no last orders.</HH.Setting.venues.lastOrdersMinutes.Desc>
   <HH.Setting.venues.marketCaravans>Trader caravans per market</HH.Setting.venues.marketCaravans>
   <HH.Setting.venues.marketCaravans.Desc>How many trader caravans come on market day (fewer if few factions are friendly).</HH.Setting.venues.marketCaravans.Desc>
   <HH.Setting.venues.marketDays>Days between markets</HH.Setting.venues.marketDays>
   <HH.Setting.venues.marketDays.Desc>Average interval of the big market, with a little randomness.</HH.Setting.venues.marketDays.Desc>
   <HH.Setting.venues.marketEnabled>Big market</HH.Setting.venues.marketEnabled>
   <HH.Setting.venues.marketEnabled.Desc>Every so often friendly factions bring several trader caravans and day visitors at once. Only happens while you run at least one shop.</HH.Setting.venues.marketEnabled.Desc>
+  <HH.Setting.venues.marketRenown>Renown needed for the market</HH.Setting.venues.marketRenown>
+  <HH.Setting.venues.marketRenown.Desc>Minimum renown (0-100) before traders and visitors want to hold a market with you. Without a renown system the colony counts as neutral (50).</HH.Setting.venues.marketRenown.Desc>
+  <HH.Setting.venues.marketStalls>Market stalls needed</HH.Setting.venues.marketStalls>
+  <HH.Setting.venues.marketStalls.Desc>The big market only happens once you own this many free-standing market stalls (traders set up at them). With fewer stalls fewer caravans come.</HH.Setting.venues.marketStalls.Desc>
   <HH.Setting.venues.marketVisitors>Visitor groups per market</HH.Setting.venues.marketVisitors>
   <HH.Setting.venues.marketVisitors.Desc>How many groups of day visitors come on market day, to shop in your venues.</HH.Setting.venues.marketVisitors.Desc>
   <HH.Setting.venues.maxPurchases>Purchases per guest and stay</HH.Setting.venues.maxPurchases>
@@ -45,6 +51,8 @@
   <HH.Setting.venues.shopDesire.Desc>How eagerly guests walk into shops and taverns compared with other things they could do. 0 = they never shop.</HH.Setting.venues.shopDesire.Desc>
   <HH.Setting.venues.shopPrice>Shop price level</HH.Setting.venues.shopPrice>
   <HH.Setting.venues.shopPrice.Desc>Multiplies the market value of goods sold in shops and taverns, on top of each sign's own price factor.</HH.Setting.venues.shopPrice.Desc>
+  <HH.Setting.venues.stallFee>Stall fee per trader</HH.Setting.venues.stallFee>
+  <HH.Setting.venues.stallFee.Desc>Every trader caravan pays this much silver for its stall on market day (it goes into the colony till).</HH.Setting.venues.stallFee.Desc>
   <HH.Setting.venues.tendHours>Hours per shift</HH.Setting.venues.tendHours>
   <HH.Setting.venues.tendHours.Desc>How long a colonist tends a venue before looking for other work (they also stop when it closes).</HH.Setting.venues.tendHours.Desc>
   <HH.Setting.venues.vendingPrice>Vending machine price level</HH.Setting.venues.vendingPrice>
@@ -79,6 +87,8 @@
   <HH.Venue.HoursDesc>Set when the business is open. Presets for day, evening, night and around the clock.</HH.Venue.HoursDesc>
   <HH.Venue.HoursHint>A closing hour earlier than the opening hour means the business stays open past midnight.</HH.Venue.HoursHint>
   <HH.Venue.HoursTitle>Opening hours</HH.Venue.HoursTitle>
+  <HH.Venue.LastOrders>last orders</HH.Venue.LastOrders>
+  <HH.Venue.MarketFees>The traders pay {0} silver for their stalls.</HH.Venue.MarketFees>
   <HH.Venue.MarketLabel>Market day</HH.Venue.MarketLabel>
   <HH.Venue.MarketText>Word has spread: it is market day. {0} trader caravans and {1} groups of visitors from {2} are on their way to your colony. Traders will trade as usual at their camps; visitors will browse your shops and taverns if they are open.\n\nKeep your shelves stocked and your counters staffed.</HH.Venue.MarketText>
   <HH.Venue.NoRoom>Not a business yet: the sign needs an enclosed, roofed room.</HH.Venue.NoRoom>
@@ -87,6 +97,8 @@
   <HH.Venue.Nobody>nobody</HH.Venue.Nobody>
   <HH.Venue.NobodyCameBell>Rang the bell. Nobody came.</HH.Venue.NobodyCameBell>
   <HH.Venue.NobodyCameStaff>Waited for service. Nobody came.</HH.Venue.NobodyCameStaff>
+  <HH.Venue.Off>off</HH.Venue.Off>
+  <HH.Venue.On>on</HH.Venue.On>
   <HH.Venue.Open>open</HH.Venue.Open>
   <HH.Venue.Opens>Opens at</HH.Venue.Opens>
   <HH.Venue.PresetAlways>Always</HH.Venue.PresetAlways>
@@ -104,6 +116,13 @@
   <HH.Venue.RenameDesc>Give this business a name.</HH.Venue.RenameDesc>
   <HH.Venue.RenameTitle>Name this business</HH.Venue.RenameTitle>
   <HH.Venue.Reset>Use default name</HH.Venue.Reset>
+  <HH.Venue.Restock>Restock</HH.Venue.Restock>
+  <HH.Venue.RestockDesc>Let this sign set the storage places in its room to take your goods with priority Important, so haulers keep the shelves full. Opt-in; old settings come back when you switch it off.</HH.Venue.RestockDesc>
+  <HH.Venue.RestockHint>When on, every storage place in this room (stockpile zones and shelves, yours or anybody's) takes the goods ticked below with priority Important, so your haulers keep the room stocked. The places' old settings come back when you switch this off.</HH.Venue.RestockHint>
+  <HH.Venue.RestockNoShop>This business does not sell anything from its room, so there is nothing to restock.</HH.Venue.RestockNoShop>
+  <HH.Venue.RestockSwitchOff>Restock is ON – switch off and give the storage back</HH.Venue.RestockSwitchOff>
+  <HH.Venue.RestockSwitchOn>Restock is off – switch on</HH.Venue.RestockSwitchOn>
+  <HH.Venue.RestockTitle>Restock</HH.Venue.RestockTitle>
   <HH.Venue.RippedOff>Ripped off</HH.Venue.RippedOff>
   <HH.Venue.Sales>Sales today</HH.Venue.Sales>
   <HH.Venue.SalesTotal>total</HH.Venue.SalesTotal>

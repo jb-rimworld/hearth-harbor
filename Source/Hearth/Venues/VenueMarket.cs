@@ -9,7 +9,8 @@ namespace Hearth.ShopsFood
 {
     public sealed class MarketResult
     {
-        public int Caravans, VisitorGroups;
+        public int Caravans, VisitorGroups, Stalls;
+        public Money Fees;
         public readonly List<Faction> Factions = new List<Faction>();
         public readonly List<Pawn> Pawns = new List<Pawn>();
         public bool Any => Caravans + VisitorGroups > 0;
@@ -18,11 +19,38 @@ namespace Hearth.ShopsFood
     /// <summary>The big market (6.10, N48): friendly factions bring several trader caravans and day visitors at once.</summary>
     public static class VenueMarket
     {
-        public static bool CanHaveMarket(Map map)
+        /// <summary>Free-standing market stalls of the colony on a map (6.10).</summary>
+        public static int Stalls(Map map)
         {
-            if (map == null || !map.IsPlayerHome) return false;
-            foreach (var v in Venues.All(map)) if (VenueApi.SellsOf(v) == SellKind.Goods) return true;
-            return false;
+            if (map == null || HHVenueDefOf.HH_MarketStall == null) return 0;
+            int n = 0;
+            var list = map.listerBuildings.allBuildingsColonist;
+            for (int i = 0; i < list.Count; i++) if (list[i].def == HHVenueDefOf.HH_MarketStall && list[i].Spawned) n++;
+            return n;
+        }
+
+        /// <summary>The thing that stops a market right now, as a short sentence; null when nothing does. Conditions of 6.10: a shop, enough stalls, enough renown.</summary>
+        public static string Blocker(Map map)
+        {
+            if (map == null || !map.IsPlayerHome) return "no home map";
+            bool shop = false;
+            foreach (var v in Venues.All(map)) if (VenueApi.SellsOf(v) == SellKind.Goods) { shop = true; break; }
+            if (!shop) return "no shop";
+            int need = VS.I(VS.MarketStalls), have = Stalls(map);
+            if (have < need) return $"market stalls {have}/{need}";
+            float renown = Venues.Renown(), minRenown = VS.I(VS.MarketRenown);
+            if (renown < minRenown) return $"renown {renown:0}/{minRenown:0}";
+            return null;
+        }
+
+        public static bool CanHaveMarket(Map map) => Blocker(map) == null;
+
+        /// <summary>Every trader caravan sets up at one of the stalls and pays the stall fee into the colony's till.</summary>
+        static Money ChargeStallFee(Map map, Faction f)
+        {
+            var fee = HSettings.GetSilver(VS.StallFee);
+            if (fee.Micro <= 0 || Ledger.Current == null) return Money.Zero;
+            return Ledger.Current.Post("world", Payments.ColonyTill(map), fee, "Market stall fee: " + (f?.Name ?? "trader"), false, "market") ? fee : Money.Zero;
         }
 
         static List<Faction> Sources(IncidentDef def, Map map)
@@ -45,6 +73,7 @@ namespace Hearth.ShopsFood
         {
             var res = new MarketResult();
             if (map == null) return res;
+            res.Stalls = Stalls(map);
             var traderFactions = Sources(IncidentDefOf.TraderCaravanArrival, map);
             traderFactions.Shuffle();
             for (int i = 0; i < caravans && traderFactions.Count > 0; i++)
@@ -54,6 +83,7 @@ namespace Hearth.ShopsFood
                 bool ok = Guard.Run(ModuleId.ShopsFood, "Market.Caravan", () => IncidentDefOf.TraderCaravanArrival.Worker.TryExecute(parms), false);
                 if (!ok) continue;
                 res.Caravans++;
+                res.Fees += ChargeStallFee(map, f);
                 if (!res.Factions.Contains(f)) res.Factions.Add(f);
                 res.Pawns.AddRange(parms.storeGeneratedNeutralPawns);
             }
@@ -79,6 +109,7 @@ namespace Hearth.ShopsFood
             string names = string.Join(", ", res.Factions.Select(f => f.Name));
             string text = "HH.Venue.MarketText".TranslateOr("Word has spread: it is market day. {0} trader caravans and {1} groups of visitors from {2} are on their way to your colony. Traders will trade as usual at their camps; visitors will browse your shops and taverns if they are open.\n\nKeep your shelves stocked and your counters staffed.")
                 .Replace("{0}", res.Caravans.ToString()).Replace("{1}", res.VisitorGroups.ToString()).Replace("{2}", names);
+            if (res.Fees.Micro > 0) text += "\n\n" + "HH.Venue.MarketFees".TranslateOr("The traders pay {0} silver for their stalls.").Replace("{0}", res.Fees.ToStringShort());
             var target = res.Pawns.FirstOrDefault(p => p != null && p.Spawned);
             Find.LetterStack.ReceiveLetter("HH.Venue.MarketLabel".TranslateOr("Market day"), text, LetterDefOf.PositiveEvent, target != null ? new LookTargets(target) : LookTargets.Invalid);
         }
@@ -124,12 +155,16 @@ namespace Hearth.ShopsFood
             if (now < nextMarketTick) return;
             var map = Find.AnyPlayerHomeMap;
             if (map == null) return;
-            if (!VenueMarket.CanHaveMarket(map) || map.dangerWatcher.DangerRating == StoryDanger.High || map.mapPawns.FreeColonistsSpawnedCount == 0)
+            string blocker = VenueMarket.Blocker(map);
+            if (blocker != null || map.dangerWatcher.DangerRating == StoryDanger.High || map.mapPawns.FreeColonistsSpawnedCount == 0)
             {
                 nextMarketTick = now + GenDate.TicksPerDay / 2; // try again later today
+                if (blocker != null) HLog.Once("venues.marketBlocked." + blocker, LogLevel.Info, "Venues", "Market day postponed: " + blocker);
                 return;
             }
-            var res = VenueMarket.Hold(map, VS.I(VS.MarketCaravans), VS.I(VS.MarketVisitors));
+            // every trader needs a stall
+            int caravans = Math.Min(VS.I(VS.MarketCaravans), Math.Max(1, VenueMarket.Stalls(map)));
+            var res = VenueMarket.Hold(map, caravans, VS.I(VS.MarketVisitors));
             if (res.Any) { marketsHeld++; lastMarketTick = now; Schedule(now); }
             else nextMarketTick = now + GenDate.TicksPerDay / 2;
         }
