@@ -50,13 +50,6 @@
     <theme>Ascension</theme><workerClass>Hearth.Dlc.IndulgenceWorker_Rank</workerClass>
     <rank>4</rank><basePrice>10000</basePrice><capPawnQuadrum>1</capPawnQuadrum>
   </Hearth.IndulgenceDef>
-  <Hearth.IndulgenceDef MayRequire="Ludeon.RimWorld.Royalty">
-    <defName>HH_Asc_Psychic</defName><label>psychic ascension</label>
-    <description>The priesthood pulls strings with something far above it. Raises the psylink by one level, up to the usual limit. Needs rank III.</description>
-    <theme>Ascension</theme><workerClass>Hearth.Dlc.IndulgenceWorker_Psylink</workerClass>
-    <priceThing>PsychicAmplifier</priceThing><priceThingFactor>1.5</priceThingFactor>
-    <minRank>3</minRank><capPawnYear>1</capPawnYear><capColonyQuadrum>1</capColonyQuadrum>
-  </Hearth.IndulgenceDef>
   <Hearth.IndulgenceDef MayRequire="Ludeon.RimWorld.Ideology">
     <defName>HH_Ind_ReformTithe</defName><label>reform tithe</label>
     <description>A voluntary tithe towards the next reform of a fluid ideoligion: one reform point.</description>

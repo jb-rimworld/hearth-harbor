@@ -18,6 +18,7 @@ namespace Hearth.Dlc.Tests
         {
             var p = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Colonist, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: true));
             GenSpawn.Spawn(p, CellFinder.RandomClosewalkCellNear(map.Center, map, 12), map);
+            foreach (var tr in p.story.traits.allTraits.Where(x => x.def.defName.StartsWith("HH_")).ToList()) p.story.traits.RemoveTrait(tr); // generated pawns may roll our traits now: tests start clean
             if (ModsConfig.IdeologyActive && p.Ideo == null && Faction.OfPlayer.ideos?.PrimaryIdeo != null) p.ideo.SetIdeo(Faction.OfPlayer.ideos.PrimaryIdeo);
             return p;
         }
@@ -362,6 +363,11 @@ namespace Hearth.Dlc.Tests
             yield return 70;
             var ot = new List<ISocialThought>(); low.needs.mood.thoughts.GetSocialThoughts(asc, ot);
             t.Check(ot.Any(x => x.GetType().Name.Contains("Situational") && ((Thought)x).def.defName == "HH_AscensionRespect"), "sacred: lower ranks respect higher ranks (+5 opinion)");
+            {   // sacred ascension: certainty gains 5 % faster for ranked pawns (same pawn, rank 0 vs rank 2)
+                var ai = asc.ideo; DlcState.Current.SetRank(asc, 0); ai.OffsetCertainty(-0.4f); float a1 = ai.Certainty; ai.OffsetCertainty(0.1f); float g0 = ai.Certainty - a1;
+                DlcState.Current.SetRank(asc, 2); ai.OffsetCertainty(-0.3f); float b1 = ai.Certainty; ai.OffsetCertainty(0.1f); float g1 = ai.Certainty - b1;
+                t.Check(g0 > 0.001f && g1 / g0 > 1.03f && g1 / g0 < 1.07f, $"sacred ascension: certainty gain x1.05 ({g0:0.0000} -> {g1:0.0000})");
+            }
             stance(MoneyTheme.Ascension, MoneyStance.Disapproved); yield return 70;
             ot.Clear(); low.needs.mood.thoughts.GetSocialThoughts(asc, ot);
             t.Check(ot.Any(x => ((Thought)x).def.defName == "HH_AscensionDisapproval"), "disapproved: co-believers think less of ranked pawns");
@@ -560,12 +566,13 @@ namespace Hearth.Dlc.Tests
             t.Check(holder.royalty.GetFavor(empire) < favor0 || favor0 == 0, "refusing costs honor");
             gw0 = empire.GoodwillWith(Faction.OfPlayer);
             if (empire.HostileTo(Faction.OfPlayer)) { Faction.OfPlayer.TryAffectGoodwillWith(empire, 100, false, false); }
-            // incident workers answer without errors
+            // incident workers answer without errors (billeting needs the Empire's goodwill >= 0)
+            Faction.OfPlayer.TryAffectGoodwillWith(empire, 100, false, false);
             var incNoble = DefDatabase<IncidentDef>.GetNamed("HH_NobleStay"); var incBillet = DefDatabase<IncidentDef>.GetNamed("HH_ImperialBilleting");
             var ip = StorytellerUtility.DefaultParmsNow(incNoble.category, map);
-            bool canNoble = incNoble.Worker.CanFireNow(ip); t.Check(canNoble == anyRoom && !st.Offers.Any(), "noble stay incident fires only with a suitable bedroom (" + canNoble + ")");
-            prof.Tier = 3f; HSettings.Set("dlc.mandatoryBilleting", 0); t.Check(!incBillet.Worker.CanFireNow(StorytellerUtility.DefaultParmsNow(incBillet.category, map)), "billeting incident blocked on Standard Room");
-            prof.Tier = 5f; t.Check(incBillet.Worker.CanFireNow(StorytellerUtility.DefaultParmsNow(incBillet.category, map)), "billeting incident allowed on One-Star Review");
+            bool canNoble = ((IncidentWorker_NobleStay)incNoble.Worker).Eligible(ip); t.Check(canNoble == anyRoom && !st.Offers.Any(), "noble stay incident fires only with a suitable bedroom (" + canNoble + ")");
+            prof.Tier = 3f; HSettings.Set("dlc.mandatoryBilleting", 0); var bw = (IncidentWorker_ImperialBilleting)incBillet.Worker; t.Check(!bw.Eligible(StorytellerUtility.DefaultParmsNow(incBillet.category, map)), "billeting incident blocked on Standard Room");
+            prof.Tier = 5f; t.Check(bw.Eligible(StorytellerUtility.DefaultParmsNow(incBillet.category, map)), "billeting incident allowed on One-Star Review");
             prof.Tier = tier0; HSettings.Set("dlc.mandatoryBilleting", mand0 ? 1 : 0);
 
             // a stay: noble with the right title, settled by satisfaction

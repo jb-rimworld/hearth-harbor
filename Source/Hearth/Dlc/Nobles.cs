@@ -303,6 +303,9 @@ namespace Hearth.Dlc
 
     public class IncidentWorker_NobleStay : IncidentWorker
     {
+        /// <summary>The module's own conditions (vanilla's day/population gates come on top). Public so tests and the UI can ask.</summary>
+        public bool Eligible(IncidentParms parms) => CanFireNowSub(parms);
+
         protected override bool CanFireNowSub(IncidentParms parms)
         {
             if (!Modules.On(ModuleId.Inn) || !NobleStays.Active || NobleStays.Busy || !HSettings.GetBool("dlc.nobleStays")) return false;
@@ -314,6 +317,8 @@ namespace Hearth.Dlc
 
     public class IncidentWorker_ImperialBilleting : IncidentWorker
     {
+        public bool Eligible(IncidentParms parms) => CanFireNowSub(parms);
+
         protected override bool CanFireNowSub(IncidentParms parms)
         {
             if (!Modules.On(ModuleId.Inn) || !NobleStays.Active || NobleStays.Busy || !NobleStays.BilletingAllowed) return false;

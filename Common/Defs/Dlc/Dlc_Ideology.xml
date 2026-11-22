@@ -14,7 +14,7 @@
     <displayOrderInImpact>1100</displayOrderInImpact>
     <modExtensions><li Class="Hearth.PreceptStanceExt"><theme>Indulgences</theme></li></modExtensions>
   </PreceptDef>
-  <PreceptDef ParentName="HH_IndBase">
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="HH_IndBase">
     <defName>HH_Indulgences_NotAThing</defName><label>not a thing</label>
     <description>Nobody here has ever thought of selling forgiveness. Nothing to buy, nothing to object to.</description>
     <displayOrderInIssue>0</displayOrderInIssue>
@@ -22,7 +22,7 @@
     <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
     <modExtensions Inherit="False"><li Class="Hearth.PreceptStanceExt"><theme>Indulgences</theme><stance>NotAThing</stance></li></modExtensions>
   </PreceptDef>
-  <PreceptDef ParentName="HH_IndBase">
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="HH_IndBase">
     <defName>HH_Indulgences_Abhorrent</defName><label>abhorrent</label>
     <description>Forgiveness is not a commodity. Anyone who sells it should be driven from the temple.</description>
     <displayOrderInIssue>10</displayOrderInIssue>
@@ -30,7 +30,7 @@
     <modExtensions Inherit="False"><li Class="Hearth.PreceptStanceExt"><theme>Indulgences</theme><stance>Abhorrent</stance></li></modExtensions>
     <comps><li Class="PreceptComp_SituationalThought"><thought>HH_FaithForSale</thought><description>Indulgences sold on the map</description></li></comps>
   </PreceptDef>
-  <PreceptDef ParentName="HH_IndBase">
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="HH_IndBase">
     <defName>HH_Indulgences_Disapproved</defName><label>disapproved</label>
     <description>Buying absolution is a shabby habit. It works, but nobody should be proud of it.</description>
     <displayOrderInIssue>20</displayOrderInIssue>
@@ -38,14 +38,14 @@
     <modExtensions Inherit="False"><li Class="Hearth.PreceptStanceExt"><theme>Indulgences</theme><stance>Disapproved</stance></li></modExtensions>
     <comps><li Class="PreceptComp_SelfTookMemoryThought"><eventDef>HH_BoughtIndulgence</eventDef><thought>HH_BoughtMyWayOut</thought></li></comps>
   </PreceptDef>
-  <PreceptDef ParentName="HH_IndBase">
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="HH_IndBase">
     <defName>HH_Indulgences_Accepted</defName><label>accepted</label>
     <description>A fair offering for a fair mercy. The price is on the sign.</description>
     <displayOrderInIssue>30</displayOrderInIssue>
     <defaultSelectionWeight>10</defaultSelectionWeight>
     <modExtensions Inherit="False"><li Class="Hearth.PreceptStanceExt"><theme>Indulgences</theme><stance>Accepted</stance></li></modExtensions>
   </PreceptDef>
-  <PreceptDef ParentName="HH_IndBase">
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="HH_IndBase">
     <defName>HH_Indulgences_Sacred</defName><label>sacred</label>
     <description>Paying one's dues is a sacrament. The faithful get a discount, and a cheap conscience is a duty.</description>
     <displayOrderInIssue>40</displayOrderInIssue>
@@ -63,7 +63,7 @@
     <impact>Low</impact>
     <displayOrderInImpact>1110</displayOrderInImpact>
   </PreceptDef>
-  <PreceptDef ParentName="HH_AscBase">
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="HH_AscBase">
     <defName>HH_PaidAscension_NotAThing</defName><label>not a thing</label>
     <description>Rank is earned here, never bought. Nothing to buy, nothing to object to.</description>
     <displayOrderInIssue>0</displayOrderInIssue>
@@ -71,7 +71,7 @@
     <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
     <modExtensions><li Class="Hearth.PreceptStanceExt"><theme>Ascension</theme><stance>NotAThing</stance></li></modExtensions>
   </PreceptDef>
-  <PreceptDef ParentName="HH_AscBase">
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="HH_AscBase">
     <defName>HH_PaidAscension_Abhorrent</defName><label>abhorrent</label>
     <description>Faith is not for sale. Anyone who sells rank has already lost it.</description>
     <displayOrderInIssue>10</displayOrderInIssue>
@@ -79,7 +79,7 @@
     <modExtensions><li Class="Hearth.PreceptStanceExt"><theme>Ascension</theme><stance>Abhorrent</stance></li></modExtensions>
     <comps><li Class="PreceptComp_SituationalThought"><thought>HH_FaithNotForSale</thought><description>Rank sold on the map</description></li></comps>
   </PreceptDef>
-  <PreceptDef ParentName="HH_AscBase">
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="HH_AscBase">
     <defName>HH_PaidAscension_Disapproved</defName><label>disapproved</label>
     <description>A bought rank is a hollow rank. The congregation sees through it.</description>
     <displayOrderInIssue>20</displayOrderInIssue>
@@ -87,14 +87,14 @@
     <modExtensions><li Class="Hearth.PreceptStanceExt"><theme>Ascension</theme><stance>Disapproved</stance></li></modExtensions>
     <comps><li Class="PreceptComp_SituationalThought"><thought>HH_AscensionDisapproval</thought></li></comps>
   </PreceptDef>
-  <PreceptDef ParentName="HH_AscBase">
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="HH_AscBase">
     <defName>HH_PaidAscension_Accepted</defName><label>accepted</label>
     <description>Rank can be bought, at the posted price, like everything else of value.</description>
     <displayOrderInIssue>30</displayOrderInIssue>
     <defaultSelectionWeight>10</defaultSelectionWeight>
     <modExtensions><li Class="Hearth.PreceptStanceExt"><theme>Ascension</theme><stance>Accepted</stance></li></modExtensions>
   </PreceptDef>
-  <PreceptDef ParentName="HH_AscBase">
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="HH_AscBase">
     <defName>HH_PaidAscension_Sacred</defName><label>sacred</label>
     <description>The ladder is the faith. Every rung bought is a rung climbed, and the ones below look up with respect.</description>
     <displayOrderInIssue>40</displayOrderInIssue>
