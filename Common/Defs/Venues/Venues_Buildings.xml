@@ -128,6 +128,47 @@
     </comps>
   </ThingDef>
 
+  <!-- ===== Market stall: free-standing stand for the big market (KONZEPT 6.10). Traders set up at them and pay a stall fee. ===== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_MarketStall</defName>
+    <label>market stall</label>
+    <description>A free-standing stall with a striped awning. The big market only takes place once you own enough stalls (see the Venues settings): every trader caravan sets up at one and pays a stall fee into your till. Standing outside, it works in any weather but is not a business of its own.</description>
+    <graphicData>
+      <texPath>Things/HH/Venues/MarketStall</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,1)</drawSize>
+      <shadowData><volume>(1.8, 0.5, 0.8)</volume></shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>40</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <size>(2,1)</size>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories><li>BuildingsFurniture</li></thingCategories>
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>35</costStuffCount>
+    <costList>
+      <Cloth>15</Cloth>
+    </costList>
+    <statBases>
+      <MaxHitPoints>110</MaxHitPoints>
+      <WorkToBuild>700</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Mass>25</Mass>
+      <Beauty>2</Beauty>
+    </statBases>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <uiOrder>130</uiOrder>
+  </ThingDef>
+
   <!-- ===== Vending machine: storage guests buy from without any staff ===== -->
   <ThingDef ParentName="BuildingBase">
     <defName>HH_VendingMachine</defName>

@@ -118,20 +118,4 @@ namespace Hearth.ShopsFood
             Guard.Run(ModuleId.ShopsFood, "VanillaHiding.Refresh(research)", VanillaHiding.Refresh);
         }
     }
-
-    /// <summary>
-    /// Contract workaround: a wall-mounted sign (isAttachment) stands on the floor cell in front of the wall (like the vanilla wall lamp),
-    /// so its room is the room of its own cell. Venues.RoomOfSign sends attachments to the wall cell, which has no room.
-    /// </summary>
-    [HarmonyPatch(typeof(Venues), nameof(Venues.RoomOfSign))]
-    static class Patch_RoomOfSign_Attachment
-    {
-        static void Postfix(Thing sign, ref Room __result)
-        {
-            if (__result != null || sign == null || !sign.Spawned) return;
-            if (!Modules.On(ModuleId.ShopsFood)) return;
-            if (sign.def.building?.isAttachment != true) return;
-            __result = sign.Position.GetRoom(sign.Map);
-        }
-    }
 }

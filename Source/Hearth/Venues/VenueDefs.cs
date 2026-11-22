@@ -38,6 +38,7 @@ namespace Hearth.ShopsFood
         public static ThingDef HH_VenueSignWall;
         public static ThingDef HH_ShopCounter;
         public static ThingDef HH_VendingMachine;
+        public static ThingDef HH_MarketStall;
         public static WorkTypeDef HH_Serving;
         public static VenueTypeDef HH_Venue_Tavern;
         public static VenueTypeDef HH_Venue_Shop;

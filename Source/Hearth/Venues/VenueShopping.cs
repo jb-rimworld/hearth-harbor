@@ -145,7 +145,7 @@ namespace Hearth.ShopsFood
 
             var browse = ToilMaker.MakeToil("Browse");
             browse.defaultCompleteMode = ToilCompleteMode.Delay;
-            browse.defaultDuration = Math.Max(1, VS.I(VS.BrowseTicks));
+            browse.defaultDuration = BrowseDuration();
             browse.handlingFacing = true;
             browse.tickAction = () => { if (Item != null) pawn.rotationTracker.FaceTarget(Item); };
             browse.socialMode = RandomSocialMode.Off;
@@ -155,6 +155,20 @@ namespace Hearth.ShopsFood
             pay.defaultCompleteMode = ToilCompleteMode.Instant;
             pay.initAction = DoPay;
             yield return pay;
+        }
+
+        /// <summary>Browsing time; short during last orders (the guest knows the shop is about to close).</summary>
+        int BrowseDuration()
+        {
+            int ticks = Math.Max(1, VS.I(VS.BrowseTicks));
+            var map = pawn.Map;
+            var sign = job.targetB.Thing;
+            if (map != null && sign != null && !Vending)
+            {
+                var v = VenueApi.VenueOfSign(map, sign);
+                if (v != null && VenueApi.InLastOrders(v)) ticks = Math.Max(1, ticks / 3);
+            }
+            return ticks;
         }
 
         void Fail(string why)
@@ -186,7 +200,7 @@ namespace Hearth.ShopsFood
             else
             {
                 venue = VenueApi.VenueOfSign(map, job.targetB.Thing);
-                if (venue == null || !VenueApi.IsOpenForBusiness(venue)) { Fail("venue closed"); return; }
+                if (venue == null || !VenueApi.CanCompletePurchase(venue)) { Fail("venue closed"); return; }
                 price = VenueApi.PriceOf(item, count, venue);
                 mult = VenueApi.PriceMultiplier(venue);
             }
@@ -263,22 +277,24 @@ namespace Hearth.ShopsFood
     /// <summary>venues.shop: browse the shelves of an open shop and buy something.</summary>
     sealed class ShopActivity : VenueActivityBase
     {
+        /// <summary>Shoppers hurry to buy before closing time.</summary>
+        public const float LastOrdersRush = 1.5f;
         public override string Id => "venues.shop";
         public override float Desire(Pawn guest, GuestInfo info)
         {
             if (!Basic(guest, info) || GuestMemory.Purchases(guest) >= VS.I(VS.MaxPurchases)) return 0f;
             if (info.Budget.Silver < 3) return 0f;
             var all = Venues.All(guest.Map);
-            bool any = false;
-            for (int i = 0; i < all.Count && !any; i++)
+            bool any = false, last = false;
+            for (int i = 0; i < all.Count; i++)
             {
                 var v = all[i];
                 if (VenueApi.SellsOf(v) != SellKind.Goods || !VenueApi.IsOpenForBusiness(v)) continue;
-                if (VenueSales.Stock(v).Count > 0) any = true;
+                if (VenueSales.Stock(v).Count > 0) { any = true; if (VenueApi.InLastOrders(v)) last = true; }
             }
             if (!any) return 0f;
             float budget = Mathf.Clamp01((float)info.Budget.Silver / 80f);
-            return VS.F(VS.ShopDesire) * (0.35f + 0.9f * budget);
+            return VS.F(VS.ShopDesire) * (0.35f + 0.9f * budget) * (last ? LastOrdersRush : 1f);
         }
         public override Job TryGiveJob(Pawn guest, GuestInfo info)
         {
@@ -298,22 +314,29 @@ namespace Hearth.ShopsFood
     {
         public override string Id => "venues.drink";
         static bool Candidate(Venue v) => VenueApi.SellsOf(v) == SellKind.Drinks && VenueSales.Stock(v).Count > 0;
+        /// <summary>A guest does not wait or ring the bell for something that is too expensive for them anyway (the bell surcharge included).</summary>
+        static bool WouldPay(Pawn guest, GuestInfo info, Venue v, bool bell)
+            => VenueShopping.Accepts(VenueShopping.Rho(guest, info, bell ? VenueApi.BellMultiplier(v) : VenueApi.PriceMultiplier(v), v.Sign.thingIDNumber));
         public override float Desire(Pawn guest, GuestInfo info)
         {
             if (!Basic(guest, info) || info.Budget.Silver < 3) return 0f;
             int gap = VS.I(VS.DrinkGapHours) * GenDate.TicksPerHour;
-            if (Find.TickManager.TicksGame - GuestMemory.LastDrink(guest) < gap) return 0f;
+            int since = Find.TickManager.TicksGame - GuestMemory.LastDrink(guest);
+            if (since < gap / 2) return 0f;
             float best = 0f;
             var all = Venues.All(guest.Map);
             for (int i = 0; i < all.Count; i++)
             {
                 var v = all[i];
                 if (!Candidate(v)) continue;
+                // last orders: one more round is allowed after half the usual gap
+                bool last = VenueApi.InLastOrders(v);
+                if (since < gap && !last) continue;
                 switch (VenueApi.Gate(v))
                 {
-                    case VenueGate.Open: best = Math.Max(best, 0.9f); break;
-                    case VenueGate.WaitingForStaff: best = Math.Max(best, 0.5f); break;
-                    default: if (VS.B(VS.NightBell) && VenueApi.NeedsStaff(v)) best = Math.Max(best, 0.2f); break;
+                    case VenueGate.Open: best = Math.Max(best, last ? 1.2f : 0.9f); break;
+                    case VenueGate.WaitingForStaff: if (WouldPay(guest, info, v, false)) best = Math.Max(best, 0.5f); break;
+                    default: if (VS.B(VS.NightBell) && VenueApi.NeedsStaff(v) && WouldPay(guest, info, v, true)) best = Math.Max(best, 0.2f); break;
                 }
             }
             return best * VS.F(VS.ShopDesire);
@@ -331,9 +354,10 @@ namespace Hearth.ShopsFood
                         if (job != null) return job;
                         break;
                     case VenueGate.WaitingForStaff:
-                        return VenueShopping.WaitJob(v, ringBell: !VenueApi.InHours(v));
+                        if (WouldPay(guest, info, v, false)) return VenueShopping.WaitJob(v, ringBell: !VenueApi.InHours(v));
+                        break;
                     default:
-                        if (VS.B(VS.NightBell) && VenueApi.NeedsStaff(v)) return VenueShopping.WaitJob(v, ringBell: true);
+                        if (VS.B(VS.NightBell) && VenueApi.NeedsStaff(v) && WouldPay(guest, info, v, true)) return VenueShopping.WaitJob(v, ringBell: true);
                         break;
                 }
             }

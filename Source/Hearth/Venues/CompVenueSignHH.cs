@@ -16,6 +16,7 @@ namespace Hearth.ShopsFood
         public static readonly Texture2D Price = ContentFinder<Texture2D>.Get("UI/HH/Venues/Cmd_Price", false) ?? BaseContent.BadTex;
         public static readonly Texture2D TakeGoods = ContentFinder<Texture2D>.Get("UI/HH/Venues/Cmd_TakeGoods", false) ?? BaseContent.BadTex;
         public static readonly Texture2D Rename = ContentFinder<Texture2D>.Get("UI/HH/Venues/Cmd_Rename", false) ?? BaseContent.BadTex;
+        public static readonly Texture2D Restock = ContentFinder<Texture2D>.Get("UI/HH/Venues/Cmd_Restock", false) ?? BaseContent.BadTex;
     }
 
     public class CompProperties_VenueSignHH : CompProperties_VenueSign
@@ -30,6 +31,11 @@ namespace Hearth.ShopsFood
     public class CompVenueSignHH : CompVenueSign
     {
         public int salesCount, itemsSold;
+        /// <summary>"Restock" (N45): the sign sets the room's storage places to take these goods with priority Important.</summary>
+        public bool restockOn;
+        public ThingFilter restockFilter = new ThingFilter();
+        List<StorageBackup> restockBackups = new List<StorageBackup>();
+        public int RestockPlaces => restockBackups.Count;
         long incomeMicro;
         int dayStamp = -1, daySales;
         long dayIncomeMicro;
@@ -67,6 +73,104 @@ namespace Hearth.ShopsFood
             Scribe_Values.Look(ref dayStamp, "dayStamp", -1);
             Scribe_Values.Look(ref daySales, "daySales");
             Scribe_Values.Look(ref dayIncomeMicro, "dayIncomeMicro");
+            Scribe_Values.Look(ref restockOn, "restockOn");
+            Scribe_Deep.Look(ref restockFilter, "restockFilter");
+            Scribe_Collections.Look(ref restockBackups, "restockBackups", LookMode.Deep);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                if (restockFilter == null) restockFilter = new ThingFilter();
+                if (restockBackups == null) restockBackups = new List<StorageBackup>();
+                restockBackups.RemoveAll(b => b == null || b.filter == null);
+            }
+        }
+
+        public override void PostDeSpawn(Map map
+#if RW16PLUS
+            , DestroyMode mode = DestroyMode.Vanish
+#endif
+            )
+        {
+            // the sign lets go of the storage it took over (also when it is only minified or moved)
+            Guard.Run(ModuleId.ShopsFood, "Restock.Restore(despawn)", () => RestoreRestock(map));
+            base.PostDeSpawn(map
+#if RW16PLUS
+                , mode
+#endif
+                );
+        }
+
+        // ------------------------------------------------------------------ restock (N45)
+
+        /// <summary>Switch restock on or off. Switching on first fills an empty goods filter with what the room sells now.</summary>
+        public void SetRestock(bool on)
+        {
+            if (on == restockOn) return;
+            if (on)
+            {
+                var v = Venue;
+                if (v == null || VenueApi.SellsOf(v) == SellKind.None) { Messages.Message("HH.Venue.RestockNoShop".TranslateOr("This business does not sell anything from its room, so there is nothing to restock."), parent, MessageTypeDefOf.RejectInput, false); return; }
+                restockFilter ??= new ThingFilter();
+                if (restockFilter.AllowedDefCount == 0) foreach (var d in VenueRestock.GoodsNow(v)) restockFilter.SetAllow(d, true);
+                restockOn = true;
+                SyncRestock();
+            }
+            else
+            {
+                var map = parent.Map;
+                restockOn = false;
+                RestoreRestock(map);
+            }
+        }
+
+        /// <summary>Hand filter and priority to every storage place of the room; remember what they had. Called when switched on and every 250 ticks.</summary>
+        public void SyncRestock()
+        {
+            if (!restockOn || !parent.Spawned) return;
+            var v = Venue;
+            if (v == null || VenueApi.SellsOf(v) == SellKind.None) { restockOn = false; RestoreRestock(parent.Map); return; }
+            var places = VenueRestock.StorageOf(v);
+            var now = new HashSet<long>();
+            foreach (var p in places)
+            {
+                VenueRestock.KeyOf(p, out int kind, out int id);
+                now.Add(((long)kind << 32) | (uint)id);
+                var st = p.GetStoreSettings();
+                if (!restockBackups.Any(b => b.kind == kind && b.id == id))
+                {
+                    var copy = new ThingFilter();
+                    copy.CopyAllowancesFrom(st.filter);
+                    restockBackups.Add(new StorageBackup { kind = kind, id = id, priority = (int)st.Priority, filter = copy });
+                }
+                if (st.Priority != StoragePriority.Important) st.Priority = StoragePriority.Important;
+                st.filter.CopyAllowancesFrom(restockFilter);
+                p.Notify_SettingsChanged();
+            }
+            // places that left the room (zone shrunk, shelf carried away): give them their settings back
+            for (int i = restockBackups.Count - 1; i >= 0; i--)
+            {
+                var b = restockBackups[i];
+                if (now.Contains(((long)b.kind << 32) | (uint)b.id)) continue;
+                RestoreOne(parent.Map, b);
+                restockBackups.RemoveAt(i);
+            }
+        }
+
+        static void RestoreOne(Map map, StorageBackup b)
+        {
+            var p = VenueRestock.Find(map, b);
+            var st = p?.GetStoreSettings();
+            if (st == null) return;
+            st.Priority = (StoragePriority)b.priority;
+            if (b.filter != null) st.filter.CopyAllowancesFrom(b.filter);
+            p.Notify_SettingsChanged();
+        }
+
+        /// <summary>Put every storage place back the way it was.</summary>
+        public void RestoreRestock(Map map)
+        {
+            if (restockBackups.Count == 0) return;
+            foreach (var b in restockBackups) RestoreOne(map, b);
+            restockBackups.Clear();
         }
 
         Venue Venue => parent.Spawned ? VenueApi.VenueOfSign(parent.Map, parent) : null;
@@ -80,6 +184,9 @@ namespace Hearth.ShopsFood
                 if (Props.allowedTypes.Count > 0 && !Props.allowedTypes.Contains(t)) continue;
                 if (!Modules.On(t.module)) continue;
                 if (t.researchPrerequisite != null && !t.researchPrerequisite.IsFinished) continue;
+                // gated kinds (the drug lounge) stay hidden while the underworld is hidden (Cozy, not discovered)
+                var gate = t.GetModExtension<Hearth.Underworld.UwGateExtension>();
+                if (gate != null && !Hearth.Underworld.UwDefs.Open(gate)) continue;
                 yield return t;
             }
         }
@@ -92,6 +199,7 @@ namespace Hearth.ShopsFood
             if (hoursWereDefault || openHour < 0) { openHour = newType.defaultOpenHour; closeHour = newType.defaultCloseHour; }
             if (parent.Spawned) Venues.MarkDirty(parent.Map);
             VenueSales.ClearCaches();
+            if (restockOn && VenueApi.SaleOf(newType)?.sells is SellKind k && k == SellKind.None) { restockOn = false; RestoreRestock(parent.Map); }
         }
 
         void OpenTypeMenu()
@@ -138,6 +246,13 @@ namespace Hearth.ShopsFood
             };
             if (VenueApi.SaleOf(type)?.sells is SellKind k && k != SellKind.None)
             {
+                yield return new Command_Action
+                {
+                    defaultLabel = "HH.Venue.Restock".TranslateOr("Restock") + ": " + (restockOn ? "HH.Venue.On".TranslateOr("on") : "HH.Venue.Off".TranslateOr("off")),
+                    defaultDesc = "HH.Venue.RestockDesc".TranslateOr("Let this sign set the storage places in its room to take your goods with priority Important, so haulers keep the shelves full. Opt-in; old settings come back when you switch it off."),
+                    icon = VenueTex.Restock,
+                    action = () => Find.WindowStack.Add(new Dialog_VenueRestock(this)),
+                };
                 yield return new Command_Toggle
                 {
                     defaultLabel = "HH.Venue.ColonyMayTake".TranslateOr("Colony may take goods"),
@@ -174,7 +289,7 @@ namespace Hearth.ShopsFood
             string state;
             switch (gate)
             {
-                case VenueGate.Open: state = "HH.Venue.Open".TranslateOr("open"); break;
+                case VenueGate.Open: state = "HH.Venue.Open".TranslateOr("open") + (VenueApi.InLastOrders(v) ? ", " + "HH.Venue.LastOrders".TranslateOr("last orders") : ""); break;
                 case VenueGate.WaitingForStaff: state = "HH.Venue.NoStaffState".TranslateOr("open, but nobody on duty"); break;
                 default: state = "HH.Venue.Closed".TranslateOr("closed"); break;
             }
