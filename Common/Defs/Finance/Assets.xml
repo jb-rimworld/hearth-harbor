@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Silverline investment products (KONZEPT 8.5). Numbers: beta couples to the profitability slider,
+       sigmaDay is the daily swing, idio* are own jumps, hazard* are rug pulls / defaults / hacks.
+       The price maths compensates every jump so the long-run average follows the slider exactly.
+       Satire is allowed here (D28) but never about real coins, companies or people. -->
+
+  <Silverline.AssetDef>
+    <defName>SL_Asset_Mattress</defName>
+    <label>Mattress Plus</label>
+    <description>A savings account. The money lies in a very secure mattress and grows a little. In a bank run withdrawals are locked for two days.</description>
+    <ticker>MATT</ticker>
+    <tagline>Your money is safe*. *Terms apply.</tagline>
+    <kind>Savings</kind>
+    <order>10</order>
+    <startPrice>1</startPrice>
+    <beta>0</beta>
+    <sigmaDay>0</sigmaDay>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef>
+    <defName>SL_Asset_OutlanderBond</defName>
+    <label>Outlander Union Infrastructure Bond</label>
+    <description>Loans to a union of outlander towns that is building roads, wells and one disputed bridge. Pays on time, until it does not. After a default you get roughly a third back.</description>
+    <ticker>OUIB</ticker>
+    <tagline>Lend to people with spears!</tagline>
+    <kind>Bond</kind>
+    <order>20</order>
+    <startPrice>100</startPrice>
+    <beta>0.6</beta>
+    <sigmaDay>0.003</sigmaDay>
+    <hazard>0.0025</hazard>
+    <hazardDownMult>0.3</hazardDownMult>
+    <factionDefName>OutlanderCivil</factionDefName>
+    <loadCrash>0.3</loadCrash>
+    <loadRally>0.3</loadRally>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef MayRequire="Ludeon.RimWorld.Royalty">
+    <defName>SL_Asset_EmpireWarBond</defName>
+    <label>Empire War Bonds</label>
+    <description>Bonds that finance a war of the Empire. When the war ends in victory they jump, in defeat they are worth a nice frame. The war has been going on for a long time, mostly in the brochures.</description>
+    <ticker>EWB</ticker>
+    <tagline>Patriotism with a coupon.</tagline>
+    <kind>WarBond</kind>
+    <order>21</order>
+    <startPrice>100</startPrice>
+    <beta>0.8</beta>
+    <annualAdjust>0.01</annualAdjust>
+    <sigmaDay>0.008</sigmaDay>
+    <hazard>0.0333</hazard>
+    <hazardUpChance>0.5</hazardUpChance>
+    <hazardUpMult>1.5</hazardUpMult>
+    <hazardDownMult>0.2</hazardDownMult>
+    <factionDefName>Empire</factionDefName>
+    <loadCrash>0.5</loadCrash>
+    <loadRally>0.5</loadRally>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef>
+    <defName>SL_Asset_Index</defName>
+    <label>RimIndex 50</label>
+    <description>The fifty biggest companies of the rim in one product. The reference for everything else on this page: the profitability slider is defined by what this one earns on average.</description>
+    <ticker>RMX50</ticker>
+    <tagline>Own everything, understand nothing.</tagline>
+    <kind>Index</kind>
+    <order>30</order>
+    <startPrice>100</startPrice>
+    <beta>1</beta>
+    <annualAdjust>-0.002</annualAdjust>
+    <sigmaDay>0.015</sigmaDay>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef>
+    <defName>SL_Asset_StockMicaton</defName>
+    <label>MCTN, League of Micaton</label>
+    <description>Shares of a league of outlander towns. Quarterly numbers move the price; so do your relations with the league, a little. It pays no dividend but sends a lovely calendar.</description>
+    <ticker>MCTN</ticker>
+    <tagline>Quarterly numbers, quarterly feelings.</tagline>
+    <kind>FactionStock</kind>
+    <order>40</order>
+    <startPrice>42</startPrice>
+    <beta>1.2</beta>
+    <sigmaDay>0.03</sigmaDay>
+    <idioLambda>0.0667</idioLambda>
+    <idioMean>0</idioMean>
+    <idioSd>0.05</idioSd>
+    <factionDefName>OutlanderCivil</factionDefName>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef>
+    <defName>SL_Asset_StockTribal</defName>
+    <label>HIDE, Hide and Hearth Cooperative</label>
+    <description>Shares of a tribal cooperative that sells hides, hearth wood and an astonishing amount of hospitality. Highly dependent on the weather and on the mood of one very large uncle.</description>
+    <ticker>HIDE</ticker>
+    <tagline>Warm, local and slightly smoky.</tagline>
+    <kind>FactionStock</kind>
+    <order>41</order>
+    <startPrice>18</startPrice>
+    <beta>1.2</beta>
+    <sigmaDay>0.03</sigmaDay>
+    <idioLambda>0.0667</idioLambda>
+    <idioMean>0</idioMean>
+    <idioSd>0.05</idioSd>
+    <factionDefName>TribeCivil</factionDefName>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef MayRequire="Ludeon.RimWorld.Royalty">
+    <defName>SL_Asset_StockEmpire</defName>
+    <label>IMPR, Imperial Pageantry Ltd</label>
+    <description>The company behind the imperial ceremonies: banners, trumpets and tiny crowns. Profits depend on how many nobles feel offended by how little.</description>
+    <ticker>IMPR</ticker>
+    <tagline>Everything needs a ceremony.</tagline>
+    <kind>FactionStock</kind>
+    <order>42</order>
+    <startPrice>77</startPrice>
+    <beta>1.2</beta>
+    <sigmaDay>0.03</sigmaDay>
+    <idioLambda>0.0667</idioLambda>
+    <idioMean>0</idioMean>
+    <idioSd>0.05</idioSd>
+    <factionDefName>Empire</factionDefName>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef>
+    <defName>SL_Asset_StockColony</defName>
+    <label>HHH, Hearth Harbor Holdings</label>
+    <description>A holding that owns exactly one thing: the idea that your colony is a destination. Reacts to your wealth and to raids you survive. You have a stake in its success, but so does everybody who read this.</description>
+    <ticker>HHH</ticker>
+    <tagline>Hospitality, but make it quarterly.</tagline>
+    <kind>FactionStock</kind>
+    <order>43</order>
+    <startPrice>30</startPrice>
+    <beta>1.2</beta>
+    <sigmaDay>0.03</sigmaDay>
+    <idioLambda>0.0667</idioLambda>
+    <idioMean>0</idioMean>
+    <idioSd>0.05</idioSd>
+    <colonySignals>true</colonySignals>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef>
+    <defName>SL_Asset_GrowthFund</defName>
+    <label>Glitterworld Growth Fund</label>
+    <description>An actively managed fund. The managers have a very impressive brochure and a boat. Their skill is, on average, slightly negative, and it was fixed when the fund was founded.</description>
+    <ticker>GGF</ticker>
+    <tagline>Our managers beat the market (we did not say which market).</tagline>
+    <kind>Fund</kind>
+    <order>50</order>
+    <startPrice>50</startPrice>
+    <beta>1</beta>
+    <annualAdjust>-0.02</annualAdjust>
+    <sigmaDay>0.018</sigmaDay>
+    <alphaMean>-0.01</alphaMean>
+    <alphaSd>0.02</alphaSd>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>SL_Asset_PietyBonds</defName>
+    <label>Piety Bonds</label>
+    <description>Bonds backed by the donations of seventeen faiths, each convinced the other sixteen are doing it wrong. Steady, solemn, and very slightly smug.</description>
+    <ticker>PIETY</ticker>
+    <tagline>Faith, with a maturity date.</tagline>
+    <kind>ReligiousFund</kind>
+    <order>60</order>
+    <startPrice>80</startPrice>
+    <beta>0.9</beta>
+    <sigmaDay>0.012</sigmaDay>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>SL_Asset_RelicFutures</defName>
+    <label>Relic Futures</label>
+    <description>Futures on relics that may or may not exist, to be delivered by a courier who may or may not be a prophet. The contract was blessed.</description>
+    <ticker>RELIC</ticker>
+    <tagline>Hold it for the afterlife.</tagline>
+    <kind>ReligiousFund</kind>
+    <order>61</order>
+    <startPrice>64</startPrice>
+    <beta>0.9</beta>
+    <sigmaDay>0.012</sigmaDay>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef>
+    <defName>SL_Asset_RimCoin</defName>
+    <label>RimCoin</label>
+    <description>A digital coin that is entirely made of electricity and conviction. Swings several percent a day, makes jumps nobody can explain and sits on an exchange that has been hacked before. And will be.</description>
+    <ticker>RMC</ticker>
+    <tagline>Trust the maths. Not the exchange.</tagline>
+    <kind>Crypto</kind>
+    <order>70</order>
+    <startPrice>1000</startPrice>
+    <beta>1.5</beta>
+    <sigmaDay>0.045</sigmaDay>
+    <idioLambda>0.05</idioLambda>
+    <idioMean>0</idioMean>
+    <idioSd>0.12</idioSd>
+    <idioMaxY>0.6</idioMaxY>
+    <idioMinY>-0.6</idioMinY>
+    <hazard>0.00333</hazard>
+    <hazardDownMult>0.97</hazardDownMult>
+    <freezeDaysOnHazard>3</freezeDaysOnHazard>
+    <loadRazzia>1</loadRazzia>
+  </Silverline.AssetDef>
+
+  <!-- Memecoins: a new one appears every few days and is delisted after three. Positive expectation, most holders lose. -->
+  <Silverline.AssetDef>
+    <defName>SL_Asset_MemeThrumbo</defName>
+    <label>$THRUMBO</label>
+    <description>A coin named after a rare beast and backed by exactly as much. The whitepaper is a drawing of a thrumbo. The founder is, according to the drawing, a thrumbo.</description>
+    <ticker>$THRUMBO</ticker>
+    <tagline>To the moon, on foot, slowly.</tagline>
+    <kind>Memecoin</kind>
+    <order>80</order>
+    <startPrice>0.042</startPrice>
+    <beta>2</beta>
+    <sigmaDay>0.15</sigmaDay>
+    <idioLambda>0.1</idioLambda>
+    <idioMean>0.8</idioMean>
+    <idioSd>0.5</idioSd>
+    <idioMaxY>2.08</idioMaxY>
+    <hazard>0.02</hazard>
+    <hazardDownMult>0.02</hazardDownMult>
+    <loadRazzia>1</loadRazzia>
+    <rotating>true</rotating>
+    <lifeDays>3</lifeDays>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef>
+    <defName>SL_Asset_MemeBoomalope</defName>
+    <label>Boomalope Coin</label>
+    <description>A coin that explodes in value. And occasionally just explodes. Popular among people who like the smell of burning money.</description>
+    <ticker>BOOM</ticker>
+    <tagline>Volatile by design, flammable by nature.</tagline>
+    <kind>Memecoin</kind>
+    <order>81</order>
+    <startPrice>0.3</startPrice>
+    <beta>2</beta>
+    <sigmaDay>0.15</sigmaDay>
+    <idioLambda>0.1</idioLambda>
+    <idioMean>0.8</idioMean>
+    <idioSd>0.5</idioSd>
+    <idioMaxY>2.08</idioMaxY>
+    <hazard>0.02</hazard>
+    <hazardDownMult>0.02</hazardDownMult>
+    <loadRazzia>1</loadRazzia>
+    <rotating>true</rotating>
+    <lifeDays>3</lifeDays>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef>
+    <defName>SL_Asset_MemeMuffalo</defName>
+    <label>MUFFALO MOON</label>
+    <description>The community coin of everybody who loves muffalo and nothing else. Its roadmap is a picture of a muffalo looking at the moon. The roadmap has not changed.</description>
+    <ticker>MOO</ticker>
+    <tagline>Moo. That is the whitepaper.</tagline>
+    <kind>Memecoin</kind>
+    <order>82</order>
+    <startPrice>0.0066</startPrice>
+    <beta>2</beta>
+    <sigmaDay>0.15</sigmaDay>
+    <idioLambda>0.1</idioLambda>
+    <idioMean>0.8</idioMean>
+    <idioSd>0.5</idioSd>
+    <idioMaxY>2.08</idioMaxY>
+    <hazard>0.02</hazard>
+    <hazardDownMult>0.02</hazardDownMult>
+    <loadRazzia>1</loadRazzia>
+    <rotating>true</rotating>
+    <lifeDays>3</lifeDays>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef>
+    <defName>SL_Asset_NftThrumbos</defName>
+    <label>Non-Fungible Thrumbos</label>
+    <description>A collection of pictures of thrumbos, each unique, each a little bit like the others. You own a receipt for a picture of a picture. Buyers appear slowly and want a discount.</description>
+    <ticker>NFTH</ticker>
+    <tagline>Unique, like everybody else's.</tagline>
+    <kind>Nft</kind>
+    <order>90</order>
+    <startPrice>250</startPrice>
+    <beta>0.8</beta>
+    <sigmaDay>0.08</sigmaDay>
+    <saleDaysMin>1</saleDaysMin>
+    <saleDaysMax>4</saleDaysMax>
+    <saleSpreadMin>0.1</saleSpreadMin>
+    <saleSpreadMax>0.3</saleSpreadMax>
+    <loadRazzia>0.4</loadRazzia>
+  </Silverline.AssetDef>
+
+  <Silverline.AssetDef>
+    <defName>SL_Asset_NftMuffalo</defName>
+    <label>Certificate of Ownership: Picture of a Muffalo</label>
+    <description>An ownership certificate of a picture of a muffalo. The picture is stored somewhere. The certificate is stored in your account. Neither of them smells of muffalo.</description>
+    <ticker>NFMU</ticker>
+    <tagline>You own the idea of the picture.</tagline>
+    <kind>Nft</kind>
+    <order>91</order>
+    <startPrice>120</startPrice>
+    <beta>0.8</beta>
+    <sigmaDay>0.08</sigmaDay>
+    <saleDaysMin>1</saleDaysMin>
+    <saleDaysMax>4</saleDaysMax>
+    <saleSpreadMin>0.1</saleSpreadMin>
+    <saleSpreadMax>0.3</saleSpreadMax>
+    <loadRazzia>0.4</loadRazzia>
+  </Silverline.AssetDef>
+</Defs>

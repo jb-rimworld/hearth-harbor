@@ -1,0 +1,238 @@
+// SPDX-License-Identifier: MIT
+// English texts of the investment products and the lottery. Single source: tools/gen_finance_keyed.py turns every E("key", "text") line
+// into Common/Languages/English/Keyed/HH_Finance.xml. Other languages translate the Keyed file; this table is only the fallback.
+// Tone: dry, full satire in bank / crypto / NFT / oracle texts (D28). Never about real coins, companies or people. Placeholders {0}, {1} …
+using System.Collections.Generic;
+
+namespace Silverline
+{
+    public static class FinanceText
+    {
+        public static readonly Dictionary<string, string> En = new Dictionary<string, string>();
+        static void E(string key, string text) { En[key] = text; }
+
+        static FinanceText()
+        {
+            // ---- tabs, pages, header
+            E("HH.Finance.Tab.Invest", "Invest");
+            E("HH.Finance.Tab.Lottery", "Lottery");
+            E("HH.Finance.Page.Portfolio", "Portfolio");
+            E("HH.Finance.Page.Bonds", "Patience bonds");
+            E("HH.Finance.Page.Omen", "Omen Exchange");
+            E("HH.Finance.Page.Projects", "Faction projects");
+            E("HH.Finance.Header", "Cash {0}  ·  Invested {1}  ·  Profitability ×{2} a year ({3} % a day)");
+            E("HH.Finance.Header.Tip", "Profitability is the multiple the reference fund earns per game year (60 days). You set it in the mod settings; it moves every product in this window, each with its own coupling.");
+            E("HH.Finance.Fallback", "[local bank account, bank module not installed]");
+            E("HH.Finance.Halted", "Trading halted (solar flare). Cash only.");
+            E("HH.Finance.NotReady", "The exchange is still opening its doors.");
+            E("HH.Finance.Frozen", "frozen");
+            E("HH.Finance.Rugged", "rug pulled");
+            E("HH.Finance.Window.Option", "Silverline investments");
+
+            // ---- trading
+            E("HH.Finance.Amount", "Amount");
+            E("HH.Finance.Buy", "Buy");
+            E("HH.Finance.Buy.Tip", "Buy for this many silver. Units are held with five decimals.");
+            E("HH.Finance.Sell", "Sell");
+            E("HH.Finance.Sell.Tip", "Sell units worth this many silver.");
+            E("HH.Finance.SellAll", "Sell all");
+            E("HH.Finance.Decimals", "Five decimals count. 0.00001 silver is the smallest step.");
+            E("HH.Finance.Row.Held", "held {0}");
+            E("HH.Finance.Change24", "24 h {0}  ·  today {1}");
+            E("HH.Finance.Position", "You hold {0} units, worth {1} silver ({2} against cost).");
+            E("HH.Finance.Position.None", "You hold nothing here. Yet.");
+            E("HH.Finance.PendingSale", "Sale in progress: {0} units, settles in {1}, spread {2} %.");
+            E("HH.Finance.Trade.Unknown", "The exchange does not know that product.");
+            E("HH.Finance.Trade.NoBank", "You need a Silverline account to trade.");
+            E("HH.Finance.Trade.Halted", "Trading is halted while the solar flare lasts. The exchange runs on electricity, which is a design choice.");
+            E("HH.Finance.Trade.Frozen", "{0} is frozen after a security incident. Your money is fine. Probably.");
+            E("HH.Finance.Trade.Delisted", "{0} has been delisted.");
+            E("HH.Finance.Trade.Off", "This product is switched off in the settings.");
+            E("HH.Finance.Trade.BankRun", "Withdrawals are locked after a bank run. Your money is safe*. *Terms apply.");
+            E("HH.Finance.Trade.TooSmall", "That is less than the smallest trade (0.01 silver).");
+            E("HH.Finance.Trade.NoCash", "Not enough money in your account.");
+            E("HH.Finance.Trade.NothingToSell", "You hold nothing to sell.");
+            E("HH.Finance.Trade.Bought", "Bought {0} units of {1} for {2} silver.");
+            E("HH.Finance.Trade.Sold", "Sold {0} units of {1} for {2} silver.");
+            E("HH.Finance.Trade.NftQueued", "Sale of {0} listed. It settles in about {1} days with a spread of {2} %. Buyers of pictures are slow.");
+
+            // ---- risk notes
+            E("HH.Finance.Risk.Meme", "Memecoins are delisted after three days. Most holders lose money while the average looks fine: that is the maths, not bad luck. Rug pulls are final.");
+            E("HH.Finance.Risk.Nft", "Selling takes {0} to {1} days and costs a {2} to {3} % spread. You own a receipt for a picture of a picture.");
+            E("HH.Finance.Risk.Crypto", "Swings of several percent a day are normal. Exchange hacks freeze trading for days.");
+            E("HH.Finance.Risk.Savings", "Practically no swings. In a bank run withdrawals are locked for two days.");
+            E("HH.Finance.Risk.Bond", "Calm, until the issuer defaults. Then you get back about a third.");
+            E("HH.Finance.Risk.Stock", "Quarterly numbers move the price. Relations with the faction move it, a little.");
+            E("HH.Finance.Nerd.Distribution", "Distribution after the holding period (simulated): median ×{0}, mean ×{1}, 90 % quantile ×{2}, total loss {3} % of holders, below start {4} %.");
+
+            // ---- patience bonds
+            E("HH.Finance.Bond.Intro", "Fixed Term Patience Bond: lock money for 30, 60 or 120 days. It earns the savings rate plus a small bonus per locked quadrum and a {0} % loyalty bonus at the end. Break it early and you lose {1} %. Patience is not for everyone.");
+            E("HH.Finance.Bond.Offer", "{0} days, ×{1} a year");
+            E("HH.Finance.Bond.Open", "Lock this amount");
+            E("HH.Finance.Bond.Opened", "Patience bond opened: {1} for {0} days.");
+            E("HH.Finance.Bond.Yours", "Your bonds");
+            E("HH.Finance.Bond.None", "You have no patience yet.");
+            E("HH.Finance.Bond.Row", "{0} days · put in {1} · now {2} · {3} days to go");
+            E("HH.Finance.Bond.Collect", "Collect with bonus");
+            E("HH.Finance.Bond.Break", "Break early");
+            E("HH.Finance.Bond.Break.Tip", "Take the money out now. The bank keeps a few percent as a lesson.");
+            E("HH.Finance.Bond.Early", "Not due yet. Use the break button if you must.");
+            E("HH.Finance.Bond.Matured", "Patience paid off: {0} silver.");
+            E("HH.Finance.Bond.Broken", "Bond broken early: {0} silver.");
+
+            // ---- omen exchange
+            E("HH.Finance.Omen.Intro", "The Omen Exchange: bet on events nobody can steer. Prices are the odds, with a margin. Win and one share pays 1 silver.");
+            E("HH.Finance.Omen.Chance", "chance market");
+            E("HH.Finance.Omen.World", "world market");
+            E("HH.Finance.Omen.YouHold", "you hold");
+            E("HH.Finance.Omen.ChanceNote", "A dice event of the market. The exchange knows the exact odds. You do not. Nobody can influence the outcome.");
+            E("HH.Finance.Omen.WorldNote", "Settled on the Oracle's Ledger, not on what really happens at the site: whatever you do to the project does not count here.");
+            E("HH.Finance.Omen.Quote", "YES costs {1} silver per share, NO costs {2} (mid price {0} %).");
+            E("HH.Finance.Omen.Nerd", "True probability: {0} %");
+            E("HH.Finance.Omen.Fee", "Fee {0} % of your stake, again when you close early.");
+            E("HH.Finance.Omen.BuyYes", "Buy YES");
+            E("HH.Finance.Omen.BuyNo", "Buy NO");
+            E("HH.Finance.Omen.MaxStake", "You may still put in up to {0} here.");
+            E("HH.Finance.Omen.Holding", "{0} shares {1}, worth {2} if closed now");
+            E("HH.Finance.Omen.Close", "Close position");
+            E("HH.Finance.Omen.Closed", "This market is closed.");
+            E("HH.Finance.Omen.Closed.Ok", "Position closed for {0} silver.");
+            E("HH.Finance.Omen.Limit", "That is above your position limit here. You may put in {0}.");
+            E("HH.Finance.Omen.Bought", "Bought {0} {1} shares for {2} silver.");
+            E("HH.Finance.Omen.Result.Yes", "happened");
+            E("HH.Finance.Omen.Result.No", "did not happen");
+            E("HH.Finance.Omen.Settled.Yes", "Omen Exchange: {0} — it happened.");
+            E("HH.Finance.Omen.Settled.No", "Omen Exchange: {0} — it did not happen.");
+            E("HH.Finance.Omen.Title.Crash", "Market crash within {0} days");
+            E("HH.Finance.Omen.Title.Rally", "Bull rally within {0} days");
+            E("HH.Finance.Omen.Title.Razzia", "Regulators raid crypto within {0} days");
+            E("HH.Finance.Omen.Title.BankRun", "A bank run within {0} days");
+            E("HH.Finance.Omen.Title.Hack", "{0} exchange hacked within {1} days");
+            E("HH.Finance.Omen.Title.Rug", "{0} turns out to be a rug pull before it is delisted");
+            E("HH.Finance.Omen.Title.Project", "Success: {0}");
+
+            // ---- faction projects
+            E("HH.Finance.Project.Intro", "Factions announce projects. Invest (Long) and get a quote fixed at purchase, or bet against them (Short): bigger stakes get worse quotes. Settled when the project ends.");
+            E("HH.Finance.Project.None", "No faction has announced a project right now.");
+            E("HH.Finance.Project.Title.Palace", "{0}: a very large palace");
+            E("HH.Finance.Project.Title.TradeRoad", "{0}: a trade road");
+            E("HH.Finance.Project.Title.GreatHall", "{0}: a great hall");
+            E("HH.Finance.Project.Title.Observatory", "{0}: a deep-space observatory");
+            E("HH.Finance.Project.Title.Harbour", "{0}: a harbour of ambitious size");
+            E("HH.Finance.Project.Estimate", "Market estimate of success: {0} % · {1} left · sabotage strikes: {2}");
+            E("HH.Finance.Project.Quotes", "Long pays ×{0} on success (fixed when you buy). Short pays up to ×{1} on failure.");
+            E("HH.Finance.Project.ShortAt", "A Short of this size pays ×{0}.");
+            E("HH.Finance.Project.MaxStake", "You may still stake {0} here. All open project bets: {1}.");
+            E("HH.Finance.Project.YearCap", "Room under the yearly profit cap: {0}.");
+            E("HH.Finance.Project.Long", "Long");
+            E("HH.Finance.Project.Long.Tip", "Invest in the project. Pays if it succeeds.");
+            E("HH.Finance.Project.Short", "Short");
+            E("HH.Finance.Project.Short.Tip", "Bet against the project. Pays if it fails.");
+            E("HH.Finance.Project.YourLong", "Your Long: {0}, quote ×{1}");
+            E("HH.Finance.Project.YourShort", "Your Short: {0}, quote ×{1}");
+            E("HH.Finance.Project.Longed", "Long placed: {0}, quote ×{1}.");
+            E("HH.Finance.Project.Shorted", "Short placed: {0}, quote ×{1}.");
+            E("HH.Finance.Project.Done", "built");
+            E("HH.Finance.Project.Failed", "failed");
+            E("HH.Finance.Project.Off", "Faction projects are switched off in the settings.");
+            E("HH.Finance.Project.Over", "That project is over.");
+            E("HH.Finance.Project.Cutoff", "The bank stops taking bets {0} days before the end.");
+            E("HH.Finance.Project.NoBoth", "No Long and Short on the same project. The bank is not that naive.");
+            E("HH.Finance.Project.Smoke", "The market smells smoke. No new Shorts on this project for a while.");
+            E("HH.Finance.Project.Limit", "That is above your stake limit. You may stake {0}.");
+            E("HH.Finance.Project.Noticed", "The market has noticed you. Profit above the yearly cap is not paid, only your stake.");
+            E("HH.Finance.Project.SabotageNote", "Silverline does not ask where the smoke came from. Helping or sabotaging is real work on the world map; the bank only reads the result.");
+
+            // ---- news
+            E("HH.Finance.News.Title", "Market news");
+            E("HH.Finance.News.None", "Nothing happened. Suspicious.");
+            E("HH.Finance.News.Chance", "Dice: chance, nobody did this.");
+            E("HH.Finance.News.You", "Gear: this is what you did.");
+            E("HH.Finance.News.Crash.1", "Markets fall {0}. Analysts blame a chart that was read upside down.");
+            E("HH.Finance.News.Crash.2", "Crash: {0} in an hour. The bank reminds everybody that past performance was a different thing entirely.");
+            E("HH.Finance.News.Crash.3", "Sell-off, {0}. A trader of the old school screams into a pillow.");
+            E("HH.Finance.News.Rally.1", "Rally of {0}. Nobody knows why. Everybody has a theory.");
+            E("HH.Finance.News.Rally.2", "Markets climb {0} on rumours of a rumour.");
+            E("HH.Finance.News.Rally.3", "{0} up: optimism becomes an asset class again.");
+            E("HH.Finance.News.Razzia.1", "Regulators raid the crypto quarter. Crypto {0} on the news.");
+            E("HH.Finance.News.Razzia.2", "Inspectors found a spreadsheet. Crypto {0}.");
+            E("HH.Finance.News.BankRun.1", "Bank run! Mattress Plus locks withdrawals for two days.");
+            E("HH.Finance.News.BankRun.2", "Long queues at the counter. Withdrawals paused for two days, for your safety.");
+            E("HH.Finance.News.Rug.1", "{0}: the founder is gone and so is the liquidity. Rug pull.");
+            E("HH.Finance.News.Rug.2", "{0} turned out to be a drawing of a coin. Rug pull, final.");
+            E("HH.Finance.News.Hack.1", "{0} exchange hacked. Trading frozen for {1} days. Funds are safe, a spokesperson insists with great calm.");
+            E("HH.Finance.News.Hack.2", "Security incident at {0}. Frozen for {1} days. The password was 'password'.");
+            E("HH.Finance.News.WarWon.1", "{0}: victory declared. Bonds jump.");
+            E("HH.Finance.News.WarWon.2", "The war is won, says {0}'s side. Bondholders cheer.");
+            E("HH.Finance.News.WarLost.1", "{0}: the war is lost. Bonds collapse.");
+            E("HH.Finance.News.WarLost.2", "Defeat. {0} trades at the price of a good story.");
+            E("HH.Finance.News.Default.1", "{0}: payments stopped. Recovery: about a third.");
+            E("HH.Finance.News.Default.2", "Issuer of {0} defaults. Lend to people with spears, they said.");
+            E("HH.Finance.News.Pump.1", "{0} pumped {1} by an influencer who owns a lot of it.");
+            E("HH.Finance.News.Pump.2", "{0} jumps {1}. A post, three emojis and a boat.");
+            E("HH.Finance.News.Quarter.Up.1", "{0} ({1}) reports quarterly numbers that exceed what the numbers were.");
+            E("HH.Finance.News.Quarter.Up.2", "{1}: results beat expectations. Expectations had been lowered on Tuesday.");
+            E("HH.Finance.News.Quarter.Down.1", "{0} ({1}) misses its numbers. Management blames the numbers.");
+            E("HH.Finance.News.Quarter.Down.2", "{1}: profit warning. The warning itself was profitable for the printer.");
+            E("HH.Finance.News.Whale.Up.1", "A whale bought {0}. Or a very large fish. Prices jump.");
+            E("HH.Finance.News.Whale.Down.1", "A whale left {0}, and the pond is shaken.");
+            E("HH.Finance.News.Listing.1", "New listing: {0}. The whitepaper is two sentences and one is a drawing.");
+            E("HH.Finance.News.Listing.2", "{0} lists today. Nobody checked who made it. The ticker is already available.");
+            E("HH.Finance.News.Delisted", "{0} was delisted. Your holding was paid out at the last price: {1}.");
+            E("HH.Finance.News.Delisted.None", "{0} was delisted. Nobody noticed.");
+            E("HH.Finance.News.Gear.Warm.1", "{0} climbs after warmer relations with {1}.");
+            E("HH.Finance.News.Gear.Cold.1", "{0} slips as relations with {1} cool.");
+            E("HH.Finance.News.Gear.Settle.1", "{0} gains as {1} founds a settlement.");
+            E("HH.Finance.News.Gear.Fall.1", "{0} drops: {1} lost a settlement.");
+            E("HH.Finance.News.Gear.Raid.1", "{0} reacts to the raid your colony survived. Resilience is priced in.");
+            E("HH.Finance.News.NftSold", "NFT sale settled: {0}, you received {1}. Somebody now owns a picture of a picture.");
+            E("HH.Finance.News.Smoke", "Smoke over the building site of {0}.");
+            E("HH.Finance.News.Caught", "Rumours that somebody sabotaged {0}. The market looks at you.");
+            E("HH.Finance.News.ProjectNew", "Project announced: {0}. Duration {1} days.");
+            E("HH.Finance.News.ProjectDone", "Project completed: {0}.");
+            E("HH.Finance.News.ProjectFailed", "Project failed: {0}.");
+
+            // ---- lottery
+            E("HH.Finance.Lottery.GlobalTitle", "Glitterworld Grand Draw");
+            E("HH.Finance.Lottery.GlobalTag", "Five numbers out of 40 and a star out of 10. Somebody has to win. Statistically not you.");
+            E("HH.Finance.Lottery.Jackpot", "Jackpot: {0}");
+            E("HH.Finance.Lottery.NextDraw", "Next draw in {0} · ticket {1} · {2} % of sales are paid out");
+            E("HH.Finance.Lottery.Tax", "Expected return per ticket: {0} of {1}. A tax on optimism. Jackpot odds: 1 in {2}.");
+            E("HH.Finance.Lottery.Pick", "Pick five numbers and a star, or let luck do it.");
+            E("HH.Finance.Lottery.BuyPicked", "Buy this ticket");
+            E("HH.Finance.Lottery.Quick1", "Quick pick ×1");
+            E("HH.Finance.Lottery.Quick5", "Quick pick ×5");
+            E("HH.Finance.Lottery.Quick20", "Quick pick ×20");
+            E("HH.Finance.Lottery.YourTickets", "Your tickets for the next draw: {0} · spent in total {1} · won in total {2}");
+            E("HH.Finance.Lottery.History", "Last draws");
+            E("HH.Finance.Lottery.HistoryRow", "#{0}: {1} · jackpot {2} · your tickets {3} · you won {4}");
+            E("HH.Finance.Lottery.JackpotHit", "WON");
+            E("HH.Finance.Lottery.BadTicket", "A ticket needs five different numbers from 1 to 40 and a star from 1 to 10.");
+            E("HH.Finance.Lottery.Bought", "Ticket bought: {0}.");
+            E("HH.Finance.Lottery.BoughtMany", "{0} tickets bought.");
+            E("HH.Finance.Lottery.News.Drawn", "Glitterworld Grand Draw: {0}. {1}");
+            E("HH.Finance.Lottery.News.Won", "Glitterworld Grand Draw: {0}. {1} You won {2}.");
+            E("HH.Finance.Lottery.News.Colony", "Your lottery drew {0}: {1} jackpot winners among {2} tickets.");
+            E("HH.Finance.Lottery.ColonyTitle", "Your own lottery");
+            E("HH.Finance.Lottery.ColonyOpen", "Open the colony lottery");
+            E("HH.Finance.Lottery.ColonyIntro", "Guests and the simulated players of friendly settlements buy tickets. Four numbers out of 25. You keep what is not paid out, the pot only pays what it holds.");
+            E("HH.Finance.Lottery.Price", "Ticket price");
+            E("HH.Finance.Lottery.Quote", "Payout share");
+            E("HH.Finance.Lottery.Interval", "Draw every");
+            E("HH.Finance.Lottery.Fee", "Acceptance fee");
+            E("HH.Finance.Lottery.Pot", "Pot {0} · jackpot {1}");
+            E("HH.Finance.Lottery.Demand", "Your draw: {0} % back, global: {1} % → about {2} tickets a day ({3} from guests, {4} from far away).");
+            E("HH.Finance.Lottery.Earned", "Earned so far: {0}");
+            E("HH.Finance.Lottery.ColonyNext", "Next draw in {0}");
+            E("HH.Finance.Lottery.ColonyLast", "Last draw: {0} · jackpot winners {1} · {2} tickets");
+            E("HH.Finance.Lottery.PotModel", "Pot model: no risk. Prizes come out of the pot, nothing else.");
+
+            // ---- help hint (K28): quiet, serious, never satire, never a pop-up
+            E("HH.Finance.Help.Line", "Gambling for real? If it stops being fun, real help is here:");
+            E("HH.Finance.Help.Tip", "Opens the website in your browser.");
+            E("HH.Finance.Help.Url1", "https://findahelpline.com/");
+            E("HH.Finance.Help.Url2", "https://www.gamblingtherapy.org/");
+        }
+
+    }
+}
