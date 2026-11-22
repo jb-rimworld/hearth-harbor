@@ -14,7 +14,7 @@ namespace Silverline
     public static class LotteryTab
     {
         static readonly HashSet<int> picked = new HashSet<int>(); static int pickedStar;
-        static string message; static int messageTick; static Vector2 scroll;
+        static string message; static int messageTick; static Vector2 scroll, scrollColony; static float globalH = 480f, colonyH = 480f;
 
         public static void Register()
         {
@@ -23,23 +23,30 @@ namespace Silverline
 
         static void Msg(string m) { message = m; messageTick = Find.TickManager.TicksGame; }
 
+        public static int DrawCalls;
+
         public static void Draw(Rect rect)
         {
+            DrawCalls++;
             var lot = LotteryGame.Current; if (lot == null) return; lot.EnsureInit();
             if (!lot.initialized) return;
             var body = new Rect(rect.x, rect.y, rect.width, rect.height - 20f);
             float leftW = body.width * 0.56f;
-            DrawGlobal(new Rect(body.x, body.y, leftW, body.height), lot);
-            DrawColony(new Rect(body.x + leftW + 10f, body.y, body.width - leftW - 10f, body.height), lot);
+            var gl = new Rect(body.x, body.y, leftW, body.height);
+            var gv = new Rect(0, 0, gl.width - 18f, Math.Max(globalH, gl.height));
+            Widgets.BeginScrollView(gl, ref scroll, gv); globalH = DrawGlobal(gv, lot) + 8f; Widgets.EndScrollView();
+            var cl = new Rect(body.x + leftW + 10f, body.y, body.width - leftW - 10f, body.height);
+            var cv = new Rect(0, 0, cl.width - 18f, Math.Max(colonyH, cl.height));
+            Widgets.BeginScrollView(cl, ref scrollColony, cv); colonyH = DrawColony(cv, lot) + 8f; Widgets.EndScrollView();
             FinUi.HelpHint(new Rect(rect.x, rect.yMax - 16f, rect.width, 16f));
         }
 
-        static void DrawGlobal(Rect r, LotteryGame lot)
+        static float DrawGlobal(Rect r, LotteryGame lot)
         {
             float y = r.y; int t = Find.TickManager.TicksGame;
             FinUi.Label(new Rect(r.x, y, r.width, 28), FT.T("HH.Finance.Lottery.GlobalTitle"), GameFont.Medium); y += 30;
             FinUi.Label(new Rect(r.x, y, r.width, 18), FT.T("HH.Finance.Lottery.GlobalTag"), GameFont.Small, FinUi.Dim); y += 22;
-            if (!HSettings.GetBool("lottery.globalOn")) { FinUi.Label(new Rect(r.x, y, r.width, 24), FT.T("HH.Finance.Trade.Off"), GameFont.Small, FinUi.Dim); return; }
+            if (!HSettings.GetBool("lottery.globalOn")) { FinUi.Label(new Rect(r.x, y, r.width, 24), FT.T("HH.Finance.Trade.Off"), GameFont.Small, FinUi.Dim); return y + 24; }
             var price = LotteryGame.GlobalPrice;
             FinUi.Label(new Rect(r.x, y, r.width, 24), FT.T("HH.Finance.Lottery.Jackpot", FT.Silver(lot.GlobalJackpot)), GameFont.Medium, new Color(1f, 0.88f, 0.4f)); y += 28;
             FinUi.Label(new Rect(r.x, y, r.width, 20), FT.T("HH.Finance.Lottery.NextDraw", FinUi.DaysLeft(lot.nextGlobalDrawTick, t), FT.Silver(price), (LotteryGame.GlobalQuote * 100).ToString("0")), GameFont.Small); y += 22;
@@ -81,11 +88,13 @@ namespace Silverline
                 string line = FT.T("HH.Finance.Lottery.HistoryRow", (h.index + 1).ToString(), string.Join(" ", h.numbers) + " ★" + h.star, h.jackpotWinners > 0 ? FT.T("HH.Finance.Lottery.JackpotHit") : "—", h.playerTickets.ToString(), FT.Silver(new Money(h.playerPrize)));
                 FinUi.Label(new Rect(r.x, y, r.width, 18), line, GameFont.Tiny, h.playerPrize > 0 ? FinUi.Up : FinUi.Dim, TextAnchor.UpperLeft, false); y += 18;
             }
+            return y;
         }
 
-        static void DrawColony(Rect r, LotteryGame lot)
+        static float DrawColony(Rect r0, LotteryGame lot)
         {
-            Widgets.DrawBoxSolid(r, FinUi.Panel); r = r.ContractedBy(8f); float y = r.y;
+            Widgets.DrawBoxSolid(r0, FinUi.Panel);
+            var r = r0.ContractedBy(8f); float y = r.y;
             FinUi.Label(new Rect(r.x, y, r.width, 26), FT.T("HH.Finance.Lottery.ColonyTitle"), GameFont.Medium); y += 30;
             bool on = lot.ColonyOpen;
             bool want = on; Widgets.CheckboxLabeled(new Rect(r.x, y, r.width, 24), FT.T("HH.Finance.Lottery.ColonyOpen"), ref want);
@@ -106,8 +115,10 @@ namespace Silverline
             FinUi.Label(new Rect(r.x, y, r.width, 20), FT.T("HH.Finance.Lottery.ColonyNext", on ? FinUi.DaysLeft(lot.nextColonyDrawTick, Find.TickManager.TicksGame) : "—"), GameFont.Small, FinUi.Dim); y += 22;
             var last = lot.history.LastOrDefault(h => h.colony);
             if (last != null) FinUi.Label(new Rect(r.x, y, r.width, 36), FT.T("HH.Finance.Lottery.ColonyLast", string.Join(" ", last.numbers), last.jackpotWinners.ToString(), last.crowdTickets.ToString()), GameFont.Tiny, FinUi.Dim);
+            y += 38;
             string model = FT.T("HH.Finance.Lottery.PotModel"); float mh = FinUi.TextHeight(r.width, model, GameFont.Tiny);
-            FinUi.Label(new Rect(r.x, r.yMax - mh, r.width, mh), model, GameFont.Tiny, FinUi.Dim);
+            FinUi.Label(new Rect(r.x, y, r.width, mh), model, GameFont.Tiny, FinUi.Dim); y += mh;
+            return y + 8f;
         }
 
         static float Stepper(Rect r, float y, string key, string label, double step, double min, double max, Func<double, string> fmt)

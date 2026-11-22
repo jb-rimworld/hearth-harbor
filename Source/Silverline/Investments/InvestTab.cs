@@ -35,13 +35,16 @@ namespace Silverline
 
         static void SetMessage(string m) { message = m; messageTick = Find.TickManager?.TicksGame ?? 0; }
 
+        public static int DrawCalls;
+
         public static void Draw(Rect rect)
         {
+            DrawCalls++;
             var g = FinanceGame.Current; if (g == null) return;
             g.EnsureInit(); if (!g.initialized) { FinUi.Label(rect, FT.T("HH.Finance.NotReady")); return; }
             Text.Font = GameFont.Small;
             float y = rect.y;
-            DrawHeader(new Rect(rect.x, y, rect.width, 56f), g); y += 58f;
+            DrawHeader(new Rect(rect.x, y, rect.width, 68f), g); y += 70f;
             float footer = 88f;
             var body = new Rect(rect.x, y, rect.width, rect.yMax - y - footer - 4f);
             switch (page)
@@ -70,9 +73,9 @@ namespace Silverline
             double m = FinanceSettings.M;
             string head = FT.T("HH.Finance.Header", FT.Silver(FinanceAccounts.Cash), FT.Silver(g.PortfolioValue()), m.ToString("0.00", CultureInfo.InvariantCulture), MarketMath.DailyPercent(m).ToString("+0.00;-0.00;0.00", CultureInfo.InvariantCulture));
             if (FinanceGame.FallbackMode) head += "  " + FT.T("HH.Finance.Fallback");
-            FinUi.Label(new Rect(r.x, r.y + 28f, r.width, 26f), head, GameFont.Small, FinUi.Dim);
+            FinUi.Label(new Rect(r.x, r.y + 28f, r.width, 40f), head, GameFont.Small, FinUi.Dim);
             if (g.MarketHalted) FinUi.Label(new Rect(r.xMax - 330f, r.y, 330f, 26f), FT.T("HH.Finance.Halted"), GameFont.Small, FinUi.Down, TextAnchor.MiddleRight);
-            TooltipHandler.TipRegion(new Rect(r.x, r.y + 28f, r.width, 26f), FT.T("HH.Finance.Header.Tip"));
+            TooltipHandler.TipRegion(new Rect(r.x, r.y + 28f, r.width, 40f), FT.T("HH.Finance.Header.Tip"));
         }
 
         // ---- news ticker ---------------------------------------------------------------------------------------------------------------
@@ -101,7 +104,7 @@ namespace Silverline
         {
             var list = g.Offered().OrderBy(a => a.def.order).ThenBy(a => a.Label).ToList();
             if (selectedAsset == null || g.Asset(selectedAsset) == null) selectedAsset = list.FirstOrDefault()?.id;
-            var left = new Rect(r.x, r.y, r.width * 0.47f, r.height); var right = new Rect(left.xMax + 8f, r.y, r.width - left.width - 8f, r.height);
+            var left = new Rect(r.x, r.y, r.width * 0.5f, r.height); var right = new Rect(left.xMax + 8f, r.y, r.width - left.width - 8f, r.height);
             const float rowH = 40f;
             var view = new Rect(0, 0, left.width - 16f, list.Count * rowH + 4);
             Widgets.BeginScrollView(left, ref listScroll, view);
@@ -111,25 +114,35 @@ namespace Silverline
                 if (a.id == selectedAsset) Widgets.DrawBoxSolid(row, new Color(1, 1, 1, 0.14f)); else if (i % 2 == 0) Widgets.DrawBoxSolid(row, new Color(1, 1, 1, 0.04f));
                 Widgets.DrawHighlightIfMouseover(row);
                 if (Widgets.ButtonInvisible(row)) { selectedAsset = a.id; detailScroll = Vector2.zero; }
-                FinUi.Label(new Rect(row.x + 4, row.y + 1, 190, 20), a.Label, GameFont.Small, Color.white, TextAnchor.UpperLeft, false);
-                FinUi.Label(new Rect(row.x + 4, row.y + 20, 120, 16), a.Ticker + (a.Frozen(Find.TickManager.TicksGame) ? " · " + FT.T("HH.Finance.Frozen") : a.rugged ? " · " + FT.T("HH.Finance.Rugged") : ""), GameFont.Tiny, FinUi.Dim, TextAnchor.UpperLeft, false);
-                FinUi.Label(new Rect(row.x + 196, row.y + 1, 100, 20), FinUi.Price(a.price), GameFont.Small, Color.white, TextAnchor.UpperRight, false);
+                float nameW = Math.Max(120f, view.width - 240f);
+                FinUi.Label(new Rect(row.x + 4, row.y + 1, nameW, 20), a.Label.Truncate(nameW - 4f), GameFont.Small, Color.white, TextAnchor.UpperLeft, false);
+                TooltipHandler.TipRegion(new Rect(row.x, row.y, nameW, rowH), a.Label);
+                string state = a.Frozen(Find.TickManager.TicksGame) ? FT.T("HH.Finance.Frozen") : a.rugged ? FT.T("HH.Finance.Rugged") : null;
+                FinUi.Label(new Rect(row.x + 4, row.y + 21, 96, 16), a.Ticker.Truncate(92f) + (state != null ? " · " + state : ""), GameFont.Tiny, state != null ? FinUi.Down : FinUi.Dim, TextAnchor.UpperLeft, false);
                 double ch = a.Change24h;
-                FinUi.Label(new Rect(row.x + 196, row.y + 20, 100, 16), FT.Pct(ch), GameFont.Tiny, FinUi.ChangeColor(ch), TextAnchor.UpperRight, false);
-                FinUi.Sparkline(new Rect(row.x + 304, row.y + 8, 64, 24), a.hourly, 72);
+                FinUi.Label(new Rect(row.x + 104, row.y + 21, 56, 16), FT.Pct(ch), GameFont.Tiny, FinUi.ChangeColor(ch), TextAnchor.UpperLeft, false);
                 long u = g.UnitsOf(a.id);
-                if (u > 0) FinUi.Label(new Rect(row.x + 374, row.y + 1, view.width - 378, 38), FT.Silver(new Money(MarketMath.ValueOf(u, a.price))), GameFont.Tiny, FinUi.Up, TextAnchor.MiddleRight, false);
+                if (u > 0) FinUi.Label(new Rect(row.x + 160, row.y + 21, Math.Max(60f, view.width - 160f - 236f + 100f), 16), FT.T("HH.Finance.Row.Held", new Money(MarketMath.ValueOf(u, a.price)).ToStringShort()), GameFont.Tiny, FinUi.Up, TextAnchor.UpperRight, false);
+                FinUi.Label(new Rect(row.xMax - 236f, row.y + 1, 110, 20), FinUi.Price(a.price), GameFont.Small, Color.white, TextAnchor.UpperRight, false);
+                FinUi.Sparkline(new Rect(row.xMax - 118f, row.y + 8, 62, 24), a.hourly, 72);
             }
             Widgets.EndScrollView();
-            DrawDetail(right, g, g.Asset(selectedAsset));
+            var sel = g.Asset(selectedAsset);
+            var view2 = new Rect(0, 0, right.width - 18f, Math.Max(detailH, right.height));
+            Widgets.BeginScrollView(right, ref detailScroll, view2);
+            float end = DrawDetail(new Rect(0, 0, view2.width, view2.height), g, sel);
+            Widgets.EndScrollView();
+            detailH = end + 10f;
         }
 
-        static void DrawDetail(Rect r, FinanceGame g, AssetState a)
+        static float detailH = 520f;
+
+        static float DrawDetail(Rect r, FinanceGame g, AssetState a)
         {
-            if (a == null) return;
+            if (a == null) return 0f;
             var d = a.def; float y = r.y;
-            FinUi.Label(new Rect(r.x, y, r.width, 28), a.Label + "  (" + a.Ticker + ")", GameFont.Medium); y += 30;
-            if (!d.tagline.NullOrEmpty()) { FinUi.Label(new Rect(r.x, y, r.width, 20), "“" + d.tagline + "”", GameFont.Small, FinUi.Dim); y += 22; }
+            string title = a.Label + "  (" + a.Ticker + ")"; float tH = FinUi.TextHeight(r.width, title, GameFont.Medium); FinUi.Label(new Rect(r.x, y, r.width, tH), title, GameFont.Medium); y += tH + 2;
+            if (!d.tagline.NullOrEmpty()) { string tg = "“" + d.tagline + "”"; float tgh = FinUi.TextHeight(r.width, tg); FinUi.Label(new Rect(r.x, y, r.width, tgh), tg, GameFont.Small, FinUi.Dim); y += tgh + 2; }
             string desc = d.description ?? "";
             float dh = FinUi.TextHeight(r.width, desc, GameFont.Tiny);
             FinUi.Label(new Rect(r.x, y, r.width, dh), desc, GameFont.Tiny, new Color(1, 1, 1, 0.75f)); y += dh + 4;
@@ -180,6 +193,7 @@ namespace Silverline
             var pending = g.pendingSales.Where(p => p.assetId == a.id).ToList();
             foreach (var p in pending) { FinUi.Label(new Rect(r.x, y, r.width, 16), FT.T("HH.Finance.PendingSale", FinanceGame.UnitsText(p.units), FinUi.DaysLeft(p.executeTick, Find.TickManager.TicksGame), (p.spread * 100).ToString("0")), GameFont.Tiny, FinUi.Dim); y += 16; }
             if (FinUi.Nerd && d.Volatile) DrawDistribution(r, ref y, a);
+            return y;
         }
 
         static string RiskNote(AssetState a)

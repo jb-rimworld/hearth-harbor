@@ -37,6 +37,7 @@ namespace Silverline
             E("HH.Finance.Sell.Tip", "Sell units worth this many silver.");
             E("HH.Finance.SellAll", "Sell all");
             E("HH.Finance.Decimals", "Five decimals count. 0.00001 silver is the smallest step.");
+            E("HH.Finance.Row.Held", "held {0}");
             E("HH.Finance.Change24", "24 h {0}  ·  today {1}");
             E("HH.Finance.Position", "You hold {0} units, worth {1} silver ({2} against cost).");
             E("HH.Finance.Position.None", "You hold nothing here. Yet.");

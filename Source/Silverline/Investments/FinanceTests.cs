@@ -378,6 +378,19 @@ namespace Silverline
             g.EnsureOmenMarkets(Find.TickManager.TicksGame); var c = g.contracts.First(x => !x.resolved); g.OmenBuy(c.id, true, Money.FromSilver(25));
             var f = FinTest.AnyFaction(); if (f != null) { var p = g.StartProject(f, Find.TickManager.TicksGame, 14); g.BetOnProject(p.id, true, Money.FromSilver(100)); InvestTab.TestSelectProject(p.id); }
             FinTest.Hours(g, 30); lot.QuickPick(3);
+            // draw the pages directly (the quicktest game does not run OnGUI), to execute the layout code and catch exceptions
+            string drawErr = null; int drawn = 0;
+            try
+            {
+                var rr = new UnityEngine.Rect(0, 0, 980, 620);
+                for (int pg = 0; pg < 4; pg++) { InvestTab.TestSetPage(pg); InvestTab.Draw(rr); drawn++; }
+                InvestTab.TestSetPage(0);
+                foreach (var id in new[] { "SL_Asset_Index", "SL_Asset_RimCoin", "SL_Asset_MemeThrumbo", "SL_Asset_NftThrumbos", "SL_Asset_Mattress", "SL_Asset_StockMicaton" })
+                { var a = g.assets.FirstOrDefault(x => x.defName == id && !x.delisted); if (a == null) continue; InvestTab.TestSelect(a.id); InvestTab.Draw(rr); drawn++; }
+                LotteryTab.Draw(rr); HSettings.Set("lottery.colonyOn", 1f); LotteryTab.Draw(rr); HSettings.Set("lottery.colonyOn", 0f); drawn += 2;
+            }
+            catch (Exception e) { drawErr = e.GetType().Name + ": " + e.Message; }
+            t.Check(drawErr == null, "pages draw without exceptions (" + drawn + " draws) " + drawErr);
             Find.WindowStack.Add(new Window_Silverline());
             yield return 40;
             t.Check(Find.WindowStack.Windows.Any(w => w is Window_Silverline), "window open");
@@ -394,6 +407,7 @@ namespace Silverline
             yield return Hold; Shot("lottery"); yield return 20;
             HSettings.Set("lottery.colonyOn", 1f); yield return Hold; Shot("lottery_colony"); HSettings.Set("lottery.colonyOn", 0f);
             t.Check(HLog.ErrorCount == errors0, "no errors while drawing the pages: " + (HLog.ErrorCount - errors0));
+            t.Note($"draw calls: invest {InvestTab.DrawCalls}, lottery {LotteryTab.DrawCalls} (window frames only when the game runs OnGUI)");
             Find.WindowStack.TryRemove(win, false);
             t.Check(FinTest.Balanced, "ledger balanced");
         }
