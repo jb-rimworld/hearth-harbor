@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Kinds of business a Venue Sign can turn a room into (KONZEPT 6.1). The room of the sign is the business.
+       VenueSaleExtension says what a venue sells from the stockpiles and shelves in its room (N45). -->
+
+  <Hearth.VenueTypeDef>
+    <defName>HH_Venue_Tavern</defName>
+    <label>tavern</label>
+    <description>A room where guests buy a drink and drink it on the spot. Stock the room with beer or other drinks on a shelf or in a stockpile; a bartender behind the sign or counter keeps it open. Drinks in the room are reserved for customers unless the sign says otherwise.</description>
+    <module>ShopsFood</module>
+    <defaultOpenHour>16</defaultOpenHour>
+    <defaultCloseHour>2</defaultCloseHour>
+    <iconPath>UI/HH/Venues/Type_Tavern</iconPath>
+    <needsStaff>true</needsStaff>
+    <staffWorkType>HH_Serving</staffWorkType>
+    <priceFactor>1.25</priceFactor>
+    <color>(0.78,0.52,0.24)</color>
+    <modExtensions>
+      <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>Drinks</sells></li>
+    </modExtensions>
+  </Hearth.VenueTypeDef>
+
+  <Hearth.VenueTypeDef>
+    <defName>HH_Venue_Shop</defName>
+    <label>shop</label>
+    <description>A room where guests buy goods. Everything stored on shelves and in stockpiles inside the room is for sale, at market value times the sign's price factor. Without a shopkeeper the shop runs as self-service at a small discount.</description>
+    <module>ShopsFood</module>
+    <defaultOpenHour>8</defaultOpenHour>
+    <defaultCloseHour>20</defaultCloseHour>
+    <iconPath>UI/HH/Venues/Type_Shop</iconPath>
+    <needsStaff>false</needsStaff>
+    <staffWorkType>HH_Serving</staffWorkType>
+    <priceFactor>1</priceFactor>
+    <color>(0.36,0.62,0.55)</color>
+    <modExtensions>
+      <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>Goods</sells></li>
+    </modExtensions>
+  </Hearth.VenueTypeDef>
+
+  <Hearth.VenueTypeDef>
+    <defName>HH_Venue_Restaurant</defName>
+    <label>restaurant</label>
+    <description>A room where guests sit down and eat. Tables, a kitchen and a waiter make it a restaurant; the dishes themselves are handled by the kitchen.</description>
+    <module>ShopsFood</module>
+    <defaultOpenHour>11</defaultOpenHour>
+    <defaultCloseHour>23</defaultCloseHour>
+    <iconPath>UI/HH/Venues/Type_Restaurant</iconPath>
+    <needsStaff>true</needsStaff>
+    <staffWorkType>HH_Serving</staffWorkType>
+    <priceFactor>1.2</priceFactor>
+    <color>(0.76,0.36,0.30)</color>
+    <modExtensions>
+      <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>None</sells></li>
+    </modExtensions>
+  </Hearth.VenueTypeDef>
+
+  <Hearth.VenueTypeDef>
+    <defName>HH_Venue_Casino</defName>
+    <label>casino</label>
+    <description>A room of card tables, slot machines and croupiers. Guests stake their silver on games of chance; the house keeps a small, honest edge.</description>
+    <module>Casino</module>
+    <defaultOpenHour>18</defaultOpenHour>
+    <defaultCloseHour>4</defaultCloseHour>
+    <iconPath>UI/HH/Venues/Type_Casino</iconPath>
+    <needsStaff>true</needsStaff>
+    <staffWorkType>HH_Serving</staffWorkType>
+    <priceFactor>1</priceFactor>
+    <color>(0.55,0.20,0.45)</color>
+    <modExtensions>
+      <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>None</sells></li>
+    </modExtensions>
+  </Hearth.VenueTypeDef>
+
+  <Hearth.VenueTypeDef>
+    <defName>HH_Venue_Spa</defName>
+    <label>spa</label>
+    <description>A quiet room for baths, steam and rest. An attendant keeps the towels warm; guests pay by the visit.</description>
+    <module>Wellness</module>
+    <defaultOpenHour>9</defaultOpenHour>
+    <defaultCloseHour>21</defaultCloseHour>
+    <iconPath>UI/HH/Venues/Type_Spa</iconPath>
+    <needsStaff>true</needsStaff>
+    <staffWorkType>HH_Serving</staffWorkType>
+    <priceFactor>1</priceFactor>
+    <color>(0.35,0.58,0.72)</color>
+    <modExtensions>
+      <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>None</sells></li>
+    </modExtensions>
+  </Hearth.VenueTypeDef>
+
+  <Hearth.VenueTypeDef>
+    <defName>HH_Venue_Lounge</defName>
+    <label>lounge</label>
+    <description>A waiting room with seats. Guests who find a business closed or unstaffed wait here instead of in the doorway, and wait more patiently. Always open, no staff needed.</description>
+    <module>ShopsFood</module>
+    <defaultOpenHour>0</defaultOpenHour>
+    <defaultCloseHour>0</defaultCloseHour>
+    <iconPath>UI/HH/Venues/Type_Lounge</iconPath>
+    <needsStaff>false</needsStaff>
+    <staffWorkType>HH_Serving</staffWorkType>
+    <priceFactor>1</priceFactor>
+    <color>(0.60,0.55,0.40)</color>
+    <modExtensions>
+      <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>None</sells></li>
+    </modExtensions>
+  </Hearth.VenueTypeDef>
+</Defs>

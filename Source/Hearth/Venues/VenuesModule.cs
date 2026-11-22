@@ -1,0 +1,131 @@
+// SPDX-License-Identifier: MIT
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using RimWorld;
+using Verse;
+
+namespace Hearth.ShopsFood
+{
+    /// <summary>
+    /// Entry point of the venues part of "Shops &amp; Food": venue signs, shops, taverns, vending machines, staffing, the big market
+    /// and the hiding of replaced vanilla furniture. The kitchen and dishes live in their own entry point.
+    /// </summary>
+    public sealed class VenuesModule : HearthModuleBase
+    {
+        public override ModuleId Id => ModuleId.ShopsFood;
+
+        public override void RegisterSettings() => VS.Register();
+
+        public override void OnDefsLoaded()
+        {
+            GuestActivities.Register(new ShopActivity());
+            GuestActivities.Register(new DrinkActivity());
+            GuestActivities.Register(new VendingActivity());
+            Caretaker.Register(ModuleId.ShopsFood, "venues.forbidSync", () => 0);
+            // designators are resolved after the long loading event; hide replaced furniture once they exist
+            LongEventHandler.ExecuteWhenFinished(() => Guard.Run(ModuleId.ShopsFood, "VanillaHiding.Refresh(startup)", VanillaHiding.Refresh));
+        }
+
+        public override void OnGameStarted() { VenueState.Clear(); VanillaHiding.Refresh(); }
+        public override void OnGameLoaded() { VenueState.Clear(); VanillaHiding.Refresh(); }
+
+        public override void PrepareRemoval(List<string> report)
+        {
+            int n = 0;
+            foreach (var map in Find.Maps)
+            {
+                var comp = map.GetComponent<VenueMapComp>();
+                n += comp?.ReleaseAll() ?? 0;
+            }
+            VanillaHiding.Refresh();
+            report.Add($"Venues: {n} forbidden goods released, hidden vanilla furniture restored.");
+        }
+
+        public override IEnumerable<string> Diagnosis()
+        {
+            foreach (var map in Find.Maps.Where(m => m.IsPlayerHome))
+            {
+                var all = Venues.All(map);
+                yield return $"Venues on {map}: {all.Count} ({string.Join(", ", all.Select(v => v.DisplayNameOf() + "=" + VenueApi.Gate(v)))})";
+            }
+            var g = VenuesGame.Instance;
+            if (g != null) yield return $"Big market: next in {Math.Max(0, g.NextMarketTick - Find.TickManager.TicksGame) / (float)GenDate.TicksPerDay:0.0} days, {g.MarketsHeld} held";
+        }
+    }
+
+    /// <summary>
+    /// Per-map housekeeping: keeps goods for sale off limits for the colony (N45) and, without the Inn module,
+    /// offers idle vanilla visitors something to do.
+    /// </summary>
+    public sealed class VenueMapComp : MapComponent
+    {
+        List<Thing> forbiddenByUs = new List<Thing>();
+
+        public VenueMapComp(Map map) : base(map) { }
+
+        public override void ExposeData()
+        {
+            Scribe_Collections.Look(ref forbiddenByUs, "forbiddenByUs", LookMode.Reference);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                if (forbiddenByUs == null) forbiddenByUs = new List<Thing>();
+                forbiddenByUs.RemoveAll(t => t == null);
+            }
+        }
+
+        public override void MapComponentTick()
+        {
+            if (!Modules.On(ModuleId.ShopsFood) || !map.IsPlayerHome) return;
+            int t = Find.TickManager.TicksGame;
+            if (t % 250 == 40) Guard.Run(ModuleId.ShopsFood, "Venues.SyncForbidden", SyncForbidden);
+            if (t % 90 == 0) Guard.Run(ModuleId.ShopsFood, "Venues.GuestFallback", () => GuestFallback.Run(map));
+            if (t % 2500 == 2000) GuestMemory.Prune(id => !map.mapPawns.AllPawnsSpawned.Any(p => p.thingIDNumber == id));
+        }
+
+        /// <summary>Goods for sale are forbidden for the colony unless the sign allows taking them. Only what we forbade is ever unforbidden.</summary>
+        public void SyncForbidden()
+        {
+            var shouldForbid = new HashSet<Thing>();
+            foreach (var v in Venues.All(map))
+            {
+                if (VenueApi.SellsOf(v) == SellKind.None) continue;
+                foreach (var it in VenueSales.Stock(v, true))
+                    if (!v.Comp.colonyMayTakeGoods) shouldForbid.Add(it);
+            }
+            foreach (var it in shouldForbid)
+            {
+                var cf = it.TryGetComp<CompForbiddable>();
+                if (cf == null || cf.Forbidden) continue;
+                cf.Forbidden = true;
+                forbiddenByUs.Add(it);
+            }
+            for (int i = forbiddenByUs.Count - 1; i >= 0; i--)
+            {
+                var it = forbiddenByUs[i];
+                if (it == null || it.Destroyed) { forbiddenByUs.RemoveAt(i); continue; }
+                if (shouldForbid.Contains(it)) continue;
+                var cf = it.TryGetComp<CompForbiddable>();
+                if (cf != null && cf.Forbidden) cf.Forbidden = false;
+                forbiddenByUs.RemoveAt(i);
+            }
+        }
+
+        /// <summary>Release everything we forbade (module removal, tests).</summary>
+        public int ReleaseAll()
+        {
+            int n = 0;
+            foreach (var it in forbiddenByUs)
+            {
+                if (it == null || it.Destroyed) continue;
+                var cf = it.TryGetComp<CompForbiddable>();
+                if (cf != null && cf.Forbidden) { cf.Forbidden = false; n++; }
+            }
+            forbiddenByUs.Clear();
+            return n;
+        }
+
+        public int ForbiddenCount => forbiddenByUs.Count;
+        public bool IsForbiddenByUs(Thing t) => forbiddenByUs.Contains(t);
+    }
+}
