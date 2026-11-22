@@ -1,0 +1,63 @@
+{
+ "summary": "The Underworld module is built, committed on branch wt/underworld, and tested in the game. The final run of 17 suites (smoke plus 16 underworld.*) passed with 234 checks, 0 failures and 0 error lines in the log. The module builds for RimWorld 1.5, 1.6 and 1.7, and the 31 unit tests pass. The only warning in the log is the FenceCash caretaker sweeping leftover fence cash at test teardown, which is its intended behaviour. The whole dark side is gated by module switch, Cozy content intensity and the discovery step; Dark and Grim only count after the one-time warning is confirmed. It covers discovery, back room door, fight pit with betting, fence, drug lounge, smuggler's dock, gang visits, the Hunt, organ clinic, Whispers and scandals.",
+ "implemented": [
+  "Gates: UnderworldMath.Allows (Cozy/Standard/Dark/Grim matrix of KONZEPT 6.11) and Underworld.Visible/Unlocked/Effective. Dark and Grim only apply after the one-time content warning dialog; until then the game behaves like Standard. UwGateExtension on defs; PlaceWorker_UnderworldGate hides and blocks buildings; a Harmony postfix on ResearchProjectDef.IsHidden hides the research. Module off or Cozy: no buildings, research, events or dialogs.",
+  "Discovery (D04): stranger dialog 'Nice place. Got a back room?' with Show me, Not interested and Never ask again. Show me finishes a hidden key project and sets UnderworldDiscovered, which unlocks HH_Underworld_1. The stranger rolls only when guests or a venue exist and Whispers are low, with a cooldown and a maximum number of asks. A dialog closed without an answer retries in 3 days. Setting 'underworld.mode' offers Discover in game or Always on. Fireable as IncidentDef HH_UnderworldStranger.",
+  "Whispers: its own GameComponent (UnderworldComponent) holds 0-100 with 2 % decay per 15 days (setting), exposed as static Underworld.Whispers, AddWhispers, RespectableArrivalFactor (exp(-N/40)) and OutlawArrivalFactor (0.2+N/50). Scandals: BackRoomFound, LeakedLedger, SecretCasinoRumour (positive, sets HighRollersActive) and HonourAmongThieves (positive). Renown and goodwill effects are capped per tier (KONZEPT 9.4), one scandal per map per 10 days, and renown is passed out through the Underworld.RenownDelta event.",
+  "Back room: Building_BackRoomDoor opens only for colonists, non-guests and shady guests. BackRoom.IsBackRoom and IsBackRoomCell identify rooms whose every door is a back room door, so other modules can skip them when rating the house.",
+  "Fight pit (HH_FightPitMarker): the arena is the fenced area around the marker (flood fill; doors count as boundary). Fighters are colony animals, prisoners and volunteers (gizmo toggles, matchmaking by combat power, children excluded). A bout runs Assemble, Betting, Fight, Settle using vanilla AttackMelee jobs. Guests bet via the totalisator and the house takes 10 % (setting), with payouts in whole silver. A draw or abort refunds everything. The pit account is always swept, so the ledger stays balanced. Non-lethal bouts: a Pawn.PreApplyDamage prefix stops damage to a beaten fighter. To the death only on Dark with confirmation, never for volunteers or children. Spectators use the HH_WatchBout job and the thoughts HH_SawFightPit_Kind and HH_SawFightPit_Bloodlust apply.",
+  "Fence (HH_FenceCounter): buys stolen goods at 40 % and sells to shady buyers at 70 %, from its own cash box (house:fence:<map>, topped up from the till, surplus returned, capped by setting). Whispers +1 per deal. The owner faction can find out (chance rising with Whispers): goodwill hit, LeakedLedger scandal, and a raid from One-Star tier up. FenceDeal job and a FenceActivity.",
+  "Drug lounge: VenueTypeDef HH_Venue_DrugLounge and a LoungeActivity. Drug choice follows the pawn's ideology (DrugUse precepts) and children are excluded. Guests pay, use the drug, Whispers +0.5, and a guest who becomes addicted costs goodwill from Overbooked up.",
+  "Smuggler's dock: night landing offers a crate at 30 % of market value via a dialog (Buy or Send away), delivered by drop pod, with a chance of an imperial inspection.",
+  "Gang visits: own incident HH_GangVisit. Outlaws from a non-hostile rough faction arrive peacefully with silver and loot, are marked shady, and are driven by UwDirector (back room fee, fence, pit, lounge, tour) independent of the Inn module. Optional protection-money demand (pay or refuse) and an opt-in holding cells tour (questioning a prisoner, with a bruise only on Dark; children never).",
+  "The Hunt: HH_HuntingGroundMarker and HH_TheHunt research. Hunters pay a fee of 500-2000, house-owned quarry animals are released into the ground, hunters shoot them with the HH_HuntQuarry job, Whispers +10. Prisoner quarry is implemented behind the gate: Dark needs a fitting ideology precept, Grim needs none, both need the warning dialog and the ground toggle. The quarry flees, is freed after the set hours, or dies with faction, renown and mood consequences. Warned by dialog and shown as text only.",
+  "Organ clinic (HH_OrganClinic, Dark and up): a storage counter that takes natural organs; at night anonymous donors buy them into the till at market value x factor, Whispers +5 each, ideology outrage thought. Grim adds orders with deadlines and a premium. A first-build warning dialog appears.",
+  "Supporting parts: 6 buildings, 4 research projects (one hidden key project), 7 jobs, 5 thoughts, 4 incidents, 1 venue type, Keyed texts (HH_Underworld.xml), about 45 settings with the 'underworld.' prefix, an Underworld main-tab page, caretaker checks that sweep stray pit and fence money, docs/underworld.md, and pure maths with xunit tests (Source/Hearth.Core/Pure/UnderworldMath.cs, Source/Tests/UnderworldMathTests.cs)."
+ ],
+ "not_done": [
+  "Gang meeting (Parley, temporarily neutral hostile pirates). Gangs come only from existing non-hostile factions, preferring Rough/Outlaw/Pirate names. If none exists, no gang visit fires.",
+  "Debtors' wing and the 'watching' sub-offer of the holding cells tour (paying to watch executions or prisoner bouts).",
+  "Full protection racket event chain; only the single demand dialog exists. Guests rarely react to the fight pit beyond thoughts and satisfaction (no noble departure).",
+  "Hunt fine points: after the hunt, leftover quarry stays as house animals. Human quarry has no start animation or head-start path, only a teleport into the ground and a flee job. The human-quarry death path and the ideology-precept check were not covered by an automated test.",
+  "Drug lounge was tested only without a real venue sign (the Venues module is not in this worktree). Only its driver, activity, price and ideology gate were tested, not an open lounge venue.",
+  "Animals cannot open fence gates, so animal fighters are 'led in' by teleport when the gate does not let them through.",
+  "Research tree coordinates (X 22-31, Y 0-12) are placeholders for the UI/integrator to lay out. Textures are placeholders only. No real art or sounds.",
+  "Not tested in the game: real save/load of a whole save with fence stock (only the component round trip was tested), 1.5 and 1.6 in-game (they compile clean), Inn-driven activity picking, and the Steam content-rule reading of the Dark features."
+ ],
+ "tests": [
+  "In-game (tools/run_test.sh, label underworldfinal2): PASS, 17 suites, 234 checks, 0 failures, errorsInLog=0.",
+  "Suites: underworld.hidden, underworld.gates, underworld.discovery, underworld.whispers, underworld.backroom, underworld.fightpit, underworld.pitflow (full bout via the normal path with gate, spectators and bets), underworld.fence, underworld.gang, underworld.director (a gang member reaches the back room and pays with no help), underworld.lounge, underworld.jobs (fence deal, lounge, tour jobs and smuggler dialog), underworld.hunt, underworld.organs, underworld.smuggler, underworld.saveload (Scribe round trip of the component), plus smoke.",
+  "Unit tests (Source/Tests/run.sh): 31 pass, including the gate matrix, Whispers decay, tier caps, totalisator settlement (pool equals payouts plus house exactly, refunds on a draw), fence prices and favourite share.",
+  "Builds clean for 1.5, 1.6 and 1.7, with and without the test harness.",
+  "The hunt suite failed once when wild animals walked out of the ground; fixed by making quarry house-owned, then passed."
+ ],
+ "contract_requests": [
+  "Renown API: the Inn module should subscribe to Hearth.Underworld.Underworld.RenownDelta(Map, float, string), or a Renown.Add(map, delta, reason) should be added to the contracts. Until then scandal renown effects are only logged.",
+  "StayKind.Shady (5.2): the Inn module should call Underworld.MarkShady(pawn) for Shady and outlaw stays so they may use the back room door, fence and holding cells. Also multiply arrival weights with Underworld.RespectableArrivalFactor and OutlawArrivalFactor.",
+  "Rooms and venues: Inn/Venues should skip rooms where BackRoom.IsBackRoom(room) is true when rating the house and building zones. Venue sign UI should filter VenueTypeDef by UwDefs.Open(def.GetModExtension<UwGateExtension>()) so the drug lounge stays hidden on Cozy or before discovery.",
+  "Designation category: the underworld buildings use their own HH_Underworld category (defined in Common/Defs/Underworld). The integrator may merge it into HH_Hospitality. VenueTypeDef HH_Venue_DrugLounge uses the shared Hearth.VenueTypeDef class from the Venues contract.",
+  "Guest activity wiring: the module registers three IGuestActivity (underworld.fightpit, underworld.lounge, underworld.fence). The think-node patch that offers activities to vanilla visitors and the Inn guest brain must call GuestActivities.TryPick. Without it, only shady groups are driven (by the module's own director).",
+  "Content warning: the UI/first-start card may call UnderworldComponent.ContentWarningAck = true after its own warning dialog. Otherwise the module shows its own dialog once Content is Dark or Grim.",
+  "Optional: a StayKind.Shady value and an official Renown contract so the Underworld module does not need its own event."
+ ],
+ "integration_notes": [
+  "Files touched are only new ones: Source/Hearth/Underworld/*.cs, Source/Hearth.Core/Pure/UnderworldMath.cs, Source/Tests/UnderworldMathTests.cs, Common/Defs/Underworld/*.xml, Common/Languages/English/Keyed/HH_Underworld.xml, docs/underworld.md. No existing file was edited.",
+  "Harmony patches: ResearchProjectDef.IsHidden postfix (cheap HashSet check) and Pawn.PreApplyDamage prefix (exits at once while no bout is running). Both are in UwDefs.cs; the damage prefix also uses FightBout.cs.",
+  "XML class names Hearth.VenueTypeDef and Hearth.Underworld.* are used. If another module defines the same defNames as HH_Underworld, HH_TheHunt, HH_BlackClinic or HH_Venue_DrugLounge there would be duplicates.",
+  "Money: accounts house:pit:<mapId> and house:fence:<mapId> are always swept to the till by caretakers. The pit account holds stakes only during a bout.",
+  "Everything is gated: with Content=Cozy or module off, no building is visible and no event fires; the Underworld page is visible only when Unlocked.",
+  "Test hooks: Tests.cs sets Content, discovery and warning flags with UwKit.Begin and restores them with UwKit.End. A combined run shares one map, so suites compare counter deltas, not absolute values.",
+  "Settings keys all start with 'underworld.' and show up automatically in the settings window."
+ ],
+ "textures": [
+  "Things/HH/Underworld/BackRoomDoor (Graphic_Single, 128x128 placeholder, also uiIconPath)",
+  "Things/HH/Underworld/FightPit (Graphic_Single, 128x128, drawSize 1x1)",
+  "Things/HH/Underworld/FenceCounter (Graphic_Single, 128x128, drawSize 2x1)",
+  "Things/HH/Underworld/SmugglerDock (Graphic_Single, 128x128, drawSize 3x3)",
+  "Things/HH/Underworld/HuntingGround (Graphic_Single, 128x128, drawSize 1x1)",
+  "Things/HH/Underworld/OrganClinic (Graphic_Single, 128x128, drawSize 2x1)",
+  "UI/HH/Underworld/DrugLounge (venue icon, 128x128)",
+  "All placeholders from tools/placeholder_textures.py, not committed (Common/Textures is not in git)."
+ ],
+ "commit": "1ed75da"
+}

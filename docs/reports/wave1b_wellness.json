@@ -1,0 +1,51 @@
+{
+ "summary": "The Wellness module is built and its tests pass: hot tub, sauna stove, massage table, guest spa activity and the RimWard rehab bridge. The full in-game run (smoke plus 6 wellness suites, 153 checks) had 0 failures and 0 red errors in the log. A separate run with RimWard loaded also passed. `Source/build.sh all` showed no errors for 1.7, 1.6 and 1.5.",
+ "implemented": [
+  "HH_HotTub (2x2, 150 W, small heat, Comfort and JoyGainFactor, two users, research HH_Wellness), HH_Sauna (1x1 wood stove with CompRefuelable and flick switch, pushes heat up to 62 C, research HH_Bathhouse) and HH_MassageTable (2x1 with interaction cell). All three carry CompWellnessFacility and are in the HH_Hospitality build menu.",
+  "Sauna rule: the stove counts only in a closed, roofed room at or above wellness.saunaMinTemp (default 45 C). A running session tolerates 5 C of cooling. In the test the stove warmed a 25-cell room from 15 to 49 C in 1500 ticks.",
+  "Colonist joy: JoyKind HH_Relaxation plus three JoyGivers, also usable in bed. A finished session gives the Relaxed memory (3 stages: soaked / sweated it out / freshly kneaded), a rest bonus, and the HH_Soothed hediff (pain factor 0.85 for about a day).",
+  "Two Harmony patches stop heatstroke and the 'too hot' thought while a pawn is in the sauna.",
+  "Massage: the client lies on the table and waits; a colonist with Serving active is sent by WorkGiver_GiveMassage. The guest is charged when the massage starts, the masseur gains Social and Medicine XP, and quality depends on masseur skill. The client gives up after a configurable wait if nobody comes.",
+  "Guest activity wellness.spa: guests use tub, sauna and massage in an open Spa venue (HH_Venue_Spa or any VenueTypeDef with module Wellness). Pricing uses the venue and sign price factors with a self-service discount when no Serving colonist is in the room. Day passes (hot tub and sauna, saved in WellnessState) are bought by wealthier guests. Guests have a cooldown, a Satisfaction gain per session, and a revenue counter.",
+  "Per-facility toggles for 'colonists may use' and 'guests may use' as gizmos, and inspect strings.",
+  "Rehab bridge (RehabBridge, no RimWard types): a patient in a colony-owned medical bed may use the spa for joy, but only if the RimWard package is active, the setting is on, the pawn can walk, is not bleeding and does not need urgent treatment. The sauna is also blocked after surgical cuts or while fighting an illness.",
+  "20 HSettings under wellness.* (prices, session hours, sauna temperature, joy, rest, XP and more), all with Keyed label and description. Research projects HH_Bathhouse and HH_Wellness are defined in the module's own Defs file. One state component, WellnessState, and a Caretaker prune check.",
+  "In-game suites: wellness.defs, wellness.colonist, wellness.sauna, wellness.massage, wellness.guest and wellness.rehab."
+ ],
+ "not_done": [
+  "HH_SpaPool (optional heated pool) is not built.",
+  "Heating effect of Soothed is a pain factor of 0.85, not the 'chronic pain heals 0.5 % per hour faster' from KONZEPT 6.7, and it does not stack with other mods' healing.",
+  "Full rehab programs from KONZEPT 13.2 (physio, withdrawal, sanatorium, rehab furniture, RimWard discharge offer) are not built. Only the walking-patient recreation bridge from the task exists.",
+  "No sauna benches, no hot springs (Odyssey) and no attraction x1.5 bonus.",
+  "Guests only reach the spa activity through GuestActivities.TryPick. No think-node patch exists in the foundation yet (it belongs to the Inn module or the integrator), so the guest test starts the job directly.",
+  "The test-only venue sign HH_TestOnly_VenueSign is non-buildable but still ships in the Defs; the test-only venue type is created in code."
+ ],
+ "tests": [
+  "Command: `cd /Users/julius/Documents/Coding/22_RimWorld/HH_wt/wellness && MODDIR=$PWD tools/run_test.sh smoke,wellness.defs,wellness.colonist,wellness.sauna,wellness.massage,wellness.guest,wellness.rehab <label>`. Last result: RESULT PASS, 7 suites, 153 checks, 0 failures, 0 red errors.",
+  "A second run with `brrainz.harmony juliusberger.hospitalbedsgen2 juliusberger.rimward` added: smoke, wellness.rehab and wellness.colonist also passed.",
+  "wellness.guest used the vanilla VisitorGroup incident and a test-only venue type because HH_Venue_Spa is not in this worktree.",
+  "`Source/build.sh all` compiled without errors for 1.7, 1.6 and 1.5."
+ ],
+ "contract_requests": [
+  "Please add a ready-made path so vanilla visitors without the Inn module pick up GuestActivities.TryPick (think-node patch), so wellness.spa works for them in play.",
+  "If the Venues module does not define HH_Venue_Spa with module = Wellness, `WellnessBilling.IsSpaVenueType` matches only by defName HH_Venue_Spa or module == Wellness. Please keep one of the two true.",
+  "HH_Hospitality (DesignationCategoryDef) and the research projects HH_Bathhouse and HH_Wellness: the category is added by a conditional patch (Common/Patches/Wellness_EnsureDesignationCategory.xml, only if missing), the research projects are in Defs/Wellness/Wellness_Research.xml. Please make sure no other module defines HH_Bathhouse or HH_Wellness."
+ ],
+ "integration_notes": [
+  "Entry point is Hearth.Wellness.WellnessModule (ModuleId.Wellness). It registers the SpaGuestActivity in OnDefsLoaded; it needs HH_Serving from Core and the shared research tab HH_Hospitality.",
+  "The venue sign type (Venues module) should list HH_Venue_Spa; guests only use facilities whose room is that venue's room and while the venue is open.",
+  "Prices are charged through GuestApi.ChargeGuest, so income lands in the colony till; the venue price factor and the sign price factor both apply.",
+  "WellnessState.Current is a GameComponent holding day passes (pawn id, expiry, venue sign id), last session per pawn, session counts and revenue. It is small and safe to drop.",
+  "The UI agent can show wellness stats via WellnessState.Current; WellnessBilling.Price(facility, kind) gives the price a guest would pay.",
+  "Harmony patches (Patch_NoHeatstrokeInSauna, Patch_NoHotThoughtInSauna) cheaply early-out unless the pawn's current job is HH_UseSauna."
+ ],
+ "textures": [
+  "Things/HH/Wellness/HotTub (Graphic_Multi, drawSize 2x2, needs _north/_east/_south, nominal 256x256; placeholders are 128x128)",
+  "Things/HH/Wellness/SaunaStove (Graphic_Single, 1x1, 128x128)",
+  "Things/HH/Wellness/MassageTable (Graphic_Multi, drawSize 2x1, needs _north/_east/_south, nominal 256x128; placeholders are 128x128)",
+  "UI/HH/Wellness/ColonistsMayUse (Graphic_Single, icon, 128x128)",
+  "UI/HH/Wellness/GuestsMayUse (Graphic_Single, icon, 128x128)",
+  "The test-only HH_TestOnly_VenueSign reuses the vanilla telescope texture Things/Building/Joy/Telescope."
+ ],
+ "commit": "57988ee"
+}

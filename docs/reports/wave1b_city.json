@@ -1,0 +1,64 @@
+{
+ "summary": "City Life is built and tested in worktree wt/city. It has cinema with movie nights, beauty salon, gallery, park bench, taxi stand and personal security, plus the two research projects. The final full run of 8 suites passed with 249 checks, 0 failures and 0 red errors in the game log. That run was before the last commit (a gizmo icon and a park-bench test); a follow-up run of city.park and city.cinema also passed. 1.6 and 1.5 compile cleanly (without the test harness).",
+ "implemented": [
+  "Research: HH_CityLife_1 (cinema, salon, gallery) and HH_CityLife_2 (taxi, security) in tab HH_Hospitality. Level 2 also needs TransportPod, plus Shuttles when Odyssey is active. Setting city.researchMode = Off finishes both quietly; a shared core.researchMode/core.researchOff is honoured if another module adds one.",
+  "Cinema: HH_ProjectorScreen (3x1, powered, uses vanilla chairs). A screening starts when the first viewer sits down and runs city.cinemaShowTicks (default 2000). Guests buy a ticket through activity city.cinema, with a per-guest cooldown and venue types HH_Venue_Cinema or HH_Venue_Lounge. A powered screen needs at least city.cinemaMinSeats seats (default 4) facing it. A power cut stops the film.",
+  "Movie night for colonists: GatheringDef HH_Screening with its own lord job, duty and think node. It starts from a gizmo on the screen or an evening dice roll at 18:00. Joy rises while watching and the movie-night memory follows. Colonists can also watch alone through a joy giver.",
+  "Salon: Building_SalonChair (a vanilla styling-station subclass with 'Open to guests' toggle). For guests: the activity sits them down, a colonist with HH_Serving styles them via a WorkGiver and is paid at the start of the work (cut 25, +10 colour with Biotech/Ideology, +20 tattoo with Ideology). 'Fresh look' is +4 mood points. A guest who cannot pay is declined and leaves. Colonists use the chair free (Ideology style dialog, otherwise a haircut float-menu option). Venue type HH_Venue_Salon.",
+  "Gallery: VenueTypeDef HH_Venue_Gallery. A room with at least 4 art buildings (CompArt) counts. The guest pays entry (10) and tours up to 5 pieces by a queued job. Satisfaction comes from the vanilla Beauty stat; masterworks please more than good art (tested).",
+  "Park bench HH_ParkBench is free and needs no research. Guests (city.park) gain a little satisfaction, more with a nice view (vanilla beauty around the bench). Colonists use it through a joy giver in the open air.",
+  "Taxi stand HH_TaxiStand (needs open sky). Departing guests are detected via PlannedLeaveTick or a lord ExitMap toil. They pay the fare (15) and a pod-like cab skyfaller lifts off. Arriving guests near the map edge can be set down at the stand (landing fee 6, cab skyfaller with the guest inside). One cab per stand at a time. The once-per-stay chance roll only happens when a cab is really free.",
+  "Personal security: guests with wealth >= 60 (hire chance 0.3, +0.4 at wealth 80+) hire an armed colonist with HH_Hosting via a WorkGiver. The guard follows the guest. The colony is billed hourly (15 % of the day budget over 24, minimum 2 per hour). A guest hurt while protected gets the fees refunded (Ledger) and loses satisfaction; a hire with no guard found is cancelled without charge. Automatic hiring only happens on maps with a venue sign or taxi stand (N08).",
+  "Pricing and difficulty: CityPricing follows KONZEPT 6.1 (T(W), buy chance sigma, price thoughts Bargain +3 to Ripped off -5). The setting city.priceTolerance uses the 7 tier anchors 3.0, 1.3, 1.15, 1.0, 0.9, 0.8, 0.65.",
+  "Infrastructure: 33 city.* settings, CityGameComponent (saved takings per service, visit cooldowns, bodyguard contracts), a main-tab page 'City life', module hooks for diagnosis and removal, two caretaker checks, English Keyed file, docs/CITY_LIFE.md, a conditional patch for the HH_Hospitality designation category, and tools/city_placeholders.py for better-fitting placeholder art.",
+  "Version bridge: Toils.cs lets the same code compile for 1.5, 1.6 and 1.7."
+ ],
+ "not_done": [
+  "No viewpoint building. 'Viewpoint' is covered by the bench's scenery bonus; a separate building would need real art.",
+  "No taxi via a real Royalty/Odyssey shuttle thing and no gravship taxi (KONZEPT 5.19 mentions both). The cab is only a skyfaller visual with no world-map flight, no pilot and no fuel; 'Royalty shuttle or Odyssey tech' is expressed through research prerequisites.",
+  "No beauty clinic, shopping mall, gym, pool, concert hall, night club, petting zoo, fishing pier, sports field or guest chapel from the 6.9 table. They are outside the task list. Salon tattoos and dyes depend on Ideology/Biotech and were exercised only with all DLCs active.",
+  "Bodyguards do not yet count for the security/escort logic of chapter 5.8, because the Inn module is not visible here.",
+  "No save/load round-trip test: the harness has no save/load step. The save paths follow the foundation patterns (Scribe lists, Deep contracts, comp fields).",
+  "Guest activities are only picked automatically once the Inn module or the vanilla-visitor think-node patch calls GuestActivities.TryPick. My tests start the jobs through activity.Desire/TryGiveJob directly.",
+  "Textures are placeholders (not committed). Sounds and effecters beyond vanilla hair-cutting were not added. No popcorn or snack for the cinema. English only; no DefInjected translations.",
+  "ProjectorScreen placeholder east/west art was not checked in-game."
+ ],
+ "tests": [
+  "city.defs (110 checks): all defs, labels and descriptions, research tabs and prerequisites, build gating, graphics resolve, Keyed keys, all 33 settings with label and description, tier anchors, activities and tab registered, pricing maths, research off, module diagnosis/removal/caretaker, N08 gate.",
+  "city.cinema (30 checks): venue + closed room + 10 seats, power gating, seat and budget gating, guest buys a ticket and the film starts, income booked, satisfaction rises, cooldown. Movie night: lord job, organizer watches, joy 0.10 to 0.33, memory. Joy-giver offer and power cut.",
+  "city.salon (25 checks): closed without a server, WorkGiver picks the job up on its own, guest pays 25, income booked, new look, memory, cooldown, a guest who cannot pay is declined, colonist self-service.",
+  "city.gallery (15 checks): scan with 3 vs 5 artworks, opening hours, entry fee booked, satisfaction and memory, masterworks above good art, empty purse.",
+  "city.park (9 checks): free bench with satisfaction, no charge, cooldown, colonist joy giver gives recreation.",
+  "city.taxi (28 checks): departing guest pays the fare, cab visible, income booked, stand counters, busy cab, periodic scan, broke guest walks, arrival by taxi with landing fee.",
+  "city.security (21 checks): no hire without an armed colonist, eligibility, hire, guard follows, hourly billing booked, injury leads to refund and end of contract.",
+  "Last full run: smoke + the 7 city suites: RESULT PASS, suites=8, checks=249, failures=0, red errors in log 0. build.sh 1.6 and 1.5 compile cleanly."
+ ],
+ "contract_requests": [
+  "GuestApi: events or a query for guest arrival and departure (e.g. GuestApi.IsDeparting(Pawn) and an Arrived/Departing callback). The taxi currently guesses from GuestInfo.PlannedLeaveTick and the vanilla lord toil name LordToil_ExitMap.",
+  "Core: a shared research mode in HSettings (e.g. core.researchMode with Full/Simplified/Off) so all modules honour one switch. City Life has its own city.researchMode and also reads core.researchMode/core.researchOff if present.",
+  "Venues: a staffing/open query such as Venues.IsStaffed(Venue) or Venue.OpenAndStaffed. City Life estimates staffing itself (any free colonist with HH_Serving active).",
+  "Core or Venues: a single owner for DesignationCategoryDef HH_Hospitality. I ship the same conditional patch as the Venues module (Common/Patches/City_DesignationCategory.xml).",
+  "GuestInfo: a VIP/archetype flag. Bodyguard eligibility uses Wealth >= 60 for now.",
+  "Inn or Core: confirm which module wires vanilla visitors into GuestActivities.TryPick (AGENTS describes a think-node patch that does not exist in this worktree)."
+ ],
+ "integration_notes": [
+  "Tracked build outputs 1.5/1.6/1.7 Assemblies/Hearth.dll are modified by every build; I restored them with git checkout, so the worktree only has untracked Common/Textures. Rebuild after merging.",
+  "VenueTypeDefs use the tag Hearth.VenueTypeDef (same as the Venues worktree). My three venue types (HH_Venue_Cinema, _Salon, _Gallery) need the Venues sign to list them (its allowedTypes empty = all). HH_Venue_Lounge is read softly; a lounge with a projector screen also works as a cinema.",
+  "Tests use HH_VenueSign if the Venues module is present and its comp derives from CompVenueSign; otherwise they clone a vanilla lamp def with a plain CompProperties_VenueSign. Test visitors come from the vanilla VisitorGroup incident, are moved into a calm LordJob_VisitColony and are driven through the activities directly.",
+  "Textures (not committed): Things/HH/City/ProjectorScreen Graphic_Multi, drawSize 3x1, north/south 384x128 and east 128x384; SalonChair Graphic_Multi 1x1, 128x128 (north/east/south); ParkBench Graphic_Multi 2x1, north/south 256x128 and east 128x256; TaxiStand Graphic_Single 2x2, 256x256; TaxiCab Graphic_Single skyfaller (CutoutFlying, drawSize 2.2), 256x256. UI/HH/City/Type_Cinema, Type_Salon, Type_Gallery Graphic_Single icons, 64x64. All are placeholders from tools/city_placeholders.py. Real art can replace the PNGs one-to-one.",
+  "New files outside my folders: Common/Patches/City_DesignationCategory.xml, docs/CITY_LIFE.md, tools/city_placeholders.py. No foundation, contract, About or LoadFolders files were touched.",
+  "CityTab (HearthTabs page id 'city', order 70) is a simple summary page. The UI module may restyle it.",
+  "Settings category names used: General, Research, Cinema, Salon, Gallery, Park, Taxi, Security. Enum label keys HH.Enum.CityResearchMode.* are in Keyed."
+ ],
+ "textures": [
+  "Things/HH/City/ProjectorScreen (Graphic_Multi, drawSize 3x1; north/south 384x128, east 128x384)",
+  "Things/HH/City/SalonChair (Graphic_Multi, 1x1; north/east/south 128x128)",
+  "Things/HH/City/ParkBench (Graphic_Multi, 2x1; north/south 256x128, east 128x256)",
+  "Things/HH/City/TaxiStand (Graphic_Single, 2x2; 256x256)",
+  "Things/HH/City/TaxiCab (Graphic_Single skyfaller, shader CutoutFlying, drawSize 2.2; 256x256)",
+  "UI/HH/City/Type_Cinema (Graphic_Single icon, 64x64)",
+  "UI/HH/City/Type_Salon (Graphic_Single icon, 64x64)",
+  "UI/HH/City/Type_Gallery (Graphic_Single icon, 64x64)"
+ ],
+ "commit": "732142c"
+}

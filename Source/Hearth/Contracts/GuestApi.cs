@@ -47,6 +47,7 @@ namespace Hearth
     /// </summary>
     public static class GuestApi
     {
+        static bool InnOn => Impl != null && Modules.On(ModuleId.Inn);
         public static IGuestApiImpl Impl;
         // fallback guests (no Inn module): keyed by thingIDNumber, which is only unique within one game
         static readonly Dictionary<int, GuestInfo> fallbackInfo = new Dictionary<int, GuestInfo>();
@@ -57,7 +58,8 @@ namespace Hearth
         public static bool IsGuest(Pawn p)
         {
             if (p == null || p.Dead) return false;
-            if (Impl != null && Modules.On(ModuleId.Inn)) return p.Spawned && Impl.IsGuest(p);
+            if (InnOn && p.Spawned && Impl.IsGuest(p)) return true;
+            // Vanilla visitor groups (not booked by the Inn) still count as day visitors: they may use venues, shops, the casino …
             if (!p.Spawned) return false;
             return IsVanillaVisitor(p) || Registered(p) != null; // a downed visitor that was already a guest stays one
         }
@@ -76,7 +78,7 @@ namespace Hearth
         public static GuestInfo Info(Pawn p)
         {
             if (p == null) return null;
-            if (Impl != null && Modules.On(ModuleId.Inn)) return Impl.Info(p);
+            if (InnOn) { var inn = Impl.Info(p); if (inn != null) return inn; }
             var known = Registered(p);
             if (known != null) return p.Dead || p.Destroyed ? null : known; // keeps its info while downed
             if (!IsVanillaVisitor(p)) return null;
@@ -104,13 +106,14 @@ namespace Hearth
         public static IEnumerable<Pawn> GuestsOn(Map map)
         {
             if (map == null) return Enumerable.Empty<Pawn>();
-            if (Impl != null && Modules.On(ModuleId.Inn)) return Impl.GuestsOn(map);
-            return map.mapPawns.AllPawnsSpawned.Where(IsVanillaVisitor).ToList();
+            var vanilla = map.mapPawns.AllPawnsSpawned.Where(IsVanillaVisitor);
+            if (InnOn) return Impl.GuestsOn(map).Concat(vanilla.Where(v => !Impl.IsGuest(v))).Distinct().ToList();
+            return vanilla.ToList();
         }
 
         public static void AddSatisfaction(Pawn p, float delta, string reason)
         {
-            if (Impl != null && Modules.On(ModuleId.Inn)) { Impl.AddSatisfaction(p, delta, reason); return; }
+            if (InnOn && Impl.Info(p) != null) { Impl.AddSatisfaction(p, delta, reason); return; }
             var gi = Info(p); if (gi != null) { gi.Satisfaction = Math.Max(-1, Math.Min(1, gi.Satisfaction + delta)); gi.Events.Add(reason); }
         }
 
@@ -120,7 +123,7 @@ namespace Hearth
         /// <summary>Call after a successful Payments.TryCharge to reduce the remaining budget.</summary>
         public static void Spend(Pawn p, Money amount, string category)
         {
-            if (Impl != null && Modules.On(ModuleId.Inn)) { Impl.Spend(p, amount, category); return; }
+            if (InnOn && Impl.Info(p) != null) { Impl.Spend(p, amount, category); return; }
             var gi = Info(p); if (gi != null) { gi.Budget -= amount; gi.Spent += amount; }
         }
 
@@ -136,7 +139,7 @@ namespace Hearth
             if (!Payments.TryCharge(guest, price, till, memo, out _, category))
             {
                 // Vanilla visitors without silver still pay "virtually" in fallback mode (they carry trade goods instead).
-                if (Impl != null && Modules.On(ModuleId.Inn)) return false;
+                if (InnOn && Impl.Info(guest) != null) return false; // booked guests must really pay
                 Ledger.Current?.Post("world", till, price, memo + " (visitor)", false, category);
                 Payments.RaisePaid(guest, price, till, memo, PaymentMethod.Barter);
             }

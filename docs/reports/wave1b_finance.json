@@ -1,0 +1,59 @@
+{
+ "summary": "Finance module for Silverline is built and tested. It covers 17 assets (savings, bonds, index, faction stocks, fund, religious bonds, RimCoin, rotating memecoins, NFTs), patience bonds, the Omen Exchange, faction project Longs and Project Shorts, the global and colony lotteries, and the Invest and Lottery tabs with a fallback window. All in-game suites pass (221 checks, 0 failures, 0 red errors in the log) and the 75 xunit tests pass. The sabotage world-map site, the Colony IPO, Conflict Futures and the Black Ledger pyramid are not built. The tab layout has not been seen on screen: no screenshot could be captured, so only exception-free drawing is verified. Code builds clean for 1.7, 1.6 and 1.5. It never references Hearth.dll.",
+ "implemented": [
+  "Pure maths in Source/Hearth.Core/Pure/Markets: DetMath (exp/ln/pow from + - * / only, polar Gaussian, chunked Poisson), MarketModel (jump diffusion with exact drift compensation so E[S_T] = S0*M_a^(T/60), clamped jumps compensated by quadrature, systemic shocks with per-asset loads, M^beta coupling, +-0.5 sigma cap for game signals), OmenMath, ProjectMath, LotteryMath",
+  "Assets as data: Silverline.AssetDef (XML root <Silverline.AssetDef>, defName SL_Asset_*). 17 defs in Common/Defs/Finance/Assets.xml: Mattress Plus, Outlander Union Infrastructure Bond, Empire War Bonds (Royalty), RimIndex 50, MCTN, HIDE, IMPR (Royalty), HHH, Glitterworld Growth Fund, Piety Bonds and Relic Futures (Ideology), RimCoin, $THRUMBO / Boomalope Coin / MUFFALO MOON (rotating, delisted after 3 days), Non-Fungible Thrumbos and the muffalo picture certificate",
+  "Market engine: hourly step, 60-day pre-rolled history at game start, hourly (168) and daily (90) history for charts, sealed streams per asset and for the hidden event schedule",
+  "System A events: crash, rally, regulator raid on crypto, RimCoin exchange hack with a 3-day freeze, bank run with savings locked for 2 days, rug pulls, defaults, war-bond end, memecoin pumps, quarterly numbers, trading halt during a solar flare",
+  "System B signals: faction goodwill, settlement gains and losses, colony wealth and raids survived nudge prices, capped at +-0.5 sigma per day, decaying 20 % per day, with a news ticker marking dice (chance) vs gear (you)",
+  "Portfolio: buy/sell with 5 decimals through the ledger (bank:colony to market:<asset>), NFT sale queue of 1-4 days with a 10-30 % spread, memecoin delisting pays holders at the last price, patience bonds of 30/60/120 days (loyalty bonus, early-exit penalty)",
+  "Omen Exchange: 5 chance markets (crash, rally, raid, bank run, RimCoin hack), one rug-pull market per memecoin, and world markets on faction projects settled on a neutral shadow roll. Odds distortion gamma 0.8, 5 % spread, 2 % fee, 15 % / 5 % position caps, close early, settles YES at once when the event happens. No markets on marriage, death, colonists or raids",
+  "Faction projects: one per faction at a time, 10-30 days, new every 20-40 days. Longs with the quote fixed at purchase. Project Shorts with the quote falling with stake size. 10 % per project / 20 % total stake limits, 15 % yearly profit cap (only the stake is paid above it), no Long and Short on the same project, no bets in the last 3 days, 10-day Short lock after a sabotage strike. Settlement from a sealed stream; goodwill +10 on success if you helped",
+  "Sabotage and help as API (ProjectSabotageStrike with detection chance and consequences by difficulty tier, ProjectHelp), plus a dev-mode button in the Projects page",
+  "Global lottery Glitterworld Grand Draw: 5 of 40 + star 1 of 10 (1 in 6,580,080), 7 prize ranks, 50 % payout, jackpot 40 % of the prizes, rolls over to a 5M cap, simulated players from all settlements, tickets bought in the bank window (own numbers or quick pick), draw every 5 days from a sealed stream",
+  "Colony lottery (pot model, off by default): 4 of 25, adjustable price, payout share, interval, fee and pot split; demand formula from KONZEPT; pot never negative; revenue goes to the colony till",
+  "UI: BankTabs 'invest' (portfolio with sparklines and charts, patience bonds, Omen, projects, news ticker) and 'lottery' (K28 help hint under every gambling screen). Fallback window 'Silverline investments' in the comms console float menu while BankApi.Impl is null (or with a nerd setting)",
+  "40+ settings (finance.* and lottery.*) with tier anchors for profitability and disasters (KONZEPT 9.2/8.8), per-category switches, nerd distribution view (median/mean/90 %/total loss)",
+  "Caretaker checks for orphaned positions and negative lottery pots; PrepareRemoval and Diagnosis lines",
+  "Texts: English table in FinanceText.cs as the single source; tools/gen_finance_keyed.py generates Keyed/HH_Finance.xml (202 keys); docs/finance.md"
+ ],
+ "not_done": [
+  "World-map sabotage site 'Project works' (needs site parts, guards, map gen). The bet, the strike effects and the API exist and are tested, but there is no site yet; there is only a dev-mode button",
+  "Colony IPO, Conflict Futures, the Black Ledger pyramid scheme (needs Underworld) and the Omen insider investigation",
+  "Savings contracts: no monthly top-ups; the Patience Bond is a lump sum only",
+  "Religious fund signals (ritual quality, ideology split) and the HH Holdings renown signal (renown lives in Hearth.dll, which this module must not reference)",
+  "NFT floor price decay of -1 %/day outside hype is not modelled (sale delay and spread are)",
+  "Guarantee-jackpot model for the colony lottery, lottery licence and Rigged draw (Underworld)",
+  "Colony lottery has no per-guest tickets or deliveries (demand is aggregated); guests are only counted as reach. Renown in the demand formula is fixed at 50",
+  "War-bond outcome is a hazard coin flip nudged by settlement count; the settlement-attribution rule (player-caused losses do not count) is not implemented",
+  "Layout never seen on screen: the quicktest game runs no OnGUI and ScreenCapture/screencapture produced nothing. The pages were drawn directly in-game without exceptions (12 draws), row widths and scroll panes are reasoned, not eyeballed",
+  "Only English texts; no DefInjected for asset blurbs"
+ ],
+ "tests": [
+  "Source/Tests/MarketsTests.cs: 75 xunit tests total (about 50 new): DetMath accuracy, expected value follows the slider for index, stock, crypto, fund, bond, war bond and NFT; manager alpha; memecoin mean vs median and rug share; largest single-hour jump bounded; jump compensation exactness; Omen odds, quotes, uninformed vs informed edge; project probability, quotes, limits, yearly cap and saboteur bound; lottery odds, uniform draws, rank shares, pot model never overpays, demand formula, own lottery earns at most 25 % of the 800 silver/day reference. All pass (Source/Tests/run.sh)",
+  "finance.math (61 checks): tier anchors, defs, drift finite, Monte Carlo in game, Keyed file in sync, tabs registered",
+  "finance.buy (43): buy/sell round trip costs only rounding, 5 decimals, ledger balanced, price moves daily, a week without NaN, NFT queue (1-4 days, spread 10-30 %), delisting payout, freeze and bank-run locks, patience bonds, caretaker",
+  "finance.signals (10), finance.omen (27: resolution by event, by expiry, NO payout, world market on shadow roll, 5 % cap), finance.projects (17: limits, short quote falls, no both sides, strike lowers P and locks shorts, quote fixed, settlement, 15 % cap, cutoff), finance.lottery (40: tickets, forced-number draw with jackpot win, pots never negative over 90 draws, colony pot model, caretaker), finance.save (9, Scribe round trip), finance.ui (draws every page directly). Run finance7: 9 suites, 221 checks, 0 failures, 0 errors in log. Builds also compile for 1.6 and 1.5"
+ ],
+ "contract_requests": [
+  "HSettings: a log-scale slider kind with tier interpolation in log space. The profitability setting is stored as ln(M) (finance.profitLog) because DefaultFor() interpolates linearly (100 at Comped would give 51 at tier 0.5). A shared Core widget for the K28 help hint (I wrote a local one, FinUi.HelpHint, with the links in Keyed HH.Finance.Help.Url1/2)",
+  "Bank module: embed BankTabs ids 'invest' (order 40) and 'lottery' (order 50) in the bank window. BankApi.Impl.ColonyAccount must be the ledger account that holds the colony's money (I use FinanceAccounts.Colony = Impl?.ColonyAccount ?? 'bank:colony')",
+  "Inn / Venues: call LotteryGame.Current.SellColonyTickets(n, who) after charging a guest who buys a colony lottery ticket; a renown getter (0-100) so the demand formula can use it instead of the fixed 50",
+  "Hearth world-map work: call FinanceGame.Current.ProjectSabotageStrike(projectId, guardsEscaped) and ProjectHelp(projectId) from the sabotage/delivery quests",
+  "Core: Tills/Payments stay as they are (colony lottery credits the till via Payments.CreditColony); optional Core API for a 'guest crowd size' so Silverline need not count visitor pawns itself"
+ ],
+ "integration_notes": [
+  "Module entry is Silverline.FinanceModule (second HearthModuleBase with ModuleId.Bank next to BankModule); no edits to BankModule.cs. Save data lives in two GameComponents, FinanceGame and LotteryGame, so removing the mod leaves a loadable save",
+  "Ledger accounts: bank:colony (or Impl.ColonyAccount), market:<assetId>, market:omen, market:projects, market:patience, bank:fees:finance, lottery:global:pool / jackpot, lottery:colony:pot / jackpot. market:* may go negative; lottery pots never",
+  "Harmony patch Patch_CommsConsole_Silverline adds the fallback float-menu option only while BankApi.Impl == null or finance.fallbackWindow is on; after the bank window exists it disappears by itself",
+  "Settings keys: finance.profitLog, volMult, jumpMult, hazardMult, cryptoOn, memeOn, nftOn, memeInterval, newsMessages, fallbackWindow, omenGamma/Fee/Spread/CapA/CapB, projectsOn, projectStakePct, projectTotalPct, projectYearCapPct; lottery.globalOn/Price/Quote/Interval, jackpotCap, internationalScale, colonyOn/Price/Quote/Interval/Fee/JackpotShare/SecondShare/ThirdShare/JackpotCap, demandBase",
+  "New XML def type: Silverline.AssetDef; other mods can add products without code. Faction-linked assets only appear in worlds that have that faction",
+  "English texts: edit FinanceText.cs, then run python3 tools/gen_finance_keyed.py. Test hooks (HH_TESTS only): InvestTab.TestSetPage/TestSelect, DrawGlobal(forcedNumbers). 1.5/1.6/1.7 Assemblies in the working tree are rebuilt output and not part of the commits",
+  "Net worth for stake limits = bank cash + portfolio + Omen/project stakes at cost; the project yearly cap uses the net worth at the start of the game year (60 days)"
+ ],
+ "textures": [
+  "UI/HH/Finance/NewsChance, Graphic_Single, 128x128 (dice icon in the news ticker, drawn at 16 px). Placeholder, not committed",
+  "UI/HH/Finance/NewsYou, Graphic_Single, 128x128 (gear icon in the news ticker, drawn at 16 px). Placeholder, not committed"
+ ],
+ "commit": "a322d16d1e16898837f59e1c354a0026c8c1b28d"
+}
