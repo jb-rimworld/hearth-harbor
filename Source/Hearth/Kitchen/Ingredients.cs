@@ -80,12 +80,17 @@ namespace Hearth.Kitchen
                 if (!Edible(t) || IsMeal(t)) return false;
                 if (!(InCat(t, catFoodRaw) || t.thingCategories?.Any(c => c.Parents.Contains(catFoodRaw)) == true || t.ingestible.foodType.HasFlag(FoodTypeFlags.VegetableOrFruit))) return false;
                 if (packages != null && (t.modContentPack == null || !packages.Any(p => string.Equals(p, t.modContentPack.PackageIdPlayerFacing, StringComparison.OrdinalIgnoreCase)))) return false;
-                string name = t.defName + " " + t.label;
-                if (substring) { string l = name.ToLowerInvariant(); if (!words.Any(w => l.Contains(w))) return false; }
-                else { var tok = new HashSet<string>(Tokens(name)); if (!words.Any(w => tok.Contains(w) || tok.Contains(w + "s"))) return false; }
-                if (not != null) { var tok2 = new HashSet<string>(Tokens(name)); if (not.Any(w => tok2.Contains(w))) return false; }
-                return true;
+                return NameMatches(t.defName + " " + t.label, words, not, substring);
             };
+        }
+
+        /// <summary>Name test used for the foods of other mods: whole words (camel case and spaces split them) or, for odd spellings, substrings.</summary>
+        public static bool NameMatches(string name, string[] words, string[] not = null, bool substring = false)
+        {
+            if (substring) { string l = name.ToLowerInvariant(); if (!words.Any(w => l.Contains(w))) return false; }
+            else { var tok = new HashSet<string>(Tokens(name)); if (!words.Any(w => tok.Contains(w) || tok.Contains(w + "s"))) return false; }
+            if (not != null) { var tok2 = new HashSet<string>(Tokens(name)); if (not.Any(w => tok2.Contains(w))) return false; }
+            return true;
         }
 
         static void Add(string key, string label, Func<ThingDef, bool> match, bool unit = false)

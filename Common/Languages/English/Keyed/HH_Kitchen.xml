@@ -116,4 +116,14 @@
   <HH.Setting.kitchen.allKnown.Desc>Skip learning: every dish of the menu can be cooked as soon as its devices stand.</HH.Setting.kitchen.allKnown.Desc>
   <HH.Setting.kitchen.darkMenu>Dark menu (long pork)</HH.Setting.kitchen.darkMenu>
   <HH.Setting.kitchen.darkMenu.Desc>Allow the long pork dishes. They are also unlocked by an ideoligion that approves of cannibalism.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Kitchen.Cookbook.Teaches>Teaches: {0}</HH.Kitchen.Cookbook.Teaches>
+  <HH.Kitchen.Cookbook.Empty>The pages are blank.</HH.Kitchen.Cookbook.Empty>
+  <HH.Kitchen.Cookbook.AllKnown>The colony already knows every dish in this book.</HH.Kitchen.Cookbook.AllKnown>
+  <HH.Kitchen.Cookbook.CannotCook>Cannot cook.</HH.Kitchen.Cookbook.CannotCook>
+  <HH.Kitchen.Cookbook.Learned>{0} studies the book. The colony can now cook: {1}.</HH.Kitchen.Cookbook.Learned>
+  <HH.Kitchen.TestKitchen.Success>{0} worked out how to cook {1}. The colony will remember.</HH.Kitchen.TestKitchen.Success>
+  <HH.Kitchen.TestKitchen.Failure>{0} tried to cook {1} and made a terrible plate of it. Maybe next time.</HH.Kitchen.TestKitchen.Failure>
+  <HH.Kitchen.NoNeighbours>No other kitchen device in reach.</HH.Kitchen.NoNeighbours>
+  <HH.Kitchen.Neighbours>In reach: {0}</HH.Kitchen.Neighbours>
+  <HH.Kitchen.FreshHours>Fresh for {0} h</HH.Kitchen.FreshHours>
 </LanguageData>

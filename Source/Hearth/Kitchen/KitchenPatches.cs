@@ -84,6 +84,28 @@ namespace Hearth.Kitchen
         }
     }
 
+    /// <summary>The test kitchen recipe turns its product into a plate of an unknown dish (learned on success, an Awful failure otherwise).</summary>
+    [HarmonyPatch(typeof(GenRecipe), "PostProcessProduct")]
+    static class Patch_TestKitchenProduct
+    {
+        [HarmonyPriority(Priority.Last)]
+        static void Postfix(ref Thing __result, RecipeDef recipeDef, Pawn worker)
+        {
+            if (__result == null || recipeDef.modExtensions == null || !Modules.On(ModuleId.ShopsFood)) return;
+            if (recipeDef.GetModExtension<TestKitchenExtension>() == null) return;
+            var original = __result;
+            Thing replaced = null; DishDef target = null; bool success = false;
+            Guard.Run(ModuleId.ShopsFood, "TestKitchen", () => replaced = TestKitchen.Experiment(original, worker, out target, out success));
+            if (replaced == null) return;
+            if (!original.Spawned && !original.Destroyed) original.Destroy();
+            __result = replaced;
+            string text = success
+                ? ("HH.Kitchen.TestKitchen.Success".TranslateOr("{0} worked out how to cook {1}. The colony will remember.")).Replace("{0}", worker.LabelShortCap).Replace("{1}", target.label)
+                : ("HH.Kitchen.TestKitchen.Failure".TranslateOr("{0} tried to cook {1} and made a terrible plate of it. Maybe next time.")).Replace("{0}", worker.LabelShortCap).Replace("{1}", target.label);
+            Messages.Message(text, worker, success ? MessageTypeDefOf.PositiveEvent : MessageTypeDefOf.NeutralEvent);
+        }
+    }
+
     [HarmonyPatch(typeof(CompFoodPoisonable), nameof(CompFoodPoisonable.Notify_RecipeProduced))]
     static class Patch_PoisonRule
     {

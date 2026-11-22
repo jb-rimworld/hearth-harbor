@@ -64,6 +64,22 @@ namespace Hearth.Kitchen
         /// <summary>Empty = ready. Otherwise why there is no recipe (e.g. "no ingredient of class fish loaded").</summary>
         [Unsaved] public string unavailableReason;
 
+        /// <summary>Soft tint of the plate: hue by cuisine, a little jitter by dish, low saturation so real art keeps its look.</summary>
+        public Color Tint
+        {
+            get
+            {
+                if (tintCache.a == 0f)
+                {
+                    float hue = ((int)cuisine * 0.083f + (Mathf.Abs(defName.GetHashCode()) % 1000) / 1000f * 0.05f) % 1f;
+                    tintCache = Color.HSVToRGB(hue, 0.18f + 0.02f * level, 1f);
+                    tintCache.a = 1f;
+                }
+                return tintCache;
+            }
+        }
+        [Unsaved] Color tintCache;
+
         public StationKind MainStation => stations.Count > 0 ? stations[stations.Count - 1] : StationKind.PrepCounter;
         public bool IsAvailable => unavailableReason == null && recipes.Count > 0;
         public string Id => defName.StartsWith("HH_Dish_") ? defName.Substring(8) : defName;

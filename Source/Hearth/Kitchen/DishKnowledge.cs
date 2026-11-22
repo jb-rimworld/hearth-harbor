@@ -31,9 +31,17 @@ namespace Hearth.Kitchen
 
         public static ResearchProjectDef LevelResearch(int level) => level <= 1 ? null : DefDatabase<ResearchProjectDef>.GetNamedSilentFail("HH_Cooking_L" + level);
 
+#if HH_TESTS
+        /// <summary>Tests only: pretend levels are locked (the quick-test game has all research finished).</summary>
+        public static Func<int, bool> TestLevelLock;
+#endif
+
         public static bool LevelUnlocked(int level)
         {
             if (level <= 1) return true;
+#if HH_TESTS
+            if (TestLevelLock != null) return TestLevelLock(level);
+#endif
             var r = LevelResearch(level);
             return r != null && r.IsFinished;
         }
@@ -47,6 +55,9 @@ namespace Hearth.Kitchen
             if (LevelUnlocked(d.level)) return true;
             return Instance != null && Instance.learned.Contains(d.defName);
         }
+
+        /// <summary>Tests and the dev menu: forget every individually learned dish.</summary>
+        public static void ForgetAll() { Instance?.learned.Clear(); }
 
         public static bool IsLearnedIndividually(DishDef d) => Instance != null && Instance.learned.Contains(d.defName);
 

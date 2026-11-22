@@ -17,6 +17,9 @@ namespace Hearth.Kitchen.Tests
         public static DishDef Dish(string id) => DefDatabase<DishDef>.GetNamed("HH_Dish_" + id);
         public static Pawn Colonist(Map map, int skip = 0) => map.mapPawns.FreeColonistsSpawned.Where(p => !p.Downed && !p.Dead).Skip(skip).FirstOrDefault();
 
+        /// <summary>A colonist who is allowed to cook (a disabled skill reads as level 0 and cannot be set).</summary>
+        public static Pawn Cook(Map map, int skip = 0) => map.mapPawns.FreeColonistsSpawned.Where(p => !p.Downed && !p.Dead && !p.WorkTypeIsDisabled(Cooking)).Skip(skip).FirstOrDefault();
+
         public static void Clear(Map map, IntVec3 center, int r, bool floor = false)
         {
             foreach (var c in CellRect.CenteredOn(center, r).Cells.ToList())
@@ -185,22 +188,31 @@ namespace Hearth.Kitchen.Tests
             foreach (var k in new[] { "HH.Kitchen.Missing", "HH.Kitchen.FreshFor", "HH.Kitchen.Stale", "HH.Kitchen.Station.Wok", "HH.Kitchen.Step.KneadDough", "HH.Kitchen.Cuisine.TavernFare" }) t.Check(k.CanTranslate(), "keyed " + k);
             t.Check(GuestActivities.All.Any(a => a.Id == "kitchen.eat"), "guest activity kitchen.eat registered");
 
-            // knowledge: level 1 known, level 2 not until researched
+            // knowledge: level 1 known, levels 2-4 only with their research (the quick-test game has all research finished, so the lock is simulated)
             var l1 = KT.Dish("BerryCompote"); var l2 = KT.Dish("MuffaloGoulash");
             t.Check(DishKnowledge.IsKnown(l1) && l1.recipes[0].AvailableNow, "level 1 dishes are known and listed");
-            var l2Research = DishKnowledge.LevelResearch(2);
-            if (!l2Research.IsFinished)
-            {
-                t.Check(!DishKnowledge.IsKnown(l2) && !l2.recipes[0].AvailableNow, "level 2 dishes are hidden before the research");
-                HSettings.Set("kitchen.allKnown", 1f);
-                t.Check(DishKnowledge.IsKnown(l2) && l2.recipes[0].AvailableNow, "'All dishes known' reveals them");
-                HSettings.Set("kitchen.allKnown", 0f);
-                t.Check(DishKnowledge.Learn(l2) && DishKnowledge.IsKnown(l2) && !DishKnowledge.Learn(l2), "a single dish can be learned (cookbook)");
-            }
+            DishKnowledge.TestLevelLock = lv => false;
+            DishKnowledge.ForgetAll();
+            t.Check(!DishKnowledge.IsKnown(l2) && !l2.recipes[0].AvailableNow && l1.recipes[0].AvailableNow, "level 2 dishes are hidden before the research");
+            t.Check(!KT.Dish("Rendang").recipes[0].AvailableNow && !KT.Dish("Rendang").recipes[2].AvailableNow, "level 4 dishes too");
+            HSettings.Set("kitchen.allKnown", 1f);
+            t.Check(DishKnowledge.IsKnown(l2) && l2.recipes[0].AvailableNow, "'All dishes known' reveals them");
+            HSettings.Set("kitchen.allKnown", 0f);
+            t.Check(DishKnowledge.Learn(l2) && DishKnowledge.IsKnown(l2) && l2.recipes[0].AvailableNow && !DishKnowledge.Learn(l2), "a single dish can be learned (cookbook)");
+            t.Check(!DishKnowledge.IsKnown(KT.Dish("ColonyPaella")), "other dishes of the level stay hidden");
+            DishKnowledge.ForgetAll();
+            DishKnowledge.TestLevelLock = null;
+            t.Check(DishKnowledge.LevelUnlocked(1) && DefDatabase<ResearchProjectDef>.GetNamedSilentFail("HH_Cooking_L1")?.IsFinished == true, "level 1 is free (research finished at game start)");
             var dark = KT.Dish("LongPorkStew");
             t.Check(!DishKnowledge.IsKnown(dark) || DishKnowledge.DarkAllowed(), "dark menu hidden by default");
             HSettings.Set("kitchen.variants", 0f); t.Check(!l1.recipes[1].AvailableNow && l1.recipes[0].AvailableNow, "Fine and Signature forms can be switched off"); HSettings.Set("kitchen.variants", 1f);
             t.Check(DishKnowledge.Known().Count() >= 21, "known dishes listed: " + DishKnowledge.Known().Count());
+            // foods of other mods are found by name
+            t.Check(IngredientClasses.NameMatches("VCE_CheeseWheel Cheese wheel", new[] { "cheese" }) && IngredientClasses.NameMatches("Cheddar cheese", new[] { "cheese" }) && !IngredientClasses.NameMatches("Cheeseburger", new[] { "cheese" }), "name match: cheese, not cheeseburger");
+            t.Check(IngredientClasses.NameMatches("VPE_Walnuts walnuts", new[] { "nut", "walnut" }, new[] { "doughnut" }) && !IngredientClasses.NameMatches("Doughnut", new[] { "nut" }, new[] { "doughnut" }) && !IngredientClasses.NameMatches("Steak", new[] { "tea" }), "name match: nuts yes, doughnut and steak no");
+            t.Check(IngredientClasses.NameMatches("Kenshi_Strawflour strawflour", new[] { "strawflour" }, substring: true) && IngredientClasses.NameMatches("ItemRedWine", new[] { "wine" }), "name match: substring and camel case");
+            t.Check(IngredientClasses.Find("meat") != null && IngredientClasses.Find("meat").Things.Count > 10 && IngredientClasses.Find("insectmeat").Things.All(x => x.IsMeat) && IngredientClasses.Find("meat").Things.All(x => !IngredientClasses.Find("humanmeat").Things.Contains(x)), "meat classes do not overlap");
+            t.Check(IngredientClasses.Find("fish").Things.Count > 5 && IngredientClasses.Find("eggs").Things.All(x => x.IsEgg), "fish and eggs found");
             t.Check(HLog.ErrorCount == errorsBefore, "no errors logged while checking");
             yield break;
         }
@@ -231,7 +243,7 @@ namespace Hearth.Kitchen.Tests
             t.Check(Math.Abs(dbl.Silver - 2 * pn.Silver) < 0.3, "menu price setting scales: " + dbl);
 
             // quality rerolls: Signature (2 extra rolls, skill +5) beats Everyday on average
-            var cook = KT.Colonist(t.Map);
+            var cook = KT.Cook(t.Map);
             cook.skills.GetSkill(SkillDefOf.Cooking).Level = 6;
             var plate = ThingMaker.MakeThing(d3.plateDef); var qc = plate.TryGetComp<CompQuality>();
             double sum0 = 0, sum2 = 0; int n = 400;
@@ -347,11 +359,38 @@ namespace Hearth.Kitchen.Tests
 
             // --- hidden until learned: recipe list of a work table
             var oven = KT.SpawnDef(map, "HH_Station_Oven", area + new IntVec3(0, 0, -6));
-            var roast = KT.Dish("RoastPotatoes");
+            var roast = KT.Dish("PotatoGratin");
             bool listed = oven.def.AllRecipes.Contains(roast.recipes[0]);
-            t.Check(listed, "the oven offers the potato recipe");
-            if (!DishKnowledge.LevelUnlocked(roast.level)) t.Check(!roast.recipes[0].AvailableNow, "...but it stays out of the menu until learned: AvailableNow=" + roast.recipes[0].AvailableNow);
-            else t.Check(roast.recipes[0].AvailableNow, "level 2 already researched");
+            t.Check(listed, "the oven offers the gratin recipe");
+            DishKnowledge.TestLevelLock = lv => false;
+            t.Check(!roast.recipes[0].AvailableNow, "...but it stays out of the menu until learned: AvailableNow=" + roast.recipes[0].AvailableNow);
+            DishKnowledge.TestLevelLock = lv => lv <= 2;
+            t.Check(roast.recipes[0].AvailableNow && !KT.Dish("Rendang").recipes[0].AvailableNow, "once level 2 is researched it is listed (level 4 still hidden)");
+            DishKnowledge.TestLevelLock = null;
+            var info = pot.GetInspectString();
+            t.Check(info.Contains("In reach") && info.Contains("Prep counter"), "inspect pane lists the devices in reach: " + info.Replace("\n", " | "));
+
+            // --- the test kitchen recipe, run by the cook: the plate is a real dish (known or not)
+            DishKnowledge.TestLevelLock = lv => false; DishKnowledge.ForgetAll();
+            var tk = DefDatabase<RecipeDef>.GetNamed("HH_TestKitchen");
+            t.Check(tk.AvailableNow && prep.def.AllRecipes.Contains(tk), "the test kitchen is offered at the prep counter");
+            KT.Fuel(prep);
+            var spuds = ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("RawPotatoes")); spuds.stackCount = 40;
+            GenPlace.TryPlaceThing(spuds, prep.Position + new IntVec3(0, 0, -2), map, ThingPlaceMode.Near);
+            var tbill = (Bill_Production)tk.MakeNewBill(); ((IBillGiver)prep).BillStack.AddBill(tbill); tbill.repeatMode = BillRepeatModeDefOf.RepeatCount; tbill.repeatCount = 1;
+            var dishPlatesBefore = map.listerThings.AllThings.Count(x => x.TryGetComp<CompDish>() != null);
+            KT.ClearJob(cook); cook.skills.GetSkill(SkillDefOf.Cooking).Level = 8;
+            foreach (var w in KT.WaitUntil(() => map.listerThings.AllThings.Count(x => x.TryGetComp<CompDish>() != null) > dishPlatesBefore, 12000, 60)) yield return w;
+            var experiment = map.listerThings.AllThings.LastOrDefault(x => x.TryGetComp<CompDish>() != null && x.Position.DistanceTo(prep.Position) < 12f);
+            t.Check(experiment != null && experiment.TryGetComp<CompDish>().dish != null && experiment.TryGetComp<CompDish>().dish.level == 2, "the experiment yielded a plate of a level 2 dish: " + experiment?.LabelNoCount);
+            if (experiment != null)
+            {
+                bool learnedNow = DishKnowledge.IsKnown(experiment.TryGetComp<CompDish>().dish);
+                experiment.TryGetQuality(out var eq);
+                t.Check(learnedNow || eq == QualityCategory.Awful, "success is learned, failure is Awful: learned=" + learnedNow + " quality=" + eq);
+                experiment.Destroy();
+            }
+            DishKnowledge.ForgetAll(); DishKnowledge.TestLevelLock = null;
 
             // cleanup
             KT.Cleanup(map, area, 9);
@@ -434,7 +473,7 @@ namespace Hearth.Kitchen.Tests
         public override int MaxTicks => 10000;
         public override IEnumerable<int> Run(TestContext t)
         {
-            var map = t.Map; var cook = KT.Colonist(map, 2) ?? KT.Colonist(map);
+            var map = t.Map; var cook = KT.Cook(map, 1) ?? KT.Cook(map);
             var center = map.Center + new IntVec3(-16, 0, -14);
             KT.Clear(map, center, 8, floor: true);
             var inner = KT.Room(map, center, 7);
@@ -578,6 +617,82 @@ namespace Hearth.Kitchen.Tests
             t.Check(Restaurant.PendingSales == 0, "no open sale");
             KT.ClearJob(guest); KT.Cleanup(map, center, 9);
             foreach (var p in map.mapPawns.AllPawnsSpawned.Where(GuestApi.IsGuest).ToList()) { p.GetLord()?.lordManager.RemoveLord(p.GetLord()); p.Destroy(); }
+        }
+    }
+
+    /// <summary>Learning: recipe books, the test kitchen, the cookbook page, plate tint.</summary>
+    public sealed class LearnSuite : HearthTestSuite
+    {
+        public override string Name => "kitchen.learn";
+        public override ModuleId Module => ModuleId.ShopsFood;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var map = t.Map; var pawn = KT.Cook(map);
+            DishKnowledge.TestLevelLock = lv => false; DishKnowledge.ForgetAll();
+            try
+            {
+                // recipe book
+                var def = DefDatabase<ThingDef>.GetNamed("HH_Cookbook");
+                var book = ThingMaker.MakeThing(def); var bc = book.TryGetComp<CompCookbook>();
+                t.Check(bc != null && bc.dishes.Count >= 1 && bc.dishes.Count <= 3 && bc.dishes.All(d => d.IsAvailable && !d.dark), "a new book teaches 1-3 dishes: " + string.Join(", ", bc.dishes.Select(d => d.label)));
+                t.Check(book.LabelNoCount.Contains(bc.dishes[0].label), "the label lists the dishes: " + book.LabelNoCount);
+                var use = book.TryGetComp<CompUseEffect_LearnDishes>();
+                t.Check(use != null && use.CanBeUsedBy(pawn).Accepted == (bc.AnythingToLearn), "usable while something is unknown");
+                bc.dishes.Clear(); bc.dishes.Add(KT.Dish("ColonyPaella")); bc.dishes.Add(KT.Dish("Laksa"));
+                t.Check(!DishKnowledge.IsKnown(KT.Dish("Laksa")) && use.CanBeUsedBy(pawn).Accepted, "dishes unknown before reading");
+                use.DoEffect(pawn);
+                t.Check(DishKnowledge.IsKnown(KT.Dish("Laksa")) && DishKnowledge.IsKnown(KT.Dish("ColonyPaella")) && KT.Dish("Laksa").recipes[0].AvailableNow, "reading teaches the dishes to the colony");
+                t.Check(!use.CanBeUsedBy(pawn).Accepted, "a book with only known dishes cannot be used again");
+                book.Destroy();
+
+                // test kitchen odds: better cooks work out more dishes
+                var cands = TestKitchen.Candidates();
+                t.Check(TestKitchen.HighestOpenLevel() == 2 && cands.Count > 20 && cands.All(d => d.level <= 2), "the open level is one above the unlocked ones: " + cands.Count + " candidates");
+                var d6 = KT.Dish("MuffaloGoulash");     // min Cooking 5
+                pawn.skills.GetSkill(SkillDefOf.Cooking).Level = 5;
+                t.Check(Math.Abs(TestKitchen.SuccessChance(pawn, d6) - 0.15f) < 0.001f, "p = 0.15 at the minimum skill");
+                pawn.skills.GetSkill(SkillDefOf.Cooking).Level = 12;
+                t.Check(Math.Abs(TestKitchen.SuccessChance(pawn, d6) - 0.29f) < 0.001f, "+0.02 per skill level: 0.29 at Cooking 12");
+                pawn.skills.GetSkill(SkillDefOf.Cooking).Level = 0; t.Check(Math.Abs(TestKitchen.SuccessChance(pawn, d6) - 0.05f) < 0.0001f, "never below 5 %");
+                int win = 0, lose = 0, loseAwful = 0, n = 600;
+                pawn.skills.GetSkill(SkillDefOf.Cooking).Level = 15;
+                for (int i = 0; i < n; i++)
+                {
+                    DishKnowledge.ForgetAll();
+                    var product = ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("HH_Plate_Stew")); product.TryGetComp<CompQuality>().SetQuality(QualityCategory.Good, ArtGenerationContext.Colony);
+                    var plate = TestKitchen.Experiment(product, pawn, out var target, out bool success);
+                    bool known = DishKnowledge.IsKnown(target);
+                    plate.TryGetQuality(out var q);
+                    if (success) { win++; if (!known || q != QualityCategory.Good) lose += 1000; } else { lose++; if (q == QualityCategory.Awful && !known) loseAwful++; }
+                    if (plate.TryGetComp<CompDish>().dish != target) lose += 1000;
+                    plate.Destroy(); product.Destroy();
+                }
+                float rate = win / (float)n;
+                t.Check(rate > 0.2f && rate < 0.5f, $"success rate at skill 15 is about 25-35 %: {rate:0.00}");
+                t.Check(lose < 1000 && loseAwful == n - win, "failures are Awful plates of the unknown dish, successes are learned: " + loseAwful + "/" + (n - win));
+                DishKnowledge.ForgetAll();
+
+                // cookbook page rows
+                var rows = CookbookPage.Rows();
+                int dishCount = DefDatabase<DishDef>.AllDefs.Count(d => !d.dark);
+                t.Check(rows.Count == dishCount, "page lists every dish except the dark menu: " + rows.Count + "/" + dishCount);
+                var unknown = rows.First(r => !r.Known);
+                t.Check(unknown.Name == "???" && unknown.Hint.Contains("Research") && unknown.Hint.Contains(DishKnowledge.LevelResearch(unknown.Dish.level).LabelCap), "unknown dishes show ??? and where to learn them: " + unknown.Hint);
+                t.Check(CookbookPage.Rows(null, true).All(r => r.Known) && CookbookPage.Rows(null, true).Count == rows.Count(r => r.Known), "only-known filter");
+                t.Check(CookbookPage.Rows("ramen").Any(r => r.Dish.defName == "HH_Dish_MuffaloRamen") == false && CookbookPage.Rows("compote").Count == 1, "search finds known dishes only");
+                t.Check(HearthTabs.Pages.Any(p => p.Id == "kitchen"), "cookbook page registered in the main tab");
+                DishKnowledge.TestLevelLock = lv => true;
+                var all = CookbookPage.Rows(); t.Check(all.All(r => r.Known || !r.Dish.IsAvailable || r.Dish.dark), "with all levels open everything with a recipe is known: " + string.Join(", ", all.Where(r => !r.Known).Select(r => r.Dish.defName + " L" + r.Dish.level)) + " / research L2-4: " + string.Join(",", new[] { 2, 3, 4 }.Select(l => DishKnowledge.LevelUnlocked(l))));
+
+                // tint
+                var plateT = KT.MakePlate(map, KT.Dish("MuffaloBourguignon"), map.Center + new IntVec3(-3, 0, 25));
+                var empty = ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("HH_Plate_Stew"));
+                t.Check(plateT.DrawColor == KT.Dish("MuffaloBourguignon").Tint && plateT.DrawColor != Color.white && plateT.DrawColor.r > 0.7f && plateT.DrawColor.g > 0.7f && plateT.DrawColor.b > 0.7f, "plates carry a soft tint per dish: " + plateT.DrawColor);
+                t.Check(KT.Dish("Rendang").Tint != KT.Dish("Ramen".Length > 0 ? "MuffaloRamen" : "Rendang").Tint, "different dishes tint differently");
+                plateT.Destroy(); empty.Destroy();
+            }
+            finally { DishKnowledge.TestLevelLock = null; DishKnowledge.ForgetAll(); }
+            yield break;
         }
     }
 }

@@ -41,6 +41,7 @@
     <statBases><WorkToBuild>500</WorkToBuild><MaxHitPoints>160</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
     <uiOrder>2200</uiOrder>
     <comps>
+      <li><compClass>Hearth.Kitchen.CompStationInfo</compClass></li>
 
     </comps>
     <modExtensions>
@@ -64,6 +65,7 @@
     <statBases><WorkToBuild>600</WorkToBuild><MaxHitPoints>150</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
     <uiOrder>2201</uiOrder>
     <comps>
+      <li><compClass>Hearth.Kitchen.CompStationInfo</compClass></li>
       <li Class="CompProperties_Refuelable">
         <fuelConsumptionRate>40</fuelConsumptionRate><fuelCapacity>40</fuelCapacity>
         <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
@@ -92,6 +94,7 @@
     <statBases><WorkToBuild>900</WorkToBuild><MaxHitPoints>180</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
     <uiOrder>2202</uiOrder>
     <comps>
+      <li><compClass>Hearth.Kitchen.CompStationInfo</compClass></li>
       <li Class="CompProperties_Refuelable">
         <fuelConsumptionRate>60</fuelConsumptionRate><fuelCapacity>40</fuelCapacity>
         <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
@@ -120,6 +123,7 @@
     <statBases><WorkToBuild>1400</WorkToBuild><MaxHitPoints>200</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
     <uiOrder>2203</uiOrder>
     <comps>
+      <li><compClass>Hearth.Kitchen.CompStationInfo</compClass></li>
       <li Class="CompProperties_Refuelable">
         <fuelConsumptionRate>70</fuelConsumptionRate><fuelCapacity>40</fuelCapacity>
         <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
@@ -149,6 +153,7 @@
     <statBases><WorkToBuild>900</WorkToBuild><MaxHitPoints>140</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
     <uiOrder>2204</uiOrder>
     <comps>
+      <li><compClass>Hearth.Kitchen.CompStationInfo</compClass></li>
       <li Class="CompProperties_Refuelable">
         <fuelConsumptionRate>50</fuelConsumptionRate><fuelCapacity>40</fuelCapacity>
         <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
@@ -179,6 +184,7 @@
     <uiOrder>2205</uiOrder>
     <researchPrerequisites><li>Electricity</li></researchPrerequisites>
     <comps>
+      <li><compClass>Hearth.Kitchen.CompStationInfo</compClass></li>
       <li Class="CompProperties_Power"><compClass>CompPowerTrader</compClass><shortCircuitInRain>true</shortCircuitInRain><basePowerConsumption>250</basePowerConsumption></li>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
@@ -206,6 +212,7 @@
     <statBases><WorkToBuild>800</WorkToBuild><MaxHitPoints>160</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
     <uiOrder>2206</uiOrder>
     <comps>
+      <li><compClass>Hearth.Kitchen.CompStationInfo</compClass></li>
       <li Class="CompProperties_Refuelable">
         <fuelConsumptionRate>50</fuelConsumptionRate><fuelCapacity>40</fuelCapacity>
         <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
@@ -235,6 +242,7 @@
     <statBases><WorkToBuild>900</WorkToBuild><MaxHitPoints>140</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
     <uiOrder>2207</uiOrder>
     <comps>
+      <li><compClass>Hearth.Kitchen.CompStationInfo</compClass></li>
       <li Class="CompProperties_Refuelable">
         <fuelConsumptionRate>50</fuelConsumptionRate><fuelCapacity>40</fuelCapacity>
         <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
@@ -264,6 +272,7 @@
     <statBases><WorkToBuild>600</WorkToBuild><MaxHitPoints>160</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
     <uiOrder>2208</uiOrder>
     <comps>
+      <li><compClass>Hearth.Kitchen.CompStationInfo</compClass></li>
 
     </comps>
     <modExtensions>
@@ -288,6 +297,7 @@
     <uiOrder>2209</uiOrder>
     <researchPrerequisites><li>Electricity</li></researchPrerequisites>
     <comps>
+      <li><compClass>Hearth.Kitchen.CompStationInfo</compClass></li>
       <li Class="CompProperties_Power"><compClass>CompPowerTrader</compClass><shortCircuitInRain>true</shortCircuitInRain><basePowerConsumption>150</basePowerConsumption></li>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>

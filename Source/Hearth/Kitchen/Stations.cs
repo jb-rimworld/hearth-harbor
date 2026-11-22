@@ -163,3 +163,20 @@ namespace Hearth.Kitchen
         }
     }
 }
+
+namespace Hearth.Kitchen
+{
+    /// <summary>On every kitchen device: shows which other devices are in reach (the same room, within 8 cells) in the inspect pane.</summary>
+    public class CompStationInfo : ThingComp
+    {
+        public override string CompInspectStringExtra()
+        {
+            if (!parent.Spawned || !Modules.On(ModuleId.ShopsFood)) return null;
+            int mask = Stations.KindsAround(parent) & ~Stations.KindMask(parent.def);
+            if (mask == 0) return "HH.Kitchen.NoNeighbours".TranslateOr("No other kitchen device in reach.");
+            var kinds = new System.Collections.Generic.List<string>();
+            foreach (StationKind k in System.Enum.GetValues(typeof(StationKind))) if ((mask & Stations.Bit(k)) != 0) kinds.Add(Stations.LabelOf(k));
+            return ("HH.Kitchen.Neighbours".TranslateOr("In reach: {0}")).Replace("{0}", string.Join(", ", kinds));
+        }
+    }
+}

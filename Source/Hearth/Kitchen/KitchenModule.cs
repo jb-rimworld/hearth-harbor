@@ -35,6 +35,7 @@ namespace Hearth.Kitchen
             Stations.AssignResearch();
             RecipeBuilder.BuildAll();
             GuestActivities.Register(new RestaurantActivity());
+            CookbookPage.Register();
             HLog.Info(Cat, $"Kitchen ready: {DefDatabase<DishDef>.DefCount} dishes, {RecipeBuilder.Built} recipes");
         }
 

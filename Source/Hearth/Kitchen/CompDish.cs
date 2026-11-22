@@ -45,6 +45,7 @@ namespace Hearth.Kitchen
         {
             dish = d; variant = variantIndex; freshAge = 0f; lastTick = Find.TickManager?.TicksGame ?? -1;
             Sync();
+            parent.Notify_ColorChanged();
         }
 
         public override void PostExposeData()
