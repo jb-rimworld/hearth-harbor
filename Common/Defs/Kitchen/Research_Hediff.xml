@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Learning levels of the kitchen (KONZEPT 6.4, N46). Level 1 is finished at the start of every game; 2 to 4 unlock the dishes of that level. -->
+  <ResearchProjectDef>
+    <defName>HH_Cooking_L1</defName>
+    <label>home cooking</label>
+    <description>Stews, porridge, fried eggs and everything else a hungry colony cooks without a recipe book. Known from the start.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <tab>HH_Hospitality</tab>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>7.00</researchViewY>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>HH_Cooking_L2</defName>
+    <label>hearty fare</label>
+    <description>Roasts, sausages, noodles, baked eggs and fried everything. Learn the dishes of level 2 and build the smoker and the oven.</description>
+    <baseCost>450</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>HH_Hospitality</tab>
+    <prerequisites><li>HH_Cooking_L1</li></prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>7.00</researchViewY>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>HH_Cooking_L3</defName>
+    <label>upscale kitchen</label>
+    <description>Bourguignon, paella, nigiri and a hundred ways to make rice seem important. Learn the dishes of level 3 and build the steamer, the wok station, the cold station and the deep fryer.</description>
+    <baseCost>900</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>HH_Hospitality</tab>
+    <prerequisites><li>HH_Cooking_L2</li></prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>7.00</researchViewY>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>HH_Cooking_L4</defName>
+    <label>haute cuisine</label>
+    <description>Wellington, souffle, omakase and the Signature form of every dish. Learn the dishes of level 4. Only for cooks who have seen the inside of a restaurant guide.</description>
+    <baseCost>1800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>HH_Hospitality</tab>
+    <prerequisites><li>HH_Cooking_L3</li></prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>7.00</researchViewY>
+  </ResearchProjectDef>
+
+  <HediffDef>
+    <defName>HH_WellFed</defName>
+    <label>well fed</label>
+    <description>A proper dish keeps the stomach quiet for longer: hunger falls slower while this lasts.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.55, 0.80, 0.45)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>25000~25000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

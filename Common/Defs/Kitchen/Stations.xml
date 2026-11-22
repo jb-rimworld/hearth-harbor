@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Kitchen devices (KONZEPT 6.4). Normal work tables with bills, so robots and Project RimFactory machines can use them. -->
+  <ThingDef Name="HH_KitchenStationBase" ParentName="BenchBase" Abstract="True">
+    <thingClass>Building_WorkTable_HeatPush</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <constructEffect>ConstructMetal</constructEffect>
+    <designationCategory>Production</designationCategory>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <inspectorTabs><li>ITab_Bills</li></inspectorTabs>
+    <statBases><Flammability>1.0</Flammability></statBases>
+    <building>
+      <isMealSource>true</isMealSource>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+      <heatPerTickWhileWorking>0.10</heatPerTickWhileWorking>
+      <workTableRoomRole>Kitchen</workTableRoomRole>
+      <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
+    </building>
+    <placeWorkers><li>PlaceWorker_PreventInteractionSpotOverlap</li></placeWorkers>
+  </ThingDef>
+  <ThingDef ParentName="HH_KitchenStationBase">
+    <defName>HH_Station_PrepCounter</defName>
+    <label>prep counter</label>
+    <description>A scarred counter with a cutting board, a good knife and a drainage groove nobody asked about. Chop, slice and carve here; other devices of a dish must stand close by.</description>
+    <graphicData>
+      <texPath>Things/HH/Kitchen/PrepCounter</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,1)</drawSize>
+      <damageData><cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR><cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR></damageData>
+    </graphicData>
+    <size>(2,1)</size>
+    <costList><WoodLog>40</WoodLog></costList>
+    <statBases><WorkToBuild>500</WorkToBuild><MaxHitPoints>160</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
+    <uiOrder>2200</uiOrder>
+    <comps>
+
+    </comps>
+    <modExtensions>
+      <li Class="Hearth.Kitchen.StationExtension">
+        <kind>PrepCounter</kind>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="HH_KitchenStationBase">
+    <defName>HH_Station_StockPot</defName>
+    <label>stock pot</label>
+    <description>A big iron pot over a wood fire. Simmers, boils and stews anything that was ever alive. Burns wood while it works.</description>
+    <graphicData>
+      <texPath>Things/HH/Kitchen/StockPot</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData><cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR><cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR></damageData>
+    </graphicData>
+    <size>(1,1)</size>
+    <costList><Steel>25</Steel><WoodLog>10</WoodLog></costList>
+    <statBases><WorkToBuild>600</WorkToBuild><MaxHitPoints>150</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
+    <uiOrder>2201</uiOrder>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>40</fuelConsumptionRate><fuelCapacity>40</fuelCapacity>
+        <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle><canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="CompProperties_HeatPusher"><compClass>CompHeatPusherPowered</compClass><heatPerSecond>3</heatPerSecond></li>
+    </comps>
+    <modExtensions>
+      <li Class="Hearth.Kitchen.StationExtension">
+        <kind>StockPot</kind>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="HH_KitchenStationBase">
+    <defName>HH_Station_Grill</defName>
+    <label>grill</label>
+    <description>A grate over glowing coals. Meat goes on raw, comes off with opinions. Burns wood while it works.</description>
+    <graphicData>
+      <texPath>Things/HH/Kitchen/Grill</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,1)</drawSize>
+      <damageData><cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR><cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR></damageData>
+    </graphicData>
+    <size>(2,1)</size>
+    <costList><Steel>40</Steel><WoodLog>10</WoodLog></costList>
+    <statBases><WorkToBuild>900</WorkToBuild><MaxHitPoints>180</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
+    <uiOrder>2202</uiOrder>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>60</fuelConsumptionRate><fuelCapacity>40</fuelCapacity>
+        <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle><canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="CompProperties_HeatPusher"><compClass>CompHeatPusherPowered</compClass><heatPerSecond>5</heatPerSecond></li>
+    </comps>
+    <modExtensions>
+      <li Class="Hearth.Kitchen.StationExtension">
+        <kind>Grill</kind>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="HH_KitchenStationBase">
+    <defName>HH_Station_Oven</defName>
+    <label>oven</label>
+    <description>A stone and iron oven for roasting and baking. Takes a long time to heat and a short time to ruin dinner. Burns wood while it works.</description>
+    <graphicData>
+      <texPath>Things/HH/Kitchen/Oven</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,1)</drawSize>
+      <damageData><cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR><cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR></damageData>
+    </graphicData>
+    <size>(2,1)</size>
+    <costList><Steel>50</Steel><WoodLog>10</WoodLog></costList>
+    <statBases><WorkToBuild>1400</WorkToBuild><MaxHitPoints>200</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
+    <uiOrder>2203</uiOrder>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>70</fuelConsumptionRate><fuelCapacity>40</fuelCapacity>
+        <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle><canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="CompProperties_HeatPusher"><compClass>CompHeatPusherPowered</compClass><heatPerSecond>6</heatPerSecond></li>
+    </comps>
+    <modExtensions>
+      <li Class="Hearth.Kitchen.StationExtension">
+        <kind>Oven</kind>
+        <researchHint>HH_Innkeeping</researchHint><fallbackResearch>HH_Cooking_L2</fallbackResearch>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="HH_KitchenStationBase">
+    <defName>HH_Station_WokStation</defName>
+    <label>wok station</label>
+    <description>A round-bottomed pan over a roaring flame. Everything is stir-fried here, including the cook's eyebrows. Burns wood while it works.</description>
+    <graphicData>
+      <texPath>Things/HH/Kitchen/WokStation</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData><cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR><cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR></damageData>
+    </graphicData>
+    <size>(1,1)</size>
+    <costList><Steel>35</Steel></costList>
+    <statBases><WorkToBuild>900</WorkToBuild><MaxHitPoints>140</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
+    <uiOrder>2204</uiOrder>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>50</fuelConsumptionRate><fuelCapacity>40</fuelCapacity>
+        <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle><canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="CompProperties_HeatPusher"><compClass>CompHeatPusherPowered</compClass><heatPerSecond>4</heatPerSecond></li>
+    </comps>
+    <modExtensions>
+      <li Class="Hearth.Kitchen.StationExtension">
+        <kind>Wok</kind>
+        <researchHint>HH_Gastronomy</researchHint><fallbackResearch>HH_Cooking_L3</fallbackResearch>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="HH_KitchenStationBase">
+    <defName>HH_Station_DeepFryer</defName>
+    <label>deep fryer</label>
+    <description>A vat of boiling oil with a basket and a strong sense of its own danger. Electric. Catches fire more readily than anything else in the kitchen.</description>
+    <graphicData>
+      <texPath>Things/HH/Kitchen/DeepFryer</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData><cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR><cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR></damageData>
+    </graphicData>
+    <size>(1,1)</size>
+    <costList><Steel>60</Steel><ComponentIndustrial>1</ComponentIndustrial></costList>
+    <statBases><WorkToBuild>1300</WorkToBuild><MaxHitPoints>140</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
+    <uiOrder>2205</uiOrder>
+    <researchPrerequisites><li>Electricity</li></researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power"><compClass>CompPowerTrader</compClass><shortCircuitInRain>true</shortCircuitInRain><basePowerConsumption>250</basePowerConsumption></li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_HeatPusher"><compClass>CompHeatPusherPowered</compClass><heatPerSecond>3</heatPerSecond></li>
+    </comps>
+    <modExtensions>
+      <li Class="Hearth.Kitchen.StationExtension">
+        <kind>Fryer</kind>
+        <researchHint>HH_HotelManagement</researchHint><fallbackResearch>HH_Cooking_L3</fallbackResearch>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="HH_KitchenStationBase">
+    <defName>HH_Station_Smoker</defName>
+    <label>smoker</label>
+    <description>A tall wooden cabinet that turns meat into something that lasts. Needs wood chips, patience and no neighbours. Burns wood while it works.</description>
+    <graphicData>
+      <texPath>Things/HH/Kitchen/Smoker</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData><cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR><cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR></damageData>
+    </graphicData>
+    <size>(1,1)</size>
+    <costList><WoodLog>50</WoodLog></costList>
+    <statBases><WorkToBuild>800</WorkToBuild><MaxHitPoints>160</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
+    <uiOrder>2206</uiOrder>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>50</fuelConsumptionRate><fuelCapacity>40</fuelCapacity>
+        <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle><canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="CompProperties_HeatPusher"><compClass>CompHeatPusherPowered</compClass><heatPerSecond>2</heatPerSecond></li>
+    </comps>
+    <modExtensions>
+      <li Class="Hearth.Kitchen.StationExtension">
+        <kind>Smoker</kind>
+        <researchHint>HH_Innkeeping</researchHint><fallbackResearch>HH_Cooking_L2</fallbackResearch>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="HH_KitchenStationBase">
+    <defName>HH_Station_Steamer</defName>
+    <label>steamer</label>
+    <description>Stacked bamboo baskets over a pot of boiling water. Soft, gentle and almost impossible to burn. Burns wood while it works.</description>
+    <graphicData>
+      <texPath>Things/HH/Kitchen/Steamer</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData><cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR><cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR></damageData>
+    </graphicData>
+    <size>(1,1)</size>
+    <costList><Steel>40</Steel></costList>
+    <statBases><WorkToBuild>900</WorkToBuild><MaxHitPoints>140</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
+    <uiOrder>2207</uiOrder>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>50</fuelConsumptionRate><fuelCapacity>40</fuelCapacity>
+        <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle><canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="CompProperties_HeatPusher"><compClass>CompHeatPusherPowered</compClass><heatPerSecond>3</heatPerSecond></li>
+    </comps>
+    <modExtensions>
+      <li Class="Hearth.Kitchen.StationExtension">
+        <kind>Steamer</kind>
+        <researchHint>HH_Gastronomy</researchHint><fallbackResearch>HH_Cooking_L3</fallbackResearch>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="HH_KitchenStationBase">
+    <defName>HH_Station_DoughBench</defName>
+    <label>dough bench</label>
+    <description>A heavy bench with a flour-dusted top. Rice and corn are pounded into dough here, which is cheaper than therapy.</description>
+    <graphicData>
+      <texPath>Things/HH/Kitchen/DoughBench</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,1)</drawSize>
+      <damageData><cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR><cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR></damageData>
+    </graphicData>
+    <size>(2,1)</size>
+    <costList><WoodLog>40</WoodLog><Steel>5</Steel></costList>
+    <statBases><WorkToBuild>600</WorkToBuild><MaxHitPoints>160</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
+    <uiOrder>2208</uiOrder>
+    <comps>
+
+    </comps>
+    <modExtensions>
+      <li Class="Hearth.Kitchen.StationExtension">
+        <kind>DoughBench</kind>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="HH_KitchenStationBase">
+    <defName>HH_Station_ColdStation</defName>
+    <label>cold station</label>
+    <description>A chilled counter that keeps salads crisp and desserts firm. Electric.</description>
+    <graphicData>
+      <texPath>Things/HH/Kitchen/ColdStation</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,1)</drawSize>
+      <damageData><cornerTL>Damage/Corner</cornerTL><cornerTR>Damage/Corner</cornerTR><cornerBL>Damage/Corner</cornerBL><cornerBR>Damage/Corner</cornerBR></damageData>
+    </graphicData>
+    <size>(2,1)</size>
+    <costList><Steel>70</Steel><ComponentIndustrial>2</ComponentIndustrial></costList>
+    <statBases><WorkToBuild>1500</WorkToBuild><MaxHitPoints>180</MaxHitPoints><Flammability>1.0</Flammability><Mass>20</Mass></statBases>
+    <uiOrder>2209</uiOrder>
+    <researchPrerequisites><li>Electricity</li></researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power"><compClass>CompPowerTrader</compClass><shortCircuitInRain>true</shortCircuitInRain><basePowerConsumption>150</basePowerConsumption></li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <modExtensions>
+      <li Class="Hearth.Kitchen.StationExtension">
+        <kind>ColdStation</kind>
+        <researchHint>HH_Gastronomy</researchHint><fallbackResearch>HH_Cooking_L3</fallbackResearch>
+      </li>
+    </modExtensions>
+  </ThingDef>
+</Defs>
