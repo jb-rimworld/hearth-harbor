@@ -82,6 +82,8 @@ namespace Hearth.Compat.Hospitality
         /// <summary>Result of the last finished load (tests and diagnosis).</summary>
         public static PendingImport LastLoad;
         public static List<string> LastSummary = new List<string>();
+        /// <summary>Former Hospitality guests that got a vanilla exit lord in the last load.</summary>
+        public static int LastGuestsSentHome;
         public static bool Registered { get; private set; }
         static bool removedDefsRegistered;
 
@@ -248,6 +250,7 @@ namespace Hearth.Compat.Hospitality
             var p = Pending;
             Pending = new PendingImport();
             LastLoad = p;
+            LastGuestsSentHome = 0;
             var rec = ImportedGuestBeds.Current;
             var lines = new List<string>();
             int beds = 0, bedsLive = 0, areas = 0, visitors = 0, visitsRebuilt = 0, settings = 0;
@@ -298,6 +301,7 @@ namespace Hearth.Compat.Hospitality
                 {
                     LordMaker.MakeNewLord(grp.Key.Faction, new LordJob_ExitMapBest(LocomotionUrgency.Walk, canDig: false), grp.Key.Map, pawns);
                     visitsRebuilt++;
+                    LastGuestsSentHome += pawns.Count;
                     HLog.Info("Compat", $"Visit of {pawns.Count} {grp.Key.Faction?.Name} guests had a Hospitality lord; they now leave in peace");
                 }
                 catch (Exception e) { HLog.Error("Compat", "Could not send former Hospitality guests home", e); }
