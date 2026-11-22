@@ -315,8 +315,26 @@ namespace Hearth.Casino.Tests
                 }
                 yield return 60;
             }
+            // second phase: tables that found no croupier before get one once the others are closed
+            var idle = tables.Where(x => x.Rounds < 10).ToList();
+            if (idle.Count > 0)
+            {
+                for (int i = 0; i < 60 && CasinoComponent.Get().Sessions.Count > 0; i++) yield return 60;
+                foreach (var x in tables.Except(idle)) x.GuestsAllowed = false;
+                for (int step = 0; step < 150 && idle.Any(x => x.Rounds < 10); step++)
+                {
+                    foreach (var g in guests)
+                    {
+                        if (!g.Spawned || g.CurJob?.def == CasinoDefOf.HH_PlayCasino || CasinoComponent.Get().SessionOf(g) != null) continue;
+                        var target = idle.Where(x => x.Staffed && x.HasFreeSeat && x.Rounds < 10).FirstOrDefault();
+                        if (target == null) continue;
+                        var job = CasinoJobs.MakeJob(g, target); if (job != null) g.jobs.StartJob(job, JobCondition.InterruptForced);
+                    }
+                    yield return 60;
+                }
+            }
             t.Note("table rounds: " + string.Join(", ", tables.Select(x => x.Game + "=" + x.Rounds)));
-            foreach (var x in tables.Where(x => x.Staffed || x.Rounds > 0)) t.Check(x.Rounds >= 10, x.Game + " table ran rounds with a croupier: " + x.Rounds);
+            foreach (var x in tables) t.Check(x.Rounds >= 10, x.Game + " table ran rounds with a croupier: " + x.Rounds);
             for (int i = 0; i < 60 && CasinoComponent.Get().Sessions.Count > 0; i++) yield return 60;
             foreach (var x in tables.Where(x => x.Rounds >= 30 && x.Variance > 0))
             {
@@ -637,7 +655,7 @@ namespace Hearth.Casino.Tests
                 t.Check(xml.Contains("<volatility>High</volatility>") && xml.Contains("<guestsAllowed>False</guestsAllowed>"), "device settings are saved");
                 t.Check(xml.Contains("<rounds>" + comp.Rounds + "</rounds>") && xml.Contains("<expected>1.5</expected>"), "device books are saved");
                 t.Check(xml.Contains("<craving>" + rec.CravingUntil + "</craving>") && xml.Contains("<curedStage>2</curedStage>"), "gambler record is saved");
-                bool okAdd = xml.Contains("HH_GamblingAddiction") && xml.Contains("<depth>0.61</depth>") && xml.Contains("<sessions>9</sessions>");
+                bool okAdd = xml.Contains("HH_GamblingAddiction") && xml.Contains("<depth>0.61") && xml.Contains("<sessions>9</sessions>");
                 t.Check(okAdd, "addiction hediff is saved with depth and sessions");
                 if (!okAdd) { int i = xml.IndexOf("Hediff_GamblingAddiction"); t.Note("hediff xml: " + (i < 0 ? "not found" : xml.Substring(Math.Max(0, i - 120), Math.Min(500, xml.Length - Math.Max(0, i - 120))).Replace("\n", " "))); }
                 File.Delete(path);

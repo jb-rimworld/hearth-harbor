@@ -105,7 +105,7 @@ namespace Hearth.Casino
             Text.Font = GameFont.Medium; Widgets.Label(new Rect(0, 0, inRect.width, 34f), comp.parent.LabelCap); Text.Font = GameFont.Small;
             var info = new Rect(0, 36f, inRect.width, 44f);
             GUI.color = new Color(0.8f, 0.8f, 0.8f);
-            Widgets.Label(info, "HH.Casino.DemoInfo".Translate(OddsText()));
+            Widgets.Label(info, "HH.Casino.DemoInfo".Translate().ToString().Replace("{ODDS}", OddsText()));
             GUI.color = Color.white;
             float y = 84f;
             Widgets.Label(new Rect(0, y, 260f, 26f), "HH.Casino.DemoChips".Translate(chips.ToString("0.##"), rounds));

@@ -54,7 +54,7 @@
   <HH.Casino.BigWin>{0} hit a big win at the {2}: {1} silver worth of chips.</HH.Casino.BigWin>
 
   <!-- Practice window -->
-  <HH.Casino.DemoInfo>Practice chips only, nothing here costs silver. Odds as set in this colony: {0}. Your stake is sealed: reloading does not change the result.</HH.Casino.DemoInfo>
+  <HH.Casino.DemoInfo>Practice chips only, nothing here costs silver. Odds as set in this colony: {ODDS}. Your stake is sealed: reloading does not change the result.</HH.Casino.DemoInfo>
   <HH.Casino.DemoChips>Practice chips: {0} · rounds: {1}</HH.Casino.DemoChips>
   <HH.Casino.DemoReset>Start over</HH.Casino.DemoReset>
   <HH.Casino.DemoStake>Stake</HH.Casino.DemoStake>
