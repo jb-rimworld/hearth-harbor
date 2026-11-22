@@ -219,6 +219,7 @@ namespace Hearth.Compat.Hospitality.Tests
                 if (lord == null || area == null) yield break;
                 yield return 250;
                 var visitors = lord.ownedPawns.ToList();
+                t.Note("lord before saving: " + lord.LordJob?.GetType().Name + ", toil " + lord.CurLordToil?.GetType().Name + ", faction " + lord.faction?.Name + ", pawns " + visitors.Count + ", lords on map " + map.lordManager.lords.Count);
                 GameDataSaveLoader.SaveGame(SaveName);
                 t.Check(File.Exists(dest), "saved " + dest);
                 // turn it into a Hospitality save
@@ -272,7 +273,9 @@ namespace Hearth.Compat.Hospitality.Tests
                 n++;
             }
             // 5. the visit lord → Hospitality classes, with Hospitality toil and trigger data
-            var lordNode = mapNode.SelectSingleNode("lordManager/lords/li[loadID='" + lord.loadID + "']") as XmlElement;
+            // vanilla does not write a field with its default value: the first lord of a game (loadID 0, which happens when no other
+            // lord was made before, e.g. with the Inn's scheduler not having sent anyone yet) has no <loadID> element at all
+            var lordNode = mapNode.SelectSingleNode(lord.loadID == 0 ? "lordManager/lords/li[not(loadID)]" : "lordManager/lords/li[loadID='" + lord.loadID + "']") as XmlElement;
             if (lordNode != null)
             {
                 (lordNode["lordJob"] as XmlElement)?.SetAttribute("Class", "Hospitality.LordJob_VisitColony");

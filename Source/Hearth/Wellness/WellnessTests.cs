@@ -152,6 +152,8 @@ namespace Hearth.Wellness.Tests
             t.Check(pawn.needs.joy.CurLevel > 0.1f, "joy rises while soaking: " + pawn.needs.joy.CurLevel.ToString("0.00"));
             foreach (var x in WT.WaitUntil(() => pawn.CurJob?.def != WellnessDefOf.HH_UseHotTub, 5000)) yield return x;
             t.Check(pawn.CurJob?.def != WellnessDefOf.HH_UseHotTub, "session ended");
+            if (pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(WellnessDefOf.HH_Relaxed) == null)
+                t.Note("session aborted: " + pawn.LabelShort + " job " + pawn.CurJob?.def.defName + " downed " + pawn.Downed + " mental " + pawn.InMentalState + " pos " + pawn.Position + " hp " + pawn.health.summaryHealth.SummaryHealthPercent.ToString("0.00") + " hediffs " + string.Join("/", pawn.health.hediffSet.hediffs.Select(h => h.def.defName)) + " temp " + pawn.AmbientTemperature.ToString("0") + " weather " + map.weatherManager.curWeather.defName);
             t.Check(pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(WellnessDefOf.HH_Relaxed) != null, "got the Relaxed memory");
             t.Check(pawn.needs.rest.CurLevel > restBefore, "rest bonus applied: " + pawn.needs.rest.CurLevel.ToString("0.00"));
             t.Check(pawn.health.hediffSet.GetFirstHediffOfDef(WellnessDefOf.HH_Soothed) != null, "soothed hediff applied");
@@ -245,7 +247,11 @@ namespace Hearth.Wellness.Tests
         public override int MaxTicks => 20000;
         public override IEnumerable<int> Run(Hearth.Testing.TestContext t)
         {
-            var map = t.Map; var client = WT.Colonist(map, 0); var masseur = WT.Colonist(map, 1);
+            var map = t.Map; var client = WT.Colonist(map, 0);
+            // the masseur must be able to do Serving work at all: the test colonists are random pawns and some backstories disable it
+            var masseur = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => c != client && !c.Downed && !c.Dead && !c.WorkTypeIsDisabled(WellnessDefOf.HH_Serving) && c.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation));
+            if (client == null || masseur == null || client == masseur)
+                t.Note("colonists: " + string.Join("; ", map.mapPawns.AllPawns.Where(p => p.IsColonist).Select(p => p.LabelShort + " spawned " + p.Spawned + " dead " + p.Dead + " downed " + p.Downed + " job " + p.CurJob?.def.defName + " hp " + p.health.summaryHealth.SummaryHealthPercent.ToString("0.00") + " hediffs " + string.Join("/", p.health.hediffSet.hediffs.Select(h => h.def.defName)))));
             t.Check(client != null && masseur != null && client != masseur, "two colonists available");
             if (client == null || masseur == null || client == masseur) yield break;
             var area = map.Center + new IntVec3(0, 0, 16);
