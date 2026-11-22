@@ -168,7 +168,8 @@ namespace Hearth.Dlc
         {
             string acc = IndulgenceApi.TempleAccount(ideo);
             if (Payments.TryCharge(guest, amt, acc, memo, out _)) return true;
-            if (GuestApi.Impl == null && Ledger.Current != null) return Ledger.Current.Post("world", acc, amt, memo + " (visitor)");
+            // vanilla visitors (no Inn booking) give "virtually", like in GuestApi.ChargeGuest
+            if ((GuestApi.Impl == null || GuestApi.Impl.Info(guest) == null) && Ledger.Current != null) return Ledger.Current.Post("world", acc, amt, memo + " (visitor)");
             return false;
         }
 

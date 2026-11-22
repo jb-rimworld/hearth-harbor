@@ -677,7 +677,8 @@ namespace Hearth.Kitchen.Tests
 
                 // cookbook page rows
                 var rows = CookbookPage.Rows();
-                int dishCount = DefDatabase<DishDef>.AllDefs.Count(d => !d.dark);
+                bool darkOn = DishKnowledge.DarkAllowed(); // the test colony may have a cannibal ideoligion: then the dark menu is legitimately listed
+                int dishCount = DefDatabase<DishDef>.AllDefs.Count(d => !d.dark || darkOn);
                 t.Check(rows.Count == dishCount, "page lists every dish except the dark menu: " + rows.Count + "/" + dishCount);
                 var unknown = rows.First(r => !r.Known);
                 t.Check(unknown.Name == "???" && unknown.Hint.Contains("Research") && unknown.Hint.Contains(DishKnowledge.LevelResearch(unknown.Dish.level).LabelCap), "unknown dishes show ??? and where to learn them: " + unknown.Hint);

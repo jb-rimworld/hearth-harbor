@@ -695,8 +695,14 @@ namespace Hearth.Underworld
             var till0 = UwKit.Till(map); int items0 = map.listerThings.AllThings.Count;
             t.Check(Smuggler.Buy(map, offer), "buying works");
             t.Check(till0 - UwKit.Till(map) == offer.Price, "the price left the till");
-            yield return 400;
-            t.Check(map.listerThings.AllThings.Count > items0 - 1, "crate dropped near the dock");
+            yield return 600;
+            // the old check compared the map's total thing count, which also drops when anything else (filth, visitors, animals) leaves:
+            // look for the ordered goods themselves (landed, merged into a stack nearby, or still in an incoming pod)
+            var goodDefs = new HashSet<ThingDef>(offer.Goods.Select(g => g.def));
+            bool landed = map.listerThings.AllThings.Any(x => goodDefs.Contains(x.def) && x.Spawned && x.Position.InHorDistOf(dock.Position, 30f))
+                          || map.listerThings.ThingsOfDef(ThingDefOf.ActiveDropPod).Count > 0 || map.listerThings.ThingsOfDef(ThingDefOf.DropPodIncoming).Count > 0
+                          || offer.Goods.Any(g => g.Spawned);
+            t.Check(landed, "crate dropped near the dock");
             t.Check(Ledger.Current.SumAll() == 0, "ledger balanced");
             var poor = Smuggler.MakeOffer(); Ledger.Current.Post(Underworld.Till(map), "world", UwKit.Till(map), "drain");
             t.Check(!Smuggler.Buy(map, poor), "no cash, no crate");
