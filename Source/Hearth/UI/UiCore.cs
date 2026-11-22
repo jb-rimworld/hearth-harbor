@@ -149,6 +149,14 @@ namespace Hearth.Shell
         }
     }
 
+    /// <summary>Counts how often each shell screen was drawn (tests use it to prove that real OnGUI frames reached the code).</summary>
+    public static class UiProbe
+    {
+        static readonly Dictionary<string, int> hits = new Dictionary<string, int>();
+        public static void Hit(string name) { hits.TryGetValue(name, out int n); hits[name] = n + 1; }
+        public static int Count(string name) => hits.TryGetValue(name, out int n) ? n : 0;
+    }
+
     /// <summary>Colours and small drawing helpers so every page looks the same. Amber only as accent (2.4).</summary>
     public static class UiStyle
     {
@@ -212,10 +220,11 @@ namespace Hearth.Shell
             if (selected) { Widgets.DrawBoxSolid(r, AmberSoft); GUI.color = Amber; Widgets.DrawBox(r); GUI.color = Color.white; }
             else if (Mouse.IsOver(r) && enabled) Widgets.DrawHighlight(r);
             else { GUI.color = Line; Widgets.DrawBox(r); GUI.color = Color.white; }
-            var a = Text.Anchor; Text.Anchor = TextAnchor.MiddleCenter;
+            var a = Text.Anchor; var fnt = Text.Font; Text.Anchor = TextAnchor.MiddleCenter;
+            if (label.Length > 13 && r.width < 150f) Text.Font = GameFont.Tiny;
             if (!enabled) GUI.color = DimGrey;
             Widgets.Label(r, label);
-            GUI.color = Color.white; Text.Anchor = a;
+            GUI.color = Color.white; Text.Anchor = a; Text.Font = fnt;
             if (!tip.NullOrEmpty()) TooltipHandler.TipRegion(r, tip);
             return enabled && Widgets.ButtonInvisible(r);
         }

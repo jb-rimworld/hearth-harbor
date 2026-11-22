@@ -59,7 +59,7 @@ namespace Hearth.Shell
             // tick marks under the slider with the percentages
             for (int i = 0; i < 7; i++)
             {
-                float tx = sr.x + 6f + (sr.width - 12f) * (i / 6f);
+                float tx = Mathf.Clamp(sr.x + 6f + (sr.width - 12f) * (i / 6f), sr.x + 30f, sr.xMax - 34f);
                 UiStyle.LabelColored(new Rect(tx - 30f, y + 20f, 60f, 16f), HearthProfile.TierPercent[i].ToString("0") + " %", i == cur ? UiStyle.Amber : UiStyle.DimGrey, TextAnchor.UpperCenter, GameFont.Tiny);
             }
             y += 44f;
@@ -134,7 +134,7 @@ namespace Hearth.Shell
             y += 10f;
             var tierSettings = HSettings.All.Where(s => s.TierAnchors != null && Modules.Available(s.Module)).ToList();
             var tog = new Rect(x, y, w, 24f);
-            Widgets.CheckboxLabeled(tog, "HH.UI.Diff.ShowAll".Translate(tierSettings.Count), ref showAllTierSettings);
+            Widgets.CheckboxLabeled(tog, "HH.UI.Diff.ShowAll".Translate(tierSettings.Count), ref showAllTierSettings, false, null, null, true);
             y += 28f;
             if (showAllTierSettings)
             {
@@ -174,6 +174,7 @@ namespace Hearth.Shell
 
         public override void DoWindowContents(Rect inRect)
         {
+            UiProbe.Hit("diffdialog");
             Text.Font = GameFont.Medium;
             Widgets.Label(new Rect(inRect.x, inRect.y, inRect.width, 36f), "HH.UI.Diff.Title".Translate());
             Text.Font = GameFont.Small;

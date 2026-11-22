@@ -112,7 +112,7 @@ namespace Hearth.Shell
                 }
                 bool nf = free;
                 var fr = new Rect(x1 - freeW + 4f, cy - 12f, freeW, 24f);
-                Widgets.CheckboxLabeled(fr, "HH.UI.Row.Free".Translate(), ref nf);
+                Widgets.CheckboxLabeled(fr, "HH.UI.Row.Free".Translate(), ref nf, false, null, null, true);
                 TooltipHandler.TipRegion(fr, "HH.UI.Row.FreeTip".Translate());
                 if (nf != free) { store.freeText[s.Key] = nf; buffers.Remove(s.Key); }
             }

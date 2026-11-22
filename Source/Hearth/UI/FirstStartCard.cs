@@ -99,6 +99,7 @@ namespace Hearth.Shell
 
         void Draw(Rect inRect)
         {
+            UiProbe.Hit("card");
             var prof = HearthProfile.Current;
             if (prof == null) { Close(); return; }
             float y = inRect.y;
@@ -141,7 +142,7 @@ namespace Hearth.Shell
                 var m = mods[i];
                 var r = new Rect(inRect.x + (i % 3) * mw, y + (i / 3) * 28f, mw - 8f, 26f);
                 bool on = prof.ModuleOn(m), nb = on;
-                Widgets.CheckboxLabeled(r, Modules.Label(m), ref nb);
+                Widgets.CheckboxLabeled(r, Modules.Label(m), ref nb, false, null, null, true);
                 TooltipHandler.TipRegion(r, ("HH.UI.ModuleDesc." + m).Translate().ToString() + (m == ModuleId.Bank ? "\n\n" + "HH.UI.Modules.BankHint".Translate().ToString() : ""));
                 if (nb != on) { prof.SetModule(m, nb); preset = null; }
             }
@@ -176,7 +177,7 @@ namespace Hearth.Shell
 
             // bottom row
             var br = new Rect(inRect.x, inRect.yMax - 36f, inRect.width, 34f);
-            Widgets.CheckboxLabeled(new Rect(br.x, br.y + 4f, br.width - 200f, 26f), "HH.UI.Card.UseForAll".Translate(), ref useForAll);
+            Widgets.CheckboxLabeled(new Rect(br.x, br.y + 4f, br.width - 200f, 26f), "HH.UI.Card.UseForAll".Translate(), ref useForAll, false, null, null, true);
             TooltipHandler.TipRegion(new Rect(br.x, br.y + 4f, br.width - 200f, 26f), "HH.UI.Card.UseForAllTip".Translate());
             var start = new Rect(br.xMax - 180f, br.y, 180f, 34f);
             Widgets.DrawBoxSolid(start, UiStyle.AmberSoft);

@@ -9,7 +9,7 @@ using UnityEngine;
 using Verse;
 using Silverline;
 
-namespace Hearth.Shell
+namespace Hearth
 {
     /// <summary>One step of a guide topic. check = id of a registered check, "venue:&lt;VenueTypeDef&gt;", or "manual" (the player ticks it).</summary>
     public class GuideStep
@@ -32,6 +32,10 @@ namespace Hearth.Shell
         public string unlockedBy;
         public List<GuideStep> steps = new List<GuideStep>();
     }
+}
+
+namespace Hearth.Shell
+{
 
     /// <summary>Named conditions read from game state. Modules may register more in OnDefsLoaded (GuideChecks.Register).</summary>
     public static class GuideChecks
@@ -214,7 +218,7 @@ namespace Hearth.Shell
             float y = TopY();
             float maxH = Mathf.Max(120f, UI.screenHeight - y - 60f);
             var rect = new Rect(UI.screenWidth - Margin - W, y, W, Mathf.Min(contentHeight + Inner * 2f, maxH));
-            lastRect = rect; DrawCount++;
+            lastRect = rect; DrawCount++; UiProbe.Hit("guide");
             Find.WindowStack.ImmediateWindow(WindowId, rect, WindowLayer.Super, () => Guard.Run(ModuleId.Core, "UI.Guide", () => DrawContents(rect, active, hidden)), doBackground: false);
         }
 
@@ -241,8 +245,9 @@ namespace Hearth.Shell
             {
                 GUI.color = new Color(1f, 1f, 1f, 0.35f); Widgets.DrawLineHorizontal(r.x, y, r.width); GUI.color = Color.white; y += 4f;
                 var outR = new Rect(r.x, y, r.width, r.yMax - y);
-                bool scrolls = contentHeight - (y - r.y) > outR.height;
-                var view = new Rect(0, 0, outR.width - (scrolls ? 16f : 0f), Mathf.Max(outR.height, contentHeight));
+                float bodyH = Mathf.Max(0f, contentHeight - (y - r.y));
+                bool scrolls = bodyH > outR.height + 1f;
+                var view = new Rect(0, 0, outR.width - (scrolls ? 16f : 0f), scrolls ? bodyH : outR.height);
                 Widgets.BeginScrollView(outR, ref scroll, view);
                 float cy = 0;
                 foreach (var v in active) cy = DrawTopic(v, view.width, cy, false);
@@ -317,7 +322,7 @@ namespace Hearth.Shell
     public static class Patch_Tutor_TutorOnGUI
     {
         [HarmonyPostfix]
-        public static void Postfix() { Guard.Run(ModuleId.Core, "UI.GuidePanel", GuidePanel.OnGUI); }
+        public static void Postfix() { UiProbe.Hit("ongui"); Guard.Run(ModuleId.Core, "UI.GuidePanel", GuidePanel.OnGUI); }
     }
 
     [HarmonyPatch(typeof(GameDataSaveLoader), nameof(GameDataSaveLoader.SaveGame))]

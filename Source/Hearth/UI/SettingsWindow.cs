@@ -61,6 +61,7 @@ namespace Hearth.Shell
 
         static void DrawInner(Rect inRect)
         {
+            UiProbe.Hit("settings");
             bool inGame = HearthProfile.Current != null;
             if (!inGame) editTemplate = true;
             var pages = BuildPages();
@@ -159,7 +160,7 @@ namespace Hearth.Shell
                 var nr = new Rect(sr.x - 200f, r.y + 4f, 190f, 24f);
                 if (!search.NullOrEmpty()) nr.x -= 34f;
                 bool nerd = HearthMod.Template.ShowNerd;
-                Widgets.CheckboxLabeled(nr, "HH.UI.Settings.Nerd".Translate(), ref nerd);
+                Widgets.CheckboxLabeled(nr, "HH.UI.Settings.Nerd".Translate(), ref nerd, false, null, null, true);
                 TooltipHandler.TipRegion(nr, "HH.UI.Settings.NerdTip".Translate());
                 HearthMod.Template.ShowNerd = nerd;
             }
@@ -250,7 +251,7 @@ namespace Hearth.Shell
             y += UiStyle.Section(0, y, w, "HH.UI.General.Interface".Translate());
             var tpl = HearthMod.Template;
             bool card = tpl.ShowFirstStartCard;
-            Widgets.CheckboxLabeled(new Rect(0, y, Mathf.Min(w, 520f), 26f), "HH.UI.General.ShowCard".Translate(), ref card);
+            Widgets.CheckboxLabeled(new Rect(0, y, Mathf.Min(w, 520f), 26f), "HH.UI.General.ShowCard".Translate(), ref card, false, null, null, true);
             TooltipHandler.TipRegion(new Rect(0, y, Mathf.Min(w, 520f), 26f), "HH.UI.General.ShowCardTip".Translate());
             tpl.ShowFirstStartCard = card; y += 30f;
             // tutorial level
@@ -272,7 +273,7 @@ namespace Hearth.Shell
             }
             y += 36f;
             bool verbose = tpl.VerboseLog;
-            Widgets.CheckboxLabeled(new Rect(0, y, Mathf.Min(w, 520f), 26f), "HH.UI.General.Verbose".Translate(), ref verbose);
+            Widgets.CheckboxLabeled(new Rect(0, y, Mathf.Min(w, 520f), 26f), "HH.UI.General.Verbose".Translate(), ref verbose, false, null, null, true);
             tpl.VerboseLog = verbose; HLog.Verbose = verbose; y += 30f;
             y += 8f;
             return y;

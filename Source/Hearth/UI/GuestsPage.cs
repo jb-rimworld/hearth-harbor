@@ -80,6 +80,7 @@ namespace Hearth.Shell
 
         public static void Draw(Rect r)
         {
+            UiProbe.Hit("guestspage");
             var map = Find.CurrentMap;
             Refresh(map);
             int day = rows.Count(x => x.Info.Kind == StayKind.DayVisitor), stay = rows.Count - day;

@@ -44,7 +44,7 @@ namespace Hearth.Shell
 
         void DrawContents(Rect rect, Pawn p)
         {
-            UiState.SetFlag("seenGuestTab");
+            UiState.SetFlag("seenGuestTab"); UiProbe.Hit("guesttab");
             var gi = GuestApi.Info(p);
             if (gi == null) { UiStyle.LabelColored(rect, "HH.UI.GuestTab.NoInfo".Translate(), UiStyle.Grey); return; }
             var view = new Rect(0, 0, rect.width - 18f, viewH);

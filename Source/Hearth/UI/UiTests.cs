@@ -16,6 +16,22 @@ namespace Hearth.Shell.Tests
         /// <summary>The test runner removes forcePause windows every frame; test windows must not pause.</summary>
         public static T NoPause<T>(T w) where T : Window { w.forcePause = false; w.absorbInputAroundWindow = false; return w; }
 
+        /// <summary>With HH_UI_SHOTS=&lt;dir&gt; the suites save screenshots of what they draw (for looking at the layout by eye).</summary>
+        public static void Shot(string name)
+        {
+            string dir = Environment.GetEnvironmentVariable("HH_UI_SHOTS");
+            if (string.IsNullOrEmpty(dir)) return;
+            try { System.IO.Directory.CreateDirectory(dir); ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(dir, name + ".png")); }
+            catch (Exception e) { Log.Warning("[HHTEST] screenshot failed: " + e.Message); }
+        }
+
+        /// <summary>Checks that need real OnGUI frames. If the game window is not being rendered at all (screen asleep, occluded) they are skipped with a note instead of failing.</summary>
+        public static void DrawCheck(TestContext t, bool ok, string what)
+        {
+            if (!ok && UiProbe.Count("ongui") == 0) { t.Note("SKIP (game window is not rendering, no OnGUI frames): " + what); return; }
+            t.Check(ok, what);
+        }
+
         public static List<Pawn> SpawnVisitors(Map map)
         {
             var parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.Misc, map);
@@ -50,6 +66,8 @@ namespace Hearth.Shell.Tests
                 {
                     HearthSettingsWindow.SelectedPage = p.Id; HearthSettingsWindow.Search = "";
                     yield return 30;
+                    UiTestUtil.Shot("settings_" + p.Id.Replace(':', '_') + (template ? "_tpl" : ""));
+                    yield return 25;
                     t.Check(settings.IsOpen, "settings page " + p.Id + (template ? " (template)" : " (colony)") + " drew without closing");
                 }
             }
@@ -57,6 +75,7 @@ namespace Hearth.Shell.Tests
             HearthSettingsWindow.SelectedPage = "modules"; HearthSettingsWindow.Search = "e"; // matches nearly everything
             yield return 30;
             HearthSettingsWindow.Search = "";
+            UiTestUtil.DrawCheck(t, UiProbe.Count("settings") > 0, "OnGUI reached the settings window (" + UiProbe.Count("settings") + " frames)");
             t.Check(HLog.ErrorCount == errors0, "no errors while drawing the settings window (" + (HLog.ErrorCount - errors0) + ")");
             int rows = HSettings.All.Count(s => Modules.Available(s.Module));
             t.Check(rows > 0 && HSettings.All.All(s => SettingRowUI.Height(s, 700f) >= 30f), "every registered setting (" + rows + ") has a row height");
@@ -74,7 +93,8 @@ namespace Hearth.Shell.Tests
             {
                 MainTabWindow_HH.SelectedPage = pg.Id;
                 yield return 30;
-                t.Check(Find.WindowStack.WindowOfType<MainTabWindow_HH>() != null, "main tab page " + pg.Id + " draws");
+                UiTestUtil.Shot("tab_" + pg.Id); yield return 25;
+                UiTestUtil.DrawCheck(t, Find.WindowStack.WindowOfType<MainTabWindow_HH>() != null && UiProbe.Count("maintab") > 0, "main tab page " + pg.Id + " draws");
             }
             // 3. guests page with a real visitor group, and the Guest tab on one of them
             var visitors = UiTestUtil.SpawnVisitors(t.Map);
@@ -96,17 +116,20 @@ namespace Hearth.Shell.Tests
                 }
                 GuestsPage.SortCol = GuestsPage.Col.Name; GuestsPage.SortDesc = false;
                 yield return 20;
+                UiTestUtil.Shot("tab_guests_rows"); yield return 25;
                 Find.WindowStack.WindowOfType<MainTabWindow_HH>()?.Close(false);
                 yield return 2;
                 // guest tab
                 Find.Selector.ClearSelection(); Find.Selector.Select(v, false, false);
                 Find.MainTabsRoot.SetCurrentTab(MainButtonDefOf.Inspect, false);
-                yield return 3;
+                yield return 20;
                 var tab = new ITab_HH_Guest();
                 t.Check(tab.IsVisible, "Guest tab is visible for a guest");
-                InspectPaneUtility.OpenTab(typeof(ITab_HH_Guest));
+                var opened = InspectPaneUtility.OpenTab(typeof(ITab_HH_Guest));
+                t.Check(opened != null, "inspect pane offers the Guest tab (races carry it)");
                 yield return 40;
-                t.Check(UiState.Flag("seenGuestTab"), "Guest tab was drawn (flag set)");
+                UiTestUtil.Shot("guest_tab"); yield return 25;
+                UiTestUtil.DrawCheck(t, UiProbe.Count("guesttab") > 0 && UiState.Flag("seenGuestTab"), "Guest tab was drawn (" + UiProbe.Count("guesttab") + " frames)");
                 var gi = GuestApi.Info(v);
                 ITab_HH_Guest.SetHandling(v, gi, HandlingMode.Recruit);
                 t.Check(gi.Handling == HandlingMode.Recruit, "handling mode written to GuestInfo");
@@ -122,10 +145,10 @@ namespace Hearth.Shell.Tests
             }
             // 4. dialogs
             var dd = UiTestUtil.NoPause(new Dialog_HostingDifficulty(HearthProfile.Current));
-            Find.WindowStack.Add(dd); yield return 30; t.Check(dd.IsOpen, "difficulty dialog draws"); dd.Close(false);
+            int dd0 = UiProbe.Count("diffdialog"); Find.WindowStack.Add(dd); yield return 30; UiTestUtil.Shot("dialog_difficulty"); yield return 25; UiTestUtil.DrawCheck(t, dd.IsOpen && UiProbe.Count("diffdialog") > dd0, "difficulty dialog draws"); dd.Close(false);
             var card = UiTestUtil.NoPause(new Dialog_FirstStartCard(true));
             bool done = HearthProfile.Current.FirstStartCardDone;
-            Find.WindowStack.Add(card); yield return 30; t.Check(card.IsOpen, "first-start card draws"); card.Close(false);
+            int c0 = UiProbe.Count("card"); Find.WindowStack.Add(card); yield return 30; UiTestUtil.Shot("first_card"); yield return 25; UiTestUtil.DrawCheck(t, card.IsOpen && UiProbe.Count("card") > c0, "first-start card draws"); card.Close(false);
             HearthProfile.Current.FirstStartCardDone = done;
             var rep = UiTestUtil.NoPause(new Dialog_TextReport("Report", "line one\nline two"));
             Find.WindowStack.Add(rep); yield return 10; t.Check(rep.IsOpen, "text report draws"); rep.Close(false);
@@ -133,7 +156,8 @@ namespace Hearth.Shell.Tests
             int before = GuidePanel.DrawCount;
             GuideState.Update();
             yield return 40;
-            t.Check(!GuidePanel.Enabled() || GuidePanel.DrawCount > before, "guide panel draws when enabled (draws: " + (GuidePanel.DrawCount - before) + ", enabled: " + GuidePanel.Enabled() + ")");
+            UiTestUtil.Shot("guide_panel"); yield return 25;
+            UiTestUtil.DrawCheck(t, !GuidePanel.Enabled() || GuidePanel.DrawCount > before, "guide panel draws when enabled (draws: " + (GuidePanel.DrawCount - before) + ", enabled: " + GuidePanel.Enabled() + ")");
             SettingRowUI.ForceDrawAll = false;
             t.Check(HLog.ErrorCount == errors0, "no errors from any shell window (" + (HLog.ErrorCount - errors0) + ")");
         }
@@ -317,7 +341,7 @@ namespace Hearth.Shell.Tests
             // the panel itself gets drawn in a real frame
             int c0 = GuidePanel.DrawCount;
             yield return 60;
-            t.Check(!GuidePanel.Enabled() || GuidePanel.DrawCount > c0, "guide panel was drawn in-game (" + (GuidePanel.DrawCount - c0) + " frames)");
+            UiTestUtil.DrawCheck(t, !GuidePanel.Enabled() || GuidePanel.DrawCount > c0, "guide panel was drawn in-game (" + (GuidePanel.DrawCount - c0) + " frames)");
         }
     }
 

@@ -44,6 +44,7 @@ namespace Hearth.Shell
 
         void Draw(Rect inRect)
         {
+            UiProbe.Hit("maintab");
             var pages = Pages();
             if (pages.Count == 0) { UiStyle.LabelColored(inRect, "HH.UI.Tab.NoPages".Translate(), UiStyle.Grey); return; }
             if (pages.All(p => p.Id != SelectedPage)) SelectedPage = pages[0].Id;
