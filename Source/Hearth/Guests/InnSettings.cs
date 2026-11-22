@@ -25,6 +25,12 @@ namespace Hearth.Guests
         public const string LeaveEarly = "inn.leaveEarly";
         public const string CheckInHour = "inn.checkInHour";
         public const string CheckOutHour = "inn.checkOutHour";
+        public const string DeskOpenHour = "inn.deskOpenHour";
+        public const string DeskCloseHour = "inn.deskCloseHour";
+        public const string HonestyDiscount = "inn.honestyDiscount";
+        public const string WaitThoughts = "inn.waitThoughts";
+        public const string ReturnVisits = "inn.returnVisits";
+        public const string LeavingGifts = "inn.leavingGifts";
         // Money
         public const string GuestMoney = "inn.guestMoney";
         public const string PriceBase = "inn.priceBase";
@@ -69,6 +75,19 @@ namespace Hearth.Guests
                 "Guests who are miserable for a long time, or run out of money, pack up before their planned day.");
             HSettings.Int(M, "Stay", CheckInHour, 14, 0, 23, "Check-in from (hour)", "Overnight guests plan to arrive from this hour on.", nerd: true, hardMin: 0, hardMax: 23);
             HSettings.Int(M, "Stay", CheckOutHour, 10, 0, 23, "Check-out (hour)", "Overnight guests leave around this hour on their last morning.", nerd: true, hardMin: 0, hardMax: 23);
+
+            HSettings.Int(M, "Stay", DeskOpenHour, 6, 0, 23, "Front desk opens (hour)",
+                "From this hour a host can check guests in at the front desk. Outside the hours the desk works as an honesty box.", nerd: true, hardMin: 0, hardMax: 23);
+            HSettings.Int(M, "Stay", DeskCloseHour, 22, 0, 23, "Front desk closes (hour)",
+                "From this hour the front desk is an honesty box: guests check themselves in and pay a little less.", nerd: true, hardMin: 0, hardMax: 23);
+            HSettings.Percent(M, "Money", HonestyDiscount, 0.10f, 0f, 0.5f, "Honesty box discount",
+                "Guests who check in at the unattended front desk (outside its hours) pay this much less per night.", nerd: true, hardMin: 0f, hardMax: 1f);
+            HSettings.Bool(M, "Stay", WaitThoughts, true, "Waiting and night bell thoughts",
+                "Guests who wait in vain or ring the night bell with nobody coming feel it in their mood; a waiting room softens it.");
+            HSettings.Bool(M, "Stay", ReturnVisits, true, "Return visits",
+                "Guests who liked their stay come back after 3 to 10 days (unhappy ones after 14 to 30), plus twice their travel time.");
+            HSettings.Bool(M, "Stay", LeavingGifts, true, "Gifts on leaving",
+                "Happy guests sometimes leave a small gift at the front desk (more likely the better the stay).");
 
             HSettings.Float(M, "Money", GuestMoney, 1f, 0.1f, 5f, "Guest money",
                 "Multiplier on how much silver guests bring.", hardMin: 0f, hardMax: 1000f, tiers: new[] { 5f, 1.6f, 1.25f, 1f, 0.85f, 0.7f, 0.5f });
@@ -118,6 +137,9 @@ namespace Hearth.Guests
         public static ThoughtDef HH_GuestAccompanied;
         public static ThoughtDef HH_GuestPestered;
         public static ThoughtDef HH_HostedWell;
+        public static ThoughtDef HH_GuestWaited;
+        public static ThoughtDef HH_GuestBellNobody;
+        public static ThoughtDef HH_GuestWaitingRoom;
         public static HistoryEventDef HH_HostedGuests;
         static InnDefOf() { DefOfHelper.EnsureInitializedInCtor(typeof(InnDefOf)); }
     }

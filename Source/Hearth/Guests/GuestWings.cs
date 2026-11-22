@@ -22,6 +22,9 @@ namespace Hearth.Guests
 
         public Area_HH_GuestWing() { }
         public Area_HH_GuestWing(AreaManager am, string label) : base(am) { this.label = label; }
+        /// <summary>For importers (Hospitality guest areas): a wing without a name yet. Put it into the map's wing list, or into the vanilla
+        /// area list, from where <see cref="MapComponent_HH_GuestWings"/> moves it over within 250 ticks.</summary>
+        public Area_HH_GuestWing(AreaManager am) : base(am) { }
 
         public override string Label => label;
         public override Color Color => color;
@@ -92,6 +95,32 @@ namespace Hearth.Guests
             wings.Add(w);
             return w;
         }
+
+        /// <summary>Wings that an importer put into the vanilla area list move into ours (they never count as vanilla areas).</summary>
+        public int AdoptForeignWings()
+        {
+            int n = 0;
+            var all = map.areaManager.AllAreas;
+            for (int i = all.Count - 1; i >= 0; i--)
+            {
+                if (!(all[i] is Area_HH_GuestWing w)) continue;
+                all.RemoveAt(i);
+                if (w.RenamableLabel.NullOrEmpty() || w.RenamableLabel == w.BaseLabel) w.RenamableLabel = "HH.Inn.Wing.Name".TranslateOr("Guest Wing {0}").Replace("{0}", (wings.Count + 1).ToString());
+                if (!wings.Contains(w)) wings.Add(w);
+                HLog.Info("Inn", $"Guest wing '{w.Label}' adopted from the area list ({w.TrueCount} cells)");
+                n++;
+            }
+            if (n > 0) WingStatus.ClearCache();
+            return n;
+        }
+
+        public override void MapComponentTick()
+        {
+            if (Find.TickManager.TicksGame % 250 != 77) return;
+            Guard.Run(ModuleId.Inn, "Inn.AdoptWings", () => AdoptForeignWings());
+        }
+
+        public override void FinalizeInit() { base.FinalizeInit(); Guard.Run(ModuleId.Inn, "Inn.AdoptWings", () => AdoptForeignWings()); }
 
         public override void MapComponentUpdate()
         {

@@ -114,6 +114,21 @@ namespace Hearth.Guests
                 if (p != null && !p.Destroyed && !p.Dead && p.Faction != Faction.OfPlayer) Find.WorldPawns.PassToWorld(p, RimWorld.Planet.PawnDiscardDecideMode.KeepForever);
             }
             foreach (var l in map.lordManager.lords.ToList()) if (l.LordJob is LordJob_HH_GuestStay) map.lordManager.RemoveLord(l);
+            map.GetComponent<MapComponent_HH_GuestScheduler>()?.ClearReturnsForTests(); // departures plan return visits; suites must not see them
+        }
+
+        /// <summary>
+        /// The "inn.night hang": the vanilla autosave (every day with the copied prefs) is a synchronous long event that only runs after
+        /// its "Autosaving" screen has been drawn. A test window that is hidden (another space, covered, minimized) draws no GUI frames,
+        /// so the save never starts and the game sits idle until the window becomes visible again or the runner's timeout kills it.
+        /// Tests switch autosaving off for the test profile, and also vanilla's forced normal speed during combat (TimeSlower),
+        /// which would otherwise turn Ultrafast into 1× whenever a raid or a predator shows up.
+        /// </summary>
+        public static void FastTime()
+        {
+            if (Prefs.AutosaveIntervalDays < 999f) { Prefs.AutosaveIntervalDays = 1000f; Verse.Log.Message("[HHTEST] autosave switched off for the test run"); }
+            if (!Verse.DebugViewSettings.neverForceNormalSpeed) Verse.Log.Message("[HHTEST] forced normal speed switched off for the test run");
+            Verse.DebugViewSettings.neverForceNormalSpeed = true;
         }
 
         public static int CountSilver(Pawn p) { int n = 0; foreach (var t in p.inventory.innerContainer) if (t.def == ThingDefOf.Silver) n += t.stackCount; return n; }
@@ -130,6 +145,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 135000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map;
             var reg = GuestRegistry.Instance;
             t.Check(reg != null, "guest register exists");
@@ -160,6 +176,7 @@ namespace Hearth.Guests
         public override ModuleId Module => ModuleId.Inn;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var f = InnTestKit.GuestFaction(map);
@@ -216,6 +233,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 45000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var site = InnTestKit.BuildRoom(map, 2, true);
@@ -282,6 +300,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 30000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var site = InnTestKit.BuildRoom(map, 2, false, 6, 4);
@@ -337,6 +356,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 32000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var site = InnTestKit.BuildRoom(map, 1, false, 6, 5);
@@ -386,6 +406,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 30000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var site = InnTestKit.BuildRoom(map, 2, true, 6, 4);
@@ -423,18 +444,17 @@ namespace Hearth.Guests
             else t.Note("guest asleep or in bed: skipped the real job");
             // recruit talks and insult risk
             a.Handling = HandlingMode.Recruit;
-            var ins = HSettings.Find(InnSettings.InsultBase);
-            HSettings.Set(ins, 0f);
+            GuestRegistry.InsultChanceOverride = 0f;
             reg.Notify_Talk(col, a.Pawn);
             t.Check(!a.Insulted, "no insult at 0 % risk");
             t.Check(col.needs.mood.thoughts.memories.GetFirstMemoryOfDef(InnDefOf.HH_HostedWell) != null, "colonist warms to the guest (social memory)");
-            HSettings.Set(ins, 1f);
+            GuestRegistry.InsultChanceOverride = 1f;
             var budget0 = a.Budget; int leave0 = a.PlannedLeaveTick;
             reg.Notify_Talk(map.mapPawns.FreeColonistsSpawned.OrderBy(c => c.skills.GetSkill(SkillDefOf.Social).Level).FirstOrDefault() ?? col, a.Pawn);
             t.Check(a.Insulted, "insulted at 100 % risk");
             t.Check(a.Budget < budget0 && a.PlannedLeaveTick < leave0, "insulted guest spends less and leaves sooner");
             t.Check(a.Pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(InnDefOf.HH_GuestPestered) != null, "pestered thought");
-            HSettings.Reset(ins);
+            GuestRegistry.InsultChanceOverride = null;
             // joining at departure: strong bond, deterministic roll
             b.Handling = HandlingMode.Recruit;
             int bond0 = GuestRegistry.Bond(b.Pawn, map, out int thr);
@@ -470,6 +490,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 110000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var site = InnTestKit.BuildRoom(map, 1, true, 5, 4);
@@ -515,6 +536,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 6000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map;
             var sch = map.GetComponent<MapComponent_HH_GuestScheduler>();
             MapComponent_HH_GuestScheduler.SuspendedForTests = false;
@@ -554,6 +576,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 5000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var cands = Find.FactionManager.AllFactionsListForReading.Where(f => MapComponent_HH_GuestScheduler.FactionCanVisit(f, map)).ToList();
@@ -590,6 +613,7 @@ namespace Hearth.Guests
         public override ModuleId Module => ModuleId.Inn;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             t.Check(Math.Abs(GuestEconomy.DailyBudget(1) - 25) < 0.01f && Math.Abs(GuestEconomy.DailyBudget(50) - 230) < 0.01f && Math.Abs(GuestEconomy.DailyBudget(100) - 2500) < 0.01f, "b(W) anchors 25 / 230 / 2500");
             float prev = 0; bool mono = true;
             for (int w = 1; w <= 100; w++) { float b = GuestEconomy.DailyBudget(w); if (b < prev) mono = false; prev = b; }

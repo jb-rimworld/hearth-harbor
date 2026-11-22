@@ -99,4 +99,67 @@
       </li>
     </stages>
   </ThoughtDef>
+
+  <!-- 5.13 waiting and the night bell (given through Hearth.Guests.GuestThoughts) -->
+  <ThoughtDef>
+    <defName>HH_GuestWaited</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>0.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>waited a little</label>
+        <description>I had to wait to be served. Not long, but I noticed.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+      <li>
+        <label>waited for nothing</label>
+        <description>I waited and waited, and nobody came to serve me.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HH_GuestBellNobody</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>0.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>rang the bell, nobody came</label>
+        <description>Rang the bell. Nobody came.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HH_GuestWaitingRoom</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>0.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>plain waiting room</label>
+        <description>At least there was somewhere to sit while I waited.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>decent waiting room</label>
+        <description>The waiting room was comfortable enough.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>nice waiting room</label>
+        <description>Waiting there was almost a pleasure.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>splendid waiting room</label>
+        <description>I would not have minded waiting longer in a room like that.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

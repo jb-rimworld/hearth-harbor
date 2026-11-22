@@ -21,6 +21,12 @@ namespace Hearth.Guests
         public bool? ForcePod;
         public bool Silent;
         public int? StayTicksOverride;
+        /// <summary>Tests and dev tools: skip the door policy (5.9).</summary>
+        public bool IgnoreDoorPolicy;
+        /// <summary>Mark the members as shady (outlaw) guests for the Underworld module (5.2).</summary>
+        public bool? ForceShady;
+        /// <summary>Return visit: these world pawns come instead of newly generated ones (5.14).</summary>
+        public List<Pawn> Returning;
     }
 
     /// <summary>
@@ -53,7 +59,8 @@ namespace Hearth.Guests
             if (req.Faction == null) req.Faction = parms.faction;
             if (req.Faction == null)
             {
-                var c = Find.FactionManager.AllFactionsListForReading.Where(f => MapComponent_HH_GuestScheduler.FactionCanVisit(f, map) && !MapComponent_HH_GuestScheduler.EnemyPresent(map, f)).ToList();
+                var door = GuestRegistry.Instance?.Door;
+                var c = Find.FactionManager.AllFactionsListForReading.Where(f => MapComponent_HH_GuestScheduler.FactionCanVisit(f, map) && !MapComponent_HH_GuestScheduler.EnemyPresent(map, f) && (door == null || door.FactionOk(f))).ToList();
                 if (c.Count == 0) return false;
                 req.Faction = c.RandomElement();
             }
@@ -81,7 +88,13 @@ namespace Hearth.Guests
         {
             var f = req.Faction;
             if (f == null || !MapComponent_HH_GuestScheduler.FactionCanVisit(f, map)) { HLog.Warn("Inn", "Arrival refused: faction cannot visit (" + f + ")"); return null; }
-            var pawns = GeneratePawns(f, map, Math.Max(1, req.Size));
+            var door = req.IgnoreDoorPolicy ? null : GuestRegistry.Instance?.Door;
+            if (door != null && (!door.FactionOk(f) || !door.KindOk(req.Kind))) { HLog.Info("Inn", $"Arrival refused by the door policy: {f.Name}, {req.Kind}"); return null; }
+            List<Pawn> pawns;
+            if (req.Returning != null && req.Returning.Count > 0)
+                pawns = req.Returning.Where(p => GuestReturns.CanReturn(p, f) && (door == null || door.PawnOk(p))).ToList(); // returners are checked first (5.9)
+            else pawns = GeneratePawns(f, map, Math.Max(1, req.Size), door);
+            if (pawns.Count == 0 && door != null) { HLog.Info("Inn", "Arrival: nobody of " + f.Name + " passed the door policy"); return null; }
             if (pawns.Count == 0) { HLog.Warn("Inn", "Arrival: no pawns could be generated for " + f.Name); return null; }
 
             IntVec3 target = TargetSpot(map);
@@ -120,6 +133,17 @@ namespace Hearth.Guests
                 foreach (var p in pawns) GenSpawn.Spawn(p, CellFinder.RandomClosewalkCellNear(entry, map, 4), map);
             }
             foreach (var p in pawns) reg.Register(p, group, map, req.Nights, leave, req.ForceDigital, req.ForceBudget);
+            if (req.Returning != null && req.Returning.Count > 0)
+                foreach (var p in pawns) { var r = reg.Get(p); if (r == null) continue; r.Returner = true; r.Log("HH.Inn.Event.Returned".TranslateOr("Came back for another stay."), 3); }
+            // shady / outlaw stays (5.2): the Underworld module lets them use back rooms, the fence and holding cells
+            bool shady = req.ForceShady ?? RollShady(f);
+            if (shady)
+                foreach (var p in pawns)
+                {
+                    var r = reg.Get(p); if (r == null) continue;
+                    r.Shady = true;
+                    if (Modules.On(ModuleId.Underworld)) Hearth.Underworld.Underworld.MarkShady(p);
+                }
             var desk = reg.FindDesk(map);
             IntVec3 spot = desk != null ? desk.InteractionCell : target;
             LordMaker.MakeNewLord(f, new LordJob_HH_GuestStay(f, spot, group.Id), map, pawns);
@@ -128,7 +152,19 @@ namespace Hearth.Guests
             return group;
         }
 
-        static void Discard(List<Pawn> pawns) { foreach (var p in pawns) if (!p.Spawned && !p.Destroyed) Find.WorldPawns.PassToWorld(p, RimWorld.Planet.PawnDiscardDecideMode.Discard); }
+        /// <summary>Rough factions are the outlaws' factions (vanilla Rough outlanders and tribes, and modded ones named that way).</summary>
+        public static bool IsRoughFaction(Faction f) => f?.def != null && (f.def.defName.IndexOf("Rough", StringComparison.OrdinalIgnoreCase) >= 0 || f.def.defName.IndexOf("Outlaw", StringComparison.OrdinalIgnoreCase) >= 0 || f.def.defName.IndexOf("Pirate", StringComparison.OrdinalIgnoreCase) >= 0);
+
+        /// <summary>Only with a visible, discovered underworld: a share of rough-faction groups are shady (more with higher whispers).</summary>
+        static bool RollShady(Faction f)
+        {
+            if (!Modules.On(ModuleId.Underworld) || !Hearth.Underworld.Underworld.Unlocked || !IsRoughFaction(f)) return false;
+            float o = Hearth.Underworld.Underworld.OutlawArrivalFactor, r = Hearth.Underworld.Underworld.RespectableArrivalFactor;
+            float chance = Mathf.Clamp01(0.3f * o / Mathf.Max(0.01f, o + r));
+            return JRand.Stream("inn.shady").Chance(chance);
+        }
+
+        static void Discard(List<Pawn> pawns) { foreach (var p in pawns) if (!p.Spawned && !p.Destroyed && !Find.WorldPawns.Contains(p)) Find.WorldPawns.PassToWorld(p, RimWorld.Planet.PawnDiscardDecideMode.Discard); }
 
         static PawnKindDef PickKind(Faction f)
         {
@@ -144,23 +180,36 @@ namespace Hearth.Guests
             return list.RandomElementByWeight(o => o.selectionWeight).kind;
         }
 
-        static List<Pawn> GeneratePawns(Faction f, Map map, int size)
+        /// <summary>Last generation: how many slots stayed empty because nobody passed the door policy in 8 tries (tests).</summary>
+        public static int LastFilteredSlots;
+
+        /// <summary>Generates the group. The door policy is applied already here (N28): gender and age go into the request, the rest is checked
+        /// on the generated pawn; after 8 failed tries the slot stays empty.</summary>
+        static List<Pawn> GeneratePawns(Faction f, Map map, int size, DoorPolicy door)
         {
             var res = new List<Pawn>();
+            LastFilteredSlots = 0;
             for (int i = 0; i < size; i++)
             {
-                try
+                Pawn got = null;
+                for (int attempt = 0; attempt < (door == null ? 1 : DoorPolicy.Retries) && got == null; attempt++)
                 {
-                    var kind = PickKind(f);
-                    if (kind == null || !kind.RaceProps.Humanlike) continue;
-                    var req = new PawnGenerationRequest(kind, f, PawnGenerationContext.NonPlayer, tile: map.Tile, mustBeCapableOfViolence: false,
-                        developmentalStages: DevelopmentalStage.Adult, allowFood: true);
-                    var p = PawnGenerator.GeneratePawn(req);
-                    if (p == null) continue;
-                    if (p.IsCreepJoiner || p.IsMutant || p.IsPrisoner || p.IsSlave || !p.RaceProps.Humanlike) { Find.WorldPawns.PassToWorld(p, RimWorld.Planet.PawnDiscardDecideMode.Discard); continue; }
-                    res.Add(p);
+                    try
+                    {
+                        var kind = PickKind(f);
+                        if (kind == null || !kind.RaceProps.Humanlike) continue;
+                        var req = new PawnGenerationRequest(kind, f, PawnGenerationContext.NonPlayer, tile: map.Tile, mustBeCapableOfViolence: false,
+                            developmentalStages: DevelopmentalStage.Adult, allowFood: true);
+                        door?.ApplyTo(ref req);
+                        var p = PawnGenerator.GeneratePawn(req);
+                        if (p == null) continue;
+                        if (p.IsCreepJoiner || p.IsMutant || p.IsPrisoner || p.IsSlave || !p.RaceProps.Humanlike || (door != null && !door.PawnOk(p)))
+                        { Find.WorldPawns.PassToWorld(p, RimWorld.Planet.PawnDiscardDecideMode.Discard); continue; }
+                        got = p;
+                    }
+                    catch (Exception e) { HLog.Error("Inn", "Guest generation failed for " + f?.Name, e); break; }
                 }
-                catch (Exception e) { HLog.Error("Inn", "Guest generation failed for " + f?.Name, e); }
+                if (got != null) res.Add(got); else if (door != null) LastFilteredSlots++;
             }
             return res;
         }

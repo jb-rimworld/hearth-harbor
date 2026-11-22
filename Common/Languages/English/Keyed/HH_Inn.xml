@@ -12,9 +12,41 @@
   <HH.Inn.Arrival.TipDesk>Tip: a front desk lets guests check in properly; without one they find their beds themselves.</HH.Inn.Arrival.TipDesk>
   <HH.Inn.Card>card</HH.Inn.Card>
   <HH.Inn.Cash>cash</HH.Inn.Cash>
+  <HH.Inn.Desk.Door>Door policy: {0}</HH.Inn.Desk.Door>
   <HH.Inn.Desk.Inspect>Check-ins today: {0} · all time: {1}</HH.Inn.Desk.Inspect>
   <HH.Inn.Desk.Next>Next guests: {0}</HH.Inn.Desk.Next>
   <HH.Inn.Desk.NoBeds>No guest beds yet: mark a bed as guest bed to receive overnight guests.</HH.Inn.Desk.NoBeds>
+  <HH.Inn.Door.Age>Age: {0}–{1}</HH.Inn.Door.Age>
+  <HH.Inn.Door.AllowAll>Let everyone in (ignore all filters below)</HH.Inn.Door.AllowAll>
+  <HH.Inn.Door.Any>any</HH.Inn.Door.Any>
+  <HH.Inn.Door.Day>Day visitors</HH.Inn.Door.Day>
+  <HH.Inn.Door.Everyone>Everyone</HH.Inn.Door.Everyone>
+  <HH.Inn.Door.Except>Everyone except these</HH.Inn.Door.Except>
+  <HH.Inn.Door.Factions>Factions</HH.Inn.Door.Factions>
+  <HH.Inn.Door.Gender>Gender</HH.Inn.Door.Gender>
+  <HH.Inn.Door.Gizmo>Door policy</HH.Inn.Door.Gizmo>
+  <HH.Inn.Door.GizmoDesc>Choose who may stay: factions, xenotypes, gender, age, royal titles, tech level, wealth and kind of stay. Filters apply when guests are planned and generated.</HH.Inn.Door.GizmoDesc>
+  <HH.Inn.Door.Intro>Who may come. Filters apply when guests are planned and generated; hostile factions never visit.</HH.Inn.Door.Intro>
+  <HH.Inn.Door.Only>Only these</HH.Inn.Door.Only>
+  <HH.Inn.Door.Overnight>Overnight guests</HH.Inn.Door.Overnight>
+  <HH.Inn.Door.Preview>{0} of people from friendly factions would be welcome.</HH.Inn.Door.Preview>
+  <HH.Inn.Door.Quip.Age>Ageist. Grandma will remember this.</HH.Inn.Door.Quip.Age>
+  <HH.Inn.Door.Quip.AllowAll>Ugh. A hippie.</HH.Inn.Door.Quip.AllowAll>
+  <HH.Inn.Door.Quip.Default>Woke, but with limits, huh?</HH.Inn.Door.Quip.Default>
+  <HH.Inn.Door.Quip.Factions>Holding a grudge? Classy.</HH.Inn.Door.Quip.Factions>
+  <HH.Inn.Door.Quip.Gender>Half the world uninvited. Efficient, you sexist.</HH.Inn.Door.Quip.Gender>
+  <HH.Inn.Door.Quip.Saved>Guest filter saved.</HH.Inn.Door.Quip.Saved>
+  <HH.Inn.Door.Quip.StayKind>Commitment issues, much?</HH.Inn.Door.Quip.StayKind>
+  <HH.Inn.Door.Quip.Tech>Too primitive for your fine dining? Noted.</HH.Inn.Door.Quip.Tech>
+  <HH.Inn.Door.Quip.Title>Class warfare, but make it hospitality.</HH.Inn.Door.Quip.Title>
+  <HH.Inn.Door.Quip.Wealth>Only the rich. Your landlord would be proud.</HH.Inn.Door.Quip.Wealth>
+  <HH.Inn.Door.Quip.Xenotypes>Gene snob detected. It's you.</HH.Inn.Door.Quip.Xenotypes>
+  <HH.Inn.Door.Reset>Almost everyone (default)</HH.Inn.Door.Reset>
+  <HH.Inn.Door.Tech>Lowest tech level</HH.Inn.Door.Tech>
+  <HH.Inn.Door.Title>Door policy</HH.Inn.Door.Title>
+  <HH.Inn.Door.Title2>Royal titles (only titled / no titled)</HH.Inn.Door.Title2>
+  <HH.Inn.Door.Wealth>Wealth band: {0}–{1}</HH.Inn.Door.Wealth>
+  <HH.Inn.Door.Xenotypes>Xenotypes</HH.Inn.Door.Xenotypes>
   <HH.Inn.Event.Accompanied>Was shown around by {0}.</HH.Inn.Event.Accompanied>
   <HH.Inn.Event.Activity>Went to {0}.</HH.Inn.Event.Activity>
   <HH.Inn.Event.Arrested>Was arrested.</HH.Inn.Event.Arrested>
@@ -25,7 +57,10 @@
   <HH.Inn.Event.CouldNotPay>Could not pay for the night.</HH.Inn.Event.CouldNotPay>
   <HH.Inn.Event.Declined>Thought about staying for good, then went home.</HH.Inn.Event.Declined>
   <HH.Inn.Event.Died>Died during the stay.</HH.Inn.Event.Died>
+  <HH.Inn.Event.Gift>Left a gift: {0}.</HH.Inn.Event.Gift>
   <HH.Inn.Event.GotRoom>Took a bed in a {0} for {1} silver a night.</HH.Inn.Event.GotRoom>
+  <HH.Inn.Event.HonestyBox>Checked in at the honesty box; nobody was on duty.</HH.Inn.Event.HonestyBox>
+  <HH.Inn.Event.HonestyPrice>Paid the honesty-box price of {0} silver a night.</HH.Inn.Event.HonestyPrice>
   <HH.Inn.Event.Insulted>Felt pestered by {0}'s recruiting.</HH.Inn.Event.Insulted>
   <HH.Inn.Event.Joined>Decided to stay and joined the colony.</HH.Inn.Event.Joined>
   <HH.Inn.Event.LeftBroke>Left early: the money ran out.</HH.Inn.Event.LeftBroke>
@@ -35,6 +70,7 @@
   <HH.Inn.Event.PaidNight>Paid {0} silver for another night ({1}).</HH.Inn.Event.PaidNight>
   <HH.Inn.Event.Pricey>Found {0} silver a night steep.</HH.Inn.Event.Pricey>
   <HH.Inn.Event.RecruitTalk>Had a long talk with {0} about staying.</HH.Inn.Event.RecruitTalk>
+  <HH.Inn.Event.Returned>Came back for another stay.</HH.Inn.Event.Returned>
   <HH.Inn.Event.SelfCheckIn>Found the room alone; nobody was at a desk.</HH.Inn.Event.SelfCheckIn>
   <HH.Inn.Event.SentAway>Was sent away.</HH.Inn.Event.SentAway>
   <HH.Inn.Event.ShortenedStay>Shortened the stay to {0} night(s) to afford the room.</HH.Inn.Event.ShortenedStay>
@@ -43,6 +79,7 @@
   <HH.Inn.Forecast.In>in {0} days</HH.Inn.Forecast.In>
   <HH.Inn.Forecast.Now>any moment</HH.Inn.Forecast.Now>
   <HH.Inn.Forecast.Overnight>{0} night(s)</HH.Inn.Forecast.Overnight>
+  <HH.Inn.Forecast.Return>coming back</HH.Inn.Forecast.Return>
   <HH.Inn.GuestBed.Desc>Rent this bed to guests. Colonists will not sleep here; guests only sleep in guest beds. The price per night follows the room, the bed and how many beds share the room.</HH.Inn.GuestBed.Desc>
   <HH.Inn.GuestBed.Inactive>Guest bed (inactive while medical, prisoner or slave bed)</HH.Inn.GuestBed.Inactive>
   <HH.Inn.GuestBed.Inspect>Guest bed: {0} silver/night ({1})</HH.Inn.GuestBed.Inspect>
@@ -67,6 +104,7 @@
   <HH.Inn.Occupancy.Single>single</HH.Inn.Occupancy.Single>
   <HH.Inn.Occupancy.TwoBed>two-bed</HH.Inn.Occupancy.TwoBed>
   <HH.Inn.Quality.Plain>plain</HH.Inn.Quality.Plain>
+  <HH.Inn.RenownLine>Renown {0} {1}</HH.Inn.RenownLine>
   <HH.Inn.Report.Budget>budget {0}</HH.Inn.Report.Budget>
   <HH.Inn.Report.Day>day visitor</HH.Inn.Report.Day>
   <HH.Inn.Report.Goodwill>Goodwill {0}</HH.Inn.Report.Goodwill>
@@ -132,6 +170,18 @@
   <HH.Inn.Wing.ExpandDesc>Paint where guests may go. Guests stay inside their wing (the bed's room is always allowed). Without any wing, guests wander near their rooms.</HH.Inn.Wing.ExpandDesc>
   <HH.Inn.Wing.Name>Guest Wing {0}</HH.Inn.Wing.Name>
   <HH.Inn.Wing.New>New guest wing</HH.Inn.Wing.New>
+  <HH.Inn.WingStatus.Bathroom>Bathroom</HH.Inn.WingStatus.Bathroom>
+  <HH.Inn.WingStatus.Bedroom>Bedroom</HH.Inn.WingStatus.Bedroom>
+  <HH.Inn.WingStatus.Est>est.</HH.Inn.WingStatus.Est>
+  <HH.Inn.WingStatus.Kitchen>Kitchen</HH.Inn.WingStatus.Kitchen>
+  <HH.Inn.WingStatus.Missing>missing</HH.Inn.WingStatus.Missing>
+  <HH.Inn.WingStatus.NoCook>nobody may cook</HH.Inn.WingStatus.NoCook>
+  <HH.Inn.WingStatus.NoGuestBed>no guest bed</HH.Inn.WingStatus.NoGuestBed>
+  <HH.Inn.WingStatus.NoHours>no opening hours</HH.Inn.WingStatus.NoHours>
+  <HH.Inn.WingStatus.NoPower>no power or fuel</HH.Inn.WingStatus.NoPower>
+  <HH.Inn.WingStatus.NoStove>no cooking station</HH.Inn.WingStatus.NoStove>
+  <HH.Inn.WingStatus.Restaurant>Restaurant</HH.Inn.WingStatus.Restaurant>
+  <HH.Inn.WingStatus.RoomOpen>room open or unroofed</HH.Inn.WingStatus.RoomOpen>
   <HH.Setting.inn.arrivalNotice>Announce arrivals</HH.Setting.inn.arrivalNotice>
   <HH.Setting.inn.arrivalNotice.Desc>A short letter for your first groups, a quiet message afterwards.</HH.Setting.inn.arrivalNotice.Desc>
   <HH.Setting.inn.arrivalRate>Guest arrival rate</HH.Setting.inn.arrivalRate>
@@ -146,6 +196,10 @@
   <HH.Setting.inn.checkOutHour.Desc>Overnight guests leave around this hour on their last morning.</HH.Setting.inn.checkOutHour.Desc>
   <HH.Setting.inn.dayVisitors>Day visitors</HH.Setting.inn.dayVisitors>
   <HH.Setting.inn.dayVisitors.Desc>Groups that only come for your open venues during opening hours and leave before closing time. Needs at least one venue sign.</HH.Setting.inn.dayVisitors.Desc>
+  <HH.Setting.inn.deskCloseHour>Front desk closes (hour)</HH.Setting.inn.deskCloseHour>
+  <HH.Setting.inn.deskCloseHour.Desc>From this hour the front desk is an honesty box: guests check themselves in and pay a little less.</HH.Setting.inn.deskCloseHour.Desc>
+  <HH.Setting.inn.deskOpenHour>Front desk opens (hour)</HH.Setting.inn.deskOpenHour>
+  <HH.Setting.inn.deskOpenHour.Desc>From this hour a host can check guests in at the front desk. Outside the hours the desk works as an honesty box.</HH.Setting.inn.deskOpenHour.Desc>
   <HH.Setting.inn.expectationOffset>Guest expectations</HH.Setting.inn.expectationOffset>
   <HH.Setting.inn.expectationOffset.Desc>Added to every guest's expectation (0 … 1). Higher means harder to please.</HH.Setting.inn.expectationOffset.Desc>
   <HH.Setting.inn.firstGuestMaxDays>First guests: latest day</HH.Setting.inn.firstGuestMaxDays>
@@ -162,10 +216,14 @@
   <HH.Setting.inn.goodwillLossCap.Desc>A bad stay costs a faction at most this much goodwill.</HH.Setting.inn.goodwillLossCap.Desc>
   <HH.Setting.inn.guestMoney>Guest money</HH.Setting.inn.guestMoney>
   <HH.Setting.inn.guestMoney.Desc>Multiplier on how much silver guests bring.</HH.Setting.inn.guestMoney.Desc>
+  <HH.Setting.inn.honestyDiscount>Honesty box discount</HH.Setting.inn.honestyDiscount>
+  <HH.Setting.inn.honestyDiscount.Desc>Guests who check in at the unattended front desk (outside its hours) pay this much less per night.</HH.Setting.inn.honestyDiscount.Desc>
   <HH.Setting.inn.insultBase>Recruitment insult risk</HH.Setting.inn.insultBase>
   <HH.Setting.inn.insultBase.Desc>Base chance that a recruitment talk offends the guest (lower with better social skill).</HH.Setting.inn.insultBase.Desc>
   <HH.Setting.inn.leaveEarly>Unhappy guests leave early</HH.Setting.inn.leaveEarly>
   <HH.Setting.inn.leaveEarly.Desc>Guests who are miserable for a long time, or run out of money, pack up before their planned day.</HH.Setting.inn.leaveEarly.Desc>
+  <HH.Setting.inn.leavingGifts>Gifts on leaving</HH.Setting.inn.leavingGifts>
+  <HH.Setting.inn.leavingGifts.Desc>Happy guests sometimes leave a small gift at the front desk (more likely the better the stay).</HH.Setting.inn.leavingGifts.Desc>
   <HH.Setting.inn.maxGroupSize>Largest guest group</HH.Setting.inn.maxGroupSize>
   <HH.Setting.inn.maxGroupSize.Desc>No group brings more guests than this. Overnight groups are also limited by your free guest beds.</HH.Setting.inn.maxGroupSize.Desc>
   <HH.Setting.inn.podDistance>Drop pod distance</HH.Setting.inn.podDistance>
@@ -178,8 +236,12 @@
   <HH.Setting.inn.renownLossCap.Desc>One unhappy group lowers your renown by at most this much.</HH.Setting.inn.renownLossCap.Desc>
   <HH.Setting.inn.reportMode>Departure reports</HH.Setting.inn.reportMode>
   <HH.Setting.inn.reportMode.Desc>How the short report after each stay reaches you: as a letter, as a quiet message, or not at all.</HH.Setting.inn.reportMode.Desc>
+  <HH.Setting.inn.returnVisits>Return visits</HH.Setting.inn.returnVisits>
+  <HH.Setting.inn.returnVisits.Desc>Guests who liked their stay come back after 3 to 10 days (unhappy ones after 14 to 30), plus twice their travel time.</HH.Setting.inn.returnVisits.Desc>
   <HH.Setting.inn.stayNightsMax>Longest stay (nights)</HH.Setting.inn.stayNightsMax>
   <HH.Setting.inn.stayNightsMax.Desc>Overnight guests stay at most this many nights.</HH.Setting.inn.stayNightsMax.Desc>
   <HH.Setting.inn.stayNightsMin>Shortest stay (nights)</HH.Setting.inn.stayNightsMin>
   <HH.Setting.inn.stayNightsMin.Desc>Overnight guests stay at least this many nights.</HH.Setting.inn.stayNightsMin.Desc>
+  <HH.Setting.inn.waitThoughts>Waiting and night bell thoughts</HH.Setting.inn.waitThoughts>
+  <HH.Setting.inn.waitThoughts.Desc>Guests who wait in vain or ring the night bell with nobody coming feel it in their mood; a waiting room softens it.</HH.Setting.inn.waitThoughts.Desc>
 </LanguageData>

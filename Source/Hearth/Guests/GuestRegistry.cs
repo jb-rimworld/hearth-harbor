@@ -27,6 +27,8 @@ namespace Hearth.Guests
         int nextGroupId = 1;
         public float Renown = StartRenown;
         public float Whispers;
+        /// <summary>Door policy / guest filters (5.9).</summary>
+        public DoorPolicy Door = new DoorPolicy();
         public int GroupsHosted, GuestsHosted, ArrivalsAnnounced;
         public Money LifetimeIncome;
         Dictionary<string, int> goodwillByQuadrum = new Dictionary<string, int>();
@@ -90,6 +92,9 @@ namespace Hearth.Guests
                 ArrivedTick = Find.TickManager.TicksGame, PlannedLeaveTick = plannedLeaveTick, NightsPlanned = g.Kind == StayKind.Overnight ? nights : 0,
             };
             r.Wealth = GuestEconomy.RollWealth(p, g.Faction, Renown, rng);
+            // wealth band of the door policy (N28): re-roll a few times, then clamp into the band
+            for (int i = 0; i < DoorPolicy.Retries && !Door.WealthOk(r.Wealth); i++) r.Wealth = GuestEconomy.RollWealth(p, g.Faction, Renown, rng);
+            r.Wealth = Door.ClampWealth(r.Wealth);
             float days = g.Kind == StayKind.Overnight ? nights + 0.5f : 0.35f;
             r.Budget = forceBudget ?? GuestEconomy.RollBudget(p, r.Wealth, days, g.ByPod, rng);
             r.StartBudget = r.Budget;
@@ -179,7 +184,10 @@ namespace Hearth.Guests
             r.CheckedIn = true; r.CheckInTick = Find.TickManager.TicksGame; r.SelfCheckIn = desk == null;
             r.Phase = GuestPhase.Staying;
             r.ArrivalMood = p.needs?.mood?.CurLevel ?? 0.5f;
-            if (desk != null) { r.Log("HH.Inn.Event.CheckedIn".TranslateOr("Checked in at the front desk.")); desk.Notify_CheckIn(p); }
+            // outside the desk's hours and without a host standing by, the desk is an honesty box (5.13, 6.1): a little cheaper
+            bool honesty = desk != null && desk.Spawned && !GuestThoughts.DeskOpenNow(desk.Map) && !desk.HostNearby();
+            if (honesty) { r.Log("HH.Inn.Event.HonestyBox".TranslateOr("Checked in at the honesty box; nobody was on duty.")); desk.Notify_CheckIn(p); }
+            else if (desk != null) { r.Log("HH.Inn.Event.CheckedIn".TranslateOr("Checked in at the front desk.")); desk.Notify_CheckIn(p); }
             else r.Log("HH.Inn.Event.SelfCheckIn".TranslateOr("Found the room alone; nobody was at a desk."));
             if (r.Overnight)
             {
@@ -191,7 +199,7 @@ namespace Hearth.Guests
                     int leave = Find.TickManager.TicksGame + 2500 * 4;
                     if (r.PlannedLeaveTick > leave) r.PlannedLeaveTick = leave;
                 }
-                else if (!ChargeNight(r, first: true))
+                else if (!ApplyHonestyDiscount(r, honesty) || !ChargeNight(r, first: true))
                 {
                     r.Log("HH.Inn.Event.CouldNotPay".TranslateOr("Could not pay for the night."));
                     ReleaseBed(r); r.Kind = StayKind.DayVisitor; r.NightsPlanned = 0;
@@ -234,6 +242,16 @@ namespace Hearth.Guests
                 r.ServiceSum -= 0.08f;
                 r.Log("HH.Inn.Event.Pricey".TranslateOr("Found {0} silver a night steep.").Replace("{0}", bestQ.Price.WholeSilver.ToString()), 4);
             }
+            return true;
+        }
+
+        /// <summary>Honesty box: the booked night price drops by the discount, rounded to whole silver (always true, for chaining).</summary>
+        static bool ApplyHonestyDiscount(GuestRecord r, bool honesty)
+        {
+            float d = HSettings.Get(InnSettings.HonestyDiscount);
+            if (!honesty || d <= 0f || r.NightPrice.Micro <= 0) return true;
+            r.NightPrice = Money.FromSilver(Math.Max(1, (int)Math.Round(r.NightPrice.Silver * (1f - d))));
+            r.Log("HH.Inn.Event.HonestyPrice".TranslateOr("Paid the honesty-box price of {0} silver a night.").Replace("{0}", r.NightPrice.WholeSilver.ToString()));
             return true;
         }
 
@@ -359,6 +377,8 @@ namespace Hearth.Guests
                     }
                 }
                 if (now >= r.PlannedLeaveTick) wantLeave = true;
+                // day visitors go home at "last orders": 30 minutes before every venue has closed (5.13)
+                if (r.Kind == StayKind.DayVisitor && now - r.ArrivedTick > 1250 && !AnyVenueOpenSoon(map)) { wantLeave = true; reason = "closing"; }
                 if (HSettings.GetBool(InnSettings.LeaveEarly) && r.CheckedIn)
                 {
                     if (r.Satisfaction < -0.6f) { if (r.LowSince < 0) r.LowSince = now; else if (now - r.LowSince > 2500 * 8) { wantLeave = true; reason = "unhappy"; } }
@@ -366,6 +386,21 @@ namespace Hearth.Guests
                 }
             }
             if (wantLeave) DepartGroup(g, reason);
+        }
+
+        /// <summary>True when the map has no venues at all (nothing to close), or one of them is open now and still in 30 minutes.</summary>
+        public static bool AnyVenueOpenSoon(Map map)
+        {
+            var all = Venues.All(map);
+            if (all.Count == 0) return true;
+            int h = GenLocalDate.HourOfDay(map);
+            int h2 = (int)(GenLocalDate.HourFloat(map) + 0.5f) % 24;
+            for (int i = 0; i < all.Count; i++)
+            {
+                var c = all[i].Comp; if (c == null) continue;
+                if (c.alwaysOpen || (c.IsOpenAt(h) && c.IsOpenAt(h2))) return true;
+            }
+            return false;
         }
 
         void GiveNightVerdict(GuestRecord r)
@@ -445,6 +480,8 @@ namespace Hearth.Guests
             }
             r.Outcome = s > 0.25f ? "great" : s > 0.05f ? "good" : s > -0.1f ? "fine" : s > -0.3f ? "poor" : "bad";
             if (alive && !hostile) TryRecruitAtDeparture(r, s);
+            if (alive && !hostile && !r.SentAway && p.Spawned && p.Faction != Faction.OfPlayer && reason != "unhappy" && reason != "money" && reason != "removal")
+                Guard.Run(ModuleId.Inn, "Inn.Gift", () => GuestReturns.TryGift(r, p.Map));
             ReturnCardFunds(r);
             ReleaseBed(r);
             if (r.SentAway) r.Log("HH.Inn.Event.SentAway".TranslateOr("Was sent away."));
@@ -472,19 +509,39 @@ namespace Hearth.Guests
             }
             else g.RenownDelta = ChangeRenown(-1f);
             GroupsHosted++;
+            if (g.LeaveReason != "hostile" && g.LeaveReason != "sentAway" && g.LeaveReason != "removal")
+            {
+                var map = Find.Maps.FirstOrDefault(m => m.uniqueID == g.MapId);
+                Guard.Run(ModuleId.Inn, "Inn.PlanReturn", () => GuestReturns.PlanReturn(g, members.Where(m => m.Pawn != null && m.Pawn.Faction == g.Faction).ToList(), map));
+            }
             g.ReportLines.Clear();
             foreach (var r in members) g.ReportLines.Add(DepartureReport.GuestLine(r));
         }
 
         /// <summary>Changes renown, respecting the floor on easy tiers (never below the start value up to Standard Room).</summary>
-        public float ChangeRenown(float delta)
+        public float ChangeRenown(float delta) => ChangeRenown(delta, null);
+
+        public float ChangeRenown(float delta, string reason)
         {
             float before = Renown;
             Renown = Mathf.Clamp(Renown + delta, 0f, 100f);
             float tier = HearthProfile.Current?.Tier ?? 3f;
             if (tier <= 3.001f && Renown < StartRenown && before >= StartRenown) Renown = StartRenown;
             if (tier <= 3.001f && Renown < before && before < StartRenown) Renown = before;
+            if (!reason.NullOrEmpty() && Math.Abs(Renown - before) > 0.0001f) HLog.Info("Inn", $"Renown {Renown - before:+0.0;-0.0} ({reason}) → {Renown:0.0}");
             return Renown - before;
+        }
+
+        /// <summary>Whispers as other modules see them: the Underworld module owns them while it is on; otherwise the Inn keeps its own count.</summary>
+        public float CurrentWhispers => UnderworldOn ? Hearth.Underworld.Underworld.Whispers : Whispers;
+
+        static bool UnderworldOn => Modules.On(ModuleId.Underworld) && Hearth.Underworld.Underworld.Comp != null;
+
+        /// <summary>Raises (or lowers) whispers: forwarded to the Underworld module when it runs, else kept here.</summary>
+        public void AddWhispers(float delta, string reason)
+        {
+            if (UnderworldOn) { Hearth.Underworld.Underworld.AddWhispers(delta, reason); return; }
+            Whispers = Mathf.Clamp(Whispers + delta, 0f, 100f);
         }
 
         static int QuadrumIndex => Find.TickManager.TicksAbs / 900000;
@@ -590,7 +647,7 @@ namespace Hearth.Guests
             if (r.Handling == HandlingMode.Recruit && !r.Insulted)
             {
                 bool loyal = guest.Faction?.leader == guest || (guest.royalty != null && guest.royalty.AllTitlesForReading.Count > 0);
-                float p = HSettings.Get(InnSettings.InsultBase) * (1f - social / 20f) + (loyal ? 0.10f : 0f);
+                float p = InsultChanceOverride ?? (HSettings.Get(InnSettings.InsultBase) * (1f - social / 20f) + (loyal ? 0.10f : 0f));
                 if (JRand.Stream("inn.insult").Chance(p))
                 {
                     r.Insulted = true;
@@ -627,14 +684,14 @@ namespace Hearth.Guests
                 case PawnLostCondition.Killed:
                     r.Log("HH.Inn.Event.Died".TranslateOr("Died during the stay."));
                     ChangeRenown(-Math.Min(3f, HSettings.Get(InnSettings.RenownLossCap) + 1f));
-                    Whispers = Math.Min(100f, Whispers + 4f);
+                    AddWhispers(4f, "guest died during the stay");
                     foreach (var m in Members(g ?? new GuestGroup { Id = -9 })) if (m != r) m.Incidents += 0.03f;
                     r.Settled = true; r.GoodwillPoints = 0;
                     break;
                 case PawnLostCondition.MadePrisoner:
                     r.Log("HH.Inn.Event.Arrested".TranslateOr("Was arrested."));
                     ChangeRenown(-Math.Min(8f, HSettings.Get(InnSettings.RenownLossCap) * 1.5f + 1f));
-                    Whispers = Math.Min(100f, Whispers + 5f);
+                    AddWhispers(5f, "guest arrested");
                     r.Settled = true;
                     break;
                 default:
@@ -812,6 +869,7 @@ namespace Hearth.Guests
             Scribe_Values.Look(ref nextGroupId, "nextGroupId", 1);
             Scribe_Values.Look(ref Renown, "renown", StartRenown);
             Scribe_Values.Look(ref Whispers, "whispers");
+            Scribe_Deep.Look(ref Door, "doorPolicy");
             Scribe_Values.Look(ref GroupsHosted, "groupsHosted");
             Scribe_Values.Look(ref GuestsHosted, "guestsHosted");
             Scribe_Values.Look(ref ArrivalsAnnounced, "arrivalsAnnounced");
@@ -823,6 +881,7 @@ namespace Hearth.Guests
                 records = records ?? new List<GuestRecord>();
                 groups = groups ?? new List<GuestGroup>();
                 goodwillByQuadrum = goodwillByQuadrum ?? new Dictionary<string, int>();
+                Door = Door ?? new DoorPolicy();
                 records.RemoveAll(x => x == null);
                 groups.RemoveAll(x => x == null);
                 Instance = this;
@@ -837,6 +896,8 @@ namespace Hearth.Guests
         internal static float? RecruitChanceOverride;
         /// <summary>Tests only: fixed bond threshold (colonists' base opinions vary with traits and ideologies).</summary>
         internal static int? BondThresholdOverride;
+        /// <summary>Tests only: fixed insult chance (the setting is capped and the host's social skill grows with every talk).</summary>
+        internal static float? InsultChanceOverride;
         internal void ResetGoodwillBookForTests() => goodwillByQuadrum.Clear();
         internal void ForceRemoveAllForTests() { foreach (var r in records.ToList()) Unregister(r, "test cleanup"); groups.Clear(); }
         internal void AddRawRecordForTests(GuestRecord r) { records.Add(r); if (r.Pawn != null) Index(r); }

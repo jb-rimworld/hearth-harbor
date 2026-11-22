@@ -30,7 +30,7 @@ namespace Hearth.Guests
             var sch = map.GetComponent<MapComponent_HH_GuestScheduler>();
             var guests = reg.OnMap(map).Where(r => r.Pawn != null).ToList();
             var forecast = sch?.GetForecast(HSettings.GetInt(InnSettings.ForecastDays));
-            float h = 120f + (forecast?.Count ?? 0) * 24f + guests.Count * 26f + 80f;
+            float h = 180f + (GuestWings.Comp(map)?.wings.Count ?? 0) * 24f + (forecast?.Count ?? 0) * 24f + guests.Count * 26f + 80f;
             var view = new Rect(0, 0, rect.width - 16f, Mathf.Max(h, rect.height));
             Widgets.BeginScrollView(rect, ref scroll, view);
             var ls = new Listing_Standard();
@@ -39,8 +39,12 @@ namespace Hearth.Guests
             ls.Label("HH.Inn.Tab.Title".TranslateOr("Guests") + "  " + GuestRegistry.StarsText());
             Text.Font = GameFont.Small;
             ls.Label("HH.Inn.Tab.Summary".TranslateOr("Renown {0} · Whispers {1} · {2} groups hosted · {3} guest beds ({4} free)")
-                .Replace("{0}", reg.Renown.ToString("0.0")).Replace("{1}", reg.Whispers.ToString("0.0")).Replace("{2}", reg.GroupsHosted.ToString())
+                .Replace("{0}", reg.Renown.ToString("0.0")).Replace("{1}", reg.CurrentWhispers.ToString("0.0")).Replace("{2}", reg.GroupsHosted.ToString())
                 .Replace("{3}", GuestBeds.CountOn(map).ToString()).Replace("{4}", GuestBeds.FreeOn(map).Count.ToString()));
+            var doorRow = ls.GetRect(28f);
+            if (Widgets.ButtonText(doorRow.LeftPart(0.3f), "HH.Inn.Door.Gizmo".TranslateOr("Door policy"))) DoorPolicyHub.Open();
+            if (!reg.Door.IsDefault) Widgets.Label(doorRow.RightPart(0.68f), reg.Door.AllowAll ? "HH.Inn.Door.Everyone".TranslateOr("Everyone") : string.Join(", ", reg.Door.Restricting()));
+            foreach (var w in WingStatus.Lines(map)) ls.Label(w);
             ls.GapLine();
             ls.Label("HH.Inn.Tab.Forecast".TranslateOr("Expected arrivals"));
             if (sch == null || !sch.Active) ls.Label("   " + "HH.Inn.Tab.Inactive".TranslateOr("Nobody is coming: mark a bed as guest bed or open a venue."));

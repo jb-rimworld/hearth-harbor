@@ -29,6 +29,22 @@ namespace Hearth
         public int Wealth = 30;
         public bool PaysDigital;
         public readonly List<string> Events = new List<string>();
+        /// <summary>Wealth level from which a guest counts as a VIP (bodyguards, noble treatment).</summary>
+        public const int VipWealth = 60;
+        /// <summary>VIP guest (wealth ≥ 60): may hire bodyguards, expects more.</summary>
+        public bool Vip => Wealth >= VipWealth;
+    }
+
+    /// <summary>
+    /// Optional second interface of the Inn module: the colony's public reputation (Renown, 0–100, 5.7) and the
+    /// underworld reputation (Whispers, 0–100). Read through <see cref="GuestApi.Renown"/> / <see cref="GuestApi.Whispers"/>.
+    /// </summary>
+    public interface IGuestRenownImpl
+    {
+        float Renown(Map map);
+        float Whispers(Map map);
+        /// <summary>Changes renown (the Inn applies its floors); returns the delta actually applied.</summary>
+        float AddRenown(Map map, float delta, string reason);
     }
 
     /// <summary>Implemented by the Inn module. Until it is loaded/enabled, GuestApi falls back to vanilla visitors.</summary>
@@ -111,11 +127,34 @@ namespace Hearth
             return vanilla.ToList();
         }
 
+        /// <summary>Raised after every AddSatisfaction (guest, delta, reason): the Inn turns waiting/bell outcomes into mood thoughts.</summary>
+        public static event Action<Pawn, float, string> SatisfactionChanged;
+
         public static void AddSatisfaction(Pawn p, float delta, string reason)
         {
-            if (InnOn && Impl.Info(p) != null) { Impl.AddSatisfaction(p, delta, reason); return; }
-            var gi = Info(p); if (gi != null) { gi.Satisfaction = Math.Max(-1, Math.Min(1, gi.Satisfaction + delta)); gi.Events.Add(reason); }
+            if (InnOn && Impl.Info(p) != null) Impl.AddSatisfaction(p, delta, reason);
+            else { var gi = Info(p); if (gi != null) { gi.Satisfaction = Math.Max(-1, Math.Min(1, gi.Satisfaction + delta)); gi.Events.Add(reason); } }
+            var h = SatisfactionChanged;
+            if (h != null) try { h(p, delta, reason); } catch (Exception e) { HLog.Error("Core", "SatisfactionChanged handler failed", e); }
         }
+
+        // ------------------------------------------------------------------ renown / whispers (5.7)
+        /// <summary>Renown used when the Inn module is off (neutral middle of the 0–100 scale).</summary>
+        public const float NeutralRenown = 50f;
+        /// <summary>True when Renown/Whispers come from a running Inn module (otherwise neutral defaults).</summary>
+        public static bool HasRenown => InnOn && Impl is IGuestRenownImpl;
+
+        /// <summary>The colony's public renown 0–100 (Inn module); <see cref="NeutralRenown"/> without it. Colony-wide; map may be null.</summary>
+        public static float Renown(Map map = null) => HasRenown ? ((IGuestRenownImpl)Impl).Renown(map) : NeutralRenown;
+
+        /// <summary>Renown as 1–5 stars (1 + renown/20).</summary>
+        public static int RenownStars(Map map = null) => Math.Max(1, Math.Min(5, 1 + (int)(Renown(map) / 20f)));
+
+        /// <summary>Whispers 0–100, the reputation in the underworld (Underworld module when on, else the Inn's own count, else 0).</summary>
+        public static float Whispers(Map map = null) => HasRenown ? ((IGuestRenownImpl)Impl).Whispers(map) : 0f;
+
+        /// <summary>Changes renown through the Inn module (no effect without it). Returns the delta actually applied.</summary>
+        public static float AddRenown(Map map, float delta, string reason) => HasRenown ? ((IGuestRenownImpl)Impl).AddRenown(map, delta, reason) : 0f;
 
         /// <summary>Money left that the guest is willing to spend this stay.</summary>
         public static Money Budget(Pawn p) => Info(p)?.Budget ?? Money.Zero;

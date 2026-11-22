@@ -19,6 +19,9 @@ namespace Hearth.Guests
         public int ArrivalTick;
         public int Nights;
         public int Postponed;
+        /// <summary>Return visit (5.14): these world pawns come back instead of new ones.</summary>
+        public List<Pawn> Returning = new List<Pawn>();
+        public bool IsReturn => Returning != null && Returning.Count > 0;
 
         public string Describe(Map map)
         {
@@ -27,7 +30,8 @@ namespace Hearth.Guests
             string kind = Kind == StayKind.Overnight
                 ? "HH.Inn.Forecast.Overnight".TranslateOr("{0} night(s)").Replace("{0}", Nights.ToString())
                 : "HH.Inn.Forecast.Day".TranslateOr("day visit");
-            return $"{Size}× {Faction?.Name ?? "?"} · {kind} · {when}";
+            string back = IsReturn ? " · " + "HH.Inn.Forecast.Return".TranslateOr("coming back") : "";
+            return $"{Size}× {Faction?.Name ?? "?"} · {kind}{back} · {when}";
         }
 
         public void ExposeData()
@@ -39,6 +43,8 @@ namespace Hearth.Guests
             Scribe_Values.Look(ref ArrivalTick, "arrival");
             Scribe_Values.Look(ref Nights, "nights");
             Scribe_Values.Look(ref Postponed, "postponed");
+            Scribe_Collections.Look(ref Returning, "returning", LookMode.Reference);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit) { Returning = Returning ?? new List<Pawn>(); Returning.RemoveAll(p => p == null); }
         }
     }
 
@@ -70,6 +76,21 @@ namespace Hearth.Guests
 
         public PlannedGroup NextArrival() => forecast.OrderBy(g => g.ArrivalTick).FirstOrDefault();
 
+        /// <summary>Tests: drops every planned return visit and releases the pinned world pawns.</summary>
+        internal void ClearReturnsForTests()
+        {
+            for (int i = forecast.Count - 1; i >= 0; i--) if (forecast[i].IsReturn) { GuestReturns.Unpin(forecast[i].Returning); forecast.RemoveAt(i); }
+        }
+
+        /// <summary>Adds a return visit to the plan (5.14). It arrives even if the regular plan is full.</summary>
+        public PlannedGroup AddReturn(Faction f, List<Pawn> pawns, StayKind kind, int nights, int tick)
+        {
+            var g = new PlannedGroup { Id = nextId++, Faction = f, Size = pawns.Count, Kind = kind, Nights = Math.Max(1, nights), Returning = new List<Pawn>(pawns) };
+            g.ArrivalTick = AlignToHours(tick, kind, false);
+            forecast.Add(g);
+            return g;
+        }
+
         public bool OvernightPossible => GuestBeds.CountOn(map) > 0;
         public bool DayVisitsPossible => HSettings.GetBool(InnSettings.DayVisitors) && Venues.All(map).Count > 0;
         public bool Active => map.IsPlayerHome && (OvernightPossible || DayVisitsPossible);
@@ -84,14 +105,20 @@ namespace Hearth.Guests
         void Tick()
         {
             int now = Find.TickManager.TicksGame;
-            bool night = OvernightPossible, day = DayVisitsPossible;
+            var door = GuestRegistry.Instance?.Door;
+            bool night = OvernightPossible && (door == null || door.KindOk(StayKind.Overnight)), day = DayVisitsPossible && (door == null || door.KindOk(StayKind.DayVisitor));
             if (!map.IsPlayerHome || (!night && !day))
             {
-                if (forecast.Count > 0) { forecast.Clear(); HLog.Debug("Inn", "Forecast cleared: no guest bed and no venue on " + map); }
+                if (forecast.Count > 0) { foreach (var x in forecast) GuestReturns.Unpin(x.Returning); forecast.Clear(); HLog.Debug("Inn", "Forecast cleared: no guest bed and no venue on " + map); }
                 planHorizon = -1;
                 return;
             }
-            forecast.RemoveAll(g => (g.Kind == StayKind.Overnight && !night) || (g.Kind == StayKind.DayVisitor && !day) || g.Faction == null || g.Faction.defeated);
+            for (int i = forecast.Count - 1; i >= 0; i--)
+            {
+                var g = forecast[i];
+                bool drop = g.Faction == null || g.Faction.defeated || (g.Kind == StayKind.Overnight && !night) || (g.Kind == StayKind.DayVisitor && !day);
+                if (drop) { GuestReturns.Unpin(g.Returning); forecast.RemoveAt(i); }
+            }
             if (!everActive)
             {
                 everActive = true;
@@ -117,7 +144,7 @@ namespace Hearth.Guests
                         g.ArrivalTick = AlignToHours(now + 2500 * 8, g.Kind, false);
                         forecast.Add(g);
                     }
-                    else HLog.Debug("Inn", "Planned group dropped after 3 postponements: " + g.Describe(map));
+                    else { HLog.Debug("Inn", "Planned group dropped after 3 postponements: " + g.Describe(map)); GuestReturns.Unpin(g.Returning); }
                 }
             }
         }
@@ -217,13 +244,23 @@ namespace Hearth.Guests
         /// <summary>Weighted by goodwill; never a faction hostile to one that will be (or is) here at the same time (5.8).</summary>
         Faction PickFaction(int from, int to, RngStream rng)
         {
-            var cands = Find.FactionManager.AllFactionsListForReading.Where(f => FactionCanVisit(f, map)).ToList();
+            var door = GuestRegistry.Instance?.Door;
+            var cands = Find.FactionManager.AllFactionsListForReading.Where(f => FactionCanVisit(f, map) && (door == null || door.FactionOk(f))).ToList();
             cands.RemoveAll(f => forecast.Any(g => g.Faction != null && g.Faction.HostileTo(f) && Overlaps(g, from, to)));
             if (cands.Count == 0) return null;
-            float total = cands.Sum(f => 1f + Mathf.Max(0, f.PlayerGoodwill) / 25f);
+            float total = cands.Sum(f => FactionWeight(f));
             double roll = rng.NextDouble() * total;
-            foreach (var f in cands) { roll -= 1f + Mathf.Max(0, f.PlayerGoodwill) / 25f; if (roll <= 0) return f; }
+            foreach (var f in cands) { roll -= FactionWeight(f); if (roll <= 0) return f; }
             return cands[cands.Count - 1];
+        }
+
+        /// <summary>Goodwill weight; with a visible underworld, respectable factions × exp(−N/40), rough ones × (0.2 + N/50) (5.14 Whispers).</summary>
+        public static float FactionWeight(Faction f)
+        {
+            float w = 1f + Mathf.Max(0, f.PlayerGoodwill) / 25f;
+            if (Modules.On(ModuleId.Underworld) && Hearth.Underworld.Underworld.Visible)
+                w *= GuestArrival.IsRoughFaction(f) ? Hearth.Underworld.Underworld.OutlawArrivalFactor : Hearth.Underworld.Underworld.RespectableArrivalFactor;
+            return Mathf.Max(0.01f, w);
         }
 
         static bool Overlaps(PlannedGroup g, int from, int to)
@@ -244,9 +281,11 @@ namespace Hearth.Guests
         bool TryArrive(PlannedGroup g)
         {
             var f = g.Faction;
-            if (!FactionCanVisit(f, map) || EnemyPresent(map, f))
+            var door = GuestRegistry.Instance?.Door;
+            if (door != null && !door.KindOk(g.Kind)) return false;
+            if (!FactionCanVisit(f, map) || EnemyPresent(map, f) || (door != null && !door.FactionOk(f)))
             {
-                var alt = Find.FactionManager.AllFactionsListForReading.Where(x => FactionCanVisit(x, map) && !EnemyPresent(map, x)).ToList();
+                var alt = Find.FactionManager.AllFactionsListForReading.Where(x => FactionCanVisit(x, map) && !EnemyPresent(map, x) && (door == null || door.FactionOk(x))).ToList();
                 if (alt.Count == 0) return false;
                 f = alt.RandomElement();
             }
@@ -264,7 +303,16 @@ namespace Hearth.Guests
                 if (h < open || h > close - 3) return false;
             }
             var req = new GuestArrivalRequest { Faction = f, Size = size, Kind = g.Kind, Nights = g.Nights };
-            return GuestArrival.TryFire(map, req) != null;
+            if (g.IsReturn)
+            {
+                if (f != g.Faction) return false; // a return visit is the same people or nothing
+                req.Returning = g.Returning.Where(p => GuestReturns.CanReturn(p, f)).Take(size).ToList();
+                if (req.Returning.Count == 0) { GuestReturns.Unpin(g.Returning); return true; } // nobody left to come: drop quietly
+                req.Size = req.Returning.Count;
+            }
+            bool ok = GuestArrival.TryFire(map, req) != null;
+            if (ok) GuestReturns.Unpin(g.Returning);
+            return ok;
         }
 
         public override void ExposeData()
