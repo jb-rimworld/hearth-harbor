@@ -4,3 +4,4 @@ Source/**/bin/
 .DS_Store
 /_scratch/
 /tools/out/
+Source/Tests/bin/
