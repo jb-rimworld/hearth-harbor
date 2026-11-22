@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><AssemblyName>Silverline</AssemblyName><RootNamespace>Silverline</RootNamespace></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../Hearth.Core/Hearth.Core.csproj"><Private>False</Private></ProjectReference></ItemGroup>
+</Project>

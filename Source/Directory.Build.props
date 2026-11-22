@@ -1,0 +1,57 @@
+<Project>
+  <!-- Ein Satz Einstellungen für alle drei Programmteile. Version wählen: dotnet build -p:RimVersion=1.6 -->
+  <PropertyGroup>
+    <RimVersion Condition="'$(RimVersion)' == ''">1.7</RimVersion>
+    <G17>$(HOME)/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorld.app/Contents/MacOS</G17>
+    <HarmonyDir>$(HOME)/Library/Application Support/Steam/steamapps/workshop/content/294100/2009463077</HarmonyDir>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <OutputType>Library</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <BaseIntermediateOutputPath>$(MSBuildProjectDirectory)/obj/$(RimVersion)/</BaseIntermediateOutputPath>
+    <OutputPath>$(MSBuildThisFileDirectory)../$(RimVersion)/Assemblies/</OutputPath>
+    <NoWarn>$(NoWarn);CS0649;CS0169;CS0414;CS1591;CS8632;CA1416</NoWarn>
+    <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RimVersion)' == '1.7'">
+    <TargetFramework>net10.0</TargetFramework>
+    <DefineConstants>$(DefineConstants);RW17;RW16PLUS</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RimVersion)' == '1.6'">
+    <TargetFramework>net472</TargetFramework>
+    <DefineConstants>$(DefineConstants);RW16;RW16PLUS</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RimVersion)' == '1.5'">
+    <TargetFramework>net472</TargetFramework>
+    <DefineConstants>$(DefineConstants);RW15</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(HHTests)' == 'true'">
+    <DefineConstants>$(DefineConstants);HH_TESTS</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="obj/**" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(RimVersion)' == '1.7'">
+    <Reference Include="Assembly-CSharp"><HintPath>$(G17)/Assembly-CSharp.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityStubs"><HintPath>$(G17)/UnityStubs.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="Waylith.UnityCompat"><HintPath>$(G17)/Waylith.UnityCompat.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(HarmonyDir)/1.7/Assemblies/0Harmony.dll</HintPath><Private>False</Private></Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(RimVersion)' == '1.6'">
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4871" ExcludeAssets="runtime" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <Reference Include="0Harmony"><HintPath>$(HarmonyDir)/1.6/Assemblies/0Harmony.dll</HintPath><Private>False</Private></Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(RimVersion)' == '1.5'">
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4409" ExcludeAssets="runtime" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <Reference Include="0Harmony"><HintPath>$(HarmonyDir)/1.5/Assemblies/0Harmony.dll</HintPath><Private>False</Private></Reference>
+  </ItemGroup>
+</Project>

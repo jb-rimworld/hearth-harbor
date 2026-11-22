@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Two work types shared by all modules (5.17, 6.5). -->
+  <WorkTypeDef>
+    <defName>HH_Hosting</defName>
+    <labelShort>host</labelShort>
+    <pawnLabel>Host</pawnLabel>
+    <gerundLabel>hosting</gerundLabel>
+    <description>Check guests in and out, show them around, keep them entertained and talk them into staying (or joining).</description>
+    <verb>Host</verb>
+    <naturalPriority>1045</naturalPriority>
+    <requireCapableColonist>true</requireCapableColonist>
+    <workTags><li>Social</li></workTags>
+    <relevantSkills><li>Social</li></relevantSkills>
+  </WorkTypeDef>
+  <WorkTypeDef>
+    <defName>HH_Serving</defName>
+    <labelShort>serve</labelShort>
+    <pawnLabel>Server</pawnLabel>
+    <gerundLabel>serving</gerundLabel>
+    <description>Staff counters, tables and tills: take orders, serve food and drinks, run the casino floor, restock shelves.</description>
+    <verb>Serve</verb>
+    <naturalPriority>1040</naturalPriority>
+    <requireCapableColonist>true</requireCapableColonist>
+    <workTags><li>Social</li></workTags>
+    <relevantSkills><li>Social</li></relevantSkills>
+  </WorkTypeDef>
+
+  <ResearchTabDef>
+    <defName>HH_Hospitality</defName>
+    <label>hospitality</label>
+  </ResearchTabDef>
+  <ResearchTabDef>
+    <defName>HH_Banking</defName>
+    <label>banking</label>
+  </ResearchTabDef>
+</Defs>

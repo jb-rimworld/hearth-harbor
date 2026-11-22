@@ -1,0 +1,6 @@
+Source/**/obj/
+Source/**/bin/
+*.user
+.DS_Store
+/_scratch/
+/tools/out/

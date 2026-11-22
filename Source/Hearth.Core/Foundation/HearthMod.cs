@@ -1,0 +1,160 @@
+// SPDX-License-Identifier: MIT
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using HarmonyLib;
+using UnityEngine;
+using Verse;
+
+namespace Hearth
+{
+    /// <summary>
+    /// Base class for each module's entry point. Subclasses are found by reflection at startup (no registration needed).
+    /// Order: RegisterSettings (Mod constructor) → Harmony patches (Mod constructor) → OnDefsLoaded (after all defs, StaticConstructorOnStartup)
+    /// → OnGameStarted / OnGameLoaded (per game) → GameTick every tick while the module is on.
+    /// </summary>
+    public abstract class HearthModuleBase
+    {
+        public abstract ModuleId Id { get; }
+        public virtual void RegisterSettings() { }
+        public virtual void OnDefsLoaded() { }
+        public virtual void OnGameStarted() { }
+        public virtual void OnGameLoaded() { }
+        public virtual void GameTick(int ticksGame) { }
+        /// <summary>Called when the player prepares to remove the module (S6): send guests home, refund, strip hediffs …</summary>
+        public virtual void PrepareRemoval(List<string> report) { }
+        /// <summary>Lines for the diagnosis window.</summary>
+        public virtual IEnumerable<string> Diagnosis() { yield break; }
+    }
+
+    public sealed class HearthTemplate : ModSettings
+    {
+        public HearthProfile Profile = new HearthProfile();
+        public bool ShowFirstStartCard = true;
+        public bool TemplateFromLastCard;
+        public TutorialMode Tutorial = TutorialMode.FullFirstTime;
+        public bool EverPlayed;
+        public bool ShowNerd;
+        public bool VerboseLog;
+        public HearthSettingsStore Store => Profile.Store;
+        public float Tier => Profile.Tier;
+        public bool ModuleOn(ModuleId m) => Profile.ModuleOn(m);
+
+        public override void ExposeData()
+        {
+            Scribe_Deep.Look(ref Profile, "profile");
+            Scribe_Values.Look(ref ShowFirstStartCard, "showFirstStartCard", true);
+            Scribe_Values.Look(ref Tutorial, "tutorial", TutorialMode.FullFirstTime);
+            Scribe_Values.Look(ref EverPlayed, "everPlayed");
+            Scribe_Values.Look(ref ShowNerd, "showNerd");
+            Scribe_Values.Look(ref VerboseLog, "verboseLog");
+            if (Profile == null) Profile = new HearthProfile();
+        }
+    }
+
+    public class HearthMod : Mod
+    {
+        public const string Version = "0.9.0-preview";
+        public const string HarmonyId = "juliusberger00.hearthharbor";
+        public static HearthMod Instance;
+        public static HearthTemplate Template => Instance?.GetSettings<HearthTemplate>() ?? fallbackTemplate;
+        static readonly HearthTemplate fallbackTemplate = new HearthTemplate();
+        public static Harmony Harmony;
+        public static readonly List<HearthModuleBase> ModuleObjects = new List<HearthModuleBase>();
+        public static bool BankAssemblyLoaded, GuestAssemblyLoaded;
+        /// <summary>Set by HearthUI when Hearth.dll provides the full settings window.</summary>
+        public static Action<Rect> SettingsWindowOverride;
+        public static Func<string> SettingsCategoryOverride;
+        public static readonly List<string> PatchFailures = new List<string>();
+
+        public HearthMod(ModContentPack content) : base(content)
+        {
+            Instance = this;
+            HLog.SessionStart(Version);
+            HLog.Verbose = Template.VerboseLog;
+            var asms = content.assemblies.loadedAssemblies;
+            BankAssemblyLoaded = asms.Any(a => a.GetName().Name == "Silverline");
+            GuestAssemblyLoaded = asms.Any(a => a.GetName().Name == "Hearth");
+            HLog.Info("Core", $"Loading from {content.PackageId} ({content.FolderName}); bank={BankAssemblyLoaded} guests={GuestAssemblyLoaded}");
+
+            foreach (var t in asms.SelectMany(SafeTypes).Where(t => typeof(HearthModuleBase).IsAssignableFrom(t) && !t.IsAbstract))
+            {
+                try { ModuleObjects.Add((HearthModuleBase)Activator.CreateInstance(t)); }
+                catch (Exception e) { HLog.Error("Core", "Could not create module " + t.FullName, e); }
+            }
+            ModuleObjects.Sort((a, b) => a.Id.CompareTo(b.Id));
+            CoreSettings.Register();
+            foreach (var m in ModuleObjects) Guard.Run(m.Id, m.GetType().Name + ".RegisterSettings", m.RegisterSettings);
+
+            Harmony = new Harmony(HarmonyId);
+            ApplyPatches(asms);
+        }
+
+        static IEnumerable<Type> SafeTypes(Assembly a)
+        {
+            try { return a.GetTypes(); } catch (ReflectionTypeLoadException e) { return e.Types.Where(t => t != null); }
+        }
+
+        /// <summary>
+        /// Applies every [HarmonyPatch] class of our assemblies one by one. A class that fails (target missing in this
+        /// RimWorld version, conflicting mod …) is logged and skipped; everything else keeps working (A6, 15.1).
+        /// </summary>
+        void ApplyPatches(IEnumerable<Assembly> asms)
+        {
+            int ok = 0;
+            foreach (var t in asms.SelectMany(SafeTypes))
+            {
+                if (t.GetCustomAttributes(typeof(HarmonyPatch), false).Length == 0) continue;
+                try { Harmony.CreateClassProcessor(t).Patch(); ok++; }
+                catch (Exception e)
+                {
+                    PatchFailures.Add(t.FullName + ": " + (e.InnerException ?? e).Message);
+                    HLog.Error("Core", "Patch class " + t.FullName + " skipped", e.InnerException ?? e);
+                }
+            }
+            HLog.Info("Core", $"Harmony: {ok} patch classes applied, {PatchFailures.Count} skipped");
+        }
+
+        public override string SettingsCategory() => SettingsCategoryOverride?.Invoke() ?? (GuestAssemblyLoaded ? "Hearth & Harbor" : "Silverline");
+
+        public override void DoSettingsWindowContents(Rect inRect)
+        {
+            if (SettingsWindowOverride != null) { SettingsWindowOverride(inRect); return; }
+            SimpleSettingsWindow.Draw(inRect);
+        }
+
+        public override void WriteSettings()
+        {
+            base.WriteSettings();
+            HLog.Verbose = Template.VerboseLog;
+        }
+    }
+
+    [StaticConstructorOnStartup]
+    public static class HearthStartup
+    {
+        static HearthStartup()
+        {
+            foreach (var m in HearthMod.ModuleObjects) Guard.Run(m.Id, m.GetType().Name + ".OnDefsLoaded", m.OnDefsLoaded);
+            HLog.Info("Core", $"Defs loaded. Modules: {string.Join(", ", HearthMod.ModuleObjects.Select(m => m.Id + (Modules.Available(m.Id) ? "" : "(missing)")))}; settings registered: {HSettings.All.Count}");
+        }
+    }
+
+    /// <summary>Settings of the core itself.</summary>
+    public static class CoreSettings
+    {
+        public static void Register()
+        {
+            HSettings.Enum(ModuleId.Core, "Randomness", "core.rngAlgorithm", RngAlgorithm.SplitMix64, "Random number algorithm",
+                "Algorithm for all Hearth & Harbor random streams. Same odds for all, only the sequence differs. ChaCha8 is cryptographic (paranoid), SplitMix64 is fastest.", nerd: true);
+            HSettings.Bool(ModuleId.Core, "Randomness", "core.sealedFate", false, "Sealed fate",
+                "On: reloading a save does not re-roll guest events (everything uses sealed random streams). Player bets, bank trades and lottery are always sealed.");
+            HSettings.Bool(ModuleId.Core, "Help", "core.helpHint", true, "Show the small real-life help hint where you gamble",
+                "A small, quiet line on every screen where you yourself gamble: if gambling is a problem in real life, help exists (findahelpline.com). Never shown elsewhere.");
+            HSettings.Bool(ModuleId.Core, "Help", "core.guide", true, "Show the Hearth & Harbor guide", "The learning helper at the top right. Right-click it to hide it.");
+            HSettings.Float(ModuleId.Core, "Performance", "core.perfGuardTps", 0.85f, 0.5f, 1f, "Performance guard: target speed",
+                "If the game runs slower than this share of its normal speed, new guest arrivals are slowed down until it recovers. 0 = guard off.", nerd: true, hardMin: 0f, hardMax: 1f);
+        }
+    }
+}
