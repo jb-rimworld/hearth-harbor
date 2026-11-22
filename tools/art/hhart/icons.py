@@ -462,3 +462,32 @@ def i_ascension(view, cells, masked):
     star(c, 92, 26, 22, "#ffe58a", sw=3.6)
     coin(c, 38, 52, 14)
     return c
+
+
+@tex("UI/HH/Venues/Cmd_Restock", "single", (1, 1), ppc=128, grain=0, doc="Command icon: restock (arrow down into a crate of goods)")
+def cmd_restock(view, cells, masked):
+    c = _icon(cells, masked)
+    c.rect(16, 66, 96, 50, P["wood"], r=6, sw=4.2)
+    for x in (38, 64, 90):
+        c.line(x, 70, x, 112, dark(P["wood"], .35), w=3.4)
+    c.rect(16, 66, 96, 12, P["wood_l"], r=5, sw=3.4)
+    c.circle(38, 62, 11, P["tomato"], sw=3.2)
+    c.circle(90, 62, 10, P["leaf"], sw=3.2)
+    arrow(c, 64, 6, 64, 54, P["emerald"], w=10, head=24)
+    return c
+
+
+@tex("UI/HH/Inn/DoorPolicy", "single", (1, 1), ppc=128, grain=0, doc="Command icon: door policy (door with a hanging board showing a tick and a cross)")
+def door_policy(view, cells, masked):
+    c = _icon(cells, masked)
+    c.rect(10, 12, 60, 104, P["wood"], r=6, sw=4.2)
+    c.rect(20, 24, 40, 34, P["wood_l"], r=3, sw=2.8, hl=False)
+    c.rect(20, 66, 40, 40, P["wood_l"], r=3, sw=2.8, hl=False)
+    c.circle(60, 70, 4.4, P["gold"], sw=2, hl=False, sh=False)
+    c.line(78, 22, 78, 34, P["iron"], w=3.4)
+    c.line(116, 22, 116, 34, P["iron"], w=3.4)
+    c.rect(72, 30, 48, 84, P["cream"], r=6, sw=4)
+    tline(c, [(82, 56), (90, 66), (108, 44)], 7, P["emerald"])
+    tline(c, [(84, 84), (108, 106)], 7, P["red_l"])
+    tline(c, [(108, 84), (84, 106)], 7, P["red_l"])
+    return c

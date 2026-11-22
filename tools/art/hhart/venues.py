@@ -207,3 +207,53 @@ def t_lounge(view, cells, masked):
     c.line(92, 10, 74, 40, P["wood_l"], w=3)
     c.circle(96, 22, 9, P["leaf"], sw=3)
     return c
+
+
+@tex("Things/HH/Venues/MarketStall", "multi", (2, 1), doc="Market stall: wooden counter with goods under a striped awning, 2x1")
+def marketstall(view, cells, masked):
+    c = canvas_for_(cells, view, masked)
+    f = slab(c, view, P["wood_l"], apron=16, m=None)
+    # goods on the open front half: crates of fruit, a coin dish and a loaf basket
+    for i, col in enumerate((P["tomato"], P["leaf"], P["yolk"])):
+        bx, by, bw, bh = f.r(f.w * (.06 + i * .2), f.h * .6, f.w * .16, f.h * .34)
+        c.rect(bx, by, bw, bh, P["wood_d"], r=4, sw=2.4, hl=False)
+        cx, cy = bx + bw / 2, by + bh / 2
+        r0 = max(4.0, min(bw, bh) * .24)
+        for dx, dy in ((-r0, -r0 * .6), (r0, -r0 * .6), (0, r0 * .8)):
+            c.circle(cx + dx, cy + dy, r0, col, sw=1.8, hl=False)
+    dx0, dy0 = f.pt(f.w * .74, f.h * .78)
+    c.circle(dx0, dy0, 11, P["silver"], sw=2.4)
+    coin(c, dx0 - 3, dy0 - 2, 5)
+    coin(c, dx0 + 4, dy0 + 3, 5)
+    ex, ey = f.pt(f.w * .9, f.h * .78)
+    c.ellipse(ex, ey, 12, 8, P["bread"], sw=2.4)
+    # awning over the back half: alternating stripes, scalloped front edge, two poles
+    n = 8
+    sw_ = f.w / n
+    depth = f.h * .5
+    for i in range(n):
+        col = P["red_l"] if i % 2 == 0 else P["cream"]
+        c.rect(*f.r(i * sw_, -4, sw_, depth + 4), col, r=2, sw=2.6, hl=False)
+        sx, sy = f.pt(i * sw_ + sw_ / 2, depth)
+        c.circle(sx, sy, max(5.0, min(f.w, f.h) / n * .52 if f.w < f.h * 3 else sw_ * .5), col, sw=2.6, hl=False)
+    c.line(*f.pt(-4, -4), *f.pt(f.w + 4, -4), dark(P["red_l"], .45), w=3.4)
+    for px in (2, f.w - 2):
+        x, y = f.pt(px, depth + 6)
+        c.circle(x, y, 4.2, P["wood_d"], sw=2.2, hl=False, sh=False)
+    return c
+
+
+@tex("UI/HH/Venues/Type_Chapel", "single", (1, 1), ppc=128, grain=0, doc="Icon: guest chapel (small chapel with bell tower, arched door, round window)")
+def t_chapel(view, cells, masked):
+    c = _icon(cells, masked)
+    col = P["violet"]
+    c.rect(14, 70, 100, 46, P["cream"], r=4, sw=3.8)
+    c.poly([(8, 72), (64, 36), (120, 72)], col, sw=3.8, hl=True)
+    c.rect(48, 18, 32, 40, P["stone"], r=3, sw=3.4)
+    c.poly([(44, 20), (64, 2), (84, 20)], dark(col, .2), sw=3.4)
+    c.path("M56 56 L56 34 A8 8 0 0 1 72 34 L72 56 Z", P["dsteel"], sw=2.4)
+    c.circle(64, 42, 4.2, P["gold"], sw=2, hl=False, sh=False)
+    c.path("M52 116 L52 92 A12 12 0 0 1 76 92 L76 116 Z", P["wood"], sw=3.4)
+    c.circle(26, 92, 6.5, P["glass"], sw=2.6, hl=False)
+    c.circle(102, 92, 6.5, P["glass"], sw=2.6, hl=False)
+    return c
