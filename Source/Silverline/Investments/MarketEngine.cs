@@ -54,6 +54,7 @@ namespace Silverline
                 lastHourTick = t / Hour * Hour; lastDayIndex = DayIndex(t);
                 if (FinanceSettings.MemeOn && FinanceSettings.CryptoOn) ListMemecoin(t, true);
                 nextMemeTick = t + MemeGapTicks(JRand.Sealed("finance.meme"));
+                RollYear(t);
                 HLog.Info("Bank", $"Investments initialised: {assets.Count} assets, profitability M={FinanceSettings.M:0.000}");
             }
             else BindDefs();
@@ -163,7 +164,7 @@ namespace Silverline
         }
 
         // ---- the hourly tick -------------------------------------------------------------------------------------
-        public void Tick_(int tick)
+        public void OnTick(int tick)
         {
             if (!initialized) EnsureInit();
             if (!initialized) return;

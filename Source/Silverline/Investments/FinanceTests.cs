@@ -359,3 +359,44 @@ namespace Silverline
     }
 }
 #endif
+#if HH_TESTS
+namespace Silverline
+{
+    /// <summary>Opens the window with every page of the Invest and Lottery tabs so that the drawing code runs for real; screenshots go to the test folder.</summary>
+    public sealed class FinanceUiSuite : HearthTestSuite
+    {
+        public override string Name => "finance.ui";
+        public override ModuleId Module => ModuleId.Bank;
+        public override int MaxTicks => 60000;
+        static int Hold => int.TryParse(Environment.GetEnvironmentVariable("HH_UI_HOLD"), out int h) ? h : 40;
+        static void Shot(string name) { try { UnityEngine.ScreenCapture.CaptureScreenshot("/private/tmp/claude-501/hh_tests/shot_" + name + ".png"); } catch (Exception e) { Log.Warning("shot failed " + e.Message); } }
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var g = FinanceGame.Current; g.EnsureInit(); FinTest.Fund(Money.FromSilver(30000)); var lot = LotteryGame.Current; lot.EnsureInit();
+            int errors0 = HLog.ErrorCount;
+            g.Buy("SL_Asset_Index", Money.FromSilver(1500)); g.Buy("SL_Asset_RimCoin", Money.FromSilver(200)); g.OpenPatienceBond(60, Money.FromSilver(300));
+            g.EnsureOmenMarkets(Find.TickManager.TicksGame); var c = g.contracts.First(x => !x.resolved); g.OmenBuy(c.id, true, Money.FromSilver(25));
+            var f = FinTest.AnyFaction(); if (f != null) { var p = g.StartProject(f, Find.TickManager.TicksGame, 14); g.BetOnProject(p.id, true, Money.FromSilver(100)); InvestTab.TestSelectProject(p.id); }
+            FinTest.Hours(g, 30); lot.QuickPick(3);
+            Find.WindowStack.Add(new Window_Silverline());
+            yield return 40;
+            t.Check(Find.WindowStack.Windows.Any(w => w is Window_Silverline), "window open");
+            string[] names = { "portfolio", "bonds", "omen", "projects" };
+            foreach (var id in new[] { "SL_Asset_Index", "SL_Asset_RimCoin", "SL_Asset_MemeThrumbo", "SL_Asset_NftThrumbos", "SL_Asset_Mattress" })
+            { var a = g.assets.FirstOrDefault(x => x.defName == id && !x.delisted); if (a == null) continue; InvestTab.TestSelect(a.id); InvestTab.TestSetPage(0); yield return 12; }
+            InvestTab.TestSelect("SL_Asset_Index");
+            for (int p = 0; p < 4; p++) { InvestTab.TestSetPage(p); yield return Hold; Shot("invest_" + names[p]); yield return 20; }
+            InvestTab.TestSetPage(0); yield return 30;
+            foreach (var id in new[] { "SL_Asset_RimCoin", "SL_Asset_NftThrumbos" }) { var a = g.assets.FirstOrDefault(x => x.defName == id && !x.delisted); if (a == null) continue; InvestTab.TestSelect(a.id); yield return Hold; }
+            // lottery tab
+            var win = Find.WindowStack.Windows.OfType<Window_Silverline>().First();
+            var cur = typeof(Window_Silverline).GetField("current", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance); cur.SetValue(win, "lottery");
+            yield return Hold; Shot("lottery"); yield return 20;
+            HSettings.Set("lottery.colonyOn", 1f); yield return Hold; Shot("lottery_colony"); HSettings.Set("lottery.colonyOn", 0f);
+            t.Check(HLog.ErrorCount == errors0, "no errors while drawing the pages: " + (HLog.ErrorCount - errors0));
+            Find.WindowStack.TryRemove(win, false);
+            t.Check(FinTest.Balanced, "ledger balanced");
+        }
+    }
+}
+#endif

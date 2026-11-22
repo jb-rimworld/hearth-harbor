@@ -26,6 +26,13 @@ namespace Silverline
             BankTabs.Register(new BankTab { Id = "invest", LabelKey = "HH.Finance.Tab.Invest", LabelEn = "Invest", Order = 40, Draw = r => Guard.Run(ModuleId.Bank, "InvestTab.Draw", () => Draw(r)), Visible = () => Modules.On(ModuleId.Bank) && FinanceAccounts.Available });
         }
 
+#if HH_TESTS
+        public static void TestSetPage(int p) { page = (Page)p; }
+        public static void TestSelect(string assetId) { selectedAsset = assetId; }
+        public static void TestSelectContract(int id) { selectedContract = id; }
+        public static void TestSelectProject(int id) { selectedProject = id; }
+#endif
+
         static void SetMessage(string m) { message = m; messageTick = Find.TickManager?.TicksGame ?? 0; }
 
         public static void Draw(Rect rect)

@@ -30,7 +30,7 @@ namespace Silverline
 
         public override void GameTick(int ticksGame)
         {
-            var f = FinanceGame.Current; if (f != null) f.Tick_(ticksGame);
+            var f = FinanceGame.Current; if (f != null) f.OnTick(ticksGame);
             var l = LotteryGame.Current; if (l != null) l.Tick(ticksGame);
         }
 
