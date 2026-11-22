@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Banking tree, the small version (KONZEPT 7.3). The basic level is free: an account via the comms console, deposits,
+       withdrawals by drop pod, the night safe's cousin the nightly direct deposit. Setting bank.researchMode = Off makes everything available. -->
+  <ResearchProjectDef>
+    <defName>SL_Banking</defName>
+    <label>automated tellers</label>
+    <description>Machines that hand out silver to anyone who types the right four digits. Unlocks the ATM and the night safe.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>HH_Banking</tab>
+    <prerequisites><li>Electricity</li></prerequisites>
+    <researchViewX>1.0</researchViewX>
+    <researchViewY>0.2</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>SL_Branches</defName>
+    <label>bank branches</label>
+    <description>A proper counter, a proper vault and a proper queue. Unlocks the bank counter: instant deposits, instant cash, loan applications in person.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>HH_Banking</tab>
+    <prerequisites><li>SL_Banking</li></prerequisites>
+    <researchViewX>2.0</researchViewX>
+    <researchViewY>0.0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>SL_Credit</defName>
+    <label>consumer credit</label>
+    <description>Money you do not have, for people who do not have it. Unlocks loans, the credit score and, if it comes to that, the collection agency.</description>
+    <baseCost>700</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>HH_Banking</tab>
+    <prerequisites><li>SL_Banking</li></prerequisites>
+    <researchViewX>2.0</researchViewX>
+    <researchViewY>0.4</researchViewY>
+  </ResearchProjectDef>
+</Defs>

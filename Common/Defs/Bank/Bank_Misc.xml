@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>SL_UseBank</defName>
+    <driverClass>Silverline.JobDriver_UseBank</driverClass>
+    <reportString>using the bank.</reportString>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+  </JobDef>
+
+  <!-- Hidden neutral company whose agents show up when a loan is badly overdue (KONZEPT 8.9). Generated on demand, never at world creation. -->
+  <FactionDef ParentName="FactionBase">
+    <defName>SL_CollectionsAgency</defName>
+    <label>Rim Recovery Partners</label>
+    <description>A collection agency. Polite until it is not.</description>
+    <pawnSingular>recovery agent</pawnSingular>
+    <pawnsPlural>recovery agents</pawnsPlural>
+    <fixedName>Rim Recovery Partners</fixedName>
+    <categoryTag>SL_Collections</categoryTag>
+    <hidden>true</hidden>
+    <displayInFactionSelection>false</displayInFactionSelection>
+    <canGenerateQuestSites>false</canGenerateQuestSites>
+    <humanlikeFaction>true</humanlikeFaction>
+    <autoFlee>false</autoFlee>
+    <techLevel>Industrial</techLevel>
+    <factionIconPath>World/WorldObjects/Expanding/Sites/DownedRefugee</factionIconPath>
+    <backstoryFilters>
+      <li>
+        <categories><li>Outlander</li></categories>
+        <commonality>0.95</commonality>
+      </li>
+    </backstoryFilters>
+    <colorSpectrum><li>(0.3, 0.3, 0.32)</li></colorSpectrum>
+    <raidsForbidden>true</raidsForbidden>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(100,100)</li>
+        <li>(10000,10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Mercenary_Slasher>10</Mercenary_Slasher>
+          <Mercenary_Gunner>10</Mercenary_Gunner>
+          <Mercenary_Sniper>2</Mercenary_Sniper>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <ThoughtDef>
+    <defName>SL_Finances</defName>
+    <workerClass>Silverline.ThoughtWorker_Finances</workerClass>
+    <validWhileDespawned>false</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Ascetic</li>
+      <li>Greedy</li>
+    </nullifyingTraits>
+    <stages>
+      <li><label>drowning in debt</label><description>We owe more than the colony is worth. The post smells of overdue letters.</description><baseMoodEffect>-4</baseMoodEffect></li>
+      <li><label>broke</label><description>The account is empty. Even the ATM looks at us with pity.</description><baseMoodEffect>-2</baseMoodEffect></li>
+      <li><label>scraping by</label><description>We have a little in the bank. Very little. Nobody says it out loud.</description><baseMoodEffect>-1</baseMoodEffect></li>
+      <li><label>getting by</label><description>Neither rich nor poor.</description><baseMoodEffect>0</baseMoodEffect></li>
+      <li><label>comfortable</label><description>Comfortable, and not worried about it.</description><baseMoodEffect>0</baseMoodEffect></li>
+      <li><label>savings</label><description>We have savings. It is a strange, warm feeling.</description><baseMoodEffect>1</baseMoodEffect></li>
+      <li><label>rich</label><description>We are rich. Not that anyone mentions it at dinner.</description><baseMoodEffect>2</baseMoodEffect></li>
+      <li><label>filthy rich</label><description>The colony is filthy rich. We have started buying things we do not need.</description><baseMoodEffect>3</baseMoodEffect></li>
+      <li><label>too big to fail</label><description>We are too big to fail. Somebody has to say it and it might as well be us.</description><baseMoodEffect>3</baseMoodEffect></li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SL_FinancesGreedy</defName>
+    <workerClass>Silverline.ThoughtWorker_Finances</workerClass>
+    <validWhileDespawned>false</validWhileDespawned>
+    <requiredTraits><li>Greedy</li></requiredTraits>
+    <stages>
+      <li><label>drowning in debt</label><description>Debt. Debt! I can feel every silver coin we do not have.</description><baseMoodEffect>-8</baseMoodEffect></li>
+      <li><label>broke</label><description>Broke. I did not become greedy to be broke.</description><baseMoodEffect>-4</baseMoodEffect></li>
+      <li><label>scraping by</label><description>Hardly anything in the account. I check it every hour.</description><baseMoodEffect>-2</baseMoodEffect></li>
+      <li><label>getting by</label><description>Fine. But it could be more.</description><baseMoodEffect>0</baseMoodEffect></li>
+      <li><label>comfortable</label><description>Comfortable. But it could be more.</description><baseMoodEffect>0</baseMoodEffect></li>
+      <li><label>savings</label><description>Savings, in a vault, with my name near it. Lovely.</description><baseMoodEffect>2</baseMoodEffect></li>
+      <li><label>rich</label><description>Rich! I will not stop counting.</description><baseMoodEffect>4</baseMoodEffect></li>
+      <li><label>filthy rich</label><description>Filthy rich. This is what I was born for.</description><baseMoodEffect>6</baseMoodEffect></li>
+      <li><label>too big to fail</label><description>Too big to fail. Frame the balance sheet.</description><baseMoodEffect>6</baseMoodEffect></li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SL_CollectorsNearby</defName>
+    <workerClass>Silverline.ThoughtWorker_CollectorsNearby</workerClass>
+    <stages>
+      <li><label>collectors loitering</label><description>Two men in bowler hats are standing near the door. They are very polite about it.</description><baseMoodEffect>-2</baseMoodEffect></li>
+    </stages>
+  </ThoughtDef>
+</Defs>
