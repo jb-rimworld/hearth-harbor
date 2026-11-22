@@ -86,8 +86,16 @@ namespace Hearth.Compat.Hospitality
         {
             var asms = HospitalityFamily.TakeoverAssemblies;
             if (asms.Count == 0) return 0;
-            int removed = 0, failed = 0;
+            int removed = 0, failed = 0, sample = 3;
             var methods = Harmony.GetAllPatchedMethods().ToList();
+            var owners = new Dictionary<string, int>();
+            foreach (var m in methods)
+            {
+                Patches pi = null; try { pi = Harmony.GetPatchInfo(m); } catch { }
+                if (pi == null) continue;
+                foreach (var o in pi.Owners) { owners.TryGetValue(o, out int c); owners[o] = c + 1; }
+            }
+            HLog.Info("Compat", $"Harmony ({when}): {methods.Count} patched methods, owners: {string.Join(", ", owners.Select(kv => kv.Key + "=" + kv.Value))}");
             foreach (var original in methods)
             {
                 Patches info;
@@ -96,7 +104,12 @@ namespace Hearth.Compat.Hospitality
                 foreach (var patch in AllPatches(info))
                 {
                     var pm = patch?.PatchMethod;
-                    if (pm?.DeclaringType == null || !asms.Contains(pm.DeclaringType.Assembly)) continue;
+                    if (pm?.DeclaringType == null || !HospitalityFamily.IsTakeoverAssembly(pm.DeclaringType.Assembly))
+                    {
+                        if (pm != null && sample-- > 0 && HospitalityFamily.Detected.Any(d => d.Pack.PackageIdPlayerFacing == patch.owner))
+                            HLog.Warn("Compat", $"Patch by family owner {patch.owner} not matched by assembly: {pm.DeclaringType?.FullName}.{pm.Name} in {pm.DeclaringType?.Assembly.FullName ?? pm.Module?.Assembly.FullName} ({pm.GetType().Name})");
+                        continue;
+                    }
                     try
                     {
                         HearthMod.Harmony.Unpatch(original, pm);
@@ -118,13 +131,20 @@ namespace Hearth.Compat.Hospitality
         /// <summary>All patch lists of a PatchInfo, including ones newer Harmony versions add (read by reflection).</summary>
         static IEnumerable<Patch> AllPatches(Patches info)
         {
+            // Harmony exposes the lists as public fields (Prefixes, Postfixes, Transpilers, Finalizers, ILManipulators …);
+            // read every field or property of a Patch collection type so newer patch kinds are covered too.
+            var seen = new HashSet<Patch>();
+            foreach (var f in info.GetType().GetFields(BindingFlags.Public | BindingFlags.Instance))
+            {
+                if (!typeof(IEnumerable<Patch>).IsAssignableFrom(f.FieldType)) continue;
+                if (f.GetValue(info) is IEnumerable<Patch> list) foreach (var x in list.ToList()) if (x != null && seen.Add(x)) yield return x;
+            }
             foreach (var p in info.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
             {
-                if (!typeof(IEnumerable<Patch>).IsAssignableFrom(p.PropertyType)) continue;
+                if (!typeof(IEnumerable<Patch>).IsAssignableFrom(p.PropertyType) || p.GetIndexParameters().Length > 0) continue;
                 IEnumerable<Patch> list = null;
                 try { list = p.GetValue(info) as IEnumerable<Patch>; } catch { }
-                if (list == null) continue;
-                foreach (var x in list.ToList()) yield return x;
+                if (list != null) foreach (var x in list.ToList()) if (x != null && seen.Add(x)) yield return x;
             }
         }
 
@@ -138,7 +158,7 @@ namespace Hearth.Compat.Hospitality
                 var info = Harmony.GetPatchInfo(original);
                 if (info == null) continue;
                 foreach (var patch in AllPatches(info))
-                    if (patch?.PatchMethod?.DeclaringType != null && asms.Contains(patch.PatchMethod.DeclaringType.Assembly)) n++;
+                    if (patch?.PatchMethod?.DeclaringType != null && HospitalityFamily.IsTakeoverAssembly(patch.PatchMethod.DeclaringType.Assembly)) n++;
             }
             return n;
         }
@@ -311,8 +331,24 @@ namespace Hearth.Compat.Hospitality
             "WorldComponentTick", "WorldComponentUpdate", "WorldComponentOnGUI",
         };
 
+        /// <summary>Hospitality's map component shows its main tab again in FinalizeInit; these calls are skipped while taken over.</summary>
+        static readonly (string, string)[] KnownUndoers =
+        {
+            ("Hospitality.Mod_Hospitality", "ToggleTabIfNeeded"),
+            ("Hospitality.Mod_Hospitality", "UpdateMainButtonIcon"),
+        };
+
+        /// <summary>Hides family main tabs again (after a game start, in case a family component showed them).</summary>
+        public static void RehideMainButtons()
+        {
+            if (!Active) return;
+            foreach (var mb in DefDatabase<MainButtonDef>.AllDefsListForReading)
+                if (mb.buttonVisible && (HospitalityFamily.IsTakeoverDef(mb) || HospitalityFamily.IsTakeoverType(mb.tabWindowClass)))
+                { mb.buttonVisible = false; HLog.Info("Compat", "Main tab " + mb.defName + " was shown again by its mod; hidden"); }
+        }
+
         static readonly HashSet<MethodBase> silenced = new HashSet<MethodBase>();
-        public static bool IsSilenced(MethodBase m) => silenced.Contains(m);
+        public static bool IsSilenced(MethodBase m) => silenced.Contains(m) || (m is MethodInfo mi && mi.DeclaringType?.GetMethod(mi.Name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly, null, Type.EmptyTypes, null) is MethodInfo d && silenced.Contains(d));
 
         static void SilenceComponents()
         {
@@ -329,7 +365,7 @@ namespace Hearth.Compat.Hospitality
                     {
                         foreach (var name in ComponentLoopMethods)
                         {
-                            var m = t.GetMethod(name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, Type.EmptyTypes, null);
+                                            var m = t.GetMethod(name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, Type.EmptyTypes, null);
                             // only methods the family itself declares (inherited vanilla no-ops stay as they are)
                             if (m == null || m.IsAbstract || !HospitalityFamily.IsTakeoverType(m.DeclaringType)) continue;
                             if (TryPatch(m, skipVoid)) MethodsSilenced++;
@@ -342,11 +378,22 @@ namespace Hearth.Compat.Hospitality
                     }
                 }
             }
+            // known family methods that undo the takeover from inside their components (by name only)
+            foreach (var (typeName, method) in KnownUndoers)
+            {
+                var t = GenTypes.GetTypeInAnyAssembly(typeName);
+                if (t == null || !HospitalityFamily.IsTakeoverType(t)) continue;
+                var m = t.GetMethod(method, BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly, null, Type.EmptyTypes, null);
+                if (m != null && m.ReturnType == typeof(void) && TryPatch(m, skipVoid)) MethodsSilenced++;
+            }
             Note($"Components: {MethodsSilenced} tick/update/alert methods of Hospitality family components silenced");
         }
 
         static bool TryPatch(MethodInfo m, HarmonyMethod prefix)
         {
+            // Harmony wants the method object of the declaring type, not the one reflected through a subclass
+            var declared = m.DeclaringType?.GetMethod(m.Name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly, null, Type.EmptyTypes, null);
+            if (declared != null) m = declared;
             if (silenced.Contains(m)) return false;
             try { HearthMod.Harmony.Patch(m, prefix: prefix); silenced.Add(m); return true; }
             catch (Exception e) { HLog.Warn("Compat", $"Could not silence {m.DeclaringType?.FullName}.{m.Name}: {e.Message}"); return false; }

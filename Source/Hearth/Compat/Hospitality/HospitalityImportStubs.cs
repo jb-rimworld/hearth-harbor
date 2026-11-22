@@ -4,15 +4,38 @@
 // remove themselves, so a save that went through the import never depends on these classes either.
 using System.Collections.Generic;
 using RimWorld;
-using RimWorld.Planet;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 
 namespace Hearth.Compat.Hospitality
 {
+#if RW16PLUS
+    /// <summary>
+    /// Base of our map stand-ins. CustomMapComponent (1.6+) is never auto-created by vanilla's Map.FillComponents, so the
+    /// stubs exist only where a save had a Hospitality component and never end up in normal saves.
+    /// </summary>
+    public abstract class HospitalityMapStandIn : CustomMapComponent
+    {
+        protected HospitalityMapStandIn(Map map) : base(map) { }
+    }
+#else
+    /// <summary>1.5 has no CustomMapComponent: auto-created instances (not loaded from a save) remove themselves after init.</summary>
+    public abstract class HospitalityMapStandIn : MapComponent
+    {
+        protected bool loaded;
+        protected HospitalityMapStandIn(Map map) : base(map) { }
+        public override void FinalizeInit()
+        {
+            if (loaded) return;
+            var m = map; var self = this;
+            LongEventHandler.ExecuteWhenFinished(() => m?.components.Remove(self));
+        }
+    }
+#endif
+
     /// <summary>Reads Hospitality's per-map settings (guest areas, "guests welcome", food rule …) and is removed after loading.</summary>
-    public sealed class HospitalityMapStub : MapComponent
+    public sealed class HospitalityMapStub : HospitalityMapStandIn
     {
         public string SourceClass;
         public Area DefaultGuestArea, DefaultShoppingArea;
@@ -23,6 +46,9 @@ namespace Hearth.Compat.Hospitality
         public override void ExposeData()
         {
             if (Scribe.mode == LoadSaveMode.Saving) return; // never written; removed after loading
+#if !RW16PLUS
+            loaded = true;
+#endif
             Scribe_Values.Look(ref DefaultEntertain, "defaultEntertain");
             Scribe_Values.Look(ref DefaultMakeFriends, "defaultMakeFriends");
             Scribe_Values.Look(ref GuestsAreWelcome, "guestsAreWelcome", true);
@@ -36,31 +62,15 @@ namespace Hearth.Compat.Hospitality
     }
 
     /// <summary>Any other map component of the family (Storefront, Gastronomy …): read nothing, counted as dropped, removed after loading.</summary>
-    public sealed class HospitalityDroppedMapComponent : MapComponent
+    public sealed class HospitalityDroppedMapComponent : HospitalityMapStandIn
     {
         public HospitalityDroppedMapComponent(Map map) : base(map) { }
         public override void ExposeData()
         {
+#if !RW16PLUS
+            if (Scribe.mode == LoadSaveMode.LoadingVars) loaded = true;
+#endif
             if (Scribe.mode == LoadSaveMode.PostLoadInit) HospitalityImporter.Pending.AddOnce(HospitalityImporter.Pending.DroppedMapComponents, this);
-        }
-    }
-
-    /// <summary>Hospitality's game component (guest food policy): dropped, removed after loading.</summary>
-    public sealed class HospitalityDroppedGameComponent : GameComponent
-    {
-        public HospitalityDroppedGameComponent(Game game) { }
-        public override void ExposeData()
-        {
-            if (Scribe.mode == LoadSaveMode.PostLoadInit) HospitalityImporter.Pending.AddOnce(HospitalityImporter.Pending.DroppedGameComponents, this);
-        }
-    }
-
-    public sealed class HospitalityDroppedWorldComponent : WorldComponent
-    {
-        public HospitalityDroppedWorldComponent(World world) : base(world) { }
-        public override void ExposeData()
-        {
-            if (Scribe.mode == LoadSaveMode.PostLoadInit) HospitalityImporter.Pending.AddOnce(HospitalityImporter.Pending.DroppedWorldComponents, this);
         }
     }
 

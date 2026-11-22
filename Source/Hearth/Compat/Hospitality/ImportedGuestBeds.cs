@@ -80,7 +80,16 @@ namespace Hearth.Compat.Hospitality
 
         public ImportedGuestBeds(Game game) { }
 
-        public static ImportedGuestBeds Current => Verse.Current.Game?.GetComponent<ImportedGuestBeds>();
+        public static ImportedGuestBeds Current
+        {
+            get
+            {
+                var comps = Verse.Current.Game?.components;
+                if (comps == null) return null;
+                for (int i = 0; i < comps.Count; i++) if (comps[i] is ImportedGuestBeds r && !r.StandInForHospitality) return r;
+                return null;
+            }
+        }
 
         BedRecord GetBed(int id)
         {
@@ -124,8 +133,21 @@ namespace Hearth.Compat.Hospitality
             while (History.Count > 20) History.RemoveAt(0);
         }
 
+        /// <summary>True for an instance that was created for a Hospitality game component node (removed after loading).</summary>
+        public bool StandInForHospitality;
+
         public override void ExposeData()
         {
+            if (Scribe.mode == LoadSaveMode.LoadingVars)
+            {
+                var cls = Scribe.loader?.curXmlParent?.Attributes?["Class"]?.Value;
+                if (HospitalityFamily.IsFamilyClassName(cls)) StandInForHospitality = true;
+            }
+            if (StandInForHospitality)
+            {
+                if (Scribe.mode == LoadSaveMode.PostLoadInit) HospitalityImporter.Pending.AddOnce(HospitalityImporter.Pending.DroppedGameComponents, this);
+                return;
+            }
             Scribe_Collections.Look(ref Beds, "beds", LookMode.Deep);
             Scribe_Collections.Look(ref Areas, "areas", LookMode.Deep);
             Scribe_Collections.Look(ref MapSettings, "mapSettings", LookMode.Deep);

@@ -99,6 +99,9 @@ namespace Hearth.Compat.Hospitality.Tests
             t.Check(HospitalityTakeover.RemainingFamilyPatches() == 0, "no family patches anywhere");
             var removed = AccessTools.Field(typeof(BackCompatibility), "RemovedDefs").GetValue(null) as List<Tuple<string, Type>>;
             t.Check(removed != null && removed.Any(x => x.Item1 == "GuestAngered" && x.Item2 == typeof(ThoughtDef)), "Hospitality thoughts registered as removed defs");
+            t.Check(Find.Maps.All(m => !m.components.Any(c => c is HospitalityMapStandIn)), "no Hospitality stand-in map component in a normal game");
+            t.Check(Current.Game.components.Count(c => c is ImportedGuestBeds) == 1 && ImportedGuestBeds.Current != null && !ImportedGuestBeds.Current.StandInForHospitality, "exactly one import record, not a stand-in");
+            if (HospitalityImporter.LastLoad == null) t.Check(ImportedGuestBeds.Current.Beds.Count == 0 && !HospitalityImport.IsImportedGuestBed(null), "no imported beds in a fresh game");
             yield return 60;
             t.Check(Find.WindowStack.Windows.All(w => !(w is Dialog_HospitalityTakeover)), "no takeover dialog on screen");
         }
@@ -140,7 +143,7 @@ namespace Hearth.Compat.Hospitality.Tests
                 t.Check(HospitalityImporter.MapDefName(typeof(ThoughtDef), "SomeOtherModThought") == null && HospitalityImporter.Pending.Dropped["thought"] == 1, "foreign thought not counted");
                 t.Check(HospitalityImporter.MapType(typeof(MapComponent), "Hospitality.Hospitality_MapComponent", null) == typeof(HospitalityMapStub), "map component → stub");
                 t.Check(HospitalityImporter.MapType(typeof(MapComponent), "Storefront.Store.StoresManager", null) == typeof(HospitalityDroppedMapComponent), "add-on map component → dropped stub");
-                t.Check(HospitalityImporter.MapType(typeof(GameComponent), "Hospitality.Hospitality_GameComponent", null) == typeof(HospitalityDroppedGameComponent), "game component → dropped stub");
+                t.Check(HospitalityImporter.MapType(typeof(GameComponent), "Hospitality.Hospitality_GameComponent", null) == typeof(ImportedGuestBeds), "game component → import record stand-in");
                 t.Check(HospitalityImporter.MapType(typeof(LordJob), "Hospitality.LordJob_VisitColony", null) == typeof(HospitalityLordJobStub), "visit lord job → stub");
                 t.Check(HospitalityImporter.MapType(typeof(LordToilData), "Hospitality.LordToilData_VisitPoint", null) == typeof(HospitalityLordToilDataStub), "toil data → stub");
                 t.Check(HospitalityImporter.MapType(typeof(TriggerData), "Hospitality.TriggerData_VisitorsPleasedMax", null) == typeof(HospitalityTriggerDataStub), "trigger data → stub");
@@ -334,7 +337,7 @@ namespace Hearth.Compat.Hospitality.Tests
             t.Check(beds.Count(b => !HospitalityImport.IsImportedGuestBed(b)) >= 1, "normal beds stay normal");
             t.Check(imported.All(b => HospitalityImport.RentalFee(b) == rec.Beds.First(r => r.ThingIdNumber == b.thingIDNumber).Fee), "RentalFee API answers");
             t.Check(!map.components.Any(c => c is HospitalityMapStub || c is HospitalityDroppedMapComponent), "map stubs removed after load");
-            t.Check(!Current.Game.components.Any(c => c is HospitalityDroppedGameComponent), "game stub removed after load");
+            t.Check(Current.Game.components.Count(c => c is ImportedGuestBeds) == 1, "game component stand-in removed after load (one import record left)");
             t.Check(map.lordManager.lords.All(l => !(l.LordJob is HospitalityLordJobStub)), "no stub lord left");
             if (mode == "synthetic")
             {

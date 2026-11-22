@@ -30,7 +30,6 @@ namespace Hearth.Compat.Hospitality
         public readonly List<HospitalityMapStub> MapStubs = new List<HospitalityMapStub>();
         public readonly List<MapComponent> DroppedMapComponents = new List<MapComponent>();
         public readonly List<GameComponent> DroppedGameComponents = new List<GameComponent>();
-        public readonly List<WorldComponent> DroppedWorldComponents = new List<WorldComponent>();
         public readonly HashSet<LordJob> DroppedLords = new HashSet<LordJob>();
         public readonly HashSet<JobDriver> DroppedJobs = new HashSet<JobDriver>();
         public readonly HashSet<Pawn> JobPawns = new HashSet<Pawn>();
@@ -199,8 +198,9 @@ namespace Hearth.Compat.Hospitality
             }
             if (typeof(MapComponent).IsAssignableFrom(baseType) || baseType == typeof(MapComponent))
                 return cls == "Hospitality.Hospitality_MapComponent" ? typeof(HospitalityMapStub) : typeof(HospitalityDroppedMapComponent);
-            if (typeof(GameComponent).IsAssignableFrom(baseType)) return typeof(HospitalityDroppedGameComponent);
-            if (typeof(WorldComponent).IsAssignableFrom(baseType)) return typeof(HospitalityDroppedWorldComponent);
+            // Our own import record stands in for Hospitality's game component: it notices the foreign node, reads nothing and is
+            // removed after loading. (A separate stub GameComponent would be auto-created in every game by vanilla.)
+            if (typeof(GameComponent).IsAssignableFrom(baseType)) return typeof(ImportedGuestBeds);
             if (typeof(LordJob).IsAssignableFrom(baseType)) return typeof(HospitalityLordJobStub);
             if (typeof(LordToilData).IsAssignableFrom(baseType)) return typeof(HospitalityLordToilDataStub);
             if (typeof(TriggerData).IsAssignableFrom(baseType)) return typeof(HospitalityTriggerDataStub);
@@ -273,7 +273,6 @@ namespace Hearth.Compat.Hospitality
             }
             foreach (var mc in p.DroppedMapComponents) mc.map?.components.Remove(mc);
             foreach (var gc in p.DroppedGameComponents) Current.Game?.components.Remove(gc);
-            foreach (var wc in p.DroppedWorldComponents) Find.World?.components.Remove(wc);
 
             // 3. known visitors (CompGuest data on pawns) and their guest areas
             var areaByLoadId = new Dictionary<string, (Map, Area)>();
@@ -316,7 +315,7 @@ namespace Hearth.Compat.Hospitality
             var dropped = new List<string>();
             foreach (var kv in p.Dropped) dropped.Add(Count(kv.Value, kv.Key, kv.Key + "s"));
             if (p.LordsDropped > 0 && visitsRebuilt == 0) dropped.Add(Count(p.LordsDropped, "visit", "visits"));
-            int comps = p.DroppedMapComponents.Count + p.DroppedGameComponents.Count + p.DroppedWorldComponents.Count;
+            int comps = p.DroppedMapComponents.Count + p.DroppedGameComponents.Count;
             if (comps > 0) dropped.Add(Count(comps, "add-on record", "add-on records"));
             foreach (var u in p.UnknownClasses) dropped.Add(u.Substring(u.LastIndexOf('.') + 1));
             LastSummary = new List<string>(lines);

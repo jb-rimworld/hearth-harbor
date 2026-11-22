@@ -43,6 +43,7 @@ namespace Hearth.Compat.Hospitality
             if (!HospitalityTakeover.Active) return;
             // in case a family mod patched lazily (first map, first game): sweep again
             Guard.Run(ModuleId.Core, "HospitalityTakeover.Sweep", () => HospitalityTakeover.UnpatchFamily("game start"));
+            Guard.Run(ModuleId.Core, "HospitalityTakeover.Rehide", HospitalityTakeover.RehideMainButtons);
         }
 
         public override IEnumerable<string> Diagnosis()

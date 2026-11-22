@@ -144,7 +144,7 @@ namespace Hearth.Compat.Hospitality
         }
 
         /// <summary>Re-reads the running mod list (tests only; the list never changes during a session).</summary>
-        public static void ResetCache() { detected = null; takeoverAssemblies = null; }
+        public static void ResetCache() { detected = null; takeoverAssemblies = null; takeoverAssemblyNames = null; }
 
         public static IEnumerable<DetectedMod> DetectedWithRole(FamilyRole r) => Detected.Where(d => d.Entry.Role == r);
 
@@ -172,7 +172,21 @@ namespace Hearth.Compat.Hospitality
 
         public static HashSet<ModContentPack> TakeoverPacks => new HashSet<ModContentPack>(Detected.Where(d => d.Entry.Role == FamilyRole.Replaced).Select(d => d.Pack));
 
-        public static bool IsTakeoverType(Type t) => t != null && TakeoverAssemblies.Contains(t.Assembly);
+        public static bool IsTakeoverType(Type t) => t != null && IsTakeoverAssembly(t.Assembly);
+
+        static HashSet<string> takeoverAssemblyNames;
+        /// <summary>
+        /// By object, or by full assembly name: on 1.7 (CoreCLR) Harmony can hand back patch methods whose Assembly object is not
+        /// the one the mod loader holds, so the name is compared as well.
+        /// </summary>
+        public static bool IsTakeoverAssembly(Assembly a)
+        {
+            if (a == null) return false;
+            var set = TakeoverAssemblies;
+            if (set.Contains(a)) return true;
+            if (takeoverAssemblyNames == null) takeoverAssemblyNames = new HashSet<string>(set.Select(x => x.FullName));
+            return takeoverAssemblyNames.Contains(a.FullName);
+        }
 
         public static bool IsTakeoverDef(Def d)
         {
