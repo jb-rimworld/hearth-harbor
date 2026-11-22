@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- The six banks of KONZEPT 2.2. Fees are fractions (0.01 = 1 %). interestMod multiplies ln(M) of the profitability slider (8.8),
+       loanSpread is added to the yearly base rate (8.9). Switching banks costs 50 silver (setting bank.switchFee). -->
+
+  <Silverline.SL_BankDef>
+    <defName>SL_Mutual</defName>
+    <label>Silverline Mutual</label>
+    <description>The calm, neutral default. Quietly holds your silver, charges fair fees and has never once been in the news. The clerks are suspiciously well rested.</description>
+    <slogan>Quietly holding things since the Third Collapse.</slogan>
+    <iconPath>UI/HH/Bank/Logo_SL_Mutual</iconPath>
+    <order>10</order>
+    <depositFee>0</depositFee>
+    <withdrawFee>0.01</withdrawFee>
+    <withdrawFeeMin>5</withdrawFeeMin>
+    <atmFlatFee>2</atmFlatFee>
+    <atmFee>0.01</atmFee>
+    <accountFeePerQuadrum>0</accountFeePerQuadrum>
+    <interestMod>1.0</interestMod>
+    <loanSpread>0.12</loanSpread>
+    <perks>
+      <li>Neutral and fair: no tricks, no surprises.</li>
+      <li>Fees: 1 % to withdraw (minimum 5), ATM 2 + 1 %.</li>
+    </perks>
+  </Silverline.SL_BankDef>
+
+  <Silverline.SL_BankDef>
+    <defName>SL_TooBigToFail</defName>
+    <label>First Rim Bank of Too Big To Fail</label>
+    <description>Satire in a marble lobby. Higher yields, higher fees, and once per game year it will rescue a customer who has been truly, spectacularly rich and is now not. The rescue is a loan, not a gift. Nobody reads that part.</description>
+    <slogan>So big we had to name it twice.</slogan>
+    <iconPath>UI/HH/Bank/Logo_SL_TooBigToFail</iconPath>
+    <order>20</order>
+    <depositFee>0</depositFee>
+    <withdrawFee>0.015</withdrawFee>
+    <withdrawFeeMin>8</withdrawFeeMin>
+    <atmFlatFee>3</atmFlatFee>
+    <atmFee>0.015</atmFee>
+    <accountFeePerQuadrum>6</accountFeePerQuadrum>
+    <interestMod>1.1</interestMod>
+    <loanSpread>0.10</loanSpread>
+    <bailout>true</bailout>
+    <perks>
+      <li>Best account yield of the mainstream banks (+10 % in the exponent).</li>
+      <li>Bailout: once per game year, a customer who was a Too Big To Fail ten minutes ago and is now in the red gets an interest-free 60 day loan (up to 10 % of the peak).</li>
+      <li>Account fee 6 silver per quadrum.</li>
+    </perks>
+  </Silverline.SL_BankDef>
+
+  <Silverline.SL_BankDef MayRequire="Ludeon.RimWorld.Royalty">
+    <defName>SL_ImperialTreasury</defName>
+    <label>Imperial Treasury</label>
+    <description>The Throne's own counting house. Low fees, a faint smell of floor polish and credit only for those who bear a title. Withdrawals are called "disbursements" and come with a small bow.</description>
+    <slogan>Every coin bears the Throne's profile. Please do not bite it.</slogan>
+    <iconPath>UI/HH/Bank/Logo_SL_ImperialTreasury</iconPath>
+    <order>30</order>
+    <depositFee>0</depositFee>
+    <withdrawFee>0.005</withdrawFee>
+    <withdrawFeeMin>2</withdrawFeeMin>
+    <atmFlatFee>1</atmFlatFee>
+    <atmFee>0.005</atmFee>
+    <accountFeePerQuadrum>0</accountFeePerQuadrum>
+    <interestMod>0.9</interestMod>
+    <loanSpread>0.03</loanSpread>
+    <loansNeedTitle>true</loansNeedTitle>
+    <perks>
+      <li>Lowest fees: 0.5 % to withdraw (minimum 2).</li>
+      <li>Loans only if somebody in the colony holds a royal title; very cheap interest.</li>
+      <li>Slightly lower account yield (-10 % in the exponent).</li>
+    </perks>
+  </Silverline.SL_BankDef>
+
+  <Silverline.SL_BankDef MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>SL_OrbitalExchange</defName>
+    <label>Orbital Exchange</label>
+    <description>A trading-guild bank on a very expensive rotating ring. Best market access in the rim, highest fees in the rim, and every receipt arrives with a small chart that goes up and to the right.</description>
+    <slogan>Liquidity at the speed of light. Fees too.</slogan>
+    <iconPath>UI/HH/Bank/Logo_SL_OrbitalExchange</iconPath>
+    <order>40</order>
+    <depositFee>0.005</depositFee>
+    <withdrawFee>0.02</withdrawFee>
+    <withdrawFeeMin>10</withdrawFeeMin>
+    <atmFlatFee>4</atmFlatFee>
+    <atmFee>0.02</atmFee>
+    <accountFeePerQuadrum>10</accountFeePerQuadrum>
+    <interestMod>1.0</interestMod>
+    <loanSpread>0.15</loanSpread>
+    <perks>
+      <li>Best market access once investments are researched.</li>
+      <li>Highest fees: 0.5 % to deposit, 2 % to withdraw (minimum 10), account fee 10 silver per quadrum.</li>
+    </perks>
+  </Silverline.SL_BankDef>
+
+  <Silverline.SL_BankDef>
+    <defName>SL_BlackLedger</defName>
+    <label>The Black Ledger</label>
+    <description>No questions, no forms, no names. Lends to anyone, whatever their score, at a price. Once in a while a ledger "goes missing" and a share of the deposits with it.</description>
+    <slogan>We don't ask. You don't tell. The interest still compounds.</slogan>
+    <iconPath>UI/HH/Bank/Logo_SL_BlackLedger</iconPath>
+    <order>50</order>
+    <requiresModule>Underworld</requiresModule>
+    <depositFee>0</depositFee>
+    <withdrawFee>0.015</withdrawFee>
+    <withdrawFeeMin>6</withdrawFeeMin>
+    <atmFlatFee>3</atmFlatFee>
+    <atmFee>0.015</atmFee>
+    <accountFeePerQuadrum>0</accountFeePerQuadrum>
+    <interestMod>1.0</interestMod>
+    <loanSpread>0.20</loanSpread>
+    <ignoresScore>true</ignoresScore>
+    <seizureChancePerQuadrum>0.01</seizureChancePerQuadrum>
+    <perks>
+      <li>Loans ignore your credit score (and your feelings).</li>
+      <li>Every quadrum there is a 1 % risk that a quarter of the balance is "seized".</li>
+      <li>Only open to colonies that found the underworld.</li>
+    </perks>
+  </Silverline.SL_BankDef>
+
+  <Silverline.SL_BankDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>SL_CompoundInterest</defName>
+    <label>First Church of Compound Interest</label>
+    <description>A congregation that worships the miracle of exponential growth. Modest fees, a hymn for every balance sheet and a donation box that is, strictly speaking, optional.</description>
+    <slogan>In compound we trust. Tithe early, tithe often.</slogan>
+    <iconPath>UI/HH/Bank/Logo_SL_CompoundInterest</iconPath>
+    <order>60</order>
+    <depositFee>0</depositFee>
+    <withdrawFee>0.005</withdrawFee>
+    <withdrawFeeMin>3</withdrawFeeMin>
+    <atmFlatFee>1</atmFlatFee>
+    <atmFee>0.01</atmFee>
+    <accountFeePerQuadrum>2</accountFeePerQuadrum>
+    <interestMod>0.95</interestMod>
+    <loanSpread>0.08</loanSpread>
+    <perks>
+      <li>Low fees and gentle loans, paid for by a small account fee.</li>
+      <li>Home of the faith funds (once investments and indulgences are researched).</li>
+    </perks>
+  </Silverline.SL_BankDef>
+</Defs>

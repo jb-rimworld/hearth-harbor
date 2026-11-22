@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <DesignationCategoryDef>
+    <defName>HH_Bank</defName>
+    <label>bank</label>
+    <order>545</order>
+    <specialDesignatorClasses>
+      <li>Designator_Cancel</li>
+      <li>Designator_Deconstruct</li>
+    </specialDesignatorClasses>
+  </DesignationCategoryDef>
+
+  <!-- ATM: withdraw cash instantly (daily limit), deposit, look at the balance. Needs power. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>SL_ATM</defName>
+    <label>ATM</label>
+    <description>A steel box with a screen, a keypad and a slot that says "silver" in four languages. Colonists use it to look at their account, withdraw silver (daily limit, small fee) and deposit what they have. Needs power.</description>
+    <thingClass>Silverline.Building_SLATM</thingClass>
+    <graphicData>
+      <texPath>Things/HH/Bank/ATM</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData><volume>(0.8,0.5,0.4)</volume></shadowData>
+    </graphicData>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>30</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Mass>40</Mass>
+    </statBases>
+    <costList>
+      <Steel>80</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>HH_Bank</designationCategory>
+    <uiOrder>10</uiOrder>
+    <researchPrerequisites><li>SL_Banking</li></researchPrerequisites>
+    <building><destroySound>BuildingDestroyed_Metal_Small</destroySound></building>
+    <placeWorkers><li>PlaceWorker_PreventInteractionSpotOverlap</li></placeWorkers>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+        <shortCircuitInRain>true</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+  </ThingDef>
+
+  <!-- Branch counter: three cells wide, instant deposits, instant cash from the vault, loans in person. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>SL_BankCounter</defName>
+    <label>bank counter</label>
+    <description>A long wooden counter with brass fittings and a little bell nobody is allowed to ring. A branch of your bank: deposits are booked at once, cash comes straight from the vault and loans are signed in person. Needs power.</description>
+    <thingClass>Silverline.Building_SLBranch</thingClass>
+    <graphicData>
+      <texPath>Things/HH/Bank/BankCounter</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,1)</drawSize>
+      <shadowData><volume>(2.8,0.5,0.6)</volume></shadowData>
+    </graphicData>
+    <size>(3,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>40</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>260</MaxHitPoints>
+      <WorkToBuild>3200</WorkToBuild>
+      <Flammability>0.7</Flammability>
+      <Mass>60</Mass>
+    </statBases>
+    <costList>
+      <Steel>60</Steel>
+      <WoodLog>90</WoodLog>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>HH_Bank</designationCategory>
+    <uiOrder>20</uiOrder>
+    <researchPrerequisites><li>SL_Branches</li></researchPrerequisites>
+    <building><destroySound>BuildingDestroyed_Wood_Small</destroySound></building>
+    <placeWorkers><li>PlaceWorker_PreventInteractionSpotOverlap</li></placeWorkers>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>120</basePowerConsumption>
+        <shortCircuitInRain>true</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+  </ThingDef>
+
+  <!-- Night safe: no power. Where the till money goes at midnight; with an account it is booked straight to the account. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>SL_NightSafe</defName>
+    <label>night safe</label>
+    <description>A hatch in a steel block. Put the day's takings in, hear it clunk, go home. Every midnight the tills of your businesses are emptied here: into your bank account if you have one, as silver on the floor next to it if you do not.</description>
+    <thingClass>Silverline.Building_SLNightSafe</thingClass>
+    <graphicData>
+      <texPath>Things/HH/Bank/NightSafe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData><volume>(0.7,0.5,0.7)</volume></shadowData>
+    </graphicData>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>30</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>false</rotatable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <WorkToBuild>1400</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Mass>70</Mass>
+    </statBases>
+    <costList><Steel>70</Steel></costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>HH_Bank</designationCategory>
+    <uiOrder>30</uiOrder>
+    <researchPrerequisites><li>SL_Banking</li></researchPrerequisites>
+    <building><destroySound>BuildingDestroyed_Metal_Small</destroySound></building>
+    <comps>
+      <li Class="Hearth.CompProperties_TillSpot" />
+    </comps>
+  </ThingDef>
+</Defs>
