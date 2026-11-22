@@ -29,7 +29,7 @@ Dependency direction: `Hearth → Silverline → Hearth.Core`. Silverline must n
 - `Source/build.sh 1.7 --tests` — builds the 1.7 DLLs with the in-game test harness (prints only errors).
 - `Source/build.sh all` — release build for 1.7, 1.6, 1.5.
 - `tools/run_test.sh <suite,suite|all> <label>` — builds with tests, starts RimWorld 1.7 `-quicktest` in an isolated profile
-  (2 parallel slots, waits if busy), runs the in-game suites, quits, prints results. Exit 0 = pass. Takes 1–4 minutes.
+  (3 parallel slots, waits if busy), runs the in-game suites, quits, prints results. Exit 0 = pass. Takes 1–4 minutes.
   `MODDIR=<worktree root>` to test a git worktree. Extra mods to load: pass their packageIds after the label.
 - Write in-game suites as `Hearth.Testing.HearthTestSuite` subclasses inside `#if HH_TESTS` (see `Source/Hearth.Core/Testing/HearthTests.cs`).
   Name them `<module>.<what>`, e.g. `bank.deposit`. A suite yields ticks to wait and calls `t.Check(cond, "what")`.

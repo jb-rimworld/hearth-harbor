@@ -13,9 +13,9 @@ G="$HOME/Library/Application Support/Steam/steamapps/common/RimWorld"
 # acquire one of 2 slots
 slot=""
 for i in $(seq 1 720); do
-  for n in 1 2; do if mkdir $S/lock$n 2>/dev/null; then slot=$n; break 2; fi; done
+  for n in 1 2 3; do if mkdir $S/lock$n 2>/dev/null; then slot=$n; break 2; fi; done
   # stale lock (> 25 min) → free it
-  for n in 1 2; do [ -d $S/lock$n ] && [ $(( $(date +%s) - $(stat -f %m $S/lock$n) )) -gt 1500 ] && rmdir $S/lock$n; done
+  for n in 1 2 3; do [ -d $S/lock$n ] && [ $(( $(date +%s) - $(stat -f %m $S/lock$n) )) -gt 1500 ] && rmdir $S/lock$n; done
   sleep 5
 done
 [ -z "$slot" ] && { echo "no free test slot"; exit 3; }
