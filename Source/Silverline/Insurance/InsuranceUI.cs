@@ -34,14 +34,26 @@ namespace Silverline
         static readonly HashSet<int> expandedClaims = new HashSet<int>();
         static Texture2D logo; static bool logoTried;
 
-        // palette
-        public static readonly Color Blue = new Color(0.20f, 0.42f, 0.74f);
-        public static readonly Color BlueDark = new Color(0.09f, 0.15f, 0.25f, 0.92f);
-        public static readonly Color BlueMid = new Color(0.14f, 0.24f, 0.40f, 0.92f);
-        public static readonly Color Gold = new Color(0.96f, 0.78f, 0.25f);
-        public static readonly Color Grey = new Color(0.62f, 0.66f, 0.72f);
-        public static readonly Color Good = new Color(0.45f, 0.82f, 0.52f);
-        public static readonly Color Bad = new Color(0.92f, 0.45f, 0.40f);
+        // palette: Clawback Mutual blue in its own window; inside the bank window the lobby look (walnut, brass, green) so the bank stays one place (KONZEPT 8.4)
+        [ThreadStatic] static bool bankSkin;
+        public static Color Blue => bankSkin ? BankUI.GreenLight : new Color(0.20f, 0.42f, 0.74f);
+        public static Color BlueDark => bankSkin ? new Color(BankUI.Green.r, BankUI.Green.g, BankUI.Green.b, 0.92f) : new Color(0.09f, 0.15f, 0.25f, 0.92f);
+        public static Color BlueMid => bankSkin ? BankUI.WalnutLight : new Color(0.14f, 0.24f, 0.40f, 0.92f);
+        public static Color Gold => bankSkin ? BankUI.Brass : new Color(0.96f, 0.78f, 0.25f);
+        public static Color Grey => bankSkin ? BankUI.CreamDim : new Color(0.62f, 0.66f, 0.72f);
+        public static Color Good => bankSkin ? BankUI.Good : new Color(0.45f, 0.82f, 0.52f);
+        public static Color Bad => bankSkin ? BankUI.Bad : new Color(0.92f, 0.45f, 0.40f);
+        /// <summary>Light text tint (was a pale blue).</summary>
+        public static Color Pale => bankSkin ? BankUI.Cream : Pale;
+        public static Color PaleHi => bankSkin ? BankUI.Cream : PaleHi;
+        public static Color PaleDim => bankSkin ? BankUI.CreamDim : PaleDim;
+
+        /// <summary>Draw inside the bank window: same pages, the bank's colours.</summary>
+        public static void DrawInBank(Rect rect)
+        {
+            bool was = bankSkin; bankSkin = true;
+            try { Draw(rect); } finally { bankSkin = was; }
+        }
 
         public static Texture2D Logo
         {
@@ -98,7 +110,7 @@ namespace Silverline
             Text.Font = GameFont.Medium;
             Widgets.Label(new Rect(r.x + 82f, r.y + 4f, r.width - 330f, 32f), "Clawback Mutual");
             Text.Font = GameFont.Small;
-            GUI.color = new Color(0.78f, 0.86f, 0.97f);
+            GUI.color = Pale;
             Widgets.Label(new Rect(r.x + 82f, r.y + 34f, r.width - 330f, 24f), "“" + Ins.Slogan(Ins.Now / 60000) + "”");
             GUI.color = Grey; Text.Font = GameFont.Tiny;
             Widgets.Label(new Rect(r.x + 82f, r.y + 54f, r.width - 330f, 18f), Ins.T("UI.Footer"));
@@ -203,7 +215,7 @@ namespace Silverline
             Text.Font = GameFont.Small;
             if (!def.slogan.NullOrEmpty())
             {
-                GUI.color = new Color(0.78f, 0.86f, 0.97f); Text.Anchor = TextAnchor.UpperRight;
+                GUI.color = Pale; Text.Anchor = TextAnchor.UpperRight;
                 Widgets.Label(new Rect(x + w * 0.45f, y + 4f, w * 0.55f, 24f), "“" + def.slogan + "”");
                 Text.Anchor = TextAnchor.UpperLeft; GUI.color = Color.white;
             }
@@ -353,14 +365,14 @@ namespace Silverline
             var contract = comp.contracts.FirstOrDefault(c => c.Active && c.defName == def.defName && c.holder == (def.kind == PolicyKind.Person ? holder : null));
             var q = InsurancePricing.QuoteFor(def, tier, holder, sum, cs.riders, bundleCount, null);
             string price = q.perTravelDay ? Ins.T("UI.Price.Travel", Ins.Silver(q.travelPerHeadDay)) : Ins.T("UI.Price", Ins.Silver(q.billing), q.billingDays);
-            GUI.color = premium && badge ? Gold : new Color(0.78f, 0.9f, 1f);
+            GUI.color = premium && badge ? Gold : Pale;
             Widgets.Label(new Rect(x, y, w, 22f), price);
             GUI.color = Color.white;
             TooltipHandler.TipRegion(new Rect(x, y, w, 22f), Ins.T("UI.Price.Tip", string.Join("\n", q.lines), Ins.Silver(q.premiumQuadrum)));
             y += 22f;
 
             Text.Font = GameFont.Tiny;
-            GUI.color = new Color(0.9f, 0.92f, 0.96f);
+            GUI.color = PaleHi;
             string benefit = def.BenefitFor(tier) ?? "";
             Widgets.Label(new Rect(x, y, w, 50f), benefit);
             y += 52f;
@@ -469,7 +481,7 @@ namespace Silverline
                     string txt = Ins.T("UI.Mine.CancelLink");
                     Text.Font = GameFont.Tiny;
                     var cr = new Rect(r.xMax - 10f - 90f, r.yMax - 20f, 90f, 16f);
-                    GUI.color = Mouse.IsOver(cr) ? new Color(0.75f, 0.8f, 0.9f) : new Color(0.42f, 0.46f, 0.52f);
+                    GUI.color = Mouse.IsOver(cr) ? PaleHi : PaleDim;
                     Text.Anchor = TextAnchor.MiddleRight; Widgets.Label(cr, txt);
                     if (Mouse.IsOver(cr)) { Widgets.DrawLineHorizontal(cr.xMax - Text.CalcSize(txt).x, cr.yMax - 1f, Text.CalcSize(txt).x); }
                     Text.Anchor = TextAnchor.UpperLeft; Text.Font = GameFont.Small; GUI.color = Color.white;
@@ -531,7 +543,7 @@ namespace Silverline
             y += 20f;
             if (open)
             {
-                GUI.color = new Color(0.85f, 0.9f, 0.97f); Text.Font = GameFont.Tiny;
+                GUI.color = PaleHi; Text.Font = GameFont.Tiny;
                 string det = ClaimLetters.Explain(c) + (c.Clause != null ? "\n" + Ins.T("Letter.Clause.Cited", c.Clause.Print(false)) : "");
                 float dh = Text.CalcHeight(det, w - 20f);
                 Widgets.Label(new Rect(x + 6f, y, w - 12f, dh), det); y += dh + 6f;
@@ -575,7 +587,7 @@ namespace Silverline
             {
                 bool on = ClauseEngine.Active(c, CoverTier.GoodEnough);
                 string txt = c.Print(abbr); float ch = Text.CalcHeight(txt, tw - 90f);
-                GUI.color = on ? new Color(0.78f, 0.86f, 0.97f) : new Color(0.5f, 0.52f, 0.56f);
+                GUI.color = on ? Pale : PaleDim;
                 Widgets.Label(new Rect(8f, y, 76f, 18f), "<b>§" + c.number + "</b>");
                 Widgets.Label(new Rect(84f, y, tw - 90f, ch), txt + (on ? "" : "  [" + Ins.T("UI.Fine.Inactive") + "]"));
                 y += ch + 10f;
@@ -586,7 +598,7 @@ namespace Silverline
             Text.Font = GameFont.Tiny;
             foreach (var e in limbs)
             {
-                GUI.color = new Color(0.9f, 0.92f, 0.96f);
+                GUI.color = PaleHi;
                 Widgets.Label(new Rect(8f, y, 150f, 18f), e.Key);
                 Widgets.Label(new Rect(160f, y, 50f, 18f), e.Percent.ToString("0") + " %");
                 GUI.color = Grey; Widgets.Label(new Rect(214f, y, view.width - 230f, 18f), e.Comment);

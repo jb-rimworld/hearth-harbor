@@ -8,7 +8,8 @@ using Verse;
 
 namespace Hearth
 {
-    public enum SettingKind { Bool, Int, Float, Percent, Money, Enum }
+    /// <summary>LogFloat: a plain positive number (e.g. a yearly multiple M) whose slider runs on a log scale and whose tier anchors are interpolated in log space. The stored value is the number itself (0 is allowed by typing it).</summary>
+    public enum SettingKind { Bool, Int, Float, Percent, Money, Enum, LogFloat }
 
     /// <summary>
     /// One tunable number (B3, N17). Registered once from code at startup (HearthModuleBase.RegisterSettings).
@@ -34,6 +35,37 @@ namespace Hearth
         public Type EnumType;
         public string LabelEn, DescEn;     // English fallback; translation keys HH.Setting.<Key> and HH.Setting.<Key>.Desc
         public float Step = 0f;            // slider rounding; 0 = automatic
+        /// <summary>Older key this setting replaces (save compatibility): if only the old key is stored, its value is converted with <see cref="LegacyToValue"/>.</summary>
+        public string LegacyKey;
+        public Func<float, float> LegacyToValue;
+
+        public bool IsLog => Kind == SettingKind.LogFloat;
+        float LogLo => Math.Max(1e-6f, SliderMin);
+        /// <summary>Slider position for a value: the value itself, or its natural log for a LogFloat (clamped to the slider range).</summary>
+        public float ToSlider(float v)
+        {
+            v = Math.Max(SliderMin, Math.Min(SliderMax, v));
+            return IsLog ? (float)Math.Log(Math.Max(LogLo, v)) : v;
+        }
+        /// <summary>Value for a slider position (inverse of <see cref="ToSlider"/>); a LogFloat is rounded to three significant digits so the numbers stay readable.</summary>
+        public float FromSlider(float x)
+        {
+            if (!IsLog) return x;
+            double v = Math.Exp(x); if (v <= 0) return SliderMin;
+            double mag = Math.Pow(10, Math.Floor(Math.Log10(v)) - 2);
+            return (float)Math.Max(SliderMin, Math.Min(SliderMax, Math.Round(v / mag) * mag));
+        }
+        public float SliderLo => IsLog ? (float)Math.Log(LogLo) : SliderMin;
+        public float SliderHi => IsLog ? (float)Math.Log(Math.Max(SliderMax, LogLo * 1.001f)) : SliderMax;
+
+        /// <summary>Value stored in <paramref name="st"/> (also through the legacy key), or null if none.</summary>
+        public float? StoredIn(HearthSettingsStore st)
+        {
+            if (st.TryGet(Key, out float v)) return Clamp(v);
+            if (LegacyKey != null && LegacyToValue != null && st.TryGet(LegacyKey, out float lv)) return Clamp(LegacyToValue(lv));
+            return null;
+        }
+        public bool IsStoredIn(HearthSettingsStore st) => st.Has(Key) || (LegacyKey != null && st.Has(LegacyKey));
 
         public string Label => ("HH.Setting." + Key).TranslateOr(LabelEn ?? Key);
         public string Desc => ("HH.Setting." + Key + ".Desc").TranslateOr(DescEn ?? "");
@@ -53,6 +85,8 @@ namespace Hearth
             tier = Math.Max(0, Math.Min(6, tier));
             int i = (int)Math.Floor(tier); if (i >= 6) return TierAnchors[6];
             float t = tier - i;
+            if (Kind == SettingKind.LogFloat && TierAnchors[i] > 0f && TierAnchors[i + 1] > 0f)
+                return (float)Math.Exp(Math.Log(TierAnchors[i]) + (Math.Log(TierAnchors[i + 1]) - Math.Log(TierAnchors[i])) * t);
             return TierAnchors[i] + (TierAnchors[i + 1] - TierAnchors[i]) * t;
         }
 
@@ -77,6 +111,7 @@ namespace Hearth
                 case SettingKind.Enum:
                     if (EnumType != null) { string name = Enum.GetName(EnumType, (int)Math.Round(v)); if (name != null) return ("HH.Enum." + EnumType.Name + "." + name).TranslateOr(name); }
                     return ((int)Math.Round(v)).ToString();
+                case SettingKind.LogFloat: return v.ToString(v >= 100 ? "#,##0" : v >= 10 ? "0.#" : v >= 1 ? "0.##" : "0.###", CultureInfo.InvariantCulture);
                 default: return v.ToString(Math.Abs(v) >= 100 ? "#,##0.#" : "0.###", CultureInfo.InvariantCulture);
             }
         }
@@ -101,6 +136,10 @@ namespace Hearth
 
         public static HSetting Float(ModuleId m, string cat, string key, float def, float min, float max, string label, string desc = null, bool nerd = false, float hardMin = 0f, float hardMax = 1e6f, float[] tiers = null)
             => Add(new HSetting { Module = m, Category = cat, Key = key, Kind = SettingKind.Float, Default = def, SliderMin = min, SliderMax = max, HardMin = hardMin, HardMax = hardMax, LabelEn = label, DescEn = desc, Nerd = nerd, TierAnchors = tiers });
+
+        /// <summary>A positive number on a log-scale slider with tier anchors interpolated in log space (e.g. profitability M). Stored as the plain number.</summary>
+        public static HSetting LogFloat(ModuleId m, string cat, string key, float def, float min, float max, string label, string desc = null, bool nerd = false, float hardMin = 0f, float hardMax = 1e6f, float[] tiers = null, string legacyKey = null, Func<float, float> legacyToValue = null)
+            => Add(new HSetting { Module = m, Category = cat, Key = key, Kind = SettingKind.LogFloat, Default = def, SliderMin = min, SliderMax = max, HardMin = hardMin, HardMax = hardMax, LabelEn = label, DescEn = desc, Nerd = nerd, TierAnchors = tiers, LegacyKey = legacyKey, LegacyToValue = legacyToValue });
 
         public static HSetting Percent(ModuleId m, string cat, string key, float def, float min, float max, string label, string desc = null, bool nerd = false, float hardMin = 0f, float hardMax = 1f, float[] tiers = null)
             => Add(new HSetting { Module = m, Category = cat, Key = key, Kind = SettingKind.Percent, Default = def, SliderMin = min, SliderMax = max, HardMin = hardMin, HardMax = hardMax, LabelEn = label, DescEn = desc, Nerd = nerd, TierAnchors = tiers });
@@ -134,8 +173,8 @@ namespace Hearth
         }
         public static float Get(HSetting s)
         {
-            var st = Store(s);
-            if (st.TryGet(s.Key, out float v)) return s.Clamp(v);
+            var sv = s.StoredIn(Store(s));
+            if (sv.HasValue) return sv.Value;
             return s.Clamp(s.DefaultFor(Tier));
         }
         public static bool GetBool(string key) => Get(key) >= 0.5f;
@@ -143,10 +182,10 @@ namespace Hearth
         public static T GetEnum<T>(string key) where T : struct => (T)System.Enum.ToObject(typeof(T), GetInt(key));
         public static Money GetSilver(string key) => Money.FromSilver(Get(key));
 
-        public static bool IsOverridden(HSetting s) => Store(s).Has(s.Key);
-        public static void Set(HSetting s, float v) => Store(s).Set(s.Key, s.Clamp(v));
+        public static bool IsOverridden(HSetting s) => s.IsStoredIn(Store(s));
+        public static void Set(HSetting s, float v) { var st = Store(s); st.Set(s.Key, s.Clamp(v)); if (s.LegacyKey != null) st.Remove(s.LegacyKey); }
         public static void Set(string key, float v) { var s = Find(key); if (s != null) Set(s, v); }
-        public static void Reset(HSetting s) => Store(s).Remove(s.Key);
+        public static void Reset(HSetting s) { var st = Store(s); st.Remove(s.Key); if (s.LegacyKey != null) st.Remove(s.LegacyKey); }
     }
 
     /// <summary>Key → value store, saved as two parallel lists (stable across versions; unknown keys are kept).</summary>

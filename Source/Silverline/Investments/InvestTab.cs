@@ -23,7 +23,7 @@ namespace Silverline
 
         public static void Register()
         {
-            BankTabs.Register(new BankTab { Id = "invest", LabelKey = "HH.Finance.Tab.Invest", LabelEn = "Invest", Order = 40, Draw = r => Guard.Run(ModuleId.Bank, "InvestTab.Draw", () => Draw(r)), Visible = () => Modules.On(ModuleId.Bank) && FinanceAccounts.Available });
+            BankTabs.Register(new BankTab { Id = "invest", LabelKey = "HH.Finance.Tab.Invest", LabelEn = "Invest", Order = 50, Draw = r => Guard.Run(ModuleId.Bank, "InvestTab.Draw", () => Draw(r)), Visible = () => Modules.On(ModuleId.Bank) && FinanceAccounts.Available });
         }
 
 #if HH_TESTS

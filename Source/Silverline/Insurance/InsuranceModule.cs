@@ -25,7 +25,7 @@ namespace Silverline
             BankTabs.Register(new BankTab
             {
                 Id = "insurance", LabelKey = "HH.Ins.Tab.Bank", LabelEn = "Insurance", Order = 60,
-                Draw = InsuranceUI.Draw,
+                Draw = InsuranceUI.DrawInBank,
                 Visible = () => Modules.On(ModuleId.Bank)
             });
             Caretaker.Register(ModuleId.Bank, "Insurance.Contracts", RepairContracts);

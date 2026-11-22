@@ -18,7 +18,7 @@ namespace Silverline
 
         public static void Register()
         {
-            BankTabs.Register(new BankTab { Id = "lottery", LabelKey = "HH.Finance.Tab.Lottery", LabelEn = "Lottery", Order = 50, Draw = r => Guard.Run(ModuleId.Bank, "LotteryTab.Draw", () => Draw(r)), Visible = () => Modules.On(ModuleId.Bank) && FinanceAccounts.Available && (HSettings.GetBool("lottery.globalOn") || HSettings.GetBool("lottery.colonyOn")) });
+            BankTabs.Register(new BankTab { Id = "lottery", LabelKey = "HH.Finance.Tab.Lottery", LabelEn = "Lottery", Order = 55, Draw = r => Guard.Run(ModuleId.Bank, "LotteryTab.Draw", () => Draw(r)), Visible = () => Modules.On(ModuleId.Bank) && FinanceAccounts.Available && (HSettings.GetBool("lottery.globalOn") || HSettings.GetBool("lottery.colonyOn")) });
         }
 
         static void Msg(string m) { message = m; messageTick = Find.TickManager.TicksGame; }

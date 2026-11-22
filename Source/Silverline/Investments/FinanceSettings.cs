@@ -9,17 +9,18 @@ namespace Silverline
     public static class FinanceSettings
     {
         static bool registered;
-        // Tier anchors (Comped … Why?). Profitability is stored as ln(M) because the settings core interpolates linearly: ln(100)=4.605 … ln(0.1)=-2.303.
-        static readonly float[] LnM = { 4.60517f, 0.69315f, 0.40547f, 0.18232f, 0f, -0.35667f, -2.30259f };
+        // Tier anchors (Comped … Why?) of the yearly multiple M, interpolated in log space.
+        static readonly float[] MAnchors = { 100f, 2.0f, 1.5f, 1.2f, 1.0f, 0.7f, 0.1f };
         static readonly float[] HazardTier = { 0.2f, 0.5f, 0.75f, 1f, 1.25f, 1.6f, 2.2f };
 
         public static void Register()
         {
             if (registered) return; registered = true;
             const string cat = "Investments";
-            HSettings.Float(ModuleId.Bank, cat, "finance.profitLog", 0.18232f, -2.5f, 1.0f, "Profitability (natural log of the yearly multiple)",
-                "How much invested money grows on average per game year (60 days), as ln(M): 0.18 means ×1.2 (+20 % a year) for the reference fund RimIndex 50, 0 means ±0, negative loses money. The Invest tab shows the plain multiple. Typing a value outside the slider is allowed.",
-                hardMin: -9.2f, hardMax: 4.61f, tiers: LnM);
+            // Stored as the plain multiple M on a log slider (tier anchors interpolate in log space). Older saves stored ln(M) under finance.profitLog: converted on read.
+            HSettings.LogFloat(ModuleId.Bank, cat, "finance.profit", 1.2f, 0.1f, 100f, "Profitability (yearly multiple M)",
+                "How much invested money grows on average per game year (60 days) for the reference fund RimIndex 50: 1.2 means +20 % a year, 1.0 means plus/minus nothing, below 1 loses money. Log scale 0.1 to 100; type a number for the exact value. Follows the difficulty slider until you set it yourself.",
+                hardMin: 0.0001f, hardMax: 100f, tiers: MAnchors, legacyKey: "finance.profitLog", legacyToValue: ln => (float)DetMath.Exp(ln));
             HSettings.Float(ModuleId.Bank, cat, "finance.volMult", 1f, 0.2f, 3f, "Volatility ×", "Multiplies how wildly prices swing day to day. 1 = the numbers of the design (index 1.5 % a day, memecoins 15 %).", hardMin: 0f, hardMax: 10f);
             HSettings.Float(ModuleId.Bank, cat, "finance.jumpMult", 1f, 0f, 3f, "Price jumps ×", "Multiplies how often assets make their own jumps (quarterly numbers, crypto jumps, memecoin pumps). The long-run average does not change: the maths compensates.", hardMin: 0f, hardMax: 10f);
             HSettings.Float(ModuleId.Bank, cat, "finance.hazardMult", 1f, 0f, 3f, "Disasters ×", "Multiplies crashes, rug pulls, defaults, exchange hacks and bank runs. The long-run average does not change, only how often it hurts.", hardMin: 0f, hardMax: 10f, tiers: HazardTier);
@@ -63,8 +64,8 @@ namespace Silverline
         }
 
         // reading helpers ------------------------------------------------------------------------------
-        public static double M => DetMath.Exp(HSettings.Get("finance.profitLog"));
-        public static double LnMValue => HSettings.Get("finance.profitLog");
+        public static double M => Math.Max(1e-6, HSettings.Get("finance.profit"));
+        public static double LnMValue => DetMath.Ln(M);
         public static double Vol => HSettings.Get("finance.volMult");
         public static double Jump => HSettings.Get("finance.jumpMult");
         public static double Hazard => HSettings.Get("finance.hazardMult");
