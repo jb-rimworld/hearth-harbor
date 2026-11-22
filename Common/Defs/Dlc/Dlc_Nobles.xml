@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- KONZEPT 11.7. Royalty only. -->
+  <LetterDef MayRequire="Ludeon.RimWorld.Royalty">
+    <defName>HH_NobleOffer</defName>
+    <letterClass>Hearth.Dlc.ChoiceLetter_NobleOffer</letterClass>
+    <color>(0.78,0.62,0.95)</color>
+    <flashColor>(0.78,0.62,0.95)</flashColor>
+    <bounce>false</bounce>
+    <forcedSlowdown>false</forcedSlowdown>
+  </LetterDef>
+
+  <IncidentDef MayRequire="Ludeon.RimWorld.Royalty">
+    <defName>HH_NobleStay</defName>
+    <label>noble stay</label>
+    <category>Misc</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>Hearth.Dlc.IncidentWorker_NobleStay</workerClass>
+    <baseChance>0.5</baseChance>
+    <earliestDay>18</earliestDay>
+    <minPopulation>3</minPopulation>
+    <letterLabel>Noble stay offered</letterLabel>
+    <letterText>A noble party asks for lodging.</letterText>
+    <letterDef>HH_NobleOffer</letterDef>
+  </IncidentDef>
+  <IncidentDef MayRequire="Ludeon.RimWorld.Royalty">
+    <defName>HH_ImperialBilleting</defName>
+    <label>imperial billeting</label>
+    <category>Misc</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>Hearth.Dlc.IncidentWorker_ImperialBilleting</workerClass>
+    <baseChance>0.3</baseChance>
+    <earliestDay>25</earliestDay>
+    <minPopulation>3</minPopulation>
+    <letterLabel>Imperial billeting</letterLabel>
+    <letterText>The Empire requires lodging.</letterText>
+    <letterDef>HH_NobleOffer</letterDef>
+  </IncidentDef>
+</Defs>

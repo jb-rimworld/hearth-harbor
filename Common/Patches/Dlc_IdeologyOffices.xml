@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- KONZEPT 11.4: indulgences are bought at the altar or ideogram. Adds the office comp to the vanilla ideoligion focus buildings. -->
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>Ideology</li></mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="Altar_Small"]/comps</xpath>
+        <match Class="PatchOperationAdd"><xpath>/Defs/ThingDef[defName="Altar_Small"]/comps</xpath><value><li Class="Hearth.Dlc.CompProperties_IndulgenceOffice" /></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>/Defs/ThingDef[defName="Altar_Small"]</xpath><value><comps><li Class="Hearth.Dlc.CompProperties_IndulgenceOffice" /></comps></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="Altar_Medium"]/comps</xpath>
+        <match Class="PatchOperationAdd"><xpath>/Defs/ThingDef[defName="Altar_Medium"]/comps</xpath><value><li Class="Hearth.Dlc.CompProperties_IndulgenceOffice" /></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>/Defs/ThingDef[defName="Altar_Medium"]</xpath><value><comps><li Class="Hearth.Dlc.CompProperties_IndulgenceOffice" /></comps></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="Altar_Large"]/comps</xpath>
+        <match Class="PatchOperationAdd"><xpath>/Defs/ThingDef[defName="Altar_Large"]/comps</xpath><value><li Class="Hearth.Dlc.CompProperties_IndulgenceOffice" /></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>/Defs/ThingDef[defName="Altar_Large"]</xpath><value><comps><li Class="Hearth.Dlc.CompProperties_IndulgenceOffice" /></comps></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="Altar_Grand"]/comps</xpath>
+        <match Class="PatchOperationAdd"><xpath>/Defs/ThingDef[defName="Altar_Grand"]/comps</xpath><value><li Class="Hearth.Dlc.CompProperties_IndulgenceOffice" /></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>/Defs/ThingDef[defName="Altar_Grand"]</xpath><value><comps><li Class="Hearth.Dlc.CompProperties_IndulgenceOffice" /></comps></value></nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="Ideogram"]/comps</xpath>
+        <match Class="PatchOperationAdd"><xpath>/Defs/ThingDef[defName="Ideogram"]/comps</xpath><value><li Class="Hearth.Dlc.CompProperties_IndulgenceOffice" /></value></match>
+        <nomatch Class="PatchOperationAdd"><xpath>/Defs/ThingDef[defName="Ideogram"]</xpath><value><comps><li Class="Hearth.Dlc.CompProperties_IndulgenceOffice" /></comps></value></nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

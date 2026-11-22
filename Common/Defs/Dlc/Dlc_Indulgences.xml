@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- KONZEPT 11.4 / 8.16. Prices are start values in silver; market-based ones read the live market value. Modders add their own IndulgenceDefs. -->
+  <Hearth.IndulgenceDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>HH_Ind_ExpressAbsolution</defName><label>express absolution</label>
+    <description>A stamped slip that wipes one memory of a broken commandment. The priest does not ask what you did.</description>
+    <theme>Indulgences</theme><workerClass>Hearth.Dlc.IndulgenceWorker_Absolution</workerClass>
+    <basePrice>150</basePrice><capPawnQuadrum>3</capPawnQuadrum>
+  </Hearth.IndulgenceDef>
+  <Hearth.IndulgenceDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>HH_Ind_MinorMercy</defName><label>minor mercy</label>
+    <description>A blessed bandage, sold at the price of two doses of medicine. Heals one fresh wound of up to 10 hit points.</description>
+    <theme>Indulgences</theme><workerClass>Hearth.Dlc.IndulgenceWorker_MinorMercy</workerClass>
+    <priceThing>MedicineIndustrial</priceThing><priceThingFactor>2</priceThingFactor><capPawnQuadrum>2</capPawnQuadrum>
+  </Hearth.IndulgenceDef>
+  <Hearth.IndulgenceDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>HH_Ind_UnshakenFaith</defName><label>certificate of unshaken faith</label>
+    <description>A framed certificate that says you never doubted. Raises certainty by ten percentage points.</description>
+    <theme>Indulgences</theme><workerClass>Hearth.Dlc.IndulgenceWorker_Certainty</workerClass>
+    <basePrice>200</basePrice><capPawnQuadrum>1</capPawnQuadrum>
+  </Hearth.IndulgenceDef>
+  <Hearth.IndulgenceDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>HH_Ind_GreaterMercy</defName><label>greater mercy</label>
+    <description>A priced miracle. Heals one lasting scar or old wound for good.</description>
+    <theme>Indulgences</theme><workerClass>Hearth.Dlc.IndulgenceWorker_GreaterMercy</workerClass>
+    <priceThing>MechSerumHealer</priceThing><priceThingFactor>1.5</priceThingFactor><capPawnYear>1</capPawnYear>
+  </Hearth.IndulgenceDef>
+
+  <Hearth.IndulgenceDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>HH_Asc_Rank1</defName><label>ascension: seeker</label>
+    <description>Pay the entry fee and become a Seeker. A start, nothing more.</description>
+    <theme>Ascension</theme><workerClass>Hearth.Dlc.IndulgenceWorker_Rank</workerClass>
+    <rank>1</rank><basePrice>500</basePrice><capPawnQuadrum>1</capPawnQuadrum>
+  </Hearth.IndulgenceDef>
+  <Hearth.IndulgenceDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>HH_Asc_Rank2</defName><label>ascension: adept</label>
+    <description>Rank II, Adept. From here on the holder may sell indulgences at the altar to guests and visitors of other houses.</description>
+    <theme>Ascension</theme><workerClass>Hearth.Dlc.IndulgenceWorker_Rank</workerClass>
+    <rank>2</rank><basePrice>1500</basePrice><capPawnQuadrum>1</capPawnQuadrum>
+  </Hearth.IndulgenceDef>
+  <Hearth.IndulgenceDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>HH_Asc_Rank3</defName><label>ascension: luminary</label>
+    <description>Rank III, Luminary. Light enough to be noticed from far away.</description>
+    <theme>Ascension</theme><workerClass>Hearth.Dlc.IndulgenceWorker_Rank</workerClass>
+    <rank>3</rank><basePrice>4000</basePrice><capPawnQuadrum>1</capPawnQuadrum>
+  </Hearth.IndulgenceDef>
+  <Hearth.IndulgenceDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>HH_Asc_Rank4</defName><label>ascension: ascendant</label>
+    <description>Rank IV, Ascendant. The top of the ladder, for those who can afford the view.</description>
+    <theme>Ascension</theme><workerClass>Hearth.Dlc.IndulgenceWorker_Rank</workerClass>
+    <rank>4</rank><basePrice>10000</basePrice><capPawnQuadrum>1</capPawnQuadrum>
+  </Hearth.IndulgenceDef>
+  <Hearth.IndulgenceDef MayRequire="Ludeon.RimWorld.Royalty">
+    <defName>HH_Asc_Psychic</defName><label>psychic ascension</label>
+    <description>The priesthood pulls strings with something far above it. Raises the psylink by one level, up to the usual limit. Needs rank III.</description>
+    <theme>Ascension</theme><workerClass>Hearth.Dlc.IndulgenceWorker_Psylink</workerClass>
+    <priceThing>PsychicAmplifier</priceThing><priceThingFactor>1.5</priceThingFactor>
+    <minRank>3</minRank><capPawnYear>1</capPawnYear><capColonyQuadrum>1</capColonyQuadrum>
+  </Hearth.IndulgenceDef>
+  <Hearth.IndulgenceDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>HH_Ind_ReformTithe</defName><label>reform tithe</label>
+    <description>A voluntary tithe towards the next reform of a fluid ideoligion: one reform point.</description>
+    <theme>Both</theme><workerClass>Hearth.Dlc.IndulgenceWorker_Reform</workerClass>
+    <basePrice>1000</basePrice><capIdeoQuadrum>2</capIdeoQuadrum><fluidOnly>true</fluidOnly>
+  </Hearth.IndulgenceDef>
+</Defs>

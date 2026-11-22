@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- KONZEPT 11.4: two issues about selling faith. Satire without real organisations. Ideology only. -->
+  <IssueDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_Indulgences</defName><label>indulgences</label><iconPath>UI/HH/Dlc/Issues/Indulgences</iconPath></IssueDef>
+  <IssueDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_PaidAscension</defName><label>paid ascension</label><iconPath>UI/HH/Dlc/Issues/PaidAscension</iconPath></IssueDef>
+
+  <HistoryEventDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_BoughtIndulgence</defName><label>bought an indulgence</label></HistoryEventDef>
+  <HistoryEventDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_BoughtAscension</defName><label>bought an ascension</label></HistoryEventDef>
+
+  <!-- ===== Indulgences ===== -->
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology" Name="HH_IndBase" Abstract="True">
+    <issue>HH_Indulgences</issue>
+    <impact>Low</impact>
+    <displayOrderInImpact>1100</displayOrderInImpact>
+    <modExtensions><li Class="Hearth.PreceptStanceExt"><theme>Indulgences</theme></li></modExtensions>
+  </PreceptDef>
+  <PreceptDef ParentName="HH_IndBase">
+    <defName>HH_Indulgences_NotAThing</defName><label>not a thing</label>
+    <description>Nobody here has ever thought of selling forgiveness. Nothing to buy, nothing to object to.</description>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <defaultSelectionWeight>60</defaultSelectionWeight>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <modExtensions Inherit="False"><li Class="Hearth.PreceptStanceExt"><theme>Indulgences</theme><stance>NotAThing</stance></li></modExtensions>
+  </PreceptDef>
+  <PreceptDef ParentName="HH_IndBase">
+    <defName>HH_Indulgences_Abhorrent</defName><label>abhorrent</label>
+    <description>Forgiveness is not a commodity. Anyone who sells it should be driven from the temple.</description>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <defaultSelectionWeight>12</defaultSelectionWeight>
+    <modExtensions Inherit="False"><li Class="Hearth.PreceptStanceExt"><theme>Indulgences</theme><stance>Abhorrent</stance></li></modExtensions>
+    <comps><li Class="PreceptComp_SituationalThought"><thought>HH_FaithForSale</thought><description>Indulgences sold on the map</description></li></comps>
+  </PreceptDef>
+  <PreceptDef ParentName="HH_IndBase">
+    <defName>HH_Indulgences_Disapproved</defName><label>disapproved</label>
+    <description>Buying absolution is a shabby habit. It works, but nobody should be proud of it.</description>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <defaultSelectionWeight>12</defaultSelectionWeight>
+    <modExtensions Inherit="False"><li Class="Hearth.PreceptStanceExt"><theme>Indulgences</theme><stance>Disapproved</stance></li></modExtensions>
+    <comps><li Class="PreceptComp_SelfTookMemoryThought"><eventDef>HH_BoughtIndulgence</eventDef><thought>HH_BoughtMyWayOut</thought></li></comps>
+  </PreceptDef>
+  <PreceptDef ParentName="HH_IndBase">
+    <defName>HH_Indulgences_Accepted</defName><label>accepted</label>
+    <description>A fair offering for a fair mercy. The price is on the sign.</description>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <defaultSelectionWeight>10</defaultSelectionWeight>
+    <modExtensions Inherit="False"><li Class="Hearth.PreceptStanceExt"><theme>Indulgences</theme><stance>Accepted</stance></li></modExtensions>
+  </PreceptDef>
+  <PreceptDef ParentName="HH_IndBase">
+    <defName>HH_Indulgences_Sacred</defName><label>sacred</label>
+    <description>Paying one's dues is a sacrament. The faithful get a discount, and a cheap conscience is a duty.</description>
+    <displayOrderInIssue>40</displayOrderInIssue>
+    <defaultSelectionWeight>6</defaultSelectionWeight>
+    <modExtensions Inherit="False"><li Class="Hearth.PreceptStanceExt"><theme>Indulgences</theme><stance>Sacred</stance></li></modExtensions>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought"><eventDef>HH_BoughtIndulgence</eventDef><thought>HH_PaidMyDues</thought></li>
+      <li Class="PreceptComp_SituationalThought"><thought>HH_StingySoul</thought><description>No indulgence bought for a quadrum</description></li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ===== Paid ascension ===== -->
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology" Name="HH_AscBase" Abstract="True">
+    <issue>HH_PaidAscension</issue>
+    <impact>Low</impact>
+    <displayOrderInImpact>1110</displayOrderInImpact>
+  </PreceptDef>
+  <PreceptDef ParentName="HH_AscBase">
+    <defName>HH_PaidAscension_NotAThing</defName><label>not a thing</label>
+    <description>Rank is earned here, never bought. Nothing to buy, nothing to object to.</description>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <defaultSelectionWeight>60</defaultSelectionWeight>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <modExtensions><li Class="Hearth.PreceptStanceExt"><theme>Ascension</theme><stance>NotAThing</stance></li></modExtensions>
+  </PreceptDef>
+  <PreceptDef ParentName="HH_AscBase">
+    <defName>HH_PaidAscension_Abhorrent</defName><label>abhorrent</label>
+    <description>Faith is not for sale. Anyone who sells rank has already lost it.</description>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <defaultSelectionWeight>12</defaultSelectionWeight>
+    <modExtensions><li Class="Hearth.PreceptStanceExt"><theme>Ascension</theme><stance>Abhorrent</stance></li></modExtensions>
+    <comps><li Class="PreceptComp_SituationalThought"><thought>HH_FaithNotForSale</thought><description>Rank sold on the map</description></li></comps>
+  </PreceptDef>
+  <PreceptDef ParentName="HH_AscBase">
+    <defName>HH_PaidAscension_Disapproved</defName><label>disapproved</label>
+    <description>A bought rank is a hollow rank. The congregation sees through it.</description>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <defaultSelectionWeight>12</defaultSelectionWeight>
+    <modExtensions><li Class="Hearth.PreceptStanceExt"><theme>Ascension</theme><stance>Disapproved</stance></li></modExtensions>
+    <comps><li Class="PreceptComp_SituationalThought"><thought>HH_AscensionDisapproval</thought></li></comps>
+  </PreceptDef>
+  <PreceptDef ParentName="HH_AscBase">
+    <defName>HH_PaidAscension_Accepted</defName><label>accepted</label>
+    <description>Rank can be bought, at the posted price, like everything else of value.</description>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <defaultSelectionWeight>10</defaultSelectionWeight>
+    <modExtensions><li Class="Hearth.PreceptStanceExt"><theme>Ascension</theme><stance>Accepted</stance></li></modExtensions>
+  </PreceptDef>
+  <PreceptDef ParentName="HH_AscBase">
+    <defName>HH_PaidAscension_Sacred</defName><label>sacred</label>
+    <description>The ladder is the faith. Every rung bought is a rung climbed, and the ones below look up with respect.</description>
+    <displayOrderInIssue>40</displayOrderInIssue>
+    <defaultSelectionWeight>6</defaultSelectionWeight>
+    <modExtensions><li Class="Hearth.PreceptStanceExt"><theme>Ascension</theme><stance>Sacred</stance></li></modExtensions>
+    <comps>
+      <li Class="PreceptComp_SituationalThought"><thought>HH_AscensionMood</thought><description>Rank</description></li>
+      <li Class="PreceptComp_SituationalThought"><thought>HH_AscensionRespect</thought></li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ===== Thoughts ===== -->
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_FaithForSale</defName>
+    <workerClass>Hearth.Dlc.ThoughtWorker_Precept_FaithForSale</workerClass>
+    <stages><li><label>indulgences for sale</label><description>They sell forgiveness out in the open, like turnips.</description><baseMoodEffect>-3</baseMoodEffect></li></stages></ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_FaithNotForSale</defName>
+    <workerClass>Hearth.Dlc.ThoughtWorker_Precept_FaithForSale</workerClass>
+    <stages><li><label>rank for sale</label><description>Faith is not for sale. And yet there is a price list.</description><baseMoodEffect>-3</baseMoodEffect></li></stages></ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_BoughtMyWayOut</defName>
+    <durationDays>5</durationDays><stackLimit>3</stackLimit><stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+    <stages><li><label>bought my way out</label><description>It worked, but I paid for it, and I know exactly what that makes me.</description><baseMoodEffect>-2</baseMoodEffect></li></stages></ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_PaidMyDues</defName>
+    <durationDays>6</durationDays><stackLimit>1</stackLimit>
+    <stages><li><label>paid my dues</label><description>My dues are paid. The books are clean and so is my conscience.</description><baseMoodEffect>3</baseMoodEffect></li></stages></ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_StingySoul</defName>
+    <workerClass>Hearth.Dlc.ThoughtWorker_Precept_StingySoul</workerClass>
+    <stages><li><label>stingy soul</label><description>A whole quadrum without paying my dues. I should be ashamed.</description><baseMoodEffect>-1</baseMoodEffect></li></stages></ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_AscensionMood</defName>
+    <workerClass>Hearth.Dlc.ThoughtWorker_Precept_AscensionMood</workerClass>
+    <stages>
+      <li><label>rank I</label><description>I have taken the first step of the ladder.</description><baseMoodEffect>1</baseMoodEffect></li>
+      <li><label>rank II</label><description>The second rung. People start to use my title.</description><baseMoodEffect>2</baseMoodEffect></li>
+      <li><label>rank III</label><description>The third rung. The view is already better.</description><baseMoodEffect>3</baseMoodEffect></li>
+      <li><label>rank IV</label><description>The last rung. Nobody above me but the sky.</description><baseMoodEffect>4</baseMoodEffect></li>
+    </stages></ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_AscensionDisapproval</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>Hearth.Dlc.ThoughtWorker_Precept_AscensionDisapproval</workerClass>
+    <stages><li><label>bought rank</label><description>They bought that rank. It means nothing.</description><baseOpinionOffset>-5</baseOpinionOffset></li></stages></ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_AscensionRespect</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>Hearth.Dlc.ThoughtWorker_Precept_AscensionRespect</workerClass>
+    <stages><li><label>higher rank</label><description>They have climbed higher than I have. I respect that.</description><baseOpinionOffset>5</baseOpinionOffset></li></stages></ThoughtDef>
+
+  <!-- ===== Shrines of other faiths (KONZEPT 11.6) ===== -->
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_PlaceToPray</defName>
+    <durationDays>1</durationDays><stackLimit>1</stackLimit>
+    <stages>
+      <li><label>a place to pray</label><description>A modest corner for prayer. Better than nothing.</description><baseMoodEffect>2</baseMoodEffect></li>
+      <li><label>a place to pray</label><description>A quiet, decent chapel. I could pray here.</description><baseMoodEffect>3</baseMoodEffect></li>
+      <li><label>a place to pray</label><description>A fine chapel of my own faith, far from home. I am grateful.</description><baseMoodEffect>4</baseMoodEffect></li>
+      <li><label>a place to pray</label><description>A beautiful chapel with proper seats. My faith has been seen.</description><baseMoodEffect>5</baseMoodEffect></li>
+      <li><label>a place to pray</label><description>Splendid. They built a house for my god here. I will remember this.</description><baseMoodEffect>6</baseMoodEffect></li>
+    </stages></ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_HereticShrine</defName>
+    <workerClass>Hearth.Dlc.ThoughtWorker_HereticShrine</workerClass>
+    <stages>
+      <li><label>heretic shrine on our land</label><description>There is a shrine to a false faith on our land.</description><baseMoodEffect>-1</baseMoodEffect></li>
+      <li><label>heretic shrine on our land</label><description>A shrine to a false faith, tolerated by my own people. Shameful.</description><baseMoodEffect>-2</baseMoodEffect></li>
+      <li><label>heretic shrine on our land</label><description>They built a shrine for heretics next to our home. I cannot bear it.</description><baseMoodEffect>-3</baseMoodEffect></li>
+    </stages></ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology"><defName>HH_ShrineRespected</defName>
+    <workerClass>Hearth.Dlc.ThoughtWorker_ShrineDiversity</workerClass>
+    <stages>
+      <li><label>other faiths honoured</label><description>We make room for other faiths. That is how it should be.</description><baseMoodEffect>1</baseMoodEffect></li>
+      <li><label>other faiths honoured</label><description>A shrine for every faith that passes through. That is how it should be.</description><baseMoodEffect>2</baseMoodEffect></li>
+      <li><label>other faiths despised</label><description>Why do we build shrines for people who believe the wrong things?</description><baseMoodEffect>-2</baseMoodEffect></li>
+    </stages></ThoughtDef>
+</Defs>

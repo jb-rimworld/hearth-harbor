@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- KONZEPT 11.5. Data only: preferences per xenotype or gene. Hearth.Dlc.XenotypeHospitality answers; modders add entries without code. lightPref: +1 bright, -1 dark; tempPref: +1 warm, -1 cold; filthPref: +1 likes dirt; indoorPref: +1 likes enclosed rooms. Events are ids for later modules. -->
+  <Hearth.XenotypeHospitalityDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>HH_XenoHosp_Baseliner</defName><label>baseliner</label><description>Plain folk: sober tastes, careful with money. Large, thrifty groups.</description>
+    <priority>-95</priority>
+    <xenotypes><li>Baseliner</li></xenotypes>
+    <lightPref>0</lightPref><tempPref>0</tempPref><filthPref>0</filthPref><indoorPref>0</indoorPref>
+    <priceTolerance>-0.05</priceTolerance><expectationOffset>0</expectationOffset><spendFactor>1</spendFactor>
+    <eventIds><li>PlainFolkWeekend</li></eventIds>
+  </Hearth.XenotypeHospitalityDef>
+  <Hearth.XenotypeHospitalityDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>HH_XenoHosp_Sanguophage</defName><label>sanguophage</label><description>Sanguophages want dark rooms and a hemogen minibar within reach. A deathrest lounge is something they will pay for.</description>
+    <priority>10</priority>
+    <xenotypes><li>Sanguophage</li></xenotypes>
+    <lightPref>-0.8</lightPref><tempPref>-0.2</tempPref><filthPref>0</filthPref><indoorPref>0.3</indoorPref>
+    <priceTolerance>0</priceTolerance><expectationOffset>0</expectationOffset><spendFactor>1.1</spendFactor>
+    <interests><li><thing>HemogenPack</thing><weight>3</weight></li></interests>
+    <eventIds><li>MidnightSoiree</li></eventIds>
+  </Hearth.XenotypeHospitalityDef>
+  <Hearth.XenotypeHospitalityDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>HH_XenoHosp_Hemogenic</defName><label>hemogenic (any xenotype)</label><description>Anyone with the hemogenic gene, including custom xenotypes, shares the Sanguophage taste for dark rooms and hemogen packs.</description>
+    <priority>5</priority>
+    <anyGenes><li>Hemogenic</li></anyGenes>
+    <lightPref>-0.6</lightPref><tempPref>0</tempPref><filthPref>0</filthPref><indoorPref>0.2</indoorPref>
+    <priceTolerance>0</priceTolerance><expectationOffset>0</expectationOffset><spendFactor>1.05</spendFactor>
+    <interests><li><thing>HemogenPack</thing><weight>2</weight></li></interests>
+  </Hearth.XenotypeHospitalityDef>
+  <Hearth.XenotypeHospitalityDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>HH_XenoHosp_UVSensitive</defName><label>UV-sensitive (any xenotype)</label><description>Sunlight hurts. A dark, indoor room is a comfortable room.</description>
+    <priority>3</priority>
+    <anyGenes><li>UVSensitivity_Mild</li><li>UVSensitivity_Intense</li></anyGenes>
+    <lightPref>-0.7</lightPref><tempPref>0</tempPref><filthPref>0</filthPref><indoorPref>0.5</indoorPref>
+    <priceTolerance>0</priceTolerance><expectationOffset>0</expectationOffset><spendFactor>1</spendFactor>
+  </Hearth.XenotypeHospitalityDef>
+  <Hearth.XenotypeHospitalityDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>HH_XenoHosp_Dirtmole</defName><label>dirtmole</label><description>Dirtmoles prefer dark, windowless rooms and mushroom dishes. They offer to pay for a guided tour of the mine.</description>
+    <priority>10</priority>
+    <xenotypes><li>Dirtmole</li></xenotypes>
+    <lightPref>-0.7</lightPref><tempPref>-0.3</tempPref><filthPref>0.2</filthPref><indoorPref>0.4</indoorPref>
+    <priceTolerance>0</priceTolerance><expectationOffset>0</expectationOffset><spendFactor>1</spendFactor>
+    <interests><li><thing>RawFungus</thing><weight>2</weight></li></interests>
+    <eventIds><li>TunnelTour</li></eventIds>
+  </Hearth.XenotypeHospitalityDef>
+  <Hearth.XenotypeHospitalityDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>HH_XenoHosp_Genie</defName><label>genie</label><description>Geniuses expect a reading nook and a quiet table. They rent research rooms.</description>
+    <priority>10</priority>
+    <xenotypes><li>Genie</li></xenotypes>
+    <lightPref>0.2</lightPref><tempPref>0</tempPref><filthPref>-0.2</filthPref><indoorPref>0.2</indoorPref>
+    <priceTolerance>0</priceTolerance><expectationOffset>0.05</expectationOffset><spendFactor>1</spendFactor>
+    <eventIds><li>ThinkTankRetreat</li></eventIds>
+  </Hearth.XenotypeHospitalityDef>
+  <Hearth.XenotypeHospitalityDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>HH_XenoHosp_Hussar</defName><label>hussar</label><description>Hussars spend freely at the bar and enjoy a good brawl, with the quarrels that come with it.</description>
+    <priority>10</priority>
+    <xenotypes><li>Hussar</li></xenotypes>
+    <lightPref>0</lightPref><tempPref>0</tempPref><filthPref>0.1</filthPref><indoorPref>0</indoorPref>
+    <priceTolerance>0</priceTolerance><expectationOffset>0</expectationOffset><spendFactor>1.15</spendFactor>
+    <interests><li><thing>Beer</thing><weight>2</weight></li></interests>
+    <eventIds><li>ArmWrestlingNight</li></eventIds>
+  </Hearth.XenotypeHospitalityDef>
+  <Hearth.XenotypeHospitalityDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>HH_XenoHosp_Neanderthal</defName><label>neanderthal</label><description>Big portions, simple rooms. Furnishing counts for less.</description>
+    <priority>10</priority>
+    <xenotypes><li>Neanderthal</li></xenotypes>
+    <lightPref>0</lightPref><tempPref>0</tempPref><filthPref>0</filthPref><indoorPref>0</indoorPref>
+    <priceTolerance>0</priceTolerance><expectationOffset>-0.05</expectationOffset><spendFactor>1</spendFactor>
+    <interests><li><thing>MealSimple</thing><weight>1.5</weight></li></interests>
+    <eventIds><li>StoneAgeNight</li></eventIds>
+  </Hearth.XenotypeHospitalityDef>
+  <Hearth.XenotypeHospitalityDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>HH_XenoHosp_Pigskin</defName><label>pigskin</label><description>Pigskins eat almost anything and do not mind a messy room.</description>
+    <priority>10</priority>
+    <xenotypes><li>Pigskin</li></xenotypes>
+    <lightPref>0</lightPref><tempPref>0</tempPref><filthPref>0.3</filthPref><indoorPref>0</indoorPref>
+    <priceTolerance>0</priceTolerance><expectationOffset>0</expectationOffset><spendFactor>1</spendFactor>
+    <eventIds><li>TruffleFair</li></eventIds>
+  </Hearth.XenotypeHospitalityDef>
+  <Hearth.XenotypeHospitalityDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>HH_XenoHosp_Impid</defName><label>impid</label><description>Impids like warm rooms and spice. They perform for a share of the takings.</description>
+    <priority>10</priority>
+    <xenotypes><li>Impid</li></xenotypes>
+    <lightPref>0</lightPref><tempPref>0.6</tempPref><filthPref>0</filthPref><indoorPref>0</indoorPref>
+    <priceTolerance>0</priceTolerance><expectationOffset>0</expectationOffset><spendFactor>1</spendFactor>
+    <interests><li><thing>SmokeleafJoint</thing><weight>1.5</weight></li></interests>
+    <eventIds><li>FireShow</li></eventIds>
+  </Hearth.XenotypeHospitalityDef>
+  <Hearth.XenotypeHospitalityDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>HH_XenoHosp_Waster</defName><label>waster</label><description>Wasters feel at home in dirty rooms, spend a lot and leave a mess.</description>
+    <priority>10</priority>
+    <xenotypes><li>Waster</li></xenotypes>
+    <lightPref>0</lightPref><tempPref>0</tempPref><filthPref>0.6</filthPref><indoorPref>-0.2</indoorPref>
+    <priceTolerance>0</priceTolerance><expectationOffset>0</expectationOffset><spendFactor>1.2</spendFactor>
+    <eventIds><li>WastelandRally</li></eventIds>
+  </Hearth.XenotypeHospitalityDef>
+  <Hearth.XenotypeHospitalityDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>HH_XenoHosp_Yttakin</defName><label>yttakin</label><description>Yttakin want cold rooms; warm ones make them miserable.</description>
+    <priority>10</priority>
+    <xenotypes><li>Yttakin</li></xenotypes>
+    <lightPref>0</lightPref><tempPref>-0.7</tempPref><filthPref>0</filthPref><indoorPref>0</indoorPref>
+    <priceTolerance>0</priceTolerance><expectationOffset>0</expectationOffset><spendFactor>1</spendFactor>
+    <eventIds><li>IceFishingDerby</li></eventIds>
+  </Hearth.XenotypeHospitalityDef>
+  <Hearth.XenotypeHospitalityDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>HH_XenoHosp_Highmate</defName><label>highmate</label><description>Highmates love beauty and company. Handsome shared rooms please them.</description>
+    <priority>10</priority>
+    <xenotypes><li>Highmate</li></xenotypes>
+    <lightPref>0.2</lightPref><tempPref>0</tempPref><filthPref>-0.4</filthPref><indoorPref>0</indoorPref>
+    <priceTolerance>0</priceTolerance><expectationOffset>0.05</expectationOffset><spendFactor>1</spendFactor>
+    <interests><li><thing>MealFine</thing><weight>1.5</weight></li></interests>
+    <eventIds><li>CharmSchool</li></eventIds>
+  </Hearth.XenotypeHospitalityDef>
+</Defs>

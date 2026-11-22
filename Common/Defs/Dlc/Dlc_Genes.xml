@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- KONZEPT 11.2. Biotech only. Icons are placeholders until the art module delivers. -->
+  <GeneDef MayRequire="Ludeon.RimWorld.Biotech" Name="HH_GeneBase" Abstract="True">
+    <displayCategory>Miscellaneous</displayCategory>
+    <biostatCpx>1</biostatCpx>
+    <selectionWeight>0.05</selectionWeight>
+    <canGenerateInGeneSet>true</canGenerateInGeneSet>
+    <exclusionTags/>
+  </GeneDef>
+  <GeneDef ParentName="HH_GeneBase">
+    <defName>HH_Gene_Hospitable</defName><label>hospitable</label>
+    <description>Carriers are warm without trying. Guests find them easy to be around, and hosting comes quicker to them.</description>
+    <iconPath>UI/HH/Dlc/Genes/Hospitable</iconPath><displayOrderInCategory>9100</displayOrderInCategory>
+    <biostatMet>-1</biostatMet>
+    <statOffsets><HH_ServiceQuality>0.1</HH_ServiceQuality></statOffsets>
+    <statFactors><HH_HostingLearn>1.25</HH_HostingLearn></statFactors>
+  </GeneDef>
+  <GeneDef ParentName="HH_GeneBase">
+    <defName>HH_Gene_AddictionProofReward</defName><label>addiction-proof reward circuit</label>
+    <description>The reward circuit of the brain barely reacts to risk and chance. Gambling rarely becomes a habit.</description>
+    <iconPath>UI/HH/Dlc/Genes/AddictionProof</iconPath><displayOrderInCategory>9101</displayOrderInCategory>
+    <biostatMet>-1</biostatMet>
+    <exclusionTags><li>HH_GamblingDrive</li></exclusionTags>
+    <statFactors><HH_GamblingAddiction>0.2</HH_GamblingAddiction></statFactors>
+  </GeneDef>
+  <GeneDef ParentName="HH_GeneBase">
+    <defName>HH_Gene_Compulsive</defName><label>compulsive</label>
+    <description>An overactive reward circuit. Gambling is a little more fun, and a lot harder to put down.</description>
+    <iconPath>UI/HH/Dlc/Genes/Compulsive</iconPath><displayOrderInCategory>9102</displayOrderInCategory>
+    <biostatMet>2</biostatMet>
+    <exclusionTags><li>HH_GamblingDrive</li></exclusionTags>
+    <statFactors><HH_GamblingJoy>1.3</HH_GamblingJoy><HH_GamblingAddiction>2</HH_GamblingAddiction></statFactors>
+  </GeneDef>
+  <GeneDef ParentName="HH_GeneBase">
+    <defName>HH_Gene_DexterousFingers</defName><label>dexterous fingers</label>
+    <description>Unusually fine hand control: shuffling, dealing and palming come naturally.</description>
+    <iconPath>UI/HH/Dlc/Genes/Dexterous</iconPath><displayOrderInCategory>9103</displayOrderInCategory>
+    <biostatMet>-1</biostatMet>
+    <statOffsets><HH_Dexterity>3</HH_Dexterity></statOffsets>
+  </GeneDef>
+  <GeneDef ParentName="HH_GeneBase">
+    <defName>HH_Gene_RefinedPalate</defName><label>refined palate</label>
+    <description>A tongue that tells good cooking from merely edible. Cooks lift dish quality more often; as a guest the carrier expects more and tips more.</description>
+    <iconPath>UI/HH/Dlc/Genes/RefinedPalate</iconPath><displayOrderInCategory>9104</displayOrderInCategory>
+    <biostatMet>-1</biostatMet>
+    <statOffsets><HH_DishQuality>0.1</HH_DishQuality><HH_GuestExpectation>0.05</HH_GuestExpectation></statOffsets>
+    <statFactors><HH_TipFactor>1.3</HH_TipFactor></statFactors>
+  </GeneDef>
+  <GeneDef ParentName="HH_GeneBase">
+    <defName>HH_Gene_NumberSense</defName><label>number sense</label>
+    <description>Numbers arrange themselves. Croupiers, cashiers and bank clerks with this gene work as if three skill levels better.</description>
+    <iconPath>UI/HH/Dlc/Genes/NumberSense</iconPath><displayOrderInCategory>9105</displayOrderInCategory>
+    <biostatMet>-1</biostatMet>
+    <statOffsets><HH_TableSkill>3</HH_TableSkill></statOffsets>
+  </GeneDef>
+  <GeneDef ParentName="HH_GeneBase">
+    <defName>HH_Gene_TirelessSmile</defName><label>tireless smile</label>
+    <description>The smile muscles do not tire. Serving at tables and counters drains rest far more slowly.</description>
+    <iconPath>UI/HH/Dlc/Genes/TirelessSmile</iconPath><displayOrderInCategory>9106</displayOrderInCategory>
+    <biostatMet>-1</biostatMet>
+    <statFactors><HH_ServeRestFactor>0.7</HH_ServeRestFactor></statFactors>
+  </GeneDef>
+  <GeneDef ParentName="HH_GeneBase">
+    <defName>HH_Gene_SilverTongue</defName><label>silver tongue</label>
+    <description>A voice that makes any price sound like a bargain. Guests expect slightly less and loyalty comes cheaper.</description>
+    <iconPath>UI/HH/Dlc/Genes/SilverTongue</iconPath><displayOrderInCategory>9107</displayOrderInCategory>
+    <biostatMet>-1</biostatMet><biostatCpx>2</biostatCpx>
+    <statOffsets><HH_GuestExpectation>-0.03</HH_GuestExpectation></statOffsets>
+    <statFactors><HH_RecruitPrice>0.9</HH_RecruitPrice></statFactors>
+  </GeneDef>
+  <GeneDef ParentName="HH_GeneBase">
+    <defName>HH_Gene_HighRoller</defName><label>high roller</label>
+    <description>Carriers feel most alive when the stakes are high. They bet bigger, enjoy it more and tip generously, but they are also harder to pull away from the table.</description>
+    <iconPath>UI/HH/Dlc/Genes/HighRoller</iconPath><displayOrderInCategory>9108</displayOrderInCategory>
+    <biostatMet>1</biostatMet>
+    <exclusionTags><li>HH_GamblingDrive</li></exclusionTags>
+    <statFactors><HH_GamblingJoy>1.2</HH_GamblingJoy><HH_GamblingAddiction>1.3</HH_GamblingAddiction><HH_TipFactor>1.5</HH_TipFactor></statFactors>
+  </GeneDef>
+</Defs>
