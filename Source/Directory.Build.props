@@ -19,6 +19,7 @@
     <OutputPath>$(MSBuildThisFileDirectory)../$(RimVersion)/Assemblies/</OutputPath>
     <NoWarn>$(NoWarn);CS0649;CS0169;CS0414;CS1591;CS8632;CA1416</NoWarn>
     <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
+    <DefaultItemExcludes>$(DefaultItemExcludes);obj/**;bin/**</DefaultItemExcludes>
   </PropertyGroup>
   <PropertyGroup Condition="'$(RimVersion)' == '1.7'">
     <TargetFramework>net10.0</TargetFramework>
