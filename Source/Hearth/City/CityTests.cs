@@ -634,6 +634,25 @@ namespace Hearth.City.Tests
             t.Check(info.Spent == spent0, "nothing was charged");
             t.Check(act.Desire(guest, info) == 0f, "cooldown");
             t.Check(ParkUtility.Scenery(bench) >= 0f, "scenery measured");
+
+            // colonists sit on benches in the open, too (joy giver)
+            var col = CityTestKit.FreeColonist(map);
+            if (col != null)
+            {
+                col.DeSpawn(); GenSpawn.Spawn(col, area.CenterCell + new IntVec3(0, 0, -2), map);
+                CityTestKit.TimetableAnything(col);
+                var jg = new JoyGiver_ParkBench { def = DefDatabase<JoyGiverDef>.GetNamed("HH_ParkBenchJoy") };
+                var jj = jg.TryGiveJob(col);
+                t.Check(jj != null && jj.def == CityDefs.ParkRest, "the colonist joy giver offers the bench");
+                if (jj != null)
+                {
+                    col.needs.joy.CurLevel = 0.2f;
+                    col.jobs.StartJob(jj, JobCondition.InterruptForced);
+                    float j0 = col.needs.joy.CurLevel;
+                    for (int i = 0; i < 40 && col.CurJob?.def == CityDefs.ParkRest; i++) yield return 15;
+                    t.Check(col.needs.joy.CurLevel > j0, $"sitting on the bench gives recreation: {j0:0.00} to {col.needs.joy.CurLevel:0.00}");
+                }
+            }
         }
     }
 

@@ -93,7 +93,7 @@ namespace Hearth.City
                 {
                     defaultLabel = "HH.City.MovieNightLabel".TranslateOr("Movie night"),
                     defaultDesc = "HH.City.MovieNightDesc".TranslateOr("Call the colony to a movie night at this screen. Everyone who sits down gains recreation and a good mood."),
-                    icon = TexCommand.Attack,
+                    icon = CityDefs.VenueCinema?.icon ?? TexCommand.Attack,
                     action = () =>
                     {
                         var map = parent.Map;
