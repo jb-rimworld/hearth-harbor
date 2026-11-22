@@ -426,6 +426,9 @@ namespace Hearth.Dlc.Tests
             t.Check(altar.TryGetComp<CompGuestShrine>() != null && altar.TryGetComp<CompIndulgenceOffice>() != null, "altar has shrine and office comps");
             t.Check(altar.LabelNoCount.Contains(other.name), "label shows the faith");
             double q = ShrineApi.Quality(altar); t.Check(q >= 0 && q <= 1, "quality in range: " + q.ToString("0.00"));
+            t.Check(altar.GetGizmos().Count() >= 3, "gizmos: choose faith, buy indulgences, offerings (" + altar.GetGizmos().Count() + ")");
+            t.Check(!altar.GetInspectString().NullOrEmpty() && altar.GetInspectString().Contains(other.name), "inspect string names the faith");
+            t.Check(altar.TryGetComp<CompIndulgenceOffice>().CompInspectStringExtra() != null, "temple fund shown");
 
             var guest = Kit.Visitor(map, cell); var guest2 = Kit.Visitor(map, cell);
             if (guest == null) { t.Note("no visitor faction: skipped"); altar.Destroy(); yield break; }
@@ -470,10 +473,42 @@ namespace Hearth.Dlc.Tests
             else t.Note("no proselytizer/supremacist ideoligion in this world: heretic reaction skipped");
             t.Check(ShrineApi.ForeignShrineCount(map, own) >= 1, "foreign shrine counted for diversity thoughts");
 
+            // abhorrent colonists mind indulgences being sold on the map (the altar is an office)
+            var abh = Kit.Colonist(map); var oi = abh.Ideo; var oldStance = IdeoStances.Of(oi, MoneyTheme.Indulgences);
+            DlcState.SetStance(oi, MoneyTheme.Indulgences, MoneyStance.Abhorrent);
+            yield return 270;
+            var moods = new List<Thought>(); abh.needs.mood.thoughts.situational.AppendMoodThoughts(moods);
+            t.Check(IndulgenceApi.OfficeOnMap(map) && moods.Any(x => x.def.defName == "HH_FaithForSale" && x.MoodOffset() <= -2.9f), "abhorrent: -3 while an indulgence office stands on the map");
+            DlcState.SetStance(oi, MoneyTheme.Indulgences, oldStance);
+
             // demolition
             var pos = altar.Position; altar.Destroy(); yield return 2;
             t.Check(!ShrineApi.Altars(map).Any(a => a == altar), "removed altar leaves the registry");
-            Kit.Cleanup(guest, guest2, stranger, zealot);
+            Kit.Cleanup(guest, guest2, stranger, zealot, abh);
+        }
+    }
+
+    // ===================================================================================================================
+    public sealed class DlcRemovalSuite : HearthTestSuite
+    {
+        public override string Name => "dlc.removal";
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var map = t.Map; var p = Kit.Colonist(map);
+            Kit.Trait(p, DlcDefs.Lucky); Kit.Trait(p, DefDatabase<TraitDef>.GetNamed("HH_BornHost"));
+            int vanilla = p.story.traits.allTraits.Count(x => !x.def.defName.StartsWith("HH_"));
+            DlcState.Current.SetRank(p, 2);
+            Ideo ideo = null;
+            if (ModsConfig.IdeologyActive) { ideo = p.Ideo; DlcState.SetStance(ideo, MoneyTheme.Indulgences, MoneyStance.Sacred); DlcState.SetStance(ideo, MoneyTheme.Ascension, MoneyStance.Accepted); }
+            var report = new List<string>();
+            new DlcModule().PrepareRemoval(report);
+            t.Check(!p.story.traits.allTraits.Any(x => x.def.defName.StartsWith("HH_")), "our traits are gone");
+            t.Check(p.story.traits.allTraits.Count == vanilla, "vanilla traits stay");
+            t.Check(DlcState.Current.RankOf(p) == 0 && DlcState.Current.RankCount == 0, "ranks dropped");
+            if (ideo != null) t.Check(IdeoStances.Of(ideo, MoneyTheme.Indulgences) == MoneyStance.NotAThing && IdeoStances.Of(ideo, MoneyTheme.Ascension) == MoneyStance.NotAThing, "money precepts reset to Not a thing");
+            t.Check(report.Count == 1 && report[0].StartsWith("DLC:"), "one report line: " + report.FirstOrDefault());
+            Kit.Cleanup(p);
+            yield break;
         }
     }
 
@@ -517,6 +552,7 @@ namespace Hearth.Dlc.Tests
             var forced = NobleStays.MakeOffer(map, true, out why);
             t.Check(forced != null && forced.Forced && forced.Days >= 3 && forced.Days <= 10, "billeting offer 3-10 days (" + (forced?.Days) + ")");
             t.Check(NobleStays.MakeOffer(map, true, out why) == null, "only one party at a time");
+            t.Check(Find.LetterStack.LettersListForReading.OfType<ChoiceLetter_NobleOffer>().Any(x => x.OfferId == forced.Id && x.Choices.Count() == 3), "choice letter sent with accept / refuse / postpone");
             var holder = Kit.Colonist(map); holder.royalty.SetTitle(empire, T("Yeoman"), false, false, false); t.Check(holder.royalty.GetCurrentTitle(empire) != null, "colonist holds a title");
             int favor0 = holder.royalty.GetFavor(empire);
             NobleStays.Decline(forced.Id);
@@ -524,6 +560,12 @@ namespace Hearth.Dlc.Tests
             t.Check(holder.royalty.GetFavor(empire) < favor0 || favor0 == 0, "refusing costs honor");
             gw0 = empire.GoodwillWith(Faction.OfPlayer);
             if (empire.HostileTo(Faction.OfPlayer)) { Faction.OfPlayer.TryAffectGoodwillWith(empire, 100, false, false); }
+            // incident workers answer without errors
+            var incNoble = DefDatabase<IncidentDef>.GetNamed("HH_NobleStay"); var incBillet = DefDatabase<IncidentDef>.GetNamed("HH_ImperialBilleting");
+            var ip = StorytellerUtility.DefaultParmsNow(incNoble.category, map);
+            bool canNoble = incNoble.Worker.CanFireNow(ip); t.Check(canNoble == anyRoom && !st.Offers.Any(), "noble stay incident fires only with a suitable bedroom (" + canNoble + ")");
+            prof.Tier = 3f; HSettings.Set("dlc.mandatoryBilleting", 0); t.Check(!incBillet.Worker.CanFireNow(StorytellerUtility.DefaultParmsNow(incBillet.category, map)), "billeting incident blocked on Standard Room");
+            prof.Tier = 5f; t.Check(incBillet.Worker.CanFireNow(StorytellerUtility.DefaultParmsNow(incBillet.category, map)), "billeting incident allowed on One-Star Review");
             prof.Tier = tier0; HSettings.Set("dlc.mandatoryBilleting", mand0 ? 1 : 0);
 
             // a stay: noble with the right title, settled by satisfaction

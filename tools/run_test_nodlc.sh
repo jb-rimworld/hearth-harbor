@@ -10,8 +10,8 @@
 set -u
 NO_DLC=${NO_DLC:-1}; DLCS=${DLCS:-}
 if [ "$NO_DLC" = 0 ] && [ -z "$DLCS" ]; then DLCS=royalty,ideology,biotech,anomaly,odyssey; fi
-dlcids=""; dlcknown=""
-for d in ${DLCS//,/ }; do dlcids="$dlcids ludeon.rimworld.$d"; dlcknown="$dlcknown<li>ludeon.rimworld.$d</li>"; done
+dlcids=""; dlcknown="<li>ludeon.rimworld.royalty</li><li>ludeon.rimworld.ideology</li><li>ludeon.rimworld.biotech</li><li>ludeon.rimworld.anomaly</li><li>ludeon.rimworld.odyssey</li>"  # all listed as known, or RimWorld auto-enables the "new" ones
+for d in ${DLCS//,/ }; do dlcids="$dlcids ludeon.rimworld.$d"; done
 REPO="$(cd "$(dirname "$0")/.." && pwd)"; MODDIR=${MODDIR:-$REPO}
 SUITES=${1:?suites}; LABEL=${2:-run}; shift; shift 2>/dev/null || true
 S=/private/tmp/claude-501/hh_tests; mkdir -p $S

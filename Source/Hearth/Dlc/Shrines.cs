@@ -235,7 +235,11 @@ namespace Hearth.Dlc
             var pray = Toils_General.Wait(450, TargetIndex.A);
             pray.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             pray.WithProgressBarToilDelay(TargetIndex.A);
+#if RW16PLUS
             pray.tickIntervalAction = delegate (int delta) { pawn.rotationTracker.FaceTarget(TargetA); };
+#else
+            pray.tickAction = delegate { pawn.rotationTracker.FaceTarget(TargetA); };
+#endif
             yield return pray;
             yield return new Toil
             {

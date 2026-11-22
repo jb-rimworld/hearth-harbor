@@ -53,7 +53,7 @@ namespace Hearth.Dlc
 
         public override void OnDefsLoaded()
         {
-            HLog.Info("Dlc", $"DLC integration: royalty={ModsConfig.RoyaltyActive} ideology={ModsConfig.IdeologyActive} biotech={ModsConfig.BiotechActive} anomaly={ModsConfig.AnomalyActive} odyssey={ModsConfig.OdysseyActive}");
+            HLog.Info("Dlc", $"DLC integration: royalty={ModsConfig.RoyaltyActive} ideology={ModsConfig.IdeologyActive} biotech={ModsConfig.BiotechActive} anomaly={ModsConfig.AnomalyActive} odyssey={ModsConfig.IsActive("ludeon.rimworld.odyssey")}");
             if (ModsConfig.IdeologyActive) GuestActivities.Register(new PrayActivity());
             Caretaker.Register(ModuleId.CityLife, "dlc.ideologyMoney", () => DlcState.Current?.Maintain() ?? 0);
             DlcDefs.Validate();
@@ -66,6 +66,28 @@ namespace Hearth.Dlc
         {
             if (ticksGame % 250 != 7) return;
             DlcState.Current?.RareTick(ticksGame);
+        }
+
+        /// <summary>"Prepare to move out" (S6, 11.4): both money issues become Not a thing, ranks are dropped, our traits are taken off every pawn.</summary>
+        public override void PrepareRemoval(List<string> report)
+        {
+            int traits = 0, ideos = 0, ranks = 0;
+            var st = DlcState.Current;
+            if (DlcDefs.Ideology && Find.IdeoManager != null)
+                foreach (var ideo in Find.IdeoManager.IdeosListForReading)
+                {
+                    bool changed = false;
+                    foreach (var th in new[] { MoneyTheme.Indulgences, MoneyTheme.Ascension })
+                        if (IdeoStances.Of(ideo, th) != MoneyStance.NotAThing) { DlcState.SetStance(ideo, th, MoneyStance.NotAThing); changed = true; }
+                    if (changed) ideos++;
+                }
+            if (st != null) { ranks = st.RankCount; st.ClearRanks(); }
+            foreach (var p in PawnsFinder.AllMapsWorldAndTemporary_Alive.ToList())
+            {
+                var set = p.story?.traits; if (set == null) continue;
+                foreach (var t in set.allTraits.Where(x => x.def.defName.StartsWith("HH_")).ToList()) { set.RemoveTrait(t); traits++; }
+            }
+            report.Add($"DLC: {traits} traits removed, {ranks} ascension ranks dropped, money precepts reset on {ideos} ideoligions (genes and defs without their mod are ignored by the game)");
         }
 
         public override IEnumerable<string> Diagnosis()
