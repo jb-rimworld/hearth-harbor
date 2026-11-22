@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Kitchen, dishes and restaurant (module Shops & Food). English is the main language. -->
+  <HH.Kitchen.Missing>Missing: {0}</HH.Kitchen.Missing>
+  <HH.Kitchen.RecipeInfo>Devices: {0}. Steps: {1}.</HH.Kitchen.RecipeInfo>
+  <HH.Kitchen.Finishing>a finishing touch (milk, eggs, chocolate, beer, berries or mushrooms)</HH.Kitchen.Finishing>
+  <HH.Kitchen.Finishing2>a second finishing touch (beer, berries or mushrooms)</HH.Kitchen.Finishing2>
+  <HH.Kitchen.Inspiration>Inspiration: {0}</HH.Kitchen.Inspiration>
+  <HH.Kitchen.Cuisine>Cuisine: {0}</HH.Kitchen.Cuisine>
+  <HH.Kitchen.Cooked>Cooked at: {0} ({1})</HH.Kitchen.Cooked>
+  <HH.Kitchen.Made>Made from: {0}</HH.Kitchen.Made>
+  <HH.Kitchen.Signature>Signature dish</HH.Kitchen.Signature>
+  <HH.Kitchen.Fine>Fine dish</HH.Kitchen.Fine>
+  <HH.Kitchen.Everyday>Everyday dish</HH.Kitchen.Everyday>
+  <HH.Kitchen.Level>level {0}</HH.Kitchen.Level>
+  <HH.Kitchen.Stale>Stale: no Well fed, no mood bonus.</HH.Kitchen.Stale>
+  <HH.Kitchen.FreshFor>Fresh for {0}</HH.Kitchen.FreshFor>
+  <HH.Kitchen.Stat.Well>Well fed</HH.Kitchen.Stat.Well>
+  <HH.Kitchen.Stat.WellDesc>How long hunger falls slower after eating this dish. Scales with learning level and quality.</HH.Kitchen.Stat.WellDesc>
+  <HH.Kitchen.Stat.Mood>Mood when eaten</HH.Kitchen.Stat.Mood>
+  <HH.Kitchen.Stat.MoodDesc>Mood bonus from a proper dish, by learning level and quality (stale dishes give none).</HH.Kitchen.Stat.MoodDesc>
+  <HH.Tab.Kitchen>Cookbook</HH.Tab.Kitchen>
+  <HH.Kitchen.Cookbook.Title>Colony cookbook</HH.Kitchen.Cookbook.Title>
+  <HH.Kitchen.Cookbook.Known>{0} of {1} dishes known</HH.Kitchen.Cookbook.Known>
+  <HH.Kitchen.Cookbook.Unknown>???</HH.Kitchen.Cookbook.Unknown>
+  <HH.Kitchen.Cookbook.UnknownHint>Not learned yet. Research {0}, or find a cookbook.</HH.Kitchen.Cookbook.UnknownHint>
+  <HH.Kitchen.Cookbook.Level>Level {0}</HH.Kitchen.Cookbook.Level>
+  <HH.Kitchen.Cookbook.NoRecipe>No recipe: {0}</HH.Kitchen.Cookbook.NoRecipe>
+  <HH.Kitchen.Cookbook.Dark>Hidden: the dark menu is off.</HH.Kitchen.Cookbook.Dark>
+  <HH.Kitchen.Cookbook.Filter>Show only known</HH.Kitchen.Cookbook.Filter>
+  <HH.Kitchen.Cookbook.Search>Search</HH.Kitchen.Cookbook.Search>
+  <HH.Kitchen.Station.PrepCounter>Prep counter</HH.Kitchen.Station.PrepCounter>
+  <HH.Kitchen.Station.StockPot>Stock pot</HH.Kitchen.Station.StockPot>
+  <HH.Kitchen.Station.Grill>Grill</HH.Kitchen.Station.Grill>
+  <HH.Kitchen.Station.Oven>Oven</HH.Kitchen.Station.Oven>
+  <HH.Kitchen.Station.Wok>Wok station</HH.Kitchen.Station.Wok>
+  <HH.Kitchen.Station.Fryer>Deep fryer</HH.Kitchen.Station.Fryer>
+  <HH.Kitchen.Station.Smoker>Smoker</HH.Kitchen.Station.Smoker>
+  <HH.Kitchen.Station.Steamer>Steamer</HH.Kitchen.Station.Steamer>
+  <HH.Kitchen.Station.DoughBench>Dough bench</HH.Kitchen.Station.DoughBench>
+  <HH.Kitchen.Station.ColdStation>Cold station</HH.Kitchen.Station.ColdStation>
+  <HH.Kitchen.Station.Campfire>Campfire</HH.Kitchen.Station.Campfire>
+  <HH.Kitchen.Station.Stove>Stove</HH.Kitchen.Station.Stove>
+  <HH.Kitchen.Station.ButcherTable>Butcher table</HH.Kitchen.Station.ButcherTable>
+  <HH.Kitchen.Step.Chop>chop</HH.Kitchen.Step.Chop>
+  <HH.Kitchen.Step.Simmer>simmer</HH.Kitchen.Step.Simmer>
+  <HH.Kitchen.Step.Boil>boil</HH.Kitchen.Step.Boil>
+  <HH.Kitchen.Step.Grill>grill</HH.Kitchen.Step.Grill>
+  <HH.Kitchen.Step.KneadDough>knead dough</HH.Kitchen.Step.KneadDough>
+  <HH.Kitchen.Step.Smoke>smoke</HH.Kitchen.Step.Smoke>
+  <HH.Kitchen.Step.Roast>roast</HH.Kitchen.Step.Roast>
+  <HH.Kitchen.Step.StirFry>stir-fry</HH.Kitchen.Step.StirFry>
+  <HH.Kitchen.Step.DeepFry>deep-fry</HH.Kitchen.Step.DeepFry>
+  <HH.Kitchen.Step.Steam>steam</HH.Kitchen.Step.Steam>
+  <HH.Kitchen.Step.Chill>chill</HH.Kitchen.Step.Chill>
+  <HH.Kitchen.Step.Carve>carve</HH.Kitchen.Step.Carve>
+  <HH.Kitchen.Step.SpitRoast>spit-roast</HH.Kitchen.Step.SpitRoast>
+  <HH.Kitchen.Step.PanFry>pan-fry</HH.Kitchen.Step.PanFry>
+  <HH.Kitchen.Step.Sear>sear</HH.Kitchen.Step.Sear>
+  <HH.Kitchen.Cuisine.Frontier>Rustic / Frontier</HH.Kitchen.Cuisine.Frontier>
+  <HH.Kitchen.Cuisine.TribalFeast>Tribal Feast</HH.Kitchen.Cuisine.TribalFeast>
+  <HH.Kitchen.Cuisine.TavernFare>Tavern Fare</HH.Kitchen.Cuisine.TavernFare>
+  <HH.Kitchen.Cuisine.ImperialHaute>Imperial Haute</HH.Kitchen.Cuisine.ImperialHaute>
+  <HH.Kitchen.Cuisine.GlitterFusion>Glitter Fusion</HH.Kitchen.Cuisine.GlitterFusion>
+  <HH.Kitchen.Cuisine.Street>Street</HH.Kitchen.Cuisine.Street>
+  <HH.Kitchen.Cuisine.Seafood>Seafood</HH.Kitchen.Cuisine.Seafood>
+  <HH.Kitchen.Cuisine.Insect>Insect</HH.Kitchen.Cuisine.Insect>
+  <HH.Kitchen.Cuisine.Fungal>Fungal</HH.Kitchen.Cuisine.Fungal>
+  <HH.Kitchen.Cuisine.Vegetarian>Vegetarian</HH.Kitchen.Cuisine.Vegetarian>
+  <HH.Kitchen.Cuisine.Ascetic>Ascetic</HH.Kitchen.Cuisine.Ascetic>
+  <HH.Kitchen.Cuisine.LongPork>Long Pork</HH.Kitchen.Cuisine.LongPork>
+  <HH.Kitchen.Ingredient.meat>meat</HH.Kitchen.Ingredient.meat>
+  <HH.Kitchen.Ingredient.insectmeat>insect meat</HH.Kitchen.Ingredient.insectmeat>
+  <HH.Kitchen.Ingredient.humanmeat>human meat</HH.Kitchen.Ingredient.humanmeat>
+  <HH.Kitchen.Ingredient.twistedmeat>twisted meat</HH.Kitchen.Ingredient.twistedmeat>
+  <HH.Kitchen.Ingredient.fish>fish</HH.Kitchen.Ingredient.fish>
+  <HH.Kitchen.Ingredient.eggs>eggs</HH.Kitchen.Ingredient.eggs>
+  <HH.Kitchen.Ingredient.milk>milk</HH.Kitchen.Ingredient.milk>
+  <HH.Kitchen.Ingredient.potatoes>potatoes</HH.Kitchen.Ingredient.potatoes>
+  <HH.Kitchen.Ingredient.corn>corn</HH.Kitchen.Ingredient.corn>
+  <HH.Kitchen.Ingredient.rice>rice</HH.Kitchen.Ingredient.rice>
+  <HH.Kitchen.Ingredient.berries>berries</HH.Kitchen.Ingredient.berries>
+  <HH.Kitchen.Ingredient.agave>agave fruit</HH.Kitchen.Ingredient.agave>
+  <HH.Kitchen.Ingredient.mushrooms>mushrooms</HH.Kitchen.Ingredient.mushrooms>
+  <HH.Kitchen.Ingredient.chocolate>chocolate</HH.Kitchen.Ingredient.chocolate>
+  <HH.Kitchen.Ingredient.beer>beer</HH.Kitchen.Ingredient.beer>
+  <HH.Kitchen.Ingredient.hemogen>hemogen pack</HH.Kitchen.Ingredient.hemogen>
+  <HH.Kitchen.Ingredient.cheese>cheese</HH.Kitchen.Ingredient.cheese>
+  <HH.Kitchen.Ingredient.pumpkin>pumpkin</HH.Kitchen.Ingredient.pumpkin>
+  <HH.Kitchen.Ingredient.flour>flour</HH.Kitchen.Ingredient.flour>
+  <HH.Kitchen.Ingredient.fruit>fruit</HH.Kitchen.Ingredient.fruit>
+  <HH.Kitchen.Ingredient.soysauce>soy sauce</HH.Kitchen.Ingredient.soysauce>
+  <HH.Kitchen.Ingredient.wasabi>wasabi paste</HH.Kitchen.Ingredient.wasabi>
+  <HH.Kitchen.Ingredient.vegetables>vegetables</HH.Kitchen.Ingredient.vegetables>
+  <HH.Kitchen.Ingredient.sugar>sugar</HH.Kitchen.Ingredient.sugar>
+  <HH.Kitchen.Ingredient.gourmet>gourmet ingredients</HH.Kitchen.Ingredient.gourmet>
+  <HH.Kitchen.Ingredient.herbs>herbs</HH.Kitchen.Ingredient.herbs>
+  <HH.Kitchen.Ingredient.nuts>nuts</HH.Kitchen.Ingredient.nuts>
+  <HH.Kitchen.Ingredient.tealeaves>tea leaves</HH.Kitchen.Ingredient.tealeaves>
+  <HH.Kitchen.Ingredient.strawflour>strawflour</HH.Kitchen.Ingredient.strawflour>
+  <HH.Kitchen.Ingredient.pricklypear>prickly pear</HH.Kitchen.Ingredient.pricklypear>
+  <HH.Kitchen.Ingredient.greenfruit>greenfruit</HH.Kitchen.Ingredient.greenfruit>
+  <HH.Setting.kitchen.shelfLife>Dish shelf life</HH.Setting.kitchen.shelfLife>
+  <HH.Setting.kitchen.shelfLife.Desc>How long plates stay fresh, relative to the 3 to 24 hours of each dish. Stale plates are still edible but give no Well fed and no mood bonus.</HH.Setting.kitchen.shelfLife.Desc>
+  <HH.Setting.kitchen.wellFedStrength>Well fed strength</HH.Setting.kitchen.wellFedStrength>
+  <HH.Setting.kitchen.wellFedStrength.Desc>How much slower hunger falls after a proper dish (100 % = 40 % slower).</HH.Setting.kitchen.wellFedStrength.Desc>
+  <HH.Setting.kitchen.wellFedDuration>Well fed duration</HH.Setting.kitchen.wellFedDuration>
+  <HH.Setting.kitchen.wellFedDuration.Desc>How long the Well fed state lasts, relative to 4 / 6 / 8 / 10 hours by learning level (and by quality).</HH.Setting.kitchen.wellFedDuration.Desc>
+  <HH.Setting.kitchen.menuPrice>Menu price</HH.Setting.kitchen.menuPrice>
+  <HH.Setting.kitchen.menuPrice.Desc>Prices a restaurant asks for dishes, relative to the standard menu (dish level, quality and form).</HH.Setting.kitchen.menuPrice.Desc>
+  <HH.Setting.kitchen.poisonRule>No food poisoning from a good kitchen</HH.Setting.kitchen.poisonRule>
+  <HH.Setting.kitchen.poisonRule.Desc>Plates cooked by a cook with Cooking 4 or more in a clean kitchen (cleanliness -0.2 or better) can never poison. Off: vanilla rolls apply.</HH.Setting.kitchen.poisonRule.Desc>
+  <HH.Setting.kitchen.variants>Fine and Signature forms</HH.Setting.kitchen.variants>
+  <HH.Setting.kitchen.variants.Desc>Offer each dish in a Fine form (more and better ingredients, a better chance for good quality) and a Signature form (research needed).</HH.Setting.kitchen.variants.Desc>
+  <HH.Setting.kitchen.allKnown>All dishes known</HH.Setting.kitchen.allKnown>
+  <HH.Setting.kitchen.allKnown.Desc>Skip learning: every dish of the menu can be cooked as soon as its devices stand.</HH.Setting.kitchen.allKnown.Desc>
+  <HH.Setting.kitchen.darkMenu>Dark menu (long pork)</HH.Setting.kitchen.darkMenu>
+  <HH.Setting.kitchen.darkMenu.Desc>Allow the long pork dishes. They are also unlocked by an ideoligion that approves of cannibalism.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Kitchen.Cookbook.Teaches>Teaches: {0}</HH.Kitchen.Cookbook.Teaches>
+  <HH.Kitchen.Cookbook.Empty>The pages are blank.</HH.Kitchen.Cookbook.Empty>
+  <HH.Kitchen.Cookbook.AllKnown>The colony already knows every dish in this book.</HH.Kitchen.Cookbook.AllKnown>
+  <HH.Kitchen.Cookbook.CannotCook>Cannot cook.</HH.Kitchen.Cookbook.CannotCook>
+  <HH.Kitchen.Cookbook.Learned>{0} studies the book. The colony can now cook: {1}.</HH.Kitchen.Cookbook.Learned>
+  <HH.Kitchen.TestKitchen.Success>{0} worked out how to cook {1}. The colony will remember.</HH.Kitchen.TestKitchen.Success>
+  <HH.Kitchen.TestKitchen.Failure>{0} tried to cook {1} and made a terrible plate of it. Maybe next time.</HH.Kitchen.TestKitchen.Failure>
+  <HH.Kitchen.NoNeighbours>No other kitchen device in reach.</HH.Kitchen.NoNeighbours>
+  <HH.Kitchen.Neighbours>In reach: {0}</HH.Kitchen.Neighbours>
+  <HH.Kitchen.FreshHours>Fresh for {0} h</HH.Kitchen.FreshHours>
+</LanguageData>

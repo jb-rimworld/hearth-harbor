@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- A recipe book: teaches one to three dishes to the whole colony (KONZEPT 6.4). Traders, quests and guests bring them. -->
+  <ThingDef>
+    <defName>HH_Cookbook</defName>
+    <label>recipe book</label>
+    <description>A greasy, dog-eared book of recipes, annotated by someone who clearly cooked under fire. Reading it teaches the colony the dishes it contains.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/HH/Kitchen/Cookbook</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <tickerType>Never</tickerType>
+    <stackLimit>1</stackLimit>
+    <pathCost>14</pathCost>
+    <tradeability>All</tradeability>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <MarketValue>150</MarketValue>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+    </statBases>
+    <thingCategories><li>Manufactured</li></thingCategories>
+    <tradeTags><li>HH_Cookbook</li></tradeTags>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Study recipe book</useLabel>
+        <useDuration>1500</useDuration>
+        <showUseGizmo>true</showUseGizmo>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>Hearth.Kitchen.CompUseEffect_LearnDishes</compClass>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf"/>
+      <li Class="Hearth.Kitchen.CompProperties_Cookbook"/>
+    </comps>
+  </ThingDef>
+
+  <!-- The test kitchen: experiment with raw food at a prep counter to work out a dish the colony does not know yet. -->
+  <RecipeDef>
+    <defName>HH_TestKitchen</defName>
+    <label>experiment with a new dish</label>
+    <description>Throw raw food at the counter and see what comes out. Sometimes the colony works out a new dish (the better the cook, the likelier); otherwise the experiment ends as a terrible plate of that dish.</description>
+    <jobString>Experimenting with a new dish.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <workSkill>Cooking</workSkill>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <workAmount>900</workAmount>
+    <displayPriority>50</displayPriority>
+    <skillRequirements><Cooking>3</Cooking></skillRequirements>
+    <recipeUsers><li>HH_Station_PrepCounter</li></recipeUsers>
+    <ingredients>
+      <li>
+        <filter><categories><li>FoodRaw</li></categories></filter>
+        <count>0.5</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories><li>FoodRaw</li></categories>
+      <disallowedCategories><li>EggsFertilized</li></disallowedCategories>
+      <disallowedThingDefs><li>Meat_Human</li><li>InsectJelly</li></disallowedThingDefs>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories><li>FoodRaw</li></categories>
+      <disallowedCategories><li>EggsFertilized</li></disallowedCategories>
+      <disallowedThingDefs><li>Meat_Human</li><li>InsectJelly</li></disallowedThingDefs>
+    </defaultIngredientFilter>
+    <products><HH_Plate_Stew>1</HH_Plate_Stew></products>
+    <modExtensions><li Class="Hearth.Kitchen.TestKitchenExtension"/></modExtensions>
+  </RecipeDef>
+</Defs>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Cooks work the bills of our kitchen devices like those of a stove (robots and machines too: they are normal bills). -->
+  <WorkGiverDef>
+    <defName>HH_DoBillsKitchen</defName>
+    <label>cook dishes at kitchen devices</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Cooking</workType>
+    <priorityInType>98</priorityInType>
+    <fixedBillGiverDefs>
+      <li>HH_Station_PrepCounter</li>
+      <li>HH_Station_StockPot</li>
+      <li>HH_Station_Grill</li>
+      <li>HH_Station_Oven</li>
+      <li>HH_Station_WokStation</li>
+      <li>HH_Station_DeepFryer</li>
+      <li>HH_Station_Smoker</li>
+      <li>HH_Station_Steamer</li>
+      <li>HH_Station_DoughBench</li>
+      <li>HH_Station_ColdStation</li>
+    </fixedBillGiverDefs>
+    <verb>cook at</verb>
+    <gerund>cooking at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+</Defs>
