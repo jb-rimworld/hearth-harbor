@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- The dark side (KONZEPT 6.11, D04). Hidden until discovered ("Show me") and until the content intensity allows it.
+       Research view coordinates are far out on purpose so they never collide with the other modules; the UI/integration pass lays the tree out. -->
+  <DesignationCategoryDef>
+    <defName>HH_Underworld</defName>
+    <label>back room</label>
+    <description>Doors, pits, counters and docks for the things nobody talks about. Only shown once you have discovered the underworld.</description>
+    <order>2950</order>
+  </DesignationCategoryDef>
+
+  <ResearchProjectDef>
+    <defName>HH_Underworld_Discovery</defName>
+    <label>a back room (key)</label>
+    <description>Internal key project. Finished when the stranger's offer is accepted. Never shown.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>HH_Hospitality</tab>
+    <researchViewX>31.0</researchViewX>
+    <researchViewY>0.0</researchViewY>
+    <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><alwaysHidden>true</alwaysHidden></li></modExtensions>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>HH_Underworld_1</defName>
+    <label>the back room</label>
+    <description>Back room doors, the fight pit, the fence's counter, the smuggler's dock and the drug lounge: everything a house needs for the trade that is not on the menu.</description>
+    <baseCost>600</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>HH_Hospitality</tab>
+    <hiddenPrerequisites><li>HH_Underworld_Discovery</li></hiddenPrerequisites>
+    <researchViewX>22.6</researchViewX>
+    <researchViewY>11.3</researchViewY>
+    <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>HH_TheHunt</defName>
+    <label>the hunt</label>
+    <description>A fenced hunting ground. Rich visitors pay well to shoot what you release into it. From Dark content on, a prisoner can be the quarry, behind a clear warning.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>HH_Hospitality</tab>
+    <prerequisites><li>HH_Underworld_1</li><li>Gunsmithing</li></prerequisites>
+    <researchViewX>24.2</researchViewX>
+    <researchViewY>12.4</researchViewY>
+    <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>HH_BlackClinic</defName>
+    <label>black clinic</label>
+    <description>A counter where anonymous donors buy harvested organs, no questions asked. Only with Dark or Grim content.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>HH_Hospitality</tab>
+    <prerequisites><li>HH_Underworld_1</li><li>MedicineProduction</li></prerequisites>
+    <researchViewX>24.2</researchViewX>
+    <researchViewY>10.2</researchViewY>
+    <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Dark</minContent></li></modExtensions>
+  </ResearchProjectDef>
+</Defs>

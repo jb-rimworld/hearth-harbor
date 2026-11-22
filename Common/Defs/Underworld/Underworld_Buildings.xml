@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Back room door: a door that only staff, colonists and shady guests open. -->
+  <ThingDef ParentName="DoorBase">
+    <defName>HH_BackRoomDoor</defName>
+    <label>back room door</label>
+    <description>A plain-looking door with a good lock. Only your own people and shady guests can open it. A room behind nothing but back room doors does not count against the renown of your house.</description>
+    <thingClass>Hearth.Underworld.Building_BackRoomDoor</thingClass>
+    <statBases><WorkToBuild>1000</WorkToBuild></statBases>
+    <graphicData>
+      <texPath>Things/HH/Underworld/BackRoomDoor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData><enabled>false</enabled></damageData>
+    </graphicData>
+    <uiIconPath>Things/HH/Underworld/BackRoomDoor</uiIconPath>
+    <costStuffCount>30</costStuffCount>
+    <designationCategory>HH_Underworld</designationCategory>
+    <designationHotKey>Misc2</designationHotKey>
+    <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
+    <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
+    <building><isStuffableAirtight>true</isStuffableAirtight></building>
+    <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
+  </ThingDef>
+
+  <!-- Fight pit marker: marks a fenced arena. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_FightPitMarker</defName>
+    <label>fight pit marker</label>
+    <description>Marks a fenced arena around it. Build a closed fence (a gate is fine) at least 3 by 3 tiles inside, put this marker in the middle and the pit opens: volunteers, prisoners and animals fight, guests bet, the house keeps a tenth of the pool. Bouts end when someone yields or falls; to the death only from Dark content on, never for volunteers, never for children.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/HH/Underworld/FightPit</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/HH/Underworld/FightPit</uiIconPath>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <fillPercent>0</fillPercent>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <canOverlapZones>true</canOverlapZones>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>500</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Beauty>-2</Beauty>
+    </statBases>
+    <costList><WoodLog>30</WoodLog></costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>HH_Underworld</designationCategory>
+    <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
+    <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
+    <comps><li Class="Hearth.Underworld.CompProperties_FightPit" /></comps>
+    <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
+  </ThingDef>
+
+  <!-- Fence counter: stolen goods in and out. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_FenceCounter</defName>
+    <label>fence's counter</label>
+    <description>A scarred counter where a trusted fence buys stolen goods at forty percent of their value and sells them to shady buyers at seventy. The fence works from its own cash box, topped up from your till. The owners of the goods sometimes find out.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/HH/Underworld/FenceCounter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/HH/Underworld/FenceCounter</uiIconPath>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <size>(2,1)</size>
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <tickerType>Never</tickerType>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToBuild>1200</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Beauty>-1</Beauty>
+    </statBases>
+    <costList><WoodLog>60</WoodLog><Steel>10</Steel></costList>
+    <designationCategory>HH_Underworld</designationCategory>
+    <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
+    <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
+    <comps><li Class="Hearth.Underworld.CompProperties_FenceStock" /></comps>
+    <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
+  </ThingDef>
+
+  <!-- Smuggler's dock: night landing pad. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_SmugglerDock</defName>
+    <label>smuggler's dock</label>
+    <description>A bare landing pad with a shaded lamp. At night a crate sometimes comes down and a voice offers it cheap, no questions. Now and then somebody notices the lamp.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/HH/Underworld/SmugglerDock</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/HH/Underworld/SmugglerDock</uiIconPath>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <fillPercent>0</fillPercent>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList><Steel>80</Steel></costList>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>HH_Underworld</designationCategory>
+    <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
+    <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
+    <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
+  </ThingDef>
+
+  <!-- Hunting ground marker. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_HuntingGroundMarker</defName>
+    <label>hunting ground marker</label>
+    <description>Marks a fenced hunting ground (at least sixty tiles, closed). Rich hunters pay to shoot the animals they bring into it. With Dark content and the right ideology a prisoner can be the quarry; this is switched on separately, behind a warning.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/HH/Underworld/HuntingGround</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/HH/Underworld/HuntingGround</uiIconPath>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <fillPercent>0</fillPercent>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <canOverlapZones>true</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>600</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList><WoodLog>30</WoodLog></costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>HH_Underworld</designationCategory>
+    <researchPrerequisites><li>HH_TheHunt</li></researchPrerequisites>
+    <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
+    <comps><li Class="Hearth.Underworld.CompProperties_HuntingGround" /></comps>
+    <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
+  </ThingDef>
+
+  <!-- Organ clinic: Dark and Grim only. -->
+  <ThingDef ParentName="ShelfBase">
+    <defName>HH_OrganClinic</defName>
+    <label>clinic counter</label>
+    <description>A cold counter where harvested organs are put down for anonymous donors, who collect them at night and pay without a word. Only with Dark or Grim content. Ideologies that abhor the organ trade will hold it against you.</description>
+    <thingClass>Building_Storage</thingClass>
+    <graphicData>
+      <texPath>Things/HH/Underworld/OrganClinic</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/HH/Underworld/OrganClinic</uiIconPath>
+    <size>(2,1)</size>
+    <designationCategory>HH_Underworld</designationCategory>
+    <researchPrerequisites Inherit="False"><li>HH_BlackClinic</li></researchPrerequisites>
+    <costStuffCount>20</costStuffCount>
+    <costList><ComponentIndustrial>2</ComponentIndustrial></costList>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Mass>12</Mass>
+      <WorkToBuild>1200</WorkToBuild>
+    </statBases>
+    <comps Inherit="False">
+      <li Class="Hearth.Underworld.CompProperties_OrganClinic" />
+    </comps>
+    <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
+    <building>
+      <storageGroupTag>HHOrganClinic</storageGroupTag>
+      <fixedStorageSettings>
+        <filter><categories><li>BodyPartsNatural</li></categories></filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Preferred</priority>
+        <filter><categories><li>BodyPartsNatural</li></categories></filter>
+      </defaultStorageSettings>
+    </building>
+    <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Dark</minContent><feature>OrganClinic</feature></li></modExtensions>
+  </ThingDef>
+</Defs>

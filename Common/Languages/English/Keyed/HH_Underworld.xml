@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.Underworld>Underworld</HH.Tab.Underworld>
+  <HH.Underworld.GateClosed>Not available: the underworld is closed in this game.</HH.Underworld.GateClosed>
+  <HH.Underworld.BackRoomDoorInfo>Only staff, colonists and shady guests can open this door.</HH.Underworld.BackRoomDoorInfo>
+  <HH.Underworld.Stranger.Title>A stranger at the gate</HH.Underworld.Stranger.Title>
+  <HH.Underworld.Stranger.Text>A stranger with his hat low waits outside your door until the staff are out of earshot.\n\n"Nice place," he says. "Got a back room?"\n\nHe does not say what he means by that. He does not need to.</HH.Underworld.Stranger.Text>
+  <HH.Underworld.Stranger.Show>Show me</HH.Underworld.Stranger.Show>
+  <HH.Underworld.Stranger.No>Not interested</HH.Underworld.Stranger.No>
+  <HH.Underworld.Stranger.Never>Never ask again</HH.Underworld.Stranger.Never>
+  <HH.Underworld.Unlocked.Title>The back room</HH.Underworld.Unlocked.Title>
+  <HH.Underworld.Unlocked.Text>You showed him the back room, and he nodded as if you had passed a test. A new line of research is open to you: the back room, with doors, a fight pit, a fence's counter, a smuggler's dock and a lounge. Your Whispers (the reputation in the underworld) will now follow what you build.\n\nYou can ignore all of it. Nothing here is required.</HH.Underworld.Unlocked.Text>
+  <HH.Underworld.Warn.Title>Content warning</HH.Underworld.Warn.Title>
+  <HH.Underworld.Warn.Dark>Dark content adds to the underworld: prisoners may fight to the death in the pit, gangs may question prisoners harder, hunters may hunt prisoners (with a fitting ideology), and a clinic counter buys harvested organs.\n\nIt appears as text and ordinary game injuries only. Children never take part, and nothing here is switched on by itself.\n\nDo you want this in this game?</HH.Underworld.Warn.Dark>
+  <HH.Underworld.Warn.Grim>Grim content is everything of Dark content, and the hunt on prisoners no longer asks about your ideology. Organ buyers place orders with deadlines.\n\nIt appears as text and ordinary game injuries only. Children never take part, and nothing here is switched on by itself.\n\nDo you want this in this game?</HH.Underworld.Warn.Grim>
+  <HH.Underworld.Warn.Accept>Yes, I understand</HH.Underworld.Warn.Accept>
+  <HH.Underworld.Warn.Back>No, back to Standard</HH.Underworld.Warn.Back>
+  <HH.Underworld.Warn.Hunt>You are about to allow hunting prisoners in a hunting ground. A prisoner is released into the ground with a head start; if he lasts the set time or reaches the fence line he is free, and his faction will hear about it either way. If he dies, his faction, your colonists and your guests will not forgive it.\n\nThis is shown as text only. Do you want to allow it?</HH.Underworld.Warn.Hunt>
+  <HH.Underworld.Warn.Organ>A clinic counter buys harvested organs from anonymous donors at night. Ideologies that abhor the organ trade will hold it against you, and your Whispers rise with every sale.\n\nThis is shown as text only. Do you want to keep it?</HH.Underworld.Warn.Organ>
+  <HH.Underworld.Warn.Keep>Yes, keep it</HH.Underworld.Warn.Keep>
+  <HH.Underworld.Warn.Remove>No, remove it</HH.Underworld.Warn.Remove>
+  <HH.Underworld.Scandal.BackRoomFound.Title>The back room was found out</HH.Underworld.Scandal.BackRoomFound.Title>
+  <HH.Underworld.Scandal.BackRoomFound.Text>A respectable guest opened the wrong door and saw what the house keeps behind it. By evening everyone in town will know.</HH.Underworld.Scandal.BackRoomFound.Text>
+  <HH.Underworld.Scandal.LeakedLedger.Title>Leaked ledger</HH.Underworld.Scandal.LeakedLedger.Title>
+  <HH.Underworld.Scandal.LeakedLedger.Text>A page of the fence's tally has found its way into the wrong hands. The goods are traced back to your counter.</HH.Underworld.Scandal.LeakedLedger.Text>
+  <HH.Underworld.Scandal.SecretCasinoRumour.Title>Rumour of a secret casino</HH.Underworld.Scandal.SecretCasinoRumour.Title>
+  <HH.Underworld.Scandal.SecretCasinoRumour.Text>Word has gone round that your house hides a casino for people who do not talk about it. High rollers are looking for the door.</HH.Underworld.Scandal.SecretCasinoRumour.Text>
+  <HH.Underworld.Scandal.HonourAmongThieves.Title>Honour among thieves</HH.Underworld.Scandal.HonourAmongThieves.Title>
+  <HH.Underworld.Scandal.HonourAmongThieves.Text>A gang speaks well of your house in the places where it counts.</HH.Underworld.Scandal.HonourAmongThieves.Text>
+  <HH.Underworld.Scandal.Effects>Whispers {0}, renown {1}.</HH.Underworld.Scandal.Effects>
+  <HH.Underworld.Pit.Enabled>Pit open</HH.Underworld.Pit.Enabled>
+  <HH.Underworld.Pit.Enabled.Desc>Schedule bouts in this pit.</HH.Underworld.Pit.Enabled.Desc>
+  <HH.Underworld.Pit.Animals>Animals</HH.Underworld.Pit.Animals>
+  <HH.Underworld.Pit.Animals.Desc>Animals of your colony may fight here.</HH.Underworld.Pit.Animals.Desc>
+  <HH.Underworld.Pit.Volunteers>Volunteers</HH.Underworld.Pit.Volunteers>
+  <HH.Underworld.Pit.Volunteers.Desc>Colonists who like a fight (bloodlust or good melee) may volunteer. Volunteers never fight to the death.</HH.Underworld.Pit.Volunteers.Desc>
+  <HH.Underworld.Pit.Prisoners>Prisoners</HH.Underworld.Pit.Prisoners>
+  <HH.Underworld.Pit.Prisoners.Desc>Prisoners may be sent into the pit. Adults only.</HH.Underworld.Pit.Prisoners.Desc>
+  <HH.Underworld.Pit.Lethal>To the death</HH.Underworld.Pit.Lethal>
+  <HH.Underworld.Pit.Lethal.Desc>Bouts between prisoners and animals only end when one of them is down. Never for volunteers.</HH.Underworld.Pit.Lethal.Desc>
+  <HH.Underworld.Pit.StartNow>Start a bout</HH.Underworld.Pit.StartNow>
+  <HH.Underworld.Pit.StartNow.Desc>Pick two fair fighters now and let the guests bet.</HH.Underworld.Pit.StartNow.Desc>
+  <HH.Underworld.Pit.CannotStart>No bout: {0}</HH.Underworld.Pit.CannotStart>
+  <HH.Underworld.Pit.ArenaOk>Arena: {0} tiles, closed.</HH.Underworld.Pit.ArenaOk>
+  <HH.Underworld.Pit.ArenaOpen>Arena open or too big: close the fence.</HH.Underworld.Pit.ArenaOpen>
+  <HH.Underworld.Pit.NoFighters>fewer than two fighters allowed</HH.Underworld.Pit.NoFighters>
+  <HH.Underworld.Pit.NoFairPair>no fair pair of fighters</HH.Underworld.Pit.NoFairPair>
+  <HH.Underworld.Pit.BoutRunning>Bout: {0} against {1}.</HH.Underworld.Pit.BoutRunning>
+  <HH.Underworld.Pit.BoutAnnounced>A bout in the pit: {0} against {1}. Bets are open.</HH.Underworld.Pit.BoutAnnounced>
+  <HH.Underworld.Pit.Won>{0} wins the bout. The house keeps {1} silver.</HH.Underworld.Pit.Won>
+  <HH.Underworld.Pit.Draw>The bout ends without a winner. All stakes are returned.</HH.Underworld.Pit.Draw>
+  <HH.Underworld.Fence.Inspect>Stock: {0} items worth {1} silver. Cash box: {2} silver.</HH.Underworld.Fence.Inspect>
+  <HH.Underworld.Fence.Fund>Fill cash box</HH.Underworld.Fence.Fund>
+  <HH.Underworld.Fence.Fund.Desc>Move silver from the till into the fence's cash box, up to the limit in the settings.</HH.Underworld.Fence.Fund.Desc>
+  <HH.Underworld.Fence.Funded>{0} silver moved into the cash box.</HH.Underworld.Fence.Funded>
+  <HH.Underworld.Fence.NoCash>The cash box is empty.</HH.Underworld.Fence.NoCash>
+  <HH.Underworld.Fence.CannotPay>The buyer cannot pay.</HH.Underworld.Fence.CannotPay>
+  <HH.Underworld.Fence.Exposed>The goods came from {0}, and they know where they ended up.</HH.Underworld.Fence.Exposed>
+  <HH.Underworld.Gang.Title>A gang at the door</HH.Underworld.Gang.Title>
+  <HH.Underworld.Gang.Text>{0} people from {1} arrive quietly, nod at the staff and ask for the back room. They have money and they expect no questions.</HH.Underworld.Gang.Text>
+  <HH.Underworld.Gang.Demand.Title>A friendly offer</HH.Underworld.Gang.Demand.Title>
+  <HH.Underworld.Gang.Demand.Text>The leader of the gang from {0} leans on your counter. "A fine house. It would be a shame if something happened to it. For {1} silver we make sure nothing does."</HH.Underworld.Gang.Demand.Text>
+  <HH.Underworld.Gang.Demand.Pay>Pay {0} silver</HH.Underworld.Gang.Demand.Pay>
+  <HH.Underworld.Gang.Demand.Refuse>Show them the door</HH.Underworld.Gang.Demand.Refuse>
+  <HH.Underworld.Gang.Demand.NoCash>not enough in the till</HH.Underworld.Gang.Demand.NoCash>
+  <HH.Underworld.Tour.IntelTitle>Something from the questioning</HH.Underworld.Tour.IntelTitle>
+  <HH.Underworld.Tour.IntelText>After an hour with {0} the gang left a note on the counter: a name, a place, a day. Somebody out there is planning something, and now you know a little more.</HH.Underworld.Tour.IntelText>
+  <HH.Underworld.Smuggler.Title>A crate at the dock</HH.Underworld.Smuggler.Title>
+  <HH.Underworld.Smuggler.Text>A shuttle with its lights out has set down at the dock. A voice offers {0} items worth about {1} silver for {2}. No questions, no receipt.</HH.Underworld.Smuggler.Text>
+  <HH.Underworld.Smuggler.Buy>Buy for {0} silver</HH.Underworld.Smuggler.Buy>
+  <HH.Underworld.Smuggler.Decline>Send them away</HH.Underworld.Smuggler.Decline>
+  <HH.Underworld.Smuggler.NoCash>not enough in the till</HH.Underworld.Smuggler.NoCash>
+  <HH.Underworld.Smuggler.InspectTitle>A patrol noticed the lamp</HH.Underworld.Smuggler.InspectTitle>
+  <HH.Underworld.Smuggler.InspectText>An imperial patrol saw the lights at your dock and has written it down.</HH.Underworld.Smuggler.InspectText>
+  <HH.Underworld.Hunt.Title>A hunting party</HH.Underworld.Hunt.Title>
+  <HH.Underworld.Hunt.Text>{0} hunters arrive with rifles and money. They paid {1} silver for the ground, and {2} animals were released into it.</HH.Underworld.Hunt.Text>
+  <HH.Underworld.Hunt.GroundOk>Hunting ground: {0} tiles, closed. Quarry: {1}.</HH.Underworld.Hunt.GroundOk>
+  <HH.Underworld.Hunt.QuarryAnimals>animals</HH.Underworld.Hunt.QuarryAnimals>
+  <HH.Underworld.Hunt.QuarryHuman>animals and a prisoner</HH.Underworld.Hunt.QuarryHuman>
+  <HH.Underworld.Hunt.Prisoners>Prisoner quarry</HH.Underworld.Hunt.Prisoners>
+  <HH.Underworld.Hunt.Prisoners.Desc>Let hunters hunt a prisoner released into the ground. Dark content only, with a fitting ideology.</HH.Underworld.Hunt.Prisoners.Desc>
+  <HH.Underworld.Hunt.GateContent>Needs Dark or Grim content, confirmed.</HH.Underworld.Hunt.GateContent>
+  <HH.Underworld.Hunt.GatePrecept>The colony's ideology does not allow this.</HH.Underworld.Hunt.GatePrecept>
+  <HH.Underworld.Hunt.DeathTitle>A person died in the hunt</HH.Underworld.Hunt.DeathTitle>
+  <HH.Underworld.Hunt.DeathText>{0} did not survive the hunt. His people will hear of it, and so will everyone who was watching.</HH.Underworld.Hunt.DeathText>
+  <HH.Underworld.Hunt.FreedTitle>The quarry got away</HH.Underworld.Hunt.FreedTitle>
+  <HH.Underworld.Hunt.FreedText>{0} lasted the time and walks free. The hunters went home angry; his faction will hear how it was done.</HH.Underworld.Hunt.FreedText>
+  <HH.Underworld.Organ.Inspect>Organs waiting: {0}. Open orders: {1}.</HH.Underworld.Organ.Inspect>
+  <HH.Underworld.Organ.Sold>{0} organs collected at the clinic counter.</HH.Underworld.Organ.Sold>
+  <HH.Underworld.Organ.OrderTitle>An order</HH.Underworld.Organ.OrderTitle>
+  <HH.Underworld.Organ.OrderText>A buyer wants a {0} within {1} days and pays a premium.</HH.Underworld.Organ.OrderText>
+  <HH.Underworld.Organ.OrderDone>The order for a {0} was filled.</HH.Underworld.Organ.OrderDone>
+  <HH.Underworld.Organ.OrderMissed>The order for a {0} was not filled in time.</HH.Underworld.Organ.OrderMissed>
+  <HH.Underworld.Page.Title>Underworld</HH.Underworld.Page.Title>
+  <HH.Underworld.Page.Whispers>Whispers: {0} of 100.</HH.Underworld.Page.Whispers>
+  <HH.Underworld.Page.Weights>Arrival weights: respectable x{0}, outlaws x{1}.</HH.Underworld.Page.Weights>
+  <HH.Underworld.Page.Content>Content: {0} (applies: {1}).</HH.Underworld.Page.Content>
+  <HH.Underworld.Page.Stats1>Fight pit: {0} bouts, {1} bets, house take {2} silver.</HH.Underworld.Page.Stats1>
+  <HH.Underworld.Page.Stats2>Fence: {0} bought, {1} sold, profit {2} silver.</HH.Underworld.Page.Stats2>
+  <HH.Underworld.Page.Stats3>Lounge sessions {0}, gang visits {1}, landings {2}, hunts {3}, organs {4}.</HH.Underworld.Page.Stats3>
+  <HH.Underworld.Page.HighRollers>A rumour about a secret casino is drawing high rollers.</HH.Underworld.Page.HighRollers>
+</LanguageData>
