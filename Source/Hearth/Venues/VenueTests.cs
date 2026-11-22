@@ -205,7 +205,7 @@ namespace Hearth.ShopsFood
 
             // --- gate: hours vs. staff rule
             int h = VenueTestKit.HourNow(map);
-            comp.alwaysOpen = false; comp.openHour = (h + 3) % 24; comp.closeHour = (h + 6) % 24;
+            comp.alwaysOpen = false; comp.openHour = (h + 8) % 24; comp.closeHour = (h + 11) % 24;
             venue = VenueApi.VenueOfSign(map, sign);
             t.Check(venue != null && VenueApi.Gate(venue) == VenueGate.ClosedHours, "closed outside hours");
             comp.alwaysOpen = true;
@@ -239,6 +239,23 @@ namespace Hearth.ShopsFood
             var wv = Venues.All(map).FirstOrDefault(v => v.Sign == wall);
             t.Check(wv != null, "wall-mounted sign is found (contract workaround)");
             t.Check(wv != null && wv.Contains(room.Inner.CenterCell), "wall sign belongs to the room it faces out of");
+
+            // --- windows and selection overlays draw without errors (any exception shows up as a red error in the log)
+            Find.CameraDriver.JumpToCurrentMapLoc(wall.Position);
+            Find.Selector.ClearSelection(); Find.Selector.Select(wall, false, false);
+            Find.WindowStack.Add(new Dialog_VenueHours(wall.TryGetComp<CompVenueSignHH>()));
+            yield return 90;
+            Find.WindowStack.TryRemove(typeof(Dialog_VenueHours));
+            Find.WindowStack.Add(new Dialog_VenuePrice(wall.TryGetComp<CompVenueSignHH>()));
+            yield return 90;
+            Find.WindowStack.TryRemove(typeof(Dialog_VenuePrice));
+            Find.WindowStack.Add(new Dialog_RenameVenue(wall.TryGetComp<CompVenueSignHH>()));
+            yield return 90;
+            Find.WindowStack.TryRemove(typeof(Dialog_RenameVenue));
+            t.Check(Find.WindowStack.WindowOfType<Dialog_VenueHours>() == null, "dialogs closed again");
+            wall.TryGetComp<CompVenueSignHH>().customName = "The Rusty Anchor";
+            t.Check(wall.TryGetComp<CompVenueSignHH>().DisplayName == "The Rusty Anchor" && wall.TryGetComp<CompVenueSignHH>().CompInspectStringExtra().Contains("Shop"), "custom name and inspect text");
+            Find.Selector.ClearSelection();
             VenueTestKit.Teardown(map, room);
         }
     }
@@ -350,7 +367,7 @@ namespace Hearth.ShopsFood
 
             // --- closing time: the tender goes, the venue is closed
             int h = VenueTestKit.HourNow(map);
-            comp.alwaysOpen = false; comp.openHour = (h + 3) % 24; comp.closeHour = (h + 6) % 24;
+            comp.alwaysOpen = false; comp.openHour = (h + 8) % 24; comp.closeHour = (h + 11) % 24;
             yield return 400;
             venue = VenueApi.VenueOfSign(map, sign) ?? venue;
             t.Check(!VenueApi.InHours(venue), "outside hours");
@@ -417,9 +434,84 @@ namespace Hearth.ShopsFood
             t.Check(beer.Destroyed || beer.stackCount < beer0, "beer left the shelf: " + beer0 + " -> " + (beer.Destroyed ? 0 : beer.stackCount));
             var drinker = guests.FirstOrDefault(g => GuestMemory.LastDrink(g) > 0);
             t.Check(drinker != null, "a guest is marked as having drunk");
+            foreach (var g in guests) t.Note(g.LabelShort + ": job " + (g.CurJobDef?.defName ?? "none") + ", alcohol " + (g.health?.hediffSet.HasHediff(HediffDefOf.AlcoholHigh) == true) + ", bag " + string.Join("/", g.inventory.innerContainer.Where(x => x.def.defName == "Beer").Select(x => x.stackCount.ToString())));
             t.Check(guests.Any(g => g != null && g.health != null && g.health.hediffSet.HasHediff(HediffDefOf.AlcoholHigh)) || guests.Any(g => g.jobs?.curJob?.def == JobDefOf.Ingest || (g.inventory != null && g.inventory.innerContainer.Any(x => x.def.defName == "Beer"))),
                 "the drink was drunk or is being drunk or sits in the guest's bag");
             VenueTestKit.Teardown(map, room);
+        }
+    }
+
+    public sealed class WaitSuite : HearthTestSuite
+    {
+        public override string Name => "venues.wait";
+        public override ModuleId Module => ModuleId.ShopsFood;
+        public override int MaxTicks => 28000;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var map = t.Map;
+            var factions = VenueTestKit.Friendly(1, false);
+            t.Check(factions.Count > 0, "friendly faction");
+            if (factions.Count == 0) yield break;
+            float oldPatience = HSettings.Get(VS.WaitForStaffTicks);
+            HSettings.Set(VS.WaitForStaffTicks, 400f);
+            foreach (var c in map.mapPawns.FreeColonistsSpawned) c.workSettings?.SetPriority(HHVenueDefOf.HH_Serving, 0);
+
+            // a lounge next door: guests wait there
+            var loungeRoom = VenueTestKit.Build(map);
+            var loungeSign = VenueTestKit.SpawnSign(map, loungeRoom, HHVenueDefOf.HH_VenueSign, HHVenueDefOf.HH_Venue_Lounge);
+            var room = VenueTestKit.Build(map);
+            var sign = VenueTestKit.SpawnSign(map, room, HHVenueDefOf.HH_VenueSign, HHVenueDefOf.HH_Venue_Tavern);
+            var comp = sign.TryGetComp<CompVenueSignHH>();
+            comp.alwaysOpen = true;
+            var cells = room.Inner.Cells.Where(c => c != sign.Position).Take(2).ToList();
+            VenueTestKit.Stockpile(map, room, cells);
+            VenueTestKit.Stock(map, ThingDef.Named("Beer"), 25, cells[0], room);
+            yield return 30;
+            Venues.MarkDirty(map);
+            var venue = VenueApi.VenueOfSign(map, sign);
+            var lounge = VenueApi.VenueOfSign(map, loungeSign);
+            t.Check(venue != null && lounge != null, "tavern and lounge exist");
+            t.Check(lounge != null && lounge.Type.module == ModuleId.ShopsFood && VenueApi.Gate(lounge) == VenueGate.Open, "lounge is always open");
+            var wc = VenueShopping.WaitCell(venue);
+            t.Check(lounge.Contains(wc), "guests wait in the lounge when there is one: " + wc);
+            t.Check(VenueApi.Gate(venue) == VenueGate.WaitingForStaff, "tavern open but nobody to serve");
+
+            // --- guests wait for service, then give up
+            var guests = VenueTestKit.SpawnVisitors(map, factions[0], VenueTestKit.OutsideCell(map, room));
+            t.Check(guests.Count > 0, "guests spawned");
+            bool sawWait = false; int waited = 0;
+            while (waited < 12000 && !sawWait)
+            {
+                yield return 100; waited += 100;
+                sawWait = guests.Any(g => g.CurJobDef == HHVenueDefOf.HH_WaitAtVenue);
+            }
+            t.Check(sawWait, "a guest waits for service after " + waited + " ticks");
+            t.Check(comp.salesCount == 0, "nothing sold without staff");
+            waited = 0;
+            while (waited < 4000 && !guests.Any(g => GuestMemory.InNoServiceCooldown(g))) { yield return 100; waited += 100; }
+            var annoyed = guests.FirstOrDefault(g => GuestMemory.InNoServiceCooldown(g));
+            t.Check(annoyed != null, "a guest gave up waiting after " + waited + " ticks");
+            t.Check(annoyed != null && GuestApi.Info(annoyed).Satisfaction < 0f, "the waiting guest is annoyed: " + (annoyed != null ? GuestApi.Info(annoyed).Satisfaction.ToString("0.00") : "-"));
+
+            // --- closed: new guests ring the night bell; a colonist answers; the surcharge is paid
+            int h = VenueTestKit.HourNow(map);
+            comp.alwaysOpen = false; comp.openHour = (h + 8) % 24; comp.closeHour = (h + 11) % 24;
+            var group2 = VenueTestKit.SpawnVisitors(map, factions[0], VenueTestKit.OutsideCell(map, room));
+            waited = 0;
+            while (waited < 12000 && !VenueApi.BellActive(venue)) { yield return 100; waited += 100; }
+            t.Check(VenueApi.BellActive(venue), "a guest rang the bell after " + waited + " ticks");
+            t.Check(!VenueApi.InHours(venue), "still outside hours while the bell is rung");
+            foreach (var g in group2) t.Note(g.LabelShort + ": job " + (g.CurJobDef?.defName ?? "none"));
+            t.Check(group2.Any(g => g.CurJobDef == HHVenueDefOf.HH_WaitAtVenue || g.CurJobDef == HHVenueDefOf.HH_BuyDrink), "bell ringer waits for the answer or is being served");
+            var worker = VenueTestKit.Worker(map);
+            waited = 0;
+            while (waited < 6000 && comp.salesCount == 0) { yield return 100; waited += 100; }
+            t.Check(comp.salesCount > 0, "the bell was answered and a drink was served after " + waited + " ticks");
+            double plain = ThingDef.Named("Beer").BaseMarketValue * 1.25 * comp.priceFactor * VS.F(VS.ShopPrice);
+            t.Check(comp.Income.Silver >= plain * 1.4, "bell service charged a surcharge: " + comp.Income.Silver.ToString("0.00") + " vs plain " + plain.ToString("0.00"));
+            HSettings.Set(VS.WaitForStaffTicks, oldPatience);
+            VenueTestKit.Teardown(map, room);
+            VenueTestKit.Teardown(map, loungeRoom);
         }
     }
 
@@ -463,7 +555,7 @@ namespace Hearth.ShopsFood
             t.Check(VenueTestKit.Till(map) > till0, "a guest paid the vending machine after " + waited + " ticks: " + till0 + " -> " + VenueTestKit.Till(map));
             yield return 400;
             t.Check(meal.Destroyed || meal.stackCount < meal0, "meal left the machine: " + meal0 + " -> " + (meal.Destroyed ? 0 : meal.stackCount));
-            t.Check(buyer.Any(g => GuestMemory.LastVending(g) > 0), "guest remembers the vending purchase");
+            t.Check(GuestApi.GuestsOn(map).Any(g => GuestMemory.LastVending(g) > 0), "a guest remembers the vending purchase");
             // colonists may use the machine for free: its goods are not forbidden (no sign, no sale room)
             var col = map.mapPawns.FreeColonistsSpawned.First();
             t.Check(meal.Destroyed || !meal.IsForbidden(col), "colonists can use the machine's goods");

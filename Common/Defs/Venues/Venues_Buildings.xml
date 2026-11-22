@@ -105,7 +105,7 @@
     <defaultPlacingRot>South</defaultPlacingRot>
     <size>(2,1)</size>
     <hasInteractionCell>true</hasInteractionCell>
-    <interactionCellOffset>(0,0,1)</interactionCellOffset>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <minifiedDef>MinifiedThing</minifiedDef>
     <thingCategories><li>BuildingsFurniture</li></thingCategories>
     <stuffCategories>

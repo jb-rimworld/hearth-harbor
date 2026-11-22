@@ -55,6 +55,9 @@ namespace Hearth.ShopsFood
             if (!pawn.CanReach(post, PathEndMode.OnCell, Danger.None)) return null;
             if (pawn.Faction != Faction.OfPlayer) return null;
             var job = JobMaker.MakeJob(HHVenueDefOf.HH_TendVenue, t, post);
+            // re-check needs (food, rest) every so often instead of standing for the whole shift
+            job.expiryInterval = 1500;
+            job.checkOverrideOnExpire = true;
             return job;
         }
 
@@ -102,7 +105,6 @@ namespace Hearth.ShopsFood
                 // face the sign so the tender looks at customers
                 if (pawn.IsHashIntervalTick(120)) pawn.rotationTracker.FaceTarget(Sign);
             };
-            tend.AddFinishAction(() => { });
             tend.socialMode = RandomSocialMode.Off;
             yield return tend;
         }

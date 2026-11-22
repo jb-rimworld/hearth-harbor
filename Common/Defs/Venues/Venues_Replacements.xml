@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    Replaced vanilla furniture (KONZEPT 6.1, N49).
+
+    When one of our buildings replaces a vanilla one, list the pair here (any module may add its own file with more pairs).
+    The vanilla building disappears from the architect menu once the replacement is available (researched); buildings already
+    placed stay and keep working. The defs themselves are never removed. The player can turn this off in the settings
+    ("Hide replaced vanilla furniture").
+
+    Example (the casino module ships this when its card table exists):
+
+    <Hearth.ShopsFood.VanillaReplacementDef>
+      <defName>HH_Replaces_PokerTable</defName>
+      <label>card table replaces poker table</label>
+      <vanillaDefName>PokerTable</vanillaDefName>
+      <replacementDefName>HH_CardTable</replacementDefName>
+    </Hearth.ShopsFood.VanillaReplacementDef>
+
+    From code: VanillaHiding.Register("PokerTable", "HH_CardTable");
+    A vanilla def that does not exist (missing DLC) is skipped silently.
+  -->
+</Defs>
