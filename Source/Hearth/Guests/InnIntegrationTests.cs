@@ -15,9 +15,15 @@ namespace Hearth.Guests
 {
     static class InnIntKit
     {
+        static readonly Dictionary<VenueTestKit.TestRoom, InnTestKit.Site> sites = new Dictionary<VenueTestKit.TestRoom, InnTestKit.Site>();
+
+        /// <summary>A walled, roofed shop room built with the Inn's own kit (it never destroys motes or pawns on the site).</summary>
         public static VenueTestKit.TestRoom Shop(Map map, out Thing sign, out CompVenueSignHH comp, out Dictionary<Pawn, int> haulWas)
         {
-            var room = VenueTestKit.Build(map);
+            var site = InnTestKit.BuildRoom(map, 0, false, 5, 5);
+            var room = new VenueTestKit.TestRoom { Inner = site.Interior, Outer = site.Interior.ExpandedBy(1) };
+            room.Things.AddRange(site.Built);
+            sites[room] = site;
             sign = VenueTestKit.SpawnSign(map, room, HHVenueDefOf.HH_VenueSign, HHVenueDefOf.HH_Venue_Shop);
             comp = sign.TryGetComp<CompVenueSignHH>();
             comp.alwaysOpen = true;
@@ -35,7 +41,9 @@ namespace Hearth.Guests
         public static void EndShop(Map map, VenueTestKit.TestRoom room, Dictionary<Pawn, int> haulWas)
         {
             if (haulWas != null) foreach (var kv in haulWas) kv.Key.workSettings?.SetPriority(WorkTypeDefOf.Hauling, kv.Value);
-            if (room != null) VenueTestKit.Teardown(map, room);
+            if (room == null) return;
+            VenueTestKit.Teardown(map, room);
+            if (sites.TryGetValue(room, out var site)) { InnTestKit.Teardown(site, map); sites.Remove(room); }
         }
 
         public static void ClearAll(Map map)
