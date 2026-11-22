@@ -50,7 +50,7 @@ namespace Silverline
             var c = BankGameComp.Current;
             if (c == null || !c.HasAccount) return;
             float share = HSettings.Get("bank.wealthShare");
-            if (share <= 0f || !__instance.TreatAsPlayerHomeForThreatPoints) return;
+            if (share <= 0f || !__instance.TreatAsPlayerHome()) return;
             if (Find.Storyteller?.difficulty != null && Find.Storyteller.difficulty.fixedWealthMode) return;
             double balance = c.Balance.Silver + c.InTransit.Silver;
             if (balance <= 0) return;
@@ -60,7 +60,7 @@ namespace Silverline
         /// <summary>Fraction of the account that this map carries: its wealth over the wealth of all player home maps.</summary>
         static double ShareOf(Map map, float own)
         {
-            var homes = Find.Maps.Where(m => m.TreatAsPlayerHomeForThreatPoints).ToList();
+            var homes = Find.Maps.Where(m => m.TreatAsPlayerHome()).ToList();
             if (homes.Count <= 1) return 1.0;
             double total = 0;
             inside = true;

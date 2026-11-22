@@ -730,7 +730,7 @@ namespace Hearth.Guests
                 else if (p.Destroyed) why = "pawn destroyed";
                 else if (p.Dead) why = "pawn dead";
                 else if (p.Faction == Faction.OfPlayer) why = "pawn joined the colony";
-                else if (!p.Spawned && p.ParentHolder is not ActiveTransporterInfo && !(p.ParentHolder is Thing) && Find.TickManager.TicksGame - r.ArrivedTick > 2500)
+                else if (!p.Spawned && !VersionCompat.IsTransporterInfo(p.ParentHolder) && !(p.ParentHolder is Thing) && Find.TickManager.TicksGame - r.ArrivedTick > 2500)
                     why = "pawn despawned";
                 else if (p.Spawned && p.GetLord() == null && Find.TickManager.TicksGame - r.ArrivedTick > 600) why = "guest without lord";
                 else if (p.Spawned && p.GetLord()?.LordJob is not LordJob_HH_GuestStay && Find.TickManager.TicksGame - r.ArrivedTick > 600) why = "guest in a foreign lord";

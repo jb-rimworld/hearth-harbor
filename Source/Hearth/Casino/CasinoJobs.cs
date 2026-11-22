@@ -81,7 +81,7 @@ namespace Hearth.Casino
             play.initAction = StartSession;
             Action<int> tick = delta => PlayTick(delta);
 #if RW17
-            play.tickIntervalAction = tick;
+            Hearth.City.Toils.OnTick(play, tick);
 #else
             play.tickAction = () => tick(1);
 #endif
@@ -105,7 +105,7 @@ namespace Hearth.Casino
         {
             var comp = Comp; if (comp == null || failedStart) return;
             pawn.rotationTracker.FaceTarget(Device);
-            try { pawn.GainComfortFromCellIfPossible(delta); } catch (Exception) { }
+            try { Hearth.City.Toils.Comfort(pawn, delta); } catch (Exception) { }
             var c = CasinoComponent.Get();
             var s = c?.SessionOf(pawn);
             if (s == null)
@@ -121,7 +121,7 @@ namespace Hearth.Casino
                 bool ended = false;
                 if (pawn.CurJob != null)
                 {
-                    ended = JoyUtility.JoyTickCheckEnd(pawn, delta, JoyTickFullJoyAction.EndJob, CS.F(CS.JoyGain), Device as Building);
+                    ended = Hearth.City.Toils.JoyTick(pawn, delta, JoyTickFullJoyAction.EndJob, CS.F(CS.JoyGain), Device as Building);
                     // gambling builds tolerance slower than vanilla play (casino.toleranceFactor): hand back the difference
                     if (joy != null)
                     {
@@ -159,7 +159,7 @@ namespace Hearth.Casino
                 if (idle > 600) EndJobWith(JobCondition.Succeeded);
             };
 #if RW17
-            work.tickIntervalAction = tick;
+            Hearth.City.Toils.OnTick(work, tick);
 #else
             work.tickAction = () => tick(1);
 #endif

@@ -62,7 +62,7 @@ namespace Hearth.ShopsFood
             {
                 if (f.IsPlayer || f.defeated || f.HostileTo(Faction.OfPlayer)) continue;
                 bool ok;
-                try { ok = worker != null && worker.FactionCanBeGroupSource(f, parms); } catch { ok = false; }
+                try { ok = worker != null && VersionCompat.FactionCanBeGroupSource(worker, f, parms); } catch { ok = false; }
                 if (ok) list.Add(f);
             }
             return list;
