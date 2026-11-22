@@ -26,6 +26,7 @@ namespace Silverline
         /// <summary>Clean slate: no contracts, no claims, easy settings, all research gates open, a funded till.</summary>
         public static void Reset(double till = 5000)
         {
+            BankGameComp.Current?.TestReset(false);   // no account unless a test opens one: premiums then come from the till
             var c = Comp; c.contracts.Clear(); c.claims.Clear(); c.debt = 0; c.firstPolicyTick = -1; c.lastFiledLetterDay = -1; c.lastUpsellTick = -9999999; c.lastDeathTick = -9999999; c.log.Clear();
             Set(InsSettings.RequireResearch, 0); Set(InsSettings.ClaimsAttitude, 0f); Set(InsSettings.WaitingDays, 5); Set(InsSettings.AssessmentDays, 0); Set(InsSettings.BillingDays, 5);
             Set(InsSettings.TrickUpsell, (float)TrickMode.Off);
@@ -81,17 +82,6 @@ namespace Silverline
 
         public static void ClearFires() { foreach (var f in Map.listerThings.ThingsOfDef(ThingDefOf.Fire).ToList()) f.Destroy(); }
         public static bool LedgerOk => Ledger.Current.SumAll() == 0;
-    }
-
-    /// <summary>Fake bank for the tests (the real one lives in the bank module).</summary>
-    sealed class FakeBank : IBankImpl
-    {
-        public bool HasAccount => true;
-        public string ColonyAccount => "bank:colony";
-        public Money ColonyBalance => Ledger.Current.Balance("bank:colony");
-        public bool DirectDepositOn => true;
-        public bool Deposit(Map map, Money amount, string memo) => Ledger.Current.Post(Payments.ColonyTill(map), "bank:colony", amount, memo);
-        public bool Withdraw(Map map, Money amount, string memo) => false;
     }
 
     public sealed class InsuranceMathSuite : HearthTestSuite
@@ -218,11 +208,11 @@ namespace Silverline
             t.Check(InsTest.LedgerOk, "ledger balanced after refusal");
 
             // --- a bank account takes precedence --------------------------------------------------------------------------------------------------------
-            var oldImpl = BankApi.Impl; BankApi.Impl = new FakeBank();
             try
             {
+                BankGameComp.Current.TestReset(true);   // the real Silverline account
                 l.Post("world", "bank:colony", Money.FromSilver(1000), "test: seed bank");
-                t.Check(BankApi.Ready, "fake bank is ready");
+                t.Check(BankApi.Ready, "bank is ready");
                 var bank0 = BankApi.ColonyBalance; var ins2 = InsTest.Insurer;
                 var res4 = comp.Sign(InsTest.Def("SL_RimHealth"), CoverTier.GoodEnough, null, 1000, null, null);
                 t.Check(res4.Ok, "policy signed with a bank account: " + res4.error);
@@ -237,7 +227,7 @@ namespace Silverline
                 t.Check(BankApi.ColonyBalance - bankBefore == Money.FromSilver(250), "benefit of 250 reaches the bank account");
                 t.Check(InsTest.LedgerOk, "ledger balanced after a bank payout");
             }
-            finally { BankApi.Impl = oldImpl; }
+            finally { BankGameComp.Current.TestReset(false); }
 
             // --- gates ----------------------------------------------------------------------------------------------------------------------------------------
             InsTest.Set(InsSettings.RequireResearch, 1);
@@ -701,6 +691,7 @@ namespace Silverline
             InsTest.Reset(3000);
             var comp = InsTest.Comp;
             var res = comp.Sign(InsTest.Def("SL_RoofOverHead"), CoverTier.GoodEnough, null, 2000, null, null);
+            t.Check(res.Ok && res.contract != null, "policy signed: " + res.error); if (!res.Ok || res.contract == null) yield break;
             int errors0 = HLog.ErrorCount;
             Window_Clawback.Open();
             t.Check(Find.WindowStack.Windows.Any(w => w is Window_Clawback), "stand-alone window opens");
@@ -817,7 +808,8 @@ namespace Silverline
             var comp = InsTest.Comp; var l = Ledger.Current;
             // pre-ticked add-ons are counted as sales-trick cost; above the cap the year letter pays it back
             var r = comp.Sign(InsTest.Def("SL_LimbByLimb"), CoverTier.GoodEnough, InsTest.Colonists.First(), 2000, new[] { "plusProgression", "deathSum" }, new[] { "plusProgression", "deathSum" });
-            t.Check(r.Ok && r.contract.preTickedKept.Count == 2, "two pre-ticked riders kept");
+            t.Check(r.Ok && r.contract != null, "signed: " + r.error); if (!r.Ok || r.contract == null) yield break;
+            t.Check(r.contract.preTickedKept.Count == 2, "two pre-ticked riders kept");
             r.contract.nextBillTick = Ins.Now; comp.Process(Ins.Now);
             t.Check(r.contract.trickCostYear > 0 && r.contract.premiumYear > r.contract.trickCostYear, $"trick cost {r.contract.trickCostYear:0.000} of premiums {r.contract.premiumYear:0.000}");
             double cost = r.contract.trickCostYear, prem = r.contract.premiumYear;

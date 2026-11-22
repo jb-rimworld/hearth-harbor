@@ -74,7 +74,7 @@ namespace Silverline
             source = null;
             var l = Ledger.Current; if (l == null) return false;
             if (amount.Micro <= 0) { source = "free"; return true; }
-            if (BankApi.Ready && BankApi.ColonyBalance >= amount && l.Post(BankApi.Impl.ColonyAccount, Account, amount, memo)) { source = Ins.T("Source.Bank"); return true; }
+            if (BankApi.TryPay(Account, amount, memo)) { source = Ins.T("Source.Bank"); return true; }
             if (map == null) return false;
             string till = Payments.ColonyTill(map);
             if (l.Balance(till) >= amount && l.Post(till, Account, amount, memo)) { source = Ins.T("Source.Till"); return true; }
@@ -94,7 +94,7 @@ namespace Silverline
         public static string Payout(Map map, Money amount, string memo)
         {
             var l = Ledger.Current; if (l == null || amount.Micro <= 0) return null;
-            if (BankApi.Ready && l.Post(Account, BankApi.Impl.ColonyAccount, amount, memo, allowNegative: true)) return Ins.T("Source.PaidBank");
+            if (BankApi.Receive(Account, amount, memo)) return Ins.T("Source.PaidBank");
             map = map ?? HomeMap;
             if (map == null) { l.Post(Account, "colony:till:0", amount, memo, allowNegative: true); return Ins.T("Source.PaidTill"); }
             string till = Payments.ColonyTill(map);

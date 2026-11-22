@@ -136,13 +136,14 @@ namespace Hearth
                 float sliderW = Math.Max(80f, row.xMax - x - 210f);
                 if (!free)
                 {
-                    float roundTo = s.Step > 0 ? s.Step : (s.Kind == SettingKind.Int || s.Kind == SettingKind.Money || s.Kind == SettingKind.Enum ? 1f : -1f);
-                    float input = Math.Max(s.SliderMin, Math.Min(s.SliderMax, val));
+                    float roundTo = s.IsLog ? -1f : s.Step > 0 ? s.Step : (s.Kind == SettingKind.Int || s.Kind == SettingKind.Money || s.Kind == SettingKind.Enum ? 1f : -1f);
+                    // log-scale settings move on ln(value); ToSlider/FromSlider hide that
+                    float input = s.ToSlider(val);
                     // the slider rounds its output even when untouched: compare with the equally rounded input so that
                     // merely drawing a row never overrides (and thereby detaches) a tier-linked default
                     float rounded = roundTo > 0f ? (float)Mathf.RoundToInt(input / roundTo) * roundTo : input;
-                    float nv = Widgets.HorizontalSlider(new Rect(x, row.y + 8, sliderW, 16), input, s.SliderMin, s.SliderMax, false, null, null, null, roundTo);
-                    if (Math.Abs(nv - rounded) > Math.Max(1e-6f, Math.Abs(rounded) * 1e-6f)) HSettings.Set(s, nv);
+                    float nv = Widgets.HorizontalSlider(new Rect(x, row.y + 8, sliderW, 16), input, s.SliderLo, s.SliderHi, false, null, null, null, roundTo);
+                    if (Math.Abs(nv - rounded) > Math.Max(1e-6f, Math.Abs(rounded) * 1e-6f)) HSettings.Set(s, s.FromSlider(nv));
                     Widgets.Label(new Rect(x + sliderW + 6, row.y + 3, 110, 24), s.Format(HSettings.Get(s)));
                 }
                 else

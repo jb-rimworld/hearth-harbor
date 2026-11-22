@@ -59,7 +59,7 @@ namespace Silverline
             }
             if (!result.NullOrEmpty())
             {
-                GUI.color = new Color(0.85f, 0.92f, 1f);
+                GUI.color = InsuranceUI.PaleHi;
                 Widgets.Label(new Rect(inRect.x, y, inRect.width, 70f), result); GUI.color = Color.white;
             }
             GUI.color = InsuranceUI.Grey; Text.Font = GameFont.Tiny;

@@ -27,6 +27,29 @@ namespace Silverline
         public static IBankImpl Impl;
         public static bool Ready => Impl != null && Modules.On(ModuleId.Bank) && Impl.HasAccount;
         public static Money ColonyBalance => Ready ? Impl.ColonyBalance : Money.Zero;
+
+        /// <summary>
+        /// Pays <paramref name="to"/> (a ledger account, e.g. an insurer or a product pot) straight from the colony account, without fee.
+        /// For products inside Silverline (insurance, investments, lottery). False and nothing booked if there is no account or it holds too little.
+        /// </summary>
+        public static bool TryPay(string to, Money amount, string memo)
+        {
+            var led = Ledger.Current;
+            if (!Ready || led == null || to.NullOrEmpty() || amount.Micro <= 0 || Impl.ColonyBalance < amount) return false;
+            bool ok = led.Post(Impl.ColonyAccount, to, amount, memo);
+            if (ok) BankGameComp.Current?.InvalidateCache();
+            return ok;
+        }
+
+        /// <summary>Books money from a ledger account (insurer, product pot) onto the colony account, without fee. The source may go negative (a payout owed). False if there is no account.</summary>
+        public static bool Receive(string from, Money amount, string memo, bool allowNegative = true)
+        {
+            var led = Ledger.Current;
+            if (!Ready || led == null || from.NullOrEmpty() || amount.Micro <= 0) return false;
+            bool ok = led.Post(from, Impl.ColonyAccount, amount, memo, allowNegative);
+            if (ok) BankGameComp.Current?.InvalidateCache();
+            return ok;
+        }
     }
 
     /// <summary>Tabs of the bank window (8.4). The bank module draws the lobby; insurance, lottery, investments add tabs.</summary>

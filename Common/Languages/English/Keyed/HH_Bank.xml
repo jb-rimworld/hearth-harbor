@@ -127,6 +127,7 @@ Interest every day: balance × (M^({1} × {2} / 60) − 1), with M = {3} per gam
   <HH.Bank.Memo.Seized>Seized</HH.Bank.Memo.Seized>
   <HH.Bank.Memo.Seizure>Seizure proceeds (loan {0})</HH.Bank.Memo.Seizure>
   <HH.Bank.Memo.SeizurePay>Loan {0}: paid by seizure</HH.Bank.Memo.SeizurePay>
+  <HH.Bank.Memo.Trade>Trade income</HH.Bank.Memo.Trade>
   <HH.Bank.Memo.Withdraw>Withdrawal (cash)</HH.Bank.Memo.Withdraw>
   <HH.Bank.Memo.WithdrawCash>Withdrawal (cash)</HH.Bank.Memo.WithdrawCash>
   <HH.Bank.Memo.WithdrawFee>Fee: withdrawal</HH.Bank.Memo.WithdrawFee>
@@ -138,6 +139,7 @@ Interest every day: balance × (M^({1} × {2} / 60) − 1), with M = {3} per gam
   <HH.Bank.Msg.PodsComing>{0} silver is on its way down in drop pods.</HH.Bank.Msg.PodsComing>
   <HH.Bank.Msg.Settled>Loan {0} is back in good standing.</HH.Bank.Msg.Settled>
   <HH.Bank.Msg.Switched>Your account now lives at {0}.</HH.Bank.Msg.Switched>
+  <HH.Bank.Msg.TradeDeposit>Trade income of {0} silver went straight into your account at {1}.</HH.Bank.Msg.TradeDeposit>
   <HH.Bank.Open.Button>Open account</HH.Bank.Open.Button>
   <HH.Bank.Open.Direct>Route till money straight to the bank at midnight</HH.Bank.Open.Direct>
   <HH.Bank.Open.DirectTip>Takings of your shops, inn and casino go into the account instead of lying around as silver. You can switch this later at a night safe or in the settings (bank.directDeposit).</HH.Bank.Open.DirectTip>

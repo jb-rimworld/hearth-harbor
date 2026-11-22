@@ -18,7 +18,7 @@ namespace Silverline
         {
             const ModuleId B = ModuleId.Bank;
             // Interest and profitability (8.8)
-            HSettings.Float(B, "Interest & profitability", "bank.profit", 1.2f, 0.01f, 100f,
+            HSettings.LogFloat(B, "Interest & profitability", "bank.profit", 1.2f, 0.01f, 100f,
                 "Bank M per game year (profitability)", "How much invested money grows on average per game year (60 days). 1.0 = plus/minus nothing, 1.2 = +20 % a year, 0 = the money disappears. Log scale 0.01 to 100; type a number for the exact value. Follows the difficulty slider until you set it yourself.",
                 hardMin: 0f, hardMax: 1000f, tiers: new[] { 100f, 2.0f, 1.5f, 1.2f, 1.0f, 0.7f, 0.1f });
             HSettings.Float(B, "Interest & profitability", "bank.accountBeta", 1.0f, 0f, 2f,
@@ -28,6 +28,8 @@ namespace Silverline
             // Fees and services (8.2, 8.3)
             HSettings.Bool(B, "Account", "bank.directDeposit", true, "Route till money straight to the bank",
                 "Once an account exists, the tills of your businesses are emptied into the account at midnight instead of leaving silver on the floor.");
+            HSettings.Bool(B, "Account", "bank.tradeDeposit", true, "Deposit trade income",
+                "With direct deposit on, silver you receive from traders and trade ships goes straight into the account (at the direct deposit fee) instead of being dropped as coins. Caravans are not affected.");
             HSettings.Percent(B, "Fees", "bank.feeFactor", 1.0f, 0f, 3f, "Bank fee level", "Multiplies all fees of your bank. 0 % = no fees at all.", hardMin: 0f, hardMax: 10f);
             HSettings.Silver(B, "Fees", "bank.switchFee", 50, 0, 500, "Fee for changing banks", "What it costs to move your account to another bank (KONZEPT 2.2: 50 silver).");
             HSettings.Float(B, "Services", "bank.depositDelayHours", 1f, 0f, 6f, "Deposit delay without a branch (hours)", "Silver put into the account without a bank counter or ATM nearby arrives after this many hours.", hardMin: 0f, hardMax: 48f);
@@ -64,8 +66,7 @@ namespace Silverline
             {
                 var s = HSettings.Find("bank.profit");
                 if (s == null) return 1.2;
-                if (HSettings.IsOverridden(s)) return HSettings.Get(s);
-                return FinanceMath.LogInterp(ProfitAnchors, Tier);
+                return HSettings.Get(s);   // LogFloat: the tier default is interpolated in log space by the settings core
             }
         }
         public static double DefaultProfitFor(float tier) => FinanceMath.LogInterp(ProfitAnchors, tier);

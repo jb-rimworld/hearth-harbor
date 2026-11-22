@@ -22,7 +22,13 @@ namespace Silverline
             synth++; return synth * 2500;
         }
         public static void Hours(FinanceGame g, int n) { for (int i = 0; i < n; i++) { int t = NextHour(g); g.lastHourTick = t; g.StepHourLive(t); } }
-        public static void Fund(Money m) => Ledger.Current.Post("world", FinanceAccounts.Colony, m, "test funding");
+        /// <summary>Opens a real Silverline account (the products trade against it). No-op if the colony already has one.</summary>
+        public static void Account()
+        {
+            var c = BankGameComp.Current;
+            if (c != null && !c.HasAccount) c.OpenAccount(SL_BankDef.Default, false);
+        }
+        public static void Fund(Money m) { Account(); Ledger.Current.Post("world", FinanceAccounts.Colony, m, "test funding"); }
         public static bool Balanced => Ledger.Current.SumAll() == 0;
         public static Faction AnyFaction() => Find.FactionManager.AllFactionsListForReading.FirstOrDefault(f => !f.IsPlayer && !f.Hidden && !f.defeated && f.def.humanlikeFaction && !f.def.permanentEnemy);
         public static AssetState Idx(FinanceGame g) => g.Asset("SL_Asset_Index");
@@ -38,13 +44,23 @@ namespace Silverline
             t.Check(Math.Abs(DetMath.Exp(1.234) - Math.Exp(1.234)) < 1e-12, "DetMath.Exp");
             t.Check(Math.Abs(DetMath.Ln(7.5) - Math.Log(7.5)) < 1e-12, "DetMath.Ln");
             // settings and tier anchors (9.2): M per year 100 … 0.1 over the seven tiers
-            var s = HSettings.Find("finance.profitLog"); t.Check(s != null, "profitability setting registered");
+            var s = HSettings.Find("finance.profit"); t.Check(s != null && s.Kind == SettingKind.LogFloat, "profitability setting registered as a log setting");
             if (s != null)
             {
                 double[] expected = { 100, 2.0, 1.5, 1.2, 1.0, 0.7, 0.1 };
-                for (int i = 0; i < 7; i++) t.Check(Math.Abs(Math.Exp(s.DefaultFor(i)) / expected[i] - 1) < 0.01, $"tier {i} anchor M={Math.Exp(s.DefaultFor(i)):0.###}");
-                double mid = Math.Exp(s.DefaultFor(0.5f)); t.Check(mid > 2 && mid < 100, "interpolated tier stays inside the anchors: " + mid.ToString("0.0"));
+                for (int i = 0; i < 7; i++) t.Check(Math.Abs(s.DefaultFor(i) / expected[i] - 1) < 0.001, $"tier {i} anchor M={s.DefaultFor(i):0.###}");
+                double mid = s.DefaultFor(0.5f); t.Check(Math.Abs(mid / Math.Sqrt(100 * 2.0) - 1) < 0.001, "tier 0.5 is the geometric middle of 100 and 2: " + mid.ToString("0.00"));
+                // slider mapping: round trip, ends, readable numbers
+                t.Check(Math.Abs(s.ToSlider(1f) - 0f) < 1e-5 && Math.Abs(s.FromSlider(s.ToSlider(1.2f)) - 1.2f) < 1e-5 && Math.Abs(s.FromSlider(s.SliderHi) - 100f) < 0.01f && Math.Abs(s.FromSlider(s.SliderLo) - 0.1f) < 1e-4f, "log slider maps 0.1 … 100 and back");
+                // old saves stored ln(M) under finance.profitLog: still read correctly, until the new key is set
+                var st = HearthProfile.Current.Store; float keep; bool had = st.TryGet("finance.profit", out keep); float keepLegacy; bool hadLegacy = st.TryGet("finance.profitLog", out keepLegacy);
+                st.Remove("finance.profit"); st.Set("finance.profitLog", 0.40547f);
+                t.Check(Math.Abs(HSettings.Get(s) - 1.5f) < 0.001f && HSettings.IsOverridden(s), "legacy ln(M)=0.40547 reads as M=1.5: " + HSettings.Get(s));
+                HSettings.Set(s, 0.7f); t.Check(Math.Abs(HSettings.Get(s) - 0.7f) < 1e-6f && !st.Has("finance.profitLog"), "setting the new key replaces the legacy value");
+                HSettings.Reset(s); t.Check(!HSettings.IsOverridden(s), "reset clears both keys");
+                if (had) st.Set("finance.profit", keep); if (hadLegacy) st.Set("finance.profitLog", keepLegacy);
             }
+            var bp = HSettings.Find("bank.profit"); t.Check(bp != null && bp.Kind == SettingKind.LogFloat && Math.Abs(bp.DefaultFor(3f) - 1.2f) < 1e-4f && Math.Abs(bp.DefaultFor(0.5f) / Math.Sqrt(200) - 1) < 1e-3, "bank profitability is a log setting with the same anchors");
             foreach (var key in new[] { "finance.volMult", "finance.jumpMult", "finance.hazardMult", "finance.omenGamma", "finance.omenFee", "finance.projectStakePct", "lottery.globalPrice", "lottery.colonyQuote", "lottery.colonyInterval" })
                 t.Check(HSettings.Find(key) != null, "setting " + key);
             // all asset defs are sane and produce finite drift
@@ -81,7 +97,7 @@ namespace Silverline
         {
             var g = FinanceGame.Current; g.EnsureInit(); var led = Ledger.Current;
             FinTest.Fund(Money.FromSilver(20000.12345));
-            t.Check(FinanceAccounts.Available, "products available (fallback account when no bank module)");
+            t.Check(FinanceAccounts.Available, "products available (real Silverline account)");
             var idx = FinTest.Idx(g); t.Check(idx != null && idx.price > 0, "index fund listed at " + idx?.price.ToString("0.00000"));
 
             // buy / sell round trip at an unchanged price loses only rounding
