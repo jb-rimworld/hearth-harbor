@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <Hearth.VenueTypeDef>
+    <defName>HH_Venue_DrugLounge</defName>
+    <label>drug lounge</label>
+    <description>A dim room with sofas and a ledger nobody reads. Guests pay for a session; they only take what their ideology allows. Open at night.</description>
+    <module>Underworld</module>
+    <defaultOpenHour>20</defaultOpenHour>
+    <defaultCloseHour>6</defaultCloseHour>
+    <iconPath>UI/HH/Underworld/DrugLounge</iconPath>
+    <needsStaff>false</needsStaff>
+    <priceFactor>1</priceFactor>
+    <researchPrerequisite>HH_Underworld_1</researchPrerequisite>
+    <color>(0.45, 0.30, 0.55)</color>
+    <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
+  </Hearth.VenueTypeDef>
+
+  <JobDef><defName>HH_WatchBout</defName><driverClass>Hearth.Underworld.JobDriver_WatchBout</driverClass><reportString>watching the pit.</reportString></JobDef>
+  <JobDef><defName>HH_BackRoomVisit</defName><driverClass>Hearth.Underworld.JobDriver_BackRoomVisit</driverClass><reportString>using the back room.</reportString></JobDef>
+  <JobDef><defName>HH_FenceDeal</defName><driverClass>Hearth.Underworld.JobDriver_FenceDeal</driverClass><reportString>doing business at the fence's counter.</reportString></JobDef>
+  <JobDef><defName>HH_UseLounge</defName><driverClass>Hearth.Underworld.JobDriver_UseLounge</driverClass><reportString>relaxing in the lounge.</reportString></JobDef>
+  <JobDef><defName>HH_Interrogate</defName><driverClass>Hearth.Underworld.JobDriver_Interrogate</driverClass><reportString>questioning TargetA.</reportString></JobDef>
+  <JobDef><defName>HH_HuntQuarry</defName><driverClass>Hearth.Underworld.JobDriver_HuntQuarry</driverClass><reportString>hunting TargetA.</reportString></JobDef>
+  <JobDef><defName>HH_QuarryFlee</defName><driverClass>Hearth.Underworld.JobDriver_QuarryFlee</driverClass><reportString>running.</reportString></JobDef>
+
+  <ThoughtDef>
+    <defName>HH_SawFightPit_Kind</defName>
+    <durationDays>4</durationDays>
+    <stackLimit>1</stackLimit>
+    <requiredTraits><li>Kind</li></requiredTraits>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <stages><li><label>watched a pit fight</label><description>People were made to fight for bets and I stood close enough to hear it.</description><baseMoodEffect>-3</baseMoodEffect></li></stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>HH_SawFightPit_Bloodlust</defName>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <requiredTraits><li>Bloodlust</li></requiredTraits>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <stages><li><label>watched a pit fight</label><description>Now that was a proper fight.</description><baseMoodEffect>4</baseMoodEffect></li></stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>HH_Interrogated</defName>
+    <durationDays>5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages><li><label>questioned by strangers</label><description>Strangers sat across from me for an hour and asked the same things over and over.</description><baseMoodEffect>-5</baseMoodEffect></li></stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>HH_OrganTradeOutrage</defName>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.7</stackedEffectMultiplier>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <stages><li><label>organ trade in the house</label><description>They sell organs here. Under our roof. And nobody does anything about it.</description><baseMoodEffect>-4</baseMoodEffect></li></stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>HH_HuntOnPrisoners</defName>
+    <durationDays>10</durationDays>
+    <stackLimit>1</stackLimit>
+    <nullifyingTraits><li>Bloodlust</li><li>Psychopath</li></nullifyingTraits>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <stages><li><label>a person died in the hunt</label><description>They hunted a person on our grounds. I cannot stop thinking about it.</description><baseMoodEffect>-5</baseMoodEffect></li></stages>
+  </ThoughtDef>
+
+  <IncidentDef>
+    <defName>HH_UnderworldStranger</defName>
+    <label>stranger asks about a back room</label>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>Hearth.Underworld.IncidentWorker_UnderworldStranger</workerClass>
+    <category>Misc</category>
+    <baseChance>0</baseChance>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>HH_GangVisit</defName>
+    <label>gang visit</label>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>Hearth.Underworld.IncidentWorker_GangVisit</workerClass>
+    <category>Misc</category>
+    <baseChance>0</baseChance>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>HH_HuntParty</defName>
+    <label>hunt party</label>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>Hearth.Underworld.IncidentWorker_HuntParty</workerClass>
+    <category>Misc</category>
+    <baseChance>0</baseChance>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>HH_SmugglerLanding</defName>
+    <label>smuggler's landing</label>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>Hearth.Underworld.IncidentWorker_SmugglerLanding</workerClass>
+    <category>Misc</category>
+    <baseChance>0</baseChance>
+  </IncidentDef>
+</Defs>
