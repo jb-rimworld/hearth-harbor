@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JoyKindDef>
+    <defName>HH_Gambling</defName>
+    <label>gambling</label>
+  </JoyKindDef>
+
+  <!-- Colonists gamble with house chips: a very high recreation value, real addiction risk (6.12). -->
+  <JobDef>
+    <defName>HH_PlayCasino</defName>
+    <driverClass>Hearth.Casino.JobDriver_PlayCasino</driverClass>
+    <reportString>gambling.</reportString>
+    <joyDuration>4000</joyDuration>
+    <joyMaxParticipants>4</joyMaxParticipants>
+    <joySkill>Intellectual</joySkill>
+    <joyXpPerTick>0.002</joyXpPerTick>
+    <joyKind>HH_Gambling</joyKind>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>HH_RunCasinoTable</defName>
+    <driverClass>Hearth.Casino.JobDriver_RunCasinoTable</driverClass>
+    <reportString>running the table.</reportString>
+    <suspendable>false</suspendable>
+  </JobDef>
+
+  <JoyGiverDef>
+    <defName>HH_PlayCasinoJoy</defName>
+    <giverClass>Hearth.Casino.JoyGiver_Gambling</giverClass>
+    <baseChance>3</baseChance>
+    <thingDefs>
+      <li>HH_SlotMachine</li>
+      <li>HH_RouletteTable</li>
+      <li>HH_BlackjackTable</li>
+      <li>HH_PokerTable</li>
+    </thingDefs>
+    <jobDef>HH_PlayCasino</jobDef>
+    <joyKind>HH_Gambling</joyKind>
+    <desireSit>false</desireSit>
+    <requireChair>false</requireChair>
+    <requiredCapacities>
+      <li>Sight</li>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </JoyGiverDef>
+
+  <WorkGiverDef>
+    <defName>HH_RunCasinoTable</defName>
+    <label>run casino tables</label>
+    <giverClass>Hearth.Casino.WorkGiver_RunCasinoTable</giverClass>
+    <workType>HH_Serving</workType>
+    <priorityInType>30</priorityInType>
+    <verb>run</verb>
+    <gerund>running</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <ThoughtDef>
+    <defName>HH_WonAtTheTables</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>1</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>won at the tables</label>
+        <description>The chips fell my way. For once.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HH_LostAtTheTables</defName>
+    <durationDays>0.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>lost it all at the tables</label>
+        <description>Every chip, gone. They were free, and it still stings.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>
