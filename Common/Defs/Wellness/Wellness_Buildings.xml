@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JoyKindDef>
+    <defName>HH_Relaxation</defName>
+    <label>spa relaxation</label>
+  </JoyKindDef>
+
+  <!-- Hot tub: 2x2, powered, a little heat. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_HotTub</defName>
+    <label>hot tub</label>
+    <description>A wooden tub with a heating coil and a pump that mostly works. Two people can soak at once. Colonists get recreation and a calm mood; guests in a spa venue pay for the privilege.</description>
+    <graphicData>
+      <texPath>Things/HH/Wellness/HotTub</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData><volume>(1.8, 0.3, 1.8)</volume></shadowData>
+    </graphicData>
+    <size>(2,2)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>30</pathCost>
+    <fillPercent>0.3</fillPercent>
+    <rotatable>true</rotatable>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <canOverlapZones>false</canOverlapZones>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <researchPrerequisites><li>HH_Wellness</li></researchPrerequisites>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories><li>BuildingsJoy</li></thingCategories>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Mass>80</Mass>
+      <WorkToBuild>6000</WorkToBuild>
+      <Flammability>0.6</Flammability>
+      <Beauty>2</Beauty>
+      <Comfort>0.7</Comfort>
+      <JoyGainFactor>1.4</JoyGainFactor>
+    </statBases>
+    <costList>
+      <WoodLog>60</WoodLog>
+      <Steel>40</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <building>
+      <joyKind>HH_Relaxation</joyKind>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+        <shortCircuitInRain>true</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>4</heatPerSecond>
+        <heatPushMaxTemperature>30</heatPushMaxTemperature>
+      </li>
+      <li Class="Hearth.Wellness.CompProperties_WellnessFacility">
+        <kind>HotTub</kind>
+        <maxUsers>2</maxUsers>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Sauna stove: 1x1, burns wood. The room around it is the sauna once it is warm enough. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_Sauna</defName>
+    <label>sauna stove</label>
+    <description>A stone-lined wood stove that turns a small closed room into a sauna. The room counts as a sauna once it stays at or above the minimum temperature set in the mod settings (45 °C by default). Keep it fed with wood and keep the room small and walled in.</description>
+    <graphicData>
+      <texPath>Things/HH/Wellness/SaunaStove</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData><volume>(0.7, 0.4, 0.7)</volume></shadowData>
+    </graphicData>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <fillPercent>0.35</fillPercent>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <researchPrerequisites><li>HH_Bathhouse</li></researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+      <li>PlaceWorker_Heater</li>
+      <li>PlaceWorker_GlowRadius</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories><li>BuildingsJoy</li></thingCategories>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Mass>30</Mass>
+      <WorkToBuild>1800</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>1</Beauty>
+      <JoyGainFactor>1.3</JoyGainFactor>
+    </statBases>
+    <costList>
+      <Steel>35</Steel>
+      <WoodLog>15</WoodLog>
+    </costList>
+    <building>
+      <joyKind>HH_Relaxation</joyKind>
+    </building>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>14.0</fuelConsumptionRate>
+        <fuelCapacity>25.0</fuelCapacity>
+        <fuelConsumptionPerTickInRain>0.0006</fuelConsumptionPerTickInRain>
+        <fuelFilter><thingDefs><li>WoodLog</li></thingDefs></fuelFilter>
+        <initialFuelPercent>0</initialFuelPercent>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <functionsInVacuum>false</functionsInVacuum>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(252,187,113,0)</glowColor>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>40</heatPerSecond>
+        <heatPushMaxTemperature>62</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_FireOverlay"><fireSize>0.7</fireSize></li>
+      <li Class="Hearth.Wellness.CompProperties_WellnessFacility">
+        <kind>Sauna</kind>
+        <maxUsers>4</maxUsers>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Massage table: 2x1, needs a masseur (colonist with the Serving work type). -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_MassageTable</defName>
+    <label>massage table</label>
+    <description>A padded table with a face hole and a shelf of oils. Needs a colonist with the Serving work type to do the kneading; they gain Social and Medicine experience, the client pays (guests) or relaxes (colonists).</description>
+    <graphicData>
+      <texPath>Things/HH/Wellness/MassageTable</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,1)</drawSize>
+      <shadowData><volume>(1.8, 0.4, 0.8)</volume></shadowData>
+    </graphicData>
+    <size>(2,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>30</pathCost>
+    <fillPercent>0.3</fillPercent>
+    <rotatable>true</rotatable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <designationCategory>HH_Hospitality</designationCategory>
+    <researchPrerequisites><li>HH_Bathhouse</li></researchPrerequisites>
+    <placeWorkers><li>PlaceWorker_PreventInteractionSpotOverlap</li></placeWorkers>
+    <thingCategories><li>BuildingsJoy</li></thingCategories>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <statBases>
+      <MaxHitPoints>110</MaxHitPoints>
+      <WorkToBuild>2400</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Mass>25</Mass>
+      <Beauty>1</Beauty>
+      <Comfort>0.6</Comfort>
+      <JoyGainFactor>1.5</JoyGainFactor>
+    </statBases>
+    <costList>
+      <WoodLog>45</WoodLog>
+      <Cloth>12</Cloth>
+    </costList>
+    <building>
+      <joyKind>HH_Relaxation</joyKind>
+    </building>
+    <comps>
+      <li Class="Hearth.Wellness.CompProperties_WellnessFacility">
+        <kind>Massage</kind>
+        <maxUsers>1</maxUsers>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- TEST ONLY: never buildable (no designation category, no cost). Lets the wellness.guest suite make a spa venue without the Venues module. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>HH_TestOnly_VenueSign</defName>
+    <label>test venue sign (test only)</label>
+    <description>Only for automated tests. Cannot be built.</description>
+    <graphicData>
+      <texPath>Things/Building/Joy/Telescope</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.2</fillPercent>
+    <statBases><MaxHitPoints>50</MaxHitPoints></statBases>
+    <comps>
+      <li Class="Hearth.CompProperties_VenueSign"/>
+    </comps>
+  </ThingDef>
+</Defs>

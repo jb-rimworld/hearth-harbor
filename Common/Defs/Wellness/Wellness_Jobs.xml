@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>HH_UseHotTub</defName>
+    <driverClass>Hearth.Wellness.JobDriver_UseWellness</driverClass>
+    <reportString>soaking in TargetA.</reportString>
+    <joyDuration>2000</joyDuration>
+    <joyMaxParticipants>2</joyMaxParticipants>
+    <joyGainRate>1.2</joyGainRate>
+    <joyKind>HH_Relaxation</joyKind>
+    <isCrawlingIfDowned>false</isCrawlingIfDowned>
+  </JobDef>
+  <JobDef>
+    <defName>HH_UseSauna</defName>
+    <driverClass>Hearth.Wellness.JobDriver_UseWellness</driverClass>
+    <reportString>sweating in the sauna.</reportString>
+    <joyDuration>1800</joyDuration>
+    <joyMaxParticipants>4</joyMaxParticipants>
+    <joyGainRate>1.2</joyGainRate>
+    <joyKind>HH_Relaxation</joyKind>
+    <isCrawlingIfDowned>false</isCrawlingIfDowned>
+  </JobDef>
+  <JobDef>
+    <defName>HH_ReceiveMassage</defName>
+    <driverClass>Hearth.Wellness.JobDriver_ReceiveMassage</driverClass>
+    <reportString>getting a massage.</reportString>
+    <joyDuration>1500</joyDuration>
+    <joyMaxParticipants>1</joyMaxParticipants>
+    <joyGainRate>1.3</joyGainRate>
+    <joyKind>HH_Relaxation</joyKind>
+    <isCrawlingIfDowned>false</isCrawlingIfDowned>
+  </JobDef>
+  <JobDef>
+    <defName>HH_GiveMassage</defName>
+    <driverClass>Hearth.Wellness.JobDriver_GiveMassage</driverClass>
+    <reportString>massaging TargetB.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+  </JobDef>
+
+  <WorkGiverDef>
+    <defName>HH_GiveMassage</defName>
+    <label>give massage</label>
+    <giverClass>Hearth.Wellness.WorkGiver_GiveMassage</giverClass>
+    <workType>HH_Serving</workType>
+    <priorityInType>40</priorityInType>
+    <verb>massage</verb>
+    <gerund>massaging</gerund>
+    <scanThings>true</scanThings>
+    <requiredCapacities><li>Manipulation</li></requiredCapacities>
+  </WorkGiverDef>
+
+  <JoyGiverDef>
+    <defName>HH_Joy_HotTub</defName>
+    <giverClass>Hearth.Wellness.JoyGiver_UseWellness</giverClass>
+    <baseChance>3.0</baseChance>
+    <canDoWhileInBed>true</canDoWhileInBed>
+    <desireSit>false</desireSit>
+    <requireChair>false</requireChair>
+    <thingDefs><li>HH_HotTub</li></thingDefs>
+    <jobDef>HH_UseHotTub</jobDef>
+    <joyKind>HH_Relaxation</joyKind>
+  </JoyGiverDef>
+  <JoyGiverDef>
+    <defName>HH_Joy_Sauna</defName>
+    <giverClass>Hearth.Wellness.JoyGiver_UseWellness</giverClass>
+    <baseChance>2.5</baseChance>
+    <canDoWhileInBed>true</canDoWhileInBed>
+    <desireSit>false</desireSit>
+    <requireChair>false</requireChair>
+    <thingDefs><li>HH_Sauna</li></thingDefs>
+    <jobDef>HH_UseSauna</jobDef>
+    <joyKind>HH_Relaxation</joyKind>
+  </JoyGiverDef>
+  <JoyGiverDef>
+    <defName>HH_Joy_Massage</defName>
+    <giverClass>Hearth.Wellness.JoyGiver_UseWellness</giverClass>
+    <baseChance>2.0</baseChance>
+    <canDoWhileInBed>true</canDoWhileInBed>
+    <desireSit>false</desireSit>
+    <requireChair>false</requireChair>
+    <thingDefs><li>HH_MassageTable</li></thingDefs>
+    <jobDef>HH_ReceiveMassage</jobDef>
+    <joyKind>HH_Relaxation</joyKind>
+  </JoyGiverDef>
+</Defs>

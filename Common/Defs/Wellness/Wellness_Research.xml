@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>HH_Bathhouse</defName>
+    <label>bathhouse</label>
+    <description>Wood-fired saunas and massage tables. Hot rooms, warm company, and a reason for guests to stay another afternoon.</description>
+    <baseCost>600</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>HH_Hospitality</tab>
+    <researchViewX>6.0</researchViewX>
+    <researchViewY>2.0</researchViewY>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>HH_Wellness</defName>
+    <label>wellness</label>
+    <description>Heated tubs with pumps and a proper spa. Needs electricity, charges accordingly.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>HH_Hospitality</tab>
+    <prerequisites>
+      <li>HH_Bathhouse</li>
+      <li>Electricity</li>
+    </prerequisites>
+    <researchViewX>7.0</researchViewX>
+    <researchViewY>2.0</researchViewY>
+  </ResearchProjectDef>
+</Defs>
