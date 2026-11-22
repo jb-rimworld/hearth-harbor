@@ -357,8 +357,9 @@ namespace Hearth.Guests
             var outside = GenRadial.RadialCellsAround(site.Interior.CenterCell, 15, true).First(c => c.InBounds(map) && !wing[c] && c.Standable(map));
             t.Check(!outside.InAllowedArea(p), "cell outside the wing is not allowed for the guest");
             t.Check(site.Interior.CenterCell.InAllowedArea(p), "cell inside the wing is allowed");
-            var col = map.mapPawns.FreeColonistsSpawned.First();
-            t.Check(outside.InAllowedArea(col), "colonists are not affected by the wing");
+            var col = map.mapPawns.FreeColonistsSpawned.FirstOrDefault();
+            if (col != null) t.Check(outside.InAllowedArea(col), "colonists are not affected by the wing");
+            else t.Note("no free colonist on the map (story events): colonist check skipped");
             int inside = 0, samples = 0;
             for (int i = 0; i < 40; i++)
             {
@@ -406,7 +407,8 @@ namespace Hearth.Guests
             giz.First(x => x.defaultLabel.StartsWith("Handling")).action();
             t.Check(a.Handling == HandlingMode.Accompany, "gizmo switches Basics → Accompany");
             // real Hosting work: an ordered job from the work giver
-            var col = map.mapPawns.FreeColonistsSpawned.First(c => !c.Downed && c.Awake());
+            var col = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => !c.Downed && c.Awake()) ?? map.mapPawns.FreeColonistsSpawned.FirstOrDefault();
+            if (col == null) { t.Note("no free colonist on the map: handling checks skipped"); InnTestKit.RemoveAllGuests(map); InnTestKit.Teardown(site, map); MapComponent_HH_GuestScheduler.SuspendedForTests = false; yield break; }
             var wg = new WorkGiver_HH_AccompanyGuest();
             bool has = wg.HasJobOnThing(col, a.Pawn, forced: true);
             t.Check(has, "work giver offers to keep the guest company");
@@ -428,21 +430,25 @@ namespace Hearth.Guests
             t.Check(col.needs.mood.thoughts.memories.GetFirstMemoryOfDef(InnDefOf.HH_HostedWell) != null, "colonist warms to the guest (social memory)");
             HSettings.Set(ins, 1f);
             var budget0 = a.Budget; int leave0 = a.PlannedLeaveTick;
-            reg.Notify_Talk(map.mapPawns.FreeColonistsSpawned.OrderBy(c => c.skills.GetSkill(SkillDefOf.Social).Level).First(), a.Pawn);
+            reg.Notify_Talk(map.mapPawns.FreeColonistsSpawned.OrderBy(c => c.skills.GetSkill(SkillDefOf.Social).Level).FirstOrDefault() ?? col, a.Pawn);
             t.Check(a.Insulted, "insulted at 100 % risk");
             t.Check(a.Budget < budget0 && a.PlannedLeaveTick < leave0, "insulted guest spends less and leaves sooner");
             t.Check(a.Pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(InnDefOf.HH_GuestPestered) != null, "pestered thought");
             HSettings.Reset(ins);
             // joining at departure: strong bond, deterministic roll
             b.Handling = HandlingMode.Recruit;
+            int bond0 = GuestRegistry.Bond(b.Pawn, map, out int thr);
+            t.Check(thr == 30 + 4 * map.mapPawns.FreeColonistsSpawned.Count, "bond threshold 30 + 4·colonists = " + thr);
             foreach (var c in map.mapPawns.FreeColonistsSpawned) for (int i = 0; i < 10; i++) c.needs.mood.thoughts.memories.TryGainMemory(InnDefOf.HH_HostedWell, b.Pawn);
-            int bond = GuestRegistry.Bond(b.Pawn, map, out int thr);
-            t.Check(bond >= thr, $"bond {bond} reaches the threshold {thr} (30 + 4·colonists)");
+            int bond = GuestRegistry.Bond(b.Pawn, map, out _);
+            t.Check(bond - bond0 >= 15 * map.mapPawns.FreeColonistsSpawned.Count, $"good talks raise the bond ({bond0} → {bond})");
+            GuestRegistry.BondThresholdOverride = Math.Min(thr, bond); // base opinions depend on random traits/ideologies
             int gw0 = f.PlayerGoodwill;
             GuestRegistry.RecruitChanceOverride = 1f;
             var bp = b.Pawn;
             reg.DepartGroup(g, "planned");
             GuestRegistry.RecruitChanceOverride = null;
+            GuestRegistry.BondThresholdOverride = null;
             t.Check(bp.Faction == Faction.OfPlayer, "recruited guest joined the colony");
             t.Check(reg.Get(bp) == null, "joined guest's file closed");
             t.Check(a.GoodwillPoints <= 4, "insulted guest loses a goodwill point (" + a.GoodwillPoints + ")");

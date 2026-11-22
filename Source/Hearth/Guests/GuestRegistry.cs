@@ -561,7 +561,7 @@ namespace Hearth.Guests
         public static int Bond(Pawn guest, Map map, out int threshold)
         {
             var cols = map.mapPawns.FreeColonistsSpawned;
-            threshold = 30 + 4 * cols.Count;
+            threshold = BondThresholdOverride ?? 30 + 4 * cols.Count;
             int sum = 0;
             foreach (var c in cols) if (c.relations != null && c != guest) sum += c.relations.OpinionOf(guest);
             return sum;
@@ -835,6 +835,8 @@ namespace Hearth.Guests
         // test helpers ---------------------------------------------------------------
         /// <summary>Tests only: makes the recruitment roll deterministic.</summary>
         internal static float? RecruitChanceOverride;
+        /// <summary>Tests only: fixed bond threshold (colonists' base opinions vary with traits and ideologies).</summary>
+        internal static int? BondThresholdOverride;
         internal void ResetGoodwillBookForTests() => goodwillByQuadrum.Clear();
         internal void ForceRemoveAllForTests() { foreach (var r in records.ToList()) Unregister(r, "test cleanup"); groups.Clear(); }
         internal void AddRawRecordForTests(GuestRecord r) { records.Add(r); if (r.Pawn != null) Index(r); }
