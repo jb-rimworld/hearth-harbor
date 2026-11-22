@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Clawback Mutual: the twelve policies (KONZEPT 8.13). Three tiers each, see the tier table in code (InsuranceMath).
+       baseRisk: share of the sum insured per quadrum (SumRate) or silver per colonist per quadrum (PerColonist) or per head per travel day (PerTravelDay).
+       Riders: effect payoutBoost (+share of every payout), fastReview (one review day less), plusProgression (500 % accident table), deathSum (30 % death sum). -->
+
+  <Silverline.SL_PolicyDef>
+    <defName>SL_ActsOfStoryteller</defName>
+    <label>Acts of Storyteller Excluded</label>
+    <description>Pays for buildings destroyed by raiders, mechanoids and the occasional misunderstanding with a siege engine. Not valid for fires, weather or you.</description>
+    <slogan>We've got you covered.*</slogan>
+    <coversText>Buildings of your colony that are destroyed by enemy hands (raids, sieges, mechanoids). Not fire, not storms, not your own turrets.</coversText>
+    <kind>Colony</kind>
+    <riskModel>SumRate</riskModel>
+    <baseRisk>0.012</baseRisk>
+    <sumFollowsWealth>true</sumFollowsWealth>
+    <minSum>500</minSum><maxSum>60000</maxSum><defaultSum>3000</defaultSum>
+    <order>10</order>
+    <triggers><li>RaidBuilding</li></triggers>
+    <benefitBare>Cash for the destroyed building, after your own share.</benefitBare>
+    <benefitGood>Cash, or the building materials delivered by capsule.</benefitGood>
+    <benefitPremium>Replacement value, paid instantly by capsule. Goodwill once a year.</benefitPremium>
+    <riders>
+      <li><key>boost</key><label>Wear-and-tear waiver</label><description>Pays 10 % more of every loss (never more than the loss itself).</description><premiumShare>0.10</premiumShare><effect>payoutBoost</effect></li>
+      <li><key>express</key><label>Express paperwork</label><description>The claims department looks at your claim one day sooner.</description><premiumShare>0.06</premiumShare><effect>fastReview</effect></li>
+    </riders>
+  </Silverline.SL_PolicyDef>
+
+  <Silverline.SL_PolicyDef>
+    <defName>SL_MuffaloMachine</defName>
+    <label>Muffalo &amp; Machine Cover</label>
+    <description>For things that move or fly: shuttles, drop pods and vehicles that are destroyed by an enemy.</description>
+    <slogan>Wheels, rotors and a very thorough form.</slogan>
+    <coversText>Shuttles, drop pods and vehicles destroyed by hostile forces. Bionic parts are equipment and are, in principle, also meant to be here. In practice: see the Accident Plan.</coversText>
+    <kind>Colony</kind>
+    <riskModel>SumRate</riskModel>
+    <baseRisk>0.010</baseRisk>
+    <minSum>500</minSum><maxSum>30000</maxSum><defaultSum>2500</defaultSum>
+    <order>20</order>
+    <triggers><li>VehicleBuilding</li></triggers>
+    <benefitBare>Repair money, half of the time value.</benefitBare>
+    <benefitGood>Cash or parts by capsule, 80 % of the time value.</benefitGood>
+    <benefitPremium>Replacement value, instantly. The tow drone is yours.</benefitPremium>
+    <riders>
+      <li><key>boost</key><label>Wear-and-tear waiver</label><description>Pays 10 % more of every loss (never more than the loss itself).</description><premiumShare>0.10</premiumShare><effect>payoutBoost</effect></li>
+    </riders>
+  </Silverline.SL_PolicyDef>
+
+  <Silverline.SL_PolicyDef>
+    <defName>SL_RoofOverHead</defName>
+    <label>Roof Over Your Head</label>
+    <description>Fire, explosions and lightning. The fire has to be somebody else's, though.</description>
+    <slogan>Warm walls, cold comfort, quarterly premiums.</slogan>
+    <coversText>Buildings of your colony destroyed by fire, explosions and storms. Fires and blasts started by your own people are excluded (§11).</coversText>
+    <kind>Colony</kind>
+    <riskModel>SumRate</riskModel>
+    <baseRisk>0.010</baseRisk>
+    <sumFollowsWealth>true</sumFollowsWealth>
+    <minSum>500</minSum><maxSum>60000</maxSum><defaultSum>3000</defaultSum>
+    <order>30</order>
+    <triggers><li>FireBuilding</li></triggers>
+    <benefitBare>Cash for the burnt building, after your own share.</benefitBare>
+    <benefitGood>Cash, or building materials by capsule.</benefitGood>
+    <benefitPremium>Replacement value, instantly by capsule. Ashes not included.</benefitPremium>
+    <riders>
+      <li><key>boost</key><label>Wear-and-tear waiver</label><description>Pays 10 % more of every loss (never more than the loss itself).</description><premiumShare>0.10</premiumShare><effect>payoutBoost</effect></li>
+      <li><key>express</key><label>Express paperwork</label><description>The claims department looks at your claim one day sooner.</description><premiumShare>0.06</premiumShare><effect>fastReview</effect></li>
+    </riders>
+  </Silverline.SL_PolicyDef>
+
+  <Silverline.SL_PolicyDef>
+    <defName>SL_ItWasntMe</defName>
+    <label>It Wasn't Me Liability</label>
+    <description>For damage to guests, traders and their goods, caused in your care and definitely not by you.</description>
+    <slogan>Somebody has to pay. Preferably us, for a fee.</slogan>
+    <coversText>Damage to guests and to traders' goods for which your colony is liable. Reported by the inn, the market and the trade desk.</coversText>
+    <kind>Colony</kind>
+    <riskModel>PerColonist</riskModel>
+    <baseRisk>1.2</baseRisk>
+    <minSum>200</minSum><maxSum>8000</maxSum><defaultSum>1500</defaultSum>
+    <order>40</order>
+    <shareBare>0.5</shareBare><shareGood>0.8</shareGood><sharePremium>1.0</sharePremium>
+    <triggers><li>Liability</li></triggers>
+    <benefitBare>Half of the compensation, paid to the injured party's faction.</benefitBare>
+    <benefitGood>80 % of the compensation. Goodwill loss halved.</benefitGood>
+    <benefitPremium>All of it. The rumour is also taken care of.</benefitPremium>
+    <riders>
+      <li><key>express</key><label>Express paperwork</label><description>The claims department looks at your claim one day sooner.</description><premiumShare>0.06</premiumShare><effect>fastReview</effect></li>
+    </riders>
+  </Silverline.SL_PolicyDef>
+
+  <Silverline.SL_PolicyDef>
+    <defName>SL_LegalShield</defName>
+    <label>Legal Shield</label>
+    <description>Kanzlei Brix &amp; Partners pay your fines and argue with the people who issued them. Also helps against Clawback Mutual, as long as nobody reads clause 40.</description>
+    <slogan>Brix &amp; Partners: ethics on retainer.</slogan>
+    <coversText>Fines and penalties of inspectors, licence trouble and collection disputes. Also lowers the chance that Clawback Mutual denies your claims, and fixes your cancellation forms.</coversText>
+    <kind>Colony</kind>
+    <riskModel>PerColonist</riskModel>
+    <baseRisk>1.0</baseRisk>
+    <minSum>200</minSum><maxSum>10000</maxSum><defaultSum>2000</defaultSum>
+    <order>50</order>
+    <shareBare>0.5</shareBare><shareGood>0.8</shareGood><sharePremium>1.0</sharePremium>
+    <triggers><li>Fine</li></triggers>
+    <benefitBare>50 % of every fine.</benefitBare>
+    <benefitGood>80 % of every fine, and an appeal is lodged.</benefitGood>
+    <benefitPremium>The whole fine. Advocate Brix reads your forms before you do.</benefitPremium>
+    <riders>
+      <li><key>express</key><label>Express paperwork</label><description>The claims department looks at your claim one day sooner.</description><premiumShare>0.06</premiumShare><effect>fastReview</effect></li>
+    </riders>
+  </Silverline.SL_PolicyDef>
+
+  <Silverline.SL_PolicyDef>
+    <defName>SL_RimHealth</defName>
+    <label>Rim Health Plan</label>
+    <description>A flat sum for every colonist who spends a day in a sickbed.</description>
+    <slogan>Get well soon. Or at least get well quarterly.</slogan>
+    <coversText>Every day a colonist is bedridden with an illness or an injury that needs treatment. Food poisoning is an accident of cooking and counts anyway.</coversText>
+    <kind>Colony</kind>
+    <riskModel>PerColonist</riskModel>
+    <baseRisk>2.0</baseRisk>
+    <minSum>100</minSum><maxSum>5000</maxSum><defaultSum>1000</defaultSum>
+    <order>60</order>
+    <dailyBenefit>10</dailyBenefit>
+    <triggers><li>Illness</li></triggers>
+    <benefitBare>10 silver per bedridden colonist and day.</benefitBare>
+    <benefitGood>15 silver per bedridden colonist and day.</benefitGood>
+    <benefitPremium>25 silver per bedridden colonist and day. The second opinion is free.</benefitPremium>
+    <riders>
+      <li><key>boost</key><label>Hospital hospitality</label><description>Pays 10 % more on every sickbed day.</description><premiumShare>0.10</premiumShare><effect>payoutBoost</effect></li>
+    </riders>
+  </Silverline.SL_PolicyDef>
+
+  <Silverline.SL_PolicyDef>
+    <defName>SL_GoldenYears</defName>
+    <label>Golden Years Plan</label>
+    <description>A pension for colonists who made it to sixty. The premium is cheap while they are young, which is the point.</description>
+    <slogan>Retire early. Then late. Then quarterly.</slogan>
+    <coversText>One colonist. From the age of 60 Clawback Mutual pays a daily pension (Bare Minimum: a single lump sum).</coversText>
+    <kind>Person</kind>
+    <riskModel>SumRate</riskModel>
+    <baseRisk>0.02</baseRisk>
+    <ageSensitive>true</ageSensitive>
+    <minSum>200</minSum><maxSum>5000</maxSum><defaultSum>1000</defaultSum>
+    <order>70</order>
+    <dailyAnnuity>0.004</dailyAnnuity><lumpSum>1.0</lumpSum>
+    <triggers><li>Retirement</li></triggers>
+    <benefitBare>The sum insured, once, when the colonist turns 60.</benefitBare>
+    <benefitGood>0.4 % of the sum insured per day, from 60.</benefitGood>
+    <benefitPremium>0.6 % of the sum insured per day, from 60. A retirement party is thinkable.</benefitPremium>
+  </Silverline.SL_PolicyDef>
+
+  <Silverline.SL_PolicyDef>
+    <defName>SL_BlightBeGone</defName>
+    <label>Blight Be Gone</label>
+    <description>Cold snaps and toxic fallout eat crops. This eats the loss.</description>
+    <slogan>Harvest what we pay for.</slogan>
+    <coversText>Your crops in a cold snap or toxic fallout.</coversText>
+    <kind>Colony</kind>
+    <riskModel>SumRate</riskModel>
+    <baseRisk>0.02</baseRisk>
+    <minSum>200</minSum><maxSum>8000</maxSum><defaultSum>1500</defaultSum>
+    <order>80</order>
+    <triggers><li>Crop</li></triggers>
+    <benefitBare>Cash for the lost harvest, after your own share.</benefitBare>
+    <benefitGood>Cash, 80 % of the time value.</benefitGood>
+    <benefitPremium>Full value of the harvest, instantly.</benefitPremium>
+    <riders>
+      <li><key>boost</key><label>Wear-and-tear waiver</label><description>Pays 10 % more of every loss (never more than the loss itself).</description><premiumShare>0.10</premiumShare><effect>payoutBoost</effect></li>
+    </riders>
+  </Silverline.SL_PolicyDef>
+
+  <Silverline.SL_PolicyDef>
+    <defName>SL_ClosedForRepairs</defName>
+    <label>Closed for Repairs</label>
+    <description>When your business has to close, the income does not.</description>
+    <slogan>Out of order is not out of premium.</slogan>
+    <coversText>Lost income after a closure of your venue, reported by the businesses of Hearth &amp; Harbor.</coversText>
+    <kind>Colony</kind>
+    <riskModel>SumRate</riskModel>
+    <baseRisk>0.010</baseRisk>
+    <minSum>300</minSum><maxSum>6000</maxSum><defaultSum>1000</defaultSum>
+    <order>90</order>
+    <triggers><li>Closure</li></triggers>
+    <benefitBare>A flat day, whatever the day was worth.</benefitBare>
+    <benefitGood>The average daily loss, up to five days.</benefitGood>
+    <benefitPremium>Daily loss for up to 15 days.</benefitPremium>
+  </Silverline.SL_PolicyDef>
+
+  <Silverline.SL_PolicyDef MayRequire="Ludeon.RimWorld.Anomaly">
+    <defName>SL_UnspeakableEvents</defName>
+    <label>Unspeakable Events Rider</label>
+    <description>For damage the policy wording cannot describe without a lawyer in the room.</description>
+    <slogan>Some things are better insured than named.</slogan>
+    <coversText>Buildings destroyed by anomaly entities.</coversText>
+    <kind>Colony</kind>
+    <riskModel>SumRate</riskModel>
+    <baseRisk>0.008</baseRisk>
+    <minSum>500</minSum><maxSum>30000</maxSum><defaultSum>2000</defaultSum>
+    <order>100</order>
+    <triggers><li>AnomalyBuilding</li></triggers>
+    <benefitBare>Cash, after your own share. Please do not describe the entity.</benefitBare>
+    <benefitGood>Cash or materials by capsule.</benefitGood>
+    <benefitPremium>Replacement value, instantly. A specialist is on the phone.</benefitPremium>
+  </Silverline.SL_PolicyDef>
+
+  <Silverline.SL_PolicyDef>
+    <defName>SL_Wanderlust</defName>
+    <label>Wanderlust Travel Cover</label>
+    <description>For caravans: an insurance that is there when you are not. Billed by the head and the travel day, only while people are on the road.</description>
+    <slogan>Wish you were here. We'll cover the part where you are not.</slogan>
+    <coversText>Colonists on caravans. Bare Minimum pays only a death, Good Enough also lost body parts, Premium every scratch.</coversText>
+    <kind>Travel</kind>
+    <riskModel>PerTravelDay</riskModel>
+    <baseRisk>3.0</baseRisk>
+    <needsActuarial>true</needsActuarial>
+    <minSum>200</minSum><maxSum>5000</maxSum><defaultSum>1500</defaultSum>
+    <order>110</order>
+    <perInjuryFlat>8</perInjuryFlat>
+    <triggers><li>TravelDeath</li><li>TravelLimb</li><li>TravelInjury</li></triggers>
+    <benefitBare>The sum per head, only if somebody dies on the road.</benefitBare>
+    <benefitGood>Death, and lost body parts by the Schedule of Limbs.</benefitGood>
+    <benefitPremium>Everything above, and a flat sum for every single injury.</benefitPremium>
+  </Silverline.SL_PolicyDef>
+
+  <Silverline.SL_PolicyDef>
+    <defName>SL_LimbByLimb</defName>
+    <label>Limb by Limb Accident Plan</label>
+    <description>Every limb has a price. We wrote it down. It is on the last page, in the Schedule of Limbs.</description>
+    <slogan>Every limb has a price. We wrote it down.</slogan>
+    <coversText>One colonist. Permanent consequences of accidents by the Schedule of Limbs, and accidental death (20 % of the sum). Assessed one quadrum after the accident. Operations are not accidents.</coversText>
+    <kind>Person</kind>
+    <riskModel>SumRate</riskModel>
+    <baseRisk>0.012</baseRisk>
+    <minSum>500</minSum><maxSum>25000</maxSum><defaultSum>5000</defaultSum>
+    <order>120</order>
+    <triggers><li>LimbLoss</li><li>PawnDeath</li></triggers>
+    <benefitBare>Linear by the Schedule of Limbs, from 20 % invalidity. Partial losses are not paid.</benefitBare>
+    <benefitGood>225 % progression from 5 % invalidity. Partial losses are paid.</benefitGood>
+    <benefitPremium>350 % progression from 1 % invalidity. Every finger has a price.</benefitPremium>
+    <riders>
+      <li><key>plusProgression</key><label>Progression Plus (500 %)</label><description>Premium accidents pay on the 500 % table instead of 350 %. Only matters for the big ones.</description><premiumShare>0.12</premiumShare><effect>plusProgression</effect></li>
+      <li><key>deathSum</key><label>Death benefit boost</label><description>The accidental death sum rises from 20 % to 30 % of the basic sum.</description><premiumShare>0.05</premiumShare><effect>deathSum</effect></li>
+    </riders>
+  </Silverline.SL_PolicyDef>
+</Defs>

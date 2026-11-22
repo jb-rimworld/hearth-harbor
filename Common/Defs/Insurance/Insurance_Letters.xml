@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <LetterDef>
+    <defName>SL_ClawbackLetter</defName>
+    <letterClass>Silverline.ClaimLetter</letterClass>
+    <color>(0.42, 0.62, 0.92)</color>
+    <flashColor>(0.42, 0.62, 0.92)</flashColor>
+    <bounce>false</bounce>
+    <flashInterval>180</flashInterval>
+  </LetterDef>
+  <LetterDef>
+    <defName>SL_ClawbackNotice</defName>
+    <letterClass>StandardLetter</letterClass>
+    <color>(0.52, 0.68, 0.90)</color>
+    <flashColor>(0.52, 0.68, 0.90)</flashColor>
+    <flashInterval>0</flashInterval>
+  </LetterDef>
+  <LetterDef>
+    <defName>SL_ClawbackBad</defName>
+    <letterClass>StandardLetter</letterClass>
+    <color>(0.90, 0.62, 0.40)</color>
+    <flashColor>(0.90, 0.62, 0.40)</flashColor>
+    <flashInterval>0</flashInterval>
+  </LetterDef>
+</Defs>
