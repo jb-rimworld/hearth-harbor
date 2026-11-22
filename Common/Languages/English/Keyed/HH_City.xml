@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- City Life: cinema, salon, gallery, park, taxi, security (KONZEPT 6.9 / 5.19) -->
+  <HH.Tab.City>City life</HH.Tab.City>
+  <HH.City.TabTitle>City life</HH.City.TabTitle>
+  <HH.City.TabResearch>Research: level 1 (cinema, salon, gallery): {0}; level 2 (taxi, security): {1}</HH.City.TabResearch>
+
+  <HH.Enum.CityResearchMode.Full>Full</HH.Enum.CityResearchMode.Full>
+  <HH.Enum.CityResearchMode.Off>Off (everything available)</HH.Enum.CityResearchMode.Off>
+
+  <HH.City.ScreenNoPower>No power: the screen stays dark.</HH.City.ScreenNoPower>
+  <HH.City.ScreenShowing>Showing "{0}" ({1} left, {2} watching)</HH.City.ScreenShowing>
+  <HH.City.ScreenIdle>No film running.</HH.City.ScreenIdle>
+  <HH.City.ScreenBusy>A film is already running</HH.City.ScreenBusy>
+  <HH.City.NoSeats>No seats in front of the screen</HH.City.NoSeats>
+  <HH.City.MovieNightLabel>Movie night</HH.City.MovieNightLabel>
+  <HH.City.MovieNightDesc>Call the colony to a movie night at this screen. Everyone who sits down gains recreation and a good mood.</HH.City.MovieNightDesc>
+  <HH.City.MovieNightFailed>Cannot start a movie night now: needs a powered screen, enough seats and colonists who are free.</HH.City.MovieNightFailed>
+  <HH.City.LordReport>watching a film with the colony</HH.City.LordReport>
+
+  <HH.City.Film.0>Muffalo Love III</HH.City.Film.0>
+  <HH.City.Film.1>The Last Thrumbo</HH.City.Film.1>
+  <HH.City.Film.2>Cargo Pod Blues</HH.City.Film.2>
+  <HH.City.Film.3>Dust Between the Stars</HH.City.Film.3>
+  <HH.City.Film.4>A Boomalope's Tale</HH.City.Film.4>
+  <HH.City.Film.5>Siege of Stonecutter Hill</HH.City.Film.5>
+  <HH.City.Film.6>The Long Sleep</HH.City.Film.6>
+  <HH.City.Film.7>Smoke over Haven</HH.City.Film.7>
+
+  <HH.City.SalonGuests>Open to guests</HH.City.SalonGuests>
+  <HH.City.SalonGuestsDesc>Guests may take this chair for a paid haircut (the room needs a beauty salon sign and someone to serve).</HH.City.SalonGuestsDesc>
+  <HH.City.SalonCustomer>Customer: {0}</HH.City.SalonCustomer>
+  <HH.City.NewHaircut>Get a new haircut</HH.City.NewHaircut>
+
+  <HH.City.TaxiFree>A cab is waiting.</HH.City.TaxiFree>
+  <HH.City.TaxiBusy>The cab is out on a ride.</HH.City.TaxiBusy>
+  <HH.City.TaxiStats>Departures: {0}, arrivals: {1}, takings: {2} silver</HH.City.TaxiStats>
+</LanguageData>

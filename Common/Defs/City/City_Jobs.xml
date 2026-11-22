@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ===== Joy kinds ===== -->
+  <JoyKindDef>
+    <defName>HH_Cinema</defName>
+    <label>cinema</label>
+  </JoyKindDef>
+  <JoyKindDef>
+    <defName>HH_Scenic</defName>
+    <label>sightseeing</label>
+    <needsThing>true</needsThing>
+  </JoyKindDef>
+
+  <!-- ===== Jobs ===== -->
+  <JobDef>
+    <defName>HH_WatchScreening</defName>
+    <driverClass>Hearth.City.JobDriver_HHWatchScreening</driverClass>
+    <reportString>watching a film.</reportString>
+    <joyDuration>2400</joyDuration>
+    <joyMaxParticipants>24</joyMaxParticipants>
+    <joyKind>HH_Cinema</joyKind>
+    <joyGainRate>1.0</joyGainRate>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <isCrawlingIfDowned>false</isCrawlingIfDowned>
+  </JobDef>
+
+  <JobDef>
+    <defName>HH_SalonSit</defName>
+    <driverClass>Hearth.City.JobDriver_HHSalonSit</driverClass>
+    <reportString>waiting for a new look.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>HH_SalonStyle</defName>
+    <driverClass>Hearth.City.JobDriver_HHSalonStyle</driverClass>
+    <reportString>styling TargetA's customer.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>HH_SalonSelf</defName>
+    <driverClass>Hearth.City.JobDriver_HHSalonSelf</driverClass>
+    <reportString>getting a new haircut.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>HH_GalleryVisit</defName>
+    <driverClass>Hearth.City.JobDriver_HHGalleryVisit</driverClass>
+    <reportString>looking at art.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>HH_ParkRest</defName>
+    <driverClass>Hearth.City.JobDriver_HHParkRest</driverClass>
+    <reportString>sitting on a bench.</reportString>
+    <joyDuration>900</joyDuration>
+    <joyMaxParticipants>2</joyMaxParticipants>
+    <joyKind>HH_Scenic</joyKind>
+    <joyGainRate>0.8</joyGainRate>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>HH_TaxiDeparture</defName>
+    <driverClass>Hearth.City.JobDriver_HHTaxiDeparture</driverClass>
+    <reportString>waiting for a taxi.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>HH_Bodyguard</defName>
+    <driverClass>Hearth.City.JobDriver_HHBodyguard</driverClass>
+    <reportString>guarding TargetA.</reportString>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+  </JobDef>
+
+  <!-- ===== Work givers ===== -->
+  <WorkGiverDef>
+    <defName>HH_SalonStyleWork</defName>
+    <label>style guests in a salon</label>
+    <giverClass>Hearth.City.WorkGiver_HHSalonStyle</giverClass>
+    <workType>HH_Serving</workType>
+    <priorityInType>60</priorityInType>
+    <verb>style</verb>
+    <gerund>styling</gerund>
+    <scanThings>true</scanThings>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>HH_BodyguardWork</defName>
+    <label>guard a guest</label>
+    <giverClass>Hearth.City.WorkGiver_HHBodyguard</giverClass>
+    <workType>HH_Hosting</workType>
+    <priorityInType>70</priorityInType>
+    <verb>guard</verb>
+    <gerund>guarding</gerund>
+    <scanThings>true</scanThings>
+    <requiredCapacities>
+      <li>Moving</li>
+      <li>Sight</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <!-- ===== Joy givers: colonists watch films alone and sit on benches ===== -->
+  <JoyGiverDef>
+    <defName>HH_WatchScreeningJoy</defName>
+    <giverClass>Hearth.City.JoyGiver_WatchScreening</giverClass>
+    <baseChance>2.5</baseChance>
+    <thingDefs>
+      <li>HH_ProjectorScreen</li>
+    </thingDefs>
+    <jobDef>HH_WatchScreening</jobDef>
+    <joyKind>HH_Cinema</joyKind>
+    <requiredCapacities>
+      <li>Sight</li>
+    </requiredCapacities>
+  </JoyGiverDef>
+
+  <JoyGiverDef>
+    <defName>HH_ParkBenchJoy</defName>
+    <giverClass>Hearth.City.JoyGiver_ParkBench</giverClass>
+    <baseChance>0.9</baseChance>
+    <thingDefs>
+      <li>HH_ParkBench</li>
+    </thingDefs>
+    <jobDef>HH_ParkRest</jobDef>
+    <joyKind>HH_Scenic</joyKind>
+    <unroofedOnly>true</unroofedOnly>
+  </JoyGiverDef>
+
+  <!-- ===== Thoughts ===== -->
+  <ThoughtDef>
+    <defName>HH_WatchedMovie</defName>
+    <durationDays>0.8</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>watched a film</label>
+        <description>I sat in the dark with a bag of something crunchy and watched people with better problems than mine.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HH_ScreeningAttended</defName>
+    <durationDays>1.2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>movie night</label>
+        <description>Everybody on one side of the room, one screen on the other. We had a good evening.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HH_FreshLook</defName>
+    <durationDays>1.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>fresh look</label>
+        <description>New hair. Same person, but the mirror disagrees.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HH_AdmiredArt</defName>
+    <durationDays>1.0</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>admired some art</label>
+        <description>Somebody made these with their hands. I stood there for a while and did not mind.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HH_ParkRested</defName>
+    <durationDays>0.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>sat in the open</label>
+        <description>A bench, some air, a view. It is not much but it was enough.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- ===== Movie night for colonists: a joinable gathering around a projector screen ===== -->
+  <DutyDef>
+    <defName>HH_Screening</defName>
+    <label>movie night</label>
+    <hook>MediumPriority</hook>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="Hearth.City.JobGiver_ScreeningSeat" />
+        <li Class="JobGiver_WanderInGatheringArea">
+          <ticksBetweenWandersRange>50~250</ticksBetweenWandersRange>
+          <locomotionUrgency>Jog</locomotionUrgency>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <GatheringDef>
+    <defName>HH_Screening</defName>
+    <label>movie night</label>
+    <randomSelectionWeight>0</randomSelectionWeight>
+    <letterTitle>Movie night</letterTitle>
+    <letterText>{ORGANIZER_labelShort} has talked the colony into a movie night. Everyone who sits down in front of the screen will gain recreation and a good evening's worth of mood.</letterText>
+    <calledOffMessage>The movie night has been called off.</calledOffMessage>
+    <finishedMessage>The movie night is over.</finishedMessage>
+    <duty>HH_Screening</duty>
+    <workerClass>Hearth.City.GatheringWorker_Screening</workerClass>
+  </GatheringDef>
+</Defs>

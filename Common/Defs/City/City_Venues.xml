@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- City Life venue types (KONZEPT 6.9). The Venue Sign of the Venues module offers them in its menu. -->
+  <Hearth.VenueTypeDef>
+    <defName>HH_Venue_Cinema</defName>
+    <label>cinema</label>
+    <description>A dark room with a projector screen and plenty of chairs. Guests buy a ticket for the next screening; a screening runs for as long as the film does and nobody gets a refund for falling asleep. Needs a powered projector screen and at least a few seats in front of it.</description>
+    <module>CityLife</module>
+    <defaultOpenHour>14</defaultOpenHour>
+    <defaultCloseHour>1</defaultCloseHour>
+    <iconPath>UI/HH/City/Type_Cinema</iconPath>
+    <needsStaff>false</needsStaff>
+    <staffWorkType>HH_Serving</staffWorkType>
+    <priceFactor>1</priceFactor>
+    <researchPrerequisite>HH_CityLife_1</researchPrerequisite>
+    <color>(0.42,0.40,0.66)</color>
+  </Hearth.VenueTypeDef>
+
+  <Hearth.VenueTypeDef>
+    <defName>HH_Venue_Salon</defName>
+    <label>beauty salon</label>
+    <description>A room with salon chairs. Guests pay for a haircut, a new style, a dye job or, with the right ideology, a tattoo; a colonist with the serving work type does the work. Without anyone to serve, the salon is closed.</description>
+    <module>CityLife</module>
+    <defaultOpenHour>9</defaultOpenHour>
+    <defaultCloseHour>19</defaultCloseHour>
+    <iconPath>UI/HH/City/Type_Salon</iconPath>
+    <needsStaff>true</needsStaff>
+    <staffWorkType>HH_Serving</staffWorkType>
+    <priceFactor>1</priceFactor>
+    <researchPrerequisite>HH_CityLife_1</researchPrerequisite>
+    <color>(0.78,0.44,0.60)</color>
+  </Hearth.VenueTypeDef>
+
+  <Hearth.VenueTypeDef>
+    <defName>HH_Venue_Gallery</defName>
+    <label>gallery</label>
+    <description>A room full of sculptures, hung in good light. Guests pay a small entry fee and walk past the pieces one by one; the more beautiful the art, the happier they leave. Needs a handful of artworks in the room.</description>
+    <module>CityLife</module>
+    <defaultOpenHour>9</defaultOpenHour>
+    <defaultCloseHour>20</defaultCloseHour>
+    <iconPath>UI/HH/City/Type_Gallery</iconPath>
+    <needsStaff>false</needsStaff>
+    <staffWorkType>HH_Serving</staffWorkType>
+    <priceFactor>1</priceFactor>
+    <researchPrerequisite>HH_CityLife_1</researchPrerequisite>
+    <color>(0.70,0.62,0.36)</color>
+  </Hearth.VenueTypeDef>
+</Defs>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- City Life research (KONZEPT 7). Level 1 opens the cinema, the salon and the gallery, level 2 the taxi stand and personal security.
+       "Research mode: off" in the City Life settings finishes both quietly. -->
+  <ResearchProjectDef>
+    <defName>HH_CityLife_1</defName>
+    <label>city life</label>
+    <description>Projector screens for a proper cinema, styling chairs for a proper salon, and the know-how to charge admission to a room full of art. Strangers will pay surprising sums for a haircut and a seat in the dark.</description>
+    <tab>HH_Hospitality</tab>
+    <baseCost>1400</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>TubeTelevision</li>
+    </prerequisites>
+    <hiddenPrerequisites>
+      <li>ComplexFurniture</li>
+    </hiddenPrerequisites>
+    <researchViewX>12.00</researchViewX>
+    <researchViewY>4.20</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->city life</li>
+        <li>subject_story->ran a cinema on a rim world</li>
+        <li>subject_gerund->selling tickets</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>HH_CityLife_2</defName>
+    <label>taxi and bodyguards</label>
+    <description>A taxi stand where small shuttles pick guests up and set them down, and a bodyguard service for guests with more money than caution. Needs a working idea of how to land things on purpose.</description>
+    <tab>HH_Hospitality</tab>
+    <baseCost>2600</baseCost>
+    <techLevel>Industrial</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+      <li>HH_CityLife_1</li>
+      <li>TransportPod</li>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">Shuttles</li>
+    </prerequisites>
+    <researchViewX>14.00</researchViewX>
+    <researchViewY>4.20</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->taxis and bodyguards</li>
+        <li>subject_story->hailed a taxi that actually came</li>
+        <li>subject_gerund->dispatching taxis</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+</Defs>
