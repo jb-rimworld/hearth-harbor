@@ -219,6 +219,7 @@ namespace Hearth.Compat.Hospitality.Tests
                 if (lord == null || area == null) yield break;
                 yield return 250;
                 var visitors = lord.ownedPawns.ToList();
+                t.Note("lord before saving: " + lord.LordJob?.GetType().Name + ", toil " + lord.CurLordToil?.GetType().Name + ", faction " + lord.faction?.Name + ", pawns " + visitors.Count + ", lords on map " + map.lordManager.lords.Count);
                 GameDataSaveLoader.SaveGame(SaveName);
                 t.Check(File.Exists(dest), "saved " + dest);
                 // turn it into a Hospitality save
@@ -272,7 +273,9 @@ namespace Hearth.Compat.Hospitality.Tests
                 n++;
             }
             // 5. the visit lord → Hospitality classes, with Hospitality toil and trigger data
-            var lordNode = mapNode.SelectSingleNode("lordManager/lords/li[loadID='" + lord.loadID + "']") as XmlElement;
+            // vanilla does not write a field with its default value: the first lord of a game (loadID 0, which happens when no other
+            // lord was made before, e.g. with the Inn's scheduler not having sent anyone yet) has no <loadID> element at all
+            var lordNode = mapNode.SelectSingleNode(lord.loadID == 0 ? "lordManager/lords/li[not(loadID)]" : "lordManager/lords/li[loadID='" + lord.loadID + "']") as XmlElement;
             if (lordNode != null)
             {
                 (lordNode["lordJob"] as XmlElement)?.SetAttribute("Class", "Hospitality.LordJob_VisitColony");
@@ -330,11 +333,18 @@ namespace Hearth.Compat.Hospitality.Tests
             if (expectFeeSum >= 0) t.Check(rec.Beds.Sum(b => b.Fee) == expectFeeSum, "rental fees kept: " + string.Join(",", rec.Beds.Select(b => b.Fee)));
             var map = Find.CurrentMap;
             var beds = map.listerThings.ThingsInGroup(ThingRequestGroup.Bed).OfType<Building_Bed>().ToList();
-            var imported = beds.Where(HospitalityImport.IsImportedGuestBed).ToList();
+            // With the Inn module on, the importer hands each bed to the Inn (guest bed comp) and marks it adopted, after which
+            // IsImportedGuestBed (= "still waiting to be adopted") is false by design. So look the beds up by "was imported".
+            var imported = beds.Where(HospitalityImport.WasImported).ToList();
             t.Check(imported.Count == expectBeds, "imported beds found on the map: " + string.Join(", ", imported.Select(b => b.ThingID)));
             t.Check(imported.All(b => b.GetType() == typeof(Building_Bed) && !b.def.defName.EndsWith("Guest")), "imported beds are plain vanilla beds with base defs");
             t.Check(imported.All(b => b.Faction == Faction.OfPlayer), "imported beds still belong to the colony");
-            t.Check(beds.Count(b => !HospitalityImport.IsImportedGuestBed(b)) >= 1, "normal beds stay normal");
+            t.Check(beds.Count(b => !HospitalityImport.WasImported(b)) >= 1, "normal beds stay normal");
+            if (Modules.On(ModuleId.Inn) && GenTypes.GetTypeInAnyAssembly("Hearth.Guests.CompHH_GuestBed") != null)
+            {
+                t.Check(imported.All(b => b.GetComp<Hearth.Guests.CompHH_GuestBed>()?.Flag == true), "Inn is on: every imported bed is a guest bed of the Inn");
+                t.Check(!HospitalityImport.PendingBeds.Any(), "Inn is on: nothing is left waiting for adoption");
+            }
             t.Check(imported.All(b => HospitalityImport.RentalFee(b) == rec.Beds.First(r => r.ThingIdNumber == b.thingIDNumber).Fee), "RentalFee API answers");
             t.Check(!map.components.Any(c => c is HospitalityMapStub || c is HospitalityDroppedMapComponent), "map stubs removed after load");
             t.Check(Current.Game.components.Count(c => c is ImportedGuestBeds) == 1, "game component stand-in removed after load (one import record left)");

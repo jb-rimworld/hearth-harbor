@@ -88,6 +88,10 @@ namespace Hearth.Guests
                 int waited = 0;
                 while (waited < 24000 && !(visitors.Any(v => GuestFallback.Driven.Contains(v.thingIDNumber)) && comp.salesCount > sales0)) { yield return 200; waited += 200; }
                 t.Check(visitors.Any(v => GuestFallback.Driven.Contains(v.thingIDNumber)), $"fallback offered an activity to a vanilla visitor with the Inn on ({GuestFallback.JobsStarted - j0} jobs, {waited} ticks)");
+                if (comp.salesCount <= sales0)
+                    t.Note("no sale: last fallback job " + GuestFallback.LastJob?.def.defName + " on " + GuestFallback.LastJob?.targetA.Thing?.def.defName
+                        + "; venues on map: " + string.Join(", ", Venues.All(map).Select(v => v.Type?.defName + (v.IsOpenNow ? "(open)" : "(closed)") + "@" + v.Sign?.Position))
+                        + "; visitors: " + string.Join(", ", visitors.Select(v => v.LabelShort + ":" + (v.Spawned ? v.CurJob?.def.defName : "gone"))));
                 t.Check(comp.salesCount > sales0, "the shop sold something (" + (comp.salesCount - sales0) + " sales)");
                 t.Check(innPawn == null || !GuestFallback.Driven.Contains(innPawn.thingIDNumber), "the Inn guest was never offered a second activity by the fallback");
 

@@ -121,6 +121,8 @@ namespace Hearth.Wellness.Tests
             t.Check(pawn != null, "have a colonist");
             var area = map.Center + new IntVec3(12, 0, 10);
             WT.Clear(map, area, 6);
+            // vanilla's joy givers refuse outdoor play in rain/cold/heat, and the weather of the test game is random: put a roof over the tub
+            foreach (var c in CellRect.CenteredOn(area, 6).Cells) if (c.InBounds(map)) map.roofGrid.SetRoof(c, RoofDefOf.RoofConstructed);
             var tub = WT.Spawn(map, WellnessDefOf.HH_HotTub, area);
             var comp = tub.TryGetComp<CompWellnessFacility>();
             t.Check(comp != null, "tub spawned with comp");
@@ -136,6 +138,7 @@ namespace Hearth.Wellness.Tests
             float restBefore = pawn.needs.rest.CurLevel = 0.4f;
             var giver = DefDatabase<JoyGiverDef>.GetNamed("HH_Joy_HotTub").Worker;
             var job = giver.TryGiveJob(pawn);
+            if (job == null) t.Note($"no offer: pawn {pawn.LabelShort} at {pawn.Position}, joy {pawn.needs.joy.CurLevel:0.00}, usable {comp.UsableNow(out var w0)} ({w0}), allows {comp.AllowsUser(pawn)}, reach {pawn.CanReach(tub, PathEndMode.Touch, Danger.None)}, forbidden {tub.IsForbidden(pawn)}, weather {map.weatherManager.curWeather.defName}, temp {map.mapTemperature.OutdoorTemp:0}, inBed {pawn.InBed()}, mental {pawn.InMentalState}");
             t.Check(job != null && job.def == WellnessDefOf.HH_UseHotTub, "joy giver offers the hot tub");
             if (job == null) yield break;
             comp.colonistsMayUse = false;
@@ -149,6 +152,8 @@ namespace Hearth.Wellness.Tests
             t.Check(pawn.needs.joy.CurLevel > 0.1f, "joy rises while soaking: " + pawn.needs.joy.CurLevel.ToString("0.00"));
             foreach (var x in WT.WaitUntil(() => pawn.CurJob?.def != WellnessDefOf.HH_UseHotTub, 5000)) yield return x;
             t.Check(pawn.CurJob?.def != WellnessDefOf.HH_UseHotTub, "session ended");
+            if (pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(WellnessDefOf.HH_Relaxed) == null)
+                t.Note("session aborted: " + pawn.LabelShort + " job " + pawn.CurJob?.def.defName + " downed " + pawn.Downed + " mental " + pawn.InMentalState + " pos " + pawn.Position + " hp " + pawn.health.summaryHealth.SummaryHealthPercent.ToString("0.00") + " hediffs " + string.Join("/", pawn.health.hediffSet.hediffs.Select(h => h.def.defName)) + " temp " + pawn.AmbientTemperature.ToString("0") + " weather " + map.weatherManager.curWeather.defName);
             t.Check(pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(WellnessDefOf.HH_Relaxed) != null, "got the Relaxed memory");
             t.Check(pawn.needs.rest.CurLevel > restBefore, "rest bonus applied: " + pawn.needs.rest.CurLevel.ToString("0.00"));
             t.Check(pawn.health.hediffSet.GetFirstHediffOfDef(WellnessDefOf.HH_Soothed) != null, "soothed hediff applied");
@@ -242,7 +247,12 @@ namespace Hearth.Wellness.Tests
         public override int MaxTicks => 20000;
         public override IEnumerable<int> Run(Hearth.Testing.TestContext t)
         {
-            var map = t.Map; var client = WT.Colonist(map, 0); var masseur = WT.Colonist(map, 1);
+            var map = t.Map;
+            // the masseur must be able to do Serving work at all: the test colonists are random pawns and some backstories disable it
+            var masseur = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => !c.Downed && !c.Dead && !c.WorkTypeIsDisabled(WellnessDefOf.HH_Serving) && c.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation));
+            var client = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => c != masseur && !c.Downed && !c.Dead);
+            if (client == null || masseur == null || client == masseur)
+                t.Note("colonists: " + string.Join("; ", map.mapPawns.AllPawns.Where(p => p.IsColonist).Select(p => p.LabelShort + " spawned " + p.Spawned + " dead " + p.Dead + " downed " + p.Downed + " job " + p.CurJob?.def.defName + " hp " + p.health.summaryHealth.SummaryHealthPercent.ToString("0.00") + " hediffs " + string.Join("/", p.health.hediffSet.hediffs.Select(h => h.def.defName)))));
             t.Check(client != null && masseur != null && client != masseur, "two colonists available");
             if (client == null || masseur == null || client == masseur) yield break;
             var area = map.Center + new IntVec3(0, 0, 16);
@@ -253,7 +263,16 @@ namespace Hearth.Wellness.Tests
             masseur.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
             masseur.workSettings.SetPriority(WellnessDefOf.HH_Serving, 1);
             t.Check(WellnessStaff.MasseurAvailable(map, client), "a masseur is available");
-            masseur.workSettings.SetPriority(WellnessDefOf.HH_Serving, 0);
+            // "Nobody has Serving on" must be true for every colonist: with the Inn, shops and casino active the other colonists of the test
+            // colony have Serving switched on by default (and earlier suites' work settings stay), so remember and switch them all off.
+            var saved = new List<KeyValuePair<Pawn, int>>();
+            foreach (var c in map.mapPawns.FreeColonistsSpawned.ToList())
+            {
+                if (c.workSettings == null) continue;
+                c.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
+                saved.Add(new KeyValuePair<Pawn, int>(c, c.workSettings.GetPriority(WellnessDefOf.HH_Serving)));
+                c.workSettings.SetPriority(WellnessDefOf.HH_Serving, 0);
+            }
             t.Check(!WellnessStaff.MasseurAvailable(map, client), "no masseur when nobody has Serving on");
             var giver = DefDatabase<JoyGiverDef>.GetNamed("HH_Joy_Massage").Worker;
             client.needs.joy.CurLevel = 0.1f;
@@ -299,6 +318,7 @@ namespace Hearth.Wellness.Tests
             t.Check(client.CurJob?.def != WellnessDefOf.HH_ReceiveMassage, "client gives up waiting");
             t.Check(comp.recipient == null, "table freed after giving up");
             HSettings.Set(WellnessSettings.MassageWait, 0.7f);
+            foreach (var kv in saved) if (kv.Key.workSettings != null) kv.Key.workSettings.SetPriority(WellnessDefOf.HH_Serving, kv.Value);
             WT.ClearJob(client); WT.ClearJob(masseur);
             table.Destroy();
         }
@@ -374,7 +394,8 @@ namespace Hearth.Wellness.Tests
             t.Check(job != null && job.def == WellnessDefOf.HH_UseHotTub, "tub job for the guest");
             WT.ClearJob(guest);
             guest.jobs.StartJob(job, JobCondition.InterruptForced);
-            foreach (var x in WT.WaitUntil(() => guest.CurJob?.def != WellnessDefOf.HH_UseHotTub && WellnessState.Current.sessionsHotTub > 0, 6000, 50)) yield return x;
+            // the visitor may walk across the map first, and earlier suites already counted soaks: wait for THIS guest's finished session
+            foreach (var x in WT.WaitUntil(() => WellnessState.Current.lastSession.ContainsKey(guest.thingIDNumber) || guest.CurJob?.def != WellnessDefOf.HH_UseHotTub, 14000, 50)) yield return x;
             t.Check(WellnessState.Current.sessionsHotTub >= 1, "guest finished a soak");
             t.Check(Ledger.Current.Balance(till) > tillBefore, "colony till earned money: " + (Ledger.Current.Balance(till) - tillBefore));
             t.Check(info.Budget < budgetBefore, "guest budget reduced");

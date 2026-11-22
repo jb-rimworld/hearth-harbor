@@ -16,7 +16,14 @@ namespace Hearth.Dlc.Tests
     {
         public static Pawn Colonist(Map map)
         {
-            var p = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Colonist, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: true));
+            Pawn p = null;
+            // a random backstory may disable Social: such a pawn learns no social xp and the tests would flake. Re-roll until Social works.
+            for (int tries = 0; tries < 10; tries++)
+            {
+                p = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Colonist, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: true));
+                if (!p.skills.GetSkill(SkillDefOf.Social).TotallyDisabled || tries == 9) break;
+                Find.WorldPawns.PassToWorld(p, RimWorld.Planet.PawnDiscardDecideMode.Discard);
+            }
             GenSpawn.Spawn(p, CellFinder.RandomClosewalkCellNear(map.Center, map, 12), map);
             foreach (var tr in p.story.traits.allTraits.Where(x => x.def.defName.StartsWith("HH_")).ToList()) p.story.traits.RemoveTrait(tr); // generated pawns may roll our traits now: tests start clean
             if (ModsConfig.IdeologyActive && p.Ideo == null && Faction.OfPlayer.ideos?.PrimaryIdeo != null) p.ideo.SetIdeo(Faction.OfPlayer.ideos.PrimaryIdeo);
@@ -270,7 +277,23 @@ namespace Hearth.Dlc.Tests
             t.Check(ideo != null, "colonist has an ideoligion");
             Func<string, IndulgenceDef> D = n => DefDatabase<IndulgenceDef>.GetNamed(n);
             Action<MoneyTheme, MoneyStance> stance = (th, s) => DlcState.SetStance(ideo, th, s);
-            Action guilt = () => pawn.needs.mood.thoughts.memories.TryGainMemory(DefDatabase<ThoughtDef>.GetNamed("SleptOutside"), null, ideo.PreceptsListForReading.First());
+            // A guilty memory = a memory tied to a precept that really lowers mood. SleptOutside (the old pick) has minExpectationForNegativeThought,
+            // so on a poor test colony its mood offset is 0 and there is nothing to absolve: pick a memory that always counts.
+            Action guilt = () =>
+            {
+                var mem = pawn.needs.mood.thoughts.memories; var precept = ideo.PreceptsListForReading.First();
+                foreach (var td in DefDatabase<ThoughtDef>.AllDefsListForReading)
+                {
+                    if (!td.IsMemory || td.stages.NullOrEmpty() || td.stages[0] == null || td.stages[0].baseMoodEffect > -1f || td.minExpectationForNegativeThought != null
+                        || td.requiredTraits != null || td.nullifyingTraits != null || td.requiredGenes != null || td.workerClass != null || td.IsSocial || td.IsSituational) continue;
+                    int before = mem.Memories.Count;
+                    mem.TryGainMemory(td, null, precept);
+                    var gained = mem.Memories.Skip(before).FirstOrDefault(m => m.def == td);
+                    if (gained != null && gained.MoodOffset() < 0f) return;
+                    if (gained != null) mem.RemoveMemory(gained);
+                }
+                t.Check(false, "found a memory thought that lowers mood");
+            };
             Func<string, float> deity = _ => (float)l.Balance(IndulgenceApi.DeityAccount(ideo)).Silver;
             DlcState.Current.SetDestination(ideo, FundDestination.ToDeity);
             Faction.OfPlayer.ideos.SetPrimary(ideo);

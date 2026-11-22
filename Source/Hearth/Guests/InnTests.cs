@@ -15,6 +15,18 @@ namespace Hearth.Guests
     /// <summary>Shared helpers: builds a small walled, roofed guest room with beds (and optionally a front desk) by code.</summary>
     public static class InnTestKit
     {
+        /// <summary>Yields until the local hour is in [from, to] (at most one day). Suites that follow guests through a day must not start at night:
+        /// guests sleep then, and earlier suites of the same game leave any hour on the clock.</summary>
+        public static IEnumerable<int> WaitForHour(Map map, int from, int to)
+        {
+            for (int w = 0; w < 62000; w += 250)
+            {
+                int h = GenLocalDate.HourInteger(map);
+                if (h >= from && h <= to) yield break;
+                yield return 250;
+            }
+        }
+
         public sealed class Site
         {
             public List<Thing> Built = new List<Thing>();
@@ -403,12 +415,14 @@ namespace Hearth.Guests
     {
         public override string Name => "inn.handling";
         public override ModuleId Module => ModuleId.Inn;
-        public override int MaxTicks => 30000;
+        public override int MaxTicks => 95000;
         public override IEnumerable<int> Run(TestContext t)
         {
             InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
+            // the colonist's talk job fails when the guest goes to bed: start in the morning, so check-in and the talk happen by day
+            foreach (var x in InnTestKit.WaitForHour(map, 7, 11)) yield return x;
             var site = InnTestKit.BuildRoom(map, 2, true, 6, 4);
             InnTestKit.MarkGuestBeds(site, true);
             yield return 10;
@@ -437,7 +451,8 @@ namespace Hearth.Guests
             {
                 col.jobs.TryTakeOrderedJob(wg.JobOnThing(col, a.Pawn, true));
                 int w2 = 0;
-                while (w2 < 4000 && a.Talks == 0) { yield return 100; w2 += 100; }
+                while (w2 < 6000 && a.Talks == 0) { yield return 100; w2 += 100; }
+                if (a.Talks == 0) t.Note($"no talk: colonist {col.LabelShort} job {col.CurJob?.def.defName} at {col.Position}, guest at {a.Pawn.Position} job {a.Pawn.CurJob?.def.defName} awake {a.Pawn.Awake()} hour {GenLocalDate.HourInteger(map)}");
                 t.Check(a.Talks >= 1, "colonist kept the guest company (" + w2 + " ticks)");
                 t.Check(a.Pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(InnDefOf.HH_GuestAccompanied) != null, "guest has the company thought");
             }
@@ -487,12 +502,17 @@ namespace Hearth.Guests
     {
         public override string Name => "inn.night";
         public override ModuleId Module => ModuleId.Inn;
-        public override int MaxTicks => 110000;
+        public override int MaxTicks => 175000;
         public override IEnumerable<int> Run(TestContext t)
         {
             InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
+            // The suite follows the first evening/night/morning of a stay, so it must start in the daytime: a guest who arrives at night
+            // sleeps (and is charged for the second night) before the test looks at "the first evening". Earlier suites leave any hour on the clock.
+            int hour0 = GenLocalDate.HourInteger(map);
+            foreach (var x in InnTestKit.WaitForHour(map, 8, 14)) yield return x;
+            t.Note("started at hour " + hour0 + ", guest arrives at hour " + GenLocalDate.HourInteger(map));
             var site = InnTestKit.BuildRoom(map, 1, true, 5, 4);
             InnTestKit.MarkGuestBeds(site, true);
             yield return 10;

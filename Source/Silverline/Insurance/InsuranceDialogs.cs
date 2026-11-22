@@ -34,7 +34,7 @@ namespace Silverline
             Text.Font = GameFont.Medium; Widgets.Label(new Rect(inRect.x, y, inRect.width, 32f), Ins.T("Neg.Title", cl.id)); Text.Font = GameFont.Small; y += 34f;
             GUI.color = InsuranceUI.Grey;
             Widgets.Label(new Rect(inRect.x, y, inRect.width, 44f), Ins.T("Neg.Lead", cl.subject, Ins.Silver(cl.offered), Ins.Silver(cl.gross))); GUI.color = Color.white; y += 48f;
-            if (negotiator != null) { Widgets.Label(new Rect(inRect.x, y, inRect.width, 24f), Ins.T("Neg.Negotiator", negotiator.LabelShortCap, negotiator.GetStatValue(StatDefOf.NegotiationAbility).ToString("0%"))); }
+            if (negotiator != null) { Widgets.Label(new Rect(inRect.x, y, inRect.width, 24f), Ins.T("Neg.Negotiator", negotiator.LabelShortCap, ClaimEngine.NegotiationOf(negotiator).ToString("0%"))); }
             else { GUI.color = InsuranceUI.Bad; Widgets.Label(new Rect(inRect.x, y, inRect.width, 24f), Ins.T("Neg.NoNegotiator")); GUI.color = Color.white; }
             y += 26f;
             Widgets.Label(new Rect(inRect.x, y, inRect.width, 24f), Ins.T("Neg.Rounds", 3 - cl.rounds));
