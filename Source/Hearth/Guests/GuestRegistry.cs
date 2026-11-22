@@ -647,7 +647,7 @@ namespace Hearth.Guests
             if (r.Handling == HandlingMode.Recruit && !r.Insulted)
             {
                 bool loyal = guest.Faction?.leader == guest || (guest.royalty != null && guest.royalty.AllTitlesForReading.Count > 0);
-                float p = HSettings.Get(InnSettings.InsultBase) * (1f - social / 20f) + (loyal ? 0.10f : 0f);
+                float p = InsultChanceOverride ?? (HSettings.Get(InnSettings.InsultBase) * (1f - social / 20f) + (loyal ? 0.10f : 0f));
                 if (JRand.Stream("inn.insult").Chance(p))
                 {
                     r.Insulted = true;
@@ -896,6 +896,8 @@ namespace Hearth.Guests
         internal static float? RecruitChanceOverride;
         /// <summary>Tests only: fixed bond threshold (colonists' base opinions vary with traits and ideologies).</summary>
         internal static int? BondThresholdOverride;
+        /// <summary>Tests only: fixed insult chance (the setting is capped and the host's social skill grows with every talk).</summary>
+        internal static float? InsultChanceOverride;
         internal void ResetGoodwillBookForTests() => goodwillByQuadrum.Clear();
         internal void ForceRemoveAllForTests() { foreach (var r in records.ToList()) Unregister(r, "test cleanup"); groups.Clear(); }
         internal void AddRawRecordForTests(GuestRecord r) { records.Add(r); if (r.Pawn != null) Index(r); }

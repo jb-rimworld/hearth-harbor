@@ -118,12 +118,15 @@ namespace Hearth.Guests
         }
 
         /// <summary>
-        /// Combat anywhere on the test map (storyteller raids, manhunters, a guest faction turned hostile) makes vanilla force normal
-        /// speed (TimeSlower), which turns the Ultrafast test run into 1× and lets night-long suites crawl for many minutes
-        /// (the "inn.night hang"). Tests never want that: switch the slow-down off for the test game.
+        /// The "inn.night hang": the vanilla autosave (every day with the copied prefs) is a synchronous long event that only runs after
+        /// its "Autosaving" screen has been drawn. A test window that is hidden (another space, covered, minimized) draws no GUI frames,
+        /// so the save never starts and the game sits idle until the window becomes visible again or the runner's timeout kills it.
+        /// Tests switch autosaving off for the test profile, and also vanilla's forced normal speed during combat (TimeSlower),
+        /// which would otherwise turn Ultrafast into 1× whenever a raid or a predator shows up.
         /// </summary>
         public static void FastTime()
         {
+            if (Prefs.AutosaveIntervalDays < 999f) { Prefs.AutosaveIntervalDays = 1000f; Verse.Log.Message("[HHTEST] autosave switched off for the test run"); }
             if (!Verse.DebugViewSettings.neverForceNormalSpeed) Verse.Log.Message("[HHTEST] forced normal speed switched off for the test run");
             Verse.DebugViewSettings.neverForceNormalSpeed = true;
         }
@@ -441,18 +444,17 @@ namespace Hearth.Guests
             else t.Note("guest asleep or in bed: skipped the real job");
             // recruit talks and insult risk
             a.Handling = HandlingMode.Recruit;
-            var ins = HSettings.Find(InnSettings.InsultBase);
-            HSettings.Set(ins, 0f);
+            GuestRegistry.InsultChanceOverride = 0f;
             reg.Notify_Talk(col, a.Pawn);
             t.Check(!a.Insulted, "no insult at 0 % risk");
             t.Check(col.needs.mood.thoughts.memories.GetFirstMemoryOfDef(InnDefOf.HH_HostedWell) != null, "colonist warms to the guest (social memory)");
-            HSettings.Set(ins, 1f);
+            GuestRegistry.InsultChanceOverride = 1f;
             var budget0 = a.Budget; int leave0 = a.PlannedLeaveTick;
             reg.Notify_Talk(map.mapPawns.FreeColonistsSpawned.OrderBy(c => c.skills.GetSkill(SkillDefOf.Social).Level).FirstOrDefault() ?? col, a.Pawn);
             t.Check(a.Insulted, "insulted at 100 % risk");
             t.Check(a.Budget < budget0 && a.PlannedLeaveTick < leave0, "insulted guest spends less and leaves sooner");
             t.Check(a.Pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(InnDefOf.HH_GuestPestered) != null, "pestered thought");
-            HSettings.Reset(ins);
+            GuestRegistry.InsultChanceOverride = null;
             // joining at departure: strong bond, deterministic roll
             b.Handling = HandlingMode.Recruit;
             int bond0 = GuestRegistry.Bond(b.Pawn, map, out int thr);

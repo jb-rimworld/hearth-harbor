@@ -56,3 +56,14 @@ any activity module. `GuestFallback.Drives(p)` is false for every Inn-registered
 
 `tools/run_test.sh 'smoke,inn.*' <label>`: cleanup, contracts, dayvisit, door, enemies, fallback, forecast, handling, math, night,
 nothing, payment, returns, stay, wing, wingstatus.
+
+### The "inn.night hang" (integration round)
+
+Not a deadlock and not Inn logic. The test profile copies Julius' prefs (autosave every day). The vanilla autosave is a synchronous
+long event that only starts after its "Autosaving" screen has been drawn once; a test window that is hidden (another space,
+covered by the other slots, minimized) draws no GUI frames, so the save never starts and the game idles (main thread in `kevent`)
+until the window becomes visible again or the runner's 900 s timeout kills it. `inn.night` is the first suite whose waits cross the
+one-day mark, so it was always the one that "hung" (venues hung the same way in m1). Proof in run `innI3`: the autosave file
+appeared at the very second the stalled game was brought to the front and the suite continued.
+Fix: `InnTestKit.FastTime()` (start of every inn suite) sets `Prefs.AutosaveIntervalDays = 1000` for the test profile and
+`DebugViewSettings.neverForceNormalSpeed` (combat would otherwise force 1× speed). The runner should do this for all modules.
