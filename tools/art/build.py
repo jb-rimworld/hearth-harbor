@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from PIL import Image, ImageDraw, ImageFont
 from hhart import registry
 from hhart.registry import REG, render_entry, canvas_for
-import hhart.inn, hhart.venues, hhart.kitchen, hhart.casino, hhart.bank, hhart.ui  # noqa: F401  (register textures)
+import hhart.all  # noqa: F401  (register textures)
 
 ROOT = Path(__file__).resolve().parents[2]
 TEX = ROOT / "Common" / "Textures"
@@ -116,15 +116,53 @@ def main():
                     if not ism:
                         (svgdir / (rel.replace("/", "__")[:-4] + ".svg")).write_text(e["fn"](v, e["cells"], e["masked"]).svg())
         print("rendered %d textures" % len(sel))
-    order = ["Inn", "Venues", "Kitchen", "Casino", "Bank", "Insurance", "UI"]
+    order = ["Inn", "Venues", "Kitchen", "Casino", "Bank", "Insurance", "UI", "City", "Underworld", "Wellness", "Dlc", "Finance"]
     def key(e):
         parts = e["path"].split("/")
-        grp = parts[2] if parts[0] == "Things" else parts[2]
+        grp = parts[2]
         return (parts[0] == "UI", order.index(grp) if grp in order else 99, e["kind"] != "multi", e["path"])
     allr = sorted(REG, key=key)
     p1 = sheet(allr, 128, "contact_sheet.png")
     p2 = sheet([e for e in allr if e["kind"] == "multi"], 96, "contact_sheet_views.png", views=("south", "east", "north"))
     print(p1, p2)
+    # per-module sheets: all views of Things, all UI icons (module = third path part)
+    mods = []
+    for e in allr:
+        g = e["path"].split("/")[2]
+        if g not in mods:
+            mods.append(g)
+    for g in mods:
+        es = [e for e in allr if e["path"].split("/")[2] == g]
+        sheet(es, 128, "module_%s.png" % g.lower(), views=("south", "east", "north"), width=1500)
+    icons = [e for e in allr if e["path"].startswith("UI/") and e["cells"][0] < 4]
+    small(icons, "readability.png")
+    print("module sheets:", ", ".join(mods))
+
+
+def small(entries, name):
+    """UI icons at 32 and 64 px (and 128) on the dark UI background: the readability check"""
+    f = font(11)
+    cols = 12
+    cell = 150
+    rows = (len(entries) + cols - 1) // cols
+    im = Image.new("RGB", (cols * cell, rows * 172 + 10), (52, 50, 48))
+    d = ImageDraw.Draw(im)
+    for i, e in enumerate(entries):
+        src = Image.open(TEX / ("%s.png" % e["path"])).convert("RGBA")
+        x, y = (i % cols) * cell + 8, (i // cols) * 172 + 8
+        for sz, ox, oy in ((32, 0, 0), (64, 40, 0), (128 if e["cells"][0] == 1 else 0, 0, 72)):
+            if sz == 0:
+                continue
+            t = src.resize((sz, int(sz * src.height / src.width)), Image.LANCZOS)
+            if sz == 128:
+                t = src.resize((64, 64), Image.LANCZOS)
+                im.paste(t, (x + 80, y + 72), t)
+            else:
+                im.paste(t, (x + ox, y + oy), t)
+        d.text((x, y + 142), e["path"].split("/", 2)[-1].replace("HH/", "")[:22], fill=(220, 210, 190), font=f)
+    p = OUT / name
+    im.save(p)
+    return p
 
 
 if __name__ == "__main__":

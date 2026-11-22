@@ -13,6 +13,14 @@ uv run --with resvg-py --with pillow python3 tools/art/build.py Slot --svg   # a
 `tools/art/out/contact_sheet.png` shows every texture on a floor at 2 px/px; `contact_sheet_views.png` shows all north/east/south views of the
 Multi textures. This is the quality gate: look at it after every change.
 
+## Integration round additions
+- Modules: `inn, venues, kitchen, casino, bank, ui` (round 1) plus `city, underworld, wellness, icons` (all in `hhart/all.py`).
+- `tools/art/needs.py` is the audit: every texPath/iconPath/uiIconPath in Common/Defs and every `ContentFinder<Texture2D>.Get("literal")` in Source must be a registered generator entry with the right pixel size (drawSize/size of the def). Run it after adding a def; exit code 1 lists what is missing.
+- `build.py` now also writes one sheet per module (`out/module_<name>.png`, all views) and `out/readability.png` (all UI icons at 32 and 64 px next to a 64 px copy on the dark UI background).
+- `previews.py` renders the Workshop previews `About/Preview.png` (ribbon "Main Mod", no other text) and `About/Silverline_Preview.png` from the same sprite functions at 120 px per cell.
+- Defs that use a different size than the first guess: BlackjackTable 3x2, Oven 2x1, NightSafe is a single texture. `Things/HH/Underworld/BackRoomDoor` is only the LEFT half of a door leaf: `Building_Door` draws the texture twice (second mirrored) and slides both apart.
+  Because the def also uses it as `uiIconPath`, the build menu icon shows one half leaf (integrator: give the def its own icon texture if that bothers anyone).
+
 ## House style (KONZEPT 14.1)
 - Design space is **128 units per cell**; the renderer scales to pixels. Furniture and items render at **64 px per cell** (`ppc=64`), UI icons at 128 (`ppc=128`).
 - Warm near-black outline `#1c1411` (never `#000`): 3.5 units on the silhouette, 2-3 inside, 1-2 on small parts. Round joins and caps.

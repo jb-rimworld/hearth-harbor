@@ -105,25 +105,36 @@ def grill(view, cells, masked):
 
 
 # ------------------------------------------------------------------ oven
-@tex("Things/HH/Kitchen/Oven", "multi", (1, 1), doc="Brick oven with glowing arch, 1x1")
+@tex("Things/HH/Kitchen/Oven", "multi", (2, 1), doc="Brick oven: glowing arch, iron door and thermometer, 2x1")
 def oven(view, cells, masked):
     c = canvas_for_(cells, view, masked)
     br = P["brick"]
     face = cabinet(c, view, br, cap=22, margin=9, accent_strip=True, side_accent=P["brick_d"])
     x, y, w, h = face
     if view == "south":
-        bricks(c, x, y, w, h, br)
-        ax, ay, aw, ah = x + w * .18, y + h * .24, w * .64, h * .72
+        bricks(c, x, y, w, h, br, cols=8)
+        aw = min(w * .34, h * 1.25)
+        ax, ay, ah = x + w * .12, y + h * .2, h * .76
         d = "M%s %s V%s Q%s %s %s %s Q%s %s %s %s V%s Z" % (f2(ax), f2(ay + ah), f2(ay + aw * .45), f2(ax), f2(ay - aw * .1), f2(ax + aw / 2), f2(ay - aw * .1), f2(ax + aw), f2(ay - aw * .1), f2(ax + aw), f2(ay + aw * .45), f2(ay + ah))
         c.path(d, "#241410", sw=3.2, m=None)
-        c.glow(ax + aw / 2, ay + ah * .72, aw * .42, P["flame"], .55)
+        c.glow(ax + aw / 2, ay + ah * .72, aw * .5, P["flame"], .55)
         flame(c, ax + aw / 2, ay + ah * .62, aw / 128 * 1.15)
-        c.rect(x + w * .12, y + h * .02, w * .76, 7, P["dsteel"], r=2, sw=2, hl=False)
+        # iron door with vent slits and a thermometer
+        dx, dy, dw, dh = x + w * .56, y + h * .28, w * .3, h * .68
+        c.rect(dx, dy, dw, dh, P["dsteel"], r=5, sw=3, hl=True)
+        for k in range(3):
+            c.line(dx + 8, dy + 10 + k * 8, dx + dw - 8, dy + 10 + k * 8, "#14100e", w=3)
+        c.circle(dx + dw - 12, dy + dh - 14, 4, P["steel"], sw=1.6, hl=False, sh=False)
+        c.circle(x + w * .5, y + h * .22, 9, P["paper"], sw=2.4)
+        c.line(x + w * .5, y + h * .22, x + w * .5 + 4, y + h * .22 - 5, P["red_l"], w=2)
+        c.rect(x + w * .08, y + h * .02, w * .84, 7, P["dsteel"], r=2, sw=2, hl=False)
     elif view == "north":
-        bricks(c, x, y, w, h, br)
-        c.rect(x + w * .55, y - 2, w * .3, 16, P["iron"], r=3, sw=2.4)
+        bricks(c, x, y, w, h, br, cols=8)
+        for fx in (.28, .66):
+            c.rect(x + w * fx, y - 2, w * .12, 16, P["iron"], r=3, sw=2.4)
     else:
-        bricks(c, x, y, w, h, br, cols=3)
+        bricks(c, x, y, w, h, br, rows=9, cols=3)
+        c.rect(x + w * .2, y + h * .12, w * .6, 12, P["iron"], r=3, sw=2.4)
     return c
 
 
@@ -440,4 +451,27 @@ def p_street(view, cells, masked):
         c.line(24, y + 2, 108, y - 4 + k * 2, P["wood_l"], w=4)
         for i, col in enumerate((P["meat_l"], P["leaf"], P["meat"], P["tomato"])):
             c.rect(36 + i * 17, y - 11 + k * 1, 15, 17, col, r=5, sw=2.4)
+    return c
+
+
+# ------------------------------------------------------------------ cookbook item
+@tex("Things/HH/Kitchen/Cookbook", "single", (1, 1), doc="Item: greasy, dog-eared recipe book with a bookmark, 64 px")
+def cookbook(view, cells, masked):
+    c = canvas_for_(cells, "south", masked)
+    cov = "#8a3b34"
+    c.rect(32, 24, 70, 88, "#efe3c2", r=5, sw=3.4)
+    c.rect(24, 18, 72, 88, cov, r=6, sw=3.8)
+    c.rect(24, 18, 12, 88, dark(cov, .3), r=5, sw=3, hl=False)
+    # crossed fork and ladle emblem
+    c.line(52, 40, 78, 80, OUT, w=7)
+    c.line(52, 40, 78, 80, P["gold"], w=3.4)
+    c.line(78, 40, 52, 80, OUT, w=7)
+    c.line(78, 40, 52, 80, P["gold"], w=3.4)
+    c.circle(78, 82, 6, P["gold"], sw=2.4)
+    for dx in (-4, 0, 4):
+        c.line(52 + dx, 36, 52 + dx, 46, P["gold"], w=2)
+    # grease stain and bookmark ribbon
+    c.ellipse(80, 90, 12, 8, "#6b2a25", sw=0, hl=False, sh=False)
+    c.poly([(64, 104), (64, 118), (70, 112), (76, 118), (76, 104)], P["amber"], sw=2.6, hl=False)
+    c.line(30, 24, 90, 24, light(cov, .3), w=2)
     return c
