@@ -695,5 +695,66 @@ namespace Hearth.Kitchen.Tests
             yield break;
         }
     }
+    /// <summary>Saving and loading: plates and bills survive a round trip; trader stock; plates without the mod would be plain items.</summary>
+    public sealed class SaveSuite : HearthTestSuite
+    {
+        public override string Name => "kitchen.save";
+        public override ModuleId Module => ModuleId.ShopsFood;
+
+        static T RoundTrip<T>(T thing) where T : Thing
+        {
+            string path = System.IO.Path.GetTempFileName();
+            try
+            {
+                Scribe.saver.InitSaving(path, "hhkitchentest");
+                Scribe_Deep.Look(ref thing, "thing");
+                Scribe.saver.FinalizeSaving();
+                T copy = null;
+                Scribe.loader.InitLoading(path);
+                Scribe_Deep.Look(ref copy, "thing");
+                Scribe.loader.FinalizeLoading();
+                return copy;
+            }
+            finally { try { System.IO.File.Delete(path); } catch { } }
+        }
+
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var map = t.Map;
+            var dish = KT.Dish("MuffaloBourguignon");
+            var plate = KT.MakePlate(map, dish, map.Center + new IntVec3(-6, 0, 24), QualityCategory.Excellent, 1);
+            var comp = plate.TryGetComp<CompDish>(); comp.freshAge = 12345f; plate.HitPoints = 33;
+            var copy = RoundTrip(plate);
+            t.Check(copy != null && copy.def == plate.def, "the plate loads back");
+            var cc = copy?.TryGetComp<CompDish>();
+            t.Check(cc != null && cc.dish == dish && cc.variant == 1 && Math.Abs(cc.freshAge - 12345f) < 1f, "dish, form and freshness survive");
+            t.Check(copy != null && copy.TryGetQuality(out var q) && q == QualityCategory.Excellent && copy.HitPoints == 33, "quality and hit points survive");
+            t.Check(copy != null && copy.LabelNoCount.StartsWith("Muffalo bourguignon"), "label after loading: " + copy?.LabelNoCount);
+            plate.Destroy();
+
+            // a work table with a dish bill
+            var area = map.Center + new IntVec3(-22, 0, 24);
+            KT.Clear(map, area, 3);
+            var pot = KT.SpawnDef(map, "HH_Station_StockPot", area);
+            var recipe = KT.Dish("BerryCompote").recipes[1];
+            var bill = (Bill_Production)recipe.MakeNewBill(); ((IBillGiver)pot).BillStack.AddBill(bill); bill.repeatMode = BillRepeatModeDefOf.RepeatCount; bill.repeatCount = 7;
+            var potCopy = RoundTrip((Building_WorkTable)pot);
+            var b2 = potCopy?.BillStack.Bills.FirstOrDefault() as Bill_Production;
+            t.Check(b2 != null && b2.recipe == recipe && b2.repeatCount == 7, "the bill and its generated recipe survive a save: " + b2?.recipe?.defName);
+            t.Check(potCopy != null && DishRecipeExtension.Of(b2?.recipe)?.variant == 1, "the loaded bill still knows its dish and form");
+            pot.Destroy();
+            KT.Cleanup(map, area, 3);
+
+            // trader stock and cookbook
+            var kind = DefDatabase<TraderKindDef>.GetNamed("Caravan_Outlander_BulkGoods");
+            t.Check(kind.stockGenerators.Any(g => g is StockGenerator_Tag tg && tg.tradeTag == "HH_Cookbook"), "outlander caravans can carry recipe books");
+            var book = ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("HH_Cookbook"));
+            var bcopy = RoundTrip(book);
+            t.Check(bcopy?.TryGetComp<CompCookbook>()?.dishes.Count == book.TryGetComp<CompCookbook>().dishes.Count && bcopy.TryGetComp<CompCookbook>().dishes.Count >= 1, "a recipe book keeps its dishes");
+            // station heat: prep counter, dough bench and cold station give no heat
+            foreach (var n in new[] { "PrepCounter", "DoughBench", "ColdStation" }) t.Check(DefDatabase<ThingDef>.GetNamed("HH_Station_" + n).thingClass == typeof(Building_WorkTable), n + " is a plain work table");
+            yield break;
+        }
+    }
 }
 #endif

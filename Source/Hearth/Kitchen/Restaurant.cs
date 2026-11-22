@@ -63,7 +63,12 @@ namespace Hearth.Kitchen
             if (vt == null || !Venues.All(map).Any(v => v.Type == vt))
             {
                 // fallback: dining rooms count as a restaurant until a venue sign says otherwise
-                foreach (var room in map.regionGrid.AllRooms)
+                #if RW15
+                var allRooms = map.regionGrid.allRooms;
+#else
+                var allRooms = map.regionGrid.AllRooms;
+#endif
+                foreach (var room in allRooms)
                     if (room.Role == RoleDining && !room.PsychologicallyOutdoors && room.ContainedAndAdjacentThings.Count > 0)
                         list.Add(new RestaurantSpot { Room = room, Map = map, PriceFactor = 1f, Name = "dining room" });
             }

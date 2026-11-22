@@ -28,6 +28,7 @@
   </ThingDef>
   <ThingDef ParentName="HH_KitchenStationBase">
     <defName>HH_Station_PrepCounter</defName>
+    <thingClass>Building_WorkTable</thingClass>
     <label>prep counter</label>
     <description>A scarred counter with a cutting board, a good knife and a drainage groove nobody asked about. Chop, slice and carve here; other devices of a dish must stand close by.</description>
     <graphicData>
@@ -259,6 +260,7 @@
   </ThingDef>
   <ThingDef ParentName="HH_KitchenStationBase">
     <defName>HH_Station_DoughBench</defName>
+    <thingClass>Building_WorkTable</thingClass>
     <label>dough bench</label>
     <description>A heavy bench with a flour-dusted top. Rice and corn are pounded into dough here, which is cheaper than therapy.</description>
     <graphicData>
@@ -283,6 +285,7 @@
   </ThingDef>
   <ThingDef ParentName="HH_KitchenStationBase">
     <defName>HH_Station_ColdStation</defName>
+    <thingClass>Building_WorkTable</thingClass>
     <label>cold station</label>
     <description>A chilled counter that keeps salads crisp and desserts firm. Electric.</description>
     <graphicData>
