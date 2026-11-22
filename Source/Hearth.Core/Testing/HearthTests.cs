@@ -23,6 +23,8 @@ namespace Hearth.Testing
         public virtual int MaxTicks => 30000;
         public virtual ModuleId Module => ModuleId.Core;
         public abstract IEnumerable<int> Run(TestContext t);
+        /// <summary>True for suites that need special mods/env (e.g. Hospitality loaded); they run only when named explicitly, never with "all" or a prefix.</summary>
+        public virtual bool ExplicitOnly => false;
     }
 
     public sealed class TestContext
@@ -83,10 +85,10 @@ namespace Hearth.Testing
                 var all = GenTypes.AllTypes.Where(t => typeof(HearthTestSuite).IsAssignableFrom(t) && !t.IsAbstract)
                     .Select(t => (HearthTestSuite)Activator.CreateInstance(t)).OrderBy(s => s.Name).ToList();
                 errorsAtStart = HLog.ErrorCount;
-                foreach (var s in all.Where(s => wanted.Contains("all") || wanted.Contains(s.Name)))
+                foreach (var s in all.Where(s => wanted.Contains(s.Name) || (!s.ExplicitOnly && (wanted.Contains("all") || wanted.Any(w => w.EndsWith(".*") && s.Name.StartsWith(w.Substring(0, w.Length - 1)))))))
                     runs.Add(new Run { Suite = s, Ctx = new TestContext { Suite = s.Name } });
                 // a misspelled suite name must fail the run, not silently pass with fewer suites
-                foreach (var w in wanted) if (w != "all" && !all.Any(s => s.Name == w)) unknownSuites.Add(w);
+                foreach (var w in wanted) if (w != "all" && !w.EndsWith(".*") && !all.Any(s => s.Name == w)) unknownSuites.Add(w);
                 Verse.Log.Message($"[HHTEST] starting {runs.Count} suites: {string.Join(", ", runs.Select(r => r.Suite.Name))} (available: {string.Join(", ", all.Select(s => s.Name))})");
                 current = 0;
                 if (runs.Count == 0) { finished = true; return; }

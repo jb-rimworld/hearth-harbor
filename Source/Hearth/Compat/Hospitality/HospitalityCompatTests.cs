@@ -389,7 +389,7 @@ namespace Hearth.Compat.Hospitality.Tests
     /// <summary>Hospitality Continued active alongside us: everything of it is inert, the dialog is offered, disabling writes the mod list.</summary>
     public sealed class HspTakeoverSuite : HearthTestSuite
     {
-        public override string Name => "hospcompat.takeover";
+        public override string Name => "hospcompat.takeover"; public override bool ExplicitOnly => true;
         public override int MaxTicks => 20000;
         public override IEnumerable<int> Run(TestContext t)
         {
@@ -464,7 +464,7 @@ namespace Hearth.Compat.Hospitality.Tests
     /// </summary>
     public sealed class HspMakeFixtureSuite : HearthTestSuite
     {
-        public override string Name => "hospcompat.makefixture";
+        public override string Name => "hospcompat.makefixture"; public override bool ExplicitOnly => true;
         public override int MaxTicks => 20000;
         public override IEnumerable<int> Run(TestContext t)
         {
