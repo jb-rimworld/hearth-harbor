@@ -247,9 +247,10 @@ namespace Hearth.Wellness.Tests
         public override int MaxTicks => 20000;
         public override IEnumerable<int> Run(Hearth.Testing.TestContext t)
         {
-            var map = t.Map; var client = WT.Colonist(map, 0);
+            var map = t.Map;
             // the masseur must be able to do Serving work at all: the test colonists are random pawns and some backstories disable it
-            var masseur = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => c != client && !c.Downed && !c.Dead && !c.WorkTypeIsDisabled(WellnessDefOf.HH_Serving) && c.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation));
+            var masseur = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => !c.Downed && !c.Dead && !c.WorkTypeIsDisabled(WellnessDefOf.HH_Serving) && c.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation));
+            var client = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => c != masseur && !c.Downed && !c.Dead);
             if (client == null || masseur == null || client == masseur)
                 t.Note("colonists: " + string.Join("; ", map.mapPawns.AllPawns.Where(p => p.IsColonist).Select(p => p.LabelShort + " spawned " + p.Spawned + " dead " + p.Dead + " downed " + p.Downed + " job " + p.CurJob?.def.defName + " hp " + p.health.summaryHealth.SummaryHealthPercent.ToString("0.00") + " hediffs " + string.Join("/", p.health.hediffSet.hediffs.Select(h => h.def.defName)))));
             t.Check(client != null && masseur != null && client != masseur, "two colonists available");
