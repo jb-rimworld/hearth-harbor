@@ -741,7 +741,6 @@ namespace Hearth.Guests
         }
 
         // ------------------------------------------------------------------ gizmos (shown through the lord)
-        static Texture2D texBasics, texAccompany, texRecruit, texSendAway;
 
         public IEnumerable<Gizmo> GizmosFor(Pawn p)
         {
@@ -752,17 +751,17 @@ namespace Hearth.Guests
             switch (r.Handling)
             {
                 case HandlingMode.Accompany:
-                    icon = (texAccompany ?? (texAccompany = ContentFinder<Texture2D>.Get("UI/HH/Inn/Handling_Accompany", false) ?? BaseContent.BadTex));
+                    icon = InnTex.Handling_Accompany;
                     label = "HH.Inn.Handling.Accompany".TranslateOr("Accompany");
                     desc = "HH.Inn.Handling.AccompanyDesc".TranslateOr("Colonists with Hosting work keep this guest company: better mood, better ratings. Costs colonist time. Falls back to basics when nobody can host.");
                     break;
                 case HandlingMode.Recruit:
-                    icon = (texRecruit ?? (texRecruit = ContentFinder<Texture2D>.Get("UI/HH/Inn/Handling_Recruit", false) ?? BaseContent.BadTex));
+                    icon = InnTex.Handling_Recruit;
                     label = "HH.Inn.Handling.Recruit".TranslateOr("Recruit");
                     desc = "HH.Inn.Handling.RecruitDesc".TranslateOr("Like Accompany, plus talks about staying. If the colony's bond with the guest is strong enough, they may join at departure. Pushy talks can offend.");
                     break;
                 default:
-                    icon = (texBasics ?? (texBasics = ContentFinder<Texture2D>.Get("UI/HH/Inn/Handling_Basics", false) ?? BaseContent.BadTex));
+                    icon = InnTex.Handling_Basics;
                     label = "HH.Inn.Handling.Basics".TranslateOr("Basics");
                     desc = "HH.Inn.Handling.BasicsDesc".TranslateOr("Paid services only, no entertainment. Costs no colonist time.");
                     break;
@@ -787,7 +786,7 @@ namespace Hearth.Guests
             {
                 defaultLabel = "HH.Inn.SendAway.Label".TranslateOr("Send away"),
                 defaultDesc = "HH.Inn.SendAway.Desc".TranslateOr("Ask this guest's whole group to leave now. Nights already paid are kept, no goodwill is gained, renown −1."),
-                icon = (texSendAway ?? (texSendAway = ContentFinder<Texture2D>.Get("UI/HH/Inn/SendAway", false) ?? BaseContent.BadTex)),
+                icon = InnTex.SendAway,
                 action = () => Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
                     "HH.Inn.SendAway.Confirm".TranslateOr("Send {0}'s group away?").Replace("{0}", p.LabelShort), () => SendAway(p), destructive: true)),
             };

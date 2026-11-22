@@ -19,8 +19,7 @@ namespace Hearth.Guests
     public sealed class CompHH_GuestBed : ThingComp
     {
         bool guestBed;
-        static Texture2D icon;
-        static Texture2D Icon => icon ?? (icon = ContentFinder<Texture2D>.Get("UI/HH/Inn/GuestBed", false) ?? BaseContent.BadTex);
+        static Texture2D Icon => InnTex.GuestBed;
 
         public Building_Bed Bed => parent as Building_Bed;
 

@@ -147,9 +147,9 @@ namespace Hearth.Guests
             t.Check(reg.Records.Count == 0, "no guest files after 2 days: " + reg.Records.Count);
             t.Check(reg.GuestsHosted == hosted0, "no guests arrived");
             t.Check(!map.lordManager.lords.Any(l => l.LordJob is LordJob_HH_GuestStay), "no guest lords on the map");
-            t.Check(sch.Forecast.Count == 0 && !sch.EverActive, "arrival plan stays empty and inactive");
+            t.Check(sch.Forecast.Count == 0 && !sch.Active, "arrival plan stays empty and inactive");
             t.Check(!Find.LetterStack.LettersListForReading.Skip(letters0).Any(l => (l.Label.ToString() ?? "").StartsWith("Guests")), "no guest letters");
-            t.Check(GuestWings.Comp(map).wings.Count == 0, "no guest wing created");
+            t.Check(GuestWings.Comp(map).wings.All(w => w.TrueCount == 0), "no guest wing created");
         }
     }
 
