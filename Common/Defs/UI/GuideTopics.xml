@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Lessons of the Hearth & Harbor Guide (4.10). Steps check themselves from game state; "manual" steps are ticked by the player.
+       Other mods can add topics the same way. unlockedBy / check ids: always, hosting, guestBed, venueSign, venueOpenNow, guestArrived,
+       firstPayment, bankAccount, directDeposit, seenGuestsPage, seenGuestTab, venue:<VenueTypeDef>, not:<id>, manual. -->
+
+  <Hearth.GuideTopicDef>
+    <defName>HH_Guide_OpeningDay</defName>
+    <label>Opening day</label>
+    <description>Three steps from a bed to your first silver. No research, no zones, no settings.</description>
+    <module>Core</module>
+    <order>10</order>
+    <steps>
+      <li>
+        <id>start</id>
+        <label>Mark a bed as a guest bed, or put up a venue sign in a roofed room.</label>
+        <description>Guests only come once you have prepared something for them. Until then the game plays like vanilla.</description>
+        <check>hosting</check>
+      </li>
+      <li>
+        <id>guests</id>
+        <label>Wait for the first guests. They arrive within about three days.</label>
+        <description>You get a letter when a group is on its way.</description>
+        <check>guestArrived</check>
+      </li>
+      <li>
+        <id>payment</id>
+        <label>Let a guest pay for something.</label>
+        <description>Payments land in the till and are counted on the Overview page.</description>
+        <check>firstPayment</check>
+        <jump>tab:overview</jump>
+      </li>
+    </steps>
+  </Hearth.GuideTopicDef>
+
+  <Hearth.GuideTopicDef>
+    <defName>HH_Guide_YourGuests</defName>
+    <label>Your guests at a glance</label>
+    <description>Where to see how your guests are doing.</description>
+    <module>Inn</module>
+    <order>30</order>
+    <unlockedBy>guestArrived</unlockedBy>
+    <steps>
+      <li>
+        <id>page</id>
+        <label>Open the Guests page in the Hearth &amp; Harbor tab.</label>
+        <description>One row per guest: mood, satisfaction, budget and when they leave. Click a row to jump to the guest.</description>
+        <check>seenGuestsPage</check>
+        <jump>tab:guests</jump>
+        <module>Inn</module>
+      </li>
+      <li>
+        <id>tab</id>
+        <label>Select a guest and open the Guest tab.</label>
+        <description>Shows what the guest thinks and lets you pick Basics, Accompany or Recruit.</description>
+        <check>seenGuestTab</check>
+        <module>Inn</module>
+      </li>
+      <li>
+        <id>handling</id>
+        <label>Try a different handling mode on a guest you like.</label>
+        <check>manual</check>
+        <module>Inn</module>
+      </li>
+    </steps>
+  </Hearth.GuideTopicDef>
+
+  <Hearth.GuideTopicDef>
+    <defName>HH_Guide_FirstVenue</defName>
+    <label>Your first venue</label>
+    <description>A sign turns a room into a business.</description>
+    <module>ShopsFood</module>
+    <order>20</order>
+    <unlockedBy>venueSign</unlockedBy>
+    <steps>
+      <li>
+        <id>sign</id>
+        <label>Put up a venue sign inside a roofed room.</label>
+        <check>venueSign</check>
+        <module>ShopsFood</module>
+      </li>
+      <li>
+        <id>open</id>
+        <label>Check the opening hours. Guests only buy while it is open.</label>
+        <check>venueOpenNow</check>
+        <module>ShopsFood</module>
+      </li>
+      <li>
+        <id>paid</id>
+        <label>Earn your first silver.</label>
+        <check>firstPayment</check>
+        <jump>tab:overview</jump>
+        <module>ShopsFood</module>
+      </li>
+    </steps>
+  </Hearth.GuideTopicDef>
+
+  <Hearth.GuideTopicDef>
+    <defName>HH_Guide_Bank</defName>
+    <label>Money in the bank</label>
+    <description>Silverline keeps your takings safe and lets guests pay by card.</description>
+    <module>Bank</module>
+    <order>40</order>
+    <unlockedBy>firstPayment</unlockedBy>
+    <steps>
+      <li>
+        <id>account</id>
+        <label>Open a Silverline account at a bank building.</label>
+        <description>Optional. Without an account the bank stays out of your way.</description>
+        <check>bankAccount</check>
+        <module>Bank</module>
+      </li>
+      <li>
+        <id>deposit</id>
+        <label>Switch on direct deposit so the tills empty into the account.</label>
+        <check>directDeposit</check>
+        <module>Bank</module>
+      </li>
+      <li>
+        <id>watch</id>
+        <label>Watch the balance on the Overview page.</label>
+        <check>manual</check>
+        <jump>tab:overview</jump>
+        <module>Bank</module>
+      </li>
+    </steps>
+  </Hearth.GuideTopicDef>
+</Defs>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- The Hearth & Harbor main tab (10.1). The button stays hidden until the colony uses the mod (see MainButtonWorker_HH). -->
+  <MainButtonDef>
+    <defName>HH_MainTab</defName>
+    <label>hearth &amp; harbor</label>
+    <description>Guests, venues, income and everything else about running a house for visitors.</description>
+    <workerClass>Hearth.Shell.MainButtonWorker_HH</workerClass>
+    <tabWindowClass>Hearth.Shell.MainTabWindow_HH</tabWindowClass>
+    <order>85</order>
+    <iconPath>UI/HH/UI/MainTab</iconPath>
+    <closesWorldView>true</closesWorldView>
+  </MainButtonDef>
+</Defs>
