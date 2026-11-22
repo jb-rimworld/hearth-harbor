@@ -746,6 +746,10 @@ namespace Hearth.Kitchen.Tests
             var b2 = potCopy?.BillStack.Bills.FirstOrDefault() as Bill_Production;
             t.Check(b2 != null && b2.recipe == recipe && b2.repeatCount == 7, "the bill and its generated recipe survive a save: " + b2?.recipe?.defName);
             t.Check(potCopy != null && DishRecipeExtension.Of(b2?.recipe)?.variant == 1, "the loaded bill still knows its dish and form");
+            // removal: our bills leave every bill stack, vanilla bills stay
+            t.Check(RecipeBuilder.IsOurRecipe(recipe) && !RecipeBuilder.IsOurRecipe(DefDatabase<RecipeDef>.AllDefs.First(r => r.defName.StartsWith("Make_"))), "our recipes are recognised, vanilla ones are not");
+            int removed = RecipeBuilder.RemoveOurBills();
+            t.Check(removed >= 1 && ((IBillGiver)pot).BillStack.Count == 0, "PrepareRemoval takes the dish bills off the work table: removed " + removed);
             pot.Destroy();
             KT.Cleanup(map, area, 3);
 

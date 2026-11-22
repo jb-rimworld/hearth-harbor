@@ -28,7 +28,7 @@ namespace Hearth.Casino
         public bool Chips;                // played with chips of a cashier's cage
         public bool Done;
         public string EndReason;
-        public float StakeShare = 0.03f;  // share of the buy-in per round
+        public float StakeShare = 0.10f;  // share of the buy-in per round
         public float Risk = 0.5f;         // 0 = cautious, 1 = reckless: picks roulette bets and poker aggression
         public int BestWinTick;
 

@@ -36,10 +36,9 @@ namespace Hearth.Dlc
         static readonly AccessTools.FieldRef<SkillRecord, Pawn> PawnRef = AccessTools.FieldRefAccess<SkillRecord, Pawn>("pawn");
         static void Prefix(SkillRecord __instance, ref float xp)
         {
-            if (xp <= 0f || __instance.def != SkillDefOf.Social) return;
+            if (xp <= 0f || __instance.def != SkillDefOf.Social || !Modules.On(ModuleId.Inn)) return;
             var p = PawnRef(__instance);
             var wt = p?.CurJob?.workGiverDef?.workType; if (wt == null || wt != DlcDefs.Hosting) return;
-            if (!Modules.On(ModuleId.Inn)) return;
             var s = DlcDefs.HostingLearn; if (s == null) return;
             xp *= p.GetStatValue(s);
         }
@@ -53,6 +52,7 @@ namespace Hearth.Dlc
         static void Prefix(Need_Rest __instance, out float __state)
         {
             __state = -1f;
+            if (!Modules.On(ModuleId.Inn)) return;
             var p = PawnRef(__instance);
             var wt = p?.CurJob?.workGiverDef?.workType; if (wt == null || wt != DlcDefs.Serving) return;
             if (DlcApi.ServeRestFactor(p) >= 0.999f) return;
@@ -73,6 +73,7 @@ namespace Hearth.Dlc
         static readonly AccessTools.FieldRef<Pawn_InteractionsTracker, Pawn> PawnRef = AccessTools.FieldRefAccess<Pawn_InteractionsTracker, Pawn>("pawn");
         static readonly Dictionary<int, int> last = new Dictionary<int, int>();
         public const int Cooldown = 2500;
+        static Patch_ServiceQualityChat() { HearthGame.OnGameInit += () => last.Clear(); }
         static void Postfix(Pawn_InteractionsTracker __instance, bool __result, Pawn recipient)
         {
             if (!__result || recipient == null || !Modules.On(ModuleId.Inn)) return;

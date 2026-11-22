@@ -82,18 +82,23 @@ namespace Hearth.Underworld
         }
     }
 
-    /// <summary>During a non-lethal bout nobody takes damage once beaten (downed or below the yield line). Cheap early-out when no bout runs.</summary>
+    /// <summary>
+    /// During a non-lethal bout nobody takes damage once beaten (downed or below the yield line). Only an active bout of that very pawn is touched;
+    /// everything else (and a module that is off) returns at once. The blow is not cancelled (no "return false"): its amount is set to 0, so every other
+    /// prefix and postfix on PreApplyDamage (Combat Extended armour/stagger, shields, Vanilla Expanded) still runs on the damage pipeline as usual.
+    /// </summary>
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.PreApplyDamage))]
     public static class Patch_PitDamageGuard
     {
+        [HarmonyPriority(Priority.Last)]
         public static bool Prefix(Pawn __instance, ref DamageInfo dinfo, out bool absorbed)
         {
             absorbed = false;
-            if (FightBout.ActiveCount == 0) return true;
+            if (FightBout.ActiveCount == 0 || !Modules.On(ModuleId.Underworld)) return true;
             var b = FightBout.OfPawn(__instance);
             if (b == null || !b.ShouldAbsorb(__instance)) return true;
-            absorbed = true;
-            return false;
+            dinfo.SetAmount(0f);
+            return true;
         }
     }
 }
