@@ -245,6 +245,7 @@ Per quadrum: {1}</HH.Ins.UI.Price.Tip>
   <HH.Ins.UI.Riders.Pre>(ticked for you)</HH.Ins.UI.Riders.Pre>
   <HH.Ins.UI.Riders.Sum>Add-ons: +{0}</HH.Ins.UI.Riders.Sum>
   <HH.Ins.UI.Riders.BasicOnly>Basic only</HH.Ins.UI.Riders.BasicOnly>
+  <HH.Ins.UI.PremiumPlus>Premium Plus (coming soon)</HH.Ins.UI.PremiumPlus>
   <HH.Ins.UI.FinePrint>Fine print</HH.Ins.UI.FinePrint>
   <HH.Ins.UI.Fine.Intro>Terms of {0} (abridged for your convenience):</HH.Ins.UI.Fine.Intro>
   <HH.Ins.UI.Fine.Tail>The full terms are the 400 pages mentioned in our slogan. See also the Fine print tab.</HH.Ins.UI.Fine.Tail>

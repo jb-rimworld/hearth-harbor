@@ -52,6 +52,15 @@ namespace Silverline
             }
         }
 
+        /// <summary>Selects the page of the desk (0 policies, 1 my policies, 2 claims, 3 fine print) and optionally expands cards. Used by tests and screenshots.</summary>
+        public static void ShowPage(int p, bool expandAll = false)
+        {
+            page = (Page)Math.Max(0, Math.Min(3, p));
+            if (expandAll) foreach (var d in InsurancePricing.AllPolicies) Card(d).fine = true;
+            scrollShop = scrollMine = scrollClaims = scrollFine = Vector2.zero;
+        }
+        public static void ScrollShop(float y) { scrollShop.y = y; }
+
         // ---- entry --------------------------------------------------------------------------------------------------------------------
         public static void Draw(Rect rect)
         {
@@ -269,6 +278,13 @@ namespace Silverline
             GUI.color = Grey; Text.Font = GameFont.Tiny;
             if (Widgets.ButtonText(new Rect(x, y, 200f, 20f), (cs.fine ? "▾ " : "▸ ") + Ins.T("UI.FinePrint"), false)) cs.fine = !cs.fine;
             Text.Font = GameFont.Small; GUI.color = Color.white;
+            if (InsSettings.Hard && InsSettings.TrickActive(InsSettings.TrickBadge, 0.02))
+            {
+                var pp = new Rect(x + w - 230f, y, 230f, 20f);
+                GUI.color = new Color(0.45f, 0.47f, 0.5f); Text.Font = GameFont.Tiny; Text.Anchor = TextAnchor.MiddleRight;
+                Widgets.Label(pp, Ins.T("UI.PremiumPlus"));
+                Text.Anchor = TextAnchor.UpperLeft; Text.Font = GameFont.Small; GUI.color = Color.white;
+            }
             y += 24f;
             if (cs.fine)
             {
@@ -383,10 +399,6 @@ namespace Silverline
                 }
                 GUI.color = Color.white;
                 if (err != null) TooltipHandler.TipRegion(btn, err);
-            }
-            if (premium && badge && InsSettings.Hard)
-            {
-                var pp = new Rect(r.x, r.yMax + 1f, r.width, 0f);
             }
         }
 

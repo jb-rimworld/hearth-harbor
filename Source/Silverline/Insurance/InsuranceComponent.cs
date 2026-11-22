@@ -347,7 +347,7 @@ namespace Silverline
             }
         }
 
-        void DailyChecks(int now)
+        public void DailyChecks(int now)
         {
             // caravan head-days for travel cover
             int heads = 0;

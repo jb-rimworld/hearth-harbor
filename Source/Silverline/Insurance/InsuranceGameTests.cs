@@ -57,8 +57,14 @@ namespace Silverline
         {
             var def = DefDatabase<ThingDef>.GetNamed(defName);
             var stuff = def.MadeFromStuff ? GenStuff.DefaultStuffFor(def) : null;
-            var b = (Building)ThingMaker.MakeThing(def, stuff);
-            GenSpawn.Spawn(b, near, Map);
+            Building b = null;
+            foreach (var cell in GenRadial.RadialCellsAround(near, 15f, true))
+            {
+                if (!cell.InBounds(Map) || !cell.Standable(Map) || cell.GetFirstBuilding(Map) != null || cell.GetFirstThing<Fire>(Map) != null) continue;
+                b = (Building)ThingMaker.MakeThing(def, stuff);
+                GenSpawn.Spawn(b, cell, Map);
+                if (b.Spawned) break;
+            }
             b.SetFaction(Faction.OfPlayer);
             return b;
         }
@@ -601,7 +607,7 @@ namespace Silverline
                 t.Check(pawn.IsCaravanMember(), "pawn is on a caravan");
                 comp.Process(Ins.Now);
                 // daily accounting counts head-days
-                comp.GetType().GetMethod("DailyChecks", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).Invoke(comp, new object[] { Ins.Now });
+                comp.DailyChecks(Ins.Now);
                 t.Check(prem.contract.travelHeadDays >= 1, "a travel day was counted: " + prem.contract.travelHeadDays);
                 int n = comp.claims.Count;
                 var cut = DefDatabase<HediffDef>.GetNamed("Cut");
@@ -617,7 +623,7 @@ namespace Silverline
                 pawn.Kill(new DamageInfo(DamageDefOf.Bomb, 9999f));
                 var dc = comp.claims.LastOrDefault(x => x.death);
                 t.Check(dc != null && dc.trigger == ClaimTrigger.TravelDeath && Math.Abs(dc.gross - prem.contract.sum) < 1e-6, "death on the road pays the per-head sum (" + dc?.gross + ")");
-                try { car.RemoveAllPawns(); Find.WorldObjects.Remove(car); } catch { }
+                try { if (car.Spawned) Find.WorldObjects.Remove(car); } catch { }
             }
             t.Check(InsTest.LedgerOk, "ledger balanced");
             InsTest.RestoreSettings();
@@ -711,6 +717,139 @@ namespace Silverline
             foreach (var w in Find.WindowStack.Windows.Where(w => w is Window_Clawback || w is Dialog_Negotiate || w is Dialog_CancelPolicy).ToList()) Find.WindowStack.TryRemove(w, false);
             ClaimEngine.Close(cl);
             InsTest.RestoreSettings();
+        }
+    }
+}
+#endif
+#if HH_TESTS
+namespace Silverline
+{
+    /// <summary>Screenshot helper (only with HH_SHOTS=1): opens the desk in several states and waits so the screen can be captured from outside.</summary>
+    public sealed class InsuranceShotsSuite : Hearth.Testing.HearthTestSuite
+    {
+        public override string Name => "insurance.shots";
+        public override Hearth.ModuleId Module => Hearth.ModuleId.Bank;
+        public override int MaxTicks => 200000;
+        public override IEnumerable<int> Run(Hearth.Testing.TestContext t)
+        {
+            if (Environment.GetEnvironmentVariable("HH_SHOTS") != "1") { t.Note("skipped (HH_SHOTS != 1)"); yield break; }
+            int wait = int.Parse(Environment.GetEnvironmentVariable("HH_SHOT_TICKS") ?? "900");
+            InsTest.Reset(4000);
+            var comp = InsTest.Comp;
+            Find.TickManager.CurTimeSpeed = TimeSpeed.Normal;
+            var colonist = InsTest.Colonists.First();
+            comp.Sign(InsTest.Def("SL_RoofOverHead"), CoverTier.GoodEnough, null, 2000, new[] { "boost" }, new[] { "boost" });
+            comp.Sign(InsTest.Def("SL_LimbByLimb"), CoverTier.Premium, colonist, 3000, new[] { "plusProgression", "deathSum" }, new[] { "plusProgression", "deathSum" });
+            InsTest.SkipWaiting(comp.contracts[1]);
+            InsTest.LoseParts(colonist, InsTest.Part(colonist, InsTest.BP("Hand"), "left"));
+            var raider = InsTest.Raider(); InsTest.SkipWaiting(comp.contracts[0]);
+            var b = InsTest.SpawnBuilding("Battery", t.FreeCellNearCenter()); b.Kill(new DamageInfo(DamageDefOf.Bomb, 500f, 0f, -1f, raider));
+            var cl = comp.claims.Last(); cl.decideTick = Ins.Now; comp.Process(Ins.Now);
+            var limb = comp.claims.First(x => x.trigger == ClaimTrigger.LimbLoss); limb.decideTick = Ins.Now; comp.Process(Ins.Now);
+            foreach (var w in Find.WindowStack.Windows.ToList()) if (!(w is Window_Clawback)) { }
+            for (int page = 0; page < 4; page++)
+            {
+                Window_Clawback.Open();
+                InsuranceUI.ShowPage(page, page == 0);
+                t.Note("page " + page);
+                yield return wait;
+            }
+            InsuranceUI.ShowPage(0, false);
+            Find.WindowStack.Add(new Dialog_Negotiate(limb.id)); t.Note("negotiate"); yield return wait;
+            Find.WindowStack.Add(new Dialog_CancelPolicy(comp.contracts[0].id)); t.Note("cancel"); yield return wait;
+            // harder level
+            HearthProfile.Current.Tier = 4.5f; InsuranceUI.ShowPage(0, false); t.Note("overbooked shop"); yield return wait;
+            HearthProfile.Current.Tier = 3f;
+        }
+    }
+}
+#endif
+#if HH_TESTS
+namespace Silverline
+{
+    public sealed class InsuranceSaveSuite : Hearth.Testing.HearthTestSuite
+    {
+        public override string Name => "insurance.save";
+        public override Hearth.ModuleId Module => Hearth.ModuleId.Bank;
+        public override IEnumerable<int> Run(Hearth.Testing.TestContext t)
+        {
+            InsTest.Reset(4000);
+            var comp = InsTest.Comp; var pawn = InsTest.Colonists.First();
+            var r1 = comp.Sign(InsTest.Def("SL_LimbByLimb"), CoverTier.GoodEnough, pawn, 2000, new[] { "deathSum" }, new[] { "deathSum" });
+            var r2 = comp.Sign(InsTest.Def("SL_RoofOverHead"), CoverTier.Premium, null, 1500, null, null);
+            InsTest.SkipWaiting(r1.contract);
+            InsTest.LoseParts(pawn, InsTest.Part(pawn, InsTest.BP("Hand"), "left"));
+            comp.debt = 12.5;
+            string path = System.IO.Path.Combine(GenFilePaths.SaveDataFolderPath, "hh_insurance_test.xml");
+            Scribe.saver.InitSaving(path, "HHInsTest");
+            var toSave = comp;
+            Scribe_Deep.Look(ref toSave, "ins", Current.Game);
+            Scribe.saver.FinalizeSaving();
+            InsuranceComponent loaded = null;
+            Scribe.loader.InitLoading(path);
+            Scribe_Deep.Look(ref loaded, "ins", Current.Game);
+            Scribe.loader.FinalizeLoading();
+            t.Check(loaded != null, "component round-trips");
+            if (loaded != null)
+            {
+                t.Check(loaded.contracts.Count == comp.contracts.Count && loaded.claims.Count == comp.claims.Count, $"contracts {loaded.contracts.Count}, claims {loaded.claims.Count}");
+                var l1 = loaded.contracts.First(c => c.defName == "SL_LimbByLimb");
+                t.Check(l1.holderName == pawn.LabelShortCap && l1.tier == CoverTier.GoodEnough && Math.Abs(l1.sum - r1.contract.sum) < 1e-9 && l1.riders.Contains("deathSum"), "contract fields and pawn reference");
+                var lc = loaded.claims.First(c => c.trigger == ClaimTrigger.LimbLoss);
+                t.Check(lc.pawnName == pawn.LabelShortCap && lc.state == ClaimState.Review, "claim and its pawn reference");
+                t.Check(Math.Abs(loaded.debt - 12.5) < 1e-9 && loaded.firstPolicyTick == comp.firstPolicyTick, "scalars");
+            }
+            try { System.IO.File.Delete(path); } catch { }
+            InsuranceComponent.Instance?.GetType();
+            t.Check(InsuranceComponent.Instance == comp, "live component still the registered one");
+            InsTest.RestoreSettings();
+            yield break;
+        }
+    }
+
+    public sealed class InsuranceTricksSuite : Hearth.Testing.HearthTestSuite
+    {
+        public override string Name => "insurance.tricks";
+        public override Hearth.ModuleId Module => Hearth.ModuleId.Bank;
+        public override IEnumerable<int> Run(Hearth.Testing.TestContext t)
+        {
+            InsTest.Reset(20000);
+            var comp = InsTest.Comp; var l = Ledger.Current;
+            // pre-ticked add-ons are counted as sales-trick cost; above the cap the year letter pays it back
+            var r = comp.Sign(InsTest.Def("SL_LimbByLimb"), CoverTier.GoodEnough, InsTest.Colonists.First(), 2000, new[] { "plusProgression", "deathSum" }, new[] { "plusProgression", "deathSum" });
+            t.Check(r.Ok && r.contract.preTickedKept.Count == 2, "two pre-ticked riders kept");
+            r.contract.nextBillTick = Ins.Now; comp.Process(Ins.Now);
+            t.Check(r.contract.trickCostYear > 0 && r.contract.premiumYear > r.contract.trickCostYear, $"trick cost {r.contract.trickCostYear:0.000} of premiums {r.contract.premiumYear:0.000}");
+            double cost = r.contract.trickCostYear, prem = r.contract.premiumYear;
+            double expectedCredit = InsuranceMath.CourtesyCredit(cost, prem, HSettings.Get(InsSettings.TrickCap));
+            t.Check(expectedCredit > 0, "17 % add-ons exceed the 5 % cap: credit " + expectedCredit.ToString("0.000"));
+            var till0 = InsTest.Till; var ins0 = InsTest.Insurer;
+            comp.DailyChecks(Ins.Now + 61 * 60000);
+            t.Check(comp.courtesyTotal > 0 && Math.Abs(comp.courtesyTotal - expectedCredit) < 1e-6, "courtesy credit booked: " + comp.courtesyTotal.ToString("0.000"));
+            t.Check(r.contract.trickCostYear == 0 && r.contract.premiumYear == 0, "yearly counters reset");
+            t.Check(InsTest.LedgerOk, "ledger balanced after the credit");
+            // add-on effects
+            var q0 = InsurancePricing.QuoteFor(InsTest.Def("SL_LimbByLimb"), CoverTier.GoodEnough, InsTest.Colonists.First(), 2000, null, 1);
+            var q1 = InsurancePricing.QuoteFor(InsTest.Def("SL_LimbByLimb"), CoverTier.GoodEnough, InsTest.Colonists.First(), 2000, new[] { "plusProgression", "deathSum" }, 1);
+            t.Check(Math.Abs(q1.riders - 1.17) < 1e-5 && q1.billing > q0.billing, "riders +17 % on Standard Room (fair): " + q1.riders + " tier " + InsSettings.Tier);
+            // generic reports
+            var ls = comp.Sign(InsTest.Def("SL_LegalShield"), CoverTier.GoodEnough, null, 2000, null, null);
+            InsTest.SkipWaiting(ls.contract);
+            t.Check(ClawbackApi.ReportFine(InsTest.Map, Money.FromSilver(100), "test fine"), "fine reported to Legal Shield");
+            var fine = comp.claims.Last(); t.Check(Math.Abs(fine.gross - 80) < 1e-3, "Good Enough pays 80 % of a fine: " + fine.gross);
+            t.Check(!ClawbackApi.ReportClosure(InsTest.Map, Money.FromSilver(50), "x"), "no closure cover: nobody takes it");
+            // annuity of the golden years plan
+            var old = InsTest.Colonists.LastOrDefault(); if (old == null) { t.Note("no colonist left"); yield break; }
+            old.ageTracker.AgeBiologicalTicks = 63L * 3600000L;
+            var gy = comp.Sign(InsTest.Def("SL_GoldenYears"), CoverTier.GoodEnough, old, 1000, null, null);
+            if (gy.Ok)
+            {
+                InsTest.SkipWaiting(gy.contract); int n = comp.claims.Count;
+                for (int d = 0; d < 7; d++) comp.DailyChecks(Ins.Now + (d + 1) * 60000 + 1);
+                t.Check(comp.claims.Count > n, "pension accrues for a 63-year-old: " + (comp.claims.Count > n ? comp.claims.Last().gross.ToString("0.00") : "no claim"));
+            }
+            InsTest.RestoreSettings();
+            yield break;
         }
     }
 }
