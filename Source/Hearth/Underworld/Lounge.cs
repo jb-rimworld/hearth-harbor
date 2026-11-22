@@ -107,9 +107,9 @@ namespace Hearth.Underworld
         protected override IEnumerable<Toil> MakeNewToils()
         {
             yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
-            yield return new Toil { defaultCompleteMode = ToilCompleteMode.Delay, defaultDuration = 360, tickAction = () => pawn.GainComfortFromCellIfPossible(1) };
+            yield return new Toil { defaultCompleteMode = ToilCompleteMode.Delay, defaultDuration = 360, tickAction = () => UwPay.Comfort(pawn) };
             yield return new Toil { defaultCompleteMode = ToilCompleteMode.Instant, initAction = () => { var d = Lounge.ChooseDrug(pawn); if (d != null) Lounge.Session(pawn, d); } };
-            yield return new Toil { defaultCompleteMode = ToilCompleteMode.Delay, defaultDuration = 600, tickAction = () => pawn.GainComfortFromCellIfPossible(1) };
+            yield return new Toil { defaultCompleteMode = ToilCompleteMode.Delay, defaultDuration = 600, tickAction = () => UwPay.Comfort(pawn) };
         }
     }
 }

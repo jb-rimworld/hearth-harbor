@@ -43,7 +43,7 @@ namespace Hearth.Underworld
         public static bool TryFindRect(Map map, int w, int h, out CellRect rect, int startRadius = 4)
         {
             rect = default;
-            foreach (var c in GenRadial.RadialCellsAround(map.Center, 90f, true).Where(c => c.DistanceTo(map.Center) >= startRadius))
+            foreach (var c in GenRadial.RadialCellsAround(map.Center, 78f, true).Where(c => c.DistanceTo(map.Center) >= startRadius))
             {
                 var r = CellRect.CenteredOn(c, w, h);
                 if (!r.InBounds(map)) continue;
@@ -701,6 +701,196 @@ namespace Hearth.Underworld
             t.Check(!Smuggler.Buy(map, poor), "no cash, no crate");
             foreach (var g in poor.Goods) g.Destroy();
             UwKit.End();
+        }
+    }
+    public sealed class UwPitFlowSuite : HearthTestSuite
+    {
+        public override string Name => "underworld.pitflow";
+        public override ModuleId Module => ModuleId.Underworld;
+        public override int MaxTicks => 24000;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var map = t.Map; var f = UwKit.Friendly();
+            UwKit.Begin(ContentIntensity.Standard, true);
+            if (f == null || !UwKit.TryFindRect(map, 7, 7, out var inner)) { t.Note("no friendly faction or free area; skipped"); UwKit.End(); yield break; }
+            var outer = inner.ExpandedBy(1);
+            UwKit.BuildFence(map, outer);
+            var gateCell = new IntVec3(inner.CenterCell.x, 0, outer.minZ);
+            gateCell.GetEdifice(map)?.Destroy();
+            var gateDef = DefDatabase<ThingDef>.GetNamedSilentFail("FenceGate");
+            if (gateDef != null) UwKit.SpawnBuilding(gateDef, gateCell, map);
+            map.regionAndRoomUpdater.TryRebuildDirtyRegionsAndRooms();
+            var marker = UwKit.SpawnBuilding(UwDefs.FightPit, inner.CenterCell, map);
+            var pit = marker.TryGetComp<CompFightPit>();
+            t.Check(pit.ArenaValid && pit.ArenaInfo().Cells.Count == 49, "arena with a gate is valid and the gate is not part of it");
+            var outside = new IntVec3(gateCell.x, 0, gateCell.z - 3);
+            var a = UwKit.TameAnimal(map, outside, "Boar", "Muffalo"); var b = UwKit.TameAnimal(map, outside + new IntVec3(1, 0, 0), "Boar", "Muffalo");
+            var guests = UwKit.Guests(map, 3, f);
+            var till0 = UwKit.Till(map);
+            t.Check(FightBout.TryStartFor(pit, true, out string why), "a bout starts through the normal path (" + why + ")");
+            var bout = FightBout.OfPit(pit);
+            t.Check(bout != null && bout.phase == FightBout.Phase.Assemble, "bout is assembling");
+            int waited = 0; bool gaveJobs = false;
+            while (bout != null && !bout.Finished && waited < 14000)
+            {
+                yield return 120; waited += 120;
+                if (bout.BettingOpen && !gaveJobs)
+                {
+                    gaveJobs = true;
+                    foreach (var g in guests)
+                    {
+                        var act = new Activities.PitActivity(); float d = act.Desire(g, GuestApi.Info(g));
+                        var job = d > 0 ? act.TryGiveJob(g, GuestApi.Info(g)) : null;
+                        if (job != null) g.jobs.StartJob(job, JobCondition.InterruptForced);
+                    }
+                    t.Note("spectators sent");
+                }
+                if (waited % 2400 == 0) t.Note($"phase={bout.phase} A in arena={pit.ArenaInfo().Cells.Contains(a.Position)} B={pit.ArenaInfo().Cells.Contains(b.Position)} bets={bout.Bets.Count}");
+            }
+            t.Check(bout.Finished, "bout finished by itself after " + waited + " ticks");
+            t.Check(bout.WinnerSide != -2, "outcome recorded: side " + bout.WinnerSide);
+            t.Check(bout.Bets.Count >= 1, "spectators placed bets on arrival: " + bout.Bets.Count);
+            t.Check(Ledger.Current.Balance(Underworld.PitAccount(map)).Micro == 0 && Ledger.Current.SumAll() == 0, "ledger balanced, pit account empty");
+            if (bout.Result != null) t.Check(UwKit.Till(map) - till0 == new Money(bout.Result.HouseMicro), "till got the house take: " + new Money(bout.Result.HouseMicro));
+            t.Check(!a.Dead && !b.Dead, "both fighters alive");
+            UwKit.End();
+        }
+    }
+
+    public sealed class UwDirectorSuite : HearthTestSuite
+    {
+        public override string Name => "underworld.director";
+        public override ModuleId Module => ModuleId.Underworld;
+        public override int MaxTicks => 20000;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var map = t.Map; var f = UwKit.Friendly();
+            UwKit.Begin(ContentIntensity.Standard, true);
+            if (f == null || !UwKit.TryFindRect(map, 5, 5, out var inner)) { t.Note("no friendly faction or free area; skipped"); UwKit.End(); yield break; }
+            var outer = inner.ExpandedBy(1);
+            foreach (var c in outer.EdgeCells) { var w = ThingMaker.MakeThing(ThingDefOf.Wall, ThingDefOf.WoodLog); w.SetFaction(Faction.OfPlayer); GenSpawn.Spawn(w, c, map); UwKit.Track(w); }
+            foreach (var c in inner) map.roofGrid.SetRoof(c, RoofDefOf.RoofConstructed);
+            var dc = new IntVec3(outer.CenterCell.x, 0, outer.minZ); dc.GetEdifice(map)?.Destroy();
+            UwKit.SpawnBuilding(UwDefs.BackRoomDoor, dc, map);
+            map.regionAndRoomUpdater.TryRebuildDirtyRegionsAndRooms(); BackRoom.MarkDirty(map);
+            var till0 = UwKit.Till(map);
+            Gangs.Fire(map, out var pawns, force: true);
+            t.Check(pawns != null && pawns.Count > 0, "gang arrived");
+            if (pawns == null) { UwKit.End(); yield break; }
+            foreach (var p in pawns) UwKit.Track(p);
+            int waited = 0; bool paid = false;
+            while (waited < 15000 && !paid)
+            {
+                yield return 300; waited += 300;
+                paid = pawns.Any(p => Underworld.Comp.PaidFee(p));
+                if (waited % 3000 == 0) t.Note("jobs: " + string.Join(", ", pawns.Select(p => p.CurJobDef?.defName ?? "none")));
+            }
+            t.Check(paid, "without any help the director sent a gang member into the back room and he paid (after " + waited + " ticks)");
+            t.Check(UwKit.Till(map) > till0, "fee reached the till");
+            t.Check(Ledger.Current.SumAll() == 0, "ledger balanced");
+            foreach (var c in inner) map.roofGrid.SetRoof(c, null);
+            UwKit.End();
+        }
+    }
+    public sealed class UwJobsSuite : HearthTestSuite
+    {
+        public override string Name => "underworld.jobs";
+        public override ModuleId Module => ModuleId.Underworld;
+        public override int MaxTicks => 20000;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var map = t.Map; var f = UwKit.Friendly();
+            UwKit.Begin(ContentIntensity.Standard, true);
+            if (f == null) { t.Note("no friendly faction; skipped"); UwKit.End(); yield break; }
+            var spot = UwKit.TryFindRect(map, 5, 5, out var r) ? r.CenterCell : t.FreeCellNearCenter();
+            // fence deal as a real job
+            var counter = UwKit.SpawnBuilding(UwDefs.FenceCounter, spot, map);
+            var fs = counter.TryGetComp<CompFenceStock>();
+            Payments.CreditColony(map, Money.FromSilver(800), "test");
+            var seller = UwKit.Guests(map, 1, f, shady: true)[0];
+            var item = ThingMaker.MakeThing(ThingDefOf.MedicineIndustrial); item.stackCount = 8; seller.inventory.innerContainer.TryAdd(item, false); Underworld.Comp.MarkStolen(item, f);
+            seller.Position = counter.InteractionCell; seller.Notify_Teleported(true, true);
+            var act = new Activities.FenceActivity();
+            var job = act.TryGiveJob(seller, GuestApi.Info(seller));
+            t.Check(job != null && job.def == UwDefs.JobFenceDeal, "fence activity offers a fence deal job");
+            seller.jobs.StartJob(job, JobCondition.InterruptForced);
+            yield return 500;
+            t.Check(Underworld.Comp.DealsBought == 1 && fs.Stock.Count == 1, "the job ran: loot bought and stocked");
+            t.Check(Ledger.Current.SumAll() == 0, "ledger balanced");
+            // lounge job
+            var guest = UwKit.Guests(map, 10, f).FirstOrDefault(g => Lounge.AllowedLevel(g) > 0) ?? UwKit.Guests(map, 1, f)[0];
+            if (Lounge.AllowedLevel(guest) > 0 && DefDatabase<ThingDef>.GetNamedSilentFail("SmokeleafJoint") != null)
+            {
+                var cell = t.FreeCellNearCenter(); guest.Position = cell; guest.Notify_Teleported(true, true);
+                guest.jobs.StartJob(JobMaker.MakeJob(UwDefs.JobLounge, cell), JobCondition.InterruptForced);
+                yield return 1400;
+                t.Check(Underworld.Comp.LoungeSessions == 1, "the lounge job completed a session");
+            }
+            else t.Note("test guest cannot use drugs; lounge job skipped");
+            // holding cells tour as a real job
+            HSettings.Set("underworld.gang.prisonAccess", 1f);
+            var visitor = UwKit.Guests(map, 1, f, shady: true)[0];
+            var prisoner = PawnGenerator.GeneratePawn(PawnKindDefOf.Villager, f);
+            if (!prisoner.DevelopmentalStage.Adult()) { prisoner.ageTracker.AgeBiologicalTicks = 25L * 3600000L; prisoner.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
+            GenSpawn.Spawn(prisoner, CellFinder.RandomClosewalkCellNear(map.Center, map, 10), map); UwKit.Track(prisoner);
+            prisoner.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
+            visitor.Position = prisoner.Position + new IntVec3(2, 0, 0); visitor.Notify_Teleported(true, true);
+            var tj = Interrogation.MakeJob(visitor);
+            t.Check(tj != null, "the tour job is offered when allowed");
+            if (tj != null) { visitor.jobs.StartJob(tj, JobCondition.InterruptForced); yield return 3200; t.Check(Underworld.Comp.Tours >= 1, "the tour job ran to the end"); }
+            HSettings.Set("underworld.gang.prisonAccess", 0f);
+            // smuggler offer dialog
+            var dockCell = UwKit.TryFindRect(map, 3, 3, out var dr) ? dr.CenterCell : t.FreeCellNearCenter();
+            UwKit.SpawnBuilding(UwDefs.SmugglerDock, dockCell, map);
+            t.Check(Smuggler.Fire(map), "smuggler dialog fires");
+            t.Check(Find.WindowStack.IsOpen<Dialog_NodeTree>(), "smuggler dialog is open");
+            Find.WindowStack.TryRemove(typeof(Dialog_NodeTree), false);
+            UwKit.End();
+        }
+    }
+    public sealed class UwSaveLoadSuite : HearthTestSuite
+    {
+        public override string Name => "underworld.saveload";
+        public override ModuleId Module => ModuleId.Underworld;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var comp = Underworld.Comp; int now = Find.TickManager.TicksGame;
+            UwKit.Begin(ContentIntensity.Standard, true);
+            comp.SetWhispers(33.5f, now); comp.NeverAsk = true; comp.AskCount = 2; comp.HuntWarningAck = true; comp.OrganWarningAck = false; comp.ContentWarningAck = true;
+            comp.Bouts = 7; comp.DealsSold = 3; comp.HouseTakeMicro = 123456789L; comp.FenceProfitMicro = 4242L;
+            var fakeShady = 987654; comp.NoteScandal(t.Map, now - 500);
+            var kidney = DefDatabase<ThingDef>.GetNamedSilentFail("Kidney");
+            comp.Orders.Clear(); comp.Orders.Add(new OrganOrder { organ = kidney, deadlineTick = now + 1234, premium = 1.9f });
+            var pawn = UwKit.Guests(t.Map, 1, UwKit.Friendly() ?? Find.FactionManager.OfPlayer, true)[0];
+            comp.MarkHunter(pawn); var loot = ThingMaker.MakeThing(ThingDefOf.MedicineIndustrial); comp.MarkStolen(loot, UwKit.Friendly());
+            string path = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "hh_uw_saveload.xml");
+            UnderworldComponent copy = null; bool ok = true; string err = null;
+            try
+            {
+                Scribe.saver.InitSaving(path, "UwTest");
+                Scribe_Deep.Look(ref comp, "uw", Current.Game);
+                Scribe.saver.FinalizeSaving();
+                Scribe.loader.InitLoading(path);
+                Scribe.EnterNode("UwTest");
+                Scribe_Deep.Look(ref copy, "uw", Current.Game);
+                Scribe.ExitNode();
+                Scribe.loader.FinalizeLoading();
+            }
+            catch (Exception e) { ok = false; err = e.Message; try { Scribe.ForceStop(); } catch { } }
+            t.Check(ok, "component can be written and read back " + err);
+            if (ok && copy != null)
+            {
+                t.Check(Math.Abs(copy.WhispersAt(now) - 33.5f) < 0.01f, "whispers survived");
+                t.Check(copy.NeverAsk && copy.AskCount == 2 && copy.HuntWarningAck && !copy.OrganWarningAck && copy.ContentWarningAck, "flags survived");
+                t.Check(copy.Bouts == 7 && copy.DealsSold == 3 && copy.HouseTakeMicro == 123456789L && copy.FenceProfitMicro == 4242L, "statistics survived");
+                t.Check(copy.Orders.Count == 1 && copy.Orders[0].organ == kidney && Math.Abs(copy.Orders[0].premium - 1.9f) < 0.001f, "order book survived");
+                t.Check(copy.IsHunter(pawn) && copy.IsShady(pawn), "pawn marks survived");
+                t.Check(copy.IsStolen(loot, out _), "loot marks survived");
+                t.Check(copy.ScandalTickOn(t.Map) == now - 500, "scandal cooldown survived");
+            }
+            try { System.IO.File.Delete(path); } catch { }
+            UwKit.End();
+            yield return 1;
         }
     }
 }

@@ -192,7 +192,7 @@ namespace Hearth.Underworld
                     if (UwPay.Charge(pawn, fee, Underworld.Till(pawn.Map), "underworld.backroom", "Back room fee", ignoreBudget: true)) { comp.NotePaidFee(pawn); UwActivity.Note(pawn.Map); }
                 }
             };
-            yield return new Toil { defaultCompleteMode = ToilCompleteMode.Delay, defaultDuration = 1800, tickAction = () => { pawn.GainComfortFromCellIfPossible(1); } };
+            yield return new Toil { defaultCompleteMode = ToilCompleteMode.Delay, defaultDuration = 1800, tickAction = () => { UwPay.Comfort(pawn); } };
         }
     }
 

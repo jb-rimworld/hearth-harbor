@@ -290,7 +290,14 @@ namespace Hearth.Underworld
             if (InArena(p) || now - last < 150) return;
             last = now;
             var a = Pit.ArenaInfo(); if (a == null || a.Cells.Count == 0) return;
-            var job = JobMaker.MakeJob(JobDefOf.Goto, a.Cells.RandomElement()); job.locomotionUrgency = LocomotionUrgency.Walk; job.expiryInterval = 600;
+            var cell = a.Cells.RandomElement();
+            if (!p.CanReach(cell, PathEndMode.OnCell, Danger.Deadly))
+            {
+                // animals cannot open fence gates: their handlers lead them in. People who cannot get in simply do not show up (the bout is called off).
+                if (p.RaceProps.Animal && !p.Downed) { p.jobs.StopAll(); p.Position = cell; p.Notify_Teleported(true, true); }
+                return;
+            }
+            var job = JobMaker.MakeJob(JobDefOf.Goto, cell); job.locomotionUrgency = LocomotionUrgency.Walk; job.expiryInterval = 600;
             p.jobs.StartJob(job, JobCondition.InterruptForced);
         }
 

@@ -45,6 +45,15 @@ namespace Hearth.Underworld
             if (!p.inventory.innerContainer.TryAdd(s)) s.Destroy();
         }
 
+        public static void Comfort(Pawn p)
+        {
+#if RW16PLUS
+            p.GainComfortFromCellIfPossible(1);
+#else
+            p.GainComfortFromCellIfPossible();
+#endif
+        }
+
         public static Money Balance(string acc) => Ledger.Current?.Balance(acc) ?? Money.Zero;
 
         /// <summary>Moves what is left on an account into the colony till.</summary>
