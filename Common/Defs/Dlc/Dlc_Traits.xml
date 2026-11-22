@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- KONZEPT 11.1. Luck traits never bend the random draw: they shift a visible payout plan (Hearth.Dlc.LuckApi). -->
+  <TraitDef>
+    <defName>HH_Lucky</defName>
+    <commonality>0.2</commonality>
+    <conflictingTraits><li>HH_Unlucky</li></conflictingTraits>
+    <degreeDatas><li>
+      <label>lucky</label>
+      <description>{PAWN_nameDef} has a knack for landing on the right side of a coin. At the casino {PAWN_pronoun} is dealt a slightly kinder payout plan. Every tenth lottery ticket is free.</description>
+      <statOffsets><HH_ServiceQuality>0.02</HH_ServiceQuality></statOffsets>
+    </li></degreeDatas>
+  </TraitDef>
+  <TraitDef>
+    <defName>HH_Unlucky</defName>
+    <commonality>0.2</commonality>
+    <conflictingTraits><li>HH_Lucky</li></conflictingTraits>
+    <degreeDatas><li>
+      <label>unlucky</label>
+      <description>{PAWN_nameDef} drops toast butter-side down and chases losses a little too hard. Payouts at the casino run slightly worse for {PAWN_objective}.</description>
+    </li></degreeDatas>
+  </TraitDef>
+  <TraitDef>
+    <defName>HH_GamblingAverse</defName>
+    <commonality>0.25</commonality>
+    <conflictingTraits><li>HH_Gambler</li></conflictingTraits>
+    <degreeDatas><li>
+      <label>gambling-averse</label>
+      <description>{PAWN_nameDef} refuses to gamble and is uneasy in rooms where others do. In return {PAWN_pronoun} is a sharp-eyed cashier who notices forged chips.</description>
+      <statFactors><HH_GamblingAddiction>0</HH_GamblingAddiction><HH_GamblingJoy>0</HH_GamblingJoy><HH_FraudDetection>1.2</HH_FraudDetection></statFactors>
+      <disallowedThoughts><li>HH_LuckyStreak</li></disallowedThoughts>
+    </li></degreeDatas>
+  </TraitDef>
+  <TraitDef>
+    <defName>HH_Gambler</defName>
+    <commonality>0.25</commonality>
+    <conflictingTraits><li>HH_GamblingAverse</li></conflictingTraits>
+    <degreeDatas><li>
+      <label>gambler</label>
+      <description>{PAWN_nameDef} loves the table: the spin, the shuffle, the pause before the card turns. Gambling is more fun, and more dangerous, for {PAWN_objective}. Makes a lively croupier.</description>
+      <statFactors><HH_GamblingAddiction>1.5</HH_GamblingAddiction><HH_GamblingJoy>1.5</HH_GamblingJoy></statFactors>
+      <statOffsets><HH_TableSkill>1</HH_TableSkill></statOffsets>
+    </li></degreeDatas>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>HH_BornHost</defName>
+    <commonality>0.25</commonality>
+    <conflictingTraits><li>HH_Grump</li></conflictingTraits>
+    <degreeDatas><li>
+      <label>born host</label>
+      <description>{PAWN_nameDef} remembers names, refills glasses before they are empty and makes strangers feel expected. Learns hosting faster.</description>
+      <statOffsets><HH_ServiceQuality>0.15</HH_ServiceQuality><SocialImpact>0.1</SocialImpact></statOffsets>
+      <statFactors><HH_HostingLearn>1.5</HH_HostingLearn></statFactors>
+    </li></degreeDatas>
+  </TraitDef>
+  <TraitDef>
+    <defName>HH_Grump</defName>
+    <commonality>0.2</commonality>
+    <conflictingTraits><li>HH_BornHost</li><li>HH_SilverTongue</li></conflictingTraits>
+    <degreeDatas><li>
+      <label>grump</label>
+      <description>{PAWN_nameDef} runs the front desk like a customs post. Guests complain, but nothing ever goes missing from {PAWN_possessive} rooms.</description>
+      <statOffsets><HH_ServiceQuality>-0.2</HH_ServiceQuality><SocialImpact>-0.1</SocialImpact></statOffsets>
+      <statFactors><HH_TheftChance>0.5</HH_TheftChance></statFactors>
+    </li></degreeDatas>
+  </TraitDef>
+  <TraitDef>
+    <defName>HH_PennyPincher</defName>
+    <commonality>0.2</commonality>
+    <degreeDatas><li>
+      <label>penny-pincher</label>
+      <description>{PAWN_nameDef} reads every line of every contract, twice. Pays lower bank fees and spots pre-ticked extras. Guests find {PAWN_possessive} prices a little steep.</description>
+      <statFactors><HH_BankFeeFactor>0.8</HH_BankFeeFactor></statFactors>
+      <statOffsets><HH_Negotiation>0.1</HH_Negotiation><HH_PriceFeel>0.1</HH_PriceFeel></statOffsets>
+    </li></degreeDatas>
+  </TraitDef>
+  <TraitDef>
+    <defName>HH_SilverTongue</defName>
+    <commonality>0.2</commonality>
+    <conflictingTraits><li>HH_Grump</li></conflictingTraits>
+    <degreeDatas><li>
+      <label>silver tongue</label>
+      <description>{PAWN_nameDef} could talk a river into a different bed. Guests expect a little less when {PAWN_pronoun} is around, and buying a guest's loyalty comes cheaper.</description>
+      <statOffsets><HH_GuestExpectation>-0.03</HH_GuestExpectation><NegotiationAbility>0.1</NegotiationAbility><TradePriceImprovement>0.02</TradePriceImprovement></statOffsets>
+      <statFactors><HH_RecruitPrice>0.9</HH_RecruitPrice></statFactors>
+    </li></degreeDatas>
+  </TraitDef>
+  <TraitDef>
+    <defName>HH_EagleEye</defName>
+    <commonality>0.2</commonality>
+    <degreeDatas><li>
+      <label>eagle eye</label>
+      <description>{PAWN_nameDef} sees the palmed card, the swapped chip and the guest who pockets the spoon.</description>
+      <statFactors><HH_FraudDetection>1.5</HH_FraudDetection></statFactors>
+    </li></degreeDatas>
+  </TraitDef>
+  <TraitDef>
+    <defName>HH_SteadyHands</defName>
+    <commonality>0.2</commonality>
+    <degreeDatas><li>
+      <label>steady hands</label>
+      <description>{PAWN_nameDef}'s fingers do not shake: a dealer's dream, and a house cheater's.</description>
+      <statOffsets><HH_Dexterity>4</HH_Dexterity></statOffsets>
+    </li></degreeDatas>
+  </TraitDef>
+  <TraitDef>
+    <defName>HH_Caregiver</defName>
+    <commonality>0.2</commonality>
+    <degreeDatas><li>
+      <label>caregiver</label>
+      <description>{PAWN_nameDef} sits with the sick, reads to the children and notices who is not eating. Patients and families in {PAWN_possessive} care do better.</description>
+      <statFactors><HH_CareProgress>1.15</HH_CareProgress></statFactors>
+      <statOffsets><HH_FamilyCheer>0.05</HH_FamilyCheer></statOffsets>
+    </li></degreeDatas>
+  </TraitDef>
+  <TraitDef>
+    <defName>HH_Peacemaker</defName>
+    <commonality>0.2</commonality>
+    <degreeDatas><li>
+      <label>peacemaker</label>
+      <description>{PAWN_nameDef} steps between raised voices and turns them down again. Fights in {PAWN_possessive} room are rarer and end sooner.</description>
+      <statFactors><HH_BrawlRisk>0.6</HH_BrawlRisk></statFactors>
+    </li></degreeDatas>
+  </TraitDef>
+  <TraitDef>
+    <defName>HH_Gossip</defName>
+    <commonality>0.2</commonality>
+    <degreeDatas><li>
+      <label>gossip</label>
+      <description>{PAWN_nameDef} cannot keep a story to {PAWN_objective}self. What guests do, good or bad, travels further.</description>
+      <statFactors><HH_RumorSpread>1.5</HH_RumorSpread></statFactors>
+    </li></degreeDatas>
+  </TraitDef>
+  <TraitDef>
+    <defName>HH_KidMagnet</defName>
+    <commonality>0.15</commonality>
+    <degreeDatas><li>
+      <label>kid magnet</label>
+      <description>Children follow {PAWN_nameDef} around like ducklings. Families are happier, and the play room is in good hands.</description>
+      <statOffsets><HH_FamilyCheer>0.1</HH_FamilyCheer></statOffsets>
+    </li></degreeDatas>
+  </TraitDef>
+
+  <!-- Thoughts of the luck traits -->
+  <ThoughtDef>
+    <defName>HH_LuckyStreak</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages><li><label>lucky streak</label><description>The dice keep falling my way tonight.</description><baseMoodEffect>4</baseMoodEffect></li></stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>HH_OfCourseILost</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages><li><label>of course I lost</label><description>Of course I lost. Of course.</description><baseMoodEffect>-3</baseMoodEffect></li></stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>HH_GamblingAround</defName>
+    <workerClass>Hearth.Dlc.ThoughtWorker_GamblingAround</workerClass>
+    <requiredTraits><li>HH_GamblingAverse</li></requiredTraits>
+    <stages><li><label>gambling nearby</label><description>People are throwing money away right in front of me.</description><baseMoodEffect>-3</baseMoodEffect></li></stages>
+  </ThoughtDef>
+</Defs>

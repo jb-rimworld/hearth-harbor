@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- DLC integration, traits and genes (HH_Dlc). Dry tone, no real organisations. -->
+  <HH.Dlc.Bought>{0} bought {1} for {2} silver.</HH.Dlc.Bought>
+  <HH.Dlc.Gizmo.Buy>Indulgences</HH.Dlc.Gizmo.Buy>
+  <HH.Dlc.Gizmo.BuyDesc>Buy absolution, mercy or rank for a colonist. Prices follow their ideoligion's stance. The silver comes from colony stock or their pocket.</HH.Dlc.Gizmo.BuyDesc>
+  <HH.Dlc.Gizmo.ChooseFaith>Choose faith</HH.Dlc.Gizmo.ChooseFaith>
+  <HH.Dlc.Gizmo.ChooseFaithDesc>Dedicate this altar to an ideoligion. Its followers among your guests will come here to pray.</HH.Dlc.Gizmo.ChooseFaithDesc>
+  <HH.Dlc.Gizmo.FundDesc>Where your colonists' payments go. The deity keeps them for good; a faction of the same faith warms to you (+1 goodwill per 500 silver, at most +5 per quadrum).</HH.Dlc.Gizmo.FundDesc>
+  <HH.Dlc.Gizmo.ToDeity>Offerings: to the deity</HH.Dlc.Gizmo.ToDeity>
+  <HH.Dlc.Gizmo.ToFaction>Offerings: to the faith's faction</HH.Dlc.Gizmo.ToFaction>
+  <HH.Dlc.NoBuyers>no colonist with an ideoligion</HH.Dlc.NoBuyers>
+  <HH.Dlc.NoFaith>No faith chosen yet.</HH.Dlc.NoFaith>
+  <HH.Dlc.Noble.AcceptOrders>Obey the order</HH.Dlc.Noble.AcceptOrders>
+  <HH.Dlc.Noble.Arrived>A {0} and retinue arrive for {1} days.</HH.Dlc.Noble.Arrived>
+  <HH.Dlc.Noble.BilletText>The Empire orders you to lodge a {0} and {1} retainers for {2} days. They expect a bedroom worthy of their rank ({3}). You will receive about {4} silver for expenses. Refusing costs goodwill and honor.</HH.Dlc.Noble.BilletText>
+  <HH.Dlc.Noble.Left>The noble party leaves. Payment: {0} silver.</HH.Dlc.Noble.Left>
+  <HH.Dlc.Noble.OfferText>A {0} with {1} retainers asks to stay for {2} days and will pay about {3} silver if they are comfortable. They expect: {4}. Declining costs nothing.</HH.Dlc.Noble.OfferText>
+  <HH.Dlc.Noble.Refuse>Refuse (goodwill and honor suffer)</HH.Dlc.Noble.Refuse>
+  <HH.Dlc.NothingOffered>their faith offers nothing for sale</HH.Dlc.NothingOffered>
+  <HH.Dlc.Reason.Abhorrent>their faith abhors this</HH.Dlc.Reason.Abhorrent>
+  <HH.Dlc.Reason.CannotPay>cannot pay {0}</HH.Dlc.Reason.CannotPay>
+  <HH.Dlc.Reason.CapColony>the colony has bought this already this quadrum</HH.Dlc.Reason.CapColony>
+  <HH.Dlc.Reason.CapIdeo>the ideoligion has had enough of this for this quadrum</HH.Dlc.Reason.CapIdeo>
+  <HH.Dlc.Reason.CapPawnQ>limit reached for this quadrum</HH.Dlc.Reason.CapPawnQ>
+  <HH.Dlc.Reason.CapPawnY>limit reached for this year</HH.Dlc.Reason.CapPawnY>
+  <HH.Dlc.Reason.CertainEnough>certainty is already full</HH.Dlc.Reason.CertainEnough>
+  <HH.Dlc.Reason.NeedRank>needs rank {0}</HH.Dlc.Reason.NeedRank>
+  <HH.Dlc.Reason.NeedRoyalty>needs Royalty</HH.Dlc.Reason.NeedRoyalty>
+  <HH.Dlc.Reason.NoFresh>no fresh wound of up to 10 hit points</HH.Dlc.Reason.NoFresh>
+  <HH.Dlc.Reason.NoGuilt>no memory of a broken commandment</HH.Dlc.Reason.NoGuilt>
+  <HH.Dlc.Reason.NoIdeo>no ideoligion</HH.Dlc.Reason.NoIdeo>
+  <HH.Dlc.Reason.NoScar>no lasting scar</HH.Dlc.Reason.NoScar>
+  <HH.Dlc.Reason.NotAThing>their faith has no such thing</HH.Dlc.Reason.NotAThing>
+  <HH.Dlc.Reason.NotFluid>only fluid ideoligions can reform</HH.Dlc.Reason.NotFluid>
+  <HH.Dlc.Reason.NotPsychic>cannot form a psylink</HH.Dlc.Reason.NotPsychic>
+  <HH.Dlc.Reason.PsylinkMax>psylink is already at its limit</HH.Dlc.Reason.PsylinkMax>
+  <HH.Dlc.Reason.RankHeld>already holds this rank or a higher one</HH.Dlc.Reason.RankHeld>
+  <HH.Dlc.Reason.RankOrder>needs the previous rank first</HH.Dlc.Reason.RankOrder>
+  <HH.Dlc.Reason.ReformReady>reform is already possible</HH.Dlc.Reason.ReformReady>
+  <HH.Dlc.ShrineQuality>Faith: {0}. Chapel quality: {1}.</HH.Dlc.ShrineQuality>
+  <HH.Dlc.TempleFund>Temple fund: {0} silver</HH.Dlc.TempleFund>
+</LanguageData>

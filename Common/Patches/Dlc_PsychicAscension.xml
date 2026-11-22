@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- KONZEPT 11.4: psychic ascension needs both Royalty (psylink) and Ideology (the precepts), so it is added only when both are active. -->
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>Royalty</li></mods>
+    <match Class="PatchOperationFindMod">
+      <mods><li>Ideology</li></mods>
+      <match Class="PatchOperationAdd">
+        <xpath>/Defs</xpath>
+        <value>
+  <Hearth.IndulgenceDef>
+    <defName>HH_Asc_Psychic</defName><label>psychic ascension</label>
+    <description>The priesthood pulls strings with something far above it. Raises the psylink by one level, up to the usual limit. Needs rank III.</description>
+    <theme>Ascension</theme><workerClass>Hearth.Dlc.IndulgenceWorker_Psylink</workerClass>
+    <priceThing>PsychicAmplifier</priceThing><priceThingFactor>1.5</priceThingFactor>
+    <minRank>3</minRank><capPawnYear>1</capPawnYear><capColonyQuadrum>1</capColonyQuadrum>
+  </Hearth.IndulgenceDef>
+        </value>
+      </match>
+    </match>
+  </Operation>
+</Patch>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- KONZEPT 11.6: guest chapel altar. The ideoligion is chosen in the gizmo; the altar takes its colour and symbol. -->
+  <ThingDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="BuildingBase">
+    <defName>HH_GuestAltar</defName>
+    <label>guest altar</label>
+    <description>A small altar for the faith of travellers. Pick an ideoligion you know: guests who follow it find a place to pray, donate to the temple fund, and may buy indulgences here. Your own colonists of other faiths may object.</description>
+    <thingClass>Hearth.Dlc.Building_GuestAltar</thingClass>
+    <graphicData>
+      <texPath>Things/HH/Dlc/GuestAltar</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.5</fillPercent>
+    <size>(1,1)</size>
+    <rotatable>true</rotatable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <designationCategory>Ideology</designationCategory>
+    <uiOrder>2090</uiOrder>
+    <canGenerateDefaultDesignator>true</canGenerateDefaultDesignator>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToBuild>3000</WorkToBuild>
+      <Flammability>0.6</Flammability>
+      <Beauty>8</Beauty>
+      <Mass>12</Mass>
+    </statBases>
+    <stuffCategories><li>Woody</li><li>Stony</li><li>Metallic</li></stuffCategories>
+    <costStuffCount>35</costStuffCount>
+    <defaultStuff>WoodLog</defaultStuff>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <tickerType>Never</tickerType>
+    <comps>
+      <li Class="Hearth.Dlc.CompProperties_GuestShrine" />
+      <li Class="Hearth.Dlc.CompProperties_IndulgenceOffice" />
+    </comps>
+    <building><buildingTags><li>HH_GuestShrine</li></buildingTags></building>
+  </ThingDef>
+
+  <JobDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>HH_PrayAtShrine</defName>
+    <driverClass>Hearth.Dlc.JobDriver_PrayAtShrine</driverClass>
+    <reportString>praying at TargetA.</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+</Defs>
