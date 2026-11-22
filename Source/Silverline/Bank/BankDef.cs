@@ -49,7 +49,9 @@ namespace Silverline
             {
                 if (requiresModule.NullOrEmpty()) return true;
                 if (!System.Enum.TryParse(requiresModule, out ModuleId m)) return false;
-                return Modules.On(m);
+                if (!Modules.On(m)) return false;
+                if (m == ModuleId.Underworld && HearthProfile.Current != null && !HearthProfile.Current.UnderworldDiscovered) return false;
+                return true;
             }
         }
 

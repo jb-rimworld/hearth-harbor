@@ -36,6 +36,15 @@ namespace Silverline
 
         public static int DepositableCoins(Map map) => Depositable(map).Sum(t => t.stackCount);
 
+        static int cacheFrame = -999, cacheMapId = -1, cacheCoins;
+        /// <summary>For the window: the scan runs at most every 30 frames.</summary>
+        public static int DepositableCoinsCached(Map map)
+        {
+            if (map == null) return 0;
+            if (cacheMapId != map.uniqueID || Time.frameCount - cacheFrame >= 30) { cacheCoins = DepositableCoins(map); cacheFrame = Time.frameCount; cacheMapId = map.uniqueID; }
+            return cacheCoins;
+        }
+
         /// <summary>Removes exactly <paramref name="coins"/> silver from the map (like a trade). Returns false and removes nothing if there is not enough.</summary>
         public static bool TakeCoins(Map map, int coins)
         {

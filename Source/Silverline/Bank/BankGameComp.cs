@@ -326,6 +326,7 @@ namespace Silverline
         public void DailyStep(int day)
         {
             var led = Ledger.Current; var bank = Bank;
+            InvalidateCache();
             // 1. interest on the account: daily factor = M_acc^(1/60), M_acc from the slider (KONZEPT 8.8, D17)
             double f = FinanceMath.AccountDailyFactor(BankSettings.ProfitM, BankSettings.AccountBeta, bank?.interestMod ?? 1.0);
             var bal = Balance;

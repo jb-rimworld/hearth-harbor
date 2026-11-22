@@ -82,7 +82,7 @@ namespace Silverline
             {
                 defaultLabel = L.T("Building.DirectDeposit", "Direct deposit"),
                 defaultDesc = L.T("Building.DirectDepositDesc", "On: the tills of your businesses are emptied into your bank account at midnight. Off: the takings are put down as silver next to the safe."),
-                icon = BaseContent.BadTex,
+                icon = ContentFinder<Texture2D>.Get("UI/HH/Bank/DirectDeposit", true),
                 isActive = () => BankApi.Impl.DirectDepositOn,
                 toggleAction = () => HSettings.Set("bank.directDeposit", BankApi.Impl.DirectDepositOn ? 0f : 1f),
             };

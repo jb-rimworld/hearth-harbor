@@ -70,7 +70,7 @@ namespace Silverline
         static void Transfer(Rect r, BankGameComp c, Window_Bank w)
         {
             var i = BankUI.Card(r, L.T("Lobby.Transfer", "Deposit and withdraw"));
-            var map = w.Map; int depositable = BankSilver.DepositableCoins(map);
+            var map = w.Map; int depositable = BankSilver.DepositableCoinsCached(map);
             int max = Math.Max(100, Math.Max(depositable, (int)c.Balance.Silver));
             max = Math.Min(max, Math.Max(100, HSettings.GetInt("bank.podMaxLoad")));
             float y = i.y;
@@ -157,7 +157,7 @@ namespace Silverline
         public static bool Involves(Ledger.Entry e) => (e.From != null && e.From.StartsWith("bank:")) || (e.To != null && e.To.StartsWith("bank:"));
 
         /// <summary>Newest first.</summary>
-        public static List<Ledger.Entry> Entries(int max, bool includeTransit = false)
+        public static List<Ledger.Entry> Entries(int max)
         {
             var led = Ledger.Current; var res = new List<Ledger.Entry>(); if (led == null) return res;
             var j = led.Journal;
@@ -166,7 +166,7 @@ namespace Silverline
                 var e = j[i];
                 if (!Involves(e)) continue;
                 bool touchesColony = e.From == BankGameComp.Colony || e.To == BankGameComp.Colony;
-                if (!touchesColony && !includeTransit && !(e.From == BankGameComp.LoansAccount || e.To == BankGameComp.LoansAccount)) continue;
+                if (!touchesColony && !(e.From == BankGameComp.LoansAccount || e.To == BankGameComp.LoansAccount)) continue;
                 res.Add(e);
             }
             return res;
@@ -196,7 +196,7 @@ namespace Silverline
             BankUI.Row(new Rect(i0.x + i0.width / 2f + 8f, i0.y, i0.width / 2f - 8f, 22f), L.T("Hist.TotalFees", "Fees paid so far"), BankUI.Silver(c.TotalFees), L.T("Hist.TotalFeesTip", "All fees, late fees and the price of changing banks."));
             var list = new Rect(r.x, r.y + 62f, r.width, r.height - 62f);
             Widgets.DrawBoxSolid(list, BankUI.WalnutLight); GUI.color = BankUI.BrassDim; Widgets.DrawBox(list, 1); GUI.color = Color.white;
-            var entries = BankLedgerView.Entries(400, true);
+            var entries = BankLedgerView.Entries(400);
             float rowH = 22f;
             BankUI.Label(new Rect(list.x + 10f, list.y + 4f, 140f, 20f), L.T("Hist.When", "When"), BankUI.Brass, GameFont.Tiny);
             BankUI.Label(new Rect(list.x + 160f, list.y + 4f, 300f, 20f), L.T("Hist.What", "What"), BankUI.Brass, GameFont.Tiny);
@@ -261,7 +261,8 @@ namespace Silverline
             var i = BankUI.Card(r, L.T("Loans.New", "New loan"));
             bool can = c.CanBorrow(out string why);
             int max = (int)Math.Max(BankGameComp.MinLoanCoins, c.AvailableCreditSilver());
-            amount = Math.Max(BankGameComp.MinLoanCoins, Math.Min(amount, max));
+            int clamped = Math.Max(BankGameComp.MinLoanCoins, Math.Min(amount, max));
+            if (clamped != amount) { amount = clamped; buf = amount.ToString(CultureInfo.InvariantCulture); }
             float y = i.y;
             BankUI.Label(new Rect(i.x, y + 2f, 60f, 24f), L.T("Lobby.Amount", "Amount"), BankUI.CreamDim);
             float v = Widgets.HorizontalSlider(new Rect(i.x + 64f, y + 6f, i.width - 64f - 96f, 20f), amount, BankGameComp.MinLoanCoins, Math.Max(BankGameComp.MinLoanCoins + 1, max), false, null, null, null, 1f);

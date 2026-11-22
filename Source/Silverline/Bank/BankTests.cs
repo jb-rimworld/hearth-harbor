@@ -32,6 +32,7 @@ namespace Silverline
         }
         public void TestSetTier(int t) { shownTier = candidateTier = t; }
         public int TestLastDay => lastDay;
+        public void TestSetScore(int s) { score = s; }
     }
 
     static class BT
@@ -411,6 +412,17 @@ namespace Silverline
             foreach (var p in team) if (!p.Destroyed) p.Destroy();
             Collections.Housekeeping(c);
             t.Check(agency.RelationKindWith(Faction.OfPlayer) != FactionRelationKind.Hostile, "housekeeping calms the agency down once its people are gone");
+            // the friendly visit lowers the mood of colonists standing near the collectors
+            var colonist = map.mapPawns.FreeColonistsSpawned.First();
+            HearthProfile.Current.Tier = 3f; HSettings.Set("bank.researchMode", 1f); BankCaretaker.CheckResearchOff();
+            BT.Fund(Money.FromSilver(3000)); c.TryTakeLoan(100, 30, out _, out var lv);
+            var visitors = Collections.SpawnVisitors(c, map, lv);
+            t.Check(visitors.Count == 2 && c.Collectors.Count == 2, "two visitors spawned");
+            t.Check(!SLDefOf.SL_CollectorsNearby.Worker.CurrentState(colonist).Active || visitors.Any(v => v.Position.InHorDistOf(colonist.Position, 14f)), "collectors far away: no mood effect (unless they happen to stand close)");
+            visitors[0].Position = colonist.Position + new IntVec3(2, 0, 0);
+            var st = SLDefOf.SL_CollectorsNearby.Worker.CurrentState(colonist);
+            t.Check(st.Active && SLDefOf.SL_CollectorsNearby.stages[st.StageIndex].baseMoodEffect == -2, "a collector next to a colonist: -2 mood");
+            c.TestReset(true);
             // seizure: items are taken, the debt is paid
             BT.ClearStockpileSilver(t);
             var z = BT.Stockpile(t); var cell = z.Cells.First();
@@ -547,6 +559,192 @@ namespace Silverline
             // keys for all defs exist as labels
             foreach (var b in DefDatabase<SL_BankDef>.AllDefs) t.Check(!b.label.NullOrEmpty() && !b.description.NullOrEmpty() && !b.slogan.NullOrEmpty() && b.Icon != null, "bank def complete: " + b.defName);
             foreach (var d in new Def[] { SLDefOf.SL_ATM, SLDefOf.SL_BankCounter, SLDefOf.SL_NightSafe, SLDefOf.SL_Banking, SLDefOf.SL_Branches, SLDefOf.SL_Credit }) t.Check(!d.label.NullOrEmpty() && !d.description.NullOrEmpty(), "def has label and description: " + d.defName);
+            c.TestReset(true);
+        }
+    }
+
+    public sealed class BankBanksSuite : HearthTestSuite
+    {
+        public override string Name => "bank.banks";
+        public override ModuleId Module => ModuleId.Bank;
+        public override int MaxTicks => 5_000_000;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var c = BT.C; var map = t.Map; var profile = HearthProfile.Current;
+            int oldMode = HSettings.GetInt("bank.researchMode"); float oldTier = profile.Tier; bool oldDisc = profile.UnderworldDiscovered;
+            HSettings.Set("bank.researchMode", 1f); BankCaretaker.CheckResearchOff(); profile.Tier = 3f;
+            var black = DefDatabase<SL_BankDef>.GetNamed("SL_BlackLedger");
+            profile.UnderworldDiscovered = false;
+            t.Check(!black.Available, "The Black Ledger stays hidden until the underworld is discovered");
+            c.TestReset(false);
+            t.Check(!c.CanOpenAccount(black, out _) && !c.OpenAccount(black, false), "no account at a hidden bank");
+            profile.UnderworldDiscovered = true;
+            t.Check(black.Available == Modules.On(ModuleId.Underworld), "after discovery the Black Ledger is available when the underworld module is on");
+            // Black Ledger: no questions
+            c.TestReset(true, "SL_BlackLedger"); c.TestSetScore(300); BT.Fund(Money.FromSilver(4000));
+            t.Check(c.EffectiveScore() == 700, "Black Ledger ignores the credit score");
+            t.Check(c.CanBorrow(out string why), "Black Ledger lends to a score of 300: " + why);
+            t.Check(BT.Near(c.YearlyLoanRate(), 0.40, 1e-6), "Black Ledger loan rate is the base 20 % + 20 pp: " + c.YearlyLoanRate());
+            var before = c.Balance; var taken = c.SeizeAccount();
+            t.Check(taken == before * 0.25 && c.Balance == before - taken, "a seizure takes a quarter of the balance: " + taken);
+            t.Check(BT.LedgerSum == Money.Zero, "ledger balanced after the seizure");
+            // Imperial Treasury: loans for title holders only
+            if (ModsConfig.RoyaltyActive)
+            {
+                c.TestReset(true, "SL_ImperialTreasury"); BT.Fund(Money.FromSilver(4000));
+                bool titled = c.AnyTitleHolder();
+                t.Check(titled || !c.CanBorrow(out why), "Imperial Treasury refuses loans without a title holder (" + why + ")");
+                t.Check(c.WithdrawFee(Money.FromSilver(100), BankSite.Remote) == Money.FromSilver(2), "Imperial Treasury withdrawal fee 0.5 % with minimum 2");
+            }
+            // Orbital Exchange is the expensive one
+            if (DefDatabase<SL_BankDef>.GetNamedSilentFail("SL_OrbitalExchange") != null)
+            {
+                c.TestReset(true, "SL_OrbitalExchange");
+                t.Check(c.WithdrawFee(Money.FromSilver(100), BankSite.Remote) == Money.FromSilver(10) && c.DepositFee(Money.FromSilver(1000)) == Money.FromSilver(5), "Orbital Exchange: 2 % (min 10) to withdraw, 0.5 % to deposit");
+            }
+            // fee level setting scales everything
+            c.TestReset(true); float oldFee = HSettings.Get("bank.feeFactor");
+            HSettings.Set("bank.feeFactor", 0f);
+            t.Check(c.WithdrawFee(Money.FromSilver(1000), BankSite.Remote) == Money.Zero, "fee level 0 % means no fees");
+            HSettings.Set("bank.feeFactor", 2f);
+            t.Check(c.WithdrawFee(Money.FromSilver(1000), BankSite.Remote) == Money.FromSilver(20), "fee level 200 % doubles the fees");
+            HSettings.Set("bank.feeFactor", oldFee);
+            // Too Big To Fail: the bailout
+            c.TestReset(true, "SL_TooBigToFail"); HSettings.Set("bank.profit", 1.0f);
+            BT.Fund(Money.FromSilver(1_500_000));
+            int day = c.Today + 1;
+            c.DailyStep(day);
+            t.Check(c.NetWorth.Silver >= 1_000_000 && c.ShownTier >= 0, "tycoon: net worth " + c.NetWorth.Silver);
+            Ledger.Current.Post(BankGameComp.Colony, "world", c.Balance, "lost it all");
+            Ledger.Current.Post(BankGameComp.LoansAccount, "world", Money.FromSilver(5000), "test debt", true);
+            var l0 = c.NewLoan(Money.FromSilver(5000), 30, 0.12);
+            c.DailyStep(day + 1);
+            var rescue = c.Loans.FirstOrDefault(l => l.Bailout);
+            t.Check(rescue != null, "ruined former tycoon is bailed out");
+            if (rescue != null)
+            {
+                t.Check(rescue.Principal >= Money.FromSilver(5000) && rescue.Principal <= Money.FromSilver(5100) && rescue.TermDays == 60, "bailout covers the debt (5000 plus a day of interest), 60 days: " + rescue.Principal);
+                var bal = rescue.Balance; c.DailyStep(day + 2);
+                t.Check(rescue.Balance == bal, "bailout loan is interest free");
+                t.Check(c.Loans.Count(l => l.Bailout) == 1, "only one bailout per game year");
+            }
+            t.Check(BT.LedgerSum == Money.Zero, "ledger balanced after the bailout");
+            // a normal bank does not rescue
+            c.TestReset(true, "SL_Mutual"); BT.Fund(Money.FromSilver(1_500_000)); c.DailyStep(day + 3);
+            Ledger.Current.Post(BankGameComp.Colony, "world", c.Balance, "lost it all");
+            Ledger.Current.Post(BankGameComp.LoansAccount, "world", Money.FromSilver(5000), "test debt", true); c.NewLoan(Money.FromSilver(5000), 30, 0.12);
+            c.DailyStep(day + 4);
+            t.Check(!c.Loans.Any(l => l.Bailout), "Silverline Mutual does not bail anyone out");
+            c.TestReset(true);
+            profile.UnderworldDiscovered = oldDisc; profile.Tier = oldTier; HSettings.Set("bank.researchMode", oldMode);
+            HSettings.Reset(HSettings.Find("bank.profit"));
+            yield return 1;
+        }
+    }
+
+    /// <summary>Buildings, jobs and the comms console entry (needs no power: the checks go below the power gate).</summary>
+    public sealed class BankBuildingsSuite : HearthTestSuite
+    {
+        public override string Name => "bank.buildings";
+        public override ModuleId Module => ModuleId.Bank;
+        public override int MaxTicks => 5000;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var c = BT.C; var map = t.Map;
+            c.TestReset(true); BT.ClearStockpileSilver(t);
+            var pawn = map.mapPawns.FreeColonistsSpawned.First();
+            // comms console: "Call Silverline" is a communicable target
+            var console = (Building_CommsConsole)GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.CommsConsole), t.FreeCellNearCenter(30), map);
+            var targets = console.GetCommTargets(pawn).ToList();
+            t.Check(targets.Contains(SilverlineComm.Instance), "comms console offers \"Call Silverline\" (" + targets.Count + " targets)");
+            t.Check(SilverlineComm.Instance.GetCallLabel().Length > 0 && SilverlineComm.Instance.GetFaction() == null, "the bank target has a label and no faction");
+            var opt = SilverlineComm.Instance.CommFloatMenuOption(console, pawn);
+            t.Check(opt != null && opt.Label == SilverlineComm.Instance.GetCallLabel(), "float menu option: " + opt?.Label);
+            HearthProfile.Current.SetModule(ModuleId.Bank, false);
+            t.Check(!console.GetCommTargets(pawn).Contains(SilverlineComm.Instance), "bank module off: no menu entry");
+            HearthProfile.Current.SetModule(ModuleId.Bank, true);
+            SilverlineComm.Instance.TryOpenComms(pawn);
+            yield return 5;
+            t.Check(Find.WindowStack.WindowOfType<Window_Bank>() != null, "TryOpenComms opens the bank window");
+            Find.WindowStack.WindowOfType<Window_Bank>()?.Close();
+            console.Destroy();
+            // a colonist walks to an ATM and the window opens in ATM mode
+            var cell = pawn.Position + new IntVec3(3, 0, 0);
+            if (!cell.Standable(map) || cell.GetFirstBuilding(map) != null) cell = t.FreeCellNearCenter(20);
+            var atm = (Building_SLATM)GenSpawn.Spawn(ThingMaker.MakeThing(SLDefOf.SL_ATM), cell, map, Rot4.North);
+            atm.SetFaction(Faction.OfPlayer);
+            t.Check(atm.InteractionCell.IsValid, "ATM has an interaction cell " + atm.InteractionCell);
+            var job = JobMaker.MakeJob(SLDefOf.SL_UseBank, atm);
+            t.Check(pawn.jobs.TryTakeOrderedJob(job, Verse.AI.JobTag.Misc), "colonist takes the \"use ATM\" job");
+            int waited = 0;
+            while (Find.WindowStack.WindowOfType<Window_Bank>() == null && waited < 2500) { yield return 25; waited += 25; }
+            var win = Find.WindowStack.WindowOfType<Window_Bank>();
+            t.Check(win != null && win.Site == BankSite.Atm && win.At == atm, "the colonist opened the bank window at the ATM after " + waited + " ticks");
+            win?.Close();
+            t.Check(atm.GetInspectString().Length > 0, "ATM inspect string shows the account");
+            // architect menu
+            var cat = DefDatabase<DesignationCategoryDef>.GetNamed("HH_Bank");
+            var designators = cat.AllResolvedDesignators;
+            t.Check(new[] { SLDefOf.SL_ATM, SLDefOf.SL_BankCounter, SLDefOf.SL_NightSafe }.All(d => designators.OfType<Designator_Build>().Any(b => b.PlacingDef == d)), "bank category in the architect menu lists ATM, counter and night safe");
+            // direct-deposit toggle and inspect on the night safe, till spot behaviour
+            var safe = (Building_SLNightSafe)GenSpawn.Spawn(ThingMaker.MakeThing(SLDefOf.SL_NightSafe), t.FreeCellNearCenter(35), map);
+            safe.SetFaction(Faction.OfPlayer);
+            t.Check(safe.GetGizmos().OfType<Command_Toggle>().Any(), "night safe offers the direct deposit switch");
+            t.Check(safe.GetInspectString().Length > 0, "night safe inspect string");
+            c.TestReset(false);
+            t.Check(Tills.TillSpot(map) == safe.InteractionCell, "no account: the night safe is the till spot for physical silver");
+            Payments.CreditColony(map, Money.FromSilver(33), "night safe test");
+            Tills.FlushAll();
+            t.Check(BT.MapSilver(map) == 33, "silver put down next to the night safe: " + BT.MapSilver(map));
+            BT.ClearStockpileSilver(t);
+            atm.Destroy(); safe.Destroy();
+            c.TestReset(true);
+        }
+    }
+
+    /// <summary>Takes screenshots of every page for a visual check. Not part of the normal runs: HH_TEST=bank.shots</summary>
+    public sealed class BankShotsSuite : HearthTestSuite
+    {
+        public override string Name => "bank.shots";
+        public override ModuleId Module => ModuleId.Bank;
+        public override int MaxTicks => 5_000_000;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var c = BT.C; var map = t.Map;
+            var profile = HearthProfile.Current; profile.Tier = 3f; HSettings.Set("bank.researchMode", 1f); BankCaretaker.CheckResearchOff();
+            c.TestReset(false);
+            BT.Jump(60000 * 45); yield return 1; yield return 60;
+            string dir = Path.Combine(GenFilePaths.ConfigFolderPath, "..", "bank_shots"); Directory.CreateDirectory(dir);
+            var w = new Window_Bank(map, BankSite.Remote, null);
+            Find.WindowStack.Add(w);
+            yield return 40; ScreenshotTaker.TakeNonSteamShot(); yield return 40;
+            c.OpenAccount(SL_BankDef.Default, true);
+            c.TestReset(true, "SL_TooBigToFail");
+            int today = c.Today; var rnd = new System.Random(7); double running = 600;
+            for (int d = today - 32; d < today; d++)
+            {
+                double move = rnd.Next(-120, 220); BT.Fund(Money.FromSilver(Math.Max(-running, move))); running = Math.Max(0, running + move);
+                if (move < 0) { }
+                c.DailyStep(d);
+            }
+            BT.Fund(Money.FromSilver(0.12345)); BT.AddSilver(t, 800);
+            c.TryTakeLoan(300, 60, out _, out _);
+            c.TryDeposit(map, 150, BankSite.Remote, out _);
+            c.TryWithdraw(map, 200, BankSite.Remote, out _);
+            Ledger.Current.Post(BankGameComp.Colony, "world", Money.FromSilver(80), "Withdrawal (cash)");
+            foreach (var id in new[] { "lobby", "loans", "history", "terms" })
+            {
+                w.TabId = id; yield return 60; ScreenshotTaker.TakeNonSteamShot(); yield return 40;
+            }
+            w.TabId = "lobby";
+            var cb = new Window_ChooseBank(); Find.WindowStack.Add(cb); yield return 40; ScreenshotTaker.TakeNonSteamShot(); yield return 40; cb.Close();
+            var atmw = new Window_Bank(map, BankSite.Atm, null); w.Close(); Find.WindowStack.Add(atmw); yield return 40; ScreenshotTaker.TakeNonSteamShot(); yield return 40; atmw.Close();
+            yield return 900;
+            string outDir = "/private/tmp/claude-501/hh_tests/bank_shots";
+            try { Directory.CreateDirectory(outDir); foreach (var f in Directory.GetFiles(GenFilePaths.ScreenshotFolderPath, "*.png")) File.Copy(f, Path.Combine(outDir, Path.GetFileName(f)), true); } catch (Exception e) { t.Note("copy failed: " + e.Message); }
+            t.Note("screenshots in " + outDir);
+            t.Check(true, "screenshots taken");
+            BT.ClearStockpileSilver(t);
             c.TestReset(true);
         }
     }

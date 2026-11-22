@@ -141,7 +141,7 @@ namespace Silverline
             var banks = SL_BankDef.AllSorted.Where(b => b.Available).ToList();
             if (openPick == null || banks.All(b => b.defName != openPick)) openPick = SL_BankDef.Default?.defName;
             BankUI.Label(new Rect(r.x, r.y, r.width, 40f), L.T("Open.Intro", "Pick a bank. Opening an account is free; moving it later costs {0} silver. Until you have an account, nothing here bothers you, no letters, no mood, no fees.", c.SwitchFee.ToStringShort()), BankUI.CreamDim);
-            float rowH = 74f; float y = r.y + 46f;
+            float rowH = 80f; float y = r.y + 46f;
             var list = new Rect(r.x, y, r.width, r.height - 46f - 78f);
             var view = new Rect(0, 0, list.width - 16f, banks.Count * (rowH + 6f));
             Vector2 sc = openScroll;
@@ -152,10 +152,10 @@ namespace Silverline
                 bool sel = b.defName == openPick;
                 Widgets.DrawBoxSolid(row, sel ? BankUI.GreenLight : BankUI.WalnutLight);
                 GUI.color = sel ? BankUI.Brass : BankUI.BrassDim; Widgets.DrawBox(row, sel ? 2 : 1); GUI.color = Color.white;
-                GUI.DrawTexture(new Rect(row.x + 8f, row.y + 8f, 58f, 58f), b.Icon);
-                BankUI.Label(new Rect(row.x + 76f, row.y + 4f, row.width - 90f, 24f), b.Name, BankUI.Brass, GameFont.Medium, wrap: false);
-                BankUI.Label(new Rect(row.x + 76f, row.y + 30f, row.width - 90f, 20f), "\"" + b.Slogan + "\"", BankUI.Cream, wrap: false);
-                BankUI.Label(new Rect(row.x + 76f, row.y + 50f, row.width - 90f, 22f), string.Join("  •  ", b.perks.Take(2)), BankUI.CreamDim, GameFont.Tiny, wrap: false);
+                GUI.DrawTexture(new Rect(row.x + 8f, row.y + 10f, 60f, 60f), b.Icon);
+                BankUI.Label(new Rect(row.x + 76f, row.y + 2f, row.width - 90f, 30f), b.Name, BankUI.Brass, GameFont.Medium, wrap: false);
+                BankUI.Label(new Rect(row.x + 76f, row.y + 33f, row.width - 90f, 20f), "\"" + b.Slogan + "\"", BankUI.Cream, wrap: false);
+                BankUI.Label(new Rect(row.x + 76f, row.y + 56f, row.width - 90f, 22f), string.Join("  •  ", b.perks.Take(2)), BankUI.CreamDim, GameFont.Tiny, wrap: false);
                 TooltipHandler.TipRegion(row, b.description + "\n\n" + string.Join("\n", b.perks.Select(p => "• " + p)));
                 if (Widgets.ButtonInvisible(row)) openPick = b.defName;
             }
@@ -208,7 +208,7 @@ namespace Silverline
                 Widgets.DrawBoxSolid(row, current ? BankUI.Green : BankUI.WalnutLight);
                 GUI.color = BankUI.BrassDim; Widgets.DrawBox(row, 1); GUI.color = Color.white;
                 GUI.DrawTexture(new Rect(row.x + 8f, row.y + 10f, 60f, 60f), b.Icon);
-                BankUI.Label(new Rect(row.x + 78f, row.y + 4f, row.width - 230f, 22f), b.Name, BankUI.Brass, wrap: false);
+                BankUI.Label(new Rect(row.x + 78f, row.y + 3f, row.width - 230f, 24f), b.Name, BankUI.Brass, wrap: false);
                 BankUI.Label(new Rect(row.x + 78f, row.y + 26f, row.width - 230f, 20f), "\"" + b.Slogan + "\"", BankUI.Cream, GameFont.Tiny, wrap: false);
                 BankUI.Label(new Rect(row.x + 78f, row.y + 46f, row.width - 230f, 36f), string.Join("\n", b.perks.Take(2)), BankUI.CreamDim, GameFont.Tiny);
                 TooltipHandler.TipRegion(row, b.description + "\n\n" + string.Join("\n", b.perks.Select(p => "• " + p)));
