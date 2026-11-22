@@ -24,6 +24,8 @@ namespace Hearth
         public int WholeSilver => (int)Math.Max(int.MinValue, Math.Min(int.MaxValue, Micro / PerSilver));
         /// <summary>Remainder below one coin (always between 0 and PerSilver-1 for positive values).</summary>
         public Money Fraction => new Money(Micro % PerSilver);
+        /// <summary>Whole coins needed to cover this amount (rounded up, exact integer maths). Negative amounts give 0.</summary>
+        public int CeilSilver => Micro <= 0 ? 0 : (int)Math.Min(int.MaxValue, (Micro + PerSilver - 1) / PerSilver);
 
         public static Money operator +(Money a, Money b) => new Money(checked(a.Micro + b.Micro));
         public static Money operator -(Money a, Money b) => new Money(checked(a.Micro - b.Micro));

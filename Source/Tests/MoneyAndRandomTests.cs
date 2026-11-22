@@ -28,3 +28,28 @@ public class RandomTests
         Assert.Equal(b.NextULong(), c.NextULong());
     }
 }
+
+public class MoneyHelperTests
+{
+    [Fact] public void WholeAndFraction() { var m = Money.FromSilver(12.34567); Assert.Equal(12, m.WholeSilver); Assert.Equal(34567, m.Fraction.Micro); }
+    [Fact] public void CeilIsIntegerExact() { Assert.Equal(2, Money.FromSilver(1.00001).CeilSilver); Assert.Equal(1, Money.FromSilver(1).CeilSilver); Assert.Equal(0, Money.Zero.CeilSilver); Assert.Equal(0, Money.FromSilver(-3).CeilSilver); }
+    [Fact] public void ParseEmptyIsZero() => Assert.Equal(Money.Zero, Money.Parse(""));
+    [Fact] public void MinMaxAbs() { var a = Money.FromSilver(-2); Assert.Equal(Money.FromSilver(2), a.Abs); Assert.Equal(a, Money.Min(a, Money.Zero)); }
+}
+
+public class RangeEdgeTests
+{
+    [Fact] public void FullIntSpanDoesNotOverflow()
+    {
+        var r = new RngStream(1, 2);
+        for (int i = 0; i < 10000; i++) { int v = r.Range(int.MinValue, int.MaxValue); Assert.InRange(v, int.MinValue, int.MaxValue - 1); }
+    }
+    [Fact] public void NegativeToPositive() { var r = new RngStream(3, 4); for (int i = 0; i < 1000; i++) Assert.InRange(r.Range(-5, 5), -5, 4); }
+    [Fact] public void EmptyRangeReturnsMin() { var r = new RngStream(3, 4); Assert.Equal(7, r.Range(7, 7)); Assert.Equal(7, r.Range(7, 3)); }
+    [Theory] [InlineData(RngAlgorithm.ChaCha8)] [InlineData(RngAlgorithm.SplitMix64)]
+    public void ReseedMatchesFreshStream(RngAlgorithm algo)
+    {
+        var a = new RngStream(9, 8, 5, algo); var b = new RngStream(1, 1); b.Reseed(9, 8, 5, algo);
+        for (int i = 0; i < 50; i++) Assert.Equal(a.NextULong(), b.NextULong());
+    }
+}

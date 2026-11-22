@@ -28,6 +28,12 @@ namespace Hearth
         public static readonly LinkedList<string> Recent = new LinkedList<string>();
         public static int ErrorCount, WarnCount;
 
+        /// <summary>Copy of the last lines (thread-safe), for the diagnosis window and bug reports.</summary>
+        public static string[] RecentSnapshot()
+        {
+            lock (Lock) { var a = new string[Recent.Count]; Recent.CopyTo(a, 0); return a; }
+        }
+
         public static string FilePath
         {
             get
@@ -55,6 +61,7 @@ namespace Hearth
 
         static void Write(LogLevel level, string channel, string msg, Exception e)
         {
+            if (level == LogLevel.Debug && !Verbose) return; // before any work: no formatting, no disk, no eviction of real warnings
             string tick;
             try { tick = Current.Game != null ? Find.TickManager?.TicksGame.ToString() ?? "-" : "menu"; } catch { tick = "?"; }
             string lv = level == LogLevel.Debug ? "DEBUG" : level == LogLevel.Info ? "INFO " : level == LogLevel.Warn ? "WARN " : "ERROR";
@@ -66,7 +73,6 @@ namespace Hearth
                 Recent.AddLast(line); while (Recent.Count > 300) Recent.RemoveFirst();
                 AppendFile(line);
             }
-            if (level == LogLevel.Debug && !Verbose) return;
             string game = Prefix + "[" + channel + "] " + msg + (e != null ? "\n" + e : "");
             try
             {

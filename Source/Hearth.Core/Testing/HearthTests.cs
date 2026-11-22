@@ -54,6 +54,8 @@ namespace Hearth.Testing
         readonly List<Run> runs = new List<Run>();
         int current = -1, startDelay = 300;
         bool finished, written;
+        int errorsAtStart;
+        readonly List<string> unknownSuites = new List<string>();
         static string Env(string k) => Environment.GetEnvironmentVariable(k);
         public static bool Active => !string.IsNullOrEmpty(Env("HH_TEST"));
 
@@ -80,8 +82,11 @@ namespace Hearth.Testing
                 var wanted = Env("HH_TEST").Split(',').Select(s => s.Trim()).Where(s => s.Length > 0).ToList();
                 var all = GenTypes.AllTypes.Where(t => typeof(HearthTestSuite).IsAssignableFrom(t) && !t.IsAbstract)
                     .Select(t => (HearthTestSuite)Activator.CreateInstance(t)).OrderBy(s => s.Name).ToList();
+                errorsAtStart = HLog.ErrorCount;
                 foreach (var s in all.Where(s => wanted.Contains("all") || wanted.Contains(s.Name)))
                     runs.Add(new Run { Suite = s, Ctx = new TestContext { Suite = s.Name } });
+                // a misspelled suite name must fail the run, not silently pass with fewer suites
+                foreach (var w in wanted) if (w != "all" && !all.Any(s => s.Name == w)) unknownSuites.Add(w);
                 Verse.Log.Message($"[HHTEST] starting {runs.Count} suites: {string.Join(", ", runs.Select(r => r.Suite.Name))} (available: {string.Join(", ", all.Select(s => s.Name))})");
                 current = 0;
                 if (runs.Count == 0) { finished = true; return; }
@@ -101,6 +106,7 @@ namespace Hearth.Testing
             if (!r.Done && now - r.Started > r.Suite.MaxTicks) { r.Error = "timeout after " + r.Suite.MaxTicks + " ticks"; r.Done = true; }
             if (r.Done)
             {
+                try { r.It?.Dispose(); } catch (Exception e) { r.Ctx.Log("dispose threw: " + e.Message); }
                 if (r.Error != null) { r.Ctx.Failures++; r.Ctx.Log("EXCEPTION/TIMEOUT: " + r.Error); }
                 r.Ctx.Log($"end: {r.Ctx.Checks} checks, {r.Ctx.Failures} failures, {now - r.Started} ticks");
                 current++;
@@ -110,8 +116,12 @@ namespace Hearth.Testing
         void WriteResults()
         {
             var sb = new StringBuilder();
-            int fails = runs.Sum(r => r.Ctx.Failures), checks = runs.Sum(r => r.Ctx.Checks);
-            sb.AppendLine($"RESULT {(fails == 0 && runs.Count > 0 ? "PASS" : "FAIL")} suites={runs.Count} checks={checks} failures={fails} errorsInLog={HLog.ErrorCount}");
+            int fails = runs.Sum(r => r.Ctx.Failures) + unknownSuites.Count, checks = runs.Sum(r => r.Ctx.Checks);
+            int newErrors = HLog.ErrorCount - errorsAtStart;
+            bool pass = fails == 0 && runs.Count > 0 && newErrors == 0;
+            sb.AppendLine($"RESULT {(pass ? "PASS" : "FAIL")} suites={runs.Count} checks={checks} failures={fails} errorsInLog={HLog.ErrorCount} newErrors={newErrors} unknownSuites={unknownSuites.Count}");
+            foreach (var u in unknownSuites) sb.AppendLine($"## {u}: FAIL (unknown suite name)");
+            if (newErrors > 0) foreach (var l in HLog.RecentSnapshot().Where(l => l.Contains("| ERROR |")).Take(20)) sb.AppendLine("  logged error: " + l.Split('\n')[0]);
             foreach (var r in runs)
             {
                 sb.AppendLine($"## {r.Suite.Name}: {(r.Ctx.Failures == 0 ? "PASS" : "FAIL")} ({r.Ctx.Checks} checks, {r.Ctx.Failures} failures)");
@@ -134,11 +144,19 @@ namespace Hearth.Testing
             t.Check(HearthProfile.Current != null, "profile exists");
             t.Check(HSettings.All.Count > 0, "settings registered: " + HSettings.All.Count);
             t.Check(HearthMod.PatchFailures.Count == 0, "all patch classes applied (" + string.Join("; ", HearthMod.PatchFailures) + ")");
-            var l = Ledger.Current;
+            // checks run on a separate ledger instance: the colony's real books stay untouched
+            var l = new Ledger();
             t.Check(l.Post("world", "test:a", Money.FromSilver(12.34567), "smoke"), "post world→a");
             t.Check(l.Post("test:a", "test:b", Money.FromSilver(2.5), "smoke"), "post a→b");
             t.Check(!l.Post("test:b", "test:a", Money.FromSilver(100), "smoke"), "overdraft refused");
+            t.Check(!l.Post("", "test:b", Money.FromSilver(1), "smoke") && !l.Post("test:a", null, Money.FromSilver(1), "smoke"), "empty account ids refused");
             t.Check(l.SumAll() == 0, "ledger sums to zero");
+            int day = Find.TickManager.TicksGame / 60000;
+            l.Post("world", "colony:till:99", Money.FromSilver(10), "smoke", false, "smoke.cat");
+            l.Post("colony:till:99", "world", Money.FromSilver(10), "flush"); // a till flush must not erase the income
+            l.Post("colony:till:99", "world", Money.FromSilver(0), "noop");
+            t.Check(l.DayIncome(day, "smoke.cat") == Money.FromSilver(10), "category income survives the till flush: " + l.DayIncome(day, "smoke.cat"));
+            t.Check(Money.FromSilver(1.00001).CeilSilver == 2 && Money.FromSilver(1).CeilSilver == 1, "integer coin ceiling");
             t.Check(l.Balance("test:a").ToStringFull() == "9.84567", "five decimals kept: " + l.Balance("test:a").ToStringFull());
             var a = JRand.Sealed("smoke.x"); ulong c0 = a.Counter; double v1 = a.NextDouble();
             var b = new RngStream(a.Seed, a.StreamId, c0); t.Check(Math.Abs(b.NextDouble() - v1) < 1e-15, "sealed stream reproducible");

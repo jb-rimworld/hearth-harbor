@@ -11,7 +11,8 @@ namespace Hearth
     /// Accounts are plain strings, by convention:
     ///   "world"              outside economy (source/sink of all money; may go negative)
     ///   "colony:cash"        physical silver of the player colony is NOT tracked here; use "colony:till" for till/register balance
-    ///   "colony:income:<module>" / "colony:expense:<module>"  bookkeeping categories (reports)
+    ///   "colony:till:<mapId>" till/register balance of a map (emptied at midnight; see Tills)
+    ///   report categories are NOT accounts: pass a category to Post/Payments.TryCharge and read Ledger.DayIncome(day, category)
     ///   "bank:<accountId>"   Silverline accounts (owned by the bank module)
     ///   "guest:<pawnThingId>" virtual money of a guest (card, prepaid, tab)
     ///   "house:<venueId>"    house bank of a casino/venue
@@ -25,7 +26,7 @@ namespace Hearth
             public void ExposeData()
             {
                 Scribe_Values.Look(ref Tick, "t"); Scribe_Values.Look(ref From, "f"); Scribe_Values.Look(ref To, "to"); Scribe_Values.Look(ref Memo, "m");
-                string a = Amount.Serialize(); Scribe_Values.Look(ref a, "a"); if (Scribe.mode == LoadSaveMode.LoadingVars) Amount = Money.Parse(a);
+                ScribeMoney.Look(ref Amount, "a");
             }
         }
 
@@ -43,8 +44,12 @@ namespace Hearth
         public IReadOnlyList<Entry> Journal => journal;
 
         /// <summary>Moves money. Returns false (and books nothing) if amount is negative or the source may not go negative and lacks funds.</summary>
-        public bool Post(string from, string to, Money amount, string memo, bool allowNegative = false)
+        /// <param name="category">Optional report category. When set (or when Payments.TryCharge/TryPayout is running with one), the amount
+        /// is also counted in the daily income totals "income:&lt;category&gt;": positive when money flows into a "colony:*" account,
+        /// negative when it flows out. This is independent of later till flushes (see DayIncome).</param>
+        public bool Post(string from, string to, Money amount, string memo, bool allowNegative = false, string category = null)
         {
+            if (string.IsNullOrEmpty(from) || string.IsNullOrEmpty(to)) { HLog.Warn("Ledger", $"Refused post with empty account '{from}'→'{to}' {amount} ({memo})"); return false; }
             if (amount.Micro < 0) { HLog.Warn("Ledger", $"Refused negative post {from}→{to} {amount} ({memo})"); return false; }
             if (amount.Micro == 0 || from == to) return true;
             long fb = balances.TryGetValue(from, out long v) ? v : 0;
@@ -58,8 +63,29 @@ namespace Hearth
             if (!daily.TryGetValue(day, out var d)) { daily[day] = d = new Dictionary<string, long>(); PruneDaily(day); }
             d[to] = (d.TryGetValue(to, out long x) ? x : 0) + amount.Micro;
             d[from] = (d.TryGetValue(from, out long y) ? y : 0) - amount.Micro;
-            Changed?.Invoke(from, to, amount, memo);
+            category = category ?? Payments.ActiveCategory;
+            if (!string.IsNullOrEmpty(category))
+            {
+                bool intoColony = to.StartsWith("colony:", StringComparison.Ordinal), outOfColony = from.StartsWith("colony:", StringComparison.Ordinal);
+                if (intoColony != outOfColony)
+                {
+                    string ck = "income:" + category;
+                    d[ck] = (d.TryGetValue(ck, out long z) ? z : 0) + (intoColony ? amount.Micro : -amount.Micro);
+                }
+            }
+            RaiseChanged(from, to, amount, memo);
             return true;
+        }
+
+        /// <summary>Calls every subscriber on its own, so one throwing subscriber is logged and neither breaks the caller nor the others.</summary>
+        static void RaiseChanged(string from, string to, Money amount, string memo)
+        {
+            var h = Changed; if (h == null) return;
+            foreach (var d in h.GetInvocationList())
+            {
+                try { ((Action<string, string, Money, string>)d)(from, to, amount, memo); }
+                catch (Exception e) { HLog.Error("Ledger", "Subscriber of Ledger.Changed threw (ignored)", e); }
+            }
         }
 
         /// <summary>Raised after every successful post (UI refresh, achievements, bank interest triggers …).</summary>
@@ -68,6 +94,11 @@ namespace Hearth
         public Money DayTotal(int day, string account) => daily.TryGetValue(day, out var d) && d.TryGetValue(account, out long v) ? new Money(v) : Money.Zero;
         public Money DayTotalPrefix(int day, string prefix) => daily.TryGetValue(day, out var d) ? new Money(d.Where(kv => kv.Key.StartsWith(prefix)).Sum(kv => kv.Value)) : Money.Zero;
 
+        /// <summary>Net income of a category on a day (see the category parameter of Post). Unaffected by till flushes.</summary>
+        public Money DayIncome(int day, string category) => DayTotal(day, "income:" + category);
+        /// <summary>Net income of all categories on a day.</summary>
+        public Money DayIncomeTotal(int day) => DayTotalPrefix(day, "income:");
+
         void PruneDaily(int today) { foreach (var k in daily.Keys.Where(k => k < today - 120).ToList()) daily.Remove(k); }
 
         public long SumAll() => balances.Values.Sum();
@@ -75,6 +106,8 @@ namespace Hearth
         /// <summary>Daily invariant check; repairs by booking the difference against "world" and logs it loudly.</summary>
         public void DailyCheck()
         {
+            // forget settled guest accounts (card/prepaid/tab of guests who have left)
+            foreach (var k in balances.Where(kv => kv.Value == 0 && kv.Key.StartsWith("guest:", StringComparison.Ordinal)).Select(kv => kv.Key).ToList()) balances.Remove(k);
             long s = SumAll();
             if (s != 0)
             {

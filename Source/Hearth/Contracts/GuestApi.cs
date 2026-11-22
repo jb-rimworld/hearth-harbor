@@ -48,30 +48,57 @@ namespace Hearth
     public static class GuestApi
     {
         public static IGuestApiImpl Impl;
+        // fallback guests (no Inn module): keyed by thingIDNumber, which is only unique within one game
         static readonly Dictionary<int, GuestInfo> fallbackInfo = new Dictionary<int, GuestInfo>();
+        static int lastPrune;
+
+        static GuestApi() { HearthGame.OnGameInit += () => { fallbackInfo.Clear(); lastPrune = 0; }; }
 
         public static bool IsGuest(Pawn p)
         {
-            if (p == null || !p.Spawned || p.Dead) return false;
-            if (Impl != null && Modules.On(ModuleId.Inn)) return Impl.IsGuest(p);
-            return IsVanillaVisitor(p);
+            if (p == null || p.Dead) return false;
+            if (Impl != null && Modules.On(ModuleId.Inn)) return p.Spawned && Impl.IsGuest(p);
+            if (!p.Spawned) return false;
+            return IsVanillaVisitor(p) || Registered(p) != null; // a downed visitor that was already a guest stays one
         }
 
+        /// <summary>Only real visiting/trading groups count: not quest pawns (bestowers, military aid), beggars, travellers passing through.</summary>
         public static bool IsVanillaVisitor(Pawn p)
-            => p.RaceProps.Humanlike && p.Faction != null && !p.Faction.IsPlayer && !p.HostileTo(Faction.OfPlayer)
-               && !p.IsPrisoner && !p.IsSlave && p.GetLord() != null && !p.Downed && p.Map != null && p.Map.IsPlayerHome;
+        {
+            if (!(p.RaceProps.Humanlike && p.Faction != null && !p.Faction.IsPlayer && !p.HostileTo(Faction.OfPlayer)
+                  && !p.IsPrisoner && !p.IsSlave && !p.Downed && p.Map != null && p.Map.IsPlayerHome)) return false;
+            var job = p.GetLord()?.LordJob;
+            return job is LordJob_VisitColony || job is LordJob_TradeWithColony;
+        }
+
+        static GuestInfo Registered(Pawn p) => fallbackInfo.TryGetValue(p.thingIDNumber, out var gi) && gi.Pawn == p ? gi : null;
 
         public static GuestInfo Info(Pawn p)
         {
             if (p == null) return null;
             if (Impl != null && Modules.On(ModuleId.Inn)) return Impl.Info(p);
+            var known = Registered(p);
+            if (known != null) return p.Dead || p.Destroyed ? null : known; // keeps its info while downed
             if (!IsVanillaVisitor(p)) return null;
-            if (!fallbackInfo.TryGetValue(p.thingIDNumber, out var gi))
-            {
-                gi = new GuestInfo { Pawn = p, Kind = StayKind.DayVisitor, Budget = Money.FromSilver(60 + p.thingIDNumber % 90), ArrivedTick = Find.TickManager.TicksGame };
-                fallbackInfo[p.thingIDNumber] = gi;
-            }
+            PruneFallback();
+            var gi = new GuestInfo { Pawn = p, Kind = StayKind.DayVisitor, Budget = Money.FromSilver(60 + p.thingIDNumber % 90), ArrivedTick = Find.TickManager.TicksGame };
+            fallbackInfo[p.thingIDNumber] = gi; // also replaces a stale entry of a different pawn with the same id
             return gi;
+        }
+
+        /// <summary>Drops entries of pawns that are gone (at most once per 2500 ticks).</summary>
+        static void PruneFallback()
+        {
+            int now = Find.TickManager.TicksGame;
+            if (now < lastPrune || now - lastPrune < 2500) { if (now < lastPrune) lastPrune = now; return; }
+            lastPrune = now;
+            List<int> dead = null;
+            foreach (var kv in fallbackInfo)
+            {
+                var pw = kv.Value.Pawn;
+                if (pw == null || pw.Destroyed || pw.Dead || !pw.Spawned) (dead ?? (dead = new List<int>())).Add(kv.Key);
+            }
+            if (dead != null) foreach (var k in dead) fallbackInfo.Remove(k);
         }
 
         public static IEnumerable<Pawn> GuestsOn(Map map)
@@ -105,13 +132,30 @@ namespace Hearth
         {
             if (!IsGuest(guest)) return false;
             if (Budget(guest) < price) return false;
-            if (!Payments.TryCharge(guest, price, Payments.ColonyTill(guest.MapHeld), memo, out _))
+            string till = Payments.ColonyTill(guest.MapHeld);
+            if (!Payments.TryCharge(guest, price, till, memo, out _, category))
             {
                 // Vanilla visitors without silver still pay "virtually" in fallback mode (they carry trade goods instead).
                 if (Impl != null && Modules.On(ModuleId.Inn)) return false;
-                Ledger.Current?.Post("world", Payments.ColonyTill(guest.MapHeld), price, memo + " (visitor)");
+                Ledger.Current?.Post("world", till, price, memo + " (visitor)", false, category);
+                Payments.RaisePaid(guest, price, till, memo, PaymentMethod.Barter);
             }
             Spend(guest, price, category);
+            return true;
+        }
+
+        /// <summary>
+        /// Pays money to a guest (winnings, refund, insurance claim …) out of the colony's till and books it in the ledger.
+        /// A refund reduces the guest's Spent and gives the budget back. Returns false if nothing was paid.
+        /// </summary>
+        public static bool CreditGuest(Pawn guest, Money amount, string category, string memo)
+        {
+            if (guest == null || amount.Micro <= 0) return false;
+            var map = guest.MapHeld; if (map == null) return false;
+            // allowOverdraft: the original charge may already have left the till (banked or put down as silver)
+            if (!Payments.TryPayout(guest, amount, Payments.ColonyTill(map), memo, category, true)) return false;
+            var gi = Info(guest);
+            if (gi != null) { gi.Spent = Money.Max(Money.Zero, gi.Spent - amount); gi.Budget += amount; }
             return true;
         }
     }
@@ -136,26 +180,42 @@ namespace Hearth
         public static readonly List<IGuestActivity> All = new List<IGuestActivity>();
         public static void Register(IGuestActivity a) { All.RemoveAll(x => x.Id == a.Id); All.Add(a); HLog.Debug("Core", "Guest activity registered: " + a.Id); }
 
+        // reused between calls (the think tree runs on the main thread only)
+        static readonly List<IGuestActivity> optA = new List<IGuestActivity>();
+        static readonly List<float> optW = new List<float>();
+
         /// <summary>Weighted pick among activities of enabled modules; returns null if nothing is possible.</summary>
         public static Job TryPick(Pawn guest, GuestInfo info)
         {
-            var options = new List<(IGuestActivity a, float w)>();
-            foreach (var a in All)
+            if (guest == null || info == null) return null;
+            optA.Clear(); optW.Clear();
+            try
             {
-                if (!Modules.On(a.Module)) continue;
-                float w = Guard.Run(a.Module, "Activity.Desire." + a.Id, () => a.Desire(guest, info), 0f);
-                if (w > 0) options.Add((a, w));
+                for (int i = 0; i < All.Count; i++)
+                {
+                    var a = All[i];
+                    if (a == null || !Modules.On(a.Module)) continue;
+                    float w = Guard.Run(a.Module, "Activity.Desire." + a.Id, () => a.Desire(guest, info), 0f);
+                    if (float.IsNaN(w) || float.IsInfinity(w) || w <= 0f) continue;
+                    optA.Add(a); optW.Add(w);
+                }
+                if (optA.Count == 0) return null;
+                var rng = JRand.Stream("guest.activity");
+                for (int tries = 0; tries < 3 && optA.Count > 0; tries++)
+                {
+                    float sum = 0f;
+                    for (int i = 0; i < optW.Count; i++) sum += optW[i];
+                    float roll = (float)rng.NextDouble() * sum;
+                    int pick = optA.Count - 1;
+                    for (int i = 0; i < optA.Count; i++) { roll -= optW[i]; if (roll <= 0f) { pick = i; break; } }
+                    var chosen = optA[pick];
+                    var job = Guard.Run(chosen.Module, "Activity.Job." + chosen.Id, () => chosen.TryGiveJob(guest, info), null);
+                    if (job != null) return job;
+                    optA.RemoveAt(pick); optW.RemoveAt(pick);
+                }
+                return null;
             }
-            for (int tries = 0; tries < 3 && options.Count > 0; tries++)
-            {
-                float sum = options.Sum(o => o.w), roll = Rand.Value * sum;
-                var pick = options[options.Count - 1];
-                foreach (var o in options) { roll -= o.w; if (roll <= 0) { pick = o; break; } }
-                var job = Guard.Run(pick.a.Module, "Activity.Job." + pick.a.Id, () => pick.a.TryGiveJob(guest, info), null);
-                if (job != null) return job;
-                options.Remove(pick);
-            }
-            return null;
+            finally { optA.Clear(); optW.Clear(); }
         }
     }
 }

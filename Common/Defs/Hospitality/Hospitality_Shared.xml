@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- Two work types shared by all modules (5.17, 6.5). -->
+  <!-- Work types and research tab shared by the guest modules (5.17, 6.5). They live here, not in Core, so the standalone
+       Silverline bank (Core + Bank + Insurance defs) does not bring hosting work types into the game. -->
   <WorkTypeDef>
     <defName>HH_Hosting</defName>
     <labelShort>host</labelShort>
@@ -29,9 +30,5 @@
   <ResearchTabDef>
     <defName>HH_Hospitality</defName>
     <label>hospitality</label>
-  </ResearchTabDef>
-  <ResearchTabDef>
-    <defName>HH_Banking</defName>
-    <label>banking</label>
   </ResearchTabDef>
 </Defs>

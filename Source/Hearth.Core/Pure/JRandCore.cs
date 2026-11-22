@@ -12,12 +12,16 @@ namespace Hearth
     /// </summary>
     public sealed class RngStream
     {
-        public readonly ulong Seed;
-        public readonly ulong StreamId;
+        public ulong Seed { get; private set; }
+        public ulong StreamId { get; private set; }
         public ulong Counter;
         public RngAlgorithm Algorithm;
 
         public RngStream(ulong seed, ulong streamId, ulong counter = 0, RngAlgorithm algo = RngAlgorithm.SplitMix64)
+        { Seed = seed; StreamId = streamId; Counter = counter; Algorithm = algo; }
+
+        /// <summary>Re-points this instance at another stream (used to avoid allocations for throw-away streams).</summary>
+        public void Reseed(ulong seed, ulong streamId, ulong counter, RngAlgorithm algo)
         { Seed = seed; StreamId = streamId; Counter = counter; Algorithm = algo; }
 
         public static ulong Mix(ulong z)
@@ -68,7 +72,7 @@ namespace Hearth
         public int Range(int min, int maxExclusive)
         {
             if (maxExclusive <= min) return min;
-            ulong span = (ulong)(maxExclusive - min);
+            ulong span = (ulong)((long)maxExclusive - min); // long maths: the span may exceed int.MaxValue
             return (int)(min + (long)(NextULong() % span));
         }
         public double Range(double min, double max) => min + (max - min) * NextDouble();
@@ -99,13 +103,17 @@ namespace Hearth
         static void QR(ref uint a, ref uint b, ref uint c, ref uint d)
         { a += b; d ^= a; d = R(d, 16); c += d; b ^= c; b = R(b, 12); a += b; d ^= a; d = R(d, 8); c += d; b ^= c; b = R(b, 7); }
         /// <summary>ChaCha with 8 rounds over (key=seed/stream, counter=n); returns the first 64 bits of the block.</summary>
+        [ThreadStatic] static uint[] chaS, chaX;
         static ulong ChaChaLite(ulong seed, ulong stream, ulong n)
         {
-            uint[] s = { 0x61707865, 0x3320646e, 0x79622d32, 0x6b206574,
-                (uint)seed, (uint)(seed >> 32), (uint)stream, (uint)(stream >> 32),
-                (uint)Mix(seed), (uint)(Mix(seed) >> 32), (uint)Mix(stream), (uint)(Mix(stream) >> 32),
-                (uint)n, (uint)(n >> 32), 0x4845_4152, 0x5448_0001 };
-            uint[] x = (uint[])s.Clone();
+            var s = chaS ?? (chaS = new uint[16]);
+            var x = chaX ?? (chaX = new uint[16]);
+            ulong ms = Mix(seed), mt = Mix(stream);
+            s[0] = 0x61707865; s[1] = 0x3320646e; s[2] = 0x79622d32; s[3] = 0x6b206574;
+            s[4] = (uint)seed; s[5] = (uint)(seed >> 32); s[6] = (uint)stream; s[7] = (uint)(stream >> 32);
+            s[8] = (uint)ms; s[9] = (uint)(ms >> 32); s[10] = (uint)mt; s[11] = (uint)(mt >> 32);
+            s[12] = (uint)n; s[13] = (uint)(n >> 32); s[14] = 0x4845_4152; s[15] = 0x5448_0001;
+            Array.Copy(s, x, 16);
             for (int i = 0; i < 4; i++)
             {
                 QR(ref x[0], ref x[4], ref x[8], ref x[12]); QR(ref x[1], ref x[5], ref x[9], ref x[13]);

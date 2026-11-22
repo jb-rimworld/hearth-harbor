@@ -31,7 +31,14 @@ namespace Hearth
             if (m == ModuleId.Core) return true;
             return modules.TryGetValue(m, out bool on) ? on : Modules.DefaultOn(m);
         }
-        public void SetModule(ModuleId m, bool on) { if (m != ModuleId.Core) modules[m] = on; }
+        /// <summary>Switches a module. Only writes when the value really changes; returns true if it did.</summary>
+        public bool SetModule(ModuleId m, bool on)
+        {
+            if (m == ModuleId.Core) return false;
+            if (modules.TryGetValue(m, out bool cur) && cur == on) return false;
+            modules[m] = on;
+            return true;
+        }
 
         public HearthProfile CloneForNewGame()
         {

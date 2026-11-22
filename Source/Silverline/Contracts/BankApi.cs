@@ -34,6 +34,8 @@ namespace Silverline
     {
         public string Id, LabelKey, LabelEn;
         public int Order = 100;
+        /// <summary>Module that owns the tab (insurance, lottery … add tabs); the tab is hidden while that module is off.</summary>
+        public ModuleId Module = ModuleId.Bank;
         public Action<Rect> Draw;
         public Func<bool> Visible;
         public string Label => LabelKey.TranslateOr(LabelEn ?? Id);
@@ -43,6 +45,6 @@ namespace Silverline
     {
         public static readonly List<BankTab> Tabs = new List<BankTab>();
         public static void Register(BankTab t) { Tabs.RemoveAll(x => x.Id == t.Id); Tabs.Add(t); Tabs.Sort((a, b) => a.Order.CompareTo(b.Order)); }
-        public static IEnumerable<BankTab> VisibleTabs => Tabs.Where(t => t.Visible == null || Guard.Run(ModuleId.Bank, "BankTab.Visible." + t.Id, t.Visible, false));
+        public static IEnumerable<BankTab> VisibleTabs => Tabs.Where(t => Modules.On(ModuleId.Bank) && Modules.On(t.Module) && (t.Visible == null || Guard.Run(t.Module, "BankTab.Visible." + t.Id, t.Visible, false)));
     }
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Research tab of the bank. Stays in Core because the standalone Silverline ships Core + Bank + Insurance defs. -->
+  <ResearchTabDef>
+    <defName>HH_Banking</defName>
+    <label>banking</label>
+  </ResearchTabDef>
+</Defs>

@@ -38,12 +38,22 @@ namespace Hearth
     {
         public Thing Sign;
         public CompVenueSign Comp;
-        public Room Room;
+        Room room;
+        /// <summary>The room of the sign. Re-evaluated when RimWorld has replaced the old Room object (door/wall changes).</summary>
+        public Room Room
+        {
+            get
+            {
+                if ((room == null || room.Dereferenced) && Sign != null && Sign.Spawned) room = Venues.RoomOfSign(Sign);
+                return room;
+            }
+            set { room = value; }
+        }
         public VenueTypeDef Type => Comp.type;
         public Map Map => Sign.Map;
         public string Account => "house:venue:" + Sign.thingIDNumber;
         public bool IsOpenNow => Comp.IsOpenAt(GenLocalDate.HourOfDay(Sign.Map));
-        public bool Contains(IntVec3 c) => Room != null && c.GetRoom(Sign.Map) == Room;
+        public bool Contains(IntVec3 c) { var r = Room; return r != null && Sign.Spawned && c.GetRoom(Sign.Map) == r; }
     }
 
     public class CompProperties_VenueSign : CompProperties
@@ -72,9 +82,15 @@ namespace Hearth
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            if (type == null) type = Props.allowedTypes.FirstOrDefault() ?? DefDatabase<VenueTypeDef>.AllDefs.FirstOrDefault();
+            EnsureType();
+            Venues.Register(this, parent.Map);
+        }
+
+        /// <summary>Gives a sign without a type the first type of an enabled module (allowed types first). Does nothing if none is usable yet.</summary>
+        public void EnsureType()
+        {
+            if (type == null) type = Props.allowedTypes.FirstOrDefault(d => Modules.On(d.module)) ?? DefDatabase<VenueTypeDef>.AllDefs.FirstOrDefault(d => Modules.On(d.module));
             if (openHour < 0 && type != null) { openHour = type.defaultOpenHour; closeHour = type.defaultCloseHour; }
-            Venues.MarkDirty(parent.Map);
         }
         public override void PostDeSpawn(Map map
 #if RW16PLUS
@@ -87,7 +103,7 @@ namespace Hearth
                 , mode
 #endif
                 );
-            Venues.MarkDirty(map);
+            Venues.Unregister(this, map);
         }
 
         public bool IsOpenAt(int hour)
@@ -118,39 +134,90 @@ namespace Hearth
         }
     }
 
-    /// <summary>Finds venues on a map. Cached per map and rebuilt lazily when signs or rooms change.</summary>
+    /// <summary>Finds venues on a map. Cached per map and rebuilt lazily when signs or rooms change. Signs register themselves, so no map scan is needed.</summary>
     public static class Venues
     {
         static readonly Dictionary<int, List<Venue>> cache = new Dictionary<int, List<Venue>>();
         static readonly Dictionary<int, int> builtTick = new Dictionary<int, int>();
+        // spawned signs per map (added in PostSpawnSetup, removed in PostDeSpawn)
+        static readonly Dictionary<Map, HashSet<CompVenueSign>> signs = new Dictionary<Map, HashSet<CompVenueSign>>();
+
+        static Venues() { HearthGame.OnGameInit += OnGameInit; }
+
+        /// <summary>New game or load: forget every cached venue and the signs of maps that no longer exist.</summary>
+        static void OnGameInit()
+        {
+            Clear();
+            var maps = Current.Game?.Maps;
+            if (maps != null && maps.Count > 0)
+                foreach (var m in signs.Keys.Where(m => !maps.Contains(m)).ToList()) signs.Remove(m);
+        }
+
+        /// <summary>Drops all cached venue lists (the sign registry stays).</summary>
+        public static void Clear() { cache.Clear(); builtTick.Clear(); }
+
+        internal static void Register(CompVenueSign c, Map map)
+        {
+            if (map == null) return;
+            if (!signs.TryGetValue(map, out var set)) signs[map] = set = new HashSet<CompVenueSign>();
+            set.Add(c);
+            MarkDirty(map);
+        }
+
+        internal static void Unregister(CompVenueSign c, Map map)
+        {
+            if (map == null) return;
+            if (signs.TryGetValue(map, out var set)) { set.Remove(c); if (set.Count == 0) signs.Remove(map); }
+            MarkDirty(map);
+        }
 
         public static void MarkDirty(Map map) { if (map != null) cache.Remove(map.uniqueID); }
 
+        /// <summary>
+        /// The venues of a map (signs of the player with a type of an enabled module, standing in an indoor room).
+        /// The list is a shared cache: treat it as read-only, never add to or remove from it.
+        /// </summary>
         public static List<Venue> All(Map map)
         {
             if (map == null) return new List<Venue>();
             int now = Find.TickManager.TicksGame;
-            if (cache.TryGetValue(map.uniqueID, out var list) && builtTick.TryGetValue(map.uniqueID, out int b) && now - b < 250) return list;
-            list = new List<Venue>();
-            foreach (var t in map.listerThings.ThingsInGroup(ThingRequestGroup.BuildingArtificial))
+            if (cache.TryGetValue(map.uniqueID, out var list) && builtTick.TryGetValue(map.uniqueID, out int b) && now >= b && now - b < 250 && StillValid(list, map)) return list;
+            if (!signs.TryGetValue(map, out var set) || set.Count == 0) { cache[map.uniqueID] = list = new List<Venue>(); builtTick[map.uniqueID] = now; return list; }
+            list = new List<Venue>(set.Count);
+            foreach (var c in set)
             {
-                var c = t.TryGetComp<CompVenueSign>();
-                if (c == null || c.type == null || t.Faction != Faction.OfPlayer) continue;
+                var t = c.parent;
+                if (t == null || !t.Spawned || t.Map != map || t.Faction != Faction.OfPlayer) continue;
+                if (c.type == null) c.EnsureType();
+                if (c.type == null || !Modules.On(c.type.module)) continue;
                 var room = RoomOfSign(t);
                 if (room == null || room.PsychologicallyOutdoors) continue;
                 list.Add(new Venue { Sign = t, Comp = c, Room = room });
             }
+            list.Sort((x, y) => x.Sign.thingIDNumber.CompareTo(y.Sign.thingIDNumber));
             cache[map.uniqueID] = list; builtTick[map.uniqueID] = now;
             return list;
+        }
+
+        static bool StillValid(List<Venue> list, Map map)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                var v = list[i];
+                if (v.Sign == null || !v.Sign.Spawned || v.Sign.Map != map || v.Comp.type == null || !Modules.On(v.Comp.type.module)) return false;
+            }
+            return true;
         }
 
         /// <summary>Wall-mounted signs belong to the room in front of them (like a wall lamp); free-standing ones to their own cell's room.</summary>
         public static Room RoomOfSign(Thing sign)
         {
             var map = sign.Map;
+            if (map == null) return null;
             var cell = sign.Position;
             var room = cell.GetRoom(map);
-            if (room == null || sign.def.building?.isAttachment == true || room.IsDoorway)
+            bool wallMounted = sign.def.building?.isAttachment == true || sign.TryGetComp<CompVenueSign>()?.Props.wallMounted == true;
+            if (room == null || wallMounted || room.IsDoorway)
             {
                 var front = sign.Position + sign.Rotation.FacingCell;
                 if (front.InBounds(map)) room = front.GetRoom(map);
@@ -162,7 +229,10 @@ namespace Hearth
         public static Venue At(IntVec3 cell, Map map)
         {
             var room = cell.GetRoom(map);
-            return room == null ? null : All(map).FirstOrDefault(v => v.Room == room);
+            if (room == null) return null;
+            var all = All(map);
+            for (int i = 0; i < all.Count; i++) if (all[i].Room == room) return all[i];
+            return null;
         }
     }
 }

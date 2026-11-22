@@ -75,8 +75,8 @@ namespace Hearth
                 case SettingKind.Int: return ((long)v).ToString("#,##0", CultureInfo.InvariantCulture);
                 case SettingKind.Money: return v.ToString("#,##0", CultureInfo.InvariantCulture) + " silver";
                 case SettingKind.Enum:
-                    if (EnumType != null) { var names = Enum.GetNames(EnumType); int i = (int)v; if (i >= 0 && i < names.Length) return ("HH.Enum." + EnumType.Name + "." + names[i]).TranslateOr(names[i]); }
-                    return ((int)v).ToString();
+                    if (EnumType != null) { string name = Enum.GetName(EnumType, (int)Math.Round(v)); if (name != null) return ("HH.Enum." + EnumType.Name + "." + name).TranslateOr(name); }
+                    return ((int)Math.Round(v)).ToString();
                 default: return v.ToString(Math.Abs(v) >= 100 ? "#,##0.#" : "0.###", CultureInfo.InvariantCulture);
             }
         }
@@ -115,14 +115,15 @@ namespace Hearth
 
         public static HSetting Enum<T>(ModuleId m, string cat, string key, T def, string label, string desc = null, bool nerd = false) where T : struct, IConvertible
         {
-            int n = System.Enum.GetValues(typeof(T)).Length;
-            return Add(new HSetting { Module = m, Category = cat, Key = key, Kind = SettingKind.Enum, EnumType = typeof(T), Default = Convert.ToInt32(def), SliderMin = 0, SliderMax = n - 1, HardMin = 0, HardMax = n - 1, LabelEn = label, DescEn = desc, Nerd = nerd });
+            int max = 0; foreach (var v in System.Enum.GetValues(typeof(T))) max = Math.Max(max, Convert.ToInt32(v));
+            return Add(new HSetting { Module = m, Category = cat, Key = key, Kind = SettingKind.Enum, EnumType = typeof(T), Default = Convert.ToInt32(def), SliderMin = 0, SliderMax = max, HardMin = 0, HardMax = max, LabelEn = label, DescEn = desc, Nerd = nerd });
         }
 
         public static HSetting Find(string key) => byKey.TryGetValue(key, out var s) ? s : null;
 
         // Reading -------------------------------------------------------------------------------------
-        static HearthSettingsStore Store(HSetting s) => s.Global || HearthProfile.Current == null ? HearthMod.Template.Store : HearthProfile.Current.Store;
+        /// <summary>The store a setting lives in: the template for global settings (and with no game), else the save's profile.</summary>
+        internal static HearthSettingsStore Store(HSetting s) => s.Global || HearthProfile.Current == null ? HearthMod.Template.Store : HearthProfile.Current.Store;
         static float Tier => HearthProfile.Current?.Tier ?? HearthMod.Template.Tier;
 
         public static float Get(string key)
@@ -135,7 +136,7 @@ namespace Hearth
         {
             var st = Store(s);
             if (st.TryGet(s.Key, out float v)) return s.Clamp(v);
-            return s.DefaultFor(Tier);
+            return s.Clamp(s.DefaultFor(Tier));
         }
         public static bool GetBool(string key) => Get(key) >= 0.5f;
         public static int GetInt(string key) => (int)Math.Round(Get(key));

@@ -69,7 +69,9 @@ Dependency direction: `Hearth → Silverline → Hearth.Core`. Silverline must n
 - `Hearth/Contracts/Venues.cs` — `VenueTypeDef`, `CompVenueSign`, `Venues.All/At/OfType`. A room with a Venue Sign is a business.
 - `Hearth/Contracts/HearthTabs.cs` — pages of the main tab.
 - `Silverline/Contracts/BankApi.cs` — `BankApi.Impl`, bank window tabs.
-- Shared work types `HH_Hosting`, `HH_Serving`; research tabs `HH_Hospitality`, `HH_Banking` (Common/Defs/Core).
+- Shared work types `HH_Hosting`, `HH_Serving` and research tab `HH_Hospitality` (Common/Defs/Hospitality); research tab `HH_Banking` (Common/Defs/Core).
+- Also: `Payments.TryPayout` / `GuestApi.CreditGuest` (payouts, refunds), optional `IModuleScoped` on providers, `Ledger.Post(..., category)` + `Ledger.DayIncome`,
+  `ScribeMoney.Look`, `HearthGame.OnGameInit` (clear static caches here), `BankTab.Module`.
 
 ## Using a single module elsewhere (N07)
 Each module is a folder `Source/Hearth/<Module>` + `Common/Defs/<Module>` + `Keyed/HH_<Module>.xml` + textures under `…/HH/<Module>`.
