@@ -231,6 +231,9 @@ namespace Hearth.Casino
             if (NeedsCroupier) sb.Append(" · ").Append(Staffed ? "HH.Casino.Staffed".Translate() : "HH.Casino.NoCroupier".Translate());
             if (Rounds > 0)
                 sb.Append("\n").Append("HH.Casino.InspectBooks".Translate(Rounds, HouseWin.ToString("+0.0;-0.0"), (ActualEdge * 100).ToString("0.0"), (ExpectedEdge * 100).ToString("0.0")));
+            if (TodayDay == Find.TickManager.TicksGame / 60000 && TodayRounds > 0)
+                sb.Append("\n").Append("HH.Casino.InspectToday".Translate(TodayRounds, ((TodayStaked - TodayPaid) / (double)Money.PerSilver).ToString("+0.0;-0.0")));
+            var lz = LuckSigma; if (lz != null) sb.Append("\n").Append("HH.Casino.InspectLuck".Translate(LuckText(lz)));
             return sb.ToString();
         }
 

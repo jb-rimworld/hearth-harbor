@@ -14,13 +14,13 @@ namespace Hearth.Casino
     public class Hediff_GamblingAddiction : Hediff_Addiction
     {
         public float depth;
-        public int lastSessionTick = -1;
+        public int lastSessionTick = int.MinValue;
         public int sessions;
         int lastUpdateTick = -1;
 
         public int Stage => GamblingMath.StageFromDepth(depth);
         public bool InWithdrawal => Need != null && Need.CurCategory == DrugDesireCategory.Withdrawal;
-        public double AbstinenceDays => lastSessionTick < 0 ? 0 : (Find.TickManager.TicksGame - lastSessionTick) / 60000.0;
+        public double AbstinenceDays => lastSessionTick == int.MinValue ? 0 : (Find.TickManager.TicksGame - (double)lastSessionTick) / 60000.0;
         public double DaysNeeded => GamblingMath.AbstinenceDaysNeeded(Stage, CS.F(CS.AbstinenceDays));
 
         public override int CurStageIndex => Math.Min(def.stages.Count - 1, InWithdrawal ? Stage : 0);
@@ -53,13 +53,13 @@ namespace Hearth.Casino
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
-            if (lastSessionTick < 0) lastSessionTick = Find.TickManager.TicksGame;
+            if (lastSessionTick == int.MinValue) lastSessionTick = Find.TickManager.TicksGame;
         }
 
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref depth, "depth"); Scribe_Values.Look(ref lastSessionTick, "lastSession", -1);
+            Scribe_Values.Look(ref depth, "depth"); Scribe_Values.Look(ref lastSessionTick, "lastSession", int.MinValue);
             Scribe_Values.Look(ref sessions, "sessions"); Scribe_Values.Look(ref lastUpdateTick, "lastUpdate", -1);
         }
 

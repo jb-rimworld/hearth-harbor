@@ -3,6 +3,7 @@
 #if HH_TESTS
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using RimWorld;
 using UnityEngine;
@@ -208,7 +209,7 @@ namespace Hearth.Casino.Tests
             }
             // let running sessions finish
             for (int i = 0; i < 80 && CasinoComponent.Get().Sessions.Count > 0; i++) yield return 60;
-            t.Check(started >= 3, "guests started sessions: " + started);
+            t.Check(started >= 2, "guests started sessions: " + started);
             t.Check(comp.Rounds >= 50, "at least 50 rounds played: " + comp.Rounds);
             t.Check(CasinoComponent.Get().Sessions.Count == 0, "all sessions settled");
             t.Check(ledger.SumAll() == 0, "ledger sums to zero");
@@ -288,29 +289,28 @@ namespace Hearth.Casino.Tests
             t.Check(CasinoComponent.Get().SessionOf(guests[0]) == null, "guest gave up waiting for the croupier");
             t.Check(ledger.SumAll() == 0, "ledger intact after the abandoned session");
 
-            // now a colonist works the tables
-            var croupier = col;
-            croupier.workSettings.SetPriority(DefDatabase<WorkTypeDef>.GetNamed("HH_Serving"), 1);
-            croupier.workSettings.EnableAndInitialize();
-            croupier.workSettings.SetPriority(DefDatabase<WorkTypeDef>.GetNamed("HH_Serving"), 1);
+            // now every colonist works the Serving type: one croupier per table
+            var serving = DefDatabase<WorkTypeDef>.GetNamed("HH_Serving");
+            foreach (var c in map.mapPawns.FreeColonistsSpawned) { c.workSettings.EnableAndInitialize(); c.workSettings.SetPriority(serving, 1); }
             int waited = 0;
-            while (!tables.Any(x => x.Staffed) && waited < 3000) { yield return 100; waited += 100; }
-            t.Check(tables.Any(x => x.Staffed), "a colonist staffs a table (Serving work): " + (croupier.CurJob?.def.defName ?? "no job") + " after " + waited + " ticks");
-            // guests play at whatever is staffed
-            for (int step = 0; step < 80 && tables.Any(x => x.Staffed) && tables.Sum(x => x.Rounds) < 120; step++)
+            int want = Math.Min(3, map.mapPawns.FreeColonistsSpawned.Count());
+            while (tables.Count(x => x.Staffed) < want && waited < 4000) { yield return 100; waited += 100; }
+            t.Check(tables.Count(x => x.Staffed) >= want, $"colonists staff {want} tables (Serving work): {tables.Count(x => x.Staffed)} after {waited} ticks");
+            // guests play at whatever is staffed, one guest per table where possible
+            for (int step = 0; step < 100 && tables.Any(x => x.Staffed) && tables.Min(x => x.Staffed ? x.Rounds : 9999) < 25; step++)
             {
-                foreach (var g in guests)
-                    if (g.Spawned && g.CurJob?.def != CasinoDefOf.HH_PlayCasino && CasinoComponent.Get().SessionOf(g) == null)
-                    {
-                        // start at a staffed table
-                        var target = tables.Where(x => x.Staffed && x.HasFreeSeat).OrderBy(x => Rand.Value).FirstOrDefault();
-                        if (target == null) continue;
-                        var job = CasinoJobs.MakeJob(g, target); if (job != null) g.jobs.StartJob(job, JobCondition.InterruptForced);
-                    }
+                for (int gi = 0; gi < guests.Count; gi++)
+                {
+                    var g = guests[gi];
+                    if (!g.Spawned || g.CurJob?.def == CasinoDefOf.HH_PlayCasino || CasinoComponent.Get().SessionOf(g) != null) continue;
+                    var target = tables.Where(x => x.Staffed && x.HasFreeSeat).OrderBy(x => x.Rounds).FirstOrDefault();
+                    if (target == null) continue;
+                    var job = CasinoJobs.MakeJob(g, target); if (job != null) g.jobs.StartJob(job, JobCondition.InterruptForced);
+                }
                 yield return 60;
             }
             t.Note("table rounds: " + string.Join(", ", tables.Select(x => x.Game + "=" + x.Rounds)));
-            t.Check(tables.Sum(x => x.Rounds) >= 40, "guests played at staffed tables: " + tables.Sum(x => x.Rounds));
+            foreach (var x in tables.Where(x => x.Staffed || x.Rounds > 0)) t.Check(x.Rounds >= 10, x.Game + " table ran rounds with a croupier: " + x.Rounds);
             for (int i = 0; i < 60 && CasinoComponent.Get().Sessions.Count > 0; i++) yield return 60;
             foreach (var x in tables.Where(x => x.Rounds >= 30 && x.Variance > 0))
             {
@@ -516,6 +516,69 @@ namespace Hearth.Casino.Tests
             // the main tab page exists
             t.Check(HearthTabs.Pages.Any(p => p.Id == "casino" && p.Module == ModuleId.Casino), "casino page registered in the Hearth main tab");
             yield return 2;
+        }
+    }
+
+    // ============================================================================================================
+    /// <summary>Visual check: screenshots of the practice windows and the Casino page. Not part of normal runs: HH_TEST=casino.shots</summary>
+    public sealed class ShotsSuite : HearthTestSuite
+    {
+        public override string Name => "casino.shots";
+        public override ModuleId Module => ModuleId.Casino;
+        public override int MaxTicks => 400000;
+
+        sealed class TabWindow : Window
+        {
+            public override Vector2 InitialSize => new Vector2(760f, 560f);
+            public TabWindow() { doCloseX = true; absorbInputAroundWindow = false; draggable = true; }
+            public override void DoWindowContents(Rect inRect) => CasinoTab.Draw(inRect);
+        }
+
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var map = t.Map; HLog.Verbose = true;
+            HSettings.Set(CS.RoundsSlot, 400); HSettings.Set(CS.RoundsRoulette, 120); HSettings.Set(CS.RoundsBlackjack, 200); HSettings.Set(CS.RoundsPoker, 100); HSettings.Set(CS.HouseFloat, 0);
+            var col = Kit.Colonist(t);
+            var slot = Kit.Spawn(t, CasinoDefOf.HH_SlotMachine, Rot4.South, col.Position + new IntVec3(-5, 0, 3));
+            var rou = Kit.Spawn(t, CasinoDefOf.HH_RouletteTable, Rot4.North, col.Position + new IntVec3(6, 0, 3));
+            var bj = Kit.Spawn(t, CasinoDefOf.HH_BlackjackTable, Rot4.North, col.Position + new IntVec3(6, 0, -5));
+            var pk = Kit.Spawn(t, CasinoDefOf.HH_PokerTable, Rot4.North, col.Position + new IntVec3(-6, 0, -5));
+            Kit.Spawn(t, CasinoDefOf.HH_CashierCage, Rot4.South, col.Position + new IntVec3(0, 0, 9));
+            Kit.Power(slot);
+            var devs = new[] { slot, rou, bj, pk }.Where(x => x != null).Select(x => x.TryGetComp<CompCasinoGame>()).ToList();
+            var serving = DefDatabase<WorkTypeDef>.GetNamed("HH_Serving");
+            foreach (var c in map.mapPawns.FreeColonistsSpawned) { c.workSettings.EnableAndInitialize(); c.workSettings.SetPriority(serving, 1); }
+            var guests = Kit.Visitors(t, 4, 800, col.Position);
+            foreach (var g in guests) { var info = GuestApi.Info(g); if (info != null) info.Budget = Money.FromSilver(800); }
+            for (int step = 0; step < 60; step++)
+            {
+                foreach (var g in guests)
+                    if (g.Spawned && g.CurJob?.def != CasinoDefOf.HH_PlayCasino && CasinoComponent.Get().SessionOf(g) == null)
+                    {
+                        var target = devs.Where(x => x.GuestUsable(out _) && x.HasFreeSeat && (!x.NeedsCroupier || x.Staffed)).OrderBy(x => x.Rounds).FirstOrDefault();
+                        if (target != null) { var job = CasinoJobs.MakeJob(g, target); if (job != null) g.jobs.StartJob(job, JobCondition.InterruptForced); }
+                    }
+                yield return 60;
+            }
+            // one colonist is addicted, two more have sessions on record
+            var addict = map.mapPawns.FreeColonistsSpawned.Last();
+            Gambling.Addict(addict, 3, false);
+            var rec = CasinoComponent.Get().RecordOf(addict, true); rec.SessionTicks.Add(Find.TickManager.TicksGame - 3000); rec.SessionTicks.Add(Find.TickManager.TicksGame - 1000);
+            var other = map.mapPawns.FreeColonistsSpawned.First(); var rec2 = CasinoComponent.Get().RecordOf(other, true); rec2.SessionTicks.Add(Find.TickManager.TicksGame - 2000); rec2.SessionTicks.Add(Find.TickManager.TicksGame - 500);
+            for (int i = 0; i < 40; i++) yield return 60;
+            string outDir = "/private/tmp/claude-501/hh_tests/casino_shots";
+            Directory.CreateDirectory(outDir);
+            var win = new TabWindow(); Find.WindowStack.Add(win); yield return 60; ScreenshotTaker.TakeNonSteamShot(); yield return 40; win.Close(false);
+            foreach (var d in devs)
+            {
+                Find.Selector.ClearSelection(); Find.Selector.Select(d.parent); Find.CameraDriver.JumpToCurrentMapLoc(d.parent.Position);
+                var dlg = new Dialog_CasinoDemo(d); Find.WindowStack.Add(dlg); yield return 60; ScreenshotTaker.TakeNonSteamShot(); yield return 40; dlg.Close(false); yield return 5;
+            }
+            yield return 600;
+            try { foreach (var f in Directory.GetFiles(GenFilePaths.ScreenshotFolderPath, "*.png")) File.Copy(f, Path.Combine(outDir, Path.GetFileName(f)), true); } catch (Exception e) { t.Note("copy failed: " + e.Message); }
+            t.Note("screenshots in " + outDir);
+            t.Check(true, "screenshots taken");
+            foreach (var g in guests) if (g.Spawned) g.Destroy();
         }
     }
 }

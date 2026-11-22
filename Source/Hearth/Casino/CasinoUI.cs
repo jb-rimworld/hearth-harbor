@@ -29,7 +29,7 @@ namespace Hearth.Casino
         {
             if (!HSettings.GetBool("core.helpHint")) return null;
             var h = Hint;
-            return "HH.Casino.HelpHint".Translate(h?.primaryLabel ?? "findahelpline.com").ToString();
+            return "HH.Casino.HelpHint".Translate().ToString().Replace("{LINK}", h?.primaryLabel ?? "findahelpline.com");
         }
 
         /// <summary>Country page of the helpline when the system region is known, else the start page.</summary>
@@ -267,6 +267,25 @@ namespace Hearth.Casino
             Widgets.CheckboxLabeled(new Rect(0, y, 360f, 24f), "HH.Casino.LimitsToggle".Translate(CS.F(CS.MinBet).ToString("0.##"), CS.F(CS.MaxBet).ToString("0.##")), ref limits);
             if (limits != CS.B(CS.LimitsOn)) HSettings.Set(CS.LimitsOn, limits ? 1f : 0f);
             y += 30f;
+
+            // balance badge: any game that pays out more than it takes in is a gift to the guests
+            var losing = new List<string>();
+            if (CS.SlotTargetRtp >= 1.0) losing.Add("HH.Casino.Game.Slots".Translate());
+            if (CS.Roulette.TargetEdge <= 0) losing.Add("HH.Casino.Game.Roulette".Translate());
+            if (BlackjackSolver.Get(CS.Blackjack, 0.6).HouseEdge <= 0) losing.Add("HH.Casino.Game.Blackjack".Translate());
+            if (CS.PokerRakeRate <= 0) losing.Add("HH.Casino.Game.Poker".Translate());
+            if (losing.Count > 0)
+            {
+                GUI.color = new Color(1f, 0.6f, 0.35f);
+                Widgets.Label(new Rect(0, y, view.width, 24f), "HH.Casino.LosingWarning".Translate(string.Join(", ", losing)));
+                GUI.color = Color.white; y += 28f;
+            }
+            else
+            {
+                GUI.color = new Color(0.6f, 0.85f, 0.6f);
+                Widgets.Label(new Rect(0, y, view.width, 24f), "HH.Casino.BalancedBadge".Translate());
+                GUI.color = Color.white; y += 28f;
+            }
 
             int today = Find.TickManager.TicksGame / 60000;
             // houses

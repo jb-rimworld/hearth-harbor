@@ -4,6 +4,8 @@
   <HH.Tab.Casino>Casino</HH.Tab.Casino>
   <HH.Casino.TabTitle>Casino</HH.Casino.TabTitle>
   <HH.Casino.LimitsToggle>Enforce table limits (bets {0}–{1} silver)</HH.Casino.LimitsToggle>
+  <HH.Casino.LosingWarning>The house loses money on: {0}. At these odds the guests win more than they stake.</HH.Casino.LosingWarning>
+  <HH.Casino.BalancedBadge>Every game has a house edge: the casino earns in the long run.</HH.Casino.BalancedBadge>
   <HH.Casino.Houses>Houses</HH.Casino.Houses>
   <HH.Casino.NoHouses>No guest has gambled yet. A house opens its books with the first buy-in.</HH.Casino.NoHouses>
   <HH.Casino.HouseOfMap>Casino of {0}</HH.Casino.HouseOfMap>
@@ -28,6 +30,8 @@
   <!-- Devices -->
   <HH.Casino.InspectGame>{0}: {1} of {2} seats taken</HH.Casino.InspectGame>
   <HH.Casino.InspectBooks>{0} rounds · house {1} · actual edge {2} % (designed {3} %)</HH.Casino.InspectBooks>
+  <HH.Casino.InspectToday>Today: {0} rounds, house {1}</HH.Casino.InspectToday>
+  <HH.Casino.InspectLuck>Lifetime luck: {0}</HH.Casino.InspectLuck>
   <HH.Casino.Staffed>croupier at work</HH.Casino.Staffed>
   <HH.Casino.NoCroupier>no croupier</HH.Casino.NoCroupier>
   <HH.Casino.Vol.Low>low volatility</HH.Casino.Vol.Low>
@@ -67,7 +71,7 @@
   <HH.Casino.DoubleDown>Double</HH.Casino.DoubleDown>
 
   <!-- Help hint (K28): short, quiet, never funny -->
-  <HH.Casino.HelpHint>If gambling is a problem in real life, help is available: {0}</HH.Casino.HelpHint>
+  <HH.Casino.HelpHint>If gambling is a problem in real life, help is available: {LINK}</HH.Casino.HelpHint>
   <HH.Casino.HelpHintTip>Click to open the helpline. Right click to hide this line (it can be turned back on in the mod settings).</HH.Casino.HelpHintTip>
   <HH.Casino.HideHint>Hide this hint</HH.Casino.HideHint>
   <HH.Casino.OpenHelpline>Open the helpline</HH.Casino.OpenHelpline>
