@@ -106,6 +106,7 @@ namespace Hearth.Underworld
         {
             why = null;
             if (!Underworld.Unlocked) { why = "closed"; return false; }
+            if (item == null || item.Destroyed || item.stackCount <= 0) { why = "nothing to buy"; return false; }
             var price = BuyPrice(item);
             if (Ledger.Current.Balance(fs.Account) < price) TopUp(fs, price);
             if (Ledger.Current.Balance(fs.Account) < price) { why = UwPay.T("Fence.NoCash"); return false; }
@@ -178,7 +179,7 @@ namespace Hearth.Underworld
             for (int i = 0; i < n; i++)
             {
                 var t = UwPay.MakeGoods(25, 350); if (t == null) continue;
-                if (p.inventory.innerContainer.TryAdd(t)) Underworld.Comp.MarkStolen(t, from);
+                if (p.inventory.innerContainer.TryAdd(t, false)) Underworld.Comp.MarkStolen(t, from); else t.Destroy();
             }
         }
         public static Thing PickStolen(Pawn p)
