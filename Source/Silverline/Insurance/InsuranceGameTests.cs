@@ -282,12 +282,12 @@ namespace Silverline
             var c = res.contract;
 
             // 1) inside the waiting period: the claim is denied by clause 1
-            var b0 = InsTest.SpawnBuilding("Battery", t.FreeCellNearCenter());
+            var b0 = InsTest.SpawnBuilding("Stool", t.FreeCellNearCenter());
             var raider = InsTest.Raider();
             t.Check(raider.HostileTo(Faction.OfPlayer), "raider is hostile to the colony");
             b0.Kill(new DamageInfo(DamageDefOf.Bomb, 500f, 0f, -1f, raider));
             var cl0 = comp.claims.LastOrDefault();
-            t.Check(cl0 != null && cl0.trigger == ClaimTrigger.RaidBuilding && cl0.Hint("Waiting"), "destroyed battery during the waiting period opens a claim with the waiting hint");
+            t.Check(cl0 != null && cl0.trigger == ClaimTrigger.RaidBuilding && cl0.Hint("Waiting"), "destroyed stool during the waiting period opens a claim with the waiting hint");
             cl0.decideTick = Ins.Now; comp.Process(Ins.Now);
             t.Check(cl0.state == ClaimState.Decided && cl0.outcome == ClaimOutcome.Denied && cl0.Clause != null && cl0.Clause.number == "1", "denied by clause 1 (waiting period): " + cl0.clauseDef);
             ClaimEngine.Close(cl0);
@@ -295,7 +295,7 @@ namespace Silverline
 
             // 2) after the waiting period: a raider destroys an insured building
             InsTest.SkipWaiting(c);
-            var b1 = InsTest.SpawnBuilding("Battery", t.FreeCellNearCenter());
+            var b1 = InsTest.SpawnBuilding("Stool", t.FreeCellNearCenter());
             double value = b1.def.GetStatValueAbstract(StatDefOf.MarketValue, b1.Stuff);
             int letters0 = Find.LetterStack.LettersListForReading.Count;
             var ins0 = InsTest.Insurer;
@@ -321,7 +321,7 @@ namespace Silverline
 
             // 3) self-inflicted: your own colonist destroys it
             var colonist = InsTest.Colonists.First();
-            var b2 = InsTest.SpawnBuilding("Battery", t.FreeCellNearCenter());
+            var b2 = InsTest.SpawnBuilding("Stool", t.FreeCellNearCenter());
             b2.Kill(new DamageInfo(DamageDefOf.Bomb, 500f, 0f, -1f, colonist));
             var cl2 = comp.claims.Last();
             t.Check(cl2.Hint("Self"), "own colonist as instigator: self-inflicted hint");
@@ -330,12 +330,12 @@ namespace Silverline
 
             // 4) fire without an enemy: not covered by the raid policy, no claim at all
             int n = comp.claims.Count;
-            var b3 = InsTest.SpawnBuilding("Battery", t.FreeCellNearCenter());
+            var b3 = InsTest.SpawnBuilding("Stool", t.FreeCellNearCenter());
             b3.Kill(new DamageInfo(DamageDefOf.Flame, 500f)); InsTest.ClearFires();
             t.Check(comp.claims.Count == n, "fire is not an act of the storyteller: no claim");
 
             // 5) several buildings in one event are merged into one claim
-            var b4 = InsTest.SpawnBuilding("Battery", t.FreeCellNearCenter()); var b5 = InsTest.SpawnBuilding("Battery", t.FreeCellNearCenter());
+            var b4 = InsTest.SpawnBuilding("Stool", t.FreeCellNearCenter()); var b5 = InsTest.SpawnBuilding("Stool", t.FreeCellNearCenter());
             int n4 = comp.claims.Count; t.Note($"b4 spawned {b4.Spawned} at {b4.Position}, b5 at {b5.Position}, faction {b4.Faction}, ready {ClawbackApi.Ready}, active contracts {comp.contracts.Count(x => x.Active)} {string.Join(",", comp.contracts.Where(x => x.Active).Select(x => x.defName))}"); b4.Kill(new DamageInfo(DamageDefOf.Bomb, 500f, 0f, -1f, raider)); int nClaims = comp.claims.Count; t.Note($"after first kill: claims {n4} -> {nClaims}; spawned b5 {b5.Spawned}"); b5.Kill(new DamageInfo(DamageDefOf.Bomb, 500f, 0f, -1f, raider));
             t.Note($"after second kill: claims {comp.claims.Count}; last {comp.claims.Last().id} state {comp.claims.Last().state} items {comp.claims.Last().items.Count} filed {comp.claims.Last().filedTick} now {Ins.Now}");
             var merged = comp.claims.Last();
@@ -351,7 +351,7 @@ namespace Silverline
             if (roofRes.Ok)
             {
                 InsTest.SkipWaiting(roofRes.contract);
-                var b6 = InsTest.SpawnBuilding("Battery", t.FreeCellNearCenter());
+                var b6 = InsTest.SpawnBuilding("Stool", t.FreeCellNearCenter());
                 b6.Kill(new DamageInfo(DamageDefOf.Flame, 500f)); InsTest.ClearFires();
                 var fireClaim = comp.claims.Last();
                 t.Check(fireClaim.trigger == ClaimTrigger.FireBuilding && fireClaim.policyDef == "SL_RoofOverHead", "fire is covered by Roof Over Your Head");
@@ -654,7 +654,7 @@ namespace Silverline
                 if (!r.Ok) { t.Note("could not sign " + tier + ": " + r.error); continue; }
                 InsTest.SkipWaiting(r.contract);
                 var raider = InsTest.Raider();
-                var b = InsTest.SpawnBuilding("Battery", t.FreeCellNearCenter());
+                var b = InsTest.SpawnBuilding("Stool", t.FreeCellNearCenter());
                 double val = b.def.GetStatValueAbstract(StatDefOf.MarketValue, b.Stuff);
                 b.Kill(new DamageInfo(DamageDefOf.Bomb, 500f, 0f, -1f, raider));
                 var cl = comp.claims.Last(x => x.contractId == r.contract.id);
@@ -743,7 +743,7 @@ namespace Silverline
             InsTest.SkipWaiting(comp.contracts[1]);
             InsTest.LoseParts(colonist, InsTest.Part(colonist, InsTest.BP("Hand"), "left"));
             var raider = InsTest.Raider(); InsTest.SkipWaiting(comp.contracts[0]);
-            var b = InsTest.SpawnBuilding("Battery", t.FreeCellNearCenter()); b.Kill(new DamageInfo(DamageDefOf.Bomb, 500f, 0f, -1f, raider));
+            var b = InsTest.SpawnBuilding("Stool", t.FreeCellNearCenter()); b.Kill(new DamageInfo(DamageDefOf.Bomb, 500f, 0f, -1f, raider));
             var cl = comp.claims.Last(); cl.decideTick = Ins.Now; comp.Process(Ins.Now);
             var limb = comp.claims.First(x => x.trigger == ClaimTrigger.LimbLoss); limb.decideTick = Ins.Now; comp.Process(Ins.Now);
             foreach (var w in Find.WindowStack.Windows.ToList()) if (!(w is Window_Clawback)) { }
