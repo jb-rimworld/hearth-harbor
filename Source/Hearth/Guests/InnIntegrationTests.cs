@@ -53,6 +53,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 50000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             InnIntKit.ClearAll(map);
@@ -113,6 +114,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 6000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var door = reg.Door;
@@ -189,6 +191,7 @@ namespace Hearth.Guests
         public override ModuleId Module => ModuleId.Inn;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var site = InnTestKit.BuildRoom(map, 1, true, 5, 4);
@@ -224,6 +227,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 12000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             float renown0 = reg.Renown;
@@ -301,6 +305,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 40000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             InnIntKit.ClearAll(map);
@@ -358,6 +363,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 30000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var site = InnTestKit.BuildRoom(map, 1, true, 5, 4);

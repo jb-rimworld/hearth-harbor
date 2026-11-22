@@ -117,6 +117,17 @@ namespace Hearth.Guests
             map.GetComponent<MapComponent_HH_GuestScheduler>()?.ClearReturnsForTests(); // departures plan return visits; suites must not see them
         }
 
+        /// <summary>
+        /// Combat anywhere on the test map (storyteller raids, manhunters, a guest faction turned hostile) makes vanilla force normal
+        /// speed (TimeSlower), which turns the Ultrafast test run into 1× and lets night-long suites crawl for many minutes
+        /// (the "inn.night hang"). Tests never want that: switch the slow-down off for the test game.
+        /// </summary>
+        public static void FastTime()
+        {
+            if (!Verse.DebugViewSettings.neverForceNormalSpeed) Verse.Log.Message("[HHTEST] forced normal speed switched off for the test run");
+            Verse.DebugViewSettings.neverForceNormalSpeed = true;
+        }
+
         public static int CountSilver(Pawn p) { int n = 0; foreach (var t in p.inventory.innerContainer) if (t.def == ThingDefOf.Silver) n += t.stackCount; return n; }
 
         public static bool JournalHas(string to, string memoPart, int sinceTick)
@@ -131,6 +142,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 135000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map;
             var reg = GuestRegistry.Instance;
             t.Check(reg != null, "guest register exists");
@@ -161,6 +173,7 @@ namespace Hearth.Guests
         public override ModuleId Module => ModuleId.Inn;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var f = InnTestKit.GuestFaction(map);
@@ -217,6 +230,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 45000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var site = InnTestKit.BuildRoom(map, 2, true);
@@ -283,6 +297,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 30000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var site = InnTestKit.BuildRoom(map, 2, false, 6, 4);
@@ -338,6 +353,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 32000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var site = InnTestKit.BuildRoom(map, 1, false, 6, 5);
@@ -387,6 +403,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 30000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var site = InnTestKit.BuildRoom(map, 2, true, 6, 4);
@@ -471,6 +488,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 110000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var site = InnTestKit.BuildRoom(map, 1, true, 5, 4);
@@ -516,6 +534,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 6000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map;
             var sch = map.GetComponent<MapComponent_HH_GuestScheduler>();
             MapComponent_HH_GuestScheduler.SuspendedForTests = false;
@@ -555,6 +574,7 @@ namespace Hearth.Guests
         public override int MaxTicks => 5000;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
             var cands = Find.FactionManager.AllFactionsListForReading.Where(f => MapComponent_HH_GuestScheduler.FactionCanVisit(f, map)).ToList();
@@ -591,6 +611,7 @@ namespace Hearth.Guests
         public override ModuleId Module => ModuleId.Inn;
         public override IEnumerable<int> Run(TestContext t)
         {
+            InnTestKit.FastTime();
             t.Check(Math.Abs(GuestEconomy.DailyBudget(1) - 25) < 0.01f && Math.Abs(GuestEconomy.DailyBudget(50) - 230) < 0.01f && Math.Abs(GuestEconomy.DailyBudget(100) - 2500) < 0.01f, "b(W) anchors 25 / 230 / 2500");
             float prev = 0; bool mono = true;
             for (int w = 1; w <= 100; w++) { float b = GuestEconomy.DailyBudget(w); if (b < prev) mono = false; prev = b; }
