@@ -102,7 +102,19 @@ namespace Silverline
             return s;
         }
 
-        public static double ExpectedDamage(SL_PolicyDef def, Map map, Pawn pawn, double sum, double hazard, double history)
+        /// <summary>
+        /// Expected payout per quadrum of a pension policy (Golden Years). The price must follow the time left until the pension starts, otherwise a
+        /// 59-year-old buys a certain payout for a few silver. A lump sum (Bare Minimum) pays the sum once; the daily pension is valued over 300 days
+        /// (five game years). 1 year = 4 quadrums, so the fair expectation per quadrum is value x sum / (4 x years left). No history blend, no danger factor.
+        /// </summary>
+        public static double RetirementExpected(SL_PolicyDef def, Pawn pawn, CoverTier tier, double sum)
+        {
+            double yearsLeft = Math.Max(0.5, 60.0 - pawn.ageTracker.AgeBiologicalYearsFloat);
+            double value = tier == CoverTier.BareMinimum ? def.lumpSum : def.dailyAnnuity * 300.0 * (tier == CoverTier.Premium ? 1.5 : 1.0);
+            return sum * value / (4.0 * yearsLeft);
+        }
+
+        public static double ExpectedDamage(SL_PolicyDef def, Map map, Pawn pawn, double sum, double hazard, double history, CoverTier tier = CoverTier.GoodEnough)
         {
             switch (def.riskModel)
             {
@@ -113,7 +125,7 @@ namespace Silverline
                 case RiskModel.PerTravelDay:
                     return def.baseRisk * InsuranceMath.DaysPerQuadrum;   // one head travelling the whole quadrum
                 default:
-                    if (def.ageSensitive && pawn != null) { float age = pawn.ageTracker.AgeBiologicalYears; hazard *= age >= 60 ? 1.0 : age >= 50 ? 0.6 : 0.25; }
+                    if (def.ageSensitive && pawn != null) return RetirementExpected(def, pawn, tier, sum);
                     return InsuranceMath.ExpectedDamage(sum, def.baseRisk, hazard, def.kind == PolicyKind.Colony ? DangerMult(map) : 1.0, history);
             }
         }
@@ -135,8 +147,8 @@ namespace Silverline
             var q = new Quote { billingDays = InsSettings.Billing };
             double hazard = existing != null ? InsuranceMath.HazardFactor(existing.lastShareB, existing.lastShareC) : 1.0;
             double hist = existing?.HistoryPerQuadrum ?? 0.0;
-            q.expectedDamage = ExpectedDamage(def, map, pawn, sum, hazard, hist);
-            q.payoutRatio = InsuranceMath.ExpectedPayoutRatio(tier, InsSettings.Attitude);
+            q.expectedDamage = ExpectedDamage(def, map, pawn, sum, hazard, hist, tier);
+            q.payoutRatio = def.ageSensitive ? 1.0 : InsuranceMath.ExpectedPayoutRatio(tier, InsSettings.Attitude);   // a pension has no deductible: it pays what the table says
             q.loading = InsSettings.LoadingValue;
             q.noClaims = InsuranceMath.NoClaimsFactor(existing?.noClaimsClass ?? 0);
             q.bundle = InsuranceMath.BundleFactor(bundleCount);

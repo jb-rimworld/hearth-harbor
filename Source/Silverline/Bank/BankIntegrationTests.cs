@@ -85,13 +85,22 @@ namespace Silverline
             var c = BT.C; var map = t.Map;
             var colonist = map.mapPawns.FreeColonistsSpawned.FirstOrDefault();
             if (colonist == null) { t.Note("no colonist"); yield break; }
+            HSettings.Reset(HSettings.Find("bank.tradeDeposit"));
+            t.Check(!HSettings.GetBool("bank.tradeDeposit"), "trade silver is not auto-deposited by default (B11)");
             HSettings.Set("bank.directDeposit", 1f); HSettings.Set("bank.tradeDeposit", 1f); HSettings.Set("bank.directDepositFee", 0.005f);
-            Tradeable Offer(int coins)
+            // a visiting trader: a pawn with a trader tracker, standing on the map, carrying the goods
+            var trader = PawnGenerator.GeneratePawn(PawnKindDefOf.Villager, null);
+            GenSpawn.Spawn(trader, t.FreeCellNearCenter(), map);
+            trader.trader = new Pawn_TraderTracker(trader);
+            t.Check(trader.trader != null && trader.Spawned, "test trader ready: tracker " + (trader.trader != null) + ", spawned " + trader.Spawned);
+            // the trader carries the goods in its inventory (not on the map), like a visiting trader does
+            Tradeable Offer(int coins, bool carried = false)
             {
                 var tr = new Tradeable(); var silver = ThingMaker.MakeThing(ThingDefOf.Silver); silver.stackCount = coins;
+                if (carried) trader.inventory.innerContainer.TryAdd(silver, true);
                 tr.thingsTrader.Add(silver); tr.ForceToSource(coins); return tr;
             }
-            TradeSession.trader = colonist; TradeSession.playerNegotiator = colonist; TradeSession.giftMode = false;
+            TradeSession.trader = trader; TradeSession.playerNegotiator = colonist; TradeSession.giftMode = false;
             try
             {
                 c.TestReset(false);
@@ -105,19 +114,40 @@ namespace Silverline
                 t.Check(!BankTrade.ShouldDivert(Offer(500)), "direct deposit off: silver arrives as coins");
                 HSettings.Set("bank.directDeposit", 1f);
                 c.TestReset(true);
-                var off = Offer(500);
-                t.Check(BankTrade.ShouldDivert(off), "account + direct deposit: the silver is diverted");
+                var off = Offer(500, true);
+                t.Check(BankTrade.ShouldDivert(off), "account + direct deposit + trade setting: the silver is diverted");
                 int mapSilver = BT.MapSilver(map); var ledSum = BT.LedgerSum;
-                var silverThing = off.thingsTrader[0];
-                off.ResolveTrade();
+                off.ResolveTrade();   // vanilla delivers the coins, the postfix then moves them onto the account
                 t.Check(BankApi.ColonyBalance == Money.FromSilver(497.5), "500 silver minus the 0.5 % deposit fee reached the account: " + BankApi.ColonyBalance.ToStringFull());
-                t.Check(silverThing.Destroyed && off.thingsTrader.Count == 0, "the trader's coins are gone");
-                t.Check(BT.MapSilver(map) == mapSilver, "no coins dropped on the map");
+                t.Check(BT.MapSilver(map) == mapSilver, "no coins left on the map: " + (BT.MapSilver(map) - mapSilver));
+                t.Check(trader.inventory.innerContainer.All(x => x.def != ThingDefOf.Silver), "the trader's coins are gone");
                 t.Check(BT.LedgerSum == ledSum, "ledger balanced");
+                // setting off: vanilla alone, the coins arrive on the map and the balance does not move
+                HSettings.Set("bank.tradeDeposit", 0f);
+                var b0 = BankApi.ColonyBalance; int m0 = BT.MapSilver(map);
+                var offOff = Offer(200, true); offOff.ResolveTrade();
+                t.Check(BT.MapSilver(map) == m0 + 200 && BankApi.ColonyBalance == b0, "setting off: vanilla delivers 200 coins to the map, the account is untouched (" + (BT.MapSilver(map) - m0) + ")");
+                foreach (var th in map.listerThings.ThingsOfDef(ThingDefOf.Silver).Where(x => x.Spawned && x.stackCount > 0).ToList()) if (BT.MapSilver(map) > mapSilver) { int over = Math.Min(th.stackCount, BT.MapSilver(map) - mapSilver); if (over >= th.stackCount) th.Destroy(); else th.SplitOff(over).Destroy(); }
+                HSettings.Set("bank.tradeDeposit", 1f);
                 // partial: the trader holds 800, the deal takes 300
-                var tr2 = new Tradeable(); var big = ThingMaker.MakeThing(ThingDefOf.Silver); big.stackCount = 800; tr2.thingsTrader.Add(big); tr2.ForceToSource(300);
-                var b1 = BankApi.ColonyBalance; tr2.ResolveTrade();
-                t.Check(big.stackCount == 500 && BankApi.ColonyBalance == b1 + Money.FromSilver(298.5), "partial deals leave the rest with the trader: " + big.stackCount);
+                var tr2 = new Tradeable(); var big = ThingMaker.MakeThing(ThingDefOf.Silver); big.stackCount = 800; trader.inventory.innerContainer.TryAdd(big, true); tr2.thingsTrader.Add(big); tr2.ForceToSource(300);
+                var b1 = BankApi.ColonyBalance; int m1 = BT.MapSilver(map); tr2.ResolveTrade();
+                t.Check(BankApi.ColonyBalance == b1 + Money.FromSilver(298.5) && BT.MapSilver(map) == m1, "partial deal: 300 coins deposited, none dropped (" + (BT.MapSilver(map) - m1) + ")");
+                t.Check(trader.inventory.innerContainer.Where(x => x.def == ThingDefOf.Silver).Sum(x => x.stackCount) == 500, "partial deals leave the rest with the trader");
+                foreach (var th in trader.inventory.innerContainer.Where(x => x.def == ThingDefOf.Silver).ToList()) th.Destroy();
+                // a trade ship / settlement delivers by drop pod: the coins inside the incoming pod are taken as well
+                var podCoins = ThingMaker.MakeThing(ThingDefOf.Silver); podCoins.stackCount = 300;
+                var offPod = Offer(300);
+                var st = BankTrade.Begin(offPod);
+                t.Check(st.Active && st.Coins == 300, "state recorded before the delivery");
+                TradeUtility.SpawnDropPod(DropCellFinder.TradeDropSpot(map), map, podCoins);
+                t.Check(BankTrade.PodSilver(map, null) == 300, "the coins are in an incoming pod");
+                var b2 = BankApi.ColonyBalance; BankTrade.Finish(st);
+                t.Check(BankApi.ColonyBalance == b2 + Money.FromSilver(298.5) && BankTrade.PodSilver(map, null) == 0, "pod silver deposited, pod is empty: " + BankApi.ColonyBalance.ToStringFull());
+                foreach (var sf in map.listerThings.AllThings.OfType<Skyfaller>().ToList()) sf.Destroy();
+                // nothing delivered (another mod skipped vanilla): nothing is taken, nothing is lost
+                var b3 = BankApi.ColonyBalance; var st2 = BankTrade.Begin(Offer(100)); BankTrade.Finish(st2);
+                t.Check(BankApi.ColonyBalance == b3, "no delivery found: the account does not move");
                 // the player paying (selling direction) is vanilla
                 var pay = new Tradeable(); var mine = ThingMaker.MakeThing(ThingDefOf.Silver); mine.stackCount = 100; pay.thingsColony.Add(mine); pay.ForceToDestination(100);
                 t.Check(!BankTrade.ShouldDivert(pay), "paying the trader is left to vanilla");
@@ -127,7 +157,7 @@ namespace Silverline
                 t.Check(!BankTrade.ShouldDivert(Offer(500)), "negotiator off the home map (caravan): silver arrives as coins");
                 Find.WorldPawns.PassToWorld(away, PawnDiscardDecideMode.Discard);
             }
-            finally { TradeSession.Close(); TradeSession.playerNegotiator = null; c.TestReset(true); HSettings.Reset(HSettings.Find("bank.tradeDeposit")); }
+            finally { TradeSession.Close(); TradeSession.playerNegotiator = null; c.TestReset(true); HSettings.Reset(HSettings.Find("bank.tradeDeposit")); if (!trader.Destroyed) trader.Destroy(); }
         }
     }
 }

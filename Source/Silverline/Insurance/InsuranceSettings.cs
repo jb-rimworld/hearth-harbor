@@ -34,6 +34,8 @@ namespace Silverline
         public const string MaxPersonSum = "insurance.maxPersonSum";
         public const string MaxPropertySum = "insurance.maxPropertySum";
         public const string ClaimLetters = "insurance.claimLetters";
+        public const string HospitalCapDays = "insurance.hospitalCapDays";
+        public const string HospitalCapWindow = "insurance.hospitalCapWindow";
 
         static bool registered;
 
@@ -80,6 +82,10 @@ namespace Silverline
             HSettings.Enum(m, cat, TrickBadge, TrickMode.Follows, "Trick: \"Most colonies choose Premium\" badge", "The badge on the Premium column (and, harder, the greyed-out \"Premium Plus\").");
             HSettings.Silver(m, cat, MaxPersonSum, 25000, 500, 100000, "Maximum personal sum", "Highest basic sum of an accident, retirement or travel policy (also at most twice the market value of the pawn).", nerd: true);
             HSettings.Silver(m, cat, MaxPropertySum, 60000, 500, 500000, "Maximum property sum", "Highest sum insured of a property policy.", nerd: true);
+            HSettings.Int(m, cat, HospitalCapDays, 5, 1, 15, "Rim Health Plan: paid sickbed days",
+                "The most sickbed days the Rim Health Plan pays per colonist inside the window below (a hospital-indemnity cap; it stops a chronic illness from paying more than the premium costs).", hardMax: 60);
+            HSettings.Int(m, cat, HospitalCapWindow, 15, 1, 60, "Rim Health Plan: window (days)",
+                "The cap above counts the paid days of every colonist over this many days (a quadrum by default).", hardMax: 120);
             HSettings.Bool(m, cat, ClaimLetters, true, "Letters for every claim", "Clawback Mutual writes a letter for every filed claim (at most one \"claim filed\" notice per day) and every decision.", nerd: true);
         }
 
@@ -93,6 +99,8 @@ namespace Silverline
         public static int Waiting => HSettings.GetInt(WaitingDays);
         public static int Notice => HSettings.GetInt(NoticeDays);
         public static int Billing => Math.Max(1, HSettings.GetInt(BillingDays));
+        public static int HospitalCap => Math.Max(1, HSettings.GetInt(HospitalCapDays));
+        public static int HospitalWindow => Math.Max(1, HSettings.GetInt(HospitalCapWindow));
 
         public static bool TrickActive(string key, double threshold = 0.04)
         {

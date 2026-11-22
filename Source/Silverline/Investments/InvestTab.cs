@@ -45,7 +45,8 @@ namespace Silverline
             Text.Font = GameFont.Small;
             float y = rect.y;
             DrawHeader(new Rect(rect.x, y, rect.width, 68f), g); y += 70f;
-            float footer = 88f;
+            bool hint = page == Page.Omen || page == Page.Projects;
+            float footer = hint ? 88f : 74f;   // news strip (70) plus the help line only where there is one
             var body = new Rect(rect.x, y, rect.width, rect.yMax - y - footer - 4f);
             switch (page)
             {
@@ -54,7 +55,7 @@ namespace Silverline
                 case Page.Omen: DrawOmen(body, g); break;
                 case Page.Projects: DrawProjects(body, g); break;
             }
-            DrawNews(new Rect(rect.x, rect.yMax - footer, rect.width, footer - 18f), g);
+            DrawNews(new Rect(rect.x, rect.yMax - footer, rect.width, 70f), g);
             if (page == Page.Omen || page == Page.Projects) FinUi.HelpHint(new Rect(rect.x, rect.yMax - 16f, rect.width, 16f));
             else if (FinUi.Nerd) { }
         }
@@ -94,7 +95,9 @@ namespace Silverline
                 if (icon != null) GUI.DrawTexture(new Rect(row.x, row.y + 1, 16, 16), icon);
                 TooltipHandler.TipRegion(new Rect(row.x, row.y, 16, 16), n.byYou ? FT.T("HH.Finance.News.You") : FT.T("HH.Finance.News.Chance"));
                 string when = FinUi.DaysLeft(Find.TickManager.TicksGame + (Find.TickManager.TicksGame - n.tick), Find.TickManager.TicksGame).Replace(" d", "d").Replace(" h", "h");
-                FinUi.Label(new Rect(row.x + 20, row.y, row.width - 20, row.height), when + " ago · " + n.text, GameFont.Tiny, n.magnitude < 0 ? new Color(1f, 0.82f, 0.8f) : Color.white, TextAnchor.MiddleLeft, false);
+                string line = when + " ago · " + n.text; string cut = BankUI.Trunc(line, row.width - 24f, GameFont.Tiny);
+                if (cut != line) TooltipHandler.TipRegion(new Rect(row.x + 20, row.y, row.width - 20, row.height), line);
+                FinUi.Label(new Rect(row.x + 20, row.y, row.width - 20, row.height), cut, GameFont.Tiny, n.magnitude < 0 ? new Color(1f, 0.82f, 0.8f) : Color.white, TextAnchor.MiddleLeft, false);
             }
             if (g.news.Count == 0) FinUi.Label(new Rect(r.x + 4, r.y + 18, r.width, 18), FT.T("HH.Finance.News.None"), GameFont.Tiny, FinUi.Dim);
         }
@@ -130,14 +133,17 @@ namespace Silverline
             var sel = g.Asset(selectedAsset);
             var view2 = new Rect(0, 0, right.width - 18f, Math.Max(detailH, right.height));
             Widgets.BeginScrollView(right, ref detailScroll, view2);
-            float end = DrawDetail(new Rect(0, 0, view2.width, view2.height), g, sel);
+            float end = DrawDetail(new Rect(0, 0, view2.width, view2.height), g, sel, right.height);
             Widgets.EndScrollView();
             detailH = end + 10f;
         }
 
         static float detailH = 520f;
+        /// <summary>Height of everything in the detail pane except the chart, measured in the previous frame: the chart takes what is left so the pane fits without a scrollbar.</summary>
+        static float detailFixedH = 380f;
+        const float MinChartH = 70f, MaxChartH = 150f;
 
-        static float DrawDetail(Rect r, FinanceGame g, AssetState a)
+        static float DrawDetail(Rect r, FinanceGame g, AssetState a, float paneH)
         {
             if (a == null) return 0f;
             var d = a.def; float y = r.y;
@@ -152,7 +158,8 @@ namespace Silverline
             string[] ranges = { "24 h", "7 d", "60 d" };
             for (int i = 0; i < 3; i++) { var b = new Rect(r.x + i * 52, y, 48, 20); if (chartRange == i) Widgets.DrawBoxSolid(b, new Color(1, 1, 1, 0.15f)); if (Widgets.ButtonText(b, ranges[i], false)) chartRange = i; }
             y += 22;
-            var chartRect = new Rect(r.x, y, r.width, 130f); y += 134;
+            float chartH = Mathf.Clamp(paneH - detailFixedH - 8f, MinChartH, MaxChartH);
+            var chartRect = new Rect(r.x, y, r.width, chartH); y += chartH + 4f;
             if (chartRange == 0) FinUi.Chart(chartRect, a.hourly, 24); else if (chartRange == 1) FinUi.Chart(chartRect, a.hourly, 168); else FinUi.Chart(chartRect, a.daily, 90);
             // position
             long units = g.UnitsOf(a.id);
@@ -185,15 +192,20 @@ namespace Silverline
                     amountBuf = (Math.Floor(FinanceAccounts.Cash.Silver * frac[i] * 100000) / 100000).ToString("0.#####", CultureInfo.InvariantCulture);
             FinUi.Label(new Rect(r.x + 62 + 4 * 54, y, r.width - 62 - 4 * 54, 20), FT.T("HH.Finance.Decimals"), GameFont.Tiny, FinUi.Dim);
             y += 24;
-            if (message != null && Find.TickManager.TicksGame - messageTick < 600 * 5) { FinUi.Label(new Rect(r.x, y, r.width, 40), message, GameFont.Small, new Color(1f, 0.92f, 0.6f)); }
-            y += 42;
+            if (message != null && Find.TickManager.TicksGame - messageTick < 600 * 5)
+            {
+                float mh = FinUi.TextHeight(r.width, message, GameFont.Small);
+                FinUi.Label(new Rect(r.x, y, r.width, mh), message, GameFont.Small, new Color(1f, 0.92f, 0.6f)); y += mh + 2f;
+            }
+            y += 4f;
             // risk note + nerd distribution
             string risk = RiskNote(a);
             if (!risk.NullOrEmpty()) { float h = FinUi.TextHeight(r.width, risk, GameFont.Tiny); FinUi.Label(new Rect(r.x, y, r.width, h), risk, GameFont.Tiny, new Color(1f, 0.85f, 0.7f, 0.9f)); y += h + 2; }
             var pending = g.pendingSales.Where(p => p.assetId == a.id).ToList();
             foreach (var p in pending) { FinUi.Label(new Rect(r.x, y, r.width, 16), FT.T("HH.Finance.PendingSale", FinanceGame.UnitsText(p.units), FinUi.DaysLeft(p.executeTick, Find.TickManager.TicksGame), (p.spread * 100).ToString("0")), GameFont.Tiny, FinUi.Dim); y += 16; }
             if (FinUi.Nerd && d.Volatile) DrawDistribution(r, ref y, a);
-            return y;
+            detailFixedH = y - r.y - chartH;   // for the next frame
+            return y + 6f;
         }
 
         static string RiskNote(AssetState a)

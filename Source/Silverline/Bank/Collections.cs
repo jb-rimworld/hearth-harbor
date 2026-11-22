@@ -29,6 +29,9 @@ namespace Silverline
                 if (f == null)
                 {
                     f = FactionGenerator.NewGeneratedFaction(new FactionGeneratorParms(def));
+                    // temporary: vanilla removes the faction by itself (FactionManager.Remove) once none of its people is left on a map, so an
+                    // idle save carries no Silverline faction at all (and no "hostility" letters are sent for it). It is created again on demand.
+                    f.temporary = true;
                     Find.FactionManager.Add(f);
                     HLog.Info("Bank", "Created the hidden faction " + f.Name);
                 }
@@ -231,17 +234,68 @@ namespace Silverline
             return pawns;
         }
 
-        /// <summary>Daily housekeeping: the agency is only hostile while its people are on the map.</summary>
+        /// <summary>Daily housekeeping: the agency is only hostile while its people are on the map; an idle agency is handed to vanilla for removal.</summary>
         public static void Housekeeping(BankGameComp c)
         {
             var def = SLDefOf.SL_CollectionsAgency; if (def == null) return;
             var f = Find.FactionManager.FirstFactionOfDef(def); if (f == null) return;
-            if (f.RelationKindWith(Faction.OfPlayer) == FactionRelationKind.Hostile && !Find.Maps.Any(m => m.mapPawns.SpawnedPawnsInFaction(f).Count > 0))
+            bool anyOnMap = false;
+            foreach (var m in Find.Maps) if (m.mapPawns.SpawnedPawnsInFaction(f).Count > 0) { anyOnMap = true; break; }
+            if (f.RelationKindWith(Faction.OfPlayer) == FactionRelationKind.Hostile && !anyOnMap)
             {
                 f.SetRelationDirect(Faction.OfPlayer, FactionRelationKind.Neutral, false);
                 HLog.Info("Bank", "Collection agency is neutral again");
             }
             c.Collectors.RemoveAll(p => p == null || p.Destroyed);
+            if (!anyOnMap && c.Collectors.Count == 0 && !TestMode) QueueAgencyRemoval(f);
+        }
+
+        /// <summary>Marks the agency as temporary (also for factions of older saves) and asks vanilla to remove it if nothing keeps it alive. Vanilla does the removal at its next faction tick.</summary>
+        static void QueueAgencyRemoval(Faction f)
+        {
+            try { f.temporary = true; Find.FactionManager.Notify_PawnLeftFaction(f); }
+            catch (Exception e) { HLog.Once("bank.agencyQueue", LogLevel.Warn, "Bank", "Could not queue the agency for removal: " + e.Message); }
+        }
+
+        /// <summary>
+        /// Module removal (KONZEPT 3.7): sends the agents away for good, ends their lords, forgets the collectors and removes the hidden faction, so the save
+        /// holds no pawn, lord or faction of Silverline any more. Returns what was done (for the report).
+        /// </summary>
+        public static List<string> CleanUpForRemoval()
+        {
+            var done = new List<string>();
+            var def = SLDefOf.SL_CollectionsAgency;
+            var f = def == null ? null : Find.FactionManager.FirstFactionOfDef(def);
+            var c = BankGameComp.Current;
+            int lords = 0, pawns = 0;
+            if (f != null)
+            {
+                foreach (var m in Find.Maps.ToList())
+                {
+                    foreach (var lord in m.lordManager.lords.Where(l => l.faction == f).ToList()) { m.lordManager.RemoveLord(lord); lords++; }
+                    foreach (var p in m.mapPawns.AllPawns.Where(p => p.Faction == f).ToList()) { DiscardPawn(p); pawns++; }
+                }
+                foreach (var p in Find.WorldPawns.AllPawnsAliveOrDead.Where(p => p.Faction == f).ToList()) { DiscardPawn(p); pawns++; }
+                f.SetRelationDirect(Faction.OfPlayer, FactionRelationKind.Neutral, false);
+                QueueAgencyRemoval(f);
+            }
+            if (c != null)
+            {
+                foreach (var p in c.Collectors.ToList()) if (p != null && !p.Destroyed && p.Faction != null && p.Faction.def == def) { DiscardPawn(p); pawns++; }
+                c.Collectors.Clear();
+            }
+            if (f != null) done.Add($"Silverline: removed the collection agency ({pawns} agents, {lords} lords); vanilla deletes the faction at its next tick.");
+            return done;
+        }
+
+        static void DiscardPawn(Pawn p)
+        {
+            try
+            {
+                if (Find.WorldPawns.Contains(p)) Find.WorldPawns.RemoveAndDiscardPawnViaGC(p);
+                else if (!p.Destroyed) p.Destroy();   // spawned agents: vanilla despawns them, the world pawn bookkeeping is told
+            }
+            catch (Exception e) { HLog.Warn("Bank", "Could not remove a collection agent: " + e.Message); }
         }
     }
 }

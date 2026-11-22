@@ -40,7 +40,7 @@ namespace Silverline
 
         public override void PrepareRemoval(List<string> report)
         {
-            var c = InsuranceComponent.Instance; if (c == null) return;
+            var c = InsuranceComponent.Instance; if (c == null) { ClaimLetters.RemoveAll(); return; }
             int n = c.contracts.Count(x => x.Active);
             if (n > 0) report.Add($"Clawback Mutual: {n} active policies will be cancelled and open claims paid out at their current offer.");
             foreach (var cl in c.OpenClaims.ToList())
@@ -49,6 +49,8 @@ namespace Silverline
                 if (cl.state == ClaimState.Decided) ClaimEngine.Pay(cl);
             }
             foreach (var ct in c.contracts.Where(x => x.Active).ToList()) c.End(ct, "module removed");
+            int letters = ClaimLetters.RemoveAll();   // last: paying out may still have sent letters
+            if (letters > 0) report.Add($"Clawback Mutual: {letters} letters removed from the letter stack and the archive.");
         }
 
         /// <summary>Caretaker: orphaned claims, impossible dates, negative sums.</summary>

@@ -47,6 +47,19 @@ namespace Silverline
     /// <summary>All letters of Clawback Mutual: dry, friendly, and always one footnote too small.</summary>
     public static class ClaimLetters
     {
+        /// <summary>True for letters of ours: the decision letter class and every letter that uses one of the SL_ letter defs.</summary>
+        public static bool IsOurs(Letter l) => l is ClaimLetter || (l?.def != null && l.def.defName != null && l.def.defName.StartsWith("SL_"));
+
+        /// <summary>Module removal: takes our letters out of the letter stack and the message archive (a save without the mod cannot read them). Returns how many.</summary>
+        public static int RemoveAll()
+        {
+            int n = 0;
+            foreach (var l in Find.LetterStack.LettersListForReading.ToList()) if (IsOurs(l)) { Find.LetterStack.RemoveLetter(l); n++; }
+            var arch = Find.Archive;
+            if (arch != null) foreach (var a in arch.ArchivablesListForReading.ToList()) if (a is Letter al && IsOurs(al)) { arch.Remove(a); n++; }
+            return n;
+        }
+
         public static string Footer(bool neutral)
         {
             if (neutral) return "";

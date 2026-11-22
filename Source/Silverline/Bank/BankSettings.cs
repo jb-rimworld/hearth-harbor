@@ -28,8 +28,8 @@ namespace Silverline
             // Fees and services (8.2, 8.3)
             HSettings.Bool(B, "Account", "bank.directDeposit", true, "Route till money straight to the bank",
                 "Once an account exists, the tills of your businesses are emptied into the account at midnight instead of leaving silver on the floor.");
-            HSettings.Bool(B, "Account", "bank.tradeDeposit", true, "Deposit trade income",
-                "With direct deposit on, silver you receive from traders and trade ships goes straight into the account (at the direct deposit fee) instead of being dropped as coins. Caravans are not affected.");
+            HSettings.Bool(B, "Account", "bank.tradeDeposit", false, "Auto-deposit trade silver",
+                "Off by default, so selling to a trader still hands you coins you can spend at once. With this on (and direct deposit on), silver you receive from traders and trade ships is moved into the account right after the deal (at the direct deposit fee). Caravans are not affected.");
             HSettings.Percent(B, "Fees", "bank.feeFactor", 1.0f, 0f, 3f, "Bank fee level", "Multiplies all fees of your bank. 0 % = no fees at all.", hardMin: 0f, hardMax: 10f);
             HSettings.Silver(B, "Fees", "bank.switchFee", 50, 0, 500, "Fee for changing banks", "What it costs to move your account to another bank (KONZEPT 2.2: 50 silver).");
             HSettings.Float(B, "Services", "bank.depositDelayHours", 1f, 0f, 6f, "Deposit delay without a branch (hours)", "Silver put into the account without a bank counter or ATM nearby arrives after this many hours.", hardMin: 0f, hardMax: 48f);

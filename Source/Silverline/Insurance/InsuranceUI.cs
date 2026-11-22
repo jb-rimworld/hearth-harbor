@@ -156,9 +156,21 @@ namespace Silverline
             return cs;
         }
 
-        static float CardHeight(SL_PolicyDef def, CardState cs)
+        /// <summary>Height of the tier columns: title, price, 3 lines of benefit, 3 lines of mechanics and the button (B5.1: the old 176 cut the last lines).</summary>
+        const float TierColH = 200f;
+
+        /// <summary>The "Covers:" paragraph grows with its text instead of being clipped at two lines.</summary>
+        static float CoversHeight(SL_PolicyDef def, float width)
         {
-            float h = 30f + 40f + 176f + 8f;
+            var f = Text.Font; Text.Font = GameFont.Small;
+            float h = Text.CalcHeight(Ins.T("UI.Covers") + " " + def.coversText, width);
+            Text.Font = f;
+            return Math.Max(40f, h + 2f);
+        }
+
+        static float CardHeight(SL_PolicyDef def, CardState cs, float width)
+        {
+            float h = 30f + CoversHeight(def, width - 20f) + TierColH + 8f;
             h += 30f; // sum / holder row
             int rn = def.riders?.Count ?? 0;
             bool showRiders = rn > 0 && (!InsSettings.Hard || cs.customize || InsSettings.Pressure < 0.6);
@@ -174,14 +186,14 @@ namespace Silverline
             float banner = 46f;
             DrawBundleBanner(new Rect(r.x, r.y, r.width, banner), comp);
             var outR = new Rect(r.x, r.y + banner + 4f, r.width, r.height - banner - 4f);
-            float total = 0f; foreach (var p in policies) total += CardHeight(p, Card(p)) + 8f;
+            float total = 0f; foreach (var p in policies) total += CardHeight(p, Card(p), outR.width - 18f) + 8f;
             var view = new Rect(0, 0, outR.width - 18f, total);
             Widgets.BeginScrollView(outR, ref scrollShop, view);
             float y = 0;
             foreach (var p in policies)
             {
                 var cs = Card(p);
-                float h = CardHeight(p, cs);
+                float h = CardHeight(p, cs, view.width);
                 DrawCard(new Rect(0, y, view.width, h), p, cs, comp);
                 y += h + 8f;
             }
@@ -221,8 +233,9 @@ namespace Silverline
             }
             y += 30f;
             GUI.color = Grey;
-            Widgets.Label(new Rect(x, y, w, 40f), Ins.T("UI.Covers") + " " + def.coversText);
-            GUI.color = Color.white; y += 40f;
+            float coversH = CoversHeight(def, w);
+            Widgets.Label(new Rect(x, y, w, coversH), Ins.T("UI.Covers") + " " + def.coversText);
+            GUI.color = Color.white; y += coversH;
 
             // sum / holder first: the tier quotes depend on them
             Pawn holder = null; double sum = cs.sum;
@@ -238,7 +251,7 @@ namespace Silverline
             sum = cs.sum;
 
             // tier columns
-            float colW = (w - 16f) / 3f; float colH = 176f;
+            float colW = (w - 16f) / 3f; float colH = TierColH;
             int bundleCount = InsurancePricing.BundleCountForNew;
             for (int t = 0; t < 3; t++)
             {
@@ -374,14 +387,16 @@ namespace Silverline
             Text.Font = GameFont.Tiny;
             GUI.color = PaleHi;
             string benefit = def.BenefitFor(tier) ?? "";
-            Widgets.Label(new Rect(x, y, w, 50f), benefit);
-            y += 52f;
+            float btnTop = r.yMax - 34f;                                    // the button row keeps its place; text gets what is left above it
+            float benefitH = Math.Min(54f, Math.Max(14f, Text.CalcHeight(benefit, w)));
+            BankUI.FitLabel(new Rect(x, y, w, benefitH), benefit, GameFont.Tiny);
+            y += benefitH + 2f;
             GUI.color = Grey;
             InsuranceMath.PayoutDelayDays(tier, out int dmin, out int dmax);
             string mech = def.kind == PolicyKind.Colony || def.kind == PolicyKind.Travel && def.riskModel != RiskModel.PerTravelDay
                 ? Ins.T("UI.Mech.Property", Ins.Pct(InsuranceMath.Deductible(tier)), Ins.Pct(InsuranceMath.Replacement(tier)))
                 : Ins.T("UI.Mech.Person", InsuranceMath.InvalidityThreshold(tier).ToString("0"), Ins.Pct(InsuranceMath.Progression(InsuranceMath.ModelFor(tier), 100) / 100.0));
-            Widgets.Label(new Rect(x, y, w, 28f), mech + "  " + (dmax == 0 ? Ins.T("UI.Pay.Instant") : Ins.T("UI.Pay.Days", dmin, dmax)));
+            BankUI.FitLabel(new Rect(x, y, w, Math.Max(14f, btnTop - y)), mech + "  " + (dmax == 0 ? Ins.T("UI.Pay.Instant") : Ins.T("UI.Pay.Days", dmin, dmax)), GameFont.Tiny);
             Text.Font = GameFont.Small; GUI.color = Color.white;
 
             var btn = new Rect(x, r.yMax - 30f, w, 24f);

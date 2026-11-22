@@ -50,6 +50,58 @@ namespace Silverline
             GUI.color = Color.white; Text.Font = f; Text.Anchor = a; Text.WordWrap = w;
         }
 
+        /// <summary>
+        /// Label that never shows half a line: wrapped text that does not fit the rect is cut at a word and ends in "...", and the whole text goes into the tooltip.
+        /// Colour is taken from GUI.color as set by the caller; the font is the one given (and put back).
+        /// </summary>
+        public static void FitLabel(Rect r, string text, GameFont font = GameFont.Small, TextAnchor anchor = TextAnchor.UpperLeft)
+        {
+            if (text.NullOrEmpty() || r.width < 4f || r.height < 4f) return;
+            var f = Text.Font; var a = Text.Anchor; var wr = Text.WordWrap;
+            Text.Font = font; Text.Anchor = anchor; Text.WordWrap = true;
+            string shown = text;
+            if (Text.CalcHeight(text, r.width) > r.height + 0.5f)
+            {
+                shown = FitText(text, r.width, r.height);
+                TooltipHandler.TipRegion(r, text);
+            }
+            Widgets.Label(r, shown);
+            Text.Font = f; Text.Anchor = a; Text.WordWrap = wr;
+        }
+
+        /// <summary>The longest start of <paramref name="text"/> (cut at a space) that fits the box with "..." appended. Needs Text.Font and WordWrap set by the caller.</summary>
+        public static string FitText(string text, float width, float height)
+        {
+            if (Text.CalcHeight(text, width) <= height + 0.5f) return text;
+            int lo = 0, hi = text.Length;
+            while (lo < hi)   // binary search over the length: the height only grows with the text
+            {
+                int mid = (lo + hi + 1) / 2;
+                if (Text.CalcHeight(text.Substring(0, mid).TrimEnd() + "...", width) <= height + 0.5f) lo = mid; else hi = mid - 1;
+            }
+            int cut = lo;
+            int sp = text.LastIndexOf(' ', Math.Max(0, cut - 1), Math.Min(cut, 24));   // back to a word boundary, at most ~24 chars
+            if (sp > 8 && cut < text.Length) cut = sp;
+            return text.Substring(0, cut).TrimEnd(' ', ',', '.', ';', ':') + "...";
+        }
+
+        /// <summary>Single-line text cut to the width with "..." (measured in the font it will be drawn in).</summary>
+        public static string Trunc(string text, float width, GameFont font = GameFont.Small)
+        {
+            if (text.NullOrEmpty()) return text;
+            var f = Text.Font; Text.Font = font;
+            string r = text.Truncate(width);
+            Text.Font = f; return r;
+        }
+
+        /// <summary>One-line label that is cut with "..." where it would not fit; the full text is the tooltip when it was cut.</summary>
+        public static void LabelCut(Rect r, string text, Color col, GameFont font = GameFont.Small, TextAnchor anchor = TextAnchor.UpperLeft)
+        {
+            string shown = Trunc(text, r.width, font);
+            Label(r, shown, col, font, anchor, false);
+            if (shown != text) { Widgets.DrawHighlightIfMouseover(r); TooltipHandler.TipRegion(r, text); }
+        }
+
         /// <summary>"Label ........ value" row with an optional tooltip formula (every number explains itself, 8.4).</summary>
         public static void Row(Rect r, string label, string value, string tip = null, Color? valueColor = null, bool big = false)
         {

@@ -115,17 +115,17 @@
     <label>Rim Health Plan</label>
     <description>A flat sum for every colonist who spends a day in a sickbed.</description>
     <slogan>Get well soon. Or at least get well quarterly.</slogan>
-    <coversText>Every day a colonist is bedridden with an illness or an injury that needs treatment. Food poisoning is an accident of cooking and counts anyway.</coversText>
+    <coversText>Every day a colonist is bedridden with an illness or an injury that needs treatment, but at most 5 paid days per colonist in any 15 days (the hospital-indemnity cap). Food poisoning is an accident of cooking and counts anyway.</coversText>
     <kind>Colony</kind>
     <riskModel>PerColonist</riskModel>
-    <baseRisk>2.0</baseRisk>
+    <baseRisk>4.0</baseRisk>
     <minSum>100</minSum><maxSum>5000</maxSum><defaultSum>1000</defaultSum>
     <order>60</order>
     <dailyBenefit>10</dailyBenefit>
     <triggers><li>Illness</li></triggers>
-    <benefitBare>10 silver per bedridden colonist and day.</benefitBare>
-    <benefitGood>15 silver per bedridden colonist and day.</benefitGood>
-    <benefitPremium>25 silver per bedridden colonist and day. The second opinion is free.</benefitPremium>
+    <benefitBare>10 silver per bedridden colonist and day, up to 5 days in 15.</benefitBare>
+    <benefitGood>15 silver per bedridden colonist and day, up to 5 days in 15.</benefitGood>
+    <benefitPremium>25 silver per bedridden colonist and day, up to 5 days in 15. The second opinion is free.</benefitPremium>
     <riders>
       <li><key>boost</key><label>Hospital hospitality</label><description>Pays 10 % more on every sickbed day.</description><premiumShare>0.10</premiumShare><effect>payoutBoost</effect></li>
     </riders>
@@ -136,7 +136,7 @@
     <label>Golden Years Plan</label>
     <description>A pension for colonists who made it to sixty. The premium is cheap while they are young, which is the point.</description>
     <slogan>Retire early. Then late. Then quarterly.</slogan>
-    <coversText>One colonist. From the age of 60 Clawback Mutual pays a daily pension (Bare Minimum: a single lump sum).</coversText>
+    <coversText>One colonist who is not yet 60. From the age of 60 Clawback Mutual pays a daily pension (Bare Minimum: a single lump sum). The premium rises the closer the colonist is to 60; nobody can buy a pension at 60 or later.</coversText>
     <kind>Person</kind>
     <riskModel>SumRate</riskModel>
     <baseRisk>0.02</baseRisk>

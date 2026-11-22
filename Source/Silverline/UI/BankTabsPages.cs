@@ -119,14 +119,16 @@ namespace Silverline
             {
                 if (shown >= 6) break;
                 string txt = p.Kind == TransferKind.Deposit ? L.T("Lobby.PendingDep", "↓ {0} arriving in {1}", p.Amount.ToStringShort(), BankUI.HoursText(Math.Max(0, p.DueTick - c.Now))) : L.T("Lobby.PendingWd", "↑ {0} by pod in {1}", p.Amount.ToStringShort(), BankUI.HoursText(Math.Max(0, p.DueTick - c.Now)));
-                BankUI.Label(new Rect(i.x, y, i.width, 20f), txt, BankUI.Brass, GameFont.Tiny, wrap: false); y += 19f; shown++;
+                BankUI.LabelCut(new Rect(i.x, y, i.width, 20f), txt, BankUI.Brass, GameFont.Tiny); y += 19f; shown++;
             }
             foreach (var e in BankLedgerView.Entries(40))
             {
                 if (shown >= 6) break;
                 var amt = BankLedgerView.SignedForColony(e);
-                BankUI.Label(new Rect(i.x, y, i.width * 0.66f, 20f), BankUI.TickToDay(e.Tick) + "  " + e.Memo, BankUI.CreamDim, GameFont.Tiny, wrap: false);
-                BankUI.Label(new Rect(i.x + i.width * 0.6f, y, i.width * 0.4f, 20f), BankUI.Signed(amt), amt.Micro >= 0 ? BankUI.Good : BankUI.Bad, GameFont.Tiny, TextAnchor.UpperRight, false);
+                string amtText = BankUI.Signed(amt);
+                float amtW = Math.Max(54f, 8f + Text.CalcSize(amtText).x * 0.9f);   // the amount keeps its place, the memo gives way
+                BankUI.LabelCut(new Rect(i.x, y, i.width - amtW - 6f, 20f), BankUI.TickToDay(e.Tick) + "  " + e.Memo, BankUI.CreamDim, GameFont.Tiny);
+                BankUI.Label(new Rect(i.xMax - amtW, y, amtW, 20f), amtText, amt.Micro >= 0 ? BankUI.Good : BankUI.Bad, GameFont.Tiny, TextAnchor.UpperRight, false);
                 y += 19f; shown++;
             }
             if (shown == 0) BankUI.Label(new Rect(i.x, y, i.width, 40f), L.T("Lobby.Nothing", "Nothing yet. A deposit would be a fine start."), BankUI.CreamDim, GameFont.Tiny);
@@ -138,14 +140,19 @@ namespace Silverline
             GUI.color = BankUI.BrassDim; Widgets.DrawBox(r, 1); GUI.color = Color.white;
             var b = c.Bank; if (b == null) return;
             GUI.DrawTexture(new Rect(r.x + 8f, r.y + 6f, Math.Min(52f, r.height - 12f), Math.Min(52f, r.height - 12f)), b.Icon);
-            BankUI.Label(new Rect(r.x + 70f, r.y + 6f, r.width - 360f, 22f), b.Name, BankUI.Brass, wrap: false);
-            BankUI.Label(new Rect(r.x + 70f, r.y + 28f, r.width - 360f, 22f), "\"" + b.Slogan + "\"", BankUI.CreamDim, GameFont.Tiny, wrap: false);
+            BankUI.LabelCut(new Rect(r.x + 70f, r.y + 6f, r.width - 360f, 22f), b.Name, BankUI.Brass);
+            BankUI.LabelCut(new Rect(r.x + 70f, r.y + 28f, r.width - 360f, 22f), "\"" + b.Slogan + "\"", BankUI.CreamDim, GameFont.Tiny);
             TooltipHandler.TipRegion(new Rect(r.x, r.y, r.width - 330f, r.height), b.description + "\n\n" + string.Join("\n", b.perks.Select(p => "• " + p)));
             bool direct = c.DirectDepositOn;
             var cb = new Rect(r.xMax - 330f, r.y + 8f, 190f, 24f);
             Widgets.CheckboxLabeled(cb, L.T("Lobby.Direct", "Direct deposit"), ref direct);
             TooltipHandler.TipRegion(cb, L.T("Lobby.DirectTip", "Tills of your businesses are emptied into the account at midnight, minus {0} %.", (HSettings.Get("bank.directDepositFee") * 100).ToString("0.##", CultureInfo.InvariantCulture)));
             if (direct != c.DirectDepositOn) HSettings.Set("bank.directDeposit", direct ? 1f : 0f);
+            bool trade = HSettings.GetBool("bank.tradeDeposit");
+            var tb = new Rect(r.xMax - 330f, r.y + 38f, 190f, 24f);
+            Widgets.CheckboxLabeled(tb, L.T("Lobby.Trade", "Auto-deposit trade silver"), ref trade, !c.DirectDepositOn);
+            TooltipHandler.TipRegion(tb, L.T("Lobby.TradeTip", "Silver you get from traders and trade ships goes into the account right after the deal, at the same fee as direct deposit, instead of lying on the floor as coins. Needs direct deposit. Off by default, so you can still pay the next trader in cash. Caravans are not affected."));
+            if (trade != HSettings.GetBool("bank.tradeDeposit")) HSettings.Set("bank.tradeDeposit", trade ? 1f : 0f);
             if (Widgets.ButtonText(new Rect(r.xMax - 130f, r.y + 8f, 120f, 30f), L.T("Lobby.ChangeBank", "Change bank"))) Find.WindowStack.Add(new Window_ChooseBank());
         }
     }

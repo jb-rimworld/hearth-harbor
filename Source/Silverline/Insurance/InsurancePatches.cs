@@ -67,28 +67,4 @@ namespace Silverline
             Guard.Run(ModuleId.Bank, "Insurance.Condition", () => ClawbackApi.ConditionStarted(cond));
         }
     }
-
-    /// <summary>"Call Clawback Mutual" in the float menu of the comms console.</summary>
-    [HarmonyPatch(typeof(Building_CommsConsole), nameof(Building_CommsConsole.GetFloatMenuOptions))]
-    static class Patch_CommsConsole_Menu
-    {
-        static void Postfix(Building_CommsConsole __instance, Pawn myPawn, ref IEnumerable<FloatMenuOption> __result)
-        {
-            if (!Modules.On(ModuleId.Bank) || myPawn == null) return;
-            __result = Extend(__result, __instance, myPawn);
-        }
-
-        static IEnumerable<FloatMenuOption> Extend(IEnumerable<FloatMenuOption> orig, Building_CommsConsole console, Pawn pawn)
-        {
-            foreach (var o in orig) yield return o;
-            FloatMenuOption extra = null;
-            try
-            {
-                if (!console.CanUseCommsNow || !pawn.health.capacities.CapableOf(PawnCapacityDefOf.Talking)) yield break;
-                extra = new FloatMenuOption(Ins.T("Menu.Call"), () => Window_Clawback.Open());
-            }
-            catch (Exception e) { HLog.Warn("Bank", "Clawback menu entry failed: " + e.Message); }
-            if (extra != null) yield return extra;
-        }
-    }
 }
