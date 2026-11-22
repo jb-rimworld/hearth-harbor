@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Makes sure the build menu category HH_Hospitality exists even if the Wellness module is built or tested alone. -->
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/DesignationCategoryDef[defName="HH_Hospitality"]</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+        <DesignationCategoryDef>
+          <defName>HH_Hospitality</defName>
+          <label>hospitality</label>
+          <order>105</order>
+          <specialDesignatorClasses>
+            <li>Designator_Cancel</li>
+            <li>Designator_Deconstruct</li>
+          </specialDesignatorClasses>
+        </DesignationCategoryDef>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>
