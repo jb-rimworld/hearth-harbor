@@ -25,6 +25,8 @@ namespace Hearth.Guests
         public bool IgnoreDoorPolicy;
         /// <summary>Mark the members as shady (outlaw) guests for the Underworld module (5.2).</summary>
         public bool? ForceShady;
+        /// <summary>Return visit: these world pawns come instead of newly generated ones (5.14).</summary>
+        public List<Pawn> Returning;
     }
 
     /// <summary>
@@ -88,7 +90,10 @@ namespace Hearth.Guests
             if (f == null || !MapComponent_HH_GuestScheduler.FactionCanVisit(f, map)) { HLog.Warn("Inn", "Arrival refused: faction cannot visit (" + f + ")"); return null; }
             var door = req.IgnoreDoorPolicy ? null : GuestRegistry.Instance?.Door;
             if (door != null && (!door.FactionOk(f) || !door.KindOk(req.Kind))) { HLog.Info("Inn", $"Arrival refused by the door policy: {f.Name}, {req.Kind}"); return null; }
-            var pawns = GeneratePawns(f, map, Math.Max(1, req.Size), door);
+            List<Pawn> pawns;
+            if (req.Returning != null && req.Returning.Count > 0)
+                pawns = req.Returning.Where(p => GuestReturns.CanReturn(p, f) && (door == null || door.PawnOk(p))).ToList(); // returners are checked first (5.9)
+            else pawns = GeneratePawns(f, map, Math.Max(1, req.Size), door);
             if (pawns.Count == 0 && door != null) { HLog.Info("Inn", "Arrival: nobody of " + f.Name + " passed the door policy"); return null; }
             if (pawns.Count == 0) { HLog.Warn("Inn", "Arrival: no pawns could be generated for " + f.Name); return null; }
 
@@ -128,6 +133,8 @@ namespace Hearth.Guests
                 foreach (var p in pawns) GenSpawn.Spawn(p, CellFinder.RandomClosewalkCellNear(entry, map, 4), map);
             }
             foreach (var p in pawns) reg.Register(p, group, map, req.Nights, leave, req.ForceDigital, req.ForceBudget);
+            if (req.Returning != null && req.Returning.Count > 0)
+                foreach (var p in pawns) { var r = reg.Get(p); if (r == null) continue; r.Returner = true; r.Log("HH.Inn.Event.Returned".TranslateOr("Came back for another stay."), 3); }
             // shady / outlaw stays (5.2): the Underworld module lets them use back rooms, the fence and holding cells
             bool shady = req.ForceShady ?? RollShady(f);
             if (shady)
@@ -157,7 +164,7 @@ namespace Hearth.Guests
             return JRand.Stream("inn.shady").Chance(chance);
         }
 
-        static void Discard(List<Pawn> pawns) { foreach (var p in pawns) if (!p.Spawned && !p.Destroyed) Find.WorldPawns.PassToWorld(p, RimWorld.Planet.PawnDiscardDecideMode.Discard); }
+        static void Discard(List<Pawn> pawns) { foreach (var p in pawns) if (!p.Spawned && !p.Destroyed && !Find.WorldPawns.Contains(p)) Find.WorldPawns.PassToWorld(p, RimWorld.Planet.PawnDiscardDecideMode.Discard); }
 
         static PawnKindDef PickKind(Faction f)
         {

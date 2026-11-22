@@ -184,7 +184,10 @@ namespace Hearth.Guests
             r.CheckedIn = true; r.CheckInTick = Find.TickManager.TicksGame; r.SelfCheckIn = desk == null;
             r.Phase = GuestPhase.Staying;
             r.ArrivalMood = p.needs?.mood?.CurLevel ?? 0.5f;
-            if (desk != null) { r.Log("HH.Inn.Event.CheckedIn".TranslateOr("Checked in at the front desk.")); desk.Notify_CheckIn(p); }
+            // outside the desk's hours and without a host standing by, the desk is an honesty box (5.13, 6.1): a little cheaper
+            bool honesty = desk != null && desk.Spawned && !GuestThoughts.DeskOpenNow(desk.Map) && !desk.HostNearby();
+            if (honesty) { r.Log("HH.Inn.Event.HonestyBox".TranslateOr("Checked in at the honesty box; nobody was on duty.")); desk.Notify_CheckIn(p); }
+            else if (desk != null) { r.Log("HH.Inn.Event.CheckedIn".TranslateOr("Checked in at the front desk.")); desk.Notify_CheckIn(p); }
             else r.Log("HH.Inn.Event.SelfCheckIn".TranslateOr("Found the room alone; nobody was at a desk."));
             if (r.Overnight)
             {
@@ -196,7 +199,7 @@ namespace Hearth.Guests
                     int leave = Find.TickManager.TicksGame + 2500 * 4;
                     if (r.PlannedLeaveTick > leave) r.PlannedLeaveTick = leave;
                 }
-                else if (!ChargeNight(r, first: true))
+                else if (!ApplyHonestyDiscount(r, honesty) || !ChargeNight(r, first: true))
                 {
                     r.Log("HH.Inn.Event.CouldNotPay".TranslateOr("Could not pay for the night."));
                     ReleaseBed(r); r.Kind = StayKind.DayVisitor; r.NightsPlanned = 0;
@@ -239,6 +242,16 @@ namespace Hearth.Guests
                 r.ServiceSum -= 0.08f;
                 r.Log("HH.Inn.Event.Pricey".TranslateOr("Found {0} silver a night steep.").Replace("{0}", bestQ.Price.WholeSilver.ToString()), 4);
             }
+            return true;
+        }
+
+        /// <summary>Honesty box: the booked night price drops by the discount, rounded to whole silver (always true, for chaining).</summary>
+        static bool ApplyHonestyDiscount(GuestRecord r, bool honesty)
+        {
+            float d = HSettings.Get(InnSettings.HonestyDiscount);
+            if (!honesty || d <= 0f || r.NightPrice.Micro <= 0) return true;
+            r.NightPrice = Money.FromSilver(Math.Max(1, (int)Math.Round(r.NightPrice.Silver * (1f - d))));
+            r.Log("HH.Inn.Event.HonestyPrice".TranslateOr("Paid the honesty-box price of {0} silver a night.").Replace("{0}", r.NightPrice.WholeSilver.ToString()));
             return true;
         }
 
@@ -364,6 +377,8 @@ namespace Hearth.Guests
                     }
                 }
                 if (now >= r.PlannedLeaveTick) wantLeave = true;
+                // day visitors go home at "last orders": 30 minutes before every venue has closed (5.13)
+                if (r.Kind == StayKind.DayVisitor && now - r.ArrivedTick > 1250 && !AnyVenueOpenSoon(map)) { wantLeave = true; reason = "closing"; }
                 if (HSettings.GetBool(InnSettings.LeaveEarly) && r.CheckedIn)
                 {
                     if (r.Satisfaction < -0.6f) { if (r.LowSince < 0) r.LowSince = now; else if (now - r.LowSince > 2500 * 8) { wantLeave = true; reason = "unhappy"; } }
@@ -371,6 +386,21 @@ namespace Hearth.Guests
                 }
             }
             if (wantLeave) DepartGroup(g, reason);
+        }
+
+        /// <summary>True when the map has no venues at all (nothing to close), or one of them is open now and still in 30 minutes.</summary>
+        public static bool AnyVenueOpenSoon(Map map)
+        {
+            var all = Venues.All(map);
+            if (all.Count == 0) return true;
+            int h = GenLocalDate.HourOfDay(map);
+            int h2 = (int)(GenLocalDate.HourFloat(map) + 0.5f) % 24;
+            for (int i = 0; i < all.Count; i++)
+            {
+                var c = all[i].Comp; if (c == null) continue;
+                if (c.alwaysOpen || (c.IsOpenAt(h) && c.IsOpenAt(h2))) return true;
+            }
+            return false;
         }
 
         void GiveNightVerdict(GuestRecord r)
@@ -450,6 +480,8 @@ namespace Hearth.Guests
             }
             r.Outcome = s > 0.25f ? "great" : s > 0.05f ? "good" : s > -0.1f ? "fine" : s > -0.3f ? "poor" : "bad";
             if (alive && !hostile) TryRecruitAtDeparture(r, s);
+            if (alive && !hostile && !r.SentAway && p.Spawned && p.Faction != Faction.OfPlayer && reason != "unhappy" && reason != "money" && reason != "removal")
+                Guard.Run(ModuleId.Inn, "Inn.Gift", () => GuestReturns.TryGift(r, p.Map));
             ReturnCardFunds(r);
             ReleaseBed(r);
             if (r.SentAway) r.Log("HH.Inn.Event.SentAway".TranslateOr("Was sent away."));
@@ -477,6 +509,11 @@ namespace Hearth.Guests
             }
             else g.RenownDelta = ChangeRenown(-1f);
             GroupsHosted++;
+            if (g.LeaveReason != "hostile" && g.LeaveReason != "sentAway" && g.LeaveReason != "removal")
+            {
+                var map = Find.Maps.FirstOrDefault(m => m.uniqueID == g.MapId);
+                Guard.Run(ModuleId.Inn, "Inn.PlanReturn", () => GuestReturns.PlanReturn(g, members.Where(m => m.Pawn != null && m.Pawn.Faction == g.Faction).ToList(), map));
+            }
             g.ReportLines.Clear();
             foreach (var r in members) g.ReportLines.Add(DepartureReport.GuestLine(r));
         }

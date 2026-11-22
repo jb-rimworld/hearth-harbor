@@ -127,10 +127,15 @@ namespace Hearth
             return vanilla.ToList();
         }
 
+        /// <summary>Raised after every AddSatisfaction (guest, delta, reason): the Inn turns waiting/bell outcomes into mood thoughts.</summary>
+        public static event Action<Pawn, float, string> SatisfactionChanged;
+
         public static void AddSatisfaction(Pawn p, float delta, string reason)
         {
-            if (InnOn && Impl.Info(p) != null) { Impl.AddSatisfaction(p, delta, reason); return; }
-            var gi = Info(p); if (gi != null) { gi.Satisfaction = Math.Max(-1, Math.Min(1, gi.Satisfaction + delta)); gi.Events.Add(reason); }
+            if (InnOn && Impl.Info(p) != null) Impl.AddSatisfaction(p, delta, reason);
+            else { var gi = Info(p); if (gi != null) { gi.Satisfaction = Math.Max(-1, Math.Min(1, gi.Satisfaction + delta)); gi.Events.Add(reason); } }
+            var h = SatisfactionChanged;
+            if (h != null) try { h(p, delta, reason); } catch (Exception e) { HLog.Error("Core", "SatisfactionChanged handler failed", e); }
         }
 
         // ------------------------------------------------------------------ renown / whispers (5.7)

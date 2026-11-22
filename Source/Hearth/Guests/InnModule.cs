@@ -51,6 +51,8 @@ namespace Hearth.Guests
             // Underworld scandals change the house's renown (already capped by the tier there).
             Hearth.Underworld.Underworld.RenownDelta += (map, delta, reason) =>
                 Guard.Run(ModuleId.Inn, "Inn.UnderworldRenown", () => { if (Modules.On(ModuleId.Inn)) GuestRegistry.Instance?.ChangeRenown(delta, "underworld: " + reason); });
+            // Waiting / night bell outcomes of the Venues module become mood thoughts (5.13).
+            GuestApi.SatisfactionChanged += GuestThoughts.OnSatisfaction;
             // Guest beds imported from a Hospitality save become our guest beds.
             Hearth.Compat.Hospitality.HospitalityImport.GuestBedImported += (bed, fee) =>
                 Guard.Run(ModuleId.Inn, "Inn.AdoptImportedBed", () => AdoptImportedBed(bed, fee));

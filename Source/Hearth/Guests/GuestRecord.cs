@@ -60,6 +60,10 @@ namespace Hearth.Guests
         public bool Settled;
         /// <summary>Shady / outlaw stay (5.2), marked for the Underworld module.</summary>
         public bool Shady;
+        /// <summary>Came back for another stay (5.14).</summary>
+        public bool Returner;
+        /// <summary>Label of the gift left on leaving, if any.</summary>
+        public string Gift;
         public int GoodwillPoints;
         public string Outcome;
 
@@ -136,6 +140,8 @@ namespace Hearth.Guests
             Scribe_Values.Look(ref SentAway, "sentAway");
             Scribe_Values.Look(ref Settled, "settled");
             Scribe_Values.Look(ref Shady, "shady");
+            Scribe_Values.Look(ref Returner, "returner");
+            Scribe_Values.Look(ref Gift, "gift");
             Scribe_Values.Look(ref GoodwillPoints, "goodwillPoints");
             Scribe_Values.Look(ref Outcome, "outcome");
             Scribe_Values.Look(ref Highlight, "highlight");

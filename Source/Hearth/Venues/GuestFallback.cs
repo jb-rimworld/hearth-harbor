@@ -26,8 +26,10 @@ namespace Hearth.ShopsFood
         public static int JobsStarted;
         /// <summary>Last job started by the fallback (tests).</summary>
         public static Job LastJob;
+        /// <summary>Pawns (thing ids) that got an activity from the fallback this game (tests: no Inn guest may ever appear here).</summary>
+        public static readonly HashSet<int> Driven = new HashSet<int>();
 
-        static GuestFallback() { HearthGame.OnGameInit += () => { nextOffer.Clear(); lastRun.Clear(); JobsStarted = 0; LastJob = null; }; }
+        static GuestFallback() { HearthGame.OnGameInit += () => { nextOffer.Clear(); lastRun.Clear(); JobsStarted = 0; LastJob = null; Driven.Clear(); }; }
 
         static bool Idle(Pawn p)
         {
@@ -65,7 +67,7 @@ namespace Hearth.ShopsFood
                 var job = GuestActivities.TryPick(p, info);
                 if (job == null) continue;
                 p.jobs.StartJob(job, JobCondition.InterruptOptional);
-                JobsStarted++; LastJob = job;
+                JobsStarted++; LastJob = job; Driven.Add(p.thingIDNumber);
             }
             if (now % 2500 < Interval) Prune(map);
         }

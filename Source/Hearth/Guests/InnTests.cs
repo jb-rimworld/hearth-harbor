@@ -114,6 +114,7 @@ namespace Hearth.Guests
                 if (p != null && !p.Destroyed && !p.Dead && p.Faction != Faction.OfPlayer) Find.WorldPawns.PassToWorld(p, RimWorld.Planet.PawnDiscardDecideMode.KeepForever);
             }
             foreach (var l in map.lordManager.lords.ToList()) if (l.LordJob is LordJob_HH_GuestStay) map.lordManager.RemoveLord(l);
+            map.GetComponent<MapComponent_HH_GuestScheduler>()?.ClearReturnsForTests(); // departures plan return visits; suites must not see them
         }
 
         public static int CountSilver(Pawn p) { int n = 0; foreach (var t in p.inventory.innerContainer) if (t.def == ThingDefOf.Silver) n += t.stackCount; return n; }
