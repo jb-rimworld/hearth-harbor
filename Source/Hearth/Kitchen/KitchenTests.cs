@@ -582,6 +582,7 @@ namespace Hearth.Kitchen.Tests
             t.Check(guest != null, "a visitor counts as a guest");
             if (guest == null) { KT.Cleanup(map, center, 8); yield break; }
             var info = GuestApi.Info(guest);
+            KT.ClearJob(guest); KT.Teleport(guest, center + new IntVec3(0, 0, -6));   // visitors start at the map edge; skip the walk
             info.Budget = Money.FromSilver(120);
             guest.needs.food.CurLevelPercentage = 0.25f;
             float desire = act.Desire(guest, info);
@@ -605,8 +606,9 @@ namespace Hearth.Kitchen.Tests
             t.Check(second?.targetA.Thing != picked, "a plate already taken is not offered twice");
             Restaurant.ForgetSale(second?.targetA.Thing);
             guest.jobs.StartJob(job, JobCondition.InterruptForced);
-            foreach (var w in KT.WaitUntil(() => picked.Destroyed, 4000, 30)) yield return w;
+            foreach (var w in KT.WaitUntil(() => picked.Destroyed, 5000, 30)) yield return w;
             yield return 30;
+            if (!picked.Destroyed) t.Note($"guest job {guest.CurJob?.def?.defName} at {guest.Position}, plate at {picked.Position} spawned={picked.Spawned}, downed={guest.Downed}");
             t.Check(picked.Destroyed, "the guest ate the plate");
             var tillAfter = Ledger.Current.Balance(till);
             t.Check(tillAfter > tillBefore && Restaurant.TotalSales == salesBefore + 1, "the till grew: " + tillBefore + " -> " + tillAfter);

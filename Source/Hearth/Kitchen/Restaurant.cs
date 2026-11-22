@@ -44,6 +44,11 @@ namespace Hearth.Kitchen
 
         static RoomRoleDef roleDining;
         static RoomRoleDef RoleDining => roleDining ?? (roleDining = DefDatabase<RoomRoleDef>.GetNamedSilentFail("DiningRoom"));
+        /// <summary>Is the venue open for guests? Default: opening hours. The venues module sets this to its gate (hours, staff, bell).</summary>
+        public static Func<Venue, bool> OpenGate = v => v.IsOpenNow;
+        /// <summary>Everything that multiplies the menu price of a venue. Default: type factor x sign factor. The venues module may widen it (self-service discount, night bell).</summary>
+        public static Func<Venue, float> VenuePriceFactor = v => v.Type.priceFactor * v.Comp.priceFactor;
+
         public static VenueTypeDef VenueType => DefDatabase<VenueTypeDef>.GetNamedSilentFail(VenueDefName);
 
         // ---- finding places ---------------------------------------------------------------------------------------------------
@@ -57,8 +62,8 @@ namespace Hearth.Kitchen
             if (vt != null)
             {
                 foreach (var v in Venues.OfType(map, vt))
-                    if (v.Room != null && v.IsOpenNow)
-                        list.Add(new RestaurantSpot { Room = v.Room, Venue = v, Map = map, PriceFactor = Math.Max(0.1f, vt.priceFactor * v.Comp.priceFactor), Name = v.Comp.DisplayName });
+                    if (v.Room != null && Guard.Run(ModuleId.ShopsFood, "Restaurant.OpenGate", () => OpenGate(v), false))
+                        list.Add(new RestaurantSpot { Room = v.Room, Venue = v, Map = map, PriceFactor = Math.Max(0.1f, Guard.Run(ModuleId.ShopsFood, "Restaurant.PriceFactor", () => VenuePriceFactor(v), 1f)), Name = v.Comp.DisplayName });
             }
             if (vt == null || !Venues.All(map).Any(v => v.Type == vt))
             {

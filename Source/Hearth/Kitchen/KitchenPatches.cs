@@ -117,6 +117,18 @@ namespace Hearth.Kitchen
         }
     }
 
+    /// <summary>Plates show their own freshness; the vanilla "rots in" line would count by temperature and confuse.</summary>
+    [HarmonyPatch(typeof(CompRottable), nameof(CompRottable.CompInspectStringExtra))]
+    static class Patch_PlateRotInspect
+    {
+        static void Postfix(CompRottable __instance, ref string __result)
+        {
+            if (__result == null || !Modules.On(ModuleId.ShopsFood)) return;
+            if (__instance.parent.def.defName.StartsWith("HH_Plate_") && __instance.parent.TryGetComp<CompDish>()?.dish != null)
+                __result = __instance.Stage == RotStage.Fresh ? null : __result;   // keep "rotting" warnings, drop the temperature estimate
+        }
+    }
+
     [HarmonyPatch(typeof(Need_Food), nameof(Need_Food.FoodFallPerTickAssumingCategory))]
     static class Patch_WellFed
     {
