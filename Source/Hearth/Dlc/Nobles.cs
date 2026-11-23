@@ -209,7 +209,14 @@ namespace Hearth.Dlc
         {
             var o = OfferById(offerId); if (o == null) return null;
             var map = Find.Maps.FirstOrDefault(m => m.uniqueID == o.MapId); Data.Offers.Remove(o);
-            return map == null ? null : StartStay(map, o);
+            // N08: the guest beds may be gone since the offer was made, or the Inn switched off
+            NobleStay stay = (map != null && NobleDemands.GuestSetup(map)) ? StartStay(map, o) : null;
+            if (stay == null)
+            {
+                if (o.Forced) ApplyRefusal();
+                Messages.Message("HH.Dlc.Noble.CannotHost".TranslateOr("The imperial party cannot be hosted: the colony has no guest beds to put them up."), MessageTypeDefOf.RejectInput, false);
+            }
+            return stay;
         }
 
         /// <summary>Generates the noble party, brings it in as an Inn guest group (real guest files, booked guest beds) and records the stay.

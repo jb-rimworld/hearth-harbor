@@ -57,6 +57,7 @@ namespace Hearth.Dlc
             if (ModsConfig.IdeologyActive) GuestActivities.Register(new PrayActivity());
             Silverline.LotteryGame.LuckyBuyer = LuckApi.LuckyLottoBuyer;
             Hearth.Guests.GuestRegistry.SponsoredBed = NobleStays.SponsoredBedFor;
+            Hearth.Guests.GuestRegistry.SponsoredGuest = r => NobleStays.StayOf(r?.Pawn, out _) != null;
             Caretaker.Register(ModuleId.CityLife, "dlc.ideologyMoney", () => DlcState.Current?.Maintain() ?? 0);
             DlcDefs.Validate();
         }
@@ -153,7 +154,7 @@ namespace Hearth.Dlc
         /// <summary>Added to a guest's expectations when the Inn registers them: refined palate +0.05, xenotype entry, abhorrent faith +0.05 (11.4).</summary>
         public static float GuestExpectationOffset(Pawn guest)
         {
-            float v = Stat(guest, "HH_GuestExpectation", 0f);
+            float v = Math.Max(0f, Stat(guest, "HH_GuestExpectation", 0f));   // the silver tongue only lowers what guests expect of the host (HostExpectationOffset)
             var ex = XenotypeHospitality.For(guest);
             if (ex != null && HSettings.GetBool("dlc.xenoHospitality")) v += ex.expectationOffset;
             if (DlcDefs.Ideology && IdeoStances.Of(guest, MoneyTheme.Indulgences) == MoneyStance.Abhorrent) v += 0.05f;

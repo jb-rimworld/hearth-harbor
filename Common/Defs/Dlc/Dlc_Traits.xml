@@ -62,7 +62,7 @@
       <label>grump</label>
       <description>{PAWN_nameDef} runs the front desk like a customs post. Guests {PAWN_pronoun} chats with come away a little less happy.</description>
       <statOffsets><HH_ServiceQuality>-0.2</HH_ServiceQuality><SocialImpact>-0.1</SocialImpact></statOffsets>
-          </li></degreeDatas>
+    </li></degreeDatas>
   </TraitDef>
   <TraitDef>
     <defName>HH_PennyPincher</defName>

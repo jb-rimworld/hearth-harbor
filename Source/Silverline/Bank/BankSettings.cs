@@ -78,6 +78,7 @@ namespace Silverline
         public static double FeeFactor => HSettings.Get("bank.feeFactor") * ColonistFeeFactor;
 
         static int feeTick = -99999; static double feeCached = 1.0;
+        static BankSettings() { HearthGame.OnGameInit += ResetFeeCache; }
         /// <summary>Lowest HH_BankFeeFactor stat among the free colonists (1 without such a pawn or without the stat def). Cached for 2500 ticks.</summary>
         public static double ColonistFeeFactor
         {

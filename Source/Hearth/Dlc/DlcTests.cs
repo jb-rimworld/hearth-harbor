@@ -568,6 +568,16 @@ namespace Hearth.Dlc.Tests
             t.Check(!nw.Eligible(StorytellerUtility.DefaultParmsNow(incNoble.category, map)), "N08: paid noble stay cannot fire without guest beds");
             t.Check(!bw.Eligible(StorytellerUtility.DefaultParmsNow(incBillet.category, map)), "N08: billeting cannot fire without guest beds, even with mandatory hospitality");
             t.Check(NobleStays.MakeOffer(map, false, out why) == null && NobleStays.MakeOffer(map, true, out why) == null && st.Offers.Count == 0, "N08: no offer without guest beds (" + why + ")");
+            // accepting an old offer after the guest beds are gone starts nothing; a forced one counts as refused
+            {
+                float gwStale0 = empire.GoodwillWith(Faction.OfPlayer);
+                var stale = new NobleOffer { Id = 990001, MapId = map.uniqueID, Nobles = 1, Days = 2, Title = "Knight", Forced = true, ExpireTick = Find.TickManager.TicksGame + 60000 };
+                st.Offers.Add(stale);
+                int stays0 = st.Stays.Count;
+                t.Check(NobleStays.Accept(stale.Id) == null && st.Stays.Count == stays0 && NobleStays.OfferById(stale.Id) == null, "N08: accepting an offer without guest beds starts no stay");
+                t.Check(empire.GoodwillWith(Faction.OfPlayer) < gwStale0, "a forced billeting that cannot start counts as refused");
+                if (empire.GoodwillWith(Faction.OfPlayer) < 0) Faction.OfPlayer.TryAffectGoodwillWith(empire, 100, false, false);
+            }
             HSettings.Set("dlc.mandatoryBilleting", mand0 ? 1 : 0);
 
             // demands come from the title

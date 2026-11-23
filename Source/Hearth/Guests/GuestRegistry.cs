@@ -237,6 +237,8 @@ namespace Hearth.Guests
         /// <summary>Set by the DLC integration: a bed booked and paid for by someone else (noble stays pay at the end of the stay),
         /// or null to let the guest choose and pay as usual. The bed must be a free guest bed.</summary>
         public static Func<GuestRecord, Building_Bed> SponsoredBed;
+        /// <summary>True for guests whose stay is paid by someone else at the end: whatever bed they end up in costs nothing per night (no double charge).</summary>
+        public static Func<GuestRecord, bool> SponsoredGuest;
 
         public bool AssignBed(GuestRecord r)
         {
@@ -255,6 +257,8 @@ namespace Hearth.Guests
             Building_Bed best = null; BedQuote bestQ = null; float bestU = float.MinValue;
             Building_Bed cheapest = null; BedQuote cheapQ = null;
             int nights = Math.Max(1, r.NightsPlanned);
+            bool freeNights = false;
+            if (SponsoredGuest != null) try { freeNights = SponsoredGuest(r); } catch (Exception e) { HLog.Error("Inn", "Sponsored guest hook failed", e); }
             var groupRooms = new HashSet<Room>();
             foreach (var m in records) if (m.GroupId == r.GroupId && m.Bed != null && m.Bed.Spawned) groupRooms.Add(m.Bed.GetRoom());
             bool partnerWaiting = false;
@@ -278,6 +282,7 @@ namespace Hearth.Guests
                 if (!p.CanReach(b, PathEndMode.OnCell, Danger.Some)) continue;
                 if (!RestUtility.CanUseBedEver(p, b.def)) continue;
                 var q = GuestBedPricing.Quote(b); if (q == null) continue;
+                if (freeNights) q.Price = Money.Zero;
                 if (cheapQ == null || q.Price < cheapQ.Price) { cheapest = b; cheapQ = q; }
                 if (q.Price * nights > r.Budget) continue;
                 float u = GuestEconomy.BedUtility(q.RoomScore, q.Price, r.Wealth, groupRooms.Contains(b.GetRoom()));

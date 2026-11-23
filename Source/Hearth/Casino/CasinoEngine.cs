@@ -152,10 +152,11 @@ namespace Hearth.Casino
         /// <summary>Last luck factor applied to a payout (tests read it).</summary>
         public static double LastLuckFactor = 1.0;
 
-        static Money Lucky(GamblerSession s, double rawPayoutSilver, double baseRtp, out double factor)
+        static Money Lucky(GamblerSession s, double rawPayoutSilver, double baseRtp, out double factor, bool isPush = false)
         {
             factor = LuckFactor(s, baseRtp);
             if (s != null && s.Kind != SessionKind.Demo) LastLuckFactor = factor;
+            if (isPush) return Money.FromSilver(Math.Max(0, Math.Round(rawPayoutSilver, 5)));
             return Money.FromSilver(Math.Max(0, Math.Round(rawPayoutSilver * factor, 5)));
         }
 
@@ -259,7 +260,9 @@ namespace Hearth.Casino
             double staked = stake.Silver * (round.Doubled ? 2 : 1);
             Money outlay = Money.FromSilver(staked);
             // the stake is returned with the net result: net = stake × Result (a double counts twice)
-            Money payout = Lucky(s, Math.Max(0, staked + stake.Silver * round.Result), 1 - solver.HouseEdge, out double lf);
+            // a push returns the stake untouched: luck only moves wins and losses (the plan's expected value stays the adjusted one up to the push share)
+            double raw = Math.Max(0, staked + stake.Silver * round.Result);
+            Money payout = Lucky(s, raw, 1 - solver.HouseEdge, out double lf, isPush: Math.Abs(round.Result) < 1e-9);
             string res = "you " + round.PlayerTotal + " · dealer " + round.DealerTotal + " (" + round.Outcome + ")";
             Settle(comp, s, outlay, payout, stake.Silver * (1 - (1 - solver.HouseEdge) * lf), Math.Pow(solver.Sigma * stake.Silver, 2), res, bookStake: stake);
         }
