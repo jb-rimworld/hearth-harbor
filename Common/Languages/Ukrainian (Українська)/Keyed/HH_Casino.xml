@@ -173,16 +173,7 @@
   <HH.Thrumbo.Err.NoDouble>Подвоїти можна лише на перші дві карти.</HH.Thrumbo.Err.NoDouble>
   <HH.Thrumbo.TotalsGoods>Ставки товарами (вартість у сріблі, не в книзі): {0} раундів · поставлено {1} · повернуто {2} · результат {3}</HH.Thrumbo.TotalsGoods>
   <HH.Thrumbo.Ago>тому</HH.Thrumbo.Ago>
-  <HH.Thrumbo.Sym.cherry>вишня</HH.Thrumbo.Sym.cherry>
-  <HH.Thrumbo.Sym.lemon>лимон</HH.Thrumbo.Sym.lemon>
-  <HH.Thrumbo.Sym.plum>слива</HH.Thrumbo.Sym.plum>
-  <HH.Thrumbo.Sym.bell>дзвіночок</HH.Thrumbo.Sym.bell>
-  <HH.Thrumbo.Sym.bar>бар</HH.Thrumbo.Sym.bar>
-  <HH.Thrumbo.Sym.seven>сімка</HH.Thrumbo.Sym.seven>
-  <HH.Thrumbo.Sym.muffalo>маффало</HH.Thrumbo.Sym.muffalo>
   <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
-  <HH.Thrumbo.Pay.Cherry2>2 × вишня (барабани 1+2)</HH.Thrumbo.Pay.Cherry2>
-  <HH.Thrumbo.Pay.Cherry1>вишня на барабані 1</HH.Thrumbo.Pay.Cherry1>
   <HH.Thrumbo.Bet.Straight>Пряма {0}</HH.Thrumbo.Bet.Straight>
   <HH.Thrumbo.Bet.Split>Розділена {0}/{1}</HH.Thrumbo.Bet.Split>
   <HH.Thrumbo.Bet.Street>Вулиця {0}-{1}</HH.Thrumbo.Bet.Street>

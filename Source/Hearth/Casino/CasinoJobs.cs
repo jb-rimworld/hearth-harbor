@@ -88,6 +88,9 @@ namespace Hearth.Casino
             play.handlingFacing = true;
             play.defaultCompleteMode = ToilCompleteMode.Delay;
             play.defaultDuration = IsGuest ? 6000 : Math.Max(1000, job.def.joyDuration);
+            // 1.1.0 (F31): cards and chips at the tables (the def is picked once per job, so the effecter never changes under a running toil)
+            EffecterDef fx = null; bool fxPicked = false;
+            play.WithEffect(() => { if (!fxPicked) { fxPicked = true; fx = Comp != null ? CasinoFx.PlayEffecter(Comp) : null; } return fx; }, TargetIndex.A);
             play.AddFinishAction(() => { var s = CasinoComponent.Get()?.SessionOf(pawn); if (s != null) CasinoEngine.EndSession(s, "left the table"); });
             yield return play;
         }
@@ -166,6 +169,9 @@ namespace Hearth.Casino
             work.handlingFacing = true;
             work.defaultCompleteMode = ToilCompleteMode.Delay;
             work.defaultDuration = 20000;   // ends earlier when nobody waits any more (idle > 600 ticks)
+            // 1.1.0 (F31): the croupier shuffles and deals (picked once per job)
+            EffecterDef fx = null; bool fxPicked = false;
+            work.WithEffect(() => { if (!fxPicked) { fxPicked = true; fx = CasinoFx.CroupierEffecter(Comp); } return fx; }, TargetIndex.A);
             work.activeSkill = () => SkillDefOf.Social;
             yield return work;
         }

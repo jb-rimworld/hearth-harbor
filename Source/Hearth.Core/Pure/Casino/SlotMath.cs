@@ -8,21 +8,23 @@ namespace Hearth.CasinoMath
     public enum SlotVolatility { Low = 0, Medium = 1, High = 2 }
 
     /// <summary>
-    /// "One-Armed Muffalo": three reels, one payline, weighted symbols (KONZEPT 6.6).
+    /// "One-Armed Muffalo": three reels, one payline, weighted symbols (KONZEPT 6.6). The symbols are things of the rim (1.1.0, F30):
+    /// berries, corn, a packaged survival meal, an industrial component, plasteel, an AI persona core and the thrumbo, the jackpot.
+    /// Index 0 (berries) keeps the special rules of the old cherry: a pair on reels 1+2 and a single on reel 1 pay small amounts.
     /// A paytable is a base table of integer multipliers plus a scale factor that makes the exact return-to-player
     /// (computed by full enumeration of all 7³ outcomes) hit the requested target. Volatility variants differ in
     /// symbol weights and pay structure, not in RTP.
     /// </summary>
     public sealed class SlotPaytable
     {
-        public static readonly string[] SymbolNames = { "cherry", "lemon", "plum", "bell", "bar", "seven", "muffalo" };
+        public static readonly string[] SymbolNames = { "berries", "corn", "meal", "component", "plasteel", "core", "thrumbo" };
         public const int Symbols = 7;
 
         public readonly SlotVolatility Volatility;
         readonly int[] weights;
         readonly double[] pay3;      // base multiplier for three of a kind, per symbol
-        readonly double cherry1;     // cherry on reel 1 only (not a pair)
-        readonly double cherry2;     // cherries on reels 1 and 2 (third reel not a cherry)
+        readonly double cherry1;     // berries on reel 1 only (not a pair)
+        readonly double cherry2;     // berries on reels 1 and 2 (third reel not berries)
         public readonly double Scale;
         readonly int totalWeight;
         readonly int[] cumulative;
@@ -115,21 +117,40 @@ namespace Hearth.CasinoMath
             get { double mx = 0; for (int a = 0; a < Symbols; a++) mx = Math.Max(mx, pay3[a]); return mx * Scale; }
         }
 
-        /// <summary>Rows for the Pit Boss / paytable display: (label, multiplier of stake, probability).</summary>
-        public IEnumerable<(string label, double multiplier, double probability)> Rows()
+        /// <summary>Kind of a paytable row: three of a kind, a pair of berries on reels 1+2, berries on reel 1.</summary>
+        public enum RowKind { Three = 0, FirstTwo = 1, FirstOne = 2 }
+
+        /// <summary>Paytable rows by symbol and kind (top prize first): what the window shows and what the near-miss and win flash look up.</summary>
+        public IEnumerable<(int symbol, RowKind kind, double multiplier, double probability)> PayRows()
         {
             for (int s = Symbols - 1; s >= 0; s--)
-                yield return ("3 × " + SymbolNames[s], pay3[s] * Scale, Probability(s, s, s));
+                yield return (s, RowKind.Three, pay3[s] * Scale, Probability(s, s, s));
             if (cherry2 > 0)
             {
                 double p = 0; for (int c = 1; c < Symbols; c++) p += Probability(0, 0, c);
-                yield return ("2 × cherry (reels 1+2)", cherry2 * Scale, p);
+                yield return (0, RowKind.FirstTwo, cherry2 * Scale, p);
             }
             if (cherry1 > 0)
             {
                 double p = 0; for (int b = 1; b < Symbols; b++) for (int c = 0; c < Symbols; c++) p += Probability(0, b, c);
-                yield return ("cherry on reel 1", cherry1 * Scale, p);
+                yield return (0, RowKind.FirstOne, cherry1 * Scale, p);
             }
+        }
+
+        /// <summary>Which row pays for the symbols a, b, c (null when nothing pays).</summary>
+        public RowKind? PayingRow(int a, int b, int c)
+        {
+            if (a == b && b == c) return RowKind.Three;
+            if (a == 0 && b == 0 && cherry2 > 0) return RowKind.FirstTwo;
+            if (a == 0 && cherry1 > 0) return RowKind.FirstOne;
+            return null;
+        }
+
+        /// <summary>Rows for the Pit Boss / paytable display: (label, multiplier of stake, probability). Labels are plain English ids.</summary>
+        public IEnumerable<(string label, double multiplier, double probability)> Rows()
+        {
+            foreach (var r in PayRows())
+                yield return (r.kind == RowKind.Three ? "3 × " + SymbolNames[r.symbol] : r.kind == RowKind.FirstTwo ? "2 × " + SymbolNames[0] + " (reels 1+2)" : SymbolNames[0] + " on reel 1", r.multiplier, r.probability);
         }
 
         public int DrawSymbol(RngStream rng)

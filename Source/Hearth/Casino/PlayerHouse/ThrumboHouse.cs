@@ -50,6 +50,12 @@ namespace Hearth.Casino.PlayerHouse
         public int[] Reels;
         public int Pocket = -1;
         public double Mult;
+        // blackjack: the cards as they lie after this step (also after the hand is settled, so the table keeps them until the next deal)
+        public List<int> PlayerCards, DealerCards;
+        public BlackjackOutcome? Outcome;
+        public ulong HandSeed;
+        /// <summary>The history line this round wrote (null for a step of an open hand); the window holds it back while the animation runs.</summary>
+        public ThrumboEntry Entry;
         public Money Net => Paid - Staked;
         public static ThrumboResult Fail(string err) => new ThrumboResult { Ok = false, Error = err };
     }
@@ -84,14 +90,27 @@ namespace Hearth.Casino.PlayerHouse
             return w.IsNegative ? Money.Zero : w;
         }
 
-        /// <summary>The house limit for one stake: share of the net worth, between a floor and a cap (KONZEPT 6.13).</summary>
+        /// <summary>Is the optional table limit on (setting thrumbo.tableLimit, off by default since 1.1.0)?</summary>
+        public static bool LimitOn => HSettings.GetBool(TS.LimitOn);
+
+        /// <summary>
+        /// The house's own ceiling when the table limit is off: 100 million silver. Far above any colony, and low enough that even the top slot
+        /// multiplier (thousands of times the stake) stays inside the overflow-checked micro-silver of <see cref="Money"/>.
+        /// </summary>
+        public static readonly Money HouseCap = Money.FromSilver(100_000_000);
+
+        /// <summary>The house limit for one stake: share of the net worth, between a floor and a cap (KONZEPT 6.13); <see cref="HouseCap"/> while the limit is off.</summary>
         public static Money TableLimit(Map map)
         {
+            if (!LimitOn) return HouseCap;
             var cap = HSettings.GetSilver(TS.MaxBetCap);
             var floor = Money.Min(HSettings.GetSilver(TS.MaxBetFloor), cap);
             var share = NetWorth(map) * (double)HSettings.Get(TS.MaxBetShare);
             return Money.Min(cap, Money.Max(floor, share));
         }
+
+        /// <summary>Why a stake above <paramref name="limit"/> is refused: the table limit when it is on, else the house's own ceiling.</summary>
+        public static string OverLimitText(Money limit) => (LimitOn ? "HH.Thrumbo.Err.Max" : "HH.Thrumbo.Err.HouseCap").Translate(limit.ToStringShort());
 
         /// <summary>What the player can put on the table from the chosen source right now.</summary>
         public static Money Funds(ThrumboSeat s, bool cached = false)
@@ -119,7 +138,7 @@ namespace Hearth.Casino.PlayerHouse
             if (s.Player == null || s.Player.Dead) return "HH.Thrumbo.Err.NoPlayer".Translate();
             if (stake < TS.MinStake) return "HH.Thrumbo.Err.Min".Translate(TS.MinStake.ToStringShort());
             var limit = TableLimit(s.Map);
-            if (stake > limit) return "HH.Thrumbo.Err.Max".Translate(limit.ToStringShort());
+            if (stake > limit) return ThrumboHouse.OverLimitText(limit);
             if (s.From == PayFrom.Silver && Money.FromSilver(stake.WholeSilver) != stake) return "HH.Thrumbo.Err.Whole".Translate();
             if (Funds(s) < stake) return (s.From == PayFrom.Bank ? "HH.Thrumbo.Err.FundsBank" : "HH.Thrumbo.Err.FundsSilver").Translate(stake.ToStringShort());
             return null;
@@ -186,8 +205,10 @@ namespace Hearth.Casino.PlayerHouse
         static ThrumboResult Finish(ThrumboSeat s, ThrumboGame g, Money stake, Money pay, string text, double mult)
         {
             Give(s.From, s.Map, s.Player, pay, "Lucky Thrumbo: " + g.ToString().ToLowerInvariant());
-            Comp?.Record(g, s.From, stake, pay, text);
-            return new ThrumboResult { Ok = true, Staked = stake, Paid = pay, Text = text, Mult = mult };
+            var comp = Comp;
+            comp?.Record(g, s.From, stake, pay, text);
+            var entry = comp != null && comp.History.Count > 0 ? comp.History[comp.History.Count - 1] : null;
+            return new ThrumboResult { Ok = true, Staked = stake, Paid = pay, Text = text, Mult = mult, Entry = entry };
         }
 
         // ============================================================================================================
@@ -200,7 +221,7 @@ namespace Hearth.Casino.PlayerHouse
             var pt = ThrumboOdds.Slots(vol, TS.Shift);
             double mult = pt.Spin(JRand.Sealed("thrumbo.slots"), out int a, out int b, out int c);
             var pay = stake * mult;
-            string text = ThrumboNames.Symbol(a) + " · " + ThrumboNames.Symbol(b) + " · " + ThrumboNames.Symbol(c) + " — " + (mult > 0 ? "HH.Thrumbo.Pays".Translate(mult.ToString("0.##")).ToString() : "HH.Thrumbo.NoWin".Translate().ToString());
+            string text = ThrumboNames.Reels(a, b, c) + " — " + (mult > 0 ? "HH.Thrumbo.Pays".Translate(mult.ToString("0.##")).ToString() : "HH.Thrumbo.NoWin".Translate().ToString());
             var r = Finish(s, ThrumboGame.Slots, stake, pay, text, mult);
             r.Reels = new[] { a, b, c };
             return r;
@@ -260,7 +281,7 @@ namespace Hearth.Casino.PlayerHouse
             c.HandStakeMicro = stake.Micro; c.HandFrom = (int)s.From; c.HandActions = ""; c.HandOpen = true; c.HandMapId = s.Map.uniqueID;
             c.HandScale = ThrumboOdds.BlackjackWinScale(TS.Shift);
             live = Rebuild(c);
-            return live.Round.Done ? Settle(s, live) : new ThrumboResult { Ok = true, Done = false, Staked = stake, Text = "HH.Thrumbo.BJ.Dealt".Translate() };
+            return live.Round.Done ? Settle(s, live) : Snap(new ThrumboResult { Ok = true, Done = false, Staked = stake, Text = "HH.Thrumbo.BJ.Dealt".Translate() }, live, c.HandSeed);
         }
 
         public static ThrumboResult Hit(ThrumboSeat s) => Act(s, 'H');
@@ -291,7 +312,7 @@ namespace Hearth.Casino.PlayerHouse
             else h.Solver.Stand(h.Round, h.Rng);
             c.HandActions += action;
             if (h.Round.Done) return Settle(seat, h);
-            return new ThrumboResult { Ok = true, Done = false, Staked = h.Stake, Text = "" };
+            return Snap(new ThrumboResult { Ok = true, Done = false, Staked = h.Stake, Text = "" }, h, c.HandSeed);
         }
 
         static ThrumboResult Settle(ThrumboSeat s, ThrumboHand h)
@@ -302,10 +323,19 @@ namespace Hearth.Casino.PlayerHouse
             if (net > 0) net *= h.Scale;
             var pay = Money.Max(Money.Zero, total + Money.FromSilver(net));
             string text = BlackjackText(r, pay - total);
+            ulong seed = c.HandSeed;
             c.HandOpen = false; c.HandActions = ""; live = null;
             var res = Finish(new ThrumboSeat(s.Map, s.Player, h.From), ThrumboGame.Blackjack, total, pay, text, h.Stake.Micro == 0 ? 0 : pay.Micro / (double)total.Micro);
-            res.Done = true;
-            return res;
+            res.Done = true; res.Outcome = r.Outcome;
+            return Snap(res, h, seed);
+        }
+
+        /// <summary>Copies the cards of the hand into the result (the hand object is dropped when it settles).</summary>
+        static ThrumboResult Snap(ThrumboResult r, ThrumboHand h, ulong seed)
+        {
+            r.PlayerCards = new List<int>(h.Round.Player); r.DealerCards = new List<int>(h.Round.Dealer); r.HandSeed = seed;
+            if (h.Round.Done) r.Outcome = h.Round.Outcome;
+            return r;
         }
 
         public static string BlackjackText(BlackjackSolver.Round r, Money net)

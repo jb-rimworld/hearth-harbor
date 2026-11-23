@@ -173,16 +173,7 @@
   <HH.Thrumbo.Err.NoDouble>Vous ne pouvez doubler que sur vos deux premières cartes.</HH.Thrumbo.Err.NoDouble>
   <HH.Thrumbo.TotalsGoods>Mises en marchandises (valeur en argent, pas au registre) : {0} tours · misé {1} · rendu {2} · résultat {3}</HH.Thrumbo.TotalsGoods>
   <HH.Thrumbo.Ago>il y a</HH.Thrumbo.Ago>
-  <HH.Thrumbo.Sym.cherry>cerise</HH.Thrumbo.Sym.cherry>
-  <HH.Thrumbo.Sym.lemon>citron</HH.Thrumbo.Sym.lemon>
-  <HH.Thrumbo.Sym.plum>prune</HH.Thrumbo.Sym.plum>
-  <HH.Thrumbo.Sym.bell>cloche</HH.Thrumbo.Sym.bell>
-  <HH.Thrumbo.Sym.bar>barre</HH.Thrumbo.Sym.bar>
-  <HH.Thrumbo.Sym.seven>sept</HH.Thrumbo.Sym.seven>
-  <HH.Thrumbo.Sym.muffalo>muffalo</HH.Thrumbo.Sym.muffalo>
   <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
-  <HH.Thrumbo.Pay.Cherry2>2 × cerise (rouleaux 1+2)</HH.Thrumbo.Pay.Cherry2>
-  <HH.Thrumbo.Pay.Cherry1>cerise sur le rouleau 1</HH.Thrumbo.Pay.Cherry1>
   <HH.Thrumbo.Bet.Straight>Plein {0}</HH.Thrumbo.Bet.Straight>
   <HH.Thrumbo.Bet.Split>Cheval {0}/{1}</HH.Thrumbo.Bet.Split>
   <HH.Thrumbo.Bet.Street>Transversale {0}-{1}</HH.Thrumbo.Bet.Street>

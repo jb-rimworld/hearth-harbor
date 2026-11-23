@@ -110,6 +110,11 @@
   <HH.Thrumbo.PlayerLine>At the console: {0}</HH.Thrumbo.PlayerLine>
   <HH.Thrumbo.Stake>Stake</HH.Thrumbo.Stake>
   <HH.Thrumbo.Max>Max</HH.Thrumbo.Max>
+  <HH.Thrumbo.MaxTip>The largest stake the table limit and your funds allow.</HH.Thrumbo.MaxTip>
+  <HH.Thrumbo.AllIn>All in</HH.Thrumbo.AllIn>
+  <HH.Thrumbo.AllInTip>Everything you have in the chosen source.</HH.Thrumbo.AllInTip>
+  <HH.Thrumbo.NoLimit>No table limit: from {0} up to everything you have ({1}).</HH.Thrumbo.NoLimit>
+  <HH.Thrumbo.NoLimitTip>The Lucky Thrumbo takes any stake you can pay. A table limit (a share of your net worth) can be turned on in the mod settings: Casino, Lucky Thrumbo.</HH.Thrumbo.NoLimitTip>
   <HH.Thrumbo.Limit>Table limit: {0} to {1} silver</HH.Thrumbo.Limit>
   <HH.Thrumbo.LimitTip>One stake is at most {0} % of your net worth (account plus silver at home, minus debts), never less than {1} and never more than {2} silver. You can change this in the mod settings.</HH.Thrumbo.LimitTip>
   <HH.Thrumbo.Game.Slots>Slots</HH.Thrumbo.Game.Slots>
@@ -164,6 +169,15 @@
   <HH.Thrumbo.BJ.DoubleLose>doubled and lost</HH.Thrumbo.BJ.DoubleLose>
   <HH.Thrumbo.BJ.DoublePush>doubled, push</HH.Thrumbo.BJ.DoublePush>
   <HH.Thrumbo.History>History</HH.Thrumbo.History>
+  <HH.Thrumbo.Recent>Recent rounds</HH.Thrumbo.Recent>
+  <HH.Thrumbo.RecentNone>None yet.</HH.Thrumbo.RecentNone>
+  <HH.Thrumbo.StakeLockedTip>The stake is on the table until the round has played out or the hand is finished.</HH.Thrumbo.StakeLockedTip>
+  <HH.Thrumbo.BJ.PayTitle>What a hand pays back (stake included)</HH.Thrumbo.BJ.PayTitle>
+  <HH.Thrumbo.BJ.PayWin>Win</HH.Thrumbo.BJ.PayWin>
+  <HH.Thrumbo.BJ.PayNatural>Blackjack (ace and a ten-card)</HH.Thrumbo.BJ.PayNatural>
+  <HH.Thrumbo.BJ.PayPush>Push (tie)</HH.Thrumbo.BJ.PayPush>
+  <HH.Thrumbo.BJ.PayDouble>Win after doubling (of the first stake)</HH.Thrumbo.BJ.PayDouble>
+  <HH.Thrumbo.BJ.PayLose>Lose or bust</HH.Thrumbo.BJ.PayLose>
   <HH.Thrumbo.NoHistory>Nothing played yet.</HH.Thrumbo.NoHistory>
   <HH.Thrumbo.Totals>{0} rounds · staked {1} · paid back {2} ({3} %) · result {4}</HH.Thrumbo.Totals>
   <HH.Thrumbo.TotalsGoods>Goods stakes (value in silver, not in the ledger): {0} rounds · staked {1} · paid back {2} · result {3}</HH.Thrumbo.TotalsGoods>
@@ -174,6 +188,7 @@
   <HH.Thrumbo.Err.NoPlayer>A colonist has to sit at the console to receive silver.</HH.Thrumbo.Err.NoPlayer>
   <HH.Thrumbo.Err.Min>The smallest stake is {0} silver.</HH.Thrumbo.Err.Min>
   <HH.Thrumbo.Err.Max>The table limit is {0} silver per stake.</HH.Thrumbo.Err.Max>
+  <HH.Thrumbo.Err.HouseCap>The house takes at most {0} silver on one stake (there is no table limit, this is the house's own ceiling).</HH.Thrumbo.Err.HouseCap>
   <HH.Thrumbo.Err.Whole>Silver from storage is staked in whole coins.</HH.Thrumbo.Err.Whole>
   <HH.Thrumbo.Err.FundsBank>Your account holds less than {0} silver.</HH.Thrumbo.Err.FundsBank>
   <HH.Thrumbo.Err.FundsSilver>There is less than {0} silver in storage or in range of a trade beacon.</HH.Thrumbo.Err.FundsSilver>
@@ -184,16 +199,17 @@
   <HH.Thrumbo.Err.NoHand>There is no open hand.</HH.Thrumbo.Err.NoHand>
   <HH.Thrumbo.Err.NoDouble>You can only double down on your first two cards.</HH.Thrumbo.Err.NoDouble>
   <HH.Thrumbo.Ago>ago</HH.Thrumbo.Ago>
-  <HH.Thrumbo.Sym.cherry>cherry</HH.Thrumbo.Sym.cherry>
-  <HH.Thrumbo.Sym.lemon>lemon</HH.Thrumbo.Sym.lemon>
-  <HH.Thrumbo.Sym.plum>plum</HH.Thrumbo.Sym.plum>
-  <HH.Thrumbo.Sym.bell>bell</HH.Thrumbo.Sym.bell>
-  <HH.Thrumbo.Sym.bar>bar</HH.Thrumbo.Sym.bar>
-  <HH.Thrumbo.Sym.seven>seven</HH.Thrumbo.Sym.seven>
-  <HH.Thrumbo.Sym.muffalo>muffalo</HH.Thrumbo.Sym.muffalo>
+  <HH.Thrumbo.Sym.berries>berries</HH.Thrumbo.Sym.berries>
+  <HH.Thrumbo.Sym.corn>corn</HH.Thrumbo.Sym.corn>
+  <HH.Thrumbo.Sym.meal>survival meal</HH.Thrumbo.Sym.meal>
+  <HH.Thrumbo.Sym.component>component</HH.Thrumbo.Sym.component>
+  <HH.Thrumbo.Sym.plasteel>plasteel</HH.Thrumbo.Sym.plasteel>
+  <HH.Thrumbo.Sym.core>persona core</HH.Thrumbo.Sym.core>
+  <HH.Thrumbo.Sym.thrumbo>thrumbo</HH.Thrumbo.Sym.thrumbo>
   <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
-  <HH.Thrumbo.Pay.Cherry2>2 × cherry (reels 1+2)</HH.Thrumbo.Pay.Cherry2>
-  <HH.Thrumbo.Pay.Cherry1>cherry on reel 1</HH.Thrumbo.Pay.Cherry1>
+  <HH.Thrumbo.Pay.First2>2 × {0} (reels 1+2)</HH.Thrumbo.Pay.First2>
+  <HH.Thrumbo.Pay.First1>{0} on reel 1</HH.Thrumbo.Pay.First1>
+  <HH.Thrumbo.PayRowTip>Chance per spin: {0} %</HH.Thrumbo.PayRowTip>
   <HH.Thrumbo.Bet.Straight>Straight {0}</HH.Thrumbo.Bet.Straight>
   <HH.Thrumbo.Bet.Split>Split {0}/{1}</HH.Thrumbo.Bet.Split>
   <HH.Thrumbo.Bet.Street>Street {0}-{1}</HH.Thrumbo.Bet.Street>
@@ -252,4 +268,85 @@
   <HH.Setting.thrumbo.raiseTheStakes.Desc>Adds the button "Raise the stakes…" to the Lucky Thrumbo: stake goods in range of a powered orbital trade beacon instead of silver, and from the content intensity Standard also colony animals and prisoners (like vanilla selling). Colonists, slaves, children and guests are never offered.</HH.Setting.thrumbo.raiseTheStakes.Desc>
   <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: pawnbroker spread for staked goods</HH.Setting.thrumbo.pawnbrokerSpread>
   <HH.Setting.thrumbo.pawnbrokerSpread.Desc>Staked goods count for what the house's pawnbroker would pay (the vanilla sell price with your best negotiator) minus this spread and a fixed 2 % fee.</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
+
+  <!-- 1.1.0: animations, how to play, larger windows (F29, F30, F35) -->
+  <HH.Thrumbo.Anim.Skip>Skip</HH.Thrumbo.Anim.Skip>
+  <HH.Thrumbo.Anim.SkipHint>Click the table, Space or Enter: skip. Shift: faster.</HH.Thrumbo.Anim.SkipHint>
+  <HH.Thrumbo.Anim.Spinning>The round plays out…</HH.Thrumbo.Anim.Spinning>
+  <HH.Thrumbo.Anim.Dealing>The dealer deals…</HH.Thrumbo.Anim.Dealing>
+  <HH.Thrumbo.Anim.Wait>Wait until the round has played out (or skip it).</HH.Thrumbo.Anim.Wait>
+  <HH.Thrumbo.Anim.BigWin>Big win!</HH.Thrumbo.Anim.BigWin>
+  <HH.Thrumbo.Anim.Jackpot>Thrumbo jackpot!</HH.Thrumbo.Anim.Jackpot>
+  <HH.Thrumbo.SlotMarquee>One-Armed Thrumbo</HH.Thrumbo.SlotMarquee>
+  <HH.Thrumbo.LeverTip>Pull the lever: spin with the stake above.</HH.Thrumbo.LeverTip>
+  <HH.Thrumbo.BJ.DealAgain>Deal again</HH.Thrumbo.BJ.DealAgain>
+  <HH.Thrumbo.HowTo.Button>How to play</HH.Thrumbo.HowTo.Button>
+  <HH.Thrumbo.HowTo.ButtonTip>A short explanation of the game in place of the paytable. Click again to close it.</HH.Thrumbo.HowTo.ButtonTip>
+  <HH.Thrumbo.HowTo.Title>How to play: {0}</HH.Thrumbo.HowTo.Title>
+  <HH.Thrumbo.HowTo.Slots>Set your stake and pull the lever (or press Spin). Three reels stop one after another; only the middle row counts.
+
+• Three of a kind pay what the paytable shows: berries the least, the thrumbo the most.
+• Berries are kind: two on reels 1 and 2, or one on reel 1, still pay a little back.
+• Volatility changes how the payout is spread, not how much comes back in the long run: low pays small amounts often, high pays rarely but big.
+
+In the long run the machine pays back the share shown above the paytable; the rest is the house edge.</HH.Thrumbo.HowTo.Slots>
+  <HH.Thrumbo.HowTo.Roulette>Click a number or a field on the board to place your stake there, then spin. The ball lands in one pocket.
+
+• A single number pays 35 to 1.
+• Dozens and columns (12 numbers) pay 2 to 1.
+• Red or black, odd or even, 1–18 or 19–36 pay 1 to 1.
+• The green zero (and the double zero on an American wheel) belongs to no colour and no half: that is where the house edge comes from.
+
+Every bet has the same house edge; only the swings differ.</HH.Thrumbo.HowTo.Roulette>
+  <HH.Thrumbo.HowTo.Blackjack>Get closer to 21 than the dealer without going over. Number cards count their number, jack, queen and king count 10, an ace counts 1 or 11.
+
+• Hit: take another card. Stand: keep what you have; the dealer then reveals the face-down card and draws until 17 or more.
+• Double down: on your first two cards, double the stake and take exactly one more card.
+• Over 21 is a bust and loses at once. An ace with a ten-card is a blackjack and pays a bonus (3 to 2 at standard tables).
+• A tie is a push: you get your stake back.
+
+Playing well matters here: the edge shown is for perfect play.</HH.Thrumbo.HowTo.Blackjack>
+  <HH.Thrumbo.HowTo.Poker>Rimdeck is poker against the other players, not against the house. Everyone antes the same stake; each player gets two cards, then five shared cards come face up in the middle (three, one and one more).
+
+• The best five of your seven cards win the pot: high card, a pair, two pair, three of a kind, a straight, a flush, a full house, four of a kind, a straight flush (from weak to strong).
+• Sharper minds win a little more often: Intellectual and Social skill tilt the odds.
+• The house only keeps a small rake from each pot.</HH.Thrumbo.HowTo.Poker>
+  <HH.Thrumbo.Stakes.HowTo.Slots>Choose the things to stake on the left, then a volatility, then press the button. One spin of the three reels decides.
+
+• Three of a kind (or berries on the first reels) multiply the value of your stake as in the Lucky Thrumbo paytable.
+• Win ×2 or more: everything stays with you and the house pays value × (m − 1) in silver.
+• No win: the things leave with the house. A small prize below ×1 is paid in silver, the things are still gone.</HH.Thrumbo.Stakes.HowTo.Slots>
+  <HH.Thrumbo.Stakes.HowTo.Roulette>Choose the things to stake on the left, then one of the outside bets, then press the button. One spin of the wheel decides.
+
+• Red or black, odd or even, 1–18 or 19–36 pay 1 to 1: win, and you keep everything plus its value in silver.
+• A dozen (12 numbers) pays 2 to 1: you keep everything plus twice its value.
+• The green zero (and the double zero) belongs to no bet here: that is the house edge.
+• Lose, and the things leave with the house as if you had sold them.</HH.Thrumbo.Stakes.HowTo.Roulette>
+  <HH.Thrumbo.Stakes.ListFoot>Everything here lies within reach of a powered orbital trade beacon and is valued by your best negotiator. Hold Shift on − or + to change a count by 10. The things stay where they are until a round is lost.</HH.Thrumbo.Stakes.ListFoot>
+  <HH.Thrumbo.Stakes.NoLimit>No table limit: any value from {0} silver.</HH.Thrumbo.Stakes.NoLimit>
+  <HH.Thrumbo.Stakes.ColItem>Thing</HH.Thrumbo.Stakes.ColItem>
+  <HH.Thrumbo.Stakes.ColHeld>In reach</HH.Thrumbo.Stakes.ColHeld>
+  <HH.Thrumbo.Stakes.ColEach>Value each</HH.Thrumbo.Stakes.ColEach>
+  <HH.Thrumbo.Stakes.ColStake>Stake</HH.Thrumbo.Stakes.ColStake>
+  <HH.Casino.Demo.OddsSlots>pays back {0} %</HH.Casino.Demo.OddsSlots>
+  <HH.Casino.Demo.OddsRoulette>house edge {0} %</HH.Casino.Demo.OddsRoulette>
+  <HH.Casino.Demo.OddsBlackjack>{0}</HH.Casino.Demo.OddsBlackjack>
+  <HH.Casino.Demo.OddsPoker>rake {0} % (at most {1} silver per pot)</HH.Casino.Demo.OddsPoker>
+  <HH.Casino.Demo.Column>Column {0}</HH.Casino.Demo.Column>
+  <HH.Casino.Demo.Straight>One number</HH.Casino.Demo.Straight>
+  <HH.Casino.Demo.Number>Number:</HH.Casino.Demo.Number>
+  <HH.Casino.Demo.You>You</HH.Casino.Demo.You>
+  <HH.Casino.Demo.Regular>Regular {0}</HH.Casino.Demo.Regular>
+  <HH.Casino.Demo.PokerYouWin>You win with {0}</HH.Casino.Demo.PokerYouWin>
+  <HH.Casino.Demo.PokerSeatWins>{0} wins with {1}</HH.Casino.Demo.PokerSeatWins>
+  <HH.Casino.Demo.Rake>rake {0}</HH.Casino.Demo.Rake>
+  <HH.Casino.Hand.0>high card</HH.Casino.Hand.0>
+  <HH.Casino.Hand.1>a pair</HH.Casino.Hand.1>
+  <HH.Casino.Hand.2>two pair</HH.Casino.Hand.2>
+  <HH.Casino.Hand.3>three of a kind</HH.Casino.Hand.3>
+  <HH.Casino.Hand.4>a straight</HH.Casino.Hand.4>
+  <HH.Casino.Hand.5>a flush</HH.Casino.Hand.5>
+  <HH.Casino.Hand.6>a full house</HH.Casino.Hand.6>
+  <HH.Casino.Hand.7>four of a kind</HH.Casino.Hand.7>
+  <HH.Casino.Hand.8>a straight flush</HH.Casino.Hand.8>
 </LanguageData>

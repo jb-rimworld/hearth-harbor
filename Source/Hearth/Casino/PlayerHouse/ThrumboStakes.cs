@@ -261,7 +261,7 @@ namespace Hearth.Casino.PlayerHouse
             var value = Value(o);
             if (value < TS.MinStake) return "HH.Thrumbo.Err.Min".Translate(TS.MinStake.ToStringShort());
             var limit = ThrumboHouse.TableLimit(o.Map);
-            if (value > limit) return "HH.Thrumbo.Err.Max".Translate(limit.ToStringShort());
+            if (value > limit) return ThrumboHouse.OverLimitText(limit);
             return null;
         }
 
@@ -274,7 +274,7 @@ namespace Hearth.Casino.PlayerHouse
                 var pt = ThrumboOdds.Slots(vol, TS.Shift);
                 double m = pt.Spin(JRand.Sealed("thrumbo.slots"), out int a, out int b, out int c);
                 r.Reels = new[] { a, b, c };
-                r.Text = SlotPaytable.SymbolNames[a] + " · " + SlotPaytable.SymbolNames[b] + " · " + SlotPaytable.SymbolNames[c];
+                r.Text = ThrumboNames.Reels(a, b, c);
                 return m;
             });
 
@@ -286,7 +286,7 @@ namespace Hearth.Casino.PlayerHouse
                 var rules = ThrumboOdds.Roulette(TS.Shift);
                 int pocket = rules.Spin(JRand.Sealed("thrumbo.roulette"));
                 r.Pocket = pocket;
-                r.Text = "HH.Thrumbo.Ball".Translate(RouletteBet.PocketName(pocket), ("HH.Thrumbo.Color." + ThrumboHouse.PocketColor(pocket)).Translate()).ToString() + " · " + bet.Label;
+                r.Text = "HH.Thrumbo.Ball".Translate(RouletteBet.PocketName(pocket), ("HH.Thrumbo.Color." + ThrumboHouse.PocketColor(pocket)).Translate()).ToString() + " · " + ThrumboNames.Bet(bet);
                 return rules.Return(bet, pocket);
             });
         }

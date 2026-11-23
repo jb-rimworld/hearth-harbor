@@ -173,16 +173,7 @@
   <HH.Thrumbo.Err.NoDouble>Solo puedes doblar con tus dos primeras cartas.</HH.Thrumbo.Err.NoDouble>
   <HH.Thrumbo.TotalsGoods>Apuestas en mercancía (valor en plata, no en el libro): {0} rondas · apostado {1} · devuelto {2} · resultado {3}</HH.Thrumbo.TotalsGoods>
   <HH.Thrumbo.Ago>hace</HH.Thrumbo.Ago>
-  <HH.Thrumbo.Sym.cherry>cereza</HH.Thrumbo.Sym.cherry>
-  <HH.Thrumbo.Sym.lemon>limón</HH.Thrumbo.Sym.lemon>
-  <HH.Thrumbo.Sym.plum>ciruela</HH.Thrumbo.Sym.plum>
-  <HH.Thrumbo.Sym.bell>campana</HH.Thrumbo.Sym.bell>
-  <HH.Thrumbo.Sym.bar>barra</HH.Thrumbo.Sym.bar>
-  <HH.Thrumbo.Sym.seven>siete</HH.Thrumbo.Sym.seven>
-  <HH.Thrumbo.Sym.muffalo>muffalo</HH.Thrumbo.Sym.muffalo>
   <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
-  <HH.Thrumbo.Pay.Cherry2>2 × cereza (carretes 1+2)</HH.Thrumbo.Pay.Cherry2>
-  <HH.Thrumbo.Pay.Cherry1>cereza en el carrete 1</HH.Thrumbo.Pay.Cherry1>
   <HH.Thrumbo.Bet.Straight>Pleno {0}</HH.Thrumbo.Bet.Straight>
   <HH.Thrumbo.Bet.Split>Caballo {0}/{1}</HH.Thrumbo.Bet.Split>
   <HH.Thrumbo.Bet.Street>Calle {0}-{1}</HH.Thrumbo.Bet.Street>

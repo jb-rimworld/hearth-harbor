@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Casino life on the map (1.1.0, F31): effecters of the play and croupier toils and the small reaction icons above gamblers.
+     Code: Source/Hearth/Casino/CasinoFx.cs (gated by Modules.On(Casino) and the global settings casino.worldFx / casino.reactions). -->
+<Defs>
+
+  <!-- cards and chips at the card tables (blackjack, Rimdeck) -->
+  <EffecterDef>
+    <defName>HH_Effecter_PlayCards</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>Mote_Cards</moteDef>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SoundIntermittent</subEffecterClass>
+        <soundDef>HH_World_CardSnap</soundDef>
+        <intermittentSoundInterval><min>900</min><max>2800</max></intermittentSoundInterval>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <!-- chips put on the roulette layout -->
+  <EffecterDef>
+    <defName>HH_Effecter_PlayRoulette</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SoundIntermittent</subEffecterClass>
+        <soundDef>PokerChips</soundDef>
+        <intermittentSoundInterval><min>1200</min><max>3600</max></intermittentSoundInterval>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <!-- the croupier shuffles and deals -->
+  <EffecterDef>
+    <defName>HH_Effecter_Croupier</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>Mote_Cards</moteDef>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SoundIntermittent</subEffecterClass>
+        <soundDef>HH_World_Shuffle</soundDef>
+        <intermittentSoundInterval><min>2400</min><max>6000</max></intermittentSoundInterval>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <!-- reaction icons above gamblers -->
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Coin</defName>
+    <graphicData>
+      <texPath>Things/HH/Casino/Fx/FleckCoin</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.05</fadeInTime>
+    <solidTime>0.7</solidTime>
+    <fadeOutTime>0.6</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Sparkle</defName>
+    <graphicData>
+      <texPath>Things/HH/Casino/Fx/FleckSparkle</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.08</fadeInTime>
+    <solidTime>0.4</solidTime>
+    <fadeOutTime>0.6</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Cheer</defName>
+    <graphicData>
+      <texPath>Things/HH/Casino/Fx/FleckCheer</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.08</fadeInTime>
+    <solidTime>1.0</solidTime>
+    <fadeOutTime>0.8</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Groan</defName>
+    <graphicData>
+      <texPath>Things/HH/Casino/Fx/FleckGroan</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>1.2</solidTime>
+    <fadeOutTime>1.0</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_NearMiss</defName>
+    <graphicData>
+      <texPath>Things/HH/Casino/Fx/FleckNearMiss</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.05</fadeInTime>
+    <solidTime>0.9</solidTime>
+    <fadeOutTime>0.6</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Chips</defName>
+    <graphicData>
+      <texPath>Things/HH/Casino/Fx/FleckChips</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.08</fadeInTime>
+    <solidTime>1.0</solidTime>
+    <fadeOutTime>0.8</fadeOutTime>
+  </FleckDef>
+
+</Defs>

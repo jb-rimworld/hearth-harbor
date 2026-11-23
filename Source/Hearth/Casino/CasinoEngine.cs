@@ -86,6 +86,7 @@ namespace Hearth.Casino
                 else if (s.Kind == SessionKind.Colonist && s.Pawn != null) Gambling.OnColonistSessionEnd(s);
                 // luck thoughts (11.1): a session counts as one bet, won when it ends above the buy-in
                 if (s.Kind != SessionKind.Demo && s.Pawn != null && s.Rounds > 0 && Modules.On(ModuleId.Casino)) Hearth.Dlc.LuckApi.NoteResult(s.Pawn, s.Net.IsPositive);
+                if (reason != "module removed" && reason != "module switched off") CasinoFx.NoteSessionEnd(s);
             }
             finally { c?.Sessions.Remove(s); }
             HLog.Debug("Casino", $"Session of {s.Pawn?.LabelShort} ended ({reason}): {s.Rounds} rounds, net {s.Net}");
@@ -168,7 +169,10 @@ namespace Hearth.Casino
             {
                 case CasinoGame.Slots: foreach (var s in sessions) SlotSpin(comp, s); break;
                 case CasinoGame.Roulette: RouletteSpin(comp, sessions); break;
-                case CasinoGame.Blackjack: foreach (var s in sessions) BlackjackHand(comp, s); break;
+                case CasinoGame.Blackjack:
+                    if (sessions.Exists(x => x.Kind != SessionKind.Demo)) CasinoFx.NoteCards(comp, sessions.Count);
+                    foreach (var s in sessions) BlackjackHand(comp, s);
+                    break;
                 default: PokerHand(comp, sessions); break;
             }
             foreach (var s in sessions) CheckStop(comp, s);
@@ -196,6 +200,7 @@ namespace Hearth.Casino
             long bs = bookStake?.Micro ?? stake.Micro;
             Book(comp, s, bs, payout.Micro - (stake.Micro - bs), expectedHouse, variance, result);
             Celebrate(comp, s, stake, payout);
+            if (s.Kind != SessionKind.Demo) CasinoFx.NoteResult(comp, s, stake, payout);
         }
 
         static void Book(CompCasinoGame comp, GamblerSession s, long staked, long paid, double expected, double variance, string result)
@@ -226,8 +231,9 @@ namespace Hearth.Casino
             if (stake.Micro <= 0) { EndSession(s, "broke"); return; }
             var table = comp.Paytable; var rng = JRand.Sealed("casino.slots");
             double mult = table.Spin(rng, out int a, out int b, out int c);
+            if (s.Kind != SessionKind.Demo) CasinoFx.NoteSlots(comp, a, b, c, mult);
             Money payout = Lucky(s, stake.Silver * mult, table.Rtp, out double lf);
-            string res = SlotPaytable.SymbolNames[a] + " · " + SlotPaytable.SymbolNames[b] + " · " + SlotPaytable.SymbolNames[c] + (mult > 0 ? "  → ×" + mult.ToString("0.##") : "");
+            string res = PlayerHouse.ThrumboNames.Reels(a, b, c) + (mult > 0 ? "  → ×" + mult.ToString("0.##") : "");
             Settle(comp, s, stake, payout, stake.Silver * (1 - table.Rtp * lf), Math.Pow(table.Sigma * stake.Silver, 2), res);
         }
 
@@ -235,6 +241,7 @@ namespace Hearth.Casino
         {
             var rules = CS.Roulette; var rng = JRand.Sealed("casino.roulette");
             int pocket = rules.Spin(rng);
+            if (sessions.Exists(x => x.Kind != SessionKind.Demo)) CasinoFx.NoteRoulette(comp, pocket, rules.Zeros);
             string color = pocket == 0 || pocket == 37 ? "green" : RouletteBet.IsRed(pocket) ? "red" : "black";
             string res = "ball on " + RouletteBet.PocketName(pocket) + " (" + color + ")";
             foreach (var s in sessions)
@@ -281,6 +288,7 @@ namespace Hearth.Casino
             var skills = new List<double>();
             foreach (var x in seated) skills.Add(RimdeckMath.Skill(Math.Min(20, (x.Pawn?.skills?.GetSkill(SkillDefOf.Intellectual).Level ?? 8) + (int)Math.Round(Hearth.Dlc.DlcApi.TableSkillBonus(x.Pawn))), x.Pawn?.skills?.GetSkill(SkillDefOf.Social).Level ?? 8));
             var rng = JRand.Sealed("casino.poker");
+            if (seated.Exists(x => x.Kind != SessionKind.Demo)) CasinoFx.NoteCards(comp, seated.Count);
             for (int i = seated.Count; i < total; i++) skills.Add(6.0 + 4.0 * rng.NextDouble());    // regulars who fill the table, funded by the house
             var hand = RimdeckMath.Deal(rng, skills, ante, rate, cap);
             Money anteM = Money.FromSilver(ante), potPayout = Money.FromSilver(Math.Round(hand.Payout, 5));
@@ -295,6 +303,7 @@ namespace Hearth.Casino
                 s.StakedMicro += anteM.Micro; if (win) s.PaidMicro += potPayout.Micro; s.Rounds++;
                 stakedTotal += anteM.Micro; if (win) paidTotal += potPayout.Micro;
                 if (win) Celebrate(comp, s, anteM, potPayout);
+                if (s.Kind != SessionKind.Demo) CasinoFx.NoteResult(comp, s, anteM, win ? potPayout : Money.Zero);
             }
             string who = hand.Winner < seated.Count ? seated[hand.Winner].Pawn?.LabelShort ?? "a player" : "a regular";
             string res = who + " wins with " + hand.WinningHand + " (pot " + hand.Pot.ToString("0.#") + ", rake " + hand.Rake.ToString("0.##") + ")";

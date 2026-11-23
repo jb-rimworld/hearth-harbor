@@ -173,16 +173,7 @@
   <HH.Thrumbo.Err.NoDouble>Удвоить можно только первые две карты.</HH.Thrumbo.Err.NoDouble>
   <HH.Thrumbo.TotalsGoods>Ставки товарами (стоимость в серебре, в книги не попадает): {0} раундов · поставлено {1} · возвращено {2} · итог {3}</HH.Thrumbo.TotalsGoods>
   <HH.Thrumbo.Ago>назад</HH.Thrumbo.Ago>
-  <HH.Thrumbo.Sym.cherry>вишня</HH.Thrumbo.Sym.cherry>
-  <HH.Thrumbo.Sym.lemon>лимон</HH.Thrumbo.Sym.lemon>
-  <HH.Thrumbo.Sym.plum>слива</HH.Thrumbo.Sym.plum>
-  <HH.Thrumbo.Sym.bell>колокол</HH.Thrumbo.Sym.bell>
-  <HH.Thrumbo.Sym.bar>бар</HH.Thrumbo.Sym.bar>
-  <HH.Thrumbo.Sym.seven>семёрка</HH.Thrumbo.Sym.seven>
-  <HH.Thrumbo.Sym.muffalo>маффало</HH.Thrumbo.Sym.muffalo>
   <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
-  <HH.Thrumbo.Pay.Cherry2>2 × вишня (барабаны 1+2)</HH.Thrumbo.Pay.Cherry2>
-  <HH.Thrumbo.Pay.Cherry1>вишня на барабане 1</HH.Thrumbo.Pay.Cherry1>
   <HH.Thrumbo.Bet.Straight>Прямая {0}</HH.Thrumbo.Bet.Straight>
   <HH.Thrumbo.Bet.Split>Сплит {0}/{1}</HH.Thrumbo.Bet.Split>
   <HH.Thrumbo.Bet.Street>Стрит {0}-{1}</HH.Thrumbo.Bet.Street>

@@ -173,16 +173,7 @@
   <HH.Thrumbo.Err.NoDouble>Zdvojit můžete jen na prvních dvou kartách.</HH.Thrumbo.Err.NoDouble>
   <HH.Thrumbo.TotalsGoods>Sázky zbožím (hodnota ve stříbře, ne v účetní knize): {0} kol · vsazeno {1} · vyplaceno {2} · výsledek {3}</HH.Thrumbo.TotalsGoods>
   <HH.Thrumbo.Ago>před</HH.Thrumbo.Ago>
-  <HH.Thrumbo.Sym.cherry>třešeň</HH.Thrumbo.Sym.cherry>
-  <HH.Thrumbo.Sym.lemon>citron</HH.Thrumbo.Sym.lemon>
-  <HH.Thrumbo.Sym.plum>švestka</HH.Thrumbo.Sym.plum>
-  <HH.Thrumbo.Sym.bell>zvonek</HH.Thrumbo.Sym.bell>
-  <HH.Thrumbo.Sym.bar>bar</HH.Thrumbo.Sym.bar>
-  <HH.Thrumbo.Sym.seven>sedmička</HH.Thrumbo.Sym.seven>
-  <HH.Thrumbo.Sym.muffalo>muffalo</HH.Thrumbo.Sym.muffalo>
   <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
-  <HH.Thrumbo.Pay.Cherry2>2 × třešeň (válce 1+2)</HH.Thrumbo.Pay.Cherry2>
-  <HH.Thrumbo.Pay.Cherry1>třešeň na válci 1</HH.Thrumbo.Pay.Cherry1>
   <HH.Thrumbo.Bet.Straight>Plná {0}</HH.Thrumbo.Bet.Straight>
   <HH.Thrumbo.Bet.Split>Dělená {0}/{1}</HH.Thrumbo.Bet.Split>
   <HH.Thrumbo.Bet.Street>Řada {0}-{1}</HH.Thrumbo.Bet.Street>

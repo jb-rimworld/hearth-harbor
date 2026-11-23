@@ -85,6 +85,17 @@ namespace Hearth.Casino.PlayerHouse.Tests
             var beacon = Kit.Spawn(t, ThingDefOf.OrbitalTradeBeacon, Rot4.North, t.FreeCellNearCenter(20)); spawned.Add(beacon); Kit.Power(beacon);
             var cells = Building_OrbitalTradeBeacon.TradeableCellsAround(beacon.Position, map).Where(c => c != beacon.Position && c.Standable(map) && c.GetFirstItem(map) == null && c.GetFirstBuilding(map) == null && !c.Fogged(map)).ToList();
             t.Check(cells.Count >= 4, "free cells in range of the beacon (" + cells.Count + ")");
+            // the random map may already hold steel or components in reach of the beacon; a trade could then take from those stacks first.
+            // Remove them, so the stacks below are the only ones and every count is exact.
+            int removed = 0;
+            foreach (var c in Building_OrbitalTradeBeacon.TradeableCellsAround(beacon.Position, map))
+            {
+                var things = c.GetThingList(map);
+                for (int k = things.Count - 1; k >= 0; k--)
+                    if (things[k].def == ThingDefOf.Steel || things[k].def == ThingDefOf.ComponentIndustrial) { things[k].Destroy(); removed++; }
+            }
+            if (removed > 0) t.Note("removed " + removed + " stack(s) of steel/components the map had in reach of the beacon");
+            t.Check(map.listerThings.ThingsOfDef(ThingDefOf.Steel).All(x => !x.Spawned || !Building_OrbitalTradeBeacon.TradeableCellsAround(beacon.Position, map).Contains(x.Position)), "no other steel in reach of the beacon");
             Thing Put(ThingDef d, int n, int i) { var x = ThingMaker.MakeThing(d); x.stackCount = n; GenSpawn.Spawn(x, cells[i % cells.Count], map); x.SetForbidden(true, false); spawned.Add(x); return x; }
             var steel = Put(ThingDefOf.Steel, 75, 0);
             var comps = Put(ThingDefOf.ComponentIndustrial, 3, 1);
@@ -161,11 +172,16 @@ namespace Hearth.Casino.PlayerHouse.Tests
                 "prisoner: vanilla sell price of a prisoner (" + pl?.UnitPrice + ")");
 
             // ---- limits ---------------------------------------------------------------------------------------------------
+            bool oldLimitOn = HSettings.GetBool(TS.LimitOn);
+            HSettings.Set(TS.LimitOn, 1f);
             HSettings.Set(TS.MaxBetCap, 10f); HSettings.Set(TS.MaxBetFloor, 1f);
             Kit.Power(beacon);
             string lim = ThrumboStakes.Validate(offer);
-            t.Check(lim != null && ThrumboStakes.Value(offer) > ThrumboHouse.TableLimit(map), "above the table limit the stake is refused: " + lim);
-            HSettings.Set(TS.MaxBetCap, oldCap); HSettings.Set(TS.MaxBetFloor, oldFloor);
+            t.Check(lim != null && ThrumboStakes.Value(offer) > ThrumboHouse.TableLimit(map), "limit on: above the table limit the stake is refused: " + lim);
+            HSettings.Set(TS.LimitOn, 0f);
+            Kit.Power(beacon);
+            t.Check(ThrumboStakes.Validate(offer) == null, "limit off (F29): the same stake is accepted");
+            HSettings.Set(TS.MaxBetCap, oldCap); HSettings.Set(TS.MaxBetFloor, oldFloor); HSettings.Set(TS.LimitOn, oldLimitOn ? 1f : 0f);
             foreach (var l in offer.Lines) l.Count = 0;
             Kit.Power(beacon);
             t.Check(ThrumboStakes.Validate(offer) != null, "nothing chosen: nothing to play");
@@ -184,7 +200,7 @@ namespace Hearth.Casino.PlayerHouse.Tests
             t.Check(!prisoner.Spawned && prisoner.Faction != Faction.OfPlayer && !(prisoner.guest?.IsPrisoner ?? false) && map.mapPawns.PrisonersOfColonySpawned.Count == prisoners0 - 1, "the prisoner left with the house");
             t.Check(!animal.Spawned && animal.Faction != Faction.OfPlayer, "the animal left with the house");
             t.Check(lr.Lost.Sum(kv => kv.Key.def == ThingDefOf.Steel ? kv.Value : 0) == 50 && lr.Lost.Count(kv => kv.Key == prisoner) == 1 && lr.Lost.Count(kv => kv.Key == animal) == 1, "the result lists exactly the lost things");
-            t.Check(steel.Spawned && steel.stackCount == 25, "the rest of the steel stack stays (25)");
+            t.Check(steel.Spawned && steel.stackCount == 25, "the rest of the steel stack stays (25; it holds " + (steel.Spawned ? steel.stackCount.ToString() : "nothing, gone") + ")");
             t.Check(led.SumAll() == sum0 && led.Balance(ThrumboHouse.House) == house0 && bank.Balance == bal0, "a lost stake of goods moves no silver in the ledger");
             var le = comp.History.LastOrDefault();
             t.Check(le != null && le.From == (int)PayFrom.Goods && le.StakedMicro == lossValue.Micro && le.PaidMicro == 0, "history: goods stake, value " + lossValue + ", nothing paid");
@@ -200,7 +216,7 @@ namespace Hearth.Casino.PlayerHouse.Tests
             Kit.Power(beacon);
             var wr = ThrumboStakes.PlayRoulette(offer, RouletteBet.Red(), PayFrom.Bank);
             t.Check(wr.Ok && wr.Kept && wr.Mult > 1.0, "winning round: " + wr.Text + wr.Error);
-            t.Check(MapCount(map, ThingDefOf.Steel) == steel1 && steel.Spawned && steel.stackCount == 25, "a win keeps every staked thing");
+            t.Check(MapCount(map, ThingDefOf.Steel) == steel1 && steel.Spawned && steel.stackCount == 25, "a win keeps every staked thing (steel " + steel1 + " -> " + MapCount(map, ThingDefOf.Steel) + ", stack " + steel.stackCount + ")");
             var expectWin = winValue * (wr.Mult - 1.0);
             t.Check(wr.Payout == expectWin && Math.Abs(wr.Payout.Silver - winValue.Silver * (wr.Mult - 1.0)) < 1e-5, "payout = value × (payout − 1) = " + wr.Payout);
             t.Check(bank.Balance == bal1 + wr.Payout, "the account received exactly the payout (" + bal1 + " -> " + bank.Balance + ")");
