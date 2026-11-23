@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueNames_DrugLounge.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;Le [roomm] [adjm]</li>
+    <li>r_name(p=3)-&gt;La [roomf] [adjf]</li>
+    <li>r_name-&gt;L'Arrière-Salle</li>
+    <li>r_name-&gt;Repaire [owner]</li>
+    <li>r_name-&gt;[den]</li>
+    <li>adjm-&gt;Tranquille</li>
+    <li>adjm-&gt;Enfumé</li>
+    <li>adjm-&gt;Velouté</li>
+    <li>adjm-&gt;Tamisé</li>
+    <li>adjm-&gt;Brumeux</li>
+    <li>adjm-&gt;Discret</li>
+    <li>adjm-&gt;Caché</li>
+    <li>adjm-&gt;Louche</li>
+    <li>adjf-&gt;Tranquille</li>
+    <li>adjf-&gt;Enfumée</li>
+    <li>adjf-&gt;Veloutée</li>
+    <li>adjf-&gt;Tamisée</li>
+    <li>adjf-&gt;Brumeuse</li>
+    <li>adjf-&gt;Discrète</li>
+    <li>adjf-&gt;Cachée</li>
+    <li>adjf-&gt;Louche</li>
+    <li>roomm-&gt;Sous-Sol</li>
+    <li>roomm-&gt;Salon</li>
+    <li>roomm-&gt;Repaire</li>
+    <li>roomf-&gt;Cave</li>
+    <li>roomf-&gt;Alcôve</li>
+    <li>roomf-&gt;Niche</li>
+    <li>roomf-&gt;Arrière-Cour</li>
+    <li>den-&gt;Le Terrier du Renard</li>
+    <li>den-&gt;Le Terrier du Raton</li>
+    <li>den-&gt;La Tanière du Chat</li>
+    <li>den-&gt;La Tanière du Paresseux</li>
+    <li>den-&gt;Le Nid du Rataboum</li>
+    <li>den-&gt;La Tanière de l'Iguane</li>
+  </HH_VenueNames_DrugLounge.rulePack.rulesStrings>
+</LanguageData>

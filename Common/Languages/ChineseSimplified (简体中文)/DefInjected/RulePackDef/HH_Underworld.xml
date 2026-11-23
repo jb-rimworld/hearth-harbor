@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueNames_DrugLounge.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[adj][room]会所</li>
+    <li>r_name-&gt;后屋会所</li>
+    <li>r_name-&gt;[owner]的据点</li>
+    <li>r_name-&gt;[den]会所</li>
+    <li>adj-&gt;安静</li>
+    <li>adj-&gt;烟雾缭绕</li>
+    <li>adj-&gt;丝绒</li>
+    <li>adj-&gt;昏暗</li>
+    <li>adj-&gt;朦胧</li>
+    <li>adj-&gt;低调</li>
+    <li>adj-&gt;隐秘</li>
+    <li>adj-&gt;可疑</li>
+    <li>room-&gt;地下室</li>
+    <li>room-&gt;密室</li>
+    <li>room-&gt;沙龙</li>
+    <li>room-&gt;包厢</li>
+    <li>room-&gt;后屋</li>
+    <li>room-&gt;暗室</li>
+    <li>den-&gt;赤狐洞</li>
+    <li>den-&gt;浣熊窝</li>
+    <li>den-&gt;野猫巷</li>
+    <li>den-&gt;树懒洞</li>
+    <li>den-&gt;爆炸鼠巢</li>
+    <li>den-&gt;鬣蜥洞</li>
+  </HH_VenueNames_DrugLounge.rulePack.rulesStrings>
+</LanguageData>

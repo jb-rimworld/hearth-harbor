@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueNames_DrugLounge.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;Der [adje] [roomm]</li>
+    <li>r_name(p=3)-&gt;Die [adje] [roomf]</li>
+    <li>r_name(p=3)-&gt;Das [adje] [roomn]</li>
+    <li>r_name-&gt;Das Hinterzimmer</li>
+    <li>r_name-&gt;Hinterzimmer [owner]</li>
+    <li>r_name-&gt;Zum [denm]</li>
+    <li>r_name-&gt;Zur [denf]</li>
+    <li>r_name-&gt;Zum [denn]</li>
+    <li>adje-&gt;Stille</li>
+    <li>adje-&gt;Verrauchte</li>
+    <li>adje-&gt;Samtene</li>
+    <li>adje-&gt;Schummrige</li>
+    <li>adje-&gt;Dunstige</li>
+    <li>adje-&gt;Niedrige</li>
+    <li>adje-&gt;Verborgene</li>
+    <li>adje-&gt;Zwielichtige</li>
+    <li>roomm-&gt;Keller</li>
+    <li>roomm-&gt;Salon</li>
+    <li>roomf-&gt;Stube</li>
+    <li>roomf-&gt;Nische</li>
+    <li>roomf-&gt;Hinterstube</li>
+    <li>roomf-&gt;Lounge</li>
+    <li>roomn-&gt;Hinterzimmer</li>
+    <li>roomn-&gt;Separee</li>
+    <li>denm-&gt;Fuchsbau</li>
+    <li>denm-&gt;Dachsbau</li>
+    <li>denm-&gt;Waschbärenbau</li>
+    <li>denf-&gt;Katzenhöhle</li>
+    <li>denf-&gt;Faultierhöhle</li>
+    <li>denf-&gt;Leguanhöhle</li>
+    <li>denn-&gt;Rattennest</li>
+  </HH_VenueNames_DrugLounge.rulePack.rulesStrings>
+</LanguageData>

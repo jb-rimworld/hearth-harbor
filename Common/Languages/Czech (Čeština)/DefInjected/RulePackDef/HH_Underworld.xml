@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueNames_DrugLounge.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;Lounge [adjm] [roomm]</li>
+    <li>r_name(p=3)-&gt;Lounge [adjf] [roomf]</li>
+    <li>r_name(p=3)-&gt;Lounge [adjn] [roomn]</li>
+    <li>r_name-&gt;Zadní místnost</li>
+    <li>r_name-&gt;Doupě rodiny [owner]</li>
+    <li>r_name-&gt;[den]</li>
+    <li>adjm-&gt;Tichý</li>
+    <li>adjm-&gt;Zakouřený</li>
+    <li>adjm-&gt;Sametový</li>
+    <li>adjm-&gt;Tlumený</li>
+    <li>adjm-&gt;Mlhavý</li>
+    <li>adjm-&gt;Tajný</li>
+    <li>adjm-&gt;Skrytý</li>
+    <li>adjm-&gt;Pochybný</li>
+    <li>adjf-&gt;Tichá</li>
+    <li>adjf-&gt;Zakouřená</li>
+    <li>adjf-&gt;Sametová</li>
+    <li>adjf-&gt;Tlumená</li>
+    <li>adjf-&gt;Mlhavá</li>
+    <li>adjf-&gt;Tajná</li>
+    <li>adjf-&gt;Skrytá</li>
+    <li>adjf-&gt;Pochybná</li>
+    <li>adjn-&gt;Tiché</li>
+    <li>adjn-&gt;Zakouřené</li>
+    <li>adjn-&gt;Sametové</li>
+    <li>adjn-&gt;Tlumené</li>
+    <li>adjn-&gt;Mlhavé</li>
+    <li>adjn-&gt;Tajné</li>
+    <li>adjn-&gt;Skryté</li>
+    <li>adjn-&gt;Pochybné</li>
+    <li>roomm-&gt;sklípek</li>
+    <li>roomm-&gt;salónek</li>
+    <li>roomm-&gt;kout</li>
+    <li>roomf-&gt;nika</li>
+    <li>roomf-&gt;jeskyně</li>
+    <li>roomf-&gt;světnice</li>
+    <li>roomf-&gt;kobka</li>
+    <li>roomn-&gt;doupě</li>
+    <li>roomn-&gt;útočiště</li>
+    <li>den-&gt;Liščí nora</li>
+    <li>den-&gt;Mývalí doupě</li>
+    <li>den-&gt;Kočičí pelech</li>
+    <li>den-&gt;Lenochodí doupě</li>
+    <li>den-&gt;Hnízdo třaskyrysy</li>
+    <li>den-&gt;Leguání jeskyně</li>
+  </HH_VenueNames_DrugLounge.rulePack.rulesStrings>
+</LanguageData>
