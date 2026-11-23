@@ -139,6 +139,9 @@ namespace Hearth.Testing
                     try { p.GetLord()?.Notify_PawnLost(p, PawnLostCondition.ForcedByPlayerAction); p.Destroy(); }
                     catch (Exception e) { Verse.Log.Warning("[HHTEST] could not remove leftover pawn " + p.LabelShort + ": " + e.Message); }
                 }
+                // a colonist or a pet in a mental break (a manhunting terrier counts as a threat to the colony and stops insurers from signing) is calmed down
+                foreach (var mp in map.mapPawns.AllPawnsSpawned.Where(x => x.Faction == Faction.OfPlayer && x.InMentalState).ToList())
+                    try { mp.MentalState.RecoverFromState(); } catch (Exception e) { Verse.Log.Warning("[HHTEST] could not end the mental state of " + mp.LabelShort + ": " + e.Message); }
                 foreach (var c in map.mapPawns.FreeColonistsSpawned)
                 {
                     if (c.needs?.rest != null) c.needs.rest.CurLevel = 1f;

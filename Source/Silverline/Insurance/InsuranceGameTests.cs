@@ -36,7 +36,10 @@ namespace Silverline
             // hostile pawns left over from earlier suites or from the live game (manhunters, visiting raiders) also count as a threat
             foreach (var hp in Map.mapPawns.AllPawnsSpawned.Where(x => !x.Destroyed && x.Faction != Faction.OfPlayer && x.HostileTo(Faction.OfPlayer) && !x.Downed).ToList()) hp.Destroy();
             // not only pawns: turrets, hives and other attack targets of a hostile faction count as an active threat as well
-            try { foreach (var tgt in Map.attackTargetsCache.TargetsHostileToColony.ToList()) { var th = tgt?.Thing; if (th != null && !th.Destroyed && th.Faction != Faction.OfPlayer) th.Destroy(); } } catch (Exception e) { HLog.Warn("InsTest", "could not clear hostile attack targets: " + e.Message); }
+            try { foreach (var tgt in Map.attackTargetsCache.TargetsHostileToColony.ToList()) { var th = tgt?.Thing; if (th == null || th.Destroyed) continue;
+                    // a colony pet (the colony itself is 'New Arrivals' in the quicktest) in a manhunter or berserk state is an active threat too: calm it down instead of destroying it
+                    if (th is Pawn mad && mad.Faction == Faction.OfPlayer) { if (mad.InMentalState) mad.MentalState.RecoverFromState(); continue; }
+                    if (th.Faction != Faction.OfPlayer) th.Destroy(); } } catch (Exception e) { HLog.Warn("InsTest", "could not clear hostile attack targets: " + e.Message); }
             if (InsuranceComponent.ThreatNow(Map)) HLog.Warn("InsTest", "threat still on after reset: targets " + string.Join(", ", Map.attackTargetsCache.TargetsHostileToColony.Select(x => (x?.Thing?.def.defName ?? "?") + "/" + x?.Thing?.Faction?.Name + "/downed " + ((x?.Thing as Pawn)?.Downed) + "/spawned " + x?.Thing?.Spawned)) + "; hostile " + GenHostility.AnyHostileActiveThreatToPlayer(Map) + ", large fire " + Map.fireWatcher.LargeFireDangerPresent + ", fires " + Map.listerThings.ThingsOfDef(ThingDefOf.Fire).Count);
             BankGameComp.Current?.TestReset(false);   // no account unless a test opens one: premiums then come from the till
             var c = Comp; c.contracts.Clear(); c.claims.Clear(); c.debt = 0; c.firstPolicyTick = -1; c.lastFiledLetterDay = -1; c.lastUpsellTick = -9999999; c.lastDeathTick = -9999999; c.log.Clear();
