@@ -101,6 +101,14 @@ namespace Silverline
             return new Money(sum);
         }
 
+        /// <summary>Everything invested, split for the bank's net worth: securities (stocks, funds, crypto, NFTs incl. pending sales), patience bonds, money staked in Omen contracts and projects (at cost).</summary>
+        public BankGameComp.InvestmentBreakdown InvestmentBreakdown()
+        {
+            if (!initialized) return default;
+            long bonds = BondsValue().Micro;
+            return new BankGameComp.InvestmentBreakdown { Securities = PortfolioValue().Micro - bonds, Bonds = bonds, Stakes = (OmenStaked() + ProjectsStaked()).Micro };
+        }
+
         /// <summary>Net worth as the products see it: bank cash + portfolio + money staked in Omen contracts and projects (at cost).</summary>
         public Money NetWorth() => FinanceAccounts.Cash + PortfolioValue() + OmenStaked() + ProjectsStaked();
 

@@ -56,11 +56,45 @@ namespace Hearth
         /// <summary>Daily growth factor for a yearly multiple M (1.2 → +20 % per game year → M^(1/60) per day).</summary>
         public static double DailyFactor(double yearlyMultiple) => yearlyMultiple <= 0 ? 0 : FinDetMath.Pow(yearlyMultiple, 1.0 / DaysPerYear);
 
-        /// <summary>Yearly multiple of the account: ln M_acc = beta · bankMod · ln M (M = profitability slider).</summary>
-        public static double AccountYearlyMultiple(double m, double beta, double bankMod)
-            => m <= 0 ? 0 : FinDetMath.Pow(m, beta * bankMod);
+        /// <summary>Lowest yearly multiple of a bank account: even the harshest difficulty costs at most 10 % a year (F21, 1.1.0).</summary>
+        public const double AccountFloor = 0.90;
+        /// <summary>Highest yearly multiple of a bank account (the "Comped" tier has M = 100; a savings account still only triples).</summary>
+        public const double AccountCap = 3.0;
+        /// <summary>Default share of the market return that a bank account pays (setting bank.accountShare).</summary>
+        public const double DefaultAccountShare = 0.2;
 
-        public static double AccountDailyFactor(double m, double beta, double bankMod) => DailyFactor(AccountYearlyMultiple(m, beta, bankMod));
+        /// <summary>
+        /// Yearly multiple of the account (F21): a savings formula, not the market formula. The account only pays a <paramref name="share"/> of the
+        /// market's surplus: 1 + share * bankMod * (M - 1), at least <see cref="AccountFloor"/>, at most <see cref="AccountCap"/>.
+        /// At the default M = 1.2 and share 0.2 that is +4 % a year, clearly below the savings product (+8 %), the bond (+11.6 %) and the index (+19.8 %).
+        /// </summary>
+        public static double AccountYearlyMultiple(double m, double share, double bankMod) => AccountYearlyMultiple(m, share, bankMod, double.PositiveInfinity);
+
+        /// <summary>As above, but the account never pays more than <paramref name="ceiling"/> (the savings product Mattress Plus at the investment M), so a high bank M or share cannot make the
+        /// account beat the investments. The floor still wins when the ceiling is below it.</summary>
+        public static double AccountYearlyMultiple(double m, double share, double bankMod, double ceiling)
+        {
+            if (double.IsNaN(m) || double.IsNaN(share) || double.IsNaN(bankMod)) return 1.0;
+            double v = 1.0 + Math.Max(0.0, share) * Math.Max(0.0, bankMod) * (m - 1.0);
+            if (!double.IsNaN(ceiling)) v = Math.Min(v, ceiling);
+            return Math.Max(AccountFloor, Math.Min(AccountCap, v));
+        }
+
+        public static double AccountDailyFactor(double m, double share, double bankMod) => DailyFactor(AccountYearlyMultiple(m, share, bankMod));
+        public static double AccountDailyFactor(double m, double share, double bankMod, double ceiling) => DailyFactor(AccountYearlyMultiple(m, share, bankMod, ceiling));
+
+        /// <summary>Yearly account interest as a percentage (4.0 for +4 %).</summary>
+        public static double AccountYearlyPercent(double m, double share, double bankMod) => (AccountYearlyMultiple(m, share, bankMod) - 1.0) * 100.0;
+        public static double AccountYearlyPercent(double m, double share, double bankMod, double ceiling) => (AccountYearlyMultiple(m, share, bankMod, ceiling) - 1.0) * 100.0;
+
+        // --- net worth (F22) ----------------------------------------------------------------------------
+        /// <summary>Net worth of the colony as the bank sees it: account + deposits in transit + silver at home + investments (market value) - debts.</summary>
+        public static double NetWorth(double balance, double inTransit, double cashAtHome, double investments, double debt)
+            => balance + inTransit + cashAtHome + investments - debt;
+
+        /// <summary>Basis of credit limits: net worth where only <paramref name="portfolioShare"/> (0..1) of the investments counts, so nobody borrows against crypto at full value.</summary>
+        public static double LoanNetWorth(double netWorth, double investments, double portfolioShare)
+            => netWorth - Math.Max(0.0, investments) * (1.0 - Math.Max(0.0, Math.Min(1.0, portfolioShare)));
 
         /// <summary>Interest (can be negative when M &lt; 1) of one day on a positive balance.</summary>
         public static Money InterestForDay(Money balance, double dailyFactor)

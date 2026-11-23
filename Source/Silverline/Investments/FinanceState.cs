@@ -97,7 +97,12 @@ namespace Silverline
         /// <summary>Products are available when the bank module is on and (if the bank has accounts) the colony has one.</summary>
         public static bool Available => Modules.On(ModuleId.Bank) && (BankApi.Impl == null || BankApi.Impl.HasAccount);
         public static Money Cash => Ledger.Current?.Balance(Colony) ?? Money.Zero;
-        public static bool Post(string from, string to, Money amount, string memo, bool allowNegative = false) => Ledger.Current != null && Ledger.Current.Post(from, to, amount, memo, allowNegative);
+        public static bool Post(string from, string to, Money amount, string memo, bool allowNegative = false)
+        {
+            bool ok = Ledger.Current != null && Ledger.Current.Post(from, to, amount, memo, allowNegative);
+            if (ok) BankGameComp.Current?.InvalidateCache();   // the bank's net worth counts investments: a trade shows up in the lobby at once
+            return ok;
+        }
     }
 
     /// <summary>Text helper: Keyed translation with the English fallback from FinanceText (single source for the Keyed file).</summary>

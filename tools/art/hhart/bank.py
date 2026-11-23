@@ -206,3 +206,72 @@ def logo_clawback(view, cells, masked):
         c.raw('<path d="%s" fill="none" stroke="#1c1411" stroke-width="12" stroke-linecap="round"/>' % d)
         c.raw('<path d="%s" fill="none" stroke="#e9e4d4" stroke-width="6" stroke-linecap="round"/>' % d)
     return c
+
+
+# ---------------------------------------------------------------- lottery balls and ticket (1.1.0, F20), 128 px flat UI pieces
+def _ball(c, fill, dot=None):
+    c.circle(64, 64, 54, fill, sw=4)
+    c.circle(64, 64, 41, light(fill, .10), sw=0, hl=False, sh=False)
+    if dot:
+        c.circle(64, 64, 14, dot, sw=0, hl=False, sh=False)
+    c.pline([(36, 46), (46, 34)], light(fill, .55), 5)
+
+
+@tex("UI/HH/Bank/Ball_Off", "single", (1, 1), ppc=128, grain=0, doc="Lottery ball, not picked (dark walnut)")
+def ball_off(view, cells, masked):
+    c = _icon(cells, masked)
+    _ball(c, "#4a3425")
+    return c
+
+
+@tex("UI/HH/Bank/Ball_On", "single", (1, 1), ppc=128, grain=0, doc="Lottery ball, picked (brass)")
+def ball_on(view, cells, masked):
+    c = _icon(cells, masked)
+    _ball(c, P["gold"])
+    return c
+
+
+@tex("UI/HH/Bank/Ball_Hit", "single", (1, 1), ppc=128, grain=0, doc="Lottery ball, matched the draw (emerald)")
+def ball_hit(view, cells, masked):
+    c = _icon(cells, masked)
+    _ball(c, EM)
+    return c
+
+
+@tex("UI/HH/Bank/Ball_Star", "single", (1, 1), ppc=128, grain=0, doc="Lottery star ball, picked (red star)")
+def ball_star(view, cells, masked):
+    c = _icon(cells, masked)
+    c.circle(64, 64, 54, P["paper"], sw=4)
+    pts = []
+    import math
+    for i in range(10):
+        r = 38 if i % 2 == 0 else 16
+        a = -math.pi / 2 + i * math.pi / 5
+        pts.append((64 + r * math.cos(a), 66 + r * math.sin(a)))
+    c.poly(pts, P["red_l"], sw=3.2)
+    return c
+
+
+@tex("UI/HH/Bank/Coin", "single", (1, 1), ppc=128, grain=0, doc="Silver coin icon for counters")
+def coin_icon(view, cells, masked):
+    c = _icon(cells, masked)
+    coin(c, 64, 64, 48, P["silver"])
+    return c
+
+
+@tex("UI/HH/Bank/Ticket", "single", (1, 1), ppc=128, grain=0, doc="Lottery ticket icon (paper strip with a star)")
+def ticket_icon(view, cells, masked):
+    c = _icon(cells, masked)
+    c.rect(14, 30, 100, 68, P["paper"], r=6, sw=4)
+    c.circle(14, 64, 9, "#2a1d14", sw=0, hl=False, sh=False)
+    c.circle(114, 64, 9, "#2a1d14", sw=0, hl=False, sh=False)
+    for j in range(3):
+        c.line(34, 48 + j * 12, 70, 48 + j * 12, "#8d8678", w=3)
+    import math
+    pts = []
+    for i in range(10):
+        r = 17 if i % 2 == 0 else 7
+        a = -math.pi / 2 + i * math.pi / 5
+        pts.append((92 + r * math.cos(a), 66 + r * math.sin(a)))
+    c.poly(pts, P["red_l"], sw=2.4)
+    return c

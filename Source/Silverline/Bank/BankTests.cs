@@ -146,32 +146,39 @@ namespace Silverline
         {
             var c = BT.C;
             c.TestReset(true);
-            float oldM = HSettings.Get("bank.profit"); bool wasOver = HSettings.IsOverridden(HSettings.Find("bank.profit")); float oldBeta = HSettings.Get("bank.accountBeta");
-            HSettings.Set("bank.profit", 1.2f); HSettings.Set("bank.accountBeta", 1f);
+            float oldM = HSettings.Get("bank.profit"); bool wasOver = HSettings.IsOverridden(HSettings.Find("bank.profit")); float oldShare = HSettings.Get("bank.accountShare");
+            HSettings.Set("bank.profit", 1.2f); HSettings.Set("bank.accountShare", 0.2f);
             t.Check(Math.Abs(BankSettings.ProfitM - 1.2) < 1e-6, "slider reads 1.2");
             BT.Fund(Money.FromSilver(10000));
             var start = c.Balance;
             int day0 = c.Today;
             for (int d = 1; d <= 60; d++) c.DailyStep(day0 + d);
-            double expect = 10000 * 1.2;
-            t.Check(BT.Near(c.Balance.Silver / expect, 1.0, 1e-4), $"60 days at M=1.2: {c.Balance.Silver:0.00000} vs {expect} (within 0.01 %)");
+            double expect = 10000 * 1.04;
+            t.Check(BT.Near(c.Balance.Silver / expect, 1.0, 1e-4), $"60 days at M=1.2: {c.Balance.Silver:0.00000} vs {expect}: the account is a savings account, +4 % a year (within 0.01 %)");
+            t.Check(c.Balance.Silver < 10000 * 1.08, "the account pays less than the savings product Mattress Plus (+8 %)");
             t.Check(c.InterestThisQuadrum.Micro != 0 || c.TotalInterest.Micro > 0, "interest is booked and visible: " + c.TotalInterest.ToStringFull());
             t.Check(BT.LedgerSum == Money.Zero, "ledger balanced after interest");
             // one real day through the tick loop (jump the clock, the component catches up)
             var before = c.Balance;
             BT.Jump(60000 * 3);
             yield return 1; yield return 600;       // (a yield right after a clock jump is measured from before the jump)
-            double f = FinanceMath.DailyFactor(1.2);
+            double f = FinanceMath.AccountDailyFactor(1.2, 0.2, 1.0);
             double want = before.Silver * Math.Pow(f, 3);
             t.Check(BT.Near(c.Balance.Silver / want, 1.0, 1e-4), $"3 days through the tick loop: {c.Balance.Silver:0.00000} vs {want:0.00000} (today {c.Today}, lastDay {c.TestLastDay}, tick {c.Now}, account {c.HasAccount})");
             // other levels
             c.TestReset(true); BT.Fund(Money.FromSilver(1000));
             HSettings.Set("bank.profit", 0.7f); c.DailyStep(c.Today + 100);
-            t.Check(c.Balance < Money.FromSilver(1000) && BT.Near(c.Balance.Silver, 1000 * FinanceMath.DailyFactor(0.7), 0.001), "M=0.7 shrinks the account: " + c.Balance.ToStringFull());
+            t.Check(c.Balance < Money.FromSilver(1000) && BT.Near(c.Balance.Silver, 1000 * FinanceMath.AccountDailyFactor(0.7, 0.2, 1.0), 0.001), "M=0.7 shrinks the account (-6 % a year): " + c.Balance.ToStringFull());
             HSettings.Set("bank.profit", 1.0f); var b1 = c.Balance; c.DailyStep(c.Today + 101);
             t.Check(c.Balance == b1, "M=1.0 changes nothing");
-            HSettings.Set("bank.profit", 0f); c.DailyStep(c.Today + 102);
-            t.Check(c.Balance.Micro == 0, "M=0 makes the money disappear (free text value)");
+            HSettings.Set("bank.profit", 0f); var b2 = c.Balance; c.DailyStep(c.Today + 102);
+            t.Check(c.Balance.Micro > 0 && BT.Near(c.Balance.Silver, b2.Silver * FinanceMath.DailyFactor(FinanceMath.AccountFloor), 0.001), "M=0 costs at most 10 % a year (floor), the account never disappears: " + c.Balance.ToStringFull());
+            HSettings.Set("bank.profit", 2f); HSettings.Set("finance.profit", 2f); c.TestReset(true); BT.Fund(Money.FromSilver(1000)); c.DailyStep(c.Today + 103);
+            t.Check(BT.Near(c.Balance.Silver, 1000 * FinanceMath.AccountDailyFactor(2.0, 0.2, 1.0), 0.001), "M=2 pays +20 % a year: " + c.Balance.ToStringFull());
+            HSettings.Reset(HSettings.Find("finance.profit"));
+            HSettings.Set("bank.accountShare", 0f); c.TestReset(true); BT.Fund(Money.FromSilver(1000)); c.DailyStep(c.Today + 104);
+            t.Check(c.Balance == Money.FromSilver(1000), "share 0 pays no interest at all");
+            HSettings.Set("bank.accountShare", 0.2f);
             // account fee per quadrum
             c.TestReset(true, "SL_TooBigToFail"); BT.Fund(Money.FromSilver(100)); HSettings.Set("bank.profit", 1.0f);
             int q = (c.Today / 15 + 1) * 15; c.DailyStep(q);
@@ -179,7 +186,7 @@ namespace Silverline
             t.Check(BT.LedgerSum == Money.Zero, "ledger balanced after fees");
             c.TestReset(true);
             if (wasOver) HSettings.Set("bank.profit", oldM); else HSettings.Reset(HSettings.Find("bank.profit"));
-            HSettings.Set("bank.accountBeta", oldBeta);
+            HSettings.Set("bank.accountShare", oldShare);
         }
     }
 
@@ -734,7 +741,8 @@ namespace Silverline
             c.TryDeposit(map, 150, BankSite.Remote, out _);
             c.TryWithdraw(map, 200, BankSite.Remote, out _);
             Ledger.Current.Post(BankGameComp.Colony, "world", Money.FromSilver(80), "Withdrawal (cash)");
-            foreach (var id in new[] { "lobby", "loans", "history", "terms" })
+            BT.Fund(Money.FromSilver(3000)); var lotShots = LotteryGame.Current; lotShots.EnsureInit(); lotShots.QuickPick(14); lotShots.DrawGlobal(Find.TickManager.TicksGame); lotShots.QuickPick(9);
+            foreach (var id in new[] { "lobby", "loans", "invest", "lottery", "history", "terms" })
             {
                 w.TabId = id; yield return 60; ScreenshotTaker.TakeNonSteamShot(); yield return 40;
             }
@@ -742,6 +750,7 @@ namespace Silverline
             var cb = new Window_ChooseBank(); Find.WindowStack.Add(cb); yield return 40; ScreenshotTaker.TakeNonSteamShot(); yield return 40; cb.Close();
             var atmw = new Window_Bank(map, BankSite.Atm, null); w.Close(); Find.WindowStack.Add(atmw); yield return 40; ScreenshotTaker.TakeNonSteamShot(); yield return 40; atmw.Close();
             yield return 900;
+            lotShots.tickets.Clear(); { var ledS = Ledger.Current; var pb = ledS.Balance(FinanceAccounts.LotteryGlobalPool); if (pb.Micro > 0) ledS.Post(FinanceAccounts.LotteryGlobalPool, "world", pb, "test cleanup", true); }
             string outDir = "/private/tmp/claude-501/hh_tests/bank_shots";
             try { Directory.CreateDirectory(outDir); foreach (var f in Directory.GetFiles(GenFilePaths.ScreenshotFolderPath, "*.png")) File.Copy(f, Path.Combine(outDir, Path.GetFileName(f)), true); } catch (Exception e) { t.Note("copy failed: " + e.Message); }
             t.Note("screenshots in " + outDir);

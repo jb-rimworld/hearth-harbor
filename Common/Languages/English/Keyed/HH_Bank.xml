@@ -10,6 +10,8 @@
   <HH.Bank.Building.SafeNoAccount>No bank account: takings are put down as silver at midnight.</HH.Bank.Building.SafeNoAccount>
   <HH.Bank.Building.UseAtm>Use the ATM</HH.Bank.Building.UseAtm>
   <HH.Bank.Building.UseBranch>Go to the counter</HH.Bank.Building.UseBranch>
+  <HH.Bank.Card.InterestTip>The account interest is a share ({0}) of the market return, times this bank's own factor ({1}). Investments pay more.</HH.Bank.Card.InterestTip>
+  <HH.Bank.Card.Numbers>Interest {0} a year  ·  deposit fee {1} %  ·  withdrawal {2} %  ·  account fee {3} per quadrum</HH.Bank.Card.Numbers>
   <HH.Bank.Chart.DayN>day {0}</HH.Bank.Chart.DayN>
   <HH.Bank.Chart.Tip>Day {0}: {1} silver</HH.Bank.Chart.Tip>
   <HH.Bank.Chart.Today>today</HH.Bank.Chart.Today>
@@ -17,6 +19,7 @@
   <HH.Bank.Choose.Intro>Moving the account costs {0} silver, taken from the account. Loans stay with the bank that made them.</HH.Bank.Choose.Intro>
   <HH.Bank.Choose.Switch>Switch ({0})</HH.Bank.Choose.Switch>
   <HH.Bank.Choose.Title>Change banks</HH.Bank.Choose.Title>
+  <HH.Bank.Clerk.Line>Clerk Ottoline: "{0}"</HH.Bank.Clerk.Line>
   <HH.Bank.Comm.Call>Call Silverline</HH.Bank.Comm.Call>
   <HH.Bank.Comm.Info>Banking, loans and the occasional dry remark.</HH.Bank.Comm.Info>
   <HH.Bank.Greet.Afternoon>Good afternoon</HH.Bank.Greet.Afternoon>
@@ -24,7 +27,7 @@
   <HH.Bank.Greet.Morning>Good morning</HH.Bank.Greet.Morning>
   <HH.Bank.Greet.Night>Good night</HH.Bank.Greet.Night>
   <HH.Bank.Header.Tier>Wealth tier: {0}</HH.Bank.Header.Tier>
-  <HH.Bank.Header.TierTip>Net worth = account + silver at home − debts: {0} silver. The tier only changes after a new value has held for a whole day. It sets the colony mood from this bank (setting: bank.moodOn).</HH.Bank.Header.TierTip>
+  <HH.Bank.Header.TierTip>Net worth = account + deposits in transit + silver at home + investments (at market value) − debts: {0} silver. The tier only changes after a new value has held for a whole day. It sets the colony mood from this bank (setting: bank.moodOn).</HH.Bank.Header.TierTip>
   <HH.Bank.Hist.Amount>Amount (5 decimals)</HH.Bank.Hist.Amount>
   <HH.Bank.Hist.Empty>No transactions yet.</HH.Bank.Hist.Empty>
   <HH.Bank.Hist.TotalFees>Fees paid so far</HH.Bank.Hist.TotalFees>
@@ -82,7 +85,7 @@ Clerk Ottoline, {2}</HH.Bank.Letter.Reminder>
   <HH.Bank.Lobby.Amount>Amount</HH.Bank.Lobby.Amount>
   <HH.Bank.Lobby.Balance>Balance</HH.Bank.Lobby.Balance>
   <HH.Bank.Lobby.BalanceTip>Exact: {0} silver.
-Interest every day: balance × (M^({1} × {2} / 60) − 1), with M = {3} per game year (the profitability slider). That is {4:0.##} % a day.</HH.Bank.Lobby.BalanceTip>
+The account is a savings account: it pays {1} % of the market's surplus (M − 1) a year, times {2} for this bank. With M = {3} that is {4} % a year ({5} % a day). Investing pays more, and costs risk.</HH.Bank.Lobby.BalanceTip>
   <HH.Bank.Lobby.Cash>Cash at home</HH.Bank.Lobby.Cash>
   <HH.Bank.Lobby.CashTip>Silver lying around on your home maps.</HH.Bank.Lobby.CashTip>
   <HH.Bank.Lobby.ChangeBank>Change bank</HH.Bank.Lobby.ChangeBank>
@@ -92,23 +95,39 @@ Interest every day: balance × (M^({1} × {2} / 60) − 1), with M = {3} per gam
   <HH.Bank.Lobby.DepDelay>credited after {0}</HH.Bank.Lobby.DepDelay>
   <HH.Bank.Lobby.DepInstant>booked at once</HH.Bank.Lobby.DepInstant>
   <HH.Bank.Lobby.Deposit>Deposit</HH.Bank.Lobby.Deposit>
-  <HH.Bank.Lobby.Direct>Direct deposit</HH.Bank.Lobby.Direct>
-  <HH.Bank.Lobby.DirectTip>Tills of your businesses are emptied into the account at midnight, minus {0} %.</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.DirectState>Direct deposit: {0}</HH.Bank.Lobby.DirectState>
+  <HH.Bank.Lobby.DirectTip>Tills of your businesses are emptied into the account at midnight, minus {0} %. Change it in the mod settings (Bank &gt; Account).</HH.Bank.Lobby.DirectTip>
   <HH.Bank.Lobby.Interest>Interest this quadrum</HH.Bank.Lobby.Interest>
   <HH.Bank.Lobby.InterestTip>Interest paid on the balance since the quadrum began (15 days).</HH.Bank.Lobby.InterestTip>
+  <HH.Bank.Lobby.Invested>Investments</HH.Bank.Lobby.Invested>
+  <HH.Bank.Lobby.InvestedTip>Stocks, funds, crypto and NFTs at today's market value: {0}. Patience bonds at their current value: {1}. Money staked in Omen contracts and faction projects (at cost): {2}.</HH.Bank.Lobby.InvestedTip>
   <HH.Bank.Lobby.Max>Max</HH.Bank.Lobby.Max>
+  <HH.Bank.Lobby.MaxTip>All the silver of the colony in storage and at the trade beacon. There is no upper limit.</HH.Bank.Lobby.MaxTip>
+  <HH.Bank.Lobby.MaxTipWd>Everything the account can pay out here (after fees).</HH.Bank.Lobby.MaxTipWd>
+  <HH.Bank.Lobby.ModeDeposit>Deposit</HH.Bank.Lobby.ModeDeposit>
+  <HH.Bank.Lobby.ModeWithdraw>Withdraw</HH.Bank.Lobby.ModeWithdraw>
   <HH.Bank.Lobby.Net>Net worth</HH.Bank.Lobby.Net>
-  <HH.Bank.Lobby.NetTip>Account + silver at home − debts. Sets your wealth tier.</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.NetTip>Account {0} + in transit {1} + silver at home {2} + investments at market value {3} − debts {4} = {5}.
+Sets your wealth tier. Credit limits count only {6} % of the investments (setting bank.loanPortfolioShare).</HH.Bank.Lobby.NetTip>
   <HH.Bank.Lobby.Nothing>Nothing yet. A deposit would be a fine start.</HH.Bank.Lobby.Nothing>
+  <HH.Bank.Lobby.Off>off</HH.Bank.Lobby.Off>
+  <HH.Bank.Lobby.On>on</HH.Bank.Lobby.On>
   <HH.Bank.Lobby.PendingDep>↓ {0} arriving in {1}</HH.Bank.Lobby.PendingDep>
   <HH.Bank.Lobby.PendingWd>↑ {0} by pod in {1}</HH.Bank.Lobby.PendingWd>
+  <HH.Bank.Lobby.PerYear>a year</HH.Bank.Lobby.PerYear>
+  <HH.Bank.Lobby.Percent>{0} % of your silver ({1} of {2})</HH.Bank.Lobby.Percent>
+  <HH.Bank.Lobby.PercentWd>{0} % of what the account can pay out ({1} of {2})</HH.Bank.Lobby.PercentWd>
+  <HH.Bank.Lobby.Rate>Interest rate</HH.Bank.Lobby.Rate>
+  <HH.Bank.Lobby.RateTip>What the account earns per game year (60 days), on average. Compare with the products in the Invest tab:
+{0}</HH.Bank.Lobby.RateTip>
   <HH.Bank.Lobby.Recent>Recent activity</HH.Bank.Lobby.Recent>
-  <HH.Bank.Lobby.Trade>Auto-deposit trade silver</HH.Bank.Lobby.Trade>
-  <HH.Bank.Lobby.TradeTip>Silver you get from traders and trade ships goes into the account right after the deal, at the same fee as direct deposit, instead of lying on the floor as coins. Needs direct deposit. Off by default, so you can still pay the next trader in cash. Caravans are not affected.</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.Settings>Settings</HH.Bank.Lobby.Settings>
+  <HH.Bank.Lobby.TradeState>Trade silver to account: {0}</HH.Bank.Lobby.TradeState>
+  <HH.Bank.Lobby.TradeTip>Silver you get from traders and trade ships goes into the account right after the deal, at the same fee as direct deposit, instead of lying on the floor as coins. Needs direct deposit. Off by default, so you can still pay the next trader in cash. Caravans are not affected. Change it in the mod settings (Bank &gt; Account).</HH.Bank.Lobby.TradeTip>
   <HH.Bank.Lobby.Transfer>Deposit and withdraw</HH.Bank.Lobby.Transfer>
   <HH.Bank.Lobby.TransferInfo>In storage: {0}. Deposit {1}. Withdrawal fee {2}, {3}.</HH.Bank.Lobby.TransferInfo>
   <HH.Bank.Lobby.Transit>In transit</HH.Bank.Lobby.Transit>
-  <HH.Bank.Lobby.TransitTip>Silver that has left your storage but is not credited yet (deposit delay without a branch or ATM).</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.TransitTip>Silver on its way: deposits not credited yet (deposit delay without a branch or ATM) and withdrawals still in a drop pod. It counts towards your net worth.</HH.Bank.Lobby.TransitTip>
   <HH.Bank.Lobby.WdInstant>cash at the building at once</HH.Bank.Lobby.WdInstant>
   <HH.Bank.Lobby.WdPod>drop pod in {0} to {1} h</HH.Bank.Lobby.WdPod>
   <HH.Bank.Lobby.Withdraw>Withdraw</HH.Bank.Lobby.Withdraw>
@@ -144,8 +163,8 @@ Interest every day: balance × (M^({1} × {2} / 60) − 1), with M = {3} per gam
   <HH.Bank.Msg.Switched>Your account now lives at {0}.</HH.Bank.Msg.Switched>
   <HH.Bank.Msg.TradeDeposit>Trade income of {0} silver went straight into your account at {1}.</HH.Bank.Msg.TradeDeposit>
   <HH.Bank.Open.Button>Open account</HH.Bank.Open.Button>
-  <HH.Bank.Open.Direct>Route till money straight to the bank at midnight</HH.Bank.Open.Direct>
-  <HH.Bank.Open.DirectTip>Takings of your shops, inn and casino go into the account instead of lying around as silver. You can switch this later at a night safe or in the settings (bank.directDeposit).</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.DirectState>Till money goes straight to the bank at midnight: {0}</HH.Bank.Open.DirectState>
+  <HH.Bank.Open.DirectTip>Takings of your shops, inn and casino go into the account instead of lying around as silver. This is a term of the bank: change it in the mod settings (Bank &gt; Account, bank.directDeposit).</HH.Bank.Open.DirectTip>
   <HH.Bank.Open.Intro>Pick a bank. Opening an account is free; moving it later costs {0} silver. Until you have an account, nothing here bothers you, no letters, no mood, no fees.</HH.Bank.Open.Intro>
   <HH.Bank.Open.Sub>Your silver, our problem.</HH.Bank.Open.Sub>
   <HH.Bank.Open.Title>Silverline: open an account</HH.Bank.Open.Title>
@@ -159,6 +178,7 @@ Interest every day: balance × (M^({1} × {2} / 60) − 1), with M = {3} per gam
   <HH.Bank.Quip.Empty>An empty account is just a very honest account.</HH.Bank.Quip.Empty>
   <HH.Bank.Quip.Huge>At this size we are no longer your bank. We are your climate.</HH.Bank.Quip.Huge>
   <HH.Bank.Quip.Interest>Interest this quadrum: {0}. That is, if I count correctly, some meals. Congratulations?</HH.Bank.Quip.Interest>
+  <HH.Bank.Quip.Invest>I see you have investments. I will pretend I am not jealous of a number.</HH.Bank.Quip.Invest>
   <HH.Bank.Quip.Overdue>We do not wish to alarm you. We have simply noticed that you have not noticed.</HH.Bank.Quip.Overdue>
   <HH.Bank.Quip.Rich>Four digits. Your hat is practically a top hat.</HH.Bank.Quip.Rich>
   <HH.Bank.Raid.Bounty>{0} has sold the debt of loan {1} to people who do not send letters. There is a price on the head of your colony's leader.</HH.Bank.Raid.Bounty>
@@ -176,6 +196,8 @@ Interest every day: balance × (M^({1} × {2} / 60) − 1), with M = {3} per gam
   <HH.Bank.Reason.NoAccount>There is no account yet.</HH.Bank.Reason.NoAccount>
   <HH.Bank.Reason.NoCredit>Your credit limit is used up ({0} silver left).</HH.Bank.Reason.NoCredit>
   <HH.Bank.Reason.NoSilver>Not enough silver in storage or at the trade beacon ({0} available).</HH.Bank.Reason.NoSilver>
+  <HH.Bank.Reason.NoSilverAtAll>There is no silver in storage or at the trade beacon.</HH.Bank.Reason.NoSilverAtAll>
+  <HH.Bank.Reason.NothingToWithdraw>The account has nothing to pay out here right now.</HH.Bank.Reason.NothingToWithdraw>
   <HH.Bank.Reason.OverLimit>That is more than the {0} silver you may still borrow.</HH.Bank.Reason.OverLimit>
   <HH.Bank.Reason.SameBank>You already bank there.</HH.Bank.Reason.SameBank>
   <HH.Bank.Reason.SwitchFunds>Moving the account costs {0} silver and the account does not hold that.</HH.Bank.Reason.SwitchFunds>
@@ -196,27 +218,39 @@ Interest every day: balance × (M^({1} × {2} / 60) − 1), with M = {3} per gam
   <HH.Bank.Seizure.Settled>settled</HH.Bank.Seizure.Settled>
   <HH.Bank.Seizure.Text>A seizure team from Rim Recovery Partners is at the door with a court order that appears to be a laminated napkin. They want valuables worth about {0} silver (120 % of loan {1}). Let them take it, and the loan is gone. Refuse, and they will take it the hard way.</HH.Bank.Seizure.Text>
   <HH.Bank.Seizure.Title>Seizure notice</HH.Bank.Seizure.Title>
+  <HH.Bank.Site.Atm>ATM</HH.Bank.Site.Atm>
+  <HH.Bank.Site.Counter>Bank counter</HH.Bank.Site.Counter>
   <HH.Bank.Tab.History>History</HH.Bank.Tab.History>
   <HH.Bank.Tab.Loans>Loans</HH.Bank.Tab.Loans>
   <HH.Bank.Tab.Lobby>Lobby</HH.Bank.Tab.Lobby>
   <HH.Bank.Tab.Terms>Terms</HH.Bank.Tab.Terms>
+  <HH.Bank.Tabs.More>More</HH.Bank.Tabs.More>
+  <HH.Bank.Tabs.MoreTip>More pages of the bank: {0}</HH.Bank.Tabs.MoreTip>
   <HH.Bank.Terms.AccFee>Account fee per quadrum</HH.Bank.Terms.AccFee>
   <HH.Bank.Terms.AccountDaily>Your account per day</HH.Bank.Terms.AccountDaily>
-  <HH.Bank.Terms.AccountDailyTip>Account multiple per year = M^({0} × {1}) = {2}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.AccountDailyTip>Daily factor = (yearly multiple)^(1/60) = {0}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.AccountYear>Your account per year</HH.Bank.Terms.AccountYear>
+  <HH.Bank.Terms.AccountYearTip>Account multiple per year = 1 + share × bank factor × (M − 1) = 1 + {0} × {1} × ({2} − 1) = {3}, never below {4} or above {5}, and never above the savings product Mattress Plus ({6}).</HH.Bank.Terms.AccountYearTip>
   <HH.Bank.Terms.Anchors>By difficulty</HH.Bank.Terms.Anchors>
-  <HH.Bank.Terms.AnchorsHead>M per year / highest collection stage</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.AnchorsHead>Index M per year  /  your account a year  /  highest collection stage</HH.Bank.Terms.AnchorsHead>
   <HH.Bank.Terms.Atm>ATM</HH.Bank.Terms.Atm>
-  <HH.Bank.Terms.Auto>Auto</HH.Bank.Terms.Auto>
-  <HH.Bank.Terms.AutoTip>Follow the difficulty slider again ({0} on your current difficulty).</HH.Bank.Terms.AutoTip>
+  <HH.Bank.Terms.Compare>Where money earns more (per game year, on average)</HH.Bank.Terms.Compare>
+  <HH.Bank.Terms.CompareAccountTip>The account is safe and pays little. Mattress Plus, the bond and everything below it carry more risk or lock your money and pay more on average; the account itself never pays more than Mattress Plus.</HH.Bank.Terms.CompareAccountTip>
+  <HH.Bank.Terms.CompareTip>Long-run average of this product at the current profitability. Prices swing; a single year can be far above or below.</HH.Bank.Terms.CompareTip>
   <HH.Bank.Terms.Daily>Per day (index)</HH.Bank.Terms.Daily>
   <HH.Bank.Terms.DailyTip>M^(1/60) − 1. A game year has 60 days.</HH.Bank.Terms.DailyTip>
   <HH.Bank.Terms.Dep>Deposit</HH.Bank.Terms.Dep>
   <HH.Bank.Terms.Direct>Direct deposit</HH.Bank.Terms.Direct>
   <HH.Bank.Terms.Fees>Fees of your bank</HH.Bank.Terms.Fees>
   <HH.Bank.Terms.FeesNote>All fees scale with the "bank fee level" setting ({0} %).</HH.Bank.Terms.FeesNote>
-  <HH.Bank.Terms.Preview>1,000 silver at the index become {0} after one game year and {1} after ten.</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.MInv>(investments: M = {0})</HH.Bank.Terms.MInv>
+  <HH.Bank.Terms.MNow>M = {0} per game year</HH.Bank.Terms.MNow>
+  <HH.Bank.Terms.OpenSettings>Open the mod settings</HH.Bank.Terms.OpenSettings>
+  <HH.Bank.Terms.OpenSettingsShort>Change in the settings</HH.Bank.Terms.OpenSettingsShort>
+  <HH.Bank.Terms.OpenSettingsTip>Opens Mod Options for Hearth &amp; Harbor on the Bank page. Profitability, fees, loans and the lottery are real settings of this save game, set there and nowhere else.</HH.Bank.Terms.OpenSettingsTip>
+  <HH.Bank.Terms.Preview>1,000 silver at the index become {0} after one game year and {1} after ten. In your account: {2} and {3}.</HH.Bank.Terms.Preview>
   <HH.Bank.Terms.Profit>Profitability</HH.Bank.Terms.Profit>
-  <HH.Bank.Terms.ProfitIntro>How much invested money grows on average per game year (60 days). 1.0 is plus/minus nothing, 1.2 is +20 % a year. It also sets what loans cost. This is a setting of this save game.</HH.Bank.Terms.ProfitIntro>
+  <HH.Bank.Terms.SetIn>The terms of the bank are settings of this save game: change them in Mod Options &gt; Hearth &amp; Harbor &gt; Bank (Interest &amp; profitability, Fees, Loans, Collections, Lottery). 1.0 is plus/minus nothing, 1.2 is +20 % a year for the index; the account only gets a share of that. Loans follow M too.</HH.Bank.Terms.SetIn>
   <HH.Bank.Terms.StageNote>Collection ladder: 1 reminder, 2 late fee, 3 offset against deposits, 4 friendly visit, 5 seizure team, 6 collection raid, 7 bounty. Now: stops at stage {0}.</HH.Bank.Terms.StageNote>
   <HH.Bank.Terms.Switch>Changing banks</HH.Bank.Terms.Switch>
   <HH.Bank.Terms.Wd>Withdrawal (pod / counter)</HH.Bank.Terms.Wd>
@@ -239,4 +273,6 @@ Interest every day: balance × (M^({1} × {2} / 60) − 1), with M = {3} per gam
   <HH.Bank.Time.DayHour>day {0}, {1}:00</HH.Bank.Time.DayHour>
   <HH.Bank.Time.Hours>{0} h</HH.Bank.Time.Hours>
   <HH.Bank.Time.Minutes>{0} min</HH.Bank.Time.Minutes>
+  <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
+  <HH.Bank.Yield.Account>Your bank account</HH.Bank.Yield.Account>
 </LanguageData>

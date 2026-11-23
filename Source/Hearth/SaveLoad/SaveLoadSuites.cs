@@ -121,7 +121,7 @@ namespace Hearth.SaveLoad
         {
             if (done) return; done = true;
             var l = SaveFingerprint.Transient;
-            l.Add((@"^game/BankGameComp\.cachedNet", "net-worth cache, 250-tick refresh"));
+            l.Add((@"^game/BankGameComp\.cached(Net|Inv)", "net-worth and investments cache, 250-tick refresh"));
             l.Add((@"^game/FinanceGame\.assets\[\]\.(spec|specKey|drift|lnMa)(\.|$| )", "market spec cache, rebuilt by RefreshSpec before every price step"));
             l.Add((@"^game/FinanceGame\.(sysCache|sysKey)", "systemic-event cache, rebuilt on use"));
             l.Add((@"^game/HearthGame\.IsNewGame", "true only in the session that started the game (first-start card wording)"));

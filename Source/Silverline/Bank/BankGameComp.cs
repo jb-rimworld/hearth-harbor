@@ -36,7 +36,7 @@ namespace Silverline
         List<Pawn> collectors = new List<Pawn>();
 
         // runtime -----------------------------------------------------------------------------------------
-        long cachedNetMicro; int cachedNetTick = -9999;
+        long cachedNetMicro, cachedInvMicro; int cachedNetTick = -9999; InvestmentBreakdown cachedInv;
 
         public BankGameComp(Game game) { Current = this; }
 
@@ -49,7 +49,7 @@ namespace Silverline
         public Money Balance => Ledger.Current?.Balance(Colony) ?? Money.Zero;
         public Money InTransit
         {
-            get { long sum = 0; for (int i = 0; i < pending.Count; i++) if (pending[i].Kind == TransferKind.Deposit) sum += pending[i].Micro; return new Money(sum); }
+            get { long sum = 0; for (int i = 0; i < pending.Count; i++) sum += pending[i].Micro; return new Money(sum); }   // deposits and withdrawals by pod: silver that left one side and is not on the other yet
         }
         public Money Debt => new Money(loans.Sum(l => l.BalanceMicro));
         public IReadOnlyList<Loan> Loans => loans;
@@ -71,16 +71,48 @@ namespace Silverline
 
         public int CashAtHome => HomeMaps.Sum(m => m.resourceCounter.GetCount(ThingDefOf.Silver));
 
-        /// <summary>Accounts + silver at home − debts (KONZEPT 8.4). Cached for 250 ticks.</summary>
-        public Money NetWorth
+        /// <summary>
+        /// Net worth (KONZEPT 8.4, F22 in 1.1.0): account + deposits in transit + silver at home + investments at market value − debts.
+        /// Investments are stocks, funds, crypto, NFTs, patience bonds (at their current value) and money staked in Omen contracts and projects (at cost);
+        /// they come from <see cref="InvestmentsProvider"/> (set by the finance module) so the bank folder does not depend on the finance folder. Cached for 250 ticks.
+        /// </summary>
+        public Money NetWorth { get { RefreshNet(); return new Money(cachedNetMicro); } }
+
+        /// <summary>Market value of all investments counted into the net worth (zero without the finance module). Cached with the net worth.</summary>
+        public Money InvestmentsValue { get { RefreshNet(); return new Money(cachedInvMicro); } }
+
+        /// <summary>Net worth for credit limits: only <see cref="BankSettings.LoanPortfolioShare"/> of the investments counts (nobody borrows against crypto at full value).</summary>
+        public Money LoanNetWorth => new Money((long)Math.Round(FinanceMath.LoanNetWorth(NetWorth.Micro, InvestmentsValue.Micro, BankSettings.LoanPortfolioShare)));
+
+        /// <summary>Set by FinanceModule: current market value of everything invested (breakdown for the tooltip). Null = nothing invested.</summary>
+        public static Func<InvestmentBreakdown> InvestmentsProvider;
+
+        /// <summary>Parts of the investments for the net worth tooltip (micro-silver).</summary>
+        public struct InvestmentBreakdown
         {
-            get
-            {
-                int t = Now;
-                if (t - cachedNetTick >= 250 || t < cachedNetTick) { cachedNetMicro = (Balance + Money.FromSilver(CashAtHome) - Debt).Micro; cachedNetTick = t; }
-                return new Money(cachedNetMicro);
-            }
+            public long Securities, Bonds, Stakes;
+            public long Total => Securities + Bonds + Stakes;
         }
+
+        InvestmentBreakdown Breakdown()
+        {
+            if (!Modules.On(ModuleId.Bank) || InvestmentsProvider == null) return default;
+            try { return InvestmentsProvider(); }
+            catch (Exception e) { HLog.Once("bank.investments", LogLevel.Warn, "Bank", "Investment value could not be read, counted as zero: " + e.Message); return default; }
+        }
+
+        void RefreshNet()
+        {
+            int t = Now;
+            if (t - cachedNetTick < 250 && t >= cachedNetTick) return;
+            var inv = Breakdown();
+            cachedInv = inv; cachedInvMicro = inv.Total;
+            cachedNetMicro = (Balance + InTransit + Money.FromSilver(CashAtHome) + new Money(inv.Total) - Debt).Micro;
+            cachedNetTick = t;
+        }
+
+        /// <summary>The parts of the net worth for the tooltip and the lobby rows.</summary>
+        public InvestmentBreakdown InvestmentParts { get { RefreshNet(); return cachedInv; } }
         public void InvalidateCache() { cachedNetTick = -9999; }
 
         public double ColonyWealth() => HomeMaps.Sum(m => (double)m.wealthWatcher.WealthTotal);
@@ -147,6 +179,24 @@ namespace Silverline
         {
             if (atmDay != Today) return HSettings.GetInt("bank.atmDailyLimit");
             return Math.Max(0, HSettings.GetInt("bank.atmDailyLimit") - (int)(atmTakenMicro / Money.PerSilver));
+        }
+
+        /// <summary>The most silver (whole coins) that can be withdrawn right now at this site: the balance minus the fee, and at an ATM what is left of the daily limit.</summary>
+        public int MaxWithdrawCoins(BankSite site)
+        {
+            if (!hasAccount) return 0;
+            double bal = Math.Floor(Balance.Silver);
+            int coins = TransferMath.ClampToCoins(bal);
+            for (int i = 0; i < 40 && coins > 0; i++)
+            {
+                var fee = WithdrawFee(Money.FromSilver(coins), site);
+                var over = Money.FromSilver(coins) + fee - Balance;
+                if (over.Micro <= 0) break;
+                coins -= Math.Max(1, (int)Math.Ceiling(over.Silver));
+            }
+            if (coins < 0) coins = 0;
+            if (site == BankSite.Atm) coins = Math.Min(coins, Math.Max(0, AtmRemainingToday()));
+            return coins;
         }
 
         public bool HasInstantSite(Map map) => map != null && map.listerBuildings.allBuildingsColonist.Any(b => b is Building_SLTerminal t && t.Powered);
@@ -330,8 +380,8 @@ namespace Silverline
         {
             var led = Ledger.Current; var bank = Bank;
             InvalidateCache();
-            // 1. interest on the account: daily factor = M_acc^(1/60), M_acc from the slider (KONZEPT 8.8, D17)
-            double f = FinanceMath.AccountDailyFactor(BankSettings.ProfitM, BankSettings.AccountBeta, bank?.interestMod ?? 1.0);
+            // 1. interest on the account: daily factor = M_acc^(1/60), M_acc = 1 + share*bankMod*(M-1) (a savings formula, F21; KONZEPT 8.8, D17)
+            double f = FinanceMath.DailyFactor(BankSettings.AccountMultiple(bank?.interestMod ?? 1.0));
             var bal = Balance;
             var interest = FinanceMath.InterestForDay(bal, f);
             if (interest.Micro > 0) { led.Post("world", Colony, interest, L.T("Memo.Interest", "Interest")); interestQuadrumMicro += interest.Micro; totalInterestMicro += interest.Micro; }

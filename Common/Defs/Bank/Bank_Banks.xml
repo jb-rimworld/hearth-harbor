@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- The six banks of KONZEPT 2.2. Fees are fractions (0.01 = 1 %). interestMod multiplies ln(M) of the profitability slider (8.8),
+  <!-- The six banks of KONZEPT 2.2. Fees are fractions (0.01 = 1 %). interestMod multiplies the account's share of the market surplus (1.1.0: yearly multiple = 1 + bank.accountShare x interestMod x (M - 1)),
        loanSpread is added to the yearly base rate (8.9). Switching banks costs 50 silver (setting bank.switchFee). -->
 
   <Silverline.SL_BankDef>
