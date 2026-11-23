@@ -70,6 +70,8 @@ namespace Hearth.Guests
         public bool WantsDouble;
         /// <summary>F02: the double-bed wish has been settled (granted or missed), so its small mood and satisfaction effects happen once per stay.</summary>
         public bool DoubleWishDone;
+        /// <summary>F03 (1.1.0 fix): a guest alone in a double bed was pleased about the room once this stay ("roomy bed").</summary>
+        public bool RoomyBedDone;
         /// <summary>F04: ideoligion certainty when the Convert handling started (0 = not measured), for the progress line.</summary>
         public float ConvertStartCertainty;
         /// <summary>F04: how many conversation attempts reached the guest in Convert handling.</summary>
@@ -159,6 +161,7 @@ namespace Hearth.Guests
             Scribe_Values.Look(ref Outcome, "outcome");
             Scribe_Values.Look(ref WantsDouble, "wantsDouble");
             Scribe_Values.Look(ref DoubleWishDone, "doubleWishDone");
+            Scribe_Values.Look(ref RoomyBedDone, "roomyBedDone");
             Scribe_Values.Look(ref ConvertStartCertainty, "convertStartCertainty");
             Scribe_Values.Look(ref ConvertTalks, "convertTalks");
             Scribe_Values.Look(ref Highlight, "highlight");

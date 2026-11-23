@@ -209,6 +209,7 @@ namespace Hearth.Guests
                 desk.Notify_CheckIn(p);
             }
             else r.Log("HH.Inn.Event.SelfCheckIn".TranslateOr("Found the room alone; nobody was at a desk."));
+            if (desk != null && desk.Spawned) Hearth.Life.GuestLifeFx.NoteCheckIn(p, desk);   // F31: desk bell, pen scratch, a key
             if (r.Overnight)
             {
                 if (!AssignBed(r))
@@ -282,6 +283,8 @@ namespace Hearth.Guests
                 r.Log("HH.Inn.Event.SharedBed2".TranslateOr("Shares the bed with {0} ({1} silver a night each).").Replace("{0}", m.Pawn.LabelShort).Replace("{1}", second.WholeSilver.ToString()));
                 return true;
             }
+            // F03: the small solo bonus is not given when this is the last free bed for two and a couple on the map still needs one
+            bool spareDouble = partnerWaiting || !CoupleNeedsDouble(r) || GuestBeds.FreeOn(map).Count(x => x.SleepingSlotsCount >= 2) >= 2;
             foreach (var b in GuestBeds.FreeOn(map))
             {
                 if (!p.CanReach(b, PathEndMode.OnCell, Danger.Some)) continue;
@@ -292,6 +295,7 @@ namespace Hearth.Guests
                 if (q.Price * nights > r.Budget) continue;
                 float u = GuestEconomy.BedUtility(q.RoomScore, q.Price, r.Wealth, groupRooms.Contains(b.GetRoom()));
                 if (partnerWaiting && b.SleepingSlotsCount >= 2) u += 40f; // C4: a couple's first guest takes a bed for two
+                else if (b.SleepingSlotsCount >= 2 && spareDouble) u += GuestEconomy.SoloDoubleBonus(r.Wealth);   // F03: alone, a double bed is still a little nicer
                 if (u > bestU) { bestU = u; best = b; bestQ = q; }
             }
             if (best == null && cheapest != null && cheapQ.Price <= r.Budget)
@@ -303,7 +307,9 @@ namespace Hearth.Guests
             }
             if (best == null) return false;
             if (!ClaimBed(r, best, bestQ)) return false;
-            if (bestQ.Price > GuestEconomy.ComfortPrice(r.Wealth) && !(partnerWaiting && best.SleepingSlotsCount >= 2))
+            var comfort = GuestEconomy.ComfortPrice(r.Wealth);
+            if (best.SleepingSlotsCount >= 2) comfort = comfort * GuestEconomy.SoloDoubleComfort;   // F03: a roomier bed may cost a little more
+            if (bestQ.Price > comfort && !(partnerWaiting && best.SleepingSlotsCount >= 2))
             {
                 r.ServiceSum -= 0.08f;
                 r.Log("HH.Inn.Event.Pricey".TranslateOr("Found {0} silver a night steep.").Replace("{0}", bestQ.Price.WholeSilver.ToString()), 4);
@@ -388,6 +394,7 @@ namespace Hearth.Guests
         public void Tick(int t)
         {
             if (records.Count == 0 && groups.Count == 0) { DailyDrift(t); return; }
+            if (t % 30 == 23) Guard.Run(ModuleId.Inn, "Inn.BedFx", BedFxPass);
             if (t % 250 == 61) for (int i = records.Count - 1; i >= 0; i--) { var r = records[i]; Guard.Run(ModuleId.Inn, "Inn.UpdateRecord", () => UpdateRecord(r)); }
             if (t % 1250 == 611) for (int i = groups.Count - 1; i >= 0; i--) { var g = groups[i]; Guard.Run(ModuleId.Inn, "Inn.GroupTick", () => GroupTick(g)); }
             DailyDrift(t);
@@ -506,6 +513,7 @@ namespace Hearth.Guests
             var members = Members(g).ToList();
             foreach (var r in members) Settle(r, reason);
             FinishGroupNumbers(g, members);
+            LifeFxDeparture(g, members, reason);
             var lords = new HashSet<Lord>();
             foreach (var r in members) { var l = r.Pawn?.GetLord(); if (l != null && l.LordJob is LordJob_HH_GuestStay) lords.Add(l); }
             foreach (var l in lords) l.ReceiveMemo(LordJob_HH_GuestStay.MemoLeave);
@@ -521,6 +529,7 @@ namespace Hearth.Guests
             var members = Members(g).ToList();
             foreach (var r in members) Settle(r, reason);
             FinishGroupNumbers(g, members);
+            LifeFxDeparture(g, members, reason);
             SendReport(g);
         }
 
@@ -828,12 +837,28 @@ namespace Hearth.Guests
             Unregister(r, cond.ToString());
         }
 
+        /// <summary>F31: guests who leave in peace wave goodbye and show their review in stars (nothing for enemies, removals or who joined).</summary>
+        static void LifeFxDeparture(GuestGroup g, List<GuestRecord> members, string reason)
+        {
+            if (reason == "hostile" || reason == "removal") return;
+            var list = new List<(Pawn pawn, int stars, bool wave)>();
+            foreach (var r in members)
+            {
+                var p = r.Pawn;
+                if (p == null || p.Dead || !p.Spawned || p.Faction == Faction.OfPlayer || p.HostileTo(Faction.OfPlayer) || p.IsPrisoner) continue;
+                bool away = r.SentAway || reason == "sentAway";
+                list.Add((p, away ? 0 : Hearth.Life.GuestLifeFx.StarsFor(r.Outcome), !away));
+            }
+            if (list.Count > 0) Guard.Run(ModuleId.Inn, "Inn.LifeFx", () => Hearth.Life.GuestLifeFx.NoteDeparture(g.Id, list));
+        }
+
         void Notify_LordLeavingGroup(GuestGroup g, string reason)
         {
             g.LeaveSent = true; g.LeaveReason = reason;
             var members = Members(g).ToList();
             foreach (var r in members) Settle(r, reason);
             FinishGroupNumbers(g, members);
+            LifeFxDeparture(g, members, reason);
             SendReport(g);
         }
 

@@ -69,7 +69,7 @@ namespace Hearth.ShopsFood
     /// <summary>Per-map, unsaved state of rung bells: when each sign last rang, who was called, when the sign last pulsed.</summary>
     public sealed class MapComponent_HH_NightBell : MapComponent
     {
-        public sealed class RingState { public Thing Sign; public int LastRing = -99999, LastAlert = -99999, LastSound = -99999, LastPulse, LastMessage = -99999; public bool AnyResponder; }
+        public sealed class RingState { public Thing Sign; public Pawn LastGuest; public int LastRing = -99999, LastAlert = -99999, LastSound = -99999, LastPulse, LastMessage = -99999, LastReopen = -99999; public bool AnyResponder; }
         public sealed class Answering { public Pawn Pawn; public Thing Sign; public int Since; }
 
         public readonly Dictionary<int, RingState> Rings = new Dictionary<int, RingState>();
@@ -97,13 +97,27 @@ namespace Hearth.ShopsFood
             for (int i = Pending.Count - 1; i >= 0; i--)
             {
                 var a = Pending[i];
-                bool gone = a.Pawn == null || a.Pawn.Dead || a.Pawn.Destroyed || a.Sign == null || a.Sign.Destroyed || t - a.Since > 4000;
-                if (!gone && VenueState.StaffOn(a.Sign) == a.Pawn)
+                bool signGone = a.Sign == null || a.Sign.Destroyed || !a.Sign.Spawned;
+                bool pawnGone = a.Pawn == null || a.Pawn.Dead || a.Pawn.Destroyed || !a.Pawn.Spawned;
+                if (!signGone && !pawnGone && VenueState.StaffOn(a.Sign) == a.Pawn)
                 {
                     NightBell.PlayAnswered(a.Pawn, a.Sign);
                     Pending.RemoveAt(i);
+                    continue;
                 }
-                else if (gone) Pending.RemoveAt(i);
+                // still on the way (the venue job for this sign is running)? After PendingTimeout only while they are still walking:
+                // a colonist who is on the job but has stood still that long is stuck and is called off, so the next one is not sent alongside
+                bool onTheWay = !pawnGone && a.Pawn.CurJob != null && a.Pawn.CurJob.def == HHVenueDefOf.HH_TendVenue && a.Pawn.CurJob.targetA.Thing == a.Sign;
+                if (!signGone && onTheWay && (t - a.Since <= NightBell.PendingTimeout || a.Pawn.pather?.Moving == true)) continue;
+                Pending.RemoveAt(i);
+                if (onTheWay)
+                {
+                    try { a.Pawn.jobs.EndCurrentJob(JobCondition.Incompletable); }
+                    catch (Exception e) { HLog.Once("nightbell.stuck", LogLevel.Warn, "Venues", "Night bell: could not call off a stuck colonist: " + e.Message); }
+                }
+                // the sent colonist's job failed (interrupted, unreachable, ended, the colonist died): the call is open again at once
+                else if (!pawnGone) NoteDropped(a.Pawn, t);
+                if (!signGone) Reopen(a.Sign, a.Pawn, t);
             }
             // a ringing, unstaffed venue pulses a little bell above its sign so the player sees which one calls
             foreach (var kv in Rings.ToList())
@@ -113,6 +127,45 @@ namespace Hearth.ShopsFood
                 if (VenueState.StaffOn(rs.Sign) != null) continue;
                 if (t - rs.LastPulse >= 90) { rs.LastPulse = t; NightBell.PulseAbove(rs.Sign); }
             }
+        }
+
+        /// <summary>Colonists who dropped a bell call: tick of the last drop and how many in a row (unsaved).</summary>
+        readonly Dictionary<int, (int tick, int count)> dropped = new Dictionary<int, (int, int)>();
+
+        void NoteDropped(Pawn p, int t)
+        {
+            dropped.TryGetValue(p.thingIDNumber, out var d);
+            int count = t - d.tick <= NightBell.DropMemory ? d.count + 1 : 1;
+            dropped[p.thingIDNumber] = (t, count);
+            if (dropped.Count > 64) dropped.Clear();
+        }
+
+        /// <summary>
+        /// A colonist who dropped this call twice in a short time is left out for <see cref="NightBell.DropCooldown"/> ticks (the first drop is
+        /// forgiven at once, so a lone colonist is called again right away; somebody who keeps dropping it is not pulled back every few seconds).
+        /// </summary>
+        public bool Resting(Pawn p, int t)
+            => p != null && dropped.TryGetValue(p.thingIDNumber, out var d) && d.count >= 2 && t - d.tick < NightBell.DropCooldown;
+
+        /// <summary>
+        /// A colonist who was sent did not arrive. The call is opened again: the next ring alerts at once, and while the guest who rang is still
+        /// waiting the bell calls again right now (at most every <see cref="NightBell.ReopenGap"/> ticks per sign, so a colonist who keeps
+        /// dropping the job is not pulled back every half second).
+        /// </summary>
+        void Reopen(Thing sign, Pawn failed, int t)
+        {
+            if (Pending.Any(x => x.Sign == sign)) return;                         // somebody else is still on the way
+            var rs = StateOf(sign);
+            rs.AnyResponder = false;                                               // the next ring may call again after RetryGap instead of AlertGap
+            NightBell.Reopened++;
+            HLog.Debug("Venues", "Night bell: " + (failed?.LabelShort ?? "the colonist") + " did not arrive, the call is open again");
+            if (!VenueState.BellActive(sign) || VenueState.StaffOn(sign) != null || !NightBell.IsWaiting(rs.LastGuest, sign)) return;
+            if (t - rs.LastReopen < NightBell.ReopenGap) return;
+            rs.LastReopen = t;
+            var v = VenueApi.VenueOfSign(map, sign);
+            if (v == null) return;
+            rs.LastAlert = t;
+            rs.AnyResponder = NightBell.Alert(v, rs.LastGuest) > 0;
         }
     }
 
@@ -151,6 +204,21 @@ namespace Hearth.ShopsFood
         public const int AlertGap = 2000;
         /// <summary>When nobody heard the last call, a new ring may try again after this many ticks.</summary>
         public const int RetryGap = 600;
+        /// <summary>A waiting guest rings again this often while nobody is on the way (F06 acceptance: one failed roll must not leave them alone).</summary>
+        public const int ReRingTicks = 600;
+        /// <summary>A sent colonist who has not arrived after this many ticks no longer counts as "on the way".</summary>
+        public const int PendingTimeout = 4000;
+        /// <summary>A call whose colonist dropped the job is re-sent at most this often per sign.</summary>
+        public const int ReopenGap = 300;
+        /// <summary>Two drops of a bell call within this many ticks …</summary>
+        public const int DropMemory = 2500;
+        /// <summary>… leave that colonist out of the next calls for this many ticks.</summary>
+        public const int DropCooldown = 1200;
+        /// <summary>Awake colonists within hearing range always hear the bell when their Hearing is above this (below: a chance, like sleepers).</summary>
+        public const float SureHearing = 0.3f;
+
+        /// <summary>Tests: how often a call was opened again because the sent colonist did not arrive.</summary>
+        internal static int Reopened;
 
         /// <summary>Tests only: forces the hearing roll (true = hears, false = does not), null = roll normally.</summary>
         internal static bool? ForceHear;
@@ -171,6 +239,7 @@ namespace Hearth.ShopsFood
                 int now = Find.TickManager.TicksGame;
                 var rs = comp.StateOf(v.Sign);
                 rs.LastRing = now;
+                if (guest != null) rs.LastGuest = guest;
                 if (guest != null) MoteMaker.ThrowText(guest.DrawPos, map, "HH.Venue.BellRung".TranslateOr("*ding*"), 3f);
                 if (now - rs.LastSound > 240) { rs.LastSound = now; PlayRing(v, guest); }
                 int gap = rs.AnyResponder ? AlertGap : RetryGap;
@@ -180,6 +249,32 @@ namespace Hearth.ShopsFood
                 rs.AnyResponder = n > 0;
             });
         }
+
+        /// <summary>Is a colonist on the way to (or already at) this sign: sent by the bell, or by their own Serving work?</summary>
+        public static bool SomeoneComing(Thing sign)
+        {
+            var map = sign?.Map;
+            if (map == null) return false;
+            if (VenueState.StaffOn(sign) != null) return true;
+            var cols = map.mapPawns.FreeColonistsSpawned;
+            for (int i = 0; i < cols.Count; i++)
+            {
+                var j = cols[i].CurJob;
+                if (j != null && j.def == HHVenueDefOf.HH_TendVenue && j.targetA.Thing == sign) return true;
+            }
+            return false;
+        }
+
+        /// <summary>Tick of the last ring at this sign (very long ago when it never rang).</summary>
+        public static int LastRingOf(Thing sign)
+        {
+            var comp = sign?.Map?.GetComponent<MapComponent_HH_NightBell>();
+            return comp != null && comp.Rings.TryGetValue(sign.thingIDNumber, out var rs) ? rs.LastRing : -99999;
+        }
+
+        /// <summary>Is this guest still waiting at the sign after ringing its bell?</summary>
+        public static bool IsWaiting(Pawn guest, Thing sign)
+            => guest != null && guest.Spawned && !guest.Dead && guest.CurJob != null && guest.CurJob.def == HHVenueDefOf.HH_WaitAtVenue && guest.CurJob.count == 1 && guest.CurJob.targetA.Thing == sign;
 
         static void PlayRing(Venue v, Pawn guest)
         {
@@ -227,7 +322,7 @@ namespace Hearth.ShopsFood
         // ------------------------------------------------------------------ who answers
         /// <summary>
         /// Calls colonists to the venue. Returns how many were sent. Candidates: colonists able to serve (Serving work on, or anyone by setting), not busy
-        /// with something vital, within hearing range. Each rolls "hears it" (awake: easier; asleep: the more rested the lighter the sleep), the best at most
+        /// with something vital, within hearing range. Awake ones with normal hearing hear it for sure; the others roll "hears it" (asleep: the more rested the lighter the sleep), the best at most
         /// <c>bellResponders</c> go; sleepers only when the setting allows and they are volunteers with no recent wake-up.
         /// </summary>
         public static int Alert(Venue v, Pawn guest)
@@ -240,6 +335,7 @@ namespace Hearth.ShopsFood
             // somebody already on the way?
             var comp = map.GetComponent<MapComponent_HH_NightBell>();
             if (comp != null && comp.Pending.Any(a => a.Sign == sign && a.Pawn != null && !a.Pawn.Dead && a.Pawn.Spawned && a.Pawn.CurJob?.def == HHVenueDefOf.HH_TendVenue && a.Pawn.CurJob.targetA.Thing == sign)) return 0;
+            if (SomeoneComing(sign)) return 0;                                     // a colonist is walking there anyway (own Serving work, or a call that outlived its entry)
             var list = Candidates(v, wakes);
             int max = Math.Max(1, HSettings.GetInt(NightBellSettings.Responders));
             var sent = new List<Pawn>();
@@ -275,6 +371,8 @@ namespace Hearth.ShopsFood
             var serving = HHVenueDefOf.HH_Serving;
             var who = HSettings.GetEnum<BellWho>(NightBellSettings.Who);
             float range = HSettings.GetInt(NightBellSettings.Range);
+            var comp = map.GetComponent<MapComponent_HH_NightBell>();
+            int now = Find.TickManager.TicksGame;
             foreach (var p in map.mapPawns.FreeColonistsSpawned)
             {
                 if (p.workSettings == null || p.WorkTypeIsDisabled(serving)) continue;
@@ -284,13 +382,15 @@ namespace Hearth.ShopsFood
                 bool awake = p.Awake();
                 if (!awake && (wakes != BellWakes.WakeVolunteers || !Volunteer(p, active))) continue;
                 if (!Available(p, awake)) continue;
+                if (comp != null && comp.Resting(p, now)) continue;                // dropped this call twice just now
                 float hearing = HearingOverride?.Invoke(p) ?? (p.health?.capacities?.GetLevel(PawnCapacityDefOf.Hearing) ?? 1f);
                 if (hearing <= 0.05f) continue;                                    // deaf
                 float dist = EffectiveDistance(map, p.Position, bell);
                 float r = range * Mathf.Clamp(hearing, 0f, 1.5f);
                 if (dist >= r) continue;
                 float chance = Mathf.Clamp01(hearing * (1f - dist / r));
-                if (awake) chance = Mathf.Min(1f, chance * 1.5f);
+                // F16 acceptance: an awake colonist within earshot (r already includes their Hearing) always hears it; only poor hearing or sleep leaves it to chance
+                if (awake) chance = hearing > SureHearing ? 1f : Mathf.Min(1f, chance * 1.5f);
                 else
                 {
                     float rest = p.needs?.rest?.CurLevel ?? 0.5f;

@@ -42,6 +42,7 @@ namespace Hearth.Guests
             Caretaker.Register(ModuleId.Inn, "Inn.GuestBedOwners", () => GuestRegistry.Instance?.CaretakerBeds() ?? 0);
             Caretaker.Register(ModuleId.Inn, "Inn.ReturnPins", GuestReturns.CaretakerPins);
             HearthGame.OnGameInit += GuestWings.ClearCaches;
+            HearthGame.OnGameInit += GuestRegistry.ClearBedSeen;
             LongEventHandler.ExecuteWhenFinished(AddDesignators);
             GuestOverviewPage.Register();
             WireOtherModules();

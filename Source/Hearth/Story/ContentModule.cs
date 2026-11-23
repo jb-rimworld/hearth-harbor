@@ -16,6 +16,7 @@ namespace Hearth.Story
         public override void RegisterSettings()
         {
             HearthMusic.RegisterSettings();
+            Hearth.Life.GuestLifeFx.RegisterSettings();
             var c = HSettings.Bool(ModuleId.Core, "Fun", CreatorPawn.SettingKey, true, "The author may wander the rim",
                 "Like the creator pawns of the base game, Hearth & Harbor's author can turn up now and then as a generated pawn: a kind, hard-working wandering innkeeper.", nerd: true);
             c.Global = true;
@@ -24,6 +25,7 @@ namespace Hearth.Story
         public override void OnDefsLoaded()
         {
             HearthMusic.Init();
+            Hearth.Life.GuestLifeFx.Init();
             CreatorPawn.Sync();
             ScenarioSeed.OpenProfileEditor = (profile, onClose) => Find.WindowStack.Add(new Shell.Dialog_HHProfileEditor(profile, onClose));
             HLog.Info("Core", "Content ready: storyteller " + (DefDatabase<RimWorld.StorytellerDef>.GetNamedSilentFail("HH_Hetty") != null ? "Hetty" : "missing")
@@ -35,6 +37,7 @@ namespace Hearth.Story
 
         public override void GameTick(int ticksGame)
         {
+            Hearth.Life.GuestLifeFx.Tick(ticksGame);
             if (ticksGame % 250 == 113) HearthMusic.Refresh();
             if (ticksGame % 2500 == 1117) CreatorPawn.Sync();
         }

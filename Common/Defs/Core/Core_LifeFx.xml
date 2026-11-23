@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Guest life on the map (1.1.0, F31): small cues for the moments of a stay (arrival, check-in, paying, tipping, departure, review, couples).
+     Code: Source/Hearth/Life/GuestLifeFx.cs (global setting core.lifeFx, pauses per pawn, cap per map). Sounds: Common/Sounds/HH/Life/*.ogg
+     (requests in docs/v110/sfx_fix2.json). Textures: tools/art/hhart/life110.py. -->
+<Defs>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Life_Suitcase</defName>
+    <label>arrival suitcase</label>
+    <description>A small suitcase above a guest who has just arrived.</description>
+    <graphicData>
+      <texPath>Things/HH/Life/Suitcase</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.08</fadeInTime>
+    <solidTime>1.1</solidTime>
+    <fadeOutTime>0.7</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Life_Key</defName>
+    <label>room key</label>
+    <description>A little room key above a guest at the check-in.</description>
+    <graphicData>
+      <texPath>Things/HH/Life/Key</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.06</fadeInTime>
+    <solidTime>1.0</solidTime>
+    <fadeOutTime>0.6</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Life_Coins</defName>
+    <label>coins</label>
+    <description>Coins that rise from a paying guest towards the till.</description>
+    <graphicData>
+      <texPath>Things/HH/Life/Coins</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.05</fadeInTime>
+    <solidTime>0.6</solidTime>
+    <fadeOutTime>0.6</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Life_TipCoin</defName>
+    <label>tip coin</label>
+    <description>One coin flipped to whoever served the guest.</description>
+    <graphicData>
+      <texPath>Things/HH/Life/TipCoin</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.04</fadeInTime>
+    <solidTime>0.45</solidTime>
+    <fadeOutTime>0.4</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Life_Wave</defName>
+    <label>wave</label>
+    <description>A waving hand above a guest who says goodbye.</description>
+    <graphicData>
+      <texPath>Things/HH/Life/Wave</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.08</fadeInTime>
+    <solidTime>1.0</solidTime>
+    <fadeOutTime>0.7</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Life_Puff</defName>
+    <label>meh puff</label>
+    <description>A dry little puff after a poor review.</description>
+    <graphicData>
+      <texPath>Things/HH/Life/Puff</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.4</solidTime>
+    <fadeOutTime>0.8</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Life_Sparkle</defName>
+    <label>sparkle</label>
+    <description>A sparkle around a five-star review.</description>
+    <graphicData>
+      <texPath>Things/HH/Life/Sparkle</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.06</fadeInTime>
+    <solidTime>0.35</solidTime>
+    <fadeOutTime>0.6</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Life_Heart</defName>
+    <label>heart</label>
+    <description>A small heart when a couple lies down in their shared bed.</description>
+    <graphicData>
+      <texPath>Things/HH/Life/Heart</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.15</fadeInTime>
+    <solidTime>1.1</solidTime>
+    <fadeOutTime>0.9</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Life_Stars1</defName>
+    <label>1-star review</label>
+    <description>The guest's review: 1 of 5 stars above the head.</description>
+    <graphicData>
+      <texPath>Things/HH/Life/Stars1</texPath>
+      <drawSize>(1.6, 0.4)</drawSize>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>1.6</solidTime>
+    <fadeOutTime>0.8</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Life_Stars2</defName>
+    <label>2-star review</label>
+    <description>The guest's review: 2 of 5 stars above the head.</description>
+    <graphicData>
+      <texPath>Things/HH/Life/Stars2</texPath>
+      <drawSize>(1.6, 0.4)</drawSize>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>1.6</solidTime>
+    <fadeOutTime>0.8</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Life_Stars3</defName>
+    <label>3-star review</label>
+    <description>The guest's review: 3 of 5 stars above the head.</description>
+    <graphicData>
+      <texPath>Things/HH/Life/Stars3</texPath>
+      <drawSize>(1.6, 0.4)</drawSize>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>1.6</solidTime>
+    <fadeOutTime>0.8</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Life_Stars4</defName>
+    <label>4-star review</label>
+    <description>The guest's review: 4 of 5 stars above the head.</description>
+    <graphicData>
+      <texPath>Things/HH/Life/Stars4</texPath>
+      <drawSize>(1.6, 0.4)</drawSize>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>1.6</solidTime>
+    <fadeOutTime>0.8</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HH_Fleck_Life_Stars5</defName>
+    <label>5-star review</label>
+    <description>The guest's review: 5 of 5 stars above the head.</description>
+    <graphicData>
+      <texPath>Things/HH/Life/Stars5</texPath>
+      <drawSize>(1.6, 0.4)</drawSize>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>1.6</solidTime>
+    <fadeOutTime>0.8</fadeOutTime>
+  </FleckDef>
+
+  <SoundDef>
+    <defName>HH_Life_Arrival</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>HH/Life/Arrival</clipPath></li>
+        </grains>
+        <volumeRange>12~12</volumeRange>
+        <pitchRange>0.96~1.04</pitchRange>
+        <distRange>8~40</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>HH_Life_CheckIn</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>HH/Life/CheckIn</clipPath></li>
+        </grains>
+        <volumeRange>12~12</volumeRange>
+        <pitchRange>0.96~1.04</pitchRange>
+        <distRange>6~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>HH_Life_Pay</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>HH/Life/Pay</clipPath></li>
+        </grains>
+        <volumeRange>9~9</volumeRange>
+        <pitchRange>0.96~1.04</pitchRange>
+        <distRange>5~26</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>HH_Life_Tip</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>HH/Life/Tip</clipPath></li>
+        </grains>
+        <volumeRange>8~8</volumeRange>
+        <pitchRange>0.96~1.04</pitchRange>
+        <distRange>5~24</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>HH_Life_Farewell</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>HH/Life/Farewell</clipPath></li>
+        </grains>
+        <volumeRange>11~11</volumeRange>
+        <pitchRange>0.96~1.04</pitchRange>
+        <distRange>8~36</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>HH_Life_FiveStars</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>HH/Life/FiveStars</clipPath></li>
+        </grains>
+        <volumeRange>10~10</volumeRange>
+        <pitchRange>0.96~1.04</pitchRange>
+        <distRange>6~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

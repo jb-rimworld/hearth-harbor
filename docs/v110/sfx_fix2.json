@@ -1,0 +1,56 @@
+[
+ {
+  "file": "Common/Sounds/HH/Life/Arrival.ogg",
+  "prompt": "A friendly welcome chime: two soft wooden wind-chime notes and a light jingle of a small brass door bell, warm and cosy like a village inn door opening, gentle short room reverb",
+  "seconds": 1.6,
+  "loop": false,
+  "defName": "HH_Life_Arrival",
+  "use": "guests arrive (on foot at the map edge or out of a drop pod), once per group",
+  "current": "silent placeholder (0.3 s); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Life/CheckIn.ogg",
+  "prompt": "One crisp ding of a small brass reception bell on a wooden desk, followed by a quick scratch of a pen nib signing a paper guest book and a soft key clink, close and intimate",
+  "seconds": 1.4,
+  "loop": false,
+  "defName": "HH_Life_CheckIn",
+  "use": "check-in at the front desk",
+  "current": "silent placeholder (0.3 s); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Life/Pay.ogg",
+  "prompt": "A small handful of silver coins dropped into a wooden till drawer: a bright jingle and a soft wooden clack, short and pleasant, close up",
+  "seconds": 0.8,
+  "loop": false,
+  "defName": "HH_Life_Pay",
+  "use": "a guest pays a bill to the colony's till",
+  "current": "silent placeholder (0.3 s); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Life/Tip.ogg",
+  "prompt": "A single silver coin flicked with a thumb: one bright metallic ping as it spins in the air and a tiny clink as it is caught in a palm, very short and light",
+  "seconds": 0.6,
+  "loop": false,
+  "defName": "HH_Life_Tip",
+  "use": "a guest tips whoever served them",
+  "current": "silent placeholder (0.3 s); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Life/Farewell.ogg",
+  "prompt": "A soft farewell chime: three slow descending notes on a gentle glockenspiel, warm and a little wistful, fading out naturally in a quiet wooden hall",
+  "seconds": 1.8,
+  "loop": false,
+  "defName": "HH_Life_Farewell",
+  "use": "a guest group leaves after its stay, once per group",
+  "current": "silent placeholder (0.3 s); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Life/FiveStars.ogg",
+  "prompt": "A delighted sparkle: a quick rising shimmer of tiny bright bells and a light magical twinkle, cheerful and short, like stars appearing",
+  "seconds": 1.2,
+  "loop": false,
+  "defName": "HH_Life_FiveStars",
+  "use": "a five-star review above a departing guest",
+  "current": "silent placeholder (0.3 s); replace with the generated clip at the same path"
+ }
+]

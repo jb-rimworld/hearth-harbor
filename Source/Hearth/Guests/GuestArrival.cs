@@ -136,6 +136,7 @@ namespace Hearth.Guests
                 foreach (var p in pawns) GenSpawn.Spawn(p, CellFinder.RandomClosewalkCellNear(entry, map, 4), map);
             }
             foreach (var p in pawns) reg.Register(p, group, map, req.Nights, leave, req.ForceDigital, req.ForceBudget);
+            Hearth.Life.GuestLifeFx.NoteArrival(group.Id, pawns);   // F31: the arrival chime plays when the first of them is on the map (after the pods open)
             if (req.Returning != null && req.Returning.Count > 0)
                 foreach (var p in pawns) { var r = reg.Get(p); if (r == null) continue; r.Returner = true; r.Log("HH.Inn.Event.Returned".TranslateOr("Came back for another stay."), 3); }
             // shady / outlaw stays (5.2): the Underworld module lets them use back rooms, the fence and holding cells

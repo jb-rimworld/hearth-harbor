@@ -45,6 +45,19 @@ namespace Hearth.Guests
             return m != null && m.Bed == null ? m : null;
         }
 
+        /// <summary>F03: another guest of a couple (any group, not this guest's partner) still waits for a bed for two.</summary>
+        bool CoupleNeedsDouble(GuestRecord r)
+        {
+            for (int i = 0; i < records.Count; i++)
+            {
+                var m = records[i];
+                if (m == r || m.Settled || !m.WantsDouble || m.Bed != null || m.Pawn == null || m.Pawn.MapHeld != r.Pawn?.MapHeld) continue;
+                if (r.Pawn != null && m.Pawn != null && LovePartnerRelationUtility.LovePartnerRelationExists(r.Pawn, m.Pawn)) continue;
+                return true;
+            }
+            return false;
+        }
+
         /// <summary>Marks both partners of a couple when a guest is registered (they arrive in one group): they would like one double bed.</summary>
         void UpdateCoupleFlags(GuestRecord r)
         {
@@ -140,7 +153,60 @@ namespace Hearth.Guests
             catch (Exception e) { HLog.Once("inn.sleptTogether", LogLevel.Warn, "Inn", "Slept-together thought failed: " + e.Message); }
         }
 
+        // ------------------------------------------------------------------ lying down in the booked bed (F03 roomy bed, F31 couple's heart)
+        /// <summary>Last seen "lies in the booked bed" per guest pawn (not saved: after a load the first look only records the state).</summary>
+        static readonly Dictionary<int, bool> bedSeen = new Dictionary<int, bool>();
+        /// <summary>Tests only: replaces "lies in this bed" for a pawn (null = the real check).</summary>
+        internal static Func<Pawn, Building_Bed, bool> InBedOverride;
+
+        public static void ClearBedSeen() => bedSeen.Clear();
+
+        static bool LiesIn(Pawn p, Building_Bed bed)
+        {
+            if (p == null || bed == null || !p.Spawned) return false;
+            if (InBedOverride != null) return InBedOverride(p, bed);
+            // any job that lies the pawn down in this bed counts (LayDown, resting while sick, a nap from another mod): the posture decides, not the job def
+            return p.CurrentBed() == bed;
+        }
+
+        /// <summary>Every 30 ticks: notices when a checked-in guest lies down in the booked bed (a cheap pass over the register).</summary>
+        void BedFxPass()
+        {
+            if (records.Count == 0) { if (bedSeen.Count > 0) bedSeen.Clear(); return; }
+            for (int i = 0; i < records.Count; i++)
+            {
+                var r = records[i];
+                var p = r.Pawn;
+                if (p == null || !p.Spawned || r.Settled || !r.CheckedIn || !r.Overnight || r.Bed == null || !r.Bed.Spawned) continue;
+                bool now = LiesIn(p, r.Bed);
+                int id = p.thingIDNumber;
+                if (!bedSeen.TryGetValue(id, out bool before)) { bedSeen[id] = now; continue; }
+                if (now == before) continue;
+                bedSeen[id] = now;
+                if (now) OnLayDown(r);
+            }
+            if (bedSeen.Count > records.Count * 2 + 16) bedSeen.Clear();   // guests long gone: start over (the next pass only records)
+        }
+
+        /// <summary>A guest just lay down in the booked bed: a couple sharing it gets a small heart, a guest alone in a double bed is pleased once per stay.</summary>
+        void OnLayDown(GuestRecord r)
+        {
+            var bed = r.Bed;
+            var partner = FindPartner(r);
+            if (partner != null && SharesBed(r, partner))
+            {
+                if (LiesIn(partner.Pawn, bed)) Hearth.Life.GuestLifeFx.NoteHeart(r.Pawn, partner.Pawn);
+                return;
+            }
+            if (bed.SleepingSlotsCount < 2 || r.RoomyBedDone) return;
+            var owners = bed.OwnersForReading;
+            for (int i = 0; i < owners.Count; i++) if (owners[i] != r.Pawn) return;   // somebody else sleeps there too: not "all to themselves"
+            r.RoomyBedDone = true;
+            AddSatisfaction(r.Pawn, GuestEconomy.RoomyBedSatisfaction, "HH.Inn.Event.RoomyBed".TranslateOr("Had a roomy double bed all to themselves."));
+        }
+
         // ---- tests only
+        internal void BedFxPassForTests() => BedFxPass();
         internal void ResolveDoubleWishForTests(GuestRecord r) => ResolveDoubleWish(r);
         internal void ReleaseBedForTests(GuestRecord r) => ReleaseBed(r);
     }

@@ -111,6 +111,7 @@
   <HH.Inn.Event.SharedBed2>Shares the bed with {0} ({1} silver a night each).</HH.Inn.Event.SharedBed2>
   <HH.Inn.Event.ShortenedStay>Shortened the stay to {0} night(s) to afford the room.</HH.Inn.Event.ShortenedStay>
   <HH.Inn.Event.SleepsTogether>Sleeps next to {0}: just what they hoped for.</HH.Inn.Event.SleepsTogether>
+  <HH.Inn.Event.RoomyBed>Had a roomy double bed all to themselves.</HH.Inn.Event.RoomyBed>
   <HH.Inn.Event.SponsoredBed>The bed is booked and paid for by the party.</HH.Inn.Event.SponsoredBed>
   <HH.Inn.Event.ThinkingOver>Talked with {0} about {1}: now {2} % sure of their own beliefs.</HH.Inn.Event.ThinkingOver>
   <HH.Inn.Event.TooImportant>Too important at home to stay.</HH.Inn.Event.TooImportant>
