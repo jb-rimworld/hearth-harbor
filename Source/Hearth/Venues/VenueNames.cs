@@ -15,6 +15,9 @@ namespace Hearth.ShopsFood
     /// </summary>
     public static class VenueNames
     {
+        /// <summary>Same limit as the rename window's text field.</summary>
+        public const int MaxLength = 40;
+
         public static bool HasGenerator(VenueTypeDef t) => t?.nameRules != null;
 
         /// <summary>A name for a sign of this type, stable for the same sign and roll. Null when the type has no name rules.</summary>
@@ -33,6 +36,7 @@ namespace Hearth.ShopsFood
             {
                 string s = Resolve(t, map, unchecked(seed * 7919 + attempt * 104729));
                 if (s.NullOrEmpty()) continue;
+                if (s.Length > MaxLength) continue; // the rename field holds 40 characters; long translated variants are skipped
                 first = first ?? s;
                 if (!Taken(map, s, except)) return s;
             }

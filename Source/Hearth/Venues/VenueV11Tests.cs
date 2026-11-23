@@ -206,6 +206,47 @@ namespace Hearth.ShopsFood
         }
     }
 
+    // ================================================================================================ F33 (translations)
+    /// <summary>Names of every venue type in the language the game runs in (start the test profile with GAME_LANG="German (Deutsch)").
+    /// In a language other than English no English name word may remain, names stay within the rename field and the rule packs resolve cleanly.</summary>
+    public sealed class NamesLanguageSuite : HearthTestSuite
+    {
+        public override string Name => "venues.namesLang";
+        public override ModuleId Module => ModuleId.ShopsFood;
+        // whole English words of the name lists; compared per word so "Goldene" is not mistaken for "Golden"
+        static readonly HashSet<string> English = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { "the", "and", "of", "inn", "tavern", "taproom", "corner", "parlour", "chapel", "bathhouse", "gallery", "picture", "house", "projector", "sanctuary", "rusty", "golden", "velvet", "lantern", "quiet", "hall", "kitchen", "springs", "cuts", "pictures", "frame", "reel", "screen", "sons", "daughters", "family", "goods", "store", "pantry", "wager" };
+        static bool HasEnglishWord(string n)
+        {
+            foreach (var w in n.Split(new[] { ' ', '-', '\'', '&', ',', '.' }, StringSplitOptions.RemoveEmptyEntries))
+                if (English.Contains(w)) return true;
+            return false;
+        }
+
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var map = t.Map;
+            string lang = LanguageDatabase.activeLanguage?.folderName ?? "?";
+            bool english = lang == "English";
+            t.Note("language: " + lang);
+            bool cjk = lang.StartsWith("Chinese") || lang.StartsWith("Japanese") || lang.StartsWith("Korean");
+            foreach (var type in DefDatabase<VenueTypeDef>.AllDefs)
+            {
+                if (!VenueNames.HasGenerator(type)) continue;
+                var names = new List<string>();
+                for (int i = 0; i < 20; i++) names.Add(VenueNames.Generate(type, map, 500 + i * 61));
+                t.Note(lang + " | " + type.defName + " | " + string.Join(" ; ", names));
+                t.Check(names.All(n => !n.NullOrEmpty() && !n.Contains("[") && !n.Contains("]") && !n.Contains("ERR") && !n.Contains("  ") && n.Trim() == n), type.defName + ": 20 clean names");
+                t.Check(names.All(n => n.Length <= VenueNames.MaxLength), type.defName + ": names fit the rename field (longest " + names.Max(n => n.Length) + ")");
+                t.Check(names.Distinct().Count() >= 9, type.defName + ": varied (" + names.Distinct().Count() + " different of 20)");
+                if (english) continue;
+                var leaked = names.Where(HasEnglishWord).ToList();
+                t.Check(leaked.Count == 0, type.defName + ": no English name words remain" + (leaked.Count > 0 ? " (" + string.Join(" ; ", leaked.Take(3)) + ")" : ""));
+                if (cjk) t.Check(names.All(n => n.Any(c => c > 0x2E80)), type.defName + ": written in the native script");
+            }
+            yield return 1;
+        }
+    }
+
     // ================================================================================================ F33
     public sealed class NamesSuite : HearthTestSuite
     {

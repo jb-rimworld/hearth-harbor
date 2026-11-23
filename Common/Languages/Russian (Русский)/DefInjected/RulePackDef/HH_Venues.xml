@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueNames_Tavern.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[tavtype] «[adjm] [beastm]»</li>
+    <li>r_name(p=3)-&gt;[tavtype] «[adjf] [beastf]»</li>
+    <li>r_name(p=2)-&gt;[tavtype] «[beastall] и [objectall]»</li>
+    <li>r_name(p=2)-&gt;[tavtype] «[adjm] [objectm]»</li>
+    <li>r_name(p=2)-&gt;[tavtype] «[adjf] [objectf]»</li>
+    <li>r_name(p=2)-&gt;[tavtype] «[adjn] [objectn]»</li>
+    <li>r_name-&gt;[tavtype] «У [beastg]»</li>
+    <li>r_name-&gt;[tavtype] «Последний [objectm]»</li>
+    <li>r_name-&gt;[tavtype] «Последняя [objectf]»</li>
+    <li>r_name-&gt;[tavtype] «Последнее [objectn]»</li>
+    <li>r_name-&gt;[tavtype] «[owner]»</li>
+    <li>r_name-&gt;[tavtype] «[num2] [beastg]»</li>
+    <li>r_name-&gt;[tavtype] «[num5] [beastgp]»</li>
+    <li>tavtype-&gt;Таверна</li>
+    <li>tavtype-&gt;Трактир</li>
+    <li>tavtype-&gt;Харчевня</li>
+    <li>tavtype-&gt;Корчма</li>
+    <li>tavtype-&gt;Постоялый двор</li>
+    <li>adjm-&gt;Ржавый</li>
+    <li>adjm-&gt;Сонный</li>
+    <li>adjm-&gt;Весёлый</li>
+    <li>adjm-&gt;Удачливый</li>
+    <li>adjm-&gt;Жаждущий</li>
+    <li>adjm-&gt;Бродячий</li>
+    <li>adjm-&gt;Кривой</li>
+    <li>adjm-&gt;Золотой</li>
+    <li>adjm-&gt;Хмельной</li>
+    <li>adjm-&gt;Усталый</li>
+    <li>adjm-&gt;Поющий</li>
+    <li>adjm-&gt;Пляшущий</li>
+    <li>adjm-&gt;Ворчливый</li>
+    <li>adjm-&gt;Терпеливый</li>
+    <li>adjm-&gt;Бархатный</li>
+    <li>adjm-&gt;Медный</li>
+    <li>adjm-&gt;Старый</li>
+    <li>adjm-&gt;Солёный</li>
+    <li>adjm-&gt;Заснеженный</li>
+    <li>adjm-&gt;Туманный</li>
+    <li>adjf-&gt;Ржавая</li>
+    <li>adjf-&gt;Сонная</li>
+    <li>adjf-&gt;Весёлая</li>
+    <li>adjf-&gt;Удачливая</li>
+    <li>adjf-&gt;Жаждущая</li>
+    <li>adjf-&gt;Бродячая</li>
+    <li>adjf-&gt;Кривая</li>
+    <li>adjf-&gt;Золотая</li>
+    <li>adjf-&gt;Хмельная</li>
+    <li>adjf-&gt;Усталая</li>
+    <li>adjf-&gt;Поющая</li>
+    <li>adjf-&gt;Пляшущая</li>
+    <li>adjf-&gt;Ворчливая</li>
+    <li>adjf-&gt;Терпеливая</li>
+    <li>adjf-&gt;Бархатная</li>
+    <li>adjf-&gt;Медная</li>
+    <li>adjf-&gt;Старая</li>
+    <li>adjf-&gt;Солёная</li>
+    <li>adjf-&gt;Заснеженная</li>
+    <li>adjf-&gt;Туманная</li>
+    <li>adjn-&gt;Ржавое</li>
+    <li>adjn-&gt;Сонное</li>
+    <li>adjn-&gt;Весёлое</li>
+    <li>adjn-&gt;Удачливое</li>
+    <li>adjn-&gt;Жаждущее</li>
+    <li>adjn-&gt;Бродячее</li>
+    <li>adjn-&gt;Кривое</li>
+    <li>adjn-&gt;Золотое</li>
+    <li>adjn-&gt;Хмельное</li>
+    <li>adjn-&gt;Усталое</li>
+    <li>adjn-&gt;Поющее</li>
+    <li>adjn-&gt;Терпеливое</li>
+    <li>adjn-&gt;Бархатное</li>
+    <li>adjn-&gt;Медное</li>
+    <li>adjn-&gt;Старое</li>
+    <li>adjn-&gt;Солёное</li>
+    <li>adjn-&gt;Туманное</li>
+    <li>beastm-&gt;муффало</li>
+    <li>beastm-&gt;трумбо</li>
+    <li>beastm-&gt;як</li>
+    <li>beastm-&gt;верблюд</li>
+    <li>beastm-&gt;марал</li>
+    <li>beastm-&gt;заяц</li>
+    <li>beastm-&gt;казуар</li>
+    <li>beastm-&gt;козёл</li>
+    <li>beastm-&gt;бобёр</li>
+    <li>beastm-&gt;эму</li>
+    <li>beastm-&gt;варг</li>
+    <li>beastm-&gt;ленивец</li>
+    <li>beastf-&gt;альпака</li>
+    <li>beastf-&gt;бумалопа</li>
+    <li>beastf-&gt;капибара</li>
+    <li>beastf-&gt;белка</li>
+    <li>beastf-&gt;черепаха</li>
+    <li>beastf-&gt;лиса</li>
+    <li>beastf-&gt;газель</li>
+    <li>beastf-&gt;игуана</li>
+    <li>beastf-&gt;сова</li>
+    <li>beastf-&gt;коза</li>
+    <li>beastall-&gt;Муффало</li>
+    <li>beastall-&gt;Трумбо</li>
+    <li>beastall-&gt;Альпака</li>
+    <li>beastall-&gt;Як</li>
+    <li>beastall-&gt;Лиса</li>
+    <li>beastall-&gt;Черепаха</li>
+    <li>beastall-&gt;Газель</li>
+    <li>beastall-&gt;Козёл</li>
+    <li>beastall-&gt;Сова</li>
+    <li>beastall-&gt;Варг</li>
+    <li>beastg-&gt;муффало</li>
+    <li>beastg-&gt;трумбо</li>
+    <li>beastg-&gt;альпаки</li>
+    <li>beastg-&gt;бумалопы</li>
+    <li>beastg-&gt;капибары</li>
+    <li>beastg-&gt;яка</li>
+    <li>beastg-&gt;верблюда</li>
+    <li>beastg-&gt;марала</li>
+    <li>beastg-&gt;зайца</li>
+    <li>beastg-&gt;белки</li>
+    <li>beastg-&gt;черепахи</li>
+    <li>beastg-&gt;казуара</li>
+    <li>beastg-&gt;козла</li>
+    <li>beastg-&gt;лисы</li>
+    <li>beastg-&gt;газели</li>
+    <li>beastg-&gt;совы</li>
+    <li>beastgp-&gt;муффало</li>
+    <li>beastgp-&gt;трумбо</li>
+    <li>beastgp-&gt;альпак</li>
+    <li>beastgp-&gt;бумалоп</li>
+    <li>beastgp-&gt;капибар</li>
+    <li>beastgp-&gt;яков</li>
+    <li>beastgp-&gt;верблюдов</li>
+    <li>beastgp-&gt;маралов</li>
+    <li>beastgp-&gt;зайцев</li>
+    <li>beastgp-&gt;белок</li>
+    <li>beastgp-&gt;черепах</li>
+    <li>beastgp-&gt;казуаров</li>
+    <li>beastgp-&gt;козлов</li>
+    <li>beastgp-&gt;лис</li>
+    <li>beastgp-&gt;газелей</li>
+    <li>beastgp-&gt;сов</li>
+    <li>objectm-&gt;якорь</li>
+    <li>objectm-&gt;котёл</li>
+    <li>objectm-&gt;бочонок</li>
+    <li>objectm-&gt;очаг</li>
+    <li>objectm-&gt;плуг</li>
+    <li>objectm-&gt;компас</li>
+    <li>objectm-&gt;кувшин</li>
+    <li>objectm-&gt;колокол</li>
+    <li>objectm-&gt;фонарь</li>
+    <li>objectm-&gt;ковш</li>
+    <li>objectf-&gt;свеча</li>
+    <li>objectf-&gt;кружка</li>
+    <li>objectf-&gt;подкова</li>
+    <li>objectf-&gt;бочка</li>
+    <li>objectf-&gt;ложка</li>
+    <li>objectf-&gt;лампа</li>
+    <li>objectn-&gt;колесо</li>
+    <li>objectn-&gt;весло</li>
+    <li>objectn-&gt;ведро</li>
+    <li>objectall-&gt;фонарь</li>
+    <li>objectall-&gt;якорь</li>
+    <li>objectall-&gt;котёл</li>
+    <li>objectall-&gt;кувшин</li>
+    <li>objectall-&gt;колокол</li>
+    <li>objectall-&gt;свеча</li>
+    <li>objectall-&gt;бочка</li>
+    <li>objectall-&gt;подкова</li>
+    <li>objectall-&gt;колесо</li>
+    <li>num2-&gt;Три</li>
+    <li>num2-&gt;Четыре</li>
+    <li>num5-&gt;Пять</li>
+    <li>num5-&gt;Семь</li>
+    <li>num5-&gt;Девять</li>
+    <li>num5-&gt;Двенадцать</li>
+  </HH_VenueNames_Tavern.rulePack.rulesStrings>
+  <HH_VenueNames_Shop.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[shoptype] «[owner] и [kin]»</li>
+    <li>r_name(p=3)-&gt;[shoptype] «[adjm] [placem]»</li>
+    <li>r_name(p=3)-&gt;[shoptype] «[adjf] [placef]»</li>
+    <li>r_name(p=2)-&gt;[shoptype] «[adjn] [placen]»</li>
+    <li>r_name(p=2)-&gt;[shoptype] «Колониальный [placem]»</li>
+    <li>r_name-&gt;[shoptype] «Колониальная [placef]»</li>
+    <li>r_name-&gt;[shoptype] «У [beastg]»</li>
+    <li>r_name-&gt;[shoptype] «Всякая всячина»</li>
+    <li>r_name-&gt;[shoptype] «[trinket] и [trinket2]»</li>
+    <li>r_name-&gt;[shoptype] «[owner]»</li>
+    <li>shoptype-&gt;Лавка</li>
+    <li>shoptype-&gt;Магазинчик</li>
+    <li>shoptype-&gt;Торговая лавка</li>
+    <li>shoptype-&gt;Лавочка</li>
+    <li>kin-&gt;сыновья</li>
+    <li>kin-&gt;дочери</li>
+    <li>kin-&gt;племянники</li>
+    <li>kin-&gt;компаньоны</li>
+    <li>kin-&gt;соседи</li>
+    <li>kin-&gt;братья</li>
+    <li>adjm-&gt;Маленький</li>
+    <li>adjm-&gt;Честный</li>
+    <li>adjm-&gt;Угловой</li>
+    <li>adjm-&gt;Удобный</li>
+    <li>adjm-&gt;Полный</li>
+    <li>adjm-&gt;Опрятный</li>
+    <li>adjm-&gt;Дружелюбный</li>
+    <li>adjm-&gt;Крепкий</li>
+    <li>adjm-&gt;Открытый</li>
+    <li>adjm-&gt;Бойкий</li>
+    <li>adjm-&gt;Гранитный</li>
+    <li>adjm-&gt;Мраморный</li>
+    <li>adjm-&gt;Стальной</li>
+    <li>adjm-&gt;Дубовый</li>
+    <li>adjf-&gt;Маленькая</li>
+    <li>adjf-&gt;Честная</li>
+    <li>adjf-&gt;Угловая</li>
+    <li>adjf-&gt;Удобная</li>
+    <li>adjf-&gt;Полная</li>
+    <li>adjf-&gt;Опрятная</li>
+    <li>adjf-&gt;Дружелюбная</li>
+    <li>adjf-&gt;Крепкая</li>
+    <li>adjf-&gt;Открытая</li>
+    <li>adjf-&gt;Бойкая</li>
+    <li>adjf-&gt;Гранитная</li>
+    <li>adjf-&gt;Мраморная</li>
+    <li>adjf-&gt;Стальная</li>
+    <li>adjf-&gt;Дубовая</li>
+    <li>adjn-&gt;Маленькое</li>
+    <li>adjn-&gt;Честное</li>
+    <li>adjn-&gt;Угловое</li>
+    <li>adjn-&gt;Удобное</li>
+    <li>adjn-&gt;Полное</li>
+    <li>adjn-&gt;Опрятное</li>
+    <li>adjn-&gt;Дружелюбное</li>
+    <li>adjn-&gt;Крепкое</li>
+    <li>adjn-&gt;Открытое</li>
+    <li>adjn-&gt;Бойкое</li>
+    <li>adjn-&gt;Гранитное</li>
+    <li>adjn-&gt;Дубовое</li>
+    <li>placem-&gt;погребок</li>
+    <li>placem-&gt;ларёк</li>
+    <li>placem-&gt;прилавок</li>
+    <li>placem-&gt;ящик</li>
+    <li>placem-&gt;короб</li>
+    <li>placem-&gt;амбар</li>
+    <li>placem-&gt;склад</li>
+    <li>placef-&gt;кладовая</li>
+    <li>placef-&gt;кладовка</li>
+    <li>placef-&gt;корзина</li>
+    <li>placef-&gt;полка</li>
+    <li>placef-&gt;телега</li>
+    <li>placef-&gt;палатка</li>
+    <li>placen-&gt;лукошко</li>
+    <li>placen-&gt;окошко</li>
+    <li>placen-&gt;хранилище</li>
+    <li>beastg-&gt;муффало</li>
+    <li>beastg-&gt;трумбо</li>
+    <li>beastg-&gt;альпаки</li>
+    <li>beastg-&gt;яка</li>
+    <li>beastg-&gt;верблюда</li>
+    <li>beastg-&gt;марала</li>
+    <li>beastg-&gt;зайца</li>
+    <li>beastg-&gt;белки</li>
+    <li>beastg-&gt;черепахи</li>
+    <li>beastg-&gt;казуара</li>
+    <li>beastg-&gt;лисы</li>
+    <li>trinket-&gt;Пуговицы</li>
+    <li>trinket-&gt;Нитки</li>
+    <li>trinket-&gt;Свечи</li>
+    <li>trinket-&gt;Гвозди</li>
+    <li>trinket-&gt;Ленты</li>
+    <li>trinket-&gt;Мыло</li>
+    <li>trinket-&gt;Болты</li>
+    <li>trinket2-&gt;безделушки</li>
+    <li>trinket2-&gt;мелочи</li>
+    <li>trinket2-&gt;пустяки</li>
+    <li>trinket2-&gt;побрякушки</li>
+    <li>trinket2-&gt;диковинки</li>
+  </HH_VenueNames_Shop.rulePack.rulesStrings>
+  <HH_VenueNames_Restaurant.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[resttype] «Очаг и [utensil]»</li>
+    <li>r_name(p=3)-&gt;[resttype] «[adjm] [utensilm]»</li>
+    <li>r_name(p=3)-&gt;[resttype] «[adjf] [utensilf]»</li>
+    <li>r_name(p=2)-&gt;[resttype] «[adjn] [utensiln]»</li>
+    <li>r_name(p=2)-&gt;[resttype] «[stoneadj] стол»</li>
+    <li>r_name-&gt;[resttype] «У [beastg]»</li>
+    <li>r_name-&gt;[resttype] «[dish] и [dish2]»</li>
+    <li>r_name-&gt;[resttype] «Полный [vesselm]»</li>
+    <li>r_name-&gt;[resttype] «Полная [vesself]»</li>
+    <li>r_name-&gt;[resttype] «Полное [vesseln]»</li>
+    <li>r_name-&gt;[resttype] «[owner]»</li>
+    <li>resttype-&gt;Ресторан</li>
+    <li>resttype-&gt;Трапезная</li>
+    <li>resttype-&gt;Столовая</li>
+    <li>resttype-&gt;Харчевня</li>
+    <li>resttype-&gt;Закусочная</li>
+    <li>utensil-&gt;ложка</li>
+    <li>utensil-&gt;половник</li>
+    <li>utensil-&gt;сковорода</li>
+    <li>utensil-&gt;вилка</li>
+    <li>utensil-&gt;котелок</li>
+    <li>utensil-&gt;чайник</li>
+    <li>utensil-&gt;миска</li>
+    <li>utensil-&gt;печь</li>
+    <li>adjm-&gt;Медный</li>
+    <li>adjm-&gt;Голодный</li>
+    <li>adjm-&gt;Золотой</li>
+    <li>adjm-&gt;Дымящийся</li>
+    <li>adjm-&gt;Чугунный</li>
+    <li>adjm-&gt;Деревенский</li>
+    <li>adjm-&gt;Сытный</li>
+    <li>adjm-&gt;Тёплый</li>
+    <li>adjm-&gt;Румяный</li>
+    <li>adjf-&gt;Медная</li>
+    <li>adjf-&gt;Голодная</li>
+    <li>adjf-&gt;Золотая</li>
+    <li>adjf-&gt;Дымящаяся</li>
+    <li>adjf-&gt;Чугунная</li>
+    <li>adjf-&gt;Деревенская</li>
+    <li>adjf-&gt;Сытная</li>
+    <li>adjf-&gt;Тёплая</li>
+    <li>adjf-&gt;Румяная</li>
+    <li>adjn-&gt;Медное</li>
+    <li>adjn-&gt;Голодное</li>
+    <li>adjn-&gt;Золотое</li>
+    <li>adjn-&gt;Дымящееся</li>
+    <li>adjn-&gt;Чугунное</li>
+    <li>adjn-&gt;Деревенское</li>
+    <li>adjn-&gt;Сытное</li>
+    <li>adjn-&gt;Тёплое</li>
+    <li>utensilm-&gt;половник</li>
+    <li>utensilm-&gt;котелок</li>
+    <li>utensilm-&gt;чайник</li>
+    <li>utensilm-&gt;ухват</li>
+    <li>utensilm-&gt;ковш</li>
+    <li>utensilm-&gt;вертел</li>
+    <li>utensilf-&gt;ложка</li>
+    <li>utensilf-&gt;сковорода</li>
+    <li>utensilf-&gt;вилка</li>
+    <li>utensilf-&gt;печь</li>
+    <li>utensilf-&gt;миска</li>
+    <li>utensilf-&gt;кастрюля</li>
+    <li>utensilf-&gt;тарелка</li>
+    <li>utensiln-&gt;блюдо</li>
+    <li>utensiln-&gt;ведро</li>
+    <li>stoneadj-&gt;Гранитный</li>
+    <li>stoneadj-&gt;Мраморный</li>
+    <li>stoneadj-&gt;Сланцевый</li>
+    <li>stoneadj-&gt;Песчаниковый</li>
+    <li>stoneadj-&gt;Известняковый</li>
+    <li>stoneadj-&gt;Дубовый</li>
+    <li>beastg-&gt;муффало</li>
+    <li>beastg-&gt;бумалопы</li>
+    <li>beastg-&gt;яка</li>
+    <li>beastg-&gt;альпаки</li>
+    <li>beastg-&gt;марала</li>
+    <li>beastg-&gt;зайца</li>
+    <li>beastg-&gt;козла</li>
+    <li>beastg-&gt;капибары</li>
+    <li>dish-&gt;Соль</li>
+    <li>dish-&gt;Хлеб</li>
+    <li>dish-&gt;Рагу</li>
+    <li>dish-&gt;Угли</li>
+    <li>dish-&gt;Мёд</li>
+    <li>dish-&gt;Перец</li>
+    <li>dish-&gt;Дым</li>
+    <li>dish2-&gt;тимьян</li>
+    <li>dish2-&gt;масло</li>
+    <li>dish2-&gt;ячмень</li>
+    <li>dish2-&gt;клевер</li>
+    <li>dish2-&gt;зола</li>
+    <li>dish2-&gt;рис</li>
+    <li>dish2-&gt;ягоды</li>
+    <li>vesselm-&gt;котелок</li>
+    <li>vesselm-&gt;горшок</li>
+    <li>vesselm-&gt;живот</li>
+    <li>vesself-&gt;миска</li>
+    <li>vesself-&gt;тарелка</li>
+    <li>vesself-&gt;кладовая</li>
+    <li>vesself-&gt;чаша</li>
+    <li>vesseln-&gt;брюхо</li>
+    <li>vesseln-&gt;блюдо</li>
+  </HH_VenueNames_Restaurant.rulePack.rulesStrings>
+  <HH_VenueNames_Casino.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[castype] «[adjm] [beastm]»</li>
+    <li>r_name(p=3)-&gt;[castype] «[adjf] [beastf]»</li>
+    <li>r_name(p=2)-&gt;[castype] «[adjm] [gamem]»</li>
+    <li>r_name(p=2)-&gt;[castype] «[adjf] [gamef]»</li>
+    <li>r_name(p=2)-&gt;[castype] «[adjn] [gamen]»</li>
+    <li>r_name-&gt;[castype] «[number] [thing]»</li>
+    <li>r_name-&gt;[castype] «Фортуна [owner]»</li>
+    <li>r_name-&gt;[castype] «Дом [thing]»</li>
+    <li>r_name-&gt;[castype] «Ставка на [beastacc]»</li>
+    <li>castype-&gt;Казино</li>
+    <li>castype-&gt;Игорный дом</li>
+    <li>castype-&gt;Клуб</li>
+    <li>adjm-&gt;Золотой</li>
+    <li>adjm-&gt;Бархатный</li>
+    <li>adjm-&gt;Серебряный</li>
+    <li>adjm-&gt;Позолоченный</li>
+    <li>adjm-&gt;Багровый</li>
+    <li>adjm-&gt;Полуночный</li>
+    <li>adjm-&gt;Неоновый</li>
+    <li>adjm-&gt;Счастливый</li>
+    <li>adjm-&gt;Нефритовый</li>
+    <li>adjm-&gt;Изумрудный</li>
+    <li>adjm-&gt;Звёздный</li>
+    <li>adjm-&gt;Сверкающий</li>
+    <li>adjf-&gt;Золотая</li>
+    <li>adjf-&gt;Бархатная</li>
+    <li>adjf-&gt;Серебряная</li>
+    <li>adjf-&gt;Позолоченная</li>
+    <li>adjf-&gt;Багровая</li>
+    <li>adjf-&gt;Полуночная</li>
+    <li>adjf-&gt;Неоновая</li>
+    <li>adjf-&gt;Счастливая</li>
+    <li>adjf-&gt;Нефритовая</li>
+    <li>adjf-&gt;Изумрудная</li>
+    <li>adjf-&gt;Звёздная</li>
+    <li>adjf-&gt;Сверкающая</li>
+    <li>adjn-&gt;Золотое</li>
+    <li>adjn-&gt;Бархатное</li>
+    <li>adjn-&gt;Серебряное</li>
+    <li>adjn-&gt;Позолоченное</li>
+    <li>adjn-&gt;Багровое</li>
+    <li>adjn-&gt;Полуночное</li>
+    <li>adjn-&gt;Неоновое</li>
+    <li>adjn-&gt;Счастливое</li>
+    <li>adjn-&gt;Нефритовое</li>
+    <li>adjn-&gt;Звёздное</li>
+    <li>beastm-&gt;трумбо</li>
+    <li>beastm-&gt;муффало</li>
+    <li>beastm-&gt;казуар</li>
+    <li>beastm-&gt;ленивец</li>
+    <li>beastm-&gt;варг</li>
+    <li>beastm-&gt;як</li>
+    <li>beastf-&gt;бумалопа</li>
+    <li>beastf-&gt;лиса</li>
+    <li>beastf-&gt;альпака</li>
+    <li>beastf-&gt;капибара</li>
+    <li>beastf-&gt;сова</li>
+    <li>beastf-&gt;черепаха</li>
+    <li>gamem-&gt;кубик</li>
+    <li>gamem-&gt;джекпот</li>
+    <li>gamem-&gt;туз</li>
+    <li>gamem-&gt;джокер</li>
+    <li>gamem-&gt;клевер</li>
+    <li>gamem-&gt;жребий</li>
+    <li>gamef-&gt;рулетка</li>
+    <li>gamef-&gt;карта</li>
+    <li>gamef-&gt;дама</li>
+    <li>gamef-&gt;удача</li>
+    <li>gamef-&gt;ставка</li>
+    <li>gamef-&gt;фишка</li>
+    <li>gamen-&gt;колесо</li>
+    <li>gamen-&gt;лото</li>
+    <li>number-&gt;Семь</li>
+    <li>number-&gt;Двенадцать</li>
+    <li>number-&gt;Тринадцать</li>
+    <li>number-&gt;Девять</li>
+    <li>thing-&gt;фонарей</li>
+    <li>thing-&gt;монет</li>
+    <li>thing-&gt;фишек</li>
+    <li>thing-&gt;звёзд</li>
+    <li>thing-&gt;корон</li>
+    <li>thing-&gt;тузов</li>
+    <li>thing-&gt;клеверов</li>
+    <li>beastacc-&gt;муффало</li>
+    <li>beastacc-&gt;трумбо</li>
+    <li>beastacc-&gt;альпаку</li>
+    <li>beastacc-&gt;яка</li>
+    <li>beastacc-&gt;лису</li>
+    <li>beastacc-&gt;черепаху</li>
+    <li>beastacc-&gt;газель</li>
+    <li>beastacc-&gt;казуара</li>
+    <li>beastacc-&gt;верблюда</li>
+  </HH_VenueNames_Casino.rulePack.rulesStrings>
+  <HH_VenueNames_Spa.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[spatype] «[water] и [stone]»</li>
+    <li>r_name(p=2)-&gt;[spatype] «[adjm] [poolm]»</li>
+    <li>r_name(p=2)-&gt;[spatype] «[adjf] [poolf]»</li>
+    <li>r_name(p=2)-&gt;[spatype] «[adjn] [pooln]»</li>
+    <li>r_name(p=2)-&gt;Банька «У [placeg]»</li>
+    <li>r_name-&gt;Термы «[owner]»</li>
+    <li>r_name-&gt;[spatype] «[poolwarm]»</li>
+    <li>spatype-&gt;Баня</li>
+    <li>spatype-&gt;Термы</li>
+    <li>spatype-&gt;Спа</li>
+    <li>spatype-&gt;Купальни</li>
+    <li>water-&gt;Пар</li>
+    <li>water-&gt;Туман</li>
+    <li>water-&gt;Дождь</li>
+    <li>water-&gt;Родник</li>
+    <li>water-&gt;Роса</li>
+    <li>water-&gt;Прилив</li>
+    <li>water-&gt;Снег</li>
+    <li>stone-&gt;камень</li>
+    <li>stone-&gt;кедр</li>
+    <li>stone-&gt;мох</li>
+    <li>stone-&gt;галька</li>
+    <li>stone-&gt;сосна</li>
+    <li>stone-&gt;соль</li>
+    <li>stone-&gt;глина</li>
+    <li>adjm-&gt;Тихий</li>
+    <li>adjm-&gt;Тёплый</li>
+    <li>adjm-&gt;Нежный</li>
+    <li>adjm-&gt;Серебряный</li>
+    <li>adjm-&gt;Скрытый</li>
+    <li>adjm-&gt;Мягкий</li>
+    <li>adjm-&gt;Спокойный</li>
+    <li>adjm-&gt;Горячий</li>
+    <li>adjm-&gt;Ленивый</li>
+    <li>adjf-&gt;Тихая</li>
+    <li>adjf-&gt;Тёплая</li>
+    <li>adjf-&gt;Нежная</li>
+    <li>adjf-&gt;Серебряная</li>
+    <li>adjf-&gt;Скрытая</li>
+    <li>adjf-&gt;Мягкая</li>
+    <li>adjf-&gt;Спокойная</li>
+    <li>adjf-&gt;Горячая</li>
+    <li>adjf-&gt;Ленивая</li>
+    <li>adjn-&gt;Тихое</li>
+    <li>adjn-&gt;Тёплое</li>
+    <li>adjn-&gt;Нежное</li>
+    <li>adjn-&gt;Серебряное</li>
+    <li>adjn-&gt;Скрытое</li>
+    <li>adjn-&gt;Мягкое</li>
+    <li>adjn-&gt;Спокойное</li>
+    <li>adjn-&gt;Горячее</li>
+    <li>adjn-&gt;Ленивое</li>
+    <li>poolm-&gt;пруд</li>
+    <li>poolm-&gt;колодец</li>
+    <li>poolm-&gt;бассейн</li>
+    <li>poolm-&gt;омут</li>
+    <li>poolm-&gt;источник</li>
+    <li>poolf-&gt;купель</li>
+    <li>poolf-&gt;лагуна</li>
+    <li>poolf-&gt;заводь</li>
+    <li>poolf-&gt;бухта</li>
+    <li>pooln-&gt;озерцо</li>
+    <li>pooln-&gt;болотце</li>
+    <li>placeg-&gt;реки</li>
+    <li>placeg-&gt;холма</li>
+    <li>placeg-&gt;ивы</li>
+    <li>placeg-&gt;берёзы</li>
+    <li>placeg-&gt;фонаря</li>
+    <li>placeg-&gt;гавани</li>
+    <li>placeg-&gt;долины</li>
+    <li>poolwarm-&gt;Тёплые источники</li>
+    <li>poolwarm-&gt;Тёплые купели</li>
+    <li>poolwarm-&gt;Горячие ключи</li>
+    <li>poolwarm-&gt;Тихие заводи</li>
+    <li>poolwarm-&gt;Тёплые озёра</li>
+    <li>poolwarm-&gt;Скрытые гроты</li>
+  </HH_VenueNames_Spa.rulePack.rulesStrings>
+  <HH_VenueNames_Lounge.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[loungetype] «[adjm] [roomm]»</li>
+    <li>r_name(p=3)-&gt;[loungetype] «[adjf] [roomf]»</li>
+    <li>r_name(p=3)-&gt;[loungetype] «[adjn] [roomn]»</li>
+    <li>r_name(p=2)-&gt;[loungetype] «[waiting]»</li>
+    <li>r_name-&gt;[loungetype] «[owner]»</li>
+    <li>r_name-&gt;[loungetype] «Уголок [thingg]»</li>
+    <li>loungetype-&gt;Лаунж</li>
+    <li>loungetype-&gt;Салон</li>
+    <li>loungetype-&gt;Чайная</li>
+    <li>loungetype-&gt;Зал отдыха</li>
+    <li>adjm-&gt;Тихий</li>
+    <li>adjm-&gt;Уютный</li>
+    <li>adjm-&gt;Удобный</li>
+    <li>adjm-&gt;Сонный</li>
+    <li>adjm-&gt;Терпеливый</li>
+    <li>adjm-&gt;Мягкий</li>
+    <li>adjm-&gt;Солнечный</li>
+    <li>adjm-&gt;Тёплый</li>
+    <li>adjf-&gt;Тихая</li>
+    <li>adjf-&gt;Уютная</li>
+    <li>adjf-&gt;Удобная</li>
+    <li>adjf-&gt;Сонная</li>
+    <li>adjf-&gt;Терпеливая</li>
+    <li>adjf-&gt;Мягкая</li>
+    <li>adjf-&gt;Солнечная</li>
+    <li>adjf-&gt;Тёплая</li>
+    <li>adjn-&gt;Тихое</li>
+    <li>adjn-&gt;Уютное</li>
+    <li>adjn-&gt;Удобное</li>
+    <li>adjn-&gt;Сонное</li>
+    <li>adjn-&gt;Терпеливое</li>
+    <li>adjn-&gt;Мягкое</li>
+    <li>adjn-&gt;Солнечное</li>
+    <li>adjn-&gt;Тёплое</li>
+    <li>roomm-&gt;уголок</li>
+    <li>roomm-&gt;закуток</li>
+    <li>roomm-&gt;приют</li>
+    <li>roomm-&gt;зал</li>
+    <li>roomf-&gt;гостиная</li>
+    <li>roomf-&gt;горница</li>
+    <li>roomf-&gt;каморка</li>
+    <li>roomf-&gt;беседка</li>
+    <li>roomn-&gt;гнёздышко</li>
+    <li>roomn-&gt;убежище</li>
+    <li>roomn-&gt;кресло</li>
+    <li>waiting-&gt;Скамья ожидания</li>
+    <li>waiting-&gt;Кресло ожидания</li>
+    <li>waiting-&gt;Лампа ожидания</li>
+    <li>waiting-&gt;Часы ожидания</li>
+    <li>thingg-&gt;скамьи</li>
+    <li>thingg-&gt;лампы</li>
+    <li>thingg-&gt;чайника</li>
+    <li>thingg-&gt;часов</li>
+    <li>thingg-&gt;подушки</li>
+    <li>thingg-&gt;камина</li>
+  </HH_VenueNames_Lounge.rulePack.rulesStrings>
+  <HH_VenueNames_Chapel.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;Часовня «[adjm] [lightm]»</li>
+    <li>r_name(p=3)-&gt;Часовня «[adjf] [lightf]»</li>
+    <li>r_name(p=3)-&gt;Часовня «[adjn] [lightn]»</li>
+    <li>r_name(p=2)-&gt;Приют «[adjf] гавань»</li>
+    <li>r_name-&gt;Часовня [placeg]</li>
+    <li>r_name-&gt;Дом [virtueg]</li>
+    <li>adjm-&gt;Тихий</li>
+    <li>adjm-&gt;Нежный</li>
+    <li>adjm-&gt;Утренний</li>
+    <li>adjm-&gt;Вечерний</li>
+    <li>adjm-&gt;Терпеливый</li>
+    <li>adjm-&gt;Кроткий</li>
+    <li>adjm-&gt;Добрый</li>
+    <li>adjm-&gt;Смиренный</li>
+    <li>adjf-&gt;Тихая</li>
+    <li>adjf-&gt;Нежная</li>
+    <li>adjf-&gt;Утренняя</li>
+    <li>adjf-&gt;Вечерняя</li>
+    <li>adjf-&gt;Терпеливая</li>
+    <li>adjf-&gt;Кроткая</li>
+    <li>adjf-&gt;Добрая</li>
+    <li>adjf-&gt;Смиренная</li>
+    <li>adjn-&gt;Тихое</li>
+    <li>adjn-&gt;Нежное</li>
+    <li>adjn-&gt;Утреннее</li>
+    <li>adjn-&gt;Вечернее</li>
+    <li>adjn-&gt;Терпеливое</li>
+    <li>adjn-&gt;Кроткое</li>
+    <li>adjn-&gt;Доброе</li>
+    <li>adjn-&gt;Смиренное</li>
+    <li>lightm-&gt;свет</li>
+    <li>lightm-&gt;огонь</li>
+    <li>lightm-&gt;очаг</li>
+    <li>lightm-&gt;факел</li>
+    <li>lightf-&gt;свеча</li>
+    <li>lightf-&gt;лампада</li>
+    <li>lightf-&gt;заря</li>
+    <li>lightf-&gt;звезда</li>
+    <li>lightn-&gt;пламя</li>
+    <li>lightn-&gt;сияние</li>
+    <li>placeg-&gt;странника</li>
+    <li>placeg-&gt;путника</li>
+    <li>placeg-&gt;паломника</li>
+    <li>placeg-&gt;холма</li>
+    <li>placeg-&gt;ивы</li>
+    <li>placeg-&gt;фонаря</li>
+    <li>virtueg-&gt;мира</li>
+    <li>virtueg-&gt;гостеприимства</li>
+    <li>virtueg-&gt;покоя</li>
+    <li>virtueg-&gt;милосердия</li>
+    <li>virtueg-&gt;надежды</li>
+    <li>virtueg-&gt;доброты</li>
+  </HH_VenueNames_Chapel.rulePack.rulesStrings>
+</LanguageData>

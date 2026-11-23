@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueNames_Cinema.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;Cinéma [lightg]</li>
+    <li>r_name(p=3)-&gt;La Bobine [adjf]</li>
+    <li>r_name(p=2)-&gt;L'Écran [lightg]</li>
+    <li>r_name-&gt;Ciné [owner]</li>
+    <li>r_name-&gt;Le Projecteur [adjm]</li>
+    <li>lightg-&gt;de la Lanterne</li>
+    <li>lightg-&gt;des Étoiles</li>
+    <li>lightg-&gt;de la Lune</li>
+    <li>lightg-&gt;des Lucioles</li>
+    <li>lightg-&gt;du Crépuscule</li>
+    <li>lightg-&gt;de la Braise</li>
+    <li>lightg-&gt;de l'Aurore</li>
+    <li>lightg-&gt;du Ver Luisant</li>
+    <li>adjf-&gt;Argentée</li>
+    <li>adjf-&gt;Vacillante</li>
+    <li>adjf-&gt;Dorée</li>
+    <li>adjf-&gt;Veloutée</li>
+    <li>adjf-&gt;de Minuit</li>
+    <li>adjf-&gt;Grande</li>
+    <li>adjf-&gt;Petite</li>
+    <li>adjf-&gt;Muette</li>
+    <li>adjm-&gt;Argenté</li>
+    <li>adjm-&gt;Vacillant</li>
+    <li>adjm-&gt;Doré</li>
+    <li>adjm-&gt;Velouté</li>
+    <li>adjm-&gt;de Minuit</li>
+    <li>adjm-&gt;Grand</li>
+    <li>adjm-&gt;Petit</li>
+    <li>adjm-&gt;Muet</li>
+  </HH_VenueNames_Cinema.rulePack.rulesStrings>
+  <HH_VenueNames_Salon.rulePack.rulesStrings>
+    <li>r_name(p=2)-&gt;Le [toolm] [adjm]</li>
+    <li>r_name(p=2)-&gt;La [toolf] [adjf]</li>
+    <li>r_name(p=2)-&gt;Les Ciseaux [adjpl]</li>
+    <li>r_name-&gt;Coup de Ciseaux</li>
+    <li>r_name-&gt;Mèche Rebelle</li>
+    <li>r_name-&gt;Coiffure [owner]</li>
+    <li>r_name-&gt;[style] &amp; [style2]</li>
+    <li>r_name-&gt;Ciseaux &amp; [style2]</li>
+    <li>adjm-&gt;Aiguisé</li>
+    <li>adjm-&gt;Argenté</li>
+    <li>adjm-&gt;Doré</li>
+    <li>adjm-&gt;Soigné</li>
+    <li>adjm-&gt;Élégant</li>
+    <li>adjm-&gt;Velouté</li>
+    <li>adjm-&gt;Net</li>
+    <li>adjm-&gt;Brillant</li>
+    <li>adjf-&gt;Aiguisée</li>
+    <li>adjf-&gt;Argentée</li>
+    <li>adjf-&gt;Dorée</li>
+    <li>adjf-&gt;Soignée</li>
+    <li>adjf-&gt;Élégante</li>
+    <li>adjf-&gt;Veloutée</li>
+    <li>adjf-&gt;Nette</li>
+    <li>adjf-&gt;Brillante</li>
+    <li>adjpl-&gt;Argentés</li>
+    <li>adjpl-&gt;Dorés</li>
+    <li>adjpl-&gt;Aiguisés</li>
+    <li>adjpl-&gt;Vifs</li>
+    <li>adjpl-&gt;Élégants</li>
+    <li>toolm-&gt;Peigne</li>
+    <li>toolm-&gt;Miroir</li>
+    <li>toolm-&gt;Rasoir</li>
+    <li>toolm-&gt;Pinceau</li>
+    <li>toolf-&gt;Brosse</li>
+    <li>toolf-&gt;Boucle</li>
+    <li>toolf-&gt;Mèche</li>
+    <li>toolf-&gt;Pince</li>
+    <li>style-&gt;Boucles</li>
+    <li>style-&gt;Tresses</li>
+    <li>style-&gt;Ondulations</li>
+    <li>style-&gt;Franges</li>
+    <li>style2-&gt;Éclat</li>
+    <li>style2-&gt;Rubans</li>
+    <li>style2-&gt;Mèches</li>
+    <li>style2-&gt;Pointes</li>
+    <li>style2-&gt;Reflets</li>
+  </HH_VenueNames_Salon.rulePack.rulesStrings>
+  <HH_VenueNames_Gallery.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;Galerie des Merveilles [adjpl]</li>
+    <li>r_name(p=3)-&gt;Le Cadre [adjm]</li>
+    <li>r_name-&gt;Collection [owner]</li>
+    <li>r_name-&gt;Salle [lightg]</li>
+    <li>r_name-&gt;Maison [artg]</li>
+    <li>adjpl-&gt;Discrètes</li>
+    <li>adjpl-&gt;Tranquilles</li>
+    <li>adjpl-&gt;Curieuses</li>
+    <li>adjpl-&gt;Cachées</li>
+    <li>adjpl-&gt;Lumineuses</li>
+    <li>adjpl-&gt;Errantes</li>
+    <li>adjpl-&gt;Douces</li>
+    <li>adjm-&gt;Doré</li>
+    <li>adjm-&gt;Argenté</li>
+    <li>adjm-&gt;de Marbre</li>
+    <li>adjm-&gt;Bancal</li>
+    <li>adjm-&gt;d'Or</li>
+    <li>adjm-&gt;de Chêne</li>
+    <li>adjm-&gt;de Jade</li>
+    <li>lightg-&gt;de la Lanterne</li>
+    <li>lightg-&gt;de la Verrière</li>
+    <li>lightg-&gt;du Matin</li>
+    <li>lightg-&gt;du Rayon de Soleil</li>
+    <li>lightg-&gt;de la Bougie</li>
+    <li>artg-&gt;des Statues</li>
+    <li>artg-&gt;du Marbre</li>
+    <li>artg-&gt;des Formes</li>
+    <li>artg-&gt;des Échos</li>
+    <li>artg-&gt;des Visages</li>
+    <li>artg-&gt;des Histoires</li>
+  </HH_VenueNames_Gallery.rulePack.rulesStrings>
+</LanguageData>
