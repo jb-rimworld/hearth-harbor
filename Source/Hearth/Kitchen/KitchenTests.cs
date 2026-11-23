@@ -181,7 +181,7 @@ namespace Hearth.Kitchen.Tests
             t.Check(DefDatabase<HediffDef>.GetNamedSilentFail("HH_WellFed") != null, "Well fed hediff");
 
             // settings and keyed texts
-            foreach (var k in new[] { "kitchen.shelfLife", "kitchen.wellFedStrength", "kitchen.wellFedDuration", "kitchen.menuPrice", "kitchen.poisonRule", "kitchen.variants", "kitchen.allKnown", "kitchen.darkMenu" })
+            foreach (var k in new[] { "kitchen.shelfLife", "kitchen.wellFedStrength", "kitchen.wellFedDuration", "kitchen.menuPrice", "kitchen.poisonRule", "kitchen.variants", "kitchen.allKnown", "kitchen.darkMenu", "kitchen.cookSounds" })
             {
                 t.Check(HSettings.Find(k) != null, "setting " + k);
                 t.Check(("HH.Setting." + k).CanTranslate() && ("HH.Setting." + k + ".Desc").CanTranslate(), "setting text in Keyed: " + k);
@@ -269,7 +269,7 @@ namespace Hearth.Kitchen.Tests
             // freshness: label, stale, rot
             var p = KT.MakePlate(t.Map, d3, t.Map.Center + new IntVec3(-3, 0, 20), QualityCategory.Excellent);
             var comp = p.TryGetComp<CompDish>();
-            t.Check(p.LabelNoCount.StartsWith("Muffalo bourguignon") && p.LabelNoCount.Contains("excellent"), "label shows the dish and the quality: " + p.LabelNoCount);
+            t.Check(p.LabelNoCount.StartsWith("Colony bourguignon") && p.LabelNoCount.Contains("excellent"), "label shows the dish and the quality: " + p.LabelNoCount);
             t.Check(p.DescriptionDetailed.Contains(d3.description) || p.DescriptionFlavor.Contains(d3.description) || (comp.GetDescriptionPart() ?? "").Contains(d3.description), "description part carries the dish text");
             t.Check(!comp.IsStale && comp.FreshTicksLeft > 15 * 2500 && comp.FreshTicksLeft <= 16 * 2500, "fresh for 16 h: " + comp.FreshTicksLeft / 2500f);
             HSettings.Set("kitchen.shelfLife", 0.5f); t.Check(Math.Abs(comp.ShelfTicks - 8 * 2500) < 5, "shelf life setting halves it"); HSettings.Set("kitchen.shelfLife", 1f);
@@ -781,7 +781,7 @@ namespace Hearth.Kitchen.Tests
             var cc = copy?.TryGetComp<CompDish>();
             t.Check(cc != null && cc.dish == dish && cc.variant == 1 && Math.Abs(cc.freshAge - 12345f) < 1f, "dish, form and freshness survive");
             t.Check(copy != null && copy.TryGetQuality(out var q) && q == QualityCategory.Excellent && copy.HitPoints == 33, "quality and hit points survive");
-            t.Check(copy != null && copy.LabelNoCount.StartsWith("Muffalo bourguignon"), "label after loading: " + copy?.LabelNoCount);
+            t.Check(copy != null && copy.LabelNoCount.StartsWith("Colony bourguignon"), "label after loading: " + copy?.LabelNoCount);
             plate.Destroy();
 
             // a work table with a dish bill

@@ -34,6 +34,7 @@ namespace Hearth.Kitchen
             if (!__result || __instance.modExtensions == null) return;
             var ext = DishRecipeExtension.Of(__instance);   // hash lookup, no list scan
             if (ext?.dish == null) return;
+            if (ext.retired) { __result = false; return; }   // a form the dish no longer has: only there so that old bills load
             if (!Modules.On(ModuleId.ShopsFood)) { __result = false; return; }   // our recipes only: a module that is off offers no dish
             if (ext.variant > 0 && !HSettings.GetBool("kitchen.variants")) { __result = false; return; }
             if (!DishKnowledge.IsKnown(ext.dish)) __result = false;
@@ -81,6 +82,7 @@ namespace Hearth.Kitchen
                 comp.SetDish(ext.dish, ext.variant);
                 DishEffects.RerollQuality(__result, worker, ext.variant);
                 DishEffects.PalateLift(__result, worker);
+                CookSounds.PlayDone(ext.variant, worker);
             });
         }
     }

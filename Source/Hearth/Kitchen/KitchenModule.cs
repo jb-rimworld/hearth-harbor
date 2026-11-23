@@ -26,6 +26,7 @@ namespace Hearth.Kitchen
             HSettings.Bool(m, Cat, "kitchen.poisonRule", true, "No food poisoning from a good kitchen", "Plates cooked by a cook with Cooking 4 or more in a clean kitchen (cleanliness -0.2 or better) can never poison. Off: vanilla rolls apply.");
             HSettings.Bool(m, Cat, "kitchen.variants", true, "Fine and Signature forms", "Offer each dish in a Fine form (more and better ingredients, a better chance for good quality) and a Signature form (research needed).");
             HSettings.Bool(m, Cat, "kitchen.allKnown", false, "All dishes known", "Skip learning: every dish of the menu can be cooked as soon as its devices stand.");
+            HSettings.Bool(m, Cat, CookSounds.SettingKey, true, "Cooking and eating sounds", "Every kind of cooking (chopping, simmering, grilling, baking, frying, steaming, kneading, smoking, chilling) has its own sound and little effect, finished fine dishes ring a cue and good plates get a happy reaction. Off: the vanilla pan-frying sound for everything.");
             HSettings.Bool(m, Cat, "kitchen.darkMenu", false, "Dark menu (long pork)", "Allow the long pork dishes. Always needs content intensity Dark or Grim; with that, an ideoligion that approves of cannibalism unlocks them even when this is off.");
         }
 
@@ -39,12 +40,12 @@ namespace Hearth.Kitchen
             HLog.Info(Cat, $"Kitchen ready: {DefDatabase<DishDef>.DefCount} dishes, {RecipeBuilder.Built} recipes");
         }
 
-        public override void OnGameStarted() { Guard.Run(Id, "Kitchen.FreeResearch", DishKnowledge.EnsureFreeResearch); }
-        public override void OnGameLoaded() { Guard.Run(Id, "Kitchen.FreeResearch", DishKnowledge.EnsureFreeResearch); Stations.ClearCache(); Restaurant.ClearCache(); }
+        public override void OnGameStarted() { Guard.Run(Id, "Kitchen.FreeResearch", DishKnowledge.EnsureFreeResearch); Guard.Run(Id, "Kitchen.CookSounds", () => { CookSounds.Reset(); CookSounds.Sync(); }); }
+        public override void OnGameLoaded() { Guard.Run(Id, "Kitchen.FreeResearch", DishKnowledge.EnsureFreeResearch); Stations.ClearCache(); Restaurant.ClearCache(); Guard.Run(Id, "Kitchen.CookSounds", () => { CookSounds.Reset(); CookSounds.Sync(); }); }
 
         public override void GameTick(int ticksGame)
         {
-            if (ticksGame % 250 == 0) Restaurant.Expire(ticksGame);
+            if (ticksGame % 250 == 0) { Restaurant.Expire(ticksGame); CookSounds.Sync(); }
         }
 
         public override void PrepareRemoval(List<string> report)

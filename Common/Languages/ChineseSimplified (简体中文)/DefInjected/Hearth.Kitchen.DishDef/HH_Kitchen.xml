@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <HH_Dish_CampfireStew.label>篝火野牛炖菜</HH_Dish_CampfireStew.label>
-  <HH_Dish_CampfireStew.description>所有东西都扔进了锅里，连关于这些东西到底意味着什么的争论也一起扔了进去。</HH_Dish_CampfireStew.description>
   <HH_Dish_PotatoSoup.label>土豆汤</HH_Dish_PotatoSoup.label>
   <HH_Dish_PotatoSoup.description>尝起来像家的味道，前提是家里是泥土地面，而且没有什么期望。</HH_Dish_PotatoSoup.description>
   <HH_Dish_SpitRoastedHaunch.label>烤串后腿肉</HH_Dish_SpitRoastedHaunch.label>
@@ -50,12 +48,8 @@
   <HH_Dish_InsectTacos.description>三个玉米饼，零疑问，还有一份非常好的酱。</HH_Dish_InsectTacos.description>
   <HH_Dish_FishAndChips.label>炸鱼薯条</HH_Dish_FishAndChips.label>
   <HH_Dish_FishAndChips.description>为了好运炸两次，为了泄愤又炸一次。</HH_Dish_FishAndChips.description>
-  <HH_Dish_MuffaloRamen.label>水牛拉面</HH_Dish_MuffaloRamen.label>
-  <HH_Dish_MuffaloRamen.description>大声吸溜。抢最后一碗的时候，吸得更大声。</HH_Dish_MuffaloRamen.description>
   <HH_Dish_EggFriedRice.label>蛋炒饭</HH_Dish_EggFriedRice.label>
   <HH_Dish_EggFriedRice.description>昨天的米饭，今天的难题，明天的午饭。</HH_Dish_EggFriedRice.description>
-  <HH_Dish_PadThrumbo.label>炒雷姆博粉</HH_Dish_PadThrumbo.label>
-  <HH_Dish_PadThrumbo.description>酸甜交织的面条配上脆口配料，大火下锅翻炒，直到它乖乖听话。</HH_Dish_PadThrumbo.description>
   <HH_Dish_ChiliConCarne.label>辣肉酱豆</HH_Dish_ChiliConCarne.label>
   <HH_Dish_ChiliConCarne.description>辣到能烧灼伤口。不要当药用。但可以当药用。</HH_Dish_ChiliConCarne.description>
   <HH_Dish_JollofRice.label>约洛夫饭</HH_Dish_JollofRice.label>
@@ -78,8 +72,6 @@
   <HH_Dish_ChocolatePudding.description>让突袭恰好推迟一份甜点时间的元凶。</HH_Dish_ChocolatePudding.description>
   <HH_Dish_Ceviche.label>酸橘汁鱼生</HH_Dish_Ceviche.label>
   <HH_Dish_Ceviche.description>完全靠酸味“煮熟”的鱼，殖民地的运转大抵也是如此。</HH_Dish_Ceviche.description>
-  <HH_Dish_MuffaloGoulash.label>水牛匈牙利炖肉</HH_Dish_MuffaloGoulash.label>
-  <HH_Dish_MuffaloGoulash.description>红亮浓稠，正式名称是非正式的全民争论。</HH_Dish_MuffaloGoulash.description>
   <HH_Dish_EggFlan.label>鸡蛋布丁</HH_Dish_EggFlan.label>
   <HH_Dish_EggFlan.description>颤巍巍的，像一个刚结束漫长轮班的殖民者。</HH_Dish_EggFlan.description>
   <HH_Dish_BeerBatteredInsects.label>啤酒面糊炸虫</HH_Dish_BeerBatteredInsects.label>
@@ -104,22 +96,14 @@
   <HH_Dish_BloodBroth.description>浓郁深色的高汤，适合口渴的人，也适合讲究礼节的人。</HH_Dish_BloodBroth.description>
   <HH_Dish_HemogenBlackPudding.label>血原素黑布丁</HH_Dish_HemogenBlackPudding.label>
   <HH_Dish_HemogenBlackPudding.description>煎到它不再盯着你看为止。</HH_Dish_HemogenBlackPudding.description>
-  <HH_Dish_MuffaloBourguignon.label>水牛勃艮第炖牛肉</HH_Dish_MuffaloBourguignon.label>
-  <HH_Dish_MuffaloBourguignon.description>用啤酒慢炖，因为葡萄酒在第二天就喝完了。</HH_Dish_MuffaloBourguignon.description>
   <HH_Dish_ColonyPaella.label>殖民地海鲜饭</HH_Dish_ColonyPaella.label>
   <HH_Dish_ColonyPaella.description>储藏室里有什么就用什么，摆得极其体面。</HH_Dish_ColonyPaella.description>
   <HH_Dish_NigiriPlatter.label>握寿司拼盘</HH_Dish_NigiriPlatter.label>
   <HH_Dish_NigiriPlatter.description>米饭与鱼片，由本该上前线的人捏成形状。</HH_Dish_NigiriPlatter.description>
-  <HH_Dish_ThrumboPho.label>雷姆博河粉</HH_Dish_ThrumboPho.label>
-  <HH_Dish_ThrumboPho.description>清澈的汤底，背后是一长串待办事项。</HH_Dish_ThrumboPho.description>
   <HH_Dish_Biryani.label>比尔亚尼</HH_Dish_Biryani.label>
   <HH_Dish_Biryani.description>米饭、肉与外交层层叠放，再用锅盖封好。</HH_Dish_Biryani.description>
-  <HH_Dish_DromedaryTagine.label>单峰驼塔吉锅</HH_Dish_DromedaryTagine.label>
-  <HH_Dish_DromedaryTagine.description>在陶制锥形锅里慢炖，大多数人大概也希望被这样对待。</HH_Dish_DromedaryTagine.description>
   <HH_Dish_MushroomMoussaka.label>蘑菇焗茄子</HH_Dish_MushroomMoussaka.label>
   <HH_Dish_MushroomMoussaka.description>足足七层，而且每一层都有自己的主意。</HH_Dish_MushroomMoussaka.description>
-  <HH_Dish_LacqueredThrumbo.label>漆烤雷姆博</HH_Dish_LacqueredThrumbo.label>
-  <HH_Dish_LacqueredThrumbo.description>上釉烤到发亮，比殖民地的银行账户还亮。</HH_Dish_LacqueredThrumbo.description>
   <HH_Dish_TomYumSoup.label>冬阴功汤</HH_Dish_TomYumSoup.label>
   <HH_Dish_TomYumSoup.description>酸、辣、鲜，能把你的鼻窦通透，也能把你的债务一并清掉。</HH_Dish_TomYumSoup.description>
   <HH_Dish_Laksa.label>叻沙</HH_Dish_Laksa.label>
@@ -138,14 +122,8 @@
   <HH_Dish_Churros.description>炸面团配巧克力酱，毫无悔意。</HH_Dish_Churros.description>
   <HH_Dish_Bibimbap.label>拌饭</HH_Dish_Bibimbap.label>
   <HH_Dish_Bibimbap.description>把所有东西拌进同一个碗里，正如这个殖民地本身。</HH_Dish_Bibimbap.description>
-  <HH_Dish_MongolianMuffalo.label>蒙古水牛</HH_Dish_MongolianMuffalo.label>
-  <HH_Dish_MongolianMuffalo.description>铁板快炒，甜、黏，还有点太吵。</HH_Dish_MongolianMuffalo.description>
   <HH_Dish_ColdNoodleSalad.label>冷面沙拉</HH_Dish_ColdNoodleSalad.label>
   <HH_Dish_ColdNoodleSalad.description>冰得让面条都要投诉。</HH_Dish_ColdNoodleSalad.description>
-  <HH_Dish_MuffaloCarpaccio.label>水牛生牛肉片</HH_Dish_MuffaloCarpaccio.label>
-  <HH_Dish_MuffaloCarpaccio.description>切得薄到能透过它读菜单。</HH_Dish_MuffaloCarpaccio.description>
-  <HH_Dish_ThrumboTartare.label>雷姆博鞑靼</HH_Dish_ThrumboTartare.label>
-  <HH_Dish_ThrumboTartare.description>生食，凶猛而勇敢。请先签署免责声明。</HH_Dish_ThrumboTartare.description>
   <HH_Dish_DanDanNoodles.label>担担面</HH_Dish_DanDanNoodles.label>
   <HH_Dish_DanDanNoodles.description>这辣面条会提前警告你，但最后还是它赢。</HH_Dish_DanDanNoodles.description>
   <HH_Dish_GrilledLongPorkRibs.label>烤长猪排</HH_Dish_GrilledLongPorkRibs.label>
@@ -162,10 +140,6 @@
   <HH_Dish_RedSteakVeryRare.description>几乎还在咩咩叫。按血族食客的点法做熟。</HH_Dish_RedSteakVeryRare.description>
   <HH_Dish_TwistedMeatBao.label>扭曲肉包</HH_Dish_TwistedMeatBao.label>
   <HH_Dish_TwistedMeatBao.description>包子只微微抽动了一下。请不要告诉馅料。</HH_Dish_TwistedMeatBao.description>
-  <HH_Dish_MuffaloWellington.label>水牛威灵顿</HH_Dish_MuffaloWellington.label>
-  <HH_Dish_MuffaloWellington.description>裹在酥皮里，为一份宏大的自负提供一点小小的保温。</HH_Dish_MuffaloWellington.description>
-  <HH_Dish_BoomalopeConfit.label>爆羚油封</HH_Dish_BoomalopeConfit.label>
-  <HH_Dish_BoomalopeConfit.description>用它自身的油脂慢慢煨煮。别站在锅边。</HH_Dish_BoomalopeConfit.description>
   <HH_Dish_FishThermidor.label>泰米多奶油焗鱼</HH_Dish_FishThermidor.label>
   <HH_Dish_FishThermidor.description>奶油浓郁，焗至金黄，还为自己骄傲得不行。</HH_Dish_FishThermidor.description>
   <HH_Dish_Rendang.label>仁当牛肉</HH_Dish_Rendang.label>
@@ -178,20 +152,14 @@
   <HH_Dish_CremeBrulee.description>硬脆的焦糖壳在汤匙下碎裂，像承受不住压力那样。</HH_Dish_CremeBrulee.description>
   <HH_Dish_AgaveBaklava.label>龙舌兰果仁蜜饼</HH_Dish_AgaveBaklava.label>
   <HH_Dish_AgaveBaklava.description>甜到你需要一位医护人员，外加一位诗人。</HH_Dish_AgaveBaklava.description>
-  <HH_Dish_MuffaloStroganoff.label>水牛斯特罗加诺夫</HH_Dish_MuffaloStroganoff.label>
-  <HH_Dish_MuffaloStroganoff.description>奶油浓郁，丰厚得很，吃到第三勺就没了。</HH_Dish_MuffaloStroganoff.description>
   <HH_Dish_OmakaseNigiri.label>厨师推荐握寿司</HH_Dish_OmakaseNigiri.label>
   <HH_Dish_OmakaseNigiri.description>厨师决定你吃什么。你决定要被打动。</HH_Dish_OmakaseNigiri.description>
   <HH_Dish_TeppanFeast.label>铁板盛宴</HH_Dish_TeppanFeast.label>
   <HH_Dish_TeppanFeast.description>火焰铁板、翻飞的铲子，旁边还得备好灭火器。</HH_Dish_TeppanFeast.description>
-  <HH_Dish_ClayOvenMuffalo.label>泥炉水牛</HH_Dish_ClayOvenMuffalo.label>
-  <HH_Dish_ClayOvenMuffalo.description>通宵腌制，在泥炉里猛火烘烤，带着傲慢端上桌。</HH_Dish_ClayOvenMuffalo.description>
   <HH_Dish_Churrasco.label>巴西烤肉</HH_Dish_Churrasco.label>
   <HH_Dish_Churrasco.description>肉串像剑一样端上来，一直送到你投降为止。</HH_Dish_Churrasco.description>
   <HH_Dish_HuntersBigos.label>猎人比戈斯</HH_Dish_HuntersBigos.label>
   <HH_Dish_HuntersBigos.description>一锅每天都更香、闻起来却每天都更糟的炖菜。</HH_Dish_HuntersBigos.description>
-  <HH_Dish_LambKoftasWithRice.label>羊肉丸配米饭</HH_Dish_LambKoftasWithRice.label>
-  <HH_Dish_LambKoftasWithRice.description>调好味、捏成形，铺在米饭上端出来，像一堂很好吃的说教。</HH_Dish_LambKoftasWithRice.description>
   <HH_Dish_SevenCourseColonyMenu.label>七道殖民地套餐</HH_Dish_SevenCourseColonyMenu.label>
   <HH_Dish_SevenCourseColonyMenu.description>开胃菜、开胃菜、开胃菜、主菜、甜点、甜点，最后再来一杯祝酒。</HH_Dish_SevenCourseColonyMenu.description>
   <HH_Dish_TartareOfTheFallen.label>亡者鞑靼</HH_Dish_TartareOfTheFallen.label>

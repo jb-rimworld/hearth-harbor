@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <HH_Dish_CampfireStew.label>Рагу з м'яса мафало над вогнищем</HH_Dish_CampfireStew.label>
-  <HH_Dish_CampfireStew.description>У каструлю пішло все, включно з суперечкою про те, що все це означає.</HH_Dish_CampfireStew.description>
   <HH_Dish_PotatoSoup.label>Картопляний суп</HH_Dish_PotatoSoup.label>
   <HH_Dish_PotatoSoup.description>Смакує як дім, якби дім мав земляну підлогу та низькі очікування.</HH_Dish_PotatoSoup.description>
   <HH_Dish_SpitRoastedHaunch.label>Окіст на вертелі</HH_Dish_SpitRoastedHaunch.label>
@@ -50,12 +48,8 @@
   <HH_Dish_InsectTacos.description>Три тако, нуль запитань і дуже добрий соус.</HH_Dish_InsectTacos.description>
   <HH_Dish_FishAndChips.label>Риба з картоплею фрі</HH_Dish_FishAndChips.label>
   <HH_Dish_FishAndChips.description>Смажена двічі на удачу і раз із зла.</HH_Dish_FishAndChips.description>
-  <HH_Dish_MuffaloRamen.label>Рамен з маффало</HH_Dish_MuffaloRamen.label>
-  <HH_Dish_MuffaloRamen.description>Голосно сьорбайте. Якщо б'єтеся за останню миску, сьорбайте ще голосніше.</HH_Dish_MuffaloRamen.description>
   <HH_Dish_EggFriedRice.label>Смажений рис з яйцем</HH_Dish_EggFriedRice.label>
   <HH_Dish_EggFriedRice.description>Вчорашній рис, сьогоднішня проблема, завтрашній обід.</HH_Dish_EggFriedRice.description>
-  <HH_Dish_PadThrumbo.label>Пад тромбо</HH_Dish_PadThrumbo.label>
-  <HH_Dish_PadThrumbo.description>Солодко-кисле сплетіння локшини й хрусту, обсмажене у воку, доки не почне слухатися.</HH_Dish_PadThrumbo.description>
   <HH_Dish_ChiliConCarne.label>Чилі кон карне</HH_Dish_ChiliConCarne.label>
   <HH_Dish_ChiliConCarne.description>Так гаряче, що припікає. Не вживати як ліки. Вживати як ліки.</HH_Dish_ChiliConCarne.description>
   <HH_Dish_JollofRice.label>Джолоф</HH_Dish_JollofRice.label>
@@ -78,8 +72,6 @@
   <HH_Dish_ChocolatePudding.description>Причина, через яку рейди переносять рівно на один десерт.</HH_Dish_ChocolatePudding.description>
   <HH_Dish_Ceviche.label>Севіче</HH_Dish_Ceviche.label>
   <HH_Dish_Ceviche.description>Риба, приготована лише кислотою, як і більшість колоній.</HH_Dish_Ceviche.description>
-  <HH_Dish_MuffaloGoulash.label>Гуляш з маффало</HH_Dish_MuffaloGoulash.label>
-  <HH_Dish_MuffaloGoulash.description>Червоний, густий і офіційно неофіційна національна суперечка.</HH_Dish_MuffaloGoulash.description>
   <HH_Dish_EggFlan.label>Яєчний флан</HH_Dish_EggFlan.label>
   <HH_Dish_EggFlan.description>Хитається, як колоніст наприкінці довгої зміни.</HH_Dish_EggFlan.description>
   <HH_Dish_BeerBatteredInsects.label>Комахи в пивному клярі</HH_Dish_BeerBatteredInsects.label>
@@ -104,22 +96,14 @@
   <HH_Dish_BloodBroth.description>Темний, насичений бульйон для спраглих і ввічливих.</HH_Dish_BloodBroth.description>
   <HH_Dish_HemogenBlackPudding.label>Кров'янка з гемогеном</HH_Dish_HemogenBlackPudding.label>
   <HH_Dish_HemogenBlackPudding.description>Смажена, доки не перестане дивитися на вас.</HH_Dish_HemogenBlackPudding.description>
-  <HH_Dish_MuffaloBourguignon.label>Маффало бургіньйон</HH_Dish_MuffaloBourguignon.label>
-  <HH_Dish_MuffaloBourguignon.description>Тушкована в пиві, бо вино закінчилося на другий день.</HH_Dish_MuffaloBourguignon.description>
   <HH_Dish_ColonyPaella.label>Колоніальна паелья</HH_Dish_ColonyPaella.label>
   <HH_Dish_ColonyPaella.description>Усе, що було в коморі, викладено з великою гідністю.</HH_Dish_ColonyPaella.description>
   <HH_Dish_NigiriPlatter.label>Ассорті нігірі</HH_Dish_NigiriPlatter.label>
   <HH_Dish_NigiriPlatter.description>Рис і риба, сформовані тим, хто мав би бути на передовій.</HH_Dish_NigiriPlatter.description>
-  <HH_Dish_ThrumboPho.label>Тромбо фо</HH_Dish_ThrumboPho.label>
-  <HH_Dish_ThrumboPho.description>Прозорий бульйон із дуже довгим списком справ позаду.</HH_Dish_ThrumboPho.description>
   <HH_Dish_Biryani.label>Бірьяні</HH_Dish_Biryani.label>
   <HH_Dish_Biryani.description>Шари рису, м'яса і дипломатії, запечатані кришкою.</HH_Dish_Biryani.description>
-  <HH_Dish_DromedaryTagine.label>Таджин з дромедара</HH_Dish_DromedaryTagine.label>
-  <HH_Dish_DromedaryTagine.description>Тушкований у глиняному конусі, як більшість людей хотіли б тривати.</HH_Dish_DromedaryTagine.description>
   <HH_Dish_MushroomMoussaka.label>Грибна мусака</HH_Dish_MushroomMoussaka.label>
   <HH_Dish_MushroomMoussaka.description>Сім шарів завглибшки, і кожен шар має свою думку.</HH_Dish_MushroomMoussaka.description>
-  <HH_Dish_LacqueredThrumbo.label>Лаковане тромбо</HH_Dish_LacqueredThrumbo.label>
-  <HH_Dish_LacqueredThrumbo.description>Глазуроване до блиску, який сяє яскравіше за банківський рахунок колонії.</HH_Dish_LacqueredThrumbo.description>
   <HH_Dish_TomYumSoup.label>Суп том ям</HH_Dish_TomYumSoup.label>
   <HH_Dish_TomYumSoup.description>Кислий, гострий, прочистить вам синуси і борги.</HH_Dish_TomYumSoup.description>
   <HH_Dish_Laksa.label>Лакса</HH_Dish_Laksa.label>
@@ -138,14 +122,8 @@
   <HH_Dish_Churros.description>Смажене тісто з шоколадним соусом і без жодного каяття.</HH_Dish_Churros.description>
   <HH_Dish_Bibimbap.label>Бібімбап</HH_Dish_Bibimbap.label>
   <HH_Dish_Bibimbap.description>Змішайте все в одній мисці, точно як сама колонія.</HH_Dish_Bibimbap.description>
-  <HH_Dish_MongolianMuffalo.label>Монгольський маффало</HH_Dish_MongolianMuffalo.label>
-  <HH_Dish_MongolianMuffalo.description>Смажений у воку, солодкий, липкий і трохи надто гучний.</HH_Dish_MongolianMuffalo.description>
   <HH_Dish_ColdNoodleSalad.label>Салат з холодною локшиною</HH_Dish_ColdNoodleSalad.label>
   <HH_Dish_ColdNoodleSalad.description>Подається настільки холодним, що локшина подає скарги.</HH_Dish_ColdNoodleSalad.description>
-  <HH_Dish_MuffaloCarpaccio.label>Карпаччо з маффало</HH_Dish_MuffaloCarpaccio.label>
-  <HH_Dish_MuffaloCarpaccio.description>Нарізано так тонко, що крізь нього можна читати меню.</HH_Dish_MuffaloCarpaccio.description>
-  <HH_Dish_ThrumboTartare.label>Тартар з тромбо</HH_Dish_ThrumboTartare.label>
-  <HH_Dish_ThrumboTartare.description>Сире, дике і відважне. Спершу підпишіть відмову.</HH_Dish_ThrumboTartare.description>
   <HH_Dish_DanDanNoodles.label>Дань-дань локшина</HH_Dish_DanDanNoodles.label>
   <HH_Dish_DanDanNoodles.description>Гостра локшина, яка попереджає заздалегідь і все одно перемагає.</HH_Dish_DanDanNoodles.description>
   <HH_Dish_GrilledLongPorkRibs.label>Грильовані ребра з довгої свинини</HH_Dish_GrilledLongPorkRibs.label>
@@ -162,10 +140,6 @@
   <HH_Dish_RedSteakVeryRare.description>Майже мекає. Приготовано саме так, як замовив сангвіфаг.</HH_Dish_RedSteakVeryRare.description>
   <HH_Dish_TwistedMeatBao.label>Скручений м'ясний бао</HH_Dish_TwistedMeatBao.label>
   <HH_Dish_TwistedMeatBao.description>Булочка ледь помітно смикається. Будь ласка, не кажіть начинці.</HH_Dish_TwistedMeatBao.description>
-  <HH_Dish_MuffaloWellington.label>Маффало веллінгтон</HH_Dish_MuffaloWellington.label>
-  <HH_Dish_MuffaloWellington.description>Загорнутий у тісто, крихітна ізоляція для дуже величного его.</HH_Dish_MuffaloWellington.description>
-  <HH_Dish_BoomalopeConfit.label>Конфі з бумалопа</HH_Dish_BoomalopeConfit.label>
-  <HH_Dish_BoomalopeConfit.description>Тушкований у власному жирі. Не стійте поруч із каструлею.</HH_Dish_BoomalopeConfit.description>
   <HH_Dish_FishThermidor.label>Риба термідор</HH_Dish_FishThermidor.label>
   <HH_Dish_FishThermidor.description>Вершкова, запечена з сиром і абсурдно горда собою.</HH_Dish_FishThermidor.description>
   <HH_Dish_Rendang.label>Рендан</HH_Dish_Rendang.label>
@@ -178,20 +152,14 @@
   <HH_Dish_CremeBrulee.description>Скоринка тріскає під ложкою, як під тиском.</HH_Dish_CremeBrulee.description>
   <HH_Dish_AgaveBaklava.label>Агавова пахлава</HH_Dish_AgaveBaklava.label>
   <HH_Dish_AgaveBaklava.description>Настільки солодка, що знадобляться і лікар, і поет.</HH_Dish_AgaveBaklava.description>
-  <HH_Dish_MuffaloStroganoff.label>Маффало строганов</HH_Dish_MuffaloStroganoff.label>
-  <HH_Dish_MuffaloStroganoff.description>Вершкове, багате і зникле до третьої ложки.</HH_Dish_MuffaloStroganoff.description>
   <HH_Dish_OmakaseNigiri.label>Омакасе нігірі</HH_Dish_OmakaseNigiri.label>
   <HH_Dish_OmakaseNigiri.description>Шеф вирішує, що ви їсте. Ви вирішуєте бути вражені.</HH_Dish_OmakaseNigiri.description>
   <HH_Dish_TeppanFeast.label>Теппан-бенкет</HH_Dish_TeppanFeast.label>
   <HH_Dish_TeppanFeast.description>Палаючий гриль, лопатка, що літає, і вогнегасник поруч.</HH_Dish_TeppanFeast.description>
-  <HH_Dish_ClayOvenMuffalo.label>Маффало з глиняної печі</HH_Dish_ClayOvenMuffalo.label>
-  <HH_Dish_ClayOvenMuffalo.description>Замариновано за ніч, запечено в глиняній печі і подано з зарозумілістю.</HH_Dish_ClayOvenMuffalo.description>
   <HH_Dish_Churrasco.label>Чурраско</HH_Dish_Churrasco.label>
   <HH_Dish_Churrasco.description>М'ясо на шампурах, подається, доки не здасться.</HH_Dish_Churrasco.description>
   <HH_Dish_HuntersBigos.label>Мисливський бігос</HH_Dish_HuntersBigos.label>
   <HH_Dish_HuntersBigos.description>Рагу, яке з кожним днем смакує краще і пахне гірше.</HH_Dish_HuntersBigos.description>
-  <HH_Dish_LambKoftasWithRice.label>Кефта з баранини з рисом</HH_Dish_LambKoftasWithRice.label>
-  <HH_Dish_LambKoftasWithRice.description>Приправлена, сформована і подана на рисі, як дуже смачна лекція.</HH_Dish_LambKoftasWithRice.description>
   <HH_Dish_SevenCourseColonyMenu.label>Семистравне колоніальне меню</HH_Dish_SevenCourseColonyMenu.label>
   <HH_Dish_SevenCourseColonyMenu.description>Закуска, закуска, закуска, основна страва, десерт, десерт і тост.</HH_Dish_SevenCourseColonyMenu.description>
   <HH_Dish_TartareOfTheFallen.label>Тартар полеглих</HH_Dish_TartareOfTheFallen.label>

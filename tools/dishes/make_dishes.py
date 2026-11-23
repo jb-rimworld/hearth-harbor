@@ -62,6 +62,38 @@ UNLOCK = {"frei": "free", "`HH_Innkeeping`": "HH_Innkeeping", "`HH_Gastronomy`":
           "`HH_FineDining`": "HH_FineDining"}
 
 
+# F11 (1.1.0): logic fixes applied on top of the KONZEPT tables. Key = defName id (after HH_Dish_).
+#  finishers : classes that fit this plate as finishing touch of the Fine/Signature forms (never a class of the dish itself)
+#  noVariants: no Fine/Signature form
+#  label/desc_add: a dish named after one animal accepts every meat, so the name is generic and the animal moves to the description
+#  stations/steps: a "main" that was never heated gets its heating steps (main device = last station stays)
+OVERRIDES = {
+    "FruitBowl": {"finishers": ["milk", "chocolate", "agave"]},
+    "FriedMushrooms": {"finishers": ["milk", "eggs", "beer"]},
+    "FermentedMushrooms": {"finishers": ["milk", "eggs", "berries"]},
+    "ScrambledEggs": {"finishers": ["mushrooms", "berries"]},
+    "PlainSteamedRice": {"noVariants": True},
+    "RawFishSlices": {"noVariants": True},
+    "CampfireStew": {"label": "Campfire meat stew", "desc_add": "Traditionally made from muffalo."},
+    "MuffaloRamen": {"label": "Hearty meat ramen", "desc_add": "Traditionally made from muffalo."},
+    "MuffaloGoulash": {"label": "Meat goulash", "desc_add": "Traditionally made from muffalo."},
+    "MuffaloBourguignon": {"label": "Colony bourguignon", "desc_add": "Traditionally made from muffalo."},
+    "MuffaloCarpaccio": {"label": "Meat carpaccio", "desc_add": "Traditionally made from muffalo."},
+    "MuffaloWellington": {"label": "Meat wellington", "desc_add": "Traditionally made from muffalo."},
+    "MuffaloStroganoff": {"label": "Creamy stroganoff", "desc_add": "Traditionally made from muffalo."},
+    "ClayOvenMuffalo": {"label": "Clay-oven roast", "desc_add": "Traditionally made from muffalo."},
+    "MongolianMuffalo": {"label": "Mongolian-style meat", "desc_add": "Traditionally made from muffalo."},
+    "LacqueredThrumbo": {"label": "Lacquered roast", "desc_add": "Traditionally made from thrumbo, if the colony is that lucky."},
+    "ThrumboPho": {"label": "Meat pho", "desc_add": "Traditionally made from thrumbo, if the colony is that lucky."},
+    "ThrumboTartare": {"label": "Meat tartare", "desc_add": "Traditionally made from thrumbo, if the colony is that lucky."},
+    "DromedaryTagine": {"label": "Meat and berry tagine", "desc_add": "Traditionally made from dromedary."},
+    "BoomalopeConfit": {"label": "Slow-roast meat confit", "desc_add": "Traditionally made from boomalope, carefully."},
+    "LambKoftasWithRice": {"label": "Meat koftas with rice", "desc_add": "Traditionally made from lamb."},
+    "PadThrumbo": {"label": "Pad bug", "desc_add": "The crunch comes from insect meat."},
+    "SevenCourseColonyMenu": {"stations": ["PrepCounter", "Stove", "Oven", "ColdStation"], "steps": ["Chop", "PanFry", "Roast", "Chill"]},
+}
+
+
 def camel(label: str) -> str:
     label = re.sub(r"[†‡§]", "", label)
     words = re.findall(r"[A-Za-z0-9]+", label.replace("'", ""))
@@ -125,6 +157,12 @@ def mod_level(d):  # extra recipes: level from the minimum cooking skill, like t
 
 def dish_xml(d):
     name = NAME_OVERRIDE.get(d["label"], camel(d["label"]))
+    ov = OVERRIDES.get(name, {})
+    d = dict(d)
+    if "label" in ov: d["label"] = ov["label"]
+    if "desc_add" in ov: d["desc"] = d["desc"].rstrip() + " " + ov["desc_add"]
+    if "stations" in ov: d["stations"] = ov["stations"]
+    if "steps" in ov: d["steps"] = ov["steps"]
     lvl = d["level"] or mod_level(d)
     attrs = ""
     req = []
@@ -147,6 +185,8 @@ def dish_xml(d):
     if d["unlock"] not in ("free",): x.append(f"    <unlockHint>{d['unlock']}</unlockHint>")
     if d["mod"]: x.append(f"    <fromMod>{escape(d['mod'])}</fromMod>")
     if "†" in d["marks"]: x.append("    <dark>true</dark>")
+    if ov.get("finishers"): x.append("    <finishers>" + "".join(f"<li>{k}</li>" for k in ov["finishers"]) + "</finishers>")
+    if ov.get("noVariants"): x.append("    <noVariants>true</noVariants>")
     x.append(f"  </{NS}.DishDef>")
     return name, "\n".join(x)
 
@@ -165,6 +205,11 @@ PLATE_TEXT = {
     "Dessert": ("dessert dish", "A small, sweet reward for surviving another day on the Rim."),
     "StreetFood": ("street food tray", "Hot, handheld and best eaten standing up, quickly, with one eye on the exits."),
 }
+
+
+PLATE_DROP = {"Soup": "Ceramic", "Stew": "Ceramic", "Noodles": "Ceramic", "Rice": "Ceramic", "Bake": "Ceramic", "Breakfast": "Ceramic",
+              "Grill": "Wood", "StreetFood": "Wood", "Fry": "Wood", "Salad": "Glass", "Raw": "Glass", "Dessert": "Glass"}
+PLATE_EAT = {"Soup": "HH_Eat_Slurp", "Noodles": "HH_Eat_Slurp", "Fry": "HH_Eat_Crunch", "StreetFood": "HH_Eat_Crunch"}
 
 
 def write_plates():
@@ -197,6 +242,8 @@ def write_plates():
     for k, (label, desc) in PLATE_TEXT.items():
         x += ['  <ThingDef ParentName="HH_PlateBase">', f"    <defName>HH_Plate_{k}</defName>", f"    <label>{label}</label>",
               f"    <description>{desc}</description>",
+              f"    <soundDrop>HH_Plate_Drop_{PLATE_DROP[k]}</soundDrop>",
+              *([f"    <ingestible><ingestSound>{PLATE_EAT[k]}</ingestSound></ingestible>"] if k in PLATE_EAT else []),
               f"    <graphicData><texPath>Things/HH/Kitchen/Plate_{k}</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>", "  </ThingDef>"]
     x.append("</Defs>")
     (OUT / "Plates.xml").write_text("\n".join(x) + "\n", encoding="utf-8")

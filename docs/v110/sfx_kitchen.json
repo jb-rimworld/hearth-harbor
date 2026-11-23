@@ -1,0 +1,332 @@
+[
+ {
+  "file": "Common/Sounds/HH/Kitchen/Chop/Chop_01.ogg",
+  "prompt": "chef's knife chopping vegetables on a wooden cutting board, irregular rhythm, steady and busy, occasional scrape, take 1, no music, no voices, no speech, clean close recording",
+  "seconds": 3.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Chop/Chop_02.ogg",
+  "prompt": "chef's knife chopping vegetables on a wooden cutting board, irregular rhythm, steady and busy, occasional scrape, take 2, no music, no voices, no speech, clean close recording",
+  "seconds": 3.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Chop/Chop_03.ogg",
+  "prompt": "chef's knife chopping vegetables on a wooden cutting board, irregular rhythm, steady and busy, occasional scrape, take 3, no music, no voices, no speech, clean close recording",
+  "seconds": 3.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Chop/Chop_04.ogg",
+  "prompt": "chef's knife chopping vegetables on a wooden cutting board, irregular rhythm, steady and busy, occasional scrape, take 4, no music, no voices, no speech, clean close recording",
+  "seconds": 3.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Simmer/Simmer_01.ogg",
+  "prompt": "thick stew simmering in a heavy iron pot, soft bubbling, wooden spoon stirring now and then, cosy and warm, seamless loop, take 1, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Simmer/Simmer_02.ogg",
+  "prompt": "thick stew simmering in a heavy iron pot, soft bubbling, wooden spoon stirring now and then, cosy and warm, seamless loop, take 2, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Simmer/Simmer_03.ogg",
+  "prompt": "thick stew simmering in a heavy iron pot, soft bubbling, wooden spoon stirring now and then, cosy and warm, seamless loop, take 3, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Grill/Grill_01.ogg",
+  "prompt": "meat searing on an open grill, fire crackle and sizzle hiss, occasional flare-up, seamless loop, take 1, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Grill/Grill_02.ogg",
+  "prompt": "meat searing on an open grill, fire crackle and sizzle hiss, occasional flare-up, seamless loop, take 2, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Grill/Grill_03.ogg",
+  "prompt": "meat searing on an open grill, fire crackle and sizzle hiss, occasional flare-up, seamless loop, take 3, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Bake/Bake_01.ogg",
+  "prompt": "bread oven burning, low fire roar and soft wood crackle inside a stone oven, seamless loop, take 1, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Bake/Bake_02.ogg",
+  "prompt": "bread oven burning, low fire roar and soft wood crackle inside a stone oven, seamless loop, take 2, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Bake/Bake_03.ogg",
+  "prompt": "bread oven burning, low fire roar and soft wood crackle inside a stone oven, seamless loop, take 3, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/PanFry/PanFry_01.ogg",
+  "prompt": "food sizzling in a pan, spatula scraping on iron, butter popping, seamless loop, take 1, no music, no voices, no speech, clean close recording",
+  "seconds": 5.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/PanFry/PanFry_02.ogg",
+  "prompt": "food sizzling in a pan, spatula scraping on iron, butter popping, seamless loop, take 2, no music, no voices, no speech, clean close recording",
+  "seconds": 5.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/PanFry/PanFry_03.ogg",
+  "prompt": "food sizzling in a pan, spatula scraping on iron, butter popping, seamless loop, take 3, no music, no voices, no speech, clean close recording",
+  "seconds": 5.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/DeepFry/DeepFry_01.ogg",
+  "prompt": "deep fryer with vigorously bubbling hot oil, crackling fritters, seamless loop, take 1, no music, no voices, no speech, clean close recording",
+  "seconds": 5.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/DeepFry/DeepFry_02.ogg",
+  "prompt": "deep fryer with vigorously bubbling hot oil, crackling fritters, seamless loop, take 2, no music, no voices, no speech, clean close recording",
+  "seconds": 5.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/DeepFry/DeepFry_03.ogg",
+  "prompt": "deep fryer with vigorously bubbling hot oil, crackling fritters, seamless loop, take 3, no music, no voices, no speech, clean close recording",
+  "seconds": 5.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/StirFry/StirFry_01.ogg",
+  "prompt": "wok stir-fry, flame whoosh, tossing food, metal spatula clanging against the wok, fast cadence, seamless loop, take 1, no music, no voices, no speech, clean close recording",
+  "seconds": 5.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/StirFry/StirFry_02.ogg",
+  "prompt": "wok stir-fry, flame whoosh, tossing food, metal spatula clanging against the wok, fast cadence, seamless loop, take 2, no music, no voices, no speech, clean close recording",
+  "seconds": 5.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/StirFry/StirFry_03.ogg",
+  "prompt": "wok stir-fry, flame whoosh, tossing food, metal spatula clanging against the wok, fast cadence, seamless loop, take 3, no music, no voices, no speech, clean close recording",
+  "seconds": 5.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Steam/Steam_01.ogg",
+  "prompt": "steady steam hissing from a bamboo steamer, soft wooden lid rattle, seamless loop, take 1, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Steam/Steam_02.ogg",
+  "prompt": "steady steam hissing from a bamboo steamer, soft wooden lid rattle, seamless loop, take 2, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Steam/Steam_03.ogg",
+  "prompt": "steady steam hissing from a bamboo steamer, soft wooden lid rattle, seamless loop, take 3, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Knead/Knead_01.ogg",
+  "prompt": "kneading dough on a wooden bench, rhythmic soft slaps and pushes, flour pats, seamless loop, take 1, no music, no voices, no speech, clean close recording",
+  "seconds": 4.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Knead/Knead_02.ogg",
+  "prompt": "kneading dough on a wooden bench, rhythmic soft slaps and pushes, flour pats, seamless loop, take 2, no music, no voices, no speech, clean close recording",
+  "seconds": 4.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Knead/Knead_03.ogg",
+  "prompt": "kneading dough on a wooden bench, rhythmic soft slaps and pushes, flour pats, seamless loop, take 3, no music, no voices, no speech, clean close recording",
+  "seconds": 4.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Smoke/Smoke_01.ogg",
+  "prompt": "smoker box smouldering, slow quiet hiss and occasional wood chip pop, seamless loop, take 1, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Smoke/Smoke_02.ogg",
+  "prompt": "smoker box smouldering, slow quiet hiss and occasional wood chip pop, seamless loop, take 2, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Smoke/Smoke_03.ogg",
+  "prompt": "smoker box smouldering, slow quiet hiss and occasional wood chip pop, seamless loop, take 3, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Chill/Chill_01.ogg",
+  "prompt": "refrigerated cold counter, low electric hum, ice cubes clinking and a cold air flutter, seamless loop, take 1, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Chill/Chill_02.ogg",
+  "prompt": "refrigerated cold counter, low electric hum, ice cubes clinking and a cold air flutter, seamless loop, take 2, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Chill/Chill_03.ogg",
+  "prompt": "refrigerated cold counter, low electric hum, ice cubes clinking and a cold air flutter, seamless loop, take 3, no music, no voices, no speech, clean close recording",
+  "seconds": 6.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Cook_Start_Lid/Cook_Start_Lid_01.ogg",
+  "prompt": "heavy iron pot lid being lifted and set back with a short clack, no music, no voices, no speech, clean close recording",
+  "seconds": 1.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Cook_Start_OvenDoor/Cook_Start_OvenDoor_01.ogg",
+  "prompt": "stone oven door creaking open and shut with a soft thud, no music, no voices, no speech, clean close recording",
+  "seconds": 1.2,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Cook_Stop_OvenDing/Cook_Stop_OvenDing_01.ogg",
+  "prompt": "small kitchen timer ding, one clear bright bell tone, no music, no voices, no speech, clean close recording",
+  "seconds": 1.2,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Cook_Start_Basket/Cook_Start_Basket_01.ogg",
+  "prompt": "wire frying basket lowered into hot oil with a splash and sizzle burst, no music, no voices, no speech, clean close recording",
+  "seconds": 1.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Cook_Start_Latch/Cook_Start_Latch_01.ogg",
+  "prompt": "metal fridge latch click and rubber seal release, no music, no voices, no speech, clean close recording",
+  "seconds": 0.8,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Cook_Done_Fine/Cook_Done_Fine_01.ogg",
+  "prompt": "soft restaurant service bell, single gentle ding with a short warm tail, no music, no voices, no speech, clean close recording",
+  "seconds": 1.5,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Cook_Done_Signature/Cook_Done_Signature_01.ogg",
+  "prompt": "short elegant chef's flourish, bright double bell ding with a tiny shimmer, celebratory but brief, no music, no voices, no speech, clean close recording",
+  "seconds": 2.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Plate_Drop_Ceramic/Plate_Drop_Ceramic_01.ogg",
+  "prompt": "ceramic bowl set down on a wooden table, light clink, no music, no voices, no speech, clean close recording",
+  "seconds": 0.8,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Plate_Drop_Ceramic/Plate_Drop_Ceramic_02.ogg",
+  "prompt": "ceramic bowl set down on a wooden table, light clink, no music, no voices, no speech, clean close recording",
+  "seconds": 0.8,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Plate_Drop_Wood/Plate_Drop_Wood_01.ogg",
+  "prompt": "wooden serving board set down on a table, dull friendly thud, no music, no voices, no speech, clean close recording",
+  "seconds": 0.8,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Plate_Drop_Wood/Plate_Drop_Wood_02.ogg",
+  "prompt": "wooden serving board set down on a table, dull friendly thud, no music, no voices, no speech, clean close recording",
+  "seconds": 0.8,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Plate_Drop_Glass/Plate_Drop_Glass_01.ogg",
+  "prompt": "glass dessert dish set down on a table, a tiny bright clink, no music, no voices, no speech, clean close recording",
+  "seconds": 0.8,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Plate_Drop_Glass/Plate_Drop_Glass_02.ogg",
+  "prompt": "glass dessert dish set down on a table, a tiny bright clink, no music, no voices, no speech, clean close recording",
+  "seconds": 0.8,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Eat_Slurp/Eat_Slurp_01.ogg",
+  "prompt": "person slurping hot soup or noodles from a bowl, short and satisfied, no speech, take 1, no music, no voices, no speech, clean close recording",
+  "seconds": 2.5,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Eat_Slurp/Eat_Slurp_02.ogg",
+  "prompt": "person slurping hot soup or noodles from a bowl, short and satisfied, no speech, take 2, no music, no voices, no speech, clean close recording",
+  "seconds": 2.5,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Eat_Slurp/Eat_Slurp_03.ogg",
+  "prompt": "person slurping hot soup or noodles from a bowl, short and satisfied, no speech, take 3, no music, no voices, no speech, clean close recording",
+  "seconds": 2.5,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Eat_Crunch/Eat_Crunch_01.ogg",
+  "prompt": "person biting into crispy fried food, crunchy chewing, no speech, take 1, no music, no voices, no speech, clean close recording",
+  "seconds": 2.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Eat_Crunch/Eat_Crunch_02.ogg",
+  "prompt": "person biting into crispy fried food, crunchy chewing, no speech, take 2, no music, no voices, no speech, clean close recording",
+  "seconds": 2.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Eat_Crunch/Eat_Crunch_03.ogg",
+  "prompt": "person biting into crispy fried food, crunchy chewing, no speech, take 3, no music, no voices, no speech, clean close recording",
+  "seconds": 2.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Eat_Satisfied/Eat_Satisfied_01.ogg",
+  "prompt": "short contented 'mmm' of enjoying food, a tiny happy sigh, quiet, no words, no music, no voices, no speech, clean close recording",
+  "seconds": 1.2,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Kitchen/Eat_Satisfied/Eat_Satisfied_02.ogg",
+  "prompt": "short contented 'mmm' of enjoying food, a tiny happy sigh, quiet, no words, no music, no voices, no speech, clean close recording",
+  "seconds": 1.2,
+  "loop": false
+ }
+]

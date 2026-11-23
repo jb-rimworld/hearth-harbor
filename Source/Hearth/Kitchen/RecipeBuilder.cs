@@ -115,32 +115,137 @@ namespace Hearth.Kitchen
 
         public static void BuildAll()
         {
-            Built = 0; Unavailable = 0; DishRecipeExtension.Clear();
+            Built = 0; Unavailable = 0; Retired = 0; OverlapRepairs = 0; DishRecipeExtension.Clear();
             var touched = new HashSet<ThingDef>();
-            var fin = FinisherFilters();
             foreach (var dish in DefDatabase<DishDef>.AllDefs.OrderBy(d => d.level).ThenBy(d => d.defName).ToList())
             {
                 dish.recipes.Clear(); dish.unavailableReason = null;
-                try { BuildDish(dish, fin, touched); }
+                try { BuildDish(dish, touched); }
                 catch (Exception e) { dish.unavailableReason = "error: " + e.Message; HLog.Error("Kitchen", "Recipe build failed for " + dish.defName, e); }
                 if (dish.unavailableReason != null) { Unavailable++; HLog.Debug("Kitchen", dish.defName + " not offered: " + dish.unavailableReason); }
             }
             foreach (var t in touched) allRecipesCached?.SetValue(t, null);
-            HLog.Info("Kitchen", $"{Built} recipes built for {DefDatabase<DishDef>.DefCount - Unavailable} dishes ({Unavailable} dishes without recipe: missing ingredients or devices of mods that are not loaded)");
+            HLog.Info("Kitchen", $"{Built} recipes built for {DefDatabase<DishDef>.DefCount - Unavailable} dishes ({Unavailable} dishes without recipe: missing ingredients or devices of mods that are not loaded; {Retired} hidden recipes keep old bills loadable; {OverlapRepairs} ingredient overlaps between slots repaired)");
         }
 
-        static (ThingFilter any, ThingFilter a, ThingFilter b) FinisherFilters()
+        /// <summary>Hidden recipe defs of forms a dish no longer has (kept so that bills of older saves still resolve).</summary>
+        public static int Retired;
+        /// <summary>How often two slots of a recipe allowed the same thing (mod foods that match two classes) and the later slot had to give it up.</summary>
+        public static int OverlapRepairs;
+
+        // ---- finishing touches (F11) ------------------------------------------------------------------------------------------------
+        // A Fine or Signature plate asks for one (Fine) or two (Signature) extra ingredients on top of the dish's own. The vanilla bill solver fills
+        // the first slot that allows a stack, so every slot of a recipe must allow DIFFERENT things: otherwise "more berries" would count as the second
+        // ingredient of a fruit bowl. Finishers are therefore (1) picked from a pool that suits the plate (no chocolate on a fish, no beer in a salad),
+        // (2) never a class the dish already uses, and (3) the slots of a recipe are made pairwise disjoint at the end (first slot wins).
+
+        static readonly string[] PoolDessert = { "milk", "eggs", "chocolate", "berries", "agave" };
+        static readonly string[] PoolBreakfast = { "milk", "eggs", "berries", "mushrooms", "agave" };
+        static readonly string[] PoolSalad = { "milk", "eggs", "berries", "mushrooms" };
+        static readonly string[] PoolRaw = { "eggs", "berries", "mushrooms" };
+        static readonly string[] PoolSavory = { "milk", "eggs", "beer", "mushrooms", "berries" };
+        /// <summary>Taken when a plate's own pool is used up by the dish (needs two classes for a Signature form): safe on any plate, never chocolate or beer.</summary>
+        static readonly string[] PoolFallback = { "eggs", "milk", "berries", "mushrooms", "agave" };
+        static readonly string[] SplitCreamy = { "milk", "eggs" };
+
+        /// <summary>Finisher pool of a plate kind (class keys in order of preference).</summary>
+        public static string[] PoolOf(PlateKind k)
         {
-            ThingFilter Mk(params string[] keys)
+            switch (k)
             {
-                var f = new ThingFilter();
-                foreach (var k in keys) { var c = IngredientClasses.Find(k); if (c != null) foreach (var t in c.Things) f.SetAllow(t, true); }
-                return f;
+                case PlateKind.Dessert: return PoolDessert;
+                case PlateKind.Breakfast: return PoolBreakfast;
+                case PlateKind.Salad: return PoolSalad;
+                case PlateKind.Raw: return PoolRaw;
+                default: return PoolSavory;
             }
-            return (Mk("milk", "eggs", "chocolate", "beer", "berries", "mushrooms"), Mk("milk", "eggs", "chocolate"), Mk("beer", "berries", "mushrooms"));
         }
 
-        static void BuildDish(DishDef dish, (ThingFilter any, ThingFilter a, ThingFilter b) fin, HashSet<ThingDef> touched)
+        /// <summary>Which ingredient classes may finish one dish: Fine = one slot with all of them, Signature = two slots with different ones.</summary>
+        public sealed class FinishPlan
+        {
+            public List<IngredientClass> Fine = new List<IngredientClass>();
+            public List<IngredientClass> SigA = new List<IngredientClass>();
+            public List<IngredientClass> SigB = new List<IngredientClass>();
+            public bool HasFine => Fine.Count > 0;
+            public bool HasSignature => SigA.Count > 0 && SigB.Count > 0;
+        }
+
+        /// <summary>The finishers of a dish: its own pool (or the plate's), minus everything the dish itself uses. Public for the tests.</summary>
+        public static FinishPlan PlanFinishers(DishDef dish)
+        {
+            var plan = new FinishPlan();
+            if (dish.noVariants) return plan;
+            var own = new HashSet<ThingDef>(); var ownKeys = new HashSet<string>();
+            foreach (var s in dish.ingredients)
+            {
+                ownKeys.Add(s.cls);
+                var c = IngredientClasses.Find(s.cls);
+                if (c != null) foreach (var t in c.Things) own.Add(t);
+            }
+            List<IngredientClass> Pick(IEnumerable<string> keys)
+            {
+                var list = new List<IngredientClass>();
+                foreach (var k in keys)
+                {
+                    if (ownKeys.Contains(k)) continue;
+                    var c = IngredientClasses.Find(k);
+                    if (c == null || !c.Available || list.Contains(c)) continue;
+                    if (c.Things.All(own.Contains)) continue;   // nothing left of it once the dish's own ingredients are taken away
+                    list.Add(c);
+                }
+                return list;
+            }
+            var pool = (dish.finishers != null && dish.finishers.Count > 0) ? dish.finishers : (IEnumerable<string>)PoolOf(dish.plate);
+            var elig = Pick(pool);
+            plan.Fine = elig;
+            if (elig.Count < 2 && (dish.finishers == null || dish.finishers.Count == 0))
+            {
+                var wider = Pick(pool.Concat(PoolFallback));   // a Signature plate needs two different finishing touches
+                if (wider.Count >= 2) elig = wider;
+            }
+            if (elig.Count == 0) { HLog.Once("kitchen.nofin." + dish.defName, LogLevel.Warn, "Kitchen", dish.defName + " has no finishing touch to offer: no Fine and no Signature form."); return plan; }
+            if (plan.Fine.Count == 0) plan.Fine = elig;
+            if (elig.Count < 2) return plan;
+            var a = elig.Where(c => SplitCreamy.Contains(c.Key)).ToList();
+            var b = elig.Where(c => !SplitCreamy.Contains(c.Key)).ToList();
+            if (a.Count == 0 || b.Count == 0)
+            {
+                int half = (elig.Count + 1) / 2;
+                a = elig.Take(half).ToList(); b = elig.Skip(half).ToList();
+            }
+            plan.SigA = a; plan.SigB = b;
+            return plan;
+        }
+
+        /// <summary>Makes the slots pairwise disjoint: a thing allowed by an earlier slot is removed from every later one. Returns the number of removals.</summary>
+        public static int MakeDisjoint(IList<IngredientCount> slots)
+        {
+            int removed = 0;
+            var taken = new HashSet<ThingDef>();
+            foreach (var slot in slots)
+                foreach (var t in slot.filter.AllowedThingDefs.ToList())
+                    if (!taken.Add(t)) { slot.filter.SetAllow(t, false); removed++; }
+            return removed;
+        }
+
+        static string OrList(IEnumerable<string> labels)
+        {
+            var l = labels.ToList();
+            if (l.Count <= 1) return string.Join("", l);
+            string last = l[l.Count - 1];
+            return string.Join(", ", l.Take(l.Count - 1)) + " " + "HH.Kitchen.Or".TranslateOr("or") + " " + last;
+        }
+
+        static IngredientCount FinisherSlot(List<IngredientClass> classes, string key, string fallbackText, HashSet<ThingDef> own)
+        {
+            var f = new ThingFilter { customSummary = key.TranslateOr(fallbackText).Replace("{0}", OrList(classes.Select(c => c.Label))) };
+            foreach (var c in classes) foreach (var t in c.Things) if (!own.Contains(t)) f.SetAllow(t, true);
+            var ic = new IngredientCount { filter = f }; ic.SetBaseCount(0.1f);
+            return ic;
+        }
+
+        static void BuildDish(DishDef dish, HashSet<ThingDef> touched)
         {
             if (dish.plateDef == null) { dish.unavailableReason = "plate missing"; return; }
             var mains = Stations.MainDefs(dish.MainStation);
@@ -152,19 +257,30 @@ namespace Hearth.Kitchen
                 if (c == null || !c.Available) { dish.unavailableReason = "no ingredient of class '" + s.cls + "' loaded"; return; }
                 classes.Add((c, s.amount));
             }
+            var plan = PlanFinishers(dish);
             for (int v = 0; v < 3; v++)
             {
-                if (v == 1 && fin.any.AllowedDefCount == 0) break;
-                if (v == 2 && (fin.a.AllowedDefCount == 0 || fin.b.AllowedDefCount == 0)) break;
-                var r = MakeRecipe(dish, v, classes, mains, fin);
-                dish.recipes.Add(r); Built++;
+                bool offered = v == 0 || (plan.HasFine && (v == 1 || plan.HasSignature));
+                var r = MakeRecipe(dish, v, classes, mains, plan, offered);
+                if (r == null && v > 0 && offered)
+                {
+                    // Keep the def alive (retired, main slots only) so a saved 1.0 bill for this form still loads.
+                    offered = false;
+                    r = MakeRecipe(dish, v, classes, mains, plan, false);
+                }
+                if (r == null)
+                {
+                    if (v == 0) { dish.unavailableReason = "ingredient classes overlap so that a slot has nothing left"; return; }
+                    continue;
+                }
+                if (offered) { dish.recipes.Add(r); Built++; } else Retired++;
             }
             foreach (var m in mains) touched.Add(m);
         }
 
-        static RecipeDef MakeRecipe(DishDef dish, int variant, List<(IngredientClass c, float share)> classes, List<ThingDef> mains, (ThingFilter any, ThingFilter a, ThingFilter b) fin)
+        static RecipeDef MakeRecipe(DishDef dish, int variant, List<(IngredientClass c, float share)> classes, List<ThingDef> mains, FinishPlan plan, bool offered)
         {
-            var ext = new DishRecipeExtension { dish = dish, variant = variant };
+            var ext = new DishRecipeExtension { dish = dish, variant = variant, retired = !offered };
             var r = new RecipeDef
             {
                 defName = "HH_Cook_" + dish.Id + (variant == 0 ? "" : "_" + VariantName[variant]),
@@ -174,8 +290,8 @@ namespace Hearth.Kitchen
                 workSpeedStat = DefDatabase<StatDef>.GetNamedSilentFail("CookSpeed"),
                 workSkill = SkillDefOf.Cooking,
                 requiredGiverWorkType = DefDatabase<WorkTypeDef>.GetNamedSilentFail("Cooking"),
-                effectWorking = DefDatabase<EffecterDef>.GetNamedSilentFail("Cook"),
-                soundWorking = DefDatabase<SoundDef>.GetNamedSilentFail("Recipe_CookMeal"),
+                effectWorking = CookSounds.EffecterFor(dish),
+                soundWorking = CookSounds.SoundFor(dish),
                 allowMixingIngredients = true,
                 workAmount = (300f + 130f * dish.steps.Count + 50f * dish.level) * VariantWork[variant],
                 displayPriority = dish.level * 1000 + variant * 10 + (Mathf.Abs(dish.defName.GetHashCode()) % 9),
@@ -192,30 +308,35 @@ namespace Hearth.Kitchen
             if (variant == 2) r.researchPrerequisite = DefDatabase<ResearchProjectDef>.GetNamedSilentFail("HH_FineDining");
             r.conceptLearned = null;
 
-            float pool = BaseNutrition * LevelScale[Mathf.Clamp(dish.level, 1, 4)] * VariantScale[variant];
+            // Main slots: one per ingredient class of the dish (a retired form keeps only these).
+            int form = offered ? variant : 0;
+            float pool = BaseNutrition * LevelScale[Mathf.Clamp(dish.level, 1, 4)] * VariantScale[form];
             float poolShares = classes.Where(c => !c.c.Unit).Sum(c => c.share);
             if (poolShares <= 0f) poolShares = 1f;
             foreach (var (c, share) in classes)
             {
                 var ic = new IngredientCount { filter = c.MakeFilter() };
-                float count = c.Unit ? share * c.PieceNutrition() * (variant == 0 ? 1f : VariantScale[variant]) : pool * share / poolShares;
+                float count = c.Unit ? share * c.PieceNutrition() * (form == 0 ? 1f : VariantScale[form]) : pool * share / poolShares;
                 ic.SetBaseCount(Mathf.Round(count * 1000f) / 1000f);
                 r.ingredients.Add(ic);
-                foreach (var t in c.Things) r.fixedIngredientFilter.SetAllow(t, true);
             }
-            if (variant >= 1)
+            // Finishing touches (never a thing of the dish's own classes, see PlanFinishers).
+            if (offered && variant >= 1)
             {
-                var f1 = new ThingFilter { customSummary = "HH.Kitchen.Finishing".TranslateOr("a finishing touch (milk, eggs, chocolate, beer, berries or mushrooms)") };
-                foreach (var t in (variant == 1 ? fin.any : fin.a).AllowedThingDefs) f1.SetAllow(t, true);
-                var i1 = new IngredientCount { filter = f1 }; i1.SetBaseCount(0.1f); r.ingredients.Add(i1);
-                foreach (var t in (variant == 1 ? fin.any : fin.a).AllowedThingDefs) r.fixedIngredientFilter.SetAllow(t, true);
-                if (variant == 2)
+                var own = new HashSet<ThingDef>();
+                foreach (var (c, _) in classes) foreach (var t in c.Things) own.Add(t);
+                if (variant == 1) r.ingredients.Add(FinisherSlot(plan.Fine, "HH.Kitchen.FinishingTouch", "a finishing touch ({0})", own));
+                else
                 {
-                    var f2 = new ThingFilter { customSummary = "HH.Kitchen.Finishing2".TranslateOr("a second finishing touch (beer, berries or mushrooms)") };
-                    foreach (var t in fin.b.AllowedThingDefs) f2.SetAllow(t, true);
-                    var i2 = new IngredientCount { filter = f2 }; i2.SetBaseCount(0.1f); r.ingredients.Add(i2);
-                    foreach (var t in fin.b.AllowedThingDefs) r.fixedIngredientFilter.SetAllow(t, true);
+                    r.ingredients.Add(FinisherSlot(plan.SigA, "HH.Kitchen.FinishingTouch", "a finishing touch ({0})", own));
+                    r.ingredients.Add(FinisherSlot(plan.SigB, "HH.Kitchen.FinishingTouch2", "a second finishing touch ({0})", own));
                 }
+            }
+            OverlapRepairs += MakeDisjoint(r.ingredients);
+            foreach (var slot in r.ingredients)
+            {
+                if (slot.filter.AllowedDefCount == 0) { HLog.Warn("Kitchen", r.defName + ": a slot is empty after separating the ingredients" + (variant == 0 ? "" : " (form skipped)")); return null; }
+                foreach (var t in slot.filter.AllowedThingDefs) r.fixedIngredientFilter.SetAllow(t, true);
             }
             r.defaultIngredientFilter = new ThingFilter();
             r.defaultIngredientFilter.CopyAllowancesFrom(r.fixedIngredientFilter);
