@@ -42,8 +42,9 @@ namespace Hearth.Guests
         protected override void Set(IntVec3 c, bool val)
         {
             int idx = Map.cellIndices.CellToIndex(c);
-            if (InnerGrid[idx] == val) return;
-            InnerGrid[idx] = val;
+            var grid = VersionCompat.InnerGridOf(this);
+            if (grid[idx] == val) return;
+            grid[idx] = val;
             wingDrawer?.SetDirty();
             cacheTick = -1;
         }
@@ -464,11 +465,16 @@ namespace Hearth.Guests
     {
         readonly bool add;
         public override bool DragDrawMeasurements => true;
+#if RW16PLUS
         public override DrawStyleCategoryDef DrawStyleCategory => DrawStyleCategoryDefOf.Areas;
+#endif
 
         protected Designator_HH_GuestWing(bool add)
         {
             this.add = add;
+#if !RW16PLUS
+            HLog.Once("inn.wingdraw", LogLevel.Info, "Inn", "RimWorld 1.5: guest wing designators use the plain drag rectangle (no draw styles).");
+#endif
             soundDragSustain = SoundDefOf.Designate_DragAreaAdd;
             soundDragChanged = SoundDefOf.Designate_DragZone_Changed;
             soundSucceeded = add ? SoundDefOf.Designate_ZoneAdd : SoundDefOf.Designate_ZoneDelete;

@@ -51,10 +51,10 @@ namespace Hearth.Wellness
             var soak = ToilMaker.MakeToil("Soak");
             soak.defaultCompleteMode = ToilCompleteMode.Never;
             soak.handlingFacing = true;
-            soak.AddPreTickIntervalAction(delta =>
+            Hearth.City.Toils.AddPreTick(soak, delta =>
             {
                 soaked += delta;
-                pawn.GainComfortFromCellIfPossible(delta);
+                Hearth.City.Toils.Comfort(pawn, delta);
                 if (Facility != null) pawn.rotationTracker.FaceTarget(Facility);
                 WellnessEffects.GainJoy(pawn, delta, Facility, job.def.joyKind);
                 if (pawn.needs?.joy != null && !pawn.GetTimeAssignment().allowJoy) { EndJobWith(JobCondition.InterruptForced); return; }
@@ -115,14 +115,14 @@ namespace Hearth.Wellness
                 PortraitsCache.SetDirty(pawn);
                 var c = Comp; if (c != null) { c.recipient = pawn; c.recipientReady = true; }
             };
-            lie.AddPreTickIntervalAction(delta =>
+            Hearth.City.Toils.AddPreTick(lie, delta =>
             {
                 var c = Comp; if (c == null) { EndJobWith(JobCondition.Incompletable); return; }
                 if (c.sessionDenied) { EndJobWith(JobCondition.Incompletable); return; }
                 if (c.sessionDone) { EndJobWith(JobCondition.Succeeded); return; }
                 if (c.sessionActive)
                 {
-                    pawn.GainComfortFromCellIfPossible(delta);
+                    Hearth.City.Toils.Comfort(pawn, delta);
                     WellnessEffects.GainJoy(pawn, delta, Table, job.def.joyKind);
                     return;
                 }
@@ -175,7 +175,7 @@ namespace Hearth.Wellness
             work.handlingFacing = true;
             work.activeSkill = () => SkillDefOf.Social;
             int waitedForClient = 0;
-            work.AddPreTickIntervalAction(delta =>
+            Hearth.City.Toils.AddPreTick(work, delta =>
             {
                 var c = Comp; var client = Client;
                 if (c == null || client == null || c.recipient != client) { EndJobWith(JobCondition.Incompletable); return; }

@@ -28,6 +28,16 @@ namespace Hearth.City
 #endif
         }
 
+        /// <summary>Like Toil.AddPreTickIntervalAction (1.6+); on 1.5 a pre-tick action that stands for one tick.</summary>
+        public static void AddPreTick(Toil t, Action<int> a)
+        {
+#if RW16PLUS
+            t.AddPreTickIntervalAction(a);
+#else
+            t.AddPreTickAction(() => a(1));
+#endif
+        }
+
         public static void Comfort(Pawn pawn, int delta)
         {
 #if RW16PLUS
@@ -43,6 +53,15 @@ namespace Hearth.City
             return pawn.IsHashIntervalTick(interval, delta);
 #else
             return pawn.IsHashIntervalTick(interval);
+#endif
+        }
+
+        public static bool JoyTick(Pawn pawn, int delta, JoyTickFullJoyAction action, float extraJoyGainFactor, Building source)
+        {
+#if RW16PLUS
+            return JoyUtility.JoyTickCheckEnd(pawn, delta, action, extraJoyGainFactor, source);
+#else
+            return JoyUtility.JoyTickCheckEnd(pawn, action, extraJoyGainFactor, source);
 #endif
         }
 

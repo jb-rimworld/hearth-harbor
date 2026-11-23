@@ -162,7 +162,7 @@ namespace Silverline
             double benefit = InsuranceMath.AccidentBenefit(c.sum, c.tier, net, c.HasEffect("plusProgression"), partialOnly);
             if (cl.contributed && InsSettings.Hard) benefit = InsuranceMath.ContributionCut(benefit, true);
             cl.gross = benefit; cl.offered = benefit;
-            if (detail.Any(d => d.label.Contains("bionic", StringComparison.OrdinalIgnoreCase))) cl.AddHint("Bionic");
+            if (detail.Any(d => d.label.IndexOf("bionic", StringComparison.OrdinalIgnoreCase) >= 0)) cl.AddHint("Bionic");
         }
 
         /// <summary>Lost body part on a caravan with Wanderlust Travel Cover: pays the Schedule of Limbs percentage of the per-head sum, linear.</summary>

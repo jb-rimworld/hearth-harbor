@@ -201,7 +201,7 @@ namespace Hearth.Guests
             wait.defaultCompleteMode = ToilCompleteMode.Delay;
             wait.defaultDuration = 150;
             wait.initAction = () => { if (Desk.HostNearby()) wait.actor.jobs.curDriver.ticksLeftThisToil = 60; };
-            wait.tickIntervalAction = delta => pawn.rotationTracker.FaceTarget(Desk);
+            Hearth.City.Toils.OnTick(wait, delta => pawn.rotationTracker.FaceTarget(Desk));
             wait.WithProgressBarToilDelay(TargetIndex.A);
             yield return wait;
             var done = ToilMaker.MakeToil("HH_CheckInDone");
@@ -226,13 +226,13 @@ namespace Hearth.Guests
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
             yield return Toils_Interpersonal.WaitToBeAbleToInteract(pawn);
             var talk = ToilMaker.MakeToil("HH_Accompany");
-            talk.tickIntervalAction = delta =>
+            Hearth.City.Toils.OnTick(talk, delta =>
             {
                 pawn.rotationTracker.FaceCell(Guest.Position);
-                if (pawn.IsHashIntervalTick(300, delta) && pawn.interactions.CanInteractNowWith(Guest))
+                if (Hearth.City.Toils.HashTick(pawn, 300, delta) && pawn.interactions.CanInteractNowWith(Guest))
                     pawn.interactions.TryInteractWith(Guest, Rand.Value < 0.75f ? InteractionDefOf.Chitchat : InteractionDefOf.DeepTalk);
                 if (!pawn.Position.InHorDistOf(Guest.Position, 3f)) ReadyForNextToil();
-            };
+            });
             talk.handlingFacing = true;
             talk.socialMode = RandomSocialMode.Off;
             talk.defaultCompleteMode = ToilCompleteMode.Delay;
@@ -259,7 +259,7 @@ namespace Hearth.Guests
         {
             var reg = GuestRegistry.Instance;
             if (reg == null || !Modules.On(ModuleId.Inn) || reg.Records.Count == 0) return true;
-            return !SocialInteractionUtility.CanInitiateInteraction(pawn);
+            return !VersionCompat.CanInitiateInteraction(pawn);
         }
 
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)

@@ -102,7 +102,7 @@ namespace Silverline
             if (!Modules.On(ModuleId.Bank)) return;
             var c = BankGameComp.Current;
             if (c == null || !c.HasAccount) return;
-            if (!__instance.TreatAsPlayerHomeForThreatPoints) return;
+            if (!__instance.TreatAsPlayerHome()) return;
             int tick = Find.TickManager != null ? Find.TickManager.TicksGame : 0;
             // the balance and the slider are two cheap reads; a change inside the tick (a deposit, a test) refills at once
             long bal = c.Balance.Micro + c.InTransit.Micro; float share = HSettings.Get("bank.wealthShare");
@@ -130,7 +130,7 @@ namespace Silverline
             {
                 for (int i = 0; i < maps.Count; i++)
                 {
-                    var m = maps[i]; if (!m.TreatAsPlayerHomeForThreatPoints) continue;
+                    var m = maps[i]; if (!m.TreatAsPlayerHome()) continue;
                     float w = m.PlayerWealthForStoryteller;
                     cacheMapIds.Add(m.uniqueID); cacheExtra.Add(w); total += w; homes++;
                 }
