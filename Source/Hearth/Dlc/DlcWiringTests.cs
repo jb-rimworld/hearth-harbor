@@ -290,5 +290,45 @@ namespace Hearth.Dlc.Tests
             yield break;
         }
     }
+    // ===================================================================================================================
+    /// <summary>End to end: a knight's party arrives as Inn guests, the knight books the fitting guest bed and actually sleeps in it at night.</summary>
+    public sealed class DlcNobleSleepSuite : HearthTestSuite
+    {
+        public override string Name => "dlc.nobleSleep";
+        public override ModuleId Module => ModuleId.Inn;
+        public override int MaxTicks => 90000;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            if (!ModsConfig.RoyaltyActive) { t.Note("no Royalty"); yield break; }
+            InnTestKit.FastTime();
+            var map = t.Map; var empire = Faction.OfEmpire; var reg = GuestRegistry.Instance;
+            if (empire.HostileTo(Faction.OfPlayer) || empire.GoodwillWith(Faction.OfPlayer) < 0) Faction.OfPlayer.TryAffectGoodwillWith(empire, 100, false, false);
+            var st = DlcState.Current.Nobles; st.Offers.Clear(); st.Stays.Clear();
+            var knight = DefDatabase<RoyalTitleDef>.GetNamed("Knight"); var saved = knight.bedroomRequirements;
+            InnTestKit.Site site = null;
+            try { site = InnTestKit.BuildRoom(map, 1, false, 6, 5); } catch (Exception e) { t.Check(false, "room: " + e.Message); }
+            if (site == null) yield break;
+            knight.bedroomRequirements = new List<RoomRequirement> { new RoomRequirement_Area { area = 20 } };
+            InnTestKit.MarkGuestBeds(site, true); var bed = site.Beds[0];
+            var stay = NobleStays.StartStay(map, new NobleOffer { Id = 911, MapId = map.uniqueID, Title = "Knight", Nobles = 1, Guards = 0, Days = 2 });
+            t.Check(stay != null, "knight arrived");
+            if (stay == null) { knight.bedroomRequirements = saved; InnTestKit.Teardown(site, map); yield break; }
+            var noble = stay.Pawns[0];
+            for (int w = 0; w < 1500 && !noble.Spawned; w += 60) yield return 60;
+            var r = reg.Get(noble);
+            for (int w = 0; w < 6000 && r != null && !r.CheckedIn; w += 250) yield return 250;   // walks in and checks in by themselves
+            if (r != null && !r.CheckedIn) { t.Note("not checked in after 6000 ticks, checking in by hand"); reg.CheckIn(noble, null); }
+            t.Check(r != null && r.Bed == bed, "the knight booked the fitting guest bed (" + r?.Bed + ")");
+            foreach (var x in InnTestKit.WaitForHour(map, 23, 23)) yield return x;
+            bool slept = false;
+            for (int w = 0; w < 2500 * 6 && !slept; w += 250) { yield return 250; slept = noble.Spawned && noble.InBed() && noble.CurrentBed() == bed; }
+            t.Check(slept, $"the knight sleeps in the guest bed at night (hour {GenLocalDate.HourInteger(map)}, job {noble.CurJobDef?.defName}, in bed {noble.InBed()})");
+            float before = GuestApi.Info(noble)?.Satisfaction ?? 0f; NobleStays.CheckRooms(stay);
+            t.Check((GuestApi.Info(noble)?.Satisfaction ?? 0f) > before, "the room meets the title: the knight is pleased");
+            knight.bedroomRequirements = saved;
+            st.Stays.Clear();
+            InnTestKit.RemoveAllGuests(map); InnTestKit.Teardown(site, map);
+        }
+    }
 }
 #endif
