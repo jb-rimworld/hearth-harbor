@@ -127,6 +127,20 @@ namespace Hearth.Wellness
             if (Scribe.mode == LoadSaveMode.PostLoadInit && recipient == null && (recipientReady || sessionActive || masseur != null)) ResetSession();
         }
 
+        // A saved pairing with someone who is no longer on this map (world pawn, left the map): pawns are not spawned yet in PostLoadInit,
+        // so the check waits until loading is finished.
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            if (!respawningAfterLoad || (recipient == null && masseur == null)) return;
+            LongEventHandler.ExecuteWhenFinished(() =>
+            {
+                if (parent == null || parent.Destroyed) return;
+                bool bad(Pawn p) => p != null && (p.Destroyed || p.Discarded || !p.Spawned || p.Map != parent.Map);
+                if (bad(recipient) || bad(masseur)) ResetSession();
+            });
+        }
+
         public override void PostDeSpawn(Map map
 #if RW16PLUS
             , DestroyMode mode = DestroyMode.Vanish

@@ -166,7 +166,13 @@ namespace Hearth
         static readonly AccessTools.FieldRef<Lord, StateGraph> graphRef = AccessTools.FieldRefAccess<Lord, StateGraph>("graph");
         static readonly AccessTools.FieldRef<Lord, LordToil> toilRef = AccessTools.FieldRefAccess<Lord, LordToil>("curLordToil");
 
-        static readonly AccessTools.FieldRef<LordJob_Joinable_Gathering, int> durationRef = AccessTools.FieldRefAccess<LordJob_Joinable_Gathering, int>("durationTicks");
+        // reflection (not compile-checked): a missing field on another game version is logged once and the stand-in keeps its default duration
+        static readonly AccessTools.FieldRef<LordJob_Joinable_Gathering, int> durationRef = MakeDurationRef();
+        static AccessTools.FieldRef<LordJob_Joinable_Gathering, int> MakeDurationRef()
+        {
+            try { return AccessTools.FieldRefAccess<LordJob_Joinable_Gathering, int>("durationTicks"); }
+            catch (Exception e) { HLog.Error("Core", "LordJob_Joinable_Gathering.durationTicks not found on this game version: gathering stand-ins keep the vanilla party duration", e); return null; }
+        }
 
         static bool Protect(Lord l)
         {
@@ -182,7 +188,7 @@ namespace Hearth
             int left;
             try { left = g.TicksLeft; } catch (Exception) { left = g.DurationTicks; }
             var party = new LordJob_Joinable_Party(g.Spot, g.Organizer, GatheringDefOf.Party);
-            durationRef(party) = Math.Max(250, Math.Min(g.DurationTicks > 0 ? g.DurationTicks : 60000, left));
+            if (durationRef != null) durationRef(party) = Math.Max(250, Math.Min(g.DurationTicks > 0 ? g.DurationTicks : 60000, left));
             return party;
         }
 

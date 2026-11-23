@@ -42,6 +42,16 @@ namespace Hearth
             return true;
         }
 
+        /// <summary>Replaces the whole module table (hosting difficulty). Modules that go from on to off are announced like SetModule does, so no path can skip OnSwitchedOff.</summary>
+        public void ReplaceModules(Dictionary<ModuleId, bool> next)
+        {
+            var wasOn = new List<ModuleId>();
+            foreach (var m in Modules.All) if (m != ModuleId.Core && ModuleOn(m)) wasOn.Add(m);
+            modules = new Dictionary<ModuleId, bool>(next);
+            foreach (var m in wasOn)
+                if (!ModuleOn(m) && this == Current && Verse.Current.ProgramState == ProgramState.Playing && Modules.Available(m)) HearthMod.NotifySwitchedOff(m);
+        }
+
         public HearthProfile CloneForNewGame()
         {
             var p = new HearthProfile { Tier = Tier, Content = Content, Store = Store.Clone(), FirstStartCardDone = false };
