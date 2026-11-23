@@ -662,7 +662,7 @@ namespace Hearth.Guests
             if (bond < threshold) { r.Log("HH.Inn.Event.BondTooLow".TranslateOr("Liked the place, but not enough to stay (bond {0}/{1}).").Replace("{0}", bond.ToString()).Replace("{1}", threshold.ToString()), 5); return; }
             float chance = RecruitChanceOverride ?? RecruitChance(s, bond, threshold);
             if (!JRand.Stream("inn.recruit").Chance(chance)) { r.Log("HH.Inn.Event.Declined".TranslateOr("Thought about staying for good, then went home."), 5); return; }
-            var recruiter = colonists.Where(c => c.relations != null).OrderByDescending(c => c.relations.OpinionOf(p)).FirstOrDefault();
+            var recruiter = LikelyRecruiter(p, map);
             if (recruiter == null) return;
             var f = p.Faction;
             int cost = RecruitGoodwillCost(p, recruiter);
@@ -691,6 +691,10 @@ namespace Hearth.Guests
             int settlements = Find.WorldObjects.Settlements.Count(x => x.Faction == f);
             return Mathf.Clamp(Mathf.RoundToInt(5f + p.MarketValue / 200f + 30f / (1f + settlements)), 5, 40);
         }
+
+        /// <summary>The colonist who would win the guest over: the one with the highest opinion of them.</summary>
+        public static Pawn LikelyRecruiter(Pawn guest, Map map)
+            => map?.mapPawns?.FreeColonistsSpawned.Where(c => c.relations != null).OrderByDescending(c => c.relations.OpinionOf(guest)).FirstOrDefault();
 
         /// <summary>The cost with the recruiter's traits: a silver tongue makes the surcharge above the floor of 5 cheaper (x0.9).</summary>
         public static int RecruitGoodwillCost(Pawn p, Pawn recruiter)

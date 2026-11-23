@@ -101,7 +101,7 @@ namespace Hearth.Guests
                 line += " · " + "HH.Inn.Recruit.Chance".TranslateOr("may join at check-out (about {0} %)").Replace("{0}", (GuestRegistry.RecruitChance(r.Value - r.Expectation, bond, thr) * 100f).ToString("0"));
             else line += " · " + "HH.Inn.Recruit.NotYet".TranslateOr("not close enough yet");
             if (p.Faction != null && !p.Faction.IsPlayer)
-                line += " · " + "HH.Inn.Recruit.Cost".TranslateOr("costs {0} goodwill with {1}").Replace("{0}", GuestRegistry.RecruitGoodwillCost(p).ToString()).Replace("{1}", p.Faction.Name);
+                line += " · " + "HH.Inn.Recruit.Cost".TranslateOr("costs {0} goodwill with {1}").Replace("{0}", GuestRegistry.RecruitGoodwillCost(p, GuestRegistry.LikelyRecruiter(p, p.MapHeld)).ToString()).Replace("{1}", p.Faction.Name);
             st.RecruitLine = line;
         }
 
