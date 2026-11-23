@@ -175,7 +175,7 @@ namespace Hearth.Casino.PlayerHouse
                 if (p.IsQuestLodger()) return false;
                 return true;
             }
-            if (p.RaceProps.Animal) return p.Faction == Faction.OfPlayer && p.HostFaction == null && !p.InMentalState && !p.Downed;
+            if (p.RaceProps.Animal) return p.Faction == Faction.OfPlayer && p.HostFaction == null;   // like vanilla: downed or berserk animals can be sold too
             return false;                                                     // mechanoids, entities: no
         }
 
@@ -305,14 +305,28 @@ namespace Hearth.Casino.PlayerHouse
             r.Kept = mult >= 1.0;
             // win: the things stay and the house adds value × (mult − 1); otherwise the things go and a partial prize (0 < mult < 1) is paid back
             r.Payout = r.Kept ? value * (mult - 1.0) : value * mult;
-            if (!r.Kept) Lose(o, r);
-            if (r.Payout.Micro > 0) ThrumboHouse.PayStakeWin(winTo, o.Map, r.Payout, "Lucky Thrumbo: raise the stakes (" + game.ToString().ToLowerInvariant() + ")");
-            string outcome = r.Kept
-                ? (mult > 1.0 ? "HH.Thrumbo.Stakes.Won".Translate(mult.ToString("0.##"), r.Payout.ToStringShort()).ToString() : "HH.Thrumbo.Stakes.Push".Translate().ToString())
-                : (r.Payout.Micro > 0 ? "HH.Thrumbo.Stakes.LostPart".Translate(r.Payout.ToStringShort()).ToString() : "HH.Thrumbo.Stakes.Lost".Translate().ToString());
-            r.Text = r.Text + " — " + outcome;
-            ThrumboComponent.Get()?.Record(game, PayFrom.Goods, value, r.Kept ? value + r.Payout : r.Payout, "HH.Thrumbo.Stakes.HistoryLine".Translate(what, r.Text).ToString());
-            foreach (var l in o.Lines) { l.Count = 0; l.Buffer = "0"; }
+            bool failed = false;
+            try
+            {
+                if (!r.Kept)
+                {
+                    try { Lose(o, r); }
+                    catch (Exception e) { failed = true; HLog.Error("Casino", "Lucky Thrumbo stakes: a vanilla sale step threw while the stake was taken: " + e); }
+                }
+                if (r.Payout.Micro > 0) ThrumboHouse.PayStakeWin(winTo, o.Map, r.Payout, "Lucky Thrumbo: raise the stakes (" + game.ToString().ToLowerInvariant() + ")");
+            }
+            catch (Exception e) { failed = true; HLog.Error("Casino", "Lucky Thrumbo stakes: payout failed: " + e); }
+            finally
+            {
+                // whatever happened, the round is on record and the buffers are reset, so there is never a half round
+                string outcome = r.Kept
+                    ? (mult > 1.0 ? "HH.Thrumbo.Stakes.Won".Translate(mult.ToString("0.##"), r.Payout.ToStringShort()).ToString() : "HH.Thrumbo.Stakes.Push".Translate().ToString())
+                    : (r.Payout.Micro > 0 ? "HH.Thrumbo.Stakes.LostPart".Translate(r.Payout.ToStringShort()).ToString() : "HH.Thrumbo.Stakes.Lost".Translate().ToString());
+                r.Text = r.Text + " — " + outcome;
+                ThrumboComponent.Get()?.Record(game, PayFrom.Goods, value, r.Kept ? value + r.Payout : r.Payout, "HH.Thrumbo.Stakes.HistoryLine".Translate(what, r.Text).ToString());
+                foreach (var l in o.Lines) { l.Count = 0; l.Buffer = "0"; }
+            }
+            if (failed) r.Text += " (!)";
             return r;
         }
 

@@ -155,6 +155,7 @@
   <HH.Thrumbo.History>Verlauf</HH.Thrumbo.History>
   <HH.Thrumbo.NoHistory>Noch nichts gespielt.</HH.Thrumbo.NoHistory>
   <HH.Thrumbo.Totals>{0} Runden · eingesetzt {1} · zurückgezahlt {2} ({3} %) · Ergebnis {4}</HH.Thrumbo.Totals>
+  <HH.Thrumbo.TotalsGoods>Wareneinsätze (Silberwert, nicht im Hauptbuch): {0} Runden · eingesetzt {1} · zurückgezahlt {2} · Ergebnis {3}</HH.Thrumbo.TotalsGoods>
   <HH.Thrumbo.StakeShort>Einsatz {0}</HH.Thrumbo.StakeShort>
   <HH.Thrumbo.Err.Closed>The Lucky Thrumbo ist geschlossen.</HH.Thrumbo.Err.Closed>
   <HH.Thrumbo.Err.NoMap>Es gibt keine Kolonie, aus der bezahlt werden könnte.</HH.Thrumbo.Err.NoMap>

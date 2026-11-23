@@ -166,6 +166,7 @@
   <HH.Thrumbo.History>History</HH.Thrumbo.History>
   <HH.Thrumbo.NoHistory>Nothing played yet.</HH.Thrumbo.NoHistory>
   <HH.Thrumbo.Totals>{0} rounds · staked {1} · paid back {2} ({3} %) · result {4}</HH.Thrumbo.Totals>
+  <HH.Thrumbo.TotalsGoods>Goods stakes (value in silver, not in the ledger): {0} rounds · staked {1} · paid back {2} · result {3}</HH.Thrumbo.TotalsGoods>
   <HH.Thrumbo.StakeShort>stake {0}</HH.Thrumbo.StakeShort>
   <HH.Thrumbo.Err.Closed>The Lucky Thrumbo is closed.</HH.Thrumbo.Err.Closed>
   <HH.Thrumbo.Err.NoMap>There is no colony to pay from.</HH.Thrumbo.Err.NoMap>

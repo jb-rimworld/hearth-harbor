@@ -161,7 +161,13 @@ namespace Hearth.Casino.PlayerHouse
         public static void PayStakeWin(PayFrom to, Map map, Money pay, string memo)
         {
             var comp = Comp; var led = Ledger.Current; if (comp == null || led == null) return;
-            if (to == PayFrom.Bank && BankApi.Ready) { Give(PayFrom.Bank, map, null, pay, memo); return; }
+            if (to == PayFrom.Bank && BankApi.Ready)
+            {
+                var due = pay + new Money(comp.ChangeMicro);
+                if (due.Micro <= 0) return;
+                if (BankApi.Receive(House, due, memo + " (account)")) { comp.ChangeMicro = 0; return; }
+                HLog.Warn("Casino", "Lucky Thrumbo: the account refused the stake payout; paying by drop pod instead");   // fall through to the pods
+            }
             var total = pay + new Money(comp.ChangeMicro);
             int coins = total.WholeSilver;
             if (coins <= 0 || map == null) { comp.ChangeMicro = total.Micro; return; }

@@ -38,6 +38,19 @@ namespace Hearth.Casino.PlayerHouse.Tests
             return false;
         }
 
+        /// <summary>Moves the sealed slots stream to the next spin whose multiplier satisfies <paramref name="want"/>.</summary>
+        static bool SeekSlots(SlotVolatility vol, Func<double, bool> want)
+        {
+            var pt = ThrumboOdds.Slots(vol, TS.Shift); var s = JRand.Sealed("thrumbo.slots");
+            for (int i = 0; i < 2000; i++)
+            {
+                ulong c = s.Counter;
+                double m = pt.Spin(s, out _, out _, out _);
+                if (want(m)) { s.Counter = c; return true; }
+            }
+            return false;
+        }
+
         static Pawn Human(Faction f, bool child)
         {
             var req = child
@@ -82,13 +95,19 @@ namespace Hearth.Casino.PlayerHouse.Tests
             var prisoner = Human(enemy, false); GenSpawn.Spawn(prisoner, near, map); prisoner.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner); spawned.Add(prisoner);
             Pawn child = null;
             try { child = Human(enemy, true); GenSpawn.Spawn(child, near, map); child.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner); spawned.Add(child); }
-            catch (Exception e) { t.Note("no child prisoner possible here: " + e.GetType().Name); child = null; }
+            catch (Exception e) { t.Check(false, "the test child prisoner could not be created: " + e); }
             Pawn slave = null;
-            if (ModsConfig.IdeologyActive) { slave = Human(enemy, false); GenSpawn.Spawn(slave, near, map); slave.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Slave); spawned.Add(slave); }
+            if (ModsConfig.IdeologyActive)
+            {
+                try { slave = Human(enemy, false); GenSpawn.Spawn(slave, near, map); slave.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Slave); spawned.Add(slave); }
+                catch (Exception e) { t.Check(false, "the test slave could not be created: " + e); }
+            }
+            else t.Note("Ideology is not active: slaves do not exist in this profile, the slave check is not applicable");
             var animal = PawnGenerator.GeneratePawn(new PawnGenerationRequest(DefDatabase<PawnKindDef>.GetNamed("Muffalo"), Faction.OfPlayer, PawnGenerationContext.NonPlayer, forceGenerateNewPawn: true));
             GenSpawn.Spawn(animal, near, map); spawned.Add(animal);
             var guest = Kit.Visitors(t, 1, 0, near).FirstOrDefault(); if (guest != null) spawned.Add(guest);
-            if (child != null) t.Check(!child.DevelopmentalStage.Adult(), "test child is a child");
+            t.Check(child != null && !child.DevelopmentalStage.Adult(), "test child exists and is a child");
+            if (ModsConfig.IdeologyActive) t.Check(slave != null && slave.IsSlave, "test slave exists and is a slave");
 
             // ---- setting off: no offer, no window, the button is hidden (Window_Thrumbo draws it only when Enabled) -------------
             HSettings.Set(TS.AllIn, 0f);
@@ -112,8 +131,8 @@ namespace Hearth.Casino.PlayerHouse.Tests
             t.Check(Offered(offer, animal), "a colony animal is offered (content Standard)");
             t.Check(!Offered(offer, col) && !offer.Lines.Any(l => l.Tradeable.thingsColony.OfType<Pawn>().Any(p => p.IsColonist || (p.RaceProps.Humanlike && p.Faction == Faction.OfPlayer))), "no colonist ever appears in the list");
             t.Check(!ThrumboStakes.Allowed(col), "a colonist is never an allowed stake");
-            if (child != null) t.Check(!Offered(offer, child) && !ThrumboStakes.Allowed(child), "a child prisoner is never offered");
-            if (slave != null) t.Check(!Offered(offer, slave) && !ThrumboStakes.Allowed(slave), "a slave is never offered");
+            t.Check(child != null && !Offered(offer, child) && !ThrumboStakes.Allowed(child), "a child prisoner is never offered");
+            if (ModsConfig.IdeologyActive) t.Check(slave != null && !Offered(offer, slave) && !ThrumboStakes.Allowed(slave), "a slave is never offered");
             if (guest != null) t.Check(!Offered(offer, guest) && !ThrumboStakes.Allowed(guest), "a guest is never offered");
             else t.Note("no visitor faction: guest check skipped");
             t.Check(offer.Lines.All(l => l.Tradeable.thingsColony.All(ThrumboStakes.Allowed)), "every offered thing passes the stake filter");
@@ -214,6 +233,58 @@ namespace Hearth.Casino.PlayerHouse.Tests
             var sr = ThrumboStakes.PlaySlots(offer, SlotVolatility.Medium, PayFrom.Bank);
             t.Check(sr.Ok && sr.Reels != null && sr.Reels[0] == ea && sr.Reels[1] == eb && sr.Reels[2] == ec, "slots with goods: the sealed stream decides (" + sr.Text + sr.Error + ")");
             t.Check(comp.History.Count == 4 && comp.History.All(e => e.From == (int)PayFrom.Goods), "four goods rounds in the history");
+            yield return 1;
+
+            // ---- partial prize: slots below x1: the things are lost, the prize is paid in silver ----------------------------------------------
+            Kit.Power(beacon);
+            offer = ThrumboStakes.Offer(map);
+            LineOf(offer, steel).Count = 10;
+            var partValue = ThrumboStakes.Value(offer);
+            int steel2 = MapCount(map, ThingDefOf.Steel); long sum3 = led.SumAll(); var house3 = led.Balance(ThrumboHouse.House); var bal3 = bank.Balance; long change3 = comp.ChangeMicro;
+            t.Check(SeekSlots(SlotVolatility.Medium, m => m > 0 && m < 1.0), "found a slots spin with a partial prize in the sealed stream");
+            Kit.Power(beacon);
+            var qr = ThrumboStakes.PlaySlots(offer, SlotVolatility.Medium, PayFrom.Bank);
+            t.Check(qr.Ok && !qr.Kept && qr.Mult > 0 && qr.Mult < 1.0, "partial round: lost, multiplier " + qr.Mult + " (" + qr.Text + qr.Error + ")");
+            t.Check(qr.Payout == partValue * qr.Mult && qr.Payout.Micro > 0, "the prize is value × multiplier = " + qr.Payout);
+            t.Check(MapCount(map, ThingDefOf.Steel) == steel2 - 10, "a partial prize still takes exactly the 10 steel");
+            t.Check(bank.Balance == bal3 + qr.Payout + new Money(change3), "the prize arrived on the account (" + bal3 + " -> " + bank.Balance + ")");
+            t.Check(led.Balance(ThrumboHouse.House) == house3 - qr.Payout - new Money(change3) && led.SumAll() == sum3, "the house account paid it, the ledger stays balanced");
+            t.Check(qr.Text.Contains("HH.Thrumbo.Stakes.LostPart".Translate(qr.Payout.ToStringShort()).ToString()), "the result text says lost with the prize paid back");
+            var pe = comp.History.LastOrDefault();
+            t.Check(pe != null && pe.From == (int)PayFrom.Goods && pe.StakedMicro == partValue.Micro && pe.PaidMicro == qr.Payout.Micro, "history: partial prize recorded");
+            t.Check(offer.Lines.All(l => l.Count == 0), "the count buffers are reset after the round");
+
+            // ---- bank refuses the payout: the win falls back to drop pods ---------------------------------------------------------------------------
+            Kit.Power(beacon);
+            offer = ThrumboStakes.Offer(map);
+            LineOf(offer, steel).Count = 5;
+            t.Check(SeekRoulette(true, RouletteBet.Red()), "found a winning spin for the fallback test");
+            Kit.Power(beacon);
+            long sumF = led.SumAll(); var balF = bank.Balance; int silverF = MapCount(map, ThingDefOf.Silver); long changeF = comp.ChangeMicro;
+            bank.TestReset(false);                                          // the bank is not ready, as if it refused to book
+            bank.InvalidateCache();
+            var fr = ThrumboStakes.PlayRoulette(offer, RouletteBet.Red(), PayFrom.Bank);
+            long fCoins = (fr.Payout.Micro + changeF - comp.ChangeMicro) / Money.PerSilver;
+            t.Check(fr.Ok && fr.Kept && fCoins == (fr.Payout + new Money(changeF)).WholeSilver, "bank not ready: the win is paid as " + fCoins + " coins by drop pod");
+            t.Check(led.SumAll() == sumF, "the fallback keeps the ledger balanced");
+            for (int i = 0; i < 20 && MapCount(map, ThingDefOf.Silver) < silverF + fCoins; i++) yield return 60;
+            t.Check(MapCount(map, ThingDefOf.Silver) == silverF + fCoins, "the fallback pods brought the silver");
+            bank.TestReset(true); led.Post("world", BankGameComp.Colony, Money.FromSilver(100000), "test funding"); bank.InvalidateCache();
+
+            // ---- the stakes button is disabled while a blackjack hand is open -------------------------------------------------------------------
+            t.Check(Window_Thrumbo.StakesButtonEnabled(false), "no hand open: the button is enabled");
+            var hseat = ThrumboSeat.For(neg, PayFrom.Bank);
+            bool handOpen = false;
+            for (int i = 0; i < 40 && !handOpen; i++) { ThrumboHouse.DealBlackjack(hseat, Money.FromSilver(5)); handOpen = ThrumboHouse.CurrentHand() != null; }
+            t.Check(handOpen, "a blackjack hand is open");
+            t.Check(!Window_Thrumbo.StakesButtonEnabled(ThrumboHouse.CurrentHand() != null), "hand open: the stakes button is disabled");
+            ThrumboHouse.StandIfOpen(hseat);
+            t.Check(ThrumboHouse.CurrentHand() == null && Window_Thrumbo.StakesButtonEnabled(ThrumboHouse.CurrentHand() != null), "hand closed: the button is enabled again");
+
+            // ---- totals: goods rounds are kept apart from the silver totals -----------------------------------------------------------------------
+            t.Check(comp.GoodsRounds == 6 && comp.GoodsStaked > 0, "goods rounds are counted apart (" + comp.GoodsRounds + ")");
+            int silverRounds = comp.Rounds(ThrumboGame.Blackjack);
+            t.Check(comp.Rounds(ThrumboGame.Slots) == 0 && comp.Rounds(ThrumboGame.Roulette) == 0 && comp.StakedAll == comp.Staked(ThrumboGame.Blackjack), "the silver totals contain no goods stake (" + silverRounds + " blackjack hand(s))");
             yield return 1;
 
             // ---- the dialog carries the help line --------------------------------------------------------------------------------
