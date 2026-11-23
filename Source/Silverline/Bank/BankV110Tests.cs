@@ -245,11 +245,32 @@ namespace Silverline
                 double p = FinanceMath.AccountYearlyPercent(1.2, 0.2, b.interestMod);
                 t.Check(p < mattress.YearlyPercent, b.defName + " pays " + p.ToString("0.0") + " %, below Mattress Plus");
             }
+            // F19: nothing outside the settings window changes a term: the night safe gizmo only shows the state and opens the settings
+            t.Check(BankApi.Impl != null && BankApi.Impl.HasAccount, "the test bank has an account");
+            var safeCell = CellFinder.RandomClosewalkCellNear(map.Center, map, 12);
+            var safe = (Building_SLNightSafe)GenSpawn.Spawn(ThingMaker.MakeThing(SLDefOf.SL_NightSafe), safeCell, map);
+            try
+            {
+                bool dd0 = HSettings.GetBool("bank.directDeposit");
+                var gz = safe.GetGizmos().OfType<Command_Action>().FirstOrDefault(g => g.defaultLabel != null && g.defaultLabel.Contains("Open settings"));
+                t.Check(gz != null && !safe.GetGizmos().OfType<Command_Toggle>().Any(), "the night safe offers 'Open settings (Bank)' and no toggle");
+                t.Check(gz != null && gz.defaultLabel.Contains(dd0 ? "on" : "off"), "the button shows the current state: " + gz?.defaultLabel?.Replace("\n", " / "));
+                HSettings.Set("bank.directDeposit", dd0 ? 0f : 1f);
+                var gz2 = safe.GetGizmos().OfType<Command_Action>().First(g => g.defaultLabel.Contains("Open settings"));
+                t.Check(gz2.defaultLabel.Contains(dd0 ? "off" : "on"), "the state follows the real setting");
+                HSettings.Set("bank.directDeposit", dd0 ? 1f : 0f);
+                t.Check(!gz.defaultDesc.NullOrEmpty() && gz.defaultDesc.Contains("mod settings"), "the tooltip says where terms are changed");
+            }
+            finally { safe.Destroy(); }
+            // the lottery tab and the lobby draw without writing settings: lottery.colonyOn stays as it is
+            float colonyOn = HSettings.Get("lottery.colonyOn");
+
             // the Terms and lobby pages draw
             int err0 = HLog.ErrorCount;
             var w = new Window_Bank(map, BankSite.Remote, null); Find.WindowStack.Add(w); yield return 10;
             foreach (var id in new[] { "terms", "lobby", "lottery", "invest" }) { w.TabId = id; w.DoWindowContents(new Rect(0, 0, w.InitialSize.x, w.InitialSize.y)); yield return 2; w.DoWindowContents(new Rect(0, 0, 860f, 560f)); yield return 2; }
             t.Check(HLog.ErrorCount == err0, "terms, lobby, lottery and invest pages draw without errors");
+            t.Check(HSettings.Get("lottery.colonyOn") == colonyOn, "drawing the lottery tab does not change the colony lottery switch");
             w.Close();
             HSettings.Reset(HSettings.Find("bank.profit")); HSettings.Reset(HSettings.Find("finance.profit"));
             c.TestReset(true);

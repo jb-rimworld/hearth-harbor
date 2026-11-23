@@ -235,7 +235,7 @@ namespace Silverline
             E("HH.Finance.Lottery.ColonyState", "Colony lottery: {0}");
             E("HH.Finance.Lottery.StateOpen", "open");
             E("HH.Finance.Lottery.StateClosed", "closed");
-            E("HH.Finance.Lottery.SetIn", "Price, payout share, draw interval and fee are mod settings of this save game.");
+            E("HH.Finance.Lottery.SetIn", "Whether the lottery is open, its price, payout share, draw interval and fee are mod settings of this save game.");
             E("HH.Finance.Lottery.OpenSettings", "Change in the settings");
             E("HH.Finance.Lottery.OpenSettingsTip", "Opens Mod Options for Hearth & Harbor on the Bank page (category Lottery).");
             E("HH.Finance.Lottery.Matches", "{0} of 5 numbers");
@@ -250,7 +250,6 @@ namespace Silverline
             E("HH.Finance.Lottery.News.Won", "Glitterworld Grand Draw: {0}. {1} You won {2}.");
             E("HH.Finance.Lottery.News.Colony", "Your lottery drew {0}: {1} jackpot winners among {2} tickets.");
             E("HH.Finance.Lottery.ColonyTitle", "Your own lottery");
-            E("HH.Finance.Lottery.ColonyOpen", "Open the colony lottery");
             E("HH.Finance.Lottery.ColonyIntro", "Guests and the simulated players of friendly settlements buy tickets. Four numbers out of 25. You keep what is not paid out, the pot only pays what it holds.");
             E("HH.Finance.Lottery.Price", "Ticket price");
             E("HH.Finance.Lottery.Quote", "Payout share");

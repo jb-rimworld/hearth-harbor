@@ -11,7 +11,8 @@ using Verse;
 namespace Silverline
 {
     /// <summary>The kinds of cover shown per colonist (1.1.0, F28).</summary>
-    public enum CoverKind { Pension, Health, Accident, Liability, Legal }
+    /// <summary>The five named kinds have their own icon and label; Travel is the caravan cover; Other is any further per-person policy (data driven).</summary>
+    public enum CoverKind { Pension, Health, Accident, Liability, Legal, Travel, Other }
 
     public enum CoverState { None, Active, Waiting, CancelPending, AtRisk }
 
@@ -37,7 +38,41 @@ namespace Silverline
         static readonly Dictionary<int, KeyValuePair<int, List<CoverItem>>> cache = new Dictionary<int, KeyValuePair<int, List<CoverItem>>>();   // pawn id -> (stamp, items)
         static int cacheVersion = -1, cacheTick = -9999;
 
-        public static readonly CoverKind[] Kinds = { CoverKind.Pension, CoverKind.Health, CoverKind.Accident, CoverKind.Liability, CoverKind.Legal };
+        static readonly string[] KnownOrder = { "SL_GoldenYears", "SL_RimHealth", "SL_LimbByLimb", "SL_ItWasntMe", "SL_LegalShield", "SL_Wanderlust" };
+        static List<SL_PolicyDef> defs;
+
+        /// <summary>
+        /// The policies that are shown per colonist: every policy of a person or a caravan (Person, Travel) and every colony policy that
+        /// protects the people themselves (priced per colonist: health, liability, legal). Property policies (buildings, crops, livestock) are
+        /// not about a person. Not a fixed list: a policy added by data shows up here and in all tables.
+        /// </summary>
+        public static List<SL_PolicyDef> Defs
+        {
+            get
+            {
+                if (defs == null)
+                {
+                    var l = DefDatabase<SL_PolicyDef>.AllDefs.Where(d => d.kind != PolicyKind.Colony || d.riskModel == RiskModel.PerColonist).ToList();
+                    int Rank(SL_PolicyDef d) { int i = Array.IndexOf(KnownOrder, d.defName); return i >= 0 ? i : 100 + d.order; }
+                    defs = l.OrderBy(Rank).ThenBy(d => d.defName, StringComparer.Ordinal).ToList();
+                }
+                return defs;
+            }
+        }
+
+        public static CoverKind KindOf(SL_PolicyDef d)
+        {
+            switch (d?.defName)
+            {
+                case "SL_GoldenYears": return CoverKind.Pension;
+                case "SL_RimHealth": return CoverKind.Health;
+                case "SL_LimbByLimb": return CoverKind.Accident;
+                case "SL_ItWasntMe": return CoverKind.Liability;
+                case "SL_LegalShield": return CoverKind.Legal;
+                case "SL_Wanderlust": return CoverKind.Travel;
+                default: return d != null && d.kind == PolicyKind.Travel ? CoverKind.Travel : CoverKind.Other;
+            }
+        }
 
         public static string PolicyOf(CoverKind k)
         {
@@ -47,11 +82,20 @@ namespace Silverline
                 case CoverKind.Health: return "SL_RimHealth";
                 case CoverKind.Accident: return "SL_LimbByLimb";
                 case CoverKind.Liability: return "SL_ItWasntMe";
-                default: return "SL_LegalShield";
+                case CoverKind.Travel: return "SL_Wanderlust";
+                case CoverKind.Legal: return "SL_LegalShield";
+                default: return null;
             }
         }
 
-        public static string KindLabel(CoverKind k) => Ins.T("Status.Kind." + k);
+        public static string KindLabel(CoverKind k) => k == CoverKind.Other ? "?" : Ins.T("Status.Kind." + k);
+
+        /// <summary>Short column / row label of a policy: the translated name of the five known kinds, the policy label otherwise.</summary>
+        public static string KindLabel(SL_PolicyDef d)
+        {
+            var k = KindOf(d);
+            return k == CoverKind.Other ? (d?.LabelCap.ToString() ?? "?") : KindLabel(k);
+        }
 
         /// <summary>Insurance UI (tab, column, page) is only shown once the first policy exists: a module with nothing to show has no visible effect (N08).</summary>
         public static bool UiActive => Modules.On(ModuleId.Bank) && (InsuranceComponent.Instance?.Started ?? false);
@@ -86,17 +130,17 @@ namespace Silverline
         }
 
         /// <summary>For tests: drop the cache.</summary>
-        public static void Reset() { cache.Clear(); cacheVersion = -1; }
+        public static void Reset() { cache.Clear(); cacheVersion = -1; defs = null; }
 
         static List<CoverItem> Build(InsuranceComponent comp, Pawn p, int now)
         {
             var res = new List<CoverItem>();
-            foreach (var kind in Kinds)
+            foreach (var def in Defs)
             {
-                string defName = PolicyOf(kind);
-                var def = DefDatabase<SL_PolicyDef>.GetNamedSilentFail(defName);
-                var item = new CoverItem { kind = kind, def = def, state = CoverState.None, policyLabel = def?.LabelCap ?? defName };
-                bool person = def != null && def.kind == PolicyKind.Person;
+                var kind = KindOf(def);
+                string defName = def.defName;
+                var item = new CoverItem { kind = kind, def = def, state = CoverState.None, policyLabel = def.LabelCap };
+                bool person = def.kind == PolicyKind.Person;
                 var c = comp.contracts.FirstOrDefault(x => x.Active && x.defName == defName && (person ? x.holder == p : x.holder == null));
                 if (c != null && Insurable(p))
                 {
@@ -110,6 +154,7 @@ namespace Silverline
         }
 
         public static CoverItem Of(Pawn p, CoverKind k) => Of(p).FirstOrDefault(x => x.kind == k);
+        public static CoverItem Of(Pawn p, SL_PolicyDef d) => Of(p).FirstOrDefault(x => x.def == d);
 
         public static Color ColorOf(CoverState s)
         {
@@ -133,17 +178,27 @@ namespace Silverline
                 case CoverKind.Health: return ContentFinder<Texture2D>.Get("UI/HH/Insurance/Status/Health", false);
                 case CoverKind.Accident: return ContentFinder<Texture2D>.Get("UI/HH/Insurance/Status/Accident", false);
                 case CoverKind.Liability: return ContentFinder<Texture2D>.Get("UI/HH/Insurance/Status/Liability", false);
-                default: return ContentFinder<Texture2D>.Get("UI/HH/Insurance/Status/Legal", false);
+                case CoverKind.Travel: return ContentFinder<Texture2D>.Get("UI/HH/Insurance/Status/Travel", false);
+                case CoverKind.Legal: return ContentFinder<Texture2D>.Get("UI/HH/Insurance/Status/Legal", false);
+                default: return null;
             }
+        }
+
+        /// <summary>Icon of a cover item: its own kind icon, or the policy's icon (further policies), or nothing (the UI draws a coloured square).</summary>
+        public static Texture2D Icon(CoverItem it)
+        {
+            var t = Icon(it.kind);
+            if (t != null) return t;
+            return it.def != null && !it.def.iconPath.NullOrEmpty() ? ContentFinder<Texture2D>.Get(it.def.iconPath, false) : null;
         }
 
         /// <summary>One-line text for a kind of cover ("Pension: yes (Good Enough, 3 strikes left)").</summary>
         public static string Line(Pawn p, CoverItem it)
         {
-            if (!Insurable(p)) return KindLabel(it.kind) + ": " + Ins.T("Status.NotInsurable");
-            if (!it.Has) return KindLabel(it.kind) + ": " + Ins.T("Status.No");
+            if (!Insurable(p)) return KindLabel(it.def) + ": " + Ins.T("Status.NotInsurable");
+            if (!it.Has) return KindLabel(it.def) + ": " + Ins.T("Status.No");
             var c = it.contract;
-            string s = KindLabel(it.kind) + ": " + Ins.T("Status.Yes") + " (" + Ins.TierName(c.tier) + (it.colonyWide ? ", " + Ins.T("Status.ColonyCover") : "") + ")";
+            string s = KindLabel(it.def) + ": " + Ins.T("Status.Yes") + " (" + Ins.TierName(c.tier) + (it.colonyWide ? ", " + Ins.T("Status.ColonyCover") : "") + ")";
             if (it.state == CoverState.Waiting) s += " · " + Ins.T("Status.State.Waiting") + " " + (c.waitUntilTick - Ins.Now).ToStringTicksToPeriod();
             if (it.state == CoverState.CancelPending) s += " · " + Ins.T("Status.State.CancelPending");
             if (it.kind == CoverKind.Pension && PensionRule.Enabled && InsSettings.PensionMode == PensionRuleMode.Enforce && c.pensionStrikes > 0) s += " · " + Ins.T("Status.Strikes", Math.Max(0, 3 - c.pensionStrikes));
@@ -160,7 +215,7 @@ namespace Silverline
             sb.AppendLine(Line(p, it));
             var q = InsurancePricing.QuoteFor(c);
             sb.AppendLine(Ins.T("UI.Mine.Sum", Ins.Silver(c.sum)));
-            if (!q.perTravelDay) sb.AppendLine(Ins.T("UI.Price", Ins.Silver(q.billing), q.billingDays) + (it.colonyWide ? " (" + Ins.T("Status.ColonyCover") + ")" : ""));
+            sb.AppendLine((q.perTravelDay ? Ins.T("UI.Price.Travel", Ins.Silver(q.travelPerHeadDay)) : Ins.T("UI.Price", Ins.Silver(q.billing), q.billingDays)) + (it.colonyWide ? " (" + Ins.T("Status.ColonyCover") + ")" : ""));
             if (c.InWaitingPeriod(Ins.Now)) sb.AppendLine(Ins.T("UI.Mine.Waiting", (c.waitUntilTick - Ins.Now).ToStringTicksToPeriod()));
             if (it.kind == CoverKind.Pension && c.holder == p)
             {
@@ -175,15 +230,22 @@ namespace Silverline
     /// <summary>"Insurance" tab on the pawn (colonists only, once the first policy exists).</summary>
     public class ITab_SL_Insurance : ITab
     {
-        static readonly Vector2 TabSize = new Vector2(440f, 360f);
         Vector2 scroll;
 
         public ITab_SL_Insurance()
         {
-            size = TabSize;
+            size = TabSizeNow();
             labelKey = "HH.Ins.Tab.Pawn";
             tutorTag = "SLInsurance";
         }
+
+        // F35: sized like the other tabs (HUI: screen height and the window-size setting), re-read every frame
+        static Vector2 TabSizeNow() => HUI.Size(560f, 460f, 440f, 360f, 0.45f, 0.7f);
+
+        protected override void UpdateSize() { size = TabSizeNow(); }
+
+        /// <summary>The size the tab has right now (tests read it).</summary>
+        public Vector2 CurrentSize => size;
 
         public override bool IsVisible
         {
@@ -218,7 +280,7 @@ namespace Silverline
                 var row = new Rect(0, yy, inner.width, rowH);
                 Widgets.DrawBoxSolid(row, new Color(0f, 0f, 0f, 0.18f));
                 GUI.color = InsuranceStatus.ColorOf(ins ? it.state : CoverState.None); Widgets.DrawBox(row); GUI.color = Color.white;
-                var icon = InsuranceStatus.Icon(it.kind);
+                var icon = InsuranceStatus.Icon(it);
                 var ir = new Rect(row.x + 6f, row.y + 6f, 32f, 32f);
                 if (icon != null) { GUI.color = InsuranceStatus.ColorOf(ins ? it.state : CoverState.None); GUI.DrawTexture(ir, icon); GUI.color = Color.white; }
                 float textW = row.width - 52f - 120f;
@@ -242,11 +304,11 @@ namespace Silverline
         }
     }
 
-    /// <summary>Compact insurance column (five little icons) for the colonist tables. Zero width until the first policy exists.</summary>
+    /// <summary>Compact insurance column (one little icon per kind of cover) for the colonist tables. Zero width until the first policy exists.</summary>
     public class PawnColumnWorker_Insurance : PawnColumnWorker
     {
         const float Icon = 18f, Gap = 2f;
-        static float FullWidth => InsuranceStatus.Kinds.Length * (Icon + Gap) + 6f;
+        static float FullWidth => InsuranceStatus.Defs.Count * (Icon + Gap) + 6f;
 
         bool Visible => InsuranceStatus.UiActive && HSettings.GetBool(InsSettings.ShowStatusColumn);
 
@@ -276,7 +338,7 @@ namespace Silverline
                 foreach (var it in items)
                 {
                     var r = new Rect(x, y, Icon, Icon);
-                    var tex = InsuranceStatus.Icon(it.kind);
+                    var tex = InsuranceStatus.Icon(it);
                     var col = InsuranceStatus.ColorOf(ins ? it.state : CoverState.None);
                     if (tex != null) { GUI.color = col; GUI.DrawTexture(r, tex); GUI.color = Color.white; }
                     else { Widgets.DrawBoxSolid(r.ContractedBy(3f), col); }

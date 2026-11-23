@@ -97,6 +97,27 @@ namespace Hearth.ShopsFood
             t.Check(setupGizmo != null && setupGizmo.defaultLabel.Contains("missing"), "setup gizmo names what is missing: " + setupGizmo?.defaultLabel);
             var shelfDefs = VenueSetup.BuildDefs(rep.Row("storage").Req);
             t.Check(shelfDefs.Contains(ThingDef.Named("Shelf")), "storage offers the shelf as a build option");
+            // F12: every buildable thing the matcher accepts is offered (any mod), curated ones first, cached
+            var storageReq = rep.Row("storage").Req;
+            var auto = VenueSetup.AutoDefs(storageReq);
+            t.Check(ReferenceEquals(auto, VenueSetup.AutoDefs(storageReq)), "the discovered list is cached per requirement");
+            t.Check(auto.Count > 0 && auto.All(d => d.designationCategory != null && VenueSetup.Counts(storageReq, d)), "discovered storage things all have a designator category and count for the requirement: " + auto.Count);
+            var allowed = DefDatabase<ThingDef>.AllDefs.Where(d => d.designationCategory != null && d.category == ThingCategory.Building && !d.IsBlueprint && !d.IsFrame && VenueSetup.Counts(storageReq, d)).ToList();
+            t.Check(allowed.All(d => shelfDefs.Contains(d)), "BuildDefs offers every buildable thing that counts (" + allowed.Count + ")");
+            var curatedIdx = storageReq.BuildOptions.Where(d => d != null && d.designationCategory != null && shelfDefs.Contains(d)).Select(d => shelfDefs.IndexOf(d)).ToList();
+            t.Check(shelfDefs.Distinct().Count() == shelfDefs.Count, "no def twice");
+            bool lockedAfter = true, seenLocked = false;
+            foreach (var d in shelfDefs) { bool ok = VenueSetup.DesignatorFor(d, out _) != null; if (!ok) seenLocked = true; else if (seenLocked) lockedAfter = false; }
+            t.Check(lockedAfter, "buildable ones come before the locked ones");
+            if (shelfDefs.Count > 0) t.Check(VenueSetup.DesignatorFor(shelfDefs[0], out _) != null || shelfDefs.All(d => VenueSetup.DesignatorFor(d, out _) == null), "the first option is buildable when any is");
+            // a modded-style def that only the matcher knows: a seat with a designator is found for the seats requirement
+            var seatsReq = new VenueRequirement { id = "t_seats", check = VenueCheck.Seats };
+            var seatDefs = VenueSetup.AutoDefs(seatsReq);
+            t.Check(seatDefs.Contains(ThingDef.Named("Stool")) && seatDefs.Contains(ThingDef.Named("DiningChair")) && seatDefs.Contains(ThingDef.Named("Armchair")), "seats: stool, chair and armchair found by the matcher alone, without a curated list");
+            var thingsReq = new VenueRequirement { id = "t_things", check = VenueCheck.Things, thingClass = typeof(Building_Bed) };
+            t.Check(VenueSetup.AutoDefs(thingsReq).Contains(ThingDef.Named("Bed")), "a thing-class requirement finds beds");
+            t.Check(VenueSetup.AutoDefs(new VenueRequirement { id = "t_stock", check = VenueCheck.Stock }).Count == 0, "stock requirements discover nothing to build");
+            t.Check(!VenueSetup.CostText(ThingDef.Named("Shelf")).NullOrEmpty(), "cost text for the build menu: " + VenueSetup.CostText(ThingDef.Named("Shelf")));
             var des = VenueSetup.DesignatorFor(ThingDef.Named("Shelf"), out string why);
             t.Check(des != null || !why.NullOrEmpty(), "a build option has a designator or a reason: " + (why ?? "buildable"));
             bool buildGizmo = gizmos.OfType<Command_Action>().Any(g => g.defaultLabel != null && g.defaultLabel.StartsWith("Build"));

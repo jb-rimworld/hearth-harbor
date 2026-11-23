@@ -124,6 +124,8 @@
   <HH.Setting.venues.vendingPrice.Desc>Multiplies the market value of what vending machines sell.</HH.Setting.venues.vendingPrice.Desc>
   <HH.Setting.venues.waitForStaffTicks>Guest patience for staff (ticks)</HH.Setting.venues.waitForStaffTicks>
   <HH.Setting.venues.waitForStaffTicks.Desc>A guest waits this long for somebody to come to an open but unstaffed venue, then gives up annoyed.</HH.Setting.venues.waitForStaffTicks.Desc>
+  <HH.Setup.AndMore>… and {0} more</HH.Setup.AndMore>
+  <HH.Setup.AnyStuff>material</HH.Setup.AnyStuff>
   <HH.Setup.Attention>check: {0}</HH.Setup.Attention>
   <HH.Setup.BannerAttention>The furniture is complete. Check the open points below so guests are served.</HH.Setup.BannerAttention>
   <HH.Setup.BannerMissing>This {0} still misses some of its furniture.</HH.Setup.BannerMissing>

@@ -698,7 +698,7 @@ namespace Silverline
             // direct-deposit toggle and inspect on the night safe, till spot behaviour
             var safe = (Building_SLNightSafe)GenSpawn.Spawn(ThingMaker.MakeThing(SLDefOf.SL_NightSafe), t.FreeCellNearCenter(35), map);
             safe.SetFaction(Faction.OfPlayer);
-            t.Check(safe.GetGizmos().OfType<Command_Toggle>().Any(), "night safe offers the direct deposit switch");
+            t.Check(!safe.GetGizmos().OfType<Command_Toggle>().Any() && safe.GetGizmos().OfType<Command_Action>().Any(g => g.defaultLabel != null && g.defaultLabel.Contains("Open settings")), "night safe shows the direct deposit state and opens the settings (F19)");
             t.Check(safe.GetInspectString().Length > 0, "night safe inspect string");
             c.TestReset(false);
             t.Check(Tills.TillSpot(map) == safe.InteractionCell, "no account: the night safe is the till spot for physical silver");

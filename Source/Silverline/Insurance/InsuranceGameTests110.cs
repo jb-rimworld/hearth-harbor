@@ -507,6 +507,28 @@ namespace Silverline
                 c7.decideTick = Ins.Now; ClaimEngine.Decide(c7);
                 t.Check(!c7.decisionLetterPending && Find.LetterStack.LettersListForReading.OfType<ClaimLetter>().Any(x => x.claimId == c7.id), "without the AI the letter comes at once and the statement is just stored");
                 ClaimEngine.Close(c7);
+
+                // F27: selection fields without any free text are an application too
+                ai.on = true; ai.pending = null; ai.lastFields = null;
+                ClaimIntake.Property(r5.contract, ClaimTrigger.RaidBuilding, 90, "wall", map, null, null);
+                var o8 = comp.opportunities.Last(x => x.Open);
+                var c8 = ClaimOpportunities.Submit(o8, new Dictionary<string, string> { { "cause", "raid" }, { "extent", "minor" } }, "", out _)[0];
+                c8.decideTick = Ins.Now; ClaimEngine.Decide(c8);
+                t.Check(c8.formText.NullOrEmpty() && c8.formAnswers.Count == 2, "choices only, no free text");
+                t.Check(ai.pending != null && c8.decisionLetterPending && ClaimLetters.AiWaiting(c8.id), "the AI answers an application that has only selection fields");
+                var form8 = ai.lastFields != null && ai.lastFields.TryGetValue("form", out var fo8) ? fo8 as Dictionary<string, object> : null;
+                t.Check(form8 != null && ((Dictionary<string, string>)form8["choices"]).Count == 2 && (string)form8["free_text"] == "", "the choices are sent, the free text is empty");
+                ai.pending("Thank you for the details of your application.");
+                ClaimLetters.PollAi();
+                t.Check(!c8.decisionLetterPending && c8.aiReply != null && Find.LetterStack.LettersListForReading.OfType<ClaimLetter>().Any(x => x.claimId == c8.id), "the letter carries the reply");
+                ClaimEngine.Close(c8);
+                // nothing filled in at all: no AI call
+                ai.pending = null;
+                ClaimIntake.Property(r5.contract, ClaimTrigger.RaidBuilding, 90, "wall", map, null, null);
+                var c9 = ClaimOpportunities.Submit(comp.opportunities.Last(x => x.Open), null, null, out _)[0];
+                c9.decideTick = Ins.Now; ClaimEngine.Decide(c9);
+                t.Check(ai.pending == null && !c9.decisionLetterPending, "an empty application gets the offline letter, no AI call");
+                ClaimEngine.Close(c9);
             }
             finally { AiApi.Impl = null; ClaimLetters.AiTimeoutSeconds = oldTimeout; }
 
@@ -561,6 +583,35 @@ namespace Silverline
             t.Check(I(InsuranceStatus.Of(a), CoverKind.Accident).Has, "newly signed accident cover shows immediately");
             comp.FileCancel(comp.contracts.First(x => x.defName == "SL_LimbByLimb"));
             t.Check(I(InsuranceStatus.Of(a), CoverKind.Accident).state == CoverState.CancelPending || !I(InsuranceStatus.Of(a), CoverKind.Accident).Has, "cancellation pending shows");
+
+            // F28: not a fixed list: the travel cover and every personal policy by data
+            var statusDefs = InsuranceStatus.Defs;
+            t.Check(statusDefs.Any(d => d.defName == "SL_Wanderlust") && sa.Any(x => x.kind == CoverKind.Travel), "the travel cover is part of the per-pawn status");
+            t.Check(statusDefs.Count == sa.Count && statusDefs.All(d => d.kind != PolicyKind.Colony || d.riskModel == RiskModel.PerColonist), "status kinds follow the policy data: " + statusDefs.Count);
+            t.Check(!statusDefs.Any(d => d.defName == "SL_RoofOverHead"), "property policies are not about a person");
+            t.Check(!I(sa, CoverKind.Travel).Has, "no travel cover yet");
+            var trv = comp.Sign(InsTest.Def("SL_Wanderlust"), CoverTier.GoodEnough, null, 1500, null, null);
+            if (trv.Ok)
+            {
+                comp.statusVersion++;
+                var ti = I(InsuranceStatus.Of(b), CoverKind.Travel);
+                t.Check(ti.Has && ti.colonyWide, "signed travel cover shows for every colonist as colony cover");
+                t.Check(InsuranceStatus.Line(b, ti).StartsWith(InsuranceStatus.KindLabel(CoverKind.Travel)), "line names the travel cover: " + InsuranceStatus.Line(b, ti));
+                t.Check(InsuranceStatus.Tooltip(b, ti).Length > 10, "tooltip works for per-day billing");
+            }
+            else HLog.Info("Test", "travel cover not signable here (" + trv.error + "), the signed state was not checked");
+            t.Check(InsuranceStatus.Icon(CoverKind.Travel) != null, "travel icon exists");
+            // F35: the pawn tab is sized through HUI like the other tabs
+            var hs = HUI.Size(560f, 460f, 440f, 360f, 0.45f, 0.7f);
+            t.Check(Math.Abs(tab.CurrentSize.x - hs.x) < 0.5f && Math.Abs(tab.CurrentSize.y - hs.y) < 0.5f, "ITab_SL_Insurance uses HUI sizing: " + tab.CurrentSize);
+            float oldScale = HSettings.Get("core.windowScale");
+            try
+            {
+                HSettings.Set("core.windowScale", 1.6f);
+                var big = HUI.Size(560f, 460f, 440f, 360f, 0.45f, 0.7f);
+                t.Check(new ITab_SL_Insurance().CurrentSize.x >= tab.CurrentSize.x && Math.Abs(new ITab_SL_Insurance().CurrentSize.x - big.x) < 0.5f, "the window-size setting changes the tab size");
+            }
+            finally { HSettings.Set("core.windowScale", oldScale); }
 
             // pension at risk
             if (a.timetable != null)

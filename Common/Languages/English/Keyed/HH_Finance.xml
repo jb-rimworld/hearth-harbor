@@ -207,7 +207,7 @@
   <HH.Finance.Lottery.ColonyState>Colony lottery: {0}</HH.Finance.Lottery.ColonyState>
   <HH.Finance.Lottery.StateOpen>open</HH.Finance.Lottery.StateOpen>
   <HH.Finance.Lottery.StateClosed>closed</HH.Finance.Lottery.StateClosed>
-  <HH.Finance.Lottery.SetIn>Price, payout share, draw interval and fee are mod settings of this save game.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SetIn>Whether the lottery is open, its price, payout share, draw interval and fee are mod settings of this save game.</HH.Finance.Lottery.SetIn>
   <HH.Finance.Lottery.OpenSettings>Change in the settings</HH.Finance.Lottery.OpenSettings>
   <HH.Finance.Lottery.OpenSettingsTip>Opens Mod Options for Hearth &amp; Harbor on the Bank page (category Lottery).</HH.Finance.Lottery.OpenSettingsTip>
   <HH.Finance.Lottery.KeptNote> (showing the {0} best of your {1} tickets)</HH.Finance.Lottery.KeptNote>
@@ -225,7 +225,6 @@
   <HH.Finance.Lottery.News.Won>Glitterworld Grand Draw: {0}. {1} You won {2}.</HH.Finance.Lottery.News.Won>
   <HH.Finance.Lottery.News.Colony>Your lottery drew {0}: {1} jackpot winners among {2} tickets.</HH.Finance.Lottery.News.Colony>
   <HH.Finance.Lottery.ColonyTitle>Your own lottery</HH.Finance.Lottery.ColonyTitle>
-  <HH.Finance.Lottery.ColonyOpen>Open the colony lottery</HH.Finance.Lottery.ColonyOpen>
   <HH.Finance.Lottery.ColonyIntro>Guests and the simulated players of friendly settlements buy tickets. Four numbers out of 25. You keep what is not paid out, the pot only pays what it holds.</HH.Finance.Lottery.ColonyIntro>
   <HH.Finance.Lottery.Price>Ticket price</HH.Finance.Lottery.Price>
   <HH.Finance.Lottery.Quote>Payout share</HH.Finance.Lottery.Quote>
