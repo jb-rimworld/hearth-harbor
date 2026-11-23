@@ -58,7 +58,7 @@ namespace Hearth.Guests
     /// <summary>
     /// Arrival plan of one map (5.4, 5.13). Runs only while the colony has a guest bed (overnight guests) or a venue (day visitors);
     /// otherwise it is empty and does nothing at all (N08). Keeps a forecast of the next days for the guest overview.
-    /// Rate = 0.6 groups/day × renown curve × capacity × arrival setting.
+    /// Rate = 1.0 groups/day × renown curve × capacity × arrival setting.
     /// </summary>
     public sealed class MapComponent_HH_GuestScheduler : MapComponent
     {
@@ -177,23 +177,29 @@ namespace Hearth.Guests
             }
         }
 
-        /// <summary>Renown curve: 0 → 0.4, 25 → 0.8, 50 → 1.0, 75 → 1.4, 100 → 1.8 (9.3).</summary>
+        /// <summary>Renown curve: 0 → 0.9, 25 → 0.95, 50 → 1.0, 75 → 1.4, 100 → 1.8. The low end is nearly flat on purpose: a new house with a free bed
+        /// must see guests at all (long run: 0.5-0.6 at renown 12-19 left days without arrivals); renown then shapes who comes, and the upper half the volume (9.3).</summary>
         public static float RenownCurve(float r)
         {
-            float[] x = { 0, 25, 50, 75, 100 }, y = { 0.4f, 0.8f, 1f, 1.4f, 1.8f };
+            float[] x = { 0, 25, 50, 75, 100 }, y = { 0.9f, 0.95f, 1f, 1.4f, 1.8f };
             r = Mathf.Clamp(r, 0, 100);
             for (int i = 0; i < 4; i++) if (r <= x[i + 1]) return Mathf.Lerp(y[i], y[i + 1], (r - x[i]) / (x[i + 1] - x[i]));
             return y[4];
         }
+
+        public const float BaseRatePerDay = 1.0f;
+
+        /// <summary>Night capacity share: any free guest bed gives 0.8, two or more 1.0 (the old 1/3 per bed starved single-bed houses).</summary>
+        public static float NightCapacity(int freeBeds) => freeBeds <= 0 ? 0f : Mathf.Min(1f, 0.6f + 0.2f * freeBeds);
 
         /// <summary>Groups per day for this map right now.</summary>
         public float RatePerDay(bool night, bool day)
         {
             float renown = GuestRegistry.Instance?.Renown ?? GuestRegistry.StartRenown;
             float cap = 0f;
-            if (night) cap += Mathf.Min(1f, GuestBeds.FreeOn(map).Count / 3f + 0.15f);
+            if (night) cap += NightCapacity(GuestBeds.FreeOn(map).Count);
             if (day) cap += Mathf.Min(0.6f, Venues.All(map).Count * 0.3f);
-            return 0.6f * RenownCurve(renown) * cap * HSettings.Get(InnSettings.ArrivalRate);
+            return BaseRatePerDay * RenownCurve(renown) * cap * HSettings.Get(InnSettings.ArrivalRate);
         }
 
         void TopUp(int now, bool night, bool day)
@@ -204,7 +210,9 @@ namespace Hearth.Guests
             while (planHorizon < horizon && guard++ < 50)
             {
                 float lambda = RatePerDay(night, day);
-                if (lambda <= 0.0001f) { planHorizon = horizon; break; }
+                // nothing to plan right now (all beds taken, arrivals off): do NOT jump the horizon ahead, or the house stays dark for the whole forecast window
+                // (long run: days 7-14 without a single arrival after a full house at planning time). It is looked at again every 250 ticks.
+                if (lambda <= 0.0001f) { planHorizon = Math.Max(planHorizon, now); break; }
                 double u = Math.Max(1e-6, rng.NextDouble());
                 int step = (int)(-Math.Log(u) / lambda * 60000);
                 planHorizon += Math.Max(2500, step);

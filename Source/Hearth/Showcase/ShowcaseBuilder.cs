@@ -411,6 +411,8 @@ namespace Hearth.Showcase
                 var ins = InsuranceComponent.Instance;
                 if (ins != null)
                 {
+                    // a hostile left over from the map's start would make Clawback refuse every policy ("threat on"): the demo hotel starts calm
+                    foreach (var hp in map.mapPawns.AllPawnsSpawned.Where(x => !x.IsColonist && x.HostileTo(Faction.OfPlayer) && !x.Dead).ToList()) { T.Note("removed hostile before insurance: " + hp.LabelShort); hp.Destroy(); }
                     // the showcase colony has the insurance research (policies are gated behind it)
                     var res0 = DefDatabase<ResearchProjectDef>.GetNamedSilentFail("SL_Insurance");
                     if (res0 != null && !res0.IsFinished) Find.ResearchManager.FinishProject(res0, doCompletionDialog: false);

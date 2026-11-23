@@ -581,6 +581,12 @@ namespace Hearth.Guests
             t.Check(fc.All(x => x.ArrivalTick <= Find.TickManager.TicksGame + 5 * 60000), "forecast stays within 5 days");
             bool clash = fc.Any(x => fc.Any(y => y != x && x.Faction.HostileTo(y.Faction) && Math.Abs(x.ArrivalTick - y.ArrivalTick) < 60000));
             t.Check(!clash, "no mutually hostile factions planned for the same time");
+            for (int fb = 1; fb <= 3; fb++)
+                for (float rn = 0f; rn <= 20f; rn += 10f)
+                {
+                    float rate = MapComponent_HH_GuestScheduler.BaseRatePerDay * MapComponent_HH_GuestScheduler.RenownCurve(rn) * MapComponent_HH_GuestScheduler.NightCapacity(fb) * HSettings.Find(InnSettings.ArrivalRate).DefaultFor(3);
+                    t.Check(rate >= 0.7f, $"Standard Room, renown {rn:0}, {fb} free bed(s): {rate:0.00} groups/day (>= 0.7)");
+                }
             t.Check(sch.RatePerDay(true, false) > 0f, "arrival rate positive: " + sch.RatePerDay(true, false).ToString("0.000") + " groups/day");
             InnTestKit.MarkGuestBeds(site, false);
             yield return 600;

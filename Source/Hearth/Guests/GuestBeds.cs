@@ -86,11 +86,44 @@ namespace Hearth.Guests
             Scribe_Values.Look(ref PriceMode, "hhPriceMode", BedPriceMode.Auto);
         }
 
+        // ---- combined bed selector protocol v1 (RimWard draws "Use: Colonist / Guest / Patient"; see RimWard README) ----
+        /// <summary>Protocol version this mod speaks. RimWard only takes over the bed button when this is >= 1.</summary>
+        public static int BedSelectorVersion => 1;
+        /// <summary>True when Hearth &amp; Harbor itself draws the selector (not yet): RimWard then only hides its own toggles.</summary>
+        public static bool DrawsBedSelector => false;
+        /// <summary>The "Guest" entry exists for this bed (Inn module on, colony-owned humanlike bed).</summary>
+        public bool SelectorAvailable { get { var b = Bed; return Modules.On(ModuleId.Inn) && b != null && b.Faction == Faction.OfPlayer && b.def.building.bed_humanlike; } }
+        /// <summary>Why this bed cannot become a guest bed right now; null when it can (or already is one).</summary>
+        public string SelectorBlockedReason
+        {
+            get
+            {
+                var b = Bed; if (b == null || guestBed) return null;
+                return b.Medical || !b.ForColonists ? "HH.Inn.GuestBed.NotColonistBed".TranslateOr("Only a normal colonist bed (not medical, prisoner or slave) can be a guest bed.") : null;
+            }
+        }
+        static System.Reflection.MethodInfo otherDraws; static bool otherDrawsResolved;
+        /// <summary>Another mod (RimWard) draws the combined selector for this bed, so our own toggle stays hidden.</summary>
+        public static bool OtherDrawsSelector(Building_Bed bed)
+        {
+            if (!otherDrawsResolved)
+            {
+                otherDrawsResolved = true;
+                try { otherDraws = GenTypes.GetTypeInAnyAssembly("RimWard.BedSelector")?.GetMethod("Draws", new[] { typeof(Building_Bed) }); } catch (Exception) { }
+                if (otherDraws != null) HLog.Info("Inn", "RimWard.BedSelector found: RimWard draws the combined bed button, the Guest bed toggle moves into it");
+            }
+            if (otherDraws == null) return false;
+            try { return (bool)otherDraws.Invoke(null, new object[] { bed }); } catch (Exception) { return false; }
+        }
+
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             if (!Modules.On(ModuleId.Inn)) yield break;
             var b = Bed;
             if (b == null || b.Faction != Faction.OfPlayer || !b.def.building.bed_humanlike) yield break;
+            // RimWard draws the combined bed selector (which includes "Guest"): only our toggle is hidden, the price button stays
+            if (!OtherDrawsSelector(b))
+            {
             var cmd = new Command_Toggle
             {
                 defaultLabel = "HH.Inn.GuestBed.Label".TranslateOr("Guest bed"),
@@ -103,6 +136,7 @@ namespace Hearth.Guests
             if (!guestBed && (b.Medical || !b.ForColonists))
                 cmd.Disable("HH.Inn.GuestBed.NotColonistBed".TranslateOr("Only a normal colonist bed (not medical, prisoner or slave) can be a guest bed."));
             yield return cmd;
+            }
             if (!guestBed) yield break;
             yield return new Command_Action
             {

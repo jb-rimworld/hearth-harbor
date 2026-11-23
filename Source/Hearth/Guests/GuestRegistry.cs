@@ -551,6 +551,8 @@ namespace Hearth.Guests
                 float dR = 6f * Mathf.Sqrt(members.Count) / 2f * sBar * (sBar > 0 ? (1f - Renown / 120f) : (1f + Renown / 200f));
                 float cap = HSettings.Get(InnSettings.RenownLossCap);
                 if (dR < -cap) dR = -cap;
+                // an average stay (surplus within ±0.05) is no reason to lose renown; only clearly unhappy groups cost it
+                if (sBar > -0.05f && dR < 0f) dR = 0f;
                 g.RenownDelta = ChangeRenown(dR);
             }
             else g.RenownDelta = ChangeRenown(-1f);
