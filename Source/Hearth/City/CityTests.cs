@@ -129,6 +129,8 @@ namespace Hearth.City.Tests
             foreach (var extra in list.Skip(count).ToList()) { extra.GetLord()?.Notify_PawnLost(extra, PawnLostCondition.ForcedByPlayerAction); extra.Destroy(); }
             foreach (var p in picked)
             {
+                // generated visitors can carry old wounds that are created at spawn time: a bodyguard contract that starts in the same tick counts them as 'hurt while protected'
+                foreach (var inj in p.health.hediffSet.hediffs.OfType<Hediff_Injury>().ToList()) p.health.RemoveHediff(inj);
                 var cell = CellFinder.RandomClosewalkCellNear(at, map, 3);
                 p.GetLord()?.Notify_PawnLost(p, PawnLostCondition.ForcedByPlayerAction);
                 p.DeSpawn(); GenSpawn.Spawn(p, cell, map);
@@ -843,7 +845,7 @@ namespace Hearth.City.Tests
             // one hour passes
             int waited = 0;
             while (contract.Hours < 1 && waited < 16000) { yield return 100; waited += 100; }
-            if (contract.Hours < 1) t.Note($"contract ended {contract.Ended}, guard {guardPawn.LabelShort} job {guardPawn.CurJob?.def.defName} target {guardPawn.CurJob?.targetA.Thing}, guest {vip.LabelShort} spawned {vip.Spawned} isGuest {GuestApi.IsGuest(vip)} lord {vip.GetLord()?.LordJob}, last bill {contract.LastBillTick}, now {Find.TickManager.TicksGame}");
+            if (contract.Hours < 1) t.Note($"contract ended {contract.Ended} ({contract.EndReason}, refunded {contract.Refunded}, hours {contract.Hours}), guest hediffs {string.Join("/", vip.health.hediffSet.hediffs.Select(hd => hd.def.defName + "@" + hd.ageTicks))}, outdoor {map.mapTemperature.OutdoorTemp:0} C, guard {guardPawn.LabelShort} armed {SecurityService.IsArmedGuard(guardPawn)}, guard {guardPawn.LabelShort} job {guardPawn.CurJob?.def.defName} target {guardPawn.CurJob?.targetA.Thing}, guest {vip.LabelShort} spawned {vip.Spawned} isGuest {GuestApi.IsGuest(vip)} lord {vip.GetLord()?.LordJob}, last bill {contract.LastBillTick}, now {Find.TickManager.TicksGame}");
             t.Check(contract.Hours >= 1, "one hour billed after " + waited + " ticks");
             t.Check(info.Spent - spent0 >= contract.Hourly, $"guest paid {info.Spent - spent0}");
             t.Check(CityTestKit.Posted("Bodyguard, 1 hour", out var posted) && posted >= contract.Hourly, "fee booked as colony income");

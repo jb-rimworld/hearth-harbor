@@ -551,6 +551,9 @@ namespace Hearth.ShopsFood
             t.Check(VenueApi.IsStaffed(venue), "bartender on duty after " + waited);
             var till0 = VenueTestKit.Till(map);
             int beer0 = beer.stackCount;
+            // colonists with Hauling on carry beer from elsewhere into the room's stockpile and top the shelf up again before the shelf is checked
+            var haulWas = map.mapPawns.FreeColonistsSpawned.ToDictionary(c => c, c => c.workSettings?.GetPriority(WorkTypeDefOf.Hauling) ?? 0);
+            foreach (var c in haulWas.Keys) c.workSettings?.SetPriority(WorkTypeDefOf.Hauling, 0);
             var guests = VenueTestKit.SpawnVisitors(map, factions[0], VenueTestKit.OutsideCell(map, room));
             t.Check(guests.Count > 0, "guests spawned: " + guests.Count);
             waited = 0;
@@ -564,6 +567,7 @@ namespace Hearth.ShopsFood
             foreach (var g in GuestApi.GuestsOn(map)) t.Note(g.LabelShort + ": job " + (g.CurJobDef?.defName ?? "none") + ", alcohol " + (g.health?.hediffSet.HasHediff(HediffDefOf.AlcoholHigh) == true) + ", bag " + string.Join("/", g.inventory.innerContainer.Where(x => x.def.defName == "Beer").Select(x => x.stackCount.ToString())));
             t.Check(GuestApi.GuestsOn(map).Any(g => g.health != null && g.health.hediffSet.HasHediff(HediffDefOf.AlcoholHigh)) || GuestApi.GuestsOn(map).Any(g => g.jobs?.curJob?.def == JobDefOf.Ingest || (g.inventory != null && g.inventory.innerContainer.Any(x => x.def.defName == "Beer"))),
                 "the drink was drunk or is being drunk or sits in the guest's bag");
+            foreach (var kv in haulWas) kv.Key.workSettings?.SetPriority(WorkTypeDefOf.Hauling, kv.Value);
             VenueTestKit.Teardown(map, room);
         }
     }
@@ -635,10 +639,15 @@ namespace Hearth.ShopsFood
             var worker = VenueTestKit.Worker(map);
             VenueTestKit.Relocate(worker, room);
             waited = 0;
+            bool verbose0 = HLog.Verbose; HLog.Verbose = true;   // purchase failures are logged at Debug level
             while (waited < 6000 && comp.salesCount == 0)
             {
                 VenueTestKit.Drive(map); yield return 100; waited += 100;
-                if (worker == null || worker.Downed || worker.Dead) worker = VenueTestKit.Worker(map); // colonists get hurt in a live colony
+                if (worker == null || worker.Downed || worker.Dead)
+                {
+                    t.Note($"worker {worker?.LabelShort} is out (null {worker == null}, downed {worker?.Downed}, dead {worker?.Dead}, spawned {worker?.Spawned}, hp {worker?.health.summaryHealth.SummaryHealthPercent:0.00}, hediffs {(worker == null ? "" : string.Join("/", worker.health.hediffSet.hediffs.Select(hd => hd.def.defName)))}): picking another");
+                    worker = VenueTestKit.Worker(map); // colonists get hurt in a live colony
+                }
                 if (waited >= 600 && waited % 300 == 0 && worker != null && !worker.Downed && !worker.Dead && worker.CurJobDef != HHVenueDefOf.HH_TendVenue && comp.salesCount == 0 && VenueApi.BellActive(venue))
                 {
                     // a wandering colonist can take over a thousand ticks to look for work again, longer than guests keep ringing: after a natural chance, hand over the job the work giver would give
@@ -649,6 +658,7 @@ namespace Hearth.ShopsFood
                 if (waited % 1000 == 0) t.Note($"worker {worker?.LabelShort}: job {worker?.CurJobDef?.defName} at {worker?.Position}, wants tender {WorkGiver_ServeVenue.WantsTender(VenueApi.VenueOfSign(map, sign))}, bell {VenueApi.BellActive(venue)}, gate {VenueApi.Gate(venue)}, drafted {worker?.Drafted}, downed {worker?.Downed}, prio {worker?.workSettings?.GetPriority(HHVenueDefOf.HH_Serving)}");
                 if (waited % 500 == 0) foreach (var g in group2) { var gi = GuestApi.Info(g); var da = GuestActivities.All.FirstOrDefault(a => a.Id == "venues.drink"); t.Note($"  guest {g.LabelShort}: job {g.CurJobDef?.defName ?? "none"}, budget {gi?.Budget.Silver:0.0}, drink desire {(gi != null && da != null ? da.Desire(g, gi) : -1f):0.00}, cooldown {GuestMemory.InNoServiceCooldown(g)}, rho {(gi != null ? VenueShopping.Rho(g, gi, VenueApi.PriceMultiplier(venue), sign.thingIDNumber) : -1f):0.00}, awake {g.Awake()}, lord {g.GetLord()?.CurLordToil?.GetType().Name}"); }
             }
+            HLog.Verbose = verbose0;
             t.Check(comp.salesCount > 0, "the bell was answered and a drink was served after " + waited + " ticks");
             double plain = ThingDef.Named("Beer").BaseMarketValue * 1.25 * comp.priceFactor * VS.F(VS.ShopPrice);
             t.Check(comp.Income.Silver >= plain * 1.4, "bell service charged a surcharge: " + comp.Income.Silver.ToString("0.00") + " vs plain " + plain.ToString("0.00"));
