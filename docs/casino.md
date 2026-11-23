@@ -21,3 +21,9 @@ midnight without a venue) everything above float + current purses goes to the co
 
 ## Tests
 `Source/Tests/run.sh` (unit) · `tools/run_test.sh smoke,casino.defs,casino.slots,casino.tables,casino.joy,casino.addiction,casino.hint <label>`
+
+## The Lucky Thrumbo (player against a foreign house, KONZEPT 6.13)
+`Source/Hearth/Casino/PlayerHouse/`: `ThrumboHouse` (engine: stake, sealed draw, payout), `ThrumboState` (save data: history, totals, change owed, open blackjack hand as seed + actions),
+`ThrumboSettings` (`TS`, `ThrumboOdds`: base edges slots 8 %, roulette 2.7 %, blackjack 3:2 S17 + `thrumbo.edgeShift` per 9.2 "Hausvorteil extern"; blackjack shift = factor on winning hands), `ThrumboWindow`, `ThrumboComm`, `ThrumboCard`.
+Entry points: comms console (`Silverline.ConsoleComms.Register`, rides on the one GetCommTargets patch) and a card on the Casino page. Money: account via `BankApi.TryPay/Receive`; storage silver via `BankSilver.TakeCoins` (stake, whole coins) and `Payments.TryPayout` (payout to the colonist); fractions of a coin stay as `ChangeMicro`. House ledger account `house:thrumbo`.
+Streams: `JRand.Sealed("thrumbo.slots|roulette|blackjack")`. Logo `UI/HH/Casino/LuckyThrumbo` (tools/art). Test: `casino.thrumbo`. Not built: K15 "Raise the stakes" (items/animals/prisoners), research gate `SL_HighStakes` (no such def exists).
