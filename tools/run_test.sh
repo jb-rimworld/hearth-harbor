@@ -5,6 +5,7 @@
 # Save/load runs (tools/run_saveload.sh drives these; any of them adds the test-only probe mod tools/probe):
 #   LOAD=<dir>/<name>.rws  copy that save (and every file next to it) into the test profile and load it at start instead of -quicktest
 #                          (vanilla dev-mode "autostart" save); suites see HH_TEST_LOAD=<name>
+#   GAME_LANG="German (Deutsch)"  start the test profile in that language (folder name)
 #   NO_HH=1                run WITHOUT Hearth & Harbor (the probe drives the game, needs PROBE_DAYS)
 #   PROBE_DAYS=<n>         the probe plays n days, writes a census and quits (use with NO_HH=1 or an empty suite list "-")
 #   PROBE_SAVE=<name>      the probe saves the game as <name> before quitting
@@ -50,6 +51,7 @@ fi
 hhid=juliusberger00.hearthharbor.slot$slot; [ "$NO_HH" = 1 ] && hhid=""
 FH=$SD/home; C="$FH/Library/Application Support/RimWorld/Config"; rm -rf "$FH"; mkdir -p "$C"
 cp "$HOME/Library/Application Support/RimWorld/Config/Prefs.xml" "$C/" 2>/dev/null
+[ -n "${GAME_LANG:-}" ] && sed -i '' -e "s#<langFolderName>[^<]*</langFolderName>#<langFolderName>$GAME_LANG</langFolderName>#" "$C/Prefs.xml"
 # hidden test windows never draw the autosave screen in 1.7 → the game would stall at the first autosave; tests never autosave
 sed -i '' -e "s#<autosaveIntervalDays>[^<]*</autosaveIntervalDays>#<autosaveIntervalDays>1000</autosaveIntervalDays>#" -e "s#<runInBackground>[^<]*</runInBackground>#<runInBackground>True</runInBackground>#" "$C/Prefs.xml" 2>/dev/null
 # loading a save: vanilla loads Saves/autostart.rws at start in dev mode; no pause on load (the first tick would come before the suites look)
