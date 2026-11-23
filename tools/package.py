@@ -6,11 +6,11 @@
 Output (next to the repo, never inside it):
   ../_Release/HearthHarbor/   main mod: About, LoadFolders, Common, 1.5/1.6/1.7 (release DLLs, no test harness), LICENSE, README
   ../_Release/Silverline/     standalone bank: Hearth.Core.dll + Silverline.dll, bank/insurance defs, languages, textures;
-                              its content folders load only when Hearth & Harbor is NOT active (IfModNotActive), so with both
+                              its content folders load only when Hearth & Harbor is NOT active (IfModNotActive; an always-loaded stub texture keeps it non-empty), so with both
                               active every type exists exactly once.
 Checks: identical SHA-256 of the shared DLLs and shared files in both packages; no Source/, no test harness in the DLLs.
 """
-import hashlib, re, shutil, subprocess, sys
+import hashlib, re, shutil, struct, subprocess, sys, zlib
 from pathlib import Path
 
 R = Path(__file__).resolve().parent.parent
@@ -62,6 +62,8 @@ def main():
     about = re.sub(r"<url>.*?</url>", "<url>https://github.com/jb-rimworld/hearth-harbor</url>", about)
     about = re.sub(r"<description>.*?</description>", "<description>Silverline is the bank of Hearth &amp; Harbor as a standalone mod: accounts at six very different banks, deposits and withdrawals, ATMs and branches, interest, loans with a polite-then-not-so-polite collections ladder, and insurance by Clawback Mutual.\n\nAlready using Hearth &amp; Harbor? Then you do not need this mod – the bank is built in. If both are active, this one steps aside automatically.</description>", about, flags=re.S)
     about = re.sub(r"<loadBefore>.*?</loadBefore>", "", about, flags=re.S)
+    # safe next to Hearth & Harbor: load after it so the (inactive) content folders and the stub resolve in a fixed order
+    about = about.replace("<loadAfter>", "<loadAfter>\n    <li>juliusberger00.hearthharbor</li>", 1)
     about = re.sub(r"<incompatibleWith>.*?</incompatibleWith>", "", about, flags=re.S)
     (BANK / "About" / "About.xml").write_text(about, encoding="utf-8")
     for extra in ["Preview.png"]:
@@ -72,9 +74,18 @@ def main():
         shutil.copy2(R / "About" / "Silverline_PublishedFileId.txt", BANK / "About" / "PublishedFileId.txt")
     lf = ['<?xml version="1.0" encoding="utf-8"?>', "<loadFolders>"]
     for v in VERSIONS:
-        lf.append(f'  <v{v}><li>/</li><li IfModNotActive="juliusberger00.hearthharbor">Content/Common</li><li IfModNotActive="juliusberger00.hearthharbor">Content/{v}</li></v{v}>')
+        lf.append(f'  <v{v}><li>/</li><li>Content/Always</li><li IfModNotActive="juliusberger00.hearthharbor">Content/Common</li><li IfModNotActive="juliusberger00.hearthharbor">Content/{v}</li></v{v}>')
     lf.append("</loadFolders>")
     (BANK / "LoadFolders.xml").write_text("\n".join(lf) + "\n", encoding="utf-8")
+    # Always-loaded stub: with Hearth & Harbor active every other content folder is skipped, and RimWorld would log
+    # "did not load any content" (red error). One tiny texture under a Silverline-only path counts as content.
+    stub = BANK / "Content" / "Always" / "Textures" / "Silverline" / "Stub.png"
+    stub.parent.mkdir(parents=True)
+    def chunk(t, d):
+        c = struct.pack(">I", len(d)) + t + d
+        return c + struct.pack(">I", zlib.crc32(t + d) & 0xffffffff)
+    stub.write_bytes(b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", 1, 1, 8, 6, 0, 0, 0))
+                     + chunk(b"IDAT", zlib.compress(b"\x00\x00\x00\x00\x00")) + chunk(b"IEND", b""))
     C = BANK / "Content" / "Common"
     for d in BANK_DEF_DIRS:
         if (R / "Common" / "Defs" / d).exists():
