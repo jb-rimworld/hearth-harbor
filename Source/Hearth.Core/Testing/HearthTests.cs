@@ -199,7 +199,7 @@ namespace Hearth.Testing
         public static Pawn Colonist(Map map, int skip = 0, Func<Pawn, bool> extra = null)
         {
             Func<Pawn, bool> ok = p => !p.Dead && !p.Downed && p.Spawned && p.DevelopmentalStage.Adult() && !p.IsSlave && !p.IsPrisoner
-                && p.health.capacities.CapableOf(PawnCapacityDefOf.Moving) && p.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation) && p.health.capacities.CapableOf(PawnCapacityDefOf.Talking)
+                && p.health.capacities.CapableOf(PawnCapacityDefOf.Moving) && p.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation) && p.health.capacities.CapableOf(PawnCapacityDefOf.Talking) && p.health.capacities.CapableOf(PawnCapacityDefOf.Sight) && p.health.capacities.CapableOf(PawnCapacityDefOf.Hearing)
                 && !HealthAIUtility.ShouldSeekMedicalRest(p) && !p.health.HasHediffsNeedingTend()   // an injured or sick colonist is sent to bed rest, not to a tub or a bench
                 && (p.royalty == null || p.royalty.AllTitlesInEffectForReading.Count == 0) && (extra == null || extra(p));
             var list = map.mapPawns.FreeColonistsSpawned.Where(ok).ToList();

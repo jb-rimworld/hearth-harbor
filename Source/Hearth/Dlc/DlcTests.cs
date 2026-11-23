@@ -181,7 +181,8 @@ namespace Hearth.Dlc.Tests
             if (g != null && g2 != null && GuestApi.IsGuest(g))
             {
                 var friendly = p; var surly = q;
-                Action<Pawn, Pawn> near = (h, gu) => { h.Position = gu.Position + IntVec3.East; h.Notify_Teleported(false, false); };
+                // next to the guest on a walkable cell with a clear line: the cell to the east can be rock, a tree or water on a random map (or the guest has wandered next to it), and vanilla then refuses the interaction
+                Action<Pawn, Pawn> near = (h, gu) => { h.Position = CellFinder.TryFindRandomCellNear(gu.Position, gu.Map, 2, c => c != gu.Position && c.Standable(gu.Map) && GenSight.LineOfSight(c, gu.Position, gu.Map), out var nc) ? nc : gu.Position + IntVec3.East; h.Notify_Teleported(false, false); };
                 near(friendly, g); near(surly, g2);
                 float s0 = GuestApi.Info(g).Satisfaction; bool ok1 = friendly.interactions.TryInteractWith(g, InteractionDefOf.Chitchat);
                 t.Check(ok1 && GuestApi.Info(g).Satisfaction > s0 + 0.02f, $"born host chat raises guest satisfaction ({s0:0.000} -> {GuestApi.Info(g).Satisfaction:0.000}, chat={ok1})");
