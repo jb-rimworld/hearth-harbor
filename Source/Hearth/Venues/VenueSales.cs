@@ -5,6 +5,7 @@ using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Hearth.Kitchen;
 
 namespace Hearth.ShopsFood
 {
@@ -56,6 +57,12 @@ namespace Hearth.ShopsFood
         {
             if (kind == SellKind.None || t == null || t.Destroyed || t.def.category != ThingCategory.Item) return false;
             if (t is Corpse || t.def == ThingDefOf.Silver || t.def.IsCorpse) return false;
+            if (kind == SellKind.Dishes)
+            {
+                // cooked, still fresh plates only: the colony's plain meals stay free to eat, stale plates are never forbidden (nobody can sell them, so the colony may clear them away)
+                var plate = t.TryGetComp<CompDish>();
+                return plate?.dish != null && !plate.IsStale;
+            }
             if (t.MarketValue <= 0.001f) return false;
             if (kind == SellKind.Drinks) return IsDrink(t.def);
             return true;
@@ -78,7 +85,7 @@ namespace Hearth.ShopsFood
             var map = v.Map;
             foreach (var cell in v.Room.Cells)
             {
-                if (cell.GetSlotGroup(map) == null) continue;
+                if (kind != SellKind.Dishes && cell.GetSlotGroup(map) == null) continue;   // plates lie on tables and counters as well as on shelves
                 var things = cell.GetThingList(map);
                 for (int i = 0; i < things.Count; i++)
                     if (IsSellable(things[i], kind)) c.Items.Add(things[i]);

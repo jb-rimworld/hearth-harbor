@@ -10,7 +10,7 @@ using Verse.AI;
 
 namespace Hearth.Kitchen
 {
-    /// <summary>One place that sells dishes: a Restaurant venue (venues module) or, without it, any dining room.</summary>
+    /// <summary>One place that sells dishes: the room of a Restaurant or Tavern sign.</summary>
     public sealed class RestaurantSpot
     {
         public Room Room;
@@ -19,7 +19,7 @@ namespace Hearth.Kitchen
         public float PriceFactor = 1f;
         public string Name;
         public string Account => Venue != null ? Venue.Account : "house:restaurant:" + Room.ID;
-        /// <summary>Venues (restaurant, tavern) also sell the colony's plain vanilla meals; the fallback dining room does not (N08).</summary>
+        /// <summary>Venues (restaurant, tavern) also sell the colony's plain vanilla meals; a spot without a venue does not (N08).</summary>
         public bool SellsVanillaMeals => Venue != null;
     }
 
@@ -29,14 +29,16 @@ namespace Hearth.Kitchen
         public int GuestId, PlateId, Tick;
         public Money Price;
         public string Account, Dish;
+        /// <summary>The restaurant or tavern that sold it (its sign records the sale); null in tests.</summary>
+        public Venue Venue;
         /// <summary>Set for a plain vanilla meal (paid when the guest eats a thing of this def).</summary>
         public ThingDef VanillaDef;
     }
 
     /// <summary>
     /// The restaurant (6.4): a hungry guest goes to a restaurant, takes a plate from the room's stock, eats it at a table and pays the menu price
-    /// (dish × quality × form × venue factor). Registered as guest activity "kitchen.eat". Without a venue sign the dining rooms of the colony
-    /// count as restaurants, so the loop also works before the venues module is on.
+    /// (dish × quality × form × venue factor). Registered as guest activity "kitchen.eat". Only rooms with a Restaurant or Tavern sign sell food
+    /// (N08: a plain dining room stays a dining room), and only while the venue is open for business (hours, staff, night bell).
     /// </summary>
     public static class Restaurant
     {
@@ -55,12 +57,10 @@ namespace Hearth.Kitchen
         public static int TotalSales, UnpaidMeals;
         public static Money TotalTakings = Money.Zero;
 
-        static RoomRoleDef roleDining;
-        static RoomRoleDef RoleDining => roleDining ?? (roleDining = DefDatabase<RoomRoleDef>.GetNamedSilentFail("DiningRoom"));
-        /// <summary>Is the venue open for guests? Default: opening hours. The venues module sets this to its gate (hours, staff, bell).</summary>
-        public static Func<Venue, bool> OpenGate = v => v.IsOpenNow;
-        /// <summary>Everything that multiplies the menu price of a venue. Default: type factor x sign factor. The venues module may widen it (self-service discount, night bell).</summary>
-        public static Func<Venue, float> VenuePriceFactor = v => v.Type.priceFactor * v.Comp.priceFactor;
+        /// <summary>Is the venue open for guests? The venue gate: hours, somebody on duty, night bell. Replaceable for tests.</summary>
+        public static Func<Venue, bool> OpenGate = Hearth.ShopsFood.VenueApi.IsOpenForBusiness;
+        /// <summary>Everything that multiplies the menu price of a venue: type and sign factor, price setting, night-bell surcharge. Replaceable for tests.</summary>
+        public static Func<Venue, float> VenuePriceFactor = Hearth.ShopsFood.VenueApi.PriceMultiplier;
 
         public static VenueTypeDef VenueType => DefDatabase<VenueTypeDef>.GetNamedSilentFail(VenueDefName);
 
@@ -84,18 +84,6 @@ namespace Hearth.Kitchen
                 foreach (var v in Venues.OfType(map, tavern))
                     if (v.Room != null && list.All(x => x.Room != v.Room) && Guard.Run(ModuleId.ShopsFood, "Restaurant.OpenGate", () => OpenGate(v), false))
                         list.Add(new RestaurantSpot { Room = v.Room, Venue = v, Map = map, PriceFactor = Math.Max(0.1f, Guard.Run(ModuleId.ShopsFood, "Restaurant.PriceFactor", () => VenuePriceFactor(v), 1f)), Name = v.Comp.DisplayName });
-            }
-            if (vt == null || !Venues.All(map).Any(v => v.Type == vt))
-            {
-                // fallback: dining rooms count as a restaurant until a venue sign says otherwise
-                #if RW15
-                var allRooms = map.regionGrid.allRooms;
-#else
-                var allRooms = map.regionGrid.AllRooms;
-#endif
-                foreach (var room in allRooms)
-                    if (room.Role == RoleDining && !room.PsychologicallyOutdoors && room.ContainedAndAdjacentThings.Count > 0)
-                        list.Add(new RestaurantSpot { Room = room, Map = map, PriceFactor = 1f, Name = "dining room" });
             }
             cache[map.uniqueID] = (now, list);
             return list;
@@ -136,10 +124,22 @@ namespace Hearth.Kitchen
                     if (t.TryGetComp<CompRottable>() is CompRottable rot && rot.Stage != RotStage.Fresh) continue;
                 }
                 else if (c.IsStale) continue;
-                if (!t.Spawned || t.IsForbidden(Faction.OfPlayer) || sales.ContainsKey(t.thingIDNumber)) continue;
+                if (!t.Spawned || ForbiddenForSale(t, spot.Map) || sales.ContainsKey(t.thingIDNumber)) continue;
                 if (t.Position.GetRoom(spot.Map) != spot.Room) continue;
                 yield return t;
             }
+        }
+
+        /// <summary>Forbidden for the guests' shelf? Goods the venues module forbade for the colony (so nobody carries the stock away) are still for sale; anything the player forbade is not.</summary>
+        static bool ForbiddenForSale(Thing t, Map map)
+        {
+            var cf = t.TryGetComp<CompForbiddable>();
+            if (cf != null && cf.Forbidden)
+            {
+                var vc = map.GetComponent<Hearth.ShopsFood.VenueMapComp>();
+                return vc == null || !vc.IsForbiddenByUs(t);
+            }
+            return t.IsForbidden(Faction.OfPlayer);
         }
 
         public static bool HasFreeSeat(RestaurantSpot spot)
@@ -190,7 +190,7 @@ namespace Hearth.Kitchen
             var job = JobMaker.MakeJob(JobDefOf.Ingest, plate);
             job.count = 1;
             var dish = plate.TryGetComp<CompDish>()?.dish;
-            var sale = new PlateSale { GuestId = guest.thingIDNumber, PlateId = plate.thingIDNumber, Tick = Find.TickManager.TicksGame, Price = price, Account = spot.Account, Dish = dish != null ? dish.label : plate.def.label, VanillaDef = dish == null ? plate.def : null };
+            var sale = new PlateSale { GuestId = guest.thingIDNumber, PlateId = plate.thingIDNumber, Tick = Find.TickManager.TicksGame, Price = price, Account = spot.Account, Dish = dish != null ? dish.label : plate.def.label, VanillaDef = dish == null ? plate.def : null, Venue = spot.Venue };
             if (dish != null) sales[plate.thingIDNumber] = sale;
             else vanillaSales[guest.thingIDNumber] = sale;
             return job;
@@ -213,6 +213,7 @@ namespace Hearth.Kitchen
             if (GuestApi.ChargeGuest(eater, sale.Price, "food", memo))
             {
                 TotalSales++; TotalTakings += sale.Price;
+                BookSale(eater, sale);
                 float sat = Mathf.Clamp(0.05f + 0.04f * ((int)c.Quality - 2) + (c.dish.level - 1) * 0.01f, -0.1f, 0.3f);
                 GuestApi.AddSatisfaction(eater, sat, "enjoyed a " + sale.Dish.ToLowerInvariant());
                 HLog.Debug("Kitchen", $"{eater.LabelShort} paid {sale.Price} for {sale.Dish}");
@@ -234,6 +235,7 @@ namespace Hearth.Kitchen
             if (GuestApi.ChargeGuest(eater, sale.Price, "food", memo))
             {
                 TotalSales++; TotalTakings += sale.Price;
+                BookSale(eater, sale);
                 float sat = food.def.ingestible.preferability >= FoodPreferability.MealLavish ? 0.08f : food.def.ingestible.preferability >= FoodPreferability.MealFine ? 0.05f : 0.03f;
                 GuestApi.AddSatisfaction(eater, sat, "had a " + sale.Dish.ToLowerInvariant());
                 HLog.Debug("Kitchen", $"{eater.LabelShort} paid {sale.Price} for {sale.Dish}");
@@ -257,6 +259,19 @@ namespace Hearth.Kitchen
             dead = null;
             foreach (var kv in vanillaSales) if (now - kv.Value.Tick > 6000) (dead ?? (dead = new List<int>())).Add(kv.Key);
             if (dead != null) foreach (var k in dead) vanillaSales.Remove(k);
+        }
+
+        /// <summary>A paid restaurant sale: the sign records it, the staffer learns Social and a friendly tender pleases the guest (same as tavern and shop sales).</summary>
+        static void BookSale(Pawn guest, PlateSale sale)
+        {
+            var venue = sale.Venue;
+            if (venue == null) return;
+            (venue.Comp as Hearth.ShopsFood.CompVenueSignHH)?.RecordSale(sale.Price, 1);
+            var staffer = Hearth.ShopsFood.VenueApi.Staffer(venue);
+            if (staffer == null) return;
+            staffer.skills?.Learn(SkillDefOf.Social, 25f, false);
+            int social = staffer.skills?.GetSkill(SkillDefOf.Social)?.Level ?? 5;
+            GuestApi.AddSatisfaction(guest, 0.004f + 0.016f * Mathf.Clamp01(social / 20f), "HH.Venue.GoodService".TranslateOr("Friendly service"));
         }
 
         public static int PendingSales => sales.Count + vanillaSales.Count;

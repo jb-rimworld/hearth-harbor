@@ -40,7 +40,7 @@
   <Hearth.VenueTypeDef>
     <defName>HH_Venue_Restaurant</defName>
     <label>restaurant</label>
-    <description>A room where guests sit down and eat. Tables, a kitchen and a waiter make it a restaurant; the dishes themselves are handled by the kitchen.</description>
+    <description>A room where guests sit down and eat. Tables, a kitchen and a waiter make it a restaurant; guests pay for the plates and meals on its shelves and tables. Cooking is done by the kitchen; stale plates are not for sale.</description>
     <module>ShopsFood</module>
     <defaultOpenHour>11</defaultOpenHour>
     <defaultCloseHour>23</defaultCloseHour>
@@ -50,7 +50,7 @@
     <priceFactor>1.2</priceFactor>
     <color>(0.76,0.36,0.30)</color>
     <modExtensions>
-      <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>None</sells></li>
+      <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>Dishes</sells></li>
     </modExtensions>
   </Hearth.VenueTypeDef>
 

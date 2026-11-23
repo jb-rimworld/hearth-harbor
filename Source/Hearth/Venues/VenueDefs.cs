@@ -5,7 +5,7 @@ using Verse;
 namespace Hearth.ShopsFood
 {
     /// <summary>What a venue type sells from the stockpiles and shelves inside its room (N45).</summary>
-    public enum SellKind { None, Goods, Drinks }
+    public enum SellKind { None, Goods, Drinks, Dishes }
 
     /// <summary>How strictly venues need staff. PerVenueType follows VenueTypeDef.needsStaff.</summary>
     public enum StaffRule { PerVenueType, NeverRequired, AlwaysRequired }

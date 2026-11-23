@@ -27,7 +27,8 @@ Cooking is a normal bill, so no custom job: robots and Project RimFactory work. 
 * Well fed: hunger -40 % (x setting) for 4/6/8/10 h by level x 0.6..1.8 by quality, thought `HH_AteDish` stage = (level-1)*7 + quality.
 
 ## Hooks for the integrator
-* `Restaurant.OpenGate` / `Restaurant.VenuePriceFactor`: set to `VenueApi.IsOpenForBusiness` / `VenueApi.PriceMultiplier` (venues module) so staff, bell and self-service rules apply.
+* `Restaurant.OpenGate` / `Restaurant.VenuePriceFactor` default to `VenueApi.IsOpenForBusiness` / `VenueApi.PriceMultiplier`, so hours, staff, night bell and price settings apply. Only rooms with a Restaurant or Tavern sign sell food (no dining-room fallback, N08). A Restaurant sells `SellKind.Dishes`: its plates are forbidden for the colony unless the sign says "colony may take goods", still sold to guests, restocked by the sign, and every sale is recorded on the sign (count, silver; ledger category food).
 * `DishKnowledge.Learn(dish)` for quests/guests, `TestKitchen`, `HH_Cookbook` (`tradeTags HH_Cookbook`, patched into outlander traders).
 * Research hints on devices (`StationExtension.researchHint`): `HH_Innkeeping`, `HH_Gastronomy`, `HH_HotelManagement`; if those do not exist the devices fall back to `HH_Cooking_L2/L3`.
 * Foreign devices count as side devices by `buildingTags` `HH_Stove`, `HH_Oven`, `HH_Grill` … or a `Hearth.Kitchen.StationExtension`.
+* The restaurant loop needs the Shops & Food module: with the module off, or without a Restaurant/Tavern sign, nothing is sold (N08). Stale plates are never for sale and never forbidden by us (the colony may clear them away); the sign checklist and the main-tab stock ignore them. A paid sale also gives the staffer Social XP and a small "Friendly service" satisfaction, like tavern and shop sales. `VenueMapComp` keeps its forbidden-by-us goods in a HashSet.

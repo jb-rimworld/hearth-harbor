@@ -330,6 +330,11 @@ namespace Hearth.ShopsFood
                 bool has = VenueSales.Stock(v).Count > 0;
                 yield return has ? ok + "HH.Venue.CheckDrinks".TranslateOr("Drinks in stock") : no + "HH.Venue.CheckNoDrinks".TranslateOr("No drinks in stock → store beer or other drinks in the room");
             }
+            else if (sells == SellKind.Dishes)
+            {
+                bool has = VenueSales.Stock(v).Count > 0;
+                yield return has ? ok + "HH.Venue.CheckDishes".TranslateOr("Plates on the shelves") : no + "HH.Venue.CheckNoDishes".TranslateOr("No plates for sale → cook dishes and store them in the room");
+            }
             if (VenueApi.NeedsStaff(v))
             {
                 bool counter = VenueApi.CounterOf(v) != null;
