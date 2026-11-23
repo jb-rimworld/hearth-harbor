@@ -53,7 +53,7 @@ namespace Hearth.City
             {
                 int n = 0;
                 foreach (var c in data.Contracts.Where(x => !x.Ended).ToList()) { SecurityService.End(c, "module removed"); n++; }
-                if (n > 0) report.Add($"{n} bodyguard contract(s) ended.");
+                if (n > 0) report.Add("HH.City.Removal.Guards".Translate(n));
             }
             int stopped = 0;
             foreach (var map in Find.Maps)
@@ -61,8 +61,8 @@ namespace Hearth.City
                 var def = CityDefs.ProjectorScreen; if (def == null) continue;
                 foreach (var t in map.listerThings.ThingsOfDef(def)) { var c = t.TryGetComp<CompProjectorScreen>(); if (c != null && c.ShowActive) { c.StopShow(); stopped++; } }
             }
-            if (stopped > 0) report.Add($"{stopped} running film(s) stopped.");
-            report.Add("Projector screens, salon chairs, park benches and taxi stands stay as ordinary buildings.");
+            if (stopped > 0) report.Add("HH.City.Removal.Films".Translate(stopped));
+            report.Add("HH.City.Removal.Buildings".Translate());
         }
 
         public override IEnumerable<string> Diagnosis()
@@ -159,25 +159,24 @@ namespace Hearth.City
             var view = new Rect(0, 0, vw, 4000f);
             var l = new Listing_Standard(); l.Begin(view);
             l.Gap(2f);
-            l.Label("HH.City.TabResearch".TranslateOr("Research: level 1 (cinema, salon, gallery): {0}; level 2 (taxi, security): {1}")
-                .Replace("{0}", CityAccess.Level1 ? "open" : "closed").Replace("{1}", CityAccess.Level2 ? "open" : "closed"));
+            l.Label("HH.City.TabResearch".Translate((CityAccess.Level1 ? "HH.City.Open" : "HH.City.Closed").Translate(), (CityAccess.Level2 ? "HH.City.Open" : "HH.City.Closed").Translate()));
             l.GapLine();
 
             var cinemas = CityScan.Cinemas(map);
             int screens = CityDefs.ProjectorScreen == null ? 0 : map.listerThings.ThingsOfDef(CityDefs.ProjectorScreen).Count;
-            l.Label($"Cinema: {screens} screen(s), {cinemas.Count} with a venue sign; {data.Count("cinema")} tickets, {data.Revenue("cinema").ToStringShort()} silver");
-            foreach (var s in cinemas) l.Label($"   {s.Venue.Comp.DisplayName}: {s.Seats} seats, " + (s.Comp.Powered ? (s.Comp.ShowActive ? "showing " + s.Comp.FilmTitle : "idle") : "no power"));
+            l.Label("HH.City.Page.Cinema".Translate(screens, cinemas.Count, data.Count("cinema"), data.Revenue("cinema").ToStringShort()));
+            foreach (var s in cinemas) l.Label("HH.City.Page.CinemaRow".Translate(s.Venue.Comp.DisplayName, s.Seats, s.Comp.Powered ? (s.Comp.ShowActive ? "HH.City.Page.StateShowing".Translate(s.Comp.FilmTitle) : "HH.City.Page.StateIdle".Translate()) : "HH.City.Page.StateNoPower".Translate()));
             var salons = CityScan.Salons(map);
-            l.Label($"Salon: {salons.Sum(s => s.Chairs.Count)} chair(s) in {salons.Count} salon(s); {data.Count("salon")} new looks, {data.Revenue("salon").ToStringShort()} silver");
+            l.Label("HH.City.Page.Salon".Translate(salons.Sum(s => s.Chairs.Count), salons.Count, data.Count("salon"), data.Revenue("salon").ToStringShort()));
             var gal = CityScan.Galleries(map);
-            l.Label($"Gallery: {gal.Count} gallery(ies), {gal.Sum(g => g.Art.Count)} artwork(s); {data.Count("gallery")} visits, {data.Revenue("gallery").ToStringShort()} silver");
+            l.Label("HH.City.Page.Gallery".Translate(gal.Count, gal.Sum(g => g.Art.Count), data.Count("gallery"), data.Revenue("gallery").ToStringShort()));
             int benches = CityDefs.ParkBench == null ? 0 : map.listerThings.ThingsOfDef(CityDefs.ParkBench).Count;
-            l.Label($"Park: {benches} bench(es); {data.Count("park")} guest sits");
-            l.Label($"Taxi: {(CityDefs.TaxiStand == null ? 0 : map.listerThings.ThingsOfDef(CityDefs.TaxiStand).Count)} stand(s); {data.Count("taxi")} rides, {data.Count("taxiArrival")} landings, {(data.Revenue("taxi") + data.Revenue("taxiArrival")).ToStringShort()} silver");
+            l.Label("HH.City.Page.Park".Translate(benches, data.Count("park")));
+            l.Label("HH.City.Page.Taxi".Translate(CityDefs.TaxiStand == null ? 0 : map.listerThings.ThingsOfDef(CityDefs.TaxiStand).Count, data.Count("taxi"), data.Count("taxiArrival"), (data.Revenue("taxi") + data.Revenue("taxiArrival")).ToStringShort()));
             int running = data.Contracts.Count(c => !c.Ended && c.Started);
-            l.Label($"Security: {running} bodyguard(s) on duty, {data.Revenue("security").ToStringShort()} silver earned");
+            l.Label("HH.City.Page.Security".Translate(running, data.Revenue("security").ToStringShort()));
             l.GapLine();
-            l.Label($"Total takings of City Life: {data.TotalRevenue.ToStringShort()} silver");
+            l.Label("HH.City.Page.Total".Translate(data.TotalRevenue.ToStringShort()));
             float used = l.CurHeight;
             l.End();
             viewH = Hearth.Shell.PageFrame.EndScroll(used);
