@@ -737,13 +737,15 @@ namespace Hearth.ShopsFood
             t.Check(!VenueMarket.CanHaveMarket(map) && (VenueMarket.Blocker(map) ?? "").Contains("stalls"), "a shop alone is not enough: " + VenueMarket.Blocker(map));
             var stalls = new List<Thing>();
             int need = VS.I(VS.MarketStalls);
+            // a strip of cleared ground, one stall every 3 cells: on a random map the cells next to the room can be trees, rock or water, and a stall that does not fit
+            // used to be spawned on top of the previous one (the old stall vanished and the count was one short)
+            var strip = VenueTestKit.OutsideCell(map, room);
+            TestSetup.PrepareGround(map, new CellRect(strip.x - 2, strip.z - 2, need * 3 + 4, 5));
             for (int i = 0; i < need; i++)
             {
                 var st = ThingMaker.MakeThing(HHVenueDefOf.HH_MarketStall, ThingDefOf.WoodLog);
                 st.SetFaction(Faction.OfPlayer);
-                var at = VenueTestKit.OutsideCell(map, room) + new IntVec3(i * 3, 0, 0);
-                if (!CellFinder.TryFindRandomCellNear(at, map, 6, c => GenConstruct.CanPlaceBlueprintAt(HHVenueDefOf.HH_MarketStall, c, Rot4.South, map, false, null, null, ThingDefOf.WoodLog).Accepted, out var free)) free = at;
-                GenSpawn.Spawn(st, free, map, Rot4.South);
+                GenSpawn.Spawn(st, strip + new IntVec3(i * 3, 0, 0), map, Rot4.South);
                 stalls.Add(st);
             }
             yield return 5;

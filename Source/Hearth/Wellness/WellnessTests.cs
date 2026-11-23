@@ -12,8 +12,9 @@ namespace Hearth.Wellness.Tests
 {
     static class WT
     {
+        /// <summary>A healthy adult colonist who can take part in joy (see TestSetup.Colonist); a sick or hurt one is sent to bed rest instead of a tub, table or sauna.</summary>
         public static Pawn Colonist(Map map, int skip = 0)
-            => map.mapPawns.FreeColonistsSpawned.Where(p => !p.Downed && !p.Dead).Skip(skip).FirstOrDefault();
+            => Hearth.Testing.TestSetup.Colonist(map, skip) ?? map.mapPawns.FreeColonistsSpawned.Where(p => !p.Downed && !p.Dead).Skip(skip).FirstOrDefault();
 
         /// <summary>Clears a square patch (things, roofs) and lays soil so it is safe to build on.</summary>
         public static void Clear(Map map, IntVec3 center, int r)
@@ -138,7 +139,7 @@ namespace Hearth.Wellness.Tests
             float restBefore = pawn.needs.rest.CurLevel = 0.4f;
             var giver = DefDatabase<JoyGiverDef>.GetNamed("HH_Joy_HotTub").Worker;
             var job = giver.TryGiveJob(pawn);
-            if (job == null) t.Note($"no offer: pawn {pawn.LabelShort} at {pawn.Position}, joy {pawn.needs.joy.CurLevel:0.00}, usable {comp.UsableNow(out var w0)} ({w0}), allows {comp.AllowsUser(pawn)}, reach {pawn.CanReach(tub, PathEndMode.Touch, Danger.None)}, forbidden {tub.IsForbidden(pawn)}, weather {map.weatherManager.curWeather.defName}, temp {map.mapTemperature.OutdoorTemp:0}, inBed {pawn.InBed()}, mental {pawn.InMentalState}");
+            if (job == null) t.Note($"no offer: {Hearth.Testing.TestSetup.WhyNoJoy(pawn, tub)}; medical rest {HealthAIUtility.ShouldSeekMedicalRest(pawn)}, hediffs {string.Join("/", pawn.health.hediffSet.hediffs.Select(h => h.def.defName))}; pawn {pawn.LabelShort} at {pawn.Position}, joy {pawn.needs.joy.CurLevel:0.00}, usable {comp.UsableNow(out var w0)} ({w0}), allows {comp.AllowsUser(pawn)}, reach {pawn.CanReach(tub, PathEndMode.Touch, Danger.None)}, forbidden {tub.IsForbidden(pawn)}, weather {map.weatherManager.curWeather.defName}, temp {map.mapTemperature.OutdoorTemp:0}, inBed {pawn.InBed()}, mental {pawn.InMentalState}");
             t.Check(job != null && job.def == WellnessDefOf.HH_UseHotTub, "joy giver offers the hot tub");
             if (job == null) yield break;
             comp.colonistsMayUse = false;
