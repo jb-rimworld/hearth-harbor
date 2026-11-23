@@ -762,12 +762,16 @@ namespace Hearth.ShopsFood
             }
             yield return 5;
             t.Check(VenueMarket.Stalls(map) >= need, "stalls counted: " + VenueMarket.Stalls(map));
+            var realGetter = Venues.RenownGetter;
+            if (Modules.On(ModuleId.Inn)) t.Check(realGetter != null, "the Inn module wires Venues.RenownGetter");
+            if (realGetter != null) t.Check(Math.Abs(Venues.Renown() - GuestApi.Renown(Find.CurrentMap)) < 0.01f, "Venues.Renown() reads the real colony renown");
             Venues.RenownGetter = () => 5f;
             t.Check(!VenueMarket.CanHaveMarket(map) && (VenueMarket.Blocker(map) ?? "").Contains("renown"), "low renown blocks the market: " + VenueMarket.Blocker(map));
             Venues.RenownGetter = () => 60f;
             t.Check(VenueMarket.CanHaveMarket(map), "shop + enough stalls + renown 60 make a market possible: " + VenueMarket.Blocker(map));
             Venues.RenownGetter = null;
             t.Check(Math.Abs(Venues.Renown() - 50f) < 0.01f, "without a renown system the colony counts as neutral (50)");
+            Venues.RenownGetter = realGetter;
             var tillBefore = VenueTestKit.Till(map);
             int lordsBefore = map.lordManager.lords.Count(l => l.LordJob is LordJob_TradeWithColony);
             int lettersBefore = Find.LetterStack.LettersListForReading.Count;

@@ -766,12 +766,16 @@ namespace Hearth.City.Tests
             {
                 var a = arr[0]; var ia = GuestApi.Info(a); var fee = CitySettings.Silver(CitySettings.TaxiArrivalFee);
                 var s0 = ia.Spent; stand.Taxi.BusyUntil = 0;
+                var lordBefore = a.GetLord();
+                t.Check(lordBefore != null, "the arriving guest has a lord");
                 t.Check(TaxiService.TryArriveByTaxi(a, true), "an arriving guest is dropped off by taxi");
                 t.Check(!a.Spawned, "the guest is inside the cab");
                 bool incoming = map.listerThings.ThingsOfDef(CityDefs.TaxiIncoming).Count > 0;
                 t.Check(incoming, "the cab is on its way down");
+                t.Check(a.GetLord() == lordBefore && lordBefore.ownedPawns.Contains(a), "the guest keeps its lord inside the cab");
                 for (int i = 0; i < 40 && !a.Spawned; i++) yield return 15;
                 t.Check(a.Spawned && a.Map == map, "the guest stepped out of the cab");
+                t.Check(a.GetLord() == lordBefore && lordBefore.ownedPawns.Contains(a), "the guest still belongs to its lord after the landing");
                 t.Check(a.Position.InHorDistOf(stand.Position, 8f), "next to the stand: " + a.Position + " vs " + stand.Position);
                 t.Check(ia.Spent - s0 == fee, $"landing fee paid: {ia.Spent - s0} of {fee}");
                 t.Check(stand.Taxi.Arrivals == 1, "arrival counted");

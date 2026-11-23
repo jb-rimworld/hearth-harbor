@@ -114,7 +114,7 @@
   <HH.Setting.kitchen.allKnown>Alle Gerichte bekannt</HH.Setting.kitchen.allKnown>
   <HH.Setting.kitchen.allKnown.Desc>Lernen überspringen: Jedes Gericht der Karte kann gekocht werden, sobald die Geräte stehen.</HH.Setting.kitchen.allKnown.Desc>
   <HH.Setting.kitchen.darkMenu>Dunkle Speisekarte (Langschwein)</HH.Setting.kitchen.darkMenu>
-  <HH.Setting.kitchen.darkMenu.Desc>Erlaubt die Langschwein-Gerichte. Sie werden auch von einer Ideologie freigeschaltet, die Kannibalismus gutheißt.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Setting.kitchen.darkMenu.Desc>Erlaubt die Langschwein-Gerichte. Braucht die Inhaltsstufe Dunkel oder Düster. Eine Ideologie, die Kannibalismus gutheißt, schaltet sie ebenfalls frei.</HH.Setting.kitchen.darkMenu.Desc>
   <HH.Kitchen.Cookbook.Teaches>Lehrt: {0}</HH.Kitchen.Cookbook.Teaches>
   <HH.Kitchen.Cookbook.Empty>Die Seiten sind leer.</HH.Kitchen.Cookbook.Empty>
   <HH.Kitchen.Cookbook.AllKnown>Die Kolonie kennt bereits jedes Gericht in diesem Buch.</HH.Kitchen.Cookbook.AllKnown>

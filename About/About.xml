@@ -3,7 +3,7 @@
   <name>Hearth &amp; Harbor – Guests, Hotels &amp; Hospitality</name>
   <author>juliusberger00</author>
   <packageId>juliusberger00.hearthharbor</packageId>
-  <modVersion>0.9.0</modVersion>
+  <modVersion>1.0.0</modVersion>
   <url>https://github.com/jb-rimworld/hearth-harbor</url>
   <supportedVersions>
     <li>1.5</li>
@@ -14,9 +14,7 @@
 
 Nothing is forced on you: until you mark a guest bed or put up a sign, the game plays like vanilla.
 
-Hearth &amp; Harbor already includes Silverline. You do not need the separate bank mod.
-
-Preview build 0.9.0 – not yet released.</description>
+Hearth &amp; Harbor already includes Silverline. You do not need the separate bank mod.</description>
   <modDependencies>
     <li>
       <packageId>brrainz.harmony</packageId>
@@ -43,7 +41,4 @@ Preview build 0.9.0 – not yet released.</description>
     <li>Adamas.HospitalitySpa</li>
     <li>Adamas.VendingMachines</li>
   </loadBefore>
-  <incompatibleWith>
-    <li>Orion.Hospitality</li>
-  </incompatibleWith>
 </ModMetaData>

@@ -344,6 +344,13 @@ namespace Hearth.Compat.Hospitality.Tests
             {
                 t.Check(imported.All(b => b.GetComp<Hearth.Guests.CompHH_GuestBed>()?.Flag == true), "Inn is on: every imported bed is a guest bed of the Inn");
                 t.Check(!HospitalityImport.PendingBeds.Any(), "Inn is on: nothing is left waiting for adoption");
+                foreach (var b in imported)
+                {
+                    var c = b.GetComp<Hearth.Guests.CompHH_GuestBed>(); int fee = rec.Beds.First(r => r.ThingIdNumber == b.thingIDNumber).Fee;
+                    if (c == null) continue;
+                    if (fee <= 0) t.Check(c.PriceMode == Hearth.Guests.BedPriceMode.Free, "fee 0 became a free bed: " + b.ThingID);
+                    else t.Check(c.PriceMode == Hearth.Guests.BedPriceMode.Manual && c.ManualPrice == fee, $"fee {fee} became a fixed price: {c.PriceMode}/{c.ManualPrice}");
+                }
             }
             t.Check(imported.All(b => HospitalityImport.RentalFee(b) == rec.Beds.First(r => r.ThingIdNumber == b.thingIDNumber).Fee), "RentalFee API answers");
             t.Check(!map.components.Any(c => c is HospitalityMapStub || c is HospitalityDroppedMapComponent), "map stubs removed after load");

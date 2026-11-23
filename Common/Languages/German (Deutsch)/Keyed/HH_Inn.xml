@@ -126,6 +126,7 @@
   <HH.Inn.PriceMode.Gizmo>Preis: {0}</HH.Inn.PriceMode.Gizmo>
   <HH.Inn.PriceMode.GizmoDesc>Ändere den Preis dieses Betts: gratis (für Freunde und Anzuwerbende), 25 % Rabatt, der automatische Preis oder 25 % mehr. Gilt für die nächste Buchung.</HH.Inn.PriceMode.GizmoDesc>
   <HH.Inn.PriceMode.Premium>+25 %</HH.Inn.PriceMode.Premium>
+  <HH.Inn.PriceMode.Manual>Festpreis</HH.Inn.PriceMode.Manual>
   <HH.Inn.Problem.Bored>Gelangweilt: Stelle Freizeitmöglichkeiten in den Gästeflügel (Fernseher, Schach, ein Geschäft).</HH.Inn.Problem.Bored>
   <HH.Inn.Problem.BoredMany>{0} Gäste langweilen sich: Stelle Freizeitmöglichkeiten in den Gästeflügel.</HH.Inn.Problem.BoredMany>
   <HH.Inn.Problem.Broke>Fast pleite: Wird früher abreisen.</HH.Inn.Problem.Broke>

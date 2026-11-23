@@ -127,6 +127,7 @@
   <HH.Inn.PriceMode.Gizmo>Price: {0}</HH.Inn.PriceMode.Gizmo>
   <HH.Inn.PriceMode.GizmoDesc>Change the price of this bed: free (for friends and recruits), 25 % off, the automatic price, or 25 % more. Applies to the next booking.</HH.Inn.PriceMode.GizmoDesc>
   <HH.Inn.PriceMode.Premium>+25 %</HH.Inn.PriceMode.Premium>
+  <HH.Inn.PriceMode.Manual>fixed price</HH.Inn.PriceMode.Manual>
   <HH.Inn.Problem.Bored>Bored: add recreation to the guest wing (TV, chess, a venue).</HH.Inn.Problem.Bored>
   <HH.Inn.Problem.BoredMany>{0} guests are bored: add recreation to the guest wing.</HH.Inn.Problem.BoredMany>
   <HH.Inn.Problem.Broke>Almost out of money: will leave early.</HH.Inn.Problem.Broke>

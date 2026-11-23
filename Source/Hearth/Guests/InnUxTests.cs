@@ -280,7 +280,9 @@ namespace Hearth.Guests
             bc.PriceMode = BedPriceMode.Free; var free = GuestBedPricing.Quote(bed).Price;
             bc.PriceMode = BedPriceMode.Discount; var disc = GuestBedPricing.Quote(bed).Price;
             bc.PriceMode = BedPriceMode.Premium; var prem = GuestBedPricing.Quote(bed).Price;
-            bc.PriceMode = BedPriceMode.Auto;
+            bc.PriceMode = BedPriceMode.Manual; bc.ManualPrice = 37; var man = GuestBedPricing.Quote(bed).Price;
+            bc.PriceMode = BedPriceMode.Auto; bc.ManualPrice = 0;
+            t.Check(man.WholeSilver == 37, "manual price mode gives the stored fixed price: " + man);
             t.Check(free.Micro == 0 && disc <= auto && prem >= auto && prem.WholeSilver % 5 == 0, $"bed price rules: auto {auto}, free {free}, −25 % {disc}, +25 % {prem}");
             t.Check(bed.GetGizmos().Any(gz => gz is Command_Action ca && ca.defaultLabel.Contains("Price")), "price gizmo on the guest bed");
             // B7: next arrival on the bed

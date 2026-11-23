@@ -55,7 +55,7 @@ namespace Hearth
 
     public class HearthMod : Mod
     {
-        public const string Version = "0.9.0-preview";
+        public const string Version = "1.0.0";
         public const string HarmonyId = "juliusberger00.hearthharbor";
         public static HearthMod Instance;
         public static HearthTemplate Template => Instance?.GetSettings<HearthTemplate>() ?? fallbackTemplate;

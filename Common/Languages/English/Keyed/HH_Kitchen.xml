@@ -115,7 +115,7 @@
   <HH.Setting.kitchen.allKnown>All dishes known</HH.Setting.kitchen.allKnown>
   <HH.Setting.kitchen.allKnown.Desc>Skip learning: every dish of the menu can be cooked as soon as its devices stand.</HH.Setting.kitchen.allKnown.Desc>
   <HH.Setting.kitchen.darkMenu>Dark menu (long pork)</HH.Setting.kitchen.darkMenu>
-  <HH.Setting.kitchen.darkMenu.Desc>Allow the long pork dishes. They are also unlocked by an ideoligion that approves of cannibalism.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Setting.kitchen.darkMenu.Desc>Allow the long pork dishes. Needs content intensity Dark or Grim. An ideoligion that approves of cannibalism also unlocks them.</HH.Setting.kitchen.darkMenu.Desc>
   <HH.Kitchen.Cookbook.Teaches>Teaches: {0}</HH.Kitchen.Cookbook.Teaches>
   <HH.Kitchen.Cookbook.Empty>The pages are blank.</HH.Kitchen.Cookbook.Empty>
   <HH.Kitchen.Cookbook.AllKnown>The colony already knows every dish in this book.</HH.Kitchen.Cookbook.AllKnown>
