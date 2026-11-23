@@ -74,11 +74,11 @@ def huntingground(view, cells, masked):
 
 
 # ------------------------------------------------------------------ fence counter
-@tex("Things/HH/Underworld/FenceCounter", "single", (2, 1), doc="Scarred counter with a shaded lamp, strongbox and wrapped parcels, 2x1")
+@tex("Things/HH/Underworld/FenceCounter", "multi", (2, 1), doc="Scarred counter with a shaded lamp, strongbox and wrapped parcels, 2x1")
 def fencecounter(view, cells, masked):
-    c = canvas_for_(cells, "south", masked)
+    c = canvas_for_(cells, view, masked)
     wood = "#5c4130"
-    f = slab(c, "south", wood, apron=18, m=None)
+    f = slab(c, view, wood, apron=18, m=None)
     for k, x in enumerate((30, 80, 146, 200)):
         c.line(*f.pt(x, 10 + (k % 2) * 6), *f.pt(x + 26, 18 + (k % 2) * 4), dark(wood, .45), w=2)
     # strongbox
@@ -109,10 +109,10 @@ def fencecounter(view, cells, masked):
 
 
 # ------------------------------------------------------------------ organ clinic: sealed cold cases, nothing graphic
-@tex("Things/HH/Underworld/OrganClinic", "single", (2, 1), doc="Cold counter with sealed transport cases and a frost light (no organs shown), 2x1")
+@tex("Things/HH/Underworld/OrganClinic", "multi", (2, 1), doc="Cold counter with sealed transport cases and a frost light (no organs shown), 2x1")
 def organclinic(view, cells, masked):
-    c = canvas_for_(cells, "south", masked)
-    f = slab(c, "south", "#aebcc4", apron=18, front="#6f808a", m=None)
+    c = canvas_for_(cells, view, masked)
+    f = slab(c, view, "#aebcc4", apron=18, front="#6f808a", m=None)
     for k, x in enumerate((14, 90)):
         bx, by, bw, bh = f.r(x, 14, 66, f.h - 24)
         c.rect(bx, by, bw, bh, "#e9eef0", r=7, sw=3.4)

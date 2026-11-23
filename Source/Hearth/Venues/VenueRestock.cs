@@ -83,12 +83,13 @@ namespace Hearth.ShopsFood
         }
     }
 
-    /// <summary>Window of the "Restock" button: the goods filter and the switch.</summary>
+    /// <summary>Window of the "Restock" button: the switch, the goods filter and what the room holds now (F35 layout).</summary>
     public class Dialog_VenueRestock : Window
     {
         readonly CompVenueSignHH comp;
         readonly ThingFilterUI.UIState uiState = new ThingFilterUI.UIState();
-        public override Vector2 InitialSize => new Vector2(460f, 640f);
+        int places, stacks; float countedAt = -99f;
+        public override Vector2 InitialSize => HUI.Size(580f, 720f, 460f, 560f);
 
         public Dialog_VenueRestock(CompVenueSignHH comp)
         {
@@ -99,18 +100,41 @@ namespace Hearth.ShopsFood
         public override void DoWindowContents(Rect inRect)
         {
             if (comp.parent == null || comp.parent.Destroyed) { Close(); return; }
-            Text.Font = GameFont.Medium;
-            Widgets.Label(new Rect(0, 0, inRect.width, 34f), "HH.Venue.RestockTitle".TranslateOr("Restock") + " – " + comp.DisplayName);
-            Text.Font = GameFont.Small;
-            var hint = new Rect(0, 38f, inRect.width, 64f);
-            Widgets.Label(hint, "HH.Venue.RestockHint".TranslateOr("When on, every storage place in this room (stockpile zones and shelves, yours or anybody's) takes the goods ticked below with priority Important, so your haulers keep the room stocked. The places' old settings come back when you switch this off."));
-            var btn = new Rect(0, 106f, inRect.width, 32f);
-            string label = comp.restockOn ? "HH.Venue.RestockSwitchOff".TranslateOr("Restock is ON – switch off and give the storage back") : "HH.Venue.RestockSwitchOn".TranslateOr("Restock is off – switch on");
-            if (Widgets.ButtonText(btn, label)) comp.SetRestock(!comp.restockOn);
-            var area = new Rect(0, 146f, inRect.width, inRect.height - 146f);
+            float y = VenueDialogUI.Header(inRect, "HH.Venue.RestockTitle".TranslateOr("Restock"), comp,
+                comp.restockOn ? "HH.Venue.On".TranslateOr("on") : "HH.Venue.Off".TranslateOr("off"), comp.restockOn ? VenueDialogUI.Green : VenueDialogUI.Grey);
+            y = VenueDialogUI.Hint(inRect.x, y, inRect.width, "HH.Venue.RestockHint".TranslateOr("When on, every storage place in this room (stockpile zones and shelves, yours or anybody's) takes the goods ticked below with priority Important, so your haulers keep the room stocked. The places' old settings come back when you switch this off.")) + 8f;
+
+            // switch as a coloured strip
+            var strip = new Rect(inRect.x, y, inRect.width, 36f);
+            var col = comp.restockOn ? VenueDialogUI.Green : VenueDialogUI.Grey;
+            Widgets.DrawBoxSolid(strip, new Color(col.r, col.g, col.b, 0.18f));
+            GUI.color = col; Widgets.DrawBox(strip); GUI.color = Color.white;
+            Text.Anchor = TextAnchor.MiddleLeft;
+            Widgets.Label(new Rect(strip.x + 10f, strip.y, strip.width - 190f, strip.height), comp.restockOn
+                ? "HH.Venue.RestockStateOn".TranslateOr("Restock is on: the room's storage follows this list")
+                : "HH.Venue.RestockStateOff".TranslateOr("Restock is off: the room's storage keeps its own settings"));
+            Text.Anchor = TextAnchor.UpperLeft;
+            if (Widgets.ButtonText(new Rect(strip.xMax - 176f, strip.y + 4f, 170f, 28f), comp.restockOn ? "HH.Venue.RestockBtnOff".TranslateOr("Switch off") : "HH.Venue.RestockBtnOn".TranslateOr("Switch on")))
+                comp.SetRestock(!comp.restockOn);
+            y += 44f;
+
+            // footer: what the room holds now (counted once a second)
+            if (Time.realtimeSinceStartup - countedAt > 1f)
+            {
+                countedAt = Time.realtimeSinceStartup;
+                var v = comp.parent.Spawned ? VenueApi.VenueOfSign(comp.parent.Map, comp.parent) : null;
+                places = v == null ? 0 : VenueRestock.StorageOf(v).Count;
+                stacks = v == null ? 0 : VenueSales.Stock(v).Count;
+            }
+            const float footer = 26f;
+            var area = new Rect(inRect.x, y, inRect.width, inRect.yMax - y - footer - 4f);
             comp.restockFilter ??= new ThingFilter();
             ThingFilterUI.DoThingFilterConfigWindow(area, uiState, comp.restockFilter, null, 1);
             if (comp.restockOn && GUI.changed) comp.SyncRestock();
+            GUI.color = VenueDialogUI.Grey;
+            Widgets.Label(new Rect(inRect.x, inRect.yMax - footer, inRect.width, footer),
+                "HH.Venue.RestockFooter".TranslateOr("Storage places in this room: {0} · stacks for sale now: {1}").Replace("{0}", places.ToString()).Replace("{1}", stacks.ToString()));
+            GUI.color = Color.white;
         }
     }
 }

@@ -42,6 +42,8 @@ namespace Hearth.Casino
                 s.BuyIn = bank; s.Purse = bank;
                 s.StakeShare = CasinoBank.StakeShareFor(pawn);
                 s.EndTick = now + Rand.RangeInclusive(1500, 3200);
+                CasinoSeats.ApplyComfort(s, pawn);   // F17: a comfortable seat means bigger stakes and a longer stay
+                if (comp.NeedsCroupier && comp.Croupier != null) Venues.NoteServed(comp.Croupier);   // F14: a guest at the table counts for the croupier's shift
                 var h = c.HouseOf(account, comp.parent.Map, label); h.LastActivityTick = now; h.Dirty = true;
             }
             else

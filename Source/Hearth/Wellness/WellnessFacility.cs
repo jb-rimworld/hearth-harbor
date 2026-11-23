@@ -264,16 +264,19 @@ namespace Hearth.Wellness
         }
 
         /// <summary>Is a colonist with the Serving work type standing in the venue's room (staffed = full price)?</summary>
-        public static bool IsStaffed(Thing facility)
+        public static bool IsStaffed(Thing facility) => AttendantIn(facility) != null;
+
+        /// <summary>The colonist with the Serving work type standing in the facility's room (the spa attendant), or null.</summary>
+        public static Pawn AttendantIn(Thing facility)
         {
-            var room = facility.GetRoom(); if (room == null || WellnessDefOf.HH_Serving == null) return false;
+            var room = facility?.GetRoom(); if (room == null || WellnessDefOf.HH_Serving == null) return null;
             foreach (var c in facility.Map.mapPawns.FreeColonistsSpawned)
             {
                 if (c.Downed || !c.Awake() || c.WorkTypeIsDisabled(WellnessDefOf.HH_Serving)) continue;
                 if (c.workSettings == null || !c.workSettings.WorkIsActive(WellnessDefOf.HH_Serving)) continue;
-                if (c.GetRoom() == room) return true;
+                if (c.GetRoom() == room) return c;
             }
-            return false;
+            return null;
         }
 
         static double VenueFactor(Thing facility)
@@ -324,6 +327,8 @@ namespace Hearth.Wellness
             if (GuestApi.ChargeGuest(guest, price, "spa", "Spa: " + kind))
             {
                 if (state != null) state.revenueMicro += price.Micro;
+                // F14: a paid bath in a staffed spa counts for the attendant's shift mood (a massage counts for the masseur when it is done)
+                if (kind != WellnessKind.Massage) Venues.NoteServed(AttendantIn(facility));
                 return true;
             }
             return false;

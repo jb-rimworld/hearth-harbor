@@ -13,7 +13,53 @@
     <staffWorkType>HH_Serving</staffWorkType>
     <priceFactor>1</priceFactor>
     <researchPrerequisite>HH_CityLife_1</researchPrerequisite>
+    <nameRules>HH_VenueNames_Cinema</nameRules>
     <color>(0.42,0.40,0.66)</color>
+    <modExtensions>
+      <li Class="Hearth.VenueSetupExtension">
+        <requirements>
+          <li>
+            <id>screen</id>
+            <label>a projector screen</label>
+            <hint>The film runs on a powered projector screen.</hint>
+            <check>Things</check>
+            <things><li>HH_ProjectorScreen</li></things>
+          </li>
+          <li>
+            <id>seatsfacing</id>
+            <label>seats facing the screen</label>
+            <hint>Seats in front of the screen: as many as the City Life setting 'Seats needed' asks for.</hint>
+            <check>SeatsFacing</check>
+            <minSetting>city.cinemaMinSeats</minSetting>
+            <things><li>HH_ProjectorScreen</li></things>
+            <build><li>DiningChair</li><li>Armchair</li><li>Couch</li></build>
+          </li>
+          <li>
+            <id>power</id>
+            <label>power for the projector</label>
+            <hint>No power, no film.</hint>
+            <check>Power</check>
+            <things><li>HH_ProjectorScreen</li></things>
+          </li>
+          <li>
+            <id>counter</id>
+            <label>a ticket counter</label>
+            <hint>A counter by the door looks the part.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>HH_ShopCounter</li></things>
+          </li>
+          <li>
+            <id>snacks</id>
+            <label>a vending machine</label>
+            <hint>Snacks and drinks for the film, sold without staff.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>HH_VendingMachine</li></things>
+          </li>
+        </requirements>
+      </li>
+    </modExtensions>
   </Hearth.VenueTypeDef>
 
   <Hearth.VenueTypeDef>
@@ -28,7 +74,44 @@
     <staffWorkType>HH_Serving</staffWorkType>
     <priceFactor>1</priceFactor>
     <researchPrerequisite>HH_CityLife_1</researchPrerequisite>
+    <nameRules>HH_VenueNames_Salon</nameRules>
     <color>(0.78,0.44,0.60)</color>
+    <modExtensions>
+      <li Class="Hearth.VenueSetupExtension">
+        <requirements>
+          <li>
+            <id>chair</id>
+            <label>a salon chair</label>
+            <hint>Haircuts, styles and dye jobs happen in the salon chair.</hint>
+            <check>Things</check>
+            <things><li>HH_SalonChair</li></things>
+          </li>
+          <li>
+            <id>staff</id>
+            <label>a stylist (Serving work)</label>
+            <hint>A colonist with the Serving work type does the work.</hint>
+            <check>ServingWorker</check>
+          </li>
+          <li>
+            <id>seats</id>
+            <label>seats for waiting guests</label>
+            <hint>Guests waiting for their turn like to sit.</hint>
+            <check>Seats</check>
+            <required>false</required>
+            <min>3</min>
+            <build><li>DiningChair</li><li>Armchair</li><li>Stool</li></build>
+          </li>
+          <li>
+            <id>lamp</id>
+            <label>a standing lamp</label>
+            <hint>Good light makes a room feel welcoming after dark.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>StandingLamp</li></things>
+          </li>
+        </requirements>
+      </li>
+    </modExtensions>
   </Hearth.VenueTypeDef>
 
   <Hearth.VenueTypeDef>
@@ -43,6 +126,36 @@
     <staffWorkType>HH_Serving</staffWorkType>
     <priceFactor>1</priceFactor>
     <researchPrerequisite>HH_CityLife_1</researchPrerequisite>
+    <nameRules>HH_VenueNames_Gallery</nameRules>
     <color>(0.70,0.62,0.36)</color>
+    <modExtensions>
+      <li Class="Hearth.VenueSetupExtension">
+        <requirements>
+          <li>
+            <id>art</id>
+            <label>artworks</label>
+            <hint>Sculptures in the room: as many as the City Life setting 'Artworks needed' asks for. Artists make them at an art bench.</hint>
+            <check>Art</check>
+            <minSetting>city.galleryMinArt</minSetting>
+          </li>
+          <li>
+            <id>bench</id>
+            <label>a bench to look from</label>
+            <hint>Visitors like to sit down in front of the best piece.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>HH_ParkBench</li></things>
+          </li>
+          <li>
+            <id>lamp</id>
+            <label>a standing lamp</label>
+            <hint>Good light makes a room feel welcoming after dark.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>StandingLamp</li></things>
+          </li>
+        </requirements>
+      </li>
+    </modExtensions>
   </Hearth.VenueTypeDef>
 </Defs>

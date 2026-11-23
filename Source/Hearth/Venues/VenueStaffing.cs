@@ -38,6 +38,8 @@ namespace Hearth.ShopsFood
         public static bool WantsTender(Venue v)
         {
             if (!Modules.On(ModuleId.ShopsFood) || v?.Type == null) return false;
+            if (!VenueSetup.IsReady(v)) return false;   // nothing to tend in a room that is not set up (F12)
+            if (VenueHonor.IsOn(v)) return false;       // honor system (F15): the room runs unattended on purpose
             bool needs = VenueApi.NeedsStaff(v);
             if (!needs && VenueApi.CounterOf(v) == null) return false;
             bool inHours = VenueApi.InHours(v);
@@ -84,6 +86,8 @@ namespace Hearth.ShopsFood
             if (Sign == null || !Sign.Spawned || !Modules.On(ModuleId.ShopsFood)) return false;
             var v = VenueApi.VenueOfSign(pawn.Map, Sign);
             if (v == null) return false;
+            // switched to the honor system or no longer set up (F12/F15): the tender goes back to other work
+            if (VenueHonor.IsOn(v) || !VenueSetup.IsReady(v)) return false;
             bool needs = VenueApi.NeedsStaff(v);
             if (VenueApi.InHours(v)) return true;
             return needs && VenueApi.BellActive(v);
@@ -100,6 +104,7 @@ namespace Hearth.ShopsFood
             tend.initAction = () =>
             {
                 VenueState.PingStaff(Sign, pawn);
+                VenueService.BeginShift(pawn, Sign);
                 pawn.pather.StopDead();
                 // the bell was answered: the business stays open for a service window, so the guest who rang is served even if the bell was rung long ago
                 var v = VenueApi.VenueOfSign(pawn.Map, Sign);
@@ -108,7 +113,9 @@ namespace Hearth.ShopsFood
             tend.tickAction = () =>
             {
                 if (pawn.IsHashIntervalTick(30)) VenueState.PingStaff(Sign, pawn);
-                pawn.skills?.Learn(SkillDefOf.Social, 0.04f, false);
+                if (pawn.IsHashIntervalTick(250)) Guard.Run(ModuleId.ShopsFood, "Venues.Shift", () => VenueService.TendTick(pawn));
+                // a quiet counter teaches less than a busy one (F14)
+                pawn.skills?.Learn(SkillDefOf.Social, VenueService.ServedThisShift(pawn) > 0 ? 0.05f : 0.03f, false);
                 // face the sign so the tender looks at customers
                 if (pawn.IsHashIntervalTick(120)) pawn.rotationTracker.FaceTarget(Sign);
             };

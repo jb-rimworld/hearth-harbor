@@ -36,3 +36,39 @@ Tests: `venues.sign|shop|staff|tavern|vending|market|hidden|wait` in `VenueTests
 - A `VenueTypeDef` may carry `<modExtensions><li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>Goods|Drinks|None</sells></li></modExtensions>`; only selling types get their room's goods forbidden.
 - `GuestFallback` drives idle vanilla visitors through `GuestActivities.TryPick` while the Inn module is off. Set `GuestFallback.Enabled = false` if another module already does that.
 - Wall-mounted signs: `Venues.RoomOfSign` in the contract sends attachments to the wall cell (no room); `Patch_RoomOfSign_Attachment` repairs that until the contract is fixed.
+
+## 1.1.0 (venues package: F12–F15, F17, F33, F35)
+- **Setup guide (F12)**: every `VenueTypeDef` carries a `Hearth.VenueSetupExtension` (contract `Source/Hearth/Contracts/VenueSetup.cs`) with required and recommended
+  items: `Things` (defs / `compProps` / `thingClass`), `Seats`, `Tables`, `Storage`, `Art`, `SeatsFacing` (cinema), `Power`, `Stock`, `ServingWorker`, `Custom` (an
+  `IVenueSetupCheck`, e.g. `Hearth.Casino.CasinoChairsCheck`). `VenueSetup` (Venues folder) counts the room every 250 ticks per sign. A missing required *structural* item
+  makes the venue **Not ready** (`VenueGate.NotReady`, appended): it does not open, nobody tends it, nobody rings its bell. Stock, staff and power are shown but never block.
+  Setting `venues.requireSetup` (default on) turns the rule into hints. UI: sign tab **Setup** (`ITab_VenueSetup`: type picker, banner, rows with tick/cross, count, Build
+  button = the architect designator, Show button), gizmo "Setup: n missing" and up to two "Build: x" gizmos (`venues.setupHints`), one message + shop bell when a venue
+  becomes ready, guide step `venueReady`, overview chip "Not ready". Types of other mods without an extension get a built-in stock/staff list.
+  A requirement with `<staffOnly>true</staffOnly>` (the tavern's counter) is not needed while the venue runs on the honor system. With Shops & Food off for a save
+  no venue is held back (`VenueSetup.IsReady` returns true); other modules ask through the contract (`Venues.IsReady`, `Venues.ReadySummary`). Designator lookups of the
+  build buttons are cached for a second (real time), the room count for 250 ticks.
+  **Release note:** old saves keep `venues.requireSetup` on, so a tavern without a counter, a shop without storage or a restaurant without tables stays closed until
+  that furniture stands (a message after loading names them; the rule can be switched off in the Shops & Food settings).
+- **Work side (F13)**: `Hearth.CompProperties_FlipWorkSide` (Hearth.Core) on counters, desks, stations, tables, cage, ATM, bank counter: gizmo "Switch work side" turns the
+  building 180° on the same cells (even sizes move the centre cell). Oven, smoker, slot machine and ATM had their art facing the other way: interaction offset now (0,0,1),
+  placed facing south; `Hearth.LegacyWorkSideExtension` turns such buildings of older saves once while loading so their worker keeps the cell; their blueprints and frames
+  get `CompLegacyWorkSidePlan` at startup and are turned the same way (install blueprints of minified ones are not). The switch is disabled ("Busy") while a pawn's job targets
+  the building. Also on the salon chair. Fence counter and organ clinic now have north/east/south art.
+- **Serving (F14)**: `VenueService.Quality(pawn)` from Social (+passion, setting `venues.serviceSkill`) drives satisfaction, purchase size, browse speed and tips
+  (`venues.tipShare`, booked like the sale). Shifts are runtime records: a busy shift (`venues.busyServedPerHour`) gives `HH_ServedBusy`, long empty stretches while
+  tending (`venues.idleHours`) give `HH_ServedIdle` (`venues.shiftThoughts`). Other modules report served guests with `Venues.NoteServed(pawn)`: casino croupiers,
+  masseurs (finished massage), spa attendants (paid bath while they stand in the spa) and salon stylists. Restaurant waiters get tips like shop and tavern staff
+  (`VenueService.TryTip`); a restaurant has no browse delay, so "faster sales" does not apply there.
+- **Honor system (F15)**: per sign (taverns and shops), saved `honorSystem`: no staff needed, full price, each unattended sale rolls `venues.honorNoPay` / `venues.honorUnderpay`
+  (30–80 %), less often while a colonist sees it (`venues.honorWatched`), kind / wealthy guests are more honest. Only the paid part is charged; the sign keeps statistics
+  (inspect pane, Setup tab). Sound `HH_HonorCoin`.
+- **Casino seats (F17)**: `CasinoSeats.Plan` decides the guest seats of a game (chairs first, then spread); the same plan is the placement preview
+  (`PlaceWorker_CasinoSeats`, allocation-free, seats without a chair pulse while placing), the selection overlay and inspect line (`CompCasinoSeats`) and what the jobs use. Seat comfort raises stakes (`casino.comfortSpend`, default
+  +25 % at comfort 1) and stay (`casino.comfortStay`); odds unchanged.
+- **Business names (F33)**: `VenueTypeDef.nameRules` (RulePackDefs `HH_VenueNames_*`), `VenueNames` resolves `r_name` with a fixed seed per sign and roll, avoids names
+  already used on the map; new signs are named (`venues.autoNames`), a generated name follows a type change (a type without name rules shows its label), a typed one stays; a reinstalled sign keeps whatever name it had (also a cleared one, saved `nameDecided`). Rename window: Suggest / Plain / typed.
+- **Windows (F35)**: `Dialog_VenueHours`, `Dialog_VenuePrice` (now with a price table of what is for sale), `Dialog_RenameVenue`, `Dialog_VenueRestock` use `HUI.Size`
+  and a shared header (`VenueDialogUI`).
+- Tests: `venues.setup|names|honor|serving|dialogs`, `core.flipside`, `casino.seats` (`VenueV11Tests.cs`, `Casino/CasinoSeatsTests.cs`); `venues.shots` (explicit) takes
+  screenshots. The older suites `venues.sign|staff|tavern|wait` run with the setup rule relaxed (`VenueTestKit.WithLooseSetup`).

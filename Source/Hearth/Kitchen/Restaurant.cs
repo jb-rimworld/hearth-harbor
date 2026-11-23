@@ -269,9 +269,9 @@ namespace Hearth.Kitchen
             (venue.Comp as Hearth.ShopsFood.CompVenueSignHH)?.RecordSale(sale.Price, 1);
             var staffer = Hearth.ShopsFood.VenueApi.Staffer(venue);
             if (staffer == null) return;
-            staffer.skills?.Learn(SkillDefOf.Social, 25f, false);
-            int social = staffer.skills?.GetSkill(SkillDefOf.Social)?.Level ?? 5;
-            GuestApi.AddSatisfaction(guest, 0.004f + 0.016f * Mathf.Clamp01(social / 20f), "HH.Venue.GoodService".TranslateOr("Friendly service"));
+            // Social drives the service and the waiter's shift mood (F14, shared with shops and taverns)
+            float q = Hearth.ShopsFood.VenueService.OnServedSale(staffer, guest);
+            Hearth.ShopsFood.VenueService.TryTip(staffer, guest, venue, sale.Price, "food", q);
         }
 
         public static int PendingSales => sales.Count + vanillaSales.Count;

@@ -54,6 +54,7 @@
     </building>
     <comps>
       <li Class="Hearth.CompProperties_TillSpot" />
+      <li Class="Hearth.CompProperties_FlipWorkSide" />
     </comps>
   </ThingDef>
 </Defs>

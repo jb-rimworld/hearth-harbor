@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Business names of the City Life venue types (F33, 1.1.0). [owner] is the surname of a colonist. -->
+
+  <!-- Cinemas: lanterns, stars, reels -->
+  <RulePackDef>
+    <defName>HH_VenueNames_Cinema</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=3)->[light] Picture House</li>
+        <li>r_name(p=3)->The [adj] Reel</li>
+        <li>r_name(p=2)->[light] Screen</li>
+        <li>r_name->[owner]'s Pictures</li>
+        <li>r_name->The [adj] Projector</li>
+        <li>light->Lantern</li>
+        <li>light->Starlight</li>
+        <li>light->Moonlight</li>
+        <li>light->Firefly</li>
+        <li>light->Glowworm</li>
+        <li>light->Twilight</li>
+        <li>light->Ember</li>
+        <li>light->Aurora</li>
+        <li>adj->Silver</li>
+        <li>adj->Flickering</li>
+        <li>adj->Golden</li>
+        <li>adj->Velvet</li>
+        <li>adj->Midnight</li>
+        <li>adj->Grand</li>
+        <li>adj->Little</li>
+        <li>adj->Silent</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Salons: combs, scissors, curls -->
+  <RulePackDef>
+    <defName>HH_VenueNames_Salon</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=3)->The [adj] [tool]</li>
+        <li>r_name(p=2)->Shear Delight</li>
+        <li>r_name(p=2)->[owner]'s Cuts</li>
+        <li>r_name->[style] &amp; [style2]</li>
+        <li>r_name->Snip &amp; [style2]</li>
+        <li>adj->Sharp</li>
+        <li>adj->Silver</li>
+        <li>adj->Golden</li>
+        <li>adj->Tidy</li>
+        <li>adj->Dapper</li>
+        <li>adj->Velvet</li>
+        <li>adj->Neat</li>
+        <li>adj->Bright</li>
+        <li>tool->Comb</li>
+        <li>tool->Scissors</li>
+        <li>tool->Mirror</li>
+        <li>tool->Brush</li>
+        <li>tool->Curl</li>
+        <li>tool->Razor</li>
+        <li>tool->Ribbon</li>
+        <li>style->Curls</li>
+        <li>style->Braids</li>
+        <li>style->Waves</li>
+        <li>style->Fringe</li>
+        <li>style2->Shine</li>
+        <li>style2->Bows</li>
+        <li>style2->Bobs</li>
+        <li>style2->Locks</li>
+        <li>style2->Trims</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Galleries: wonders, frames, light -->
+  <RulePackDef>
+    <defName>HH_VenueNames_Gallery</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=3)->Gallery of [adj] Wonders</li>
+        <li>r_name(p=3)->The [adj2] Frame</li>
+        <li>r_name(p=2)->The [owner] Collection</li>
+        <li>r_name->[light] Hall</li>
+        <li>r_name->House of [art]</li>
+        <li>adj->Small</li>
+        <li>adj->Quiet</li>
+        <li>adj->Curious</li>
+        <li>adj->Hidden</li>
+        <li>adj->Bright</li>
+        <li>adj->Wandering</li>
+        <li>adj->Gentle</li>
+        <li>adj2->Gilded</li>
+        <li>adj2->Silver</li>
+        <li>adj2->Marble</li>
+        <li>adj2->Crooked</li>
+        <li>adj2->Golden</li>
+        <li>adj2->Oak</li>
+        <li>adj2->Jade</li>
+        <li>light->Lantern</li>
+        <li>light->Skylight</li>
+        <li>light->Morning</li>
+        <li>light->Sunbeam</li>
+        <li>light->Candle</li>
+        <li>art->Statues</li>
+        <li>art->Marble</li>
+        <li>art->Shapes</li>
+        <li>art->Echoes</li>
+        <li>art->Faces</li>
+        <li>art->Stories</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

@@ -11,8 +11,31 @@
     <needsStaff>false</needsStaff>
     <priceFactor>1</priceFactor>
     <researchPrerequisite>HH_Underworld_1</researchPrerequisite>
+    <nameRules>HH_VenueNames_DrugLounge</nameRules>
     <color>(0.45, 0.30, 0.55)</color>
-    <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
+    <modExtensions>
+      <li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li>
+      <li Class="Hearth.VenueSetupExtension">
+        <requirements>
+          <li>
+            <id>seats</id>
+            <label>sofas</label>
+            <hint>Guests settle in on soft seats. At least two.</hint>
+            <check>Seats</check>
+            <min>2</min>
+            <build><li>Couch</li><li>Armchair</li></build>
+          </li>
+          <li>
+            <id>table</id>
+            <label>a low table</label>
+            <hint>Something to put things on.</hint>
+            <check>Tables</check>
+            <required>false</required>
+            <build><li>EndTable</li><li>Table1x2c</li></build>
+          </li>
+        </requirements>
+      </li>
+    </modExtensions>
   </Hearth.VenueTypeDef>
 
   <JobDef><defName>HH_WatchBout</defName><driverClass>Hearth.Underworld.JobDriver_WatchBout</driverClass><reportString>watching the pit.</reportString></JobDef>

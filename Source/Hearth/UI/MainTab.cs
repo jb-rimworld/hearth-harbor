@@ -166,6 +166,9 @@ namespace Hearth.Shell
             bool hours = v.IsOpenNow;
             bool needs = Guard.Run(ModuleId.Core, "UI.VenueNeedsStaff", () => Venues.NeedsStaff(v), false);
             bool staffed = Guard.Run(ModuleId.Core, "UI.VenueStaffed", () => Venues.IsStaffed(v), false);
+            // 1.1.0 (F12): required furniture missing → the venue does not open at all
+            if (!Guard.Run(ModuleId.Core, "UI.VenueReady", () => Venues.IsReady(v), true))
+                return ("HH.Setup.NotReadyState".TranslateOr("not ready").CapitalizeFirst(), false, Venues.ReadySummary(v));
             if (!hours) return ("HH.UI.Venue.Closed".Translate(), false, "HH.UI.Venue.ClosedTip".Translate());
             if (needs && !staffed) return ("HH.UI.Venue.NoStaff".Translate(), false, "HH.UI.Venue.NoStaffTip".Translate());
             int stock = Guard.Run(ModuleId.Core, "UI.VenueStock", () =>

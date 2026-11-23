@@ -9,10 +9,14 @@ R = Path(__file__).resolve().parent.parent
 src = R / "Source" / "Hearth" / "Venues"
 entries = {}
 lit = r'"((?:[^"\\]|\\.)*)"'
-for f in sorted(src.glob("*.cs")):
+# 1.1.0: setup guide (HH.Setup), honor system (HH.Honor), serving (HH.Serve), names (HH.Names) and the work-side switch of Hearth.Core (HH.Core.Flip*)
+files = sorted(src.glob("*.cs")) + [R / "Source" / "Hearth.Core" / "Foundation" / "CompFlipWorkSide.cs"]
+for f in files:
     t = f.read_text(encoding="utf-8")
-    for m in re.finditer(r'"(HH\.Venue\.[A-Za-z0-9_.]+)"\s*\.TranslateOr\(\s*' + lit, t):
-        entries.setdefault(m.group(1), m.group(2))
+    for m in re.finditer(r'"(HH\.(?:Venue|Setup|Honor|Serve|Names|Core\.Flip)[A-Za-z0-9_.]*)"\s*\.TranslateOr\(\s*' + lit, t):
+        entries.setdefault(m.group(1), m.group(2).replace('\\"', '"'))
+# keys used without TranslateOr (ITab labelKey)
+entries.setdefault("HH.Setup.TabLabel", "Setup")
 # price tiers use computed keys
 for tier, en in [("Free", "Free"), ("Charity", "Charity"), ("Discount", "Discount"), ("Budget", "Budget"), ("Standard", "Standard"), ("Premium", "Premium"), ("Luxury", "Luxury")]:
     entries.setdefault("HH.Venue.Tier." + tier, en)
@@ -20,6 +24,10 @@ for tier, en in [("Free", "Free"), ("Charity", "Charity"), ("Discount", "Discoun
 # settings live in VenueSettings.cs and in NightBell.cs (NightBellSettings, 1.1.0)
 st = (src / "VenueSettings.cs").read_text(encoding="utf-8") + "\n" + (src / "NightBell.cs").read_text(encoding="utf-8")
 consts = dict(re.findall(r'public const string (\w+) = "([^"]+)";', st))
+# keys defined in VenueSetup.cs and referenced from VenueSettings.cs (RequireSetup = VenueSetup.RequireKey)
+setup_consts = dict(re.findall(r'public const string (\w+) = "([^"]+)";', (src / "VenueSetup.cs").read_text(encoding="utf-8")))
+for name, ref in re.findall(r'public const string (\w+) = VenueSetup\.(\w+);', st):
+    consts[name] = setup_consts[ref]
 for m in re.finditer(r'HSettings\.(?:Float|Int|Percent|Silver|Bool|Enum(?:<\w+>)?)\(M, ("(?:[^"\\]|\\.)*"), (\w+),(.*?)\);', st, re.S):
     key = consts[m.group(2)]
     strs = re.findall(lit, m.group(3))

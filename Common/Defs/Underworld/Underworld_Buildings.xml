@@ -70,10 +70,9 @@
     <category>Building</category>
     <graphicData>
       <texPath>Things/HH/Underworld/FenceCounter</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(2,1)</drawSize>
     </graphicData>
-    <uiIconPath>Things/HH/Underworld/FenceCounter</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
@@ -98,7 +97,7 @@
     <uiOrder>920</uiOrder>
     <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
-    <comps><li Class="Hearth.Underworld.CompProperties_FenceStock" /></comps>
+    <comps><li Class="Hearth.Underworld.CompProperties_FenceStock" /><li Class="Hearth.CompProperties_FlipWorkSide" /></comps>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
   </ThingDef>
 
@@ -179,10 +178,9 @@
     <thingClass>Building_Storage</thingClass>
     <graphicData>
       <texPath>Things/HH/Underworld/OrganClinic</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(2,1)</drawSize>
     </graphicData>
-    <uiIconPath>Things/HH/Underworld/OrganClinic</uiIconPath>
     <size>(2,1)</size>
     <designationCategory>HH_Hospitality</designationCategory>
     <designatorDropdown>HH_Group_Underworld</designatorDropdown>

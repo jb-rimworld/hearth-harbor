@@ -19,6 +19,8 @@ namespace Hearth.ShopsFood
         ClosedHours,
         /// <summary>In opening hours but nobody is tending it.</summary>
         WaitingForStaff,
+        /// <summary>Required furniture is missing (F12 setup checklist): the venue does not open at all.</summary>
+        NotReady,
     }
 
     /// <summary>XML extension on a VenueTypeDef: what the venue sells (N45).</summary>
@@ -46,6 +48,10 @@ namespace Hearth.ShopsFood
         public static VenueTypeDef HH_Venue_Casino;
         public static VenueTypeDef HH_Venue_Spa;
         public static VenueTypeDef HH_Venue_Lounge;
+        public static ThoughtDef HH_ServedBusy;
+        public static ThoughtDef HH_ServedIdle;
+        public static SoundDef HH_HonorCoin;
+        public static SoundDef HH_VenueReady;
 
         static HHVenueDefOf() { DefOfHelper.EnsureInitializedInCtor(typeof(HHVenueDefOf)); }
     }

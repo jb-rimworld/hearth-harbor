@@ -66,6 +66,9 @@ namespace Hearth.ShopsFood
             float rho = Rho(guest, info, mult, v.Sign.thingIDNumber, v.Staffer());
             if (!Accepts(rho)) return null;
             bool drink = def == HHVenueDefOf.HH_BuyDrink;
+            // a skilled tender sells a little more (F14)
+            var tender = v.Staffer();
+            float serviceSpend = tender != null ? VenueService.SpendFactor(VenueService.Quality(tender)) : 1f;
             scratch.Clear(); scratch.AddRange(stock);
             scratch.Shuffle();
             // xenotype interests (11.5): favourites first (hemogen packs for sanguophages), rejected goods never
@@ -77,7 +80,7 @@ namespace Hearth.ShopsFood
                 if (!item.Spawned || item.Destroyed) continue;
                 var unit = VenueApi.PriceOf(item, 1, v);
                 if (unit.Micro <= 0 || unit > info.Budget) continue;
-                int count = ChooseCount(item, unit, info.Budget, drink, SpendFactor(guest));
+                int count = ChooseCount(item, unit, info.Budget, drink, SpendFactor(guest) * serviceSpend);
                 if (!guest.CanReserveAndReach(item, PathEndMode.Touch, Danger.None, 1, count)) continue;
                 var job = JobMaker.MakeJob(def, item, v.Sign);
                 job.count = count;
@@ -188,6 +191,8 @@ namespace Hearth.ShopsFood
             {
                 var v = VenueApi.VenueOfSign(map, sign);
                 if (v != null && VenueApi.InLastOrders(v)) ticks = Math.Max(1, ticks / 3);
+                var tender = v?.Staffer();
+                if (tender != null) ticks = Math.Max(1, Mathf.RoundToInt(ticks * VenueService.BrowseFactor(VenueService.Quality(tender))));
             }
             return ticks;
         }
@@ -232,7 +237,18 @@ namespace Hearth.ShopsFood
             string memo = (vending ? "Vending machine: " : (venue.DisplayNameOf() + ": ")) + label + (count > 1 ? " x" + count : "");
             // income shows drinks apart from goods: "drink" (taverns, bars), "vending" (machines), "shop" (everything else)
             string incomeCat = vending ? "vending" : VenueSales.IsDrink(item.def) ? "drink" : "shop";
-            if (!GuestApi.ChargeGuest(pawn, price, incomeCat, memo)) { Fail("cannot pay"); return; }
+            // honor system (F15): unattended, the guest decides what goes into the box; only that is charged
+            bool honor = !vending && VenueHonor.Applies(venue);
+            HonorOutcome honorOutcome = HonorOutcome.PaidFull; bool watched = false;
+            Money listPrice = price;
+            if (honor)
+            {
+                if (price > info.Budget) { Fail("cannot pay"); return; }
+                honorOutcome = VenueHonor.Resolve(pawn, venue, price, out price, out watched);
+                if (honorOutcome != HonorOutcome.PaidFull) memo += " (" + "HH.Honor.MemoPaid".TranslateOr("honor box: paid {0} of {1}").Replace("{0}", price.ToStringShort()).Replace("{1}", listPrice.ToStringShort()) + ")";
+            }
+            // an honor-box guest who paid nothing is not charged at all (no zero booking); every other sale is charged as before
+            if ((price.IsPositive || !honor) && !GuestApi.ChargeGuest(pawn, price, incomeCat, memo)) { Fail("cannot pay"); return; }
 
             var taken = item.SplitOff(count);
             var tdef = taken.def;
@@ -247,19 +263,26 @@ namespace Hearth.ShopsFood
             GuestMemory.AddPurchase(pawn);
             if (venue != null)
             {
-                (venue.Comp as CompVenueSignHH)?.RecordSale(price, count);
+                var signComp = venue.Comp as CompVenueSignHH;
+                signComp?.RecordSale(price, count);
+                if (honor)
+                {
+                    signComp?.RecordHonor(honorOutcome, listPrice, price);
+                    VenueHonor.Feedback(pawn, venue, honorOutcome, listPrice, price, watched);
+                }
                 var staffer = venue.Staffer();
                 if (staffer != null)
                 {
-                    staffer.skills?.Learn(SkillDefOf.Social, 25f, false);
-                    // a friendly, skilled tender makes the purchase a little nicer (6.5 service quality, simplified)
-                    int social = staffer.skills?.GetSkill(SkillDefOf.Social)?.Level ?? 5;
-                    GuestApi.AddSatisfaction(pawn, 0.004f + 0.016f * Mathf.Clamp01(social / 20f), "HH.Venue.GoodService".TranslateOr("Friendly service"));
+                    // a friendly, skilled tender makes the purchase nicer and may earn a tip (F14: Social drives the service)
+                    float q = VenueService.OnServedSale(staffer, pawn);
+                    VenueService.TryTip(staffer, pawn, venue, price, incomeCat, q);
                 }
             }
-            float delta = VenueShopping.SatisfactionFor(rho, out string reason);
+            // a guest who paid nothing or too little does not judge the price (they did not pay it)
+            string reason = null; float delta = 0f;
+            if (honorOutcome == HonorOutcome.PaidFull) delta = VenueShopping.SatisfactionFor(rho, out reason);
             if (delta != 0f) GuestApi.AddSatisfaction(pawn, delta, reason);
-            MoteMaker.ThrowText(pawn.DrawPos, map, "-" + price.ToStringShort(), Color.yellow, 2.5f);
+            if (price.IsPositive) MoteMaker.ThrowText(pawn.DrawPos, map, "-" + price.ToStringShort(), Color.yellow, 2.5f);
 
             // drinks are drunk on the spot; vending food when hungry
             bool isDrink = VenueSales.IsDrink(tdef);
@@ -359,7 +382,7 @@ namespace Hearth.ShopsFood
                 {
                     case VenueGate.Open: best = Math.Max(best, last ? 1.2f : 0.9f); break;
                     case VenueGate.WaitingForStaff: if (WouldPay(guest, info, v, false)) best = Math.Max(best, 0.5f); break;
-                    default: if (VS.B(VS.NightBell) && VenueApi.NeedsStaff(v) && WouldPay(guest, info, v, true)) best = Math.Max(best, 0.2f); break;
+                    case VenueGate.ClosedHours: if (VS.B(VS.NightBell) && VenueApi.NeedsStaff(v) && WouldPay(guest, info, v, true)) best = Math.Max(best, 0.2f); break;
                 }
             }
             return best * VS.F(VS.ShopDesire);
@@ -379,7 +402,7 @@ namespace Hearth.ShopsFood
                     case VenueGate.WaitingForStaff:
                         if (WouldPay(guest, info, v, false)) return VenueShopping.WaitJob(v, ringBell: !VenueApi.InHours(v));
                         break;
-                    default:
+                    case VenueGate.ClosedHours:
                         if (VS.B(VS.NightBell) && VenueApi.NeedsStaff(v) && WouldPay(guest, info, v, true)) return VenueShopping.WaitJob(v, ringBell: true);
                         break;
                 }

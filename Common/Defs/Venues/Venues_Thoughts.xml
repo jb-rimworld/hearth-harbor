@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Moods of a shift at the counter (F14, 1.1.0). Only colonists who tend a venue get them (nothing forced, N08).
+       The stage is chosen in code: guests served per hour against the setting "Busy shift", a Social passion lifts it one stage;
+       boredom grows with every further stretch without a guest (setting "Bored after"). -->
+
+  <ThoughtDef>
+    <defName>HH_ServedBusy</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>0.75</durationDays>
+    <stackLimit>1</stackLimit>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>a good shift</label>
+        <description>Guests kept coming to the counter and I had something to do the whole time. That is how work should feel.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>a busy shift</label>
+        <description>One guest after the other. I knew every order before they finished asking. A good kind of tired.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>rushed off my feet</label>
+        <description>The whole room wanted something at once and I kept up with all of it. I'm proud of that shift.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HH_ServedIdle</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>0.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>bored at the counter</label>
+        <description>I stood behind the counter for ages and nobody came. I polished the same glass three times.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>stood around all shift</label>
+        <description>Hours at the counter with nothing to do. I could have been doing something useful.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>a pointless shift</label>
+        <description>An entire shift of waiting for guests who never came. What am I even standing here for?</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

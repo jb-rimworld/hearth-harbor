@@ -14,9 +14,74 @@
     <needsStaff>true</needsStaff>
     <staffWorkType>HH_Serving</staffWorkType>
     <priceFactor>1.25</priceFactor>
+    <nameRules>HH_VenueNames_Tavern</nameRules>
     <color>(0.78,0.52,0.24)</color>
     <modExtensions>
       <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>Drinks</sells></li>
+          <li Class="Hearth.VenueSetupExtension">
+        <requirements>
+          <li>
+            <id>counter</id>
+            <label>a counter</label>
+            <hint>The bartender stands behind it and guests order there. The day's takings are put down on it at midnight. Not needed with the honor system (nobody serves).</hint>
+            <check>Things</check>
+            <staffOnly>true</staffOnly>
+            <things><li>HH_ShopCounter</li></things>
+          </li>
+          <li>
+            <id>table</id>
+            <label>a table</label>
+            <hint>Guests drink at a table, not standing in the doorway.</hint>
+            <check>Tables</check>
+            <build><li>Table1x2c</li><li>Table2x2c</li><li>Table2x4c</li><li>Table3x3c</li></build>
+          </li>
+          <li>
+            <id>seats</id>
+            <label>seats</label>
+            <hint>At least two seats: chairs, stools, armchairs or benches.</hint>
+            <check>Seats</check>
+            <min>2</min>
+            <build><li>DiningChair</li><li>Stool</li><li>Armchair</li></build>
+          </li>
+          <li>
+            <id>stock</id>
+            <label>drinks in stock</label>
+            <hint>Beer and other drinks stored in the room are for sale.</hint>
+            <check>Stock</check>
+          </li>
+          <li>
+            <id>staff</id>
+            <label>a bartender (Serving work)</label>
+            <hint>A colonist with the Serving work type keeps the tavern open.</hint>
+            <check>ServingWorker</check>
+          </li>
+          <li>
+            <id>shelf</id>
+            <label>a shelf for the drinks</label>
+            <hint>Drinks on a shelf stay tidy and are easy to restock.</hint>
+            <check>Storage</check>
+            <required>false</required>
+            <build><li>Shelf</li><li>ShelfSmall</li></build>
+          </li>
+          <li>
+            <id>crowd</id>
+            <label>room for a crowd</label>
+            <hint>Six seats or more, so a group can come in together.</hint>
+            <check>Seats</check>
+            <required>false</required>
+            <min>6</min>
+            <build><li>DiningChair</li><li>Stool</li><li>Armchair</li></build>
+          </li>
+          <li>
+            <id>lamp</id>
+            <label>a standing lamp</label>
+            <hint>Good light makes a room feel welcoming after dark.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>StandingLamp</li></things>
+          </li>
+        </requirements>
+      </li>
     </modExtensions>
   </Hearth.VenueTypeDef>
 
@@ -31,9 +96,50 @@
     <needsStaff>false</needsStaff>
     <staffWorkType>HH_Serving</staffWorkType>
     <priceFactor>1</priceFactor>
+    <nameRules>HH_VenueNames_Shop</nameRules>
     <color>(0.36,0.62,0.55)</color>
     <modExtensions>
       <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>Goods</sells></li>
+          <li Class="Hearth.VenueSetupExtension">
+        <requirements>
+          <li>
+            <id>storage</id>
+            <label>a shelf or stockpile</label>
+            <hint>Everything stored on shelves and in stockpiles inside the room is for sale.</hint>
+            <check>Storage</check>
+            <build><li>Shelf</li><li>ShelfSmall</li></build>
+          </li>
+          <li>
+            <id>stock</id>
+            <label>goods on the shelves</label>
+            <hint>Put what you want to sell into the room's storage.</hint>
+            <check>Stock</check>
+          </li>
+          <li>
+            <id>counter</id>
+            <label>a counter</label>
+            <hint>With a shopkeeper behind a counter the shop charges full price instead of the self-service discount.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>HH_ShopCounter</li></things>
+          </li>
+          <li>
+            <id>staff</id>
+            <label>a shopkeeper (Serving work)</label>
+            <hint>Optional: a colonist doing Serving work sells at full price and makes guests happier.</hint>
+            <check>ServingWorker</check>
+            <required>false</required>
+          </li>
+          <li>
+            <id>lamp</id>
+            <label>a standing lamp</label>
+            <hint>Good light makes a room feel welcoming after dark.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>StandingLamp</li></things>
+          </li>
+        </requirements>
+      </li>
     </modExtensions>
   </Hearth.VenueTypeDef>
 
@@ -48,9 +154,74 @@
     <needsStaff>true</needsStaff>
     <staffWorkType>HH_Serving</staffWorkType>
     <priceFactor>1.2</priceFactor>
+    <nameRules>HH_VenueNames_Restaurant</nameRules>
     <color>(0.76,0.36,0.30)</color>
     <modExtensions>
       <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>Dishes</sells></li>
+          <li Class="Hearth.VenueSetupExtension">
+        <requirements>
+          <li>
+            <id>table</id>
+            <label>a table</label>
+            <hint>Guests sit down to eat; a restaurant without tables is a kitchen.</hint>
+            <check>Tables</check>
+            <build><li>Table1x2c</li><li>Table2x2c</li><li>Table2x4c</li><li>Table3x3c</li></build>
+          </li>
+          <li>
+            <id>seats</id>
+            <label>seats</label>
+            <hint>At least two chairs at the tables.</hint>
+            <check>Seats</check>
+            <min>2</min>
+            <build><li>DiningChair</li><li>Stool</li><li>Armchair</li></build>
+          </li>
+          <li>
+            <id>stock</id>
+            <label>plates for sale</label>
+            <hint>Cooked dishes on a shelf or table in the room are on the menu.</hint>
+            <check>Stock</check>
+          </li>
+          <li>
+            <id>staff</id>
+            <label>a waiter (Serving work)</label>
+            <hint>A colonist with the Serving work type takes orders and keeps the restaurant open.</hint>
+            <check>ServingWorker</check>
+          </li>
+          <li>
+            <id>counter</id>
+            <label>a counter</label>
+            <hint>A counter gives the waiter a post and is where the day's takings are put down.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>HH_ShopCounter</li></things>
+          </li>
+          <li>
+            <id>shelf</id>
+            <label>a shelf for plates</label>
+            <hint>Plates waiting on a shelf are served faster.</hint>
+            <check>Storage</check>
+            <required>false</required>
+            <build><li>Shelf</li><li>ShelfSmall</li></build>
+          </li>
+          <li>
+            <id>crowd</id>
+            <label>room for a crowd</label>
+            <hint>Eight seats or more for busy evenings.</hint>
+            <check>Seats</check>
+            <required>false</required>
+            <min>8</min>
+            <build><li>DiningChair</li><li>Stool</li><li>Armchair</li></build>
+          </li>
+          <li>
+            <id>lamp</id>
+            <label>a standing lamp</label>
+            <hint>Good light makes a room feel welcoming after dark.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>StandingLamp</li></things>
+          </li>
+        </requirements>
+      </li>
     </modExtensions>
   </Hearth.VenueTypeDef>
 
@@ -65,9 +236,60 @@
     <needsStaff>true</needsStaff>
     <staffWorkType>HH_Serving</staffWorkType>
     <priceFactor>1</priceFactor>
+    <nameRules>HH_VenueNames_Casino</nameRules>
     <color>(0.55,0.20,0.45)</color>
     <modExtensions>
       <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>None</sells></li>
+          <li Class="Hearth.VenueSetupExtension">
+        <requirements>
+          <li>
+            <id>game</id>
+            <label>a game</label>
+            <hint>At least one slot machine or gaming table. A casino without games is just a room.</hint>
+            <check>Things</check>
+            <compProps>Hearth.Casino.CompProperties_CasinoGame</compProps>
+            <build><li>HH_SlotMachine</li><li>HH_RouletteTable</li><li>HH_BlackjackTable</li><li>HH_PokerTable</li></build>
+          </li>
+          <li>
+            <id>power</id>
+            <label>power for the machines</label>
+            <hint>Slot machines and lit tables only run with power.</hint>
+            <check>Power</check>
+            <compProps>Hearth.Casino.CompProperties_CasinoGame</compProps>
+          </li>
+          <li>
+            <id>staff</id>
+            <label>a croupier (Serving work)</label>
+            <hint>Gaming tables need a croupier: a colonist with the Serving work type.</hint>
+            <check>ServingWorker</check>
+          </li>
+          <li>
+            <id>chairs</id>
+            <label>chairs at the game seats</label>
+            <hint>Guests who sit comfortably stay longer and stake more. The marked seats around each table want a chair.</hint>
+            <check>Custom</check>
+            <required>false</required>
+            <worker>Hearth.Casino.CasinoChairsCheck</worker>
+            <build><li>DiningChair</li><li>Stool</li><li>Armchair</li></build>
+          </li>
+          <li>
+            <id>cage</id>
+            <label>a cashier's cage</label>
+            <hint>Guests change silver into chips at the cage and bet a little more.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>HH_CashierCage</li></things>
+          </li>
+          <li>
+            <id>lamp</id>
+            <label>a standing lamp</label>
+            <hint>Good light makes a room feel welcoming after dark.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>StandingLamp</li></things>
+          </li>
+        </requirements>
+      </li>
     </modExtensions>
   </Hearth.VenueTypeDef>
 
@@ -82,9 +304,51 @@
     <needsStaff>true</needsStaff>
     <staffWorkType>HH_Serving</staffWorkType>
     <priceFactor>1</priceFactor>
+    <nameRules>HH_VenueNames_Spa</nameRules>
     <color>(0.35,0.58,0.72)</color>
     <modExtensions>
       <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>None</sells></li>
+          <li Class="Hearth.VenueSetupExtension">
+        <requirements>
+          <li>
+            <id>facility</id>
+            <label>a bath, sauna or massage table</label>
+            <hint>Guests pay for a hot tub, the sauna or a massage.</hint>
+            <check>Things</check>
+            <things><li>HH_HotTub</li><li>HH_Sauna</li><li>HH_MassageTable</li></things>
+          </li>
+          <li>
+            <id>power</id>
+            <label>power for the facilities</label>
+            <hint>Facilities that need power only work with it.</hint>
+            <check>Power</check>
+            <things><li>HH_HotTub</li><li>HH_Sauna</li><li>HH_MassageTable</li></things>
+          </li>
+          <li>
+            <id>staff</id>
+            <label>an attendant (Serving work)</label>
+            <hint>A colonist with the Serving work type looks after the guests.</hint>
+            <check>ServingWorker</check>
+          </li>
+          <li>
+            <id>seats</id>
+            <label>seats to rest</label>
+            <hint>Guests like to sit down between a bath and the sauna.</hint>
+            <check>Seats</check>
+            <required>false</required>
+            <min>2</min>
+            <build><li>Armchair</li><li>DiningChair</li><li>Stool</li></build>
+          </li>
+          <li>
+            <id>plant</id>
+            <label>a potted plant</label>
+            <hint>A little green makes any room nicer to be in.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>PlantPot</li></things>
+          </li>
+        </requirements>
+      </li>
     </modExtensions>
   </Hearth.VenueTypeDef>
 
@@ -99,9 +363,46 @@
     <needsStaff>false</needsStaff>
     <staffWorkType>HH_Serving</staffWorkType>
     <priceFactor>1</priceFactor>
+    <nameRules>HH_VenueNames_Lounge</nameRules>
     <color>(0.60,0.55,0.40)</color>
     <modExtensions>
       <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>None</sells></li>
+          <li Class="Hearth.VenueSetupExtension">
+        <requirements>
+          <li>
+            <id>seats</id>
+            <label>seats</label>
+            <hint>Guests wait here sitting down. At least two seats.</hint>
+            <check>Seats</check>
+            <min>2</min>
+            <build><li>Armchair</li><li>Couch</li><li>DiningChair</li></build>
+          </li>
+          <li>
+            <id>table</id>
+            <label>a small table</label>
+            <hint>Somewhere to put a cup down.</hint>
+            <check>Tables</check>
+            <required>false</required>
+            <build><li>Table1x2c</li><li>EndTable</li></build>
+          </li>
+          <li>
+            <id>plant</id>
+            <label>a potted plant</label>
+            <hint>A little green makes any room nicer to be in.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>PlantPot</li></things>
+          </li>
+          <li>
+            <id>lamp</id>
+            <label>a standing lamp</label>
+            <hint>Good light makes a room feel welcoming after dark.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>StandingLamp</li></things>
+          </li>
+        </requirements>
+      </li>
     </modExtensions>
   </Hearth.VenueTypeDef>
 
@@ -117,9 +418,45 @@
     <needsStaff>false</needsStaff>
     <staffWorkType>HH_Serving</staffWorkType>
     <priceFactor>1</priceFactor>
+    <nameRules>HH_VenueNames_Chapel</nameRules>
     <color>(0.62,0.58,0.80)</color>
     <modExtensions>
       <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>None</sells></li>
+          <li Class="Hearth.VenueSetupExtension">
+        <requirements>
+          <li>
+            <id>altar</id>
+            <label>a guest altar</label>
+            <hint>Visitors of every faith pray at the guest altar.</hint>
+            <check>Things</check>
+            <things><li>HH_GuestAltar</li></things>
+          </li>
+          <li>
+            <id>seats</id>
+            <label>pews or chairs</label>
+            <hint>At least two seats for those who stay a while.</hint>
+            <check>Seats</check>
+            <min>2</min>
+            <build><li>DiningChair</li><li>Stool</li><li>Couch</li></build>
+          </li>
+          <li>
+            <id>plant</id>
+            <label>a potted plant</label>
+            <hint>A little green makes any room nicer to be in.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>PlantPot</li></things>
+          </li>
+          <li>
+            <id>lamp</id>
+            <label>a standing lamp</label>
+            <hint>Good light makes a room feel welcoming after dark.</hint>
+            <check>Things</check>
+            <required>false</required>
+            <things><li>StandingLamp</li></things>
+          </li>
+        </requirements>
+      </li>
     </modExtensions>
   </Hearth.VenueTypeDef>
 </Defs>

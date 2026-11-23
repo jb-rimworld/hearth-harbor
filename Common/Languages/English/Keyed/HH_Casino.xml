@@ -252,4 +252,18 @@
   <HH.Setting.thrumbo.raiseTheStakes.Desc>Adds the button "Raise the stakes…" to the Lucky Thrumbo: stake goods in range of a powered orbital trade beacon instead of silver, and from the content intensity Standard also colony animals and prisoners (like vanilla selling). Colonists, slaves, children and guests are never offered.</HH.Setting.thrumbo.raiseTheStakes.Desc>
   <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: pawnbroker spread for staked goods</HH.Setting.thrumbo.pawnbrokerSpread>
   <HH.Setting.thrumbo.pawnbrokerSpread.Desc>Staked goods count for what the house's pawnbroker would pay (the vanilla sell price with your best negotiator) minus this spread and a fixed 2 % fee.</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
+  <!-- 1.1.0 guest seats and comfort (F17) -->
+  <HH.Casino.ChairsNote>up to +{0} % stakes on a comfortable seat</HH.Casino.ChairsNote>
+  <HH.Casino.ComfySeat>A comfortable seat at the table</HH.Casino.ComfySeat>
+  <HH.Casino.GhostChairs>{0} with a chair</HH.Casino.GhostChairs>
+  <HH.Casino.GhostSeats>Guest seats: {0} / {1}</HH.Casino.GhostSeats>
+  <HH.Casino.GhostTipSlot>Blue: where the player sits · a chair or stool on the pulsing cell raises stakes</HH.Casino.GhostTipSlot>
+  <HH.Casino.GhostTipTable>Blue: where guests play · amber: the croupier · put chairs on the pulsing cells to raise stakes</HH.Casino.GhostTipTable>
+  <HH.Casino.SeatsBonus>+{0} % stakes</HH.Casino.SeatsBonus>
+  <HH.Casino.SeatsLine>Guest seats: {0} of {1} free to use · {2} with a chair</HH.Casino.SeatsLine>
+  <HH.Casino.SeatsTip>chairs raise stakes up to +{0} %</HH.Casino.SeatsTip>
+  <HH.Setting.casino.comfortSpend>Comfortable seats: more spending</HH.Setting.casino.comfortSpend>
+  <HH.Setting.casino.comfortSpend.Desc>A guest on a seat with comfort 100 % stakes this much more per round (scaled by the seat's comfort; standing = no bonus). The house edge stays the same: more play, not better odds.</HH.Setting.casino.comfortSpend.Desc>
+  <HH.Setting.casino.comfortStay>Comfortable seats: longer stays</HH.Setting.casino.comfortStay>
+  <HH.Setting.casino.comfortStay.Desc>A guest on a seat with comfort 100 % plays this much longer before leaving the table.</HH.Setting.casino.comfortStay.Desc>
 </LanguageData>
