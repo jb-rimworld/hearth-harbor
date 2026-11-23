@@ -106,21 +106,24 @@ namespace Hearth.Shell
             var map = Find.CurrentMap;
             Refresh(map);
             int day = rows.Count(x => x.Info.Kind == StayKind.DayVisitor), stay = rows.Count - day;
-            Text.Font = GameFont.Medium;
-            Widgets.Label(new Rect(r.x, r.y, r.width, 34f), "HH.UI.Guests.Head".Translate(rows.Count, day));
-            Text.Font = GameFont.Small;
-            float y = r.y + 38f;
+            var body = PageFrame.Header(r, "HH.UI.Guests.Head".Translate(rows.Count, day), "HH.UI.Page.Sub.guests".TranslateOr("Everyone staying at or visiting your inn. Click a row to jump to the guest, click the handling cell to change it."));
+            float y = body.y;
             if (HearthUI.GuestsHeader != null)
             {
                 float hh = Guard.Run(ModuleId.Core, "UI.GuestsHeader", () => HearthUI.GuestsHeader(new Rect(r.x, y, r.width, 160f)), 0f);
                 y += hh;
-                if (hh > 0f) { Widgets.DrawBoxSolid(new Rect(r.x, y, r.width, 1f), UiStyle.Line); y += 6f; }
+                if (hh > 0f) { Widgets.DrawBoxSolid(new Rect(r.x, y, r.width, 1f), UiStyle.Line); y += 8f; }
             }
             if (!GuestsHearthTracked())
-                { UiStyle.LabelColored(new Rect(r.x, y, r.width, 22f), "HH.UI.Guests.VanillaNote".Translate(), UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny); y += 22f; }
+            {
+                string note = "HH.UI.Guests.VanillaNote".Translate();
+                float nh = HUI.TextH(note, r.width, GameFont.Tiny);
+                UiStyle.LabelColored(new Rect(r.x, y, r.width, nh), note, UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny); y += nh + 4f;
+            }
             if (rows.Count == 0)
             {
-                UiStyle.LabelColored(new Rect(r.x, y + 10f, r.width, 60f), "HH.UI.Guests.None".Translate(), UiStyle.Grey);
+                string none = "HH.UI.Guests.None".Translate();
+                UiStyle.LabelColored(new Rect(r.x, y + 10f, r.width, HUI.TextH(none, r.width) + 4f), none, UiStyle.Grey);
                 return;
             }
             float totalW = r.width - 18f; float sum = weights.Sum();
@@ -128,27 +131,27 @@ namespace Hearth.Shell
             for (int i = 0; i < cols.Length; i++) { colX[i] = acc; acc += totalW * weights[i] / sum; }
             colX[cols.Length] = totalW;
             // header
-            var head = new Rect(r.x, y, r.width, 26f);
+            var head = new Rect(r.x, y, r.width, 30f);
             Widgets.DrawBoxSolid(head, new Color(1f, 1f, 1f, 0.06f));
             for (int i = 0; i < cols.Length; i++)
             {
-                var cr = new Rect(r.x + colX[i] + 4f, y, colX[i + 1] - colX[i] - 4f, 26f);
+                var cr = new Rect(r.x + colX[i] + 4f, y, colX[i + 1] - colX[i] - 4f, 30f);
                 bool sorted = SortCol == cols[i];
                 UiStyle.LabelColored(cr, ColLabel(cols[i]), sorted ? UiStyle.Amber : Color.white, TextAnchor.MiddleLeft, GameFont.Tiny);
                 if (sorted)
                 {
                     var icon = SortIcon(SortDesc);
-                    if (icon != null) GUI.DrawTexture(new Rect(cr.xMax - 16f, y + 5f, 14f, 14f), icon);
+                    if (icon != null) GUI.DrawTexture(new Rect(cr.xMax - 16f, y + 8f, 14f, 14f), icon);
                 }
-                if (Widgets.ButtonInvisible(new Rect(r.x + colX[i], y, colX[i + 1] - colX[i], 26f)))
+                if (Widgets.ButtonInvisible(new Rect(r.x + colX[i], y, colX[i + 1] - colX[i], 30f)))
                 {
                     if (SortCol == cols[i]) SortDesc = !SortDesc; else { SortCol = cols[i]; SortDesc = false; }
                     rows = Sort(rows, SortCol, SortDesc);
                 }
             }
-            y += 28f;
+            y += 32f;
             var outR = new Rect(r.x, y, r.width, r.yMax - y);
-            const float rowH = 34f;
+            const float rowH = 38f;
             var view = new Rect(0, 0, outR.width - 18f, rows.Count * rowH);
             Widgets.BeginScrollView(outR, ref scroll, view);
             float vy0 = scroll.y, vy1 = scroll.y + outR.height;
@@ -188,8 +191,8 @@ namespace Hearth.Shell
                 switch (cols[i])
                 {
                     case Col.Name:
-                        if (g.Pawn != null) { try { Widgets.ThingIcon(new Rect(cr.x, cy - 14f, 28f, 28f), g.Pawn); } catch { } }
-                        UiStyle.LabelColored(new Rect(cr.x + 32f, cr.y, cr.width - 32f, cr.height), g.Name, Color.white, TextAnchor.MiddleLeft);
+                        if (g.Pawn != null) { try { Widgets.ThingIcon(new Rect(cr.x, cy - 16f, 32f, 32f), g.Pawn); } catch { } }
+                        UiStyle.LabelColored(new Rect(cr.x + 38f, cr.y, cr.width - 38f, cr.height), g.Name, Color.white, TextAnchor.MiddleLeft);
                         break;
                     case Col.Faction:
                         UiStyle.LabelColored(cr, g.Faction, g.Pawn?.Faction?.Color ?? Color.white, TextAnchor.MiddleLeft, GameFont.Tiny); break;
@@ -216,7 +219,7 @@ namespace Hearth.Shell
                     case Col.Wing: UiStyle.LabelColored(cr, g.Wing, UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny); break;
                     case Col.Handling:
                         if (!g.Handled) { UiStyle.LabelColored(cr, "—", UiStyle.DimGrey, TextAnchor.MiddleLeft); break; }
-                        var hb = new Rect(cr.x, cy - 12f, cr.width, 24f);
+                        var hb = new Rect(cr.x, cy - 13f, cr.width, 26f);
                         if (UiStyle.Chip(hb, ("HH.UI.Handling." + g.Info.Handling).Translate(), g.Info.Handling != HandlingMode.Basics, "HH.UI.Guests.HandlingTip".Translate()))
                             CycleHandling(g.Pawn, g.Info);
                         break;

@@ -38,7 +38,7 @@ namespace Hearth.Shell
             float h = UiStyle.CachedHeight(s.Label, lw, GameFont.Small);
             string d = s.Desc;
             if (!d.NullOrEmpty()) h += UiStyle.CachedHeight(d, lw, GameFont.Tiny);
-            return Mathf.Max(36f, h + 10f);
+            return Mathf.Max(40f, h + 12f);
         }
 
         /// <summary>Draws the row at (x,y) if it intersects <paramref name="visible"/>; always returns its height.</summary>

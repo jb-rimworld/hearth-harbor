@@ -321,4 +321,18 @@
   <HH.UI.Calc.slotRtp>Slot machine payout (RTP)</HH.UI.Calc.slotRtp>
   <HH.UI.Calc.slotRtp.Desc>Share of every bet a slot machine pays back on average. The house keeps the rest.</HH.UI.Calc.slotRtp.Desc>
   <HH.UI.Content.Decline>No, keep {0}</HH.UI.Content.Decline>
+  <HH.UI.Page.Sub.overview>Today at a glance: guests, takings and every venue's state.</HH.UI.Page.Sub.overview>
+  <HH.UI.Page.Sub.guests>Everyone staying at or visiting your inn. Click a row to jump to the guest; click the handling cell to change it.</HH.UI.Page.Sub.guests>
+  <HH.UI.Page.Sub.casino>Houses, takings and how each game is doing against its odds.</HH.UI.Page.Sub.casino>
+  <HH.UI.Page.Sub.city>Cinema, salon, gallery, park, taxi and security: what is built and what it earns.</HH.UI.Page.Sub.city>
+  <HH.UI.Page.Sub.underworld>Whispers, arrival weights and the takings of the dark side.</HH.UI.Page.Sub.underworld>
+  <HH.UI.Diag.Lines>{0} lines</HH.UI.Diag.Lines>
+  <HH.UI.Diff.Jump>Jump to</HH.UI.Diff.Jump>
+  <HH.UI.Diff.JumpTop>Tier and slider</HH.UI.Diff.JumpTop>
+  <HH.Kitchen.Cookbook.ColLevel>Level</HH.Kitchen.Cookbook.ColLevel>
+  <HH.Kitchen.Cookbook.ColDish>Dish</HH.Kitchen.Cookbook.ColDish>
+  <HH.Kitchen.Cookbook.ColCuisine>Cuisine</HH.Kitchen.Cookbook.ColCuisine>
+  <HH.Kitchen.Cookbook.ColStations>Cooked at</HH.Kitchen.Cookbook.ColStations>
+  <HH.Kitchen.Cookbook.ColSkill>Skill</HH.Kitchen.Cookbook.ColSkill>
+  <HH.Kitchen.Cookbook.ColPrice>Price</HH.Kitchen.Cookbook.ColPrice>
 </LanguageData>

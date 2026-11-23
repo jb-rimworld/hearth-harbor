@@ -58,24 +58,38 @@ namespace Hearth.Kitchen
         {
             var all = Rows();
             int known = all.Count(r => r.Known);
-            Text.Font = GameFont.Medium;
-            Widgets.Label(new Rect(rect.x, rect.y, rect.width, 32f), "HH.Kitchen.Cookbook.Title".TranslateOr("Colony cookbook"));
-            Text.Font = GameFont.Small;
-            Widgets.Label(new Rect(rect.x, rect.y + 32f, rect.width * 0.5f, 24f), ("HH.Kitchen.Cookbook.Known".TranslateOr("{0} of {1} dishes known")).Replace("{0}", known.ToString()).Replace("{1}", all.Count.ToString()));
-            var bar = new Rect(rect.x, rect.y + 60f, rect.width, 28f);
-            Widgets.Label(new Rect(bar.x, bar.y + 3f, 60f, 24f), "HH.Kitchen.Cookbook.Search".TranslateOr("Search"));
-            search = Widgets.TextField(new Rect(bar.x + 64f, bar.y, 220f, 26f), search);
-            Widgets.CheckboxLabeled(new Rect(bar.x + 300f, bar.y, 220f, 26f), "HH.Kitchen.Cookbook.Filter".TranslateOr("Show only known"), ref onlyKnown);
+            string sub = ("HH.Kitchen.Cookbook.Known".TranslateOr("{0} of {1} dishes known")).Replace("{0}", known.ToString()).Replace("{1}", all.Count.ToString());
+            var body = Hearth.Shell.PageFrame.Header(rect, "HH.Kitchen.Cookbook.Title".TranslateOr("Colony cookbook"), sub);
+            string searchLabel = "HH.Kitchen.Cookbook.Search".TranslateOr("Search");
+            string filterLabel = "HH.Kitchen.Cookbook.Filter".TranslateOr("Show only known");
+            var bar = new Rect(body.x, body.y, body.width, 30f);
+            float sw = Mathf.Ceil(HUI.TextW(searchLabel)) + 8f;
+            Widgets.Label(new Rect(bar.x, bar.y + 4f, sw, 26f), searchLabel);
+            search = Widgets.TextField(new Rect(bar.x + sw + 4f, bar.y, Mathf.Clamp(bar.width * 0.3f, 200f, 320f), 28f), search);
+            float fx = bar.x + sw + 4f + Mathf.Clamp(bar.width * 0.3f, 200f, 320f) + 24f;
+            Widgets.CheckboxLabeled(new Rect(fx, bar.y, Mathf.Min(bar.xMax - fx, HUI.TextW(filterLabel) + 50f), 28f), filterLabel, ref onlyKnown);
             var rows = Rows(search, onlyKnown);
 
-            var outer = new Rect(rect.x, rect.y + 96f, rect.width, rect.height - 96f);
-            const float rowH = 34f;
+            float headH = 24f;
+            var outer = new Rect(body.x, body.y + 38f + headH, body.width, Mathf.Max(0f, body.height - 38f - headH));
+            // column header (fractions shared with the rows)
+            var hx = ColX(body.width - 18f);
+            string[] heads = { "HH.Kitchen.Cookbook.ColLevel", "HH.Kitchen.Cookbook.ColDish", "HH.Kitchen.Cookbook.ColCuisine", "HH.Kitchen.Cookbook.ColStations", "HH.Kitchen.Cookbook.ColSkill", "HH.Kitchen.Cookbook.ColPrice" };
+            string[] headEn = { "Level", "Dish", "Cuisine", "Cooked at", "Skill", "Price" };
+            Widgets.DrawBoxSolid(new Rect(body.x, body.y + 38f, body.width, headH), new Color(1f, 1f, 1f, 0.06f));
+            for (int i = 0; i < heads.Length; i++)
+                Hearth.Shell.UiStyle.LabelColored(new Rect(body.x + hx[i] + 6f, body.y + 38f, hx[i + 1] - hx[i] - 6f, headH), heads[i].TranslateOr(headEn[i]), Color.white, TextAnchor.MiddleLeft, GameFont.Tiny);
+            const float rowH = 36f;
             var view = new Rect(0f, 0f, outer.width - 18f, rows.Count * rowH);
             Widgets.BeginScrollView(outer, ref scroll, view);
             int first = Mathf.Max(0, (int)(scroll.y / rowH) - 1), last = Mathf.Min(rows.Count, first + (int)(outer.height / rowH) + 3);
             for (int i = first; i < last; i++) DrawRow(new Rect(0f, i * rowH, view.width, rowH), rows[i], i);
             Widgets.EndScrollView();
         }
+
+        // column fractions: level, dish, cuisine, stations, skill, price
+        static readonly float[] colFrac = { 0.08f, 0.26f, 0.15f, 0.31f, 0.08f, 0.12f };
+        static float[] ColX(float w) { var x = new float[colFrac.Length + 1]; float a = 0; for (int i = 0; i < colFrac.Length; i++) { x[i] = a; a += w * colFrac[i]; } x[colFrac.Length] = w; return x; }
 
         static void DrawRow(Rect r, CookbookRow row, int i)
         {
@@ -84,16 +98,24 @@ namespace Hearth.Kitchen
             var d = row.Dish;
             var gray = row.Known ? Color.white : new Color(0.65f, 0.65f, 0.65f);
             GUI.color = gray;
-            Widgets.Label(new Rect(r.x + 6f, r.y + 6f, 60f, 24f), ("HH.Kitchen.Cookbook.Level".TranslateOr("Level {0}")).Replace("{0}", d.level.ToString()));
-            Widgets.Label(new Rect(r.x + 70f, r.y + 6f, 240f, 24f), row.Name);
+            var cx = ColX(r.width); Text.Anchor = TextAnchor.MiddleLeft;
+            Rect Cell(int c) => new Rect(r.x + cx[c] + 6f, r.y, cx[c + 1] - cx[c] - 8f, r.height);
+            Widgets.Label(Cell(0), ("HH.Kitchen.Cookbook.Level".TranslateOr("Level {0}")).Replace("{0}", d.level.ToString()));
+            Widgets.Label(Cell(1), row.Name.Truncate(Cell(1).width));
             if (row.Known)
             {
-                Widgets.Label(new Rect(r.x + 320f, r.y + 6f, 120f, 24f), d.CuisineLabel);
-                Widgets.Label(new Rect(r.x + 445f, r.y + 6f, 250f, 24f), d.StationSummary());
-                Widgets.Label(new Rect(r.x + 700f, r.y + 6f, 80f, 24f), "★ " + d.minCooking);
-                Widgets.Label(new Rect(r.x + 780f, r.y + 6f, 80f, 24f), DishEffects.MenuPrice(d, QualityCategory.Normal, 0).ToStringShort());
+                Widgets.Label(Cell(2), d.CuisineLabel.Truncate(Cell(2).width));
+                string st = d.StationSummary();
+                Widgets.Label(Cell(3), st.Truncate(Cell(3).width));
+                Widgets.Label(Cell(4), "★ " + d.minCooking);
+                Widgets.Label(Cell(5), DishEffects.MenuPrice(d, QualityCategory.Normal, 0).ToStringShort());
             }
-            else if (row.Hint != null) Widgets.Label(new Rect(r.x + 320f, r.y + 6f, r.width - 330f, 24f), row.Hint);
+            else if (row.Hint != null)
+            {
+                var hr = new Rect(r.x + cx[2] + 6f, r.y, r.width - cx[2] - 10f, r.height);
+                Text.Font = GameFont.Tiny; Widgets.Label(hr, row.Hint); Text.Font = GameFont.Small;
+            }
+            Text.Anchor = TextAnchor.UpperLeft;
             GUI.color = Color.white;
             string tip = row.Known
                 ? d.label.CapitalizeFirst() + "\n\n" + d.description + "\n\n" + ("HH.Kitchen.Inspiration".TranslateOr("Inspiration: {0}")).Replace("{0}", d.inspiration) + "\n" + ("HH.Kitchen.Cooked".TranslateOr("Cooked at: {0} ({1})")).Replace("{0}", d.StationSummary()).Replace("{1}", d.StepSummary()) + "\n" + ("HH.Kitchen.Made".TranslateOr("Made from: {0}")).Replace("{0}", d.IngredientSummary()) + "\n" + ("HH.Kitchen.FreshHours".TranslateOr("Fresh for {0} h")).Replace("{0}", d.shelfLifeHours.ToString("0.#"))

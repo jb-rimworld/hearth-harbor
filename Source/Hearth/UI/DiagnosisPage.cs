@@ -13,18 +13,34 @@ namespace Hearth.Shell
     public sealed class Dialog_TextReport : Window
     {
         readonly string title, text; Vector2 scroll;
-        public override Vector2 InitialSize => new Vector2(640f, 560f);
-        public Dialog_TextReport(string title, string text) { this.title = title; this.text = text; doCloseX = true; doCloseButton = true; absorbInputAroundWindow = true; }
+        readonly int lineCount;
+        public override Vector2 InitialSize => HUI.Size(820f, 640f, 600f, 480f, 0.92f, 0.92f);
+        public Dialog_TextReport(string title, string text)
+        {
+            this.title = title; this.text = text ?? ""; doCloseX = true; doCloseButton = true; absorbInputAroundWindow = true; resizeable = true; draggable = true;
+            int n = 1; foreach (char ch in this.text) if (ch == '\n') n++;
+            lineCount = this.text.Length == 0 ? 0 : n;
+        }
         public override void DoWindowContents(Rect inRect)
         {
-            Text.Font = GameFont.Medium; Widgets.Label(new Rect(inRect.x, inRect.y, inRect.width, 34f), title); Text.Font = GameFont.Small;
-            var outR = new Rect(inRect.x, inRect.y + 40f, inRect.width, inRect.height - 40f - 100f);
-            float h = UiStyle.CachedHeight(text, outR.width - 20f, GameFont.Small);
-            var view = new Rect(0, 0, outR.width - 18f, h + 8f);
-            Widgets.BeginScrollView(outR, ref scroll, view);
+            float th = Mathf.Max(34f, HUI.TextH(title, inRect.width, GameFont.Medium));
+            Text.Font = GameFont.Medium; Widgets.Label(new Rect(inRect.x, inRect.y, inRect.width, th), title); Text.Font = GameFont.Small;
+            string meta = "HH.UI.Diag.Lines".TranslateOr("{0} lines").Replace("{0}", lineCount.ToString());
+            UiStyle.LabelColored(new Rect(inRect.x, inRect.y + th, inRect.width, 20f), meta, UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny);
+            float top = inRect.y + th + 24f;
+            // bottom row: Copy at the left, the vanilla Close button sits at the center of the same row
+            float rowH = 40f;
+            var outR = new Rect(inRect.x, top, inRect.width, inRect.yMax - top - rowH - 14f);
+            Widgets.DrawBoxSolid(outR, new Color(0f, 0f, 0f, 0.18f));
+            var inner = outR.ContractedBy(6f);
+            float h = UiStyle.CachedHeight(text, inner.width - 20f, GameFont.Small);
+            var view = new Rect(0, 0, inner.width - 18f, h + 8f);
+            Widgets.BeginScrollView(inner, ref scroll, view);
             Widgets.Label(new Rect(0, 0, view.width, h + 4f), text);
             Widgets.EndScrollView();
-            if (Widgets.ButtonText(new Rect(inRect.x, inRect.yMax - 90f, 220f, 30f), "HH.UI.Diag.Copy".Translate())) GUIUtility.systemCopyBuffer = text;
+            string copy = "HH.UI.Diag.Copy".Translate();
+            float cw = Mathf.Clamp(HUI.TextW(copy) + 36f, 200f, Mathf.Max(200f, inRect.width / 2f - Window.CloseButSize.x / 2f - 12f));
+            if (Widgets.ButtonText(new Rect(inRect.x, inRect.yMax - rowH, cw, 36f), copy)) GUIUtility.systemCopyBuffer = text;
         }
     }
 
