@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- What a staying guest does (5.1): check in → sleep at night → eat packed food → activities of all modules → recreation → wander in the wing. -->
+  <!-- What a staying guest does (5.1): check in → sleep at night → packed food only when starving → activities of all modules
+       (restaurant, tavern, shops …) → packed food when nothing was bought → recreation → wander in the wing. -->
   <DutyDef>
     <defName>HH_GuestStay</defName>
     <thinkNode Class="ThinkNode_Priority">
@@ -10,13 +11,23 @@
           <tagToGive>SatisfyingNeeds</tagToGive>
           <subNodes>
             <li Class="Hearth.Guests.JobGiver_HH_GuestSleep" />
-            <li Class="Hearth.Guests.JobGiver_HH_EatPacked" />
+            <li Class="Hearth.Guests.JobGiver_HH_EatPacked">
+              <threshold>0.15</threshold>
+            </li>
           </subNodes>
         </li>
         <li Class="ThinkNode_Tagger">
           <tagToGive>Misc</tagToGive>
           <subNodes>
             <li Class="Hearth.Guests.JobGiver_HH_GuestActivity" />
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>SatisfyingNeeds</tagToGive>
+          <subNodes>
+            <li Class="Hearth.Guests.JobGiver_HH_EatPacked">
+              <threshold>0.3</threshold>
+            </li>
           </subNodes>
         </li>
         <li Class="ThinkNode_Tagger">
@@ -52,6 +63,27 @@
     <priorityInType>50</priorityInType>
     <verb>keep company</verb>
     <gerund>keeping company</gerund>
+    <workTags>
+      <li>Social</li>
+    </workTags>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+  </WorkGiverDef>
+
+  <JobDef>
+    <defName>HH_StaffFrontDesk</defName>
+    <driverClass>Hearth.Guests.JobDriver_HH_StaffFrontDesk</driverClass>
+    <reportString>staffing TargetA.</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+
+  <WorkGiverDef>
+    <defName>HH_StaffFrontDesk</defName>
+    <label>staff the front desk</label>
+    <giverClass>Hearth.Guests.WorkGiver_HH_StaffFrontDesk</giverClass>
+    <workType>HH_Hosting</workType>
+    <priorityInType>60</priorityInType>
+    <verb>staff</verb>
+    <gerund>staffing</gerund>
     <workTags>
       <li>Social</li>
     </workTags>

@@ -66,13 +66,16 @@ namespace Hearth.Guests
             return f;
         }
 
+        /// <summary>Guests who can afford a drop pod bring a little more (B9: 1.15, was 1.6).</summary>
+        public const float PodBudgetFactor = 1.15f;
+
         /// <summary>Budget for the whole stay: b(W) · days^0.85 · random(0.8–1.2) · guest-money setting · origin · trait.</summary>
         public static Money RollBudget(Pawn p, int wealth, float days, bool byPod, RngStream rng)
         {
             float b = DailyBudget(wealth) * Mathf.Pow(Mathf.Max(0.25f, days), 0.85f);
             b *= 0.8f + 0.4f * (float)rng.NextDouble();
             b *= HSettings.Get(InnSettings.GuestMoney);
-            b *= byPod ? 1.6f : 1f;
+            b *= byPod ? PodBudgetFactor : 1f;
             b *= TraitFactor(p);
             b = Mathf.Clamp(b, 5f, 1_000_000f);
             return Money.FromSilver((int)Math.Round(b));

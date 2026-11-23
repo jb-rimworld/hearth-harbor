@@ -169,7 +169,7 @@ namespace Hearth.Shell
         public static Rect LastRect => lastRect;
         public static int DrawCount;
 
-#if RW17
+#if RW16PLUS
         static bool WorldOpenNow() => WorldRendererUtility.WorldSelected;
 #else
         static bool WorldOpenNow() => WorldRendererUtility.WorldRenderedNow;

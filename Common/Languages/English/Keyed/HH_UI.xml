@@ -234,7 +234,37 @@
   <HH.UI.Guests.Col.Budget>Budget left</HH.UI.Guests.Col.Budget>
   <HH.UI.Guests.Col.Spent>Spent</HH.UI.Guests.Col.Spent>
   <HH.UI.Guests.Col.Wing>Wing</HH.UI.Guests.Col.Wing>
+  <HH.UI.Guests.Col.Handling>Handling</HH.UI.Guests.Col.Handling>
   <HH.UI.Guests.Col.Leaves>Leaves in</HH.UI.Guests.Col.Leaves>
+  <HH.UI.Guests.HandlingTip>Click to switch: Basics → Accompany → Recruit. Accompany and Recruit need colonists with Hosting work.</HH.UI.Guests.HandlingTip>
+  <HH.UI.Overview.CatToday>today {0}</HH.UI.Overview.CatToday>
+  <HH.UI.Overview.CatWeek>7 days {0}</HH.UI.Overview.CatWeek>
+  <HH.UI.Overview.Week>Income, last 7 days</HH.UI.Overview.Week>
+  <HH.UI.Overview.DayTip>Day {0}: {1} silver</HH.UI.Overview.DayTip>
+  <HH.UI.Overview.VenuesHead>Venues</HH.UI.Overview.VenuesHead>
+  <HH.UI.Overview.AllDay>all day</HH.UI.Overview.AllDay>
+  <HH.UI.Income.inn_room>Rooms</HH.UI.Income.inn_room>
+  <HH.UI.Income.food>Food</HH.UI.Income.food>
+  <HH.UI.Income.shop>Shop</HH.UI.Income.shop>
+  <HH.UI.Income.vending>Vending</HH.UI.Income.vending>
+  <HH.UI.Income.drink>Drinks</HH.UI.Income.drink>
+  <HH.UI.Income.casino>Casino</HH.UI.Income.casino>
+  <HH.UI.Income.spa>Spa</HH.UI.Income.spa>
+  <HH.UI.Income.cinema>Cinema</HH.UI.Income.cinema>
+  <HH.UI.Income.gallery>Gallery</HH.UI.Income.gallery>
+  <HH.UI.Income.salon>Salon</HH.UI.Income.salon>
+  <HH.UI.Income.security>Bodyguards</HH.UI.Income.security>
+  <HH.UI.Income.taxi>Taxi</HH.UI.Income.taxi>
+  <HH.UI.Income.Faith>Donations</HH.UI.Income.Faith>
+  <HH.UI.Income.other>Other</HH.UI.Income.other>
+  <HH.UI.Venue.Closed>Closed</HH.UI.Venue.Closed>
+  <HH.UI.Venue.ClosedTip>Outside its opening hours. Change the hours on the venue sign.</HH.UI.Venue.ClosedTip>
+  <HH.UI.Venue.NoStaff>No staff</HH.UI.Venue.NoStaff>
+  <HH.UI.Venue.NoStaffTip>Open, but nobody is on duty. Give a colonist Serving work (or let the venue run without staff on its sign).</HH.UI.Venue.NoStaffTip>
+  <HH.UI.Venue.NoStock>Out of stock</HH.UI.Venue.NoStock>
+  <HH.UI.Venue.NoStockTip>Nothing to sell in the room. Put goods, drinks or meals on a shelf or stockpile inside it.</HH.UI.Venue.NoStockTip>
+  <HH.UI.Venue.OpenStaffed>Open &amp; staffed</HH.UI.Venue.OpenStaffed>
+  <HH.UI.Venue.Open>Open</HH.UI.Venue.Open>
   <HH.UI.Kind.DayVisitor>Day guest</HH.UI.Kind.DayVisitor>
   <HH.UI.Kind.Overnight>Overnight</HH.UI.Kind.Overnight>
   <HH.UI.Kind.Traveler>Traveller</HH.UI.Kind.Traveler>
@@ -254,6 +284,7 @@
   <HH.UI.GuestTab.Payment>Pays with</HH.UI.GuestTab.Payment>
   <HH.UI.GuestTab.Card>card</HH.UI.GuestTab.Card>
   <HH.UI.GuestTab.Purse>purse</HH.UI.GuestTab.Purse>
+  <HH.UI.GuestTab.Problems>What would help</HH.UI.GuestTab.Problems>
   <HH.UI.GuestTab.Satisfaction>Satisfaction</HH.UI.GuestTab.Satisfaction>
   <HH.UI.GuestTab.SatisfactionTip>From -1 (furious) to +1 (delighted). It drives renown, goodwill and whether the guest comes back.</HH.UI.GuestTab.SatisfactionTip>
   <HH.UI.GuestTab.Reasons>What this guest thinks</HH.UI.GuestTab.Reasons>

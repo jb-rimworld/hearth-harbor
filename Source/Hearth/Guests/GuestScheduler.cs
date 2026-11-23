@@ -25,13 +25,20 @@ namespace Hearth.Guests
 
         public string Describe(Map map)
         {
-            float days = (ArrivalTick - Find.TickManager.TicksGame) / 60000f;
-            string when = days < 0.05f ? "HH.Inn.Forecast.Now".TranslateOr("any moment") : "HH.Inn.Forecast.In".TranslateOr("in {0} days").Replace("{0}", days.ToString("0.0"));
+            string when = Eta();
             string kind = Kind == StayKind.Overnight
                 ? "HH.Inn.Forecast.Overnight".TranslateOr("{0} night(s)").Replace("{0}", Nights.ToString())
                 : "HH.Inn.Forecast.Day".TranslateOr("day visit");
             string back = IsReturn ? " · " + "HH.Inn.Forecast.Return".TranslateOr("coming back") : "";
             return $"{Size}× {Faction?.Name ?? "?"} · {kind}{back} · {when}";
+        }
+
+        /// <summary>"in 5 hours" / "in 1.3 days" / "any moment" (B7: a countdown, not just days).</summary>
+        public string Eta()
+        {
+            int ticks = ArrivalTick - Find.TickManager.TicksGame;
+            if (ticks < 1250) return "HH.Inn.Forecast.Now".TranslateOr("any moment");
+            return "HH.Inn.Forecast.InTime".TranslateOr("in {0}").Replace("{0}", ticks.ToStringTicksToPeriod(allowSeconds: false, shortForm: false, canUseDecimals: true));
         }
 
         public void ExposeData()
@@ -76,10 +83,27 @@ namespace Hearth.Guests
 
         public PlannedGroup NextArrival() => forecast.OrderBy(g => g.ArrivalTick).FirstOrDefault();
 
-        /// <summary>Tests: drops every planned return visit and releases the pinned world pawns.</summary>
-        internal void ClearReturnsForTests()
+        /// <summary>Drops every planned return visit and releases the pinned world pawns (removal, tests).</summary>
+        public void ClearAllReturns()
         {
             for (int i = forecast.Count - 1; i >= 0; i--) if (forecast[i].IsReturn) { GuestReturns.Unpin(forecast[i].Returning); forecast.RemoveAt(i); }
+        }
+
+        internal void ClearReturnsForTests() => ClearAllReturns();
+
+        /// <summary>Drops the planned return that brings this pawn back (pin cap). True if there was one.</summary>
+        public bool DropReturnOf(Pawn p)
+        {
+            for (int i = forecast.Count - 1; i >= 0; i--)
+                if (forecast[i].IsReturn && forecast[i].Returning.Contains(p)) { GuestReturns.Unpin(forecast[i].Returning); forecast.RemoveAt(i); return true; }
+            return false;
+        }
+
+        /// <summary>An abandoned or destroyed map takes its return plans along: release the pins (A5).</summary>
+        public override void MapRemoved()
+        {
+            base.MapRemoved();
+            Guard.Run(ModuleId.Inn, "Inn.MapRemovedPins", () => { foreach (var g in forecast) GuestReturns.Unpin(g.Returning); forecast.Clear(); });
         }
 
         /// <summary>Adds a return visit to the plan (5.14). It arrives even if the regular plan is full.</summary>
@@ -129,6 +153,10 @@ namespace Hearth.Guests
                 if (first != null) { first.ArrivalTick = Math.Max(now + 2500, AlignToHours(first.ArrivalTick, kind, true)); forecast.Add(first); }
                 planHorizon = now + (int)(d * 60000);
                 HLog.Info("Inn", $"First guests planned for {map}: {first?.Describe(map)}");
+                // B7: tell the player once when the first guests are due
+                if (first != null && HSettings.GetBool(InnSettings.ArrivalNotice))
+                    Messages.Message("HH.Inn.Msg.FirstGuestsEta".TranslateOr("Your first guests are on their way: {0}, expected {1}.")
+                        .Replace("{0}", first.Faction?.Name ?? "?").Replace("{1}", first.Eta()), MessageTypeDefOf.PositiveEvent, false);
             }
             if (planHorizon < now) planHorizon = now;
             TopUp(now, night, day);

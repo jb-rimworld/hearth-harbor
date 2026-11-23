@@ -31,6 +31,8 @@ namespace Hearth.Guests
         public DoorPolicy Door = new DoorPolicy();
         public int GroupsHosted, GuestsHosted, ArrivalsAnnounced;
         public Money LifetimeIncome;
+        /// <summary>World pawns we keep (ForcefullyKeptPawns) because they plan to come back (5.14, A5).</summary>
+        public List<Pawn> PinnedReturners = new List<Pawn>();
         Dictionary<string, int> goodwillByQuadrum = new Dictionary<string, int>();
         int lastDriftDay = -1;
         readonly Dictionary<int, GuestRecord> byPawn = new Dictionary<int, GuestRecord>();
@@ -176,6 +178,9 @@ namespace Hearth.Guests
         // ------------------------------------------------------------------ check-in & beds
         public Building_FrontDesk FindDesk(Map map) => map?.listerBuildings.allBuildingsColonist.OfType<Building_FrontDesk>().FirstOrDefault(d => d.Spawned);
 
+        /// <summary>Service bonus of a personal welcome by a host standing at the front desk (C7).</summary>
+        public const float WelcomeBonus = 0.05f;
+
         /// <summary>Check-in at the front desk (or self check-in): picks a bed, charges the first night (5.4, 5.11).</summary>
         public bool CheckIn(Pawn p, Building_FrontDesk desk)
         {
@@ -187,13 +192,27 @@ namespace Hearth.Guests
             // outside the desk's hours and without a host standing by, the desk is an honesty box (5.13, 6.1): a little cheaper
             bool honesty = desk != null && desk.Spawned && !GuestThoughts.DeskOpenNow(desk.Map) && !desk.HostNearby();
             if (honesty) { r.Log("HH.Inn.Event.HonestyBox".TranslateOr("Checked in at the honesty box; nobody was on duty.")); desk.Notify_CheckIn(p); }
-            else if (desk != null) { r.Log("HH.Inn.Event.CheckedIn".TranslateOr("Checked in at the front desk.")); desk.Notify_CheckIn(p); }
+            else if (desk != null)
+            {
+                var host = desk.Host();
+                if (host != null)
+                {
+                    // C7: a host on duty welcomes the guest in person
+                    r.ServiceSum += WelcomeBonus;
+                    host.skills?.Learn(SkillDefOf.Social, 60f);
+                    r.Log("HH.Inn.Event.Welcomed".TranslateOr("Was welcomed at the front desk by {0}.").Replace("{0}", host.LabelShort), 2);
+                }
+                else r.Log("HH.Inn.Event.CheckedIn".TranslateOr("Checked in at the front desk."));
+                desk.Notify_CheckIn(p);
+            }
             else r.Log("HH.Inn.Event.SelfCheckIn".TranslateOr("Found the room alone; nobody was at a desk."));
             if (r.Overnight)
             {
                 if (!AssignBed(r))
                 {
-                    r.Log("HH.Inn.Event.NoBed".TranslateOr("Could not get an affordable bed and stayed for the day only."), 6);
+                    bool anyFree = GuestBeds.FreeOn(p.MapHeld).Count > 0;
+                    r.Log(anyFree ? "HH.Inn.Event.NoBed".TranslateOr("Could not get an affordable bed and stayed for the day only.")
+                                  : "HH.Inn.Event.NoFreeBed".TranslateOr("Found every guest bed taken and stayed for the day only."), 6);
                     r.ServiceSum -= 0.15f;
                     r.Kind = StayKind.DayVisitor; r.NightsPlanned = 0;
                     int leave = Find.TickManager.TicksGame + 2500 * 4;
@@ -210,6 +229,9 @@ namespace Hearth.Guests
             return true;
         }
 
+        /// <summary>A couple pays this many times the price of one bed (C4).</summary>
+        public const float CoupleFactor = 1.3f;
+
         public bool AssignBed(GuestRecord r)
         {
             var p = r.Pawn; var map = p?.MapHeld; if (map == null) return false;
@@ -218,6 +240,22 @@ namespace Hearth.Guests
             int nights = Math.Max(1, r.NightsPlanned);
             var groupRooms = new HashSet<Room>();
             foreach (var m in records) if (m.GroupId == r.GroupId && m.Bed != null && m.Bed.Spawned) groupRooms.Add(m.Bed.GetRoom());
+            bool partnerWaiting = false;
+            foreach (var m in records)
+                if (m != r && m.GroupId == r.GroupId && m.Bed == null && !m.Settled && m.Pawn != null && LovePartnerRelationUtility.LovePartnerRelationExists(p, m.Pawn)) { partnerWaiting = true; break; }
+            // C4: couples share their partner's double bed and pay the room price × 1.3 together (the second pays the 0.3)
+            foreach (var m in records)
+            {
+                if (m == r || m.GroupId != r.GroupId || m.Bed == null || !m.Bed.Spawned) continue;
+                if (!GuestBeds.SharableWith(m.Bed, p, r.GroupId) || !p.CanReach(m.Bed, PathEndMode.OnCell, Danger.Some)) continue;
+                var share = Money.FromSilver(Math.Round(m.NightPrice.Silver * (CoupleFactor - 1f)));
+                if (share * nights > r.Budget) continue;
+                var cq = GuestBedPricing.Quote(m.Bed); if (cq == null) continue;
+                cq.Price = share;
+                if (!ClaimBed(r, m.Bed, cq)) continue;
+                r.Log("HH.Inn.Event.SharedBed".TranslateOr("Shares the bed with {0} ({1} silver a night extra).").Replace("{0}", m.Pawn.LabelShort).Replace("{1}", share.WholeSilver.ToString()));
+                return true;
+            }
             foreach (var b in GuestBeds.FreeOn(map))
             {
                 if (!p.CanReach(b, PathEndMode.OnCell, Danger.Some)) continue;
@@ -226,6 +264,7 @@ namespace Hearth.Guests
                 if (cheapQ == null || q.Price < cheapQ.Price) { cheapest = b; cheapQ = q; }
                 if (q.Price * nights > r.Budget) continue;
                 float u = GuestEconomy.BedUtility(q.RoomScore, q.Price, r.Wealth, groupRooms.Contains(b.GetRoom()));
+                if (partnerWaiting && b.SleepingSlotsCount >= 2) u += 40f; // C4: a couple's first guest takes a bed for two
                 if (u > bestU) { bestU = u; best = b; bestQ = q; }
             }
             if (best == null && cheapest != null && cheapQ.Price <= r.Budget)
@@ -291,7 +330,14 @@ namespace Hearth.Guests
 
         public bool ChargeNight(GuestRecord r, bool first = false)
         {
-            if (r.Bed == null || r.NightPrice.Micro <= 0) return false;
+            if (r.Bed == null) return false;
+            if (r.NightPrice.Micro <= 0)
+            {
+                // a free bed (price rule "free", or the partner already pays for it): the night is booked without money
+                r.NightsPaid++; r.LastNightTick = Find.TickManager.TicksGame;
+                if (first) r.Log("HH.Inn.Event.FreeNight".TranslateOr("Stays the night for free."));
+                return true;
+            }
             string memo = "Inn: night in " + (r.RoomLabel ?? "a room") + " (" + r.Pawn.LabelShort + ")";
             bool ok = GuestApi.ChargeGuest(r.Pawn, r.NightPrice, "inn.room", memo);
             if (!ok) return false;
@@ -590,18 +636,16 @@ namespace Hearth.Guests
         {
             if (r.Handling != HandlingMode.Recruit || r.Insulted || r.SentAway) return;
             var p = r.Pawn; var map = p.MapHeld; if (map == null) return;
-            if (p.Faction?.leader == p || (p.royalty != null && p.royalty.AllTitlesForReading.Count > 0)) { r.Log("HH.Inn.Event.TooImportant".TranslateOr("Too important at home to stay."), 4); return; }
+            if (TooImportantToJoin(p)) { r.Log("HH.Inn.Event.TooImportant".TranslateOr("Too important at home to stay."), 4); return; }
             var colonists = map.mapPawns.FreeColonistsSpawned;
             int bond = Bond(p, map, out int threshold);
             if (bond < threshold) { r.Log("HH.Inn.Event.BondTooLow".TranslateOr("Liked the place, but not enough to stay (bond {0}/{1}).").Replace("{0}", bond.ToString()).Replace("{1}", threshold.ToString()), 5); return; }
-            float chance = RecruitChanceOverride ?? Mathf.Clamp(0.35f + 0.5f * s + 0.01f * (bond - threshold), 0.05f, 0.9f);
+            float chance = RecruitChanceOverride ?? RecruitChance(s, bond, threshold);
             if (!JRand.Stream("inn.recruit").Chance(chance)) { r.Log("HH.Inn.Event.Declined".TranslateOr("Thought about staying for good, then went home."), 5); return; }
             var recruiter = colonists.Where(c => c.relations != null).OrderByDescending(c => c.relations.OpinionOf(p)).FirstOrDefault();
             if (recruiter == null) return;
             var f = p.Faction;
-            float mv = p.MarketValue;
-            int settlements = f == null ? 0 : Find.WorldObjects.Settlements.Count(x => x.Faction == f);
-            int cost = Mathf.Clamp(Mathf.RoundToInt(5f + mv / 200f + 30f / (1f + settlements)), 5, 40);
+            int cost = RecruitGoodwillCost(p);
             try
             {
                 ReturnCardFunds(r);
@@ -612,6 +656,20 @@ namespace Hearth.Guests
                 HLog.Info("Inn", $"{p.LabelShort} joined at departure (bond {bond}/{threshold}, chance {chance:0.00}, goodwill −{cost})");
             }
             catch (Exception e) { HLog.Error("Inn", "Recruitment at departure failed", e); }
+        }
+
+        /// <summary>Faction leaders and titled guests never join at departure.</summary>
+        public static bool TooImportantToJoin(Pawn p) => p != null && (p.Faction?.leader == p || (p.royalty != null && p.royalty.AllTitlesForReading.Count > 0));
+
+        /// <summary>Join chance at departure once the bond is reached: clamp(0.35 + 0.5·S + 0.01·(bond − threshold), 0.05, 0.9), S = V − E.</summary>
+        public static float RecruitChance(float surplus, int bond, int threshold) => Mathf.Clamp(0.35f + 0.5f * surplus + 0.01f * (bond - threshold), 0.05f, 0.9f);
+
+        /// <summary>Goodwill the guest's faction loses when the guest joins: 5 + value/200 + 30/(1 + settlements), 5 … 40.</summary>
+        public static int RecruitGoodwillCost(Pawn p)
+        {
+            var f = p?.Faction; if (f == null || f.IsPlayer) return 0;
+            int settlements = Find.WorldObjects.Settlements.Count(x => x.Faction == f);
+            return Mathf.Clamp(Mathf.RoundToInt(5f + p.MarketValue / 200f + 30f / (1f + settlements)), 5, 40);
         }
 
         /// <summary>Bond = sum of all colonists' opinions of the guest (rivals count negative); threshold 30 + 4·n (5.10).</summary>
@@ -876,12 +934,14 @@ namespace Hearth.Guests
             Scribe_Values.Look(ref lastDriftDay, "lastDriftDay", -1);
             GuestRecord.MoneyLook(ref LifetimeIncome, "lifetimeIncome");
             Scribe_Collections.Look(ref goodwillByQuadrum, "goodwillByQuadrum", LookMode.Value, LookMode.Value, ref gwK, ref gwV);
+            Scribe_Collections.Look(ref PinnedReturners, "pinnedReturners", LookMode.Reference);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 records = records ?? new List<GuestRecord>();
                 groups = groups ?? new List<GuestGroup>();
                 goodwillByQuadrum = goodwillByQuadrum ?? new Dictionary<string, int>();
                 Door = Door ?? new DoorPolicy();
+                PinnedReturners = PinnedReturners ?? new List<Pawn>(); PinnedReturners.RemoveAll(x => x == null);
                 records.RemoveAll(x => x == null);
                 groups.RemoveAll(x => x == null);
                 Instance = this;

@@ -77,8 +77,10 @@ namespace Hearth.Showcase
         Thing Put(ThingDef def, int x, int z, Rot4? rot = null, ThingDef stuff = null, bool power = false, QualityCategory? q = null)
         {
             Rot4 r = rot ?? Rot4.North;
-            int w = r.IsHorizontal ? def.size.z : def.size.x, h = r.IsHorizontal ? def.size.x : def.size.z;
-            var center = new IntVec3(O.x + x + (w - 1) / 2, 0, O.z + z + (h - 1) / 2);
+            // the footprint's lower-left corner must land on (x, z) for every rotation (even sizes shift differently when rotated south or west)
+            var want = new IntVec3(O.x + x, 0, O.z + z);
+            var probe = GenAdj.OccupiedRect(want, r, def.size);
+            var center = want + (want - probe.Min);
             try
             {
                 var th = ThingMaker.MakeThing(def, def.MadeFromStuff ? (stuff ?? GenStuff.DefaultStuffFor(def)) : null);
@@ -260,6 +262,10 @@ namespace Hearth.Showcase
             }
             // roof over everything
             foreach (var c in R(0, 0, 41, 21)) map.roofGrid.SetRoof(c, RoofDefOf.RoofConstructed);
+            // coolers in the outer walls (cold side inwards): a hot day must not send the guests home with heatstroke
+            foreach (var x in new[] { 4, 10, 16, 24, 31, 37 }) Put("Cooler", x, 0, Rot4.North, null, true);      // front rooms, cold side north
+            foreach (var x in new[] { 3, 9, 15, 23, 35 }) Put("Cooler", x, 21, Rot4.South, null, true);          // guest rooms, spa, bank, cold side south
+            Put("Cooler", 0, 12, Rot4.East, null, true);                                                         // corridor (east end: batteries outside)
 
             // ---- lobby
             var desk = Put("HH_FrontDesk", 20, 8, Rot4.North, ThingDefOf.WoodLog);
@@ -281,7 +287,7 @@ namespace Hearth.Showcase
             Put("HH_Station_DoughBench", 1, 8, Rot4.East);
             Table(3, 3, 4); Table(8, 3, 4); Table(3, 6); Table(8, 6);
             Put("HH_ShopCounter", 12, 3, Rot4.West);
-            var shelf = Put("Shelf", 13, 8, null, ThingDefOf.WoodLog);
+            var shelf = Put("Shelf", 12, 8, null, ThingDefOf.WoodLog);   // 2 wide: x 12–13 (13–14 would replace the wall)
             Lamp(1, 1); Lamp(13, 1); Lamp(13, 10 - 0 - 0 > 0 ? 7 : 7); Pot(1, 6); Pot(1, 5); Pot(6, 1); Pot(7, 1);
             PlacePlates();
 
@@ -312,7 +318,7 @@ namespace Hearth.Showcase
             Lamp(19, 20); Lamp(28, 15); Pot(20, 20); Pot(27, 20); Pot(22, 16); Pot(24, 16);
 
             // ---- bank
-            Put("SL_BankCounter", 33, 18, Rot4.South, null, true); Put("SL_ATM", 40, 17, Rot4.West, null, true); Put("SL_NightSafe", 40, 19, Rot4.West);
+            Put("SL_BankCounter", 33, 18, Rot4.South, null, true); Put("SL_ATM", 40, 17, Rot4.West, null, true); Put("SL_NightSafe", 40, 19, Rot4.North);   // not rotatable: always north
             Put("Armchair", 31, 16, Rot4.North); Put("Armchair", 32, 16, Rot4.North); Put("Armchair", 37, 16, Rot4.North);
             Lamp(30, 20); Lamp(40, 15); Pot(30, 15); Pot(38, 15); Pot(31, 20); Pot(39, 20);
 
@@ -329,14 +335,37 @@ namespace Hearth.Showcase
             Put("Battery", 42, 8); Put("Battery", 42, 9); Put("Battery", 42, 10);
             Put("Battery", 42, 12); Put("Battery", 42, 13);
             Put("SolarGenerator", 42, 15, Rot4.North);
+            Put("WoodFiredGenerator", 44, 2, Rot4.North); Put("WoodFiredGenerator", 44, 5, Rot4.North);   // the coolers need ~2.6 kW
             foreach (var th in fuelled) { var rf = th.TryGetComp<CompRefuelable>(); rf?.Refuel(rf.Props.fuelCapacity); }
             foreach (var th in powered) { var pt = th.TryGetComp<CompPowerTrader>(); if (pt != null) pt.PowerOn = true; }
 
             map.regionAndRoomUpdater.RebuildAllRegionsAndRooms();
+            // the hotel opens at room temperature (the coolers keep it there; a fresh build on a hot map would start at the outdoor heat)
+            var rooms = new HashSet<Room>();
+            foreach (var c in R(1, 1, 40, 20)) { var rm = c.GetRoom(map); if (rm != null && !rm.PsychologicallyOutdoors && rooms.Add(rm)) rm.Temperature = 21f; }
+            t.Note("rooms set to 21 °C: " + rooms.Count + " (outdoors " + map.mapTemperature.OutdoorTemp.ToString("0") + " °C)");
             foreach (var c in R(-2, -2, 44, 23)) map.mapDrawer.MapMeshDirty(c, MapMeshFlagDefOf.Things | MapMeshFlagDefOf.Terrain | MapMeshFlagDefOf.Roofs | MapMeshFlagDefOf.Buildings);
             yield return 120;
             ConnectLoners();
             yield return 120;
+            Venues.MarkDirty(map);
+            foreach (var sg in new[] { lobbySign, restSign, casSign, spaSign })
+            {
+                if (sg == null) { t.Note("venue sign missing"); continue; }
+                var vc = sg.TryGetComp<CompVenueSign>(); var rm = Venues.RoomOfSign(sg);
+                t.Note($"sign {vc?.DisplayName}: type {vc?.type?.defName}, room {(rm == null ? "none" : rm.ID + (rm.PsychologicallyOutdoors ? " outdoors" : "") + (rm.IsDoorway ? " doorway" : "") + " cells " + rm.CellCount)}, module on {(vc?.type != null && Modules.On(vc.type.module))}");
+            }
+            // walls with holes make a room "outdoors" (and its venue disappear): list them
+            var holes = new List<string>();
+            foreach (var (x0, z0, x1, z1) in new[] { (0, 0, 41, 0), (0, 11, 41, 11), (0, 14, 41, 14), (0, 21, 41, 21), (0, 0, 0, 21), (41, 0, 41, 21), (14, 0, 14, 11), (27, 0, 27, 11) })
+                for (int x = x0; x <= x1; x++) for (int z = z0; z <= z1; z++)
+                {
+                    var c = P(x, z); if (!c.InBounds(map)) continue;
+                    var ed = c.GetEdifice(map);
+                    if (ed == null || (ed.def.passability != Traversability.Impassable && !(ed is Building_Door))) holes.Add($"({x},{z}) {ed?.def.defName ?? "nothing"}");
+                }
+            if (holes.Count > 0) t.Note("holes in the walls: " + string.Join(", ", holes.Take(20)));
+            t.Check(Venues.All(map).Count >= 4, "all four venues are recognised: " + string.Join(", ", Venues.All(map).Select(v => v.Comp.DisplayName)));
             int off = powered.Count(th => th.Spawned && th.TryGetComp<CompPowerTrader>() is CompPowerTrader p && !p.PowerOn);
             t.Check(powered.Count > 20, "hotel furniture spawned: " + powered.Count + " powered buildings, " + off + " without power");
 
@@ -428,6 +457,17 @@ namespace Hearth.Showcase
             Cam(9, 17.5f, 5.8f);
             foreach (var w in Shot("07_guest_rooms", true)) yield return w;
 
+            // a selected guest bed: the wing outline and the bed's inspect string (price, wing status, next arrivals)
+            var gbed = GuestBeds.On(map).FirstOrDefault();
+            if (gbed != null)
+            {
+                Find.Selector.ClearSelection(); Find.Selector.Select(gbed);
+                Cam(14, 15f, 9.5f);
+                yield return 20;
+                foreach (var w in Shot("51_guest_bed_wing", false)) yield return w;
+                Find.Selector.ClearSelection();
+            }
+
             Cam(24, 17.5f, 5.2f);
             foreach (var w in Shot("08_spa", true)) yield return w;
 
@@ -483,7 +523,8 @@ namespace Hearth.Showcase
             yield return 10;
 
             // guest inspect pane
-            var guest = guests.FirstOrDefault(p => p.Spawned && !p.Dead && reg.Get(p)?.CheckedIn == true) ?? guests.FirstOrDefault(p => p.Spawned && !p.Dead);
+            var guest = guests.FirstOrDefault(p => p.Spawned && !p.Dead && reg.Get(p)?.CheckedIn == true && !reg.Get(p).Settled && reg.Get(p).Bed != null)
+                        ?? guests.FirstOrDefault(p => p.Spawned && !p.Dead && reg.Get(p)?.Settled == false) ?? guests.FirstOrDefault(p => p.Spawned && !p.Dead);
             if (guest != null)
             {
                 guest.Position = P(19, 6); guest.Notify_Teleported(false); guest.jobs.StopAll();
@@ -516,6 +557,13 @@ namespace Hearth.Showcase
         {
             foreach (var th in fuelled) { if (th.Spawned) { var rf = th.TryGetComp<CompRefuelable>(); if (rf != null && rf.FuelPercentOfMax < 0.5f) rf.Refuel(rf.Props.fuelCapacity); } }
             foreach (var p in map.mapPawns.FreeColonistsSpawned) { try { if (p.needs.food.CurLevelPercentage < 0.4f) p.needs.food.CurLevelPercentage = 0.8f; } catch { } }
+            // presentation only: guests walking in across a hot (or freezing) map would otherwise catch heatstroke on the way and go home
+            foreach (var p in map.mapPawns.AllPawnsSpawned.Where(GuestApi.IsGuest).ToList())
+                try
+                {
+                    foreach (var hd in p.health.hediffSet.hediffs.Where(h => h.def == HediffDefOf.Heatstroke || h.def == HediffDefOf.Hypothermia).ToList()) p.health.RemoveHediff(hd);
+                }
+                catch { }
         }
 
         static bool InRect(Pawn p, CellRect r) => p.Spawned && r.Contains(p.Position);
@@ -619,6 +667,9 @@ namespace Hearth.Showcase
                 var ins = InsuranceComponent.Instance;
                 if (ins != null)
                 {
+                    // the showcase colony has the insurance research (policies are gated behind it)
+                    var res0 = DefDatabase<ResearchProjectDef>.GetNamedSilentFail("SL_Insurance");
+                    if (res0 != null && !res0.IsFinished) Find.ResearchManager.FinishProject(res0, doCompletionDialog: false);
                     var col = map.mapPawns.FreeColonistsSpawned.FirstOrDefault();
                     foreach (var (name, tier) in new[] { ("SL_RoofOverHead", CoverTier.GoodEnough), ("SL_RimHealth", CoverTier.GoodEnough), ("SL_LegalShield", CoverTier.BareMinimum) })
                     {

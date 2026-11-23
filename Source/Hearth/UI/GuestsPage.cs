@@ -9,20 +9,23 @@ using Verse;
 namespace Hearth.Shell
 {
     /// <summary>
-    /// Guest overview (10.4): one row per guest on the current map. Minimal and quiet, sortable, click to jump to the guest.
+    /// The one Guests page (10.4, B1/C1): the Inn's header (renown stars, arrival forecast, wing status, door policy) on top, then one row per
+    /// guest on the current map. Sortable, click a row to jump to the guest, click the handling cell to cycle Basics → Accompany → Recruit (C2).
     /// Rows are cached for half a second; only the visible ones are drawn.
     /// </summary>
     public static class GuestsPage
     {
-        public enum Col { Name, Faction, Stay, Mood, Satisfaction, Budget, Spent, Wing, Leaves }
+        public enum Col { Name, Faction, Stay, Mood, Satisfaction, Budget, Spent, Wing, Handling, Leaves }
         public sealed class Row
         {
             public Pawn Pawn; public GuestInfo Info; public string Name, Faction, Stay, Wing, Leaves;
             public float Mood = -1f, Sat; public double Budget, Spent; public int LeaveTick;
+            /// <summary>Handling can be changed (an Inn guest, not a plain vanilla visitor).</summary>
+            public bool Handled;
         }
 
-        static readonly Col[] cols = { Col.Name, Col.Faction, Col.Stay, Col.Mood, Col.Satisfaction, Col.Budget, Col.Spent, Col.Wing, Col.Leaves };
-        static readonly float[] weights = { 2.4f, 2.0f, 1.5f, 1.3f, 1.5f, 1.1f, 1.0f, 1.0f, 1.3f };
+        static readonly Col[] cols = { Col.Name, Col.Faction, Col.Stay, Col.Mood, Col.Satisfaction, Col.Budget, Col.Spent, Col.Wing, Col.Handling, Col.Leaves };
+        static readonly float[] weights = { 2.3f, 1.8f, 1.3f, 1.3f, 1.5f, 1.0f, 0.9f, 1.3f, 1.3f, 1.2f };
         public static Col SortCol = Col.Name; public static bool SortDesc;
         static Vector2 scroll;
         static List<Row> rows = new List<Row>(); static float nextRefresh; static int rowsMapId = -1;
@@ -33,13 +36,31 @@ namespace Hearth.Shell
         public static Row MakeRow(Pawn p, GuestInfo gi)
         {
             int now = Find.TickManager.TicksGame;
+            var st = HearthUI.GuestStatus?.Invoke(p);
             var row = new Row
             {
-                Pawn = p, Info = gi, Name = p.LabelShortCap, Faction = p.Faction?.Name ?? "—", Stay = KindLabel(gi.Kind), Wing = gi.WingId.NullOrEmpty() ? "—" : gi.WingId,
+                Pawn = p, Info = gi, Name = p.LabelShortCap, Faction = p.Faction?.Name ?? "—", Stay = KindLabel(gi.Kind), Wing = st?.WingLabel.NullOrEmpty() == false ? st.WingLabel : "—",
                 Mood = p.needs?.mood != null ? p.needs.mood.CurLevelPercentage : -1f, Sat = gi.Satisfaction, Budget = gi.Budget.Silver, Spent = gi.Spent.Silver, LeaveTick = gi.PlannedLeaveTick,
             };
             row.Leaves = gi.PlannedLeaveTick > now ? (gi.PlannedLeaveTick - now).ToStringTicksToPeriod() : "—";
+            row.Handled = st != null && !st.ReadOnly;
             return row;
+        }
+
+        /// <summary>The wing's name ("Guest Wing 1"), never the internal id (B5.4).</summary>
+        public static string WingLabel(Pawn p)
+        {
+            var st = HearthUI.GuestStatus?.Invoke(p);
+            return st?.WingLabel.NullOrEmpty() == false ? st.WingLabel : "—";
+        }
+
+        /// <summary>C2: the handling cell cycles Basics → Accompany → Recruit (same rule as the guest gizmo).</summary>
+        public static HandlingMode CycleHandling(Pawn p, GuestInfo gi)
+        {
+            if (gi == null) return HandlingMode.Basics;
+            var next = (HandlingMode)(((int)gi.Handling + 1) % 3);
+            ITab_HH_Guest.SetHandling(p, gi, next);
+            return next;
         }
 
         public static void Refresh(Map map, bool force = false)
@@ -69,6 +90,7 @@ namespace Hearth.Shell
                 case Col.Budget: key = r => r.Budget; break;
                 case Col.Spent: key = r => r.Spent; break;
                 case Col.Wing: key = r => r.Wing; break;
+                case Col.Handling: key = r => (int)r.Info.Handling; break;
                 case Col.Leaves: key = r => r.LeaveTick <= 0 ? int.MaxValue : r.LeaveTick; break;
                 default: key = r => r.Name; break;
             }
@@ -87,7 +109,13 @@ namespace Hearth.Shell
             Text.Font = GameFont.Medium;
             Widgets.Label(new Rect(r.x, r.y, r.width, 34f), "HH.UI.Guests.Head".Translate(rows.Count, day));
             Text.Font = GameFont.Small;
-            float y = r.y + 40f;
+            float y = r.y + 38f;
+            if (HearthUI.GuestsHeader != null)
+            {
+                float hh = Guard.Run(ModuleId.Core, "UI.GuestsHeader", () => HearthUI.GuestsHeader(new Rect(r.x, y, r.width, 160f)), 0f);
+                y += hh;
+                if (hh > 0f) { Widgets.DrawBoxSolid(new Rect(r.x, y, r.width, 1f), UiStyle.Line); y += 6f; }
+            }
             if (!GuestsHearthTracked())
                 { UiStyle.LabelColored(new Rect(r.x, y, r.width, 22f), "HH.UI.Guests.VanillaNote".Translate(), UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny); y += 22f; }
             if (rows.Count == 0)
@@ -148,8 +176,12 @@ namespace Hearth.Shell
         {
             if (index % 2 == 1) Widgets.DrawBoxSolid(row, new Color(1f, 1f, 1f, 0.025f));
             if (Mouse.IsOver(row)) Widgets.DrawHighlight(row);
-            if (Widgets.ButtonInvisible(row)) { if (g.Pawn != null && g.Pawn.Spawned) CameraJumper.TryJumpAndSelect(g.Pawn); }
             float cy = row.y + row.height / 2f;
+            int hIdx = Array.IndexOf(cols, Col.Handling);
+            var handlingRect = hIdx < 0 ? Rect.zero : new Rect(row.x + colX[hIdx], row.y, colX[hIdx + 1] - colX[hIdx], row.height);
+            // the jump-to-guest button covers the row except the handling cell (its chip takes that click)
+            if (Widgets.ButtonInvisible(new Rect(row.x, row.y, handlingRect.x - row.x, row.height)) || Widgets.ButtonInvisible(new Rect(handlingRect.xMax, row.y, row.xMax - handlingRect.xMax, row.height)))
+                { if (g.Pawn != null && g.Pawn.Spawned) CameraJumper.TryJumpAndSelect(g.Pawn); }
             for (int i = 0; i < cols.Length; i++)
             {
                 var cr = new Rect(row.x + colX[i] + 4f, row.y, colX[i + 1] - colX[i] - 6f, row.height);
@@ -182,6 +214,12 @@ namespace Hearth.Shell
                     case Col.Spent: UiStyle.LabelColored(cr, g.Spent.ToString("#,##0"), UiStyle.Grey, TextAnchor.MiddleLeft); break;
                     case Col.Stay: UiStyle.LabelColored(cr, g.Stay, Color.white, TextAnchor.MiddleLeft, GameFont.Tiny); break;
                     case Col.Wing: UiStyle.LabelColored(cr, g.Wing, UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny); break;
+                    case Col.Handling:
+                        if (!g.Handled) { UiStyle.LabelColored(cr, "—", UiStyle.DimGrey, TextAnchor.MiddleLeft); break; }
+                        var hb = new Rect(cr.x, cy - 12f, cr.width, 24f);
+                        if (UiStyle.Chip(hb, ("HH.UI.Handling." + g.Info.Handling).Translate(), g.Info.Handling != HandlingMode.Basics, "HH.UI.Guests.HandlingTip".Translate()))
+                            CycleHandling(g.Pawn, g.Info);
+                        break;
                     default: UiStyle.LabelColored(cr, g.Leaves, UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny); break;
                 }
             }
