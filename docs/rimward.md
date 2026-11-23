@@ -12,7 +12,7 @@ So that exactly one set of buttons shows, both sides check each other (`Source/H
 | H&H member | Meaning |
 |---|---|
 | `static int BedSelectorVersion` (= 1) | The protocol version H&H speaks. RimWard only takes over when it finds >= 1. Older H&H builds keep their own button. |
-| `static bool DrawsBedSelector` (= false) | Set true if H&H itself ever draws the selector; RimWard then only hides its toggles and drives the bed via `RimWard.BedApi`. |
+| `static bool DrawsBedSelector` (= **true since 1.1.0**) | H&H itself draws the one bed button (`Command_HH_BedUse`); RimWard then only hides its toggles. H&H lists Colonist / Guest and, when `RimWard.BedSelector` / `BedApi` / `BedUse` are found by reflection, also Patient and Surgery, and drives the bed through `RimWard.BedApi.Apply`. |
 | `bool SelectorAvailable` | The "Guest" entry exists: Inn module on, colony-owned humanlike bed. |
 | `string SelectorBlockedReason` | Why the bed cannot be a guest bed (medical, prisoner or slave bed); null when it can or already is. Shown greyed out in RimWard's menu. |
 | `bool IsGuestBed`, `SetGuestBed(bool, bool)` | Existing API RimWard calls to switch the bed. Unchanged. |
@@ -20,6 +20,10 @@ So that exactly one set of buttons shows, both sides check each other (`Source/H
 
 Resolved once, cached; a log line "RimWard.BedSelector found" appears when the integration is active. Any reflection error means "RimWard does not draw", so the
 H&H toggle is shown (never both missing).
+
+Since 1.1.0 (F10) the roles are listed and switched by H&H's own button (`Source/Hearth/Guests/BedUseGizmo.cs`, `BedRoles`): `BedSelector.Current / Entries / BlockedReason` and `BedApi.Apply` are called by reflection;
+if one of them is missing the button falls back to Colonist / Guest. An older RimWard that still draws its own button (`BedSelector.Draws(bed)` true) makes H&H skip its role button and keep only the price menu
+(`OtherDrawsSelector`). RimWard needs no change for this; it could drop its own `Command_BedUse` once H&H 1.1 is the minimum.
 
 ## 2. Patients use the spa
 

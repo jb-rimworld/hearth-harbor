@@ -12,8 +12,13 @@ Tests: `venues.sign|shop|staff|tavern|vending|market|hidden|wait` in `VenueTests
 - **Staffing** (Serving work type, work giver `HH_ServeVenue`): during opening hours a colonist goes to the counter (`HH_ShopCounter`, also a till spot) or next to the sign
   and tends it for a shift (default 2 h, Social XP). Venues that need staff (tavern, restaurant, casino, spa; setting) are open only while somebody tends them.
   Venues that do not need staff but have nobody behind the counter run as self-service at -10 %.
-- **Waiting and the night bell** (5.13): a guest who wants a staffed service waits (patience setting) or, outside hours, rings the bell. Awake colonists with Serving come;
-  the service costs +50 % (minimum 3 silver). Nobody comes: "Rang the bell. Nobody came." and the guest is annoyed. A lounge halves the annoyance and is where guests wait.
+- **Waiting and the night bell** (5.13, 1.1.0 F06/F16): a guest who wants a staffed service waits (patience setting) or, outside hours, rings the bell. The ring is a real call (`NightBell.cs`): a sound (`HH_NightBell`,
+  `Common/Sounds/HH/Venues`), a swinging bell mote above the guest (`HH_Mote_Bell`, `MoteBell`) with two sound arcs, a pulsing small bell above the sign while nobody has come, a line in the sign's text. Colonists
+  with the Serving work type who are within hearing range come running (jog): range = setting `venues.bellRange` (28) × Hearing capacity, +6 cells per closed door and +3 per wall on the way; chance = hearing × (1 − distance/range),
+  ×1.5 awake, sleepers × (0.35 + 0.65·rest). Settings `venues.bellWakes` (Off / Awake only / Wake volunteers, default volunteers: sleepers with Serving at priority 1–2, once per `bellWakeCooldownHours` = 12, mood memory
+  `HH_WokenByBell` −3 or −1 for kind/social colonists), `bellWho` (Serving only / any colonist), `bellResponders` (1), `bellHurry`. Not interrupted: drafted, mental break, downed, bleeding, starving, exhausted, doctors, rescues,
+  fire fighters, danger on the map. A ring within 2000 ticks of the last call only refreshes (600 when nobody heard the last one); "nobody is coming" message at most every 15000 ticks. Suite `venues.nightbell`.
+  The service costs +50 % (minimum 3 silver). Nobody comes: "Rang the bell. Nobody came." and the guest is annoyed. A lounge halves the annoyance and is where guests wait.
 - **Shopping** (activity `venues.shop`): everything on stockpile cells and in storage buildings inside a shop room is for sale (market value x sign factor x setting x
   self-service/bell). The guest walks there, browses, pays through `GuestApi.ChargeGuest` (so it lands in the colony till), takes the item home. Price decisions follow KONZEPT 6.1
   (tolerance by wealth, rho thresholds, price thoughts as satisfaction).

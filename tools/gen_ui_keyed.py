@@ -109,7 +109,7 @@ a("HH.UI.Overview.Arrivals","Arrivals, next 24 h: {0}, about {1} groups a day ex
 a("HH.UI.Guests.Head","Guests · {0} here · {1} day guests"); a("HH.UI.Guests.None","Nobody is staying right now."); a("HH.UI.Guests.VanillaNote","The Inn module is off, so ordinary visitors are shown.")
 a("HH.UI.Guests.SatTip","How happy this guest is, from -1 to +1. Latest reasons:")
 for k,v in {"Name":"Guest","Faction":"Faction","Stay":"Stay","Mood":"Mood","Satisfaction":"Satisfaction","Budget":"Budget left","Spent":"Spent","Wing":"Wing","Handling":"Handling","Leaves":"Leaves in"}.items(): a("HH.UI.Guests.Col."+k,v)
-a("HH.UI.Guests.HandlingTip","Click to switch: Basics → Accompany → Recruit. Accompany and Recruit need colonists with Hosting work.")
+a("HH.UI.Guests.HandlingTip","Click to switch the handling. Accompany, Recruit and Convert need colonists with Hosting work; Convert only shows for guests of another ideoligion (Ideology).")
 # --- overview: income by category, last 7 days, venues (B2, C9)
 a("HH.UI.Overview.CatToday","today {0}"); a("HH.UI.Overview.CatWeek","7 days {0}"); a("HH.UI.Overview.Week","Income, last 7 days"); a("HH.UI.Overview.DayTip","Day {0}: {1} silver")
 a("HH.UI.Overview.VenuesHead","Venues"); a("HH.UI.Overview.AllDay","all day")
@@ -127,6 +127,9 @@ a("HH.UI.GuestTab.Money","Money"); a("HH.UI.GuestTab.Budget","Budget left"); a("
 a("HH.UI.Handling.Basics","Basics"); a("HH.UI.Handling.Basics.Tip","Paid services only, no entertainment. Costs no colonist time.")
 a("HH.UI.Handling.Accompany","Accompany"); a("HH.UI.Handling.Accompany.Tip","Colonists on Hosting entertain this guest and show them around: mood +1 to +4 by social skill. Costs colonist time. Without a colonist on Hosting it stays Basics.")
 a("HH.UI.Handling.Recruit","Recruit"); a("HH.UI.Handling.Recruit.Tip","Like Accompany, plus recruitment talks. A clumsy talk can offend: mood -6, 30 % less spending, leaves half a day early.")
+a("HH.UI.Handling.Convert","Convert"); a("HH.UI.Handling.Convert.Tip","Like Accompany, plus talks about your ideoligion. Each talk shakes the guest's certainty in their own; at zero they take on yours. A pushy talk can offend (mood -4, less spending). Needs the Ideology DLC and a guest of another ideoligion.")
+a("HH.UI.GuestTab.CollapseTip","Click to collapse"); a("HH.UI.GuestTab.ExpandTip","Click to expand")
+a("HH.UI.DevGroup.Label","Dev: Hearth & Harbor"); a("HH.UI.DevGroup.Desc","Dev-mode tools of Hearth & Harbor for this building ({0}). Only shown in dev mode; switch the grouping off in the Inn settings.")
 # --- guide
 a("HH.UI.Guide.Title","Hearth & Harbor Guide"); a("HH.UI.Guide.TitleTip","Right-click to hide. You can bring it back in the Hearth & Harbor tab or the settings."); a("HH.UI.Guide.Hidden","Guide hidden. Bring it back with the Guide button in the Hearth & Harbor tab or in the settings.")
 a("HH.UI.Guide.More","+{0} more topics follow"); a("HH.UI.Guide.Done","Done ({0})"); a("HH.UI.Guide.ClickJump","Click to go there.")
@@ -134,6 +137,7 @@ a("HH.UI.Guide.More","+{0} more topics follow"); a("HH.UI.Guide.Done","Done ({0}
 # --- setting labels (registered in UiModule)
 S = {
 "core.consequenceStage":("Highest consequence stage","How far bad outcomes can climb: 1 mood, 2 renown, 3 goodwill, 4 money, 5 licence, 6 raids, 7 bounty. Follows the hosting difficulty."),
+"core.windowScale":("Size of Hearth & Harbor windows","All Hearth & Harbor and Silverline windows grow or shrink by this factor (on top of the automatic size for large screens)."),
 "core.researchCost":("Research cost factor","Multiplies the cost of Hearth & Harbor and Silverline research projects. Follows the hosting difficulty."),
 "core.upkeep":("Upkeep factor","Multiplies the running costs of your venues and rooms. Follows the hosting difficulty."),
 "core.neverDie":("Guests never die","Guests are knocked down instead of killed and are rescued for free."),

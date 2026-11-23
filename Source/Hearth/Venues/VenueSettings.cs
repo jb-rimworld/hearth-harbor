@@ -70,7 +70,8 @@ namespace Hearth.ShopsFood
             HSettings.Int(M, "Staffing", WaitForStaffTicks, 1500, 300, 7500, "Guest patience for staff (ticks)",
                 "A guest waits this long for somebody to come to an open but unstaffed venue, then gives up annoyed.", nerd: true, hardMin: 60, hardMax: 60000);
             HSettings.Bool(M, "Staffing", NightBell, true, "Night bell",
-                "Guests may ring a bell for a venue that is closed. Awake colonists with the Serving work type come and open it for a surcharge. Nobody is woken up.");
+                "Guests may ring a bell for a venue that is closed. Colonists with the Serving work type who hear it come running and open the venue for a surcharge (see the night bell settings below for who is called and who may be woken).");
+            NightBellSettings.Register();
             HSettings.Percent(M, "Staffing", NightBellSurcharge, 0.5f, 0f, 2f, "Night bell surcharge",
                 "Extra share of the price that guests pay when they ring the bell outside opening hours.", hardMax: 10f);
             HSettings.Silver(M, "Staffing", NightBellMin, 3, 0, 50, "Night bell minimum charge",

@@ -223,7 +223,7 @@
   <HH.UI.Guests.Col.Wing>Wing</HH.UI.Guests.Col.Wing>
   <HH.UI.Guests.Col.Handling>Handling</HH.UI.Guests.Col.Handling>
   <HH.UI.Guests.Col.Leaves>Leaves in</HH.UI.Guests.Col.Leaves>
-  <HH.UI.Guests.HandlingTip>Click to switch: Basics → Accompany → Recruit. Accompany and Recruit need colonists with Hosting work.</HH.UI.Guests.HandlingTip>
+  <HH.UI.Guests.HandlingTip>Click to switch the handling. Accompany, Recruit and Convert need colonists with Hosting work; Convert only shows for guests of another ideoligion (Ideology).</HH.UI.Guests.HandlingTip>
   <HH.UI.Overview.CatToday>today {0}</HH.UI.Overview.CatToday>
   <HH.UI.Overview.CatWeek>7 days {0}</HH.UI.Overview.CatWeek>
   <HH.UI.Overview.Week>Income, last 7 days</HH.UI.Overview.Week>
@@ -286,12 +286,20 @@
   <HH.UI.Handling.Accompany.Tip>Colonists on Hosting entertain this guest and show them around: mood +1 to +4 by social skill. Costs colonist time. Without a colonist on Hosting it stays Basics.</HH.UI.Handling.Accompany.Tip>
   <HH.UI.Handling.Recruit>Recruit</HH.UI.Handling.Recruit>
   <HH.UI.Handling.Recruit.Tip>Like Accompany, plus recruitment talks. A clumsy talk can offend: mood -6, 30 % less spending, leaves half a day early.</HH.UI.Handling.Recruit.Tip>
+  <HH.UI.Handling.Convert>Convert</HH.UI.Handling.Convert>
+  <HH.UI.Handling.Convert.Tip>Like Accompany, plus talks about your ideoligion. Each talk shakes the guest's certainty in their own; at zero they take on yours. A pushy talk can offend (mood -4, less spending). Needs the Ideology DLC and a guest of another ideoligion.</HH.UI.Handling.Convert.Tip>
+  <HH.UI.GuestTab.CollapseTip>Click to collapse</HH.UI.GuestTab.CollapseTip>
+  <HH.UI.GuestTab.ExpandTip>Click to expand</HH.UI.GuestTab.ExpandTip>
+  <HH.UI.DevGroup.Label>Dev: Hearth &amp; Harbor</HH.UI.DevGroup.Label>
+  <HH.UI.DevGroup.Desc>Dev-mode tools of Hearth &amp; Harbor for this building ({0}). Only shown in dev mode; switch the grouping off in the Inn settings.</HH.UI.DevGroup.Desc>
   <HH.UI.Guide.Title>Hearth &amp; Harbor Guide</HH.UI.Guide.Title>
   <HH.UI.Guide.TitleTip>Right-click to hide. You can bring it back in the Hearth &amp; Harbor tab or the settings.</HH.UI.Guide.TitleTip>
   <HH.UI.Guide.Hidden>Guide hidden. Bring it back with the Guide button in the Hearth &amp; Harbor tab or in the settings.</HH.UI.Guide.Hidden>
   <HH.UI.Guide.More>+{0} more topics follow</HH.UI.Guide.More>
   <HH.UI.Guide.Done>Done ({0})</HH.UI.Guide.Done>
   <HH.UI.Guide.ClickJump>Click to go there.</HH.UI.Guide.ClickJump>
+  <HH.Setting.core.windowScale>Size of Hearth &amp; Harbor windows</HH.Setting.core.windowScale>
+  <HH.Setting.core.windowScale.Desc>All Hearth &amp; Harbor and Silverline windows grow or shrink by this factor (on top of the automatic size for large screens).</HH.Setting.core.windowScale.Desc>
   <HH.Setting.core.researchCost>Research cost factor</HH.Setting.core.researchCost>
   <HH.Setting.core.researchCost.Desc>Multiplies the cost of Hearth &amp; Harbor and Silverline research projects. Follows the hosting difficulty.</HH.Setting.core.researchCost.Desc>
   <HH.Setting.core.neverDie>Guests never die</HH.Setting.core.neverDie>

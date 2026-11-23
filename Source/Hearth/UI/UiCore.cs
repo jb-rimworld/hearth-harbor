@@ -128,6 +128,7 @@ namespace Hearth.Shell
         public static IEnumerable<string> OwnKeys()
         {
             foreach (var k in new[] { "used", "guestSeen", "paymentSeen", "saved", "tutorial", "guideCollapsed", "doneOpen" }) yield return Prefix + k;
+            foreach (var id in Hearth.Shell.ITab_HH_Guest.SectionIds) yield return Prefix + "gt." + id;   // collapsed sections of the Guest tab (F35)
             foreach (var d in DefDatabase<GuideTopicDef>.AllDefs) { yield return Prefix + "done." + d.defName; yield return Prefix + "open." + d.defName; }
         }
 

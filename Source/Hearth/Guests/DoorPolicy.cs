@@ -5,6 +5,7 @@ using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Hearth.Shell;
 
 namespace Hearth.Guests
 {
@@ -186,20 +187,30 @@ namespace Hearth.Guests
         }
     }
 
-    /// <summary>The door policy window (front desk gizmo, guest overview). Shows a one-liner about the player when it closes (N29).</summary>
+    /// <summary>
+    /// The door policy window (front desk gizmo, guest overview). Shows a one-liner about the player when it closes (N29).
+    /// F35 (1.1.0): bigger and scaled with the screen, collapsible sections (Factions, Xenotypes, Gender, Age, Titles, Tech, Wealth, Stay), a two-column
+    /// check list when the window is wide, a sticky summary at the top that says how many people would pass, and a scroll height measured from the content.
+    /// </summary>
     public sealed class Dialog_HH_DoorPolicy : Window
     {
         readonly DoorPolicy pol;
         readonly string before;
         DoorPolicy.Category? lastChanged;
         Vector2 scroll;
+        float viewH = 900f;
         float preview = -1f;
-        public override Vector2 InitialSize => new Vector2(560f, 640f);
+        float previewDue;                      // realtime when the preview is recomputed (debounced: dragging a slider must not generate pawns every frame)
+        readonly Dictionary<DoorPolicy.Category, bool> openState = new Dictionary<DoorPolicy.Category, bool>();
+
+        public override Vector2 InitialSize => HUI.Size(720f, 760f, 560f, 560f);
 
         public Dialog_HH_DoorPolicy(DoorPolicy pol)
         {
             this.pol = pol; before = pol.Signature();
-            doCloseX = true; doCloseButton = true; closeOnClickedOutside = true; absorbInputAroundWindow = true;
+            doCloseX = true; doCloseButton = true; absorbInputAroundWindow = true;
+            closeOnClickedOutside = false;      // a stray click next to the window must not close it in the middle of editing
+            draggable = true;
         }
 
         public override void PostClose()
@@ -215,77 +226,182 @@ namespace Hearth.Guests
         static string ModeLabel(FilterMode m) => m == FilterMode.Everyone ? "HH.Inn.Door.Everyone".TranslateOr("Everyone")
             : m == FilterMode.OnlyThese ? "HH.Inn.Door.Only".TranslateOr("Only these") : "HH.Inn.Door.Except".TranslateOr("Everyone except these");
 
-        void ModeButton(Listing_Standard ls, string label, FilterMode cur, Action<FilterMode> set, DoorPolicy.Category cat)
+        void Changed(DoorPolicy.Category? cat) { lastChanged = cat; previewDue = Time.realtimeSinceStartup + 0.6f; }
+
+        bool IsOpen(DoorPolicy.Category c)
         {
-            var r = ls.GetRect(28f);
-            Widgets.Label(r.LeftPart(0.4f), label);
-            if (Widgets.ButtonText(r.RightPart(0.58f), ModeLabel(cur)))
-                Find.WindowStack.Add(new FloatMenu(((FilterMode[])Enum.GetValues(typeof(FilterMode))).Select(m => new FloatMenuOption(ModeLabel(m), () => { set(m); lastChanged = cat; preview = -1f; })).ToList()));
+            if (openState.TryGetValue(c, out bool o)) return o;
+            return pol.Restricting().Contains(c);   // sections that restrict something start open
+        }
+
+        /// <summary>A section header strip: +/- toggle, title and what it currently does. Returns true while the section is open.</summary>
+        bool Section(Listing_Standard ls, DoorPolicy.Category c, string title, string summary)
+        {
+            bool open = IsOpen(c);
+            var r = ls.GetRect(32f);
+            Widgets.DrawBoxSolid(r, new Color(1f, 1f, 1f, Mouse.IsOver(r) ? 0.09f : 0.05f));
+            bool active = pol.Restricting().Contains(c);
+            if (active) Widgets.DrawBoxSolid(new Rect(r.x, r.y, 4f, r.height), UiStyle.Amber);
+            UiStyle.LabelColored(new Rect(r.x + 10f, r.y, 22f, r.height), open ? "\u2212" : "+", UiStyle.Amber, TextAnchor.MiddleCenter, GameFont.Medium);
+            // title and summary share the strip: the title keeps what it needs (at most 55 %), the summary gets the rest, both are truncated (no overlap)
+            Text.Font = GameFont.Small;
+            float titleW = Mathf.Min(Text.CalcSize(title).x + 6f, (r.width - 46f) * 0.55f);
+            UiStyle.LabelColored(new Rect(r.x + 36f, r.y, titleW, r.height), title.Truncate(titleW), Color.white, TextAnchor.MiddleLeft, GameFont.Small);
+            float sx = r.x + 36f + titleW + 8f, sw = r.xMax - 10f - sx;
+            if (sw > 20f && !summary.NullOrEmpty())
+            {
+                Text.Font = GameFont.Tiny;
+                string sum = summary.Truncate(sw);
+                Text.Font = GameFont.Small;
+                UiStyle.LabelColored(new Rect(sx, r.y, sw, r.height), sum, active ? UiStyle.Amber : UiStyle.Grey, TextAnchor.MiddleRight, GameFont.Tiny);
+                if (!ReferenceEquals(sum, summary) && sum != summary) TooltipHandler.TipRegion(r, summary);
+            }
+            if (Widgets.ButtonInvisible(r)) openState[c] = !open;
+            ls.Gap(2f);
+            return open;
+        }
+
+        void ModeRow(Listing_Standard ls, string label, FilterMode cur, Action<FilterMode> set, DoorPolicy.Category cat)
+        {
+            var r = ls.GetRect(30f);
+            Widgets.Label(new Rect(r.x + 8f, r.y + 3f, r.width * 0.4f, 26f), label);
+            if (Widgets.ButtonText(new Rect(r.x + r.width * 0.42f, r.y, r.width * 0.58f, 30f), ModeLabel(cur)))
+                Find.WindowStack.Add(new FloatMenu(((FilterMode[])Enum.GetValues(typeof(FilterMode))).Select(m => new FloatMenuOption(ModeLabel(m), () => { set(m); Changed(cat); })).ToList()));
+        }
+
+        /// <summary>A grid of check boxes: two columns when the window is wide enough, one otherwise.</summary>
+        void CheckGrid<T>(Listing_Standard ls, IList<T> items, Func<T, string> label, Func<T, bool> isOn, Action<T, bool> set, DoorPolicy.Category cat, float width)
+        {
+            int cols = width >= 560f ? 2 : 1;
+            for (int i = 0; i < items.Count; i += cols)
+            {
+                var row = ls.GetRect(26f);
+                for (int c = 0; c < cols && i + c < items.Count; c++)
+                {
+                    var item = items[i + c];
+                    var cell = new Rect(row.x + 14f + c * row.width / cols, row.y, row.width / cols - 18f, 26f);
+                    bool on = isOn(item), was = on;
+                    Widgets.CheckboxLabeled(cell, label(item).Truncate(cell.width - 32f), ref on);
+                    if (on != was) { set(item, on); Changed(cat); }
+                }
+            }
         }
 
         public override void DoWindowContents(Rect inRect)
         {
+            float w = inRect.width, y = 0f;
+            // ---- fixed top: title, intro, "let everyone in" / reset and the live summary
             Text.Font = GameFont.Medium;
-            Widgets.Label(new Rect(0, 0, inRect.width, 34f), "HH.Inn.Door.Title".TranslateOr("Door policy"));
-            Text.Font = GameFont.Small;
-            var outer = new Rect(0, 40f, inRect.width, inRect.height - 40f - CloseButSize.y - 10f);
-            var view = new Rect(0, 0, outer.width - 18f, 760f);
+            Widgets.Label(new Rect(0, y, w, 36f), "HH.Inn.Door.Title".TranslateOr("Door policy"));
+            Text.Font = GameFont.Small; y += 38f;
+            string intro = "HH.Inn.Door.Intro".TranslateOr("Who may come. Filters apply when guests are planned and generated; hostile factions never visit.");
+            float ih = UiStyle.CachedHeight(intro, w, GameFont.Small);
+            UiStyle.LabelColored(new Rect(0, y, w, ih), intro, UiStyle.Grey); y += ih + 6f;
+            bool all = pol.AllowAll;
+            var rowAll = new Rect(0, y, w, 28f);
+            Widgets.CheckboxLabeled(new Rect(rowAll.x, rowAll.y, w - 230f, 28f), "HH.Inn.Door.AllowAll".TranslateOr("Let everyone in (ignore all filters below)"), ref all);
+            if (all != pol.AllowAll) { pol.AllowAll = all; Changed(null); }
+            if (Widgets.ButtonText(new Rect(w - 220f, y, 220f, 28f), "HH.Inn.Door.Reset".TranslateOr("Almost everyone (default)"))) { pol.Reset(); openState.Clear(); Changed(null); }
+            y += 34f;
+            // preview: debounced recomputation, with the old number kept (greyed) until the new one is there
+            if (Find.CurrentMap != null && (preview < 0f || (previewDue > 0f && Time.realtimeSinceStartup >= previewDue))) { preview = pol.WelcomeShare(Find.CurrentMap, 16); previewDue = 0f; }
+            var box = new Rect(0, y, w, 46f);
+            Widgets.DrawBoxSolid(box, UiStyle.AmberSoft);
+            if (preview >= 0f)
+            {
+                bool stale = previewDue > 0f;
+                UiStyle.Bar(new Rect(box.x + 10f, box.y + 8f, w - 150f, 12f), preview, UiStyle.Heat(preview));
+                UiStyle.LabelColored(new Rect(w - 130f, box.y + 2f, 120f, 24f), preview.ToStringPercent(), stale ? UiStyle.Grey : Color.white, TextAnchor.MiddleRight, GameFont.Medium);
+                string pv = "HH.Inn.Door.Preview".TranslateOr("{0} of people from friendly factions would be welcome.").Replace("{0}", preview.ToStringPercent());
+                UiStyle.LabelColored(new Rect(box.x + 10f, box.y + 24f, w - 20f, 20f), pv, stale ? UiStyle.DimGrey : UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny);
+            }
+            y += 54f;
+
+            // ---- scrolling sections
+            var outer = new Rect(0, y, w, inRect.height - y - CloseButSize.y - 10f);
+            var view = new Rect(0, 0, outer.width - 18f, viewH);
             Widgets.BeginScrollView(outer, ref scroll, view);
             var ls = new Listing_Standard(); ls.Begin(view);
-            ls.Label("HH.Inn.Door.Intro".TranslateOr("Who may come. Filters apply when guests are planned and generated; hostile factions never visit."));
-            bool all = pol.AllowAll;
-            ls.CheckboxLabeled("HH.Inn.Door.AllowAll".TranslateOr("Let everyone in (ignore all filters below)"), ref all);
-            if (all != pol.AllowAll) { pol.AllowAll = all; lastChanged = null; preview = -1f; }
-            if (Widgets.ButtonText(ls.GetRect(28f).LeftPart(0.4f), "HH.Inn.Door.Reset".TranslateOr("Almost everyone (default)"))) { pol.Reset(); lastChanged = null; preview = -1f; }
-            ls.GapLine();
-
-            ModeButton(ls, "HH.Inn.Door.Factions".TranslateOr("Factions"), pol.FactionMode, m => pol.FactionMode = m, DoorPolicy.Category.Factions);
-            if (pol.FactionMode != FilterMode.Everyone)
-                foreach (var f in Find.FactionManager.AllFactionsListForReading.Where(f => MapComponent_HH_GuestScheduler.FactionCanVisit(f, null) || pol.Factions.Contains(f)))
-                {
-                    bool on = pol.Factions.Contains(f), was = on;
-                    ls.CheckboxLabeled("   " + f.Name, ref on);
-                    if (on != was) { if (on) pol.Factions.Add(f); else pol.Factions.Remove(f); lastChanged = DoorPolicy.Category.Factions; preview = -1f; }
-                }
+            if (pol.AllowAll) GUI.color = new Color(1f, 1f, 1f, 0.45f);
+            float gw = view.width;
+            // factions
+            var facs = Find.FactionManager.AllFactionsListForReading.Where(f => MapComponent_HH_GuestScheduler.FactionCanVisit(f, null) || pol.Factions.Contains(f)).ToList();
+            if (Section(ls, DoorPolicy.Category.Factions, "HH.Inn.Door.Factions".TranslateOr("Factions"), pol.FactionMode == FilterMode.Everyone ? ModeLabel(pol.FactionMode) : ModeLabel(pol.FactionMode) + " (" + pol.Factions.Count + ")"))
+            {
+                ModeRow(ls, "HH.Inn.Door.Factions".TranslateOr("Factions"), pol.FactionMode, m => pol.FactionMode = m, DoorPolicy.Category.Factions);
+                if (pol.FactionMode != FilterMode.Everyone)
+                    CheckGrid(ls, facs, f => f.Name, f => pol.Factions.Contains(f), (f, on) => { if (on) pol.Factions.Add(f); else pol.Factions.Remove(f); }, DoorPolicy.Category.Factions, gw);
+                ls.Gap(6f);
+            }
             if (ModsConfig.BiotechActive)
             {
-                ModeButton(ls, "HH.Inn.Door.Xenotypes".TranslateOr("Xenotypes"), pol.XenoMode, m => pol.XenoMode = m, DoorPolicy.Category.Xenotypes);
-                if (pol.XenoMode != FilterMode.Everyone)
-                    foreach (var x in DefDatabase<XenotypeDef>.AllDefsListForReading.OrderBy(x => x.label))
-                    {
-                        bool on = pol.Xenotypes.Contains(x), was = on;
-                        ls.CheckboxLabeled("   " + x.LabelCap, ref on);
-                        if (on != was) { if (on) pol.Xenotypes.Add(x); else pol.Xenotypes.Remove(x); lastChanged = DoorPolicy.Category.Xenotypes; preview = -1f; }
-                    }
+                var xenos = DefDatabase<XenotypeDef>.AllDefsListForReading.OrderBy(x => x.label).ToList();
+                if (Section(ls, DoorPolicy.Category.Xenotypes, "HH.Inn.Door.Xenotypes".TranslateOr("Xenotypes"), pol.XenoMode == FilterMode.Everyone ? ModeLabel(pol.XenoMode) : ModeLabel(pol.XenoMode) + " (" + pol.Xenotypes.Count + ")"))
+                {
+                    ModeRow(ls, "HH.Inn.Door.Xenotypes".TranslateOr("Xenotypes"), pol.XenoMode, m => pol.XenoMode = m, DoorPolicy.Category.Xenotypes);
+                    if (pol.XenoMode != FilterMode.Everyone)
+                        CheckGrid(ls, xenos, x => x.LabelCap.ToString(), x => pol.Xenotypes.Contains(x), (x, on) => { if (on) pol.Xenotypes.Add(x); else pol.Xenotypes.Remove(x); }, DoorPolicy.Category.Xenotypes, gw);
+                    ls.Gap(6f);
+                }
             }
-            ModeButton(ls, "HH.Inn.Door.Gender".TranslateOr("Gender"), pol.GenderMode, m => pol.GenderMode = m, DoorPolicy.Category.Gender);
-            if (pol.GenderMode != FilterMode.Everyone)
+            // gender
+            if (Section(ls, DoorPolicy.Category.Gender, "HH.Inn.Door.Gender".TranslateOr("Gender"), pol.GenderMode == FilterMode.Everyone ? ModeLabel(pol.GenderMode) : ModeLabel(pol.GenderMode) + ": " + pol.Gender.GetLabel().CapitalizeFirst()))
             {
-                var gr = ls.GetRect(28f);
-                if (Widgets.ButtonText(gr.RightPart(0.58f), pol.Gender.GetLabel().CapitalizeFirst()))
-                { pol.Gender = pol.Gender == Gender.Male ? Gender.Female : Gender.Male; lastChanged = DoorPolicy.Category.Gender; preview = -1f; }
+                ModeRow(ls, "HH.Inn.Door.Gender".TranslateOr("Gender"), pol.GenderMode, m => pol.GenderMode = m, DoorPolicy.Category.Gender);
+                if (pol.GenderMode != FilterMode.Everyone)
+                {
+                    var gr = ls.GetRect(30f);
+                    if (Widgets.ButtonText(new Rect(gr.x + gr.width * 0.42f, gr.y, gr.width * 0.58f, 30f), pol.Gender.GetLabel().CapitalizeFirst()))
+                    { pol.Gender = pol.Gender == Gender.Male ? Gender.Female : Gender.Male; Changed(DoorPolicy.Category.Gender); }
+                }
+                ls.Gap(6f);
             }
-            ls.Label("HH.Inn.Door.Age".TranslateOr("Age: {0}–{1}").Replace("{0}", pol.MinAge.ToString()).Replace("{1}", pol.MaxAge >= 999 ? "∞" : pol.MaxAge.ToString()));
-            int minA = (int)ls.Slider(pol.MinAge, 0, 100), maxA = (int)ls.Slider(Math.Min(pol.MaxAge, 121), 18, 121);
-            if (maxA >= 121) maxA = 999;
-            if (minA != pol.MinAge || maxA != pol.MaxAge) { pol.MinAge = minA; pol.MaxAge = Math.Max(maxA, minA); lastChanged = DoorPolicy.Category.Age; preview = -1f; }
-            if (ModsConfig.RoyaltyActive)
-                ModeButton(ls, "HH.Inn.Door.Title2".TranslateOr("Royal titles (only titled / no titled)"), pol.TitleMode, m => pol.TitleMode = m, DoorPolicy.Category.Title);
-            var tr = ls.GetRect(28f);
-            Widgets.Label(tr.LeftPart(0.4f), "HH.Inn.Door.Tech".TranslateOr("Lowest tech level"));
-            if (Widgets.ButtonText(tr.RightPart(0.58f), pol.MinTech == TechLevel.Undefined ? "HH.Inn.Door.Any".TranslateOr("any") : pol.MinTech.ToStringHuman().CapitalizeFirst()))
-                Find.WindowStack.Add(new FloatMenu(((TechLevel[])Enum.GetValues(typeof(TechLevel))).Where(t => t <= TechLevel.Archotech)
-                    .Select(t => new FloatMenuOption(t == TechLevel.Undefined ? "HH.Inn.Door.Any".TranslateOr("any") : t.ToStringHuman().CapitalizeFirst(), () => { pol.MinTech = t; lastChanged = DoorPolicy.Category.Tech; preview = -1f; })).ToList()));
-            ls.Label("HH.Inn.Door.Wealth".TranslateOr("Wealth band: {0}–{1}").Replace("{0}", pol.MinWealth.ToString()).Replace("{1}", pol.MaxWealth.ToString()));
-            int minW = (int)ls.Slider(pol.MinWealth, 1, 100), maxW = (int)ls.Slider(pol.MaxWealth, 1, 100);
-            if (minW != pol.MinWealth || maxW != pol.MaxWealth) { pol.MinWealth = minW; pol.MaxWealth = Math.Max(minW, maxW); lastChanged = DoorPolicy.Category.Wealth; }
-            bool on1 = pol.AllowOvernight, on2 = pol.AllowDay;
-            ls.CheckboxLabeled("HH.Inn.Door.Overnight".TranslateOr("Overnight guests"), ref on1);
-            ls.CheckboxLabeled("HH.Inn.Door.Day".TranslateOr("Day visitors"), ref on2);
-            if (on1 != pol.AllowOvernight || on2 != pol.AllowDay) { pol.AllowOvernight = on1; pol.AllowDay = on2; lastChanged = DoorPolicy.Category.StayKind; }
-            ls.GapLine();
-            if (preview < 0f && Find.CurrentMap != null) preview = pol.WelcomeShare(Find.CurrentMap, 16);
-            if (preview >= 0f) ls.Label("HH.Inn.Door.Preview".TranslateOr("{0} of people from friendly factions would be welcome.").Replace("{0}", preview.ToStringPercent()));
+            // age
+            if (Section(ls, DoorPolicy.Category.Age, "HH.Inn.Door.AgeTitle".TranslateOr("Age"), "HH.Inn.Door.Age".TranslateOr("Age: {0}–{1}").Replace("{0}", pol.MinAge.ToString()).Replace("{1}", pol.MaxAge >= 999 ? "∞" : pol.MaxAge.ToString())))
+            {
+                ls.Label("HH.Inn.Door.Age".TranslateOr("Age: {0}–{1}").Replace("{0}", pol.MinAge.ToString()).Replace("{1}", pol.MaxAge >= 999 ? "∞" : pol.MaxAge.ToString()));
+                int minA = (int)ls.Slider(pol.MinAge, 0, 100), maxA = (int)ls.Slider(Math.Min(pol.MaxAge, 121), 18, 121);
+                if (maxA >= 121) maxA = 999;
+                if (minA != pol.MinAge || maxA != pol.MaxAge) { pol.MinAge = minA; pol.MaxAge = Math.Max(maxA, minA); Changed(DoorPolicy.Category.Age); }
+                ls.Gap(6f);
+            }
+            // royal titles
+            if (ModsConfig.RoyaltyActive && Section(ls, DoorPolicy.Category.Title, "HH.Inn.Door.Title2".TranslateOr("Royal titles (only titled / no titled)"), ModeLabel(pol.TitleMode)))
+            {
+                ModeRow(ls, "HH.Inn.Door.Title2".TranslateOr("Royal titles (only titled / no titled)"), pol.TitleMode, m => pol.TitleMode = m, DoorPolicy.Category.Title);
+                ls.Gap(6f);
+            }
+            // tech
+            if (Section(ls, DoorPolicy.Category.Tech, "HH.Inn.Door.Tech".TranslateOr("Lowest tech level"), pol.MinTech == TechLevel.Undefined ? "HH.Inn.Door.Any".TranslateOr("any") : pol.MinTech.ToStringHuman().CapitalizeFirst()))
+            {
+                var tr = ls.GetRect(30f);
+                Widgets.Label(new Rect(tr.x + 8f, tr.y + 3f, tr.width * 0.4f, 26f), "HH.Inn.Door.Tech".TranslateOr("Lowest tech level"));
+                if (Widgets.ButtonText(new Rect(tr.x + tr.width * 0.42f, tr.y, tr.width * 0.58f, 30f), pol.MinTech == TechLevel.Undefined ? "HH.Inn.Door.Any".TranslateOr("any") : pol.MinTech.ToStringHuman().CapitalizeFirst()))
+                    Find.WindowStack.Add(new FloatMenu(((TechLevel[])Enum.GetValues(typeof(TechLevel))).Where(t => t <= TechLevel.Archotech)
+                        .Select(t => new FloatMenuOption(t == TechLevel.Undefined ? "HH.Inn.Door.Any".TranslateOr("any") : t.ToStringHuman().CapitalizeFirst(), () => { pol.MinTech = t; Changed(DoorPolicy.Category.Tech); })).ToList()));
+                ls.Gap(6f);
+            }
+            // wealth
+            if (Section(ls, DoorPolicy.Category.Wealth, "HH.Inn.Door.WealthTitle".TranslateOr("Wealth"), "HH.Inn.Door.Wealth".TranslateOr("Wealth band: {0}–{1}").Replace("{0}", pol.MinWealth.ToString()).Replace("{1}", pol.MaxWealth.ToString())))
+            {
+                ls.Label("HH.Inn.Door.Wealth".TranslateOr("Wealth band: {0}–{1}").Replace("{0}", pol.MinWealth.ToString()).Replace("{1}", pol.MaxWealth.ToString()));
+                int minW = (int)ls.Slider(pol.MinWealth, 1, 100), maxW = (int)ls.Slider(pol.MaxWealth, 1, 100);
+                if (minW != pol.MinWealth || maxW != pol.MaxWealth) { pol.MinWealth = minW; pol.MaxWealth = Math.Max(minW, maxW); Changed(DoorPolicy.Category.Wealth); }
+                ls.Gap(6f);
+            }
+            // stay kinds
+            string stay = pol.AllowOvernight && pol.AllowDay ? "HH.Inn.Door.Everyone".TranslateOr("Everyone") : !pol.AllowOvernight ? "HH.Inn.Door.Day".TranslateOr("Day visitors") : "HH.Inn.Door.Overnight".TranslateOr("Overnight guests");
+            if (Section(ls, DoorPolicy.Category.StayKind, "HH.Inn.Door.StayTitle".TranslateOr("Kind of stay"), stay))
+            {
+                bool on1 = pol.AllowOvernight, on2 = pol.AllowDay;
+                var rr = ls.GetRect(28f);
+                Widgets.CheckboxLabeled(new Rect(rr.x + 14f, rr.y, rr.width / 2f - 18f, 28f), "HH.Inn.Door.Overnight".TranslateOr("Overnight guests"), ref on1);
+                Widgets.CheckboxLabeled(new Rect(rr.x + rr.width / 2f + 14f, rr.y, rr.width / 2f - 18f, 28f), "HH.Inn.Door.Day".TranslateOr("Day visitors"), ref on2);
+                if (on1 != pol.AllowOvernight || on2 != pol.AllowDay) { pol.AllowOvernight = on1; pol.AllowDay = on2; Changed(DoorPolicy.Category.StayKind); }
+                ls.Gap(6f);
+            }
+            GUI.color = Color.white;
+            viewH = Mathf.Max(ls.CurHeight + 8f, outer.height);
             ls.End();
             Widgets.EndScrollView();
         }
