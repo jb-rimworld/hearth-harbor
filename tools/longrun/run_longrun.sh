@@ -9,5 +9,6 @@ code=$?
 S=/private/tmp/claude-501/hh_tests
 mkdir -p "$REPO/docs/longrun"
 for e in csv md; do [ -f "$S/longrun_$LABEL.$e" ] && cp "$S/longrun_$LABEL.$e" "$REPO/docs/longrun/longrun.$e"; done
+[ -f "$S/longrun_${LABEL}_sched.txt" ] && cp "$S/longrun_${LABEL}_sched.txt" "$REPO/docs/longrun/longrun_sched.txt"
 ls -la "$REPO/docs/longrun"
 exit $code

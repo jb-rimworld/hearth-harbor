@@ -209,7 +209,9 @@ namespace Hearth.ShopsFood
             if (!VenueShopping.Accepts(rho)) { Fail("too expensive"); return; }
             string label = item.LabelNoCount;
             string memo = (vending ? "Vending machine: " : (venue.DisplayNameOf() + ": ")) + label + (count > 1 ? " x" + count : "");
-            if (!GuestApi.ChargeGuest(pawn, price, vending ? "vending" : "shop", memo)) { Fail("cannot pay"); return; }
+            // income shows drinks apart from goods: "drink" (taverns, bars), "vending" (machines), "shop" (everything else)
+            string incomeCat = vending ? "vending" : VenueSales.IsDrink(item.def) ? "drink" : "shop";
+            if (!GuestApi.ChargeGuest(pawn, price, incomeCat, memo)) { Fail("cannot pay"); return; }
 
             var taken = item.SplitOff(count);
             var tdef = taken.def;

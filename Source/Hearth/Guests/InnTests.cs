@@ -553,7 +553,7 @@ namespace Hearth.Guests
     {
         public override string Name => "inn.forecast";
         public override ModuleId Module => ModuleId.Inn;
-        public override int MaxTicks => 6000;
+        public override int MaxTicks => 8000;
         public override IEnumerable<int> Run(TestContext t)
         {
             InnTestKit.FastTime();
@@ -588,9 +588,53 @@ namespace Hearth.Guests
                     t.Check(rate >= 0.7f, $"Standard Room, renown {rn:0}, {fb} free bed(s): {rate:0.00} groups/day (>= 0.7)");
                 }
             t.Check(sch.RatePerDay(true, false) > 0f, "arrival rate positive: " + sch.RatePerDay(true, false).ToString("0.000") + " groups/day");
+
+            // ---- arrival balance: the plan counts the beds that will be free when a group arrives, and a quiet house with room to spare gets a group
+            var gf = InnTestKit.GuestFaction(map);
+            t.Check(gf != null, "friendly faction available: " + gf?.Name);
+            int beds = GuestBeds.CountOn(map), now = Find.TickManager.TicksGame;
+            sch.ClearForecastForTests();
+            t.Check(sch.ProjectedFreeBeds(now + 30000) == beds, "empty plan: every bed is free tomorrow (" + beds + ")");
+            sch.AddPlannedForTests(gf, 1, StayKind.Overnight, 2, now + 60000);
+            t.Check(sch.ProjectedFreeBeds(now + 30000) == beds, "before the planned group arrives all beds are free");
+            t.Check(sch.ProjectedFreeBeds(now + 70000) == beds - 1, "while the planned group stays its bed is taken: " + sch.ProjectedFreeBeds(now + 70000));
+            t.Check(sch.ProjectedFreeBeds(now + 60000 + 2 * 60000 + 30000) == beds, "after its last night the bed is free again");
+            sch.AddPlannedForTests(gf, 5, StayKind.Overnight, 1, now + 65000);
+            t.Check(sch.ProjectedFreeBeds(now + 70000) == 0, "never below zero");
+            sch.AddPlannedForTests(gf, 3, StayKind.DayVisitor, 0, now + 70000);
+            t.Check(sch.ProjectedFreeBeds(now + 72000) == 0, "day visitors take no bed");
+
+            sch.ClearForecastForTests();
+            int breaks0 = sch.Counters.DroughtBreaks;
+            MapComponent_HH_GuestScheduler.DiagLog = new List<string>();   // the scheduler's own decisions end up in the test output
+            sch.MakeQuietForTests(4 * 60000);
+            yield return 300;
+            foreach (var l in MapComponent_HH_GuestScheduler.DiagLog) t.Note(l);
+            MapComponent_HH_GuestScheduler.DiagLog = null;
+            t.Check(sch.Counters.DroughtBreaks == breaks0 + 1, "a quiet house with free beds gets a group: " + sch.Counters.Line());
+            var nudged = sch.NextArrival();
+            t.Check(nudged != null && nudged.ArrivalTick <= Find.TickManager.TicksGame + (int)(1.6f * 60000), "the nudged group is due within about a day: " + (nudged?.Describe(map) ?? "none"));
+            int groupsNow = sch.Forecast.Count;
+            yield return 600;
+            t.Check(sch.Counters.DroughtBreaks == breaks0 + 1 && sch.Forecast.Count >= groupsNow, "one nudge, not one per scheduler tick");
+
+            // ---- overview line: arrivals in the next 24 hours
+            float rateNow = sch.RatePerDay(true, false);
+            sch.ClearForecastForTests();
+            string none = Hearth.Shell.OverviewPage.ArrivalsLine(map);
+            t.Check(none != null && none.Contains("24 h") && none.Contains(rateNow.ToString("0.0")), "overview line without planned groups: " + none);
+            sch.AddPlannedForTests(gf, 2, StayKind.Overnight, 1, Find.TickManager.TicksGame + 20000);
+            sch.AddPlannedForTests(gf, 3, StayKind.DayVisitor, 0, Find.TickManager.TicksGame + 40000);
+            sch.AddPlannedForTests(gf, 4, StayKind.Overnight, 1, Find.TickManager.TicksGame + 70000);
+            sch.Next24Hours(out int groups, out int guests);
+            t.Check(groups == 2 && guests == 5, "two groups with five guests due within 24 h: " + groups + " / " + guests);
+            string some = Hearth.Shell.OverviewPage.ArrivalsLine(map);
+            t.Check(some != null && some.Contains("2") && some.Contains("5"), "overview line names them: " + some);
+            sch.ClearForecastForTests();
             InnTestKit.MarkGuestBeds(site, false);
             yield return 600;
             t.Check(sch.Forecast.Count == 0, "forecast empties when no guest bed is left (N08)");
+            t.Check(Hearth.Shell.OverviewPage.ArrivalsLine(map) == null, "no overview line while nobody can come");
             InnTestKit.Teardown(site, map);
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
         }

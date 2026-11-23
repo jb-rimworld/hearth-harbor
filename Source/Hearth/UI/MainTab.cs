@@ -186,6 +186,20 @@ namespace Hearth.Shell
             return Money.Max(Money.Zero, ledger.DayTotalPrefix(day, "colony:till"));
         }
 
+        /// <summary>"Arrivals, next 24 h: 2 groups planned (about 4 guests), 1.3 groups a day expected." Null while nobody can come (no guest bed, no venue, Inn off).</summary>
+        public static string ArrivalsLine(Map map)
+        {
+            if (!Modules.On(ModuleId.Inn)) return null;
+            var sch = map.GetComponent<Hearth.Guests.MapComponent_HH_GuestScheduler>();
+            if (sch == null || !sch.Active) return null;
+            sch.Next24Hours(out int groups, out int guests);
+            float rate = sch.RatePerDay(sch.OvernightPossible, sch.DayVisitsPossible);
+            string planned = groups == 0
+                ? "HH.UI.Overview.Arrivals.None".Translate().ToString()
+                : "HH.UI.Overview.Arrivals.Planned".Translate(groups, guests).ToString();
+            return "HH.UI.Overview.Arrivals".Translate(planned, rate.ToString("0.0")).ToString();
+        }
+
         public static void Draw(Rect r)
         {
             var map = Find.CurrentMap;
@@ -212,6 +226,10 @@ namespace Hearth.Shell
                 TooltipHandler.TipRegion(t, tiles[i].tip);
             }
             y += 92f;
+
+            // arrivals expected in the next 24 hours (Inn module): one compact line under the tiles
+            string arrivals = map == null ? null : Guard.Run(ModuleId.Core, "UI.OverviewArrivals", () => ArrivalsLine(map), null);
+            if (arrivals != null) { UiStyle.LabelColored(new Rect(4f, y - 6f, w - 8f, 20f), arrivals, UiStyle.Grey, TextAnchor.UpperLeft, GameFont.Tiny); y += 22f; }
 
             // income detail
             y += UiStyle.Section(0, y, w, "HH.UI.Overview.IncomeHead".Translate());

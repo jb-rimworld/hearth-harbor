@@ -118,8 +118,12 @@ namespace Hearth.Testing
 
         /// <summary>The quicktest colony is a live game: the storyteller fires raids/fires/events and colonists sleep or take joy at random hours,
         /// which made suites fail by luck. Before every suite: no storyteller incidents, colonists awake, rested and free to work at any hour.</summary>
+        /// <summary>Modules hook in here to calm their own background activity before every suite (the guest scheduler stops sending groups).</summary>
+        public static event Action BeforeEachSuite;
+
         static void NeutralizeGame()
         {
+            try { BeforeEachSuite?.Invoke(); } catch (Exception e) { Verse.Log.Warning("[HHTEST] BeforeEachSuite hook failed: " + e.Message); }
             try
             {
                 Find.Storyteller?.storytellerComps?.Clear();

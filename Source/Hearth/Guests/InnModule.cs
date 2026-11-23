@@ -21,6 +21,10 @@ namespace Hearth.Guests
 
         public override void OnDefsLoaded()
         {
+#if HH_TESTS
+            // a working scheduler keeps sending groups, which other modules' suites must not meet by surprise; the Inn, showcase and long-run suites switch it on themselves
+            Hearth.Testing.HearthTestRunner.BeforeEachSuite += () => MapComponent_HH_GuestScheduler.SuspendedForTests = true;
+#endif
             int beds = 0;
             foreach (var d in DefDatabase<ThingDef>.AllDefsListForReading)
             {
