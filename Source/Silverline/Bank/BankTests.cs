@@ -846,7 +846,7 @@ namespace Silverline
         public override int MaxTicks => 1500;
         public override IEnumerable<int> Run(TestContext t)
         {
-            var map = t.Map; var pawn = map.mapPawns.FreeColonistsSpawned.FirstOrDefault();
+            var map = t.Map; var pawn = TestSetup.Colonist(map, 0, p => !p.WorkTagIsDisabled(WorkTags.Social)) ?? map.mapPawns.FreeColonistsSpawned.FirstOrDefault();
             if (pawn == null) { t.Note("no colonist"); yield break; }
             // no patch of ours on GetFloatMenuOptions any more
             var m = typeof(Building_CommsConsole).GetMethod(nameof(Building_CommsConsole.GetFloatMenuOptions));
@@ -858,9 +858,11 @@ namespace Silverline
             t.Check(info2 != null && info2.Postfixes.Count(p => p.PatchMethod.DeclaringType?.Namespace == "Silverline") == 1, "exactly one Silverline patch on GetCommTargets");
             var def = DefDatabase<ThingDef>.GetNamed("CommsConsole");
             var console = (Building_CommsConsole)ThingMaker.MakeThing(def, GenStuff.DefaultStuffFor(def));
-            GenSpawn.Spawn(console, t.FreeCellNearCenter(), map);
+            // reachable from the colonist with a free ring around it: the first free cell near the map centre can be in a pocket the colonist cannot walk to
+            GenSpawn.Spawn(console, TestSetup.FindOrMakeSpot(map, pawn.Position, def.size.x, def.size.z, 1, minDist: 4f), map);
             console.SetFaction(Faction.OfPlayer);
             var power = console.GetComp<CompPowerTrader>(); if (power != null) power.PowerOn = true;
+            pawn.jobs.StopAll(); map.reservationManager.ReleaseAllClaimedBy(pawn);
             var targets = console.GetCommTargets(pawn).ToList();
             t.Check(targets.Contains(SilverlineComm.Instance) && targets.Contains(ClawbackComm.Instance), "Silverline and Clawback Mutual are listed as call targets");
             t.Check(targets.Count(x => x == SilverlineComm.Instance) == 1, "listed once");
@@ -872,7 +874,7 @@ namespace Silverline
             yield return 1;
             bool gotJob = pawn.CurJob != null && pawn.CurJob.def == JobDefOf.UseCommsConsole && pawn.CurJob.commTarget == ClawbackComm.Instance;
             bool queued = pawn.jobs.jobQueue.Any(q => q.job.def == JobDefOf.UseCommsConsole && q.job.commTarget == ClawbackComm.Instance);
-            t.Check(gotJob || queued, "the colonist is sent to the console with the vanilla job (current: " + pawn.CurJob?.def + ")");
+            t.Check(gotJob || queued, "the colonist is sent to the console with the vanilla job (current: " + pawn.CurJob?.def + ", reach " + pawn.CanReach(console, PathEndMode.InteractionCell, Danger.Some) + ", console at " + console.Position + ", pawn at " + pawn.Position + ", awake " + pawn.Awake() + ", disabled option " + opt?.Disabled + ")");
             t.Check(!Find.WindowStack.Windows.Any(w => w is Window_Clawback), "no window opened from across the map");
             // arriving opens it
             ClawbackComm.Instance.TryOpenComms(pawn);

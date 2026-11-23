@@ -317,7 +317,9 @@ namespace Hearth.Kitchen.Tests
                 t.Check(comp.FreshFraction > 0.95f && !comp.IsStale, "freshly cooked");
                 t.Check(berries.stackCount <= 30 - 9, "ingredients were consumed: " + berries.stackCount + " berries left of 30");
                 var cp = plate.TryGetComp<CompFoodPoisonable>();
-                t.Check(cp != null && cp.PoisonPercent == 0f, "no poison from a cook with Cooking 8 (rule of N46 applies only in a kitchen room; here just checking the field)");
+                // outside a kitchen room N46 does not apply and vanilla rolls (filthy kitchen / incompetent cook, a few percent): the plate must carry the comp, and poison is
+                // acceptable only when vanilla gave it a cause; our rule must never poison without one
+                t.Check(cp != null && (cp.PoisonPercent == 0f || cp.Cause != FoodPoisonCause.Unknown), "no poison from our rule for a cook with Cooking 8 (poison " + cp?.PoisonPercent + ", cause " + cp?.Cause + "; N46 applies only in a kitchen room, vanilla may roll outside)");
                 // the counter counts this dish only
                 var other = KT.MakePlate(map, KT.Dish("ScrambledEggs"), plate.Position, QualityCategory.Normal);
                 var counter = compote.recipes[0].WorkerCounter;
@@ -574,10 +576,7 @@ namespace Hearth.Kitchen.Tests
             t.Check(Restaurant.Stock(spot).Count() == 3, "three fresh plates on the shelf: " + Restaurant.Stock(spot).Count());
 
             // visitors via the vanilla incident
-            var parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.Misc, map);
-            bool fired = false;
-            try { fired = IncidentDefOf.VisitorGroup.Worker.TryExecute(parms); } catch (Exception e) { t.Note("incident threw: " + e.Message); }
-            t.Note("VisitorGroup fired=" + fired);
+            t.Note("visitors spawned: " + GuestTestKit.SpawnVisitors(map, 1).Count);
             Pawn guest = null;
             foreach (var w in KT.WaitUntil(() => (guest = map.mapPawns.AllPawnsSpawned.FirstOrDefault(GuestApi.IsGuest)) != null, 900, 30)) yield return w;
             t.Check(guest != null, "a visitor counts as a guest");

@@ -123,9 +123,17 @@ namespace Hearth.ShopsFood
 
         public static List<Pawn> SpawnVisitors(Map map, Faction f, IntVec3 spawn)
         {
-            var parms = new IncidentParms { target = map, faction = f, forced = true, sendLetter = false, points = 120f, spawnCenter = spawn, storeGeneratedNeutralPawns = new List<Pawn>() };
-            IncidentDefOf.VisitorGroup.Worker.TryExecute(parms);
-            return parms.storeGeneratedNeutralPawns;
+            // a faction that cannot send a group right now (temperature range, tech level) or a blocked entry cell yields nothing: retry, then try the other friendly factions
+            var all = new List<Pawn>();
+            var tried = new List<Faction> { f };
+            tried.AddRange(Friendly(4, false).Where(x => x != f));
+            for (int i = 0; i < 6 && all.Count == 0; i++)
+            {
+                var parms = new IncidentParms { target = map, faction = tried[i % tried.Count], forced = true, sendLetter = false, points = 120f, spawnCenter = spawn, storeGeneratedNeutralPawns = new List<Pawn>() };
+                try { IncidentDefOf.VisitorGroup.Worker.TryExecute(parms); } catch (Exception e) { HLog.Warn("Test", "VisitorGroup incident threw: " + e.Message); }
+                all.AddRange(parms.storeGeneratedNeutralPawns.Where(p => p.Spawned));
+            }
+            return all;
         }
 
         public static IntVec3 OutsideCell(Map map, TestRoom room)
@@ -172,6 +180,15 @@ namespace Hearth.ShopsFood
             pawn.jobs?.StopAll();
             pawn.DeSpawn();
             GenSpawn.Spawn(pawn, near, map);
+        }
+
+        /// <summary>Switches Hauling off for every colonist (colonists would top up a shelf, stockpile or vending machine with loose goods from elsewhere and hide a sale
+        /// from a stack-count check). Returns the action that puts the priorities back.</summary>
+        public static Action SuspendHauling(Map map)
+        {
+            var was = map.mapPawns.FreeColonistsSpawned.ToDictionary(c => c, c => c.workSettings?.GetPriority(WorkTypeDefOf.Hauling) ?? 0);
+            foreach (var c in was.Keys) c.workSettings?.SetPriority(WorkTypeDefOf.Hauling, 0);
+            return () => { foreach (var kv in was) kv.Key.workSettings?.SetPriority(WorkTypeDefOf.Hauling, kv.Value); };
         }
 
         public static void Teardown(Map map, TestRoom room)
@@ -489,6 +506,7 @@ namespace Hearth.ShopsFood
             t.Check(!WorkGiver_ServeVenue.WantsTender(venue), "nobody is wanted while closed (no bell)");
 
             // --- night bell
+            int socialLevel0 = pawn.skills.GetSkill(SkillDefOf.Social).Level;
             VenueState.RingBell(sign, 5000);
             t.Check(VenueApi.Gate(venue) == VenueGate.WaitingForStaff, "ringing the bell calls for staff");
             t.Check(WorkGiver_ServeVenue.WantsTender(venue), "bell makes the venue want a tender");
@@ -501,7 +519,8 @@ namespace Hearth.ShopsFood
             var priced = VenueApi.PriceOf(beer, 1, venue);
             t.Check(priced.Silver >= HSettings.GetSilver(VS.NightBellMin).Silver - 0.001, "bell service never costs less than the minimum: " + priced);
             t.Check(priced.Silver > normal, "bell service has a surcharge: " + priced + " > " + normal.ToString("0.00"));
-            t.Check(pawn.skills.GetSkill(SkillDefOf.Social).xpSinceLastLevel >= 0f, "social skill intact");
+            // tending only ever adds Social xp; vanilla's own skill decay may take a level at most (xpSinceLastLevel itself dips below 0 for an instant at a decay step)
+            t.Check(pawn.skills.GetSkill(SkillDefOf.Social).Level >= socialLevel0 - 1, "social skill intact: level " + socialLevel0 + " -> " + pawn.skills.GetSkill(SkillDefOf.Social).Level);
             VenueTestKit.Teardown(map, room);
         }
     }
@@ -543,6 +562,8 @@ namespace Hearth.ShopsFood
             t.Check(VenueApi.IsStaffed(venue), "bartender on duty after " + waited);
             var till0 = VenueTestKit.Till(map);
             int beer0 = beer.stackCount;
+            // colonists with Hauling on carry beer from elsewhere into the room's stockpile and top the shelf up again before the shelf is checked
+            var restoreHauling = VenueTestKit.SuspendHauling(map);
             var guests = VenueTestKit.SpawnVisitors(map, factions[0], VenueTestKit.OutsideCell(map, room));
             t.Check(guests.Count > 0, "guests spawned: " + guests.Count);
             waited = 0;
@@ -556,6 +577,7 @@ namespace Hearth.ShopsFood
             foreach (var g in GuestApi.GuestsOn(map)) t.Note(g.LabelShort + ": job " + (g.CurJobDef?.defName ?? "none") + ", alcohol " + (g.health?.hediffSet.HasHediff(HediffDefOf.AlcoholHigh) == true) + ", bag " + string.Join("/", g.inventory.innerContainer.Where(x => x.def.defName == "Beer").Select(x => x.stackCount.ToString())));
             t.Check(GuestApi.GuestsOn(map).Any(g => g.health != null && g.health.hediffSet.HasHediff(HediffDefOf.AlcoholHigh)) || GuestApi.GuestsOn(map).Any(g => g.jobs?.curJob?.def == JobDefOf.Ingest || (g.inventory != null && g.inventory.innerContainer.Any(x => x.def.defName == "Beer"))),
                 "the drink was drunk or is being drunk or sits in the guest's bag");
+            restoreHauling();
             VenueTestKit.Teardown(map, room);
         }
     }
@@ -627,10 +649,15 @@ namespace Hearth.ShopsFood
             var worker = VenueTestKit.Worker(map);
             VenueTestKit.Relocate(worker, room);
             waited = 0;
+            bool verbose0 = HLog.Verbose; HLog.Verbose = true;   // purchase failures are logged at Debug level
             while (waited < 6000 && comp.salesCount == 0)
             {
                 VenueTestKit.Drive(map); yield return 100; waited += 100;
-                if (worker == null || worker.Downed || worker.Dead) worker = VenueTestKit.Worker(map); // colonists get hurt in a live colony
+                if (worker == null || worker.Downed || worker.Dead)
+                {
+                    t.Note($"worker {worker?.LabelShort} is out (null {worker == null}, downed {worker?.Downed}, dead {worker?.Dead}, spawned {worker?.Spawned}, hp {worker?.health.summaryHealth.SummaryHealthPercent:0.00}, hediffs {(worker == null ? "" : string.Join("/", worker.health.hediffSet.hediffs.Select(hd => hd.def.defName)))}): picking another");
+                    worker = VenueTestKit.Worker(map); // colonists get hurt in a live colony
+                }
                 if (waited >= 600 && waited % 300 == 0 && worker != null && !worker.Downed && !worker.Dead && worker.CurJobDef != HHVenueDefOf.HH_TendVenue && comp.salesCount == 0 && VenueApi.BellActive(venue))
                 {
                     // a wandering colonist can take over a thousand ticks to look for work again, longer than guests keep ringing: after a natural chance, hand over the job the work giver would give
@@ -641,6 +668,7 @@ namespace Hearth.ShopsFood
                 if (waited % 1000 == 0) t.Note($"worker {worker?.LabelShort}: job {worker?.CurJobDef?.defName} at {worker?.Position}, wants tender {WorkGiver_ServeVenue.WantsTender(VenueApi.VenueOfSign(map, sign))}, bell {VenueApi.BellActive(venue)}, gate {VenueApi.Gate(venue)}, drafted {worker?.Drafted}, downed {worker?.Downed}, prio {worker?.workSettings?.GetPriority(HHVenueDefOf.HH_Serving)}");
                 if (waited % 500 == 0) foreach (var g in group2) { var gi = GuestApi.Info(g); var da = GuestActivities.All.FirstOrDefault(a => a.Id == "venues.drink"); t.Note($"  guest {g.LabelShort}: job {g.CurJobDef?.defName ?? "none"}, budget {gi?.Budget.Silver:0.0}, drink desire {(gi != null && da != null ? da.Desire(g, gi) : -1f):0.00}, cooldown {GuestMemory.InNoServiceCooldown(g)}, rho {(gi != null ? VenueShopping.Rho(g, gi, VenueApi.PriceMultiplier(venue), sign.thingIDNumber) : -1f):0.00}, awake {g.Awake()}, lord {g.GetLord()?.CurLordToil?.GetType().Name}"); }
             }
+            HLog.Verbose = verbose0;
             t.Check(comp.salesCount > 0, "the bell was answered and a drink was served after " + waited + " ticks");
             double plain = ThingDef.Named("Beer").BaseMarketValue * 1.25 * comp.priceFactor * VS.F(VS.ShopPrice);
             t.Check(comp.Income.Silver >= plain * 1.4, "bell service charged a surcharge: " + comp.Income.Silver.ToString("0.00") + " vs plain " + plain.ToString("0.00"));
@@ -679,6 +707,7 @@ namespace Hearth.ShopsFood
             t.Check(VenueSales.MachineWorks(machine), "machine with power sells");
             // machine stock must not be treated as a sale room (no sign here)
             t.Check(!Venues.All(map).Any(v => v.Contains(cell)), "no venue around the machine");
+            var restoreHauling = VenueTestKit.SuspendHauling(map);   // the machine is a storage building: colonists would haul loose meals into it and refill the stack
             var buyer = VenueTestKit.SpawnVisitors(map, factions[0], VenueTestKit.OutsideCell(map, room));
             var till0 = VenueTestKit.Till(map);
             int meal0 = meal.stackCount;
@@ -691,6 +720,7 @@ namespace Hearth.ShopsFood
             t.Check(VenueTestKit.Till(map) > till0, "a guest paid the vending machine after " + waited + " ticks: " + till0 + " -> " + VenueTestKit.Till(map));
             yield return 400;
             t.Check(meal.Destroyed || meal.stackCount < meal0, "meal left the machine: " + meal0 + " -> " + (meal.Destroyed ? 0 : meal.stackCount));
+            restoreHauling();
             t.Check(GuestApi.GuestsOn(map).Any(g => GuestMemory.LastVending(g) > 0), "a guest remembers the vending purchase");
             // colonists may use the machine for free: its goods are not forbidden (no sign, no sale room)
             var col = map.mapPawns.FreeColonistsSpawned.First();
@@ -719,13 +749,15 @@ namespace Hearth.ShopsFood
             t.Check(!VenueMarket.CanHaveMarket(map) && (VenueMarket.Blocker(map) ?? "").Contains("stalls"), "a shop alone is not enough: " + VenueMarket.Blocker(map));
             var stalls = new List<Thing>();
             int need = VS.I(VS.MarketStalls);
+            // a strip of cleared ground, one stall every 3 cells: on a random map the cells next to the room can be trees, rock or water, and a stall that does not fit
+            // used to be spawned on top of the previous one (the old stall vanished and the count was one short)
+            var strip = VenueTestKit.OutsideCell(map, room);
+            TestSetup.PrepareGround(map, new CellRect(strip.x - 2, strip.z - 2, need * 3 + 4, 5));
             for (int i = 0; i < need; i++)
             {
                 var st = ThingMaker.MakeThing(HHVenueDefOf.HH_MarketStall, ThingDefOf.WoodLog);
                 st.SetFaction(Faction.OfPlayer);
-                var at = VenueTestKit.OutsideCell(map, room) + new IntVec3(i * 3, 0, 0);
-                if (!CellFinder.TryFindRandomCellNear(at, map, 6, c => GenConstruct.CanPlaceBlueprintAt(HHVenueDefOf.HH_MarketStall, c, Rot4.South, map, false, null, null, ThingDefOf.WoodLog).Accepted, out var free)) free = at;
-                GenSpawn.Spawn(st, free, map, Rot4.South);
+                GenSpawn.Spawn(st, strip + new IntVec3(i * 3, 0, 0), map, Rot4.South);
                 stalls.Add(st);
             }
             yield return 5;

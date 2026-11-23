@@ -337,8 +337,7 @@ namespace Hearth.Kitchen.Tests
             t.Check(Math.Abs(price.Silver - 12.0) < 0.05, "simple meal costs 10 × venue factor 1.2 = 12 silver: " + price);
             if (fine != null) t.Check(Restaurant.VanillaPrice(fine, spot) > price, "fine meals cost more");
 
-            var parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.Misc, map);
-            try { IncidentDefOf.VisitorGroup.Worker.TryExecute(parms); } catch (Exception e) { t.Note("incident threw: " + e.Message); }
+            t.Note("visitors spawned: " + Hearth.Testing.GuestTestKit.SpawnVisitors(map, 1).Count);
             Pawn guest = null;
             foreach (var w in KT.WaitUntil(() => (guest = map.mapPawns.AllPawnsSpawned.FirstOrDefault(GuestApi.IsGuest)) != null, 900, 30)) yield return w;
             t.Check(guest != null, "a visitor counts as a guest");

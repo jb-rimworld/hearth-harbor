@@ -442,8 +442,10 @@ namespace Hearth.Guests
             giz.First(x => x.defaultLabel.StartsWith("Handling")).action();
             t.Check(a.Handling == HandlingMode.Accompany, "gizmo switches Basics → Accompany");
             // real Hosting work: an ordered job from the work giver
-            var col = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => !c.Downed && c.Awake()) ?? map.mapPawns.FreeColonistsSpawned.FirstOrDefault();
+            // a healthy colonist: a sick or hurt one lies down for medical rest and drops the ordered job
+            var col = TestSetup.Colonist(map, 0, c => c.Awake()) ?? map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => !c.Downed && c.Awake()) ?? map.mapPawns.FreeColonistsSpawned.FirstOrDefault();
             if (col == null) { t.Note("no free colonist on the map: handling checks skipped"); InnTestKit.RemoveAllGuests(map); InnTestKit.Teardown(site, map); MapComponent_HH_GuestScheduler.SuspendedForTests = false; yield break; }
+            if (col.needs?.rest != null) col.needs.rest.CurLevel = 1f;
             var wg = new WorkGiver_HH_AccompanyGuest();
             bool has = wg.HasJobOnThing(col, a.Pawn, forced: true);
             t.Check(has, "work giver offers to keep the guest company");
@@ -452,7 +454,7 @@ namespace Hearth.Guests
                 col.jobs.TryTakeOrderedJob(wg.JobOnThing(col, a.Pawn, true));
                 int w2 = 0;
                 while (w2 < 6000 && a.Talks == 0) { yield return 100; w2 += 100; }
-                if (a.Talks == 0) t.Note($"no talk: colonist {col.LabelShort} job {col.CurJob?.def.defName} at {col.Position}, guest at {a.Pawn.Position} job {a.Pawn.CurJob?.def.defName} awake {a.Pawn.Awake()} hour {GenLocalDate.HourInteger(map)}");
+                if (a.Talks == 0) t.Note($"no talk: colonist {col.LabelShort} job {col.CurJob?.def.defName} at {col.Position}, rest {col.needs?.rest?.CurLevel:0.00}, medical rest {HealthAIUtility.ShouldSeekMedicalRest(col)}, hediffs {string.Join("/", col.health.hediffSet.hediffs.Select(h => h.def.defName))}, guest at {a.Pawn.Position} job {a.Pawn.CurJob?.def.defName} awake {a.Pawn.Awake()} hour {GenLocalDate.HourInteger(map)}");
                 t.Check(a.Talks >= 1, "colonist kept the guest company (" + w2 + " ticks)");
                 t.Check(a.Pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(InnDefOf.HH_GuestAccompanied) != null, "guest has the company thought");
             }

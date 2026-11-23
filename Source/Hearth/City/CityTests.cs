@@ -119,19 +119,18 @@ namespace Hearth.City.Tests
             Func<List<Pawn>> current = () => map.mapPawns.AllPawnsSpawned.Where(GuestApi.IsVanillaVisitor).ToList();
             try
             {
-                var def = IncidentDefOf.VisitorGroup;
-                for (int i = 0; i < 6 && current().Count < count; i++)
-                {
-                    var parms = StorytellerUtility.DefaultParmsNow(def.category, map); parms.forced = true; parms.target = map;
-                    def.Worker.TryExecute(parms);
-                }
+                for (int i = 0; i < 4 && current().Count < count; i++) GuestTestKit.SpawnVisitors(map, count);
             }
             catch (Exception e) { HLog.Warn("City", "VisitorGroup incident failed in the test: " + e.Message); }
             var list = current();
             if (list.Count < count) HLog.Warn("City", "Only " + list.Count + " vanilla visitors could be spawned");
             var picked = list.Take(count).ToList();
+            // the rest of the incident's group would walk to the colony and take benches, seats and screens by itself (the guest brain offers them City activities): send them away
+            foreach (var extra in list.Skip(count).ToList()) { extra.GetLord()?.Notify_PawnLost(extra, PawnLostCondition.ForcedByPlayerAction); extra.Destroy(); }
             foreach (var p in picked)
             {
+                // generated visitors can carry old wounds that are created at spawn time: a bodyguard contract that starts in the same tick counts them as 'hurt while protected'
+                foreach (var inj in p.health.hediffSet.hediffs.OfType<Hediff_Injury>().ToList()) p.health.RemoveHediff(inj);
                 var cell = CellFinder.RandomClosewalkCellNear(at, map, 3);
                 p.GetLord()?.Notify_PawnLost(p, PawnLostCondition.ForcedByPlayerAction);
                 p.DeSpawn(); GenSpawn.Spawn(p, cell, map);
@@ -352,8 +351,9 @@ namespace Hearth.City.Tests
             var job = act.TryGiveJob(g1, info1);
             t.Check(job != null && job.def == CityDefs.WatchScreening, "activity gives a watch job");
             if (job == null) yield break;
-            g1.jobs.StartJob(job, JobCondition.InterruptForced);
+            // measured before the job starts: a guest who is already at the seat pays during StartJob itself, and the ticket was then counted as 'before'
             var before = info1.Spent; float sat0 = info1.Satisfaction;
+            g1.jobs.StartJob(job, JobCondition.InterruptForced);
             bool started = false;
             for (int i = 0; i < 80 && !started; i++) { yield return 30; started = comp.ShowActive; }
             t.Check(started, "a screening starts when the guest sits down: " + comp.FilmTitle);
@@ -633,7 +633,9 @@ namespace Hearth.City.Tests
         public override ModuleId Module => ModuleId.CityLife;
         public override int MaxTicks => 8000;
 
-        public override IEnumerable<int> Run(TestContext t)
+        public override IEnumerable<int> Run(TestContext t) => GuestTestKit.WithoutGuestBrain(Body(t));
+
+        IEnumerable<int> Body(TestContext t)
         {
             var map = t.Map;
             HSettings.Set(CitySettings.ParkRestTicks, 300);
@@ -669,9 +671,13 @@ namespace Hearth.City.Tests
                 yield return 5;
                 col.DeSpawn(); GenSpawn.Spawn(col, area.CenterCell + new IntVec3(0, 0, -2), map);
                 CityTestKit.TimetableAnything(col);
+                // nobody else may hold the bench or its seat: other colonists with a low joy need and the guests of earlier checks look for a seat on their own
+                foreach (var other in map.mapPawns.AllPawnsSpawned.Where(p => p != col && p.CurJob?.def == CityDefs.ParkRest).ToList()) other.jobs.StopAll();
+                foreach (var other in map.mapPawns.FreeColonistsSpawned) { if (other != col && other.needs?.joy != null) other.needs.joy.CurLevel = 1f; }
+                map.reservationManager.ReleaseAllForTarget(bench);
                 var jg = new JoyGiver_ParkBench { def = DefDatabase<JoyGiverDef>.GetNamed("HH_ParkBenchJoy") };
                 var jj = jg.TryGiveJob(col);
-                t.Check(jj != null && jj.def == CityDefs.ParkRest, "the colonist joy giver offers the bench");
+                t.Check(jj != null && jj.def == CityDefs.ParkRest, "the colonist joy giver offers the bench" + (jj == null ? " (" + TestSetup.WhyNoJoy(col, bench) + "; seat " + ParkUtility.FreeSeat(bench, col) + ")" : ""));
                 if (jj != null)
                 {
                     col.needs.joy.CurLevel = 0.2f;
@@ -781,7 +787,9 @@ namespace Hearth.City.Tests
         public override ModuleId Module => ModuleId.CityLife;
         public override int MaxTicks => 20000;
 
-        public override IEnumerable<int> Run(TestContext t)
+        public override IEnumerable<int> Run(TestContext t) => GuestTestKit.WithoutGuestBrain(Body(t));
+
+        IEnumerable<int> Body(TestContext t)
         {
             var map = t.Map;
             CityTestKit.ResearchOff();
@@ -798,6 +806,9 @@ namespace Hearth.City.Tests
             if (guardPawn == null) yield break;
             CityTestKit.TimetableAnything(guardPawn);
             guardPawn.DeSpawn(); GenSpawn.Spawn(guardPawn, area.CenterCell + new IntVec3(3, 0, 0), map);
+            // the job below is started by hand, without a work giver priority behind it: any other work the colonist has switched on (tending a leftover venue sign of an
+            // earlier suite, cleaning, hauling) overrides it at the next override check and walks the guard away. Only the guard work stays on.
+            foreach (var wt in DefDatabase<WorkTypeDef>.AllDefsListForReading) if (wt != HHWork.Hosting && !guardPawn.WorkTypeIsDisabled(wt) && guardPawn.workSettings != null) guardPawn.workSettings.SetPriority(wt, 0);
 
             // no armed colonist: no hire
             foreach (var c in map.mapPawns.FreeColonistsSpawned) { if (c.workSettings != null && !c.WorkTypeIsDisabled(HHWork.Hosting)) c.workSettings.SetPriority(HHWork.Hosting, 3); var w = c.equipment?.Primary; if (w != null) c.equipment.Remove(w); }
@@ -835,7 +846,7 @@ namespace Hearth.City.Tests
             // one hour passes
             int waited = 0;
             while (contract.Hours < 1 && waited < 16000) { yield return 100; waited += 100; }
-            if (contract.Hours < 1) t.Note($"contract ended {contract.Ended}, guard {guardPawn.LabelShort} job {guardPawn.CurJob?.def.defName} target {guardPawn.CurJob?.targetA.Thing}, guest {vip.LabelShort} spawned {vip.Spawned} isGuest {GuestApi.IsGuest(vip)} lord {vip.GetLord()?.LordJob}, last bill {contract.LastBillTick}, now {Find.TickManager.TicksGame}");
+            if (contract.Hours < 1) t.Note($"contract ended {contract.Ended} ({contract.EndReason}, refunded {contract.Refunded}, hours {contract.Hours}), guest hediffs {string.Join("/", vip.health.hediffSet.hediffs.Select(hd => hd.def.defName + "@" + hd.ageTicks))}, outdoor {map.mapTemperature.OutdoorTemp:0} C, guard {guardPawn.LabelShort} armed {SecurityService.IsArmedGuard(guardPawn)}, guard {guardPawn.LabelShort} job {guardPawn.CurJob?.def.defName} target {guardPawn.CurJob?.targetA.Thing}, guest {vip.LabelShort} spawned {vip.Spawned} isGuest {GuestApi.IsGuest(vip)} lord {vip.GetLord()?.LordJob}, last bill {contract.LastBillTick}, now {Find.TickManager.TicksGame}");
             t.Check(contract.Hours >= 1, "one hour billed after " + waited + " ticks");
             t.Check(info.Spent - spent0 >= contract.Hourly, $"guest paid {info.Spent - spent0}");
             t.Check(CityTestKit.Posted("Bodyguard, 1 hour", out var posted) && posted >= contract.Hourly, "fee booked as colony income");

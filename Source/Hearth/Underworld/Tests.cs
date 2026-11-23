@@ -49,6 +49,8 @@ namespace Hearth.Underworld
                 if (!r.InBounds(map)) continue;
                 bool ok = true;
                 foreach (var cell in r.ExpandedBy(1)) { if (!cell.InBounds(map) || !cell.Standable(map) || cell.GetFirstBuilding(map) != null || cell.Fogged(map) || cell.GetTerrain(map).passability == Traversability.Impassable) { ok = false; break; } }
+                // a free patch is no use when it sits in a pocket the colonists and the visitors cannot walk to (water, cliffs, rock on a random map)
+                if (ok && !map.reachability.CanReach(map.Center, r.CenterCell, PathEndMode.OnCell, TraverseMode.PassDoors, Danger.Deadly)) ok = false;
                 if (ok) { rect = r; return true; }
             }
             return false;
@@ -526,7 +528,8 @@ namespace Hearth.Underworld
             t.Check(Underworld.Whispers > w0 + 1.5f, "gang visit raises whispers");
             // use the back room directly
             var member = pawns[0]; var till0 = UwKit.Till(map);
-            BackRoom.TryFindCell(map, member, out var cell);
+            t.Check(BackRoom.TryFindCell(map, member, out var cell), "a back room cell is free for the member: " + cell);
+            if (!cell.IsValid) { UwKit.End(); yield break; }
             member.Position = cell; member.Notify_Teleported(true, true);
             member.jobs.StartJob(JobMaker.MakeJob(UwDefs.JobBackRoom, cell), JobCondition.InterruptForced);
             yield return 120;
@@ -765,6 +768,8 @@ namespace Hearth.Underworld
                     gaveJobs = true;
                     foreach (var g in guests)
                     {
+                        // the guests start up to 12 cells from the map centre and the betting window is limited: bring them to the gate so the walk (and the random map between) does not decide whether they bet
+                        g.Position = CellFinder.RandomClosewalkCellNear(outside, map, 4); g.Notify_Teleported(true, true);
                         var act = new Activities.PitActivity(); float d = act.Desire(g, GuestApi.Info(g));
                         var job = d > 0 ? act.TryGiveJob(g, GuestApi.Info(g)) : null;
                         if (job != null) g.jobs.StartJob(job, JobCondition.InterruptForced);
@@ -853,7 +858,7 @@ namespace Hearth.Underworld
                 int ls0 = Underworld.Comp.LoungeSessions;
                 guest.jobs.StartJob(JobMaker.MakeJob(UwDefs.JobLounge, cell), JobCondition.InterruptForced);
                 yield return 1400;
-                t.Check(Underworld.Comp.LoungeSessions == ls0 + 1, "the lounge job completed a session");
+                t.Check(Underworld.Comp.LoungeSessions == ls0 + 1, "the lounge job completed a session (guest job " + (guest.CurJob?.def.defName ?? "none") + " at " + guest.Position + " of " + cell + ", budget " + GuestApi.Info(guest)?.Budget + ", spawned " + guest.Spawned + ", lord toil " + guest.GetLord()?.CurLordToil?.GetType().Name + ", level " + Lounge.AllowedLevel(guest) + ")");
             }
             else t.Note("test guest cannot use drugs; lounge job skipped");
             // holding cells tour as a real job
@@ -863,7 +868,8 @@ namespace Hearth.Underworld
             if (!prisoner.DevelopmentalStage.Adult()) { prisoner.ageTracker.AgeBiologicalTicks = 25L * 3600000L; prisoner.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
             GenSpawn.Spawn(prisoner, CellFinder.RandomClosewalkCellNear(map.Center, map, 10), map); UwKit.Track(prisoner);
             prisoner.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
-            visitor.Position = prisoner.Position + new IntVec3(2, 0, 0); visitor.Notify_Teleported(true, true);
+            // a walkable cell next to the prisoner: two cells east can be rock, a tree or water on a random map and the visitor then cannot reach anybody
+            visitor.Position = CellFinder.RandomClosewalkCellNear(prisoner.Position, map, 3); visitor.Notify_Teleported(true, true);
             int tours0 = Underworld.Comp.Tours;
             var tj = Interrogation.MakeJob(visitor);
             t.Check(tj != null, "the tour job is offered when allowed");

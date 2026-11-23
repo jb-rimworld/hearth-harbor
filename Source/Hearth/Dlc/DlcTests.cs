@@ -181,7 +181,8 @@ namespace Hearth.Dlc.Tests
             if (g != null && g2 != null && GuestApi.IsGuest(g))
             {
                 var friendly = p; var surly = q;
-                Action<Pawn, Pawn> near = (h, gu) => { h.Position = gu.Position + IntVec3.East; h.Notify_Teleported(false, false); };
+                // next to the guest on a walkable cell with a clear line: the cell to the east can be rock, a tree or water on a random map (or the guest has wandered next to it), and vanilla then refuses the interaction
+                Action<Pawn, Pawn> near = (h, gu) => { h.Position = CellFinder.TryFindRandomCellNear(gu.Position, gu.Map, 2, c => c != gu.Position && c.Standable(gu.Map) && GenSight.LineOfSight(c, gu.Position, gu.Map), out var nc) ? nc : gu.Position + IntVec3.East; h.Notify_Teleported(false, false); };
                 near(friendly, g); near(surly, g2);
                 float s0 = GuestApi.Info(g).Satisfaction; bool ok1 = friendly.interactions.TryInteractWith(g, InteractionDefOf.Chitchat);
                 t.Check(ok1 && GuestApi.Info(g).Satisfaction > s0 + 0.02f, $"born host chat raises guest satisfaction ({s0:0.000} -> {GuestApi.Info(g).Satisfaction:0.000}, chat={ok1})");
@@ -448,7 +449,9 @@ namespace Hearth.Dlc.Tests
             var map = t.Map; var l = Ledger.Current; var own = Faction.OfPlayer.ideos.PrimaryIdeo;
             var other = Find.IdeoManager.IdeosListForReading.FirstOrDefault(i => i != own);
             if (other == null) { t.Note("only one ideoligion in this world: skipped"); yield break; }
-            var cell = t.FreeCellNearCenter(10);
+            // a free ring around the altar, reachable from the colony: the first free cell near the centre can sit in a pocket of rock, trees or water on a random map
+            var altarSize = DefDatabase<ThingDef>.GetNamed("HH_GuestAltar").size;
+            var cell = TestSetup.FindOrMakeSpot(map, map.Center, altarSize.x, altarSize.z, 2);
             var altar = (Building_GuestAltar)ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("HH_GuestAltar"), ThingDefOf.WoodLog);
             altar.SetFaction(Faction.OfPlayer); GenSpawn.Spawn(altar, cell, map); altar.Ideo = other;
             t.Check(altar.Spawned && ShrineApi.Altars(map).Contains(altar), "guest altar built and registered");
@@ -466,7 +469,8 @@ namespace Hearth.Dlc.Tests
             DlcState.SetStance(other, MoneyTheme.Indulgences, MoneyStance.Accepted);
             var act = new PrayActivity();
             t.Check(act.Desire(guest, info) > 0.5f, "guests of that faith want to pray here");
-            t.Check(ShrineApi.FindAltarFor(guest) == altar, "closest reachable altar of their faith found");
+            t.Check(ShrineApi.FindAltarFor(guest) == altar, "closest reachable altar of their faith found (guest at " + guest.Position + ", altar at " + altar.Position + ", altars of the faith: "
+                + ShrineApi.Altars(map).Count(a => a.Ideo == guest.Ideo) + ", reach " + guest.CanReach(altar, PathEndMode.InteractionCell, Danger.Some) + ", forbidden " + altar.IsForbidden(guest) + ")");
             var stranger = Kit.Visitor(map, cell); if (stranger != null) { if (stranger.Ideo == other) stranger.ideo.SetIdeo(own); t.Check(act.Desire(stranger, GuestApi.Info(stranger)) == 0f || stranger.Ideo == other, "other faiths do not come"); }
 
             float sat0 = info.Satisfaction; float temple0 = (float)IndulgenceApi.TempleBalance(other).Silver; float cert0 = guest.ideo.Certainty;
