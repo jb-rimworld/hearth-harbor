@@ -26,8 +26,8 @@ namespace Hearth.Shell
     public class MainTabWindow_HH : MainTabWindow
     {
         public static string SelectedPage = "overview";
-        public override Vector2 RequestedTabSize => new Vector2(1000f, 640f);
-        const float ListW = 170f;
+        public override Vector2 RequestedTabSize => HUI.Size(1180f, 720f, 1000f, 600f, 0.92f, 0.88f);
+        static Vector2 listScroll;
 
         public override void PreOpen()
         {
@@ -42,40 +42,73 @@ namespace Hearth.Shell
 
         public static List<HearthTabPage> Pages() => HearthTabs.VisiblePages.ToList();
 
+        /// <summary>Layout of the tab for a given inner rect: header, page list, page area (tests check that all of it stays inside).</summary>
+        public static void Layout(Rect inRect, out Rect header, out Rect list, out Rect content)
+        {
+            float headerH = 44f;
+            header = new Rect(inRect.x, inRect.y, inRect.width, headerH);
+            var body = new Rect(inRect.x, inRect.y + headerH + 4f, inRect.width, inRect.height - headerH - 4f);
+            float listW = Mathf.Clamp(inRect.width * 0.17f, 170f, 230f);
+            list = new Rect(body.x, body.y, listW, body.height);
+            content = new Rect(list.xMax + 16f, body.y, body.width - listW - 16f, body.height);
+        }
+
         void Draw(Rect inRect)
         {
             UiProbe.Hit("maintab");
             var pages = Pages();
             if (pages.Count == 0) { UiStyle.LabelColored(inRect, "HH.UI.Tab.NoPages".Translate(), UiStyle.Grey); return; }
             if (pages.All(p => p.Id != SelectedPage)) SelectedPage = pages[0].Id;
+            Layout(inRect, out var header, out var list, out var content);
 
-            // header
+            // header: title left, renown line in the space between the title and the buttons, buttons right
             Text.Font = GameFont.Medium;
-            GUI.color = UiStyle.Amber; Widgets.Label(new Rect(inRect.x, inRect.y, 360f, 34f), "Hearth & Harbor"); GUI.color = Color.white;
+            float titleW = Mathf.Ceil(Text.CalcSize("Hearth & Harbor").x) + 4f;
+            GUI.color = UiStyle.Amber; Widgets.Label(new Rect(header.x, header.y + 2f, titleW, 36f), "Hearth & Harbor"); GUI.color = Color.white;
             Text.Font = GameFont.Small;
+            string settingsLabel = "HH.UI.Tab.Settings".Translate(), guideLabel = "HH.UI.Tab.Guide".Translate();
+            float bw = Mathf.Clamp(Mathf.Max(HUI.TextW(settingsLabel), HUI.TextW(guideLabel)) + 28f, 130f, 190f);
+            var settingsR = new Rect(header.xMax - bw, header.y + 4f, bw, 32f);
+            var guideR = new Rect(settingsR.x - 8f - bw, header.y + 4f, bw, 32f);
+            if (Widgets.ButtonText(settingsR, settingsLabel)) OpenSettings();
+            if (Widgets.ButtonText(guideR, guideLabel)) HSettings.Set("core.guide", HSettings.GetBool("core.guide") ? 0f : 1f);
+            TooltipHandler.TipRegion(guideR, "HH.UI.Tab.GuideTip".Translate());
             string renown = null;
             if (HearthUI.RenownLine != null) renown = Guard.Run(ModuleId.Core, "UI.RenownLine", HearthUI.RenownLine, null);
-            if (!renown.NullOrEmpty()) UiStyle.LabelColored(new Rect(inRect.x + 260f, inRect.y + 4f, inRect.width - 560f, 28f), renown, UiStyle.Grey, TextAnchor.MiddleLeft);
-            if (Widgets.ButtonText(new Rect(inRect.xMax - 130f, inRect.y + 2f, 130f, 28f), "HH.UI.Tab.Settings".Translate())) OpenSettings();
-            if (Widgets.ButtonText(new Rect(inRect.xMax - 270f, inRect.y + 2f, 130f, 28f), "HH.UI.Tab.Guide".Translate()))
-                HSettings.Set("core.guide", HSettings.GetBool("core.guide") ? 0f : 1f);
-            TooltipHandler.TipRegion(new Rect(inRect.xMax - 270f, inRect.y + 2f, 130f, 28f), "HH.UI.Tab.GuideTip".Translate());
+            if (!renown.NullOrEmpty())
+            {
+                var rr = new Rect(header.x + titleW + 20f, header.y + 6f, Mathf.Max(0f, guideR.x - 12f - (header.x + titleW + 20f)), 28f);
+                if (rr.width > 40f)
+                {
+                    bool wrap = Text.WordWrap; Text.WordWrap = false;
+                    UiStyle.LabelColored(rr, renown.Truncate(rr.width), UiStyle.Grey, TextAnchor.MiddleLeft);
+                    Text.WordWrap = wrap;
+                    TooltipHandler.TipRegion(rr, renown);
+                }
+            }
+            Widgets.DrawBoxSolid(new Rect(header.x, header.yMax - 1f, header.width, 1f), UiStyle.Line);
 
-            var body = new Rect(inRect.x, inRect.y + 40f, inRect.width, inRect.height - 40f);
-            var list = new Rect(body.x, body.y, ListW, body.height);
-            var content = new Rect(list.xMax + 12f, body.y, body.width - ListW - 12f, body.height);
-            float y = list.y;
+            // page list (scrolls when many modules registered a page)
+            const float rowH = 36f;
+            float needH = pages.Count * (rowH + 2f);
+            float vw = list.width - (needH > list.height ? PageFrame.ScrollBar : 0f);
+            Widgets.BeginScrollView(list, ref listScroll, new Rect(0f, 0f, vw, needH));
+            float y = 0f;
             foreach (var p in pages)
             {
-                var row = new Rect(list.x, y, list.width, 30f);
+                var row = new Rect(0f, y, vw, rowH);
                 bool sel = p.Id == SelectedPage;
                 if (sel) { Widgets.DrawBoxSolid(row, UiStyle.AmberSoft); Widgets.DrawBoxSolid(new Rect(row.x, row.y, 3f, row.height), UiStyle.Amber); }
                 else if (Mouse.IsOver(row)) Widgets.DrawHighlight(row);
-                UiStyle.LabelColored(new Rect(row.x + 12f, row.y, row.width - 14f, row.height), p.Label, Color.white, TextAnchor.MiddleLeft);
+                string lab = p.Label;
+                var lr = new Rect(row.x + 14f, row.y, row.width - 18f, row.height);
+                UiStyle.LabelColored(lr, lab, sel ? Color.white : UiStyle.Grey, TextAnchor.MiddleLeft);
+                if (HUI.TextW(lab) > lr.width) TooltipHandler.TipRegion(row, lab);
                 if (Widgets.ButtonInvisible(row)) SelectedPage = p.Id;
-                y += 32f;
+                y += rowH + 2f;
             }
-            Widgets.DrawBoxSolid(new Rect(list.xMax + 5f, body.y, 1f, body.height), UiStyle.Line);
+            Widgets.EndScrollView();
+            Widgets.DrawBoxSolid(new Rect(list.xMax + 7f, list.y, 1f, list.height), UiStyle.Line);
             var current = pages.First(p => p.Id == SelectedPage);
             Widgets.BeginGroup(content);
             Guard.Run(current.Module, "Tab.Draw." + current.Id, () => current.Draw?.Invoke(new Rect(0, 0, content.width, content.height)));
@@ -206,9 +239,8 @@ namespace Hearth.Shell
         public static void Draw(Rect r)
         {
             var map = Find.CurrentMap;
-            var view = new Rect(0, 0, r.width - 18f, viewH);
-            Widgets.BeginScrollView(r, ref scroll, view);
-            float w = view.width, y = 0;
+            var body = PageFrame.Header(r, "HH.UI.Page.Overview".Translate(), "HH.UI.Page.Sub.overview".TranslateOr("Today at a glance: guests, takings, venues."));
+            float w = PageFrame.BeginScroll(body, ref scroll, viewH), y = 0;
             // big numbers
             int guests = map == null ? 0 : GuestApi.GuestsOn(map).Count();
             int venues = map == null ? 0 : Venues.All(map).Count;
@@ -219,88 +251,100 @@ namespace Hearth.Shell
                 ("HH.UI.Overview.Venues".Translate(), venues.ToString(), "HH.UI.Overview.VenuesTip".Translate()),
             };
             if (BankApi.Ready) tiles.Add(("HH.UI.Overview.Bank".Translate(), UiStyle.SilverWhole(BankApi.ColonyBalance), "HH.UI.Overview.BankTip".Translate()));
-            float tw = Mathf.Min(220f, (w - 12f * (tiles.Count - 1)) / tiles.Count);
+            float tw = Mathf.Min(280f, (w - 14f * (tiles.Count - 1)) / tiles.Count);
+            float tileH = 0f;
+            foreach (var t in tiles) tileH = Mathf.Max(tileH, 14f + HUI.TextH(t.label, tw - 24f, GameFont.Tiny) + 46f);
+            tileH = Mathf.Max(tileH, 92f);
             for (int i = 0; i < tiles.Count; i++)
             {
-                var t = new Rect(i * (tw + 12f), y, tw, 78f);
+                var t = new Rect(i * (tw + 14f), y, tw, tileH);
                 Widgets.DrawBoxSolid(t, new Color(1f, 1f, 1f, 0.05f)); GUI.color = UiStyle.Line; Widgets.DrawBox(t); GUI.color = Color.white;
-                UiStyle.LabelColored(new Rect(t.x + 10f, t.y + 6f, t.width - 20f, 20f), tiles[i].label, UiStyle.Grey, TextAnchor.UpperLeft, GameFont.Tiny);
-                UiStyle.LabelColored(new Rect(t.x + 10f, t.y + 24f, t.width - 20f, 44f), tiles[i].value, i == 1 ? UiStyle.Amber : Color.white, TextAnchor.MiddleLeft, GameFont.Medium);
+                float lh = HUI.TextH(tiles[i].label, t.width - 24f, GameFont.Tiny);
+                UiStyle.LabelColored(new Rect(t.x + 12f, t.y + 8f, t.width - 24f, lh), tiles[i].label, UiStyle.Grey, TextAnchor.UpperLeft, GameFont.Tiny);
+                UiStyle.LabelColored(new Rect(t.x + 12f, t.y + 8f + lh, t.width - 24f, t.height - lh - 12f), tiles[i].value, i == 1 ? UiStyle.Amber : Color.white, TextAnchor.MiddleLeft, GameFont.Medium);
                 TooltipHandler.TipRegion(t, tiles[i].tip);
             }
-            y += 92f;
+            y += tileH + 14f;
 
             // arrivals expected in the next 24 hours (Inn module): one compact line under the tiles
             string arrivals = map == null ? null : Guard.Run(ModuleId.Core, "UI.OverviewArrivals", () => ArrivalsLine(map), null);
-            if (arrivals != null) { UiStyle.LabelColored(new Rect(4f, y - 6f, w - 8f, 20f), arrivals, UiStyle.Grey, TextAnchor.UpperLeft, GameFont.Tiny); y += 22f; }
+            if (arrivals != null) { float ah = HUI.TextH(arrivals, w - 8f, GameFont.Tiny); UiStyle.LabelColored(new Rect(4f, y - 6f, w - 8f, ah), arrivals, UiStyle.Grey, TextAnchor.UpperLeft, GameFont.Tiny); y += ah + 6f; }
 
             // income detail
             y += UiStyle.Section(0, y, w, "HH.UI.Overview.IncomeHead".Translate());
-            UiStyle.LabelColored(new Rect(4f, y, w * 0.5f, 22f), "HH.UI.Overview.Today".Translate(), Color.white, TextAnchor.MiddleLeft);
-            UiStyle.LabelColored(new Rect(w * 0.5f, y, w * 0.5f, 22f), UiStyle.Silver(TodayIncome()) + " " + "HH.UI.Silver".Translate(), Color.white, TextAnchor.MiddleLeft); y += 22f;
-            UiStyle.LabelColored(new Rect(4f, y, w * 0.5f, 22f), "HH.UI.Overview.Yesterday".Translate(), UiStyle.Grey, TextAnchor.MiddleLeft);
-            UiStyle.LabelColored(new Rect(w * 0.5f, y, w * 0.5f, 22f), UiStyle.Silver(YesterdayIncome()) + " " + "HH.UI.Silver".Translate(), UiStyle.Grey, TextAnchor.MiddleLeft); y += 26f;
+            string silverWord = "HH.UI.Silver".Translate();
+            UiStyle.LabelColored(new Rect(4f, y, w * 0.5f, 26f), "HH.UI.Overview.Today".Translate(), Color.white, TextAnchor.MiddleLeft);
+            UiStyle.LabelColored(new Rect(w * 0.5f, y, w * 0.5f, 26f), UiStyle.Silver(TodayIncome()) + " " + silverWord, Color.white, TextAnchor.MiddleLeft); y += 26f;
+            UiStyle.LabelColored(new Rect(4f, y, w * 0.5f, 26f), "HH.UI.Overview.Yesterday".Translate(), UiStyle.Grey, TextAnchor.MiddleLeft);
+            UiStyle.LabelColored(new Rect(w * 0.5f, y, w * 0.5f, 26f), UiStyle.Silver(YesterdayIncome()) + " " + silverWord, UiStyle.Grey, TextAnchor.MiddleLeft); y += 32f;
             // B2/C9: income by category (today and the last 7 days, from the ledger's daily category totals)
             var cats = IncomeByCategory(7);
             if (cats.Count > 0)
             {
-                UiStyle.LabelColored(new Rect(4f, y, w, 20f), "HH.UI.Overview.Sources".Translate(), UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny); y += 20f;
+                UiStyle.LabelColored(new Rect(4f, y, w, 20f), "HH.UI.Overview.Sources".Translate(), UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny); y += 22f;
                 double max = Math.Max(0.01, cats.Max(c => c.week.Silver));
-                float barW = Mathf.Min(300f, w - 420f);
+                float nameW = Mathf.Clamp(w * 0.22f, 150f, 240f);
+                float restW = w - nameW - 12f;
+                float barW = Mathf.Max(80f, restW * 0.42f), todayW = restW * 0.26f, weekW = restW * 0.32f;
                 foreach (var c in cats)
                 {
-                    UiStyle.LabelColored(new Rect(4f, y, 160f, 22f), CategoryLabel(c.cat), Color.white, TextAnchor.MiddleLeft);
-                    UiStyle.Bar(new Rect(170f, y + 4f, barW, 14f), (float)(c.week.Silver / max), UiStyle.Amber);
-                    UiStyle.LabelColored(new Rect(180f + barW, y, 120f, 22f), "HH.UI.Overview.CatToday".Translate(UiStyle.SilverWhole(c.today)), Color.white, TextAnchor.MiddleLeft, GameFont.Tiny);
-                    UiStyle.LabelColored(new Rect(300f + barW, y, 140f, 22f), "HH.UI.Overview.CatWeek".Translate(UiStyle.SilverWhole(c.week)), UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny);
-                    y += 22f;
+                    UiStyle.LabelColored(new Rect(4f, y, nameW, 26f), CategoryLabel(c.cat), Color.white, TextAnchor.MiddleLeft);
+                    UiStyle.Bar(new Rect(8f + nameW, y + 6f, barW, 14f), (float)(c.week.Silver / max), UiStyle.Amber);
+                    UiStyle.LabelColored(new Rect(8f + nameW + barW + 10f, y, todayW, 26f), "HH.UI.Overview.CatToday".Translate(UiStyle.SilverWhole(c.today)), Color.white, TextAnchor.MiddleLeft, GameFont.Tiny);
+                    UiStyle.LabelColored(new Rect(8f + nameW + barW + 10f + todayW, y, weekW, 26f), "HH.UI.Overview.CatWeek".Translate(UiStyle.SilverWhole(c.week)), UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny);
+                    y += 26f;
                 }
-                y += 6f;
+                y += 8f;
                 // last 7 days
-                UiStyle.LabelColored(new Rect(4f, y, w, 20f), "HH.UI.Overview.Week".Translate(), UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny); y += 20f;
+                UiStyle.LabelColored(new Rect(4f, y, w, 20f), "HH.UI.Overview.Week".Translate(), UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny); y += 22f;
                 var days = DailyIncome(7);
                 double dmax = Math.Max(0.01, days.Max(d => d.Silver));
-                float colW = Mathf.Min(70f, (w - 8f) / 7f), chartH = 60f;
+                float colW = Mathf.Min(110f, (w - 8f) / 7f), chartH = 90f;
                 int today = Find.TickManager.TicksGame / 60000;
                 for (int i = 0; i < days.Count; i++)
                 {
                     float h = (float)(days[i].Silver / dmax) * chartH;
-                    var bar = new Rect(4f + i * colW + 6f, y + chartH - h, colW - 12f, h);
+                    var bar = new Rect(4f + i * colW + 8f, y + chartH - h, colW - 16f, h);
                     Widgets.DrawBoxSolid(bar, i == days.Count - 1 ? UiStyle.Amber : new Color(UiStyle.Amber.r, UiStyle.Amber.g, UiStyle.Amber.b, 0.55f));
-                    TooltipHandler.TipRegion(new Rect(4f + i * colW, y, colW, chartH + 18f), "HH.UI.Overview.DayTip".Translate(today - (days.Count - 1 - i), UiStyle.SilverWhole(days[i])));
-                    UiStyle.LabelColored(new Rect(4f + i * colW, y + chartH, colW, 18f), UiStyle.SilverWhole(days[i]), UiStyle.Grey, TextAnchor.UpperCenter, GameFont.Tiny);
+                    TooltipHandler.TipRegion(new Rect(4f + i * colW, y, colW, chartH + 20f), "HH.UI.Overview.DayTip".Translate(today - (days.Count - 1 - i), UiStyle.SilverWhole(days[i])));
+                    UiStyle.LabelColored(new Rect(4f + i * colW, y + chartH + 2f, colW, 18f), UiStyle.SilverWhole(days[i]), UiStyle.Grey, TextAnchor.UpperCenter, GameFont.Tiny);
                 }
-                y += chartH + 22f;
+                y += chartH + 28f;
             }
-            else { UiStyle.LabelColored(new Rect(4f, y, w, 22f), "HH.UI.Overview.NoIncome".Translate(), UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny); y += 24f; }
+            else { UiStyle.LabelColored(new Rect(4f, y, w, 22f), "HH.UI.Overview.NoIncome".Translate(), UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny); y += 28f; }
 
             // C9: every venue with its readiness
             if (map != null && Venues.All(map).Count > 0)
             {
                 y += 4f;
                 y += UiStyle.Section(0, y, w, "HH.UI.Overview.VenuesHead".Translate());
+                float nameW = w * 0.30f, typeW = w * 0.22f, hoursW = w * 0.12f, chipW = Mathf.Clamp(w * 0.24f, 150f, 260f);
                 foreach (var v in Venues.All(map))
                 {
                     var (chip, good, tip) = VenueChip(v);
-                    UiStyle.LabelColored(new Rect(4f, y, 220f, 24f), v.Comp.DisplayName.Truncate(216f), Color.white, TextAnchor.MiddleLeft);
-                    UiStyle.LabelColored(new Rect(228f, y, 140f, 24f), v.Type?.LabelCap.ToString() ?? "", UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny);
-                    string hours = v.Comp.alwaysOpen || v.Comp.openHour == v.Comp.closeHour ? "HH.UI.Overview.AllDay".Translate().ToString() : $"{v.Comp.openHour:00}–{v.Comp.closeHour:00}";
-                    UiStyle.LabelColored(new Rect(372f, y, 80f, 24f), hours, UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny);
-                    var cr = new Rect(456f, y + 2f, 150f, 20f);
-                    Widgets.DrawBoxSolid(cr, good ? new Color(UiStyle.Good.r, UiStyle.Good.g, UiStyle.Good.b, 0.25f) : new Color(UiStyle.Bad.r, UiStyle.Bad.g, UiStyle.Bad.b, 0.25f));
-                    UiStyle.LabelColored(cr, chip, Color.white, TextAnchor.MiddleCenter, GameFont.Tiny);
-                    if (!tip.NullOrEmpty()) TooltipHandler.TipRegion(cr, tip);
-                    var rowR = new Rect(0, y, w, 24f);
+                    const float rh = 30f;
+                    var rowR = new Rect(0, y, w, rh);
                     if (Mouse.IsOver(rowR)) Widgets.DrawHighlight(rowR);
+                    string vname = v.Comp.DisplayName;
+                    UiStyle.LabelColored(new Rect(4f, y, nameW - 8f, rh), vname.Truncate(nameW - 8f), Color.white, TextAnchor.MiddleLeft);
+                    string vtype = v.Type?.LabelCap.ToString() ?? "";
+                    UiStyle.LabelColored(new Rect(nameW, y, typeW - 8f, rh), vtype.Truncate(typeW - 8f), UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny);
+                    string hours = v.Comp.alwaysOpen || v.Comp.openHour == v.Comp.closeHour ? "HH.UI.Overview.AllDay".Translate().ToString() : $"{v.Comp.openHour:00}–{v.Comp.closeHour:00}";
+                    UiStyle.LabelColored(new Rect(nameW + typeW, y, hoursW - 4f, rh), hours, UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny);
+                    var cr = new Rect(w - chipW - 4f, y + 3f, chipW, rh - 6f);
+                    Widgets.DrawBoxSolid(cr, good ? new Color(UiStyle.Good.r, UiStyle.Good.g, UiStyle.Good.b, 0.25f) : new Color(UiStyle.Bad.r, UiStyle.Bad.g, UiStyle.Bad.b, 0.25f));
+                    UiStyle.LabelColored(cr, chip.Truncate(cr.width - 6f), Color.white, TextAnchor.MiddleCenter, GameFont.Tiny);
+                    if (!tip.NullOrEmpty()) TooltipHandler.TipRegion(cr, tip);
+                    if (vname != null && HUI.TextW(vname) > nameW - 8f) TooltipHandler.TipRegion(new Rect(4f, y, nameW - 8f, rh), vname);
                     if (Widgets.ButtonInvisible(rowR)) CameraJumper.TryJumpAndSelect(v.Sign);
-                    y += 24f;
+                    y += rh;
                 }
             }
 
             // extra sections from other modules (concierge, renown graph ...)
             foreach (var s in HearthUI.OverviewSections.ToList())
             {
-                y += 8f;
+                y += 10f;
                 var sect = s;
                 var l = new Listing_Standard();
                 var lr = new Rect(0, y, w, 2000f);
@@ -309,8 +353,7 @@ namespace Hearth.Shell
                 y += l.CurHeight;
                 l.End();
             }
-            viewH = y + 20f;
-            Widgets.EndScrollView();
+            viewH = PageFrame.EndScroll(y);
         }
     }
 }

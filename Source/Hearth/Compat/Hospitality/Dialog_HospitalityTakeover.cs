@@ -23,7 +23,7 @@ namespace Hearth.Compat.Hospitality
         string failure;
         Vector2 scroll;
 
-        public override Vector2 InitialSize => new Vector2(640f, 560f);
+        public override Vector2 InitialSize => HUI.Size(760f, 600f, 640f, 500f, 0.92f, 0.92f);
 
         public Dialog_HospitalityTakeover()
         {
@@ -66,32 +66,40 @@ namespace Hearth.Compat.Hospitality
                 sb.AppendLine("HH.Compat.DialogStep3".TranslateOr("3. Save the mod list and restart the game"));
             }
             string body = sb.ToString().TrimEnd();
-            var outer = new Rect(inRect.x, y, inRect.width, inRect.yMax - y - 48f);
+            // buttons: three in a row when every label fits a third of the width, stacked otherwise
+            string yesLabel = failure == null ? "HH.Compat.Yes".TranslateOr("Yes, disable and restart") : "HH.Compat.OpenMods".TranslateOr("Open the mod list");
+            string laterLabel = "HH.Compat.Later".TranslateOr("Later"), neverLabel = "HH.Compat.Never".TranslateOr("Don't ask again");
+            float third = (inRect.width - 20f) / 3f;
+            bool stacked = Mathf.Max(HUI.TextW(yesLabel), Mathf.Max(HUI.TextW(laterLabel), HUI.TextW(neverLabel))) + 24f > third;
+            float bh2 = 40f, buttonsH = stacked ? 3f * bh2 + 2f * 6f : bh2;
+            var outer = new Rect(inRect.x, y, inRect.width, inRect.yMax - y - buttonsH - 10f);
             float bh = Text.CalcHeight(body, outer.width - 16f);
             var view = new Rect(0f, 0f, outer.width - 16f, bh);
             Widgets.BeginScrollView(outer, ref scroll, view);
             Widgets.Label(view, body);
             Widgets.EndScrollView();
 
-            float bw = (inRect.width - 20f) / 3f, by = inRect.yMax - 38f;
+            Rect Btn(int i) => stacked
+                ? new Rect(inRect.x, inRect.yMax - buttonsH + i * (bh2 + 6f), inRect.width, bh2)
+                : new Rect(inRect.x + i * (third + 10f), inRect.yMax - bh2, third, bh2);
             if (failure == null)
             {
-                if (Widgets.ButtonText(new Rect(inRect.x, by, bw, 38f), "HH.Compat.Yes".TranslateOr("Yes, disable and restart")))
+                if (Widgets.ButtonText(Btn(0), yesLabel))
                 {
                     if (HospitalityDisabler.TryDisable(offered.Select(d => d.Entry.PackageId).ToList(), out failure)) HospitalityDisabler.Restart();
                 }
             }
-            else if (Widgets.ButtonText(new Rect(inRect.x, by, bw, 38f), "HH.Compat.OpenMods".TranslateOr("Open the mod list")))
+            else if (Widgets.ButtonText(Btn(0), yesLabel))
             {
                 Close();
                 try { Find.WindowStack.Add(new Page_ModsConfig()); } catch (Exception e) { HLog.Warn("Compat", "Could not open the mod list: " + e.Message); }
             }
-            if (Widgets.ButtonText(new Rect(inRect.x + bw + 10f, by, bw, 38f), "HH.Compat.Later".TranslateOr("Later")))
+            if (Widgets.ButtonText(Btn(1), laterLabel))
             {
                 HLog.Info("Compat", "Hospitality dialog: player chose Later (takeover stays active, asked again next start)");
                 Close();
             }
-            if (Widgets.ButtonText(new Rect(inRect.x + 2 * (bw + 10f), by, bw, 38f), "HH.Compat.Never".TranslateOr("Don't ask again")))
+            if (Widgets.ButtonText(Btn(2), neverLabel))
             {
                 HospitalityDisabler.SetNeverAsk(true);
                 HLog.Info("Compat", "Hospitality dialog: player chose Don't ask again (takeover stays active)");

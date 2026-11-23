@@ -28,7 +28,8 @@ namespace Hearth.Shell
         public TutorialMode Tutorial { get => tutorial; set => tutorial = value; }
         public HostingPreset? Preset => preset;
 
-        public override Vector2 InitialSize => new Vector2(Mathf.Min(860f, UI.screenWidth - 40f), Mathf.Min(660f, UI.screenHeight - 40f));
+        public override Vector2 InitialSize => HUI.Size(1000f, 740f, 760f, 560f, 0.96f, 0.94f);
+        Vector2 scroll; float bodyH = 600f;
 
         public Dialog_FirstStartCard(bool joinedExisting)
         {
@@ -103,85 +104,130 @@ namespace Hearth.Shell
             var prof = HearthProfile.Current;
             if (prof == null) { Close(); return; }
             float y = inRect.y;
-            // header art area (placeholder until the art arrives)
-            var hr = new Rect(inRect.x, y, inRect.width, 96f);
+            // header art area (placeholder until the art arrives); height follows the text
+            string title = (JoinedExisting ? "HH.UI.Card.TitleJoined" : "HH.UI.Card.Title").Translate();
+            string sub = (JoinedExisting ? "HH.UI.Card.SubJoined" : "HH.UI.Card.Sub").Translate();
+            float th = HUI.TextH(title, inRect.width - 40f, GameFont.Medium), sh = HUI.TextH(sub, inRect.width - 40f);
+            float headH = Mathf.Max(104f, 18f + th + 6f + sh + 18f);
+            var hr = new Rect(inRect.x, y, inRect.width, headH);
             if (header == null) header = ContentFinder<Texture2D>.Get("UI/HH/UI/CardHeader", false);
             Widgets.DrawBoxSolid(hr, new Color(0.17f, 0.12f, 0.09f));
             if (header != null) GUI.DrawTexture(hr, header, ScaleMode.ScaleAndCrop);
             Widgets.DrawBoxSolid(new Rect(hr.x, hr.yMax - 3f, hr.width, 3f), UiStyle.Amber);
             Text.Font = GameFont.Medium;
             GUI.color = new Color(1f, 0.95f, 0.85f);
-            Widgets.Label(new Rect(hr.x + 16f, hr.y + 14f, hr.width - 32f, 36f), (JoinedExisting ? "HH.UI.Card.TitleJoined" : "HH.UI.Card.Title").Translate());
+            Widgets.Label(new Rect(hr.x + 20f, hr.y + 16f, hr.width - 40f, th), title);
             Text.Font = GameFont.Small;
-            Widgets.Label(new Rect(hr.x + 16f, hr.y + 52f, hr.width - 32f, 36f), (JoinedExisting ? "HH.UI.Card.SubJoined" : "HH.UI.Card.Sub").Translate());
+            Widgets.Label(new Rect(hr.x + 20f, hr.y + 16f + th + 6f, hr.width - 40f, sh), sub);
             GUI.color = Color.white;
-            y = hr.yMax + 14f;
+            y = hr.yMax + 12f;
 
-            // presets
-            float pw = (inRect.width - 3f * 10f) / 4f;
+            // sticky footer: use-for-all + Start
+            float footH = 46f;
+            var br = new Rect(inRect.x, inRect.yMax - footH, inRect.width, footH);
+            Widgets.DrawBoxSolid(new Rect(br.x, br.y, br.width, 1f), UiStyle.Line);
+            string useAll = "HH.UI.Card.UseForAll".Translate();
+            float startW = Mathf.Clamp(HUI.TextW("HH.UI.Card.Start".Translate()) + 60f, 190f, 280f);
+            var useR = new Rect(br.x, br.y + 8f, br.width - startW - 16f, Mathf.Max(28f, HUI.TextH(useAll, br.width - startW - 60f)));
+            Widgets.CheckboxLabeled(useR, useAll, ref useForAll, false, null, null, true);
+            TooltipHandler.TipRegion(useR, "HH.UI.Card.UseForAllTip".Translate());
+            var start = new Rect(br.xMax - startW, br.y + 6f, startW, 36f);
+            Widgets.DrawBoxSolid(start, UiStyle.AmberSoft);
+            if (Widgets.ButtonText(start, "HH.UI.Card.Start".Translate())) Close();
+
+            // scrolling body between header and footer
+            var outer = new Rect(inRect.x, y, inRect.width, br.y - y - 6f);
+            float w = PageFrame.BeginScroll(outer, ref scroll, bodyH);
+            float used = DrawBody(w, prof);
+            bodyH = PageFrame.EndScroll(used);
+        }
+
+        float DrawBody(float w, HearthProfile prof)
+        {
+            float y = 0f;
+            // presets: four cards in a row when wide, two by two otherwise; every card is as tall as the tallest text
             var ps = (HostingPreset[])Enum.GetValues(typeof(HostingPreset));
-            for (int i = 0; i < 4; i++)
+            int perRow = w >= 760f ? 4 : 2;
+            float gap = 12f, pw = (w - gap * (perRow - 1)) / perRow;
+            float cardH = 96f;
+            foreach (var p in ps)
+                cardH = Mathf.Max(cardH, 12f + HUI.TextH(("HH.UI.Preset." + p).Translate(), pw - 24f) + 4f + HUI.TextH(("HH.UI.Preset." + p + ".Desc").Translate(), pw - 24f, GameFont.Tiny) + 12f);
+            for (int i = 0; i < ps.Length; i++)
             {
-                var r = new Rect(inRect.x + i * (pw + 10f), y, pw, 86f);
+                var r = new Rect((i % perRow) * (pw + gap), y + (i / perRow) * (cardH + gap), pw, cardH);
                 bool sel = preset == ps[i];
                 Widgets.DrawBoxSolid(r, sel ? UiStyle.AmberSoft : new Color(1f, 1f, 1f, 0.04f));
                 GUI.color = sel ? UiStyle.Amber : UiStyle.Line; Widgets.DrawBox(r, sel ? 2 : 1); GUI.color = Color.white;
                 if (Mouse.IsOver(r) && !sel) Widgets.DrawHighlight(r);
-                UiStyle.LabelColored(new Rect(r.x + 10f, r.y + 6f, r.width - 20f, 24f), ("HH.UI.Preset." + ps[i]).Translate(), sel ? UiStyle.Amber : Color.white, TextAnchor.UpperLeft);
-                UiStyle.LabelColored(new Rect(r.x + 10f, r.y + 30f, r.width - 20f, r.height - 34f), ("HH.UI.Preset." + ps[i] + ".Desc").Translate(), UiStyle.Grey, TextAnchor.UpperLeft, GameFont.Tiny);
+                string pl = ("HH.UI.Preset." + ps[i]).Translate();
+                float plh = HUI.TextH(pl, r.width - 24f);
+                UiStyle.LabelColored(new Rect(r.x + 12f, r.y + 10f, r.width - 24f, plh), pl, sel ? UiStyle.Amber : Color.white, TextAnchor.UpperLeft);
+                UiStyle.LabelColored(new Rect(r.x + 12f, r.y + 14f + plh, r.width - 24f, r.height - plh - 20f), ("HH.UI.Preset." + ps[i] + ".Desc").Translate(), UiStyle.Grey, TextAnchor.UpperLeft, GameFont.Tiny);
                 if (Widgets.ButtonInvisible(r)) ApplyPreset(ps[i]);
             }
-            y += 98f;
+            y += ((ps.Length + perRow - 1) / perRow) * (cardH + gap) + 4f;
 
             // modules
-            y += UiStyle.Section(inRect.x, y, inRect.width, "HH.UI.Card.Modules".Translate());
+            y += UiStyle.Section(0f, y, w, "HH.UI.Card.Modules".Translate());
             var mods = Modules.All.Where(m => m != ModuleId.Core && m != ModuleId.Underworld && m != ModuleId.AiFlavour && Modules.Available(m)).ToList();
-            float mw = inRect.width / 3f;
+            int mcols = w >= 700f ? 3 : 2;
+            float mw = w / mcols;
             for (int i = 0; i < mods.Count; i++)
             {
                 var m = mods[i];
-                var r = new Rect(inRect.x + (i % 3) * mw, y + (i / 3) * 28f, mw - 8f, 26f);
+                var r = new Rect((i % mcols) * mw, y + (i / mcols) * 32f, mw - 10f, 30f);
                 bool on = prof.ModuleOn(m), nb = on;
                 Widgets.CheckboxLabeled(r, Modules.Label(m), ref nb, false, null, null, true);
                 TooltipHandler.TipRegion(r, ("HH.UI.ModuleDesc." + m).Translate().ToString() + (m == ModuleId.Bank ? "\n\n" + "HH.UI.Modules.BankHint".Translate().ToString() : ""));
                 if (nb != on) { prof.SetModule(m, nb); preset = null; }
             }
-            y += ((mods.Count + 2) / 3) * 28f + 4f;
+            y += ((mods.Count + mcols - 1) / mcols) * 32f + 6f;
             if (Modules.Available(ModuleId.Underworld))
             {
-                UiStyle.LabelColored(new Rect(inRect.x, y, 140f, 28f), Modules.Label(ModuleId.Underworld), Color.white, TextAnchor.MiddleLeft);
+                string uwl = Modules.Label(ModuleId.Underworld);
+                float lw = Mathf.Clamp(HUI.TextW(uwl) + 16f, 140f, 260f);
+                UiStyle.LabelColored(new Rect(0f, y, lw, 32f), uwl, Color.white, TextAnchor.MiddleLeft);
                 bool on = prof.ModuleOn(ModuleId.Underworld); int state = !on ? 2 : (prof.UnderworldDiscovered ? 1 : 0);
                 string[] names = { "HH.UI.Underworld.Discover", "HH.UI.Underworld.On", "HH.UI.Underworld.Off" };
+                float cw = Mathf.Min(150f, (w - lw - 8f) / 3f - 4f);
                 for (int i = 0; i < 3; i++)
-                    if (UiStyle.Chip(new Rect(inRect.x + 150f + i * 124f, y, 120f, 28f), names[i].Translate(), state == i, (names[i] + ".Tip").Translate()))
+                    if (UiStyle.Chip(new Rect(lw + i * (cw + 4f), y, cw, 32f), names[i].Translate(), state == i, (names[i] + ".Tip").Translate()))
                     { prof.SetModule(ModuleId.Underworld, i != 2); prof.UnderworldDiscovered = i == 1; preset = null; }
-                y += 36f;
+                y += 40f;
             }
-            UiStyle.LabelColored(new Rect(inRect.x, y, inRect.width, 20f), "HH.UI.Modules.BankHint".Translate(), UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny);
-            y += 26f;
+            string bankHint = "HH.UI.Modules.BankHint".Translate();
+            float bh = HUI.TextH(bankHint, w, GameFont.Tiny);
+            UiStyle.LabelColored(new Rect(0f, y, w, bh), bankHint, UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny);
+            y += bh + 10f;
 
             // difficulty + tutorial
-            y += UiStyle.Section(inRect.x, y, inRect.width, "HH.UI.Card.Difficulty".Translate());
-            UiStyle.LabelColored(new Rect(inRect.x, y, 420f, 28f), "HH.UI.Card.DifficultyLine".Translate(HearthProfile.TierName(prof.Tier).ToUpperInvariant(), HearthProfile.PercentFromTier(prof.Tier).ToString("0")), UiStyle.Amber, TextAnchor.MiddleLeft);
-            if (Widgets.ButtonText(new Rect(inRect.x + 430f, y, 160f, 28f), "HH.UI.Card.Change".Translate()))
+            y += UiStyle.Section(0f, y, w, "HH.UI.Card.Difficulty".Translate());
+            string dl = "HH.UI.Card.DifficultyLine".Translate(HearthProfile.TierName(prof.Tier).ToUpperInvariant(), HearthProfile.PercentFromTier(prof.Tier).ToString("0"));
+            string chg = "HH.UI.Card.Change".Translate();
+            float chgW = Mathf.Clamp(HUI.TextW(chg) + 36f, 160f, 280f);
+            float dlW = w - chgW - 16f;
+            float dlH = Mathf.Max(32f, HUI.TextH(dl, dlW));
+            UiStyle.LabelColored(new Rect(0f, y, dlW, dlH), dl, UiStyle.Amber, TextAnchor.MiddleLeft);
+            if (Widgets.ButtonText(new Rect(w - chgW, y + (dlH - 32f) / 2f, chgW, 32f), chg))
                 Find.WindowStack.Add(new Dialog_HostingDifficulty(prof, () => preset = null));
-            y += 36f;
-            UiStyle.LabelColored(new Rect(inRect.x, y, 120f, 28f), "HH.UI.General.Tutorial".Translate(), Color.white, TextAnchor.MiddleLeft);
-            float tcx = inRect.x + 130f; float tcw = Mathf.Min(170f, (inRect.width - 140f) / 4f);
-            foreach (var tm in new[] { TutorialMode.Off, TutorialMode.Short, TutorialMode.FullFirstTime, TutorialMode.AlwaysFull })
+            y += dlH + 8f;
+            string tut = "HH.UI.General.Tutorial".Translate();
+            float tlw = Mathf.Clamp(HUI.TextW(tut) + 16f, 110f, 220f);
+            var modes = new[] { TutorialMode.Off, TutorialMode.Short, TutorialMode.FullFirstTime, TutorialMode.AlwaysFull };
+            // chips beside the label when they fit (190 px each), under it otherwise
+            bool beside = w - tlw >= 4 * 150f;
+            float tcw, tcx0, ty = y;
+            if (beside) { tcw = Mathf.Min(200f, (w - tlw - 12f) / 4f - 4f); tcx0 = tlw; UiStyle.LabelColored(new Rect(0f, y, tlw, 32f), tut, Color.white, TextAnchor.MiddleLeft); }
+            else { UiStyle.LabelColored(new Rect(0f, y, w, 28f), tut, Color.white, TextAnchor.MiddleLeft); ty += 30f; tcw = (w - 12f) / 2f - 2f; tcx0 = 0f; }
+            for (int i = 0; i < modes.Length; i++)
             {
-                if (UiStyle.Chip(new Rect(tcx, y, tcw, 28f), UiState.TutorialLabel(tm), tutorial == tm, ("HH.UI.Tutorial." + tm + ".Tip").Translate())) tutorial = tm;
-                tcx += tcw + 4f;
+                var tm = modes[i];
+                int perLine = beside ? 4 : 2;
+                var cr = new Rect(tcx0 + (i % perLine) * (tcw + 4f), ty + (i / perLine) * 36f, tcw, 32f);
+                if (UiStyle.Chip(cr, UiState.TutorialLabel(tm), tutorial == tm, ("HH.UI.Tutorial." + tm + ".Tip").Translate())) tutorial = tm;
             }
-            y += 40f;
-
-            // bottom row
-            var br = new Rect(inRect.x, inRect.yMax - 36f, inRect.width, 34f);
-            Widgets.CheckboxLabeled(new Rect(br.x, br.y + 4f, br.width - 200f, 26f), "HH.UI.Card.UseForAll".Translate(), ref useForAll, false, null, null, true);
-            TooltipHandler.TipRegion(new Rect(br.x, br.y + 4f, br.width - 200f, 26f), "HH.UI.Card.UseForAllTip".Translate());
-            var start = new Rect(br.xMax - 180f, br.y, 180f, 34f);
-            Widgets.DrawBoxSolid(start, UiStyle.AmberSoft);
-            if (Widgets.ButtonText(start, "HH.UI.Card.Start".Translate())) Close();
+            y = ty + (beside ? 1 : 2) * 36f + 8f;
+            return y;
         }
     }
 

@@ -158,7 +158,9 @@ namespace Hearth.Shell
     public static class GuidePanel
     {
         public const int WindowId = 76136313;
-        const float W = 230f, Margin = 8f, Inner = 7f;
+        const float Margin = 8f, Inner = 9f;
+        /// <summary>Width of the card: about a sixth of the screen (F35), between 260 and 400 px.</summary>
+        public static float W => Mathf.Clamp(HUI.ScreenW * 0.17f, 260f, 400f);
         static bool panelCollapsed;
         static readonly HashSet<string> toggled = new HashSet<string>();
         static bool doneOpen;
@@ -236,11 +238,11 @@ namespace Hearth.Shell
             }
             Text.Font = GameFont.Small;
             float y = r.y;
-            var head = new Rect(r.x, y, r.width - 24f, 24f);
-            Widgets.Label(head, "HH.UI.Guide.Title".Translate());
-            if (Widgets.ButtonImage(new Rect(head.xMax, y, 24f, 24f), panelCollapsed ? TexButton.Plus : TexButton.Minus)) panelCollapsed = !panelCollapsed;
+            var head = new Rect(r.x, y, r.width - 28f, 28f);
+            Text.Anchor = TextAnchor.MiddleLeft; Widgets.Label(head, "HH.UI.Guide.Title".Translate()); Text.Anchor = TextAnchor.UpperLeft;
+            if (Widgets.ButtonImage(new Rect(head.xMax + 2f, y + 2f, 24f, 24f), panelCollapsed ? TexButton.Plus : TexButton.Minus)) panelCollapsed = !panelCollapsed;
             TooltipHandler.TipRegion(head, "HH.UI.Guide.TitleTip".Translate());
-            y += 26f;
+            y += 30f;
             if (!panelCollapsed)
             {
                 GUI.color = new Color(1f, 1f, 1f, 0.35f); Widgets.DrawLineHorizontal(r.x, y, r.width); GUI.color = Color.white; y += 4f;
@@ -275,19 +277,20 @@ namespace Hearth.Shell
         static float DrawTopic(GuideState.TopicView v, float w, float y, bool inDone)
         {
             bool expanded = IsExpanded(v) && !inDone || (inDone && toggled.Contains(v.Def.defName));
-            var tr = new Rect(0, y, w, 24f);
-            if (Mouse.IsOver(tr)) Widgets.DrawHighlight(tr);
             string title = v.Def.LabelCap + "  " + v.DoneCount + "/" + v.Steps.Count;
+            float titleH = Mathf.Max(26f, UiStyle.CachedHeight((expanded ? "- " : "+ ") + title, w - 8f, GameFont.Small) + 4f);
+            var tr = new Rect(0, y, w, titleH);
+            if (Mouse.IsOver(tr)) Widgets.DrawHighlight(tr);
             GUI.color = v.Done ? UiStyle.Good : UiStyle.Amber;
             var tw = new Rect(tr.x + 2f, tr.y, tr.width - 4f, tr.height);
             Text.Anchor = TextAnchor.MiddleLeft; Widgets.Label(tw, (expanded ? "- " : "+ ") + title); Text.Anchor = TextAnchor.UpperLeft; GUI.color = Color.white;
             if (!v.Def.description.NullOrEmpty()) TooltipHandler.TipRegion(tr, v.Def.description);
             if (Widgets.ButtonInvisible(tr)) { if (!toggled.Add(v.Def.defName)) toggled.Remove(v.Def.defName); }
-            y += 26f;
+            y += titleH + 2f;
             if (!expanded) return y;
             foreach (var (step, done) in v.Steps)
             {
-                float h = Mathf.Max(22f, UiStyle.CachedHeight(step.label, w - 34f, GameFont.Small));
+                float h = Mathf.Max(24f, UiStyle.CachedHeight(step.label, w - 34f, GameFont.Small) + 2f);
                 var sr = new Rect(6f, y, w - 6f, h);
                 if (Mouse.IsOver(sr)) Widgets.DrawHighlight(sr);
                 // check box: manual steps are clickable, others reflect game state

@@ -78,12 +78,14 @@ namespace Hearth.Underworld
     /// <summary>The "Underworld" page of the Hearth &amp; Harbor main tab (visible once the dark side is open).</summary>
     public static class UnderworldPage
     {
-        static Vector2 scroll;
+        static Vector2 scroll; static float viewH = 400f;
         public static void Draw(Rect r)
         {
             var c = Underworld.Comp; if (c == null) return;
-            var l = new Listing_Standard(); l.Begin(r);
-            Text.Font = GameFont.Medium; l.Label(UwPay.T("Page.Title")); Text.Font = GameFont.Small;
+            var body = Hearth.Shell.PageFrame.Header(r, UwPay.T("Page.Title"), "HH.UI.Page.Sub.underworld".TranslateOr("Whispers, arrival weights and the takings of the dark side."));
+            float vw = Hearth.Shell.PageFrame.BeginScroll(body, ref scroll, viewH);
+            var l = new Listing_Standard(); l.Begin(new Rect(0f, 0f, vw, 3000f));
+            l.Gap(2f);
             l.Label(UwPay.T("Page.Whispers", Underworld.Whispers.ToString("0.0")));
             l.Label(UwPay.T("Page.Weights", Underworld.RespectableArrivalFactor.ToString("0.00"), Underworld.OutlawArrivalFactor.ToString("0.00")));
             l.Label(UwPay.T("Page.Content", Underworld.Intensity.ToString(), Underworld.Effective.ToString()));
@@ -92,7 +94,9 @@ namespace Hearth.Underworld
             l.Label(UwPay.T("Page.Stats2", c.DealsBought, c.DealsSold, new Money(c.FenceProfitMicro).ToStringShort()));
             l.Label(UwPay.T("Page.Stats3", c.LoungeSessions, c.GangVisits, c.Smuggles, c.Hunts, c.OrgansSold));
             if (Underworld.HighRollersActive) l.Label(UwPay.T("Page.HighRollers"));
+            float used = l.CurHeight;
             l.End();
+            viewH = Hearth.Shell.PageFrame.EndScroll(used);
         }
     }
 }

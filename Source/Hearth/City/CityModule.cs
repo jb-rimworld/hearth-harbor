@@ -148,17 +148,17 @@ namespace Hearth.City
             return CityScan.Galleries(map).Count > 0;
         }
 
-        static Vector2 scroll;
+        static Vector2 scroll; static float viewH = 640f;
 
         public static void Draw(Rect rect)
         {
             var map = Find.CurrentMap; var data = CityGameComponent.Instance;
             if (map == null || data == null) return;
-            var view = new Rect(0, 0, rect.width - 20f, 640f);
-            Widgets.BeginScrollView(rect, ref scroll, view);
+            var body = Hearth.Shell.PageFrame.Header(rect, "HH.City.TabTitle".TranslateOr("City life"), "HH.UI.Page.Sub.city".TranslateOr("Cinema, salon, gallery, park, taxi and security: what is built and what it earns."));
+            float vw = Hearth.Shell.PageFrame.BeginScroll(body, ref scroll, viewH);
+            var view = new Rect(0, 0, vw, 4000f);
             var l = new Listing_Standard(); l.Begin(view);
-            Text.Font = GameFont.Medium; l.Label("HH.City.TabTitle".TranslateOr("City life")); Text.Font = GameFont.Small;
-            l.Gap(4f);
+            l.Gap(2f);
             l.Label("HH.City.TabResearch".TranslateOr("Research: level 1 (cinema, salon, gallery): {0}; level 2 (taxi, security): {1}")
                 .Replace("{0}", CityAccess.Level1 ? "open" : "closed").Replace("{1}", CityAccess.Level2 ? "open" : "closed"));
             l.GapLine();
@@ -178,8 +178,9 @@ namespace Hearth.City
             l.Label($"Security: {running} bodyguard(s) on duty, {data.Revenue("security").ToStringShort()} silver earned");
             l.GapLine();
             l.Label($"Total takings of City Life: {data.TotalRevenue.ToStringShort()} silver");
+            float used = l.CurHeight;
             l.End();
-            Widgets.EndScrollView();
+            viewH = Hearth.Shell.PageFrame.EndScroll(used);
         }
     }
 }

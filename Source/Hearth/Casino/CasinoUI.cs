@@ -392,18 +392,21 @@ namespace Hearth.Casino
         public static void Draw(Rect rect)
         {
             var c = CasinoComponent.Get(); if (c == null) return;
-            Rect hint = new Rect(rect.x, rect.yMax - 22f, rect.width, 20f);
-            var view = new Rect(0, 0, rect.width - 18f, viewHeight);
-            Widgets.BeginScrollView(new Rect(rect.x, rect.y, rect.width, rect.height - 24f), ref scroll, view);
+            Rect hint = new Rect(rect.x, rect.yMax - 26f, rect.width, 24f);
+            var inner = new Rect(rect.x, rect.y, rect.width, rect.height - 28f);
+            var body = Hearth.Shell.PageFrame.Header(inner, "HH.Casino.TabTitle".Translate(), "HH.UI.Page.Sub.casino".TranslateOr("Houses, takings and how each game is doing against its odds."));
+            float vw = Hearth.Shell.PageFrame.BeginScroll(body, ref scroll, viewHeight);
+            var view = new Rect(0, 0, vw, viewHeight);
             float y = 0f;
-            Text.Font = GameFont.Medium; Widgets.Label(new Rect(0, y, view.width, 32f), "HH.Casino.TabTitle".Translate()); Text.Font = GameFont.Small; y += 36f;
 
             PlayerHouse.ThrumboCard.Draw(ref y, view.width);
 
             bool limits = CS.B(CS.LimitsOn);
-            Widgets.CheckboxLabeled(new Rect(0, y, 360f, 24f), "HH.Casino.LimitsToggle".Translate(CS.F(CS.MinBet).ToString("0.##"), CS.F(CS.MaxBet).ToString("0.##")), ref limits);
+            string limitsLabel = "HH.Casino.LimitsToggle".Translate(CS.F(CS.MinBet).ToString("0.##"), CS.F(CS.MaxBet).ToString("0.##"));
+            float limitsH = Mathf.Max(26f, HUI.TextH(limitsLabel, Mathf.Min(view.width, 620f) - 30f));
+            Widgets.CheckboxLabeled(new Rect(0, y, Mathf.Min(view.width, 620f), limitsH), limitsLabel, ref limits);
             if (limits != CS.B(CS.LimitsOn)) HSettings.Set(CS.LimitsOn, limits ? 1f : 0f);
-            y += 30f;
+            y += limitsH + 8f;
 
             // balance badge: any game that pays out more than it takes in is a gift to the guests
             var losing = new List<string>();
@@ -413,15 +416,19 @@ namespace Hearth.Casino
             if (CS.PokerRakeRate <= 0) losing.Add("HH.Casino.Game.Poker".Translate());
             if (losing.Count > 0)
             {
+                string warn = "HH.Casino.LosingWarning".Translate(string.Join(", ", losing));
+                float warnH = HUI.TextH(warn, view.width);
                 GUI.color = new Color(1f, 0.6f, 0.35f);
-                Widgets.Label(new Rect(0, y, view.width, 24f), "HH.Casino.LosingWarning".Translate(string.Join(", ", losing)));
-                GUI.color = Color.white; y += 28f;
+                Widgets.Label(new Rect(0, y, view.width, warnH), warn);
+                GUI.color = Color.white; y += warnH + 6f;
             }
             else
             {
+                string okTxt = "HH.Casino.BalancedBadge".Translate();
+                float okH = HUI.TextH(okTxt, view.width);
                 GUI.color = new Color(0.6f, 0.85f, 0.6f);
-                Widgets.Label(new Rect(0, y, view.width, 24f), "HH.Casino.BalancedBadge".Translate());
-                GUI.color = Color.white; y += 28f;
+                Widgets.Label(new Rect(0, y, view.width, okH), okTxt);
+                GUI.color = Color.white; y += okH + 6f;
             }
 
             int today = Find.TickManager.TicksGame / 60000;
@@ -433,21 +440,24 @@ namespace Hearth.Casino
             {
                 double win = c.RowsOn(today, h.Account).Sum(r => r.HouseWin);
                 Money cash = CasinoBank.Cash(h.Account);
-                var row = new Rect(0, y, view.width, 24f);
-                Widgets.Label(new Rect(0, y, 260f, 24f), h.Label ?? h.Account);
+                var row = new Rect(0, y, view.width, 28f);
+                var hc = HUI.Cols(row, 8f, 0.38f, 0.30f, 0.32f);
+                if (Mouse.IsOver(row)) Widgets.DrawHighlight(row);
+                Text.Anchor = TextAnchor.MiddleLeft;
+                Widgets.Label(hc[0], (h.Label ?? h.Account).Truncate(hc[0].width));
                 GUI.color = cash.IsNegative ? new Color(1f, 0.5f, 0.4f) : Color.white;
-                Widgets.Label(new Rect(260f, y, 200f, 24f), "HH.Casino.Drawer".Translate(cash.ToStringShort()));
+                Widgets.Label(hc[1], "HH.Casino.Drawer".Translate(cash.ToStringShort()));
                 GUI.color = win >= 0 ? new Color(0.6f, 0.9f, 0.6f) : new Color(1f, 0.55f, 0.45f);
-                Widgets.Label(new Rect(470f, y, 220f, 24f), "HH.Casino.TodayNet".Translate((win >= 0 ? "+" : "") + win.ToString("0.##")));
-                GUI.color = Color.white;
+                Widgets.Label(hc[2], "HH.Casino.TodayNet".Translate((win >= 0 ? "+" : "") + win.ToString("0.##")));
+                GUI.color = Color.white; Text.Anchor = TextAnchor.UpperLeft;
                 if (Mouse.IsOver(row)) TooltipHandler.TipRegion(row, "HH.Casino.HouseTip".Translate(c.OutstandingAt(h.Account).ToStringShort(), HSettings.GetSilver(CS.HouseFloat).ToStringShort()));
-                y += 26f;
+                y += 30f;
             }
             y += 6f;
 
             // RTP per game
             Section(ref y, view.width, "HH.Casino.Games".Translate());
-            DrawGameHeader(ref y);
+            DrawGameHeader(ref y, view.width);
             foreach (CasinoGame g in Enum.GetValues(typeof(CasinoGame)))
             {
                 var rows = c.Rows.Where(r => r.Game == (int)g).ToList();
@@ -455,7 +465,7 @@ namespace Hearth.Casino
                 double exp = rows.Sum(r => r.Expected), varr = rows.Sum(r => r.Variance), win = (staked - paid) / (double)Money.PerSilver;
                 double? z = n >= 30 && varr > 0 ? (win - exp) / Math.Sqrt(varr) : (double?)null;
                 double actualRtp = staked > 0 ? paid / (double)staked : 0, expectedRtp = staked > 0 ? 1 - exp / (staked / (double)Money.PerSilver) : ExpectedRtp(g);
-                DrawGameRow(ref y, g.ToString(), n, staked, paid, actualRtp, expectedRtp, z, win);
+                DrawGameRow(ref y, view.width, g.ToString(), n, staked, paid, actualRtp, expectedRtp, z, win);
             }
             y += 8f;
 
@@ -466,15 +476,16 @@ namespace Hearth.Casino
             foreach (var r in gamblers)
             {
                 var add = Gambling.AddictionOf(r.Pawn);
-                Widgets.Label(new Rect(0, y, 200f, 24f), r.Pawn.LabelShortCap);
-                string txt = Gambling.CounterText(r.Pawn) ?? "";
+                float nameW = Mathf.Clamp(view.width * 0.22f, 160f, 260f);
+                string txt = (Gambling.CounterText(r.Pawn) ?? "") + (add != null ? "  · " + add.LabelInBrackets : "");
+                float gh = Mathf.Max(26f, HUI.TextH(txt, view.width - nameW));
+                Widgets.Label(new Rect(0, y, nameW, gh), r.Pawn.LabelShortCap);
                 if (add != null) GUI.color = new Color(1f, 0.6f, 0.45f);
-                Widgets.Label(new Rect(200f, y, view.width - 200f, 24f), txt + (add != null ? "  · " + add.LabelInBrackets : ""));
+                Widgets.Label(new Rect(nameW, y, view.width - nameW, gh), txt);
                 GUI.color = Color.white;
-                y += 24f;
+                y += gh + 2f;
             }
-            viewHeight = y + 10f;
-            Widgets.EndScrollView();
+            viewHeight = Hearth.Shell.PageFrame.EndScroll(y);
             CasinoUI.DrawHelpHint(hint);
         }
 
@@ -491,29 +502,35 @@ namespace Hearth.Casino
 
         static void Section(ref float y, float w, string title)
         {
-            Widgets.Label(new Rect(0, y, w, 24f), "<b>" + title + "</b>"); y += 22f; Widgets.DrawLineHorizontal(0, y, w); y += 4f;
+            y += 4f; Widgets.Label(new Rect(0, y, w, 26f), "<b>" + title + "</b>"); y += 26f; Widgets.DrawLineHorizontal(0, y, w); y += 6f;
         }
 
-        static readonly float[] cols = { 0, 130, 205, 285, 385, 495, 600 };
-        static void DrawGameHeader(ref float y)
+        // table columns as fractions of the page width (game, rounds, staked, RTP, expected, luck, house)
+        static readonly float[] colFrac = { 0.20f, 0.11f, 0.15f, 0.12f, 0.14f, 0.14f, 0.14f };
+        static float[] ColX(float w) { var x = new float[colFrac.Length + 1]; float a = 0; for (int i = 0; i < colFrac.Length; i++) { x[i] = a; a += w * colFrac[i]; } x[colFrac.Length] = w; return x; }
+        static void DrawGameHeader(ref float y, float w)
         {
             GUI.color = new Color(0.75f, 0.75f, 0.75f);
             string[] h = { "HH.Casino.ColGame", "HH.Casino.ColRounds", "HH.Casino.ColStaked", "HH.Casino.ColRtp", "HH.Casino.ColExpected", "HH.Casino.ColLuck", "HH.Casino.ColHouse" };
-            for (int i = 0; i < h.Length; i++) Widgets.Label(new Rect(cols[i], y, (i + 1 < cols.Length ? cols[i + 1] - cols[i] : 110f) - 4f, 22f), h[i].Translate());
-            GUI.color = Color.white; y += 22f;
+            var cx = ColX(w);
+            float rowH = 26f;
+            for (int i = 0; i < h.Length; i++) rowH = Mathf.Max(rowH, HUI.TextH(h[i].Translate(), cx[i + 1] - cx[i] - 6f));
+            for (int i = 0; i < h.Length; i++) Widgets.Label(new Rect(cx[i], y, cx[i + 1] - cx[i] - 4f, rowH), h[i].Translate());
+            GUI.color = Color.white; y += rowH + 2f;
         }
-        static void DrawGameRow(ref float y, string game, int rounds, long staked, long paid, double rtp, double expected, double? z, double houseWin)
+        static void DrawGameRow(ref float y, float w, string game, int rounds, long staked, long paid, double rtp, double expected, double? z, double houseWin)
         {
-            Widgets.Label(new Rect(cols[0], y, 126f, 22f), ("HH.Casino.Game." + game).Translate());
-            Widgets.Label(new Rect(cols[1], y, 80f, 22f), rounds.ToString("N0"));
-            Widgets.Label(new Rect(cols[2], y, 90f, 22f), (staked / (double)Money.PerSilver).ToString("N0"));
-            Widgets.Label(new Rect(cols[3], y, 90f, 22f), staked > 0 ? (rtp * 100).ToString("0.0") + " %" : "–");
-            Widgets.Label(new Rect(cols[4], y, 90f, 22f), (expected * 100).ToString("0.0") + " %");
-            Widgets.Label(new Rect(cols[5], y, 110f, 22f), z == null ? "–" : z.Value.ToString("+0.0;-0.0") + " σ");
+            var cx = ColX(w); const float rh = 26f;
+            Widgets.Label(new Rect(cx[0], y, cx[1] - cx[0] - 4f, rh), ("HH.Casino.Game." + game).Translate());
+            Widgets.Label(new Rect(cx[1], y, cx[2] - cx[1] - 4f, rh), rounds.ToString("N0"));
+            Widgets.Label(new Rect(cx[2], y, cx[3] - cx[2] - 4f, rh), (staked / (double)Money.PerSilver).ToString("N0"));
+            Widgets.Label(new Rect(cx[3], y, cx[4] - cx[3] - 4f, rh), staked > 0 ? (rtp * 100).ToString("0.0") + " %" : "–");
+            Widgets.Label(new Rect(cx[4], y, cx[5] - cx[4] - 4f, rh), (expected * 100).ToString("0.0") + " %");
+            Widgets.Label(new Rect(cx[5], y, cx[6] - cx[5] - 4f, rh), z == null ? "–" : z.Value.ToString("+0.0;-0.0") + " σ");
             GUI.color = houseWin >= 0 ? new Color(0.6f, 0.9f, 0.6f) : new Color(1f, 0.55f, 0.45f);
-            Widgets.Label(new Rect(cols[6], y, 90f, 22f), (houseWin >= 0 ? "+" : "") + houseWin.ToString("0.#"));
+            Widgets.Label(new Rect(cx[6], y, cx[7] - cx[6] - 4f, rh), (houseWin >= 0 ? "+" : "") + houseWin.ToString("0.#"));
             GUI.color = Color.white;
-            y += 22f;
+            y += rh;
         }
     }
 }
