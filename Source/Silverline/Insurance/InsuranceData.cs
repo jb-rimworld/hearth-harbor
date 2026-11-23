@@ -51,6 +51,46 @@ namespace Silverline
         /// <summary>Paid sickbed days of the Rim Health Plan (hospital-indemnity cap): parallel lists of the colonist's thingIDNumber and the game day.</summary>
         public List<int> bedLogPawn = new List<int>(), bedLogDay = new List<int>();
 
+        // ---- changing the cover after the purchase (1.1.0, F24): additive fields, old saves load with the defaults ----
+        /// <summary>A change that takes effect at <see cref="pendingEffectiveTick"/> (the next billing; harder levels: the next quadrum change). -1 = none.</summary>
+        public double pendingSum = -1;
+        public int pendingTier = -1, pendingEffectiveTick = -1;
+        public List<string> pendingRiders;
+        /// <summary>After an increase the claims engine still uses these values for events before <see cref="upgradeWaitUntilTick"/> (anti-exploit: no better cover 1 minute before a raid).</summary>
+        public double prevSum = -1;
+        public int prevTier = -1, upgradeWaitUntilTick = -1, changedTick = -1;
+        public List<string> prevRiders;
+        public int changeCount, changeStamp = -1, changesThisQuadrum;
+
+        // ---- pension rule (1.1.0, F26) ----
+        /// <summary>Outstanding strikes (decay by one per quadrum); the 2nd forfeits the running period, the 3rd ends the entitlement.</summary>
+        public int pensionStrikes, pensionSuspendedUntil = -1, pensionCheckDay = -1, pensionWorkHours = -1;
+        public int pensionLastStrikeDay = -1, pensionLegalQuadrum = -1, pensionWarnQuadrum = -1;
+        public bool pensionRevoked, pensionNoticed;
+
+        public bool HasPendingChange => pendingEffectiveTick >= 0 && !ended;
+
+        /// <summary>
+        /// Events from before a change (and, after an increase, from inside its waiting period) are assessed with the previous cover.
+        /// Usage: <c>using (c.ClaimView(eventTick)) { ... c.sum / c.tier / c.riders ... }</c>. Single-threaded: swaps the three fields and puts them back.
+        /// </summary>
+        public IDisposable ClaimView(int eventTick)
+        {
+            if (prevSum < 0 || prevTier < 0 || eventTick >= Math.Max(upgradeWaitUntilTick, changedTick)) return null;
+            return new ClaimViewScope(this);
+        }
+
+        sealed class ClaimViewScope : IDisposable
+        {
+            readonly PolicyContract c; double sum; CoverTier tier; List<string> riders;
+            public ClaimViewScope(PolicyContract c)
+            {
+                this.c = c; sum = c.sum; tier = c.tier; riders = c.riders;
+                c.sum = c.prevSum; c.tier = (CoverTier)c.prevTier; c.riders = c.prevRiders ?? new List<string>();
+            }
+            public void Dispose() { c.sum = sum; c.tier = tier; c.riders = riders; }
+        }
+
         /// <summary>Counts one more paid sickbed day for this colonist. False (nothing counted) when the colonist already had <paramref name="cap"/> paid days inside the last <paramref name="window"/> days.</summary>
         public bool TryCountBedDay(int pawnId, int day, int cap, int window)
         {
@@ -112,6 +152,13 @@ namespace Silverline
             ScribeMoney.LookExact(ref travelHeadDays, "travelDays"); ScribeMoney.LookExact(ref accrued, "accrued");
             Scribe_Values.Look(ref accruedSince, "accruedSince", -1); Scribe_Values.Look(ref kulanzYear, "kulanzYear", -1);
             Scribe_Collections.Look(ref bedLogPawn, "bedLogPawn", LookMode.Value); Scribe_Collections.Look(ref bedLogDay, "bedLogDay", LookMode.Value);
+            ScribeMoney.LookExact(ref pendingSum, "pendSum", -1); Scribe_Values.Look(ref pendingTier, "pendTier", -1); Scribe_Values.Look(ref pendingEffectiveTick, "pendEff", -1);
+            Scribe_Collections.Look(ref pendingRiders, "pendRiders", LookMode.Value);
+            ScribeMoney.LookExact(ref prevSum, "prevSum", -1); Scribe_Values.Look(ref prevTier, "prevTier", -1); Scribe_Values.Look(ref upgradeWaitUntilTick, "upgWait", -1); Scribe_Values.Look(ref changedTick, "changedTick", -1);
+            Scribe_Collections.Look(ref prevRiders, "prevRiders", LookMode.Value);
+            Scribe_Values.Look(ref changeCount, "changeCount"); Scribe_Values.Look(ref changeStamp, "changeStamp", -1); Scribe_Values.Look(ref changesThisQuadrum, "changesQ");
+            Scribe_Values.Look(ref pensionStrikes, "penStrikes"); Scribe_Values.Look(ref pensionSuspendedUntil, "penSusp", -1); Scribe_Values.Look(ref pensionCheckDay, "penDay", -1);
+            Scribe_Values.Look(ref pensionWorkHours, "penHours", -1); Scribe_Values.Look(ref pensionLastStrikeDay, "penStrikeDay", -1); Scribe_Values.Look(ref pensionLegalQuadrum, "penLegalQ", -1); Scribe_Values.Look(ref pensionWarnQuadrum, "penWarnQ", -1); Scribe_Values.Look(ref pensionRevoked, "penRevoked"); Scribe_Values.Look(ref pensionNoticed, "penNoticed");
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 bedLogPawn = bedLogPawn ?? new List<int>(); bedLogDay = bedLogDay ?? new List<int>();
@@ -173,6 +220,12 @@ namespace Silverline
         public string fineReason;
         public List<string> hints = new List<string>();      // clause hints: Waiting, Illness, Weather, Siege, Door, Self, Bionic …
         public int eventTick;
+        // ---- claim form (1.1.0, F27) ----
+        public int opportunityId = -1;
+        public List<string> formAnswers = new List<string>();   // "key=option"
+        public string formText, aiReply;
+        /// <summary>The decision letter waits for the AI reply (at most a few seconds); a save in between must not lose it.</summary>
+        public bool decisionLetterPending;
 
         public bool Hint(string h) => hints != null && hints.Contains(h);
         public void AddHint(string h) { if (hints == null) hints = new List<string>(); if (!hints.Contains(h)) hints.Add(h); }
@@ -206,9 +259,76 @@ namespace Silverline
             Scribe_Values.Look(ref fineReason, "fine");
             Scribe_Collections.Look(ref hints, "hints", LookMode.Value);
             Scribe_Values.Look(ref eventTick, "eventTick");
+            Scribe_Values.Look(ref opportunityId, "oppId", -1); Scribe_Collections.Look(ref formAnswers, "formAnswers", LookMode.Value);
+            Scribe_Values.Look(ref formText, "formText"); Scribe_Values.Look(ref aiReply, "aiReply"); Scribe_Values.Look(ref decisionLetterPending, "letterPending");
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
+                formAnswers = formAnswers ?? new List<string>();
                 hints = hints ?? new List<string>(); items = items ?? new List<string>(); lost = lost ?? new List<LostPart>(); breakdown = breakdown ?? new List<string>(); materials = materials ?? new List<string>();
+            }
+        }
+    }
+
+    public enum OppState { Open = 0, Filed = 1, Expired = 2 }
+    public enum OppKind { Property = 0, Flat = 1, Death = 2, Limb = 3, TravelLimb = 4 }
+
+    /// <summary>
+    /// An insured event for which the colony may still file a claim (1.1.0, F27, claim mode "By form"). Everything the claims engine needs to file
+    /// exactly the claim it would have filed automatically is copied into primitives at event time (a destroyed building or a dead pawn are gone later).
+    /// </summary>
+    public sealed class ClaimOpportunity : IExposable
+    {
+        public int id, contractId;
+        public ClaimTrigger trigger;
+        public OppKind kind;
+        public OppState state;
+        public int eventTick, lastItemTick, deadlineTick, mapId = -1, claimId = -1;
+        public bool letterSent, remindSent, travel, illness;
+        public Pawn pawn; public string pawnName;
+        public List<string> itemLabels = new List<string>();
+        public List<double> itemValues = new List<double>();
+        public List<string> itemCosts = new List<string>();      // per item "Steel:20;Plasteel:5"
+        public List<string> hints = new List<string>();
+        public List<int> partIndices = new List<int>();          // limb losses: BodyPartRecord.Index
+        public string subject;                                   // flat claims
+
+        public bool Open => state == OppState.Open;
+        public double TotalValue { get { double v = 0; foreach (var x in itemValues) v += x; return v; } }
+        public PolicyContract Contract => InsuranceComponent.Instance?.Get(contractId);
+        public SL_PolicyDef Def => Contract?.Def;
+
+        public string Summary
+        {
+            get
+            {
+                if (kind == OppKind.Death) return Ins.T("Claim.Death", pawnName ?? "?");
+                if (kind == OppKind.Limb || kind == OppKind.TravelLimb) return Ins.T("Claim.Limb", pawnName ?? "?");
+                if (kind == OppKind.Flat) return subject ?? "";
+                if (itemLabels.Count == 1) return itemLabels[0];
+                return Ins.T("Claim.Several", itemLabels.Count);
+            }
+        }
+
+        public void ExposeData()
+        {
+            Scribe_Values.Look(ref id, "id"); Scribe_Values.Look(ref contractId, "contract"); Scribe_Values.Look(ref trigger, "trigger");
+            Scribe_Values.Look(ref kind, "kind"); Scribe_Values.Look(ref state, "state");
+            Scribe_Values.Look(ref eventTick, "event"); Scribe_Values.Look(ref lastItemTick, "last"); Scribe_Values.Look(ref deadlineTick, "deadline");
+            Scribe_Values.Look(ref mapId, "map", -1); Scribe_Values.Look(ref claimId, "claim", -1);
+            Scribe_Values.Look(ref letterSent, "letter"); Scribe_Values.Look(ref remindSent, "remind"); Scribe_Values.Look(ref travel, "travel"); Scribe_Values.Look(ref illness, "illness");
+            Scribe_References.Look(ref pawn, "pawn"); Scribe_Values.Look(ref pawnName, "pawnName");
+            Scribe_Collections.Look(ref itemLabels, "labels", LookMode.Value);
+            Scribe_Collections.Look(ref itemValues, "values", LookMode.Value);
+            Scribe_Collections.Look(ref itemCosts, "costs", LookMode.Value);
+            Scribe_Collections.Look(ref hints, "hints", LookMode.Value);
+            Scribe_Collections.Look(ref partIndices, "parts", LookMode.Value);
+            Scribe_Values.Look(ref subject, "subject");
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                itemLabels = itemLabels ?? new List<string>(); itemValues = itemValues ?? new List<double>(); itemCosts = itemCosts ?? new List<string>();
+                hints = hints ?? new List<string>(); partIndices = partIndices ?? new List<int>();
+                while (itemValues.Count < itemLabels.Count) itemValues.Add(0);
+                while (itemCosts.Count < itemLabels.Count) itemCosts.Add("");
             }
         }
     }

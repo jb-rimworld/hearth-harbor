@@ -17,7 +17,8 @@ namespace Silverline
     /// </summary>
     public static class InsuranceUI
     {
-        enum Page { Shop, Mine, Claims, FinePrint }
+        enum Page { Shop, Mine, Claims, FinePrint, Cover }
+        static readonly Page[] TabOrder = { Page.Shop, Page.Mine, Page.Cover, Page.Claims, Page.FinePrint };
 
         sealed class CardState
         {
@@ -29,7 +30,7 @@ namespace Silverline
         }
 
         static Page page = Page.Shop;
-        static Vector2 scrollShop, scrollMine, scrollClaims, scrollFine;
+        static Vector2 scrollShop, scrollMine, scrollClaims, scrollFine, scrollCover;
         static readonly Dictionary<string, CardState> cards = new Dictionary<string, CardState>();
         static readonly HashSet<int> expandedClaims = new HashSet<int>();
         static Texture2D logo; static bool logoTried;
@@ -67,9 +68,22 @@ namespace Silverline
         /// <summary>Selects the page of the desk (0 policies, 1 my policies, 2 claims, 3 fine print) and optionally expands cards. Used by tests and screenshots.</summary>
         public static void ShowPage(int p, bool expandAll = false)
         {
-            page = (Page)Math.Max(0, Math.Min(3, p));
+            page = (Page)Math.Max(0, Math.Min(4, p));
             if (expandAll) foreach (var d in InsurancePricing.AllPolicies) Card(d).fine = true;
-            scrollShop = scrollMine = scrollClaims = scrollFine = Vector2.zero;
+            scrollShop = scrollMine = scrollClaims = scrollFine = scrollCover = Vector2.zero;
+        }
+        public static void ShowClaimsPage() { page = Page.Claims; scrollClaims = Vector2.zero; }
+        /// <summary>Opens the desk at the colonists overview (status per pawn) and optionally keeps the pawn in mind.</summary>
+        public static void OpenOverview(Pawn p) { page = Page.Cover; Window_Clawback.Open(); }
+        /// <summary>Opens the desk at the shop card of a policy with the colonist preselected (the "Buy" button of the pawn tab).</summary>
+        public static void OpenShopFor(SL_PolicyDef def, Pawn holder)
+        {
+            page = Page.Shop; scrollShop = Vector2.zero;
+            var cs = Card(def); if (holder != null && def.kind == PolicyKind.Person) cs.holder = holder;
+            // bring the card to the top of the list
+            float y = 0f; foreach (var p in InsurancePricing.AllPolicies) { if (p == def) break; y += CardHeight(p, Card(p), 800f) + 8f; }
+            scrollShop.y = y + 50f;
+            Window_Clawback.Open();
         }
         public static void ScrollShop(float y) { scrollShop.y = y; }
 
@@ -94,6 +108,7 @@ namespace Silverline
                 case Page.Shop: DrawShop(body, comp); break;
                 case Page.Mine: DrawMine(body, comp); break;
                 case Page.Claims: DrawClaims(body, comp); break;
+                case Page.Cover: DrawCover(body, comp); break;
                 default: DrawFinePrint(body); break;
             }
             Text.Font = GameFont.Small; Text.Anchor = TextAnchor.UpperLeft; GUI.color = Color.white;
@@ -130,15 +145,26 @@ namespace Silverline
 
         static void DrawTabs(Rect r, InsuranceComponent comp)
         {
-            int openClaims = comp.OpenClaims.Count();
-            string[] labels = { Ins.T("Tab.Shop"), Ins.T("Tab.Mine", comp.Active.Count()), Ins.T("Tab.Claims", openClaims), Ins.T("Tab.FinePrint") };
-            float w = Math.Min(190f, r.width / 4f);
-            for (int i = 0; i < 4; i++)
+            int openClaims = comp.OpenClaims.Count() + comp.OpenOpportunities.Count();
+            var labels = new Dictionary<Page, string>
             {
-                var br = new Rect(r.x + i * (w + 4f), r.y, w, r.height);
-                bool sel = (int)page == i;
+                { Page.Shop, Ins.T("Tab.Shop") }, { Page.Mine, Ins.T("Tab.Mine", comp.Active.Count()) }, { Page.Cover, Ins.T("Tab.Cover") },
+                { Page.Claims, Ins.T("Tab.Claims", openClaims) }, { Page.FinePrint, Ins.T("Tab.FinePrint") }
+            };
+            float need = 0f; foreach (var pg in TabOrder) need += Text.CalcSize(labels[pg]).x + 30f + 4f;
+            float w = Math.Min(190f, (r.width - 4f * TabOrder.Length) / TabOrder.Length);
+            bool fit = need <= r.width;
+            float x = r.x;
+            for (int i = 0; i < TabOrder.Length; i++)
+            {
+                var pg = TabOrder[i]; string lab = labels[pg];
+                float bw = fit ? Text.CalcSize(lab).x + 30f : w;
+                var br = new Rect(x, r.y, bw, r.height);
+                bool sel = page == pg;
                 if (sel) { Widgets.DrawBoxSolid(br, Blue); }
-                if (Widgets.ButtonText(br, labels[i], !sel)) { page = (Page)i; SoundDefOf.Tick_High.PlayOneShotOnCamera(); }
+                if (Widgets.ButtonText(br, lab, !sel)) { page = pg; SoundDefOf.Tick_High.PlayOneShotOnCamera(); }
+                if (pg == Page.Claims && comp.OpenOpportunities.Any()) { GUI.color = Gold; Widgets.DrawBox(br); GUI.color = Color.white; }
+                x += bw + 4f;
             }
         }
 
@@ -183,7 +209,7 @@ namespace Silverline
         static void DrawShop(Rect r, InsuranceComponent comp)
         {
             var policies = InsurancePricing.AllPolicies.ToList();
-            float banner = 46f;
+            float banner = Math.Max(46f, InsDlg.TextH(BannerText(comp), r.width - 270f) + 14f);
             DrawBundleBanner(new Rect(r.x, r.y, r.width, banner), comp);
             var outR = new Rect(r.x, r.y + banner + 4f, r.width, r.height - banner - 4f);
             float total = 0f; foreach (var p in policies) total += CardHeight(p, Card(p), outR.width - 18f) + 8f;
@@ -200,20 +226,30 @@ namespace Silverline
             Widgets.EndScrollView();
         }
 
-        static void DrawBundleBanner(Rect r, InsuranceComponent comp)
+        static string BannerText(InsuranceComponent comp)
         {
             int n = comp.Active.Count();
-            Widgets.DrawBoxSolid(r, new Color(0.15f, 0.28f, 0.20f, 0.9f));
-            GUI.color = Good; Widgets.DrawBox(r); GUI.color = Color.white;
             string text;
-            double cur = 1 - InsuranceMath.BundleFactor(n), next = 1 - InsuranceMath.BundleFactor(n + 1);
+            double cur = 1 - InsuranceMath.BundleFactor(n);
             if (n == 0) text = Ins.T("UI.Bundle.None");
             else if (n < 3) text = Ins.T("UI.Bundle.Some", n, Ins.Pct(cur), Ins.Pct(1 - InsuranceMath.BundleFactor(3)));
             else text = Ins.T("UI.Bundle.Full", n, Ins.Pct(cur));
             if (InsSettings.Hard && n > 0) text += "  " + Ins.T("UI.Bundle.Retro");
+            return "<b>" + Ins.T("UI.Bundle.Title") + "</b>  " + text;
+        }
+
+        static void DrawBundleBanner(Rect r, InsuranceComponent comp)
+        {
+            Widgets.DrawBoxSolid(r, new Color(0.15f, 0.28f, 0.20f, 0.9f));
+            GUI.color = Good; Widgets.DrawBox(r); GUI.color = Color.white;
+            string text = BannerText(comp);
             Text.Anchor = TextAnchor.MiddleLeft;
-            Widgets.Label(new Rect(r.x + 10f, r.y, r.width - 20f, r.height), "<b>" + Ins.T("UI.Bundle.Title") + "</b>  " + text);
+            float btnW = Math.Min(230f, Text.CalcSize(Ins.T("UI.CoverAll")).x + 30f);
+            Widgets.Label(new Rect(r.x + 10f, r.y, r.width - btnW - 30f, r.height), text);
             Text.Anchor = TextAnchor.UpperLeft;
+            var allBtn = new Rect(r.xMax - btnW - 8f, r.y + (r.height - 28f) / 2f, btnW, 28f);
+            if (Widgets.ButtonText(allBtn, Ins.T("UI.CoverAll"))) Dialog_CoverEveryone.Open();
+            TooltipHandler.TipRegion(allBtn, Ins.T("UI.CoverAll.Tip"));
         }
 
         static void DrawCard(Rect r, SL_PolicyDef def, CardState cs, InsuranceComponent comp)
@@ -242,7 +278,7 @@ namespace Silverline
             InsurancePricing.SumRange(def, map, null, out _, out _);
             if (def.kind == PolicyKind.Person)
             {
-                var cands = map?.mapPawns?.FreeColonistsSpawned?.Where(p => p.RaceProps.Humanlike).ToList() ?? new List<Pawn>();
+                var cands = InsuranceStatus.AllColonists();
                 if (cs.holder == null || cs.holder.Dead || !cands.Contains(cs.holder)) cs.holder = cands.FirstOrDefault(p => !comp.Has(def, p)) ?? cands.FirstOrDefault();
                 holder = cs.holder;
             }
@@ -334,7 +370,7 @@ namespace Silverline
                 if (Widgets.ButtonText(new Rect(x, r.y, 210f, 24f), Ins.T("UI.For", holder?.LabelShortCap ?? "-") + " ▾"))
                 {
                     var opts = new List<FloatMenuOption>();
-                    foreach (var p in map?.mapPawns?.FreeColonistsSpawned ?? new List<Pawn>())
+                    foreach (var p in InsuranceStatus.AllColonists())
                     {
                         var pp = p;
                         opts.Add(new FloatMenuOption(p.LabelShortCap + (comp.Has(def, p) ? " (" + Ins.T("UI.Insured") + ")" : ""), () => cs.holder = pp));
@@ -342,6 +378,12 @@ namespace Silverline
                     if (opts.Count > 0) Find.WindowStack.Add(new FloatMenu(opts));
                 }
                 x += 220f;
+                string allLabel = Ins.T("UI.CoverAllOne");
+                float allW = Math.Min(200f, Text.CalcSize(allLabel).x + 24f);
+                var allBtn = new Rect(x, r.y, allW, 24f);
+                if (Widgets.ButtonText(allBtn, allLabel)) Dialog_CoverEveryone.Open(def.defName);
+                TooltipHandler.TipRegion(allBtn, Ins.T("UI.CoverAll.Tip"));
+                x += allW + 10f;
             }
             if (def.riskModel == RiskModel.PerColonist || def.riskModel == RiskModel.Flat) { GUI.color = Grey; Widgets.Label(new Rect(x, r.y + 2f, r.width - x, 22f), Ins.T("UI.SumCap", Ins.Silver(cs.sum))); GUI.color = Color.white; }
             if (smax > smin + 1)
@@ -433,10 +475,12 @@ namespace Silverline
         static void DrawMine(Rect r, InsuranceComponent comp)
         {
             var list = comp.contracts.OrderByDescending(c => c.Active).ThenBy(c => c.id).ToList();
-            float rowH = 112f;
-            float total = list.Count * (rowH + 6f) + 80f + (comp.debt > 0.01 ? 40f : 0f);
             if (list.Count == 0) { GUI.color = Grey; Widgets.Label(new Rect(r.x + 8f, r.y + 8f, r.width - 16f, 60f), Ins.T("UI.Mine.None")); GUI.color = Color.white; return; }
-            var view = new Rect(0, 0, r.width - 18f, total);
+            float vw = r.width - 18f;
+            float total = 80f + (comp.debt > 0.01 ? 40f : 0f);
+            var heights = new List<float>();
+            foreach (var c in list) { float h = ContractHeight(c, vw); heights.Add(h); total += h + 6f; }
+            var view = new Rect(0, 0, vw, total);
             Widgets.BeginScrollView(r, ref scrollMine, view);
             float y = 0;
             if (comp.debt > 0.01)
@@ -447,7 +491,7 @@ namespace Silverline
                 if (Widgets.ButtonText(new Rect(dr.xMax - 160f, dr.y + 4f, 152f, 26f), Ins.T("UI.Debt.Settle"))) { if (!comp.SettleDebt()) Messages.Message(Ins.T("UI.Debt.Cannot"), MessageTypeDefOf.RejectInput, false); }
                 y += 40f;
             }
-            foreach (var c in list) { DrawContract(new Rect(0, y, view.width, rowH), c, comp); y += rowH + 6f; }
+            for (int i = 0; i < list.Count; i++) { DrawContract(new Rect(0, y, view.width, heights[i]), list[i], comp); y += heights[i] + 6f; }
             y += 6f;
             GUI.color = Grey; Text.Font = GameFont.Tiny;
             Widgets.Label(new Rect(0, y, view.width, 60f), Ins.T("UI.Mine.Foot"));
@@ -455,14 +499,11 @@ namespace Silverline
             Widgets.EndScrollView();
         }
 
-        static void DrawContract(Rect r, PolicyContract c, InsuranceComponent comp)
+        sealed class ContractText { public string main, line2, pending, wait, pension; public bool pensionRisk; }
+
+        static ContractText TextOf(PolicyContract c)
         {
-            Widgets.DrawBoxSolid(r, c.Active ? BlueDark : new Color(0.12f, 0.12f, 0.12f, 0.8f));
-            GUI.color = c.Active ? Blue : Grey; Widgets.DrawBox(r); GUI.color = Color.white;
-            float x = r.x + 10f, w = r.width - 20f, y = r.y + 4f;
-            Text.Font = GameFont.Medium; Widgets.Label(new Rect(x, y, w * 0.6f, 28f), c.Label); Text.Font = GameFont.Small;
-            Text.Anchor = TextAnchor.UpperRight; Widgets.Label(new Rect(x + w * 0.5f, y + 2f, w * 0.5f, 24f), "<b>" + Ins.TierName(c.tier) + "</b>"); Text.Anchor = TextAnchor.UpperLeft;
-            y += 28f;
+            var t = new ContractText();
             var q = c.Active ? InsurancePricing.QuoteFor(c) : null;
             var sb = new List<string>();
             sb.Add(Ins.T("UI.Mine.Sum", Ins.Silver(c.sum)));
@@ -471,52 +512,149 @@ namespace Silverline
             if (c.Active && c.InWaitingPeriod(Ins.Now)) sb.Add(Ins.T("UI.Mine.Waiting", (c.waitUntilTick - Ins.Now).ToStringTicksToPeriod()));
             if (c.discountUntilTick > Ins.Now) sb.Add(Ins.T("UI.Mine.Discount", Ins.Pct(c.discountShare)));
             if (c.owedClawback > 0.01) sb.Add(Ins.T("UI.Mine.Owed", Ins.Silver(c.owedClawback)));
-            Widgets.Label(new Rect(x, y, w, 24f), string.Join("  ·  ", sb)); y += 24f;
-            GUI.color = Grey; Text.Font = GameFont.Tiny;
+            t.main = string.Join("  ·  ", sb);
             string line2 = Ins.T("UI.Mine.Paid", Ins.Silver(c.premiumPaid), Ins.Silver(c.benefitPaid));
             if (c.riders.Count > 0) line2 += "  ·  " + string.Join(", ", c.riders.Select(k => ClaimLetters.RiderLabel(c.Def, k)));
             if (!c.Active) line2 = Ins.T("UI.Mine.Ended", c.endReason ?? "") + "  ·  " + line2;
-            Widgets.Label(new Rect(x, y, w, 20f), line2); y += 18f;
-            Text.Font = GameFont.Small; GUI.color = Color.white;
-            if (c.Active)
+            t.line2 = line2;
+            if (c.Active && c.HasPendingChange)
             {
-                if (c.CancelPending)
-                {
-                    GUI.color = Bad;
-                    Widgets.Label(new Rect(x, y, w - 200f, 22f), Ins.T("UI.Mine.CancelPending", (c.cancelEffectiveTick - Ins.Now).ToStringTicksToPeriod()) + (c.formErrorHit ? "  " + Ins.T("UI.Mine.FormError") : ""));
-                    GUI.color = Color.white;
-                    if (Widgets.ButtonText(new Rect(x + w - 190f, y - 2f, 190f, 24f), Ins.T("UI.Mine.Withdraw"))) comp.WithdrawCancel(c);
-                }
-                else
-                {
-                    // upgrade nudge (Standard: one calm line; Overbooked: a button)
-                    if (c.tier != CoverTier.Premium && InsSettings.TrickActive(InsSettings.TrickUpsell) && InsurancePricing.TierUnlocked(c.Def, CoverTier.Premium, out _))
-                    { GUI.color = Gold; Widgets.Label(new Rect(x, y, w - 150f, 22f), Ins.T("UI.Mine.Upsell")); GUI.color = Color.white; }
-                    // the small, quiet link
-                    string txt = Ins.T("UI.Mine.CancelLink");
-                    Text.Font = GameFont.Tiny;
-                    var cr = new Rect(r.xMax - 10f - 90f, r.yMax - 20f, 90f, 16f);
-                    GUI.color = Mouse.IsOver(cr) ? PaleHi : new Color(0.5f, 0.52f, 0.56f);
-                    Text.Anchor = TextAnchor.MiddleRight; Widgets.Label(cr, txt);
-                    if (Mouse.IsOver(cr)) { Widgets.DrawLineHorizontal(cr.xMax - Text.CalcSize(txt).x, cr.yMax - 1f, Text.CalcSize(txt).x); }
-                    Text.Anchor = TextAnchor.UpperLeft; Text.Font = GameFont.Small; GUI.color = Color.white;
-                    if (Widgets.ButtonInvisible(cr)) Find.WindowStack.Add(new Dialog_CancelPolicy(c.id));
-                }
+                var parts = new List<string>();
+                if (c.pendingTier >= 0 && c.pendingTier != (int)c.tier) parts.Add(Ins.T("Change.Part.Tier", Ins.TierName(c.tier), Ins.TierName((CoverTier)c.pendingTier)));
+                if (c.pendingSum >= 0 && Math.Abs(c.pendingSum - c.sum) > 0.5) parts.Add(Ins.T("Change.Part.Sum", Ins.Silver(c.sum), Ins.Silver(c.pendingSum)));
+                if (c.pendingRiders != null && (c.pendingRiders.Except(c.riders).Any() || c.riders.Except(c.pendingRiders).Any())) parts.Add(Ins.T("Change.Part.Riders"));
+                t.pending = Ins.T("UI.Mine.PendingChange", (c.pendingEffectiveTick - Ins.Now).ToStringTicksToPeriod()) + (parts.Count > 0 ? ": " + string.Join("; ", parts) : "");
+            }
+            if (c.Active && c.upgradeWaitUntilTick > Ins.Now) t.wait = Ins.T("UI.Mine.UpgradeWait", (c.upgradeWaitUntilTick - Ins.Now).ToStringTicksToPeriod());
+            if (c.Active && PensionRule.IsPension(c) && c.tier != CoverTier.BareMinimum && PensionRule.Enabled && c.holder.ageTracker.AgeBiologicalYears >= 60)
+            {
+                int h = PensionRule.WorkHours(c.holder);
+                t.pensionRisk = h > InsSettings.PensionHours;
+                t.pension = c.pensionRevoked ? Ins.T("UI.Mine.PensionLost")
+                    : c.pensionSuspendedUntil > Ins.Now ? Ins.T("UI.Mine.PensionSuspended", (c.pensionSuspendedUntil - Ins.Now).ToStringTicksToPeriod())
+                    : Ins.T(t.pensionRisk ? "UI.Mine.PensionRisk" : "UI.Mine.PensionOk", h, InsSettings.PensionHours, PensionRule.AnythingHours(c.holder)) + (c.pensionStrikes > 0 && InsSettings.PensionMode == PensionRuleMode.Enforce ? "  " + Ins.T("Status.Strikes", Math.Max(0, 3 - c.pensionStrikes)) : "");
+            }
+            return t;
+        }
+
+        static float ContractHeight(PolicyContract c, float w)
+        {
+            var t = TextOf(c);
+            float tw = w - 20f;
+            float h = 4f + 28f + InsDlg.TextH(t.main, tw) + InsDlg.TextH(t.line2, tw, GameFont.Tiny) + 4f;
+            if (t.pending != null) h += Math.Max(28f, InsDlg.TextH(t.pending, tw - 200f)) + 2f;
+            if (t.wait != null) h += InsDlg.TextH(t.wait, tw, GameFont.Tiny) + 2f;
+            if (t.pension != null) h += Math.Max(26f, InsDlg.TextH(t.pension, tw - 190f)) + 2f;
+            if (c.Active) h += 32f;      // button row
+            return Math.Max(h + 8f, 84f);
+        }
+
+        static void DrawContract(Rect r, PolicyContract c, InsuranceComponent comp)
+        {
+            Widgets.DrawBoxSolid(r, c.Active ? BlueDark : new Color(0.12f, 0.12f, 0.12f, 0.8f));
+            GUI.color = c.Active ? Blue : Grey; Widgets.DrawBox(r); GUI.color = Color.white;
+            float x = r.x + 10f, w = r.width - 20f, y = r.y + 4f;
+            var t = TextOf(c);
+            Text.Font = GameFont.Medium; Widgets.Label(new Rect(x, y, w * 0.6f, 28f), c.Label); Text.Font = GameFont.Small;
+            Text.Anchor = TextAnchor.UpperRight; Widgets.Label(new Rect(x + w * 0.5f, y + 2f, w * 0.5f, 24f), "<b>" + Ins.TierName(c.tier) + "</b>"); Text.Anchor = TextAnchor.UpperLeft;
+            y += 28f;
+            float h1 = InsDlg.TextH(t.main, w);
+            Widgets.Label(new Rect(x, y, w, h1), t.main); y += h1;
+            GUI.color = Grey; Text.Font = GameFont.Tiny;
+            float h2 = InsDlg.TextH(t.line2, w, GameFont.Tiny);
+            Widgets.Label(new Rect(x, y, w, h2), t.line2); y += h2 + 4f;
+            Text.Font = GameFont.Small; GUI.color = Color.white;
+            if (!c.Active) return;
+            if (t.pending != null)
+            {
+                float ph = Math.Max(28f, InsDlg.TextH(t.pending, w - 200f));
+                GUI.color = Gold; Text.Anchor = TextAnchor.MiddleLeft; Widgets.Label(new Rect(x, y, w - 200f, ph), t.pending); Text.Anchor = TextAnchor.UpperLeft; GUI.color = Color.white;
+                if (Widgets.ButtonText(new Rect(x + w - 190f, y + (ph - 24f) / 2f, 190f, 24f), Ins.T("UI.Mine.WithdrawChange"))) comp.WithdrawChange(c);
+                y += ph + 2f;
+            }
+            if (t.wait != null) { GUI.color = Grey; Text.Font = GameFont.Tiny; float wh = InsDlg.TextH(t.wait, w, GameFont.Tiny); Widgets.Label(new Rect(x, y, w, wh), t.wait); Text.Font = GameFont.Small; GUI.color = Color.white; y += wh + 2f; }
+            if (t.pension != null)
+            {
+                float ph = Math.Max(26f, InsDlg.TextH(t.pension, w - 190f));
+                GUI.color = t.pensionRisk ? Bad : c.pensionRevoked || c.pensionSuspendedUntil > Ins.Now ? Bad : Good;
+                Text.Anchor = TextAnchor.MiddleLeft; Widgets.Label(new Rect(x, y, w - 190f, ph), t.pension); Text.Anchor = TextAnchor.UpperLeft; GUI.color = Color.white;
+                TooltipHandler.TipRegion(new Rect(x, y, w - 190f, ph), Ins.T("UI.Mine.PensionTip", InsSettings.PensionHours));
+                if (t.pensionRisk && Widgets.ButtonText(new Rect(x + w - 180f, y + (ph - 24f) / 2f, 180f, 24f), Ins.T("Pension.FixSchedule")))
+                { int n = PensionRule.FixSchedule(c.holder, InsSettings.PensionHours); Messages.Message(Ins.T("Pension.Fixed", c.holder.LabelShortCap, n), MessageTypeDefOf.PositiveEvent, false); }
+                y += ph + 2f;
+            }
+            // button row
+            if (c.CancelPending)
+            {
+                GUI.color = Bad;
+                Widgets.Label(new Rect(x, y, w - 200f, 22f), Ins.T("UI.Mine.CancelPending", (c.cancelEffectiveTick - Ins.Now).ToStringTicksToPeriod()) + (c.formErrorHit ? "  " + Ins.T("UI.Mine.FormError") : ""));
+                GUI.color = Color.white;
+                if (Widgets.ButtonText(new Rect(x + w - 190f, y - 2f, 190f, 24f), Ins.T("UI.Mine.Withdraw"))) comp.WithdrawCancel(c);
+            }
+            else
+            {
+                string why = comp.CanChange(c);
+                var changeBtn = new Rect(x, y, 170f, 26f);
+                if (Widgets.ButtonText(changeBtn, Ins.T("UI.Mine.Change"), true, true, why == null)) Dialog_ChangePolicy.Open(c);
+                if (why != null) TooltipHandler.TipRegion(changeBtn, why); else TooltipHandler.TipRegion(changeBtn, Ins.T("UI.Mine.ChangeTip"));
+                // upgrade nudge (Standard: one calm line; Overbooked: a button)
+                if (c.tier != CoverTier.Premium && InsSettings.TrickActive(InsSettings.TrickUpsell) && InsurancePricing.TierUnlocked(c.Def, CoverTier.Premium, out _))
+                { GUI.color = Gold; Widgets.Label(new Rect(x + 180f, y + 2f, w - 180f - 110f, 22f), Ins.T("UI.Mine.Upsell")); GUI.color = Color.white; }
+                // the small, quiet link (unchanged: the owner likes it hidden)
+                string txt = Ins.T("UI.Mine.CancelLink");
+                Text.Font = GameFont.Tiny;
+                var cr = new Rect(r.xMax - 10f - 90f, r.yMax - 20f, 90f, 16f);
+                GUI.color = Mouse.IsOver(cr) ? PaleHi : new Color(0.5f, 0.52f, 0.56f);
+                Text.Anchor = TextAnchor.MiddleRight; Widgets.Label(cr, txt);
+                if (Mouse.IsOver(cr)) { Widgets.DrawLineHorizontal(cr.xMax - Text.CalcSize(txt).x, cr.yMax - 1f, Text.CalcSize(txt).x); }
+                Text.Anchor = TextAnchor.UpperLeft; Text.Font = GameFont.Small; GUI.color = Color.white;
+                if (Widgets.ButtonInvisible(cr)) Find.WindowStack.Add(new Dialog_CancelPolicy(c.id));
             }
         }
 
         // ---- claims -------------------------------------------------------------------------------------------------------------------------------
+        static float SectionHeader(float y, float w, string text, int count)
+        {
+            GUI.color = Gold; Text.Font = GameFont.Medium;
+            Widgets.Label(new Rect(0, y, w, 30f), text + (count >= 0 ? "  (" + count + ")" : ""));
+            Text.Font = GameFont.Small; GUI.color = Color.white;
+            Widgets.DrawLineHorizontal(0, y + 30f, w, new Color(Blue.r, Blue.g, Blue.b, 0.6f));
+            return 36f;
+        }
+
         static void DrawClaims(Rect r, InsuranceComponent comp)
         {
-            var list = comp.claims.OrderByDescending(c => c.Open).ThenByDescending(c => c.filedTick).ToList();
+            var opps = comp.OpenOpportunities.OrderBy(o => o.deadlineTick).ToList();
+            var open = comp.claims.Where(c => c.Open).OrderByDescending(c => c.filedTick).ToList();
+            var hist = comp.claims.Where(c => !c.Open).OrderByDescending(c => c.filedTick).ToList();
+            float vw = r.width - 18f;
             float total = 16f; var heights = new Dictionary<int, float>();
-            foreach (var c in list) { float h = ClaimHeight(c, r.width - 18f); heights[c.id] = h; total += h + 6f; }
+            foreach (var c in open.Concat(hist)) { float h = ClaimHeight(c, vw); heights[c.id] = h; total += h + 6f; }
+            var oppH = new Dictionary<int, float>();
+            foreach (var o in opps) { float h = OppHeight(o, vw); oppH[o.id] = h; total += h + 6f; }
+            if (opps.Count > 0) total += 44f;
+            if (open.Count > 0) total += 44f;
+            if (hist.Count > 0) total += 44f;
             total += 30f + comp.log.Count * 16f;
-            if (list.Count == 0) { GUI.color = Grey; Widgets.Label(new Rect(r.x + 8f, r.y + 8f, r.width - 16f, 40f), Ins.T("UI.Claims.None")); GUI.color = Color.white; }
-            var view = new Rect(0, 0, r.width - 18f, Math.Max(total, 40f));
+            if (opps.Count == 0 && open.Count == 0 && hist.Count == 0) { GUI.color = Grey; Widgets.Label(new Rect(r.x + 8f, r.y + 8f, r.width - 16f, 40f), Ins.T("UI.Claims.None")); GUI.color = Color.white; }
+            var view = new Rect(0, 0, vw, Math.Max(total, 40f));
             Widgets.BeginScrollView(r, ref scrollClaims, view);
             float y = 0;
-            foreach (var c in list) { DrawClaim(new Rect(0, y, view.width, heights[c.id]), c, comp); y += heights[c.id] + 6f; }
+            if (opps.Count > 0)
+            {
+                y += SectionHeader(y, view.width, Ins.T("UI.Claims.Windows"), opps.Count);
+                foreach (var o in opps) { DrawOpportunity(new Rect(0, y, view.width, oppH[o.id]), o, comp); y += oppH[o.id] + 6f; }
+            }
+            if (open.Count > 0)
+            {
+                y += SectionHeader(y, view.width, Ins.T("UI.Claims.Open"), open.Count);
+                foreach (var c in open) { DrawClaim(new Rect(0, y, view.width, heights[c.id]), c, comp); y += heights[c.id] + 6f; }
+            }
+            if (hist.Count > 0)
+            {
+                y += SectionHeader(y, view.width, Ins.T("UI.Claims.History"), hist.Count);
+                foreach (var c in hist) { DrawClaim(new Rect(0, y, view.width, heights[c.id]), c, comp); y += heights[c.id] + 6f; }
+            }
             if (comp.log.Count > 0)
             {
                 y += 6f; GUI.color = Grey; Widgets.Label(new Rect(0, y, view.width, 24f), "<b>" + Ins.T("UI.Claims.Log") + "</b>"); y += 24f; Text.Font = GameFont.Tiny;
@@ -526,12 +664,53 @@ namespace Silverline
             Widgets.EndScrollView();
         }
 
+        const float ActionW = 150f;
+
+        static float OppHeight(ClaimOpportunity o, float w)
+        {
+            string text = OppText(o);
+            return Math.Max(64f, 12f + 24f + InsDlg.TextH(text, w - ActionW - 30f, GameFont.Tiny) + 6f);
+        }
+
+        static string OppText(ClaimOpportunity o)
+        {
+            var c = o.Contract;
+            return Ins.T("UI.Claims.WindowLine", c?.Label ?? "?", Ins.TierName(c?.tier ?? CoverTier.GoodEnough), o.TotalValue > 0 ? Ins.Silver(o.TotalValue) : "-", o.itemLabels.Count > 0 ? o.itemLabels.Count : 1);
+        }
+
+        static void DrawOpportunity(Rect r, ClaimOpportunity o, InsuranceComponent comp)
+        {
+            int left = Math.Max(0, o.deadlineTick - Ins.Now);
+            bool urgent = left < 2 * ClaimEngine.Day;
+            Widgets.DrawBoxSolid(r, BlueDark);
+            GUI.color = urgent ? Bad : Gold; Widgets.DrawBox(r); GUI.color = Color.white;
+            float x = r.x + 10f, w = r.width - 20f - ActionW;
+            Widgets.Label(new Rect(x, r.y + 4f, w, 24f), "<b>" + o.Summary + "</b>");
+            GUI.color = urgent ? Bad : Gold; Text.Anchor = TextAnchor.UpperRight;
+            Widgets.Label(new Rect(r.xMax - 10f - ActionW - 230f, r.y + 4f, 230f, 24f), Ins.T("UI.Claims.Left", Ins.Duration(left)));
+            Text.Anchor = TextAnchor.UpperLeft;
+            GUI.color = Grey; Text.Font = GameFont.Tiny;
+            Widgets.Label(new Rect(x, r.y + 28f, w, r.height - 30f), OppText(o));
+            Text.Font = GameFont.Small; GUI.color = Color.white;
+            if (Widgets.ButtonText(new Rect(r.xMax - 10f - ActionW, r.y + (r.height - 30f) / 2f, ActionW, 30f), Ins.T("Btn.FillForm"))) Dialog_ClaimForm.Open(o.id);
+        }
+
         static float ClaimHeight(Claim c, float w)
         {
             float h = 58f;
-            if (expandedClaims.Contains(c.id)) { Text.Font = GameFont.Tiny; h += Text.CalcHeight(ClaimLetters.Explain(c) + (c.Clause != null ? "\n" + c.Clause.Print(false) : ""), w - 30f) + 10f; Text.Font = GameFont.Small; }
-            if (c.state == ClaimState.Decided) h += 30f;
+            if (expandedClaims.Contains(c.id)) { Text.Font = GameFont.Tiny; h += Text.CalcHeight(ClaimLetters.Explain(c) + (c.Clause != null ? "\n" + c.Clause.Print(false) : "") + FormDetail(c), w - 30f) + 10f; Text.Font = GameFont.Small; }
+            if (c.state == ClaimState.Decided) h += 34f;
             return h;
+        }
+
+        static string FormDetail(Claim c)
+        {
+            if (c.opportunityId < 0 && c.formText.NullOrEmpty()) return "";
+            var sb = new System.Text.StringBuilder();
+            if (c.formAnswers != null && c.formAnswers.Count > 0) sb.Append("\n" + Ins.T("UI.Claim.Form", string.Join(", ", c.formAnswers)));
+            if (!c.formText.NullOrEmpty()) sb.Append("\n" + Ins.T("UI.Claim.Statement", c.formText));
+            if (!c.aiReply.NullOrEmpty()) sb.Append("\n" + Ins.T("UI.Claim.AiReply", c.aiReply));
+            return sb.ToString();
         }
 
         static void DrawClaim(Rect r, Claim c, InsuranceComponent comp)
@@ -559,25 +738,89 @@ namespace Silverline
             if (open)
             {
                 GUI.color = PaleHi; Text.Font = GameFont.Tiny;
-                string det = ClaimLetters.Explain(c) + (c.Clause != null ? "\n" + Ins.T("Letter.Clause.Cited", c.Clause.Print(false)) : "");
+                string det = ClaimLetters.Explain(c) + (c.Clause != null ? "\n" + Ins.T("Letter.Clause.Cited", c.Clause.Print(false)) : "") + FormDetail(c);
                 float dh = Text.CalcHeight(det, w - 20f);
                 Widgets.Label(new Rect(x + 6f, y, w - 12f, dh), det); y += dh + 6f;
                 Text.Font = GameFont.Small; GUI.color = Color.white;
             }
             if (c.state == ClaimState.Decided)
             {
-                float bx = x;
+                // right-aligned action column: one fixed width, buttons stacked from the right (no inline x increments)
+                float bx = r.xMax - 10f;
                 if (c.outcome != ClaimOutcome.Denied && !c.negotiationClosed)
-                { if (Widgets.ButtonText(new Rect(bx, y, 110f, 26f), Ins.T("Btn.Accept"))) comp.Accept(c.id); bx += 116f; }
+                { bx -= 116f; if (Widgets.ButtonText(new Rect(bx, y, 110f, 28f), Ins.T("Btn.Accept"))) comp.Accept(c.id); }
                 if (c.outcome != ClaimOutcome.Approved && !c.negotiationClosed && HSettings.GetBool(InsSettings.Negotiation))
-                { if (Widgets.ButtonText(new Rect(bx, y, 130f, 26f), Ins.T("Btn.Negotiate") + " (" + (3 - c.rounds) + ")")) Find.WindowStack.Add(new Dialog_Negotiate(c.id)); bx += 136f; }
+                { bx -= 156f; if (Widgets.ButtonText(new Rect(bx, y, 150f, 28f), Ins.T("Btn.Negotiate") + " (" + (3 - c.rounds) + ")")) Find.WindowStack.Add(new Dialog_Negotiate(c.id)); }
                 if (c.outcome != ClaimOutcome.Denied && c.materials.Count > 0 && c.tier != CoverTier.BareMinimum)
                 {
                     bool mat = c.materialsChosen;
-                    Widgets.CheckboxLabeled(new Rect(bx, y + 2f, 240f, 24f), Ins.T("Btn.Materials"), ref mat);
+                    float mw = Math.Max(160f, bx - x - 10f);
+                    Widgets.CheckboxLabeled(new Rect(x, y + 2f, mw, 26f), Ins.T("Btn.Materials"), ref mat);
                     c.materialsChosen = mat;
                 }
             }
+        }
+
+        // ---- colonists overview (F28) -------------------------------------------------------------------------------------------------------------
+        static void DrawCover(Rect r, InsuranceComponent comp)
+        {
+            var map = InsurerBooks.HomeMap;
+            var pawns = InsuranceStatus.AllColonists().Where(InsuranceStatus.Shown).OrderByDescending(p => p.ageTracker.AgeBiologicalYearsFloat).ToList();
+            float lead = InsDlg.TextH(Ins.T("UI.Cover.Lead"), r.width - 12f);
+            GUI.color = Grey; Widgets.Label(new Rect(r.x + 6f, r.y, r.width - 12f, lead), Ins.T("UI.Cover.Lead")); GUI.color = Color.white;
+            var top = new Rect(r.x, r.y + lead + 6f, r.width, 30f);
+            if (Widgets.ButtonText(new Rect(top.x + 6f, top.y, 240f, 28f), Ins.T("UI.CoverAll"))) Dialog_CoverEveryone.Open();
+            var body = new Rect(r.x, top.yMax + 6f, r.width, r.yMax - top.yMax - 6f);
+            // header: kinds
+            float nameW = Math.Min(220f, body.width * 0.28f);
+            float cw = (body.width - nameW - 22f) / InsuranceStatus.Kinds.Length;
+            var head = new Rect(body.x, body.y, body.width, 30f);
+            Widgets.DrawBoxSolid(head, BlueMid);
+            Text.Anchor = TextAnchor.MiddleLeft; Widgets.Label(new Rect(head.x + 8f, head.y, nameW - 8f, head.height), "<b>" + Ins.T("UI.Cover.Colonist") + "</b>");
+            Text.Anchor = TextAnchor.MiddleCenter;
+            for (int i = 0; i < InsuranceStatus.Kinds.Length; i++)
+            {
+                var cr = new Rect(head.x + nameW + i * cw, head.y, cw, head.height);
+                Text.Font = GameFont.Tiny; Widgets.Label(cr, "<b>" + InsuranceStatus.KindLabel(InsuranceStatus.Kinds[i]) + "</b>"); Text.Font = GameFont.Small;
+            }
+            Text.Anchor = TextAnchor.UpperLeft;
+            var list = new Rect(body.x, head.yMax, body.width, body.yMax - head.yMax);
+            float rowH = 40f;
+            Widgets.BeginScrollView(list, ref scrollCover, new Rect(0, 0, list.width - 18f, pawns.Count * (rowH + 2f) + 8f));
+            float y = 0f;
+            foreach (var p in pawns)
+            {
+                var row = new Rect(0, y, list.width - 18f, rowH);
+                Widgets.DrawBoxSolid(row, new Color(0f, 0f, 0f, 0.18f));
+                Widgets.Label(new Rect(row.x + 8f, row.y + 4f, nameW - 8f, 20f), p.LabelShortCap);
+                GUI.color = Grey; Text.Font = GameFont.Tiny; Widgets.Label(new Rect(row.x + 8f, row.y + 22f, nameW - 8f, 16f), p.ageTracker.AgeBiologicalYears + " y" + (InsuranceStatus.Insurable(p) ? "" : " · " + Ins.T("Status.NotInsurable"))); Text.Font = GameFont.Small; GUI.color = Color.white;
+                bool ins = InsuranceStatus.Insurable(p);
+                var items = InsuranceStatus.Of(p);
+                for (int i = 0; i < items.Count; i++)
+                {
+                    var it = items[i];
+                    var cell = new Rect(row.x + nameW + i * cw + 3f, row.y + 3f, cw - 6f, rowH - 6f);
+                    var col = InsuranceStatus.ColorOf(ins ? it.state : CoverState.None);
+                    Widgets.DrawBoxSolid(cell, new Color(col.r * 0.25f, col.g * 0.25f, col.b * 0.25f, 0.9f));
+                    GUI.color = col; Widgets.DrawBox(cell); GUI.color = Color.white;
+                    var tex = InsuranceStatus.Icon(it.kind);
+                    if (tex != null) { GUI.color = col; GUI.DrawTexture(new Rect(cell.x + 4f, cell.y + (cell.height - 22f) / 2f, 22f, 22f), tex); GUI.color = Color.white; }
+                    Text.Font = GameFont.Tiny; Text.Anchor = TextAnchor.MiddleLeft; GUI.color = col;
+                    string t = !ins ? "–" : it.Has ? InsuranceStatus.StateLabel(it.state) + (it.colonyWide ? " *" : "") : Ins.T("Status.No");
+                    if (!it.Has && ins && it.def != null && it.def.kind == PolicyKind.Person)
+                    {
+                        var buy = new Rect(cell.x + 30f, cell.y + 2f, cell.width - 34f, cell.height - 4f);
+                        Text.Anchor = TextAnchor.UpperLeft; GUI.color = Color.white;
+                        if (Widgets.ButtonText(buy, Ins.T("Status.Buy"), true, true, true)) OpenShopFor(it.def, p);
+                    }
+                    else Widgets.Label(new Rect(cell.x + 30f, cell.y, cell.width - 32f, cell.height), t);
+                    Text.Anchor = TextAnchor.UpperLeft; Text.Font = GameFont.Small; GUI.color = Color.white;
+                    TooltipHandler.TipRegion(cell, InsuranceStatus.Tooltip(p, it));
+                }
+                y += rowH + 2f;
+            }
+            Widgets.EndScrollView();
+            if (pawns.Count == 0) { GUI.color = Grey; Widgets.Label(new Rect(list.x + 8f, list.y + 8f, list.width - 16f, 30f), Ins.T("UI.Cover.None")); GUI.color = Color.white; }
         }
 
         // ---- fine print + schedule of limbs ------------------------------------------------------------------------------------------------------
@@ -628,7 +871,7 @@ namespace Silverline
     public sealed class Window_Clawback : Window
     {
         static Window_Clawback current;
-        public override Vector2 InitialSize => new Vector2(Math.Min(UI.screenWidth - 40f, 1000f), Math.Min(UI.screenHeight - 60f, 760f));
+        public override Vector2 InitialSize => HUI.Size(1180f, 800f, 900f, 600f, 0.94f, 0.94f);
 
         public Window_Clawback()
         {

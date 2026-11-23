@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Sounds of Clawback Mutual (1.1.0). The files are generated separately; see docs/v110/sfx_insurance.json. -->
+  <SoundDef>
+    <defName>SL_PolicyChanged</defName>
+    <context>Any</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>true</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>HH/Insurance/PolicyChanged</clipPath></li></grains>
+        <volumeRange>55~60</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>SL_BulkSign</defName>
+    <context>Any</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>true</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>HH/Insurance/BulkSign</clipPath></li></grains>
+        <volumeRange>55~60</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>SL_ClaimPossibleLetter</defName>
+    <context>Any</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>true</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>HH/Insurance/ClaimPossibleLetter</clipPath></li></grains>
+        <volumeRange>55~60</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>SL_ClaimStamp</defName>
+    <context>Any</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>true</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>HH/Insurance/ClaimStamp</clipPath></li></grains>
+        <volumeRange>55~60</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>SL_ClaimReminder</defName>
+    <context>Any</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>true</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>HH/Insurance/ClaimReminder</clipPath></li></grains>
+        <volumeRange>55~60</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>SL_PensionGong</defName>
+    <context>Any</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>true</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>HH/Insurance/PensionGong</clipPath></li></grains>
+        <volumeRange>55~60</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

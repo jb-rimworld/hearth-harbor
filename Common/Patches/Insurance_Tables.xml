@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- The insurance column joins the Assign table (and any other table that reuses it). Never fails the load when the table looks different. -->
+  <Operation Class="PatchOperationConditional" success="Always">
+    <xpath>/Defs/PawnTableDef[defName="Assign"]/columns</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/PawnTableDef[defName="Assign"]/columns</xpath>
+      <value><li>SL_Insurance</li></value>
+    </match>
+  </Operation>
+</Patch>

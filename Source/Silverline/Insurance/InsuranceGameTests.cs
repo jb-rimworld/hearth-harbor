@@ -42,9 +42,11 @@ namespace Silverline
                     if (th.Faction != Faction.OfPlayer) th.Destroy(); } } catch (Exception e) { HLog.Warn("InsTest", "could not clear hostile attack targets: " + e.Message); }
             if (InsuranceComponent.ThreatNow(Map)) HLog.Warn("InsTest", "threat still on after reset: targets " + string.Join(", ", Map.attackTargetsCache.TargetsHostileToColony.Select(x => (x?.Thing?.def.defName ?? "?") + "/" + x?.Thing?.Faction?.Name + "/downed " + ((x?.Thing as Pawn)?.Downed) + "/spawned " + x?.Thing?.Spawned)) + "; hostile " + GenHostility.AnyHostileActiveThreatToPlayer(Map) + ", large fire " + Map.fireWatcher.LargeFireDangerPresent + ", fires " + Map.listerThings.ThingsOfDef(ThingDefOf.Fire).Count);
             BankGameComp.Current?.TestReset(false);   // no account unless a test opens one: premiums then come from the till
-            var c = Comp; c.contracts.Clear(); c.claims.Clear(); c.debt = 0; c.firstPolicyTick = -1; c.lastFiledLetterDay = -1; c.lastUpsellTick = -9999999; c.lastDeathTick = -9999999; c.log.Clear();
+            var c = Comp; c.contracts.Clear(); c.claims.Clear(); c.opportunities.Clear(); c.nextOppId = 1; InsuranceStatus.Reset(); c.debt = 0; c.firstPolicyTick = -1; c.lastFiledLetterDay = -1; c.lastUpsellTick = -9999999; c.lastDeathTick = -9999999; c.log.Clear();
             Set(InsSettings.RequireResearch, 0); Set(InsSettings.ClaimsAttitude, 0f); Set(InsSettings.WaitingDays, 5); Set(InsSettings.AssessmentDays, 0); Set(InsSettings.BillingDays, 5);
             Set(InsSettings.TrickUpsell, (float)TrickMode.Off);
+            Set(InsSettings.ClaimModeKey, (float)ClaimMode.Automatic);      // the existing suites expect claims at the moment of damage; the form mode has its own suite
+            Set(InsSettings.ChangeFee, 0); Set(InsSettings.ChangeLimit, 0); Set(InsSettings.ChangeWaitingDays, 3);
             var l = Ledger.Current; string tillAcc = Payments.ColonyTill(Map);
             var have = l.Balance(tillAcc); if (have.IsPositive) l.Post(tillAcc, "world", have, "test reset");
             if (till > 0) l.Post("world", tillAcc, Money.FromSilver(till), "test funding");

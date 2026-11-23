@@ -22,4 +22,15 @@
     <flashColor>(0.90, 0.62, 0.40)</flashColor>
     <flashInterval>0</flashInterval>
   </LetterDef>
+  <!-- "A claim is possible" (1.1.0): the insured event, the filing deadline and the form. Its own kind of letter. -->
+  <LetterDef>
+    <defName>SL_ClaimPossible</defName>
+    <letterClass>Silverline.ClaimPossibleLetter</letterClass>
+    <color>(0.96, 0.78, 0.25)</color>
+    <flashColor>(0.96, 0.78, 0.25)</flashColor>
+    <bounce>false</bounce>
+    <flashInterval>240</flashInterval>
+    <arriveSound>SL_ClaimPossibleLetter</arriveSound>
+    <icon>UI/HH/Insurance/ClaimPossible</icon>
+  </LetterDef>
 </Defs>

@@ -6,6 +6,7 @@
 
   <Silverline.SL_PolicyDef>
     <defName>SL_ActsOfStoryteller</defName>
+    <claimDeadlineDays>15</claimDeadlineDays>
     <label>Acts of Storyteller Excluded</label>
     <description>Pays for buildings destroyed by raiders, mechanoids and the occasional misunderstanding with a siege engine. Not valid for fires, weather or you.</description>
     <slogan>We've got you covered.*</slogan>
@@ -28,6 +29,7 @@
 
   <Silverline.SL_PolicyDef>
     <defName>SL_MuffaloMachine</defName>
+    <claimDeadlineDays>10</claimDeadlineDays>
     <label>Muffalo &amp; Machine Cover</label>
     <description>For things that move or fly: shuttles, drop pods and vehicles that are destroyed by an enemy.</description>
     <slogan>Wheels, rotors and a very thorough form.</slogan>
@@ -48,6 +50,7 @@
 
   <Silverline.SL_PolicyDef>
     <defName>SL_RoofOverHead</defName>
+    <claimDeadlineDays>15</claimDeadlineDays>
     <label>Roof Over Your Head</label>
     <description>Fire, explosions and lightning. The fire has to be somebody else's, though.</description>
     <slogan>Warm walls, cold comfort, quarterly premiums.</slogan>
@@ -70,6 +73,7 @@
 
   <Silverline.SL_PolicyDef>
     <defName>SL_ItWasntMe</defName>
+    <claimDeadlineDays>10</claimDeadlineDays>
     <label>It Wasn't Me Liability</label>
     <description>For damage to guests, traders and their goods, caused in your care and definitely not by you.</description>
     <slogan>Somebody has to pay. Preferably us, for a fee.</slogan>
@@ -91,6 +95,7 @@
 
   <Silverline.SL_PolicyDef>
     <defName>SL_LegalShield</defName>
+    <claimDeadlineDays>5</claimDeadlineDays>
     <label>Legal Shield</label>
     <description>Kanzlei Brix &amp; Partners pay your fines and argue with the people who issued them. Also helps against Clawback Mutual, as long as nobody reads clause 40.</description>
     <slogan>Brix &amp; Partners: ethics on retainer.</slogan>
@@ -112,6 +117,7 @@
 
   <Silverline.SL_PolicyDef>
     <defName>SL_RimHealth</defName>
+    <claimDeadlineDays>15</claimDeadlineDays>
     <label>Rim Health Plan</label>
     <description>A flat sum for every colonist who spends a day in a sickbed.</description>
     <slogan>Get well soon. Or at least get well quarterly.</slogan>
@@ -133,6 +139,7 @@
 
   <Silverline.SL_PolicyDef>
     <defName>SL_GoldenYears</defName>
+    <claimDeadlineDays>15</claimDeadlineDays>
     <label>Golden Years Plan</label>
     <description>A pension for colonists who made it to sixty. The premium is cheap while they are young, which is the point.</description>
     <slogan>Retire early. Then late. Then quarterly.</slogan>
@@ -152,6 +159,7 @@
 
   <Silverline.SL_PolicyDef>
     <defName>SL_BlightBeGone</defName>
+    <claimDeadlineDays>8</claimDeadlineDays>
     <label>Blight Be Gone</label>
     <description>Cold snaps and toxic fallout eat crops. This eats the loss.</description>
     <slogan>Harvest what we pay for.</slogan>
@@ -172,6 +180,7 @@
 
   <Silverline.SL_PolicyDef>
     <defName>SL_ClosedForRepairs</defName>
+    <claimDeadlineDays>10</claimDeadlineDays>
     <label>Closed for Repairs</label>
     <description>When your business has to close, the income does not.</description>
     <slogan>Out of order is not out of premium.</slogan>
@@ -189,6 +198,7 @@
 
   <Silverline.SL_PolicyDef MayRequire="Ludeon.RimWorld.Anomaly">
     <defName>SL_UnspeakableEvents</defName>
+    <claimDeadlineDays>15</claimDeadlineDays>
     <label>Unspeakable Events Rider</label>
     <description>For damage the policy wording cannot describe without a lawyer in the room.</description>
     <slogan>Some things are better insured than named.</slogan>
@@ -206,6 +216,7 @@
 
   <Silverline.SL_PolicyDef>
     <defName>SL_Wanderlust</defName>
+    <claimDeadlineDays>5</claimDeadlineDays>
     <label>Wanderlust Travel Cover</label>
     <description>For caravans: an insurance that is there when you are not. Billed by the head and the travel day, only while people are on the road.</description>
     <slogan>Wish you were here. We'll cover the part where you are not.</slogan>
@@ -225,6 +236,7 @@
 
   <Silverline.SL_PolicyDef>
     <defName>SL_LimbByLimb</defName>
+    <claimDeadlineDays>30</claimDeadlineDays>
     <label>Limb by Limb Accident Plan</label>
     <description>Every limb has a price. We wrote it down. It is on the last page, in the Schedule of Limbs.</description>
     <slogan>Every limb has a price. We wrote it down.</slogan>
