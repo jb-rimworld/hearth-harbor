@@ -41,6 +41,9 @@ def draw(path: Path, label: str, size=128, seed=0):
 for tp, gc in sorted(need.items()):
     if tp.startswith(("Things/Building/", "Things/Item/", "UI/Commands/", "UI/Icons/", "Things/Pawn/", "Things/Mote")) and not tp.startswith(("Things/HH", "UI/HH")):
         continue  # vanilla textures
+    # a prefix built by string concatenation in C# ("UI/HH/Bank/" + name) is a folder, not a texture: nothing to make
+    if tp.endswith("/") or not tp.split("/")[-1].strip():
+        continue
     name = tp.split("/")[-1]; seed = sum(map(ord, tp))
     if gc == "Graphic_Multi":
         files = [TEX / f"{tp}_{d}.png" for d in ("north", "east", "south")]

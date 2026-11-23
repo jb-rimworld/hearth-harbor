@@ -294,13 +294,14 @@ namespace Hearth.Ai.Tests
             {
                 k.Fake.Responder = c => c.IsGet ? null : new AiHttpResult { Status = 200, Body = AiKit.Ok("ok") };
                 bool second = false;
+                AiService.ExpectCallbackFailure = true;   // the throw is the point of the check: logged as a warning, not as a red error
                 AiService.Send(AiFn.Concierge, Concierge(), r => throw new InvalidOperationException("test: callback fails on purpose"));
                 AiService.Send(AiFn.Concierge, Concierge(), r => second = true);
-                int errors = HLog.ErrorCount;
+                int errors = HLog.ErrorCount, warns = HLog.WarnCount;
                 k.Pump(3);
+                AiService.ExpectCallbackFailure = false;
                 t.Check(second, "a throwing callback does not stop the next one");
-                t.Check(HLog.ErrorCount == errors + 1, "the failure of the callback was logged once");
-                HLog.ErrorCount--;   // that error was the point of the check: the run must not fail because of it
+                t.Check(HLog.WarnCount > warns && HLog.ErrorCount == errors, "the failure of the callback was logged (as a warning in this test)");
                 Guard.Resume(ModuleId.AiFlavour);
             }
             using (var k = new AiKit())
