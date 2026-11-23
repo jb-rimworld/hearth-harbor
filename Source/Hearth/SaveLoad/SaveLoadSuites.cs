@@ -196,17 +196,28 @@ namespace Hearth.SaveLoad
 
             // a movie night of the colony (a player-faction lord with our LordJob) that is running at save time
             HSettings.Set(CitySettings.CinemaShowTicks, 20000);
-            var org = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(p => !p.Downed && !p.InMentalState);
-            var spot = org != null ? t.FreeCellNearCenter(25) : IntVec3.Invalid;
-            if (org != null && spot.IsValid && (spot + IntVec3.North * 3).InBounds(map))
+            // The screen stands on its own free patch away from the hotel: placed next to a wall it joined the hotel grid (a conduit under every
+            // wall), and a grid short of power (coolers and heaters at night, solar off) switches consumers off at random, which calls the
+            // screening off at once (CompProjectorScreen not powered → ShouldBeCalledOff). On a random map the old spot "free cell nearest the
+            // centre" could also lie inside the hotel or in a pocket nobody can reach.
+            var org = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(p => !p.Downed && !p.InMentalState && !p.Drafted && p.GetLord() == null);
+            // a hostile that showed up since the insurance step (High danger calls every gathering off): the saved movie night starts calm
+            foreach (var hp in map.mapPawns.AllPawnsSpawned.Where(x => !x.IsColonist && x.HostileTo(Faction.OfPlayer) && !x.Dead).ToList()) { t.Note("removed hostile before the movie night: " + hp.LabelShort); hp.Destroy(); }
+            Thing screen = null; IntVec3 spot = IntVec3.Invalid;
+            if (org != null && TestCells.TryFindFreeRect(map, 5, 7, out var patch))
             {
-                var screen = Hearth.City.Tests.CityTestKit.Spawn(map, "HH_ProjectorScreen", spot + IntVec3.North * 3, Rot4.South);
+                spot = new IntVec3(patch.CenterCell.x, 0, patch.minZ + 1);
+                screen = Hearth.City.Tests.CityTestKit.Spawn(map, "HH_ProjectorScreen", new IntVec3(patch.CenterCell.x, 0, patch.maxZ - 1), Rot4.South);
                 Hearth.City.Tests.CityTestKit.Power(screen);
                 var gdef = DefDatabase<GatheringDef>.GetNamed("HH_Screening");
                 LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_Joinable_Screening(spot, org, gdef, screen), map, new[] { org });
                 yield return 60;
             }
-            t.Check(map.lordManager.lords.Any(x => x.LordJob is LordJob_Joinable_Screening), "movie night running: " + map.lordManager.lords.Count(x => x.LordJob is LordJob_Joinable_Screening));
+            else t.Note("movie night: " + (org == null ? "no free colonist" : "no free 5x7 patch"));
+            int screenings = map.lordManager.lords.Count(x => x.LordJob is LordJob_Joinable_Screening);
+            var pt = screen?.TryGetComp<CompPowerTrader>();
+            t.Check(screenings > 0, "movie night running: " + screenings + (screenings > 0 ? "" : $" (screen at {screen?.Position} spawned {screen?.Spawned}, power on {pt?.PowerOn}, grid {(pt?.PowerNet == null ? "none" : "joined")}, "
+                + $"organizer {org?.LabelShort} drafted {org?.Drafted} downed {org?.Downed} mental {org?.InMentalState}, danger {map.dangerWatcher.DangerRating})"));
 
             // 1.1.0 content: the colony runs with Hetty Hearthwell and its scenario carries our parts. Both are written removal-safe (Phoebe +
             // "hhStoryteller", vanilla part list + "hhParts"): the roundtrip must bring them back, the raw load without the mod must stay clean.

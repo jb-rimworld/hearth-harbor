@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueNames_DrugLounge.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;Лаунж «[adjm] [roomm]»</li>
+    <li>r_name(p=3)-&gt;Лаунж «[adjf] [roomf]»</li>
+    <li>r_name(p=3)-&gt;Лаунж «[adjn] [roomn]»</li>
+    <li>r_name-&gt;Лаунж «Задня кімната»</li>
+    <li>r_name-&gt;Лігво «[owner]»</li>
+    <li>r_name-&gt;Клуб «[den]»</li>
+    <li>adjm-&gt;Тихий</li>
+    <li>adjm-&gt;Прокурений</li>
+    <li>adjm-&gt;Оксамитовий</li>
+    <li>adjm-&gt;Тьмяний</li>
+    <li>adjm-&gt;Димний</li>
+    <li>adjm-&gt;Низький</li>
+    <li>adjm-&gt;Прихований</li>
+    <li>adjm-&gt;Сумнівний</li>
+    <li>adjf-&gt;Тиха</li>
+    <li>adjf-&gt;Прокурена</li>
+    <li>adjf-&gt;Оксамитова</li>
+    <li>adjf-&gt;Тьмяна</li>
+    <li>adjf-&gt;Димна</li>
+    <li>adjf-&gt;Низька</li>
+    <li>adjf-&gt;Прихована</li>
+    <li>adjf-&gt;Сумнівна</li>
+    <li>adjn-&gt;Тихе</li>
+    <li>adjn-&gt;Прокурене</li>
+    <li>adjn-&gt;Оксамитове</li>
+    <li>adjn-&gt;Тьмяне</li>
+    <li>adjn-&gt;Димне</li>
+    <li>adjn-&gt;Низьке</li>
+    <li>adjn-&gt;Приховане</li>
+    <li>adjn-&gt;Сумнівне</li>
+    <li>roomm-&gt;підвал</li>
+    <li>roomm-&gt;салон</li>
+    <li>roomm-&gt;закуток</li>
+    <li>roomf-&gt;комірка</li>
+    <li>roomf-&gt;ніша</li>
+    <li>roomf-&gt;вітальня</li>
+    <li>roomf-&gt;кімнатка</li>
+    <li>roomn-&gt;сховище</li>
+    <li>roomn-&gt;укриття</li>
+    <li>den-&gt;Лисяча нора</li>
+    <li>den-&gt;Єнотова нора</li>
+    <li>den-&gt;Котяче лігво</li>
+    <li>den-&gt;Барліг лінивця</li>
+    <li>den-&gt;Гніздо бумщура</li>
+    <li>den-&gt;Лігво ігуани</li>
+  </HH_VenueNames_DrugLounge.rulePack.rulesStrings>
+</LanguageData>

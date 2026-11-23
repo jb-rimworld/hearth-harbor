@@ -47,13 +47,84 @@ namespace Hearth.Testing
         }
         public void Note(string what) => Log("  note " + what);
         public void Log(string line) { Lines.Add(line); Verse.Log.Message("[HHTEST] " + Suite + ": " + line); }
+        /// <summary>A walkable cell at (or near) the map centre that the colonists can reach. See <see cref="TestCells.Anchor"/>.</summary>
+        public IntVec3 Center => TestCells.Anchor(Map);
+
         public IntVec3 FreeCellNearCenter(int radius = 20)
         {
-            var map = Map; var c = map.Center;
+            var map = Map; var c = TestCells.Anchor(map);
             foreach (var cell in GenRadial.RadialCellsAround(c, radius, true))
-                if (cell.InBounds(map) && cell.Standable(map) && cell.GetFirstBuilding(map) == null && !cell.Fogged(map)) return cell;
+                if (cell.InBounds(map) && cell.Standable(map) && cell.GetFirstBuilding(map) == null && !cell.Fogged(map) && TestCells.Reachable(map, c, cell)) return cell;
             return c;
         }
+    }
+
+    /// <summary>
+    /// Where suites put their things and pawns. The -quicktest map is random: its centre can lie inside a mountain, in water or in a closed pocket.
+    /// A pawn spawned there stands on a cell without a region; vanilla AI then throws (e.g. JobGiver_PrisonerEscape → district null) and every
+    /// job that should walk to it fails. Suites anchor at <see cref="Anchor"/> instead of <c>map.Center</c>.
+    /// </summary>
+    public static class TestCells
+    {
+        static int cachedMap = -1; static IntVec3 cached = IntVec3.Invalid;
+
+        /// <summary>The map centre when it is standable, revealed and reachable from the colonists; else the nearest such cell (radial search).</summary>
+        public static IntVec3 Anchor(Map map)
+        {
+            if (map == null) return IntVec3.Invalid;
+            if (cachedMap == map.uniqueID && cached.IsValid && Usable(map, cached, Root(map))) return cached;
+            var root = Root(map);
+            var found = map.Center;
+            if (!Usable(map, found, root))
+            {
+                found = IntVec3.Invalid;
+                int n = GenRadial.NumCellsInRadius(Math.Min(GenRadial.MaxRadialPatternRadius - 1f, map.Size.x / 2f));
+                for (int i = 0; i < n; i++)
+                {
+                    var c = map.Center + GenRadial.RadialPattern[i];
+                    if (Usable(map, c, root)) { found = c; break; }
+                }
+                if (!found.IsValid) found = root.IsValid ? root : map.Center;
+                Verse.Log.Message("[HHTEST] map centre " + map.Center + " is not walkable or not reachable; suites anchor at " + found);
+            }
+            cachedMap = map.uniqueID; cached = found;
+            return found;
+        }
+
+        /// <summary>
+        /// A free w×h patch near the anchor: every cell (and a ring of one around it) standable, revealed, without any building (so nothing there
+        /// joins a power grid or blocks a seat) and reachable from the anchor.
+        /// </summary>
+        public static bool TryFindFreeRect(Map map, int w, int h, out CellRect rect, int startRadius = 3, float maxRadius = 60f)
+        {
+            rect = default;
+            var center = Anchor(map);
+            foreach (var c in GenRadial.RadialCellsAround(center, maxRadius, true))
+            {
+                if (c.DistanceTo(center) < startRadius) continue;
+                var r = CellRect.CenteredOn(c, w, h);
+                if (!r.ExpandedBy(1).InBounds(map)) continue;
+                bool ok = true;
+                foreach (var cell in r.ExpandedBy(1)) { if (!cell.Standable(map) || cell.GetFirstBuilding(map) != null || cell.Fogged(map)) { ok = false; break; } }
+                if (ok && !Reachable(map, center, r.CenterCell)) ok = false;
+                if (ok) { rect = r; return true; }
+            }
+            return false;
+        }
+
+        /// <summary>Can a pawn walk from a to b (doors allowed)?</summary>
+        public static bool Reachable(Map map, IntVec3 a, IntVec3 b)
+            => a.IsValid && b.IsValid && map.reachability.CanReach(a, b, PathEndMode.OnCell, TraverseMode.PassDoors, Danger.Deadly);
+
+        /// <summary>Where the colony stands: the first free colonist (they start on walkable ground), else invalid.</summary>
+        static IntVec3 Root(Map map)
+        {
+            foreach (var p in map.mapPawns.FreeColonistsSpawned) if (p.Position.IsValid && p.Position.Standable(map)) return p.Position;
+            return IntVec3.Invalid;
+        }
+
+        static bool Usable(Map map, IntVec3 c, IntVec3 root)
+            => c.InBounds(map) && c.Standable(map) && !c.Fogged(map) && c.GetDistrict(map) != null && (!root.IsValid || Reachable(map, root, c));
     }
 
     public sealed class HearthTestRunner : GameComponent
@@ -231,7 +302,7 @@ namespace Hearth.Testing
             {
                 var req = new PawnGenerationRequest(PawnKindDefOf.Colonist, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: true, mustBeCapableOfViolence: true);
                 var np = PawnGenerator.GeneratePawn(req);
-                GenSpawn.Spawn(np, CellFinder.RandomClosewalkCellNear(map.Center, map, 6), map);
+                GenSpawn.Spawn(np, CellFinder.RandomClosewalkCellNear(TestCells.Anchor(map), map, 6), map);
                 if (np.needs?.joy != null) np.needs.joy.CurLevel = 1f;
                 if (ok(np)) list.Add(np); else np.Destroy();
             }

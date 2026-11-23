@@ -77,8 +77,27 @@ def write_xml(path, pairs):
     path.write_text('<?xml version="1.0" encoding="utf-8"?>\n<LanguageData>\n' + body + ("\n" if body else "") + "</LanguageData>\n", encoding="utf-8")
 
 
+# def fields extract.py collects (keep in sync with extract.FIELDS); "stages.<n>.label/description" too
+FIELDS = {"label", "description", "labelShort", "pawnLabel", "gerundLabel", "verb", "jobString", "reportString", "letterLabel",
+          "letterText", "baseInspectLine", "labelNoun", "labelNounPretty", "pawnsPlural", "beginLetter", "beginLetterLabel",
+          "successfulInspectLine", "fixedName", "labelMale", "labelFemale", "inspectString", "skillLabel", "labelPlural", "slogan"}
+STAGE = re.compile(r"^stages\.\d+\.(label|description)$")
+
+
+def managed(fk, known_defs):
+    """True for a key apply() may delete when it is missing from src."""
+    if fk.startswith("k:"):
+        return True
+    dtype, rest = fk[2:].split("/", 1)
+    defname, _, field = rest.partition(".")
+    if f"{dtype}/{defname}" not in known_defs:
+        return False
+    return field in FIELDS or bool(STAGE.match(field))
+
+
 def apply():
     new = load_src(I / "src")
+    known_defs = {k[2:].split(".", 1)[0] for k in new if k.startswith("d:")}
     for code, lang in LANGS.items():
         tr = {}
         for p in sorted((I / "delta_out" / code).glob("*.json")):
@@ -99,9 +118,11 @@ def apply():
         for f, pairs in content.items():
             pre = "k:" if f.parent.name == "Keyed" else "d:" + f.parent.relative_to(base / "DefInjected").as_posix() + "/"
             for i, (k, _) in enumerate(pairs): index[pre + k] = (f, i)
-        # remove keys that no longer exist in English
+        # remove keys that no longer exist in English, but only keys extract.py manages: Keyed keys, and def fields it extracts of defs
+        # it knows. Everything else (rulesStrings of RulePackDefs, scenario parts, defs from the version folders such as 1.7/Defs/Scenarios)
+        # is never in src and was translated by hand: deleting it wiped the German venue names and the scenario texts in 1.1.0.
         for fk, (f, i) in list(index.items()):
-            if fk not in new:
+            if fk not in new and managed(fk, known_defs):
                 content[f][i] = None
         # update / add
         for fk, t in tr.items():

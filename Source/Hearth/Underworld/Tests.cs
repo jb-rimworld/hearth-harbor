@@ -43,14 +43,15 @@ namespace Hearth.Underworld
         public static bool TryFindRect(Map map, int w, int h, out CellRect rect, int startRadius = 4)
         {
             rect = default;
-            foreach (var c in GenRadial.RadialCellsAround(map.Center, 78f, true).Where(c => c.DistanceTo(map.Center) >= startRadius))
+            var center = TestCells.Anchor(map);
+            foreach (var c in GenRadial.RadialCellsAround(center, 78f, true).Where(c => c.DistanceTo(center) >= startRadius))
             {
                 var r = CellRect.CenteredOn(c, w, h);
                 if (!r.InBounds(map)) continue;
                 bool ok = true;
                 foreach (var cell in r.ExpandedBy(1)) { if (!cell.InBounds(map) || !cell.Standable(map) || cell.GetFirstBuilding(map) != null || cell.Fogged(map) || cell.GetTerrain(map).passability == Traversability.Impassable) { ok = false; break; } }
                 // a free patch is no use when it sits in a pocket the colonists and the visitors cannot walk to (water, cliffs, rock on a random map)
-                if (ok && !map.reachability.CanReach(map.Center, r.CenterCell, PathEndMode.OnCell, TraverseMode.PassDoors, Danger.Deadly)) ok = false;
+                if (ok && !TestCells.Reachable(map, center, r.CenterCell)) ok = false;
                 if (ok) { rect = r; return true; }
             }
             return false;
@@ -76,10 +77,10 @@ namespace Hearth.Underworld
                 var kind = f.RandomPawnKind() ?? PawnKindDefOf.Villager;
                 var p = PawnGenerator.GeneratePawn(new PawnGenerationRequest(kind, f, PawnGenerationContext.NonPlayer, map.Tile, canGeneratePawnRelations: false));
                 if (!p.DevelopmentalStage.Adult()) { p.ageTracker.AgeBiologicalTicks = 25L * 3600000L; p.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
-                GenSpawn.Spawn(p, CellFinder.RandomClosewalkCellNear(map.Center, map, 12), map); Track(p);
+                GenSpawn.Spawn(p, CellFinder.RandomClosewalkCellNear(TestCells.Anchor(map), map, 12), map); Track(p);
                 list.Add(p);
             }
-            LordMaker.MakeNewLord(f, new LordJob_VisitColony(f, map.Center, 60000), map, list);
+            LordMaker.MakeNewLord(f, new LordJob_VisitColony(f, TestCells.Anchor(map), 60000), map, list);
             foreach (var p in list) { if (shady) Underworld.MarkShady(p); UwPay.GiveSilver(p, 600); var gi = GuestApi.Info(p); if (gi != null) gi.Budget = Money.FromSilver(600); }
             return list;
         }
@@ -548,7 +549,7 @@ namespace Hearth.Underworld
             t.Check(Interrogation.Allowed(), "opt-in switch enables the tour");
             var prisoner = PawnGenerator.GeneratePawn(PawnKindDefOf.Villager, f);
             if (!prisoner.DevelopmentalStage.Adult()) { prisoner.ageTracker.AgeBiologicalTicks = 25L * 3600000L; prisoner.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
-            GenSpawn.Spawn(prisoner, CellFinder.RandomClosewalkCellNear(map.Center, map, 10), map); UwKit.Track(prisoner);
+            GenSpawn.Spawn(prisoner, CellFinder.RandomClosewalkCellNear(TestCells.Anchor(map), map, 10), map); UwKit.Track(prisoner);
             prisoner.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
             int tr0 = Underworld.Comp.Tours;
             Interrogation.Apply(member, prisoner);
@@ -866,7 +867,7 @@ namespace Hearth.Underworld
             var visitor = UwKit.Guests(map, 1, f, shady: true)[0];
             var prisoner = PawnGenerator.GeneratePawn(PawnKindDefOf.Villager, f);
             if (!prisoner.DevelopmentalStage.Adult()) { prisoner.ageTracker.AgeBiologicalTicks = 25L * 3600000L; prisoner.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
-            GenSpawn.Spawn(prisoner, CellFinder.RandomClosewalkCellNear(map.Center, map, 10), map); UwKit.Track(prisoner);
+            GenSpawn.Spawn(prisoner, CellFinder.RandomClosewalkCellNear(TestCells.Anchor(map), map, 10), map); UwKit.Track(prisoner);
             prisoner.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
             // a walkable cell next to the prisoner: two cells east can be rock, a tree or water on a random map and the visitor then cannot reach anybody
             visitor.Position = CellFinder.RandomClosewalkCellNear(prisoner.Position, map, 3); visitor.Notify_Teleported(true, true);

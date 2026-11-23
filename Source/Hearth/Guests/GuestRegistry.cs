@@ -285,6 +285,8 @@ namespace Hearth.Guests
             }
             // F03: the small solo bonus is not given when this is the last free bed for two and a couple on the map still needs one
             bool spareDouble = partnerWaiting || !CoupleNeedsDouble(r) || GuestBeds.FreeOn(map).Count(x => x.SleepingSlotsCount >= 2) >= 2;
+            // F03: the solo bonus never talks a guest into a double bed it then finds steep (the steep check below allows a double up to this)
+            var soloDoubleLimit = GuestEconomy.ComfortPrice(r.Wealth) * GuestEconomy.SoloDoubleComfort;
             foreach (var b in GuestBeds.FreeOn(map))
             {
                 if (!p.CanReach(b, PathEndMode.OnCell, Danger.Some)) continue;
@@ -295,7 +297,7 @@ namespace Hearth.Guests
                 if (q.Price * nights > r.Budget) continue;
                 float u = GuestEconomy.BedUtility(q.RoomScore, q.Price, r.Wealth, groupRooms.Contains(b.GetRoom()));
                 if (partnerWaiting && b.SleepingSlotsCount >= 2) u += 40f; // C4: a couple's first guest takes a bed for two
-                else if (b.SleepingSlotsCount >= 2 && spareDouble) u += GuestEconomy.SoloDoubleBonus(r.Wealth);   // F03: alone, a double bed is still a little nicer
+                else if (b.SleepingSlotsCount >= 2 && spareDouble && !(q.Price > soloDoubleLimit)) u += GuestEconomy.SoloDoubleBonus(r.Wealth);   // F03: alone, a double bed is still a little nicer
                 if (u > bestU) { bestU = u; best = b; bestQ = q; }
             }
             if (best == null && cheapest != null && cheapQ.Price <= r.Budget)

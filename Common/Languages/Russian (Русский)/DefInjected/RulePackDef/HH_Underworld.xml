@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueNames_DrugLounge.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;Лаунж «[adjm] [roomm]»</li>
+    <li>r_name(p=3)-&gt;Лаунж «[adjf] [roomf]»</li>
+    <li>r_name(p=3)-&gt;Лаунж «[adjn] [roomn]»</li>
+    <li>r_name-&gt;Лаунж «Задняя комната»</li>
+    <li>r_name-&gt;Логово «[owner]»</li>
+    <li>r_name-&gt;Клуб «[den]»</li>
+    <li>adjm-&gt;Тихий</li>
+    <li>adjm-&gt;Прокуренный</li>
+    <li>adjm-&gt;Бархатный</li>
+    <li>adjm-&gt;Тусклый</li>
+    <li>adjm-&gt;Дымный</li>
+    <li>adjm-&gt;Низкий</li>
+    <li>adjm-&gt;Скрытый</li>
+    <li>adjm-&gt;Сомнительный</li>
+    <li>adjf-&gt;Тихая</li>
+    <li>adjf-&gt;Прокуренная</li>
+    <li>adjf-&gt;Бархатная</li>
+    <li>adjf-&gt;Тусклая</li>
+    <li>adjf-&gt;Дымная</li>
+    <li>adjf-&gt;Низкая</li>
+    <li>adjf-&gt;Скрытая</li>
+    <li>adjf-&gt;Сомнительная</li>
+    <li>adjn-&gt;Тихое</li>
+    <li>adjn-&gt;Прокуренное</li>
+    <li>adjn-&gt;Бархатное</li>
+    <li>adjn-&gt;Тусклое</li>
+    <li>adjn-&gt;Дымное</li>
+    <li>adjn-&gt;Низкое</li>
+    <li>adjn-&gt;Скрытое</li>
+    <li>adjn-&gt;Сомнительное</li>
+    <li>roomm-&gt;подвал</li>
+    <li>roomm-&gt;салон</li>
+    <li>roomm-&gt;закуток</li>
+    <li>roomf-&gt;подсобка</li>
+    <li>roomf-&gt;каморка</li>
+    <li>roomf-&gt;ниша</li>
+    <li>roomf-&gt;гостиная</li>
+    <li>roomn-&gt;убежище</li>
+    <li>roomn-&gt;укрытие</li>
+    <li>den-&gt;Лисья нора</li>
+    <li>den-&gt;Енотья нора</li>
+    <li>den-&gt;Кошачье логово</li>
+    <li>den-&gt;Берлога ленивца</li>
+    <li>den-&gt;Гнездо бумкрысы</li>
+    <li>den-&gt;Логово игуаны</li>
+  </HH_VenueNames_DrugLounge.rulePack.rulesStrings>
+</LanguageData>

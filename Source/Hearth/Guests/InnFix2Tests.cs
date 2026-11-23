@@ -48,6 +48,7 @@ namespace Hearth.Guests
             InnTestKit.FastTime();
             var map = t.Map; var reg = GuestRegistry.Instance;
             MapComponent_HH_GuestScheduler.SuspendedForTests = true;
+            float tol0 = HSettings.Get(InnSettings.PriceTolerance);
             // ---- pure numbers
             t.Check(Math.Abs(GuestEconomy.SoloDoubleBonus(0) - 8f) < 1e-4f && Math.Abs(GuestEconomy.SoloDoubleBonus(100) - 15f) < 1e-4f, "solo double-bed bonus: 8 (poor) to 15 (rich)");
             t.Check(GuestEconomy.SoloDoubleBonus(30) > GuestEconomy.SoloDoubleBonus(10) && GuestEconomy.SoloDoubleBonus(250) <= 15.0001f, "grows with wealth and is capped");
@@ -72,9 +73,13 @@ namespace Hearth.Guests
                 if (g == null) yield break;
                 r = reg.Members(g).First();
                 r.Pawn.relations?.ClearAllRelations();
+                // deterministic: wealth is rolled at random on arrival (a guest of wealth 1-2 finds even 20 silver steep: comfort 0.6 x 25-28 x 1.15
+                // < 20) and the price tolerance follows the difficulty; pin a middle-class guest at tolerance 1 (comfort ~100 silver)
+                r.Wealth = 40;
+                HSettings.Set(InnSettings.PriceTolerance, 1f);
                 reg.CheckIn(r.Pawn, site.Desk);
                 t.Check(r.Bed == dbl, "with equal rooms and prices the lone guest takes the double bed (" + r.Bed?.def.defName + ")");
-                t.Check(!r.Events.Any(e => e.Contains("steep")), "and does not find it steep");
+                t.Check(!r.Events.Any(e => e.Contains("steep")), "and does not find it steep (price " + r.NightPrice.WholeSilver + ", comfort " + GuestEconomy.ComfortPrice(r.Wealth).WholeSilver + ", W " + r.Wealth + ")");
 
                 if (r.Bed != dbl) yield break;
                 // ---- lying down in it for real (no test override: a real LayDown job, the registry's own pass notices it): pleased once
@@ -102,6 +107,7 @@ namespace Hearth.Guests
             finally
             {
                 GuestRegistry.InBedOverride = null;
+                HSettings.Set(InnSettings.PriceTolerance, tol0);
                 InnTestKit.RemoveAllGuests(map);
                 InnUxKit.Teardown(site, map);
                 MapComponent_HH_GuestScheduler.SuspendedForTests = false;
