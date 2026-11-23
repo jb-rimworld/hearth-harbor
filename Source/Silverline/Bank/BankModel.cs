@@ -29,7 +29,7 @@ namespace Silverline
             Scribe_Values.Look(ref MapId, "map", -1);
             Scribe_Values.Look(ref Cell, "cell", IntVec3.Invalid);
             Scribe_Values.Look(ref Memo, "memo");
-            Scribe_Values.Look(ref FeeRate, "fee");
+            ScribeMoney.LookExact(ref FeeRate, "fee");
         }
     }
 
@@ -60,7 +60,7 @@ namespace Silverline
             Scribe_Values.Look(ref BankDefName, "bank");
             Scribe_Values.Look(ref PrincipalMicro, "p"); Scribe_Values.Look(ref BalanceMicro, "b");
             Scribe_Values.Look(ref InstallmentMicro, "i"); Scribe_Values.Look(ref ArrearsMicro, "arr");
-            Scribe_Values.Look(ref Spread, "spread");
+            ScribeMoney.LookExact(ref Spread, "spread");
             Scribe_Values.Look(ref StartTick, "start"); Scribe_Values.Look(ref TermDays, "term"); Scribe_Values.Look(ref IntervalDays, "interval", 5);
             Scribe_Values.Look(ref NextDueTick, "next"); Scribe_Values.Look(ref InstallmentsLeft, "left");
             Scribe_Values.Look(ref OverdueSinceTick, "overdue", -1); Scribe_Values.Look(ref Stage, "stage"); Scribe_Values.Look(ref Missed, "missed");

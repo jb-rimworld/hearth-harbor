@@ -49,6 +49,19 @@ namespace Hearth.Casino
             report.Add($"Casino: {sessions} running sessions settled, {hediffs} gambling addictions removed.");
         }
 
+        /// <summary>
+        /// "Keep things in place": tables, chips, records and the day book stay, but a running session is settled now. Its purse is the guest's
+        /// money held by the house; with the module asleep nobody would play it out or cash it out, and the guest would walk home without it.
+        /// The cash-out books house → guest in the ledger exactly as a normal end of play does.
+        /// </summary>
+        public override void OnSwitchedOff(List<string> report)
+        {
+            var c = CasinoComponent.Get(); if (c == null || c.Sessions.Count == 0) return;
+            int n = 0;
+            foreach (var s in c.Sessions.ToList()) { CasinoEngine.EndSession(s, "module switched off"); n++; }
+            report.Add($"Casino: {n} running session(s) cashed out.");
+        }
+
         public override IEnumerable<string> Diagnosis()
         {
             var c = CasinoComponent.Get();

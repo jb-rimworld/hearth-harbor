@@ -37,6 +37,8 @@ namespace Hearth
             if (m == ModuleId.Core) return false;
             if (modules.TryGetValue(m, out bool cur) && cur == on) return false;
             modules[m] = on;
+            // switched off in the running game: the module settles what cannot wait (CasinoModule: running sessions)
+            if (!on && this == Current && Verse.Current.ProgramState == ProgramState.Playing && Modules.Available(m)) HearthMod.NotifySwitchedOff(m);
             return true;
         }
 

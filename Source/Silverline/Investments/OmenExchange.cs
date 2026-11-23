@@ -31,7 +31,7 @@ namespace Silverline
     public sealed class OmenPosition : IExposable
     {
         public int contractId; public bool yes; public double shares; public long paid; public int tick;
-        public void ExposeData() { Scribe_Values.Look(ref contractId, "c"); Scribe_Values.Look(ref yes, "yes"); Scribe_Values.Look(ref shares, "sh"); Scribe_Values.Look(ref paid, "paid"); Scribe_Values.Look(ref tick, "t"); }
+        public void ExposeData() { Scribe_Values.Look(ref contractId, "c"); Scribe_Values.Look(ref yes, "yes"); ScribeMoney.LookExact(ref shares, "sh"); Scribe_Values.Look(ref paid, "paid"); Scribe_Values.Look(ref tick, "t"); }
     }
 
     public sealed partial class FinanceGame

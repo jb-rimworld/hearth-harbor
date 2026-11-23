@@ -43,7 +43,7 @@ namespace Silverline
             Scribe_Values.Look(ref serial, "serial"); Scribe_Values.Look(ref rugged, "rugged"); Scribe_Values.Look(ref delisted, "delisted");
             ScribeMoney.LookExact(ref alpha, "alpha"); Scribe_Values.Look(ref signal, "signal");
             // the faction-state hazard factors feed the spec; without them a reload ran on neutral hazards until the next daily signal step
-            Scribe_Values.Look(ref dynHaz, "dynHaz", 1.0); Scribe_Values.Look(ref dynPUp, "dynPUp", 0.0);
+            ScribeMoney.LookExact(ref dynHaz, "dynHaz", 1.0); ScribeMoney.LookExact(ref dynPUp, "dynPUp", 0.0);
             if (Scribe.mode == LoadSaveMode.PostLoadInit) { hourly = hourly ?? new List<float>(); daily = daily ?? new List<float>(); }
         }
     }

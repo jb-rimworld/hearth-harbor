@@ -92,7 +92,7 @@ namespace Hearth.Casino
         {
             Scribe_Values.Look(ref Day, "day"); Scribe_Values.Look(ref Account, "account"); Scribe_Values.Look(ref Game, "game");
             Scribe_Values.Look(ref Rounds, "rounds"); Scribe_Values.Look(ref StakedMicro, "staked"); Scribe_Values.Look(ref PaidMicro, "paid");
-            Scribe_Values.Look(ref Expected, "expected"); Scribe_Values.Look(ref Variance, "variance");
+            ScribeMoney.LookExact(ref Expected, "expected"); ScribeMoney.LookExact(ref Variance, "variance");
         }
         public double HouseWin => (StakedMicro - PaidMicro) / (double)Money.PerSilver;
     }

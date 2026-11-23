@@ -94,8 +94,11 @@ namespace Hearth
             if (!RemovalSafeSave.Saving || __instance.duty == null || !RemovalSafeSave.OurDef(__instance.duty.def)) return;
             __state = __instance.duty;
             var p = __instance.pawn;
-            // a visitor of ours walks home without the mod; the player's own pawns simply get no duty
-            __instance.duty = p?.Faction != null && !p.Faction.IsPlayer ? new PawnDuty(DutyDefOf.ExitMapBest) { locomotion = LocomotionUrgency.Walk } : null;
+            // a visitor of ours walks home without the mod; a colonist at one of our gatherings gets the party duty of the party stand-in lord
+            // (a lord pawn without a duty makes the think tree complain every few ticks); the player's other pawns simply get no duty
+            if (p?.Faction != null && !p.Faction.IsPlayer) __instance.duty = new PawnDuty(DutyDefOf.ExitMapBest) { locomotion = LocomotionUrgency.Walk };
+            else if (p?.GetLord()?.LordJob is LordJob_Joinable_Gathering g && RemovalSafeSave.OurType(g.GetType()) && GatheringDefOf.Party?.duty != null) __instance.duty = new PawnDuty(GatheringDefOf.Party.duty, g.Spot);
+            else __instance.duty = null;
         }
 
         static void Postfix(Pawn_MindState __instance, PawnDuty __state)
@@ -150,7 +153,9 @@ namespace Hearth
     /// <summary>
     /// A lord of another faction with one of our LordJobs is written as a vanilla "exit the map" lord; the real job and its state graph
     /// data (current toil, toil and trigger data such as stay timers) follow in hh… nodes and are put back after the vanilla load.
-    /// Lords of the player's faction (screenings) are left alone: their pawns stay home either way.
+    /// A lord of the player's faction with one of our gatherings (movie night) is written as a vanilla party at the same spot with the same
+    /// organizer and the time that is left: without the mod the colonists finish a short party and are free again (a lord whose job class
+    /// is missing would keep them, refuse drafting and throw on every signal). Our other player lords do not exist.
     /// </summary>
     [HarmonyPatch(typeof(Lord), nameof(Lord.ExposeData))]
     static class Patch_Lord_RemovalSafe
@@ -161,7 +166,25 @@ namespace Hearth
         static readonly AccessTools.FieldRef<Lord, StateGraph> graphRef = AccessTools.FieldRefAccess<Lord, StateGraph>("graph");
         static readonly AccessTools.FieldRef<Lord, LordToil> toilRef = AccessTools.FieldRefAccess<Lord, LordToil>("curLordToil");
 
-        static bool Protect(Lord l) => l.faction != null && !l.faction.IsPlayer && RemovalSafeSave.OurType(curJobRef(l)?.GetType());
+        static readonly AccessTools.FieldRef<LordJob_Joinable_Gathering, int> durationRef = AccessTools.FieldRefAccess<LordJob_Joinable_Gathering, int>("durationTicks");
+
+        static bool Protect(Lord l)
+        {
+            var job = curJobRef(l);
+            if (l.faction == null || !RemovalSafeSave.OurType(job?.GetType())) return false;
+            return !l.faction.IsPlayer || job is LordJob_Joinable_Gathering;
+        }
+
+        /// <summary>The vanilla job written in place of ours: visitors walk home, the colony's own gathering becomes a plain party.</summary>
+        static LordJob StandIn(Lord l, LordJob real)
+        {
+            if (!l.faction.IsPlayer || !(real is LordJob_Joinable_Gathering g)) return new LordJob_ExitMapBest(LocomotionUrgency.Walk, canDig: false);
+            int left;
+            try { left = g.TicksLeft; } catch (Exception) { left = g.DurationTicks; }
+            var party = new LordJob_Joinable_Party(g.Spot, g.Organizer, GatheringDefOf.Party);
+            durationRef(party) = Math.Max(250, Math.Min(g.DurationTicks > 0 ? g.DurationTicks : 60000, left));
+            return party;
+        }
 
         static void Prefix(Lord __instance, out Real __state)
         {
@@ -169,11 +192,13 @@ namespace Hearth
             if (!RemovalSafeSave.Saving || !Protect(__instance)) return;
             var l = __instance;
             __state = new Real { job = curJobRef(l), graph = graphRef(l), toil = toilRef(l) };
-            var stand = new LordJob_ExitMapBest(LocomotionUrgency.Walk, canDig: false);
-            stand.lord = l;
+            LordJob stand; StateGraph g;
             Rand.PushState(); Rand.Seed = l.loadID * 193;
-            StateGraph g; try { g = stand.CreateGraph(); } finally { Rand.PopState(); }
+            try { stand = StandIn(l, __state.job); stand.lord = l; g = stand.CreateGraph(); } finally { Rand.PopState(); }
             foreach (var t in g.lordToils) t.lord = l;
+            // the party stand-in keeps who has been present for how long (the vanilla party thought scales with it)
+            if (stand is LordJob_Joinable_Party && g.lordToils.Count > 0 && __state.graph?.lordToils.Count > 0 && __state.graph.lordToils[0].data is LordToilData_Gathering gd
+                && g.lordToils[0] is LordToil_Party) g.lordToils[0].data = gd;
             curJobRef(l) = stand; graphRef(l) = g; toilRef(l) = g.StartingToil;
         }
 

@@ -80,7 +80,7 @@ namespace Silverline
             Scribe_Values.Look(ref tier, "tier", CoverTier.GoodEnough);
             Scribe_References.Look(ref holder, "holder");
             Scribe_Values.Look(ref holderName, "holderName");
-            Scribe_Values.Look(ref sum, "sum");
+            ScribeMoney.LookExact(ref sum, "sum");
             Scribe_Values.Look(ref startTick, "start");
             Scribe_Values.Look(ref waitUntilTick, "waitUntil");
             Scribe_Values.Look(ref nextBillTick, "nextBill", -1);
@@ -94,22 +94,22 @@ namespace Silverline
             Scribe_Values.Look(ref cancelEffectiveTick, "cancelEff", -1);
             Scribe_Values.Look(ref retentionStage, "retention");
             Scribe_Values.Look(ref discountUntilTick, "discUntil", -1);
-            Scribe_Values.Look(ref discountShare, "disc");
+            ScribeMoney.LookExact(ref discountShare, "disc");
             Scribe_Values.Look(ref specialCancelUntil, "specialUntil", -1);
-            Scribe_Values.Look(ref lastPremiumQuadrum, "lastPrem");
+            ScribeMoney.LookExact(ref lastPremiumQuadrum, "lastPrem");
             Scribe_Values.Look(ref missedBills, "missed");
             Scribe_Values.Look(ref ended, "ended");
             Scribe_Values.Look(ref endedTick, "endedTick", -1);
             Scribe_Values.Look(ref endReason, "endReason");
-            Scribe_Values.Look(ref preexistingGrade, "preGrade");
-            Scribe_Values.Look(ref hazSamples, "hazN"); Scribe_Values.Look(ref hazB, "hazB"); Scribe_Values.Look(ref hazC, "hazC");
-            Scribe_Values.Look(ref lastShareB, "shareB"); Scribe_Values.Look(ref lastShareC, "shareC");
-            Scribe_Values.Look(ref owedClawback, "owed");
-            Scribe_Values.Look(ref premiumPaid, "premPaid"); Scribe_Values.Look(ref benefitPaid, "benPaid"); Scribe_Values.Look(ref trickCostYear, "trickYear"); Scribe_Values.Look(ref premiumYear, "premYear");
+            ScribeMoney.LookExact(ref preexistingGrade, "preGrade");
+            ScribeMoney.LookExact(ref hazSamples, "hazN"); ScribeMoney.LookExact(ref hazB, "hazB"); ScribeMoney.LookExact(ref hazC, "hazC");
+            ScribeMoney.LookExact(ref lastShareB, "shareB"); ScribeMoney.LookExact(ref lastShareC, "shareC");
+            ScribeMoney.LookExact(ref owedClawback, "owed");
+            ScribeMoney.LookExact(ref premiumPaid, "premPaid"); ScribeMoney.LookExact(ref benefitPaid, "benPaid"); ScribeMoney.LookExact(ref trickCostYear, "trickYear"); ScribeMoney.LookExact(ref premiumYear, "premYear");
             Scribe_Collections.Look(ref damageHistory, "dmgHist", LookMode.Value);
-            Scribe_Values.Look(ref damageThisQuadrum, "dmgQ");
+            ScribeMoney.LookExact(ref damageThisQuadrum, "dmgQ");
             Scribe_Values.Look(ref formErrorHit, "formErr");
-            Scribe_Values.Look(ref travelHeadDays, "travelDays"); Scribe_Values.Look(ref accrued, "accrued");
+            ScribeMoney.LookExact(ref travelHeadDays, "travelDays"); ScribeMoney.LookExact(ref accrued, "accrued");
             Scribe_Values.Look(ref accruedSince, "accruedSince", -1); Scribe_Values.Look(ref kulanzYear, "kulanzYear", -1);
             Scribe_Collections.Look(ref bedLogPawn, "bedLogPawn", LookMode.Value); Scribe_Collections.Look(ref bedLogDay, "bedLogDay", LookMode.Value);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
@@ -130,7 +130,7 @@ namespace Silverline
         public void ExposeData()
         {
             Scribe_Values.Look(ref label, "label"); Scribe_Values.Look(ref key, "key"); Scribe_Values.Look(ref comment, "comment");
-            Scribe_Values.Look(ref value, "value"); Scribe_Values.Look(ref partIndex, "idx", -1);
+            ScribeMoney.LookExact(ref value, "value"); Scribe_Values.Look(ref partIndex, "idx", -1);
         }
     }
 
@@ -190,12 +190,12 @@ namespace Silverline
             Scribe_Values.Look(ref clauseDef, "clause"); Scribe_Values.Look(ref clauseNote, "clauseNote");
             Scribe_Values.Look(ref subject, "subject");
             Scribe_Collections.Look(ref items, "items", LookMode.Value);
-            Scribe_Values.Look(ref lossValue, "loss"); Scribe_Values.Look(ref realValue, "real"); Scribe_Values.Look(ref sumInsured, "sum");
-            Scribe_Values.Look(ref gross, "gross"); Scribe_Values.Look(ref offered, "offered"); Scribe_Values.Look(ref paid, "paid");
-            Scribe_Values.Look(ref cutShare, "cut", 1.0); Scribe_Values.Look(ref rounds, "rounds"); Scribe_Values.Look(ref negotiationClosed, "negClosed");
+            ScribeMoney.LookExact(ref lossValue, "loss"); ScribeMoney.LookExact(ref realValue, "real"); ScribeMoney.LookExact(ref sumInsured, "sum");
+            ScribeMoney.LookExact(ref gross, "gross"); ScribeMoney.LookExact(ref offered, "offered"); ScribeMoney.LookExact(ref paid, "paid");
+            ScribeMoney.LookExact(ref cutShare, "cut", 1.0); Scribe_Values.Look(ref rounds, "rounds"); Scribe_Values.Look(ref negotiationClosed, "negClosed");
             Scribe_Values.Look(ref mapId, "map", -1);
             Scribe_References.Look(ref pawn, "pawn"); Scribe_Values.Look(ref pawnName, "pawnName");
-            Scribe_Values.Look(ref grade, "grade"); Scribe_Values.Look(ref preGrade, "preGrade"); Scribe_Values.Look(ref paidGrade, "paidGrade");
+            ScribeMoney.LookExact(ref grade, "grade"); ScribeMoney.LookExact(ref preGrade, "preGrade"); ScribeMoney.LookExact(ref paidGrade, "paidGrade");
             Scribe_Values.Look(ref partialOnly, "partialOnly"); Scribe_Values.Look(ref contributed, "contributed");
             Scribe_Collections.Look(ref lost, "lost", LookMode.Deep);
             Scribe_Collections.Look(ref breakdown, "breakdown", LookMode.Value);

@@ -26,7 +26,7 @@ namespace Silverline
             Scribe_Values.Look(ref factionDefName, "fdef"); Scribe_Values.Look(ref factionName, "fname"); Scribe_Values.Look(ref kind, "kind");
             Scribe_Values.Look(ref startTick, "start"); Scribe_Values.Look(ref endTick, "end"); Scribe_Values.Look(ref resolvedTick, "rt", -1);
             Scribe_Values.Look(ref lastStrikeTick, "strikeTick", -1); Scribe_Values.Look(ref strikes, "strikes");
-            Scribe_Values.Look(ref volume, "vol"); Scribe_Values.Look(ref pOpen, "pOpen"); Scribe_Values.Look(ref pNeutral, "pNeutral"); Scribe_Values.Look(ref playerHelp, "help");
+            ScribeMoney.LookExact(ref volume, "vol"); ScribeMoney.LookExact(ref pOpen, "pOpen"); ScribeMoney.LookExact(ref pNeutral, "pNeutral"); ScribeMoney.LookExact(ref playerHelp, "help");
             Scribe_Values.Look(ref resolved, "resolved"); Scribe_Values.Look(ref success, "success"); Scribe_Values.Look(ref neutralOutcome, "neutral"); Scribe_Values.Look(ref capped, "capped");
         }
     }
@@ -37,7 +37,7 @@ namespace Silverline
         public void ExposeData()
         {
             Scribe_Values.Look(ref id, "id"); Scribe_Values.Look(ref projectId, "p"); Scribe_Values.Look(ref tick, "t"); Scribe_Values.Look(ref isShort, "short");
-            Scribe_Values.Look(ref settled, "settled"); Scribe_Values.Look(ref stake, "stake"); Scribe_Values.Look(ref quote, "quote");
+            Scribe_Values.Look(ref settled, "settled"); Scribe_Values.Look(ref stake, "stake"); ScribeMoney.LookExact(ref quote, "quote");
         }
     }
 
