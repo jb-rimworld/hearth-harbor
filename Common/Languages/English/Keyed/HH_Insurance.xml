@@ -408,7 +408,7 @@ Per quadrum: {1}</HH.Ins.UI.Price.Tip>
   <HH.Ins.Status.Buy>Insure…</HH.Ins.Status.Buy>
   <HH.Ins.Status.ColonyCover>colony cover</HH.Ins.Status.ColonyCover>
   <HH.Ins.Status.Column>Cover</HH.Ins.Status.Column>
-  <HH.Ins.Status.ColumnTip>Insurance status: pension, health, accident, liability, legal. Click for the overview.</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.ColumnTip>Insurance status, one icon per kind of cover (pension, health, accident, liability, legal, travel and any further personal policy). Click for the overview.</HH.Ins.Status.ColumnTip>
   <HH.Ins.Status.Foot>Green: active. Yellow: waiting period. Orange: cancellation pending. Red: pension at risk. Grey: not insured. Colony cover applies to every colonist.</HH.Ins.Status.Foot>
   <HH.Ins.Status.No>no</HH.Ins.Status.No>
   <HH.Ins.Status.Yes>yes</HH.Ins.Status.Yes>
@@ -428,6 +428,7 @@ Per quadrum: {1}</HH.Ins.UI.Price.Tip>
   <HH.Ins.Status.Kind.Accident>Accident</HH.Ins.Status.Kind.Accident>
   <HH.Ins.Status.Kind.Liability>Liability</HH.Ins.Status.Kind.Liability>
   <HH.Ins.Status.Kind.Legal>Legal</HH.Ins.Status.Kind.Legal>
+  <HH.Ins.Status.Kind.Travel>Travel</HH.Ins.Status.Kind.Travel>
   <HH.Ins.Tab.Cover>Colonists</HH.Ins.Tab.Cover>
   <HH.Ins.Tab.Pawn>Insurance</HH.Ins.Tab.Pawn>
   <HH.Ins.UI.Claim.AiReply>Reply to your statement: {0}</HH.Ins.UI.Claim.AiReply>

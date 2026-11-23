@@ -66,6 +66,17 @@ def st_legal(view, cells, masked):
     return c
 
 
+@tex("UI/HH/Insurance/Status/Travel", "single", (1, 1), ppc=128, grain=0, doc="Status icon: travel cover (suitcase)")
+def st_travel(view, cells, masked):
+    c = _icon(cells, masked)
+    tpath(c, "M46 40 L46 28 Q46 20 54 20 L74 20 Q82 20 82 28 L82 40", 7, PALE_D)     # handle
+    c.rect(12, 38, 104, 74, PALE, r=14, sw=4.4)                                      # case
+    c.rect(34, 38, 12, 74, PALE_D, r=3, sw=3.2, hl=False)                            # straps
+    c.rect(82, 38, 12, 74, PALE_D, r=3, sw=3.2, hl=False)
+    c.rect(54, 66, 20, 14, PALE_D, r=4, sw=3, hl=False)                              # lock
+    return c
+
+
 @tex("UI/HH/Insurance/ClaimPossible", "single", (1, 1), ppc=128, grain=0, doc="Letter icon: a claim is possible (envelope with a clock)")
 def claim_possible(view, cells, masked):
     c = _icon(cells, masked)

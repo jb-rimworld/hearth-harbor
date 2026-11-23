@@ -773,15 +773,16 @@ namespace Silverline
             var body = new Rect(r.x, top.yMax + 6f, r.width, r.yMax - top.yMax - 6f);
             // header: kinds
             float nameW = Math.Min(220f, body.width * 0.28f);
-            float cw = (body.width - nameW - 22f) / InsuranceStatus.Kinds.Length;
+            var kindDefs = InsuranceStatus.Defs;
+            float cw = (body.width - nameW - 22f) / Math.Max(1, kindDefs.Count);
             var head = new Rect(body.x, body.y, body.width, 30f);
             Widgets.DrawBoxSolid(head, BlueMid);
             Text.Anchor = TextAnchor.MiddleLeft; Widgets.Label(new Rect(head.x + 8f, head.y, nameW - 8f, head.height), "<b>" + Ins.T("UI.Cover.Colonist") + "</b>");
             Text.Anchor = TextAnchor.MiddleCenter;
-            for (int i = 0; i < InsuranceStatus.Kinds.Length; i++)
+            for (int i = 0; i < kindDefs.Count; i++)
             {
                 var cr = new Rect(head.x + nameW + i * cw, head.y, cw, head.height);
-                Text.Font = GameFont.Tiny; Widgets.Label(cr, "<b>" + InsuranceStatus.KindLabel(InsuranceStatus.Kinds[i]) + "</b>"); Text.Font = GameFont.Small;
+                Text.Font = GameFont.Tiny; Widgets.Label(cr, "<b>" + InsuranceStatus.KindLabel(kindDefs[i]) + "</b>"); Text.Font = GameFont.Small;
             }
             Text.Anchor = TextAnchor.UpperLeft;
             var list = new Rect(body.x, head.yMax, body.width, body.yMax - head.yMax);
@@ -803,7 +804,7 @@ namespace Silverline
                     var col = InsuranceStatus.ColorOf(ins ? it.state : CoverState.None);
                     Widgets.DrawBoxSolid(cell, new Color(col.r * 0.25f, col.g * 0.25f, col.b * 0.25f, 0.9f));
                     GUI.color = col; Widgets.DrawBox(cell); GUI.color = Color.white;
-                    var tex = InsuranceStatus.Icon(it.kind);
+                    var tex = InsuranceStatus.Icon(it);
                     if (tex != null) { GUI.color = col; GUI.DrawTexture(new Rect(cell.x + 4f, cell.y + (cell.height - 22f) / 2f, 22f, 22f), tex); GUI.color = Color.white; }
                     Text.Font = GameFont.Tiny; Text.Anchor = TextAnchor.MiddleLeft; GUI.color = col;
                     string t = !ins ? "–" : it.Has ? InsuranceStatus.StateLabel(it.state) + (it.colonyWide ? " *" : "") : Ins.T("Status.No");

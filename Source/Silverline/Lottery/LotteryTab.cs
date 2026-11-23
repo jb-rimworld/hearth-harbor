@@ -275,8 +275,8 @@ namespace Silverline
             var r = r0.ContractedBy(8f); float y = r.y;
             FinUi.Label(new Rect(r.x, y, r.width, 26), FT.T("HH.Finance.Lottery.ColonyTitle"), GameFont.Medium); y += 30;
             bool on = lot.ColonyOpen;
-            bool want = on; Widgets.CheckboxLabeled(new Rect(r.x, y, r.width, 24), FT.T("HH.Finance.Lottery.ColonyOpen"), ref want);
-            if (want != on) { HSettings.Set("lottery.colonyOn", want ? 1 : 0); BankSound.Play(BankSound.Click); }
+            // F19: the switch is a real setting; this window only shows its state
+            FinUi.Label(new Rect(r.x, y, r.width, 24), FT.T("HH.Finance.Lottery.ColonyState", on ? FT.T("HH.Finance.Lottery.StateOpen") : FT.T("HH.Finance.Lottery.StateClosed")), GameFont.Small, on ? BankUI.Good : BankUI.CreamDim);
             y += 28;
             string intro = FT.T("HH.Finance.Lottery.ColonyIntro"); float ih = FinUi.TextHeight(r.width, intro, GameFont.Tiny);
             FinUi.Label(new Rect(r.x, y, r.width, ih), intro, GameFont.Tiny, FinUi.Dim); y += ih + 6;

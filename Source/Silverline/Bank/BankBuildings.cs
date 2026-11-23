@@ -78,13 +78,15 @@ namespace Silverline
         {
             foreach (var g in base.GetGizmos()) yield return g;
             if (!Modules.On(ModuleId.Bank) || BankApi.Impl == null || !BankApi.Impl.HasAccount) yield break;
-            yield return new Command_Toggle
+            // F19: bank terms are changed in the mod settings only; the gizmo shows the state and opens them
+            bool on = BankApi.Impl.DirectDepositOn;
+            yield return new Command_Action
             {
-                defaultLabel = L.T("Building.DirectDeposit", "Direct deposit"),
-                defaultDesc = L.T("Building.DirectDepositDesc", "On: the tills of your businesses are emptied into your bank account at midnight. Off: the takings are put down as silver next to the safe."),
+                defaultLabel = L.T("Building.OpenSettings", "Open settings (Bank)") + "\n" + L.T("Building.DirectState", "Direct deposit: {0}", on ? L.T("Lobby.On", "on") : L.T("Lobby.Off", "off")),
+                defaultDesc = L.T("Building.DirectDepositDesc", "On: the tills of your businesses are emptied into your bank account at midnight. Off: the takings are put down as silver next to the safe.")
+                              + "\n\n" + L.T("Building.OpenSettingsDesc", "This is a term of your bank and is changed in the mod settings only (Bank > Account). Click to open them."),
                 icon = ContentFinder<Texture2D>.Get("UI/HH/Bank/DirectDeposit", true),
-                isActive = () => BankApi.Impl.DirectDepositOn,
-                toggleAction = () => HSettings.Set("bank.directDeposit", BankApi.Impl.DirectDepositOn ? 0f : 1f),
+                action = () => HearthMod.OpenSettings("mod:Bank"),
             };
         }
 

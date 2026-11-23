@@ -239,8 +239,11 @@ namespace Silverline
 
         public static bool AiWaiting(int claimId) => aiWaits.ContainsKey(claimId);
 
+        /// <summary>The AI answers the application: the free text and/or the selection fields (F27: choices alone count too).</summary>
+        public static bool HasApplication(Claim cl) => !cl.formText.NullOrEmpty() || (cl.formAnswers != null && cl.formAnswers.Count > 0);
+
         static bool WantsAi(Claim cl)
-            => HSettings.GetBool(InsSettings.FormTextAi) && !cl.formText.NullOrEmpty() && cl.aiReply == null && !aiWaits.ContainsKey(cl.id) && AiApi.Available("claim-letter");
+            => HSettings.GetBool(InsSettings.FormTextAi) && HasApplication(cl) && cl.aiReply == null && !aiWaits.ContainsKey(cl.id) && AiApi.Available("claim-letter");
 
         /// <summary>Real-time poll (every frame, also while paused): delivers a decision letter when the AI has answered or its few seconds are up. Never blocks the game.</summary>
         public static void PollAi()

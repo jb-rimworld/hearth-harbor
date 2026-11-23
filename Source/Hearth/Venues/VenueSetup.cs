@@ -57,7 +57,7 @@ namespace Hearth.ShopsFood
         static readonly Dictionary<VenueTypeDef, List<VenueRequirement>> fallback = new Dictionary<VenueTypeDef, List<VenueRequirement>>();
         static VenueSetup() { HearthGame.OnGameInit += Clear; }
 
-        public static void Clear() { cache.Clear(); lastComplete.Clear(); desCache.Clear(); buildDefsCache.Clear(); }
+        public static void Clear() { cache.Clear(); lastComplete.Clear(); desCache.Clear(); buildDefsCache.Clear(); autoDefsCache.Clear(); }
         public static void MarkDirty(Thing sign) { if (sign != null) cache.Remove(sign.thingIDNumber); }
 
         /// <summary>Is the venue allowed to open? True when everything required stands in the room, or when the player switched the rule off.</summary>
@@ -339,7 +339,33 @@ namespace Hearth.ShopsFood
             return des;
         }
 
-        /// <summary>The build options of a requirement that exist in this game (DLC and modules respected), buildable ones first.
+        // Everything any loaded mod offers that the requirement's matcher accepts. Static per def set, so computed once per requirement
+        // (cleared on game init, when the module gates or DLC state may differ).
+        static readonly Dictionary<VenueRequirement, List<ThingDef>> autoDefsCache = new Dictionary<VenueRequirement, List<ThingDef>>();
+
+        /// <summary>Every buildable thing (any mod) that counts for the requirement and has an architect category, alphabetical. Cached.</summary>
+        public static List<ThingDef> AutoDefs(VenueRequirement r)
+        {
+            if (r == null) return new List<ThingDef>();
+            if (autoDefsCache.TryGetValue(r, out var list)) return list;
+            list = new List<ThingDef>();
+            if (r.check != VenueCheck.Stock && r.check != VenueCheck.ServingWorker && r.check != VenueCheck.Custom)
+            {
+                foreach (var d in DefDatabase<ThingDef>.AllDefsListForReading)
+                {
+                    if (d.designationCategory == null || d.category != ThingCategory.Building || d.IsBlueprint || d.IsFrame) continue;
+                    bool ok = false;
+                    try { ok = Counts(r, d); } catch (Exception e) { HLog.Once("venues.setup.auto." + d.defName, LogLevel.Warn, "Venues", "Setup match failed for " + d.defName + ": " + e.Message); }
+                    if (ok) list.Add(d);
+                }
+                list.Sort((x, y) => string.Compare(x.label, y.label, StringComparison.OrdinalIgnoreCase));
+            }
+            autoDefsCache[r] = list;
+            return list;
+        }
+
+        /// <summary>The build options of a requirement that exist in this game (DLC and modules respected): the curated XML suggestions
+        /// first, then everything else any mod offers that counts for the requirement. Buildable (researched) ones come before the locked ones.
         /// Cached for a second; the list is shared, do not change it.</summary>
         public static List<ThingDef> BuildDefs(VenueRequirement r)
         {
@@ -347,13 +373,25 @@ namespace Hearth.ShopsFood
             float now = Time.realtimeSinceStartup;
             if (buildDefsCache.TryGetValue(r, out var a) && now - a.Time < LookupSeconds && now >= a.Time) return a.Defs;
             var res = new List<ThingDef>();
-            foreach (var d in r.BuildOptions) if (d != null && d.designationCategory != null && !res.Contains(d)) res.Add(d);
-            // stable: buildable ones first, the XML order otherwise (one designator lookup per def, not one per comparison)
+            var seen = new HashSet<ThingDef>();
+            foreach (var d in r.BuildOptions) if (d != null && d.designationCategory != null && seen.Add(d)) res.Add(d);
+            foreach (var d in AutoDefs(r)) if (seen.Add(d)) res.Add(d);
+            // stable: buildable ones first, curated then discovered order otherwise (one designator lookup per def, not one per comparison)
             var buildable = new List<ThingDef>(); var other = new List<ThingDef>();
             foreach (var d in res) (DesignatorFor(d, out _) != null ? buildable : other).Add(d);
             buildable.AddRange(other);
             buildDefsCache[r] = new BuildDefsAnswer { Time = now, Defs = buildable };
             return buildable;
+        }
+
+        /// <summary>"Steel 50, Wood 20" – the raw cost of a def for the build menu.</summary>
+        public static string CostText(ThingDef d)
+        {
+            if (d == null) return "";
+            var parts = new List<string>();
+            if (d.costList != null) foreach (var c in d.costList) if (c.thingDef != null && c.count > 0) parts.Add(c.thingDef.label + " " + c.count);
+            if (d.MadeFromStuff && d.costStuffCount > 0) parts.Add("HH.Setup.AnyStuff".TranslateOr("material") + " " + d.costStuffCount);
+            return string.Join(", ", parts);
         }
 
         /// <summary>Selects the architect tool for a def (the player then places it like from the build menu).</summary>

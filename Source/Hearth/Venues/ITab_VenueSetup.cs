@@ -340,21 +340,31 @@ namespace Hearth.ShopsFood
             GUI.color = Color.white;
             TooltipHandler.TipRegion(buildR, defs.Count == 1
                 ? first.LabelCap + (any ? "" : " – " + why)
-                : string.Join("\n", defs.Select((d, i) => d.LabelCap + (cache.Why[i] == null ? "" : " – " + cache.Why[i]))));
+                : string.Join("\n", defs.Take(8).Select((d, i) => d.LabelCap + (cache.Why[i] == null ? "" : " – " + cache.Why[i])))
+                  + (defs.Count > 8 ? "\n" + "HH.Setup.AndMore".TranslateOr("… and {0} more").Replace("{0}", (defs.Count - 8).ToString()) : ""));
             return buildR.x - 4f;
         }
 
         static List<FloatMenuOption> BuildOptions(List<ThingDef> defs)
         {
             var opts = new List<FloatMenuOption>();
+            const int MaxMenu = 24;
+            int shown = 0;
             foreach (var d in defs)
             {
+                if (shown++ >= MaxMenu) break;
                 var dd = d;
                 var des = VenueSetup.DesignatorFor(d, out string why);
-                string label = d.LabelCap + (des == null ? " (" + why + ")" : "");
+                string cost = VenueSetup.CostText(d);
+                string label = d.LabelCap + (cost.NullOrEmpty() ? "" : " (" + cost + ")") + (des == null ? " – " + why : "");
                 var opt = new FloatMenuOption(label, des == null ? (Action)null : () => VenueSetup.StartBuilding(dd), d.uiIcon ?? BaseContent.BadTex, d.uiIconColor);
+                string mod = d.modContentPack != null && !d.modContentPack.IsCoreMod ? d.modContentPack.Name : null;
+                string tip = d.LabelCap + (mod == null ? "" : " [" + mod + "]") + (d.description.NullOrEmpty() ? "" : "\n\n" + d.description);
+                opt.tooltip = new TipSignal(tip);
                 opts.Add(opt);
             }
+            if (defs.Count > MaxMenu)
+                opts.Add(new FloatMenuOption("HH.Setup.AndMore".TranslateOr("… and {0} more").Replace("{0}", (defs.Count - MaxMenu).ToString()), null));
             return opts;
         }
 
