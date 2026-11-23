@@ -308,7 +308,19 @@ namespace Hearth.Casino.PlayerHouse
                 var reel = new Rect(x, a.y + 4f, 112f, 84f); x += 120f;
                 Widgets.DrawBoxSolid(reel, new Color(0.93f, 0.9f, 0.8f, 0.96f)); Widgets.DrawBox(reel, 2);
                 Text.Font = GameFont.Medium; Text.Anchor = TextAnchor.MiddleCenter;
-                if (reels != null) { GUI.color = symbolColors[reels[i]]; Widgets.DrawBoxSolid(new Rect(reel.x + 6f, reel.yMax - 12f, reel.width - 12f, 5f), symbolColors[reels[i]]); GUI.color = new Color(0.12f, 0.1f, 0.09f); Widgets.Label(reel, ThrumboNames.Symbol(reels[i])); }
+                if (reels != null)
+                {
+                    Widgets.DrawBoxSolid(new Rect(reel.x + 6f, reel.yMax - 12f, reel.width - 12f, 5f), symbolColors[reels[i]]);
+                    var icon = SlotSymbolIcons.For(reels[i]);
+                    if (icon != null)
+                    {
+                        // symbol icon, its name small underneath (the name stays for colour-blind players and screen readers)
+                        GUI.color = Color.white; GUI.DrawTexture(new Rect(reel.center.x - 28f, reel.y + 4f, 56f, 56f), icon);
+                        Text.Font = GameFont.Tiny; GUI.color = new Color(0.25f, 0.21f, 0.17f);
+                        Widgets.Label(new Rect(reel.x, reel.y + 58f, reel.width, 16f), ThrumboNames.Symbol(reels[i]));
+                    }
+                    else { GUI.color = new Color(0.12f, 0.1f, 0.09f); Widgets.Label(reel, ThrumboNames.Symbol(reels[i])); }
+                }
                 else { GUI.color = new Color(0.3f, 0.27f, 0.22f); Widgets.Label(reel, "?"); }
                 Text.Anchor = TextAnchor.UpperLeft; Text.Font = GameFont.Small; GUI.color = Color.white;
             }

@@ -159,10 +159,25 @@ namespace Hearth.Casino
 
         void DrawSlots(ref float y, float w)
         {
-            Text.Font = GameFont.Medium; Text.Anchor = TextAnchor.MiddleCenter;
-            Widgets.Label(new Rect(0, y, w, 40f), reels[0] + "   |   " + reels[1] + "   |   " + reels[2]);
-            Text.Anchor = TextAnchor.UpperLeft; Text.Font = GameFont.Small;
-            y += 44f;
+            var i0 = SlotSymbolIcons.For(reels[0]); var i1 = SlotSymbolIcons.For(reels[1]); var i2 = SlotSymbolIcons.For(reels[2]);
+            if (i0 != null && i1 != null && i2 != null)
+            {
+                var icons = new[] { i0, i1, i2 };
+                for (int k = 0; k < 3; k++)
+                {
+                    var cell = new Rect(w / 2 - 102f + k * 70f, y, 64f, 48f);
+                    Widgets.DrawBoxSolid(cell, new Color(0.93f, 0.9f, 0.8f, 0.96f)); Widgets.DrawBox(cell);
+                    GUI.DrawTexture(new Rect(cell.center.x - 20f, cell.y + 4f, 40f, 40f), icons[k]);
+                }
+                y += 52f;
+            }
+            else
+            {
+                Text.Font = GameFont.Medium; Text.Anchor = TextAnchor.MiddleCenter;
+                Widgets.Label(new Rect(0, y, w, 40f), reels[0] + "   |   " + reels[1] + "   |   " + reels[2]);
+                Text.Anchor = TextAnchor.UpperLeft; Text.Font = GameFont.Small;
+                y += 44f;
+            }
             if (Widgets.ButtonText(new Rect(w / 2 - 70f, y, 140f, 34f), "HH.Casino.Spin".Translate()) && Afford(stake))
             {
                 double mult = comp.Paytable.Spin(Rng, out int a, out int b, out int c);
