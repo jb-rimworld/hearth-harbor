@@ -347,4 +347,7 @@
   <HH.Enum.HouseStyle.Industrial>Індустріальний</HH.Enum.HouseStyle.Industrial>
   <HH.Enum.HouseStyle.Spacer>Космічний</HH.Enum.HouseStyle.Spacer>
   <HH.Enum.HouseStyle.Ultra>Ультра</HH.Enum.HouseStyle.Ultra>
+  <HH.UI.Overview.Arrivals>Прибуття, наступні 24 год: {0}, очікується близько {1} груп на день.</HH.UI.Overview.Arrivals>
+  <HH.UI.Overview.Arrivals.None>ще нікого не заплановано</HH.UI.Overview.Arrivals.None>
+  <HH.UI.Overview.Arrivals.Planned>заплановано груп: {0} (близько {1} гостей)</HH.UI.Overview.Arrivals.Planned>
 </LanguageData>

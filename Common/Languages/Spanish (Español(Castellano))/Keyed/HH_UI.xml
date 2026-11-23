@@ -347,4 +347,7 @@
   <HH.Enum.HouseStyle.Industrial>Industrial</HH.Enum.HouseStyle.Industrial>
   <HH.Enum.HouseStyle.Spacer>Espacial</HH.Enum.HouseStyle.Spacer>
   <HH.Enum.HouseStyle.Ultra>Ultra</HH.Enum.HouseStyle.Ultra>
+  <HH.UI.Overview.Arrivals>Llegadas, próximas 24 h: {0}, se esperan unos {1} grupos al día.</HH.UI.Overview.Arrivals>
+  <HH.UI.Overview.Arrivals.None>nadie planeado todavía</HH.UI.Overview.Arrivals.None>
+  <HH.UI.Overview.Arrivals.Planned>{0} grupo(s) planeado(s) (unos {1} huésped(es))</HH.UI.Overview.Arrivals.Planned>
 </LanguageData>

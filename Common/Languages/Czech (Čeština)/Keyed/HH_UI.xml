@@ -347,4 +347,7 @@
   <HH.Enum.HouseStyle.Industrial>Průmysl</HH.Enum.HouseStyle.Industrial>
   <HH.Enum.HouseStyle.Spacer>Vesmírník</HH.Enum.HouseStyle.Spacer>
   <HH.Enum.HouseStyle.Ultra>Ultra</HH.Enum.HouseStyle.Ultra>
+  <HH.UI.Overview.Arrivals>Příjezdy, příštích 24 h: {0}, očekává se asi {1} skupin denně.</HH.UI.Overview.Arrivals>
+  <HH.UI.Overview.Arrivals.None>zatím nikdo neplánován</HH.UI.Overview.Arrivals.None>
+  <HH.UI.Overview.Arrivals.Planned>naplánováno skupin: {0} (asi hostů: {1})</HH.UI.Overview.Arrivals.Planned>
 </LanguageData>

@@ -80,4 +80,95 @@
   <HH.Casino.CounterNext>3日間で {0} / {1} セッション – 次のセッションは依存のリスクがあります。</HH.Casino.CounterNext>
   <HH.Casino.CounterRisk>3日間で {0} セッション – 次のセッションの依存リスクは {1}。</HH.Casino.CounterRisk>
   <HH.Casino.CounterAddicted>依存状態。直近3日間で {0} セッション。</HH.Casino.CounterAddicted>
+  <HH.Thrumbo.Title>The Lucky Thrumbo</HH.Thrumbo.Title>
+  <HH.Thrumbo.Tagline>シルバーライン世界の軌道上のテーブル。店は軌道にあり、賭け金は地上にある。</HH.Thrumbo.Tagline>
+  <HH.Thrumbo.Comm.Call>The Lucky Thrumbo に通信する</HH.Thrumbo.Comm.Call>
+  <HH.Thrumbo.Comm.Info>本物の銀を受け取り、気が向いたときだけ返してくれる軌道カジノ。</HH.Thrumbo.Comm.Info>
+  <HH.Thrumbo.Card.Text>外国の店を相手にスロット、ルーレット、ブラックジャック。銀は口座または倉庫から使う。どの回も確定済みで、再読み込みしても結果は変わらない。</HH.Thrumbo.Card.Text>
+  <HH.Thrumbo.Card.Visit>テーブルへ</HH.Thrumbo.Card.Visit>
+  <HH.Thrumbo.Card.Totals>{0}</HH.Thrumbo.Card.Totals>
+  <HH.Thrumbo.Card.Net>これまで {0} 回、通算 {1} 銀</HH.Thrumbo.Card.Net>
+  <HH.Thrumbo.EdgeLine>ハウスエッジ: スロット払い戻し {0} % · ルーレット {1} % · ブラックジャック約 {2} %</HH.Thrumbo.EdgeLine>
+  <HH.Thrumbo.EdgeTip>エッジはカジノゲームの正確な計算に、難易度設定（Mod設定、カジノ、Lucky Thrumbo）による {0} ポイントのずれを加えたもの。店はイカサマをしない。ここに示したエッジを持つだけだ。</HH.Thrumbo.EdgeTip>
+  <HH.Thrumbo.PayFrom>支払い元</HH.Thrumbo.PayFrom>
+  <HH.Thrumbo.FromBank>口座: {0}</HH.Thrumbo.FromBank>
+  <HH.Thrumbo.FromBankNone>口座: なし</HH.Thrumbo.FromBankNone>
+  <HH.Thrumbo.FromBankTip>賭け金はあなたの Silverline 口座から出ていき、勝ち金は口座に戻る。</HH.Thrumbo.FromBankTip>
+  <HH.Thrumbo.FromSilver>マップ上の銀: {0}</HH.Thrumbo.FromSilver>
+  <HH.Thrumbo.FromSilverTip>賭け金は倉庫内、または交易ビーコンの範囲内の銀から取られる（整数枚のみ）。勝ち金はテーブルのコロニストに渡される。端数の硬貨は、合計が揃うまで店に残る。</HH.Thrumbo.FromSilverTip>
+  <HH.Thrumbo.PlayerLine>操作盤: {0}</HH.Thrumbo.PlayerLine>
+  <HH.Thrumbo.Stake>賭け金</HH.Thrumbo.Stake>
+  <HH.Thrumbo.Max>最大</HH.Thrumbo.Max>
+  <HH.Thrumbo.Limit>テーブルの上限: {0}〜{1} 銀</HH.Thrumbo.Limit>
+  <HH.Thrumbo.LimitTip>一回の賭け金は純資産（口座＋自宅の銀−借金）の最大 {0} %。下限は {1}、上限は {2} 銀。Mod設定で変更できる。</HH.Thrumbo.LimitTip>
+  <HH.Thrumbo.Game.Slots>スロット</HH.Thrumbo.Game.Slots>
+  <HH.Thrumbo.Game.Roulette>ルーレット</HH.Thrumbo.Game.Roulette>
+  <HH.Thrumbo.Game.Blackjack>ブラックジャック</HH.Thrumbo.Game.Blackjack>
+  <HH.Thrumbo.HandOpenTip>先に今の勝負を終えてください。</HH.Thrumbo.HandOpenTip>
+  <HH.Thrumbo.Spin>回す</HH.Thrumbo.Spin>
+  <HH.Thrumbo.Volatility>ボラティリティ</HH.Thrumbo.Volatility>
+  <HH.Thrumbo.Vol.Low>低</HH.Thrumbo.Vol.Low>
+  <HH.Thrumbo.Vol.Medium>中</HH.Thrumbo.Vol.Medium>
+  <HH.Thrumbo.Vol.High>高</HH.Thrumbo.Vol.High>
+  <HH.Thrumbo.VolTip>長期的な払い戻しは同じ。的中率 {0} %、最高賞金は賭け金の {1} 倍。</HH.Thrumbo.VolTip>
+  <HH.Thrumbo.Paytable>配当表（長期の払い戻し率 {0} %）</HH.Thrumbo.Paytable>
+  <HH.Thrumbo.Pays>×{0} 払い</HH.Thrumbo.Pays>
+  <HH.Thrumbo.NoWin>ハズレ</HH.Thrumbo.NoWin>
+  <HH.Thrumbo.Net>({0})</HH.Thrumbo.Net>
+  <HH.Thrumbo.Sealed>賭け金は確定済み。ゲームを再読み込みしても結果は変わらない。</HH.Thrumbo.Sealed>
+  <HH.Thrumbo.Ball>玉: {0} {1}</HH.Thrumbo.Ball>
+  <HH.Thrumbo.Color.red>赤</HH.Thrumbo.Color.red>
+  <HH.Thrumbo.Color.black>黒</HH.Thrumbo.Color.black>
+  <HH.Thrumbo.Color.green>緑</HH.Thrumbo.Color.green>
+  <HH.Thrumbo.Roulette.Low>1–18</HH.Thrumbo.Roulette.Low>
+  <HH.Thrumbo.Roulette.High>19–36</HH.Thrumbo.Roulette.High>
+  <HH.Thrumbo.Roulette.Even>偶数</HH.Thrumbo.Roulette.Even>
+  <HH.Thrumbo.Roulette.Odd>奇数</HH.Thrumbo.Roulette.Odd>
+  <HH.Thrumbo.Roulette.Red>赤</HH.Thrumbo.Roulette.Red>
+  <HH.Thrumbo.Roulette.Black>黒</HH.Thrumbo.Roulette.Black>
+  <HH.Thrumbo.Roulette.Dozen1>1〜12</HH.Thrumbo.Roulette.Dozen1>
+  <HH.Thrumbo.Roulette.Dozen2>13〜24</HH.Thrumbo.Roulette.Dozen2>
+  <HH.Thrumbo.Roulette.Dozen3>25〜36</HH.Thrumbo.Roulette.Dozen3>
+  <HH.Thrumbo.Roulette.YourBet>あなたの賭け: {0}\n配当 {1} 倍</HH.Thrumbo.Roulette.YourBet>
+  <HH.Thrumbo.Roulette.StraightTip>{0} への単点賭け。</HH.Thrumbo.Roulette.StraightTip>
+  <HH.Thrumbo.Roulette.OutsideTip>{0}: 配当 {1} 倍。</HH.Thrumbo.Roulette.OutsideTip>
+  <HH.Thrumbo.BJ.Dealer>ディーラー</HH.Thrumbo.BJ.Dealer>
+  <HH.Thrumbo.BJ.You>あなた</HH.Thrumbo.BJ.You>
+  <HH.Thrumbo.BJ.Press>賭け金を決めて配ってください。</HH.Thrumbo.BJ.Press>
+  <HH.Thrumbo.BJ.Deal>配る</HH.Thrumbo.BJ.Deal>
+  <HH.Thrumbo.BJ.Hit>ヒット</HH.Thrumbo.BJ.Hit>
+  <HH.Thrumbo.BJ.Stand>スタンド</HH.Thrumbo.BJ.Stand>
+  <HH.Thrumbo.BJ.Double>ダブルダウン</HH.Thrumbo.BJ.Double>
+  <HH.Thrumbo.BJ.Dealt>カードが配られた。</HH.Thrumbo.BJ.Dealt>
+  <HH.Thrumbo.BJ.StakeOpen>テーブル上の賭け金: {0}</HH.Thrumbo.BJ.StakeOpen>
+  <HH.Thrumbo.BJ.Rules>ルール: {0}、無限デッキ。\n完璧なプレイ時のエッジ: 標準オッズで {1} %、このコロニーのオッズで {2} %。\n勝ちハンドにはずれが適用される（×{3} 払い）。完璧でないプレイは、エッジをわずかに動かす程度。</HH.Thrumbo.BJ.Rules>
+  <HH.Thrumbo.BJ.Line>あなた {0} · ディーラー {1} · {2}</HH.Thrumbo.BJ.Line>
+  <HH.Thrumbo.BJ.Lose>負け</HH.Thrumbo.BJ.Lose>
+  <HH.Thrumbo.BJ.Push>引き分け</HH.Thrumbo.BJ.Push>
+  <HH.Thrumbo.BJ.Win>勝ち</HH.Thrumbo.BJ.Win>
+  <HH.Thrumbo.BJ.Blackjack>ブラックジャック</HH.Thrumbo.BJ.Blackjack>
+  <HH.Thrumbo.BJ.DealerBlackjack>ディーラーのブラックジャック</HH.Thrumbo.BJ.DealerBlackjack>
+  <HH.Thrumbo.BJ.Bust>バースト</HH.Thrumbo.BJ.Bust>
+  <HH.Thrumbo.BJ.DoubleWin>ダブルで勝ち</HH.Thrumbo.BJ.DoubleWin>
+  <HH.Thrumbo.BJ.DoubleLose>ダブルで負け</HH.Thrumbo.BJ.DoubleLose>
+  <HH.Thrumbo.BJ.DoublePush>ダブル、引き分け</HH.Thrumbo.BJ.DoublePush>
+  <HH.Thrumbo.History>履歴</HH.Thrumbo.History>
+  <HH.Thrumbo.NoHistory>まだ何も遊んでいない。</HH.Thrumbo.NoHistory>
+  <HH.Thrumbo.Totals>{0} 回 · 賭け金 {1} · 払い戻し {2}（{3} %）· 結果 {4}</HH.Thrumbo.Totals>
+  <HH.Thrumbo.StakeShort>賭け {0}</HH.Thrumbo.StakeShort>
+  <HH.Thrumbo.Err.Closed>The Lucky Thrumbo は閉店中です。</HH.Thrumbo.Err.Closed>
+  <HH.Thrumbo.Err.NoMap>支払い元となるコロニーがありません。</HH.Thrumbo.Err.NoMap>
+  <HH.Thrumbo.Err.NoBank>そこから支払うには Silverline 口座が必要です。</HH.Thrumbo.Err.NoBank>
+  <HH.Thrumbo.Err.NoPlayer>銀を受け取るには、コロニストが操作盤に座っている必要があります。</HH.Thrumbo.Err.NoPlayer>
+  <HH.Thrumbo.Err.Min>最小の賭け金は {0} 銀です。</HH.Thrumbo.Err.Min>
+  <HH.Thrumbo.Err.Max>テーブルの上限は一回につき {0} 銀です。</HH.Thrumbo.Err.Max>
+  <HH.Thrumbo.Err.Whole>倉庫の銀は整数枚単位で賭けられます。</HH.Thrumbo.Err.Whole>
+  <HH.Thrumbo.Err.FundsBank>口座の残高が {0} 銀未満です。</HH.Thrumbo.Err.FundsBank>
+  <HH.Thrumbo.Err.FundsSilver>倉庫内または交易ビーコンの範囲内の銀が {0} 未満です。</HH.Thrumbo.Err.FundsSilver>
+  <HH.Thrumbo.Err.Take>賭け金を受け取れませんでした。何も遊んでいません。</HH.Thrumbo.Err.Take>
+  <HH.Thrumbo.Err.Number>賭け金は数字で入力してください。</HH.Thrumbo.Err.Number>
+  <HH.Thrumbo.Err.NoBet>先にボードで賭けを選んでください。</HH.Thrumbo.Err.NoBet>
+  <HH.Thrumbo.Err.HandOpen>まだ勝負が続いています。</HH.Thrumbo.Err.HandOpen>
+  <HH.Thrumbo.Err.NoHand>進行中の勝負がありません。</HH.Thrumbo.Err.NoHand>
+  <HH.Thrumbo.Err.NoDouble>ダブルダウンは最初の2枚のみ可能です。</HH.Thrumbo.Err.NoDouble>
 </LanguageData>

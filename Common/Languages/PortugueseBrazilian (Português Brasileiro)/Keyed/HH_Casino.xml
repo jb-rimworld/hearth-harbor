@@ -80,4 +80,95 @@
   <HH.Casino.CounterNext>{0} de {1} sessões em 3 dias – a próxima arrisca o vício.</HH.Casino.CounterNext>
   <HH.Casino.CounterRisk>{0} sessões em 3 dias – a próxima tem risco de vício de {1}.</HH.Casino.CounterRisk>
   <HH.Casino.CounterAddicted>Viciado. {0} sessões nos últimos 3 dias.</HH.Casino.CounterAddicted>
+  <HH.Thrumbo.Title>The Lucky Thrumbo</HH.Thrumbo.Title>
+  <HH.Thrumbo.Tagline>Mesas orbitais do mundo Silverline. A casa está em órbita; sua aposta fica no chão.</HH.Thrumbo.Tagline>
+  <HH.Thrumbo.Comm.Call>Ligar para The Lucky Thrumbo</HH.Thrumbo.Comm.Call>
+  <HH.Thrumbo.Comm.Info>Um cassino orbital que pega prata de verdade e devolve quando bem entende.</HH.Thrumbo.Comm.Info>
+  <HH.Thrumbo.Card.Text>Caça-níqueis, roleta e blackjack contra uma casa estrangeira, com prata de verdade da sua conta ou do armazém. Cada rodada é selada: recarregar não muda o resultado.</HH.Thrumbo.Card.Text>
+  <HH.Thrumbo.Card.Visit>Visitar as mesas</HH.Thrumbo.Card.Visit>
+  <HH.Thrumbo.Card.Totals>{0}</HH.Thrumbo.Card.Totals>
+  <HH.Thrumbo.Card.Net>{0} rodadas até agora, {1} de prata no total</HH.Thrumbo.Card.Net>
+  <HH.Thrumbo.EdgeLine>Vantagem da casa: caça-níqueis {0} % de pagamento · roleta {1} % · blackjack cerca de {2} %</HH.Thrumbo.EdgeLine>
+  <HH.Thrumbo.EdgeTip>As vantagens são a matemática exata dos jogos do cassino, mais um deslocamento de {0} pontos pela dificuldade (configurações do mod, Cassino, Lucky Thrumbo). A casa nunca trapaceia; ela só tem a vantagem que mostra aqui.</HH.Thrumbo.EdgeTip>
+  <HH.Thrumbo.PayFrom>Pagar com</HH.Thrumbo.PayFrom>
+  <HH.Thrumbo.FromBank>Conta: {0}</HH.Thrumbo.FromBank>
+  <HH.Thrumbo.FromBankNone>Conta: nenhuma</HH.Thrumbo.FromBankNone>
+  <HH.Thrumbo.FromBankTip>As apostas saem da sua conta Silverline; os ganhos voltam para ela.</HH.Thrumbo.FromBankTip>
+  <HH.Thrumbo.FromSilver>Prata no mapa: {0}</HH.Thrumbo.FromSilver>
+  <HH.Thrumbo.FromSilverTip>As apostas são tiradas da prata no armazém ou na área de um farol de comércio (moedas inteiras). Os ganhos são entregues ao colono na mesa; uma fração de moeda fica com a casa até fechar.</HH.Thrumbo.FromSilverTip>
+  <HH.Thrumbo.PlayerLine>No console: {0}</HH.Thrumbo.PlayerLine>
+  <HH.Thrumbo.Stake>Aposta</HH.Thrumbo.Stake>
+  <HH.Thrumbo.Max>Máx.</HH.Thrumbo.Max>
+  <HH.Thrumbo.Limit>Limite da mesa: {0} a {1} de prata</HH.Thrumbo.Limit>
+  <HH.Thrumbo.LimitTip>Uma aposta é no máximo {0} % do seu patrimônio líquido (conta mais prata em casa, menos dívidas), nunca menos que {1} e nunca mais que {2} de prata. Você pode mudar isso nas configurações do mod.</HH.Thrumbo.LimitTip>
+  <HH.Thrumbo.Game.Slots>Caça-níqueis</HH.Thrumbo.Game.Slots>
+  <HH.Thrumbo.Game.Roulette>Roleta</HH.Thrumbo.Game.Roulette>
+  <HH.Thrumbo.Game.Blackjack>Blackjack</HH.Thrumbo.Game.Blackjack>
+  <HH.Thrumbo.HandOpenTip>Termine a mão primeiro.</HH.Thrumbo.HandOpenTip>
+  <HH.Thrumbo.Spin>Girar</HH.Thrumbo.Spin>
+  <HH.Thrumbo.Volatility>Volatilidade</HH.Thrumbo.Volatility>
+  <HH.Thrumbo.Vol.Low>Baixa</HH.Thrumbo.Vol.Low>
+  <HH.Thrumbo.Vol.Medium>Média</HH.Thrumbo.Vol.Medium>
+  <HH.Thrumbo.Vol.High>Alta</HH.Thrumbo.Vol.High>
+  <HH.Thrumbo.VolTip>Mesmo pagamento a longo prazo. Taxa de acerto {0} %, melhor prêmio {1} vezes a aposta.</HH.Thrumbo.VolTip>
+  <HH.Thrumbo.Paytable>Tabela de pagamento (devolve {0} % a longo prazo)</HH.Thrumbo.Paytable>
+  <HH.Thrumbo.Pays>paga ×{0}</HH.Thrumbo.Pays>
+  <HH.Thrumbo.NoWin>sem prêmio</HH.Thrumbo.NoWin>
+  <HH.Thrumbo.Net>({0})</HH.Thrumbo.Net>
+  <HH.Thrumbo.Sealed>Sua aposta está selada. Recarregar o jogo não muda o resultado.</HH.Thrumbo.Sealed>
+  <HH.Thrumbo.Ball>Bola: {0} {1}</HH.Thrumbo.Ball>
+  <HH.Thrumbo.Color.red>vermelho</HH.Thrumbo.Color.red>
+  <HH.Thrumbo.Color.black>preto</HH.Thrumbo.Color.black>
+  <HH.Thrumbo.Color.green>verde</HH.Thrumbo.Color.green>
+  <HH.Thrumbo.Roulette.Low>1–18</HH.Thrumbo.Roulette.Low>
+  <HH.Thrumbo.Roulette.High>19–36</HH.Thrumbo.Roulette.High>
+  <HH.Thrumbo.Roulette.Even>Par</HH.Thrumbo.Roulette.Even>
+  <HH.Thrumbo.Roulette.Odd>Ímpar</HH.Thrumbo.Roulette.Odd>
+  <HH.Thrumbo.Roulette.Red>Vermelho</HH.Thrumbo.Roulette.Red>
+  <HH.Thrumbo.Roulette.Black>Preto</HH.Thrumbo.Roulette.Black>
+  <HH.Thrumbo.Roulette.Dozen1>1ª dúzia</HH.Thrumbo.Roulette.Dozen1>
+  <HH.Thrumbo.Roulette.Dozen2>2ª dúzia</HH.Thrumbo.Roulette.Dozen2>
+  <HH.Thrumbo.Roulette.Dozen3>3ª dúzia</HH.Thrumbo.Roulette.Dozen3>
+  <HH.Thrumbo.Roulette.YourBet>Sua aposta: {0}\npaga {1} para 1</HH.Thrumbo.Roulette.YourBet>
+  <HH.Thrumbo.Roulette.StraightTip>Aposta direta em {0}.</HH.Thrumbo.Roulette.StraightTip>
+  <HH.Thrumbo.Roulette.OutsideTip>{0}: paga {1} para 1.</HH.Thrumbo.Roulette.OutsideTip>
+  <HH.Thrumbo.BJ.Dealer>Crupiê</HH.Thrumbo.BJ.Dealer>
+  <HH.Thrumbo.BJ.You>Você</HH.Thrumbo.BJ.You>
+  <HH.Thrumbo.BJ.Press>Defina sua aposta e distribua.</HH.Thrumbo.BJ.Press>
+  <HH.Thrumbo.BJ.Deal>Distribuir</HH.Thrumbo.BJ.Deal>
+  <HH.Thrumbo.BJ.Hit>Pedir carta</HH.Thrumbo.BJ.Hit>
+  <HH.Thrumbo.BJ.Stand>Parar</HH.Thrumbo.BJ.Stand>
+  <HH.Thrumbo.BJ.Double>Dobrar</HH.Thrumbo.BJ.Double>
+  <HH.Thrumbo.BJ.Dealt>As cartas estão na mesa.</HH.Thrumbo.BJ.Dealt>
+  <HH.Thrumbo.BJ.StakeOpen>Aposta na mesa: {0}</HH.Thrumbo.BJ.StakeOpen>
+  <HH.Thrumbo.BJ.Rules>Regras: {0}, baralho infinito.\nVantagem com jogo perfeito: {1} % nas probabilidades padrão, {2} % nas suas.\nUm deslocamento é aplicado às mãos vencedoras (pagam ×{3}); jogar pior que o perfeito move a vantagem um pouco menos.</HH.Thrumbo.BJ.Rules>
+  <HH.Thrumbo.BJ.Line>Você {0} · crupiê {1} · {2}</HH.Thrumbo.BJ.Line>
+  <HH.Thrumbo.BJ.Lose>você perde</HH.Thrumbo.BJ.Lose>
+  <HH.Thrumbo.BJ.Push>empate</HH.Thrumbo.BJ.Push>
+  <HH.Thrumbo.BJ.Win>você ganha</HH.Thrumbo.BJ.Win>
+  <HH.Thrumbo.BJ.Blackjack>blackjack</HH.Thrumbo.BJ.Blackjack>
+  <HH.Thrumbo.BJ.DealerBlackjack>blackjack do crupiê</HH.Thrumbo.BJ.DealerBlackjack>
+  <HH.Thrumbo.BJ.Bust>estourou</HH.Thrumbo.BJ.Bust>
+  <HH.Thrumbo.BJ.DoubleWin>dobrou e ganhou</HH.Thrumbo.BJ.DoubleWin>
+  <HH.Thrumbo.BJ.DoubleLose>dobrou e perdeu</HH.Thrumbo.BJ.DoubleLose>
+  <HH.Thrumbo.BJ.DoublePush>dobrou, empate</HH.Thrumbo.BJ.DoublePush>
+  <HH.Thrumbo.History>Histórico</HH.Thrumbo.History>
+  <HH.Thrumbo.NoHistory>Nada jogado ainda.</HH.Thrumbo.NoHistory>
+  <HH.Thrumbo.Totals>{0} rodadas · apostado {1} · devolvido {2} ({3} %) · resultado {4}</HH.Thrumbo.Totals>
+  <HH.Thrumbo.StakeShort>aposta {0}</HH.Thrumbo.StakeShort>
+  <HH.Thrumbo.Err.Closed>The Lucky Thrumbo está fechado.</HH.Thrumbo.Err.Closed>
+  <HH.Thrumbo.Err.NoMap>Não há colônia para pagar.</HH.Thrumbo.Err.NoMap>
+  <HH.Thrumbo.Err.NoBank>Você precisa de uma conta Silverline para pagar por ela.</HH.Thrumbo.Err.NoBank>
+  <HH.Thrumbo.Err.NoPlayer>Um colono precisa sentar no console para receber a prata.</HH.Thrumbo.Err.NoPlayer>
+  <HH.Thrumbo.Err.Min>A menor aposta é {0} de prata.</HH.Thrumbo.Err.Min>
+  <HH.Thrumbo.Err.Max>O limite da mesa é {0} de prata por aposta.</HH.Thrumbo.Err.Max>
+  <HH.Thrumbo.Err.Whole>Prata do armazém é apostada em moedas inteiras.</HH.Thrumbo.Err.Whole>
+  <HH.Thrumbo.Err.FundsBank>Sua conta tem menos de {0} de prata.</HH.Thrumbo.Err.FundsBank>
+  <HH.Thrumbo.Err.FundsSilver>Há menos de {0} de prata no armazém ou na área de um farol de comércio.</HH.Thrumbo.Err.FundsSilver>
+  <HH.Thrumbo.Err.Take>A aposta não pôde ser retirada; nada foi jogado.</HH.Thrumbo.Err.Take>
+  <HH.Thrumbo.Err.Number>Digite a aposta como número.</HH.Thrumbo.Err.Number>
+  <HH.Thrumbo.Err.NoBet>Escolha uma aposta no tabuleiro primeiro.</HH.Thrumbo.Err.NoBet>
+  <HH.Thrumbo.Err.HandOpen>Uma mão ainda está aberta.</HH.Thrumbo.Err.HandOpen>
+  <HH.Thrumbo.Err.NoHand>Não há mão aberta.</HH.Thrumbo.Err.NoHand>
+  <HH.Thrumbo.Err.NoDouble>Só é possível dobrar nas suas duas primeiras cartas.</HH.Thrumbo.Err.NoDouble>
 </LanguageData>

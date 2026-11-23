@@ -347,4 +347,7 @@
   <HH.Enum.HouseStyle.Industrial>工业</HH.Enum.HouseStyle.Industrial>
   <HH.Enum.HouseStyle.Spacer>太空</HH.Enum.HouseStyle.Spacer>
   <HH.Enum.HouseStyle.Ultra>超级</HH.Enum.HouseStyle.Ultra>
+  <HH.UI.Overview.Arrivals>未来 24 小时到访：{0}，预计每天约 {1} 批客人。</HH.UI.Overview.Arrivals>
+  <HH.UI.Overview.Arrivals.None>尚无人计划</HH.UI.Overview.Arrivals.None>
+  <HH.UI.Overview.Arrivals.Planned>已计划 {0} 批（约 {1} 位客人）</HH.UI.Overview.Arrivals.Planned>
 </LanguageData>

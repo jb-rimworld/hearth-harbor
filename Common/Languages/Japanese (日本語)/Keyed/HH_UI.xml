@@ -347,4 +347,7 @@
   <HH.Enum.HouseStyle.Industrial>産業</HH.Enum.HouseStyle.Industrial>
   <HH.Enum.HouseStyle.Spacer>宇宙時代</HH.Enum.HouseStyle.Spacer>
   <HH.Enum.HouseStyle.Ultra>ウルトラ</HH.Enum.HouseStyle.Ultra>
+  <HH.UI.Overview.Arrivals>到着予定、次の24時間: {0}、1日あたり約 {1} 組を見込む。</HH.UI.Overview.Arrivals>
+  <HH.UI.Overview.Arrivals.None>まだ予定なし</HH.UI.Overview.Arrivals.None>
+  <HH.UI.Overview.Arrivals.Planned>{0} 組を予定（約 {1} 名）</HH.UI.Overview.Arrivals.Planned>
 </LanguageData>

@@ -347,4 +347,7 @@
   <HH.Enum.HouseStyle.Industrial>산업</HH.Enum.HouseStyle.Industrial>
   <HH.Enum.HouseStyle.Spacer>우주인</HH.Enum.HouseStyle.Spacer>
   <HH.Enum.HouseStyle.Ultra>울트라</HH.Enum.HouseStyle.Ultra>
+  <HH.UI.Overview.Arrivals>다음 24시간 도착: {0}, 하루 약 {1}팀 예상.</HH.UI.Overview.Arrivals>
+  <HH.UI.Overview.Arrivals.None>아직 아무도 예정되지 않았습니다</HH.UI.Overview.Arrivals.None>
+  <HH.UI.Overview.Arrivals.Planned>{0}팀 예정 (손님 약 {1}명)</HH.UI.Overview.Arrivals.Planned>
 </LanguageData>
