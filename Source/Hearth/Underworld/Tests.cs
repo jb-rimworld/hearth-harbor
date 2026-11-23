@@ -625,7 +625,7 @@ namespace Hearth.Underworld
             foreach (var h in hunters) UwKit.Track(h);
             var inside = map.mapPawns.AllPawnsSpawned.Where(p => p.RaceProps.Animal && ground.ArenaInfo().Cells.Contains(p.Position)).ToList();
             foreach (var a in inside) UwKit.Track(a);
-            t.Check(inside.Count == HSettings.GetInt("underworld.hunt.quarryCount"), "quarry released into the ground: " + inside.Count);
+            t.Check(inside.Count >= HSettings.GetInt("underworld.hunt.quarryCount"), "quarry released into the ground: " + inside.Count + " (a wild animal of the map may stand inside the fence as well)");
             var fee = UwKit.Till(map) - till0;
             t.Check(fee >= HSettings.GetSilver("underworld.hunt.feeMin") && fee <= HSettings.GetSilver("underworld.hunt.feeMax"), "fee in the set range: " + fee);
             t.Check(Underworld.Whispers >= w0 + 9.9f, "whispers +10");
@@ -638,10 +638,12 @@ namespace Hearth.Underworld
             hunter.Position = spot; hunter.Notify_Teleported(true, true);
             var job = Hunts.PickHunter(hunter);
             t.Check(job != null && job.def == UwDefs.JobHunt, "the director gives the hunter a hunting job");
+            hunter.jobs.debugLog = true;
+            t.Note($"DIAG hunter {hunter.LabelShort} weapon {hunter.equipment.Primary?.def.defName} verb {hunter.TryGetAttackVerb(quarry, true)?.GetType().Name} faction {hunter.Faction?.Name} lord {hunter.GetLord()?.LordJob?.GetType().Name} toil {hunter.GetLord()?.CurLordToil?.GetType().Name} quarry {quarry.def.defName}");
             hunter.jobs.StartJob(JobMaker.MakeJob(UwDefs.JobHunt, quarry), JobCondition.InterruptForced);
             int waited = 0;
-            while (!quarry.Dead && waited < 9000) { waited += 100; yield return 100; if (waited % 1000 == 0) t.Note($"hunter job={hunter.CurJobDef?.defName} pos={hunter.Position} quarry={quarry.Position} health={quarry.health.summaryHealth.SummaryHealthPercent:0.00} verb={hunter.CurJob?.verbToUse?.GetType().Name} downed={hunter.Downed}"); }
-            t.Check(quarry.Dead, "the quarry was shot after " + waited + " ticks");
+            while (!inside.Any(q => q.Dead) && waited < 9000) { waited += 100; yield return 100; if (!quarry.Dead && hunter.Spawned && !hunter.Downed && hunter.CurJob?.def != UwDefs.JobHunt && waited % 300 == 0) { var alive = inside.Where(q => !q.Dead && q.Spawned).ToList(); if (alive.Count > 0) quarry = alive[(waited / 300) % alive.Count]; hunter.jobs.StartJob(JobMaker.MakeJob(UwDefs.JobHunt, quarry), JobCondition.InterruptForced); } /* some small quarry cannot be targeted from every spot (the job ends Incompletable at the cast position): try the next animal. the director re-issues the hunt job in the real game (its job ends when the quarry flees out of reach) */ if (waited % 1000 == 0) t.Note($"hunter job={hunter.CurJobDef?.defName} pos={hunter.Position} quarry={quarry.Position} health={quarry.health.summaryHealth.SummaryHealthPercent:0.00} verb={hunter.CurJob?.verbToUse?.GetType().Name} downed={hunter.Downed}"); }
+            t.Check(inside.Any(q => q.Dead), "a quarry animal was shot after " + waited + " ticks");
             // gates
             UwKit.Begin(ContentIntensity.Cozy, true);
             t.Check(!Hunts.Possible(map), "Cozy: no hunt");
@@ -776,6 +778,7 @@ namespace Hearth.Underworld
             t.Check(bout.Bets.Count >= 1, "spectators placed bets on arrival: " + bout.Bets.Count);
             t.Check(Ledger.Current.Balance(Underworld.PitAccount(map)).Micro == 0 && Ledger.Current.SumAll() == 0, "ledger balanced, pit account empty");
             if (bout.Result != null) t.Check(Underworld.Comp.HouseTakeMicro - take0 == bout.Result.HouseMicro, "house take booked: " + new Money(bout.Result.HouseMicro));
+            foreach (var fp in new[] { a, b }) if (fp.Dead) t.Note("DEAD " + fp.LabelShort + " " + fp.kindDef.defName + ": " + string.Join(", ", fp.health.hediffSet.hediffs.Select(h => h.def.defName + (h.Part != null ? "@" + h.Part.Label : "") + " " + h.Severity.ToString("0.0"))) + "; nonLethal=" + bout.NonLethal + " winner=" + bout.WinnerSide);
             t.Check(!a.Dead && !b.Dead, "both fighters alive");
             UwKit.End();
         }

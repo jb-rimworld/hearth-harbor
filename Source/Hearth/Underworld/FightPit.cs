@@ -320,6 +320,8 @@ namespace Hearth.Underworld
         }
 
         /// <summary>The damage guard asks: may this fighter take more damage? Not once beaten in a non-lethal bout.</summary>
+        public bool IsNearYield(Pawn p) => phase != Phase.Done && p.health.summaryHealth.SummaryHealthPercent < HSettings.Get("underworld.pit.yieldHealth") + 0.25f;
+
         public bool ShouldAbsorb(Pawn p) => phase != Phase.Done && NonLethal && (p.Downed || Beaten(p));
 
         bool EndCheck(int now)
@@ -337,6 +339,14 @@ namespace Hearth.Underworld
             if (phase == Phase.Done) return;
             phase = Phase.Done; WinnerSide = winnerSide; Draw = winnerSide < 0;
             foreach (var p in new[] { A, B }) if (p != null && !p.Dead && p.Spawned && p.CurJob?.def == JobDefOf.AttackMelee) p.jobs.EndCurrentJob(JobCondition.InterruptForced, true);
+            // a non-lethal bout must not end with a loser who bleeds out afterwards: stop the bleeding of both fighters
+            if (NonLethal)
+                foreach (var p in new[] { A, B })
+                {
+                    if (p == null || p.Dead || p.health?.hediffSet == null) continue;
+                    try { foreach (var h in p.health.hediffSet.hediffs.ToList()) if (h is Hediff_Injury inj && inj.Bleeding && inj.TendableNow()) inj.Tended(1f, 1f, 0); }
+                    catch (Exception e) { HLog.Warn("Underworld", "tending the fighters failed: " + e.Message); }
+                }
             Settle(winnerSide);
             WitnessEffects();
             active.Remove(this);

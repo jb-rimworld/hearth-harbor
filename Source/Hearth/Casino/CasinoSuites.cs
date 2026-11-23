@@ -355,7 +355,10 @@ namespace Hearth.Casino.Tests
             }
             t.Note("table rounds: " + string.Join(", ", tables.Select(x => x.Game + "=" + x.Rounds)));
             t.Check(tables.Count(x => x.Rounds >= 10) >= 2, "at least two tables ran rounds with a croupier: " + string.Join(", ", tables.Select(x => x.Game + "=" + x.Rounds)));
-            for (int i = 0; i < 160 && CasinoComponent.Get().Sessions.Count > 0; i++) yield return 60; // colonist chip sessions run up to 9000 ticks
+            // guests (and idle colonists) re-queue for the tables on their own, so the tables are closed to new sessions while they drain (running sessions continue)
+            foreach (var x in tables) x.GuestsAllowed = false;
+            for (int i = 0; i < 200 && CasinoComponent.Get().Sessions.Count > 0; i++) yield return 60; // colonist chip sessions run up to 9000 ticks
+            foreach (var x in tables) x.GuestsAllowed = true;
             foreach (var x in tables.Where(x => x.Rounds >= 30 && x.Variance > 0))
             {
                 double z = (x.HouseWin - x.Expected) / Math.Sqrt(x.Variance);

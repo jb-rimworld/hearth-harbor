@@ -96,8 +96,10 @@ namespace Hearth.Underworld
             absorbed = false;
             if (FightBout.ActiveCount == 0 || !Modules.On(ModuleId.Underworld)) return true;
             var b = FightBout.OfPawn(__instance);
-            if (b == null || !b.ShouldAbsorb(__instance)) return true;
-            dinfo.SetAmount(0f);
+            if (b == null) return true;
+            if (b.ShouldAbsorb(__instance)) { dinfo.SetAmount(0f); return true; }
+            // non-lethal: a heavy blow on a fighter close to the yield line (a muffalo's kick) must not kill before the bout referee notices; soften it there
+            if (b.NonLethal && b.IsNearYield(__instance)) dinfo.SetAmount(dinfo.Amount * 0.3f);
             return true;
         }
     }
