@@ -497,6 +497,7 @@ namespace Hearth.ShopsFood
             t.Check(!WorkGiver_ServeVenue.WantsTender(venue), "nobody is wanted while closed (no bell)");
 
             // --- night bell
+            int socialLevel0 = pawn.skills.GetSkill(SkillDefOf.Social).Level;
             VenueState.RingBell(sign, 5000);
             t.Check(VenueApi.Gate(venue) == VenueGate.WaitingForStaff, "ringing the bell calls for staff");
             t.Check(WorkGiver_ServeVenue.WantsTender(venue), "bell makes the venue want a tender");
@@ -509,7 +510,8 @@ namespace Hearth.ShopsFood
             var priced = VenueApi.PriceOf(beer, 1, venue);
             t.Check(priced.Silver >= HSettings.GetSilver(VS.NightBellMin).Silver - 0.001, "bell service never costs less than the minimum: " + priced);
             t.Check(priced.Silver > normal, "bell service has a surcharge: " + priced + " > " + normal.ToString("0.00"));
-            t.Check(pawn.skills.GetSkill(SkillDefOf.Social).xpSinceLastLevel >= 0f, "social skill intact");
+            // tending only ever adds Social xp; vanilla's own skill decay may take a level at most (xpSinceLastLevel itself dips below 0 for an instant at a decay step)
+            t.Check(pawn.skills.GetSkill(SkillDefOf.Social).Level >= socialLevel0 - 1, "social skill intact: level " + socialLevel0 + " -> " + pawn.skills.GetSkill(SkillDefOf.Social).Level);
             VenueTestKit.Teardown(map, room);
         }
     }
