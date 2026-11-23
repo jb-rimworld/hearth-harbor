@@ -26,7 +26,7 @@ namespace Hearth.Kitchen
             HSettings.Bool(m, Cat, "kitchen.poisonRule", true, "No food poisoning from a good kitchen", "Plates cooked by a cook with Cooking 4 or more in a clean kitchen (cleanliness -0.2 or better) can never poison. Off: vanilla rolls apply.");
             HSettings.Bool(m, Cat, "kitchen.variants", true, "Fine and Signature forms", "Offer each dish in a Fine form (more and better ingredients, a better chance for good quality) and a Signature form (research needed).");
             HSettings.Bool(m, Cat, "kitchen.allKnown", false, "All dishes known", "Skip learning: every dish of the menu can be cooked as soon as its devices stand.");
-            HSettings.Bool(m, Cat, "kitchen.darkMenu", false, "Dark menu (long pork)", "Allow the long pork dishes. Needs content intensity Dark or Grim. An ideoligion that approves of cannibalism also unlocks them.");
+            HSettings.Bool(m, Cat, "kitchen.darkMenu", false, "Dark menu (long pork)", "Allow the long pork dishes. Always needs content intensity Dark or Grim; with that, an ideoligion that approves of cannibalism unlocks them even when this is off.");
         }
 
         public override void OnDefsLoaded()

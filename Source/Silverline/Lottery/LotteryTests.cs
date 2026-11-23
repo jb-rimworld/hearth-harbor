@@ -81,10 +81,18 @@ namespace Silverline
             }
             t.Check(PotsFine(led), "pot never negative over 60 colony draws");
             t.Check(FinTest.Balanced, "ledger balanced after the colony lottery");
-            // price sensitivity: a worse deal means fewer tickets
+            // renown scales demand between 0.5x and 1.5x of neutral: a new colony (renown 10) keeps 60 % of the neutral demand, never near zero
+            var oldRenown = RenownSource.Getter;
+            RenownSource.Getter = () => 50f; double atNeutral = lot.ColonyDemandPerDay(out _, out _);
+            RenownSource.Getter = () => 10f; double atNew = lot.ColonyDemandPerDay(out _, out _);
+            RenownSource.Getter = oldRenown;
+            t.Check(atNeutral <= 0 || (atNew >= atNeutral * 0.55 && atNew <= atNeutral), $"demand of a new colony is about 0.6x neutral: {atNew:0.00} vs {atNeutral:0.00}");
+            // price sensitivity: a worse deal means fewer tickets (renown fixed, so the comparison never depends on the live colony)
+            RenownSource.Getter = () => 50f;
             HSettings.Set("lottery.colonyQuote", 0.3f); double worse = lot.ColonyDemandPerDay(out _, out _);
             HSettings.Set("lottery.colonyQuote", 0.9f); double better = lot.ColonyDemandPerDay(out _, out _);
             t.Check(better >= worse, $"a better payout share attracts more tickets: {worse:0.0} → {better:0.0}");
+            RenownSource.Getter = oldRenown;
             HSettings.Set("lottery.colonyOn", 0f);
             // caretaker: negative pot is repaired
             led.Post(FinanceAccounts.LotteryColonyPot, "world", led.Balance(FinanceAccounts.LotteryColonyPot) + Money.FromSilver(5), "test overdraw", true);

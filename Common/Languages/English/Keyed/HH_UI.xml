@@ -62,6 +62,7 @@
   <HH.UI.Modules.ContentDesc>How dark the optional content may get. Never sexual content, whatever you pick.</HH.UI.Modules.ContentDesc>
   <HH.UI.Content.Cozy>Cozy</HH.UI.Content.Cozy>
   <HH.UI.Content.Cozy.Tip>Mild stories and consequences only.</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Decline>No, keep {0}</HH.UI.Content.Decline>
   <HH.UI.Content.Standard>Standard</HH.UI.Content.Standard>
   <HH.UI.Content.Standard.Tip>The default. Rough edges, nothing nasty.</HH.UI.Content.Standard.Tip>
   <HH.UI.Content.Dark>Dark</HH.UI.Content.Dark>

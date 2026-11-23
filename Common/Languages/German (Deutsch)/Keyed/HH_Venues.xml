@@ -88,6 +88,10 @@
   <HH.Venue.HoursTitle>Öffnungszeiten</HH.Venue.HoursTitle>
   <HH.Venue.LastOrders>letzte Bestellung</HH.Venue.LastOrders>
   <HH.Venue.MarketFees>Die Händler zahlen {0} Silber für ihre Stände.</HH.Venue.MarketFees>
+  <HH.Venue.MarketBlock.NoHome>keine Heimatkarte</HH.Venue.MarketBlock.NoHome>
+  <HH.Venue.MarketBlock.NoShop>kein Laden</HH.Venue.MarketBlock.NoShop>
+  <HH.Venue.MarketBlock.Stalls>Marktstände {0}/{1}</HH.Venue.MarketBlock.Stalls>
+  <HH.Venue.MarketBlock.Renown>Ansehen {0}/{1}</HH.Venue.MarketBlock.Renown>
   <HH.Venue.MarketLabel>Markttag</HH.Venue.MarketLabel>
   <HH.Venue.MarketText>Es hat sich herumgesprochen: Heute ist Markttag. {0} Händlerkarawanen und {1} Besuchergruppen von {2} sind auf dem Weg zu deiner Kolonie. Die Händler handeln wie gewohnt an ihren Lagern; die Besucher stöbern in deinen Läden und Tavernen, sofern diese geöffnet sind.\n\nHalte deine Regale gefüllt und deine Theken besetzt.</HH.Venue.MarketText>
   <HH.Venue.NoRoom>Noch kein Geschäft: Das Schild braucht einen geschlossenen Raum mit Dach.</HH.Venue.NoRoom>

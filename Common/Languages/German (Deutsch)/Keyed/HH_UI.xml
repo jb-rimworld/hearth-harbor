@@ -62,6 +62,7 @@
   <HH.UI.Modules.ContentDesc>Wie düster der optionale Inhalt werden darf. Niemals sexuelle Inhalte, egal was du wählst.</HH.UI.Modules.ContentDesc>
   <HH.UI.Content.Cozy>Gemütlich</HH.UI.Content.Cozy>
   <HH.UI.Content.Cozy.Tip>Nur milde Geschichten und Folgen.</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Decline>Nein, bei {0} bleiben</HH.UI.Content.Decline>
   <HH.UI.Content.Standard>Standard</HH.UI.Content.Standard>
   <HH.UI.Content.Standard.Tip>Die Voreinstellung. Ecken und Kanten, nichts Fieses.</HH.UI.Content.Standard.Tip>
   <HH.UI.Content.Dark>Düster</HH.UI.Content.Dark>

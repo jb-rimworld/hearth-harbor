@@ -89,6 +89,10 @@
   <HH.Venue.HoursTitle>Opening hours</HH.Venue.HoursTitle>
   <HH.Venue.LastOrders>last orders</HH.Venue.LastOrders>
   <HH.Venue.MarketFees>The traders pay {0} silver for their stalls.</HH.Venue.MarketFees>
+  <HH.Venue.MarketBlock.NoHome>no home map</HH.Venue.MarketBlock.NoHome>
+  <HH.Venue.MarketBlock.NoShop>no shop</HH.Venue.MarketBlock.NoShop>
+  <HH.Venue.MarketBlock.Stalls>market stalls {0}/{1}</HH.Venue.MarketBlock.Stalls>
+  <HH.Venue.MarketBlock.Renown>renown {0}/{1}</HH.Venue.MarketBlock.Renown>
   <HH.Venue.MarketLabel>Market day</HH.Venue.MarketLabel>
   <HH.Venue.MarketText>Word has spread: it is market day. {0} trader caravans and {1} groups of visitors from {2} are on their way to your colony. Traders will trade as usual at their camps; visitors will browse your shops and taverns if they are open.\n\nKeep your shelves stocked and your counters staffed.</HH.Venue.MarketText>
   <HH.Venue.NoRoom>Not a business yet: the sign needs an enclosed, roofed room.</HH.Venue.NoRoom>

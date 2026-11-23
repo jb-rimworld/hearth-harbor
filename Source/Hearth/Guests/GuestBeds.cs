@@ -152,17 +152,21 @@ namespace Hearth.Guests
                     new FloatMenuOption(PriceModeLabel(BedPriceMode.Discount), () => SetPriceModeAll(BedPriceMode.Discount)),
                     new FloatMenuOption(PriceModeLabel(BedPriceMode.Auto), () => SetPriceModeAll(BedPriceMode.Auto)),
                     new FloatMenuOption(PriceModeLabel(BedPriceMode.Premium), () => SetPriceModeAll(BedPriceMode.Premium)),
+                    new FloatMenuOption("HH.Inn.PriceMode.ManualSet".TranslateOr("Fixed price…"), () => Find.WindowStack.Add(new Dialog_Slider(
+                        v => "HH.Inn.PriceMode.ManualValue".TranslateOr("{0} silver per night").Replace("{0}", v.ToString()), 0, 500,
+                        v => SetPriceModeAll(BedPriceMode.Manual, v), Math.Max(0, ManualPrice)))),
                 })),
             };
         }
 
         /// <summary>Applies the mode to every selected guest bed (multi-select works like vanilla gizmos).</summary>
-        void SetPriceModeAll(BedPriceMode m)
+        void SetPriceModeAll(BedPriceMode m, int manualPrice = 0)
         {
             bool any = false;
             foreach (var o in Find.Selector.SelectedObjectsListForReading)
-                if (o is Thing t && GuestBeds.Comp(t) is CompHH_GuestBed c && c.guestBed) { c.PriceMode = m; any = true; }
-            if (!any) PriceMode = m;
+                if (o is Thing t && GuestBeds.Comp(t) is CompHH_GuestBed c && c.guestBed) { c.PriceMode = m; c.ManualPrice = m == BedPriceMode.Manual ? manualPrice : 0; any = true; }
+            if (!any) { PriceMode = m; ManualPrice = m == BedPriceMode.Manual ? manualPrice : 0; }
+            GuestBedPricing.ClearCache();
         }
 
         public static string PriceModeLabel(BedPriceMode m)

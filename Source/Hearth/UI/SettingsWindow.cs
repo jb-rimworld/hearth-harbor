@@ -326,18 +326,20 @@ namespace Hearth.Shell
         static void ChooseContent(HearthProfile target, ContentIntensity c)
         {
             if (c < ContentIntensity.Dark || target.Content == c || target.Content >= ContentIntensity.Dark && c <= target.Content) { target.Content = c; return; }
+            var previous = target.Content;
             var node = new DiaNode((c >= ContentIntensity.Grim ? "HH.Underworld.Warn.Grim" : "HH.Underworld.Warn.Dark").Translate());
             node.options.Add(new DiaOption("HH.Underworld.Warn.Accept".Translate())
             {
                 action = () =>
                 {
                     target.Content = c;
-                    var comp = Hearth.Underworld.Underworld.Comp; if (comp != null) comp.ContentWarningAck = true;
+                    // only the running game's own profile acknowledges the warning of the running game (the mod-wide template does not)
+                    var comp = Hearth.Underworld.Underworld.Comp; if (comp != null && target == HearthProfile.Current) comp.ContentWarningAck = true;
                     HLog.Info("UI", "Content " + c + " confirmed in settings");
                 },
                 resolveTree = true
             });
-            node.options.Add(new DiaOption("HH.Underworld.Warn.Back".Translate()) { resolveTree = true });
+            node.options.Add(new DiaOption("HH.UI.Content.Decline".Translate(("HH.UI.Content." + previous).Translate())) { action = () => target.Content = previous, resolveTree = true });
             Find.WindowStack.Add(new Dialog_NodeTree(node, true, false, "HH.Underworld.Warn.Title".Translate()));
         }
 

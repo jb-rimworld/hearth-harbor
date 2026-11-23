@@ -144,11 +144,16 @@ namespace Hearth.Markets
             public double Renown = 50;               // 0..100
             public double GlobalPrice = 5, TicketPrice = 5, AcceptFee;
         }
+        /// <summary>
+        /// Renown factor of the demand: 0.5 + renown/100, i.e. 0.5 at renown 0, 0.6 for a brand-new colony (start renown 10), 1.0 at the neutral 50, 1.5 at 100.
+        /// It never drops below half of the neutral demand, so a new colony still sells tickets; renown is a bonus of up to +50 %, not a gate.
+        /// </summary>
+        public static double RenownFactor(double renown) => 0.5 + Math.Max(0.0, Math.Min(100.0, renown)) / 100.0;
         public static double TicketsPerDay(DemandInput d)
         {
             double priceEff = Math.Max(0.01, d.TicketPrice + d.AcceptFee);
             double jr = Math.Max(1.0, d.OwnJackpot) / Math.Max(1.0, d.GlobalJackpot);
-            double v = d.Basis * d.Reach * DetMath.Exp(4.0 * (d.OwnQuote - d.GlobalQuote)) * DetMath.Pow(jr, 0.3) * (0.5 + d.Renown / 100.0) * DetMath.Pow(d.GlobalPrice / priceEff, 1.5);
+            double v = d.Basis * d.Reach * DetMath.Exp(4.0 * (d.OwnQuote - d.GlobalQuote)) * DetMath.Pow(jr, 0.3) * RenownFactor(d.Renown) * DetMath.Pow(d.GlobalPrice / priceEff, 1.5);
             return Math.Max(0, v);
         }
         /// <summary>Internationals buy at most Basis * Reach tickets and only up to 3 times the global price.</summary>
