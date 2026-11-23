@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using HarmonyLib;
 using RimWorld;
@@ -260,6 +261,111 @@ namespace Hearth
                 }
                 catch (Exception e) { HLog.Error("Core", "Could not restore the lord job of lord " + l.loadID, e); }
             }
+        }
+    }
+
+    // ------------------------------------------------------------------------------------------------ scenario parts (F08, 1.1.0)
+    /// <summary>
+    /// Our scenario parts (rules, settings, starting research, starting account) are written as "hhParts" next to the vanilla part list, never
+    /// inside it: without the mod vanilla never meets a class or ScenPartDef it does not know (save games and .rsc files of the scenario editor
+    /// alike). The parts are taken out of the list only while it is written and put back at once at their old places; Find.Scenario of a new
+    /// game is the ScenarioDef's own object, so the list must never stay changed.
+    /// </summary>
+    [HarmonyPatch(typeof(Scenario), nameof(Scenario.ExposeData))]
+    static class Patch_Scenario_RemovalSafe
+    {
+        sealed class Stash { public List<ScenPart> list; public List<KeyValuePair<int, ScenPart>> ours; }
+
+        static void Prefix(Scenario __instance, out Stash __state)
+        {
+            __state = null;
+            if (!RemovalSafeSave.Saving) return;
+            var parts = ScenarioSeed.PartsOf(__instance);
+            if (parts == null) return;
+            List<KeyValuePair<int, ScenPart>> ours = null;
+            for (int i = 0; i < parts.Count; i++)
+                if (parts[i] != null && RemovalSafeSave.OurType(parts[i].GetType())) (ours ?? (ours = new List<KeyValuePair<int, ScenPart>>())).Add(new KeyValuePair<int, ScenPart>(i, parts[i]));
+            if (ours == null) return;
+            for (int i = ours.Count - 1; i >= 0; i--) parts.RemoveAt(ours[i].Key);
+            __state = new Stash { list = parts, ours = ours };
+        }
+
+        static void Postfix(Scenario __instance, Stash __state)
+        {
+            if (RemovalSafeSave.Saving)
+            {
+                if (__state == null) return;
+                var mine = new List<ScenPart>();
+                foreach (var kv in __state.ours) { __state.list.Insert(Math.Min(kv.Key, __state.list.Count), kv.Value); mine.Add(kv.Value); }
+                Scribe_Collections.Look(ref mine, "hhParts", LookMode.Deep);
+                return;
+            }
+            if (RemovalSafeSave.LoadingVars)
+            {
+                List<ScenPart> mine = null;
+                Scribe_Collections.Look(ref mine, "hhParts", LookMode.Deep);
+                if (mine == null || mine.Count == 0) return;
+                var parts = ScenarioSeed.PartsOf(__instance);
+                if (parts == null) return;
+                foreach (var p in mine) if (p != null && p.def != null) parts.Add(p);
+            }
+        }
+
+        /// <summary>The prefix took our parts out; if vanilla throws while writing, put them back anyway (the def's own list must stay whole).</summary>
+        static Exception Finalizer(Exception __exception, Stash __state)
+        {
+            if (__exception != null && __state != null && RemovalSafeSave.Saving)
+                foreach (var kv in __state.ours) if (!__state.list.Contains(kv.Value)) __state.list.Insert(Math.Min(kv.Key, __state.list.Count), kv.Value);
+            return __exception;
+        }
+    }
+
+    // ------------------------------------------------------------------------------------------------ storyteller (F09, 1.1.0)
+    /// <summary>
+    /// A colony played with one of our storytellers (Hetty Hearthwell) is written with Phoebe as the vanilla storyteller and ours in
+    /// "hhStoryteller". Without the mod the save simply continues with Phoebe (a missing storyteller def would leave Storyteller.def null and
+    /// the save unplayable); with the mod the real storyteller is back before vanilla builds the storyteller comps.
+    /// </summary>
+    [HarmonyPatch(typeof(Storyteller), nameof(Storyteller.ExposeData))]
+    static class Patch_Storyteller_RemovalSafe
+    {
+        static StorytellerDef StandIn => DefDatabase<StorytellerDef>.GetNamedSilentFail("Phoebe") ?? DefDatabase<StorytellerDef>.GetNamedSilentFail("Cassandra")
+                                         ?? DefDatabase<StorytellerDef>.AllDefsListForReading.FirstOrDefault(d => !RemovalSafeSave.OurDef(d));
+
+        static void Prefix(Storyteller __instance, out StorytellerDef __state)
+        {
+            __state = null;
+            if (!RemovalSafeSave.Saving || !RemovalSafeSave.OurDef(__instance.def)) return;
+            var stand = StandIn; if (stand == null) return;
+            __state = __instance.def;
+            __instance.def = stand;
+        }
+
+        static void Postfix(Storyteller __instance, StorytellerDef __state)
+        {
+            if (RemovalSafeSave.Saving)
+            {
+                if (__state == null) return;
+                __instance.def = __state;
+                string name = __state.defName;
+                Scribe_Values.Look(ref name, "hhStoryteller");
+                return;
+            }
+            if (RemovalSafeSave.LoadingVars)
+            {
+                string name = null;
+                Scribe_Values.Look(ref name, "hhStoryteller");
+                if (name.NullOrEmpty()) return;
+                var d = DefDatabase<StorytellerDef>.GetNamedSilentFail(name);
+                if (d != null) __instance.def = d;
+                else HLog.Warn("Core", "Saved storyteller " + name + " not found; continuing with " + __instance.def?.defName);
+            }
+        }
+
+        static Exception Finalizer(Exception __exception, Storyteller __instance, StorytellerDef __state)
+        {
+            if (__exception != null && __state != null && RemovalSafeSave.Saving) __instance.def = __state;
+            return __exception;
         }
     }
 }

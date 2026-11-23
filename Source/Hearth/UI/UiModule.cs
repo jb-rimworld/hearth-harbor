@@ -90,7 +90,7 @@ namespace Hearth.Shell
     public static class Patch_StorytellerHostingLine
     {
         [HarmonyPostfix]
-        public static void Postfix(Rect rect) { Guard.Run(ModuleId.Core, "UI.StorytellerLine", () => HostingLine.Draw(rect)); }
+        public static void Postfix(Page_SelectStoryteller __instance, Rect rect) { Guard.Run(ModuleId.Core, "UI.StorytellerLine", () => HostingLine.Draw(rect, HostingLine.ChosenStoryteller(__instance))); }
     }
 
     [HarmonyPatch(typeof(Page_SelectStoryteller), nameof(Page_SelectStoryteller.PreOpen))]
@@ -103,18 +103,66 @@ namespace Hearth.Shell
     /// <summary>The one line below the vanilla difficulty block (4.3, 9.6): tier name, percent and the button that opens the difficulty dialog.</summary>
     public static class HostingLine
     {
-        public static void Draw(Rect rect)
+        static AccessTools.FieldRef<Page_SelectStoryteller, StorytellerDef> chosenRef;
+        /// <summary>The storyteller selected on the page (vanilla keeps it private); null if the field is missing on this game version.</summary>
+        public static StorytellerDef ChosenStoryteller(Page_SelectStoryteller page)
+        {
+            if (page == null) return null;
+            try { if (chosenRef == null) chosenRef = AccessTools.FieldRefAccess<Page_SelectStoryteller, StorytellerDef>("storyteller"); return chosenRef(page); }
+            catch (Exception e) { HLog.Once("ui.chosenStoryteller", LogLevel.Warn, "UI", "Page_SelectStoryteller.storyteller not found: no storyteller suggestion (" + e.Message + ")"); return null; }
+        }
+
+        public static void Draw(Rect rect) => Draw(rect, null);
+
+        /// <summary>Tests: the suggestion chip text of the last frame (null if no chip was drawn).</summary>
+        public static string LastDrawn { get; private set; }
+
+        /// <summary>Forget the cached texts (language change, tests).</summary>
+        public static void ClearCache() { headText = null; chipText = null; chipFor = null; btnText = null; }
+
+        // strings of the line, rebuilt only when what they show changes (the page draws every frame)
+        static float headTier = float.NaN; static bool headScen; static string headText, tierName;
+        static StorytellerDef chipFor; static float chipTier = float.NaN; static string chipText, chipTip, btnText, btnTip;
+
+        public static void Draw(Rect rect, StorytellerDef chosen)
         {
             float x = rect.x + 170f, right = rect.xMax - 370f, h = 38f;
             if (right - x < 300f) { x = rect.x + 160f; right = rect.xMax - 330f; }
             var line = new Rect(x, rect.yMax - h, right - x, h);
-            var prof = UiState.PendingProfile ?? HearthMod.Template.Profile;
-            UiStyle.LabelColored(new Rect(line.x, line.y, line.width - 176f, 14f), "HH.UI.Storyteller.Head".Translate(HearthProfile.PercentFromTier(prof.Tier).ToString("0")), UiStyle.Grey, TextAnchor.UpperLeft, GameFont.Tiny);
-            UiStyle.LabelColored(new Rect(line.x, line.y + 12f, line.width - 176f, 26f), HearthProfile.TierName(prof.Tier), UiStyle.Amber, TextAnchor.MiddleLeft);
+            var prof = UiState.PreviewProfile();
+            bool scen = ScenarioSeed.HasSeeds(Find.Scenario);
+            // the storyteller's suggestion (F09: Hetty suggests Bed & Breakfast), shown while the chosen tier differs
+            var hints = StorytellerHints.Of(chosen);
+            bool suggest = hints != null && hints.suggestedTier >= 0f && Mathf.Abs(prof.Tier - hints.suggestedTier) > 0.01f;
+            float sugW = suggest ? Mathf.Min(190f, (line.width - 176f) * 0.5f) : 0f;
+            float labW = line.width - 176f - sugW;
+            if (headText == null || prof.Tier != headTier || scen != headScen)
+            {
+                headTier = prof.Tier; headScen = scen;
+                headText = "HH.UI.Storyteller.Head".Translate(HearthProfile.PercentFromTier(prof.Tier).ToString("0"));
+                if (scen) headText += "  ·  " + "HH.Scen.SetByScenario".TranslateOr("set by the scenario");
+                tierName = HearthProfile.TierName(prof.Tier);
+            }
+            UiStyle.LabelColored(new Rect(line.x, line.y, labW, 14f), headText, UiStyle.Grey, TextAnchor.UpperLeft, GameFont.Tiny);
+            UiStyle.LabelColored(new Rect(line.x, line.y + 12f, labW, 26f), tierName, UiStyle.Amber, TextAnchor.MiddleLeft);
+            if (suggest)
+            {
+                if (chipText == null || chipFor != chosen || chipTier != hints.suggestedTier)
+                {
+                    chipFor = chosen; chipTier = hints.suggestedTier;
+                    string who = chosen.label.NullOrEmpty() ? chosen.defName : chosen.label.Split(' ')[0];
+                    chipText = "HH.Story.Suggests".TranslateOr("{0} suggests: {1}").Replace("{0}", who).Replace("{1}", HearthProfile.TierName(hints.suggestedTier));
+                    chipTip = "HH.Story.SuggestsTip".TranslateOr("Click to use the hosting difficulty this storyteller suggests. You can still change it with the button.");
+                }
+                var sr = new Rect(line.x + labW, line.y + 2f, sugW - 6f, h - 4f);
+                if (UiStyle.Chip(sr, chipText, false, chipTip)) UiState.EnsurePendingProfile().Tier = hints.suggestedTier;
+            }
+            LastDrawn = suggest ? chipText : null;
             var btn = new Rect(line.xMax - 170f, line.y, 170f, h);
-            if (Widgets.ButtonText(btn, "HH.UI.Storyteller.Button".Translate()))
+            if (btnText == null) { btnText = "HH.UI.Storyteller.Button".Translate(); btnTip = "HH.UI.Storyteller.Tip".Translate(); }
+            if (Widgets.ButtonText(btn, btnText))
                 Find.WindowStack.Add(new Dialog_HostingDifficulty(UiState.EnsurePendingProfile()));
-            TooltipHandler.TipRegion(btn, "HH.UI.Storyteller.Tip".Translate());
+            TooltipHandler.TipRegion(btn, btnTip);
         }
     }
 }

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- F18 (1.1.0): the backstories of the one fixed pawn of Hearth & Harbor (its author, who asked for it). Like the vanilla creator pawns they are
+       not shuffleable: only the fixed bio (Source/Hearth/Story/CreatorPawn.cs, added to SolidBioDatabase) uses them. -->
+  <BackstoryDef>
+    <defName>HH_Creator_HarbourTinkerer</defName>
+    <identifier>HH_Creator_HarbourTinkerer</identifier>
+    <slot>Childhood</slot>
+    <title>harbour tinkerer</title>
+    <titleShort>tinkerer</titleShort>
+    <description>[PAWN_nameDef] grew up between the cargo cranes of a small harbour town, taking apart whatever the dockworkers threw away and putting it back together a little better than before.\n\nThe innkeeper next door paid [PAWN_objective] in pie to fix the creaking doors, and [PAWN_pronoun] learned early that a warm room and a full plate turn strangers into friends.</description>
+    <skillGains>
+      <Construction>3</Construction>
+      <Crafting>2</Crafting>
+      <Social>1</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Outlander</li>
+      <li>Civil</li>
+    </spawnCategories>
+    <workDisables>None</workDisables>
+    <requiredWorkTags>None</requiredWorkTags>
+    <forcedTraits>
+      <Kind>0</Kind>
+    </forcedTraits>
+    <shuffleable>False</shuffleable>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>HH_Creator_WanderingInnkeeper</defName>
+    <identifier>HH_Creator_WanderingInnkeeper</identifier>
+    <slot>Adulthood</slot>
+    <title>wandering innkeeper</title>
+    <titleShort>innkeeper</titleShort>
+    <description>[PAWN_nameDef] never stayed anywhere for long. With a toolbox, a battered recipe book and far too many plans, [PAWN_pronoun] wandered the rim building inns, banks and little infirmaries for whoever needed one - then handed over the keys and moved on.\n\nSettlers along the trade roads still tell of the stranger who fixed their roof, cooked them dinner and was gone before anyone could pay. Somewhere out there, [PAWN_pronoun] is still building something for someone else.</description>
+    <skillGains>
+      <Construction>5</Construction>
+      <Social>4</Social>
+      <Intellectual>3</Intellectual>
+      <Cooking>2</Cooking>
+      <Crafting>2</Crafting>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Outlander</li>
+      <li>Civil</li>
+    </spawnCategories>
+    <workDisables>None</workDisables>
+    <requiredWorkTags>None</requiredWorkTags>
+    <bodyTypeGlobal>Male</bodyTypeGlobal>
+    <bodyTypeFemale>Male</bodyTypeFemale>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <forcedTraits>
+      <Industriousness>2</Industriousness>
+    </forcedTraits>
+    <shuffleable>False</shuffleable>
+  </BackstoryDef>
+</Defs>

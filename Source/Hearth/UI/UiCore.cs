@@ -164,7 +164,30 @@ namespace Hearth.Shell
         // ---- difficulty chosen before the colony exists (storyteller page, 9.6) --------------------------------------
         /// <summary>Scratch profile the storyteller-page dialog edits. Applied to the new colony in OnGameStarted; the template stays untouched.</summary>
         public static HearthProfile PendingProfile { get; private set; }
-        public static HearthProfile EnsurePendingProfile() => PendingProfile ?? (PendingProfile = HearthMod.Template.Profile.CloneForNewGame());
+        /// <summary>The scratch profile of the storyteller page: a copy of the template with the values of the chosen scenario (F08) on top, so the
+        /// player starts from what the scenario sets and can still change it.</summary>
+        public static HearthProfile EnsurePendingProfile()
+        {
+            if (PendingProfile != null) return PendingProfile;
+            var p = HearthMod.Template.Profile.CloneForNewGame();
+            Guard.Run(ModuleId.Core, "UI.ScenarioSeed", () => ScenarioSeed.Apply(p, Find.Scenario));
+            return PendingProfile = p;
+        }
+
+        static HearthProfile preview; static Scenario previewFor; static float previewAt = -1f;
+        /// <summary>What a new colony would start with right now (template + scenario), for the storyteller page line. Rebuilt twice a second.</summary>
+        public static HearthProfile PreviewProfile()
+        {
+            if (PendingProfile != null) return PendingProfile;
+            var s = Find.Scenario;
+            if (preview == null || previewFor != s || Time.realtimeSinceStartup - previewAt > 0.5f)
+            {
+                var p = HearthMod.Template.Profile.CloneForNewGame();
+                Guard.Run(ModuleId.Core, "UI.ScenarioPreview", () => ScenarioSeed.Apply(p, s, quiet: true));
+                preview = p; previewFor = s; previewAt = Time.realtimeSinceStartup;
+            }
+            return preview;
+        }
         public static void ClearPendingDifficulty() { PendingProfile = null; }
         public static void ApplyPendingDifficulty(HearthProfile into)
         {

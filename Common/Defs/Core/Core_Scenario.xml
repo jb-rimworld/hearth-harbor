@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Scenario editor parts of Hearth & Harbor and Silverline (F08, 1.1.0). Saved only in the "hhParts" node (RemovalSafeSave):
+       a save or scenario file stays loadable without the mod. Core folder: Silverline standalone ships them too. -->
+
+  <ScenPartDef>
+    <defName>HH_ScenRules</defName>
+    <label>Hearth &amp; Harbor rules</label>
+    <description>Sets modules, hosting difficulty, content intensity and any per-colony setting of Hearth &amp; Harbor and Silverline for new colonies of this scenario. Only what is set here overrides the template; the player can still change everything on the storyteller page.</description>
+    <category>Rule</category>
+    <scenPartClass>Hearth.ScenPart_HHRules</scenPartClass>
+    <summaryPriority>370</summaryPriority>
+    <maxUses>1</maxUses>
+    <canBeRandomlyAdded>false</canBeRandomlyAdded>
+  </ScenPartDef>
+
+  <ScenPartDef>
+    <defName>HH_ScenSetting</defName>
+    <label>Hearth &amp; Harbor setting</label>
+    <description>Sets one Hearth &amp; Harbor or Silverline setting to a value for new colonies of this scenario.</description>
+    <category>Rule</category>
+    <scenPartClass>Hearth.ScenPart_HHSetting</scenPartClass>
+    <summaryPriority>369</summaryPriority>
+    <canBeRandomlyAdded>false</canBeRandomlyAdded>
+  </ScenPartDef>
+
+  <ScenPartDef>
+    <defName>HH_ScenStartingResearch</defName>
+    <label>start with Hearth &amp; Harbor research</label>
+    <description>A Hearth &amp; Harbor or Silverline research project is already finished when the colony starts.</description>
+    <category>StartingImportant</category>
+    <scenPartClass>Hearth.ScenPart_HHStartingResearch</scenPartClass>
+    <summaryPriority>399</summaryPriority>
+    <canBeRandomlyAdded>false</canBeRandomlyAdded>
+  </ScenPartDef>
+</Defs>

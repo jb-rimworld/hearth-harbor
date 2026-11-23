@@ -60,6 +60,10 @@ def main():
                 size = inherited(d, named, "size")
                 w, h = pv(ds, pv(size)) if ds else pv(size)
                 need[tp] = dict(kind=kind, w=w, h=h, src=d.findtext("defName"))
+        for tag in ("portraitLarge", "portraitTiny"):   # StorytellerDef (1.1.0)
+            tp = (d.findtext(tag) or "").strip()
+            if tp.startswith("UI/HH/"):
+                need.setdefault(tp, dict(kind="icon", w=1, h=1, src=d.findtext("defName")))
         for tag in ("iconPath", "uiIconPath"):
             for e in d.iter(tag):
                 tp = (e.text or "").strip()

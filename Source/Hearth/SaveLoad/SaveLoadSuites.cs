@@ -72,6 +72,9 @@ namespace Hearth.SaveLoad
             l.Add("venueSigns=" + string.Join(";", map.listerThings.AllThings.Select(t => t.TryGetComp<CompVenueSignHH>()).Where(c => c != null)
                 .Select(c => c.parent.ThingID + ":" + c.type?.defName + ":" + c.customName + ":" + c.alwaysOpen + ":" + c.priceFactor).OrderBy(x => x)));
             l.Add("physicalSilver=" + PhysicalSilver(map));
+            // 1.1.0 content (F08/F09): storyteller and our scenario parts are saved removal-safe ("hhStoryteller", "hhParts")
+            l.Add("storyteller=" + Find.Storyteller?.def?.defName);
+            l.Add("scenParts=" + string.Join(",", (ScenarioSeed.PartsOf(Find.Scenario) ?? new List<ScenPart>()).Where(x => RemovalSafeSave.OurType(x?.GetType())).Select(x => x.def?.defName).OrderBy(x => x)));
             return l;
         }
 
@@ -204,6 +207,22 @@ namespace Hearth.SaveLoad
                 yield return 60;
             }
             t.Check(map.lordManager.lords.Any(x => x.LordJob is LordJob_Joinable_Screening), "movie night running: " + map.lordManager.lords.Count(x => x.LordJob is LordJob_Joinable_Screening));
+
+            // 1.1.0 content: the colony runs with Hetty Hearthwell and its scenario carries our parts. Both are written removal-safe (Phoebe +
+            // "hhStoryteller", vanilla part list + "hhParts"): the roundtrip must bring them back, the raw load without the mod must stay clean.
+            var hetty = DefDatabase<StorytellerDef>.GetNamedSilentFail("HH_Hetty");
+            if (hetty != null) Find.Storyteller.def = hetty;
+            var scenParts = ScenarioSeed.PartsOf(Find.Scenario);
+            if (scenParts != null && !scenParts.Any(x => x is ScenPart_HHRules))
+            {
+                var rules = new ScenPart_HHRules { def = DefDatabase<ScenPartDef>.GetNamed("HH_ScenRules"), tier = 2f, content = "Cozy" };
+                rules.SetSetting("inn.arrivalRate", 1.3f);
+                scenParts.Add(rules);
+                scenParts.Add(new ScenPart_HHSetting { def = DefDatabase<ScenPartDef>.GetNamed("HH_ScenSetting"), key = "venues.marketEnabled", value = 1f });
+                scenParts.Add(new ScenPart_HHStartingResearch { def = DefDatabase<ScenPartDef>.GetNamed("HH_ScenStartingResearch"), project = "HH_Innkeeping" });
+                scenParts.Add(new Silverline.ScenPart_SLStartingAccount { def = DefDatabase<ScenPartDef>.GetNamed("SL_ScenStartingAccount"), bank = "SL_Mutual", balance = 100 });
+            }
+            t.Check(Find.Storyteller.def == hetty && ScenarioSeed.PartsOf(Find.Scenario).Count(x => RemovalSafeSave.OurType(x.GetType())) == 4, "storyteller Hetty and four scenario parts of ours in the saved game");
 
             // a per-save setting that differs from the template
             float tmpl = HSettings.Get(Facts.ChangedSetting);

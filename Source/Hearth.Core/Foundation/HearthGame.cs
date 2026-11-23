@@ -32,6 +32,9 @@ namespace Hearth
 #endif
         /// <summary>True once ExposeData ran, i.e. this component came from a save. False after loading a save that never had the mod.</summary>
         bool exposed;
+        /// <summary>The world effects of the scenario (IHearthScenarioStart: starting account, starting research) still have to run. Saved, so a
+        /// colony saved before its first tick still gets them; old saves load with false (1.1.0).</summary>
+        bool scenarioStartPending;
 
         /// <summary>
         /// Raised when a game starts or a save has been loaded (after the profile is in place). Static caches of modules and
@@ -56,6 +59,8 @@ namespace Hearth
         {
             Instance = this;
             Profile = HearthMod.Template.Profile.CloneForNewGame();
+            // scenario parts of Hearth & Harbor (F08): applied to the template copy; a profile from the storyteller-page dialog (seeded the same way) replaces it below
+            Guard.Run(ModuleId.Core, "Scenario.Seed", () => ScenarioSeed.Apply(Profile, Find.Scenario));
             Rand.Init(GenText.StableStringHash(Find.World?.info?.seedString ?? "hh") ^ (int)(DateTime.Now.Ticks & 0x7fffffff));
             IsNewGame = true; exposed = true;
             RaiseGameInit();
@@ -63,6 +68,16 @@ namespace Hearth
             foreach (var m in HearthMod.ModuleObjects) Guard.Run(m.Id, m.GetType().Name + ".OnGameStarted", m.OnGameStarted);
             Guard.Run(ModuleId.Core, "ResearchGate.Apply", () => ResearchGate.Apply());
             initialized = true;
+            // after every component has run its StartedNewGame (bank component, research manager …): the long event of the new game ends first
+            scenarioStartPending = true;
+            LongEventHandler.ExecuteWhenFinished(RunScenarioStart);
+        }
+
+        void RunScenarioStart()
+        {
+            if (!scenarioStartPending || Instance != this) return;
+            scenarioStartPending = false;
+            Guard.Run(ModuleId.Core, "Scenario.Start", () => ScenarioSeed.RunStartHooks(Find.Scenario));
         }
 
         public override void LoadedGame()
@@ -74,6 +89,7 @@ namespace Hearth
                 // the mod was added to an existing save: the component was created fresh, ExposeData never ran
                 Profile = HearthMod.Template.Profile.CloneForNewGame();
                 Profile.FirstStartCardDone = false;
+                Guard.Run(ModuleId.Core, "Scenario.Seed", () => ScenarioSeed.Apply(Profile, Find.Scenario));
                 exposed = true;
                 HLog.Info("Core", "Mod added to an existing save: new profile from template");
             }
@@ -104,6 +120,7 @@ namespace Hearth
                 try { m.GameTick(t); }
                 catch (Exception e) { Guard.Fail(m.Id, m.GetType().Name + ".GameTick", e); }
             }
+            if (scenarioStartPending) RunScenarioStart();
             Caretaker.Tick(t);
             if (t % 600 == 29) ResearchGate.Apply();   // the research mode may change in the middle of a game
             if (t % 60 == 17) ModuleGate.Poll();       // cheap: a few lookups; catches switches made without SetModule
@@ -123,6 +140,7 @@ namespace Hearth
         {
             exposed = true;
             Scribe_Values.Look(ref lastTillDay, "lastTillDay", -1);
+            Scribe_Values.Look(ref scenarioStartPending, "scenarioStartPending");
             Scribe_Deep.Look(ref Profile, "profile");
             Scribe_Deep.Look(ref Ledger, "ledger");
             Scribe_Deep.Look(ref Rand, "rand");

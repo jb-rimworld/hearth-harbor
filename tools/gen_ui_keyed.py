@@ -174,6 +174,9 @@ a('HH.Setting.core.ironBank','Iron bank')
 a('HH.Setting.core.ironBank.Desc','Debt collection always climbs to the highest stage, whatever the difficulty. Nobody quietly defers your instalments.')
 a('HH.Setting.core.peacefulUnderworld.Desc','Dark venues work without violence: no fight pit, no questioning, no hunting of people, no clinic, no protection racket. Back room, fence and drug lounge stay.')
 a('HH.Setting.core.perfMode.Desc','Guest planning and room checks run half as often. Helps on slow computers; guests may react a little later.')
+a('HH.UI.Content.Decline','No, keep {0}')   # was only in the XML (review fix 97142ff); kept here so regeneration does not drop it
+a('HH.Setting.core.windowScale','Size of Hearth & Harbor windows')
+a('HH.Setting.core.windowScale.Desc','All Hearth & Harbor and Silverline windows grow or shrink by this factor (on top of the automatic size for large screens).')
 
 # verify against source
 src = ""

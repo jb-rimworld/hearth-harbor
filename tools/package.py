@@ -19,7 +19,7 @@ OUT = Path(os.environ.get("HH_RELEASE_OUT", R.parent / "_Release"))
 MAIN, BANK = OUT / "HearthHarbor", OUT / "Silverline"
 VERSIONS = ["1.5", "1.6", "1.7"]
 BANK_DEF_DIRS = ["Core", "Bank", "Insurance", "Finance"]
-BANK_LANG = ["HH_Bank.xml", "HH_Insurance.xml", "HH_Finance.xml", "HH_Research.xml", "HH_UI.xml"]
+BANK_LANG = ["HH_Bank.xml", "HH_Insurance.xml", "HH_Finance.xml", "HH_Research.xml", "HH_UI.xml", "HH_Scenario.xml"]
 # DefInjected: Silverline.* folders whole; generic folders filtered to bank defNames (written fresh, so outside the byte-identity check)
 BANK_DEFINJ_PREFIX = ("SL_", "HH_Bank", "HH_Banking")
 BANK_TEX = ["UI/HH/Bank", "UI/HH/Insurance", "UI/HH/Finance", "Things/HH/Bank", "UI/HH/Core"]
@@ -80,8 +80,8 @@ def main():
     if "<loadBefore>" in about or "<incompatibleWith>" in about or about.count("Orion.Hospitality") != 0:
         sys.exit("Silverline About.xml: loadBefore/incompatibleWith not removed")
     (BANK / "About" / "About.xml").write_text(about, encoding="utf-8")
-    for extra in ["Preview.png"]:
-        src = R / "About" / "Silverline_Preview.png"
+    for extra in ["Preview.png", "ModIcon.png"]:   # ModIcon: mod list / mod settings icon (F34, 1.1.0)
+        src = R / "About" / ("Silverline_" + extra)
         if src.exists():
             shutil.copy2(src, BANK / "About" / extra)
     if (R / "About" / "Silverline_PublishedFileId.txt").exists():

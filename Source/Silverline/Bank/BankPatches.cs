@@ -21,10 +21,32 @@ namespace Silverline
         public abstract string GetInfoText();
         public Faction GetFaction() => null;
         public abstract void TryOpenComms(Pawn negotiator);
+        /// <summary>F34 (1.1.0): the square icon of the entry in the comms console menu (like a faction's icon). Null = the vanilla fallback
+        /// (1.7 shows the console itself).</summary>
+        public virtual Texture2D Icon => null;
+        public virtual Color IconColor => Color.white;
         public FloatMenuOption CommFloatMenuOption(Building_CommsConsole console, Pawn negotiator)
         {
-            return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(GetCallLabel(), () => console.GiveUseCommsJob(negotiator, this), MenuOptionPriority.InitiateSocial), negotiator, console);
+            Texture2D icon = null;
+            try { icon = Icon; } catch (System.Exception e) { HLog.Once("comms.icon." + GetType().Name, LogLevel.Warn, "Bank", "Comms icon of " + GetType().Name + " failed: " + e.Message); }
+            var opt = icon != null
+                ? new FloatMenuOption(GetCallLabel(), () => console.GiveUseCommsJob(negotiator, this), icon, IconColor, MenuOptionPriority.InitiateSocial)
+                : new FloatMenuOption(GetCallLabel(), () => console.GiveUseCommsJob(negotiator, this), MenuOptionPriority.InitiateSocial);
+            return FloatMenuUtility.DecoratePrioritizedTask(opt, negotiator, console);
         }
+
+        static Texture2D silverlineMark, financeMark; static bool marksTried;
+        static void LoadMarks()
+        {
+            if (marksTried) return;
+            marksTried = true;
+            silverlineMark = ContentFinder<Texture2D>.Get("UI/HH/Bank/SilverlineMark", false);
+            financeMark = ContentFinder<Texture2D>.Get("UI/HH/Finance/FinanceMark", false);
+        }
+        /// <summary>Silverline's own coin mark (comms console entry before an account exists).</summary>
+        public static Texture2D SilverlineMark { get { LoadMarks(); return silverlineMark; } }
+        /// <summary>Investments and lottery mark.</summary>
+        public static Texture2D FinanceMark { get { LoadMarks(); return financeMark; } }
     }
 
     /// <summary>"Call Silverline" in the comms console menu (8.2).</summary>
@@ -34,6 +56,17 @@ namespace Silverline
         public override string GetCallLabel() => L.T("Comm.Call", "Call Silverline");
         public override string GetInfoText() => L.T("Comm.Info", "Banking, loans and the occasional dry remark.");
         public override void TryOpenComms(Pawn negotiator) => Find.WindowStack.Add(new Window_Bank(negotiator?.Map ?? BankGameComp.DefaultMap, BankSite.Remote, null));
+        /// <summary>The colony's own bank logo once it has an account, Silverline's mark before.</summary>
+        public override Texture2D Icon
+        {
+            get
+            {
+                var c = BankGameComp.Current;
+                var b = c != null && c.HasAccount ? c.Bank : null;
+                if (b != null && !b.iconPath.NullOrEmpty()) { var t = b.Icon; if (t != null && t != BaseContent.BadTex) return t; }
+                return SilverlineMark;
+            }
+        }
     }
 
     /// <summary>"Call Clawback Mutual" (insurance desk).</summary>
@@ -43,6 +76,7 @@ namespace Silverline
         public override string GetCallLabel() => Ins.T("Menu.Call");
         public override string GetInfoText() => Ins.T("Menu.Call");
         public override void TryOpenComms(Pawn negotiator) => Window_Clawback.Open();
+        public override Texture2D Icon => InsuranceUI.Logo;
     }
 
     /// <summary>Investments and lottery window for games where the bank window does not exist (bank module in development or absent) or the setting asks for it.</summary>
@@ -52,6 +86,7 @@ namespace Silverline
         public override string GetCallLabel() => FT.T("HH.Finance.Window.Option");
         public override string GetInfoText() => FT.T("HH.Finance.Window.Option");
         public override void TryOpenComms(Pawn negotiator) => Find.WindowStack.Add(new Window_Silverline());
+        public override Texture2D Icon => FinanceMark;
     }
 
     /// <summary>Entries other modules add to the comms console menu (the Lucky Thrumbo of the casino module). They ride on the same single

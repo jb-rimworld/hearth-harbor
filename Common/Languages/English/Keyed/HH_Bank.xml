@@ -126,6 +126,7 @@ Interest every day: balance × (M^({1} × {2} / 60) − 1), with M = {3} per gam
   <HH.Bank.Memo.NegInterest>Negative interest</HH.Bank.Memo.NegInterest>
   <HH.Bank.Memo.Offset>Collections offset</HH.Bank.Memo.Offset>
   <HH.Bank.Memo.Repay>Loan {0}: repayment</HH.Bank.Memo.Repay>
+  <HH.Bank.Memo.ScenBalance>Opening balance</HH.Bank.Memo.ScenBalance>
   <HH.Bank.Memo.Seized>Seized</HH.Bank.Memo.Seized>
   <HH.Bank.Memo.Seizure>Seizure proceeds (loan {0})</HH.Bank.Memo.Seizure>
   <HH.Bank.Memo.SeizurePay>Loan {0}: paid by seizure</HH.Bank.Memo.SeizurePay>
@@ -179,6 +180,12 @@ Interest every day: balance × (M^({1} × {2} / 60) − 1), with M = {3} per gam
   <HH.Bank.Reason.SameBank>You already bank there.</HH.Bank.Reason.SameBank>
   <HH.Bank.Reason.SwitchFunds>Moving the account costs {0} silver and the account does not hold that.</HH.Bank.Reason.SwitchFunds>
   <HH.Bank.Reason.Title>{0} only lends to holders of a royal title.</HH.Bank.Reason.Title>
+  <HH.Bank.Scen.Balance>Opening balance</HH.Bank.Scen.Balance>
+  <HH.Bank.Scen.DirectDeposit>Direct deposit</HH.Bank.Scen.DirectDeposit>
+  <HH.Bank.Scen.Loan>Starting loan</HH.Bank.Scen.Loan>
+  <HH.Bank.Scen.LoanTip>0 = no loan. A loan is paid out into the account and repaid in instalments like any other loan.</HH.Bank.Scen.LoanTip>
+  <HH.Bank.Scen.Summary>Starts with an account at {0} holding {1} silver.</HH.Bank.Scen.Summary>
+  <HH.Bank.Scen.SummaryLoan>It already owes {0} silver ({1} days).</HH.Bank.Scen.SummaryLoan>
   <HH.Bank.Seizure.Allow>Let them take the valuables</HH.Bank.Seizure.Allow>
   <HH.Bank.Seizure.Done>The team loaded up {0} silver worth of your belongings ({1}) and left, whistling. The debt is {2}.</HH.Bank.Seizure.Done>
   <HH.Bank.Seizure.DoneTitle>Seized</HH.Bank.Seizure.DoneTitle>

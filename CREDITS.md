@@ -20,6 +20,12 @@ Many of their ideas, though, are re-imagined here, and the mod would not exist w
 - [Krafs.Rimworld.Ref](https://github.com/krafs/RimRef) reference assemblies for the 1.5 and 1.6 builds.
 - Textures were drawn as SVG and rendered with [resvg](https://github.com/linebender/resvg).
 
+## Music
+
+- *Harbor Morning*, *Lanterns at the Inn* and *Snow on the Sign* (Common/Sounds/HH/Music) were generated for Hearth & Harbor with
+  ElevenLabs Music (instrumental, no vocals) and are shipped with the mod. They join the normal playlist and can be switched off in the
+  mod settings (General → Music).
+
 ## Translations
 
 The ten translations were made with AI help. Corrections from native speakers are very welcome: open an issue or a pull request

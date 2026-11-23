@@ -253,7 +253,7 @@ namespace Hearth.Guests
             float cap = 0f;
             if (night) cap += NightCapacity(freeBeds);
             if (day) cap += DayCapacity();
-            return BaseRatePerDay * RenownCurve(renown) * cap * HSettings.Get(InnSettings.ArrivalRate);
+            return BaseRatePerDay * RenownCurve(renown) * cap * HSettings.Get(InnSettings.ArrivalRate) * StorytellerHints.GuestArrivalFactor;   // F09: e.g. Hetty ×1.25
         }
 
         /// <summary>

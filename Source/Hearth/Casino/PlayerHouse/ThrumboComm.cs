@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 using Silverline;
+using UnityEngine;
 using Verse;
 
 namespace Hearth.Casino.PlayerHouse
@@ -11,5 +12,16 @@ namespace Hearth.Casino.PlayerHouse
         public override string GetCallLabel() => "HH.Thrumbo.Comm.Call".Translate();
         public override string GetInfoText() => "HH.Thrumbo.Comm.Info".Translate();
         public override void TryOpenComms(Pawn negotiator) => Window_Thrumbo.Open(negotiator);
+
+        static Texture2D mark; static bool tried;
+        /// <summary>F34: a square thrumbo-and-chip mark (the wide wordmark would be unreadable in the 24 px icon slot).</summary>
+        public override Texture2D Icon
+        {
+            get
+            {
+                if (!tried) { tried = true; mark = ContentFinder<Texture2D>.Get("UI/HH/Casino/ThrumboMark", false); }
+                return mark;
+            }
+        }
     }
 }

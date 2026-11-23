@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Hetty Hearthwell (F09, 1.1.0): a cosy, building-focused storyteller. Inherits the shared comps of vanilla's BaseStoryteller (endgame quests,
+       DLC intros, trees, pilgrims …) and replaces the threat and event comps with gentle ones. Saved games carry her as Phoebe plus an
+       "hhStoryteller" node (RemovalSafeSave), so a colony keeps loading when the mod is removed. -->
+  <StorytellerDef ParentName="BaseStoryteller">
+    <defName>HH_Hetty</defName>
+    <label>Hetty Hearthwell</label>
+    <description>Hetty runs the friendliest waystation on the rim and wants yours to thrive. Raids come rarely and gently, bad luck stays mild and good fortune knocks often: traders, travellers, wanderers who want to stay, and plenty of guests.\n\nFor players who want to build. On the higher difficulties she still pushes back, just kindly. Anomaly threats follow the Anomaly settings as usual, while its eerie side events come more rarely. Animals never fall ill under her care.</description>
+    <portraitLarge>UI/HH/Storyteller/HettyLarge</portraitLarge>
+    <portraitTiny>UI/HH/Storyteller/HettyTiny</portraitTiny>
+    <listOrder>35</listOrder>
+    <!-- raids grow slowly and stay small: about 55 % of the usual points at the start, never quite the full amount -->
+    <pointsFactorFromDaysPassed Inherit="False">
+      <points>
+        <li>(20, 0.50)</li>
+        <li>(60, 0.80)</li>
+        <li>(120, 1.00)</li>
+      </points>
+    </pointsFactorFromDaysPassed>
+    <pointsFactorFromAdaptDays Inherit="False">
+      <points>
+        <li>(-30, 0.30)</li>
+        <li>(  0, 0.55)</li>
+        <li>( 60, 0.75)</li>
+        <li>(180, 0.95)</li>
+      </points>
+    </pointsFactorFromAdaptDays>
+    <adaptDaysGameStartGraceDays>60</adaptDaysGameStartGraceDays>
+    <modExtensions>
+      <li Class="Hearth.StorytellerHints">
+        <guestArrivalFactor>1.25</guestArrivalFactor>
+        <suggestedTier>2</suggestedTier>
+      </li>
+    </modExtensions>
+    <comps>
+      <!-- Intro -->
+      <li Class="StorytellerCompProperties_ClassicIntro"/>
+      <!-- Home threats: one raid now and then, long quiet spells in between -->
+      <li Class="Hearth.Story.StorytellerCompProperties_HH_GentleCycle">
+        <category>ThreatBig</category>
+        <minDaysPassed>20.0</minDaysPassed>
+        <onDays>5.0</onDays>
+        <offDays>15.0</offDays>
+        <minSpacingDays>3.0</minSpacingDays>
+        <numIncidentsRange>1~1</numIncidentsRange>
+        <forceRaidEnemyBeforeDaysPassed>40</forceRaidEnemyBeforeDaysPassed>
+        <disallowedTargetTags>
+          <li>Map_RaidBeacon</li>
+        </disallowedTargetTags>
+        <neverFire>
+          <li>MechCluster</li>
+          <li>PsychicEmanatorShipPartCrash</li>
+          <li>DefoliatorShipPartCrash</li>
+        </neverFire>
+        <keepChance>
+          <li><incident>Infestation</incident><chance>0.15</chance></li>
+          <li><incident>ManhunterPack</incident><chance>0.4</chance></li>
+          <li><incident>AnimalInsanityMass</incident><chance>0.3</chance></li>
+        </keepChance>
+      </li>
+      <li Class="StorytellerCompProperties_ThreatsGenerator">
+        <allowedTargetTags>
+          <li>Map_RaidBeacon</li>
+        </allowedTargetTags>
+        <parms>
+          <allowedThreats>Raids</allowedThreats>
+          <onDays>1.0</onDays>
+          <offDays>0.5</offDays>
+          <minSpacingDays>0.04</minSpacingDays>
+          <numIncidentsRange>1~2</numIncidentsRange>
+          <minThreatPoints>500</minThreatPoints>
+        </parms>
+      </li>
+      <li Class="Hearth.Story.StorytellerCompProperties_HH_GentleCycle">
+        <category>ThreatSmall</category>
+        <minDaysPassed>15.0</minDaysPassed>
+        <onDays>5.0</onDays>
+        <offDays>15.0</offDays>
+        <numIncidentsRange>0.1~0.5</numIncidentsRange>
+        <acceptPercentFactorPerThreatPointsCurve>
+          <points>
+            <li>(600, 1)</li>
+            <li>(2000, 0)</li>
+          </points>
+        </acceptPercentFactorPerThreatPointsCurve>
+        <keepChance>
+          <li><incident>Infestation</incident><chance>0.15</chance></li>
+          <li><incident>ManhunterPack</incident><chance>0.4</chance></li>
+        </keepChance>
+      </li>
+      <!-- Home misc events: often, and mostly good news -->
+      <li Class="Hearth.Story.StorytellerCompProperties_HH_KindMisc">
+        <category>Misc</category>
+        <allowedTargetTags>
+          <li>Map_PlayerHome</li>
+        </allowedTargetTags>
+        <minDaysPassed>3</minDaysPassed>
+        <mtbDays>3.0</mtbDays>
+        <positiveFactor>3</positiveFactor>
+        <neutralFactor>1</neutralFactor>
+        <negativeFactor>0.2</negativeFactor>
+        <hhFactor>2</hhFactor>
+        <positive>
+          <li>ResourcePodCrash</li>
+          <li>RefugeePodCrash</li>
+          <li>RefugeePodCrash_Baby</li>
+          <li>WandererJoin</li>
+          <li>WandererJoinAbasia</li>
+          <li>SelfTame</li>
+          <li>FarmAnimalsWanderIn</li>
+          <li>ThrumboPasses</li>
+          <li>AmbrosiaSprout</li>
+          <li>Aurora</li>
+          <li>PsychicSoothe</li>
+          <li>MeteoriteImpact</li>
+          <li>BioluminescentSpores</li>
+          <li>BoomshroomSprout</li>
+        </positive>
+        <neutral>
+          <li>HerdMigration</li>
+          <li>WildManWandersIn</li>
+          <li>CaravanMeeting</li>
+          <li>CreepJoinerJoin</li>
+          <li>HarbingerTreeProvoked</li>
+        </neutral>
+        <negative>
+          <li>Eclipse</li>
+          <li>SolarFlare</li>
+          <li>ShortCircuit</li>
+          <li>CropBlight</li>
+          <li>Alphabeavers</li>
+          <li>PsychicDrone</li>
+          <li>HeatWave</li>
+          <li>ColdSnap</li>
+          <li>Flashstorm</li>
+          <li>VolcanicAsh</li>
+          <li>VolcanicDebris</li>
+          <li>LavaEmergence</li>
+          <li>SeasonalFlooding</li>
+          <li>DroughtInitial</li>
+          <li>Drought</li>
+          <li>OrbitalDebris</li>
+          <li>MysteriousCargoUnnaturalCorpse</li>
+          <li>MysteriousCargoCube</li>
+          <li>MysteriousCargoRevenantSpine</li>
+          <li>RevenantEmergence</li>
+          <li>CreepJoinerJoin_Metalhorror</li>
+        </negative>
+        <neverFire>
+          <li>ToxicFallout</li>
+          <li>VolcanicWinter</li>
+          <li>GillRot</li>
+          <li>RansomDemand</li>
+          <li>MetalhorrorImplantation</li>
+        </neverFire>
+      </li>
+      <li Class="StorytellerCompProperties_ShipChunkDrop"/>
+      <!-- people still fall ill now and then; there is deliberately no DiseaseAnimal comp: animals never fall ill under Hetty (see description) -->
+      <li Class="StorytellerCompProperties_Disease">
+        <category>DiseaseHuman</category>
+        <minDaysPassed>45</minDaysPassed>
+      </li>
+      <!-- Friends and trade: allies help often, traders and travellers come by a lot -->
+      <li Class="StorytellerCompProperties_FactionInteraction">
+        <incident>RaidFriendly</incident>
+        <baseIncidentsPerYear>20</baseIncidentsPerYear>
+        <minSpacingDays>0.4</minSpacingDays>
+        <fullAlliesOnly>true</fullAlliesOnly>
+        <minDanger>High</minDanger>
+      </li>
+      <li Class="StorytellerCompProperties_FactionInteraction">
+        <incident>TraderCaravanArrival</incident>
+        <minDaysPassed>3</minDaysPassed>
+        <baseIncidentsPerYear>9</baseIncidentsPerYear>
+        <minSpacingDays>4</minSpacingDays>
+        <allowedTargetTags>
+          <li>Map_PlayerHome</li>
+        </allowedTargetTags>
+      </li>
+      <li Class="StorytellerCompProperties_FactionInteraction">
+        <incident>VisitorGroup</incident>
+        <minDaysPassed>2</minDaysPassed>
+        <baseIncidentsPerYear>7</baseIncidentsPerYear>
+        <minSpacingDays>3</minSpacingDays>
+        <allowedTargetTags>
+          <li>Map_PlayerHome</li>
+        </allowedTargetTags>
+      </li>
+      <li Class="StorytellerCompProperties_FactionInteraction">
+        <incident>TravelerGroup</incident>
+        <minDaysPassed>1</minDaysPassed>
+        <baseIncidentsPerYear>8</baseIncidentsPerYear>
+        <minSpacingDays>1</minSpacingDays>
+        <allowedTargetTags>
+          <li>Map_PlayerHome</li>
+        </allowedTargetTags>
+      </li>
+      <!-- Caravan / temp map: no big threats on the road -->
+      <li Class="StorytellerCompProperties_CategoryIndividualMTBByBiome">
+        <category>Misc</category>
+        <allowedTargetTags>
+          <li>Caravan</li>
+          <li>Map_TempIncident</li>
+        </allowedTargetTags>
+      </li>
+      <li Class="StorytellerCompProperties_CategoryIndividualMTBByBiome">
+        <category>ThreatSmall</category>
+        <applyCaravanVisibility>true</applyCaravanVisibility>
+        <allowedTargetTags>
+          <li>Caravan</li>
+          <li>Map_TempIncident</li>
+        </allowedTargetTags>
+      </li>
+      <!-- Quests - non-Royalty -->
+      <li Class="StorytellerCompProperties_RandomQuest">
+        <category>GiveQuest</category>
+        <allowedTargetTags>
+          <li>World</li>
+        </allowedTargetTags>
+        <onDays>8</onDays>
+        <numIncidentsRange>1</numIncidentsRange>
+        <acceptFractionByDaysPassedCurve>
+          <points>
+            <li>(8, 0)</li>
+            <li>(15, 1)</li>
+          </points>
+        </acceptFractionByDaysPassedCurve>
+        <minSpacingDays>3</minSpacingDays>
+        <disableIfAnyModActive>
+          <li>Ludeon.RimWorld.Royalty</li>
+        </disableIfAnyModActive>
+      </li>
+      <!-- Quests - Royalty -->
+      <li Class="StorytellerCompProperties_RandomQuest">
+        <category>GiveQuest</category>
+        <allowedTargetTags>
+          <li>World</li>
+        </allowedTargetTags>
+        <onDays>10</onDays>
+        <numIncidentsRange>2</numIncidentsRange>
+        <acceptFractionByDaysPassedCurve>
+          <points>
+            <li>(8, 0)</li>
+            <li>(15, 1)</li>
+          </points>
+        </acceptFractionByDaysPassedCurve>
+        <minSpacingDays>3</minSpacingDays>
+        <enableIfAnyModActive>
+          <li>Ludeon.RimWorld.Royalty</li>
+        </enableIfAnyModActive>
+      </li>
+      <!-- World misc incidents -->
+      <li Class="StorytellerCompProperties_CategoryMTB">
+        <category>Misc</category>
+        <allowedTargetTags>
+          <li>World</li>
+        </allowedTargetTags>
+        <minDaysPassed>15</minDaysPassed>
+        <mtbDays>15</mtbDays>
+      </li>
+      <!-- Orbital traders: more often than Phoebe -->
+      <li Class="StorytellerCompProperties_OnOffCycle">
+        <incident>OrbitalTraderArrival</incident>
+        <onDays>6</onDays>
+        <offDays>4</offDays>
+        <numIncidentsRange>1</numIncidentsRange>
+      </li>
+      <!-- Triggered -->
+      <li Class="StorytellerCompProperties_Triggered">
+        <incident>StrangerInBlackJoin</incident>
+        <delayTicks>180</delayTicks>
+      </li>
+    </comps>
+  </StorytellerDef>
+</Defs>
