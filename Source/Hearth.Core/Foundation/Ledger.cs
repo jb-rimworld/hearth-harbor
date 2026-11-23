@@ -130,11 +130,14 @@ namespace Hearth
             Dictionary<int, DailyBlock> wrap = null;
             if (Scribe.mode == LoadSaveMode.Saving) wrap = daily.ToDictionary(kv => kv.Key, kv => new DailyBlock { map = kv.Value });
             Scribe_Collections.Look(ref wrap, "daily", LookMode.Value, LookMode.Deep, ref dk, ref dv);
+            // wrap is a local: it only holds the loaded blocks during LoadingVars (taking it in PostLoadInit lost the daily income on every load)
+            if (Scribe.mode == LoadSaveMode.LoadingVars)
+                daily = wrap?.ToDictionary(kv => kv.Key, kv => kv.Value.map) ?? new Dictionary<int, Dictionary<string, long>>();
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 balances = balances ?? new Dictionary<string, long>();
                 journal = journal ?? new List<Entry>();
-                daily = wrap?.ToDictionary(kv => kv.Key, kv => kv.Value.map) ?? new Dictionary<int, Dictionary<string, long>>();
+                daily = daily ?? new Dictionary<int, Dictionary<string, long>>();
             }
         }
     }

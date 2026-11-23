@@ -57,6 +57,7 @@ namespace Silverline
             Scribe_Values.Look(ref bondCounter, "bondCounter"); Scribe_Values.Look(ref savingsLockedUntil, "savingsLocked", -1);
             Scribe_Values.Look(ref yearIndex, "yearIndex", -1); Scribe_Values.Look(ref yearStartNetWorth, "yearStartNW"); Scribe_Values.Look(ref yearGains, "yearGains");
             Scribe_Values.Look(ref tradeSalt, "tradeSalt");
+            Scribe_Values.Look(ref tradeCountDay, "tradeCountDay");   // feeds tomorrow's trade salt: a reload must not reset it
             ExposeSignals(); ExposeOmen(); ExposeProjects();
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {

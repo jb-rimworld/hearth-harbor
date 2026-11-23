@@ -65,6 +65,17 @@ namespace Hearth.Testing
 
         public HearthTestRunner(Game g) { }
 
+        /// <summary>Two-phase runs: the fingerprint of the loaded state is taken before the first tick (see SaveLoadKit).</summary>
+        public override void LoadedGame()
+        {
+            if (!Active || SaveLoadKit.LoadedSave == null) return;
+            LongEventHandler.ExecuteWhenFinished(() =>
+            {
+                try { SaveLoadKit.AfterLoad = SaveFingerprint.Take(); SaveLoadKit.AfterLoadTick = Find.TickManager.TicksGame; }
+                catch (Exception e) { Verse.Log.Error("[HHTEST] fingerprint after load failed: " + e); }
+            });
+        }
+
         public override void GameComponentUpdate()
         {
             if (!Active) return;
@@ -176,6 +187,8 @@ namespace Hearth.Testing
             bool pass = fails == 0 && runs.Count > 0 && newErrors == 0;
             sb.AppendLine($"RESULT {(pass ? "PASS" : "FAIL")} suites={runs.Count} checks={checks} failures={fails} errorsInLog={HLog.ErrorCount} newErrors={newErrors} unknownSuites={unknownSuites.Count}");
             foreach (var u in unknownSuites) sb.AppendLine($"## {u}: FAIL (unknown suite name)");
+            var probe = SaveLoadKit.ProbeErrors();
+            if (Env("HH_PROBE_ERR") != null) { sb.AppendLine($"red errors in the game log (probe): {probe.Count}"); foreach (var l in probe.Take(40)) sb.AppendLine("  game error: " + l); }
             if (newErrors > 0) foreach (var l in HLog.RecentSnapshot().Where(l => l.Contains("| ERROR |")).Take(20)) sb.AppendLine("  logged error: " + l.Split('\n')[0]);
             foreach (var r in runs)
             {

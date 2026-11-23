@@ -24,7 +24,8 @@ namespace Silverline
         public float signal;                                // decaying system-B signal (log drift units, before cap)
 
         // not saved
-        public AssetDef def; public AssetSpec spec; public double drift; public string specKey; public double lnMa; public double dynHaz = 1, dynPUp;
+        public AssetDef def; public AssetSpec spec; public double drift; public string specKey; public double lnMa;
+        public double dynHaz = 1, dynPUp;   // saved (faction-state factors, refreshed daily)
 
         public string Label => def?.LabelCap.ToString() ?? defName;
         public string Ticker => def?.Ticker ?? defName;
@@ -35,12 +36,14 @@ namespace Silverline
         public void ExposeData()
         {
             Scribe_Values.Look(ref id, "id"); Scribe_Values.Look(ref defName, "def");
-            Scribe_Values.Look(ref price, "price"); Scribe_Values.Look(ref dayOpen, "dayOpen");
+            ScribeMoney.LookExact(ref price, "price"); ScribeMoney.LookExact(ref dayOpen, "dayOpen");
             Scribe_Collections.Look(ref hourly, "hourly", LookMode.Value);
             Scribe_Collections.Look(ref daily, "daily", LookMode.Value);
             Scribe_Values.Look(ref listedTick, "listed"); Scribe_Values.Look(ref delistTick, "delist", -1); Scribe_Values.Look(ref frozenUntil, "frozen", -1);
             Scribe_Values.Look(ref serial, "serial"); Scribe_Values.Look(ref rugged, "rugged"); Scribe_Values.Look(ref delisted, "delisted");
-            Scribe_Values.Look(ref alpha, "alpha"); Scribe_Values.Look(ref signal, "signal");
+            ScribeMoney.LookExact(ref alpha, "alpha"); Scribe_Values.Look(ref signal, "signal");
+            // the faction-state hazard factors feed the spec; without them a reload ran on neutral hazards until the next daily signal step
+            Scribe_Values.Look(ref dynHaz, "dynHaz", 1.0); Scribe_Values.Look(ref dynPUp, "dynPUp", 0.0);
             if (Scribe.mode == LoadSaveMode.PostLoadInit) { hourly = hourly ?? new List<float>(); daily = daily ?? new List<float>(); }
         }
     }
