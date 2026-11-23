@@ -206,6 +206,9 @@ namespace Hearth
             HSettings.Bool(ModuleId.Core, "Help", "core.helpHint", true, "Show the small real-life help hint where you gamble",
                 "A small, quiet line on every screen where you yourself gamble: if gambling is a problem in real life, help exists (findahelpline.com). Never shown elsewhere.");
             HSettings.Bool(ModuleId.Core, "Help", "core.guide", true, "Show the Hearth & Harbor guide", "The learning helper at the top right. Right-click it to hide it.");
+            var ws = HSettings.Percent(ModuleId.Core, "Help", HUI.WindowScaleKey, 1.15f, 0.8f, 1.5f, "Size of Hearth & Harbor windows",
+                "All Hearth & Harbor and Silverline windows grow or shrink by this factor (on top of the automatic size for large screens).", hardMin: 0.6f, hardMax: 2f);
+            ws.Global = true;
         }
     }
 }
