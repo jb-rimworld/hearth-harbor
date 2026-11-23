@@ -57,7 +57,12 @@ namespace Hearth.ShopsFood
         {
             if (kind == SellKind.None || t == null || t.Destroyed || t.def.category != ThingCategory.Item) return false;
             if (t is Corpse || t.def == ThingDefOf.Silver || t.def.IsCorpse) return false;
-            if (kind == SellKind.Dishes) return t.TryGetComp<CompDish>()?.dish != null;   // cooked plates only; the colony's plain meals stay free to eat
+            if (kind == SellKind.Dishes)
+            {
+                // cooked, still fresh plates only: the colony's plain meals stay free to eat, stale plates are never forbidden (nobody can sell them, so the colony may clear them away)
+                var plate = t.TryGetComp<CompDish>();
+                return plate?.dish != null && !plate.IsStale;
+            }
             if (t.MarketValue <= 0.001f) return false;
             if (kind == SellKind.Drinks) return IsDrink(t.def);
             return true;

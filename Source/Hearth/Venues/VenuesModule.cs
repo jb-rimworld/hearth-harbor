@@ -81,7 +81,7 @@ namespace Hearth.ShopsFood
     /// </summary>
     public sealed class VenueMapComp : MapComponent
     {
-        List<Thing> forbiddenByUs = new List<Thing>();
+        HashSet<Thing> forbiddenByUs = new HashSet<Thing>();
 
         public VenueMapComp(Map map) : base(map) { }
 
@@ -90,8 +90,8 @@ namespace Hearth.ShopsFood
             Scribe_Collections.Look(ref forbiddenByUs, "forbiddenByUs", LookMode.Reference);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
-                if (forbiddenByUs == null) forbiddenByUs = new List<Thing>();
-                forbiddenByUs.RemoveAll(t => t == null);
+                if (forbiddenByUs == null) forbiddenByUs = new HashSet<Thing>();
+                forbiddenByUs.RemoveWhere(t => t == null);
             }
         }
 
@@ -122,15 +122,16 @@ namespace Hearth.ShopsFood
                 cf.Forbidden = true;
                 forbiddenByUs.Add(it);
             }
-            for (int i = forbiddenByUs.Count - 1; i >= 0; i--)
+            List<Thing> release = null;
+            foreach (var it in forbiddenByUs)
             {
-                var it = forbiddenByUs[i];
-                if (it == null || it.Destroyed) { forbiddenByUs.RemoveAt(i); continue; }
+                if (it == null || it.Destroyed) { (release ?? (release = new List<Thing>())).Add(it); continue; }
                 if (shouldForbid.Contains(it)) continue;
                 var cf = it.TryGetComp<CompForbiddable>();
                 if (cf != null && cf.Forbidden) cf.Forbidden = false;
-                forbiddenByUs.RemoveAt(i);
+                (release ?? (release = new List<Thing>())).Add(it);
             }
+            if (release != null) foreach (var it in release) forbiddenByUs.Remove(it);
         }
 
         /// <summary>"Restock" signs keep the storage of their room in line (N45).</summary>

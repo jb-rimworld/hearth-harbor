@@ -57,8 +57,6 @@ namespace Hearth.Kitchen
         public static int TotalSales, UnpaidMeals;
         public static Money TotalTakings = Money.Zero;
 
-        static RoomRoleDef roleDining;
-        static RoomRoleDef RoleDining => roleDining ?? (roleDining = DefDatabase<RoomRoleDef>.GetNamedSilentFail("DiningRoom"));
         /// <summary>Is the venue open for guests? The venue gate: hours, somebody on duty, night bell. Replaceable for tests.</summary>
         public static Func<Venue, bool> OpenGate = Hearth.ShopsFood.VenueApi.IsOpenForBusiness;
         /// <summary>Everything that multiplies the menu price of a venue: type and sign factor, price setting, night-bell surcharge. Replaceable for tests.</summary>
@@ -215,7 +213,7 @@ namespace Hearth.Kitchen
             if (GuestApi.ChargeGuest(eater, sale.Price, "food", memo))
             {
                 TotalSales++; TotalTakings += sale.Price;
-                (sale.Venue?.Comp as Hearth.ShopsFood.CompVenueSignHH)?.RecordSale(sale.Price, 1);
+                BookSale(eater, sale);
                 float sat = Mathf.Clamp(0.05f + 0.04f * ((int)c.Quality - 2) + (c.dish.level - 1) * 0.01f, -0.1f, 0.3f);
                 GuestApi.AddSatisfaction(eater, sat, "enjoyed a " + sale.Dish.ToLowerInvariant());
                 HLog.Debug("Kitchen", $"{eater.LabelShort} paid {sale.Price} for {sale.Dish}");
@@ -237,7 +235,7 @@ namespace Hearth.Kitchen
             if (GuestApi.ChargeGuest(eater, sale.Price, "food", memo))
             {
                 TotalSales++; TotalTakings += sale.Price;
-                (sale.Venue?.Comp as Hearth.ShopsFood.CompVenueSignHH)?.RecordSale(sale.Price, 1);
+                BookSale(eater, sale);
                 float sat = food.def.ingestible.preferability >= FoodPreferability.MealLavish ? 0.08f : food.def.ingestible.preferability >= FoodPreferability.MealFine ? 0.05f : 0.03f;
                 GuestApi.AddSatisfaction(eater, sat, "had a " + sale.Dish.ToLowerInvariant());
                 HLog.Debug("Kitchen", $"{eater.LabelShort} paid {sale.Price} for {sale.Dish}");
@@ -261,6 +259,19 @@ namespace Hearth.Kitchen
             dead = null;
             foreach (var kv in vanillaSales) if (now - kv.Value.Tick > 6000) (dead ?? (dead = new List<int>())).Add(kv.Key);
             if (dead != null) foreach (var k in dead) vanillaSales.Remove(k);
+        }
+
+        /// <summary>A paid restaurant sale: the sign records it, the staffer learns Social and a friendly tender pleases the guest (same as tavern and shop sales).</summary>
+        static void BookSale(Pawn guest, PlateSale sale)
+        {
+            var venue = sale.Venue;
+            if (venue == null) return;
+            (venue.Comp as Hearth.ShopsFood.CompVenueSignHH)?.RecordSale(sale.Price, 1);
+            var staffer = Hearth.ShopsFood.VenueApi.Staffer(venue);
+            if (staffer == null) return;
+            staffer.skills?.Learn(SkillDefOf.Social, 25f, false);
+            int social = staffer.skills?.GetSkill(SkillDefOf.Social)?.Level ?? 5;
+            GuestApi.AddSatisfaction(guest, 0.004f + 0.016f * Mathf.Clamp01(social / 20f), "HH.Venue.GoodService".TranslateOr("Friendly service"));
         }
 
         public static int PendingSales => sales.Count + vanillaSales.Count;

@@ -598,6 +598,13 @@ namespace Hearth.Kitchen.Tests
             t.Check(good.All(p => !p.IsForbidden(staff)), "colony may take goods: plates are released");
             signComp.colonyMayTakeGoods = false; Hearth.ShopsFood.VenueSales.ClearCaches(); mapComp.SyncForbidden();
             t.Check(good.All(p => p.IsForbidden(staff)), "and forbidden again");
+            t.Check(!stale.IsForbidden(staff), "a stale plate is never forbidden by us: the colony may clear it away");
+            t.Check(!Hearth.ShopsFood.VenueSales.Stock(sv, true).Contains(stale) && Hearth.ShopsFood.VenueSales.Stock(sv).Count == 3, "stale plates are not counted as stock: " + Hearth.ShopsFood.VenueSales.Stock(sv).Count);
+            var goodDef = good[0];
+            goodDef.TryGetComp<CompDish>().freshAge = 1e9f; mapComp.SyncForbidden();
+            t.Check(!goodDef.IsForbidden(staff), "a plate that goes stale is released again");
+            goodDef.TryGetComp<CompDish>().freshAge = 0f; mapComp.SyncForbidden();
+            t.Check(goodDef.IsForbidden(staff), "a re-freshed plate is forbidden again");
             var filterDefs = Hearth.ShopsFood.VenueRestock.GoodsNow(sv).ToList();
             t.Check(filterDefs.Count > 5 && filterDefs.All(d => d.comps.Any(c => c.compClass == typeof(CompDish))), "the restock filter of a restaurant offers plates: " + filterDefs.Count + " kinds");
             Hearth.ShopsFood.VenueState.PingStaff(sign, staff);
