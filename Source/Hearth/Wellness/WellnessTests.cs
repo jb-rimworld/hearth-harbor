@@ -314,6 +314,8 @@ namespace Hearth.Wellness.Tests
             masseur.workSettings.SetPriority(WellnessDefOf.HH_Serving, 1);
             j2 = WellnessStaff.MakeUseJob(client, table);
             client.jobs.StartJob(j2, JobCondition.InterruptForced);
+            // the masseur was only enabled to get a job object: nobody comes now, or an available masseur would simply massage the client (flaky)
+            masseur.workSettings.SetPriority(WellnessDefOf.HH_Serving, 0); if (masseur.CurJob?.def == WellnessDefOf.HH_GiveMassage) masseur.jobs.EndCurrentJob(JobCondition.InterruptForced);
             foreach (var x in WT.WaitUntil(() => client.CurJob?.def != WellnessDefOf.HH_ReceiveMassage, 2500, 50)) yield return x;
             t.Check(client.CurJob?.def != WellnessDefOf.HH_ReceiveMassage, "client gives up waiting");
             t.Check(comp.recipient == null, "table freed after giving up");

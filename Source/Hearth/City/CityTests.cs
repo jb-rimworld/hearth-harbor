@@ -166,7 +166,19 @@ namespace Hearth.City.Tests
         /// <summary>A colonist who can do the given work type (random colonists may have social or violence disabled).</summary>
         public static Pawn FreeColonist(Map map, int skip = 0, WorkTypeDef work = null, Func<Pawn, bool> extra = null)
         {
-            var list = map.mapPawns.FreeColonistsSpawned.Where(p => !p.Downed && !p.Dead && (work == null || (!p.WorkTypeIsDisabled(work) && p.workSettings != null)) && (extra == null || extra(p))).ToList();
+            Func<Pawn, bool> ok = p => !p.Downed && !p.Dead && (work == null || (!p.WorkTypeIsDisabled(work) && p.workSettings != null)) && (extra == null || extra(p));
+            var list = map.mapPawns.FreeColonistsSpawned.Where(ok).ToList();
+            if (list.Count == 0 && (work != null || extra != null))
+            {
+                // the quicktest colonists are random (backstories can forbid violence or social work): generate one that fits instead of making the suite depend on luck
+                for (int tries = 0; tries < 12 && list.Count == 0; tries++)
+                {
+                    var req = new PawnGenerationRequest(PawnKindDefOf.Colonist, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: true, mustBeCapableOfViolence: true);
+                    var np = PawnGenerator.GeneratePawn(req);
+                    GenSpawn.Spawn(np, map.Center, map);
+                    if (ok(np)) list.Add(np); else np.Destroy();
+                }
+            }
             return list.Count > skip ? list[skip] : list.FirstOrDefault();
         }
     }
@@ -345,6 +357,7 @@ namespace Hearth.City.Tests
             bool started = false;
             for (int i = 0; i < 80 && !started; i++) { yield return 30; started = comp.ShowActive; }
             t.Check(started, "a screening starts when the guest sits down: " + comp.FilmTitle);
+            if (info1.Spent - before != ticket) t.Note($"DIAG cinema: isGuest {GuestApi.IsGuest(g1)} budget {GuestApi.Budget(g1)} lord {g1.GetLord()?.LordJob?.GetType().Name} spawned {g1.Spawned} job {g1.CurJob?.def?.defName} faction {g1.Faction?.Name} hostile {g1.HostileTo(Faction.OfPlayer)} spent {info1.Spent} till {Ledger.Current.Balance(Payments.ColonyTill(map))}");
             t.Check(info1.Spent - before == ticket, $"guest paid the ticket ({info1.Spent - before} of {ticket})");
             t.Check(CityTestKit.Posted("Cinema ticket", out var posted) && posted >= ticket, "the ticket is booked as colony income");
             t.Check(comp.ViewerCount >= 1, "viewer counted at the screen");
@@ -471,11 +484,12 @@ namespace Hearth.City.Tests
             // the work giver itself was checked above. If she did not come, force the job before the guest leaves the chair.
             if (!natural) { t.Note("the colonist did not take the styling job by herself in time; forcing it"); server.jobs.StartJob(wj, JobCondition.InterruptForced); }
             else t.Note("the colonist took the styling job through the work giver by herself");
-            for (int i = 0; i < 80 && !chair.ServiceDone && guest.CurJob?.def == CityDefs.SalonSit; i++) yield return 15;
+            for (int i = 0; i < 300 && !chair.ServiceDone && guest.CurJob?.def == CityDefs.SalonSit; i++) yield return 15; // the stylist may have to walk across the map and a low skill styles slowly
             // after the service the guest still has to get up (memory and cooldown come at the end of the sit job)
             for (int i = 0; i < 60 && guest.CurJob?.def == CityDefs.SalonSit; i++) yield return 15;
             yield return 30;
             var paid = info.Spent - spent0;
+            if (paid.Micro == 0) t.Note($"DIAG salon: isGuest {GuestApi.IsGuest(guest)} budget {GuestApi.Budget(guest)} lord {guest.GetLord()?.LordJob?.GetType().Name} stylist {chair.Stylist?.LabelShort} started {chair.ServiceStarted} done {chair.ServiceDone} declined {chair.Declined} job {guest.CurJob?.def?.defName} serverJob {server.CurJob?.def?.defName} serverAt {server.Position} chair {chair.Position}");
             t.Check(paid >= CitySettings.Silver(CitySettings.SalonPrice) && paid <= Money.FromSilver(55), "guest paid for the service: " + paid + " silver");
             t.Check(CityTestKit.Posted("Beauty salon", out var posted) && posted >= paid, "booked as colony income");
             t.Check(guest.story.hairDef != before || guest.story.HairColor != colour || true, "new look applied");
@@ -490,6 +504,7 @@ namespace Hearth.City.Tests
             if (guests.Count > 1)
             {
                 var g2 = guests[1]; var i2 = GuestApi.Info(g2);
+                for (int i = 0; i < 100 && (chair.HasCustomer || guest.CurJob?.def == CityDefs.SalonSit); i++) yield return 15; // the first guest must have left the chair
                 i2.Budget = Money.FromSilver(30);
                 var jb = act.TryGiveJob(g2, i2); t.Check(jb != null, "second guest sits down");
                 if (jb != null)
@@ -507,6 +522,10 @@ namespace Hearth.City.Tests
             var col = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => c != server && !c.Downed);
             if (col != null)
             {
+                // guests re-queue for the chair on their own (activity scheduler): broke and idle them so one of them does not hold the chair's reservation
+                foreach (var gx in guests) { var gi = GuestApi.Info(gx); if (gi != null) gi.Budget = Money.Zero; if (gx.CurJob?.def == CityDefs.SalonSit) gx.jobs.EndCurrentJob(JobCondition.InterruptForced); }
+                map.reservationManager.ReleaseAllForTarget(chair);
+                yield return 5;
                 col.DeSpawn(); GenSpawn.Spawn(col, inner.CenterCell + new IntVec3(-1, 0, -1), map);
                 var opts = chair.GetFloatMenuOptions(col).ToList();
                 t.Check(opts != null, "float menu for colonists builds (" + opts.Count + " options)");
@@ -644,6 +663,10 @@ namespace Hearth.City.Tests
             var col = CityTestKit.FreeColonist(map);
             if (col != null)
             {
+                // the guest re-queues for the free bench on its own (activity scheduler): idle it so it does not hold the only seat
+                info.Budget = Money.Zero; if (guest.CurJob?.def == CityDefs.ParkRest) guest.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                map.reservationManager.ReleaseAllForTarget(bench);
+                yield return 5;
                 col.DeSpawn(); GenSpawn.Spawn(col, area.CenterCell + new IntVec3(0, 0, -2), map);
                 CityTestKit.TimetableAnything(col);
                 var jg = new JoyGiver_ParkBench { def = DefDatabase<JoyGiverDef>.GetNamed("HH_ParkBenchJoy") };
@@ -782,6 +805,8 @@ namespace Hearth.City.Tests
             var gun = (ThingWithComps)ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("Gun_Revolver"));
             guardPawn.equipment.AddEquipment(gun);
             guardPawn.workSettings.SetPriority(HHWork.Hosting, 1);
+            // a random colonist may be asleep at this hour (a sleeper is not a guard): wake and rest the guard
+            guardPawn.jobs.StopAll(); if (guardPawn.needs?.rest != null) guardPawn.needs.rest.CurLevel = 1f;
             t.Check(SecurityService.IsArmedGuard(guardPawn), "the armed colonist is a possible guard");
 
             // a poor or modest guest is not eligible

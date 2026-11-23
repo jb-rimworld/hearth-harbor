@@ -95,6 +95,7 @@ namespace Hearth.Testing
             }
             if (current >= runs.Count) { finished = true; return; }
             var r = runs[current];
+            if (r.It == null) NeutralizeGame();
             if (r.It == null) { r.Started = now; r.WaitUntil = now; try { r.It = r.Suite.Run(r.Ctx).GetEnumerator(); } catch (Exception e) { r.Error = e.ToString(); r.Done = true; } r.Ctx.Log("start at tick " + now); }
             if (!r.Done && now >= r.WaitUntil)
             {
@@ -113,6 +114,37 @@ namespace Hearth.Testing
                 r.Ctx.Log($"end: {r.Ctx.Checks} checks, {r.Ctx.Failures} failures, {now - r.Started} ticks");
                 current++;
             }
+        }
+
+        /// <summary>The quicktest colony is a live game: the storyteller fires raids/fires/events and colonists sleep or take joy at random hours,
+        /// which made suites fail by luck. Before every suite: no storyteller incidents, colonists awake, rested and free to work at any hour.</summary>
+        static void NeutralizeGame()
+        {
+            try
+            {
+                Find.Storyteller?.storytellerComps?.Clear();
+                var map = Find.CurrentMap; if (map == null) return;
+                // outdoor joy (benches, saunas) is refused in rain or snow
+                if (map.weatherManager.curWeather != WeatherDefOf.Clear) { map.weatherManager.curWeather = WeatherDefOf.Clear; map.weatherManager.lastWeather = WeatherDefOf.Clear; }
+                foreach (var c in map.mapPawns.FreeColonistsSpawned)
+                {
+                    if (c.needs?.rest != null) c.needs.rest.CurLevel = 1f;
+                    var joy = c.needs?.joy;   // joy givers refuse kinds the colonist is bored of (earlier suites exhaust them) and bored colonists flake the 'joy giver offers X' checks
+                    if (joy != null)
+                    {
+                        var set = joy.tolerances; // JoyToleranceSet: DefMaps of tolerance (float) and boredom (bool); reflection keeps this independent of the version
+                        foreach (var f in set.GetType().GetFields(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic))
+                        {
+                            var m = f.GetValue(set); var setAll = m?.GetType().GetMethod("SetAll");
+                            if (setAll == null) continue;
+                            var vt = setAll.GetParameters()[0].ParameterType;
+                            if (vt == typeof(float)) setAll.Invoke(m, new object[] { 0f }); else if (vt == typeof(bool)) setAll.Invoke(m, new object[] { false });
+                        }
+                    }
+                    if (c.timetable != null) for (int h = 0; h < 24; h++) c.timetable.SetAssignment(h, TimeAssignmentDefOf.Anything);
+                }
+            }
+            catch (Exception e) { Verse.Log.Warning("[HHTEST] could not neutralize the game: " + e.Message); }
         }
 
         void WriteResults()

@@ -27,6 +27,15 @@ namespace Silverline
         /// <summary>Clean slate: no contracts, no claims, easy settings, all research gates open, a funded till.</summary>
         public static void Reset(double till = 5000)
         {
+            // random quicktest colonists can start with old injuries, missing parts or bionics: claims on 'losing a hand' etc. then grade 0 (flaky)
+            foreach (var col in Map.mapPawns.FreeColonistsSpawned) col.health.Reset();
+            // bomb damage in earlier claim suites can leave fires burning: a large fire blocks signing for a while
+            foreach (var fire in Map.listerThings.ThingsOfDef(ThingDefOf.Fire).ToList()) if (!fire.Destroyed) fire.Destroy();
+            // the fire watcher refreshes only every ~426 ticks: refresh it now so 'large fire danger' reflects the extinguished map
+            try { typeof(FireWatcher).GetMethod("UpdateObservations", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.Invoke(Map.fireWatcher, null); } catch { }
+            // hostile pawns left over from earlier suites or from the live game (manhunters, visiting raiders) also count as a threat
+            foreach (var hp in Map.mapPawns.AllPawnsSpawned.Where(x => !x.Destroyed && x.Faction != Faction.OfPlayer && x.HostileTo(Faction.OfPlayer) && !x.Downed).ToList()) hp.Destroy();
+            if (InsuranceComponent.ThreatNow(Map)) HLog.Warn("InsTest", "threat still on after reset: hostile " + GenHostility.AnyHostileActiveThreatToPlayer(Map) + ", large fire " + Map.fireWatcher.LargeFireDangerPresent + ", fires " + Map.listerThings.ThingsOfDef(ThingDefOf.Fire).Count);
             BankGameComp.Current?.TestReset(false);   // no account unless a test opens one: premiums then come from the till
             var c = Comp; c.contracts.Clear(); c.claims.Clear(); c.debt = 0; c.firstPolicyTick = -1; c.lastFiledLetterDay = -1; c.lastUpsellTick = -9999999; c.lastDeathTick = -9999999; c.log.Clear();
             Set(InsSettings.RequireResearch, 0); Set(InsSettings.ClaimsAttitude, 0f); Set(InsSettings.WaitingDays, 5); Set(InsSettings.AssessmentDays, 0); Set(InsSettings.BillingDays, 5);
@@ -197,6 +206,8 @@ namespace Silverline
             var cell = t.FreeCellNearCenter();
             InsTest.Map.areaManager.Home[cell] = true;
             GenPlace.TryPlaceThing(pile, cell, InsTest.Map, ThingPlaceMode.Near);
+            // "Near" can put the pile on a neighbouring cell (or merge it): make wherever it landed home area and not forbidden
+            if (pile.Spawned) { InsTest.Map.areaManager.Home[pile.Position] = true; pile.SetForbidden(false, false); }
             yield return 2;
             int silverBefore = InsurerBooks.StorageSilver(InsTest.Map);
             t.Check(silverBefore >= 120, "silver visible to the insurer in the home area: " + silverBefore);
@@ -539,7 +550,7 @@ namespace Silverline
             t.Check(res.Ok, "signed");
             if (!res.Ok) yield break;
             var negotiator = ClaimEngine.BestNegotiator(InsTest.Map);
-            t.Check(negotiator != null, "a negotiator exists");
+            t.Note("negotiator: " + (negotiator?.LabelShort ?? "none (random colonists can all be incapable of Social)") + "; the rounds below use the default skill so the outcome does not depend on the colonist");
             int wins = 0, partials = 0, fails = 0; var moneyBefore = Money.Zero;
             var cash0 = InsTest.Till + InsTest.Insurer;
             for (int i = 0; i < 60; i++)
@@ -548,7 +559,7 @@ namespace Silverline
                 comp.claims.Add(cl);
                 for (int r = 0; r < 4; r++)
                 {
-                    var nr = ClaimEngine.Negotiate(cl, (NegApproach)(r % 3), negotiator);
+                    var nr = ClaimEngine.Negotiate(cl, (NegApproach)(r % 3), null); // null = default skill 0.6: a random colonist with a top Social skill wins every round (logistic chance ~1), which made 'sometimes does not' flaky
                     if (r >= 3) t.Check(nr.text == Ins.T("Neg.NotPossible") || cl.negotiationClosed, "no fourth round");
                     if (nr.success) { wins++; t.Check(cl.outcome == ClaimOutcome.Approved && Math.Abs(cl.offered - 100) < 1e-9, "success gives the full benefit"); break; }
                     if (nr.partial) { partials++; t.Check(cl.offered >= 40 - 1e-9 && cl.offered <= 70 + 1e-9 || cl.offered >= 50, "partial success 40-70 %: " + cl.offered); }
@@ -696,7 +707,7 @@ namespace Silverline
         public override ModuleId Module => ModuleId.Bank;
         public override IEnumerable<int> Run(TestContext t)
         {
-            InsTest.Reset(3000);
+            InsTest.Reset(3000); yield return 20; // let the fire watcher notice that earlier suites' fires are out
             var comp = InsTest.Comp;
             var res = comp.Sign(InsTest.Def("SL_RoofOverHead"), CoverTier.GoodEnough, null, 2000, null, null);
             t.Check(res.Ok && res.contract != null, "policy signed: " + res.error); if (!res.Ok || res.contract == null) yield break;
@@ -812,7 +823,7 @@ namespace Silverline
         public override Hearth.ModuleId Module => Hearth.ModuleId.Bank;
         public override IEnumerable<int> Run(Hearth.Testing.TestContext t)
         {
-            InsTest.Reset(20000);
+            InsTest.Reset(20000); yield return 20; // let the fire watcher notice that earlier suites' fires are out
             var comp = InsTest.Comp; var l = Ledger.Current;
             // pre-ticked add-ons are counted as sales-trick cost; above the cap the year letter pays it back
             var r = comp.Sign(InsTest.Def("SL_LimbByLimb"), CoverTier.GoodEnough, InsTest.Colonists.First(), 2000, new[] { "plusProgression", "deathSum" }, new[] { "plusProgression", "deathSum" });

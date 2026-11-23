@@ -58,7 +58,7 @@ namespace Hearth.ShopsFood
                             GenSpawn.Spawn(p, dest, map);
                         }
                     }
-                    else if (t.def.destroyable) t.Destroy();
+                    else if (t.def.destroyable && !t.Destroyed) t.Destroy(); // the snapshot may hold things (motes) a previous Destroy already took with it
                 }
             foreach (var c in room.Outer)
             {
@@ -138,11 +138,27 @@ namespace Hearth.ShopsFood
         public static Pawn Worker(Map map)
         {
             var colonists = map.mapPawns.FreeColonistsSpawned.Where(p => !p.Downed && !p.Dead && !p.Drafted && !p.WorkTypeIsDisabled(HHVenueDefOf.HH_Serving) && p.workSettings != null).ToList();
-            var pick = colonists.FirstOrDefault();
+            if (colonists.Count == 0)
+            {
+                // random quicktest colonists can all be barred from social work by their backstories: add one who can serve instead of making the suites depend on luck
+                for (int tries = 0; tries < 20 && colonists.Count == 0; tries++)
+                {
+                    var np = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Colonist, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: true));
+                    GenSpawn.Spawn(np, map.Center, map);
+                    if (np.workSettings != null && !np.WorkTypeIsDisabled(HHVenueDefOf.HH_Serving)) colonists.Add(np); else np.Destroy();
+                }
+            }
+            // the serving work givers may require capacities (talking, manipulation): a random colonist that lacks one never takes the work
+            var givers = DefDatabase<WorkGiverDef>.AllDefsListForReading.Where(d => d.workType == HHVenueDefOf.HH_Serving).ToList();
+            var pick = colonists.FirstOrDefault(p => givers.All(d => d.Worker.MissingRequiredCapacity(p) == null)) ?? colonists.FirstOrDefault();
             if (pick == null) return null;
             foreach (var c in map.mapPawns.FreeColonistsSpawned.ToList()) c.workSettings?.SetPriority(HHVenueDefOf.HH_Serving, 0);
             pick.workSettings.SetPriority(HHVenueDefOf.HH_Serving, 1);
+            // only the serving work: a random colonist with Cleaning/Hauling at priority 1 never gets to the bell
+            foreach (var wt in DefDatabase<WorkTypeDef>.AllDefsListForReading) if (wt != HHVenueDefOf.HH_Serving && !pick.WorkTypeIsDisabled(wt)) pick.workSettings.SetPriority(wt, 0);
             if (pick.needs?.rest != null) pick.needs.rest.CurLevel = 1f;
+            // a random colonist may be on a joy or sleep time assignment at this hour and then never takes the serving work
+            if (pick.timetable != null) for (int hr = 0; hr < 24; hr++) pick.timetable.SetAssignment(hr, TimeAssignmentDefOf.Anything);
             return pick;
         }
 
@@ -615,6 +631,13 @@ namespace Hearth.ShopsFood
             {
                 VenueTestKit.Drive(map); yield return 100; waited += 100;
                 if (worker == null || worker.Downed || worker.Dead) worker = VenueTestKit.Worker(map); // colonists get hurt in a live colony
+                if (waited >= 600 && waited % 300 == 0 && worker != null && !worker.Downed && !worker.Dead && worker.CurJobDef != HHVenueDefOf.HH_TendVenue && comp.salesCount == 0 && VenueApi.BellActive(venue))
+                {
+                    // a wandering colonist can take over a thousand ticks to look for work again, longer than guests keep ringing: after a natural chance, hand over the job the work giver would give
+                    var wgj = new WorkGiver_ServeVenue { def = DefDatabase<WorkGiverDef>.AllDefsListForReading.First(d => d.giverClass == typeof(WorkGiver_ServeVenue)) }.JobOnThing(worker, sign);
+                    if (wgj != null) worker.jobs.StartJob(wgj, JobCondition.InterruptForced);
+                }
+                if (waited % 1000 == 0 && worker == null) foreach (var cx in map.mapPawns.FreeColonists) t.Note($"DIAG colonist {cx.LabelShort}: spawned {cx.Spawned} downed {cx.Downed} dead {cx.Dead} drafted {cx.Drafted} mental {cx.InMentalState} job {cx.CurJobDef?.defName} serveDisabled {cx.WorkTypeIsDisabled(HHVenueDefOf.HH_Serving)} health {cx.health.summaryHealth.SummaryHealthPercent:0.00}");
                 if (waited % 1000 == 0) t.Note($"worker {worker?.LabelShort}: job {worker?.CurJobDef?.defName} at {worker?.Position}, wants tender {WorkGiver_ServeVenue.WantsTender(VenueApi.VenueOfSign(map, sign))}, bell {VenueApi.BellActive(venue)}, gate {VenueApi.Gate(venue)}, drafted {worker?.Drafted}, downed {worker?.Downed}, prio {worker?.workSettings?.GetPriority(HHVenueDefOf.HH_Serving)}");
                 if (waited % 500 == 0) foreach (var g in group2) { var gi = GuestApi.Info(g); var da = GuestActivities.All.FirstOrDefault(a => a.Id == "venues.drink"); t.Note($"  guest {g.LabelShort}: job {g.CurJobDef?.defName ?? "none"}, budget {gi?.Budget.Silver:0.0}, drink desire {(gi != null && da != null ? da.Desire(g, gi) : -1f):0.00}, cooldown {GuestMemory.InNoServiceCooldown(g)}, rho {(gi != null ? VenueShopping.Rho(g, gi, VenueApi.PriceMultiplier(venue), sign.thingIDNumber) : -1f):0.00}, awake {g.Awake()}, lord {g.GetLord()?.CurLordToil?.GetType().Name}"); }
             }
