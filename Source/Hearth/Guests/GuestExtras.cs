@@ -117,17 +117,94 @@ namespace Hearth.Guests
             var sch = map.GetComponent<MapComponent_HH_GuestScheduler>(); if (sch == null) return null;
             float days = ReturnDays(g.MeanSurplus, TravelDays(g.Faction, map, g.ByPod));
             int nights = Math.Max(1, members.Max(m => m.NightsPlanned));
+            MakeRoom(pawns.Count);
             var plan = sch.AddReturn(g.Faction, pawns, g.Kind, nights, Find.TickManager.TicksGame + (int)(days * 60000));
-            foreach (var p in pawns) Find.WorldPawns.ForcefullyKeptPawns.Add(p);
+            Pin(pawns);
             HLog.Info("Inn", $"{g.Faction.Name} plan to come back in {days:0.0} days ({pawns.Count} guests)");
             return plan;
         }
 
-        /// <summary>Releases the world-pawn pin of a return that will not happen.</summary>
+        /// <summary>Keeps returning guests as world pawns until their visit (vanilla would discard them) and books the pin in the register,
+        /// so removal, abandoned maps and the caretaker can always release them again (A5).</summary>
+        public static void Pin(IEnumerable<Pawn> pawns)
+        {
+            var reg = GuestRegistry.Instance;
+            foreach (var p in pawns)
+            {
+                if (p == null) continue;
+                Find.WorldPawns.ForcefullyKeptPawns.Add(p);
+                if (reg != null && !reg.PinnedReturners.Contains(p)) reg.PinnedReturners.Add(p);
+            }
+        }
+
+        /// <summary>Releases the world-pawn pin of a return that will not happen (or has happened).</summary>
         public static void Unpin(IEnumerable<Pawn> pawns)
         {
             if (pawns == null) return;
-            foreach (var p in pawns) if (p != null) Find.WorldPawns.ForcefullyKeptPawns.Remove(p);
+            var reg = GuestRegistry.Instance;
+            foreach (var p in pawns.ToList())
+            {
+                if (p == null) continue;
+                if (reg != null && !reg.PinnedReturners.Remove(p)) continue; // not ours: never release a pin someone else set
+                Find.WorldPawns?.ForcefullyKeptPawns.Remove(p);
+            }
+        }
+
+        /// <summary>Cap (inn.returnPinCap): before pinning n more pawns, the oldest planned return visits are dropped.</summary>
+        static void MakeRoom(int n)
+        {
+            var reg = GuestRegistry.Instance; if (reg == null) return;
+            int cap = Math.Max(0, HSettings.GetInt(InnSettings.ReturnPinCap));
+            int guard = 0;
+            while (reg.PinnedReturners.Count > 0 && reg.PinnedReturners.Count + n > cap && guard++ < 200)
+            {
+                var oldest = reg.PinnedReturners[0];
+                bool dropped = false;
+                foreach (var map in Find.Maps)
+                {
+                    var sch = map.GetComponent<MapComponent_HH_GuestScheduler>();
+                    if (sch != null && sch.DropReturnOf(oldest)) { dropped = true; break; }
+                }
+                if (!dropped) Unpin(new[] { oldest });
+                HLog.Debug("Inn", "Return pin cap reached: dropped the oldest planned return visit");
+            }
+        }
+
+        internal static void MakeRoomForTests(int n) => MakeRoom(n);
+
+        /// <summary>Releases every pin we hold and forgets all planned return visits (module removal, A5).</summary>
+        public static int ReleaseAll()
+        {
+            var reg = GuestRegistry.Instance; if (reg == null) return 0;
+            foreach (var map in Find.Maps) map.GetComponent<MapComponent_HH_GuestScheduler>()?.ClearAllReturns();
+            int n = reg.PinnedReturners.Count;
+            Unpin(reg.PinnedReturners.ToList());
+            reg.PinnedReturners.Clear();
+            return n;
+        }
+
+        /// <summary>Caretaker: pins without a planned return (map gone, plan lost) are released; planned returners missing from the book are booked.</summary>
+        public static int CaretakerPins()
+        {
+            var reg = GuestRegistry.Instance; if (reg == null) return 0;
+            var planned = new HashSet<Pawn>();
+            foreach (var map in Find.Maps)
+            {
+                var sch = map.GetComponent<MapComponent_HH_GuestScheduler>(); if (sch == null) continue;
+                foreach (var g in sch.Forecast) if (g.IsReturn) foreach (var p in g.Returning) if (p != null) planned.Add(p);
+            }
+            int fixes = 0;
+            foreach (var p in reg.PinnedReturners.ToList())
+            {
+                if (p != null && planned.Contains(p) && !p.Dead && !p.Destroyed) continue;
+                Unpin(new[] { p });
+                reg.PinnedReturners.Remove(p);
+                Caretaker.Fixed("Inn.ReturnPins", (p?.LabelShort ?? "null") + " was kept as world pawn without a planned return (released)");
+                fixes++;
+            }
+            foreach (var p in planned)
+                if (!reg.PinnedReturners.Contains(p)) { reg.PinnedReturners.Add(p); Find.WorldPawns.ForcefullyKeptPawns.Add(p); fixes++; Caretaker.Fixed("Inn.ReturnPins", p.LabelShort + " planned to return but was not booked as pinned (booked)"); }
+            return fixes;
         }
 
         /// <summary>A returning pawn may come if it is alive, still of the faction, not on any map and not in a caravan.</summary>

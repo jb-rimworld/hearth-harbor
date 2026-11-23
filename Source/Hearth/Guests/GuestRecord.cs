@@ -67,6 +67,11 @@ namespace Hearth.Guests
         public int GoodwillPoints;
         public string Outcome;
 
+        // not saved: hot-path cache of GuestWings.WingFor
+        internal Area_HH_GuestWing CachedWing;
+        internal int CachedWingVersion = -1;
+        internal Building_Bed CachedWingBed;
+
         public float MoodMean => MoodSamples > 0 ? MoodSum / MoodSamples : (Pawn?.needs?.mood?.CurLevel ?? 0.5f);
         public string Account => "guest:" + PawnId;
         public bool Overnight => Kind == StayKind.Overnight || Kind == StayKind.Lodger;

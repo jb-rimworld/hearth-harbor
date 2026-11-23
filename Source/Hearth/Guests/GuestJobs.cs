@@ -62,13 +62,24 @@ namespace Hearth.Guests
         }
     }
 
-    /// <summary>Guests eat what they brought (the colony's freezer is not theirs; venues sell food through activities).</summary>
+    /// <summary>Guests eat what they brought (the colony's freezer is not theirs; venues sell food through activities). Only an emergency:
+    /// hungry guests first look for a restaurant or tavern (guest activities), see Inn_AI.xml.</summary>
     public class JobGiver_HH_EatPacked : ThinkNode_JobGiver
     {
+        /// <summary>Hunger below which the packed food comes out (B8): 0.15 in the needs block (emergency), 0.3 after the venues had their turn.</summary>
+        public float threshold = 0.15f;
+
+        public override ThinkNode DeepCopy(bool resolve = true)
+        {
+            var c = (JobGiver_HH_EatPacked)base.DeepCopy(resolve);
+            c.threshold = threshold;
+            return c;
+        }
+
         protected override Job TryGiveJob(Pawn pawn)
         {
             var food = pawn.needs?.food;
-            if (food == null || food.CurLevelPercentage > 0.3f) return null;
+            if (food == null || food.CurLevelPercentage > threshold) return null;
             var t = FoodUtility.BestFoodInInventory(pawn, pawn, FoodPreferability.DesperateOnly, FoodPreferability.MealLavish);
             if (t == null) return null;
             float n = FoodUtility.GetNutrition(pawn, t, t.def);
@@ -90,7 +101,9 @@ namespace Hearth.Guests
             if (now - r.LastActivityTick < 600) return null;
             r.LastActivityTick = now;
             var job = GuestActivities.TryPick(pawn, r);
-            if (job != null) r.Log("HH.Inn.Event.Activity".TranslateOr("Went to {0}.").Replace("{0}", job.def.label), 2);
+            // some job defs have no label ("Went to ."): name the target instead, or say nothing
+            string what = job == null ? null : !job.def.label.NullOrEmpty() ? job.def.label : job.targetA.Thing?.LabelNoCount;
+            if (!what.NullOrEmpty()) r.Log("HH.Inn.Event.Activity".TranslateOr("Went to {0}.").Replace("{0}", what), 2);
             return job;
         }
     }
@@ -263,6 +276,68 @@ namespace Hearth.Guests
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false) => JobMaker.MakeJob(InnDefOf.HH_AccompanyGuest, t);
     }
 
+    /// <summary>
+    /// C7: Hosting work: stand behind the front desk while guests are arriving during desk hours. A host on duty welcomes every guest
+    /// in person (service bonus, social XP) and keeps the desk from turning into an honesty box. Work Tab sees it like any work giver.
+    /// </summary>
+    public class WorkGiver_HH_StaffFrontDesk : WorkGiver_Scanner
+    {
+        public override PathEndMode PathEndMode => PathEndMode.OnCell;
+        public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForDef(InnDefOf.HH_FrontDesk);
+
+        public override bool ShouldSkip(Pawn pawn, bool forced = false)
+        {
+            var reg = GuestRegistry.Instance;
+            if (reg == null || !Modules.On(ModuleId.Inn) || reg.Records.Count == 0 || pawn.Map == null) return true;
+            return !forced && !GuestThoughts.DeskOpenNow(pawn.Map);
+        }
+
+        public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
+        {
+            if (!(t is Building_FrontDesk desk) || !desk.Spawned || desk.Faction != Faction.OfPlayer) return false;
+            if (t.IsForbidden(pawn) || !desk.GuestsArriving()) return false;
+            var host = desk.Host();
+            if (host != null && host != pawn) return false;   // somebody already stands there
+            return desk.StaffCell(pawn).IsValid;
+        }
+
+        public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
+        {
+            var desk = (Building_FrontDesk)t;
+            var cell = desk.StaffCell(pawn);
+            if (!cell.IsValid) return null;
+            var job = JobMaker.MakeJob(InnDefOf.HH_StaffFrontDesk, desk, cell);
+            job.expiryInterval = 2500;
+            job.checkOverrideOnExpire = true;
+            return job;
+        }
+    }
+
+    /// <summary>Walk behind the desk and stay there while guests are still arriving (at most an hour per job).</summary>
+    public class JobDriver_HH_StaffFrontDesk : JobDriver
+    {
+        Building_FrontDesk Desk => job.GetTarget(TargetIndex.A).Thing as Building_FrontDesk;
+
+        public override bool TryMakePreToilReservations(bool errorOnFailed) => pawn.Reserve(job.GetTarget(TargetIndex.B), job, 1, -1, null, errorOnFailed);
+
+        protected override IEnumerable<Toil> MakeNewToils()
+        {
+            this.FailOnDespawnedOrNull(TargetIndex.A);
+            yield return Toils_Goto.GotoCell(TargetIndex.B, PathEndMode.OnCell);
+            var stand = ToilMaker.MakeToil("HH_StaffDesk");
+            stand.defaultCompleteMode = ToilCompleteMode.Delay;
+            stand.defaultDuration = 2500;
+            stand.handlingFacing = true;
+            stand.tickIntervalAction = delta =>
+            {
+                pawn.rotationTracker.FaceTarget(Desk);
+                if (pawn.IsHashIntervalTick(250, delta) && (Desk == null || !Desk.GuestsArriving())) ReadyForNextToil();
+            };
+            stand.socialMode = RandomSocialMode.Normal;
+            yield return stand;
+        }
+    }
+
     // ======================================================================= the front desk
 
     /// <summary>Front desk (6.2): where guests check in; also the till spot where the nightly takings are put down.</summary>
@@ -277,17 +352,44 @@ namespace Hearth.Guests
             checkInsToday++; checkInsTotal++;
         }
 
-        public bool HostNearby()
+        static WorkTypeDef hostingWork;
+        static WorkTypeDef HostingWork => hostingWork ?? (hostingWork = DefDatabase<WorkTypeDef>.GetNamedSilentFail("HH_Hosting"));
+
+        public bool HostNearby() => Host() != null;
+
+        /// <summary>A colonist with Hosting work standing next to the desk (the one staffing it, if any).</summary>
+        public Pawn Host()
         {
-            var cells = GenAdj.CellsAdjacent8Way(this);
-            foreach (var c in cells)
+            if (!Spawned) return null;
+            var wt = HostingWork; if (wt == null) return null;
+            foreach (var c in GenAdj.CellsAdjacent8Way(this))
             {
                 if (!c.InBounds(Map)) continue;
                 var list = c.GetThingList(Map);
                 for (int i = 0; i < list.Count; i++)
-                    if (list[i] is Pawn p && p.IsColonist && !p.Downed && p.workSettings != null && DefDatabase<WorkTypeDef>.GetNamedSilentFail("HH_Hosting") is WorkTypeDef wt && p.workSettings.WorkIsActive(wt))
-                        return true;
+                    if (list[i] is Pawn p && p.IsColonist && !p.Downed && p.workSettings != null && p.workSettings.WorkIsActive(wt)) return p;
             }
+            return null;
+        }
+
+        /// <summary>Where a host stands while staffing the desk: behind it (opposite the guests' interaction cell), else any free adjacent cell.</summary>
+        public IntVec3 StaffCell(Pawn forPawn)
+        {
+            if (!Spawned) return IntVec3.Invalid;
+            var behind = Position + IntVec3.North.RotatedBy(Rotation);
+            if (Ok(behind, forPawn)) return behind;
+            foreach (var c in GenAdj.CellsAdjacent8Way(this)) if (c != InteractionCell && Ok(c, forPawn)) return c;
+            return IntVec3.Invalid;
+        }
+
+        bool Ok(IntVec3 c, Pawn p) => c.InBounds(Map) && c.Standable(Map) && c != InteractionCell && (p == null || (p.CanReserve(c) && p.CanReach(c, PathEndMode.OnCell, Danger.Some)));
+
+        /// <summary>Is someone waiting to check in here right now (arriving overnight guests, not yet checked in)?</summary>
+        public bool GuestsArriving()
+        {
+            var reg = GuestRegistry.Instance; if (reg == null || !Spawned) return false;
+            foreach (var r in reg.OnMap(Map))
+                if (!r.CheckedIn && !r.Settled && r.Pawn != null && r.Pawn.Spawned && r.Pawn.Map == Map) return true;
             return false;
         }
 

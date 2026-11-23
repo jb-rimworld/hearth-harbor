@@ -19,6 +19,8 @@ namespace Hearth.Guests
     public sealed class CompHH_GuestBed : ThingComp
     {
         bool guestBed;
+        /// <summary>C8: per-bed price rule on top of the automatic price.</summary>
+        public BedPriceMode PriceMode = BedPriceMode.Auto;
         static Texture2D Icon => InnTex.GuestBed;
 
         public Building_Bed Bed => parent as Building_Bed;
@@ -81,6 +83,7 @@ namespace Hearth.Guests
         public override void PostExposeData()
         {
             Scribe_Values.Look(ref guestBed, "hhGuestBed");
+            Scribe_Values.Look(ref PriceMode, "hhPriceMode", BedPriceMode.Auto);
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -100,6 +103,40 @@ namespace Hearth.Guests
             if (!guestBed && (b.Medical || !b.ForColonists))
                 cmd.Disable("HH.Inn.GuestBed.NotColonistBed".TranslateOr("Only a normal colonist bed (not medical, prisoner or slave) can be a guest bed."));
             yield return cmd;
+            if (!guestBed) yield break;
+            yield return new Command_Action
+            {
+                defaultLabel = "HH.Inn.PriceMode.Gizmo".TranslateOr("Price: {0}").Replace("{0}", PriceModeLabel(PriceMode)),
+                defaultDesc = "HH.Inn.PriceMode.GizmoDesc".TranslateOr("Change the price of this bed: free (for friends and recruits), 25 % off, the automatic price, or 25 % more. Applies to the next booking."),
+                icon = InnTex.Price,
+                action = () => Find.WindowStack.Add(new FloatMenu(new List<FloatMenuOption>
+                {
+                    new FloatMenuOption(PriceModeLabel(BedPriceMode.Free), () => SetPriceModeAll(BedPriceMode.Free)),
+                    new FloatMenuOption(PriceModeLabel(BedPriceMode.Discount), () => SetPriceModeAll(BedPriceMode.Discount)),
+                    new FloatMenuOption(PriceModeLabel(BedPriceMode.Auto), () => SetPriceModeAll(BedPriceMode.Auto)),
+                    new FloatMenuOption(PriceModeLabel(BedPriceMode.Premium), () => SetPriceModeAll(BedPriceMode.Premium)),
+                })),
+            };
+        }
+
+        /// <summary>Applies the mode to every selected guest bed (multi-select works like vanilla gizmos).</summary>
+        void SetPriceModeAll(BedPriceMode m)
+        {
+            bool any = false;
+            foreach (var o in Find.Selector.SelectedObjectsListForReading)
+                if (o is Thing t && GuestBeds.Comp(t) is CompHH_GuestBed c && c.guestBed) { c.PriceMode = m; any = true; }
+            if (!any) PriceMode = m;
+        }
+
+        public static string PriceModeLabel(BedPriceMode m)
+        {
+            switch (m)
+            {
+                case BedPriceMode.Free: return "HH.Inn.PriceMode.Free".TranslateOr("free");
+                case BedPriceMode.Discount: return "HH.Inn.PriceMode.Discount".TranslateOr("−25 %");
+                case BedPriceMode.Premium: return "HH.Inn.PriceMode.Premium".TranslateOr("+25 %");
+                default: return "HH.Inn.PriceMode.Auto".TranslateOr("automatic");
+            }
         }
 
         public override string CompInspectStringExtra()
@@ -111,7 +148,16 @@ namespace Hearth.Guests
             string s = "HH.Inn.GuestBed.Inspect".TranslateOr("Guest bed: {0} silver/night ({1})")
                 .Replace("{0}", q.Price.WholeSilver.ToString()).Replace("{1}", q.Breakdown);
             string wing = WingStatus.LineAt(parent.Map, parent.Position);
-            return wing == null ? s : s + "\n" + wing;
+            if (wing != null) s += "\n" + wing;
+            // B7: who comes next (only while the bed is free: an occupied bed shows its guest instead)
+            var owner = Bed.OwnersForReading.FirstOrDefault(o => GuestRegistry.IsRegisteredGuest(o));
+            if (owner != null) s += "\n" + "HH.Inn.GuestBed.Booked".TranslateOr("Booked by {0}").Replace("{0}", owner.LabelShortCap);
+            else
+            {
+                var next = parent.Map.GetComponent<MapComponent_HH_GuestScheduler>()?.NextArrival();
+                if (next != null) s += "\n" + "HH.Inn.Desk.Next".TranslateOr("Next guests: {0}").Replace("{0}", next.Describe(parent.Map));
+            }
+            return s;
         }
     }
 
@@ -169,10 +215,26 @@ namespace Hearth.Guests
 
         public static bool IsFree(Building_Bed b) => b.OwnersForReading.Count == 0 && !b.AnyOccupants;
 
+        /// <summary>C4: a multi-slot guest bed whose only owner is this guest's partner (lover, fiancé, spouse) staying in the same group.</summary>
+        public static bool SharableWith(Building_Bed b, Pawn guest, int groupId)
+        {
+            if (b == null || guest == null || b.SleepingSlotsCount < 2 || b.OwnersForReading.Count != 1) return false;
+            var other = b.OwnersForReading[0];
+            if (other == guest || !GuestRegistry.IsRegisteredGuest(other)) return false;
+            var r = GuestRegistry.Instance?.Get(other);
+            if (r == null || r.GroupId != groupId || r.Bed != b || r.Settled) return false;
+            if (!LovePartnerRelationUtility.LovePartnerRelationExists(guest, other)) return false;
+            // vanilla's own rule: some ideologies only share a bed with a spouse
+            return b.CompAssignableToPawn == null || !b.CompAssignableToPawn.IdeoligionForbids(guest);
+        }
+
         public static List<Building_Bed> FreeOn(Map map) => On(map).Where(IsFree).ToList();
 
         public static CompHH_GuestBed Comp(Thing t) => t?.TryGetComp<CompHH_GuestBed>();
     }
+
+    /// <summary>C8: price rule of one guest bed.</summary>
+    public enum BedPriceMode { Auto = 0, Free = 1, Discount = 2, Premium = 3 }
 
     /// <summary>A computed price for one guest bed (5.11).</summary>
     public sealed class BedQuote
@@ -181,14 +243,17 @@ namespace Hearth.Guests
         public float RoomScore;
         public string ClassKey, ClassLabel, OccupancyLabel, QualityLabel;
         public float ClassMult, Occupancy, QualityMult, StarMult;
+        public BedPriceMode Mode = BedPriceMode.Auto;
         public int Beds, Cells, Furniture;
         public string RoomName;
-        public string Breakdown => $"{ClassLabel} · {OccupancyLabel} ×{Occupancy:0.00} · {QualityLabel} ×{QualityMult:0.00}" + (Math.Abs(StarMult - 1f) > 0.001f ? $" · {GuestRegistry.StarsText()} ×{StarMult:0.00}" : "");
+        public string Breakdown => $"{ClassLabel} · {OccupancyLabel} ×{Occupancy:0.00} · {QualityLabel} ×{QualityMult:0.00}" + (Math.Abs(StarMult - 1f) > 0.001f ? $" · {GuestRegistry.StarsText()} ×{StarMult:0.00}" : "")
+                                   + (Mode != BedPriceMode.Auto ? " · " + CompHH_GuestBed.PriceModeLabel(Mode) : "");
     }
 
     /// <summary>
     /// Room score RS (0–100) and price per night (5.11):
-    /// price = base × room class × occupancy (single 1.35 / two-bed 1.10 / dorm 0.85 / hallway 0.72) × bed quality × (1 + 0.1·(stars − 3)), rounded to 5.
+    /// price = base × room class (economy 1 / standard 1.5 / deluxe 2.5 / suite 4 / royal 7) × occupancy (single 1.35 / two-bed 1.10 / dorm 0.85 /
+    /// hallway 0.72) × bed quality × (1 + 0.1·(stars − 3)), rounded to 5; then the bed's own price rule (free / −25 % / +25 %).
     /// Results are cached per room for 250 ticks.
     /// </summary>
     public static class GuestBedPricing
@@ -198,10 +263,10 @@ namespace Hearth.Guests
 
         public static readonly (string key, string label, float minScore, int minFurniture, int minCells, float mult)[] Classes =
         {
-            ("Royal", "royal suite", 90f, 4, 30, 16f),
-            ("Suite", "suite", 80f, 3, 25, 8f),
-            ("Deluxe", "deluxe room", 60f, 2, 15, 4f),
-            ("Standard", "standard room", 40f, 1, 0, 2f),
+            ("Royal", "royal suite", 90f, 4, 30, 7f),
+            ("Suite", "suite", 80f, 3, 25, 4f),
+            ("Deluxe", "deluxe room", 60f, 2, 15, 2.5f),
+            ("Standard", "standard room", 40f, 1, 0, 1.5f),
             ("Economy", "economy room", 0f, 0, 0, 1f),
         };
 
@@ -249,11 +314,28 @@ namespace Hearth.Guests
             float clean = StageNorm(room, RoomStatDefOf.Cleanliness, 0);
             float beauty = StageNorm(room, RoomStatDefOf.Beauty, 0);
             float temp = room.Temperature >= 10f && room.Temperature <= 30f ? 1f : room.Temperature >= 0f && room.Temperature <= 38f ? 0.5f : 0f;
+            // bath (10 points) only counts with a bath mod, and only for a room that has one (B9: no free points without it)
+            float bath = BathModActive && HasBath(room) ? 1f : 0f;
             float score = 35f * imp + 15f * space + 15f * clean + 10f * Mathf.Min(1f, c.Furniture / 3f)
-                          + 10f * 1f /* bath: counts fully without a bath mod (5.11) */ + 5f * beauty + 5f * 0.5f /* ideology style: neutral */ + 5f * temp;
+                          + 10f * bath + 5f * beauty + 5f * 0.5f /* ideology style: neutral */ + 5f * temp;
             c.Score = Mathf.Clamp(score, 0f, 100f);
             cache[room.ID] = c;
             return c;
+        }
+
+        static bool? bathMod;
+        public static bool BathModActive => bathMod ?? (bathMod = ModsConfig.IsActive("Dubwise.DubsBadHygiene") || ModsConfig.IsActive("Dubwise.DubsBadHygiene.Lite")).Value;
+
+        static bool HasBath(Room room)
+        {
+            foreach (var t in room.ContainedAndAdjacentThings)
+            {
+                if (!(t is Building) || t.GetRoom() != room) continue;
+                string n = t.def.defName;
+                if (n.IndexOf("Toilet", StringComparison.OrdinalIgnoreCase) >= 0 || n.IndexOf("Shower", StringComparison.OrdinalIgnoreCase) >= 0
+                    || n.IndexOf("Bath", StringComparison.OrdinalIgnoreCase) >= 0 || n.IndexOf("Tub", StringComparison.OrdinalIgnoreCase) >= 0) return true;
+            }
+            return false;
         }
 
         public static float RoomScore(Room room) => room == null ? 0f : Evaluate(room).Score;
@@ -281,6 +363,10 @@ namespace Hearth.Guests
             float baseP = HSettings.Get(InnSettings.PriceBase);
             float raw = baseP * q.ClassMult * q.Occupancy * q.QualityMult * q.StarMult;
             float rounded = Math.Max(5f, (float)Math.Round(raw / 5f) * 5f);
+            q.Mode = GuestBeds.Comp(bed)?.PriceMode ?? BedPriceMode.Auto;
+            if (q.Mode == BedPriceMode.Free) rounded = 0f;
+            else if (q.Mode == BedPriceMode.Discount) rounded = Math.Max(5f, (float)Math.Round(rounded * 0.75f / 5f) * 5f);
+            else if (q.Mode == BedPriceMode.Premium) rounded = Math.Max(5f, (float)Math.Round(rounded * 1.25f / 5f) * 5f);
             q.Price = Money.FromSilver((int)rounded);
             q.RoomName = room.Role != null && room.Role != RoomRoleDefOf.None ? room.GetRoomRoleLabel() : q.ClassLabel;
             return q;

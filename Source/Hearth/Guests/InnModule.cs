@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace Hearth.Guests
@@ -35,6 +36,8 @@ namespace Hearth.Guests
             Payments.Register(new InnCardProvider());
             Caretaker.Register(ModuleId.Inn, "Inn.GuestRecords", () => GuestRegistry.Instance?.CaretakerRecords() ?? 0);
             Caretaker.Register(ModuleId.Inn, "Inn.GuestBedOwners", () => GuestRegistry.Instance?.CaretakerBeds() ?? 0);
+            Caretaker.Register(ModuleId.Inn, "Inn.ReturnPins", GuestReturns.CaretakerPins);
+            HearthGame.OnGameInit += GuestWings.ClearCaches;
             LongEventHandler.ExecuteWhenFinished(AddDesignators);
             GuestOverviewPage.Register();
             WireOtherModules();
@@ -66,6 +69,16 @@ namespace Hearth.Guests
             {
                 var map = Find.CurrentMap; if (map == null || !Modules.On(ModuleId.Inn)) return;
                 foreach (var line in WingStatus.Lines(map)) ls.Label(line);
+            });
+            // C10: the concierge names the most common guest complaint, with what to do about it
+            Hearth.Shell.HearthUI.AddOverviewSection("inn.concierge", 10, ls =>
+            {
+                var map = Find.CurrentMap; if (map == null || !Modules.On(ModuleId.Inn) || GuestRegistry.Instance == null) return;
+                if (!GuestRegistry.Instance.OnMap(map).Any(r => !r.Settled)) return;
+                string top = GuestOverviewPage.TopComplaint(map);
+                GUI.color = top == null ? new Color(0.6f, 0.8f, 0.6f) : new Color(0.95f, 0.72f, 0.35f);
+                ls.Label("HH.Inn.Concierge".TranslateOr("Concierge") + ": " + (top ?? "HH.Inn.Concierge.AllClear".TranslateOr("all clear, the guests are content.")));
+                GUI.color = Color.white;
             });
         }
 
@@ -109,7 +122,8 @@ namespace Hearth.Guests
             var reg = GuestRegistry.Instance; if (reg == null) return;
             int n = 0;
             foreach (var g in reg.Groups.ToList()) { if (!g.LeaveSent) { reg.DepartGroup(g, "removal"); n++; } }
-            report.Add($"Inn: {n} guest group(s) sent home, card funds returned.");
+            int pins = GuestReturns.ReleaseAll();
+            report.Add($"Inn: {n} guest group(s) sent home, card funds returned, {pins} returning guest(s) released from the world pawn list.");
         }
 
         public override IEnumerable<string> Diagnosis()

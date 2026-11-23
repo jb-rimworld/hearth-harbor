@@ -29,19 +29,45 @@ namespace Hearth.Guests
         }
     }
 
-    /// <summary>Colonists never use guest beds; Inn guests only use guest beds (5.11).</summary>
+    /// <summary>
+    /// Colonists never use guest beds; Inn guests only use the guest bed booked for them (5.11). A vanilla "yes" is only ever narrowed.
+    /// The one vanilla "no" we overrule is the bed-faction check (bed of the colony, traveller of another faction): for a guest walking to
+    /// their own booked bed every other vanilla condition is checked again here, once, behind a re-entry guard (no recursion through mods
+    /// that call IsValidBedFor from CanUseBedNow).
+    /// </summary>
     [HarmonyPatch(typeof(RestUtility), nameof(RestUtility.IsValidBedFor))]
     static class Patch_RestUtility_IsValidBedFor
     {
-        static void Postfix(Thing bedThing, Pawn sleeper, ref bool __result)
+        [ThreadStatic] static bool inside;
+
+        static void Postfix(Thing bedThing, Pawn sleeper, Pawn traveler, bool checkSocialProperness, bool allowMedBedEvenIfSetToNoCare,
+            bool ignoreOtherReservations, GuestStatus? guestStatus, ref bool __result)
         {
-            if (!Modules.On(ModuleId.Inn)) return;
+            if (inside || sleeper == null || bedThing == null || !Modules.On(ModuleId.Inn)) return;
             bool isGuest = GuestRegistry.IsRegisteredGuest(sleeper);
             if (!isGuest && GuestBeds.TotalCount == 0) return;
             bool guestBed = GuestBeds.IsGuestBed(bedThing);
-            if (isGuest && bedThing is Building_Bed bb && bb.Medical) return; // rescued guests may use medical beds
-            if (isGuest) __result = guestBed && (GuestRegistry.Instance?.Get(sleeper)?.Bed == bedThing) && RestUtility.CanUseBedNow(bedThing, sleeper, false);
-            else if (guestBed) __result = false;
+            if (!isGuest) { if (guestBed) __result = false; return; }
+            if (bedThing is Building_Bed bb && bb.Medical) return; // rescued guests may use medical beds (vanilla decides)
+            bool booked = guestBed && GuestRegistry.Instance?.Get(sleeper)?.Bed == bedThing;
+            if (!booked) { __result = false; return; }
+            if (__result) return;
+            __result = BookedBedUsable((Building_Bed)bedThing, sleeper, traveler ?? sleeper, checkSocialProperness, allowMedBedEvenIfSetToNoCare, ignoreOtherReservations, guestStatus);
+        }
+
+        /// <summary>Vanilla's IsValidBedFor without the bed-faction check.</summary>
+        internal static bool BookedBedUsable(Building_Bed bed, Pawn sleeper, Pawn traveler, bool social, bool allowMed, bool ignoreRes, GuestStatus? status)
+        {
+            inside = true;
+            try
+            {
+                if (!RestUtility.CanUseBedNow(bed, sleeper, social, allowMed, status)) return false;
+                if (!traveler.CanReach(bed, PathEndMode.OnCell, Danger.Some)) return false;
+                if (!sleeper.HasReserved(bed) && !traveler.CanReserve(bed, bed.SleepingSlotsCount, 0, null, ignoreRes)) return false;
+                if (bed.IsForbidden(traveler)) return false;
+                return true;
+            }
+            finally { inside = false; }
         }
     }
 
@@ -57,14 +83,16 @@ namespace Hearth.Guests
         }
     }
 
-    /// <summary>Guests stay inside their wing while staying (5.8). Cheap early-out: only registered, checked-in guests.</summary>
+    /// <summary>
+    /// Guests stay inside their wing while staying (5.8). Hot path (every cell of every job search of a guest): colonists leave after one
+    /// HashSet lookup, guests pay two array reads (wing grid, venue-room grid of the map), see <see cref="GuestWings.AllowedFor"/>.
+    /// </summary>
     [HarmonyPatch(typeof(ForbidUtility), nameof(ForbidUtility.InAllowedArea))]
     static class Patch_ForbidUtility_InAllowedArea
     {
         static void Postfix(IntVec3 c, Pawn forPawn, ref bool __result)
         {
-            if (!__result || !Modules.On(ModuleId.Inn)) return;
-            if (!GuestRegistry.IsWingRestricted(forPawn)) return;
+            if (!__result || !GuestRegistry.IsWingRestricted(forPawn) || !Modules.On(ModuleId.Inn)) return;
             if (!GuestWings.AllowedFor(forPawn, c)) __result = false;
         }
     }

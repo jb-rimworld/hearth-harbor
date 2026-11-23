@@ -31,6 +31,7 @@ namespace Hearth.Guests
         public const string WaitThoughts = "inn.waitThoughts";
         public const string ReturnVisits = "inn.returnVisits";
         public const string LeavingGifts = "inn.leavingGifts";
+        public const string ReturnPinCap = "inn.returnPinCap";
         // Money
         public const string GuestMoney = "inn.guestMoney";
         public const string PriceBase = "inn.priceBase";
@@ -56,9 +57,9 @@ namespace Hearth.Guests
                 hardMin: 0f, hardMax: 10f, tiers: new[] { 3f, 1.4f, 1.2f, 1f, 0.9f, 0.8f, 0.6f });
             HSettings.Int(M, "Arrivals", MaxGroupSize, 4, 1, 10, "Largest guest group",
                 "No group brings more guests than this. Overnight groups are also limited by your free guest beds.", hardMin: 1, hardMax: 30);
-            HSettings.Float(M, "Arrivals", FirstGuestMinDays, 1.5f, 0.1f, 10f, "First guests: earliest day",
+            HSettings.Float(M, "Arrivals", FirstGuestMinDays, 0.5f, 0.1f, 10f, "First guests: earliest day",
                 "Days after your first guest bed (or venue) until the very first group can arrive.", nerd: true, hardMin: 0f, hardMax: 60f);
-            HSettings.Float(M, "Arrivals", FirstGuestMaxDays, 3f, 0.2f, 15f, "First guests: latest day",
+            HSettings.Float(M, "Arrivals", FirstGuestMaxDays, 1.2f, 0.2f, 15f, "First guests: latest day",
                 "Days after your first guest bed (or venue) by which the very first group will have arrived.", nerd: true, hardMin: 0f, hardMax: 60f);
             HSettings.Bool(M, "Arrivals", DayVisitors, true, "Day visitors",
                 "Groups that only come for your open venues during opening hours and leave before closing time. Needs at least one venue sign.");
@@ -86,12 +87,14 @@ namespace Hearth.Guests
                 "Guests who wait in vain or ring the night bell with nobody coming feel it in their mood; a waiting room softens it.");
             HSettings.Bool(M, "Stay", ReturnVisits, true, "Return visits",
                 "Guests who liked their stay come back after 3 to 10 days (unhappy ones after 14 to 30), plus twice their travel time.");
+            HSettings.Int(M, "Stay", ReturnPinCap, 40, 0, 200, "Returning guests kept at most",
+                "Guests who plan to come back are kept as world pawns until their visit. Above this many, the oldest planned return visits are dropped.", nerd: true, hardMin: 0, hardMax: 2000);
             HSettings.Bool(M, "Stay", LeavingGifts, true, "Gifts on leaving",
                 "Happy guests sometimes leave a small gift at the front desk (more likely the better the stay).");
 
             HSettings.Float(M, "Money", GuestMoney, 1f, 0.1f, 5f, "Guest money",
                 "Multiplier on how much silver guests bring.", hardMin: 0f, hardMax: 1000f, tiers: new[] { 5f, 1.6f, 1.25f, 1f, 0.85f, 0.7f, 0.5f });
-            HSettings.Silver(M, "Money", PriceBase, 20, 5, 200, "Base price per night",
+            HSettings.Silver(M, "Money", PriceBase, 12, 5, 200, "Base price per night",
                 "Price of an economy bed for one night. Better rooms, beds and private rooms multiply it (shown on every guest bed).");
             HSettings.Float(M, "Money", PriceTolerance, 1f, 0.3f, 3f, "Price tolerance",
                 "How much over their comfort price guests are still willing to pay.", hardMin: 0.05f, hardMax: 100f, tiers: new[] { 3f, 1.3f, 1.15f, 1f, 0.9f, 0.8f, 0.65f });
@@ -131,6 +134,7 @@ namespace Hearth.Guests
         public static DutyDef HH_GuestStay;
         public static JobDef HH_CheckIn;
         public static JobDef HH_AccompanyGuest;
+        public static JobDef HH_StaffFrontDesk;
         public static IncidentDef HH_GuestGroupArrival;
         public static ThingDef HH_FrontDesk;
         public static ThoughtDef HH_GuestRoomVerdict;

@@ -548,7 +548,7 @@ namespace Hearth.Guests
         }
     }
 
-    /// <summary>The arrival plan wakes up with the first guest bed, plans the first group within 1.5–3 days and empties again without beds.</summary>
+    /// <summary>The arrival plan wakes up with the first guest bed, plans the first group within 0.5–1.2 days (B7) and empties again without beds.</summary>
     public sealed class InnForecastSuite : HearthTestSuite
     {
         public override string Name => "inn.forecast";
@@ -571,7 +571,9 @@ namespace Hearth.Guests
             if (first != null)
             {
                 float days = (first.ArrivalTick - t0) / 60000f;
-                t.Check(days >= 1.2f && days <= 4.1f, "first group in " + days.ToString("0.00") + " days (1.5–3 days, aligned to the afternoon)");
+                // B7: 0.5–1.2 days, then moved to the afternoon check-in window (never earlier, at most ~0.9 days later)
+                t.Check(days >= 0.45f && days <= 2.2f, "first group in " + days.ToString("0.00") + " days (0.5–1.2 days, aligned to the afternoon)");
+                t.Check(first.Eta().StartsWith("in ") || first.Eta() == "any moment", "the forecast counts down: " + first.Eta());
                 t.Check(first.Kind == StayKind.Overnight && first.Nights >= 1 && first.Size >= 1, "first group stays overnight");
                 int h = (int)GenDate.HourFloat(Find.TickManager.TicksAbs + (first.ArrivalTick - Find.TickManager.TicksGame), Find.WorldGrid.LongLatOf(map.Tile).x);
                 t.Check(h >= HSettings.GetInt(InnSettings.CheckInHour) && h < 20, "arrives in the afternoon (" + h + ":00)");

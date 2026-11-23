@@ -112,6 +112,73 @@ namespace Hearth.Shell
             return covered ? inflow : Money.Max(inflow, net);
         }
 
+        /// <summary>Income categories the ledger knows by name (Ledger.Post category). Other money into the tills shows as "other".</summary>
+        public static readonly string[] KnownCategories = { "inn.room", "food", "shop", "vending", "drink", "casino", "spa", "cinema", "gallery", "salon", "security", "taxi", "Faith" };
+
+        /// <summary>Income per category: today and the last <paramref name="days"/> days (today included), biggest first, zeros dropped.</summary>
+        public static List<(string cat, Money today, Money week)> IncomeByCategory(int days)
+        {
+            var res = new List<(string, Money, Money)>();
+            var ledger = Ledger.Current; if (ledger == null) return res;
+            int today = Find.TickManager.TicksGame / 60000;
+            Money catToday = Money.Zero, catWeek = Money.Zero;
+            foreach (var c in KnownCategories)
+            {
+                var t = ledger.DayIncome(today, c); var wk = Money.Zero;
+                for (int d = today - days + 1; d <= today; d++) if (d >= 0) wk += ledger.DayIncome(d, c);
+                catToday += t; catWeek += wk;
+                if (wk.Micro > 0 || t.Micro > 0) res.Add((c, t, wk));
+            }
+            // everything else that reached the tills (uncategorised payments, other modules' categories)
+            var otherToday = Money.Max(Money.Zero, TodayIncome() - catToday);
+            var allWeek = Money.Zero;
+            foreach (var d in DailyIncome(days)) allWeek += d;
+            var otherWeek = Money.Max(otherToday, allWeek - catWeek);
+            if (otherWeek.Micro > 0) res.Add(("other", otherToday, otherWeek));
+            res.Sort((a, b) => b.Item3.Micro.CompareTo(a.Item3.Micro));
+            return res;
+        }
+
+        /// <summary>Income per day for the last <paramref name="days"/> days, oldest first (today = journal inflows, earlier days = category totals or till net).</summary>
+        public static List<Money> DailyIncome(int days)
+        {
+            var res = new List<Money>();
+            var ledger = Ledger.Current;
+            int today = Find.TickManager.TicksGame / 60000;
+            for (int d = today - days + 1; d <= today; d++)
+            {
+                if (ledger == null || d < 0) { res.Add(Money.Zero); continue; }
+                var v = d == today ? TodayIncome() : Money.Max(ledger.DayIncomeTotal(d), ledger.DayTotalPrefix(d, "colony:till"));
+                res.Add(Money.Max(Money.Zero, Money.Max(v, ledger.DayIncomeTotal(d))));
+            }
+            return res;
+        }
+
+        public static string CategoryLabel(string cat)
+        {
+            string key = "HH.UI.Income." + cat.Replace(".", "_");
+            return key.CanTranslate() ? key.Translate().ToString() : cat.CapitalizeFirst();
+        }
+
+        /// <summary>Status chip of one venue: open &amp; staffed / open (self-service) / no staff / out of stock / closed.</summary>
+        public static (string chip, bool good, string tip) VenueChip(Venue v)
+        {
+            bool hours = v.IsOpenNow;
+            bool needs = Guard.Run(ModuleId.Core, "UI.VenueNeedsStaff", () => Venues.NeedsStaff(v), false);
+            bool staffed = Guard.Run(ModuleId.Core, "UI.VenueStaffed", () => Venues.IsStaffed(v), false);
+            if (!hours) return ("HH.UI.Venue.Closed".Translate(), false, "HH.UI.Venue.ClosedTip".Translate());
+            if (needs && !staffed) return ("HH.UI.Venue.NoStaff".Translate(), false, "HH.UI.Venue.NoStaffTip".Translate());
+            int stock = Guard.Run(ModuleId.Core, "UI.VenueStock", () =>
+            {
+                if (v.Type?.defName == Hearth.Kitchen.Restaurant.VenueDefName && v.Room != null)
+                    return Hearth.Kitchen.Restaurant.Stock(new Hearth.Kitchen.RestaurantSpot { Room = v.Room, Venue = v, Map = v.Map }).Any() ? 1 : 0;
+                var kind = Hearth.ShopsFood.VenueApi.SellsOf(v);
+                return kind == Hearth.ShopsFood.SellKind.None ? -1 : Hearth.ShopsFood.VenueSales.Stock(v).Count;
+            }, -1);
+            if (stock == 0) return ("HH.UI.Venue.NoStock".Translate(), false, "HH.UI.Venue.NoStockTip".Translate());
+            return (needs ? "HH.UI.Venue.OpenStaffed".Translate() : "HH.UI.Venue.Open".Translate(), true, null);
+        }
+
         public static Money YesterdayIncome()
         {
             var ledger = Ledger.Current; if (ledger == null) return Money.Zero;
@@ -152,21 +219,62 @@ namespace Hearth.Shell
             UiStyle.LabelColored(new Rect(w * 0.5f, y, w * 0.5f, 22f), UiStyle.Silver(TodayIncome()) + " " + "HH.UI.Silver".Translate(), Color.white, TextAnchor.MiddleLeft); y += 22f;
             UiStyle.LabelColored(new Rect(4f, y, w * 0.5f, 22f), "HH.UI.Overview.Yesterday".Translate(), UiStyle.Grey, TextAnchor.MiddleLeft);
             UiStyle.LabelColored(new Rect(w * 0.5f, y, w * 0.5f, 22f), UiStyle.Silver(YesterdayIncome()) + " " + "HH.UI.Silver".Translate(), UiStyle.Grey, TextAnchor.MiddleLeft); y += 26f;
-            var sources = Ledger.Current == null ? new List<KeyValuePair<string, Money>>() : Ledger.Current.Accounts("colony:income:").Where(kv => kv.Value.IsPositive).OrderByDescending(kv => kv.Value.Micro).Take(6).ToList();
-            if (sources.Count > 0)
+            // B2/C9: income by category (today and the last 7 days, from the ledger's daily category totals)
+            var cats = IncomeByCategory(7);
+            if (cats.Count > 0)
             {
                 UiStyle.LabelColored(new Rect(4f, y, w, 20f), "HH.UI.Overview.Sources".Translate(), UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny); y += 20f;
-                Money max = sources[0].Value;
-                foreach (var kv in sources)
+                double max = Math.Max(0.01, cats.Max(c => c.week.Silver));
+                float barW = Mathf.Min(300f, w - 420f);
+                foreach (var c in cats)
                 {
-                    string name = kv.Key.Substring("colony:income:".Length);
-                    UiStyle.LabelColored(new Rect(4f, y, 160f, 22f), name, Color.white, TextAnchor.MiddleLeft);
-                    UiStyle.Bar(new Rect(170f, y + 4f, Mathf.Min(300f, w - 330f), 14f), (float)(kv.Value.Micro / (double)max.Micro), UiStyle.Amber);
-                    UiStyle.LabelColored(new Rect(180f + Mathf.Min(300f, w - 330f), y, 120f, 22f), UiStyle.SilverWhole(kv.Value), UiStyle.Grey, TextAnchor.MiddleLeft);
+                    UiStyle.LabelColored(new Rect(4f, y, 160f, 22f), CategoryLabel(c.cat), Color.white, TextAnchor.MiddleLeft);
+                    UiStyle.Bar(new Rect(170f, y + 4f, barW, 14f), (float)(c.week.Silver / max), UiStyle.Amber);
+                    UiStyle.LabelColored(new Rect(180f + barW, y, 120f, 22f), "HH.UI.Overview.CatToday".Translate(UiStyle.SilverWhole(c.today)), Color.white, TextAnchor.MiddleLeft, GameFont.Tiny);
+                    UiStyle.LabelColored(new Rect(300f + barW, y, 140f, 22f), "HH.UI.Overview.CatWeek".Translate(UiStyle.SilverWhole(c.week)), UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny);
                     y += 22f;
                 }
+                y += 6f;
+                // last 7 days
+                UiStyle.LabelColored(new Rect(4f, y, w, 20f), "HH.UI.Overview.Week".Translate(), UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny); y += 20f;
+                var days = DailyIncome(7);
+                double dmax = Math.Max(0.01, days.Max(d => d.Silver));
+                float colW = Mathf.Min(70f, (w - 8f) / 7f), chartH = 60f;
+                int today = Find.TickManager.TicksGame / 60000;
+                for (int i = 0; i < days.Count; i++)
+                {
+                    float h = (float)(days[i].Silver / dmax) * chartH;
+                    var bar = new Rect(4f + i * colW + 6f, y + chartH - h, colW - 12f, h);
+                    Widgets.DrawBoxSolid(bar, i == days.Count - 1 ? UiStyle.Amber : new Color(UiStyle.Amber.r, UiStyle.Amber.g, UiStyle.Amber.b, 0.55f));
+                    TooltipHandler.TipRegion(new Rect(4f + i * colW, y, colW, chartH + 18f), "HH.UI.Overview.DayTip".Translate(today - (days.Count - 1 - i), UiStyle.SilverWhole(days[i])));
+                    UiStyle.LabelColored(new Rect(4f + i * colW, y + chartH, colW, 18f), UiStyle.SilverWhole(days[i]), UiStyle.Grey, TextAnchor.UpperCenter, GameFont.Tiny);
+                }
+                y += chartH + 22f;
             }
             else { UiStyle.LabelColored(new Rect(4f, y, w, 22f), "HH.UI.Overview.NoIncome".Translate(), UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny); y += 24f; }
+
+            // C9: every venue with its readiness
+            if (map != null && Venues.All(map).Count > 0)
+            {
+                y += 4f;
+                y += UiStyle.Section(0, y, w, "HH.UI.Overview.VenuesHead".Translate());
+                foreach (var v in Venues.All(map))
+                {
+                    var (chip, good, tip) = VenueChip(v);
+                    UiStyle.LabelColored(new Rect(4f, y, 220f, 24f), v.Comp.DisplayName.Truncate(216f), Color.white, TextAnchor.MiddleLeft);
+                    UiStyle.LabelColored(new Rect(228f, y, 140f, 24f), v.Type?.LabelCap.ToString() ?? "", UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny);
+                    string hours = v.Comp.alwaysOpen || v.Comp.openHour == v.Comp.closeHour ? "HH.UI.Overview.AllDay".Translate().ToString() : $"{v.Comp.openHour:00}–{v.Comp.closeHour:00}";
+                    UiStyle.LabelColored(new Rect(372f, y, 80f, 24f), hours, UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny);
+                    var cr = new Rect(456f, y + 2f, 150f, 20f);
+                    Widgets.DrawBoxSolid(cr, good ? new Color(UiStyle.Good.r, UiStyle.Good.g, UiStyle.Good.b, 0.25f) : new Color(UiStyle.Bad.r, UiStyle.Bad.g, UiStyle.Bad.b, 0.25f));
+                    UiStyle.LabelColored(cr, chip, Color.white, TextAnchor.MiddleCenter, GameFont.Tiny);
+                    if (!tip.NullOrEmpty()) TooltipHandler.TipRegion(cr, tip);
+                    var rowR = new Rect(0, y, w, 24f);
+                    if (Mouse.IsOver(rowR)) Widgets.DrawHighlight(rowR);
+                    if (Widgets.ButtonInvisible(rowR)) CameraJumper.TryJumpAndSelect(v.Sign);
+                    y += 24f;
+                }
+            }
 
             // extra sections from other modules (concierge, renown graph ...)
             foreach (var s in HearthUI.OverviewSections.ToList())

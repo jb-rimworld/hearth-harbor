@@ -12,6 +12,8 @@
   <HH.Inn.Arrival.TipDesk>Tip: a front desk lets guests check in properly; without one they find their beds themselves.</HH.Inn.Arrival.TipDesk>
   <HH.Inn.Card>card</HH.Inn.Card>
   <HH.Inn.Cash>cash</HH.Inn.Cash>
+  <HH.Inn.Concierge>Concierge</HH.Inn.Concierge>
+  <HH.Inn.Concierge.AllClear>all clear, the guests are content.</HH.Inn.Concierge.AllClear>
   <HH.Inn.Desk.Door>Door policy: {0}</HH.Inn.Desk.Door>
   <HH.Inn.Desk.Inspect>Check-ins today: {0} · all time: {1}</HH.Inn.Desk.Inspect>
   <HH.Inn.Desk.Next>Next guests: {0}</HH.Inn.Desk.Next>
@@ -57,6 +59,7 @@
   <HH.Inn.Event.CouldNotPay>Could not pay for the night.</HH.Inn.Event.CouldNotPay>
   <HH.Inn.Event.Declined>Thought about staying for good, then went home.</HH.Inn.Event.Declined>
   <HH.Inn.Event.Died>Died during the stay.</HH.Inn.Event.Died>
+  <HH.Inn.Event.FreeNight>Stays the night for free.</HH.Inn.Event.FreeNight>
   <HH.Inn.Event.Gift>Left a gift: {0}.</HH.Inn.Event.Gift>
   <HH.Inn.Event.GotRoom>Took a bed in a {0} for {1} silver a night.</HH.Inn.Event.GotRoom>
   <HH.Inn.Event.HonestyBox>Checked in at the honesty box; nobody was on duty.</HH.Inn.Event.HonestyBox>
@@ -73,13 +76,16 @@
   <HH.Inn.Event.Returned>Came back for another stay.</HH.Inn.Event.Returned>
   <HH.Inn.Event.SelfCheckIn>Found the room alone; nobody was at a desk.</HH.Inn.Event.SelfCheckIn>
   <HH.Inn.Event.SentAway>Was sent away.</HH.Inn.Event.SentAway>
+  <HH.Inn.Event.SharedBed>Shares the bed with {0} ({1} silver a night extra).</HH.Inn.Event.SharedBed>
   <HH.Inn.Event.ShortenedStay>Shortened the stay to {0} night(s) to afford the room.</HH.Inn.Event.ShortenedStay>
   <HH.Inn.Event.TooImportant>Too important at home to stay.</HH.Inn.Event.TooImportant>
+  <HH.Inn.Event.Welcomed>Was welcomed at the front desk by {0}.</HH.Inn.Event.Welcomed>
   <HH.Inn.Forecast.Day>day visit</HH.Inn.Forecast.Day>
-  <HH.Inn.Forecast.In>in {0} days</HH.Inn.Forecast.In>
+  <HH.Inn.Forecast.InTime>in {0}</HH.Inn.Forecast.InTime>
   <HH.Inn.Forecast.Now>any moment</HH.Inn.Forecast.Now>
   <HH.Inn.Forecast.Overnight>{0} night(s)</HH.Inn.Forecast.Overnight>
   <HH.Inn.Forecast.Return>coming back</HH.Inn.Forecast.Return>
+  <HH.Inn.GuestBed.Booked>Booked by {0}</HH.Inn.GuestBed.Booked>
   <HH.Inn.GuestBed.Desc>Rent this bed to guests. Colonists will not sleep here; guests only sleep in guest beds. The price per night follows the room, the bed and how many beds share the room.</HH.Inn.GuestBed.Desc>
   <HH.Inn.GuestBed.Inactive>Guest bed (inactive while medical, prisoner or slave bed)</HH.Inn.GuestBed.Inactive>
   <HH.Inn.GuestBed.Inspect>Guest bed: {0} silver/night ({1})</HH.Inn.GuestBed.Inspect>
@@ -95,15 +101,58 @@
   <HH.Inn.Handling.Label>Handling: {0}</HH.Inn.Handling.Label>
   <HH.Inn.Handling.Recruit>Recruit</HH.Inn.Handling.Recruit>
   <HH.Inn.Handling.RecruitDesc>Like Accompany, plus talks about staying. If the colony's bond with the guest is strong enough, they may join at departure. Pushy talks can offend.</HH.Inn.Handling.RecruitDesc>
+  <HH.Inn.Leaving.Closing>Going home: the venues are closing</HH.Inn.Leaving.Closing>
+  <HH.Inn.Leaving.Hostile>Leaving as an enemy</HH.Inn.Leaving.Hostile>
+  <HH.Inn.Leaving.Money>Leaving early: the money ran out</HH.Inn.Leaving.Money>
+  <HH.Inn.Leaving.Paid>paid {0} silver</HH.Inn.Leaving.Paid>
+  <HH.Inn.Leaving.Planned>Checked out</HH.Inn.Leaving.Planned>
+  <HH.Inn.Leaving.Removal>Going home: the Inn module was switched off</HH.Inn.Leaving.Removal>
+  <HH.Inn.Leaving.SentAway>Sent away</HH.Inn.Leaving.SentAway>
+  <HH.Inn.Leaving.Temperature>Leaving early: the temperature was dangerous</HH.Inn.Leaving.Temperature>
+  <HH.Inn.Leaving.Unhappy>Leaving early: unhappy with the stay</HH.Inn.Leaving.Unhappy>
+  <HH.Inn.Leaving.Wounded>Leaving early: carrying the wounded home</HH.Inn.Leaving.Wounded>
+  <HH.Inn.Msg.FirstGuestsEta>Your first guests are on their way: {0}, expected {1}.</HH.Inn.Msg.FirstGuestsEta>
   <HH.Inn.Msg.Insulted>{0} found the recruiting pushy and will spend less and leave sooner.</HH.Inn.Msg.Insulted>
   <HH.Inn.Msg.LeavingTemperature>Your guests from {0} are leaving: it is dangerously hot or cold.</HH.Inn.Msg.LeavingTemperature>
   <HH.Inn.Msg.LeavingWounded>Your guests from {0} are taking their wounded home.</HH.Inn.Msg.LeavingWounded>
-  <HH.Inn.Msg.WingCreated>{0} created around your guest bed. Guests stay inside it. Adjust it with the guest wing tools in the Zone menu.</HH.Inn.Msg.WingCreated>
+  <HH.Inn.Msg.WingCreated>{0} created around your guest bed. Guests stay inside it. Adjust it with the guest wing tools in the Hospitality menu.</HH.Inn.Msg.WingCreated>
+  <HH.Inn.Msg.WingGrown>{0} now reaches {1}: guests can walk there.</HH.Inn.Msg.WingGrown>
   <HH.Inn.Occupancy.Dorm>dorm</HH.Inn.Occupancy.Dorm>
   <HH.Inn.Occupancy.Hallway>hallway</HH.Inn.Occupancy.Hallway>
   <HH.Inn.Occupancy.Single>single</HH.Inn.Occupancy.Single>
   <HH.Inn.Occupancy.TwoBed>two-bed</HH.Inn.Occupancy.TwoBed>
+  <HH.Inn.PriceMode.Auto>automatic</HH.Inn.PriceMode.Auto>
+  <HH.Inn.PriceMode.Discount>−25 %</HH.Inn.PriceMode.Discount>
+  <HH.Inn.PriceMode.Free>free</HH.Inn.PriceMode.Free>
+  <HH.Inn.PriceMode.Gizmo>Price: {0}</HH.Inn.PriceMode.Gizmo>
+  <HH.Inn.PriceMode.GizmoDesc>Change the price of this bed: free (for friends and recruits), 25 % off, the automatic price, or 25 % more. Applies to the next booking.</HH.Inn.PriceMode.GizmoDesc>
+  <HH.Inn.PriceMode.Premium>+25 %</HH.Inn.PriceMode.Premium>
+  <HH.Inn.Problem.Bored>Bored: add recreation to the guest wing (TV, chess, a venue).</HH.Inn.Problem.Bored>
+  <HH.Inn.Problem.BoredMany>{0} guests are bored: add recreation to the guest wing.</HH.Inn.Problem.BoredMany>
+  <HH.Inn.Problem.Broke>Almost out of money: will leave early.</HH.Inn.Problem.Broke>
+  <HH.Inn.Problem.BrokeMany>{0} guests are almost out of money.</HH.Inn.Problem.BrokeMany>
+  <HH.Inn.Problem.Cold>Too cold ({0}): heat the guest wing.</HH.Inn.Problem.Cold>
+  <HH.Inn.Problem.ColdMany>{0} guests are too cold: heat the guest wing.</HH.Inn.Problem.ColdMany>
+  <HH.Inn.Problem.Hot>Too hot ({0}): cool the guest wing with coolers.</HH.Inn.Problem.Hot>
+  <HH.Inn.Problem.HotMany>{0} guests are too hot: cool the guest wing with coolers.</HH.Inn.Problem.HotMany>
+  <HH.Inn.Problem.Hungry>Hungry: stock a restaurant or tavern with meals (open, staffed).</HH.Inn.Problem.Hungry>
+  <HH.Inn.Problem.HungryMany>{0} guests are hungry: stock a restaurant or tavern with meals.</HH.Inn.Problem.HungryMany>
+  <HH.Inn.Problem.Insulted>Felt pestered by recruiting: switch the handling to Accompany.</HH.Inn.Problem.Insulted>
+  <HH.Inn.Problem.InsultedMany>{0} guests felt pestered: recruit less pushily.</HH.Inn.Problem.InsultedMany>
+  <HH.Inn.Problem.Mood>In a bad mood: {0}.</HH.Inn.Problem.Mood>
+  <HH.Inn.Problem.MoodMany>{0} guests are in a bad mood (see their Guest tab).</HH.Inn.Problem.MoodMany>
+  <HH.Inn.Problem.NoBed>Has no bed: mark another guest bed, or make one cheaper.</HH.Inn.Problem.NoBed>
+  <HH.Inn.Problem.NoBedMany>{0} guests have no bed: mark more guest beds or make them cheaper.</HH.Inn.Problem.NoBedMany>
+  <HH.Inn.Problem.Pricey>Finds {0} silver a night steep: give the bed a lower price (−25 %) or a better room.</HH.Inn.Problem.Pricey>
+  <HH.Inn.Problem.PriceyMany>{0} guests find their rooms too expensive: lower bed prices or improve the rooms.</HH.Inn.Problem.PriceyMany>
+  <HH.Inn.Problem.Waited>Waited in vain for service: give your venues staff (Serving work).</HH.Inn.Problem.Waited>
+  <HH.Inn.Problem.WaitedMany>{0} guests waited in vain: give your venues staff (Serving work).</HH.Inn.Problem.WaitedMany>
   <HH.Inn.Quality.Plain>plain</HH.Inn.Quality.Plain>
+  <HH.Inn.Recruit.Chance>may join at check-out (about {0} %)</HH.Inn.Recruit.Chance>
+  <HH.Inn.Recruit.Cost>costs {0} goodwill with {1}</HH.Inn.Recruit.Cost>
+  <HH.Inn.Recruit.Insulted>felt pestered: will not join this time</HH.Inn.Recruit.Insulted>
+  <HH.Inn.Recruit.NotYet>not close enough yet</HH.Inn.Recruit.NotYet>
+  <HH.Inn.Recruit.TooImportant>too important at home to join</HH.Inn.Recruit.TooImportant>
   <HH.Inn.RenownLine>Renown {0} {1}</HH.Inn.RenownLine>
   <HH.Inn.Report.Budget>budget {0}</HH.Inn.Report.Budget>
   <HH.Inn.Report.Day>day visitor</HH.Inn.Report.Day>
@@ -151,12 +200,8 @@
   <HH.Inn.SendAway.Label>Send away</HH.Inn.SendAway.Label>
   <HH.Inn.Tab.Forecast>Expected arrivals</HH.Inn.Tab.Forecast>
   <HH.Inn.Tab.Inactive>Nobody is coming: mark a bed as guest bed or open a venue.</HH.Inn.Tab.Inactive>
-  <HH.Inn.Tab.NoGuests>No guests at the moment.</HH.Inn.Tab.NoGuests>
-  <HH.Inn.Tab.NoRoom>no room yet</HH.Inn.Tab.NoRoom>
   <HH.Inn.Tab.NoneYet>No groups planned yet.</HH.Inn.Tab.NoneYet>
-  <HH.Inn.Tab.Staying>Staying now</HH.Inn.Tab.Staying>
   <HH.Inn.Tab.Summary>Renown {0} · Whispers {1} · {2} groups hosted · {3} guest beds ({4} free)</HH.Inn.Tab.Summary>
-  <HH.Inn.Tab.Title>Guests</HH.Inn.Tab.Title>
   <HH.Inn.Verdict.0>Slept badly and blamed the room.</HH.Inn.Verdict.0>
   <HH.Inn.Verdict.1>Found the room below their standard.</HH.Inn.Verdict.1>
   <HH.Inn.Verdict.2>Slept so-so.</HH.Inn.Verdict.2>
@@ -236,6 +281,8 @@
   <HH.Setting.inn.renownLossCap.Desc>One unhappy group lowers your renown by at most this much.</HH.Setting.inn.renownLossCap.Desc>
   <HH.Setting.inn.reportMode>Departure reports</HH.Setting.inn.reportMode>
   <HH.Setting.inn.reportMode.Desc>How the short report after each stay reaches you: as a letter, as a quiet message, or not at all.</HH.Setting.inn.reportMode.Desc>
+  <HH.Setting.inn.returnPinCap>Returning guests kept at most</HH.Setting.inn.returnPinCap>
+  <HH.Setting.inn.returnPinCap.Desc>Guests who plan to come back are kept as world pawns until their visit. Above this many, the oldest planned return visits are dropped.</HH.Setting.inn.returnPinCap.Desc>
   <HH.Setting.inn.returnVisits>Return visits</HH.Setting.inn.returnVisits>
   <HH.Setting.inn.returnVisits.Desc>Guests who liked their stay come back after 3 to 10 days (unhappy ones after 14 to 30), plus twice their travel time.</HH.Setting.inn.returnVisits.Desc>
   <HH.Setting.inn.stayNightsMax>Longest stay (nights)</HH.Setting.inn.stayNightsMax>

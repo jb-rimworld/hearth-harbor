@@ -32,6 +32,34 @@ namespace Hearth.Shell
         /// <summary>Blocks added to the "Guest" tab of a pawn after the built-in ones (casino debts, spa visits …).</summary>
         public static readonly List<GuestTabSection> GuestTabSections = new List<GuestTabSection>();
 
+        /// <summary>
+        /// Set by the Inn module: header of the Guests page (renown stars, arrival forecast, wing status, door policy button).
+        /// Draws into the rect it gets (x, y, width; height is a maximum) and returns the height it used.
+        /// </summary>
+        public static Func<Rect, float> GuestsHeader;
+
+        /// <summary>Set by the Inn module: what the Guest tab and the Guests page show beyond <see cref="GuestInfo"/> (null = not an Inn guest).</summary>
+        public static Func<Pawn, GuestTabStatus> GuestStatus;
+
+        /// <summary>Set by the Inn module: the most pressing guest complaint on a map, as one actionable line (null = all content).</summary>
+        public static Func<Map, string> TopComplaint;
+
+        /// <summary>Inn-side facts about one guest for the shell (B3, C3, C10).</summary>
+        public sealed class GuestTabStatus
+        {
+            /// <summary>The stay is settled: the guest is leaving or checked out. The tab shows it read-only.</summary>
+            public bool ReadOnly;
+            /// <summary>"Leaving early: dangerous temperature" / "Checked out: paid 95 silver" …</summary>
+            public string StateLine;
+            /// <summary>Player-facing wing name ("Guest Wing 1"), or null.</summary>
+            public string WingLabel;
+            /// <summary>Recruitment progress 0…1 (bond / threshold) when the handling is Recruit; negative otherwise.</summary>
+            public float RecruitProgress = -1f;
+            public string RecruitLine;
+            /// <summary>Why the guest is unhappy, each line says what to do about it.</summary>
+            public List<string> Problems = new List<string>();
+        }
+
         public sealed class OverviewSection { public string Id; public int Order = 100; public Action<Listing_Standard> Draw; }
         public sealed class GuestTabSection { public string Id; public int Order = 100; public Action<Pawn, Listing_Standard> Draw; }
 
