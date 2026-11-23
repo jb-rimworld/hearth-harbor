@@ -22,6 +22,7 @@ BANK_DEF_DIRS = ["Core", "Bank", "Insurance", "Finance"]
 BANK_LANG = ["HH_Bank.xml", "HH_Insurance.xml", "HH_Finance.xml", "HH_Research.xml", "HH_UI.xml", "HH_Scenario.xml", "HH_Settings.xml"]
 # DefInjected: Silverline.* folders whole; generic folders filtered to bank defNames (written fresh, so outside the byte-identity check)
 BANK_DEFINJ_PREFIX = ("SL_", "HH_Bank", "HH_Banking")
+BANK_SND = ["HH/Bank", "HH/Insurance"]
 BANK_TEX = ["UI/HH/Bank", "UI/HH/Insurance", "UI/HH/Finance", "Things/HH/Bank", "UI/HH/Core"]
 
 
@@ -128,6 +129,10 @@ def main():
     for t in BANK_TEX:
         if (R / "Common" / "Textures" / t).exists():
             shutil.copytree(R / "Common" / "Textures" / t, C / "Textures" / t)
+    # bank and insurance sounds (1.1.0): the Bank/Insurance SoundDefs point to these clips
+    for snd in BANK_SND:
+        if (R / "Common" / "Sounds" / snd).exists():
+            shutil.copytree(R / "Common" / "Sounds" / snd, C / "Sounds" / snd)
     for v in VERSIONS:
         (BANK / "Content" / v / "Assemblies").mkdir(parents=True)
         for dll in ("Hearth.Core.dll", "Silverline.dll"):
