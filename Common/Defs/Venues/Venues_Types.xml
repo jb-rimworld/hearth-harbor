@@ -50,7 +50,7 @@
     <priceFactor>1.2</priceFactor>
     <color>(0.76,0.36,0.30)</color>
     <modExtensions>
-      <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>None</sells></li>
+      <li Class="Hearth.ShopsFood.VenueSaleExtension"><sells>Dishes</sells></li>
     </modExtensions>
   </Hearth.VenueTypeDef>
 

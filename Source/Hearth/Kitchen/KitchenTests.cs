@@ -557,11 +557,24 @@ namespace Hearth.Kitchen.Tests
             yield return 10;
             Restaurant.ClearCache();
             var venue = Restaurant.VenueType;
-            t.Note(venue == null ? "HH_Venue_Restaurant missing: the dining room counts as the restaurant" : "restaurant venue type present");
             var room = center.GetRoom(map);
-            for (int i = 0; i < 20 && Restaurant.Spots(map).Count == 0; i++) { yield return 10; Restaurant.ClearCache(); }
+            t.Check(venue != null, "HH_Venue_Restaurant exists");
+            if (venue == null) { KT.Cleanup(map, center, 8); yield break; }
+            t.Check(!Restaurant.Spots(map).Any(s => s.Room == room), "a dining room without a sign is not a restaurant (N08)");
+            var sign = KT.Spawn(map, DefDatabase<ThingDef>.GetNamed("HH_VenueSign"), center + new IntVec3(3, 0, 3));
+            var signComp = sign.TryGetComp<Hearth.ShopsFood.CompVenueSignHH>();
+            signComp.SetType(venue); signComp.alwaysOpen = true;
+            Venues.MarkDirty(map); Restaurant.ClearCache();
+            yield return 10;
+            Restaurant.ClearCache();
+            var sv = Hearth.ShopsFood.VenueApi.VenueOfSign(map, sign);
+            t.Check(sv != null && sv.Room == room, "the sign makes a venue of the room");
+            t.Check(Hearth.ShopsFood.VenueApi.SellsOf(sv) == Hearth.ShopsFood.SellKind.Dishes, "a restaurant sells dishes");
+            t.Check(!Restaurant.Spots(map).Any(s => s.Room == room), "nobody on duty: the restaurant is not offered to guests");
+            var staff = KT.Colonist(map);
+            Hearth.ShopsFood.VenueState.PingStaff(sign, staff); Restaurant.ClearCache();
             var spots = Restaurant.Spots(map);
-            t.Check(spots.Count >= 1 && spots.Any(s => s.Room == room), "the room is a restaurant: role " + room?.Role?.defName + ", " + spots.Count + " spot(s)");
+            t.Check(spots.Count == 1 && spots[0].Room == room, "staffed and open: the room is a restaurant, " + spots.Count + " spot(s)");
 
             var act = new RestaurantActivity();
             // stale plates and plates outside the room are not on sale
@@ -569,11 +582,25 @@ namespace Hearth.Kitchen.Tests
             stale.TryGetComp<CompDish>().freshAge = 1e9f;
             var outside = KT.MakePlate(map, KT.Dish("BerryCompote"), center + new IntVec3(0, 0, 9), QualityCategory.Normal);
             var spot = spots.First(s => s.Room == room);
+            t.Check(Math.Abs(spot.PriceFactor - Hearth.ShopsFood.VenueApi.PriceMultiplier(sv)) < 0.001f, "the menu price follows the venue price multiplier: " + spot.PriceFactor);
             t.Check(!Restaurant.Stock(spot).Any(), "stale plates and plates in other rooms are not for sale");
             var good = new List<Thing>();
             var dishes = new[] { "BerryCompote", "ScrambledEggs", "HashAndEgg" };
             for (int i = 0; i < 3; i++) good.Add(KT.MakePlate(map, KT.Dish(dishes[i]), center + new IntVec3(-2 + i, 0, 2), i == 0 ? QualityCategory.Good : QualityCategory.Normal));
             t.Check(Restaurant.Stock(spot).Count() == 3, "three fresh plates on the shelf: " + Restaurant.Stock(spot).Count());
+
+            // plates for sale are off limits for the colony (unless the sign lets them take goods) but stay on the guests' shelf
+            var mapComp = map.GetComponent<Hearth.ShopsFood.VenueMapComp>();
+            signComp.colonyMayTakeGoods = false; Hearth.ShopsFood.VenueSales.ClearCaches(); mapComp.SyncForbidden();
+            t.Check(good.All(p => p.IsForbidden(staff)) && !outside.IsForbidden(staff), "plates in the restaurant are forbidden for the colony, plates elsewhere are not");
+            t.Check(Restaurant.Stock(spot).Count() == 3, "forbidden-by-us plates are still for sale: " + Restaurant.Stock(spot).Count());
+            signComp.colonyMayTakeGoods = true; Hearth.ShopsFood.VenueSales.ClearCaches(); mapComp.SyncForbidden();
+            t.Check(good.All(p => !p.IsForbidden(staff)), "colony may take goods: plates are released");
+            signComp.colonyMayTakeGoods = false; Hearth.ShopsFood.VenueSales.ClearCaches(); mapComp.SyncForbidden();
+            t.Check(good.All(p => p.IsForbidden(staff)), "and forbidden again");
+            var filterDefs = Hearth.ShopsFood.VenueRestock.GoodsNow(sv).ToList();
+            t.Check(filterDefs.Count > 5 && filterDefs.All(d => d.comps.Any(c => c.compClass == typeof(CompDish))), "the restock filter of a restaurant offers plates: " + filterDefs.Count + " kinds");
+            Hearth.ShopsFood.VenueState.PingStaff(sign, staff);
 
             // visitors via the vanilla incident
             t.Note("visitors spawned: " + GuestTestKit.SpawnVisitors(map, 1).Count);
@@ -596,6 +623,8 @@ namespace Hearth.Kitchen.Tests
 
             var till = Payments.ColonyTill(map);
             var tillBefore = Ledger.Current.Balance(till); int salesBefore = Restaurant.TotalSales;
+            int today = Find.TickManager.TicksGame / GenDate.TicksPerDay; var foodBefore = Ledger.Current.DayIncome(today, "food");
+            Hearth.ShopsFood.VenueState.PingStaff(sign, staff);
             var job = act.TryGiveJob(guest, info);
             t.Check(job != null && job.def == JobDefOf.Ingest && good.Contains(job.targetA.Thing), "the guest takes a plate from the shelf");
             if (job == null) { KT.Cleanup(map, center, 8); yield break; }
@@ -617,6 +646,8 @@ namespace Hearth.Kitchen.Tests
             t.Check(info.Spent >= expected && info.Satisfaction > 0f, "budget spent and guest satisfied: " + info.Satisfaction.ToString("0.00"));
             t.Check(Ledger.Current.SumAll() == 0, "ledger still balanced");
             t.Check(Restaurant.PendingSales == 0, "no open sale");
+            t.Check(signComp.salesCount == 1 && signComp.itemsSold == 1 && Math.Abs(signComp.Income.Silver - expected.Silver) < 0.01, "the sign recorded the sale: " + signComp.salesCount + " sale(s), " + signComp.Income + " silver");
+            t.Check((Ledger.Current.DayIncome(today, "food") - foodBefore).Silver >= expected.Silver - 0.01, "the ledger booked it as food income");
             KT.ClearJob(guest); KT.Cleanup(map, center, 9);
             foreach (var p in map.mapPawns.AllPawnsSpawned.Where(GuestApi.IsGuest).ToList()) { p.GetLord()?.lordManager.RemoveLord(p.GetLord()); p.Destroy(); }
         }

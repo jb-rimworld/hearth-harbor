@@ -333,7 +333,7 @@ namespace Hearth.Showcase
                 foreach (var v in Venues.All(map))
                 {
                     var kind = VenueApi.SellsOf(v);
-                    if (kind == SellKind.None) continue;
+                    if (kind == SellKind.None || kind == SellKind.Dishes) continue;   // restaurants are stocked by the kitchen
                     int units = VenueSales.Stock(v, true).Sum(x => x.stackCount);
                     if (units >= (kind == SellKind.Drinks ? 12 : 10)) continue;
                     var at = v.Sign.Position;

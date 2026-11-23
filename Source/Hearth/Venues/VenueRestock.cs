@@ -73,6 +73,12 @@ namespace Hearth.ShopsFood
         public static IEnumerable<ThingDef> GoodsNow(Venue v)
         {
             var seen = new HashSet<ThingDef>();
+            if (VenueApi.SellsOf(v) == SellKind.Dishes)
+            {
+                // a restaurant restocks every kind of plate, not only the ones lying there right now
+                foreach (var d in DefDatabase<ThingDef>.AllDefs)
+                    if (d.comps != null && d.comps.Any(c => c.compClass == typeof(Hearth.Kitchen.CompDish)) && seen.Add(d)) yield return d;
+            }
             foreach (var t in VenueSales.Stock(v, true)) if (seen.Add(t.def)) yield return t.def;
         }
     }

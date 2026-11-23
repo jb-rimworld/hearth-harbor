@@ -62,6 +62,8 @@
   <HH.Venue.Bargain>Schnäppchen!</HH.Venue.Bargain>
   <HH.Venue.BellRung>*Ding*</HH.Venue.BellRung>
   <HH.Venue.CheckCounter>Theke für die Bedienung</HH.Venue.CheckCounter>
+  <HH.Venue.CheckDishes>Teller im Regal</HH.Venue.CheckDishes>
+  <HH.Venue.CheckNoDishes>Keine Teller zu verkaufen → koche Gerichte und lagere sie im Raum</HH.Venue.CheckNoDishes>
   <HH.Venue.CheckDrinks>Getränke auf Lager</HH.Venue.CheckDrinks>
   <HH.Venue.CheckNoCounter>Keine Theke (optional) → die Bedienung steht neben dem Schild</HH.Venue.CheckNoCounter>
   <HH.Venue.CheckNoDrinks>Keine Getränke auf Lager → lagere Bier oder andere Getränke im Raum</HH.Venue.CheckNoDrinks>

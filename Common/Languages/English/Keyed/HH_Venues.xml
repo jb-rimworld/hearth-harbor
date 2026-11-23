@@ -63,6 +63,8 @@
   <HH.Venue.Bargain>Bargain!</HH.Venue.Bargain>
   <HH.Venue.BellRung>*ding*</HH.Venue.BellRung>
   <HH.Venue.CheckCounter>Counter for the tender</HH.Venue.CheckCounter>
+  <HH.Venue.CheckDishes>Plates on the shelves</HH.Venue.CheckDishes>
+  <HH.Venue.CheckNoDishes>No plates for sale → cook dishes and store them in the room</HH.Venue.CheckNoDishes>
   <HH.Venue.CheckDrinks>Drinks in stock</HH.Venue.CheckDrinks>
   <HH.Venue.CheckNoCounter>No counter (optional) → the tender stands next to the sign</HH.Venue.CheckNoCounter>
   <HH.Venue.CheckNoDrinks>No drinks in stock → store beer or other drinks in the room</HH.Venue.CheckNoDrinks>
