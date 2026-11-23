@@ -80,7 +80,11 @@ namespace Silverline
             {
                 var th = owner[k];
                 if (th.def == ThingDefOf.Silver) { n += th.stackCount; stacks?.Add(new KeyValuePair<ThingOwner, Thing>(owner, th)); }
+#if RW15
+                else if (depth < 2 && th is ActiveDropPod at && at.Contents?.innerContainer != null) n += Scan(at.Contents.innerContainer, stacks, depth + 1);
+#else
                 else if (depth < 2 && th is ActiveTransporter at && at.Contents?.innerContainer != null) n += Scan(at.Contents.innerContainer, stacks, depth + 1);
+#endif
             }
             return n;
         }
