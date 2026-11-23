@@ -254,6 +254,9 @@ namespace Hearth.Wellness
         {
             var comp = facility.TryGetComp<CompWellnessFacility>();
             if (comp == null) return null;
+            // the facility itself must have room for one more user (a tub holds 2): otherwise the job fails at reservation time and logs an error
+            int cap = comp.Kind == WellnessKind.HotTub ? Math.Max(1, WellnessDefOf.HH_UseHotTub?.joyMaxParticipants ?? 2) : 2;
+            if (!pawn.CanReserve(facility, cap, 0)) return null;
             switch (comp.Kind)
             {
                 case WellnessKind.HotTub:
@@ -278,11 +281,12 @@ namespace Hearth.Wellness
         protected override bool CanInteractWith(Pawn pawn, Thing t, bool inBed)
         {
             if (!Modules.On(ModuleId.Wellness)) return false;
-            if (pawn.Faction != Faction.OfPlayer || GuestApi.IsGuest(pawn)) return false;
+            bool rwPatient = RehabBridge.IsRimWardWalkingPatient(pawn);
+            if (!rwPatient && (pawn.Faction != Faction.OfPlayer || GuestApi.IsGuest(pawn))) return false;
             if (!base.CanInteractWith(pawn, t, inBed)) return false;
             var c = t.TryGetComp<CompWellnessFacility>();
             if (c == null || !c.AllowsUser(pawn) || !c.UsableNow(out _)) return false;
-            if (inBed || HealthAIUtility.ShouldSeekMedicalRest(pawn))
+            if (rwPatient || inBed || HealthAIUtility.ShouldSeekMedicalRest(pawn))
             {
                 if (!RehabBridge.MayUse(pawn, c.Kind, out _)) return false;
             }

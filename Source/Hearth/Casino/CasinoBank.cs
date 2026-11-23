@@ -182,7 +182,7 @@ namespace Hearth.Casino
             Money missing = amount - bal;
             string till = Payments.ColonyTill(map);
             Money take = Money.Min(missing, l.Balance(till));
-            if (take.IsPositive) l.Post(till, account, take, "Casino: till covers a payout");
+            if (take.IsPositive) l.Post(till, account, take, "Casino: till covers a payout", false, "casino");
             if (l.Balance(account) < amount) HLog.Once("casino.negative:" + account, LogLevel.Info, "Casino", "House account " + account + " pays out more than it holds; it will recover from the next guests");
         }
 
@@ -196,7 +196,7 @@ namespace Hearth.Casino
             if (bal >= target) return;
             string till = Payments.ColonyTill(map);
             Money take = Money.Min(target - bal, l.Balance(till));
-            if (take.IsPositive) l.Post(till, account, take, "Casino float from the till");
+            if (take.IsPositive) l.Post(till, account, take, "Casino float from the till", false, "casino");
         }
 
         /// <summary>Moves everything above float + what guests currently play with into the colony till. Returns the amount swept.</summary>
@@ -208,7 +208,7 @@ namespace Hearth.Casino
             Money bal = l.Balance(h.Account);
             Money surplus = bal - keep;
             if (!surplus.IsPositive) { h.Dirty = false; return Money.Zero; }
-            if (l.Post(h.Account, Payments.ColonyTill(map), surplus, "Casino takings (" + h.Label + ")")) { h.Dirty = false; h.LastSweepDay = Find.TickManager.TicksGame / 60000; return surplus; }
+            if (l.Post(h.Account, Payments.ColonyTill(map), surplus, "Casino takings (" + h.Label + ")", false, "casino")) { h.Dirty = false; h.LastSweepDay = Find.TickManager.TicksGame / 60000; return surplus; }
             return Money.Zero;
         }
 

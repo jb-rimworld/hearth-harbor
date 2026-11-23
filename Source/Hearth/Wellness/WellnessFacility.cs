@@ -314,6 +314,23 @@ namespace Hearth.Wellness
         public static bool ForceActive;
         public static bool RimWardActive => ForceActive || ModsConfig.IsActive(RimWardPackageId);
 
+        static System.Reflection.MethodInfo walkingPatient;
+        static bool walkingResolved;
+        /// <summary>RimWard 1.7+ says this pawn is one of its patients who is up and about (RimWard.PatientApi.IsWalkingPatient). Reflection only; false without RimWard.</summary>
+        public static bool IsRimWardWalkingPatient(Pawn p)
+        {
+            if (p == null || !ModsConfig.IsActive(RimWardPackageId)) return false;
+            if (!walkingResolved)
+            {
+                walkingResolved = true;
+                try { walkingPatient = GenTypes.GetTypeInAnyAssembly("RimWard.PatientApi")?.GetMethod("IsWalkingPatient", new[] { typeof(Pawn) }); }
+                catch (Exception e) { HLog.Warn("Wellness", "RimWard.PatientApi not usable: " + e.Message); }
+                if (walkingPatient != null) HLog.Info("Wellness", "RimWard.PatientApi found: real RimWard patients may use the spa");
+            }
+            if (walkingPatient == null) return false;
+            try { return (bool)walkingPatient.Invoke(null, new object[] { p }); } catch (Exception) { return false; }
+        }
+
         /// <summary>Is the pawn a patient in a colony medical bed (as opposed to a healthy colonist)?</summary>
         public static bool IsBedPatient(Pawn p)
         {
@@ -326,8 +343,9 @@ namespace Hearth.Wellness
             reason = null;
             if (!HSettings.GetBool(WellnessSettings.RehabJoy)) { reason = "rehab recreation switched off"; return false; }
             if (!RimWardActive) { reason = "RimWard not active"; return false; }
-            if (p.Faction != Faction.OfPlayer || !p.IsColonist) { reason = "not a colonist"; return false; }
-            if (!IsBedPatient(p)) { reason = "not in a colony medical bed"; return false; }
+            bool rwPatient = IsRimWardWalkingPatient(p); // a real RimWard patient is a guest of the colony, not a colonist, and is up and about
+            if (!rwPatient && (p.Faction != Faction.OfPlayer || !p.IsColonist)) { reason = "not a colonist"; return false; }
+            if (!rwPatient && !IsBedPatient(p)) { reason = "not in a colony medical bed"; return false; }
             if (p.Downed || !p.Awake()) { reason = "asleep or downed"; return false; }
             if (!p.health.capacities.CapableOf(PawnCapacityDefOf.Moving)) { reason = "cannot walk"; return false; }
             if (HealthAIUtility.ShouldBeTendedNowByPlayerUrgent(p)) { reason = "needs treatment now"; return false; }

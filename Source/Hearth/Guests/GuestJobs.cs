@@ -328,11 +328,11 @@ namespace Hearth.Guests
             stand.defaultCompleteMode = ToilCompleteMode.Delay;
             stand.defaultDuration = 2500;
             stand.handlingFacing = true;
-            stand.tickIntervalAction = delta =>
+            Hearth.City.Toils.OnTick(stand, delta =>
             {
                 pawn.rotationTracker.FaceTarget(Desk);
-                if (pawn.IsHashIntervalTick(250, delta) && (Desk == null || !Desk.GuestsArriving())) ReadyForNextToil();
-            };
+                if (Hearth.City.Toils.HashTick(pawn, 250, delta) && (Desk == null || !Desk.GuestsArriving())) ReadyForNextToil();
+            });
             stand.socialMode = RandomSocialMode.Normal;
             yield return stand;
         }
