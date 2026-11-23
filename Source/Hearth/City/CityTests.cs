@@ -351,8 +351,9 @@ namespace Hearth.City.Tests
             var job = act.TryGiveJob(g1, info1);
             t.Check(job != null && job.def == CityDefs.WatchScreening, "activity gives a watch job");
             if (job == null) yield break;
-            g1.jobs.StartJob(job, JobCondition.InterruptForced);
+            // measured before the job starts: a guest who is already at the seat pays during StartJob itself, and the ticket was then counted as 'before'
             var before = info1.Spent; float sat0 = info1.Satisfaction;
+            g1.jobs.StartJob(job, JobCondition.InterruptForced);
             bool started = false;
             for (int i = 0; i < 80 && !started; i++) { yield return 30; started = comp.ShowActive; }
             t.Check(started, "a screening starts when the guest sits down: " + comp.FilmTitle);
