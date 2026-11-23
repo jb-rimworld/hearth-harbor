@@ -73,7 +73,7 @@ def main():
     if about.count("<loadAfter>") != 1:
         sys.exit("Silverline About.xml: <loadAfter> block not found exactly once")
     about = about.replace("<loadAfter>", "<loadAfter>\n    <li>juliusberger00.hearthharbor</li>", 1)
-    about = must_sub(r"<incompatibleWith>.*?</incompatibleWith>", "", about, "incompatibleWith")
+    about = re.sub(r"<incompatibleWith>.*?</incompatibleWith>", "", about, flags=re.S)   # optional: H&H no longer declares one (takeover dialog instead)
     for need in ("<packageId>juliusberger00.silverline</packageId>", "<li>juliusberger00.hearthharbor</li>", "steps aside automatically"):
         if need not in about:
             sys.exit(f"Silverline About.xml: missing {need}")
