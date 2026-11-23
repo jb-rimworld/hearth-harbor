@@ -41,6 +41,19 @@ namespace Hearth.ShopsFood
         public const string LastOrders = "venues.lastOrdersMinutes";
         // Furniture
         public const string HideVanilla = "venues.hideVanilla";
+        // 1.1.0: setup checklist (F12), serving (F14), honor system (F15), business names (F33)
+        public const string RequireSetup = VenueSetup.RequireKey;
+        public const string SetupHints = VenueSetup.HintsKey;
+        public const string ServiceSkill = "venues.serviceSkill";
+        public const string TipShare = "venues.tipShare";
+        public const string BusyPerHour = "venues.busyServedPerHour";
+        public const string ShiftThoughts = "venues.shiftThoughts";
+        public const string IdleHours = "venues.idleHours";
+        public const string HonorUnderpay = "venues.honorUnderpay";
+        public const string HonorNoPay = "venues.honorNoPay";
+        public const string HonorWatched = "venues.honorWatched";
+        public const string HonorMessages = "venues.honorMessages";
+        public const string AutoNames = "venues.autoNames";
 
         public static void Register()
         {
@@ -102,6 +115,36 @@ namespace Hearth.ShopsFood
                 "Minimum renown (0-100) before traders and visitors want to hold a market with you. Without a renown system the colony counts as neutral (50).", hardMax: 100);
             HSettings.Silver(M, "Market", StallFee, 25, 0, 200, "Stall fee per trader",
                 "Every trader caravan pays this much silver for its stall on market day (it goes into the colony till).");
+
+            HSettings.Bool(M, "Setup", RequireSetup, true, "Venues need their furniture",
+                "A business only opens once the furniture its type needs stands in the room (a tavern needs a counter, a table and seats, a casino at least one game, and so on; see the sign's Setup tab). Off: missing furniture is only a hint.");
+            HSettings.Bool(M, "Setup", SetupHints, true, "Build buttons on the sign",
+                "A selected venue sign shows build buttons for the furniture its business still needs.");
+            HSettings.Bool(M, "Setup", AutoNames, true, "Name new businesses automatically",
+                "A new venue sign gets a name that fits its kind of business (for example 'The Drowsy Alpaca' for a tavern). You can always rename it or roll another one.");
+
+            HSettings.Float(M, "Staffing", ServiceSkill, 1f, 0f, 2f, "Weight of the Social skill",
+                "How much the Social skill of whoever is on duty matters: friendlier service, bigger purchases, tips and quicker sales. 0 = skill does not matter.", hardMax: 10f);
+            HSettings.Percent(M, "Staffing", TipShare, 0.08f, 0f, 0.3f, "Tips",
+                "Largest tip a guest leaves on top of a purchase, as a share of the price, for a perfect tender. The chance and size of a tip grow with the tender's Social skill.", hardMax: 1f);
+            HSettings.Bool(M, "Staffing", ShiftThoughts, true, "Shift moods",
+                "Colonists who tend a venue are pleased after a busy shift and bored when they stand around for hours with nothing to do.");
+            HSettings.Float(M, "Staffing", BusyPerHour, 1.5f, 0.25f, 6f, "Busy shift: guests served per hour",
+                "A shift counts as busy (good mood) when the tender served at least this many guests per hour.", nerd: true, hardMin: 0.05f, hardMax: 60f);
+            HSettings.Float(M, "Staffing", IdleHours, 1.5f, 0.5f, 6f, "Bored after (hours without a guest)",
+                "A tender who has served nobody for this many hours of a shift gets bored (bad mood, a little worse every further stretch).", hardMin: 0.1f, hardMax: 24f,
+                tiers: new[] { 6f, 3f, 2f, 1.5f, 1.25f, 1f, 0.75f });
+
+            HSettings.Percent(M, "Honor system", HonorUnderpay, 0.25f, 0f, 0.8f, "Honor system: chance to pay too little",
+                "At an unattended honor-system venue, the chance that a guest leaves only part of the price (30-80 %) in the box.",
+                tiers: new[] { 0.05f, 0.15f, 0.2f, 0.25f, 0.3f, 0.35f, 0.45f });
+            HSettings.Percent(M, "Honor system", HonorNoPay, 0.10f, 0f, 0.6f, "Honor system: chance to pay nothing",
+                "At an unattended honor-system venue, the chance that a guest takes the goods without paying at all.",
+                tiers: new[] { 0.02f, 0.05f, 0.08f, 0.10f, 0.12f, 0.15f, 0.2f });
+            HSettings.Percent(M, "Honor system", HonorWatched, 0.5f, 0f, 1f, "Honor system: effect of being watched",
+                "How much less often guests underpay while a colonist can see them (1 = never while watched).");
+            HSettings.Bool(M, "Honor system", HonorMessages, true, "Honor system: report seen thefts",
+                "Show a message when a colonist saw a guest leave without paying.");
 
             var hide = HSettings.Bool(M, "Furniture", HideVanilla, true, "Hide replaced vanilla furniture",
                 "When a Hearth & Harbor building replaces a vanilla one (for example the card table for the poker table), the vanilla one disappears from the build menu once the replacement is available. Buildings you already placed stay. Takes effect after a restart or the next game load.");

@@ -201,12 +201,14 @@ namespace Hearth.Showcase
             Pot(16, 1); Pot(25, 1); Pot(18, 1); Pot(23, 1); Pot(15, 5); Pot(26, 5);
             Put("SculptureLarge", 20, 10, null, D("BlocksMarble") ?? D("BlocksSandstone"));
             Put("Shelf", 24, 10, null, ThingDefOf.WoodLog);
+            Put("HH_ShopCounter", 23, 8, Rot4.North);   // 1.1.0: a tavern needs a counter to open (F12 setup)
 
             // ---- restaurant (stations face north-rot so their interaction cell is the aisle at z=9, not the wall)
             var restSign = Put("HH_VenueSign", 12, 6, Rot4.South, ThingDefOf.WoodLog); SetSign(restSign, "HH_Venue_Restaurant", "Hearth Kitchen");
             Put("HH_Station_PrepCounter", 1, 10, Rot4.North); Put("HH_Station_StockPot", 3, 10, Rot4.North); Put("HH_Station_Grill", 4, 10, Rot4.North);
-            Put("HH_Station_Oven", 6, 10, Rot4.North); Put("HH_Station_WokStation", 8, 10, Rot4.North); Put("HH_Station_DeepFryer", 9, 10, Rot4.North);
-            Put("HH_Station_Smoker", 10, 10, Rot4.North); Put("HH_Station_Steamer", 11, 10, Rot4.North); Put("HH_Station_ColdStation", 12, 10, Rot4.North);
+            Put("HH_Station_Oven", 7, 10, Rot4.South); Put("HH_Station_WokStation", 8, 10, Rot4.North); Put("HH_Station_DeepFryer", 9, 10, Rot4.North);
+            // 1.1.0: oven and smoker face their rotation (cook in front)
+            Put("HH_Station_Smoker", 10, 10, Rot4.South); Put("HH_Station_Steamer", 11, 10, Rot4.North); Put("HH_Station_ColdStation", 12, 10, Rot4.North);
             Put("HH_Station_DoughBench", 1, 7, Rot4.West);
             Table(3, 3, 4); Table(8, 3, 4); Table(3, 6); Table(8, 6);
             Put("HH_ShopCounter", 12, 3, Rot4.West);
@@ -216,8 +218,8 @@ namespace Hearth.Showcase
 
             // ---- casino
             var casSign = Put("HH_VenueSign", 29, 1, Rot4.South, ThingDefOf.WoodLog); SetSign(casSign, "HH_Venue_Casino", "The Golden Anchor");
-            for (int z = 2; z <= 8; z += 2) Put("HH_SlotMachine", 40, z, Rot4.West, null, true);
-            for (int x = 31; x <= 36; x += 1) if (x % 2 == 1) Put("HH_SlotMachine", x, 10, Rot4.South, null, true);
+            for (int z = 2; z <= 8; z += 2) Put("HH_SlotMachine", 40, z, Rot4.East, null, true);   // 1.1.0: a slot faces its rotation (player in front)
+            for (int x = 31; x <= 36; x += 1) if (x % 2 == 1) Put("HH_SlotMachine", x, 10, Rot4.North, null, true);
             Put("HH_RouletteTable", 30, 5, Rot4.North, null, true); Put("HH_BlackjackTable", 35, 5, Rot4.North, null, true);
             Put("HH_PokerTable", 33, 2, Rot4.North, null, true);
             Put("HH_CashierCage", 28, 9, Rot4.East, null, true);
@@ -241,7 +243,7 @@ namespace Hearth.Showcase
             Lamp(19, 20); Lamp(28, 15); Pot(20, 20); Pot(27, 20); Pot(22, 16); Pot(24, 16);
 
             // ---- bank
-            Put("SL_BankCounter", 33, 18, Rot4.South, null, true); Put("SL_ATM", 40, 17, Rot4.West, null, true); Put("SL_NightSafe", 40, 19, Rot4.North);   // not rotatable: always north
+            Put("SL_BankCounter", 33, 18, Rot4.South, null, true); Put("SL_ATM", 40, 17, Rot4.East, null, true); Put("SL_NightSafe", 40, 19, Rot4.North);   // not rotatable: always north
             Put("Armchair", 31, 16, Rot4.North); Put("Armchair", 32, 16, Rot4.North); Put("Armchair", 37, 16, Rot4.North);
             Lamp(30, 20); Lamp(40, 15); Pot(30, 15); Pot(38, 15); Pot(31, 20); Pot(39, 20);
 

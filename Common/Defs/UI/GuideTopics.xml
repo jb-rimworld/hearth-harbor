@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!-- Lessons of the Hearth & Harbor Guide (4.10). Steps check themselves from game state; "manual" steps are ticked by the player.
-       Other mods can add topics the same way. unlockedBy / check ids: always, hosting, guestBed, venueSign, venueOpenNow, guestArrived,
+       Other mods can add topics the same way. unlockedBy / check ids: always, hosting, guestBed, venueSign, venueReady, venueOpenNow, guestArrived,
        firstPayment, bankAccount, directDeposit, seenGuestsPage, seenGuestTab, venue:<VenueTypeDef>, not:<id>, manual. -->
 
   <Hearth.GuideTopicDef>
@@ -77,6 +77,12 @@
         <id>sign</id>
         <label>Put up a venue sign inside a roofed room.</label>
         <check>venueSign</check>
+        <module>ShopsFood</module>
+      </li>
+      <li>
+        <id>setup</id>
+        <label>Open the sign's Setup tab and build everything marked Required.</label>
+        <check>venueReady</check>
         <module>ShopsFood</module>
       </li>
       <li>

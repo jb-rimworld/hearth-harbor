@@ -39,6 +39,10 @@
     <comps>
       <li Class="Hearth.ShopsFood.CompProperties_VenueSignHH" />
     </comps>
+    <!-- setup guide (F12): kind of business, what it needs, build buttons -->
+    <inspectorTabs>
+      <li>Hearth.ShopsFood.ITab_VenueSetup</li>
+    </inspectorTabs>
   </ThingDef>
 
   <!-- ===== Venue Sign, wall-mounted (works like the vanilla wall lamp; the room in front of it is the business) ===== -->
@@ -88,6 +92,9 @@
     <comps>
       <li Class="Hearth.ShopsFood.CompProperties_VenueSignHH"><wallMounted>true</wallMounted></li>
     </comps>
+    <inspectorTabs>
+      <li>Hearth.ShopsFood.ITab_VenueSetup</li>
+    </inspectorTabs>
   </ThingDef>
 
   <!-- ===== Shop counter: where the shopkeeper or bartender stands; doubles as the till spot ===== -->
@@ -129,6 +136,7 @@
     <uiOrder>110</uiOrder>
     <comps>
       <li Class="Hearth.CompProperties_TillSpot" />
+      <li Class="Hearth.CompProperties_FlipWorkSide" />
     </comps>
   </ThingDef>
 
@@ -171,6 +179,9 @@
     </statBases>
     <designationCategory>HH_Hospitality</designationCategory>
     <uiOrder>130</uiOrder>
+    <comps>
+      <li Class="Hearth.CompProperties_FlipWorkSide" />
+    </comps>
   </ThingDef>
 
   <!-- ===== Vending machine: storage guests buy from without any staff ===== -->

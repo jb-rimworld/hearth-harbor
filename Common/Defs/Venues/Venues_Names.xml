@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Business names per venue type (F33, 1.1.0). The sign resolves r_name with a fixed seed per sign; [owner] is the surname of a colonist.
+       Only invented words: no real businesses, brands or persons. Translators: DefInjected RulePackDef/<defName>.rulePack.rulesStrings. -->
+
+  <!-- Taverns: animals, lanterns, old harbour words -->
+  <RulePackDef>
+    <defName>HH_VenueNames_Tavern</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=4)->The [adj] [beast]</li>
+        <li>r_name(p=2)->The [beast] and [object]</li>
+        <li>r_name(p=2)->[beast]'s Rest</li>
+        <li>r_name->The [adj] [object]</li>
+        <li>r_name->[owner]'s Taproom</li>
+        <li>r_name->The [object] Inn</li>
+        <li>r_name->[beast] Tavern</li>
+        <li>r_name->The [beast]'s Head</li>
+        <li>r_name->Last [object] Tavern</li>
+        <li>r_name->The [number] [beasts]</li>
+        <li>adj->Rusty</li>
+        <li>adj->Drowsy</li>
+        <li>adj->Merry</li>
+        <li>adj->Lucky</li>
+        <li>adj->Sleepy</li>
+        <li>adj->Thirsty</li>
+        <li>adj->Jolly</li>
+        <li>adj->Wandering</li>
+        <li>adj->Crooked</li>
+        <li>adj->Golden</li>
+        <li>adj->Laughing</li>
+        <li>adj->Tipsy</li>
+        <li>adj->Weary</li>
+        <li>adj->Singing</li>
+        <li>adj->Dancing</li>
+        <li>adj->Grumpy</li>
+        <li>adj->Patient</li>
+        <li>adj->Muddy</li>
+        <li>adj->Velvet</li>
+        <li>adj->Copper</li>
+        <li>adj->Old</li>
+        <li>adj->Salty</li>
+        <li>adj->Snowy</li>
+        <li>adj->Foggy</li>
+        <li>beast->Muffalo</li>
+        <li>beast->Thrumbo</li>
+        <li>beast->Alpaca</li>
+        <li>beast->Boomalope</li>
+        <li>beast->Megasloth</li>
+        <li>beast->Capybara</li>
+        <li>beast->Yak</li>
+        <li>beast->Dromedary</li>
+        <li>beast->Elk</li>
+        <li>beast->Hare</li>
+        <li>beast->Squirrel</li>
+        <li>beast->Tortoise</li>
+        <li>beast->Cassowary</li>
+        <li>beast->Ibex</li>
+        <li>beast->Alphabeaver</li>
+        <li>beast->Fox</li>
+        <li>beast->Gazelle</li>
+        <li>beast->Emu</li>
+        <li>beast->Boomrat</li>
+        <li>beast->Husky</li>
+        <li>beast->Iguana</li>
+        <li>beast->Warg</li>
+        <!-- plural forms for "The [number] [beasts]" (irregular English plurals spelled out) -->
+        <li>beasts->Muffalos</li>
+        <li>beasts->Thrumbos</li>
+        <li>beasts->Alpacas</li>
+        <li>beasts->Boomalopes</li>
+        <li>beasts->Megasloths</li>
+        <li>beasts->Capybaras</li>
+        <li>beasts->Yaks</li>
+        <li>beasts->Dromedaries</li>
+        <li>beasts->Hares</li>
+        <li>beasts->Squirrels</li>
+        <li>beasts->Tortoises</li>
+        <li>beasts->Cassowaries</li>
+        <li>beasts->Ibexes</li>
+        <li>beasts->Alphabeavers</li>
+        <li>beasts->Foxes</li>
+        <li>beasts->Gazelles</li>
+        <li>beasts->Emus</li>
+        <li>beasts->Boomrats</li>
+        <li>beasts->Huskies</li>
+        <li>beasts->Iguanas</li>
+        <li>beasts->Wargs</li>
+        <li>object->Lantern</li>
+        <li>object->Anchor</li>
+        <li>object->Kettle</li>
+        <li>object->Barrel</li>
+        <li>object->Hearth</li>
+        <li>object->Plough</li>
+        <li>object->Compass</li>
+        <li>object->Tankard</li>
+        <li>object->Horseshoe</li>
+        <li>object->Keg</li>
+        <li>object->Bell</li>
+        <li>object->Oar</li>
+        <li>object->Ladle</li>
+        <li>object->Kite</li>
+        <li>object->Candle</li>
+        <li>object->Wheel</li>
+        <li>number->Two</li>
+        <li>number->Three</li>
+        <li>number->Seven</li>
+        <li>number->Nine</li>
+        <li>number->Twelve</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Shops: family names, pantries, corners -->
+  <RulePackDef>
+    <defName>HH_VenueNames_Shop</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=3)->[owner] &amp; [kin] [goods]</li>
+        <li>r_name(p=3)->The [adj] [place]</li>
+        <li>r_name(p=2)->[owner]'s [goods]</li>
+        <li>r_name->[material] [place]</li>
+        <li>r_name->The Colony [place]</li>
+        <li>r_name->[beast] [goods]</li>
+        <li>r_name->Everything &amp; [object]s</li>
+        <li>kin->Daughters</li>
+        <li>kin->Sons</li>
+        <li>kin->Cousins</li>
+        <li>kin->Family</li>
+        <li>kin->Partners</li>
+        <li>kin->Neighbours</li>
+        <li>goods->Goods</li>
+        <li>goods->General Goods</li>
+        <li>goods->Trading Post</li>
+        <li>goods->Provisions</li>
+        <li>goods->Supplies</li>
+        <li>goods->Wares</li>
+        <li>goods->Odds and Ends</li>
+        <li>goods->Sundries</li>
+        <li>goods->Store</li>
+        <li>adj->Little</li>
+        <li>adj->Busy</li>
+        <li>adj->Honest</li>
+        <li>adj->Corner</li>
+        <li>adj->Handy</li>
+        <li>adj->Full</li>
+        <li>adj->Tidy</li>
+        <li>adj->Friendly</li>
+        <li>adj->Sturdy</li>
+        <li>adj->Open</li>
+        <li>place->Pantry</li>
+        <li>place->Corner</li>
+        <li>place->Crate</li>
+        <li>place->Counter</li>
+        <li>place->Larder</li>
+        <li>place->Cupboard</li>
+        <li>place->Shelf</li>
+        <li>place->Barrow</li>
+        <li>place->Basket</li>
+        <li>place->Stall</li>
+        <li>material->Plasteel</li>
+        <li>material->Steel</li>
+        <li>material->Granite</li>
+        <li>material->Marble</li>
+        <li>material->Jade</li>
+        <li>material->Silver</li>
+        <li>material->Oak</li>
+        <li>material->Pine</li>
+        <li>material->Limestone</li>
+        <li>beast->Muffalo</li>
+        <li>beast->Thrumbo</li>
+        <li>beast->Alpaca</li>
+        <li>beast->Boomalope</li>
+        <li>beast->Megasloth</li>
+        <li>beast->Capybara</li>
+        <li>beast->Yak</li>
+        <li>beast->Dromedary</li>
+        <li>beast->Elk</li>
+        <li>beast->Hare</li>
+        <li>beast->Squirrel</li>
+        <li>beast->Tortoise</li>
+        <li>beast->Cassowary</li>
+        <li>beast->Ibex</li>
+        <li>beast->Alphabeaver</li>
+        <li>beast->Fox</li>
+        <li>beast->Gazelle</li>
+        <li>beast->Emu</li>
+        <li>beast->Boomrat</li>
+        <li>beast->Husky</li>
+        <li>beast->Iguana</li>
+        <li>beast->Warg</li>
+        <li>object->Thing</li>
+        <li>object->Trinket</li>
+        <li>object->Gadget</li>
+        <li>object->Bolt</li>
+        <li>object->Button</li>
+        <li>object->Spool</li>
+        <li>object->Candle</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Restaurants: spoons, hearths, stone tables -->
+  <RulePackDef>
+    <defName>HH_VenueNames_Restaurant</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=3)->Hearth &amp; [utensil]</li>
+        <li>r_name(p=3)->The [adj] [utensil]</li>
+        <li>r_name(p=2)->[owner]'s Kitchen</li>
+        <li>r_name(p=2)->[stone] Table</li>
+        <li>r_name->The [beast] Grill</li>
+        <li>r_name->[dish] &amp; [dish2]</li>
+        <li>r_name->The Full [vessel]</li>
+        <li>r_name->[owner]'s Table</li>
+        <li>utensil->Spoon</li>
+        <li>utensil->Ladle</li>
+        <li>utensil->Skillet</li>
+        <li>utensil->Fork</li>
+        <li>utensil->Pot</li>
+        <li>utensil->Kettle</li>
+        <li>utensil->Platter</li>
+        <li>utensil->Cleaver</li>
+        <li>utensil->Oven</li>
+        <li>utensil->Bowl</li>
+        <li>adj->Copper</li>
+        <li>adj->Hungry</li>
+        <li>adj->Golden</li>
+        <li>adj->Steaming</li>
+        <li>adj->Cast-Iron</li>
+        <li>adj->Rustic</li>
+        <li>adj->Hearty</li>
+        <li>adj->Crackling</li>
+        <li>adj->Simmering</li>
+        <li>adj->Warm</li>
+        <li>stone->Rimstone</li>
+        <li>stone->Granite</li>
+        <li>stone->Marble</li>
+        <li>stone->Slate</li>
+        <li>stone->Sandstone</li>
+        <li>stone->Hearthstone</li>
+        <li>stone->Riverstone</li>
+        <li>beast->Muffalo</li>
+        <li>beast->Boomalope</li>
+        <li>beast->Yak</li>
+        <li>beast->Alpaca</li>
+        <li>beast->Elk</li>
+        <li>beast->Hare</li>
+        <li>beast->Ibex</li>
+        <li>beast->Capybara</li>
+        <li>dish->Salt</li>
+        <li>dish->Bread</li>
+        <li>dish->Stew</li>
+        <li>dish->Ember</li>
+        <li>dish->Honey</li>
+        <li>dish->Pepper</li>
+        <li>dish->Smoke</li>
+        <li>dish2->Thyme</li>
+        <li>dish2->Butter</li>
+        <li>dish2->Barley</li>
+        <li>dish2->Clover</li>
+        <li>dish2->Ash</li>
+        <li>dish2->Rice</li>
+        <li>dish2->Berries</li>
+        <li>vessel->Pot</li>
+        <li>vessel->Plate</li>
+        <li>vessel->Belly</li>
+        <li>vessel->Bowl</li>
+        <li>vessel->Larder</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Casinos: luck, dice, velvet -->
+  <RulePackDef>
+    <defName>HH_VenueNames_Casino</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=3)->The [adj] [beast]</li>
+        <li>r_name(p=3)->Lucky [beast]</li>
+        <li>r_name(p=2)->The [adj] [game]</li>
+        <li>r_name->[number] [thing]s</li>
+        <li>r_name->[owner]'s Fortune</li>
+        <li>r_name->House of [thing]s</li>
+        <li>r_name->The [beast]'s Wager</li>
+        <li>adj->Golden</li>
+        <li>adj->Velvet</li>
+        <li>adj->Silver</li>
+        <li>adj->Gilded</li>
+        <li>adj->Crimson</li>
+        <li>adj->Midnight</li>
+        <li>adj->Neon</li>
+        <li>adj->Lucky</li>
+        <li>adj->Jade</li>
+        <li>adj->Emerald</li>
+        <li>adj->Starlit</li>
+        <li>adj->Glittering</li>
+        <li>beast->Thrumbo</li>
+        <li>beast->Muffalo</li>
+        <li>beast->Boomalope</li>
+        <li>beast->Fox</li>
+        <li>beast->Megasloth</li>
+        <li>beast->Alpaca</li>
+        <li>beast->Capybara</li>
+        <li>beast->Cassowary</li>
+        <li>game->Dice</li>
+        <li>game->Wheel</li>
+        <li>game->Chip</li>
+        <li>game->Card</li>
+        <li>game->Jackpot</li>
+        <li>game->Ace</li>
+        <li>game->Gamble</li>
+        <li>thing->Lantern</li>
+        <li>thing->Coin</li>
+        <li>thing->Chip</li>
+        <li>thing->Star</li>
+        <li>thing->Crown</li>
+        <li>thing->Ace</li>
+        <li>thing->Clover</li>
+        <li>number->Seven</li>
+        <li>number->Twelve</li>
+        <li>number->Thirteen</li>
+        <li>number->Twenty-One</li>
+        <li>number->Nine</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Spas: springs, steam, stones -->
+  <RulePackDef>
+    <defName>HH_VenueNames_Spa</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=3)->[water] &amp; [stone]</li>
+        <li>r_name(p=3)->The [adj] [pool]</li>
+        <li>r_name(p=2)->[place] Bathhouse</li>
+        <li>r_name->[owner]'s Springs</li>
+        <li>r_name->Warm [pool]s</li>
+        <li>water->Steam</li>
+        <li>water->Mist</li>
+        <li>water->Rain</li>
+        <li>water->Spring</li>
+        <li>water->Dew</li>
+        <li>water->Tide</li>
+        <li>water->Snow</li>
+        <li>stone->Stone</li>
+        <li>stone->Cedar</li>
+        <li>stone->Moss</li>
+        <li>stone->Pebble</li>
+        <li>stone->Pine</li>
+        <li>stone->Salt</li>
+        <li>stone->Clay</li>
+        <li>adj->Quiet</li>
+        <li>adj->Warm</li>
+        <li>adj->Gentle</li>
+        <li>adj->Silver</li>
+        <li>adj->Hidden</li>
+        <li>adj->Soft</li>
+        <li>adj->Still</li>
+        <li>adj->Hot</li>
+        <li>adj->Lazy</li>
+        <li>pool->Pool</li>
+        <li>pool->Spring</li>
+        <li>pool->Basin</li>
+        <li>pool->Pond</li>
+        <li>pool->Lagoon</li>
+        <li>pool->Grotto</li>
+        <li>pool->Well</li>
+        <li>place->Riverside</li>
+        <li>place->Hillside</li>
+        <li>place->Willow</li>
+        <li>place->Birch</li>
+        <li>place->Lantern</li>
+        <li>place->Harbor</li>
+        <li>place->Valley</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Lounges: benches, parlours -->
+  <RulePackDef>
+    <defName>HH_VenueNames_Lounge</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=3)->The [adj] [room]</li>
+        <li>r_name(p=2)->The Waiting [thing]</li>
+        <li>r_name->[owner]'s [room]</li>
+        <li>r_name->[thing] Corner</li>
+        <li>adj->Quiet</li>
+        <li>adj->Cosy</li>
+        <li>adj->Comfy</li>
+        <li>adj->Sleepy</li>
+        <li>adj->Patient</li>
+        <li>adj->Soft</li>
+        <li>adj->Sunny</li>
+        <li>adj->Warm</li>
+        <li>room->Parlour</li>
+        <li>room->Lounge</li>
+        <li>room->Nook</li>
+        <li>room->Corner</li>
+        <li>room->Den</li>
+        <li>room->Sitting Room</li>
+        <li>room->Hall</li>
+        <li>thing->Bench</li>
+        <li>thing->Chair</li>
+        <li>thing->Lamp</li>
+        <li>thing->Kettle</li>
+        <li>thing->Clock</li>
+        <li>thing->Cushion</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Guest chapels: calm, light, peace -->
+  <RulePackDef>
+    <defName>HH_VenueNames_Chapel</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=3)->Chapel of the [adj] [light]</li>
+        <li>r_name(p=2)->The [adj] Sanctuary</li>
+        <li>r_name->[place] Chapel</li>
+        <li>r_name->House of [virtue]</li>
+        <li>adj->Quiet</li>
+        <li>adj->Gentle</li>
+        <li>adj->Morning</li>
+        <li>adj->Evening</li>
+        <li>adj->Patient</li>
+        <li>adj->Still</li>
+        <li>adj->Kind</li>
+        <li>adj->Open</li>
+        <li>adj->Humble</li>
+        <li>light->Light</li>
+        <li>light->Flame</li>
+        <li>light->Candle</li>
+        <li>light->Lantern</li>
+        <li>light->Star</li>
+        <li>light->Dawn</li>
+        <li>light->Hearth</li>
+        <li>place->Wayfarer's</li>
+        <li>place->Traveller's</li>
+        <li>place->Harbor</li>
+        <li>place->Hillside</li>
+        <li>place->Willow</li>
+        <li>place->Lantern</li>
+        <li>virtue->Peace</li>
+        <li>virtue->Welcome</li>
+        <li>virtue->Rest</li>
+        <li>virtue->Mercy</li>
+        <li>virtue->Hope</li>
+        <li>virtue->Kindness</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

@@ -23,6 +23,17 @@ namespace Hearth.ShopsFood
             GuestActivities.Register(new DrinkActivity());
             GuestActivities.Register(new VendingActivity());
             Caretaker.Register(ModuleId.ShopsFood, "venues.releaseOrphans", RepairForbidden);
+            // other modules report served guests through the contract (casino croupiers, F14)
+            Venues.ServedHook = p => VenueService.NoteServed(p);
+            Venues.ReadyHook = VenueSetup.IsReady;
+            Venues.ReadySummaryHook = v => Modules.On(ModuleId.ShopsFood) ? VenueSetup.Summary(v) : null;
+            // guide step "build what the venue needs" (F12)
+            Hearth.Shell.GuideChecks.Register("venueReady", () =>
+            {
+                if (Current.ProgramState != ProgramState.Playing) return false;
+                foreach (var m in Find.Maps) if (m.IsPlayerHome && Venues.All(m).Any(v => VenueSetup.Report(v).Complete)) return true;
+                return false;
+            });
             // designators are resolved after the long loading event; hide replaced furniture once they exist
             LongEventHandler.ExecuteWhenFinished(() => Guard.Run(ModuleId.ShopsFood, "VanillaHiding.Refresh(startup)", VanillaHiding.Refresh));
             // switching Shops & Food off gives the replaced vanilla furniture back at once (and hides it again when switched on)
@@ -46,8 +57,28 @@ namespace Hearth.ShopsFood
             return fixedCount;
         }
 
-        public override void OnGameStarted() { VenueState.Clear(); VanillaHiding.Refresh(); }
-        public override void OnGameLoaded() { VenueState.Clear(); VanillaHiding.Refresh(); }
+        public override void OnGameStarted() { VenueState.Clear(); VenueSetup.Clear(); VanillaHiding.Refresh(); }
+        public override void OnGameLoaded()
+        {
+            VenueState.Clear(); VenueSetup.Clear(); VanillaHiding.Refresh();
+            // 1.1.0 (F12): businesses that miss required furniture stay closed; say so once after loading (older saves: taverns without a counter)
+            LongEventHandler.ExecuteWhenFinished(() => Guard.Run(ModuleId.ShopsFood, "Venues.NotReadyNotice", NotReadyNotice));
+        }
+
+        static void NotReadyNotice()
+        {
+            if (Current.ProgramState != ProgramState.Playing || !HSettings.GetBool(VenueSetup.RequireKey)) return;
+            var names = new List<string>(); Thing first = null;
+            foreach (var map in Find.Maps)
+            {
+                if (!map.IsPlayerHome) continue;
+                foreach (var v in Venues.All(map))
+                    if (!VenueSetup.IsReady(v)) { names.Add(v.DisplayNameOf() + " (" + string.Join(", ", VenueSetup.Report(v).Blockers.Select(b => b.Req.label)) + ")"); first = first ?? v.Sign; }
+            }
+            if (names.Count == 0) return;
+            Messages.Message("HH.Setup.LoadNotice".TranslateOr("Not ready to open, furniture missing: {0}. The sign's Setup tab has build buttons.").Replace("{0}", string.Join("; ", names)),
+                first != null ? new LookTargets(first) : LookTargets.Invalid, MessageTypeDefOf.CautionInput, false);
+        }
 
         public override void PrepareRemoval(List<string> report)
         {
@@ -62,7 +93,15 @@ namespace Hearth.ShopsFood
                 foreach (var v in Venues.All(map))
                     if (v.Comp is CompVenueSignHH c && c.RestockPlaces > 0) { restored += c.RestockPlaces; c.restockOn = false; c.RestoreRestock(map); }
             VanillaHiding.Refresh();
-            report.Add($"Venues: {n} forbidden goods released, {restored} storage places given back, hidden vanilla furniture restored.");
+            // shift moods (F14) are our ThoughtDefs: take them off every pawn so a save without the mod has no dangling memories
+            int moods = 0;
+            foreach (var p in PawnsFinder.AllMapsWorldAndTemporary_Alive)
+            {
+                var mem = p.needs?.mood?.thoughts?.memories; if (mem == null) continue;
+                foreach (var d in new[] { HHVenueDefOf.HH_ServedBusy, HHVenueDefOf.HH_ServedIdle })
+                    if (d != null) { int c = mem.NumMemoriesOfDef(d); if (c > 0) { mem.RemoveMemoriesOfDef(d); moods += c; } }
+            }
+            report.Add($"Venues: {n} forbidden goods released, {restored} storage places given back, {moods} shift moods removed, hidden vanilla furniture restored.");
         }
 
         public override IEnumerable<string> Diagnosis()
@@ -103,6 +142,7 @@ namespace Hearth.ShopsFood
             int t = Find.TickManager.TicksGame;
             if (t % PerfMode.Interval(250) == 40) Guard.Run(ModuleId.ShopsFood, "Venues.SyncForbidden", SyncForbidden);
             if (t % PerfMode.Interval(250) == 140) Guard.Run(ModuleId.ShopsFood, "Venues.Restock", SyncRestock);
+            if (t % 250 == 190) Guard.Run(ModuleId.ShopsFood, "Venues.ShiftSweep", () => VenueService.Sweep(map));
             if (t % 90 == 0) Guard.Run(ModuleId.ShopsFood, "Venues.GuestFallback", () => GuestFallback.Run(map));
             if (t % 2500 == 2000) GuestMemory.Prune(id => !map.mapPawns.AllPawnsSpawned.Any(p => p.thingIDNumber == id));
         }

@@ -3,6 +3,7 @@
   <!-- ===================== Slot machine ===================== -->
   <ThingDef ParentName="BuildingBase">
     <defName>HH_SlotMachine</defName>
+    <!-- 1.1.0 (F13): the front of the art faces the rotation, so the worker stands in front: offset (0,0,1). Older saves are turned once (LegacyWorkSideExtension). -->
     <label>one-armed muffalo</label>
     <description>A coin-guzzling slot machine with three reels and a lever shaped like a muffalo horn. The odds are fixed by the house, the lights are not. Guests play without a croupier; colonists play with worthless house chips.\n\nChoose its volatility (how often and how big it pays) with the button on the machine.</description>
     <thingClass>Building</thingClass>
@@ -21,7 +22,7 @@
     <size>(1,1)</size>
     <tickerType>Normal</tickerType>
     <hasInteractionCell>true</hasInteractionCell>
-    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
     <socialPropernessMatters>true</socialPropernessMatters>
     <minifiedDef>MinifiedThing</minifiedDef>
     <designationCategory>HH_Hospitality</designationCategory>
@@ -60,7 +61,11 @@
         <seats>1</seats>
         <needsCroupier>false</needsCroupier>
       </li>
+      <li Class="Hearth.CompProperties_FlipWorkSide" />
+      <li Class="Hearth.Casino.CompProperties_CasinoSeats" />
     </comps>
+    <modExtensions><li Class="Hearth.LegacyWorkSideExtension" /></modExtensions>
+    <placeWorkers><li>Hearth.Casino.PlaceWorker_CasinoSeats</li></placeWorkers>
   </ThingDef>
 
   <!-- ===================== Tables ===================== -->
@@ -95,6 +100,11 @@
       <buildingSizeCategory>Large</buildingSizeCategory>
       <paintable>true</paintable>
     </building>
+    <comps>
+      <li Class="Hearth.CompProperties_FlipWorkSide" />
+      <li Class="Hearth.Casino.CompProperties_CasinoSeats" />
+    </comps>
+    <placeWorkers><li>Hearth.Casino.PlaceWorker_CasinoSeats</li></placeWorkers>
   </ThingDef>
 
   <ThingDef ParentName="HH_CasinoTableBase">
@@ -213,6 +223,7 @@
     </building>
     <comps>
       <li Class="Hearth.CompProperties_TillSpot"/>
+      <li Class="Hearth.CompProperties_FlipWorkSide" />
     </comps>
   </ThingDef>
 

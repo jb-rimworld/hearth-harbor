@@ -25,6 +25,8 @@ namespace Hearth
         public float priceFactor = 1f;
         public ResearchProjectDef researchPrerequisite;
         public Color color = new Color(0.85f, 0.5f, 0.25f);
+        /// <summary>Grammar for business names of this type (F33): a RulePackDef with an <c>r_name</c> rule. Null = signs show the type label.</summary>
+        public RulePackDef nameRules;
 
         public override void ResolveReferences()
         {
@@ -253,6 +255,37 @@ namespace Hearth
         /// </summary>
         public static Func<float> RenownGetter;
         public static float Renown() { try { return RenownGetter != null ? Mathf.Clamp(RenownGetter(), 0f, 100f) : 50f; } catch (Exception e) { HLog.Once("venues.renown", LogLevel.Warn, "Venues", "Renown getter failed: " + e.Message); return 50f; } }
+
+        /// <summary>
+        /// 1.1.0 (F14): a colonist served a guest (a sale, a round at a table, a treatment). The Venues module counts it for the
+        /// colonist's shift mood (busy vs. bored). Other modules call this; it does nothing while nobody listens.
+        /// </summary>
+        public static void NoteServed(Pawn staffer)
+        {
+            if (staffer == null || ServedHook == null) return;
+            try { ServedHook(staffer); } catch (Exception e) { HLog.Once("venues.servedHook", LogLevel.Warn, "Venues", "NoteServed failed: " + e.Message); }
+        }
+        public static Action<Pawn> ServedHook;
+
+        /// <summary>
+        /// 1.1.0 (F12): does the venue have the furniture its type requires (or is that rule switched off)? A venue that is not ready does not open.
+        /// Answered by the Venues module (cached per sign); true while nobody answers.
+        /// </summary>
+        public static bool IsReady(Venue v)
+        {
+            if (v == null) return false;
+            if (ReadyHook == null) return true;
+            try { return ReadyHook(v); } catch (Exception e) { HLog.Once("venues.readyHook", LogLevel.Warn, "Venues", "IsReady failed: " + e.Message); return true; }
+        }
+        public static Func<Venue, bool> ReadyHook;
+
+        /// <summary>1.1.0 (F12): one line about the venue's setup ("Not ready – missing: a counter"), or null. Answered by the Venues module.</summary>
+        public static string ReadySummary(Venue v)
+        {
+            if (v == null || ReadySummaryHook == null) return null;
+            try { return ReadySummaryHook(v); } catch (Exception e) { HLog.Once("venues.readySummaryHook", LogLevel.Warn, "Venues", "ReadySummary failed: " + e.Message); return null; }
+        }
+        public static Func<Venue, string> ReadySummaryHook;
 
         public static IEnumerable<Venue> OfType(Map map, VenueTypeDef type) => All(map).Where(v => v.Type == type);
         public static Venue At(IntVec3 cell, Map map)

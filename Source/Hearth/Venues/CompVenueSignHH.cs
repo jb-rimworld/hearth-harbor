@@ -6,6 +6,7 @@ using System.Text;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace Hearth.ShopsFood
 {
@@ -17,6 +18,13 @@ namespace Hearth.ShopsFood
         public static readonly Texture2D TakeGoods = ContentFinder<Texture2D>.Get("UI/HH/Venues/Cmd_TakeGoods", false) ?? BaseContent.BadTex;
         public static readonly Texture2D Rename = ContentFinder<Texture2D>.Get("UI/HH/Venues/Cmd_Rename", false) ?? BaseContent.BadTex;
         public static readonly Texture2D Restock = ContentFinder<Texture2D>.Get("UI/HH/Venues/Cmd_Restock", false) ?? BaseContent.BadTex;
+        public static readonly Texture2D Setup = ContentFinder<Texture2D>.Get("UI/HH/Venues/Cmd_Setup", false) ?? BaseContent.BadTex;
+        public static readonly Texture2D Honor = ContentFinder<Texture2D>.Get("UI/HH/Venues/Cmd_Honor", false) ?? BaseContent.BadTex;
+        public static readonly Texture2D Dice = ContentFinder<Texture2D>.Get("UI/HH/Venues/Cmd_NameDice", false) ?? BaseContent.BadTex;
+        public static readonly Texture2D CheckOk = ContentFinder<Texture2D>.Get("UI/HH/Venues/Setup_Ok", false) ?? BaseContent.BadTex;
+        public static readonly Texture2D CheckMissing = ContentFinder<Texture2D>.Get("UI/HH/Venues/Setup_Missing", false) ?? BaseContent.BadTex;
+        public static readonly Texture2D CheckWarn = ContentFinder<Texture2D>.Get("UI/HH/Venues/Setup_Warn", false) ?? BaseContent.BadTex;
+        public static readonly Texture2D Show = ContentFinder<Texture2D>.Get("UI/HH/Venues/Setup_Show", false) ?? BaseContent.BadTex;
     }
 
     public class CompProperties_VenueSignHH : CompProperties_VenueSign
@@ -39,6 +47,20 @@ namespace Hearth.ShopsFood
         long incomeMicro;
         int dayStamp = -1, daySales;
         long dayIncomeMicro;
+        // honor system (F15): switch and statistics (what was paid, what is missing)
+        public bool honorSystem;
+        public int honorSales, honorUnderpaid, honorUnpaid;
+        long honorPaidMicro, honorShortMicro, honorDayShortMicro, honorDayPaidMicro;
+        int honorDaySales;
+        // business names (F33): the name was generated (not typed) and how often it was rolled
+        public bool nameAuto;
+        public int nameRoll;
+        /// <summary>The name has been decided once (generated, typed or cleared by the player): a reinstalled sign keeps that choice.
+        /// Signs of loaded saves count as decided, so old signs are never renamed.</summary>
+        public bool nameDecided;
+        // things the setup tab's "Show" button highlights until this real time
+        [Unsaved] public List<Thing> highlight = new List<Thing>();
+        [Unsaved] public float highlightUntil;
 
         public Money Income => new Money(incomeMicro);
         public Money IncomeToday { get { RollDay(); return new Money(dayIncomeMicro); } }
@@ -48,7 +70,33 @@ namespace Hearth.ShopsFood
         {
             if (Find.TickManager == null) return;
             int day = Find.TickManager.TicksGame / GenDate.TicksPerDay;
-            if (day != dayStamp) { dayStamp = day; daySales = 0; dayIncomeMicro = 0; }
+            if (day != dayStamp) { dayStamp = day; daySales = 0; dayIncomeMicro = 0; honorDaySales = 0; honorDayShortMicro = 0; honorDayPaidMicro = 0; }
+        }
+
+        long tipsMicro;
+        /// <summary>Tips guests left for the staff of this venue (F14), all time.</summary>
+        public Money Tips => new Money(tipsMicro);
+        public void RecordTip(Money tip) { if (tip.IsPositive) tipsMicro += tip.Micro; }
+
+        public Money HonorPaid => new Money(honorPaidMicro);
+        public Money HonorShort => new Money(honorShortMicro);
+        public Money HonorShortToday { get { RollDay(); return new Money(honorDayShortMicro); } }
+        public int HonorSalesToday { get { RollDay(); return honorDaySales; } }
+        /// <summary>Share of the list price that went missing at the honor box (0..1), over all honor sales.</summary>
+        public float HonorLossShare => honorPaidMicro + honorShortMicro <= 0 ? 0f : (float)(honorShortMicro / (double)(honorPaidMicro + honorShortMicro));
+        public float HonorLossShareToday { get { RollDay(); return honorDayPaidMicro + honorDayShortMicro <= 0 ? 0f : (float)(honorDayShortMicro / (double)(honorDayPaidMicro + honorDayShortMicro)); } }
+
+        /// <summary>Books one honor-box sale in the statistics (the paid part went through the ledger already).</summary>
+        public void RecordHonor(HonorOutcome o, Money price, Money paid)
+        {
+            RollDay();
+            honorSales++; honorDaySales++;
+            if (o == HonorOutcome.PaidPart) honorUnderpaid++;
+            else if (o == HonorOutcome.PaidNothing) honorUnpaid++;
+            var missing = price - paid;
+            if (missing.IsNegative) missing = Money.Zero;
+            honorPaidMicro += paid.Micro; honorDayPaidMicro += paid.Micro;
+            honorShortMicro += missing.Micro; honorDayShortMicro += missing.Micro;
         }
 
         public void RecordSale(Money price, int count)
@@ -62,6 +110,24 @@ namespace Hearth.ShopsFood
         {
             if (!respawningAfterLoad && type == null) type = HHVenueDefOf.HH_Venue_Shop;
             base.PostSpawnSetup(respawningAfterLoad);
+            // a new sign gets a fitting business name (F33); old signs in loaded saves keep theirs (or none)
+            if (!respawningAfterLoad && !nameDecided && customName.NullOrEmpty())
+                Guard.Run(ModuleId.ShopsFood, "Venues.AutoName", () => { if (VS.B(VS.AutoNames)) AutoName(); });
+            nameDecided = true;
+        }
+
+        /// <summary>Gives the sign a generated name for its type (or rolls another one).</summary>
+        public void AutoName(bool reroll = false)
+        {
+            if (reroll) nameRoll++;
+            string n = VenueNames.For(type, parent, nameRoll);
+            if (n.NullOrEmpty())
+            {
+                // a type without a name generator: a generated name of the old type would not fit, show the type's label instead
+                if (nameAuto) customName = null;
+                return;
+            }
+            customName = n; nameAuto = true;
         }
 
         public override void PostExposeData()
@@ -76,6 +142,20 @@ namespace Hearth.ShopsFood
             Scribe_Values.Look(ref restockOn, "restockOn");
             Scribe_Deep.Look(ref restockFilter, "restockFilter");
             Scribe_Collections.Look(ref restockBackups, "restockBackups", LookMode.Deep);
+            Scribe_Values.Look(ref honorSystem, "honorSystem");
+            Scribe_Values.Look(ref honorSales, "honorSales");
+            Scribe_Values.Look(ref honorUnderpaid, "honorUnderpaid");
+            Scribe_Values.Look(ref honorUnpaid, "honorUnpaid");
+            Scribe_Values.Look(ref honorPaidMicro, "honorPaidMicro");
+            Scribe_Values.Look(ref honorShortMicro, "honorShortMicro");
+            Scribe_Values.Look(ref honorDaySales, "honorDaySales");
+            Scribe_Values.Look(ref honorDayPaidMicro, "honorDayPaidMicro");
+            Scribe_Values.Look(ref honorDayShortMicro, "honorDayShortMicro");
+            Scribe_Values.Look(ref nameAuto, "nameAuto");
+            Scribe_Values.Look(ref nameRoll, "nameRoll");
+            Scribe_Values.Look(ref nameDecided, "nameDecided");
+            if (Scribe.mode == LoadSaveMode.PostLoadInit) nameDecided = true;
+            Scribe_Values.Look(ref tipsMicro, "tipsMicro");
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 if (restockFilter == null) restockFilter = new ThingFilter();
@@ -199,10 +279,14 @@ namespace Hearth.ShopsFood
             if (hoursWereDefault || openHour < 0) { openHour = newType.defaultOpenHour; closeHour = newType.defaultCloseHour; }
             if (parent.Spawned) Venues.MarkDirty(parent.Map);
             VenueSales.ClearCaches();
+            VenueSetup.MarkDirty(parent);
+            // a generated name follows the new type; a name the player typed stays
+            if (nameAuto && parent.Spawned) Guard.Run(ModuleId.ShopsFood, "Venues.AutoName(type)", () => AutoName());
+            if (honorSystem && !VenueHonor.Offered(newType)) honorSystem = false;
             if (restockOn && VenueApi.SaleOf(newType)?.sells is SellKind k && k == SellKind.None) { restockOn = false; RestoreRestock(parent.Map); }
         }
 
-        void OpenTypeMenu()
+        public void OpenTypeMenu()
         {
             var opts = new List<FloatMenuOption>();
             foreach (var t in SelectableTypes())
@@ -230,6 +314,7 @@ namespace Hearth.ShopsFood
                 action = OpenTypeMenu,
                 hotKey = null,
             };
+            foreach (var g in SetupGizmos()) yield return g;
             yield return new Command_Action
             {
                 defaultLabel = "HH.Venue.Hours".TranslateOr("Opening hours"),
@@ -253,6 +338,15 @@ namespace Hearth.ShopsFood
                     icon = VenueTex.Restock,
                     action = () => Find.WindowStack.Add(new Dialog_VenueRestock(this)),
                 };
+                if (VenueHonor.Offered(type))
+                    yield return new Command_Toggle
+                    {
+                        defaultLabel = "HH.Honor.Toggle".TranslateOr("Honor system"),
+                        defaultDesc = "HH.Honor.ToggleDesc".TranslateOr("Run this business unattended: guests take what they want and leave the money in the honor box, at the full price. Nobody needs to be on duty, but some guests pay less than the price and a few pay nothing at all (chances in the settings; fewer when a colonist can see them). The sign's report shows what went missing."),
+                        icon = VenueTex.Honor,
+                        isActive = () => honorSystem,
+                        toggleAction = () => { honorSystem = !honorSystem; if (parent.Spawned) Venues.MarkDirty(parent.Map); VenueSetup.MarkDirty(parent); },
+                    };
                 yield return new Command_Toggle
                 {
                     defaultLabel = "HH.Venue.ColonyMayTake".TranslateOr("Colony may take goods"),
@@ -291,14 +385,17 @@ namespace Hearth.ShopsFood
             {
                 case VenueGate.Open: state = "HH.Venue.Open".TranslateOr("open") + (VenueApi.InLastOrders(v) ? ", " + "HH.Venue.LastOrders".TranslateOr("last orders") : ""); break;
                 case VenueGate.WaitingForStaff: state = "HH.Venue.NoStaffState".TranslateOr("open, but nobody on duty"); break;
+                case VenueGate.NotReady: state = "HH.Setup.NotReadyState".TranslateOr("not ready"); break;
                 default: state = "HH.Venue.Closed".TranslateOr("closed"); break;
             }
             sb.Append(type.LabelCap).Append(" · ").Append(hours).Append(" · ").Append(state);
             var staffer = VenueApi.Staffer(v);
-            if (VenueApi.NeedsStaff(v))
-                sb.Append("\n").Append("HH.Venue.Staff".TranslateOr("On duty")).Append(": ").Append(staffer != null ? staffer.LabelShort : "HH.Venue.Nobody".TranslateOr("nobody"));
-            else if (staffer != null)
-                sb.Append("\n").Append("HH.Venue.Staff".TranslateOr("On duty")).Append(": ").Append(staffer.LabelShort);
+            if (VenueHonor.IsOn(v))
+                sb.Append("\n").Append("HH.Honor.Line".TranslateOr("Honor system: unattended"));
+            else if (VenueApi.NeedsStaff(v) || staffer != null)
+            {
+                sb.Append("\n").Append("HH.Venue.Staff".TranslateOr("On duty")).Append(": ").Append(staffer != null ? VenueService.TenderLine(staffer) : "HH.Venue.Nobody".TranslateOr("nobody"));
+            }
             float mult = VenueApi.PriceMultiplier(v);
             sb.Append("\n").Append("HH.Venue.PriceLine".TranslateOr("Prices")).Append(": ").Append((mult * 100f).ToString("0")).Append(" % (")
               .Append(("HH.Venue.Tier." + VenueApi.PriceTierLabel(priceFactor)).TranslateOr(VenueApi.PriceTierLabel(priceFactor))).Append(")");
@@ -311,37 +408,99 @@ namespace Hearth.ShopsFood
                 sb.Append("\n").Append("HH.Venue.Sales".TranslateOr("Sales today")).Append(": ").Append(SalesToday).Append(" (").Append(IncomeToday.ToStringShort()).Append(" ")
                   .Append("HH.Venue.Silver".TranslateOr("silver")).Append(") · ").Append("HH.Venue.SalesTotal".TranslateOr("total")).Append(": ").Append(salesCount);
             }
-            foreach (var line in Checklist(v)) sb.Append("\n").Append(line);
+            if (honorSales > 0 || VenueHonor.IsOn(v))
+                sb.Append("\n").Append(HonorReportLine());
+            string setup = VenueSetup.Summary(v);
+            if (!setup.NullOrEmpty()) sb.Append("\n").Append(setup);
             return sb.ToString();
         }
 
-        /// <summary>Readiness checklist (B1): what works, what is missing and what to do about it.</summary>
+        /// <summary>Readiness checklist (B1, since 1.1.0 the setup report of F12): one line per requirement with a tick or a cross.</summary>
         public IEnumerable<string> Checklist(Venue v)
         {
-            string ok = "✔ ", no = "✘ ";
-            var sells = VenueApi.SellsOf(v);
-            if (sells == SellKind.Goods)
+            foreach (var r in VenueSetup.Report(v).Rows)
+                yield return (r.Ok ? "✔ " : r.Req.required ? "✘ " : "○ ") + r.Label + (r.CountText.NullOrEmpty() ? "" : " (" + r.CountText + ")");
+        }
+
+        /// <summary>"Honor box today: 5 sales, 3.20 silver missing (−12 %) · total 2 unpaid, 4 short".</summary>
+        public string HonorReportLine()
+        {
+            return "HH.Honor.Report".TranslateOr("Honor box today: {0} sales, {1} silver missing ({2} %) · all time: {3} sales, {4} underpaid, {5} unpaid, {6} silver missing")
+                .Replace("{0}", HonorSalesToday.ToString()).Replace("{1}", HonorShortToday.ToStringShort()).Replace("{2}", (HonorLossShareToday * 100f).ToString("0"))
+                .Replace("{3}", honorSales.ToString()).Replace("{4}", honorUnderpaid.ToString()).Replace("{5}", honorUnpaid.ToString()).Replace("{6}", HonorShort.ToStringShort());
+        }
+
+        // ------------------------------------------------------------------ setup (F12)
+
+        /// <summary>Gizmos of the setup guide: the guide button (opens the Setup tab) and build buttons for what is still missing.</summary>
+        IEnumerable<Gizmo> SetupGizmos()
+        {
+            var v = Venue;
+            if (v == null || type == null) yield break;
+            var rep = VenueSetup.Report(v);
+            int missing = rep.RequiredMissing;
+            yield return new Command_Action
             {
-                bool has = VenueSales.Stock(v).Count > 0;
-                yield return has ? ok + "HH.Venue.CheckStock".TranslateOr("Goods on shelves") : no + "HH.Venue.CheckNoStock".TranslateOr("No goods for sale → put a shelf or stockpile with goods in the room");
-            }
-            else if (sells == SellKind.Drinks)
+                defaultLabel = missing > 0 ? "HH.Setup.GizmoMissing".TranslateOr("Setup: {0} missing").Replace("{0}", missing.ToString()) : "HH.Setup.GizmoReady".TranslateOr("Setup: ready"),
+                defaultDesc = "HH.Setup.GizmoDesc".TranslateOr("Open the setup guide of this business: what its kind needs, what it already has, with build buttons for everything that is missing."),
+                icon = VenueTex.Setup,
+                defaultIconColor = missing > 0 ? new Color(1f, 0.75f, 0.6f) : Color.white,
+                action = OpenSetupTab,
+            };
+            if (!VS.B(VS.SetupHints)) yield break;
+            int shown = 0;
+            foreach (var row in rep.Rows)
             {
-                bool has = VenueSales.Stock(v).Count > 0;
-                yield return has ? ok + "HH.Venue.CheckDrinks".TranslateOr("Drinks in stock") : no + "HH.Venue.CheckNoDrinks".TranslateOr("No drinks in stock → store beer or other drinks in the room");
+                if (row.Ok || shown >= 2) continue;
+                if (row.Req.check == VenueCheck.Stock || row.Req.check == VenueCheck.ServingWorker || row.Req.check == VenueCheck.Power) continue;
+                if (!row.Req.required) continue;
+                var cmd = BuildCommandFor(row);
+                if (cmd == null) continue;
+                shown++;
+                yield return cmd;
             }
-            else if (sells == SellKind.Dishes)
+        }
+
+        /// <summary>A build button for the first buildable option of a missing requirement ("Build: counter").</summary>
+        Command BuildCommandFor(SetupRow row)
+        {
+            foreach (var d in VenueSetup.BuildDefs(row.Req))
             {
-                bool has = VenueSales.Stock(v).Count > 0;
-                yield return has ? ok + "HH.Venue.CheckDishes".TranslateOr("Plates on the shelves") : no + "HH.Venue.CheckNoDishes".TranslateOr("No plates for sale → cook dishes and store them in the room");
+                var des = VenueSetup.DesignatorFor(d, out _);
+                if (des == null) continue;
+                var cmd = new Command_Action
+                {
+                    defaultLabel = "HH.Setup.BuildButton".TranslateOr("Build: {0}").Replace("{0}", d.label),
+                    defaultDesc = "HH.Setup.BuildButtonDesc".TranslateOr("This {0} still needs {1}. Click to place one in the room.").Replace("{0}", type.label).Replace("{1}", row.Req.label)
+                                  + (row.Req.hint.NullOrEmpty() ? "" : "\n\n" + row.Req.hint),
+                    icon = des.icon ?? d.uiIcon,
+                    iconProportions = des.iconProportions,
+                    iconDrawScale = des.iconDrawScale,
+                    iconTexCoords = des.iconTexCoords,
+                    iconAngle = des.iconAngle,
+                    iconOffset = des.iconOffset,
+                    defaultIconColor = des.IconDrawColor,
+                    action = () => { SoundDefOf.Tick_Tiny.PlayOneShotOnCamera(); VenueSetup.StartBuilding(d); },
+                };
+                return cmd;
             }
-            if (VenueApi.NeedsStaff(v))
+            return null;
+        }
+
+        public void OpenSetupTab()
+        {
+            Guard.Run(ModuleId.ShopsFood, "Venues.OpenSetupTab", () =>
             {
-                bool counter = VenueApi.CounterOf(v) != null;
-                yield return counter ? ok + "HH.Venue.CheckCounter".TranslateOr("Counter for the tender") : no + "HH.Venue.CheckNoCounter".TranslateOr("No counter (optional) → the tender stands next to the sign");
-                bool anyone = parent.Map.mapPawns.FreeColonistsSpawned.Any(p => !p.WorkTypeIsDisabled(HHVenueDefOf.HH_Serving) && p.workSettings != null && p.workSettings.WorkIsActive(HHVenueDefOf.HH_Serving));   // WorkIsActive, not GetPriority: work tab replacements hook the vanilla API
-                yield return anyone ? ok + "HH.Venue.CheckWorker".TranslateOr("A colonist does Serving work") : no + "HH.Venue.CheckNoWorker".TranslateOr("Nobody has the Serving work type switched on");
-            }
+                if (!Find.Selector.IsSelected(parent)) { Find.Selector.ClearSelection(); Find.Selector.Select(parent); }
+                InspectPaneUtility.OpenTab(typeof(ITab_VenueSetup));
+            });
+        }
+
+        /// <summary>Highlights things for a few seconds (the "Show" button of the setup tab).</summary>
+        public void Highlight(IEnumerable<Thing> things)
+        {
+            highlight.Clear(); highlight.AddRange(things);
+            highlightUntil = Time.realtimeSinceStartup + 4f;
         }
 
         static readonly List<IntVec3> cellsScratch = new List<IntVec3>();
@@ -352,6 +511,11 @@ namespace Hearth.ShopsFood
             cellsScratch.Clear();
             foreach (var c in v.Room.Cells) cellsScratch.Add(c);
             if (cellsScratch.Count > 0) GenDraw.DrawFieldEdges(cellsScratch, type != null ? type.color : Color.white);
+            if (highlight.Count > 0)
+            {
+                if (Time.realtimeSinceStartup > highlightUntil) highlight.Clear();
+                else foreach (var t in highlight) if (t != null && t.Spawned && t.Map == parent.Map) GenDraw.DrawTargetHighlight(t);
+            }
         }
 
         public override void DrawGUIOverlay()

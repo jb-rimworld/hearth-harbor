@@ -14,7 +14,7 @@ namespace Hearth.Casino
     {
         public override ModuleId Id => ModuleId.Casino;
 
-        public override void RegisterSettings() { CS.Register(); PlayerHouse.TS.Register(); }
+        public override void RegisterSettings() { CS.Register(); PlayerHouse.TS.Register(); CasinoSeats.RegisterSettings(); }
 
         public override void OnDefsLoaded()
         {

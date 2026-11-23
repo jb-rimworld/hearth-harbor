@@ -42,7 +42,7 @@ namespace Hearth.Underworld
         public static Venue OpenLounge(Map map)
         {
             if (UwDefs.LoungeVenue == null || map == null) return null;
-            foreach (var v in Venues.OfType(map, UwDefs.LoungeVenue)) if (v.IsOpenNow) return v;
+            foreach (var v in Venues.OfType(map, UwDefs.LoungeVenue)) if (v.IsOpenNow && Venues.IsReady(v)) return v;   // 1.1.0: sofas first (setup guide)
             return null;
         }
 

@@ -140,7 +140,7 @@ namespace Hearth.City
         /// <summary>Estimated open venue? True when the venue exists, is open by the clock and (if it needs staff) somebody can serve.</summary>
         public static bool IsOpenForBusiness(Venue v)
         {
-            if (v == null || !v.IsOpenNow) return false;
+            if (v == null || !v.IsOpenNow || !Venues.IsReady(v)) return false;   // 1.1.0: required furniture (setup guide, F12)
             if (v.Type.needsStaff && !AnyServer(v.Map)) return false;
             return true;
         }

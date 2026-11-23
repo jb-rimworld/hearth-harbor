@@ -122,6 +122,10 @@
     <placeWorkers>
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
     </placeWorkers>
+    <comps>
+      <!-- 1.1.0 (F13): turn the chair on the spot so the stylist stands on the other side -->
+      <li Class="Hearth.CompProperties_FlipWorkSide" />
+    </comps>
     <designationCategory>HH_Hospitality</designationCategory>
     <designatorDropdown>HH_Group_City</designatorDropdown>
     <uiOrder>310</uiOrder>

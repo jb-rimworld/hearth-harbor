@@ -25,6 +25,9 @@
       <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
     </building>
     <placeWorkers><li>PlaceWorker_PreventInteractionSpotOverlap</li></placeWorkers>
+    <comps>
+      <li Class="Hearth.CompProperties_FlipWorkSide" />
+    </comps>
   </ThingDef>
   <ThingDef ParentName="HH_KitchenStationBase">
     <defName>HH_Station_PrepCounter</defName>
@@ -111,6 +114,9 @@
   </ThingDef>
   <ThingDef ParentName="HH_KitchenStationBase">
     <defName>HH_Station_Oven</defName>
+    <!-- 1.1.0 (F13): the front of the art faces the rotation, so the worker stands in front: offset (0,0,1). Older saves are turned once (LegacyWorkSideExtension). -->
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
     <label>oven</label>
     <description>A stone and iron oven for roasting and baking. Takes a long time to heat and a short time to ruin dinner. Burns wood while it works.</description>
     <graphicData>
@@ -137,6 +143,7 @@
         <kind>Oven</kind>
         <researchHint>HH_Innkeeping</researchHint>
       </li>
+      <li Class="Hearth.LegacyWorkSideExtension" />
     </modExtensions>
   </ThingDef>
   <ThingDef ParentName="HH_KitchenStationBase">
@@ -200,6 +207,9 @@
   </ThingDef>
   <ThingDef ParentName="HH_KitchenStationBase">
     <defName>HH_Station_Smoker</defName>
+    <!-- 1.1.0 (F13): the front of the art faces the rotation, so the worker stands in front: offset (0,0,1). Older saves are turned once (LegacyWorkSideExtension). -->
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
     <label>smoker</label>
     <description>A tall wooden cabinet that turns meat into something that lasts. Needs wood chips, patience and no neighbours. Burns wood while it works.</description>
     <graphicData>
@@ -226,6 +236,7 @@
         <kind>Smoker</kind>
         <researchHint>HH_Innkeeping</researchHint>
       </li>
+      <li Class="Hearth.LegacyWorkSideExtension" />
     </modExtensions>
   </ThingDef>
   <ThingDef ParentName="HH_KitchenStationBase">

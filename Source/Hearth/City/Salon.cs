@@ -254,6 +254,7 @@ namespace Hearth.City
                     // KONZEPT 6.9: "Fresh look" +4 (mood points, 0.02 satisfaction each)
                     GuestApi.AddSatisfaction(guest, 4 * CityPricing.PointsToSatisfaction, "Salon: fresh look" + (changed != null ? " (" + changed + ")" : ""));
                     pawn.skills?.Learn(SkillDefOf.Social, 40f);
+                    Venues.NoteServed(pawn);   // F14: a styled guest counts for the stylist's shift mood
                 }
                 chair.ServiceDone = true;
                 HLog.Debug("City", $"{pawn} styled {guest} ({svc}, {price})");

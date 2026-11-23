@@ -236,6 +236,15 @@ namespace Hearth.ShopsFood
             }
         }
 
+        /// <summary>Runs a suite with the setup rule (venues.requireSetup) switched off and puts it back afterwards, also when the suite stops early.</summary>
+        public static IEnumerable<int> WithLooseSetup(IEnumerable<int> inner)
+        {
+            bool was = HSettings.GetBool(VenueSetup.RequireKey);
+            HSettings.Set(VenueSetup.RequireKey, 0f);
+            try { foreach (var w in inner) yield return w; }
+            finally { HSettings.Set(VenueSetup.RequireKey, was ? 1f : 0f); }
+        }
+
         public static Money Till(Map map) => Ledger.Current.Balance(Payments.ColonyTill(map));
         public static int HourNow(Map map) => GenLocalDate.HourOfDay(map);
         public static int StackSum(IEnumerable<Thing> things) => things.Where(t => t != null && !t.Destroyed && t.Spawned).Sum(t => t.stackCount);
@@ -245,7 +254,9 @@ namespace Hearth.ShopsFood
     {
         public override string Name => "venues.sign";
         public override ModuleId Module => ModuleId.ShopsFood;
-        public override IEnumerable<int> Run(TestContext t)
+        // 1.1.0: this suite tests hours, staff and bells, not furniture: the setup rule (F12) is relaxed while it runs (venues.setup tests the rule)
+        public override IEnumerable<int> Run(TestContext t) => VenueTestKit.WithLooseSetup(RunInner(t));
+        IEnumerable<int> RunInner(TestContext t)
         {
             var map = t.Map;
             t.Check(Modules.On(ModuleId.ShopsFood), "module on");
@@ -460,7 +471,9 @@ namespace Hearth.ShopsFood
         public override string Name => "venues.staff";
         public override ModuleId Module => ModuleId.ShopsFood;
         public override int MaxTicks => 20000;
-        public override IEnumerable<int> Run(TestContext t)
+        // 1.1.0: this suite tests hours, staff and bells, not furniture: the setup rule (F12) is relaxed while it runs (venues.setup tests the rule)
+        public override IEnumerable<int> Run(TestContext t) => VenueTestKit.WithLooseSetup(RunInner(t));
+        IEnumerable<int> RunInner(TestContext t)
         {
             var map = t.Map;
             var pawn = VenueTestKit.Worker(map);
@@ -536,7 +549,9 @@ namespace Hearth.ShopsFood
         public override string Name => "venues.tavern";
         public override ModuleId Module => ModuleId.ShopsFood;
         public override int MaxTicks => 26000;
-        public override IEnumerable<int> Run(TestContext t)
+        // 1.1.0: this suite tests hours, staff and bells, not furniture: the setup rule (F12) is relaxed while it runs (venues.setup tests the rule)
+        public override IEnumerable<int> Run(TestContext t) => VenueTestKit.WithLooseSetup(RunInner(t));
+        IEnumerable<int> RunInner(TestContext t)
         {
             var map = t.Map;
             VenueTestKit.ClearGuests(map);
@@ -593,7 +608,9 @@ namespace Hearth.ShopsFood
         public override string Name => "venues.wait";
         public override ModuleId Module => ModuleId.ShopsFood;
         public override int MaxTicks => 28000;
-        public override IEnumerable<int> Run(TestContext t)
+        // 1.1.0: this suite tests hours, staff and bells, not furniture: the setup rule (F12) is relaxed while it runs (venues.setup tests the rule)
+        public override IEnumerable<int> Run(TestContext t) => VenueTestKit.WithLooseSetup(RunInner(t));
+        IEnumerable<int> RunInner(TestContext t)
         {
             var map = t.Map;
             VenueTestKit.ClearGuests(map);

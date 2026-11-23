@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Business names of the back-room lounge (F33, 1.1.0): dim, discreet, nothing that names a drug. -->
+
+  <!-- Back-room lounges -->
+  <RulePackDef>
+    <defName>HH_VenueNames_DrugLounge</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=3)->The [adj] [room]</li>
+        <li>r_name(p=2)->The Back Room</li>
+        <li>r_name->[owner]'s Den</li>
+        <li>r_name->The [beast]'s [room]</li>
+        <li>adj->Quiet</li>
+        <li>adj->Smoky</li>
+        <li>adj->Velvet</li>
+        <li>adj->Dim</li>
+        <li>adj->Hazy</li>
+        <li>adj->Low</li>
+        <li>adj->Hidden</li>
+        <li>adj->Shady</li>
+        <li>adj->Lantern</li>
+        <li>room->Den</li>
+        <li>room->Back Room</li>
+        <li>room->Parlour</li>
+        <li>room->Cellar</li>
+        <li>room->Nook</li>
+        <li>room->Lounge</li>
+        <li>beast->Fox</li>
+        <li>beast->Boomrat</li>
+        <li>beast->Megasloth</li>
+        <li>beast->Iguana</li>
+        <li>beast->Raccoon</li>
+        <li>beast->Cat</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

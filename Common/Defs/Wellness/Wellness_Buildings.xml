@@ -190,6 +190,7 @@
         <kind>Massage</kind>
         <maxUsers>1</maxUsers>
       </li>
+      <li Class="Hearth.CompProperties_FlipWorkSide" />
     </comps>
   </ThingDef>
 

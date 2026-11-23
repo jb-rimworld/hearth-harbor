@@ -52,10 +52,11 @@ namespace Hearth.ShopsFood
         public static VenueSaleExtension SaleOf(VenueTypeDef t) => t?.GetModExtension<VenueSaleExtension>();
         public static SellKind SellsOf(Venue v) => SaleOf(v?.Type)?.sells ?? SellKind.None;
 
-        /// <summary>Does this venue need somebody on duty to serve? Follows the staffing rule setting.</summary>
+        /// <summary>Does this venue need somebody on duty to serve? Follows the staffing rule setting. An honor-system venue (F15) never does.</summary>
         public static bool NeedsStaff(Venue v)
         {
             if (v?.Type == null) return false;
+            if (VenueHonor.IsOn(v)) return false;
             switch (HSettings.GetEnum<StaffRule>(VS.StaffRuleKey))
             {
                 case StaffRule.NeverRequired: return false;
@@ -74,6 +75,7 @@ namespace Hearth.ShopsFood
         public static VenueGate Gate(Venue v)
         {
             if (v == null) return VenueGate.ClosedHours;
+            if (!VenueSetup.IsReady(v)) return VenueGate.NotReady;
             bool needs = NeedsStaff(v);
             if (!InHours(v))
             {
@@ -129,7 +131,8 @@ namespace Hearth.ShopsFood
         {
             if (v == null) return 1f;
             float m = Math.Max(0.01f, v.Comp.priceFactor) * v.Type.priceFactor * VS.F(VS.ShopPrice);
-            if (!NeedsStaff(v) && !IsStaffed(v)) m *= 1f - Mathf.Clamp(VS.F(VS.SelfService), 0f, 0.9f);
+            // self-service discount; an honor-system venue asks the full price (the guests decide what they pay, F15)
+            if (!NeedsStaff(v) && !IsStaffed(v) && !VenueHonor.IsOn(v)) m *= 1f - Mathf.Clamp(VS.F(VS.SelfService), 0f, 0.9f);
             if (IsBellService(v)) m *= 1f + VS.F(VS.NightBellSurcharge);
             return m;
         }

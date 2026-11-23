@@ -28,7 +28,7 @@ namespace Hearth.Casino
                 if (!guest && !t.IsSociallyProper(pawn)) continue;
                 var existing = c.SessionsAt(t); if (existing.Count > 0 && existing[0].Kind != (guest ? SessionKind.Guest : SessionKind.Colonist)) continue;
                 if (!pawn.CanReserve(t, comp.Props.seats)) continue;
-                if (!comp.PlayCells().Any(cell => pawn.CanReserveSittableOrSpot(cell) && pawn.CanReach(cell, PathEndMode.OnCell, Danger.Some))) continue;
+                if (!CasinoSeats.SeatCells(comp).Any(cell => pawn.CanReserveSittableOrSpot(cell) && pawn.CanReach(cell, PathEndMode.OnCell, Danger.Some))) continue;   // F17: the planned guest seats
                 double w = weight?.Invoke(comp) ?? 1.0;
                 if (w <= 0) continue;
                 w /= 1.0 + 0.04 * (pawn.Position - t.Position).LengthManhattan;      // nearer is better
@@ -44,7 +44,8 @@ namespace Hearth.Casino
         public static Job MakeJob(Pawn pawn, CompCasinoGame comp)
         {
             IntVec3 cell = IntVec3.Invalid;
-            var cells = comp.PlayCells().Where(x => pawn.CanReserveSittableOrSpot(x) && pawn.CanReach(x, PathEndMode.OnCell, Danger.Some)).ToList();
+            // F17: only the planned seats (the ones the table shows); chairs come first in the plan
+            var cells = CasinoSeats.SeatCells(comp).Where(x => pawn.CanReserveSittableOrSpot(x) && pawn.CanReach(x, PathEndMode.OnCell, Danger.Some)).ToList();
             if (cells.Count == 0) return null;
             // prefer a cell with a chair, otherwise the nearest
             foreach (var x in cells)

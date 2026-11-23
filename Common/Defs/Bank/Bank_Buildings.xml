@@ -3,6 +3,7 @@
   <!-- ATM: withdraw cash instantly (daily limit), deposit, look at the balance. Needs power. -->
   <ThingDef ParentName="BuildingBase">
     <defName>SL_ATM</defName>
+    <!-- 1.1.0 (F13): the front of the art faces the rotation, so the worker stands in front: offset (0,0,1). Older saves are turned once (LegacyWorkSideExtension). -->
     <label>ATM</label>
     <description>A steel box with a screen, a keypad and a slot that says "silver" in four languages. Colonists use it to look at their account, withdraw silver (daily limit, small fee) and deposit what they have. Needs power.</description>
     <thingClass>Silverline.Building_SLATM</thingClass>
@@ -20,7 +21,7 @@
     <rotatable>true</rotatable>
     <defaultPlacingRot>South</defaultPlacingRot>
     <hasInteractionCell>true</hasInteractionCell>
-    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
     <canOverlapZones>false</canOverlapZones>
     <statBases>
       <MaxHitPoints>180</MaxHitPoints>
@@ -46,7 +47,9 @@
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Breakdownable" />
+      <li Class="Hearth.CompProperties_FlipWorkSide" />
     </comps>
+    <modExtensions><li Class="Hearth.LegacyWorkSideExtension" /></modExtensions>
   </ThingDef>
 
   <!-- Branch counter: three cells wide, instant deposits, instant cash from the vault, loans in person. -->
@@ -96,6 +99,7 @@
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Breakdownable" />
+      <li Class="Hearth.CompProperties_FlipWorkSide" />
     </comps>
   </ThingDef>
 

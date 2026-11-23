@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Sounds of the venues (1.1.0). The clips are generated audio (docs/v110/sfx_venues.json lists the prompts). -->
+
+  <!-- A guest pays at an unattended honor-system venue (F15). -->
+  <SoundDef>
+    <defName>HH_HonorCoin</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>HH/Venues/HonorCoin</clipPath></li>
+        </grains>
+        <volumeRange>30~40</volumeRange>
+        <pitchRange>0.94~1.06</pitchRange>
+        <distRange>8~28</distRange>
+        <sustainLoop>false</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- A venue's furniture is complete: it is ready to open (F12). Played on the camera with the message. -->
+  <SoundDef>
+    <defName>HH_VenueReady</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>HH/Venues/VenueReady</clipPath></li>
+        </grains>
+        <volumeRange>35~35</volumeRange>
+        <pitchRange>1~1</pitchRange>
+        <onCamera>true</onCamera>
+        <sustainLoop>false</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>
