@@ -171,7 +171,7 @@ namespace Hearth.Casino.PlayerHouse
             var pt = ThrumboOdds.Slots(vol, TS.Shift);
             double mult = pt.Spin(JRand.Sealed("thrumbo.slots"), out int a, out int b, out int c);
             var pay = stake * mult;
-            string text = SlotPaytable.SymbolNames[a] + " · " + SlotPaytable.SymbolNames[b] + " · " + SlotPaytable.SymbolNames[c] + " — " + (mult > 0 ? "HH.Thrumbo.Pays".Translate(mult.ToString("0.##")).ToString() : "HH.Thrumbo.NoWin".Translate().ToString());
+            string text = ThrumboNames.Symbol(a) + " · " + ThrumboNames.Symbol(b) + " · " + ThrumboNames.Symbol(c) + " — " + (mult > 0 ? "HH.Thrumbo.Pays".Translate(mult.ToString("0.##")).ToString() : "HH.Thrumbo.NoWin".Translate().ToString());
             var r = Finish(s, ThrumboGame.Slots, stake, pay, text, mult);
             r.Reels = new[] { a, b, c };
             return r;
@@ -193,7 +193,7 @@ namespace Hearth.Casino.PlayerHouse
 
         public static string PocketColor(int pocket) => pocket == 0 || pocket == 37 ? "green" : RouletteBet.IsRed(pocket) ? "red" : "black";
         static string RouletteText(int pocket, RouletteBet bet, double mult)
-            => "HH.Thrumbo.Ball".Translate(RouletteBet.PocketName(pocket), ("HH.Thrumbo.Color." + PocketColor(pocket)).Translate()).ToString() + " · " + bet.Label + " — "
+            => "HH.Thrumbo.Ball".Translate(RouletteBet.PocketName(pocket), ("HH.Thrumbo.Color." + PocketColor(pocket)).Translate()).ToString() + " · " + ThrumboNames.Bet(bet) + " — "
                + (mult > 0 ? "HH.Thrumbo.Pays".Translate(mult.ToString("0.##")).ToString() : "HH.Thrumbo.NoWin".Translate().ToString());
 
         // ============================================================================================================

@@ -171,4 +171,28 @@
   <HH.Thrumbo.Err.HandOpen>Eine Hand ist noch offen.</HH.Thrumbo.Err.HandOpen>
   <HH.Thrumbo.Err.NoHand>Es gibt keine offene Hand.</HH.Thrumbo.Err.NoHand>
   <HH.Thrumbo.Err.NoDouble>Du kannst nur bei deinen ersten zwei Karten verdoppeln.</HH.Thrumbo.Err.NoDouble>
+  <HH.Thrumbo.Ago>her</HH.Thrumbo.Ago>
+  <HH.Thrumbo.Sym.cherry>Kirsche</HH.Thrumbo.Sym.cherry>
+  <HH.Thrumbo.Sym.lemon>Zitrone</HH.Thrumbo.Sym.lemon>
+  <HH.Thrumbo.Sym.plum>Pflaume</HH.Thrumbo.Sym.plum>
+  <HH.Thrumbo.Sym.bell>Glocke</HH.Thrumbo.Sym.bell>
+  <HH.Thrumbo.Sym.bar>Bar</HH.Thrumbo.Sym.bar>
+  <HH.Thrumbo.Sym.seven>Sieben</HH.Thrumbo.Sym.seven>
+  <HH.Thrumbo.Sym.muffalo>Muffalo</HH.Thrumbo.Sym.muffalo>
+  <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
+  <HH.Thrumbo.Pay.Cherry2>2 × Kirsche (Walze 1+2)</HH.Thrumbo.Pay.Cherry2>
+  <HH.Thrumbo.Pay.Cherry1>Kirsche auf Walze 1</HH.Thrumbo.Pay.Cherry1>
+  <HH.Thrumbo.Bet.Straight>Plein {0}</HH.Thrumbo.Bet.Straight>
+  <HH.Thrumbo.Bet.Split>Cheval {0}/{1}</HH.Thrumbo.Bet.Split>
+  <HH.Thrumbo.Bet.Street>Transversale {0}-{1}</HH.Thrumbo.Bet.Street>
+  <HH.Thrumbo.Bet.Corner>Carré {0}</HH.Thrumbo.Bet.Corner>
+  <HH.Thrumbo.Bet.SixLine>Sechserreihe {0}-{1}</HH.Thrumbo.Bet.SixLine>
+  <HH.Thrumbo.Bet.Column>Kolonne {0}</HH.Thrumbo.Bet.Column>
+  <HH.Thrumbo.Bet.Dozen>Dutzend {0}</HH.Thrumbo.Bet.Dozen>
+  <HH.Thrumbo.Bet.Red>Rot</HH.Thrumbo.Bet.Red>
+  <HH.Thrumbo.Bet.Black>Schwarz</HH.Thrumbo.Bet.Black>
+  <HH.Thrumbo.Bet.Odd>Ungerade</HH.Thrumbo.Bet.Odd>
+  <HH.Thrumbo.Bet.Even>Gerade</HH.Thrumbo.Bet.Even>
+  <HH.Thrumbo.Bet.Low>Manque 1-18</HH.Thrumbo.Bet.Low>
+  <HH.Thrumbo.Bet.High>Passe 19-36</HH.Thrumbo.Bet.High>
 </LanguageData>

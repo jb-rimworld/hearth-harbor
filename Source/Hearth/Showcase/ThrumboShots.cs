@@ -62,6 +62,7 @@ namespace Hearth.Showcase
 
         public override IEnumerable<int> Run(TestContext t)
         {
+            bool oldDev = Prefs.DevMode; string oldLangPref = Prefs.LangFolderName; var oldLang = LanguageDatabase.activeLanguage;
             string want = Environment.GetEnvironmentVariable("GAME_LANG");
             if (!string.IsNullOrEmpty(want) && LanguageDatabase.activeLanguage?.folderName != want)
             {
@@ -109,6 +110,8 @@ namespace Hearth.Showcase
             foreach (var (file, name) in renames)
                 try { string dest = Path.Combine(ShotDir, name + ".png"); if (File.Exists(dest)) File.Delete(dest); File.Move(file, dest); Directory.CreateDirectory(OutDir); File.Copy(dest, Path.Combine(OutDir, name + ".png"), true); } catch (Exception e) { t.Note("rename failed: " + e.Message); }
             comp.Clear(); bank.TestReset(true); HSettings.Set("core.helpHint", 0f);
+            // leave the global state as found (this suite only runs alone in an isolated profile, but must not leak if it is ever combined)
+            try { Prefs.DevMode = oldDev; Prefs.LangFolderName = oldLangPref; if (oldLang != null && LanguageDatabase.activeLanguage != oldLang) { LanguageDatabase.activeLanguage = oldLang; oldLang.LoadData(); } } catch { }
         }
     }
 }
