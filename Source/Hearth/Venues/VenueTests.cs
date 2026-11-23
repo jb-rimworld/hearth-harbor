@@ -182,6 +182,15 @@ namespace Hearth.ShopsFood
             GenSpawn.Spawn(pawn, near, map);
         }
 
+        /// <summary>Switches Hauling off for every colonist (colonists would top up a shelf, stockpile or vending machine with loose goods from elsewhere and hide a sale
+        /// from a stack-count check). Returns the action that puts the priorities back.</summary>
+        public static Action SuspendHauling(Map map)
+        {
+            var was = map.mapPawns.FreeColonistsSpawned.ToDictionary(c => c, c => c.workSettings?.GetPriority(WorkTypeDefOf.Hauling) ?? 0);
+            foreach (var c in was.Keys) c.workSettings?.SetPriority(WorkTypeDefOf.Hauling, 0);
+            return () => { foreach (var kv in was) kv.Key.workSettings?.SetPriority(WorkTypeDefOf.Hauling, kv.Value); };
+        }
+
         public static void Teardown(Map map, TestRoom room)
         {
             foreach (var z in room.Zones) if (!z.Map.zoneManager.AllZones.Contains(z) == false) z.Delete();
@@ -554,8 +563,7 @@ namespace Hearth.ShopsFood
             var till0 = VenueTestKit.Till(map);
             int beer0 = beer.stackCount;
             // colonists with Hauling on carry beer from elsewhere into the room's stockpile and top the shelf up again before the shelf is checked
-            var haulWas = map.mapPawns.FreeColonistsSpawned.ToDictionary(c => c, c => c.workSettings?.GetPriority(WorkTypeDefOf.Hauling) ?? 0);
-            foreach (var c in haulWas.Keys) c.workSettings?.SetPriority(WorkTypeDefOf.Hauling, 0);
+            var restoreHauling = VenueTestKit.SuspendHauling(map);
             var guests = VenueTestKit.SpawnVisitors(map, factions[0], VenueTestKit.OutsideCell(map, room));
             t.Check(guests.Count > 0, "guests spawned: " + guests.Count);
             waited = 0;
@@ -569,7 +577,7 @@ namespace Hearth.ShopsFood
             foreach (var g in GuestApi.GuestsOn(map)) t.Note(g.LabelShort + ": job " + (g.CurJobDef?.defName ?? "none") + ", alcohol " + (g.health?.hediffSet.HasHediff(HediffDefOf.AlcoholHigh) == true) + ", bag " + string.Join("/", g.inventory.innerContainer.Where(x => x.def.defName == "Beer").Select(x => x.stackCount.ToString())));
             t.Check(GuestApi.GuestsOn(map).Any(g => g.health != null && g.health.hediffSet.HasHediff(HediffDefOf.AlcoholHigh)) || GuestApi.GuestsOn(map).Any(g => g.jobs?.curJob?.def == JobDefOf.Ingest || (g.inventory != null && g.inventory.innerContainer.Any(x => x.def.defName == "Beer"))),
                 "the drink was drunk or is being drunk or sits in the guest's bag");
-            foreach (var kv in haulWas) kv.Key.workSettings?.SetPriority(WorkTypeDefOf.Hauling, kv.Value);
+            restoreHauling();
             VenueTestKit.Teardown(map, room);
         }
     }
@@ -699,6 +707,7 @@ namespace Hearth.ShopsFood
             t.Check(VenueSales.MachineWorks(machine), "machine with power sells");
             // machine stock must not be treated as a sale room (no sign here)
             t.Check(!Venues.All(map).Any(v => v.Contains(cell)), "no venue around the machine");
+            var restoreHauling = VenueTestKit.SuspendHauling(map);   // the machine is a storage building: colonists would haul loose meals into it and refill the stack
             var buyer = VenueTestKit.SpawnVisitors(map, factions[0], VenueTestKit.OutsideCell(map, room));
             var till0 = VenueTestKit.Till(map);
             int meal0 = meal.stackCount;
@@ -711,6 +720,7 @@ namespace Hearth.ShopsFood
             t.Check(VenueTestKit.Till(map) > till0, "a guest paid the vending machine after " + waited + " ticks: " + till0 + " -> " + VenueTestKit.Till(map));
             yield return 400;
             t.Check(meal.Destroyed || meal.stackCount < meal0, "meal left the machine: " + meal0 + " -> " + (meal.Destroyed ? 0 : meal.stackCount));
+            restoreHauling();
             t.Check(GuestApi.GuestsOn(map).Any(g => GuestMemory.LastVending(g) > 0), "a guest remembers the vending purchase");
             // colonists may use the machine for free: its goods are not forbidden (no sign, no sale room)
             var col = map.mapPawns.FreeColonistsSpawned.First();
