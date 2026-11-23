@@ -49,6 +49,8 @@ namespace Hearth.Underworld
                 if (!r.InBounds(map)) continue;
                 bool ok = true;
                 foreach (var cell in r.ExpandedBy(1)) { if (!cell.InBounds(map) || !cell.Standable(map) || cell.GetFirstBuilding(map) != null || cell.Fogged(map) || cell.GetTerrain(map).passability == Traversability.Impassable) { ok = false; break; } }
+                // a free patch is no use when it sits in a pocket the colonists and the visitors cannot walk to (water, cliffs, rock on a random map)
+                if (ok && !map.reachability.CanReach(map.Center, r.CenterCell, PathEndMode.OnCell, TraverseMode.PassDoors, Danger.Deadly)) ok = false;
                 if (ok) { rect = r; return true; }
             }
             return false;
@@ -526,7 +528,8 @@ namespace Hearth.Underworld
             t.Check(Underworld.Whispers > w0 + 1.5f, "gang visit raises whispers");
             // use the back room directly
             var member = pawns[0]; var till0 = UwKit.Till(map);
-            BackRoom.TryFindCell(map, member, out var cell);
+            t.Check(BackRoom.TryFindCell(map, member, out var cell), "a back room cell is free for the member: " + cell);
+            if (!cell.IsValid) { UwKit.End(); yield break; }
             member.Position = cell; member.Notify_Teleported(true, true);
             member.jobs.StartJob(JobMaker.MakeJob(UwDefs.JobBackRoom, cell), JobCondition.InterruptForced);
             yield return 120;
