@@ -91,9 +91,9 @@ namespace Silverline
         }
 
         /// <summary>A flat-benefit loss (fine, liability, crops, closure, accrued daily benefits).</summary>
-        public static Claim FileFlat(PolicyContract c, ClaimTrigger trig, double loss, string subject, Map map, double? grossOverride, IEnumerable<string> hints = null)
+        public static Claim FileFlat(PolicyContract c, ClaimTrigger trig, double loss, string subject, Map map, double? grossOverride, IEnumerable<string> hints = null, int eventTick = -1)
         {
-            var cl = Open(c, trig, subject, map, Ins.Now);
+            var cl = Open(c, trig, subject, map, eventTick >= 0 ? eventTick : Ins.Now);
             cl.lossValue = loss; cl.realValue = loss;
             cl.gross = grossOverride ?? Math.Min(loss, loss * c.Def.ShareFor(c.tier) * (1.0 + c.BoostShare));
             cl.offered = cl.gross;
@@ -103,10 +103,10 @@ namespace Silverline
             return cl;
         }
 
-        public static Claim FileDeath(PolicyContract c, Pawn pawn, bool illness, bool travel)
+        public static Claim FileDeath(PolicyContract c, Pawn pawn, bool illness, bool travel, int eventTick = -1)
         {
             var comp = InsuranceComponent.Instance;
-            var cl = Open(c, travel ? ClaimTrigger.TravelDeath : ClaimTrigger.PawnDeath, Ins.T("Claim.Death", pawn.LabelShortCap), pawn.MapHeld ?? InsurerBooks.HomeMap, Ins.Now);
+            var cl = Open(c, travel ? ClaimTrigger.TravelDeath : ClaimTrigger.PawnDeath, Ins.T("Claim.Death", pawn.LabelShortCap), pawn.MapHeld ?? InsurerBooks.HomeMap, eventTick >= 0 ? eventTick : Ins.Now);
             cl.death = true; cl.pawn = pawn; cl.pawnName = pawn.LabelShortCap;
             double death = travel ? c.sum : InsuranceMath.DeathBenefit(c.sum, c.HasEffect("deathSum") ? 0.30 : 0.20);
             cl.lossValue = c.sum; cl.realValue = c.sum;
@@ -131,7 +131,7 @@ namespace Silverline
         }
 
         /// <summary>A body part was lost. Accident plans assess a quadrum later from the state of the body.</summary>
-        public static Claim FileLimbLoss(PolicyContract c, Pawn pawn, BodyPartRecord part)
+        public static Claim FileLimbLoss(PolicyContract c, Pawn pawn, BodyPartRecord part, int eventTick = -1)
         {
             var comp = InsuranceComponent.Instance;
             var cl = comp.claims.FirstOrDefault(x => x.contractId == c.id && x.trigger == ClaimTrigger.LimbLoss && x.pawn == pawn && x.state == ClaimState.Review);
@@ -139,7 +139,7 @@ namespace Silverline
             int now = Ins.Now;
             if (isNew)
             {
-                cl = Open(c, ClaimTrigger.LimbLoss, Ins.T("Claim.Limb", pawn.LabelShortCap), pawn.MapHeld ?? InsurerBooks.HomeMap, now);
+                cl = Open(c, ClaimTrigger.LimbLoss, Ins.T("Claim.Limb", pawn.LabelShortCap), pawn.MapHeld ?? InsurerBooks.HomeMap, eventTick >= 0 ? eventTick : now);
                 cl.pawn = pawn; cl.pawnName = pawn.LabelShortCap; cl.preGrade = c.preexistingGrade;
                 int wait = HSettings.GetInt(InsSettings.AssessmentDays) * Day;
                 cl.assessTick = now + wait; cl.decideTick = cl.assessTick;
@@ -166,11 +166,11 @@ namespace Silverline
         }
 
         /// <summary>Lost body part on a caravan with Wanderlust Travel Cover: pays the Schedule of Limbs percentage of the per-head sum, linear.</summary>
-        public static Claim FileTravelLimb(PolicyContract c, Pawn pawn, BodyPartRecord part)
+        public static Claim FileTravelLimb(PolicyContract c, Pawn pawn, BodyPartRecord part, int eventTick = -1)
         {
             double v = LimbGrader.ValueOf(pawn, part, out bool lethal, out var entry, out var key);
             if (lethal || v <= 0) return null;
-            var cl = Open(c, ClaimTrigger.TravelLimb, Ins.T("Claim.Limb", pawn.LabelShortCap), pawn.MapHeld ?? InsurerBooks.HomeMap, Ins.Now);
+            var cl = Open(c, ClaimTrigger.TravelLimb, Ins.T("Claim.Limb", pawn.LabelShortCap), pawn.MapHeld ?? InsurerBooks.HomeMap, eventTick >= 0 ? eventTick : Ins.Now);
             cl.pawn = pawn; cl.pawnName = pawn.LabelShortCap; cl.grade = v;
             cl.lossValue = c.sum * v / 100.0; cl.realValue = cl.lossValue;
             cl.gross = c.sum * v / 100.0; cl.offered = cl.gross;
@@ -183,8 +183,13 @@ namespace Silverline
         // ---- decision -----------------------------------------------------------------------------------------------------------------
         public static void Decide(Claim cl)
         {
-            var comp = InsuranceComponent.Instance; var c = comp.Get(cl.contractId);
+            var comp = InsuranceComponent.Instance; var c = comp?.Get(cl.contractId);
             if (c == null || cl.state != ClaimState.Review) return;
+            using (c.ClaimView(cl.eventTick)) DecideInner(cl, comp, c);   // an upgrade that is still waiting does not count for earlier events
+        }
+
+        static void DecideInner(Claim cl, InsuranceComponent comp, PolicyContract c)
+        {
             int now = Ins.Now;
             cl.breakdown.Clear();
             if (cl.trigger == ClaimTrigger.LimbLoss && cl.pawn != null)

@@ -86,6 +86,8 @@ namespace Silverline
         public float perInjuryFlat;
         /// <summary>Fixed share of the loss that is paid per tier (Legal Shield 50/80/100 %); 0 = use the generic formula.</summary>
         public float shareBare, shareGood, sharePremium;
+        /// <summary>Days (at Good Enough, before the "Claim deadlines" setting) in which a claim for an insured event can still be filed (claim mode "By form").</summary>
+        public int claimDeadlineDays = 15;
 
         public string BenefitFor(CoverTier t) => t == CoverTier.BareMinimum ? benefitBare : t == CoverTier.GoodEnough ? benefitGood : benefitPremium;
         public double ShareFor(CoverTier t)
@@ -176,9 +178,44 @@ namespace Silverline
         }
     }
 
+    public enum ClaimFieldKind { Choice, Pawn, Payout }
+
+    public sealed class ClaimFieldOption { public string key; public string label; }
+
+    /// <summary>One selection field of the claim form (1.1.0, F27).</summary>
+    public sealed class ClaimFormField
+    {
+        public string key;
+        public string label;
+        public string description;
+        public ClaimFieldKind kind = ClaimFieldKind.Choice;
+        public List<ClaimFieldOption> options = new List<ClaimFieldOption>();
+    }
+
+    /// <summary>A claim form: fields for the claim triggers it lists (all of them when the list is empty). Moddable. Choices are cosmetic; the payout field is real.</summary>
+    public sealed class SL_ClaimFormDef : Def
+    {
+        public List<ClaimTrigger> triggers = new List<ClaimTrigger>();
+        public int order = 100;
+        public List<ClaimFormField> fields = new List<ClaimFormField>();
+
+        public bool AppliesTo(ClaimTrigger t) => triggers == null || triggers.Count == 0 || triggers.Contains(t);
+
+        public override IEnumerable<string> ConfigErrors()
+        {
+            foreach (var e in base.ConfigErrors()) yield return e;
+            foreach (var f in fields ?? new List<ClaimFormField>())
+            {
+                if (f.key.NullOrEmpty()) yield return "claim form field without key";
+                if (f.kind == ClaimFieldKind.Choice && (f.options == null || f.options.Count == 0)) yield return "choice field " + f.key + " has no options";
+            }
+        }
+    }
+
     [DefOf]
     public static class SLInsuranceDefOf
     {
+        public static LetterDef SL_ClaimPossible;
         public static LetterDef SL_ClawbackLetter;
         public static LetterDef SL_ClawbackNotice;
         public static LetterDef SL_ClawbackBad;

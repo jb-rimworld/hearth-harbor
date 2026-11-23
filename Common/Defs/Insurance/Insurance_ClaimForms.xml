@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Claim forms (1.1.0). Fields are selection fields shown in the claim form window; mods can add forms (triggers = the claim triggers it applies to, empty = all).
+       Choices are cosmetic: the claim is decided exactly as before. The only field with an effect is kind "Payout" (silver or building materials by capsule). -->
+  <Silverline.SL_ClaimFormDef>
+    <defName>SL_ClaimForm_Property</defName>
+    <label>property claim form</label>
+    <description>Form B-4 for destroyed buildings, vehicles and crops: what happened, how bad it was, who saw it and how you want to be paid.</description>
+    <order>10</order>
+    <triggers><li>RaidBuilding</li><li>FireBuilding</li><li>VehicleBuilding</li><li>AnomalyBuilding</li><li>Crop</li><li>Closure</li></triggers>
+    <fields>
+      <li>
+        <key>cause</key><label>What happened?</label><description>Clawback Mutual files it, reads it, and then decides as always.</description><kind>Choice</kind>
+        <options>
+          <li><key>raid</key><label>Raid or siege</label></li>
+          <li><key>fire</key><label>Fire or explosion</label></li>
+          <li><key>storm</key><label>Lightning or weather</label></li>
+          <li><key>accident</key><label>Accident</label></li>
+          <li><key>other</key><label>Something else</label></li>
+        </options>
+      </li>
+      <li>
+        <key>extent</key><label>Extent of the damage</label><description>Minor, major or total. The assessor will not look.</description><kind>Choice</kind>
+        <options>
+          <li><key>minor</key><label>Minor</label></li>
+          <li><key>major</key><label>Major</label></li>
+          <li><key>total</key><label>Total loss</label></li>
+        </options>
+      </li>
+      <li><key>witness</key><label>Witness</label><description>A colonist who saw it. Their statement is filed with the form.</description><kind>Pawn</kind></li>
+      <li><key>payout</key><label>How would you like to be paid?</label><description>Silver by the usual route, or the building materials by drop capsule (only Good Enough and Premium). This is the one field that counts.</description><kind>Payout</kind></li>
+    </fields>
+  </Silverline.SL_ClaimFormDef>
+
+  <Silverline.SL_ClaimFormDef>
+    <defName>SL_ClaimForm_Person</defName>
+    <label>personal claim form</label>
+    <description>Form P-2 for deaths and lost limbs: the circumstances and a witness.</description>
+    <order>20</order>
+    <triggers><li>PawnDeath</li><li>LimbLoss</li><li>TravelDeath</li><li>TravelLimb</li></triggers>
+    <fields>
+      <li>
+        <key>circumstance</key><label>Circumstances</label><description>How it came about. Cosmetic, like most of the form.</description><kind>Choice</kind>
+        <options>
+          <li><key>combat</key><label>Combat</label></li>
+          <li><key>work</key><label>Work accident</label></li>
+          <li><key>animal</key><label>Animal</label></li>
+          <li><key>illness</key><label>Illness</label></li>
+          <li><key>other</key><label>Other</label></li>
+        </options>
+      </li>
+      <li><key>witness</key><label>Witness</label><description>A colonist who saw it.</description><kind>Pawn</kind></li>
+    </fields>
+  </Silverline.SL_ClaimFormDef>
+
+  <Silverline.SL_ClaimFormDef>
+    <defName>SL_ClaimForm_Money</defName>
+    <label>fines and liability claim form</label>
+    <description>Form L-1 for fines, damage to third parties and closures: what caused it and who can confirm it.</description>
+    <order>30</order>
+    <triggers><li>Fine</li><li>Liability</li></triggers>
+    <fields>
+      <li>
+        <key>cause</key><label>Cause</label><description>Cosmetic.</description><kind>Choice</kind>
+        <options>
+          <li><key>inspection</key><label>Inspection</label></li>
+          <li><key>guest</key><label>Guest or trader</label></li>
+          <li><key>misunderstanding</key><label>Misunderstanding</label></li>
+          <li><key>other</key><label>Other</label></li>
+        </options>
+      </li>
+      <li><key>witness</key><label>Witness</label><description>A colonist who can confirm it.</description><kind>Pawn</kind></li>
+    </fields>
+  </Silverline.SL_ClaimFormDef>
+</Defs>

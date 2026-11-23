@@ -80,7 +80,7 @@ namespace Silverline
             PolicyContract contract = null; ClaimTrigger used = trig;
             foreach (var t in chain) { contract = Contracts(t).FirstOrDefault(); if (contract != null) { used = t; break; } }
             if (contract == null) { InsuranceComponent.Instance.CouldHaveBeen(trig, b.LabelNoCount); return; }
-            ClaimEngine.FileProperty(contract, used, value, b.LabelNoCount, map, hints, cost, Ins.Now);
+            ClaimIntake.Property(contract, used, value, b.LabelNoCount, map, hints, cost);
         }
 
         static bool IsVehicleLike(ThingDef def)
@@ -99,15 +99,14 @@ namespace Silverline
             bool illness = !dinfo.HasValue || (culprit != null && !(culprit is Hediff_Injury));
             foreach (var c in Contracts(ClaimTrigger.PawnDeath).Where(x => x.holder == p).ToList())
             {
-                if (comp.claims.Any(x => x.contractId == c.id && x.death)) continue;
-                var cl = ClaimEngine.FileDeath(c, p, illness, false);
-                if (c.InWaitingPeriod(Ins.Now)) cl.AddHint("Waiting");
+                if (ClaimIntake.DeathKnown(comp, c, p, false)) continue;
+                ClaimIntake.Death(c, p, illness, false);   // the waiting-period hint comes from the event time inside the claim engine
             }
             if (wasCaravan)
                 foreach (var c in Contracts(ClaimTrigger.TravelDeath).ToList())
                 {
-                    if (comp.claims.Any(x => x.contractId == c.id && x.death && x.pawn == p)) continue;
-                    ClaimEngine.FileDeath(c, p, illness, true);
+                    if (ClaimIntake.DeathKnown(comp, c, p, true)) continue;
+                    ClaimIntake.Death(c, p, illness, true);
                 }
         }
 
@@ -119,10 +118,10 @@ namespace Silverline
             bool caravan = !p.Spawned && p.IsCaravanMember();
             foreach (var c in Contracts(ClaimTrigger.LimbLoss).Where(x => x.holder == p).ToList())
             {
-                var cl = ClaimEngine.FileLimbLoss(c, p, mp.Part);
-                if (dinfo.HasValue && dinfo.Value.Instigator is Pawn inst && inst.Faction == Faction.OfPlayer && inst != p) cl.AddHint("Self");
+                bool self = dinfo.HasValue && dinfo.Value.Instigator is Pawn inst && inst.Faction == Faction.OfPlayer && inst != p;
+                ClaimIntake.Limb(c, p, mp.Part, self);
             }
-            if (caravan) foreach (var c in Contracts(ClaimTrigger.TravelLimb).ToList()) ClaimEngine.FileTravelLimb(c, p, mp.Part);
+            if (caravan) foreach (var c in Contracts(ClaimTrigger.TravelLimb).ToList()) ClaimIntake.TravelLimb(c, p, mp.Part);
         }
 
         public static void CaravanInjury(Pawn p, Hediff_Injury inj)
@@ -168,7 +167,7 @@ namespace Silverline
             var c = Contracts(trig).FirstOrDefault();
             if (c == null) { InsuranceComponent.Instance.CouldHaveBeen(trig, subject); return false; }
             var hints = new List<string>(); if (hint != null) hints.Add(hint);
-            ClaimEngine.FileFlat(c, trig, loss.Silver, subject, map, null, hints);
+            ClaimIntake.Flat(c, trig, loss.Silver, subject, map, hints);
             return true;
         }
     }

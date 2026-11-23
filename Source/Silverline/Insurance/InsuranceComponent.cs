@@ -14,6 +14,8 @@ namespace Silverline
     {
         public PolicyContract contract;
         public string error;
+        public Quote quote;
+        public string paidFrom;
         public bool Ok => contract != null;
     }
 
@@ -31,7 +33,7 @@ namespace Silverline
     /// Everything Clawback Mutual knows about the colony: contracts, claims, the log. A GameComponent of its own, so removing
     /// Silverline (or this module) leaves a loadable save (KONZEPT 3.7). Ticks only while the Bank module is on.
     /// </summary>
-    public sealed class InsuranceComponent : GameComponent
+    public sealed partial class InsuranceComponent : GameComponent
     {
         public List<PolicyContract> contracts = new List<PolicyContract>();
         public List<Claim> claims = new List<Claim>();
@@ -40,6 +42,10 @@ namespace Silverline
         public int letterCounter;
         public double debt;                 // clawback owed after cancellation (clause 22)
         public double courtesyTotal;
+        public List<ClaimOpportunity> opportunities = new List<ClaimOpportunity>();
+        public int nextOppId = 1;
+        /// <summary>Raised on every change that the per-pawn status cache must notice (sign, end, change, pension).</summary>
+        public int statusVersion;
         public List<string> log = new List<string>();
 
         static InsuranceComponent cached;
@@ -94,7 +100,8 @@ namespace Silverline
             return null;
         }
 
-        public SignResult Sign(SL_PolicyDef def, CoverTier tier, Pawn holder, double sum, IEnumerable<string> riders, IEnumerable<string> preTicked)
+        /// <param name="quiet">Bulk signing: no welcome letter (the caller sends one summary letter).</param>
+        public SignResult Sign(SL_PolicyDef def, CoverTier tier, Pawn holder, double sum, IEnumerable<string> riders, IEnumerable<string> preTicked, bool quiet = false)
         {
             var res = new SignResult();
             string err = CanSign(def, tier, holder);
@@ -128,7 +135,10 @@ namespace Silverline
             contracts.Add(c);
             if (firstPolicyTick < 0) { firstPolicyTick = now; yearStamp = now / (ClaimEngine.Day * InsuranceMath.DaysPerYear); }
             Log(Ins.T("Log.Signed", c.Label, Ins.TierName(tier)));
-            ClaimLetters.Welcome(c, q, src == "free" ? Ins.T("Source.Free") : src);
+            string paidFrom = src == "free" ? Ins.T("Source.Free") : src;
+            if (!quiet) ClaimLetters.Welcome(c, q, paidFrom);
+            statusVersion++;
+            res.quote = q; res.paidFrom = paidFrom;
             res.contract = c;
             return res;
         }
@@ -136,7 +146,7 @@ namespace Silverline
         public void End(PolicyContract c, string reason)
         {
             if (c == null || c.ended) return;
-            c.ended = true; c.endedTick = Ins.Now; c.endReason = reason;
+            c.ended = true; c.endedTick = Ins.Now; c.endReason = reason; statusVersion++;
             if (c.owedClawback > 0.001) { debt += c.owedClawback; c.owedClawback = 0; }
             Log(Ins.T("Log.Ended", c.Label, reason));
             ClaimLetters.Notice(Ins.T("Letter.Ended.Title", c.Label), Ins.T("Letter.Ended.Body", c.Label, reason, debt > 0.01 ? Ins.T("Letter.Ended.Debt", Ins.Silver(debt)) : ""), neutral: false);
@@ -172,7 +182,7 @@ namespace Silverline
             if (c == null || !c.Active) return null;
             int now = Ins.Now;
             var plan = PlanCancel(c);
-            c.cancelRequestedTick = now;
+            c.cancelRequestedTick = now; statusVersion++;
             long eff = plan.effectiveTick;
             string msg;
             bool legal = HasActive("SL_LegalShield") && !(InsSettings.Hard && ClauseEngine.ByTrigger(ClauseTrigger.Conflict) is SL_ClauseDef cf && ClauseEngine.Active(cf, c.tier));
@@ -191,7 +201,7 @@ namespace Silverline
             return msg;
         }
 
-        public void WithdrawCancel(PolicyContract c) { if (c != null) { c.cancelEffectiveTick = -1; c.cancelRequestedTick = -1; c.formErrorHit = false; } }
+        public void WithdrawCancel(PolicyContract c) { if (c != null) { statusVersion++; c.cancelEffectiveTick = -1; c.cancelRequestedTick = -1; c.formErrorHit = false; } }
 
         void FinalizeCancel(PolicyContract c)
         {
@@ -254,12 +264,15 @@ namespace Silverline
         public void Process(int now)
         {
             ProcessClaims(now);
+            ProcessOpportunities(now);
             for (int i = 0; i < contracts.Count; i++)
             {
                 var c = contracts[i];
                 if (!c.Active) continue;
                 if (c.CancelPending && now >= c.cancelEffectiveTick) { FinalizeCancel(c); continue; }
-                if (c.holder != null && c.holder.Dead && !contracts[i].ended) { if (!claims.Any(x => x.contractId == c.id && x.death && x.Open)) End(c, Ins.T("End.Holder")); continue; }
+                if (c.holder != null && c.holder.Dead && !contracts[i].ended) { if (!claims.Any(x => x.contractId == c.id && x.death && x.Open) && !opportunities.Any(o => o.contractId == c.id && o.Open && o.kind == OppKind.Death)) End(c, Ins.T("End.Holder")); continue; }
+                if (c.HasPendingChange && now >= c.pendingEffectiveTick) ApplyPending(c, now);
+                if (c.prevSum >= 0 && now >= Math.Max(c.upgradeWaitUntilTick, c.changedTick) + 60 * ClaimEngine.Day) { c.prevSum = -1; c.prevTier = -1; c.prevRiders = null; c.upgradeWaitUntilTick = -1; c.changedTick = -1; }   // kept as long as a filing window of an earlier event can still be open
                 if (now >= c.nextBillTick && c.nextBillTick >= 0) Bill(c, now);
                 if (!c.Active) continue;
                 RolloverQuadrum(c, now);
@@ -309,6 +322,8 @@ namespace Silverline
             c.noClaimsClass = InsuranceMath.NextNoClaimsClass(c.noClaimsClass, c.claimThisQuadrum);
             c.damageHistory.Add(c.damageThisQuadrum); while (c.damageHistory.Count > 4) c.damageHistory.RemoveAt(0);
             c.claimThisQuadrum = false; c.damageThisQuadrum = 0;
+            c.changesThisQuadrum = 0; c.changeStamp = qi;
+            if (c.pensionStrikes > 0) { c.pensionStrikes--; statusVersion++; }
             if (c.hazSamples > 0) { c.lastShareB = c.hazB / c.hazSamples; c.lastShareC = c.hazC / c.hazSamples; }
             c.hazSamples = c.hazB = c.hazC = 0;
             // premium change: a rise opens a special cancellation window (5 days, any tier)
@@ -354,6 +369,7 @@ namespace Silverline
             try { foreach (var car in Find.World.worldObjects.Caravans) if (car.IsPlayerControlled) heads += car.PawnsListForReading.Count(p => p.IsColonist && !p.Dead); } catch { }
             foreach (var c in contracts.Where(x => x.Active && x.Def != null && x.Def.riskModel == RiskModel.PerTravelDay)) c.travelHeadDays += heads;
 
+            PensionDailyChecks(now);
             AccrueBenefits(now);
             CheckRegrowth(now);
             ClauseNotices(now);
@@ -378,7 +394,7 @@ namespace Silverline
                         c.accrued += bedridden * def.dailyBenefit * mult; if (c.accruedSince < 0) c.accruedSince = now;
                     }
                 }
-                if (def.dailyAnnuity > 0 && c.holder != null && !c.holder.Dead && c.holder.ageTracker.AgeBiologicalYears >= 60)
+                if (def.dailyAnnuity > 0 && c.holder != null && !c.holder.Dead && c.holder.ageTracker.AgeBiologicalYears >= 60 && !PensionSuspended(c, now))
                 {
                     if (c.tier == CoverTier.BareMinimum)
                     {
@@ -464,6 +480,7 @@ namespace Silverline
 
         void Prune(int now)
         {
+            opportunities.RemoveAll(o => !o.Open && now - o.deadlineTick > 60 * ClaimEngine.Day);
             if (claims.Count < 60) return;
             int keep = 0;
             foreach (var cl in claims.OrderByDescending(x => x.filedTick).ToList())
@@ -473,7 +490,7 @@ namespace Silverline
                 bool needed = cl.state == ClaimState.Paid && cl.trigger == ClaimTrigger.LimbLoss && cl.paidGrade > 0.5 && cl.pawn != null && !cl.pawn.Dead;
                 if (keep > 40 && !needed) claims.Remove(cl);
             }
-            contracts.RemoveAll(c => c.ended && now - c.endedTick > 120 * ClaimEngine.Day && !claims.Any(x => x.contractId == c.id));
+            contracts.RemoveAll(c => c.ended && now - c.endedTick > 120 * ClaimEngine.Day && !claims.Any(x => x.contractId == c.id) && !opportunities.Any(o => o.contractId == c.id && o.Open));
         }
 
         public override void ExposeData()
@@ -486,8 +503,10 @@ namespace Silverline
             Scribe_Values.Look(ref lastDeathTick, "lastDeath", -9999999); Scribe_Values.Look(ref yearStamp, "yearStamp", -1);
             Scribe_Values.Look(ref letterCounter, "letterCounter"); ScribeMoney.LookExact(ref debt, "debt"); ScribeMoney.LookExact(ref courtesyTotal, "courtesy");
             Scribe_Collections.Look(ref log, "log", LookMode.Value);
+            Scribe_Collections.Look(ref opportunities, "opportunities", LookMode.Deep); Scribe_Values.Look(ref nextOppId, "nextOpp", 1); Scribe_Values.Look(ref statusVersion, "statusVersion");
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
+                opportunities = opportunities ?? new List<ClaimOpportunity>();
                 contracts = contracts ?? new List<PolicyContract>(); claims = claims ?? new List<Claim>(); log = log ?? new List<string>();
                 int before = contracts.Count;
                 contracts.RemoveAll(c => c == null || c.Def == null && !c.ended);

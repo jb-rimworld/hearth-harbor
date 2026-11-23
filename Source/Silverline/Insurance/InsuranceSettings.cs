@@ -11,6 +11,12 @@ namespace Silverline
     /// <summary>Per-trick switch (N51, 9.7): follows the "Sales pressure" slider, always on, or off.</summary>
     public enum TrickMode { Follows = 0, On = 1, Off = 2 }
 
+    /// <summary>How claims reach the claims department (1.1.0, F27).</summary>
+    public enum ClaimMode { Automatic = 0, ByForm = 1 }
+
+    /// <summary>What happens when a pensioner works more than the allowed hours in the timetable (1.1.0, F26).</summary>
+    public enum PensionRuleMode { Off = 0, WarnOnly = 1, Enforce = 2 }
+
     /// <summary>Settings of Clawback Mutual (module Bank, key prefix "insurance."). Anchors from KONZEPT 9.2 / B.6.</summary>
     public static class InsSettings
     {
@@ -36,6 +42,17 @@ namespace Silverline
         public const string ClaimLetters = "insurance.claimLetters";
         public const string HospitalCapDays = "insurance.hospitalCapDays";
         public const string HospitalCapWindow = "insurance.hospitalCapWindow";
+        public const string ChangeFee = "insurance.changeFee";
+        public const string ChangeWaitingDays = "insurance.changeWaitingDays";
+        public const string ChangeLimit = "insurance.changeLimitPerQuadrum";
+        public const string PensionRule = "insurance.pensionRule";
+        public const string PensionMaxHours = "insurance.pensionMaxWorkHours";
+        public const string ClaimModeKey = "insurance.claimMode";
+        public const string DeadlineScale = "insurance.deadlineScale";
+        public const string ClaimReminder = "insurance.claimReminder";
+        public const string FormTextAi = "insurance.formTextAi";
+        public const string ShowStatusColumn = "insurance.showStatusColumn";
+        public const string ShowStatusTab = "insurance.showStatusTab";
 
         static bool registered;
 
@@ -86,6 +103,29 @@ namespace Silverline
                 "The most sickbed days the Rim Health Plan pays per colonist inside the window below (a hospital-indemnity cap; it stops a chronic illness from paying more than the premium costs).", hardMax: 60);
             HSettings.Int(m, cat, HospitalCapWindow, 15, 1, 60, "Rim Health Plan: window (days)",
                 "The cap above counts the paid days of every colonist over this many days (a quadrum by default).", hardMax: 120);
+            HSettings.Int(m, cat, ChangeFee, 0, 0, 500, "Fee for changing a policy (silver)",
+                "What Clawback Mutual charges for every change of sum, tier or add-ons of a running policy (\"administrative effort\"). Free on Standard Room.", hardMax: 5000,
+                tiers: new[] { 0f, 0f, 0f, 0f, 25f, 60f, 120f });
+            HSettings.Int(m, cat, ChangeWaitingDays, 3, 0, 30, "Waiting period after an upgrade (days)",
+                "After you raise the sum, the tier or add an add-on, claims for events inside this waiting period are still assessed with the old cover (a policy raised one minute before a raid does not pay at the new level). Lowering cover has no waiting period.", hardMax: 120,
+                tiers: new[] { 0f, 1f, 2f, 3f, 5f, 8f, 15f });
+            HSettings.Int(m, cat, ChangeLimit, 0, 0, 6, "Changes per policy and quadrum",
+                "How often one policy may be changed per quadrum. 0 = unlimited (Standard Room); Overbooked and harder levels limit it.", hardMax: 20,
+                tiers: new[] { 0f, 0f, 0f, 0f, 2f, 1f, 1f });
+            HSettings.Enum(m, cat, PensionRule, PensionRuleMode.Enforce, "Pension work rule",
+                "Whoever draws a daily pension (Golden Years, Good Enough or Premium, age 60+) may work only a few hours per day in the timetable. Enforce: strikes cost the pension (2nd: this period's pension, 3rd: the entitlement). Warn only: letters and the alert, no penalty. Off: no rule.");
+            HSettings.Int(m, cat, PensionMaxHours, 2, 0, 8, "Pension: allowed work hours per day",
+                "Hours per day a pensioner may have set to Work in the timetable. Anything, Joy, Sleep and Meditate count as free time.", hardMax: 24,
+                tiers: new[] { 4f, 3f, 2f, 2f, 2f, 1f, 0f });
+            HSettings.Enum(m, cat, ClaimModeKey, ClaimMode.ByForm, "How claims are filed",
+                "By form: an insured event brings a \"claim possible\" letter and you file the claim on a form before the deadline (the outcome is rolled exactly as before; the form is cosmetic apart from the payout choice). Automatic: claims are filed for you at the moment of damage.");
+            HSettings.Float(m, cat, DeadlineScale, 1f, 0.25f, 4f, "Claim deadlines (factor)",
+                "Multiplies the filing deadline of every policy (Wanderlust 5 days, Legal Shield 5 days, property about 15 days at Good Enough; Premium +50 %, Bare Minimum -30 %).", hardMin: 0.1f, hardMax: 20f,
+                tiers: new[] { 2f, 1.5f, 1.25f, 1f, 0.7f, 0.5f, 0.3f });
+            HSettings.Bool(m, cat, ClaimReminder, true, "Remind me before a claim deadline", "A short reminder letter two days before a filing window closes.");
+            HSettings.Bool(m, cat, FormTextAi, true, "AI reply to the claim statement", "When the AI flavour module is on and you agreed to it, the claims department answers your statement in its own words (the amount and the outcome are not changed). Without it the statement is stored and ignored.", nerd: true);
+            HSettings.Bool(m, cat, ShowStatusColumn, true, "Insurance column in the colonist tables", "Shows the insurance status of every colonist in the Assign table (only once the first policy exists).", nerd: true);
+            HSettings.Bool(m, cat, ShowStatusTab, true, "Insurance tab on colonists", "Adds an Insurance tab to the inspector of colonists (only once the first policy exists).", nerd: true);
             HSettings.Bool(m, cat, ClaimLetters, true, "Letters for every claim", "Clawback Mutual writes a letter for every filed claim (at most one \"claim filed\" notice per day) and every decision.", nerd: true);
         }
 
@@ -100,6 +140,9 @@ namespace Silverline
         public static int Notice => HSettings.GetInt(NoticeDays);
         public static int Billing => Math.Max(1, HSettings.GetInt(BillingDays));
         public static int HospitalCap => Math.Max(1, HSettings.GetInt(HospitalCapDays));
+        public static bool ByForm => HSettings.GetEnum<ClaimMode>(ClaimModeKey) == ClaimMode.ByForm;
+        public static PensionRuleMode PensionMode => HSettings.GetEnum<PensionRuleMode>(PensionRule);
+        public static int PensionHours => HSettings.GetInt(PensionMaxHours);
         public static int HospitalWindow => Math.Max(1, HSettings.GetInt(HospitalCapWindow));
 
         public static bool TrickActive(string key, double threshold = 0.04)

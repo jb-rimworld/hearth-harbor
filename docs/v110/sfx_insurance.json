@@ -1,0 +1,38 @@
+[
+ {
+  "file": "Common/Sounds/HH/Insurance/PolicyChanged.ogg",
+  "prompt": "Pen scratch and a firm rubber-stamp thunk: a policy change is filed",
+  "seconds": 1.4,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Insurance/BulkSign.ogg",
+  "prompt": "Stack of papers stamped in quick series, five stamps, office desk",
+  "seconds": 2.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Insurance/ClaimPossibleLetter.ogg",
+  "prompt": "Letter arrival: paper sliding on a desk plus a soft office bell ping",
+  "seconds": 1.5,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Insurance/ClaimStamp.ogg",
+  "prompt": "Single heavy rubber stamp thunk on paper, RECEIVED",
+  "seconds": 0.8,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Insurance/ClaimReminder.ogg",
+  "prompt": "Short ticking clock, five ticks, a little anxious office clock",
+  "seconds": 1.5,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Insurance/PensionGong.ogg",
+  "prompt": "Soft low gong, polite and slightly disappointed",
+  "seconds": 2.5,
+  "loop": false
+ }
+]

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Insurance status of every colonist as five small icons (pension, health, accident, liability, legal). Zero width until the first policy exists. -->
+  <PawnColumnDef>
+    <defName>SL_Insurance</defName>
+    <label>insurance</label>
+    <workerClass>Silverline.PawnColumnWorker_Insurance</workerClass>
+    <sortable>true</sortable>
+  </PawnColumnDef>
+</Defs>
