@@ -69,31 +69,54 @@ namespace Silverline
             return DropCellFinder.TradeDropSpot(map);
         }
 
-        /// <summary>Makes <paramref name="coins"/> silver appear next to a bank building.</summary>
+        /// <summary>Most stacks that are placed by hand at a counter; the rest of a huge withdrawal comes by drop pod.</summary>
+        public const int PlaceMaxStacks = 100;
+        /// <summary>Most drop pods one withdrawal may use (pods carry any number of stacks; pod spam would stall the game).</summary>
+        public const int MaxPodsPerWithdrawal = 10;
+
+        /// <summary>Pure: splits a withdrawal into pod loads. Each pod carries at most <paramref name="maxLoad"/> silver (bank.podMaxLoad) unless that would need more than
+        /// <paramref name="maxPods"/> pods; then the loads grow evenly. The sum always equals <paramref name="coins"/>.</summary>
+        public static List<int> PodPlan(int coins, int maxLoad, int maxPods)
+        {
+            var res = new List<int>();
+            if (coins <= 0) return res;
+            maxLoad = Math.Max(1, maxLoad); maxPods = Math.Max(1, maxPods);
+            int pods = (int)Math.Min((long)maxPods, ((long)coins + maxLoad - 1) / maxLoad);
+            int each = coins / pods, extra = coins % pods;
+            for (int i = 0; i < pods; i++) res.Add(each + (i < extra ? 1 : 0));
+            return res;
+        }
+
+        /// <summary>Makes <paramref name="coins"/> silver appear next to a bank building (at most <see cref="PlaceMaxStacks"/> stacks, the rest comes by pod).</summary>
         public static void PlaceAt(Map map, IntVec3 cell, int coins)
         {
             int limit = Math.Max(1, ThingDefOf.Silver.stackLimit);
+            int stacks = 0;
             while (coins > 0)
             {
+                if (stacks >= PlaceMaxStacks) { DropPods(map, cell, coins); return; }
                 int n = Math.Min(coins, limit);
                 var s = ThingMaker.MakeThing(ThingDefOf.Silver); s.stackCount = n;
                 if (!GenPlace.TryPlaceThing(s, cell, map, ThingPlaceMode.Near)) { s.Destroy(); HLog.Warn("Bank", "Could not place " + n + " silver at " + cell); break; }
-                coins -= n;
+                coins -= n; stacks++;
             }
         }
 
-        /// <summary>Silver arrives by drop pod near <paramref name="cell"/>: loads are split into pods of up to 4 stacks.</summary>
+        /// <summary>Silver arrives by drop pod near <paramref name="cell"/>: pods hold up to bank.podMaxLoad silver, at most <see cref="MaxPodsPerWithdrawal"/> pods.</summary>
         public static void DropPods(Map map, IntVec3 cell, int coins)
         {
             int limit = Math.Max(1, ThingDefOf.Silver.stackLimit);
-            var stacks = new List<Thing>();
-            while (coins > 0)
-            {
-                int n = Math.Min(coins, limit);
-                var s = ThingMaker.MakeThing(ThingDefOf.Silver); s.stackCount = n; stacks.Add(s); coins -= n;
-            }
             var groups = new List<List<Thing>>();
-            for (int i = 0; i < stacks.Count; i += 4) groups.Add(stacks.Skip(i).Take(4).ToList());
+            foreach (int load in PodPlan(coins, HSettings.GetInt("bank.podMaxLoad"), MaxPodsPerWithdrawal))
+            {
+                var g = new List<Thing>(); int left = load;
+                while (left > 0)
+                {
+                    int n = Math.Min(left, limit);
+                    var s = ThingMaker.MakeThing(ThingDefOf.Silver); s.stackCount = n; g.Add(s); left -= n;
+                }
+                groups.Add(g);
+            }
             DropPodUtility.DropThingGroupsNear(cell, map, groups, 110, false, false, false, false, true);
         }
     }

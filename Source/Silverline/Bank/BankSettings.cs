@@ -18,24 +18,29 @@ namespace Silverline
             const ModuleId B = ModuleId.Bank;
             // Interest and profitability (8.8)
             HSettings.LogFloat(B, "Interest & profitability", "bank.profit", 1.2f, 0.01f, 100f,
-                "Bank M per game year (profitability)", "How much invested money grows on average per game year (60 days). 1.0 = plus/minus nothing, 1.2 = +20 % a year, 0 = the money disappears. Log scale 0.01 to 100; type a number for the exact value. Follows the difficulty slider until you set it yourself.",
+                "Bank M per game year (profitability)", "How much invested money grows on average per game year (60 days). This is the bank's own M: it drives the account interest and loan rates. The investment M (Investments page) drives the markets; the account never pays more than Mattress Plus at that M. Keep both close together. 1.0 = plus/minus nothing, 1.2 = +20 % a year, 0 = the money disappears. Log scale 0.01 to 100; type a number for the exact value. Follows the difficulty slider until you set it yourself.",
                 hardMin: 0f, hardMax: 1000f, tiers: new[] { 100f, 2.0f, 1.5f, 1.2f, 1.0f, 0.7f, 0.1f });
+            // F21 (1.1.0): the account is a savings account. It pays only a share of the market's surplus, so investing always pays more.
+            HSettings.Float(B, "Interest & profitability", "bank.accountShare", 0.2f, 0f, 1f,
+                "Account interest: share of the market return", "A bank account only pays this fraction of the market's surplus (M - 1) a year, and never more than the savings product Mattress Plus (which follows the investment profitability). 0.2 means: at M 1.2 the account pays +4 % a year (the savings product Mattress Plus pays +8 %, the index about +20 %); at M 2 it pays +20 %. Below M 1 it loses a little, never more than 10 % a year. Both profitability sliders (this bank M and the investment M) are worth keeping close together. Each bank adds its own small bonus or malus. Investments are not affected.",
+                hardMin: 0f, hardMax: 2f);
+            // Old key from before 1.1.0 (account followed M^beta). Kept registered so profiles and saves that stored it stay valid; it is not used any more.
             HSettings.Float(B, "Interest & profitability", "bank.accountBeta", 1.0f, 0f, 2f,
-                "Account interest follows the slider (share)", "1.0 = the colony account earns the profitability multiple (default). 0.4 would be a classic savings account that only follows 40 % of the way (in the exponent).", nerd: true, hardMin: 0f, hardMax: 4f);
-            HSettings.Percent(B, "Interest & profitability", "bank.directDepositFee", 0.005f, 0f, 0.05f,
-                "Fee for direct deposit", "Fee on money that is routed straight into the account (till takings). 0 to 100 %.", hardMin: 0f, hardMax: 1f);
+                "Account interest exponent (not used since 1.1.0)", "Replaced by 'Account interest: share of the market return'. Kept so older save games load; changing it does nothing.", nerd: true, hardMin: 0f, hardMax: 4f);
             // Fees and services (8.2, 8.3)
             HSettings.Bool(B, "Account", "bank.directDeposit", true, "Route till money straight to the bank",
                 "Once an account exists, the tills of your businesses are emptied into the account at midnight instead of leaving silver on the floor.");
             HSettings.Bool(B, "Account", "bank.tradeDeposit", false, "Auto-deposit trade silver",
                 "Off by default, so selling to a trader still hands you coins you can spend at once. With this on (and direct deposit on), silver you receive from traders and trade ships is moved into the account right after the deal (at the direct deposit fee). Caravans are not affected.");
             HSettings.Percent(B, "Fees", "bank.feeFactor", 1.0f, 0f, 3f, "Bank fee level", "Multiplies all fees of your bank. 0 % = no fees at all.", hardMin: 0f, hardMax: 10f);
+            HSettings.Percent(B, "Fees", "bank.directDepositFee", 0.005f, 0f, 0.05f,
+                "Fee for direct deposit", "Fee on money that is routed straight into the account (till takings). 0 to 100 %.", hardMin: 0f, hardMax: 1f);
             HSettings.Silver(B, "Fees", "bank.switchFee", 50, 0, 500, "Fee for changing banks", "What it costs to move your account to another bank (KONZEPT 2.2: 50 silver).");
             HSettings.Float(B, "Services", "bank.depositDelayHours", 1f, 0f, 6f, "Deposit delay without a branch (hours)", "Silver put into the account without a bank counter or ATM nearby arrives after this many hours.", hardMin: 0f, hardMax: 48f);
             HSettings.Float(B, "Services", "bank.podMinHours", 2f, 0.1f, 24f, "Drop pod delivery: earliest (hours)", "Withdrawals without a counter or ATM come by drop pod after at least this long.", hardMin: 0.01f, hardMax: 120f);
             HSettings.Float(B, "Services", "bank.podMaxHours", 12f, 0.1f, 48f, "Drop pod delivery: latest (hours)", "... and at most this long.", hardMin: 0.01f, hardMax: 240f);
             HSettings.Silver(B, "Services", "bank.atmDailyLimit", 500, 100, 5000, "ATM daily limit", "The most silver you can take out of ATMs per day.");
-            HSettings.Silver(B, "Services", "bank.podMaxLoad", 2000, 500, 20000, "Largest single withdrawal", "The most silver one withdrawal may cover. Drop pods split big loads into several pods.", nerd: true);
+            HSettings.Silver(B, "Services", "bank.podMaxLoad", 2000, 500, 20000, "Largest single drop pod", "A big withdrawal comes in drop pods of about this many silver each, never more than 10 pods per withdrawal (huge sums make heavier pods instead of more of them). It does not limit how much you can deposit or withdraw.", nerd: true);
             HSettings.Enum(B, "Research", "bank.researchMode", BankResearchMode.Full, "Banking research", "Full: ATMs, night safes, branches and loans need their research. Off: everything is available from the start. (The global Research mode in the core settings does the same for every module.)");
             // Wealth and mood (8.4, 8.10)
             HSettings.Percent(B, "Wealth and mood", "bank.wealthShare", 1.0f, 0f, 1.5f, "Bank balance counts for the storyteller (%)",
@@ -44,6 +49,8 @@ namespace Silverline
             HSettings.Percent(B, "Wealth and mood", "bank.moodScale", 1.0f, 0.1f, 5f, "Wealth tier thresholds", "Scales the net worth thresholds of the mood tiers (Broke … Too Big To Fail).", nerd: true, hardMin: 0.01f, hardMax: 100f);
             // Loans and collections (8.9, 9.2, 9.4)
             HSettings.Silver(B, "Loans", "bank.loanFloor", 250, 0, 2000, "Starter credit", "Minimum credit limit for a colony with a fine score, so a young colony can borrow a little.");
+            HSettings.Percent(B, "Loans", "bank.loanPortfolioShare", 0.5f, 0f, 1f, "Investments counted for credit limits", "How much of your investments (at market value) counts as wealth when the bank decides how much you may borrow. 100 % = fully, 0 = not at all. The net worth shown in the lobby always counts them fully.", nerd: true, hardMin: 0f, hardMax: 1f);
+            HSettings.Bool(B, "Sound", "bank.sounds", true, "Bank menu sounds", "Clicks, coin counting, stamps in the bank window, and the lottery win or lose sound when a draw you bought tickets for is held.");
             HSettings.Int(B, "Loans", "bank.loanIntervalDays", 5, 1, 15, "Days between instalments", "Loan instalments are due every this many days.", hardMin: 1, hardMax: 30);
             HSettings.Int(B, "Loans", "bank.loanMaxTermDays", 120, 15, 240, "Longest loan term (days)", "", nerd: true, hardMin: 5, hardMax: 600);
             HSettings.Percent(B, "Loans", "bank.lateFee", 0.05f, 0f, 0.2f, "Late fee", "Charged on the overdue instalment when a loan reaches collection stage 2.", hardMin: 0f, hardMax: 1f);
@@ -73,7 +80,15 @@ namespace Silverline
         /// <summary>Raid size factor of the collection stages. The special switch core.ironBank means stage 7 is really reached, so the violent stages never run at 0: it floors the factor at 1.</summary>
         public static double CollectionAnger { get { double a = HSettings.Get("bank.collectionAnger"); return CoreSettings.Switch("core.ironBank") ? System.Math.Max(a, 1.0) : a; } }
         public static bool ResearchOff => CoreSettings.ResearchOff || HSettings.GetInt("bank.researchMode") == (int)BankResearchMode.Off;
-        public static double AccountBeta => HSettings.Get("bank.accountBeta");
+        /// <summary>Share of the market surplus the account pays (bank.accountShare). Replaces the old exponent bank.accountBeta.</summary>
+        public static double AccountShare => HSettings.Get("bank.accountShare");
+        /// <summary>The account never pays more than the savings product Mattress Plus at the investment M (F21: the account stays below investing, whatever the two M sliders say).</summary>
+        public static double AccountCeiling => Hearth.Markets.MarketMath.SavingsMultiple(FinanceSettings.M);
+        /// <summary>Yearly multiple of the account for a bank with the given interest modifier, with the ceiling applied. One place for the tick, the lobby, the terms page and the comparison.</summary>
+        public static double AccountMultiple(double bankMod) => FinanceMath.AccountYearlyMultiple(ProfitM, AccountShare, bankMod, AccountCeiling);
+        /// <summary>Only this share of the investments counts for credit limits (bank.loanPortfolioShare).</summary>
+        public static double LoanPortfolioShare => HSettings.Get("bank.loanPortfolioShare");
+        public static bool Sounds => HSettings.GetBool("bank.sounds");
         /// <summary>The bank's fee multiplier: the setting times the colony's fee factor (a penny-pinching colonist reads every contract: x0.8).</summary>
         public static double FeeFactor => HSettings.Get("bank.feeFactor") * ColonistFeeFactor;
 

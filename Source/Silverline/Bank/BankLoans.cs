@@ -19,7 +19,7 @@ namespace Silverline
 
         public double YearlyLoanRate(SL_BankDef b = null) => FinanceMath.LoanYearlyRate(BankSettings.ProfitM, (b ?? Bank)?.loanSpread ?? 0.12);
 
-        public double LoanBasis() => Math.Max(0, NetWorth.Silver) + 0.25 * ColonyWealth();
+        public double LoanBasis() => Math.Max(0, LoanNetWorth.Silver) + 0.25 * ColonyWealth();
 
         public int EffectiveScore()
         {

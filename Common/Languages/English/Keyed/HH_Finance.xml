@@ -177,13 +177,50 @@
   <HH.Finance.Lottery.Quick5>Quick pick ×5</HH.Finance.Lottery.Quick5>
   <HH.Finance.Lottery.Quick20>Quick pick ×20</HH.Finance.Lottery.Quick20>
   <HH.Finance.Lottery.YourTickets>Your tickets for the next draw: {0} · spent in total {1} · won in total {2}</HH.Finance.Lottery.YourTickets>
+  <HH.Finance.Lottery.Clear>Clear</HH.Finance.Lottery.Clear>
+  <HH.Finance.Lottery.MyCount>Your tickets for this draw</HH.Finance.Lottery.MyCount>
+  <HH.Finance.Lottery.MySpent>{0} spent on this draw</HH.Finance.Lottery.MySpent>
+  <HH.Finance.Lottery.MySpentFree>{0} spent on this draw, {1} of the tickets were free</HH.Finance.Lottery.MySpentFree>
+  <HH.Finance.Lottery.MyNone>You hold no ticket for the next draw yet.</HH.Finance.Lottery.MyNone>
+  <HH.Finance.Lottery.CountTip>Every ticket you buy stays here until the draw. After the draw it moves to "Last draw" so you can see what matched.</HH.Finance.Lottery.CountTip>
+  <HH.Finance.Lottery.Odds>Jackpot: 1 in {0} per ticket. Any prize: about 1 in {1}.</HH.Finance.Lottery.Odds>
+  <HH.Finance.Lottery.Expected>On average a ticket gives back {0} of its {1} ({2} % payout share). The rest is the house's.</HH.Finance.Lottery.Expected>
+  <HH.Finance.Lottery.BuyCard>Buy tickets</HH.Finance.Lottery.BuyCard>
+  <HH.Finance.Lottery.Preview>Your ticket so far: {0} of {1} numbers, star {2}</HH.Finance.Lottery.Preview>
+  <HH.Finance.Lottery.StarNone>not picked</HH.Finance.Lottery.StarNone>
+  <HH.Finance.Lottery.BuyTicket>Buy this ticket ({0})</HH.Finance.Lottery.BuyTicket>
+  <HH.Finance.Lottery.QuickN>Quick picks</HH.Finance.Lottery.QuickN>
+  <HH.Finance.Lottery.BuyN>Buy ×{0} ({1})</HH.Finance.Lottery.BuyN>
+  <HH.Finance.Lottery.QuickTip>Random tickets, bought at once. Up to {0} per click.</HH.Finance.Lottery.QuickTip>
+  <HH.Finance.Lottery.Flash>+{0} ticket(s) · −{1}</HH.Finance.Lottery.Flash>
+  <HH.Finance.Lottery.FlashFree>+{0} ticket(s) · {1} free</HH.Finance.Lottery.FlashFree>
+  <HH.Finance.Lottery.NotEnough>The account does not hold {0}.</HH.Finance.Lottery.NotEnough>
+  <HH.Finance.Lottery.CardTickets>Your tickets</HH.Finance.Lottery.CardTickets>
+  <HH.Finance.Lottery.TicketsCount>{0} tickets · newest first</HH.Finance.Lottery.TicketsCount>
+  <HH.Finance.Lottery.LastDraw>Last draw #{0}</HH.Finance.Lottery.LastDraw>
+  <HH.Finance.Lottery.LastDrawLine>Drawn: {0}. You had {1} ticket(s) for {2} silver. Best: {3} of 5 numbers{4}. Prize: {5}.</HH.Finance.Lottery.LastDrawLine>
+  <HH.Finance.Lottery.StarMatch> and the star</HH.Finance.Lottery.StarMatch>
+  <HH.Finance.Lottery.NoLast>No draw yet. The first one is coming.</HH.Finance.Lottery.NoLast>
+  <HH.Finance.Lottery.FreeTag>free</HH.Finance.Lottery.FreeTag>
+  <HH.Finance.Lottery.ColonySold>Tickets sold this draw: {0} · your take so far: {1}</HH.Finance.Lottery.ColonySold>
+  <HH.Finance.Lottery.ColonyTerms>Terms of your lottery</HH.Finance.Lottery.ColonyTerms>
+  <HH.Finance.Lottery.ColonyState>Colony lottery: {0}</HH.Finance.Lottery.ColonyState>
+  <HH.Finance.Lottery.StateOpen>open</HH.Finance.Lottery.StateOpen>
+  <HH.Finance.Lottery.StateClosed>closed</HH.Finance.Lottery.StateClosed>
+  <HH.Finance.Lottery.SetIn>Price, payout share, draw interval and fee are mod settings of this save game.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.OpenSettings>Change in the settings</HH.Finance.Lottery.OpenSettings>
+  <HH.Finance.Lottery.OpenSettingsTip>Opens Mod Options for Hearth &amp; Harbor on the Bank page (category Lottery).</HH.Finance.Lottery.OpenSettingsTip>
+  <HH.Finance.Lottery.KeptNote> (showing the {0} best of your {1} tickets)</HH.Finance.Lottery.KeptNote>
+  <HH.Finance.Lottery.DaysUnit>{0} d</HH.Finance.Lottery.DaysUnit>
+  <HH.Finance.Lottery.SilverUnit>{0} silver</HH.Finance.Lottery.SilverUnit>
+  <HH.Finance.Lottery.Matches>{0} of 5 numbers</HH.Finance.Lottery.Matches>
+  <HH.Finance.Compare>Bank account and products, per year</HH.Finance.Compare>
   <HH.Finance.Lottery.History>Last draws</HH.Finance.Lottery.History>
   <HH.Finance.Lottery.HistoryRow>#{0}: {1} · jackpot {2} · your tickets {3} · you won {4}</HH.Finance.Lottery.HistoryRow>
   <HH.Finance.Lottery.JackpotHit>WON</HH.Finance.Lottery.JackpotHit>
   <HH.Finance.Lottery.BadTicket>A ticket needs five different numbers from 1 to 40 and a star from 1 to 10.</HH.Finance.Lottery.BadTicket>
   <HH.Finance.Lottery.Bought>Ticket bought: {0}.</HH.Finance.Lottery.Bought>
   <HH.Finance.Lottery.BoughtMany>{0} tickets bought.</HH.Finance.Lottery.BoughtMany>
-  <HH.Finance.Lottery.FreeTicket>Free ticket, thanks to {1}'s luck: {0}.</HH.Finance.Lottery.FreeTicket>
   <HH.Finance.Lottery.News.Drawn>Glitterworld Grand Draw: {0}. {1}</HH.Finance.Lottery.News.Drawn>
   <HH.Finance.Lottery.News.Won>Glitterworld Grand Draw: {0}. {1} You won {2}.</HH.Finance.Lottery.News.Won>
   <HH.Finance.Lottery.News.Colony>Your lottery drew {0}: {1} jackpot winners among {2} tickets.</HH.Finance.Lottery.News.Colony>

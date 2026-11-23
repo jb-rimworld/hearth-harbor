@@ -44,6 +44,12 @@ namespace Hearth.Markets
             return l;
         }
 
+        /// <summary>Chance that one ticket of the global draw wins any prize (all ranks together). About 1 in 52 for 5 of 40 + star.</summary>
+        public static double AnyPrizeProbability() { double p = 0; foreach (var r in GlobalRanks()) p += r.Probability; return p; }
+
+        /// <summary>"1 in N" for any prize, rounded to a whole number.</summary>
+        public static double AnyPrizeOdds() { double p = AnyPrizeProbability(); return p <= 0 ? 0 : Math.Round(1.0 / p); }
+
         /// <summary>Colony lottery: 4 of 25, no star. Jackpot 4 right, 2nd 3 right, 3rd 2 right (pot model).</summary>
         public static readonly int ColonyPool = 25, ColonyPicks = 4;
         public static List<Rank> ColonyRanks(double jackpotShare, double secondShare, double thirdShare)

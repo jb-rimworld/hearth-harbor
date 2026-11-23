@@ -86,6 +86,20 @@ namespace Hearth
         /// <summary>Set by HearthUI when Hearth.dll provides the full settings window.</summary>
         public static Action<Rect> SettingsWindowOverride;
         public static Func<string> SettingsCategoryOverride;
+        /// <summary>Set by the rich settings window: jumps to a page ("mod:Bank", "difficulty" …) and clears the search. Null without Hearth.dll.</summary>
+        public static Action<string> SettingsPageSelector;
+
+        /// <summary>Opens the mod settings window of Hearth &amp; Harbor, on the given page when the rich window is installed (e.g. "mod:Bank").
+        /// Used by in-game screens that point the player to "the real settings" (F19). Never throws.</summary>
+        public static void OpenSettings(string pageId = null)
+        {
+            try
+            {
+                if (pageId != null) SettingsPageSelector?.Invoke(pageId);
+                if (Instance != null) Find.WindowStack.Add(new RimWorld.Dialog_ModSettings(Instance));
+            }
+            catch (Exception e) { HLog.Warn("Core", "Could not open the mod settings: " + e.Message); }
+        }
         public static readonly List<string> PatchFailures = new List<string>();
 
         public HearthMod(ModContentPack content) : base(content)

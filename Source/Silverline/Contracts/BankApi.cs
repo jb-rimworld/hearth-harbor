@@ -67,7 +67,14 @@ namespace Silverline
     public static class BankTabs
     {
         public static readonly List<BankTab> Tabs = new List<BankTab>();
-        public static void Register(BankTab t) { Tabs.RemoveAll(x => x.Id == t.Id); Tabs.Add(t); Tabs.Sort((a, b) => a.Order.CompareTo(b.Order)); }
+        /// <summary>Order of the pages of the bank window (1.1.0): the useful ones first. Applied when a tab is registered, so the owners of the tabs need not change.</summary>
+        static readonly Dictionary<string, int> Preferred = new Dictionary<string, int>
+        { { "lobby", 10 }, { "loans", 20 }, { "invest", 30 }, { "insurance", 40 }, { "lottery", 50 }, { "history", 60 }, { "terms", 70 } };
+        public static void Register(BankTab t)
+        {
+            if (Preferred.TryGetValue(t.Id, out int o)) t.Order = o;
+            Tabs.RemoveAll(x => x.Id == t.Id); Tabs.Add(t); Tabs.Sort((a, b) => a.Order.CompareTo(b.Order));
+        }
         public static IEnumerable<BankTab> VisibleTabs => Tabs.Where(t => Modules.On(ModuleId.Bank) && Modules.On(t.Module) && (t.Visible == null || Guard.Run(t.Module, "BankTab.Visible." + t.Id, t.Visible, false)));
     }
 }

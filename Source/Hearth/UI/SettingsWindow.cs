@@ -52,6 +52,7 @@ namespace Hearth.Shell
         public static void Install()
         {
             HearthMod.SettingsWindowOverride = Draw;
+            HearthMod.SettingsPageSelector = id => { pageId = id; search = ""; scrollMain = Vector2.zero; mainViewH = 1000f; if (HearthProfile.Current != null) editTemplate = false; };
         }
 
         public static void Draw(Rect inRect)

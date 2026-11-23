@@ -54,12 +54,75 @@ public class YieldTests
         double expect = 500 * Math.Pow(1.2, 2);
         Assert.InRange(Math.Abs(end.Silver / expect - 1), 0, 1e-4);
     }
-    [Fact] public void AccountFollowsBetaAndBankModifier()
+    [Fact] public void AccountIsASavingsFormulaNotTheMarket()
     {
-        Assert.InRange(FinanceMath.AccountYearlyMultiple(1.2, 1.0, 1.0), 1.2 - 1e-12, 1.2 + 1e-12);
-        Assert.True(FinanceMath.AccountYearlyMultiple(1.2, 0.4, 1.0) < 1.2);
-        Assert.True(FinanceMath.AccountYearlyMultiple(1.2, 1.0, 0.8) < FinanceMath.AccountYearlyMultiple(1.2, 1.0, 1.0));
-        Assert.Equal(0.0, FinanceMath.AccountYearlyMultiple(0, 1, 1));
+        // default M 1.2, share 0.2: +4 % a year (F21)
+        Assert.InRange(FinanceMath.AccountYearlyMultiple(1.2, 0.2, 1.0), 1.04 - 1e-12, 1.04 + 1e-12);
+        Assert.InRange(FinanceMath.AccountYearlyPercent(1.2, 0.2, 1.1), 4.4 - 1e-9, 4.4 + 1e-9);   // Too Big To Fail
+        Assert.InRange(FinanceMath.AccountYearlyPercent(1.2, 0.2, 0.9), 3.6 - 1e-9, 3.6 + 1e-9);   // Imperial Treasury
+        Assert.Equal(1.0, FinanceMath.AccountYearlyMultiple(1.0, 0.2, 1.0));                       // M = 1: nothing
+        Assert.True(FinanceMath.AccountYearlyMultiple(0.7, 0.2, 1.0) < 1.0);                         // M < 1 loses a little
+        Assert.True(FinanceMath.AccountYearlyMultiple(1.2, 0.4, 1.0) > FinanceMath.AccountYearlyMultiple(1.2, 0.2, 1.0));
+        Assert.True(FinanceMath.AccountYearlyMultiple(1.2, 0.2, 0.8) < FinanceMath.AccountYearlyMultiple(1.2, 0.2, 1.0));
+    }
+    [Fact] public void AccountHasAFloorAndACap()
+    {
+        Assert.Equal(FinanceMath.AccountFloor, FinanceMath.AccountYearlyMultiple(0.1, 0.2, 1.0), 12);   // the hardest tier costs 10 %, not 90 %
+        Assert.Equal(FinanceMath.AccountFloor, FinanceMath.AccountYearlyMultiple(0, 1, 1), 12);
+        Assert.Equal(FinanceMath.AccountCap, FinanceMath.AccountYearlyMultiple(100, 0.2, 1.0), 12);       // Comped: triples at most
+        Assert.Equal(1.0, FinanceMath.AccountYearlyMultiple(double.NaN, 0.2, 1.0));
+        Assert.Equal(1.2, FinanceMath.AccountYearlyMultiple(2.0, 0.2, 1.0), 12);                           // +20 % at M = 2
+    }
+    [Theory]
+    [InlineData(0.7)] [InlineData(1.0)] [InlineData(1.2)] [InlineData(1.5)] [InlineData(2.0)]
+    public void AccountPaysLessThanSavingsLessThanBondLessThanIndex(double m)
+    {
+        double account = FinanceMath.AccountYearlyMultiple(m, FinanceMath.DefaultAccountShare, 1.0);
+        double mattress = Hearth.Markets.MarketMath.SavingsMultiple(m);
+        double index = Hearth.Markets.MarketMath.LnMAsset(1.0, FinDetMath.Ln(m), 0);   // beta 1 reference index
+        if (m >= 1.0)
+        {
+            Assert.True(account <= mattress + 1e-12, $"account {account} <= savings product {mattress} at M {m}");
+            Assert.True(mattress <= Math.Exp(index) + 1e-9, "savings product <= index");
+        }
+        else Assert.True(account >= mattress, "in a bad market the account loses less than the savings product (the floor protects it)");
+    }
+    [Fact] public void AccountOrderingAtTheDefault()
+    {
+        double m = 1.2;
+        double account = FinanceMath.AccountYearlyMultiple(m, FinanceMath.DefaultAccountShare, 1.1);   // best bank
+        double mattress = Hearth.Markets.MarketMath.SavingsMultiple(m);                                    // 1.08
+        Assert.True(account < mattress && mattress < 1.116 && 1.116 < Math.Pow(m, 1.0), "account < Mattress < bond < index");
+    }
+    [Fact] public void AccountNeverBeatsTheCeiling()
+    {
+        double mattress = Hearth.Markets.MarketMath.SavingsMultiple(1.2);                                   // 1.08
+        Assert.Equal(mattress, FinanceMath.AccountYearlyMultiple(2.0, 0.2, 1.0, mattress), 12);           // bank M 2.0 would pay 1.2: capped
+        Assert.Equal(1.04, FinanceMath.AccountYearlyMultiple(1.2, 0.2, 1.0, mattress), 12);               // below the ceiling nothing changes
+        Assert.Equal(mattress, FinanceMath.AccountYearlyMultiple(5, 1.0, 1.1, mattress), 12);
+        Assert.Equal(FinanceMath.AccountFloor, FinanceMath.AccountYearlyMultiple(0.1, 0.2, 1.0, 0.85), 12);  // the floor wins over a low ceiling
+        Assert.Equal(FinanceMath.AccountYearlyMultiple(1.5, 0.2, 1.0), FinanceMath.AccountYearlyMultiple(1.5, 0.2, 1.0, double.PositiveInfinity), 12);
+    }
+
+    [Fact] public void AccountDailyFactorMatchesTheYear()
+    {
+        double f = FinanceMath.AccountDailyFactor(1.2, 0.2, 1.0);
+        Assert.InRange(Math.Abs(Math.Pow(f, FinanceMath.DaysPerYear) - 1.04), 0, 1e-9);
+    }
+    [Fact] public void NetWorthCountsInvestmentsAtMarketValue()
+    {
+        Assert.Equal(1000 + 50 + 200 + 700 - 300, FinanceMath.NetWorth(1000, 50, 200, 700, 300));
+        Assert.Equal(1000, FinanceMath.NetWorth(1000, 0, 0, 0, 0));
+        Assert.Equal(-300, FinanceMath.NetWorth(0, 0, 0, 0, 300));
+    }
+    [Fact] public void LoanBasisCountsOnlyAShareOfTheInvestments()
+    {
+        double nw = FinanceMath.NetWorth(1000, 0, 0, 800, 0);                // 1800
+        Assert.Equal(1400, FinanceMath.LoanNetWorth(nw, 800, 0.5), 9);
+        Assert.Equal(1000, FinanceMath.LoanNetWorth(nw, 800, 0.0), 9);
+        Assert.Equal(1800, FinanceMath.LoanNetWorth(nw, 800, 1.0), 9);
+        Assert.Equal(1800, FinanceMath.LoanNetWorth(nw, 800, 7.0), 9);       // shares above 1 are clamped
+        Assert.Equal(500, FinanceMath.LoanNetWorth(500, -50, 0.5), 9);       // negative investments never add
     }
     [Fact] public void NoInterestOnNegativeOrZeroBalance()
     {
@@ -186,4 +249,55 @@ public class WealthTierTests
         Assert.Equal(100000, FinanceMath.BailoutAmount(-500000, 1_000_000));
         Assert.Equal(300, FinanceMath.BailoutAmount(-300, 1_000_000));
     }
+}
+
+public class TransferMathTests
+{
+    [Theory]
+    [InlineData(0.0, 3340, 0)] [InlineData(1.0, 3340, 3340)] [InlineData(0.37, 3340, 1236)] [InlineData(0.5, 3341, 1671)] [InlineData(1.7, 100, 100)]
+    [InlineData(-0.2, 100, 0)] [InlineData(0.5, 0, 0)] [InlineData(double.NaN, 100, 0)]
+    public void AmountFromPercent(double f, long avail, long expect) => Assert.Equal(expect, TransferMath.AmountFromPercent(f, avail));
+
+    [Theory]
+    [InlineData(0, 3340, 0.0)] [InlineData(1670, 3340, 0.5)] [InlineData(3340, 3340, 1.0)] [InlineData(99999, 3340, 1.0)] [InlineData(50, 0, 0.0)] [InlineData(-5, 100, 0.0)]
+    public void PercentFromAmount(long amount, long avail, double expect) => Assert.InRange(TransferMath.PercentFromAmount(amount, avail), expect - 1e-9, expect + 1e-9);
+
+    [Fact] public void RoundTripNeverDrifts()
+    {
+        foreach (long avail in new long[] { 1, 7, 100, 3340, 123_456, 50_000_000 })
+            for (int pct = 0; pct <= 100; pct++)
+            {
+                long a = TransferMath.AmountFromPercent(pct / 100.0, avail);
+                double back = TransferMath.PercentFromAmount(a, avail);
+                Assert.True(a >= 0 && a <= avail);
+                Assert.Equal(a, TransferMath.AmountFromPercent(back, avail));   // typing the amount back gives the same amount
+            }
+    }
+    [Fact] public void MoreThanTheColonyHoldsPegsTheSliderAtTheEnd() => Assert.Equal(1.0, TransferMath.PercentFromAmount(1_000_000, 500));
+    [Fact] public void TypedAmountsAboveIntAreClamped()
+    {
+        Assert.Equal(int.MaxValue, TransferMath.ClampToCoins(1e12));
+        Assert.Equal(0, TransferMath.ClampToCoins(-4));
+        Assert.Equal(0, TransferMath.ClampToCoins(double.NaN));
+        Assert.Equal(1234, TransferMath.ClampToCoins(1234.9));
+    }
+    [Fact] public void SnapAndWholePercent()
+    {
+        Assert.Equal(0.37, TransferMath.SnapPercent(0.3712), 9);
+        Assert.Equal(1.0, TransferMath.SnapPercent(7));
+        Assert.Equal(0.0, TransferMath.SnapPercent(double.NaN));
+        Assert.Equal(37, TransferMath.WholePercent(0.372));
+        Assert.Equal(100, TransferMath.WholePercent(3));
+    }
+}
+
+public class LotteryOddsTests
+{
+    [Fact] public void AnyPrizeIsAboutOneInFiftyTwo()
+    {
+        double odds = Hearth.Markets.LotteryMath.AnyPrizeOdds();
+        Assert.InRange(odds, 30, 80);
+        Assert.InRange(Hearth.Markets.LotteryMath.AnyPrizeProbability(), 0.01, 0.04);
+    }
+    [Fact] public void AnyPrizeIsMoreLikelyThanTheJackpot() => Assert.True(Hearth.Markets.LotteryMath.AnyPrizeOdds() < Hearth.Markets.LotteryMath.JackpotOdds);
 }

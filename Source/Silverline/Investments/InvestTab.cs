@@ -34,6 +34,8 @@ namespace Silverline
 #endif
 
         static void SetMessage(string m) { message = m; messageTick = Find.TickManager?.TicksGame ?? 0; }
+        /// <summary>Shows the result of a trade under the buttons and plays the exchange sound (or the refusal).</summary>
+        static void Report(TradeResult r) { SetMessage(r.Message); BankSound.Play(r.Ok ? BankSound.Trade : BankSound.Reject); }
 
         public static int DrawCalls;
 
@@ -44,7 +46,7 @@ namespace Silverline
             g.EnsureInit(); if (!g.initialized) { FinUi.Label(rect, FT.T("HH.Finance.NotReady")); return; }
             Text.Font = GameFont.Small;
             float y = rect.y;
-            DrawHeader(new Rect(rect.x, y, rect.width, 68f), g); y += 70f;
+            DrawHeader(new Rect(rect.x, y, rect.width, 86f), g); y += 88f;
             bool hint = page == Page.Omen || page == Page.Projects;
             float footer = hint ? 88f : 74f;   // news strip (70) plus the help line only where there is one
             var body = new Rect(rect.x, y, rect.width, rect.yMax - y - footer - 4f);
@@ -77,6 +79,10 @@ namespace Silverline
             FinUi.Label(new Rect(r.x, r.y + 28f, r.width, 40f), head, GameFont.Small, FinUi.Dim);
             if (g.MarketHalted) FinUi.Label(new Rect(r.xMax - 330f, r.y, 330f, 26f), FT.T("HH.Finance.Halted"), GameFont.Small, FinUi.Down, TextAnchor.MiddleRight);
             TooltipHandler.TipRegion(new Rect(r.x, r.y + 28f, r.width, 40f), FT.T("HH.Finance.Header.Tip"));
+            // F21: the account pays clearly less than investing, and the header says so
+            var cmp = new Rect(r.x, r.y + 68f, r.width, 18f);
+            FinUi.Label(cmp, FT.T("HH.Finance.Compare") + ": " + YieldCompare.OneLine(BankGameComp.Current?.Bank, 4), GameFont.Tiny, FinUi.Dim, TextAnchor.UpperLeft, false);
+            TooltipHandler.TipRegion(cmp, string.Join("\n", YieldCompare.Rows(BankGameComp.Current?.Bank).Select(x => x.Label + ": " + YieldCompare.Pct(x.YearlyPercent))));
         }
 
         // ---- news ticker ---------------------------------------------------------------------------------------------------------------
@@ -176,14 +182,14 @@ namespace Silverline
             amountBuf = Widgets.TextField(new Rect(r.x + 62, y, 110, 26), amountBuf);
             bool parsed = FinUi.TryParseSilver(amountBuf, out Money amount);
             float bx = r.x + 178;
-            if (FinUi.Button(new Rect(bx, y, 64, 26), FT.T("HH.Finance.Buy"), canBuy && parsed, canBuy ? FT.T("HH.Finance.Buy.Tip") : whyBuy)) { var res = g.Buy(a.id, amount); SetMessage(res.Message); }
+            if (FinUi.Button(new Rect(bx, y, 64, 26), FT.T("HH.Finance.Buy"), canBuy && parsed, canBuy ? FT.T("HH.Finance.Buy.Tip") : whyBuy)) { var res = g.Buy(a.id, amount); Report(res); }
             bx += 68;
             if (FinUi.Button(new Rect(bx, y, 64, 26), FT.T("HH.Finance.Sell"), canSell && units > 0 && parsed, canSell ? FT.T("HH.Finance.Sell.Tip") : whySell))
             {
-                long u = MarketMath.UnitsFor(amount.Micro, a.price); var res = g.Sell(a.id, Math.Min(u, units)); SetMessage(res.Message);
+                long u = MarketMath.UnitsFor(amount.Micro, a.price); var res = g.Sell(a.id, Math.Min(u, units)); Report(res);
             }
             bx += 68;
-            if (FinUi.Button(new Rect(bx, y, 74, 26), FT.T("HH.Finance.SellAll"), canSell && units > 0, canSell ? null : whySell)) { var res = g.SellAll(a.id); SetMessage(res.Message); }
+            if (FinUi.Button(new Rect(bx, y, 74, 26), FT.T("HH.Finance.SellAll"), canSell && units > 0, canSell ? null : whySell)) { var res = g.SellAll(a.id); Report(res); }
             y += 30;
             // presets
             string[] pre = { "10%", "25%", "50%", "100%" }; double[] frac = { 0.1, 0.25, 0.5, 1.0 };
@@ -250,7 +256,7 @@ namespace Silverline
                 double mult = ProjectMath.PatienceMultiple(mSpar, term);
                 var row = new Rect(r.x, y, r.width, 30);
                 FinUi.Label(new Rect(row.x, row.y + 4, 360, 24), FT.T("HH.Finance.Bond.Offer", term.ToString(), mult.ToString("0.000", CultureInfo.InvariantCulture)), GameFont.Small);
-                if (FinUi.Button(new Rect(row.x + 380, row.y, 150, 26), FT.T("HH.Finance.Bond.Open"), parsed && FinanceAccounts.Available)) SetMessage(g.OpenPatienceBond(term, amount).Message);
+                if (FinUi.Button(new Rect(row.x + 380, row.y, 150, 26), FT.T("HH.Finance.Bond.Open"), parsed && FinanceAccounts.Available)) Report(g.OpenPatienceBond(term, amount));
                 y += 32;
             }
             if (message != null && Find.TickManager.TicksGame - messageTick < 3000) { FinUi.Label(new Rect(r.x, y, r.width, 40), message, GameFont.Small, new Color(1f, 0.92f, 0.6f)); }
@@ -263,7 +269,7 @@ namespace Silverline
                 var v = g.PatienceValue(b, t); bool done = b.Matured(t);
                 FinUi.Label(new Rect(r.x, y + 3, r.width - 200, 24), FT.T("HH.Finance.Bond.Row", b.termDays.ToString(), FT.Silver(new Money(b.principal)), FT.Silver(v), Math.Max(0, b.termDays - b.HeldDays(t)).ToString()), GameFont.Small, done ? FinUi.Up : Color.white);
                 if (FinUi.Button(new Rect(r.xMax - 190, y, 190, 26), done ? FT.T("HH.Finance.Bond.Collect") : FT.T("HH.Finance.Bond.Break"), true, done ? null : FT.T("HH.Finance.Bond.Break.Tip")))
-                    SetMessage(g.ClosePatienceBond(b.id, true).Message);
+                    Report(g.ClosePatienceBond(b.id, true));
                 y += 30;
             }
         }
@@ -311,8 +317,8 @@ namespace Silverline
                 FinUi.Label(new Rect(r.x, y + 2, 60, 24), FT.T("HH.Finance.Amount"), GameFont.Small, FinUi.Dim);
                 amountBuf = Widgets.TextField(new Rect(r.x + 62, y, 100, 26), amountBuf); bool parsed = FinUi.TryParseSilver(amountBuf, out Money stake);
                 bool ok = parsed && FinanceAccounts.Available;
-                if (FinUi.Button(new Rect(r.x + 168, y, 80, 26), FT.T("HH.Finance.Omen.BuyYes"), ok)) SetMessage(g.OmenBuy(c.id, true, stake).Message);
-                if (FinUi.Button(new Rect(r.x + 252, y, 80, 26), FT.T("HH.Finance.Omen.BuyNo"), ok)) SetMessage(g.OmenBuy(c.id, false, stake).Message);
+                if (FinUi.Button(new Rect(r.x + 168, y, 80, 26), FT.T("HH.Finance.Omen.BuyYes"), ok)) Report(g.OmenBuy(c.id, true, stake));
+                if (FinUi.Button(new Rect(r.x + 252, y, 80, 26), FT.T("HH.Finance.Omen.BuyNo"), ok)) Report(g.OmenBuy(c.id, false, stake));
                 y += 30;
                 FinUi.Label(new Rect(r.x, y, r.width, 18), FT.T("HH.Finance.Omen.MaxStake", FT.Silver(g.OmenMaxStake(c))), GameFont.Tiny, FinUi.Dim); y += 22;
                 foreach (bool yes in new[] { true, false })
@@ -321,7 +327,7 @@ namespace Silverline
                     double bid = yes ? OmenMath.BidYes(q, FinanceSettings.OmenSpread) : OmenMath.BidNo(q, FinanceSettings.OmenSpread);
                     var val = OmenMath.CloseValue(sh, bid, FinanceSettings.OmenFee);
                     FinUi.Label(new Rect(r.x, y + 3, r.width - 150, 22), FT.T("HH.Finance.Omen.Holding", sh.ToString("0.00"), yes ? "YES" : "NO", FT.Silver(Money.FromSilver(val))), GameFont.Small);
-                    if (FinUi.Button(new Rect(r.xMax - 140, y, 140, 26), FT.T("HH.Finance.Omen.Close"))) SetMessage(g.OmenClose(c.id, yes).Message);
+                    if (FinUi.Button(new Rect(r.xMax - 140, y, 140, 26), FT.T("HH.Finance.Omen.Close"))) Report(g.OmenClose(c.id, yes));
                     y += 28;
                 }
             }
@@ -367,8 +373,8 @@ namespace Silverline
             FinUi.Label(new Rect(r.x, y + 2, 60, 24), FT.T("HH.Finance.Amount"), GameFont.Small, FinUi.Dim);
             amountBuf = Widgets.TextField(new Rect(r.x + 62, y, 100, 26), amountBuf); bool parsed = FinUi.TryParseSilver(amountBuf, out Money stake);
             string blockL = g.ProjectBlock(p, false, t), blockS = g.ProjectBlock(p, true, t);
-            if (FinUi.Button(new Rect(r.x + 168, y, 80, 26), FT.T("HH.Finance.Project.Long"), parsed && blockL == null, blockL ?? FT.T("HH.Finance.Project.Long.Tip"))) SetMessage(g.BetOnProject(p.id, false, stake).Message);
-            if (FinUi.Button(new Rect(r.x + 252, y, 80, 26), FT.T("HH.Finance.Project.Short"), parsed && blockS == null, blockS ?? FT.T("HH.Finance.Project.Short.Tip"))) SetMessage(g.BetOnProject(p.id, true, stake).Message);
+            if (FinUi.Button(new Rect(r.x + 168, y, 80, 26), FT.T("HH.Finance.Project.Long"), parsed && blockL == null, blockL ?? FT.T("HH.Finance.Project.Long.Tip"))) Report(g.BetOnProject(p.id, false, stake));
+            if (FinUi.Button(new Rect(r.x + 252, y, 80, 26), FT.T("HH.Finance.Project.Short"), parsed && blockS == null, blockS ?? FT.T("HH.Finance.Project.Short.Tip"))) Report(g.BetOnProject(p.id, true, stake));
             y += 30;
             if (parsed && !p.resolved) FinUi.Label(new Rect(r.x, y, r.width, 18), FT.T("HH.Finance.Project.ShortAt", g.ShortQuote(p, stake).ToString("0.00")), GameFont.Tiny, FinUi.Dim);
             y += 20;

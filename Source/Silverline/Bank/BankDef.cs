@@ -21,7 +21,7 @@ namespace Silverline
         public double atmFlatFee = 2;        // silver
         public double atmFee = 0.01;         // fraction
         public double accountFeePerQuadrum;  // silver, every 15 days
-        public double interestMod = 1.0;     // ln(M_account) = beta · interestMod · ln(M)
+        public double interestMod = 1.0;     // account yearly multiple = 1 + bank.accountShare · interestMod · (M − 1), see FinanceMath.AccountYearlyMultiple
         public double loanSpread = 0.12;     // added to the yearly base rate
         public bool loansNeedTitle;          // Imperial Treasury
         public bool ignoresScore;            // Black Ledger

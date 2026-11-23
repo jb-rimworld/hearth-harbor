@@ -14,8 +14,27 @@ namespace Silverline
     public sealed class LotteryTicket : IExposable
     {
         public List<int> nums = new List<int>(); public int star; public int drawIndex;
-        public void ExposeData() { Scribe_Collections.Look(ref nums, "n", LookMode.Value); Scribe_Values.Look(ref star, "s"); Scribe_Values.Look(ref drawIndex, "d"); if (nums == null) nums = new List<int>(); }
+        /// <summary>What the ticket cost in micro-silver; -1 = unknown (tickets saved before 1.1.0 count at the current price).</summary>
+        public long paid = -1;
+        /// <summary>A free ticket of a lucky colonist.</summary>
+        public bool free;
+        public void ExposeData()
+        {
+            Scribe_Collections.Look(ref nums, "n", LookMode.Value); Scribe_Values.Look(ref star, "s"); Scribe_Values.Look(ref drawIndex, "d");
+            Scribe_Values.Look(ref paid, "p", -1L); Scribe_Values.Look(ref free, "f");
+            if (nums == null) nums = new List<int>();
+        }
         public int[] Numbers => nums.OrderBy(x => x).ToArray();
+        /// <summary>"3 7 12 25 31|4": compact text of a ticket for the draw record.</summary>
+        public string Compact() => string.Join(" ", Numbers) + "|" + star;
+        public static bool TryParse(string compact, out int[] nums, out int star)
+        {
+            nums = null; star = 0; if (compact.NullOrEmpty()) return false;
+            var parts = compact.Split('|'); if (parts.Length != 2 || !int.TryParse(parts[1], out star)) return false;
+            var ns = new List<int>();
+            foreach (var x in parts[0].Split(' ')) { if (x.Length == 0) continue; if (!int.TryParse(x, out int n)) return false; ns.Add(n); }
+            nums = ns.ToArray(); return nums.Length > 0;
+        }
     }
 
     public sealed class LotteryDrawRecord : IExposable
@@ -23,12 +42,22 @@ namespace Silverline
         public int index, tick, star, crowdTickets, playerTickets, jackpotWinners; public bool colony;
         public List<int> numbers = new List<int>();
         public long jackpotPaid, playerPrize;
+        /// <summary>The player's tickets of this draw as "n n n n n|star" (newest last, at most <see cref="LotteryGame.TicketsKept"/>), so the tab can show what matched after the draw. Since 1.1.0.</summary>
+        public List<string> myTickets = new List<string>();
+        /// <summary>What the player paid for the tickets of this draw (micro-silver). Since 1.1.0.</summary>
+        public long playerSpent;
+        public int freeTickets;
+        /// <summary>Best number of matching numbers over ALL tickets of the draw (not only the kept ones), and whether a ticket with that many also had the star. -1 = record from before 1.1.1.</summary>
+        public int bestMatches = -1; public bool bestStar;
         public void ExposeData()
         {
+            Scribe_Values.Look(ref bestMatches, "bm", -1); Scribe_Values.Look(ref bestStar, "bs");
             Scribe_Values.Look(ref index, "i"); Scribe_Values.Look(ref tick, "t"); Scribe_Values.Look(ref star, "s"); Scribe_Values.Look(ref colony, "c");
             Scribe_Values.Look(ref crowdTickets, "ct"); Scribe_Values.Look(ref playerTickets, "pt"); Scribe_Values.Look(ref jackpotWinners, "jw");
             Scribe_Collections.Look(ref numbers, "n", LookMode.Value); Scribe_Values.Look(ref jackpotPaid, "jp"); Scribe_Values.Look(ref playerPrize, "pp");
+            Scribe_Collections.Look(ref myTickets, "mt", LookMode.Value); Scribe_Values.Look(ref playerSpent, "ps"); Scribe_Values.Look(ref freeTickets, "ft");
             if (numbers == null) numbers = new List<int>();
+            if (myTickets == null) myTickets = new List<string>();
         }
     }
 
@@ -63,6 +92,8 @@ namespace Silverline
         /// <summary>Set by Hearth's DLC integration: the name of a lucky colonist, or null. Silverline knows nothing about traits itself.</summary>
         public static Func<string> LuckyBuyer;
         public const int HistoryKeep = 24;
+        /// <summary>How many tickets of a finished draw the record keeps for the "last draw" view.</summary>
+        public const int TicketsKept = 100;
         public static readonly string[] HelpUrls = { "https://findahelpline.com/", "https://www.gamblingtherapy.org/" };
 
         public LotteryGame(Game game) { Instance = this; }
@@ -125,12 +156,44 @@ namespace Silverline
         }
 
         // ---- tickets of the player ----------------------------------------------------------------------------------------
-        public int PlayerTicketsForNextDraw => tickets.Count(t => t.drawIndex == globalDrawCounter);
+        // The tab asks for these every frame, so they come from one cached pass over the tickets (rebuilt when a ticket is added or removed, the draw counter or the price changes).
+        int cacheCount = -1, cacheDraw = -1; long cachePrice = -1;
+        int cNext, cFree; long cSpent; List<LotteryTicket> cList = new List<LotteryTicket>();
+        public void InvalidateTicketCache() { cacheCount = -1; }
+        void RefreshTicketCache()
+        {
+            long price = GlobalPrice.Micro;
+            if (cacheCount == tickets.Count && cacheDraw == globalDrawCounter && cachePrice == price) return;
+            cacheCount = tickets.Count; cacheDraw = globalDrawCounter; cachePrice = price;
+            cNext = 0; cFree = 0; cSpent = 0; cList = new List<LotteryTicket>();
+            for (int i = tickets.Count - 1; i >= 0; i--)
+            {
+                var t = tickets[i]; if (t.drawIndex != globalDrawCounter) continue;
+                cNext++; cList.Add(t);
+                if (t.free) cFree++; else cSpent += t.paid >= 0 ? t.paid : price;
+            }
+        }
+
+        public int PlayerTicketsForNextDraw { get { RefreshTicketCache(); return cNext; } }
+
+        /// <summary>Silver spent on the tickets of the next draw (free tickets cost nothing).</summary>
+        public Money PlayerSpentThisDraw { get { RefreshTicketCache(); return new Money(cSpent); } }
+
+        public int FreeTicketsThisDraw { get { RefreshTicketCache(); return cFree; } }
+
+        /// <summary>The player's tickets of the next draw, newest first. The list is shared (cached): do not change it.</summary>
+        public List<LotteryTicket> TicketsOfNextDraw() { RefreshTicketCache(); return cList; }
+
+        /// <summary>The newest finished global draw, or null.</summary>
+        public LotteryDrawRecord LastGlobalDraw => history.LastOrDefault(h => !h.colony);
 
         public static bool ValidTicket(int[] nums, int star)
             => nums != null && nums.Length == LotteryMath.GlobalPicks && nums.Distinct().Count() == nums.Length && nums.All(n => n >= 1 && n <= LotteryMath.GlobalPool) && star >= 1 && star <= LotteryMath.GlobalStarPool;
 
-        public TradeResult BuyGlobalTicket(int[] nums, int star)
+        public TradeResult BuyGlobalTicket(int[] nums, int star) { Money none = Money.Zero; return BuyCore(nums, star, false, ref none); }
+
+        /// <summary>Buys one ticket. With <paramref name="defer"/> the money is not posted yet but added to <paramref name="deferred"/> (a quick pick batch posts once).</summary>
+        TradeResult BuyCore(int[] nums, int star, bool defer, ref Money deferred)
         {
             EnsureInit();
             if (!FinanceAccounts.Available) return TradeResult.Fail("HH.Finance.Trade.NoBank");
@@ -142,29 +205,37 @@ namespace Silverline
             bool free = lucky != null && DlcMath.FreeLottoTicket(luckyTickets + 1);
             if (!free)
             {
-                if (FinanceAccounts.Cash < price) return TradeResult.Fail("HH.Finance.Trade.NoCash");
-                if (!FinanceAccounts.Post(FinanceAccounts.Colony, FinanceAccounts.LotteryGlobalPool, price, "Glitterworld Grand Draw: ticket")) return TradeResult.Fail("HH.Finance.Trade.NoCash");
+                if (FinanceAccounts.Cash < deferred + price) return TradeResult.Fail("HH.Finance.Trade.NoCash");
+                if (defer) deferred += price;
+                else if (!FinanceAccounts.Post(FinanceAccounts.Colony, FinanceAccounts.LotteryGlobalPool, price, "Glitterworld Grand Draw: ticket")) return TradeResult.Fail("HH.Finance.Trade.NoCash");
             }
             if (lucky != null) luckyTickets++;
-            var t = new LotteryTicket { star = star, drawIndex = globalDrawCounter };
+            var t = new LotteryTicket { star = star, drawIndex = globalDrawCounter, free = free, paid = free ? 0 : price.Micro };
             t.nums.AddRange(nums.OrderBy(x => x)); tickets.Add(t);
             string numbers = string.Join(" ", t.nums) + " ★" + star;
-            if (free) return new TradeResult { Ok = true, Money = Money.Zero, Message = FT.T("HH.Finance.Lottery.FreeTicket", numbers, lucky) };
+            if (free) return new TradeResult { Ok = true, Money = Money.Zero, Units = 1, Message = FT.T("HH.Finance.Lottery.FreeTicket", numbers, lucky) };
             totalSpent += price.Micro;
-            return new TradeResult { Ok = true, Money = price, Message = FT.T("HH.Finance.Lottery.Bought", numbers) };
+            return new TradeResult { Ok = true, Money = price, Units = 1, Message = FT.T("HH.Finance.Lottery.Bought", numbers) };
         }
 
         public TradeResult QuickPick(int count)
         {
-            var rng = JRand.Sealed("lottery.pick"); int bought = 0; TradeResult last = default; Money paid = Money.Zero;
+            var rng = JRand.Sealed("lottery.pick"); int bought = 0; TradeResult last = default; Money paid = Money.Zero, deferred = Money.Zero;
+            int startTickets = tickets.Count, startLucky = luckyTickets;
             for (int i = 0; i < count; i++)
             {
                 var n = LotteryMath.DrawNumbers(rng, LotteryMath.GlobalPool, LotteryMath.GlobalPicks);
-                last = BuyGlobalTicket(n, rng.Range(1, LotteryMath.GlobalStarPool + 1));
+                last = BuyCore(n, rng.Range(1, LotteryMath.GlobalStarPool + 1), true, ref deferred);
                 if (!last.Ok) break; bought++; paid += last.Money;
             }
             if (bought == 0) return last;
-            return new TradeResult { Ok = true, Money = paid, Message = FT.T("HH.Finance.Lottery.BoughtMany", bought.ToString()) };
+            // one ledger entry for the whole batch (200 separate entries would flood the history)
+            if (deferred.Micro > 0 && !FinanceAccounts.Post(FinanceAccounts.Colony, FinanceAccounts.LotteryGlobalPool, deferred, "Glitterworld Grand Draw: " + bought + " tickets"))
+            {
+                tickets.RemoveRange(startTickets, tickets.Count - startTickets); luckyTickets = startLucky; totalSpent -= paid.Micro; InvalidateTicketCache();
+                return TradeResult.Fail("HH.Finance.Trade.NoCash");
+            }
+            return new TradeResult { Ok = true, Money = paid, Units = bought, Message = FT.T("HH.Finance.Lottery.BoughtMany", bought.ToString()) };
         }
 
         // ---- simulated players ------------------------------------------------------------------------------------------------
@@ -262,6 +333,18 @@ namespace Silverline
 
             var rec = new LotteryDrawRecord { index = globalDrawCounter, tick = tick, star = star, crowdTickets = crowd, playerTickets = mine.Count };
             rec.numbers.AddRange(numbers);
+            // best result over ALL tickets; of a large batch the record keeps the 100 best (ties: newest), in buying order
+            var score = new int[mine.Count]; rec.bestMatches = 0;
+            for (int i = 0; i < mine.Count; i++)
+            {
+                int m = LotteryMath.CountMatches(mine[i].Numbers, numbers); bool sh = mine[i].star == star;
+                score[i] = m * 2 + (sh ? 1 : 0);
+                if (m > rec.bestMatches || (m == rec.bestMatches && sh)) { rec.bestMatches = m; rec.bestStar = sh; }
+            }
+            var keep = Enumerable.Range(0, mine.Count);
+            if (mine.Count > TicketsKept) keep = keep.OrderByDescending(i => score[i]).ThenByDescending(i => i).Take(TicketsKept).OrderBy(i => i).ToList();
+            foreach (int ki in keep) rec.myTickets.Add(mine[ki].Compact());
+            foreach (var mt in mine) { if (mt.free) rec.freeTickets++; else rec.playerSpent += mt.paid >= 0 ? mt.paid : price.Micro; }
             long playerPrize = 0;
             for (int i = 0; i < res.Count; i++)
             {
@@ -289,7 +372,8 @@ namespace Silverline
 
             tickets.RemoveAll(t => t.drawIndex == globalDrawCounter);
             history.Add(rec); if (history.Count > HistoryKeep) history.RemoveAt(0);
-            globalDrawCounter++;
+            globalDrawCounter++; InvalidateTicketCache();
+            if (mine.Count > 0) BankSound.Play(playerPrize > 0 ? BankSound.Win : BankSound.Lose);   // F31: sounds when the draw resolves, whether or not the tab is open
             var fg = FinanceGame.Current;
             string numText = string.Join(" ", numbers) + " ★" + star;
             fg?.Push(MarketEventKind.Lottery, FT.T(playerPrize > 0 ? "HH.Finance.Lottery.News.Won" : "HH.Finance.Lottery.News.Drawn", numText, rec.jackpotWinners > 0 ? FT.T("HH.Finance.Lottery.JackpotHit") : "", FT.Silver(new Money(playerPrize))), false, null, playerPrize > 0 ? 0.5f : 0, tick, mine.Count > 0, null);

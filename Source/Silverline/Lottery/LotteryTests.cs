@@ -6,6 +6,7 @@ using System.Linq;
 using Hearth;
 using Hearth.Markets;
 using Hearth.Testing;
+using UnityEngine;
 using Verse;
 
 namespace Silverline
@@ -36,8 +37,23 @@ namespace Silverline
             t.Check(cash0 - FinanceAccounts.Cash == price * 12, "12 tickets cost 60 silver");
             t.Check(led.Balance(FinanceAccounts.LotteryGlobalPool) == price * 12, "money sits in the pool until the draw");
             t.Check(FinTest.Balanced, "ledger balanced after buying tickets");
+            // F20: the tab can say how many tickets, what they cost, and which they are
+            t.Check(lot.PlayerSpentThisDraw == price * 12, "spent on this draw: " + lot.PlayerSpentThisDraw.ToStringShort());
+            t.Check(lot.FreeTicketsThisDraw == 0, "no free tickets without a lucky colonist");
+            var mine = lot.TicketsOfNextDraw(); t.Check(mine.Count == 12 && mine[mine.Count - 1].nums.SequenceEqual(new[] { 1, 2, 3, 4, 5 }) && mine[0].paid == price.Micro, "tickets listed newest first, each with its price");
+            t.Check(qp.Units == 10, "quick pick tells how many it bought: " + qp.Units);
+            t.Check(LotteryTicket.TryParse(mine[mine.Count - 1].Compact(), out var pn, out var ps) && pn.SequenceEqual(new[] { 1, 2, 3, 4, 5 }) && ps == 3, "a ticket survives its compact text");
+            t.Check(!LotteryTicket.TryParse("1 2 x|3", out _, out _) && !LotteryTicket.TryParse("", out _, out _) && !LotteryTicket.TryParse("1 2 3", out _, out _), "bad compact tickets are refused");
+            var rich = lot.QuickPick(300); t.Check(rich.Ok && rich.Units == 300, "300 quick picks work with enough money");
+            LotteryTab.TestReset();
+            { // the tab draws with hundreds of tickets, at a small and a large size
+                int e0 = HLog.ErrorCount; var w = new Window_Silverline(); Find.WindowStack.Add(w); yield return 5;
+                LotteryTab.Draw(new Rect(0, 0, 900f, 560f)); LotteryTab.Draw(new Rect(0, 0, 1700f, 900f)); w.Close();
+                t.Check(HLog.ErrorCount == e0, "lottery tab draws 300+ tickets without errors");
+            }
 
             // draw with forced numbers: ticket A wins the jackpot, ticket B has three right (no star)
+            var spentRec = lot.PlayerSpentThisDraw;
             var jackpotBefore = lot.GlobalJackpot; var cashBeforeDraw = FinanceAccounts.Cash; int counter = lot.globalDrawCounter;
             var rec = lot.DrawGlobal(Find.TickManager.TicksGame, new[] { 1, 2, 3, 4, 5 }, 3);
             t.Check(rec != null && rec.numbers.SequenceEqual(new[] { 1, 2, 3, 4, 5 }) && rec.star == 3, "forced draw recorded");
@@ -45,6 +61,9 @@ namespace Silverline
             t.Check(rec.jackpotWinners >= 1, "jackpot had at least our winner: " + rec.jackpotWinners);
             var won = FinanceAccounts.Cash - cashBeforeDraw; t.Check(won.Micro > 0, "prize paid to the account: " + won.ToStringShort());
             t.Check(rec.playerPrize == won.Micro, "record matches the payout");
+            t.Check(rec.playerSpent == spentRec.Micro && rec.playerSpent > 0, "the record remembers what the tickets cost: " + new Money(rec.playerSpent).ToStringShort());
+            t.Check(rec.myTickets.Count > 0 && rec.myTickets.Count <= LotteryGame.TicketsKept, "the record keeps the tickets (capped at " + LotteryGame.TicketsKept + "): " + rec.myTickets.Count);
+            t.Check(lot.LastGlobalDraw == rec, "last draw is the record");
             t.Check(rec.playerPrize <= (jackpotBefore + price * 12 + Money.FromSilver(100000)).Micro, "payout never exceeds what was in the pots");
             t.Check(PotsFine(led), "no pot is negative");
             t.Check(lot.GlobalJackpot >= LotteryGame.JackpotSeed, "jackpot reseeded after a win: " + lot.GlobalJackpot.ToStringShort());
@@ -62,6 +81,25 @@ namespace Silverline
 
             // expected return: over many tickets the player gets back roughly the payout share (statistically loose)
             // (guaranteed by the pari-mutuel model; the unit tests check the maths)
+
+            // review fixes: one ledger entry per quick-pick batch, best match over ALL tickets, sound when the draw resolves (tab closed)
+            {
+                lot.tickets.RemoveAll(x => x.drawIndex == lot.globalDrawCounter); lot.InvalidateTicketCache();
+                lot.BuyGlobalTicket(new[] { 6, 7, 8, 9, 10 }, 2);                                   // the oldest ticket
+                int entries0 = led.Journal.Count(e => e.Memo != null && e.Memo.StartsWith("Glitterworld Grand Draw: ") && e.Memo.Contains("ticket"));
+                var cashA = FinanceAccounts.Cash; var big = lot.QuickPick(150);
+                int entries1 = led.Journal.Count(e => e.Memo != null && e.Memo.StartsWith("Glitterworld Grand Draw: ") && e.Memo.Contains("ticket"));
+                t.Check(big.Ok && big.Units == 150 && cashA - FinanceAccounts.Cash == price * 150, "150 quick picks cost 150 tickets: " + (cashA - FinanceAccounts.Cash).ToStringShort());
+                t.Check(entries1 - entries0 <= 1, "one ledger entry for the whole batch, not 150: " + (entries1 - entries0));
+                t.Check(lot.PlayerTicketsForNextDraw == 151 && lot.PlayerSpentThisDraw == price * 151 && lot.TicketsOfNextDraw().Count == 151, "cached counters follow the purchase");
+                int playedBefore = BankSound.Played;
+                var recBig = lot.DrawGlobal(Find.TickManager.TicksGame + 500, new[] { 6, 7, 8, 9, 10 }, 2);
+                t.Check(recBig.bestMatches == 5 && recBig.bestStar, "best match counts ALL tickets (the oldest one hit 5 + star): " + recBig.bestMatches);
+                t.Check(recBig.myTickets.Count == LotteryGame.TicketsKept && recBig.myTickets.Contains("6 7 8 9 10|2"), "the winning ticket is kept although 100 of 151 are listed");
+                t.Check(BankSound.Played > playedBefore && (BankSound.Last == BankSound.Win || BankSound.Last == BankSound.Lose), "the draw plays win/lose without any window open: " + BankSound.Last);
+                t.Check(lot.PlayerTicketsForNextDraw == 0 && lot.TicketsOfNextDraw().Count == 0, "cache is empty after the draw");
+                var old = new LotteryDrawRecord(); t.Check(old.bestMatches == -1, "records from older saves have no stored best (the tab falls back)");
+            }
 
             // colony lottery: pot model
             HSettings.Set("lottery.colonyOn", 1f); HSettings.Set("lottery.colonyQuote", 0.6f); HSettings.Set("lottery.colonyPrice", 10f); HSettings.Set("lottery.colonyFee", 1f);

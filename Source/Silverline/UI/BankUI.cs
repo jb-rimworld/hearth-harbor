@@ -25,6 +25,68 @@ namespace Silverline
 
         public static Texture2D Ottoline => ContentFinder<Texture2D>.Get("UI/HH/Bank/Ottoline", false);
 
+        static readonly Dictionary<string, Texture2D> texCache = new Dictionary<string, Texture2D>();
+        /// <summary>A UI texture of the bank ("Ball_On", "Coin" …) from Common/Textures/UI/HH/Bank; null when missing (callers draw a plain fallback).</summary>
+        public static Texture2D Tex(string name)
+        {
+            if (texCache.TryGetValue(name, out var t)) return t;   // a missing texture is cached as null: no retry every frame
+            t = ContentFinder<Texture2D>.Get("UI/HH/Bank/" + name, false);
+            texCache[name] = t; return t;
+        }
+        /// <summary>Sets the smallest size a resizeable window can be dragged to (the resizer field is private in the game: reflection, never fails).</summary>
+        public static void SetMinSize(Window win, float w, float h)
+        {
+            try
+            {
+                var fld = typeof(Window).GetField("resizer", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public);
+                if (fld == null) return;
+                var rz = fld.GetValue(win); if (rz == null) { rz = new WindowResizer(); fld.SetValue(win, rz); }
+                var minF = typeof(WindowResizer).GetField("minWindowSize"); if (minF == null) return;
+                minF.SetValue(rz, new Vector2(Math.Min(w, UI.screenWidth - 20f), Math.Min(h, UI.screenHeight - 55f)));
+            }
+            catch (Exception e) { HLog.Once("bankui.minsize." + win.GetType().Name, LogLevel.Warn, "Bank", "Could not set the minimum window size: " + e.Message); }
+        }
+        public static void DrawTex(Rect r, string name) { var t = Tex(name); if (t != null) GUI.DrawTexture(r, t); }
+
+        /// <summary>A segmented / tab-like button. Plays the lobby click when it is pressed. Returns true on press.</summary>
+        public static bool Chip(Rect r, string label, bool selected, string tip = null, bool enabled = true)
+        {
+            Widgets.DrawBoxSolid(r, selected ? Green : WalnutLight);
+            if (selected) Widgets.DrawBoxSolid(new Rect(r.x, r.yMax - 3f, r.width, 3f), Brass);
+            GUI.color = selected ? Brass : BrassDim; Widgets.DrawBox(r, 1); GUI.color = Color.white;
+            Label(r, label, enabled ? (selected ? Cream : CreamDim) : new Color(1f, 1f, 1f, 0.35f), anchor: TextAnchor.MiddleCenter, wrap: false);
+            if (!tip.NullOrEmpty()) TooltipHandler.TipRegion(r, tip);
+            if (!enabled) return false;
+            if (!selected) Widgets.DrawHighlightIfMouseover(r);
+            if (Widgets.ButtonInvisible(r) && !selected) { BankSound.Play(BankSound.Click); return true; }
+            return false;
+        }
+
+        /// <summary>
+        /// Draws a page that may be taller than its rect: when <paramref name="contentH"/> does not fit, a scroll view is used (and the draw callback gets
+        /// the view rect, origin 0,0). The callback returns nothing; the caller knows its own content height from the layout it draws.
+        /// </summary>
+        public static void ScrollPage(Rect r, ref Vector2 scroll, float contentH, Action<Rect> draw)
+        {
+            if (contentH <= r.height) { draw(r); return; }
+            var view = new Rect(0, 0, r.width - 16f, contentH);
+            Widgets.BeginScrollView(r, ref scroll, view);
+            try { draw(view); } finally { Widgets.EndScrollView(); }
+        }
+
+        /// <summary>A horizontal bar with label left and value right, for comparing yearly returns.</summary>
+        public static void BarRow(Rect r, string label, string value, double v, double max, Color col, string tip = null)
+        {
+            float labW = Math.Min(r.width * 0.42f, 230f), valW = 64f;
+            LabelCut(new Rect(r.x, r.y, labW, r.height), label, Cream, GameFont.Tiny, TextAnchor.MiddleLeft);
+            var bar = new Rect(r.x + labW + 6f, r.y + r.height * 0.5f - 5f, r.width - labW - valW - 12f, 10f);
+            Widgets.DrawBoxSolid(bar, Walnut);
+            float frac = max <= 0 ? 0f : Mathf.Clamp01((float)(Math.Max(0, v) / max));
+            if (frac > 0f) Widgets.DrawBoxSolid(new Rect(bar.x, bar.y, Mathf.Max(2f, bar.width * frac), bar.height), col);
+            Label(new Rect(r.xMax - valW, r.y, valW, r.height), value, v >= 0 ? Cream : Bad, GameFont.Tiny, TextAnchor.MiddleRight, false);
+            if (!tip.NullOrEmpty()) { Widgets.DrawHighlightIfMouseover(r); TooltipHandler.TipRegion(r, tip); }
+        }
+
         public static string Silver(Money m) => m.ToStringShort();
         public static string Signed(Money m) => (m.Micro >= 0 ? "+" : "-") + m.Abs.ToStringShort();
 
@@ -68,6 +130,10 @@ namespace Silverline
             Widgets.Label(r, shown);
             Text.Font = f; Text.Anchor = a; Text.WordWrap = wr;
         }
+
+        /// <summary>FitLabel with an explicit colour (put back to white afterwards).</summary>
+        public static void FitLabel2(Rect r, string text, Color col, GameFont font = GameFont.Small, TextAnchor anchor = TextAnchor.UpperLeft)
+        { GUI.color = col; FitLabel(r, text, font, anchor); GUI.color = Color.white; }
 
         /// <summary>The longest start of <paramref name="text"/> (cut at a space) that fits the box with "..." appended. Needs Text.Font and WordWrap set by the caller.</summary>
         public static string FitText(string text, float width, float height)

@@ -1,0 +1,80 @@
+[
+ {
+  "file": "Common/Sounds/HH/Bank/UiClick.ogg",
+  "prompt": "A short, soft brass-and-wood click of a tab in an old bank lobby, dry, like a small desk bell button being pressed",
+  "seconds": 0.25,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Bank/UiTick.ogg",
+  "prompt": "A very short light wooden tick, like a single bead of an abacus clicking into place",
+  "seconds": 0.12,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Bank/WindowOpen.ogg",
+  "prompt": "A small shop door bell with a little brass chime, followed by a quiet room tone of a marble bank hall",
+  "seconds": 1.4,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Bank/CoinsIn.ogg",
+  "prompt": "A bank teller counting a stack of silver coins onto a wooden counter, quick clinking, a short slide and a final settling coin",
+  "seconds": 1.8,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Bank/CoinsOut.ogg",
+  "prompt": "Silver coins being counted out of a cash drawer and pushed across a wooden counter, a short rattle of coins and a drawer closing",
+  "seconds": 1.8,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Bank/Stamp.ogg",
+  "prompt": "A heavy rubber office stamp pressed firmly onto paper with a dull thud and a tiny paper rustle",
+  "seconds": 0.5,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Bank/Reject.ogg",
+  "prompt": "A short low buzzer of a refused request, a dull wooden thunk with a muted brass note, polite but firm",
+  "seconds": 0.5,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Bank/TicketStamp.ogg",
+  "prompt": "A small ticket machine printing and stamping a paper lottery ticket, one crisp stamp and a short zip",
+  "seconds": 0.5,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Bank/BallClick.ogg",
+  "prompt": "A lottery number ball tapped softly, a short glassy click",
+  "seconds": 0.15,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Bank/Ratchet.ogg",
+  "prompt": "A fast ratchet of a ticket printer spitting out many tickets in a row, a quick clatter that ends with a stamp",
+  "seconds": 1.0,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Bank/LotteryWin.ogg",
+  "prompt": "A cheerful short winning jingle of bells and coins falling, bright and warm, two seconds",
+  "seconds": 2.5,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Bank/LotteryLose.ogg",
+  "prompt": "A comic muted trombone slide down, soft and brief, a gentle sad lottery loss sting",
+  "seconds": 1.6,
+  "loop": false
+ },
+ {
+  "file": "Common/Sounds/HH/Bank/Trade.ogg",
+  "prompt": "A paper ticker tape snippet printing and a pen scratch, a short exchange floor sound, dry",
+  "seconds": 0.8,
+  "loop": false
+ }
+]
