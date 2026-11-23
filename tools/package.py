@@ -50,7 +50,7 @@ def main():
     for d in ["About", "Common"] + VERSIONS:
         if (R / d).exists():
             shutil.copytree(R / d, MAIN / d, ignore=shutil.ignore_patterns("*.pdb", ".DS_Store"))
-    for f in ["LoadFolders.xml", "LICENSE", "README.md", "AGENTS.md"]:
+    for f in ["LoadFolders.xml", "LICENSE", "README.md", "AGENTS.md", "CREDITS.md"]:
         if (R / f).exists():
             shutil.copy2(R / f, MAIN / f)
 
@@ -105,7 +105,7 @@ def main():
         (BANK / "Content" / v / "Assemblies").mkdir(parents=True)
         for dll in ("Hearth.Core.dll", "Silverline.dll"):
             shutil.copy2(R / v / "Assemblies" / dll, BANK / "Content" / v / "Assemblies" / dll)
-    shutil.copy2(R / "LICENSE", BANK / "LICENSE")
+    shutil.copy2(R / "LICENSE", BANK / "LICENSE"); shutil.copy2(R / "CREDITS.md", BANK / "CREDITS.md")
 
     # ---- byte identity
     bad = []
