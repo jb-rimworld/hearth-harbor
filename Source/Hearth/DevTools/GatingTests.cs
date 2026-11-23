@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace Hearth.Testing
 {
@@ -136,13 +137,94 @@ namespace Hearth.Testing
                 var bill = (Bill_Production)dishRecipe.MakeNewBill();
                 t.Check(!bill.ShouldDoNow(), "Shops & Food off: an existing dish bill waits");
             }
-            if (inn != null && cook1 != null && !cook1.IsFinished && !inn.IsFinished)
+            // the prerequisite postfix, with the research progress reset so that neither project is finished
+            var progressField = HarmonyLib.AccessTools.Field(typeof(ResearchManager), "progress");
+            var progressDict = progressField?.GetValue(Find.ResearchManager) as Dictionary<ResearchProjectDef, float>;
+            if (inn != null && cook1 != null && progressDict != null)
+            {
+                var savedProgress = new Dictionary<ResearchProjectDef, float>();
+                foreach (var rp in new[] { inn, cook1 }) { progressDict.TryGetValue(rp, out var v); savedProgress[rp] = v; progressDict[rp] = 0f; }
+                prof.SetModule(ModuleId.ShopsFood, true);
+                yield return 1;
+                t.Check(!inn.IsFinished && !cook1.IsFinished, "prerequisite test: both projects reset to unfinished");
+                t.Check(!inn.PrerequisitesCompleted, "Shops & Food on: Innkeeping needs the kitchen research");
+                prof.SetModule(ModuleId.ShopsFood, false);
+                yield return 1;
+                t.Check(!cook1.CanStartNow && cook1.IsHidden, "Shops & Food off: the kitchen research itself is hidden and cannot start");
                 t.Check(inn.PrerequisitesCompleted, "Shops & Food off: Innkeeping does not wait for the hidden kitchen research");
-            else t.Note("kitchen research or Innkeeping already finished here: prerequisite check skipped");
-            prof.SetModule(ModuleId.ShopsFood, true);
+                t.Check(inn.CanStartNow == (!inn.IsFinished && inn.PrerequisitesCompleted && inn.TechprintRequirementMet), "Shops & Food off: Innkeeping can start (" + inn.CanStartNow + ")");
+                prof.SetModule(ModuleId.ShopsFood, true);
+                yield return 1;
+                t.Check(!inn.PrerequisitesCompleted, "Shops & Food on again: Innkeeping needs the kitchen research again");
+                foreach (var kv in savedProgress) { if (kv.Value <= 0f) progressDict.Remove(kv.Key); else progressDict[kv.Key] = kv.Value; }
+            }
+            else t.Note("research progress table not reachable here: prerequisite check skipped");
+
+            // the venues module keeps its own buildings; no other module uses them
+            foreach (var n in new[] { "HH_ShopCounter", "HH_MarketStall", "HH_VendingMachine" })
+            {
+                var vd = DefDatabase<ThingDef>.GetNamedSilentFail(n);
+                if (vd != null) t.Check(ModuleGate.Owner(vd) == ModuleId.ShopsFood, n + " belongs to Shops & Food only");
+            }
+            t.Check(ModuleGate.Owner(DefDatabase<ThingDef>.GetNamed("HH_VenueSignWall")) == ModuleId.Core, "wall sign stays Core");
+
+            // right-click orders of an off module: the provider hands back nothing
+            prof.SetModule(ModuleId.Casino, false);
             yield return 1;
-            if (inn != null && cook1 != null && !cook1.IsFinished && !inn.IsFinished)
-                t.Check(!inn.PrerequisitesCompleted, "Shops & Food on: Innkeeping needs the kitchen research again");
+            var fm = HarmonyLib.AccessTools.TypeByName("RimWorld.FloatMenuOptionProvider_WorkGivers");
+            var gm = fm == null ? null : HarmonyLib.AccessTools.Method(fm, "GetWorkGiverOption");
+            if (gm != null && gm.ReturnType == typeof(FloatMenuOption))
+            {
+                object inst = null;
+                try { if (!gm.IsStatic) inst = Activator.CreateInstance(fm, true); } catch (Exception) { }
+                var ps = gm.GetParameters(); var args = new object[ps.Length];
+                for (int i = 0; i < ps.Length; i++)
+                {
+                    var pt = ps[i].ParameterType;
+                    if (pt == typeof(WorkGiverDef)) args[i] = wgDef;
+                    else if (pt == typeof(Pawn)) args[i] = pawn;
+                    else if (pt.IsValueType) args[i] = Activator.CreateInstance(pt);
+                }
+                if (gm.IsStatic || inst != null)
+                {
+                    object res = "unset";
+                    try { res = gm.Invoke(inst, args); } catch (Exception e) { t.Check(false, "right-click provider threw: " + (e.InnerException ?? e).Message); }
+                    if (!(res is string)) t.Check(res == null, "Casino off: right-click provider offers nothing for a casino work giver");
+                }
+                else t.Note("right-click provider cannot be instantiated here: check skipped");
+            }
+            else t.Note("right-click provider not present in this game version (patch skips itself)");
+
+            // blueprints of an off module are not delivered to (positive control with the module on)
+            if (pawn != null && slot.blueprintDef != null && slot.CostList != null)
+            {
+                prof.SetModule(ModuleId.Casino, true);
+                yield return 1;
+                var bpCell = t.FreeCellNearCenter(40);
+                var stuff = slot.MadeFromStuff ? GenStuff.DefaultStuffFor(slot) : null;
+                var bp = GenConstruct.PlaceBlueprintForBuild(slot, bpCell, map, Rot4.North, Faction.OfPlayer, stuff) as Thing;
+                var spawnedRes = new List<Thing>();
+                if (bp != null)
+                {
+                    foreach (var cc in slot.CostListAdjusted(stuff))
+                    {
+                        var th = ThingMaker.MakeThing(cc.thingDef); th.stackCount = cc.count;
+                        var near = CellFinder.StandableCellNear(bpCell + new IntVec3(2, 0, 0), map, 6);
+                        GenSpawn.Spawn(th, near, map); spawnedRes.Add(th);
+                    }
+                    yield return 1;
+                    var wg = new WorkGiver_ConstructDeliverResourcesToBlueprints { def = DefDatabase<WorkGiverDef>.GetNamedSilentFail("ConstructDeliverResourcesToBlueprints") };
+                    Job jobOn = null; try { jobOn = wg.JobOnThing(pawn, bp, false); } catch (Exception) { }
+                    prof.SetModule(ModuleId.Casino, false);
+                    yield return 1;
+                    Job jobOff = null; try { jobOff = wg.JobOnThing(pawn, bp, false); } catch (Exception) { }
+                    if (jobOn != null) t.Check(jobOff == null, "Casino off: blueprint of a casino building gets no delivery job");
+                    else t.Note("blueprint delivery positive control gave no job (resources not reachable?): check skipped");
+                    bp.Destroy();
+                    foreach (var th in spawnedRes) if (!th.Destroyed) th.Destroy();
+                }
+                else t.Note("blueprint could not be placed: construction check skipped");
+            }
 
             // restore
             if (!placed.Destroyed) placed.Destroy();

@@ -8,4 +8,14 @@
   <HH.Gate.ModuleOff>Modul aus: {0}</HH.Gate.ModuleOff>
   <HH.Gate.ModuleOffInspect>tut nichts, bis das Modul wieder eingeschaltet wird.</HH.Gate.ModuleOffInspect>
   <HH.Gate.CannotPlace>Nicht verfügbar: {0} ist in diesem Spiel ausgeschaltet.</HH.Gate.CannotPlace>
+  <!-- Modulnamen (auch für die Modulsperre-Texte und die Einstellungen) -->
+  <HH.Module.Core>Kern</HH.Module.Core>
+  <HH.Module.Inn>Gasthaus &amp; Hotel</HH.Module.Inn>
+  <HH.Module.ShopsFood>Läden &amp; Essen</HH.Module.ShopsFood>
+  <HH.Module.Casino>Casino</HH.Module.Casino>
+  <HH.Module.Wellness>Wellness</HH.Module.Wellness>
+  <HH.Module.CityLife>Stadtleben</HH.Module.CityLife>
+  <HH.Module.Underworld>Unterwelt</HH.Module.Underworld>
+  <HH.Module.Bank>Bank (Silverline)</HH.Module.Bank>
+  <HH.Module.AiFlavour>KI-Würze</HH.Module.AiFlavour>
 </LanguageData>

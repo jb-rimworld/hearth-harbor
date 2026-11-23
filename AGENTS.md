@@ -80,6 +80,11 @@ Dependency direction: `Hearth → Silverline → Hearth.Core`. Silverline must n
   or `<li Class="Hearth.ModuleGateExtension"><module>X</module></li>`. A module switched off hides its buildings (architect + placement;
   placed ones stay and say so), research (tab; progress kept), recipes/bills, work givers (work types stay), joy givers and incidents.
   A new def folder of a switchable module must be added to `FolderModules`. `ModuleGate.Changed` fires after every switch.
+  Details: a research prerequisite from an off module counts as done (only that one link, not its own prerequisites). Blueprints and frames of an
+  off module are NOT built or supplied (the construction work givers return no job; they stay and resume when the module is on again).
+  The Venues folder belongs to Shops & Food except the signs (extension, Core); no other module uses counters, stalls or vending machines
+  (checked), so if one starts to, give the building a `ModuleGateExtension` for Core. Right-click filtering skips itself when the game version's
+  `FloatMenuOptionProvider_WorkGivers.GetWorkGiverOption` is missing or has another signature (logged). Module names: keys `HH.Module.<ModuleId>`.
 - Also: `Payments.TryPayout` / `GuestApi.CreditGuest` (payouts, refunds), optional `IModuleScoped` on providers, `Ledger.Post(..., category)` + `Ledger.DayIncome`,
   `ScribeMoney.Look`, `HearthGame.OnGameInit` (clear static caches here), `BankTab.Module`.
 

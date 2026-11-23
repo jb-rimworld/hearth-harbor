@@ -7,6 +7,7 @@ using System.Reflection;
 using HarmonyLib;
 using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace Hearth
 {
@@ -166,6 +167,8 @@ namespace Hearth
             return false;
         }
 
+        static ModuleId FolderOwner(string f) => FolderModules.TryGetValue(f, out var m) ? m : ModuleId.Core;
+
         /// <summary>XML file name → first folder under Defs, for every Defs folder of our content pack (Common, version folders).</summary>
         static Dictionary<string, string> ScanDefFolders(ModContentPack pack)
         {
@@ -185,7 +188,10 @@ namespace Hearth
                         int cut = rel.IndexOfAny(new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar });
                         if (cut <= 0) continue;   // files directly in Defs belong to Core
                         var name = Path.GetFileName(file);
-                        if (!map.ContainsKey(name)) map[name] = rel.Substring(0, cut);
+                        var folder = rel.Substring(0, cut);
+                        if (!map.TryGetValue(name, out var have)) map[name] = folder;
+                        else if (!have.Equals(folder, StringComparison.OrdinalIgnoreCase) && FolderOwner(have) != FolderOwner(folder))
+                            HLog.Warn("Core", "Module gate: def file name '" + name + "' exists in Defs/" + have + " and Defs/" + folder + " (module owner may be wrong; rename one)");
                     }
                 }
             }
@@ -221,7 +227,12 @@ namespace Hearth
         static void Refresh(int mask)
         {
             ResearchVisibleFilter.Invalidate();
-            if (Current.ProgramState != ProgramState.Playing || Current.Game == null) { lastMask = -1; return; }   // while loading: the next tick poll does the rest
+            if (Current.ProgramState != ProgramState.Playing || Current.Game == null)
+            {
+                lastMask = -1;   // while loading: the next tick poll does the rest of the refresh; subscribers (guarded) already hear of the switch
+                RaiseChanged(mask);
+                return;
+            }
             // architect: other architect mods cache the designators of a category; a selected designator of a hidden building is dropped
             foreach (var cat in DefDatabase<DesignationCategoryDef>.AllDefsListForReading) cat.DirtyCache();
             var sel = Find.DesignatorManager?.SelectedDesignator;
@@ -234,10 +245,14 @@ namespace Hearth
                 if (cur != null && IsOff(cur)) { try { rm.StopProject(cur); } catch (Exception e) { HLog.Warn("Core", "Module gate: could not stop " + cur.defName + ": " + e.Message); } }
             }
             // work: every pawn rebuilds its work giver list (the filter below leaves out work givers of hidden modules)
-            foreach (var map in Find.Maps)
-                foreach (var p in map.mapPawns.AllPawnsSpawned) p.workSettings?.Notify_UseWorkPrioritiesChanged();
-            foreach (var c in Find.WorldObjects.Caravans) foreach (var p in c.PawnsListForReading) p.workSettings?.Notify_UseWorkPrioritiesChanged();
+            // (all pawns, also cryosleep, transport pods and off-map ones)
+            foreach (var p in PawnsFinder.AllMapsWorldAndTemporary_AliveOrDead) p?.workSettings?.Notify_UseWorkPrioritiesChanged();
             HLog.Info("Core", "Module gate: shown modules now " + string.Join(", ", Modules.All.Where(m => (mask & (1 << (int)m)) != 0)));
+            RaiseChanged(mask);
+        }
+
+        static void RaiseChanged(int mask)
+        {
             var h = Changed;
             if (h != null) foreach (var d in h.GetInvocationList()) { try { ((Action<int>)d)(mask); } catch (Exception e) { HLog.Error("Core", "Subscriber of ModuleGate.Changed threw (ignored)", e); } }
         }
@@ -363,13 +378,50 @@ namespace Hearth
     [HarmonyPatch]
     static class Patch_GateWorkGiverFloatMenu
     {
-        static MethodBase Target() => AccessTools.TypeByName("RimWorld.FloatMenuOptionProvider_WorkGivers") is Type t ? AccessTools.Method(t, "GetWorkGiverOption") : null;
-        static bool Prepare() => Target() != null;
-        static MethodBase TargetMethod() => Target();
-        static bool Prefix(WorkGiverDef workGiver, ref FloatMenuOption __result)
+        // The signature differs between game versions: patch only when the method returns a FloatMenuOption and takes a WorkGiverDef
+        // (found by type, not by parameter name); otherwise the patch is skipped and logged.
+        internal static MethodBase Target()
         {
-            if (!ModuleGate.IsOff(workGiver)) return true;
-            __result = null; return false;
+            var t = AccessTools.TypeByName("RimWorld.FloatMenuOptionProvider_WorkGivers");
+            var m = t == null ? null : AccessTools.Method(t, "GetWorkGiverOption");
+            if (m == null) return null;
+            if (m.ReturnType != typeof(FloatMenuOption) || !m.GetParameters().Any(pi => pi.ParameterType == typeof(WorkGiverDef))) return null;
+            return m;
+        }
+        static bool Prepare()
+        {
+            if (Target() != null) return true;
+            HLog.Warn("Core", "Module gate: right-click orders of an off module are not filtered (FloatMenuOptionProvider_WorkGivers.GetWorkGiverOption not found or changed in this game version)");
+            return false;
+        }
+        static MethodBase TargetMethod() => Target();
+        static bool Prefix(object[] __args, ref FloatMenuOption __result)
+        {
+            for (int i = 0; i < __args.Length; i++)
+                if (__args[i] is WorkGiverDef wg) { if (!ModuleGate.IsOff(wg)) return true; __result = null; return false; }
+            return true;
+        }
+    }
+
+    /// <summary>
+    /// Blueprints and frames of a module that is off are not delivered to or built (they stay and wait; switching the module on resumes them).
+    /// Only the two construction work givers that act on them are filtered; the check is two cheap reference tests on things that are blueprints/frames.
+    /// </summary>
+    [HarmonyPatch]
+    static class Patch_GateConstruction
+    {
+        static IEnumerable<MethodBase> TargetMethods()
+        {
+            foreach (var type in new[] { typeof(WorkGiver_ConstructDeliverResourcesToBlueprints), typeof(WorkGiver_ConstructDeliverResourcesToFrames), typeof(WorkGiver_ConstructFinishFrames) })
+            {
+                var m = AccessTools.Method(type, "JobOnThing");
+                if (m != null && m.DeclaringType == type) yield return m;
+            }
+        }
+        static void Postfix(Thing t, ref Job __result)
+        {
+            if (__result == null || ModuleGate.OwnedCount == 0) return;
+            if (t?.def?.entityDefToBuild is BuildableDef b && ModuleGate.IsOff(b)) __result = null;
         }
     }
 

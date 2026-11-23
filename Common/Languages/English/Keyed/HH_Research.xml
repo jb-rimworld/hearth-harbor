@@ -9,4 +9,14 @@
   <HH.Gate.ModuleOff>Module off: {0}</HH.Gate.ModuleOff>
   <HH.Gate.ModuleOffInspect>this does nothing until the module is switched on again.</HH.Gate.ModuleOffInspect>
   <HH.Gate.CannotPlace>Not available: {0} is switched off in this game.</HH.Gate.CannotPlace>
+  <!-- Module names (also used by the module gate texts and the settings) -->
+  <HH.Module.Core>Core</HH.Module.Core>
+  <HH.Module.Inn>Inn &amp; Hotel</HH.Module.Inn>
+  <HH.Module.ShopsFood>Shops &amp; Food</HH.Module.ShopsFood>
+  <HH.Module.Casino>Casino</HH.Module.Casino>
+  <HH.Module.Wellness>Wellness</HH.Module.Wellness>
+  <HH.Module.CityLife>City Life</HH.Module.CityLife>
+  <HH.Module.Underworld>Underworld</HH.Module.Underworld>
+  <HH.Module.Bank>Bank (Silverline)</HH.Module.Bank>
+  <HH.Module.AiFlavour>AI flavour</HH.Module.AiFlavour>
 </LanguageData>

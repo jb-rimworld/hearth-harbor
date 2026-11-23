@@ -103,8 +103,8 @@ namespace Hearth
                 catch (Exception e) { Guard.Fail(m.Id, m.GetType().Name + ".GameTick", e); }
             }
             Caretaker.Tick(t);
-            if (t % 600 == 29) ResearchGate.Apply();
-            if (t % 60 == 17) ModuleGate.Poll();   // cheap: a few lookups; catches switches made without SetModule   // the research mode may change in the middle of a game
+            if (t % 600 == 29) ResearchGate.Apply();   // the research mode may change in the middle of a game
+            if (t % 60 == 17) ModuleGate.Poll();       // cheap: a few lookups; catches switches made without SetModule
             if (t % 60000 == 1234) Ledger.DailyCheck();
             // midnight (local time of the first player home map): empty tills
             var home = Find.AnyPlayerHomeMap;
