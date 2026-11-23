@@ -321,6 +321,4 @@
   <HH.UI.Calc.slotRtp>Slot machine payout (RTP)</HH.UI.Calc.slotRtp>
   <HH.UI.Calc.slotRtp.Desc>Share of every bet a slot machine pays back on average. The house keeps the rest.</HH.UI.Calc.slotRtp.Desc>
   <HH.UI.Content.Decline>No, keep {0}</HH.UI.Content.Decline>
-  <HH.Setting.core.windowScale>Size of Hearth &amp; Harbor windows</HH.Setting.core.windowScale>
-  <HH.Setting.core.windowScale.Desc>All Hearth &amp; Harbor and Silverline windows grow or shrink by this factor (on top of the automatic size for large screens).</HH.Setting.core.windowScale.Desc>
 </LanguageData>
