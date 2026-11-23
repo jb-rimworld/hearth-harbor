@@ -125,6 +125,7 @@ namespace Hearth.Testing
             try
             {
                 Find.Storyteller?.storytellerComps?.Clear();
+                HearthGame.Instance?.HoldTillFlushForTests();
                 var map = Find.CurrentMap; if (map == null) return;
                 // outdoor joy (benches, saunas) is refused in rain or snow
                 if (map.weatherManager.curWeather != WeatherDefOf.Clear) { map.weatherManager.curWeather = WeatherDefOf.Clear; map.weatherManager.lastWeather = WeatherDefOf.Clear; }

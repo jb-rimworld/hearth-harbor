@@ -19,6 +19,7 @@ namespace Hearth.Shell.Tests
         /// <summary>With HH_UI_SHOTS=&lt;dir&gt; the suites save screenshots of what they draw (for looking at the layout by eye).</summary>
         public static void Shot(string name)
         {
+            frameMark = UiProbe.Count("ongui");
             string dir = Environment.GetEnvironmentVariable("HH_UI_SHOTS");
             if (string.IsNullOrEmpty(dir)) return;
             try { System.IO.Directory.CreateDirectory(dir); ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(dir, name + ".png")); }
@@ -28,9 +29,13 @@ namespace Hearth.Shell.Tests
         /// <summary>Checks that need real OnGUI frames. If the game window is not being rendered at all (screen asleep, occluded) they are skipped with a note instead of failing.</summary>
         public static void DrawCheck(TestContext t, bool ok, string what)
         {
-            if (!ok && UiProbe.Count("ongui") == 0) { t.Note("SKIP (game window is not rendering, no OnGUI frames): " + what); return; }
+            // the window can stop rendering in the middle of a run (another window in front, screen saver, a second game in the same Space): count OnGUI frames
+            // since the last Shot() mark, not since the start, so a window that went dark after its first frames does not fail the draw checks
+            int frames = UiProbe.Count("ongui");
+            if (!ok && (frames == 0 || (frameMark >= 0 && frames == frameMark))) { t.Note("SKIP (game window is not rendering, no OnGUI frames since the last mark): " + what); return; }
             t.Check(ok, what);
         }
+        static int frameMark = -1;
 
         public static List<Pawn> SpawnVisitors(Map map)
         {

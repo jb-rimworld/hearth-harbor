@@ -21,6 +21,15 @@ namespace Hearth
         bool initialized;
         /// <summary>Local calendar day (year × 60 + day of year) of the last till flush; saved so a reload at midnight cannot flush twice.</summary>
         int lastTillDay = -1;
+#if HH_TESTS
+        /// <summary>Tests: no midnight till flush until the day after tomorrow starts. A suite that lasts across midnight (the quicktest start hour is random) would otherwise see
+        /// the colony till emptied in the middle of its money checks.</summary>
+        public void HoldTillFlushForTests()
+        {
+            var home = Find.AnyPlayerHomeMap; if (home == null) return;
+            lastTillDay = GenLocalDate.Year(home) * GenDate.DaysPerYear + GenLocalDate.DayOfYear(home) + 1;
+        }
+#endif
         /// <summary>True once ExposeData ran, i.e. this component came from a save. False after loading a save that never had the mod.</summary>
         bool exposed;
 

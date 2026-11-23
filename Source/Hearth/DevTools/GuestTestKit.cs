@@ -19,7 +19,7 @@ namespace Hearth.Testing
     {
         /// <summary>Spawns at least <paramref name="minCount"/> vanilla visitors (a group may be bigger) and returns the pawns that are now vanilla visitors on the map.</summary>
         /// <param name="spawn">Where the group enters; default is a random map-edge cell that can reach the colony.</param>
-        public static List<Pawn> SpawnVisitors(Map map, int minCount = 1, IntVec3 spawn = default, int maxTries = 8)
+        public static List<Pawn> SpawnVisitors(Map map, int minCount = 1, IntVec3? spawn = null, int maxTries = 8)
         {
             var factions = VenueTestKit.Friendly(4, false);
             var made = new List<Pawn>();
@@ -29,7 +29,7 @@ namespace Hearth.Testing
                 {
                     target = map, forced = true, sendLetter = false, points = 120f,
                     faction = factions.Count > 0 ? factions[i % factions.Count] : null,
-                    spawnCenter = spawn.IsValid ? spawn : EntryCell(map),
+                    spawnCenter = spawn ?? EntryCell(map),
                     storeGeneratedNeutralPawns = new List<Pawn>()
                 };
                 try { IncidentDefOf.VisitorGroup.Worker.TryExecute(parms); }
