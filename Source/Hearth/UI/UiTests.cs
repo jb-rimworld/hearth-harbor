@@ -454,7 +454,7 @@ namespace Hearth.Shell.Tests
             t.Check(addiction.Reference(0.5f) >= 0f && addiction.Reference(2.5f) > 0.04f && addiction.Reference(2.5f) < 0.08f, "symlog between a zero-ish and a positive anchor stays between them");
             var research = TierTable.Rows.First(r => r.Id == "researchCost");
             t.Check(Mathf.Abs(research.Reference(0.5f) - Mathf.Sqrt(0.25f * 0.6f)) < 0.01f, "log scale is geometric: " + research.Reference(0.5f));
-            var stage = TierTable.Rows.First(r => r.Id == "stage");
+            var stage = TierTable.Rows.First(r => r.Id == "collectionStage");
             t.Check(stage.Reference(2.6f) == 4f && stage.Reference(2.4f) == 2f, "step rows switch at the nearest tier");
             // percent scale
             for (int i = 0; i < 7; i++) t.Check(Mathf.Abs(HearthProfile.TierFromPercent(HearthProfile.TierPercent[i]) - i) < 1e-4f, "percent " + HearthProfile.TierPercent[i] + " maps to tier " + i);
@@ -463,7 +463,7 @@ namespace Hearth.Shell.Tests
             t.Check(roundTrip, "tier ↔ percent round trip");
             // registered settings
             t.Check(DifficultyPanel.SpecialKeys.All(k => HSettings.Find(k) != null), "all special switches are registered settings: " + string.Join(",", DifficultyPanel.SpecialKeys.Where(k => HSettings.Find(k) == null)));
-            var stg = HSettings.Find("core.consequenceStage");
+            var stg = HSettings.Find("bank.maxCollectionStage");
             t.Check(stg != null && stg.DefaultFor(0) == 0 && stg.DefaultFor(3) == 4 && stg.DefaultFor(6) == 7, "consequence stage follows the tier anchors");
             // live reading: effective value follows the profile, an override wins
             var prof = new HearthProfile { Tier = 5f };
@@ -473,7 +473,15 @@ namespace Hearth.Shell.Tests
             SettingRowUI.Set(HSettings.Find("core.researchCost"), prof, 0.5f);
             eff = TierTable.Effective(rrow, prof, out fromSetting, out over);
             t.Check(over && Mathf.Abs(eff - 0.5f) < 1e-4f, "an override replaces the tier value in the calculator");
-            var unreg = TierTable.Rows.First(r => HSettings.Find(r.SettingKey) == null);
+            var unreg = new TierRow { Id = "synthetic", SettingKey = "no.such.key", Anchors = TierTable.Rows[0].Anchors, Scale = TierScale.Log, Format = TierFormat.Factor };
+            t.Check(!float.IsNaN(TierTable.Effective(unreg, prof, out fromSetting, out over)) && !fromSetting, "a row without a registered setting falls back to the reference value");
+            // every calculator row must be backed by a registered setting with the same anchors (no wrong keys, no permanent "reference" rows)
+            foreach (var r in TierTable.Rows)
+            {
+                var rs = HSettings.Find(r.SettingKey);
+                t.Check(rs != null, "calculator row " + r.Id + " uses a registered setting (" + r.SettingKey + ")");
+                if (rs?.TierAnchors != null) for (int i = 0; i < 7; i++) if (Mathf.Abs(rs.TierAnchors[i] - r.Anchors[i]) > 1e-4f * Mathf.Max(1f, Mathf.Abs(r.Anchors[i]))) { t.Check(false, "calculator row " + r.Id + " anchor " + i + " matches " + r.SettingKey + ": " + r.Anchors[i] + " vs " + rs.TierAnchors[i]); break; }
+            }
             t.Check(!float.IsNaN(TierTable.Effective(unreg, prof, out fromSetting, out over)) && !fromSetting, "unregistered rows fall back to the reference value (" + unreg.Id + ")");
             foreach (var r in TierTable.Rows) for (int i = 0; i < 7; i++) if (string.IsNullOrEmpty(r.FormatValue(r.Anchors[i]))) t.Check(false, "format " + r.Id);
             yield break;
@@ -487,7 +495,7 @@ namespace Hearth.Shell.Tests
         public override IEnumerable<int> Run(TestContext t)
         {
             var colony = HearthProfile.Current; var template = HearthMod.Template.Profile;
-            var s = HSettings.Find("core.upkeep");
+            var s = HSettings.Find("core.researchCost");
             float colonyBefore = SettingRowUI.Value(s, colony), templateBefore = SettingRowUI.Value(s, template);
             SettingRowUI.Set(s, template, 1.75f);
             t.Check(Mathf.Abs(SettingRowUI.Value(s, template) - 1.75f) < 1e-4f, "template value written");
@@ -556,7 +564,7 @@ namespace Hearth.Shell.Tests
             foreach (GuestsPage.Col c in Enum.GetValues(typeof(GuestsPage.Col))) Need("HH.UI.Guests.Col." + c);
             foreach (var m in Modules.All.Where(m => m != ModuleId.Core)) Need("HH.UI.ModuleDesc." + m);
             foreach (var u in new[] { "Discover", "On", "Off" }) { Need("HH.UI.Underworld." + u); Need("HH.UI.Underworld." + u + ".Tip"); }
-            foreach (var st in HSettings.All.Where(x => x.Module == ModuleId.Core && x.Key != "core.rngAlgorithm" && x.Key != "core.sealedFate" && x.Key != "core.helpHint" && x.Key != "core.guide" && x.Key != "core.perfGuardTps")) { Need("HH.Setting." + st.Key); Need("HH.Setting." + st.Key + ".Desc"); }
+            foreach (var st in HSettings.All.Where(x => x.Module == ModuleId.Core && x.Key != "core.rngAlgorithm" && x.Key != "core.sealedFate" && x.Key != "core.helpHint" && x.Key != "core.guide")) { Need("HH.Setting." + st.Key); Need("HH.Setting." + st.Key + ".Desc"); }
             t.Check(missing.Count == 0, "all dynamic translation keys exist" + (missing.Count > 0 ? ": " + string.Join(", ", missing) : ""));
             t.Check("HH.UI.Row.Limited".Translate("5").ToString().Contains("5"), "format arguments work");
             t.Check(DefDatabase<GuideTopicDef>.AllDefs.All(d => !d.label.NullOrEmpty() && !d.description.NullOrEmpty()), "guide topics have label and description");

@@ -185,7 +185,7 @@ namespace Hearth.Guests
 
         public override void MapComponentTick()
         {
-            if (Find.TickManager.TicksGame % 250 != 77 || !Modules.On(ModuleId.Inn)) return;
+            if (Find.TickManager.TicksGame % PerfMode.Interval(250) != 77 || !Modules.On(ModuleId.Inn)) return;
             Guard.Run(ModuleId.Inn, "Inn.AdoptWings", () => AdoptForeignWings());
             Guard.Run(ModuleId.Inn, "Inn.VenueGrid", () => { RefreshVenueGrid(); GrowTowardsNewVenues(); });
         }

@@ -111,30 +111,18 @@
   <HH.UI.Calc.arrivalRate.Desc>宿泊客がどのくらい頻繁に訪れるかを決めます。</HH.UI.Calc.arrivalRate.Desc>
   <HH.UI.Calc.expectation>宿泊客の期待</HH.UI.Calc.expectation>
   <HH.UI.Calc.expectation.Desc>すべての宿泊客が抱く期待に加算されます。高いほど満足させにくくなります。</HH.UI.Calc.expectation.Desc>
-  <HH.UI.Calc.trouble>トラブルの危険度</HH.UI.Calc.trouble>
-  <HH.UI.Calc.trouble.Desc>宿泊客同士の口論、けんか、盗みの起こりやすさと重みです。</HH.UI.Calc.trouble.Desc>
-  <HH.UI.Calc.stage>最悪の結果</HH.UI.Calc.stage>
-  <HH.UI.Calc.stage.Desc>この段階で、悪い滞在があなたにもたらしうる最悪の結果です。</HH.UI.Calc.stage.Desc>
-  <HH.UI.Calc.slotEdge>スロットマシンの胴元取り分</HH.UI.Calc.slotEdge>
-  <HH.UI.Calc.slotEdge.Desc>スロットマシンが各ベットから平均して取る割合です。</HH.UI.Calc.slotEdge.Desc>
   <HH.UI.Calc.bankM>銀行の市場利回り（年間 M）</HH.UI.Calc.bankM>
   <HH.UI.Calc.bankM.Desc>Silverline 市場の年間倍率です。1.2 は二十パーセントの増加を意味します。</HH.UI.Calc.bankM.Desc>
-  <HH.UI.Calc.defaultFactor>支払い不履行</HH.UI.Calc.defaultFactor>
-  <HH.UI.Calc.defaultFactor.Desc>客が借りを返し損ねる頻度です。</HH.UI.Calc.defaultFactor.Desc>
   <HH.UI.Calc.collectionStage>取り立ての最も厳しい段階</HH.UI.Calc.collectionStage>
   <HH.UI.Calc.collectionStage.Desc>借金があるとき、取り立てがどこまで荒っぽくなりうるかです。</HH.UI.Calc.collectionStage.Desc>
   <HH.UI.Calc.researchCost>研究費用</HH.UI.Calc.researchCost>
   <HH.UI.Calc.researchCost.Desc>Hearth &amp; Harbor と Silverline の研究の費用を倍率で増減させます。</HH.UI.Calc.researchCost.Desc>
-  <HH.UI.Calc.upkeep>維持費</HH.UI.Calc.upkeep>
-  <HH.UI.Calc.upkeep.Desc>店と部屋の運営費を倍率で増減させます。</HH.UI.Calc.upkeep.Desc>
   <HH.UI.Calc.insuranceLoading>保険の上乗せ</HH.UI.Calc.insuranceLoading>
   <HH.UI.Calc.insuranceLoading.Desc>適正な保険料に上乗せされる保険会社の利益です。</HH.UI.Calc.insuranceLoading.Desc>
   <HH.UI.Calc.salesPressure>保険の販売圧力</HH.UI.Calc.salesPressure>
   <HH.UI.Calc.salesPressure.Desc>保険会社の押し売りの手口がどれほど強引になるかです。</HH.UI.Calc.salesPressure.Desc>
   <HH.UI.Calc.addiction>ギャンブル依存の確率</HH.UI.Calc.addiction>
   <HH.UI.Calc.addiction.Desc>たくさん賭けるコロニストが依存症になる基本の確率です。</HH.UI.Calc.addiction.Desc>
-  <HH.UI.Calc.detection>いかさまの発見率</HH.UI.Calc.detection>
-  <HH.UI.Calc.detection.Desc>テーブルでのいかさまがどれほど速く気づかれるかです。</HH.UI.Calc.detection.Desc>
   <HH.UI.Stage.0>害なし</HH.UI.Stage.0>
   <HH.UI.Stage.1>気分</HH.UI.Stage.1>
   <HH.UI.Stage.2>名声</HH.UI.Stage.2>
@@ -305,48 +293,19 @@
   <HH.UI.Guide.More>さらに {0} 件の項目が続く</HH.UI.Guide.More>
   <HH.UI.Guide.Done>完了 ({0})</HH.UI.Guide.Done>
   <HH.UI.Guide.ClickJump>クリックするとそこへ移動する。</HH.UI.Guide.ClickJump>
-  <HH.Setting.core.consequenceStage>最高の結果段階</HH.Setting.core.consequenceStage>
-  <HH.Setting.core.consequenceStage.Desc>悪い結果がどこまでエスカレートするか: 1 気分、2 名声、3 好感度、4 金銭、5 営業許可、6 襲撃、7 懸賞金。もてなしの難易度に従う。</HH.Setting.core.consequenceStage.Desc>
   <HH.Setting.core.researchCost>研究コスト係数</HH.Setting.core.researchCost>
   <HH.Setting.core.researchCost.Desc>Hearth &amp; Harbor と Silverline の研究プロジェクトのコストに掛ける。もてなしの難易度に従う。</HH.Setting.core.researchCost.Desc>
-  <HH.Setting.core.upkeep>維持費係数</HH.Setting.core.upkeep>
-  <HH.Setting.core.upkeep.Desc>施設と部屋の運営費に掛ける。もてなしの難易度に従う。</HH.Setting.core.upkeep.Desc>
   <HH.Setting.core.neverDie>ゲストは決して死なない</HH.Setting.core.neverDie>
-  <HH.Setting.core.neverDie.Desc>ゲストは殺される代わりに倒れ、無料で救助される。</HH.Setting.core.neverDie.Desc>
-  <HH.Setting.core.noHostile>敵対するゲストは一切出ない</HH.Setting.core.noHostile>
-  <HH.Setting.core.noHostile.Desc>派閥があなたをどう思っていても、ゲストが敵対することはない。</HH.Setting.core.noHostile.Desc>
   <HH.Setting.core.infiniteMoney>ゲストの金は無限</HH.Setting.core.infiniteMoney>
-  <HH.Setting.core.infiniteMoney.Desc>ゲストは常に支払えるだけの金を持っている。これが有効の間、ゲストの所持金係数は効果がない。</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.picky>うるさいゲスト</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>ゲストは毎回の滞在に少しだけ多くを期待する（期待値 +0.1）。</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.feuding>対立する派閥</HH.Setting.core.feuding>
-  <HH.Setting.core.feuding.Desc>敵対する派閥は同じ屋根の下にいると、互いへの嫌悪が2倍になる。</HH.Setting.core.feuding.Desc>
-  <HH.Setting.core.mandatory>強制のもてなし</HH.Setting.core.mandatory>
-  <HH.Setting.core.mandatory.Desc>契約と宿泊割り当てが、過剰予約の段階より下でも強制される。</HH.Setting.core.mandatory.Desc>
-  <HH.Setting.core.strictInspectors>厳しい検査官</HH.Setting.core.strictInspectors>
-  <HH.Setting.core.strictInspectors.Desc>検査官は3倍の頻度で検査する。</HH.Setting.core.strictInspectors.Desc>
-  <HH.Setting.core.realConsequences>現実的な結果</HH.Setting.core.realConsequences>
-  <HH.Setting.core.realConsequences.Desc>結果の段階を1段階引き上げる。</HH.Setting.core.realConsequences.Desc>
   <HH.Setting.core.ironBank>鉄の財布 / 鉄の銀行</HH.Setting.core.ironBank>
-  <HH.Setting.core.ironBank.Desc>救済なし、当座貸越なし、容赦のない複利。</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.noResearchGating>研究の制限なし</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Hearth &amp; Harbor と Silverline の研究ツリーのすべてが最初から使える。</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>平和な裏社会</HH.Setting.core.peacefulUnderworld>
-  <HH.Setting.core.peacefulUnderworld.Desc>いかがわしい施設は暴力なしで営業する。</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.showMath>計算式を見せる</HH.Setting.core.showMath>
   <HH.Setting.core.showMath.Desc>マニア向け設定と計算式をあらゆる場所に表示する。</HH.Setting.core.showMath.Desc>
   <HH.Setting.core.perfMode>パフォーマンスモード</HH.Setting.core.perfMode>
-  <HH.Setting.core.perfMode.Desc>遅いコンピュータでは同時のゲストを減らし、ゲストの行動を単純にする。</HH.Setting.core.perfMode.Desc>
-  <HH.Setting.core.houseStyle>建物のスタイル</HH.Setting.core.houseStyle>
-  <HH.Setting.core.houseStyle.Desc>家具と看板の見た目。自動は思想のスタイル、そうでなければ最も進んだ研究済みの時代に従う。見た目だけで、ゲストと価格には影響しない。</HH.Setting.core.houseStyle.Desc>
-  <HH.Setting.core.keepBuiltStyle>建設済みの家具は古いスタイルを保つ</HH.Setting.core.keepBuiltStyle>
-  <HH.Setting.core.keepBuiltStyle.Desc>時代の変化で建物のスタイルが変わっても、建設済みの家具は見た目を保つ。</HH.Setting.core.keepBuiltStyle.Desc>
-  <HH.Enum.HouseStyle.Automatic>自動</HH.Enum.HouseStyle.Automatic>
-  <HH.Enum.HouseStyle.StoneAge>石器時代</HH.Enum.HouseStyle.StoneAge>
-  <HH.Enum.HouseStyle.Medieval>中世</HH.Enum.HouseStyle.Medieval>
-  <HH.Enum.HouseStyle.Industrial>産業</HH.Enum.HouseStyle.Industrial>
-  <HH.Enum.HouseStyle.Spacer>宇宙時代</HH.Enum.HouseStyle.Spacer>
-  <HH.Enum.HouseStyle.Ultra>ウルトラ</HH.Enum.HouseStyle.Ultra>
   <HH.UI.Overview.Arrivals>到着予定、次の24時間: {0}、1日あたり約 {1} 組を見込む。</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>まだ予定なし</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>{0} 組を予定（約 {1} 名）</HH.UI.Overview.Arrivals.Planned>

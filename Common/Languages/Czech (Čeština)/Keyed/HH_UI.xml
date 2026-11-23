@@ -111,30 +111,18 @@
   <HH.UI.Calc.arrivalRate.Desc>Jak často hosté přicházejí.</HH.UI.Calc.arrivalRate.Desc>
   <HH.UI.Calc.expectation>Očekávání hostů</HH.UI.Calc.expectation>
   <HH.UI.Calc.expectation.Desc>Přičítá se k tomu, co každý host očekává. Vyšší hodnota znamená těžší spokojenost.</HH.UI.Calc.expectation.Desc>
-  <HH.UI.Calc.trouble>Nebezpečí potíží</HH.UI.Calc.trouble>
-  <HH.UI.Calc.trouble.Desc>Šance a závažnost hádek, rvaček a krádeží mezi hosty.</HH.UI.Calc.trouble.Desc>
-  <HH.UI.Calc.stage>Nejvyšší následek</HH.UI.Calc.stage>
-  <HH.UI.Calc.stage.Desc>Nejhorší věc, kterou vám špatný pobyt na tomto stupni může způsobit.</HH.UI.Calc.stage.Desc>
-  <HH.UI.Calc.slotEdge>Výhoda automatu</HH.UI.Calc.slotEdge>
-  <HH.UI.Calc.slotEdge.Desc>Podíl každé sázky, který automat v průměru zadrží.</HH.UI.Calc.slotEdge.Desc>
   <HH.UI.Calc.bankM>Výnos trhu banky (M za rok)</HH.UI.Calc.bankM>
   <HH.UI.Calc.bankM.Desc>Roční násobitel trhu Silverline. 1,2 znamená plus dvacet procent.</HH.UI.Calc.bankM.Desc>
-  <HH.UI.Calc.defaultFactor>Nezaplacené platby</HH.UI.Calc.defaultFactor>
-  <HH.UI.Calc.defaultFactor.Desc>Jak často zákazníci nezaplatí, co dluží.</HH.UI.Calc.defaultFactor.Desc>
   <HH.UI.Calc.collectionStage>Nejvyšší stupeň vymáhání</HH.UI.Calc.collectionStage>
   <HH.UI.Calc.collectionStage.Desc>Jak drsné může být vymáhání dluhů, když dlužíte peníze.</HH.UI.Calc.collectionStage.Desc>
   <HH.UI.Calc.researchCost>Náklady na výzkum</HH.UI.Calc.researchCost>
   <HH.UI.Calc.researchCost.Desc>Násobí náklady na výzkum pro Hearth &amp; Harbor a Silverline.</HH.UI.Calc.researchCost.Desc>
-  <HH.UI.Calc.upkeep>Údržba</HH.UI.Calc.upkeep>
-  <HH.UI.Calc.upkeep.Desc>Násobí provozní náklady vašich provozoven a pokojů.</HH.UI.Calc.upkeep.Desc>
   <HH.UI.Calc.insuranceLoading>Přirážka pojištění</HH.UI.Calc.insuranceLoading>
   <HH.UI.Calc.insuranceLoading.Desc>Přirážka pojišťovny nad férovým pojistným.</HH.UI.Calc.insuranceLoading.Desc>
   <HH.UI.Calc.salesPressure>Tlak prodejců pojištění</HH.UI.Calc.salesPressure>
   <HH.UI.Calc.salesPressure.Desc>Jak vtíravé jsou triky prodejců pojišťovny.</HH.UI.Calc.salesPressure.Desc>
   <HH.UI.Calc.addiction>Šance na závislost na hazardu</HH.UI.Calc.addiction>
   <HH.UI.Calc.addiction.Desc>Základní šance, že kolonista, který hodně hazarduje, se stane závislým.</HH.UI.Calc.addiction.Desc>
-  <HH.UI.Calc.detection>Míra odhalení podvodů</HH.UI.Calc.detection>
-  <HH.UI.Calc.detection.Desc>Jak rychle se odhalí podvádění u stolu.</HH.UI.Calc.detection.Desc>
   <HH.UI.Stage.0>Žádná újma</HH.UI.Stage.0>
   <HH.UI.Stage.1>Nálada</HH.UI.Stage.1>
   <HH.UI.Stage.2>Pověst</HH.UI.Stage.2>
@@ -305,48 +293,19 @@
   <HH.UI.Guide.More>Následuje ještě +{0} témat</HH.UI.Guide.More>
   <HH.UI.Guide.Done>Hotovo ({0})</HH.UI.Guide.Done>
   <HH.UI.Guide.ClickJump>Klikni pro přechod.</HH.UI.Guide.ClickJump>
-  <HH.Setting.core.consequenceStage>Nejvyšší stupeň následků</HH.Setting.core.consequenceStage>
-  <HH.Setting.core.consequenceStage.Desc>Jak daleko mohou špatné výsledky zajít: 1 nálada, 2 věhlas, 3 dobrá vůle, 4 peníze, 5 licence, 6 nálety, 7 odměna. Řídí se obtížností pohostinství.</HH.Setting.core.consequenceStage.Desc>
   <HH.Setting.core.researchCost>Koeficient ceny výzkumu</HH.Setting.core.researchCost>
   <HH.Setting.core.researchCost.Desc>Násobí cenu výzkumných projektů Hearth &amp; Harbor a Silverline. Řídí se obtížností pohostinství.</HH.Setting.core.researchCost.Desc>
-  <HH.Setting.core.upkeep>Koeficient provozních nákladů</HH.Setting.core.upkeep>
-  <HH.Setting.core.upkeep.Desc>Násobí provozní náklady tvých provozoven a místností. Řídí se obtížností pohostinství.</HH.Setting.core.upkeep.Desc>
   <HH.Setting.core.neverDie>Hosté nikdy neumírají</HH.Setting.core.neverDie>
-  <HH.Setting.core.neverDie.Desc>Hosté jsou sraženi k zemi místo zabití a zachráněni zdarma.</HH.Setting.core.neverDie.Desc>
-  <HH.Setting.core.noHostile>Hosté nikdy nejsou nepřátelští</HH.Setting.core.noHostile>
-  <HH.Setting.core.noHostile.Desc>Hosté nikdy nepřejdou k nepřátelství, ať si o tobě jejich frakce myslí cokoli.</HH.Setting.core.noHostile.Desc>
   <HH.Setting.core.infiniteMoney>Neomezené peníze hostů</HH.Setting.core.infiniteMoney>
-  <HH.Setting.core.infiniteMoney.Desc>Hosté mají vždy dost na zaplacení. Při zapnutí nemá koeficient peněz hostů žádný vliv.</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.picky>Vybíraví hosté</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>Hosté očekávají od každého pobytu trochu víc (očekávání +0,1).</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.feuding>Znesvářené frakce</HH.Setting.core.feuding>
-  <HH.Setting.core.feuding.Desc>Nepřátelské frakce se nemají rády dvakrát víc, když sdílejí střechu.</HH.Setting.core.feuding.Desc>
-  <HH.Setting.core.mandatory>Povinná pohostinnost</HH.Setting.core.mandatory>
-  <HH.Setting.core.mandatory.Desc>Smlouvy a ubytování ti budou vnuceny, i pod úrovní Přeplněno.</HH.Setting.core.mandatory.Desc>
-  <HH.Setting.core.strictInspectors>Přísní inspektoři</HH.Setting.core.strictInspectors>
-  <HH.Setting.core.strictInspectors.Desc>Inspektoři kontrolují třikrát častěji.</HH.Setting.core.strictInspectors.Desc>
-  <HH.Setting.core.realConsequences>Skutečné následky</HH.Setting.core.realConsequences>
-  <HH.Setting.core.realConsequences.Desc>Zvedne žebřík následků o jeden stupeň.</HH.Setting.core.realConsequences.Desc>
   <HH.Setting.core.ironBank>Železný váček / Železná banka</HH.Setting.core.ironBank>
-  <HH.Setting.core.ironBank.Desc>Žádná záchrana, žádný debet, úročení bez slitování.</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.noResearchGating>Bez omezení výzkumu</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Vše ze stromů Hearth &amp; Harbor a Silverline je dostupné od začátku.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>Mírumilovné podsvětí</HH.Setting.core.peacefulUnderworld>
-  <HH.Setting.core.peacefulUnderworld.Desc>Temné provozovny fungují bez násilí.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.showMath>Ukaž mi matematiku</HH.Setting.core.showMath>
   <HH.Setting.core.showMath.Desc>Všude ukazuje nerdovská nastavení a vzorce.</HH.Setting.core.showMath.Desc>
   <HH.Setting.core.perfMode>Režim výkonu</HH.Setting.core.perfMode>
-  <HH.Setting.core.perfMode.Desc>Méně hostů najednou a jednodušší chování hostů na pomalých počítačích.</HH.Setting.core.perfMode.Desc>
-  <HH.Setting.core.houseStyle>Styl domu</HH.Setting.core.houseStyle>
-  <HH.Setting.core.houseStyle.Desc>Vzhled nábytku a cedulí. Automaticky se řídí tvým ideologickým stylem, jinak tvou nejvyšší prozkoumanou érou. Jde jen o vzhled: hosté ani ceny nejsou ovlivněny.</HH.Setting.core.houseStyle.Desc>
-  <HH.Setting.core.keepBuiltStyle>Postavený nábytek si zachová starý styl</HH.Setting.core.keepBuiltStyle>
-  <HH.Setting.core.keepBuiltStyle.Desc>Když se styl domu změní s novou érou, už postavený nábytek si zachová svůj vzhled.</HH.Setting.core.keepBuiltStyle.Desc>
-  <HH.Enum.HouseStyle.Automatic>Automaticky</HH.Enum.HouseStyle.Automatic>
-  <HH.Enum.HouseStyle.StoneAge>Doba kamenná</HH.Enum.HouseStyle.StoneAge>
-  <HH.Enum.HouseStyle.Medieval>Středověk</HH.Enum.HouseStyle.Medieval>
-  <HH.Enum.HouseStyle.Industrial>Průmysl</HH.Enum.HouseStyle.Industrial>
-  <HH.Enum.HouseStyle.Spacer>Vesmírník</HH.Enum.HouseStyle.Spacer>
-  <HH.Enum.HouseStyle.Ultra>Ultra</HH.Enum.HouseStyle.Ultra>
   <HH.UI.Overview.Arrivals>Příjezdy, příštích 24 h: {0}, očekává se asi {1} skupin denně.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>zatím nikdo neplánován</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>naplánováno skupin: {0} (asi hostů: {1})</HH.UI.Overview.Arrivals.Planned>

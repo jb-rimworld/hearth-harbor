@@ -69,9 +69,15 @@ namespace Hearth.Guests
         /// <summary>Guests who can afford a drop pod bring a little more (B9: 1.15, was 1.6).</summary>
         public const float PodBudgetFactor = 1.15f;
 
+        public const string InfiniteMoneySwitch = "core.infiniteMoney", PickySwitch = "core.picky";
+        public const int InfiniteBudgetSilver = 1_000_000;
+        /// <summary>Extra expectation of the special switch core.picky.</summary>
+        public const float PickyExpectation = 0.1f;
+
         /// <summary>Budget for the whole stay: b(W) · days^0.85 · random(0.8–1.2) · guest-money setting · origin · trait.</summary>
         public static Money RollBudget(Pawn p, int wealth, float days, bool byPod, RngStream rng)
         {
+            if (CoreSettings.Switch(InfiniteMoneySwitch)) return Money.FromSilver(InfiniteBudgetSilver);   // special switch: a bottomless purse
             float b = DailyBudget(wealth) * Mathf.Pow(Mathf.Max(0.25f, days), 0.85f);
             b *= 0.8f + 0.4f * (float)rng.NextDouble();
             b *= HSettings.Get(InnSettings.GuestMoney);
@@ -89,7 +95,7 @@ namespace Hearth.Guests
         public static float Expectation(int wealth, float renown, Faction f)
         {
             float gw01 = f == null || f.IsPlayer ? 0.5f : Mathf.Clamp01((f.PlayerGoodwill + 100f) / 200f);
-            return Mathf.Clamp01(0.30f + 0.25f * wealth / 100f + 0.15f * renown / 100f + HSettings.Get(InnSettings.ExpectationOffset) - 0.10f * (1f - gw01));
+            return Mathf.Clamp01(0.30f + 0.25f * wealth / 100f + 0.15f * renown / 100f + HSettings.Get(InnSettings.ExpectationOffset) + (CoreSettings.Switch(PickySwitch) ? PickyExpectation : 0f) - 0.10f * (1f - gw01));
         }
 
         /// <summary>Room score the guest hopes for (used for the sleep verdict).</summary>

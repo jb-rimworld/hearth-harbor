@@ -10,7 +10,6 @@ namespace Silverline
     public static class BankSettings
     {
         public static readonly double[] ProfitAnchors = { 100, 2.0, 1.5, 1.2, 1.0, 0.7, 0.1 };
-        public static readonly float[] DefaultFactorAnchors = { 0f, 0.2f, 0.35f, 0.5f, 1.0f, 1.5f, 2.5f };
         public static readonly float[] CollectionStageAnchors = { 0f, 1f, 2f, 4f, 5f, 6f, 7f };
         public static readonly float[] AngerAnchors = { 0f, 0.2f, 0.5f, 1.0f, 1.5f, 2.2f, 3.5f };
 
@@ -48,8 +47,6 @@ namespace Silverline
             HSettings.Int(B, "Loans", "bank.loanIntervalDays", 5, 1, 15, "Days between instalments", "Loan instalments are due every this many days.", hardMin: 1, hardMax: 30);
             HSettings.Int(B, "Loans", "bank.loanMaxTermDays", 120, 15, 240, "Longest loan term (days)", "", nerd: true, hardMin: 5, hardMax: 600);
             HSettings.Percent(B, "Loans", "bank.lateFee", 0.05f, 0f, 0.2f, "Late fee", "Charged on the overdue instalment when a loan reaches collection stage 2.", hardMin: 0f, hardMax: 1f);
-            HSettings.Float(B, "Loans", "bank.defaultFactor", 0.5f, 0f, 2.5f, "Payment default factor",
-                "How often customers (and guests) fail to pay what they owe. 0.5 on Standard Room, 0 on Comped.", hardMin: 0f, hardMax: 20f, tiers: DefaultFactorAnchors);
             HSettings.Int(B, "Collections", "bank.maxCollectionStage", 4, 0, 7, "Highest collection stage",
                 "The collection ladder: 1 reminder, 2 late fee, 3 offset against deposits, 4 friendly visit, 5 seizure team, 6 collection raid, 7 bounty. Standard Room stops at 4: you pay your debt and lose nothing but a little mood.", hardMin: 0, hardMax: 7, tiers: CollectionStageAnchors);
             HSettings.Float(B, "Collections", "bank.collectionAnger", 1.0f, 0f, 3.5f, "Collections anger (raid size)", "Multiplies the size of seizure teams and collection raids. 0 turns the violent stages off.", hardMin: 0f, hardMax: 10f, tiers: AngerAnchors);
@@ -71,7 +68,8 @@ namespace Silverline
         }
         public static double DefaultProfitFor(float tier) => FinanceMath.LogInterp(ProfitAnchors, tier);
 
-        public static int MaxCollectionStage => HSettings.GetInt("bank.maxCollectionStage");
+        /// <summary>The highest collection stage; the special switch core.ironBank always means the top of the ladder (7).</summary>
+        public static int MaxCollectionStage => CoreSettings.Switch("core.ironBank") ? 7 : HSettings.GetInt("bank.maxCollectionStage");
         public static bool ResearchOff => CoreSettings.ResearchOff || HSettings.GetInt("bank.researchMode") == (int)BankResearchMode.Off;
         public static double AccountBeta => HSettings.Get("bank.accountBeta");
         public static double FeeFactor => HSettings.Get("bank.feeFactor");

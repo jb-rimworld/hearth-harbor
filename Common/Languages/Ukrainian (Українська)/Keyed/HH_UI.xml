@@ -111,30 +111,18 @@
   <HH.UI.Calc.arrivalRate.Desc>Як часто з'являються гості.</HH.UI.Calc.arrivalRate.Desc>
   <HH.UI.Calc.expectation>Очікування гостей</HH.UI.Calc.expectation>
   <HH.UI.Calc.expectation.Desc>Додається до очікувань кожного гостя. Чим вище, тим важче їх задовольнити.</HH.UI.Calc.expectation.Desc>
-  <HH.UI.Calc.trouble>Небезпека неприємностей</HH.UI.Calc.trouble>
-  <HH.UI.Calc.trouble.Desc>Шанс і вага сварок, бійок і крадіжок серед гостей.</HH.UI.Calc.trouble.Desc>
-  <HH.UI.Calc.stage>Найвищий наслідок</HH.UI.Calc.stage>
-  <HH.UI.Calc.stage.Desc>Найгірше, що поганий візит може завдати вам на цьому рівні.</HH.UI.Calc.stage.Desc>
-  <HH.UI.Calc.slotEdge>Перевага закладу на ігрових автоматах</HH.UI.Calc.slotEdge>
-  <HH.UI.Calc.slotEdge.Desc>Частка кожної ставки, яку ігровий автомат у середньому залишає собі.</HH.UI.Calc.slotEdge.Desc>
   <HH.UI.Calc.bankM>Прибутковість ринку банку (M на рік)</HH.UI.Calc.bankM>
   <HH.UI.Calc.bankM.Desc>Річний множник ринку Silverline. 1,2 означає плюс двадцять відсотків.</HH.UI.Calc.bankM.Desc>
-  <HH.UI.Calc.defaultFactor>Неплатежі</HH.UI.Calc.defaultFactor>
-  <HH.UI.Calc.defaultFactor.Desc>Як часто клієнти не сплачують те, що винні.</HH.UI.Calc.defaultFactor.Desc>
   <HH.UI.Calc.collectionStage>Найвищий етап стягнення</HH.UI.Calc.collectionStage>
   <HH.UI.Calc.collectionStage.Desc>Наскільки жорстким може бути стягнення боргу, коли ви винні гроші.</HH.UI.Calc.collectionStage.Desc>
   <HH.UI.Calc.researchCost>Вартість досліджень</HH.UI.Calc.researchCost>
   <HH.UI.Calc.researchCost.Desc>Множить вартість досліджень Hearth &amp; Harbor і Silverline.</HH.UI.Calc.researchCost.Desc>
-  <HH.UI.Calc.upkeep>Експлуатація</HH.UI.Calc.upkeep>
-  <HH.UI.Calc.upkeep.Desc>Множить поточні витрати ваших закладів і кімнат.</HH.UI.Calc.upkeep.Desc>
   <HH.UI.Calc.insuranceLoading>Страхова надбавка</HH.UI.Calc.insuranceLoading>
   <HH.UI.Calc.insuranceLoading.Desc>Націнка страховика понад справедливу премію.</HH.UI.Calc.insuranceLoading.Desc>
   <HH.UI.Calc.salesPressure>Тиск продажів страховки</HH.UI.Calc.salesPressure>
   <HH.UI.Calc.salesPressure.Desc>Наскільки настирливими стають прийоми страховика.</HH.UI.Calc.salesPressure.Desc>
   <HH.UI.Calc.addiction>Шанс залежності від азартних ігор</HH.UI.Calc.addiction>
   <HH.UI.Calc.addiction.Desc>Базовий шанс, що колоніст, який багато грає, стане залежним.</HH.UI.Calc.addiction.Desc>
-  <HH.UI.Calc.detection>Швидкість викриття шахрайства</HH.UI.Calc.detection>
-  <HH.UI.Calc.detection.Desc>Як швидко помічають шахрайство за столом.</HH.UI.Calc.detection.Desc>
   <HH.UI.Stage.0>Без шкоди</HH.UI.Stage.0>
   <HH.UI.Stage.1>Настрій</HH.UI.Stage.1>
   <HH.UI.Stage.2>Слава</HH.UI.Stage.2>
@@ -305,48 +293,19 @@
   <HH.UI.Guide.More>Ще тем: +{0}</HH.UI.Guide.More>
   <HH.UI.Guide.Done>Готово ({0})</HH.UI.Guide.Done>
   <HH.UI.Guide.ClickJump>Клацніть, щоб перейти туди.</HH.UI.Guide.ClickJump>
-  <HH.Setting.core.consequenceStage>Найвища стадія наслідків</HH.Setting.core.consequenceStage>
-  <HH.Setting.core.consequenceStage.Desc>Наскільки далеко можуть зайти погані наслідки: 1 настрій, 2 слава, 3 прихильність, 4 гроші, 5 ліцензія, 6 рейди, 7 винагорода. Залежить від складності прийому.</HH.Setting.core.consequenceStage.Desc>
   <HH.Setting.core.researchCost>Коефіцієнт вартості досліджень</HH.Setting.core.researchCost>
   <HH.Setting.core.researchCost.Desc>Множить вартість дослідницьких проєктів Hearth &amp; Harbor і Silverline. Залежить від складності прийому.</HH.Setting.core.researchCost.Desc>
-  <HH.Setting.core.upkeep>Коефіцієнт утримання</HH.Setting.core.upkeep>
-  <HH.Setting.core.upkeep.Desc>Множить поточні витрати ваших закладів і кімнат. Залежить від складності прийому.</HH.Setting.core.upkeep.Desc>
   <HH.Setting.core.neverDie>Гості ніколи не гинуть</HH.Setting.core.neverDie>
-  <HH.Setting.core.neverDie.Desc>Гостей збивають з ніг замість того, щоб убити, і рятують безкоштовно.</HH.Setting.core.neverDie.Desc>
-  <HH.Setting.core.noHostile>Ніколи не буває ворожих гостей</HH.Setting.core.noHostile>
-  <HH.Setting.core.noHostile.Desc>Гості ніколи не стають ворожими, що б їхня фракція про вас не думала.</HH.Setting.core.noHostile.Desc>
   <HH.Setting.core.infiniteMoney>Нескінченні гроші гостей</HH.Setting.core.infiniteMoney>
-  <HH.Setting.core.infiniteMoney.Desc>Гостям завжди вистачає на оплату. Коефіцієнт грошей гостей не діє, поки це увімкнено.</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.picky>Вибагливі гості</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>Гості очікують трохи більше від кожного проживання (очікування +0,1).</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.feuding>Ворогуючі фракції</HH.Setting.core.feuding>
-  <HH.Setting.core.feuding.Desc>Ворожі фракції не люблять одна одну вдвічі сильніше, коли живуть під одним дахом.</HH.Setting.core.feuding.Desc>
-  <HH.Setting.core.mandatory>Обов'язкове гостинництво</HH.Setting.core.mandatory>
-  <HH.Setting.core.mandatory.Desc>Контракти і розміщення нав'язуються, навіть нижче рівня «Переповнено».</HH.Setting.core.mandatory.Desc>
-  <HH.Setting.core.strictInspectors>Суворі інспектори</HH.Setting.core.strictInspectors>
-  <HH.Setting.core.strictInspectors.Desc>Інспектори перевіряють утричі частіше.</HH.Setting.core.strictInspectors.Desc>
-  <HH.Setting.core.realConsequences>Справжні наслідки</HH.Setting.core.realConsequences>
-  <HH.Setting.core.realConsequences.Desc>Піднімає драбину наслідків на одну стадію.</HH.Setting.core.realConsequences.Desc>
   <HH.Setting.core.ironBank>Залізний гаманець / Залізний банк</HH.Setting.core.ironBank>
-  <HH.Setting.core.ironBank.Desc>Без рятівних кредитів, без овердрафту, складні відсотки без жалю.</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.noResearchGating>Без обмежень досліджень</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Усе з дерев Hearth &amp; Harbor і Silverline доступне з самого початку.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>Мирне підпілля</HH.Setting.core.peacefulUnderworld>
-  <HH.Setting.core.peacefulUnderworld.Desc>Темні заклади працюють без насильства.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.showMath>Покажи мені математику</HH.Setting.core.showMath>
   <HH.Setting.core.showMath.Desc>Показує технічні налаштування і формули всюди.</HH.Setting.core.showMath.Desc>
   <HH.Setting.core.perfMode>Режим продуктивності</HH.Setting.core.perfMode>
-  <HH.Setting.core.perfMode.Desc>Менше гостей одночасно і простіша поведінка гостей на повільних комп'ютерах.</HH.Setting.core.perfMode.Desc>
-  <HH.Setting.core.houseStyle>Стиль будинку</HH.Setting.core.houseStyle>
-  <HH.Setting.core.houseStyle.Desc>Вигляд меблів і вивісок. Автоматично слідує за стилем вашої ідеології, інакше за найвищою дослідженою епохою. Лише вигляд: гості й ціни не змінюються.</HH.Setting.core.houseStyle.Desc>
-  <HH.Setting.core.keepBuiltStyle>Збудовані меблі зберігають старий стиль</HH.Setting.core.keepBuiltStyle>
-  <HH.Setting.core.keepBuiltStyle.Desc>Коли стиль будинку змінюється з новою епохою, вже збудовані меблі зберігають свій вигляд.</HH.Setting.core.keepBuiltStyle.Desc>
-  <HH.Enum.HouseStyle.Automatic>Автоматично</HH.Enum.HouseStyle.Automatic>
-  <HH.Enum.HouseStyle.StoneAge>Кам'яна доба</HH.Enum.HouseStyle.StoneAge>
-  <HH.Enum.HouseStyle.Medieval>Середньовіччя</HH.Enum.HouseStyle.Medieval>
-  <HH.Enum.HouseStyle.Industrial>Індустріальний</HH.Enum.HouseStyle.Industrial>
-  <HH.Enum.HouseStyle.Spacer>Космічний</HH.Enum.HouseStyle.Spacer>
-  <HH.Enum.HouseStyle.Ultra>Ультра</HH.Enum.HouseStyle.Ultra>
   <HH.UI.Overview.Arrivals>Прибуття, наступні 24 год: {0}, очікується близько {1} груп на день.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>ще нікого не заплановано</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>заплановано груп: {0} (близько {1} гостей)</HH.UI.Overview.Arrivals.Planned>

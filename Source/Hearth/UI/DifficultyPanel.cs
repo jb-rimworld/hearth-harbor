@@ -19,8 +19,8 @@ namespace Hearth.Shell
         /// <summary>Special switches of 9.1 in display order (keys registered by the UI module; sealed fate is the Core randomness setting).</summary>
         public static readonly string[] SpecialKeys =
         {
-            "core.neverDie", "core.noHostile", "core.infiniteMoney", "core.picky", "core.feuding", "core.mandatory", "core.strictInspectors",
-            "core.realConsequences", "core.ironBank", "core.sealedFate", "core.noResearchGating", "core.peacefulUnderworld", "core.showMath", "core.perfMode",
+            "core.neverDie", "core.infiniteMoney", "core.picky", "core.ironBank", "core.sealedFate", "core.noResearchGating",
+            "core.peacefulUnderworld", "core.showMath", "core.perfMode",
         };
 
         public static string FeelText(float tier) => ("HH.UI.Feel." + Mathf.Clamp(Mathf.RoundToInt(tier), 0, 6)).Translate();

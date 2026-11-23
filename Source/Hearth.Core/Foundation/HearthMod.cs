@@ -149,6 +149,13 @@ namespace Hearth
     {
         public const string ResearchModeKey = "core.researchMode";
 
+        /// <summary>A special switch (registered by the UI module, key core.*). Off when the key does not exist, never logs.</summary>
+        public static bool Switch(string key)
+        {
+            try { return HSettings.Find(key) != null && HSettings.GetBool(key); }
+            catch (Exception e) { HLog.Once("core.switch." + key, LogLevel.Warn, "Core", "Could not read switch " + key + ": " + e.Message); return false; }
+        }
+
         /// <summary>
         /// True when research gating is off for every module: the shared setting core.researchMode = Off, or its older shortcut
         /// core.noResearchGating (registered by the UI module). Modules combine this with their own old key (bank.researchMode, city.researchMode).
@@ -178,8 +185,6 @@ namespace Hearth
             HSettings.Bool(ModuleId.Core, "Help", "core.helpHint", true, "Show the small real-life help hint where you gamble",
                 "A small, quiet line on every screen where you yourself gamble: if gambling is a problem in real life, help exists (findahelpline.com). Never shown elsewhere.");
             HSettings.Bool(ModuleId.Core, "Help", "core.guide", true, "Show the Hearth & Harbor guide", "The learning helper at the top right. Right-click it to hide it.");
-            HSettings.Float(ModuleId.Core, "Performance", "core.perfGuardTps", 0.85f, 0.5f, 1f, "Performance guard: target speed",
-                "If the game runs slower than this share of its normal speed, new guest arrivals are slowed down until it recovers. 0 = guard off.", nerd: true, hardMin: 0f, hardMax: 1f);
         }
     }
 }

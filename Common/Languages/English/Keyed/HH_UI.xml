@@ -111,30 +111,20 @@
   <HH.UI.Calc.arrivalRate.Desc>How often guests turn up.</HH.UI.Calc.arrivalRate.Desc>
   <HH.UI.Calc.expectation>Guest expectation</HH.UI.Calc.expectation>
   <HH.UI.Calc.expectation.Desc>Added to what every guest expects. Higher is harder to satisfy.</HH.UI.Calc.expectation.Desc>
-  <HH.UI.Calc.trouble>Trouble danger</HH.UI.Calc.trouble>
-  <HH.UI.Calc.trouble.Desc>Chance and weight of quarrels, fights and thefts among guests.</HH.UI.Calc.trouble.Desc>
-  <HH.UI.Calc.stage>Highest consequence</HH.UI.Calc.stage>
-  <HH.UI.Calc.stage.Desc>The worst thing a bad stay can do to you at this tier.</HH.UI.Calc.stage.Desc>
-  <HH.UI.Calc.slotEdge>Slot machine house edge</HH.UI.Calc.slotEdge>
-  <HH.UI.Calc.slotEdge.Desc>Share of every bet a slot machine keeps on average.</HH.UI.Calc.slotEdge.Desc>
+  <HH.UI.Calc.slotRtp>Slot machine payout (RTP)</HH.UI.Calc.slotRtp>
+  <HH.UI.Calc.slotRtp.Desc>Share of every bet a slot machine pays back on average. The house keeps the rest.</HH.UI.Calc.slotRtp.Desc>
   <HH.UI.Calc.bankM>Bank market return (M per year)</HH.UI.Calc.bankM>
   <HH.UI.Calc.bankM.Desc>Yearly multiplier of the Silverline market. 1.2 means plus twenty percent.</HH.UI.Calc.bankM.Desc>
-  <HH.UI.Calc.defaultFactor>Payment defaults</HH.UI.Calc.defaultFactor>
-  <HH.UI.Calc.defaultFactor.Desc>How often customers fail to pay what they owe.</HH.UI.Calc.defaultFactor.Desc>
   <HH.UI.Calc.collectionStage>Highest collection stage</HH.UI.Calc.collectionStage>
   <HH.UI.Calc.collectionStage.Desc>How rough debt collection can get when you owe money.</HH.UI.Calc.collectionStage.Desc>
   <HH.UI.Calc.researchCost>Research cost</HH.UI.Calc.researchCost>
   <HH.UI.Calc.researchCost.Desc>Multiplies the cost of Hearth &amp; Harbor and Silverline research.</HH.UI.Calc.researchCost.Desc>
-  <HH.UI.Calc.upkeep>Upkeep</HH.UI.Calc.upkeep>
-  <HH.UI.Calc.upkeep.Desc>Multiplies the running costs of your venues and rooms.</HH.UI.Calc.upkeep.Desc>
   <HH.UI.Calc.insuranceLoading>Insurance loading</HH.UI.Calc.insuranceLoading>
   <HH.UI.Calc.insuranceLoading.Desc>The insurer's markup on top of a fair premium.</HH.UI.Calc.insuranceLoading.Desc>
   <HH.UI.Calc.salesPressure>Insurance sales pressure</HH.UI.Calc.salesPressure>
   <HH.UI.Calc.salesPressure.Desc>How pushy the insurer's sales tricks get.</HH.UI.Calc.salesPressure.Desc>
   <HH.UI.Calc.addiction>Gambling addiction chance</HH.UI.Calc.addiction>
   <HH.UI.Calc.addiction.Desc>Base chance that a colonist who gambles a lot becomes addicted.</HH.UI.Calc.addiction.Desc>
-  <HH.UI.Calc.detection>Cheat detection rate</HH.UI.Calc.detection>
-  <HH.UI.Calc.detection.Desc>How quickly cheating at a table is noticed.</HH.UI.Calc.detection.Desc>
   <HH.UI.Stage.0>No harm</HH.UI.Stage.0>
   <HH.UI.Stage.1>Mood</HH.UI.Stage.1>
   <HH.UI.Stage.2>Renown</HH.UI.Stage.2>
@@ -308,46 +298,22 @@
   <HH.UI.Guide.More>+{0} more topics follow</HH.UI.Guide.More>
   <HH.UI.Guide.Done>Done ({0})</HH.UI.Guide.Done>
   <HH.UI.Guide.ClickJump>Click to go there.</HH.UI.Guide.ClickJump>
-  <HH.Setting.core.consequenceStage>Highest consequence stage</HH.Setting.core.consequenceStage>
-  <HH.Setting.core.consequenceStage.Desc>How far bad outcomes can climb: 1 mood, 2 renown, 3 goodwill, 4 money, 5 licence, 6 raids, 7 bounty. Follows the hosting difficulty.</HH.Setting.core.consequenceStage.Desc>
   <HH.Setting.core.researchCost>Research cost factor</HH.Setting.core.researchCost>
   <HH.Setting.core.researchCost.Desc>Multiplies the cost of Hearth &amp; Harbor and Silverline research projects. Follows the hosting difficulty.</HH.Setting.core.researchCost.Desc>
-  <HH.Setting.core.upkeep>Upkeep factor</HH.Setting.core.upkeep>
-  <HH.Setting.core.upkeep.Desc>Multiplies the running costs of your venues and rooms. Follows the hosting difficulty.</HH.Setting.core.upkeep.Desc>
   <HH.Setting.core.neverDie>Guests never die</HH.Setting.core.neverDie>
-  <HH.Setting.core.neverDie.Desc>Guests are knocked down instead of killed and are rescued for free.</HH.Setting.core.neverDie.Desc>
-  <HH.Setting.core.noHostile>No hostile guests ever</HH.Setting.core.noHostile>
-  <HH.Setting.core.noHostile.Desc>Guests never turn hostile, whatever their faction thinks of you.</HH.Setting.core.noHostile.Desc>
+  <HH.Setting.core.neverDie.Desc>Guests are knocked down instead of killed. They keep living, downed, until someone tends them.</HH.Setting.core.neverDie.Desc>
   <HH.Setting.core.infiniteMoney>Infinite guest money</HH.Setting.core.infiniteMoney>
-  <HH.Setting.core.infiniteMoney.Desc>Guests always have enough to pay. The guest money factor has no effect while this is on.</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.infiniteMoney.Desc>Guests who arrive while this is on carry a bottomless purse. The guest money factor has no effect on them.</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.picky>Picky guests</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>Guests expect a little more from every stay (expectation +0.1).</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.feuding>Feuding factions</HH.Setting.core.feuding>
-  <HH.Setting.core.feuding.Desc>Hostile factions dislike each other twice as much when they share a roof.</HH.Setting.core.feuding.Desc>
-  <HH.Setting.core.mandatory>Mandatory hospitality</HH.Setting.core.mandatory>
-  <HH.Setting.core.mandatory.Desc>Contracts and billeting are forced on you, even below the Overbooked tier.</HH.Setting.core.mandatory.Desc>
-  <HH.Setting.core.strictInspectors>Strict inspectors</HH.Setting.core.strictInspectors>
-  <HH.Setting.core.strictInspectors.Desc>Inspectors check three times as often.</HH.Setting.core.strictInspectors.Desc>
-  <HH.Setting.core.realConsequences>Real consequences</HH.Setting.core.realConsequences>
-  <HH.Setting.core.realConsequences.Desc>Raises the consequence ladder by one stage.</HH.Setting.core.realConsequences.Desc>
-  <HH.Setting.core.ironBank>Iron purse / Iron bank</HH.Setting.core.ironBank>
-  <HH.Setting.core.ironBank.Desc>No bailout, no overdraft, compound interest without mercy.</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.ironBank>Iron bank</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank.Desc>Debt collection always climbs to the highest stage, whatever the difficulty. Nobody quietly defers your instalments.</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.noResearchGating>No research gating</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Everything on the Hearth &amp; Harbor and Silverline trees is available from the start.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>Peaceful underworld</HH.Setting.core.peacefulUnderworld>
-  <HH.Setting.core.peacefulUnderworld.Desc>Dark venues work without violence.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Dark venues work without violence: no fight pit, no questioning, no hunting of people, no clinic, no protection racket. Back room, fence and drug lounge stay.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.showMath>Show me the math</HH.Setting.core.showMath>
   <HH.Setting.core.showMath.Desc>Shows nerd settings and formulas everywhere.</HH.Setting.core.showMath.Desc>
   <HH.Setting.core.perfMode>Performance mode</HH.Setting.core.perfMode>
-  <HH.Setting.core.perfMode.Desc>Fewer guests at once and simpler guest behaviour on slow computers.</HH.Setting.core.perfMode.Desc>
-  <HH.Setting.core.houseStyle>House style</HH.Setting.core.houseStyle>
-  <HH.Setting.core.houseStyle.Desc>The look of furniture and signs. Automatic follows your ideology style, otherwise your highest researched era. Looks only: guests and prices are not affected.</HH.Setting.core.houseStyle.Desc>
-  <HH.Setting.core.keepBuiltStyle>Built furniture keeps its old style</HH.Setting.core.keepBuiltStyle>
-  <HH.Setting.core.keepBuiltStyle.Desc>When the house style changes with a new era, already built furniture keeps its look.</HH.Setting.core.keepBuiltStyle.Desc>
-  <HH.Enum.HouseStyle.Automatic>Automatic</HH.Enum.HouseStyle.Automatic>
-  <HH.Enum.HouseStyle.StoneAge>Stone age</HH.Enum.HouseStyle.StoneAge>
-  <HH.Enum.HouseStyle.Medieval>Medieval</HH.Enum.HouseStyle.Medieval>
-  <HH.Enum.HouseStyle.Industrial>Industrial</HH.Enum.HouseStyle.Industrial>
-  <HH.Enum.HouseStyle.Spacer>Spacer</HH.Enum.HouseStyle.Spacer>
-  <HH.Enum.HouseStyle.Ultra>Ultra</HH.Enum.HouseStyle.Ultra>
+  <HH.Setting.core.perfMode.Desc>Guest planning and room checks run half as often. Helps on slow computers; guests may react a little later.</HH.Setting.core.perfMode.Desc>
 </LanguageData>

@@ -111,30 +111,18 @@
   <HH.UI.Calc.arrivalRate.Desc>손님이 얼마나 자주 나타나는지.</HH.UI.Calc.arrivalRate.Desc>
   <HH.UI.Calc.expectation>손님 기대치</HH.UI.Calc.expectation>
   <HH.UI.Calc.expectation.Desc>모든 손님의 기대에 더해집니다. 높을수록 만족시키기 어렵습니다.</HH.UI.Calc.expectation.Desc>
-  <HH.UI.Calc.trouble>소란 위험도</HH.UI.Calc.trouble>
-  <HH.UI.Calc.trouble.Desc>손님끼리 다툼, 싸움, 절도가 일어날 확률과 무게.</HH.UI.Calc.trouble.Desc>
-  <HH.UI.Calc.stage>최고 결과 단계</HH.UI.Calc.stage>
-  <HH.UI.Calc.stage.Desc>이 단계에서 나쁜 체류가 당신에게 줄 수 있는 가장 심한 일.</HH.UI.Calc.stage.Desc>
-  <HH.UI.Calc.slotEdge>슬롯머신 하우스 엣지</HH.UI.Calc.slotEdge>
-  <HH.UI.Calc.slotEdge.Desc>슬롯머신이 모든 베팅에서 평균적으로 가져가는 몫.</HH.UI.Calc.slotEdge.Desc>
   <HH.UI.Calc.bankM>은행 시장 수익 (연간 M)</HH.UI.Calc.bankM>
   <HH.UI.Calc.bankM.Desc>실버라인 시장의 연간 배율. 1.2는 20퍼센트 상승을 뜻합니다.</HH.UI.Calc.bankM.Desc>
-  <HH.UI.Calc.defaultFactor>지불 연체</HH.UI.Calc.defaultFactor>
-  <HH.UI.Calc.defaultFactor.Desc>고객이 빚진 돈을 내지 못하는 빈도.</HH.UI.Calc.defaultFactor.Desc>
   <HH.UI.Calc.collectionStage>최고 추심 단계</HH.UI.Calc.collectionStage>
   <HH.UI.Calc.collectionStage.Desc>돈을 빚졌을 때 채권 추심이 얼마나 거칠어질 수 있는지.</HH.UI.Calc.collectionStage.Desc>
   <HH.UI.Calc.researchCost>연구 비용</HH.UI.Calc.researchCost>
   <HH.UI.Calc.researchCost.Desc>Hearth &amp; Harbor와 Silverline 연구 비용을 곱합니다.</HH.UI.Calc.researchCost.Desc>
-  <HH.UI.Calc.upkeep>유지비</HH.UI.Calc.upkeep>
-  <HH.UI.Calc.upkeep.Desc>시설과 방의 운영비를 곱합니다.</HH.UI.Calc.upkeep.Desc>
   <HH.UI.Calc.insuranceLoading>보험 할증</HH.UI.Calc.insuranceLoading>
   <HH.UI.Calc.insuranceLoading.Desc>공정 보험료 위에 보험사가 붙이는 마진.</HH.UI.Calc.insuranceLoading.Desc>
   <HH.UI.Calc.salesPressure>보험 판매 압박</HH.UI.Calc.salesPressure>
   <HH.UI.Calc.salesPressure.Desc>보험사의 판매 수법이 얼마나 집요해지는지.</HH.UI.Calc.salesPressure.Desc>
   <HH.UI.Calc.addiction>도박 중독 확률</HH.UI.Calc.addiction>
   <HH.UI.Calc.addiction.Desc>도박을 많이 하는 식민지 주민이 중독될 기본 확률.</HH.UI.Calc.addiction.Desc>
-  <HH.UI.Calc.detection>부정행위 적발률</HH.UI.Calc.detection>
-  <HH.UI.Calc.detection.Desc>테이블에서 부정행위가 얼마나 빨리 알아채지는지.</HH.UI.Calc.detection.Desc>
   <HH.UI.Stage.0>피해 없음</HH.UI.Stage.0>
   <HH.UI.Stage.1>기분</HH.UI.Stage.1>
   <HH.UI.Stage.2>명성</HH.UI.Stage.2>
@@ -305,48 +293,19 @@
   <HH.UI.Guide.More>주제 {0}개 더 있음</HH.UI.Guide.More>
   <HH.UI.Guide.Done>완료 ({0})</HH.UI.Guide.Done>
   <HH.UI.Guide.ClickJump>클릭하면 그곳으로 이동합니다.</HH.UI.Guide.ClickJump>
-  <HH.Setting.core.consequenceStage>최고 결과 단계</HH.Setting.core.consequenceStage>
-  <HH.Setting.core.consequenceStage.Desc>나쁜 결과가 어디까지 올라갈 수 있는지: 1 기분, 2 명성, 3 호감도, 4 돈, 5 면허, 6 습격, 7 현상금. 손님 대접 난이도를 따릅니다.</HH.Setting.core.consequenceStage.Desc>
   <HH.Setting.core.researchCost>연구 비용 배율</HH.Setting.core.researchCost>
   <HH.Setting.core.researchCost.Desc>Hearth &amp; Harbor와 Silverline 연구 프로젝트의 비용에 곱해집니다. 손님 대접 난이도를 따릅니다.</HH.Setting.core.researchCost.Desc>
-  <HH.Setting.core.upkeep>유지비 배율</HH.Setting.core.upkeep>
-  <HH.Setting.core.upkeep.Desc>시설과 방의 운영비에 곱해집니다. 손님 대접 난이도를 따릅니다.</HH.Setting.core.upkeep.Desc>
   <HH.Setting.core.neverDie>손님은 죽지 않음</HH.Setting.core.neverDie>
-  <HH.Setting.core.neverDie.Desc>손님은 죽는 대신 쓰러지고, 무료로 구조됩니다.</HH.Setting.core.neverDie.Desc>
-  <HH.Setting.core.noHostile>적대적인 손님은 전혀 없음</HH.Setting.core.noHostile>
-  <HH.Setting.core.noHostile.Desc>진영이 당신을 어떻게 생각하든 손님이 적대적으로 돌변하지 않습니다.</HH.Setting.core.noHostile.Desc>
   <HH.Setting.core.infiniteMoney>손님 돈 무한</HH.Setting.core.infiniteMoney>
-  <HH.Setting.core.infiniteMoney.Desc>손님은 항상 낼 돈이 충분합니다. 이 옵션이 켜져 있으면 손님 돈 배율은 효과가 없습니다.</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.picky>까다로운 손님</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>손님은 매 체류마다 조금 더 많은 것을 기대합니다 (기대치 +0.1).</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.feuding>반목하는 진영</HH.Setting.core.feuding>
-  <HH.Setting.core.feuding.Desc>적대적인 진영은 한 지붕 아래 있으면 서로를 두 배로 싫어합니다.</HH.Setting.core.feuding.Desc>
-  <HH.Setting.core.mandatory>의무적 환대</HH.Setting.core.mandatory>
-  <HH.Setting.core.mandatory.Desc>초과 예약 단계 아래에서도 계약과 숙소 배정이 강제로 주어집니다.</HH.Setting.core.mandatory.Desc>
-  <HH.Setting.core.strictInspectors>엄격한 감찰관</HH.Setting.core.strictInspectors>
-  <HH.Setting.core.strictInspectors.Desc>감찰관이 세 배 더 자주 검사합니다.</HH.Setting.core.strictInspectors.Desc>
-  <HH.Setting.core.realConsequences>실제 결과</HH.Setting.core.realConsequences>
-  <HH.Setting.core.realConsequences.Desc>결과 단계를 한 단계 올립니다.</HH.Setting.core.realConsequences.Desc>
   <HH.Setting.core.ironBank>철의 지갑 / 철의 은행</HH.Setting.core.ironBank>
-  <HH.Setting.core.ironBank.Desc>구제금융도, 당좌대월도 없습니다. 복리 이자는 가차 없습니다.</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.noResearchGating>연구 잠금 없음</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Hearth &amp; Harbor와 Silverline 연구 트리의 모든 항목을 처음부터 쓸 수 있습니다.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>평화로운 지하세계</HH.Setting.core.peacefulUnderworld>
-  <HH.Setting.core.peacefulUnderworld.Desc>어두운 시설도 폭력 없이 운영됩니다.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.showMath>계산 과정을 보여 주세요</HH.Setting.core.showMath>
   <HH.Setting.core.showMath.Desc>어디서든 너드용 설정과 공식을 보여 줍니다.</HH.Setting.core.showMath.Desc>
   <HH.Setting.core.perfMode>성능 모드</HH.Setting.core.perfMode>
-  <HH.Setting.core.perfMode.Desc>느린 컴퓨터에서는 동시에 나타나는 손님 수를 줄이고 손님 행동을 단순하게 합니다.</HH.Setting.core.perfMode.Desc>
-  <HH.Setting.core.houseStyle>건물 양식</HH.Setting.core.houseStyle>
-  <HH.Setting.core.houseStyle.Desc>가구와 간판의 모습입니다. 자동은 이념 양식을 따르고, 그 밖에는 가장 높이 연구한 시대를 따릅니다. 외형만 바뀌며 손님과 가격에는 영향이 없습니다.</HH.Setting.core.houseStyle.Desc>
-  <HH.Setting.core.keepBuiltStyle>지은 가구는 예전 양식 유지</HH.Setting.core.keepBuiltStyle>
-  <HH.Setting.core.keepBuiltStyle.Desc>새 시대에 따라 건물 양식이 바뀌어도 이미 지은 가구는 원래 모습을 유지합니다.</HH.Setting.core.keepBuiltStyle.Desc>
-  <HH.Enum.HouseStyle.Automatic>자동</HH.Enum.HouseStyle.Automatic>
-  <HH.Enum.HouseStyle.StoneAge>석기 시대</HH.Enum.HouseStyle.StoneAge>
-  <HH.Enum.HouseStyle.Medieval>중세</HH.Enum.HouseStyle.Medieval>
-  <HH.Enum.HouseStyle.Industrial>산업</HH.Enum.HouseStyle.Industrial>
-  <HH.Enum.HouseStyle.Spacer>우주인</HH.Enum.HouseStyle.Spacer>
-  <HH.Enum.HouseStyle.Ultra>울트라</HH.Enum.HouseStyle.Ultra>
   <HH.UI.Overview.Arrivals>다음 24시간 도착: {0}, 하루 약 {1}팀 예상.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>아직 아무도 예정되지 않았습니다</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>{0}팀 예정 (손님 약 {1}명)</HH.UI.Overview.Arrivals.Planned>
