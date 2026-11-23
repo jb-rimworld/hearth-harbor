@@ -406,7 +406,7 @@ Pro Quadrum: {1}</HH.Ins.UI.Price.Tip>
   <HH.Ins.Status.Buy>Versichern…</HH.Ins.Status.Buy>
   <HH.Ins.Status.ColonyCover>Kolonieschutz</HH.Ins.Status.ColonyCover>
   <HH.Ins.Status.Column>Schutz</HH.Ins.Status.Column>
-  <HH.Ins.Status.ColumnTip>Versicherungsstatus: Rente, Kranken-, Unfall-, Haftpflicht- und Rechtsschutz. Klicke für die Übersicht.</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.ColumnTip>Versicherungsstatus, ein Symbol pro Art des Schutzes (Rente, Kranken-, Unfall-, Haftpflicht-, Rechts- und Reiseschutz sowie weitere persönliche Policen). Klicke für die Übersicht.</HH.Ins.Status.ColumnTip>
   <HH.Ins.Status.Foot>Grün: aktiv. Gelb: Wartezeit. Orange: Kündigung ausstehend. Rot: Rente in Gefahr. Grau: nicht versichert. Der Kolonieschutz gilt für alle Kolonisten.</HH.Ins.Status.Foot>
   <HH.Ins.Status.Kind.Accident>Unfall</HH.Ins.Status.Kind.Accident>
   <HH.Ins.Status.Kind.Health>Gesundheit</HH.Ins.Status.Kind.Health>
@@ -453,4 +453,5 @@ Pro Quadrum: {1}</HH.Ins.UI.Price.Tip>
   <HH.Ins.UI.Mine.PensionTip>Rentenregel: höchstens {0} Stunden Arbeit pro Tag im Zeitplan. Beliebig zählt als freie Zeit, aber ein Kolonist auf Beliebig kann sich trotzdem für Arbeit entscheiden.</HH.Ins.UI.Mine.PensionTip>
   <HH.Ins.UI.Mine.UpgradeWait>Wartezeit nach Aufstockung: Ereignisse in den nächsten {0} werden noch mit dem alten Schutz beurteilt.</HH.Ins.UI.Mine.UpgradeWait>
   <HH.Ins.UI.Mine.WithdrawChange>Änderung zurückziehen</HH.Ins.UI.Mine.WithdrawChange>
+  <HH.Ins.Status.Kind.Travel>Reise</HH.Ins.Status.Kind.Travel>
 </LanguageData>

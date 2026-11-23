@@ -186,7 +186,6 @@
   <HH.Finance.Lottery.News.Won>Большой тираж Glitterworld: {0}. {1} Вы выиграли {2}.</HH.Finance.Lottery.News.Won>
   <HH.Finance.Lottery.News.Colony>В вашей лотерее выпали {0}: джекпот сорвали {1} из {2} билетов.</HH.Finance.Lottery.News.Colony>
   <HH.Finance.Lottery.ColonyTitle>Собственная лотерея</HH.Finance.Lottery.ColonyTitle>
-  <HH.Finance.Lottery.ColonyOpen>Открыть колонийскую лотерею</HH.Finance.Lottery.ColonyOpen>
   <HH.Finance.Lottery.ColonyIntro>Гости и смоделированные игроки дружественных поселений покупают билеты. Четыре числа из 25. Вы оставляете то, что не выплачено; призовой фонд платит только то, что в нём есть.</HH.Finance.Lottery.ColonyIntro>
   <HH.Finance.Lottery.Price>Цена билета</HH.Finance.Lottery.Price>
   <HH.Finance.Lottery.Quote>Доля выплат</HH.Finance.Lottery.Quote>
@@ -233,7 +232,7 @@
   <HH.Finance.Lottery.Preview>Ваш билет пока: {0} из {1} чисел, звезда {2}</HH.Finance.Lottery.Preview>
   <HH.Finance.Lottery.QuickN>Быстрый выбор</HH.Finance.Lottery.QuickN>
   <HH.Finance.Lottery.QuickTip>Случайные билеты, покупаются сразу. До {0} за нажатие.</HH.Finance.Lottery.QuickTip>
-  <HH.Finance.Lottery.SetIn>Цена, доля выплат, интервал тиража и комиссия — параметры мода этого сохранения.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SetIn>Открыта ли лотерея, её цена, доля выплат, интервал розыгрышей и комиссия задаются настройками мода для этого сохранения.</HH.Finance.Lottery.SetIn>
   <HH.Finance.Lottery.SilverUnit>{0} серебра</HH.Finance.Lottery.SilverUnit>
   <HH.Finance.Lottery.StarMatch> и звезда</HH.Finance.Lottery.StarMatch>
   <HH.Finance.Lottery.StarNone>не выбрана</HH.Finance.Lottery.StarNone>

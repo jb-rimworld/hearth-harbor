@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Bank.Building.Account>{0}: saldo {1}</HH.Bank.Building.Account>
-  <HH.Bank.Building.DirectDeposit>Depósito directo</HH.Bank.Building.DirectDeposit>
   <HH.Bank.Building.DirectDepositDesc>Activado: las cajas de tus negocios se vacían en tu cuenta bancaria a medianoche. Desactivado: las ganancias se dejan como plata junto a la caja fuerte.</HH.Bank.Building.DirectDepositDesc>
   <HH.Bank.Building.NoAccount>Aún no tienes cuenta. Ábrela aquí o en una consola de comunicaciones.</HH.Bank.Building.NoAccount>
   <HH.Bank.Building.SafeDirect>Las ganancias van directamente a la cuenta a medianoche.</HH.Bank.Building.SafeDirect>
@@ -274,4 +273,7 @@ Fija tu nivel de riqueza. Los límites de crédito cuentan solo el {6} % de las 
   <HH.Bank.Terms.SetIn>Las condiciones del banco son ajustes de esta partida: cámbialas en Opciones del mod &gt; Hearth &amp; Harbor &gt; Banco (Interés y rentabilidad, Comisiones, Préstamos, Cobros, Lotería). 1,0 es ni más ni menos; 1,2 es +20 % al año para el índice, y la cuenta solo recibe una parte de eso. Los préstamos también siguen a M.</HH.Bank.Terms.SetIn>
   <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
   <HH.Bank.Yield.Account>Tu cuenta bancaria</HH.Bank.Yield.Account>
+  <HH.Bank.Building.DirectState>Ingreso directo: {0}</HH.Bank.Building.DirectState>
+  <HH.Bank.Building.OpenSettings>Abrir ajustes (Banco)</HH.Bank.Building.OpenSettings>
+  <HH.Bank.Building.OpenSettingsDesc>Es un término de tu banco y solo se cambia en los ajustes del mod (Banco &gt; Cuenta). Haz clic para abrirlos.</HH.Bank.Building.OpenSettingsDesc>
 </LanguageData>

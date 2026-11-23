@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Fleck_Life_Coins.description>Монеты, поднимающиеся от платящего гостя к кассе.</HH_Fleck_Life_Coins.description>
+  <HH_Fleck_Life_Coins.label>монеты</HH_Fleck_Life_Coins.label>
+  <HH_Fleck_Life_Heart.description>Маленькое сердечко, когда пара ложится в общую кровать.</HH_Fleck_Life_Heart.description>
+  <HH_Fleck_Life_Heart.label>сердечко</HH_Fleck_Life_Heart.label>
+  <HH_Fleck_Life_Key.description>Маленький ключ от номера над гостем на регистрации.</HH_Fleck_Life_Key.description>
+  <HH_Fleck_Life_Key.label>ключ от номера</HH_Fleck_Life_Key.label>
+  <HH_Fleck_Life_Puff.description>Сухое облачко после плохого отзыва.</HH_Fleck_Life_Puff.description>
+  <HH_Fleck_Life_Puff.label>облачко «так себе»</HH_Fleck_Life_Puff.label>
+  <HH_Fleck_Life_Sparkle.description>Искорки вокруг отзыва на пять звёзд.</HH_Fleck_Life_Sparkle.description>
+  <HH_Fleck_Life_Sparkle.label>искорки</HH_Fleck_Life_Sparkle.label>
+  <HH_Fleck_Life_Stars1.description>Отзыв гостя: 1 звезда из 5 над головой.</HH_Fleck_Life_Stars1.description>
+  <HH_Fleck_Life_Stars1.label>отзыв на 1 звезду</HH_Fleck_Life_Stars1.label>
+  <HH_Fleck_Life_Stars2.description>Отзыв гостя: 2 звезды из 5 над головой.</HH_Fleck_Life_Stars2.description>
+  <HH_Fleck_Life_Stars2.label>отзыв на 2 звезды</HH_Fleck_Life_Stars2.label>
+  <HH_Fleck_Life_Stars3.description>Отзыв гостя: 3 звезды из 5 над головой.</HH_Fleck_Life_Stars3.description>
+  <HH_Fleck_Life_Stars3.label>отзыв на 3 звезды</HH_Fleck_Life_Stars3.label>
+  <HH_Fleck_Life_Stars4.description>Отзыв гостя: 4 звезды из 5 над головой.</HH_Fleck_Life_Stars4.description>
+  <HH_Fleck_Life_Stars4.label>отзыв на 4 звезды</HH_Fleck_Life_Stars4.label>
+  <HH_Fleck_Life_Stars5.description>Отзыв гостя: 5 звёзд из 5 над головой.</HH_Fleck_Life_Stars5.description>
+  <HH_Fleck_Life_Stars5.label>отзыв на 5 звёзд</HH_Fleck_Life_Stars5.label>
+  <HH_Fleck_Life_Suitcase.description>Маленький чемодан над только что прибывшим гостем.</HH_Fleck_Life_Suitcase.description>
+  <HH_Fleck_Life_Suitcase.label>чемодан при заезде</HH_Fleck_Life_Suitcase.label>
+  <HH_Fleck_Life_TipCoin.description>Одна монета, подброшенная в пользу того, кто обслужил гостя.</HH_Fleck_Life_TipCoin.description>
+  <HH_Fleck_Life_TipCoin.label>монета чаевых</HH_Fleck_Life_TipCoin.label>
+  <HH_Fleck_Life_Wave.description>Машущая рука над гостем, который прощается.</HH_Fleck_Life_Wave.description>
+  <HH_Fleck_Life_Wave.label>прощание</HH_Fleck_Life_Wave.label>
+</LanguageData>

@@ -275,4 +275,6 @@
   <HH.Venue.RestockStateOff>Réassort désactivé : le stockage de la pièce garde ses propres réglages</HH.Venue.RestockStateOff>
   <HH.Venue.RestockStateOn>Réassort activé : le stockage de la pièce suit cette liste</HH.Venue.RestockStateOn>
   <HH.Venue.SelfServiceNote>libre-service</HH.Venue.SelfServiceNote>
+  <HH.Setup.AndMore>… et {0} de plus</HH.Setup.AndMore>
+  <HH.Setup.AnyStuff>matériau</HH.Setup.AnyStuff>
 </LanguageData>

@@ -406,7 +406,7 @@
   <HH.Ins.Status.Buy>Застрахувати…</HH.Ins.Status.Buy>
   <HH.Ins.Status.ColonyCover>колонійне покриття</HH.Ins.Status.ColonyCover>
   <HH.Ins.Status.Column>Покриття</HH.Ins.Status.Column>
-  <HH.Ins.Status.ColumnTip>Статус страхування: пенсія, здоров'я, нещасні випадки, відповідальність, юридичний захист. Натисніть для огляду.</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.ColumnTip>Статус страхування: по одному значку на кожен вид покриття (пенсія, здоров'я, нещасні випадки, відповідальність, юридичний захист, подорож і будь-який інший особистий поліс). Натисніть для огляду.</HH.Ins.Status.ColumnTip>
   <HH.Ins.Status.Foot>Зелений: активно. Жовтий: період очікування. Помаранчевий: очікує скасування. Червоний: пенсію під загрозою. Сірий: не застраховано. Колонійне покриття діє для кожного колоніста.</HH.Ins.Status.Foot>
   <HH.Ins.Status.Kind.Accident>Нещасний випадок</HH.Ins.Status.Kind.Accident>
   <HH.Ins.Status.Kind.Health>Здоров'я</HH.Ins.Status.Kind.Health>
@@ -453,4 +453,5 @@
   <HH.Ins.UI.Mine.PensionTip>Пенсійне правило: не більше {0} годин роботи на день у розкладі. «Будь-що» вважається вільним часом, але колоніст на «Будь-що» все одно може обрати працю.</HH.Ins.UI.Mine.PensionTip>
   <HH.Ins.UI.Mine.UpgradeWait>Очікування після підвищення: події протягом наступних {0} ще оцінюються за старим покриттям.</HH.Ins.UI.Mine.UpgradeWait>
   <HH.Ins.UI.Mine.WithdrawChange>Відкликати зміну</HH.Ins.UI.Mine.WithdrawChange>
+  <HH.Ins.Status.Kind.Travel>Подорож</HH.Ins.Status.Kind.Travel>
 </LanguageData>

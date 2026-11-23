@@ -186,7 +186,6 @@
   <HH.Finance.Lottery.News.Won>Glitterworld 대추첨: {0}. {1} {2}을(를) 당첨받았습니다.</HH.Finance.Lottery.News.Won>
   <HH.Finance.Lottery.News.Colony>식민지 복권 추첨 결과 {0}: 복권 {2}장 중 잭팟 당첨자 {1}명.</HH.Finance.Lottery.News.Colony>
   <HH.Finance.Lottery.ColonyTitle>자체 복권</HH.Finance.Lottery.ColonyTitle>
-  <HH.Finance.Lottery.ColonyOpen>식민지 복권 열기</HH.Finance.Lottery.ColonyOpen>
   <HH.Finance.Lottery.ColonyIntro>손님과 우호 정착지의 모의 플레이어들이 복권을 삽니다. 25개 중 4개의 숫자. 지급되지 않은 몫은 당신이 가지며, 기금은 보유한 만큼만 지급합니다.</HH.Finance.Lottery.ColonyIntro>
   <HH.Finance.Lottery.Price>복권 가격</HH.Finance.Lottery.Price>
   <HH.Finance.Lottery.Quote>지급 비율</HH.Finance.Lottery.Quote>
@@ -233,7 +232,7 @@
   <HH.Finance.Lottery.Preview>지금까지 당신의 복권: 숫자 {1}개 중 {0}개 일치, 별 {2}</HH.Finance.Lottery.Preview>
   <HH.Finance.Lottery.QuickN>빠른 선택</HH.Finance.Lottery.QuickN>
   <HH.Finance.Lottery.QuickTip>무작위 복권을 한 번에 구매합니다. 클릭당 최대 {0}장.</HH.Finance.Lottery.QuickTip>
-  <HH.Finance.Lottery.SetIn>가격, 환급 비율, 추첨 간격, 수수료는 이 세이브 게임의 모드 설정입니다.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SetIn>복권 판매 여부, 가격, 당첨금 비율, 추첨 간격, 수수료는 이 세이브 게임의 모드 설정입니다.</HH.Finance.Lottery.SetIn>
   <HH.Finance.Lottery.SilverUnit>은화 {0}</HH.Finance.Lottery.SilverUnit>
   <HH.Finance.Lottery.StarMatch> 그리고 별</HH.Finance.Lottery.StarMatch>
   <HH.Finance.Lottery.StarNone>고르지 않음</HH.Finance.Lottery.StarNone>

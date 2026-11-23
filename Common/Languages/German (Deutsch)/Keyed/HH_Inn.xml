@@ -343,4 +343,5 @@
   <HH.Setting.inn.doubleBedFactor.Desc>Ein Bett für zwei bringt so viel mal den Preis eines Einzelbetts ein. Ein Paar in einem Doppelbett zahlt ihn gemeinsam, je zur Hälfte, und damit weniger als für zwei Einzelbetten.</HH.Setting.inn.doubleBedFactor.Desc>
   <HH.Setting.inn.groupDevGizmos>Unsere Dev-Schaltflächen gruppieren</HH.Setting.inn.groupDevGizmos>
   <HH.Setting.inn.groupDevGizmos.Desc>Im Dev-Modus werden die DEV-Schaltflächen der Hearth-&amp;-Harbor-Gebäude in einer Schaltfläche „Dev: Hearth &amp; Harbor“ zusammengefasst, damit die Gizmo-Leiste lesbar bleibt. Schaltflächen von Vanilla und anderen Mods bleiben unberührt.</HH.Setting.inn.groupDevGizmos.Desc>
+  <HH.Inn.Event.RoomyBed>Hatte ein geräumiges Doppelbett ganz für sich allein.</HH.Inn.Event.RoomyBed>
 </LanguageData>

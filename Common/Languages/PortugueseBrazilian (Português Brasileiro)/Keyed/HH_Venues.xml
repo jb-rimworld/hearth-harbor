@@ -275,4 +275,6 @@
   <HH.Venue.RestockStateOff>Reabastecimento desligado: o armazenamento do cômodo mantém as próprias configurações</HH.Venue.RestockStateOff>
   <HH.Venue.RestockStateOn>Reabastecimento ligado: o armazenamento do cômodo segue esta lista</HH.Venue.RestockStateOn>
   <HH.Venue.SelfServiceNote>autoatendimento</HH.Venue.SelfServiceNote>
+  <HH.Setup.AndMore>… e mais {0}</HH.Setup.AndMore>
+  <HH.Setup.AnyStuff>material</HH.Setup.AnyStuff>
 </LanguageData>

@@ -343,4 +343,5 @@
   <HH.Setting.inn.doubleBedFactor.Desc>Кровать на двоих приносит в это число раз больше цены одноместной. Пара на одной двуспальной кровати платит вместе, каждый половину, поэтому платит меньше, чем за две одноместные.</HH.Setting.inn.doubleBedFactor.Desc>
   <HH.Setting.inn.groupDevGizmos>Объединить наши кнопки разработчика</HH.Setting.inn.groupDevGizmos>
   <HH.Setting.inn.groupDevGizmos.Desc>В режиме разработчика кнопки DEV зданий Hearth &amp; Harbor сворачиваются в одну кнопку «Dev: Hearth &amp; Harbor», чтобы ряд кнопок оставался читаемым. Кнопки ванили и других модов никогда не затрагиваются.</HH.Setting.inn.groupDevGizmos.Desc>
+  <HH.Inn.Event.RoomyBed>Получил просторную двуспальную кровать в полном своём распоряжении.</HH.Inn.Event.RoomyBed>
 </LanguageData>

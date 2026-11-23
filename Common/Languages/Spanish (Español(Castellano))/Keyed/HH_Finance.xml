@@ -186,7 +186,6 @@
   <HH.Finance.Lottery.News.Won>Sorteo Glitterworld: {0}. {1} Has ganado {2}.</HH.Finance.Lottery.News.Won>
   <HH.Finance.Lottery.News.Colony>Tu lotería ha sorteado {0}: {1} ganadores del bote entre {2} billetes.</HH.Finance.Lottery.News.Colony>
   <HH.Finance.Lottery.ColonyTitle>Tu propia lotería</HH.Finance.Lottery.ColonyTitle>
-  <HH.Finance.Lottery.ColonyOpen>Abrir la lotería de la colonia</HH.Finance.Lottery.ColonyOpen>
   <HH.Finance.Lottery.ColonyIntro>Los huéspedes y los jugadores simulados de los asentamientos amigos compran billetes. Cuatro números de 25. Te quedas con lo que no se paga; el bote solo paga lo que contiene.</HH.Finance.Lottery.ColonyIntro>
   <HH.Finance.Lottery.Price>Precio del billete</HH.Finance.Lottery.Price>
   <HH.Finance.Lottery.Quote>Porcentaje de premio</HH.Finance.Lottery.Quote>
@@ -233,7 +232,7 @@
   <HH.Finance.Lottery.Preview>Tu boleto hasta ahora: {0} de {1} números, estrella {2}</HH.Finance.Lottery.Preview>
   <HH.Finance.Lottery.QuickN>Selección rápida</HH.Finance.Lottery.QuickN>
   <HH.Finance.Lottery.QuickTip>Boletos aleatorios, comprados de una vez. Hasta {0} por clic.</HH.Finance.Lottery.QuickTip>
-  <HH.Finance.Lottery.SetIn>El precio, la parte de premios, el intervalo de sorteo y la comisión son ajustes del mod de esta partida.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SetIn>Si la lotería está abierta, su precio, la parte del premio, el intervalo entre sorteos y la comisión son ajustes del mod de esta partida guardada.</HH.Finance.Lottery.SetIn>
   <HH.Finance.Lottery.SilverUnit>{0} de plata</HH.Finance.Lottery.SilverUnit>
   <HH.Finance.Lottery.StarMatch> y la estrella</HH.Finance.Lottery.StarMatch>
   <HH.Finance.Lottery.StarNone>sin elegir</HH.Finance.Lottery.StarNone>

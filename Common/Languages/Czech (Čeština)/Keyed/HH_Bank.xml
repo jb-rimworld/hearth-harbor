@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Bank.Building.Account>{0}: zůstatek {1}</HH.Bank.Building.Account>
-  <HH.Bank.Building.DirectDeposit>Přímé vklady</HH.Bank.Building.DirectDeposit>
   <HH.Bank.Building.DirectDepositDesc>Zapnuto: pokladny vašich podniků se o půlnoci vyprázdní na váš účet v bance. Vypnuto: tržby se odkládají jako stříbro vedle trezoru.</HH.Bank.Building.DirectDepositDesc>
   <HH.Bank.Building.NoAccount>Zatím bez účtu. Otevřete si ho tady nebo na komunikační konzoli.</HH.Bank.Building.NoAccount>
   <HH.Bank.Building.SafeDirect>Tržby jdou o půlnoci rovnou na účet.</HH.Bank.Building.SafeDirect>
@@ -274,4 +273,7 @@ Určuje tvou úroveň bohatství. Úvěrové limity počítají jen {6} % invest
   <HH.Bank.Terms.SetIn>Podmínky banky jsou nastavení této uložené hry: změň je v Možnosti modu &gt; Hearth &amp; Harbor &gt; Banka (Úrok a ziskovost, Poplatky, Půjčky, Inkaso, Loterie). 1,0 znamená ani plus, ani minus; 1,2 znamená +20 % ročně pro index, účet dostane jen jeho podíl. Půjčky se řídí také M.</HH.Bank.Terms.SetIn>
   <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
   <HH.Bank.Yield.Account>Tvůj bankovní účet</HH.Bank.Yield.Account>
+  <HH.Bank.Building.DirectState>Přímý vklad: {0}</HH.Bank.Building.DirectState>
+  <HH.Bank.Building.OpenSettings>Otevřít nastavení (Banka)</HH.Bank.Building.OpenSettings>
+  <HH.Bank.Building.OpenSettingsDesc>Toto je položka vaší banky a mění se jen v nastavení modu (Banka &gt; Účet). Kliknutím je otevřete.</HH.Bank.Building.OpenSettingsDesc>
 </LanguageData>

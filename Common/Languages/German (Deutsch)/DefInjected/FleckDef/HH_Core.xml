@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Fleck_Life_Coins.description>Münzen, die von einem zahlenden Gast zur Kasse aufsteigen.</HH_Fleck_Life_Coins.description>
+  <HH_Fleck_Life_Coins.label>Münzen</HH_Fleck_Life_Coins.label>
+  <HH_Fleck_Life_Heart.description>Ein kleines Herz, wenn sich ein Paar in sein gemeinsames Bett legt.</HH_Fleck_Life_Heart.description>
+  <HH_Fleck_Life_Heart.label>Herz</HH_Fleck_Life_Heart.label>
+  <HH_Fleck_Life_Key.description>Ein kleiner Zimmerschlüssel über einem Gast an der Rezeption.</HH_Fleck_Life_Key.description>
+  <HH_Fleck_Life_Key.label>Zimmerschlüssel</HH_Fleck_Life_Key.label>
+  <HH_Fleck_Life_Puff.description>Ein trockenes Wölkchen nach einer schlechten Bewertung.</HH_Fleck_Life_Puff.description>
+  <HH_Fleck_Life_Puff.label>Naja-Wölkchen</HH_Fleck_Life_Puff.label>
+  <HH_Fleck_Life_Sparkle.description>Ein Funkeln um eine Fünf-Sterne-Bewertung.</HH_Fleck_Life_Sparkle.description>
+  <HH_Fleck_Life_Sparkle.label>Funkeln</HH_Fleck_Life_Sparkle.label>
+  <HH_Fleck_Life_Stars1.description>Die Bewertung des Gastes: 1 von 5 Sternen über dem Kopf.</HH_Fleck_Life_Stars1.description>
+  <HH_Fleck_Life_Stars1.label>1-Sterne-Bewertung</HH_Fleck_Life_Stars1.label>
+  <HH_Fleck_Life_Stars2.description>Die Bewertung des Gastes: 2 von 5 Sternen über dem Kopf.</HH_Fleck_Life_Stars2.description>
+  <HH_Fleck_Life_Stars2.label>2-Sterne-Bewertung</HH_Fleck_Life_Stars2.label>
+  <HH_Fleck_Life_Stars3.description>Die Bewertung des Gastes: 3 von 5 Sternen über dem Kopf.</HH_Fleck_Life_Stars3.description>
+  <HH_Fleck_Life_Stars3.label>3-Sterne-Bewertung</HH_Fleck_Life_Stars3.label>
+  <HH_Fleck_Life_Stars4.description>Die Bewertung des Gastes: 4 von 5 Sternen über dem Kopf.</HH_Fleck_Life_Stars4.description>
+  <HH_Fleck_Life_Stars4.label>4-Sterne-Bewertung</HH_Fleck_Life_Stars4.label>
+  <HH_Fleck_Life_Stars5.description>Die Bewertung des Gastes: 5 von 5 Sternen über dem Kopf.</HH_Fleck_Life_Stars5.description>
+  <HH_Fleck_Life_Stars5.label>5-Sterne-Bewertung</HH_Fleck_Life_Stars5.label>
+  <HH_Fleck_Life_Suitcase.description>Ein kleiner Koffer über einem Gast, der gerade angekommen ist.</HH_Fleck_Life_Suitcase.description>
+  <HH_Fleck_Life_Suitcase.label>Ankunftskoffer</HH_Fleck_Life_Suitcase.label>
+  <HH_Fleck_Life_TipCoin.description>Eine Münze, die der Person zugeworfen wird, die den Gast bedient hat.</HH_Fleck_Life_TipCoin.description>
+  <HH_Fleck_Life_TipCoin.label>Trinkgeldmünze</HH_Fleck_Life_TipCoin.label>
+  <HH_Fleck_Life_Wave.description>Eine winkende Hand über einem Gast, der sich verabschiedet.</HH_Fleck_Life_Wave.description>
+  <HH_Fleck_Life_Wave.label>Winken</HH_Fleck_Life_Wave.label>
+</LanguageData>

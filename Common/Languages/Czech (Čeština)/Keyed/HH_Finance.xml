@@ -186,7 +186,6 @@
   <HH.Finance.Lottery.News.Won>Velké losování Glitterworld: {0}. {1} Vyhrál jsi {2}.</HH.Finance.Lottery.News.Won>
   <HH.Finance.Lottery.News.Colony>Vaše loterie vylosovala {0}: {1} výherců jackpotu z {2} losů.</HH.Finance.Lottery.News.Colony>
   <HH.Finance.Lottery.ColonyTitle>Vlastní loterie</HH.Finance.Lottery.ColonyTitle>
-  <HH.Finance.Lottery.ColonyOpen>Otevřít kolonijní loterii</HH.Finance.Lottery.ColonyOpen>
   <HH.Finance.Lottery.ColonyIntro>Hosté a simulovaní hráči přátelských osad kupují losy. Čtyři čísla z dvacetipěti. Zůstává vám to, co se nevyplatí; výhra se vyplácí jen z toho, co kasa drží.</HH.Finance.Lottery.ColonyIntro>
   <HH.Finance.Lottery.Price>Cena losu</HH.Finance.Lottery.Price>
   <HH.Finance.Lottery.Quote>Podíl na výplatách</HH.Finance.Lottery.Quote>
@@ -233,7 +232,7 @@
   <HH.Finance.Lottery.Preview>Tvůj los zatím: {0} z {1} čísel, hvězda {2}</HH.Finance.Lottery.Preview>
   <HH.Finance.Lottery.QuickN>Rychlý výběr</HH.Finance.Lottery.QuickN>
   <HH.Finance.Lottery.QuickTip>Náhodné losy, koupené najednou. Až {0} na kliknutí.</HH.Finance.Lottery.QuickTip>
-  <HH.Finance.Lottery.SetIn>Cena, podíl na výhrách, interval losování a poplatek jsou nastavení modu této uložené hry.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SetIn>Zda je loterie otevřená, její cena, podíl na výhrách, interval losování a poplatek jsou nastavení modu této uložené hry.</HH.Finance.Lottery.SetIn>
   <HH.Finance.Lottery.SilverUnit>{0} stříbra</HH.Finance.Lottery.SilverUnit>
   <HH.Finance.Lottery.StarMatch> a hvězdička</HH.Finance.Lottery.StarMatch>
   <HH.Finance.Lottery.StarNone>nevybráno</HH.Finance.Lottery.StarNone>

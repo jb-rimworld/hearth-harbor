@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Bank.Building.Account>{0} : solde {1}</HH.Bank.Building.Account>
-  <HH.Bank.Building.DirectDeposit>Dépôt direct</HH.Bank.Building.DirectDeposit>
   <HH.Bank.Building.DirectDepositDesc>Activé : les caisses de vos entreprises sont vidées sur votre compte bancaire à minuit. Désactivé : les recettes sont déposées en argent à côté du coffre.</HH.Bank.Building.DirectDepositDesc>
   <HH.Bank.Building.NoAccount>Pas encore de compte. Ouvrez-en un ici ou à une console de communication.</HH.Bank.Building.NoAccount>
   <HH.Bank.Building.SafeDirect>Les recettes vont directement sur le compte à minuit.</HH.Bank.Building.SafeDirect>
@@ -274,4 +273,7 @@ Détermine votre niveau de fortune. Les plafonds de crédit ne comptent que {6} 
   <HH.Bank.Terms.SetIn>Les conditions de la banque sont des réglages de cette partie : modifiez-les dans Options du mod &gt; Hearth &amp; Harbor &gt; Banque (Intérêts et rentabilité, Frais, Prêts, Recouvrement, Loterie). 1,0 signifie ni plus ni moins, 1,2 signifie +20 % par an pour l'indice ; le compte n'en reçoit qu'une part. Les prêts suivent aussi M.</HH.Bank.Terms.SetIn>
   <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
   <HH.Bank.Yield.Account>Votre compte bancaire</HH.Bank.Yield.Account>
+  <HH.Bank.Building.DirectState>Dépôt direct : {0}</HH.Bank.Building.DirectState>
+  <HH.Bank.Building.OpenSettings>Ouvrir les paramètres (Banque)</HH.Bank.Building.OpenSettings>
+  <HH.Bank.Building.OpenSettingsDesc>Ceci est un élément de votre banque, modifiable uniquement dans les paramètres du mod (Banque &gt; Compte). Cliquez pour les ouvrir.</HH.Bank.Building.OpenSettingsDesc>
 </LanguageData>

@@ -11,4 +11,6 @@
   <HH.Setting.core.musicShare.Desc>Вага наших пісень у плейлисті порівняно з однією ванільною піснею. 1 = як будь-яка інша пісня сезону, 0 = ніколи.</HH.Setting.core.musicShare.Desc>
   <HH.Story.Suggests>{0} пропонує: {1}</HH.Story.Suggests>
   <HH.Story.SuggestsTip>Натисніть, щоб застосувати складність прийому, яку пропонує цей оповідач. Її все ще можна змінити кнопкою.</HH.Story.SuggestsTip>
+  <HH.Setting.core.lifeFx>Життя гостей на карті</HH.Setting.core.lifeFx>
+  <HH.Setting.core.lifeFx.Desc>Невеликі знаки й звуки для моментів перебування: дзвін під час прибуття, дзвоник стійки при реєстрації, монети, коли гості платять або залишають чайові, помах рукою та їхній відгук у зірках під час від'їзду, серце для пар, що сплять в одному ліжку.</HH.Setting.core.lifeFx.Desc>
 </LanguageData>

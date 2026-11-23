@@ -11,4 +11,6 @@
   <HH.Setting.core.musicShare.Desc>Вес наших песен в плейлисте по сравнению с одной песней из базовой игры. 1 = как любая другая песня сезона, 0 = никогда.</HH.Setting.core.musicShare.Desc>
   <HH.Story.Suggests>{0} предлагает: {1}</HH.Story.Suggests>
   <HH.Story.SuggestsTip>Нажмите, чтобы использовать сложность приёма, которую предлагает рассказчик. Изменить её можно кнопкой.</HH.Story.SuggestsTip>
+  <HH.Setting.core.lifeFx>Жизнь гостей на карте</HH.Setting.core.lifeFx>
+  <HH.Setting.core.lifeFx.Desc>Небольшие знаки и звуки для моментов пребывания: звонок при прибытии гостей, звонок стойки регистрации, монеты при оплате или чаевых, машущая рука и их отзыв в звёздах при отъезде, сердечко для пар, делящих кровать.</HH.Setting.core.lifeFx.Desc>
 </LanguageData>

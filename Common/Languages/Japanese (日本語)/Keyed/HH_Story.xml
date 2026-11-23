@@ -11,4 +11,6 @@
   <HH.Setting.core.musicShare.Desc>プレイリストで、バニラの曲1曲と比べたこちらの曲の重み。1=その季節のほかの曲と同じ、0=流れない。</HH.Setting.core.musicShare.Desc>
   <HH.Story.Suggests>{0}の提案: {1}</HH.Story.Suggests>
   <HH.Story.SuggestsTip>クリックするとこの語り手が提案する開催難易度を使います。ボタンでいつでも変更できます。</HH.Story.SuggestsTip>
+  <HH.Setting.core.lifeFx>マップ上の客の暮らしの演出</HH.Setting.core.lifeFx>
+  <HH.Setting.core.lifeFx.Desc>滞在の節目を示す小さなサインと音。到着時のチャイム、チェックイン時のフロントベル、支払いやチップの際の硬貨、退去時の手振りと星での評価、同じベッドで眠るカップルのハート。</HH.Setting.core.lifeFx.Desc>
 </LanguageData>

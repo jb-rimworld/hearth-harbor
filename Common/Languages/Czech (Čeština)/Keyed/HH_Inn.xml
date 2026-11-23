@@ -343,4 +343,5 @@
   <HH.Setting.inn.doubleBedFactor.Desc>Lůžko pro dva vydělá tolikrát cenu jednolůžka. Pár v jednom dvoulůžku platí společně, každý polovinu, takže zaplatí méně než za dvě jednolůžka.</HH.Setting.inn.doubleBedFactor.Desc>
   <HH.Setting.inn.groupDevGizmos>Seskupit naše vývojářská tlačítka</HH.Setting.inn.groupDevGizmos>
   <HH.Setting.inn.groupDevGizmos.Desc>V režimu vývojáře se tlačítka DEV budov Hearth &amp; Harbor sloučí do jednoho tlačítka „Dev: Hearth &amp; Harbor“, aby řádek ovládacích prvků zůstal přehledný. Tlačítka vanilla a jiných modů se nikdy nemění.</HH.Setting.inn.groupDevGizmos.Desc>
+  <HH.Inn.Event.RoomyBed>Měl prostornou manželskou postel jen pro sebe.</HH.Inn.Event.RoomyBed>
 </LanguageData>

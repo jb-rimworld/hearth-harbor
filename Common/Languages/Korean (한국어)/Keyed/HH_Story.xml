@@ -11,4 +11,6 @@
   <HH.Setting.core.musicShare.Desc>재생목록에서 기본 노래 한 곡과 비교한 우리 노래의 비중. 1 = 그 계절의 다른 노래와 같음, 0 = 나오지 않음.</HH.Setting.core.musicShare.Desc>
   <HH.Story.Suggests>{0} 추천: {1}</HH.Story.Suggests>
   <HH.Story.SuggestsTip>클릭하면 이 이야기꾼이 추천하는 숙박 난이도를 쓴다. 버튼으로 여전히 바꿀 수 있다.</HH.Story.SuggestsTip>
+  <HH.Setting.core.lifeFx>지도 위의 손님 생활</HH.Setting.core.lifeFx>
+  <HH.Setting.core.lifeFx.Desc>머무는 순간마다 나는 작은 표시와 소리입니다: 손님이 도착하면 차임, 체크인 때 데스크 벨, 돈을 내거나 팁을 줄 때 동전, 떠날 때 손 흔들기와 별점 리뷰, 침대를 함께 쓰는 커플에게는 하트.</HH.Setting.core.lifeFx.Desc>
 </LanguageData>

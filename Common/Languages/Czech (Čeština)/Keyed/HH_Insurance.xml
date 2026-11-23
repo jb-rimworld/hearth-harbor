@@ -406,7 +406,7 @@ Za čtvrtrok: {1}</HH.Ins.UI.Price.Tip>
   <HH.Ins.Status.Buy>Pojistit…</HH.Ins.Status.Buy>
   <HH.Ins.Status.ColonyCover>krytí kolonie</HH.Ins.Status.ColonyCover>
   <HH.Ins.Status.Column>Krytí</HH.Ins.Status.Column>
-  <HH.Ins.Status.ColumnTip>Stav pojištění: penze, zdraví, úraz, odpovědnost, právní ochrana. Kliknutím zobrazíte přehled.</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.ColumnTip>Stav pojištění, jedna ikona pro každý druh krytí (důchod, zdraví, úraz, odpovědnost, právní ochrana, cestování a případné další osobní pojistky). Kliknutím otevřete přehled.</HH.Ins.Status.ColumnTip>
   <HH.Ins.Status.Foot>Zeleně: aktivní. Žlutě: čekací doba. Oranžově: čeká na zrušení. Červeně: penze v ohrožení. Šedě: nepojištěno. Krytí kolonie platí pro každého kolonistu.</HH.Ins.Status.Foot>
   <HH.Ins.Status.Kind.Accident>Úraz</HH.Ins.Status.Kind.Accident>
   <HH.Ins.Status.Kind.Health>Zdraví</HH.Ins.Status.Kind.Health>
@@ -453,4 +453,5 @@ Za čtvrtrok: {1}</HH.Ins.UI.Price.Tip>
   <HH.Ins.UI.Mine.PensionTip>Penzijní pravidlo: v rozvrhu nejvýše {0} hodin práce denně. Cokoli se počítá jako volný čas, ale kolonista na Cokoli si může stále zvolit práci.</HH.Ins.UI.Mine.PensionTip>
   <HH.Ins.UI.Mine.UpgradeWait>Čekací doba po navýšení: události během následujících {0} se stále posuzují podle starého krytí.</HH.Ins.UI.Mine.UpgradeWait>
   <HH.Ins.UI.Mine.WithdrawChange>Vzít změnu zpět</HH.Ins.UI.Mine.WithdrawChange>
+  <HH.Ins.Status.Kind.Travel>Cestování</HH.Ins.Status.Kind.Travel>
 </LanguageData>

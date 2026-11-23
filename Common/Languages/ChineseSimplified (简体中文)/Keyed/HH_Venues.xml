@@ -275,4 +275,6 @@
   <HH.Venue.RestockStateOff>补货已关闭：房间的储存区保持其自身设置</HH.Venue.RestockStateOff>
   <HH.Venue.RestockStateOn>补货已开启：房间的储存区遵循此列表</HH.Venue.RestockStateOn>
   <HH.Venue.SelfServiceNote>自助服务</HH.Venue.SelfServiceNote>
+  <HH.Setup.AndMore>……还有 {0} 项</HH.Setup.AndMore>
+  <HH.Setup.AnyStuff>材料</HH.Setup.AnyStuff>
 </LanguageData>

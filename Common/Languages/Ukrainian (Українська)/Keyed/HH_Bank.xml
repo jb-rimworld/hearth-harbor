@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Bank.Building.Account>{0}: баланс {1}</HH.Bank.Building.Account>
-  <HH.Bank.Building.DirectDeposit>Пряме зарахування</HH.Bank.Building.DirectDeposit>
   <HH.Bank.Building.DirectDepositDesc>Увімкнено: каси ваших підприємств опівночі переказуються на рахунок у банку. Вимкнено: виручка лежить поруч із сейфом у вигляді срібла.</HH.Bank.Building.DirectDepositDesc>
   <HH.Bank.Building.NoAccount>Рахунку ще немає. Відкрийте його тут або на консолі зв’язку.</HH.Bank.Building.NoAccount>
   <HH.Bank.Building.SafeDirect>Виручка опівночі йде просто на рахунок.</HH.Bank.Building.SafeDirect>
@@ -274,4 +273,7 @@
   <HH.Bank.Terms.SetIn>Умови банку є параметрами цього збереження: змініть їх у Параметри моду &gt; Hearth &amp; Harbor &gt; Банк (Відсотки й прибутковість, Комісії, Позики, Стягнення, Лотерея). 1,0 означає без змін, 1,2 — це +20 % на рік для індексу; рахунок отримує лише частку цього. Позики також слідують за M.</HH.Bank.Terms.SetIn>
   <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
   <HH.Bank.Yield.Account>Ваш банківський рахунок</HH.Bank.Yield.Account>
+  <HH.Bank.Building.DirectState>Прямий внесок: {0}</HH.Bank.Building.DirectState>
+  <HH.Bank.Building.OpenSettings>Відкрити налаштування (Банк)</HH.Bank.Building.OpenSettings>
+  <HH.Bank.Building.OpenSettingsDesc>Це параметр вашого банку, який змінюється лише в налаштуваннях моду (Банк &gt; Рахунок). Натисніть, щоб відкрити їх.</HH.Bank.Building.OpenSettingsDesc>
 </LanguageData>

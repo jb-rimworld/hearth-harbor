@@ -343,4 +343,5 @@
   <HH.Setting.inn.doubleBedFactor.Desc>Una cama para dos gana este número de veces el precio de una cama individual. Una pareja en una cama doble lo paga entre los dos, cada mitad, así que paga menos que por dos individuales.</HH.Setting.inn.doubleBedFactor.Desc>
   <HH.Setting.inn.groupDevGizmos>Agrupar nuestros botones de desarrollo</HH.Setting.inn.groupDevGizmos>
   <HH.Setting.inn.groupDevGizmos.Desc>En modo desarrollo, los botones DEV de los edificios de Hearth &amp; Harbor se pliegan en un único botón «Dev: Hearth &amp; Harbor» para que la fila de iconos siga siendo legible. Los botones del juego base y de otros mods nunca se tocan.</HH.Setting.inn.groupDevGizmos.Desc>
+  <HH.Inn.Event.RoomyBed>Tuvo una cama doble espaciosa solo para sí.</HH.Inn.Event.RoomyBed>
 </LanguageData>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Fleck_Life_Coins.description>付款的访客身边升起的硬币，飘向收银台。</HH_Fleck_Life_Coins.description>
+  <HH_Fleck_Life_Coins.label>硬币</HH_Fleck_Life_Coins.label>
+  <HH_Fleck_Life_Heart.description>一对情侣躺在同一张床上时冒出的小爱心。</HH_Fleck_Life_Heart.description>
+  <HH_Fleck_Life_Heart.label>爱心</HH_Fleck_Life_Heart.label>
+  <HH_Fleck_Life_Key.description>访客办理入住时头顶出现的小房间钥匙。</HH_Fleck_Life_Key.description>
+  <HH_Fleck_Life_Key.label>房间钥匙</HH_Fleck_Life_Key.label>
+  <HH_Fleck_Life_Puff.description>差评后冒出的一小团干巴巴的烟雾。</HH_Fleck_Life_Puff.description>
+  <HH_Fleck_Life_Puff.label>平淡烟雾</HH_Fleck_Life_Puff.label>
+  <HH_Fleck_Life_Sparkle.description>五星评价周围的闪光。</HH_Fleck_Life_Sparkle.description>
+  <HH_Fleck_Life_Sparkle.label>闪光</HH_Fleck_Life_Sparkle.label>
+  <HH_Fleck_Life_Stars1.description>访客的评价：头顶显示 5 颗星中的 1 颗。</HH_Fleck_Life_Stars1.description>
+  <HH_Fleck_Life_Stars1.label>一星评价</HH_Fleck_Life_Stars1.label>
+  <HH_Fleck_Life_Stars2.description>访客的评价：头顶显示 5 颗星中的 2 颗。</HH_Fleck_Life_Stars2.description>
+  <HH_Fleck_Life_Stars2.label>二星评价</HH_Fleck_Life_Stars2.label>
+  <HH_Fleck_Life_Stars3.description>访客的评价：头顶显示 5 颗星中的 3 颗。</HH_Fleck_Life_Stars3.description>
+  <HH_Fleck_Life_Stars3.label>三星评价</HH_Fleck_Life_Stars3.label>
+  <HH_Fleck_Life_Stars4.description>访客的评价：头顶显示 5 颗星中的 4 颗。</HH_Fleck_Life_Stars4.description>
+  <HH_Fleck_Life_Stars4.label>四星评价</HH_Fleck_Life_Stars4.label>
+  <HH_Fleck_Life_Stars5.description>访客的评价：头顶显示 5 颗星中的 5 颗。</HH_Fleck_Life_Stars5.description>
+  <HH_Fleck_Life_Stars5.label>五星评价</HH_Fleck_Life_Stars5.label>
+  <HH_Fleck_Life_Suitcase.description>刚到达的访客头顶的小行李箱。</HH_Fleck_Life_Suitcase.description>
+  <HH_Fleck_Life_Suitcase.label>入住行李箱</HH_Fleck_Life_Suitcase.label>
+  <HH_Fleck_Life_TipCoin.description>一枚硬币抛向为访客服务的人。</HH_Fleck_Life_TipCoin.description>
+  <HH_Fleck_Life_TipCoin.label>小费硬币</HH_Fleck_Life_TipCoin.label>
+  <HH_Fleck_Life_Wave.description>告别的访客头顶的挥手图标。</HH_Fleck_Life_Wave.description>
+  <HH_Fleck_Life_Wave.label>挥手</HH_Fleck_Life_Wave.label>
+</LanguageData>

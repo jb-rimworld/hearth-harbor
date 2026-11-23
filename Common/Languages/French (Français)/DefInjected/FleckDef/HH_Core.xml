@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Fleck_Life_Coins.description>Pièces qui s'élèvent d'un invité payant vers la caisse.</HH_Fleck_Life_Coins.description>
+  <HH_Fleck_Life_Coins.label>pièces</HH_Fleck_Life_Coins.label>
+  <HH_Fleck_Life_Heart.description>Un petit cœur quand un couple se couche dans son lit commun.</HH_Fleck_Life_Heart.description>
+  <HH_Fleck_Life_Heart.label>cœur</HH_Fleck_Life_Heart.label>
+  <HH_Fleck_Life_Key.description>Une petite clé de chambre au-dessus d'un invité à l'accueil.</HH_Fleck_Life_Key.description>
+  <HH_Fleck_Life_Key.label>clé de chambre</HH_Fleck_Life_Key.label>
+  <HH_Fleck_Life_Puff.description>Un petit souffle sec après un mauvais avis.</HH_Fleck_Life_Puff.description>
+  <HH_Fleck_Life_Puff.label>bof</HH_Fleck_Life_Puff.label>
+  <HH_Fleck_Life_Sparkle.description>Une étincelle autour d'un avis à cinq étoiles.</HH_Fleck_Life_Sparkle.description>
+  <HH_Fleck_Life_Sparkle.label>étincelle</HH_Fleck_Life_Sparkle.label>
+  <HH_Fleck_Life_Stars1.description>L'avis de l'invité : 1 étoile sur 5 au-dessus de la tête.</HH_Fleck_Life_Stars1.description>
+  <HH_Fleck_Life_Stars1.label>avis 1 étoile</HH_Fleck_Life_Stars1.label>
+  <HH_Fleck_Life_Stars2.description>L'avis de l'invité : 2 étoiles sur 5 au-dessus de la tête.</HH_Fleck_Life_Stars2.description>
+  <HH_Fleck_Life_Stars2.label>avis 2 étoiles</HH_Fleck_Life_Stars2.label>
+  <HH_Fleck_Life_Stars3.description>L'avis de l'invité : 3 étoiles sur 5 au-dessus de la tête.</HH_Fleck_Life_Stars3.description>
+  <HH_Fleck_Life_Stars3.label>avis 3 étoiles</HH_Fleck_Life_Stars3.label>
+  <HH_Fleck_Life_Stars4.description>L'avis de l'invité : 4 étoiles sur 5 au-dessus de la tête.</HH_Fleck_Life_Stars4.description>
+  <HH_Fleck_Life_Stars4.label>avis 4 étoiles</HH_Fleck_Life_Stars4.label>
+  <HH_Fleck_Life_Stars5.description>L'avis de l'invité : 5 étoiles sur 5 au-dessus de la tête.</HH_Fleck_Life_Stars5.description>
+  <HH_Fleck_Life_Stars5.label>avis 5 étoiles</HH_Fleck_Life_Stars5.label>
+  <HH_Fleck_Life_Suitcase.description>Une petite valise au-dessus d'un invité qui vient d'arriver.</HH_Fleck_Life_Suitcase.description>
+  <HH_Fleck_Life_Suitcase.label>valise d'arrivée</HH_Fleck_Life_Suitcase.label>
+  <HH_Fleck_Life_TipCoin.description>Une pièce lancée à la personne qui a servi l'invité.</HH_Fleck_Life_TipCoin.description>
+  <HH_Fleck_Life_TipCoin.label>pièce de pourboire</HH_Fleck_Life_TipCoin.label>
+  <HH_Fleck_Life_Wave.description>Une main qui salue au-dessus d'un invité qui dit au revoir.</HH_Fleck_Life_Wave.description>
+  <HH_Fleck_Life_Wave.label>salut</HH_Fleck_Life_Wave.label>
+</LanguageData>

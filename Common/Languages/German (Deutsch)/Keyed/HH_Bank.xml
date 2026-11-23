@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Bank.Building.Account>{0}: Kontostand {1}</HH.Bank.Building.Account>
-  <HH.Bank.Building.DirectDeposit>Direkteinzahlung</HH.Bank.Building.DirectDeposit>
   <HH.Bank.Building.DirectDepositDesc>An: Die Kassen deiner Geschäfte werden um Mitternacht auf dein Bankkonto geleert. Aus: Die Einnahmen werden als Silber neben dem Tresor abgelegt.</HH.Bank.Building.DirectDepositDesc>
   <HH.Bank.Building.NoAccount>Noch kein Konto. Eröffne hier oder an einer Kommunikationskonsole eines.</HH.Bank.Building.NoAccount>
   <HH.Bank.Building.SafeDirect>Die Einnahmen gehen um Mitternacht direkt aufs Konto.</HH.Bank.Building.SafeDirect>
@@ -274,4 +273,7 @@ Bestimmt deine Vermögensstufe. Kreditlimits zählen nur {6} % der Geldanlagen (
   <HH.Bank.Terms.SetIn>Die Konditionen der Bank sind Einstellungen dieses Spielstands: Ändere sie unter Mod-Optionen &gt; Hearth &amp; Harbor &gt; Bank (Zinsen &amp; Rentabilität, Gebühren, Kredite, Inkasso, Lotterie). 1,0 bedeutet plus/minus nichts, 1,2 sind +20 % im Jahr für den Index; das Konto bekommt davon nur einen Anteil. Kredite folgen ebenfalls M.</HH.Bank.Terms.SetIn>
   <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
   <HH.Bank.Yield.Account>Dein Bankkonto</HH.Bank.Yield.Account>
+  <HH.Bank.Building.DirectState>Direkteinzahlung: {0}</HH.Bank.Building.DirectState>
+  <HH.Bank.Building.OpenSettings>Einstellungen öffnen (Bank)</HH.Bank.Building.OpenSettings>
+  <HH.Bank.Building.OpenSettingsDesc>Das ist eine Bedingung deiner Bank und wird nur in den Mod-Einstellungen geändert (Bank &gt; Konto). Klicke, um sie zu öffnen.</HH.Bank.Building.OpenSettingsDesc>
 </LanguageData>

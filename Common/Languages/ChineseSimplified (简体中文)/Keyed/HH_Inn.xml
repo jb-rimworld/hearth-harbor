@@ -343,4 +343,5 @@
   <HH.Setting.inn.doubleBedFactor.Desc>双人床的收费是单人床的这个倍数。情侣共用一张双人床时一起付费，各付一半，因此比住两张单人床便宜。</HH.Setting.inn.doubleBedFactor.Desc>
   <HH.Setting.inn.groupDevGizmos>合并我们的开发按钮</HH.Setting.inn.groupDevGizmos>
   <HH.Setting.inn.groupDevGizmos.Desc>在开发模式下，Hearth &amp; Harbor 建筑的 DEV 按钮会被折叠进一个「Dev: Hearth &amp; Harbor」按钮，使按钮行保持清爽。原版和其他模组的按钮永远不会被改动。</HH.Setting.inn.groupDevGizmos.Desc>
+  <HH.Inn.Event.RoomyBed>独享了一张宽敞的双人床。</HH.Inn.Event.RoomyBed>
 </LanguageData>

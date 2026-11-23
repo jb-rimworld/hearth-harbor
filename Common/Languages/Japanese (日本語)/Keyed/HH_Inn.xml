@@ -343,4 +343,5 @@
   <HH.Setting.inn.doubleBedFactor.Desc>2人用のベッドは、シングルベッドの価格のこの倍数を稼ぎます。1台のダブルベッドを使うカップルは、2人で半額ずつ支払うため、シングル2台より安く済みます。</HH.Setting.inn.doubleBedFactor.Desc>
   <HH.Setting.inn.groupDevGizmos>開発用ボタンをまとめる</HH.Setting.inn.groupDevGizmos>
   <HH.Setting.inn.groupDevGizmos.Desc>開発モードでは、Hearth &amp; Harbor の建物の DEV ボタンが「Dev: Hearth &amp; Harbor」という1つのボタンにまとめられ、ギズモの列が見やすく保たれます。バニラや他の Mod のボタンには一切触れません。</HH.Setting.inn.groupDevGizmos.Desc>
+  <HH.Inn.Event.RoomyBed>ゆったりしたダブルベッドを一人で独占できた。</HH.Inn.Event.RoomyBed>
 </LanguageData>

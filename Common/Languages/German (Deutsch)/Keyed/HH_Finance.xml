@@ -186,7 +186,6 @@
   <HH.Finance.Lottery.News.Won>Große Glitzerwelt-Ziehung: {0}. {1} Du hast {2} gewonnen.</HH.Finance.Lottery.News.Won>
   <HH.Finance.Lottery.News.Colony>Deine Lotterie hat {0} gezogen: {1} Hauptgewinner unter {2} Losen.</HH.Finance.Lottery.News.Colony>
   <HH.Finance.Lottery.ColonyTitle>Deine eigene Lotterie</HH.Finance.Lottery.ColonyTitle>
-  <HH.Finance.Lottery.ColonyOpen>Siedlungslotterie öffnen</HH.Finance.Lottery.ColonyOpen>
   <HH.Finance.Lottery.ColonyIntro>Gäste und die simulierten Spieler befreundeter Siedlungen kaufen Lose. Vier Zahlen aus 25. Du behältst, was nicht ausgezahlt wird; der Topf zahlt nur aus, was er enthält.</HH.Finance.Lottery.ColonyIntro>
   <HH.Finance.Lottery.Price>Lospreis</HH.Finance.Lottery.Price>
   <HH.Finance.Lottery.Quote>Auszahlungsanteil</HH.Finance.Lottery.Quote>
@@ -233,7 +232,7 @@
   <HH.Finance.Lottery.Preview>Dein Los bisher: {0} von {1} Zahlen, Stern {2}</HH.Finance.Lottery.Preview>
   <HH.Finance.Lottery.QuickN>Zufallstipps</HH.Finance.Lottery.QuickN>
   <HH.Finance.Lottery.QuickTip>Zufällige Lose, auf einmal gekauft. Bis zu {0} pro Klick.</HH.Finance.Lottery.QuickTip>
-  <HH.Finance.Lottery.SetIn>Preis, Auszahlungsanteil, Ziehungsintervall und Gebühr sind Mod-Einstellungen dieses Spielstands.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SetIn>Ob die Lotterie geöffnet ist, ihr Preis, Auszahlungsanteil, Ziehungsintervall und die Gebühr sind Mod-Einstellungen dieses Spielstands.</HH.Finance.Lottery.SetIn>
   <HH.Finance.Lottery.SilverUnit>{0} Silber</HH.Finance.Lottery.SilverUnit>
   <HH.Finance.Lottery.StarMatch> und der Stern</HH.Finance.Lottery.StarMatch>
   <HH.Finance.Lottery.StarNone>nicht gezogen</HH.Finance.Lottery.StarNone>

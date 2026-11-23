@@ -343,4 +343,5 @@
   <HH.Setting.inn.doubleBedFactor.Desc>Un lit pour deux rapporte ce nombre de fois le prix d'un lit simple. Un couple dans un grand lit le paie ensemble, chacun la moitié, donc il paie moins que pour deux lits simples.</HH.Setting.inn.doubleBedFactor.Desc>
   <HH.Setting.inn.groupDevGizmos>Regrouper nos boutons de développement</HH.Setting.inn.groupDevGizmos>
   <HH.Setting.inn.groupDevGizmos.Desc>En mode développement, les boutons DEV des bâtiments de Hearth &amp; Harbor sont regroupés dans un seul bouton « Dev : Hearth &amp; Harbor » pour que la rangée reste lisible. Les boutons de base et ceux des autres mods ne sont jamais touchés.</HH.Setting.inn.groupDevGizmos.Desc>
+  <HH.Inn.Event.RoomyBed>Disposait d'un grand lit double rien que pour soi.</HH.Inn.Event.RoomyBed>
 </LanguageData>

@@ -11,4 +11,6 @@
   <HH.Setting.core.musicShare.Desc>Váha našich písní v seznamu oproti jedné základní písni. 1 = jako každá jiná píseň daného ročního období, 0 = nikdy.</HH.Setting.core.musicShare.Desc>
   <HH.Story.Suggests>{0} doporučuje: {1}</HH.Story.Suggests>
   <HH.Story.SuggestsTip>Kliknutím použijete obtížnost hostitelství, kterou doporučuje tento vypravěč. Stále ji můžete změnit tlačítkem.</HH.Story.SuggestsTip>
+  <HH.Setting.core.lifeFx>Život hostů na mapě</HH.Setting.core.lifeFx>
+  <HH.Setting.core.lifeFx.Desc>Malá znamení a zvuky pro momenty pobytu: zvonění při příjezdu hostů, zvonek na recepci při přihlášení, mince, když platí nebo dávají spropitné, mávnutí a jejich recenze v hvězdičkách při odchodu, srdce pro páry sdílející postel.</HH.Setting.core.lifeFx.Desc>
 </LanguageData>

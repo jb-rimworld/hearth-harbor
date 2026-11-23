@@ -406,7 +406,7 @@ Par quadrum : {1}</HH.Ins.UI.Price.Tip>
   <HH.Ins.Status.Buy>Assurer…</HH.Ins.Status.Buy>
   <HH.Ins.Status.ColonyCover>couverture de la colonie</HH.Ins.Status.ColonyCover>
   <HH.Ins.Status.Column>Couverture</HH.Ins.Status.Column>
-  <HH.Ins.Status.ColumnTip>État de l'assurance : retraite, santé, accident, responsabilité, juridique. Cliquez pour l'aperçu.</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.ColumnTip>État des assurances, une icône par type de couverture (retraite, santé, accident, responsabilité, juridique, voyage et toute autre police personnelle). Cliquez pour l'aperçu.</HH.Ins.Status.ColumnTip>
   <HH.Ins.Status.Foot>Vert : actif. Jaune : délai de carence. Orange : résiliation en cours. Rouge : pension menacée. Gris : non assuré. La couverture de la colonie s'applique à chaque colon.</HH.Ins.Status.Foot>
   <HH.Ins.Status.Kind.Accident>Accident</HH.Ins.Status.Kind.Accident>
   <HH.Ins.Status.Kind.Health>Santé</HH.Ins.Status.Kind.Health>
@@ -453,4 +453,5 @@ Par quadrum : {1}</HH.Ins.UI.Price.Tip>
   <HH.Ins.UI.Mine.PensionTip>Règle de retraite : au plus {0} heures de Travail par jour dans l'emploi du temps. Libre compte comme temps libre, mais un colon sur Libre peut encore choisir de travailler.</HH.Ins.UI.Mine.PensionTip>
   <HH.Ins.UI.Mine.UpgradeWait>Délai de carence après mise à niveau : les événements des {0} suivants sont encore évalués avec l'ancienne couverture.</HH.Ins.UI.Mine.UpgradeWait>
   <HH.Ins.UI.Mine.WithdrawChange>Retirer la modification</HH.Ins.UI.Mine.WithdrawChange>
+  <HH.Ins.Status.Kind.Travel>Voyage</HH.Ins.Status.Kind.Travel>
 </LanguageData>

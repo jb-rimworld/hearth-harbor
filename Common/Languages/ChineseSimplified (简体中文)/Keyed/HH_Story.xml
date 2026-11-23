@@ -11,4 +11,6 @@
   <HH.Setting.core.musicShare.Desc>与一首原版歌曲相比，我们的曲子在播放列表中的权重。1 = 与该季节的任何其他歌曲相同，0 = 从不播放。</HH.Setting.core.musicShare.Desc>
   <HH.Story.Suggests>{0} 建议：{1}</HH.Story.Suggests>
   <HH.Story.SuggestsTip>点击采用这位讲故事者建议的款待难度。你仍可以用按钮更改。</HH.Story.SuggestsTip>
+  <HH.Setting.core.lifeFx>访客在地图上的生活效果</HH.Setting.core.lifeFx>
+  <HH.Setting.core.lifeFx.Desc>在住宿的各个时刻显示小标记和声音：访客到达时的铃声、前台的服务铃、付款或给小费时的硬币、离开时的挥手和星级评价，以及同床情侣的爱心。</HH.Setting.core.lifeFx.Desc>
 </LanguageData>

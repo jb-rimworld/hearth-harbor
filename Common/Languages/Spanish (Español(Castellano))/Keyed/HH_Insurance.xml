@@ -406,7 +406,7 @@ Por cuadrante: {1}</HH.Ins.UI.Price.Tip>
   <HH.Ins.Status.Buy>Asegurar…</HH.Ins.Status.Buy>
   <HH.Ins.Status.ColonyCover>cobertura de colonia</HH.Ins.Status.ColonyCover>
   <HH.Ins.Status.Column>Cobertura</HH.Ins.Status.Column>
-  <HH.Ins.Status.ColumnTip>Estado del seguro: pensión, salud, accidente, responsabilidad civil, jurídico. Haz clic para ver el resumen.</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.ColumnTip>Estado del seguro, con un icono por tipo de cobertura (pensión, salud, accidentes, responsabilidad civil, jurídica, viaje y cualquier otra póliza personal). Haz clic para ver el resumen.</HH.Ins.Status.ColumnTip>
   <HH.Ins.Status.Foot>Verde: activo. Amarillo: periodo de carencia. Naranja: cancelación pendiente. Rojo: pensión en riesgo. Gris: sin seguro. La cobertura de colonia se aplica a cada colono.</HH.Ins.Status.Foot>
   <HH.Ins.Status.Kind.Accident>Accidente</HH.Ins.Status.Kind.Accident>
   <HH.Ins.Status.Kind.Health>Salud</HH.Ins.Status.Kind.Health>
@@ -453,4 +453,5 @@ Por cuadrante: {1}</HH.Ins.UI.Price.Tip>
   <HH.Ins.UI.Mine.PensionTip>Norma de pensión: como máximo {0} horas de Trabajo al día en el horario. Cualquiera cuenta como tiempo libre, pero un colono en Cualquiera puede seguir eligiendo trabajar.</HH.Ins.UI.Mine.PensionTip>
   <HH.Ins.UI.Mine.UpgradeWait>Periodo de espera por mejora: los sucesos en los próximos {0} siguen valorándose con la cobertura antigua.</HH.Ins.UI.Mine.UpgradeWait>
   <HH.Ins.UI.Mine.WithdrawChange>Retirar cambio</HH.Ins.UI.Mine.WithdrawChange>
+  <HH.Ins.Status.Kind.Travel>Viaje</HH.Ins.Status.Kind.Travel>
 </LanguageData>

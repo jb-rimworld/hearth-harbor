@@ -275,4 +275,6 @@
   <HH.Venue.RestockStateOff>El reabastecimiento está desactivado: el almacenamiento de la sala mantiene sus propios ajustes</HH.Venue.RestockStateOff>
   <HH.Venue.RestockStateOn>El reabastecimiento está activado: el almacenamiento de la sala sigue esta lista</HH.Venue.RestockStateOn>
   <HH.Venue.SelfServiceNote>autoservicio</HH.Venue.SelfServiceNote>
+  <HH.Setup.AndMore>… y {0} más</HH.Setup.AndMore>
+  <HH.Setup.AnyStuff>material</HH.Setup.AnyStuff>
 </LanguageData>

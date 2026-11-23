@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Bank.Building.Account>{0}: 残高 {1}</HH.Bank.Building.Account>
-  <HH.Bank.Building.DirectDeposit>直接入金</HH.Bank.Building.DirectDeposit>
   <HH.Bank.Building.DirectDepositDesc>オン: 事業の売上は毎晩0時に銀行口座へ振り込まれます。オフ: 売上は金庫のそばに銀貨として置かれます。</HH.Bank.Building.DirectDepositDesc>
   <HH.Bank.Building.NoAccount>まだ口座がありません。ここか通信コンソールで開設できます。</HH.Bank.Building.NoAccount>
   <HH.Bank.Building.SafeDirect>売上は毎晩0時に直接口座へ入ります。</HH.Bank.Building.SafeDirect>
@@ -274,4 +273,7 @@
   <HH.Bank.Terms.SetIn>銀行の条件はこのセーブデータの設定です。Mod設定 &gt; Hearth &amp; Harbor &gt; 銀行（利息と収益性、手数料、融資、回収、宝くじ）で変更してください。1.0は増減なし、1.2は指数で年+20％です。口座はその一部だけを受け取ります。融資もMに従います。</HH.Bank.Terms.SetIn>
   <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
   <HH.Bank.Yield.Account>あなたの銀行口座</HH.Bank.Yield.Account>
+  <HH.Bank.Building.DirectState>直接入金: {0}</HH.Bank.Building.DirectState>
+  <HH.Bank.Building.OpenSettings>設定を開く（銀行）</HH.Bank.Building.OpenSettings>
+  <HH.Bank.Building.OpenSettingsDesc>これは銀行の項目で、Mod設定（銀行 &gt; 口座）でのみ変更できます。クリックすると開きます。</HH.Bank.Building.OpenSettingsDesc>
 </LanguageData>

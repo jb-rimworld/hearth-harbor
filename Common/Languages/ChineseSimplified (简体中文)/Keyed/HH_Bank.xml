@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Bank.Building.Account>{0}：余额 {1}</HH.Bank.Building.Account>
-  <HH.Bank.Building.DirectDeposit>直接存入</HH.Bank.Building.DirectDeposit>
   <HH.Bank.Building.DirectDepositDesc>开启：你的商店、旅店和赌场的营业收入会在午夜直接存入银行账户。关闭：营业收入以银币形式放在保险箱旁边。</HH.Bank.Building.DirectDepositDesc>
   <HH.Bank.Building.NoAccount>还没有账户。可以在这里或通讯控制台开户。</HH.Bank.Building.NoAccount>
   <HH.Bank.Building.SafeDirect>营业收入在午夜直接进入账户。</HH.Bank.Building.SafeDirect>
@@ -274,4 +273,7 @@
   <HH.Bank.Terms.SetIn>银行条款是本存档的设置：请在 模组选项 &gt; Hearth &amp; Harbor &gt; 银行（利息与盈利、手续费、贷款、催收、彩票）中修改。1.0 即不增不减，1.2 即指数每年 +20%；账户只获得其中一部分。贷款同样随 M 变动。</HH.Bank.Terms.SetIn>
   <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
   <HH.Bank.Yield.Account>你的银行账户</HH.Bank.Yield.Account>
+  <HH.Bank.Building.DirectState>直接存款：{0}</HH.Bank.Building.DirectState>
+  <HH.Bank.Building.OpenSettings>打开设置（银行）</HH.Bank.Building.OpenSettings>
+  <HH.Bank.Building.OpenSettingsDesc>这是银行的条款，只能在模组设置中修改（银行 &gt; 账户）。点击即可打开。</HH.Bank.Building.OpenSettingsDesc>
 </LanguageData>

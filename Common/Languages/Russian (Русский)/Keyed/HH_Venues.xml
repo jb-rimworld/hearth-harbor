@@ -275,4 +275,6 @@
   <HH.Venue.RestockStateOff>Пополнение выключено: хранилище комнаты использует собственные настройки</HH.Venue.RestockStateOff>
   <HH.Venue.RestockStateOn>Пополнение включено: хранилище комнаты следует этому списку</HH.Venue.RestockStateOn>
   <HH.Venue.SelfServiceNote>самообслуживание</HH.Venue.SelfServiceNote>
+  <HH.Setup.AndMore>… и ещё {0}</HH.Setup.AndMore>
+  <HH.Setup.AnyStuff>материал</HH.Setup.AnyStuff>
 </LanguageData>

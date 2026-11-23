@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-  <HH_Scen_HarborTown.label>ハーバータウン</HH_Scen_HarborTown.label>
-  <HH_Scen_HarborTown.description>三人の友人が、静かな天然の港を見下ろす風化した街道沿いの宿を相続した。ちょうど隊商が行き交う場所だ。屋根は雨漏りし、看板は何年も前に落ち、ベッドはがらんとしている。それでも街道は人通りが多く、水は澄み、近所の人々は親切だ。\n\nまずは客用のベッドを数台、次に酒場と市場を整え、やがて人々がわざわざ旅してでも見に来る小さな町全体へと立て直していこう。\n\nHearth &amp; Harbor にふさわしい、明るくやさしい出だし。建築好きの語り部、Hetty Hearthwell とよく合う。</HH_Scen_HarborTown.description>
-  <HH_Scen_HarborTown.scenario.summary>港のそばの古い宿を再開させ、人々が見物に訪れる町へ育てていく。明るい観光業のスタート。</HH_Scen_HarborTown.scenario.summary>
-  <HH_Scen_BackRoom.label>奥の部屋</HH_Scen_BackRoom.label>
-  <HH_Scen_BackRoom.description>古い密輸人の街道にあるあなたの宿場は、いま傾きかけている。そこへ、借金がすべて静かに買い取られた。買い手は Black Ledger だ。彼らは金を返せとは言わない。少なくとも、まだは。欲しいのは厨房の裏の部屋と、何も聞かないテーブル、そして見て見ぬふりをする宿の主人だ。\n\n地下社会はすでにあなたの名前を知っている。儲けさせるか、怖がらせるか、それとも消えてもらうか。どれを選んでも、帳簿は覚えている。\n\nHearth &amp; Harbor の影の側を描く、暗くグレーな道徳の始まり。奥の部屋、故買屋、薬物の溜まり場、地下格闘場、そして決して忘れない銀行の口座がそろう。</HH_Scen_BackRoom.description>
-  <HH_Scen_BackRoom.scenario.summary>Black Ledger に借金を握られた傾きかけの宿場。戸口にはすでに地下社会が立っている。暗く後ろ暗い始まり。</HH_Scen_BackRoom.scenario.summary>
-</LanguageData>

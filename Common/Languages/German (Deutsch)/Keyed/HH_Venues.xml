@@ -275,4 +275,6 @@
   <HH.Venue.RestockStateOff>Nachfüllen ist aus: Das Lager des Raums behält seine eigenen Einstellungen</HH.Venue.RestockStateOff>
   <HH.Venue.RestockStateOn>Nachfüllen ist an: Das Lager des Raums folgt dieser Liste</HH.Venue.RestockStateOn>
   <HH.Venue.SelfServiceNote>Selbstbedienung</HH.Venue.SelfServiceNote>
+  <HH.Setup.AndMore>… und {0} weitere</HH.Setup.AndMore>
+  <HH.Setup.AnyStuff>Material</HH.Setup.AnyStuff>
 </LanguageData>

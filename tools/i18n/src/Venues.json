@@ -123,6 +123,8 @@
   "HH.Setting.venues.vendingPrice.Desc": "Multiplies the market value of what vending machines sell.",
   "HH.Setting.venues.waitForStaffTicks": "Guest patience for staff (ticks)",
   "HH.Setting.venues.waitForStaffTicks.Desc": "A guest waits this long for somebody to come to an open but unstaffed venue, then gives up annoyed.",
+  "HH.Setup.AndMore": "… and {0} more",
+  "HH.Setup.AnyStuff": "material",
   "HH.Setup.Attention": "check: {0}",
   "HH.Setup.BannerAttention": "The furniture is complete. Check the open points below so guests are served.",
   "HH.Setup.BannerMissing": "This {0} still misses some of its furniture.",

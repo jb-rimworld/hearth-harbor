@@ -406,7 +406,7 @@
   <HH.Ins.Status.Buy>投保…</HH.Ins.Status.Buy>
   <HH.Ins.Status.ColonyCover>殖民地保障</HH.Ins.Status.ColonyCover>
   <HH.Ins.Status.Column>保障</HH.Ins.Status.Column>
-  <HH.Ins.Status.ColumnTip>保险状态：养老金、健康、意外、责任、法律。点击查看总览。</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.ColumnTip>保险状态，每种保障一个图标（养老金、医疗、意外、责任、法律、旅行及其他个人保单）。点击查看总览。</HH.Ins.Status.ColumnTip>
   <HH.Ins.Status.Foot>绿色：生效中。黄色：等待期。橙色：退保待处理。红色：养老金有风险。灰色：未投保。殖民地保障适用于每位殖民者。</HH.Ins.Status.Foot>
   <HH.Ins.Status.Kind.Accident>意外</HH.Ins.Status.Kind.Accident>
   <HH.Ins.Status.Kind.Health>健康</HH.Ins.Status.Kind.Health>
@@ -453,4 +453,5 @@
   <HH.Ins.UI.Mine.PensionTip>养老金规则：日程表中每日“工作”至多 {0} 小时。“任意”计为空闲时间，但处于“任意”时段的殖民者仍可能自行选择工作。</HH.Ins.UI.Mine.PensionTip>
   <HH.Ins.UI.Mine.UpgradeWait>升级等待期：接下来 {0} 内发生的事件仍按旧保障核定。</HH.Ins.UI.Mine.UpgradeWait>
   <HH.Ins.UI.Mine.WithdrawChange>撤回变更</HH.Ins.UI.Mine.WithdrawChange>
+  <HH.Ins.Status.Kind.Travel>旅行</HH.Ins.Status.Kind.Travel>
 </LanguageData>

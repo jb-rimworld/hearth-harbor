@@ -406,7 +406,7 @@
   <HH.Ins.Status.Buy>가입…</HH.Ins.Status.Buy>
   <HH.Ins.Status.ColonyCover>정착지 보장</HH.Ins.Status.ColonyCover>
   <HH.Ins.Status.Column>보장</HH.Ins.Status.Column>
-  <HH.Ins.Status.ColumnTip>보험 상태: 연금, 건강, 사고, 배상책임, 법률. 클릭하면 개요가 열립니다.</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.ColumnTip>보험 상태. 보장 종류마다 아이콘 하나씩 표시됩니다 (연금, 건강, 상해, 배상책임, 법률, 여행 및 추가 개인 보험). 클릭하면 개요를 엽니다.</HH.Ins.Status.ColumnTip>
   <HH.Ins.Status.Foot>초록: 유효. 노랑: 대기 기간. 주황: 해지 예정. 빨강: 연금 위험. 회색: 미가입. 정착지 보장은 모든 콜로니스트에게 적용됩니다.</HH.Ins.Status.Foot>
   <HH.Ins.Status.Kind.Accident>사고</HH.Ins.Status.Kind.Accident>
   <HH.Ins.Status.Kind.Health>건강</HH.Ins.Status.Kind.Health>
@@ -453,4 +453,5 @@
   <HH.Ins.UI.Mine.PensionTip>연금 규정: 시간표의 하루 노동은 최대 {0}시간까지입니다. 아무거나는 여가로 치지만, 아무거나로 설정된 사람도 여전히 일을 고를 수 있습니다.</HH.Ins.UI.Mine.PensionTip>
   <HH.Ins.UI.Mine.UpgradeWait>업그레이드 대기 기간: 다음 {0} 동안 발생한 사건은 여전히 이전 보장으로 심사됩니다.</HH.Ins.UI.Mine.UpgradeWait>
   <HH.Ins.UI.Mine.WithdrawChange>변경 신청 철회</HH.Ins.UI.Mine.WithdrawChange>
+  <HH.Ins.Status.Kind.Travel>여행</HH.Ins.Status.Kind.Travel>
 </LanguageData>

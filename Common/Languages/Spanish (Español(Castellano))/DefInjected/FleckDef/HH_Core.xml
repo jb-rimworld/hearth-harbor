@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Fleck_Life_Coins.description>Monedas que suben desde un huésped que paga hacia la caja.</HH_Fleck_Life_Coins.description>
+  <HH_Fleck_Life_Coins.label>monedas</HH_Fleck_Life_Coins.label>
+  <HH_Fleck_Life_Heart.description>Un pequeño corazón cuando una pareja se acuesta en su cama compartida.</HH_Fleck_Life_Heart.description>
+  <HH_Fleck_Life_Heart.label>corazón</HH_Fleck_Life_Heart.label>
+  <HH_Fleck_Life_Key.description>Una pequeña llave de habitación sobre un huésped en la recepción.</HH_Fleck_Life_Key.description>
+  <HH_Fleck_Life_Key.label>llave de habitación</HH_Fleck_Life_Key.label>
+  <HH_Fleck_Life_Puff.description>Un soplido seco tras una reseña mala.</HH_Fleck_Life_Puff.description>
+  <HH_Fleck_Life_Puff.label>soplido de indiferencia</HH_Fleck_Life_Puff.label>
+  <HH_Fleck_Life_Sparkle.description>Un destello alrededor de una reseña de cinco estrellas.</HH_Fleck_Life_Sparkle.description>
+  <HH_Fleck_Life_Sparkle.label>destello</HH_Fleck_Life_Sparkle.label>
+  <HH_Fleck_Life_Stars1.description>La reseña del huésped: 1 de 5 estrellas sobre la cabeza.</HH_Fleck_Life_Stars1.description>
+  <HH_Fleck_Life_Stars1.label>reseña de 1 estrella</HH_Fleck_Life_Stars1.label>
+  <HH_Fleck_Life_Stars2.description>La reseña del huésped: 2 de 5 estrellas sobre la cabeza.</HH_Fleck_Life_Stars2.description>
+  <HH_Fleck_Life_Stars2.label>reseña de 2 estrellas</HH_Fleck_Life_Stars2.label>
+  <HH_Fleck_Life_Stars3.description>La reseña del huésped: 3 de 5 estrellas sobre la cabeza.</HH_Fleck_Life_Stars3.description>
+  <HH_Fleck_Life_Stars3.label>reseña de 3 estrellas</HH_Fleck_Life_Stars3.label>
+  <HH_Fleck_Life_Stars4.description>La reseña del huésped: 4 de 5 estrellas sobre la cabeza.</HH_Fleck_Life_Stars4.description>
+  <HH_Fleck_Life_Stars4.label>reseña de 4 estrellas</HH_Fleck_Life_Stars4.label>
+  <HH_Fleck_Life_Stars5.description>La reseña del huésped: 5 de 5 estrellas sobre la cabeza.</HH_Fleck_Life_Stars5.description>
+  <HH_Fleck_Life_Stars5.label>reseña de 5 estrellas</HH_Fleck_Life_Stars5.label>
+  <HH_Fleck_Life_Suitcase.description>Una pequeña maleta sobre un huésped que acaba de llegar.</HH_Fleck_Life_Suitcase.description>
+  <HH_Fleck_Life_Suitcase.label>maleta de llegada</HH_Fleck_Life_Suitcase.label>
+  <HH_Fleck_Life_TipCoin.description>Una moneda que sale volando hacia quien atendió al huésped.</HH_Fleck_Life_TipCoin.description>
+  <HH_Fleck_Life_TipCoin.label>moneda de propina</HH_Fleck_Life_TipCoin.label>
+  <HH_Fleck_Life_Wave.description>Una mano saludando sobre un huésped que se despide.</HH_Fleck_Life_Wave.description>
+  <HH_Fleck_Life_Wave.label>saludo</HH_Fleck_Life_Wave.label>
+</LanguageData>

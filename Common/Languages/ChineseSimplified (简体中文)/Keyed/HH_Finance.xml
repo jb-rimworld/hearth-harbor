@@ -186,7 +186,6 @@
   <HH.Finance.Lottery.News.Won>辉光世界大奖开奖：{0}。{1} 你赢得了 {2}。</HH.Finance.Lottery.News.Won>
   <HH.Finance.Lottery.News.Colony>你的彩票开出了{0}：{2} 张彩票中有 {1} 名头奖得主。</HH.Finance.Lottery.News.Colony>
   <HH.Finance.Lottery.ColonyTitle>你自己的彩票</HH.Finance.Lottery.ColonyTitle>
-  <HH.Finance.Lottery.ColonyOpen>打开殖民地彩票</HH.Finance.Lottery.ColonyOpen>
   <HH.Finance.Lottery.ColonyIntro>访客和友好聚落的模拟玩家会购买彩票。从 25 个数字中选出 4 个。未派发的部分归你所有，奖池只支付它所持有的金额。</HH.Finance.Lottery.ColonyIntro>
   <HH.Finance.Lottery.Price>彩票价格</HH.Finance.Lottery.Price>
   <HH.Finance.Lottery.Quote>派奖比例</HH.Finance.Lottery.Quote>
@@ -233,7 +232,7 @@
   <HH.Finance.Lottery.Preview>你目前的彩票：{0}/{1} 个号码，星号 {2}</HH.Finance.Lottery.Preview>
   <HH.Finance.Lottery.QuickN>快速选号</HH.Finance.Lottery.QuickN>
   <HH.Finance.Lottery.QuickTip>随机彩票，一次全部购买。每次点击最多 {0} 张。</HH.Finance.Lottery.QuickTip>
-  <HH.Finance.Lottery.SetIn>彩票价格、奖金比例、开奖间隔和手续费都是本存档的模组设置。</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SetIn>彩票是否开放、价格、奖金比例、开奖间隔和手续费，都是本存档的模组设置。</HH.Finance.Lottery.SetIn>
   <HH.Finance.Lottery.SilverUnit>{0} 银币</HH.Finance.Lottery.SilverUnit>
   <HH.Finance.Lottery.StarMatch> 且星号相符</HH.Finance.Lottery.StarMatch>
   <HH.Finance.Lottery.StarNone>未选中</HH.Finance.Lottery.StarNone>

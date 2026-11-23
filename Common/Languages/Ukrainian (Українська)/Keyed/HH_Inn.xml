@@ -343,4 +343,5 @@
   <HH.Setting.inn.doubleBedFactor.Desc>Ліжко на двох приносить у стільки разів більше, ніж ціна одного ліжка. Пара на одному двоспальному ліжку платить разом, кожен половину, тож платить менше, ніж за два односпальних.</HH.Setting.inn.doubleBedFactor.Desc>
   <HH.Setting.inn.groupDevGizmos>Згрупувати наші кнопки розробника</HH.Setting.inn.groupDevGizmos>
   <HH.Setting.inn.groupDevGizmos.Desc>У режимі розробника кнопки DEV будівель Hearth &amp; Harbor складаються в одну кнопку «Dev: Hearth &amp; Harbor», щоб рядок гаджетів лишався читабельним. Кнопки ванільних і чужих модів ніколи не змінюються.</HH.Setting.inn.groupDevGizmos.Desc>
+  <HH.Inn.Event.RoomyBed>Мав просторе подвійне ліжко лише для себе.</HH.Inn.Event.RoomyBed>
 </LanguageData>

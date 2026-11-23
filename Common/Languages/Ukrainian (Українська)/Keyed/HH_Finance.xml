@@ -186,7 +186,6 @@
   <HH.Finance.Lottery.News.Won>Велика лотерея Glitterworld: {0}. {1} Ви виграли {2}.</HH.Finance.Lottery.News.Won>
   <HH.Finance.Lottery.News.Colony>Ваша лотерея витягнула {0}: {1} переможців джекпоту серед {2} квитків.</HH.Finance.Lottery.News.Colony>
   <HH.Finance.Lottery.ColonyTitle>Власна лотерея</HH.Finance.Lottery.ColonyTitle>
-  <HH.Finance.Lottery.ColonyOpen>Відкрити колонійну лотерею</HH.Finance.Lottery.ColonyOpen>
   <HH.Finance.Lottery.ColonyIntro>Гості та симульовані гравці дружніх поселень купують квитки. Чотири числа з 25. Ви залишаєте те, що не виплачено; банк платить лише те, що в ньому є.</HH.Finance.Lottery.ColonyIntro>
   <HH.Finance.Lottery.Price>Ціна квитка</HH.Finance.Lottery.Price>
   <HH.Finance.Lottery.Quote>Частка виплат</HH.Finance.Lottery.Quote>
@@ -233,7 +232,7 @@
   <HH.Finance.Lottery.Preview>Ваш квиток поки що: {0} з {1} чисел, зірка {2}</HH.Finance.Lottery.Preview>
   <HH.Finance.Lottery.QuickN>Швидкий вибір</HH.Finance.Lottery.QuickN>
   <HH.Finance.Lottery.QuickTip>Випадкові квитки, купуються одразу. До {0} за клік.</HH.Finance.Lottery.QuickTip>
-  <HH.Finance.Lottery.SetIn>Ціна, частка виплат, інтервал тиражу й комісія є параметрами моду цього збереження.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SetIn>Чи відкрита лотерея, її ціна, частка виплати, інтервал тиражу та комісія — це налаштування моду для цього збереження.</HH.Finance.Lottery.SetIn>
   <HH.Finance.Lottery.SilverUnit>{0} срібла</HH.Finance.Lottery.SilverUnit>
   <HH.Finance.Lottery.StarMatch> і зірка</HH.Finance.Lottery.StarMatch>
   <HH.Finance.Lottery.StarNone>не обрано</HH.Finance.Lottery.StarNone>

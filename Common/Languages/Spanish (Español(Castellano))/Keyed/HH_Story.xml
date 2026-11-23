@@ -11,4 +11,6 @@
   <HH.Setting.core.musicShare.Desc>Peso de nuestras canciones en la lista de reproducción frente a una canción del juego base. 1 = como cualquier otra canción de la temporada, 0 = nunca.</HH.Setting.core.musicShare.Desc>
   <HH.Story.Suggests>{0} sugiere: {1}</HH.Story.Suggests>
   <HH.Story.SuggestsTip>Haz clic para usar la dificultad de hospedaje que sugiere este narrador. Aún puedes cambiarla con el botón.</HH.Story.SuggestsTip>
+  <HH.Setting.core.lifeFx>Vida de los huéspedes en el mapa</HH.Setting.core.lifeFx>
+  <HH.Setting.core.lifeFx.Desc>Pequeñas señales y sonidos para los momentos de una estancia: un carillón cuando llegan los huéspedes, la campanilla de la recepción al registrarse, monedas cuando pagan o dejan propina, un saludo y su reseña en estrellas al marcharse, y un corazón para las parejas que comparten cama.</HH.Setting.core.lifeFx.Desc>
 </LanguageData>

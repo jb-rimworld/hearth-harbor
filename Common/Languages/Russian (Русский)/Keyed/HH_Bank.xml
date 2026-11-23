@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Bank.Building.Account>{0}: баланс {1}</HH.Bank.Building.Account>
-  <HH.Bank.Building.DirectDeposit>Прямое зачисление</HH.Bank.Building.DirectDeposit>
   <HH.Bank.Building.DirectDepositDesc>Вкл.: выручка ваших предприятий ровно в полночь переводится на банковский счёт. Выкл.: выручка лежит серебром рядом с сейфом.</HH.Bank.Building.DirectDepositDesc>
   <HH.Bank.Building.NoAccount>Счёта пока нет. Откройте его здесь или у консоли связи.</HH.Bank.Building.NoAccount>
   <HH.Bank.Building.SafeDirect>Выручка уходит прямо на счёт в полночь.</HH.Bank.Building.SafeDirect>
@@ -274,4 +273,7 @@
   <HH.Bank.Terms.SetIn>Условия банка — параметры этого сохранения. Меняются в «Параметры мода &gt; Hearth &amp; Harbor &gt; Банк» (Проценты и доходность, Комиссии, Кредиты, Взыскания, Лотерея). 1,0 — это ни плюса, ни минуса, 1,2 — это +20 % в год по индексу; счёт получает только его долю. Кредиты тоже следуют за M.</HH.Bank.Terms.SetIn>
   <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
   <HH.Bank.Yield.Account>Ваш банковский счёт</HH.Bank.Yield.Account>
+  <HH.Bank.Building.DirectState>Прямое зачисление: {0}</HH.Bank.Building.DirectState>
+  <HH.Bank.Building.OpenSettings>Открыть настройки (банк)</HH.Bank.Building.OpenSettings>
+  <HH.Bank.Building.OpenSettingsDesc>Это параметр вашего банка, он меняется только в настройках мода (Банк &gt; Счёт). Нажмите, чтобы открыть их.</HH.Bank.Building.OpenSettingsDesc>
 </LanguageData>

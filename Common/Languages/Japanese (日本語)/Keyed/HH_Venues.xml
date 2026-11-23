@@ -275,4 +275,6 @@
   <HH.Venue.RestockStateOff>在庫補充はオフ: 部屋の保管場所は独自の設定を保ちます</HH.Venue.RestockStateOff>
   <HH.Venue.RestockStateOn>在庫補充はオン: 部屋の保管場所はこのリストに従います</HH.Venue.RestockStateOn>
   <HH.Venue.SelfServiceNote>セルフサービス</HH.Venue.SelfServiceNote>
+  <HH.Setup.AndMore>…ほか {0} 件</HH.Setup.AndMore>
+  <HH.Setup.AnyStuff>素材</HH.Setup.AnyStuff>
 </LanguageData>

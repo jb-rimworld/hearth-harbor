@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Fleck_Life_Coins.description>お金を払った客からレジへ向かって上がる硬貨。</HH_Fleck_Life_Coins.description>
+  <HH_Fleck_Life_Coins.label>硬貨</HH_Fleck_Life_Coins.label>
+  <HH_Fleck_Life_Heart.description>夫婦が同じベッドに横になったときに出る小さなハート。</HH_Fleck_Life_Heart.description>
+  <HH_Fleck_Life_Heart.label>ハート</HH_Fleck_Life_Heart.label>
+  <HH_Fleck_Life_Key.description>チェックイン時に客の頭上に出る小さな部屋の鍵。</HH_Fleck_Life_Key.description>
+  <HH_Fleck_Life_Key.label>部屋の鍵</HH_Fleck_Life_Key.label>
+  <HH_Fleck_Life_Puff.description>評価が低かったときに出る、ぱさっとした小さな煙。</HH_Fleck_Life_Puff.description>
+  <HH_Fleck_Life_Puff.label>いまひとつの煙</HH_Fleck_Life_Puff.label>
+  <HH_Fleck_Life_Sparkle.description>5つ星の評価を囲むきらめき。</HH_Fleck_Life_Sparkle.description>
+  <HH_Fleck_Life_Sparkle.label>きらめき</HH_Fleck_Life_Sparkle.label>
+  <HH_Fleck_Life_Stars1.description>客の評価: 頭上に5つ星のうち1つ。</HH_Fleck_Life_Stars1.description>
+  <HH_Fleck_Life_Stars1.label>1つ星の評価</HH_Fleck_Life_Stars1.label>
+  <HH_Fleck_Life_Stars2.description>客の評価: 頭上に5つ星のうち2つ。</HH_Fleck_Life_Stars2.description>
+  <HH_Fleck_Life_Stars2.label>2つ星の評価</HH_Fleck_Life_Stars2.label>
+  <HH_Fleck_Life_Stars3.description>客の評価: 頭上に5つ星のうち3つ。</HH_Fleck_Life_Stars3.description>
+  <HH_Fleck_Life_Stars3.label>3つ星の評価</HH_Fleck_Life_Stars3.label>
+  <HH_Fleck_Life_Stars4.description>客の評価: 頭上に5つ星のうち4つ。</HH_Fleck_Life_Stars4.description>
+  <HH_Fleck_Life_Stars4.label>4つ星の評価</HH_Fleck_Life_Stars4.label>
+  <HH_Fleck_Life_Stars5.description>客の評価: 頭上に5つ星のうち5つ。</HH_Fleck_Life_Stars5.description>
+  <HH_Fleck_Life_Stars5.label>5つ星の評価</HH_Fleck_Life_Stars5.label>
+  <HH_Fleck_Life_Suitcase.description>到着したばかりの客の頭上に出る小さなスーツケース。</HH_Fleck_Life_Suitcase.description>
+  <HH_Fleck_Life_Suitcase.label>到着のスーツケース</HH_Fleck_Life_Suitcase.label>
+  <HH_Fleck_Life_TipCoin.description>客に接客したスタッフへ向けて弾かれる1枚の硬貨。</HH_Fleck_Life_TipCoin.description>
+  <HH_Fleck_Life_TipCoin.label>チップ硬貨</HH_Fleck_Life_TipCoin.label>
+  <HH_Fleck_Life_Wave.description>別れを告げる客の頭上で振られる手。</HH_Fleck_Life_Wave.description>
+  <HH_Fleck_Life_Wave.label>手振り</HH_Fleck_Life_Wave.label>
+</LanguageData>

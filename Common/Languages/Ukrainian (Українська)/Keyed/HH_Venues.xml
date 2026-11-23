@@ -275,4 +275,6 @@
   <HH.Venue.RestockStateOff>Поповнення вимкнено: сховище кімнати має власні налаштування</HH.Venue.RestockStateOff>
   <HH.Venue.RestockStateOn>Поповнення увімкнено: сховище кімнати слідує за цим списком</HH.Venue.RestockStateOn>
   <HH.Venue.SelfServiceNote>самообслуговування</HH.Venue.SelfServiceNote>
+  <HH.Setup.AndMore>… і ще {0}</HH.Setup.AndMore>
+  <HH.Setup.AnyStuff>матеріал</HH.Setup.AnyStuff>
 </LanguageData>

@@ -406,7 +406,7 @@
   <HH.Ins.Status.Buy>Застраховать…</HH.Ins.Status.Buy>
   <HH.Ins.Status.ColonyCover>страхование колонии</HH.Ins.Status.ColonyCover>
   <HH.Ins.Status.Column>Покрытие</HH.Ins.Status.Column>
-  <HH.Ins.Status.ColumnTip>Статус страхования: пенсия, здоровье, несчастный случай, ответственность, юридическая защита. Нажмите для обзора.</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.ColumnTip>Статус страхования, по одному значку на каждый вид покрытия (пенсия, здоровье, несчастный случай, ответственность, юридическая помощь, путешествия и любой другой личный полис). Нажмите для обзора.</HH.Ins.Status.ColumnTip>
   <HH.Ins.Status.Foot>Зелёный: активно. Жёлтый: период ожидания. Оранжевый: расторжение ожидает. Красный: пенсия под угрозой. Серый: не застраховано. Страхование колонии действует на каждого колониста.</HH.Ins.Status.Foot>
   <HH.Ins.Status.Kind.Accident>Несчастный случай</HH.Ins.Status.Kind.Accident>
   <HH.Ins.Status.Kind.Health>Здоровье</HH.Ins.Status.Kind.Health>
@@ -453,4 +453,5 @@
   <HH.Ins.UI.Mine.PensionTip>Правило пенсии: не больше {0} ч работы в день в расписании. «Что угодно» считается свободным временем, но колонист на «Что угодно» всё равно может выбрать работу.</HH.Ins.UI.Mine.PensionTip>
   <HH.Ins.UI.Mine.UpgradeWait>Ожидание после повышения: события в течение следующих {0} всё ещё оцениваются по старому покрытию.</HH.Ins.UI.Mine.UpgradeWait>
   <HH.Ins.UI.Mine.WithdrawChange>Отозвать изменение</HH.Ins.UI.Mine.WithdrawChange>
+  <HH.Ins.Status.Kind.Travel>Путешествия</HH.Ins.Status.Kind.Travel>
 </LanguageData>

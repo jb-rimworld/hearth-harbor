@@ -343,4 +343,5 @@
   <HH.Setting.inn.doubleBedFactor.Desc>두 명용 침대는 싱글 침대 가격의 이 배만큼 번다. 더블 침대를 쓰는 커플은 함께, 각자 절반씩 내므로 싱글 두 개보다 적게 낸다.</HH.Setting.inn.doubleBedFactor.Desc>
   <HH.Setting.inn.groupDevGizmos>개발 버튼 묶기</HH.Setting.inn.groupDevGizmos>
   <HH.Setting.inn.groupDevGizmos.Desc>개발 모드에서 Hearth &amp; Harbor 건물의 DEV 버튼들을 'Dev: Hearth &amp; Harbor' 버튼 하나로 접어 기즈모 줄을 읽기 쉽게 한다. 기본 게임과 다른 모드의 버튼은 절대 건드리지 않는다.</HH.Setting.inn.groupDevGizmos.Desc>
+  <HH.Inn.Event.RoomyBed>넓은 더블 침대를 혼자 독차지했다.</HH.Inn.Event.RoomyBed>
 </LanguageData>

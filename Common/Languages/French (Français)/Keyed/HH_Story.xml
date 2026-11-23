@@ -11,4 +11,6 @@
   <HH.Setting.core.musicShare.Desc>Poids de nos chansons dans la playlist comparé à une chanson de base. 1 = comme n'importe quelle chanson de la saison, 0 = jamais.</HH.Setting.core.musicShare.Desc>
   <HH.Story.Suggests>{0} suggère : {1}</HH.Story.Suggests>
   <HH.Story.SuggestsTip>Cliquez pour utiliser la difficulté d'accueil suggérée par ce conteur. Vous pouvez toujours la changer avec le bouton.</HH.Story.SuggestsTip>
+  <HH.Setting.core.lifeFx>Vie des invités sur la carte</HH.Setting.core.lifeFx>
+  <HH.Setting.core.lifeFx.Desc>Petits signes et sons pour les moments d'un séjour : une sonnerie à l'arrivée des invités, la sonnette du comptoir à l'accueil, des pièces quand ils paient ou laissent un pourboire, un salut et leur avis en étoiles à leur départ, un cœur pour les couples qui partagent un lit.</HH.Setting.core.lifeFx.Desc>
 </LanguageData>

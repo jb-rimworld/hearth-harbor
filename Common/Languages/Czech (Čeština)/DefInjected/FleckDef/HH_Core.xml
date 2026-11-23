@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Fleck_Life_Coins.description>Mince, které stoupají od platícího hosta k pokladně.</HH_Fleck_Life_Coins.description>
+  <HH_Fleck_Life_Coins.label>mince</HH_Fleck_Life_Coins.label>
+  <HH_Fleck_Life_Heart.description>Malé srdíčko, když si pár lehne do společné postele.</HH_Fleck_Life_Heart.description>
+  <HH_Fleck_Life_Heart.label>srdce</HH_Fleck_Life_Heart.label>
+  <HH_Fleck_Life_Key.description>Malý pokojový klíč nad hostem při příjezdu.</HH_Fleck_Life_Key.description>
+  <HH_Fleck_Life_Key.label>pokojový klíč</HH_Fleck_Life_Key.label>
+  <HH_Fleck_Life_Puff.description>Suchý malý obláček po špatné recenzi.</HH_Fleck_Life_Puff.description>
+  <HH_Fleck_Life_Puff.label>nic moc obláček</HH_Fleck_Life_Puff.label>
+  <HH_Fleck_Life_Sparkle.description>Záblesk kolem pětihvězdičkové recenze.</HH_Fleck_Life_Sparkle.description>
+  <HH_Fleck_Life_Sparkle.label>záblesk</HH_Fleck_Life_Sparkle.label>
+  <HH_Fleck_Life_Stars1.description>Recenze hosta: 1 z 5 hvězdiček nad hlavou.</HH_Fleck_Life_Stars1.description>
+  <HH_Fleck_Life_Stars1.label>recenze: 1 hvězdička</HH_Fleck_Life_Stars1.label>
+  <HH_Fleck_Life_Stars2.description>Recenze hosta: 2 z 5 hvězdiček nad hlavou.</HH_Fleck_Life_Stars2.description>
+  <HH_Fleck_Life_Stars2.label>recenze: 2 hvězdičky</HH_Fleck_Life_Stars2.label>
+  <HH_Fleck_Life_Stars3.description>Recenze hosta: 3 z 5 hvězdiček nad hlavou.</HH_Fleck_Life_Stars3.description>
+  <HH_Fleck_Life_Stars3.label>recenze: 3 hvězdičky</HH_Fleck_Life_Stars3.label>
+  <HH_Fleck_Life_Stars4.description>Recenze hosta: 4 z 5 hvězdiček nad hlavou.</HH_Fleck_Life_Stars4.description>
+  <HH_Fleck_Life_Stars4.label>recenze: 4 hvězdičky</HH_Fleck_Life_Stars4.label>
+  <HH_Fleck_Life_Stars5.description>Recenze hosta: 5 z 5 hvězdiček nad hlavou.</HH_Fleck_Life_Stars5.description>
+  <HH_Fleck_Life_Stars5.label>recenze: 5 hvězdiček</HH_Fleck_Life_Stars5.label>
+  <HH_Fleck_Life_Suitcase.description>Malý kufr nad hostem, který právě dorazil.</HH_Fleck_Life_Suitcase.description>
+  <HH_Fleck_Life_Suitcase.label>kufr při příjezdu</HH_Fleck_Life_Suitcase.label>
+  <HH_Fleck_Life_TipCoin.description>Jedna mince hozená tomu, kdo hosta obsloužil.</HH_Fleck_Life_TipCoin.description>
+  <HH_Fleck_Life_TipCoin.label>spropitné</HH_Fleck_Life_TipCoin.label>
+  <HH_Fleck_Life_Wave.description>Mávající ruka nad hostem, který se loučí.</HH_Fleck_Life_Wave.description>
+  <HH_Fleck_Life_Wave.label>mávnutí</HH_Fleck_Life_Wave.label>
+</LanguageData>

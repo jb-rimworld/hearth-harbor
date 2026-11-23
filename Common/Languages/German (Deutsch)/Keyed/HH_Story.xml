@@ -11,4 +11,6 @@
   <HH.Setting.core.musicShare.Desc>Gewicht unserer Lieder in der Playlist im Vergleich zu einem Vanilla-Lied. 1 = wie jedes andere Lied der Jahreszeit, 0 = nie.</HH.Setting.core.musicShare.Desc>
   <HH.Story.Suggests>{0} schlägt vor: {1}</HH.Story.Suggests>
   <HH.Story.SuggestsTip>Klicke, um die Gastgeber-Schwierigkeit zu übernehmen, die dieser Erzähler vorschlägt. Mit dem Button kannst du sie weiterhin ändern.</HH.Story.SuggestsTip>
+  <HH.Setting.core.lifeFx>Gästeleben auf der Karte</HH.Setting.core.lifeFx>
+  <HH.Setting.core.lifeFx.Desc>Kleine Zeichen und Geräusche für die Momente eines Aufenthalts: ein Glockenton bei der Ankunft der Gäste, die Rezeptionsklingel beim Einchecken, Münzen beim Bezahlen oder Trinkgeben, ein Winken und die Bewertung in Sternen beim Abschied, ein Herz für Paare, die sich ein Bett teilen.</HH.Setting.core.lifeFx.Desc>
 </LanguageData>

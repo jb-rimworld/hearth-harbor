@@ -186,7 +186,6 @@
   <HH.Finance.Lottery.News.Won>Grand tirage de Glitterworld : {0}. {1} Vous avez gagné {2}.</HH.Finance.Lottery.News.Won>
   <HH.Finance.Lottery.News.Colony>Votre loterie a tiré {0} : {1} gagnant(s) du gros lot parmi {2} tickets.</HH.Finance.Lottery.News.Colony>
   <HH.Finance.Lottery.ColonyTitle>Votre propre loterie</HH.Finance.Lottery.ColonyTitle>
-  <HH.Finance.Lottery.ColonyOpen>Ouvrir la loterie de la colonie</HH.Finance.Lottery.ColonyOpen>
   <HH.Finance.Lottery.ColonyIntro>Les invités et les joueurs simulés des colonies amies achètent des tickets. Quatre numéros sur 25. Vous gardez ce qui n'est pas versé ; la cagnotte ne paie que ce qu'elle contient.</HH.Finance.Lottery.ColonyIntro>
   <HH.Finance.Lottery.Price>Prix du ticket</HH.Finance.Lottery.Price>
   <HH.Finance.Lottery.Quote>Part reversée</HH.Finance.Lottery.Quote>
@@ -233,7 +232,7 @@
   <HH.Finance.Lottery.Preview>Votre billet jusqu'ici : {0} numéros sur {1}, étoile {2}</HH.Finance.Lottery.Preview>
   <HH.Finance.Lottery.QuickN>Choix rapides</HH.Finance.Lottery.QuickN>
   <HH.Finance.Lottery.QuickTip>Billets aléatoires, achetés d'un coup. Jusqu'à {0} par clic.</HH.Finance.Lottery.QuickTip>
-  <HH.Finance.Lottery.SetIn>Le prix, la part de gains, l'intervalle entre les tirages et les frais sont des réglages du mod pour cette partie.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SetIn>L'ouverture de la loterie, son prix, la part des gains, l'intervalle des tirages et les frais sont des paramètres du mod pour cette sauvegarde.</HH.Finance.Lottery.SetIn>
   <HH.Finance.Lottery.SilverUnit>{0} d'argent</HH.Finance.Lottery.SilverUnit>
   <HH.Finance.Lottery.StarMatch> et l'étoile</HH.Finance.Lottery.StarMatch>
   <HH.Finance.Lottery.StarNone>non choisie</HH.Finance.Lottery.StarNone>

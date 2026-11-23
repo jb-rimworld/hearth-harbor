@@ -275,4 +275,6 @@
   <HH.Venue.RestockStateOff>Doplňování je vypnuté: sklad místnosti si drží vlastní nastavení</HH.Venue.RestockStateOff>
   <HH.Venue.RestockStateOn>Doplňování je zapnuté: sklad místnosti se řídí tímto seznamem</HH.Venue.RestockStateOn>
   <HH.Venue.SelfServiceNote>samoobsluha</HH.Venue.SelfServiceNote>
+  <HH.Setup.AndMore>… a {0} dalších</HH.Setup.AndMore>
+  <HH.Setup.AnyStuff>materiál</HH.Setup.AnyStuff>
 </LanguageData>

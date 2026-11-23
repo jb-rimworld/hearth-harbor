@@ -4,6 +4,8 @@
   "HH.Setting.core.music.Desc": "Our three calm songs (one for spring and summer days, one for autumn, one for winter) join the normal RimWorld playlist. When hosting: only in colonies that use Hearth & Harbor (a guest bed, a venue sign or a bank account).",
   "HH.Setting.core.musicShare": "How often our songs come up",
   "HH.Setting.core.musicShare.Desc": "Weight of our songs in the playlist compared with one vanilla song. 1 = like any other song of the season, 0 = never.",
+  "HH.Setting.core.lifeFx": "Guest life on the map",
+  "HH.Setting.core.lifeFx.Desc": "Small signs and sounds for the moments of a stay: a chime when guests arrive, the desk bell at check-in, coins when they pay or tip, a wave and their review in stars when they leave, a heart for couples sharing a bed.",
   "HH.Enum.MusicMode.Off": "Off",
   "HH.Enum.MusicMode.WhenHosting": "When hosting",
   "HH.Enum.MusicMode.Always": "Always",

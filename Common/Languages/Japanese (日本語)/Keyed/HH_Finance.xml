@@ -186,7 +186,6 @@
   <HH.Finance.Lottery.News.Won>グリッターワールド大抽選会：{0}。{1} {2}が当選しました。</HH.Finance.Lottery.News.Won>
   <HH.Finance.Lottery.News.Colony>あなたの宝くじで{0}が抽選されました：{2}枚のチケットのうち、ジャックポット当選者は{1}名。</HH.Finance.Lottery.News.Colony>
   <HH.Finance.Lottery.ColonyTitle>自前の宝くじ</HH.Finance.Lottery.ColonyTitle>
-  <HH.Finance.Lottery.ColonyOpen>植民地の宝くじを開く</HH.Finance.Lottery.ColonyOpen>
   <HH.Finance.Lottery.ColonyIntro>客人と友好的な入植地のシミュレートされたプレイヤーがチケットを買います。25個の数字から4つを選びます。払い出されなかった分はあなたの取り分になり、賞金プールは手元にある分しか払えません。</HH.Finance.Lottery.ColonyIntro>
   <HH.Finance.Lottery.Price>チケット価格</HH.Finance.Lottery.Price>
   <HH.Finance.Lottery.Quote>払戻割合</HH.Finance.Lottery.Quote>
@@ -233,7 +232,7 @@
   <HH.Finance.Lottery.Preview>今のあなたのチケット: {1}個の数字のうち {0} 一致、スター {2}</HH.Finance.Lottery.Preview>
   <HH.Finance.Lottery.QuickN>おまかせ</HH.Finance.Lottery.QuickN>
   <HH.Finance.Lottery.QuickTip>ランダムなチケットを一度にまとめて買います。クリックあたり最大 {0} 枚。</HH.Finance.Lottery.QuickTip>
-  <HH.Finance.Lottery.SetIn>チケットの価格、払い戻し率、抽選の間隔、手数料は、このセーブデータの Mod 設定です。</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SetIn>宝くじを販売するかどうか、その価格、賞金の取り分、抽選の間隔、手数料は、このセーブデータのMod設定です。</HH.Finance.Lottery.SetIn>
   <HH.Finance.Lottery.SilverUnit>{0} 銀貨</HH.Finance.Lottery.SilverUnit>
   <HH.Finance.Lottery.StarMatch> と星</HH.Finance.Lottery.StarMatch>
   <HH.Finance.Lottery.StarNone>未選択</HH.Finance.Lottery.StarNone>

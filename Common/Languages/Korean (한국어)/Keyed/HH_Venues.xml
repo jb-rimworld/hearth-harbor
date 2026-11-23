@@ -275,4 +275,6 @@
   <HH.Venue.RestockStateOff>재입고가 꺼져 있음: 방의 보관소는 자체 설정을 따릅니다</HH.Venue.RestockStateOff>
   <HH.Venue.RestockStateOn>재입고가 켜져 있음: 방의 보관소는 이 목록을 따릅니다</HH.Venue.RestockStateOn>
   <HH.Venue.SelfServiceNote>셀프 서비스</HH.Venue.SelfServiceNote>
+  <HH.Setup.AndMore>… 외 {0}개</HH.Setup.AndMore>
+  <HH.Setup.AnyStuff>재료</HH.Setup.AnyStuff>
 </LanguageData>
