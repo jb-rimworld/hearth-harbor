@@ -228,6 +228,7 @@ namespace Hearth.Shell
                     if (Widgets.ButtonText(new Rect(b.xMax - 128f, b.y + 3f, 120f, 28f), "HH.UI.Settings.SwitchOn".Translate())) target.SetModule(m, true);
                     y += 42f;
                 }
+                if (m == ModuleId.AiFlavour) y += Hearth.Ai.AiSettingsPanel.Draw(y, w, target);   // F05: consent, relay state, counters
             }
             else y = DrawGeneral(w, target, y);
             string last = null;

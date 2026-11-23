@@ -43,6 +43,10 @@ namespace Hearth
         public bool EverPlayed;
         public bool ShowNerd;
         public bool VerboseLog;
+        /// <summary>AI flavour opt-in (F05): version of the consent text the player agreed to (0 = never), when, and the last relay notice already shown. Per installation, not per save: privacy is personal.</summary>
+        public int AiConsentVersion;
+        public string AiConsentDate;
+        public string AiNoticeSeen;
         public HearthSettingsStore Store => Profile.Store;
         public float Tier => Profile.Tier;
         public bool ModuleOn(ModuleId m) => Profile.ModuleOn(m);
@@ -55,6 +59,9 @@ namespace Hearth
             Scribe_Values.Look(ref EverPlayed, "everPlayed");
             Scribe_Values.Look(ref ShowNerd, "showNerd");
             Scribe_Values.Look(ref VerboseLog, "verboseLog");
+            Scribe_Values.Look(ref AiConsentVersion, "aiConsentVersion", 0);
+            Scribe_Values.Look(ref AiConsentDate, "aiConsentDate");
+            Scribe_Values.Look(ref AiNoticeSeen, "aiNoticeSeen");
             if (Profile == null) Profile = new HearthProfile();
         }
     }
