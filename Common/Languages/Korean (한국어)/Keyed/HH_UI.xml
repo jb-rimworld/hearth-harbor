@@ -86,10 +86,8 @@
   <HH.UI.Diff.Intensity>호스팅 강도 {0} %</HH.UI.Diff.Intensity>
   <HH.UI.Diff.ChipTip>{0}: 호스팅 강도 약 {1} %.</HH.UI.Diff.ChipTip>
   <HH.UI.Diff.Calculator>이 단계가 당신에게 의미하는 것</HH.UI.Diff.Calculator>
-  <HH.UI.Diff.Ladder>무엇이 잘못될 수 있나</HH.UI.Diff.Ladder>
   <HH.UI.Diff.Special>특수 스위치</HH.UI.Diff.Special>
   <HH.UI.Diff.ShowAll>난이도에 따라 달라지는 값 {0}개 모두 표시</HH.UI.Diff.ShowAll>
-  <HH.UI.Diff.WarnHard>과밀 단계부터는 실제 결과가 켜집니다: 벌금, 영업 허가 상실 등.</HH.UI.Diff.WarnHard>
   <HH.UI.Diff.WarnEasy>이 단계는 매우 관대합니다. 돈이 쉽게 들어오고 아무 일도 생기지 않습니다.</HH.UI.Diff.WarnEasy>
   <HH.UI.Diff.WarnBreaks>이 단계는 게임 균형을 깨뜨립니다. 의도한 것입니까?</HH.UI.Diff.WarnBreaks>
   <HH.UI.Calc.StandardIs>표준 방: {0}</HH.UI.Calc.StandardIs>
@@ -100,9 +98,6 @@
   <HH.UI.Feel.1>돈이 흐르고 아무 일도 생기지 않습니다.</HH.UI.Feel.1>
   <HH.UI.Feel.2>부드럽고 너그럽습니다.</HH.UI.Feel.2>
   <HH.UI.Feel.3>작은 손실이 생길 수 있습니다. 이익은 노력해야 얻습니다.</HH.UI.Feel.3>
-  <HH.UI.Feel.4>결과가 켜집니다: 다툼, 벌금, 영업 허가 상실.</HH.UI.Feel.4>
-  <HH.UI.Feel.5>반목, 계약, 엄격한 감독관, 보복 습격.</HH.UI.Feel.5>
-  <HH.UI.Feel.6>모든 것이 힘들고 상한이 없습니다.</HH.UI.Feel.6>
   <HH.UI.Calc.guestMoney>손님 돈</HH.UI.Calc.guestMoney>
   <HH.UI.Calc.guestMoney.Desc>손님이 지니고 쓰려는 돈을 곱합니다.</HH.UI.Calc.guestMoney.Desc>
   <HH.UI.Calc.priceTolerance>가격 허용치</HH.UI.Calc.priceTolerance>
@@ -131,17 +126,7 @@
   <HH.UI.Stage.5>영업 허가</HH.UI.Stage.5>
   <HH.UI.Stage.6>습격</HH.UI.Stage.6>
   <HH.UI.Stage.7>현상금</HH.UI.Stage.7>
-  <HH.UI.Ladder.Goodwill>나쁜 체류당 호감도 손실 (상한)</HH.UI.Ladder.Goodwill>
-  <HH.UI.Ladder.Goodwill.Desc>사건 하나당 한 세력이 당신에게서 빼앗을 수 있는 호감도 최대치.</HH.UI.Ladder.Goodwill.Desc>
   <HH.UI.Ladder.Renown>사건당 명성 손실 (상한)</HH.UI.Ladder.Renown>
-  <HH.UI.Ladder.Renown.Desc>사건 하나가 빼앗을 수 있는 명성 최대치.</HH.UI.Ladder.Renown.Desc>
-  <HH.UI.Ladder.Fine>벌금 (상한, 은화)</HH.UI.Ladder.Fine>
-  <HH.UI.Ladder.Fine.Desc>감독이나 사건 하나가 부과할 수 있는 벌금 최대치.</HH.UI.Ladder.Fine.Desc>
-  <HH.UI.Ladder.Raids>보복 습격</HH.UI.Ladder.Raids>
-  <HH.UI.Ladder.Raids.Desc>화난 세력이나 용병이 당신을 쫓아올 수 있는지 여부.</HH.UI.Ladder.Raids.Desc>
-  <HH.UI.Ladder.No>아니요</HH.UI.Ladder.No>
-  <HH.UI.Ladder.Yes>예</HH.UI.Ladder.Yes>
-  <HH.UI.Ladder.Footer>높은 단계는 확률만 올리지 않고 더 많은 결과를 열어 줍니다.</HH.UI.Ladder.Footer>
   <HH.UI.Diag.Copy>진단을 클립보드에 복사</HH.UI.Diag.Copy>
   <HH.UI.Diag.Copied>진단을 클립보드에 복사했습니다.</HH.UI.Diag.Copied>
   <HH.UI.Diag.PrepareRemoval>제거 준비</HH.UI.Diag.PrepareRemoval>

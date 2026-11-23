@@ -86,10 +86,10 @@
   <HH.UI.Diff.Intensity>Hosting intensity {0} %</HH.UI.Diff.Intensity>
   <HH.UI.Diff.ChipTip>{0}: about {1} % hosting intensity.</HH.UI.Diff.ChipTip>
   <HH.UI.Diff.Calculator>What this tier means for you</HH.UI.Diff.Calculator>
-  <HH.UI.Diff.Ladder>What can go wrong</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.Ladder>Underworld: penalty caps per incident</HH.UI.Diff.Ladder>
   <HH.UI.Diff.Special>Special switches</HH.UI.Diff.Special>
   <HH.UI.Diff.ShowAll>Show all {0} values that follow the difficulty</HH.UI.Diff.ShowAll>
-  <HH.UI.Diff.WarnHard>From Overbooked on, real consequences are switched on: fines, licence loss and worse.</HH.UI.Diff.WarnHard>
+  <HH.UI.Diff.WarnHard>From Overbooked on, underworld incidents can cost real goodwill, renown and silver (see the caps below).</HH.UI.Diff.WarnHard>
   <HH.UI.Diff.WarnEasy>This tier is very forgiving. Money comes easy and nothing goes wrong.</HH.UI.Diff.WarnEasy>
   <HH.UI.Diff.WarnBreaks>This breaks the game balance. On purpose?</HH.UI.Diff.WarnBreaks>
   <HH.UI.Calc.StandardIs>Standard Room: {0}</HH.UI.Calc.StandardIs>
@@ -100,8 +100,8 @@
   <HH.UI.Feel.1>Money flows and nothing goes wrong.</HH.UI.Feel.1>
   <HH.UI.Feel.2>Gentle and generous.</HH.UI.Feel.2>
   <HH.UI.Feel.3>Small losses are possible. Profit takes work.</HH.UI.Feel.3>
-  <HH.UI.Feel.4>Consequences switch on: quarrels, fines, licence loss.</HH.UI.Feel.4>
-  <HH.UI.Feel.5>Feuds, contracts, strict inspectors, revenge raids.</HH.UI.Feel.5>
+  <HH.UI.Feel.4>Underworld incidents start to cost goodwill, renown and fines.</HH.UI.Feel.4>
+  <HH.UI.Feel.5>Bigger penalties for underworld incidents, a harder bank.</HH.UI.Feel.5>
   <HH.UI.Feel.6>Everything is hard and nothing is capped.</HH.UI.Feel.6>
   <HH.UI.Calc.guestMoney>Guest money</HH.UI.Calc.guestMoney>
   <HH.UI.Calc.guestMoney.Desc>Multiplies what guests carry and are willing to spend.</HH.UI.Calc.guestMoney.Desc>
@@ -133,17 +133,13 @@
   <HH.UI.Stage.5>Licence</HH.UI.Stage.5>
   <HH.UI.Stage.6>Raids</HH.UI.Stage.6>
   <HH.UI.Stage.7>Bounty</HH.UI.Stage.7>
-  <HH.UI.Ladder.Goodwill>Goodwill loss per bad stay (cap)</HH.UI.Ladder.Goodwill>
-  <HH.UI.Ladder.Goodwill.Desc>The most goodwill one faction can take away from you per incident.</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Goodwill>Goodwill loss per incident (cap)</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>The most goodwill one underworld incident can take away from you.</HH.UI.Ladder.Goodwill.Desc>
   <HH.UI.Ladder.Renown>Renown loss per incident (cap)</HH.UI.Ladder.Renown>
-  <HH.UI.Ladder.Renown.Desc>The most renown one incident can cost you.</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Renown.Desc>The most renown one underworld incident can cost you.</HH.UI.Ladder.Renown.Desc>
   <HH.UI.Ladder.Fine>Fines (cap, silver)</HH.UI.Ladder.Fine>
-  <HH.UI.Ladder.Fine.Desc>The most a single inspection or incident can fine you.</HH.UI.Ladder.Fine.Desc>
-  <HH.UI.Ladder.Raids>Retaliation raids</HH.UI.Ladder.Raids>
-  <HH.UI.Ladder.Raids.Desc>Whether angry factions or mercenaries may come after you.</HH.UI.Ladder.Raids.Desc>
-  <HH.UI.Ladder.No>no</HH.UI.Ladder.No>
-  <HH.UI.Ladder.Yes>yes</HH.UI.Ladder.Yes>
-  <HH.UI.Ladder.Footer>Higher tiers unlock more consequences instead of just raising the odds.</HH.UI.Ladder.Footer>
+  <HH.UI.Ladder.Fine.Desc>The most a single underworld incident can fine you.</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Footer>These caps apply to underworld incidents. The bank collection stages follow their own settings.</HH.UI.Ladder.Footer>
   <HH.UI.Diag.Copy>Copy diagnosis to clipboard</HH.UI.Diag.Copy>
   <HH.UI.Diag.Copied>Diagnosis copied to the clipboard.</HH.UI.Diag.Copied>
   <HH.UI.Diag.PrepareRemoval>Prepare removal</HH.UI.Diag.PrepareRemoval>

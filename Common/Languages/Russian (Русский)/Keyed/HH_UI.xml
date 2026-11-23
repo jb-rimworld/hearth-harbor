@@ -86,10 +86,8 @@
   <HH.UI.Diff.Intensity>Интенсивность хостинга {0} %</HH.UI.Diff.Intensity>
   <HH.UI.Diff.ChipTip>{0}: примерно {1} % интенсивности хостинга.</HH.UI.Diff.ChipTip>
   <HH.UI.Diff.Calculator>Что означает эта ступень для вас</HH.UI.Diff.Calculator>
-  <HH.UI.Diff.Ladder>Что может пойти не так</HH.UI.Diff.Ladder>
   <HH.UI.Diff.Special>Особые переключатели</HH.UI.Diff.Special>
   <HH.UI.Diff.ShowAll>Показать все {0} значений, которые зависят от сложности</HH.UI.Diff.ShowAll>
-  <HH.UI.Diff.WarnHard>Начиная с Overbooked, включаются настоящие последствия: штрафы, потеря лицензии и кое-что похуже.</HH.UI.Diff.WarnHard>
   <HH.UI.Diff.WarnEasy>Эта ступень очень снисходительна. Деньги даются легко, и ничего не идёт не так.</HH.UI.Diff.WarnEasy>
   <HH.UI.Diff.WarnBreaks>Это ломает баланс игры. Намеренно?</HH.UI.Diff.WarnBreaks>
   <HH.UI.Calc.StandardIs>Стандартный номер: {0}</HH.UI.Calc.StandardIs>
@@ -100,9 +98,6 @@
   <HH.UI.Feel.1>Деньги текут, и ничего не идёт не так.</HH.UI.Feel.1>
   <HH.UI.Feel.2>Мягко и щедро.</HH.UI.Feel.2>
   <HH.UI.Feel.3>Небольшие потери возможны. Прибыль требует труда.</HH.UI.Feel.3>
-  <HH.UI.Feel.4>Включаются последствия: ссоры, штрафы, потеря лицензии.</HH.UI.Feel.4>
-  <HH.UI.Feel.5>Вражды, контракты, строгие инспекторы, рейды в отместку.</HH.UI.Feel.5>
-  <HH.UI.Feel.6>Всё трудно, и ничем не ограничено.</HH.UI.Feel.6>
   <HH.UI.Calc.guestMoney>Деньги гостей</HH.UI.Calc.guestMoney>
   <HH.UI.Calc.guestMoney.Desc>Умножает сумму, которую гости носят с собой и готовы потратить.</HH.UI.Calc.guestMoney.Desc>
   <HH.UI.Calc.priceTolerance>Терпимость к цене</HH.UI.Calc.priceTolerance>
@@ -131,17 +126,7 @@
   <HH.UI.Stage.5>Лицензия</HH.UI.Stage.5>
   <HH.UI.Stage.6>Рейды</HH.UI.Stage.6>
   <HH.UI.Stage.7>Награда</HH.UI.Stage.7>
-  <HH.UI.Ladder.Goodwill>Потеря расположения за плохое пребывание (предел)</HH.UI.Ladder.Goodwill>
-  <HH.UI.Ladder.Goodwill.Desc>Наибольшее расположение, которое одна фракция может отнять у вас за один инцидент.</HH.UI.Ladder.Goodwill.Desc>
   <HH.UI.Ladder.Renown>Потеря известности за инцидент (предел)</HH.UI.Ladder.Renown>
-  <HH.UI.Ladder.Renown.Desc>Наибольшая потеря известности, которую может стоить один инцидент.</HH.UI.Ladder.Renown.Desc>
-  <HH.UI.Ladder.Fine>Штрафы (предел, серебро)</HH.UI.Ladder.Fine>
-  <HH.UI.Ladder.Fine.Desc>Наибольший штраф, который может выписать одна проверка или инцидент.</HH.UI.Ladder.Fine.Desc>
-  <HH.UI.Ladder.Raids>Ответные рейды</HH.UI.Ladder.Raids>
-  <HH.UI.Ladder.Raids.Desc>Могут ли разозлённые фракции или наёмники прийти за вами.</HH.UI.Ladder.Raids.Desc>
-  <HH.UI.Ladder.No>нет</HH.UI.Ladder.No>
-  <HH.UI.Ladder.Yes>да</HH.UI.Ladder.Yes>
-  <HH.UI.Ladder.Footer>Высшие ступени открывают новые последствия, а не просто повышают шансы.</HH.UI.Ladder.Footer>
   <HH.UI.Diag.Copy>Скопировать диагностику в буфер обмена</HH.UI.Diag.Copy>
   <HH.UI.Diag.Copied>Диагностика скопирована в буфер обмена.</HH.UI.Diag.Copied>
   <HH.UI.Diag.PrepareRemoval>Подготовить удаление</HH.UI.Diag.PrepareRemoval>

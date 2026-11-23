@@ -70,6 +70,8 @@ namespace Silverline
 
         /// <summary>The highest collection stage; the special switch core.ironBank always means the top of the ladder (7).</summary>
         public static int MaxCollectionStage => CoreSettings.Switch("core.ironBank") ? 7 : HSettings.GetInt("bank.maxCollectionStage");
+        /// <summary>Raid size factor of the collection stages. The special switch core.ironBank means stage 7 is really reached, so the violent stages never run at 0: it floors the factor at 1.</summary>
+        public static double CollectionAnger { get { double a = HSettings.Get("bank.collectionAnger"); return CoreSettings.Switch("core.ironBank") ? System.Math.Max(a, 1.0) : a; } }
         public static bool ResearchOff => CoreSettings.ResearchOff || HSettings.GetInt("bank.researchMode") == (int)BankResearchMode.Off;
         public static double AccountBeta => HSettings.Get("bank.accountBeta");
         public static double FeeFactor => HSettings.Get("bank.feeFactor");

@@ -114,7 +114,7 @@ namespace Hearth.Guests
             return r;
         }
 
-        static void GiveSilver(Pawn p, Money budget)
+        internal static void GiveSilver(Pawn p, Money budget)
         {
             int coins = (int)Math.Ceiling(budget.Silver - 1e-9);
             if (coins <= 0 || p.inventory == null) return;

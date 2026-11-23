@@ -86,10 +86,8 @@
   <HH.UI.Diff.Intensity>Інтенсивність хостингу {0} %</HH.UI.Diff.Intensity>
   <HH.UI.Diff.ChipTip>{0}: приблизно {1} % інтенсивності хостингу.</HH.UI.Diff.ChipTip>
   <HH.UI.Diff.Calculator>Що означає цей рівень для вас</HH.UI.Diff.Calculator>
-  <HH.UI.Diff.Ladder>Що може піти не так</HH.UI.Diff.Ladder>
   <HH.UI.Diff.Special>Особливі перемикачі</HH.UI.Diff.Special>
   <HH.UI.Diff.ShowAll>Показати всі {0} значень, що залежать від складності</HH.UI.Diff.ShowAll>
-  <HH.UI.Diff.WarnHard>Починаючи з «Переповнено», вмикаються справжні наслідки: штрафи, втрата ліцензії та гірше.</HH.UI.Diff.WarnHard>
   <HH.UI.Diff.WarnEasy>Цей рівень дуже поблажливий. Гроші надходять легко, і нічого не йде не так.</HH.UI.Diff.WarnEasy>
   <HH.UI.Diff.WarnBreaks>Це порушує баланс гри. Так і задумано?</HH.UI.Diff.WarnBreaks>
   <HH.UI.Calc.StandardIs>Стандартна кімната: {0}</HH.UI.Calc.StandardIs>
@@ -100,9 +98,6 @@
   <HH.UI.Feel.1>Гроші течуть, і нічого не йде не так.</HH.UI.Feel.1>
   <HH.UI.Feel.2>Лагідно і щедро.</HH.UI.Feel.2>
   <HH.UI.Feel.3>Можливі невеликі втрати. Прибуток потребує праці.</HH.UI.Feel.3>
-  <HH.UI.Feel.4>Вмикаються наслідки: сварки, штрафи, втрата ліцензії.</HH.UI.Feel.4>
-  <HH.UI.Feel.5>Ворожнеча, контракти, суворі інспектори, рейди у відплату.</HH.UI.Feel.5>
-  <HH.UI.Feel.6>Усе важко, і нічого не обмежено.</HH.UI.Feel.6>
   <HH.UI.Calc.guestMoney>Гроші гостей</HH.UI.Calc.guestMoney>
   <HH.UI.Calc.guestMoney.Desc>Множить суму, яку мають гості, і готовність витрачати.</HH.UI.Calc.guestMoney.Desc>
   <HH.UI.Calc.priceTolerance>Терпимість до ціни</HH.UI.Calc.priceTolerance>
@@ -131,17 +126,7 @@
   <HH.UI.Stage.5>Ліцензія</HH.UI.Stage.5>
   <HH.UI.Stage.6>Рейди</HH.UI.Stage.6>
   <HH.UI.Stage.7>Винагорода</HH.UI.Stage.7>
-  <HH.UI.Ladder.Goodwill>Втрата прихильності за поганий візит (ліміт)</HH.UI.Ladder.Goodwill>
-  <HH.UI.Ladder.Goodwill.Desc>Найбільше прихильності, яку одна фракція може відібрати у вас за один випадок.</HH.UI.Ladder.Goodwill.Desc>
   <HH.UI.Ladder.Renown>Втрата слави за випадок (ліміт)</HH.UI.Ladder.Renown>
-  <HH.UI.Ladder.Renown.Desc>Найбільше слави, яку може коштувати один випадок.</HH.UI.Ladder.Renown.Desc>
-  <HH.UI.Ladder.Fine>Штрафи (ліміт, срібло)</HH.UI.Ladder.Fine>
-  <HH.UI.Ladder.Fine.Desc>Найбільший штраф за одну перевірку або один випадок.</HH.UI.Ladder.Fine.Desc>
-  <HH.UI.Ladder.Raids>Рейди у відплату</HH.UI.Ladder.Raids>
-  <HH.UI.Ladder.Raids.Desc>Чи можуть розлючені фракції або найманці прийти по вас.</HH.UI.Ladder.Raids.Desc>
-  <HH.UI.Ladder.No>ні</HH.UI.Ladder.No>
-  <HH.UI.Ladder.Yes>так</HH.UI.Ladder.Yes>
-  <HH.UI.Ladder.Footer>Вищі рівні відкривають більше наслідків, а не лише підвищують шанси.</HH.UI.Ladder.Footer>
   <HH.UI.Diag.Copy>Скопіювати діагноз у буфер обміну</HH.UI.Diag.Copy>
   <HH.UI.Diag.Copied>Діагноз скопійовано в буфер обміну.</HH.UI.Diag.Copied>
   <HH.UI.Diag.PrepareRemoval>Підготувати до видалення</HH.UI.Diag.PrepareRemoval>

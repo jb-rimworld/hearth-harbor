@@ -86,10 +86,8 @@
   <HH.UI.Diff.Intensity>Intensidad de anfitrión {0} %</HH.UI.Diff.Intensity>
   <HH.UI.Diff.ChipTip>{0}: alrededor de un {1} % de intensidad de anfitrión.</HH.UI.Diff.ChipTip>
   <HH.UI.Diff.Calculator>Lo que significa este nivel para ti</HH.UI.Diff.Calculator>
-  <HH.UI.Diff.Ladder>Qué puede salir mal</HH.UI.Diff.Ladder>
   <HH.UI.Diff.Special>Interruptores especiales</HH.UI.Diff.Special>
   <HH.UI.Diff.ShowAll>Mostrar los {0} valores que siguen la dificultad</HH.UI.Diff.ShowAll>
-  <HH.UI.Diff.WarnHard>Desde Sobrereservado en adelante se activan consecuencias reales: multas, pérdida de licencia y peores.</HH.UI.Diff.WarnHard>
   <HH.UI.Diff.WarnEasy>Este nivel es muy indulgente. El dinero llega fácil y nada sale mal.</HH.UI.Diff.WarnEasy>
   <HH.UI.Diff.WarnBreaks>Esto rompe el equilibrio del juego. ¿A propósito?</HH.UI.Diff.WarnBreaks>
   <HH.UI.Calc.StandardIs>Habitación estándar: {0}</HH.UI.Calc.StandardIs>
@@ -100,9 +98,6 @@
   <HH.UI.Feel.1>El dinero fluye y nada sale mal.</HH.UI.Feel.1>
   <HH.UI.Feel.2>Amable y generoso.</HH.UI.Feel.2>
   <HH.UI.Feel.3>Son posibles pequeñas pérdidas. El beneficio cuesta trabajo.</HH.UI.Feel.3>
-  <HH.UI.Feel.4>Se activan las consecuencias: riñas, multas, pérdida de licencia.</HH.UI.Feel.4>
-  <HH.UI.Feel.5>Enemistades, contratos, inspectores estrictos, incursiones de venganza.</HH.UI.Feel.5>
-  <HH.UI.Feel.6>Todo es duro y nada tiene límite.</HH.UI.Feel.6>
   <HH.UI.Calc.guestMoney>Dinero de huéspedes</HH.UI.Calc.guestMoney>
   <HH.UI.Calc.guestMoney.Desc>Multiplica lo que llevan los huéspedes y lo que están dispuestos a gastar.</HH.UI.Calc.guestMoney.Desc>
   <HH.UI.Calc.priceTolerance>Tolerancia al precio</HH.UI.Calc.priceTolerance>
@@ -131,17 +126,7 @@
   <HH.UI.Stage.5>Licencia</HH.UI.Stage.5>
   <HH.UI.Stage.6>Incursiones</HH.UI.Stage.6>
   <HH.UI.Stage.7>Recompensa</HH.UI.Stage.7>
-  <HH.UI.Ladder.Goodwill>Pérdida de buena voluntad por mala estancia (límite)</HH.UI.Ladder.Goodwill>
-  <HH.UI.Ladder.Goodwill.Desc>La mayor buena voluntad que una facción puede quitarte por incidente.</HH.UI.Ladder.Goodwill.Desc>
   <HH.UI.Ladder.Renown>Pérdida de renombre por incidente (límite)</HH.UI.Ladder.Renown>
-  <HH.UI.Ladder.Renown.Desc>El mayor renombre que un solo incidente puede costarte.</HH.UI.Ladder.Renown.Desc>
-  <HH.UI.Ladder.Fine>Multas (límite, plata)</HH.UI.Ladder.Fine>
-  <HH.UI.Ladder.Fine.Desc>La mayor multa que puede imponerte una sola inspección o incidente.</HH.UI.Ladder.Fine.Desc>
-  <HH.UI.Ladder.Raids>Incursiones de represalia</HH.UI.Ladder.Raids>
-  <HH.UI.Ladder.Raids.Desc>Si las facciones enfadadas o los mercenarios pueden venir a por ti.</HH.UI.Ladder.Raids.Desc>
-  <HH.UI.Ladder.No>no</HH.UI.Ladder.No>
-  <HH.UI.Ladder.Yes>sí</HH.UI.Ladder.Yes>
-  <HH.UI.Ladder.Footer>Los niveles superiores desbloquean más consecuencias en lugar de solo subir las probabilidades.</HH.UI.Ladder.Footer>
   <HH.UI.Diag.Copy>Copiar diagnóstico al portapapeles</HH.UI.Diag.Copy>
   <HH.UI.Diag.Copied>Diagnóstico copiado al portapapeles.</HH.UI.Diag.Copied>
   <HH.UI.Diag.PrepareRemoval>Preparar desinstalación</HH.UI.Diag.PrepareRemoval>

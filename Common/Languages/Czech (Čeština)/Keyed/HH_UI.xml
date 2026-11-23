@@ -86,10 +86,8 @@
   <HH.UI.Diff.Intensity>Intenzita hostování {0} %</HH.UI.Diff.Intensity>
   <HH.UI.Diff.ChipTip>{0}: přibližně {1} % intenzity hostování.</HH.UI.Diff.ChipTip>
   <HH.UI.Diff.Calculator>Co tento stupeň znamená pro vás</HH.UI.Diff.Calculator>
-  <HH.UI.Diff.Ladder>Co se může pokazit</HH.UI.Diff.Ladder>
   <HH.UI.Diff.Special>Zvláštní přepínače</HH.UI.Diff.Special>
   <HH.UI.Diff.ShowAll>Zobrazit všech {0} hodnot, které se řídí obtížností</HH.UI.Diff.ShowAll>
-  <HH.UI.Diff.WarnHard>Od stupně Overbooked dál se zapínají skutečné následky: pokuty, ztráta licence a horší věci.</HH.UI.Diff.WarnHard>
   <HH.UI.Diff.WarnEasy>Tento stupeň je velmi shovívavý. Peníze přicházejí snadno a nic se nepokazí.</HH.UI.Diff.WarnEasy>
   <HH.UI.Diff.WarnBreaks>Tohle narušuje vyváženost hry. Opravdu chcete?</HH.UI.Diff.WarnBreaks>
   <HH.UI.Calc.StandardIs>Standardní pokoj: {0}</HH.UI.Calc.StandardIs>
@@ -100,9 +98,6 @@
   <HH.UI.Feel.1>Peníze tečou a nic se nepokazí.</HH.UI.Feel.1>
   <HH.UI.Feel.2>Mírné a štědré.</HH.UI.Feel.2>
   <HH.UI.Feel.3>Drobné ztráty jsou možné. Zisk dá práci.</HH.UI.Feel.3>
-  <HH.UI.Feel.4>Zapínají se následky: hádky, pokuty, ztráta licence.</HH.UI.Feel.4>
-  <HH.UI.Feel.5>Krevní msty, smlouvy, přísní inspektoři, pomstychtivé nálety.</HH.UI.Feel.5>
-  <HH.UI.Feel.6>Všechno je těžké a nic není omezeno.</HH.UI.Feel.6>
   <HH.UI.Calc.guestMoney>Peníze hostů</HH.UI.Calc.guestMoney>
   <HH.UI.Calc.guestMoney.Desc>Násobí, kolik peněz hosté nosí a jsou ochotni utratit.</HH.UI.Calc.guestMoney.Desc>
   <HH.UI.Calc.priceTolerance>Tolerance ceny</HH.UI.Calc.priceTolerance>
@@ -131,17 +126,7 @@
   <HH.UI.Stage.5>Licence</HH.UI.Stage.5>
   <HH.UI.Stage.6>Nálety</HH.UI.Stage.6>
   <HH.UI.Stage.7>Odměna za hlavu</HH.UI.Stage.7>
-  <HH.UI.Ladder.Goodwill>Ztráta dobré vůle za jeden špatný pobyt (strop)</HH.UI.Ladder.Goodwill>
-  <HH.UI.Ladder.Goodwill.Desc>Nejvíc dobré vůle, kterou vám jedna frakce může za jeden incident vzít.</HH.UI.Ladder.Goodwill.Desc>
   <HH.UI.Ladder.Renown>Ztráta pověsti za incident (strop)</HH.UI.Ladder.Renown>
-  <HH.UI.Ladder.Renown.Desc>Nejvíc pověsti, kterou vás může stát jeden incident.</HH.UI.Ladder.Renown.Desc>
-  <HH.UI.Ladder.Fine>Pokuty (strop, stříbro)</HH.UI.Ladder.Fine>
-  <HH.UI.Ladder.Fine.Desc>Nejvyšší pokuta, kterou vám může udělit jedna kontrola nebo incident.</HH.UI.Ladder.Fine.Desc>
-  <HH.UI.Ladder.Raids>Odvetné nálety</HH.UI.Ladder.Raids>
-  <HH.UI.Ladder.Raids.Desc>Zda na vás mohou přijít rozzlobené frakce nebo žoldáci.</HH.UI.Ladder.Raids.Desc>
-  <HH.UI.Ladder.No>ne</HH.UI.Ladder.No>
-  <HH.UI.Ladder.Yes>ano</HH.UI.Ladder.Yes>
-  <HH.UI.Ladder.Footer>Vyšší stupně přidávají další následky, místo aby jen zvyšovaly šance.</HH.UI.Ladder.Footer>
   <HH.UI.Diag.Copy>Zkopírovat diagnostiku do schránky</HH.UI.Diag.Copy>
   <HH.UI.Diag.Copied>Diagnostika zkopírována do schránky.</HH.UI.Diag.Copied>
   <HH.UI.Diag.PrepareRemoval>Připravit odstranění</HH.UI.Diag.PrepareRemoval>

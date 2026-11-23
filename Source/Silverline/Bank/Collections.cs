@@ -155,7 +155,7 @@ namespace Silverline
             double target = FinanceMath.SeizureValue(l.Balance.Silver);
             var items = SeizableItems(map);
             double have = items.Sum(t => (double)t.MarketValue * t.stackCount);
-            var team = SpawnTeam(map, Math.Max(60f, (float)FinanceMath.CollectionRaidPoints(l.Balance.Silver, StorytellerUtility.DefaultThreatPointsNow(map), HSettings.Get("bank.collectionAnger")) * 0.5f), false);
+            var team = SpawnTeam(map, Math.Max(60f, (float)FinanceMath.CollectionRaidPoints(l.Balance.Silver, StorytellerUtility.DefaultThreatPointsNow(map), BankSettings.CollectionAnger) * 0.5f), false);
             var node = new DiaNode(L.T("Seizure.Text", "A seizure team from Rim Recovery Partners is at the door with a court order that appears to be a laminated napkin. They want valuables worth about {0} silver (120 % of loan {1}). Let them take it, and the loan is gone. Refuse, and they will take it the hard way.", ((int)target), l.Id));
             node.options.Add(new DiaOption(L.T("Seizure.Allow", "Let them take the valuables")) { action = () => ExecuteSeizure(c, l, map, team, target), resolveTree = true });
             node.options.Add(new DiaOption(L.T("Seizure.Refuse", "Refuse")) { action = () => TurnHostile(map, team), resolveTree = true });
@@ -207,7 +207,7 @@ namespace Silverline
         static void Raid(BankGameComp c, Loan l, bool bounty)
         {
             var map = BankGameComp.DefaultMap; if (map == null) return;
-            double pts = FinanceMath.CollectionRaidPoints(l.Balance.Silver, StorytellerUtility.DefaultThreatPointsNow(map), HSettings.Get("bank.collectionAnger")) * (bounty ? 1.5 : 1.0);
+            double pts = FinanceMath.CollectionRaidPoints(l.Balance.Silver, StorytellerUtility.DefaultThreatPointsNow(map), BankSettings.CollectionAnger) * (bounty ? 1.5 : 1.0);
             if (TestMode) { TestLog.Add("raid points " + pts.ToString("0")); return; }
             if (pts < 1) return;
             var agency = Agency; if (agency == null) return;

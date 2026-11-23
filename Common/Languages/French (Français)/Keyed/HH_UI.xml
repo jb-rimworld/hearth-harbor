@@ -86,10 +86,8 @@
   <HH.UI.Diff.Intensity>Intensité d'hébergement {0} %</HH.UI.Diff.Intensity>
   <HH.UI.Diff.ChipTip>{0} : environ {1} % d'intensité d'hébergement.</HH.UI.Diff.ChipTip>
   <HH.UI.Diff.Calculator>Ce que ce palier signifie pour vous</HH.UI.Diff.Calculator>
-  <HH.UI.Diff.Ladder>Ce qui peut mal tourner</HH.UI.Diff.Ladder>
   <HH.UI.Diff.Special>Interrupteurs spéciaux</HH.UI.Diff.Special>
   <HH.UI.Diff.ShowAll>Afficher les {0} valeurs qui suivent la difficulté</HH.UI.Diff.ShowAll>
-  <HH.UI.Diff.WarnHard>À partir de Overbooked, de vraies conséquences sont activées : amendes, perte de licence et pire.</HH.UI.Diff.WarnHard>
   <HH.UI.Diff.WarnEasy>Ce palier est très indulgent. L'argent vient facilement et rien ne tourne mal.</HH.UI.Diff.WarnEasy>
   <HH.UI.Diff.WarnBreaks>Cela casse l'équilibre du jeu. Volontaire ?</HH.UI.Diff.WarnBreaks>
   <HH.UI.Calc.StandardIs>Chambre standard : {0}</HH.UI.Calc.StandardIs>
@@ -100,9 +98,6 @@
   <HH.UI.Feel.1>L'argent circule et rien ne tourne mal.</HH.UI.Feel.1>
   <HH.UI.Feel.2>Doux et généreux.</HH.UI.Feel.2>
   <HH.UI.Feel.3>De petites pertes sont possibles. Le profit demande du travail.</HH.UI.Feel.3>
-  <HH.UI.Feel.4>Les conséquences sont activées : querelles, amendes, perte de licence.</HH.UI.Feel.4>
-  <HH.UI.Feel.5>Vendettas, contrats, inspecteurs stricts, raids de représailles.</HH.UI.Feel.5>
-  <HH.UI.Feel.6>Tout est difficile et rien n'est plafonné.</HH.UI.Feel.6>
   <HH.UI.Calc.guestMoney>Argent des clients</HH.UI.Calc.guestMoney>
   <HH.UI.Calc.guestMoney.Desc>Multiplie ce que les clients ont sur eux et sont prêts à dépenser.</HH.UI.Calc.guestMoney.Desc>
   <HH.UI.Calc.priceTolerance>Tolérance au prix</HH.UI.Calc.priceTolerance>
@@ -131,17 +126,7 @@
   <HH.UI.Stage.5>Licence</HH.UI.Stage.5>
   <HH.UI.Stage.6>Raids</HH.UI.Stage.6>
   <HH.UI.Stage.7>Prime</HH.UI.Stage.7>
-  <HH.UI.Ladder.Goodwill>Perte de bonne volonté par mauvais séjour (plafond)</HH.UI.Ladder.Goodwill>
-  <HH.UI.Ladder.Goodwill.Desc>La plus grande bonne volonté qu'une faction peut vous retirer par incident.</HH.UI.Ladder.Goodwill.Desc>
   <HH.UI.Ladder.Renown>Perte de renommée par incident (plafond)</HH.UI.Ladder.Renown>
-  <HH.UI.Ladder.Renown.Desc>La plus grande renommée qu'un seul incident peut vous coûter.</HH.UI.Ladder.Renown.Desc>
-  <HH.UI.Ladder.Fine>Amendes (plafond, argent)</HH.UI.Ladder.Fine>
-  <HH.UI.Ladder.Fine.Desc>Le montant maximal qu'une inspection ou un incident peut vous infliger.</HH.UI.Ladder.Fine.Desc>
-  <HH.UI.Ladder.Raids>Raids de représailles</HH.UI.Ladder.Raids>
-  <HH.UI.Ladder.Raids.Desc>Si des factions en colère ou des mercenaires peuvent s'en prendre à vous.</HH.UI.Ladder.Raids.Desc>
-  <HH.UI.Ladder.No>non</HH.UI.Ladder.No>
-  <HH.UI.Ladder.Yes>oui</HH.UI.Ladder.Yes>
-  <HH.UI.Ladder.Footer>Les paliers supérieurs débloquent davantage de conséquences au lieu d'augmenter seulement les probabilités.</HH.UI.Ladder.Footer>
   <HH.UI.Diag.Copy>Copier le diagnostic dans le presse-papiers</HH.UI.Diag.Copy>
   <HH.UI.Diag.Copied>Diagnostic copié dans le presse-papiers.</HH.UI.Diag.Copied>
   <HH.UI.Diag.PrepareRemoval>Préparer la désinstallation</HH.UI.Diag.PrepareRemoval>

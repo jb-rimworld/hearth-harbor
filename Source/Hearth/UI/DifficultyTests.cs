@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 using Hearth.Guests;
@@ -33,13 +34,39 @@ namespace Hearth.Shell.Tests
                 t.Check(HSettings.Find(k) == null, "dead setting is gone: " + k);
 
             // --- infinite guest money
+            var snapshot = HearthProfile.Current.Store.Clone();   // the suite puts the player's overrides back at the end
             var rng = JRand.Stream("test.difficulty");
+            var map0 = t.Map;
             var p0 = PawnGenerator.GeneratePawn(PawnKindDefOf.Colonist, Faction.OfPlayer);
             var normal = GuestEconomy.RollBudget(p0, 50, 2f, false, rng);
             Flip("core.infiniteMoney", true);
-            var rich = GuestEconomy.RollBudget(p0, 50, 2f, false, rng);
-            Reset("core.infiniteMoney");
-            t.Check(rich.Silver >= GuestEconomy.InfiniteBudgetSilver && normal.Silver < GuestEconomy.InfiniteBudgetSilver / 10.0, "infinite money: bottomless purse " + rich.Silver + " vs normal " + normal.Silver);
+            var rolled = GuestEconomy.RollBudget(p0, 50, 2f, false, rng);
+            t.Check(rolled.Silver < 5000 && rolled.Silver < normal.Silver * 3 + 10, "infinite money: the rolled budget stays normal (" + rolled.Silver + " vs " + normal.Silver + "), so bankrolls and fees do not inflate");
+            if (!p0.Destroyed) Find.WorldPawns.PassToWorld(p0, PawnDiscardDecideMode.Discard);
+            var guests0 = GuestTestKit.SpawnVisitors(map0, 1);
+            if (guests0.Count > 0)
+            {
+                var g0 = guests0[0]; var gi0 = GuestApi.Info(g0);
+                t.Check(gi0 != null, "a guest to pay with");
+                if (gi0 != null)
+                {
+                    gi0.Budget = Money.FromSilver(3);
+                    var inv = g0.inventory?.innerContainer;
+                    if (inv != null) foreach (var th in inv.ToList()) if (th.def == ThingDefOf.Silver) th.Destroy();
+                    var price = Money.FromSilver(900);
+                    bool paid = GuestApi.ChargeGuest(g0, price, "test", "infinite money test");
+                    t.Check(paid, "infinite money: a guest with a 3 silver budget pays 900 silver");
+                    t.Check(gi0.Budget.Silver < 100, "infinite money: the budget is topped up to the price, not inflated (" + gi0.Budget.Silver + ")");
+                }
+                Reset("core.infiniteMoney");
+                if (gi0 != null)
+                {
+                    gi0.Budget = Money.FromSilver(3);
+                    t.Check(!GuestApi.ChargeGuest(g0, Money.FromSilver(900), "test", "no switch"), "without the switch the same guest cannot pay 900 silver");
+                }
+                foreach (var g in guests0) if (!g.Destroyed) g.Destroy();
+            }
+            else Reset("core.infiniteMoney");
 
             // --- picky guests
             float e0 = GuestEconomy.Expectation(50, 10f, null);
@@ -48,7 +75,14 @@ namespace Hearth.Shell.Tests
 
             // --- iron bank
             int stage0 = BankSettings.MaxCollectionStage;
-            Flip("core.ironBank", true); int stage1 = BankSettings.MaxCollectionStage; Reset("core.ironBank");
+            Flip("core.ironBank", true); int stage1 = BankSettings.MaxCollectionStage; double anger1 = BankSettings.CollectionAnger; Reset("core.ironBank");
+            t.Check(anger1 >= 1.0, "iron bank: collection anger is at least 1 so stage 5-7 are not toothless (" + anger1 + ")");
+            // the panel's penalty caps are the numbers the underworld really applies
+            for (int ti = 0; ti < 7; ti++)
+            {
+                string Fmt(float v, bool neg) => float.IsInfinity(v) ? "\u221e" : (v == 0f ? "0" : (neg ? "\u2212" : "") + v.ToString("0"));
+                t.Check(TierTable.GoodwillCap[ti] == Fmt(UnderworldMath.GoodwillCapPerEvent[ti], true) && TierTable.RenownCap[ti] == Fmt(UnderworldMath.RenownCapPerEvent[ti], true) && TierTable.FineCap[ti] == Fmt(UnderworldMath.FineCap[ti], false), "penalty cap display matches the underworld at tier " + ti);
+            }
             t.Check(stage1 == 7 && BankSettings.MaxCollectionStage == stage0, "iron bank: collection stage " + stage0 + " -> " + stage1);
 
             // --- peaceful underworld: every violent feature closes, the facilities stay
@@ -115,6 +149,21 @@ namespace Hearth.Shell.Tests
                 }
                 foreach (var p in pair) if (!p.Destroyed) p.Destroy();
             }
+            // the protection survives save/load: the set is a saved game component and prunes pawns that are gone
+            var set = NeverDieSet.Instance;
+            t.Check(set != null, "the guests-never-die set exists as a game component");
+            if (set != null)
+            {
+                int before = set.Count;
+                var ghost = PawnGenerator.GeneratePawn(PawnKindDefOf.Colonist, Faction.OfPlayer);
+                set.Add(ghost);
+                t.Check(set.Count == before + 1, "the set remembers a pawn");
+                set.Prune();
+                t.Check(set.Count == before, "pruning drops a pawn that is not on any map");
+                if (!ghost.Destroyed) Find.WorldPawns.PassToWorld(ghost, PawnDiscardDecideMode.Discard);
+            }
+            HearthProfile.Current.Store = snapshot;
+            ResearchGate.ApplyCostFactor();
             yield break;
         }
 

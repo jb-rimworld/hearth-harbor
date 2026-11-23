@@ -102,8 +102,8 @@ namespace Hearth.Shell
             y += 8f;
             y += UiStyle.Section(x, y, w, "HH.UI.Diff.Ladder".Translate());
             int ti = Mathf.Clamp(Mathf.RoundToInt(target.Tier), 0, 6);
-            string[][] ladder = { TierTable.GoodwillCap, TierTable.RenownCap, TierTable.FineCap, TierTable.Raids };
-            string[] ladderKeys = { "Goodwill", "Renown", "Fine", "Raids" };
+            string[][] ladder = { TierTable.GoodwillCap, TierTable.RenownCap, TierTable.FineCap };
+            string[] ladderKeys = { "Goodwill", "Renown", "Fine" };
             for (int i = 0; i < ladder.Length; i++)
             {
                 float h = 22f;
@@ -111,7 +111,6 @@ namespace Hearth.Shell
                 {
                     UiStyle.LabelColored(new Rect(x + 4f, y, colW * 0.46f, h), ("HH.UI.Ladder." + ladderKeys[i]).Translate(), Color.white, TextAnchor.MiddleLeft);
                     string val = ladder[i][ti];
-                    if (i == 3) val = val == "no" ? "HH.UI.Ladder.No".Translate() : val.Replace("yes", "HH.UI.Ladder.Yes".Translate());
                     UiStyle.LabelColored(new Rect(x + colW * 0.46f, y, colW * 0.4f, h), val, Color.white, TextAnchor.MiddleLeft);
                     TooltipHandler.TipRegion(new Rect(x, y, colW, h), ("HH.UI.Ladder." + ladderKeys[i] + ".Desc").Translate());
                 }

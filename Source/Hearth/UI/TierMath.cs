@@ -101,7 +101,6 @@ namespace Hearth.Shell
         public static readonly string[] GoodwillCap = { "0", "0", "−2", "−5", "−15", "−40", "∞" };
         public static readonly string[] RenownCap = { "0", "0", "−2", "−3", "−8", "−15", "∞" };
         public static readonly string[] FineCap = { "0", "0", "0", "300", "1000", "3000", "∞" };
-        public static readonly string[] Raids = { "no", "no", "no", "no", "no", "yes ×0.6", "yes ×1.0" };
 
         /// <summary>Real value if the setting is registered, otherwise the reference value; second result tells which.</summary>
         public static float Effective(TierRow row, HearthProfile target, out bool fromSetting, out bool overridden)

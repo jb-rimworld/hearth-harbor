@@ -86,10 +86,8 @@
   <HH.UI.Diff.Intensity>经营强度 {0}%</HH.UI.Diff.Intensity>
   <HH.UI.Diff.ChipTip>{0}：约为 {1}% 的经营强度。</HH.UI.Diff.ChipTip>
   <HH.UI.Diff.Calculator>此档位对你意味着什么</HH.UI.Diff.Calculator>
-  <HH.UI.Diff.Ladder>可能出什么问题</HH.UI.Diff.Ladder>
   <HH.UI.Diff.Special>特殊开关</HH.UI.Diff.Special>
   <HH.UI.Diff.ShowAll>显示全部 {0} 个随难度变化的数值</HH.UI.Diff.ShowAll>
-  <HH.UI.Diff.WarnHard>从“超额预订”档起，真实后果开启：罚款、吊销执照及更糟的情况。</HH.UI.Diff.WarnHard>
   <HH.UI.Diff.WarnEasy>此档位非常宽容。钱来得轻松，也不会出什么问题。</HH.UI.Diff.WarnEasy>
   <HH.UI.Diff.WarnBreaks>这会破坏游戏平衡。是有意为之吗？</HH.UI.Diff.WarnBreaks>
   <HH.UI.Calc.StandardIs>标准房间：{0}</HH.UI.Calc.StandardIs>
@@ -100,9 +98,6 @@
   <HH.UI.Feel.1>钱流动起来，也不会出什么问题。</HH.UI.Feel.1>
   <HH.UI.Feel.2>温和而慷慨。</HH.UI.Feel.2>
   <HH.UI.Feel.3>可能有小额亏损。盈利需要努力。</HH.UI.Feel.3>
-  <HH.UI.Feel.4>后果开始生效：争吵、罚款、吊销执照。</HH.UI.Feel.4>
-  <HH.UI.Feel.5>世仇、合约、严格的检查员、报复性突袭。</HH.UI.Feel.5>
-  <HH.UI.Feel.6>一切都很艰难，且没有上限。</HH.UI.Feel.6>
   <HH.UI.Calc.guestMoney>访客资金</HH.UI.Calc.guestMoney>
   <HH.UI.Calc.guestMoney.Desc>乘以访客携带的钱及其愿意花的钱。</HH.UI.Calc.guestMoney.Desc>
   <HH.UI.Calc.priceTolerance>价格容忍度</HH.UI.Calc.priceTolerance>
@@ -131,17 +126,7 @@
   <HH.UI.Stage.5>执照</HH.UI.Stage.5>
   <HH.UI.Stage.6>突袭</HH.UI.Stage.6>
   <HH.UI.Stage.7>悬赏</HH.UI.Stage.7>
-  <HH.UI.Ladder.Goodwill>每次糟糕入住的好感损失（上限）</HH.UI.Ladder.Goodwill>
-  <HH.UI.Ladder.Goodwill.Desc>一个派系每次事件最多能从你这里夺走的好感。</HH.UI.Ladder.Goodwill.Desc>
   <HH.UI.Ladder.Renown>每次事件的声望损失（上限）</HH.UI.Ladder.Renown>
-  <HH.UI.Ladder.Renown.Desc>一次事件最多能让你损失的声望。</HH.UI.Ladder.Renown.Desc>
-  <HH.UI.Ladder.Fine>罚款（上限，银币）</HH.UI.Ladder.Fine>
-  <HH.UI.Ladder.Fine.Desc>单次检查或事件最多能罚你的金额。</HH.UI.Ladder.Fine.Desc>
-  <HH.UI.Ladder.Raids>报复性突袭</HH.UI.Ladder.Raids>
-  <HH.UI.Ladder.Raids.Desc>愤怒的派系或雇佣兵是否可能找上门。</HH.UI.Ladder.Raids.Desc>
-  <HH.UI.Ladder.No>否</HH.UI.Ladder.No>
-  <HH.UI.Ladder.Yes>是</HH.UI.Ladder.Yes>
-  <HH.UI.Ladder.Footer>更高的档位会解锁更多后果，而不仅仅是提高概率。</HH.UI.Ladder.Footer>
   <HH.UI.Diag.Copy>将诊断复制到剪贴板</HH.UI.Diag.Copy>
   <HH.UI.Diag.Copied>诊断已复制到剪贴板。</HH.UI.Diag.Copied>
   <HH.UI.Diag.PrepareRemoval>准备移除</HH.UI.Diag.PrepareRemoval>

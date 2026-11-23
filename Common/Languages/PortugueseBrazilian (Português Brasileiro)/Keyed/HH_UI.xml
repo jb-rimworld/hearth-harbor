@@ -86,10 +86,8 @@
   <HH.UI.Diff.Intensity>Intensidade de hospedagem {0} %</HH.UI.Diff.Intensity>
   <HH.UI.Diff.ChipTip>{0}: cerca de {1} % de intensidade de hospedagem.</HH.UI.Diff.ChipTip>
   <HH.UI.Diff.Calculator>O que este nível significa para você</HH.UI.Diff.Calculator>
-  <HH.UI.Diff.Ladder>O que pode dar errado</HH.UI.Diff.Ladder>
   <HH.UI.Diff.Special>Chaves especiais</HH.UI.Diff.Special>
   <HH.UI.Diff.ShowAll>Mostrar todos os {0} valores que seguem a dificuldade</HH.UI.Diff.ShowAll>
-  <HH.UI.Diff.WarnHard>A partir de Superlotado, consequências reais são ativadas: multas, perda de licença e coisas piores.</HH.UI.Diff.WarnHard>
   <HH.UI.Diff.WarnEasy>Este nível é muito permissivo. O dinheiro vem fácil e nada dá errado.</HH.UI.Diff.WarnEasy>
   <HH.UI.Diff.WarnBreaks>Isto quebra o equilíbrio do jogo. De propósito?</HH.UI.Diff.WarnBreaks>
   <HH.UI.Calc.StandardIs>Quarto padrão: {0}</HH.UI.Calc.StandardIs>
@@ -100,9 +98,6 @@
   <HH.UI.Feel.1>O dinheiro flui e nada dá errado.</HH.UI.Feel.1>
   <HH.UI.Feel.2>Suave e generoso.</HH.UI.Feel.2>
   <HH.UI.Feel.3>Pequenas perdas são possíveis. O lucro dá trabalho.</HH.UI.Feel.3>
-  <HH.UI.Feel.4>Consequências ligadas: brigas, multas, perda de licença.</HH.UI.Feel.4>
-  <HH.UI.Feel.5>Rixas, contratos, fiscais rigorosos, ataques de vingança.</HH.UI.Feel.5>
-  <HH.UI.Feel.6>Tudo é difícil e nada tem limite.</HH.UI.Feel.6>
   <HH.UI.Calc.guestMoney>Dinheiro dos hóspedes</HH.UI.Calc.guestMoney>
   <HH.UI.Calc.guestMoney.Desc>Multiplica o que os hóspedes carregam e estão dispostos a gastar.</HH.UI.Calc.guestMoney.Desc>
   <HH.UI.Calc.priceTolerance>Tolerância a preço</HH.UI.Calc.priceTolerance>
@@ -131,17 +126,7 @@
   <HH.UI.Stage.5>Licença</HH.UI.Stage.5>
   <HH.UI.Stage.6>Ataques</HH.UI.Stage.6>
   <HH.UI.Stage.7>Recompensa</HH.UI.Stage.7>
-  <HH.UI.Ladder.Goodwill>Perda de boa vontade por estadia ruim (limite)</HH.UI.Ladder.Goodwill>
-  <HH.UI.Ladder.Goodwill.Desc>O máximo de boa vontade que uma facção pode tirar de você por incidente.</HH.UI.Ladder.Goodwill.Desc>
   <HH.UI.Ladder.Renown>Perda de renome por incidente (limite)</HH.UI.Ladder.Renown>
-  <HH.UI.Ladder.Renown.Desc>O máximo que um único incidente pode custar em renome.</HH.UI.Ladder.Renown.Desc>
-  <HH.UI.Ladder.Fine>Multas (limite, em prata)</HH.UI.Ladder.Fine>
-  <HH.UI.Ladder.Fine.Desc>O máximo que uma única inspeção ou incidente pode multar você.</HH.UI.Ladder.Fine.Desc>
-  <HH.UI.Ladder.Raids>Ataques de retaliação</HH.UI.Ladder.Raids>
-  <HH.UI.Ladder.Raids.Desc>Se facções furiosas ou mercenários podem vir atrás de você.</HH.UI.Ladder.Raids.Desc>
-  <HH.UI.Ladder.No>não</HH.UI.Ladder.No>
-  <HH.UI.Ladder.Yes>sim</HH.UI.Ladder.Yes>
-  <HH.UI.Ladder.Footer>Níveis mais altos liberam mais consequências em vez de apenas aumentar as chances.</HH.UI.Ladder.Footer>
   <HH.UI.Diag.Copy>Copiar diagnóstico para a área de transferência</HH.UI.Diag.Copy>
   <HH.UI.Diag.Copied>Diagnóstico copiado para a área de transferência.</HH.UI.Diag.Copied>
   <HH.UI.Diag.PrepareRemoval>Preparar remoção</HH.UI.Diag.PrepareRemoval>

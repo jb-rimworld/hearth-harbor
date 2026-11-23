@@ -86,10 +86,8 @@
   <HH.UI.Diff.Intensity>開催の強度 {0} %</HH.UI.Diff.Intensity>
   <HH.UI.Diff.ChipTip>{0}：開催の強度はおよそ {1} % です。</HH.UI.Diff.ChipTip>
   <HH.UI.Diff.Calculator>この段階があなたにとって何を意味するか</HH.UI.Diff.Calculator>
-  <HH.UI.Diff.Ladder>何が起こりうるか</HH.UI.Diff.Ladder>
   <HH.UI.Diff.Special>特別な切り替え</HH.UI.Diff.Special>
   <HH.UI.Diff.ShowAll>難易度に従う {0} 個の値をすべて表示</HH.UI.Diff.ShowAll>
-  <HH.UI.Diff.WarnHard>「Overbooked」以上では、罰金、営業許可の喪失、さらに悪いことなど、現実的な結果が有効になります。</HH.UI.Diff.WarnHard>
   <HH.UI.Diff.WarnEasy>この段階は非常に寛大です。金はたやすく入り、何もうまくいかなくなることはありません。</HH.UI.Diff.WarnEasy>
   <HH.UI.Diff.WarnBreaks>これはゲームのバランスを壊します。わざとですか？</HH.UI.Diff.WarnBreaks>
   <HH.UI.Calc.StandardIs>標準の部屋：{0}</HH.UI.Calc.StandardIs>
@@ -100,9 +98,6 @@
   <HH.UI.Feel.1>金は流れ、何もうまくいかなくなることはありません。</HH.UI.Feel.1>
   <HH.UI.Feel.2>穏やかで気前のよい運営です。</HH.UI.Feel.2>
   <HH.UI.Feel.3>小さな損失は起こりえます。利益には手間がかかります。</HH.UI.Feel.3>
-  <HH.UI.Feel.4>結果が有効になります：口論、罰金、営業許可の喪失。</HH.UI.Feel.4>
-  <HH.UI.Feel.5>反目、契約、厳格な検査官、報復の襲撃。</HH.UI.Feel.5>
-  <HH.UI.Feel.6>すべてが厳しく、上限はありません。</HH.UI.Feel.6>
   <HH.UI.Calc.guestMoney>宿泊客の金</HH.UI.Calc.guestMoney>
   <HH.UI.Calc.guestMoney.Desc>宿泊客が持っている金と、喜んで使う額を倍率で増減させます。</HH.UI.Calc.guestMoney.Desc>
   <HH.UI.Calc.priceTolerance>価格の許容度</HH.UI.Calc.priceTolerance>
@@ -131,17 +126,7 @@
   <HH.UI.Stage.5>営業許可</HH.UI.Stage.5>
   <HH.UI.Stage.6>襲撃</HH.UI.Stage.6>
   <HH.UI.Stage.7>懸賞金</HH.UI.Stage.7>
-  <HH.UI.Ladder.Goodwill>悪い滞在ごとの好意の損失（上限）</HH.UI.Ladder.Goodwill>
-  <HH.UI.Ladder.Goodwill.Desc>一つの事件につき、一つの派閥があなたから奪える好意の最大値です。</HH.UI.Ladder.Goodwill.Desc>
   <HH.UI.Ladder.Renown>事件ごとの名声の損失（上限）</HH.UI.Ladder.Renown>
-  <HH.UI.Ladder.Renown.Desc>一つの事件であなたが失いうる名声の最大値です。</HH.UI.Ladder.Renown.Desc>
-  <HH.UI.Ladder.Fine>罰金（上限、銀貨）</HH.UI.Ladder.Fine>
-  <HH.UI.Ladder.Fine.Desc>一度の検査や事件であなたに科されうる罰金の最大額です。</HH.UI.Ladder.Fine.Desc>
-  <HH.UI.Ladder.Raids>報復の襲撃</HH.UI.Ladder.Raids>
-  <HH.UI.Ladder.Raids.Desc>怒った派閥や傭兵があなたを追いかけてくるかどうかです。</HH.UI.Ladder.Raids.Desc>
-  <HH.UI.Ladder.No>いいえ</HH.UI.Ladder.No>
-  <HH.UI.Ladder.Yes>はい</HH.UI.Ladder.Yes>
-  <HH.UI.Ladder.Footer>より高い段階では、確率が上がるだけでなく、より多くの結果が解放されます。</HH.UI.Ladder.Footer>
   <HH.UI.Diag.Copy>診断をクリップボードにコピー</HH.UI.Diag.Copy>
   <HH.UI.Diag.Copied>診断をクリップボードにコピーしました。</HH.UI.Diag.Copied>
   <HH.UI.Diag.PrepareRemoval>削除の準備</HH.UI.Diag.PrepareRemoval>

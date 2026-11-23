@@ -555,7 +555,7 @@ namespace Hearth.Shell.Tests
             foreach (var r in TierTable.Rows) { Need("HH.UI.Calc." + r.Id); Need("HH.UI.Calc." + r.Id + ".Desc"); }
             for (int i = 0; i <= 7; i++) Need("HH.UI.Stage." + i);
             for (int i = 0; i <= 6; i++) Need("HH.UI.Feel." + i);
-            foreach (var k in new[] { "Goodwill", "Renown", "Fine", "Raids" }) { Need("HH.UI.Ladder." + k); Need("HH.UI.Ladder." + k + ".Desc"); }
+            foreach (var k in new[] { "Goodwill", "Renown", "Fine" }) { Need("HH.UI.Ladder." + k); Need("HH.UI.Ladder." + k + ".Desc"); }
             foreach (HandlingMode m in Enum.GetValues(typeof(HandlingMode))) { Need("HH.UI.Handling." + m); Need("HH.UI.Handling." + m + ".Tip"); }
             foreach (StayKind k in Enum.GetValues(typeof(StayKind))) Need("HH.UI.Kind." + k);
             foreach (ContentIntensity c in Enum.GetValues(typeof(ContentIntensity))) { Need("HH.UI.Content." + c); Need("HH.UI.Content." + c + ".Tip"); }

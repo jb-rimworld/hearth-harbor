@@ -70,14 +70,12 @@ namespace Hearth.Guests
         public const float PodBudgetFactor = 1.15f;
 
         public const string InfiniteMoneySwitch = "core.infiniteMoney", PickySwitch = "core.picky";
-        public const int InfiniteBudgetSilver = 1_000_000;
         /// <summary>Extra expectation of the special switch core.picky.</summary>
         public const float PickyExpectation = 0.1f;
 
         /// <summary>Budget for the whole stay: b(W) · days^0.85 · random(0.8–1.2) · guest-money setting · origin · trait.</summary>
         public static Money RollBudget(Pawn p, int wealth, float days, bool byPod, RngStream rng)
         {
-            if (CoreSettings.Switch(InfiniteMoneySwitch)) return Money.FromSilver(InfiniteBudgetSilver);   // special switch: a bottomless purse
             float b = DailyBudget(wealth) * Mathf.Pow(Mathf.Max(0.25f, days), 0.85f);
             b *= 0.8f + 0.4f * (float)rng.NextDouble();
             b *= HSettings.Get(InnSettings.GuestMoney);

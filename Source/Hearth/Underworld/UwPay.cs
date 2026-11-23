@@ -16,6 +16,7 @@ namespace Hearth.Underworld
         public static bool Charge(Pawn guest, Money price, string toAccount, string category, string memo, bool ignoreBudget = false)
         {
             if (guest == null || price.Micro <= 0) return price.Micro == 0;
+            GuestApi.EnsureFunds(guest, price);
             if (!ignoreBudget && GuestApi.Budget(guest) < price) return false;
             bool inn = GuestApi.Impl != null && Modules.On(ModuleId.Inn);
             if (!Payments.TryCharge(guest, price, toAccount, memo, out _))

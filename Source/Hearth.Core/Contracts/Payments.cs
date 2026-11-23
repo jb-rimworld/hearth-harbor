@@ -67,6 +67,9 @@ namespace Hearth
             payoutProviders.Sort((a, b) => b.Priority.CompareTo(a.Priority));
         }
 
+        /// <summary>Called at the start of every charge (before the funds are looked at); the special switch core.infiniteMoney tops the payer up here.</summary>
+        public static Action<Pawn, Money> BeforeCharge;
+
         public static string ColonyTill(Map map) => "colony:till:" + (map?.uniqueID ?? 0);
 
         static ModuleId ModuleOf(object provider) => (provider as IModuleScoped)?.Module ?? ModuleId.Core;
@@ -94,6 +97,7 @@ namespace Hearth
             method = PaymentMethod.None;
             if (payer == null || amount.Micro < 0) return false;
             if (amount.Micro == 0) { method = PaymentMethod.Cash; return true; }
+            try { BeforeCharge?.Invoke(payer, amount); } catch (Exception e) { HLog.Once("payments.before", LogLevel.Warn, "Payments", "BeforeCharge failed: " + e.Message); }
             string prevCat = ActiveCategory; ActiveCategory = category ?? prevCat;
             try
             {
