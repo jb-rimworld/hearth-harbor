@@ -26,6 +26,7 @@ namespace Hearth.Casino
             if (comp.Seated >= comp.Props.seats) { failure = "table full"; return null; }
             foreach (var other in c.SessionsAt(comp.parent)) if (other.Kind != kind) { failure = "table is used by " + other.Kind; return null; }
             if (kind != SessionKind.Demo && !pawn.DevelopmentalStage.Adult()) { failure = "children do not gamble"; return null; }
+            if (kind != SessionKind.Demo && !Hearth.Dlc.LuckApi.WillGamble(pawn)) { failure = "gambling-averse"; return null; }
 
             int now = Find.TickManager.TicksGame;
             var s = new GamblerSession { Pawn = pawn, Device = comp.parent, Kind = kind, Spree = spree, StartTick = now, StakeShare = 0.10f };
@@ -83,6 +84,8 @@ namespace Hearth.Casino
                     var h = c?.Houses.Find(x => x.Account == s.HouseAccount); if (h != null) { h.Dirty = true; h.LastActivityTick = Find.TickManager.TicksGame; }
                 }
                 else if (s.Kind == SessionKind.Colonist && s.Pawn != null) Gambling.OnColonistSessionEnd(s);
+                // luck thoughts (11.1): a session counts as one bet, won when it ends above the buy-in
+                if (s.Kind != SessionKind.Demo && s.Pawn != null && s.Rounds > 0 && Modules.On(ModuleId.Casino)) Hearth.Dlc.LuckApi.NoteResult(s.Pawn, s.Net.IsPositive);
             }
             finally { c?.Sessions.Remove(s); }
             HLog.Debug("Casino", $"Session of {s.Pawn?.LabelShort} ended ({reason}): {s.Rounds} rounds, net {s.Net}");
@@ -102,11 +105,58 @@ namespace Hearth.Casino
             return Money.FromSilver(stake);
         }
 
-        static double AccuracyOf(Pawn p)
+        public static double AccuracyOf(Pawn p)
         {
             if (p == null || p.skills == null) return 0.6;
             double cons = p.health?.capacities?.GetLevel(PawnCapacityDefOf.Consciousness) ?? 1.0;
-            return BlackjackSolver.AccuracyFor(p.skills.GetSkill(SkillDefOf.Intellectual).Level, p.skills.GetSkill(SkillDefOf.Social).Level, Math.Min(1.0, cons));
+            // number sense and gamblers (HH_TableSkill) count cards as if that many Intellectual levels better
+            int intel = Math.Min(20, p.skills.GetSkill(SkillDefOf.Intellectual).Level + (int)Math.Round(Hearth.Dlc.DlcApi.TableSkillBonus(p)));
+            return BlackjackSolver.AccuracyFor(intel, p.skills.GetSkill(SkillDefOf.Social).Level, Math.Min(1.0, cons));
+        }
+
+        // Luck (11.1) ----------------------------------------------------------------------------------------------------------
+        /// <summary>Factor on every payout of a house-banked game for this player: Lucky and Unlucky pawns play with a payout plan
+        /// shifted by dlc.luckShift (adjusted RTP / base RTP). The random draw itself is never touched. 1 for demo play and plain pawns.</summary>
+        public static double LuckFactor(GamblerSession s, double baseRtp)
+        {
+            if (s == null || s.Kind == SessionKind.Demo || s.Pawn == null || baseRtp <= 0) return 1.0;
+            double shift = Hearth.Dlc.LuckApi.RtpShiftFor(s.Pawn);
+            if (shift == 0) return 1.0;
+            return DlcMath.LuckRtp(baseRtp, shift) / baseRtp;
+        }
+
+        /// <summary>The payout plan (RTP) this player is dealt at a device: the game's plan with the luck shift (shown in the Pit Boss view).</summary>
+        public static double PlayerRtp(CompCasinoGame comp, Pawn p)
+        {
+            double b = 1 - comp.ExpectedEdge;
+            double shift = p == null ? 0 : Hearth.Dlc.LuckApi.RtpShiftFor(p);
+            return shift == 0 || comp.Game == CasinoGame.Poker ? b : DlcMath.LuckRtp(b, shift);
+        }
+
+        static readonly Dictionary<int, (int tick, float f)> dealSpeed = new Dictionary<int, (int, float)>();
+        static CasinoEngine() { HearthGame.OnGameInit += () => dealSpeed.Clear(); }
+
+        /// <summary>Steady hands and dexterous fingers (HH_Dexterity): a croupier deals faster, 3 % shorter rounds per point (at most 30 %).
+        /// Cached per croupier for 2500 ticks, because the device asks every tick.</summary>
+        public static float DealSpeedFactor(Pawn croupier)
+        {
+            if (croupier == null) return 1f;
+            int now = Find.TickManager.TicksGame;
+            if (dealSpeed.TryGetValue(croupier.thingIDNumber, out var e) && now - e.tick < 2500 && now >= e.tick) return e.f;
+            float dex = Hearth.Dlc.DlcApi.DexterityBonus(croupier);
+            float f = Mathf.Clamp(1f - 0.03f * dex, 0.7f, 1f);
+            dealSpeed[croupier.thingIDNumber] = (now, f);
+            return f;
+        }
+
+        /// <summary>Last luck factor applied to a payout (tests read it).</summary>
+        public static double LastLuckFactor = 1.0;
+
+        static Money Lucky(GamblerSession s, double rawPayoutSilver, double baseRtp, out double factor)
+        {
+            factor = LuckFactor(s, baseRtp);
+            if (s != null && s.Kind != SessionKind.Demo) LastLuckFactor = factor;
+            return Money.FromSilver(Math.Max(0, Math.Round(rawPayoutSilver * factor, 5)));
         }
 
         // Rounds ---------------------------------------------------------------------------------------------------------------
@@ -175,9 +225,9 @@ namespace Hearth.Casino
             if (stake.Micro <= 0) { EndSession(s, "broke"); return; }
             var table = comp.Paytable; var rng = JRand.Sealed("casino.slots");
             double mult = table.Spin(rng, out int a, out int b, out int c);
-            Money payout = Money.FromSilver(Math.Round(stake.Silver * mult, 5));
+            Money payout = Lucky(s, stake.Silver * mult, table.Rtp, out double lf);
             string res = SlotPaytable.SymbolNames[a] + " · " + SlotPaytable.SymbolNames[b] + " · " + SlotPaytable.SymbolNames[c] + (mult > 0 ? "  → ×" + mult.ToString("0.##") : "");
-            Settle(comp, s, stake, payout, stake.Silver * (1 - table.Rtp), Math.Pow(table.Sigma * stake.Silver, 2), res);
+            Settle(comp, s, stake, payout, stake.Silver * (1 - table.Rtp * lf), Math.Pow(table.Sigma * stake.Silver, 2), res);
         }
 
         static void RouletteSpin(CompCasinoGame comp, List<GamblerSession> sessions)
@@ -195,8 +245,8 @@ namespace Hearth.Casino
                 do { bet = RouletteBet.RandomBet(rng, s.Risk); } while (bet.Covers(37) && rules.Zeros == 1 && ++guard < 20);
                 if (bet.Covers(37) && rules.Zeros == 1) bet = RouletteBet.Red();
                 double ret = rules.Return(bet, pocket);
-                Money payout = Money.FromSilver(Math.Round(stake.Silver * ret, 5));
-                Settle(comp, s, stake, payout, stake.Silver * rules.TargetEdge, Math.Pow(rules.Sigma(bet) * stake.Silver, 2), res + " · " + bet.Label);
+                Money payout = Lucky(s, stake.Silver * ret, 1 - rules.TargetEdge, out double lf);
+                Settle(comp, s, stake, payout, stake.Silver * (1 - (1 - rules.TargetEdge) * lf), Math.Pow(rules.Sigma(bet) * stake.Silver, 2), res + " · " + bet.Label);
             }
         }
 
@@ -209,9 +259,9 @@ namespace Hearth.Casino
             double staked = stake.Silver * (round.Doubled ? 2 : 1);
             Money outlay = Money.FromSilver(staked);
             // the stake is returned with the net result: net = stake × Result (a double counts twice)
-            Money payout = Money.FromSilver(Math.Max(0, Math.Round(staked + stake.Silver * round.Result, 5)));
+            Money payout = Lucky(s, Math.Max(0, staked + stake.Silver * round.Result), 1 - solver.HouseEdge, out double lf);
             string res = "you " + round.PlayerTotal + " · dealer " + round.DealerTotal + " (" + round.Outcome + ")";
-            Settle(comp, s, outlay, payout, stake.Silver * solver.HouseEdge, Math.Pow(solver.Sigma * stake.Silver, 2), res, bookStake: stake);
+            Settle(comp, s, outlay, payout, stake.Silver * (1 - (1 - solver.HouseEdge) * lf), Math.Pow(solver.Sigma * stake.Silver, 2), res, bookStake: stake);
         }
 
         static void PokerHand(CompCasinoGame comp, List<GamblerSession> sessions)
@@ -226,7 +276,7 @@ namespace Hearth.Casino
             if (seated.Count == 0 || ante <= 0) return;
             int total = Math.Max(comp.Props.seats, seated.Count);
             var skills = new List<double>();
-            foreach (var x in seated) skills.Add(RimdeckMath.Skill(x.Pawn?.skills?.GetSkill(SkillDefOf.Intellectual).Level ?? 8, x.Pawn?.skills?.GetSkill(SkillDefOf.Social).Level ?? 8));
+            foreach (var x in seated) skills.Add(RimdeckMath.Skill(Math.Min(20, (x.Pawn?.skills?.GetSkill(SkillDefOf.Intellectual).Level ?? 8) + (int)Math.Round(Hearth.Dlc.DlcApi.TableSkillBonus(x.Pawn))), x.Pawn?.skills?.GetSkill(SkillDefOf.Social).Level ?? 8));
             var rng = JRand.Sealed("casino.poker");
             for (int i = seated.Count; i < total; i++) skills.Add(6.0 + 4.0 * rng.NextDouble());    // regulars who fill the table, funded by the house
             var hand = RimdeckMath.Deal(rng, skills, ante, rate, cap);

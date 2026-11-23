@@ -1,43 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_ServiceQuality.label>якість обслуговування</HH_ServiceQuality.label>
-  <HH_ServiceQuality.description>Наскільки приємно мати справу з цією людиною. Додається до задоволеності гостей, з якими вона розмовляє, і враховується магазинами, кухнями та стійкою реєстрації.</HH_ServiceQuality.description>
   <HH_HostingLearn.label>навчання гостинності</HH_HostingLearn.label>
   <HH_HostingLearn.description>Множник соціального досвіду, здобутого під час прийому гостей.</HH_HostingLearn.description>
   <HH_GuestExpectation.label>очікування гостя</HH_GuestExpectation.label>
-  <HH_GuestExpectation.description>Додається до того, чого гість очікує від перебування. Позитивне значення означає, що його важче задовольнити. Шарм і добрі манери знижують його; вишуканий смак підвищує.</HH_GuestExpectation.description>
   <HH_GamblingJoy.label>радість від азартних ігор</HH_GamblingJoy.label>
   <HH_GamblingJoy.description>Множник радості, яку ця людина отримує від азартних ігор.</HH_GamblingJoy.description>
   <HH_GamblingAddiction.label>шанс залежності від азартних ігор</HH_GamblingAddiction.label>
   <HH_GamblingAddiction.description>Множник шансу, що азартні ігри переростуть у залежність. Нуль означає, що ця людина ніколи не втягнеться.</HH_GamblingAddiction.description>
   <HH_Dexterity.label>спритність рук</HH_Dexterity.label>
-  <HH_Dexterity.description>Рівні навичок, що додаються до тонкої роботи руками за столами: роздача, тасування та підміна в домі.</HH_Dexterity.description>
-  <HH_TableSkill.label>навичка рахунку</HH_TableSkill.label>
-  <HH_TableSkill.description>Рівні навичок, що додаються під час роботи крупʼє, касиром або банківським клерком.</HH_TableSkill.description>
-  <HH_FraudDetection.label>виявлення шахрайства</HH_FraudDetection.label>
-  <HH_FraudDetection.description>Множник для помітки підроблених фішок, шахраїв серед гостей і недоплати решти.</HH_FraudDetection.description>
-  <HH_TheftChance.label>крадіжки в їхній кімнаті</HH_TheftChance.label>
-  <HH_TheftChance.description>Множник шансу, що в кімнаті, за якою доглядає ця людина, щось буде вкрадено.</HH_TheftChance.description>
   <HH_BrawlRisk.label>ризик бійок навколо них</HH_BrawlRisk.label>
-  <HH_BrawlRisk.description>Множник шансу, що сварка в кімнаті цієї людини переросте в бійку.</HH_BrawlRisk.description>
   <HH_RumorSpread.label>поширення чуток</HH_RumorSpread.label>
-  <HH_RumorSpread.description>Множник того, наскільки далеко поширюються історії про дім, добрі чи погані.</HH_RumorSpread.description>
-  <HH_CareProgress.label>прогрес догляду</HH_CareProgress.label>
-  <HH_CareProgress.description>Множник прогресу пацієнтів і реабілітації, поки ця людина за ними доглядає.</HH_CareProgress.description>
   <HH_BankFeeFactor.label>банківські збори</HH_BankFeeFactor.label>
-  <HH_BankFeeFactor.description>Множник до зборів, які банк стягує з цієї людини.</HH_BankFeeFactor.description>
-  <HH_Negotiation.label>бонус до перемовин</HH_Negotiation.label>
-  <HH_Negotiation.description>Додається до перемовин щодо страхування та контрактів.</HH_Negotiation.description>
   <HH_RecruitPrice.label>доплата за вербування</HH_RecruitPrice.label>
-  <HH_RecruitPrice.description>Множник до доплати понад мінімальну ціну за лояльність гостя.</HH_RecruitPrice.description>
   <HH_ServeRestFactor.label>втома під час обслуговування</HH_ServeRestFactor.label>
   <HH_ServeRestFactor.description>Множник швидкості, з якою витрачається відпочинок під час обслуговування столиків або роботи за стійкою.</HH_ServeRestFactor.description>
-  <HH_TipFactor.label>чайові</HH_TipFactor.label>
-  <HH_TipFactor.description>Множник до чайових, які ця людина залишає як гість.</HH_TipFactor.description>
   <HH_DishQuality.label>шанс якості страви</HH_DishQuality.label>
-  <HH_DishQuality.description>Шанс підняти якість приготовленої страви на один щабель.</HH_DishQuality.description>
   <HH_FamilyCheer.label>піднесений настрій сім'ї</HH_FamilyCheer.label>
-  <HH_FamilyCheer.description>Додається до задоволення сімей і дітей, які перебувають на піклуванні цієї людини.</HH_FamilyCheer.description>
   <HH_PriceFeel.label>відчуття ціни</HH_PriceFeel.label>
-  <HH_PriceFeel.description>Додається до того, наскільки дорогими гості вважають ціни цієї людини.</HH_PriceFeel.description>
 </LanguageData>

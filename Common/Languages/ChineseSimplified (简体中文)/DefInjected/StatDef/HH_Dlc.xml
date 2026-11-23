@@ -1,43 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_ServiceQuality.label>服务品质</HH_ServiceQuality.label>
-  <HH_ServiceQuality.description>此人服务起来有多令人愉快。加到他们所交谈的客人的满意度上，并被商店、厨房和前台读取。</HH_ServiceQuality.description>
   <HH_HostingLearn.label>待客学习</HH_HostingLearn.label>
   <HH_HostingLearn.description>招待客人时获得的社交经验倍率。</HH_HostingLearn.description>
   <HH_GuestExpectation.label>客人期望</HH_GuestExpectation.label>
-  <HH_GuestExpectation.description>加到客人对住宿的期望上。正值意味着更难取悦。魅力和好教养会降低它；精致味觉会提高它。</HH_GuestExpectation.description>
   <HH_GamblingJoy.label>赌博乐趣</HH_GamblingJoy.label>
   <HH_GamblingJoy.description>此人从赌博中获得的乐趣倍率。</HH_GamblingJoy.description>
   <HH_GamblingAddiction.label>赌博成瘾几率</HH_GamblingAddiction.label>
   <HH_GamblingAddiction.description>赌博变成成瘾的几率倍率。为零则此人永远不会上瘾。</HH_GamblingAddiction.description>
   <HH_Dexterity.label>妙手</HH_Dexterity.label>
-  <HH_Dexterity.description>在牌桌上的精细手活（发牌、洗牌、作弊）中额外增加的技能等级。</HH_Dexterity.description>
-  <HH_TableSkill.label>计数技能</HH_TableSkill.label>
-  <HH_TableSkill.description>担任庄家、收银员或银行职员时额外增加的技能等级。</HH_TableSkill.description>
-  <HH_FraudDetection.label>识破欺诈</HH_FraudDetection.label>
-  <HH_FraudDetection.description>识别假筹码、作弊客人和找错钱时的倍率。</HH_FraudDetection.description>
-  <HH_TheftChance.label>其房间内的盗窃</HH_TheftChance.label>
-  <HH_TheftChance.description>此人照看的房间里发生失窃的几率倍率。</HH_TheftChance.description>
   <HH_BrawlRisk.label>其周围的斗殴风险</HH_BrawlRisk.label>
-  <HH_BrawlRisk.description>此人所在房间中口角演变为打斗的几率倍率。</HH_BrawlRisk.description>
   <HH_RumorSpread.label>流言传播</HH_RumorSpread.label>
-  <HH_RumorSpread.description>关于本宅的故事传播距离的倍率，无论好坏。</HH_RumorSpread.description>
-  <HH_CareProgress.label>照护进度</HH_CareProgress.label>
-  <HH_CareProgress.description>此人照料病患或康复者时，病患进度的倍率。</HH_CareProgress.description>
   <HH_BankFeeFactor.label>银行手续费</HH_BankFeeFactor.label>
-  <HH_BankFeeFactor.description>此人需要支付的银行手续费倍率。</HH_BankFeeFactor.description>
-  <HH_Negotiation.label>谈判加成</HH_Negotiation.label>
-  <HH_Negotiation.description>加入保险与合同谈判的结果中。</HH_Negotiation.description>
   <HH_RecruitPrice.label>招募附加费</HH_RecruitPrice.label>
-  <HH_RecruitPrice.description>购买宾客忠诚时，超出底价部分的附加费倍率。</HH_RecruitPrice.description>
   <HH_ServeRestFactor.label>服务时的疲劳</HH_ServeRestFactor.label>
   <HH_ServeRestFactor.description>在端菜或柜台服务时，休息值消耗速度的倍率。</HH_ServeRestFactor.description>
-  <HH_TipFactor.label>小费</HH_TipFactor.label>
-  <HH_TipFactor.description>此人作为宾客时留下的小费倍率。</HH_TipFactor.description>
   <HH_DishQuality.label>菜品品质提升几率</HH_DishQuality.label>
-  <HH_DishQuality.description>将烹制菜品的品质提升一级的几率。</HH_DishQuality.description>
   <HH_FamilyCheer.label>家庭欢愉</HH_FamilyCheer.label>
-  <HH_FamilyCheer.description>加在此人照看的家庭与儿童满意度上的数值。</HH_FamilyCheer.description>
   <HH_PriceFeel.label>价格观感</HH_PriceFeel.label>
-  <HH_PriceFeel.description>加在宾客觉得此人定价有多贵的判断上的数值。</HH_PriceFeel.description>
 </LanguageData>

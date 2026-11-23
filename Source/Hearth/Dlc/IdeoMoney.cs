@@ -257,6 +257,9 @@ namespace Hearth.Dlc
         {
             if (ticksGame % 2500 == 7) Guard.Run(ModuleId.CityLife, "Dlc.Maintain", () => Maintain());
             Guard.Run(ModuleId.Inn, "Dlc.Nobles", () => NobleStays.Tick(this, ticksGame));
+            // xenotype hospitality (11.5): every 6 hours guests feel whether their room suits their kind
+            if (ticksGame % XenotypeHospitality.NudgeInterval == 7)
+                Guard.Run(ModuleId.Inn, "Dlc.XenoNudge", () => { foreach (var m in Find.Maps) if (m.IsPlayerHome) XenotypeHospitality.NudgeGuests(m); });
         }
 
         // ---- ranks

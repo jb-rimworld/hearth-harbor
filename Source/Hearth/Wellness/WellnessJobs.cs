@@ -204,7 +204,7 @@ namespace Hearth.Wellness
                 if (progress >= need)
                 {
                     float skill = ((pawn.skills?.GetSkill(SkillDefOf.Social)?.Level ?? 5) + (pawn.skills?.GetSkill(SkillDefOf.Medicine)?.Level ?? 5)) / 40f;
-                    float quality = Mathf.Lerp(0.7f, 1.3f, Mathf.Clamp01(skill));
+                    float quality = Mathf.Lerp(0.7f, 1.3f, Mathf.Clamp01(skill)) * Mathf.Clamp(Hearth.Dlc.DlcApi.CareProgressFactor(pawn), 0.5f, 1.5f);   // caregiver x1.15
                     WellnessEffects.Complete(client, WellnessKind.Massage, Table, quality);
                     c.sessionDone = true; c.sessionActive = false;
                     ReadyForNextToil();

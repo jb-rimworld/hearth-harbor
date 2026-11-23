@@ -43,4 +43,7 @@
   <HH.Setting.dlc.traitSpawn.Desc>Glückspilz, Pechvogel, Geborener Gastgeber und die anderen Eigenschaften von Hearth &amp; Harbor können bei neu erzeugten Personen auftauchen. Bestehende Personen behalten ihre. Aus: nur per Hand oder Editor hinzufügbar.</HH.Setting.dlc.traitSpawn.Desc>
   <HH.Setting.dlc.traitRarity>Häufigkeit der Eigenschaften</HH.Setting.dlc.traitRarity>
   <HH.Setting.dlc.traitRarity.Desc>Multiplikator dafür, wie oft unsere Eigenschaften für neue Personen gewürfelt werden (1 = so selten wie die meisten Vanilla-Eigenschaften).</HH.Setting.dlc.traitRarity.Desc>
+  <HH.Dlc.Noble.NoBed>Kein Bett, das eines Gastes würdig ist</HH.Dlc.Noble.NoBed>
+  <HH.Dlc.Noble.RoomFits>Das Zimmer ist meines Titels würdig</HH.Dlc.Noble.RoomFits>
+  <HH.Dlc.Noble.RoomBeneath>Das Zimmer ist unter meiner Würde</HH.Dlc.Noble.RoomBeneath>
 </LanguageData>

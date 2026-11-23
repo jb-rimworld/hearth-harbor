@@ -7,7 +7,7 @@
     <conflictingTraits><li>HH_Unlucky</li></conflictingTraits>
     <degreeDatas><li>
       <label>lucky</label>
-      <description>{PAWN_nameDef} has a knack for landing on the right side of a coin. At the casino {PAWN_pronoun} is dealt a slightly kinder payout plan. Every tenth lottery ticket is free.</description>
+      <description>{PAWN_nameDef} has a knack for landing on the right side of a coin. At the casino's house games {PAWN_pronoun} plays with a slightly kinder payout plan, and two winning sessions in a row are enough for a lucky streak. While {PAWN_pronoun} lives in the colony, every tenth lottery ticket the colony buys is free.</description>
       <statOffsets><HH_ServiceQuality>0.02</HH_ServiceQuality></statOffsets>
     </li></degreeDatas>
   </TraitDef>
@@ -17,7 +17,7 @@
     <conflictingTraits><li>HH_Lucky</li></conflictingTraits>
     <degreeDatas><li>
       <label>unlucky</label>
-      <description>{PAWN_nameDef} drops toast butter-side down and chases losses a little too hard. Payouts at the casino run slightly worse for {PAWN_objective}.</description>
+      <description>{PAWN_nameDef} drops toast butter-side down. At the casino's house games the payout plan runs slightly worse for {PAWN_objective}, and every lost session stings.</description>
     </li></degreeDatas>
   </TraitDef>
   <TraitDef>
@@ -26,8 +26,8 @@
     <conflictingTraits><li>HH_Gambler</li></conflictingTraits>
     <degreeDatas><li>
       <label>gambling-averse</label>
-      <description>{PAWN_nameDef} refuses to gamble and is uneasy in rooms where others do. In return {PAWN_pronoun} is a sharp-eyed cashier who notices forged chips.</description>
-      <statFactors><HH_GamblingAddiction>0</HH_GamblingAddiction><HH_GamblingJoy>0</HH_GamblingJoy><HH_FraudDetection>1.2</HH_FraudDetection></statFactors>
+      <description>{PAWN_nameDef} refuses to gamble, never gets hooked, and is uneasy in rooms where the house takes bets.</description>
+      <statFactors><HH_GamblingAddiction>0</HH_GamblingAddiction><HH_GamblingJoy>0</HH_GamblingJoy></statFactors>
       <disallowedThoughts><li>HH_LuckyStreak</li></disallowedThoughts>
     </li></degreeDatas>
   </TraitDef>
@@ -37,7 +37,7 @@
     <conflictingTraits><li>HH_GamblingAverse</li></conflictingTraits>
     <degreeDatas><li>
       <label>gambler</label>
-      <description>{PAWN_nameDef} loves the table: the spin, the shuffle, the pause before the card turns. Gambling is more fun, and more dangerous, for {PAWN_objective}. Makes a lively croupier.</description>
+      <description>{PAWN_nameDef} loves the table: the spin, the shuffle, the pause before the card turns. Gambling is more fun, and more dangerous, for {PAWN_objective}. As a guest {PAWN_pronoun} brings a bigger bankroll and bets bigger, and at blackjack and poker {PAWN_pronoun} plays a little sharper.</description>
       <statFactors><HH_GamblingAddiction>1.5</HH_GamblingAddiction><HH_GamblingJoy>1.5</HH_GamblingJoy></statFactors>
       <statOffsets><HH_TableSkill>1</HH_TableSkill></statOffsets>
     </li></degreeDatas>
@@ -60,19 +60,18 @@
     <conflictingTraits><li>HH_BornHost</li><li>HH_SilverTongue</li></conflictingTraits>
     <degreeDatas><li>
       <label>grump</label>
-      <description>{PAWN_nameDef} runs the front desk like a customs post. Guests complain, but nothing ever goes missing from {PAWN_possessive} rooms.</description>
+      <description>{PAWN_nameDef} runs the front desk like a customs post. Guests {PAWN_pronoun} chats with come away a little less happy.</description>
       <statOffsets><HH_ServiceQuality>-0.2</HH_ServiceQuality><SocialImpact>-0.1</SocialImpact></statOffsets>
-      <statFactors><HH_TheftChance>0.5</HH_TheftChance></statFactors>
-    </li></degreeDatas>
+          </li></degreeDatas>
   </TraitDef>
   <TraitDef>
     <defName>HH_PennyPincher</defName>
     <commonality>0.2</commonality>
     <degreeDatas><li>
       <label>penny-pincher</label>
-      <description>{PAWN_nameDef} reads every line of every contract, twice. Pays lower bank fees and spots pre-ticked extras. Guests find {PAWN_possessive} prices a little steep.</description>
+      <description>{PAWN_nameDef} reads every line of every contract, twice. While {PAWN_pronoun} lives in the colony, the bank charges 20 % lower fees. Guests find the prices a little steep when {PAWN_pronoun} serves them.</description>
       <statFactors><HH_BankFeeFactor>0.8</HH_BankFeeFactor></statFactors>
-      <statOffsets><HH_Negotiation>0.1</HH_Negotiation><HH_PriceFeel>0.1</HH_PriceFeel></statOffsets>
+      <statOffsets><HH_PriceFeel>0.1</HH_PriceFeel></statOffsets>
     </li></degreeDatas>
   </TraitDef>
   <TraitDef>
@@ -81,7 +80,7 @@
     <conflictingTraits><li>HH_Grump</li></conflictingTraits>
     <degreeDatas><li>
       <label>silver tongue</label>
-      <description>{PAWN_nameDef} could talk a river into a different bed. Guests expect a little less when {PAWN_pronoun} is around, and buying a guest's loyalty comes cheaper.</description>
+      <description>{PAWN_nameDef} could talk a river into a different bed. Guests expect a little less after {PAWN_pronoun} welcomes them at the front desk or shows them around, and a guest who joins the colony costs less goodwill when {PAWN_pronoun} is the one who won them over.</description>
       <statOffsets><HH_GuestExpectation>-0.03</HH_GuestExpectation><NegotiationAbility>0.1</NegotiationAbility><TradePriceImprovement>0.02</TradePriceImprovement></statOffsets>
       <statFactors><HH_RecruitPrice>0.9</HH_RecruitPrice></statFactors>
     </li></degreeDatas>
@@ -91,7 +90,7 @@
     <commonality>0.2</commonality>
     <degreeDatas><li>
       <label>eagle eye</label>
-      <description>{PAWN_nameDef} sees the palmed card, the swapped chip and the guest who pockets the spoon.</description>
+      <description>{PAWN_nameDef} notices who wanders where they should not. While {PAWN_pronoun} is on the map, respectable guests stumble on the back room less often.</description>
       <statFactors><HH_FraudDetection>1.5</HH_FraudDetection></statFactors>
     </li></degreeDatas>
   </TraitDef>
@@ -100,7 +99,7 @@
     <commonality>0.2</commonality>
     <degreeDatas><li>
       <label>steady hands</label>
-      <description>{PAWN_nameDef}'s fingers do not shake: a dealer's dream, and a house cheater's.</description>
+      <description>{PAWN_nameDef}'s fingers do not shake. As a croupier {PAWN_pronoun} deals noticeably faster.</description>
       <statOffsets><HH_Dexterity>4</HH_Dexterity></statOffsets>
     </li></degreeDatas>
   </TraitDef>
@@ -109,7 +108,7 @@
     <commonality>0.2</commonality>
     <degreeDatas><li>
       <label>caregiver</label>
-      <description>{PAWN_nameDef} sits with the sick, reads to the children and notices who is not eating. Patients and families in {PAWN_possessive} care do better.</description>
+      <description>{PAWN_nameDef} sits with the sick and notices who is not eating. Massages {PAWN_pronoun} gives do more good, and children and families {PAWN_pronoun} welcomes or shows around are a little happier.</description>
       <statFactors><HH_CareProgress>1.15</HH_CareProgress></statFactors>
       <statOffsets><HH_FamilyCheer>0.05</HH_FamilyCheer></statOffsets>
     </li></degreeDatas>
@@ -119,7 +118,7 @@
     <commonality>0.2</commonality>
     <degreeDatas><li>
       <label>peacemaker</label>
-      <description>{PAWN_nameDef} steps between raised voices and turns them down again. Fights in {PAWN_possessive} room are rarer and end sooner.</description>
+      <description>{PAWN_nameDef} steps between raised voices and turns them down again. Quarrels in the same room as {PAWN_objective} turn into fistfights less often.</description>
       <statFactors><HH_BrawlRisk>0.6</HH_BrawlRisk></statFactors>
     </li></degreeDatas>
   </TraitDef>
@@ -128,7 +127,7 @@
     <commonality>0.2</commonality>
     <degreeDatas><li>
       <label>gossip</label>
-      <description>{PAWN_nameDef} cannot keep a story to {PAWN_objective}self. What guests do, good or bad, travels further.</description>
+      <description>{PAWN_nameDef} cannot keep a story to {PAWN_objective}self. When guests leave, what they tell others moves the house's renown further, good or bad.</description>
       <statFactors><HH_RumorSpread>1.5</HH_RumorSpread></statFactors>
     </li></degreeDatas>
   </TraitDef>
@@ -137,7 +136,7 @@
     <commonality>0.15</commonality>
     <degreeDatas><li>
       <label>kid magnet</label>
-      <description>Children follow {PAWN_nameDef} around like ducklings. Families are happier, and the play room is in good hands.</description>
+      <description>Children follow {PAWN_nameDef} around like ducklings. Children and families {PAWN_pronoun} welcomes or shows around are happier.</description>
       <statOffsets><HH_FamilyCheer>0.1</HH_FamilyCheer></statOffsets>
     </li></degreeDatas>
   </TraitDef>

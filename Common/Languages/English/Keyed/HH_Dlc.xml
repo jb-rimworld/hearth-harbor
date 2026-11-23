@@ -44,4 +44,7 @@
   <HH.Setting.dlc.traitSpawn.Desc>Lucky, Unlucky, Born host and the other Hearth &amp; Harbor traits can show up on newly generated pawns. Existing pawns keep theirs. Off: only added by hand or editor.</HH.Setting.dlc.traitSpawn.Desc>
   <HH.Setting.dlc.traitRarity>Trait frequency</HH.Setting.dlc.traitRarity>
   <HH.Setting.dlc.traitRarity.Desc>Multiplier on how often our traits are rolled for new pawns (1 = same rarity as most vanilla traits).</HH.Setting.dlc.traitRarity.Desc>
+  <HH.Dlc.Noble.NoBed>No bed worthy of a guest</HH.Dlc.Noble.NoBed>
+  <HH.Dlc.Noble.RoomFits>Room befits my title</HH.Dlc.Noble.RoomFits>
+  <HH.Dlc.Noble.RoomBeneath>Room beneath my title</HH.Dlc.Noble.RoomBeneath>
 </LanguageData>

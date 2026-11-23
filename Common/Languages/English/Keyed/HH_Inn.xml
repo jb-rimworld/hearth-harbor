@@ -60,6 +60,8 @@
   <HH.Inn.Event.Declined>Thought about staying for good, then went home.</HH.Inn.Event.Declined>
   <HH.Inn.Event.Died>Died during the stay.</HH.Inn.Event.Died>
   <HH.Inn.Event.FreeNight>Stays the night for free.</HH.Inn.Event.FreeNight>
+  <HH.Inn.Event.SponsoredBed>The bed is booked and paid for by the party.</HH.Inn.Event.SponsoredBed>
+  <HH.Inn.Event.Charmed>{0} made the place sound better than expected.</HH.Inn.Event.Charmed>
   <HH.Inn.Event.Gift>Left a gift: {0}.</HH.Inn.Event.Gift>
   <HH.Inn.Event.GotRoom>Took a bed in a {0} for {1} silver a night.</HH.Inn.Event.GotRoom>
   <HH.Inn.Event.HonestyBox>Checked in at the honesty box; nobody was on duty.</HH.Inn.Event.HonestyBox>

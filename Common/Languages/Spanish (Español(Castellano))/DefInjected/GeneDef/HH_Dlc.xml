@@ -7,15 +7,10 @@
   <HH_Gene_Compulsive.label>compulsivo</HH_Gene_Compulsive.label>
   <HH_Gene_Compulsive.description>Un circuito de recompensa hiperactivo. Apostar resulta algo más divertido y mucho más difícil de dejar.</HH_Gene_Compulsive.description>
   <HH_Gene_DexterousFingers.label>dedos diestros</HH_Gene_DexterousFingers.label>
-  <HH_Gene_DexterousFingers.description>Un control de las manos inusualmente fino: barajar, repartir y hacer juegos de manos les sale de forma natural.</HH_Gene_DexterousFingers.description>
   <HH_Gene_RefinedPalate.label>paladar refinado</HH_Gene_RefinedPalate.label>
-  <HH_Gene_RefinedPalate.description>Una lengua que distingue la buena cocina de lo simplemente comestible. Los cocineros mejoran la calidad de los platos con más frecuencia; como huéspedes, el portador espera más y da más propina.</HH_Gene_RefinedPalate.description>
   <HH_Gene_NumberSense.label>sentido numérico</HH_Gene_NumberSense.label>
-  <HH_Gene_NumberSense.description>Los números se ordenan solos. Crupieres, cajeros y empleados de banca con este gen trabajan como si tuvieran tres niveles de habilidad más.</HH_Gene_NumberSense.description>
   <HH_Gene_TirelessSmile.label>sonrisa incansable</HH_Gene_TirelessSmile.label>
   <HH_Gene_TirelessSmile.description>Los músculos de la sonrisa no se cansan. Atender en mesas y mostradores agota el descanso mucho más despacio.</HH_Gene_TirelessSmile.description>
   <HH_Gene_SilverTongue.label>lengua de plata</HH_Gene_SilverTongue.label>
-  <HH_Gene_SilverTongue.description>Una voz que hace que cualquier precio suene a ganga. Los huéspedes esperan un poco menos y la lealtad sale más barata.</HH_Gene_SilverTongue.description>
   <HH_Gene_HighRoller.label>jugador de altas apuestas</HH_Gene_HighRoller.label>
-  <HH_Gene_HighRoller.description>Los portadores se sienten más vivos cuando hay mucho en juego. Apuestan más fuerte, lo disfrutan más y dan propinas generosas, pero cuesta mucho apartarlos de la mesa.</HH_Gene_HighRoller.description>
 </LanguageData>

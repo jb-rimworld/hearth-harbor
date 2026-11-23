@@ -74,6 +74,34 @@ namespace Silverline
         public static int MaxCollectionStage => HSettings.GetInt("bank.maxCollectionStage");
         public static bool ResearchOff => CoreSettings.ResearchOff || HSettings.GetInt("bank.researchMode") == (int)BankResearchMode.Off;
         public static double AccountBeta => HSettings.Get("bank.accountBeta");
-        public static double FeeFactor => HSettings.Get("bank.feeFactor");
+        /// <summary>The bank's fee multiplier: the setting times the colony's fee factor (a penny-pinching colonist reads every contract: x0.8).</summary>
+        public static double FeeFactor => HSettings.Get("bank.feeFactor") * ColonistFeeFactor;
+
+        static int feeTick = -99999; static double feeCached = 1.0;
+        /// <summary>Lowest HH_BankFeeFactor stat among the free colonists (1 without such a pawn or without the stat def). Cached for 2500 ticks.</summary>
+        public static double ColonistFeeFactor
+        {
+            get
+            {
+                if (Current.Game == null || Find.TickManager == null) return 1.0;
+#if HH_TESTS
+                if (!ColonistFeeInTests) return 1.0;   // a random penny-pincher among the starting colonists must not move the bank suites' fee checks
+#endif
+                int now = Find.TickManager.TicksGame;
+                if (now >= feeTick && now - feeTick < 2500) return feeCached;
+                feeTick = now; feeCached = 1.0;
+                var stat = DefDatabase<RimWorld.StatDef>.GetNamedSilentFail("HH_BankFeeFactor");
+                if (stat != null)
+                    foreach (var p in RimWorld.PawnsFinder.AllMaps_FreeColonists)
+                        if (p.RaceProps.Humanlike && !p.Dead) { double v = RimWorld.StatExtension.GetStatValue(p, stat); if (v < feeCached) feeCached = System.Math.Max(0.1, v); }
+                return feeCached;
+            }
+        }
+#if HH_TESTS
+        /// <summary>Tests: the colonists' fee factor is only read while a suite switches this on (dlc.wiring).</summary>
+        public static bool ColonistFeeInTests;
+#endif
+        /// <summary>Tests: forget the cached colony fee factor.</summary>
+        public static void ResetFeeCache() => feeTick = -99999;
     }
 }

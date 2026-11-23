@@ -17,7 +17,7 @@ namespace Hearth.Dlc
         {
             { "HH_Lucky", ModuleId.Casino }, { "HH_Unlucky", ModuleId.Casino }, { "HH_GamblingAverse", ModuleId.Casino }, { "HH_Gambler", ModuleId.Casino },
             { "HH_PennyPincher", ModuleId.Bank },
-            { "HH_BornHost", ModuleId.Inn }, { "HH_Grump", ModuleId.Inn }, { "HH_SilverTongue", ModuleId.Inn }, { "HH_EagleEye", ModuleId.Inn }, { "HH_SteadyHands", ModuleId.Inn },
+            { "HH_BornHost", ModuleId.Inn }, { "HH_Grump", ModuleId.Inn }, { "HH_SilverTongue", ModuleId.Inn }, { "HH_EagleEye", ModuleId.Underworld }, { "HH_SteadyHands", ModuleId.Casino },
             { "HH_Caregiver", ModuleId.Inn }, { "HH_Peacemaker", ModuleId.Inn }, { "HH_Gossip", ModuleId.Inn }, { "HH_KidMagnet", ModuleId.Inn },
         };
         static void Postfix(TraitDef __instance, ref float __result)
@@ -85,6 +85,32 @@ namespace Hearth.Dlc
             if (last.TryGetValue(recipient.thingIDNumber, out int t) && now - t < Cooldown) return;
             last[recipient.thingIDNumber] = now;
             GuestApi.AddSatisfaction(recipient, q * 0.2f, q > 0 ? "Pleasant host" : "Surly host");
+        }
+    }
+
+    /// <summary>Peacemaker (HH_BrawlRisk x0.6): a quarrel in the same room as a peacemaker turns into a fistfight less often. The lowest factor of the
+    /// colonists within 12 cells in the same room counts. Social fight chances are asked only after an insult, so this is cheap.</summary>
+    [HarmonyPatch(typeof(Pawn_InteractionsTracker), nameof(Pawn_InteractionsTracker.SocialFightChance))]
+    public static class Patch_PeacemakerFight
+    {
+        static readonly AccessTools.FieldRef<Pawn_InteractionsTracker, Pawn> PawnRef = AccessTools.FieldRefAccess<Pawn_InteractionsTracker, Pawn>("pawn");
+        static void Postfix(Pawn_InteractionsTracker __instance, ref float __result)
+        {
+            if (__result <= 0f || !Modules.On(ModuleId.Inn)) return;
+            var p = PawnRef(__instance); var map = p?.Map; if (map == null) return;
+            __result *= PeaceFactorAround(p);
+        }
+
+        public static float PeaceFactorAround(Pawn p)
+        {
+            var map = p?.Map; if (map == null) return 1f;
+            var room = p.GetRoom(); float f = 1f;
+            foreach (var c in map.mapPawns.FreeColonistsSpawned)
+            {
+                if (c.Dead || c.Downed || c.InMentalState || c.Position.DistanceToSquared(p.Position) > 144 || c.GetRoom() != room) continue;
+                float v = DlcApi.BrawlRiskFactor(c); if (v < f) f = v;
+            }
+            return f;
         }
     }
 }

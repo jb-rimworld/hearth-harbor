@@ -51,17 +51,27 @@ namespace Hearth.Dlc
             return true;
         }
 
+        /// <summary>Beds the player marked as guest beds (N08: colonists' own bedrooms never count).</summary>
         public static IEnumerable<Building_Bed> GuestBeds(Map map)
         {
-            foreach (var b in map.listerBuildings.AllBuildingsColonistOfClass<Building_Bed>())
-                if (b.def.building != null && b.def.building.bed_humanlike && !b.Medical && !b.ForPrisoners) yield return b;
+            if (map == null) yield break;
+            foreach (var b in Hearth.Guests.GuestBeds.On(map))
+                if (b != null && b.Spawned && b.def.building != null && b.def.building.bed_humanlike && !b.Medical && !b.ForPrisoners) yield return b;
+        }
+
+        public static bool BedFits(Building_Bed b, RoyalTitleDef t, Pawn noble = null)
+        {
+            var room = b?.GetRoom(); return room != null && !room.PsychologicallyOutdoors && RoomMeets(room, t, noble);
         }
 
         public static bool HasSuitableBedroom(Map map, RoyalTitleDef t)
         {
-            foreach (var b in GuestBeds(map)) { var room = b.GetRoom(); if (room != null && !room.PsychologicallyOutdoors && RoomMeets(room, t)) return true; }
+            foreach (var b in GuestBeds(map)) if (BedFits(b, t)) return true;
             return false;
         }
+
+        /// <summary>N08: nobles only ever come to a colony that has set itself up for guests (at least one guest bed).</summary>
+        public static bool GuestSetup(Map map) => map != null && Modules.On(ModuleId.Inn) && Hearth.Guests.GuestRegistry.Instance != null && Hearth.Guests.GuestBeds.CountOn(map) > 0;
 
         /// <summary>"Suitable up to: Baron" for the bed button: highest Empire title whose bedroom requirements this room meets, or null.</summary>
         public static RoyalTitleDef MaxTitleServedBy(Room room)
@@ -102,8 +112,11 @@ namespace Hearth.Dlc
     public sealed class NobleStay : IExposable
     {
         public int Id, MapId, ArriveTick, LeaveTick, Seniority, Nobles; public bool Forced, Settled; public string Title; public List<Pawn> Pawns = new List<Pawn>();
+        /// <summary>Last average satisfaction of the nobles while they were registered guests (kept for the settlement after they left).</summary>
+        public float LastSatisfaction;
         public void ExposeData()
         {
+            Scribe_Values.Look(ref LastSatisfaction, "sat");
             Scribe_Values.Look(ref Id, "id"); Scribe_Values.Look(ref MapId, "map"); Scribe_Values.Look(ref ArriveTick, "arr"); Scribe_Values.Look(ref LeaveTick, "leave");
             Scribe_Values.Look(ref Seniority, "sen"); Scribe_Values.Look(ref Nobles, "n"); Scribe_Values.Look(ref Forced, "forced"); Scribe_Values.Look(ref Settled, "settled");
             Scribe_Values.Look(ref Title, "title"); Scribe_Collections.Look(ref Pawns, "pawns", LookMode.Reference);
@@ -142,6 +155,7 @@ namespace Hearth.Dlc
             if (Busy) { why = "a noble party is already pending or staying"; return null; }
             if (!forced && !HSettings.GetBool("dlc.nobleStays")) { why = "noble stays are switched off"; return null; }
             if (forced && !BilletingAllowed) { why = "billeting only on hard tiers or with mandatory hospitality"; return null; }
+            if (!NobleDemands.GuestSetup(map)) { why = "no guest beds (nobles only come to a colony that takes guests)"; return null; }
             var title = NobleDemands.PickTitle(map, needRoom: !forced, out why); if (title == null) return null;
             int now = Find.TickManager.TicksGame;
             var o = new NobleOffer
@@ -198,7 +212,8 @@ namespace Hearth.Dlc
             return map == null ? null : StartStay(map, o);
         }
 
-        /// <summary>Generates the noble party, walks it in as a visiting group and records the stay. Public so tests can drive it.</summary>
+        /// <summary>Generates the noble party, brings it in as an Inn guest group (real guest files, booked guest beds) and records the stay.
+        /// Public so tests can drive it.</summary>
         public static NobleStay StartStay(Map map, NobleOffer o)
         {
             var e = Faction.OfEmpire; var title = DefDatabase<RoyalTitleDef>.GetNamedSilentFail(o.Title);
@@ -209,18 +224,39 @@ namespace Hearth.Dlc
             var guardKind = DefDatabase<PawnKindDef>.GetNamedSilentFail("Empire_Fighter_Trooper");
             for (int i = 0; i < o.Guards && guardKind != null; i++) pawns.Add(PawnGenerator.GeneratePawn(new PawnGenerationRequest(guardKind, e, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: true)));
             if (pawns.Count == 0) return null;
-            if (!CellFinder.TryFindRandomEdgeCellWith(c => c.Standable(map) && map.reachability.CanReachColony(c), map, CellFinder.EdgeRoadChance_Neutral, out IntVec3 edge)) edge = CellFinder.RandomEdgeCell(map);
-            foreach (var p in pawns) GenSpawn.Spawn(p, CellFinder.RandomClosewalkCellNear(edge, map, 4), map);
-            IntVec3 spot = map.Center;
-            if (!RCellFinder.TryFindRandomSpotJustOutsideColony(pawns[0], out spot)) spot = map.Center;
             int now = Find.TickManager.TicksGame;
-            LordMaker.MakeNewLord(e, new LordJob_VisitColony(e, spot, o.Days * 60000), map, pawns);
+            if (Modules.On(ModuleId.Inn) && Hearth.Guests.GuestRegistry.Instance != null)
+            {
+                // registered Inn guests (5.4): guest files, the Inn's lord job, check-in, and the title-fitting guest bed from SponsoredBedFor
+                var req = new Hearth.Guests.GuestArrivalRequest
+                {
+                    Faction = e, Prepared = pawns, Size = pawns.Count, Kind = StayKind.Overnight, Nights = o.Days,
+                    StayTicksOverride = o.Days * 60000, IgnoreDoorPolicy = true, Silent = true, ForceShady = false,
+                };
+                var group = Hearth.Guests.GuestArrival.Arrive(map, req);
+                if (group == null)
+                {
+                    foreach (var p in pawns) if (!p.Spawned && !p.Destroyed && !Find.WorldPawns.Contains(p)) Find.WorldPawns.PassToWorld(p, RimWorld.Planet.PawnDiscardDecideMode.Discard);
+                    HLog.Warn("Dlc", "Noble party could not arrive as guests on " + map);
+                    return null;
+                }
+            }
+            else
+            {
+                // Inn module off (dev tools only: the incidents need it): a plain vanilla visit
+                if (!CellFinder.TryFindRandomEdgeCellWith(c => c.Standable(map) && map.reachability.CanReachColony(c), map, CellFinder.EdgeRoadChance_Neutral, out IntVec3 edge)) edge = CellFinder.RandomEdgeCell(map);
+                foreach (var p in pawns) GenSpawn.Spawn(p, CellFinder.RandomClosewalkCellNear(edge, map, 4), map);
+                IntVec3 spot = map.Center;
+                if (!RCellFinder.TryFindRandomSpotJustOutsideColony(pawns[0], out spot)) spot = map.Center;
+                LordMaker.MakeNewLord(e, new LordJob_VisitColony(e, spot, o.Days * 60000), map, pawns);
+            }
             var stay = new NobleStay { Id = o.Id, MapId = map.uniqueID, ArriveTick = now, LeaveTick = now + o.Days * 60000, Seniority = title.seniority, Nobles = o.Nobles, Forced = o.Forced, Title = o.Title, Pawns = pawns };
             Data.Stays.Add(stay);
             Messages.Message("HH.Dlc.Noble.Arrived".TranslateOr("A {0} and retinue arrive for {1} days.").Fmt(title.label, o.Days), pawns[0], MessageTypeDefOf.NeutralEvent, false);
             return stay;
         }
 
+        /// <summary>Average satisfaction of the nobles (not the guards) from their guest files; the last known value once they have left.</summary>
         public static double AverageSatisfaction(NobleStay s)
         {
             double sum = 0; int n = 0;
@@ -228,7 +264,63 @@ namespace Hearth.Dlc
             {
                 var info = GuestApi.Info(p); if (info == null) continue; sum += info.Satisfaction; n++;
             }
-            return n == 0 ? 0 : sum / n;
+            if (n == 0) return s.LastSatisfaction;
+            s.LastSatisfaction = (float)(sum / n);
+            return sum / n;
+        }
+
+        /// <summary>The stay a pawn belongs to (not settled), and whether the pawn is one of its nobles.</summary>
+        public static NobleStay StayOf(Pawn p, out bool isNoble)
+        {
+            isNoble = false; var d = Data; if (d == null || p == null) return null;
+            foreach (var s in d.Stays)
+            {
+                if (s.Settled) continue;
+                int i = s.Pawns.IndexOf(p);
+                if (i >= 0) { isNoble = i < s.Nobles; return s; }
+            }
+            return null;
+        }
+
+        /// <summary>GuestRegistry.SponsoredBed: nobles get the best free guest bed whose room meets their title (else any free guest bed),
+        /// retainers any free guest bed. The party pays at the end of the stay, so the nights are free.</summary>
+        public static Building_Bed SponsoredBedFor(Hearth.Guests.GuestRecord r)
+        {
+            var p = r?.Pawn; var map = p?.MapHeld; if (map == null) return null;
+            var stay = StayOf(p, out bool noble); if (stay == null) return null;
+            var title = DefDatabase<RoyalTitleDef>.GetNamedSilentFail(stay.Title);
+            Building_Bed best = null; float bestScore = float.MinValue;
+            foreach (var b in NobleDemands.GuestBeds(map))
+            {
+                if (!Hearth.Guests.GuestBeds.IsFree(b) || !RestUtility.CanUseBedEver(p, b.def) || !p.CanReach(b, Verse.AI.PathEndMode.OnCell, Danger.Some)) continue;
+                float score = Hearth.Guests.GuestBedPricing.RoomScore(b.GetRoom());
+                bool fits = title != null && NobleDemands.BedFits(b, title, p);
+                if (noble) score += fits ? 1000f : 0f;
+                else score = fits ? -score : score;                              // retainers leave the fitting rooms to their lord
+                if (score > bestScore) { bestScore = score; best = b; }
+            }
+            return best;
+        }
+
+        public const int RoomCheckInterval = 15000;
+
+        /// <summary>Every 6 hours a noble judges the room: one that meets the title pleases (+0.04), one beneath it offends (-0.08), no bed at all more so.</summary>
+        public static int CheckRooms(NobleStay s)
+        {
+            var title = DefDatabase<RoyalTitleDef>.GetNamedSilentFail(s.Title); if (title == null || s.Settled) return 0;
+            var reg = Hearth.Guests.GuestRegistry.Instance; int n = 0;
+            foreach (var p in s.Pawns.Take(s.Nobles))
+            {
+                if (p == null || p.Dead || !p.Spawned) continue;
+                var r = reg?.Get(p); if (r == null || r.Settled || !r.CheckedIn) continue;
+                var bed = r.Bed;
+                if (bed == null) GuestApi.AddSatisfaction(p, -0.12f, "HH.Dlc.Noble.NoBed".TranslateOr("No bed worthy of a guest"));
+                else if (NobleDemands.BedFits(bed, title, p)) GuestApi.AddSatisfaction(p, 0.04f, "HH.Dlc.Noble.RoomFits".TranslateOr("Room befits my title"));
+                else GuestApi.AddSatisfaction(p, -0.08f, "HH.Dlc.Noble.RoomBeneath".TranslateOr("Room beneath my title"));
+                n++;
+            }
+            AverageSatisfaction(s);
+            return n;
         }
 
         /// <summary>Money, honor and goodwill when a stay ends (11.7). Paid: price × satisfaction. Forced: expense share by tier; unhappy guests cost goodwill.</summary>
@@ -267,6 +359,8 @@ namespace Hearth.Dlc
                 if (now >= d.Offers[i].ExpireTick) { var o = d.Offers[i]; d.Offers.RemoveAt(i); if (o.Forced) ApplyRefusal(); }
             foreach (var s in d.Stays.ToList())
             {
+                if (!s.Settled && now % RoomCheckInterval == 7) CheckRooms(s);
+                if (!s.Settled) AverageSatisfaction(s);
                 if (!s.Settled && now >= s.LeaveTick) Settle(s);
                 if (s.Settled && now > s.LeaveTick + 60000) d.Stays.Remove(s);
             }
@@ -309,7 +403,7 @@ namespace Hearth.Dlc
         protected override bool CanFireNowSub(IncidentParms parms)
         {
             if (!Modules.On(ModuleId.Inn) || !NobleStays.Active || NobleStays.Busy || !HSettings.GetBool("dlc.nobleStays")) return false;
-            var map = parms.target as Map; if (map == null || !map.IsPlayerHome) return false;
+            var map = parms.target as Map; if (map == null || !map.IsPlayerHome || !NobleDemands.GuestSetup(map)) return false;
             return NobleDemands.PickTitle(map, true, out _) != null;
         }
         protected override bool TryExecuteWorker(IncidentParms parms) => parms.target is Map m && NobleStays.MakeOffer(m, false, out _) != null;
@@ -322,7 +416,7 @@ namespace Hearth.Dlc
         protected override bool CanFireNowSub(IncidentParms parms)
         {
             if (!Modules.On(ModuleId.Inn) || !NobleStays.Active || NobleStays.Busy || !NobleStays.BilletingAllowed) return false;
-            var map = parms.target as Map; return map != null && map.IsPlayerHome && Faction.OfEmpire.GoodwillWith(Faction.OfPlayer) >= 0;
+            var map = parms.target as Map; return map != null && map.IsPlayerHome && NobleDemands.GuestSetup(map) && Faction.OfEmpire.GoodwillWith(Faction.OfPlayer) >= 0;
         }
         protected override bool TryExecuteWorker(IncidentParms parms) => parms.target is Map m && NobleStays.MakeOffer(m, true, out _) != null;
     }

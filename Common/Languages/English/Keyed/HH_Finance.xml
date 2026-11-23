@@ -183,6 +183,7 @@
   <HH.Finance.Lottery.BadTicket>A ticket needs five different numbers from 1 to 40 and a star from 1 to 10.</HH.Finance.Lottery.BadTicket>
   <HH.Finance.Lottery.Bought>Ticket bought: {0}.</HH.Finance.Lottery.Bought>
   <HH.Finance.Lottery.BoughtMany>{0} tickets bought.</HH.Finance.Lottery.BoughtMany>
+  <HH.Finance.Lottery.FreeTicket>Free ticket, thanks to {1}'s luck: {0}.</HH.Finance.Lottery.FreeTicket>
   <HH.Finance.Lottery.News.Drawn>Glitterworld Grand Draw: {0}. {1}</HH.Finance.Lottery.News.Drawn>
   <HH.Finance.Lottery.News.Won>Glitterworld Grand Draw: {0}. {1} You won {2}.</HH.Finance.Lottery.News.Won>
   <HH.Finance.Lottery.News.Colony>Your lottery drew {0}: {1} jackpot winners among {2} tickets.</HH.Finance.Lottery.News.Colony>

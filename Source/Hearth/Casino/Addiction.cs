@@ -130,7 +130,7 @@ namespace Hearth.Casino
     {
         protected override Job TryGiveJob(Pawn pawn)
         {
-            if (!Modules.On(ModuleId.Casino) || pawn.Map == null) return null;
+            if (!Modules.On(ModuleId.Casino) || pawn.Map == null || !Hearth.Dlc.LuckApi.WillGamble(pawn)) return null;
             var comp = CasinoJobs.FindDeviceFor(pawn, guest: false, ignoreJoyRules: true);
             return comp == null ? null : CasinoJobs.MakeJob(pawn, comp);
         }
@@ -145,7 +145,7 @@ namespace Hearth.Casino
             var h = Gambling.AddictionOf(pawn); if (h == null) return null;
             var need = h.Need; if (need == null) return null;
             if (h.Stage < 3 || need.CurLevel > 0.2f) return null;           // mild addicts only play in their free time (joy giver)
-            if (!Gambling.IsColonist(pawn) || pawn.Downed || pawn.Drafted) return null;
+            if (!Gambling.IsColonist(pawn) || pawn.Downed || pawn.Drafted || !Hearth.Dlc.LuckApi.WillGamble(pawn)) return null;
             if (!Gambling.PolicyAllowsAddiction(pawn)) return null;
             var comp = CasinoJobs.FindDeviceFor(pawn, guest: false, ignoreJoyRules: true);
             return comp == null ? null : CasinoJobs.MakeJob(pawn, comp);
@@ -164,21 +164,12 @@ namespace Hearth.Casino
             double f = 1.0; var t = p.story?.traits;
             if (t != null)
             {
-                var gambler = DefDatabase<TraitDef>.GetNamedSilentFail("Gambler"); if (gambler != null && t.HasTrait(gambler)) f *= 1.5;
                 var dd = DefDatabase<TraitDef>.GetNamedSilentFail("DrugDesire");
                 if (dd != null && t.HasTrait(dd)) { int deg = t.DegreeOfTrait(dd); if (deg >= 2) f *= 1.5; else if (deg == 1) f *= 1.25; }
                 var asc = DefDatabase<TraitDef>.GetNamedSilentFail("Ascetic"); if (asc != null && t.HasTrait(asc)) f *= 0.5;
             }
-            try
-            {
-                if (ModsConfig.BiotechActive && p.genes != null)
-                {
-                    var immune = DefDatabase<GeneDef>.GetNamedSilentFail("AddictionImmune"); if (immune != null && p.genes.HasActiveGene(immune)) f *= 0.2;
-                    var resist = DefDatabase<GeneDef>.GetNamedSilentFail("AddictionResistant"); if (resist != null && p.genes.HasActiveGene(resist)) f *= 0.5;
-                    var sens = DefDatabase<GeneDef>.GetNamedSilentFail("AddictionSensitivity"); if (sens != null && p.genes.HasActiveGene(sens)) f *= 2.0;
-                }
-            }
-            catch (Exception) { }
+            // our traits and genes act through the HH_GamblingAddiction stat (gambler x1.5, compulsive x2, high roller x1.3, addiction-proof x0.2, averse 0)
+            f *= Hearth.Dlc.LuckApi.AddictionFactor(p);
             if (p.needs?.mood != null && p.needs.mood.CurLevelPercentage < 0.3f) f *= 1.3;
             return f;
         }

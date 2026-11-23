@@ -1,43 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_ServiceQuality.label>接客の質</HH_ServiceQuality.label>
-  <HH_ServiceQuality.description>この人物に接客されることがどれほど快適か。話しかけた客の満足度に加算され、店、厨房、受付が参照します。</HH_ServiceQuality.description>
   <HH_HostingLearn.label>もてなしの学習</HH_HostingLearn.label>
   <HH_HostingLearn.description>客をもてなす間に得られる社交経験の倍率です。</HH_HostingLearn.description>
   <HH_GuestExpectation.label>客の期待</HH_GuestExpectation.label>
-  <HH_GuestExpectation.description>滞在中に客が抱く期待に加算されます。正の値は満足させるのが難しいことを意味します。魅力と礼儀作法はこれを下げ、肥えた舌はこれを上げます。</HH_GuestExpectation.description>
   <HH_GamblingJoy.label>賭け事の楽しみ</HH_GamblingJoy.label>
   <HH_GamblingJoy.description>この人物が賭け事から得る楽しみの倍率です。</HH_GamblingJoy.description>
   <HH_GamblingAddiction.label>賭け事の依存症になる確率</HH_GamblingAddiction.label>
   <HH_GamblingAddiction.description>賭け事が依存症になる確率の倍率です。0の場合、この人物が依存症になることはありません。</HH_GamblingAddiction.description>
   <HH_Dexterity.label>手練</HH_Dexterity.label>
-  <HH_Dexterity.description>テーブルでの細かい手作業（配札、シャッフル、客のすり替え）に加算される技能レベルです。</HH_Dexterity.description>
-  <HH_TableSkill.label>計算技能</HH_TableSkill.label>
-  <HH_TableSkill.description>クルーピエ、出納係、銀行員として働くときに加算される技能レベルです。</HH_TableSkill.description>
-  <HH_FraudDetection.label>不正の見抜き</HH_FraudDetection.label>
-  <HH_FraudDetection.description>偽造チップ、客のいかさま、釣り銭の誤魔化しに気づく確率の倍率です。</HH_FraudDetection.description>
-  <HH_TheftChance.label>部屋での盗難</HH_TheftChance.label>
-  <HH_TheftChance.description>この人物が世話をする部屋で何かが盗まれる確率の倍率です。</HH_TheftChance.description>
   <HH_BrawlRisk.label>周囲の乱闘の危険</HH_BrawlRisk.label>
-  <HH_BrawlRisk.description>この人物の部屋で口論が殴り合いに発展する確率の倍率です。</HH_BrawlRisk.description>
   <HH_RumorSpread.label>噂の広がり</HH_RumorSpread.label>
-  <HH_RumorSpread.description>この家にまつわる話が、良いものも悪いものも遠くまで伝わる度合いの倍率です。</HH_RumorSpread.description>
-  <HH_CareProgress.label>看護の進展</HH_CareProgress.label>
-  <HH_CareProgress.description>この人物が患者やリハビリ中の者を世話している間の、治療とリハビリの進み具合の倍率です。</HH_CareProgress.description>
   <HH_BankFeeFactor.label>銀行手数料</HH_BankFeeFactor.label>
-  <HH_BankFeeFactor.description>この人物に銀行が課す手数料への倍率。</HH_BankFeeFactor.description>
-  <HH_Negotiation.label>交渉ボーナス</HH_Negotiation.label>
-  <HH_Negotiation.description>保険や契約の交渉に加算される。</HH_Negotiation.description>
   <HH_RecruitPrice.label>勧誘の割増料金</HH_RecruitPrice.label>
-  <HH_RecruitPrice.description>客の忠誠心を買う際、価格の下限を超えて上乗せされる割増料金への倍率。</HH_RecruitPrice.description>
   <HH_ServeRestFactor.label>接客中の疲労</HH_ServeRestFactor.label>
   <HH_ServeRestFactor.description>給仕やカウンターでの接客中に休息が減る速さへの倍率。</HH_ServeRestFactor.description>
-  <HH_TipFactor.label>チップ</HH_TipFactor.label>
-  <HH_TipFactor.description>この人物が客として残すチップへの倍率。</HH_TipFactor.description>
   <HH_DishQuality.label>料理の品質上昇確率</HH_DishQuality.label>
-  <HH_DishQuality.description>調理した料理の品質を1段階上げる確率。</HH_DishQuality.description>
   <HH_FamilyCheer.label>家族の明るさ</HH_FamilyCheer.label>
-  <HH_FamilyCheer.description>この人物が世話をする家族や子供の満足度に加算される。</HH_FamilyCheer.description>
   <HH_PriceFeel.label>値段の感じ方</HH_PriceFeel.label>
-  <HH_PriceFeel.description>客がこの人物の値段を高いと感じる度合いに加算される。</HH_PriceFeel.description>
 </LanguageData>

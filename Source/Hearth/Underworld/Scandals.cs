@@ -73,7 +73,7 @@ namespace Hearth.Underworld
             var comp = Underworld.Comp; if (comp == null || !Underworld.Unlocked) return;
             int now = Find.TickManager.TicksGame;
             if (now - comp.ScandalTickOn(map) < HSettings.GetInt("underworld.scandalCooldownDays") * 60000) return;
-            float p = HSettings.Get("underworld.exposureChance");
+            float p = HSettings.Get("underworld.exposureChance") / Math.Max(1f, Hearth.Dlc.DlcApi.ColonyWatchfulness(map));   // eagle eye: someone keeps watch
             if (p > 0f && BackRoom.HasBackRoom(map) && UwActivity.RecentUse(map) && BackRoom.RespectableWitnesses(map).Any() && JRand.Stream("underworld.scandal").Chance(p))
             { Raise(ScandalKind.BackRoomFound, map); return; }
             // positive: a secret casino whispered about draws high rollers (needs a casino venue and some whispers)

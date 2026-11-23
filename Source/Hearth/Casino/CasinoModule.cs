@@ -89,7 +89,7 @@ namespace Hearth.Casino
         public float Desire(Pawn guest, GuestInfo info)
         {
             if (info == null || guest.Map == null || !guest.Spawned || guest.Downed || guest.Drafted) return 0f;
-            if (!guest.DevelopmentalStage.Adult() || !guest.RaceProps.Humanlike) return 0f;
+            if (!guest.DevelopmentalStage.Adult() || !guest.RaceProps.Humanlike || !Hearth.Dlc.LuckApi.WillGamble(guest)) return 0f;
             var c = CasinoComponent.Get(); if (c == null || c.SessionOf(guest) != null) return 0f;
             played.TryGetValue(guest.thingIDNumber, out int n);
             if (n >= 3) return 0f;

@@ -204,7 +204,7 @@ namespace Hearth.Casino
                 }
             }
             unstaffedTicks = 0;
-            if (++roundTimer < CS.RoundInterval(Game)) return;
+            if (++roundTimer < CS.RoundInterval(Game) * (NeedsCroupier ? CasinoEngine.DealSpeedFactor(Croupier) : 1f)) return;
             roundTimer = 0;
             Guard.Run(ModuleId.Casino, "Casino.Round." + Game, () => { tmp.Clear(); CasinoComponent.Get().SessionsAt(parent, tmp); CasinoEngine.RunRound(this, tmp); tmp.Clear(); });
         }

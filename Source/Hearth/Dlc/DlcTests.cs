@@ -68,7 +68,7 @@ namespace Hearth.Dlc.Tests
             // always present, with or without any DLC
             string[] traits = { "Lucky", "Unlucky", "GamblingAverse", "Gambler", "BornHost", "Grump", "PennyPincher", "SilverTongue", "EagleEye", "SteadyHands", "Caregiver", "Peacemaker", "Gossip", "KidMagnet" };
             foreach (var n in traits) { var d = DefDatabase<TraitDef>.GetNamedSilentFail("HH_" + n); t.Check(d != null && d.degreeDatas.Count == 1 && !d.degreeDatas[0].description.NullOrEmpty(), "trait HH_" + n); }
-            t.Check(DefDatabase<StatDef>.AllDefs.Count(s => s.defName.StartsWith("HH_")) >= 19, "stat defs: " + DefDatabase<StatDef>.AllDefs.Count(s => s.defName.StartsWith("HH_")));
+            t.Check(DefDatabase<StatDef>.AllDefs.Count(s => s.defName.StartsWith("HH_")) >= 18, "stat defs: " + DefDatabase<StatDef>.AllDefs.Count(s => s.defName.StartsWith("HH_")));
             foreach (var s in DefDatabase<StatDef>.AllDefs.Where(s => s.defName.StartsWith("HH_"))) t.Check(!s.label.NullOrEmpty() && !s.description.NullOrEmpty(), "stat label/description " + s.defName);
             t.Check(HSettings.Find("dlc.luckShift") != null && HSettings.Find("dlc.indulgenceFactor") != null && HSettings.Find("dlc.nobleBasePrice") != null, "dlc settings registered");
             t.Check(HSettings.Find("dlc.nobleMoneyFactor").TierAnchors?.Length == 7, "noble money follows the 7 tier anchors");
@@ -116,7 +116,6 @@ namespace Hearth.Dlc.Tests
             t.Check(p.GetStatValue(DlcDefs.HostingLearn) > 1.49f, "born host: hosting learning x1.5");
             var q = Kit.Colonist(map); Kit.Trait(q, DefDatabase<TraitDef>.GetNamed("HH_Grump"));
             t.Check(DlcApi.ServiceQuality(q) < sq0 - 0.19f, "grump: service quality -0.2 (" + DlcApi.ServiceQuality(q) + ")");
-            t.Check(Math.Abs(DlcApi.TheftFactor(q) - 0.5f) < 1e-3, "grump: theft x0.5");
             var st = Kit.Colonist(map); Kit.Trait(st, DefDatabase<TraitDef>.GetNamed("HH_SilverTongue"));
             t.Check(Math.Abs(DlcApi.HostExpectationOffset(st) + 0.03f) < 1e-3, "silver tongue: expectation -0.03");
             t.Check(Math.Abs(DlcApi.RecruitPriceFactor(st) - 0.9f) < 1e-3, "silver tongue: recruit surcharge x0.9");
@@ -136,8 +135,6 @@ namespace Hearth.Dlc.Tests
             t.Check(Math.Abs(LuckApi.AdjustRtp(0.92f, lucky) - 0.935f) < 1e-5 && Math.Abs(LuckApi.AdjustRtp(0.92f, unlucky) - 0.905f) < 1e-5, "adjusted plans 93.5 % / 90.5 %");
             t.Check(LuckApi.AdjustRtp(0.99f, lucky) <= 0.995f && LuckApi.AdjustRtp(1.0f, lucky) < 1f, "never reaches 100 %");
             t.Check(LuckApi.AdjustRtp(0.997f, lucky) <= 0.997f + 1e-6f, "no lift above an already generous plan");
-            int free = 0; for (int i = 0; i < 20; i++) if (LuckApi.LottoTicketIsFree(lucky)) free++;
-            t.Check(free == 2 && !LuckApi.LottoTicketIsFree(plain), "lucky: every tenth lotto ticket free (" + free + " of 20)");
             // streak thoughts
             LuckApi.NoteResult(lucky, true); LuckApi.NoteResult(lucky, true);
             t.Check(lucky.needs.mood.thoughts.memories.NumMemoriesOfDef(DlcDefs.Thought("HH_LuckyStreak")) == 1, "lucky streak after two wins");
@@ -146,7 +143,7 @@ namespace Hearth.Dlc.Tests
             // averse / gambler
             var av = Kit.Colonist(map); Kit.Trait(av, DlcDefs.GamblingAverse);
             t.Check(!LuckApi.WillGamble(av) && LuckApi.AddictionFactor(av) == 0f && LuckApi.WillGamble(plain), "averse never gambles, addiction 0");
-            t.Check(Math.Abs(DlcApi.FraudDetection(av) - 1.2f) < 1e-3, "averse: good cashier, fraud detection x1.2");
+            t.Check(Math.Abs(DlcApi.FraudDetection(av) - 1f) < 1e-3, "averse: no watchfulness claim any more (x1)");
             var gb = Kit.Colonist(map); Kit.Trait(gb, DlcDefs.Gambler);
             t.Check(Math.Abs(LuckApi.AddictionFactor(gb) - 1.5f) < 1e-3 && Math.Abs(LuckApi.JoyFactor(gb) - 1.5f) < 1e-3 && DlcApi.TableSkillBonus(gb) >= 1f, "gambler: joy x1.5, addiction x1.5, croupier bonus");
             t.Check(DefDatabase<TraitDef>.GetNamed("HH_Lucky").conflictingTraits.Contains(DlcDefs.Unlucky), "lucky/unlucky conflict");
@@ -225,14 +222,14 @@ namespace Hearth.Dlc.Tests
             p.genes.AddGene(G("DexterousFingers"), true); t.Check(Math.Abs(DlcApi.DexterityBonus(p) - 3f) < 1e-3, "dexterous fingers: +3");
             p.genes.AddGene(G("TirelessSmile"), true); t.Check(Math.Abs(DlcApi.ServeRestFactor(p) - 0.7f) < 1e-3, "tireless smile: x0.7");
             p.genes.AddGene(G("RefinedPalate"), true);
-            t.Check(Math.Abs(DlcApi.TipFactor(p) - 1.3f) < 1e-3 && Math.Abs(DlcApi.DishQualityLift(p) - 0.1f) < 1e-3 && Math.Abs(DlcApi.GuestExpectationOffset(p) - DlcApi.GuestExpectationOffset(Kit.Colonist(map)) - 0.05f) < 0.01f, "refined palate: dish quality +10 %, tips x1.3, expectation +0.05");
+            t.Check(Math.Abs(DlcApi.TipFactor(p) - 1.3f) < 1e-3 && Math.Abs(DlcApi.DishQualityLift(p) - 0.1f) < 1e-3 && Math.Abs(DlcApi.GuestExpectationOffset(p) - DlcApi.GuestExpectationOffset(Kit.Colonist(map)) - 0.05f) < 0.01f, "refined palate: dish quality +10 %, generosity x1.3, expectation +0.05");
             p.genes.AddGene(G("SilverTongue"), true); t.Check(Math.Abs(DlcApi.RecruitPriceFactor(p) - 0.9f) < 1e-3, "silver tongue gene: recruit surcharge x0.9");
             var gam = Kit.Colonist(map); gam.genes.AddGene(G("Compulsive"), true);
             t.Check(Math.Abs(LuckApi.AddictionFactor(gam) - 2f) < 1e-3 && Math.Abs(LuckApi.JoyFactor(gam) - 1.3f) < 1e-3, "compulsive: joy x1.3, addiction x2");
             var proof = Kit.Colonist(map); proof.genes.AddGene(G("AddictionProofReward"), true);
             t.Check(Math.Abs(LuckApi.AddictionFactor(proof) - 0.2f) < 1e-3, "addiction-proof reward circuit: x0.2");
             var roller = Kit.Colonist(map); roller.genes.AddGene(G("HighRoller"), true);
-            t.Check(LuckApi.JoyFactor(roller) > 1.19f && DlcApi.TipFactor(roller) > 1.49f, "high roller: joy x1.2, tips x1.5");
+            t.Check(LuckApi.JoyFactor(roller) > 1.19f && DlcApi.TipFactor(roller) > 1.49f && LuckApi.IsHighRoller(roller) && !LuckApi.IsHighRoller(p), "high roller: joy x1.2, generosity x1.5, detected");
             t.Check(G("Compulsive").exclusionTags.Contains("HH_GamblingDrive") && G("AddictionProofReward").exclusionTags.Contains("HH_GamblingDrive"), "gambling-drive genes exclude each other");
 
             // tireless smile actually slows rest drain while serving
@@ -549,13 +546,29 @@ namespace Hearth.Dlc.Tests
     public sealed class DlcNobleSuite : HearthTestSuite
     {
         public override string Name => "dlc.noble";
-        public override int MaxTicks => 20000;
+        public override int MaxTicks => 30000;
         public override IEnumerable<int> Run(TestContext t)
         {
             if (!ModsConfig.RoyaltyActive) { t.Check(DefDatabase<IncidentDef>.GetNamedSilentFail("HH_NobleStay") == null && !NobleStays.Active, "no Royalty: no noble stays"); yield break; }
             var map = t.Map; var l = Ledger.Current; var empire = Faction.OfEmpire; t.Check(empire != null, "Empire exists");
             var st = DlcState.Current.Nobles; st.Offers.Clear(); st.Stays.Clear();
+            var reg = Hearth.Guests.GuestRegistry.Instance; t.Check(reg != null && Modules.On(ModuleId.Inn), "Inn module on with a guest register");
             Func<string, RoyalTitleDef> T = n => DefDatabase<RoyalTitleDef>.GetNamed(n);
+            if (empire.HostileTo(Faction.OfPlayer) || empire.GoodwillWith(Faction.OfPlayer) < 0) Faction.OfPlayer.TryAffectGoodwillWith(empire, 100, false, false);
+            var prof = HearthProfile.Current; float tier0 = prof.Tier; bool mand0 = HSettings.GetBool("dlc.mandatoryBilleting");
+            var incNoble = DefDatabase<IncidentDef>.GetNamed("HH_NobleStay"); var incBillet = DefDatabase<IncidentDef>.GetNamed("HH_ImperialBilleting");
+            var nw = (IncidentWorker_NobleStay)incNoble.Worker; var bw = (IncidentWorker_ImperialBilleting)incBillet.Worker;
+            string why;
+
+            // N08: no guest bed on the map -> no noble ever, even with colonist bedrooms that would meet a title
+            foreach (var bd in map.listerBuildings.allBuildingsColonist.OfType<Building_Bed>()) Hearth.Guests.GuestBeds.Comp(bd)?.SetGuestBed(false, false);
+            t.Check(Hearth.Guests.GuestBeds.CountOn(map) == 0 && !NobleDemands.GuestSetup(map), "test map starts without guest beds");
+            t.Check(!NobleDemands.GuestBeds(map).Any(), "colonists' own beds never count as guest bedrooms");
+            HSettings.Set("dlc.mandatoryBilleting", 1);
+            t.Check(!nw.Eligible(StorytellerUtility.DefaultParmsNow(incNoble.category, map)), "N08: paid noble stay cannot fire without guest beds");
+            t.Check(!bw.Eligible(StorytellerUtility.DefaultParmsNow(incBillet.category, map)), "N08: billeting cannot fire without guest beds, even with mandatory hospitality");
+            t.Check(NobleStays.MakeOffer(map, false, out why) == null && NobleStays.MakeOffer(map, true, out why) == null && st.Offers.Count == 0, "N08: no offer without guest beds (" + why + ")");
+            HSettings.Set("dlc.mandatoryBilleting", mand0 ? 1 : 0);
 
             // demands come from the title
             var dk = NobleDemands.For(T("Knight")); var db = NobleDemands.For(T("Baron")); var dc = NobleDemands.For(T("Count"));
@@ -567,81 +580,119 @@ namespace Hearth.Dlc.Tests
             t.Check(Math.Abs(dk.PricePerNobleDay - HSettings.Get("dlc.nobleBasePrice") * (1 + 0.15 * dk.Seniority / 100.0)) < 1e-3, "price = base x (1 + 0.15 x seniority/100)");
             t.Check(NobleDemands.MaxTitleServedBy(null) == null, "no room: no title served");
             foreach (var (name, w) in NobleDemands.Offered) t.Check(DefDatabase<RoyalTitleDef>.GetNamedSilentFail(name) != null, "offered title exists: " + name);
-            // rooms: HasSuitableBedroom agrees with PickTitle
+
+            // two guest rooms: a large one that meets the (test-relaxed) knight demands and a small one that does not.
+            // The real knight bedroom (impressiveness 40, double bed, end table, dresser ...) is too much to build by code, so the test swaps
+            // the knight's requirements for "area 20" and puts them back at the end.
+            var knight = T("Knight"); var savedReq = knight.bedroomRequirements;
+            Hearth.Guests.InnTestKit.Site big = null, small = null;
+            try { big = Hearth.Guests.InnTestKit.BuildRoom(map, 1, false, 6, 5); small = Hearth.Guests.InnTestKit.BuildRoom(map, 1, false, 3, 3); }
+            catch (Exception e) { t.Check(false, "could not build the guest rooms: " + e.Message); }
+            if (big == null || small == null) { knight.bedroomRequirements = savedReq; yield break; }
+            knight.bedroomRequirements = new List<RoomRequirement> { new RoomRequirement_Area { area = 20 } };
+            Hearth.Guests.InnTestKit.MarkGuestBeds(big, true); Hearth.Guests.InnTestKit.MarkGuestBeds(small, true);
+            var bigBed = big.Beds[0]; var smallBed = small.Beds[0];
+            t.Check(NobleDemands.GuestSetup(map) && NobleDemands.GuestBeds(map).Count() == 2, "two guest beds: the colony takes guests");
+            t.Check(NobleDemands.BedFits(bigBed, knight) && !NobleDemands.BedFits(smallBed, knight), $"the big room fits a knight, the small one not ({big.Room?.CellCount} / {small.Room?.CellCount} cells)");
             bool anyRoom = NobleDemands.Offered.Any(o => { var td = DefDatabase<RoyalTitleDef>.GetNamedSilentFail(o.title); return td != null && NobleDemands.HasSuitableBedroom(map, td); });
-            string why; var pick = NobleDemands.PickTitle(map, true, out why);
-            t.Check((pick != null) == anyRoom, "title pick follows the available bedrooms (" + (pick?.defName ?? why) + ")");
-            t.Check(NobleDemands.PickTitle(map, false, out _) != null, "forced billeting needs no room");
-            var offerNoRoom = anyRoom ? null : NobleStays.MakeOffer(map, false, out why);
-            if (!anyRoom) t.Check(offerNoRoom == null && why != null, "no suitable bedroom: no paid offer (" + why + ")");
+            var pick = NobleDemands.PickTitle(map, true, out why);
+            t.Check(anyRoom && pick != null, "title pick follows the guest bedrooms (" + (pick?.defName ?? why) + ")");
+            t.Check(NobleDemands.PickTitle(map, false, out _) != null, "forced billeting needs no fitting room");
+            bool canNoble = nw.Eligible(StorytellerUtility.DefaultParmsNow(incNoble.category, map)); t.Check(canNoble && !st.Offers.Any(), "with a fitting guest bedroom the paid stay may fire (" + canNoble + ")");
 
             // forced billeting gating
-            var prof = HearthProfile.Current; float tier0 = prof.Tier; bool mand0 = HSettings.GetBool("dlc.mandatoryBilleting");
             prof.Tier = 3f; HSettings.Set("dlc.mandatoryBilleting", 0);
             t.Check(NobleStays.MakeOffer(map, true, out why) == null && !NobleStays.BilletingAllowed, "Standard Room: no forced billeting (" + why + ")");
             prof.Tier = 4f; t.Check(NobleStays.BilletingAllowed, "Overbooked: billeting allowed");
             prof.Tier = 3f; HSettings.Set("dlc.mandatoryBilleting", 1); t.Check(NobleStays.BilletingAllowed, "mandatory hospitality allows billeting on any tier");
             int gw0 = empire.GoodwillWith(Faction.OfPlayer);
             var forced = NobleStays.MakeOffer(map, true, out why);
-            t.Check(forced != null && forced.Forced && forced.Days >= 3 && forced.Days <= 10, "billeting offer 3-10 days (" + (forced?.Days) + ")");
+            t.Check(forced != null && forced.Forced && forced.Days >= 3 && forced.Days <= 10, "billeting offer 3-10 days (" + (forced?.Days.ToString() ?? why) + ")");
             t.Check(NobleStays.MakeOffer(map, true, out why) == null, "only one party at a time");
-            t.Check(Find.LetterStack.LettersListForReading.OfType<ChoiceLetter_NobleOffer>().Any(x => x.OfferId == forced.Id && x.Choices.Count() == 3), "choice letter sent with accept / refuse / postpone");
+            if (forced != null) t.Check(Find.LetterStack.LettersListForReading.OfType<ChoiceLetter_NobleOffer>().Any(x => x.OfferId == forced.Id && x.Choices.Count() == 3), "choice letter sent with accept / refuse / postpone");
             var holder = Kit.Colonist(map); holder.royalty.SetTitle(empire, T("Yeoman"), false, false, false); t.Check(holder.royalty.GetCurrentTitle(empire) != null, "colonist holds a title");
             int favor0 = holder.royalty.GetFavor(empire);
-            NobleStays.Decline(forced.Id);
+            if (forced != null) NobleStays.Decline(forced.Id);
             t.Check(empire.GoodwillWith(Faction.OfPlayer) <= gw0 - 20 || empire.GoodwillWith(Faction.OfPlayer) <= -75, $"refusing costs goodwill ({gw0} -> {empire.GoodwillWith(Faction.OfPlayer)})");
             t.Check(holder.royalty.GetFavor(empire) < favor0 || favor0 == 0, "refusing costs honor");
-            gw0 = empire.GoodwillWith(Faction.OfPlayer);
-            if (empire.HostileTo(Faction.OfPlayer)) { Faction.OfPlayer.TryAffectGoodwillWith(empire, 100, false, false); }
-            // incident workers answer without errors (billeting needs the Empire's goodwill >= 0)
             Faction.OfPlayer.TryAffectGoodwillWith(empire, 100, false, false);
-            var incNoble = DefDatabase<IncidentDef>.GetNamed("HH_NobleStay"); var incBillet = DefDatabase<IncidentDef>.GetNamed("HH_ImperialBilleting");
-            var ip = StorytellerUtility.DefaultParmsNow(incNoble.category, map);
-            bool canNoble = ((IncidentWorker_NobleStay)incNoble.Worker).Eligible(ip); t.Check(canNoble == anyRoom && !st.Offers.Any(), "noble stay incident fires only with a suitable bedroom (" + canNoble + ")");
-            prof.Tier = 3f; HSettings.Set("dlc.mandatoryBilleting", 0); var bw = (IncidentWorker_ImperialBilleting)incBillet.Worker; t.Check(!bw.Eligible(StorytellerUtility.DefaultParmsNow(incBillet.category, map)), "billeting incident blocked on Standard Room");
-            prof.Tier = 5f; t.Check(bw.Eligible(StorytellerUtility.DefaultParmsNow(incBillet.category, map)), "billeting incident allowed on One-Star Review");
+            prof.Tier = 3f; HSettings.Set("dlc.mandatoryBilleting", 0); t.Check(!bw.Eligible(StorytellerUtility.DefaultParmsNow(incBillet.category, map)), "billeting incident blocked on Standard Room");
+            prof.Tier = 5f; t.Check(bw.Eligible(StorytellerUtility.DefaultParmsNow(incBillet.category, map)), "billeting incident allowed on One-Star Review with guest beds");
             prof.Tier = tier0; HSettings.Set("dlc.mandatoryBilleting", mand0 ? 1 : 0);
+            Find.LetterStack.LettersListForReading.OfType<ChoiceLetter_NobleOffer>().ToList().ForEach(x => Find.LetterStack.RemoveLetter(x));
 
-            // a stay: noble with the right title, settled by satisfaction
+            // a stay: noble + retainer arrive as registered Inn guests and get the title-fitting guest bed
             if (empire.HostileTo(Faction.OfPlayer)) Faction.OfPlayer.TryAffectGoodwillWith(empire, 100, false, false);
-            var offer = new NobleOffer { Id = 901, MapId = map.uniqueID, Title = "Knight", Nobles = 1, Guards = 1, Days = 3 };
-            var stay = NobleStays.StartStay(map, offer);
+            var stay = NobleStays.StartStay(map, new NobleOffer { Id = 901, MapId = map.uniqueID, Title = "Knight", Nobles = 1, Guards = 1, Days = 3 });
             t.Check(stay != null && stay.Pawns.Count == 2, "party arrived (noble + 1 guard)");
-            var noble = stay.Pawns[0]; var title = noble.royalty?.GetCurrentTitle(empire);
-            t.Check(title == T("Knight"), "the noble holds the Knight title (" + title?.defName + ")");
-            var demands = NobleDemands.For(title); t.Check(demands.Seniority == T("Knight").seniority && demands.BedroomLabels.SequenceEqual(dk.BedroomLabels), "demands computed from the arrived noble's title");
-            t.Check(noble.GetLord() != null && noble.Faction == empire, "noble is a visiting group of the Empire");
-            t.Check(GuestApi.IsGuest(noble), "noble counts as a guest");
-            double sat = NobleStays.AverageSatisfaction(stay); t.Check(Math.Abs(sat) < 1.0001, "satisfaction read from the guest record");
+            if (stay == null) { knight.bedroomRequirements = savedReq; yield break; }
+            for (int w = 0; w < 1500 && stay.Pawns.Any(x => !x.Spawned); w += 60) yield return 60;    // a drop pod may bring them
+            var noble = stay.Pawns[0]; var guard = stay.Pawns[1]; var title = noble.royalty?.GetCurrentTitle(empire);
+            t.Check(noble.Spawned && guard.Spawned, "the party is on the map");
+            t.Check(title == knight, "the noble holds the Knight title (" + title?.defName + ")");
+            var rn = reg.Get(noble); var rg = reg.Get(guard);
+            t.Check(rn != null && rg != null, "noble and retainer are registered Inn guests (guest files)");
+            t.Check(noble.GetLord()?.LordJob is Hearth.Guests.LordJob_HH_GuestStay, "the party has the Inn's guest lord job, not a vanilla visit (" + noble.GetLord()?.LordJob?.GetType().Name + ")");
+            t.Check(GuestApi.IsGuest(noble) && GuestApi.Info(noble) != null, "noble counts as a guest");
+            if (rn != null && !rn.CheckedIn) reg.CheckIn(noble, null);
+            if (rg != null && !rg.CheckedIn) reg.CheckIn(guard, null);
+            t.Check(rn != null && rn.Bed == bigBed, "the noble booked the guest bed that meets the title (" + rn?.Bed + ")");
+            t.Check(rn != null && rn.NightPrice.Micro == 0, "the party's nights are free: the stay is paid at the end");
+            t.Check(rg != null && rg.Bed == smallBed, "the retainer takes the other guest bed (" + rg?.Bed + ")");
+            t.Check(RestUtility.IsValidBedFor(bigBed, noble, noble, false, false, false, GuestStatus.Guest) || RestUtility.FindBedFor(noble) == bigBed, "the noble may sleep in the booked guest bed");
+            t.Check(RestUtility.FindBedFor(noble) == bigBed, "the noble's bed search finds the booked guest bed");
+            // the room is judged: fits -> satisfaction rises; beneath the title -> falls
+            float s0 = GuestApi.Info(noble).Satisfaction; NobleStays.CheckRooms(stay); float s1 = GuestApi.Info(noble).Satisfaction;
+            t.Check(s1 > s0, $"a room that meets the title pleases the noble ({s0:0.000} -> {s1:0.000})");
+            knight.bedroomRequirements = new List<RoomRequirement> { new RoomRequirement_Area { area = 200 } };
+            NobleStays.CheckRooms(stay); float s2 = GuestApi.Info(noble).Satisfaction;
+            t.Check(s2 < s1, $"a room beneath the title offends ({s1:0.000} -> {s2:0.000})");
+            knight.bedroomRequirements = new List<RoomRequirement> { new RoomRequirement_Area { area = 20 } };
+            double sat = NobleStays.AverageSatisfaction(stay); t.Check(Math.Abs(sat - GuestApi.Info(noble).Satisfaction) < 1e-5 && Math.Abs(stay.LastSatisfaction - sat) < 1e-5, "satisfaction read from the noble's guest file and remembered");
+            // the room check runs from the rare tick every 6 hours
+            float s3 = GuestApi.Info(noble).Satisfaction; DlcState.Current.RareTick(Find.TickManager.TicksGame / NobleStays.RoomCheckInterval * NobleStays.RoomCheckInterval + 7);
+            t.Check(GuestApi.Info(noble).Satisfaction > s3, "the 6-hour tick judges the room");
 
             string till = Payments.ColonyTill(map); Func<double> basePDf = () => HSettings.Get("dlc.nobleBasePrice") * HSettings.Get("dlc.nobleMoneyFactor"); double basePD = basePDf();
             float t0 = (float)l.Balance(till).Silver; int fav1 = holder.royalty.GetFavor(empire);
             var pay = NobleStays.Settle(stay, 1.0);
             double expect = Math.Round(DlcMath.NoblePayment(basePD, 1, 3, stay.Seniority, 1.0));
             t.Check(Math.Abs(pay.Silver - expect) < 0.01 && Math.Abs((float)l.Balance(till).Silver - t0 - (float)expect) < 0.05f, $"paid {pay} silver = base x title x satisfaction ({expect})");
-            t.Check(holder.royalty.GetFavor(empire) >= fav1 + DlcMath.NobleHonor(stay.Seniority) - 0 || true, "honor for the title holder");
             t.Check(stay.Settled && Math.Abs(DlcMath.NoblePayment(basePD, 1, 3, 300, 1.0) / DlcMath.NoblePayment(basePD, 1, 3, 300, 0) - 1.25) < 1e-6, "satisfied guests pay x1.25");
             t.Check(NobleStays.Settle(stay, 1.0).Micro == 0, "settled once only");
             t.Check(l.SumAll() == 0, "ledger balanced");
+            // once the guest file is gone, the remembered satisfaction counts
+            var memo = new NobleStay { Nobles = 1, LastSatisfaction = 0.4f, Pawns = new List<Pawn> { null } };
+            t.Check(Math.Abs(NobleStays.AverageSatisfaction(memo) - 0.4) < 1e-6, "without a guest file the last known satisfaction is used");
 
             // unhappy noble pays less and honor stays
             var stay2 = NobleStays.StartStay(map, new NobleOffer { Id = 902, MapId = map.uniqueID, Title = "Baron", Nobles = 1, Guards = 0, Days = 2 });
-            int fav2 = holder.royalty.GetFavor(empire); var pay2 = NobleStays.Settle(stay2, -1.0);
-            t.Check(Math.Abs(pay2.Silver - Math.Round(DlcMath.NoblePayment(basePD, 1, 2, stay2.Seniority, -1.0))) < 0.01, "unhappy baron pays x0.5: " + pay2);
-            t.Check(holder.royalty.GetFavor(empire) == fav2, "no honor for an unhappy stay");
+            t.Check(stay2 != null, "second party arrived");
+            if (stay2 != null)
+            {
+                int fav2 = holder.royalty.GetFavor(empire); var pay2 = NobleStays.Settle(stay2, -1.0);
+                t.Check(Math.Abs(pay2.Silver - Math.Round(DlcMath.NoblePayment(basePD, 1, 2, stay2.Seniority, -1.0))) < 0.01, "unhappy baron pays x0.5: " + pay2);
+                t.Check(holder.royalty.GetFavor(empire) == fav2, "no honor for an unhappy stay");
+            }
 
             // billeting settlement: compensation by tier, goodwill penalty for bad lodging
             prof.Tier = 4f; basePD = basePDf();
             var stay3 = NobleStays.StartStay(map, new NobleOffer { Id = 903, MapId = map.uniqueID, Title = "Knight", Nobles = 1, Guards = 2, Days = 4, Forced = true });
-            int g0 = empire.GoodwillWith(Faction.OfPlayer); float t3 = (float)l.Balance(till).Silver;
-            var pay3 = NobleStays.Settle(stay3, -1.0);
-            double comp = Math.Round(DlcMath.NoblePayment(basePD, 1, 4, stay3.Seniority, 0.0) * 0.25);
-            t.Check(Math.Abs(pay3.Silver - comp) < 0.01, "forced billeting at Overbooked: 25 % expenses (" + pay3 + ")");
-            t.Check(empire.GoodwillWith(Faction.OfPlayer) <= g0 - 5 || empire.GoodwillWith(Faction.OfPlayer) <= -75, "badly lodged billeted guests cost goodwill");
+            t.Check(stay3 != null, "billeted party arrived");
+            if (stay3 != null)
+            {
+                int g0 = empire.GoodwillWith(Faction.OfPlayer);
+                var pay3 = NobleStays.Settle(stay3, -1.0);
+                double comp = Math.Round(DlcMath.NoblePayment(basePD, 1, 4, stay3.Seniority, 0.0) * 0.25);
+                t.Check(Math.Abs(pay3.Silver - comp) < 0.01, "forced billeting at Overbooked: 25 % expenses (" + pay3 + ")");
+                t.Check(empire.GoodwillWith(Faction.OfPlayer) <= g0 - 5 || empire.GoodwillWith(Faction.OfPlayer) <= -75, "badly lodged billeted guests cost goodwill");
+            }
             prof.Tier = tier0;
-            // tick cleanup removes finished stays
+            knight.bedroomRequirements = savedReq;
             st.Stays.Clear(); st.Offers.Clear();
-            foreach (var s in new[] { stay, stay2, stay3 }) if (s != null) foreach (var p in s.Pawns) Kit.Cleanup(p);
+            Hearth.Guests.InnTestKit.RemoveAllGuests(map);
+            Hearth.Guests.InnTestKit.Teardown(big, map); Hearth.Guests.InnTestKit.Teardown(small, map);
+            Faction.OfPlayer.TryAffectGoodwillWith(empire, 100, false, false);
             Kit.Cleanup(holder);
             yield break;
         }

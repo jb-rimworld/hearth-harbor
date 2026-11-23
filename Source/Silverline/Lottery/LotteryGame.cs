@@ -58,6 +58,10 @@ namespace Silverline
         public long totalSpent, totalWon, colonyEarned;
         public int colonyTicketsThisDraw; public double colonyTicketsPerDayLast;
         public bool colonyLastDrawJackpot;
+        /// <summary>Tickets bought while a lucky colonist lived in the colony; every tenth of them is free (KONZEPT 11.1).</summary>
+        public int luckyTickets;
+        /// <summary>Set by Hearth's DLC integration: the name of a lucky colonist, or null. Silverline knows nothing about traits itself.</summary>
+        public static Func<string> LuckyBuyer;
         public const int HistoryKeep = 24;
         public static readonly string[] HelpUrls = { "https://findahelpline.com/", "https://www.gamblingtherapy.org/" };
 
@@ -72,6 +76,7 @@ namespace Silverline
             Scribe_Collections.Look(ref history, "history", LookMode.Deep);
             Scribe_Values.Look(ref totalSpent, "spent"); Scribe_Values.Look(ref totalWon, "won"); Scribe_Values.Look(ref colonyEarned, "colonyEarned");
             Scribe_Values.Look(ref colonyTicketsThisDraw, "colonyTickets"); Scribe_Values.Look(ref colonyTicketsPerDayLast, "colonyRate");
+            Scribe_Values.Look(ref luckyTickets, "luckyTickets");
             if (Scribe.mode == LoadSaveMode.PostLoadInit) { tickets = tickets ?? new List<LotteryTicket>(); history = history ?? new List<LotteryDrawRecord>(); Instance = this; }
         }
 
@@ -132,24 +137,34 @@ namespace Silverline
             if (!HSettings.GetBool("lottery.globalOn")) return TradeResult.Fail("HH.Finance.Trade.Off");
             if (!ValidTicket(nums, star)) return TradeResult.Fail("HH.Finance.Lottery.BadTicket");
             var price = GlobalPrice;
-            if (FinanceAccounts.Cash < price) return TradeResult.Fail("HH.Finance.Trade.NoCash");
-            if (!FinanceAccounts.Post(FinanceAccounts.Colony, FinanceAccounts.LotteryGlobalPool, price, "Glitterworld Grand Draw: ticket")) return TradeResult.Fail("HH.Finance.Trade.NoCash");
+            string lucky = null;
+            try { lucky = LuckyBuyer?.Invoke(); } catch (Exception e) { HLog.Once("lottery.lucky", LogLevel.Warn, "Bank", "Lucky-buyer hook failed: " + e.Message); }
+            bool free = lucky != null && DlcMath.FreeLottoTicket(luckyTickets + 1);
+            if (!free)
+            {
+                if (FinanceAccounts.Cash < price) return TradeResult.Fail("HH.Finance.Trade.NoCash");
+                if (!FinanceAccounts.Post(FinanceAccounts.Colony, FinanceAccounts.LotteryGlobalPool, price, "Glitterworld Grand Draw: ticket")) return TradeResult.Fail("HH.Finance.Trade.NoCash");
+            }
+            if (lucky != null) luckyTickets++;
             var t = new LotteryTicket { star = star, drawIndex = globalDrawCounter };
-            t.nums.AddRange(nums.OrderBy(x => x)); tickets.Add(t); totalSpent += price.Micro;
-            return new TradeResult { Ok = true, Money = price, Message = FT.T("HH.Finance.Lottery.Bought", string.Join(" ", t.nums) + " ★" + star) };
+            t.nums.AddRange(nums.OrderBy(x => x)); tickets.Add(t);
+            string numbers = string.Join(" ", t.nums) + " ★" + star;
+            if (free) return new TradeResult { Ok = true, Money = Money.Zero, Message = FT.T("HH.Finance.Lottery.FreeTicket", numbers, lucky) };
+            totalSpent += price.Micro;
+            return new TradeResult { Ok = true, Money = price, Message = FT.T("HH.Finance.Lottery.Bought", numbers) };
         }
 
         public TradeResult QuickPick(int count)
         {
-            var rng = JRand.Sealed("lottery.pick"); int bought = 0; TradeResult last = default;
+            var rng = JRand.Sealed("lottery.pick"); int bought = 0; TradeResult last = default; Money paid = Money.Zero;
             for (int i = 0; i < count; i++)
             {
                 var n = LotteryMath.DrawNumbers(rng, LotteryMath.GlobalPool, LotteryMath.GlobalPicks);
                 last = BuyGlobalTicket(n, rng.Range(1, LotteryMath.GlobalStarPool + 1));
-                if (!last.Ok) break; bought++;
+                if (!last.Ok) break; bought++; paid += last.Money;
             }
             if (bought == 0) return last;
-            return new TradeResult { Ok = true, Money = GlobalPrice * bought, Message = FT.T("HH.Finance.Lottery.BoughtMany", bought.ToString()) };
+            return new TradeResult { Ok = true, Money = paid, Message = FT.T("HH.Finance.Lottery.BoughtMany", bought.ToString()) };
         }
 
         // ---- simulated players ------------------------------------------------------------------------------------------------

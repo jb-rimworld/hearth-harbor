@@ -182,6 +182,7 @@
   <HH.Finance.Lottery.BadTicket>Ein Los braucht fünf verschiedene Zahlen von 1 bis 40 und einen Stern von 1 bis 10.</HH.Finance.Lottery.BadTicket>
   <HH.Finance.Lottery.Bought>Los gekauft: {0}.</HH.Finance.Lottery.Bought>
   <HH.Finance.Lottery.BoughtMany>{0} Lose gekauft.</HH.Finance.Lottery.BoughtMany>
+  <HH.Finance.Lottery.FreeTicket>Freilos dank {1}s Glück: {0}.</HH.Finance.Lottery.FreeTicket>
   <HH.Finance.Lottery.News.Drawn>Große Glitzerwelt-Ziehung: {0}. {1}</HH.Finance.Lottery.News.Drawn>
   <HH.Finance.Lottery.News.Won>Große Glitzerwelt-Ziehung: {0}. {1} Du hast {2} gewonnen.</HH.Finance.Lottery.News.Won>
   <HH.Finance.Lottery.News.Colony>Deine Lotterie hat {0} gezogen: {1} Hauptgewinner unter {2} Losen.</HH.Finance.Lottery.News.Colony>

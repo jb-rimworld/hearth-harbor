@@ -1,43 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_ServiceQuality.label>Servicequalität</HH_ServiceQuality.label>
-  <HH_ServiceQuality.description>Wie angenehm es ist, von dieser Person bedient zu werden. Wird zur Zufriedenheit der Gäste addiert, mit denen sie spricht, und von Geschäften, Küchen und der Rezeption ausgelesen.</HH_ServiceQuality.description>
+  <HH_ServiceQuality.description>Wie angenehm es ist, von dieser Person bedient zu werden. Wird zur Zufriedenheit der Gäste addiert, mit denen sie plaudert.</HH_ServiceQuality.description>
   <HH_HostingLearn.label>Lernen beim Gastgeben</HH_HostingLearn.label>
   <HH_HostingLearn.description>Multiplikator auf die soziale Erfahrung, die beim Gastgeben gesammelt wird.</HH_HostingLearn.description>
   <HH_GuestExpectation.label>Gästeerwartung</HH_GuestExpectation.label>
-  <HH_GuestExpectation.description>Wird zu dem addiert, was ein Gast von seinem Aufenthalt erwartet. Positiv heißt schwerer zufriedenzustellen. Charme und gute Manieren senken ihn; ein feiner Gaumen erhöht ihn.</HH_GuestExpectation.description>
+  <HH_GuestExpectation.description>Wird zu dem addiert, was ein Gast von seinem Aufenthalt erwartet. Positiv heißt schwerer zufriedenzustellen. Ein feiner Gaumen erhöht die eigene Erwartung als Gast; ein silberzüngiger Gastgeber senkt sie bei den Gästen, die er empfängt oder herumführt.</HH_GuestExpectation.description>
   <HH_GamblingJoy.label>Glücksspielfreude</HH_GamblingJoy.label>
   <HH_GamblingJoy.description>Multiplikator auf die Freude, die diese Person aus dem Glücksspiel zieht.</HH_GamblingJoy.description>
   <HH_GamblingAddiction.label>Glücksspielsuchtrisiko</HH_GamblingAddiction.label>
   <HH_GamblingAddiction.description>Multiplikator auf die Wahrscheinlichkeit, dass Glücksspiel zur Sucht wird. Null bedeutet, dass diese Person nie abhängig wird.</HH_GamblingAddiction.description>
   <HH_Dexterity.label>Fingerfertigkeit</HH_Dexterity.label>
-  <HH_Dexterity.description>Fertigkeitsstufen, die auf feine Handarbeit an Tischen addiert werden: Austeilen, Mischen und Mogeln fürs Haus.</HH_Dexterity.description>
-  <HH_TableSkill.label>Rechenkunst</HH_TableSkill.label>
-  <HH_TableSkill.description>Fertigkeitsstufen, die bei der Arbeit als Croupier, Kassierer oder Bankangestellter addiert werden.</HH_TableSkill.description>
-  <HH_FraudDetection.label>Betrugserkennung</HH_FraudDetection.label>
-  <HH_FraudDetection.description>Multiplikator darauf, gefälschte Chips, betrügende Gäste und falsches Wechselgeld zu bemerken.</HH_FraudDetection.description>
-  <HH_TheftChance.label>Diebstahl im Zimmer</HH_TheftChance.label>
-  <HH_TheftChance.description>Multiplikator auf die Wahrscheinlichkeit, dass in einem Zimmer, um das sich diese Person kümmert, etwas gestohlen wird.</HH_TheftChance.description>
+  <HH_Dexterity.description>Austeiltempo als Croupier: Die Runden an ihrem Tisch sind je Punkt 3 % kürzer (höchstens 30 %).</HH_Dexterity.description>
+  <HH_TableSkill.label>Kartengespür</HH_TableSkill.label>
+  <HH_TableSkill.description>Intellektuell-Stufen, die addiert werden, wenn diese Person Blackjack oder Poker spielt.</HH_TableSkill.description>
+  <HH_FraudDetection.label>Wachsamkeit</HH_FraudDetection.label>
+  <HH_FraudDetection.description>Solange diese Person auf der Karte ist, wird die Wahrscheinlichkeit, dass ein ehrbarer Gast auf das Hinterzimmer stößt, durch diesen Wert geteilt. Es zählt der wachsamste Kolonist.</HH_FraudDetection.description>
   <HH_BrawlRisk.label>Prügelrisiko in ihrer Nähe</HH_BrawlRisk.label>
-  <HH_BrawlRisk.description>Multiplikator auf die Wahrscheinlichkeit, dass ein Streit im Zimmer dieser Person zur Schlägerei wird.</HH_BrawlRisk.description>
+  <HH_BrawlRisk.description>Multiplikator auf die Wahrscheinlichkeit, dass ein Streit im Raum dieser Person zur Schlägerei wird. Es zählt der niedrigste Wert in der Nähe.</HH_BrawlRisk.description>
   <HH_RumorSpread.label>Gerüchteverbreitung</HH_RumorSpread.label>
-  <HH_RumorSpread.description>Multiplikator darauf, wie weit Geschichten über das Haus reisen, ob gut oder schlecht.</HH_RumorSpread.description>
-  <HH_CareProgress.label>Pflegefortschritt</HH_CareProgress.label>
-  <HH_CareProgress.description>Multiplikator auf den Fortschritt von Patienten und Reha, solange sich diese Person um sie kümmert.</HH_CareProgress.description>
+  <HH_RumorSpread.description>Multiplikator darauf, wie stark abreisende Gäste den Ruf des Hauses bewegen, ob gut oder schlecht. Es zählt die größte Klatschbase der Kolonie.</HH_RumorSpread.description>
+  <HH_CareProgress.label>Pflegequalität</HH_CareProgress.label>
+  <HH_CareProgress.description>Multiplikator auf die Qualität der Massagen, die diese Person gibt.</HH_CareProgress.description>
   <HH_BankFeeFactor.label>Bankgebühren</HH_BankFeeFactor.label>
-  <HH_BankFeeFactor.description>Multiplikator auf die Gebühren, die die Bank dieser Person berechnet.</HH_BankFeeFactor.description>
-  <HH_Negotiation.label>Verhandlungsbonus</HH_Negotiation.label>
-  <HH_Negotiation.description>Wird bei Versicherungs- und Vertragsverhandlungen aufgeschlagen.</HH_Negotiation.description>
+  <HH_BankFeeFactor.description>Multiplikator auf die Gebühren der Bank, solange diese Person in der Kolonie lebt. Es zählt der niedrigste Wert.</HH_BankFeeFactor.description>
   <HH_RecruitPrice.label>Anwerbungsaufschlag</HH_RecruitPrice.label>
-  <HH_RecruitPrice.description>Multiplikator auf den Aufschlag über dem Mindestpreis, wenn du die Loyalität eines Gastes kaufst.</HH_RecruitPrice.description>
+  <HH_RecruitPrice.description>Multiplikator auf den Wohlwollensaufschlag über dem Mindestwert von 5, wenn ein Gast der Kolonie beitritt und diese Person ihn gewonnen hat.</HH_RecruitPrice.description>
   <HH_ServeRestFactor.label>Müdigkeit beim Bedienen</HH_ServeRestFactor.label>
   <HH_ServeRestFactor.description>Multiplikator darauf, wie schnell die Erholung sinkt, wenn man Tische bedient oder an der Theke arbeitet.</HH_ServeRestFactor.description>
-  <HH_TipFactor.label>Trinkgeld</HH_TipFactor.label>
-  <HH_TipFactor.description>Multiplikator auf das Trinkgeld, das diese Person als Gast hinterlässt.</HH_TipFactor.description>
+  <HH_TipFactor.label>Großzügigkeit als Gast</HH_TipFactor.label>
+  <HH_TipFactor.description>Multiplikator darauf, wie viel ihres Budgets diese Person als Gast für einen Einkauf ausgibt.</HH_TipFactor.description>
   <HH_DishQuality.label>Chance auf bessere Gerichte</HH_DishQuality.label>
-  <HH_DishQuality.description>Chance, die Qualität eines gekochten Gerichts um eine Stufe zu heben.</HH_DishQuality.description>
+  <HH_DishQuality.description>Chance, die Qualität eines gekochten Restaurantgerichts um eine Stufe zu heben.</HH_DishQuality.description>
   <HH_FamilyCheer.label>Familienfreude</HH_FamilyCheer.label>
-  <HH_FamilyCheer.description>Wird auf die Zufriedenheit von Familien und Kindern in der Obhut dieser Person aufgeschlagen.</HH_FamilyCheer.description>
+  <HH_FamilyCheer.description>Wird auf die Servicewertung von Kindern und Familien aufgeschlagen, die diese Person empfängt oder herumführt.</HH_FamilyCheer.description>
   <HH_PriceFeel.label>Preisgefühl</HH_PriceFeel.label>
-  <HH_PriceFeel.description>Wird darauf aufgeschlagen, wie teuer Gäste die Preise dieser Person finden.</HH_PriceFeel.description>
+  <HH_PriceFeel.description>Wird darauf aufgeschlagen, wie teuer Gäste die Preise finden, wenn diese Person sie bedient.</HH_PriceFeel.description>
 </LanguageData>
