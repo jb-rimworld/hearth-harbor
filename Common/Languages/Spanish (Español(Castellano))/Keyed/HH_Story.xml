@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.MusicMode.Always>Siempre</HH.Enum.MusicMode.Always>
+  <HH.Enum.MusicMode.Off>Desactivada</HH.Enum.MusicMode.Off>
+  <HH.Enum.MusicMode.WhenHosting>Al recibir huéspedes</HH.Enum.MusicMode.WhenHosting>
+  <HH.Setting.core.creatorPawn>El autor puede deambular por los confines</HH.Setting.core.creatorPawn>
+  <HH.Setting.core.creatorPawn.Desc>Como los colonos creadores del juego base, el autor de Hearth &amp; Harbor puede aparecer de vez en cuando como colono generado: un posadero errante, amable y trabajador.</HH.Setting.core.creatorPawn.Desc>
+  <HH.Setting.core.music>Música de Hearth &amp; Harbor</HH.Setting.core.music>
+  <HH.Setting.core.music.Desc>Nuestras tres canciones tranquilas (una para los días de primavera y verano, una para otoño, una para invierno) se unen a la lista de reproducción normal de RimWorld. Al alojar: solo en colonias que usen Hearth &amp; Harbor (una cama de huéspedes, un letrero de local o una cuenta bancaria).</HH.Setting.core.music.Desc>
+  <HH.Setting.core.musicShare>Con qué frecuencia suenan nuestras canciones</HH.Setting.core.musicShare>
+  <HH.Setting.core.musicShare.Desc>Peso de nuestras canciones en la lista de reproducción frente a una canción del juego base. 1 = como cualquier otra canción de la temporada, 0 = nunca.</HH.Setting.core.musicShare.Desc>
+  <HH.Story.Suggests>{0} sugiere: {1}</HH.Story.Suggests>
+  <HH.Story.SuggestsTip>Haz clic para usar la dificultad de hospedaje que sugiere este narrador. Aún puedes cambiarla con el botón.</HH.Story.SuggestsTip>
+</LanguageData>

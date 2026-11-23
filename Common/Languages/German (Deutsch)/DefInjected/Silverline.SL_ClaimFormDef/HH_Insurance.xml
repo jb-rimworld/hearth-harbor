@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ClaimForm_Money.description>Formular L-1 für Bußgelder, Schäden an Dritten und Schließungen: Was die Ursache war und wer es bestätigen kann.</SL_ClaimForm_Money.description>
+  <SL_ClaimForm_Money.label>Schadensformular Bußgeld und Haftung</SL_ClaimForm_Money.label>
+  <SL_ClaimForm_Person.description>Formular P-2 für Todesfälle und verlorene Gliedmaßen: die Umstände und ein Zeuge.</SL_ClaimForm_Person.description>
+  <SL_ClaimForm_Person.label>Schadensformular Personen</SL_ClaimForm_Person.label>
+  <SL_ClaimForm_Property.description>Formular B-4 für zerstörte Gebäude, Fahrzeuge und Ernten: Was passiert ist, wie schlimm es war, wer es gesehen hat und wie du ausgezahlt werden möchtest.</SL_ClaimForm_Property.description>
+  <SL_ClaimForm_Property.label>Schadensformular Sachwerte</SL_ClaimForm_Property.label>
+</LanguageData>

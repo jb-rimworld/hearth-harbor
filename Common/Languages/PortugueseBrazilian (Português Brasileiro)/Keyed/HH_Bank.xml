@@ -23,7 +23,7 @@
   <HH.Bank.Greet.Morning>Bom dia</HH.Bank.Greet.Morning>
   <HH.Bank.Greet.Night>Boa madrugada</HH.Bank.Greet.Night>
   <HH.Bank.Header.Tier>Faixa de patrimônio: {0}</HH.Bank.Header.Tier>
-  <HH.Bank.Header.TierTip>Patrimônio líquido = conta + prata em casa − dívidas: {0} de prata. A faixa só muda depois que um novo valor se mantiver por um dia inteiro. Ela define o humor da colônia a partir deste banco (configuração: bank.moodOn).</HH.Bank.Header.TierTip>
+  <HH.Bank.Header.TierTip>Patrimônio = conta + depósitos em trânsito + prata em casa + investimentos (a valor de mercado) − dívidas: {0} de prata. A faixa só muda depois que um novo valor se mantiver por um dia inteiro. Ela define o humor da colônia por este banco (configuração: bank.moodOn).</HH.Bank.Header.TierTip>
   <HH.Bank.Hist.Amount>Valor (5 casas decimais)</HH.Bank.Hist.Amount>
   <HH.Bank.Hist.Empty>Nenhuma transação ainda.</HH.Bank.Hist.Empty>
   <HH.Bank.Hist.TotalFees>Taxas pagas até agora</HH.Bank.Hist.TotalFees>
@@ -82,7 +82,7 @@ Atendente Ottoline, {2}</HH.Bank.Letter.Reminder>
   <HH.Bank.Lobby.Amount>Valor</HH.Bank.Lobby.Amount>
   <HH.Bank.Lobby.Balance>Saldo</HH.Bank.Lobby.Balance>
   <HH.Bank.Lobby.BalanceTip>Exato: {0} de prata.
-Juros todo dia: saldo × (M^({1} × {2} / 60) − 1), com M = {3} por ano de jogo (o controle de rentabilidade). Isso equivale a {4:0.##} % por dia.</HH.Bank.Lobby.BalanceTip>
+A conta é uma poupança: rende {1} % do excedente do mercado (M − 1) por ano, multiplicado por {2} para este banco. Com M = {3}, isso dá {4} % ao ano ({5} % ao dia). Investir rende mais, mas tem risco.</HH.Bank.Lobby.BalanceTip>
   <HH.Bank.Lobby.Cash>Dinheiro em casa</HH.Bank.Lobby.Cash>
   <HH.Bank.Lobby.CashTip>Prata espalhada pelos seus mapas domésticos.</HH.Bank.Lobby.CashTip>
   <HH.Bank.Lobby.ChangeBank>Trocar de banco</HH.Bank.Lobby.ChangeBank>
@@ -92,23 +92,22 @@ Juros todo dia: saldo × (M^({1} × {2} / 60) − 1), com M = {3} por ano de jog
   <HH.Bank.Lobby.DepDelay>creditado após {0}</HH.Bank.Lobby.DepDelay>
   <HH.Bank.Lobby.DepInstant>lançado de imediato</HH.Bank.Lobby.DepInstant>
   <HH.Bank.Lobby.Deposit>Depósito</HH.Bank.Lobby.Deposit>
-  <HH.Bank.Lobby.Direct>Depósito direto</HH.Bank.Lobby.Direct>
-  <HH.Bank.Lobby.DirectTip>O caixa dos seus negócios é depositado na conta à meia-noite, descontados {0} %.</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.DirectTip>As caixas dos seus negócios são esvaziadas na conta à meia-noite, menos {0} %. Altere nas configurações do mod (Banco &gt; Conta).</HH.Bank.Lobby.DirectTip>
   <HH.Bank.Lobby.Interest>Juros deste quadrum</HH.Bank.Lobby.Interest>
   <HH.Bank.Lobby.InterestTip>Juros pagos sobre o saldo desde o início do quadrum (15 dias).</HH.Bank.Lobby.InterestTip>
   <HH.Bank.Lobby.Max>Máx.</HH.Bank.Lobby.Max>
   <HH.Bank.Lobby.Net>Patrimônio líquido</HH.Bank.Lobby.Net>
-  <HH.Bank.Lobby.NetTip>Conta + prata em casa − dívidas. Define sua faixa de patrimônio.</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.NetTip>Conta {0} + em trânsito {1} + prata em casa {2} + investimentos a valor de mercado {3} − dívidas {4} = {5}.
+Define a sua faixa de patrimônio. Os limites de crédito contam só {6} % dos investimentos (configuração bank.loanPortfolioShare).</HH.Bank.Lobby.NetTip>
   <HH.Bank.Lobby.Nothing>Nada ainda. Um depósito seria um ótimo começo.</HH.Bank.Lobby.Nothing>
   <HH.Bank.Lobby.PendingDep>↓ {0} chegando em {1}</HH.Bank.Lobby.PendingDep>
   <HH.Bank.Lobby.PendingWd>↑ {0} por cápsula em {1}</HH.Bank.Lobby.PendingWd>
   <HH.Bank.Lobby.Recent>Atividade recente</HH.Bank.Lobby.Recent>
-  <HH.Bank.Lobby.Trade>Depositar automaticamente a prata de comércio</HH.Bank.Lobby.Trade>
-  <HH.Bank.Lobby.TradeTip>A prata que você recebe de comerciantes e navios de comércio vai para a conta logo após o negócio, com a mesma taxa do depósito direto, em vez de ficar no chão como moedas. Requer depósito direto. Desligado por padrão, para que você ainda possa pagar o próximo comerciante em dinheiro. Caravanas não são afetadas.</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.TradeTip>A prata que você recebe de negociantes e navios de comércio vai para a conta logo após a negociação, com a mesma taxa do depósito direto, em vez de ficar no chão como moedas. Precisa do depósito direto. Desligado por padrão, para que você ainda possa pagar o próximo negociante em dinheiro. As caravanas não são afetadas. Altere nas configurações do mod (Banco &gt; Conta).</HH.Bank.Lobby.TradeTip>
   <HH.Bank.Lobby.Transfer>Depositar e sacar</HH.Bank.Lobby.Transfer>
   <HH.Bank.Lobby.TransferInfo>Em armazenamento: {0}. Depósito {1}. Taxa de saque {2}, {3}.</HH.Bank.Lobby.TransferInfo>
   <HH.Bank.Lobby.Transit>Em trânsito</HH.Bank.Lobby.Transit>
-  <HH.Bank.Lobby.TransitTip>Prata que saiu do seu armazenamento mas ainda não foi creditada (atraso de depósito sem agência ou caixa eletrônico).</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.TransitTip>Prata a caminho: depósitos ainda não creditados (atraso de depósito sem agência ou caixa eletrônico) e saques ainda em uma cápsula de queda. Conta para o seu patrimônio.</HH.Bank.Lobby.TransitTip>
   <HH.Bank.Lobby.WdInstant>dinheiro no prédio na hora</HH.Bank.Lobby.WdInstant>
   <HH.Bank.Lobby.WdPod>cápsula de queda em {0} para {1} h</HH.Bank.Lobby.WdPod>
   <HH.Bank.Lobby.Withdraw>Sacar</HH.Bank.Lobby.Withdraw>
@@ -143,8 +142,7 @@ Juros todo dia: saldo × (M^({1} × {2} / 60) − 1), com M = {3} por ano de jog
   <HH.Bank.Msg.Switched>Sua conta agora fica em {0}.</HH.Bank.Msg.Switched>
   <HH.Bank.Msg.TradeDeposit>Receita de comércio de {0} de prata foi direto para sua conta em {1}.</HH.Bank.Msg.TradeDeposit>
   <HH.Bank.Open.Button>Abrir conta</HH.Bank.Open.Button>
-  <HH.Bank.Open.Direct>Enviar o dinheiro do caixa direto ao banco à meia-noite</HH.Bank.Open.Direct>
-  <HH.Bank.Open.DirectTip>A receita das suas lojas, da hospedaria e do cassino vai para a conta em vez de ficar espalhada como prata. Você pode mudar isso depois em um cofre noturno ou nas configurações (bank.directDeposit).</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.DirectTip>A receita das suas lojas, pousada e cassino vai para a conta em vez de ficar guardada como prata. Isto é uma regra do banco: altere nas configurações do mod (Banco &gt; Conta, bank.directDeposit).</HH.Bank.Open.DirectTip>
   <HH.Bank.Open.Intro>Escolha um banco. Abrir a conta é gratuito; transferi-la depois custa {0} de prata. Enquanto você não tiver conta, nada aqui incomoda: nenhuma carta, nenhum humor, nenhuma taxa.</HH.Bank.Open.Intro>
   <HH.Bank.Open.Sub>Sua prata, nosso problema.</HH.Bank.Open.Sub>
   <HH.Bank.Open.Title>Silverline: abrir conta</HH.Bank.Open.Title>
@@ -195,21 +193,18 @@ Juros todo dia: saldo × (M^({1} × {2} / 60) − 1), com M = {3} por ano de jog
   <HH.Bank.Tab.Terms>Condições</HH.Bank.Tab.Terms>
   <HH.Bank.Terms.AccFee>Taxa de conta por quadrum</HH.Bank.Terms.AccFee>
   <HH.Bank.Terms.AccountDaily>Sua conta por dia</HH.Bank.Terms.AccountDaily>
-  <HH.Bank.Terms.AccountDailyTip>Múltiplo da conta por ano = M^({0} × {1}) = {2}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.AccountDailyTip>Fator diário = (múltiplo anual)^(1/60) = {0}.</HH.Bank.Terms.AccountDailyTip>
   <HH.Bank.Terms.Anchors>Por dificuldade</HH.Bank.Terms.Anchors>
-  <HH.Bank.Terms.AnchorsHead>M por ano / estágio mais alto de cobrança</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.AnchorsHead>Índice M por ano  /  sua conta por ano  /  estágio de coleta mais alto</HH.Bank.Terms.AnchorsHead>
   <HH.Bank.Terms.Atm>Caixa eletrônico</HH.Bank.Terms.Atm>
-  <HH.Bank.Terms.Auto>Automático</HH.Bank.Terms.Auto>
-  <HH.Bank.Terms.AutoTip>Volta a seguir o controle de dificuldade ({0} na dificuldade atual).</HH.Bank.Terms.AutoTip>
   <HH.Bank.Terms.Daily>Por dia (índice)</HH.Bank.Terms.Daily>
   <HH.Bank.Terms.DailyTip>M^(1/60) − 1. Um ano de jogo tem 60 dias.</HH.Bank.Terms.DailyTip>
   <HH.Bank.Terms.Dep>Depósito</HH.Bank.Terms.Dep>
   <HH.Bank.Terms.Direct>Depósito direto</HH.Bank.Terms.Direct>
   <HH.Bank.Terms.Fees>Taxas do seu banco</HH.Bank.Terms.Fees>
   <HH.Bank.Terms.FeesNote>Todas as taxas acompanham a configuração "nível de taxa bancária" ({0} %).</HH.Bank.Terms.FeesNote>
-  <HH.Bank.Terms.Preview>1.000 de prata no índice viram {0} após um ano de jogo e {1} após dez.</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Preview>1.000 de prata no índice viram {0} após um ano de jogo e {1} após dez. Na sua conta: {2} e {3}.</HH.Bank.Terms.Preview>
   <HH.Bank.Terms.Profit>Rentabilidade</HH.Bank.Terms.Profit>
-  <HH.Bank.Terms.ProfitIntro>Quanto o dinheiro investido cresce, em média, por ano de jogo (60 dias). 1,0 é mais ou menos nada, 1,2 é +20 % ao ano. Isso também define o custo dos empréstimos. É uma configuração deste save.</HH.Bank.Terms.ProfitIntro>
   <HH.Bank.Terms.StageNote>Escada de cobrança: 1 lembrete, 2 multa por atraso, 3 compensação com depósitos, 4 visita amigável, 5 equipe de apreensão, 6 incursão de cobrança, 7 recompensa. Agora: para no estágio {0}.</HH.Bank.Terms.StageNote>
   <HH.Bank.Terms.Switch>Trocar de banco</HH.Bank.Terms.Switch>
   <HH.Bank.Terms.Wd>Saque (cápsula / guichê)</HH.Bank.Terms.Wd>
@@ -232,4 +227,52 @@ Juros todo dia: saldo × (M^({1} × {2} / 60) − 1), com M = {3} por ano de jog
   <HH.Bank.Time.DayHour>dia {0}, {1}:00</HH.Bank.Time.DayHour>
   <HH.Bank.Time.Hours>{0} h</HH.Bank.Time.Hours>
   <HH.Bank.Time.Minutes>{0} min</HH.Bank.Time.Minutes>
+  <HH.Bank.Card.InterestTip>Os juros da conta são uma parcela ({0}) do retorno do mercado, multiplicada pelo fator próprio deste banco ({1}). Investimentos rendem mais.</HH.Bank.Card.InterestTip>
+  <HH.Bank.Card.Numbers>Juros {0} por ano  ·  taxa de depósito {1} %  ·  saque {2} %  ·  taxa de conta {3} por quadra</HH.Bank.Card.Numbers>
+  <HH.Bank.Clerk.Line>Atendente Ottoline: "{0}"</HH.Bank.Clerk.Line>
+  <HH.Bank.Lobby.DirectState>Depósito direto: {0}</HH.Bank.Lobby.DirectState>
+  <HH.Bank.Lobby.Invested>Investimentos</HH.Bank.Lobby.Invested>
+  <HH.Bank.Lobby.InvestedTip>Ações, fundos, cripto e NFTs a valor de mercado de hoje: {0}. Títulos de paciência pelo valor atual: {1}. Dinheiro aplicado em contratos Omen e projetos de facção (pelo custo): {2}.</HH.Bank.Lobby.InvestedTip>
+  <HH.Bank.Lobby.MaxTip>Toda a prata da colônia guardada e no farol de comércio. Não há limite máximo.</HH.Bank.Lobby.MaxTip>
+  <HH.Bank.Lobby.MaxTipWd>Tudo o que a conta pode pagar aqui (depois das taxas).</HH.Bank.Lobby.MaxTipWd>
+  <HH.Bank.Lobby.ModeDeposit>Depositar</HH.Bank.Lobby.ModeDeposit>
+  <HH.Bank.Lobby.ModeWithdraw>Sacar</HH.Bank.Lobby.ModeWithdraw>
+  <HH.Bank.Lobby.Off>desligado</HH.Bank.Lobby.Off>
+  <HH.Bank.Lobby.On>ligado</HH.Bank.Lobby.On>
+  <HH.Bank.Lobby.PerYear>por ano</HH.Bank.Lobby.PerYear>
+  <HH.Bank.Lobby.Percent>{0} % da sua prata ({1} de {2})</HH.Bank.Lobby.Percent>
+  <HH.Bank.Lobby.PercentWd>{0} % do que a conta pode pagar ({1} de {2})</HH.Bank.Lobby.PercentWd>
+  <HH.Bank.Lobby.Rate>Taxa de juros</HH.Bank.Lobby.Rate>
+  <HH.Bank.Lobby.RateTip>O que a conta rende por ano de jogo (60 dias), em média. Compare com os produtos da aba Investir:
+{0}</HH.Bank.Lobby.RateTip>
+  <HH.Bank.Lobby.Settings>Configurações</HH.Bank.Lobby.Settings>
+  <HH.Bank.Lobby.TradeState>Transferir prata de negociantes para a conta: {0}</HH.Bank.Lobby.TradeState>
+  <HH.Bank.Memo.ScenBalance>Saldo inicial</HH.Bank.Memo.ScenBalance>
+  <HH.Bank.Open.DirectState>A caixa dos estabelecimentos vai direto ao banco à meia-noite: {0}</HH.Bank.Open.DirectState>
+  <HH.Bank.Quip.Invest>Vejo que você tem investimentos. Vou fingir que não tenho inveja de um número.</HH.Bank.Quip.Invest>
+  <HH.Bank.Reason.NoSilverAtAll>Não há prata no armazém nem no farol de comércio.</HH.Bank.Reason.NoSilverAtAll>
+  <HH.Bank.Reason.NothingToWithdraw>A conta não tem nada para pagar aqui agora.</HH.Bank.Reason.NothingToWithdraw>
+  <HH.Bank.Scen.Balance>Saldo inicial</HH.Bank.Scen.Balance>
+  <HH.Bank.Scen.DirectDeposit>Depósito direto</HH.Bank.Scen.DirectDeposit>
+  <HH.Bank.Scen.Loan>Empréstimo inicial</HH.Bank.Scen.Loan>
+  <HH.Bank.Scen.LoanTip>0 = sem empréstimo. Um empréstimo é pago na conta e devolvido em parcelas como qualquer outro.</HH.Bank.Scen.LoanTip>
+  <HH.Bank.Scen.Summary>Começa com uma conta em {0} com {1} de prata.</HH.Bank.Scen.Summary>
+  <HH.Bank.Scen.SummaryLoan>Já deve {0} de prata ({1} dias).</HH.Bank.Scen.SummaryLoan>
+  <HH.Bank.Site.Atm>Caixa eletrônico</HH.Bank.Site.Atm>
+  <HH.Bank.Site.Counter>Guichê do banco</HH.Bank.Site.Counter>
+  <HH.Bank.Tabs.More>Mais</HH.Bank.Tabs.More>
+  <HH.Bank.Tabs.MoreTip>Mais páginas do banco: {0}</HH.Bank.Tabs.MoreTip>
+  <HH.Bank.Terms.AccountYear>Sua conta por ano</HH.Bank.Terms.AccountYear>
+  <HH.Bank.Terms.AccountYearTip>Múltiplo da conta por ano = 1 + parcela × fator do banco × (M − 1) = 1 + {0} × {1} × ({2} − 1) = {3}, nunca abaixo de {4} nem acima de {5}, e nunca acima do produto de poupança Mattress Plus ({6}).</HH.Bank.Terms.AccountYearTip>
+  <HH.Bank.Terms.Compare>Onde o dinheiro rende mais (por ano de jogo, em média)</HH.Bank.Terms.Compare>
+  <HH.Bank.Terms.CompareAccountTip>A conta é segura e rende pouco. O Mattress Plus, o título e tudo abaixo deles têm mais risco ou prendem o seu dinheiro e rendem mais em média; a própria conta nunca rende mais que o Mattress Plus.</HH.Bank.Terms.CompareAccountTip>
+  <HH.Bank.Terms.CompareTip>Média de longo prazo deste produto na rentabilidade atual. Os preços oscilam; um único ano pode ficar bem acima ou abaixo.</HH.Bank.Terms.CompareTip>
+  <HH.Bank.Terms.MInv>(investimentos: M = {0})</HH.Bank.Terms.MInv>
+  <HH.Bank.Terms.MNow>M = {0} por ano de jogo</HH.Bank.Terms.MNow>
+  <HH.Bank.Terms.OpenSettings>Abrir as configurações do mod</HH.Bank.Terms.OpenSettings>
+  <HH.Bank.Terms.OpenSettingsShort>Alterar nas configurações</HH.Bank.Terms.OpenSettingsShort>
+  <HH.Bank.Terms.OpenSettingsTip>Abre as Opções do Mod do Hearth &amp; Harbor na página do Banco. Lucratividade, taxas, empréstimos e a loteria são configurações reais deste jogo salvo, definidas aqui e em nenhum outro lugar.</HH.Bank.Terms.OpenSettingsTip>
+  <HH.Bank.Terms.SetIn>As condições do banco são configurações deste jogo salvo: altere-as em Opções do Mod &gt; Hearth &amp; Harbor &gt; Banco (Juros e lucratividade, Taxas, Empréstimos, Cobranças, Loteria). 1,0 significa nem mais nem menos; 1,2 significa +20 % ao ano para o índice, e a conta recebe só uma parte disso. Os empréstimos também seguem o M.</HH.Bank.Terms.SetIn>
+  <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
+  <HH.Bank.Yield.Account>Sua conta bancária</HH.Bank.Yield.Account>
 </LanguageData>

@@ -228,4 +228,36 @@
   <HH_Dish_SashimiPlate.description>Syrová ryba nakrájená na tenké plátky a malé morální dilema.</HH_Dish_SashimiPlate.description>
   <HH_Dish_FishTacos.label>rybí tacos</HH_Dish_FishTacos.label>
   <HH_Dish_FishTacos.description>Ryba v tortille, doručená kolonistou, který běžel celou cestu.</HH_Dish_FishTacos.description>
+  <HH_Dish_BoomalopeConfit.description>Pomalu vařeno ve vlastním tuku. Nestůjte vedle hrnce. Tradičně z boomalope, opatrně.</HH_Dish_BoomalopeConfit.description>
+  <HH_Dish_BoomalopeConfit.label>Pomalu pečené confit</HH_Dish_BoomalopeConfit.label>
+  <HH_Dish_CampfireStew.description>Do hrnce šlo všechno, včetně hádky o tom, co to všechno znamená. Tradičně z muffala.</HH_Dish_CampfireStew.description>
+  <HH_Dish_CampfireStew.label>Masový guláš od ohně</HH_Dish_CampfireStew.label>
+  <HH_Dish_ClayOvenMuffalo.description>Přes noc marinováno, zapečeno v hliněné peci a podáno s despektem. Tradičně z muffala.</HH_Dish_ClayOvenMuffalo.description>
+  <HH_Dish_ClayOvenMuffalo.label>Pečeně z hliněné pece</HH_Dish_ClayOvenMuffalo.label>
+  <HH_Dish_DromedaryTagine.description>Pomalu vařeno v hliněném kuželu, jako si přeje většina lidí. Tradičně z dromedára.</HH_Dish_DromedaryTagine.description>
+  <HH_Dish_DromedaryTagine.label>Masová a bobulová tažine</HH_Dish_DromedaryTagine.label>
+  <HH_Dish_LacqueredThrumbo.description>Glazováno, dokud nezáří víc než bankovní účet kolonie. Tradičně z thrumba, pokud má kolonie štěstí.</HH_Dish_LacqueredThrumbo.description>
+  <HH_Dish_LacqueredThrumbo.label>Lakovaná pečeně</HH_Dish_LacqueredThrumbo.label>
+  <HH_Dish_LambKoftasWithRice.description>Kořeněné, tvarované a podávané na rýži jako velmi chutná přednáška. Tradičně z jehněčího.</HH_Dish_LambKoftasWithRice.description>
+  <HH_Dish_LambKoftasWithRice.label>Masové kofty s rýží</HH_Dish_LambKoftasWithRice.label>
+  <HH_Dish_MongolianMuffalo.description>Restováno na woku, sladké, lepivé a trochu moc hlučné. Tradičně z muffala.</HH_Dish_MongolianMuffalo.description>
+  <HH_Dish_MongolianMuffalo.label>Maso po mongolsku</HH_Dish_MongolianMuffalo.label>
+  <HH_Dish_MuffaloBourguignon.description>Dušeno v pivu, protože víno došlo druhý den. Tradičně z muffala.</HH_Dish_MuffaloBourguignon.description>
+  <HH_Dish_MuffaloBourguignon.label>Kolonistův bourguignon</HH_Dish_MuffaloBourguignon.label>
+  <HH_Dish_MuffaloCarpaccio.description>Nakrájeno tak tenko, že přes něj lze číst jídelní lístek. Tradičně z muffala.</HH_Dish_MuffaloCarpaccio.description>
+  <HH_Dish_MuffaloCarpaccio.label>Masové carpaccio</HH_Dish_MuffaloCarpaccio.label>
+  <HH_Dish_MuffaloGoulash.description>Červený, hustý a oficiálně neoficiální národní hádka. Tradičně z muffala.</HH_Dish_MuffaloGoulash.description>
+  <HH_Dish_MuffaloGoulash.label>Masový guláš</HH_Dish_MuffaloGoulash.label>
+  <HH_Dish_MuffaloRamen.description>Výrazně srkejte. V boji o poslední misku srkejte ještě hlasitěji. Tradičně z muffala.</HH_Dish_MuffaloRamen.description>
+  <HH_Dish_MuffaloRamen.label>Sytá masová ramen</HH_Dish_MuffaloRamen.label>
+  <HH_Dish_MuffaloStroganoff.description>Krémový, bohatý a po třetí lžíci pryč. Tradičně z muffala.</HH_Dish_MuffaloStroganoff.description>
+  <HH_Dish_MuffaloStroganoff.label>Krémový stroganov</HH_Dish_MuffaloStroganoff.label>
+  <HH_Dish_MuffaloWellington.description>Zabalené v těstě, malá izolace pro velmi velké ego. Tradičně z muffala.</HH_Dish_MuffaloWellington.description>
+  <HH_Dish_MuffaloWellington.label>Masový Wellington</HH_Dish_MuffaloWellington.label>
+  <HH_Dish_PadThrumbo.description>Sladkokyselá spleť nudlí a křupavosti, na woku dopečená, dokud neposlechne. Křupavost pochází z hmyzího masa.</HH_Dish_PadThrumbo.description>
+  <HH_Dish_PadThrumbo.label>Pad s hmyzem</HH_Dish_PadThrumbo.label>
+  <HH_Dish_ThrumboPho.description>Čistý vývar se seznamem úkolů v pozadí. Tradičně z thrumba, pokud má kolonie štěstí.</HH_Dish_ThrumboPho.description>
+  <HH_Dish_ThrumboPho.label>Masová pho</HH_Dish_ThrumboPho.label>
+  <HH_Dish_ThrumboTartare.description>Syrové, divoké a odvážné. Nejdřív podepište prohlášení o vzdání se odpovědnosti. Tradičně z thrumba, pokud má kolonie štěstí.</HH_Dish_ThrumboTartare.description>
+  <HH_Dish_ThrumboTartare.label>Masový tatarák</HH_Dish_ThrumboTartare.label>
 </LanguageData>

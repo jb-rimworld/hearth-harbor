@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.MusicMode.Always>始终</HH.Enum.MusicMode.Always>
+  <HH.Enum.MusicMode.Off>关闭</HH.Enum.MusicMode.Off>
+  <HH.Enum.MusicMode.WhenHosting>接待客人时</HH.Enum.MusicMode.WhenHosting>
+  <HH.Setting.core.creatorPawn>作者可能流浪到边缘世界</HH.Setting.core.creatorPawn>
+  <HH.Setting.core.creatorPawn.Desc>和原版的创作者小人一样，Hearth &amp; Harbor 的作者偶尔会以生成小人的身份出现：一位善良、勤勉的流浪旅店老板。</HH.Setting.core.creatorPawn.Desc>
+  <HH.Setting.core.music>Hearth &amp; Harbor 音乐</HH.Setting.core.music>
+  <HH.Setting.core.music.Desc>我们的三首安静的曲子（一首给春夏的白天，一首给秋天，一首给冬天）会加入原版 RimWorld 的正常播放列表。作为东道主时：仅限使用 Hearth &amp; Harbor 的殖民地（有客床、招牌或银行账户）。</HH.Setting.core.music.Desc>
+  <HH.Setting.core.musicShare>我们的曲子出现的频率</HH.Setting.core.musicShare>
+  <HH.Setting.core.musicShare.Desc>与一首原版歌曲相比，我们的曲子在播放列表中的权重。1 = 与该季节的任何其他歌曲相同，0 = 从不播放。</HH.Setting.core.musicShare.Desc>
+  <HH.Story.Suggests>{0} 建议：{1}</HH.Story.Suggests>
+  <HH.Story.SuggestsTip>点击采用这位讲故事者建议的款待难度。你仍可以用按钮更改。</HH.Story.SuggestsTip>
+</LanguageData>

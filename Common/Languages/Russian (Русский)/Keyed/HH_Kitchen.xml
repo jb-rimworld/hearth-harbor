@@ -2,8 +2,6 @@
 <LanguageData>
   <HH.Kitchen.Missing>Не хватает: {0}</HH.Kitchen.Missing>
   <HH.Kitchen.RecipeInfo>Оборудование: {0}. Шаги: {1}.</HH.Kitchen.RecipeInfo>
-  <HH.Kitchen.Finishing>завершающий штрих (молоко, яйца, шоколад, пиво, ягоды или грибы)</HH.Kitchen.Finishing>
-  <HH.Kitchen.Finishing2>второй завершающий штрих (пиво, ягоды или грибы)</HH.Kitchen.Finishing2>
   <HH.Kitchen.Inspiration>Вдохновение: {0}</HH.Kitchen.Inspiration>
   <HH.Kitchen.Cuisine>Кухня: {0}</HH.Kitchen.Cuisine>
   <HH.Kitchen.Cooked>Приготовлено на: {0} ({1})</HH.Kitchen.Cooked>
@@ -125,4 +123,9 @@
   <HH.Kitchen.NoNeighbours>Другого кухонного оборудования в досягаемости нет.</HH.Kitchen.NoNeighbours>
   <HH.Kitchen.Neighbours>В досягаемости: {0}</HH.Kitchen.Neighbours>
   <HH.Kitchen.FreshHours>Свежее еще {0} ч</HH.Kitchen.FreshHours>
+  <HH.Kitchen.FinishingTouch>завершающий штрих ({0})</HH.Kitchen.FinishingTouch>
+  <HH.Kitchen.FinishingTouch2>второй завершающий штрих ({0})</HH.Kitchen.FinishingTouch2>
+  <HH.Kitchen.Or>или</HH.Kitchen.Or>
+  <HH.Setting.kitchen.cookSounds>Звуки готовки и еды</HH.Setting.kitchen.cookSounds>
+  <HH.Setting.kitchen.cookSounds.Desc>У каждого вида готовки (нарезка, томление, гриль, выпечка, жарка, готовка на пару, замес, копчение, охлаждение) свой звук и небольшой эффект; готовые блюда звонко сигнализируют, а хорошие тарелки вызывают радость. Выкл.: для всего ванильный звук жарки на сковороде.</HH.Setting.kitchen.cookSounds.Desc>
 </LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ClaimForm_Money.description>罰金、第三者への損害、閉鎖のための L-1 号書式。原因と、それを確認できる者。</SL_ClaimForm_Money.description>
+  <SL_ClaimForm_Money.label>罰金・賠償責任の請求書式</SL_ClaimForm_Money.label>
+  <SL_ClaimForm_Person.description>死亡と四肢の喪失のための P-2 号書式。状況と目撃者。</SL_ClaimForm_Person.description>
+  <SL_ClaimForm_Person.label>人身の請求書式</SL_ClaimForm_Person.label>
+  <SL_ClaimForm_Property.description>破壊された建物、乗り物、作物のための B-4 号書式。何が起きたか、どれほどの被害か、誰が見たか、どのように支払ってほしいか。</SL_ClaimForm_Property.description>
+  <SL_ClaimForm_Property.label>財物の請求書式</SL_ClaimForm_Property.label>
+</LanguageData>

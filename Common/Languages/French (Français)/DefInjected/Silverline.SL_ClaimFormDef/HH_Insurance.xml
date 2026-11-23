@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ClaimForm_Money.description>Formulaire L-1 pour amendes, dommages causés à des tiers et fermetures : ce qui s'est passé et qui peut le confirmer.</SL_ClaimForm_Money.description>
+  <SL_ClaimForm_Money.label>formulaire de réclamation pour amendes et responsabilité</SL_ClaimForm_Money.label>
+  <SL_ClaimForm_Person.description>Formulaire P-2 pour les décès et les membres perdus : les circonstances et un témoin.</SL_ClaimForm_Person.description>
+  <SL_ClaimForm_Person.label>formulaire de réclamation personnelle</SL_ClaimForm_Person.label>
+  <SL_ClaimForm_Property.description>Formulaire B-4 pour bâtiments, véhicules et cultures détruits : ce qui s'est passé, la gravité, qui l'a vu et comment vous souhaitez être indemnisé.</SL_ClaimForm_Property.description>
+  <SL_ClaimForm_Property.label>formulaire de réclamation de biens</SL_ClaimForm_Property.label>
+</LanguageData>

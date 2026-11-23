@@ -228,4 +228,36 @@
   <HH_Dish_SashimiPlate.description>生の魚を薄く切って。ささやかな道徳的ジレンマ付き。</HH_Dish_SashimiPlate.description>
   <HH_Dish_FishTacos.label>フィッシュタコス</HH_Dish_FishTacos.label>
   <HH_Dish_FishTacos.description>魚をトルティーヤで包んだもの。全力で走ってきた入植者が届けてくれた。</HH_Dish_FishTacos.description>
+  <HH_Dish_BoomalopeConfit.description>自身の脂でじっくり煮込む。鍋のそばに立つな。伝統的にはブーマロープで作られる。慎重に。</HH_Dish_BoomalopeConfit.description>
+  <HH_Dish_BoomalopeConfit.label>肉のコンフィ（低温焼き）</HH_Dish_BoomalopeConfit.label>
+  <HH_Dish_CampfireStew.description>何もかも鍋に放り込んだ。それが何を意味するかをめぐる口論ごと。伝統的にはマフアロで作られる。</HH_Dish_CampfireStew.description>
+  <HH_Dish_CampfireStew.label>焚き火の肉シチュー</HH_Dish_CampfireStew.label>
+  <HH_Dish_ClayOvenMuffalo.description>一晩漬け込み、粘土窯で一気に焼き上げ、尊大さと共に供する。伝統的にはマフアロで作られる。</HH_Dish_ClayOvenMuffalo.description>
+  <HH_Dish_ClayOvenMuffalo.label>粘土窯のロースト</HH_Dish_ClayOvenMuffalo.label>
+  <HH_Dish_DromedaryTagine.description>粘土の円錐で煮込む。たいていの人がそうなりたがるように。伝統的にはドロメダリーで作られる。</HH_Dish_DromedaryTagine.description>
+  <HH_Dish_DromedaryTagine.label>肉とベリーのタジン</HH_Dish_DromedaryTagine.label>
+  <HH_Dish_LacqueredThrumbo.description>入植地の銀行残高より輝くまで照りをかける。入植地がそれほど幸運なら、伝統的にはスラムボで作られる。</HH_Dish_LacqueredThrumbo.description>
+  <HH_Dish_LacqueredThrumbo.label>漆塗りのロースト</HH_Dish_LacqueredThrumbo.label>
+  <HH_Dish_LambKoftasWithRice.description>香辛料で味付けし、形を整え、ご飯の上に乗せる。とても美味しい講義のように。伝統的には子羊で作られる。</HH_Dish_LambKoftasWithRice.description>
+  <HH_Dish_LambKoftasWithRice.label>肉のコフタとご飯</HH_Dish_LambKoftasWithRice.label>
+  <HH_Dish_MongolianMuffalo.description>強火で炒め、甘くてべたつき、少々やかましい。伝統的にはマフアロで作られる。</HH_Dish_MongolianMuffalo.description>
+  <HH_Dish_MongolianMuffalo.label>モンゴル風の肉</HH_Dish_MongolianMuffalo.label>
+  <HH_Dish_MuffaloBourguignon.description>ビールで煮込む。ワインは二日目に尽きたから。伝統的にはマフアロで作られる。</HH_Dish_MuffaloBourguignon.description>
+  <HH_Dish_MuffaloBourguignon.label>入植地風ブルギニョン</HH_Dish_MuffaloBourguignon.label>
+  <HH_Dish_MuffaloCarpaccio.description>メニューが透けて読めるほど薄く切る。伝統的にはマフアロで作られる。</HH_Dish_MuffaloCarpaccio.description>
+  <HH_Dish_MuffaloCarpaccio.label>肉のカルパッチョ</HH_Dish_MuffaloCarpaccio.label>
+  <HH_Dish_MuffaloGoulash.description>赤く、とろみがあり、非公式の国民的論争として正式に認められている。伝統的にはマフアロで作られる。</HH_Dish_MuffaloGoulash.description>
+  <HH_Dish_MuffaloGoulash.label>肉のグーラッシュ</HH_Dish_MuffaloGoulash.label>
+  <HH_Dish_MuffaloRamen.description>大きな音をたててすする。最後の一杯を奪い合うなら、もっと大きな音で。伝統的にはマフアロで作られる。</HH_Dish_MuffaloRamen.description>
+  <HH_Dish_MuffaloRamen.label>こってり肉ラーメン</HH_Dish_MuffaloRamen.label>
+  <HH_Dish_MuffaloStroganoff.description>クリーミーで濃厚、三口目にはもう消えている。伝統的にはマフアロで作られる。</HH_Dish_MuffaloStroganoff.description>
+  <HH_Dish_MuffaloStroganoff.label>クリーミーなストロガノフ</HH_Dish_MuffaloStroganoff.label>
+  <HH_Dish_MuffaloWellington.description>パイ生地に包み、とても偉大な自我のための小さな断熱材。伝統的にはマフアロで作られる。</HH_Dish_MuffaloWellington.description>
+  <HH_Dish_MuffaloWellington.label>肉のウェリントン</HH_Dish_MuffaloWellington.label>
+  <HH_Dish_PadThrumbo.description>甘酸っぱい麺とカリカリ食感の絡み合い、言うことを聞くまで強火で炒める。カリカリの正体は昆虫の肉。</HH_Dish_PadThrumbo.description>
+  <HH_Dish_PadThrumbo.label>パッ・バグ</HH_Dish_PadThrumbo.label>
+  <HH_Dish_ThrumboPho.description>澄んだスープの後ろに、とても長いやることリストが控えている。入植地がそれほど幸運なら、伝統的にはスラムボで作られる。</HH_Dish_ThrumboPho.description>
+  <HH_Dish_ThrumboPho.label>肉のフォー</HH_Dish_ThrumboPho.label>
+  <HH_Dish_ThrumboTartare.description>生で、荒々しく、勇敢。まず免責同意書にサインを。入植地がそれほど幸運なら、伝統的にはスラムボで作られる。</HH_Dish_ThrumboTartare.description>
+  <HH_Dish_ThrumboTartare.label>肉のタルタル</HH_Dish_ThrumboTartare.label>
 </LanguageData>

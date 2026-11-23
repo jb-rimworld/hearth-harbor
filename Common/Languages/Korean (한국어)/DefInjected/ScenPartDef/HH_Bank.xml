@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ScenStartingAccount.description>콜로니는 원하는 은행의 계좌, 초기 잔고, 그리고 원한다면 갚아야 할 대출을 가지고 시작합니다.</SL_ScenStartingAccount.description>
+  <SL_ScenStartingAccount.label>Silverline 계좌로 시작</SL_ScenStartingAccount.label>
+</LanguageData>

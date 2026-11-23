@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Creator_HarbourTinkerer.description>[PAWN_nameDef]は小さな港町の起重機の間で育った。港湾労働者が捨てたものを分解しては、前より少しだけ良くして組み直していた。\n\n隣の宿屋の主人は、きしむ扉の修理の礼に[PAWN_objective]にパイを払った。そこで[PAWN_pronoun]は、暖かい部屋と満腹の皿が見知らぬ者を友にすると早くに学んだ。</HH_Creator_HarbourTinkerer.description>
+  <HH_Creator_WanderingInnkeeper.description>[PAWN_nameDef]はどこにも長く留まらなかった。道具箱、使い込まれたレシピ本、そして計画を抱えすぎた[PAWN_pronoun]は、リムの各地を渡り歩き、必要とする人のために宿屋や銀行、小さな診療所を建てては、鍵を渡して去っていった。\n\n交易路沿いの入植者たちは今も、屋根を直し夕食を作ってくれたのに礼をする間もなく消えた旅人の話をする。どこかで[PAWN_pronoun]は、今もまた誰かのために何かを建てている。</HH_Creator_WanderingInnkeeper.description>
+</LanguageData>

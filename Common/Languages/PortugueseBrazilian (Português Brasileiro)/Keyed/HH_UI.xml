@@ -209,7 +209,7 @@
   <HH.UI.Guests.Col.Wing>Ala</HH.UI.Guests.Col.Wing>
   <HH.UI.Guests.Col.Handling>Atendimento</HH.UI.Guests.Col.Handling>
   <HH.UI.Guests.Col.Leaves>Vai embora em</HH.UI.Guests.Col.Leaves>
-  <HH.UI.Guests.HandlingTip>Clique para trocar: Básico → Acompanhar → Recrutar. Acompanhar e Recrutar precisam de colonos com trabalho de Hospedagem.</HH.UI.Guests.HandlingTip>
+  <HH.UI.Guests.HandlingTip>Clique para trocar o atendimento. Acompanhar, Recrutar e Converter precisam de colonos com trabalho de Hospedagem; Converter só aparece para hóspedes de outra ideoligião (Ideologia).</HH.UI.Guests.HandlingTip>
   <HH.UI.Overview.CatToday>hoje {0}</HH.UI.Overview.CatToday>
   <HH.UI.Overview.CatWeek>7 dias {0}</HH.UI.Overview.CatWeek>
   <HH.UI.Overview.Week>Renda, últimos 7 dias</HH.UI.Overview.Week>
@@ -313,4 +313,26 @@
   <HH.Setting.core.ironBank.Desc>A cobrança de dívidas sempre sobe à etapa mais alta, qualquer que seja a dificuldade. Ninguém adia suas parcelas em silêncio.</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.peacefulUnderworld.Desc>Locais sombrios funcionam sem violência: sem ringue de luta, sem interrogatório, sem caça a pessoas, sem clínica, sem extorsão de proteção. Sala dos fundos, receptador e lounge de drogas permanecem.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>O planejamento dos hóspedes e as verificações de cômodos rodam pela metade das vezes. Ajuda em computadores lentos; os hóspedes podem reagir um pouco mais tarde.</HH.Setting.core.perfMode.Desc>
+  <HH.Kitchen.Cookbook.ColCuisine>Culinária</HH.Kitchen.Cookbook.ColCuisine>
+  <HH.Kitchen.Cookbook.ColDish>Prato</HH.Kitchen.Cookbook.ColDish>
+  <HH.Kitchen.Cookbook.ColLevel>Nível</HH.Kitchen.Cookbook.ColLevel>
+  <HH.Kitchen.Cookbook.ColPrice>Preço</HH.Kitchen.Cookbook.ColPrice>
+  <HH.Kitchen.Cookbook.ColSkill>Habilidade</HH.Kitchen.Cookbook.ColSkill>
+  <HH.Kitchen.Cookbook.ColStations>Preparado em</HH.Kitchen.Cookbook.ColStations>
+  <HH.Setting.core.windowScale>Tamanho das janelas de Hearth &amp; Harbor</HH.Setting.core.windowScale>
+  <HH.Setting.core.windowScale.Desc>Todas as janelas de Hearth &amp; Harbor e Silverline crescem ou encolhem por este fator (além do tamanho automático para telas grandes).</HH.Setting.core.windowScale.Desc>
+  <HH.UI.DevGroup.Desc>Ferramentas do modo desenvolvedor do Hearth &amp; Harbor para este prédio ({0}). Só aparecem no modo desenvolvedor; desligue o agrupamento nas configurações da Hospedaria.</HH.UI.DevGroup.Desc>
+  <HH.UI.DevGroup.Label>Desenv.: Hearth &amp; Harbor</HH.UI.DevGroup.Label>
+  <HH.UI.Diag.Lines>{0} linhas</HH.UI.Diag.Lines>
+  <HH.UI.Diff.Jump>Ir para</HH.UI.Diff.Jump>
+  <HH.UI.Diff.JumpTop>Faixa e controle deslizante</HH.UI.Diff.JumpTop>
+  <HH.UI.GuestTab.CollapseTip>Clique para recolher</HH.UI.GuestTab.CollapseTip>
+  <HH.UI.GuestTab.ExpandTip>Clique para expandir</HH.UI.GuestTab.ExpandTip>
+  <HH.UI.Handling.Convert>Converter</HH.UI.Handling.Convert>
+  <HH.UI.Handling.Convert.Tip>Como Acompanhar, mais conversas sobre a sua ideoligião. Cada conversa abala a certeza do hóspede na dele; chegando a zero, ele adota a sua. Uma conversa insistente pode ofender (humor -4, gasta menos). Precisa do DLC Ideologia e de um hóspede de outra ideoligião.</HH.UI.Handling.Convert.Tip>
+  <HH.UI.Page.Sub.casino>Casas, faturamento e como cada jogo está em relação às suas probabilidades.</HH.UI.Page.Sub.casino>
+  <HH.UI.Page.Sub.city>Cinema, salão, galeria, parque, táxi e segurança: o que foi construído e quanto rende.</HH.UI.Page.Sub.city>
+  <HH.UI.Page.Sub.guests>Todos que estão hospedados ou visitando sua hospedaria. Clique numa linha para ir até o hóspede; clique na célula de atendimento para mudá-lo.</HH.UI.Page.Sub.guests>
+  <HH.UI.Page.Sub.overview>Hoje num relance: hóspedes, faturamento e o estado de cada estabelecimento.</HH.UI.Page.Sub.overview>
+  <HH.UI.Page.Sub.underworld>Sussurros, pesos de chegada e o faturamento do lado sombrio.</HH.UI.Page.Sub.underworld>
 </LanguageData>

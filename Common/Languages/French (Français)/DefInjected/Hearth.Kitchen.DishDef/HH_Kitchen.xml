@@ -228,4 +228,36 @@
   <HH_Dish_SashimiPlate.description>Poisson cru finement tranché, et un petit dilemme moral.</HH_Dish_SashimiPlate.description>
   <HH_Dish_FishTacos.label>tacos au poisson</HH_Dish_FishTacos.label>
   <HH_Dish_FishTacos.description>Du poisson dans une tortilla, livré par un colon qui a couru tout le trajet.</HH_Dish_FishTacos.description>
+  <HH_Dish_BoomalopeConfit.description>Mijoté à feu doux dans sa propre graisse. Ne restez pas à côté de la marmite. Traditionnellement préparé avec du boomalope, avec précaution.</HH_Dish_BoomalopeConfit.description>
+  <HH_Dish_BoomalopeConfit.label>confit de viande rôtie</HH_Dish_BoomalopeConfit.label>
+  <HH_Dish_CampfireStew.description>Tout est allé dans la marmite, y compris la dispute sur ce que tout cela voulait dire. Traditionnellement préparé avec du muffalo.</HH_Dish_CampfireStew.description>
+  <HH_Dish_CampfireStew.label>ragoût de viande du feu de camp</HH_Dish_CampfireStew.label>
+  <HH_Dish_ClayOvenMuffalo.description>Mariné toute la nuit, cuit au four d'argile et servi avec superbe. Traditionnellement préparé avec du muffalo.</HH_Dish_ClayOvenMuffalo.description>
+  <HH_Dish_ClayOvenMuffalo.label>rôti au four d'argile</HH_Dish_ClayOvenMuffalo.label>
+  <HH_Dish_DromedaryTagine.description>Mijoté dans un cône d'argile, comme la plupart des gens aimeraient l'être. Traditionnellement préparé avec du dromadaire.</HH_Dish_DromedaryTagine.description>
+  <HH_Dish_DromedaryTagine.label>tajine de viande aux baies</HH_Dish_DromedaryTagine.label>
+  <HH_Dish_LacqueredThrumbo.description>Glacé jusqu'à briller plus que le compte en banque de la colonie. Traditionnellement préparé avec du thrumbo, si la colonie a cette chance.</HH_Dish_LacqueredThrumbo.description>
+  <HH_Dish_LacqueredThrumbo.label>rôti laqué</HH_Dish_LacqueredThrumbo.label>
+  <HH_Dish_LambKoftasWithRice.description>Épicés, façonnés et servis sur du riz, comme une conférence très savoureuse. Traditionnellement préparé avec de l'agneau.</HH_Dish_LambKoftasWithRice.description>
+  <HH_Dish_LambKoftasWithRice.label>kéftas de viande au riz</HH_Dish_LambKoftasWithRice.label>
+  <HH_Dish_MongolianMuffalo.description>Sauté au wok, sucré, collant et un peu trop bruyant. Traditionnellement préparé avec du muffalo.</HH_Dish_MongolianMuffalo.description>
+  <HH_Dish_MongolianMuffalo.label>viande façon mongole</HH_Dish_MongolianMuffalo.label>
+  <HH_Dish_MuffaloBourguignon.description>Braisé à la bière, car le vin a manqué dès le deuxième jour. Traditionnellement préparé avec du muffalo.</HH_Dish_MuffaloBourguignon.description>
+  <HH_Dish_MuffaloBourguignon.label>bourguignon de la colonie</HH_Dish_MuffaloBourguignon.label>
+  <HH_Dish_MuffaloCarpaccio.description>Tranché si fin qu'on peut lire la carte à travers. Traditionnellement préparé avec du muffalo.</HH_Dish_MuffaloCarpaccio.description>
+  <HH_Dish_MuffaloCarpaccio.label>carpaccio de viande</HH_Dish_MuffaloCarpaccio.label>
+  <HH_Dish_MuffaloGoulash.description>Rouge, épais et, officiellement, la dispute officieuse nationale. Traditionnellement préparé avec du muffalo.</HH_Dish_MuffaloGoulash.description>
+  <HH_Dish_MuffaloGoulash.label>goulasch de viande</HH_Dish_MuffaloGoulash.label>
+  <HH_Dish_MuffaloRamen.description>Aspirez bruyamment. Dans une bataille pour le dernier bol, aspirez encore plus fort. Traditionnellement préparé avec du muffalo.</HH_Dish_MuffaloRamen.description>
+  <HH_Dish_MuffaloRamen.label>ramen de viande copieux</HH_Dish_MuffaloRamen.label>
+  <HH_Dish_MuffaloStroganoff.description>Crémeux, riche et disparu dès la troisième cuillère. Traditionnellement préparé avec du muffalo.</HH_Dish_MuffaloStroganoff.description>
+  <HH_Dish_MuffaloStroganoff.label>stroganov crémeux</HH_Dish_MuffaloStroganoff.label>
+  <HH_Dish_MuffaloWellington.description>Enveloppé de pâte feuilletée, une petite isolation pour un ego très grand. Traditionnellement préparé avec du muffalo.</HH_Dish_MuffaloWellington.description>
+  <HH_Dish_MuffaloWellington.label>wellington de viande</HH_Dish_MuffaloWellington.label>
+  <HH_Dish_PadThrumbo.description>Un enchevêtrement de nouilles aigres-douces et croquantes, sauté au wok jusqu'à ce qu'il obéisse. Le croquant vient de la viande d'insecte.</HH_Dish_PadThrumbo.description>
+  <HH_Dish_PadThrumbo.label>pad bug</HH_Dish_PadThrumbo.label>
+  <HH_Dish_ThrumboPho.description>Un bouillon clair avec une très longue liste de choses à faire derrière lui. Traditionnellement préparé avec du thrumbo, si la colonie a cette chance.</HH_Dish_ThrumboPho.description>
+  <HH_Dish_ThrumboPho.label>pho de viande</HH_Dish_ThrumboPho.label>
+  <HH_Dish_ThrumboTartare.description>Cru, féroce et courageux. Signez d'abord la décharge. Traditionnellement préparé avec du thrumbo, si la colonie a cette chance.</HH_Dish_ThrumboTartare.description>
+  <HH_Dish_ThrumboTartare.label>tartare de viande</HH_Dish_ThrumboTartare.label>
 </LanguageData>

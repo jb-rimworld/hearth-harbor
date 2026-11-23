@@ -209,7 +209,7 @@
   <HH.UI.Guests.Col.Wing>侧翼</HH.UI.Guests.Col.Wing>
   <HH.UI.Guests.Col.Handling>接待方式</HH.UI.Guests.Col.Handling>
   <HH.UI.Guests.Col.Leaves>离开倒计时</HH.UI.Guests.Col.Leaves>
-  <HH.UI.Guests.HandlingTip>点击切换：基础 → 陪同 → 招募。陪同和招募需要有接待工作的殖民者。</HH.UI.Guests.HandlingTip>
+  <HH.UI.Guests.HandlingTip>点击切换处理方式。陪同、招募和改信需要有餐饮工作的殖民者；改信仅对信奉其他意识形态的访客显示（意识形态DLC）。</HH.UI.Guests.HandlingTip>
   <HH.UI.Overview.CatToday>今天 {0}</HH.UI.Overview.CatToday>
   <HH.UI.Overview.CatWeek>7 天 {0}</HH.UI.Overview.CatWeek>
   <HH.UI.Overview.Week>收入，最近 7 天</HH.UI.Overview.Week>
@@ -313,4 +313,26 @@
   <HH.Setting.core.ironBank.Desc>无论难度如何，债务催收都会升到最高阶段。没有人会悄悄替你延后分期付款。</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.peacefulUnderworld.Desc>阴暗场所不使用暴力：没有斗殴场、没有审讯、没有追捕人、没有诊所、没有保护费勒索。后间、销赃人和毒品休息室保留。</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>访客规划和房间检查的频率减半。对慢速电脑有帮助；访客的反应可能略慢。</HH.Setting.core.perfMode.Desc>
+  <HH.Kitchen.Cookbook.ColCuisine>菜系</HH.Kitchen.Cookbook.ColCuisine>
+  <HH.Kitchen.Cookbook.ColDish>菜品</HH.Kitchen.Cookbook.ColDish>
+  <HH.Kitchen.Cookbook.ColLevel>等级</HH.Kitchen.Cookbook.ColLevel>
+  <HH.Kitchen.Cookbook.ColPrice>价格</HH.Kitchen.Cookbook.ColPrice>
+  <HH.Kitchen.Cookbook.ColSkill>技能</HH.Kitchen.Cookbook.ColSkill>
+  <HH.Kitchen.Cookbook.ColStations>烹饪地点</HH.Kitchen.Cookbook.ColStations>
+  <HH.Setting.core.windowScale>Hearth &amp; Harbor 窗口大小</HH.Setting.core.windowScale>
+  <HH.Setting.core.windowScale.Desc>所有 Hearth &amp; Harbor 和 Silverline 窗口都会按此倍率放大或缩小（在大屏幕的自动尺寸之上叠加）。</HH.Setting.core.windowScale.Desc>
+  <HH.UI.DevGroup.Desc>Hearth &amp; Harbor 的开发者模式工具，用于此建筑（{0}）。仅在开发者模式下显示；可在旅店设置中关闭此分组。</HH.UI.DevGroup.Desc>
+  <HH.UI.DevGroup.Label>开发：Hearth &amp; Harbor</HH.UI.DevGroup.Label>
+  <HH.UI.Diag.Lines>{0} 行</HH.UI.Diag.Lines>
+  <HH.UI.Diff.Jump>跳转到</HH.UI.Diff.Jump>
+  <HH.UI.Diff.JumpTop>阶层与滑块</HH.UI.Diff.JumpTop>
+  <HH.UI.GuestTab.CollapseTip>点击收起</HH.UI.GuestTab.CollapseTip>
+  <HH.UI.GuestTab.ExpandTip>点击展开</HH.UI.GuestTab.ExpandTip>
+  <HH.UI.Handling.Convert>改信</HH.UI.Handling.Convert>
+  <HH.UI.Handling.Convert.Tip>与陪同相同，但会谈论你的意识形态。每次交谈都会动摇访客对自身信仰的确信；降到零时，他们便接受你的信仰。咄咄逼人的谈话可能令人不快（心情 -4，消费减少）。需要意识形态DLC，且访客须信奉其他意识形态。</HH.UI.Handling.Convert.Tip>
+  <HH.UI.Page.Sub.casino>赌场的房间数、营收，以及每种游戏相对其赔率的表现。</HH.UI.Page.Sub.casino>
+  <HH.UI.Page.Sub.city>电影院、沙龙、画廊、公园、出租车和安保：建了什么，各自能赚多少。</HH.UI.Page.Sub.city>
+  <HH.UI.Page.Sub.guests>所有住在或来访你旅店的人。点击一行可跳到该访客；点击处理方式一格可更改。</HH.UI.Page.Sub.guests>
+  <HH.UI.Page.Sub.overview>今日一览：访客、营收，以及每家营业场所的状态。</HH.UI.Page.Sub.overview>
+  <HH.UI.Page.Sub.underworld>耳语、到访权重，以及黑暗一面的营收。</HH.UI.Page.Sub.underworld>
 </LanguageData>

@@ -23,7 +23,7 @@
   <HH.Bank.Greet.Morning>Guten Morgen</HH.Bank.Greet.Morning>
   <HH.Bank.Greet.Night>Gute Nacht</HH.Bank.Greet.Night>
   <HH.Bank.Header.Tier>Vermögensstufe: {0}</HH.Bank.Header.Tier>
-  <HH.Bank.Header.TierTip>Nettovermögen = Konto + Silber zu Hause − Schulden: {0} Silber. Die Stufe ändert sich erst, wenn ein neuer Wert einen ganzen Tag lang gehalten hat. Sie bestimmt die Kolonistenstimmung von dieser Bank aus (Einstellung: bank.moodOn).</HH.Bank.Header.TierTip>
+  <HH.Bank.Header.TierTip>Nettovermögen = Konto + Einzahlungen unterwegs + Silber zu Hause + Geldanlagen (zum Marktwert) − Schulden: {0} Silber. Die Stufe ändert sich erst, wenn ein neuer Wert einen ganzen Tag gehalten hat. Sie bestimmt die Stimmung der Kolonie über diese Bank (Einstellung: bank.moodOn).</HH.Bank.Header.TierTip>
   <HH.Bank.Hist.Amount>Betrag (5 Nachkommastellen)</HH.Bank.Hist.Amount>
   <HH.Bank.Hist.Empty>Noch keine Buchungen.</HH.Bank.Hist.Empty>
   <HH.Bank.Hist.TotalFees>Bisher gezahlte Gebühren</HH.Bank.Hist.TotalFees>
@@ -80,8 +80,8 @@ Sachbearbeiterin Ottoline, {2}</HH.Bank.Letter.Reminder>
   <HH.Bank.Lobby.Accounts>Konten</HH.Bank.Lobby.Accounts>
   <HH.Bank.Lobby.Amount>Betrag</HH.Bank.Lobby.Amount>
   <HH.Bank.Lobby.Balance>Kontostand</HH.Bank.Lobby.Balance>
-  <HH.Bank.Lobby.BalanceTip>Exakt: {0} Silber.
-Zinsen jeden Tag: Kontostand × (M^({1} × {2} / 60) − 1), mit M = {3} pro Spieljahr (dem Rentabilitätsregler). Das sind {4:0.##} % am Tag.</HH.Bank.Lobby.BalanceTip>
+  <HH.Bank.Lobby.BalanceTip>Genau: {0} Silber.
+Das Konto ist ein Sparkonto: Es zahlt {1} % des Marktüberschusses (M − 1) im Jahr, mal {2} für diese Bank. Mit M = {3} sind das {4} % im Jahr ({5} % am Tag). Geldanlagen zahlen mehr und kosten Risiko.</HH.Bank.Lobby.BalanceTip>
   <HH.Bank.Lobby.Cash>Bargeld zu Hause</HH.Bank.Lobby.Cash>
   <HH.Bank.Lobby.CashTip>Silber, das auf deinen Heimatkarten herumliegt.</HH.Bank.Lobby.CashTip>
   <HH.Bank.Lobby.ChangeBank>Bank wechseln</HH.Bank.Lobby.ChangeBank>
@@ -91,23 +91,22 @@ Zinsen jeden Tag: Kontostand × (M^({1} × {2} / 60) − 1), mit M = {3} pro Spi
   <HH.Bank.Lobby.DepDelay>gutgeschrieben nach {0}</HH.Bank.Lobby.DepDelay>
   <HH.Bank.Lobby.DepInstant>sofort gebucht</HH.Bank.Lobby.DepInstant>
   <HH.Bank.Lobby.Deposit>Einzahlen</HH.Bank.Lobby.Deposit>
-  <HH.Bank.Lobby.Direct>Direkteinzahlung</HH.Bank.Lobby.Direct>
-  <HH.Bank.Lobby.DirectTip>Die Kassen deiner Geschäfte werden um Mitternacht aufs Konto geleert, abzüglich {0} %.</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.DirectTip>Die Kassen deiner Betriebe werden um Mitternacht aufs Konto geleert, abzüglich {0} %. Änderbar in den Mod-Einstellungen (Bank &gt; Konto).</HH.Bank.Lobby.DirectTip>
   <HH.Bank.Lobby.Interest>Zinsen in diesem Quadrum</HH.Bank.Lobby.Interest>
   <HH.Bank.Lobby.InterestTip>Auf den Kontostand gezahlte Zinsen seit Beginn des Quadrums (15 Tage).</HH.Bank.Lobby.InterestTip>
   <HH.Bank.Lobby.Max>Max</HH.Bank.Lobby.Max>
   <HH.Bank.Lobby.Net>Nettovermögen</HH.Bank.Lobby.Net>
-  <HH.Bank.Lobby.NetTip>Konto + Silber zu Hause − Schulden. Bestimmt deine Vermögensstufe.</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.NetTip>Konto {0} + unterwegs {1} + Silber zu Hause {2} + Geldanlagen zum Marktwert {3} − Schulden {4} = {5}.
+Bestimmt deine Vermögensstufe. Kreditlimits zählen nur {6} % der Geldanlagen (Einstellung bank.loanPortfolioShare).</HH.Bank.Lobby.NetTip>
   <HH.Bank.Lobby.Nothing>Noch nichts. Eine Einzahlung wäre ein guter Anfang.</HH.Bank.Lobby.Nothing>
   <HH.Bank.Lobby.PendingDep>↓ {0} kommen in {1} an</HH.Bank.Lobby.PendingDep>
   <HH.Bank.Lobby.PendingWd>↑ {0} per Kapsel in {1}</HH.Bank.Lobby.PendingWd>
   <HH.Bank.Lobby.Recent>Letzte Aktivität</HH.Bank.Lobby.Recent>
-  <HH.Bank.Lobby.Trade>Handelssilber automatisch einzahlen</HH.Bank.Lobby.Trade>
-  <HH.Bank.Lobby.TradeTip>Silber, das du von Händlern und Handelsschiffen bekommst, geht direkt nach dem Geschäft aufs Konto, zur gleichen Gebühr wie die Direkteinzahlung, statt als Münzen auf dem Boden zu liegen. Benötigt Direkteinzahlung. Standardmäßig aus, damit du den nächsten Händler weiter bar bezahlen kannst. Karawanen sind nicht betroffen.</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.TradeTip>Silber, das du von Händlern und Handelsschiffen bekommst, geht direkt nach dem Geschäft aufs Konto, zur selben Gebühr wie die Direkteinzahlung, statt als Münzen auf dem Boden zu liegen. Braucht die Direkteinzahlung. Standardmäßig aus, damit du den nächsten Händler noch bar bezahlen kannst. Karawanen sind nicht betroffen. Änderbar in den Mod-Einstellungen (Bank &gt; Konto).</HH.Bank.Lobby.TradeTip>
   <HH.Bank.Lobby.Transfer>Ein- und auszahlen</HH.Bank.Lobby.Transfer>
   <HH.Bank.Lobby.TransferInfo>Im Lager: {0}. Einzahlung {1}. Auszahlungsgebühr {2}, {3}.</HH.Bank.Lobby.TransferInfo>
   <HH.Bank.Lobby.Transit>Unterwegs</HH.Bank.Lobby.Transit>
-  <HH.Bank.Lobby.TransitTip>Silber, das dein Lager verlassen hat, aber noch nicht gutgeschrieben ist (Einzahlungsverzögerung ohne Filiale oder Geldautomat).</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.TransitTip>Silber auf dem Weg: noch nicht gutgeschriebene Einzahlungen (Einzahlungsverzögerung ohne Filiale oder Geldautomat) und Abhebungen, die noch in einer Landekapsel sind. Es zählt zu deinem Nettovermögen.</HH.Bank.Lobby.TransitTip>
   <HH.Bank.Lobby.WdInstant>sofort Bargeld am Gebäude</HH.Bank.Lobby.WdInstant>
   <HH.Bank.Lobby.WdPod>Landekapsel in {0} bis {1} Std.</HH.Bank.Lobby.WdPod>
   <HH.Bank.Lobby.Withdraw>Auszahlen</HH.Bank.Lobby.Withdraw>
@@ -142,8 +141,7 @@ Zinsen jeden Tag: Kontostand × (M^({1} × {2} / 60) − 1), mit M = {3} pro Spi
   <HH.Bank.Msg.Switched>Dein Konto liegt jetzt bei {0}.</HH.Bank.Msg.Switched>
   <HH.Bank.Msg.TradeDeposit>Handelseinnahmen von {0} Silber gingen direkt auf dein Konto bei {1}.</HH.Bank.Msg.TradeDeposit>
   <HH.Bank.Open.Button>Konto eröffnen</HH.Bank.Open.Button>
-  <HH.Bank.Open.Direct>Kassengeld um Mitternacht direkt zur Bank leiten</HH.Bank.Open.Direct>
-  <HH.Bank.Open.DirectTip>Die Einnahmen deiner Läden, des Gasthofs und des Casinos gehen aufs Konto, statt als Silber herumzuliegen. Du kannst das später an einem Nachttresor oder in den Einstellungen ändern (bank.directDeposit).</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.DirectTip>Die Einnahmen deiner Läden, des Gasthauses und des Casinos gehen aufs Konto, statt als Silber herumzuliegen. Das ist eine Bedingung der Bank: Änderbar in den Mod-Einstellungen (Bank &gt; Konto, bank.directDeposit).</HH.Bank.Open.DirectTip>
   <HH.Bank.Open.Intro>Such dir eine Bank aus. Ein Konto zu eröffnen ist kostenlos; ein späterer Wechsel kostet {0} Silber. Solange du kein Konto hast, belästigt dich hier nichts: keine Briefe, keine Stimmung, keine Gebühren.</HH.Bank.Open.Intro>
   <HH.Bank.Open.Sub>Dein Silber, unser Problem.</HH.Bank.Open.Sub>
   <HH.Bank.Open.Title>Silverline: Konto eröffnen</HH.Bank.Open.Title>
@@ -194,21 +192,18 @@ Zinsen jeden Tag: Kontostand × (M^({1} × {2} / 60) − 1), mit M = {3} pro Spi
   <HH.Bank.Tab.Terms>Konditionen</HH.Bank.Tab.Terms>
   <HH.Bank.Terms.AccFee>Kontogebühr pro Quadrum</HH.Bank.Terms.AccFee>
   <HH.Bank.Terms.AccountDaily>Dein Konto pro Tag</HH.Bank.Terms.AccountDaily>
-  <HH.Bank.Terms.AccountDailyTip>Kontofaktor pro Jahr = M^({0} × {1}) = {2}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.AccountDailyTip>Tagesfaktor = (Jahresvielfaches)^(1/60) = {0}.</HH.Bank.Terms.AccountDailyTip>
   <HH.Bank.Terms.Anchors>Nach Schwierigkeitsgrad</HH.Bank.Terms.Anchors>
-  <HH.Bank.Terms.AnchorsHead>M pro Jahr / höchste Inkassostufe</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.AnchorsHead>Index M pro Jahr  /  dein Konto im Jahr  /  höchste Sammlungsstufe</HH.Bank.Terms.AnchorsHead>
   <HH.Bank.Terms.Atm>Geldautomat</HH.Bank.Terms.Atm>
-  <HH.Bank.Terms.Auto>Auto</HH.Bank.Terms.Auto>
-  <HH.Bank.Terms.AutoTip>Dem Schwierigkeitsregler wieder folgen ({0} bei deinem aktuellen Schwierigkeitsgrad).</HH.Bank.Terms.AutoTip>
   <HH.Bank.Terms.Daily>Pro Tag (Index)</HH.Bank.Terms.Daily>
   <HH.Bank.Terms.DailyTip>M^(1/60) − 1. Ein Spieljahr hat 60 Tage.</HH.Bank.Terms.DailyTip>
   <HH.Bank.Terms.Dep>Einzahlung</HH.Bank.Terms.Dep>
   <HH.Bank.Terms.Direct>Direkteinzahlung</HH.Bank.Terms.Direct>
   <HH.Bank.Terms.Fees>Gebühren deiner Bank</HH.Bank.Terms.Fees>
   <HH.Bank.Terms.FeesNote>Alle Gebühren skalieren mit der Einstellung „Bankgebühren-Stufe“ ({0} %).</HH.Bank.Terms.FeesNote>
-  <HH.Bank.Terms.Preview>1.000 Silber zum Index werden nach einem Spieljahr zu {0} und nach zehn zu {1}.</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Preview>1.000 Silber zum Index werden nach einem Spieljahr zu {0} und nach zehn zu {1}. Auf deinem Konto: {2} und {3}.</HH.Bank.Terms.Preview>
   <HH.Bank.Terms.Profit>Rentabilität</HH.Bank.Terms.Profit>
-  <HH.Bank.Terms.ProfitIntro>Wie stark angelegtes Geld im Schnitt pro Spieljahr (60 Tage) wächst. 1,0 bedeutet plus/minus nichts, 1,2 sind +20 % im Jahr. Das bestimmt auch, was Kredite kosten. Diese Einstellung gilt für diesen Spielstand.</HH.Bank.Terms.ProfitIntro>
   <HH.Bank.Terms.StageNote>Inkassoleiter: 1 Erinnerung, 2 Mahngebühr, 3 Verrechnung mit Einlagen, 4 freundlicher Besuch, 5 Pfändungstrupp, 6 Inkasso-Überfall, 7 Kopfgeld. Aktuell: endet bei Stufe {0}.</HH.Bank.Terms.StageNote>
   <HH.Bank.Terms.Switch>Bankwechsel</HH.Bank.Terms.Switch>
   <HH.Bank.Terms.Wd>Abhebung (Kapsel / Schalter)</HH.Bank.Terms.Wd>
@@ -231,4 +226,52 @@ Zinsen jeden Tag: Kontostand × (M^({1} × {2} / 60) − 1), mit M = {3} pro Spi
   <HH.Bank.Time.DayHour>Tag {0}, {1}:00 Uhr</HH.Bank.Time.DayHour>
   <HH.Bank.Time.Hours>{0} Std.</HH.Bank.Time.Hours>
   <HH.Bank.Time.Minutes>{0} Min.</HH.Bank.Time.Minutes>
+  <HH.Bank.Card.InterestTip>Der Kontozins ist ein Anteil ({0}) der Marktrendite, mal dem eigenen Faktor dieser Bank ({1}). Geldanlagen zahlen mehr.</HH.Bank.Card.InterestTip>
+  <HH.Bank.Card.Numbers>Zins {0} im Jahr  ·  Einzahlungsgebühr {1} %  ·  Auszahlung {2} %  ·  Kontogebühr {3} pro Quadrum</HH.Bank.Card.Numbers>
+  <HH.Bank.Clerk.Line>Schalterbeamtin Ottoline: "{0}"</HH.Bank.Clerk.Line>
+  <HH.Bank.Lobby.DirectState>Direkteinzahlung: {0}</HH.Bank.Lobby.DirectState>
+  <HH.Bank.Lobby.Invested>Geldanlagen</HH.Bank.Lobby.Invested>
+  <HH.Bank.Lobby.InvestedTip>Aktien, Fonds, Krypto und NFTs zum heutigen Marktwert: {0}. Geduldsanleihen zu ihrem aktuellen Wert: {1}. In Omen-Verträge und Fraktionsprojekte eingesetztes Geld (zu Kosten): {2}.</HH.Bank.Lobby.InvestedTip>
+  <HH.Bank.Lobby.MaxTip>Das ganze Silber der Kolonie im Lager und an der Handelsbake. Es gibt keine Obergrenze.</HH.Bank.Lobby.MaxTip>
+  <HH.Bank.Lobby.MaxTipWd>Alles, was das Konto hier auszahlen kann (nach Gebühren).</HH.Bank.Lobby.MaxTipWd>
+  <HH.Bank.Lobby.ModeDeposit>Einzahlen</HH.Bank.Lobby.ModeDeposit>
+  <HH.Bank.Lobby.ModeWithdraw>Abheben</HH.Bank.Lobby.ModeWithdraw>
+  <HH.Bank.Lobby.Off>aus</HH.Bank.Lobby.Off>
+  <HH.Bank.Lobby.On>an</HH.Bank.Lobby.On>
+  <HH.Bank.Lobby.PerYear>im Jahr</HH.Bank.Lobby.PerYear>
+  <HH.Bank.Lobby.Percent>{0} % deines Silbers ({1} von {2})</HH.Bank.Lobby.Percent>
+  <HH.Bank.Lobby.PercentWd>{0} % dessen, was das Konto auszahlen kann ({1} von {2})</HH.Bank.Lobby.PercentWd>
+  <HH.Bank.Lobby.Rate>Zinssatz</HH.Bank.Lobby.Rate>
+  <HH.Bank.Lobby.RateTip>Was das Konto im Durchschnitt pro Spieljahr (60 Tage) einbringt. Vergleiche mit den Produkten im Reiter Anlegen:
+{0}</HH.Bank.Lobby.RateTip>
+  <HH.Bank.Lobby.Settings>Einstellungen</HH.Bank.Lobby.Settings>
+  <HH.Bank.Lobby.TradeState>Handelssilber aufs Konto: {0}</HH.Bank.Lobby.TradeState>
+  <HH.Bank.Memo.ScenBalance>Eröffnungssaldo</HH.Bank.Memo.ScenBalance>
+  <HH.Bank.Open.DirectState>Kassengeld geht um Mitternacht direkt zur Bank: {0}</HH.Bank.Open.DirectState>
+  <HH.Bank.Quip.Invest>Ich sehe, du hast Geldanlagen. Ich tue so, als wäre ich nicht neidisch auf eine Zahl.</HH.Bank.Quip.Invest>
+  <HH.Bank.Reason.NoSilverAtAll>Es liegt kein Silber im Lager oder an der Handelsbake.</HH.Bank.Reason.NoSilverAtAll>
+  <HH.Bank.Reason.NothingToWithdraw>Das Konto hat hier gerade nichts auszuzahlen.</HH.Bank.Reason.NothingToWithdraw>
+  <HH.Bank.Scen.Balance>Eröffnungssaldo</HH.Bank.Scen.Balance>
+  <HH.Bank.Scen.DirectDeposit>Direkteinzahlung</HH.Bank.Scen.DirectDeposit>
+  <HH.Bank.Scen.Loan>Startkredit</HH.Bank.Scen.Loan>
+  <HH.Bank.Scen.LoanTip>0 = kein Kredit. Ein Kredit wird aufs Konto ausgezahlt und wie jeder andere Kredit in Raten zurückgezahlt.</HH.Bank.Scen.LoanTip>
+  <HH.Bank.Scen.Summary>Beginnt mit einem Konto bei {0} mit {1} Silber.</HH.Bank.Scen.Summary>
+  <HH.Bank.Scen.SummaryLoan>Es schuldet bereits {0} Silber ({1} Tage).</HH.Bank.Scen.SummaryLoan>
+  <HH.Bank.Site.Atm>Geldautomat</HH.Bank.Site.Atm>
+  <HH.Bank.Site.Counter>Bankschalter</HH.Bank.Site.Counter>
+  <HH.Bank.Tabs.More>Mehr</HH.Bank.Tabs.More>
+  <HH.Bank.Tabs.MoreTip>Weitere Seiten der Bank: {0}</HH.Bank.Tabs.MoreTip>
+  <HH.Bank.Terms.AccountYear>Dein Konto pro Jahr</HH.Bank.Terms.AccountYear>
+  <HH.Bank.Terms.AccountYearTip>Kontovielfaches pro Jahr = 1 + Anteil × Bankfaktor × (M − 1) = 1 + {0} × {1} × ({2} − 1) = {3}, nie unter {4} oder über {5} und nie über dem Sparprodukt Matratze Plus ({6}).</HH.Bank.Terms.AccountYearTip>
+  <HH.Bank.Terms.Compare>Wo Geld mehr einbringt (pro Spieljahr, im Durchschnitt)</HH.Bank.Terms.Compare>
+  <HH.Bank.Terms.CompareAccountTip>Das Konto ist sicher und zahlt wenig. Matratze Plus, die Anleihe und alles darunter bergen mehr Risiko oder sperren dein Geld und zahlen im Schnitt mehr; das Konto selbst zahlt nie mehr als Matratze Plus.</HH.Bank.Terms.CompareAccountTip>
+  <HH.Bank.Terms.CompareTip>Langzeitdurchschnitt dieses Produkts bei der aktuellen Rentabilität. Preise schwanken; ein einzelnes Jahr kann weit darüber oder darunter liegen.</HH.Bank.Terms.CompareTip>
+  <HH.Bank.Terms.MInv>(Geldanlagen: M = {0})</HH.Bank.Terms.MInv>
+  <HH.Bank.Terms.MNow>M = {0} pro Spieljahr</HH.Bank.Terms.MNow>
+  <HH.Bank.Terms.OpenSettings>Mod-Einstellungen öffnen</HH.Bank.Terms.OpenSettings>
+  <HH.Bank.Terms.OpenSettingsShort>In den Einstellungen ändern</HH.Bank.Terms.OpenSettingsShort>
+  <HH.Bank.Terms.OpenSettingsTip>Öffnet die Mod-Optionen von Hearth &amp; Harbor auf der Bank-Seite. Rentabilität, Gebühren, Kredite und Lotterie sind echte Einstellungen dieses Spielstands, die nur dort festgelegt werden.</HH.Bank.Terms.OpenSettingsTip>
+  <HH.Bank.Terms.SetIn>Die Konditionen der Bank sind Einstellungen dieses Spielstands: Ändere sie unter Mod-Optionen &gt; Hearth &amp; Harbor &gt; Bank (Zinsen &amp; Rentabilität, Gebühren, Kredite, Inkasso, Lotterie). 1,0 bedeutet plus/minus nichts, 1,2 sind +20 % im Jahr für den Index; das Konto bekommt davon nur einen Anteil. Kredite folgen ebenfalls M.</HH.Bank.Terms.SetIn>
+  <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
+  <HH.Bank.Yield.Account>Dein Bankkonto</HH.Bank.Yield.Account>
 </LanguageData>

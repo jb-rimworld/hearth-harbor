@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServedBusy.stages.0.description>Les clients venaient sans cesse au comptoir et j'avais de quoi m'occuper tout du long. C'est ainsi que le travail devrait être.</HH_ServedBusy.stages.0.description>
+  <HH_ServedBusy.stages.0.label>un bon service</HH_ServedBusy.stages.0.label>
+  <HH_ServedBusy.stages.1.description>Un client après l'autre. Je connaissais chaque commande avant la fin de la demande. Une fatigue agréable.</HH_ServedBusy.stages.1.description>
+  <HH_ServedBusy.stages.1.label>un service chargé</HH_ServedBusy.stages.1.label>
+  <HH_ServedBusy.stages.2.description>Toute la salle voulait quelque chose en même temps et j'ai tout suivi. Je suis fier de ce service.</HH_ServedBusy.stages.2.description>
+  <HH_ServedBusy.stages.2.label>débordé</HH_ServedBusy.stages.2.label>
+  <HH_ServedIdle.stages.0.description>Je suis resté derrière le comptoir pendant des heures et personne n'est venu. J'ai astiqué le même verre trois fois.</HH_ServedIdle.stages.0.description>
+  <HH_ServedIdle.stages.0.label>ennui au comptoir</HH_ServedIdle.stages.0.label>
+  <HH_ServedIdle.stages.1.description>Des heures au comptoir sans rien à faire. J'aurais pu être utile ailleurs.</HH_ServedIdle.stages.1.description>
+  <HH_ServedIdle.stages.1.label>resté debout tout le service</HH_ServedIdle.stages.1.label>
+  <HH_ServedIdle.stages.2.description>Un service entier à attendre des clients qui ne sont jamais venus. Mais qu'est-ce que je fais debout ici ?</HH_ServedIdle.stages.2.description>
+  <HH_ServedIdle.stages.2.label>un service inutile</HH_ServedIdle.stages.2.label>
+  <HH_WokenByBell.stages.0.description>Quelqu'un a sonné la cloche au milieu de mon sommeil. Le devoir appelle. Bruyamment.</HH_WokenByBell.stages.0.description>
+  <HH_WokenByBell.stages.0.label>réveillé par la cloche de nuit</HH_WokenByBell.stages.0.label>
+  <HH_WokenByBell.stages.1.description>Quelqu'un a sonné la cloche au milieu de mon sommeil. Bon, c'est le travail. Je dormirai plus tard.</HH_WokenByBell.stages.1.description>
+  <HH_WokenByBell.stages.1.label>réveillé par la cloche de nuit</HH_WokenByBell.stages.1.label>
+</LanguageData>

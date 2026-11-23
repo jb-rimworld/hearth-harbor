@@ -10,4 +10,6 @@
   <HH_MarketStall.description>줄무늬 차양이 달린 독립형 노점입니다. 큰 장은 노점을 충분히 보유해야만 열립니다(영업 설정 참고). 모든 상인 캐러밴은 노점 하나에 자리를 잡고 노점 사용료를 당신의 금고에 냅니다. 밖에 서 있으면 날씨와 상관없이 작동하지만 독자적인 영업장은 아닙니다.</HH_MarketStall.description>
   <HH_VendingMachine.label>자판기</HH_VendingMachine.label>
   <HH_VendingMachine.description>음식, 음료, 약물, 의약품을 담는 전원 장치 캐비닛입니다. 손님은 직원 없이도 언제든 시장 가치에 맞춰 구매합니다. 운반원은 선반처럼 채웁니다. 개척민은 공짜로 집어 먹을 수 있고, 기계는 손님에게만 요금을 받습니다. 판매하려면 전력이 필요합니다.</HH_VendingMachine.description>
+  <HH_Mote_Bell.label>야간 종</HH_Mote_Bell.label>
+  <HH_Mote_RingArc.label>울림</HH_Mote_RingArc.label>
 </LanguageData>

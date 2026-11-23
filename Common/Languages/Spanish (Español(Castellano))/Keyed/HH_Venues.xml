@@ -31,7 +31,7 @@
   <HH.Setting.venues.maxPurchases>Compras por huésped y estancia</HH.Setting.venues.maxPurchases>
   <HH.Setting.venues.maxPurchases.Desc>Un huésped deja de comprar tras este número de compras en una misma estancia.</HH.Setting.venues.maxPurchases.Desc>
   <HH.Setting.venues.nightBell>Campanilla nocturna</HH.Setting.venues.nightBell>
-  <HH.Setting.venues.nightBell.Desc>Los huéspedes pueden tocar una campanilla en un local cerrado. Los colonos despiertos con el tipo de trabajo Servicio acuden y lo abren a cambio de un recargo. Nadie se despierta.</HH.Setting.venues.nightBell.Desc>
+  <HH.Setting.venues.nightBell.Desc>Los huéspedes pueden tocar una campana en un local cerrado. Los colonos con el trabajo Servicio que la oigan acuden y abren el local con un recargo (véanse abajo los ajustes de la campana nocturna sobre a quién se llama y quién puede ser despertado).</HH.Setting.venues.nightBell.Desc>
   <HH.Setting.venues.nightBellMin>Tarifa mínima de la campanilla nocturna</HH.Setting.venues.nightBellMin>
   <HH.Setting.venues.nightBellMin.Desc>Un servicio de campanilla nunca cuesta menos que esto (plata).</HH.Setting.venues.nightBellMin.Desc>
   <HH.Setting.venues.nightBellSurcharge>Recargo de la campanilla nocturna</HH.Setting.venues.nightBellSurcharge>
@@ -107,20 +107,16 @@
   <HH.Venue.Price>Precios</HH.Venue.Price>
   <HH.Venue.PriceDesc>Factor de precio sobre todo lo que vende este negocio. Los huéspedes se alejan de los precios demasiado altos.</HH.Venue.PriceDesc>
   <HH.Venue.PriceFactor>Factor de precio</HH.Venue.PriceFactor>
-  <HH.Venue.PriceHint>Los huéspedes comparan el precio con lo que el artículo vale para ellos. Los más ricos aguantan más. Los locales sin nadie de guardia cobran algo menos (autoservicio); un servicio de campanilla nocturna cuesta extra. Gratis significa gratis.</HH.Venue.PriceHint>
   <HH.Venue.PriceLine>Precios</HH.Venue.PriceLine>
   <HH.Venue.PriceTitle>Precios</HH.Venue.PriceTitle>
   <HH.Venue.Pricey>Caro</HH.Venue.Pricey>
   <HH.Venue.Rename>Renombrar</HH.Venue.Rename>
   <HH.Venue.RenameDesc>Dale un nombre a este negocio.</HH.Venue.RenameDesc>
   <HH.Venue.RenameTitle>Nombra este negocio</HH.Venue.RenameTitle>
-  <HH.Venue.Reset>Usar nombre predeterminado</HH.Venue.Reset>
   <HH.Venue.Restock>Reponer</HH.Venue.Restock>
   <HH.Venue.RestockDesc>Haz que este cartel fije las zonas de almacenamiento de su sala para aceptar tu mercancía con prioridad Importante, de modo que los transportistas mantengan llenas las estanterías. Es opcional; los ajustes anteriores vuelven al desactivarlo.</HH.Venue.RestockDesc>
   <HH.Venue.RestockHint>Cuando está activado, todo lugar de almacenamiento de esta sala (zonas de almacenamiento y estanterías, tuyas o de cualquiera) acepta con prioridad Importante las mercancías marcadas abajo, para que tus transportistas mantengan la sala surtida. Los ajustes anteriores de esos lugares vuelven al desactivar esto.</HH.Venue.RestockHint>
   <HH.Venue.RestockNoShop>Este negocio no vende nada desde su sala, así que no hay nada que reponer.</HH.Venue.RestockNoShop>
-  <HH.Venue.RestockSwitchOff>Reponer está ACTIVADO: desactívalo y devuelve el almacenamiento</HH.Venue.RestockSwitchOff>
-  <HH.Venue.RestockSwitchOn>Reponer está desactivado: actívalo</HH.Venue.RestockSwitchOn>
   <HH.Venue.RestockTitle>Reponer</HH.Venue.RestockTitle>
   <HH.Venue.RippedOff>Timado</HH.Venue.RippedOff>
   <HH.Venue.Sales>Ventas de hoy</HH.Venue.Sales>
@@ -141,4 +137,142 @@
   <HH.Venue.MarketBlock.NoShop>sin tienda</HH.Venue.MarketBlock.NoShop>
   <HH.Venue.MarketBlock.Stalls>puestos de mercado {0}/{1}</HH.Venue.MarketBlock.Stalls>
   <HH.Venue.MarketBlock.Renown>renombre {0}/{1}</HH.Venue.MarketBlock.Renown>
+  <HH.Core.FlipBlocked>El otro lado está bloqueado: ningún trabajador podría situarse allí.</HH.Core.FlipBlocked>
+  <HH.Core.FlipBusy>Ocupado: {0} lo está usando ahora mismo.</HH.Core.FlipBusy>
+  <HH.Core.FlipNoSide>Esto no tiene lado de trabajo.</HH.Core.FlipNoSide>
+  <HH.Core.FlipSame>Ambos lados son iguales.</HH.Core.FlipSame>
+  <HH.Core.FlipSide>Cambiar el lado de trabajo</HH.Core.FlipSide>
+  <HH.Core.FlipSideDesc>Gira esto en el sitio para que quien trabaje aquí se ponga al otro lado. Conserva su sitio, facturas y conexiones.</HH.Core.FlipSideDesc>
+  <HH.Enum.BellWakes.AwakeOnly>Solo colonos despiertos</HH.Enum.BellWakes.AwakeOnly>
+  <HH.Enum.BellWakes.Off>Desactivado (la campana solo suena)</HH.Enum.BellWakes.Off>
+  <HH.Enum.BellWakes.WakeVolunteers>Despertar también a los voluntarios</HH.Enum.BellWakes.WakeVolunteers>
+  <HH.Enum.BellWho.AnyColonist>Cualquier colono</HH.Enum.BellWho.AnyColonist>
+  <HH.Enum.BellWho.ServingOnly>Solo colonos de servicio</HH.Enum.BellWho.ServingOnly>
+  <HH.Honor.Line>Sistema de confianza: sin personal</HH.Honor.Line>
+  <HH.Honor.MemoPaid>caja de confianza: pagado {0} de {1}</HH.Honor.MemoPaid>
+  <HH.Honor.MoteNothing>¡no ha pagado!</HH.Honor.MoteNothing>
+  <HH.Honor.MotePart>ha pagado el {0} %</HH.Honor.MotePart>
+  <HH.Honor.PriceNote>sistema de confianza: precio completo, algunos huéspedes pagan menos</HH.Honor.PriceNote>
+  <HH.Honor.Report>Caja de confianza hoy: {0} ventas, faltan {1} de plata ({2} %) · total: {3} ventas, {4} pagos cortos, {5} sin pagar, faltan {6} de plata</HH.Honor.Report>
+  <HH.Honor.Section>Caja de confianza</HH.Honor.Section>
+  <HH.Honor.Toggle>Sistema de confianza</HH.Honor.Toggle>
+  <HH.Honor.ToggleDesc>Gestiona este negocio sin personal: los huéspedes se sirven lo que quieren y dejan el dinero en la caja de confianza, al precio completo. No hace falta nadie de guardia, pero algunos pagan menos del precio y unos pocos no pagan nada (probabilidades en los ajustes; menos cuando un colono los ve). El informe del cartel muestra lo que ha faltado.</HH.Honor.ToggleDesc>
+  <HH.Honor.Witnessed>{0} salió de {1} sin pagar; lo vio un colono.</HH.Honor.Witnessed>
+  <HH.Names.DefaultOwner>Harbor</HH.Names.DefaultOwner>
+  <HH.Serve.IdleMote>*bostezo*</HH.Serve.IdleMote>
+  <HH.Serve.ServedShift>{0} atendidos en este turno</HH.Serve.ServedShift>
+  <HH.Serve.TipMemo>propina para {0}</HH.Serve.TipMemo>
+  <HH.Serve.TipMote>propina +{0}</HH.Serve.TipMote>
+  <HH.Serve.TipsTotal>Propinas para el personal hasta ahora: {0} de plata</HH.Serve.TipsTotal>
+  <HH.Setting.venues.autoNames>Nombrar automáticamente los negocios nuevos</HH.Setting.venues.autoNames>
+  <HH.Setting.venues.autoNames.Desc>Un nuevo cartel de local recibe un nombre acorde a su tipo de negocio (por ejemplo «El Alpaca Adormilado» para una taberna). Siempre puedes renombrarlo o pedir otro.</HH.Setting.venues.autoNames.Desc>
+  <HH.Setting.venues.bellHurry>Campana nocturna: los colonos corren</HH.Setting.venues.bellHurry>
+  <HH.Setting.venues.bellHurry.Desc>Los colonos que responden a la campana van al trote hasta el local en vez de caminar.</HH.Setting.venues.bellHurry.Desc>
+  <HH.Setting.venues.bellRange>Alcance de audición de la campana nocturna (casillas)</HH.Setting.venues.bellRange>
+  <HH.Setting.venues.bellRange.Desc>Hasta dónde llega la campana para alguien con oído normal. Las paredes y puertas cerradas lo acortan; el mal oído lo acorta mucho, y los colonos sordos nunca la oyen.</HH.Setting.venues.bellRange.Desc>
+  <HH.Setting.venues.bellResponders>Campana nocturna: colonos por toque</HH.Setting.venues.bellResponders>
+  <HH.Setting.venues.bellResponders.Desc>Cuántos colonos como máximo acuden corriendo cuando suena la campana.</HH.Setting.venues.bellResponders.Desc>
+  <HH.Setting.venues.bellWakeCooldownHours>Campana nocturna: protección del sueño (horas)</HH.Setting.venues.bellWakeCooldownHours>
+  <HH.Setting.venues.bellWakeCooldownHours.Desc>Un colono despertado por la campana no vuelve a ser despertado durante tantas horas.</HH.Setting.venues.bellWakeCooldownHours.Desc>
+  <HH.Setting.venues.bellWakes>Campana nocturna: a quién se llama</HH.Setting.venues.bellWakes>
+  <HH.Setting.venues.bellWakes.Desc>Desactivado: la campana solo suena; los colonos la notan cuando su trabajo se lo permite. Solo despiertos: los colonos despiertos dentro del alcance acuden al local. Voluntarios que despiertan: también colonos dormidos que tengan el trabajo Servicio con prioridad 1 o 2 (o con ajustes de trabajo simples), como máximo una vez cada medio día por colono, con un pequeño coste de ánimo.</HH.Setting.venues.bellWakes.Desc>
+  <HH.Setting.venues.bellWho>Campana nocturna: quién puede responder</HH.Setting.venues.bellWho>
+  <HH.Setting.venues.bellWho.Desc>Solo Servicio: colonos con el tipo de trabajo Servicio activado. Cualquier colono: todo colono capaz de servir.</HH.Setting.venues.bellWho.Desc>
+  <HH.Setting.venues.busyServedPerHour>Turno ajetreado: huéspedes atendidos por hora</HH.Setting.venues.busyServedPerHour>
+  <HH.Setting.venues.busyServedPerHour.Desc>Un turno cuenta como ajetreado (buen ánimo) cuando el encargado atendió al menos a tantos huéspedes por hora.</HH.Setting.venues.busyServedPerHour.Desc>
+  <HH.Setting.venues.honorMessages>Sistema de confianza: avisar de robos vistos</HH.Setting.venues.honorMessages>
+  <HH.Setting.venues.honorMessages.Desc>Muestra un aviso cuando un colono vio a un huésped marcharse sin pagar.</HH.Setting.venues.honorMessages.Desc>
+  <HH.Setting.venues.honorNoPay>Sistema de confianza: probabilidad de no pagar nada</HH.Setting.venues.honorNoPay>
+  <HH.Setting.venues.honorNoPay.Desc>En un local de confianza sin atender, la probabilidad de que un huésped se lleve los productos sin pagar.</HH.Setting.venues.honorNoPay.Desc>
+  <HH.Setting.venues.honorUnderpay>Sistema de confianza: probabilidad de pagar poco</HH.Setting.venues.honorUnderpay>
+  <HH.Setting.venues.honorUnderpay.Desc>En un local de confianza sin atender, la probabilidad de que un huésped deje solo una parte del precio (30-80 %) en la caja.</HH.Setting.venues.honorUnderpay.Desc>
+  <HH.Setting.venues.honorWatched>Sistema de confianza: efecto de ser vigilado</HH.Setting.venues.honorWatched>
+  <HH.Setting.venues.honorWatched.Desc>Cuánto menos pagan mal los huéspedes mientras un colono puede verlos (1 = nunca pagan mal si están vigilados).</HH.Setting.venues.honorWatched.Desc>
+  <HH.Setting.venues.idleHours>Aburrido tras (horas sin huéspedes)</HH.Setting.venues.idleHours>
+  <HH.Setting.venues.idleHours.Desc>Un encargado que no ha atendido a nadie durante tantas horas de su turno se aburre (mal ánimo, algo peor con cada tramo más).</HH.Setting.venues.idleHours.Desc>
+  <HH.Setting.venues.requireSetup>Los locales necesitan su mobiliario</HH.Setting.venues.requireSetup>
+  <HH.Setting.venues.requireSetup.Desc>Un negocio solo abre cuando el mobiliario que necesita su tipo está en la sala (una taberna necesita barra, mesa y asientos; un casino al menos un juego; etc.; véase la pestaña Montaje del cartel). Desactivado: el mobiliario que falta solo es una sugerencia.</HH.Setting.venues.requireSetup.Desc>
+  <HH.Setting.venues.serviceSkill>Peso de la habilidad Social</HH.Setting.venues.serviceSkill>
+  <HH.Setting.venues.serviceSkill.Desc>Cuánto importa la habilidad Social de quien está de servicio: trato más amable, compras mayores, propinas y ventas más rápidas. 0 = la habilidad no importa.</HH.Setting.venues.serviceSkill.Desc>
+  <HH.Setting.venues.setupHints>Botones de construcción en el cartel</HH.Setting.venues.setupHints>
+  <HH.Setting.venues.setupHints.Desc>Un cartel de local seleccionado muestra botones de construcción para el mobiliario que su negocio todavía necesita.</HH.Setting.venues.setupHints.Desc>
+  <HH.Setting.venues.shiftThoughts>Ánimo del turno</HH.Setting.venues.shiftThoughts>
+  <HH.Setting.venues.shiftThoughts.Desc>Los colonos que atienden un local quedan contentos tras un turno ajetreado y aburridos cuando se quedan de pie horas sin nada que hacer.</HH.Setting.venues.shiftThoughts.Desc>
+  <HH.Setting.venues.staffRule>Regla de personal</HH.Setting.venues.staffRule>
+  <HH.Setting.venues.staffRule.Desc>Por tipo de local: tabernas, restaurantes, casinos y spas necesitan a alguien de servicio; tiendas y salones no. Nunca: todos los locales funcionan en autoservicio. Siempre: todo local necesita a alguien de servicio.</HH.Setting.venues.staffRule.Desc>
+  <HH.Setting.venues.tipShare>Propinas</HH.Setting.venues.tipShare>
+  <HH.Setting.venues.tipShare.Desc>Propina máxima que un huésped deja sobre una compra, como parte del precio, para un encargado perfecto. La probabilidad y el tamaño de la propina crecen con la habilidad Social del encargado.</HH.Setting.venues.tipShare.Desc>
+  <HH.Setup.Attention>revisar: {0}</HH.Setup.Attention>
+  <HH.Setup.BannerAttention>El mobiliario está completo. Revisa los puntos pendientes de abajo para que se atienda a los huéspedes.</HH.Setup.BannerAttention>
+  <HH.Setup.BannerMissing>A este {0} todavía le faltan algunos muebles.</HH.Setup.BannerMissing>
+  <HH.Setup.BannerNotReady>No está listo: este {0} abre cuando todo lo marcado como Obligatorio esté en la sala.</HH.Setup.BannerNotReady>
+  <HH.Setup.BannerReady>Este local tiene todo lo que necesita.</HH.Setup.BannerReady>
+  <HH.Setup.Build>Construir</HH.Setup.Build>
+  <HH.Setup.BuildButton>Construir: {0}</HH.Setup.BuildButton>
+  <HH.Setup.BuildButtonDesc>A este {0} todavía le hace falta {1}. Haz clic para colocar uno en la sala.</HH.Setup.BuildButtonDesc>
+  <HH.Setup.ChipNoRoom>sin sala</HH.Setup.ChipNoRoom>
+  <HH.Setup.ChipNoStaff>esperando personal</HH.Setup.ChipNoStaff>
+  <HH.Setup.FooterLoose>La regla «Los locales necesitan su mobiliario» está desactivada: los elementos que faltan solo son sugerencias.</HH.Setup.FooterLoose>
+  <HH.Setup.FooterStrict>El mobiliario obligatorio mantiene el local cerrado hasta que esté en la sala. Puedes desactivar esa regla en los ajustes de Tiendas y comida.</HH.Setup.FooterStrict>
+  <HH.Setup.GizmoDesc>Abre la guía de montaje de este local: qué necesita su tipo, qué tiene ya y botones de construcción para todo lo que falta.</HH.Setup.GizmoDesc>
+  <HH.Setup.GizmoMissing>Montaje: faltan {0}</HH.Setup.GizmoMissing>
+  <HH.Setup.GizmoReady>Montaje: listo</HH.Setup.GizmoReady>
+  <HH.Setup.HonorNotNeeded>no hace falta con el sistema de confianza</HH.Setup.HonorNotNeeded>
+  <HH.Setup.LoadNotice>No está listo para abrir, faltan muebles: {0}. La pestaña Montaje del letrero tiene botones de construcción.</HH.Setup.LoadNotice>
+  <HH.Setup.MissingLine>Montaje: faltan {0}</HH.Setup.MissingLine>
+  <HH.Setup.NeedsResearch>requiere investigación: {0}</HH.Setup.NeedsResearch>
+  <HH.Setup.NoScreenYet>construye primero la pantalla</HH.Setup.NoScreenYet>
+  <HH.Setup.NotAvailable>no disponible ahora mismo</HH.Setup.NotAvailable>
+  <HH.Setup.NotBuildable>no está en el menú de construcción</HH.Setup.NotBuildable>
+  <HH.Setup.NotReadyLine>No está listo: faltan {0}</HH.Setup.NotReadyLine>
+  <HH.Setup.NotReadyState>no está listo</HH.Setup.NotReadyState>
+  <HH.Setup.NowReady>{0} tiene todo lo necesario y está listo para abrir.</HH.Setup.NowReady>
+  <HH.Setup.OperationalTip>Hace falta para atender a los huéspedes; no mantiene las puertas cerradas.</HH.Setup.OperationalTip>
+  <HH.Setup.PickType>Tipo de local</HH.Setup.PickType>
+  <HH.Setup.Planned>{0} planificado</HH.Setup.Planned>
+  <HH.Setup.ReadyLine>Montaje: listo</HH.Setup.ReadyLine>
+  <HH.Setup.Recommended>{0} elemento(s) recomendado(s) pendiente(s)</HH.Setup.Recommended>
+  <HH.Setup.RecommendedHead>Recomendado</HH.Setup.RecommendedHead>
+  <HH.Setup.RecommendedTip>Recomendado: el local funciona sin ello, pero a los huéspedes les gusta.</HH.Setup.RecommendedTip>
+  <HH.Setup.RenameTip>Haz clic para cambiar el nombre de este local.</HH.Setup.RenameTip>
+  <HH.Setup.Required>Obligatorio</HH.Setup.Required>
+  <HH.Setup.RestockTip>Deja que el letrero fije las estanterías y depósitos de la sala para recibir tus mercancías.</HH.Setup.RestockTip>
+  <HH.Setup.ShowTip>Señala lo que la sala ya tiene.</HH.Setup.ShowTip>
+  <HH.Setup.Staff>alguien haciendo trabajo de Atender</HH.Setup.Staff>
+  <HH.Setup.StaffHint>Activa el tipo de trabajo Atender para al menos un colono.</HH.Setup.StaffHint>
+  <HH.Setup.Stock>mercancía a la venta</HH.Setup.Stock>
+  <HH.Setup.StockHint>Guarda dentro de la sala lo que vende este local.</HH.Setup.StockHint>
+  <HH.Setup.StockNote>{0} montones a la venta</HH.Setup.StockNote>
+  <HH.Setup.TabLabel>Montaje</HH.Setup.TabLabel>
+  <HH.Setup.WorkTab>Pestaña de trabajo</HH.Setup.WorkTab>
+  <HH.Setup.WorkTabTip>Abre la pestaña de trabajo y asigna el tipo de trabajo Atender a un colono sociable.</HH.Setup.WorkTabTip>
+  <HH.Setup.WorkersNote>{0} colono(s) atienden</HH.Setup.WorkersNote>
+  <HH.Venue.BellAnswered>¡Voy!</HH.Venue.BellAnswered>
+  <HH.Venue.BellAnsweredBy>Timbre nocturno: atendido por {0}</HH.Venue.BellAnsweredBy>
+  <HH.Venue.BellNobody>Timbre nocturno: sonando, todavía nadie ha venido</HH.Venue.BellNobody>
+  <HH.Venue.BellNote>timbre nocturno</HH.Venue.BellNote>
+  <HH.Venue.BellOnTheWay>Timbre nocturno: {0} está en camino</HH.Venue.BellOnTheWay>
+  <HH.Venue.BellRungAgo>sonó hace {0}</HH.Venue.BellRungAgo>
+  <HH.Venue.BellUnanswered>El timbre nocturno de {0} está sonando, pero nadie viene. Los colonos con el tipo de trabajo Servicio deben estar despiertos y al alcance del oído.</HH.Venue.BellUnanswered>
+  <HH.Venue.ClosedNow>cerrado ahora</HH.Venue.ClosedNow>
+  <HH.Venue.NameAutoHint>Si cambias el tipo de negocio, se sugiere un nombre para el letrero; un nombre que escribas se mantiene.</HH.Venue.NameAutoHint>
+  <HH.Venue.NamePlain>Sencillo: {0}</HH.Venue.NamePlain>
+  <HH.Venue.NameSuggest>Sugerir un nombre</HH.Venue.NameSuggest>
+  <HH.Venue.NameSuggestTip>Genera un nombre que encaje con este tipo de negocio. Vuelve a generarlo hasta que te guste uno.</HH.Venue.NameSuggestTip>
+  <HH.Venue.Now>ahora</HH.Venue.Now>
+  <HH.Venue.OpenNow>abierto ahora</HH.Venue.OpenNow>
+  <HH.Venue.PriceColItem>En venta</HH.Venue.PriceColItem>
+  <HH.Venue.PriceColPrice>Los huéspedes pagan</HH.Venue.PriceColPrice>
+  <HH.Venue.PriceColValue>Valor</HH.Venue.PriceColValue>
+  <HH.Venue.PriceEmpty>Todavía no hay nada en venta en la sala.</HH.Venue.PriceEmpty>
+  <HH.Venue.PriceHintShort>Los huéspedes comparan el precio con lo que el objeto vale para ellos; los huéspedes ricos aguantan más. Gratis es gratis.</HH.Venue.PriceHintShort>
+  <HH.Venue.PriceNoGoods>Este tipo de negocio no vende mercancía desde su sala.</HH.Venue.PriceNoGoods>
+  <HH.Venue.PriceNow>Ahora mismo los huéspedes pagan el {0} % del valor de mercado</HH.Venue.PriceNow>
+  <HH.Venue.PriceSetting>ajuste de nivel de precios</HH.Venue.PriceSetting>
+  <HH.Venue.RestockBtnOff>Desactivar</HH.Venue.RestockBtnOff>
+  <HH.Venue.RestockBtnOn>Activar</HH.Venue.RestockBtnOn>
+  <HH.Venue.RestockFooter>Espacios de almacenamiento en esta sala: {0} · pilas en venta ahora: {1}</HH.Venue.RestockFooter>
+  <HH.Venue.RestockStateOff>El reabastecimiento está desactivado: el almacenamiento de la sala mantiene sus propios ajustes</HH.Venue.RestockStateOff>
+  <HH.Venue.RestockStateOn>El reabastecimiento está activado: el almacenamiento de la sala sigue esta lista</HH.Venue.RestockStateOn>
+  <HH.Venue.SelfServiceNote>autoservicio</HH.Venue.SelfServiceNote>
 </LanguageData>

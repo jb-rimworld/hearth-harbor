@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServedBusy.stages.0.description>Os hóspedes não paravam de chegar ao balcão e eu tinha algo para fazer o tempo todo. É assim que o trabalho deveria ser.</HH_ServedBusy.stages.0.description>
+  <HH_ServedBusy.stages.0.label>um bom turno</HH_ServedBusy.stages.0.label>
+  <HH_ServedBusy.stages.1.description>Um hóspede atrás do outro. Eu sabia cada pedido antes de terminarem de pedir. Um cansaço do bem.</HH_ServedBusy.stages.1.description>
+  <HH_ServedBusy.stages.1.label>um turno movimentado</HH_ServedBusy.stages.1.label>
+  <HH_ServedBusy.stages.2.description>A sala inteira queria algo ao mesmo tempo e eu acompanhei tudo. Tenho orgulho desse turno.</HH_ServedBusy.stages.2.description>
+  <HH_ServedBusy.stages.2.label>correndo de um lado para outro</HH_ServedBusy.stages.2.label>
+  <HH_ServedIdle.stages.0.description>Fiquei atrás do balcão por um tempão e ninguém apareceu. Polia o mesmo copo três vezes.</HH_ServedIdle.stages.0.description>
+  <HH_ServedIdle.stages.0.label>entediado no balcão</HH_ServedIdle.stages.0.label>
+  <HH_ServedIdle.stages.1.description>Horas no balcão sem nada para fazer. Poderia estar fazendo algo útil.</HH_ServedIdle.stages.1.description>
+  <HH_ServedIdle.stages.1.label>parado o turno inteiro</HH_ServedIdle.stages.1.label>
+  <HH_ServedIdle.stages.2.description>Um turno inteiro esperando hóspedes que nunca vieram. Para que estou aqui, afinal?</HH_ServedIdle.stages.2.description>
+  <HH_ServedIdle.stages.2.label>um turno sem sentido</HH_ServedIdle.stages.2.label>
+  <HH_WokenByBell.stages.0.description>Alguém tocou o sino no meio do meu sono. O dever chama. Bem alto.</HH_WokenByBell.stages.0.description>
+  <HH_WokenByBell.stages.0.label>acordado pelo sino noturno</HH_WokenByBell.stages.0.label>
+  <HH_WokenByBell.stages.1.description>Alguém tocou o sino no meio do meu sono. Bem, esse é o trabalho. Dormirei depois.</HH_WokenByBell.stages.1.description>
+  <HH_WokenByBell.stages.1.label>acordado pelo sino noturno</HH_WokenByBell.stages.1.label>
+</LanguageData>

@@ -23,7 +23,7 @@
   <HH.Bank.Greet.Morning>おはようございます</HH.Bank.Greet.Morning>
   <HH.Bank.Greet.Night>おやすみなさい</HH.Bank.Greet.Night>
   <HH.Bank.Header.Tier>資産階層: {0}</HH.Bank.Header.Tier>
-  <HH.Bank.Header.TierTip>純資産 = 口座 + 自宅の銀 − 借金: {0} 銀。階層は新しい値が丸1日維持された後にのみ変わります。この銀行による入植地の気分を左右します（設定: bank.moodOn）。</HH.Bank.Header.TierTip>
+  <HH.Bank.Header.TierTip>純資産 = 口座 + 送金中の銀 + 自宅の銀 + 投資（時価） − 借入: {0} 銀。階層は、新しい値が丸1日維持された後にのみ変わります。この銀行から植民地の気分を左右します（設定: bank.moodOn）。</HH.Bank.Header.TierTip>
   <HH.Bank.Hist.Amount>金額（小数点以下5桁）</HH.Bank.Hist.Amount>
   <HH.Bank.Hist.Empty>取引はまだありません。</HH.Bank.Hist.Empty>
   <HH.Bank.Hist.TotalFees>これまでに支払った手数料</HH.Bank.Hist.TotalFees>
@@ -80,7 +80,8 @@
   <HH.Bank.Lobby.Accounts>口座</HH.Bank.Lobby.Accounts>
   <HH.Bank.Lobby.Amount>金額</HH.Bank.Lobby.Amount>
   <HH.Bank.Lobby.Balance>残高</HH.Bank.Lobby.Balance>
-  <HH.Bank.Lobby.BalanceTip>正確な額: {0} 銀。毎日の利息: 残高 × (M^({1} × {2} / 60) − 1)、M = ゲーム年あたり {3}（収益性スライダー）。1日あたり {4:0.##} % です。</HH.Bank.Lobby.BalanceTip>
+  <HH.Bank.Lobby.BalanceTip>正確には {0} 銀。
+口座は普通預金で、市場の余剰（M − 1）の {1} % を年に支払い、この銀行の係数 {2} を掛けます。M = {3} のとき、年 {4} %（1日あたり {5} %）です。投資はより多く支払いますが、リスクもあります。</HH.Bank.Lobby.BalanceTip>
   <HH.Bank.Lobby.Cash>自宅の現金</HH.Bank.Lobby.Cash>
   <HH.Bank.Lobby.CashTip>自宅のマップに置かれている銀。</HH.Bank.Lobby.CashTip>
   <HH.Bank.Lobby.ChangeBank>銀行を変更</HH.Bank.Lobby.ChangeBank>
@@ -90,23 +91,22 @@
   <HH.Bank.Lobby.DepDelay>{0} 後に入金</HH.Bank.Lobby.DepDelay>
   <HH.Bank.Lobby.DepInstant>即時計上</HH.Bank.Lobby.DepInstant>
   <HH.Bank.Lobby.Deposit>入金</HH.Bank.Lobby.Deposit>
-  <HH.Bank.Lobby.Direct>直接入金</HH.Bank.Lobby.Direct>
-  <HH.Bank.Lobby.DirectTip>事業の売上は毎晩0時に、{0} %を差し引いて口座へ入ります。</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.DirectTip>事業の売上金は、真夜中に {0} % 差し引かれて口座へ入ります。Modの設定（銀行 &gt; 口座）で変更できます。</HH.Bank.Lobby.DirectTip>
   <HH.Bank.Lobby.Interest>今季の利息</HH.Bank.Lobby.Interest>
   <HH.Bank.Lobby.InterestTip>今季（15日間）の開始以降に口座の残高へ支払われた利息。</HH.Bank.Lobby.InterestTip>
   <HH.Bank.Lobby.Max>最大</HH.Bank.Lobby.Max>
   <HH.Bank.Lobby.Net>純資産</HH.Bank.Lobby.Net>
-  <HH.Bank.Lobby.NetTip>口座 + 自宅の銀 − 借金。資産階層を決めます。</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.NetTip>口座 {0} + 送金中 {1} + 自宅の銀 {2} + 投資の時価 {3} − 借入 {4} = {5}。
+資産階層を決めます。与信限度は投資の {6} % だけを数えます（設定 bank.loanPortfolioShare）。</HH.Bank.Lobby.NetTip>
   <HH.Bank.Lobby.Nothing>まだ何もありません。入金から始めるのがよいでしょう。</HH.Bank.Lobby.Nothing>
   <HH.Bank.Lobby.PendingDep>↓ {0} が {1} 後に到着</HH.Bank.Lobby.PendingDep>
   <HH.Bank.Lobby.PendingWd>↑ {0} がポッドで {1} 後に</HH.Bank.Lobby.PendingWd>
   <HH.Bank.Lobby.Recent>最近の動き</HH.Bank.Lobby.Recent>
-  <HH.Bank.Lobby.Trade>取引の銀を自動入金</HH.Bank.Lobby.Trade>
-  <HH.Bank.Lobby.TradeTip>商人や交易船から受け取った銀は、取引の直後に直接入金と同じ手数料で口座に入ります。床の上に硬貨として置かれることはありません。直接入金が必要です。初期設定はオフなので、次の商人にも現金で払えます。キャラバンには影響しません。</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.TradeTip>商人や交易船から受け取った銀は、取引直後に直接預入と同じ手数料で口座へ入ります（床に硬貨として置かれません）。直接預入が必要です。初期状態はオフなので、次の商人には現金で払えます。キャラバンは影響を受けません。Modの設定（銀行 &gt; 口座）で変更できます。</HH.Bank.Lobby.TradeTip>
   <HH.Bank.Lobby.Transfer>入金と出金</HH.Bank.Lobby.Transfer>
   <HH.Bank.Lobby.TransferInfo>保管中: {0}。入金 {1}。出金手数料 {2}、{3}。</HH.Bank.Lobby.TransferInfo>
   <HH.Bank.Lobby.Transit>輸送中</HH.Bank.Lobby.Transit>
-  <HH.Bank.Lobby.TransitTip>保管から離れたがまだ入金されていない銀（支店もATMもない場合の入金遅延）。</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.TransitTip>移動中の銀: まだ入金されていない預入（支店やATMがない場合の入金遅延）と、ドロップポッド内の引出し。純資産に含まれます。</HH.Bank.Lobby.TransitTip>
   <HH.Bank.Lobby.WdInstant>建物で即時に現金</HH.Bank.Lobby.WdInstant>
   <HH.Bank.Lobby.WdPod>ドロップポッドで {0}、{1} 時間</HH.Bank.Lobby.WdPod>
   <HH.Bank.Lobby.Withdraw>出金</HH.Bank.Lobby.Withdraw>
@@ -141,8 +141,7 @@
   <HH.Bank.Msg.Switched>口座が {0} に移りました。</HH.Bank.Msg.Switched>
   <HH.Bank.Msg.TradeDeposit>取引収入 {0} 銀が、{1} の口座へ直接入金されました。</HH.Bank.Msg.TradeDeposit>
   <HH.Bank.Open.Button>口座を開設</HH.Bank.Open.Button>
-  <HH.Bank.Open.Direct>売上を毎晩0時に直接銀行へ入金する</HH.Bank.Open.Direct>
-  <HH.Bank.Open.DirectTip>店舗、宿屋、カジノの売上は、銀貨のまま散らばらず口座に入ります。後から夜間金庫や設定（bank.directDeposit）で切り替えられます。</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.DirectTip>店、宿、カジノの売上は、床に銀として置かれる代わりに口座へ入ります。これは銀行の条件です。Modの設定（銀行 &gt; 口座、bank.directDeposit）で変更できます。</HH.Bank.Open.DirectTip>
   <HH.Bank.Open.Intro>銀行をお選びください。口座の開設は無料ですが、後で移転するには {0} 銀かかります。口座を持つまでは、ここでの手続きでお煩わせすることはありません。督促状も、気分の低下も、手数料もありません。</HH.Bank.Open.Intro>
   <HH.Bank.Open.Sub>あなたの銀、当行の責任。</HH.Bank.Open.Sub>
   <HH.Bank.Open.Title>Silverline: 口座開設</HH.Bank.Open.Title>
@@ -193,21 +192,18 @@
   <HH.Bank.Tab.Terms>約款</HH.Bank.Tab.Terms>
   <HH.Bank.Terms.AccFee>クアドラムごとの口座手数料</HH.Bank.Terms.AccFee>
   <HH.Bank.Terms.AccountDaily>あなたの口座の日利</HH.Bank.Terms.AccountDaily>
-  <HH.Bank.Terms.AccountDailyTip>年間の口座倍率 = M^({0} × {1}) = {2}。</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.AccountDailyTip>1日あたりの係数 = (年間倍率)^(1/60) = {0}。</HH.Bank.Terms.AccountDailyTip>
   <HH.Bank.Terms.Anchors>難易度別</HH.Bank.Terms.Anchors>
-  <HH.Bank.Terms.AnchorsHead>年間M / 最高の取り立て段階</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.AnchorsHead>年間指数 M  /  口座の年利  /  最高の回収段階</HH.Bank.Terms.AnchorsHead>
   <HH.Bank.Terms.Atm>ATM</HH.Bank.Terms.Atm>
-  <HH.Bank.Terms.Auto>自動</HH.Bank.Terms.Auto>
-  <HH.Bank.Terms.AutoTip>難易度スライダーに従う（現在の難易度では {0}）。</HH.Bank.Terms.AutoTip>
   <HH.Bank.Terms.Daily>日利（指数）</HH.Bank.Terms.Daily>
   <HH.Bank.Terms.DailyTip>M^(1/60) − 1。ゲームの1年は60日。</HH.Bank.Terms.DailyTip>
   <HH.Bank.Terms.Dep>預金</HH.Bank.Terms.Dep>
   <HH.Bank.Terms.Direct>直接入金</HH.Bank.Terms.Direct>
   <HH.Bank.Terms.Fees>銀行の手数料</HH.Bank.Terms.Fees>
   <HH.Bank.Terms.FeesNote>すべての手数料は「銀行手数料レベル」設定（{0} %）に比例する。</HH.Bank.Terms.FeesNote>
-  <HH.Bank.Terms.Preview>指数で1,000銀貨を置くと、ゲーム1年後には {0}、10年後には {1} になる。</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Preview>指数で1,000銀貨は、1ゲーム年後に {0}、10年後に {1} になります。あなたの口座では: {2} と {3}。</HH.Bank.Terms.Preview>
   <HH.Bank.Terms.Profit>収益性</HH.Bank.Terms.Profit>
-  <HH.Bank.Terms.ProfitIntro>投資した金が1ゲーム年（60日）で平均してどれだけ増えるか。1.0は増減なし、1.2は年+20 %。ローンの金利もここで決まる。これはこのセーブデータの設定。</HH.Bank.Terms.ProfitIntro>
   <HH.Bank.Terms.StageNote>取り立ての段階：1 督促、2 延滞料、3 預金との相殺、4 友好的な訪問、5 差し押さえチーム、6 取り立て急襲、7 懸賞金。現在：段階 {0} で止まる。</HH.Bank.Terms.StageNote>
   <HH.Bank.Terms.Switch>銀行の変更</HH.Bank.Terms.Switch>
   <HH.Bank.Terms.Wd>引き出し（ポッド / 窓口）</HH.Bank.Terms.Wd>
@@ -230,4 +226,52 @@
   <HH.Bank.Time.DayHour>{0}日目 {1}:00</HH.Bank.Time.DayHour>
   <HH.Bank.Time.Hours>{0} 時間</HH.Bank.Time.Hours>
   <HH.Bank.Time.Minutes>{0} 分</HH.Bank.Time.Minutes>
+  <HH.Bank.Card.InterestTip>口座の利息は、市場収益の一部（{0}）に、この銀行独自の係数（{1}）を掛けたものです。投資の方がより多く支払います。</HH.Bank.Card.InterestTip>
+  <HH.Bank.Card.Numbers>利息 年 {0}  ·  預入手数料 {1} %  ·  引出し手数料 {2} %  ·  口座維持費 四季ごと {3}</HH.Bank.Card.Numbers>
+  <HH.Bank.Clerk.Line>窓口担当 Ottoline: 「{0}」</HH.Bank.Clerk.Line>
+  <HH.Bank.Lobby.DirectState>直接預入: {0}</HH.Bank.Lobby.DirectState>
+  <HH.Bank.Lobby.Invested>投資</HH.Bank.Lobby.Invested>
+  <HH.Bank.Lobby.InvestedTip>株、ファンド、暗号資産、NFTは現在の時価で: {0}。忍耐債券は現在の価値で: {1}。Omen契約と派閥プロジェクトに投じた金（取得額）: {2}。</HH.Bank.Lobby.InvestedTip>
+  <HH.Bank.Lobby.MaxTip>倉庫と交易ビーコンにあるこの植民地の銀すべて。上限はありません。</HH.Bank.Lobby.MaxTip>
+  <HH.Bank.Lobby.MaxTipWd>ここで口座から支払える全額（手数料差引後）。</HH.Bank.Lobby.MaxTipWd>
+  <HH.Bank.Lobby.ModeDeposit>預入</HH.Bank.Lobby.ModeDeposit>
+  <HH.Bank.Lobby.ModeWithdraw>引出し</HH.Bank.Lobby.ModeWithdraw>
+  <HH.Bank.Lobby.Off>オフ</HH.Bank.Lobby.Off>
+  <HH.Bank.Lobby.On>オン</HH.Bank.Lobby.On>
+  <HH.Bank.Lobby.PerYear>年あたり</HH.Bank.Lobby.PerYear>
+  <HH.Bank.Lobby.Percent>銀の {0} %（{1} / {2}）</HH.Bank.Lobby.Percent>
+  <HH.Bank.Lobby.PercentWd>口座から支払える額の {0} %（{1} / {2}）</HH.Bank.Lobby.PercentWd>
+  <HH.Bank.Lobby.Rate>利率</HH.Bank.Lobby.Rate>
+  <HH.Bank.Lobby.RateTip>口座が1ゲーム年（60日）あたりに平均で稼ぐ額。投資タブの商品と比べてください:
+{0}</HH.Bank.Lobby.RateTip>
+  <HH.Bank.Lobby.Settings>設定</HH.Bank.Lobby.Settings>
+  <HH.Bank.Lobby.TradeState>商人への銀を口座へ: {0}</HH.Bank.Lobby.TradeState>
+  <HH.Bank.Memo.ScenBalance>開始残高</HH.Bank.Memo.ScenBalance>
+  <HH.Bank.Open.DirectState>売上金は真夜中に直接銀行へ届く: {0}</HH.Bank.Open.DirectState>
+  <HH.Bank.Quip.Invest>投資をお持ちのようですね。数字にやきもちを焼いていないふりをしておきます。</HH.Bank.Quip.Invest>
+  <HH.Bank.Reason.NoSilverAtAll>倉庫にも交易ビーコンにも銀がありません。</HH.Bank.Reason.NoSilverAtAll>
+  <HH.Bank.Reason.NothingToWithdraw>口座には今ここで支払える額がありません。</HH.Bank.Reason.NothingToWithdraw>
+  <HH.Bank.Scen.Balance>開始残高</HH.Bank.Scen.Balance>
+  <HH.Bank.Scen.DirectDeposit>直接預入</HH.Bank.Scen.DirectDeposit>
+  <HH.Bank.Scen.Loan>開始時の融資</HH.Bank.Scen.Loan>
+  <HH.Bank.Scen.LoanTip>0 = 融資なし。融資は口座に払い出され、ほかの融資と同じく分割で返済します。</HH.Bank.Scen.LoanTip>
+  <HH.Bank.Scen.Summary>{0} に口座を持ち、銀 {1} を保有して始まります。</HH.Bank.Scen.Summary>
+  <HH.Bank.Scen.SummaryLoan>すでに銀 {0} の借金があります（{1} 日分）。</HH.Bank.Scen.SummaryLoan>
+  <HH.Bank.Site.Atm>ATM</HH.Bank.Site.Atm>
+  <HH.Bank.Site.Counter>銀行の窓口</HH.Bank.Site.Counter>
+  <HH.Bank.Tabs.More>その他</HH.Bank.Tabs.More>
+  <HH.Bank.Tabs.MoreTip>銀行のその他のページ: {0}</HH.Bank.Tabs.MoreTip>
+  <HH.Bank.Terms.AccountYear>口座の年利</HH.Bank.Terms.AccountYear>
+  <HH.Bank.Terms.AccountYearTip>口座の年間倍率 = 1 + 割合 × 銀行係数 × (M − 1) = 1 + {0} × {1} × ({2} − 1) = {3}。下限は {4}、上限は {5}、普通預金 Mattress Plus（{6}）を超えることはありません。</HH.Bank.Terms.AccountYearTip>
+  <HH.Bank.Terms.Compare>どこでお金がより多く増えるか（ゲーム1年あたり、平均）</HH.Bank.Terms.Compare>
+  <HH.Bank.Terms.CompareAccountTip>口座は安全ですが利息は少なめです。Mattress Plus、債券、そしてそれより下のものはリスクを伴うか、お金を拘束してより多く支払います。口座そのものが Mattress Plus を超えて支払うことはありません。</HH.Bank.Terms.CompareAccountTip>
+  <HH.Bank.Terms.CompareTip>現在の収益性での、この商品の長期平均。価格は振れます。1年だけを見れば大きく上下することがあります。</HH.Bank.Terms.CompareTip>
+  <HH.Bank.Terms.MInv>（投資: M = {0}）</HH.Bank.Terms.MInv>
+  <HH.Bank.Terms.MNow>M = 1ゲーム年あたり {0}</HH.Bank.Terms.MNow>
+  <HH.Bank.Terms.OpenSettings>Mod設定を開く</HH.Bank.Terms.OpenSettings>
+  <HH.Bank.Terms.OpenSettingsShort>設定で変更</HH.Bank.Terms.OpenSettingsShort>
+  <HH.Bank.Terms.OpenSettingsTip>銀行ページで Hearth &amp; Harbor の Mod設定を開きます。収益性、手数料、融資、宝くじはこのセーブデータの実際の設定であり、ここでのみ設定します。</HH.Bank.Terms.OpenSettingsTip>
+  <HH.Bank.Terms.SetIn>銀行の条件はこのセーブデータの設定です。Mod設定 &gt; Hearth &amp; Harbor &gt; 銀行（利息と収益性、手数料、融資、回収、宝くじ）で変更してください。1.0は増減なし、1.2は指数で年+20％です。口座はその一部だけを受け取ります。融資もMに従います。</HH.Bank.Terms.SetIn>
+  <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
+  <HH.Bank.Yield.Account>あなたの銀行口座</HH.Bank.Yield.Account>
 </LanguageData>

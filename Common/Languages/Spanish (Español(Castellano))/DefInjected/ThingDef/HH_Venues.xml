@@ -10,4 +10,6 @@
   <HH_MarketStall.description>Un puesto independiente con toldo a rayas. El gran mercado solo se celebra cuando tienes suficientes puestos (véanse los ajustes de Locales): cada caravana de comerciantes se instala en uno y paga una tasa de puesto a tu caja. Al aire libre funciona con cualquier tiempo, pero no es un negocio propio.</HH_MarketStall.description>
   <HH_VendingMachine.label>máquina expendedora</HH_VendingMachine.label>
   <HH_VendingMachine.description>Un armario con corriente que guarda comida, bebidas, drogas y medicinas. Los huéspedes compran en ella a cualquier hora sin personal, a valor de mercado. Los transportistas la llenan como una estantería. Los colonos pueden servirse gratis; la máquina solo cobra a los huéspedes. Necesita energía para vender.</HH_VendingMachine.description>
+  <HH_Mote_Bell.label>campana nocturna</HH_Mote_Bell.label>
+  <HH_Mote_RingArc.label>tañido</HH_Mote_RingArc.label>
 </LanguageData>

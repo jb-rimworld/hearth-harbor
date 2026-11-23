@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.MusicMode.Always>Toujours</HH.Enum.MusicMode.Always>
+  <HH.Enum.MusicMode.Off>Désactivée</HH.Enum.MusicMode.Off>
+  <HH.Enum.MusicMode.WhenHosting>Quand on reçoit</HH.Enum.MusicMode.WhenHosting>
+  <HH.Setting.core.creatorPawn>L'auteur peut errer sur le Rim</HH.Setting.core.creatorPawn>
+  <HH.Setting.core.creatorPawn.Desc>Comme les pions créateurs du jeu de base, l'auteur de Hearth &amp; Harbor peut apparaître de temps à autre sous forme de pion généré : un aubergiste errant, gentil et travailleur.</HH.Setting.core.creatorPawn.Desc>
+  <HH.Setting.core.music>Musique de Hearth &amp; Harbor</HH.Setting.core.music>
+  <HH.Setting.core.music.Desc>Nos trois chansons calmes (une pour les jours de printemps et d'été, une pour l'automne, une pour l'hiver) rejoignent la playlist normale de RimWorld. En cas d'accueil : uniquement dans les colonies qui utilisent Hearth &amp; Harbor (un lit d'invité, une enseigne d'établissement ou un compte bancaire).</HH.Setting.core.music.Desc>
+  <HH.Setting.core.musicShare>Fréquence de nos chansons</HH.Setting.core.musicShare>
+  <HH.Setting.core.musicShare.Desc>Poids de nos chansons dans la playlist comparé à une chanson de base. 1 = comme n'importe quelle chanson de la saison, 0 = jamais.</HH.Setting.core.musicShare.Desc>
+  <HH.Story.Suggests>{0} suggère : {1}</HH.Story.Suggests>
+  <HH.Story.SuggestsTip>Cliquez pour utiliser la difficulté d'accueil suggérée par ce conteur. Vous pouvez toujours la changer avec le bouton.</HH.Story.SuggestsTip>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ScenRules.description>Nastaví moduly, obtížnost hostitelství, intenzitu obsahu a jakákoli nastavení kolonie Hearth &amp; Harbor a Silverline pro nové kolonie tohoto scénáře. Přepíše šablonu jen to, co je zde nastaveno; hráč může vše stále změnit na stránce vypravěče.</HH_ScenRules.description>
+  <HH_ScenRules.label>pravidla Hearth &amp; Harbor</HH_ScenRules.label>
+  <HH_ScenSetting.description>Nastaví jedno nastavení Hearth &amp; Harbor nebo Silverline na zvolenou hodnotu pro nové kolonie tohoto scénáře.</HH_ScenSetting.description>
+  <HH_ScenSetting.label>nastavení Hearth &amp; Harbor</HH_ScenSetting.label>
+  <HH_ScenStartingResearch.description>Výzkumný projekt Hearth &amp; Harbor nebo Silverline je už při startu kolonie dokončen.</HH_ScenStartingResearch.description>
+  <HH_ScenStartingResearch.label>začít s výzkumem Hearth &amp; Harbor</HH_ScenStartingResearch.label>
+</LanguageData>

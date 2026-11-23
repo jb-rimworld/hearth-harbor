@@ -231,4 +231,121 @@
   <HH.Setting.thrumbo.raiseTheStakes.Desc>在幸运 Thrumbo 上添加「加码…」按钮：用通电的轨道贸易信标范围内的货物代替银币下注；从「标准」内容强度起，还可以用殖民地动物和囚犯下注（与原版出售相同）。殖民者、奴隶、儿童和访客永远不会被列入。</HH.Setting.thrumbo.raiseTheStakes.Desc>
   <HH.Setting.thrumbo.pawnbrokerSpread>幸运 Thrumbo：货物赌注的典当商差价</HH.Setting.thrumbo.pawnbrokerSpread>
   <HH.Setting.thrumbo.pawnbrokerSpread.Desc>下注货物按典当商的出价计算（原版售价，以你最会谈价的人为准），再减去这个差价和固定的 2 % 手续费。</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
+  <HH.Casino.ChairsNote>舒适座位可使赌注最多提高 +{0}%</HH.Casino.ChairsNote>
+  <HH.Casino.ComfySeat>牌桌上的舒适座位</HH.Casino.ComfySeat>
+  <HH.Casino.Demo.Column>第 {0} 列</HH.Casino.Demo.Column>
+  <HH.Casino.Demo.Number>数字：</HH.Casino.Demo.Number>
+  <HH.Casino.Demo.OddsBlackjack>{0}</HH.Casino.Demo.OddsBlackjack>
+  <HH.Casino.Demo.OddsPoker>抽水 {0}%（每池最多 {1} 银币）</HH.Casino.Demo.OddsPoker>
+  <HH.Casino.Demo.OddsRoulette>庄家优势 {0}%</HH.Casino.Demo.OddsRoulette>
+  <HH.Casino.Demo.OddsSlots>返还率 {0}%</HH.Casino.Demo.OddsSlots>
+  <HH.Casino.Demo.PokerSeatWins>{0} 以 {1} 获胜</HH.Casino.Demo.PokerSeatWins>
+  <HH.Casino.Demo.PokerYouWin>你以 {0} 获胜</HH.Casino.Demo.PokerYouWin>
+  <HH.Casino.Demo.Rake>抽水 {0}</HH.Casino.Demo.Rake>
+  <HH.Casino.Demo.Regular>普通 {0}</HH.Casino.Demo.Regular>
+  <HH.Casino.Demo.Straight>单个数字</HH.Casino.Demo.Straight>
+  <HH.Casino.Demo.You>你</HH.Casino.Demo.You>
+  <HH.Casino.GhostChairs>{0}，带椅子</HH.Casino.GhostChairs>
+  <HH.Casino.GhostSeats>客人座位：{0} / {1}</HH.Casino.GhostSeats>
+  <HH.Casino.GhostTipSlot>蓝色：玩家坐的位置 · 在闪烁的格子上放椅子或凳子可提高赌注</HH.Casino.GhostTipSlot>
+  <HH.Casino.GhostTipTable>蓝色：客人下注的位置 · 琥珀色：荷官 · 在闪烁的格子上放椅子可提高赌注</HH.Casino.GhostTipTable>
+  <HH.Casino.Hand.0>高牌</HH.Casino.Hand.0>
+  <HH.Casino.Hand.1>一对</HH.Casino.Hand.1>
+  <HH.Casino.Hand.2>两对</HH.Casino.Hand.2>
+  <HH.Casino.Hand.3>三条</HH.Casino.Hand.3>
+  <HH.Casino.Hand.4>顺子</HH.Casino.Hand.4>
+  <HH.Casino.Hand.5>同花</HH.Casino.Hand.5>
+  <HH.Casino.Hand.6>葫芦</HH.Casino.Hand.6>
+  <HH.Casino.Hand.7>四条</HH.Casino.Hand.7>
+  <HH.Casino.Hand.8>同花顺</HH.Casino.Hand.8>
+  <HH.Casino.SeatsBonus>赌注 +{0}%</HH.Casino.SeatsBonus>
+  <HH.Casino.SeatsLine>客人座位：{1} 个中有 {0} 个可用 · {2} 个带椅子</HH.Casino.SeatsLine>
+  <HH.Casino.SeatsTip>椅子可使赌注最多提高 +{0}%</HH.Casino.SeatsTip>
+  <HH.Setting.casino.comfortSpend>舒适座位：多消费</HH.Setting.casino.comfortSpend>
+  <HH.Setting.casino.comfortSpend.Desc>舒适度为 100% 的座位上的访客，每轮会多下注这么多（按座位舒适度折算；站立则无加成）。庄家优势不变：只是玩得更多，赔率并不更好。</HH.Setting.casino.comfortSpend.Desc>
+  <HH.Setting.casino.comfortStay>舒适座位：停留更久</HH.Setting.casino.comfortStay>
+  <HH.Setting.casino.comfortStay.Desc>舒适度为 100% 的座位上的访客，离开牌桌前会多玩这么长时间。</HH.Setting.casino.comfortStay.Desc>
+  <HH.Thrumbo.AllIn>全部押上</HH.Thrumbo.AllIn>
+  <HH.Thrumbo.AllInTip>所选来源中的全部财物。</HH.Thrumbo.AllInTip>
+  <HH.Thrumbo.Anim.BigWin>大赢！</HH.Thrumbo.Anim.BigWin>
+  <HH.Thrumbo.Anim.Dealing>荷官发牌中…</HH.Thrumbo.Anim.Dealing>
+  <HH.Thrumbo.Anim.Jackpot>Thrumbo 大奖！</HH.Thrumbo.Anim.Jackpot>
+  <HH.Thrumbo.Anim.Skip>跳过</HH.Thrumbo.Anim.Skip>
+  <HH.Thrumbo.Anim.SkipHint>点击牌桌、按空格或回车：跳过。按住 Shift：加速。</HH.Thrumbo.Anim.SkipHint>
+  <HH.Thrumbo.Anim.Spinning>本局正在进行…</HH.Thrumbo.Anim.Spinning>
+  <HH.Thrumbo.Anim.Wait>请等待本局结束（或跳过）。</HH.Thrumbo.Anim.Wait>
+  <HH.Thrumbo.BJ.DealAgain>再发一局</HH.Thrumbo.BJ.DealAgain>
+  <HH.Thrumbo.BJ.PayDouble>加倍后获胜（按首注计）</HH.Thrumbo.BJ.PayDouble>
+  <HH.Thrumbo.BJ.PayLose>输或爆牌</HH.Thrumbo.BJ.PayLose>
+  <HH.Thrumbo.BJ.PayNatural>黑杰克（A 加一张十点牌）</HH.Thrumbo.BJ.PayNatural>
+  <HH.Thrumbo.BJ.PayPush>平局（和局）</HH.Thrumbo.BJ.PayPush>
+  <HH.Thrumbo.BJ.PayTitle>一手牌的返还（含赌注）</HH.Thrumbo.BJ.PayTitle>
+  <HH.Thrumbo.BJ.PayWin>获胜</HH.Thrumbo.BJ.PayWin>
+  <HH.Thrumbo.Err.HouseCap>庄家对单次赌注最多支付 {0} 银币（牌桌没有限额，这是庄家自身的上限）。</HH.Thrumbo.Err.HouseCap>
+  <HH.Thrumbo.HowTo.Blackjack>在不超过 21 点的前提下，让点数比庄家更接近 21。数字牌按其点数计，J、Q、K 计 10 点，A 计 1 点或 11 点。
+
+• 要牌：再拿一张。停牌：保留现有牌面；随后庄家翻开底牌，并补牌直到点数达到 17 或以上。
+• 加倍：在前两张牌时，将赌注加倍，并且只能再拿一张牌。
+• 超过 21 点即爆牌，立即输掉。A 配一张十点牌是黑杰克，按奖励支付（标准牌桌为 3 比 2）。
+• 平局为和局：退还你的赌注。
+
+这里打得好很重要：所示优势仅适用于完美打法。</HH.Thrumbo.HowTo.Blackjack>
+  <HH.Thrumbo.HowTo.Button>玩法</HH.Thrumbo.HowTo.Button>
+  <HH.Thrumbo.HowTo.ButtonTip>用一段简短说明代替赔付表。再次点击即可关闭。</HH.Thrumbo.HowTo.ButtonTip>
+  <HH.Thrumbo.HowTo.Poker>Rimdeck 是与其他玩家对决的扑克，而不是与庄家对决。每人下同样的底注；每位玩家发两张牌，然后中间公开五张共享牌（先三张，再一张，再一张）。
+
+• 你的七张牌中最好的五张赢得彩池：高牌、一对、两对、三条、顺子、同花、葫芦、四条、同花顺（由弱到强）。
+• 思维敏捷的人赢得略多一些：智力和社交技能会略微影响胜率。
+• 庄家只从每个彩池中抽取少量抽水。</HH.Thrumbo.HowTo.Poker>
+  <HH.Thrumbo.HowTo.Roulette>点击轮盘上的一个数字或区域下注，然后转动。小球会落入一个格子。
+
+• 单个数字赔 35 比 1。
+• 打数与列（各 12 个数字）赔 2 比 1。
+• 红或黑、单或双、1–18 或 19–36 赔 1 比 1。
+• 绿色的零（以及美式轮盘上的双零）不属于任何颜色和任何半区：庄家的优势就来源于此。
+
+每种下注的庄家优势相同，不同的只是波动幅度。</HH.Thrumbo.HowTo.Roulette>
+  <HH.Thrumbo.HowTo.Slots>设定赌注，然后拉动拉杆（或按「转动」）。三个转轮依次停下；只有中间一行有效。
+
+• 三个相同图案按赔付表支付：浆果赔得最少，Thrumbo 赔得最多。
+• 浆果很慷慨：1 号和 2 号转轮上各有一个浆果，或只有 1 号转轮上有一个，也会返还一点点。
+• 波动率改变的是派彩的分布方式，而不是长期的返还率：低波动经常给小额奖金，高波动很少给但金额大。
+
+从长期看，机器会按赔付表上方所示的比例返还，其余即为庄家优势。</HH.Thrumbo.HowTo.Slots>
+  <HH.Thrumbo.HowTo.Title>玩法：{0}</HH.Thrumbo.HowTo.Title>
+  <HH.Thrumbo.LeverTip>拉下拉杆：以上方的赌注转动。</HH.Thrumbo.LeverTip>
+  <HH.Thrumbo.MaxTip>牌桌限额与你的资金允许的最大赌注。</HH.Thrumbo.MaxTip>
+  <HH.Thrumbo.NoLimit>牌桌没有限额：从 {0} 起，最多可押上你的全部财物（{1}）。</HH.Thrumbo.NoLimit>
+  <HH.Thrumbo.NoLimitTip>幸运 Thrumbo 接受你能支付的任何赌注。可以在模组设置中开启牌桌限额（一般为你净资产的一定比例）：赌场，幸运 Thrumbo。</HH.Thrumbo.NoLimitTip>
+  <HH.Thrumbo.Pay.First1>1 号转轮上的 {0}</HH.Thrumbo.Pay.First1>
+  <HH.Thrumbo.Pay.First2>2 × {0}（1 号与 2 号转轮）</HH.Thrumbo.Pay.First2>
+  <HH.Thrumbo.PayRowTip>每转中奖概率：{0}%</HH.Thrumbo.PayRowTip>
+  <HH.Thrumbo.Recent>近期局次</HH.Thrumbo.Recent>
+  <HH.Thrumbo.RecentNone>暂无。</HH.Thrumbo.RecentNone>
+  <HH.Thrumbo.SlotMarquee>独臂 Thrumbo</HH.Thrumbo.SlotMarquee>
+  <HH.Thrumbo.StakeLockedTip>在本局结束或本手牌完成前，赌注都留在牌桌上。</HH.Thrumbo.StakeLockedTip>
+  <HH.Thrumbo.Stakes.ColEach>单价估值</HH.Thrumbo.Stakes.ColEach>
+  <HH.Thrumbo.Stakes.ColHeld>手边可用</HH.Thrumbo.Stakes.ColHeld>
+  <HH.Thrumbo.Stakes.ColItem>物品</HH.Thrumbo.Stakes.ColItem>
+  <HH.Thrumbo.Stakes.ColStake>赌注</HH.Thrumbo.Stakes.ColStake>
+  <HH.Thrumbo.Stakes.HowTo.Roulette>在左侧选择要押注的物品，再选一个外围赌注，然后按下按钮。转盘转一次即决定胜负。
+
+• 红或黑、单或双、1–18 或 19–36 按 1 赔 1：赢了则拿回全部物品，并加上其银币价值。
+• 一打（12 个数字）按 2 赔 1：拿回全部物品，并加上两倍价值。
+• 绿色的零（以及双零）不属于此处的任何赌注：这就是庄家优势。
+• 输了，物品就如同卖给了庄家一样归他所有。</HH.Thrumbo.Stakes.HowTo.Roulette>
+  <HH.Thrumbo.Stakes.HowTo.Slots>在左侧选择要押注的物品，再选择波动性，然后按下按钮。三个转轮转一次即决定胜负。
+
+• 三个相同（或前几个转轮出现浆果）时，按 The Lucky Thrumbo 赔付表的倍数乘以赌注价值。
+• 赢得 ×2 或更多：物品仍归你所有，庄家以银币支付 价值 × (m − 1)。
+• 没有中奖：物品归庄家所有。低于 ×1 的小额奖金以银币支付，但物品依然丢失。</HH.Thrumbo.Stakes.HowTo.Slots>
+  <HH.Thrumbo.Stakes.ListFoot>这里的所有物品都在可用的轨道交易信标范围之内，并由你最好的谈判员估价。按住 Shift 再点 − 或 +，可以一次调整 10 个。物品会留在原处，直到某一局输掉。</HH.Thrumbo.Stakes.ListFoot>
+  <HH.Thrumbo.Stakes.NoLimit>赌桌无限额：任何不低于 {0} 银币的赌注均可。</HH.Thrumbo.Stakes.NoLimit>
+  <HH.Thrumbo.Sym.berries>浆果</HH.Thrumbo.Sym.berries>
+  <HH.Thrumbo.Sym.component>部件</HH.Thrumbo.Sym.component>
+  <HH.Thrumbo.Sym.core>人格核心</HH.Thrumbo.Sym.core>
+  <HH.Thrumbo.Sym.corn>玉米</HH.Thrumbo.Sym.corn>
+  <HH.Thrumbo.Sym.meal>生存口粮</HH.Thrumbo.Sym.meal>
+  <HH.Thrumbo.Sym.plasteel>塑钢</HH.Thrumbo.Sym.plasteel>
+  <HH.Thrumbo.Sym.thrumbo>Thrumbo</HH.Thrumbo.Sym.thrumbo>
 </LanguageData>

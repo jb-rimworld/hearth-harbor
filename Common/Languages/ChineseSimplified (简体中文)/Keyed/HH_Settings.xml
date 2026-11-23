@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.BankResearchMode.Full>完整</HH.Enum.BankResearchMode.Full>
+  <HH.Enum.BankResearchMode.Off>关闭</HH.Enum.BankResearchMode.Off>
+  <HH.Enum.ClaimMode.Automatic>自动</HH.Enum.ClaimMode.Automatic>
+  <HH.Enum.ClaimMode.ByForm>按表格</HH.Enum.ClaimMode.ByForm>
+  <HH.Enum.FundDestination.ToDeity>交给神祇</HH.Enum.FundDestination.ToDeity>
+  <HH.Enum.FundDestination.ToFaction>交给派系</HH.Enum.FundDestination.ToFaction>
+  <HH.Enum.PensionRuleMode.Enforce>强制执行</HH.Enum.PensionRuleMode.Enforce>
+  <HH.Enum.PensionRuleMode.Off>关闭</HH.Enum.PensionRuleMode.Off>
+  <HH.Enum.PensionRuleMode.WarnOnly>仅警告</HH.Enum.PensionRuleMode.WarnOnly>
+  <HH.Enum.RngAlgorithm.ChaCha8>ChaCha8</HH.Enum.RngAlgorithm.ChaCha8>
+  <HH.Enum.RngAlgorithm.Pcg32>Pcg32</HH.Enum.RngAlgorithm.Pcg32>
+  <HH.Enum.RngAlgorithm.SplitMix64>SplitMix64</HH.Enum.RngAlgorithm.SplitMix64>
+  <HH.Enum.RngAlgorithm.Xoshiro256>Xoshiro256</HH.Enum.RngAlgorithm.Xoshiro256>
+  <HH.Enum.StaffRule.AlwaysRequired>始终需要</HH.Enum.StaffRule.AlwaysRequired>
+  <HH.Enum.StaffRule.NeverRequired>从不需要</HH.Enum.StaffRule.NeverRequired>
+  <HH.Enum.StaffRule.PerVenueType>按场馆类型</HH.Enum.StaffRule.PerVenueType>
+  <HH.Enum.UnderworldMode.AlwaysOn>始终开启</HH.Enum.UnderworldMode.AlwaysOn>
+  <HH.Enum.UnderworldMode.DiscoverInGame>游戏中发现</HH.Enum.UnderworldMode.DiscoverInGame>
+  <HH.Setting.bank.accountBeta>账户利息指数（自 1.1.0 起不再使用）</HH.Setting.bank.accountBeta>
+  <HH.Setting.bank.accountBeta.Desc>已由“账户利息：占市场回报的比例”取代。保留此项只为让旧存档能够读取；改动它没有任何效果。</HH.Setting.bank.accountBeta.Desc>
+  <HH.Setting.bank.accountShare>账户利息：占市场回报的比例</HH.Setting.bank.accountShare>
+  <HH.Setting.bank.accountShare.Desc>银行账户每年只按市场盈余（M − 1）的这一比例付息，且永远不会超过储蓄产品 Mattress Plus（它跟随投资的盈利水平）。0.2 的意思是：当 M 为 1.2 时，账户每年付息 +4%（储蓄产品 Mattress Plus 付 +8%，指数约 +20%）；M 为 2 时付息 +20%。M 低于 1 时会略有亏损，但每年亏损不超过 10%。两个盈利滑块（本银行的 M 与投资的 M）最好保持接近。每家银行还会加上或扣除各自的小额奖惩。投资不受影响。</HH.Setting.bank.accountShare.Desc>
+  <HH.Setting.bank.atmDailyLimit>自动取款机每日限额</HH.Setting.bank.atmDailyLimit>
+  <HH.Setting.bank.atmDailyLimit.Desc>每天可以从自动取款机取出的银币上限。</HH.Setting.bank.atmDailyLimit.Desc>
+  <HH.Setting.bank.bailout>大到不能倒救助</HH.Setting.bank.bailout>
+  <HH.Setting.bank.bailout.Desc>First Rim Bank of Too Big To Fail 每个游戏年会救助一位破产的前大亨一次（无息贷款，并非赠予）。</HH.Setting.bank.bailout.Desc>
+  <HH.Setting.bank.collectionAnger>催收怒气（突袭规模）</HH.Setting.bank.collectionAnger>
+  <HH.Setting.bank.collectionAnger.Desc>放大查封队和催收突袭的规模。设为 0 则关闭暴力阶段。</HH.Setting.bank.collectionAnger.Desc>
+  <HH.Setting.bank.depositDelayHours>无分行时的存款延迟（小时）</HH.Setting.bank.depositDelayHours>
+  <HH.Setting.bank.depositDelayHours.Desc>在附近没有银行柜台或自动取款机的情况下存入账户的银币，会在这么多小时后才到账。</HH.Setting.bank.depositDelayHours.Desc>
+  <HH.Setting.bank.directDeposit>将柜台收入直接存入银行</HH.Setting.bank.directDeposit>
+  <HH.Setting.bank.directDeposit.Desc>账户开设后，你的商户收银台会在午夜把钱存入账户，而不再把银币留在地板上。</HH.Setting.bank.directDeposit.Desc>
+  <HH.Setting.bank.directDepositFee>直接存款手续费</HH.Setting.bank.directDepositFee>
+  <HH.Setting.bank.directDepositFee.Desc>对直接存入账户的钱（收银收入）收取的手续费。0 至 100%。</HH.Setting.bank.directDepositFee.Desc>
+  <HH.Setting.bank.feeFactor>银行手续费水平</HH.Setting.bank.feeFactor>
+  <HH.Setting.bank.feeFactor.Desc>按比例放大银行的所有手续费。0% = 完全不收费。</HH.Setting.bank.feeFactor.Desc>
+  <HH.Setting.bank.lateFee>滞纳金</HH.Setting.bank.lateFee>
+  <HH.Setting.bank.lateFee.Desc>贷款进入催收第 2 阶段时，对逾期的分期还款收取。</HH.Setting.bank.lateFee.Desc>
+  <HH.Setting.bank.loanFloor>起步信用额度</HH.Setting.bank.loanFloor>
+  <HH.Setting.bank.loanFloor.Desc>对于有罚款记录的殖民地，设定最低信用额度，让年轻的殖民地也能借到一点钱。</HH.Setting.bank.loanFloor.Desc>
+  <HH.Setting.bank.loanIntervalDays>分期还款间隔（天）</HH.Setting.bank.loanIntervalDays>
+  <HH.Setting.bank.loanIntervalDays.Desc>贷款分期每隔这么多天到期一次。</HH.Setting.bank.loanIntervalDays.Desc>
+  <HH.Setting.bank.loanMaxTermDays>最长贷款期限（天）</HH.Setting.bank.loanMaxTermDays>
+  <HH.Setting.bank.loanPortfolioShare>计入信用额度的投资</HH.Setting.bank.loanPortfolioShare>
+  <HH.Setting.bank.loanPortfolioShare.Desc>银行决定你能借多少时，你的投资（按市值）有多大比例计入财富。100% = 全额计入，0 = 完全不计。大厅里显示的净资产始终全额计入。</HH.Setting.bank.loanPortfolioShare.Desc>
+  <HH.Setting.bank.maxCollectionStage>最高催收阶段</HH.Setting.bank.maxCollectionStage>
+  <HH.Setting.bank.maxCollectionStage.Desc>催收阶梯：1 提醒，2 滞纳金，3 用存款抵销，4 友好拜访，5 查封队，6 催收突袭，7 悬赏。标准房间只到 4：你还清欠款，只会损失一点心情。</HH.Setting.bank.maxCollectionStage.Desc>
+  <HH.Setting.bank.moodOn>根据余额影响殖民地心情</HH.Setting.bank.moodOn>
+  <HH.Setting.bank.moodOn.Desc>根据人均净资产产生一个小想法（从 -4 到 +3，贪婪的殖民者加倍，禁欲者无影响）。</HH.Setting.bank.moodOn.Desc>
+  <HH.Setting.bank.moodScale>财富等级门槛</HH.Setting.bank.moodScale>
+  <HH.Setting.bank.moodScale.Desc>按比例调整心情等级（从“破产”到“大到不能倒”）的净资产门槛。</HH.Setting.bank.moodScale.Desc>
+  <HH.Setting.bank.podMaxHours>空投舱送达：最晚（小时）</HH.Setting.bank.podMaxHours>
+  <HH.Setting.bank.podMaxHours.Desc>……且最多等这么久。</HH.Setting.bank.podMaxHours.Desc>
+  <HH.Setting.bank.podMaxLoad>单个空投舱的最大载量</HH.Setting.bank.podMaxLoad>
+  <HH.Setting.bank.podMaxLoad.Desc>大额取款会以空投舱送达，每个约载这么多银币，每次取款最多 10 个舱（超大金额会换成更重的舱，而不是更多的舱）。这不限制你能存入或取出的金额。</HH.Setting.bank.podMaxLoad.Desc>
+  <HH.Setting.bank.podMinHours>空投舱送达：最早（小时）</HH.Setting.bank.podMinHours>
+  <HH.Setting.bank.podMinHours.Desc>在没有柜台或自动取款机的地方取款，至少要等这么久才会由空投舱送达。</HH.Setting.bank.podMinHours.Desc>
+  <HH.Setting.bank.profit>银行 M 值，每游戏年（盈利水平）</HH.Setting.bank.profit>
+  <HH.Setting.bank.profit.Desc>投入的资金平均每个游戏年（60 天）增长多少。这是银行自己的 M 值：它决定账户利息和贷款利率。投资的 M 值（投资页面）驱动市场；账户在该 M 值下永远不会超过 Mattress Plus。两者最好保持接近。1.0 = 不赚不亏，1.2 = 每年 +20%，0 = 钱会消失。对数刻度 0.01 至 100；输入数字可设定精确值。在你自己设定之前，会跟随难度滑块。</HH.Setting.bank.profit.Desc>
+  <HH.Setting.bank.researchMode>银行研究</HH.Setting.bank.researchMode>
+  <HH.Setting.bank.researchMode.Desc>完整：自动取款机、夜间保险箱、分行和贷款需要先完成研究。关闭：一切从一开始即可使用。（核心设置中的全局研究模式对所有模块的作用相同。）</HH.Setting.bank.researchMode.Desc>
+  <HH.Setting.bank.seizureShare>黑账查封比例</HH.Setting.bank.seizureShare>
+  <HH.Setting.bank.seizureShare.Desc>如果黑账查封你的账户（每个季度 1% 的风险），余额中将有这一比例被没收。</HH.Setting.bank.seizureShare.Desc>
+  <HH.Setting.bank.sounds>银行菜单音效</HH.Setting.bank.sounds>
+  <HH.Setting.bank.sounds.Desc>银行窗口中的点击声、数硬币声、盖章声，以及你买了彩票的抽奖开奖时的中奖或未中奖音效。</HH.Setting.bank.sounds.Desc>
+  <HH.Setting.bank.switchFee>更换银行手续费</HH.Setting.bank.switchFee>
+  <HH.Setting.bank.switchFee.Desc>将账户转到另一家银行所需的费用（概念 2.2：50 银币）。</HH.Setting.bank.switchFee.Desc>
+  <HH.Setting.bank.tradeDeposit>自动存入交易银币</HH.Setting.bank.tradeDeposit>
+  <HH.Setting.bank.tradeDeposit.Desc>默认关闭，这样卖给商人时你能立刻花掉收到的硬币。开启后（且直接存款也开启），从商人和贸易船收到的银币会在交易完成后立即转入账户（按直接存款手续费收取）。商队不受影响。</HH.Setting.bank.tradeDeposit.Desc>
+  <HH.Setting.bank.wealthShare>银行余额计入情节导演的比例（%）</HH.Setting.bank.wealthShare>
+  <HH.Setting.bank.wealthShare.Desc>账户中有多大比例计入情节导演用于计算突袭点数的殖民地财富。100% = 公平：存钱不会让突袭变小。0 = 银行只是一个藏钱的地方。</HH.Setting.bank.wealthShare.Desc>
+  <HH.Setting.casino.abstinenceDays>每个成瘾阶段所需的戒断天数</HH.Setting.casino.abstinenceDays>
+  <HH.Setting.casino.abstinenceDays.Desc>治愈每个成瘾阶段所需的、完全不参与任何赌局的天数（第 3 阶段 = 3 × 此值）。</HH.Setting.casino.abstinenceDays.Desc>
+  <HH.Setting.casino.addictionFreeSessions>成瘾发生前的赌局次数</HH.Setting.casino.addictionFreeSessions>
+  <HH.Setting.casino.addictionFreeSessions.Desc>三天内赌局次数低于此值时，不会发生任何事。</HH.Setting.casino.addictionFreeSessions.Desc>
+  <HH.Setting.casino.addictionGrowth>每多一次赌局的增长倍率</HH.Setting.casino.addictionGrowth>
+  <HH.Setting.casino.addictionGrowth.Desc>p = p₀ · growth^(次数 − 3)。</HH.Setting.casino.addictionGrowth.Desc>
+  <HH.Setting.casino.addictionP0>赌博成瘾几率 p₀</HH.Setting.casino.addictionP0>
+  <HH.Setting.casino.addictionP0.Desc>三天内第三次赌局之后成瘾的几率；每多一次赌局，几率乘以 1.35。设为 0 则关闭成瘾。</HH.Setting.casino.addictionP0.Desc>
+  <HH.Setting.casino.ambience>赌场环境音</HH.Setting.casino.ambience>
+  <HH.Setting.casino.ambience.Desc>镜头靠近繁忙的赌场大厅时，会听到轻柔的人声、筹码声和远处老虎机的铃声。</HH.Setting.casino.ambience.Desc>
+  <HH.Setting.casino.animSpeed>动画速度</HH.Setting.casino.animSpeed>
+  <HH.Setting.casino.animSpeed.Desc>100% 为设计节奏。数值越高，赌局播放越快；按住 Shift 则以 300% 播放。</HH.Setting.casino.animSpeed.Desc>
+  <HH.Setting.casino.animations>赌局动画</HH.Setting.casino.animations>
+  <HH.Setting.casino.animations.Desc>The Lucky Thrumbo 和练习赌局会在显示结果前动态呈现转轴、转盘和牌面。关闭：结果立即出现。点击牌桌、按空格或回车键，始终可以跳过动画的剩余部分。</HH.Setting.casino.animations.Desc>
+  <HH.Setting.casino.blackjackH17>二十一点庄家在软 17 点时要牌</HH.Setting.casino.blackjackH17>
+  <HH.Setting.casino.blackjackH17.Desc>0 = 庄家在软 17 点时停牌，1 = 庄家要牌（约为玩家带来 +0.2 点优势）。</HH.Setting.casino.blackjackH17.Desc>
+  <HH.Setting.casino.blackjackPays>二十一点赔付（Blackjack 加成）</HH.Setting.casino.blackjackPays>
+  <HH.Setting.casino.blackjackPays.Desc>3:2 = 1.5，6:5 = 1.2。会使庄家优势改变约 1.4 个百分点。</HH.Setting.casino.blackjackPays.Desc>
+  <HH.Setting.casino.chipSpendBonus>收银笼兑换筹码后的消费加成</HH.Setting.casino.chipSpendBonus>
+  <HH.Setting.casino.chipSpendBonus.Desc>当收银笼出售筹码时，访客会带到牌桌上多出这么多消费（“感觉不像钱”）。</HH.Setting.casino.chipSpendBonus.Desc>
+  <HH.Setting.casino.chipTakeHome>带回家的筹码</HH.Setting.casino.chipTakeHome>
+  <HH.Setting.casino.chipTakeHome.Desc>访客离场时，其赢利中最多这一比例会以筹码形式留在他们手中：纯粹是赌场利润（“筹码周转金”）。</HH.Setting.casino.chipTakeHome.Desc>
+  <HH.Setting.casino.colonistChips>每局赌场筹码数</HH.Setting.casino.colonistChips>
+  <HH.Setting.casino.colonistChips.Desc>殖民者用不值钱的赌场筹码下注：牌桌上永远不会输掉殖民地的银币。</HH.Setting.casino.colonistChips.Desc>
+  <HH.Setting.casino.croupierRequired>牌桌需要荷官</HH.Setting.casino.croupierRequired>
+  <HH.Setting.casino.croupierRequired.Desc>轮盘、二十一点和 Rimdeck 只有在具有“服务”工作类型的殖民者负责该桌时才会为访客开放。老虎机从不需要荷官。</HH.Setting.casino.croupierRequired.Desc>
+  <HH.Setting.casino.fatalDespair>致命绝望（未实现）</HH.Setting.casino.fatalDespair>
+  <HH.Setting.casino.fatalDespair.Desc>保留项。本模块中没有任何东西能杀死殖民者；此开关无效。</HH.Setting.casino.fatalDespair.Desc>
+  <HH.Setting.casino.guestBetShare>访客下注额</HH.Setting.casino.guestBetShare>
+  <HH.Setting.casino.guestBetShare.Desc>访客每轮下注其赌博资金的这一比例。默认值高于真实赌场，因为牌桌每游戏小时进行的轮数少得多；每小时营业额基本保持不变。</HH.Setting.casino.guestBetShare.Desc>
+  <HH.Setting.casino.guestBudgetShare>访客的赌博预算</HH.Setting.casino.guestBudgetShare>
+  <HH.Setting.casino.guestBudgetShare.Desc>访客带到牌桌上的剩余预算比例（在性格调整之前）。</HH.Setting.casino.guestBudgetShare.Desc>
+  <HH.Setting.casino.guestMinBuyIn>最低买入额（银币）</HH.Setting.casino.guestMinBuyIn>
+  <HH.Setting.casino.guestMinBuyIn.Desc>可花费金额不足的访客不参与赌博。</HH.Setting.casino.guestMinBuyIn.Desc>
+  <HH.Setting.casino.guestStopLoss>访客输够后离场</HH.Setting.casino.guestStopLoss>
+  <HH.Setting.casino.guestStopLoss.Desc>访客输掉其赌博资金的这一比例后离开牌桌。</HH.Setting.casino.guestStopLoss.Desc>
+  <HH.Setting.casino.guestWinTarget>访客赢够后兑现离场</HH.Setting.casino.guestWinTarget>
+  <HH.Setting.casino.guestWinTarget.Desc>访客在其赌博资金之上赢得这一比例后兑现离场。</HH.Setting.casino.guestWinTarget.Desc>
+  <HH.Setting.casino.houseFloat>庄家备用金（银币）</HH.Setting.casino.houseFloat>
+  <HH.Setting.casino.houseFloat.Desc>庄家抽屉里保留的现金。超过此数额的赢利（加上访客当前正在用来下注的钱）会在赌场关门时转入殖民地钱箱。</HH.Setting.casino.houseFloat.Desc>
+  <HH.Setting.casino.houseRiskLimit>保护庄家不致破产</HH.Setting.casino.houseRiskLimit>
+  <HH.Setting.casino.houseRiskLimit.Desc>每次下注上限为 现金 ÷ (4 · σ · √每日轮数)：糟糕的一夜不会让庄家破产。现金不足时上限会收紧。</HH.Setting.casino.houseRiskLimit.Desc>
+  <HH.Setting.casino.howToSeen>已看过“玩法说明”</HH.Setting.casino.howToSeen>
+  <HH.Setting.casino.howToSeen.Desc>记住 The Lucky Thrumbo 的简短游戏说明已自行打开过一次。关闭此项可让它们再次弹出。</HH.Setting.casino.howToSeen.Desc>
+  <HH.Setting.casino.joyGain>赌博愉悦倍率</HH.Setting.casino.joyGain>
+  <HH.Setting.casino.joyGain.Desc>与原版扑克桌相比的愉悦获得量。</HH.Setting.casino.joyGain.Desc>
+  <HH.Setting.casino.maxBet>最高下注（银币）</HH.Setting.casino.maxBet>
+  <HH.Setting.casino.maxBet.Desc>启用限额时，任何游戏的最大赌注。</HH.Setting.casino.maxBet.Desc>
+  <HH.Setting.casino.minBet>最低下注（银币）</HH.Setting.casino.minBet>
+  <HH.Setting.casino.minBet.Desc>最小赌注。允许小数：下注不以硬币支付。</HH.Setting.casino.minBet.Desc>
+  <HH.Setting.casino.pokerRake>Rimdeck 抽水</HH.Setting.casino.pokerRake>
+  <HH.Setting.casino.pokerRake.Desc>庄家从每个彩池中保留的比例（不超过抽水上限）。</HH.Setting.casino.pokerRake.Desc>
+  <HH.Setting.casino.pokerRakeCap>Rimdeck 抽水上限（银币）</HH.Setting.casino.pokerRakeCap>
+  <HH.Setting.casino.pokerRakeCap.Desc>庄家从单个彩池中抽取的最高金额。</HH.Setting.casino.pokerRakeCap.Desc>
+  <HH.Setting.casino.reactions>赌客反应</HH.Setting.casino.reactions>
+  <HH.Setting.casino.reactions.Desc>赢、输和险些中奖时，玩家会欢呼、叹气并抛硬币（头顶的小图标和短促音效）。</HH.Setting.casino.reactions.Desc>
+  <HH.Setting.casino.rouletteEdge>轮盘庄家优势</HH.Setting.casino.rouletteEdge>
+  <HH.Setting.casino.rouletteEdge.Desc>0.54% 到 7.9%：优势较小时使用 a la partage 转盘，2.7% 为单零，超过 4% 为双零转盘。每笔下注都恰好承受此优势。</HH.Setting.casino.rouletteEdge.Desc>
+  <HH.Setting.casino.roundsPerHour.blackjack>每游戏小时二十一点手数</HH.Setting.casino.roundsPerHour.blackjack>
+  <HH.Setting.casino.roundsPerHour.blackjack.Desc>每游戏小时的手数。</HH.Setting.casino.roundsPerHour.blackjack.Desc>
+  <HH.Setting.casino.roundsPerHour.poker>每游戏小时 Rimdeck 手数</HH.Setting.casino.roundsPerHour.poker>
+  <HH.Setting.casino.roundsPerHour.poker.Desc>每游戏小时的手数。</HH.Setting.casino.roundsPerHour.poker.Desc>
+  <HH.Setting.casino.roundsPerHour.roulette>每游戏小时轮盘转动次数</HH.Setting.casino.roundsPerHour.roulette>
+  <HH.Setting.casino.roundsPerHour.roulette.Desc>每游戏小时的转动次数。</HH.Setting.casino.roundsPerHour.roulette.Desc>
+  <HH.Setting.casino.roundsPerHour.slot>每游戏小时老虎机转动次数</HH.Setting.casino.roundsPerHour.slot>
+  <HH.Setting.casino.roundsPerHour.slot.Desc>每游戏小时机器转动的速度（2500 ticks，因此在正常速度下 40 即约每 1 到 2 真实秒转一次）。</HH.Setting.casino.roundsPerHour.slot.Desc>
+  <HH.Setting.casino.slotRtp>老虎机返还率（RTP）</HH.Setting.casino.slotRtp>
+  <HH.Setting.casino.slotRtp.Desc>独臂Muffalo 长期返还的赌注比例。92% = 庄家优势 8%。超过 100% 时庄家亏损。</HH.Setting.casino.slotRtp.Desc>
+  <HH.Setting.casino.tableLimits>执行牌桌限额</HH.Setting.casino.tableLimits>
+  <HH.Setting.casino.tableLimits.Desc>开启：下注保持在下方设定的最低与最高下注之间。关闭：只有庄家风险规则限制下注。</HH.Setting.casino.tableLimits.Desc>
+  <HH.Setting.casino.toleranceFactor>赌博耐受性累积</HH.Setting.casino.toleranceFactor>
+  <HH.Setting.casino.toleranceFactor.Desc>与原版相比，愉悦耐受性累积的速度（0.6 = 慢 40%）。</HH.Setting.casino.toleranceFactor.Desc>
+  <HH.Setting.casino.worldFx>地图上的赌场生活</HH.Setting.casino.worldFx>
+  <HH.Setting.casino.worldFx.Desc>人们游玩时，老虎机的转轮、轮盘、发牌、筹码以及机器和牌桌旁的小声音。</HH.Setting.casino.worldFx.Desc>
+  <HH.Setting.city.cinemaCooldownHours>每位访客两次看电影的间隔（小时）</HH.Setting.city.cinemaCooldownHours>
+  <HH.Setting.city.cinemaCooldownHours.Desc>访客在此时间内最多看一场电影。</HH.Setting.city.cinemaCooldownHours.Desc>
+  <HH.Setting.city.cinemaMinSeats>所需座位数</HH.Setting.city.cinemaMinSeats>
+  <HH.Setting.city.cinemaMinSeats.Desc>至少有这么多座位面向投影屏幕时，才算作电影院。</HH.Setting.city.cinemaMinSeats.Desc>
+  <HH.Setting.city.cinemaShowTicks>电影时长（ticks）</HH.Setting.city.cinemaShowTicks>
+  <HH.Setting.city.cinemaShowTicks.Desc>每场放映持续的时间。2,500 ticks 为一小时。</HH.Setting.city.cinemaShowTicks.Desc>
+  <HH.Setting.city.cinemaTicket>电影票</HH.Setting.city.cinemaTicket>
+  <HH.Setting.city.cinemaTicket.Desc>一张票的价格。访客入座时付费。</HH.Setting.city.cinemaTicket.Desc>
+  <HH.Setting.city.desireScale>访客对城市生活的兴趣</HH.Setting.city.desireScale>
+  <HH.Setting.city.desireScale.Desc>调整访客想去电影院、沙龙、画廊和公园长椅的强烈程度。0 = 从不。</HH.Setting.city.desireScale.Desc>
+  <HH.Setting.city.galleryCooldownHours>每位访客两次参观的间隔（小时）</HH.Setting.city.galleryCooldownHours>
+  <HH.Setting.city.galleryCooldownHours.Desc>访客在此时间内最多参观一次画廊。</HH.Setting.city.galleryCooldownHours.Desc>
+  <HH.Setting.city.galleryFee>画廊门票</HH.Setting.city.galleryFee>
+  <HH.Setting.city.galleryFee.Desc>参观一次画廊的价格。</HH.Setting.city.galleryFee.Desc>
+  <HH.Setting.city.galleryMaxViews>每次参观的作品数</HH.Setting.city.galleryMaxViews>
+  <HH.Setting.city.galleryMaxViews.Desc>每位访客每次参观时看的艺术品数量。</HH.Setting.city.galleryMaxViews.Desc>
+  <HH.Setting.city.galleryMinArt>所需艺术品数</HH.Setting.city.galleryMinArt>
+  <HH.Setting.city.galleryMinArt.Desc>房间中至少有这么多艺术品时，才算作画廊。</HH.Setting.city.galleryMinArt.Desc>
+  <HH.Setting.city.galleryViewTicks>每件作品的观赏时间（ticks）</HH.Setting.city.galleryViewTicks>
+  <HH.Setting.city.galleryViewTicks.Desc>访客站在一件艺术品前的时长。</HH.Setting.city.galleryViewTicks.Desc>
+  <HH.Setting.city.movieNight>殖民者的电影之夜</HH.Setting.city.movieNight>
+  <HH.Setting.city.movieNight.Desc>当存在有电的投影屏幕和座位时，殖民者会时不时组织一次电影之夜。</HH.Setting.city.movieNight.Desc>
+  <HH.Setting.city.movieNightChance>每晚电影之夜的几率</HH.Setting.city.movieNightChance>
+  <HH.Setting.city.movieNightChance.Desc>殖民地在某个晚上（18:00）开始电影之夜的几率。</HH.Setting.city.movieNightChance.Desc>
+  <HH.Setting.city.parkCooldownHours>每位访客两次坐长椅的间隔（小时）</HH.Setting.city.parkCooldownHours>
+  <HH.Setting.city.parkCooldownHours.Desc>访客在此时间内最多坐一次公园长椅。</HH.Setting.city.parkCooldownHours.Desc>
+  <HH.Setting.city.parkRestTicks>长椅休息时间（ticks）</HH.Setting.city.parkRestTicks>
+  <HH.Setting.city.parkRestTicks.Desc>有人坐在公园长椅上的时长。</HH.Setting.city.parkRestTicks.Desc>
+  <HH.Setting.city.priceTolerance>访客价格容忍度</HH.Setting.city.priceTolerance>
+  <HH.Setting.city.priceTolerance.Desc>与参考价格相比，访客愿意为城市服务支付多少。跟随难度滑块；1 = 标准。</HH.Setting.city.priceTolerance.Desc>
+  <HH.Setting.city.researchMode>研究模式</HH.Setting.city.researchMode>
+  <HH.Setting.city.researchMode.Desc>完整：城市生活的项目必须先完成研究。关闭：城市生活中的所有内容立即可用。</HH.Setting.city.researchMode.Desc>
+  <HH.Setting.city.salonCooldownHours>每位访客两次理发的间隔（小时）</HH.Setting.city.salonCooldownHours>
+  <HH.Setting.city.salonCooldownHours.Desc>访客在此时间内最多获得一次新发型。</HH.Setting.city.salonCooldownHours.Desc>
+  <HH.Setting.city.salonDyePrice>染发附加费</HH.Setting.city.salonDyePrice>
+  <HH.Setting.city.salonDyePrice.Desc>改变发色的额外费用（需要生物科技或意识形态）。</HH.Setting.city.salonDyePrice.Desc>
+  <HH.Setting.city.salonPrice>理发价格</HH.Setting.city.salonPrice>
+  <HH.Setting.city.salonPrice.Desc>访客做一次理发和新发型所付的费用。</HH.Setting.city.salonPrice.Desc>
+  <HH.Setting.city.salonServiceTicks>造型时间（ticks）</HH.Setting.city.salonServiceTicks>
+  <HH.Setting.city.salonServiceTicks.Desc>由普通造型师完成一次理发所需的时长。</HH.Setting.city.salonServiceTicks.Desc>
+  <HH.Setting.city.salonTattooPrice>纹身附加费</HH.Setting.city.salonTattooPrice>
+  <HH.Setting.city.salonTattooPrice.Desc>纹身的额外费用（需要意识形态）。</HH.Setting.city.salonTattooPrice.Desc>
+  <HH.Setting.city.salonWaitTicks>等待上限（ticks）</HH.Setting.city.salonWaitTicks>
+  <HH.Setting.city.salonWaitTicks.Desc>访客在椅子上等待这么长时间，若无人前来便不高兴地离开。</HH.Setting.city.salonWaitTicks.Desc>
+  <HH.Setting.city.securityChance>雇用几率（基础）</HH.Setting.city.securityChance>
+  <HH.Setting.city.securityChance.Desc>每位符合条件访客的基础几率；非常富有的访客（80 以上）额外 +40 点。</HH.Setting.city.securityChance.Desc>
+  <HH.Setting.city.securityDayShare>每日费用（占预算比例）</HH.Setting.city.securityDayShare>
+  <HH.Setting.city.securityDayShare.Desc>保镖每天收取访客预算的这一比例，按小时结算。</HH.Setting.city.securityDayShare.Desc>
+  <HH.Setting.city.securityHireHours>寻找保镖所需小时数</HH.Setting.city.securityHireHours>
+  <HH.Setting.city.securityHireHours.Desc>在此时间内找不到空闲武装殖民者的雇佣将被取消且不收费。</HH.Setting.city.securityHireHours.Desc>
+  <HH.Setting.city.securityMinHourFee>最低小时费</HH.Setting.city.securityMinHourFee>
+  <HH.Setting.city.securityMinHourFee.Desc>保镖每小时的费用永远不低于此数。</HH.Setting.city.securityMinHourFee.Desc>
+  <HH.Setting.city.securityMinWealth>雇用保镖所需财富</HH.Setting.city.securityMinWealth>
+  <HH.Setting.city.securityMinWealth.Desc>财富低于此水平（1 到 100）的访客从不雇用保护。</HH.Setting.city.securityMinWealth.Desc>
+  <HH.Setting.city.securityOn>保镖服务</HH.Setting.city.securityOn>
+  <HH.Setting.city.securityOn.Desc>富有的访客可以雇用一名武装殖民者作为保镖。</HH.Setting.city.securityOn.Desc>
+  <HH.Setting.city.taxiArrivalChance>乘出租车抵达的几率</HH.Setting.city.taxiArrivalChance>
+  <HH.Setting.city.taxiArrivalChance.Desc>抵达的访客中，由出租车站下车而非从地图边缘步行进入的比例。</HH.Setting.city.taxiArrivalChance.Desc>
+  <HH.Setting.city.taxiArrivalFee>落地费</HH.Setting.city.taxiArrivalFee>
+  <HH.Setting.city.taxiArrivalFee.Desc>抵达的客人在出租车站被放下时，向殖民地支付的费用。</HH.Setting.city.taxiArrivalFee.Desc>
+  <HH.Setting.city.taxiDepartureChance>离店时叫出租车的概率</HH.Setting.city.taxiDepartureChance>
+  <HH.Setting.city.taxiDepartureChance.Desc>存在空闲出租车站时，离店客人中叫车的比例（随财富增加）。</HH.Setting.city.taxiDepartureChance.Desc>
+  <HH.Setting.city.taxiFare>出租车车费</HH.Setting.city.taxiFare>
+  <HH.Setting.city.taxiFare.Desc>离店客人从出租车站乘车时支付的费用。</HH.Setting.city.taxiFare.Desc>
+  <HH.Setting.city.taxiWaitTicks>等车时间（刻）</HH.Setting.city.taxiWaitTicks>
+  <HH.Setting.city.taxiWaitTicks.Desc>客人在站点等待多久，出租车才会启动离开。</HH.Setting.city.taxiWaitTicks.Desc>
+  <HH.Setting.core.guide>显示 Hearth &amp; Harbor 指南</HH.Setting.core.guide>
+  <HH.Setting.core.guide.Desc>右上角的学习助手。右键点击可将其隐藏。</HH.Setting.core.guide.Desc>
+  <HH.Setting.core.helpHint>在您赌博的地方显示简短的现实求助提示</HH.Setting.core.helpHint>
+  <HH.Setting.core.helpHint.Desc>在您自己赌博的每个界面上都会出现一行简短而低调的提示：如果赌博在现实中成了您的问题，可以寻求帮助（findahelpline.com）。其他地方不会显示。</HH.Setting.core.helpHint.Desc>
+  <HH.Setting.core.rngAlgorithm>随机数算法</HH.Setting.core.rngAlgorithm>
+  <HH.Setting.core.rngAlgorithm.Desc>用于 Hearth &amp; Harbor 所有随机序列的算法。所有算法的概率相同，只是序列不同。ChaCha8 是加密级的（偏执型），SplitMix64 最快。</HH.Setting.core.rngAlgorithm.Desc>
+  <HH.Setting.core.sealedFate>封存的命运</HH.Setting.core.sealedFate>
+  <HH.Setting.core.sealedFate.Desc>开启后：读取存档不会重新掷客人事件（一切都使用封存的随机序列）。玩家下注、银行交易和彩票始终封存。</HH.Setting.core.sealedFate.Desc>
+  <HH.Setting.dlc.aiIdeoPrecepts>同时为 AI 意识形态派系添加金钱教义</HH.Setting.dlc.aiIdeoPrecepts>
+  <HH.Setting.dlc.aiIdeoPrecepts.Desc>随机的 AI 意识形态会一次性获得对放纵与有偿升天的立场，权重取决于其文化基因。固定的派系意识形态永不受影响。</HH.Setting.dlc.aiIdeoPrecepts.Desc>
+  <HH.Setting.dlc.fundDestination>殖民者的供奉去向</HH.Setting.dlc.fundDestination>
+  <HH.Setting.dlc.fundDestination.Desc>给神明：银币直接消失。给信仰所属的派系：如果某派系信奉此信仰，会获得好感（每 500 银币 +1，每季度至多 +5）。殖民者永远不会向您自己的神殿基金交钱。</HH.Setting.dlc.fundDestination.Desc>
+  <HH.Setting.dlc.indulgenceCapScale>放纵购买上限</HH.Setting.dlc.indulgenceCapScale>
+  <HH.Setting.dlc.indulgenceCapScale.Desc>对每个小人、殖民地和意识形态的购买限额的乘数。1 = 设计中的限额。</HH.Setting.dlc.indulgenceCapScale.Desc>
+  <HH.Setting.dlc.indulgenceFactor>放纵价格系数</HH.Setting.dlc.indulgenceFactor>
+  <HH.Setting.dlc.indulgenceFactor.Desc>对每一项放纵和升天价格的乘数（金钱与信仰价目表中的「信仰待售」系数）。</HH.Setting.dlc.indulgenceFactor.Desc>
+  <HH.Setting.dlc.luckShift>运气：幸运者与倒霉者的赔率偏移</HH.Setting.dlc.luckShift>
+  <HH.Setting.dlc.luckShift.Desc>幸运的人会在游戏赔率方案上增加这么多个百分点，倒霉的人则损失同样多。偏移永远不会把游戏提升到 100 % 或以上，也不会改变随机抽取本身。</HH.Setting.dlc.luckShift.Desc>
+  <HH.Setting.dlc.mandatoryBilleting>帝国安置的强制接待</HH.Setting.dlc.mandatoryBilleting>
+  <HH.Setting.dlc.mandatoryBilleting.Desc>即使在「客满」以下，帝国的安置令也会送达。关闭：仅在高难度档位（客满及更高）生效。无论如何，都只在有客床的殖民地生效。</HH.Setting.dlc.mandatoryBilleting.Desc>
+  <HH.Setting.dlc.nobleBasePrice>贵族每人每日的基础住宿价</HH.Setting.dlc.nobleBasePrice>
+  <HH.Setting.dlc.nobleBasePrice.Desc>每位贵族每天的银币数，计算前先乘以爵位加成（每 100 资历 +15 %）和满意度系数。</HH.Setting.dlc.nobleBasePrice.Desc>
+  <HH.Setting.dlc.nobleMoneyFactor>贵族金钱系数</HH.Setting.dlc.nobleMoneyFactor>
+  <HH.Setting.dlc.nobleMoneyFactor.Desc>跟随难度表中的客人金钱一行：简单档位更富有，困难档位更拮据。</HH.Setting.dlc.nobleMoneyFactor.Desc>
+  <HH.Setting.dlc.nobleStays>贵族入住</HH.Setting.dlc.nobleStays>
+  <HH.Setting.dlc.nobleStays.Desc>帝国的贵族可能会要求付费住宿。您随时可以拒绝。需要一间与其爵位相符的卧室里有客床；他们会以客人身份入住，并在离店时依满意度付费。</HH.Setting.dlc.nobleStays.Desc>
+  <HH.Setting.dlc.shrineReactions>殖民者对其他信仰神龛的反应</HH.Setting.dlc.shrineReactions>
+  <HH.Setting.dlc.shrineReactions.Desc>传教者和至上主义者不喜欢其领地上其他信仰的神龛；宽容的意识形态则喜欢。</HH.Setting.dlc.shrineReactions.Desc>
+  <HH.Setting.dlc.xenoHospitality>异种基因偏好</HH.Setting.dlc.xenoHospitality>
+  <HH.Setting.dlc.xenoHospitality.Desc>客人的异种类型和基因决定了他们喜欢什么样的房间和物品（吸血鬼喜欢暗室，雅特金喜欢寒冷的房间，等等）。</HH.Setting.dlc.xenoHospitality.Desc>
+  <HH.Setting.finance.cryptoOn>加密资产</HH.Setting.finance.cryptoOn>
+  <HH.Setting.finance.cryptoOn.Desc>提供 RimCoin 和模因币。</HH.Setting.finance.cryptoOn.Desc>
+  <HH.Setting.finance.fallbackWindow>通讯台菜单中的投资</HH.Setting.finance.fallbackWindow>
+  <HH.Setting.finance.fallbackWindow.Desc>即使银行窗口可用，也在通讯台浮动菜单中提供投资界面。</HH.Setting.finance.fallbackWindow.Desc>
+  <HH.Setting.finance.hazardMult>灾难 ×</HH.Setting.finance.hazardMult>
+  <HH.Setting.finance.hazardMult.Desc>放大崩盘、跑路、违约、交易所被黑和挤兑的频率。长期平均值不变，只改变它们伤人的频繁程度。</HH.Setting.finance.hazardMult.Desc>
+  <HH.Setting.finance.jumpMult>价格跳动 ×</HH.Setting.finance.jumpMult>
+  <HH.Setting.finance.jumpMult.Desc>放大资产自行跳动的频率（季度数据、加密币跳动、模因币拉升）。长期平均值不变：数学会自动补偿。</HH.Setting.finance.jumpMult.Desc>
+  <HH.Setting.finance.memeInterval>新模因币的间隔天数</HH.Setting.finance.memeInterval>
+  <HH.Setting.finance.memeInterval.Desc>下一枚模因币上市前平均需要的天数。</HH.Setting.finance.memeInterval.Desc>
+  <HH.Setting.finance.memeOn>模因币</HH.Setting.finance.memeOn>
+  <HH.Setting.finance.memeOn.Desc>每隔几天就会出现一枚新模因币，上市三次后即退市。多数持有者会亏钱，少数人会暴富。</HH.Setting.finance.memeOn.Desc>
+  <HH.Setting.finance.newsMessages>以消息形式显示市场新闻</HH.Setting.finance.newsMessages>
+  <HH.Setting.finance.newsMessages.Desc>以简短消息显示崩盘、反弹和黑客事件（仅限您持有受影响资产时）。</HH.Setting.finance.newsMessages.Desc>
+  <HH.Setting.finance.nftOn>NFT</HH.Setting.finance.nftOn>
+  <HH.Setting.finance.nftOn.Desc>图片的所有权证书。卖出需要一到四天，并且要付出差价。</HH.Setting.finance.nftOn.Desc>
+  <HH.Setting.finance.omenCapA>头寸上限，机会市场</HH.Setting.finance.omenCapA>
+  <HH.Setting.finance.omenCapA.Desc>在一个 Omen 机会市场上投入的最大份额（占您净资产的比例）。</HH.Setting.finance.omenCapA.Desc>
+  <HH.Setting.finance.omenCapB>头寸上限，世界市场</HH.Setting.finance.omenCapB>
+  <HH.Setting.finance.omenCapB.Desc>在一个针对世界事件的 Omen 市场上投入的最大份额（占您净资产的比例）。</HH.Setting.finance.omenCapB.Desc>
+  <HH.Setting.finance.omenFee>Omen 手续费</HH.Setting.finance.omenFee>
+  <HH.Setting.finance.omenFee.Desc>每笔赌注中由交易所抽取的份额（提前平仓时再抽取一次）。</HH.Setting.finance.omenFee.Desc>
+  <HH.Setting.finance.omenGamma>冷门扭曲 γ</HH.Setting.finance.omenGamma>
+  <HH.Setting.finance.omenGamma.Desc>低于 1 时，交易所会高估不太可能的结果（经典的热门-冷门偏差）。1 = 报价等于真实赔率。</HH.Setting.finance.omenGamma.Desc>
+  <HH.Setting.finance.omenSpread>Omen 差价</HH.Setting.finance.omenSpread>
+  <HH.Setting.finance.omenSpread.Desc>庄家的利润空间：YES 价格与 NO 价格之和等于 1 再加上这个值。</HH.Setting.finance.omenSpread.Desc>
+  <HH.Setting.finance.profit>收益率（年倍数 M）</HH.Setting.finance.profit>
+  <HH.Setting.finance.profit.Desc>参考基金 RimIndex 50 每个游戏年（60 天）的平均增长倍数：1.2 表示年化 +20 %，1.0 表示不赚不赔，低于 1 则亏损。对数刻度 0.1 至 100；输入数字可设为精确值。在您自行设置之前，会跟随难度滑块。</HH.Setting.finance.profit.Desc>
+  <HH.Setting.finance.projectStakePct>单个项目的投注上限</HH.Setting.finance.projectStakePct>
+  <HH.Setting.finance.projectStakePct.Desc>单个项目的最大投注额，占您净资产的比例。</HH.Setting.finance.projectStakePct.Desc>
+  <HH.Setting.finance.projectTotalPct>投注上限，全部项目</HH.Setting.finance.projectTotalPct>
+  <HH.Setting.finance.projectTotalPct.Desc>所有未平仓项目赌注（做多与做空合计）的最大总额，占您净资产的比例。</HH.Setting.finance.projectTotalPct.Desc>
+  <HH.Setting.finance.projectYearCapPct>年度利润上限</HH.Setting.finance.projectYearCapPct>
+  <HH.Setting.finance.projectYearCapPct.Desc>每个游戏年中做多与做空的净利润上限，为年初净资产的这一比例。超过部分，银行只退还本金。</HH.Setting.finance.projectYearCapPct.Desc>
+  <HH.Setting.finance.projectsOn>派系项目与项目做空</HH.Setting.finance.projectsOn>
+  <HH.Setting.finance.projectsOn.Desc>派系会宣布项目；您可以押注其成功（做多），或与之对赌（做空）。</HH.Setting.finance.projectsOn.Desc>
+  <HH.Setting.finance.volMult>波动 ×</HH.Setting.finance.volMult>
+  <HH.Setting.finance.volMult.Desc>放大价格每天的剧烈程度。1 = 设计数值（指数每天 1.5 %，模因币 15 %）。</HH.Setting.finance.volMult.Desc>
+  <HH.Setting.insurance.assessmentDays>事故评估（天）</HH.Setting.insurance.assessmentDays>
+  <HH.Setting.insurance.assessmentDays.Desc>意外险在事故发生后这么多天评定伤残等级（默认一个季度）。在此之前，理赔函会显示预估。</HH.Setting.insurance.assessmentDays.Desc>
+  <HH.Setting.insurance.billingDays>保费扣款间隔（天）</HH.Setting.insurance.billingDays>
+  <HH.Setting.insurance.billingDays.Desc>每隔这么多天自动扣除一次保费（优先从银行账户扣，否则从钱柜或仓库中的银币扣）。</HH.Setting.insurance.billingDays.Desc>
+  <HH.Setting.insurance.changeFee>变更保单的手续费（银币）</HH.Setting.insurance.changeFee>
+  <HH.Setting.insurance.changeFee.Desc>Clawback Mutual 对在保单生效期间每次变更保额、档位或附加项目所收取的费用（「行政成本」）。标准客房免费。</HH.Setting.insurance.changeFee.Desc>
+  <HH.Setting.insurance.changeLimitPerQuadrum>每份保单每季度可变更次数</HH.Setting.insurance.changeLimitPerQuadrum>
+  <HH.Setting.insurance.changeLimitPerQuadrum.Desc>每季度一份保单最多可变更的次数。0 = 不限（标准客房）；「客满」及更高难度会对此设限。</HH.Setting.insurance.changeLimitPerQuadrum.Desc>
+  <HH.Setting.insurance.changeWaitingDays>升级后的等待期（天）</HH.Setting.insurance.changeWaitingDays>
+  <HH.Setting.insurance.changeWaitingDays.Desc>您提高保额、档位或添加附加项目后，等待期内发生的事件仍按旧保障理赔（在突袭前一分钟提高的保单，不会按新保额赔付）。降低保障没有等待期。</HH.Setting.insurance.changeWaitingDays.Desc>
+  <HH.Setting.insurance.claimLetters>每项理赔都发信</HH.Setting.insurance.claimLetters>
+  <HH.Setting.insurance.claimLetters.Desc>Clawback Mutual 会为每项提交的理赔（每天至多一封「已提交理赔」通知）以及每项裁定写一封信。</HH.Setting.insurance.claimLetters.Desc>
+  <HH.Setting.insurance.claimMode>理赔的提交方式</HH.Setting.insurance.claimMode>
+  <HH.Setting.insurance.claimMode.Desc>按表格：保险事件会送来一封「可以理赔」的信，您需在截止日前填写理赔表格（结果照旧掷骰；除赔付选择外，表格仅为形式）。自动：伤害发生的那一刻即为您代为提交理赔。</HH.Setting.insurance.claimMode.Desc>
+  <HH.Setting.insurance.claimReminder>理赔截止日前提醒我</HH.Setting.insurance.claimReminder>
+  <HH.Setting.insurance.claimReminder.Desc>提交窗口关闭前两天，发一封简短的提醒信。</HH.Setting.insurance.claimReminder.Desc>
+  <HH.Setting.insurance.claimsAttitude>理赔态度</HH.Setting.insurance.claimsAttitude>
+  <HH.Setting.insurance.claimsAttitude.Desc>理赔部门寻找拒赔理由的积极程度。0 %「从不找茬」· 15 %「细则条款」（标准客房）· 40 %「创意会计」· 75 %「我们的律师很闲」· 100 %「基本总是」。</HH.Setting.insurance.claimsAttitude.Desc>
+  <HH.Setting.insurance.deadlineScale>理赔截止期限（系数）</HH.Setting.insurance.deadlineScale>
+  <HH.Setting.insurance.deadlineScale.Desc>乘以每份保单的提交期限（Wanderlust 5 天，Legal Shield 5 天，财产险在「尚可」档约 15 天；Premium 为 +50 %，Bare Minimum 为 -30 %）。</HH.Setting.insurance.deadlineScale.Desc>
+  <HH.Setting.insurance.formError>退保表格出错概率</HH.Setting.insurance.formError>
+  <HH.Setting.insurance.formError.Desc>第 30 条：退保申请会因表格错误被退回。标准客房会自动重新提交，截止日期不变；更高难度则会损失一个季度。</HH.Setting.insurance.formError.Desc>
+  <HH.Setting.insurance.formTextAi>AI 对理赔陈述的回复</HH.Setting.insurance.formTextAi>
+  <HH.Setting.insurance.formTextAi.Desc>当 AI 风味模块开启且您已同意时，理赔部门会用它自己的措辞回复您的陈述（金额和结果不会改变）。否则陈述会被存档并忽略。</HH.Setting.insurance.formTextAi.Desc>
+  <HH.Setting.insurance.hospitalCapDays>Rim Health Plan：可赔付的病床日</HH.Setting.insurance.hospitalCapDays>
+  <HH.Setting.insurance.hospitalCapDays.Desc>在下方时间窗口内，Rim Health Plan 为每位殖民者最多赔付的病床日数（住院补偿上限；防止慢性病的赔付超过保费成本）。</HH.Setting.insurance.hospitalCapDays.Desc>
+  <HH.Setting.insurance.hospitalCapWindow>Rim Health Plan：时间窗口（天）</HH.Setting.insurance.hospitalCapWindow>
+  <HH.Setting.insurance.hospitalCapWindow.Desc>上述上限统计的是每位殖民者在这么多天内已赔付的病床日（默认一个季度）。</HH.Setting.insurance.hospitalCapWindow.Desc>
+  <HH.Setting.insurance.loading>保险加成</HH.Setting.insurance.loading>
+  <HH.Setting.insurance.loading.Desc>叠加在预期损失之上、构成保费的加收部分。保险公司平均会留下这一部分；0% 即精算公平。</HH.Setting.insurance.loading.Desc>
+  <HH.Setting.insurance.maxPersonSum>人身保额上限</HH.Setting.insurance.maxPersonSum>
+  <HH.Setting.insurance.maxPersonSum.Desc>意外险、养老险或旅行险的最高基础保额（同时不超过殖民者市场价值的两倍）。</HH.Setting.insurance.maxPersonSum.Desc>
+  <HH.Setting.insurance.maxPropertySum>财产保额上限</HH.Setting.insurance.maxPropertySum>
+  <HH.Setting.insurance.maxPropertySum.Desc>财产险的最高投保金额。</HH.Setting.insurance.maxPropertySum.Desc>
+  <HH.Setting.insurance.negotiation>允许协商理赔</HH.Setting.insurance.negotiation>
+  <HH.Setting.insurance.negotiation.Desc>理赔可以协商（最多三轮）。在「标准房」中协商永远不花钱。</HH.Setting.insurance.negotiation.Desc>
+  <HH.Setting.insurance.noticeDays>退保通知期（天）</HH.Setting.insurance.noticeDays>
+  <HH.Setting.insurance.noticeDays.Desc>退保在您提交后，至少经过这么多天、并于下一个季度更替时生效。标准房 3 天，超额预订为一个季度，「为什么？」为一年。</HH.Setting.insurance.noticeDays.Desc>
+  <HH.Setting.insurance.pensionMaxWorkHours>养老金：每日允许工作时长</HH.Setting.insurance.pensionMaxWorkHours>
+  <HH.Setting.insurance.pensionMaxWorkHours.Desc>领取养老金者在日程表中设为「工作」的每日上限（小时）。「任意」「娱乐」「睡眠」和「冥想」都算作空闲时间。</HH.Setting.insurance.pensionMaxWorkHours.Desc>
+  <HH.Setting.insurance.pensionRule>养老金工作规则</HH.Setting.insurance.pensionRule>
+  <HH.Setting.insurance.pensionRule.Desc>每日领取养老金者（黄金岁月、够用或尊享，60 岁以上）在日程表中只能工作几个小时。强制执行：罢工会扣减养老金（第二次：本期养老金；第三次：整笔权益）。仅警告：信件与提醒，无处罚。关闭：无此规则。</HH.Setting.insurance.pensionRule.Desc>
+  <HH.Setting.insurance.requireResearch>保险需要研究</HH.Setting.insurance.requireResearch>
+  <HH.Setting.insurance.requireResearch.Desc>保单需通过研究项目解锁：SL_Insurance（基本保障、够用）与 SL_Actuarial（尊享、漫游）。关闭：全部立即可用。</HH.Setting.insurance.requireResearch.Desc>
+  <HH.Setting.insurance.retentionDialogs>挽留对话</HH.Setting.insurance.retentionDialogs>
+  <HH.Setting.insurance.retentionDialogs.Desc>德斯蒙德·塔利（高级客户挽留专员）劝您放弃退保的次数。标准房：一次诚恳的提议。</HH.Setting.insurance.retentionDialogs.Desc>
+  <HH.Setting.insurance.salesPressure>销售压力</HH.Setting.insurance.salesPressure>
+  <HH.Setting.insurance.salesPressure.Desc>Clawback Mutual 推销得有多猛：预先勾选的附加险、挽留优惠、表格错误、加购暗示。每种伎俩在下方还有各自的开关。</HH.Setting.insurance.salesPressure.Desc>
+  <HH.Setting.insurance.showStatusColumn>殖民者表格中的保险列</HH.Setting.insurance.showStatusColumn>
+  <HH.Setting.insurance.showStatusColumn.Desc>在分配表中显示每位殖民者的保险状态（仅在存在第一份保单后）。</HH.Setting.insurance.showStatusColumn.Desc>
+  <HH.Setting.insurance.showStatusTab>殖民者的保险标签页</HH.Setting.insurance.showStatusTab>
+  <HH.Setting.insurance.showStatusTab.Desc>在殖民者的检视面板中添加「保险」标签页（仅在存在第一份保单后）。</HH.Setting.insurance.showStatusTab.Desc>
+  <HH.Setting.insurance.trick.badge>伎俩：「多数殖民地选择尊享」标签</HH.Setting.insurance.trick.badge>
+  <HH.Setting.insurance.trick.badge.Desc>尊享一栏上的标签（以及更隐蔽的、灰色的「尊享加强版」）。</HH.Setting.insurance.trick.badge.Desc>
+  <HH.Setting.insurance.trick.formError>伎俩：表格错误</HH.Setting.insurance.trick.formError>
+  <HH.Setting.insurance.trick.formError.Desc>退保时返回表格错误的情况。</HH.Setting.insurance.trick.formError.Desc>
+  <HH.Setting.insurance.trick.preTicked>伎俩：预先勾选的附加险</HH.Setting.insurance.trick.preTicked>
+  <HH.Setting.insurance.trick.preTicked.Desc>替您预先勾选的附加险（跟随「销售压力」，或始终、从不）。</HH.Setting.insurance.trick.preTicked.Desc>
+  <HH.Setting.insurance.trick.retention>伎俩：挽留优惠</HH.Setting.insurance.trick.retention>
+  <HH.Setting.insurance.trick.retention.Desc>退保时弹出的挽留对话。</HH.Setting.insurance.trick.retention.Desc>
+  <HH.Setting.insurance.trick.upsell>伎俩：加购暗示</HH.Setting.insurance.trick.upsell>
+  <HH.Setting.insurance.trick.upsell.Desc>暗示您应购买更多或更好保障的信件（死亡后五天内绝不发出）。</HH.Setting.insurance.trick.upsell.Desc>
+  <HH.Setting.insurance.trickCap>推销伎俩费用上限</HH.Setting.insurance.trickCap>
+  <HH.Setting.insurance.trickCap.Desc>所有推销伎俩合计最多占年保费的这一比例；其余部分以「优惠返还」的形式在年度信件中退还。</HH.Setting.insurance.trickCap.Desc>
+  <HH.Setting.insurance.waitingDays>等待期（天）</HH.Setting.insurance.waitingDays>
+  <HH.Setting.insurance.waitingDays.Desc>保障在这么多天后才开始（「在保障开始之后才开始」）。等待期内造成的损失不予赔付。</HH.Setting.insurance.waitingDays.Desc>
+  <HH.Setting.lottery.colonyFee>每张彩票的手续费</HH.Setting.lottery.colonyFee>
+  <HH.Setting.lottery.colonyFee.Desc>每张彩票中您留存的额外银币（会抬高买家看到的价格）。</HH.Setting.lottery.colonyFee.Desc>
+  <HH.Setting.lottery.colonyInterval>殖民地开奖间隔（天）</HH.Setting.lottery.colonyInterval>
+  <HH.Setting.lottery.colonyInterval.Desc>每隔这么多天开奖一次；头奖滚存。</HH.Setting.lottery.colonyInterval.Desc>
+  <HH.Setting.lottery.colonyJackpotCap>殖民地头奖上限</HH.Setting.lottery.colonyJackpotCap>
+  <HH.Setting.lottery.colonyJackpotCap.Desc>您彩票的头奖会滚存，直至达到此金额。</HH.Setting.lottery.colonyJackpotCap.Desc>
+  <HH.Setting.lottery.colonyJackpotShare>奖池份额：头奖</HH.Setting.lottery.colonyJackpotShare>
+  <HH.Setting.lottery.colonyJackpotShare.Desc>猜中全部 4 个号码的奖池份额。</HH.Setting.lottery.colonyJackpotShare.Desc>
+  <HH.Setting.lottery.colonyOn>殖民地彩票</HH.Setting.lottery.colonyOn>
+  <HH.Setting.lottery.colonyOn.Desc>经营您自己的彩票：您的客人与友好聚居地的模拟玩家购买彩票，未派发的部分归您所有。</HH.Setting.lottery.colonyOn.Desc>
+  <HH.Setting.lottery.colonyPrice>殖民地彩票价格</HH.Setting.lottery.colonyPrice>
+  <HH.Setting.lottery.colonyPrice.Desc>您自己彩票的单张价格。</HH.Setting.lottery.colonyPrice.Desc>
+  <HH.Setting.lottery.colonyQuote>殖民地派奖比例</HH.Setting.lottery.colonyQuote>
+  <HH.Setting.lottery.colonyQuote.Desc>彩票价格中进入奖池的比例，其余归您。比全球开奖更优厚的比例会吸引更多买家。</HH.Setting.lottery.colonyQuote.Desc>
+  <HH.Setting.lottery.colonySecondShare>奖池份额：二等奖</HH.Setting.lottery.colonySecondShare>
+  <HH.Setting.lottery.colonySecondShare.Desc>猜中 3 个号码的奖池份额。</HH.Setting.lottery.colonySecondShare.Desc>
+  <HH.Setting.lottery.colonyThirdShare>奖池份额：三等奖</HH.Setting.lottery.colonyThirdShare>
+  <HH.Setting.lottery.colonyThirdShare.Desc>猜中 2 个号码的奖池份额。</HH.Setting.lottery.colonyThirdShare.Desc>
+  <HH.Setting.lottery.demandBase>彩票需求基数</HH.Setting.lottery.demandBase>
+  <HH.Setting.lottery.demandBase.Desc>中性条件下每人每天购买的彩票数，是需求公式的基数。</HH.Setting.lottery.demandBase.Desc>
+  <HH.Setting.lottery.globalInterval>全球开奖间隔（天）</HH.Setting.lottery.globalInterval>
+  <HH.Setting.lottery.globalInterval.Desc>每隔这么多天开奖一次。</HH.Setting.lottery.globalInterval.Desc>
+  <HH.Setting.lottery.globalOn>格利特沃尔德大抽奖</HH.Setting.lottery.globalOn>
+  <HH.Setting.lottery.globalOn.Desc>全球彩票：每隔几天开奖一次，彩票在银行窗口购买。</HH.Setting.lottery.globalOn.Desc>
+  <HH.Setting.lottery.globalPrice>全球彩票价格</HH.Setting.lottery.globalPrice>
+  <HH.Setting.lottery.globalPrice.Desc>全球抽奖单张彩票的价格。</HH.Setting.lottery.globalPrice.Desc>
+  <HH.Setting.lottery.globalQuote>全球派奖比例</HH.Setting.lottery.globalQuote>
+  <HH.Setting.lottery.globalQuote.Desc>彩票销售额中用于奖金的比例（头奖占其中的 40%）。</HH.Setting.lottery.globalQuote.Desc>
+  <HH.Setting.lottery.internationalScale>模拟玩家倍率 ×</HH.Setting.lottery.internationalScale>
+  <HH.Setting.lottery.internationalScale.Desc>倍增所有聚居地的模拟玩家为全球抽奖购买的彩票数。</HH.Setting.lottery.internationalScale.Desc>
+  <HH.Setting.lottery.jackpotCap>全球头奖上限</HH.Setting.lottery.jackpotCap>
+  <HH.Setting.lottery.jackpotCap.Desc>头奖滚存，直至达到此金额。</HH.Setting.lottery.jackpotCap.Desc>
+  <HH.Setting.thrumbo.edgeShift>幸运 Thrumbo：庄家优势偏移</HH.Setting.thrumbo.edgeShift>
+  <HH.Setting.thrumbo.edgeShift.Desc>在每局幸运 Thrumbo 游戏的庄家优势上增加的百分点（基础值：老虎机 8%，轮盘 2.7%，二十一点按规则）。0 = 标准优势；负数对您有利。随难度滑块变化。</HH.Setting.thrumbo.edgeShift.Desc>
+  <HH.Setting.thrumbo.maxBetCap>幸运 Thrumbo：限注上限（银币）</HH.Setting.thrumbo.maxBetCap>
+  <HH.Setting.thrumbo.maxBetCap.Desc>仅在开启限注时生效：任何一注都不会超过此值。</HH.Setting.thrumbo.maxBetCap.Desc>
+  <HH.Setting.thrumbo.maxBetFloor>幸运 Thrumbo：限注下限（银币）</HH.Setting.thrumbo.maxBetFloor>
+  <HH.Setting.thrumbo.maxBetFloor.Desc>仅在开启限注时生效：即使是拮据的殖民地，每局也至少可以下这么多注。</HH.Setting.thrumbo.maxBetFloor.Desc>
+  <HH.Setting.thrumbo.maxBetShare>幸运 Thrumbo：限注（占净资产的比例）</HH.Setting.thrumbo.maxBetShare>
+  <HH.Setting.thrumbo.maxBetShare.Desc>仅在开启限注时生效：单注最多为您净资产的这一比例（账户加家中银币，减去债务），并保持在下方的下限与上限之间。</HH.Setting.thrumbo.maxBetShare.Desc>
+  <HH.Setting.thrumbo.minBet>幸运 Thrumbo：最小赌注（银币）</HH.Setting.thrumbo.minBet>
+  <HH.Setting.thrumbo.minBet.Desc>幸运 Thrumbo 接受的最小赌注。</HH.Setting.thrumbo.minBet.Desc>
+  <HH.Setting.thrumbo.tableLimit>幸运 Thrumbo：限注</HH.Setting.thrumbo.tableLimit>
+  <HH.Setting.thrumbo.tableLimit.Desc>开启时，单注最多为您净资产的一定比例（见下方三项设置）。关闭：您可以押上全部家当。</HH.Setting.thrumbo.tableLimit.Desc>
+  <HH.Setting.underworld.exposureChance>体面的客人误入后屋的几率</HH.Setting.underworld.exposureChance>
+  <HH.Setting.underworld.exposureChance.Desc>每次检查（约每 2 小时）进行一次，前提是有体面的客人在场且后屋曾被使用。随难度滑块变化。</HH.Setting.underworld.exposureChance.Desc>
+  <HH.Setting.underworld.fence.buyPercent>销赃者收购价</HH.Setting.underworld.fence.buyPercent>
+  <HH.Setting.underworld.fence.buyPercent.Desc>销赃者为赃物支付的市场价值比例。</HH.Setting.underworld.fence.buyPercent.Desc>
+  <HH.Setting.underworld.fence.capital>销赃者的现金箱</HH.Setting.underworld.fence.capital>
+  <HH.Setting.underworld.fence.capital.Desc>销赃者从自己的现金箱付款。现金箱不足时从钱柜补充，多余的部分退回钱柜。</HH.Setting.underworld.fence.capital.Desc>
+  <HH.Setting.underworld.fence.exposureChance>失主发现的几率</HH.Setting.underworld.fence.exposureChance>
+  <HH.Setting.underworld.fence.exposureChance.Desc>每件转卖的赃物：其被盗自的派系会得知它最终的去向。</HH.Setting.underworld.fence.exposureChance.Desc>
+  <HH.Setting.underworld.fence.goodwillHit>被发现后损失的好感</HH.Setting.underworld.fence.goodwillHit>
+  <HH.Setting.underworld.fence.goodwillHit.Desc>在您所在等级的难度上限之前计算。</HH.Setting.underworld.fence.goodwillHit.Desc>
+  <HH.Setting.underworld.fence.sellPercent>销赃者售价</HH.Setting.underworld.fence.sellPercent>
+  <HH.Setting.underworld.fence.sellPercent.Desc>可疑买家支付的市场价值比例。</HH.Setting.underworld.fence.sellPercent.Desc>
+  <HH.Setting.underworld.gang.feeMax>后屋费用（最高）</HH.Setting.underworld.gang.feeMax>
+  <HH.Setting.underworld.gang.feeMin>后屋费用（最低）</HH.Setting.underworld.gang.feeMin>
+  <HH.Setting.underworld.gang.feeMin.Desc>帮派成员为使用后屋支付的费用。</HH.Setting.underworld.gang.feeMin.Desc>
+  <HH.Setting.underworld.gang.intervalDays>帮派来访间隔（天）</HH.Setting.underworld.gang.intervalDays>
+  <HH.Setting.underworld.gang.intervalDays.Desc>后屋、格斗坑或销赃者存在之后，帮派来访之间的平均间隔。</HH.Setting.underworld.gang.intervalDays.Desc>
+  <HH.Setting.underworld.gang.intimidateChance>帮派索要保护费的几率</HH.Setting.underworld.gang.intimidateChance>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>随难度滑块变化；「标准房」及更简单的难度下，除了可以拒绝的对话外，绝不会强迫您做任何事。</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.prisonAccess>帮派可以参观监狱</HH.Setting.underworld.gang.prisonAccess>
+  <HH.Setting.underworld.gang.prisonAccess.Desc>允许帮派客人参观牢房（审问囚犯）。默认关闭；否则所有客人都不得进入监狱。</HH.Setting.underworld.gang.prisonAccess.Desc>
+  <HH.Setting.underworld.gang.protectionFee>索要的保护费</HH.Setting.underworld.gang.protectionFee>
+  <HH.Setting.underworld.gang.sizeMax>最大帮派规模</HH.Setting.underworld.gang.sizeMax>
+  <HH.Setting.underworld.gang.tourFee>牢房参观费</HH.Setting.underworld.gang.tourFee>
+  <HH.Setting.underworld.gang.tourFee.Desc>帮派成员审问囚犯一小时所支付的费用。</HH.Setting.underworld.gang.tourFee.Desc>
+  <HH.Setting.underworld.hunt.feeMax>狩猎费（最高）</HH.Setting.underworld.hunt.feeMax>
+  <HH.Setting.underworld.hunt.feeMin>狩猎费（最低）</HH.Setting.underworld.hunt.feeMin>
+  <HH.Setting.underworld.hunt.intervalDays>狩猎队间隔（天）</HH.Setting.underworld.hunt.intervalDays>
+  <HH.Setting.underworld.hunt.quarryCount>每次狩猎的猎物数</HH.Setting.underworld.hunt.quarryCount>
+  <HH.Setting.underworld.hunt.quarryCount.Desc>狩猎队带入猎场的动物数量。</HH.Setting.underworld.hunt.quarryCount.Desc>
+  <HH.Setting.underworld.hunt.quarryHours>人类猎物须存活的时长（小时）</HH.Setting.underworld.hunt.quarryHours>
+  <HH.Setting.underworld.hunt.quarryHours.Desc>存活这么久或抵达围栏线的囚犯即获得自由。</HH.Setting.underworld.hunt.quarryHours.Desc>
+  <HH.Setting.underworld.lounge.price>每次消费的价格</HH.Setting.underworld.lounge.price>
+  <HH.Setting.underworld.lounge.price.Desc>客人在休息室的花费。客人只会选择其意识形态允许的内容。</HH.Setting.underworld.lounge.price.Desc>
+  <HH.Setting.underworld.mode>地下世界如何显现</HH.Setting.underworld.mode>
+  <HH.Setting.underworld.mode.Desc>游戏中发现：一个鬼祟的陌生人会问您是否有后屋，只有肯定的回答才会打开暗面。始终开启：从一开始就开放。（「关闭」是模块开关；「温馨内容」强度会将其完全隐藏。）</HH.Setting.underworld.mode.Desc>
+  <HH.Setting.underworld.organ.orderDays>器官订单交付天数</HH.Setting.underworld.organ.orderDays>
+  <HH.Setting.underworld.organ.orderPremium>订购器官的溢价</HH.Setting.underworld.organ.orderPremium>
+  <HH.Setting.underworld.organ.orderPremium.Desc>仅冷酷模式：在期限内交付的现成器官，按正常价格的这个倍数支付。</HH.Setting.underworld.organ.orderPremium.Desc>
+  <HH.Setting.underworld.organ.priceFactor>器官收购价</HH.Setting.underworld.organ.priceFactor>
+  <HH.Setting.underworld.organ.priceFactor.Desc>匿名买家支付的市场价值比例。</HH.Setting.underworld.organ.priceFactor.Desc>
+  <HH.Setting.underworld.pit.betMax>最大赌注</HH.Setting.underworld.pit.betMax>
+  <HH.Setting.underworld.pit.betMax.Desc>客人最多押注这么多银币（且不超过其预算的三分之一）。</HH.Setting.underworld.pit.betMax.Desc>
+  <HH.Setting.underworld.pit.betMin>最小赌注</HH.Setting.underworld.pit.betMin>
+  <HH.Setting.underworld.pit.betMin.Desc>客人至少押注这么多银币。</HH.Setting.underworld.pit.betMin.Desc>
+  <HH.Setting.underworld.pit.fairRatio>配对公平度</HH.Setting.underworld.pit.fairRatio>
+  <HH.Setting.underworld.pit.fairRatio.Desc>较强斗士的战斗力最多可为较弱者的这么多倍。</HH.Setting.underworld.pit.fairRatio.Desc>
+  <HH.Setting.underworld.pit.houseCut>赌注抽成</HH.Setting.underworld.pit.houseCut>
+  <HH.Setting.underworld.pit.houseCut.Desc>庄家从赌注池中保留的份额（彩池式）。</HH.Setting.underworld.pit.houseCut.Desc>
+  <HH.Setting.underworld.pit.intervalHours>两场比斗的间隔（小时）</HH.Setting.underworld.pit.intervalHours>
+  <HH.Setting.underworld.pit.intervalHours.Desc>格斗场拥有足够的斗士和观众时，每隔这么久开始一场比斗。</HH.Setting.underworld.pit.intervalHours.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks>最长比斗时长（tick）</HH.Setting.underworld.pit.maxBoutTicks>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>在此时间内无人获胜的比斗判为平局，所有赌注全部退还。</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.yieldHealth>认输血量</HH.Setting.underworld.pit.yieldHealth>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>斗士的生命值低于此比例时比斗结束，除非是不死不休的决斗。</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.scandalCooldownDays>丑闻间隔（天）</HH.Setting.underworld.scandalCooldownDays>
+  <HH.Setting.underworld.scandalCooldownDays.Desc>每张地图在这么多天内最多发生一起丑闻。</HH.Setting.underworld.scandalCooldownDays.Desc>
+  <HH.Setting.underworld.smuggler.inspectChance>被检查的概率</HH.Setting.underworld.smuggler.inspectChance>
+  <HH.Setting.underworld.smuggler.inspectChance.Desc>每次靠岸时的概率，前提是存在帝国当局。</HH.Setting.underworld.smuggler.inspectChance.Desc>
+  <HH.Setting.underworld.smuggler.intervalDays>两次靠岸的间隔（天）</HH.Setting.underworld.smuggler.intervalDays>
+  <HH.Setting.underworld.smuggler.intervalDays.Desc>走私码头夜间靠岸的平均间隔时间。</HH.Setting.underworld.smuggler.intervalDays.Desc>
+  <HH.Setting.underworld.smuggler.maxValue>最大货箱</HH.Setting.underworld.smuggler.maxValue>
+  <HH.Setting.underworld.smuggler.maxValue.Desc>提供的最大货箱的市场价值。</HH.Setting.underworld.smuggler.maxValue.Desc>
+  <HH.Setting.underworld.smuggler.priceFactor>违禁品价格</HH.Setting.underworld.smuggler.priceFactor>
+  <HH.Setting.underworld.smuggler.priceFactor.Desc>购买一个货箱时支付的市场价值比例。</HH.Setting.underworld.smuggler.priceFactor.Desc>
+  <HH.Setting.underworld.strangerCooldownDays>陌生人再次询问前的天数</HH.Setting.underworld.strangerCooldownDays>
+  <HH.Setting.underworld.strangerCooldownDays.Desc>选择「没兴趣」后，陌生人要等这么多天才会再次询问。</HH.Setting.underworld.strangerCooldownDays.Desc>
+  <HH.Setting.underworld.strangerMaxAsks>询问频率</HH.Setting.underworld.strangerMaxAsks>
+  <HH.Setting.underworld.strangerMaxAsks.Desc>被拒绝这么多次后，陌生人将彻底放弃。</HH.Setting.underworld.strangerMaxAsks.Desc>
+  <HH.Setting.underworld.strangerMaxWhispers>陌生人出现时的耳语值上限</HH.Setting.underworld.strangerMaxWhispers>
+  <HH.Setting.underworld.strangerMaxWhispers.Desc>只有当你的耳语值不高于此数值时他才会出现。</HH.Setting.underworld.strangerMaxWhispers.Desc>
+  <HH.Setting.underworld.strangerMeanDays>陌生人出现的平均间隔（天）</HH.Setting.underworld.strangerMeanDays>
+  <HH.Setting.underworld.strangerMeanDays.Desc>陌生人可能现身的时机之间的平均天数（殖民地有客人或营业场所之后，且你的耳语值较低时）。</HH.Setting.underworld.strangerMeanDays.Desc>
+  <HH.Setting.underworld.whispers.fence>每笔销赃交易的耳语值</HH.Setting.underworld.whispers.fence>
+  <HH.Setting.underworld.whispers.gang>每次帮派拜访的耳语值</HH.Setting.underworld.whispers.gang>
+  <HH.Setting.underworld.whispers.hunt>每次狩猎的耳语值</HH.Setting.underworld.whispers.hunt>
+  <HH.Setting.underworld.whispers.lounge>每次毒品休闲室时段的耳语值</HH.Setting.underworld.whispers.lounge>
+  <HH.Setting.underworld.whispers.organ>每次器官出售的耳语值</HH.Setting.underworld.whispers.organ>
+  <HH.Setting.underworld.whispers.pit>每场比斗的耳语值</HH.Setting.underworld.whispers.pit>
+  <HH.Setting.underworld.whispers.tour>每次牢房参观的耳语值</HH.Setting.underworld.whispers.tour>
+  <HH.Setting.underworld.whispersDecay>耳语值每15天衰减</HH.Setting.underworld.whispersDecay>
+  <HH.Setting.underworld.whispersDecay.Desc>耳语值每15天会损失这一比例的数值。</HH.Setting.underworld.whispersDecay.Desc>
+  <HH.SettingCat.Account>账户</HH.SettingCat.Account>
+  <HH.SettingCat.Addiction>成瘾</HH.SettingCat.Addiction>
+  <HH.SettingCat.Arrivals>到访</HH.SettingCat.Arrivals>
+  <HH.SettingCat.Cinema>影院</HH.SettingCat.Cinema>
+  <HH.SettingCat.Collections>收藏</HH.SettingCat.Collections>
+  <HH.SettingCat.Colonists>殖民者</HH.SettingCat.Colonists>
+  <HH.SettingCat.Compatibility>兼容性</HH.SettingCat.Compatibility>
+  <HH.SettingCat.DLCandtraits>DLC 与特质</HH.SettingCat.DLCandtraits>
+  <HH.SettingCat.Difficulty>难度</HH.SettingCat.Difficulty>
+  <HH.SettingCat.Discovery>发现</HH.SettingCat.Discovery>
+  <HH.SettingCat.Druglounge>毒品休闲室</HH.SettingCat.Druglounge>
+  <HH.SettingCat.Effects>效果</HH.SettingCat.Effects>
+  <HH.SettingCat.Factionprojects>派系项目</HH.SettingCat.Factionprojects>
+  <HH.SettingCat.Faithandmoney>信仰与金钱</HH.SettingCat.Faithandmoney>
+  <HH.SettingCat.Fees>费用</HH.SettingCat.Fees>
+  <HH.SettingCat.Fence>销赃</HH.SettingCat.Fence>
+  <HH.SettingCat.Fightpit>格斗场</HH.SettingCat.Fightpit>
+  <HH.SettingCat.Fun>娱乐</HH.SettingCat.Fun>
+  <HH.SettingCat.Furniture>家具</HH.SettingCat.Furniture>
+  <HH.SettingCat.Gallery>画廊</HH.SettingCat.Gallery>
+  <HH.SettingCat.Gangs>帮派</HH.SettingCat.Gangs>
+  <HH.SettingCat.General>常规</HH.SettingCat.General>
+  <HH.SettingCat.Guestbehaviour>客人行为</HH.SettingCat.Guestbehaviour>
+  <HH.SettingCat.Guests>客人</HH.SettingCat.Guests>
+  <HH.SettingCat.Handling>处理</HH.SettingCat.Handling>
+  <HH.SettingCat.Help>帮助</HH.SettingCat.Help>
+  <HH.SettingCat.Honorsystem>信任制</HH.SettingCat.Honorsystem>
+  <HH.SettingCat.Houseodds>庄家赔率</HH.SettingCat.Houseodds>
+  <HH.SettingCat.InsuranceClawbackMutual>保险（Clawback Mutual）</HH.SettingCat.InsuranceClawbackMutual>
+  <HH.SettingCat.Interestprofitability>利息与盈利</HH.SettingCat.Interestprofitability>
+  <HH.SettingCat.Interface>界面</HH.SettingCat.Interface>
+  <HH.SettingCat.Investments>投资</HH.SettingCat.Investments>
+  <HH.SettingCat.Kitchen>厨房</HH.SettingCat.Kitchen>
+  <HH.SettingCat.Limits>上限</HH.SettingCat.Limits>
+  <HH.SettingCat.Loans>贷款</HH.SettingCat.Loans>
+  <HH.SettingCat.Lookandsound>外观与声音</HH.SettingCat.Lookandsound>
+  <HH.SettingCat.Lottery>彩票</HH.SettingCat.Lottery>
+  <HH.SettingCat.Luck>运气</HH.SettingCat.Luck>
+  <HH.SettingCat.LuckyThrumbo>幸运 Thrumbo</HH.SettingCat.LuckyThrumbo>
+  <HH.SettingCat.Market>集市</HH.SettingCat.Market>
+  <HH.SettingCat.Money>金钱</HH.SettingCat.Money>
+  <HH.SettingCat.Music>音乐</HH.SettingCat.Music>
+  <HH.SettingCat.Nobles>贵族</HH.SettingCat.Nobles>
+  <HH.SettingCat.OmenExchange>预兆交易所</HH.SettingCat.OmenExchange>
+  <HH.SettingCat.Openinghours>营业时间</HH.SettingCat.Openinghours>
+  <HH.SettingCat.Organclinic>器官诊所</HH.SettingCat.Organclinic>
+  <HH.SettingCat.Park>公园</HH.SettingCat.Park>
+  <HH.SettingCat.Prices>价格</HH.SettingCat.Prices>
+  <HH.SettingCat.Randomness>随机性</HH.SettingCat.Randomness>
+  <HH.SettingCat.Rehab>康复</HH.SettingCat.Rehab>
+  <HH.SettingCat.Reports>报告</HH.SettingCat.Reports>
+  <HH.SettingCat.Reputation>声望</HH.SettingCat.Reputation>
+  <HH.SettingCat.Research>研究</HH.SettingCat.Research>
+  <HH.SettingCat.Salon>沙龙</HH.SettingCat.Salon>
+  <HH.SettingCat.Sauna>桑拿</HH.SettingCat.Sauna>
+  <HH.SettingCat.Seats>座位</HH.SettingCat.Seats>
+  <HH.SettingCat.Security>安保</HH.SettingCat.Security>
+  <HH.SettingCat.Services>服务</HH.SettingCat.Services>
+  <HH.SettingCat.Sessions>场次</HH.SettingCat.Sessions>
+  <HH.SettingCat.Setup>布置</HH.SettingCat.Setup>
+  <HH.SettingCat.Shrines>神龛</HH.SettingCat.Shrines>
+  <HH.SettingCat.Smugglersdock>走私者码头</HH.SettingCat.Smugglersdock>
+  <HH.SettingCat.Sound>声音</HH.SettingCat.Sound>
+  <HH.SettingCat.Specialswitches>特殊开关</HH.SettingCat.Specialswitches>
+  <HH.SettingCat.Staffing>人手配置</HH.SettingCat.Staffing>
+  <HH.SettingCat.Stay>停留</HH.SettingCat.Stay>
+  <HH.SettingCat.Tables>牌桌</HH.SettingCat.Tables>
+  <HH.SettingCat.Taxi>出租车</HH.SettingCat.Taxi>
+  <HH.SettingCat.Texts>文本</HH.SettingCat.Texts>
+  <HH.SettingCat.TheHunt>狩猎</HH.SettingCat.TheHunt>
+  <HH.SettingCat.Wealthandmood>财富与心情</HH.SettingCat.Wealthandmood>
+  <HH.SettingCat.Whispers>耳语</HH.SettingCat.Whispers>
+  <HH.SettingCat.Wing>客翼</HH.SettingCat.Wing>
+</LanguageData>

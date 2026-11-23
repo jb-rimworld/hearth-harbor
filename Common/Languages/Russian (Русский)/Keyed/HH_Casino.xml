@@ -231,4 +231,121 @@
   <HH.Setting.thrumbo.raiseTheStakes.Desc>Добавляет кнопку «Поднять ставки…» к The Lucky Thrumbo: ставить товары в радиусе питаемого орбитального торгового маячка вместо серебра, а при интенсивности «Стандартный» и выше также животных колонии и пленников (как при ванильной продаже). Колонистам, рабам, детям и гостям такое не предлагается.</HH.Setting.thrumbo.raiseTheStakes.Desc>
   <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: разница ростовщика для ставок товарами</HH.Setting.thrumbo.pawnbrokerSpread>
   <HH.Setting.thrumbo.pawnbrokerSpread.Desc>Ставленные товары считаются по цене, которую дал бы ростовщик заведения (ванильная цена продажи с вашим лучшим переговорщиком), минус эта разница и фиксированная комиссия 2 %.</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
+  <HH.Casino.ChairsNote>до +{0} % к ставкам за удобное место</HH.Casino.ChairsNote>
+  <HH.Casino.ComfySeat>Удобное место за столом</HH.Casino.ComfySeat>
+  <HH.Casino.Demo.Column>Столбец {0}</HH.Casino.Demo.Column>
+  <HH.Casino.Demo.Number>Номер:</HH.Casino.Demo.Number>
+  <HH.Casino.Demo.OddsBlackjack>{0}</HH.Casino.Demo.OddsBlackjack>
+  <HH.Casino.Demo.OddsPoker>рейк {0} % (не больше {1} серебра с банка)</HH.Casino.Demo.OddsPoker>
+  <HH.Casino.Demo.OddsRoulette>преимущество дома {0} %</HH.Casino.Demo.OddsRoulette>
+  <HH.Casino.Demo.OddsSlots>возвращает {0} %</HH.Casino.Demo.OddsSlots>
+  <HH.Casino.Demo.PokerSeatWins>{0} выигрывает с {1}</HH.Casino.Demo.PokerSeatWins>
+  <HH.Casino.Demo.PokerYouWin>Вы выигрываете с {0}</HH.Casino.Demo.PokerYouWin>
+  <HH.Casino.Demo.Rake>рейк {0}</HH.Casino.Demo.Rake>
+  <HH.Casino.Demo.Regular>Завсегдатай {0}</HH.Casino.Demo.Regular>
+  <HH.Casino.Demo.Straight>Одно число</HH.Casino.Demo.Straight>
+  <HH.Casino.Demo.You>Вы</HH.Casino.Demo.You>
+  <HH.Casino.GhostChairs>{0} с креслом</HH.Casino.GhostChairs>
+  <HH.Casino.GhostSeats>Места для гостей: {0} / {1}</HH.Casino.GhostSeats>
+  <HH.Casino.GhostTipSlot>Синим: где сидит игрок · кресло или табурет на пульсирующей клетке повышает ставки</HH.Casino.GhostTipSlot>
+  <HH.Casino.GhostTipTable>Синим: где играют гости · янтарным: крупье · ставьте кресла на пульсирующие клетки, чтобы поднять ставки</HH.Casino.GhostTipTable>
+  <HH.Casino.Hand.0>старшая карта</HH.Casino.Hand.0>
+  <HH.Casino.Hand.1>пара</HH.Casino.Hand.1>
+  <HH.Casino.Hand.2>две пары</HH.Casino.Hand.2>
+  <HH.Casino.Hand.3>тройка</HH.Casino.Hand.3>
+  <HH.Casino.Hand.4>стрит</HH.Casino.Hand.4>
+  <HH.Casino.Hand.5>флеш</HH.Casino.Hand.5>
+  <HH.Casino.Hand.6>фулл-хаус</HH.Casino.Hand.6>
+  <HH.Casino.Hand.7>каре</HH.Casino.Hand.7>
+  <HH.Casino.Hand.8>стрит-флеш</HH.Casino.Hand.8>
+  <HH.Casino.SeatsBonus>+{0} % к ставкам</HH.Casino.SeatsBonus>
+  <HH.Casino.SeatsLine>Места для гостей: свободно {0} из {1} · с креслом: {2}</HH.Casino.SeatsLine>
+  <HH.Casino.SeatsTip>кресла повышают ставки до +{0} %</HH.Casino.SeatsTip>
+  <HH.Setting.casino.comfortSpend>Удобные места: больше трат</HH.Setting.casino.comfortSpend>
+  <HH.Setting.casino.comfortSpend.Desc>Гость на месте с комфортом 100 % ставит за раунд на столько больше (с учётом комфорта места; стоя — без бонуса). Преимущество дома не меняется: больше игры, а не лучшие шансы.</HH.Setting.casino.comfortSpend.Desc>
+  <HH.Setting.casino.comfortStay>Удобные места: дольше задерживаются</HH.Setting.casino.comfortStay>
+  <HH.Setting.casino.comfortStay.Desc>Гость на месте с комфортом 100 % играет на столько дольше, прежде чем уйти от стола.</HH.Setting.casino.comfortStay.Desc>
+  <HH.Thrumbo.AllIn>Ва-банк</HH.Thrumbo.AllIn>
+  <HH.Thrumbo.AllInTip>Всё, что есть в выбранном источнике.</HH.Thrumbo.AllInTip>
+  <HH.Thrumbo.Anim.BigWin>Большой выигрыш!</HH.Thrumbo.Anim.BigWin>
+  <HH.Thrumbo.Anim.Dealing>Крупье раздаёт…</HH.Thrumbo.Anim.Dealing>
+  <HH.Thrumbo.Anim.Jackpot>Джекпот Thrumbo!</HH.Thrumbo.Anim.Jackpot>
+  <HH.Thrumbo.Anim.Skip>Пропустить</HH.Thrumbo.Anim.Skip>
+  <HH.Thrumbo.Anim.SkipHint>Клик по столу, Пробел или Enter: пропустить. Shift: быстрее.</HH.Thrumbo.Anim.SkipHint>
+  <HH.Thrumbo.Anim.Spinning>Раунд разыгрывается…</HH.Thrumbo.Anim.Spinning>
+  <HH.Thrumbo.Anim.Wait>Дождитесь окончания раунда (или пропустите его).</HH.Thrumbo.Anim.Wait>
+  <HH.Thrumbo.BJ.DealAgain>Сдать снова</HH.Thrumbo.BJ.DealAgain>
+  <HH.Thrumbo.BJ.PayDouble>Выигрыш после удвоения (от первой ставки)</HH.Thrumbo.BJ.PayDouble>
+  <HH.Thrumbo.BJ.PayLose>Проигрыш или перебор</HH.Thrumbo.BJ.PayLose>
+  <HH.Thrumbo.BJ.PayNatural>Блэкджек (туз и карта в десять)</HH.Thrumbo.BJ.PayNatural>
+  <HH.Thrumbo.BJ.PayPush>Ничья (возврат ставки)</HH.Thrumbo.BJ.PayPush>
+  <HH.Thrumbo.BJ.PayTitle>Что выплачивает рука (с учётом ставки)</HH.Thrumbo.BJ.PayTitle>
+  <HH.Thrumbo.BJ.PayWin>Выигрыш</HH.Thrumbo.BJ.PayWin>
+  <HH.Thrumbo.Err.HouseCap>Дом принимает не больше {0} серебра с одной ставки (лимита стола нет, это собственный потолок дома).</HH.Thrumbo.Err.HouseCap>
+  <HH.Thrumbo.HowTo.Blackjack>Наберите к 21 больше, чем дилер, не перебрав. Карты с номиналом считаются по номиналу, валет, дама и король — 10, туз — 1 или 11.
+
+• Ещё: взять ещё карту. Стоп: оставить что есть; дилер открывает закрытую карту и берёт, пока не наберёт 17 или больше.
+• Удвоить: на первых двух картах удвоить ставку и взять ровно одну карту.
+• Больше 21 — перебор, проигрыш сразу. Туз с картой в десять — блэкджек, он платит бонус (3 к 2 за стандартным столом).
+• Ничья — возврат ставки.
+
+Игра важна: показанное преимущество дома действует при идеальной игре.</HH.Thrumbo.HowTo.Blackjack>
+  <HH.Thrumbo.HowTo.Button>Как играть</HH.Thrumbo.HowTo.Button>
+  <HH.Thrumbo.HowTo.ButtonTip>Короткое объяснение игры вместо таблицы выплат. Нажмите снова, чтобы закрыть.</HH.Thrumbo.HowTo.ButtonTip>
+  <HH.Thrumbo.HowTo.Poker>Rimdeck — покер против других игроков, а не против дома. Все вносят одинаковый анте; каждый получает две карты, затем в центре открываются пять общих карт (три, одна и ещё одна).
+
+• Лучшие пять из ваших семи карт выигрывают банк: старшая карта, пара, две пары, тройка, стрит, флеш, фулл-хаус, каре, стрит-флеш (от слабой к сильной).
+• Острый ум выигрывает чуть чаще: навыки Интеллекта и Общения немного сдвигают шансы.
+• Дом берёт лишь небольшую комиссию с каждого банка.</HH.Thrumbo.HowTo.Poker>
+  <HH.Thrumbo.HowTo.Roulette>Нажмите число или поле на столе, чтобы поставить там, затем крутите. Шарик останавливается в одной ячейке.
+
+• Одно число платит 35 к 1.
+• Дюжины и колонки (по 12 чисел) платят 2 к 1.
+• Красное или чёрное, чётное или нечётное, 1–18 или 19–36 платят 1 к 1.
+• Зелёный ноль (и двойной ноль на американском колесе) не относится ни к цвету, ни к половине: отсюда преимущество дома.
+
+У каждой ставки одинаковое преимущество дома; различаются только размахи.</HH.Thrumbo.HowTo.Roulette>
+  <HH.Thrumbo.HowTo.Slots>Выберите ставку и потяните рычаг (или нажмите «Крутить»). Три барабана останавливаются один за другим; считается только средний ряд.
+
+• Три одинаковых платят как в таблице выплат: ягоды меньше всего, thrumbo больше всего.
+• Ягоды щедры: две на барабанах 1 и 2 или одна на барабане 1 тоже возвращают немного.
+• Волатильность меняет распределение выплат, а не долю возврата в долгосрочной перспективе: низкая платит мелко, но часто, высокая — редко, но крупно.
+
+В долгосрочной перспективе автомат возвращает долю, показанную над таблицей выплат; остальное — преимущество дома.</HH.Thrumbo.HowTo.Slots>
+  <HH.Thrumbo.HowTo.Title>Как играть: {0}</HH.Thrumbo.HowTo.Title>
+  <HH.Thrumbo.LeverTip>Потяните рычаг: крутить с указанной выше ставкой.</HH.Thrumbo.LeverTip>
+  <HH.Thrumbo.MaxTip>Наибольшая ставка, которую допускают лимит стола и ваши средства.</HH.Thrumbo.MaxTip>
+  <HH.Thrumbo.NoLimit>Стол без лимита: от {0} до всего, что у вас есть ({1}).</HH.Thrumbo.NoLimit>
+  <HH.Thrumbo.NoLimitTip>Lucky Thrumbo принимает любую ставку, которую вы можете заплатить. Лимит стола (доля от чистого состояния) включается в настройках мода: Казино, Lucky Thrumbo.</HH.Thrumbo.NoLimitTip>
+  <HH.Thrumbo.Pay.First1>{0} на барабане 1</HH.Thrumbo.Pay.First1>
+  <HH.Thrumbo.Pay.First2>2 × {0} (барабаны 1+2)</HH.Thrumbo.Pay.First2>
+  <HH.Thrumbo.PayRowTip>Шанс за прокрутку: {0} %</HH.Thrumbo.PayRowTip>
+  <HH.Thrumbo.Recent>Последние раунды</HH.Thrumbo.Recent>
+  <HH.Thrumbo.RecentNone>Пока нет.</HH.Thrumbo.RecentNone>
+  <HH.Thrumbo.SlotMarquee>Однорукий Thrumbo</HH.Thrumbo.SlotMarquee>
+  <HH.Thrumbo.StakeLockedTip>Ставка лежит на столе, пока раунд не разыгран или рука не закончена.</HH.Thrumbo.StakeLockedTip>
+  <HH.Thrumbo.Stakes.ColEach>Стоимость за шт.</HH.Thrumbo.Stakes.ColEach>
+  <HH.Thrumbo.Stakes.ColHeld>В досягаемости</HH.Thrumbo.Stakes.ColHeld>
+  <HH.Thrumbo.Stakes.ColItem>Вещь</HH.Thrumbo.Stakes.ColItem>
+  <HH.Thrumbo.Stakes.ColStake>Ставка</HH.Thrumbo.Stakes.ColStake>
+  <HH.Thrumbo.Stakes.HowTo.Roulette>Выберите вещи для ставки слева, затем один из внешних вариантов, и нажмите кнопку. Одно вращение колеса решает всё.
+
+• Красное или чёрное, чёт или нечет, 1–18 или 19–36 платят 1 к 1: выиграли — вы сохраняете всё плюс его стоимость в серебре.
+• Дюжина (12 чисел) платит 2 к 1: вы сохраняете всё плюс двойную стоимость.
+• Зелёный ноль (и двойной ноль) здесь ни на что не ставится: это и есть преимущество дома.
+• Проиграли — вещи уходят к дому, как если бы вы их продали.</HH.Thrumbo.Stakes.HowTo.Roulette>
+  <HH.Thrumbo.Stakes.HowTo.Slots>Выберите вещи для ставки слева, затем волатильность, и нажмите кнопку. Одно вращение трёх барабанов решает всё.
+
+• Три одинаковых (или ягоды на первых барабанах) умножают стоимость ставки по таблице выплат Lucky Thrumbo.
+• Выигрыш ×2 или больше: всё остаётся у вас, а дом платит стоимость × (m − 1) серебром.
+• Без выигрыша вещи уходят к дому. Малый приз ниже ×1 выплачивается серебром, но вещи всё равно потеряны.</HH.Thrumbo.Stakes.HowTo.Slots>
+  <HH.Thrumbo.Stakes.ListFoot>Всё здесь находится в зоне действия питаемого орбитального торгового маяка и оценено вашим лучшим переговорщиком. Удерживайте Shift на − или +, чтобы менять количество на 10. Вещи остаются на месте, пока раунд не проигран.</HH.Thrumbo.Stakes.ListFoot>
+  <HH.Thrumbo.Stakes.NoLimit>Лимита стола нет: любая сумма от {0} серебра.</HH.Thrumbo.Stakes.NoLimit>
+  <HH.Thrumbo.Sym.berries>ягоды</HH.Thrumbo.Sym.berries>
+  <HH.Thrumbo.Sym.component>компонент</HH.Thrumbo.Sym.component>
+  <HH.Thrumbo.Sym.core>ядро персоны</HH.Thrumbo.Sym.core>
+  <HH.Thrumbo.Sym.corn>кукуруза</HH.Thrumbo.Sym.corn>
+  <HH.Thrumbo.Sym.meal>походный паёк</HH.Thrumbo.Sym.meal>
+  <HH.Thrumbo.Sym.plasteel>пластсталь</HH.Thrumbo.Sym.plasteel>
+  <HH.Thrumbo.Sym.thrumbo>трамбо</HH.Thrumbo.Sym.thrumbo>
 </LanguageData>

@@ -231,4 +231,121 @@
   <HH.Setting.thrumbo.raiseTheStakes.Desc>Lucky Thrumbo에 "판돈 올리기…" 버튼을 추가합니다: 전력이 들어온 궤도 교역 비콘 범위의 물건을 은화 대신 걸고, 콘텐츠 강도 표준부터는 식민지 동물과 죄수도 걸 수 있습니다(바닐라 판매와 같은 방식). 식민지 주민, 노예, 아이, 손님에게는 절대 제안되지 않습니다.</HH.Setting.thrumbo.raiseTheStakes.Desc>
   <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: 판돈 물건의 전당포 스프레드</HH.Setting.thrumbo.pawnbrokerSpread>
   <HH.Setting.thrumbo.pawnbrokerSpread.Desc>판돈 물건은 하우스의 전당포 주인이 줄 금액(바닐라 판매 가격, 가장 뛰어난 흥정꾼 기준)에서 이 스프레드와 고정 2 % 수수료를 뺀 값으로 계산됩니다.</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
+  <HH.Casino.ChairsNote>편안한 좌석에 앉으면 판돈 최대 +{0} %</HH.Casino.ChairsNote>
+  <HH.Casino.ComfySeat>테이블의 편안한 좌석</HH.Casino.ComfySeat>
+  <HH.Casino.Demo.Column>{0}열</HH.Casino.Demo.Column>
+  <HH.Casino.Demo.Number>번호:</HH.Casino.Demo.Number>
+  <HH.Casino.Demo.OddsBlackjack>{0}</HH.Casino.Demo.OddsBlackjack>
+  <HH.Casino.Demo.OddsPoker>수수료 {0} % (판당 최대 은화 {1})</HH.Casino.Demo.OddsPoker>
+  <HH.Casino.Demo.OddsRoulette>하우스 엣지 {0} %</HH.Casino.Demo.OddsRoulette>
+  <HH.Casino.Demo.OddsSlots>환급률 {0} %</HH.Casino.Demo.OddsSlots>
+  <HH.Casino.Demo.PokerSeatWins>{0} 승리: {1}</HH.Casino.Demo.PokerSeatWins>
+  <HH.Casino.Demo.PokerYouWin>{0}으로 승리</HH.Casino.Demo.PokerYouWin>
+  <HH.Casino.Demo.Rake>수수료 {0}</HH.Casino.Demo.Rake>
+  <HH.Casino.Demo.Regular>단골 {0}</HH.Casino.Demo.Regular>
+  <HH.Casino.Demo.Straight>숫자 하나</HH.Casino.Demo.Straight>
+  <HH.Casino.Demo.You>당신</HH.Casino.Demo.You>
+  <HH.Casino.GhostChairs>의자 있음: {0}</HH.Casino.GhostChairs>
+  <HH.Casino.GhostSeats>손님 좌석: {0} / {1}</HH.Casino.GhostSeats>
+  <HH.Casino.GhostTipSlot>파란색: 플레이어가 앉는 자리 · 깜빡이는 칸에 놓은 의자나 스툴은 판돈을 올립니다</HH.Casino.GhostTipSlot>
+  <HH.Casino.GhostTipTable>파란색: 손님이 게임하는 자리 · 주황색: 크루피어 · 깜빡이는 칸에 의자를 놓으면 판돈이 오릅니다</HH.Casino.GhostTipTable>
+  <HH.Casino.Hand.0>하이 카드</HH.Casino.Hand.0>
+  <HH.Casino.Hand.1>원 페어</HH.Casino.Hand.1>
+  <HH.Casino.Hand.2>투 페어</HH.Casino.Hand.2>
+  <HH.Casino.Hand.3>트리플</HH.Casino.Hand.3>
+  <HH.Casino.Hand.4>스트레이트</HH.Casino.Hand.4>
+  <HH.Casino.Hand.5>플러시</HH.Casino.Hand.5>
+  <HH.Casino.Hand.6>풀하우스</HH.Casino.Hand.6>
+  <HH.Casino.Hand.7>포카드</HH.Casino.Hand.7>
+  <HH.Casino.Hand.8>스트레이트 플러시</HH.Casino.Hand.8>
+  <HH.Casino.SeatsBonus>판돈 +{0} %</HH.Casino.SeatsBonus>
+  <HH.Casino.SeatsLine>손님 좌석: {1}개 중 {0}개 사용 가능 · 의자 있는 자리 {2}개</HH.Casino.SeatsLine>
+  <HH.Casino.SeatsTip>의자는 판돈을 최대 +{0} %까지 올립니다</HH.Casino.SeatsTip>
+  <HH.Setting.casino.comfortSpend>편안한 좌석: 지출 증가</HH.Setting.casino.comfortSpend>
+  <HH.Setting.casino.comfortSpend.Desc>편안함 100 %인 좌석의 손님은 라운드마다 이만큼 더 건다 (좌석 편안함에 비례; 서 있으면 보너스 없음). 하우스 엣지는 그대로다: 더 많이 놀 뿐, 확률이 좋아지는 것은 아니다.</HH.Setting.casino.comfortSpend.Desc>
+  <HH.Setting.casino.comfortStay>편안한 좌석: 체류 연장</HH.Setting.casino.comfortStay>
+  <HH.Setting.casino.comfortStay.Desc>편안함 100 %인 좌석의 손님은 테이블을 떠나기 전까지 이만큼 더 오래 논다.</HH.Setting.casino.comfortStay.Desc>
+  <HH.Thrumbo.AllIn>올인</HH.Thrumbo.AllIn>
+  <HH.Thrumbo.AllInTip>선택한 출처에 있는 전부.</HH.Thrumbo.AllInTip>
+  <HH.Thrumbo.Anim.BigWin>대박!</HH.Thrumbo.Anim.BigWin>
+  <HH.Thrumbo.Anim.Dealing>딜러가 카드를 돌린다…</HH.Thrumbo.Anim.Dealing>
+  <HH.Thrumbo.Anim.Jackpot>트럼보 잭팟!</HH.Thrumbo.Anim.Jackpot>
+  <HH.Thrumbo.Anim.Skip>건너뛰기</HH.Thrumbo.Anim.Skip>
+  <HH.Thrumbo.Anim.SkipHint>테이블을 클릭하거나 스페이스 또는 엔터: 건너뛰기. 쉬프트: 더 빠르게.</HH.Thrumbo.Anim.SkipHint>
+  <HH.Thrumbo.Anim.Spinning>라운드가 진행 중…</HH.Thrumbo.Anim.Spinning>
+  <HH.Thrumbo.Anim.Wait>라운드가 끝날 때까지 기다리거나 건너뛰어라.</HH.Thrumbo.Anim.Wait>
+  <HH.Thrumbo.BJ.DealAgain>다시 돌리기</HH.Thrumbo.BJ.DealAgain>
+  <HH.Thrumbo.BJ.PayDouble>더블 후 승리 (첫 판돈 기준)</HH.Thrumbo.BJ.PayDouble>
+  <HH.Thrumbo.BJ.PayLose>패배 또는 버스트</HH.Thrumbo.BJ.PayLose>
+  <HH.Thrumbo.BJ.PayNatural>블랙잭 (에이스와 10점 카드)</HH.Thrumbo.BJ.PayNatural>
+  <HH.Thrumbo.BJ.PayPush>무승부 (타이)</HH.Thrumbo.BJ.PayPush>
+  <HH.Thrumbo.BJ.PayTitle>한 손이 돌려주는 금액 (판돈 포함)</HH.Thrumbo.BJ.PayTitle>
+  <HH.Thrumbo.BJ.PayWin>승리</HH.Thrumbo.BJ.PayWin>
+  <HH.Thrumbo.Err.HouseCap>하우스는 한 판돈에 최대 {0} 은화까지만 받는다 (테이블 한도는 없고 이것은 하우스 자체의 상한이다).</HH.Thrumbo.Err.HouseCap>
+  <HH.Thrumbo.HowTo.Blackjack>21에 딜러보다 가까이 가되 넘지 않아야 한다. 숫자 카드는 그 숫자 값, 잭·퀸·킹은 10, 에이스는 1 또는 11로 센다.
+
+• 히트: 카드를 한 장 더 받는다. 스탠드: 가진 패를 유지한다. 그러면 딜러가 뒷면 카드를 공개하고 17 이상이 될 때까지 뽑는다.
+• 더블 다운: 처음 두 장에서 판돈을 두 배로 하고 카드를 정확히 한 장 더 받는다.
+• 21을 넘으면 버스트로 즉시 진다. 에이스와 10점 카드는 블랙잭으로 보너스를 받는다(표준 테이블에서 3 대 2).
+• 무승부는 타이로, 판돈을 돌려받는다.
+
+여기서는 잘 두는 것이 중요하다: 표시된 이점은 완벽한 플레이를 가정한 값이다.</HH.Thrumbo.HowTo.Blackjack>
+  <HH.Thrumbo.HowTo.Button>게임 방법</HH.Thrumbo.HowTo.Button>
+  <HH.Thrumbo.HowTo.ButtonTip>지급표 대신 보여 주는 짧은 게임 설명이다. 다시 클릭하면 닫힌다.</HH.Thrumbo.HowTo.ButtonTip>
+  <HH.Thrumbo.HowTo.Poker>림덱은 하우스가 아니라 다른 플레이어들과 겨루는 포커다. 모두 같은 판돈을 앤티로 내고, 각자 카드 두 장을 받은 뒤 가운데에 공용 카드 다섯 장이 앞면으로 깔린다(세 장, 한 장, 한 장).
+
+• 받은 일곱 장 중 최선의 다섯 장으로 팟을 가진다: 하이 카드, 원 페어, 투 페어, 트리플, 스트레이트, 플러시, 풀 하우스, 포카드, 스트레이트 플러시 (약한 순서에서 강한 순서).
+• 지적 능력과 사교 기술이 높으면 조금 더 자주 이긴다.
+• 하우스는 각 팟에서 아주 적은 수수료만 떼어 간다.</HH.Thrumbo.HowTo.Poker>
+  <HH.Thrumbo.HowTo.Roulette>보드의 숫자나 칸을 클릭해 판돈을 걸고 돌려라. 공은 한 칸에 떨어진다.
+
+• 단일 숫자는 35 대 1을 준다.
+• 다스와 열(숫자 12개)은 2 대 1을 준다.
+• 빨강 또는 검정, 홀수 또는 짝수, 1–18 또는 19–36은 1 대 1을 준다.
+• 녹색 0(그리고 미국식 휠의 더블 0)은 어떤 색에도, 어떤 절반에도 속하지 않는다: 하우스의 이점이 여기서 생긴다.
+
+모든 베팅의 하우스 이점은 같고, 달라지는 것은 등락의 폭뿐이다.</HH.Thrumbo.HowTo.Roulette>
+  <HH.Thrumbo.HowTo.Slots>판돈을 정하고 레버를 당기거나 스핀을 누른다. 릴 세 개가 차례로 멈추며, 가운데 줄만 센다.
+
+• 같은 그림 세 개는 지급표가 보여 주는 만큼 준다: 베리가 가장 적고, 트럼보가 가장 많다.
+• 베리는 너그럽다: 1번과 2번 릴의 베리 두 개, 또는 1번 릴의 베리 하나도 조금은 돌려준다.
+• 변동성은 지급을 어떻게 나누는지를 바꿀 뿐, 장기적으로 돌려주는 총액을 바꾸지는 않는다: 낮음은 작은 금액을 자주, 높음은 드물지만 크게 준다.
+
+장기적으로 기계는 지급표 위에 표시된 비율만큼 돌려주며, 나머지가 하우스의 이점이다.</HH.Thrumbo.HowTo.Slots>
+  <HH.Thrumbo.HowTo.Title>게임 방법: {0}</HH.Thrumbo.HowTo.Title>
+  <HH.Thrumbo.LeverTip>레버를 당긴다: 위의 판돈으로 스핀.</HH.Thrumbo.LeverTip>
+  <HH.Thrumbo.MaxTip>테이블 한도와 가진 돈이 허락하는 가장 큰 판돈.</HH.Thrumbo.MaxTip>
+  <HH.Thrumbo.NoLimit>테이블 한도 없음: {0}부터 가진 돈 전부({1})까지.</HH.Thrumbo.NoLimit>
+  <HH.Thrumbo.NoLimitTip>행운의 트럼보는 낼 수 있는 어떤 판돈이든 받는다. 테이블 한도(순자산의 일정 비율)는 모드 설정에서 켤 수 있다: 카지노, 행운의 트럼보.</HH.Thrumbo.NoLimitTip>
+  <HH.Thrumbo.Pay.First1>1번 릴 {0}</HH.Thrumbo.Pay.First1>
+  <HH.Thrumbo.Pay.First2>2 × {0} (1번+2번 릴)</HH.Thrumbo.Pay.First2>
+  <HH.Thrumbo.PayRowTip>스핀당 확률: {0} %</HH.Thrumbo.PayRowTip>
+  <HH.Thrumbo.Recent>최근 라운드</HH.Thrumbo.Recent>
+  <HH.Thrumbo.RecentNone>아직 없음.</HH.Thrumbo.RecentNone>
+  <HH.Thrumbo.SlotMarquee>외팔이 트럼보</HH.Thrumbo.SlotMarquee>
+  <HH.Thrumbo.StakeLockedTip>라운드가 끝나거나 핸드가 마무리될 때까지 판돈은 테이블 위에 묶여 있다.</HH.Thrumbo.StakeLockedTip>
+  <HH.Thrumbo.Stakes.ColEach>개당 가치</HH.Thrumbo.Stakes.ColEach>
+  <HH.Thrumbo.Stakes.ColHeld>손 닿는 곳</HH.Thrumbo.Stakes.ColHeld>
+  <HH.Thrumbo.Stakes.ColItem>물건</HH.Thrumbo.Stakes.ColItem>
+  <HH.Thrumbo.Stakes.ColStake>건 것</HH.Thrumbo.Stakes.ColStake>
+  <HH.Thrumbo.Stakes.HowTo.Roulette>왼쪽에서 걸 물건을 고르고, 바깥쪽 베팅 하나를 고른 뒤 버튼을 누르십시오. 룰렛을 한 번 돌려 결과가 정해집니다.
+
+• 빨강 또는 검정, 홀 또는 짝, 1–18 또는 19–36은 1 대 1로 배당합니다: 이기면 건 물건과 그 은화 가치를 모두 되돌려 받습니다.
+• 한 다스(숫자 12개)는 2 대 1로 배당합니다: 건 물건과 그 가치의 두 배를 받습니다.
+• 초록색 0(그리고 더블 0)은 여기서 어떤 베팅에도 속하지 않습니다: 그것이 하우스 엣지입니다.
+• 지면 물건은 판매한 것처럼 하우스가 가져갑니다.</HH.Thrumbo.Stakes.HowTo.Roulette>
+  <HH.Thrumbo.Stakes.HowTo.Slots>왼쪽에서 걸 물건을 고르고, 변동성을 고른 뒤 버튼을 누르십시오. 세 개의 릴을 한 번 돌려 결과가 정해집니다.
+
+• 같은 그림 셋(또는 첫 릴의 베리)은 Lucky Thrumbo 지급표에 따라 건 물건의 가치를 곱합니다.
+• ×2 이상으로 이기면 물건은 그대로 당신 것이고, 하우스가 가치 × (m − 1)을 은화로 지급합니다.
+• 지면 물건은 하우스가 가져갑니다. ×1 미만의 작은 당첨금은 은화로 지급되며, 물건은 그래도 사라집니다.</HH.Thrumbo.Stakes.HowTo.Slots>
+  <HH.Thrumbo.Stakes.ListFoot>여기 있는 모든 것은 전원이 켜진 궤도 거래 신호기의 범위 안에 있으며, 가장 뛰어난 협상가가 값을 매깁니다. −나 +에 Shift를 누르면 수량이 10씩 바뀝니다. 판에서 졌을 때까지 물건은 제자리에 있습니다.</HH.Thrumbo.Stakes.ListFoot>
+  <HH.Thrumbo.Stakes.NoLimit>테이블 한도 없음: {0} 은화부터 어떤 금액이든 가능합니다.</HH.Thrumbo.Stakes.NoLimit>
+  <HH.Thrumbo.Sym.berries>베리</HH.Thrumbo.Sym.berries>
+  <HH.Thrumbo.Sym.component>부품</HH.Thrumbo.Sym.component>
+  <HH.Thrumbo.Sym.core>페르소나 코어</HH.Thrumbo.Sym.core>
+  <HH.Thrumbo.Sym.corn>옥수수</HH.Thrumbo.Sym.corn>
+  <HH.Thrumbo.Sym.meal>생존식</HH.Thrumbo.Sym.meal>
+  <HH.Thrumbo.Sym.plasteel>플라스틸</HH.Thrumbo.Sym.plasteel>
+  <HH.Thrumbo.Sym.thrumbo>트럼보</HH.Thrumbo.Sym.thrumbo>
 </LanguageData>

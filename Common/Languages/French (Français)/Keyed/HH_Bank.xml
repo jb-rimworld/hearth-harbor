@@ -23,7 +23,7 @@
   <HH.Bank.Greet.Morning>Bonjour</HH.Bank.Greet.Morning>
   <HH.Bank.Greet.Night>Bonne nuit</HH.Bank.Greet.Night>
   <HH.Bank.Header.Tier>Niveau de fortune : {0}</HH.Bank.Header.Tier>
-  <HH.Bank.Header.TierTip>Valeur nette = compte + argent à domicile − dettes : {0} argent. Le niveau ne change qu'une fois qu'une nouvelle valeur s'est maintenue pendant une journée entière. Il fixe l'humeur de la colonie d'après cette banque (réglage : bank.moodOn).</HH.Bank.Header.TierTip>
+  <HH.Bank.Header.TierTip>Valeur nette = compte + dépôts en transit + argent à domicile + placements (à leur valeur de marché) − dettes : {0} argent. Le niveau ne change qu'une fois qu'une nouvelle valeur s'est maintenue pendant une journée entière. Il fixe l'humeur de la colonie d'après cette banque (réglage : bank.moodOn).</HH.Bank.Header.TierTip>
   <HH.Bank.Hist.Amount>Montant (5 décimales)</HH.Bank.Hist.Amount>
   <HH.Bank.Hist.Empty>Aucune transaction pour l'instant.</HH.Bank.Hist.Empty>
   <HH.Bank.Hist.TotalFees>Frais payés jusqu'ici</HH.Bank.Hist.TotalFees>
@@ -81,7 +81,7 @@ Le guichetier Ottoline, {2}</HH.Bank.Letter.Reminder>
   <HH.Bank.Lobby.Amount>Montant</HH.Bank.Lobby.Amount>
   <HH.Bank.Lobby.Balance>Solde</HH.Bank.Lobby.Balance>
   <HH.Bank.Lobby.BalanceTip>Exact : {0} argent.
-Intérêts quotidiens : solde × (M^({1} × {2} / 60) − 1), avec M = {3} par année de jeu (le curseur de rentabilité). Soit {4:0.##} % par jour.</HH.Bank.Lobby.BalanceTip>
+Le compte est un compte d'épargne : il rapporte {1} % du surplus du marché (M − 1) par an, multiplié par {2} pour cette banque. Avec M = {3}, cela fait {4} % par an ({5} % par jour). Investir rapporte davantage, mais comporte un risque.</HH.Bank.Lobby.BalanceTip>
   <HH.Bank.Lobby.Cash>Argent à domicile</HH.Bank.Lobby.Cash>
   <HH.Bank.Lobby.CashTip>Argent qui traîne sur vos cartes de domicile.</HH.Bank.Lobby.CashTip>
   <HH.Bank.Lobby.ChangeBank>Changer de banque</HH.Bank.Lobby.ChangeBank>
@@ -91,23 +91,22 @@ Intérêts quotidiens : solde × (M^({1} × {2} / 60) − 1), avec M = {3} par a
   <HH.Bank.Lobby.DepDelay>crédité après {0}</HH.Bank.Lobby.DepDelay>
   <HH.Bank.Lobby.DepInstant>enregistré immédiatement</HH.Bank.Lobby.DepInstant>
   <HH.Bank.Lobby.Deposit>Dépôt</HH.Bank.Lobby.Deposit>
-  <HH.Bank.Lobby.Direct>Dépôt direct</HH.Bank.Lobby.Direct>
-  <HH.Bank.Lobby.DirectTip>Les caisses de vos entreprises sont vidées sur le compte à minuit, moins {0} %.</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.DirectTip>Les caisses de vos entreprises sont vidées sur le compte à minuit, moins {0} %. Modifiez-le dans les réglages du mod (Banque &gt; Compte).</HH.Bank.Lobby.DirectTip>
   <HH.Bank.Lobby.Interest>Intérêts de ce quadrum</HH.Bank.Lobby.Interest>
   <HH.Bank.Lobby.InterestTip>Intérêts versés sur le solde depuis le début du quadrum (15 jours).</HH.Bank.Lobby.InterestTip>
   <HH.Bank.Lobby.Max>Max</HH.Bank.Lobby.Max>
   <HH.Bank.Lobby.Net>Valeur nette</HH.Bank.Lobby.Net>
-  <HH.Bank.Lobby.NetTip>Compte + argent à domicile − dettes. Fixe votre niveau de fortune.</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.NetTip>Compte {0} + en transit {1} + argent à domicile {2} + placements à leur valeur de marché {3} − dettes {4} = {5}.
+Détermine votre niveau de fortune. Les plafonds de crédit ne comptent que {6} % des placements (réglage : bank.loanPortfolioShare).</HH.Bank.Lobby.NetTip>
   <HH.Bank.Lobby.Nothing>Rien pour l'instant. Un dépôt serait un bon début.</HH.Bank.Lobby.Nothing>
   <HH.Bank.Lobby.PendingDep>↓ {0} arrive dans {1}</HH.Bank.Lobby.PendingDep>
   <HH.Bank.Lobby.PendingWd>↑ {0} par capsule dans {1}</HH.Bank.Lobby.PendingWd>
   <HH.Bank.Lobby.Recent>Activité récente</HH.Bank.Lobby.Recent>
-  <HH.Bank.Lobby.Trade>Dépôt automatique de l'argent des échanges</HH.Bank.Lobby.Trade>
-  <HH.Bank.Lobby.TradeTip>L'argent reçu des marchands et des vaisseaux de commerce est versé sur le compte juste après la transaction, aux mêmes frais que le dépôt direct, au lieu de traîner au sol sous forme de pièces. Nécessite le dépôt direct. Désactivé par défaut, pour pouvoir toujours payer le prochain marchand en liquide. Les caravanes ne sont pas concernées.</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.TradeTip>L'argent que vous recevez des marchands et des navires de commerce va directement sur le compte après la transaction, aux mêmes frais que le dépôt direct, au lieu de traîner par terre sous forme de pièces. Nécessite le dépôt direct. Désactivé par défaut, pour pouvoir toujours payer le prochain marchand en espèces. Les caravanes ne sont pas concernées. Modifiez-le dans les réglages du mod (Banque &gt; Compte).</HH.Bank.Lobby.TradeTip>
   <HH.Bank.Lobby.Transfer>Déposer et retirer</HH.Bank.Lobby.Transfer>
   <HH.Bank.Lobby.TransferInfo>En stock : {0}. Dépôt {1}. Frais de retrait {2}, {3}.</HH.Bank.Lobby.TransferInfo>
   <HH.Bank.Lobby.Transit>En transit</HH.Bank.Lobby.Transit>
-  <HH.Bank.Lobby.TransitTip>Argent sorti de votre stock mais pas encore crédité (délai de dépôt sans guichet ni distributeur).</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.TransitTip>Argent en route : dépôts pas encore crédités (délai de dépôt sans guichet ni distributeur) et retraits encore dans une capsule de largage. Il compte dans votre valeur nette.</HH.Bank.Lobby.TransitTip>
   <HH.Bank.Lobby.WdInstant>argent liquide au bâtiment immédiatement</HH.Bank.Lobby.WdInstant>
   <HH.Bank.Lobby.WdPod>capsule de largage dans {0} à {1} h</HH.Bank.Lobby.WdPod>
   <HH.Bank.Lobby.Withdraw>Retirer</HH.Bank.Lobby.Withdraw>
@@ -142,8 +141,7 @@ Intérêts quotidiens : solde × (M^({1} × {2} / 60) − 1), avec M = {3} par a
   <HH.Bank.Msg.Switched>Votre compte est désormais chez {0}.</HH.Bank.Msg.Switched>
   <HH.Bank.Msg.TradeDeposit>Les revenus commerciaux de {0} argent sont allés directement sur votre compte chez {1}.</HH.Bank.Msg.TradeDeposit>
   <HH.Bank.Open.Button>Ouvrir un compte</HH.Bank.Open.Button>
-  <HH.Bank.Open.Direct>Verser l'argent des caisses directement à la banque à minuit</HH.Bank.Open.Direct>
-  <HH.Bank.Open.DirectTip>Les recettes de vos boutiques, de l'auberge et du casino vont sur le compte au lieu de traîner en argent. Vous pourrez changer cela plus tard à un coffre de nuit ou dans les réglages (bank.directDeposit).</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.DirectTip>Les recettes de vos boutiques, de votre auberge et de votre casino vont sur le compte au lieu de traîner sous forme d'argent. C'est une condition de la banque : modifiez-la dans les réglages du mod (Banque &gt; Compte, bank.directDeposit).</HH.Bank.Open.DirectTip>
   <HH.Bank.Open.Intro>Choisissez une banque. Ouvrir un compte est gratuit ; le déplacer plus tard coûte {0} argent. Tant que vous n'avez pas de compte, rien ici ne vous importune : ni courriers, ni humeur, ni frais.</HH.Bank.Open.Intro>
   <HH.Bank.Open.Sub>Votre argent, notre problème.</HH.Bank.Open.Sub>
   <HH.Bank.Open.Title>Silverline : ouvrir un compte</HH.Bank.Open.Title>
@@ -194,21 +192,18 @@ Intérêts quotidiens : solde × (M^({1} × {2} / 60) − 1), avec M = {3} par a
   <HH.Bank.Tab.Terms>Conditions</HH.Bank.Tab.Terms>
   <HH.Bank.Terms.AccFee>Frais de compte par quadrum</HH.Bank.Terms.AccFee>
   <HH.Bank.Terms.AccountDaily>Ton compte par jour</HH.Bank.Terms.AccountDaily>
-  <HH.Bank.Terms.AccountDailyTip>Multiple du compte par an = M^({0} × {1}) = {2}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.AccountDailyTip>Facteur quotidien = (multiple annuel)^(1/60) = {0}.</HH.Bank.Terms.AccountDailyTip>
   <HH.Bank.Terms.Anchors>Selon la difficulté</HH.Bank.Terms.Anchors>
-  <HH.Bank.Terms.AnchorsHead>M par an / palier de recouvrement le plus haut</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.AnchorsHead>Indice M par an  /  votre compte par an  /  palier de recouvrement le plus élevé</HH.Bank.Terms.AnchorsHead>
   <HH.Bank.Terms.Atm>DAB</HH.Bank.Terms.Atm>
-  <HH.Bank.Terms.Auto>Auto</HH.Bank.Terms.Auto>
-  <HH.Bank.Terms.AutoTip>Suit de nouveau le curseur de difficulté ({0} selon ta difficulté actuelle).</HH.Bank.Terms.AutoTip>
   <HH.Bank.Terms.Daily>Par jour (indice)</HH.Bank.Terms.Daily>
   <HH.Bank.Terms.DailyTip>M^(1/60) − 1. Une année de jeu compte 60 jours.</HH.Bank.Terms.DailyTip>
   <HH.Bank.Terms.Dep>Dépôt</HH.Bank.Terms.Dep>
   <HH.Bank.Terms.Direct>Virement direct</HH.Bank.Terms.Direct>
   <HH.Bank.Terms.Fees>Frais de ta banque</HH.Bank.Terms.Fees>
   <HH.Bank.Terms.FeesNote>Tous les frais suivent le réglage « niveau des frais bancaires » ({0} %).</HH.Bank.Terms.FeesNote>
-  <HH.Bank.Terms.Preview>1 000 pièces d'argent au taux deviennent {0} après une année de jeu et {1} après dix.</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Preview>1 000 d'argent à l'indice deviennent {0} après une année de jeu et {1} après dix. Sur votre compte : {2} et {3}.</HH.Bank.Terms.Preview>
   <HH.Bank.Terms.Profit>Rentabilité</HH.Bank.Terms.Profit>
-  <HH.Bank.Terms.ProfitIntro>De combien l'argent placé croît en moyenne par année de jeu (60 jours). 1,0 signifie ni gain ni perte, 1,2 signifie +20 % par an. Cela fixe aussi le coût des prêts. C'est un réglage de cette partie sauvegardée.</HH.Bank.Terms.ProfitIntro>
   <HH.Bank.Terms.StageNote>Échelle de recouvrement : 1 rappel, 2 pénalité de retard, 3 compensation sur les dépôts, 4 visite amicale, 5 équipe de saisie, 6 raid de recouvrement, 7 prime. Actuellement : s'arrête au palier {0}.</HH.Bank.Terms.StageNote>
   <HH.Bank.Terms.Switch>Changer de banque</HH.Bank.Terms.Switch>
   <HH.Bank.Terms.Wd>Retrait (borne / guichet)</HH.Bank.Terms.Wd>
@@ -231,4 +226,52 @@ Intérêts quotidiens : solde × (M^({1} × {2} / 60) − 1), avec M = {3} par a
   <HH.Bank.Time.DayHour>jour {0}, {1}:00</HH.Bank.Time.DayHour>
   <HH.Bank.Time.Hours>{0} h</HH.Bank.Time.Hours>
   <HH.Bank.Time.Minutes>{0} min</HH.Bank.Time.Minutes>
+  <HH.Bank.Card.InterestTip>L'intérêt du compte est une part ({0}) du rendement du marché, multipliée par le facteur propre à cette banque ({1}). Les placements rapportent davantage.</HH.Bank.Card.InterestTip>
+  <HH.Bank.Card.Numbers>Intérêt {0} par an  ·  frais de dépôt {1} %  ·  retrait {2} %  ·  frais de compte {3} par quadrum</HH.Bank.Card.Numbers>
+  <HH.Bank.Clerk.Line>Le guichetier Ottoline : « {0} »</HH.Bank.Clerk.Line>
+  <HH.Bank.Lobby.DirectState>Dépôt direct : {0}</HH.Bank.Lobby.DirectState>
+  <HH.Bank.Lobby.Invested>Placements</HH.Bank.Lobby.Invested>
+  <HH.Bank.Lobby.InvestedTip>Actions, fonds, cryptomonnaies et NFT à leur valeur de marché actuelle : {0}. Obligations Patience à leur valeur actuelle : {1}. Argent engagé dans les contrats Omen et les projets de faction (au coût d'achat) : {2}.</HH.Bank.Lobby.InvestedTip>
+  <HH.Bank.Lobby.MaxTip>Tout l'argent de la colonie en stock et au balise de commerce. Il n'y a pas de plafond.</HH.Bank.Lobby.MaxTip>
+  <HH.Bank.Lobby.MaxTipWd>Tout ce que le compte peut verser ici (après frais).</HH.Bank.Lobby.MaxTipWd>
+  <HH.Bank.Lobby.ModeDeposit>Déposer</HH.Bank.Lobby.ModeDeposit>
+  <HH.Bank.Lobby.ModeWithdraw>Retirer</HH.Bank.Lobby.ModeWithdraw>
+  <HH.Bank.Lobby.Off>désactivé</HH.Bank.Lobby.Off>
+  <HH.Bank.Lobby.On>activé</HH.Bank.Lobby.On>
+  <HH.Bank.Lobby.PerYear>par an</HH.Bank.Lobby.PerYear>
+  <HH.Bank.Lobby.Percent>{0} % de votre argent ({1} sur {2})</HH.Bank.Lobby.Percent>
+  <HH.Bank.Lobby.PercentWd>{0} % de ce que le compte peut verser ({1} sur {2})</HH.Bank.Lobby.PercentWd>
+  <HH.Bank.Lobby.Rate>Taux d'intérêt</HH.Bank.Lobby.Rate>
+  <HH.Bank.Lobby.RateTip>Ce que le compte rapporte par année de jeu (60 jours), en moyenne. À comparer avec les produits de l'onglet Investir :
+{0}</HH.Bank.Lobby.RateTip>
+  <HH.Bank.Lobby.Settings>Réglages</HH.Bank.Lobby.Settings>
+  <HH.Bank.Lobby.TradeState>Verser l'argent des commerçants sur le compte : {0}</HH.Bank.Lobby.TradeState>
+  <HH.Bank.Memo.ScenBalance>Solde d'ouverture</HH.Bank.Memo.ScenBalance>
+  <HH.Bank.Open.DirectState>L'argent des caisses va directement à la banque à minuit : {0}</HH.Bank.Open.DirectState>
+  <HH.Bank.Quip.Invest>Je vois que vous avez des placements. Je ferai semblant de ne pas être jaloux d'un chiffre.</HH.Bank.Quip.Invest>
+  <HH.Bank.Reason.NoSilverAtAll>Il n'y a pas d'argent en stock ni au balise de commerce.</HH.Bank.Reason.NoSilverAtAll>
+  <HH.Bank.Reason.NothingToWithdraw>Le compte n'a rien à verser ici pour le moment.</HH.Bank.Reason.NothingToWithdraw>
+  <HH.Bank.Scen.Balance>Solde d'ouverture</HH.Bank.Scen.Balance>
+  <HH.Bank.Scen.DirectDeposit>Dépôt direct</HH.Bank.Scen.DirectDeposit>
+  <HH.Bank.Scen.Loan>Prêt de départ</HH.Bank.Scen.Loan>
+  <HH.Bank.Scen.LoanTip>0 = pas de prêt. Un prêt est versé sur le compte et remboursé par échéances comme tout autre prêt.</HH.Bank.Scen.LoanTip>
+  <HH.Bank.Scen.Summary>Démarre avec un compte à {0} contenant {1} argent.</HH.Bank.Scen.Summary>
+  <HH.Bank.Scen.SummaryLoan>Il doit déjà {0} argent ({1} jours).</HH.Bank.Scen.SummaryLoan>
+  <HH.Bank.Site.Atm>Distributeur</HH.Bank.Site.Atm>
+  <HH.Bank.Site.Counter>Guichet</HH.Bank.Site.Counter>
+  <HH.Bank.Tabs.More>Plus</HH.Bank.Tabs.More>
+  <HH.Bank.Tabs.MoreTip>Autres pages de la banque : {0}</HH.Bank.Tabs.MoreTip>
+  <HH.Bank.Terms.AccountYear>Votre compte par an</HH.Bank.Terms.AccountYear>
+  <HH.Bank.Terms.AccountYearTip>Multiple annuel du compte = 1 + part × facteur de la banque × (M − 1) = 1 + {0} × {1} × ({2} − 1) = {3}, jamais en dessous de {4} ni au-dessus de {5}, et jamais au-dessus du produit d'épargne Mattress Plus ({6}).</HH.Bank.Terms.AccountYearTip>
+  <HH.Bank.Terms.Compare>Où l'argent rapporte davantage (par année de jeu, en moyenne)</HH.Bank.Terms.Compare>
+  <HH.Bank.Terms.CompareAccountTip>Le compte est sûr et rapporte peu. Mattress Plus, l'obligation et tout ce qui est en dessous présentent plus de risque ou bloquent votre argent et rapportent davantage en moyenne ; le compte lui-même ne rapporte jamais plus que Mattress Plus.</HH.Bank.Terms.CompareAccountTip>
+  <HH.Bank.Terms.CompareTip>Moyenne à long terme de ce produit à la rentabilité actuelle. Les cours fluctuent ; une seule année peut être bien au-dessus ou en dessous.</HH.Bank.Terms.CompareTip>
+  <HH.Bank.Terms.MInv>(investissements : M = {0})</HH.Bank.Terms.MInv>
+  <HH.Bank.Terms.MNow>M = {0} par année de jeu</HH.Bank.Terms.MNow>
+  <HH.Bank.Terms.OpenSettings>Ouvrir les réglages du mod</HH.Bank.Terms.OpenSettings>
+  <HH.Bank.Terms.OpenSettingsShort>Modifier dans les réglages</HH.Bank.Terms.OpenSettingsShort>
+  <HH.Bank.Terms.OpenSettingsTip>Ouvre les options du mod Hearth &amp; Harbor sur la page de la Banque. La rentabilité, les frais, les prêts et la loterie sont de vrais réglages de cette partie, à régler ici et nulle part ailleurs.</HH.Bank.Terms.OpenSettingsTip>
+  <HH.Bank.Terms.SetIn>Les conditions de la banque sont des réglages de cette partie : modifiez-les dans Options du mod &gt; Hearth &amp; Harbor &gt; Banque (Intérêts et rentabilité, Frais, Prêts, Recouvrement, Loterie). 1,0 signifie ni plus ni moins, 1,2 signifie +20 % par an pour l'indice ; le compte n'en reçoit qu'une part. Les prêts suivent aussi M.</HH.Bank.Terms.SetIn>
+  <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
+  <HH.Bank.Yield.Account>Votre compte bancaire</HH.Bank.Yield.Account>
 </LanguageData>

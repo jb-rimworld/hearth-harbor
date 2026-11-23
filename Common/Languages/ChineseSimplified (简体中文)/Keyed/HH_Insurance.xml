@@ -285,4 +285,172 @@
   <HH.Enum.TrickMode.Follows>随销售压力变化</HH.Enum.TrickMode.Follows>
   <HH.Enum.TrickMode.On>始终开启</HH.Enum.TrickMode.On>
   <HH.Enum.TrickMode.Off>关闭</HH.Enum.TrickMode.Off>
+  <HH.Ins.Btn.FillForm>填写理赔表</HH.Ins.Btn.FillForm>
+  <HH.Ins.Bulk.All>全部</HH.Ins.Bulk.All>
+  <HH.Ins.Bulk.Colony>全体殖民地</HH.Ins.Bulk.Colony>
+  <HH.Ins.Bulk.Confirm>现在签署{0}份保单吗？首期保费合计：{1}。之后每{3}天缴纳{2}。每份保单仍可单独取消。</HH.Ins.Bulk.Confirm>
+  <HH.Ins.Bulk.Done>已签署 {0}/{1} 份保单。</HH.Ins.Bulk.Done>
+  <HH.Ins.Bulk.Lead>勾选保单，选择档次和保额，指定受保人员，Clawback Mutual 将一次性全部签署。你只会收到一封汇总信，而不是每份保单一封。等待期按每份保单分别计算。</HH.Ins.Bulk.Lead>
+  <HH.Ins.Bulk.NoMoney>首期保费资金不足</HH.Ins.Bulk.NoMoney>
+  <HH.Ins.Bulk.NoRiders>此处不会预先勾选附加条款。套餐折扣随保单数量增加（最多优惠 {0}）。</HH.Ins.Bulk.NoRiders>
+  <HH.Ins.Bulk.None>无</HH.Ins.Bulk.None>
+  <HH.Ins.Bulk.NothingToSign>尚无可签署内容：请勾选一份保单和至少一名殖民者。</HH.Ins.Bulk.NothingToSign>
+  <HH.Ins.Bulk.PerPerson>每名殖民者</HH.Ins.Bulk.PerPerson>
+  <HH.Ins.Bulk.Policies>保单</HH.Ins.Bulk.Policies>
+  <HH.Ins.Bulk.Sign>签署 {0} 份保单</HH.Ins.Bulk.Sign>
+  <HH.Ins.Bulk.Spendable>可用：{0}</HH.Ins.Bulk.Spendable>
+  <HH.Ins.Bulk.Stopped>资金在结束前用完；其余保单未签署。</HH.Ins.Bulk.Stopped>
+  <HH.Ins.Bulk.SumPerHead>每名殖民者的保额：{0}</HH.Ins.Bulk.SumPerHead>
+  <HH.Ins.Bulk.Summary>待签署 {0} 份保单。首期保费：{1}。之后每{3}天 {2}。</HH.Ins.Bulk.Summary>
+  <HH.Ins.Bulk.Title>全员投保</HH.Ins.Bulk.Title>
+  <HH.Ins.Bulk.TooExpensive>你只有 {0} 可用：名单将按资金所及签署。</HH.Ins.Bulk.TooExpensive>
+  <HH.Ins.Bulk.Who>殖民者</HH.Ins.Bulk.Who>
+  <HH.Ins.Cancel.Step>第 {0}/{1} 步</HH.Ins.Cancel.Step>
+  <HH.Ins.Change.AlreadyPending>已提交一项变更。请先撤回。</HH.Ins.Change.AlreadyPending>
+  <HH.Ins.Change.Apply>提交变更</HH.Ins.Change.Apply>
+  <HH.Ins.Change.CancelPending>此保单正在注销。请先撤回注销。</HH.Ins.Change.CancelPending>
+  <HH.Ins.Change.CannotPayFee>无法扣除 {0} 的变更手续费。</HH.Ins.Change.CannotPayFee>
+  <HH.Ins.Change.Close>关闭</HH.Ins.Change.Close>
+  <HH.Ins.Change.Filed>变更已提交，将于{0}后生效。</HH.Ins.Change.Filed>
+  <HH.Ins.Change.Lead>变更此生效中保单的档次、保额或附加条款。新条款从下一个结算周期开始，保费将重新计算。注销操作保持原状。</HH.Ins.Change.Lead>
+  <HH.Ins.Change.Limit>此保单每个季度最多只能变更 {0} 次。</HH.Ins.Change.Limit>
+  <HH.Ins.Change.NoChange>尚未做出任何变更。</HH.Ins.Change.NoChange>
+  <HH.Ins.Change.NotActive>此保单未生效。</HH.Ins.Change.NotActive>
+  <HH.Ins.Change.Part.RiderOff>取消附加条款{0}</HH.Ins.Change.Part.RiderOff>
+  <HH.Ins.Change.Part.RiderOn>附加条款{0}</HH.Ins.Change.Part.RiderOn>
+  <HH.Ins.Change.Part.Riders>其他附加条款</HH.Ins.Change.Part.Riders>
+  <HH.Ins.Change.Part.Sum>保额 {0} 改为 {1}</HH.Ins.Change.Part.Sum>
+  <HH.Ins.Change.Part.Tier>档次 {0} 改为 {1}</HH.Ins.Change.Part.Tier>
+  <HH.Ins.Change.Riders>附加条款</HH.Ins.Change.Riders>
+  <HH.Ins.Change.Sum.Cheaper>每个结算周期减少 {0}。</HH.Ins.Change.Sum.Cheaper>
+  <HH.Ins.Change.Sum.Dearer>每个结算周期增加 {0}。</HH.Ins.Change.Sum.Dearer>
+  <HH.Ins.Change.Sum.Discount>你现有的续保折扣保持不变。</HH.Ins.Change.Sum.Discount>
+  <HH.Ins.Change.Sum.Fee>变更手续费：{0}，提交时扣除。</HH.Ins.Change.Sum.Fee>
+  <HH.Ins.Change.Sum.Lower>降低保额无需等待期。</HH.Ins.Change.Sum.Lower>
+  <HH.Ins.Change.Sum.Premium>保费：当前 {0}，之后 {1}</HH.Ins.Change.Sum.Premium>
+  <HH.Ins.Change.Sum.Title>变更含义</HH.Ins.Change.Sum.Title>
+  <HH.Ins.Change.Sum.Wait>升级后的等待期：{0} 天。期内发生的事件仍按原保额理赔。</HH.Ins.Change.Sum.Wait>
+  <HH.Ins.Change.Sum.When>将于{0}后生效。</HH.Ins.Change.Sum.When>
+  <HH.Ins.Change.SumRange>允许范围：{0} 至 {1}。</HH.Ins.Change.SumRange>
+  <HH.Ins.Change.Title>变更{0}</HH.Ins.Change.Title>
+  <HH.Ins.Change.TooOld>达到退休年龄后，养老金保额不可提高。</HH.Ins.Change.TooOld>
+  <HH.Ins.End.Pension>养老金资格已丧失</HH.Ins.End.Pension>
+  <HH.Ins.Form.AiNote>Clawback Mutual 可能会亲自回复你的陈述。金额和决定不会因此改变。</HH.Ins.Form.AiNote>
+  <HH.Ins.Form.Closed>此申报窗口已关闭。</HH.Ins.Form.Closed>
+  <HH.Ins.Form.Deadline>截止时间：提交此理赔还剩{0}。</HH.Ins.Form.Deadline>
+  <HH.Ins.Form.Event>发生的事：{0}。\n保单：{1}（{2}）。</HH.Ins.Form.Event>
+  <HH.Ins.Form.Items>受影响物品：{0}。价值：{1}。</HH.Ins.Form.Items>
+  <HH.Ins.Form.Later>稍后</HH.Ins.Form.Later>
+  <HH.Ins.Form.NoAiNote>你的陈述将与理赔一并存档。决定不取决于它；只有赔付方式的选择才算数。</HH.Ins.Form.NoAiNote>
+  <HH.Ins.Form.Nobody>无人</HH.Ins.Form.Nobody>
+  <HH.Ins.Form.Payout.Materials>按胶囊发放材料</HH.Ins.Form.Payout.Materials>
+  <HH.Ins.Form.Payout.Silver>银币</HH.Ins.Form.Payout.Silver>
+  <HH.Ins.Form.Placeholder>用你自己的话描述发生了什么（可选）。</HH.Ins.Form.Placeholder>
+  <HH.Ins.Form.Sent>理赔已提交（{0}）。</HH.Ins.Form.Sent>
+  <HH.Ins.Form.Statement>您的陈述</HH.Ins.Form.Statement>
+  <HH.Ins.Form.Submit>提交理赔</HH.Ins.Form.Submit>
+  <HH.Ins.Form.Title>理赔表格：{0}</HH.Ins.Form.Title>
+  <HH.Ins.Form.Value>损失金额：{0}。</HH.Ins.Form.Value>
+  <HH.Ins.Letter.Batch.Body>Clawback Mutual 一次性欢迎 {0} 份新保单。</HH.Ins.Letter.Batch.Body>
+  <HH.Ins.Letter.Batch.Skipped>以下 {0} 份保单无法签署：</HH.Ins.Letter.Batch.Skipped>
+  <HH.Ins.Letter.Batch.Title>已签署 {0} 份保单</HH.Ins.Letter.Batch.Title>
+  <HH.Ins.Letter.Batch.Total>按账单：每 {1} 天 {0}。首期保费已从{2}扣除。</HH.Ins.Letter.Batch.Total>
+  <HH.Ins.Letter.Change.Done.Body>{0}现已改为{1}，保额{2}。保费：{3}。</HH.Ins.Letter.Change.Done.Body>
+  <HH.Ins.Letter.Change.Done.Title>变更生效：{0}</HH.Ins.Letter.Change.Done.Title>
+  <HH.Ins.Letter.Change.Done.Wait>在接下来的 {0} 内，发生的事件仍按原保障核定。</HH.Ins.Letter.Change.Done.Wait>
+  <HH.Ins.Letter.Change.Fee>手续费：{0}。</HH.Ins.Letter.Change.Fee>
+  <HH.Ins.Letter.Change.Filed.Body>Clawback Mutual 已收到您变更{0}的申请：{1}。\n将于{2}后生效；届时保费重新计算。</HH.Ins.Letter.Change.Filed.Body>
+  <HH.Ins.Letter.Change.Filed.Title>已提交变更：{0}</HH.Ins.Letter.Change.Filed.Title>
+  <HH.Ins.Letter.Change.Wait>升级后的等待期：{0} 天。</HH.Ins.Letter.Change.Wait>
+  <HH.Ins.Letter.Decision.Statement>关于您的陈述：{0}</HH.Ins.Letter.Decision.Statement>
+  <HH.Ins.Letter.Expired.Body>理赔 {0}（{1}）未在期限内提交表格。Clawback Mutual 对此毫无遗憾。</HH.Ins.Letter.Expired.Body>
+  <HH.Ins.Letter.Expired.Title>理赔失效：{0}</HH.Ins.Letter.Expired.Title>
+  <HH.Ins.Letter.Filed.Statement>您的陈述：“{0}”</HH.Ins.Letter.Filed.Statement>
+  <HH.Ins.Letter.Possible.Body>{0}属于{1}项下的保险事故。您可以提交理赔。</HH.Ins.Letter.Possible.Body>
+  <HH.Ins.Letter.Possible.Deadline>期限：从现在起 {0}。逾期理赔即告失效。</HH.Ins.Letter.Possible.Deadline>
+  <HH.Ins.Letter.Possible.Death>{0}已经去世。{1}或可赔付。您可以提交理赔。</HH.Ins.Letter.Possible.Death>
+  <HH.Ins.Letter.Possible.How>打开理赔表格，勾选几个选项，若您愿意可写一句话，然后提交即可。结果的裁定方式一如既往。</HH.Ins.Letter.Possible.How>
+  <HH.Ins.Letter.Possible.Title>可以理赔：{0}</HH.Ins.Letter.Possible.Title>
+  <HH.Ins.Letter.Possible.Waiting>该事件发生在保单的等待期内。理赔部会注意到的。</HH.Ins.Letter.Possible.Waiting>
+  <HH.Ins.Letter.Reminder.Body>{0}的理赔须在{1}内提交。</HH.Ins.Letter.Reminder.Body>
+  <HH.Ins.Letter.Reminder.Title>期限将至：{0}</HH.Ins.Letter.Reminder.Title>
+  <HH.Ins.Log.BulkSigned>批量购买：已签署 {1} 份保单中的 {0} 份。</HH.Ins.Log.BulkSigned>
+  <HH.Ins.Log.ChangeApplied>{0}已变更：{1}，保额{2}。</HH.Ins.Log.ChangeApplied>
+  <HH.Ins.Log.ChangeFiled>{0}：已提交变更，{1}后生效。</HH.Ins.Log.ChangeFiled>
+  <HH.Ins.Log.ChangeWithdrawn>{0}：变更已撤回。</HH.Ins.Log.ChangeWithdrawn>
+  <HH.Ins.Log.OppExpired>未提交理赔，提交期限已过：{0}（{1}）。</HH.Ins.Log.OppExpired>
+  <HH.Ins.Log.OppFiled>{0}：已提交理赔表格（{1} 项理赔）。</HH.Ins.Log.OppFiled>
+  <HH.Ins.Log.OppOpened>{0}：保险事故，可在 {1} 天内理赔。</HH.Ins.Log.OppOpened>
+  <HH.Ins.Log.PensionStrike>养老金规则：{0}已有{1}次违规。</HH.Ins.Log.PensionStrike>
+  <HH.Ins.Neg.OddsTip>此方案的成功几率：{0}</HH.Ins.Neg.OddsTip>
+  <HH.Ins.Neg.RoundOf>第 {0} 轮，共 {1} 轮</HH.Ins.Neg.RoundOf>
+  <HH.Ins.Neg.Why.Approved>已获批准：无可协商之处。</HH.Ins.Neg.Why.Approved>
+  <HH.Ins.Neg.Why.Closed>协商已结束。</HH.Ins.Neg.Why.Closed>
+  <HH.Ins.Neg.Why.NotDecided>理赔尚未裁定。</HH.Ins.Neg.Why.NotDecided>
+  <HH.Ins.Pension.Alert.Body>日程表中工作时长超过 {0} 小时的领取者，养老金将逐级减少：{1}。\n\n请将超出的时段改为“任意”或“娱乐”。保险页签中的“修正日程”按钮可为您代劳。</HH.Ins.Pension.Alert.Body>
+  <HH.Ins.Pension.Alert.Label>养老金有风险</HH.Ins.Pension.Alert.Label>
+  <HH.Ins.Pension.FixSchedule>修正日程</HH.Ins.Pension.FixSchedule>
+  <HH.Ins.Pension.Fixed>{0}：{1} 个工作小时已改为“任意”。</HH.Ins.Pension.Fixed>
+  <HH.Ins.Pension.Legal.Body>{0}的日程表中有 {1} 个工作小时（允许 {2} 个）。Brix &amp; Partners 本季度已将这次违规改为警告。</HH.Ins.Pension.Legal.Body>
+  <HH.Ins.Pension.Legal.Title>养老金规则：对{0}发出警告</HH.Ins.Pension.Legal.Title>
+  <HH.Ins.Pension.Notice.Body>{0}将在一周内满 60 岁。此后，只有当日程表中每日的“工作”不超过 {1} 小时时，才会发放养老金。“任意”“娱乐”“睡眠”和“冥想”都计为空闲时间。两次违规将丧失本期养老金，三次则丧失领取资格。</HH.Ins.Pension.Notice.Body>
+  <HH.Ins.Pension.Notice.Title>养老金规则：{0}</HH.Ins.Pension.Notice.Title>
+  <HH.Ins.Pension.Strike1.Body>{0}的日程表中有 {1} 个工作小时；允许 {2} 个。第一次违规。下次检查在两天后。再违规两次，领取资格即告失效。</HH.Ins.Pension.Strike1.Body>
+  <HH.Ins.Pension.Strike1.Title>养老金违规 1/3：{0}</HH.Ins.Pension.Strike1.Title>
+  <HH.Ins.Pension.Strike2.Body>{0}的日程表中有 {1} 个工作小时；允许 {2} 个。第二次违规：本期养老金（{3}）予以没收。再违规一次，领取资格即告丧失。</HH.Ins.Pension.Strike2.Body>
+  <HH.Ins.Pension.Strike2.Title>养老金违规 2/3：{0}</HH.Ins.Pension.Strike2.Title>
+  <HH.Ins.Pension.Strike3.Body>{0}的日程表中有 {1} 个工作小时；允许 {2} 个。第三次违规：养老金领取资格终止，保单注销。</HH.Ins.Pension.Strike3.Body>
+  <HH.Ins.Pension.Strike3.Title>养老金已丧失：{0}</HH.Ins.Pension.Strike3.Title>
+  <HH.Ins.Pension.Warn.Body>{0}的日程表中有 {1} 个工作小时；允许 {2} 个。此为仅作警告。</HH.Ins.Pension.Warn.Body>
+  <HH.Ins.Pension.Warn.Title>养老金规则：{0}工作过量</HH.Ins.Pension.Warn.Title>
+  <HH.Ins.Status.Buy>投保…</HH.Ins.Status.Buy>
+  <HH.Ins.Status.ColonyCover>殖民地保障</HH.Ins.Status.ColonyCover>
+  <HH.Ins.Status.Column>保障</HH.Ins.Status.Column>
+  <HH.Ins.Status.ColumnTip>保险状态：养老金、健康、意外、责任、法律。点击查看总览。</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.Foot>绿色：生效中。黄色：等待期。橙色：退保待处理。红色：养老金有风险。灰色：未投保。殖民地保障适用于每位殖民者。</HH.Ins.Status.Foot>
+  <HH.Ins.Status.Kind.Accident>意外</HH.Ins.Status.Kind.Accident>
+  <HH.Ins.Status.Kind.Health>健康</HH.Ins.Status.Kind.Health>
+  <HH.Ins.Status.Kind.Legal>法律</HH.Ins.Status.Kind.Legal>
+  <HH.Ins.Status.Kind.Liability>责任</HH.Ins.Status.Kind.Liability>
+  <HH.Ins.Status.Kind.Pension>养老金</HH.Ins.Status.Kind.Pension>
+  <HH.Ins.Status.No>无</HH.Ins.Status.No>
+  <HH.Ins.Status.NoTip>该殖民者没有{0}。</HH.Ins.Status.NoTip>
+  <HH.Ins.Status.NotInsurable>不可投保</HH.Ins.Status.NotInsurable>
+  <HH.Ins.Status.NotInsurableTip>奴隶、囚犯、访客和动物无法投保。</HH.Ins.Status.NotInsurableTip>
+  <HH.Ins.Status.PensionOk>日程表：{0} 个工作小时（允许 {1} 个）。</HH.Ins.Status.PensionOk>
+  <HH.Ins.Status.PensionRisk>日程表：{0} 个工作小时，仅允许 {1} 个。养老金有风险。</HH.Ins.Status.PensionRisk>
+  <HH.Ins.Status.State.Active>生效中</HH.Ins.Status.State.Active>
+  <HH.Ins.Status.State.AtRisk>有风险</HH.Ins.Status.State.AtRisk>
+  <HH.Ins.Status.State.CancelPending>退保待处理</HH.Ins.Status.State.CancelPending>
+  <HH.Ins.Status.State.None>无</HH.Ins.Status.State.None>
+  <HH.Ins.Status.State.Waiting>等待期</HH.Ins.Status.State.Waiting>
+  <HH.Ins.Status.Strikes>剩余 {0} 次违规机会</HH.Ins.Status.Strikes>
+  <HH.Ins.Status.Title>保险：{0}</HH.Ins.Status.Title>
+  <HH.Ins.Status.Yes>有</HH.Ins.Status.Yes>
+  <HH.Ins.Tab.Cover>殖民者</HH.Ins.Tab.Cover>
+  <HH.Ins.Tab.Pawn>保险</HH.Ins.Tab.Pawn>
+  <HH.Ins.UI.Claim.AiReply>对您陈述的回复：{0}</HH.Ins.UI.Claim.AiReply>
+  <HH.Ins.UI.Claim.Form>表格：{0}</HH.Ins.UI.Claim.Form>
+  <HH.Ins.UI.Claim.Statement>您的陈述：{0}</HH.Ins.UI.Claim.Statement>
+  <HH.Ins.UI.Claims.History>历史记录</HH.Ins.UI.Claims.History>
+  <HH.Ins.UI.Claims.Left>剩余 {0}</HH.Ins.UI.Claims.Left>
+  <HH.Ins.UI.Claims.Open>待处理理赔</HH.Ins.UI.Claims.Open>
+  <HH.Ins.UI.Claims.WindowLine>{0}（{1}）。金额：{2}，{3} 件物品。请在期限前在表格上提交理赔。</HH.Ins.UI.Claims.WindowLine>
+  <HH.Ins.UI.Claims.Windows>可提交理赔的期限</HH.Ins.UI.Claims.Windows>
+  <HH.Ins.UI.Cover.Colonist>殖民者</HH.Ins.UI.Cover.Colonist>
+  <HH.Ins.UI.Cover.Lead>每位殖民者投保的项目。养老金与意外保障为个人保障；健康、责任与法律保障（*）适用于整个殖民地。</HH.Ins.UI.Cover.Lead>
+  <HH.Ins.UI.Cover.None>没有殖民者。</HH.Ins.UI.Cover.None>
+  <HH.Ins.UI.CoverAll>为所有人投保…</HH.Ins.UI.CoverAll>
+  <HH.Ins.UI.CoverAll.Tip>一次为所有殖民者签署保单。</HH.Ins.UI.CoverAll.Tip>
+  <HH.Ins.UI.CoverAllOne>全部殖民者…</HH.Ins.UI.CoverAllOne>
+  <HH.Ins.UI.Mine.Change>变更保障…</HH.Ins.UI.Mine.Change>
+  <HH.Ins.UI.Mine.ChangeTip>变更档位、保额或附加险。将于下一个账单周期生效。</HH.Ins.UI.Mine.ChangeTip>
+  <HH.Ins.UI.Mine.PendingChange>已提交变更，{0}后生效</HH.Ins.UI.Mine.PendingChange>
+  <HH.Ins.UI.Mine.PensionLost>养老金领取资格已丧失。</HH.Ins.UI.Mine.PensionLost>
+  <HH.Ins.UI.Mine.PensionOk>符合养老金规则：{0} 个工作小时（允许 {1} 个），{2} 个时段为“任意”。</HH.Ins.UI.Mine.PensionOk>
+  <HH.Ins.UI.Mine.PensionRisk>养老金有风险：{0} 个工作小时，仅允许 {1} 个（{2} 个时段为“任意”）。</HH.Ins.UI.Mine.PensionRisk>
+  <HH.Ins.UI.Mine.PensionSuspended>本期养老金因违规被没收，{0}后恢复。</HH.Ins.UI.Mine.PensionSuspended>
+  <HH.Ins.UI.Mine.PensionTip>养老金规则：日程表中每日“工作”至多 {0} 小时。“任意”计为空闲时间，但处于“任意”时段的殖民者仍可能自行选择工作。</HH.Ins.UI.Mine.PensionTip>
+  <HH.Ins.UI.Mine.UpgradeWait>升级等待期：接下来 {0} 内发生的事件仍按旧保障核定。</HH.Ins.UI.Mine.UpgradeWait>
+  <HH.Ins.UI.Mine.WithdrawChange>撤回变更</HH.Ins.UI.Mine.WithdrawChange>
 </LanguageData>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ScenStartingAccount.description>コロニーは選んだ銀行の口座、初期残高、そして希望すれば返済すべき融資を持って始まる。</SL_ScenStartingAccount.description>
+  <SL_ScenStartingAccount.label>Silverline の口座を持った状態で開始</SL_ScenStartingAccount.label>
+</LanguageData>

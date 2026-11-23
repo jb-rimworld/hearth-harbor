@@ -285,4 +285,172 @@ Pro Quadrum: {1}</HH.Ins.UI.Price.Tip>
   <HH.Enum.TrickMode.Follows>Folgt dem Verkaufsdruck</HH.Enum.TrickMode.Follows>
   <HH.Enum.TrickMode.On>Immer an</HH.Enum.TrickMode.On>
   <HH.Enum.TrickMode.Off>Aus</HH.Enum.TrickMode.Off>
+  <HH.Ins.Btn.FillForm>Schadensformular ausfüllen</HH.Ins.Btn.FillForm>
+  <HH.Ins.Bulk.All>Alle</HH.Ins.Bulk.All>
+  <HH.Ins.Bulk.Colony>ganze Kolonie</HH.Ins.Bulk.Colony>
+  <HH.Ins.Bulk.Confirm>Jetzt {0} Policen abschließen? Erste Prämien insgesamt: {1}. Danach {2} alle {3} Tage. Jede Police lässt sich weiterhin einzeln kündigen.</HH.Ins.Bulk.Confirm>
+  <HH.Ins.Bulk.Done>{0} von {1} Policen abgeschlossen.</HH.Ins.Bulk.Done>
+  <HH.Ins.Bulk.Lead>Hake die Policen an, wähle Stufe und Summe, bestimme, wer versichert wird, und Clawback Mutual schließt alles auf einmal ab. Du bekommst einen Sammelbrief statt eines Briefs pro Police. Die Wartezeit beginnt je Police.</HH.Ins.Bulk.Lead>
+  <HH.Ins.Bulk.NoMoney>nicht genug Geld für die erste Prämie</HH.Ins.Bulk.NoMoney>
+  <HH.Ins.Bulk.NoRiders>Hier sind keine Zusätze vorausgewählt. Der Bündelrabatt wächst mit jeder Police (höchstens {0} Nachlass).</HH.Ins.Bulk.NoRiders>
+  <HH.Ins.Bulk.None>Keine</HH.Ins.Bulk.None>
+  <HH.Ins.Bulk.NothingToSign>Noch nichts abzuschließen: Hake eine Police und mindestens einen Kolonisten an.</HH.Ins.Bulk.NothingToSign>
+  <HH.Ins.Bulk.PerPerson>pro Kolonist</HH.Ins.Bulk.PerPerson>
+  <HH.Ins.Bulk.Policies>Policen</HH.Ins.Bulk.Policies>
+  <HH.Ins.Bulk.Sign>{0} Policen abschließen</HH.Ins.Bulk.Sign>
+  <HH.Ins.Bulk.Spendable>Verfügbar: {0}</HH.Ins.Bulk.Spendable>
+  <HH.Ins.Bulk.Stopped>Das Geld ging vor dem Ende aus; der Rest wurde nicht abgeschlossen.</HH.Ins.Bulk.Stopped>
+  <HH.Ins.Bulk.SumPerHead>Summe pro Kolonist: {0}</HH.Ins.Bulk.SumPerHead>
+  <HH.Ins.Bulk.Summary>{0} Policen abzuschließen. Erste Prämien: {1}. Danach {2} alle {3} Tage.</HH.Ins.Bulk.Summary>
+  <HH.Ins.Bulk.Title>Alle absichern</HH.Ins.Bulk.Title>
+  <HH.Ins.Bulk.TooExpensive>Du hast nur {0} verfügbar: Die Liste wird so weit abgeschlossen, wie das Geld reicht.</HH.Ins.Bulk.TooExpensive>
+  <HH.Ins.Bulk.Who>Kolonisten</HH.Ins.Bulk.Who>
+  <HH.Ins.Cancel.Step>Schritt {0} von {1}</HH.Ins.Cancel.Step>
+  <HH.Ins.Change.AlreadyPending>Eine Änderung ist bereits eingereicht. Ziehe sie zuerst zurück.</HH.Ins.Change.AlreadyPending>
+  <HH.Ins.Change.Apply>Änderung einreichen</HH.Ins.Change.Apply>
+  <HH.Ins.Change.CancelPending>Diese Police wird gerade gekündigt. Ziehe zuerst die Kündigung zurück.</HH.Ins.Change.CancelPending>
+  <HH.Ins.Change.CannotPayFee>Die Änderungsgebühr von {0} konnte nicht abgebucht werden.</HH.Ins.Change.CannotPayFee>
+  <HH.Ins.Change.Close>Schließen</HH.Ins.Change.Close>
+  <HH.Ins.Change.Filed>Änderung eingereicht. Sie wird in {0} wirksam.</HH.Ins.Change.Filed>
+  <HH.Ins.Change.Lead>Ändere Stufe, Summe oder Zusätze dieser laufenden Police. Die neuen Bedingungen gelten ab der nächsten Abrechnung, die Prämie wird neu berechnet. Eine Kündigung bleibt davon unberührt.</HH.Ins.Change.Lead>
+  <HH.Ins.Change.Limit>Diese Police darf nur {0}-mal pro Quadrum geändert werden.</HH.Ins.Change.Limit>
+  <HH.Ins.Change.NoChange>Noch nichts geändert.</HH.Ins.Change.NoChange>
+  <HH.Ins.Change.NotActive>Diese Police ist nicht aktiv.</HH.Ins.Change.NotActive>
+  <HH.Ins.Change.Part.RiderOff>ohne Zusatz {0}</HH.Ins.Change.Part.RiderOff>
+  <HH.Ins.Change.Part.RiderOn>Zusatz {0}</HH.Ins.Change.Part.RiderOn>
+  <HH.Ins.Change.Part.Riders>weitere Zusätze</HH.Ins.Change.Part.Riders>
+  <HH.Ins.Change.Part.Sum>Summe {0} auf {1}</HH.Ins.Change.Part.Sum>
+  <HH.Ins.Change.Part.Tier>Stufe {0} auf {1}</HH.Ins.Change.Part.Tier>
+  <HH.Ins.Change.Riders>Zusätze</HH.Ins.Change.Riders>
+  <HH.Ins.Change.Sum.Cheaper>Das sind {0} weniger pro Abrechnung.</HH.Ins.Change.Sum.Cheaper>
+  <HH.Ins.Change.Sum.Dearer>Das sind {0} mehr pro Abrechnung.</HH.Ins.Change.Sum.Dearer>
+  <HH.Ins.Change.Sum.Discount>Dein laufender Treuerabatt bleibt erhalten.</HH.Ins.Change.Sum.Discount>
+  <HH.Ins.Change.Sum.Fee>Änderungsgebühr: {0}, wird beim Einreichen abgebucht.</HH.Ins.Change.Sum.Fee>
+  <HH.Ins.Change.Sum.Lower>Beim Senken des Schutzes gibt es keine Wartezeit.</HH.Ins.Change.Sum.Lower>
+  <HH.Ins.Change.Sum.Premium>Prämie: jetzt {0}, dann {1}</HH.Ins.Change.Sum.Premium>
+  <HH.Ins.Change.Sum.Title>Was das bedeutet</HH.Ins.Change.Sum.Title>
+  <HH.Ins.Change.Sum.Wait>Wartezeit nach der Erhöhung: {0} Tage. Ereignisse darin werden weiterhin nach dem alten Schutz bewertet.</HH.Ins.Change.Sum.Wait>
+  <HH.Ins.Change.Sum.When>Wird in {0} wirksam.</HH.Ins.Change.Sum.When>
+  <HH.Ins.Change.SumRange>Zulässiger Bereich: {0} bis {1}.</HH.Ins.Change.SumRange>
+  <HH.Ins.Change.Title>{0} ändern</HH.Ins.Change.Title>
+  <HH.Ins.Change.TooOld>Der Schutz einer Rente kann im Rentenalter nicht erhöht werden.</HH.Ins.Change.TooOld>
+  <HH.Ins.End.Pension>Rentenanspruch verloren</HH.Ins.End.Pension>
+  <HH.Ins.Form.AiNote>Clawback Mutual antwortet womöglich persönlich auf deine Schilderung. Betrag und Entscheidung ändern sich dadurch nicht.</HH.Ins.Form.AiNote>
+  <HH.Ins.Form.Closed>Dieses Einreichungsfenster ist geschlossen.</HH.Ins.Form.Closed>
+  <HH.Ins.Form.Deadline>Frist: Noch {0}, um diesen Schaden einzureichen.</HH.Ins.Form.Deadline>
+  <HH.Ins.Form.Event>Was geschah: {0}.\nPolice: {1} ({2}).</HH.Ins.Form.Event>
+  <HH.Ins.Form.Items>Betroffen: {0}. Wert: {1}.</HH.Ins.Form.Items>
+  <HH.Ins.Form.Later>Später</HH.Ins.Form.Later>
+  <HH.Ins.Form.NoAiNote>Deine Schilderung wird zum Schaden abgelegt. Die Entscheidung hängt nicht davon ab; nur die Wahl der Auszahlung zählt.</HH.Ins.Form.NoAiNote>
+  <HH.Ins.Form.Nobody>niemand</HH.Ins.Form.Nobody>
+  <HH.Ins.Form.Payout.Materials>Materialien per Kapsel</HH.Ins.Form.Payout.Materials>
+  <HH.Ins.Form.Payout.Silver>Silber</HH.Ins.Form.Payout.Silver>
+  <HH.Ins.Form.Placeholder>Beschreibe mit eigenen Worten, was geschehen ist (optional).</HH.Ins.Form.Placeholder>
+  <HH.Ins.Form.Sent>Schadensfall gemeldet ({0}).</HH.Ins.Form.Sent>
+  <HH.Ins.Form.Statement>Deine Stellungnahme</HH.Ins.Form.Statement>
+  <HH.Ins.Form.Submit>Schaden melden</HH.Ins.Form.Submit>
+  <HH.Ins.Form.Title>Schadensformular: {0}</HH.Ins.Form.Title>
+  <HH.Ins.Form.Value>Wert des Schadens: {0}.</HH.Ins.Form.Value>
+  <HH.Ins.Letter.Batch.Body>Clawback Mutual begrüßt {0} neue Policen auf einen Schlag.</HH.Ins.Letter.Batch.Body>
+  <HH.Ins.Letter.Batch.Skipped>{0} konnten nicht abgeschlossen werden:</HH.Ins.Letter.Batch.Skipped>
+  <HH.Ins.Letter.Batch.Title>{0} Policen abgeschlossen</HH.Ins.Letter.Batch.Title>
+  <HH.Ins.Letter.Batch.Total>Laut Abrechnung: {0} alle {1} Tage. Die ersten Prämien wurden von {2} abgebucht.</HH.Ins.Letter.Batch.Total>
+  <HH.Ins.Letter.Change.Done.Body>{0} läuft jetzt als {1} mit einer Summe von {2}. Prämie: {3}.</HH.Ins.Letter.Change.Done.Body>
+  <HH.Ins.Letter.Change.Done.Title>Änderung in Kraft: {0}</HH.Ins.Letter.Change.Done.Title>
+  <HH.Ins.Letter.Change.Done.Wait>Ereignisse in den nächsten {0} werden noch mit dem bisherigen Schutz beurteilt.</HH.Ins.Letter.Change.Done.Wait>
+  <HH.Ins.Letter.Change.Fee>Verwaltungsgebühr: {0}.</HH.Ins.Letter.Change.Fee>
+  <HH.Ins.Letter.Change.Filed.Body>Clawback Mutual hat Ihren Antrag auf Änderung von {0} erhalten: {1}.\nEr wird in {2} wirksam; die Prämie wird dann neu berechnet.</HH.Ins.Letter.Change.Filed.Body>
+  <HH.Ins.Letter.Change.Filed.Title>Änderung beantragt: {0}</HH.Ins.Letter.Change.Filed.Title>
+  <HH.Ins.Letter.Change.Wait>Wartezeit nach der Aufstockung: {0} Tage.</HH.Ins.Letter.Change.Wait>
+  <HH.Ins.Letter.Decision.Statement>Zu Ihrer Stellungnahme: {0}</HH.Ins.Letter.Decision.Statement>
+  <HH.Ins.Letter.Expired.Body>Die Frist für den Schadensfall {0} ({1}) ist ohne Formular verstrichen. Clawback Mutual bedauert nichts.</HH.Ins.Letter.Expired.Body>
+  <HH.Ins.Letter.Expired.Title>Schadensfall verfallen: {0}</HH.Ins.Letter.Expired.Title>
+  <HH.Ins.Letter.Filed.Statement>Ihre Stellungnahme: „{0}“</HH.Ins.Letter.Filed.Statement>
+  <HH.Ins.Letter.Possible.Body>{0} ist ein versichertes Ereignis nach {1}. Sie können einen Schaden melden.</HH.Ins.Letter.Possible.Body>
+  <HH.Ins.Letter.Possible.Deadline>Frist: {0} ab jetzt. Danach verfällt der Anspruch.</HH.Ins.Letter.Possible.Deadline>
+  <HH.Ins.Letter.Possible.Death>{0} ist gestorben. {1} zahlt möglicherweise. Sie können einen Schaden melden.</HH.Ins.Letter.Possible.Death>
+  <HH.Ins.Letter.Possible.How>Öffnen Sie das Schadensformular, kreuzen Sie ein paar Kästchen an, schreiben Sie auf Wunsch einen Satz und senden Sie es ab. Das Ergebnis wird entschieden wie immer.</HH.Ins.Letter.Possible.How>
+  <HH.Ins.Letter.Possible.Title>Schadensmeldung möglich: {0}</HH.Ins.Letter.Possible.Title>
+  <HH.Ins.Letter.Possible.Waiting>Das Ereignis trat innerhalb der Wartezeit der Police ein. Die Schadensabteilung wird es bemerken.</HH.Ins.Letter.Possible.Waiting>
+  <HH.Ins.Letter.Reminder.Body>Der Schaden für {0} muss innerhalb von {1} gemeldet werden.</HH.Ins.Letter.Reminder.Body>
+  <HH.Ins.Letter.Reminder.Title>Frist läuft ab: {0}</HH.Ins.Letter.Reminder.Title>
+  <HH.Ins.Log.BulkSigned>Sammelkauf: {0} von {1} Policen abgeschlossen.</HH.Ins.Log.BulkSigned>
+  <HH.Ins.Log.ChangeApplied>{0} geändert: {1}, Summe {2}.</HH.Ins.Log.ChangeApplied>
+  <HH.Ins.Log.ChangeFiled>{0}: Änderung beantragt, wirksam in {1}.</HH.Ins.Log.ChangeFiled>
+  <HH.Ins.Log.ChangeWithdrawn>{0}: Änderung zurückgezogen.</HH.Ins.Log.ChangeWithdrawn>
+  <HH.Ins.Log.OppExpired>Meldefenster ohne Schadensmeldung geschlossen: {0} ({1}).</HH.Ins.Log.OppExpired>
+  <HH.Ins.Log.OppFiled>{0}: Schadensformular eingereicht ({1} Schadensfall/-fälle).</HH.Ins.Log.OppFiled>
+  <HH.Ins.Log.OppOpened>{0}: versichertes Ereignis, Schadensmeldung {1} Tage lang möglich.</HH.Ins.Log.OppOpened>
+  <HH.Ins.Log.PensionStrike>Rentenregel: {0} hat {1} Verwarnung(en).</HH.Ins.Log.PensionStrike>
+  <HH.Ins.Neg.OddsTip>Erfolgschance dieses Vorgehens: {0}</HH.Ins.Neg.OddsTip>
+  <HH.Ins.Neg.RoundOf>Runde {0} von {1}</HH.Ins.Neg.RoundOf>
+  <HH.Ins.Neg.Why.Approved>Bereits bewilligt: nichts zu verhandeln.</HH.Ins.Neg.Why.Approved>
+  <HH.Ins.Neg.Why.Closed>Die Verhandlung ist abgeschlossen.</HH.Ins.Neg.Why.Closed>
+  <HH.Ins.Neg.Why.NotDecided>Über den Schadensfall wurde noch nicht entschieden.</HH.Ins.Neg.Why.NotDecided>
+  <HH.Ins.Pension.Alert.Body>Rentner mit mehr als {0} Arbeitsstunden im Zeitplan verlieren ihre Rente schrittweise: {1}.\n\nSetze die überzähligen Stunden auf Beliebig oder Freizeit. Die Schaltfläche „Zeitplan korrigieren“ im Reiter Versicherung erledigt das für dich.</HH.Ins.Pension.Alert.Body>
+  <HH.Ins.Pension.Alert.Label>Rente in Gefahr</HH.Ins.Pension.Alert.Label>
+  <HH.Ins.Pension.FixSchedule>Zeitplan korrigieren</HH.Ins.Pension.FixSchedule>
+  <HH.Ins.Pension.Fixed>{0}: {1} Arbeitsstunden auf Beliebig gesetzt.</HH.Ins.Pension.Fixed>
+  <HH.Ins.Pension.Legal.Body>{0} hat {1} Arbeitsstunden im Zeitplan ({2} erlaubt). Brix &amp; Partners haben die Verwarnung in diesem Quadrum in eine Abmahnung umgewandelt.</HH.Ins.Pension.Legal.Body>
+  <HH.Ins.Pension.Legal.Title>Rentenregel: Abmahnung für {0}</HH.Ins.Pension.Legal.Title>
+  <HH.Ins.Pension.Notice.Body>{0} wird innerhalb einer Woche 60. Ab dann wird die Rente nur noch gezahlt, solange der Zeitplan höchstens {1} Stunden Arbeit pro Tag enthält. Beliebig, Freizeit, Schlafen und Meditieren zählen als freie Zeit. Zwei Verwarnungen kosten die Rente der Periode, drei den Anspruch.</HH.Ins.Pension.Notice.Body>
+  <HH.Ins.Pension.Notice.Title>Rentenregel: {0}</HH.Ins.Pension.Notice.Title>
+  <HH.Ins.Pension.Strike1.Body>{0} hat {1} Arbeitsstunden im Zeitplan; erlaubt sind {2}. Erste Verwarnung. Die nächste Prüfung ist in zwei Tagen. Zwei weitere Verwarnungen, und der Anspruch ist weg.</HH.Ins.Pension.Strike1.Body>
+  <HH.Ins.Pension.Strike1.Title>Rentenverwarnung 1 von 3: {0}</HH.Ins.Pension.Strike1.Title>
+  <HH.Ins.Pension.Strike2.Body>{0} hat {1} Arbeitsstunden im Zeitplan; erlaubt sind {2}. Zweite Verwarnung: Die Rente dieser Periode ({3}) verfällt. Eine weitere, und der Anspruch geht verloren.</HH.Ins.Pension.Strike2.Body>
+  <HH.Ins.Pension.Strike2.Title>Rentenverwarnung 2 von 3: {0}</HH.Ins.Pension.Strike2.Title>
+  <HH.Ins.Pension.Strike3.Body>{0} hat {1} Arbeitsstunden im Zeitplan; erlaubt sind {2}. Dritte Verwarnung: Der Rentenanspruch endet und die Police wird gekündigt.</HH.Ins.Pension.Strike3.Body>
+  <HH.Ins.Pension.Strike3.Title>Rente verloren: {0}</HH.Ins.Pension.Strike3.Title>
+  <HH.Ins.Pension.Warn.Body>{0} hat {1} Arbeitsstunden im Zeitplan; erlaubt sind {2}. Dies ist nur eine Warnung.</HH.Ins.Pension.Warn.Body>
+  <HH.Ins.Pension.Warn.Title>Rentenregel: {0} arbeitet zu viel</HH.Ins.Pension.Warn.Title>
+  <HH.Ins.Status.Buy>Versichern…</HH.Ins.Status.Buy>
+  <HH.Ins.Status.ColonyCover>Kolonieschutz</HH.Ins.Status.ColonyCover>
+  <HH.Ins.Status.Column>Schutz</HH.Ins.Status.Column>
+  <HH.Ins.Status.ColumnTip>Versicherungsstatus: Rente, Kranken-, Unfall-, Haftpflicht- und Rechtsschutz. Klicke für die Übersicht.</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.Foot>Grün: aktiv. Gelb: Wartezeit. Orange: Kündigung ausstehend. Rot: Rente in Gefahr. Grau: nicht versichert. Der Kolonieschutz gilt für alle Kolonisten.</HH.Ins.Status.Foot>
+  <HH.Ins.Status.Kind.Accident>Unfall</HH.Ins.Status.Kind.Accident>
+  <HH.Ins.Status.Kind.Health>Gesundheit</HH.Ins.Status.Kind.Health>
+  <HH.Ins.Status.Kind.Legal>Rechtsschutz</HH.Ins.Status.Kind.Legal>
+  <HH.Ins.Status.Kind.Liability>Haftpflicht</HH.Ins.Status.Kind.Liability>
+  <HH.Ins.Status.Kind.Pension>Rente</HH.Ins.Status.Kind.Pension>
+  <HH.Ins.Status.No>nein</HH.Ins.Status.No>
+  <HH.Ins.Status.NoTip>Kein {0} für diesen Kolonisten.</HH.Ins.Status.NoTip>
+  <HH.Ins.Status.NotInsurable>nicht versicherbar</HH.Ins.Status.NotInsurable>
+  <HH.Ins.Status.NotInsurableTip>Sklaven, Gefangene, Gäste und Tiere können nicht versichert werden.</HH.Ins.Status.NotInsurableTip>
+  <HH.Ins.Status.PensionOk>Zeitplan: {0} Arbeitsstunden ({1} erlaubt).</HH.Ins.Status.PensionOk>
+  <HH.Ins.Status.PensionRisk>Zeitplan: {0} Arbeitsstunden, nur {1} erlaubt. Die Rente ist in Gefahr.</HH.Ins.Status.PensionRisk>
+  <HH.Ins.Status.State.Active>aktiv</HH.Ins.Status.State.Active>
+  <HH.Ins.Status.State.AtRisk>in Gefahr</HH.Ins.Status.State.AtRisk>
+  <HH.Ins.Status.State.CancelPending>Kündigung ausstehend</HH.Ins.Status.State.CancelPending>
+  <HH.Ins.Status.State.None>keiner</HH.Ins.Status.State.None>
+  <HH.Ins.Status.State.Waiting>Wartezeit</HH.Ins.Status.State.Waiting>
+  <HH.Ins.Status.Strikes>noch {0} Verwarnungen</HH.Ins.Status.Strikes>
+  <HH.Ins.Status.Title>Versicherung: {0}</HH.Ins.Status.Title>
+  <HH.Ins.Status.Yes>ja</HH.Ins.Status.Yes>
+  <HH.Ins.Tab.Cover>Kolonisten</HH.Ins.Tab.Cover>
+  <HH.Ins.Tab.Pawn>Versicherung</HH.Ins.Tab.Pawn>
+  <HH.Ins.UI.Claim.AiReply>Antwort auf deine Stellungnahme: {0}</HH.Ins.UI.Claim.AiReply>
+  <HH.Ins.UI.Claim.Form>Formular: {0}</HH.Ins.UI.Claim.Form>
+  <HH.Ins.UI.Claim.Statement>Deine Stellungnahme: {0}</HH.Ins.UI.Claim.Statement>
+  <HH.Ins.UI.Claims.History>Verlauf</HH.Ins.UI.Claims.History>
+  <HH.Ins.UI.Claims.Left>noch {0}</HH.Ins.UI.Claims.Left>
+  <HH.Ins.UI.Claims.Open>Offene Schadensfälle</HH.Ins.UI.Claims.Open>
+  <HH.Ins.UI.Claims.WindowLine>{0} ({1}). Wert: {2}, {3} Gegenstand/Gegenstände. Melde den Schaden vor Fristende auf dem Formular.</HH.Ins.UI.Claims.WindowLine>
+  <HH.Ins.UI.Claims.Windows>Offene Meldefenster</HH.Ins.UI.Claims.Windows>
+  <HH.Ins.UI.Cover.Colonist>Kolonist</HH.Ins.UI.Cover.Colonist>
+  <HH.Ins.UI.Cover.Lead>Wer wofür versichert ist. Renten- und Unfallschutz sind persönlich; Kranken-, Haftpflicht- und Rechtsschutz (*) gelten für die ganze Kolonie.</HH.Ins.UI.Cover.Lead>
+  <HH.Ins.UI.Cover.None>Keine Kolonisten.</HH.Ins.UI.Cover.None>
+  <HH.Ins.UI.CoverAll>Alle versichern…</HH.Ins.UI.CoverAll>
+  <HH.Ins.UI.CoverAll.Tip>Policen für alle Kolonisten in einem Rutsch abschließen.</HH.Ins.UI.CoverAll.Tip>
+  <HH.Ins.UI.CoverAllOne>Alle Kolonisten…</HH.Ins.UI.CoverAllOne>
+  <HH.Ins.UI.Mine.Change>Schutz ändern…</HH.Ins.UI.Mine.Change>
+  <HH.Ins.UI.Mine.ChangeTip>Stufe, Summe oder Zusätze ändern. Wirkt ab der nächsten Abrechnung.</HH.Ins.UI.Mine.ChangeTip>
+  <HH.Ins.UI.Mine.PendingChange>Änderung beantragt, wirksam in {0}</HH.Ins.UI.Mine.PendingChange>
+  <HH.Ins.UI.Mine.PensionLost>Rentenanspruch verloren.</HH.Ins.UI.Mine.PensionLost>
+  <HH.Ins.UI.Mine.PensionOk>Rentenregel eingehalten: {0} Arbeitsstunden ({1} erlaubt), {2} auf Beliebig.</HH.Ins.UI.Mine.PensionOk>
+  <HH.Ins.UI.Mine.PensionRisk>Rente in Gefahr: {0} Arbeitsstunden, nur {1} erlaubt ({2} auf Beliebig).</HH.Ins.UI.Mine.PensionRisk>
+  <HH.Ins.UI.Mine.PensionSuspended>Rente dieser Periode verfallen (Regelverstoß), läuft wieder in {0}.</HH.Ins.UI.Mine.PensionSuspended>
+  <HH.Ins.UI.Mine.PensionTip>Rentenregel: höchstens {0} Stunden Arbeit pro Tag im Zeitplan. Beliebig zählt als freie Zeit, aber ein Kolonist auf Beliebig kann sich trotzdem für Arbeit entscheiden.</HH.Ins.UI.Mine.PensionTip>
+  <HH.Ins.UI.Mine.UpgradeWait>Wartezeit nach Aufstockung: Ereignisse in den nächsten {0} werden noch mit dem alten Schutz beurteilt.</HH.Ins.UI.Mine.UpgradeWait>
+  <HH.Ins.UI.Mine.WithdrawChange>Änderung zurückziehen</HH.Ins.UI.Mine.WithdrawChange>
 </LanguageData>

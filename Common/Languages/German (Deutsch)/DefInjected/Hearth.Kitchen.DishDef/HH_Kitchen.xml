@@ -228,4 +228,36 @@
   <HH_Dish_SashimiPlate.description>Roher Fisch, hauchdünn geschnitten, und ein winziges moralisches Dilemma.</HH_Dish_SashimiPlate.description>
   <HH_Dish_FishTacos.label>Fisch-Tacos</HH_Dish_FishTacos.label>
   <HH_Dish_FishTacos.description>Fisch in einer Tortilla, geliefert von einem Kolonisten, der den ganzen Weg gerannt ist.</HH_Dish_FishTacos.description>
+  <HH_Dish_BoomalopeConfit.description>Langsam im eigenen Fett gegart. Nicht neben den Topf stellen. Traditionell aus Boomalope, mit viel Vorsicht.</HH_Dish_BoomalopeConfit.description>
+  <HH_Dish_BoomalopeConfit.label>Schmorfleisch-Confit</HH_Dish_BoomalopeConfit.label>
+  <HH_Dish_CampfireStew.description>Alles kam in den Topf, auch der Streit darüber, was alles heißt. Traditionell aus Muffalo.</HH_Dish_CampfireStew.description>
+  <HH_Dish_CampfireStew.label>Lagerfeuer-Fleischeintopf</HH_Dish_CampfireStew.label>
+  <HH_Dish_ClayOvenMuffalo.description>Über Nacht mariniert, im Lehmofen durchgeglüht und mit Arroganz serviert. Traditionell aus Muffalo.</HH_Dish_ClayOvenMuffalo.description>
+  <HH_Dish_ClayOvenMuffalo.label>Lehmofenbraten</HH_Dish_ClayOvenMuffalo.label>
+  <HH_Dish_DromedaryTagine.description>Langsam im Lehmkegel gegart, so wie es sich die meisten Leute wünschen. Traditionell aus Dromedar.</HH_Dish_DromedaryTagine.description>
+  <HH_Dish_DromedaryTagine.label>Fleisch-Beeren-Tajine</HH_Dish_DromedaryTagine.label>
+  <HH_Dish_LacqueredThrumbo.description>Glasiert, bis es heller glänzt als das Bankkonto der Kolonie. Traditionell aus Thrumbo, wenn die Kolonie so viel Glück hat.</HH_Dish_LacqueredThrumbo.description>
+  <HH_Dish_LacqueredThrumbo.label>Lackbraten</HH_Dish_LacqueredThrumbo.label>
+  <HH_Dish_LambKoftasWithRice.description>Gewürzt, geformt und auf Reis serviert wie ein sehr leckerer Vortrag. Traditionell aus Lamm.</HH_Dish_LambKoftasWithRice.description>
+  <HH_Dish_LambKoftasWithRice.label>Fleisch-Köfte mit Reis</HH_Dish_LambKoftasWithRice.label>
+  <HH_Dish_MongolianMuffalo.description>Im Wok gebraten, süß, klebrig und ein bisschen zu laut. Traditionell aus Muffalo.</HH_Dish_MongolianMuffalo.description>
+  <HH_Dish_MongolianMuffalo.label>Fleisch nach mongolischer Art</HH_Dish_MongolianMuffalo.label>
+  <HH_Dish_MuffaloBourguignon.description>In Bier geschmort, weil der Wein am zweiten Tag aus war. Traditionell aus Muffalo.</HH_Dish_MuffaloBourguignon.description>
+  <HH_Dish_MuffaloBourguignon.label>Kolonie-Bourguignon</HH_Dish_MuffaloBourguignon.label>
+  <HH_Dish_MuffaloCarpaccio.description>So dünn geschnitten, dass man die Speisekarte hindurch lesen kann. Traditionell aus Muffalo.</HH_Dish_MuffaloCarpaccio.description>
+  <HH_Dish_MuffaloCarpaccio.label>Fleisch-Carpaccio</HH_Dish_MuffaloCarpaccio.label>
+  <HH_Dish_MuffaloGoulash.description>Rot, dick und offiziell der inoffizielle Nationalstreit. Traditionell aus Muffalo.</HH_Dish_MuffaloGoulash.description>
+  <HH_Dish_MuffaloGoulash.label>Fleischgulasch</HH_Dish_MuffaloGoulash.label>
+  <HH_Dish_MuffaloRamen.description>Laut schlürfen. Im Kampf um die letzte Schüssel noch lauter. Traditionell aus Muffalo.</HH_Dish_MuffaloRamen.description>
+  <HH_Dish_MuffaloRamen.label>Deftiges Fleisch-Ramen</HH_Dish_MuffaloRamen.label>
+  <HH_Dish_MuffaloStroganoff.description>Cremig, reichhaltig und beim dritten Löffel schon weg. Traditionell aus Muffalo.</HH_Dish_MuffaloStroganoff.description>
+  <HH_Dish_MuffaloStroganoff.label>Cremiges Stroganoff</HH_Dish_MuffaloStroganoff.label>
+  <HH_Dish_MuffaloWellington.description>In Blätterteig gewickelt, eine kleine Dämmung für ein sehr großes Ego. Traditionell aus Muffalo.</HH_Dish_MuffaloWellington.description>
+  <HH_Dish_MuffaloWellington.label>Fleisch-Wellington</HH_Dish_MuffaloWellington.label>
+  <HH_Dish_PadThrumbo.description>Ein süßsaures Gewirr aus Nudeln und Knusper, im Wok gebraten, bis es sich benimmt. Das Knusprige stammt von Insektenfleisch.</HH_Dish_PadThrumbo.description>
+  <HH_Dish_PadThrumbo.label>Käfer-Pad</HH_Dish_PadThrumbo.label>
+  <HH_Dish_ThrumboPho.description>Eine klare Brühe mit einer sehr langen Aufgabenliste dahinter. Traditionell aus Thrumbo, wenn die Kolonie so viel Glück hat.</HH_Dish_ThrumboPho.description>
+  <HH_Dish_ThrumboPho.label>Fleisch-Pho</HH_Dish_ThrumboPho.label>
+  <HH_Dish_ThrumboTartare.description>Roh, wild und mutig. Vorher den Haftungsverzicht unterschreiben. Traditionell aus Thrumbo, wenn die Kolonie so viel Glück hat.</HH_Dish_ThrumboTartare.description>
+  <HH_Dish_ThrumboTartare.label>Fleisch-Tatar</HH_Dish_ThrumboTartare.label>
 </LanguageData>

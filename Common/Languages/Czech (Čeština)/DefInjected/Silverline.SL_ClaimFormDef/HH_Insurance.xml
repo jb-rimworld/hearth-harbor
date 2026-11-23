@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ClaimForm_Money.description>Formulář L-1 pro pokuty, škody třetím osobám a uzavírky: co to způsobilo a kdo to může potvrdit.</SL_ClaimForm_Money.description>
+  <SL_ClaimForm_Money.label>formulář na pokuty a odpovědnost</SL_ClaimForm_Money.label>
+  <SL_ClaimForm_Person.description>Formulář P-2 pro úmrtí a ztráty končetin: okolnosti a svědek.</SL_ClaimForm_Person.description>
+  <SL_ClaimForm_Person.label>formulář osobní újmy</SL_ClaimForm_Person.label>
+  <SL_ClaimForm_Property.description>Formulář B-4 pro zničené budovy, vozidla a úrodu: co se stalo, jak to bylo zlé, kdo to viděl a jak chcete být vyplaceni.</SL_ClaimForm_Property.description>
+  <SL_ClaimForm_Property.label>formulář na majetkovou škodu</SL_ClaimForm_Property.label>
+</LanguageData>

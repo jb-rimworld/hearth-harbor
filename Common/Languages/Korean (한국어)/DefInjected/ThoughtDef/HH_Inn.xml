@@ -38,4 +38,10 @@
   <HH_GuestWaitingRoom.stages.2.description>그곳에서 기다리는 건 거의 즐거움이었습니다.</HH_GuestWaitingRoom.stages.2.description>
   <HH_GuestWaitingRoom.stages.3.label>훌륭한 대기실</HH_GuestWaitingRoom.stages.3.label>
   <HH_GuestWaitingRoom.stages.3.description>이런 방이라면 더 오래 기다려도 상관없었겠습니다.</HH_GuestWaitingRoom.stages.3.description>
+  <HH_GuestPreached.stages.0.description>잠을 자러 왔지, 내 믿음을 설득당하러 온 게 아니다.</HH_GuestPreached.stages.0.description>
+  <HH_GuestPreached.stages.0.label>설교를 들음</HH_GuestPreached.stages.0.label>
+  <HH_SleptTogether.stages.0.description>둘이 쓸 큰 침대 하나. 이번 여행에서 내가 원한 건 그것뿐이었다.</HH_SleptTogether.stages.0.description>
+  <HH_SleptTogether.stages.0.label>파트너 곁에서 잠</HH_SleptTogether.stages.0.label>
+  <HH_WantedDoubleBed.stages.0.description>둘이 쓸 침대 하나를 부탁했는데 좁은 침대 두 개를 받았다. 아늑하진 않다.</HH_WantedDoubleBed.stages.0.description>
+  <HH_WantedDoubleBed.stages.0.label>우리에게 더블베드 없음</HH_WantedDoubleBed.stages.0.label>
 </LanguageData>

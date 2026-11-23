@@ -38,4 +38,10 @@
   <HH_GuestWaitingRoom.stages.2.description>そこで待つのは、ほとんど楽しみだった。</HH_GuestWaitingRoom.stages.2.description>
   <HH_GuestWaitingRoom.stages.3.label>素晴らしい待合室</HH_GuestWaitingRoom.stages.3.label>
   <HH_GuestWaitingRoom.stages.3.description>あんな部屋なら、もっと長く待っても構わなかった。</HH_GuestWaitingRoom.stages.3.description>
+  <HH_GuestPreached.stages.0.description>寝に来たのであって、信念を説き伏せられに来たのではない。</HH_GuestPreached.stages.0.description>
+  <HH_GuestPreached.stages.0.label>説教された</HH_GuestPreached.stages.0.label>
+  <HH_SleptTogether.stages.0.description>二人で一つの大きなベッド。この旅に求めていたのはそれだけだ。</HH_SleptTogether.stages.0.description>
+  <HH_SleptTogether.stages.0.label>恋人の隣で眠った</HH_SleptTogether.stages.0.label>
+  <HH_WantedDoubleBed.stages.0.description>二人用のベッドを頼んだのに、狭いベッドが二つ来た。居心地は良くない。</HH_WantedDoubleBed.stages.0.description>
+  <HH_WantedDoubleBed.stages.0.label>二人用ベッドがない</HH_WantedDoubleBed.stages.0.label>
 </LanguageData>

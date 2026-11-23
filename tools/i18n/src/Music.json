@@ -1,0 +1,11 @@
+{
+ "keyed": {},
+ "defs": {
+  "SongDef/HH_Song_HarborMorning.label": "Harbor Morning",
+  "SongDef/HH_Song_HarborMorning.description": "A bright acoustic morning by the water. Spring and summer days.",
+  "SongDef/HH_Song_LanternsAtTheInn.label": "Lanterns at the Inn",
+  "SongDef/HH_Song_LanternsAtTheInn.description": "Warm lights in the common room while the leaves turn. Autumn.",
+  "SongDef/HH_Song_SnowOnTheSign.label": "Snow on the Sign",
+  "SongDef/HH_Song_SnowOnTheSign.description": "Quiet snowfall over the inn sign, the fire still burning inside. Winter."
+ }
+}

@@ -209,7 +209,7 @@
   <HH.UI.Guests.Col.Wing>Křídlo</HH.UI.Guests.Col.Wing>
   <HH.UI.Guests.Col.Handling>Péče</HH.UI.Guests.Col.Handling>
   <HH.UI.Guests.Col.Leaves>Odjede za</HH.UI.Guests.Col.Leaves>
-  <HH.UI.Guests.HandlingTip>Klikni pro přepnutí: Základy → Doprovod → Nábor. Doprovod a nábor vyžadují kolonisty s prací na pohostinství.</HH.UI.Guests.HandlingTip>
+  <HH.UI.Guests.HandlingTip>Klikni pro přepnutí způsobu obsluhy. Doprovázet, Nabírat a Obrátit vyžadují kolonisty s prací Pohostinství; Obrátit se ukáže jen u hostů jiné ideologie (Ideologie).</HH.UI.Guests.HandlingTip>
   <HH.UI.Overview.CatToday>dnes {0}</HH.UI.Overview.CatToday>
   <HH.UI.Overview.CatWeek>7 dní {0}</HH.UI.Overview.CatWeek>
   <HH.UI.Overview.Week>Příjem za posledních 7 dní</HH.UI.Overview.Week>
@@ -313,4 +313,26 @@
   <HH.Setting.core.ironBank.Desc>Vymáhání dluhů vždy vyšplhá na nejvyšší stupeň, ať je obtížnost jakákoli. Nikdo vám tiše neodkládá splátky.</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.peacefulUnderworld.Desc>Temné provozovny fungují bez násilí: žádná zápasnická jáma, žádný výslech, žádné lovení lidí, žádná klinika, žádné výpalné. Zadní místnost, výkupce a drogový salon zůstávají.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>Plánování hostů a kontroly pokojů běží poloviční rychlostí. Pomůže na pomalých počítačích; hosté můžou reagovat o něco později.</HH.Setting.core.perfMode.Desc>
+  <HH.Kitchen.Cookbook.ColCuisine>Kuchyně</HH.Kitchen.Cookbook.ColCuisine>
+  <HH.Kitchen.Cookbook.ColDish>Pokrm</HH.Kitchen.Cookbook.ColDish>
+  <HH.Kitchen.Cookbook.ColLevel>Úroveň</HH.Kitchen.Cookbook.ColLevel>
+  <HH.Kitchen.Cookbook.ColPrice>Cena</HH.Kitchen.Cookbook.ColPrice>
+  <HH.Kitchen.Cookbook.ColSkill>Dovednost</HH.Kitchen.Cookbook.ColSkill>
+  <HH.Kitchen.Cookbook.ColStations>Vaří se u</HH.Kitchen.Cookbook.ColStations>
+  <HH.Setting.core.windowScale>Velikost oken Hearth &amp; Harbor</HH.Setting.core.windowScale>
+  <HH.Setting.core.windowScale.Desc>Všechna okna Hearth &amp; Harbor a Silverline se zvětší nebo zmenší tímto koeficientem (navíc k automatické velikosti pro velké obrazovky).</HH.Setting.core.windowScale.Desc>
+  <HH.UI.DevGroup.Desc>Vývojářské nástroje Hearth &amp; Harbor pro tuto budovu ({0}). Zobrazí se jen ve vývojářském režimu; seskupení vypneš v nastavení Hostince.</HH.UI.DevGroup.Desc>
+  <HH.UI.DevGroup.Label>Vývoj: Hearth &amp; Harbor</HH.UI.DevGroup.Label>
+  <HH.UI.Diag.Lines>{0} řádků</HH.UI.Diag.Lines>
+  <HH.UI.Diff.Jump>Přejít na</HH.UI.Diff.Jump>
+  <HH.UI.Diff.JumpTop>Úroveň a posuvník</HH.UI.Diff.JumpTop>
+  <HH.UI.GuestTab.CollapseTip>Klikni pro sbalení</HH.UI.GuestTab.CollapseTip>
+  <HH.UI.GuestTab.ExpandTip>Klikni pro rozbalení</HH.UI.GuestTab.ExpandTip>
+  <HH.UI.Handling.Convert>Obrátit</HH.UI.Handling.Convert>
+  <HH.UI.Handling.Convert.Tip>Jako Doprovázet, plus řeči o tvé ideologii. Každá řeč otřese jistotou hosta v jeho vlastní; na nule přijme tvoji. Vnucující se řeč může urazit (nálada −4, méně utrácí). Vyžaduje DLC Ideologie a hosta jiné ideologie.</HH.UI.Handling.Convert.Tip>
+  <HH.UI.Page.Sub.casino>Domy, tržby a jak si každá hra vede oproti svým šancím.</HH.UI.Page.Sub.casino>
+  <HH.UI.Page.Sub.city>Kino, salon, galerie, park, taxi a ochranka: co je postaveno a co to vydělává.</HH.UI.Page.Sub.city>
+  <HH.UI.Page.Sub.guests>Všichni, kdo bydlí nebo navštěvují tvůj hostinec. Klikni na řádek a přejdeš na hosta; klikni na buňku obsluhy a změníš ji.</HH.UI.Page.Sub.guests>
+  <HH.UI.Page.Sub.overview>Dnes na první pohled: hosté, tržby a stav každého podniku.</HH.UI.Page.Sub.overview>
+  <HH.UI.Page.Sub.underworld>Šeptanda, váhy příchodů a tržby temné strany.</HH.UI.Page.Sub.underworld>
 </LanguageData>

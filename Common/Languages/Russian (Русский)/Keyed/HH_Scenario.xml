@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Scen.BackRoom.Intro>Письмо было напечатано на плотной чёрной бумаге и слабо пахло сигарами.\n\n«Ваши долги урегулированы. Все до единого. Мы свяжемся насчёт комнаты за кухней. Пожалуйста, содержите её в порядке.»\n\nУ вашего полустанка теперь новые партнёры. Они терпеливы, вежливы и никогда, ни за что не забывают цифры.\n\nЭтот старт использует тёмное содержимое Hearth &amp; Harbor. Смягчить его можно в любой момент в настройках мода.</HH.Scen.BackRoom.Intro>
+  <HH.Scen.Editor.Editing>Редактирование правил Hearth &amp; Harbor для этого сценария.</HH.Scen.Editor.Editing>
+  <HH.Scen.Editor.ModuleResetTip>Оставить этот модуль по шаблону игрока.</HH.Scen.Editor.ModuleResetTip>
+  <HH.Scen.Editor.ModulesIntro>Модули, которые этот сценарий включает или выключает. Модуль, который вы не трогаете, следует шаблону игрока.</HH.Scen.Editor.ModulesIntro>
+  <HH.Scen.Editor.Note>Сценарий задаёт только то, что вы меняете здесь (помечено янтарным цветом). Непомеченные строки показывают значения по умолчанию; в новой игре они берутся из шаблона игрока. «Сброс» возвращает строку или модуль к шаблону.</HH.Scen.Editor.Note>
+  <HH.Scen.Editor.Side>Правила сценария</HH.Scen.Editor.Side>
+  <HH.Scen.Editor.Title>Правила Hearth &amp; Harbor для этого сценария</HH.Scen.Editor.Title>
+  <HH.Scen.HarborTown.Intro>Купчую подписали впопыхах, и адвокат не стал пить чай. Теперь всё это ваше: потрёпанная гостиница над тихой гаванью, дорога, полная караванов, и ни одного гостя.\n\nПодметите полы, почините крышу, застелите кровать. Повесьте вывеску. Кто-нибудь постучит в дверь раньше, чем вы ждёте, и если вы с ним хорошо обойдётесь, он расскажет об этом всей дороге.\n\nСовет: Хетти Хёртвелл — рассказчица для строителей. А путеводитель Hearth &amp; Harbor в правом верхнем углу объясняет каждый шаг по порядку.</HH.Scen.HarborTown.Intro>
+  <HH.Scen.Module.Off>выкл.</HH.Scen.Module.Off>
+  <HH.Scen.Module.On>вкл.</HH.Scen.Module.On>
+  <HH.Scen.Module.Template>по шаблону</HH.Scen.Module.Template>
+  <HH.Scen.Picker.Nerd>Настройки для знатоков</HH.Scen.Picker.Nerd>
+  <HH.Scen.Picker.Search>Поиск…</HH.Scen.Picker.Search>
+  <HH.Scen.Picker.Title>Выберите настройку Hearth &amp; Harbor</HH.Scen.Picker.Title>
+  <HH.Scen.Rules.Content>Содержимое: {0}</HH.Scen.Rules.Content>
+  <HH.Scen.Rules.Count>Задано настроек: {0}; отдельные настройки добавляются через часть «Настройка Hearth &amp; Harbor».</HH.Scen.Rules.Count>
+  <HH.Scen.Rules.Discovered>Подземный мир уже обнаружен</HH.Scen.Rules.Discovered>
+  <HH.Scen.Rules.More>Ещё настройки… (задано: {0})</HH.Scen.Rules.More>
+  <HH.Scen.Rules.MoreTip>Открывает полный набор настроек Hearth &amp; Harbor для этого сценария. Сценарий задаёт только то, что вы измените там.</HH.Scen.Rules.MoreTip>
+  <HH.Scen.Rules.SumContent>содержимое: {0}</HH.Scen.Rules.SumContent>
+  <HH.Scen.Rules.SumDiscovered>подземный мир уже знает вас</HH.Scen.Rules.SumDiscovered>
+  <HH.Scen.Rules.SumMore>и ещё настроек: {0}</HH.Scen.Rules.SumMore>
+  <HH.Scen.Rules.SumNothing>всё как в вашем шаблоне</HH.Scen.Rules.SumNothing>
+  <HH.Scen.Rules.SumOff>выкл.: {0}</HH.Scen.Rules.SumOff>
+  <HH.Scen.Rules.SumOn>вкл.: {0}</HH.Scen.Rules.SumOn>
+  <HH.Scen.Rules.SumTier>сложность приёма гостей {0} % ({1})</HH.Scen.Rules.SumTier>
+  <HH.Scen.Rules.SummaryHead>Hearth &amp; Harbor: правила</HH.Scen.Rules.SummaryHead>
+  <HH.Scen.Rules.TierTemplate>Сложность приёма гостей: по шаблону</HH.Scen.Rules.TierTemplate>
+  <HH.Scen.Rules.TierTip>Отметьте, чтобы сценарий задавал сложность приёма гостей (0–500 %). Если не отмечено, решает шаблон игрока.</HH.Scen.Rules.TierTip>
+  <HH.Scen.SetByScenario>задано сценарием</HH.Scen.SetByScenario>
+  <HH.Scen.Setting.Intro>Настройки Hearth &amp; Harbor</HH.Scen.Setting.Intro>
+  <HH.Scen.Setting.Pick>Выберите настройку…</HH.Scen.Setting.Pick>
+  <HH.Scen.Setting.Unknown>Неизвестная настройка (модуль не найден?)</HH.Scen.Setting.Unknown>
+</LanguageData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.MusicMode.Always>Всегда</HH.Enum.MusicMode.Always>
+  <HH.Enum.MusicMode.Off>Выкл.</HH.Enum.MusicMode.Off>
+  <HH.Enum.MusicMode.WhenHosting>Когда принимаем гостей</HH.Enum.MusicMode.WhenHosting>
+  <HH.Setting.core.creatorPawn>Автор может бродить по Ободу</HH.Setting.core.creatorPawn>
+  <HH.Setting.core.creatorPawn.Desc>Как персонажи-создатели из базовой игры, автор Hearth &amp; Harbor может время от времени появиться как сгенерированный персонаж: добрый, трудолюбивый бродячий трактирщик.</HH.Setting.core.creatorPawn.Desc>
+  <HH.Setting.core.music>Музыка Hearth &amp; Harbor</HH.Setting.core.music>
+  <HH.Setting.core.music.Desc>Наши три спокойные песни (одна для весенних и летних дней, одна для осени, одна для зимы) добавляются в обычный плейлист RimWorld. При гостеприимстве: только в колониях, где есть Hearth &amp; Harbor (гостевая кровать, вывеска заведения или банковский счёт).</HH.Setting.core.music.Desc>
+  <HH.Setting.core.musicShare>Как часто звучат наши песни</HH.Setting.core.musicShare>
+  <HH.Setting.core.musicShare.Desc>Вес наших песен в плейлисте по сравнению с одной песней из базовой игры. 1 = как любая другая песня сезона, 0 = никогда.</HH.Setting.core.musicShare.Desc>
+  <HH.Story.Suggests>{0} предлагает: {1}</HH.Story.Suggests>
+  <HH.Story.SuggestsTip>Нажмите, чтобы использовать сложность приёма, которую предлагает рассказчик. Изменить её можно кнопкой.</HH.Story.SuggestsTip>
+</LanguageData>

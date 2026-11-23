@@ -31,7 +31,7 @@
   <HH.Setting.venues.maxPurchases>손님 한 명이 한 번 머물 때의 구매 횟수</HH.Setting.venues.maxPurchases>
   <HH.Setting.venues.maxPurchases.Desc>한 번 머무는 동안 이만큼 구매하면 손님은 쇼핑을 멈춥니다.</HH.Setting.venues.maxPurchases.Desc>
   <HH.Setting.venues.nightBell>야간 벨</HH.Setting.venues.nightBell>
-  <HH.Setting.venues.nightBell.Desc>손님은 문을 닫은 영업장의 벨을 누를 수 있습니다. 서빙 작업 유형이 켜진 깨어 있는 개척민이 할증료를 받고 문을 열러 옵니다. 아무도 깨우지 않습니다.</HH.Setting.venues.nightBell.Desc>
+  <HH.Setting.venues.nightBell.Desc>문을 닫은 영업장에 손님은 종을 울릴 수 있습니다. '서빙' 작업을 켜 둔 개척민이 종소리를 듣고 달려와 할증 요금을 받고 영업장을 엽니다(누가 불리고 누가 깨워질 수 있는지는 아래 야간 종 설정 참고).</HH.Setting.venues.nightBell.Desc>
   <HH.Setting.venues.nightBellMin>야간 벨 최소 요금</HH.Setting.venues.nightBellMin>
   <HH.Setting.venues.nightBellMin.Desc>벨 서비스는 이 금액(은화) 아래로 내려가지 않습니다.</HH.Setting.venues.nightBellMin.Desc>
   <HH.Setting.venues.nightBellSurcharge>야간 벨 할증료</HH.Setting.venues.nightBellSurcharge>
@@ -107,20 +107,16 @@
   <HH.Venue.Price>가격</HH.Venue.Price>
   <HH.Venue.PriceDesc>이 영업장이 파는 모든 것에 대한 가격 계수입니다. 손님은 지나치게 비싼 가격에 발길을 돌립니다.</HH.Venue.PriceDesc>
   <HH.Venue.PriceFactor>가격 계수</HH.Venue.PriceFactor>
-  <HH.Venue.PriceHint>손님은 가격을 그 물건이 자기에게 주는 가치와 비교합니다. 부유한 손님일수록 더 참습니다. 당번이 없는 영업장은 조금 덜 받습니다(셀프 서비스). 야간 벨 서비스는 추가 요금이 듭니다. 무료는 정말 무료입니다.</HH.Venue.PriceHint>
   <HH.Venue.PriceLine>가격</HH.Venue.PriceLine>
   <HH.Venue.PriceTitle>가격</HH.Venue.PriceTitle>
   <HH.Venue.Pricey>비쌈</HH.Venue.Pricey>
   <HH.Venue.Rename>이름 바꾸기</HH.Venue.Rename>
   <HH.Venue.RenameDesc>이 영업장에 이름을 붙이세요.</HH.Venue.RenameDesc>
   <HH.Venue.RenameTitle>영업장 이름 짓기</HH.Venue.RenameTitle>
-  <HH.Venue.Reset>기본 이름 사용</HH.Venue.Reset>
   <HH.Venue.Restock>재입고</HH.Venue.Restock>
   <HH.Venue.RestockDesc>이 간판이 자기 방의 보관 장소를 설정해, 운반원이 선반을 계속 채우도록 물품을 '중요' 우선순위로 받게 합니다. 선택 사항이며, 끄면 이전 설정이 돌아옵니다.</HH.Venue.RestockDesc>
   <HH.Venue.RestockHint>켜면 이 방의 모든 보관 장소(보관 구역과 선반, 누구 소유든)가 아래에서 체크한 물품을 '중요' 우선순위로 받아, 운반원이 방을 계속 채웁니다. 끄면 보관 장소의 이전 설정이 돌아옵니다.</HH.Venue.RestockHint>
   <HH.Venue.RestockNoShop>이 영업장은 방에서 아무것도 팔지 않으므로 재입고할 것이 없습니다.</HH.Venue.RestockNoShop>
-  <HH.Venue.RestockSwitchOff>재입고 켜짐 – 끄고 보관 장소 되돌려주기</HH.Venue.RestockSwitchOff>
-  <HH.Venue.RestockSwitchOn>재입고 꺼짐 – 켜기</HH.Venue.RestockSwitchOn>
   <HH.Venue.RestockTitle>재입고</HH.Venue.RestockTitle>
   <HH.Venue.RippedOff>바가지 쓰다</HH.Venue.RippedOff>
   <HH.Venue.Sales>오늘 매출</HH.Venue.Sales>
@@ -141,4 +137,142 @@
   <HH.Venue.MarketBlock.NoShop>상점 없음</HH.Venue.MarketBlock.NoShop>
   <HH.Venue.MarketBlock.Stalls>시장 노점 {0}/{1}</HH.Venue.MarketBlock.Stalls>
   <HH.Venue.MarketBlock.Renown>명성 {0}/{1}</HH.Venue.MarketBlock.Renown>
+  <HH.Core.FlipBlocked>반대편이 막혀 있습니다. 일꾼이 그곳에 설 수 없습니다.</HH.Core.FlipBlocked>
+  <HH.Core.FlipBusy>사용 중: {0}이(가) 지금 사용하고 있습니다.</HH.Core.FlipBusy>
+  <HH.Core.FlipNoSide>이것에는 작업 방향이 없습니다.</HH.Core.FlipNoSide>
+  <HH.Core.FlipSame>양쪽 방향이 같습니다.</HH.Core.FlipSame>
+  <HH.Core.FlipSide>작업 방향 바꾸기</HH.Core.FlipSide>
+  <HH.Core.FlipSideDesc>그 자리에서 뒤집어 여기서 일하는 사람이 반대편에 서도록 합니다. 위치, 청구 및 연결은 그대로 유지됩니다.</HH.Core.FlipSideDesc>
+  <HH.Enum.BellWakes.AwakeOnly>깨어 있는 개척민만</HH.Enum.BellWakes.AwakeOnly>
+  <HH.Enum.BellWakes.Off>끔 (벨만 울림)</HH.Enum.BellWakes.Off>
+  <HH.Enum.BellWakes.WakeVolunteers>자원자도 깨우기</HH.Enum.BellWakes.WakeVolunteers>
+  <HH.Enum.BellWho.AnyColonist>아무 개척민</HH.Enum.BellWho.AnyColonist>
+  <HH.Enum.BellWho.ServingOnly>서비스 담당 개척민만</HH.Enum.BellWho.ServingOnly>
+  <HH.Honor.Line>정직 시스템: 무인 운영</HH.Honor.Line>
+  <HH.Honor.MemoPaid>정직 상자: {1}중 {0} 지불</HH.Honor.MemoPaid>
+  <HH.Honor.MoteNothing>지불하지 않음!</HH.Honor.MoteNothing>
+  <HH.Honor.MotePart>{0} % 지불</HH.Honor.MotePart>
+  <HH.Honor.PriceNote>정직 시스템: 정가, 일부 손님은 덜 냄</HH.Honor.PriceNote>
+  <HH.Honor.Report>오늘 정직 상자: 판매 {0}건, 은화 {1} 부족 ({2} %) · 전체: 판매 {3}건, 덜 지불 {4}건, 미지불 {5}건, 은화 {6} 부족</HH.Honor.Report>
+  <HH.Honor.Section>정직 상자</HH.Honor.Section>
+  <HH.Honor.Toggle>정직 시스템</HH.Honor.Toggle>
+  <HH.Honor.ToggleDesc>이 사업을 무인으로 운영합니다. 손님은 원하는 것을 가져가고 돈은 정직 상자에 넣습니다. 정가를 받으며 근무자는 필요 없습니다. 다만 일부 손님은 정가보다 적게 내고, 몇몇은 전혀 내지 않습니다(확률은 설정에서 조정; 콜로니스트가 보고 있으면 줄어듭니다). 간판 보고서에 부족분이 표시됩니다.</HH.Honor.ToggleDesc>
+  <HH.Honor.Witnessed>{0}이(가) {1}에서 돈을 내지 않고 나갔습니다 – 콜로니스트가 목격했습니다.</HH.Honor.Witnessed>
+  <HH.Names.DefaultOwner>Harbor</HH.Names.DefaultOwner>
+  <HH.Serve.IdleMote>*하암*</HH.Serve.IdleMote>
+  <HH.Serve.ServedShift>이번 근무에 {0}명 응대</HH.Serve.ServedShift>
+  <HH.Serve.TipMemo>{0}의 팁</HH.Serve.TipMemo>
+  <HH.Serve.TipMote>팁 +{0}</HH.Serve.TipMote>
+  <HH.Serve.TipsTotal>지금까지 직원들이 받은 팁: 은화 {0}</HH.Serve.TipsTotal>
+  <HH.Setting.venues.autoNames>새 영업장 이름 자동으로 짓기</HH.Setting.venues.autoNames>
+  <HH.Setting.venues.autoNames.Desc>새 간판에는 업종에 맞는 이름이 붙습니다(예: 선술집이라면 '졸린 알파카'). 언제든 이름을 바꾸거나 다른 이름을 뽑을 수 있습니다.</HH.Setting.venues.autoNames.Desc>
+  <HH.Setting.venues.bellHurry>야간 종: 개척민이 서두름</HH.Setting.venues.bellHurry>
+  <HH.Setting.venues.bellHurry.Desc>종소리에 응한 개척민은 걷지 않고 영업장까지 달려갑니다.</HH.Setting.venues.bellHurry.Desc>
+  <HH.Setting.venues.bellRange>야간 종 청취 범위(칸)</HH.Setting.venues.bellRange>
+  <HH.Setting.venues.bellRange.Desc>보통 청력을 가진 사람에게 종소리가 닿는 거리. 사이의 벽과 닫힌 문은 이를 줄이고, 청력이 나쁘면 크게 줄어들며, 청각장애 개척민은 전혀 듣지 못합니다.</HH.Setting.venues.bellRange.Desc>
+  <HH.Setting.venues.bellResponders>야간 종: 종 한 번에 달려오는 개척민 수</HH.Setting.venues.bellResponders>
+  <HH.Setting.venues.bellResponders.Desc>종이 울릴 때 달려오는 개척민의 최대 수.</HH.Setting.venues.bellResponders.Desc>
+  <HH.Setting.venues.bellWakeCooldownHours>야간 종: 수면 보호(시간)</HH.Setting.venues.bellWakeCooldownHours>
+  <HH.Setting.venues.bellWakeCooldownHours.Desc>종소리에 깬 개척민은 이 시간 동안 다시 깨우지 않습니다.</HH.Setting.venues.bellWakeCooldownHours.Desc>
+  <HH.Setting.venues.bellWakes>야간 종: 누구를 부르나</HH.Setting.venues.bellWakes>
+  <HH.Setting.venues.bellWakes.Desc>끔: 종은 소리만 냅니다. 개척민은 작업 여유가 있을 때 알아챕니다. 깨어 있는 사람만: 청취 범위 안의 깨어 있는 개척민이 영업장으로 달려갑니다. 자원자 깨우기: 잠든 개척민 중 '서빙' 작업 우선순위가 1 또는 2인 사람도 깨우며(단순 작업 설정을 쓰는 경우 포함), 각자 반나절에 최대 한 번이고 기분이 약간 나빠집니다.</HH.Setting.venues.bellWakes.Desc>
+  <HH.Setting.venues.bellWho>야간 종: 누가 응할 수 있나</HH.Setting.venues.bellWho>
+  <HH.Setting.venues.bellWho.Desc>서빙만: '서빙' 작업 유형을 켠 개척민만. 아무 개척민: 서빙할 수 있는 모든 개척민.</HH.Setting.venues.bellWho.Desc>
+  <HH.Setting.venues.busyServedPerHour>바쁜 근무: 시간당 응대 손님 수</HH.Setting.venues.busyServedPerHour>
+  <HH.Setting.venues.busyServedPerHour.Desc>담당자가 시간당 이 수 이상의 손님을 응대하면 근무는 바쁜 것으로 집계되어 기분이 좋아집니다.</HH.Setting.venues.busyServedPerHour.Desc>
+  <HH.Setting.venues.honorMessages>신뢰 시스템: 목격한 절도 알리기</HH.Setting.venues.honorMessages>
+  <HH.Setting.venues.honorMessages.Desc>개척민이 손님이 값을 치르지 않고 떠나는 것을 목격하면 메시지를 보여 줍니다.</HH.Setting.venues.honorMessages.Desc>
+  <HH.Setting.venues.honorNoPay>신뢰 시스템: 아무것도 내지 않을 확률</HH.Setting.venues.honorNoPay>
+  <HH.Setting.venues.honorNoPay.Desc>직원 없이 운영되는 신뢰 시스템 영업장에서, 손님이 값을 한 푼도 내지 않고 물건을 가져갈 확률.</HH.Setting.venues.honorNoPay.Desc>
+  <HH.Setting.venues.honorUnderpay>신뢰 시스템: 적게 낼 확률</HH.Setting.venues.honorUnderpay>
+  <HH.Setting.venues.honorUnderpay.Desc>직원 없이 운영되는 신뢰 시스템 영업장에서, 손님이 가격의 일부(30~80%)만 상자에 넣고 갈 확률.</HH.Setting.venues.honorUnderpay.Desc>
+  <HH.Setting.venues.honorWatched>신뢰 시스템: 감시의 효과</HH.Setting.venues.honorWatched>
+  <HH.Setting.venues.honorWatched.Desc>개척민이 지켜볼 수 있을 때 손님이 적게 내는 빈도가 얼마나 줄어드는지(1 = 지켜보는 동안에는 절대 없음).</HH.Setting.venues.honorWatched.Desc>
+  <HH.Setting.venues.idleHours>지루해지기까지(손님 없이 흐른 시간)</HH.Setting.venues.idleHours>
+  <HH.Setting.venues.idleHours.Desc>근무 중 이 시간 동안 아무도 응대하지 못한 담당자는 지루해집니다(기분이 나빠지고, 그 뒤 구간마다 조금씩 더 나빠짐).</HH.Setting.venues.idleHours.Desc>
+  <HH.Setting.venues.requireSetup>영업장에는 가구가 필요함</HH.Setting.venues.requireSetup>
+  <HH.Setting.venues.requireSetup.Desc>영업장은 업종에 필요한 가구가 방에 놓여야만 엽니다(선술집은 카운터, 테이블, 의자가 필요하고, 카지노는 최소 게임 한 대 등. 간판의 설정 탭 참고). 끔: 가구가 없으면 힌트만 보여 줍니다.</HH.Setting.venues.requireSetup.Desc>
+  <HH.Setting.venues.serviceSkill>사교 기술의 비중</HH.Setting.venues.serviceSkill>
+  <HH.Setting.venues.serviceSkill.Desc>근무 중인 사람의 사교 기술이 얼마나 중요한지: 더 친절한 응대, 더 큰 구매, 팁, 더 빠른 판매. 0 = 기술은 무관.</HH.Setting.venues.serviceSkill.Desc>
+  <HH.Setting.venues.setupHints>간판에 건설 버튼 표시</HH.Setting.venues.setupHints>
+  <HH.Setting.venues.setupHints.Desc>선택한 영업장 간판은 아직 부족한 업종 가구의 건설 버튼을 보여 줍니다.</HH.Setting.venues.setupHints.Desc>
+  <HH.Setting.venues.shiftThoughts>근무 기분</HH.Setting.venues.shiftThoughts>
+  <HH.Setting.venues.shiftThoughts.Desc>영업장을 맡은 개척민은 바쁜 근무 뒤에 흐뭇해하고, 할 일 없이 몇 시간씩 서 있으면 지루해합니다.</HH.Setting.venues.shiftThoughts.Desc>
+  <HH.Setting.venues.staffRule>인력 규칙</HH.Setting.venues.staffRule>
+  <HH.Setting.venues.staffRule.Desc>영업장 종류별로: 선술집, 식당, 카지노, 스파에는 담당자가 있어야 하고, 상점과 라운지는 필요 없습니다. 절대 안 함: 모든 영업장이 셀프서비스로 운영됩니다. 항상: 모든 영업장에 담당자가 있어야 합니다.</HH.Setting.venues.staffRule.Desc>
+  <HH.Setting.venues.tipShare>팁</HH.Setting.venues.tipShare>
+  <HH.Setting.venues.tipShare.Desc>완벽한 응대에 대해 손님이 구매 금액 위에 남기는 가장 큰 팁(가격 대비 비율). 팁이 나올 확률과 크기는 담당자의 사교 기술과 함께 커집니다.</HH.Setting.venues.tipShare.Desc>
+  <HH.Setup.Attention>확인: {0}</HH.Setup.Attention>
+  <HH.Setup.BannerAttention>가구는 모두 갖춰졌다. 손님을 제대로 응대하려면 아래 미결 항목을 확인하라.</HH.Setup.BannerAttention>
+  <HH.Setup.BannerMissing>이 {0}에는 아직 가구 일부가 없다.</HH.Setup.BannerMissing>
+  <HH.Setup.BannerNotReady>준비 안 됨: 필수로 표시된 것이 모두 방에 놓이기 전까지 이 {0}은(는) 문을 열지 않는다.</HH.Setup.BannerNotReady>
+  <HH.Setup.BannerReady>이 시설에 필요한 것이 모두 갖춰졌다.</HH.Setup.BannerReady>
+  <HH.Setup.Build>건설</HH.Setup.Build>
+  <HH.Setup.BuildButton>건설: {0}</HH.Setup.BuildButton>
+  <HH.Setup.BuildButtonDesc>이 {0}에는 아직 {1}이(가) 필요하다. 클릭하면 방에 하나 놓는다.</HH.Setup.BuildButtonDesc>
+  <HH.Setup.ChipNoRoom>방 없음</HH.Setup.ChipNoRoom>
+  <HH.Setup.ChipNoStaff>직원 대기 중</HH.Setup.ChipNoStaff>
+  <HH.Setup.FooterLoose>'시설에는 가구가 필요하다' 규칙이 꺼져 있다: 빠진 항목은 힌트일 뿐이다.</HH.Setup.FooterLoose>
+  <HH.Setup.FooterStrict>필수 가구가 방에 놓이기 전까지 이 시설은 문을 닫아 둔다. 이 규칙은 상점 및 음식 설정에서 끌 수 있다.</HH.Setup.FooterStrict>
+  <HH.Setup.GizmoDesc>이 시설의 설치 안내를 연다: 이 종류에 필요한 것, 이미 갖춘 것, 빠진 것마다 건설 버튼이 있다.</HH.Setup.GizmoDesc>
+  <HH.Setup.GizmoMissing>설치: {0} 부족</HH.Setup.GizmoMissing>
+  <HH.Setup.GizmoReady>설치: 준비 완료</HH.Setup.GizmoReady>
+  <HH.Setup.HonorNotNeeded>정직 상자 방식에서는 필요 없음</HH.Setup.HonorNotNeeded>
+  <HH.Setup.LoadNotice>문을 열 준비가 안 되었다, 빠진 가구: {0}. 간판의 설치 탭에 건설 버튼이 있다.</HH.Setup.LoadNotice>
+  <HH.Setup.MissingLine>설치 – 부족: {0}</HH.Setup.MissingLine>
+  <HH.Setup.NeedsResearch>연구 필요: {0}</HH.Setup.NeedsResearch>
+  <HH.Setup.NoScreenYet>먼저 화면을 지어라</HH.Setup.NoScreenYet>
+  <HH.Setup.NotAvailable>지금은 이용할 수 없음</HH.Setup.NotAvailable>
+  <HH.Setup.NotBuildable>건설 메뉴에 없음</HH.Setup.NotBuildable>
+  <HH.Setup.NotReadyLine>준비 안 됨 – 부족: {0}</HH.Setup.NotReadyLine>
+  <HH.Setup.NotReadyState>준비 안 됨</HH.Setup.NotReadyState>
+  <HH.Setup.NowReady>{0}에 필요한 것이 모두 갖춰져 문을 열 수 있다.</HH.Setup.NowReady>
+  <HH.Setup.OperationalTip>손님을 응대하려면 필요하다. 문을 닫아 두지는 않는다.</HH.Setup.OperationalTip>
+  <HH.Setup.PickType>시설 종류</HH.Setup.PickType>
+  <HH.Setup.Planned>{0} 계획됨</HH.Setup.Planned>
+  <HH.Setup.ReadyLine>설치: 준비 완료</HH.Setup.ReadyLine>
+  <HH.Setup.Recommended>추천 항목 {0}개 미설치</HH.Setup.Recommended>
+  <HH.Setup.RecommendedHead>추천</HH.Setup.RecommendedHead>
+  <HH.Setup.RecommendedTip>추천: 없어도 시설은 돌아가지만 손님들이 좋아한다.</HH.Setup.RecommendedTip>
+  <HH.Setup.RenameTip>클릭하면 이 시설의 이름을 바꾼다.</HH.Setup.RenameTip>
+  <HH.Setup.Required>필수</HH.Setup.Required>
+  <HH.Setup.RestockTip>간판이 방의 선반과 비축 공간을 설정해 판매 물품을 받도록 하라.</HH.Setup.RestockTip>
+  <HH.Setup.ShowTip>방에 이미 있는 것을 가리켜라.</HH.Setup.ShowTip>
+  <HH.Setup.Staff>서비스 작업을 하는 사람</HH.Setup.Staff>
+  <HH.Setup.StaffHint>개척민 한 명 이상의 작업 유형에서 서비스(Serving)를 켜라.</HH.Setup.StaffHint>
+  <HH.Setup.Stock>판매 물품</HH.Setup.Stock>
+  <HH.Setup.StockHint>이 시설이 파는 물건을 방 안에 보관하라.</HH.Setup.StockHint>
+  <HH.Setup.StockNote>판매용 {0}스택</HH.Setup.StockNote>
+  <HH.Setup.TabLabel>설치</HH.Setup.TabLabel>
+  <HH.Setup.WorkTab>작업 탭</HH.Setup.WorkTab>
+  <HH.Setup.WorkTabTip>작업 탭을 열고 사교적인 개척민에게 서비스(Serving) 작업 유형을 주어라.</HH.Setup.WorkTabTip>
+  <HH.Setup.WorkersNote>개척민 {0}명이 서비스를 한다</HH.Setup.WorkersNote>
+  <HH.Venue.BellAnswered>가는 중입니다!</HH.Venue.BellAnswered>
+  <HH.Venue.BellAnsweredBy>야간 벨: {0}이(가) 응답함</HH.Venue.BellAnsweredBy>
+  <HH.Venue.BellNobody>야간 벨: 울리는 중, 아직 아무도 오지 않음</HH.Venue.BellNobody>
+  <HH.Venue.BellNote>야간 벨</HH.Venue.BellNote>
+  <HH.Venue.BellOnTheWay>야간 벨: {0}이(가) 가는 중</HH.Venue.BellOnTheWay>
+  <HH.Venue.BellRungAgo>{0} 전에 울림</HH.Venue.BellRungAgo>
+  <HH.Venue.BellUnanswered>{0}의 야간 벨이 울리고 있지만 아무도 오지 않습니다. 서비스(Serving) 작업 유형의 개척민이 깨어 있고 들릴 만큼 가까이 있어야 합니다.</HH.Venue.BellUnanswered>
+  <HH.Venue.ClosedNow>지금 문 닫음</HH.Venue.ClosedNow>
+  <HH.Venue.NameAutoHint>업종을 바꾸면 간판에 맞는 이름이 제안됩니다. 직접 입력한 이름은 그대로 남습니다.</HH.Venue.NameAutoHint>
+  <HH.Venue.NamePlain>기본: {0}</HH.Venue.NamePlain>
+  <HH.Venue.NameSuggest>이름 제안</HH.Venue.NameSuggest>
+  <HH.Venue.NameSuggestTip>이 업종에 어울리는 이름을 뽑습니다. 마음에 들 때까지 다시 뽑으십시오.</HH.Venue.NameSuggestTip>
+  <HH.Venue.Now>지금</HH.Venue.Now>
+  <HH.Venue.OpenNow>지금 영업 중</HH.Venue.OpenNow>
+  <HH.Venue.PriceColItem>판매 품목</HH.Venue.PriceColItem>
+  <HH.Venue.PriceColPrice>손님 지불액</HH.Venue.PriceColPrice>
+  <HH.Venue.PriceColValue>가치</HH.Venue.PriceColValue>
+  <HH.Venue.PriceEmpty>객실에 판매 중인 물건이 아직 없습니다.</HH.Venue.PriceEmpty>
+  <HH.Venue.PriceHintShort>손님은 가격을 그 물건이 자기에게 주는 가치와 비교합니다. 부유한 손님은 더 많이 감수합니다. 무료는 정말 무료입니다.</HH.Venue.PriceHintShort>
+  <HH.Venue.PriceNoGoods>이런 업종은 객실에서 상품을 팔지 않습니다.</HH.Venue.PriceNoGoods>
+  <HH.Venue.PriceNow>지금 손님은 시장 가치의 {0}%를 지불합니다</HH.Venue.PriceNow>
+  <HH.Venue.PriceSetting>가격 수준 설정</HH.Venue.PriceSetting>
+  <HH.Venue.RestockBtnOff>끄기</HH.Venue.RestockBtnOff>
+  <HH.Venue.RestockBtnOn>켜기</HH.Venue.RestockBtnOn>
+  <HH.Venue.RestockFooter>이 방의 보관 칸: {0} · 지금 판매 중인 묶음: {1}</HH.Venue.RestockFooter>
+  <HH.Venue.RestockStateOff>재입고가 꺼져 있음: 방의 보관소는 자체 설정을 따릅니다</HH.Venue.RestockStateOff>
+  <HH.Venue.RestockStateOn>재입고가 켜져 있음: 방의 보관소는 이 목록을 따릅니다</HH.Venue.RestockStateOn>
+  <HH.Venue.SelfServiceNote>셀프 서비스</HH.Venue.SelfServiceNote>
 </LanguageData>

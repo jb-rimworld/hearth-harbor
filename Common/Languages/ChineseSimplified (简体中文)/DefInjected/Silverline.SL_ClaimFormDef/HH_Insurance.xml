@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ClaimForm_Money.description>L-1 表：用于罚款、对第三方的损害以及停业。写明起因，以及谁能证实。</SL_ClaimForm_Money.description>
+  <SL_ClaimForm_Money.label>罚款与责任理赔表</SL_ClaimForm_Money.label>
+  <SL_ClaimForm_Person.description>P-2 表：用于死亡与断肢。写明经过，并附一名证人。</SL_ClaimForm_Person.description>
+  <SL_ClaimForm_Person.label>人身理赔表</SL_ClaimForm_Person.label>
+  <SL_ClaimForm_Property.description>B-4 表：用于被毁的建筑、载具和作物。写明经过、损毁程度、目击者，以及你希望如何获得赔付。</SL_ClaimForm_Property.description>
+  <SL_ClaimForm_Property.label>财产理赔表</SL_ClaimForm_Property.label>
+</LanguageData>

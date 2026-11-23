@@ -202,5 +202,42 @@
   <HH.Finance.Help.Tip>브라우저에서 웹사이트를 엽니다.</HH.Finance.Help.Tip>
   <HH.Finance.Help.Url1>https://findahelpline.com/</HH.Finance.Help.Url1>
   <HH.Finance.Help.Url2>https://www.gamblingtherapy.org/</HH.Finance.Help.Url2>
-  <HH.Finance.Lottery.FreeTicket>{1}의 행운 덕분에 무료 복권: {0}.</HH.Finance.Lottery.FreeTicket>
+  <HH.Finance.Compare>은행 계좌와 상품, 연간 기준</HH.Finance.Compare>
+  <HH.Finance.Lottery.BuyCard>복권 구매</HH.Finance.Lottery.BuyCard>
+  <HH.Finance.Lottery.BuyN>×{0} 구매 ({1})</HH.Finance.Lottery.BuyN>
+  <HH.Finance.Lottery.BuyTicket>이 복권 구매 ({0})</HH.Finance.Lottery.BuyTicket>
+  <HH.Finance.Lottery.CardTickets>보유 복권</HH.Finance.Lottery.CardTickets>
+  <HH.Finance.Lottery.Clear>지우기</HH.Finance.Lottery.Clear>
+  <HH.Finance.Lottery.ColonySold>이번 추첨 판매량: {0} · 지금까지 당신의 수익: {1}</HH.Finance.Lottery.ColonySold>
+  <HH.Finance.Lottery.ColonyState>식민지 복권: {0}</HH.Finance.Lottery.ColonyState>
+  <HH.Finance.Lottery.ColonyTerms>복권 조건</HH.Finance.Lottery.ColonyTerms>
+  <HH.Finance.Lottery.CountTip>구매한 복권은 추첨 전까지 여기 남습니다. 추첨 후에는 "지난 추첨"으로 옮겨져 무엇이 맞았는지 볼 수 있습니다.</HH.Finance.Lottery.CountTip>
+  <HH.Finance.Lottery.DaysUnit>{0}일</HH.Finance.Lottery.DaysUnit>
+  <HH.Finance.Lottery.Expected>복권 한 장은 평균적으로 가격 {1} 중 {0}을 돌려줍니다({2} % 환급 비율). 나머지는 하우스 몫입니다.</HH.Finance.Lottery.Expected>
+  <HH.Finance.Lottery.Flash>+복권 {0}장 · −{1}</HH.Finance.Lottery.Flash>
+  <HH.Finance.Lottery.FlashFree>+복권 {0}장 · 무료 {1}장</HH.Finance.Lottery.FlashFree>
+  <HH.Finance.Lottery.FreeTag>무료</HH.Finance.Lottery.FreeTag>
+  <HH.Finance.Lottery.KeptNote> (보유 복권 {1}장 중 가장 좋은 {0}장 표시)</HH.Finance.Lottery.KeptNote>
+  <HH.Finance.Lottery.LastDraw>지난 추첨 #{0}</HH.Finance.Lottery.LastDraw>
+  <HH.Finance.Lottery.LastDrawLine>추첨 번호: {0}. 은화 {2}으로 복권 {1}장을 가지고 있었습니다. 최고 기록: 숫자 5개 중 {3}개 일치{4}. 상금: {5}.</HH.Finance.Lottery.LastDrawLine>
+  <HH.Finance.Lottery.Matches>숫자 5개 중 {0}개</HH.Finance.Lottery.Matches>
+  <HH.Finance.Lottery.MyCount>이번 추첨 보유 복권</HH.Finance.Lottery.MyCount>
+  <HH.Finance.Lottery.MyNone>다음 추첨 복권이 아직 없습니다.</HH.Finance.Lottery.MyNone>
+  <HH.Finance.Lottery.MySpent>이번 추첨에 {0} 사용</HH.Finance.Lottery.MySpent>
+  <HH.Finance.Lottery.MySpentFree>이번 추첨에 {0} 사용, 복권 중 {1}장은 무료</HH.Finance.Lottery.MySpentFree>
+  <HH.Finance.Lottery.NoLast>아직 추첨이 없습니다. 첫 추첨이 곧 옵니다.</HH.Finance.Lottery.NoLast>
+  <HH.Finance.Lottery.NotEnough>계좌에 {0}이 없습니다.</HH.Finance.Lottery.NotEnough>
+  <HH.Finance.Lottery.Odds>잭팟: 복권 한 장당 {0}분의 1. 어떤 상금이든: 약 {1}분의 1.</HH.Finance.Lottery.Odds>
+  <HH.Finance.Lottery.OpenSettings>설정에서 변경</HH.Finance.Lottery.OpenSettings>
+  <HH.Finance.Lottery.OpenSettingsTip>은행 페이지의 Hearth &amp; Harbor 모드 옵션(복권 항목)을 엽니다.</HH.Finance.Lottery.OpenSettingsTip>
+  <HH.Finance.Lottery.Preview>지금까지 당신의 복권: 숫자 {1}개 중 {0}개 일치, 별 {2}</HH.Finance.Lottery.Preview>
+  <HH.Finance.Lottery.QuickN>빠른 선택</HH.Finance.Lottery.QuickN>
+  <HH.Finance.Lottery.QuickTip>무작위 복권을 한 번에 구매합니다. 클릭당 최대 {0}장.</HH.Finance.Lottery.QuickTip>
+  <HH.Finance.Lottery.SetIn>가격, 환급 비율, 추첨 간격, 수수료는 이 세이브 게임의 모드 설정입니다.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SilverUnit>은화 {0}</HH.Finance.Lottery.SilverUnit>
+  <HH.Finance.Lottery.StarMatch> 그리고 별</HH.Finance.Lottery.StarMatch>
+  <HH.Finance.Lottery.StarNone>고르지 않음</HH.Finance.Lottery.StarNone>
+  <HH.Finance.Lottery.StateClosed>마감</HH.Finance.Lottery.StateClosed>
+  <HH.Finance.Lottery.StateOpen>판매 중</HH.Finance.Lottery.StateOpen>
+  <HH.Finance.Lottery.TicketsCount>복권 {0}장 · 최신순</HH.Finance.Lottery.TicketsCount>
 </LanguageData>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Ai.Ans.Arrears>Vous êtes en retard de {0} argent. Veuillez régler cela avant toute chose.</HH.Ai.Ans.Arrears>
+  <HH.Ai.Ans.Denied>Votre réclamation « {0} » a été refusée : {1}. Vous pouvez lire la clause dans l'onglet assurance, où se trouvent aussi les boutons annuler et modifier.</HH.Ai.Ans.Denied>
+  <HH.Ai.Ans.Interest>L'argent sur le compte rapporte un petit intérêt régulier, versé une fois par quadrum. Ce quadrum jusqu'ici : {0} argent ; depuis toujours : {1} argent. Les investissements peuvent rapporter bien davantage, et perdre tout aussi vite : le compte est l'ami raisonnable, le marché est celui qui fait vibrer.</HH.Ai.Ans.Interest>
+  <HH.Ai.Ans.Invest>Votre portefeuille vaut {0} argent en {1} position(s).</HH.Ai.Ans.Invest>
+  <HH.Ai.Ans.Loan>Prêt {0} : {1} argent encore dus, mensualité de {2} argent tous les {3} jour(s), environ {4} % par an, {5} échéance(s) restante(s).</HH.Ai.Ans.Loan>
+  <HH.Ai.Ans.Net>Votre patrimoine net est de {0} argent : {1} sur le compte, {2} chez vous en argent, moins {3} de dettes. La banque vous classe dans le palier « {4} ».</HH.Ai.Ans.Net>
+  <HH.Ai.Ans.NoClaims>Aucune réclamation au dossier. Clawback Mutual n'a pas eu ce plaisir.</HH.Ai.Ans.NoClaims>
+  <HH.Ai.Ans.NoDenied>Aucune de vos réclamations n'a été refusée. La dernière, « {0} », est {1}.</HH.Ai.Ans.NoDenied>
+  <HH.Ai.Ans.NoInvest>Vous ne détenez aucun investissement. L'onglet Investir montre ce qui est proposé ; commencez petit et lisez le bandeau d'actualités avant de faire confiance.</HH.Ai.Ans.NoInvest>
+  <HH.Ai.Ans.NoLoans>Vous n'avez aucun prêt. Être sans dette est un bel état ; je ferai semblant de ne pas être déçu.</HH.Ai.Ans.NoLoans>
+  <HH.Ai.Ans.NoReason>les petits caractères n'ont laissé aucune note</HH.Ai.Ans.NoReason>
+  <HH.Ai.Badge.Ai>IA</HH.Ai.Badge.Ai>
+  <HH.Ai.Badge.Books>d'après les comptes</HH.Ai.Badge.Books>
+  <HH.Ai.Badge.TipChat>Rédigé par l'IA à partir d'un instantané en lecture seule de vos comptes. Elle peut expliquer, elle ne peut rien modifier.</HH.Ai.Badge.TipChat>
+  <HH.Ai.Badge.TipConcierge>rédigé par l'IA à partir des faits du jeu</HH.Ai.Badge.TipConcierge>
+  <HH.Ai.Badge.Written>Rédigé par l'IA. Les étoiles viennent du jeu.</HH.Ai.Badge.Written>
+  <HH.Ai.Chat.Clerk>Guichetière Ottoline</HH.Ai.Chat.Clerk>
+  <HH.Ai.Chat.Empty>Tapez d'abord une question.</HH.Ai.Chat.Empty>
+  <HH.Ai.Chat.NoAccount>Il n'y a pas encore de compte. Ouvrez-en un dans le hall d'abord et je jetterai volontiers un œil.</HH.Ai.Chat.NoAccount>
+  <HH.Ai.Chat.NoMatch>Je ne peux répondre seule qu'à quelques questions d'après les comptes. Utilisez les questions rapides ci-dessous, ou reposez la question quand l'IA sera de retour.</HH.Ai.Chat.NoMatch>
+  <HH.Ai.Chat.OfflineHint>L'IA n'est pas disponible, donc Ottoline répond d'après les comptes si elle le peut.</HH.Ai.Chat.OfflineHint>
+  <HH.Ai.Chat.Placeholder>Demandez à Ottoline tout ce qui concerne votre argent...</HH.Ai.Chat.Placeholder>
+  <HH.Ai.Chat.Quick>Questions rapides</HH.Ai.Chat.Quick>
+  <HH.Ai.Chat.QuickTip>Réponses immédiates d'après vos comptes. Rien n'est envoyé ailleurs.</HH.Ai.Chat.QuickTip>
+  <HH.Ai.Chat.Recheck>Vérifier à nouveau</HH.Ai.Chat.Recheck>
+  <HH.Ai.Chat.Send>Envoyer</HH.Ai.Chat.Send>
+  <HH.Ai.Chat.SetUp>Configurer les réponses de l'IA</HH.Ai.Chat.SetUp>
+  <HH.Ai.Chat.Stop>Arrêter</HH.Ai.Chat.Stop>
+  <HH.Ai.Chat.Stopped>(Vous avez arrêté la question.)</HH.Ai.Chat.Stopped>
+  <HH.Ai.Chat.Thinking>Ottoline réfléchit</HH.Ai.Chat.Thinking>
+  <HH.Ai.Chat.Welcome>Interrogez-moi sur votre compte, vos prêts, vos investissements ou vos polices. J'explique ; je ne déplace jamais votre argent. Si l'IA est absente, les questions rapides ci-dessous fonctionnent quand même.</HH.Ai.Chat.Welcome>
+  <HH.Ai.Chat.You>Vous</HH.Ai.Chat.You>
+  <HH.Ai.Concierge.Ask>Demander</HH.Ai.Concierge.Ask>
+  <HH.Ai.Concierge.Default>Que devrais-je améliorer en premier ?</HH.Ai.Concierge.Default>
+  <HH.Ai.Concierge.Offline>L'IA n'a pas répondu ; voici les conseils propres au jeu.</HH.Ai.Concierge.Offline>
+  <HH.Ai.Concierge.Placeholder>Pourquoi aucun noble ne vient-il ? Que dois-je améliorer ?</HH.Ai.Concierge.Placeholder>
+  <HH.Ai.Concierge.StateAi>IA en ligne : les réponses sont formulées par l'IA</HH.Ai.Concierge.StateAi>
+  <HH.Ai.Concierge.StateOffline>Les réponses viennent des conseils propres au jeu</HH.Ai.Concierge.StateOffline>
+  <HH.Ai.Concierge.Stop>Arrêter</HH.Ai.Concierge.Stop>
+  <HH.Ai.Concierge.Thinking>Le concierge réfléchit</HH.Ai.Concierge.Thinking>
+  <HH.Ai.Concierge.Tips>Voici ce que je vois, par ordre de fréquence :</HH.Ai.Concierge.Tips>
+  <HH.Ai.Concierge.Title>Demander au concierge</HH.Ai.Concierge.Title>
+  <HH.Ai.Consent.Agree>J'accepte et j'active</HH.Ai.Consent.Agree>
+  <HH.Ai.Consent.Budget>Le budget IA est partagé par tous les joueurs sur 24 heures. Quand il est épuisé, l'IA se repose et le jeu utilise ses propres textes.</HH.Ai.Consent.Budget>
+  <HH.Ai.Consent.D.Claim>Lettres de réclamation : la police, le nom du pion, l'incident, la décision et le montant que le jeu a déjà fixé, ainsi que ce que vous avez écrit dans le formulaire (600 caractères au maximum).</HH.Ai.Consent.D.Claim>
+  <HH.Ai.Consent.D.Concierge>Concierge : votre question (300 caractères au maximum) et jusqu'à 12 courtes informations, comme la renommée, le nombre de clients et de lits, et les problèmes relevés par le jeu.</HH.Ai.Consent.D.Concierge>
+  <HH.Ai.Consent.D.Headline>Titres du marché : le type d'événement boursier, le nom de l'actif et l'ampleur du mouvement. 8 événements au maximum par requête.</HH.Ai.Consent.D.Headline>
+  <HH.Ai.Consent.D.Ottoline>Demander à Ottoline : votre question (500 caractères au maximum) et un instantané des comptes : solde, épargne, jusqu'à 10 prêts, placements, polices et réservations récentes, sous forme de chiffres et de courtes étiquettes.</HH.Ai.Consent.D.Ottoline>
+  <HH.Ai.Consent.D.Review>Avis des clients : le prénom du client, les étoiles attribuées par le jeu, quelques mots de motif (par exemple la façon dont il est parti) et les types d'établissements où il a dépensé.</HH.Ai.Consent.D.Review>
+  <HH.Ai.Consent.Done>Les textes IA sont activés. Le jeu vérifie maintenant le relais.</HH.Ai.Consent.Done>
+  <HH.Ai.Consent.HideDetails>Masquer les détails</HH.Ai.Consent.HideDetails>
+  <HH.Ai.Consent.Intro>Hearth &amp; Harbor peut laisser une IA rédiger certains textes d'ambiance : les réponses du guichetier Ottoline dans le chat, les titres du marché, les avis des clients, les lettres de réclamation d'assurance et les conseils du concierge. Le jeu fonctionne exactement de la même façon sans elle, et il dispose toujours de ses propres textes pour quand l'IA est absente.</HH.Ai.Consent.Intro>
+  <HH.Ai.Consent.NotNow>Pas maintenant</HH.Ai.Consent.NotNow>
+  <HH.Ai.Consent.NotSent>Ce qui n'est PAS envoyé : votre nom ou identifiant Steam, les chemins de fichiers, le nom de votre sauvegarde ou de votre colonie, vos autres mods, ni rien qui ressemble à une clé.</HH.Ai.Consent.NotSent>
+  <HH.Ai.Consent.Sent>Ce qui est envoyé : le texte du jeu pour la requête, par exemple les noms des pions (64 caractères au maximum), les montants, le texte que vous tapez dans le chat, le formulaire de réclamation ou la boîte du concierge, et des compteurs comme le nombre de clients ou de lits.</HH.Ai.Consent.Sent>
+  <HH.Ai.Consent.ShowDetails>Qu'envoie-t-on exactement ?</HH.Ai.Consent.ShowDetails>
+  <HH.Ai.Consent.Stored>Ce qui est conservé : le relais ne garde que des compteurs (combien de jetons, combien cela a coûté, combien de temps cela a pris, codes d'erreur). Il ne garde ni ce que vous avez écrit ni ce que l'IA a répondu. Comme tout serveur web, l'hébergeur du relais peut conserver brièvement votre adresse IP dans ses journaux techniques de connexion.</HH.Ai.Consent.Stored>
+  <HH.Ai.Consent.Title>Textes IA (facultatif)</HH.Ai.Consent.Title>
+  <HH.Ai.Consent.Where>Où cela va : vers un petit serveur relais exploité par l'auteur de ce mod (hh-relay.jberger.de), puis, depuis là, via OpenRouter vers les modèles Claude d'Anthropic, uniquement auprès de fournisseurs qui ne conservent aucune donnée (zero data retention).</HH.Ai.Consent.Where>
+  <HH.Ai.Consent.Withdraw>Vous pouvez retirer votre accord à tout moment : Réglages du mod, Hearth &amp; Harbor, Ambiance IA, Oublier mon accord.</HH.Ai.Consent.Withdraw>
+  <HH.Ai.Faq.Claim>Pourquoi ma réclamation a-t-elle été refusée ?</HH.Ai.Faq.Claim>
+  <HH.Ai.Faq.Interest>Comment gagner des intérêts ?</HH.Ai.Faq.Interest>
+  <HH.Ai.Faq.Invest>Comment vont mes placements ?</HH.Ai.Faq.Invest>
+  <HH.Ai.Faq.Loans>Quels sont mes prêts ?</HH.Ai.Faq.Loans>
+  <HH.Ai.Faq.Net>Combien est-ce que je vaux ?</HH.Ai.Faq.Net>
+  <HH.Ai.Notice.Title>Hearth &amp; Harbor : une note sur les textes IA</HH.Ai.Notice.Title>
+  <HH.Ai.Panel.Check>Vérifier le relais maintenant</HH.Ai.Panel.Check>
+  <HH.Ai.Panel.ConsentGiven>Vous avez accepté le {0} (version des textes {1}).</HH.Ai.Panel.ConsentGiven>
+  <HH.Ai.Panel.ConsentNone>Vous n'avez pas encore accepté. Rien n'est envoyé.</HH.Ai.Panel.ConsentNone>
+  <HH.Ai.Panel.Forget>Oublier mon accord</HH.Ai.Panel.Forget>
+  <HH.Ai.Panel.ForgetConfirm>Oublier votre accord et désactiver le module IA ? Plus rien ne sera envoyé à partir de maintenant. Vous pourrez accepter à nouveau à tout moment.</HH.Ai.Panel.ForgetConfirm>
+  <HH.Ai.Panel.Relay>Relais : budget partagé utilisé à {0} % sur les 24 dernières heures. Cette session : {1} envoyées, {2} réussies, {3} échouées, {4} textes propres utilisés.</HH.Ai.Panel.Relay>
+  <HH.Ai.Panel.SetUp>Configurer les textes IA...</HH.Ai.Panel.SetUp>
+  <HH.Ai.Review.Fallback.1.0>Une étoile, et seulement parce que le formulaire ne connaît pas le zéro.</HH.Ai.Review.Fallback.1.0>
+  <HH.Ai.Review.Fallback.1.1>J'ai demandé une nuit calme et j'ai eu une leçon de patience.</HH.Ai.Review.Fallback.1.1>
+  <HH.Ai.Review.Fallback.1.2>Plus jamais, même si la porte était très jolie en sortant.</HH.Ai.Review.Fallback.1.2>
+  <HH.Ai.Review.Fallback.1.3>J'ai déjà logé pire. Je ne sais plus où.</HH.Ai.Review.Fallback.1.3>
+  <HH.Ai.Review.Fallback.2.0>C'était correct si vous aimez attendre. Ce n'est pas mon cas.</HH.Ai.Review.Fallback.2.0>
+  <HH.Ai.Review.Fallback.2.1>De bonnes idées, mal chronométrées.</HH.Ai.Review.Fallback.2.1>
+  <HH.Ai.Review.Fallback.2.2>Le personnel a fait de son mieux. Le bâtiment n'a pas aidé.</HH.Ai.Review.Fallback.2.2>
+  <HH.Ai.Review.Fallback.2.3>Deux étoiles : une pour l'effort, une pour la porte.</HH.Ai.Review.Fallback.2.3>
+  <HH.Ai.Review.Fallback.3.0>Une chambre, un toit et un accueil raisonnablement chaleureux.</HH.Ai.Review.Fallback.3.0>
+  <HH.Ai.Review.Fallback.3.1>Rien à reprocher et rien de particulier à écrire, alors me voilà.</HH.Ai.Review.Fallback.3.1>
+  <HH.Ai.Review.Fallback.3.2>Correct. Je reviendrais si la route m'y ramenait.</HH.Ai.Review.Fallback.3.2>
+  <HH.Ai.Review.Fallback.3.3>Trois étoiles. Le milieu de la route est un bon endroit où se tenir.</HH.Ai.Review.Fallback.3.3>
+  <HH.Ai.Review.Fallback.4.0>Bonne cuisine, gens aimables, un lit qui s'est bien tenu.</HH.Ai.Review.Fallback.4.0>
+  <HH.Ai.Review.Fallback.4.1>J'ai bien dormi et payé équitablement. C'est plus rare qu'il n'y paraît.</HH.Ai.Review.Fallback.4.1>
+  <HH.Ai.Review.Fallback.4.2>Agréable et bien géré. Je le dirai à ma caravane.</HH.Ai.Review.Fallback.4.2>
+  <HH.Ai.Review.Fallback.4.3>Quatre étoiles. Il manquait quelque chose, et j'ai oublié quoi, ce qui en dit long.</HH.Ai.Review.Fallback.4.3>
+  <HH.Ai.Review.Fallback.5.0>Le meilleur séjour de la saison. Le personnel a retenu mon nom et ma commande.</HH.Ai.Review.Fallback.5.0>
+  <HH.Ai.Review.Fallback.5.1>Je suis venu pour une nuit et j'ai failli oublier de partir.</HH.Ai.Review.Fallback.5.1>
+  <HH.Ai.Review.Fallback.5.2>Chaleureux, propre, drôle. Cinq étoiles et une poignée de main.</HH.Ai.Review.Fallback.5.2>
+  <HH.Ai.Review.Fallback.5.3>Je vivrais ici si on me le permettait, et ce n'est pas sûr.</HH.Ai.Review.Fallback.5.3>
+  <HH.Ai.Review.Label>Avis client : {0}</HH.Ai.Review.Label>
+  <HH.Ai.State.Checking>Vérification du relais IA...</HH.Ai.State.Checking>
+  <HH.Ai.State.NoConsent>Les textes IA ne sont pas configurés</HH.Ai.State.NoConsent>
+  <HH.Ai.State.NoConsent.Tip>Rien n'est envoyé tant que vous n'avez pas accepté. Le jeu utilise ses propres textes.</HH.Ai.State.NoConsent.Tip>
+  <HH.Ai.State.Off>Les textes IA sont désactivés</HH.Ai.State.Off>
+  <HH.Ai.State.Off.Tip>Activez le module dans les réglages de Hearth &amp; Harbor.</HH.Ai.State.Off.Tip>
+  <HH.Ai.State.Offline>IA hors ligne</HH.Ai.State.Offline>
+  <HH.Ai.State.Offline.Tip>Le relais est injoignable. Le jeu utilise ses propres textes et réessaiera plus tard.</HH.Ai.State.Offline.Tip>
+  <HH.Ai.State.Online>IA en ligne</HH.Ai.State.Online>
+  <HH.Ai.State.Online.Tip>Le relais répond. Les textes écrits par l'IA sont signalés.</HH.Ai.State.Online.Tip>
+  <HH.Ai.State.Paused>IA en pause pendant quelques minutes</HH.Ai.State.Paused>
+  <HH.Ai.State.Paused.Tip>Plusieurs requêtes ont échoué à la suite. Le jeu utilise ses propres textes pendant dix minutes.</HH.Ai.State.Paused.Tip>
+  <HH.Ai.State.Resting>L'IA se repose</HH.Ai.State.Resting>
+  <HH.Ai.State.Resting.Tip>Le budget quotidien partagé du relais est épuisé. Le jeu utilise ses propres textes jusqu'à son rétablissement.</HH.Ai.State.Resting.Tip>
+  <HH.Ai.State.Unavailable>IA indisponible pour le moment</HH.Ai.State.Unavailable>
+  <HH.Ai.State.Unavailable.Tip>Le relais est désactivé ou pas prêt. Le jeu utilise ses propres textes.</HH.Ai.State.Unavailable.Tip>
+  <HH.Ai.Status.LastError>Dernier code d'erreur : {0}</HH.Ai.Status.LastError>
+  <HH.Ai.Tab.Ottoline>Demander à Ottoline</HH.Ai.Tab.Ottoline>
+  <HH.Setting.ai.func.claim>Lettres de réponse aux sinistres</HH.Setting.ai.func.claim>
+  <HH.Setting.ai.func.claim.Desc>Les lettres de réponse de Clawback Mutual réagissent à ce que vous avez écrit dans le formulaire de sinistre. La décision et le montant ne changent jamais.</HH.Setting.ai.func.claim.Desc>
+  <HH.Setting.ai.func.concierge>Concierge</HH.Setting.ai.func.concierge>
+  <HH.Setting.ai.func.concierge.Desc>Posez une question au concierge sur la gestion de vos clients. Il formule les conseils que le jeu connaît déjà.</HH.Setting.ai.func.concierge.Desc>
+  <HH.Setting.ai.func.headline>Titres de marché</HH.Setting.ai.func.headline>
+  <HH.Setting.ai.func.headline.Desc>Le bandeau d'actualités de la Bourse du Rim reçoit des titres rédigés par l'IA. Les chiffres qui les sous-tendent ne changent pas.</HH.Setting.ai.func.headline.Desc>
+  <HH.Setting.ai.func.ottoline>Demander à Ottoline</HH.Setting.ai.func.ottoline>
+  <HH.Setting.ai.func.ottoline.Desc>Discutez avec la commis Ottoline à la banque. Elle explique vos comptes, prêts, placements et polices. Sans IA, elle répond à quelques questions rapides tirées des livres.</HH.Setting.ai.func.ottoline.Desc>
+  <HH.Setting.ai.func.review>Avis des clients</HH.Setting.ai.func.review>
+  <HH.Setting.ai.func.review.Desc>Certains clients qui partent laissent un avis rédigé dans leur propre voix. Sans IA, l'avis est une courte phrase toute faite.</HH.Setting.ai.func.review.Desc>
+  <HH.Setting.ai.maxPerDay>Requêtes par jour de jeu (limite locale)</HH.Setting.ai.maxPerDay>
+  <HH.Setting.ai.maxPerDay.Desc>Une limite de courtoisie de cette partie pour ses propres requêtes, par jour en jeu. 0 = pas de limite locale. Le relais a son propre budget quotidien partagé.</HH.Setting.ai.maxPerDay.Desc>
+  <HH.Setting.ai.reviewShare>Part des groupes partants qui laissent un avis</HH.Setting.ai.reviewShare>
+  <HH.Setting.ai.reviewShare.Desc>Garde petit le nombre de requêtes IA. 25 % signifie environ un groupe sur quatre.</HH.Setting.ai.reviewShare.Desc>
+  <HH.Setting.ai.showBadge>Marquer les textes IA</HH.Setting.ai.showBadge>
+  <HH.Setting.ai.showBadge.Desc>Ajoute une note aux avis clients rédigés par l'IA et affiche le badge IA dans le chat et la boîte du concierge. Les titres de marché ne sont pas marqués.</HH.Setting.ai.showBadge.Desc>
+</LanguageData>

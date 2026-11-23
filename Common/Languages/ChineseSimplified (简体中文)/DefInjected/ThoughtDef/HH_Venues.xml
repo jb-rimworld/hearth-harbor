@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServedBusy.stages.0.description>访客源源不断地来到柜台前，我整班都有事可做。工作就该是这样的。</HH_ServedBusy.stages.0.description>
+  <HH_ServedBusy.stages.0.label>顺畅的一班</HH_ServedBusy.stages.0.label>
+  <HH_ServedBusy.stages.1.description>一位接一位的访客。他们还没说完，我就已经知道他们要什么了。是那种好的疲惫。</HH_ServedBusy.stages.1.description>
+  <HH_ServedBusy.stages.1.label>忙碌的一班</HH_ServedBusy.stages.1.label>
+  <HH_ServedBusy.stages.2.description>整个大厅同时要东西，我全都跟上了。这一班我为自己骄傲。</HH_ServedBusy.stages.2.description>
+  <HH_ServedBusy.stages.2.label>脚不沾地</HH_ServedBusy.stages.2.label>
+  <HH_ServedIdle.stages.0.description>我在柜台后站了好久，没有一个人来。同一只杯子我擦了三遍。</HH_ServedIdle.stages.0.description>
+  <HH_ServedIdle.stages.0.label>柜台前无聊透顶</HH_ServedIdle.stages.0.label>
+  <HH_ServedIdle.stages.1.description>在柜台前待了好几个小时，没有任何事可做。我本可以干点有用的事。</HH_ServedIdle.stages.1.description>
+  <HH_ServedIdle.stages.1.label>整班都在干站着</HH_ServedIdle.stages.1.label>
+  <HH_ServedIdle.stages.2.description>整整一班都在等一些永远不会来的访客。我到底为什么站在这儿？</HH_ServedIdle.stages.2.description>
+  <HH_ServedIdle.stages.2.label>白忙活的一班</HH_ServedIdle.stages.2.label>
+  <HH_WokenByBell.stages.0.description>睡到半夜，有人摇响了钟。职责在召唤，而且响得很大声。</HH_WokenByBell.stages.0.description>
+  <HH_WokenByBell.stages.0.label>被夜钟吵醒</HH_WokenByBell.stages.0.label>
+  <HH_WokenByBell.stages.1.description>睡到半夜，有人摇响了钟。好吧，这是我的工作。我待会儿再睡。</HH_WokenByBell.stages.1.description>
+  <HH_WokenByBell.stages.1.label>被夜钟吵醒</HH_WokenByBell.stages.1.label>
+</LanguageData>

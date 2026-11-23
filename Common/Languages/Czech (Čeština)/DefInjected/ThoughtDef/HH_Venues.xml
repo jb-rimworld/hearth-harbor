@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServedBusy.stages.0.description>Hosté pořád přicházeli k pultu a měl jsem celou dobu co dělat. Takhle má práce vypadat.</HH_ServedBusy.stages.0.description>
+  <HH_ServedBusy.stages.0.label>dobrá směna</HH_ServedBusy.stages.0.label>
+  <HH_ServedBusy.stages.1.description>Jeden host za druhým. Věděl jsem, co si objednají, ještě než dořekli. Dobrá sorta únavy.</HH_ServedBusy.stages.1.description>
+  <HH_ServedBusy.stages.1.label>rušná směna</HH_ServedBusy.stages.1.label>
+  <HH_ServedBusy.stages.2.description>Celá místnost chtěla najednou něco a já stíhal všechno. Na tu směnu jsem hrdý.</HH_ServedBusy.stages.2.description>
+  <HH_ServedBusy.stages.2.label>nohy mi hoří</HH_ServedBusy.stages.2.label>
+  <HH_ServedIdle.stages.0.description>Stál jsem za pultem celou věčnost a nikdo nepřišel. Ten samý půllitr jsem vyleštil třikrát.</HH_ServedIdle.stages.0.description>
+  <HH_ServedIdle.stages.0.label>znuda u pultu</HH_ServedIdle.stages.0.label>
+  <HH_ServedIdle.stages.1.description>Hodiny u pultu bez práce. Mohl jsem dělat něco užitečného.</HH_ServedIdle.stages.1.description>
+  <HH_ServedIdle.stages.1.label>postával jsem celou směnu</HH_ServedIdle.stages.1.label>
+  <HH_ServedIdle.stages.2.description>Celá směna čekání na hosty, kteří nikdy nepřišli. Proč tu vlastně stojím?</HH_ServedIdle.stages.2.description>
+  <HH_ServedIdle.stages.2.label>zbytečná směna</HH_ServedIdle.stages.2.label>
+  <HH_WokenByBell.stages.0.description>Někdo zazvonil na zvonek uprostřed mého spánku. Povinnosti volají. Hlasitě.</HH_WokenByBell.stages.0.description>
+  <HH_WokenByBell.stages.0.label>probuzen nočním zvonkem</HH_WokenByBell.stages.0.label>
+  <HH_WokenByBell.stages.1.description>Někdo zazvonil na zvonek uprostřed mého spánku. No, taková je práce. Vyspím se později.</HH_WokenByBell.stages.1.description>
+  <HH_WokenByBell.stages.1.label>probuzen nočním zvonkem</HH_WokenByBell.stages.1.label>
+</LanguageData>

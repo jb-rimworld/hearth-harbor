@@ -10,4 +10,6 @@
   <HH_MarketStall.description>Un étal indépendant à auvent rayé. Le grand marché n'a lieu qu'une fois que vous possédez assez d'étals (voir les réglages des Commerces) : chaque caravane de marchands s'installe à l'un d'eux et verse un droit d'étal dans votre caisse. Installé à l'extérieur, il fonctionne par tous les temps mais n'est pas un commerce à part entière.</HH_MarketStall.description>
   <HH_VendingMachine.label>distributeur automatique</HH_VendingMachine.label>
   <HH_VendingMachine.description>Une armoire alimentée en électricité qui contient de la nourriture, des boissons, des drogues et des médicaments. Les visiteurs achètent à tout moment, sans personnel, au prix du marché. Les transporteurs le remplissent comme une étagère. Les colons peuvent se servir gratuitement ; la machine ne fait payer que les visiteurs. Il faut de l'électricité pour vendre.</HH_VendingMachine.description>
+  <HH_Mote_Bell.label>cloche de nuit</HH_Mote_Bell.label>
+  <HH_Mote_RingArc.label>sonnerie</HH_Mote_RingArc.label>
 </LanguageData>

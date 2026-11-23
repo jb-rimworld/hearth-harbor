@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.BankResearchMode.Full>フル</HH.Enum.BankResearchMode.Full>
+  <HH.Enum.BankResearchMode.Off>オフ</HH.Enum.BankResearchMode.Off>
+  <HH.Enum.ClaimMode.Automatic>自動</HH.Enum.ClaimMode.Automatic>
+  <HH.Enum.ClaimMode.ByForm>申請書による</HH.Enum.ClaimMode.ByForm>
+  <HH.Enum.FundDestination.ToDeity>神へ</HH.Enum.FundDestination.ToDeity>
+  <HH.Enum.FundDestination.ToFaction>派閥へ</HH.Enum.FundDestination.ToFaction>
+  <HH.Enum.PensionRuleMode.Enforce>適用する</HH.Enum.PensionRuleMode.Enforce>
+  <HH.Enum.PensionRuleMode.Off>オフ</HH.Enum.PensionRuleMode.Off>
+  <HH.Enum.PensionRuleMode.WarnOnly>警告のみ</HH.Enum.PensionRuleMode.WarnOnly>
+  <HH.Enum.RngAlgorithm.ChaCha8>Cha cha8</HH.Enum.RngAlgorithm.ChaCha8>
+  <HH.Enum.RngAlgorithm.Pcg32>Pcg32</HH.Enum.RngAlgorithm.Pcg32>
+  <HH.Enum.RngAlgorithm.SplitMix64>Split mix64</HH.Enum.RngAlgorithm.SplitMix64>
+  <HH.Enum.RngAlgorithm.Xoshiro256>Xoshiro256</HH.Enum.RngAlgorithm.Xoshiro256>
+  <HH.Enum.StaffRule.AlwaysRequired>常に必要</HH.Enum.StaffRule.AlwaysRequired>
+  <HH.Enum.StaffRule.NeverRequired>不要</HH.Enum.StaffRule.NeverRequired>
+  <HH.Enum.StaffRule.PerVenueType>施設の種類ごと</HH.Enum.StaffRule.PerVenueType>
+  <HH.Enum.UnderworldMode.AlwaysOn>常に有効</HH.Enum.UnderworldMode.AlwaysOn>
+  <HH.Enum.UnderworldMode.DiscoverInGame>ゲーム内で発見</HH.Enum.UnderworldMode.DiscoverInGame>
+  <HH.Setting.bank.accountBeta>口座の利息指数（1.1.0 以降は未使用）</HH.Setting.bank.accountBeta>
+  <HH.Setting.bank.accountBeta.Desc>「口座の利息: 市場収益のうちの取り分」に置き換えられました。古いセーブデータを読めるように残してあるだけで、変更しても何も起きません。</HH.Setting.bank.accountBeta.Desc>
+  <HH.Setting.bank.accountShare>口座の利息: 市場収益のうちの取り分</HH.Setting.bank.accountShare>
+  <HH.Setting.bank.accountShare.Desc>銀行口座が年に支払うのは、市場の超過分（M − 1）のこの割合だけです。ただし、貯蓄商品 Mattress Plus（投資の収益性に従う）を上回ることはありません。0.2 は次の意味です: M 1.2 では口座は年 +4 %（Mattress Plus は +8 %、指数は約 +20 %）。M 2 では +20 %。M 1 を下回ると少し損をしますが、年 10 % を超えることはありません。二つの収益性スライダー（この銀行の M と投資の M）は、近い値に保つのがおすすめです。各銀行は独自の小さなボーナスかマイナスを加えます。投資には影響しません。</HH.Setting.bank.accountShare.Desc>
+  <HH.Setting.bank.atmDailyLimit>ATM の 1 日の引き出し上限</HH.Setting.bank.atmDailyLimit>
+  <HH.Setting.bank.atmDailyLimit.Desc>ATM から 1 日に引き出せる銀の最大額です。</HH.Setting.bank.atmDailyLimit.Desc>
+  <HH.Setting.bank.bailout>Too Big To Fail の救済</HH.Setting.bank.bailout>
+  <HH.Setting.bank.bailout.Desc>First Rim Bank of Too Big To Fail は、破綻した元大富豪を 1 ゲーム年に 1 度救済します（無利子のローンで、贈り物ではありません）。</HH.Setting.bank.bailout.Desc>
+  <HH.Setting.bank.collectionAnger>取り立ての怒り（襲撃の規模）</HH.Setting.bank.collectionAnger>
+  <HH.Setting.bank.collectionAnger.Desc>差し押さえチームと取り立て襲撃の規模を倍率で変えます。0 にすると、暴力的な段階はなくなります。</HH.Setting.bank.collectionAnger.Desc>
+  <HH.Setting.bank.depositDelayHours>支店がない場合の入金の遅れ（時間）</HH.Setting.bank.depositDelayHours>
+  <HH.Setting.bank.depositDelayHours.Desc>窓口や ATM のない場所で口座に入れた銀は、この時間が経過してから届きます。</HH.Setting.bank.depositDelayHours.Desc>
+  <HH.Setting.bank.directDeposit>レジの売上を銀行へ直接送る</HH.Setting.bank.directDeposit>
+  <HH.Setting.bank.directDeposit.Desc>口座ができると、事業のレジは毎晩 0 時に中身を口座へ移します。床に銀を置いたままにはなりません。</HH.Setting.bank.directDeposit.Desc>
+  <HH.Setting.bank.directDepositFee>直接入金の手数料</HH.Setting.bank.directDepositFee>
+  <HH.Setting.bank.directDepositFee.Desc>口座へ直接送られる金（レジの売上）にかかる手数料です。0〜100 %。</HH.Setting.bank.directDepositFee.Desc>
+  <HH.Setting.bank.feeFactor>銀行手数料の水準</HH.Setting.bank.feeFactor>
+  <HH.Setting.bank.feeFactor.Desc>銀行のすべての手数料を倍率で変えます。0 % で手数料は一切かかりません。</HH.Setting.bank.feeFactor.Desc>
+  <HH.Setting.bank.lateFee>延滞料</HH.Setting.bank.lateFee>
+  <HH.Setting.bank.lateFee.Desc>ローンが取り立て段階 2 に達したとき、期日を過ぎた分割払いに課されます。</HH.Setting.bank.lateFee.Desc>
+  <HH.Setting.bank.loanFloor>スターター枠</HH.Setting.bank.loanFloor>
+  <HH.Setting.bank.loanFloor.Desc>資産の審査を受けるコロニーの最低借入限度額です。若いコロニーでも少し借りられるようにします。</HH.Setting.bank.loanFloor.Desc>
+  <HH.Setting.bank.loanIntervalDays>分割払いの間隔（日）</HH.Setting.bank.loanIntervalDays>
+  <HH.Setting.bank.loanIntervalDays.Desc>ローンの分割払いは、この日数ごとに期限が来ます。</HH.Setting.bank.loanIntervalDays.Desc>
+  <HH.Setting.bank.loanMaxTermDays>ローンの最長期間（日）</HH.Setting.bank.loanMaxTermDays>
+  <HH.Setting.bank.loanPortfolioShare>借入限度額の計算に含める投資</HH.Setting.bank.loanPortfolioShare>
+  <HH.Setting.bank.loanPortfolioShare.Desc>銀行が借入額を決めるとき、投資の時価のうちどれだけを資産として数えるかです。100 % なら全額、0 なら全く数えません。ロビーに表示される純資産は、常に全額を数えます。</HH.Setting.bank.loanPortfolioShare.Desc>
+  <HH.Setting.bank.maxCollectionStage>取り立ての最高段階</HH.Setting.bank.maxCollectionStage>
+  <HH.Setting.bank.maxCollectionStage.Desc>取り立ての段階: 1 督促、2 延滞料、3 預金との相殺、4 訪問、5 差し押さえチーム、6 取り立て襲撃、7 懸賞金。標準の部屋は 4 までです。借金は返すことになりますが、失うのは少しの気分だけです。</HH.Setting.bank.maxCollectionStage.Desc>
+  <HH.Setting.bank.moodOn>残高によるコロニーの気分</HH.Setting.bank.moodOn>
+  <HH.Setting.bank.moodOn.Desc>一人あたりの純資産に応じて、小さな思考が加わります（−4 から +3。欲張りなコロニストは 2 倍、禁欲的なコロニストには影響なし）。</HH.Setting.bank.moodOn.Desc>
+  <HH.Setting.bank.moodScale>資産の段階のしきい値</HH.Setting.bank.moodScale>
+  <HH.Setting.bank.moodScale.Desc>気分の段階（破産 … 大きすぎて潰せない）の純資産のしきい値を倍率で調整します。</HH.Setting.bank.moodScale.Desc>
+  <HH.Setting.bank.podMaxHours>ドロップポッドの配達: 最遅（時間）</HH.Setting.bank.podMaxHours>
+  <HH.Setting.bank.podMaxHours.Desc>……そして、これより長くはかかりません。</HH.Setting.bank.podMaxHours.Desc>
+  <HH.Setting.bank.podMaxLoad>ドロップポッド 1 基の最大積載</HH.Setting.bank.podMaxLoad>
+  <HH.Setting.bank.podMaxLoad.Desc>まとまった引き出しは、1 基あたりこの程度の銀を積んだドロップポッドで届きます。1 回の引き出しで 10 基を超えることはありません（巨額の場合は、ポッドの数を増やさず重くします）。預け入れや引き出しの上限は、これでは決まりません。</HH.Setting.bank.podMaxLoad.Desc>
+  <HH.Setting.bank.podMinHours>ドロップポッドの配達: 最速（時間）</HH.Setting.bank.podMinHours>
+  <HH.Setting.bank.podMinHours.Desc>窓口や ATM がない場所での引き出しは、最低この時間が経ってからドロップポッドで届きます。</HH.Setting.bank.podMinHours.Desc>
+  <HH.Setting.bank.profit>銀行の M（1 ゲーム年あたりの収益性）</HH.Setting.bank.profit>
+  <HH.Setting.bank.profit.Desc>投資した金が 1 ゲーム年（60 日）あたり平均でどれだけ増えるか。これは銀行自身の M で、口座利息とローン金利を決めます。市場を動かすのは投資の M（投資ページ）で、口座はその M での Mattress Plus を超えることはありません。両方を近い値に保ってください。1.0 = 増減なし、1.2 = 年 +20 %、0 = お金が消えます。対数目盛で 0.01〜100。正確な値は数字を入力できます。自分で設定するまでは、難易度スライダーに従います。</HH.Setting.bank.profit.Desc>
+  <HH.Setting.bank.researchMode>銀行の研究</HH.Setting.bank.researchMode>
+  <HH.Setting.bank.researchMode.Desc>完全: ATM、夜間金庫、支店、ローンには研究が必要です。オフ: 最初からすべて利用できます。（コア設定の全体の「研究モード」も、すべてのモジュールに同じ効果があります。）</HH.Setting.bank.researchMode.Desc>
+  <HH.Setting.bank.seizureShare>Black Ledger の差し押さえ割合</HH.Setting.bank.seizureShare>
+  <HH.Setting.bank.seizureShare.Desc>Black Ledger があなたの口座を差し押さえた場合（四半期ごとに 1 % のリスク）、残高のこの割合が失われます。</HH.Setting.bank.seizureShare.Desc>
+  <HH.Setting.bank.sounds>銀行メニューの効果音</HH.Setting.bank.sounds>
+  <HH.Setting.bank.sounds.Desc>銀行の窓口画面でのクリック音、硬貨を数える音、印鑑の音。さらに、買ったくじの抽選が行われたときの当たり・はずれの音。</HH.Setting.bank.sounds.Desc>
+  <HH.Setting.bank.switchFee>銀行を変える手数料</HH.Setting.bank.switchFee>
+  <HH.Setting.bank.switchFee.Desc>口座を別の銀行へ移すのにかかる費用です（構想 2.2: 50 銀）。</HH.Setting.bank.switchFee.Desc>
+  <HH.Setting.bank.tradeDeposit>取引の銀を自動で預金</HH.Setting.bank.tradeDeposit>
+  <HH.Setting.bank.tradeDeposit.Desc>初期設定ではオフです。商人に売ったときは、すぐ使える硬貨を受け取れます。オン（かつ直接入金もオン）にすると、商人や交易船から受け取った銀は、取引の直後に口座へ移されます（直接入金の手数料がかかります）。キャラバンは影響を受けません。</HH.Setting.bank.tradeDeposit.Desc>
+  <HH.Setting.bank.wealthShare>銀行残高を語り部が数える割合（%）</HH.Setting.bank.wealthShare>
+  <HH.Setting.bank.wealthShare.Desc>口座のうちどれだけを、語り部が襲撃のポイントに使うコロニーの富に数えるかです。100 % = 公平: 預金しても襲撃は小さくなりません。0 = 銀行は隠し場所になります。</HH.Setting.bank.wealthShare.Desc>
+  <HH.Setting.casino.abstinenceDays>依存の段階ごとの禁欲日数</HH.Setting.casino.abstinenceDays>
+  <HH.Setting.casino.abstinenceDays.Desc>各依存段階を治すのに必要な、ギャンブルをしない日数です（段階 3 = 3 × この値）。</HH.Setting.casino.abstinenceDays.Desc>
+  <HH.Setting.casino.addictionFreeSessions>依存が起きる前の遊戯回数</HH.Setting.casino.addictionFreeSessions>
+  <HH.Setting.casino.addictionFreeSessions.Desc>3 日間でこの回数未満なら、何も起きません。</HH.Setting.casino.addictionFreeSessions.Desc>
+  <HH.Setting.casino.addictionGrowth>追加の遊戯 1 回ごとの増加率</HH.Setting.casino.addictionGrowth>
+  <HH.Setting.casino.addictionGrowth.Desc>p = p₀ · 増加率^(回数 − 3)。</HH.Setting.casino.addictionGrowth.Desc>
+  <HH.Setting.casino.addictionP0>ギャンブル依存の確率 p₀</HH.Setting.casino.addictionP0>
+  <HH.Setting.casino.addictionP0.Desc>3 日間で 3 回目以降の遊戯後に依存になる確率です。遊戯が 1 回増えるごとに ×1.35 になります。0 で依存は起きなくなります。</HH.Setting.casino.addictionP0.Desc>
+  <HH.Setting.casino.ambience>カジノの雰囲気</HH.Setting.casino.ambience>
+  <HH.Setting.casino.ambience.Desc>カメラが近くにあるとき、にぎやかなカジノの部屋では、ざわめき、チップの音、遠くのスロットのベルが小さく聞こえます。</HH.Setting.casino.ambience.Desc>
+  <HH.Setting.casino.animSpeed>アニメーションの速さ</HH.Setting.casino.animSpeed>
+  <HH.Setting.casino.animSpeed.Desc>100 % が設計どおりの速さです。数値を上げるとゲームが速く進みます。Shift を押している間は 300 % で進みます。</HH.Setting.casino.animSpeed.Desc>
+  <HH.Setting.casino.animations>アニメーションのあるゲーム</HH.Setting.casino.animations>
+  <HH.Setting.casino.animations.Desc>Lucky Thrumbo と練習ゲームは、結果の前にリール、ホイール、カードを動かして見せます。オフにすると結果がすぐ出ます。テーブルのクリック、Space、Enter ではいつでもアニメーションを飛ばせます。</HH.Setting.casino.animations.Desc>
+  <HH.Setting.casino.blackjackH17>ブラックジャックのディーラーのソフト 17</HH.Setting.casino.blackjackH17>
+  <HH.Setting.casino.blackjackH17.Desc>0 = ディーラーはソフト 17 で止まる、1 = ディーラーは引く（プレイヤーの優位が約 0.2 ポイント減る）。</HH.Setting.casino.blackjackH17.Desc>
+  <HH.Setting.casino.blackjackPays>ブラックジャックの配当（ブラックジャックボーナス）</HH.Setting.casino.blackjackPays>
+  <HH.Setting.casino.blackjackPays.Desc>3:2 = 1.5、6:5 = 1.2。ハウスエッジが約1.4ポイント変わります。</HH.Setting.casino.blackjackPays.Desc>
+  <HH.Setting.casino.chipSpendBonus>換金所でのチップ購入ボーナス</HH.Setting.casino.chipSpendBonus>
+  <HH.Setting.casino.chipSpendBonus.Desc>換金所がチップを売ると、客はテーブルに持ち込む額がこれだけ増えます（「お金という感じがしない」）。</HH.Setting.casino.chipSpendBonus.Desc>
+  <HH.Setting.casino.chipTakeHome>持ち帰りチップ</HH.Setting.casino.chipTakeHome>
+  <HH.Setting.casino.chipTakeHome.Desc>客が帰るとき、勝ち金のうちこの割合までがチップのまま手元に残ります。純粋な店の利益です（「チップの浮き金」）。</HH.Setting.casino.chipTakeHome.Desc>
+  <HH.Setting.casino.colonistChips>1回の卓につき店のチップ</HH.Setting.casino.colonistChips>
+  <HH.Setting.casino.colonistChips.Desc>入植者は価値のない店のチップで賭けます。テーブルで入植地の銀が失われることは決してありません。</HH.Setting.casino.colonistChips.Desc>
+  <HH.Setting.casino.croupierRequired>テーブルにはディーラーが必要</HH.Setting.casino.croupierRequired>
+  <HH.Setting.casino.croupierRequired.Desc>ルーレット、ブラックジャック、Rimdeck は、給仕の作業種類を持つ入植者がテーブルについている間だけ客に提供されます。スロットマシンは不要です。</HH.Setting.casino.croupierRequired.Desc>
+  <HH.Setting.casino.fatalDespair>致命的な絶望（未実装）</HH.Setting.casino.fatalDespair>
+  <HH.Setting.casino.fatalDespair.Desc>予約。このモジュールでは入植者を殺すことはできません。スイッチは効果がありません。</HH.Setting.casino.fatalDespair.Desc>
+  <HH.Setting.casino.guestBetShare>客の賭け金の大きさ</HH.Setting.casino.guestBetShare>
+  <HH.Setting.casino.guestBetShare.Desc>客は1回ごとに、賭け用の所持金のこの割合を賭けます。ゲーム内1時間あたりの卓の回転数が本物のカジノより大幅に少ないため、既定値は本物より大きくなっています。1時間あたりの売上はほぼ変わりません。</HH.Setting.casino.guestBetShare.Desc>
+  <HH.Setting.casino.guestBudgetShare>客の賭け用予算</HH.Setting.casino.guestBudgetShare>
+  <HH.Setting.casino.guestBudgetShare.Desc>客が卓に持ち込む、残りの予算のこの割合（性格による補正の前）。</HH.Setting.casino.guestBudgetShare.Desc>
+  <HH.Setting.casino.guestMinBuyIn>最低の持ち込み額（銀）</HH.Setting.casino.guestMinBuyIn>
+  <HH.Setting.casino.guestMinBuyIn.Desc>使える額がこれより少ない客は賭けをしません。</HH.Setting.casino.guestMinBuyIn.Desc>
+  <HH.Setting.casino.guestStopLoss>負けた後に客がやめる</HH.Setting.casino.guestStopLoss>
+  <HH.Setting.casino.guestStopLoss.Desc>客は、賭け用の所持金のこの割合を負けたら卓を離れます。</HH.Setting.casino.guestStopLoss.Desc>
+  <HH.Setting.casino.guestWinTarget>勝った後に客が換金する</HH.Setting.casino.guestWinTarget>
+  <HH.Setting.casino.guestWinTarget.Desc>客は、賭け用の所持金に上乗せしてこの割合の利益を得たら換金します。</HH.Setting.casino.guestWinTarget.Desc>
+  <HH.Setting.casino.houseFloat>店の準備金（銀）</HH.Setting.casino.houseFloat>
+  <HH.Setting.casino.houseFloat.Desc>店の金庫に残しておく現金。これを超えて店が稼いだ分（と客が現在賭けている額）は、カジノ閉店時に入植地の金庫へ入ります。</HH.Setting.casino.houseFloat.Desc>
+  <HH.Setting.casino.houseRiskLimit>店を破産から守る</HH.Setting.casino.houseRiskLimit>
+  <HH.Setting.casino.houseRiskLimit.Desc>各賭け金の上限は 現金 ÷ (4 · σ · √1日の回転数) です。悪い夜があっても店は潰れません。現金が少なくなると上限も下がります。</HH.Setting.casino.houseRiskLimit.Desc>
+  <HH.Setting.casino.howToSeen>「遊び方」は見た済み</HH.Setting.casino.howToSeen>
+  <HH.Setting.casino.howToSeen.Desc>The Lucky Thrumbo の短いゲーム説明が一度自動で開いたことを記録します。オフにすると、再び開くようになります。</HH.Setting.casino.howToSeen.Desc>
+  <HH.Setting.casino.joyGain>賭博の喜び倍率</HH.Setting.casino.joyGain>
+  <HH.Setting.casino.joyGain.Desc>通常のポーカー卓と比べた喜びの増加量。</HH.Setting.casino.joyGain.Desc>
+  <HH.Setting.casino.maxBet>最高賭け金（銀）</HH.Setting.casino.maxBet>
+  <HH.Setting.casino.maxBet.Desc>卓の制限が有効な間の、どのゲームでも許される最大の賭け金。</HH.Setting.casino.maxBet.Desc>
+  <HH.Setting.casino.minBet>最低賭け金（銀）</HH.Setting.casino.minBet>
+  <HH.Setting.casino.minBet.Desc>最小の賭け金。端数も可能です: 賭け金はコインで払い出されません。</HH.Setting.casino.minBet.Desc>
+  <HH.Setting.casino.pokerRake>Rimdeck の手数料</HH.Setting.casino.pokerRake>
+  <HH.Setting.casino.pokerRake.Desc>各ポットから店が取る割合（上限まで）。</HH.Setting.casino.pokerRake.Desc>
+  <HH.Setting.casino.pokerRakeCap>Rimdeck の手数料の上限（銀）</HH.Setting.casino.pokerRakeCap>
+  <HH.Setting.casino.pokerRakeCap.Desc>1つのポットから店が取る最大額。</HH.Setting.casino.pokerRakeCap.Desc>
+  <HH.Setting.casino.reactions>ギャンブラーの反応</HH.Setting.casino.reactions>
+  <HH.Setting.casino.reactions.Desc>勝ち・負け・惜しい時に、プレイヤーが歓声を上げ、うなり、コインを投げます（頭上の小さなアイコンと短い音）。</HH.Setting.casino.reactions.Desc>
+  <HH.Setting.casino.rouletteEdge>ルーレットのハウスエッジ</HH.Setting.casino.rouletteEdge>
+  <HH.Setting.casino.rouletteEdge.Desc>0.54%〜7.9%: 小さいエッジでは ア・ラ・パルタージュ式の盤、2.7% は 0 が一つ、4% 超は 00 の盤を使います。すべての賭けにこのエッジがちょうど適用されます。</HH.Setting.casino.rouletteEdge.Desc>
+  <HH.Setting.casino.roundsPerHour.blackjack>ブラックジャックの1時間あたりの勝負数</HH.Setting.casino.roundsPerHour.blackjack>
+  <HH.Setting.casino.roundsPerHour.blackjack.Desc>ゲーム内1時間あたりの勝負数。</HH.Setting.casino.roundsPerHour.blackjack.Desc>
+  <HH.Setting.casino.roundsPerHour.poker>Rimdeck の1時間あたりの勝負数</HH.Setting.casino.roundsPerHour.poker>
+  <HH.Setting.casino.roundsPerHour.poker.Desc>ゲーム内1時間あたりの勝負数。</HH.Setting.casino.roundsPerHour.poker.Desc>
+  <HH.Setting.casino.roundsPerHour.roulette>ルーレットの1時間あたりの回転数</HH.Setting.casino.roundsPerHour.roulette>
+  <HH.Setting.casino.roundsPerHour.roulette.Desc>ゲーム内1時間あたりの回転数。</HH.Setting.casino.roundsPerHour.roulette.Desc>
+  <HH.Setting.casino.roundsPerHour.slot>スロットの1時間あたりの回転数</HH.Setting.casino.roundsPerHour.slot>
+  <HH.Setting.casino.roundsPerHour.slot.Desc>マシンが1時間あたり何回回るか（2500 ティック。40 なら通常速度で1〜2秒ごとに1回転）。</HH.Setting.casino.roundsPerHour.slot.Desc>
+  <HH.Setting.casino.slotRtp>スロットマシンの払い戻し率（RTP）</HH.Setting.casino.slotRtp>
+  <HH.Setting.casino.slotRtp.Desc>「One-Armed Muffalo」が長期的に賭け金のうちどれだけを払い戻すかの割合。92% = ハウスエッジ 8%。100% を超えると店が損をします。</HH.Setting.casino.slotRtp.Desc>
+  <HH.Setting.casino.tableLimits>テーブルの制限を適用</HH.Setting.casino.tableLimits>
+  <HH.Setting.casino.tableLimits.Desc>オン: 賭け金は下の最低と最高の間に収まります。オフ: 店のリスク規則だけが賭け金を制限します。</HH.Setting.casino.tableLimits.Desc>
+  <HH.Setting.casino.toleranceFactor>賭博への耐性の蓄積</HH.Setting.casino.toleranceFactor>
+  <HH.Setting.casino.toleranceFactor.Desc>バニラと比べて、喜びへの耐性がどれくらい速く蓄積するか（0.6 = 40% 遅い）。</HH.Setting.casino.toleranceFactor.Desc>
+  <HH.Setting.casino.worldFx>マップ上のカジノの活気</HH.Setting.casino.worldFx>
+  <HH.Setting.casino.worldFx.Desc>人々が遊んでいる間、マシンや卓でリールが回り、ルーレットの盤、配られたカード、チップ、小さな音が出ます。</HH.Setting.casino.worldFx.Desc>
+  <HH.Setting.city.cinemaCooldownHours>客1人が映画を見る間隔（時間）</HH.Setting.city.cinemaCooldownHours>
+  <HH.Setting.city.cinemaCooldownHours.Desc>この時間内に1人の客が見る映画は最大1本です。</HH.Setting.city.cinemaCooldownHours.Desc>
+  <HH.Setting.city.cinemaMinSeats>必要な座席数</HH.Setting.city.cinemaMinSeats>
+  <HH.Setting.city.cinemaMinSeats.Desc>この数以上の座席が向いている映写スクリーンを映画館とみなします。</HH.Setting.city.cinemaMinSeats.Desc>
+  <HH.Setting.city.cinemaShowTicks>上映時間（ティック）</HH.Setting.city.cinemaShowTicks>
+  <HH.Setting.city.cinemaShowTicks.Desc>1回の上映の長さ。2,500 ティックで1時間です。</HH.Setting.city.cinemaShowTicks.Desc>
+  <HH.Setting.city.cinemaTicket>映画館の入場券</HH.Setting.city.cinemaTicket>
+  <HH.Setting.city.cinemaTicket.Desc>入場券1枚の価格。客は席に着くときに支払います。</HH.Setting.city.cinemaTicket.Desc>
+  <HH.Setting.city.desireScale>客の街の暮らしへの関心</HH.Setting.city.desireScale>
+  <HH.Setting.city.desireScale.Desc>客が映画館、サロン、ギャラリー、公園のベンチへどれだけ行きたがるかの強さ。0 = 行かない。</HH.Setting.city.desireScale.Desc>
+  <HH.Setting.city.galleryCooldownHours>客1人が訪れる間隔（時間）</HH.Setting.city.galleryCooldownHours>
+  <HH.Setting.city.galleryCooldownHours.Desc>この時間内に1人の客がギャラリーを訪れるのは最大1回です。</HH.Setting.city.galleryCooldownHours.Desc>
+  <HH.Setting.city.galleryFee>ギャラリーの入場料</HH.Setting.city.galleryFee>
+  <HH.Setting.city.galleryFee.Desc>ギャラリーを1回見て回る料金。</HH.Setting.city.galleryFee.Desc>
+  <HH.Setting.city.galleryMaxViews>1回の訪問で見る作品数</HH.Setting.city.galleryMaxViews>
+  <HH.Setting.city.galleryMaxViews.Desc>1人の客が1回の訪問で見る作品の数。</HH.Setting.city.galleryMaxViews.Desc>
+  <HH.Setting.city.galleryMinArt>必要な芸術作品の数</HH.Setting.city.galleryMinArt>
+  <HH.Setting.city.galleryMinArt.Desc>この数以上の芸術作品があると、部屋はギャラリーとみなされます。</HH.Setting.city.galleryMinArt.Desc>
+  <HH.Setting.city.galleryViewTicks>作品1点あたりの鑑賞時間（ティック）</HH.Setting.city.galleryViewTicks>
+  <HH.Setting.city.galleryViewTicks.Desc>客が1点の作品の前に立つ時間。</HH.Setting.city.galleryViewTicks.Desc>
+  <HH.Setting.city.movieNight>入植者の映画の夜</HH.Setting.city.movieNight>
+  <HH.Setting.city.movieNight.Desc>電源の入ったスクリーンと座席があるとき、入植者は時々映画の夜を開きます。</HH.Setting.city.movieNight.Desc>
+  <HH.Setting.city.movieNightChance>夜ごとの映画の夜の確率</HH.Setting.city.movieNightChance>
+  <HH.Setting.city.movieNightChance.Desc>ある夜（18:00）に入植地が映画の夜を始める確率。</HH.Setting.city.movieNightChance.Desc>
+  <HH.Setting.city.parkCooldownHours>客1人がベンチを使う間隔（時間）</HH.Setting.city.parkCooldownHours>
+  <HH.Setting.city.parkCooldownHours.Desc>この時間内に1人の客がベンチに座るのは最大1回です。</HH.Setting.city.parkCooldownHours.Desc>
+  <HH.Setting.city.parkRestTicks>ベンチで休む時間（ティック）</HH.Setting.city.parkRestTicks>
+  <HH.Setting.city.parkRestTicks.Desc>公園のベンチに誰かが座っている時間。</HH.Setting.city.parkRestTicks.Desc>
+  <HH.Setting.city.priceTolerance>客の価格への許容度</HH.Setting.city.priceTolerance>
+  <HH.Setting.city.priceTolerance.Desc>基準価格と比べて、客が街のサービスにどれだけ喜んで払うか。難易度スライダーに従います。1 = 標準。</HH.Setting.city.priceTolerance.Desc>
+  <HH.Setting.city.researchMode>研究モード</HH.Setting.city.researchMode>
+  <HH.Setting.city.researchMode.Desc>完全: 街の暮らしのプロジェクトは研究が必要です。オフ: 「街の暮らし」のすべてがすぐに利用できます。</HH.Setting.city.researchMode.Desc>
+  <HH.Setting.city.salonCooldownHours>客1人がヘアカットを受ける間隔（時間）</HH.Setting.city.salonCooldownHours>
+  <HH.Setting.city.salonCooldownHours.Desc>この時間内に1人の客が新しいスタイルにできるのは最大1回です。</HH.Setting.city.salonCooldownHours.Desc>
+  <HH.Setting.city.salonDyePrice>染色の追加料金</HH.Setting.city.salonDyePrice>
+  <HH.Setting.city.salonDyePrice.Desc>髪の色を変える場合の追加料金（バイオテックまたはイデオロギーが必要）。</HH.Setting.city.salonDyePrice.Desc>
+  <HH.Setting.city.salonPrice>ヘアカットの料金</HH.Setting.city.salonPrice>
+  <HH.Setting.city.salonPrice.Desc>ヘアカットと新しいスタイルに客が払う金額。</HH.Setting.city.salonPrice.Desc>
+  <HH.Setting.city.salonServiceTicks>スタイリングの時間（ティック）</HH.Setting.city.salonServiceTicks>
+  <HH.Setting.city.salonServiceTicks.Desc>平均的な美容師がヘアカットにかける時間。</HH.Setting.city.salonServiceTicks.Desc>
+  <HH.Setting.city.salonTattooPrice>タトゥーの追加料金</HH.Setting.city.salonTattooPrice>
+  <HH.Setting.city.salonTattooPrice.Desc>タトゥーの追加料金（イデオロギーが必要）。</HH.Setting.city.salonTattooPrice.Desc>
+  <HH.Setting.city.salonWaitTicks>待ち時間の上限（ティック）</HH.Setting.city.salonWaitTicks>
+  <HH.Setting.city.salonWaitTicks.Desc>客は誰かが来るまでこの時間椅子で待ち、それから不満を抱えて帰ります。</HH.Setting.city.salonWaitTicks.Desc>
+  <HH.Setting.city.securityChance>雇用の確率（基本）</HH.Setting.city.securityChance>
+  <HH.Setting.city.securityChance.Desc>対象となる客1人あたりの基本確率。非常に裕福な客（80以上）は +40 ポイント。</HH.Setting.city.securityChance.Desc>
+  <HH.Setting.city.securityDayShare>1日の料金（予算に対する割合）</HH.Setting.city.securityDayShare>
+  <HH.Setting.city.securityDayShare.Desc>ボディガードは1日あたり客の予算のこの割合を費やし、料金は1時間ごとに請求されます。</HH.Setting.city.securityDayShare.Desc>
+  <HH.Setting.city.securityHireHours>ボディガードを探す時間（時間）</HH.Setting.city.securityHireHours>
+  <HH.Setting.city.securityHireHours.Desc>この時間内に空いている武装入植者が見つからない雇用は、料金なしで取り消されます。</HH.Setting.city.securityHireHours.Desc>
+  <HH.Setting.city.securityMinHourFee>最低時給</HH.Setting.city.securityMinHourFee>
+  <HH.Setting.city.securityMinHourFee.Desc>ボディガードの料金は1時間あたりこれより安くなりません。</HH.Setting.city.securityMinHourFee.Desc>
+  <HH.Setting.city.securityMinWealth>ボディガードに必要な富</HH.Setting.city.securityMinWealth>
+  <HH.Setting.city.securityMinWealth.Desc>この富の水準（1〜100）より下の客は、護衛を雇うことは決してありません。</HH.Setting.city.securityMinWealth.Desc>
+  <HH.Setting.city.securityOn>ボディガードサービス</HH.Setting.city.securityOn>
+  <HH.Setting.city.securityOn.Desc>裕福な客は、武装した入植者の1人をボディガードとして雇うことができます。</HH.Setting.city.securityOn.Desc>
+  <HH.Setting.city.taxiArrivalChance>タクシーで到着する確率</HH.Setting.city.taxiArrivalChance>
+  <HH.Setting.city.taxiArrivalChance.Desc>マップの端から歩いて入るのではなく、タクシー乗り場で降ろされる到着客の割合。</HH.Setting.city.taxiArrivalChance.Desc>
+  <HH.Setting.city.taxiArrivalFee>着陸料</HH.Setting.city.taxiArrivalFee>
+  <HH.Setting.city.taxiArrivalFee.Desc>到着する客が、乗り場で降ろされたことに対してコロニーへ支払う額。</HH.Setting.city.taxiArrivalFee.Desc>
+  <HH.Setting.city.taxiDepartureChance>帰りにタクシーを呼ぶ確率</HH.Setting.city.taxiDepartureChance>
+  <HH.Setting.city.taxiDepartureChance.Desc>空きのタクシー乗り場がある場合に、出発する客のうちタクシーを呼ぶ割合（富に応じて上がる）。</HH.Setting.city.taxiDepartureChance.Desc>
+  <HH.Setting.city.taxiFare>タクシー運賃</HH.Setting.city.taxiFare>
+  <HH.Setting.city.taxiFare.Desc>出発する客が、タクシー乗り場からの乗車に対して支払う額。</HH.Setting.city.taxiFare.Desc>
+  <HH.Setting.city.taxiWaitTicks>機体の待ち時間（ティック）</HH.Setting.city.taxiWaitTicks>
+  <HH.Setting.city.taxiWaitTicks.Desc>機体が離陸するまでに、客が乗り場で待つ時間。</HH.Setting.city.taxiWaitTicks.Desc>
+  <HH.Setting.core.guide>Hearth &amp; Harbor ガイドを表示</HH.Setting.core.guide>
+  <HH.Setting.core.guide.Desc>右上にある学習ヘルパーです。右クリックで隠せます。</HH.Setting.core.guide.Desc>
+  <HH.Setting.core.helpHint>賭け事をする場所で、小さな現実の相談案内を表示</HH.Setting.core.helpHint>
+  <HH.Setting.core.helpHint.Desc>あなた自身が賭け事をする画面ごとに、小さく控えめな一文を表示します。現実で賭け事が問題になっている場合、相談先があります（findahelpline.com）。ほかの場所では表示されません。</HH.Setting.core.helpHint.Desc>
+  <HH.Setting.core.rngAlgorithm>乱数アルゴリズム</HH.Setting.core.rngAlgorithm>
+  <HH.Setting.core.rngAlgorithm.Desc>Hearth &amp; Harbor のすべての乱数ストリームに使うアルゴリズム。確率はどれも同じで、違うのは並び順だけです。ChaCha8 は暗号学的（慎重派向け）、SplitMix64 は最速です。</HH.Setting.core.rngAlgorithm.Desc>
+  <HH.Setting.core.sealedFate>封印された運命</HH.Setting.core.sealedFate>
+  <HH.Setting.core.sealedFate.Desc>オンにすると、セーブを読み込み直しても客の出来事は振り直されません（すべて封印された乱数ストリームを使います）。プレイヤーの賭け、銀行の取引、宝くじは常に封印されます。</HH.Setting.core.sealedFate.Desc>
+  <HH.Setting.dlc.aiIdeoPrecepts>AI のイデオロギーにも金銭の教義を与える</HH.Setting.dlc.aiIdeoPrecepts>
+  <HH.Setting.dlc.aiIdeoPrecepts.Desc>ランダムに選ばれたAIのイデオロギーに、免罪符と有料の昇天への立場が一度だけ与えられます。持つミームに応じて決まります。固定された派閥のイデオロギーには一切触れません。</HH.Setting.dlc.aiIdeoPrecepts.Desc>
+  <HH.Setting.dlc.fundDestination>コロニーの捧げ物の行き先</HH.Setting.dlc.fundDestination>
+  <HH.Setting.dlc.fundDestination.Desc>神へ: 銀貨は単に消えます。信仰の派閥へ: 派閥がその信仰を共有していれば、好感度が上がります（500銀貨ごとに+1、四季ごとに最大+5）。コロニーの人々が自分たちの神殿基金に払うことは決してありません。</HH.Setting.dlc.fundDestination.Desc>
+  <HH.Setting.dlc.indulgenceCapScale>免罪符の購入上限</HH.Setting.dlc.indulgenceCapScale>
+  <HH.Setting.dlc.indulgenceCapScale.Desc>ポーン、コロニー、イデオロギーごとの購入上限への倍率。1=設計どおりの上限。</HH.Setting.dlc.indulgenceCapScale.Desc>
+  <HH.Setting.dlc.indulgenceFactor>免罪符の価格係数</HH.Setting.dlc.indulgenceFactor>
+  <HH.Setting.dlc.indulgenceFactor.Desc>すべての免罪符と昇天の価格への倍率（金銭と信仰の表にある「信仰の販売」係数）。</HH.Setting.dlc.indulgenceFactor.Desc>
+  <HH.Setting.dlc.luckShift>運: 幸運と不運による配当のずれ</HH.Setting.dlc.luckShift>
+  <HH.Setting.dlc.luckShift.Desc>幸運な人は、ゲームの配当計画にこの割合ポイントが加算され、不運な人は同じ分だけ減ります。ずれによってゲームが100%以上になることはなく、ランダムな抽選が曲げられることもありません。</HH.Setting.dlc.luckShift.Desc>
+  <HH.Setting.dlc.mandatoryBilleting>帝国の宿泊割り当てに対する義務的なもてなし</HH.Setting.dlc.mandatoryBilleting>
+  <HH.Setting.dlc.mandatoryBilleting.Desc>帝国の宿泊命令は、「予約超過」より低い段階でも届きます。オフ: 高難度（予約超過以上）のみ。いずれの場合も、ゲストベッドのあるコロニーでのみ届きます。</HH.Setting.dlc.mandatoryBilleting.Desc>
+  <HH.Setting.dlc.nobleBasePrice>貴族の滞在の基本料金（貴族1人・1日あたり）</HH.Setting.dlc.nobleBasePrice>
+  <HH.Setting.dlc.nobleBasePrice.Desc>称号の割増（100の序列につき+15%）と満足度係数の前の、貴族1人・1日あたりの銀貨。</HH.Setting.dlc.nobleBasePrice.Desc>
+  <HH.Setting.dlc.nobleMoneyFactor>貴族の資金係数</HH.Setting.dlc.nobleMoneyFactor>
+  <HH.Setting.dlc.nobleMoneyFactor.Desc>難易度表の客の資金の行に従います。簡単な段階では裕福に、難しい段階では貧しくなります。</HH.Setting.dlc.nobleMoneyFactor.Desc>
+  <HH.Setting.dlc.nobleStays>貴族の滞在</HH.Setting.dlc.nobleStays>
+  <HH.Setting.dlc.nobleStays.Desc>帝国の貴族は有料の宿泊を求めることがあります。断ることはいつでもできます。称号に合う寝室にゲストベッドが必要です。彼らは客として泊まり、最後に満足度に応じて支払います。</HH.Setting.dlc.nobleStays.Desc>
+  <HH.Setting.dlc.shrineReactions>コロニーの人々が他の信仰の祠に反応する</HH.Setting.dlc.shrineReactions>
+  <HH.Setting.dlc.shrineReactions.Desc>布教者と至上主義者は、自分たちの土地にある他の信仰の祠を嫌います。寛容なイデオロギーは、それらを好みます。</HH.Setting.dlc.shrineReactions.Desc>
+  <HH.Setting.dlc.xenoHospitality>異種族の好み</HH.Setting.dlc.xenoHospitality>
+  <HH.Setting.dlc.xenoHospitality.Desc>客の異種族と遺伝子が、どんな部屋や品を好むかを決めます（吸血鬼には暗い部屋、イットゥキンには寒い部屋、など）。</HH.Setting.dlc.xenoHospitality.Desc>
+  <HH.Setting.finance.cryptoOn>暗号資産</HH.Setting.finance.cryptoOn>
+  <HH.Setting.finance.cryptoOn.Desc>RimCoin とミームコインを扱います。</HH.Setting.finance.cryptoOn.Desc>
+  <HH.Setting.finance.fallbackWindow>通信コンソールのメニューからの投資</HH.Setting.finance.fallbackWindow>
+  <HH.Setting.finance.fallbackWindow.Desc>銀行ウィンドウが使えるときでも、通信コンソールのフロートメニューに投資画面も表示します。</HH.Setting.finance.fallbackWindow.Desc>
+  <HH.Setting.finance.hazardMult>災難 ×</HH.Setting.finance.hazardMult>
+  <HH.Setting.finance.hazardMult.Desc>暴落、ラグプル、債務不履行、取引所のハッキング、銀行の取り付け騒ぎを増減させます。長期平均は変わらず、痛い目に遭う頻度だけが変わります。</HH.Setting.finance.hazardMult.Desc>
+  <HH.Setting.finance.jumpMult>価格の急変 ×</HH.Setting.finance.jumpMult>
+  <HH.Setting.finance.jumpMult.Desc>資産が自ら急変する頻度を増減させます（四半期の数字、暗号の急変、ミームコインの急騰）。長期平均は変わらず、計算が調整します。</HH.Setting.finance.jumpMult.Desc>
+  <HH.Setting.finance.memeInterval>新しいミームコインまでの日数</HH.Setting.finance.memeInterval>
+  <HH.Setting.finance.memeInterval.Desc>次のミームコインが上場されるまでの平均日数。</HH.Setting.finance.memeInterval.Desc>
+  <HH.Setting.finance.memeOn>ミームコイン</HH.Setting.finance.memeOn>
+  <HH.Setting.finance.memeOn.Desc>数日おきに新しいミームコインが現れ、3つ目の後に上場廃止になります。ほとんどの保有者は損をし、ごく一部が大金持ちになります。</HH.Setting.finance.memeOn.Desc>
+  <HH.Setting.finance.newsMessages>市場のニュースをメッセージで表示</HH.Setting.finance.newsMessages>
+  <HH.Setting.finance.newsMessages.Desc>暴落、反発、ハッキングを短いメッセージで表示します（影響を受けるものを保有しているときだけ）。</HH.Setting.finance.newsMessages.Desc>
+  <HH.Setting.finance.nftOn>NFT</HH.Setting.finance.nftOn>
+  <HH.Setting.finance.nftOn.Desc>絵の所有証明書です。売却には1〜4日かかり、手数料の差額が発生します。</HH.Setting.finance.nftOn.Desc>
+  <HH.Setting.finance.omenCapA>ポジションの上限、確率市場</HH.Setting.finance.omenCapA>
+  <HH.Setting.finance.omenCapA.Desc>1つのOmen確率市場に賭けられる、純資産に対する最大の割合。</HH.Setting.finance.omenCapA.Desc>
+  <HH.Setting.finance.omenCapB>ポジションの上限、世界市場</HH.Setting.finance.omenCapB>
+  <HH.Setting.finance.omenCapB.Desc>世界の出来事に関する1つのOmen市場に賭けられる、純資産に対する最大の割合。</HH.Setting.finance.omenCapB.Desc>
+  <HH.Setting.finance.omenFee>Omen の手数料</HH.Setting.finance.omenFee>
+  <HH.Setting.finance.omenFee.Desc>すべての賭け金のうち取引所が取る割合（ポジションを早期に閉じたときにも改めて取られます）。</HH.Setting.finance.omenFee.Desc>
+  <HH.Setting.finance.omenGamma>大穴の歪み γ</HH.Setting.finance.omenGamma>
+  <HH.Setting.finance.omenGamma.Desc>1未満では、取引所は起こりにくい結果を割高に見積もります（古典的な本命と大穴の偏り）。1=相場が真のオッズと一致します。</HH.Setting.finance.omenGamma.Desc>
+  <HH.Setting.finance.omenSpread>Omen のスプレッド</HH.Setting.finance.omenSpread>
+  <HH.Setting.finance.omenSpread.Desc>ブックメーカーの利幅。YES価格とNO価格の合計は、1にこの値を加えたものになります。</HH.Setting.finance.omenSpread.Desc>
+  <HH.Setting.finance.profit>収益性（年間倍率 M）</HH.Setting.finance.profit>
+  <HH.Setting.finance.profit.Desc>基準ファンド RimIndex 50 について、ゲームの1年（60日）あたりに投資額が平均してどれだけ増えるか。1.2 は年 +20%、1.0 は増減なし、1未満は損失。対数スケールで 0.1〜100。正確な値は数字を入力します。自分で設定するまでは、難易度スライダーに従います。</HH.Setting.finance.profit.Desc>
+  <HH.Setting.finance.projectStakePct>プロジェクトごとの賭け上限</HH.Setting.finance.projectStakePct>
+  <HH.Setting.finance.projectStakePct.Desc>1つのプロジェクトに賭けられる最大額。純資産に対する割合。</HH.Setting.finance.projectStakePct.Desc>
+  <HH.Setting.finance.projectTotalPct>賭け上限、すべてのプロジェクト</HH.Setting.finance.projectTotalPct>
+  <HH.Setting.finance.projectTotalPct.Desc>未決済のプロジェクトへの賭けの合計の最大額（ロングとショートを合算）。純資産に対する割合。</HH.Setting.finance.projectTotalPct.Desc>
+  <HH.Setting.finance.projectYearCapPct>年間利益の上限</HH.Setting.finance.projectYearCapPct>
+  <HH.Setting.finance.projectYearCapPct.Desc>ロングとショートによるゲームの1年あたりの純利益は、年初の純資産のこの割合で頭打ちになります。それを超えた分は、銀行が賭け金を返すだけです。</HH.Setting.finance.projectYearCapPct.Desc>
+  <HH.Setting.finance.projectsOn>派閥プロジェクトとプロジェクト・ショート</HH.Setting.finance.projectsOn>
+  <HH.Setting.finance.projectsOn.Desc>派閥がプロジェクトを発表します。出資（ロング）するか、反対に賭ける（ショート）ことができます。</HH.Setting.finance.projectsOn.Desc>
+  <HH.Setting.finance.volMult>変動幅 ×</HH.Setting.finance.volMult>
+  <HH.Setting.finance.volMult.Desc>価格が日ごとにどれだけ激しく振れるかを増減させます。1=設計の数字（指数は1日あたり1.5%、ミームコインは15%）。</HH.Setting.finance.volMult.Desc>
+  <HH.Setting.insurance.assessmentDays>事故の査定（日数）</HH.Setting.insurance.assessmentDays>
+  <HH.Setting.insurance.assessmentDays.Desc>事故プランは、事故からこの日数の後に後遺障害の等級を査定します（既定では四季分）。それまでは、手紙に予備の結果が表示されます。</HH.Setting.insurance.assessmentDays.Desc>
+  <HH.Setting.insurance.billingDays>保険料の請求間隔（日数）</HH.Setting.insurance.billingDays>
+  <HH.Setting.insurance.billingDays.Desc>保険料は、この日数ごとに自動で引き落とされます（銀行口座から。なければ金庫または保管中の銀貨から）。</HH.Setting.insurance.billingDays.Desc>
+  <HH.Setting.insurance.changeFee>契約変更の手数料（銀貨）</HH.Setting.insurance.changeFee>
+  <HH.Setting.insurance.changeFee.Desc>有効な契約の金額、等級、特約を変更するたびに Clawback Mutual が請求する額（「事務処理の手間」）。スタンダードルームでは無料です。</HH.Setting.insurance.changeFee.Desc>
+  <HH.Setting.insurance.changeLimitPerQuadrum>契約ごと・四季ごとの変更回数</HH.Setting.insurance.changeLimitPerQuadrum>
+  <HH.Setting.insurance.changeLimitPerQuadrum.Desc>1つの契約を四季ごとに変更できる回数。0=無制限（スタンダードルーム）。予約超過以上の段階では制限されます。</HH.Setting.insurance.changeLimitPerQuadrum.Desc>
+  <HH.Setting.insurance.changeWaitingDays>引き上げ後の待機期間（日数）</HH.Setting.insurance.changeWaitingDays>
+  <HH.Setting.insurance.changeWaitingDays.Desc>補償額、等級を上げたり特約を追加したりした後も、この待機期間内に起きた出来事への請求は、旧来の補償で査定されます（襲撃の1分前に引き上げた契約は、新しい水準では支払われません）。補償を下げる場合は待機期間がありません。</HH.Setting.insurance.changeWaitingDays.Desc>
+  <HH.Setting.insurance.claimLetters>すべての請求に手紙</HH.Setting.insurance.claimLetters>
+  <HH.Setting.insurance.claimLetters.Desc>Clawback Mutual は、提出されたすべての請求（「請求受付」の通知は1日に最大1通）と、すべての判定について手紙を書きます。</HH.Setting.insurance.claimLetters.Desc>
+  <HH.Setting.insurance.claimMode>請求の出し方</HH.Setting.insurance.claimMode>
+  <HH.Setting.insurance.claimMode.Desc>用紙方式: 保険事故が起きると「請求可能」の手紙が届き、期限までに用紙で請求します（結果はこれまでどおり抽選されます。用紙は支払いの選択を除けば見せかけです）。自動: 損害が発生した瞬間に、請求が代わりに提出されます。</HH.Setting.insurance.claimMode.Desc>
+  <HH.Setting.insurance.claimReminder>請求期限の前に知らせる</HH.Setting.insurance.claimReminder>
+  <HH.Setting.insurance.claimReminder.Desc>申請の受付期間が閉じる2日前に、短いお知らせの手紙を送ります。</HH.Setting.insurance.claimReminder.Desc>
+  <HH.Setting.insurance.claimsAttitude>請求への姿勢</HH.Setting.insurance.claimsAttitude>
+  <HH.Setting.insurance.claimsAttitude.Desc>請求部門が支払わない理由を見つけることにどれほど熱心か。0%「決して言い逃れしない」・15%「小さな字で」（スタンダードルーム）・40%「創造的な会計」・75%「弁護士が暇を持て余している」・100%「ほぼいつも」。</HH.Setting.insurance.claimsAttitude.Desc>
+  <HH.Setting.insurance.deadlineScale>請求期限（係数）</HH.Setting.insurance.deadlineScale>
+  <HH.Setting.insurance.deadlineScale.Desc>すべての契約の申請期限への倍率（Wanderlust 5日、Legal Shield 5日、財産は「まずまず」で約15日。Premium は+50%、Bare Minimum は-30%）。</HH.Setting.insurance.deadlineScale.Desc>
+  <HH.Setting.insurance.formError>解約用紙の記入ミスの確率</HH.Setting.insurance.formError>
+  <HH.Setting.insurance.formError.Desc>第30条: 解約が用紙の記入ミスで戻されます。スタンダードルームでは自動で再提出され、期限は変わりません。より高い段階では四季分を失います。</HH.Setting.insurance.formError.Desc>
+  <HH.Setting.insurance.formTextAi>請求の陳述へのAIの返答</HH.Setting.insurance.formTextAi>
+  <HH.Setting.insurance.formTextAi.Desc>AIの味付けモジュールがオンで、あなたが同意している場合、請求部門はあなたの陳述に独自の言葉で返答します（金額と判定は変わりません）。なければ陳述は保存されるだけで無視されます。</HH.Setting.insurance.formTextAi.Desc>
+  <HH.Setting.insurance.hospitalCapDays>Rim Health Plan: 支払われる病床日数</HH.Setting.insurance.hospitalCapDays>
+  <HH.Setting.insurance.hospitalCapDays.Desc>下の期間内に、Rim Health Plan が入植者1人あたりに支払う病床日数の上限（入院給付の上限。慢性疾患で保険料以上の支払いが出ないようにします）。</HH.Setting.insurance.hospitalCapDays.Desc>
+  <HH.Setting.insurance.hospitalCapWindow>Rim Health Plan: 期間（日数）</HH.Setting.insurance.hospitalCapWindow>
+  <HH.Setting.insurance.hospitalCapWindow.Desc>上の上限は、この日数を超えた期間について、すべての入植者の支払われた日数を数えます（既定では四季分）。</HH.Setting.insurance.hospitalCapWindow.Desc>
+  <HH.Setting.insurance.loading>保険料の割増し</HH.Setting.insurance.loading>
+  <HH.Setting.insurance.loading.Desc>保険料を構成する、想定損害への上乗せ。平均すると保険会社はこの分を取り分とします。0 % なら保険数理上の公正価格です。</HH.Setting.insurance.loading.Desc>
+  <HH.Setting.insurance.maxPersonSum>人身保険金の上限</HH.Setting.insurance.maxPersonSum>
+  <HH.Setting.insurance.maxPersonSum.Desc>事故、退職、旅行保険の基本保険金の上限（入植者の市場価値の2倍までも上限）。</HH.Setting.insurance.maxPersonSum.Desc>
+  <HH.Setting.insurance.maxPropertySum>財産保険金の上限</HH.Setting.insurance.maxPropertySum>
+  <HH.Setting.insurance.maxPropertySum.Desc>財産保険の保険金額の上限。</HH.Setting.insurance.maxPropertySum.Desc>
+  <HH.Setting.insurance.negotiation>保険金請求の交渉を許可</HH.Setting.insurance.negotiation>
+  <HH.Setting.insurance.negotiation.Desc>請求は交渉できます（最大3回）。標準の部屋では交渉に費用はかかりません。</HH.Setting.insurance.negotiation.Desc>
+  <HH.Setting.insurance.noticeDays>解約の告知期間（日）</HH.Setting.insurance.noticeDays>
+  <HH.Setting.insurance.noticeDays.Desc>解約は、申し込んでからこの日数以上経って最初の四季の切り替えで発効します。標準の部屋は3日、定員超過は1季節、「なぜ？」は1年。</HH.Setting.insurance.noticeDays.Desc>
+  <HH.Setting.insurance.pensionMaxWorkHours>年金: 1日あたりの労働時間の上限</HH.Setting.insurance.pensionMaxWorkHours>
+  <HH.Setting.insurance.pensionMaxWorkHours.Desc>年金受給者が日課で「労働」に設定できる1日の時間。「何でも」「娯楽」「睡眠」「瞑想」は自由時間として数えます。</HH.Setting.insurance.pensionMaxWorkHours.Desc>
+  <HH.Setting.insurance.pensionRule>年金の労働ルール</HH.Setting.insurance.pensionRule>
+  <HH.Setting.insurance.pensionRule.Desc>毎日の年金（Golden Years、Good Enough、Premium。60歳以上）を受け取る者は、日課で1日数時間しか働けません。適用: ストライキは年金を失わせます（2回目: 今期の年金、3回目: 受給権）。警告のみ: 手紙と通知だけで罰則なし。オフ: ルールなし。</HH.Setting.insurance.pensionRule.Desc>
+  <HH.Setting.insurance.requireResearch>保険に研究が必要</HH.Setting.insurance.requireResearch>
+  <HH.Setting.insurance.requireResearch.Desc>保険は研究プロジェクト SL_Insurance（Bare Minimum、Good Enough）と SL_Actuarial（Premium、Wanderlust）で解禁されます。オフ: 最初から全部使えます。</HH.Setting.insurance.requireResearch.Desc>
+  <HH.Setting.insurance.retentionDialogs>引き止めダイアログ</HH.Setting.insurance.retentionDialogs>
+  <HH.Setting.insurance.retentionDialogs.Desc>デズモンド・タリー（上級引き止め専門員）が解約を思いとどまらせようとする回数。標準の部屋: 正直な提案を1回。</HH.Setting.insurance.retentionDialogs.Desc>
+  <HH.Setting.insurance.salesPressure>販売圧力</HH.Setting.insurance.salesPressure>
+  <HH.Setting.insurance.salesPressure.Desc>Clawback Mutual の売り込みの強さ: 初期選択済みのオプション、引き止めの提案、記入ミス、アップセルのほのめかし。それぞれの手口には下に個別のスイッチもあります。</HH.Setting.insurance.salesPressure.Desc>
+  <HH.Setting.insurance.showStatusColumn>入植者表の保険列</HH.Setting.insurance.showStatusColumn>
+  <HH.Setting.insurance.showStatusColumn.Desc>割り当て表で全入植者の保険状況を表示（最初の契約ができてから）。</HH.Setting.insurance.showStatusColumn.Desc>
+  <HH.Setting.insurance.showStatusTab>入植者の保険タブ</HH.Setting.insurance.showStatusTab>
+  <HH.Setting.insurance.showStatusTab.Desc>入植者の検査ウィンドウに保険タブを追加（最初の契約ができてから）。</HH.Setting.insurance.showStatusTab.Desc>
+  <HH.Setting.insurance.trick.badge>手口: 「多くの植民地がプレミアムを選択」バッジ</HH.Setting.insurance.trick.badge>
+  <HH.Setting.insurance.trick.badge.Desc>プレミアム列のバッジ（さらに強い手口として、灰色表示の「プレミアム・プラス」）。</HH.Setting.insurance.trick.badge.Desc>
+  <HH.Setting.insurance.trick.formError>手口: 記入ミス</HH.Setting.insurance.trick.formError>
+  <HH.Setting.insurance.trick.formError.Desc>記入ミス付きで戻ってくる解約。</HH.Setting.insurance.trick.formError.Desc>
+  <HH.Setting.insurance.trick.preTicked>手口: 初期選択済みのオプション</HH.Setting.insurance.trick.preTicked>
+  <HH.Setting.insurance.trick.preTicked.Desc>あらかじめチェックされたオプション（販売圧力に従う、常に、または決してなし）。</HH.Setting.insurance.trick.preTicked.Desc>
+  <HH.Setting.insurance.trick.retention>手口: 引き止めの提案</HH.Setting.insurance.trick.retention>
+  <HH.Setting.insurance.trick.retention.Desc>解約時の引き止めダイアログ。</HH.Setting.insurance.trick.retention.Desc>
+  <HH.Setting.insurance.trick.upsell>手口: アップセルのヒント</HH.Setting.insurance.trick.upsell>
+  <HH.Setting.insurance.trick.upsell.Desc>より多くの、またはより良い補償を勧める手紙（死亡後5日以内は決して送らない）。</HH.Setting.insurance.trick.upsell.Desc>
+  <HH.Setting.insurance.trickCap>販売手口の費用の上限</HH.Setting.insurance.trickCap>
+  <HH.Setting.insurance.trickCap.Desc>すべての販売手口の合計費用は、年間保険料のこの割合までとし、残りは年次の手紙で「お客様還元」として返金されます。</HH.Setting.insurance.trickCap.Desc>
+  <HH.Setting.insurance.waitingDays>待機期間（日）</HH.Setting.insurance.waitingDays>
+  <HH.Setting.insurance.waitingDays.Desc>補償は、この日数が経過してから始まります（「補償開始後に始まる」）。待機期間中の損害は支払われません。</HH.Setting.insurance.waitingDays.Desc>
+  <HH.Setting.lottery.colonyFee>チケット1枚ごとの手数料</HH.Setting.lottery.colonyFee>
+  <HH.Setting.lottery.colonyFee.Desc>チケット1枚ごとにあなたが受け取る追加の銀貨（購入者が見る価格を引き上げます）。</HH.Setting.lottery.colonyFee.Desc>
+  <HH.Setting.lottery.colonyInterval>植民地抽選の間隔（日）</HH.Setting.lottery.colonyInterval>
+  <HH.Setting.lottery.colonyInterval.Desc>この日数ごとに抽選。ジャックポットは次回へ持ち越されます。</HH.Setting.lottery.colonyInterval.Desc>
+  <HH.Setting.lottery.colonyJackpotCap>植民地ジャックポットの上限</HH.Setting.lottery.colonyJackpotCap>
+  <HH.Setting.lottery.colonyJackpotCap.Desc>宝くじのジャックポットは、この額に達するまで持ち越されます。</HH.Setting.lottery.colonyJackpotCap.Desc>
+  <HH.Setting.lottery.colonyJackpotShare>賞金配分: ジャックポット</HH.Setting.lottery.colonyJackpotShare>
+  <HH.Setting.lottery.colonyJackpotShare.Desc>4つ正解の賞金配分。</HH.Setting.lottery.colonyJackpotShare.Desc>
+  <HH.Setting.lottery.colonyOn>植民地の宝くじ</HH.Setting.lottery.colonyOn>
+  <HH.Setting.lottery.colonyOn.Desc>自分の宝くじを運営します: 客と友好的な入植地のシミュレーションされたプレイヤーがチケットを買い、払い戻さなかった分があなたのものになります。</HH.Setting.lottery.colonyOn.Desc>
+  <HH.Setting.lottery.colonyPrice>植民地のチケット価格</HH.Setting.lottery.colonyPrice>
+  <HH.Setting.lottery.colonyPrice.Desc>自分の宝くじ1枚の価格。</HH.Setting.lottery.colonyPrice.Desc>
+  <HH.Setting.lottery.colonyQuote>植民地の払い戻し率</HH.Setting.lottery.colonyQuote>
+  <HH.Setting.lottery.colonyQuote.Desc>チケット価格のうち賞金プールに入る割合。残りはあなたのもの。全体抽選より高い率にすると、より多くの購入者を引きつけます。</HH.Setting.lottery.colonyQuote.Desc>
+  <HH.Setting.lottery.colonySecondShare>賞金配分: 2等</HH.Setting.lottery.colonySecondShare>
+  <HH.Setting.lottery.colonySecondShare.Desc>3つ正解の賞金配分。</HH.Setting.lottery.colonySecondShare.Desc>
+  <HH.Setting.lottery.colonyThirdShare>賞金配分: 3等</HH.Setting.lottery.colonyThirdShare>
+  <HH.Setting.lottery.colonyThirdShare.Desc>2つ正解の賞金配分。</HH.Setting.lottery.colonyThirdShare.Desc>
+  <HH.Setting.lottery.demandBase>チケット需要の基準</HH.Setting.lottery.demandBase>
+  <HH.Setting.lottery.demandBase.Desc>中立的な条件での1人1日あたりのチケット数。需要計算式の基準値。</HH.Setting.lottery.demandBase.Desc>
+  <HH.Setting.lottery.globalInterval>全体抽選の間隔（日）</HH.Setting.lottery.globalInterval>
+  <HH.Setting.lottery.globalInterval.Desc>この日数ごとに抽選。</HH.Setting.lottery.globalInterval.Desc>
+  <HH.Setting.lottery.globalOn>グリッターワールド大抽選</HH.Setting.lottery.globalOn>
+  <HH.Setting.lottery.globalOn.Desc>全体の宝くじ: 数日ごとに抽選。チケットは銀行の窓口で購入。</HH.Setting.lottery.globalOn.Desc>
+  <HH.Setting.lottery.globalPrice>全体のチケット価格</HH.Setting.lottery.globalPrice>
+  <HH.Setting.lottery.globalPrice.Desc>全体抽選の1枚の価格。</HH.Setting.lottery.globalPrice.Desc>
+  <HH.Setting.lottery.globalQuote>全体の払い戻し率</HH.Setting.lottery.globalQuote>
+  <HH.Setting.lottery.globalQuote.Desc>チケット販売額のうち賞金に回る割合（ジャックポットはその40 %を得る）。</HH.Setting.lottery.globalQuote.Desc>
+  <HH.Setting.lottery.internationalScale>シミュレーションされたプレイヤー ×</HH.Setting.lottery.internationalScale>
+  <HH.Setting.lottery.internationalScale.Desc>全入植地のシミュレーションプレイヤーが全体抽選で買うチケット数に掛ける倍率。</HH.Setting.lottery.internationalScale.Desc>
+  <HH.Setting.lottery.jackpotCap>全体ジャックポットの上限</HH.Setting.lottery.jackpotCap>
+  <HH.Setting.lottery.jackpotCap.Desc>ジャックポットはこの額に達するまで持ち越されます。</HH.Setting.lottery.jackpotCap.Desc>
+  <HH.Setting.thrumbo.edgeShift>Lucky Thrumbo: ハウスエッジの補正</HH.Setting.thrumbo.edgeShift>
+  <HH.Setting.thrumbo.edgeShift.Desc>Lucky Thrumbo の全ゲームのハウスエッジに加算されるパーセントポイント（基準: スロット 8 %、ルーレット 2.7 %、ブラックジャックはルールどおり）。0 = 標準のエッジ。負の数はあなたに有利。難易度スライダーに従う。</HH.Setting.thrumbo.edgeShift.Desc>
+  <HH.Setting.thrumbo.maxBetCap>Lucky Thrumbo: テーブル上限、上限額（銀）</HH.Setting.thrumbo.maxBetCap>
+  <HH.Setting.thrumbo.maxBetCap.Desc>テーブル上限がオンのときだけ: どの賭け金もこれを超えない。</HH.Setting.thrumbo.maxBetCap.Desc>
+  <HH.Setting.thrumbo.maxBetFloor>Lucky Thrumbo: テーブル上限、下限額（銀）</HH.Setting.thrumbo.maxBetFloor>
+  <HH.Setting.thrumbo.maxBetFloor.Desc>テーブル上限がオンのときだけ: 貧しい植民地でも1回の賭けはこれ以上可能。</HH.Setting.thrumbo.maxBetFloor.Desc>
+  <HH.Setting.thrumbo.maxBetShare>Lucky Thrumbo: テーブル上限（純資産に対する割合）</HH.Setting.thrumbo.maxBetShare>
+  <HH.Setting.thrumbo.maxBetShare.Desc>テーブル上限がオンのときだけ: 1回の賭け金は純資産（口座＋自宅の銀−借金）のこの割合まで。下限と下の上限の間。</HH.Setting.thrumbo.maxBetShare.Desc>
+  <HH.Setting.thrumbo.minBet>Lucky Thrumbo: 最小賭け金（銀）</HH.Setting.thrumbo.minBet>
+  <HH.Setting.thrumbo.minBet.Desc>Lucky Thrumbo が受け付ける最小の賭け金。</HH.Setting.thrumbo.minBet.Desc>
+  <HH.Setting.thrumbo.tableLimit>Lucky Thrumbo: テーブル上限</HH.Setting.thrumbo.tableLimit>
+  <HH.Setting.thrumbo.tableLimit.Desc>オンのとき、1回の賭け金は純資産の一定割合まで（下の3つの設定）。オフ: 持っているものを全部賭けられる。</HH.Setting.thrumbo.tableLimit.Desc>
+  <HH.Setting.underworld.exposureChance>まともな客が裏部屋に出くわす確率</HH.Setting.underworld.exposureChance>
+  <HH.Setting.underworld.exposureChance.Desc>チェックごと（約2時間ごと）、まともな客がいて裏部屋が使われた場合。難易度スライダーに従う。</HH.Setting.underworld.exposureChance.Desc>
+  <HH.Setting.underworld.fence.buyPercent>故買屋の買取価格</HH.Setting.underworld.fence.buyPercent>
+  <HH.Setting.underworld.fence.buyPercent.Desc>盗品に故買屋が払う、市場価値に対する割合。</HH.Setting.underworld.fence.buyPercent.Desc>
+  <HH.Setting.underworld.fence.capital>故買屋の現金箱</HH.Setting.underworld.fence.capital>
+  <HH.Setting.underworld.fence.capital.Desc>故買屋は自分の現金箱から支払います。金庫から補充し、余りは金庫へ戻ります。</HH.Setting.underworld.fence.capital.Desc>
+  <HH.Setting.underworld.fence.exposureChance>持ち主が気づく確率</HH.Setting.underworld.fence.exposureChance>
+  <HH.Setting.underworld.fence.exposureChance.Desc>盗品を転売するごとに: 盗まれた派閥がその行き先を知る。</HH.Setting.underworld.fence.exposureChance.Desc>
+  <HH.Setting.underworld.fence.goodwillHit>発覚時に失う好感度</HH.Setting.underworld.fence.goodwillHit>
+  <HH.Setting.underworld.fence.goodwillHit.Desc>段階の難易度上限の前の値。</HH.Setting.underworld.fence.goodwillHit.Desc>
+  <HH.Setting.underworld.fence.sellPercent>故買屋の販売価格</HH.Setting.underworld.fence.sellPercent>
+  <HH.Setting.underworld.fence.sellPercent.Desc>怪しい買い手が払う、市場価値に対する割合。</HH.Setting.underworld.fence.sellPercent.Desc>
+  <HH.Setting.underworld.gang.feeMax>裏部屋の料金（最高）</HH.Setting.underworld.gang.feeMax>
+  <HH.Setting.underworld.gang.feeMin>裏部屋の料金（最低）</HH.Setting.underworld.gang.feeMin>
+  <HH.Setting.underworld.gang.feeMin.Desc>ギャングの一員が裏部屋に払う料金。</HH.Setting.underworld.gang.feeMin.Desc>
+  <HH.Setting.underworld.gang.intervalDays>ギャングの訪問間隔（日）</HH.Setting.underworld.gang.intervalDays>
+  <HH.Setting.underworld.gang.intervalDays.Desc>裏部屋、格闘場、故買屋が存在すると、ギャングの平均訪問間隔。</HH.Setting.underworld.gang.intervalDays.Desc>
+  <HH.Setting.underworld.gang.intimidateChance>みかじめ料を要求される確率</HH.Setting.underworld.gang.intimidateChance>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>難易度スライダーに従う。標準の部屋と易しい設定では、拒否できる対話以外は何も押し付けない。</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.prisonAccess>ギャングが刑務所を訪れてよい</HH.Setting.underworld.gang.prisonAccess>
+  <HH.Setting.underworld.gang.prisonAccess.Desc>ギャングの客に拘置所の見学（囚人への尋問）を許可。初期はオフ。それ以外では、すべての客に刑務所は閉鎖されています。</HH.Setting.underworld.gang.prisonAccess.Desc>
+  <HH.Setting.underworld.gang.protectionFee>要求するみかじめ料</HH.Setting.underworld.gang.protectionFee>
+  <HH.Setting.underworld.gang.sizeMax>最大のギャング規模</HH.Setting.underworld.gang.sizeMax>
+  <HH.Setting.underworld.gang.tourFee>拘置所見学の料金</HH.Setting.underworld.gang.tourFee>
+  <HH.Setting.underworld.gang.tourFee.Desc>ギャングの一員が囚人に1時間の尋問をするために払う料金。</HH.Setting.underworld.gang.tourFee.Desc>
+  <HH.Setting.underworld.hunt.feeMax>狩りの料金（最高）</HH.Setting.underworld.hunt.feeMax>
+  <HH.Setting.underworld.hunt.feeMin>狩りの料金（最低）</HH.Setting.underworld.hunt.feeMin>
+  <HH.Setting.underworld.hunt.intervalDays>狩りの一団の間隔（日）</HH.Setting.underworld.hunt.intervalDays>
+  <HH.Setting.underworld.hunt.quarryCount>1回の狩りの獲物</HH.Setting.underworld.hunt.quarryCount>
+  <HH.Setting.underworld.hunt.quarryCount.Desc>一団が狩場に連れてくる動物の数。</HH.Setting.underworld.hunt.quarryCount.Desc>
+  <HH.Setting.underworld.hunt.quarryHours>人間の獲物が生き延びるべき時間</HH.Setting.underworld.hunt.quarryHours>
+  <HH.Setting.underworld.hunt.quarryHours.Desc>これだけの時間生き延びるか、フェンスラインに到達した囚人は自由になります。</HH.Setting.underworld.hunt.quarryHours.Desc>
+  <HH.Setting.underworld.lounge.price>1回のセッションの料金</HH.Setting.underworld.lounge.price>
+  <HH.Setting.underworld.lounge.price.Desc>ドラッグのラウンジで客が払う額。客はイデオロギーが許すものだけを取ります。</HH.Setting.underworld.lounge.price.Desc>
+  <HH.Setting.underworld.mode>裏社会の現れ方</HH.Setting.underworld.mode>
+  <HH.Setting.underworld.mode.Desc>ゲーム内で発見: 怪しい見知らぬ者があなたに裏部屋があるか尋ね、「はい」と答えたときだけ闇の側面が開く。常時: 最初から開いている。（オフはモジュールのスイッチ。コージーコンテンツの強度ではこれを完全に隠す。）</HH.Setting.underworld.mode.Desc>
+  <HH.Setting.underworld.organ.orderDays>注文の納品日数</HH.Setting.underworld.organ.orderDays>
+  <HH.Setting.underworld.organ.orderPremium>注文した臓器の割増</HH.Setting.underworld.organ.orderPremium>
+  <HH.Setting.underworld.organ.orderPremium.Desc>陰惨モードのみ：期限内に届けられた完成済みの臓器は、通常価格のこの倍率で支払われる。</HH.Setting.underworld.organ.orderPremium.Desc>
+  <HH.Setting.underworld.organ.priceFactor>臓器の買取価格</HH.Setting.underworld.organ.priceFactor>
+  <HH.Setting.underworld.organ.priceFactor.Desc>匿名の買い手が支払う市場価値の割合。</HH.Setting.underworld.organ.priceFactor.Desc>
+  <HH.Setting.underworld.pit.betMax>最高賭け金</HH.Setting.underworld.pit.betMax>
+  <HH.Setting.underworld.pit.betMax.Desc>客が賭ける銀の上限（ただし所持金の3分の1を超えることはない）。</HH.Setting.underworld.pit.betMax.Desc>
+  <HH.Setting.underworld.pit.betMin>最低賭け金</HH.Setting.underworld.pit.betMin>
+  <HH.Setting.underworld.pit.betMin.Desc>客が賭ける銀の下限。</HH.Setting.underworld.pit.betMin.Desc>
+  <HH.Setting.underworld.pit.fairRatio>対戦の公平さ</HH.Setting.underworld.pit.fairRatio>
+  <HH.Setting.underworld.pit.fairRatio.Desc>強い方の戦闘力は、弱い方の戦闘力のこの倍まで。</HH.Setting.underworld.pit.fairRatio.Desc>
+  <HH.Setting.underworld.pit.houseCut>賭けの胴元の取り分</HH.Setting.underworld.pit.houseCut>
+  <HH.Setting.underworld.pit.houseCut.Desc>賭け金の総額のうち胴元が取る割合（トータリゼーター方式）。</HH.Setting.underworld.pit.houseCut.Desc>
+  <HH.Setting.underworld.pit.intervalHours>試合の間隔（時間）</HH.Setting.underworld.pit.intervalHours>
+  <HH.Setting.underworld.pit.intervalHours.Desc>戦う者と観客が十分にいる闘技場は、この間隔で試合を始める。</HH.Setting.underworld.pit.intervalHours.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks>最長試合時間（ティック）</HH.Setting.underworld.pit.maxBoutTicks>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>この時間内に勝者が決まらなかった試合は引き分け。全ての賭け金は返還される。</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.yieldHealth>降参する体力</HH.Setting.underworld.pit.yieldHealth>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>戦う者の体力がこの割合を下回ると試合は終わる（死闘の場合を除く）。</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.scandalCooldownDays>スキャンダルの間隔（日）</HH.Setting.underworld.scandalCooldownDays>
+  <HH.Setting.underworld.scandalCooldownDays.Desc>マップごとに、この日数に最大1件までスキャンダルが起こる。</HH.Setting.underworld.scandalCooldownDays.Desc>
+  <HH.Setting.underworld.smuggler.inspectChance>税関検査の確率</HH.Setting.underworld.smuggler.inspectChance>
+  <HH.Setting.underworld.smuggler.inspectChance.Desc>帝国の当局が存在する場合、入港のたびにこの確率で検査が入る。</HH.Setting.underworld.smuggler.inspectChance.Desc>
+  <HH.Setting.underworld.smuggler.intervalDays>入港の間隔（日）</HH.Setting.underworld.smuggler.intervalDays>
+  <HH.Setting.underworld.smuggler.intervalDays.Desc>密輸業者の桟橋での夜間入港の平均間隔。</HH.Setting.underworld.smuggler.intervalDays.Desc>
+  <HH.Setting.underworld.smuggler.maxValue>最大の木箱</HH.Setting.underworld.smuggler.maxValue>
+  <HH.Setting.underworld.smuggler.maxValue.Desc>提供される最大の木箱の市場価値。</HH.Setting.underworld.smuggler.maxValue.Desc>
+  <HH.Setting.underworld.smuggler.priceFactor>密輸品の価格</HH.Setting.underworld.smuggler.priceFactor>
+  <HH.Setting.underworld.smuggler.priceFactor.Desc>木箱に支払う市場価値の割合。</HH.Setting.underworld.smuggler.priceFactor.Desc>
+  <HH.Setting.underworld.strangerCooldownDays>男が再び話しかけるまでの日数</HH.Setting.underworld.strangerCooldownDays>
+  <HH.Setting.underworld.strangerCooldownDays.Desc>「興味なし」と断られた後、男はこの日数を待ってから再び話しかけてくる。</HH.Setting.underworld.strangerCooldownDays.Desc>
+  <HH.Setting.underworld.strangerMaxAsks>男の勧誘頻度</HH.Setting.underworld.strangerMaxAsks>
+  <HH.Setting.underworld.strangerMaxAsks.Desc>この回数断られると、男は完全に諦める。</HH.Setting.underworld.strangerMaxAsks.Desc>
+  <HH.Setting.underworld.strangerMaxWhispers>男が現れる囁きの上限</HH.Setting.underworld.strangerMaxWhispers>
+  <HH.Setting.underworld.strangerMaxWhispers.Desc>囁きがこの値以下のときにだけ男は現れる。</HH.Setting.underworld.strangerMaxWhispers.Desc>
+  <HH.Setting.underworld.strangerMeanDays>男が現れるまでの日数</HH.Setting.underworld.strangerMeanDays>
+  <HH.Setting.underworld.strangerMeanDays.Desc>男が訪れうる時点の平均間隔（入植地に客か店舗があり、囁きが少ないとき）。</HH.Setting.underworld.strangerMeanDays.Desc>
+  <HH.Setting.underworld.whispers.fence>故買屋の取引ごとの囁き</HH.Setting.underworld.whispers.fence>
+  <HH.Setting.underworld.whispers.gang>ギャングの訪問ごとの囁き</HH.Setting.underworld.whispers.gang>
+  <HH.Setting.underworld.whispers.hunt>狩りごとの囁き</HH.Setting.underworld.whispers.hunt>
+  <HH.Setting.underworld.whispers.lounge>ドラッグラウンジの利用ごとの囁き</HH.Setting.underworld.whispers.lounge>
+  <HH.Setting.underworld.whispers.organ>臓器売却ごとの囁き</HH.Setting.underworld.whispers.organ>
+  <HH.Setting.underworld.whispers.pit>試合ごとの囁き</HH.Setting.underworld.whispers.pit>
+  <HH.Setting.underworld.whispers.tour>留置所見学ごとの囁き</HH.Setting.underworld.whispers.tour>
+  <HH.Setting.underworld.whispersDecay>囁きの減衰（15日あたり）</HH.Setting.underworld.whispersDecay>
+  <HH.Setting.underworld.whispersDecay.Desc>囁きは15日ごとに、この割合だけ値が減る。</HH.Setting.underworld.whispersDecay.Desc>
+  <HH.SettingCat.Account>口座</HH.SettingCat.Account>
+  <HH.SettingCat.Addiction>依存</HH.SettingCat.Addiction>
+  <HH.SettingCat.Arrivals>到着</HH.SettingCat.Arrivals>
+  <HH.SettingCat.Cinema>映画館</HH.SettingCat.Cinema>
+  <HH.SettingCat.Collections>コレクション</HH.SettingCat.Collections>
+  <HH.SettingCat.Colonists>入植者</HH.SettingCat.Colonists>
+  <HH.SettingCat.Compatibility>互換性</HH.SettingCat.Compatibility>
+  <HH.SettingCat.DLCandtraits>DLCと特性</HH.SettingCat.DLCandtraits>
+  <HH.SettingCat.Difficulty>難易度</HH.SettingCat.Difficulty>
+  <HH.SettingCat.Discovery>発見</HH.SettingCat.Discovery>
+  <HH.SettingCat.Druglounge>ドラッグラウンジ</HH.SettingCat.Druglounge>
+  <HH.SettingCat.Effects>効果</HH.SettingCat.Effects>
+  <HH.SettingCat.Factionprojects>派閥プロジェクト</HH.SettingCat.Factionprojects>
+  <HH.SettingCat.Faithandmoney>信仰と金</HH.SettingCat.Faithandmoney>
+  <HH.SettingCat.Fees>手数料</HH.SettingCat.Fees>
+  <HH.SettingCat.Fence>故買屋</HH.SettingCat.Fence>
+  <HH.SettingCat.Fightpit>闘技場</HH.SettingCat.Fightpit>
+  <HH.SettingCat.Fun>娯楽</HH.SettingCat.Fun>
+  <HH.SettingCat.Furniture>家具</HH.SettingCat.Furniture>
+  <HH.SettingCat.Gallery>ギャラリー</HH.SettingCat.Gallery>
+  <HH.SettingCat.Gangs>ギャング</HH.SettingCat.Gangs>
+  <HH.SettingCat.General>一般</HH.SettingCat.General>
+  <HH.SettingCat.Guestbehaviour>客の振る舞い</HH.SettingCat.Guestbehaviour>
+  <HH.SettingCat.Guests>客</HH.SettingCat.Guests>
+  <HH.SettingCat.Handling>取り扱い</HH.SettingCat.Handling>
+  <HH.SettingCat.Help>ヘルプ</HH.SettingCat.Help>
+  <HH.SettingCat.Honorsystem>信用制度</HH.SettingCat.Honorsystem>
+  <HH.SettingCat.Houseodds>胴元のオッズ</HH.SettingCat.Houseodds>
+  <HH.SettingCat.InsuranceClawbackMutual>保険（Clawback Mutual）</HH.SettingCat.InsuranceClawbackMutual>
+  <HH.SettingCat.Interestprofitability>利息と収益性</HH.SettingCat.Interestprofitability>
+  <HH.SettingCat.Interface>インターフェース</HH.SettingCat.Interface>
+  <HH.SettingCat.Investments>投資</HH.SettingCat.Investments>
+  <HH.SettingCat.Kitchen>厨房</HH.SettingCat.Kitchen>
+  <HH.SettingCat.Limits>上限</HH.SettingCat.Limits>
+  <HH.SettingCat.Loans>融資</HH.SettingCat.Loans>
+  <HH.SettingCat.Lookandsound>見た目と音</HH.SettingCat.Lookandsound>
+  <HH.SettingCat.Lottery>宝くじ</HH.SettingCat.Lottery>
+  <HH.SettingCat.Luck>運</HH.SettingCat.Luck>
+  <HH.SettingCat.LuckyThrumbo>Lucky Thrumbo の設定</HH.SettingCat.LuckyThrumbo>
+  <HH.SettingCat.Market>市場</HH.SettingCat.Market>
+  <HH.SettingCat.Money>お金</HH.SettingCat.Money>
+  <HH.SettingCat.Music>音楽</HH.SettingCat.Music>
+  <HH.SettingCat.Nobles>貴族</HH.SettingCat.Nobles>
+  <HH.SettingCat.OmenExchange>予兆取引所</HH.SettingCat.OmenExchange>
+  <HH.SettingCat.Openinghours>営業時間</HH.SettingCat.Openinghours>
+  <HH.SettingCat.Organclinic>臓器診療所</HH.SettingCat.Organclinic>
+  <HH.SettingCat.Park>公園</HH.SettingCat.Park>
+  <HH.SettingCat.Prices>価格</HH.SettingCat.Prices>
+  <HH.SettingCat.Randomness>ランダム性</HH.SettingCat.Randomness>
+  <HH.SettingCat.Rehab>リハビリ</HH.SettingCat.Rehab>
+  <HH.SettingCat.Reports>報告</HH.SettingCat.Reports>
+  <HH.SettingCat.Reputation>評判</HH.SettingCat.Reputation>
+  <HH.SettingCat.Research>研究</HH.SettingCat.Research>
+  <HH.SettingCat.Salon>サロン</HH.SettingCat.Salon>
+  <HH.SettingCat.Sauna>サウナ</HH.SettingCat.Sauna>
+  <HH.SettingCat.Seats>席</HH.SettingCat.Seats>
+  <HH.SettingCat.Security>警備</HH.SettingCat.Security>
+  <HH.SettingCat.Services>サービス</HH.SettingCat.Services>
+  <HH.SettingCat.Sessions>利用回</HH.SettingCat.Sessions>
+  <HH.SettingCat.Setup>セットアップ</HH.SettingCat.Setup>
+  <HH.SettingCat.Shrines>祠</HH.SettingCat.Shrines>
+  <HH.SettingCat.Smugglersdock>密輸業者の桟橋</HH.SettingCat.Smugglersdock>
+  <HH.SettingCat.Sound>音</HH.SettingCat.Sound>
+  <HH.SettingCat.Specialswitches>特殊スイッチ</HH.SettingCat.Specialswitches>
+  <HH.SettingCat.Staffing>人員配置</HH.SettingCat.Staffing>
+  <HH.SettingCat.Stay>宿泊</HH.SettingCat.Stay>
+  <HH.SettingCat.Tables>テーブル</HH.SettingCat.Tables>
+  <HH.SettingCat.Taxi>タクシー</HH.SettingCat.Taxi>
+  <HH.SettingCat.Texts>文言</HH.SettingCat.Texts>
+  <HH.SettingCat.TheHunt>狩り</HH.SettingCat.TheHunt>
+  <HH.SettingCat.Wealthandmood>財産と気分</HH.SettingCat.Wealthandmood>
+  <HH.SettingCat.Whispers>ささやき</HH.SettingCat.Whispers>
+  <HH.SettingCat.Wing>棟</HH.SettingCat.Wing>
+</LanguageData>

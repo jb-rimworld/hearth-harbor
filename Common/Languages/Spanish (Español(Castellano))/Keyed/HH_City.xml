@@ -29,4 +29,20 @@
   <HH.City.TaxiFree>Hay un taxi esperando.</HH.City.TaxiFree>
   <HH.City.TaxiBusy>El taxi está en un trayecto.</HH.City.TaxiBusy>
   <HH.City.TaxiStats>Salidas: {0}, llegadas: {1}, ingresos: {2} de plata</HH.City.TaxiStats>
+  <HH.City.Closed>cerrado</HH.City.Closed>
+  <HH.City.Open>abierto</HH.City.Open>
+  <HH.City.Page.Cinema>Cine: {0} pantalla(s), {1} con rótulo de local; {2} entradas, {3} de plata</HH.City.Page.Cinema>
+  <HH.City.Page.CinemaRow>   {0}: {1} asientos, {2}</HH.City.Page.CinemaRow>
+  <HH.City.Page.Gallery>Galería: {0} galería(s), {1} obra(s); {2} visitas, {3} de plata</HH.City.Page.Gallery>
+  <HH.City.Page.Park>Parque: {0} banco(s); {1} huésped(es) sentado(s)</HH.City.Page.Park>
+  <HH.City.Page.Salon>Salón: {0} silla(s) en {1} salón(es); {2} peinados nuevos, {3} de plata</HH.City.Page.Salon>
+  <HH.City.Page.Security>Seguridad: {0} guardaespaldas de servicio, {1} de plata ganada</HH.City.Page.Security>
+  <HH.City.Page.StateIdle>inactivo</HH.City.Page.StateIdle>
+  <HH.City.Page.StateNoPower>sin energía</HH.City.Page.StateNoPower>
+  <HH.City.Page.StateShowing>proyectando {0}</HH.City.Page.StateShowing>
+  <HH.City.Page.Taxi>Taxi: {0} parada(s); {1} viajes, {2} aterrizajes, {3} de plata</HH.City.Page.Taxi>
+  <HH.City.Page.Total>Ingresos totales de Vida Urbana: {0} de plata</HH.City.Page.Total>
+  <HH.City.Removal.Buildings>Las pantallas de proyección, las sillas de salón, los bancos del parque y las paradas de taxi siguen siendo edificios normales.</HH.City.Removal.Buildings>
+  <HH.City.Removal.Films>Se detuvo(ieron) {0} película(s) en curso.</HH.City.Removal.Films>
+  <HH.City.Removal.Guards>Terminó(aron) {0} contrato(s) de guardaespaldas.</HH.City.Removal.Guards>
 </LanguageData>

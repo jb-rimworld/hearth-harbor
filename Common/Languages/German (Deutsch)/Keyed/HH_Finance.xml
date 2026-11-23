@@ -182,7 +182,6 @@
   <HH.Finance.Lottery.BadTicket>Ein Los braucht fünf verschiedene Zahlen von 1 bis 40 und einen Stern von 1 bis 10.</HH.Finance.Lottery.BadTicket>
   <HH.Finance.Lottery.Bought>Los gekauft: {0}.</HH.Finance.Lottery.Bought>
   <HH.Finance.Lottery.BoughtMany>{0} Lose gekauft.</HH.Finance.Lottery.BoughtMany>
-  <HH.Finance.Lottery.FreeTicket>Freilos dank {1}s Glück: {0}.</HH.Finance.Lottery.FreeTicket>
   <HH.Finance.Lottery.News.Drawn>Große Glitzerwelt-Ziehung: {0}. {1}</HH.Finance.Lottery.News.Drawn>
   <HH.Finance.Lottery.News.Won>Große Glitzerwelt-Ziehung: {0}. {1} Du hast {2} gewonnen.</HH.Finance.Lottery.News.Won>
   <HH.Finance.Lottery.News.Colony>Deine Lotterie hat {0} gezogen: {1} Hauptgewinner unter {2} Losen.</HH.Finance.Lottery.News.Colony>
@@ -203,4 +202,42 @@
   <HH.Finance.Help.Tip>Öffnet die Webseite in deinem Browser.</HH.Finance.Help.Tip>
   <HH.Finance.Help.Url1>https://findahelpline.com/</HH.Finance.Help.Url1>
   <HH.Finance.Help.Url2>https://www.gamblingtherapy.org/</HH.Finance.Help.Url2>
+  <HH.Finance.Compare>Bankkonto und Produkte, pro Jahr</HH.Finance.Compare>
+  <HH.Finance.Lottery.BuyCard>Lose kaufen</HH.Finance.Lottery.BuyCard>
+  <HH.Finance.Lottery.BuyN>×{0} kaufen ({1})</HH.Finance.Lottery.BuyN>
+  <HH.Finance.Lottery.BuyTicket>Dieses Los kaufen ({0})</HH.Finance.Lottery.BuyTicket>
+  <HH.Finance.Lottery.CardTickets>Deine Lose</HH.Finance.Lottery.CardTickets>
+  <HH.Finance.Lottery.Clear>Leeren</HH.Finance.Lottery.Clear>
+  <HH.Finance.Lottery.ColonySold>Verkaufte Lose dieser Ziehung: {0} · bisheriger Gewinn für dich: {1}</HH.Finance.Lottery.ColonySold>
+  <HH.Finance.Lottery.ColonyState>Siedlungslotterie: {0}</HH.Finance.Lottery.ColonyState>
+  <HH.Finance.Lottery.ColonyTerms>Bedingungen deiner Lotterie</HH.Finance.Lottery.ColonyTerms>
+  <HH.Finance.Lottery.CountTip>Jedes Los, das du kaufst, bleibt hier bis zur Ziehung. Danach wandert es zu „Letzte Ziehung“, damit du siehst, was getroffen hat.</HH.Finance.Lottery.CountTip>
+  <HH.Finance.Lottery.DaysUnit>{0} T</HH.Finance.Lottery.DaysUnit>
+  <HH.Finance.Lottery.Expected>Im Schnitt zahlt ein Los {0} von seinen {1} zurück ({2} % Auszahlungsanteil). Der Rest gehört dem Haus.</HH.Finance.Lottery.Expected>
+  <HH.Finance.Lottery.Flash>+{0} Los/Lose · −{1}</HH.Finance.Lottery.Flash>
+  <HH.Finance.Lottery.FlashFree>+{0} Los/Lose · {1} gratis</HH.Finance.Lottery.FlashFree>
+  <HH.Finance.Lottery.FreeTag>gratis</HH.Finance.Lottery.FreeTag>
+  <HH.Finance.Lottery.KeptNote> (gezeigt werden die {0} besten deiner {1} Lose)</HH.Finance.Lottery.KeptNote>
+  <HH.Finance.Lottery.LastDraw>Letzte Ziehung #{0}</HH.Finance.Lottery.LastDraw>
+  <HH.Finance.Lottery.LastDrawLine>Gezogen: {0}. Du hattest {1} Los/Lose für {2} Silber. Bestes: {3} von 5 Zahlen{4}. Gewinn: {5}.</HH.Finance.Lottery.LastDrawLine>
+  <HH.Finance.Lottery.Matches>{0} von 5 Zahlen</HH.Finance.Lottery.Matches>
+  <HH.Finance.Lottery.MyCount>Deine Lose für diese Ziehung</HH.Finance.Lottery.MyCount>
+  <HH.Finance.Lottery.MyNone>Du hast noch kein Los für die nächste Ziehung.</HH.Finance.Lottery.MyNone>
+  <HH.Finance.Lottery.MySpent>{0} für diese Ziehung ausgegeben</HH.Finance.Lottery.MySpent>
+  <HH.Finance.Lottery.MySpentFree>{0} für diese Ziehung ausgegeben, {1} der Lose waren gratis</HH.Finance.Lottery.MySpentFree>
+  <HH.Finance.Lottery.NoLast>Noch keine Ziehung. Die erste kommt bald.</HH.Finance.Lottery.NoLast>
+  <HH.Finance.Lottery.NotEnough>Auf dem Konto sind keine {0}.</HH.Finance.Lottery.NotEnough>
+  <HH.Finance.Lottery.Odds>Jackpot: 1 zu {0} pro Los. Irgendein Gewinn: etwa 1 zu {1}.</HH.Finance.Lottery.Odds>
+  <HH.Finance.Lottery.OpenSettings>In den Einstellungen ändern</HH.Finance.Lottery.OpenSettings>
+  <HH.Finance.Lottery.OpenSettingsTip>Öffnet die Mod-Optionen von Hearth &amp; Harbor auf der Bank-Seite (Kategorie Lotterie).</HH.Finance.Lottery.OpenSettingsTip>
+  <HH.Finance.Lottery.Preview>Dein Los bisher: {0} von {1} Zahlen, Stern {2}</HH.Finance.Lottery.Preview>
+  <HH.Finance.Lottery.QuickN>Zufallstipps</HH.Finance.Lottery.QuickN>
+  <HH.Finance.Lottery.QuickTip>Zufällige Lose, auf einmal gekauft. Bis zu {0} pro Klick.</HH.Finance.Lottery.QuickTip>
+  <HH.Finance.Lottery.SetIn>Preis, Auszahlungsanteil, Ziehungsintervall und Gebühr sind Mod-Einstellungen dieses Spielstands.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SilverUnit>{0} Silber</HH.Finance.Lottery.SilverUnit>
+  <HH.Finance.Lottery.StarMatch> und der Stern</HH.Finance.Lottery.StarMatch>
+  <HH.Finance.Lottery.StarNone>nicht gezogen</HH.Finance.Lottery.StarNone>
+  <HH.Finance.Lottery.StateClosed>geschlossen</HH.Finance.Lottery.StateClosed>
+  <HH.Finance.Lottery.StateOpen>offen</HH.Finance.Lottery.StateOpen>
+  <HH.Finance.Lottery.TicketsCount>{0} Lose · neueste zuerst</HH.Finance.Lottery.TicketsCount>
 </LanguageData>

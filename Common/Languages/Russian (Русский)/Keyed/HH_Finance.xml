@@ -202,5 +202,42 @@
   <HH.Finance.Help.Tip>Открывает сайт в браузере.</HH.Finance.Help.Tip>
   <HH.Finance.Help.Url1>https://findahelpline.com/</HH.Finance.Help.Url1>
   <HH.Finance.Help.Url2>https://www.gamblingtherapy.org/</HH.Finance.Help.Url2>
-  <HH.Finance.Lottery.FreeTicket>Бесплатный билет благодаря удаче {1}: {0}.</HH.Finance.Lottery.FreeTicket>
+  <HH.Finance.Compare>Банковский счёт и продукты, в год</HH.Finance.Compare>
+  <HH.Finance.Lottery.BuyCard>Купить билеты</HH.Finance.Lottery.BuyCard>
+  <HH.Finance.Lottery.BuyN>Купить ×{0} ({1})</HH.Finance.Lottery.BuyN>
+  <HH.Finance.Lottery.BuyTicket>Купить этот билет ({0})</HH.Finance.Lottery.BuyTicket>
+  <HH.Finance.Lottery.CardTickets>Ваши билеты</HH.Finance.Lottery.CardTickets>
+  <HH.Finance.Lottery.Clear>Очистить</HH.Finance.Lottery.Clear>
+  <HH.Finance.Lottery.ColonySold>Продано билетов в этом тираже: {0} · ваша доля пока: {1}</HH.Finance.Lottery.ColonySold>
+  <HH.Finance.Lottery.ColonyState>Колониальная лотерея: {0}</HH.Finance.Lottery.ColonyState>
+  <HH.Finance.Lottery.ColonyTerms>Условия вашей лотереи</HH.Finance.Lottery.ColonyTerms>
+  <HH.Finance.Lottery.CountTip>Каждый купленный билет хранится здесь до тиража. После тиража он переходит в «Последний тираж», чтобы вы видели, что совпало.</HH.Finance.Lottery.CountTip>
+  <HH.Finance.Lottery.DaysUnit>{0} дн.</HH.Finance.Lottery.DaysUnit>
+  <HH.Finance.Lottery.Expected>В среднем билет возвращает {0} из {1} ({2} % выплат). Остальное — доля дома.</HH.Finance.Lottery.Expected>
+  <HH.Finance.Lottery.Flash>+{0} билет(ов) · −{1}</HH.Finance.Lottery.Flash>
+  <HH.Finance.Lottery.FlashFree>+{0} билет(ов) · {1} бесплатно</HH.Finance.Lottery.FlashFree>
+  <HH.Finance.Lottery.FreeTag>бесплатно</HH.Finance.Lottery.FreeTag>
+  <HH.Finance.Lottery.KeptNote> (показаны лучшие {0} из ваших {1} билетов)</HH.Finance.Lottery.KeptNote>
+  <HH.Finance.Lottery.LastDraw>Последний тираж №{0}</HH.Finance.Lottery.LastDraw>
+  <HH.Finance.Lottery.LastDrawLine>Выпало: {0}. У вас было билетов: {1} на {2} серебра. Лучший результат: {3} из 5 чисел{4}. Выигрыш: {5}.</HH.Finance.Lottery.LastDrawLine>
+  <HH.Finance.Lottery.Matches>{0} из 5 чисел</HH.Finance.Lottery.Matches>
+  <HH.Finance.Lottery.MyCount>Ваши билеты на этот тираж</HH.Finance.Lottery.MyCount>
+  <HH.Finance.Lottery.MyNone>На следующий тираж у вас пока нет билетов.</HH.Finance.Lottery.MyNone>
+  <HH.Finance.Lottery.MySpent>На этот тираж потрачено: {0}</HH.Finance.Lottery.MySpent>
+  <HH.Finance.Lottery.MySpentFree>На этот тираж потрачено: {0}, из них билетов бесплатно: {1}</HH.Finance.Lottery.MySpentFree>
+  <HH.Finance.Lottery.NoLast>Тиражей ещё не было. Первый скоро.</HH.Finance.Lottery.NoLast>
+  <HH.Finance.Lottery.NotEnough>На счёте нет {0}.</HH.Finance.Lottery.NotEnough>
+  <HH.Finance.Lottery.Odds>Джекпот: 1 из {0} на билет. Любой выигрыш: примерно 1 из {1}.</HH.Finance.Lottery.Odds>
+  <HH.Finance.Lottery.OpenSettings>Изменить в настройках</HH.Finance.Lottery.OpenSettings>
+  <HH.Finance.Lottery.OpenSettingsTip>Открывает параметры мода «Hearth &amp; Harbor» на странице банка (раздел «Лотерея»).</HH.Finance.Lottery.OpenSettingsTip>
+  <HH.Finance.Lottery.Preview>Ваш билет пока: {0} из {1} чисел, звезда {2}</HH.Finance.Lottery.Preview>
+  <HH.Finance.Lottery.QuickN>Быстрый выбор</HH.Finance.Lottery.QuickN>
+  <HH.Finance.Lottery.QuickTip>Случайные билеты, покупаются сразу. До {0} за нажатие.</HH.Finance.Lottery.QuickTip>
+  <HH.Finance.Lottery.SetIn>Цена, доля выплат, интервал тиража и комиссия — параметры мода этого сохранения.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SilverUnit>{0} серебра</HH.Finance.Lottery.SilverUnit>
+  <HH.Finance.Lottery.StarMatch> и звезда</HH.Finance.Lottery.StarMatch>
+  <HH.Finance.Lottery.StarNone>не выбрана</HH.Finance.Lottery.StarNone>
+  <HH.Finance.Lottery.StateClosed>закрыта</HH.Finance.Lottery.StateClosed>
+  <HH.Finance.Lottery.StateOpen>открыта</HH.Finance.Lottery.StateOpen>
+  <HH.Finance.Lottery.TicketsCount>билетов: {0} · сначала новые</HH.Finance.Lottery.TicketsCount>
 </LanguageData>

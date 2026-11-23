@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServedBusy.stages.0.description>손님들이 계속 카운터로 몰려왔고, 그 내내 할 일이 있었다. 일이란 원래 이래야 한다.</HH_ServedBusy.stages.0.description>
+  <HH_ServedBusy.stages.0.label>좋은 근무</HH_ServedBusy.stages.0.label>
+  <HH_ServedBusy.stages.1.description>손님이 줄줄이 왔다. 주문을 끝까지 듣기도 전에 무엇을 시킬지 이미 알았다. 기분 좋은 종류의 피로다.</HH_ServedBusy.stages.1.description>
+  <HH_ServedBusy.stages.1.label>바쁜 근무</HH_ServedBusy.stages.1.label>
+  <HH_ServedBusy.stages.2.description>방 전체가 한꺼번에 무언가를 원했고, 나는 그걸 전부 따라갔다. 그 근무가 자랑스럽다.</HH_ServedBusy.stages.2.description>
+  <HH_ServedBusy.stages.2.label>눈코 뜰 새 없이</HH_ServedBusy.stages.2.label>
+  <HH_ServedIdle.stages.0.description>카운터 뒤에 한참 서 있었는데 아무도 오지 않았다. 같은 잔을 세 번이나 닦았다.</HH_ServedIdle.stages.0.description>
+  <HH_ServedIdle.stages.0.label>카운터에서 지루함</HH_ServedIdle.stages.0.label>
+  <HH_ServedIdle.stages.1.description>카운터에서 몇 시간 동안 할 일 없이 보냈다. 차라리 유용한 일을 할 수도 있었을 텐데.</HH_ServedIdle.stages.1.description>
+  <HH_ServedIdle.stages.1.label>근무 내내 서 있었음</HH_ServedIdle.stages.1.label>
+  <HH_ServedIdle.stages.2.description>온 교대 시간 내내 오지 않는 손님을 기다렸다. 나는 대체 여기서 뭘 하고 있는 걸까?</HH_ServedIdle.stages.2.description>
+  <HH_ServedIdle.stages.2.label>쓸모없는 근무</HH_ServedIdle.stages.2.label>
+  <HH_WokenByBell.stages.0.description>잠들어 있는데 누군가 한밤중에 종을 울렸다. 업무가 부른다. 아주 시끄럽게.</HH_WokenByBell.stages.0.description>
+  <HH_WokenByBell.stages.0.label>야간 종에 깸</HH_WokenByBell.stages.0.label>
+  <HH_WokenByBell.stages.1.description>잠들어 있는데 누군가 한밤중에 종을 울렸다. 뭐, 그게 내 일이다. 잠은 나중에 자면 된다.</HH_WokenByBell.stages.1.description>
+  <HH_WokenByBell.stages.1.label>야간 종에 깸</HH_WokenByBell.stages.1.label>
+</LanguageData>

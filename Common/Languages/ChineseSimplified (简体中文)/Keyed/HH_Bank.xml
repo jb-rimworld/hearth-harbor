@@ -23,7 +23,7 @@
   <HH.Bank.Greet.Morning>早上好</HH.Bank.Greet.Morning>
   <HH.Bank.Greet.Night>夜里好</HH.Bank.Greet.Night>
   <HH.Bank.Header.Tier>财富等级：{0}</HH.Bank.Header.Tier>
-  <HH.Bank.Header.TierTip>净资产 = 账户 + 家中银币 − 债务：{0} 银币。只有新数值持续整整一天后，等级才会变化。等级会影响此银行带来的殖民地心情（设置：bank.moodOn）。</HH.Bank.Header.TierTip>
+  <HH.Bank.Header.TierTip>净资产 = 账户 + 在途存款 + 家中银币 + 投资（按市值）− 债务：{0} 银币。只有新数值持续整整一天后，等级才会变化。它会影响此银行带来的殖民地心情（设置：bank.moodOn）。</HH.Bank.Header.TierTip>
   <HH.Bank.Hist.Amount>金额（小数点后 5 位）</HH.Bank.Hist.Amount>
   <HH.Bank.Hist.Empty>还没有任何交易。</HH.Bank.Hist.Empty>
   <HH.Bank.Hist.TotalFees>迄今已支付的手续费</HH.Bank.Hist.TotalFees>
@@ -80,8 +80,8 @@
   <HH.Bank.Lobby.Accounts>账户</HH.Bank.Lobby.Accounts>
   <HH.Bank.Lobby.Amount>金额</HH.Bank.Lobby.Amount>
   <HH.Bank.Lobby.Balance>余额</HH.Bank.Lobby.Balance>
-  <HH.Bank.Lobby.BalanceTip>精确值：{0} 银币。
-每日利息：余额 ×（M^({1} × {2} / 60) − 1），其中 M = 每游戏年 {3}（收益滑块）。即每天 {4:0.##}%。</HH.Bank.Lobby.BalanceTip>
+  <HH.Bank.Lobby.BalanceTip>精确金额：{0} 银币。
+账户是储蓄账户：每年按市场盈余（M − 1）的 {1}% 计息，再乘以本银行的系数 {2}。当 M = {3} 时，年利率为 {4}%（日利率 {5}%）。投资收益更高，但也伴随风险。</HH.Bank.Lobby.BalanceTip>
   <HH.Bank.Lobby.Cash>家中现金</HH.Bank.Lobby.Cash>
   <HH.Bank.Lobby.CashTip>散落在你家地图上的银币。</HH.Bank.Lobby.CashTip>
   <HH.Bank.Lobby.ChangeBank>更换银行</HH.Bank.Lobby.ChangeBank>
@@ -91,23 +91,22 @@
   <HH.Bank.Lobby.DepDelay>{0} 后入账</HH.Bank.Lobby.DepDelay>
   <HH.Bank.Lobby.DepInstant>立即记账</HH.Bank.Lobby.DepInstant>
   <HH.Bank.Lobby.Deposit>存入</HH.Bank.Lobby.Deposit>
-  <HH.Bank.Lobby.Direct>直接存入</HH.Bank.Lobby.Direct>
-  <HH.Bank.Lobby.DirectTip>你的商店营业收入在午夜入账，并扣除 {0}%。</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.DirectTip>你的商店营业收入会在午夜存入账户，扣除 {0}%。可在模组设置（银行 &gt; 账户）中更改。</HH.Bank.Lobby.DirectTip>
   <HH.Bank.Lobby.Interest>本季度利息</HH.Bank.Lobby.Interest>
   <HH.Bank.Lobby.InterestTip>自本季度（15 天）开始以来，账户余额所支付的利息。</HH.Bank.Lobby.InterestTip>
   <HH.Bank.Lobby.Max>最大</HH.Bank.Lobby.Max>
   <HH.Bank.Lobby.Net>净资产</HH.Bank.Lobby.Net>
-  <HH.Bank.Lobby.NetTip>账户 + 家中银币 − 债务。决定你的财富等级。</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.NetTip>账户 {0} + 在途 {1} + 家中银币 {2} + 投资市值 {3} − 债务 {4} = {5}。
+决定你的财富等级。信贷额度只计入投资的 {6}%（设置：bank.loanPortfolioShare）。</HH.Bank.Lobby.NetTip>
   <HH.Bank.Lobby.Nothing>目前还没有。存一笔钱会是个不错的开始。</HH.Bank.Lobby.Nothing>
   <HH.Bank.Lobby.PendingDep>↓ {0}，{1} 后到账</HH.Bank.Lobby.PendingDep>
   <HH.Bank.Lobby.PendingWd>↑ {0}，{1} 后由空投舱送达</HH.Bank.Lobby.PendingWd>
   <HH.Bank.Lobby.Recent>近期动态</HH.Bank.Lobby.Recent>
-  <HH.Bank.Lobby.Trade>贸易银币自动存入</HH.Bank.Lobby.Trade>
-  <HH.Bank.Lobby.TradeTip>从商人和贸易船获得的银币会在交易完成后立即存入账户，收取与直接存入相同的手续费，而不是以硬币形式散落在地上。需要先开启直接存入。默认关闭，以便你仍能用现金支付下一位商人。商队不受影响。</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.TradeTip>从商人和贸易船获得的银币会在交易后立即按直接存款的手续费存入账户，而不是以硬币形式落在地上。需要先开启直接存款。默认关闭，以便你仍可以现金支付下一位商人。商队不受影响。可在模组设置（银行 &gt; 账户）中更改。</HH.Bank.Lobby.TradeTip>
   <HH.Bank.Lobby.Transfer>存款与取款</HH.Bank.Lobby.Transfer>
   <HH.Bank.Lobby.TransferInfo>仓库中：{0}。存款 {1}。取款手续费 {2}，{3}。</HH.Bank.Lobby.TransferInfo>
   <HH.Bank.Lobby.Transit>在途</HH.Bank.Lobby.Transit>
-  <HH.Bank.Lobby.TransitTip>已离开你的仓库但尚未入账的银币（没有分行或自动取款机时的存款延迟）。</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.TransitTip>在途银币：尚未入账的存款（没有分行或自动取款机时的存款延迟），以及仍在空投舱中的取款。计入净资产。</HH.Bank.Lobby.TransitTip>
   <HH.Bank.Lobby.WdInstant>在建筑处立即取现</HH.Bank.Lobby.WdInstant>
   <HH.Bank.Lobby.WdPod>空投舱 {0}，耗时 {1} 小时</HH.Bank.Lobby.WdPod>
   <HH.Bank.Lobby.Withdraw>取款</HH.Bank.Lobby.Withdraw>
@@ -142,8 +141,7 @@
   <HH.Bank.Msg.Switched>你的账户现在位于 {0}。</HH.Bank.Msg.Switched>
   <HH.Bank.Msg.TradeDeposit>贸易收入 {0} 银币已直接存入你在 {1} 的账户。</HH.Bank.Msg.TradeDeposit>
   <HH.Bank.Open.Button>开户</HH.Bank.Open.Button>
-  <HH.Bank.Open.Direct>午夜将现金直接送入银行</HH.Bank.Open.Direct>
-  <HH.Bank.Open.DirectTip>你的商店、旅店和赌场的营业收入将存入账户，而不是以银币形式散落各处。之后可以在夜间保险箱或设置中更改（bank.directDeposit）。</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.DirectTip>你的商店、旅店和赌场的营业收入会存入账户，而不是以银币形式堆放在一旁。这是银行的条款：可在模组设置（银行 &gt; 账户，bank.directDeposit）中更改。</HH.Bank.Open.DirectTip>
   <HH.Bank.Open.Intro>请选择银行。开户免费，之后更换需花费 {0} 银币。在你开户之前，这里的一切都不会打扰你：没有信件、没有心情影响、没有手续费。</HH.Bank.Open.Intro>
   <HH.Bank.Open.Sub>你的银币，我们的烦恼。</HH.Bank.Open.Sub>
   <HH.Bank.Open.Title>Silverline：开设账户</HH.Bank.Open.Title>
@@ -194,21 +192,18 @@
   <HH.Bank.Tab.Terms>条款</HH.Bank.Tab.Terms>
   <HH.Bank.Terms.AccFee>每季度账户费用</HH.Bank.Terms.AccFee>
   <HH.Bank.Terms.AccountDaily>你的账户每日增长</HH.Bank.Terms.AccountDaily>
-  <HH.Bank.Terms.AccountDailyTip>每年的账户倍数 = M^({0} × {1}) = {2}。</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.AccountDailyTip>日系数 = （年倍数）^(1/60) = {0}。</HH.Bank.Terms.AccountDailyTip>
   <HH.Bank.Terms.Anchors>按难度</HH.Bank.Terms.Anchors>
-  <HH.Bank.Terms.AnchorsHead>每年 M 值 / 最高催收阶段</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.AnchorsHead>指数 M（每年）/ 你的账户年收益 / 最高收取阶段</HH.Bank.Terms.AnchorsHead>
   <HH.Bank.Terms.Atm>自动取款机</HH.Bank.Terms.Atm>
-  <HH.Bank.Terms.Auto>自动</HH.Bank.Terms.Auto>
-  <HH.Bank.Terms.AutoTip>重新跟随难度滑块（当前难度下为 {0}）。</HH.Bank.Terms.AutoTip>
   <HH.Bank.Terms.Daily>每日（指数）</HH.Bank.Terms.Daily>
   <HH.Bank.Terms.DailyTip>M^(1/60) − 1。一个游戏年有 60 天。</HH.Bank.Terms.DailyTip>
   <HH.Bank.Terms.Dep>存款</HH.Bank.Terms.Dep>
   <HH.Bank.Terms.Direct>直接存款</HH.Bank.Terms.Direct>
   <HH.Bank.Terms.Fees>银行手续费</HH.Bank.Terms.Fees>
   <HH.Bank.Terms.FeesNote>所有费用都随“银行费用等级”设置缩放（{0} %）。</HH.Bank.Terms.FeesNote>
-  <HH.Bank.Terms.Preview>指数下的 1,000 银币，经过一个游戏年后变为 {0}，经过十年后变为 {1}。</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Preview>银行指数下的 1,000 银币，一个游戏年后变为 {0}，十个游戏年后变为 {1}。在你的账户中：{2} 和 {3}。</HH.Bank.Terms.Preview>
   <HH.Bank.Terms.Profit>盈利能力</HH.Bank.Terms.Profit>
-  <HH.Bank.Terms.ProfitIntro>投入的钱平均每个游戏年（60 天）增长多少。1.0 表示既不增也不减，1.2 表示每年 +20 %。它也决定贷款的成本。这是本存档的一项设置。</HH.Bank.Terms.ProfitIntro>
   <HH.Bank.Terms.StageNote>催收阶梯：1 提醒，2 滞纳金，3 从存款中抵扣，4 友好拜访，5 查封小组，6 催收突袭，7 悬赏。当前：停在第 {0} 阶段。</HH.Bank.Terms.StageNote>
   <HH.Bank.Terms.Switch>更换银行</HH.Bank.Terms.Switch>
   <HH.Bank.Terms.Wd>取款（储物舱 / 柜台）</HH.Bank.Terms.Wd>
@@ -231,4 +226,52 @@
   <HH.Bank.Time.DayHour>第 {0} 天，{1}:00</HH.Bank.Time.DayHour>
   <HH.Bank.Time.Hours>{0} 小时</HH.Bank.Time.Hours>
   <HH.Bank.Time.Minutes>{0} 分钟</HH.Bank.Time.Minutes>
+  <HH.Bank.Card.InterestTip>账户利息是市场收益的一部分（{0}），再乘以本银行自身的系数（{1}）。投资的收益更高。</HH.Bank.Card.InterestTip>
+  <HH.Bank.Card.Numbers>年利息 {0}  ·  存款手续费 {1}%  ·  取款手续费 {2}%  ·  每季度账户费 {3}</HH.Bank.Card.Numbers>
+  <HH.Bank.Clerk.Line>柜员 Ottoline：“{0}”</HH.Bank.Clerk.Line>
+  <HH.Bank.Lobby.DirectState>直接存款：{0}</HH.Bank.Lobby.DirectState>
+  <HH.Bank.Lobby.Invested>投资</HH.Bank.Lobby.Invested>
+  <HH.Bank.Lobby.InvestedTip>股票、基金、加密货币和 NFT 按当前市值计算：{0}。耐心债券按当前价值计算：{1}。投入 Omen 合约和派系项目的资金（按成本计算）：{2}。</HH.Bank.Lobby.InvestedTip>
+  <HH.Bank.Lobby.MaxTip>殖民地存放在仓库和贸易信标处的全部银币。没有上限。</HH.Bank.Lobby.MaxTip>
+  <HH.Bank.Lobby.MaxTipWd>账户在此可以支付的全部金额（扣除手续费后）。</HH.Bank.Lobby.MaxTipWd>
+  <HH.Bank.Lobby.ModeDeposit>存款</HH.Bank.Lobby.ModeDeposit>
+  <HH.Bank.Lobby.ModeWithdraw>取款</HH.Bank.Lobby.ModeWithdraw>
+  <HH.Bank.Lobby.Off>关</HH.Bank.Lobby.Off>
+  <HH.Bank.Lobby.On>开</HH.Bank.Lobby.On>
+  <HH.Bank.Lobby.PerYear>每年</HH.Bank.Lobby.PerYear>
+  <HH.Bank.Lobby.Percent>你的银币的 {0}%（{1}，共 {2}）</HH.Bank.Lobby.Percent>
+  <HH.Bank.Lobby.PercentWd>账户可支付金额的 {0}%（{1}，共 {2}）</HH.Bank.Lobby.PercentWd>
+  <HH.Bank.Lobby.Rate>利率</HH.Bank.Lobby.Rate>
+  <HH.Bank.Lobby.RateTip>账户平均每个游戏年（60 天）的收益。与“投资”标签页中的产品比较：
+{0}</HH.Bank.Lobby.RateTip>
+  <HH.Bank.Lobby.Settings>设置</HH.Bank.Lobby.Settings>
+  <HH.Bank.Lobby.TradeState>将交易银币存入账户：{0}</HH.Bank.Lobby.TradeState>
+  <HH.Bank.Memo.ScenBalance>期初余额</HH.Bank.Memo.ScenBalance>
+  <HH.Bank.Open.DirectState>营业收入午夜直接存入银行：{0}</HH.Bank.Open.DirectState>
+  <HH.Bank.Quip.Invest>我看到你有投资了。我会假装自己不羡慕一个数字。</HH.Bank.Quip.Invest>
+  <HH.Bank.Reason.NoSilverAtAll>仓库和贸易信标处都没有银币。</HH.Bank.Reason.NoSilverAtAll>
+  <HH.Bank.Reason.NothingToWithdraw>账户目前在此没有可支付的金额。</HH.Bank.Reason.NothingToWithdraw>
+  <HH.Bank.Scen.Balance>期初余额</HH.Bank.Scen.Balance>
+  <HH.Bank.Scen.DirectDeposit>直接存款</HH.Bank.Scen.DirectDeposit>
+  <HH.Bank.Scen.Loan>初始贷款</HH.Bank.Scen.Loan>
+  <HH.Bank.Scen.LoanTip>0 = 无贷款。贷款会打入账户，并像其他贷款一样分期偿还。</HH.Bank.Scen.LoanTip>
+  <HH.Bank.Scen.Summary>开局时，在 {0} 开有账户，余额 {1} 银币。</HH.Bank.Scen.Summary>
+  <HH.Bank.Scen.SummaryLoan>开局时已欠 {0} 银币（{1} 天）。</HH.Bank.Scen.SummaryLoan>
+  <HH.Bank.Site.Atm>自动取款机</HH.Bank.Site.Atm>
+  <HH.Bank.Site.Counter>银行柜台</HH.Bank.Site.Counter>
+  <HH.Bank.Tabs.More>更多</HH.Bank.Tabs.More>
+  <HH.Bank.Tabs.MoreTip>银行的更多页面：{0}</HH.Bank.Tabs.MoreTip>
+  <HH.Bank.Terms.AccountYear>你的账户年收益</HH.Bank.Terms.AccountYear>
+  <HH.Bank.Terms.AccountYearTip>账户年倍数 = 1 + 份额 × 银行系数 ×（M − 1）= 1 + {0} × {1} ×（{2} − 1）= {3}，不低于 {4}，不高于 {5}，且不超过储蓄产品 Mattress Plus（{6}）。</HH.Bank.Terms.AccountYearTip>
+  <HH.Bank.Terms.Compare>资金的收益对比（每个游戏年平均）</HH.Bank.Terms.Compare>
+  <HH.Bank.Terms.CompareAccountTip>账户安全，但收益很低。Mattress Plus、债券以及其下方的一切风险更高或会锁定资金，但平均收益更多；账户本身的收益从不超过 Mattress Plus。</HH.Bank.Terms.CompareAccountTip>
+  <HH.Bank.Terms.CompareTip>在当前盈利水平下，该产品的长期平均收益。价格会波动，单年可能远高于或远低于此数。</HH.Bank.Terms.CompareTip>
+  <HH.Bank.Terms.MInv>（投资：M = {0}）</HH.Bank.Terms.MInv>
+  <HH.Bank.Terms.MNow>每游戏年 M = {0}</HH.Bank.Terms.MNow>
+  <HH.Bank.Terms.OpenSettings>打开模组设置</HH.Bank.Terms.OpenSettings>
+  <HH.Bank.Terms.OpenSettingsShort>在设置中修改</HH.Bank.Terms.OpenSettingsShort>
+  <HH.Bank.Terms.OpenSettingsTip>在银行页面打开 Hearth &amp; Harbor 的模组选项。盈利、手续费、贷款和彩票都是本存档的实际设置，只能在那里修改。</HH.Bank.Terms.OpenSettingsTip>
+  <HH.Bank.Terms.SetIn>银行条款是本存档的设置：请在 模组选项 &gt; Hearth &amp; Harbor &gt; 银行（利息与盈利、手续费、贷款、催收、彩票）中修改。1.0 即不增不减，1.2 即指数每年 +20%；账户只获得其中一部分。贷款同样随 M 变动。</HH.Bank.Terms.SetIn>
+  <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
+  <HH.Bank.Yield.Account>你的银行账户</HH.Bank.Yield.Account>
 </LanguageData>

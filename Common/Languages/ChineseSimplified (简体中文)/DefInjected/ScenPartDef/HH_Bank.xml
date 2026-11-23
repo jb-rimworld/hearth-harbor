@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ScenStartingAccount.description>殖民地开局时拥有一个你选定银行的账户、一笔初始存款，以及（如果你愿意）一笔需要偿还的贷款。</SL_ScenStartingAccount.description>
+  <SL_ScenStartingAccount.label>以 Silverline 账户开局</SL_ScenStartingAccount.label>
+</LanguageData>

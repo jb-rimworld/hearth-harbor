@@ -75,7 +75,6 @@
   <HH.Inn.Event.Returned>Voltou para mais uma estadia.</HH.Inn.Event.Returned>
   <HH.Inn.Event.SelfCheckIn>Encontrou o quarto sozinho; ninguém estava em uma recepção.</HH.Inn.Event.SelfCheckIn>
   <HH.Inn.Event.SentAway>Foi mandado embora.</HH.Inn.Event.SentAway>
-  <HH.Inn.Event.SharedBed>Divide a cama com {0} (+{1} de prata por noite).</HH.Inn.Event.SharedBed>
   <HH.Inn.Event.ShortenedStay>Encurtou a estadia para {0} noite(s) para poder pagar o quarto.</HH.Inn.Event.ShortenedStay>
   <HH.Inn.Event.TooImportant>Importante demais em casa para ficar.</HH.Inn.Event.TooImportant>
   <HH.Inn.Event.Welcomed>Foi recebido na recepção por {0}.</HH.Inn.Event.Welcomed>
@@ -85,9 +84,7 @@
   <HH.Inn.Forecast.Overnight>{0} noite(s)</HH.Inn.Forecast.Overnight>
   <HH.Inn.Forecast.Return>voltando</HH.Inn.Forecast.Return>
   <HH.Inn.GuestBed.Booked>Reservada por {0}</HH.Inn.GuestBed.Booked>
-  <HH.Inn.GuestBed.Desc>Aluga esta cama para hóspedes. Colonos não dormem aqui; hóspedes dormem apenas em camas de hóspede. O preço por noite segue o quarto, a cama e quantas camas dividem o quarto.</HH.Inn.GuestBed.Desc>
   <HH.Inn.GuestBed.Inactive>Cama de hóspede (inativa enquanto for cama médica, de prisioneiro ou de escravo)</HH.Inn.GuestBed.Inactive>
-  <HH.Inn.GuestBed.Inspect>Cama de hóspede: {0} de prata/noite ({1})</HH.Inn.GuestBed.Inspect>
   <HH.Inn.GuestBed.Label>cama de hóspede</HH.Inn.GuestBed.Label>
   <HH.Inn.GuestBed.NoColonists>Esta é uma cama de hóspede.</HH.Inn.GuestBed.NoColonists>
   <HH.Inn.GuestBed.NotColonistBed>Apenas uma cama normal de colono (não médica, de prisioneiro ou de escravo) pode ser uma cama de hóspede.</HH.Inn.GuestBed.NotColonistBed>
@@ -96,7 +93,6 @@
   <HH.Inn.Handling.Basics>Básico</HH.Inn.Handling.Basics>
   <HH.Inn.Handling.BasicsDesc>Apenas serviços pagos, sem entretenimento. Não custa tempo dos colonos.</HH.Inn.Handling.BasicsDesc>
   <HH.Inn.Handling.Bond>Vínculo: {0} / {1}</HH.Inn.Handling.Bond>
-  <HH.Inn.Handling.Click>Clique para alternar: Básico → Acompanhar → Recrutar.</HH.Inn.Handling.Click>
   <HH.Inn.Handling.Label>Atendimento: {0}</HH.Inn.Handling.Label>
   <HH.Inn.Handling.Recruit>Recrutar</HH.Inn.Handling.Recruit>
   <HH.Inn.Handling.RecruitDesc>Como Acompanhar, mais conversas sobre ficar. Se o vínculo da colônia com o hóspede for forte o bastante, ele pode se juntar na partida. Conversas insistentes podem ofender.</HH.Inn.Handling.RecruitDesc>
@@ -295,4 +291,56 @@
   <HH.Inn.PriceMode.ManualSet>Preço fixo…</HH.Inn.PriceMode.ManualSet>
   <HH.Inn.PriceMode.ManualValue>{0} de prata por noite</HH.Inn.PriceMode.ManualValue>
   <HH.Inn.PriceMode.Manual>preço fixo</HH.Inn.PriceMode.Manual>
+  <HH.Inn.BedUse.ChipTip>Diária: {0}. Clique para mudar: grátis, −25 %, automático, +25 % ou um preço fixo.</HH.Inn.BedUse.ChipTip>
+  <HH.Inn.BedUse.Click>Clique para escolher a finalidade desta cama.</HH.Inn.BedUse.Click>
+  <HH.Inn.BedUse.Colonist>Cama de colono</HH.Inn.BedUse.Colonist>
+  <HH.Inn.BedUse.ColonistDesc>o lugar normal de dormir dos seus colonos</HH.Inn.BedUse.ColonistDesc>
+  <HH.Inn.BedUse.Guest>Cama de hóspede</HH.Inn.BedUse.Guest>
+  <HH.Inn.BedUse.GuestDesc>alugada a hóspedes; colonos ficam de fora</HH.Inn.BedUse.GuestDesc>
+  <HH.Inn.BedUse.Medical>Leito médico</HH.Inn.BedUse.Medical>
+  <HH.Inn.BedUse.NeedsRimWard>Leitos de paciente e de cirurgia precisam do mod RimWard.</HH.Inn.BedUse.NeedsRimWard>
+  <HH.Inn.BedUse.NoBed>Esta cama não pode ser cama de hóspede.</HH.Inn.BedUse.NoBed>
+  <HH.Inn.BedUse.Owners>Dono: {0}</HH.Inn.BedUse.Owners>
+  <HH.Inn.BedUse.Patient>Leito de paciente</HH.Inn.BedUse.Patient>
+  <HH.Inn.BedUse.PatientDesc>para doentes e feridos</HH.Inn.BedUse.PatientDesc>
+  <HH.Inn.BedUse.Price>Diária: {0} de prata por noite ({1}).</HH.Inn.BedUse.Price>
+  <HH.Inn.BedUse.PriceHint>Clique na etiqueta de preço no canto para mudar o preço.</HH.Inn.BedUse.PriceHint>
+  <HH.Inn.BedUse.Surgery>Leito de cirurgia</HH.Inn.BedUse.Surgery>
+  <HH.Inn.BedUse.SurgeryDesc>as operações são feitas aqui</HH.Inn.BedUse.SurgeryDesc>
+  <HH.Inn.Convert.Certainty>Certeza em {0}: {1} %</HH.Inn.Convert.Certainty>
+  <HH.Inn.Convert.Goal>com 0 % eles adotam {0}</HH.Inn.Convert.Goal>
+  <HH.Inn.Convert.Insulted>sentiu-se pregado: não vai ouvir desta vez</HH.Inn.Convert.Insulted>
+  <HH.Inn.Convert.Nothing>Nada a converter: o hóspede já compartilha a sua ideologia ou não pode ser convencido.</HH.Inn.Convert.Nothing>
+  <HH.Inn.Convert.Talks>conversas até agora: {0}</HH.Inn.Convert.Talks>
+  <HH.Inn.Door.AgeTitle>Idade</HH.Inn.Door.AgeTitle>
+  <HH.Inn.Door.StayTitle>Tipo de estadia</HH.Inn.Door.StayTitle>
+  <HH.Inn.Door.WealthTitle>Riqueza</HH.Inn.Door.WealthTitle>
+  <HH.Inn.Event.ConvertEnded>Nada mais a converter: voltou a fazer companhia.</HH.Inn.Event.ConvertEnded>
+  <HH.Inn.Event.CoupleBooked>Reservou uma cama de casal com {0}: {1} de prata por noite cada.</HH.Inn.Event.CoupleBooked>
+  <HH.Inn.Event.Embraced>Abraçou {0} depois de conversar com {1}.</HH.Inn.Event.Embraced>
+  <HH.Inn.Event.EmbracedSat>Encontrou uma nova fé na colônia.</HH.Inn.Event.EmbracedSat>
+  <HH.Inn.Event.NoFreeBed>Encontrou todas as camas de hóspedes ocupadas e ficou só o dia.</HH.Inn.Event.NoFreeBed>
+  <HH.Inn.Event.PartnerMovedIn>{0} se mudou para a cama: o preço é dividido ({1} de prata por noite cada).</HH.Inn.Event.PartnerMovedIn>
+  <HH.Inn.Event.Preached>Sentiu-se pregado por {0}.</HH.Inn.Event.Preached>
+  <HH.Inn.Event.SharedBed2>Divide a cama com {0} ({1} de prata por noite cada).</HH.Inn.Event.SharedBed2>
+  <HH.Inn.Event.SleepsTogether>Dorme ao lado de {0}: exatamente o que esperava.</HH.Inn.Event.SleepsTogether>
+  <HH.Inn.Event.ThinkingOver>Conversou com {0} sobre {1}: agora tem {2} % de certeza das próprias crenças.</HH.Inn.Event.ThinkingOver>
+  <HH.Inn.Event.Unmoved>Ouviu {0} sobre {1}, mas continuou impassível.</HH.Inn.Event.Unmoved>
+  <HH.Inn.Event.WantedDouble>Queria uma cama de casal com {0} e ganhou duas camas de solteiro.</HH.Inn.Event.WantedDouble>
+  <HH.Inn.GuestBed.InspectShort>Cama de hóspede: {0} de prata/noite · {1}</HH.Inn.GuestBed.InspectShort>
+  <HH.Inn.Handling.Click2>Clique para trocar: {0}.</HH.Inn.Handling.Click2>
+  <HH.Inn.Handling.Convert>Converter</HH.Inn.Handling.Convert>
+  <HH.Inn.Handling.ConvertDesc>Como Acompanhar, mais conversas sobre a sua ideologia. Cada conversa abala a certeza do hóspede na dele; chegando a zero, ele adota a sua. Conversas insistentes podem ofender. Precisa da DLC Ideologia.</HH.Inn.Handling.ConvertDesc>
+  <HH.Inn.Msg.Preached>{0} achou as tentativas de conversão insistentes e vai gastar menos e ir embora mais cedo.</HH.Inn.Msg.Preached>
+  <HH.Inn.Occupancy.DoubleBed>cama de casal</HH.Inn.Occupancy.DoubleBed>
+  <HH.Inn.Problem.Double>Gostaria de uma cama de casal com o parceiro: construa uma ou marque uma como cama de hóspede.</HH.Inn.Problem.Double>
+  <HH.Inn.Problem.DoubleMany>{0} hóspedes gostariam de uma cama de casal para o casal: construa uma ou marque uma como cama de hóspede.</HH.Inn.Problem.DoubleMany>
+  <HH.Setting.inn.convertPower>Força da conversão</HH.Setting.inn.convertPower>
+  <HH.Setting.inn.convertPower.Desc>O quanto uma conversa no tratamento "Converter" abala a certeza de um hóspede em sua própria ideologia (100 % = a força usual). Requer a DLC Ideologia.</HH.Setting.inn.convertPower.Desc>
+  <HH.Setting.inn.coupleWish>Casais desejam uma cama de casal</HH.Setting.inn.coupleWish>
+  <HH.Setting.inn.coupleWish.Desc>Casais que chegam juntos preferem uma cama de casal. Consegui-la os anima um pouco; acabar em duas camas de solteiro os incomoda um pouco. Nunca altera os preços.</HH.Setting.inn.coupleWish.Desc>
+  <HH.Setting.inn.doubleBedFactor>Fator de preço da cama de casal</HH.Setting.inn.doubleBedFactor>
+  <HH.Setting.inn.doubleBedFactor.Desc>Uma cama para duas pessoas rende este número de vezes o preço de uma cama de solteiro. Um casal numa cama de casal paga junto, cada um a metade, então paga menos do que por duas camas de solteiro.</HH.Setting.inn.doubleBedFactor.Desc>
+  <HH.Setting.inn.groupDevGizmos>Agrupar nossos botões de desenvolvedor</HH.Setting.inn.groupDevGizmos>
+  <HH.Setting.inn.groupDevGizmos.Desc>No modo desenvolvedor, os botões DEV dos prédios de Hearth &amp; Harbor são reunidos em um único botão "Dev: Hearth &amp; Harbor" para que a linha de comandos continue legível. Os botões do jogo base e de outros mods nunca são alterados.</HH.Setting.inn.groupDevGizmos.Desc>
 </LanguageData>

@@ -29,4 +29,20 @@
   <HH.City.TaxiFree>Машина ждёт.</HH.City.TaxiFree>
   <HH.City.TaxiBusy>Такси на вызове.</HH.City.TaxiBusy>
   <HH.City.TaxiStats>Отправлений: {0}, прибытий: {1}, выручка: {2} серебра</HH.City.TaxiStats>
+  <HH.City.Closed>закрыто</HH.City.Closed>
+  <HH.City.Open>открыто</HH.City.Open>
+  <HH.City.Page.Cinema>Кинотеатр: экранов — {0}, с вывеской: {1}; билетов — {2}, серебра — {3}</HH.City.Page.Cinema>
+  <HH.City.Page.CinemaRow>   {0}: мест — {1}, {2}</HH.City.Page.CinemaRow>
+  <HH.City.Page.Gallery>Галерея: залов — {0}, работ — {1}; посещений — {2}, серебра — {3}</HH.City.Page.Gallery>
+  <HH.City.Page.Park>Парк: скамеек — {0}; гостей на скамейках — {1}</HH.City.Page.Park>
+  <HH.City.Page.Salon>Салон: кресел — {0} в салонах — {1}; новых причёсок — {2}, серебра — {3}</HH.City.Page.Salon>
+  <HH.City.Page.Security>Охрана: телохранителей на дежурстве — {0}, заработано серебра — {1}</HH.City.Page.Security>
+  <HH.City.Page.StateIdle>простаивает</HH.City.Page.StateIdle>
+  <HH.City.Page.StateNoPower>нет энергии</HH.City.Page.StateNoPower>
+  <HH.City.Page.StateShowing>идёт «{0}»</HH.City.Page.StateShowing>
+  <HH.City.Page.Taxi>Такси: стоянок — {0}; поездок — {1}, высадок — {2}, серебра — {3}</HH.City.Page.Taxi>
+  <HH.City.Page.Total>Общая выручка «Городской жизни»: {0} серебра</HH.City.Page.Total>
+  <HH.City.Removal.Buildings>Проекторные экраны, кресла салонов, скамейки парка и стоянки такси остаются обычными постройками.</HH.City.Removal.Buildings>
+  <HH.City.Removal.Films>Остановлено идущих фильмов: {0}.</HH.City.Removal.Films>
+  <HH.City.Removal.Guards>Контрактов с телохранителями расторгнуто: {0}.</HH.City.Removal.Guards>
 </LanguageData>

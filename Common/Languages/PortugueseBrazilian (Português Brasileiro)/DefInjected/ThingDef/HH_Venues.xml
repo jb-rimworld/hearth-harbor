@@ -10,4 +10,6 @@
   <HH_MarketStall.description>Uma barraca independente com toldo listrado. A grande feira só acontece quando você possui barracas suficientes (veja as configurações de Estabelecimentos): cada caravana de comerciantes monta uma delas e paga uma taxa de barraca para o seu caixa. Ao ar livre, funciona com qualquer clima, mas não é um negócio próprio.</HH_MarketStall.description>
   <HH_VendingMachine.label>máquina de venda</HH_VendingMachine.label>
   <HH_VendingMachine.description>Um armário alimentado por energia que guarda comida, bebidas, drogas e medicamentos. Os hóspedes compram nela a qualquer hora, sem nenhum funcionário, pelo valor de mercado. Carregadores a abastecem como uma prateleira. Colonos podem se servir de graça; a máquina só cobra dos hóspedes. Precisa de energia para vender.</HH_VendingMachine.description>
+  <HH_Mote_Bell.label>sino noturno</HH_Mote_Bell.label>
+  <HH_Mote_RingArc.label>toque</HH_Mote_RingArc.label>
 </LanguageData>

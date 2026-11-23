@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ScenRules.description>Définit les modules, la difficulté d'accueil, l'intensité du contenu et tout réglage par colonie de Hearth &amp; Harbor et de Silverline pour les nouvelles colonies de ce scénario. Seuls les réglages indiqués ici remplacent le modèle ; le joueur peut toujours tout changer sur la page du conteur.</HH_ScenRules.description>
+  <HH_ScenRules.label>règles de Hearth &amp; Harbor</HH_ScenRules.label>
+  <HH_ScenSetting.description>Règle un réglage de Hearth &amp; Harbor ou de Silverline sur une valeur pour les nouvelles colonies de ce scénario.</HH_ScenSetting.description>
+  <HH_ScenSetting.label>réglage de Hearth &amp; Harbor</HH_ScenSetting.label>
+  <HH_ScenStartingResearch.description>Un projet de recherche de Hearth &amp; Harbor ou de Silverline est déjà terminé au départ de la colonie.</HH_ScenStartingResearch.description>
+  <HH_ScenStartingResearch.label>commencer avec la recherche de Hearth &amp; Harbor</HH_ScenStartingResearch.label>
+</LanguageData>

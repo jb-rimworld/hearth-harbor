@@ -75,7 +75,6 @@
   <HH.Inn.Event.Returned>回来又住了一次。</HH.Inn.Event.Returned>
   <HH.Inn.Event.SelfCheckIn>独自找到了房间；服务台没有人。</HH.Inn.Event.SelfCheckIn>
   <HH.Inn.Event.SentAway>被请走了。</HH.Inn.Event.SentAway>
-  <HH.Inn.Event.SharedBed>与{0}合住一张床（每晚额外付{1}银币）。</HH.Inn.Event.SharedBed>
   <HH.Inn.Event.ShortenedStay>为了住得起，把住宿缩短到{0}晚。</HH.Inn.Event.ShortenedStay>
   <HH.Inn.Event.TooImportant>在家里太重要了，不能留下住。</HH.Inn.Event.TooImportant>
   <HH.Inn.Event.Welcomed>在前台受到了{0}的欢迎。</HH.Inn.Event.Welcomed>
@@ -85,9 +84,7 @@
   <HH.Inn.Forecast.Overnight>{0}晚</HH.Inn.Forecast.Overnight>
   <HH.Inn.Forecast.Return>回头客</HH.Inn.Forecast.Return>
   <HH.Inn.GuestBed.Booked>由{0}预订</HH.Inn.GuestBed.Booked>
-  <HH.Inn.GuestBed.Desc>把这张床租给访客。殖民者不会睡在这里；访客只睡访客床。每晚价格取决于房间、床位以及同一房间共有几张床。</HH.Inn.GuestBed.Desc>
   <HH.Inn.GuestBed.Inactive>访客床（作为医疗床、囚犯床或奴隶床时不生效）</HH.Inn.GuestBed.Inactive>
-  <HH.Inn.GuestBed.Inspect>访客床：每晚{0}银币（{1}）</HH.Inn.GuestBed.Inspect>
   <HH.Inn.GuestBed.Label>访客床</HH.Inn.GuestBed.Label>
   <HH.Inn.GuestBed.NoColonists>这是一张访客床。</HH.Inn.GuestBed.NoColonists>
   <HH.Inn.GuestBed.NotColonistBed>只有普通的殖民者床（非医疗、囚犯或奴隶床）才能设为访客床。</HH.Inn.GuestBed.NotColonistBed>
@@ -96,7 +93,6 @@
   <HH.Inn.Handling.Basics>基础</HH.Inn.Handling.Basics>
   <HH.Inn.Handling.BasicsDesc>仅提供付费服务，不含娱乐。不占用殖民者的时间。</HH.Inn.Handling.BasicsDesc>
   <HH.Inn.Handling.Bond>羁绊：{0} / {1}</HH.Inn.Handling.Bond>
-  <HH.Inn.Handling.Click>点击切换：基础 → 陪同 → 拉拢。</HH.Inn.Handling.Click>
   <HH.Inn.Handling.Label>接待方式：{0}</HH.Inn.Handling.Label>
   <HH.Inn.Handling.Recruit>拉拢</HH.Inn.Handling.Recruit>
   <HH.Inn.Handling.RecruitDesc>与陪同相同，外加谈论留下来的事。如果殖民地与访客的羁绊足够深，对方可能在离店时加入。咄咄逼人的谈话可能会冒犯对方。</HH.Inn.Handling.RecruitDesc>
@@ -295,4 +291,56 @@
   <HH.Inn.PriceMode.ManualSet>固定价格…</HH.Inn.PriceMode.ManualSet>
   <HH.Inn.PriceMode.ManualValue>每晚 {0} 银币</HH.Inn.PriceMode.ManualValue>
   <HH.Inn.PriceMode.Manual>固定价格</HH.Inn.PriceMode.Manual>
+  <HH.Inn.BedUse.ChipTip>每晚价格：{0}。点击更改：免费、−25%、自动、+25% 或固定价格。</HH.Inn.BedUse.ChipTip>
+  <HH.Inn.BedUse.Click>点击选择这张床的用途。</HH.Inn.BedUse.Click>
+  <HH.Inn.BedUse.Colonist>殖民者床</HH.Inn.BedUse.Colonist>
+  <HH.Inn.BedUse.ColonistDesc>殖民者的常规睡眠位置</HH.Inn.BedUse.ColonistDesc>
+  <HH.Inn.BedUse.Guest>访客床</HH.Inn.BedUse.Guest>
+  <HH.Inn.BedUse.GuestDesc>出租给访客，殖民者不得入住</HH.Inn.BedUse.GuestDesc>
+  <HH.Inn.BedUse.Medical>医疗床</HH.Inn.BedUse.Medical>
+  <HH.Inn.BedUse.NeedsRimWard>病床和手术床需要 RimWard 模组。</HH.Inn.BedUse.NeedsRimWard>
+  <HH.Inn.BedUse.NoBed>这张床不能作为访客床。</HH.Inn.BedUse.NoBed>
+  <HH.Inn.BedUse.Owners>所有者：{0}</HH.Inn.BedUse.Owners>
+  <HH.Inn.BedUse.Patient>病床</HH.Inn.BedUse.Patient>
+  <HH.Inn.BedUse.PatientDesc>供病人和伤员使用</HH.Inn.BedUse.PatientDesc>
+  <HH.Inn.BedUse.Price>价格：每晚 {0} 银币（{1}）。</HH.Inn.BedUse.Price>
+  <HH.Inn.BedUse.PriceHint>点击角落的价签即可更改价格。</HH.Inn.BedUse.PriceHint>
+  <HH.Inn.BedUse.Surgery>手术床</HH.Inn.BedUse.Surgery>
+  <HH.Inn.BedUse.SurgeryDesc>在此进行手术</HH.Inn.BedUse.SurgeryDesc>
+  <HH.Inn.Convert.Certainty>对{0}的确信度：{1}%</HH.Inn.Convert.Certainty>
+  <HH.Inn.Convert.Goal>确信度降至 0% 时，他们会接受{0}</HH.Inn.Convert.Goal>
+  <HH.Inn.Convert.Insulted>感到被说教了：这次不会再听</HH.Inn.Convert.Insulted>
+  <HH.Inn.Convert.Nothing>无需转化：访客已与你信奉相同的意识形态，或无法交谈。</HH.Inn.Convert.Nothing>
+  <HH.Inn.Convert.Talks>迄今交谈次数：{0}</HH.Inn.Convert.Talks>
+  <HH.Inn.Door.AgeTitle>年龄</HH.Inn.Door.AgeTitle>
+  <HH.Inn.Door.StayTitle>住宿类型</HH.Inn.Door.StayTitle>
+  <HH.Inn.Door.WealthTitle>财富</HH.Inn.Door.WealthTitle>
+  <HH.Inn.Event.ConvertEnded>已无可转化的对象：恢复普通陪伴。</HH.Inn.Event.ConvertEnded>
+  <HH.Inn.Event.CoupleBooked>与{0}订下一张双人床：每人每晚 {1} 银币。</HH.Inn.Event.CoupleBooked>
+  <HH.Inn.Event.Embraced>与{1}交谈后，接纳了{0}。</HH.Inn.Event.Embraced>
+  <HH.Inn.Event.EmbracedSat>在殖民地找到了新的信仰。</HH.Inn.Event.EmbracedSat>
+  <HH.Inn.Event.NoFreeBed>发现访客床全部被占用，只能待一天。</HH.Inn.Event.NoFreeBed>
+  <HH.Inn.Event.PartnerMovedIn>{0}搬进了这张床：房费均摊（每人每晚 {1} 银币）。</HH.Inn.Event.PartnerMovedIn>
+  <HH.Inn.Event.Preached>感觉被{0}说教了。</HH.Inn.Event.Preached>
+  <HH.Inn.Event.SharedBed2>与{0}共用一张床（每人每晚 {1} 银币）。</HH.Inn.Event.SharedBed2>
+  <HH.Inn.Event.SleepsTogether>与{0}并排入睡：正是他们所期望的。</HH.Inn.Event.SleepsTogether>
+  <HH.Inn.Event.ThinkingOver>与{0}谈论了{1}：现在对自己的信念确信度为 {2}%。</HH.Inn.Event.ThinkingOver>
+  <HH.Inn.Event.Unmoved>听{0}讲了{1}，但毫不动摇。</HH.Inn.Event.Unmoved>
+  <HH.Inn.Event.WantedDouble>想和{0}住双人床，结果只拿到两张单人床。</HH.Inn.Event.WantedDouble>
+  <HH.Inn.GuestBed.InspectShort>访客床：每晚 {0} 银币 · {1}</HH.Inn.GuestBed.InspectShort>
+  <HH.Inn.Handling.Click2>点击切换：{0}。</HH.Inn.Handling.Click2>
+  <HH.Inn.Handling.Convert>转化</HH.Inn.Handling.Convert>
+  <HH.Inn.Handling.ConvertDesc>与陪伴相同，另外会谈论你的意识形态。每次交谈都会动摇访客对自身信念的确信；降至零时，他们会接受你的信念。强硬的说教可能引起反感。需要意识形态 DLC。</HH.Inn.Handling.ConvertDesc>
+  <HH.Inn.Msg.Preached>{0}觉得这些转化尝试太强硬，会少花钱并且提前离开。</HH.Inn.Msg.Preached>
+  <HH.Inn.Occupancy.DoubleBed>双人床</HH.Inn.Occupancy.DoubleBed>
+  <HH.Inn.Problem.Double>想与伴侣同住一张双人床：请建造或指定一张访客床。</HH.Inn.Problem.Double>
+  <HH.Inn.Problem.DoubleMany>{0}位访客想为这对伴侣提供双人床：请建造或指定一张访客床。</HH.Inn.Problem.DoubleMany>
+  <HH.Setting.inn.convertPower>改宗力度</HH.Setting.inn.convertPower>
+  <HH.Setting.inn.convertPower.Desc>「改宗」处理中的一次谈话，能在多大程度上动摇客人对自身意识形态的确信（100 % = 常规强度）。需要意识形态 DLC。</HH.Setting.inn.convertPower.Desc>
+  <HH.Setting.inn.coupleWish>情侣希望住双人床</HH.Setting.inn.coupleWish>
+  <HH.Setting.inn.coupleWish.Desc>一同到来的情侣更喜欢一张双人床。得到它会让他们稍微开心，被安排进两张单人床则会让他们有点不满。从不改变价格。</HH.Setting.inn.coupleWish.Desc>
+  <HH.Setting.inn.doubleBedFactor>双人床价格系数</HH.Setting.inn.doubleBedFactor>
+  <HH.Setting.inn.doubleBedFactor.Desc>双人床的收费是单人床的这个倍数。情侣共用一张双人床时一起付费，各付一半，因此比住两张单人床便宜。</HH.Setting.inn.doubleBedFactor.Desc>
+  <HH.Setting.inn.groupDevGizmos>合并我们的开发按钮</HH.Setting.inn.groupDevGizmos>
+  <HH.Setting.inn.groupDevGizmos.Desc>在开发模式下，Hearth &amp; Harbor 建筑的 DEV 按钮会被折叠进一个「Dev: Hearth &amp; Harbor」按钮，使按钮行保持清爽。原版和其他模组的按钮永远不会被改动。</HH.Setting.inn.groupDevGizmos.Desc>
 </LanguageData>

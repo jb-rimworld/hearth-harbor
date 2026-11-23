@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ScenRules.description>Define módulos, dificuldade de hospedagem, intensidade do conteúdo e qualquer configuração por colônia do Hearth &amp; Harbor e do Silverline para novas colônias deste cenário. Somente o que for definido aqui substitui o modelo; o jogador ainda pode mudar tudo na página do narrador.</HH_ScenRules.description>
+  <HH_ScenRules.label>regras do Hearth &amp; Harbor</HH_ScenRules.label>
+  <HH_ScenSetting.description>Define uma configuração do Hearth &amp; Harbor ou do Silverline com um valor para novas colônias deste cenário.</HH_ScenSetting.description>
+  <HH_ScenSetting.label>configuração do Hearth &amp; Harbor</HH_ScenSetting.label>
+  <HH_ScenStartingResearch.description>Um projeto de pesquisa do Hearth &amp; Harbor ou do Silverline já está concluído quando a colônia começa.</HH_ScenStartingResearch.description>
+  <HH_ScenStartingResearch.label>começar com pesquisa do Hearth &amp; Harbor</HH_ScenStartingResearch.label>
+</LanguageData>

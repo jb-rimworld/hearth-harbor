@@ -202,5 +202,42 @@
   <HH.Finance.Help.Tip>在浏览器中打开网站。</HH.Finance.Help.Tip>
   <HH.Finance.Help.Url1>https://findahelpline.com/</HH.Finance.Help.Url1>
   <HH.Finance.Help.Url2>https://www.gamblingtherapy.org/</HH.Finance.Help.Url2>
-  <HH.Finance.Lottery.FreeTicket>凭 {1} 的好运获得免费彩票：{0}。</HH.Finance.Lottery.FreeTicket>
+  <HH.Finance.Compare>银行账户与金融产品，每年</HH.Finance.Compare>
+  <HH.Finance.Lottery.BuyCard>购买彩票</HH.Finance.Lottery.BuyCard>
+  <HH.Finance.Lottery.BuyN>买 ×{0}（{1}）</HH.Finance.Lottery.BuyN>
+  <HH.Finance.Lottery.BuyTicket>购买这张彩票（{0}）</HH.Finance.Lottery.BuyTicket>
+  <HH.Finance.Lottery.CardTickets>你的彩票</HH.Finance.Lottery.CardTickets>
+  <HH.Finance.Lottery.Clear>清空</HH.Finance.Lottery.Clear>
+  <HH.Finance.Lottery.ColonySold>本期已售彩票：{0} · 你目前的收入：{1}</HH.Finance.Lottery.ColonySold>
+  <HH.Finance.Lottery.ColonyState>殖民地彩票：{0}</HH.Finance.Lottery.ColonyState>
+  <HH.Finance.Lottery.ColonyTerms>你的彩票条款</HH.Finance.Lottery.ColonyTerms>
+  <HH.Finance.Lottery.CountTip>你购买的每张彩票都会保留在这里，直到开奖。开奖后它会移入「上次开奖」，方便你查看中了什么。</HH.Finance.Lottery.CountTip>
+  <HH.Finance.Lottery.DaysUnit>{0} 天</HH.Finance.Lottery.DaysUnit>
+  <HH.Finance.Lottery.Expected>平均而言，一张彩票会返还其 {1} 中的 {0}（奖金比例 {2}%）。其余归庄家所有。</HH.Finance.Lottery.Expected>
+  <HH.Finance.Lottery.Flash>+{0} 张彩票 · −{1}</HH.Finance.Lottery.Flash>
+  <HH.Finance.Lottery.FlashFree>+{0} 张彩票 · {1} 张免费</HH.Finance.Lottery.FlashFree>
+  <HH.Finance.Lottery.FreeTag>免费</HH.Finance.Lottery.FreeTag>
+  <HH.Finance.Lottery.KeptNote>（显示你 {1} 张彩票中最好的 {0} 张）</HH.Finance.Lottery.KeptNote>
+  <HH.Finance.Lottery.LastDraw>第 #{0} 期开奖</HH.Finance.Lottery.LastDraw>
+  <HH.Finance.Lottery.LastDrawLine>开出：{0}。你本期持有 {1} 张彩票，共花费 {2} 银币。最佳：5 个号码中中了 {3} 个{4}。奖金：{5}。</HH.Finance.Lottery.LastDrawLine>
+  <HH.Finance.Lottery.Matches>5 个号码中中 {0} 个</HH.Finance.Lottery.Matches>
+  <HH.Finance.Lottery.MyCount>你本期的彩票</HH.Finance.Lottery.MyCount>
+  <HH.Finance.Lottery.MyNone>你还没有下一期的彩票。</HH.Finance.Lottery.MyNone>
+  <HH.Finance.Lottery.MySpent>本期已花费 {0}</HH.Finance.Lottery.MySpent>
+  <HH.Finance.Lottery.MySpentFree>本期已花费 {0}，其中 {1} 张彩票免费</HH.Finance.Lottery.MySpentFree>
+  <HH.Finance.Lottery.NoLast>还没有开奖。第一期即将到来。</HH.Finance.Lottery.NoLast>
+  <HH.Finance.Lottery.NotEnough>账户中没有 {0}。</HH.Finance.Lottery.NotEnough>
+  <HH.Finance.Lottery.Odds>头奖：每张彩票 1/{0}。任何奖项：约 1/{1}。</HH.Finance.Lottery.Odds>
+  <HH.Finance.Lottery.OpenSettings>在设置中修改</HH.Finance.Lottery.OpenSettings>
+  <HH.Finance.Lottery.OpenSettingsTip>在银行页面打开 Hearth &amp; Harbor 的模组选项（类别：彩票）。</HH.Finance.Lottery.OpenSettingsTip>
+  <HH.Finance.Lottery.Preview>你目前的彩票：{0}/{1} 个号码，星号 {2}</HH.Finance.Lottery.Preview>
+  <HH.Finance.Lottery.QuickN>快速选号</HH.Finance.Lottery.QuickN>
+  <HH.Finance.Lottery.QuickTip>随机彩票，一次全部购买。每次点击最多 {0} 张。</HH.Finance.Lottery.QuickTip>
+  <HH.Finance.Lottery.SetIn>彩票价格、奖金比例、开奖间隔和手续费都是本存档的模组设置。</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SilverUnit>{0} 银币</HH.Finance.Lottery.SilverUnit>
+  <HH.Finance.Lottery.StarMatch> 且星号相符</HH.Finance.Lottery.StarMatch>
+  <HH.Finance.Lottery.StarNone>未选中</HH.Finance.Lottery.StarNone>
+  <HH.Finance.Lottery.StateClosed>已关闭</HH.Finance.Lottery.StateClosed>
+  <HH.Finance.Lottery.StateOpen>开放中</HH.Finance.Lottery.StateOpen>
+  <HH.Finance.Lottery.TicketsCount>{0} 张彩票 · 最新在前</HH.Finance.Lottery.TicketsCount>
 </LanguageData>

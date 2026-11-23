@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Scen.BackRoom.Intro>Dopis byl vytištěn na těžký černý papír a slabě voněl doutníkem.\n\n„Vaše dluhy byly urovnány. Všechny. Ozveme se ohledně pokoje za kuchyní. Udržujte ho uklizený.“\n\nVaše odpočivadlo má nové partnery. Jsou trpěliví, zdvořilí a nikdy, nikdy nezapomenou na číslo.\n\nTento začátek používá temnější obsah Hearth &amp; Harbor. Kdykoli ho můžete v nastavení modu zjemnit.</HH.Scen.BackRoom.Intro>
+  <HH.Scen.Editor.Editing>Úprava pravidel Hearth &amp; Harbor v tomto scénáři.</HH.Scen.Editor.Editing>
+  <HH.Scen.Editor.ModuleResetTip>Ponechat tento modul podle šablony hráče.</HH.Scen.Editor.ModuleResetTip>
+  <HH.Scen.Editor.ModulesIntro>Moduly, které tento scénář zapíná nebo vypíná. Modul, kterého se nedotknete, se řídí šablonou hráče.</HH.Scen.Editor.ModulesIntro>
+  <HH.Scen.Editor.Note>Scénář nastavuje jen to, co zde měníte (označeno jantarově). Nezměněné řádky ukazují výchozí hodnoty; v nové hře pocházejí z vlastní šablony hráče. Obnovit vrátí řádek nebo modul zpět k šabloně.</HH.Scen.Editor.Note>
+  <HH.Scen.Editor.Side>Pravidla scénáře</HH.Scen.Editor.Side>
+  <HH.Scen.Editor.Title>Pravidla Hearth &amp; Harbor v tomto scénáři</HH.Scen.Editor.Title>
+  <HH.Scen.HarborTown.Intro>Smlouva byla podepsána ve spěchu a advokát nezůstal na čaj. Teď je váš: ošuntělý hostinec nad klidným přístavem, cesta plná karavan a ani jediný host.\n\nZameťte podlahy, opravte střechu, ustelte postel. Pověste cedulku. Někdo zaklepe brzy – a když se k němu budete chovat dobře, řekne to celé cestě.\n\nTip: Hetty Hearthwellová je vypravěčka pro stavitele. A průvodce Hearth &amp; Harbor vpravo nahoře vysvětluje jeden krok po druhém.</HH.Scen.HarborTown.Intro>
+  <HH.Scen.Module.Off>vypnuto</HH.Scen.Module.Off>
+  <HH.Scen.Module.On>zapnuto</HH.Scen.Module.On>
+  <HH.Scen.Module.Template>podle šablony</HH.Scen.Module.Template>
+  <HH.Scen.Picker.Nerd>Nastavení pro nadšence</HH.Scen.Picker.Nerd>
+  <HH.Scen.Picker.Search>Hledat…</HH.Scen.Picker.Search>
+  <HH.Scen.Picker.Title>Vyberte nastavení Hearth &amp; Harbor</HH.Scen.Picker.Title>
+  <HH.Scen.Rules.Content>Obsah: {0}</HH.Scen.Rules.Content>
+  <HH.Scen.Rules.Count>Nastavených položek: {0}; jednotlivá nastavení přidáte částí „Nastavení Hearth &amp; Harbor“.</HH.Scen.Rules.Count>
+  <HH.Scen.Rules.Discovered>Podsvětí už je objeveno</HH.Scen.Rules.Discovered>
+  <HH.Scen.Rules.More>Další nastavení… (nastaveno {0})</HH.Scen.Rules.More>
+  <HH.Scen.Rules.MoreTip>Otevře celé nastavení Hearth &amp; Harbor pro tento scénář. Scénář nastavuje jen to, co tam změníte.</HH.Scen.Rules.MoreTip>
+  <HH.Scen.Rules.SumContent>obsah: {0}</HH.Scen.Rules.SumContent>
+  <HH.Scen.Rules.SumDiscovered>podsvětí vás už zná</HH.Scen.Rules.SumDiscovered>
+  <HH.Scen.Rules.SumMore>a dalších {0} nastavení</HH.Scen.Rules.SumMore>
+  <HH.Scen.Rules.SumNothing>vše jako v šabloně</HH.Scen.Rules.SumNothing>
+  <HH.Scen.Rules.SumOff>vypnuto: {0}</HH.Scen.Rules.SumOff>
+  <HH.Scen.Rules.SumOn>zapnuto: {0}</HH.Scen.Rules.SumOn>
+  <HH.Scen.Rules.SumTier>obtížnost ubytování {0} % ({1})</HH.Scen.Rules.SumTier>
+  <HH.Scen.Rules.SummaryHead>Nastavení Hearth &amp; Harbor:</HH.Scen.Rules.SummaryHead>
+  <HH.Scen.Rules.TierTemplate>Obtížnost ubytování: podle šablony</HH.Scen.Rules.TierTemplate>
+  <HH.Scen.Rules.TierTip>Zaškrtněte, aby scénář nastavil obtížnost ubytování (0–500 %). Bez zaškrtnutí rozhoduje šablona hráče.</HH.Scen.Rules.TierTip>
+  <HH.Scen.SetByScenario>nastaveno scénářem</HH.Scen.SetByScenario>
+  <HH.Scen.Setting.Intro>Nastavení Hearth &amp; Harbor</HH.Scen.Setting.Intro>
+  <HH.Scen.Setting.Pick>Vyberte nastavení…</HH.Scen.Setting.Pick>
+  <HH.Scen.Setting.Unknown>Neznámé nastavení (chybí modul?)</HH.Scen.Setting.Unknown>
+</LanguageData>

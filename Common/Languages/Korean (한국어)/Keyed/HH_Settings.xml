@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.BankResearchMode.Full>전체</HH.Enum.BankResearchMode.Full>
+  <HH.Enum.BankResearchMode.Off>끔</HH.Enum.BankResearchMode.Off>
+  <HH.Enum.ClaimMode.Automatic>자동</HH.Enum.ClaimMode.Automatic>
+  <HH.Enum.ClaimMode.ByForm>양식별</HH.Enum.ClaimMode.ByForm>
+  <HH.Enum.FundDestination.ToDeity>신에게</HH.Enum.FundDestination.ToDeity>
+  <HH.Enum.FundDestination.ToFaction>진영에</HH.Enum.FundDestination.ToFaction>
+  <HH.Enum.PensionRuleMode.Enforce>강제 적용</HH.Enum.PensionRuleMode.Enforce>
+  <HH.Enum.PensionRuleMode.Off>끔</HH.Enum.PensionRuleMode.Off>
+  <HH.Enum.PensionRuleMode.WarnOnly>경고만</HH.Enum.PensionRuleMode.WarnOnly>
+  <HH.Enum.RngAlgorithm.ChaCha8>Cha cha8</HH.Enum.RngAlgorithm.ChaCha8>
+  <HH.Enum.RngAlgorithm.Pcg32>Pcg32</HH.Enum.RngAlgorithm.Pcg32>
+  <HH.Enum.RngAlgorithm.SplitMix64>Split mix64</HH.Enum.RngAlgorithm.SplitMix64>
+  <HH.Enum.RngAlgorithm.Xoshiro256>Xoshiro256</HH.Enum.RngAlgorithm.Xoshiro256>
+  <HH.Enum.StaffRule.AlwaysRequired>항상 필요</HH.Enum.StaffRule.AlwaysRequired>
+  <HH.Enum.StaffRule.NeverRequired>필요 없음</HH.Enum.StaffRule.NeverRequired>
+  <HH.Enum.StaffRule.PerVenueType>영업장 종류별</HH.Enum.StaffRule.PerVenueType>
+  <HH.Enum.UnderworldMode.AlwaysOn>항상 켜짐</HH.Enum.UnderworldMode.AlwaysOn>
+  <HH.Enum.UnderworldMode.DiscoverInGame>게임 중 발견</HH.Enum.UnderworldMode.DiscoverInGame>
+  <HH.Setting.bank.accountBeta>계좌 이자 지수 (1.1.0부터 사용 안 함)</HH.Setting.bank.accountBeta>
+  <HH.Setting.bank.accountBeta.Desc>'계좌 이자: 시장 수익 비율'로 대체되었습니다. 예전 저장 파일을 불러올 수 있도록 남겨 두었으며, 바꿔도 아무 일도 일어나지 않습니다.</HH.Setting.bank.accountBeta.Desc>
+  <HH.Setting.bank.accountShare>계좌 이자: 시장 수익 비율</HH.Setting.bank.accountShare>
+  <HH.Setting.bank.accountShare.Desc>은행 계좌는 시장 초과분(M - 1)의 이 비율만큼 1년에 이자를 줍니다. 저축 상품 Mattress Plus(투자 수익성을 따름)보다 많이 주지는 않습니다. 0.2라는 것은 M 1.2일 때 계좌가 1년에 +4 %를 준다는 뜻입니다(저축 상품 Mattress Plus는 +8 %, 지수는 약 +20 %). M 2에서는 +20 %를 줍니다. M 1 아래에서는 조금 손해를 보며, 1년에 최대 10 %까지만 줄어듭니다. 두 수익성 슬라이더(이 은행의 M과 투자 M)는 가깝게 맞춰 두는 것이 좋습니다. 은행마다 자체 보너스나 페널티가 조금씩 붙습니다. 투자는 영향을 받지 않습니다.</HH.Setting.bank.accountShare.Desc>
+  <HH.Setting.bank.atmDailyLimit>ATM 일일 한도</HH.Setting.bank.atmDailyLimit>
+  <HH.Setting.bank.atmDailyLimit.Desc>하루에 ATM에서 찾을 수 있는 최대 은화 금액입니다.</HH.Setting.bank.atmDailyLimit.Desc>
+  <HH.Setting.bank.bailout>대마불사 구제금융</HH.Setting.bank.bailout>
+  <HH.Setting.bank.bailout.Desc>대마불사의 First Rim Bank는 게임 연도마다 한 번, 파산한 전직 재벌을 구제합니다(무이자 대출이며 선물은 아닙니다).</HH.Setting.bank.bailout.Desc>
+  <HH.Setting.bank.collectionAnger>추심 분노 (습격 규모)</HH.Setting.bank.collectionAnger>
+  <HH.Setting.bank.collectionAnger.Desc>압류팀과 추심 습격의 규모를 배가합니다. 0이면 폭력 단계가 꺼집니다.</HH.Setting.bank.collectionAnger.Desc>
+  <HH.Setting.bank.depositDelayHours>지점 없이 입금할 때 지연 (시간)</HH.Setting.bank.depositDelayHours>
+  <HH.Setting.bank.depositDelayHours.Desc>은행 창구나 ATM이 근처에 없을 때 계좌에 넣은 은화는 이 시간이 지나야 도착합니다.</HH.Setting.bank.depositDelayHours.Desc>
+  <HH.Setting.bank.directDeposit>매표 수입을 곧바로 은행으로</HH.Setting.bank.directDeposit>
+  <HH.Setting.bank.directDeposit.Desc>계좌가 생기면, 사업장 매표소의 돈은 바닥에 두지 않고 자정에 계좌로 옮겨집니다.</HH.Setting.bank.directDeposit.Desc>
+  <HH.Setting.bank.directDepositFee>직접 입금 수수료</HH.Setting.bank.directDepositFee>
+  <HH.Setting.bank.directDepositFee.Desc>계좌로 곧바로 들어가는 돈(매표 수입)에 붙는 수수료입니다. 0~100 %.</HH.Setting.bank.directDepositFee.Desc>
+  <HH.Setting.bank.feeFactor>은행 수수료 수준</HH.Setting.bank.feeFactor>
+  <HH.Setting.bank.feeFactor.Desc>은행의 모든 수수료에 곱해집니다. 0 % = 수수료 없음.</HH.Setting.bank.feeFactor.Desc>
+  <HH.Setting.bank.lateFee>연체료</HH.Setting.bank.lateFee>
+  <HH.Setting.bank.lateFee.Desc>대출이 추심 2단계에 이르면 연체된 할부금에 부과됩니다.</HH.Setting.bank.lateFee.Desc>
+  <HH.Setting.bank.loanFloor>초기 신용</HH.Setting.bank.loanFloor>
+  <HH.Setting.bank.loanFloor.Desc>평판 점수가 있는 식민지의 최소 신용 한도입니다. 어린 식민지도 조금은 빌릴 수 있게 합니다.</HH.Setting.bank.loanFloor.Desc>
+  <HH.Setting.bank.loanIntervalDays>할부 간격 (일)</HH.Setting.bank.loanIntervalDays>
+  <HH.Setting.bank.loanIntervalDays.Desc>대출 할부금은 이 일수마다 만기가 됩니다.</HH.Setting.bank.loanIntervalDays.Desc>
+  <HH.Setting.bank.loanMaxTermDays>최장 대출 기간 (일)</HH.Setting.bank.loanMaxTermDays>
+  <HH.Setting.bank.loanPortfolioShare>신용 한도에 반영되는 투자</HH.Setting.bank.loanPortfolioShare>
+  <HH.Setting.bank.loanPortfolioShare.Desc>은행이 빌릴 수 있는 금액을 정할 때, 투자액(시장 가치)의 얼마만큼을 재산으로 치는지 정합니다. 100 % = 전부, 0 = 전혀 아님. 로비에 표시되는 순자산은 투자를 항상 전부 포함합니다.</HH.Setting.bank.loanPortfolioShare.Desc>
+  <HH.Setting.bank.maxCollectionStage>최고 추심 단계</HH.Setting.bank.maxCollectionStage>
+  <HH.Setting.bank.maxCollectionStage.Desc>추심 사다리: 1 독촉, 2 연체료, 3 예금과 상계, 4 방문, 5 압류팀, 6 추심 습격, 7 현상금. 표준 객실은 4단계에서 멈춥니다. 빚을 갚으면 기분이 조금 나빠질 뿐 아무것도 잃지 않습니다.</HH.Setting.bank.maxCollectionStage.Desc>
+  <HH.Setting.bank.moodOn>잔고에 따른 식민지 기분</HH.Setting.bank.moodOn>
+  <HH.Setting.bank.moodOn.Desc>식민지 주민 1인당 순자산에 따라 작은 생각이 생깁니다(-4에서 +3까지, 욕심 많은 주민은 두 배, 금욕주의자는 없음).</HH.Setting.bank.moodOn.Desc>
+  <HH.Setting.bank.moodScale>재산 등급 기준선</HH.Setting.bank.moodScale>
+  <HH.Setting.bank.moodScale.Desc>기분 등급(파산 … 대마불사)의 순자산 기준선을 조절합니다.</HH.Setting.bank.moodScale.Desc>
+  <HH.Setting.bank.podMaxHours>드롭 포드 배송: 최장 (시간)</HH.Setting.bank.podMaxHours>
+  <HH.Setting.bank.podMaxHours.Desc>... 그리고 이 시간을 넘지 않습니다.</HH.Setting.bank.podMaxHours.Desc>
+  <HH.Setting.bank.podMaxLoad>드롭 포드 한 개의 최대 용량</HH.Setting.bank.podMaxLoad>
+  <HH.Setting.bank.podMaxLoad.Desc>큰 인출은 포드 한 개당 대략 이 금액의 은화를 싣고 옵니다. 인출 한 번에 10개를 넘지 않습니다(큰 금액은 포드 수를 늘리지 않고 더 무거운 포드로 옵니다). 입금이나 인출 가능액을 제한하지는 않습니다.</HH.Setting.bank.podMaxLoad.Desc>
+  <HH.Setting.bank.podMinHours>드롭 포드 배송: 최단 (시간)</HH.Setting.bank.podMinHours>
+  <HH.Setting.bank.podMinHours.Desc>창구나 ATM 없이 하는 인출은 최소한 이 시간이 지나야 드롭 포드로 옵니다.</HH.Setting.bank.podMinHours.Desc>
+  <HH.Setting.bank.profit>은행 M (연간 수익성)</HH.Setting.bank.profit>
+  <HH.Setting.bank.profit.Desc>투자된 돈이 게임 1년(60일) 동안 평균적으로 얼마나 늘어나는지 정합니다. 이것은 은행 자체의 M으로, 계좌 이자와 대출 금리를 결정합니다. 투자 M(투자 페이지)은 시장을 움직이며, 계좌는 그 M에서 Mattress Plus보다 많이 주지 않습니다. 두 값은 가깝게 맞춰 두세요. 1.0 = 증감 없음, 1.2 = 연 +20 %, 0 = 돈이 사라짐. 로그 척도 0.01~100. 정확한 값은 숫자를 직접 입력하세요. 직접 설정하기 전까지는 난이도 슬라이더를 따릅니다.</HH.Setting.bank.profit.Desc>
+  <HH.Setting.bank.researchMode>은행 연구</HH.Setting.bank.researchMode>
+  <HH.Setting.bank.researchMode.Desc>전체: ATM, 야간 금고, 지점, 대출에 연구가 필요합니다. 끔: 처음부터 모두 사용할 수 있습니다. (핵심 설정의 전역 연구 모드도 모든 모듈에 같은 작용을 합니다.)</HH.Setting.bank.researchMode.Desc>
+  <HH.Setting.bank.seizureShare>블랙 레저 압류 비율</HH.Setting.bank.seizureShare>
+  <HH.Setting.bank.seizureShare.Desc>블랙 레저가 계좌를 압류하면(분기당 1 % 위험), 잔고의 이 비율만큼이 사라집니다.</HH.Setting.bank.seizureShare.Desc>
+  <HH.Setting.bank.sounds>은행 메뉴 소리</HH.Setting.bank.sounds>
+  <HH.Setting.bank.sounds.Desc>은행 창의 클릭, 동전 세기, 도장 소리와, 복권을 산 추첨이 열릴 때 당첨 또는 낙첨 소리를 냅니다.</HH.Setting.bank.sounds.Desc>
+  <HH.Setting.bank.switchFee>은행 변경 수수료</HH.Setting.bank.switchFee>
+  <HH.Setting.bank.switchFee.Desc>계좌를 다른 은행으로 옮기는 데 드는 비용입니다(컨셉 2.2: 은화 50).</HH.Setting.bank.switchFee.Desc>
+  <HH.Setting.bank.tradeDeposit>거래 은화 자동 입금</HH.Setting.bank.tradeDeposit>
+  <HH.Setting.bank.tradeDeposit.Desc>기본은 꺼져 있어서, 상인에게 팔면 바로 쓸 수 있는 동전을 받습니다. 이것을 켜면(직접 입금도 켜져 있을 때) 상인과 무역선에서 받은 은화를 거래 직후 계좌로 옮깁니다(직접 입금 수수료 적용). 대상은 영향을 받지 않습니다.</HH.Setting.bank.tradeDeposit.Desc>
+  <HH.Setting.bank.wealthShare>이야기꾼이 보는 은행 잔고 (%)</HH.Setting.bank.wealthShare>
+  <HH.Setting.bank.wealthShare.Desc>계좌 금액 중 이야기꾼이 습격 포인트를 계산할 때 쓰는 식민지 재산에 포함되는 비율입니다. 100 % = 공정: 돈을 맡긴다고 습격이 약해지지 않습니다. 0 = 은행은 숨을 곳이 됩니다.</HH.Setting.bank.wealthShare.Desc>
+  <HH.Setting.casino.abstinenceDays>중독 단계별 금단 일수</HH.Setting.casino.abstinenceDays>
+  <HH.Setting.casino.abstinenceDays.Desc>중독의 각 단계를 치료하는 데 필요한, 도박을 전혀 하지 않은 날 수입니다(3단계 = 3 × 이 값).</HH.Setting.casino.abstinenceDays.Desc>
+  <HH.Setting.casino.addictionFreeSessions>중독이 생기기 전 도박 횟수</HH.Setting.casino.addictionFreeSessions>
+  <HH.Setting.casino.addictionFreeSessions.Desc>3일 동안 이 횟수보다 적게 하면 아무 일도 생기지 않습니다.</HH.Setting.casino.addictionFreeSessions.Desc>
+  <HH.Setting.casino.addictionGrowth>추가 도박 한 번당 증가율</HH.Setting.casino.addictionGrowth>
+  <HH.Setting.casino.addictionGrowth.Desc>p = p₀ · 증가율^(횟수 − 3).</HH.Setting.casino.addictionGrowth.Desc>
+  <HH.Setting.casino.addictionP0>도박 중독 확률 p₀</HH.Setting.casino.addictionP0>
+  <HH.Setting.casino.addictionP0.Desc>3일 안에 세 번째 도박을 한 뒤 중독될 확률입니다. 추가로 할 때마다 ×1.35씩 커집니다. 0이면 중독이 꺼집니다.</HH.Setting.casino.addictionP0.Desc>
+  <HH.Setting.casino.ambience>카지노 분위기</HH.Setting.casino.ambience>
+  <HH.Setting.casino.ambience.Desc>카메라가 붐비는 카지노 홀 가까이 있을 때, 사람들의 웅성거림과 칩 소리, 멀리 슬롯머신 종소리가 은은하게 들립니다.</HH.Setting.casino.ambience.Desc>
+  <HH.Setting.casino.animSpeed>애니메이션 속도</HH.Setting.casino.animSpeed>
+  <HH.Setting.casino.animSpeed.Desc>100 %가 설계된 속도입니다. 더 높은 숫자는 게임을 더 빨리 진행하며, Shift를 누르고 있으면 300 %로 진행합니다.</HH.Setting.casino.animSpeed.Desc>
+  <HH.Setting.casino.animations>움직이는 게임</HH.Setting.casino.animations>
+  <HH.Setting.casino.animations.Desc>The Lucky Thrumbo와 연습 게임은 결과가 나오기 전에 릴, 룰렛, 카드가 움직이는 모습을 보여 줍니다. 끄면 결과가 바로 나타납니다. 테이블을 클릭하거나 Space, Enter를 누르면 애니메이션의 나머지를 언제나 건너뜁니다.</HH.Setting.casino.animations.Desc>
+  <HH.Setting.casino.blackjackH17>블랙잭 딜러가 소프트 17에서 한 장 받기</HH.Setting.casino.blackjackH17>
+  <HH.Setting.casino.blackjackH17.Desc>0 = 딜러는 소프트 17에서 멈춤, 1 = 딜러는 한 장 받음(약 +0.2점의 하우스 이점).</HH.Setting.casino.blackjackH17.Desc>
+  <HH.Setting.casino.blackjackPays>블랙잭 지급 (블랙잭 보너스)</HH.Setting.casino.blackjackPays>
+  <HH.Setting.casino.blackjackPays.Desc>3:2 = 1.5, 6:5 = 1.2. 하우스 엣지가 약 1.4포인트 달라진다.</HH.Setting.casino.blackjackPays.Desc>
+  <HH.Setting.casino.chipSpendBonus>현금 교환소 칩 지출 보너스</HH.Setting.casino.chipSpendBonus>
+  <HH.Setting.casino.chipSpendBonus.Desc>교환소에서 칩을 팔면 손님이 테이블에 가져오는 돈이 이만큼 늘어난다 ("돈 같지 않다" 효과).</HH.Setting.casino.chipSpendBonus.Desc>
+  <HH.Setting.casino.chipTakeHome>가져가는 칩</HH.Setting.casino.chipTakeHome>
+  <HH.Setting.casino.chipTakeHome.Desc>손님이 떠날 때 당첨금 중 칩 형태로 손님에게 남을 수 있는 최대 비율. 나머지는 전부 하우스 이익이다 ("칩 부유금").</HH.Setting.casino.chipTakeHome.Desc>
+  <HH.Setting.casino.colonistChips>세션당 하우스 칩</HH.Setting.casino.colonistChips>
+  <HH.Setting.casino.colonistChips.Desc>개척민은 가치 없는 하우스 칩으로 도박한다. 테이블에서 식민지 은화가 잃어지는 일은 없다.</HH.Setting.casino.colonistChips.Desc>
+  <HH.Setting.casino.croupierRequired>테이블에는 딜러가 필요</HH.Setting.casino.croupierRequired>
+  <HH.Setting.casino.croupierRequired.Desc>룰렛, 블랙잭, Rimdeck은 '서빙' 작업 유형의 개척민이 테이블을 맡고 있을 때만 손님을 위해 돌아간다. 슬롯머신은 딜러가 필요 없다.</HH.Setting.casino.croupierRequired.Desc>
+  <HH.Setting.casino.fatalDespair>치명적 절망 (미구현)</HH.Setting.casino.fatalDespair>
+  <HH.Setting.casino.fatalDespair.Desc>예약됨. 이 모듈의 어떤 것도 개척민을 죽일 수 없으며, 이 스위치는 효과가 없다.</HH.Setting.casino.fatalDespair.Desc>
+  <HH.Setting.casino.guestBetShare>손님 건 금액</HH.Setting.casino.guestBetShare>
+  <HH.Setting.casino.guestBetShare.Desc>손님은 라운드마다 도박 자금의 이 비율만큼 건다. 기본값은 실제 카지노보다 크다. 테이블이 게임 내 한 시간에 훨씬 적은 라운드를 돌리기 때문이며, 시간당 수입은 거의 같게 유지된다.</HH.Setting.casino.guestBetShare.Desc>
+  <HH.Setting.casino.guestBudgetShare>손님의 도박 예산</HH.Setting.casino.guestBudgetShare>
+  <HH.Setting.casino.guestBudgetShare.Desc>손님이 남은 예산 중 테이블에 가져오는 비율 (성격 반영 전).</HH.Setting.casino.guestBudgetShare.Desc>
+  <HH.Setting.casino.guestMinBuyIn>최소 참가금 (은화)</HH.Setting.casino.guestMinBuyIn>
+  <HH.Setting.casino.guestMinBuyIn.Desc>이보다 쓸 돈이 적은 손님은 도박하지 않는다.</HH.Setting.casino.guestMinBuyIn.Desc>
+  <HH.Setting.casino.guestStopLoss>손실 후 손님 중단</HH.Setting.casino.guestStopLoss>
+  <HH.Setting.casino.guestStopLoss.Desc>손님은 도박 자금의 이 비율만큼 잃으면 테이블을 떠난다.</HH.Setting.casino.guestStopLoss.Desc>
+  <HH.Setting.casino.guestWinTarget>승리 후 손님 정산</HH.Setting.casino.guestWinTarget>
+  <HH.Setting.casino.guestWinTarget.Desc>손님은 도박 자금 위로 이 비율만큼 따면 정산하고 떠난다.</HH.Setting.casino.guestWinTarget.Desc>
+  <HH.Setting.casino.houseFloat>하우스 시재금 (은화)</HH.Setting.casino.houseFloat>
+  <HH.Setting.casino.houseFloat.Desc>하우스 서랍에 보관하는 현금. 그 이상으로 번 돈(지금 손님이 걸고 있는 돈 포함)은 카지노가 문을 닫을 때 식민지 금고로 들어간다.</HH.Setting.casino.houseFloat.Desc>
+  <HH.Setting.casino.houseRiskLimit>하우스 파산 방지</HH.Setting.casino.houseRiskLimit>
+  <HH.Setting.casino.houseRiskLimit.Desc>각 건 금액을 현금 ÷ (4 · σ · √하루 라운드 수)로 제한한다: 나쁜 밤에도 하우스가 무너지지 않는다. 현금이 적으면 한도도 줄어든다.</HH.Setting.casino.houseRiskLimit.Desc>
+  <HH.Setting.casino.howToSeen>"게임 방법" 이미 확인함</HH.Setting.casino.howToSeen>
+  <HH.Setting.casino.howToSeen.Desc>The Lucky Thrumbo의 짧은 게임 설명이 한 번 저절로 열렸음을 기억한다. 끄면 다시 열린다.</HH.Setting.casino.howToSeen.Desc>
+  <HH.Setting.casino.joyGain>도박 기쁨 배수</HH.Setting.casino.joyGain>
+  <HH.Setting.casino.joyGain.Desc>바닐라 포커 테이블과 비교한 기쁨 획득량.</HH.Setting.casino.joyGain.Desc>
+  <HH.Setting.casino.maxBet>최대 건 금액 (은화)</HH.Setting.casino.maxBet>
+  <HH.Setting.casino.maxBet.Desc>한도가 적용되는 동안 어떤 게임에서든 가장 큰 건 금액.</HH.Setting.casino.maxBet.Desc>
+  <HH.Setting.casino.minBet>최소 건 금액 (은화)</HH.Setting.casino.minBet>
+  <HH.Setting.casino.minBet.Desc>가장 작은 건 금액. 소수도 괜찮다: 건 금액은 동전으로 지급되지 않는다.</HH.Setting.casino.minBet.Desc>
+  <HH.Setting.casino.pokerRake>Rimdeck 수수료</HH.Setting.casino.pokerRake>
+  <HH.Setting.casino.pokerRake.Desc>모든 팟에서 하우스가 가져가는 비율 (수수료 상한까지).</HH.Setting.casino.pokerRake.Desc>
+  <HH.Setting.casino.pokerRakeCap>Rimdeck 수수료 상한 (은화)</HH.Setting.casino.pokerRakeCap>
+  <HH.Setting.casino.pokerRakeCap.Desc>하우스가 한 팟에서 가져갈 수 있는 최대 금액.</HH.Setting.casino.pokerRakeCap.Desc>
+  <HH.Setting.casino.reactions>도박꾼 반응</HH.Setting.casino.reactions>
+  <HH.Setting.casino.reactions.Desc>이기거나 지거나 아슬아슬하게 빗나갈 때 플레이어들이 환호하고 탄식하며 동전을 던진다 (머리 위의 작은 아이콘과 짧은 소리).</HH.Setting.casino.reactions.Desc>
+  <HH.Setting.casino.rouletteEdge>룰렛 하우스 엣지</HH.Setting.casino.rouletteEdge>
+  <HH.Setting.casino.rouletteEdge.Desc>0.54 %~7.9 %: 낮은 엣지는 아 라 파르타주 휠, 2.7 %는 0 하나짜리, 4 % 초과는 더블 제로 휠을 쓴다. 모든 베팅에 정확히 이 엣지가 적용된다.</HH.Setting.casino.rouletteEdge.Desc>
+  <HH.Setting.casino.roundsPerHour.blackjack>블랙잭 시간당 핸드 수</HH.Setting.casino.roundsPerHour.blackjack>
+  <HH.Setting.casino.roundsPerHour.blackjack.Desc>게임 내 한 시간당 핸드 수.</HH.Setting.casino.roundsPerHour.blackjack.Desc>
+  <HH.Setting.casino.roundsPerHour.poker>Rimdeck 시간당 핸드 수</HH.Setting.casino.roundsPerHour.poker>
+  <HH.Setting.casino.roundsPerHour.poker.Desc>게임 내 한 시간당 핸드 수.</HH.Setting.casino.roundsPerHour.poker.Desc>
+  <HH.Setting.casino.roundsPerHour.roulette>룰렛 시간당 스핀 수</HH.Setting.casino.roundsPerHour.roulette>
+  <HH.Setting.casino.roundsPerHour.roulette.Desc>게임 내 한 시간당 스핀 수.</HH.Setting.casino.roundsPerHour.roulette.Desc>
+  <HH.Setting.casino.roundsPerHour.slot>슬롯 시간당 스핀 수</HH.Setting.casino.roundsPerHour.slot>
+  <HH.Setting.casino.roundsPerHour.slot.Desc>게임 내 한 시간당 기계가 돌아가는 속도 (2500틱이므로, 40이면 보통 속도에서 1~2초 실제 시간마다 한 번 돈다).</HH.Setting.casino.roundsPerHour.slot.Desc>
+  <HH.Setting.casino.slotRtp>슬롯머신 지급률 (RTP)</HH.Setting.casino.slotRtp>
+  <HH.Setting.casino.slotRtp.Desc>장기적으로 One-Armed Muffalo가 건 돈 중 돌려주는 비율. 92 % = 하우스 엣지 8 %. 100 %를 넘으면 하우스가 손해를 본다.</HH.Setting.casino.slotRtp.Desc>
+  <HH.Setting.casino.tableLimits>테이블 한도 적용</HH.Setting.casino.tableLimits>
+  <HH.Setting.casino.tableLimits.Desc>켜짐: 건 금액이 아래의 최소~최대 건 금액 사이에 머문다. 꺼짐: 하우스 위험 규칙만 건 금액을 제한한다.</HH.Setting.casino.tableLimits.Desc>
+  <HH.Setting.casino.toleranceFactor>도박 내성 누적</HH.Setting.casino.toleranceFactor>
+  <HH.Setting.casino.toleranceFactor.Desc>바닐라에 비해 기쁨 내성이 얼마나 빨리 쌓이는지 (0.6 = 40 % 느림).</HH.Setting.casino.toleranceFactor.Desc>
+  <HH.Setting.casino.worldFx>지도 위의 카지노 분위기</HH.Setting.casino.worldFx>
+  <HH.Setting.casino.worldFx.Desc>사람들이 노는 동안 기계와 테이블에서 돌아가는 릴, 룰렛 휠, 돌리는 카드, 칩과 작은 효과음.</HH.Setting.casino.worldFx.Desc>
+  <HH.Setting.city.cinemaCooldownHours>손님별 영화 간격 (시간)</HH.Setting.city.cinemaCooldownHours>
+  <HH.Setting.city.cinemaCooldownHours.Desc>이 시간 동안 손님이 볼 수 있는 영화는 최대 한 편이다.</HH.Setting.city.cinemaCooldownHours.Desc>
+  <HH.Setting.city.cinemaMinSeats>필요한 좌석 수</HH.Setting.city.cinemaMinSeats>
+  <HH.Setting.city.cinemaMinSeats.Desc>프로젝터 스크린을 마주하는 좌석이 이 수 이상이면 영화관으로 인정된다.</HH.Setting.city.cinemaMinSeats.Desc>
+  <HH.Setting.city.cinemaShowTicks>상영 시간 (틱)</HH.Setting.city.cinemaShowTicks>
+  <HH.Setting.city.cinemaShowTicks.Desc>한 번의 상영이 이어지는 길이. 2,500틱이 한 시간이다.</HH.Setting.city.cinemaShowTicks.Desc>
+  <HH.Setting.city.cinemaTicket>영화관 입장권</HH.Setting.city.cinemaTicket>
+  <HH.Setting.city.cinemaTicket.Desc>입장권 한 장의 가격. 손님은 자리에 앉을 때 낸다.</HH.Setting.city.cinemaTicket.Desc>
+  <HH.Setting.city.desireScale>손님의 도시 생활 관심도</HH.Setting.city.desireScale>
+  <HH.Setting.city.desireScale.Desc>손님이 영화관, 살롱, 갤러리, 공원 벤치를 얼마나 강하게 원하는지 조절한다. 0 = 전혀 원하지 않음.</HH.Setting.city.desireScale.Desc>
+  <HH.Setting.city.galleryCooldownHours>손님별 방문 간격 (시간)</HH.Setting.city.galleryCooldownHours>
+  <HH.Setting.city.galleryCooldownHours.Desc>손님은 이 시간 동안 갤러리를 최대 한 번 관람한다.</HH.Setting.city.galleryCooldownHours.Desc>
+  <HH.Setting.city.galleryFee>갤러리 입장료</HH.Setting.city.galleryFee>
+  <HH.Setting.city.galleryFee.Desc>갤러리를 한 번 둘러보는 가격.</HH.Setting.city.galleryFee.Desc>
+  <HH.Setting.city.galleryMaxViews>방문당 작품 수</HH.Setting.city.galleryMaxViews>
+  <HH.Setting.city.galleryMaxViews.Desc>손님 한 명이 한 번 방문에서 보는 작품 수.</HH.Setting.city.galleryMaxViews.Desc>
+  <HH.Setting.city.galleryMinArt>필요한 작품 수</HH.Setting.city.galleryMinArt>
+  <HH.Setting.city.galleryMinArt.Desc>방에 작품이 이 수 이상 있어야 갤러리로 인정된다.</HH.Setting.city.galleryMinArt.Desc>
+  <HH.Setting.city.galleryViewTicks>작품당 감상 시간 (틱)</HH.Setting.city.galleryViewTicks>
+  <HH.Setting.city.galleryViewTicks.Desc>손님이 작품 하나 앞에 서 있는 시간.</HH.Setting.city.galleryViewTicks.Desc>
+  <HH.Setting.city.movieNight>개척민의 영화의 밤</HH.Setting.city.movieNight>
+  <HH.Setting.city.movieNight.Desc>전원이 들어와 있는 프로젝터 스크린과 좌석이 있으면 개척민이 가끔 영화의 밤을 연다.</HH.Setting.city.movieNight.Desc>
+  <HH.Setting.city.movieNightChance>저녁마다 영화의 밤 확률</HH.Setting.city.movieNightChance>
+  <HH.Setting.city.movieNightChance.Desc>식민지가 특정 저녁(18:00)에 영화의 밤을 시작할 확률.</HH.Setting.city.movieNightChance.Desc>
+  <HH.Setting.city.parkCooldownHours>손님별 벤치 방문 간격 (시간)</HH.Setting.city.parkCooldownHours>
+  <HH.Setting.city.parkCooldownHours.Desc>손님은 이 시간 동안 공원 벤치에 최대 한 번 앉는다.</HH.Setting.city.parkCooldownHours.Desc>
+  <HH.Setting.city.parkRestTicks>벤치 휴식 시간 (틱)</HH.Setting.city.parkRestTicks>
+  <HH.Setting.city.parkRestTicks.Desc>공원 벤치에 누군가 앉아 있는 시간.</HH.Setting.city.parkRestTicks.Desc>
+  <HH.Setting.city.priceTolerance>손님의 가격 허용도</HH.Setting.city.priceTolerance>
+  <HH.Setting.city.priceTolerance.Desc>기준 가격에 비해 도시 서비스 요금을 손님이 얼마나 기꺼이 내는지. 난이도 슬라이더를 따른다; 1 = 표준.</HH.Setting.city.priceTolerance.Desc>
+  <HH.Setting.city.researchMode>연구 모드</HH.Setting.city.researchMode>
+  <HH.Setting.city.researchMode.Desc>전체: 도시 생활 프로젝트를 연구해야 한다. 꺼짐: 도시 생활의 모든 것을 즉시 쓸 수 있다.</HH.Setting.city.researchMode.Desc>
+  <HH.Setting.city.salonCooldownHours>손님별 머리 손질 간격 (시간)</HH.Setting.city.salonCooldownHours>
+  <HH.Setting.city.salonCooldownHours.Desc>손님은 이 시간 동안 새 스타일을 최대 한 번 받는다.</HH.Setting.city.salonCooldownHours.Desc>
+  <HH.Setting.city.salonDyePrice>염색 추가 요금</HH.Setting.city.salonDyePrice>
+  <HH.Setting.city.salonDyePrice.Desc>머리 색 변경에 드는 추가 요금 (바이오테크 또는 이데올로기 필요).</HH.Setting.city.salonDyePrice.Desc>
+  <HH.Setting.city.salonPrice>커트 요금</HH.Setting.city.salonPrice>
+  <HH.Setting.city.salonPrice.Desc>커트와 새 스타일에 손님이 내는 요금.</HH.Setting.city.salonPrice.Desc>
+  <HH.Setting.city.salonServiceTicks>스타일링 시간 (틱)</HH.Setting.city.salonServiceTicks>
+  <HH.Setting.city.salonServiceTicks.Desc>평균적인 미용사가 커트하는 데 걸리는 시간.</HH.Setting.city.salonServiceTicks.Desc>
+  <HH.Setting.city.salonTattooPrice>문신 추가 요금</HH.Setting.city.salonTattooPrice>
+  <HH.Setting.city.salonTattooPrice.Desc>문신에 드는 추가 요금 (이데올로기 필요).</HH.Setting.city.salonTattooPrice.Desc>
+  <HH.Setting.city.salonWaitTicks>대기 한계 (틱)</HH.Setting.city.salonWaitTicks>
+  <HH.Setting.city.salonWaitTicks.Desc>손님이 의자에 앉아 누군가 오기를 이만큼 기다리다가, 불만족스럽게 떠난다.</HH.Setting.city.salonWaitTicks.Desc>
+  <HH.Setting.city.securityChance>고용 확률 (기본)</HH.Setting.city.securityChance>
+  <HH.Setting.city.securityChance.Desc>자격이 되는 손님마다의 기본 확률. 매우 부유한 손님(80 이상)은 +40포인트.</HH.Setting.city.securityChance.Desc>
+  <HH.Setting.city.securityDayShare>일일 요금 (예산 비율)</HH.Setting.city.securityDayShare>
+  <HH.Setting.city.securityDayShare.Desc>경호원은 손님 예산의 이 비율을 하루치 비용으로 받으며, 매 시간 청구된다.</HH.Setting.city.securityDayShare.Desc>
+  <HH.Setting.city.securityHireHours>경호원을 찾는 시간 (시간)</HH.Setting.city.securityHireHours>
+  <HH.Setting.city.securityHireHours.Desc>이 시간 안에 여유 있는 무장 개척민을 찾지 못하면 고용은 요금 없이 취소된다.</HH.Setting.city.securityHireHours.Desc>
+  <HH.Setting.city.securityMinHourFee>최소 시간당 요금</HH.Setting.city.securityMinHourFee>
+  <HH.Setting.city.securityMinHourFee.Desc>경호원은 시간당 이보다 적게 받지 않는다.</HH.Setting.city.securityMinHourFee.Desc>
+  <HH.Setting.city.securityMinWealth>경호원 고용에 필요한 재산</HH.Setting.city.securityMinWealth>
+  <HH.Setting.city.securityMinWealth.Desc>이 재산 수준(1~100) 미만의 손님은 경호 서비스를 고용하지 않는다.</HH.Setting.city.securityMinWealth.Desc>
+  <HH.Setting.city.securityOn>경호원 서비스</HH.Setting.city.securityOn>
+  <HH.Setting.city.securityOn.Desc>부유한 손님은 무장한 개척민 한 명을 경호원으로 고용할 수 있다.</HH.Setting.city.securityOn.Desc>
+  <HH.Setting.city.taxiArrivalChance>택시로 도착할 확률</HH.Setting.city.taxiArrivalChance>
+  <HH.Setting.city.taxiArrivalChance.Desc>도착하는 손님 중 지도 가장자리에서 걸어 들어오는 대신 택시 승강장에 내려 주는 손님의 비율.</HH.Setting.city.taxiArrivalChance.Desc>
+  <HH.Setting.city.taxiArrivalFee>도착 요금</HH.Setting.city.taxiArrivalFee>
+  <HH.Setting.city.taxiArrivalFee.Desc>도착한 손님이 승차장에 내려 준 대가로 식민지에 내는 요금.</HH.Setting.city.taxiArrivalFee.Desc>
+  <HH.Setting.city.taxiDepartureChance>떠날 때 택시를 탈 확률</HH.Setting.city.taxiDepartureChance>
+  <HH.Setting.city.taxiDepartureChance.Desc>무료 택시 승차장이 있을 때 떠나는 손님 중 택시를 부르는 비율 (재산이 많을수록 올라감).</HH.Setting.city.taxiDepartureChance.Desc>
+  <HH.Setting.city.taxiFare>택시 요금</HH.Setting.city.taxiFare>
+  <HH.Setting.city.taxiFare.Desc>떠나는 손님이 승차장에서 타는 요금.</HH.Setting.city.taxiFare.Desc>
+  <HH.Setting.city.taxiWaitTicks>택시 대기 (틱)</HH.Setting.city.taxiWaitTicks>
+  <HH.Setting.city.taxiWaitTicks.Desc>택시가 떠나기 전까지 손님이 승차장에서 기다리는 시간.</HH.Setting.city.taxiWaitTicks.Desc>
+  <HH.Setting.core.guide>Hearth &amp; Harbor 안내 표시</HH.Setting.core.guide>
+  <HH.Setting.core.guide.Desc>오른쪽 위의 학습 도우미. 우클릭하면 숨길 수 있다.</HH.Setting.core.guide.Desc>
+  <HH.Setting.core.helpHint>도박 화면에 작은 실생활 도움 안내 표시</HH.Setting.core.helpHint>
+  <HH.Setting.core.helpHint.Desc>본인이 도박을 하는 모든 화면에 나오는 작고 조용한 안내 한 줄: 실생활에서 도박이 문제가 된다면 도움을 받을 수 있다 (findahelpline.com). 다른 곳에는 나타나지 않는다.</HH.Setting.core.helpHint.Desc>
+  <HH.Setting.core.rngAlgorithm>난수 알고리즘</HH.Setting.core.rngAlgorithm>
+  <HH.Setting.core.rngAlgorithm.Desc>Hearth &amp; Harbor의 모든 난수 흐름에 쓰는 알고리즘. 확률은 모두 같고 순서만 다르다. ChaCha8은 암호학적(매우 신중함), SplitMix64가 가장 빠르다.</HH.Setting.core.rngAlgorithm.Desc>
+  <HH.Setting.core.sealedFate>봉인된 운명</HH.Setting.core.sealedFate>
+  <HH.Setting.core.sealedFate.Desc>켜면: 세이브를 다시 불러와도 손님 사건이 새로 굴러가지 않는다 (모든 것이 봉인된 난수 흐름을 쓴다). 플레이어의 내기, 은행 거래, 복권은 항상 봉인된다.</HH.Setting.core.sealedFate.Desc>
+  <HH.Setting.dlc.aiIdeoPrecepts>AI 이데올로기에도 돈 계율 주기</HH.Setting.dlc.aiIdeoPrecepts>
+  <HH.Setting.dlc.aiIdeoPrecepts.Desc>무작위 AI 이데올로기는 밈 가중치에 따라 한 번 면죄부와 유료 승천에 대한 입장을 갖는다. 고정된 세력의 이데올로기는 건드리지 않는다.</HH.Setting.dlc.aiIdeoPrecepts.Desc>
+  <HH.Setting.dlc.fundDestination>정착민의 헌금이 가는 곳</HH.Setting.dlc.fundDestination>
+  <HH.Setting.dlc.fundDestination.Desc>신에게: 은화는 그냥 사라진다. 신앙의 세력에게: 세력이 같은 신앙이면 호감을 얻는다 (은화 500마다 +1, 분기당 최대 +5). 정착민은 당신 자신의 신전 기금에는 절대 내지 않는다.</HH.Setting.dlc.fundDestination.Desc>
+  <HH.Setting.dlc.indulgenceCapScale>면죄부 구매 한도</HH.Setting.dlc.indulgenceCapScale>
+  <HH.Setting.dlc.indulgenceCapScale.Desc>폰, 식민지, 이데올로기별 구매 한도에 곱하는 배율. 1 = 설계대로의 한도.</HH.Setting.dlc.indulgenceCapScale.Desc>
+  <HH.Setting.dlc.indulgenceFactor>면죄부 가격 배율</HH.Setting.dlc.indulgenceFactor>
+  <HH.Setting.dlc.indulgenceFactor.Desc>모든 면죄부와 승천 가격에 곱하는 배율 (돈과 신앙 표의 '신앙 판매' 배율).</HH.Setting.dlc.indulgenceFactor.Desc>
+  <HH.Setting.dlc.luckShift>행운: 행운아와 불운아의 지급 이동</HH.Setting.dlc.luckShift>
+  <HH.Setting.dlc.luckShift.Desc>행운아는 게임 지급 계획에 이만큼의 퍼센트포인트가 더해지고, 불운아는 같은 만큼 잃는다. 이 이동이 게임을 100 % 이상으로 올리지는 않으며 무작위 추첨을 휘게 하지도 않는다.</HH.Setting.dlc.luckShift.Desc>
+  <HH.Setting.dlc.mandatoryBilleting>제국 숙박 명령의 의무 환대</HH.Setting.dlc.mandatoryBilleting>
+  <HH.Setting.dlc.mandatoryBilleting.Desc>제국의 숙박 명령은 '초과 예약' 미만에서도 도착한다. 끄면: 어려운 단계(초과 예약 이상)에서만. 어느 쪽이든 손님용 침대가 있는 식민지에서만.</HH.Setting.dlc.mandatoryBilleting.Desc>
+  <HH.Setting.dlc.nobleBasePrice>귀족 체류 기본 가격 (귀족 1명당 하루)</HH.Setting.dlc.nobleBasePrice>
+  <HH.Setting.dlc.nobleBasePrice.Desc>칭호 보너스(작위 100당 +15 %)와 만족도 배율을 적용하기 전의, 귀족 1명당 하루 은화.</HH.Setting.dlc.nobleBasePrice.Desc>
+  <HH.Setting.dlc.nobleMoneyFactor>귀족 돈 배율</HH.Setting.dlc.nobleMoneyFactor>
+  <HH.Setting.dlc.nobleMoneyFactor.Desc>난이도 표의 손님 돈 행을 따른다: 쉬운 단계에서는 더 넉넉하고, 어려운 단계에서는 더 적다.</HH.Setting.dlc.nobleMoneyFactor.Desc>
+  <HH.Setting.dlc.nobleStays>귀족 체류</HH.Setting.dlc.nobleStays>
+  <HH.Setting.dlc.nobleStays.Desc>제국의 귀족은 유료 숙박을 요청할 수 있다. 언제든 거절할 수 있다. 칭호에 맞는 침실의 손님용 침대가 필요하다. 손님으로 머물고, 얼마나 만족했는지에 따라 마지막에 지불한다.</HH.Setting.dlc.nobleStays.Desc>
+  <HH.Setting.dlc.shrineReactions>정착민이 다른 신앙의 성소에 반응</HH.Setting.dlc.shrineReactions>
+  <HH.Setting.dlc.shrineReactions.Desc>포교자와 지배주의자는 자기 땅의 다른 신앙 성소를 싫어하고, 관용적인 이데올로기는 좋아한다.</HH.Setting.dlc.shrineReactions.Desc>
+  <HH.Setting.dlc.xenoHospitality>외계종 선호</HH.Setting.dlc.xenoHospitality>
+  <HH.Setting.dlc.xenoHospitality.Desc>손님의 외계종과 유전자가 어떤 방과 물건을 좋아할지 정한다 (흡혈귀는 어두운 방, 이타킨은 추운 방 등).</HH.Setting.dlc.xenoHospitality.Desc>
+  <HH.Setting.finance.cryptoOn>암호화 자산</HH.Setting.finance.cryptoOn>
+  <HH.Setting.finance.cryptoOn.Desc>RimCoin과 밈코인을 제공한다.</HH.Setting.finance.cryptoOn.Desc>
+  <HH.Setting.finance.fallbackWindow>통신 콘솔 메뉴의 투자</HH.Setting.finance.fallbackWindow>
+  <HH.Setting.finance.fallbackWindow.Desc>은행 창을 쓸 수 있을 때도 통신 콘솔의 플로트 메뉴에 투자 화면을 함께 제공한다.</HH.Setting.finance.fallbackWindow.Desc>
+  <HH.Setting.finance.hazardMult>재난 ×</HH.Setting.finance.hazardMult>
+  <HH.Setting.finance.hazardMult.Desc>폭락, 러그풀, 채무 불이행, 거래소 해킹, 뱅크런의 빈도를 배가한다. 장기 평균은 바뀌지 않고, 얼마나 자주 아픈지만 바뀐다.</HH.Setting.finance.hazardMult.Desc>
+  <HH.Setting.finance.jumpMult>가격 급등 ×</HH.Setting.finance.jumpMult>
+  <HH.Setting.finance.jumpMult.Desc>자산이 스스로 급등하는 빈도를 배가한다 (분기 수치, 암호화폐 급등, 밈코인 펌프). 장기 평균은 바뀌지 않는다: 계산이 보정한다.</HH.Setting.finance.jumpMult.Desc>
+  <HH.Setting.finance.memeInterval>새 밈코인까지 일수</HH.Setting.finance.memeInterval>
+  <HH.Setting.finance.memeInterval.Desc>다음 밈코인이 상장되기까지의 평균 일수.</HH.Setting.finance.memeInterval.Desc>
+  <HH.Setting.finance.memeOn>밈코인</HH.Setting.finance.memeOn>
+  <HH.Setting.finance.memeOn.Desc>새 밈코인이 며칠마다 나타나고, 세 번 뒤에는 상장 폐지된다. 대부분의 보유자는 돈을 잃고, 소수만 부자가 된다.</HH.Setting.finance.memeOn.Desc>
+  <HH.Setting.finance.newsMessages>시장 뉴스를 메시지로</HH.Setting.finance.newsMessages>
+  <HH.Setting.finance.newsMessages.Desc>폭락, 반등, 해킹을 짧은 메시지로 표시한다 (영향받는 것을 보유한 경우에만).</HH.Setting.finance.newsMessages.Desc>
+  <HH.Setting.finance.nftOn>NFT</HH.Setting.finance.nftOn>
+  <HH.Setting.finance.nftOn.Desc>그림의 소유권 증명서. 매도에는 하루에서 나흘이 걸리고 스프레드 비용이 든다.</HH.Setting.finance.nftOn.Desc>
+  <HH.Setting.finance.omenCapA>포지션 한도, 확률 시장</HH.Setting.finance.omenCapA>
+  <HH.Setting.finance.omenCapA.Desc>한 Omen 확률 시장에 넣을 수 있는 순자산의 최대 비율.</HH.Setting.finance.omenCapA.Desc>
+  <HH.Setting.finance.omenCapB>포지션 한도, 세계 시장</HH.Setting.finance.omenCapB>
+  <HH.Setting.finance.omenCapB.Desc>세계 사건에 걸린 한 Omen 시장에 넣을 수 있는 순자산의 최대 비율.</HH.Setting.finance.omenCapB.Desc>
+  <HH.Setting.finance.omenFee>Omen 수수료</HH.Setting.finance.omenFee>
+  <HH.Setting.finance.omenFee.Desc>모든 판돈 중 거래소가 가져가는 비율 (포지션을 일찍 닫을 때 한 번 더).</HH.Setting.finance.omenFee.Desc>
+  <HH.Setting.finance.omenGamma>희박 확률 왜곡 γ</HH.Setting.finance.omenGamma>
+  <HH.Setting.finance.omenGamma.Desc>1 미만이면 거래소가 일어나기 어려운 결과를 비싸게 매긴다 (고전적인 유력 후보-희박 편향). 1 = 시세가 실제 확률과 같다.</HH.Setting.finance.omenGamma.Desc>
+  <HH.Setting.finance.omenSpread>Omen 스프레드</HH.Setting.finance.omenSpread>
+  <HH.Setting.finance.omenSpread.Desc>도박사의 마진: YES 가격과 NO 가격의 합은 1에 이 값을 더한 것.</HH.Setting.finance.omenSpread.Desc>
+  <HH.Setting.finance.profit>수익성 (연간 배수 M)</HH.Setting.finance.profit>
+  <HH.Setting.finance.profit.Desc>기준 펀드 RimIndex 50에서 투자금이 게임 1년(60일)당 평균 얼마나 불어나는지: 1.2는 연 +20 %, 1.0은 증감 없음, 1 미만은 손실. 로그 눈금 0.1~100; 정확한 값은 숫자를 입력. 직접 정하기 전까지는 난이도 슬라이더를 따른다.</HH.Setting.finance.profit.Desc>
+  <HH.Setting.finance.projectStakePct>프로젝트당 판돈 한도</HH.Setting.finance.projectStakePct>
+  <HH.Setting.finance.projectStakePct.Desc>한 프로젝트에 거는 최대 판돈, 순자산에 대한 비율.</HH.Setting.finance.projectStakePct.Desc>
+  <HH.Setting.finance.projectTotalPct>판돈 한도, 모든 프로젝트</HH.Setting.finance.projectTotalPct>
+  <HH.Setting.finance.projectTotalPct.Desc>열린 프로젝트 베팅 전체의 최대 합계 (롱과 숏 합산), 순자산에 대한 비율.</HH.Setting.finance.projectTotalPct.Desc>
+  <HH.Setting.finance.projectYearCapPct>연간 수익 상한</HH.Setting.finance.projectYearCapPct>
+  <HH.Setting.finance.projectYearCapPct.Desc>롱과 숏의 게임 1년당 순이익은 해 시작 시점 순자산의 이 비율로 상한이 정해진다. 그 이상은 은행이 판돈만 돌려준다.</HH.Setting.finance.projectYearCapPct.Desc>
+  <HH.Setting.finance.projectsOn>세력 프로젝트와 프로젝트 숏</HH.Setting.finance.projectsOn>
+  <HH.Setting.finance.projectsOn.Desc>세력이 프로젝트를 발표하면 투자(롱)하거나 그 반대에 걸(숏) 수 있다.</HH.Setting.finance.projectsOn.Desc>
+  <HH.Setting.finance.volMult>변동성 ×</HH.Setting.finance.volMult>
+  <HH.Setting.finance.volMult.Desc>가격이 날마다 얼마나 거세게 흔들리는지 배가한다. 1 = 설계의 수치 (지수 하루 1.5 %, 밈코인 15 %).</HH.Setting.finance.volMult.Desc>
+  <HH.Setting.insurance.assessmentDays>사고 평가 (일)</HH.Setting.insurance.assessmentDays>
+  <HH.Setting.insurance.assessmentDays.Desc>사고 계획은 사고 후 이 일수가 지나서 장애 등급을 평가한다 (기본은 한 분기). 그때까지 편지는 미리보기를 보여준다.</HH.Setting.insurance.assessmentDays.Desc>
+  <HH.Setting.insurance.billingDays>보험료 청구 간격 (일)</HH.Setting.insurance.billingDays>
+  <HH.Setting.insurance.billingDays.Desc>보험료는 이 일수마다 자동으로 빠져나간다 (은행 계좌에서, 없으면 금고나 보관 중인 은화에서).</HH.Setting.insurance.billingDays.Desc>
+  <HH.Setting.insurance.changeFee>보험 변경 수수료 (은화)</HH.Setting.insurance.changeFee>
+  <HH.Setting.insurance.changeFee.Desc>진행 중인 보험의 보상액, 등급 또는 부가 항목을 바꿀 때마다 Clawback Mutual이 받는 금액 ('행정 처리'). 표준 방은 무료.</HH.Setting.insurance.changeFee.Desc>
+  <HH.Setting.insurance.changeLimitPerQuadrum>보험당, 분기당 변경 횟수</HH.Setting.insurance.changeLimitPerQuadrum>
+  <HH.Setting.insurance.changeLimitPerQuadrum.Desc>한 보험을 분기당 몇 번 바꿀 수 있는지. 0 = 무제한 (표준 방); 초과 예약과 그 이상의 단계에서는 제한된다.</HH.Setting.insurance.changeLimitPerQuadrum.Desc>
+  <HH.Setting.insurance.changeWaitingDays>상향 후 대기 기간 (일)</HH.Setting.insurance.changeWaitingDays>
+  <HH.Setting.insurance.changeWaitingDays.Desc>보상액이나 등급을 올리거나 부가 항목을 추가한 뒤에도, 이 대기 기간 안의 사건에 대한 청구는 예전 보장으로 심사된다 (습격 1분 전에 올린 보험은 새 수준으로 지급되지 않는다). 보장을 낮출 때는 대기 기간이 없다.</HH.Setting.insurance.changeWaitingDays.Desc>
+  <HH.Setting.insurance.claimLetters>모든 청구에 대한 편지</HH.Setting.insurance.claimLetters>
+  <HH.Setting.insurance.claimLetters.Desc>Clawback Mutual은 접수된 모든 청구(하루 최대 '청구 접수' 알림 한 번)와 모든 결정에 대해 편지를 쓴다.</HH.Setting.insurance.claimLetters.Desc>
+  <HH.Setting.insurance.claimMode>청구 접수 방식</HH.Setting.insurance.claimMode>
+  <HH.Setting.insurance.claimMode.Desc>양식으로: 보험 사건이 나면 '청구 가능' 편지가 오고, 기한 전에 양식으로 청구한다 (결과는 예전과 똑같이 굴러가며, 양식은 지급 선택을 빼면 장식이다). 자동: 피해가 발생하는 순간 청구가 대신 접수된다.</HH.Setting.insurance.claimMode.Desc>
+  <HH.Setting.insurance.claimReminder>청구 기한 전에 알림</HH.Setting.insurance.claimReminder>
+  <HH.Setting.insurance.claimReminder.Desc>접수 기간이 끝나기 이틀 전에 보내는 짧은 알림 편지.</HH.Setting.insurance.claimReminder.Desc>
+  <HH.Setting.insurance.claimsAttitude>청구 태도</HH.Setting.insurance.claimsAttitude>
+  <HH.Setting.insurance.claimsAttitude.Desc>청구 부서가 지급하지 않을 이유를 얼마나 열심히 찾는지. 0 % '절대 발뺌 안 함' · 15 % '작은 글씨' (표준 방) · 40 % '창의적 회계' · 75 % '변호사들이 심심함' · 100 % '거의 항상'.</HH.Setting.insurance.claimsAttitude.Desc>
+  <HH.Setting.insurance.deadlineScale>청구 기한 (배율)</HH.Setting.insurance.deadlineScale>
+  <HH.Setting.insurance.deadlineScale.Desc>모든 보험의 접수 기한에 곱하는 배율 (Wanderlust 5일, Legal Shield 5일, 재산 보험은 Good Enough에서 약 15일; Premium +50 %, Bare Minimum -30 %).</HH.Setting.insurance.deadlineScale.Desc>
+  <HH.Setting.insurance.formError>해지 양식 오류 확률</HH.Setting.insurance.formError>
+  <HH.Setting.insurance.formError.Desc>30조: 해지 신청이 양식 오류와 함께 돌아온다. 표준 방에서는 자동으로 다시 접수되고 기한은 그대로이며, 더 어려운 단계에서는 한 분기를 잃는다.</HH.Setting.insurance.formError.Desc>
+  <HH.Setting.insurance.formTextAi>청구 진술서에 대한 AI 답변</HH.Setting.insurance.formTextAi>
+  <HH.Setting.insurance.formTextAi.Desc>AI 분위기 모듈이 켜져 있고 동의했다면, 청구 부서가 자기 말로 진술서에 답한다 (금액과 결과는 바뀌지 않는다). 없으면 진술서는 보관되고 무시된다.</HH.Setting.insurance.formTextAi.Desc>
+  <HH.Setting.insurance.hospitalCapDays>림 건강 플랜: 지급되는 병상 일수</HH.Setting.insurance.hospitalCapDays>
+  <HH.Setting.insurance.hospitalCapDays.Desc>아래 기간 안에 정착민 한 명당 림 건강 플랜이 지급하는 최대 병상 일수 (입원 정액 보상의 상한; 만성 질환이 보험료보다 많이 지급하지 못하게 막는다).</HH.Setting.insurance.hospitalCapDays.Desc>
+  <HH.Setting.insurance.hospitalCapWindow>림 건강 플랜: 기간 (일)</HH.Setting.insurance.hospitalCapWindow>
+  <HH.Setting.insurance.hospitalCapWindow.Desc>위의 상한은 이 일수(기본은 한 분기) 동안 모든 정착민의 지급된 병상 일수를 센다.</HH.Setting.insurance.hospitalCapWindow.Desc>
+  <HH.Setting.insurance.loading>보험료 할증</HH.Setting.insurance.loading>
+  <HH.Setting.insurance.loading.Desc>보험료를 이루는 예상 손해액에 붙는 할증입니다. 평균적으로 보험사가 이 몫을 가져갑니다. 0%이면 보험수리적으로 공정한 요율입니다.</HH.Setting.insurance.loading.Desc>
+  <HH.Setting.insurance.maxPersonSum>개인 최고 보장액</HH.Setting.insurance.maxPersonSum>
+  <HH.Setting.insurance.maxPersonSum.Desc>사고, 연금, 여행 보험의 기본 보장액 상한입니다 (환자 시장가치의 두 배를 넘지 않음).</HH.Setting.insurance.maxPersonSum.Desc>
+  <HH.Setting.insurance.maxPropertySum>재산 최고 보장액</HH.Setting.insurance.maxPropertySum>
+  <HH.Setting.insurance.maxPropertySum.Desc>재산 보험의 보장액 상한입니다.</HH.Setting.insurance.maxPropertySum.Desc>
+  <HH.Setting.insurance.negotiation>보상 청구 협상 허용</HH.Setting.insurance.negotiation>
+  <HH.Setting.insurance.negotiation.Desc>보상 청구를 협상할 수 있습니다 (최대 3라운드). 표준 객실에서는 협상에 아무 비용도 들지 않습니다.</HH.Setting.insurance.negotiation.Desc>
+  <HH.Setting.insurance.noticeDays>해지 통보 기간(일)</HH.Setting.insurance.noticeDays>
+  <HH.Setting.insurance.noticeDays.Desc>해지는 신청 후 최소 이 일수가 지난 뒤 첫 분기 전환일에 효력이 생깁니다. 표준 객실 3일, 초과 예약 한 분기, "Why?" 1년.</HH.Setting.insurance.noticeDays.Desc>
+  <HH.Setting.insurance.pensionMaxWorkHours>연금 수급자: 하루 허용 근무 시간</HH.Setting.insurance.pensionMaxWorkHours>
+  <HH.Setting.insurance.pensionMaxWorkHours.Desc>연금 수급자가 일과표에서 근무로 설정할 수 있는 하루 시간입니다. 활동, 기쁨, 수면, 명상은 자유 시간으로 칩니다.</HH.Setting.insurance.pensionMaxWorkHours.Desc>
+  <HH.Setting.insurance.pensionRule>연금 근무 규칙</HH.Setting.insurance.pensionRule>
+  <HH.Setting.insurance.pensionRule.Desc>매일 연금을 받는 사람(60세 이상, Golden Years, Good Enough 또는 Premium)은 일과표에서 하루 몇 시간만 일할 수 있습니다. 강제: 파업하면 연금이 깎입니다 (2회째는 이번 기간 연금, 3회째는 권리 전체). 경고만: 편지와 알림만 가고 벌칙은 없습니다. 끔: 규칙 없음.</HH.Setting.insurance.pensionRule.Desc>
+  <HH.Setting.insurance.requireResearch>보험에는 연구가 필요</HH.Setting.insurance.requireResearch>
+  <HH.Setting.insurance.requireResearch.Desc>정책은 연구 프로젝트 SL_Insurance (Bare Minimum, Good Enough)와 SL_Actuarial (Premium, Wanderlust)로 열립니다. 끄면 모든 정책을 한 번에 이용할 수 있습니다.</HH.Setting.insurance.requireResearch.Desc>
+  <HH.Setting.insurance.retentionDialogs>해지 만류 대화</HH.Setting.insurance.retentionDialogs>
+  <HH.Setting.insurance.retentionDialogs.Desc>데즈먼드 탈리(수석 고객 유지 담당)가 해지를 몇 번이나 말리는지. 표준 객실: 정직한 제안 한 번.</HH.Setting.insurance.retentionDialogs.Desc>
+  <HH.Setting.insurance.salesPressure>영업 압박</HH.Setting.insurance.salesPressure>
+  <HH.Setting.insurance.salesPressure.Desc>클로백 뮤추얼이 얼마나 강하게 파는지: 미리 체크된 부가 상품, 유지 제안, 양식 오류, 업셀 힌트. 각 수법에는 아래에 따로 스위치가 있습니다.</HH.Setting.insurance.salesPressure.Desc>
+  <HH.Setting.insurance.showStatusColumn>콜로니스트 표의 보험 열</HH.Setting.insurance.showStatusColumn>
+  <HH.Setting.insurance.showStatusColumn.Desc>배치 표에서 모든 콜로니스트의 보험 상태를 보여줍니다 (첫 보험이 생긴 뒤에만).</HH.Setting.insurance.showStatusColumn.Desc>
+  <HH.Setting.insurance.showStatusTab>콜로니스트의 보험 탭</HH.Setting.insurance.showStatusTab>
+  <HH.Setting.insurance.showStatusTab.Desc>콜로니스트 정보창에 보험 탭을 추가합니다 (첫 보험이 생긴 뒤에만).</HH.Setting.insurance.showStatusTab.Desc>
+  <HH.Setting.insurance.trick.badge>수법: "대부분의 식민지는 프리미엄을 고릅니다" 배지</HH.Setting.insurance.trick.badge>
+  <HH.Setting.insurance.trick.badge.Desc>프리미엄 열의 배지 (그리고 더 교묘하게, 회색으로 흐려진 "Premium Plus").</HH.Setting.insurance.trick.badge.Desc>
+  <HH.Setting.insurance.trick.formError>수법: 양식 오류</HH.Setting.insurance.trick.formError>
+  <HH.Setting.insurance.trick.formError.Desc>양식 오류와 함께 되돌아오는 해지 신청.</HH.Setting.insurance.trick.formError.Desc>
+  <HH.Setting.insurance.trick.preTicked>수법: 미리 체크된 부가 상품</HH.Setting.insurance.trick.preTicked>
+  <HH.Setting.insurance.trick.preTicked.Desc>대신 체크되어 있는 부가 상품 (영업 압박을 따르거나, 항상 또는 절대 아님).</HH.Setting.insurance.trick.preTicked.Desc>
+  <HH.Setting.insurance.trick.retention>수법: 유지 제안</HH.Setting.insurance.trick.retention>
+  <HH.Setting.insurance.trick.retention.Desc>해지할 때 나오는 만류 대화.</HH.Setting.insurance.trick.retention.Desc>
+  <HH.Setting.insurance.trick.upsell>수법: 업셀 힌트</HH.Setting.insurance.trick.upsell>
+  <HH.Setting.insurance.trick.upsell.Desc>더 많거나 더 좋은 보장을 권하는 편지 (사망 후 닷새 안에는 절대 보내지 않음).</HH.Setting.insurance.trick.upsell.Desc>
+  <HH.Setting.insurance.trickCap>영업 수법 비용 상한</HH.Setting.insurance.trickCap>
+  <HH.Setting.insurance.trickCap.Desc>모든 영업 수법을 합쳐 연간 보험료의 이 비율까지만 비용이 들 수 있습니다. 나머지는 연간 편지에 "호의 적립금"으로 돌려줍니다.</HH.Setting.insurance.trickCap.Desc>
+  <HH.Setting.insurance.waitingDays>대기 기간(일)</HH.Setting.insurance.waitingDays>
+  <HH.Setting.insurance.waitingDays.Desc>이 일수가 지난 뒤에 보장이 시작됩니다 ("보장 시작 후 시작되는"). 대기 기간 중의 손해는 지급되지 않습니다.</HH.Setting.insurance.waitingDays.Desc>
+  <HH.Setting.lottery.colonyFee>티켓당 수수료</HH.Setting.lottery.colonyFee>
+  <HH.Setting.lottery.colonyFee.Desc>티켓 한 장당 당신이 가지는 추가 은화 (구매자가 보는 가격도 올라갑니다).</HH.Setting.lottery.colonyFee.Desc>
+  <HH.Setting.lottery.colonyInterval>식민지 추첨 간격(일)</HH.Setting.lottery.colonyInterval>
+  <HH.Setting.lottery.colonyInterval.Desc>이 일수마다 추첨합니다. 잭팟은 이월됩니다.</HH.Setting.lottery.colonyInterval.Desc>
+  <HH.Setting.lottery.colonyJackpotCap>식민지 잭팟 상한</HH.Setting.lottery.colonyJackpotCap>
+  <HH.Setting.lottery.colonyJackpotCap.Desc>식민지 복권의 잭팟은 이 금액에 이를 때까지 이월됩니다.</HH.Setting.lottery.colonyJackpotCap.Desc>
+  <HH.Setting.lottery.colonyJackpotShare>상금 몫: 잭팟</HH.Setting.lottery.colonyJackpotShare>
+  <HH.Setting.lottery.colonyJackpotShare.Desc>번호 4개가 모두 맞았을 때의 상금 몫.</HH.Setting.lottery.colonyJackpotShare.Desc>
+  <HH.Setting.lottery.colonyOn>식민지 복권</HH.Setting.lottery.colonyOn>
+  <HH.Setting.lottery.colonyOn.Desc>자체 복권을 운영합니다: 손님과 우호 정착지의 시뮬레이션 플레이어가 티켓을 사고, 지급되지 않은 몫은 당신이 가져갑니다.</HH.Setting.lottery.colonyOn.Desc>
+  <HH.Setting.lottery.colonyPrice>식민지 티켓 가격</HH.Setting.lottery.colonyPrice>
+  <HH.Setting.lottery.colonyPrice.Desc>자체 복권 티켓 한 장의 가격.</HH.Setting.lottery.colonyPrice.Desc>
+  <HH.Setting.lottery.colonyQuote>식민지 지급 몫</HH.Setting.lottery.colonyQuote>
+  <HH.Setting.lottery.colonyQuote.Desc>티켓 가격 중 상금 기금으로 들어가는 몫입니다. 나머지는 당신의 것입니다. 세계 추첨보다 높은 몫은 더 많은 구매자를 끌어들입니다.</HH.Setting.lottery.colonyQuote.Desc>
+  <HH.Setting.lottery.colonySecondShare>상금 몫: 2등</HH.Setting.lottery.colonySecondShare>
+  <HH.Setting.lottery.colonySecondShare.Desc>번호 3개가 맞았을 때의 상금 몫.</HH.Setting.lottery.colonySecondShare.Desc>
+  <HH.Setting.lottery.colonyThirdShare>상금 몫: 3등</HH.Setting.lottery.colonyThirdShare>
+  <HH.Setting.lottery.colonyThirdShare.Desc>번호 2개가 맞았을 때의 상금 몫.</HH.Setting.lottery.colonyThirdShare.Desc>
+  <HH.Setting.lottery.demandBase>티켓 수요 기준치</HH.Setting.lottery.demandBase>
+  <HH.Setting.lottery.demandBase.Desc>중립 조건에서 1인당 하루 티켓 수. 수요 공식의 기준값입니다.</HH.Setting.lottery.demandBase.Desc>
+  <HH.Setting.lottery.globalInterval>세계 추첨 간격(일)</HH.Setting.lottery.globalInterval>
+  <HH.Setting.lottery.globalInterval.Desc>이 일수마다 추첨합니다.</HH.Setting.lottery.globalInterval.Desc>
+  <HH.Setting.lottery.globalOn>글리터월드 대추첨</HH.Setting.lottery.globalOn>
+  <HH.Setting.lottery.globalOn.Desc>세계 복권: 며칠마다 추첨하며, 티켓은 은행 창구에서 삽니다.</HH.Setting.lottery.globalOn.Desc>
+  <HH.Setting.lottery.globalPrice>세계 티켓 가격</HH.Setting.lottery.globalPrice>
+  <HH.Setting.lottery.globalPrice.Desc>세계 추첨 티켓 한 장의 가격.</HH.Setting.lottery.globalPrice.Desc>
+  <HH.Setting.lottery.globalQuote>세계 지급 몫</HH.Setting.lottery.globalQuote>
+  <HH.Setting.lottery.globalQuote.Desc>티켓 판매액 중 상금으로 가는 몫 (잭팟은 그중 40%를 받습니다).</HH.Setting.lottery.globalQuote.Desc>
+  <HH.Setting.lottery.internationalScale>시뮬레이션 플레이어 ×</HH.Setting.lottery.internationalScale>
+  <HH.Setting.lottery.internationalScale.Desc>모든 정착지의 시뮬레이션 플레이어가 세계 추첨에 사는 티켓 수에 곱해지는 배율입니다.</HH.Setting.lottery.internationalScale.Desc>
+  <HH.Setting.lottery.jackpotCap>세계 잭팟 상한</HH.Setting.lottery.jackpotCap>
+  <HH.Setting.lottery.jackpotCap.Desc>잭팟은 이 금액에 도달할 때까지 이월됩니다.</HH.Setting.lottery.jackpotCap.Desc>
+  <HH.Setting.thrumbo.edgeShift>행운의 Thrumbo: 하우스 엣지 조정</HH.Setting.thrumbo.edgeShift>
+  <HH.Setting.thrumbo.edgeShift.Desc>모든 행운의 Thrumbo 게임의 하우스 엣지에 더하는 백분율 포인트 (기본: 슬롯 8%, 룰렛 2.7%, 블랙잭은 규칙대로). 0 = 표준 엣지, 음수는 당신에게 유리합니다. 난이도 슬라이더를 따릅니다.</HH.Setting.thrumbo.edgeShift.Desc>
+  <HH.Setting.thrumbo.maxBetCap>행운의 Thrumbo: 테이블 한도 상한(은화)</HH.Setting.thrumbo.maxBetCap>
+  <HH.Setting.thrumbo.maxBetCap.Desc>테이블 한도가 켜져 있을 때만: 어떤 판돈도 이 금액을 넘지 않습니다.</HH.Setting.thrumbo.maxBetCap.Desc>
+  <HH.Setting.thrumbo.maxBetFloor>행운의 Thrumbo: 테이블 한도 하한(은화)</HH.Setting.thrumbo.maxBetFloor>
+  <HH.Setting.thrumbo.maxBetFloor.Desc>테이블 한도가 켜져 있을 때만: 가난한 식민지도 한 판에 최소한 이 금액은 걸 수 있습니다.</HH.Setting.thrumbo.maxBetFloor.Desc>
+  <HH.Setting.thrumbo.maxBetShare>행운의 Thrumbo: 테이블 한도 (순자산 비율)</HH.Setting.thrumbo.maxBetShare>
+  <HH.Setting.thrumbo.maxBetShare.Desc>테이블 한도가 켜져 있을 때만: 한 판의 판돈은 순자산(계좌와 집의 은화에서 빚을 뺀 값)의 이 비율을 넘을 수 없으며, 아래의 하한과 상한 사이에서 정해집니다.</HH.Setting.thrumbo.maxBetShare.Desc>
+  <HH.Setting.thrumbo.minBet>행운의 Thrumbo: 최소 판돈(은화)</HH.Setting.thrumbo.minBet>
+  <HH.Setting.thrumbo.minBet.Desc>행운의 Thrumbo가 받는 가장 작은 판돈.</HH.Setting.thrumbo.minBet.Desc>
+  <HH.Setting.thrumbo.tableLimit>행운의 Thrumbo: 테이블 한도</HH.Setting.thrumbo.tableLimit>
+  <HH.Setting.thrumbo.tableLimit.Desc>켜면 한 판의 판돈은 순자산의 일정 비율을 넘지 않습니다 (아래 세 설정). 끄면 가진 것을 전부 걸 수 있습니다.</HH.Setting.thrumbo.tableLimit.Desc>
+  <HH.Setting.underworld.exposureChance>점잖은 손님이 뒷방을 우연히 발견할 확률</HH.Setting.underworld.exposureChance>
+  <HH.Setting.underworld.exposureChance.Desc>점검 한 번마다 (약 2시간마다), 점잖은 손님이 있고 뒷방을 쓴 적이 있을 때. 난이도 슬라이더를 따릅니다.</HH.Setting.underworld.exposureChance.Desc>
+  <HH.Setting.underworld.fence.buyPercent>장물아비 매입가</HH.Setting.underworld.fence.buyPercent>
+  <HH.Setting.underworld.fence.buyPercent.Desc>장물아비가 훔친 물품에 지불하는 시장가치의 비율.</HH.Setting.underworld.fence.buyPercent.Desc>
+  <HH.Setting.underworld.fence.capital>장물아비의 금고</HH.Setting.underworld.fence.capital>
+  <HH.Setting.underworld.fence.capital.Desc>장물아비는 자기 금고에서 지불합니다. 금전 서랍에서 채워 넣고, 남는 돈은 다시 서랍으로 돌아갑니다.</HH.Setting.underworld.fence.capital.Desc>
+  <HH.Setting.underworld.fence.exposureChance>주인이 알아챌 확률</HH.Setting.underworld.fence.exposureChance>
+  <HH.Setting.underworld.fence.exposureChance.Desc>훔친 물품을 되팔 때마다: 그 물품을 도난당한 진영이 물건이 어디로 갔는지 알게 됩니다.</HH.Setting.underworld.fence.exposureChance.Desc>
+  <HH.Setting.underworld.fence.goodwillHit>들켰을 때 잃는 호감도</HH.Setting.underworld.fence.goodwillHit>
+  <HH.Setting.underworld.fence.goodwillHit.Desc>단계별 난이도 상한을 적용하기 전 값입니다.</HH.Setting.underworld.fence.goodwillHit.Desc>
+  <HH.Setting.underworld.fence.sellPercent>장물아비 판매가</HH.Setting.underworld.fence.sellPercent>
+  <HH.Setting.underworld.fence.sellPercent.Desc>수상한 구매자가 지불하는 시장가치의 비율.</HH.Setting.underworld.fence.sellPercent.Desc>
+  <HH.Setting.underworld.gang.feeMax>뒷방 이용료 (최대)</HH.Setting.underworld.gang.feeMax>
+  <HH.Setting.underworld.gang.feeMin>뒷방 이용료 (최소)</HH.Setting.underworld.gang.feeMin>
+  <HH.Setting.underworld.gang.feeMin.Desc>갱단원이 뒷방에 내는 돈.</HH.Setting.underworld.gang.feeMin.Desc>
+  <HH.Setting.underworld.gang.intervalDays>갱단 방문 간격(일)</HH.Setting.underworld.gang.intervalDays>
+  <HH.Setting.underworld.gang.intervalDays.Desc>뒷방, 격투장 또는 장물아비가 생긴 뒤 갱단 방문 사이의 평균 시간.</HH.Setting.underworld.gang.intervalDays.Desc>
+  <HH.Setting.underworld.gang.intimidateChance>갱단이 보호비를 요구할 확률</HH.Setting.underworld.gang.intimidateChance>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>난이도 슬라이더를 따릅니다. 표준 객실 이하에서는 거절할 수 있는 대화창 말고는 아무것도 강요하지 않습니다.</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.prisonAccess>갱단의 감옥 방문 허용</HH.Setting.underworld.gang.prisonAccess>
+  <HH.Setting.underworld.gang.prisonAccess.Desc>갱단 손님에게 유치장 견학(수감자 심문)을 허용합니다. 기본값은 꺼짐이며, 그 밖에는 모든 손님에게 감옥이 닫혀 있습니다.</HH.Setting.underworld.gang.prisonAccess.Desc>
+  <HH.Setting.underworld.gang.protectionFee>요구하는 보호비</HH.Setting.underworld.gang.protectionFee>
+  <HH.Setting.underworld.gang.sizeMax>최대 갱단 규모</HH.Setting.underworld.gang.sizeMax>
+  <HH.Setting.underworld.gang.tourFee>유치장 견학 요금</HH.Setting.underworld.gang.tourFee>
+  <HH.Setting.underworld.gang.tourFee.Desc>갱단원이 수감자를 한 시간 심문하는 대가로 내는 돈.</HH.Setting.underworld.gang.tourFee.Desc>
+  <HH.Setting.underworld.hunt.feeMax>사냥 요금 (최대)</HH.Setting.underworld.hunt.feeMax>
+  <HH.Setting.underworld.hunt.feeMin>사냥 요금 (최소)</HH.Setting.underworld.hunt.feeMin>
+  <HH.Setting.underworld.hunt.intervalDays>사냥대 간격(일)</HH.Setting.underworld.hunt.intervalDays>
+  <HH.Setting.underworld.hunt.quarryCount>사냥대당 사냥감 수</HH.Setting.underworld.hunt.quarryCount>
+  <HH.Setting.underworld.hunt.quarryCount.Desc>사냥대가 사냥터에 들여보내는 동물 수.</HH.Setting.underworld.hunt.quarryCount.Desc>
+  <HH.Setting.underworld.hunt.quarryHours>사람 사냥감이 버텨야 하는 시간</HH.Setting.underworld.hunt.quarryHours>
+  <HH.Setting.underworld.hunt.quarryHours.Desc>이 시간을 버티거나 울타리 선에 도달한 죄수는 자유로워집니다.</HH.Setting.underworld.hunt.quarryHours.Desc>
+  <HH.Setting.underworld.lounge.price>한 번 이용료</HH.Setting.underworld.lounge.price>
+  <HH.Setting.underworld.lounge.price.Desc>마약 휴게실에서 손님이 내는 요금. 손님은 자신의 이데올로기가 허락하는 것만 받습니다.</HH.Setting.underworld.lounge.price.Desc>
+  <HH.Setting.underworld.mode>뒷세계가 나타나는 방식</HH.Setting.underworld.mode>
+  <HH.Setting.underworld.mode.Desc>게임 중 발견: 수상한 낯선 사람이 뒷방이 있냐고 묻고, '예'라고 해야만 어두운 면이 열립니다. 항상 켜짐: 처음부터 열려 있습니다. (끄기는 모듈 스위치이며, 아늑한 콘텐츠 강도에서는 완전히 숨겨집니다.)</HH.Setting.underworld.mode.Desc>
+  <HH.Setting.underworld.organ.orderDays>주문 배송 기간(일)</HH.Setting.underworld.organ.orderDays>
+  <HH.Setting.underworld.organ.orderPremium>주문 장기 할증</HH.Setting.underworld.organ.orderPremium>
+  <HH.Setting.underworld.organ.orderPremium.Desc>그림(Grim) 전용: 기한 안에 배송된 완성 장기는 정상 가격의 이 배율만큼 값을 받습니다.</HH.Setting.underworld.organ.orderPremium.Desc>
+  <HH.Setting.underworld.organ.priceFactor>장기 매입가</HH.Setting.underworld.organ.priceFactor>
+  <HH.Setting.underworld.organ.priceFactor.Desc>익명 구매자가 지불하는 시장 가치의 비율.</HH.Setting.underworld.organ.priceFactor.Desc>
+  <HH.Setting.underworld.pit.betMax>최대 베팅액</HH.Setting.underworld.pit.betMax>
+  <HH.Setting.underworld.pit.betMax.Desc>손님은 이 금액을 넘는 은화는 걸지 않습니다(예산의 3분의 1을 넘지 않음).</HH.Setting.underworld.pit.betMax.Desc>
+  <HH.Setting.underworld.pit.betMin>최소 베팅액</HH.Setting.underworld.pit.betMin>
+  <HH.Setting.underworld.pit.betMin.Desc>손님은 최소 이 금액 이상의 은화를 겁니다.</HH.Setting.underworld.pit.betMin.Desc>
+  <HH.Setting.underworld.pit.fairRatio>대진 공정성</HH.Setting.underworld.pit.fairRatio>
+  <HH.Setting.underworld.pit.fairRatio.Desc>강한 투사의 전투력은 약한 투사의 이 배수를 넘을 수 없습니다.</HH.Setting.underworld.pit.fairRatio.Desc>
+  <HH.Setting.underworld.pit.houseCut>베팅 하우스 수수료</HH.Setting.underworld.pit.houseCut>
+  <HH.Setting.underworld.pit.houseCut.Desc>하우스가 베팅 풀에서 가져가는 몫(토털리제이터 방식).</HH.Setting.underworld.pit.houseCut.Desc>
+  <HH.Setting.underworld.pit.intervalHours>경기 간격(시간)</HH.Setting.underworld.pit.intervalHours>
+  <HH.Setting.underworld.pit.intervalHours.Desc>투사와 관중이 충분한 투기장은 이 간격마다 경기를 시작합니다.</HH.Setting.underworld.pit.intervalHours.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks>최장 경기 시간(틱)</HH.Setting.underworld.pit.maxBoutTicks>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>이 시간 안에 승자가 나지 않으면 무승부로 보고 모든 판돈을 돌려줍니다.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.yieldHealth>항복 체력</HH.Setting.underworld.pit.yieldHealth>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>투사의 체력이 이 비율 아래로 떨어지면 경기가 끝납니다. 죽을 때까지 싸우는 경기는 예외입니다.</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.scandalCooldownDays>스캔들 사이 간격(일)</HH.Setting.underworld.scandalCooldownDays>
+  <HH.Setting.underworld.scandalCooldownDays.Desc>맵마다 이 기간 동안 스캔들은 최대 한 번만 일어납니다.</HH.Setting.underworld.scandalCooldownDays.Desc>
+  <HH.Setting.underworld.smuggler.inspectChance>단속 확률</HH.Setting.underworld.smuggler.inspectChance>
+  <HH.Setting.underworld.smuggler.inspectChance.Desc>입항할 때마다, 제국 당국이 존재하는 경우에 적용됩니다.</HH.Setting.underworld.smuggler.inspectChance.Desc>
+  <HH.Setting.underworld.smuggler.intervalDays>입항 간격(일)</HH.Setting.underworld.smuggler.intervalDays>
+  <HH.Setting.underworld.smuggler.intervalDays.Desc>밀수업자 선착장에 야간 입항이 있는 평균 간격.</HH.Setting.underworld.smuggler.intervalDays.Desc>
+  <HH.Setting.underworld.smuggler.maxValue>최대 상자 가치</HH.Setting.underworld.smuggler.maxValue>
+  <HH.Setting.underworld.smuggler.maxValue.Desc>제공되는 가장 큰 상자의 시장 가치.</HH.Setting.underworld.smuggler.maxValue.Desc>
+  <HH.Setting.underworld.smuggler.priceFactor>밀수품 가격</HH.Setting.underworld.smuggler.priceFactor>
+  <HH.Setting.underworld.smuggler.priceFactor.Desc>상자 하나에 지불하는 시장 가치의 비율.</HH.Setting.underworld.smuggler.priceFactor.Desc>
+  <HH.Setting.underworld.strangerCooldownDays>다시 제안하기까지(일)</HH.Setting.underworld.strangerCooldownDays>
+  <HH.Setting.underworld.strangerCooldownDays.Desc>「관심 없음」 후 낯선 사람은 이 일수를 기다린 뒤 다시 제안합니다.</HH.Setting.underworld.strangerCooldownDays.Desc>
+  <HH.Setting.underworld.strangerMaxAsks>제안 횟수</HH.Setting.underworld.strangerMaxAsks>
+  <HH.Setting.underworld.strangerMaxAsks.Desc>이만큼 거절당하면 낯선 사람은 완전히 포기합니다.</HH.Setting.underworld.strangerMaxAsks.Desc>
+  <HH.Setting.underworld.strangerMaxWhispers>낯선 사람이 나타나는 속삭임 상한</HH.Setting.underworld.strangerMaxWhispers>
+  <HH.Setting.underworld.strangerMaxWhispers.Desc>속삭임(Whispers) 수치가 이 값 이하일 때만 나타납니다.</HH.Setting.underworld.strangerMaxWhispers.Desc>
+  <HH.Setting.underworld.strangerMeanDays>낯선 사람이 나타나기까지(일)</HH.Setting.underworld.strangerMeanDays>
+  <HH.Setting.underworld.strangerMeanDays.Desc>낯선 사람이 찾아올 수 있는 순간 사이의 평균 일수(식민지에 손님이나 영업장이 있고 속삭임이 낮을 때부터).</HH.Setting.underworld.strangerMeanDays.Desc>
+  <HH.Setting.underworld.whispers.fence>장물아비 거래당 속삭임</HH.Setting.underworld.whispers.fence>
+  <HH.Setting.underworld.whispers.gang>갱단 방문당 속삭임</HH.Setting.underworld.whispers.gang>
+  <HH.Setting.underworld.whispers.hunt>사냥당 속삭임</HH.Setting.underworld.whispers.hunt>
+  <HH.Setting.underworld.whispers.lounge>약물 휴게실 이용당 속삭임</HH.Setting.underworld.whispers.lounge>
+  <HH.Setting.underworld.whispers.organ>장기 판매당 속삭임</HH.Setting.underworld.whispers.organ>
+  <HH.Setting.underworld.whispers.pit>투기장 경기당 속삭임</HH.Setting.underworld.whispers.pit>
+  <HH.Setting.underworld.whispers.tour>감방 견학당 속삭임</HH.Setting.underworld.whispers.tour>
+  <HH.Setting.underworld.whispersDecay>15일마다 속삭임 감소</HH.Setting.underworld.whispersDecay>
+  <HH.Setting.underworld.whispersDecay.Desc>속삭임은 15일마다 이 비율만큼 값이 줄어듭니다.</HH.Setting.underworld.whispersDecay.Desc>
+  <HH.SettingCat.Account>계정</HH.SettingCat.Account>
+  <HH.SettingCat.Addiction>중독</HH.SettingCat.Addiction>
+  <HH.SettingCat.Arrivals>도착</HH.SettingCat.Arrivals>
+  <HH.SettingCat.Cinema>영화관</HH.SettingCat.Cinema>
+  <HH.SettingCat.Collections>수집품</HH.SettingCat.Collections>
+  <HH.SettingCat.Colonists>개척민</HH.SettingCat.Colonists>
+  <HH.SettingCat.Compatibility>호환성</HH.SettingCat.Compatibility>
+  <HH.SettingCat.DLCandtraits>DLC와 특성</HH.SettingCat.DLCandtraits>
+  <HH.SettingCat.Difficulty>난이도</HH.SettingCat.Difficulty>
+  <HH.SettingCat.Discovery>발견</HH.SettingCat.Discovery>
+  <HH.SettingCat.Druglounge>약물 휴게실</HH.SettingCat.Druglounge>
+  <HH.SettingCat.Effects>효과</HH.SettingCat.Effects>
+  <HH.SettingCat.Factionprojects>진영 프로젝트</HH.SettingCat.Factionprojects>
+  <HH.SettingCat.Faithandmoney>신앙과 돈</HH.SettingCat.Faithandmoney>
+  <HH.SettingCat.Fees>수수료</HH.SettingCat.Fees>
+  <HH.SettingCat.Fence>장물아비</HH.SettingCat.Fence>
+  <HH.SettingCat.Fightpit>투기장</HH.SettingCat.Fightpit>
+  <HH.SettingCat.Fun>여가</HH.SettingCat.Fun>
+  <HH.SettingCat.Furniture>가구</HH.SettingCat.Furniture>
+  <HH.SettingCat.Gallery>갤러리</HH.SettingCat.Gallery>
+  <HH.SettingCat.Gangs>갱단</HH.SettingCat.Gangs>
+  <HH.SettingCat.General>일반</HH.SettingCat.General>
+  <HH.SettingCat.Guestbehaviour>손님 행동</HH.SettingCat.Guestbehaviour>
+  <HH.SettingCat.Guests>손님</HH.SettingCat.Guests>
+  <HH.SettingCat.Handling>처리</HH.SettingCat.Handling>
+  <HH.SettingCat.Help>도움말</HH.SettingCat.Help>
+  <HH.SettingCat.Honorsystem>신뢰 시스템</HH.SettingCat.Honorsystem>
+  <HH.SettingCat.Houseodds>하우스 배당</HH.SettingCat.Houseodds>
+  <HH.SettingCat.InsuranceClawbackMutual>보험 (Clawback Mutual)</HH.SettingCat.InsuranceClawbackMutual>
+  <HH.SettingCat.Interestprofitability>이자와 수익성</HH.SettingCat.Interestprofitability>
+  <HH.SettingCat.Interface>인터페이스</HH.SettingCat.Interface>
+  <HH.SettingCat.Investments>투자</HH.SettingCat.Investments>
+  <HH.SettingCat.Kitchen>주방</HH.SettingCat.Kitchen>
+  <HH.SettingCat.Limits>한도</HH.SettingCat.Limits>
+  <HH.SettingCat.Loans>대출</HH.SettingCat.Loans>
+  <HH.SettingCat.Lookandsound>외관과 소리</HH.SettingCat.Lookandsound>
+  <HH.SettingCat.Lottery>복권</HH.SettingCat.Lottery>
+  <HH.SettingCat.Luck>행운</HH.SettingCat.Luck>
+  <HH.SettingCat.LuckyThrumbo>행운의 트럼보</HH.SettingCat.LuckyThrumbo>
+  <HH.SettingCat.Market>시장</HH.SettingCat.Market>
+  <HH.SettingCat.Money>돈</HH.SettingCat.Money>
+  <HH.SettingCat.Music>음악</HH.SettingCat.Music>
+  <HH.SettingCat.Nobles>귀족</HH.SettingCat.Nobles>
+  <HH.SettingCat.OmenExchange>징조 거래소</HH.SettingCat.OmenExchange>
+  <HH.SettingCat.Openinghours>영업 시간</HH.SettingCat.Openinghours>
+  <HH.SettingCat.Organclinic>장기 클리닉</HH.SettingCat.Organclinic>
+  <HH.SettingCat.Park>공원</HH.SettingCat.Park>
+  <HH.SettingCat.Prices>가격</HH.SettingCat.Prices>
+  <HH.SettingCat.Randomness>무작위성</HH.SettingCat.Randomness>
+  <HH.SettingCat.Rehab>재활</HH.SettingCat.Rehab>
+  <HH.SettingCat.Reports>보고서</HH.SettingCat.Reports>
+  <HH.SettingCat.Reputation>명성</HH.SettingCat.Reputation>
+  <HH.SettingCat.Research>연구</HH.SettingCat.Research>
+  <HH.SettingCat.Salon>미용실</HH.SettingCat.Salon>
+  <HH.SettingCat.Sauna>사우나</HH.SettingCat.Sauna>
+  <HH.SettingCat.Seats>좌석</HH.SettingCat.Seats>
+  <HH.SettingCat.Security>보안</HH.SettingCat.Security>
+  <HH.SettingCat.Services>서비스</HH.SettingCat.Services>
+  <HH.SettingCat.Sessions>이용 시간</HH.SettingCat.Sessions>
+  <HH.SettingCat.Setup>설치</HH.SettingCat.Setup>
+  <HH.SettingCat.Shrines>제단</HH.SettingCat.Shrines>
+  <HH.SettingCat.Smugglersdock>밀수꾼 부두</HH.SettingCat.Smugglersdock>
+  <HH.SettingCat.Sound>소리</HH.SettingCat.Sound>
+  <HH.SettingCat.Specialswitches>특수 스위치</HH.SettingCat.Specialswitches>
+  <HH.SettingCat.Staffing>인력 배치</HH.SettingCat.Staffing>
+  <HH.SettingCat.Stay>체류</HH.SettingCat.Stay>
+  <HH.SettingCat.Tables>테이블</HH.SettingCat.Tables>
+  <HH.SettingCat.Taxi>택시</HH.SettingCat.Taxi>
+  <HH.SettingCat.Texts>문구</HH.SettingCat.Texts>
+  <HH.SettingCat.TheHunt>사냥</HH.SettingCat.TheHunt>
+  <HH.SettingCat.Wealthandmood>재산과 기분</HH.SettingCat.Wealthandmood>
+  <HH.SettingCat.Whispers>속삭임</HH.SettingCat.Whispers>
+  <HH.SettingCat.Wing>동</HH.SettingCat.Wing>
+</LanguageData>

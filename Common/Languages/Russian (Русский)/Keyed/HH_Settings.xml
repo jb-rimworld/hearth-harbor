@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.BankResearchMode.Full>Полный</HH.Enum.BankResearchMode.Full>
+  <HH.Enum.BankResearchMode.Off>Выкл.</HH.Enum.BankResearchMode.Off>
+  <HH.Enum.ClaimMode.Automatic>Автоматически</HH.Enum.ClaimMode.Automatic>
+  <HH.Enum.ClaimMode.ByForm>По заявлению</HH.Enum.ClaimMode.ByForm>
+  <HH.Enum.FundDestination.ToDeity>Божеству</HH.Enum.FundDestination.ToDeity>
+  <HH.Enum.FundDestination.ToFaction>Фракции</HH.Enum.FundDestination.ToFaction>
+  <HH.Enum.PensionRuleMode.Enforce>Соблюдать</HH.Enum.PensionRuleMode.Enforce>
+  <HH.Enum.PensionRuleMode.Off>Выкл.</HH.Enum.PensionRuleMode.Off>
+  <HH.Enum.PensionRuleMode.WarnOnly>Только предупреждать</HH.Enum.PensionRuleMode.WarnOnly>
+  <HH.Enum.RngAlgorithm.ChaCha8>Cha cha8</HH.Enum.RngAlgorithm.ChaCha8>
+  <HH.Enum.RngAlgorithm.Pcg32>Pcg32</HH.Enum.RngAlgorithm.Pcg32>
+  <HH.Enum.RngAlgorithm.SplitMix64>Split mix64</HH.Enum.RngAlgorithm.SplitMix64>
+  <HH.Enum.RngAlgorithm.Xoshiro256>Xoshiro256</HH.Enum.RngAlgorithm.Xoshiro256>
+  <HH.Enum.StaffRule.AlwaysRequired>Всегда нужен</HH.Enum.StaffRule.AlwaysRequired>
+  <HH.Enum.StaffRule.NeverRequired>Никогда не нужен</HH.Enum.StaffRule.NeverRequired>
+  <HH.Enum.StaffRule.PerVenueType>По типу заведения</HH.Enum.StaffRule.PerVenueType>
+  <HH.Enum.UnderworldMode.AlwaysOn>Всегда включено</HH.Enum.UnderworldMode.AlwaysOn>
+  <HH.Enum.UnderworldMode.DiscoverInGame>Открывается в игре</HH.Enum.UnderworldMode.DiscoverInGame>
+  <HH.Setting.bank.accountBeta>Показатель процентов по счёту (не используется с 1.1.0)</HH.Setting.bank.accountBeta>
+  <HH.Setting.bank.accountBeta.Desc>Заменён на «Проценты по счёту: доля рыночной доходности». Оставлен, чтобы старые сохранения загружались; изменение ничего не делает.</HH.Setting.bank.accountBeta.Desc>
+  <HH.Setting.bank.accountShare>Проценты по счёту: доля рыночной доходности</HH.Setting.bank.accountShare>
+  <HH.Setting.bank.accountShare.Desc>Банковский счёт платит лишь эту долю от рыночного излишка (M − 1) в год и никогда не больше, чем сберегательный продукт Mattress Plus (который следует за доходностью инвестиций). 0,2 значит: при M 1,2 счёт платит +4 % в год (Mattress Plus платит +8 %, индекс около +20 %); при M 2 — +20 %. Ниже M 1 счёт немного теряет, но никогда не больше 10 % в год. Оба ползунка доходности (M этого банка и M инвестиций) стоит держать близко друг к другу. Каждый банк добавляет свою небольшую надбавку или штраф. Инвестиции это не затрагивает.</HH.Setting.bank.accountShare.Desc>
+  <HH.Setting.bank.atmDailyLimit>Дневной лимит банкомата</HH.Setting.bank.atmDailyLimit>
+  <HH.Setting.bank.atmDailyLimit.Desc>Максимум серебра, которое можно снять в банкоматах за день.</HH.Setting.bank.atmDailyLimit.Desc>
+  <HH.Setting.bank.bailout>Вливание «Слишком большой, чтобы обанкротиться»</HH.Setting.bank.bailout>
+  <HH.Setting.bank.bailout.Desc>Банк First Rim Bank of Too Big To Fail раз в игровой год выручает разорившегося бывшего магната (беспроцентный кредит, а не подарок).</HH.Setting.bank.bailout.Desc>
+  <HH.Setting.bank.collectionAnger>Ярость взыскания (размер рейда)</HH.Setting.bank.collectionAnger>
+  <HH.Setting.bank.collectionAnger.Desc>Умножает размер команд по изъятию и рейдов взыскателей. 0 отключает жёсткие стадии.</HH.Setting.bank.collectionAnger.Desc>
+  <HH.Setting.bank.depositDelayHours>Задержка вклада без отделения (часы)</HH.Setting.bank.depositDelayHours>
+  <HH.Setting.bank.depositDelayHours.Desc>Серебро, внесённое на счёт там, где рядом нет окошка или банкомата, поступает через столько часов.</HH.Setting.bank.depositDelayHours.Desc>
+  <HH.Setting.bank.directDeposit>Направлять выручку прямо в банк</HH.Setting.bank.directDeposit>
+  <HH.Setting.bank.directDeposit.Desc>Когда счёт открыт, кассы ваших предприятий в полночь опустошаются на счёт, а не оставляют серебро на полу.</HH.Setting.bank.directDeposit.Desc>
+  <HH.Setting.bank.directDepositFee>Комиссия за прямое зачисление</HH.Setting.bank.directDepositFee>
+  <HH.Setting.bank.directDepositFee.Desc>Комиссия с денег, которые идут прямо на счёт (выручка с касс). От 0 до 100 %.</HH.Setting.bank.directDepositFee.Desc>
+  <HH.Setting.bank.feeFactor>Уровень комиссий банка</HH.Setting.bank.feeFactor>
+  <HH.Setting.bank.feeFactor.Desc>Умножает все комиссии вашего банка. 0 % = комиссий нет вовсе.</HH.Setting.bank.feeFactor.Desc>
+  <HH.Setting.bank.lateFee>Штраф за просрочку</HH.Setting.bank.lateFee>
+  <HH.Setting.bank.lateFee.Desc>Взимается с просроченного взноса, когда кредит доходит до второй стадии взыскания.</HH.Setting.bank.lateFee.Desc>
+  <HH.Setting.bank.loanFloor>Стартовый кредит</HH.Setting.bank.loanFloor>
+  <HH.Setting.bank.loanFloor.Desc>Минимальный кредитный лимит для колонии со штрафным баллом, чтобы молодая колония могла занять немного.</HH.Setting.bank.loanFloor.Desc>
+  <HH.Setting.bank.loanIntervalDays>Дней между взносами</HH.Setting.bank.loanIntervalDays>
+  <HH.Setting.bank.loanIntervalDays.Desc>Взносы по кредиту подлежат оплате каждые столько дней.</HH.Setting.bank.loanIntervalDays.Desc>
+  <HH.Setting.bank.loanMaxTermDays>Самый длинный срок кредита (дни)</HH.Setting.bank.loanMaxTermDays>
+  <HH.Setting.bank.loanPortfolioShare>Инвестиции, учитываемые при кредитных лимитах</HH.Setting.bank.loanPortfolioShare>
+  <HH.Setting.bank.loanPortfolioShare.Desc>Какая доля ваших инвестиций (по рыночной стоимости) считается состоянием, когда банк решает, сколько вы можете занять. 100 % — полностью, 0 — совсем не учитываются. Чистое состояние, показанное в холле, всегда учитывает их полностью.</HH.Setting.bank.loanPortfolioShare.Desc>
+  <HH.Setting.bank.maxCollectionStage>Высшая стадия взыскания</HH.Setting.bank.maxCollectionStage>
+  <HH.Setting.bank.maxCollectionStage.Desc>Лестница взыскания: 1 напоминание, 2 штраф за просрочку, 3 зачёт из вкладов, 4 дружеский визит, 5 команда изъятия, 6 рейд взыскателей, 7 награда за голову. Стандартная комната останавливается на 4: вы платите долг и теряете лишь немного настроения.</HH.Setting.bank.maxCollectionStage.Desc>
+  <HH.Setting.bank.moodOn>Настроение колонии от баланса</HH.Setting.bank.moodOn>
+  <HH.Setting.bank.moodOn.Desc>Небольшая мысль (от −4 до +3, удвоенная для жадных колонистов и отсутствующая у аскетов) в зависимости от чистого состояния на колониста.</HH.Setting.bank.moodOn.Desc>
+  <HH.Setting.bank.moodScale>Пороги уровней достатка</HH.Setting.bank.moodScale>
+  <HH.Setting.bank.moodScale.Desc>Масштабирует пороги чистого состояния для уровней настроения (от «Разорён» до «Слишком большой, чтобы обанкротиться»).</HH.Setting.bank.moodScale.Desc>
+  <HH.Setting.bank.podMaxHours>Доставка капсулой: позднее всего (часы)</HH.Setting.bank.podMaxHours>
+  <HH.Setting.bank.podMaxHours.Desc>… и не дольше этого.</HH.Setting.bank.podMaxHours.Desc>
+  <HH.Setting.bank.podMaxLoad>Самая большая одна капсула</HH.Setting.bank.podMaxLoad>
+  <HH.Setting.bank.podMaxLoad.Desc>Крупное снятие приходит капсулами примерно по стольку серебра каждая, но не более 10 капсул на снятие (огромные суммы дают более тяжёлые капсулы, а не больше капсул). Это не ограничивает, сколько вы можете внести или снять.</HH.Setting.bank.podMaxLoad.Desc>
+  <HH.Setting.bank.podMinHours>Доставка капсулой: раньше всего (часы)</HH.Setting.bank.podMinHours>
+  <HH.Setting.bank.podMinHours.Desc>Снятия без окошка или банкомата приходят капсулой не раньше, чем через столько времени.</HH.Setting.bank.podMinHours.Desc>
+  <HH.Setting.bank.profit>Доходность M банка за игровой год</HH.Setting.bank.profit>
+  <HH.Setting.bank.profit.Desc>Насколько растут вложенные деньги в среднем за игровой год (60 дней). Это собственная M банка: она задаёт проценты по счёту и ставки по кредитам. M инвестиций (страница «Инвестиции») задаёт рынки; счёт никогда не платит больше Mattress Plus при этой M. Держите обе близко друг к другу. 1,0 = ни плюс, ни минус, 1,2 = +20 % в год, 0 = деньги исчезают. Логарифмическая шкала от 0,01 до 100; введите число для точного значения. Следует за ползунком сложности, пока вы сами его не измените.</HH.Setting.bank.profit.Desc>
+  <HH.Setting.bank.researchMode>Банковское исследование</HH.Setting.bank.researchMode>
+  <HH.Setting.bank.researchMode.Desc>Полный: банкоматы, ночные сейфы, отделения и кредиты требуют своих исследований. Выкл.: всё доступно с начала. (Общий режим исследований в основных настройках делает то же для всех модулей.)</HH.Setting.bank.researchMode.Desc>
+  <HH.Setting.bank.seizureShare>Доля изъятия «Чёрной книги»</HH.Setting.bank.seizureShare>
+  <HH.Setting.bank.seizureShare.Desc>Если «Чёрная книга» арестовывает ваш счёт (риск 1 % за квартал), эта доля баланса пропадает.</HH.Setting.bank.seizureShare.Desc>
+  <HH.Setting.bank.sounds>Звуки банковского меню</HH.Setting.bank.sounds>
+  <HH.Setting.bank.sounds.Desc>Щелчки, счёт монет, печати в окне банка и звук выигрыша или проигрыша лотереи, когда проводится розыгрыш, на который вы купили билеты.</HH.Setting.bank.sounds.Desc>
+  <HH.Setting.bank.switchFee>Комиссия за смену банка</HH.Setting.bank.switchFee>
+  <HH.Setting.bank.switchFee.Desc>Сколько стоит перевести счёт в другой банк (по концепции 2.2: 50 серебра).</HH.Setting.bank.switchFee.Desc>
+  <HH.Setting.bank.tradeDeposit>Автоматически вносить серебро от торговли</HH.Setting.bank.tradeDeposit>
+  <HH.Setting.bank.tradeDeposit.Desc>По умолчанию выключено, чтобы при продаже торговцу вы по-прежнему получали монеты, которые можно тратить сразу. Если включено (и включено прямое зачисление), серебро от торговцев и торговых кораблей сразу после сделки переводится на счёт (по ставке прямого зачисления). Караваны не затрагиваются.</HH.Setting.bank.tradeDeposit.Desc>
+  <HH.Setting.bank.wealthShare>Баланс банка учитывается рассказчиком (%)</HH.Setting.bank.wealthShare>
+  <HH.Setting.bank.wealthShare.Desc>Какая доля счёта входит в богатство колонии, на которое рассказчик считает рейды. 100 % = честно: внесение денег рейды не уменьшает. 0 = банк служит укрытием.</HH.Setting.bank.wealthShare.Desc>
+  <HH.Setting.casino.abstinenceDays>Дней воздержания на стадию зависимости</HH.Setting.casino.abstinenceDays>
+  <HH.Setting.casino.abstinenceDays.Desc>Дней без всякой игровой сессии, нужных для излечения каждой стадии зависимости (стадия 3 = 3 × это значение).</HH.Setting.casino.abstinenceDays.Desc>
+  <HH.Setting.casino.addictionFreeSessions>Сессии до возможной зависимости</HH.Setting.casino.addictionFreeSessions>
+  <HH.Setting.casino.addictionFreeSessions.Desc>Если за три дня сессий меньше этого числа, ничего не происходит.</HH.Setting.casino.addictionFreeSessions.Desc>
+  <HH.Setting.casino.addictionGrowth>Рост за каждую лишнюю сессию</HH.Setting.casino.addictionGrowth>
+  <HH.Setting.casino.addictionGrowth.Desc>p = p₀ · рост^(сессии − 3).</HH.Setting.casino.addictionGrowth.Desc>
+  <HH.Setting.casino.addictionP0>Шанс игровой зависимости p₀</HH.Setting.casino.addictionP0>
+  <HH.Setting.casino.addictionP0.Desc>Шанс зависимости после третьей сессии за три дня; с каждой следующей сессией растёт ×1,35. 0 отключает зависимость.</HH.Setting.casino.addictionP0.Desc>
+  <HH.Setting.casino.ambience>Атмосфера казино</HH.Setting.casino.ambience>
+  <HH.Setting.casino.ambience.Desc>Тихий гул голосов, фишек и далёких игровых автоматов в оживлённом зале казино, пока камера находится рядом.</HH.Setting.casino.ambience.Desc>
+  <HH.Setting.casino.animSpeed>Скорость анимации</HH.Setting.casino.animSpeed>
+  <HH.Setting.casino.animSpeed.Desc>100 % — задуманный темп. Большие значения ускоряют игры; при удержании Shift игры идут на 300 %.</HH.Setting.casino.animSpeed.Desc>
+  <HH.Setting.casino.animations>Анимированные игры</HH.Setting.casino.animations>
+  <HH.Setting.casino.animations.Desc>The Lucky Thrumbo и игры-тренировки показывают барабаны, колесо и карты в движении перед результатом. Выкл.: результат появляется сразу. Щелчок по столу, Пробел или Enter всегда пропускает остаток анимации.</HH.Setting.casino.animations.Desc>
+  <HH.Setting.casino.blackjackH17>Дилер берёт карту на мягкие 17 в блэкджеке</HH.Setting.casino.blackjackH17>
+  <HH.Setting.casino.blackjackH17.Desc>0 = дилер останавливается на мягких 17, 1 = дилер берёт карту (около +0,2 очка преимущества).</HH.Setting.casino.blackjackH17.Desc>
+  <HH.Setting.casino.blackjackPays>Выплата за блэкджек (бонус блэкджека)</HH.Setting.casino.blackjackPays>
+  <HH.Setting.casino.blackjackPays.Desc>3:2 = 1,5, 6:5 = 1,2. Меняет преимущество дома примерно на 1,4 пункта.</HH.Setting.casino.blackjackPays.Desc>
+  <HH.Setting.casino.chipSpendBonus>Бонус к трате в кассе фишек</HH.Setting.casino.chipSpendBonus>
+  <HH.Setting.casino.chipSpendBonus.Desc>Гости приносят к столам столько же дополнительно, когда касса продаёт фишки ("будто это не деньги").</HH.Setting.casino.chipSpendBonus.Desc>
+  <HH.Setting.casino.chipTakeHome>Фишки, унесённые домой</HH.Setting.casino.chipTakeHome>
+  <HH.Setting.casino.chipTakeHome.Desc>Не больше этой доли выигрыша гостя остаётся у него фишками при уходе: чистая прибыль дома ("запас фишек").</HH.Setting.casino.chipTakeHome.Desc>
+  <HH.Setting.casino.colonistChips>Домашние фишки за сеанс</HH.Setting.casino.colonistChips>
+  <HH.Setting.casino.colonistChips.Desc>Колонисты играют на бесценные домашние фишки: серебро колонии за столами никогда не теряется.</HH.Setting.casino.colonistChips.Desc>
+  <HH.Setting.casino.croupierRequired>Столам нужен крупье</HH.Setting.casino.croupierRequired>
+  <HH.Setting.casino.croupierRequired.Desc>Рулетка, блэкджек и Rimdeck работают для гостей, только пока за столом стоит колонист с типом работы «Обслуживание». Игровые автоматы никогда в этом не нуждаются.</HH.Setting.casino.croupierRequired.Desc>
+  <HH.Setting.casino.fatalDespair>Смертельное отчаяние (не реализовано)</HH.Setting.casino.fatalDespair>
+  <HH.Setting.casino.fatalDespair.Desc>Зарезервировано. Ничто в этом модуле не может убить колониста; переключатель не действует.</HH.Setting.casino.fatalDespair.Desc>
+  <HH.Setting.casino.guestBetShare>Размер ставки гостя</HH.Setting.casino.guestBetShare>
+  <HH.Setting.casino.guestBetShare.Desc>Гость ставит эту долю своих игровых денег за раунд. По умолчанию больше, чем в настоящем казино, потому что столы проводят гораздо меньше раундов за игровой час; почасовая выручка остаётся примерно прежней.</HH.Setting.casino.guestBetShare.Desc>
+  <HH.Setting.casino.guestBudgetShare>Игровой бюджет гостей</HH.Setting.casino.guestBudgetShare>
+  <HH.Setting.casino.guestBudgetShare.Desc>Доля оставшегося бюджета гостя, которую он приносит к столам (до учёта характера).</HH.Setting.casino.guestBudgetShare.Desc>
+  <HH.Setting.casino.guestMinBuyIn>Минимальный взнос (серебро)</HH.Setting.casino.guestMinBuyIn>
+  <HH.Setting.casino.guestMinBuyIn.Desc>Гости, у которых на трату меньше этой суммы, не играют.</HH.Setting.casino.guestMinBuyIn.Desc>
+  <HH.Setting.casino.guestStopLoss>Гости уходят после проигрыша</HH.Setting.casino.guestStopLoss>
+  <HH.Setting.casino.guestStopLoss.Desc>Гость уходит от столов, проиграв эту долю своих игровых денег.</HH.Setting.casino.guestStopLoss.Desc>
+  <HH.Setting.casino.guestWinTarget>Гости забирают выигрыш</HH.Setting.casino.guestWinTarget>
+  <HH.Setting.casino.guestWinTarget.Desc>Гость забирает выигрыш, когда выиграет эту долю сверх своих игровых денег.</HH.Setting.casino.guestWinTarget.Desc>
+  <HH.Setting.casino.houseFloat>Касса дома (серебро)</HH.Setting.casino.houseFloat>
+  <HH.Setting.casino.houseFloat.Desc>Наличные, которые дом держит в ящике. Всё, что он выиграет сверх этого (плюс то, что гости сейчас ставят), уходит в общую кассу колонии, когда казино закрывается.</HH.Setting.casino.houseFloat.Desc>
+  <HH.Setting.casino.houseRiskLimit>Защита дома от разорения</HH.Setting.casino.houseRiskLimit>
+  <HH.Setting.casino.houseRiskLimit.Desc>Ограничивает каждую ставку величиной: наличные ÷ (4 · σ · √раундов в день). Плохая ночь не разорит дом. Предел сокращается, когда наличных мало.</HH.Setting.casino.houseRiskLimit.Desc>
+  <HH.Setting.casino.howToSeen>«Как играть» уже просмотрено</HH.Setting.casino.howToSeen>
+  <HH.Setting.casino.howToSeen.Desc>Помнит, что короткие пояснения игр у The Lucky Thrumbo однажды открылись сами. Выключите, чтобы они открывались снова.</HH.Setting.casino.howToSeen.Desc>
+  <HH.Setting.casino.joyGain>Множитель радости от игры</HH.Setting.casino.joyGain>
+  <HH.Setting.casino.joyGain.Desc>Прирост радости по сравнению с обычным покерным столом.</HH.Setting.casino.joyGain.Desc>
+  <HH.Setting.casino.maxBet>Максимальная ставка (серебро)</HH.Setting.casino.maxBet>
+  <HH.Setting.casino.maxBet.Desc>Самая большая ставка в любой игре при действующих лимитах.</HH.Setting.casino.maxBet.Desc>
+  <HH.Setting.casino.minBet>Минимальная ставка (серебро)</HH.Setting.casino.minBet>
+  <HH.Setting.casino.minBet.Desc>Самая маленькая ставка. Дробные значения допустимы: ставка не выплачивается монетами.</HH.Setting.casino.minBet.Desc>
+  <HH.Setting.casino.pokerRake>Комиссия Rimdeck</HH.Setting.casino.pokerRake>
+  <HH.Setting.casino.pokerRake.Desc>Доля каждого банка, которую оставляет дом (до предела комиссии).</HH.Setting.casino.pokerRake.Desc>
+  <HH.Setting.casino.pokerRakeCap>Предел комиссии Rimdeck (серебро)</HH.Setting.casino.pokerRakeCap>
+  <HH.Setting.casino.pokerRakeCap.Desc>Максимум, который дом берёт с одного банка.</HH.Setting.casino.pokerRakeCap.Desc>
+  <HH.Setting.casino.reactions>Реакции игроков</HH.Setting.casino.reactions>
+  <HH.Setting.casino.reactions.Desc>Игроки радуются, стонут и бросают монеты при выигрышах, проигрышах и почти выигрышах (маленькие значки над головой и короткие звуки).</HH.Setting.casino.reactions.Desc>
+  <HH.Setting.casino.rouletteEdge>Преимущество дома в рулетке</HH.Setting.casino.rouletteEdge>
+  <HH.Setting.casino.rouletteEdge.Desc>От 0,54 % до 7,9 %: малое преимущество даёт колесо a la partage, 2,7 % — один ноль, свыше 4 % — колесо с двойным нулём. Каждая ставка получает ровно это преимущество.</HH.Setting.casino.rouletteEdge.Desc>
+  <HH.Setting.casino.roundsPerHour.blackjack>Раздач блэкджека в час</HH.Setting.casino.roundsPerHour.blackjack>
+  <HH.Setting.casino.roundsPerHour.blackjack.Desc>Раздач за игровой час.</HH.Setting.casino.roundsPerHour.blackjack.Desc>
+  <HH.Setting.casino.roundsPerHour.poker>Раздач Rimdeck в час</HH.Setting.casino.roundsPerHour.poker>
+  <HH.Setting.casino.roundsPerHour.poker.Desc>Раздач за игровой час.</HH.Setting.casino.roundsPerHour.poker.Desc>
+  <HH.Setting.casino.roundsPerHour.roulette>Вращений рулетки в час</HH.Setting.casino.roundsPerHour.roulette>
+  <HH.Setting.casino.roundsPerHour.roulette.Desc>Вращений за игровой час.</HH.Setting.casino.roundsPerHour.roulette.Desc>
+  <HH.Setting.casino.roundsPerHour.slot>Вращений автоматов в час</HH.Setting.casino.roundsPerHour.slot>
+  <HH.Setting.casino.roundsPerHour.slot.Desc>Как быстро крутится автомат за игровой час (2500 тиков, так что 40 — это вращение каждые 1–2 реальные секунды на обычной скорости).</HH.Setting.casino.roundsPerHour.slot.Desc>
+  <HH.Setting.casino.slotRtp>Выплата игрового автомата (RTP)</HH.Setting.casino.slotRtp>
+  <HH.Setting.casino.slotRtp.Desc>Доля ставок, которую «Однорукий Маффало» возвращает в долгосрочной перспективе. 92 % = преимущество дома 8 %. Свыше 100 % дом теряет деньги.</HH.Setting.casino.slotRtp.Desc>
+  <HH.Setting.casino.tableLimits>Соблюдать лимиты столов</HH.Setting.casino.tableLimits>
+  <HH.Setting.casino.tableLimits.Desc>Вкл.: ставки остаются между минимальной и максимальной ставкой ниже. Выкл.: ставки ограничивает только правило риска дома.</HH.Setting.casino.tableLimits.Desc>
+  <HH.Setting.casino.toleranceFactor>Накопление привыкания к игре</HH.Setting.casino.toleranceFactor>
+  <HH.Setting.casino.toleranceFactor.Desc>Насколько быстро накапливается привыкание к радости по сравнению с ванилью (0,6 = на 40 % медленнее).</HH.Setting.casino.toleranceFactor.Desc>
+  <HH.Setting.casino.worldFx>Жизнь казино на карте</HH.Setting.casino.worldFx>
+  <HH.Setting.casino.worldFx.Desc>Крутящиеся барабаны, колесо рулетки, раздаваемые карты, фишки и негромкие звуки у автоматов и столов, пока люди играют.</HH.Setting.casino.worldFx.Desc>
+  <HH.Setting.city.cinemaCooldownHours>Часов между фильмами на гостя</HH.Setting.city.cinemaCooldownHours>
+  <HH.Setting.city.cinemaCooldownHours.Desc>Гость видит не более одного фильма за это время.</HH.Setting.city.cinemaCooldownHours.Desc>
+  <HH.Setting.city.cinemaMinSeats>Нужно мест</HH.Setting.city.cinemaMinSeats>
+  <HH.Setting.city.cinemaMinSeats.Desc>Экран проектора считается кинотеатром, если к нему обращено не меньше стольких мест.</HH.Setting.city.cinemaMinSeats.Desc>
+  <HH.Setting.city.cinemaShowTicks>Длительность фильма (тики)</HH.Setting.city.cinemaShowTicks>
+  <HH.Setting.city.cinemaShowTicks.Desc>Как долго идёт один сеанс. 2500 тиков — один час.</HH.Setting.city.cinemaShowTicks.Desc>
+  <HH.Setting.city.cinemaTicket>Билет в кинотеатр</HH.Setting.city.cinemaTicket>
+  <HH.Setting.city.cinemaTicket.Desc>Цена одного билета. Гости платят, когда садятся.</HH.Setting.city.cinemaTicket.Desc>
+  <HH.Setting.city.desireScale>Интерес гостей к городской жизни</HH.Setting.city.desireScale>
+  <HH.Setting.city.desireScale.Desc>Насколько сильно гости хотят сходить в кинотеатр, салон, галерею или на скамейку в парке. 0 = никогда.</HH.Setting.city.desireScale.Desc>
+  <HH.Setting.city.galleryCooldownHours>Часов между визитами на гостя</HH.Setting.city.galleryCooldownHours>
+  <HH.Setting.city.galleryCooldownHours.Desc>Гость проходит через галерею не чаще одного раза за это время.</HH.Setting.city.galleryCooldownHours.Desc>
+  <HH.Setting.city.galleryFee>Плата за вход в галерею</HH.Setting.city.galleryFee>
+  <HH.Setting.city.galleryFee.Desc>Цена одного прохода по галерее.</HH.Setting.city.galleryFee.Desc>
+  <HH.Setting.city.galleryMaxViews>Работ за визит</HH.Setting.city.galleryMaxViews>
+  <HH.Setting.city.galleryMaxViews.Desc>Сколько произведений искусства один гость осматривает за визит.</HH.Setting.city.galleryMaxViews.Desc>
+  <HH.Setting.city.galleryMinArt>Нужно произведений искусства</HH.Setting.city.galleryMinArt>
+  <HH.Setting.city.galleryMinArt.Desc>Комната считается галереей, если в ней не меньше стольких произведений.</HH.Setting.city.galleryMinArt.Desc>
+  <HH.Setting.city.galleryViewTicks>Время осмотра одной работы (тики)</HH.Setting.city.galleryViewTicks>
+  <HH.Setting.city.galleryViewTicks.Desc>Сколько гость стоит перед одним произведением.</HH.Setting.city.galleryViewTicks.Desc>
+  <HH.Setting.city.movieNight>Киновечера для колонистов</HH.Setting.city.movieNight>
+  <HH.Setting.city.movieNight.Desc>Колонисты время от времени устраивают киновечер, когда есть включённый экран проектора с местами.</HH.Setting.city.movieNight.Desc>
+  <HH.Setting.city.movieNightChance>Шанс киновечера за вечер</HH.Setting.city.movieNightChance>
+  <HH.Setting.city.movieNightChance.Desc>Шанс, что колония начнёт киновечер в данный вечер (18:00).</HH.Setting.city.movieNightChance.Desc>
+  <HH.Setting.city.parkCooldownHours>Часов между посещениями скамеек на гостя</HH.Setting.city.parkCooldownHours>
+  <HH.Setting.city.parkCooldownHours.Desc>Гость садится на скамейку не чаще одного раза за это время.</HH.Setting.city.parkCooldownHours.Desc>
+  <HH.Setting.city.parkRestTicks>Время отдыха на скамейке (тики)</HH.Setting.city.parkRestTicks>
+  <HH.Setting.city.parkRestTicks.Desc>Сколько кто-то сидит на скамейке в парке.</HH.Setting.city.parkRestTicks.Desc>
+  <HH.Setting.city.priceTolerance>Терпимость гостей к ценам</HH.Setting.city.priceTolerance>
+  <HH.Setting.city.priceTolerance.Desc>Сколько гости готовы платить за городские услуги относительно опорной цены. Следует ползунку сложности; 1 = стандарт.</HH.Setting.city.priceTolerance.Desc>
+  <HH.Setting.city.researchMode>Режим исследований</HH.Setting.city.researchMode>
+  <HH.Setting.city.researchMode.Desc>Полный: проекты «Городская жизнь» нужно исследовать. Выкл.: всё из «Городской жизни» доступно сразу.</HH.Setting.city.researchMode.Desc>
+  <HH.Setting.city.salonCooldownHours>Часов между стрижками на гостя</HH.Setting.city.salonCooldownHours>
+  <HH.Setting.city.salonCooldownHours.Desc>Гость получает новый образ не чаще одного раза за это время.</HH.Setting.city.salonCooldownHours.Desc>
+  <HH.Setting.city.salonDyePrice>Доплата за окрашивание</HH.Setting.city.salonDyePrice>
+  <HH.Setting.city.salonDyePrice.Desc>Доплата за смену цвета волос (нужна «Биотехнология» или «Идеология»).</HH.Setting.city.salonDyePrice.Desc>
+  <HH.Setting.city.salonPrice>Цена стрижки</HH.Setting.city.salonPrice>
+  <HH.Setting.city.salonPrice.Desc>Сколько гость платит за стрижку и новую укладку.</HH.Setting.city.salonPrice.Desc>
+  <HH.Setting.city.salonServiceTicks>Время укладки (тики)</HH.Setting.city.salonServiceTicks>
+  <HH.Setting.city.salonServiceTicks.Desc>Сколько длится стрижка у стилиста среднего уровня.</HH.Setting.city.salonServiceTicks.Desc>
+  <HH.Setting.city.salonTattooPrice>Доплата за татуировку</HH.Setting.city.salonTattooPrice>
+  <HH.Setting.city.salonTattooPrice.Desc>Доплата за татуировку (нужна «Идеология»).</HH.Setting.city.salonTattooPrice.Desc>
+  <HH.Setting.city.salonWaitTicks>Предел ожидания (тики)</HH.Setting.city.salonWaitTicks>
+  <HH.Setting.city.salonWaitTicks.Desc>Столько гость ждёт в кресле, пока кто-нибудь придёт, и затем уходит недовольным.</HH.Setting.city.salonWaitTicks.Desc>
+  <HH.Setting.city.securityChance>Шанс нанять (база)</HH.Setting.city.securityChance>
+  <HH.Setting.city.securityChance.Desc>Базовый шанс на каждого подходящего гостя; очень состоятельные гости (80+) получают +40 пунктов.</HH.Setting.city.securityChance.Desc>
+  <HH.Setting.city.securityDayShare>Дневная плата (доля бюджета)</HH.Setting.city.securityDayShare>
+  <HH.Setting.city.securityDayShare.Desc>Телохранитель стоит эту долю бюджета гостя в день, списывается почасово.</HH.Setting.city.securityDayShare.Desc>
+  <HH.Setting.city.securityHireHours>Часов на поиск телохранителя</HH.Setting.city.securityHireHours>
+  <HH.Setting.city.securityHireHours.Desc>Найм, для которого за это время не находится свободного вооружённого колониста, отменяется без оплаты.</HH.Setting.city.securityHireHours.Desc>
+  <HH.Setting.city.securityMinHourFee>Минимальная почасовая плата</HH.Setting.city.securityMinHourFee>
+  <HH.Setting.city.securityMinHourFee.Desc>Телохранитель никогда не стоит меньше этого в час.</HH.Setting.city.securityMinHourFee.Desc>
+  <HH.Setting.city.securityMinWealth>Состоятельность для телохранителя</HH.Setting.city.securityMinWealth>
+  <HH.Setting.city.securityMinWealth.Desc>Гости ниже этого уровня состоятельности (от 1 до 100) никогда не нанимают защиту.</HH.Setting.city.securityMinWealth.Desc>
+  <HH.Setting.city.securityOn>Услуга телохранителей</HH.Setting.city.securityOn>
+  <HH.Setting.city.securityOn.Desc>Состоятельные гости могут нанять одного из ваших вооружённых колонистов в телохранители.</HH.Setting.city.securityOn.Desc>
+  <HH.Setting.city.taxiArrivalChance>Шанс приехать на такси</HH.Setting.city.taxiArrivalChance>
+  <HH.Setting.city.taxiArrivalChance.Desc>Доля прибывающих гостей, которых высаживают у стоянки такси, а не приходят пешком от края карты.</HH.Setting.city.taxiArrivalChance.Desc>
+  <HH.Setting.city.taxiArrivalFee>Плата за посадку</HH.Setting.city.taxiArrivalFee>
+  <HH.Setting.city.taxiArrivalFee.Desc>Сколько прибывающий гость платит колонии за высадку у стоянки.</HH.Setting.city.taxiArrivalFee.Desc>
+  <HH.Setting.city.taxiDepartureChance>Шанс вызвать такси при отъезде</HH.Setting.city.taxiDepartureChance>
+  <HH.Setting.city.taxiDepartureChance.Desc>Доля уезжающих гостей, которые вызывают такси, когда есть свободная стоянка (растёт с достатком).</HH.Setting.city.taxiDepartureChance.Desc>
+  <HH.Setting.city.taxiFare>Стоимость такси</HH.Setting.city.taxiFare>
+  <HH.Setting.city.taxiFare.Desc>Сколько уезжающий гость платит за поездку от стоянки такси.</HH.Setting.city.taxiFare.Desc>
+  <HH.Setting.city.taxiWaitTicks>Ожидание машины (тики)</HH.Setting.city.taxiWaitTicks>
+  <HH.Setting.city.taxiWaitTicks.Desc>Сколько гость ждёт на стоянке, прежде чем машина отъедет.</HH.Setting.city.taxiWaitTicks.Desc>
+  <HH.Setting.core.guide>Показывать справочник Hearth &amp; Harbor</HH.Setting.core.guide>
+  <HH.Setting.core.guide.Desc>Помощник обучения в правом верхнем углу. Щёлкните правой кнопкой, чтобы его скрыть.</HH.Setting.core.guide.Desc>
+  <HH.Setting.core.helpHint>Показывать короткую подсказку о помощи там, где вы делаете ставки</HH.Setting.core.helpHint>
+  <HH.Setting.core.helpHint.Desc>Тихая короткая строка на каждом экране, где вы сами делаете ставки: если азартные игры становятся проблемой в реальной жизни, помощь существует (findahelpline.com). Больше нигде не показывается.</HH.Setting.core.helpHint.Desc>
+  <HH.Setting.core.rngAlgorithm>Алгоритм генератора случайных чисел</HH.Setting.core.rngAlgorithm>
+  <HH.Setting.core.rngAlgorithm.Desc>Алгоритм для всех случайных потоков Hearth &amp; Harbor. Шансы одинаковы, различается только последовательность. ChaCha8 криптографический (параноидальный), SplitMix64 самый быстрый.</HH.Setting.core.rngAlgorithm.Desc>
+  <HH.Setting.core.sealedFate>Запечатанная судьба</HH.Setting.core.sealedFate>
+  <HH.Setting.core.sealedFate.Desc>Если включено: перезагрузка сохранения не перебрасывает события гостей (всё использует запечатанные случайные потоки). Ставки игрока, банковские сделки и лотерея всегда запечатаны.</HH.Setting.core.sealedFate.Desc>
+  <HH.Setting.dlc.aiIdeoPrecepts>Давать денежные предписания и ИИ-идеологиям</HH.Setting.dlc.aiIdeoPrecepts>
+  <HH.Setting.dlc.aiIdeoPrecepts.Desc>Случайные ИИ-идеологии один раз получают позицию по индульгенциям и платному вознесению, с учётом их мемов. Фиксированные идеологии фракций никогда не затрагиваются.</HH.Setting.dlc.aiIdeoPrecepts.Desc>
+  <HH.Setting.dlc.fundDestination>Пожертвования колонистов идут</HH.Setting.dlc.fundDestination>
+  <HH.Setting.dlc.fundDestination.Desc>Божеству: серебро просто исчезает. Фракции веры: если фракция разделяет веру, она получает расположение (+1 за каждые 500 серебра, не больше +5 за квадрум). Колонисты никогда не платят в ваш собственный храмовый фонд.</HH.Setting.dlc.fundDestination.Desc>
+  <HH.Setting.dlc.indulgenceCapScale>Лимиты покупки индульгенций</HH.Setting.dlc.indulgenceCapScale>
+  <HH.Setting.dlc.indulgenceCapScale.Desc>Множитель лимитов покупки на персонажа, колонию и идеологию. 1 = лимиты как задумано.</HH.Setting.dlc.indulgenceCapScale.Desc>
+  <HH.Setting.dlc.indulgenceFactor>Множитель цены индульгенций</HH.Setting.dlc.indulgenceFactor>
+  <HH.Setting.dlc.indulgenceFactor.Desc>Множитель для каждой цены индульгенции и вознесения (фактор «веры на продажу» из таблицы денег и веры).</HH.Setting.dlc.indulgenceFactor.Desc>
+  <HH.Setting.dlc.luckShift>Удача: сдвиг выплат у Везучих и Невезучих</HH.Setting.dlc.luckShift>
+  <HH.Setting.dlc.luckShift.Desc>Везучим людям добавляется столько процентных пунктов к плану выплат игры, Невезучие теряют столько же. Сдвиг никогда не поднимает игру до 100 % и выше и не меняет случайный бросок.</HH.Setting.dlc.luckShift.Desc>
+  <HH.Setting.dlc.mandatoryBilleting>Обязательное гостеприимство по имперскому расквартированию</HH.Setting.dlc.mandatoryBilleting>
+  <HH.Setting.dlc.mandatoryBilleting.Desc>Приказы Империи о расквартировании приходят даже ниже уровня «Перебронирование». Выключено: только на жёстких уровнях (Перебронирование и выше). В любом случае только в колонии с гостевыми кроватями.</HH.Setting.dlc.mandatoryBilleting.Desc>
+  <HH.Setting.dlc.nobleBasePrice>Базовая цена проживания дворянина в сутки</HH.Setting.dlc.nobleBasePrice>
+  <HH.Setting.dlc.nobleBasePrice.Desc>Серебро за дворянина в сутки до надбавки за титул (+15 % за каждые 100 выслуги) и коэффициента довольства.</HH.Setting.dlc.nobleBasePrice.Desc>
+  <HH.Setting.dlc.nobleMoneyFactor>Денежный коэффициент дворян</HH.Setting.dlc.nobleMoneyFactor>
+  <HH.Setting.dlc.nobleMoneyFactor.Desc>Следует строке гостевых денег в таблице сложности: на лёгких уровнях богаче, на тяжёлых беднее.</HH.Setting.dlc.nobleMoneyFactor.Desc>
+  <HH.Setting.dlc.nobleStays>Проживание дворян</HH.Setting.dlc.nobleStays>
+  <HH.Setting.dlc.nobleStays.Desc>Дворяне Империи могут просить платного проживания. Вы всегда можете отказать. Нужна гостевая кровать в спальне, подходящей их титулу; они остаются как гости и платят в конце, в зависимости от того, насколько были довольны.</HH.Setting.dlc.nobleStays.Desc>
+  <HH.Setting.dlc.shrineReactions>Колонисты реагируют на святыни других вер</HH.Setting.dlc.shrineReactions>
+  <HH.Setting.dlc.shrineReactions.Desc>Прозелиты и сторонники превосходства не любят святыни других вер на своей земле; терпимые идеологии им нравятся.</HH.Setting.dlc.shrineReactions.Desc>
+  <HH.Setting.dlc.xenoHospitality>Предпочтения ксенотипов</HH.Setting.dlc.xenoHospitality>
+  <HH.Setting.dlc.xenoHospitality.Desc>Ксенотипы и гены гостей определяют, какие комнаты и товары им нравятся (тёмные комнаты для сангвинов, холодные для иттакинов, ...).</HH.Setting.dlc.xenoHospitality.Desc>
+  <HH.Setting.finance.cryptoOn>Криптоактивы</HH.Setting.finance.cryptoOn>
+  <HH.Setting.finance.cryptoOn.Desc>Предлагать RimCoin и мемкоины.</HH.Setting.finance.cryptoOn.Desc>
+  <HH.Setting.finance.fallbackWindow>Инвестиции в меню пульта связи</HH.Setting.finance.fallbackWindow>
+  <HH.Setting.finance.fallbackWindow.Desc>Также предлагать экраны инвестиций в плавающем меню пульта связи, даже когда доступно окно банка.</HH.Setting.finance.fallbackWindow.Desc>
+  <HH.Setting.finance.hazardMult>Катастрофы ×</HH.Setting.finance.hazardMult>
+  <HH.Setting.finance.hazardMult.Desc>Умножает обвалы, «сбросы» (rug pull), дефолты, взломы бирж и банковские паники. Средняя величина на длинной дистанции не меняется, меняется только то, как часто это бьёт по карману.</HH.Setting.finance.hazardMult.Desc>
+  <HH.Setting.finance.jumpMult>Скачки цен ×</HH.Setting.finance.jumpMult>
+  <HH.Setting.finance.jumpMult.Desc>Умножает частоту самостоятельных скачков активов (квартальные цифры, скачки криптовалют, накачки мемкоинов). Средняя величина на длинной дистанции не меняется: математика компенсирует.</HH.Setting.finance.jumpMult.Desc>
+  <HH.Setting.finance.memeInterval>Дней между новыми мемкоинами</HH.Setting.finance.memeInterval>
+  <HH.Setting.finance.memeInterval.Desc>Среднее число дней до появления следующего мемкоина на бирже.</HH.Setting.finance.memeInterval.Desc>
+  <HH.Setting.finance.memeOn>Мемкоины</HH.Setting.finance.memeOn>
+  <HH.Setting.finance.memeOn.Desc>Новый мемкоин появляется каждые несколько дней и исключается через три. Большинство держателей теряют деньги, а некоторые богатеют.</HH.Setting.finance.memeOn.Desc>
+  <HH.Setting.finance.newsMessages>Рыночные новости в виде сообщений</HH.Setting.finance.newsMessages>
+  <HH.Setting.finance.newsMessages.Desc>Показывать обвалы, подъёмы и взломы короткими сообщениями (только если у вас есть что-то затронутое).</HH.Setting.finance.newsMessages.Desc>
+  <HH.Setting.finance.nftOn>NFT</HH.Setting.finance.nftOn>
+  <HH.Setting.finance.nftOn.Desc>Сертификаты владения картинками. Продажа занимает от одного до четырёх дней и стоит спреда.</HH.Setting.finance.nftOn.Desc>
+  <HH.Setting.finance.omenCapA>Лимит позиции, шансовые рынки</HH.Setting.finance.omenCapA>
+  <HH.Setting.finance.omenCapA.Desc>Наибольшая доля вашего капитала в одном шансовом рынке Omen.</HH.Setting.finance.omenCapA.Desc>
+  <HH.Setting.finance.omenCapB>Лимит позиции, мировые рынки</HH.Setting.finance.omenCapB>
+  <HH.Setting.finance.omenCapB.Desc>Наибольшая доля вашего капитала в одном рынке Omen по мировому событию.</HH.Setting.finance.omenCapB.Desc>
+  <HH.Setting.finance.omenFee>Комиссия Omen</HH.Setting.finance.omenFee>
+  <HH.Setting.finance.omenFee.Desc>Доля каждой ставки, которую забирает биржа (и ещё раз, когда вы закрываете позицию досрочно).</HH.Setting.finance.omenFee.Desc>
+  <HH.Setting.finance.omenGamma>Искажение аутсайдеров γ</HH.Setting.finance.omenGamma>
+  <HH.Setting.finance.omenGamma.Desc>Ниже 1 биржа переоценивает маловероятные исходы (классическое смещение «фаворит–аутсайдер»). 1 = котировки равны истинным шансам.</HH.Setting.finance.omenGamma.Desc>
+  <HH.Setting.finance.omenSpread>Спред Omen</HH.Setting.finance.omenSpread>
+  <HH.Setting.finance.omenSpread.Desc>Маржа букмекера: цена ДА и цена НЕТ в сумме дают 1 плюс эта величина.</HH.Setting.finance.omenSpread.Desc>
+  <HH.Setting.finance.profit>Доходность (годовой множитель M)</HH.Setting.finance.profit>
+  <HH.Setting.finance.profit.Desc>Насколько в среднем растут вложенные деньги за игровой год (60 дней) для эталонного фонда RimIndex 50: 1,2 означает +20 % в год, 1,0 означает ни плюса, ни минуса, ниже 1 — потери. Логарифмическая шкала от 0,1 до 100; введите число для точного значения. Следует за ползунком сложности, пока вы сами не зададите значение.</HH.Setting.finance.profit.Desc>
+  <HH.Setting.finance.projectStakePct>Лимит ставки на проект</HH.Setting.finance.projectStakePct>
+  <HH.Setting.finance.projectStakePct.Desc>Наибольшая ставка на один проект в долях от вашего капитала.</HH.Setting.finance.projectStakePct.Desc>
+  <HH.Setting.finance.projectTotalPct>Лимит ставок, все проекты</HH.Setting.finance.projectTotalPct>
+  <HH.Setting.finance.projectTotalPct.Desc>Наибольшая сумма всех открытых ставок на проекты (лонги и шорты вместе) в долях от вашего капитала.</HH.Setting.finance.projectTotalPct.Desc>
+  <HH.Setting.finance.projectYearCapPct>Годовой потолок прибыли</HH.Setting.finance.projectYearCapPct>
+  <HH.Setting.finance.projectYearCapPct.Desc>Чистая прибыль от лонгов и шортов за игровой год ограничена этой долей вашего капитала на начало года. Сверх этого банк возвращает только ставку.</HH.Setting.finance.projectYearCapPct.Desc>
+  <HH.Setting.finance.projectsOn>Проекты фракций и проектные шорты</HH.Setting.finance.projectsOn>
+  <HH.Setting.finance.projectsOn.Desc>Фракции объявляют проекты; можно инвестировать (лонг) или делать ставку против них (шорт).</HH.Setting.finance.projectsOn.Desc>
+  <HH.Setting.finance.volMult>Волатильность ×</HH.Setting.finance.volMult>
+  <HH.Setting.finance.volMult.Desc>Умножает размах колебаний цен день ото дня. 1 = цифры из дизайна (индекс 1,5 % в день, мемкоины 15 %).</HH.Setting.finance.volMult.Desc>
+  <HH.Setting.insurance.assessmentDays>Оценка несчастного случая (дни)</HH.Setting.insurance.assessmentDays>
+  <HH.Setting.insurance.assessmentDays.Desc>План от несчастных случаев оценивает степень инвалидности через столько дней после происшествия (по умолчанию квадрум). До тех пор письмо показывает предварительную оценку.</HH.Setting.insurance.assessmentDays.Desc>
+  <HH.Setting.insurance.billingDays>Интервал списания взносов (дни)</HH.Setting.insurance.billingDays>
+  <HH.Setting.insurance.billingDays.Desc>Взносы списываются автоматически каждые столько дней (со банковского счёта, иначе из кассы или с серебра на складе).</HH.Setting.insurance.billingDays.Desc>
+  <HH.Setting.insurance.changeFee>Плата за изменение полиса (серебро)</HH.Setting.insurance.changeFee>
+  <HH.Setting.insurance.changeFee.Desc>Сколько Clawback Mutual берёт за каждое изменение суммы, тарифа или дополнений действующего полиса («административные хлопоты»). Бесплатно в «Стандартном номере».</HH.Setting.insurance.changeFee.Desc>
+  <HH.Setting.insurance.changeLimitPerQuadrum>Изменений на полис за квадрум</HH.Setting.insurance.changeLimitPerQuadrum>
+  <HH.Setting.insurance.changeLimitPerQuadrum.Desc>Как часто можно изменять один полис за квадрум. 0 = без ограничений («Стандартный номер»); «Перебронирование» и более жёсткие уровни ограничивают это.</HH.Setting.insurance.changeLimitPerQuadrum.Desc>
+  <HH.Setting.insurance.changeWaitingDays>Период ожидания после повышения (дни)</HH.Setting.insurance.changeWaitingDays>
+  <HH.Setting.insurance.changeWaitingDays.Desc>После повышения суммы, тарифа или добавления дополнения случаи внутри этого периода ожидания по-прежнему оцениваются по старому покрытию (полис, повышенный за минуту до налёта, не платит по новому уровню). Понижение покрытия ожидания не требует.</HH.Setting.insurance.changeWaitingDays.Desc>
+  <HH.Setting.insurance.claimLetters>Письма по каждому иску</HH.Setting.insurance.claimLetters>
+  <HH.Setting.insurance.claimLetters.Desc>Clawback Mutual пишет письмо по каждому поданному иску (не больше одного уведомления «иск подан» в день) и по каждому решению.</HH.Setting.insurance.claimLetters.Desc>
+  <HH.Setting.insurance.claimMode>Как подаются иски</HH.Setting.insurance.claimMode>
+  <HH.Setting.insurance.claimMode.Desc>По форме: страховой случай приносит письмо «возможен иск», и вы подаёте иск на бланке до срока (результат выпадает точно так же, как раньше; бланк косметический, кроме выбора выплаты). Автоматически: иски подаются за вас в момент ущерба.</HH.Setting.insurance.claimMode.Desc>
+  <HH.Setting.insurance.claimReminder>Напоминать перед сроком иска</HH.Setting.insurance.claimReminder>
+  <HH.Setting.insurance.claimReminder.Desc>Короткое напоминающее письмо за два дня до закрытия окна подачи.</HH.Setting.insurance.claimReminder.Desc>
+  <HH.Setting.insurance.claimsAttitude>Отношение к искам</HH.Setting.insurance.claimsAttitude>
+  <HH.Setting.insurance.claimsAttitude.Desc>Насколько охотно отдел исков находит повод не платить. 0 % «Никогда не выкручивается» · 15 % «Мелкий шрифт» («Стандартный номер») · 40 % «Творческий бухгалтерский учёт» · 75 % «Нашим юристам скучно» · 100 % «Почти всегда».</HH.Setting.insurance.claimsAttitude.Desc>
+  <HH.Setting.insurance.deadlineScale>Сроки подачи исков (множитель)</HH.Setting.insurance.deadlineScale>
+  <HH.Setting.insurance.deadlineScale.Desc>Умножает срок подачи каждого полиса (Wanderlust 5 дней, Legal Shield 5 дней, имущество около 15 дней на «Сойдёт»; Premium +50 %, Bare Minimum -30 %).</HH.Setting.insurance.deadlineScale.Desc>
+  <HH.Setting.insurance.formError>Шанс ошибки в бланке расторжения</HH.Setting.insurance.formError>
+  <HH.Setting.insurance.formError.Desc>Пункт 30: расторжение возвращается с ошибкой в бланке. На «Стандартном номере» его автоматически подают повторно, срок сохраняется; на более жёстких уровнях теряется квадрум.</HH.Setting.insurance.formError.Desc>
+  <HH.Setting.insurance.formTextAi>ИИ-ответ на заявление по иску</HH.Setting.insurance.formTextAi>
+  <HH.Setting.insurance.formTextAi.Desc>Если модуль ИИ-оформления включён и вы на него согласились, отдел исков отвечает на ваше заявление своими словами (сумма и результат не меняются). Без него заявление сохраняется и игнорируется.</HH.Setting.insurance.formTextAi.Desc>
+  <HH.Setting.insurance.hospitalCapDays>Rim Health Plan: оплачиваемые дни в лазарете</HH.Setting.insurance.hospitalCapDays>
+  <HH.Setting.insurance.hospitalCapDays.Desc>Наибольшее число дней в лазарете, которое Rim Health Plan оплачивает одному колонисту в пределах окна ниже (ограничение больничной выплаты; не даёт хронической болезни платить больше, чем стоит взнос).</HH.Setting.insurance.hospitalCapDays.Desc>
+  <HH.Setting.insurance.hospitalCapWindow>Rim Health Plan: окно (дни)</HH.Setting.insurance.hospitalCapWindow>
+  <HH.Setting.insurance.hospitalCapWindow.Desc>Указанный выше предел считает оплаченные дни каждого колониста за столько дней (по умолчанию квадрум).</HH.Setting.insurance.hospitalCapWindow.Desc>
+  <HH.Setting.insurance.loading>Надбавка страховщика</HH.Setting.insurance.loading>
+  <HH.Setting.insurance.loading.Desc>Наценка к ожидаемому ущербу, из которой складывается премия. В среднем эту долю оставляет страховщик; 0 % — честная по расчёту цена.</HH.Setting.insurance.loading.Desc>
+  <HH.Setting.insurance.maxPersonSum>Максимальная личная сумма</HH.Setting.insurance.maxPersonSum>
+  <HH.Setting.insurance.maxPersonSum.Desc>Наибольшая базовая сумма полиса от несчастного случая, на пенсию или для поездок (но не больше чем в два раза рыночной стоимости колониста).</HH.Setting.insurance.maxPersonSum.Desc>
+  <HH.Setting.insurance.maxPropertySum>Максимальная сумма имущества</HH.Setting.insurance.maxPropertySum>
+  <HH.Setting.insurance.maxPropertySum.Desc>Наибольшая страховая сумма полиса на имущество.</HH.Setting.insurance.maxPropertySum.Desc>
+  <HH.Setting.insurance.negotiation>Разрешить торговаться по выплатам</HH.Setting.insurance.negotiation>
+  <HH.Setting.insurance.negotiation.Desc>Выплаты можно оспаривать (до трёх раундов). В стандартном номере торг ничего не стоит.</HH.Setting.insurance.negotiation.Desc>
+  <HH.Setting.insurance.noticeDays>Срок уведомления о расторжении (дни)</HH.Setting.insurance.noticeDays>
+  <HH.Setting.insurance.noticeDays.Desc>Расторжение вступает в силу при ближайшей смене квадрума, если подано не позднее чем за столько дней. Стандартный номер — 3 дня, «Переполнено» — один квадрум, «Почему?» — год.</HH.Setting.insurance.noticeDays.Desc>
+  <HH.Setting.insurance.pensionMaxWorkHours>Пенсия: допустимо часов работы в день</HH.Setting.insurance.pensionMaxWorkHours>
+  <HH.Setting.insurance.pensionMaxWorkHours.Desc>Сколько часов в день пенсионер может быть назначен на «Работу» в распорядке. «Всё подряд», «Радость», «Сон» и «Медитация» считаются свободным временем.</HH.Setting.insurance.pensionMaxWorkHours.Desc>
+  <HH.Setting.insurance.pensionRule>Правило работы для пенсионеров</HH.Setting.insurance.pensionRule>
+  <HH.Setting.insurance.pensionRule.Desc>Тот, кто получает ежедневную пенсию («Золотые годы», «Достаточно хорошо» или «Премиум», возраст 60+), может работать в распорядке лишь несколько часов в день. Применять: забастовки лишают пенсии (2-й раз — пенсия этого периода, 3-й — право на неё). Только предупреждать: письма и оповещение, без штрафа. Выкл.: правила нет.</HH.Setting.insurance.pensionRule.Desc>
+  <HH.Setting.insurance.requireResearch>Страховки требуют исследований</HH.Setting.insurance.requireResearch>
+  <HH.Setting.insurance.requireResearch.Desc>Полисы открываются исследованиями SL_Insurance («Минимум», «Достаточно хорошо») и SL_Actuarial («Премиум», «Страсть к странствиям»). Выкл.: всё доступно сразу.</HH.Setting.insurance.requireResearch.Desc>
+  <HH.Setting.insurance.retentionDialogs>Диалоги удержания</HH.Setting.insurance.retentionDialogs>
+  <HH.Setting.insurance.retentionDialogs.Desc>Сколько раз Десмонд Талли (старший специалист по удержанию) отговаривает от расторжения. Стандартный номер: одно честное предложение.</HH.Setting.insurance.retentionDialogs.Desc>
+  <HH.Setting.insurance.salesPressure>Давление продаж</HH.Setting.insurance.salesPressure>
+  <HH.Setting.insurance.salesPressure.Desc>Насколько напористо продаёт Clawback Mutual: предустановленные допы, предложения удержания, ошибки в формах, намёки на доплату. У каждого приёма есть свой переключатель ниже.</HH.Setting.insurance.salesPressure.Desc>
+  <HH.Setting.insurance.showStatusColumn>Столбец страховки в таблицах колонистов</HH.Setting.insurance.showStatusColumn>
+  <HH.Setting.insurance.showStatusColumn.Desc>Показывает статус страховки каждого колониста в таблице назначений (только после появления первого полиса).</HH.Setting.insurance.showStatusColumn.Desc>
+  <HH.Setting.insurance.showStatusTab>Вкладка страховки у колонистов</HH.Setting.insurance.showStatusTab>
+  <HH.Setting.insurance.showStatusTab.Desc>Добавляет вкладку «Страховка» в карточку колониста (только после появления первого полиса).</HH.Setting.insurance.showStatusTab.Desc>
+  <HH.Setting.insurance.trick.badge>Приём: значок «Большинство колоний выбирают Премиум»</HH.Setting.insurance.trick.badge>
+  <HH.Setting.insurance.trick.badge.Desc>Значок в столбце «Премиум» (и, сложнее, серый «Премиум Плюс»).</HH.Setting.insurance.trick.badge.Desc>
+  <HH.Setting.insurance.trick.formError>Приём: ошибки в формах</HH.Setting.insurance.trick.formError>
+  <HH.Setting.insurance.trick.formError.Desc>Расторжения, которые возвращаются с ошибкой в форме.</HH.Setting.insurance.trick.formError.Desc>
+  <HH.Setting.insurance.trick.preTicked>Приём: предустановленные допы</HH.Setting.insurance.trick.preTicked>
+  <HH.Setting.insurance.trick.preTicked.Desc>Допы, отмеченные за вас (зависит от «Давления продаж»: всегда, никогда или по настройке).</HH.Setting.insurance.trick.preTicked.Desc>
+  <HH.Setting.insurance.trick.retention>Приём: предложения удержания</HH.Setting.insurance.trick.retention>
+  <HH.Setting.insurance.trick.retention.Desc>Диалоги удержания при расторжении.</HH.Setting.insurance.trick.retention.Desc>
+  <HH.Setting.insurance.trick.upsell>Приём: намёки на доплату</HH.Setting.insurance.trick.upsell>
+  <HH.Setting.insurance.trick.upsell.Desc>Письма с предложением большего или лучшего покрытия (но никогда в течение пяти дней после смерти).</HH.Setting.insurance.trick.upsell.Desc>
+  <HH.Setting.insurance.trickCap>Потолок стоимости приёмов продаж</HH.Setting.insurance.trickCap>
+  <HH.Setting.insurance.trickCap.Desc>Все приёмы продаж вместе могут стоить не более этой доли годовых премий; остаток возвращается как «Бонус лояльности» в годовом письме.</HH.Setting.insurance.trickCap.Desc>
+  <HH.Setting.insurance.waitingDays>Период ожидания (дни)</HH.Setting.insurance.waitingDays>
+  <HH.Setting.insurance.waitingDays.Desc>Покрытие начинается через столько дней («которое начинается после начала покрытия»). Ущерб в период ожидания не выплачивается.</HH.Setting.insurance.waitingDays.Desc>
+  <HH.Setting.lottery.colonyFee>Комиссия с каждого билета</HH.Setting.lottery.colonyFee>
+  <HH.Setting.lottery.colonyFee.Desc>Дополнительное серебро с билета, которое остаётся вам (повышает цену для покупателей).</HH.Setting.lottery.colonyFee.Desc>
+  <HH.Setting.lottery.colonyInterval>Дни между розыгрышами колонии</HH.Setting.lottery.colonyInterval>
+  <HH.Setting.lottery.colonyInterval.Desc>Розыгрыш каждые столько дней; джекпот переносится на следующий.</HH.Setting.lottery.colonyInterval.Desc>
+  <HH.Setting.lottery.colonyJackpotCap>Потолок джекпота колонии</HH.Setting.lottery.colonyJackpotCap>
+  <HH.Setting.lottery.colonyJackpotCap.Desc>Джекпот вашей лотереи переносится, пока не достигнет этой суммы.</HH.Setting.lottery.colonyJackpotCap.Desc>
+  <HH.Setting.lottery.colonyJackpotShare>Доля банка: джекпот</HH.Setting.lottery.colonyJackpotShare>
+  <HH.Setting.lottery.colonyJackpotShare.Desc>Доля банка за 4 верных числа.</HH.Setting.lottery.colonyJackpotShare.Desc>
+  <HH.Setting.lottery.colonyOn>Лотерея колонии</HH.Setting.lottery.colonyOn>
+  <HH.Setting.lottery.colonyOn.Desc>Своя лотерея: гости и смоделированные игроки дружественных поселений покупают билеты, а вы оставляете то, что не выплачено.</HH.Setting.lottery.colonyOn.Desc>
+  <HH.Setting.lottery.colonyPrice>Цена билета колонии</HH.Setting.lottery.colonyPrice>
+  <HH.Setting.lottery.colonyPrice.Desc>Цена одного билета вашей лотереи.</HH.Setting.lottery.colonyPrice.Desc>
+  <HH.Setting.lottery.colonyQuote>Доля выплат колонии</HH.Setting.lottery.colonyQuote>
+  <HH.Setting.lottery.colonyQuote.Desc>Доля цены билета, которая идёт в банк. Остальное — ваше. Более высокая доля, чем у общего розыгрыша, привлекает больше покупателей.</HH.Setting.lottery.colonyQuote.Desc>
+  <HH.Setting.lottery.colonySecondShare>Доля банка: 2-й ранг</HH.Setting.lottery.colonySecondShare>
+  <HH.Setting.lottery.colonySecondShare.Desc>Доля банка за 3 верных числа.</HH.Setting.lottery.colonySecondShare.Desc>
+  <HH.Setting.lottery.colonyThirdShare>Доля банка: 3-й ранг</HH.Setting.lottery.colonyThirdShare>
+  <HH.Setting.lottery.colonyThirdShare.Desc>Доля банка за 2 верных числа.</HH.Setting.lottery.colonyThirdShare.Desc>
+  <HH.Setting.lottery.demandBase>Базовый спрос на билеты</HH.Setting.lottery.demandBase>
+  <HH.Setting.lottery.demandBase.Desc>Билетов на человека в день при нейтральных условиях — основа формулы спроса.</HH.Setting.lottery.demandBase.Desc>
+  <HH.Setting.lottery.globalInterval>Дни между общими розыгрышами</HH.Setting.lottery.globalInterval>
+  <HH.Setting.lottery.globalInterval.Desc>Розыгрыш каждые столько дней.</HH.Setting.lottery.globalInterval.Desc>
+  <HH.Setting.lottery.globalOn>Большой розыгрыш Glitterworld</HH.Setting.lottery.globalOn>
+  <HH.Setting.lottery.globalOn.Desc>Общая лотерея: розыгрыш каждые несколько дней, билеты покупаются в окошке банка.</HH.Setting.lottery.globalOn.Desc>
+  <HH.Setting.lottery.globalPrice>Общая цена билета</HH.Setting.lottery.globalPrice>
+  <HH.Setting.lottery.globalPrice.Desc>Цена одного билета общего розыгрыша.</HH.Setting.lottery.globalPrice.Desc>
+  <HH.Setting.lottery.globalQuote>Доля выплат общей лотереи</HH.Setting.lottery.globalQuote>
+  <HH.Setting.lottery.globalQuote.Desc>Доля продаж билетов, которая идёт в призы (джекпот получает 40 % от неё).</HH.Setting.lottery.globalQuote.Desc>
+  <HH.Setting.lottery.internationalScale>Смоделированные игроки ×</HH.Setting.lottery.internationalScale>
+  <HH.Setting.lottery.internationalScale.Desc>Умножает билеты, которые смоделированные игроки всех поселений покупают в общем розыгрыше.</HH.Setting.lottery.internationalScale.Desc>
+  <HH.Setting.lottery.jackpotCap>Потолок общего джекпота</HH.Setting.lottery.jackpotCap>
+  <HH.Setting.lottery.jackpotCap.Desc>Джекпот переносится, пока не достигнет этой суммы.</HH.Setting.lottery.jackpotCap.Desc>
+  <HH.Setting.thrumbo.edgeShift>Lucky Thrumbo: сдвиг преимущества заведения</HH.Setting.thrumbo.edgeShift>
+  <HH.Setting.thrumbo.edgeShift.Desc>Процентные пункты, добавляемые к преимуществу заведения в каждой игре Lucky Thrumbo (база: автоматы 8 %, рулетка 2,7 %, блэкджек по правилам). 0 = стандартные преимущества; отрицательные значения работают в вашу пользу. Следует ползунку сложности.</HH.Setting.thrumbo.edgeShift.Desc>
+  <HH.Setting.thrumbo.maxBetCap>Lucky Thrumbo: лимит стола, потолок (серебро)</HH.Setting.thrumbo.maxBetCap>
+  <HH.Setting.thrumbo.maxBetCap.Desc>Только когда лимит стола включён: ни одна ставка не бывает выше этой суммы.</HH.Setting.thrumbo.maxBetCap.Desc>
+  <HH.Setting.thrumbo.maxBetFloor>Lucky Thrumbo: лимит стола, минимум (серебро)</HH.Setting.thrumbo.maxBetFloor>
+  <HH.Setting.thrumbo.maxBetFloor.Desc>Только когда лимит стола включён: даже бедная колония может ставить за раунд не меньше этой суммы.</HH.Setting.thrumbo.maxBetFloor.Desc>
+  <HH.Setting.thrumbo.maxBetShare>Lucky Thrumbo: лимит стола (доля от чистого капитала)</HH.Setting.thrumbo.maxBetShare>
+  <HH.Setting.thrumbo.maxBetShare.Desc>Только когда лимит стола включён: одна ставка может быть не более этой доли вашего чистого капитала (счёт плюс серебро дома, минус долги), в пределах минимума и потолка ниже.</HH.Setting.thrumbo.maxBetShare.Desc>
+  <HH.Setting.thrumbo.minBet>Lucky Thrumbo: наименьшая ставка (серебро)</HH.Setting.thrumbo.minBet>
+  <HH.Setting.thrumbo.minBet.Desc>Наименьшая ставка, которую принимает Lucky Thrumbo.</HH.Setting.thrumbo.minBet.Desc>
+  <HH.Setting.thrumbo.tableLimit>Lucky Thrumbo: лимит стола</HH.Setting.thrumbo.tableLimit>
+  <HH.Setting.thrumbo.tableLimit.Desc>Если включено, одна ставка не превышает доли вашего чистого капитала (три настройки ниже). Выкл.: можно ставить всё, что есть.</HH.Setting.thrumbo.tableLimit.Desc>
+  <HH.Setting.underworld.exposureChance>Шанс, что почтенный гость наткнётся на заднюю комнату</HH.Setting.underworld.exposureChance>
+  <HH.Setting.underworld.exposureChance.Desc>При каждой проверке (примерно раз в 2 часа), пока в заведении есть почтенные гости, а задняя комната использовалась. Следует ползунку сложности.</HH.Setting.underworld.exposureChance.Desc>
+  <HH.Setting.underworld.fence.buyPercent>Скупщик покупает за</HH.Setting.underworld.fence.buyPercent>
+  <HH.Setting.underworld.fence.buyPercent.Desc>Доля рыночной стоимости, которую скупщик платит за краденое.</HH.Setting.underworld.fence.buyPercent.Desc>
+  <HH.Setting.underworld.fence.capital>Денежный ящик скупщика</HH.Setting.underworld.fence.capital>
+  <HH.Setting.underworld.fence.capital.Desc>Скупщик платит из своего ящика. Он пополняет его из кассы, а излишек возвращается в кассу.</HH.Setting.underworld.fence.capital.Desc>
+  <HH.Setting.underworld.fence.exposureChance>Шанс, что владелец узнает</HH.Setting.underworld.fence.exposureChance>
+  <HH.Setting.underworld.fence.exposureChance.Desc>За каждую перепроданную краденую вещь: фракция, у которой её украли, узнаёт, где она оказалась.</HH.Setting.underworld.fence.exposureChance.Desc>
+  <HH.Setting.underworld.fence.goodwillHit>Потеря расположения при раскрытии</HH.Setting.underworld.fence.goodwillHit>
+  <HH.Setting.underworld.fence.goodwillHit.Desc>До потолка сложности вашего уровня.</HH.Setting.underworld.fence.goodwillHit.Desc>
+  <HH.Setting.underworld.fence.sellPercent>Скупщик продаёт за</HH.Setting.underworld.fence.sellPercent>
+  <HH.Setting.underworld.fence.sellPercent.Desc>Доля рыночной стоимости, которую платят сомнительные покупатели.</HH.Setting.underworld.fence.sellPercent.Desc>
+  <HH.Setting.underworld.gang.feeMax>Плата за заднюю комнату (наибольшая)</HH.Setting.underworld.gang.feeMax>
+  <HH.Setting.underworld.gang.feeMin>Плата за заднюю комнату (наименьшая)</HH.Setting.underworld.gang.feeMin>
+  <HH.Setting.underworld.gang.feeMin.Desc>Сколько участник банды платит за заднюю комнату.</HH.Setting.underworld.gang.feeMin.Desc>
+  <HH.Setting.underworld.gang.intervalDays>Дни между визитами банд</HH.Setting.underworld.gang.intervalDays>
+  <HH.Setting.underworld.gang.intervalDays.Desc>Средний промежуток между визитами банд, когда есть задняя комната, бойцовская яма или скупщик.</HH.Setting.underworld.gang.intervalDays.Desc>
+  <HH.Setting.underworld.gang.intimidateChance>Шанс, что банда потребует плату за защиту</HH.Setting.underworld.gang.intimidateChance>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>Следует ползунку сложности; «Стандартный номер» и более лёгкие режимы никогда не навязывают ничего, кроме диалога, от которого можно отказаться.</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.prisonAccess>Банды могут посещать тюрьму</HH.Setting.underworld.gang.prisonAccess>
+  <HH.Setting.underworld.gang.prisonAccess.Desc>Разрешает экскурсию по камерам предварительного заключения (допрос заключённых) для гостей-банд. По умолчанию выключено; иначе тюрьмы закрыты для всех гостей.</HH.Setting.underworld.gang.prisonAccess.Desc>
+  <HH.Setting.underworld.gang.protectionFee>Требуемые деньги за защиту</HH.Setting.underworld.gang.protectionFee>
+  <HH.Setting.underworld.gang.sizeMax>Наибольший размер банды</HH.Setting.underworld.gang.sizeMax>
+  <HH.Setting.underworld.gang.tourFee>Плата за экскурсию по камерам</HH.Setting.underworld.gang.tourFee>
+  <HH.Setting.underworld.gang.tourFee.Desc>Платит участник банды за допрос заключённого в течение часа.</HH.Setting.underworld.gang.tourFee.Desc>
+  <HH.Setting.underworld.hunt.feeMax>Плата за охоту (наибольшая)</HH.Setting.underworld.hunt.feeMax>
+  <HH.Setting.underworld.hunt.feeMin>Плата за охоту (наименьшая)</HH.Setting.underworld.hunt.feeMin>
+  <HH.Setting.underworld.hunt.intervalDays>Дни между охотничьими группами</HH.Setting.underworld.hunt.intervalDays>
+  <HH.Setting.underworld.hunt.quarryCount>Дичь на одну охоту</HH.Setting.underworld.hunt.quarryCount>
+  <HH.Setting.underworld.hunt.quarryCount.Desc>Животных, которых группа выпускает в охотничьи угодья.</HH.Setting.underworld.hunt.quarryCount.Desc>
+  <HH.Setting.underworld.hunt.quarryHours>Часов, которые человек-добыча должен продержаться</HH.Setting.underworld.hunt.quarryHours>
+  <HH.Setting.underworld.hunt.quarryHours.Desc>Заключённый, который выдержит это время или доберётся до линии ограды, свободен.</HH.Setting.underworld.hunt.quarryHours.Desc>
+  <HH.Setting.underworld.lounge.price>Цена сеанса</HH.Setting.underworld.lounge.price>
+  <HH.Setting.underworld.lounge.price.Desc>Сколько гость платит в комнате отдыха с наркотиками. Гости берут только то, что позволяет их идеология.</HH.Setting.underworld.lounge.price.Desc>
+  <HH.Setting.underworld.mode>Как проявляется подполье</HH.Setting.underworld.mode>
+  <HH.Setting.underworld.mode.Desc>«Открывается в игре»: незнакомец спрашивает, есть ли у вас задняя комната, и только «да» открывает тёмную сторону. «Всегда»: открыто с самого начала. (Выкл. — переключатель модуля; «Cozy content intensity» скрывает его полностью.)</HH.Setting.underworld.mode.Desc>
+  <HH.Setting.underworld.organ.orderDays>Дней на доставку заказа</HH.Setting.underworld.organ.orderDays>
+  <HH.Setting.underworld.organ.orderPremium>Надбавка за заказанные органы</HH.Setting.underworld.organ.orderPremium>
+  <HH.Setting.underworld.organ.orderPremium.Desc>Только для Grim: готовый орган, доставленный в срок, оплачивается в столько раз дороже обычной цены.</HH.Setting.underworld.organ.orderPremium.Desc>
+  <HH.Setting.underworld.organ.priceFactor>Цена, которую платят за органы</HH.Setting.underworld.organ.priceFactor>
+  <HH.Setting.underworld.organ.priceFactor.Desc>Доля рыночной стоимости, которую платят анонимные покупатели.</HH.Setting.underworld.organ.priceFactor.Desc>
+  <HH.Setting.underworld.pit.betMax>Наибольшая ставка</HH.Setting.underworld.pit.betMax>
+  <HH.Setting.underworld.pit.betMax.Desc>Гости ставят не больше этой суммы серебра (и никогда больше трети своего бюджета).</HH.Setting.underworld.pit.betMax.Desc>
+  <HH.Setting.underworld.pit.betMin>Наименьшая ставка</HH.Setting.underworld.pit.betMin>
+  <HH.Setting.underworld.pit.betMin.Desc>Гости ставят не меньше этой суммы серебра.</HH.Setting.underworld.pit.betMin.Desc>
+  <HH.Setting.underworld.pit.fairRatio>Честность подбора бойцов</HH.Setting.underworld.pit.fairRatio>
+  <HH.Setting.underworld.pit.fairRatio.Desc>У более сильного бойца боевая мощь может превышать мощь более слабого не больше чем в это число раз.</HH.Setting.underworld.pit.fairRatio.Desc>
+  <HH.Setting.underworld.pit.houseCut>Комиссия дома со ставок</HH.Setting.underworld.pit.houseCut>
+  <HH.Setting.underworld.pit.houseCut.Desc>Доля общего банка ставок, которую оставляет дом (тотализатор).</HH.Setting.underworld.pit.houseCut.Desc>
+  <HH.Setting.underworld.pit.intervalHours>Часов между поединками</HH.Setting.underworld.pit.intervalHours>
+  <HH.Setting.underworld.pit.intervalHours.Desc>Яма с достаточным числом бойцов и зрителей начинает поединок с такой периодичностью.</HH.Setting.underworld.pit.intervalHours.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks>Наибольшая длительность поединка (тики)</HH.Setting.underworld.pit.maxBoutTicks>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>Поединок, который никто не выиграл за это время, считается ничьей: все ставки возвращаются.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.yieldHealth>Сдача при здоровье</HH.Setting.underworld.pit.yieldHealth>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>Поединок заканчивается, когда боец падает ниже этой доли здоровья, если только бой не до смерти.</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.scandalCooldownDays>Дней между скандалами</HH.Setting.underworld.scandalCooldownDays>
+  <HH.Setting.underworld.scandalCooldownDays.Desc>Не больше одного скандала на карту за это число дней.</HH.Setting.underworld.scandalCooldownDays.Desc>
+  <HH.Setting.underworld.smuggler.inspectChance>Шанс проверки</HH.Setting.underworld.smuggler.inspectChance>
+  <HH.Setting.underworld.smuggler.inspectChance.Desc>За каждую выгрузку, если существует имперская власть.</HH.Setting.underworld.smuggler.inspectChance.Desc>
+  <HH.Setting.underworld.smuggler.intervalDays>Дней между выгрузками</HH.Setting.underworld.smuggler.intervalDays>
+  <HH.Setting.underworld.smuggler.intervalDays.Desc>Среднее время между ночными выгрузками у причала контрабандистов.</HH.Setting.underworld.smuggler.intervalDays.Desc>
+  <HH.Setting.underworld.smuggler.maxValue>Наибольший ящик</HH.Setting.underworld.smuggler.maxValue>
+  <HH.Setting.underworld.smuggler.maxValue.Desc>Рыночная стоимость самого большого предлагаемого ящика.</HH.Setting.underworld.smuggler.maxValue.Desc>
+  <HH.Setting.underworld.smuggler.priceFactor>Цена контрабанды</HH.Setting.underworld.smuggler.priceFactor>
+  <HH.Setting.underworld.smuggler.priceFactor.Desc>Доля рыночной стоимости, которую вы платите за ящик.</HH.Setting.underworld.smuggler.priceFactor.Desc>
+  <HH.Setting.underworld.strangerCooldownDays>Дней до его следующей попытки</HH.Setting.underworld.strangerCooldownDays>
+  <HH.Setting.underworld.strangerCooldownDays.Desc>После «Не интересно» незнакомец ждёт столько дней, прежде чем снова предложит сделку.</HH.Setting.underworld.strangerCooldownDays.Desc>
+  <HH.Setting.underworld.strangerMaxAsks>Как часто он предлагает</HH.Setting.underworld.strangerMaxAsks>
+  <HH.Setting.underworld.strangerMaxAsks.Desc>После такого числа отказов незнакомец отступается окончательно.</HH.Setting.underworld.strangerMaxAsks.Desc>
+  <HH.Setting.underworld.strangerMaxWhispers>Наибольшее число Шёпотов для незнакомца</HH.Setting.underworld.strangerMaxWhispers>
+  <HH.Setting.underworld.strangerMaxWhispers.Desc>Он появляется, только пока ваши Шёпоты не выше этого значения.</HH.Setting.underworld.strangerMaxWhispers.Desc>
+  <HH.Setting.underworld.strangerMeanDays>Дней до появления незнакомца</HH.Setting.underworld.strangerMeanDays>
+  <HH.Setting.underworld.strangerMeanDays.Desc>Среднее число дней между моментами, когда незнакомец может прийти (когда у колонии есть гости или заведение, а ваши Шёпоты низкие).</HH.Setting.underworld.strangerMeanDays.Desc>
+  <HH.Setting.underworld.whispers.fence>Шёпоты за сделку со скупщиком</HH.Setting.underworld.whispers.fence>
+  <HH.Setting.underworld.whispers.gang>Шёпоты за визит банды</HH.Setting.underworld.whispers.gang>
+  <HH.Setting.underworld.whispers.hunt>Шёпоты за охоту</HH.Setting.underworld.whispers.hunt>
+  <HH.Setting.underworld.whispers.lounge>Шёпоты за сеанс в дурманной комнате</HH.Setting.underworld.whispers.lounge>
+  <HH.Setting.underworld.whispers.organ>Шёпоты за продажу органа</HH.Setting.underworld.whispers.organ>
+  <HH.Setting.underworld.whispers.pit>Шёпоты за поединок в яме</HH.Setting.underworld.whispers.pit>
+  <HH.Setting.underworld.whispers.tour>Шёпоты за обход камер предварительного заключения</HH.Setting.underworld.whispers.tour>
+  <HH.Setting.underworld.whispersDecay>Затухание Шёпотов за 15 дней</HH.Setting.underworld.whispersDecay>
+  <HH.Setting.underworld.whispersDecay.Desc>Шёпоты теряют эту долю своего значения каждые 15 дней.</HH.Setting.underworld.whispersDecay.Desc>
+  <HH.SettingCat.Account>Счёт</HH.SettingCat.Account>
+  <HH.SettingCat.Addiction>Зависимость</HH.SettingCat.Addiction>
+  <HH.SettingCat.Arrivals>Прибытие</HH.SettingCat.Arrivals>
+  <HH.SettingCat.Cinema>Кинотеатр</HH.SettingCat.Cinema>
+  <HH.SettingCat.Collections>Коллекции</HH.SettingCat.Collections>
+  <HH.SettingCat.Colonists>Колонисты</HH.SettingCat.Colonists>
+  <HH.SettingCat.Compatibility>Совместимость</HH.SettingCat.Compatibility>
+  <HH.SettingCat.DLCandtraits>DLC и черты</HH.SettingCat.DLCandtraits>
+  <HH.SettingCat.Difficulty>Сложность</HH.SettingCat.Difficulty>
+  <HH.SettingCat.Discovery>Открытия</HH.SettingCat.Discovery>
+  <HH.SettingCat.Druglounge>Дурманная комната</HH.SettingCat.Druglounge>
+  <HH.SettingCat.Effects>Эффекты</HH.SettingCat.Effects>
+  <HH.SettingCat.Factionprojects>Проекты фракций</HH.SettingCat.Factionprojects>
+  <HH.SettingCat.Faithandmoney>Вера и деньги</HH.SettingCat.Faithandmoney>
+  <HH.SettingCat.Fees>Сборы</HH.SettingCat.Fees>
+  <HH.SettingCat.Fence>Скупщик</HH.SettingCat.Fence>
+  <HH.SettingCat.Fightpit>Яма для боёв</HH.SettingCat.Fightpit>
+  <HH.SettingCat.Fun>Развлечения</HH.SettingCat.Fun>
+  <HH.SettingCat.Furniture>Мебель</HH.SettingCat.Furniture>
+  <HH.SettingCat.Gallery>Галерея</HH.SettingCat.Gallery>
+  <HH.SettingCat.Gangs>Банды</HH.SettingCat.Gangs>
+  <HH.SettingCat.General>Общее</HH.SettingCat.General>
+  <HH.SettingCat.Guestbehaviour>Поведение гостей</HH.SettingCat.Guestbehaviour>
+  <HH.SettingCat.Guests>Гости</HH.SettingCat.Guests>
+  <HH.SettingCat.Handling>Обращение</HH.SettingCat.Handling>
+  <HH.SettingCat.Help>Справка</HH.SettingCat.Help>
+  <HH.SettingCat.Honorsystem>Система доверия</HH.SettingCat.Honorsystem>
+  <HH.SettingCat.Houseodds>Шансы дома</HH.SettingCat.Houseodds>
+  <HH.SettingCat.InsuranceClawbackMutual>Страхование (Clawback Mutual)</HH.SettingCat.InsuranceClawbackMutual>
+  <HH.SettingCat.Interestprofitability>Проценты и прибыльность</HH.SettingCat.Interestprofitability>
+  <HH.SettingCat.Interface>Интерфейс</HH.SettingCat.Interface>
+  <HH.SettingCat.Investments>Инвестиции</HH.SettingCat.Investments>
+  <HH.SettingCat.Kitchen>Кухня</HH.SettingCat.Kitchen>
+  <HH.SettingCat.Limits>Лимиты</HH.SettingCat.Limits>
+  <HH.SettingCat.Loans>Кредиты</HH.SettingCat.Loans>
+  <HH.SettingCat.Lookandsound>Внешний вид и звук</HH.SettingCat.Lookandsound>
+  <HH.SettingCat.Lottery>Лотерея</HH.SettingCat.Lottery>
+  <HH.SettingCat.Luck>Удача</HH.SettingCat.Luck>
+  <HH.SettingCat.LuckyThrumbo>Везучий Thrumbo</HH.SettingCat.LuckyThrumbo>
+  <HH.SettingCat.Market>Рынок</HH.SettingCat.Market>
+  <HH.SettingCat.Money>Деньги</HH.SettingCat.Money>
+  <HH.SettingCat.Music>Музыка</HH.SettingCat.Music>
+  <HH.SettingCat.Nobles>Знать</HH.SettingCat.Nobles>
+  <HH.SettingCat.OmenExchange>Биржа знамений</HH.SettingCat.OmenExchange>
+  <HH.SettingCat.Openinghours>Часы работы</HH.SettingCat.Openinghours>
+  <HH.SettingCat.Organclinic>Клиника трансплантации</HH.SettingCat.Organclinic>
+  <HH.SettingCat.Park>Парк</HH.SettingCat.Park>
+  <HH.SettingCat.Prices>Цены</HH.SettingCat.Prices>
+  <HH.SettingCat.Randomness>Случайность</HH.SettingCat.Randomness>
+  <HH.SettingCat.Rehab>Реабилитация</HH.SettingCat.Rehab>
+  <HH.SettingCat.Reports>Отчёты</HH.SettingCat.Reports>
+  <HH.SettingCat.Reputation>Репутация</HH.SettingCat.Reputation>
+  <HH.SettingCat.Research>Исследования</HH.SettingCat.Research>
+  <HH.SettingCat.Salon>Салон</HH.SettingCat.Salon>
+  <HH.SettingCat.Sauna>Сауна</HH.SettingCat.Sauna>
+  <HH.SettingCat.Seats>Места</HH.SettingCat.Seats>
+  <HH.SettingCat.Security>Охрана</HH.SettingCat.Security>
+  <HH.SettingCat.Services>Услуги</HH.SettingCat.Services>
+  <HH.SettingCat.Sessions>Сеансы</HH.SettingCat.Sessions>
+  <HH.SettingCat.Setup>Настройка</HH.SettingCat.Setup>
+  <HH.SettingCat.Shrines>Святилища</HH.SettingCat.Shrines>
+  <HH.SettingCat.Smugglersdock>Причал контрабандистов</HH.SettingCat.Smugglersdock>
+  <HH.SettingCat.Sound>Звук</HH.SettingCat.Sound>
+  <HH.SettingCat.Specialswitches>Особые переключатели</HH.SettingCat.Specialswitches>
+  <HH.SettingCat.Staffing>Штат</HH.SettingCat.Staffing>
+  <HH.SettingCat.Stay>Пребывание</HH.SettingCat.Stay>
+  <HH.SettingCat.Tables>Столы</HH.SettingCat.Tables>
+  <HH.SettingCat.Taxi>Такси</HH.SettingCat.Taxi>
+  <HH.SettingCat.Texts>Тексты</HH.SettingCat.Texts>
+  <HH.SettingCat.TheHunt>Охота</HH.SettingCat.TheHunt>
+  <HH.SettingCat.Wealthandmood>Достаток и настроение</HH.SettingCat.Wealthandmood>
+  <HH.SettingCat.Whispers>Шёпот</HH.SettingCat.Whispers>
+  <HH.SettingCat.Wing>Крыло</HH.SettingCat.Wing>
+</LanguageData>

@@ -29,4 +29,20 @@
   <HH.City.TaxiFree>택시가 대기 중입니다.</HH.City.TaxiFree>
   <HH.City.TaxiBusy>택시가 운행 중입니다.</HH.City.TaxiBusy>
   <HH.City.TaxiStats>출발: {0}회, 도착: {1}회, 수입: 은화 {2}</HH.City.TaxiStats>
+  <HH.City.Closed>영업 종료</HH.City.Closed>
+  <HH.City.Open>영업 중</HH.City.Open>
+  <HH.City.Page.Cinema>영화관: 화면 {0}개(그중 {1}개에 간판 있음); 입장권 {2}장, 은화 {3}</HH.City.Page.Cinema>
+  <HH.City.Page.CinemaRow>   {0}: 좌석 {1}개, {2}</HH.City.Page.CinemaRow>
+  <HH.City.Page.Gallery>갤러리: 전시실 {0}곳, 작품 {1}점; 관람 {2}회, 은화 {3}</HH.City.Page.Gallery>
+  <HH.City.Page.Park>공원: 벤치 {0}개; 손님 착석 {1}회</HH.City.Page.Park>
+  <HH.City.Page.Salon>미용실: 살롱 {1}곳에 의자 {0}개; 새 헤어스타일 {2}회, 은화 {3}</HH.City.Page.Salon>
+  <HH.City.Page.Security>경비: 근무 중인 경호원 {0}명, 벌어들인 은화 {1}</HH.City.Page.Security>
+  <HH.City.Page.StateIdle>대기</HH.City.Page.StateIdle>
+  <HH.City.Page.StateNoPower>전력 없음</HH.City.Page.StateNoPower>
+  <HH.City.Page.StateShowing>상영 중: {0}</HH.City.Page.StateShowing>
+  <HH.City.Page.Taxi>택시: 승강장 {0}곳; 운행 {1}회, 착륙 {2}회, 은화 {3}</HH.City.Page.Taxi>
+  <HH.City.Page.Total>도시 생활 총 수입: 은화 {0}</HH.City.Page.Total>
+  <HH.City.Removal.Buildings>프로젝터 화면, 살롱 의자, 공원 벤치, 택시 승강장은 일반 건물로 남습니다.</HH.City.Removal.Buildings>
+  <HH.City.Removal.Films>상영 중이던 영화 {0}편이 중단되었습니다.</HH.City.Removal.Films>
+  <HH.City.Removal.Guards>경호원 계약 {0}건이 종료되었습니다.</HH.City.Removal.Guards>
 </LanguageData>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServedBusy.stages.0.description>Гости продолжали подходить к стойке, и мне всё время находилось дело. Так и должна ощущаться работа.</HH_ServedBusy.stages.0.description>
+  <HH_ServedBusy.stages.0.label>хорошая смена</HH_ServedBusy.stages.0.label>
+  <HH_ServedBusy.stages.1.description>Гость за гостем. Я знал каждый заказ раньше, чем они договаривали. Хорошая разновидность усталости.</HH_ServedBusy.stages.1.description>
+  <HH_ServedBusy.stages.1.label>загруженная смена</HH_ServedBusy.stages.1.label>
+  <HH_ServedBusy.stages.2.description>Вся комната чего-то хотела разом, и я со всем успевал. Я горжусь этой сменой.</HH_ServedBusy.stages.2.description>
+  <HH_ServedBusy.stages.2.label>сбился с ног</HH_ServedBusy.stages.2.label>
+  <HH_ServedIdle.stages.0.description>Я долго стоял за стойкой, и никто не пришёл. Я три раза протёр одно и то же стекло.</HH_ServedIdle.stages.0.description>
+  <HH_ServedIdle.stages.0.label>скучаю за стойкой</HH_ServedIdle.stages.0.label>
+  <HH_ServedIdle.stages.1.description>Часы за стойкой без дела. Я мог бы заняться чем-нибудь полезным.</HH_ServedIdle.stages.1.description>
+  <HH_ServedIdle.stages.1.label>проторчал всю смену</HH_ServedIdle.stages.1.label>
+  <HH_ServedIdle.stages.2.description>Целая смена ожидания гостей, которые так и не пришли. Зачем я вообще тут стою?</HH_ServedIdle.stages.2.description>
+  <HH_ServedIdle.stages.2.label>бессмысленная смена</HH_ServedIdle.stages.2.label>
+  <HH_WokenByBell.stages.0.description>Кто-то позвонил в колокол посреди моего сна. Долг зовёт. Громко.</HH_WokenByBell.stages.0.description>
+  <HH_WokenByBell.stages.0.label>разбудил ночной колокол</HH_WokenByBell.stages.0.label>
+  <HH_WokenByBell.stages.1.description>Кто-то позвонил в колокол посреди моего сна. Ну, такова работа. Посплю позже.</HH_WokenByBell.stages.1.description>
+  <HH_WokenByBell.stages.1.label>разбудил ночной колокол</HH_WokenByBell.stages.1.label>
+</LanguageData>

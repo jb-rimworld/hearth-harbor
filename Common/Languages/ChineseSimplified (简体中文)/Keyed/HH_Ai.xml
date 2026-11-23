@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Ai.Ans.Arrears>你欠款 {0} 银币。请先把这笔钱结清。</HH.Ai.Ans.Arrears>
+  <HH.Ai.Ans.Denied>你为“{0}”提出的理赔被拒绝了：{1}。你可以在保险页签里读到该条款，取消和变更按钮也在那里。</HH.Ai.Ans.Denied>
+  <HH.Ai.Ans.Interest>账户里的存款会获得少量稳定的利息，每季结算一次。本季目前为 {0} 银币；累计为 {1} 银币。投资的收益可能高得多，亏起来也一样快：账户是稳妥的朋友，市场则是刺激的那一个。</HH.Ai.Ans.Interest>
+  <HH.Ai.Ans.Invest>你的投资组合在 {1} 个仓位中价值 {0} 银币。</HH.Ai.Ans.Invest>
+  <HH.Ai.Ans.Loan>贷款 {0}：仍欠 {1} 银币，每期 {2} 银币，间隔 {3} 天，年利率约 {4}%，剩余 {5} 期。</HH.Ai.Ans.Loan>
+  <HH.Ai.Ans.Net>你的净资产为 {0} 银币：账户中 {1}，家中的银币 {2}，减去债务 {3}。银行将你归入“{4}”一档。</HH.Ai.Ans.Net>
+  <HH.Ai.Ans.NoClaims>没有任何理赔记录。Clawback Mutual 还没有机会大显身手。</HH.Ai.Ans.NoClaims>
+  <HH.Ai.Ans.NoDenied>你的理赔一次都没有被拒绝。最近的一次，“{0}”，目前{1}。</HH.Ai.Ans.NoDenied>
+  <HH.Ai.Ans.NoInvest>你没有任何投资。投资页签列出了可购买的项目；先从小额开始，并在相信它之前读一读新闻滚动条。</HH.Ai.Ans.NoInvest>
+  <HH.Ai.Ans.NoLoans>你没有任何贷款。无债一身轻是很好的状态；我就假装自己并不失望。</HH.Ai.Ans.NoLoans>
+  <HH.Ai.Ans.NoReason>小字条款里没有写明原因</HH.Ai.Ans.NoReason>
+  <HH.Ai.Badge.Ai>AI</HH.Ai.Badge.Ai>
+  <HH.Ai.Badge.Books>来自账本</HH.Ai.Badge.Books>
+  <HH.Ai.Badge.TipChat>由 AI 根据你账本的只读快照撰写。它可以解释，但无法更改任何东西。</HH.Ai.Badge.TipChat>
+  <HH.Ai.Badge.TipConcierge>由 AI 根据游戏自身的事实撰写</HH.Ai.Badge.TipConcierge>
+  <HH.Ai.Badge.Written>由 AI 撰写。星级来自游戏本身。</HH.Ai.Badge.Written>
+  <HH.Ai.Chat.Clerk>职员 Ottoline</HH.Ai.Chat.Clerk>
+  <HH.Ai.Chat.Empty>请先输入一个问题。</HH.Ai.Chat.Empty>
+  <HH.Ai.Chat.NoAccount>还没有账户。请先在大厅开设一个，我很乐意帮你看看。</HH.Ai.Chat.NoAccount>
+  <HH.Ai.Chat.NoMatch>没有 AI 时，我只能根据账本回答少数几个问题。请使用下面的快速提问，或等 AI 恢复后再问。</HH.Ai.Chat.NoMatch>
+  <HH.Ai.Chat.OfflineHint>AI 目前不可用，因此 Ottoline 会尽量根据账本回答。</HH.Ai.Chat.OfflineHint>
+  <HH.Ai.Chat.Placeholder>问 Ottoline 任何关于你钱的事……</HH.Ai.Chat.Placeholder>
+  <HH.Ai.Chat.Quick>快速提问</HH.Ai.Chat.Quick>
+  <HH.Ai.Chat.QuickTip>根据你的账本立即作答，不会发送到任何地方。</HH.Ai.Chat.QuickTip>
+  <HH.Ai.Chat.Recheck>重新检查</HH.Ai.Chat.Recheck>
+  <HH.Ai.Chat.Send>发送</HH.Ai.Chat.Send>
+  <HH.Ai.Chat.SetUp>设置 AI 回答</HH.Ai.Chat.SetUp>
+  <HH.Ai.Chat.Stop>停止</HH.Ai.Chat.Stop>
+  <HH.Ai.Chat.Stopped>（你已停止这个问题。）</HH.Ai.Chat.Stopped>
+  <HH.Ai.Chat.Thinking>Ottoline 正在思考</HH.Ai.Chat.Thinking>
+  <HH.Ai.Chat.Welcome>问我关于你的账户、贷款、投资或保单的问题。我负责解释，从不动你的钱。如果 AI 不在，下面的快速提问依然可用。</HH.Ai.Chat.Welcome>
+  <HH.Ai.Chat.You>你</HH.Ai.Chat.You>
+  <HH.Ai.Concierge.Ask>提问</HH.Ai.Concierge.Ask>
+  <HH.Ai.Concierge.Default>我应该先改进什么？</HH.Ai.Concierge.Default>
+  <HH.Ai.Concierge.Offline>AI 没有回答；以下是游戏自带的提示。</HH.Ai.Concierge.Offline>
+  <HH.Ai.Concierge.Placeholder>为什么没有贵族来？我该改进什么？</HH.Ai.Concierge.Placeholder>
+  <HH.Ai.Concierge.StateAi>AI 在线：回答由 AI 组织措辞</HH.Ai.Concierge.StateAi>
+  <HH.Ai.Concierge.StateOffline>回答来自游戏自带的提示</HH.Ai.Concierge.StateOffline>
+  <HH.Ai.Concierge.Stop>停止</HH.Ai.Concierge.Stop>
+  <HH.Ai.Concierge.Thinking>礼宾员正在思考</HH.Ai.Concierge.Thinking>
+  <HH.Ai.Concierge.Tips>我看到的情况如下，常见的排在前面：</HH.Ai.Concierge.Tips>
+  <HH.Ai.Concierge.Title>询问礼宾员</HH.Ai.Concierge.Title>
+  <HH.Ai.Consent.Agree>我同意并开启</HH.Ai.Consent.Agree>
+  <HH.Ai.Consent.Budget>AI 额度由所有玩家在 24 小时内共用。用完之后，AI 会休息，游戏改用自带的文本。</HH.Ai.Consent.Budget>
+  <HH.Ai.Consent.D.Claim>理赔信件：保单、殖民者的名字、事件、游戏已确定的裁决与金额，以及你在理赔表格中填写的内容（最多 600 字）。</HH.Ai.Consent.D.Claim>
+  <HH.Ai.Consent.D.Concierge>礼宾员：你的问题（最多 300 字），以及最多 12 条简短事实，例如声望、访客与床位数量，以及游戏发现的问题。</HH.Ai.Consent.D.Concierge>
+  <HH.Ai.Consent.D.Headline>市场头条：市场事件的类型、资产名称和波动幅度。每次请求最多 8 个事件。</HH.Ai.Consent.D.Headline>
+  <HH.Ai.Consent.D.Ottoline>询问 Ottoline：你的问题（最多 500 字），以及账目快照：余额、存款、最多 10 笔贷款、投资、保单和近期交易，以数字和简短标签呈现。</HH.Ai.Consent.D.Ottoline>
+  <HH.Ai.Consent.D.Review>访客评价：访客的名字、游戏给出的星级、几个评价用词（例如离开的方式），以及他们在哪类场所消费过。</HH.Ai.Consent.D.Review>
+  <HH.Ai.Consent.Done>AI 文本已开启。游戏现在会检查中继服务。</HH.Ai.Consent.Done>
+  <HH.Ai.Consent.HideDetails>收起详情</HH.Ai.Consent.HideDetails>
+  <HH.Ai.Consent.Intro>Hearth &amp; Harbor 可以让 AI 撰写部分风味文本：Ottoline 柜员的聊天回复、市场头条、访客评价、保险理赔信件以及礼宾员的建议。没有 AI，游戏的玩法完全相同，而且总有自带文本随时备用。</HH.Ai.Consent.Intro>
+  <HH.Ai.Consent.NotNow>暂不</HH.Ai.Consent.NotNow>
+  <HH.Ai.Consent.NotSent>不会发送的内容：你的 Steam 名称或 ID、文件路径、存档或殖民地的名字、你的其他模组，以及任何看起来像密钥的东西。</HH.Ai.Consent.NotSent>
+  <HH.Ai.Consent.Sent>会发送的内容：请求所需的游戏文本，例如殖民者名字（最多 64 字）、金额、你在聊天框中输入的文字、理赔表格或礼宾员输入框的内容，以及访客或床位数量等计数。</HH.Ai.Consent.Sent>
+  <HH.Ai.Consent.ShowDetails>具体会发送什么？</HH.Ai.Consent.ShowDetails>
+  <HH.Ai.Consent.Stored>会保存的内容：中继服务只保留计数（用了多少 token、花费多少、耗时多久、错误代码）。它不保存你输入的内容或 AI 的回答。和任何网络服务器一样，中继的主机可能会在其技术连接日志中短暂保留你的 IP 地址。</HH.Ai.Consent.Stored>
+  <HH.Ai.Consent.Title>AI 文本（可选）</HH.Ai.Consent.Title>
+  <HH.Ai.Consent.Where>去向：发送到本模组作者运营的小型中继服务器（hh-relay.jberger.de），再经 OpenRouter 转发到 Anthropic 的 Claude 模型，且只使用不保留数据的服务商（零数据保留）。</HH.Ai.Consent.Where>
+  <HH.Ai.Consent.Withdraw>你可以随时撤回：模组设置 &gt; Hearth &amp; Harbor &gt; AI 风味文本 &gt; 忘记我的同意。</HH.Ai.Consent.Withdraw>
+  <HH.Ai.Faq.Claim>我的理赔为什么被拒绝？</HH.Ai.Faq.Claim>
+  <HH.Ai.Faq.Interest>我怎样赚取利息？</HH.Ai.Faq.Interest>
+  <HH.Ai.Faq.Invest>我的投资怎么样了？</HH.Ai.Faq.Invest>
+  <HH.Ai.Faq.Loans>我的贷款是什么？</HH.Ai.Faq.Loans>
+  <HH.Ai.Faq.Net>我值多少钱？</HH.Ai.Faq.Net>
+  <HH.Ai.Notice.Title>Hearth &amp; Harbor：关于 AI 文本的说明</HH.Ai.Notice.Title>
+  <HH.Ai.Panel.Check>立即检查中继服务</HH.Ai.Panel.Check>
+  <HH.Ai.Panel.ConsentGiven>你已于 {0} 同意（文本版本 {1}）。</HH.Ai.Panel.ConsentGiven>
+  <HH.Ai.Panel.ConsentNone>你尚未同意。目前不会发送任何内容。</HH.Ai.Panel.ConsentNone>
+  <HH.Ai.Panel.Forget>忘记我的同意</HH.Ai.Panel.Forget>
+  <HH.Ai.Panel.ForgetConfirm>要忘记你的同意并关闭 AI 模块吗？此后将不再发送任何内容。你随时可以重新同意。</HH.Ai.Panel.ForgetConfirm>
+  <HH.Ai.Panel.Relay>中继：共享额度在过去 24 小时已用 {0}%。本次会话：已发送 {1}，成功 {2}，失败 {3}，使用自带文本 {4} 次。</HH.Ai.Panel.Relay>
+  <HH.Ai.Panel.SetUp>设置 AI 文本……</HH.Ai.Panel.SetUp>
+  <HH.Ai.Review.Fallback.1.0>一星，只因为表格里没有零星。</HH.Ai.Review.Fallback.1.0>
+  <HH.Ai.Review.Fallback.1.1>我本想要个安静的夜晚，结果上了一堂耐心课。</HH.Ai.Review.Fallback.1.1>
+  <HH.Ai.Review.Fallback.1.2>下次不来了，不过出门时的那扇门很漂亮。</HH.Ai.Review.Fallback.1.2>
+  <HH.Ai.Review.Fallback.1.3>我住过更糟的地方，只是想不起在哪儿了。</HH.Ai.Review.Fallback.1.3>
+  <HH.Ai.Review.Fallback.2.0>如果你喜欢等待，那还不错。我不喜欢。</HH.Ai.Review.Fallback.2.0>
+  <HH.Ai.Review.Fallback.2.1>有些好主意，只是时机不对。</HH.Ai.Review.Fallback.2.1>
+  <HH.Ai.Review.Fallback.2.2>员工很努力，建筑却帮不上忙。</HH.Ai.Review.Fallback.2.2>
+  <HH.Ai.Review.Fallback.2.3>两星：一星给努力，一星给那扇门。</HH.Ai.Review.Fallback.2.3>
+  <HH.Ai.Review.Fallback.3.0>有房间，有屋顶，还有相当温暖的招待。</HH.Ai.Review.Fallback.3.0>
+  <HH.Ai.Review.Fallback.3.1>没什么可抱怨的，也没什么值得写信回家的，所以我来了这里。</HH.Ai.Review.Fallback.3.1>
+  <HH.Ai.Review.Fallback.3.2>还不错。如果路过此地，我会再来。</HH.Ai.Review.Fallback.3.2>
+  <HH.Ai.Review.Fallback.3.3>三星。站在中间也是个不错的位置。</HH.Ai.Review.Fallback.3.3>
+  <HH.Ai.Review.Fallback.4.0>食物好，人友善，床也很规矩。</HH.Ai.Review.Fallback.4.0>
+  <HH.Ai.Review.Fallback.4.1>我睡得很好，付的钱也公道。这比听起来要罕见。</HH.Ai.Review.Fallback.4.1>
+  <HH.Ai.Review.Fallback.4.2>舒适，经营得当。我会告诉我的商队。</HH.Ai.Review.Fallback.4.2>
+  <HH.Ai.Review.Fallback.4.3>四星。总缺了点什么，我忘了是什么，这本身就说明了问题。</HH.Ai.Review.Fallback.4.3>
+  <HH.Ai.Review.Fallback.5.0>本季最好的一次住宿。员工记得我的名字和我点的菜。</HH.Ai.Review.Fallback.5.0>
+  <HH.Ai.Review.Fallback.5.1>我本来只打算住一晚，结果几乎忘了离开。</HH.Ai.Review.Fallback.5.1>
+  <HH.Ai.Review.Fallback.5.2>温暖、干净、有趣。五星，外加一次握手。</HH.Ai.Review.Fallback.5.2>
+  <HH.Ai.Review.Fallback.5.3>如果他们允许，我真想住在这里，可他们未必允许。</HH.Ai.Review.Fallback.5.3>
+  <HH.Ai.Review.Label>访客评价：{0}</HH.Ai.Review.Label>
+  <HH.Ai.State.Checking>正在检查 AI 中继服务……</HH.Ai.State.Checking>
+  <HH.Ai.State.NoConsent>AI 文本尚未设置</HH.Ai.State.NoConsent>
+  <HH.Ai.State.NoConsent.Tip>在你同意之前，不会向任何地方发送任何内容。游戏使用自带文本。</HH.Ai.State.NoConsent.Tip>
+  <HH.Ai.State.Off>AI 文本已关闭</HH.Ai.State.Off>
+  <HH.Ai.State.Off.Tip>请在 Hearth &amp; Harbor 设置中开启该模块。</HH.Ai.State.Off.Tip>
+  <HH.Ai.State.Offline>AI 离线</HH.Ai.State.Offline>
+  <HH.Ai.State.Offline.Tip>无法连接中继服务。游戏使用自带文本，稍后会再试。</HH.Ai.State.Offline.Tip>
+  <HH.Ai.State.Online>AI 在线</HH.Ai.State.Online>
+  <HH.Ai.State.Online.Tip>中继服务正常响应。由 AI 撰写的文本会加以标记。</HH.Ai.State.Online.Tip>
+  <HH.Ai.State.Paused>AI 暂停几分钟</HH.Ai.State.Paused>
+  <HH.Ai.State.Paused.Tip>连续多次请求失败。游戏将在十分钟内使用自带文本。</HH.Ai.State.Paused.Tip>
+  <HH.Ai.State.Resting>AI 休息中</HH.Ai.State.Resting>
+  <HH.Ai.State.Resting.Tip>中继服务的每日共享额度已用完。在恢复之前，游戏使用自带文本。</HH.Ai.State.Resting.Tip>
+  <HH.Ai.State.Unavailable>AI 暂时不可用</HH.Ai.State.Unavailable>
+  <HH.Ai.State.Unavailable.Tip>中继服务已关闭或尚未就绪。游戏使用自带文本。</HH.Ai.State.Unavailable.Tip>
+  <HH.Ai.Status.LastError>最近的错误代码：{0}</HH.Ai.Status.LastError>
+  <HH.Ai.Tab.Ottoline>询问 Ottoline</HH.Ai.Tab.Ottoline>
+  <HH.Setting.ai.func.claim>保险理赔信函</HH.Setting.ai.func.claim>
+  <HH.Setting.ai.func.claim.Desc>Clawback Mutual 的回复信会根据你在理赔表格中的填写内容作出反应。理赔结论和金额永远不变。</HH.Setting.ai.func.claim.Desc>
+  <HH.Setting.ai.func.concierge>礼宾服务</HH.Setting.ai.func.concierge>
+  <HH.Setting.ai.func.concierge.Desc>向礼宾员询问如何经营你的客人。它会把游戏已经掌握的建议措辞加工一下。</HH.Setting.ai.func.concierge.Desc>
+  <HH.Setting.ai.func.headline>市场头条</HH.Setting.ai.func.headline>
+  <HH.Setting.ai.func.headline.Desc>Rim Exchange 新闻滚动条上的标题由 AI 撰写。标题背后的数字不会改变。</HH.Setting.ai.func.headline.Desc>
+  <HH.Setting.ai.func.ottoline>询问 Ottoline</HH.Setting.ai.func.ottoline>
+  <HH.Setting.ai.func.ottoline.Desc>在银行与职员 Ottoline 聊天。她会解释你的账户、贷款、投资和保单。没有 AI 时，她只能根据账本回答几个简单问题。</HH.Setting.ai.func.ottoline.Desc>
+  <HH.Setting.ai.func.review>客人评价</HH.Setting.ai.func.review>
+  <HH.Setting.ai.func.review.Desc>部分离店的客人会用自己的口吻留下评价。没有 AI 时，评价只是一句简短的固定文字。</HH.Setting.ai.func.review.Desc>
+  <HH.Setting.ai.maxPerDay>每个游戏日的请求上限（本地限制）</HH.Setting.ai.maxPerDay>
+  <HH.Setting.ai.maxPerDay.Desc>本游戏对自身请求设置的善意上限，按游戏内每日计算。0 = 不设本地上限。中继服务有自己的每日共享额度。</HH.Setting.ai.maxPerDay.Desc>
+  <HH.Setting.ai.reviewShare>离店团体留下评价的比例</HH.Setting.ai.reviewShare>
+  <HH.Setting.ai.reviewShare.Desc>让 AI 请求保持在较少的水平。25% 大约是每四个团体中有一个留评。</HH.Setting.ai.reviewShare.Desc>
+  <HH.Setting.ai.showBadge>标注 AI 文字</HH.Setting.ai.showBadge>
+  <HH.Setting.ai.showBadge.Desc>在 AI 撰写的客人评价后添加注记，并在聊天和礼宾框中显示 AI 标记。市场头条不加标记。</HH.Setting.ai.showBadge.Desc>
+</LanguageData>

@@ -231,4 +231,121 @@
   <HH.Setting.thrumbo.raiseTheStakes.Desc>Přidá tlačítko „Zvýšit sázky…“ do The Lucky Thrumbo: místo stříbra lze vsadit zboží v dosahu napájeného orbitálního obchodního majáku a od intenzity obsahu Standardní i kolonistická zvířata a vězně (jako prodej ve vanille). Kolonisté, otroci, děti a hosté se nikdy nenabízejí.</HH.Setting.thrumbo.raiseTheStakes.Desc>
   <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: rozpětí zastavárníka pro vsazené zboží</HH.Setting.thrumbo.pawnbrokerSpread>
   <HH.Setting.thrumbo.pawnbrokerSpread.Desc>Vsazené zboží se počítá za to, co by zaplatil zastavárník domu (běžná prodejní cena s vaším nejlepším vyjednavačem) minus toto rozpětí a pevný poplatek 2 %.</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
+  <HH.Casino.ChairsNote>až +{0} % sázek za pohodlné sedadlo</HH.Casino.ChairsNote>
+  <HH.Casino.ComfySeat>Pohodlné místo u stolu</HH.Casino.ComfySeat>
+  <HH.Casino.Demo.Column>Sloupec {0}</HH.Casino.Demo.Column>
+  <HH.Casino.Demo.Number>Číslo:</HH.Casino.Demo.Number>
+  <HH.Casino.Demo.OddsBlackjack>{0}</HH.Casino.Demo.OddsBlackjack>
+  <HH.Casino.Demo.OddsPoker>provize {0} % (nejvýš {1} stříbra z banku)</HH.Casino.Demo.OddsPoker>
+  <HH.Casino.Demo.OddsRoulette>výhoda domu {0} %</HH.Casino.Demo.OddsRoulette>
+  <HH.Casino.Demo.OddsSlots>vrací {0} %</HH.Casino.Demo.OddsSlots>
+  <HH.Casino.Demo.PokerSeatWins>{0} vyhrává s {1}</HH.Casino.Demo.PokerSeatWins>
+  <HH.Casino.Demo.PokerYouWin>Vyhráváš s {0}</HH.Casino.Demo.PokerYouWin>
+  <HH.Casino.Demo.Rake>provize {0}</HH.Casino.Demo.Rake>
+  <HH.Casino.Demo.Regular>Stálec {0}</HH.Casino.Demo.Regular>
+  <HH.Casino.Demo.Straight>Jedno číslo</HH.Casino.Demo.Straight>
+  <HH.Casino.Demo.You>Ty</HH.Casino.Demo.You>
+  <HH.Casino.GhostChairs>{0} se židlí</HH.Casino.GhostChairs>
+  <HH.Casino.GhostSeats>Místa pro hosty: {0} / {1}</HH.Casino.GhostSeats>
+  <HH.Casino.GhostTipSlot>Modře: kde sedí hráč · židle nebo stolička na pulzujícím políčku zvyšuje sázky</HH.Casino.GhostTipSlot>
+  <HH.Casino.GhostTipTable>Modře: kde hrají hosté · jantarově: krupiér · postav židle na pulzující políčka, aby se zvýšily sázky</HH.Casino.GhostTipTable>
+  <HH.Casino.Hand.0>vysoká karta</HH.Casino.Hand.0>
+  <HH.Casino.Hand.1>pár</HH.Casino.Hand.1>
+  <HH.Casino.Hand.2>dva páry</HH.Casino.Hand.2>
+  <HH.Casino.Hand.3>trojice</HH.Casino.Hand.3>
+  <HH.Casino.Hand.4>postupka</HH.Casino.Hand.4>
+  <HH.Casino.Hand.5>barva</HH.Casino.Hand.5>
+  <HH.Casino.Hand.6>full house</HH.Casino.Hand.6>
+  <HH.Casino.Hand.7>poker</HH.Casino.Hand.7>
+  <HH.Casino.Hand.8>postupka v barvě</HH.Casino.Hand.8>
+  <HH.Casino.SeatsBonus>+{0} % sázek</HH.Casino.SeatsBonus>
+  <HH.Casino.SeatsLine>Místa pro hosty: {0} z {1} volných · {2} se židlí</HH.Casino.SeatsLine>
+  <HH.Casino.SeatsTip>židle zvyšují sázky až o +{0} %</HH.Casino.SeatsTip>
+  <HH.Setting.casino.comfortSpend>Pohodlná sedadla: větší utrácení</HH.Setting.casino.comfortSpend>
+  <HH.Setting.casino.comfortSpend.Desc>Host na sedadle s pohodlím 100 % vsadí v každém kole o tolik víc (podle pohodlí sedadla; u stání bez bonusu). Výhoda domu zůstává stejná: víc hry, ne lepší šance.</HH.Setting.casino.comfortSpend.Desc>
+  <HH.Setting.casino.comfortStay>Pohodlná sedadla: delší pobyt</HH.Setting.casino.comfortStay>
+  <HH.Setting.casino.comfortStay.Desc>Host na sedadle s pohodlím 100 % hraje u stolu o tolik déle, než odejde.</HH.Setting.casino.comfortStay.Desc>
+  <HH.Thrumbo.AllIn>Vsadit vše</HH.Thrumbo.AllIn>
+  <HH.Thrumbo.AllInTip>Všechno, co máte ve zvoleném zdroji.</HH.Thrumbo.AllInTip>
+  <HH.Thrumbo.Anim.BigWin>Velká výhra!</HH.Thrumbo.Anim.BigWin>
+  <HH.Thrumbo.Anim.Dealing>Krupiér rozdává…</HH.Thrumbo.Anim.Dealing>
+  <HH.Thrumbo.Anim.Jackpot>Hlavní výhra Thrumba!</HH.Thrumbo.Anim.Jackpot>
+  <HH.Thrumbo.Anim.Skip>Přeskočit</HH.Thrumbo.Anim.Skip>
+  <HH.Thrumbo.Anim.SkipHint>Klikněte na stůl, stiskněte mezerník nebo Enter: přeskočí. Shift: rychleji.</HH.Thrumbo.Anim.SkipHint>
+  <HH.Thrumbo.Anim.Spinning>Kolo se točí…</HH.Thrumbo.Anim.Spinning>
+  <HH.Thrumbo.Anim.Wait>Počkejte, až kolo doběhne (nebo ho přeskočte).</HH.Thrumbo.Anim.Wait>
+  <HH.Thrumbo.BJ.DealAgain>Rozdat znovu</HH.Thrumbo.BJ.DealAgain>
+  <HH.Thrumbo.BJ.PayDouble>Výhra po zdvojení (ze první sázky)</HH.Thrumbo.BJ.PayDouble>
+  <HH.Thrumbo.BJ.PayLose>Prohra nebo přetažení</HH.Thrumbo.BJ.PayLose>
+  <HH.Thrumbo.BJ.PayNatural>Blackjack (eso a desítková karta)</HH.Thrumbo.BJ.PayNatural>
+  <HH.Thrumbo.BJ.PayPush>Remíza (vyrovnáno)</HH.Thrumbo.BJ.PayPush>
+  <HH.Thrumbo.BJ.PayTitle>Co ruka vyplácí zpět (včetně sázky)</HH.Thrumbo.BJ.PayTitle>
+  <HH.Thrumbo.BJ.PayWin>Výhra</HH.Thrumbo.BJ.PayWin>
+  <HH.Thrumbo.Err.HouseCap>Dům přijme nejvýš {0} stříbra na jednu sázku (stůl nemá limit, toto je vlastní strop domu).</HH.Thrumbo.Err.HouseCap>
+  <HH.Thrumbo.HowTo.Blackjack>Dostaňte se blíž k 21 než krupiér, aniž byste ji přetáhli. Číselné karty mají svou hodnotu, kluk, dáma a král mají 10, eso má 1 nebo 11.
+
+• Vzít: vezměte si další kartu. Stát: ponechte, co máte; krupiér pak odkryje lícem dolů položenou kartu a dobírá, dokud nemá 17 nebo víc.
+• Zdvojnásobit: u prvních dvou karet zdvojnásobte sázku a vezměte přesně jednu kartu.
+• Přes 21 je přetažení a okamžitě prohráváte. Eso s desítkou je blackjack a vyplácí bonus (3 ku 2 u standardních stolů).
+• Remíza je vyrovnání: dostanete zpět svou sázku.
+
+Hraní má tu velkou váhu: uvedená výhoda domu platí pro dokonalou hru.</HH.Thrumbo.HowTo.Blackjack>
+  <HH.Thrumbo.HowTo.Button>Jak se hraje</HH.Thrumbo.HowTo.Button>
+  <HH.Thrumbo.HowTo.ButtonTip>Krátké vysvětlení hry místo výplatní tabulky. Kliknutím znovu zavřete.</HH.Thrumbo.HowTo.ButtonTip>
+  <HH.Thrumbo.HowTo.Poker>Rimdeck je poker proti ostatním hráčům, ne proti domu. Každý vloží stejnou vklad; každý hráč dostane dvě karty, pak se uprostřed vyloží pět společných karet lícem nahoru (tři, pak jedna a ještě jedna).
+
+• Nejlepších pět z vašich sedmi karet bere bank: vysoká karta, pár, dva páry, trojice, postupka, barva, full, poker, royal flush (od slabé po silnou).
+• Bystřejší hráči vyhrávají o něco častěji: dovednosti Intelekt a Společenskost naklánějí šance.
+• Dům si z každého banku nechá jen malou provizi.</HH.Thrumbo.HowTo.Poker>
+  <HH.Thrumbo.HowTo.Roulette>Klikněte na číslo nebo pole na desce, kam chcete vsadit, a pak roztočte. Kulička skončí v jedné přihrádce.
+
+• Jedno číslo vyplácí 35 ku 1.
+• Tucty a sloupce (12 čísel) vyplácejí 2 ku 1.
+• Červená nebo černá, liché nebo sudé, 1–18 nebo 19–36 vyplácejí 1 ku 1.
+• Zelená nula (a dvojitá nula na americkém kole) nepatří k žádné barvě ani k žádné polovině: právě odtud pochází výhoda domu.
+
+Každá sázka má stejnou výhodu domu; liší se jen výkyvy.</HH.Thrumbo.HowTo.Roulette>
+  <HH.Thrumbo.HowTo.Slots>Nastavte sázku a zatáhněte za páku (nebo stiskněte Roztočit). Tři válce se zastavují postupně; počítá se jen prostřední řada.
+
+• Tři stejné symboly vyplácejí, co ukazuje výplatní tabulka: bobule nejméně, thrumbo nejvíc.
+• Bobule jsou milé: dvě na válcích 1 a 2 nebo jedna na válci 1 vrací trochu zpět.
+• Volatilita mění rozložení výplat, ne to, kolik se vrátí v dlouhém běhu: nízká vyplácí malé částky často, vysoká zřídka, ale velké.
+
+V dlouhém běhu automat vrací podíl uvedený nad výplatní tabulkou; zbytek je výhoda domu.</HH.Thrumbo.HowTo.Slots>
+  <HH.Thrumbo.HowTo.Title>Jak se hraje: {0}</HH.Thrumbo.HowTo.Title>
+  <HH.Thrumbo.LeverTip>Zatáhněte za páku: roztočí se se sázkou nahoře.</HH.Thrumbo.LeverTip>
+  <HH.Thrumbo.MaxTip>Největší sázka, kterou dovolí limit stolu a vaše prostředky.</HH.Thrumbo.MaxTip>
+  <HH.Thrumbo.NoLimit>Bez limitu stolu: od {0} až po všechno, co máte ({1}).</HH.Thrumbo.NoLimit>
+  <HH.Thrumbo.NoLimitTip>Šťastný Thrumbo přijme jakoukoli sázku, kterou zaplatíte. Limit stolu (podíl na čistém jmění) lze zapnout v nastavení modu: Kasino, Šťastný Thrumbo.</HH.Thrumbo.NoLimitTip>
+  <HH.Thrumbo.Pay.First1>{0} na válci 1</HH.Thrumbo.Pay.First1>
+  <HH.Thrumbo.Pay.First2>2 × {0} (válce 1+2)</HH.Thrumbo.Pay.First2>
+  <HH.Thrumbo.PayRowTip>Šance na roztočení: {0} %</HH.Thrumbo.PayRowTip>
+  <HH.Thrumbo.Recent>Poslední kola</HH.Thrumbo.Recent>
+  <HH.Thrumbo.RecentNone>Zatím žádná.</HH.Thrumbo.RecentNone>
+  <HH.Thrumbo.SlotMarquee>Jednoruký Thrumbo</HH.Thrumbo.SlotMarquee>
+  <HH.Thrumbo.StakeLockedTip>Sázka leží na stole, dokud kolo nedoběhne nebo ruka neskončí.</HH.Thrumbo.StakeLockedTip>
+  <HH.Thrumbo.Stakes.ColEach>Hodnota za kus</HH.Thrumbo.Stakes.ColEach>
+  <HH.Thrumbo.Stakes.ColHeld>Na dosah</HH.Thrumbo.Stakes.ColHeld>
+  <HH.Thrumbo.Stakes.ColItem>Věc</HH.Thrumbo.Stakes.ColItem>
+  <HH.Thrumbo.Stakes.ColStake>Sázka</HH.Thrumbo.Stakes.ColStake>
+  <HH.Thrumbo.Stakes.HowTo.Roulette>Vlevo vyber věci, které chceš vsadit, pak jednu z vnějších sázek a stiskni tlačítko. Rozhodne jedno zatočení kola.
+
+• Červená nebo černá, lichá nebo sudá, 1–18 nebo 19–36 platí 1 ku 1: vyhraješ, zůstane ti všechno i se svou hodnotou ve stříbře.
+• Tucet (12 čísel) platí 2 ku 1: zůstane ti všechno a navíc dvojnásobek hodnoty.
+• Zelená nula (a dvojitá nula) nepatří k žádné sázce: to je výhoda domu.
+• Prohraješ-li, věci odejdou do domu, jako bys je prodal.</HH.Thrumbo.Stakes.HowTo.Roulette>
+  <HH.Thrumbo.Stakes.HowTo.Slots>Vlevo vyber věci, které chceš vsadit, pak volatilitu a stiskni tlačítko. Rozhodne jedno zatočení tří válců.
+
+• Tři stejné (nebo bobule na prvních válcích) násobí hodnotu tvé sázky podle tabulky výher Lucky Thrumbo.
+• Výhra ×2 nebo víc: vše zůstane tobě a dům vyplatí hodnota × (m − 1) ve stříbře.
+• Žádná výhra: věci odejdou do domu. Malá výhra pod ×1 se vyplatí ve stříbře, věci jsou přesto pryč.</HH.Thrumbo.Stakes.HowTo.Slots>
+  <HH.Thrumbo.Stakes.ListFoot>Vše zde leží v dosahu napájeného orbitálního obchodního majáku a oceňuje to tvůj nejlepší vyjednavač. Drž Shift na − nebo +, abys měnil počet po 10. Věci zůstávají na místě, dokud se kolo neprohraje.</HH.Thrumbo.Stakes.ListFoot>
+  <HH.Thrumbo.Stakes.NoLimit>Bez limitu stolu: libovolná hodnota od {0} stříbra.</HH.Thrumbo.Stakes.NoLimit>
+  <HH.Thrumbo.Sym.berries>bobule</HH.Thrumbo.Sym.berries>
+  <HH.Thrumbo.Sym.component>součástka</HH.Thrumbo.Sym.component>
+  <HH.Thrumbo.Sym.core>jádro persony</HH.Thrumbo.Sym.core>
+  <HH.Thrumbo.Sym.corn>kukuřice</HH.Thrumbo.Sym.corn>
+  <HH.Thrumbo.Sym.meal>přežívací jídlo</HH.Thrumbo.Sym.meal>
+  <HH.Thrumbo.Sym.plasteel>plastocel</HH.Thrumbo.Sym.plasteel>
+  <HH.Thrumbo.Sym.thrumbo>thrumbo</HH.Thrumbo.Sym.thrumbo>
 </LanguageData>

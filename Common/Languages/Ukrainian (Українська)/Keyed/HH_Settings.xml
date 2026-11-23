@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.BankResearchMode.Full>Повний</HH.Enum.BankResearchMode.Full>
+  <HH.Enum.BankResearchMode.Off>Вимкнено</HH.Enum.BankResearchMode.Off>
+  <HH.Enum.ClaimMode.Automatic>Автоматично</HH.Enum.ClaimMode.Automatic>
+  <HH.Enum.ClaimMode.ByForm>За формою</HH.Enum.ClaimMode.ByForm>
+  <HH.Enum.FundDestination.ToDeity>Божеству</HH.Enum.FundDestination.ToDeity>
+  <HH.Enum.FundDestination.ToFaction>Фракції</HH.Enum.FundDestination.ToFaction>
+  <HH.Enum.PensionRuleMode.Enforce>Дотримувати</HH.Enum.PensionRuleMode.Enforce>
+  <HH.Enum.PensionRuleMode.Off>Вимкнено</HH.Enum.PensionRuleMode.Off>
+  <HH.Enum.PensionRuleMode.WarnOnly>Лише попереджати</HH.Enum.PensionRuleMode.WarnOnly>
+  <HH.Enum.RngAlgorithm.ChaCha8>ChaCha8</HH.Enum.RngAlgorithm.ChaCha8>
+  <HH.Enum.RngAlgorithm.Pcg32>Pcg32</HH.Enum.RngAlgorithm.Pcg32>
+  <HH.Enum.RngAlgorithm.SplitMix64>SplitMix64</HH.Enum.RngAlgorithm.SplitMix64>
+  <HH.Enum.RngAlgorithm.Xoshiro256>Xoshiro256</HH.Enum.RngAlgorithm.Xoshiro256>
+  <HH.Enum.StaffRule.AlwaysRequired>Завжди потрібен</HH.Enum.StaffRule.AlwaysRequired>
+  <HH.Enum.StaffRule.NeverRequired>Ніколи не потрібен</HH.Enum.StaffRule.NeverRequired>
+  <HH.Enum.StaffRule.PerVenueType>Залежно від типу закладу</HH.Enum.StaffRule.PerVenueType>
+  <HH.Enum.UnderworldMode.AlwaysOn>Завжди увімкнено</HH.Enum.UnderworldMode.AlwaysOn>
+  <HH.Enum.UnderworldMode.DiscoverInGame>Відкривається в грі</HH.Enum.UnderworldMode.DiscoverInGame>
+  <HH.Setting.bank.accountBeta>Показник відсотків рахунку (не використовується з 1.1.0)</HH.Setting.bank.accountBeta>
+  <HH.Setting.bank.accountBeta.Desc>Замінено на «Відсотки рахунку: частка ринкового прибутку». Залишено, щоб старі збереження завантажувалися; зміна нічого не робить.</HH.Setting.bank.accountBeta.Desc>
+  <HH.Setting.bank.accountShare>Відсотки рахунку: частка ринкового прибутку</HH.Setting.bank.accountShare>
+  <HH.Setting.bank.accountShare.Desc>Банківський рахунок платить лише цю частку надлишку ринку (M − 1) на рік і ніколи не більше, ніж ощадний продукт Mattress Plus (який слідує прибутковості інвестицій). 0,2 означає: при M 1,2 рахунок платить +4 % на рік (Mattress Plus — +8 %, індекс — близько +20 %); при M 2 — +20 %. Нижче M 1 він трохи втрачає, але не більше 10 % на рік. Обидва повзунки прибутковості (M цього банку та M інвестицій) варто тримати близько один до одного. Кожен банк додає власний невеликий бонус або штраф. Інвестиції не змінюються.</HH.Setting.bank.accountShare.Desc>
+  <HH.Setting.bank.atmDailyLimit>Денний ліміт банкомата</HH.Setting.bank.atmDailyLimit>
+  <HH.Setting.bank.atmDailyLimit.Desc>Найбільше срібла, яке можна зняти з банкоматів за день.</HH.Setting.bank.atmDailyLimit.Desc>
+  <HH.Setting.bank.bailout>Порятунок «Too Big To Fail»</HH.Setting.bank.bailout>
+  <HH.Setting.bank.bailout.Desc>Банк First Rim Bank of Too Big To Fail раз на ігровий рік рятує розореного колишнього магната (безпроцентна позика, а не подарунок).</HH.Setting.bank.bailout.Desc>
+  <HH.Setting.bank.collectionAnger>Гнів стягувачів (розмір рейду)</HH.Setting.bank.collectionAnger>
+  <HH.Setting.bank.collectionAnger.Desc>Множить розмір бригад вилучення та рейдів стягувачів. 0 вимикає насильницькі етапи.</HH.Setting.bank.collectionAnger.Desc>
+  <HH.Setting.bank.depositDelayHours>Затримка внеску без відділення (години)</HH.Setting.bank.depositDelayHours>
+  <HH.Setting.bank.depositDelayHours.Desc>Срібло, покладене на рахунок там, де поруч немає банківського віконця чи банкомата, надходить через стільки годин.</HH.Setting.bank.depositDelayHours.Desc>
+  <HH.Setting.bank.directDeposit>Спрямовувати виручку з кас прямо в банк</HH.Setting.bank.directDeposit>
+  <HH.Setting.bank.directDeposit.Desc>Щойно з'явився рахунок, каси ваших підприємств опівночі переказуються на нього, а не лишають срібло на підлозі.</HH.Setting.bank.directDeposit.Desc>
+  <HH.Setting.bank.directDepositFee>Комісія за прямий внесок</HH.Setting.bank.directDepositFee>
+  <HH.Setting.bank.directDepositFee.Desc>Комісія з грошей, що одразу надходять на рахунок (виручка з кас). Від 0 до 100 %.</HH.Setting.bank.directDepositFee.Desc>
+  <HH.Setting.bank.feeFactor>Рівень комісій банку</HH.Setting.bank.feeFactor>
+  <HH.Setting.bank.feeFactor.Desc>Множить усі комісії вашого банку. 0 % — без жодних комісій.</HH.Setting.bank.feeFactor.Desc>
+  <HH.Setting.bank.lateFee>Пеня за прострочення</HH.Setting.bank.lateFee>
+  <HH.Setting.bank.lateFee.Desc>Стягується з простроченого платежу, коли позика досягає другого етапу стягнення.</HH.Setting.bank.lateFee.Desc>
+  <HH.Setting.bank.loanFloor>Стартовий кредит</HH.Setting.bank.loanFloor>
+  <HH.Setting.bank.loanFloor.Desc>Мінімальний кредитний ліміт для колонії з штрафним балом, щоб молода колонія могла позичити трохи.</HH.Setting.bank.loanFloor.Desc>
+  <HH.Setting.bank.loanIntervalDays>Днів між платежами</HH.Setting.bank.loanIntervalDays>
+  <HH.Setting.bank.loanIntervalDays.Desc>Платежі за позикою спливають кожні стільки днів.</HH.Setting.bank.loanIntervalDays.Desc>
+  <HH.Setting.bank.loanMaxTermDays>Найдовший строк позики (днів)</HH.Setting.bank.loanMaxTermDays>
+  <HH.Setting.bank.loanPortfolioShare>Інвестиції, що враховуються для кредитних лімітів</HH.Setting.bank.loanPortfolioShare>
+  <HH.Setting.bank.loanPortfolioShare.Desc>Яка частка ваших інвестицій (за ринковою вартістю) рахується як багатство, коли банк вирішує, скільки ви можете позичити. 100 % — повністю, 0 — зовсім не. Чистий статок, що показується в лобі, завжди враховує їх повністю.</HH.Setting.bank.loanPortfolioShare.Desc>
+  <HH.Setting.bank.maxCollectionStage>Найвищий етап стягнення</HH.Setting.bank.maxCollectionStage>
+  <HH.Setting.bank.maxCollectionStage.Desc>Драбина стягнення: 1 нагадування, 2 пеня, 3 залік із депозитів, 4 дружній візит, 5 бригада вилучення, 6 рейд стягувачів, 7 винагорода за голову. Стандартна кімната зупиняється на 4: ви сплачуєте борг і втрачаєте лише трохи настрою.</HH.Setting.bank.maxCollectionStage.Desc>
+  <HH.Setting.bank.moodOn>Настрій колонії від балансу</HH.Setting.bank.moodOn>
+  <HH.Setting.bank.moodOn.Desc>Невелика думка (від −4 до +3, подвоюється для жадібних колоністів, відсутня у аскетів) залежно від чистого статку на колоніста.</HH.Setting.bank.moodOn.Desc>
+  <HH.Setting.bank.moodScale>Пороги рівнів багатства</HH.Setting.bank.moodScale>
+  <HH.Setting.bank.moodScale.Desc>Масштабує пороги чистого статку для рівнів настрою (від «Злидні» до «Too Big To Fail»).</HH.Setting.bank.moodScale.Desc>
+  <HH.Setting.bank.podMaxHours>Капсули доставки: найпізніше (години)</HH.Setting.bank.podMaxHours>
+  <HH.Setting.bank.podMaxHours.Desc>…і не довше за стільки.</HH.Setting.bank.podMaxHours.Desc>
+  <HH.Setting.bank.podMaxLoad>Найбільша одна капсула</HH.Setting.bank.podMaxLoad>
+  <HH.Setting.bank.podMaxLoad.Desc>Велике зняття приходить капсулами приблизно по стільки срібла, але не більше 10 капсул на зняття (великі суми роблять важчі капсули, а не більше їх). Це не обмежує, скільки можна внести або зняти.</HH.Setting.bank.podMaxLoad.Desc>
+  <HH.Setting.bank.podMinHours>Капсули доставки: найраніше (години)</HH.Setting.bank.podMinHours>
+  <HH.Setting.bank.podMinHours.Desc>Зняття без віконця чи банкомата приходить капсулою не раніше ніж через стільки годин.</HH.Setting.bank.podMinHours.Desc>
+  <HH.Setting.bank.profit>M банку за ігровий рік (прибутковість)</HH.Setting.bank.profit>
+  <HH.Setting.bank.profit.Desc>Наскільки в середньому зростають інвестовані гроші за ігровий рік (60 днів). Це власний M банку: він визначає відсотки рахунку та ставки за позиками. M інвестицій (сторінка «Інвестиції») керує ринками; рахунок ніколи не платить більше, ніж Mattress Plus при цьому M. Тримайте обидва M близько один до одного. 1,0 = ні плюсу, ні мінусу; 1,2 = +20 % на рік; 0 = гроші зникають. Логарифмічна шкала від 0,01 до 100; для точного значення введіть число. Слідує за повзунком складності, доки ви не задасте його самі.</HH.Setting.bank.profit.Desc>
+  <HH.Setting.bank.researchMode>Банківські дослідження</HH.Setting.bank.researchMode>
+  <HH.Setting.bank.researchMode.Desc>Повний: банкомати, нічні сейфи, відділення та позики потребують своїх досліджень. Вимкнено: усе доступне з початку. (Глобальний режим досліджень у базових налаштуваннях робить те саме для всіх модулів.)</HH.Setting.bank.researchMode.Desc>
+  <HH.Setting.bank.seizureShare>Частка, що конфіскується «Чорною книгою»</HH.Setting.bank.seizureShare>
+  <HH.Setting.bank.seizureShare.Desc>Якщо «Чорна книга» конфіскує ваш рахунок (ризик 1 % за квартал), ця частка балансу буде втрачена.</HH.Setting.bank.seizureShare.Desc>
+  <HH.Setting.bank.sounds>Звуки банківського меню</HH.Setting.bank.sounds>
+  <HH.Setting.bank.sounds.Desc>Клацання, підрахунок монет, печатки у вікні банку, а також звук виграшу або програшу, коли проводиться лотерея, на яку ви купили квитки.</HH.Setting.bank.sounds.Desc>
+  <HH.Setting.bank.switchFee>Комісія за зміну банку</HH.Setting.bank.switchFee>
+  <HH.Setting.bank.switchFee.Desc>Скільки коштує переведення рахунку до іншого банку (КОНЦЕПТ 2.2: 50 срібла).</HH.Setting.bank.switchFee.Desc>
+  <HH.Setting.bank.tradeDeposit>Автоматично вносити торгове срібло</HH.Setting.bank.tradeDeposit>
+  <HH.Setting.bank.tradeDeposit.Desc>Вимкнено за замовчуванням, тож продаж торговцю дає монети, які можна витратити одразу. Якщо увімкнено (і увімкнено прямий внесок), срібло, отримане від торговців і торгових кораблів, переказується на рахунок одразу після угоди (за комісією прямого внеску). Караванів це не стосується.</HH.Setting.bank.tradeDeposit.Desc>
+  <HH.Setting.bank.wealthShare>Баланс банку враховується для оповідача (%)</HH.Setting.bank.wealthShare>
+  <HH.Setting.bank.wealthShare.Desc>Яка частка рахунку зараховується до багатства колонії, яким оповідач користується для очок рейдів. 100 % — чесно: внесення грошей не робить рейди меншими. 0 — банк стає схованкою.</HH.Setting.bank.wealthShare.Desc>
+  <HH.Setting.casino.abstinenceDays>Днів утримання на кожен етап залежності</HH.Setting.casino.abstinenceDays>
+  <HH.Setting.casino.abstinenceDays.Desc>Днів без жодної сесії, потрібних, щоб вилікувати кожен етап залежності (етап 3 = 3 × це значення).</HH.Setting.casino.abstinenceDays.Desc>
+  <HH.Setting.casino.addictionFreeSessions>Сесій до можливості залежності</HH.Setting.casino.addictionFreeSessions>
+  <HH.Setting.casino.addictionFreeSessions.Desc>Менше цієї кількості сесій за три дні — нічого не відбувається.</HH.Setting.casino.addictionFreeSessions.Desc>
+  <HH.Setting.casino.addictionGrowth>Зростання на кожну додаткову сесію</HH.Setting.casino.addictionGrowth>
+  <HH.Setting.casino.addictionGrowth.Desc>p = p₀ · зростання^(сесії − 3).</HH.Setting.casino.addictionGrowth.Desc>
+  <HH.Setting.casino.addictionP0>Шанс гральної залежності p₀</HH.Setting.casino.addictionP0>
+  <HH.Setting.casino.addictionP0.Desc>Шанс залежності після третьої сесії за три дні; з кожною наступною сесією зростає ×1,35. 0 вимикає залежність.</HH.Setting.casino.addictionP0.Desc>
+  <HH.Setting.casino.ambience>Атмосфера казино</HH.Setting.casino.ambience>
+  <HH.Setting.casino.ambience.Desc>Тихий гомін голосів, стукіт фішок і далекі дзвони автоматів у жвавій залі казино, поки камера поруч.</HH.Setting.casino.ambience.Desc>
+  <HH.Setting.casino.animSpeed>Швидкість анімації</HH.Setting.casino.animSpeed>
+  <HH.Setting.casino.animSpeed.Desc>100 % — задумана швидкість. Більші значення відтворюють ігри швидше; утримання Shift відтворює їх зі швидкістю 300 %.</HH.Setting.casino.animSpeed.Desc>
+  <HH.Setting.casino.animations>Анімовані ігри</HH.Setting.casino.animations>
+  <HH.Setting.casino.animations.Desc>The Lucky Thrumbo і практичні ігри показують барабани, колесо й карти в русі перед результатом. Вимкнено: результат з'являється одразу. Клік по столу, Пробіл або Enter завжди пропускає решту анімації.</HH.Setting.casino.animations.Desc>
+  <HH.Setting.casino.blackjackH17>Дилер у блекджеку бере м'яку 17</HH.Setting.casino.blackjackH17>
+  <HH.Setting.casino.blackjackH17.Desc>0 = дилер зупиняється на м'якій 17, 1 = дилер бере карту (приблизно +0,2 очка переваги).</HH.Setting.casino.blackjackH17.Desc>
+  <HH.Setting.casino.blackjackPays>Виплата за блекджек (бонус)</HH.Setting.casino.blackjackPays>
+  <HH.Setting.casino.blackjackPays.Desc>3:2 = 1,5, 6:5 = 1,2. Змінює перевагу казино приблизно на 1,4 пункту.</HH.Setting.casino.blackjackPays.Desc>
+  <HH.Setting.casino.chipSpendBonus>Бонус на витрати біля каси фішок</HH.Setting.casino.chipSpendBonus>
+  <HH.Setting.casino.chipSpendBonus.Desc>Гості приносять до столів стільки ж додатково, коли каса продає фішки («ніби це не гроші»).</HH.Setting.casino.chipSpendBonus.Desc>
+  <HH.Setting.casino.chipTakeHome>Фішки, які забирають додому</HH.Setting.casino.chipTakeHome>
+  <HH.Setting.casino.chipTakeHome.Desc>Не більше цієї частки виграшу гостя залишається на руках у вигляді фішок, коли він іде: чистий прибуток казино («запас фішок»).</HH.Setting.casino.chipTakeHome.Desc>
+  <HH.Setting.casino.colonistChips>Фішки казино за сеанс</HH.Setting.casino.colonistChips>
+  <HH.Setting.casino.colonistChips.Desc>Колоністи грають на нікчемні фішки казино: срібло колонії за столами ніколи не втрачається.</HH.Setting.casino.colonistChips.Desc>
+  <HH.Setting.casino.croupierRequired>Столи потребують крупʼє</HH.Setting.casino.croupierRequired>
+  <HH.Setting.casino.croupierRequired.Desc>Рулетка, блекджек і Rimdeck працюють для гостей лише тоді, коли за столом стоїть колоніст із типом роботи «Обслуговування». Ігрові автомати ніколи не потребують крупʼє.</HH.Setting.casino.croupierRequired.Desc>
+  <HH.Setting.casino.fatalDespair>Смертельна відчайдушність (не реалізовано)</HH.Setting.casino.fatalDespair>
+  <HH.Setting.casino.fatalDespair.Desc>Зарезервовано. Ніщо в цьому модулі не може вбити колоніста; перемикач не має ефекту.</HH.Setting.casino.fatalDespair.Desc>
+  <HH.Setting.casino.guestBetShare>Розмір ставки гостя</HH.Setting.casino.guestBetShare>
+  <HH.Setting.casino.guestBetShare.Desc>Гість ставить цю частку своїх грошей на азарт за раунд. Типове значення більше, ніж у справжньому казино, бо столи роблять набагато менше раундів за ігрову годину; погодинний дохід лишається приблизно тим самим.</HH.Setting.casino.guestBetShare.Desc>
+  <HH.Setting.casino.guestBudgetShare>Бюджет гостей на азартні ігри</HH.Setting.casino.guestBudgetShare>
+  <HH.Setting.casino.guestBudgetShare.Desc>Частка решти бюджету гостя, яку він несе до столів (до врахування характеру).</HH.Setting.casino.guestBudgetShare.Desc>
+  <HH.Setting.casino.guestMinBuyIn>Найменший вхідний внесок (срібло)</HH.Setting.casino.guestMinBuyIn>
+  <HH.Setting.casino.guestMinBuyIn.Desc>Гості, які мають менше на витрати, не грають.</HH.Setting.casino.guestMinBuyIn.Desc>
+  <HH.Setting.casino.guestStopLoss>Гості зупиняються після програшу</HH.Setting.casino.guestStopLoss>
+  <HH.Setting.casino.guestStopLoss.Desc>Гість виходить з-за столів, програвши цю частку своїх грошей на азарт.</HH.Setting.casino.guestStopLoss.Desc>
+  <HH.Setting.casino.guestWinTarget>Гості забирають виграш</HH.Setting.casino.guestWinTarget>
+  <HH.Setting.casino.guestWinTarget.Desc>Гість забирає виграш, вигравши цю частку понад свої гроші на азарт.</HH.Setting.casino.guestWinTarget.Desc>
+  <HH.Setting.casino.houseFloat>Запас каси казино (срібло)</HH.Setting.casino.houseFloat>
+  <HH.Setting.casino.houseFloat.Desc>Готівка, яку казино тримає у своїй шухляді. Усе, що воно виграє понад це (плюс те, з чим зараз грають гості), переходить до колонійської каси, коли казино зачиняється.</HH.Setting.casino.houseFloat.Desc>
+  <HH.Setting.casino.houseRiskLimit>Захист казино від банкрутства</HH.Setting.casino.houseRiskLimit>
+  <HH.Setting.casino.houseRiskLimit.Desc>Обмежує кожну ставку значенням: готівка ÷ (4 · σ · √раундів на день). Погана ніч не зруйнує казино. Ліміт зменшується, коли готівки мало.</HH.Setting.casino.houseRiskLimit.Desc>
+  <HH.Setting.casino.howToSeen>«Як грати» вже бачили</HH.Setting.casino.howToSeen>
+  <HH.Setting.casino.howToSeen.Desc>Пам'ятає, що короткі пояснення ігор у Lucky Thrumbo раз уже відкрились самі. Вимкніть, щоб вони відкривались знову.</HH.Setting.casino.howToSeen.Desc>
+  <HH.Setting.casino.joyGain>Множник радості від азартних ігор</HH.Setting.casino.joyGain>
+  <HH.Setting.casino.joyGain.Desc>Приріст радості порівняно зі стандартним покерним столом.</HH.Setting.casino.joyGain.Desc>
+  <HH.Setting.casino.maxBet>Найбільша ставка (срібло)</HH.Setting.casino.maxBet>
+  <HH.Setting.casino.maxBet.Desc>Найбільша ставка в будь-якій грі, коли діють обмеження.</HH.Setting.casino.maxBet.Desc>
+  <HH.Setting.casino.minBet>Найменша ставка (срібло)</HH.Setting.casino.minBet>
+  <HH.Setting.casino.minBet.Desc>Найменша ставка. Дробові значення допустимі: ставка не виплачується монетами.</HH.Setting.casino.minBet.Desc>
+  <HH.Setting.casino.pokerRake>Комісія Rimdeck</HH.Setting.casino.pokerRake>
+  <HH.Setting.casino.pokerRake.Desc>Частка кожного банку, яку залишає казино (до ліміту комісії).</HH.Setting.casino.pokerRake.Desc>
+  <HH.Setting.casino.pokerRakeCap>Ліміт комісії Rimdeck (срібло)</HH.Setting.casino.pokerRakeCap>
+  <HH.Setting.casino.pokerRakeCap.Desc>Найбільше, що казино бере з одного банку.</HH.Setting.casino.pokerRakeCap.Desc>
+  <HH.Setting.casino.reactions>Реакції гравців</HH.Setting.casino.reactions>
+  <HH.Setting.casino.reactions.Desc>Гравці радіють, стогнуть і кидають монети при виграшах, програшах і майже-вдачах (маленькі значки над головами та короткі звуки).</HH.Setting.casino.reactions.Desc>
+  <HH.Setting.casino.rouletteEdge>Перевага казино в рулетці</HH.Setting.casino.rouletteEdge>
+  <HH.Setting.casino.rouletteEdge.Desc>Від 0,54 % до 7,9 %: малі переваги використовують колесо a la partage, 2,7 % — один нуль, понад 4 % — колесо з подвійним нулем. Кожна ставка отримує рівно цю перевагу.</HH.Setting.casino.rouletteEdge.Desc>
+  <HH.Setting.casino.roundsPerHour.blackjack>Роздач блекджека за годину</HH.Setting.casino.roundsPerHour.blackjack>
+  <HH.Setting.casino.roundsPerHour.blackjack.Desc>Роздач за ігрову годину.</HH.Setting.casino.roundsPerHour.blackjack.Desc>
+  <HH.Setting.casino.roundsPerHour.poker>Роздач Rimdeck за годину</HH.Setting.casino.roundsPerHour.poker>
+  <HH.Setting.casino.roundsPerHour.poker.Desc>Роздач за ігрову годину.</HH.Setting.casino.roundsPerHour.poker.Desc>
+  <HH.Setting.casino.roundsPerHour.roulette>Обертань рулетки за годину</HH.Setting.casino.roundsPerHour.roulette>
+  <HH.Setting.casino.roundsPerHour.roulette.Desc>Обертань за ігрову годину.</HH.Setting.casino.roundsPerHour.roulette.Desc>
+  <HH.Setting.casino.roundsPerHour.slot>Обертань автоматів за годину</HH.Setting.casino.roundsPerHour.slot>
+  <HH.Setting.casino.roundsPerHour.slot.Desc>Як швидко крутиться автомат за ігрову годину (2500 тіків, тож 40 — це обертання кожні 1–2 реальні секунди за звичайної швидкості).</HH.Setting.casino.roundsPerHour.slot.Desc>
+  <HH.Setting.casino.slotRtp>Виплата ігрових автоматів (RTP)</HH.Setting.casino.slotRtp>
+  <HH.Setting.casino.slotRtp.Desc>Частка ставок, яку One-Armed Muffalo в довгостроковій перспективі повертає гравцям. 92 % = перевага казино 8 %. Понад 100 % казино втрачає гроші.</HH.Setting.casino.slotRtp.Desc>
+  <HH.Setting.casino.tableLimits>Дотримуватися лімітів столів</HH.Setting.casino.tableLimits>
+  <HH.Setting.casino.tableLimits.Desc>Увімкнено: ставки лишаються між найменшою та найбільшою ставкою нижче. Вимкнено: ставки обмежує лише правило ризику казино.</HH.Setting.casino.tableLimits.Desc>
+  <HH.Setting.casino.toleranceFactor>Накопичення толерантності до азарту</HH.Setting.casino.toleranceFactor>
+  <HH.Setting.casino.toleranceFactor.Desc>Як швидко зростає толерантність до радості від азарту порівняно зі стандартною грою (0,6 = на 40 % повільніше).</HH.Setting.casino.toleranceFactor.Desc>
+  <HH.Setting.casino.worldFx>Життя казино на карті</HH.Setting.casino.worldFx>
+  <HH.Setting.casino.worldFx.Desc>Крутяться барабани, колесо рулетки, роздані карти, фішки та дрібні звуки біля автоматів і столів, поки люди грають.</HH.Setting.casino.worldFx.Desc>
+  <HH.Setting.city.cinemaCooldownHours>Годин між фільмами для кожного гостя</HH.Setting.city.cinemaCooldownHours>
+  <HH.Setting.city.cinemaCooldownHours.Desc>Гість дивиться щонайбільше один фільм за цей час.</HH.Setting.city.cinemaCooldownHours.Desc>
+  <HH.Setting.city.cinemaMinSeats>Потрібно місць</HH.Setting.city.cinemaMinSeats>
+  <HH.Setting.city.cinemaMinSeats.Desc>Проєкційний екран вважається кінотеатром, якщо перед ним є щонайменше стільки місць.</HH.Setting.city.cinemaMinSeats.Desc>
+  <HH.Setting.city.cinemaShowTicks>Тривалість фільму (тіки)</HH.Setting.city.cinemaShowTicks>
+  <HH.Setting.city.cinemaShowTicks.Desc>Скільки триває один сеанс. 2500 тіків — одна година.</HH.Setting.city.cinemaShowTicks.Desc>
+  <HH.Setting.city.cinemaTicket>Квиток у кінотеатр</HH.Setting.city.cinemaTicket>
+  <HH.Setting.city.cinemaTicket.Desc>Ціна одного квитка. Гості платять, коли сідають.</HH.Setting.city.cinemaTicket.Desc>
+  <HH.Setting.city.desireScale>Інтерес гостей до міського життя</HH.Setting.city.desireScale>
+  <HH.Setting.city.desireScale.Desc>Визначає, наскільки гості хочуть ходити до кінотеатру, салону, галереї та на лавку в парку. 0 = ніколи.</HH.Setting.city.desireScale.Desc>
+  <HH.Setting.city.galleryCooldownHours>Годин між відвідинами для кожного гостя</HH.Setting.city.galleryCooldownHours>
+  <HH.Setting.city.galleryCooldownHours.Desc>Гість заходить до галереї щонайбільше раз за цей час.</HH.Setting.city.galleryCooldownHours.Desc>
+  <HH.Setting.city.galleryFee>Вхідна плата до галереї</HH.Setting.city.galleryFee>
+  <HH.Setting.city.galleryFee.Desc>Ціна одноразового проходу через галерею.</HH.Setting.city.galleryFee.Desc>
+  <HH.Setting.city.galleryMaxViews>Експонатів за візит</HH.Setting.city.galleryMaxViews>
+  <HH.Setting.city.galleryMaxViews.Desc>Скільки творів мистецтва один гість розглядає за візит.</HH.Setting.city.galleryMaxViews.Desc>
+  <HH.Setting.city.galleryMinArt>Потрібно творів мистецтва</HH.Setting.city.galleryMinArt>
+  <HH.Setting.city.galleryMinArt.Desc>Кімната вважається галереєю, якщо в ній є принаймні стільки творів мистецтва.</HH.Setting.city.galleryMinArt.Desc>
+  <HH.Setting.city.galleryViewTicks>Час розгляду одного експоната (тіки)</HH.Setting.city.galleryViewTicks>
+  <HH.Setting.city.galleryViewTicks.Desc>Скільки гість стоїть перед одним твором мистецтва.</HH.Setting.city.galleryViewTicks.Desc>
+  <HH.Setting.city.movieNight>Вечори кіно для колоністів</HH.Setting.city.movieNight>
+  <HH.Setting.city.movieNight.Desc>Колоністи час від часу влаштовують вечір кіно, коли є увімкнений проєкційний екран з місцями.</HH.Setting.city.movieNight.Desc>
+  <HH.Setting.city.movieNightChance>Шанс вечора кіно щовечора</HH.Setting.city.movieNightChance>
+  <HH.Setting.city.movieNightChance.Desc>Шанс, що колонія влаштує вечір кіно в конкретний вечір (18:00).</HH.Setting.city.movieNightChance.Desc>
+  <HH.Setting.city.parkCooldownHours>Годин між посиденьками на лавці для кожного гостя</HH.Setting.city.parkCooldownHours>
+  <HH.Setting.city.parkCooldownHours.Desc>Гість сидить на лавці щонайбільше раз за цей час.</HH.Setting.city.parkCooldownHours.Desc>
+  <HH.Setting.city.parkRestTicks>Час відпочинку на лавці (тіки)</HH.Setting.city.parkRestTicks>
+  <HH.Setting.city.parkRestTicks.Desc>Скільки хтось сидить на лавці в парку.</HH.Setting.city.parkRestTicks.Desc>
+  <HH.Setting.city.priceTolerance>Цінова терпимість гостей</HH.Setting.city.priceTolerance>
+  <HH.Setting.city.priceTolerance.Desc>Скільки гості готові платити за міські послуги порівняно з еталонною ціною. Слідує за повзунком складності; 1 = стандарт.</HH.Setting.city.priceTolerance.Desc>
+  <HH.Setting.city.researchMode>Режим досліджень</HH.Setting.city.researchMode>
+  <HH.Setting.city.researchMode.Desc>Повний: проєкти «Міського життя» треба дослідити. Вимкнено: усе з «Міського життя» доступне одразу.</HH.Setting.city.researchMode.Desc>
+  <HH.Setting.city.salonCooldownHours>Годин між стрижками для кожного гостя</HH.Setting.city.salonCooldownHours>
+  <HH.Setting.city.salonCooldownHours.Desc>Гість отримує нову зачіску щонайбільше раз за цей час.</HH.Setting.city.salonCooldownHours.Desc>
+  <HH.Setting.city.salonDyePrice>Доплата за фарбування</HH.Setting.city.salonDyePrice>
+  <HH.Setting.city.salonDyePrice.Desc>Доплата за зміну кольору волосся (потрібні Biotech або Ideology).</HH.Setting.city.salonDyePrice.Desc>
+  <HH.Setting.city.salonPrice>Ціна стрижки</HH.Setting.city.salonPrice>
+  <HH.Setting.city.salonPrice.Desc>Скільки гість платить за стрижку та нову укладку.</HH.Setting.city.salonPrice.Desc>
+  <HH.Setting.city.salonServiceTicks>Час укладання (тіки)</HH.Setting.city.salonServiceTicks>
+  <HH.Setting.city.salonServiceTicks.Desc>Скільки триває стрижка в середнього перукаря.</HH.Setting.city.salonServiceTicks.Desc>
+  <HH.Setting.city.salonTattooPrice>Доплата за татуювання</HH.Setting.city.salonTattooPrice>
+  <HH.Setting.city.salonTattooPrice.Desc>Доплата за татуювання (потрібна Ideology).</HH.Setting.city.salonTattooPrice.Desc>
+  <HH.Setting.city.salonWaitTicks>Ліміт очікування (тіки)</HH.Setting.city.salonWaitTicks>
+  <HH.Setting.city.salonWaitTicks.Desc>Гість чекає в кріслі стільки, поки хтось прийде; потім іде незадоволеним.</HH.Setting.city.salonWaitTicks.Desc>
+  <HH.Setting.city.securityChance>Шанс найняти (базовий)</HH.Setting.city.securityChance>
+  <HH.Setting.city.securityChance.Desc>Базовий шанс для кожного відповідного гостя; дуже заможні гості (80+) отримують +40 пунктів.</HH.Setting.city.securityChance.Desc>
+  <HH.Setting.city.securityDayShare>Денна плата (частка бюджету)</HH.Setting.city.securityDayShare>
+  <HH.Setting.city.securityDayShare.Desc>Охоронець коштує цю частку бюджету гостя на день, нарахована погодинно.</HH.Setting.city.securityDayShare.Desc>
+  <HH.Setting.city.securityHireHours>Годин на пошук охоронця</HH.Setting.city.securityHireHours>
+  <HH.Setting.city.securityHireHours.Desc>Найм, для якого протягом цього часу не знайдено вільного озброєного колоніста, скасовується без оплати.</HH.Setting.city.securityHireHours.Desc>
+  <HH.Setting.city.securityMinHourFee>Мінімальна погодинна плата</HH.Setting.city.securityMinHourFee>
+  <HH.Setting.city.securityMinHourFee.Desc>Охоронець ніколи не коштує менше за це на годину.</HH.Setting.city.securityMinHourFee.Desc>
+  <HH.Setting.city.securityMinWealth>Багатство, потрібне для охоронця</HH.Setting.city.securityMinWealth>
+  <HH.Setting.city.securityMinWealth.Desc>Гості нижче цього рівня багатства (від 1 до 100) ніколи не наймають охорону.</HH.Setting.city.securityMinWealth.Desc>
+  <HH.Setting.city.securityOn>Послуга охорони</HH.Setting.city.securityOn>
+  <HH.Setting.city.securityOn.Desc>Заможні гості можуть найняти одного з ваших озброєних колоністів як охоронця.</HH.Setting.city.securityOn.Desc>
+  <HH.Setting.city.taxiArrivalChance>Шанс прибути таксі</HH.Setting.city.taxiArrivalChance>
+  <HH.Setting.city.taxiArrivalChance.Desc>Частка гостей, які прибувають: їх висаджують на стоянці таксі, а не заходять пішки з краю карти.</HH.Setting.city.taxiArrivalChance.Desc>
+  <HH.Setting.city.taxiArrivalFee>Плата за прибуття</HH.Setting.city.taxiArrivalFee>
+  <HH.Setting.city.taxiArrivalFee.Desc>Скільки колонія отримує з гостя, який прибуває й висаджується на стоянці таксі.</HH.Setting.city.taxiArrivalFee.Desc>
+  <HH.Setting.city.taxiDepartureChance>Шанс викликати таксі під час від'їзду</HH.Setting.city.taxiDepartureChance>
+  <HH.Setting.city.taxiDepartureChance.Desc>Частка гостей, що від'їжджають і викликають таксі, коли є вільна стоянка таксі (зростає з багатством).</HH.Setting.city.taxiDepartureChance.Desc>
+  <HH.Setting.city.taxiFare>Плата за таксі</HH.Setting.city.taxiFare>
+  <HH.Setting.city.taxiFare.Desc>Скільки гість, що від'їжджає, платить за поїздку зі стоянки таксі.</HH.Setting.city.taxiFare.Desc>
+  <HH.Setting.city.taxiWaitTicks>Очікування таксі (тіки)</HH.Setting.city.taxiWaitTicks>
+  <HH.Setting.city.taxiWaitTicks.Desc>Як довго гість чекає на стоянці, перш ніж таксі відʼїде.</HH.Setting.city.taxiWaitTicks.Desc>
+  <HH.Setting.core.guide>Показувати посібник Hearth &amp; Harbor</HH.Setting.core.guide>
+  <HH.Setting.core.guide.Desc>Помічник для новачків у правому верхньому куті. Клацніть правою кнопкою, щоб сховати.</HH.Setting.core.guide.Desc>
+  <HH.Setting.core.helpHint>Показувати коротку довідкову підказку там, де грають в азартні ігри</HH.Setting.core.helpHint>
+  <HH.Setting.core.helpHint.Desc>Тихий короткий рядок на кожному екрані, де ви самі граєте в азартні ігри: якщо азартні ігри стали проблемою в житті, допомога існує (findahelpline.com). Більше ніде не показується.</HH.Setting.core.helpHint.Desc>
+  <HH.Setting.core.rngAlgorithm>Алгоритм випадкових чисел</HH.Setting.core.rngAlgorithm>
+  <HH.Setting.core.rngAlgorithm.Desc>Алгоритм для всіх випадкових потоків Hearth &amp; Harbor. Шанси однакові для всіх, відрізняється лише послідовність. ChaCha8 — криптографічний (параноїдальний), SplitMix64 — найшвидший.</HH.Setting.core.rngAlgorithm.Desc>
+  <HH.Setting.core.sealedFate>Запечатана доля</HH.Setting.core.sealedFate>
+  <HH.Setting.core.sealedFate.Desc>Увімкнено: перезавантаження збереження не перекидає події гостей (усе використовує запечатані випадкові потоки). Ставки гравця, банківські операції та лотерея завжди запечатані.</HH.Setting.core.sealedFate.Desc>
+  <HH.Setting.dlc.aiIdeoPrecepts>Давати грошові настанови також ідеологіям ШІ</HH.Setting.dlc.aiIdeoPrecepts>
+  <HH.Setting.dlc.aiIdeoPrecepts.Desc>Випадкові ідеології ШІ один раз отримують позицію щодо індульгенцій і платного вознесіння, зважену за їхніми мемами. Фіксовані фракційні ідеології ніколи не змінюються.</HH.Setting.dlc.aiIdeoPrecepts.Desc>
+  <HH.Setting.dlc.fundDestination>Пожертви колоністів ідуть до</HH.Setting.dlc.fundDestination>
+  <HH.Setting.dlc.fundDestination.Desc>Божеству: срібло просто зникає. Фракції віри: якщо фракція поділяє віру, вона отримує прихильність (+1 за кожні 500 срібла, не більше +5 за квадрум). Колоністи ніколи не платять у фонд вашого власного храму.</HH.Setting.dlc.fundDestination.Desc>
+  <HH.Setting.dlc.indulgenceCapScale>Ліміти покупки індульгенцій</HH.Setting.dlc.indulgenceCapScale>
+  <HH.Setting.dlc.indulgenceCapScale.Desc>Множник лімітів покупки на особу, колонію та ідеологію. 1 = ліміти, як задумано.</HH.Setting.dlc.indulgenceCapScale.Desc>
+  <HH.Setting.dlc.indulgenceFactor>Коефіцієнт ціни індульгенцій</HH.Setting.dlc.indulgenceFactor>
+  <HH.Setting.dlc.indulgenceFactor.Desc>Множник для кожної ціни індульгенції та вознесіння (коефіцієнт «Віра на продаж» таблиці грошей і віри).</HH.Setting.dlc.indulgenceFactor.Desc>
+  <HH.Setting.dlc.luckShift>Удача: зсув виплат Везунчиків і Невдах</HH.Setting.dlc.luckShift>
+  <HH.Setting.dlc.luckShift.Desc>Везунчикам додається стільки відсоткових пунктів до плану виплат гри, Невдахи втрачають стільки ж. Зсув ніколи не піднімає гру до 100 % і вище та ніколи не змінює випадковий розіграш.</HH.Setting.dlc.luckShift.Desc>
+  <HH.Setting.dlc.mandatoryBilleting>Обов'язкове гостинство для імперського розміщення</HH.Setting.dlc.mandatoryBilleting>
+  <HH.Setting.dlc.mandatoryBilleting.Desc>Накази Імперії про розміщення надходять навіть нижче рівня «Переповнено». Вимкнено: лише на складних рівнях («Переповнено» і вищі). У будь-якому разі лише в колонії з гостьовими ліжками.</HH.Setting.dlc.mandatoryBilleting.Desc>
+  <HH.Setting.dlc.nobleBasePrice>Базова ціна проживання знаті за особу та день</HH.Setting.dlc.nobleBasePrice>
+  <HH.Setting.dlc.nobleBasePrice.Desc>Срібло за знатну особу та день до бонусу титулу (+15 % на кожні 100 вислуги) і коефіцієнта задоволеності.</HH.Setting.dlc.nobleBasePrice.Desc>
+  <HH.Setting.dlc.nobleMoneyFactor>Коефіцієнт грошей знаті</HH.Setting.dlc.nobleMoneyFactor>
+  <HH.Setting.dlc.nobleMoneyFactor.Desc>Слідує рядку грошей гостей таблиці складності: на легких рівнях багатші, на складних — біднішими.</HH.Setting.dlc.nobleMoneyFactor.Desc>
+  <HH.Setting.dlc.nobleStays>Проживання знаті</HH.Setting.dlc.nobleStays>
+  <HH.Setting.dlc.nobleStays.Desc>Знать Імперії може просити платне житло. Відмовити можна завжди. Потрібне гостьове ліжко в спальні, що відповідає їхньому титулу; вони живуть як гості й платять наприкінці залежно від свого задоволення.</HH.Setting.dlc.nobleStays.Desc>
+  <HH.Setting.dlc.shrineReactions>Колоністи реагують на святині інших вірувань</HH.Setting.dlc.shrineReactions>
+  <HH.Setting.dlc.shrineReactions.Desc>Проповідники та супремасисти не люблять святині інших вір на своїй землі; толерантні ідеології їх схвалюють.</HH.Setting.dlc.shrineReactions.Desc>
+  <HH.Setting.dlc.xenoHospitality>Уподобання ксенотипів</HH.Setting.dlc.xenoHospitality>
+  <HH.Setting.dlc.xenoHospitality.Desc>Ксенотипи та гени гостей визначають, які кімнати й товари їм подобаються (темні кімнати для санґвофагів, холодні для іттакінів, ...).</HH.Setting.dlc.xenoHospitality.Desc>
+  <HH.Setting.finance.cryptoOn>Криптоактиви</HH.Setting.finance.cryptoOn>
+  <HH.Setting.finance.cryptoOn.Desc>Пропонувати RimCoin і мемкойни.</HH.Setting.finance.cryptoOn.Desc>
+  <HH.Setting.finance.fallbackWindow>Інвестиції в меню консолі звʼязку</HH.Setting.finance.fallbackWindow>
+  <HH.Setting.finance.fallbackWindow.Desc>Також пропонувати екрани інвестицій у плаваючому меню консолі звʼязку, навіть коли доступне вікно банку.</HH.Setting.finance.fallbackWindow.Desc>
+  <HH.Setting.finance.hazardMult>Катастрофи ×</HH.Setting.finance.hazardMult>
+  <HH.Setting.finance.hazardMult.Desc>Множить обвали, «витягування килима», дефолти, злами бірж і банківські паніки. Довгостроковий середній показник не змінюється, змінюється лише те, як часто це шкодить.</HH.Setting.finance.hazardMult.Desc>
+  <HH.Setting.finance.jumpMult>Стрибки цін ×</HH.Setting.finance.jumpMult>
+  <HH.Setting.finance.jumpMult.Desc>Множить частоту, з якою активи роблять власні стрибки (квартальні цифри, стрибки криптовалют, памп мемкойнів). Довгостроковий середній показник не змінюється: математика компенсує.</HH.Setting.finance.jumpMult.Desc>
+  <HH.Setting.finance.memeInterval>Днів між новими мемкойнами</HH.Setting.finance.memeInterval>
+  <HH.Setting.finance.memeInterval.Desc>Середня кількість днів до лістингу наступного мемкойна.</HH.Setting.finance.memeInterval.Desc>
+  <HH.Setting.finance.memeOn>Мемкойни</HH.Setting.finance.memeOn>
+  <HH.Setting.finance.memeOn.Desc>Новий мемкойн з'являється кожні кілька днів і знімається з торгів після трьох. Більшість власників втрачають гроші, кілька розбагатіють.</HH.Setting.finance.memeOn.Desc>
+  <HH.Setting.finance.newsMessages>Ринкові новини як повідомлення</HH.Setting.finance.newsMessages>
+  <HH.Setting.finance.newsMessages.Desc>Показувати обвали, підйоми та злами короткими повідомленнями (лише якщо у вас є зачеплені активи).</HH.Setting.finance.newsMessages.Desc>
+  <HH.Setting.finance.nftOn>NFT</HH.Setting.finance.nftOn>
+  <HH.Setting.finance.nftOn.Desc>Сертифікати власності на зображення. Продаж триває від одного до чотирьох днів і коштує спреду.</HH.Setting.finance.nftOn.Desc>
+  <HH.Setting.finance.omenCapA>Ліміт позиції, шансові ринки</HH.Setting.finance.omenCapA>
+  <HH.Setting.finance.omenCapA.Desc>Найбільша частка вашого чистого капіталу в одному шансовому ринку Omen.</HH.Setting.finance.omenCapA.Desc>
+  <HH.Setting.finance.omenCapB>Ліміт позиції, світові ринки</HH.Setting.finance.omenCapB>
+  <HH.Setting.finance.omenCapB.Desc>Найбільша частка вашого чистого капіталу в одному ринку Omen на світову подію.</HH.Setting.finance.omenCapB.Desc>
+  <HH.Setting.finance.omenFee>Комісія Omen</HH.Setting.finance.omenFee>
+  <HH.Setting.finance.omenFee.Desc>Частка кожної ставки, яку залишає біржа (і знову, коли ви закриваєте позицію достроково).</HH.Setting.finance.omenFee.Desc>
+  <HH.Setting.finance.omenGamma>Спотворення довгих шансів γ</HH.Setting.finance.omenGamma>
+  <HH.Setting.finance.omenGamma.Desc>Нижче 1 біржа переоцінює малоймовірні результати (класичне упередження «фаворит — аутсайдер»). 1 = котирування дорівнюють справжнім шансам.</HH.Setting.finance.omenGamma.Desc>
+  <HH.Setting.finance.omenSpread>Спред Omen</HH.Setting.finance.omenSpread>
+  <HH.Setting.finance.omenSpread.Desc>Маржа букмекера: ціна YES і ціна NO разом дають 1 плюс це значення.</HH.Setting.finance.omenSpread.Desc>
+  <HH.Setting.finance.profit>Прибутковість (річний множник M)</HH.Setting.finance.profit>
+  <HH.Setting.finance.profit.Desc>Наскільки інвестовані гроші в середньому зростають за ігровий рік (60 днів) для еталонного фонду RimIndex 50: 1,2 означає +20 % на рік, 1,0 — ні плюс, ні мінус, менше 1 — втрати. Логарифмічна шкала від 0,1 до 100; введіть число для точного значення. Слідує за повзунком складності, доки ви не задасте його самі.</HH.Setting.finance.profit.Desc>
+  <HH.Setting.finance.projectStakePct>Ліміт ставки на проєкт</HH.Setting.finance.projectStakePct>
+  <HH.Setting.finance.projectStakePct.Desc>Найбільша ставка на один проєкт як частка вашого чистого капіталу.</HH.Setting.finance.projectStakePct.Desc>
+  <HH.Setting.finance.projectTotalPct>Ліміт ставок, усі проєкти</HH.Setting.finance.projectTotalPct>
+  <HH.Setting.finance.projectTotalPct.Desc>Найбільша сума всіх відкритих ставок на проєкти (Long і Short разом) як частка вашого чистого капіталу.</HH.Setting.finance.projectTotalPct.Desc>
+  <HH.Setting.finance.projectYearCapPct>Річний ліміт прибутку</HH.Setting.finance.projectYearCapPct>
+  <HH.Setting.finance.projectYearCapPct.Desc>Чистий прибуток від Long і Short за ігровий рік обмежено цією часткою вашого чистого капіталу на початок року. Понад неї банк повертає лише ставку.</HH.Setting.finance.projectYearCapPct.Desc>
+  <HH.Setting.finance.projectsOn>Фракційні проєкти та Project Shorts</HH.Setting.finance.projectsOn>
+  <HH.Setting.finance.projectsOn.Desc>Фракції оголошують проєкти; ви можете інвестувати в них (Long) або ставити проти них (Short).</HH.Setting.finance.projectsOn.Desc>
+  <HH.Setting.finance.volMult>Волатильність ×</HH.Setting.finance.volMult>
+  <HH.Setting.finance.volMult.Desc>Множить, наскільки шалено ціни коливаються щодня. 1 = цифри з проєкту (індекс 1,5 % на день, мемкойни 15 %).</HH.Setting.finance.volMult.Desc>
+  <HH.Setting.insurance.assessmentDays>Оцінка нещасного випадку (дні)</HH.Setting.insurance.assessmentDays>
+  <HH.Setting.insurance.assessmentDays.Desc>План страхування від нещасних випадків оцінює ступінь втрати працездатності через стільки днів після випадку (за замовчуванням квадрум). До того часу лист показує попередній перегляд.</HH.Setting.insurance.assessmentDays.Desc>
+  <HH.Setting.insurance.billingDays>Інтервал сплати внеску (дні)</HH.Setting.insurance.billingDays>
+  <HH.Setting.insurance.billingDays.Desc>Внески списуються автоматично кожні стільки днів (з банківського рахунку, інакше з каси або зі срібла на складі).</HH.Setting.insurance.billingDays.Desc>
+  <HH.Setting.insurance.changeFee>Комісія за зміну полісу (срібло)</HH.Setting.insurance.changeFee>
+  <HH.Setting.insurance.changeFee.Desc>Скільки Clawback Mutual стягує за кожну зміну суми, рівня або доповнень чинного полісу («адміністративні зусилля»). Безкоштовно за «Standard Room».</HH.Setting.insurance.changeFee.Desc>
+  <HH.Setting.insurance.changeLimitPerQuadrum>Змін на поліс за квадрум</HH.Setting.insurance.changeLimitPerQuadrum>
+  <HH.Setting.insurance.changeLimitPerQuadrum.Desc>Скільки разів за квадрум можна змінити один поліс. 0 = без обмежень («Standard Room»); «Overbooked» і складніші рівні це обмежують.</HH.Setting.insurance.changeLimitPerQuadrum.Desc>
+  <HH.Setting.insurance.changeWaitingDays>Період очікування після підвищення (дні)</HH.Setting.insurance.changeWaitingDays>
+  <HH.Setting.insurance.changeWaitingDays.Desc>Після підвищення суми, рівня або додавання доповнення вимоги за події в межах цього періоду очікування все ще розглядаються за старим покриттям (поліс, підвищений за хвилину до рейду, не виплачує за новим рівнем). Зниження покриття періоду очікування не має.</HH.Setting.insurance.changeWaitingDays.Desc>
+  <HH.Setting.insurance.claimLetters>Листи для кожної вимоги</HH.Setting.insurance.claimLetters>
+  <HH.Setting.insurance.claimLetters.Desc>Clawback Mutual пише лист для кожної поданої вимоги (не більше одного повідомлення «вимогу подано» на день) і для кожного рішення.</HH.Setting.insurance.claimLetters.Desc>
+  <HH.Setting.insurance.claimMode>Як подаються вимоги</HH.Setting.insurance.claimMode>
+  <HH.Setting.insurance.claimMode.Desc>Через форму: страховий випадок приносить лист «можлива вимога», і ви подаєте вимогу на формі до кінця строку (результат кидається так само, як раніше; форма косметична, крім вибору виплати). Автоматично: вимоги подаються за вас у момент пошкодження.</HH.Setting.insurance.claimMode.Desc>
+  <HH.Setting.insurance.claimReminder>Нагадувати перед кінцем строку вимоги</HH.Setting.insurance.claimReminder>
+  <HH.Setting.insurance.claimReminder.Desc>Короткий лист-нагадування за два дні до закриття вікна подання.</HH.Setting.insurance.claimReminder.Desc>
+  <HH.Setting.insurance.claimsAttitude>Ставлення до вимог</HH.Setting.insurance.claimsAttitude>
+  <HH.Setting.insurance.claimsAttitude.Desc>Наскільки охоче відділ вимог знаходить причину не платити. 0 % «Ніколи не викручуємося» · 15 % «Дрібний шрифт» («Standard Room») · 40 % «Творча бухгалтерія» · 75 % «Нашим юристам нудно» · 100 % «Майже завжди».</HH.Setting.insurance.claimsAttitude.Desc>
+  <HH.Setting.insurance.deadlineScale>Строки подання вимог (коефіцієнт)</HH.Setting.insurance.deadlineScale>
+  <HH.Setting.insurance.deadlineScale.Desc>Множить строк подання кожного полісу (Wanderlust 5 днів, Legal Shield 5 днів, майно близько 15 днів на рівні «Good Enough»; Premium +50 %, Bare Minimum −30 %).</HH.Setting.insurance.deadlineScale.Desc>
+  <HH.Setting.insurance.formError>Шанс помилки у формі скасування</HH.Setting.insurance.formError>
+  <HH.Setting.insurance.formError.Desc>Пункт 30: скасування повертається з помилкою у формі. За «Standard Room» воно автоматично подається повторно, і строк лишається; складніші рівні втрачають квадрум.</HH.Setting.insurance.formError.Desc>
+  <HH.Setting.insurance.formTextAi>Відповідь ШІ на заяву про вимогу</HH.Setting.insurance.formTextAi>
+  <HH.Setting.insurance.formTextAi.Desc>Коли модуль ШІ увімкнено і ви з ним погодилися, відділ вимог відповідає на вашу заяву своїми словами (сума та результат не змінюються). Без нього заява зберігається й ігнорується.</HH.Setting.insurance.formTextAi.Desc>
+  <HH.Setting.insurance.hospitalCapDays>Rim Health Plan: оплачувані дні в лікарняному ліжку</HH.Setting.insurance.hospitalCapDays>
+  <HH.Setting.insurance.hospitalCapDays.Desc>Найбільша кількість днів у лікарняному ліжку, яку Rim Health Plan оплачує одному колоністу в межах вікна нижче (ліміт лікарняної допомоги; не дає хронічній хворобі платити більше, ніж коштує внесок).</HH.Setting.insurance.hospitalCapDays.Desc>
+  <HH.Setting.insurance.hospitalCapWindow>Rim Health Plan: вікно (дні)</HH.Setting.insurance.hospitalCapWindow>
+  <HH.Setting.insurance.hospitalCapWindow.Desc>Ліміт вище рахує оплачувані дні кожного колоніста за стільки днів (за замовчуванням квадрум).</HH.Setting.insurance.hospitalCapWindow.Desc>
+  <HH.Setting.insurance.loading>Навантаження страхування</HH.Setting.insurance.loading>
+  <HH.Setting.insurance.loading.Desc>Надбавка до очікуваної шкоди, з якої складається внесок. У середньому страховик залишає собі цю частку; 0 % — актуарно справедливо.</HH.Setting.insurance.loading.Desc>
+  <HH.Setting.insurance.maxPersonSum>Максимальна персональна сума</HH.Setting.insurance.maxPersonSum>
+  <HH.Setting.insurance.maxPersonSum.Desc>Найбільша базова сума полісу від нещасного випадку, на пенсію чи для подорожей (також не більше ніж удвічі ринкової вартості колоніста).</HH.Setting.insurance.maxPersonSum.Desc>
+  <HH.Setting.insurance.maxPropertySum>Максимальна сума майна</HH.Setting.insurance.maxPropertySum>
+  <HH.Setting.insurance.maxPropertySum.Desc>Найбільша застрахована сума полісу на майно.</HH.Setting.insurance.maxPropertySum.Desc>
+  <HH.Setting.insurance.negotiation>Дозволити переговори щодо виплат</HH.Setting.insurance.negotiation>
+  <HH.Setting.insurance.negotiation.Desc>Виплати можна обговорювати (до трьох раундів). На Стандартній кімнаті переговори ніколи нічого не коштують.</HH.Setting.insurance.negotiation.Desc>
+  <HH.Setting.insurance.noticeDays>Строк скасування (днів)</HH.Setting.insurance.noticeDays>
+  <HH.Setting.insurance.noticeDays.Desc>Скасування набуває чинності на першій зміні чверті, що настане не раніше ніж через стільки днів після подання. Стандартна кімната — 3 дні, «Переповнено» — одна чверть, «Чому?» — рік.</HH.Setting.insurance.noticeDays.Desc>
+  <HH.Setting.insurance.pensionMaxWorkHours>Пенсія: дозволено годин роботи на день</HH.Setting.insurance.pensionMaxWorkHours>
+  <HH.Setting.insurance.pensionMaxWorkHours.Desc>Скільки годин на день пенсіонер може мати в розкладі на «Роботу». «Будь-що», «Радість», «Сон» і «Медитація» вважаються вільним часом.</HH.Setting.insurance.pensionMaxWorkHours.Desc>
+  <HH.Setting.insurance.pensionRule>Правило роботи для пенсіонерів</HH.Setting.insurance.pensionRule>
+  <HH.Setting.insurance.pensionRule.Desc>Той, хто отримує щоденну пенсію (Золоті роки, «Достатньо добре» або «Преміум», від 60 років), може працювати в розкладі лише кілька годин на день. Примусово: страйки коштують пенсії (2-й раз — пенсія цього періоду, 3-й — право на неї). Лише попередження: листи та сповіщення, без штрафу. Вимкнено: правила немає.</HH.Setting.insurance.pensionRule.Desc>
+  <HH.Setting.insurance.requireResearch>Страхування потребує досліджень</HH.Setting.insurance.requireResearch>
+  <HH.Setting.insurance.requireResearch.Desc>Поліси відкриваються разом із дослідженнями SL_Insurance («Мінімум», «Достатньо добре») та SL_Actuarial («Преміум», «Мандрівка»). Вимкнено: усе доступно одразу.</HH.Setting.insurance.requireResearch.Desc>
+  <HH.Setting.insurance.retentionDialogs>Діалоги утримання</HH.Setting.insurance.retentionDialogs>
+  <HH.Setting.insurance.retentionDialogs.Desc>Скільки разів Desmond Tally (старший спеціаліст з утримання клієнтів) відмовлятиме вас від скасування. Стандартна кімната: одна чесна пропозиція.</HH.Setting.insurance.retentionDialogs.Desc>
+  <HH.Setting.insurance.salesPressure>Тиск продажу</HH.Setting.insurance.salesPressure>
+  <HH.Setting.insurance.salesPressure.Desc>Наскільки наполегливо продає Clawback Mutual: попередньо відмічені доповнення, пропозиції утримання, помилки у формах, підказки про доплату. Кожен прийом має власний перемикач нижче.</HH.Setting.insurance.salesPressure.Desc>
+  <HH.Setting.insurance.showStatusColumn>Колонка страхування в таблицях колоністів</HH.Setting.insurance.showStatusColumn>
+  <HH.Setting.insurance.showStatusColumn.Desc>Показує статус страхування кожного колоніста в таблиці призначень (лише після появи першого полісу).</HH.Setting.insurance.showStatusColumn.Desc>
+  <HH.Setting.insurance.showStatusTab>Вкладка страхування у колоністів</HH.Setting.insurance.showStatusTab>
+  <HH.Setting.insurance.showStatusTab.Desc>Додає вкладку «Страхування» до інспектора колоністів (лише після появи першого полісу).</HH.Setting.insurance.showStatusTab.Desc>
+  <HH.Setting.insurance.trick.badge>Прийом: значок «Більшість колоній обирають Преміум»</HH.Setting.insurance.trick.badge>
+  <HH.Setting.insurance.trick.badge.Desc>Значок у колонці «Преміум» (і, гірше, сірий «Преміум Плюс»).</HH.Setting.insurance.trick.badge.Desc>
+  <HH.Setting.insurance.trick.formError>Прийом: помилки у формах</HH.Setting.insurance.trick.formError>
+  <HH.Setting.insurance.trick.formError.Desc>Скасування, які повертаються з помилкою у формі.</HH.Setting.insurance.trick.formError.Desc>
+  <HH.Setting.insurance.trick.preTicked>Прийом: попередньо відмічені доповнення</HH.Setting.insurance.trick.preTicked>
+  <HH.Setting.insurance.trick.preTicked.Desc>Доповнення, відмічені за вас (залежить від тиску продажу: завжди або ніколи).</HH.Setting.insurance.trick.preTicked.Desc>
+  <HH.Setting.insurance.trick.retention>Прийом: пропозиції утримання</HH.Setting.insurance.trick.retention>
+  <HH.Setting.insurance.trick.retention.Desc>Діалоги утримання під час скасування.</HH.Setting.insurance.trick.retention.Desc>
+  <HH.Setting.insurance.trick.upsell>Прийом: підказки про доплату</HH.Setting.insurance.trick.upsell>
+  <HH.Setting.insurance.trick.upsell.Desc>Листи з пропозицією більшого чи кращого покриття (ніколи протягом п’яти днів після смерті).</HH.Setting.insurance.trick.upsell.Desc>
+  <HH.Setting.insurance.trickCap>Ліміт витрат на продажні прийоми</HH.Setting.insurance.trickCap>
+  <HH.Setting.insurance.trickCap.Desc>Усі продажні прийоми разом можуть коштувати не більше цієї частки річних внесків; решта повертається як «Бонусний кредит» у річному листі.</HH.Setting.insurance.trickCap.Desc>
+  <HH.Setting.insurance.waitingDays>Очікування (днів)</HH.Setting.insurance.waitingDays>
+  <HH.Setting.insurance.waitingDays.Desc>Покриття починається через стільки днів («що починається після початку покриття»). Шкода в період очікування не виплачується.</HH.Setting.insurance.waitingDays.Desc>
+  <HH.Setting.lottery.colonyFee>Внесок за участь із квитка</HH.Setting.lottery.colonyFee>
+  <HH.Setting.lottery.colonyFee.Desc>Додаткове срібло з кожного квитка, яке залишається вам (воно піднімає ціну для покупців).</HH.Setting.lottery.colonyFee.Desc>
+  <HH.Setting.lottery.colonyInterval>Днів між тиражами колонії</HH.Setting.lottery.colonyInterval>
+  <HH.Setting.lottery.colonyInterval.Desc>Тираж кожні стільки днів; джекпот переноситься.</HH.Setting.lottery.colonyInterval.Desc>
+  <HH.Setting.lottery.colonyJackpotCap>Ліміт джекпоту колонії</HH.Setting.lottery.colonyJackpotCap>
+  <HH.Setting.lottery.colonyJackpotCap.Desc>Джекпот вашої лотереї переноситься, доки не досягне цієї суми.</HH.Setting.lottery.colonyJackpotCap.Desc>
+  <HH.Setting.lottery.colonyJackpotShare>Частка банку: джекпот</HH.Setting.lottery.colonyJackpotShare>
+  <HH.Setting.lottery.colonyJackpotShare.Desc>Частка банку за 4 правильні числа.</HH.Setting.lottery.colonyJackpotShare.Desc>
+  <HH.Setting.lottery.colonyOn>Лотерея колонії</HH.Setting.lottery.colonyOn>
+  <HH.Setting.lottery.colonyOn.Desc>Проводьте власну лотерею: ваші гості й симульовані гравці дружніх поселень купують квитки, а невиплачене залишається вам.</HH.Setting.lottery.colonyOn.Desc>
+  <HH.Setting.lottery.colonyPrice>Ціна квитка колонії</HH.Setting.lottery.colonyPrice>
+  <HH.Setting.lottery.colonyPrice.Desc>Ціна одного квитка вашої лотереї.</HH.Setting.lottery.colonyPrice.Desc>
+  <HH.Setting.lottery.colonyQuote>Частка виплат колонії</HH.Setting.lottery.colonyQuote>
+  <HH.Setting.lottery.colonyQuote.Desc>Частка ціни квитка, що йде в банк. Решта — ваша. Вища частка, ніж у загальному тиражі, приваблює більше покупців.</HH.Setting.lottery.colonyQuote.Desc>
+  <HH.Setting.lottery.colonySecondShare>Частка банку: 2-й ранг</HH.Setting.lottery.colonySecondShare>
+  <HH.Setting.lottery.colonySecondShare.Desc>Частка банку за 3 правильні числа.</HH.Setting.lottery.colonySecondShare.Desc>
+  <HH.Setting.lottery.colonyThirdShare>Частка банку: 3-й ранг</HH.Setting.lottery.colonyThirdShare>
+  <HH.Setting.lottery.colonyThirdShare.Desc>Частка банку за 2 правильні числа.</HH.Setting.lottery.colonyThirdShare.Desc>
+  <HH.Setting.lottery.demandBase>Базовий попит на квитки</HH.Setting.lottery.demandBase>
+  <HH.Setting.lottery.demandBase.Desc>Квитків на людину на день за нейтральних умов; основа формули попиту.</HH.Setting.lottery.demandBase.Desc>
+  <HH.Setting.lottery.globalInterval>Днів між загальними тиражами</HH.Setting.lottery.globalInterval>
+  <HH.Setting.lottery.globalInterval.Desc>Тираж кожні стільки днів.</HH.Setting.lottery.globalInterval.Desc>
+  <HH.Setting.lottery.globalOn>Великий тираж Glitterworld</HH.Setting.lottery.globalOn>
+  <HH.Setting.lottery.globalOn.Desc>Загальна лотерея: тираж кожні кілька днів, квитки купують у віконці банку.</HH.Setting.lottery.globalOn.Desc>
+  <HH.Setting.lottery.globalPrice>Загальна ціна квитка</HH.Setting.lottery.globalPrice>
+  <HH.Setting.lottery.globalPrice.Desc>Ціна одного квитка загального тиражу.</HH.Setting.lottery.globalPrice.Desc>
+  <HH.Setting.lottery.globalQuote>Загальна частка виплат</HH.Setting.lottery.globalQuote>
+  <HH.Setting.lottery.globalQuote.Desc>Частка продажу квитків, що йде на призи (джекпот отримує 40 % цієї частки).</HH.Setting.lottery.globalQuote.Desc>
+  <HH.Setting.lottery.internationalScale>Симульовані гравці ×</HH.Setting.lottery.internationalScale>
+  <HH.Setting.lottery.internationalScale.Desc>Множить квитки, які симульовані гравці всіх поселень купують на загальний тираж.</HH.Setting.lottery.internationalScale.Desc>
+  <HH.Setting.lottery.jackpotCap>Загальний ліміт джекпоту</HH.Setting.lottery.jackpotCap>
+  <HH.Setting.lottery.jackpotCap.Desc>Джекпот переноситься, доки не досягне цієї суми.</HH.Setting.lottery.jackpotCap.Desc>
+  <HH.Setting.thrumbo.edgeShift>The Lucky Thrumbo: зсув переваги казино</HH.Setting.thrumbo.edgeShift>
+  <HH.Setting.thrumbo.edgeShift.Desc>Відсоткові пункти, додані до переваги казино в кожній грі The Lucky Thrumbo (база: слоти 8 %, рулетка 2,7 %, блекджек за правилами). 0 = стандартні переваги; від’ємні числа на вашу користь. Слідує за повзунком складності.</HH.Setting.thrumbo.edgeShift.Desc>
+  <HH.Setting.thrumbo.maxBetCap>The Lucky Thrumbo: ліміт столу, стеля (срібло)</HH.Setting.thrumbo.maxBetCap>
+  <HH.Setting.thrumbo.maxBetCap.Desc>Лише коли ліміт столу увімкнено: жодна ставка не буде вищою за це.</HH.Setting.thrumbo.maxBetCap.Desc>
+  <HH.Setting.thrumbo.maxBetFloor>The Lucky Thrumbo: ліміт столу, мінімум (срібло)</HH.Setting.thrumbo.maxBetFloor>
+  <HH.Setting.thrumbo.maxBetFloor.Desc>Лише коли ліміт столу увімкнено: навіть бідна колонія може ставити щонайменше стільки за раунд.</HH.Setting.thrumbo.maxBetFloor.Desc>
+  <HH.Setting.thrumbo.maxBetShare>The Lucky Thrumbo: ліміт столу (частка чистого капіталу)</HH.Setting.thrumbo.maxBetShare>
+  <HH.Setting.thrumbo.maxBetShare.Desc>Лише коли ліміт столу увімкнено: одна ставка може бути не більшою за цю частку вашого чистого капіталу (рахунок плюс срібло вдома, мінус борги), між мінімумом і стелею нижче.</HH.Setting.thrumbo.maxBetShare.Desc>
+  <HH.Setting.thrumbo.minBet>The Lucky Thrumbo: найменша ставка (срібло)</HH.Setting.thrumbo.minBet>
+  <HH.Setting.thrumbo.minBet.Desc>Найменша ставка, яку приймає The Lucky Thrumbo.</HH.Setting.thrumbo.minBet.Desc>
+  <HH.Setting.thrumbo.tableLimit>The Lucky Thrumbo: ліміт столу</HH.Setting.thrumbo.tableLimit>
+  <HH.Setting.thrumbo.tableLimit.Desc>Коли увімкнено, одна ставка не перевищує частку вашого чистого капіталу (три налаштування нижче). Вимкнено: можна ставити все, що є.</HH.Setting.thrumbo.tableLimit.Desc>
+  <HH.Setting.underworld.exposureChance>Шанс, що поважний гість натрапить на задню кімнату</HH.Setting.underworld.exposureChance>
+  <HH.Setting.underworld.exposureChance.Desc>За кожну перевірку (приблизно кожні 2 години), поки присутні поважні гості й задню кімнату використовували. Слідує за повзунком складності.</HH.Setting.underworld.exposureChance.Desc>
+  <HH.Setting.underworld.fence.buyPercent>Скупник купує за</HH.Setting.underworld.fence.buyPercent>
+  <HH.Setting.underworld.fence.buyPercent.Desc>Частка ринкової вартості, яку скупник платить за крадені речі.</HH.Setting.underworld.fence.buyPercent.Desc>
+  <HH.Setting.underworld.fence.capital>Скарбничка скупника</HH.Setting.underworld.fence.capital>
+  <HH.Setting.underworld.fence.capital.Desc>Скупник платить зі своєї скарбнички. Він поповнює її з каси, а надлишок повертається в касу.</HH.Setting.underworld.fence.capital.Desc>
+  <HH.Setting.underworld.fence.exposureChance>Шанс, що власник дізнається</HH.Setting.underworld.fence.exposureChance>
+  <HH.Setting.underworld.fence.exposureChance.Desc>За кожну перепродану крадену річ: фракція, у якої її вкрали, дізнається, де вона опинилася.</HH.Setting.underworld.fence.exposureChance.Desc>
+  <HH.Setting.underworld.fence.goodwillHit>Втрачена прихильність, коли викрили</HH.Setting.underworld.fence.goodwillHit>
+  <HH.Setting.underworld.fence.goodwillHit.Desc>До ліміту складності вашого рівня.</HH.Setting.underworld.fence.goodwillHit.Desc>
+  <HH.Setting.underworld.fence.sellPercent>Скупник продає за</HH.Setting.underworld.fence.sellPercent>
+  <HH.Setting.underworld.fence.sellPercent.Desc>Частка ринкової вартості, яку платять сумнівні покупці.</HH.Setting.underworld.fence.sellPercent.Desc>
+  <HH.Setting.underworld.gang.feeMax>Плата за задню кімнату (найвища)</HH.Setting.underworld.gang.feeMax>
+  <HH.Setting.underworld.gang.feeMin>Плата за задню кімнату (найнижча)</HH.Setting.underworld.gang.feeMin>
+  <HH.Setting.underworld.gang.feeMin.Desc>Скільки платить член банди за задню кімнату.</HH.Setting.underworld.gang.feeMin.Desc>
+  <HH.Setting.underworld.gang.intervalDays>Днів між візитами банд</HH.Setting.underworld.gang.intervalDays>
+  <HH.Setting.underworld.gang.intervalDays.Desc>Середній час між візитами банд, щойно з’являються задня кімната, яма для бійок або скупник.</HH.Setting.underworld.gang.intervalDays.Desc>
+  <HH.Setting.underworld.gang.intimidateChance>Шанс, що банда вимагає грошей за захист</HH.Setting.underworld.gang.intimidateChance>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>Слідує за повзунком складності; на Стандартній кімнаті й легше банда нічого не примушує, крім діалогу, від якого можна відмовитися.</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.prisonAccess>Бандитам дозволено відвідувати в’язницю</HH.Setting.underworld.gang.prisonAccess>
+  <HH.Setting.underworld.gang.prisonAccess.Desc>Дозволяє екскурсію камерами (допит в’язнів) для гостей із банд. Вимкнено за замовчуванням; інакше в’язниці закриті для всіх гостей.</HH.Setting.underworld.gang.prisonAccess.Desc>
+  <HH.Setting.underworld.gang.protectionFee>Вимагана плата за захист</HH.Setting.underworld.gang.protectionFee>
+  <HH.Setting.underworld.gang.sizeMax>Найбільша банда</HH.Setting.underworld.gang.sizeMax>
+  <HH.Setting.underworld.gang.tourFee>Плата за екскурсію камерами</HH.Setting.underworld.gang.tourFee>
+  <HH.Setting.underworld.gang.tourFee.Desc>Плата, яку член банди платить за годину допиту в’язня.</HH.Setting.underworld.gang.tourFee.Desc>
+  <HH.Setting.underworld.hunt.feeMax>Плата за полювання (найвища)</HH.Setting.underworld.hunt.feeMax>
+  <HH.Setting.underworld.hunt.feeMin>Плата за полювання (найнижча)</HH.Setting.underworld.hunt.feeMin>
+  <HH.Setting.underworld.hunt.intervalDays>Днів між мисливськими групами</HH.Setting.underworld.hunt.intervalDays>
+  <HH.Setting.underworld.hunt.quarryCount>Здобич за полювання</HH.Setting.underworld.hunt.quarryCount>
+  <HH.Setting.underworld.hunt.quarryCount.Desc>Тварини, яких група приводить на мисливські угіддя.</HH.Setting.underworld.hunt.quarryCount.Desc>
+  <HH.Setting.underworld.hunt.quarryHours>Години, які людина-здобич має вижити</HH.Setting.underworld.hunt.quarryHours>
+  <HH.Setting.underworld.hunt.quarryHours.Desc>В’язень, що витримає стільки або дійде до лінії огорожі, звільняється.</HH.Setting.underworld.hunt.quarryHours.Desc>
+  <HH.Setting.underworld.lounge.price>Ціна сеансу</HH.Setting.underworld.lounge.price>
+  <HH.Setting.underworld.lounge.price.Desc>Скільки платить гість у лаунжі з наркотиками. Гості беруть лише те, що дозволяє їхня ідеологія.</HH.Setting.underworld.lounge.price.Desc>
+  <HH.Setting.underworld.mode>Як з’являється підпілля</HH.Setting.underworld.mode>
+  <HH.Setting.underworld.mode.Desc>Відкривати в грі: незнайомець запитує, чи є у вас задня кімната, і лише «так» відкриває темний бік. Завжди увімкнено: відкрито з початку. (Вимкнено — це перемикач модуля; «Інтенсивність безпечного вмісту» приховує його повністю.)</HH.Setting.underworld.mode.Desc>
+  <HH.Setting.underworld.organ.orderDays>Днів на доставку замовлення</HH.Setting.underworld.organ.orderDays>
+  <HH.Setting.underworld.organ.orderPremium>Надбавка за замовлені органи</HH.Setting.underworld.organ.orderPremium>
+  <HH.Setting.underworld.organ.orderPremium.Desc>Лише для Grim: готовий орган, доставлений у строк, оплачується в стільки разів дорожче звичайної ціни.</HH.Setting.underworld.organ.orderPremium.Desc>
+  <HH.Setting.underworld.organ.priceFactor>Оплата за органи</HH.Setting.underworld.organ.priceFactor>
+  <HH.Setting.underworld.organ.priceFactor.Desc>Частка ринкової вартості, яку платять анонімні покупці.</HH.Setting.underworld.organ.priceFactor.Desc>
+  <HH.Setting.underworld.pit.betMax>Найбільша ставка</HH.Setting.underworld.pit.betMax>
+  <HH.Setting.underworld.pit.betMax.Desc>Гості ставлять не більше цієї суми срібла (і ніколи більше третини свого бюджету).</HH.Setting.underworld.pit.betMax.Desc>
+  <HH.Setting.underworld.pit.betMin>Найменша ставка</HH.Setting.underworld.pit.betMin>
+  <HH.Setting.underworld.pit.betMin.Desc>Гості ставлять щонайменше стільки срібла.</HH.Setting.underworld.pit.betMin.Desc>
+  <HH.Setting.underworld.pit.fairRatio>Чесність підбору пар</HH.Setting.underworld.pit.fairRatio>
+  <HH.Setting.underworld.pit.fairRatio.Desc>Сильніший боєць може мати максимум у стільки разів більшу бойову силу, ніж слабший.</HH.Setting.underworld.pit.fairRatio.Desc>
+  <HH.Setting.underworld.pit.houseCut>Комісія дому зі ставок</HH.Setting.underworld.pit.houseCut>
+  <HH.Setting.underworld.pit.houseCut.Desc>Частка банку ставок, яку залишає собі дім (тоталізатор).</HH.Setting.underworld.pit.houseCut.Desc>
+  <HH.Setting.underworld.pit.intervalHours>Години між боями</HH.Setting.underworld.pit.intervalHours>
+  <HH.Setting.underworld.pit.intervalHours.Desc>Яма бійок із достатньою кількістю бійців і глядачів починає бій так часто.</HH.Setting.underworld.pit.intervalHours.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks>Найдовший бій (тіки)</HH.Setting.underworld.pit.maxBoutTicks>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>Бій, який ніхто не виграв за цей час, вважається нічиєю: усі ставки повертаються.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.yieldHealth>Здатися при здоров'ї</HH.Setting.underworld.pit.yieldHealth>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>Бій завершується, коли один із бійців опускається нижче цієї частки здоров'я, якщо це не бій до смерті.</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.scandalCooldownDays>Днів між скандалами</HH.Setting.underworld.scandalCooldownDays>
+  <HH.Setting.underworld.scandalCooldownDays.Desc>Не більше одного скандалу на карту за стільки днів.</HH.Setting.underworld.scandalCooldownDays.Desc>
+  <HH.Setting.underworld.smuggler.inspectChance>Шанс перевірки</HH.Setting.underworld.smuggler.inspectChance>
+  <HH.Setting.underworld.smuggler.inspectChance.Desc>За кожне прибуття, якщо існує імперська влада.</HH.Setting.underworld.smuggler.inspectChance.Desc>
+  <HH.Setting.underworld.smuggler.intervalDays>Днів між прибуттями</HH.Setting.underworld.smuggler.intervalDays>
+  <HH.Setting.underworld.smuggler.intervalDays.Desc>Середній час між нічними прибуттями до причалу контрабандиста.</HH.Setting.underworld.smuggler.intervalDays.Desc>
+  <HH.Setting.underworld.smuggler.maxValue>Найбільший ящик</HH.Setting.underworld.smuggler.maxValue>
+  <HH.Setting.underworld.smuggler.maxValue.Desc>Ринкова вартість найбільшого запропонованого ящика.</HH.Setting.underworld.smuggler.maxValue.Desc>
+  <HH.Setting.underworld.smuggler.priceFactor>Ціна контрабанди</HH.Setting.underworld.smuggler.priceFactor>
+  <HH.Setting.underworld.smuggler.priceFactor.Desc>Частка ринкової вартості, яку ви платите за ящик.</HH.Setting.underworld.smuggler.priceFactor.Desc>
+  <HH.Setting.underworld.strangerCooldownDays>Днів до повторного питання</HH.Setting.underworld.strangerCooldownDays>
+  <HH.Setting.underworld.strangerCooldownDays.Desc>Після «Не цікавить» незнайомець чекає стільки днів, перш ніж запитати знову.</HH.Setting.underworld.strangerCooldownDays.Desc>
+  <HH.Setting.underworld.strangerMaxAsks>Як часто він питає</HH.Setting.underworld.strangerMaxAsks>
+  <HH.Setting.underworld.strangerMaxAsks.Desc>Після стількох відмов незнайомець відступає назавжди.</HH.Setting.underworld.strangerMaxAsks.Desc>
+  <HH.Setting.underworld.strangerMaxWhispers>Найвищий Шепіт для незнайомця</HH.Setting.underworld.strangerMaxWhispers>
+  <HH.Setting.underworld.strangerMaxWhispers.Desc>Він з'являється лише тоді, коли ваш Шепіт не перевищує цього значення.</HH.Setting.underworld.strangerMaxWhispers.Desc>
+  <HH.Setting.underworld.strangerMeanDays>Днів до появи незнайомця</HH.Setting.underworld.strangerMeanDays>
+  <HH.Setting.underworld.strangerMeanDays.Desc>Середня кількість днів між моментами, коли незнайомець може прийти (щойно в колонії з'являться гості або заклад, а ваш Шепіт низький).</HH.Setting.underworld.strangerMeanDays.Desc>
+  <HH.Setting.underworld.whispers.fence>Шепіт за угоду зі скупником</HH.Setting.underworld.whispers.fence>
+  <HH.Setting.underworld.whispers.gang>Шепіт за візит банди</HH.Setting.underworld.whispers.gang>
+  <HH.Setting.underworld.whispers.hunt>Шепіт за полювання</HH.Setting.underworld.whispers.hunt>
+  <HH.Setting.underworld.whispers.lounge>Шепіт за сеанс у кімнаті з наркотиками</HH.Setting.underworld.whispers.lounge>
+  <HH.Setting.underworld.whispers.organ>Шепіт за продаж органів</HH.Setting.underworld.whispers.organ>
+  <HH.Setting.underworld.whispers.pit>Шепіт за бій у ямі</HH.Setting.underworld.whispers.pit>
+  <HH.Setting.underworld.whispers.tour>Шепіт за екскурсію камерами утримання</HH.Setting.underworld.whispers.tour>
+  <HH.Setting.underworld.whispersDecay>Згасання Шепоту за 15 днів</HH.Setting.underworld.whispersDecay>
+  <HH.Setting.underworld.whispersDecay.Desc>Шепіт щоразу втрачає цю частку свого значення кожні 15 днів.</HH.Setting.underworld.whispersDecay.Desc>
+  <HH.SettingCat.Account>Рахунок</HH.SettingCat.Account>
+  <HH.SettingCat.Addiction>Залежність</HH.SettingCat.Addiction>
+  <HH.SettingCat.Arrivals>Прибуття</HH.SettingCat.Arrivals>
+  <HH.SettingCat.Cinema>Кіно</HH.SettingCat.Cinema>
+  <HH.SettingCat.Collections>Колекції</HH.SettingCat.Collections>
+  <HH.SettingCat.Colonists>Колоністи</HH.SettingCat.Colonists>
+  <HH.SettingCat.Compatibility>Сумісність</HH.SettingCat.Compatibility>
+  <HH.SettingCat.DLCandtraits>DLC і риси</HH.SettingCat.DLCandtraits>
+  <HH.SettingCat.Difficulty>Складність</HH.SettingCat.Difficulty>
+  <HH.SettingCat.Discovery>Відкриття</HH.SettingCat.Discovery>
+  <HH.SettingCat.Druglounge>Наркозона</HH.SettingCat.Druglounge>
+  <HH.SettingCat.Effects>Ефекти</HH.SettingCat.Effects>
+  <HH.SettingCat.Factionprojects>Проєкти фракцій</HH.SettingCat.Factionprojects>
+  <HH.SettingCat.Faithandmoney>Віра і гроші</HH.SettingCat.Faithandmoney>
+  <HH.SettingCat.Fees>Збори</HH.SettingCat.Fees>
+  <HH.SettingCat.Fence>Скупник</HH.SettingCat.Fence>
+  <HH.SettingCat.Fightpit>Яма бійок</HH.SettingCat.Fightpit>
+  <HH.SettingCat.Fun>Розваги</HH.SettingCat.Fun>
+  <HH.SettingCat.Furniture>Меблі</HH.SettingCat.Furniture>
+  <HH.SettingCat.Gallery>Галерея</HH.SettingCat.Gallery>
+  <HH.SettingCat.Gangs>Банди</HH.SettingCat.Gangs>
+  <HH.SettingCat.General>Загальні</HH.SettingCat.General>
+  <HH.SettingCat.Guestbehaviour>Поведінка гостей</HH.SettingCat.Guestbehaviour>
+  <HH.SettingCat.Guests>Гості</HH.SettingCat.Guests>
+  <HH.SettingCat.Handling>Керування</HH.SettingCat.Handling>
+  <HH.SettingCat.Help>Довідка</HH.SettingCat.Help>
+  <HH.SettingCat.Honorsystem>Система довіри</HH.SettingCat.Honorsystem>
+  <HH.SettingCat.Houseodds>Шанси дому</HH.SettingCat.Houseodds>
+  <HH.SettingCat.InsuranceClawbackMutual>Страхування (Clawback Mutual)</HH.SettingCat.InsuranceClawbackMutual>
+  <HH.SettingCat.Interestprofitability>Відсотки та прибутковість</HH.SettingCat.Interestprofitability>
+  <HH.SettingCat.Interface>Інтерфейс</HH.SettingCat.Interface>
+  <HH.SettingCat.Investments>Інвестиції</HH.SettingCat.Investments>
+  <HH.SettingCat.Kitchen>Кухня</HH.SettingCat.Kitchen>
+  <HH.SettingCat.Limits>Ліміти</HH.SettingCat.Limits>
+  <HH.SettingCat.Loans>Позики</HH.SettingCat.Loans>
+  <HH.SettingCat.Lookandsound>Вигляд і звук</HH.SettingCat.Lookandsound>
+  <HH.SettingCat.Lottery>Лотерея</HH.SettingCat.Lottery>
+  <HH.SettingCat.Luck>Удача</HH.SettingCat.Luck>
+  <HH.SettingCat.LuckyThrumbo>Щасливий Thrumbo</HH.SettingCat.LuckyThrumbo>
+  <HH.SettingCat.Market>Ринок</HH.SettingCat.Market>
+  <HH.SettingCat.Money>Гроші</HH.SettingCat.Money>
+  <HH.SettingCat.Music>Музика</HH.SettingCat.Music>
+  <HH.SettingCat.Nobles>Знать</HH.SettingCat.Nobles>
+  <HH.SettingCat.OmenExchange>Біржа знамень</HH.SettingCat.OmenExchange>
+  <HH.SettingCat.Openinghours>Години роботи</HH.SettingCat.Openinghours>
+  <HH.SettingCat.Organclinic>Клініка органів</HH.SettingCat.Organclinic>
+  <HH.SettingCat.Park>Парк</HH.SettingCat.Park>
+  <HH.SettingCat.Prices>Ціни</HH.SettingCat.Prices>
+  <HH.SettingCat.Randomness>Випадковість</HH.SettingCat.Randomness>
+  <HH.SettingCat.Rehab>Реабілітація</HH.SettingCat.Rehab>
+  <HH.SettingCat.Reports>Звіти</HH.SettingCat.Reports>
+  <HH.SettingCat.Reputation>Репутація</HH.SettingCat.Reputation>
+  <HH.SettingCat.Research>Дослідження</HH.SettingCat.Research>
+  <HH.SettingCat.Salon>Салон</HH.SettingCat.Salon>
+  <HH.SettingCat.Sauna>Сауна</HH.SettingCat.Sauna>
+  <HH.SettingCat.Seats>Місця</HH.SettingCat.Seats>
+  <HH.SettingCat.Security>Безпека</HH.SettingCat.Security>
+  <HH.SettingCat.Services>Послуги</HH.SettingCat.Services>
+  <HH.SettingCat.Sessions>Сеанси</HH.SettingCat.Sessions>
+  <HH.SettingCat.Setup>Налаштування</HH.SettingCat.Setup>
+  <HH.SettingCat.Shrines>Святилища</HH.SettingCat.Shrines>
+  <HH.SettingCat.Smugglersdock>Причал контрабандистів</HH.SettingCat.Smugglersdock>
+  <HH.SettingCat.Sound>Звук</HH.SettingCat.Sound>
+  <HH.SettingCat.Specialswitches>Особливі перемикачі</HH.SettingCat.Specialswitches>
+  <HH.SettingCat.Staffing>Персонал</HH.SettingCat.Staffing>
+  <HH.SettingCat.Stay>Проживання</HH.SettingCat.Stay>
+  <HH.SettingCat.Tables>Столи</HH.SettingCat.Tables>
+  <HH.SettingCat.Taxi>Таксі</HH.SettingCat.Taxi>
+  <HH.SettingCat.Texts>Тексти</HH.SettingCat.Texts>
+  <HH.SettingCat.TheHunt>Полювання</HH.SettingCat.TheHunt>
+  <HH.SettingCat.Wealthandmood>Багатство і настрій</HH.SettingCat.Wealthandmood>
+  <HH.SettingCat.Whispers>Шепіт</HH.SettingCat.Whispers>
+  <HH.SettingCat.Wing>Крило</HH.SettingCat.Wing>
+</LanguageData>

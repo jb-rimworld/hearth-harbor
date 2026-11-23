@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.MusicMode.Always>Immer</HH.Enum.MusicMode.Always>
+  <HH.Enum.MusicMode.Off>Aus</HH.Enum.MusicMode.Off>
+  <HH.Enum.MusicMode.WhenHosting>Bei Gästebetrieb</HH.Enum.MusicMode.WhenHosting>
+  <HH.Setting.core.creatorPawn>Der Autor darf über den Rand ziehen</HH.Setting.core.creatorPawn>
+  <HH.Setting.core.creatorPawn.Desc>Wie die Schöpfer-Charaktere des Basisspiels kann auch der Autor von Hearth &amp; Harbor hin und wieder als generierter Charakter auftauchen: ein freundlicher, fleißiger Wanderwirt.</HH.Setting.core.creatorPawn.Desc>
+  <HH.Setting.core.music>Musik von Hearth &amp; Harbor</HH.Setting.core.music>
+  <HH.Setting.core.music.Desc>Unsere drei ruhigen Lieder (eins für Frühlings- und Sommertage, eins für den Herbst, eins für den Winter) kommen in die normale RimWorld-Playlist. Beim Hosten: nur in Kolonien, die Hearth &amp; Harbor nutzen (ein Gästebett, ein Lokalschild oder ein Bankkonto).</HH.Setting.core.music.Desc>
+  <HH.Setting.core.musicShare>Wie oft unsere Lieder laufen</HH.Setting.core.musicShare>
+  <HH.Setting.core.musicShare.Desc>Gewicht unserer Lieder in der Playlist im Vergleich zu einem Vanilla-Lied. 1 = wie jedes andere Lied der Jahreszeit, 0 = nie.</HH.Setting.core.musicShare.Desc>
+  <HH.Story.Suggests>{0} schlägt vor: {1}</HH.Story.Suggests>
+  <HH.Story.SuggestsTip>Klicke, um die Gastgeber-Schwierigkeit zu übernehmen, die dieser Erzähler vorschlägt. Mit dem Button kannst du sie weiterhin ändern.</HH.Story.SuggestsTip>
+</LanguageData>

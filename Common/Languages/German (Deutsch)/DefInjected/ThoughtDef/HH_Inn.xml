@@ -38,4 +38,10 @@
   <HH_GuestWaitingRoom.stages.2.description>Dort zu warten war fast ein Vergnügen.</HH_GuestWaitingRoom.stages.2.description>
   <HH_GuestWaitingRoom.stages.3.label>prächtiger Warteraum</HH_GuestWaitingRoom.stages.3.label>
   <HH_GuestWaitingRoom.stages.3.description>In so einem Raum hätte ich gern länger gewartet.</HH_GuestWaitingRoom.stages.3.description>
+  <HH_GuestPreached.stages.0.description>Ich bin zum Schlafen hergekommen, nicht um mir meinen Glauben ausreden zu lassen.</HH_GuestPreached.stages.0.description>
+  <HH_GuestPreached.stages.0.label>bepredigt worden</HH_GuestPreached.stages.0.label>
+  <HH_SleptTogether.stages.0.description>Ein großes Bett für uns beide. Mehr wollte ich von dieser Reise nicht.</HH_SleptTogether.stages.0.description>
+  <HH_SleptTogether.stages.0.label>neben meinem Partner geschlafen</HH_SleptTogether.stages.0.label>
+  <HH_WantedDoubleBed.stages.0.description>Wir wollten ein Bett für uns beide und bekamen zwei schmale. Gemütlich ist anders.</HH_WantedDoubleBed.stages.0.description>
+  <HH_WantedDoubleBed.stages.0.label>kein Doppelbett für uns</HH_WantedDoubleBed.stages.0.label>
 </LanguageData>

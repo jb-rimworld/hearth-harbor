@@ -228,4 +228,36 @@
   <HH_Dish_SashimiPlate.description>生鱼片切得很薄，还附赠一个小小的道德难题。</HH_Dish_SashimiPlate.description>
   <HH_Dish_FishTacos.label>鱼肉塔可</HH_Dish_FishTacos.label>
   <HH_Dish_FishTacos.description>卷在饼里的鱼，由一位一路狂奔送来的殖民者送达。</HH_Dish_FishTacos.description>
+  <HH_Dish_BoomalopeConfit.description>用自身油脂慢火煨熟。别站在锅边。传统上用Boomalope制作，请务必小心。</HH_Dish_BoomalopeConfit.description>
+  <HH_Dish_BoomalopeConfit.label>慢烤肉油封</HH_Dish_BoomalopeConfit.label>
+  <HH_Dish_CampfireStew.description>所有东西都下了锅，包括关于“所有东西到底是什么”的争论。传统上用Muffalo制作。</HH_Dish_CampfireStew.description>
+  <HH_Dish_CampfireStew.label>篝火肉炖菜</HH_Dish_CampfireStew.label>
+  <HH_Dish_ClayOvenMuffalo.description>一夜腌制，送进陶窑猛火烤制，端上桌时带着十足的架子。传统上用Muffalo制作。</HH_Dish_ClayOvenMuffalo.description>
+  <HH_Dish_ClayOvenMuffalo.label>陶窑烤肉</HH_Dish_ClayOvenMuffalo.label>
+  <HH_Dish_DromedaryTagine.description>在陶制圆锥锅中慢炖，就像大多数人希望的那样被好好对待。传统上用单峰驼制作。</HH_Dish_DromedaryTagine.description>
+  <HH_Dish_DromedaryTagine.label>肉与莓果塔吉锅</HH_Dish_DromedaryTagine.label>
+  <HH_Dish_LacqueredThrumbo.description>上釉烤至发亮，比殖民地的银行账户还要闪耀。传统上用Thrumbo制作，前提是殖民地够幸运。</HH_Dish_LacqueredThrumbo.description>
+  <HH_Dish_LacqueredThrumbo.label>漆烤肉</HH_Dish_LacqueredThrumbo.label>
+  <HH_Dish_LambKoftasWithRice.description>调味、捏成形，铺在米饭上端出，像一堂很好吃的讲座。传统上用羊肉制作。</HH_Dish_LambKoftasWithRice.description>
+  <HH_Dish_LambKoftasWithRice.label>肉丸饭</HH_Dish_LambKoftasWithRice.label>
+  <HH_Dish_MongolianMuffalo.description>大火炒制，甜而黏稠，还有点太吵。传统上用Muffalo制作。</HH_Dish_MongolianMuffalo.description>
+  <HH_Dish_MongolianMuffalo.label>蒙古风炒肉</HH_Dish_MongolianMuffalo.label>
+  <HH_Dish_MuffaloBourguignon.description>用啤酒慢炖，因为第二天酒就喝光了。传统上用Muffalo制作。</HH_Dish_MuffaloBourguignon.description>
+  <HH_Dish_MuffaloBourguignon.label>殖民地红酒炖肉</HH_Dish_MuffaloBourguignon.label>
+  <HH_Dish_MuffaloCarpaccio.description>切得极薄，薄到能隔着肉片看清菜单。传统上用Muffalo制作。</HH_Dish_MuffaloCarpaccio.description>
+  <HH_Dish_MuffaloCarpaccio.label>生肉薄片</HH_Dish_MuffaloCarpaccio.label>
+  <HH_Dish_MuffaloGoulash.description>浓稠的红色炖菜，堪称非官方的国民争论。传统上用Muffalo制作。</HH_Dish_MuffaloGoulash.description>
+  <HH_Dish_MuffaloGoulash.label>肉汁炖牛肉</HH_Dish_MuffaloGoulash.label>
+  <HH_Dish_MuffaloRamen.description>大口吸溜，抢最后一碗时吸溜得更响。传统上用Muffalo制作。</HH_Dish_MuffaloRamen.description>
+  <HH_Dish_MuffaloRamen.label>浓汤肉拉面</HH_Dish_MuffaloRamen.label>
+  <HH_Dish_MuffaloStroganoff.description>奶香浓郁，三勺之后就见了底。传统上用Muffalo制作。</HH_Dish_MuffaloStroganoff.description>
+  <HH_Dish_MuffaloStroganoff.label>奶油炖肉</HH_Dish_MuffaloStroganoff.label>
+  <HH_Dish_MuffaloWellington.description>裹上酥皮，给一份很大的排场穿件小小的保暖外套。传统上用Muffalo制作。</HH_Dish_MuffaloWellington.description>
+  <HH_Dish_MuffaloWellington.label>威灵顿牛排</HH_Dish_MuffaloWellington.label>
+  <HH_Dish_PadThrumbo.description>酸甜的面条缠在一起，爆炒至脆，直到它听话为止。脆口来自昆虫肉。</HH_Dish_PadThrumbo.description>
+  <HH_Dish_PadThrumbo.label>炒虫面</HH_Dish_PadThrumbo.label>
+  <HH_Dish_ThrumboPho.description>清澈的汤底，背后藏着一长串待办事项。传统上用Thrumbo制作，前提是殖民地够幸运。</HH_Dish_ThrumboPho.description>
+  <HH_Dish_ThrumboPho.label>肉粉汤</HH_Dish_ThrumboPho.label>
+  <HH_Dish_ThrumboTartare.description>生的、烈的、有胆量。先签免责声明。传统上用Thrumbo制作，前提是殖民地够幸运。</HH_Dish_ThrumboTartare.description>
+  <HH_Dish_ThrumboTartare.label>生肉塔塔</HH_Dish_ThrumboTartare.label>
 </LanguageData>

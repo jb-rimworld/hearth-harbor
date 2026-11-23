@@ -75,7 +75,6 @@
   <HH.Inn.Event.Returned>Повернувся на нове перебування.</HH.Inn.Event.Returned>
   <HH.Inn.Event.SelfCheckIn>Знайшов кімнату сам; за стійкою нікого не було.</HH.Inn.Event.SelfCheckIn>
   <HH.Inn.Event.SentAway>Його відіслали геть.</HH.Inn.Event.SentAway>
-  <HH.Inn.Event.SharedBed>Ділить ліжко з {0} (додатково {1} срібла за ніч).</HH.Inn.Event.SharedBed>
   <HH.Inn.Event.ShortenedStay>Скоротив перебування до {0} ніч(і), щоб оплатити кімнату.</HH.Inn.Event.ShortenedStay>
   <HH.Inn.Event.TooImportant>Занадто важливий удома, щоб залишатися.</HH.Inn.Event.TooImportant>
   <HH.Inn.Event.Welcomed>На стійці його привітав {0}.</HH.Inn.Event.Welcomed>
@@ -85,9 +84,7 @@
   <HH.Inn.Forecast.Overnight>{0} ніч(і)</HH.Inn.Forecast.Overnight>
   <HH.Inn.Forecast.Return>повертається</HH.Inn.Forecast.Return>
   <HH.Inn.GuestBed.Booked>Заброньовано: {0}</HH.Inn.GuestBed.Booked>
-  <HH.Inn.GuestBed.Desc>Здавайте це ліжко гостям. Колоністи тут не спатимуть; гості спатимуть лише на гостьових ліжках. Ціна за ніч залежить від кімнати, ліжка та кількості ліжок у кімнаті.</HH.Inn.GuestBed.Desc>
   <HH.Inn.GuestBed.Inactive>Гостьове ліжко (неактивне, якщо медичне, в'язниці або рабське ліжко)</HH.Inn.GuestBed.Inactive>
-  <HH.Inn.GuestBed.Inspect>Гостьове ліжко: {0} срібла/ніч ({1})</HH.Inn.GuestBed.Inspect>
   <HH.Inn.GuestBed.Label>Гостьове ліжко</HH.Inn.GuestBed.Label>
   <HH.Inn.GuestBed.NoColonists>Це гостьове ліжко.</HH.Inn.GuestBed.NoColonists>
   <HH.Inn.GuestBed.NotColonistBed>Гостьовим ліжком може стати лише звичайне колоністське ліжко (не медичне, не в'язничне й не рабське).</HH.Inn.GuestBed.NotColonistBed>
@@ -96,7 +93,6 @@
   <HH.Inn.Handling.Basics>Базове</HH.Inn.Handling.Basics>
   <HH.Inn.Handling.BasicsDesc>Лише платні послуги, без розваг. Не витрачає час колоністів.</HH.Inn.Handling.BasicsDesc>
   <HH.Inn.Handling.Bond>Зв'язок: {0} / {1}</HH.Inn.Handling.Bond>
-  <HH.Inn.Handling.Click>Клацніть, щоб перемкнути: Базове → Супровід → Вербування.</HH.Inn.Handling.Click>
   <HH.Inn.Handling.Label>Обслуговування: {0}</HH.Inn.Handling.Label>
   <HH.Inn.Handling.Recruit>Вербування</HH.Inn.Handling.Recruit>
   <HH.Inn.Handling.RecruitDesc>Як супровід, але з розмовами про те, щоб залишитися. Якщо зв'язок колонії з гостем достатньо сильний, він може приєднатися під час від'їзду. Надто настирливі розмови можуть образити.</HH.Inn.Handling.RecruitDesc>
@@ -295,4 +291,56 @@
   <HH.Inn.PriceMode.ManualSet>Фіксована ціна…</HH.Inn.PriceMode.ManualSet>
   <HH.Inn.PriceMode.ManualValue>{0} срібла за ніч</HH.Inn.PriceMode.ManualValue>
   <HH.Inn.PriceMode.Manual>фіксована ціна</HH.Inn.PriceMode.Manual>
+  <HH.Inn.BedUse.ChipTip>Ціна за ніч: {0}. Натисніть, щоб змінити: безкоштовно, −25 %, автоматично, +25 % або фіксована ціна.</HH.Inn.BedUse.ChipTip>
+  <HH.Inn.BedUse.Click>Натисніть, щоб вибрати, для чого використовується це ліжко.</HH.Inn.BedUse.Click>
+  <HH.Inn.BedUse.Colonist>Ліжко колоніста</HH.Inn.BedUse.Colonist>
+  <HH.Inn.BedUse.ColonistDesc>звичайне спальне місце ваших колоністів</HH.Inn.BedUse.ColonistDesc>
+  <HH.Inn.BedUse.Guest>Гостьове ліжко</HH.Inn.BedUse.Guest>
+  <HH.Inn.BedUse.GuestDesc>здається гостям, колоністи не заходять</HH.Inn.BedUse.GuestDesc>
+  <HH.Inn.BedUse.Medical>Лікарняне ліжко</HH.Inn.BedUse.Medical>
+  <HH.Inn.BedUse.NeedsRimWard>Ліжка для пацієнтів і операцій потребують мода RimWard.</HH.Inn.BedUse.NeedsRimWard>
+  <HH.Inn.BedUse.NoBed>Це ліжко не може бути гостьовим.</HH.Inn.BedUse.NoBed>
+  <HH.Inn.BedUse.Owners>Власник: {0}</HH.Inn.BedUse.Owners>
+  <HH.Inn.BedUse.Patient>Ліжко пацієнта</HH.Inn.BedUse.Patient>
+  <HH.Inn.BedUse.PatientDesc>для хворих і поранених</HH.Inn.BedUse.PatientDesc>
+  <HH.Inn.BedUse.Price>Ціна: {0} срібла за ніч ({1}).</HH.Inn.BedUse.Price>
+  <HH.Inn.BedUse.PriceHint>Натисніть цінник у кутку, щоб змінити ціну.</HH.Inn.BedUse.PriceHint>
+  <HH.Inn.BedUse.Surgery>Операційне ліжко</HH.Inn.BedUse.Surgery>
+  <HH.Inn.BedUse.SurgeryDesc>тут проводяться операції</HH.Inn.BedUse.SurgeryDesc>
+  <HH.Inn.Convert.Certainty>Впевненість у {0}: {1} %</HH.Inn.Convert.Certainty>
+  <HH.Inn.Convert.Goal>при 0 % вони приймають {0}</HH.Inn.Convert.Goal>
+  <HH.Inn.Convert.Insulted>відчув нав'язування: цього разу не слухатиме</HH.Inn.Convert.Insulted>
+  <HH.Inn.Convert.Nothing>Нічого навертати: гість уже сповідує вашу ідеологію або не піддається розмові.</HH.Inn.Convert.Nothing>
+  <HH.Inn.Convert.Talks>розмов досі: {0}</HH.Inn.Convert.Talks>
+  <HH.Inn.Door.AgeTitle>Вік</HH.Inn.Door.AgeTitle>
+  <HH.Inn.Door.StayTitle>Тип перебування</HH.Inn.Door.StayTitle>
+  <HH.Inn.Door.WealthTitle>Статки</HH.Inn.Door.WealthTitle>
+  <HH.Inn.Event.ConvertEnded>Навертати більше нікого: назад до звичайного товариства.</HH.Inn.Event.ConvertEnded>
+  <HH.Inn.Event.CoupleBooked>Замовлено одне подвійне ліжко з {0}: {1} срібла за ніч з кожного.</HH.Inn.Event.CoupleBooked>
+  <HH.Inn.Event.Embraced>Обійняв {0} після розмов із {1}.</HH.Inn.Event.Embraced>
+  <HH.Inn.Event.EmbracedSat>Знайшов нову віру в колонії.</HH.Inn.Event.EmbracedSat>
+  <HH.Inn.Event.NoFreeBed>Усі гостьові ліжка зайняті, тож лишився лише на день.</HH.Inn.Event.NoFreeBed>
+  <HH.Inn.Event.PartnerMovedIn>{0} переселився на ліжко: ціна ділиться ({1} срібла за ніч з кожного).</HH.Inn.Event.PartnerMovedIn>
+  <HH.Inn.Event.Preached>{0} нав'язував йому свої погляди.</HH.Inn.Event.Preached>
+  <HH.Inn.Event.SharedBed2>Ділить ліжко з {0} ({1} срібла за ніч з кожного).</HH.Inn.Event.SharedBed2>
+  <HH.Inn.Event.SleepsTogether>Спить поруч із {0}: саме те, на що сподівався.</HH.Inn.Event.SleepsTogether>
+  <HH.Inn.Event.ThinkingOver>Поговорив із {0} про {1}: тепер на {2} % впевнений у своїх поглядах.</HH.Inn.Event.ThinkingOver>
+  <HH.Inn.Event.Unmoved>Вислухав {0} про {1}, але лишився непохитним.</HH.Inn.Event.Unmoved>
+  <HH.Inn.Event.WantedDouble>Хотів подвійне ліжко з {0}, а отримав два одинарних.</HH.Inn.Event.WantedDouble>
+  <HH.Inn.GuestBed.InspectShort>Гостьове ліжко: {0} срібла/ніч · {1}</HH.Inn.GuestBed.InspectShort>
+  <HH.Inn.Handling.Click2>Натисніть, щоб перемкнути: {0}.</HH.Inn.Handling.Click2>
+  <HH.Inn.Handling.Convert>Навернення</HH.Inn.Handling.Convert>
+  <HH.Inn.Handling.ConvertDesc>Як «Супроводжувати», плюс розмови про вашу ідеологію. Кожна розмова хитає впевненість гостя у своїй; при нулі він приймає вашу. Напористі розмови можуть образити. Потрібне DLC Ideology.</HH.Inn.Handling.ConvertDesc>
+  <HH.Inn.Msg.Preached>{0} вважає спроби навернення нав'язливими: витратить менше й піде раніше.</HH.Inn.Msg.Preached>
+  <HH.Inn.Occupancy.DoubleBed>подвійне ліжко</HH.Inn.Occupancy.DoubleBed>
+  <HH.Inn.Problem.Double>Пара хотіла б подвійне ліжко: побудуйте або позначте одне як гостьове.</HH.Inn.Problem.Double>
+  <HH.Inn.Problem.DoubleMany>{0} гостей хотіли б подвійне ліжко для пари: побудуйте або позначте одне як гостьове.</HH.Inn.Problem.DoubleMany>
+  <HH.Setting.inn.convertPower>Сила навернення</HH.Setting.inn.convertPower>
+  <HH.Setting.inn.convertPower.Desc>Наскільки сильно розмова в обробці «Навернення» похитує впевненість гостя у власній ідеології (100 % = звична сила). Потрібне DLC Ideology.</HH.Setting.inn.convertPower.Desc>
+  <HH.Setting.inn.coupleWish>Пари бажають одне двоспальне ліжко</HH.Setting.inn.coupleWish>
+  <HH.Setting.inn.coupleWish.Desc>Пари, що приїжджають разом, віддають перевагу одному двоспальному ліжку. Отримавши його, вони трохи радіють, а опинившись на двох односпальних — трохи дратуються. Ніколи не змінює ціни.</HH.Setting.inn.coupleWish.Desc>
+  <HH.Setting.inn.doubleBedFactor>Коефіцієнт ціни двоспального ліжка</HH.Setting.inn.doubleBedFactor>
+  <HH.Setting.inn.doubleBedFactor.Desc>Ліжко на двох приносить у стільки разів більше, ніж ціна одного ліжка. Пара на одному двоспальному ліжку платить разом, кожен половину, тож платить менше, ніж за два односпальних.</HH.Setting.inn.doubleBedFactor.Desc>
+  <HH.Setting.inn.groupDevGizmos>Згрупувати наші кнопки розробника</HH.Setting.inn.groupDevGizmos>
+  <HH.Setting.inn.groupDevGizmos.Desc>У режимі розробника кнопки DEV будівель Hearth &amp; Harbor складаються в одну кнопку «Dev: Hearth &amp; Harbor», щоб рядок гаджетів лишався читабельним. Кнопки ванільних і чужих модів ніколи не змінюються.</HH.Setting.inn.groupDevGizmos.Desc>
 </LanguageData>

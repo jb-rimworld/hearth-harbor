@@ -209,7 +209,7 @@
   <HH.UI.Guests.Col.Wing>棟</HH.UI.Guests.Col.Wing>
   <HH.UI.Guests.Col.Handling>対応</HH.UI.Guests.Col.Handling>
   <HH.UI.Guests.Col.Leaves>出発まで</HH.UI.Guests.Col.Leaves>
-  <HH.UI.Guests.HandlingTip>クリックで切り替え: 基本 → 同行 → 勧誘。同行と勧誘には、もてなし作業のできる入植者が必要。</HH.UI.Guests.HandlingTip>
+  <HH.UI.Guests.HandlingTip>クリックで対応を切り替えます。付き添い、勧誘、改宗には「ホスティング」作業のできるコロニストが必要です。改宗は別のイデオロギーの客にだけ表示されます（イデオロギー）。</HH.UI.Guests.HandlingTip>
   <HH.UI.Overview.CatToday>今日 {0}</HH.UI.Overview.CatToday>
   <HH.UI.Overview.CatWeek>7日間 {0}</HH.UI.Overview.CatWeek>
   <HH.UI.Overview.Week>収入、直近7日間</HH.UI.Overview.Week>
@@ -313,4 +313,26 @@
   <HH.Setting.core.ironBank.Desc>難易度に関係なく、取り立ては必ず最も厳しい段階まで上がる。誰も分割払いを黙って延ばしてはくれない。</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.peacefulUnderworld.Desc>暗い店は暴力なしで営業する: 闘技場も、尋問も、人狩りも、診療所も、みかじめ料もない。奥の部屋、故買屋、麻薬の溜まり場は残る。</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>ゲストの計画と部屋の確認が半分の頻度になる。遅いパソコンに効く。ゲストの反応が少し遅れることがある。</HH.Setting.core.perfMode.Desc>
+  <HH.Kitchen.Cookbook.ColCuisine>料理系統</HH.Kitchen.Cookbook.ColCuisine>
+  <HH.Kitchen.Cookbook.ColDish>料理</HH.Kitchen.Cookbook.ColDish>
+  <HH.Kitchen.Cookbook.ColLevel>レベル</HH.Kitchen.Cookbook.ColLevel>
+  <HH.Kitchen.Cookbook.ColPrice>価格</HH.Kitchen.Cookbook.ColPrice>
+  <HH.Kitchen.Cookbook.ColSkill>技能</HH.Kitchen.Cookbook.ColSkill>
+  <HH.Kitchen.Cookbook.ColStations>調理場所</HH.Kitchen.Cookbook.ColStations>
+  <HH.Setting.core.windowScale>Hearth &amp; Harbor のウィンドウの大きさ</HH.Setting.core.windowScale>
+  <HH.Setting.core.windowScale.Desc>Hearth &amp; Harbor と Silverline のすべてのウィンドウを、この倍率で拡大・縮小します（大画面向けの自動サイズに加えて適用）。</HH.Setting.core.windowScale.Desc>
+  <HH.UI.DevGroup.Desc>このビル（{0}）用の Hearth &amp; Harbor 開発者モードのツールです。開発者モードでのみ表示されます。グループ表示は宿の設定でオフにできます。</HH.UI.DevGroup.Desc>
+  <HH.UI.DevGroup.Label>開発: Hearth &amp; Harbor</HH.UI.DevGroup.Label>
+  <HH.UI.Diag.Lines>{0} 行</HH.UI.Diag.Lines>
+  <HH.UI.Diff.Jump>移動先</HH.UI.Diff.Jump>
+  <HH.UI.Diff.JumpTop>段階とスライダー</HH.UI.Diff.JumpTop>
+  <HH.UI.GuestTab.CollapseTip>クリックで折りたたむ</HH.UI.GuestTab.CollapseTip>
+  <HH.UI.GuestTab.ExpandTip>クリックで展開</HH.UI.GuestTab.ExpandTip>
+  <HH.UI.Handling.Convert>改宗</HH.UI.Handling.Convert>
+  <HH.UI.Handling.Convert.Tip>付き添いと同様ですが、自分のイデオロギーについての会話もします。会話のたびに客が自分の信念に抱く確信が揺らぎ、ゼロになると相手の信念を受け入れます。押しつけがましい会話は不快に思われることがあります（気分 -4、支出減少）。イデオロギーDLCが必要で、別のイデオロギーの客が対象です。</HH.UI.Handling.Convert.Tip>
+  <HH.UI.Page.Sub.casino>店の売上、各ゲームの払い戻し状況と設計上の確率との比較。</HH.UI.Page.Sub.casino>
+  <HH.UI.Page.Sub.city>映画館、サロン、ギャラリー、公園、タクシー、警備: 建てられているものと、その収益。</HH.UI.Page.Sub.city>
+  <HH.UI.Page.Sub.guests>宿に泊まっている、または訪れているすべての人。行をクリックすると客の場所へ移動し、対応の欄をクリックすると対応を変えられます。</HH.UI.Page.Sub.guests>
+  <HH.UI.Page.Sub.overview>今日の概要: 客、売上、各施設の状態。</HH.UI.Page.Sub.overview>
+  <HH.UI.Page.Sub.underworld>ささやき、到着の重み付け、そして裏社会の売上。</HH.UI.Page.Sub.underworld>
 </LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ScenRules.description>Legt Module, Gastgeber-Schwierigkeit, Inhaltsintensität und beliebige Einstellungen pro Kolonie von Hearth &amp; Harbor und Silverline für neue Kolonien dieses Szenarios fest. Nur was hier gesetzt ist, überschreibt die Vorlage; der Spieler kann auf der Erzähler-Seite weiterhin alles ändern.</HH_ScenRules.description>
+  <HH_ScenRules.label>Hearth-&amp;-Harbor-Regeln</HH_ScenRules.label>
+  <HH_ScenSetting.description>Setzt eine Einstellung von Hearth &amp; Harbor oder Silverline für neue Kolonien dieses Szenarios auf einen Wert.</HH_ScenSetting.description>
+  <HH_ScenSetting.label>Hearth-&amp;-Harbor-Einstellung</HH_ScenSetting.label>
+  <HH_ScenStartingResearch.description>Ein Forschungsprojekt von Hearth &amp; Harbor oder Silverline ist bereits abgeschlossen, wenn die Kolonie startet.</HH_ScenStartingResearch.description>
+  <HH_ScenStartingResearch.label>Start mit Hearth-&amp;-Harbor-Forschung</HH_ScenStartingResearch.label>
+</LanguageData>

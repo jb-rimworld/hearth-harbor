@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ClaimForm_Money.description>Formulário L-1 para multas, danos a terceiros e interdições: o que causou e quem pode confirmar.</SL_ClaimForm_Money.description>
+  <SL_ClaimForm_Money.label>formulário de multas e responsabilidade civil</SL_ClaimForm_Money.label>
+  <SL_ClaimForm_Person.description>Formulário P-2 para mortes e perda de membros: as circunstâncias e uma testemunha.</SL_ClaimForm_Person.description>
+  <SL_ClaimForm_Person.label>formulário de sinistro pessoal</SL_ClaimForm_Person.label>
+  <SL_ClaimForm_Property.description>Formulário B-4 para edifícios, veículos e plantações destruídos: o que aconteceu, a gravidade, quem viu e como você quer ser pago.</SL_ClaimForm_Property.description>
+  <SL_ClaimForm_Property.label>formulário de sinistro patrimonial</SL_ClaimForm_Property.label>
+</LanguageData>

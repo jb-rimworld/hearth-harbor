@@ -2,8 +2,6 @@
 <LanguageData>
   <HH.Kitchen.Missing>Faltando: {0}</HH.Kitchen.Missing>
   <HH.Kitchen.RecipeInfo>Dispositivos: {0}. Etapas: {1}.</HH.Kitchen.RecipeInfo>
-  <HH.Kitchen.Finishing>um toque final (leite, ovos, chocolate, cerveja, frutas vermelhas ou cogumelos)</HH.Kitchen.Finishing>
-  <HH.Kitchen.Finishing2>um segundo toque final (cerveja, frutas vermelhas ou cogumelos)</HH.Kitchen.Finishing2>
   <HH.Kitchen.Inspiration>Inspiração: {0}</HH.Kitchen.Inspiration>
   <HH.Kitchen.Cuisine>Culinária: {0}</HH.Kitchen.Cuisine>
   <HH.Kitchen.Cooked>Preparado em: {0} ({1})</HH.Kitchen.Cooked>
@@ -125,4 +123,9 @@
   <HH.Kitchen.NoNeighbours>Nenhum outro dispositivo de cozinha ao alcance.</HH.Kitchen.NoNeighbours>
   <HH.Kitchen.Neighbours>Ao alcance: {0}</HH.Kitchen.Neighbours>
   <HH.Kitchen.FreshHours>Fresco por {0} h</HH.Kitchen.FreshHours>
+  <HH.Kitchen.FinishingTouch>um toque final ({0})</HH.Kitchen.FinishingTouch>
+  <HH.Kitchen.FinishingTouch2>um segundo toque final ({0})</HH.Kitchen.FinishingTouch2>
+  <HH.Kitchen.Or>ou</HH.Kitchen.Or>
+  <HH.Setting.kitchen.cookSounds>Sons de cozinhar e comer</HH.Setting.kitchen.cookSounds>
+  <HH.Setting.kitchen.cookSounds.Desc>Cada tipo de preparo (cortar, ferver em fogo baixo, grelhar, assar, fritar, cozinhar no vapor, sovar, defumar, resfriar) tem seu próprio som e pequeno efeito; pratos prontos e bem-feitos soam um sinal, e os bons pratos recebem uma reação feliz. Desligado: o som de fritar do vanilla para tudo.</HH.Setting.kitchen.cookSounds.Desc>
 </LanguageData>

@@ -2,8 +2,6 @@
 <LanguageData>
   <HH.Kitchen.Missing>不足: {0}</HH.Kitchen.Missing>
   <HH.Kitchen.RecipeInfo>設備: {0}。手順: {1}。</HH.Kitchen.RecipeInfo>
-  <HH.Kitchen.Finishing>仕上げの一品（牛乳、卵、チョコレート、ビール、ベリー、またはキノコ）</HH.Kitchen.Finishing>
-  <HH.Kitchen.Finishing2>二つ目の仕上げの一品（ビール、ベリー、またはキノコ）</HH.Kitchen.Finishing2>
   <HH.Kitchen.Inspiration>着想: {0}</HH.Kitchen.Inspiration>
   <HH.Kitchen.Cuisine>料理系統: {0}</HH.Kitchen.Cuisine>
   <HH.Kitchen.Cooked>調理場所: {0}（{1}）</HH.Kitchen.Cooked>
@@ -125,4 +123,9 @@
   <HH.Kitchen.NoNeighbours>手の届く範囲に他の調理設備がありません。</HH.Kitchen.NoNeighbours>
   <HH.Kitchen.Neighbours>手の届く範囲: {0}</HH.Kitchen.Neighbours>
   <HH.Kitchen.FreshHours>{0}時間の間は新鮮</HH.Kitchen.FreshHours>
+  <HH.Kitchen.FinishingTouch>仕上げ（{0}）</HH.Kitchen.FinishingTouch>
+  <HH.Kitchen.FinishingTouch2>二つ目の仕上げ（{0}）</HH.Kitchen.FinishingTouch2>
+  <HH.Kitchen.Or>または</HH.Kitchen.Or>
+  <HH.Setting.kitchen.cookSounds>調理と食事の音</HH.Setting.kitchen.cookSounds>
+  <HH.Setting.kitchen.cookSounds.Desc>調理の種類ごと（刻む、煮る、焼く、ベイク、炒める、蒸す、こねる、燻す、冷やす）に固有の音と小さな効果があり、完成した料理は合図の音を鳴らし、良い皿は喜びの反応を得ます。オフ: すべてバニラの炒め音。</HH.Setting.kitchen.cookSounds.Desc>
 </LanguageData>

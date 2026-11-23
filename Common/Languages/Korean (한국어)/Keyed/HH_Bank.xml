@@ -23,7 +23,7 @@
   <HH.Bank.Greet.Morning>좋은 아침입니다</HH.Bank.Greet.Morning>
   <HH.Bank.Greet.Night>안녕히 주무세요</HH.Bank.Greet.Night>
   <HH.Bank.Header.Tier>자산 등급: {0}</HH.Bank.Header.Tier>
-  <HH.Bank.Header.TierTip>순자산 = 계좌 + 집의 은화 − 부채: 은화 {0}. 등급은 새 값이 하루 내내 유지된 뒤에야 바뀝니다. 이 은행을 통해 식민지 기분에 영향을 줍니다(설정: bank.moodOn).</HH.Bank.Header.TierTip>
+  <HH.Bank.Header.TierTip>순자산 = 계좌 + 입금 중인 은화 + 집에 있는 은화 + 투자(시장 가치) − 빚: 은화 {0}. 등급은 새 값이 하루 내내 유지된 뒤에야 바뀝니다. 이 은행을 통해 식민지 기분에 영향을 줍니다(설정: bank.moodOn).</HH.Bank.Header.TierTip>
   <HH.Bank.Hist.Amount>금액 (소수 5자리)</HH.Bank.Hist.Amount>
   <HH.Bank.Hist.Empty>아직 거래 내역이 없습니다.</HH.Bank.Hist.Empty>
   <HH.Bank.Hist.TotalFees>지금까지 낸 수수료</HH.Bank.Hist.TotalFees>
@@ -80,8 +80,8 @@
   <HH.Bank.Lobby.Accounts>계좌</HH.Bank.Lobby.Accounts>
   <HH.Bank.Lobby.Amount>금액</HH.Bank.Lobby.Amount>
   <HH.Bank.Lobby.Balance>잔액</HH.Bank.Lobby.Balance>
-  <HH.Bank.Lobby.BalanceTip>정확히: 은화 {0}.
-매일 이자: 잔액 × (M^({1} × {2} / 60) − 1), 여기서 M = 게임 1년당 {3} (수익성 슬라이더). 하루 {4:0.##} %에 해당합니다.</HH.Bank.Lobby.BalanceTip>
+  <HH.Bank.Lobby.BalanceTip>정확한 금액: 은화 {0}.
+계좌는 저축 계좌라서, 시장의 초과분(M − 1)의 {1} %를 1년에 이자로 줍니다. 이 은행의 계수 {2}를 곱합니다. M = {3}일 때 연 {4} %(하루 {5} %)입니다. 투자는 더 많이 벌지만 위험이 따릅니다.</HH.Bank.Lobby.BalanceTip>
   <HH.Bank.Lobby.Cash>집에 있는 현금</HH.Bank.Lobby.Cash>
   <HH.Bank.Lobby.CashTip>집 지도 여기저기 굴러다니는 은화.</HH.Bank.Lobby.CashTip>
   <HH.Bank.Lobby.ChangeBank>은행 변경</HH.Bank.Lobby.ChangeBank>
@@ -91,23 +91,22 @@
   <HH.Bank.Lobby.DepDelay>{0} 후 입금</HH.Bank.Lobby.DepDelay>
   <HH.Bank.Lobby.DepInstant>즉시 기장</HH.Bank.Lobby.DepInstant>
   <HH.Bank.Lobby.Deposit>입금</HH.Bank.Lobby.Deposit>
-  <HH.Bank.Lobby.Direct>직접 입금</HH.Bank.Lobby.Direct>
-  <HH.Bank.Lobby.DirectTip>사업체의 매장 금고가 자정에 계좌로 비워지며, {0} %가 차감됩니다.</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.DirectTip>사업체의 매장 금고는 자정에 수수료 {0} %를 뗀 뒤 계좌로 옮겨집니다. 모드 설정(Bank &gt; Account)에서 바꿀 수 있습니다.</HH.Bank.Lobby.DirectTip>
   <HH.Bank.Lobby.Interest>이번 분기 이자</HH.Bank.Lobby.Interest>
   <HH.Bank.Lobby.InterestTip>분기(15일)가 시작된 이후 잔액에 지급된 이자.</HH.Bank.Lobby.InterestTip>
   <HH.Bank.Lobby.Max>최대</HH.Bank.Lobby.Max>
   <HH.Bank.Lobby.Net>순자산</HH.Bank.Lobby.Net>
-  <HH.Bank.Lobby.NetTip>계좌 + 집의 은화 − 부채. 자산 등급을 정합니다.</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.NetTip>계좌 {0} + 입금 중 {1} + 집의 은화 {2} + 투자 시장 가치 {3} − 빚 {4} = {5}.
+이 값으로 자산 등급이 정해집니다. 신용 한도는 투자의 {6} %만 계산합니다(설정: bank.loanPortfolioShare).</HH.Bank.Lobby.NetTip>
   <HH.Bank.Lobby.Nothing>아직 아무것도 없습니다. 입금으로 시작하면 좋겠습니다.</HH.Bank.Lobby.Nothing>
   <HH.Bank.Lobby.PendingDep>↓ {0}, {1} 후 도착</HH.Bank.Lobby.PendingDep>
   <HH.Bank.Lobby.PendingWd>↑ {0}, 낙하 포드로 {1} 후</HH.Bank.Lobby.PendingWd>
   <HH.Bank.Lobby.Recent>최근 활동</HH.Bank.Lobby.Recent>
-  <HH.Bank.Lobby.Trade>거래 은화 자동 입금</HH.Bank.Lobby.Trade>
-  <HH.Bank.Lobby.TradeTip>상인과 무역선에게서 받은 은화는 거래 직후 직접 입금과 같은 수수료로 계좌에 들어갑니다. 바닥에 동전으로 흩어지지 않습니다. 직접 입금이 켜져 있어야 합니다. 기본값은 꺼짐이라 다음 상인에게 현금으로 계속 지불할 수 있습니다. 캐러밴에는 영향이 없습니다.</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.TradeTip>상인과 교역선에서 받은 은화는 거래 직후 직접 입금과 같은 수수료로 계좌에 들어갑니다. 바닥에 동전으로 놓이지 않습니다. 직접 입금이 켜져 있어야 합니다. 기본값은 꺼짐이라서 다음 상인에게 현금으로 계속 줄 수 있습니다. 캐러밴은 영향을 받지 않습니다. 모드 설정(Bank &gt; Account)에서 바꿀 수 있습니다.</HH.Bank.Lobby.TradeTip>
   <HH.Bank.Lobby.Transfer>입금 및 출금</HH.Bank.Lobby.Transfer>
   <HH.Bank.Lobby.TransferInfo>보관 중: {0}. 입금 {1}. 출금 수수료 {2}, {3}.</HH.Bank.Lobby.TransferInfo>
   <HH.Bank.Lobby.Transit>이동 중</HH.Bank.Lobby.Transit>
-  <HH.Bank.Lobby.TransitTip>보관함에서 빠져나왔지만 아직 기장되지 않은 은화(지점이나 현금인출기 없이 입금이 지연되는 경우).</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.TransitTip>이동 중인 은화: 아직 반영되지 않은 입금(지점이나 현금인출기가 없어 생기는 입금 지연)과 낙하 포드에 아직 있는 인출. 순자산에 포함됩니다.</HH.Bank.Lobby.TransitTip>
   <HH.Bank.Lobby.WdInstant>건물에서 즉시 현금 수령</HH.Bank.Lobby.WdInstant>
   <HH.Bank.Lobby.WdPod>낙하 포드로 {0} 후, {1}시간</HH.Bank.Lobby.WdPod>
   <HH.Bank.Lobby.Withdraw>출금</HH.Bank.Lobby.Withdraw>
@@ -142,8 +141,7 @@
   <HH.Bank.Msg.Switched>이제 귀하의 계좌는 {0}에 있습니다.</HH.Bank.Msg.Switched>
   <HH.Bank.Msg.TradeDeposit>거래 수입 은화 {0}이 {1}의 계좌에 바로 입금되었습니다.</HH.Bank.Msg.TradeDeposit>
   <HH.Bank.Open.Button>계좌 개설</HH.Bank.Open.Button>
-  <HH.Bank.Open.Direct>창구 현금을 자정에 바로 은행으로 보내기</HH.Bank.Open.Direct>
-  <HH.Bank.Open.DirectTip>매장, 여관, 카지노의 수입이 은화 상태로 방치되지 않고 계좌로 들어갑니다. 나중에 야간 금고에서 또는 설정(bank.directDeposit)에서 바꿀 수 있습니다.</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.DirectTip>상점, 여관, 카지노의 수입은 은화로 방치되지 않고 계좌로 들어갑니다. 이것은 은행의 약관입니다. 모드 설정(Bank &gt; Account, bank.directDeposit)에서 바꿀 수 있습니다.</HH.Bank.Open.DirectTip>
   <HH.Bank.Open.Intro>은행을 고르세요. 계좌 개설은 무료이며, 나중에 옮기려면 은화 {0}이 듭니다. 계좌를 개설하기 전까지는 여기서 아무것도 귀찮게 하지 않습니다. 편지도, 기분 변화도, 수수료도 없습니다.</HH.Bank.Open.Intro>
   <HH.Bank.Open.Sub>당신의 은화, 우리의 걱정.</HH.Bank.Open.Sub>
   <HH.Bank.Open.Title>실버라인: 계좌 개설</HH.Bank.Open.Title>
@@ -194,21 +192,18 @@
   <HH.Bank.Tab.Terms>약관</HH.Bank.Tab.Terms>
   <HH.Bank.Terms.AccFee>분기당 계좌 수수료</HH.Bank.Terms.AccFee>
   <HH.Bank.Terms.AccountDaily>하루 기준 내 계좌</HH.Bank.Terms.AccountDaily>
-  <HH.Bank.Terms.AccountDailyTip>연간 배수 = M^({0} × {1}) = {2}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.AccountDailyTip>하루 계수 = (연간 배수)^(1/60) = {0}.</HH.Bank.Terms.AccountDailyTip>
   <HH.Bank.Terms.Anchors>난이도별</HH.Bank.Terms.Anchors>
-  <HH.Bank.Terms.AnchorsHead>연간 M / 최고 회수 단계</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.AnchorsHead>연간 지수 M  /  계좌의 연간 수익  /  최고 수금 단계</HH.Bank.Terms.AnchorsHead>
   <HH.Bank.Terms.Atm>ATM</HH.Bank.Terms.Atm>
-  <HH.Bank.Terms.Auto>자동</HH.Bank.Terms.Auto>
-  <HH.Bank.Terms.AutoTip>현재 난이도({0})에 맞춰 난이도 슬라이더를 다시 따릅니다.</HH.Bank.Terms.AutoTip>
   <HH.Bank.Terms.Daily>일일 (지수)</HH.Bank.Terms.Daily>
   <HH.Bank.Terms.DailyTip>M^(1/60) − 1. 게임 1년은 60일입니다.</HH.Bank.Terms.DailyTip>
   <HH.Bank.Terms.Dep>예금</HH.Bank.Terms.Dep>
   <HH.Bank.Terms.Direct>급여 직접 입금</HH.Bank.Terms.Direct>
   <HH.Bank.Terms.Fees>은행 수수료</HH.Bank.Terms.Fees>
   <HH.Bank.Terms.FeesNote>모든 수수료는 "은행 수수료 수준" 설정({0} %)에 비례합니다.</HH.Bank.Terms.FeesNote>
-  <HH.Bank.Terms.Preview>지수 기준 은화 1,000은 게임 1년 후 {0}, 10년 후 {1}이 됩니다.</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Preview>지수에 맡긴 은화 1,000은 1게임 연도 뒤 {0}, 10년 뒤 {1}이 됩니다. 당신의 계좌에서는 {2}과 {3}입니다.</HH.Bank.Terms.Preview>
   <HH.Bank.Terms.Profit>수익성</HH.Bank.Terms.Profit>
-  <HH.Bank.Terms.ProfitIntro>게임 1년(60일) 동안 투자금이 평균적으로 얼마나 불어나는지 나타냅니다. 1.0은 증감 없음, 1.2는 연 +20 %입니다. 대출 금리도 이 값으로 정해집니다. 이 값은 이 세이브 게임의 설정입니다.</HH.Bank.Terms.ProfitIntro>
   <HH.Bank.Terms.StageNote>회수 단계: 1 독촉장, 2 연체료, 3 예금과 상계, 4 방문 상담, 5 압류팀, 6 회수 급습, 7 현상금. 현재: {0}단계에서 멈춤.</HH.Bank.Terms.StageNote>
   <HH.Bank.Terms.Switch>은행 변경</HH.Bank.Terms.Switch>
   <HH.Bank.Terms.Wd>출금 (포드 / 창구)</HH.Bank.Terms.Wd>
@@ -231,4 +226,52 @@
   <HH.Bank.Time.DayHour>{0}일차, {1}:00</HH.Bank.Time.DayHour>
   <HH.Bank.Time.Hours>{0} 시간</HH.Bank.Time.Hours>
   <HH.Bank.Time.Minutes>{0} 분</HH.Bank.Time.Minutes>
+  <HH.Bank.Card.InterestTip>계좌 이자는 시장 수익의 일정 비율({0})에 이 은행 고유 계수({1})를 곱한 값입니다. 투자는 더 많이 법니다.</HH.Bank.Card.InterestTip>
+  <HH.Bank.Card.Numbers>연 이자 {0}  ·  예금 수수료 {1} %  ·  인출 수수료 {2} %  ·  분기당 계좌 수수료 {3}</HH.Bank.Card.Numbers>
+  <HH.Bank.Clerk.Line>오토라인 사무원: "{0}"</HH.Bank.Clerk.Line>
+  <HH.Bank.Lobby.DirectState>직접 입금: {0}</HH.Bank.Lobby.DirectState>
+  <HH.Bank.Lobby.Invested>투자</HH.Bank.Lobby.Invested>
+  <HH.Bank.Lobby.InvestedTip>주식, 펀드, 암호화폐, NFT는 오늘의 시장 가치로: {0}. 인내 채권은 현재 가치로: {1}. 오멘 계약과 진영 사업에 건 돈(원금 기준): {2}.</HH.Bank.Lobby.InvestedTip>
+  <HH.Bank.Lobby.MaxTip>식민지의 창고와 교역 비콘에 있는 은화 전부. 상한은 없습니다.</HH.Bank.Lobby.MaxTip>
+  <HH.Bank.Lobby.MaxTipWd>수수료를 뗀 뒤 계좌에서 여기서 지급할 수 있는 전액.</HH.Bank.Lobby.MaxTipWd>
+  <HH.Bank.Lobby.ModeDeposit>입금</HH.Bank.Lobby.ModeDeposit>
+  <HH.Bank.Lobby.ModeWithdraw>인출</HH.Bank.Lobby.ModeWithdraw>
+  <HH.Bank.Lobby.Off>꺼짐</HH.Bank.Lobby.Off>
+  <HH.Bank.Lobby.On>켜짐</HH.Bank.Lobby.On>
+  <HH.Bank.Lobby.PerYear>연간</HH.Bank.Lobby.PerYear>
+  <HH.Bank.Lobby.Percent>가진 은화의 {0} % ({1} / {2})</HH.Bank.Lobby.Percent>
+  <HH.Bank.Lobby.PercentWd>계좌에서 지급 가능한 금액의 {0} % ({1} / {2})</HH.Bank.Lobby.PercentWd>
+  <HH.Bank.Lobby.Rate>이자율</HH.Bank.Lobby.Rate>
+  <HH.Bank.Lobby.RateTip>계좌가 게임 1년(60일)마다 평균적으로 버는 금액입니다. 투자 탭의 상품과 비교해 보세요:
+{0}</HH.Bank.Lobby.RateTip>
+  <HH.Bank.Lobby.Settings>설정</HH.Bank.Lobby.Settings>
+  <HH.Bank.Lobby.TradeState>거래 은화를 계좌로: {0}</HH.Bank.Lobby.TradeState>
+  <HH.Bank.Memo.ScenBalance>개시 잔액</HH.Bank.Memo.ScenBalance>
+  <HH.Bank.Open.DirectState>매장 수입은 자정에 바로 은행으로 갑니다: {0}</HH.Bank.Open.DirectState>
+  <HH.Bank.Quip.Invest>투자를 하고 계시네요. 숫자를 보고 부럽지 않은 척하겠습니다.</HH.Bank.Quip.Invest>
+  <HH.Bank.Reason.NoSilverAtAll>창고에도 교역 비콘에도 은화가 없습니다.</HH.Bank.Reason.NoSilverAtAll>
+  <HH.Bank.Reason.NothingToWithdraw>지금은 계좌에서 여기서 지급할 것이 없습니다.</HH.Bank.Reason.NothingToWithdraw>
+  <HH.Bank.Scen.Balance>개시 잔액</HH.Bank.Scen.Balance>
+  <HH.Bank.Scen.DirectDeposit>직접 입금</HH.Bank.Scen.DirectDeposit>
+  <HH.Bank.Scen.Loan>시작 대출</HH.Bank.Scen.Loan>
+  <HH.Bank.Scen.LoanTip>0 = 대출 없음. 대출금은 계좌로 지급되며 다른 대출과 같이 분할 상환합니다.</HH.Bank.Scen.LoanTip>
+  <HH.Bank.Scen.Summary>{0}에 계좌를 열고 은화 {1}을(를) 가지고 시작합니다.</HH.Bank.Scen.Summary>
+  <HH.Bank.Scen.SummaryLoan>이미 은화 {0}의 빚이 있습니다({1}일).</HH.Bank.Scen.SummaryLoan>
+  <HH.Bank.Site.Atm>현금인출기</HH.Bank.Site.Atm>
+  <HH.Bank.Site.Counter>은행 창구</HH.Bank.Site.Counter>
+  <HH.Bank.Tabs.More>더 보기</HH.Bank.Tabs.More>
+  <HH.Bank.Tabs.MoreTip>은행의 다른 페이지: {0}</HH.Bank.Tabs.MoreTip>
+  <HH.Bank.Terms.AccountYear>계좌의 연간 수익</HH.Bank.Terms.AccountYear>
+  <HH.Bank.Terms.AccountYearTip>계좌의 연간 배수 = 1 + 비율 × 은행 계수 × (M − 1) = 1 + {0} × {1} × ({2} − 1) = {3}. 최저 {4}, 최고 {5}이며, 저축 상품 Mattress Plus({6})보다 높아지지 않습니다.</HH.Bank.Terms.AccountYearTip>
+  <HH.Bank.Terms.Compare>돈이 더 많이 불어나는 곳 (게임 1년당, 평균)</HH.Bank.Terms.Compare>
+  <HH.Bank.Terms.CompareAccountTip>계좌는 안전하지만 이자가 적습니다. Mattress Plus, 채권, 그 아래 상품들은 위험이 더 크거나 돈을 묶어 두는 대신 평균적으로 더 많이 줍니다. 계좌는 어떤 경우에도 Mattress Plus보다 더 많이 주지 않습니다.</HH.Bank.Terms.CompareAccountTip>
+  <HH.Bank.Terms.CompareTip>현재 수익성에서 이 상품의 장기 평균입니다. 가격은 크게 오르내리며, 한 해는 평균보다 훨씬 높거나 낮을 수 있습니다.</HH.Bank.Terms.CompareTip>
+  <HH.Bank.Terms.MInv>(투자: M = {0})</HH.Bank.Terms.MInv>
+  <HH.Bank.Terms.MNow>M = 게임 연도당 {0}</HH.Bank.Terms.MNow>
+  <HH.Bank.Terms.OpenSettings>모드 설정 열기</HH.Bank.Terms.OpenSettings>
+  <HH.Bank.Terms.OpenSettingsShort>설정에서 변경</HH.Bank.Terms.OpenSettingsShort>
+  <HH.Bank.Terms.OpenSettingsTip>은행 페이지에서 Hearth &amp; Harbor 모드 옵션을 엽니다. 수익성, 수수료, 대출, 복권은 이 세이브 게임의 실제 설정이며, 여기서만 조정합니다.</HH.Bank.Terms.OpenSettingsTip>
+  <HH.Bank.Terms.SetIn>은행 조건은 이 세이브 게임의 설정입니다. 모드 옵션 &gt; Hearth &amp; Harbor &gt; 은행(이자 &amp; 수익성, 수수료, 대출, 추심, 복권)에서 바꿀 수 있습니다. 1.0은 증감 없음, 1.2는 지수 기준 연 +20 %이며, 계좌는 그중 일부만 받습니다. 대출도 M을 따릅니다.</HH.Bank.Terms.SetIn>
+  <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
+  <HH.Bank.Yield.Account>당신의 은행 계좌</HH.Bank.Yield.Account>
 </LanguageData>

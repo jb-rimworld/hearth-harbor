@@ -228,4 +228,36 @@
   <HH_Dish_SashimiPlate.description>Сырая рыба, тонко нарезанная, и крошечная моральная дилемма.</HH_Dish_SashimiPlate.description>
   <HH_Dish_FishTacos.label>рыбные тако</HH_Dish_FishTacos.label>
   <HH_Dish_FishTacos.description>Рыба в лепёшке, доставлена колонистом, который бежал всю дорогу.</HH_Dish_FishTacos.description>
+  <HH_Dish_BoomalopeConfit.description>Томится в собственном жиру. Не стойте рядом с кастрюлей. Традиционно готовится из бумалопа, осторожно.</HH_Dish_BoomalopeConfit.description>
+  <HH_Dish_BoomalopeConfit.label>томлёное мясо конфи</HH_Dish_BoomalopeConfit.label>
+  <HH_Dish_CampfireStew.description>В котёл попало всё, включая спор о том, что всё это значит. Традиционно готовится из маффало.</HH_Dish_CampfireStew.description>
+  <HH_Dish_CampfireStew.label>мясное рагу у костра</HH_Dish_CampfireStew.label>
+  <HH_Dish_ClayOvenMuffalo.description>Замаринован на ночь, запечён в глиняной печи и подан с высокомерием. Традиционно готовится из маффало.</HH_Dish_ClayOvenMuffalo.description>
+  <HH_Dish_ClayOvenMuffalo.label>запечённое в глиняной печи</HH_Dish_ClayOvenMuffalo.label>
+  <HH_Dish_DromedaryTagine.description>Томится в глиняной конусообразной посуде, как многие хотели бы томиться. Традиционно готовится из дромедара.</HH_Dish_DromedaryTagine.description>
+  <HH_Dish_DromedaryTagine.label>мясное тажин с ягодами</HH_Dish_DromedaryTagine.label>
+  <HH_Dish_LacqueredThrumbo.description>Глазируется до блеска, который ярче банковского счёта колонии. Традиционно готовится из трамбо, если колонии так повезло.</HH_Dish_LacqueredThrumbo.description>
+  <HH_Dish_LacqueredThrumbo.label>глазированная запеканка</HH_Dish_LacqueredThrumbo.label>
+  <HH_Dish_LambKoftasWithRice.description>Приправлен, сформован и подан на рисе, как очень вкусная лекция. Традиционно готовится из ягнёнка.</HH_Dish_LambKoftasWithRice.description>
+  <HH_Dish_LambKoftasWithRice.label>мясные кофты с рисом</HH_Dish_LambKoftasWithRice.label>
+  <HH_Dish_MongolianMuffalo.description>Жарится в воке, сладкое, липкое и немного слишком громкое. Традиционно готовится из маффало.</HH_Dish_MongolianMuffalo.description>
+  <HH_Dish_MongolianMuffalo.label>мясо по-монгольски</HH_Dish_MongolianMuffalo.label>
+  <HH_Dish_MuffaloBourguignon.description>Тушится в пиве, потому что на второй день кончилось вино. Традиционно готовится из маффало.</HH_Dish_MuffaloBourguignon.description>
+  <HH_Dish_MuffaloBourguignon.label>колониальный бургиньон</HH_Dish_MuffaloBourguignon.label>
+  <HH_Dish_MuffaloCarpaccio.description>Нарезано так тонко, что сквозь него видно меню. Традиционно готовится из маффало.</HH_Dish_MuffaloCarpaccio.description>
+  <HH_Dish_MuffaloCarpaccio.label>мясное карпаччо</HH_Dish_MuffaloCarpaccio.label>
+  <HH_Dish_MuffaloGoulash.description>Густой, красный и официально неофициальный национальный спор. Традиционно готовится из маффало.</HH_Dish_MuffaloGoulash.description>
+  <HH_Dish_MuffaloGoulash.label>мясной гуляш</HH_Dish_MuffaloGoulash.label>
+  <HH_Dish_MuffaloRamen.description>Прихлёбывайте громко. В споре за последнюю миску прихлёбывайте ещё громче. Традиционно готовится из маффало.</HH_Dish_MuffaloRamen.description>
+  <HH_Dish_MuffaloRamen.label>сытный мясной рамен</HH_Dish_MuffaloRamen.label>
+  <HH_Dish_MuffaloStroganoff.description>Сливочный, насыщенный и исчезает на третьей ложке. Традиционно готовится из маффало.</HH_Dish_MuffaloStroganoff.description>
+  <HH_Dish_MuffaloStroganoff.label>сливочный строганов</HH_Dish_MuffaloStroganoff.label>
+  <HH_Dish_MuffaloWellington.description>Завёрнут в тесто, маленькая теплоизоляция для очень величественного эго. Традиционно готовится из маффало.</HH_Dish_MuffaloWellington.description>
+  <HH_Dish_MuffaloWellington.label>мясной веллингтон</HH_Dish_MuffaloWellington.label>
+  <HH_Dish_PadThrumbo.description>Кисло-сладкое переплетение лапши и хруста, обжаренное в воке, пока не станет послушным. Хруст даёт мясо насекомых.</HH_Dish_PadThrumbo.description>
+  <HH_Dish_PadThrumbo.label>пад-баг</HH_Dish_PadThrumbo.label>
+  <HH_Dish_ThrumboPho.description>Прозрачный бульон с очень длинным списком дел за ним. Традиционно готовится из трамбо, если колонии так повезло.</HH_Dish_ThrumboPho.description>
+  <HH_Dish_ThrumboPho.label>мясной фо</HH_Dish_ThrumboPho.label>
+  <HH_Dish_ThrumboTartare.description>Сырой, яростный и смелый. Сначала подпишите отказ от ответственности. Традиционно готовится из трамбо, если колонии так повезло.</HH_Dish_ThrumboTartare.description>
+  <HH_Dish_ThrumboTartare.label>мясной тартар</HH_Dish_ThrumboTartare.label>
 </LanguageData>

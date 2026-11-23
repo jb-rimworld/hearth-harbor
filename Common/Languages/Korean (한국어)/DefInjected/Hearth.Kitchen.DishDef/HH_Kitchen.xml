@@ -228,4 +228,36 @@
   <HH_Dish_SashimiPlate.description>생선을 얇게 썬 날것, 그리고 작은 도덕적 딜레마 한 접시.</HH_Dish_SashimiPlate.description>
   <HH_Dish_FishTacos.label>생선 타코</HH_Dish_FishTacos.label>
   <HH_Dish_FishTacos.description>토르티야에 싼 생선. 콜로니스트 한 명이 전력 질주해서 배달했다.</HH_Dish_FishTacos.description>
+  <HH_Dish_BoomalopeConfit.description>자기 기름에 천천히 익혔습니다. 솥 옆에 서 있지 마세요. 전통적으로 붐알로프로 만들며, 조심히 다룹니다.</HH_Dish_BoomalopeConfit.description>
+  <HH_Dish_BoomalopeConfit.label>천천히 구운 고기 콩피</HH_Dish_BoomalopeConfit.label>
+  <HH_Dish_CampfireStew.description>모든 것이 솥에 들어갔습니다. 그 모든 것이 무엇을 뜻하는지에 대한 논쟁까지도요. 전통적으로 머팔로로 만듭니다.</HH_Dish_CampfireStew.description>
+  <HH_Dish_CampfireStew.label>모닥불 고기 스튜</HH_Dish_CampfireStew.label>
+  <HH_Dish_ClayOvenMuffalo.description>밤새 재워 두었다가 점토 오븐에서 강하게 굽고, 자신만만하게 내놓습니다. 전통적으로 머팔로로 만듭니다.</HH_Dish_ClayOvenMuffalo.description>
+  <HH_Dish_ClayOvenMuffalo.label>점토 오븐 구이</HH_Dish_ClayOvenMuffalo.label>
+  <HH_Dish_DromedaryTagine.description>사람들이 대개 그러고 싶어 하듯, 점토 원뿔 속에서 천천히 익혔습니다. 전통적으로 드로메다리로 만듭니다.</HH_Dish_DromedaryTagine.description>
+  <HH_Dish_DromedaryTagine.label>고기와 베리 타진</HH_Dish_DromedaryTagine.label>
+  <HH_Dish_LacqueredThrumbo.description>콜로니의 은행 잔고보다 더 환하게 빛날 때까지 윤을 냈습니다. 콜로니가 운이 좋다면 전통적으로 썸보로 만듭니다.</HH_Dish_LacqueredThrumbo.description>
+  <HH_Dish_LacqueredThrumbo.label>래커 구이</HH_Dish_LacqueredThrumbo.label>
+  <HH_Dish_LambKoftasWithRice.description>향신료를 넣고 빚어 밥 위에 올렸습니다. 아주 맛있는 강의 같습니다. 전통적으로 양고기로 만듭니다.</HH_Dish_LambKoftasWithRice.description>
+  <HH_Dish_LambKoftasWithRice.label>고기 코프타와 밥</HH_Dish_LambKoftasWithRice.label>
+  <HH_Dish_MongolianMuffalo.description>웍에 볶아 달고 끈적하며 조금 시끄럽습니다. 전통적으로 머팔로로 만듭니다.</HH_Dish_MongolianMuffalo.description>
+  <HH_Dish_MongolianMuffalo.label>몽골식 고기 볶음</HH_Dish_MongolianMuffalo.label>
+  <HH_Dish_MuffaloBourguignon.description>둘째 날 와인이 떨어져서 맥주에 졸였습니다. 전통적으로 머팔로로 만듭니다.</HH_Dish_MuffaloBourguignon.description>
+  <HH_Dish_MuffaloBourguignon.label>콜로니식 부르기뇽</HH_Dish_MuffaloBourguignon.label>
+  <HH_Dish_MuffaloCarpaccio.description>메뉴판이 비쳐 보일 만큼 얇게 썰었습니다. 전통적으로 머팔로로 만듭니다.</HH_Dish_MuffaloCarpaccio.description>
+  <HH_Dish_MuffaloCarpaccio.label>고기 카르파초</HH_Dish_MuffaloCarpaccio.label>
+  <HH_Dish_MuffaloGoulash.description>붉고 걸쭉하며, 공식적으로는 비공식 국민 논쟁거리입니다. 전통적으로 머팔로로 만듭니다.</HH_Dish_MuffaloGoulash.description>
+  <HH_Dish_MuffaloGoulash.label>고기 굴라시</HH_Dish_MuffaloGoulash.label>
+  <HH_Dish_MuffaloRamen.description>후루룩 크게 드세요. 마지막 한 그릇을 두고 다투게 되면 더 크게 드세요. 전통적으로 머팔로로 만듭니다.</HH_Dish_MuffaloRamen.description>
+  <HH_Dish_MuffaloRamen.label>푸짐한 고기 라멘</HH_Dish_MuffaloRamen.label>
+  <HH_Dish_MuffaloStroganoff.description>크림처럼 진하고 풍부하며, 세 숟가락째엔 이미 사라지고 없습니다. 전통적으로 머팔로로 만듭니다.</HH_Dish_MuffaloStroganoff.description>
+  <HH_Dish_MuffaloStroganoff.label>크림 스트로가노프</HH_Dish_MuffaloStroganoff.label>
+  <HH_Dish_MuffaloWellington.description>페스트리로 감쌌습니다. 아주 거대한 자존심을 위한 작은 단열재입니다. 전통적으로 머팔로로 만듭니다.</HH_Dish_MuffaloWellington.description>
+  <HH_Dish_MuffaloWellington.label>고기 웰링턴</HH_Dish_MuffaloWellington.label>
+  <HH_Dish_PadThrumbo.description>새콤달콤하게 엉킨 국수와 아삭한 식감을 웍에 볶아, 말을 들을 때까지 볶았습니다. 아삭함은 곤충 고기에서 나옵니다.</HH_Dish_PadThrumbo.description>
+  <HH_Dish_PadThrumbo.label>팟 버그</HH_Dish_PadThrumbo.label>
+  <HH_Dish_ThrumboPho.description>맑은 육수 뒤에는 아주 긴 할 일 목록이 있습니다. 콜로니가 운이 좋다면 전통적으로 썸보로 만듭니다.</HH_Dish_ThrumboPho.description>
+  <HH_Dish_ThrumboPho.label>고기 쌀국수</HH_Dish_ThrumboPho.label>
+  <HH_Dish_ThrumboTartare.description>날것이고 맹렬하며 용감합니다. 먼저 면책 동의서에 서명하세요. 콜로니가 운이 좋다면 전통적으로 썸보로 만듭니다.</HH_Dish_ThrumboTartare.description>
+  <HH_Dish_ThrumboTartare.label>고기 타르타르</HH_Dish_ThrumboTartare.label>
 </LanguageData>

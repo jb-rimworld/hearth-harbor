@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServedBusy.stages.0.description>Los huéspedes no paraban de llegar al mostrador y tenía algo que hacer todo el rato. Así debería sentirse el trabajo.</HH_ServedBusy.stages.0.description>
+  <HH_ServedBusy.stages.0.label>un buen turno</HH_ServedBusy.stages.0.label>
+  <HH_ServedBusy.stages.1.description>Un huésped tras otro. Sabía cada pedido antes de que terminaran de pedirlo. Un cansancio del bueno.</HH_ServedBusy.stages.1.description>
+  <HH_ServedBusy.stages.1.label>un turno ajetreado</HH_ServedBusy.stages.1.label>
+  <HH_ServedBusy.stages.2.description>Toda la sala quería algo a la vez y yo pude con todo. Estoy orgulloso de ese turno.</HH_ServedBusy.stages.2.description>
+  <HH_ServedBusy.stages.2.label>de un lado a otro</HH_ServedBusy.stages.2.label>
+  <HH_ServedIdle.stages.0.description>Estuve detrás del mostrador un buen rato y no vino nadie. Froté el mismo vaso tres veces.</HH_ServedIdle.stages.0.description>
+  <HH_ServedIdle.stages.0.label>aburrido en el mostrador</HH_ServedIdle.stages.0.label>
+  <HH_ServedIdle.stages.1.description>Horas en el mostrador sin nada que hacer. Podría haber estado haciendo algo útil.</HH_ServedIdle.stages.1.description>
+  <HH_ServedIdle.stages.1.label>de pie todo el turno</HH_ServedIdle.stages.1.label>
+  <HH_ServedIdle.stages.2.description>Un turno entero esperando huéspedes que nunca llegaron. ¿Para qué estoy aquí de pie?</HH_ServedIdle.stages.2.description>
+  <HH_ServedIdle.stages.2.label>un turno inútil</HH_ServedIdle.stages.2.label>
+  <HH_WokenByBell.stages.0.description>Alguien tocó la campana en mitad de mi sueño. El deber llama. Con fuerza.</HH_WokenByBell.stages.0.description>
+  <HH_WokenByBell.stages.0.label>despertado por la campana nocturna</HH_WokenByBell.stages.0.label>
+  <HH_WokenByBell.stages.1.description>Alguien tocó la campana en mitad de mi sueño. Bueno, para eso está el trabajo. Dormiré más tarde.</HH_WokenByBell.stages.1.description>
+  <HH_WokenByBell.stages.1.label>despertado por la campana nocturna</HH_WokenByBell.stages.1.label>
+</LanguageData>

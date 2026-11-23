@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.MusicMode.Always>항상</HH.Enum.MusicMode.Always>
+  <HH.Enum.MusicMode.Off>끔</HH.Enum.MusicMode.Off>
+  <HH.Enum.MusicMode.WhenHosting>손님을 맞을 때</HH.Enum.MusicMode.WhenHosting>
+  <HH.Setting.core.creatorPawn>작가가 떠돌이로 나타날 수 있음</HH.Setting.core.creatorPawn>
+  <HH.Setting.core.creatorPawn.Desc>기본 게임의 창작자 폰처럼, Hearth &amp; Harbor의 작가도 가끔 생성된 폰으로 나타날 수 있다: 친절하고 성실한 떠돌이 여관 주인.</HH.Setting.core.creatorPawn.Desc>
+  <HH.Setting.core.music>Hearth &amp; Harbor 음악</HH.Setting.core.music>
+  <HH.Setting.core.music.Desc>우리의 차분한 노래 세 곡(봄과 여름 날 한 곡, 가을 한 곡, 겨울 한 곡)이 기본 RimWorld 재생목록에 추가된다. 손님을 받는 경우: 손님용 침대, 매장 간판 또는 은행 계좌를 쓰는 식민지에서만.</HH.Setting.core.music.Desc>
+  <HH.Setting.core.musicShare>우리 노래가 나오는 빈도</HH.Setting.core.musicShare>
+  <HH.Setting.core.musicShare.Desc>재생목록에서 기본 노래 한 곡과 비교한 우리 노래의 비중. 1 = 그 계절의 다른 노래와 같음, 0 = 나오지 않음.</HH.Setting.core.musicShare.Desc>
+  <HH.Story.Suggests>{0} 추천: {1}</HH.Story.Suggests>
+  <HH.Story.SuggestsTip>클릭하면 이 이야기꾼이 추천하는 숙박 난이도를 쓴다. 버튼으로 여전히 바꿀 수 있다.</HH.Story.SuggestsTip>
+</LanguageData>

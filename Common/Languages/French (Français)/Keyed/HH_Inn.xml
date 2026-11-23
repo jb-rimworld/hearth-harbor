@@ -75,7 +75,6 @@
   <HH.Inn.Event.Returned>Est revenu(e) pour un nouveau séjour.</HH.Inn.Event.Returned>
   <HH.Inn.Event.SelfCheckIn>A trouvé la chambre seul(e) ; personne n'était à un bureau.</HH.Inn.Event.SelfCheckIn>
   <HH.Inn.Event.SentAway>A été renvoyé(e).</HH.Inn.Event.SentAway>
-  <HH.Inn.Event.SharedBed>Partage le lit avec {0} (+{1} d'argent par nuit).</HH.Inn.Event.SharedBed>
   <HH.Inn.Event.ShortenedStay>A raccourci le séjour à {0} nuit(s) pour pouvoir payer la chambre.</HH.Inn.Event.ShortenedStay>
   <HH.Inn.Event.TooImportant>Trop important(e) chez lui/elle pour rester.</HH.Inn.Event.TooImportant>
   <HH.Inn.Event.Welcomed>A été accueilli(e) à la réception par {0}.</HH.Inn.Event.Welcomed>
@@ -85,9 +84,7 @@
   <HH.Inn.Forecast.Overnight>{0} nuit(s)</HH.Inn.Forecast.Overnight>
   <HH.Inn.Forecast.Return>de retour</HH.Inn.Forecast.Return>
   <HH.Inn.GuestBed.Booked>Réservé par {0}</HH.Inn.GuestBed.Booked>
-  <HH.Inn.GuestBed.Desc>Louez ce lit aux invités. Les colons ne dormiront pas ici ; les invités ne dorment que dans les lits d'invités. Le prix par nuit dépend de la chambre, du lit et du nombre de lits partageant la pièce.</HH.Inn.GuestBed.Desc>
   <HH.Inn.GuestBed.Inactive>Lit d'invité (inactif s'il s'agit d'un lit médical, de prisonnier ou d'esclave)</HH.Inn.GuestBed.Inactive>
-  <HH.Inn.GuestBed.Inspect>Lit d'invité : {0} d'argent/nuit ({1})</HH.Inn.GuestBed.Inspect>
   <HH.Inn.GuestBed.Label>Lit d'invité</HH.Inn.GuestBed.Label>
   <HH.Inn.GuestBed.NoColonists>C'est un lit d'invité.</HH.Inn.GuestBed.NoColonists>
   <HH.Inn.GuestBed.NotColonistBed>Seul un lit de colon ordinaire (ni médical, ni de prisonnier, ni d'esclave) peut devenir un lit d'invité.</HH.Inn.GuestBed.NotColonistBed>
@@ -96,7 +93,6 @@
   <HH.Inn.Handling.Basics>Services de base</HH.Inn.Handling.Basics>
   <HH.Inn.Handling.BasicsDesc>Services payants uniquement, sans divertissement. Ne coûte aucun temps aux colons.</HH.Inn.Handling.BasicsDesc>
   <HH.Inn.Handling.Bond>Lien : {0} / {1}</HH.Inn.Handling.Bond>
-  <HH.Inn.Handling.Click>Cliquez pour changer : Services de base → Accompagner → Recruter.</HH.Inn.Handling.Click>
   <HH.Inn.Handling.Label>Prise en charge : {0}</HH.Inn.Handling.Label>
   <HH.Inn.Handling.Recruit>Recruter</HH.Inn.Handling.Recruit>
   <HH.Inn.Handling.RecruitDesc>Comme Accompagner, plus des discussions sur un séjour prolongé. Si le lien avec l'invité est assez fort, il peut rejoindre la colonie au départ. Les discussions insistantes peuvent froisser.</HH.Inn.Handling.RecruitDesc>
@@ -295,4 +291,56 @@
   <HH.Inn.PriceMode.ManualSet>Prix fixe…</HH.Inn.PriceMode.ManualSet>
   <HH.Inn.PriceMode.ManualValue>{0} argent par nuit</HH.Inn.PriceMode.ManualValue>
   <HH.Inn.PriceMode.Manual>prix fixe</HH.Inn.PriceMode.Manual>
+  <HH.Inn.BedUse.ChipTip>Prix par nuit : {0}. Cliquer pour le modifier : gratuit, −25 %, automatique, +25 % ou prix fixe.</HH.Inn.BedUse.ChipTip>
+  <HH.Inn.BedUse.Click>Cliquer pour choisir à quoi sert ce lit.</HH.Inn.BedUse.Click>
+  <HH.Inn.BedUse.Colonist>Lit de colon</HH.Inn.BedUse.Colonist>
+  <HH.Inn.BedUse.ColonistDesc>le lieu de couchage habituel de vos colons</HH.Inn.BedUse.ColonistDesc>
+  <HH.Inn.BedUse.Guest>Lit d'invité</HH.Inn.BedUse.Guest>
+  <HH.Inn.BedUse.GuestDesc>loué aux invités, les colons restent à l'écart</HH.Inn.BedUse.GuestDesc>
+  <HH.Inn.BedUse.Medical>Lit médical</HH.Inn.BedUse.Medical>
+  <HH.Inn.BedUse.NeedsRimWard>Les lits de patient et de chirurgie nécessitent le mod RimWard.</HH.Inn.BedUse.NeedsRimWard>
+  <HH.Inn.BedUse.NoBed>Ce lit ne peut pas devenir un lit d'invité.</HH.Inn.BedUse.NoBed>
+  <HH.Inn.BedUse.Owners>Propriétaire : {0}</HH.Inn.BedUse.Owners>
+  <HH.Inn.BedUse.Patient>Lit de patient</HH.Inn.BedUse.Patient>
+  <HH.Inn.BedUse.PatientDesc>pour les malades et les blessés</HH.Inn.BedUse.PatientDesc>
+  <HH.Inn.BedUse.Price>Prix : {0} d'argent par nuit ({1}).</HH.Inn.BedUse.Price>
+  <HH.Inn.BedUse.PriceHint>Cliquez sur l'étiquette de prix dans le coin pour la modifier.</HH.Inn.BedUse.PriceHint>
+  <HH.Inn.BedUse.Surgery>Lit de chirurgie</HH.Inn.BedUse.Surgery>
+  <HH.Inn.BedUse.SurgeryDesc>les opérations se font ici</HH.Inn.BedUse.SurgeryDesc>
+  <HH.Inn.Convert.Certainty>Certitude en {0} : {1} %</HH.Inn.Convert.Certainty>
+  <HH.Inn.Convert.Goal>à 0 % ils adoptent {0}</HH.Inn.Convert.Goal>
+  <HH.Inn.Convert.Insulted>s'est senti sermonné : n'écoute plus cette fois</HH.Inn.Convert.Insulted>
+  <HH.Inn.Convert.Nothing>Rien à convertir : l'invité partage déjà votre idéologie ou ne peut pas être convaincu.</HH.Inn.Convert.Nothing>
+  <HH.Inn.Convert.Talks>discussions jusqu'ici : {0}</HH.Inn.Convert.Talks>
+  <HH.Inn.Door.AgeTitle>Âge</HH.Inn.Door.AgeTitle>
+  <HH.Inn.Door.StayTitle>Type de séjour</HH.Inn.Door.StayTitle>
+  <HH.Inn.Door.WealthTitle>Richesse</HH.Inn.Door.WealthTitle>
+  <HH.Inn.Event.ConvertEnded>Plus rien à convertir : retour à la simple compagnie.</HH.Inn.Event.ConvertEnded>
+  <HH.Inn.Event.CoupleBooked>Lit double réservé avec {0} : {1} d'argent par nuit chacun.</HH.Inn.Event.CoupleBooked>
+  <HH.Inn.Event.Embraced>A embrassé {0} après des discussions avec {1}.</HH.Inn.Event.Embraced>
+  <HH.Inn.Event.EmbracedSat>A trouvé une nouvelle foi dans la colonie.</HH.Inn.Event.EmbracedSat>
+  <HH.Inn.Event.NoFreeBed>Tous les lits d'invité étaient occupés : n'est resté que pour la journée.</HH.Inn.Event.NoFreeBed>
+  <HH.Inn.Event.PartnerMovedIn>{0} a rejoint le lit : le prix est partagé ({1} d'argent par nuit chacun).</HH.Inn.Event.PartnerMovedIn>
+  <HH.Inn.Event.Preached>S'est senti sermonné par {0}.</HH.Inn.Event.Preached>
+  <HH.Inn.Event.SharedBed2>Partage le lit avec {0} ({1} d'argent par nuit chacun).</HH.Inn.Event.SharedBed2>
+  <HH.Inn.Event.SleepsTogether>Dort à côté de {0} : exactement ce qu'il espérait.</HH.Inn.Event.SleepsTogether>
+  <HH.Inn.Event.ThinkingOver>A discuté de {1} avec {0} : sûr de ses propres croyances à {2} %.</HH.Inn.Event.ThinkingOver>
+  <HH.Inn.Event.Unmoved>A écouté {0} parler de {1}, mais est resté de marbre.</HH.Inn.Event.Unmoved>
+  <HH.Inn.Event.WantedDouble>Voulait un lit double avec {0}, et a obtenu deux lits simples.</HH.Inn.Event.WantedDouble>
+  <HH.Inn.GuestBed.InspectShort>Lit d'invité : {0} d'argent/nuit · {1}</HH.Inn.GuestBed.InspectShort>
+  <HH.Inn.Handling.Click2>Cliquer pour changer : {0}.</HH.Inn.Handling.Click2>
+  <HH.Inn.Handling.Convert>Convertir</HH.Inn.Handling.Convert>
+  <HH.Inn.Handling.ConvertDesc>Comme Accompagner, plus des discussions sur votre idéologie. Chaque discussion ébranle la certitude de l'invité dans la sienne ; à zéro, il adopte la vôtre. Les discussions trop insistantes peuvent offenser. Nécessite l'extension Idéologie.</HH.Inn.Handling.ConvertDesc>
+  <HH.Inn.Msg.Preached>{0} a trouvé les tentatives de conversion insistantes : il dépensera moins et partira plus tôt.</HH.Inn.Msg.Preached>
+  <HH.Inn.Occupancy.DoubleBed>lit double</HH.Inn.Occupancy.DoubleBed>
+  <HH.Inn.Problem.Double>Voudrait un lit double avec son partenaire : construisez-en un ou désignez-en un comme lit d'invité.</HH.Inn.Problem.Double>
+  <HH.Inn.Problem.DoubleMany>{0} invités voudraient un lit double pour le couple : construisez-en un ou désignez-en un comme lit d'invité.</HH.Inn.Problem.DoubleMany>
+  <HH.Setting.inn.convertPower>Force de conversion</HH.Setting.inn.convertPower>
+  <HH.Setting.inn.convertPower.Desc>Force avec laquelle un entretien dans le traitement « Convertir » ébranle la certitude d'un invité dans sa propre idéologie (100 % = force habituelle). Nécessite l'extension Idéologie.</HH.Setting.inn.convertPower.Desc>
+  <HH.Setting.inn.coupleWish>Les couples souhaitent un grand lit</HH.Setting.inn.coupleWish>
+  <HH.Setting.inn.coupleWish.Desc>Les couples arrivant ensemble préfèrent un grand lit. L'obtenir les réjouit un peu, finir dans deux lits simples les agace un peu. Ne modifie jamais les prix.</HH.Setting.inn.coupleWish.Desc>
+  <HH.Setting.inn.doubleBedFactor>Facteur de prix du grand lit</HH.Setting.inn.doubleBedFactor>
+  <HH.Setting.inn.doubleBedFactor.Desc>Un lit pour deux rapporte ce nombre de fois le prix d'un lit simple. Un couple dans un grand lit le paie ensemble, chacun la moitié, donc il paie moins que pour deux lits simples.</HH.Setting.inn.doubleBedFactor.Desc>
+  <HH.Setting.inn.groupDevGizmos>Regrouper nos boutons de développement</HH.Setting.inn.groupDevGizmos>
+  <HH.Setting.inn.groupDevGizmos.Desc>En mode développement, les boutons DEV des bâtiments de Hearth &amp; Harbor sont regroupés dans un seul bouton « Dev : Hearth &amp; Harbor » pour que la rangée reste lisible. Les boutons de base et ceux des autres mods ne sont jamais touchés.</HH.Setting.inn.groupDevGizmos.Desc>
 </LanguageData>

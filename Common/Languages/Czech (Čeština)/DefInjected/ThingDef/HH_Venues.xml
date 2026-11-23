@@ -10,4 +10,6 @@
   <HH_MarketStall.description>Volně stojící stánek s pruhovanou markýzou. Velký trh se uskuteční, až vlastníte dost stánků (viz nastavení Provozoven): každá obchodní karavana se u jednoho rozloží a zaplatí poplatek za stánek do vaší pokladny. Stojí-li venku, funguje za každého počasí, ale není to samostatná provozovna.</HH_MarketStall.description>
   <HH_VendingMachine.label>automat</HH_VendingMachine.label>
   <HH_VendingMachine.description>Napájená skříň, v níž je jídlo, nápoje, drogy a léky. Hosté z ní nakupují kdykoli bez personálu, za tržní cenu. Přepravci ji plní jako regál. Kolonisté si mohou brát zdarma; automat účtuje jen hostům. K prodeji potřebuje energii.</HH_VendingMachine.description>
+  <HH_Mote_Bell.label>noční zvonek</HH_Mote_Bell.label>
+  <HH_Mote_RingArc.label>zvonění</HH_Mote_RingArc.label>
 </LanguageData>

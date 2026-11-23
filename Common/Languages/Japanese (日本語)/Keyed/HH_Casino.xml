@@ -231,4 +231,121 @@
   <HH.Setting.thrumbo.raiseTheStakes.Desc>電源の入った軌道交易ビーコンの範囲にある品物を、銀の代わりに賭けられるボタン「賭け金を上げる…」を Lucky Thrumbo に追加する。内容の濃さ「標準」以上では、コロニーの動物と捕虜も（バニラの売却と同じく）賭けられる。コロニスト、奴隷、子ども、宿泊客は決して対象にならない。</HH.Setting.thrumbo.raiseTheStakes.Desc>
   <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: 賭けた品物の質屋の差額</HH.Setting.thrumbo.pawnbrokerSpread>
   <HH.Setting.thrumbo.pawnbrokerSpread.Desc>賭けた品物は、宿の質屋が払う額（最も交渉の得意なコロニストによるバニラの売値）から、この差額と固定の手数料 2 % を引いた額で数えられる。</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
+  <HH.Casino.ChairsNote>快適な席につくと賭け金が最大 +{0}％</HH.Casino.ChairsNote>
+  <HH.Casino.ComfySeat>テーブルの快適な席</HH.Casino.ComfySeat>
+  <HH.Casino.Demo.Column>列 {0}</HH.Casino.Demo.Column>
+  <HH.Casino.Demo.Number>数字:</HH.Casino.Demo.Number>
+  <HH.Casino.Demo.OddsBlackjack>{0}</HH.Casino.Demo.OddsBlackjack>
+  <HH.Casino.Demo.OddsPoker>レーキ {0}％（ポットあたり最大 {1} 銀貨）</HH.Casino.Demo.OddsPoker>
+  <HH.Casino.Demo.OddsRoulette>ハウスエッジ {0}％</HH.Casino.Demo.OddsRoulette>
+  <HH.Casino.Demo.OddsSlots>還元率 {0}％</HH.Casino.Demo.OddsSlots>
+  <HH.Casino.Demo.PokerSeatWins>{0} が {1} で勝利</HH.Casino.Demo.PokerSeatWins>
+  <HH.Casino.Demo.PokerYouWin>あなたは {0} で勝利</HH.Casino.Demo.PokerYouWin>
+  <HH.Casino.Demo.Rake>レーキ {0}</HH.Casino.Demo.Rake>
+  <HH.Casino.Demo.Regular>通常 {0}</HH.Casino.Demo.Regular>
+  <HH.Casino.Demo.Straight>単一の数字</HH.Casino.Demo.Straight>
+  <HH.Casino.Demo.You>あなた</HH.Casino.Demo.You>
+  <HH.Casino.GhostChairs>椅子つき {0}</HH.Casino.GhostChairs>
+  <HH.Casino.GhostSeats>客席: {0} / {1}</HH.Casino.GhostSeats>
+  <HH.Casino.GhostTipSlot>青: プレイヤーが座る場所 · 点滅するマスに椅子かスツールを置くと賭け金が上がります</HH.Casino.GhostTipSlot>
+  <HH.Casino.GhostTipTable>青: 客がプレイする場所 · 琥珀色: クルーピエ · 点滅するマスに椅子を置くと賭け金が上がります</HH.Casino.GhostTipTable>
+  <HH.Casino.Hand.0>ハイカード</HH.Casino.Hand.0>
+  <HH.Casino.Hand.1>ワンペア</HH.Casino.Hand.1>
+  <HH.Casino.Hand.2>ツーペア</HH.Casino.Hand.2>
+  <HH.Casino.Hand.3>スリーカード</HH.Casino.Hand.3>
+  <HH.Casino.Hand.4>ストレート</HH.Casino.Hand.4>
+  <HH.Casino.Hand.5>フラッシュ</HH.Casino.Hand.5>
+  <HH.Casino.Hand.6>フルハウス</HH.Casino.Hand.6>
+  <HH.Casino.Hand.7>フォーカード</HH.Casino.Hand.7>
+  <HH.Casino.Hand.8>ストレートフラッシュ</HH.Casino.Hand.8>
+  <HH.Casino.SeatsBonus>賭け金 +{0}％</HH.Casino.SeatsBonus>
+  <HH.Casino.SeatsLine>客席: {0} 席のうち {1} 席が空き · 椅子つき {2}</HH.Casino.SeatsLine>
+  <HH.Casino.SeatsTip>椅子で賭け金が最大 +{0}％まで上がります</HH.Casino.SeatsTip>
+  <HH.Setting.casino.comfortSpend>快適な席: 賭け額の増加</HH.Setting.casino.comfortSpend>
+  <HH.Setting.casino.comfortSpend.Desc>快適さ100%の席に座る客は、1回ごとにこれだけ多く賭けます（席の快適さに応じて増減。立ち見は増えません）。店の取り分は変わりません: 遊ぶ回数が増えるだけで、勝率は変わりません。</HH.Setting.casino.comfortSpend.Desc>
+  <HH.Setting.casino.comfortStay>快適な席: 滞在時間の延長</HH.Setting.casino.comfortStay>
+  <HH.Setting.casino.comfortStay.Desc>快適さ100%の席に座る客は、テーブルを離れるまでこれだけ長く遊びます。</HH.Setting.casino.comfortStay.Desc>
+  <HH.Thrumbo.AllIn>オールイン</HH.Thrumbo.AllIn>
+  <HH.Thrumbo.AllInTip>選んだ元にあるすべて。</HH.Thrumbo.AllInTip>
+  <HH.Thrumbo.Anim.BigWin>大当たり！</HH.Thrumbo.Anim.BigWin>
+  <HH.Thrumbo.Anim.Dealing>ディーラーが配っています…</HH.Thrumbo.Anim.Dealing>
+  <HH.Thrumbo.Anim.Jackpot>Thrumbo ジャックポット！</HH.Thrumbo.Anim.Jackpot>
+  <HH.Thrumbo.Anim.Skip>スキップ</HH.Thrumbo.Anim.Skip>
+  <HH.Thrumbo.Anim.SkipHint>テーブルをクリック、Space または Enter でスキップ。Shift で高速。</HH.Thrumbo.Anim.SkipHint>
+  <HH.Thrumbo.Anim.Spinning>勝負の結果を表示中…</HH.Thrumbo.Anim.Spinning>
+  <HH.Thrumbo.Anim.Wait>勝負の結果が出るまで待つ（またはスキップ）。</HH.Thrumbo.Anim.Wait>
+  <HH.Thrumbo.BJ.DealAgain>もう一度配る</HH.Thrumbo.BJ.DealAgain>
+  <HH.Thrumbo.BJ.PayDouble>ダブルダウン後に勝ち（最初の賭け金に対して）</HH.Thrumbo.BJ.PayDouble>
+  <HH.Thrumbo.BJ.PayLose>負けまたはバースト</HH.Thrumbo.BJ.PayLose>
+  <HH.Thrumbo.BJ.PayNatural>ブラックジャック（エースと10のカード）</HH.Thrumbo.BJ.PayNatural>
+  <HH.Thrumbo.BJ.PayPush>プッシュ（引き分け）</HH.Thrumbo.BJ.PayPush>
+  <HH.Thrumbo.BJ.PayTitle>手ごとの払い戻し（賭け金込み）</HH.Thrumbo.BJ.PayTitle>
+  <HH.Thrumbo.BJ.PayWin>勝ち</HH.Thrumbo.BJ.PayWin>
+  <HH.Thrumbo.Err.HouseCap>胴元は一回の賭け金につき最大 {0} 銀まで受け取ります（テーブル上限ではなく、胴元自身の上限です）。</HH.Thrumbo.Err.HouseCap>
+  <HH.Thrumbo.HowTo.Blackjack>21に、ディーラーより近く、かつ超えないようにします。数札はその数字、J・Q・Kは10、エースは1または11として数えます。
+
+• ヒット: カードを1枚引く。スタンド: 今の手で止める。その後ディーラーが伏せ札を開き、17以上になるまで引きます。
+• ダブルダウン: 最初の2枚の時点で賭け金を2倍にし、カードを1枚だけ引く。
+• 21を超えるとバーストで即負けです。エースと10のカードはブラックジャックで、ボーナス払い（標準テーブルでは3対2）があります。
+• 引き分けはプッシュで、賭け金が戻ります。
+
+ここでは上手に打つことが重要です。表示されたエッジは完全に正しく打った場合の値です。</HH.Thrumbo.HowTo.Blackjack>
+  <HH.Thrumbo.HowTo.Button>遊び方</HH.Thrumbo.HowTo.Button>
+  <HH.Thrumbo.HowTo.ButtonTip>配当表の代わりにゲームの短い説明を表示します。もう一度クリックで閉じます。</HH.Thrumbo.HowTo.ButtonTip>
+  <HH.Thrumbo.HowTo.Poker>Rimdeck は胴元ではなく、他のプレイヤーとのポーカーです。全員が同じアンティを払い、各自2枚が配られた後、中央に共有の5枚が表向きに出ます（3枚、続けて1枚、さらに1枚）。
+
+• 手持ち7枚から最も強い5枚でポットを取ります。強い順に: ハイカード、ワンペア、ツーペア、スリーカード、ストレート、フラッシュ、フルハウス、フォーカード、ストレートフラッシュ。
+• 知力と社交スキルが高いほど、勝ちやすくなります。
+• 胴元は各ポットから少額の手数料だけを取ります。</HH.Thrumbo.HowTo.Poker>
+  <HH.Thrumbo.HowTo.Roulette>盤上の数字または区分をクリックして賭け、回転させます。玉はひとつのポケットに止まります。
+
+• 単点（1つの数字）は35対1。
+• ダース・列（12個の数字）は2対1。
+• 赤か黒、奇数か偶数、1〜18か19〜36は1対1。
+• 緑のゼロ（アメリカ式ホイールではダブルゼロ）はどの色にも半分にも属しません。これが胴元の利益の源です。
+
+どの賭けも胴元の利益率は同じで、変わるのは振れ幅だけです。</HH.Thrumbo.HowTo.Roulette>
+  <HH.Thrumbo.HowTo.Slots>賭け金を決めてレバーを引く（または回すボタンを押す）。3つのリールが順に止まり、中段の行だけが有効です。
+
+• 3つ揃いは配当表の通りに払います。ベリーが最も少なく、thrumboが最も多い。
+• ベリーは優しい: リール1と2に2つ、またはリール1に1つでも少し払い戻されます。
+• ボラティリティは払い戻しの散らばり方を変えるだけで、長期の総額は変わりません。低は少額が頻繁に、高は稀に大きく払います。
+
+長期的には、配当表の上に示された割合が還元され、残りが胴元の利益です。</HH.Thrumbo.HowTo.Slots>
+  <HH.Thrumbo.HowTo.Title>遊び方: {0}</HH.Thrumbo.HowTo.Title>
+  <HH.Thrumbo.LeverTip>レバーを引く: 上の賭け金で回転させます。</HH.Thrumbo.LeverTip>
+  <HH.Thrumbo.MaxTip>テーブル上限と手持ちの資金が許す最大の賭け金。</HH.Thrumbo.MaxTip>
+  <HH.Thrumbo.NoLimit>テーブル上限なし: {0}から、持っている全額（{1}）まで。</HH.Thrumbo.NoLimit>
+  <HH.Thrumbo.NoLimitTip>Lucky Thrumbo は払える賭け金をどれでも受け付けます。テーブル上限（純資産の一定割合）はMod設定で有効にできます: カジノ、Lucky Thrumbo。</HH.Thrumbo.NoLimitTip>
+  <HH.Thrumbo.Pay.First1>リール1で {0}</HH.Thrumbo.Pay.First1>
+  <HH.Thrumbo.Pay.First2>2 × {0}（リール1+2）</HH.Thrumbo.Pay.First2>
+  <HH.Thrumbo.PayRowTip>1回転あたりの当たり確率: {0}%</HH.Thrumbo.PayRowTip>
+  <HH.Thrumbo.Recent>最近の勝負</HH.Thrumbo.Recent>
+  <HH.Thrumbo.RecentNone>まだありません。</HH.Thrumbo.RecentNone>
+  <HH.Thrumbo.SlotMarquee>一本腕の Thrumbo</HH.Thrumbo.SlotMarquee>
+  <HH.Thrumbo.StakeLockedTip>勝負の結果が出るか、手が終わるまで賭け金はテーブルに置かれたままです。</HH.Thrumbo.StakeLockedTip>
+  <HH.Thrumbo.Stakes.ColEach>1個あたりの価値</HH.Thrumbo.Stakes.ColEach>
+  <HH.Thrumbo.Stakes.ColHeld>手の届く範囲</HH.Thrumbo.Stakes.ColHeld>
+  <HH.Thrumbo.Stakes.ColItem>品物</HH.Thrumbo.Stakes.ColItem>
+  <HH.Thrumbo.Stakes.ColStake>賭け物</HH.Thrumbo.Stakes.ColStake>
+  <HH.Thrumbo.Stakes.HowTo.Roulette>賭ける品物を左で選び、外側の賭け先を一つ選んでから、ボタンを押してください。ホイールを一回回して結果が決まります。
+
+• 赤か黒、奇数か偶数、1〜18か19〜36は1対1で払われます。勝てば品物はそのまま手元に残り、その価値分の銀も受け取ります。
+• 12個の数字の組（ダース）は2対1で払われます。品物はそのまま残り、その価値の2倍の銀を受け取ります。
+• 緑のゼロ（ダブルゼロを含む）はどの賭けにも属しません。これが店の取り分です。
+• 負けると、品物は売却されたのと同じく店の手に渡ります。</HH.Thrumbo.Stakes.HowTo.Roulette>
+  <HH.Thrumbo.Stakes.HowTo.Slots>賭ける品物を左で選び、次に変動率を選んでから、ボタンを押してください。3つのリールを一回回して結果が決まります。
+
+• 同じ絵柄が3つ揃う（または最初のリールにベリーが出る）と、The Lucky Thrumbo の払い戻し表どおりに賭け物の価値が増えます。
+• ×2以上で当たれば、品物はそのまま手元に残り、店は価値 × (m − 1) の銀を払います。
+• 外れると、品物は店の手に渡ります。×1未満の小さな当たりは銀で払われますが、品物は同じく失われます。</HH.Thrumbo.Stakes.HowTo.Slots>
+  <HH.Thrumbo.Stakes.ListFoot>ここにあるものはすべて、電源の入った軌道交易ビーコンの届く範囲にあり、最も優秀な交渉役が価値を見積もります。−や+はShiftを押しながら使うと10個ずつ変えられます。品物は、ラウンドで負けてしまうまで元の場所に置かれたままです。</HH.Thrumbo.Stakes.ListFoot>
+  <HH.Thrumbo.Stakes.NoLimit>テーブルの上限はなし: {0} 銀からどの額でも可。</HH.Thrumbo.Stakes.NoLimit>
+  <HH.Thrumbo.Sym.berries>ベリー</HH.Thrumbo.Sym.berries>
+  <HH.Thrumbo.Sym.component>部品</HH.Thrumbo.Sym.component>
+  <HH.Thrumbo.Sym.core>ペルソナコア</HH.Thrumbo.Sym.core>
+  <HH.Thrumbo.Sym.corn>トウモロコシ</HH.Thrumbo.Sym.corn>
+  <HH.Thrumbo.Sym.meal>サバイバルミール</HH.Thrumbo.Sym.meal>
+  <HH.Thrumbo.Sym.plasteel>プラスチール</HH.Thrumbo.Sym.plasteel>
+  <HH.Thrumbo.Sym.thrumbo>Thrumbo</HH.Thrumbo.Sym.thrumbo>
 </LanguageData>

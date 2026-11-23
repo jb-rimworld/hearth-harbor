@@ -29,4 +29,20 @@
   <HH.City.TaxiFree>Таксі чекає.</HH.City.TaxiFree>
   <HH.City.TaxiBusy>Таксі на маршруті.</HH.City.TaxiBusy>
   <HH.City.TaxiStats>Відправлень: {0}, прибуттів: {1}, виручка: {2} срібла</HH.City.TaxiStats>
+  <HH.City.Closed>зачинено</HH.City.Closed>
+  <HH.City.Open>відчинено</HH.City.Open>
+  <HH.City.Page.Cinema>Кінотеатр: {0} екран(ів), {1} з вивіскою; {2} квитків, {3} срібла</HH.City.Page.Cinema>
+  <HH.City.Page.CinemaRow>   {0}: {1} місць, {2}</HH.City.Page.CinemaRow>
+  <HH.City.Page.Gallery>Галерея: {0} зал(ів), {1} твір(ів); {2} відвідувань, {3} срібла</HH.City.Page.Gallery>
+  <HH.City.Page.Park>Парк: {0} лав(ок); {1} гостей сидять</HH.City.Page.Park>
+  <HH.City.Page.Salon>Салон: {0} крісел у {1} салон(ах); {2} нових образів, {3} срібла</HH.City.Page.Salon>
+  <HH.City.Page.Security>Охорона: {0} охоронець(ів) на чергуванні, заробили {1} срібла</HH.City.Page.Security>
+  <HH.City.Page.StateIdle>простоює</HH.City.Page.StateIdle>
+  <HH.City.Page.StateNoPower>без живлення</HH.City.Page.StateNoPower>
+  <HH.City.Page.StateShowing>показує {0}</HH.City.Page.StateShowing>
+  <HH.City.Page.Taxi>Таксі: {0} стоянок; {1} поїздок, {2} посадок, {3} срібла</HH.City.Page.Taxi>
+  <HH.City.Page.Total>Загальна виручка Міського життя: {0} срібла</HH.City.Page.Total>
+  <HH.City.Removal.Buildings>Проєкторні екрани, салонні крісла, паркові лавки та стоянки таксі залишаються звичайними будівлями.</HH.City.Removal.Buildings>
+  <HH.City.Removal.Films>Зупинено фільмів, що йшли: {0}.</HH.City.Removal.Films>
+  <HH.City.Removal.Guards>Контрактів охорони розірвано: {0}.</HH.City.Removal.Guards>
 </LanguageData>

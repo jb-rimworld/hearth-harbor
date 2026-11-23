@@ -285,4 +285,172 @@
   <HH.Enum.TrickMode.Follows>영업 압박 수준에 따름</HH.Enum.TrickMode.Follows>
   <HH.Enum.TrickMode.On>항상 켜짐</HH.Enum.TrickMode.On>
   <HH.Enum.TrickMode.Off>끔</HH.Enum.TrickMode.Off>
+  <HH.Ins.Btn.FillForm>청구서 작성</HH.Ins.Btn.FillForm>
+  <HH.Ins.Bulk.All>전체</HH.Ins.Bulk.All>
+  <HH.Ins.Bulk.Colony>식민지 전체</HH.Ins.Bulk.Colony>
+  <HH.Ins.Bulk.Confirm>보험 {0}건을 지금 체결할까요? 첫 보험료 합계: {1}. 이후 {3}일마다 {2}. 각 보험은 여전히 하나씩 해지할 수 있습니다.</HH.Ins.Bulk.Confirm>
+  <HH.Ins.Bulk.Done>보험 {1}건 중 {0}건 체결 완료.</HH.Ins.Bulk.Done>
+  <HH.Ins.Bulk.Lead>보험을 체크하고 등급과 보장액을 고른 뒤 보장 대상을 정하면, Clawback Mutual이 한꺼번에 모두 체결합니다. 보험마다 편지를 받는 대신 요약 편지 한 통을 받습니다. 대기 기간은 보험별로 시작됩니다.</HH.Ins.Bulk.Lead>
+  <HH.Ins.Bulk.NoMoney>첫 보험료를 낼 돈이 부족합니다</HH.Ins.Bulk.NoMoney>
+  <HH.Ins.Bulk.NoRiders>여기서는 특약이 미리 체크되지 않습니다. 묶음 할인은 보험이 늘수록 커집니다(최대 {0} 할인).</HH.Ins.Bulk.NoRiders>
+  <HH.Ins.Bulk.None>없음</HH.Ins.Bulk.None>
+  <HH.Ins.Bulk.NothingToSign>아직 체결할 것이 없습니다: 보험 하나와 콜로니스트 한 명 이상을 체크하세요.</HH.Ins.Bulk.NothingToSign>
+  <HH.Ins.Bulk.PerPerson>콜로니스트 1인당</HH.Ins.Bulk.PerPerson>
+  <HH.Ins.Bulk.Policies>보험</HH.Ins.Bulk.Policies>
+  <HH.Ins.Bulk.Sign>보험 {0}건 체결</HH.Ins.Bulk.Sign>
+  <HH.Ins.Bulk.Spendable>사용 가능: {0}</HH.Ins.Bulk.Spendable>
+  <HH.Ins.Bulk.Stopped>끝나기 전에 돈이 떨어져 나머지는 체결되지 않았습니다.</HH.Ins.Bulk.Stopped>
+  <HH.Ins.Bulk.SumPerHead>콜로니스트 1인당 보장액: {0}</HH.Ins.Bulk.SumPerHead>
+  <HH.Ins.Bulk.Summary>체결할 보험 {0}건. 첫 보험료: {1}. 이후 {3}일마다 {2}.</HH.Ins.Bulk.Summary>
+  <HH.Ins.Bulk.Title>모두 보장하기</HH.Ins.Bulk.Title>
+  <HH.Ins.Bulk.TooExpensive>사용 가능한 금액이 {0}뿐이라 돈이 허락하는 만큼만 체결됩니다.</HH.Ins.Bulk.TooExpensive>
+  <HH.Ins.Bulk.Who>콜로니스트</HH.Ins.Bulk.Who>
+  <HH.Ins.Cancel.Step>{1}단계 중 {0}단계</HH.Ins.Cancel.Step>
+  <HH.Ins.Change.AlreadyPending>이미 변경이 접수되어 있습니다. 먼저 철회하세요.</HH.Ins.Change.AlreadyPending>
+  <HH.Ins.Change.Apply>변경 접수</HH.Ins.Change.Apply>
+  <HH.Ins.Change.CancelPending>이 보험은 해지 중입니다. 먼저 해지를 철회하세요.</HH.Ins.Change.CancelPending>
+  <HH.Ins.Change.CannotPayFee>변경 수수료 {0}을(를) 청구할 수 없었습니다.</HH.Ins.Change.CannotPayFee>
+  <HH.Ins.Change.Close>닫기</HH.Ins.Change.Close>
+  <HH.Ins.Change.Filed>변경이 접수되었습니다. {0} 후 적용됩니다.</HH.Ins.Change.Filed>
+  <HH.Ins.Change.Lead>진행 중인 이 보험의 등급, 보장액 또는 특약을 바꿉니다. 새 조건은 다음 청구부터 적용되며 보험료가 다시 계산됩니다. 해지는 현재 상태 그대로 둡니다.</HH.Ins.Change.Lead>
+  <HH.Ins.Change.Limit>이 보험은 분기(쿼드럼)당 {0}회만 변경할 수 있습니다.</HH.Ins.Change.Limit>
+  <HH.Ins.Change.NoChange>아직 변경된 것이 없습니다.</HH.Ins.Change.NoChange>
+  <HH.Ins.Change.NotActive>이 보험은 유효하지 않습니다.</HH.Ins.Change.NotActive>
+  <HH.Ins.Change.Part.RiderOff>특약 {0} 제외</HH.Ins.Change.Part.RiderOff>
+  <HH.Ins.Change.Part.RiderOn>특약 {0} 포함</HH.Ins.Change.Part.RiderOn>
+  <HH.Ins.Change.Part.Riders>기타 특약</HH.Ins.Change.Part.Riders>
+  <HH.Ins.Change.Part.Sum>보장액 {0}에서 {1}으로</HH.Ins.Change.Part.Sum>
+  <HH.Ins.Change.Part.Tier>등급 {0}에서 {1}으로</HH.Ins.Change.Part.Tier>
+  <HH.Ins.Change.Riders>특약</HH.Ins.Change.Riders>
+  <HH.Ins.Change.Sum.Cheaper>청구 1회당 {0} 줄어듭니다.</HH.Ins.Change.Sum.Cheaper>
+  <HH.Ins.Change.Sum.Dearer>청구 1회당 {0} 늘어납니다.</HH.Ins.Change.Sum.Dearer>
+  <HH.Ins.Change.Sum.Discount>진행 중인 유지 할인은 그대로 유지됩니다.</HH.Ins.Change.Sum.Discount>
+  <HH.Ins.Change.Sum.Fee>변경 수수료: {0}, 접수 시 청구됩니다.</HH.Ins.Change.Sum.Fee>
+  <HH.Ins.Change.Sum.Lower>보장액을 낮추는 데는 대기 기간이 없습니다.</HH.Ins.Change.Sum.Lower>
+  <HH.Ins.Change.Sum.Premium>보험료: 지금 {0}, 이후 {1}</HH.Ins.Change.Sum.Premium>
+  <HH.Ins.Change.Sum.Title>무엇이 달라지나</HH.Ins.Change.Sum.Title>
+  <HH.Ins.Change.Sum.Wait>상향 후 대기 기간: {0}일. 이 기간 중 발생한 사건은 여전히 이전 보장으로 심사됩니다.</HH.Ins.Change.Sum.Wait>
+  <HH.Ins.Change.Sum.When>{0} 후 적용됩니다.</HH.Ins.Change.Sum.When>
+  <HH.Ins.Change.SumRange>허용 범위: {0}~{1}.</HH.Ins.Change.SumRange>
+  <HH.Ins.Change.Title>{0} 변경</HH.Ins.Change.Title>
+  <HH.Ins.Change.TooOld>연금 연령에서는 연금 보장을 올릴 수 없습니다.</HH.Ins.Change.TooOld>
+  <HH.Ins.End.Pension>연금 수급권 상실</HH.Ins.End.Pension>
+  <HH.Ins.Form.AiNote>Clawback Mutual이 진술에 직접 답변할 수 있습니다. 그렇다고 금액이나 결정이 바뀌지는 않습니다.</HH.Ins.Form.AiNote>
+  <HH.Ins.Form.Closed>이 접수 기간은 마감되었습니다.</HH.Ins.Form.Closed>
+  <HH.Ins.Form.Deadline>마감: 이 청구를 접수할 기한이 {0} 남았습니다.</HH.Ins.Form.Deadline>
+  <HH.Ins.Form.Event>발생 내용: {0}.\n보험: {1} ({2}).</HH.Ins.Form.Event>
+  <HH.Ins.Form.Items>피해 대상: {0}. 가치: {1}.</HH.Ins.Form.Items>
+  <HH.Ins.Form.Later>나중에</HH.Ins.Form.Later>
+  <HH.Ins.Form.NoAiNote>진술은 청구와 함께 보관됩니다. 결정은 이에 좌우되지 않으며, 지급 방식 선택만 반영됩니다.</HH.Ins.Form.NoAiNote>
+  <HH.Ins.Form.Nobody>아무도</HH.Ins.Form.Nobody>
+  <HH.Ins.Form.Payout.Materials>캡슐별 자재</HH.Ins.Form.Payout.Materials>
+  <HH.Ins.Form.Payout.Silver>은화</HH.Ins.Form.Payout.Silver>
+  <HH.Ins.Form.Placeholder>무슨 일이 있었는지 직접 적어 주세요 (선택 사항).</HH.Ins.Form.Placeholder>
+  <HH.Ins.Form.Sent>보험금 청구 접수됨 ({0}).</HH.Ins.Form.Sent>
+  <HH.Ins.Form.Statement>귀하의 진술</HH.Ins.Form.Statement>
+  <HH.Ins.Form.Submit>청구 접수</HH.Ins.Form.Submit>
+  <HH.Ins.Form.Title>청구서: {0}</HH.Ins.Form.Title>
+  <HH.Ins.Form.Value>손실 가치: {0}.</HH.Ins.Form.Value>
+  <HH.Ins.Letter.Batch.Body>Clawback Mutual은 신규 보험 {0}건을 한꺼번에 가입해 주셔서 감사합니다.</HH.Ins.Letter.Batch.Body>
+  <HH.Ins.Letter.Batch.Skipped>{0} 가입 불가:</HH.Ins.Letter.Batch.Skipped>
+  <HH.Ins.Letter.Batch.Title>보험 {0}건 체결</HH.Ins.Letter.Batch.Title>
+  <HH.Ins.Letter.Batch.Total>청구 방식: {0}, {1}일마다. 첫 보험료는 {2}에서 차감되었습니다.</HH.Ins.Letter.Batch.Total>
+  <HH.Ins.Letter.Change.Done.Body>{0}은(는) 이제 {1} 등급으로, 보상 한도 {2}에 적용됩니다. 보험료: {3}.</HH.Ins.Letter.Change.Done.Body>
+  <HH.Ins.Letter.Change.Done.Title>변경 적용: {0}</HH.Ins.Letter.Change.Done.Title>
+  <HH.Ins.Letter.Change.Done.Wait>다음 {0} 동안 발생한 사건은 여전히 이전 보장으로 심사됩니다.</HH.Ins.Letter.Change.Done.Wait>
+  <HH.Ins.Letter.Change.Fee>행정 수수료: {0}.</HH.Ins.Letter.Change.Fee>
+  <HH.Ins.Letter.Change.Filed.Body>Clawback Mutual이 {0}의 변경 요청을 접수했습니다: {1}.\n적용은 {2} 후이며, 보험료는 그때 다시 계산됩니다.</HH.Ins.Letter.Change.Filed.Body>
+  <HH.Ins.Letter.Change.Filed.Title>변경 신청: {0}</HH.Ins.Letter.Change.Filed.Title>
+  <HH.Ins.Letter.Change.Wait>업그레이드 후 대기 기간: {0}일.</HH.Ins.Letter.Change.Wait>
+  <HH.Ins.Letter.Decision.Statement>귀하의 진술에 대하여: {0}</HH.Ins.Letter.Decision.Statement>
+  <HH.Ins.Letter.Expired.Body>{0}의 청구({1})는 서류 제출 없이 기한이 지났습니다. Clawback Mutual은 유감을 표하지 않습니다.</HH.Ins.Letter.Expired.Body>
+  <HH.Ins.Letter.Expired.Title>청구 실효: {0}</HH.Ins.Letter.Expired.Title>
+  <HH.Ins.Letter.Filed.Statement>귀하의 진술: “{0}”</HH.Ins.Letter.Filed.Statement>
+  <HH.Ins.Letter.Possible.Body>{0}은(는) {1} 적용 대상 보험 사고입니다. 청구하실 수 있습니다.</HH.Ins.Letter.Possible.Body>
+  <HH.Ins.Letter.Possible.Deadline>기한: 지금부터 {0}. 그 뒤에는 청구가 실효됩니다.</HH.Ins.Letter.Possible.Deadline>
+  <HH.Ins.Letter.Possible.Death>{0}이(가) 사망했습니다. {1}이(가) 지급할 수도 있습니다. 청구하실 수 있습니다.</HH.Ins.Letter.Possible.Death>
+  <HH.Ins.Letter.Possible.How>청구서를 열고 몇 칸 체크한 뒤, 원하면 한 문장을 적어 보내십시오. 결과는 늘 그랬듯 결정됩니다.</HH.Ins.Letter.Possible.How>
+  <HH.Ins.Letter.Possible.Title>청구 가능: {0}</HH.Ins.Letter.Possible.Title>
+  <HH.Ins.Letter.Possible.Waiting>사건이 보험의 대기 기간 중에 발생했습니다. 보상부가 이를 주목할 것입니다.</HH.Ins.Letter.Possible.Waiting>
+  <HH.Ins.Letter.Reminder.Body>{0}에 대한 청구는 {1} 안에 접수해야 합니다.</HH.Ins.Letter.Reminder.Body>
+  <HH.Ins.Letter.Reminder.Title>기한 임박: {0}</HH.Ins.Letter.Reminder.Title>
+  <HH.Ins.Log.BulkSigned>일괄 가입: 보험 {1}건 중 {0}건 체결.</HH.Ins.Log.BulkSigned>
+  <HH.Ins.Log.ChangeApplied>{0} 변경됨: {1}, 보상 한도 {2}.</HH.Ins.Log.ChangeApplied>
+  <HH.Ins.Log.ChangeFiled>{0}: 변경 신청됨, {1} 후 적용.</HH.Ins.Log.ChangeFiled>
+  <HH.Ins.Log.ChangeWithdrawn>{0}: 변경 신청 철회.</HH.Ins.Log.ChangeWithdrawn>
+  <HH.Ins.Log.OppExpired>청구 없이 접수 기간이 종료됨: {0} ({1}).</HH.Ins.Log.OppExpired>
+  <HH.Ins.Log.OppFiled>{0}: 청구서 접수됨 (청구 {1}건).</HH.Ins.Log.OppFiled>
+  <HH.Ins.Log.OppOpened>{0}: 보험 사고 발생, {1}일 동안 청구 가능.</HH.Ins.Log.OppOpened>
+  <HH.Ins.Log.PensionStrike>연금 규정: {0}에게 경고 {1}회.</HH.Ins.Log.PensionStrike>
+  <HH.Ins.Neg.OddsTip>이 접근의 성공 가능성: {0}</HH.Ins.Neg.OddsTip>
+  <HH.Ins.Neg.RoundOf>{1}라운드 중 {0}라운드</HH.Ins.Neg.RoundOf>
+  <HH.Ins.Neg.Why.Approved>이미 승인됨: 협상할 것이 없습니다.</HH.Ins.Neg.Why.Approved>
+  <HH.Ins.Neg.Why.Closed>협상이 종료되었습니다.</HH.Ins.Neg.Why.Closed>
+  <HH.Ins.Neg.Why.NotDecided>청구에 대한 결정이 아직 나지 않았습니다.</HH.Ins.Neg.Why.NotDecided>
+  <HH.Ins.Pension.Alert.Body>시간표에서 노동 시간이 {0}시간을 넘는 연금 수령자는 단계적으로 연금을 잃습니다: {1}.\n\n초과 시간은 아무거나 또는 즐거움으로 설정하십시오. 보험 탭의 일정 수정 버튼이 이를 대신 처리합니다.</HH.Ins.Pension.Alert.Body>
+  <HH.Ins.Pension.Alert.Label>연금 위험</HH.Ins.Pension.Alert.Label>
+  <HH.Ins.Pension.FixSchedule>일정 수정</HH.Ins.Pension.FixSchedule>
+  <HH.Ins.Pension.Fixed>{0}: 노동 {1}시간을 아무거나로 설정함.</HH.Ins.Pension.Fixed>
+  <HH.Ins.Pension.Legal.Body>{0}의 시간표에 노동이 {1}시간 있습니다(허용 {2}시간). Brix &amp; Partners가 이번 분기 위반을 경고로 바꿔 주었습니다.</HH.Ins.Pension.Legal.Body>
+  <HH.Ins.Pension.Legal.Title>연금 규정: {0} 경고</HH.Ins.Pension.Legal.Title>
+  <HH.Ins.Pension.Notice.Body>{0}이(가) 1주 안에 60세가 됩니다. 그때부터 연금은 시간표의 하루 노동 시간이 최대 {1}시간 이하일 때만 지급됩니다. 아무거나, 즐거움, 수면, 명상은 여가로 칩니다. 경고 2회면 해당 기간의 연금을, 3회면 수급 자격 자체를 잃습니다.</HH.Ins.Pension.Notice.Body>
+  <HH.Ins.Pension.Notice.Title>연금 규정: {0}</HH.Ins.Pension.Notice.Title>
+  <HH.Ins.Pension.Strike1.Body>{0}의 시간표에 노동이 {1}시간 있습니다. 허용은 {2}시간입니다. 1차 경고입니다. 다음 점검은 이틀 뒤입니다. 두 번 더 경고를 받으면 수급 자격이 사라집니다.</HH.Ins.Pension.Strike1.Body>
+  <HH.Ins.Pension.Strike1.Title>연금 경고 1/3: {0}</HH.Ins.Pension.Strike1.Title>
+  <HH.Ins.Pension.Strike2.Body>{0}의 시간표에 노동이 {1}시간 있습니다. 허용은 {2}시간입니다. 2차 경고: 이번 기간의 연금({3})이 몰수됩니다. 한 번 더 받으면 수급 자격을 잃습니다.</HH.Ins.Pension.Strike2.Body>
+  <HH.Ins.Pension.Strike2.Title>연금 경고 2/3: {0}</HH.Ins.Pension.Strike2.Title>
+  <HH.Ins.Pension.Strike3.Body>{0}의 시간표에 노동이 {1}시간 있습니다. 허용은 {2}시간입니다. 3차 경고: 연금 수급 자격이 끝나고 보험이 해지됩니다.</HH.Ins.Pension.Strike3.Body>
+  <HH.Ins.Pension.Strike3.Title>연금 상실: {0}</HH.Ins.Pension.Strike3.Title>
+  <HH.Ins.Pension.Warn.Body>{0}의 시간표에 노동이 {1}시간 있습니다. 허용은 {2}시간입니다. 이번에는 경고만 드립니다.</HH.Ins.Pension.Warn.Body>
+  <HH.Ins.Pension.Warn.Title>연금 규정: {0} 과로</HH.Ins.Pension.Warn.Title>
+  <HH.Ins.Status.Buy>가입…</HH.Ins.Status.Buy>
+  <HH.Ins.Status.ColonyCover>정착지 보장</HH.Ins.Status.ColonyCover>
+  <HH.Ins.Status.Column>보장</HH.Ins.Status.Column>
+  <HH.Ins.Status.ColumnTip>보험 상태: 연금, 건강, 사고, 배상책임, 법률. 클릭하면 개요가 열립니다.</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.Foot>초록: 유효. 노랑: 대기 기간. 주황: 해지 예정. 빨강: 연금 위험. 회색: 미가입. 정착지 보장은 모든 콜로니스트에게 적용됩니다.</HH.Ins.Status.Foot>
+  <HH.Ins.Status.Kind.Accident>사고</HH.Ins.Status.Kind.Accident>
+  <HH.Ins.Status.Kind.Health>건강</HH.Ins.Status.Kind.Health>
+  <HH.Ins.Status.Kind.Legal>법률</HH.Ins.Status.Kind.Legal>
+  <HH.Ins.Status.Kind.Liability>배상책임</HH.Ins.Status.Kind.Liability>
+  <HH.Ins.Status.Kind.Pension>연금</HH.Ins.Status.Kind.Pension>
+  <HH.Ins.Status.No>없음</HH.Ins.Status.No>
+  <HH.Ins.Status.NoTip>이 콜로니스트에게는 {0}이(가) 없습니다.</HH.Ins.Status.NoTip>
+  <HH.Ins.Status.NotInsurable>가입 불가</HH.Ins.Status.NotInsurable>
+  <HH.Ins.Status.NotInsurableTip>노예, 수감자, 손님, 동물은 가입할 수 없습니다.</HH.Ins.Status.NotInsurableTip>
+  <HH.Ins.Status.PensionOk>시간표: 노동 {0}시간 (허용 {1}시간).</HH.Ins.Status.PensionOk>
+  <HH.Ins.Status.PensionRisk>시간표: 노동 {0}시간, 허용은 {1}시간뿐입니다. 연금이 위험합니다.</HH.Ins.Status.PensionRisk>
+  <HH.Ins.Status.State.Active>유효</HH.Ins.Status.State.Active>
+  <HH.Ins.Status.State.AtRisk>위험</HH.Ins.Status.State.AtRisk>
+  <HH.Ins.Status.State.CancelPending>해지 예정</HH.Ins.Status.State.CancelPending>
+  <HH.Ins.Status.State.None>없음</HH.Ins.Status.State.None>
+  <HH.Ins.Status.State.Waiting>대기 기간</HH.Ins.Status.State.Waiting>
+  <HH.Ins.Status.Strikes>경고 {0}회 남음</HH.Ins.Status.Strikes>
+  <HH.Ins.Status.Title>보험: {0}</HH.Ins.Status.Title>
+  <HH.Ins.Status.Yes>있음</HH.Ins.Status.Yes>
+  <HH.Ins.Tab.Cover>콜로니스트</HH.Ins.Tab.Cover>
+  <HH.Ins.Tab.Pawn>보험</HH.Ins.Tab.Pawn>
+  <HH.Ins.UI.Claim.AiReply>귀하의 진술에 대한 답변: {0}</HH.Ins.UI.Claim.AiReply>
+  <HH.Ins.UI.Claim.Form>서식: {0}</HH.Ins.UI.Claim.Form>
+  <HH.Ins.UI.Claim.Statement>귀하의 진술: {0}</HH.Ins.UI.Claim.Statement>
+  <HH.Ins.UI.Claims.History>이력</HH.Ins.UI.Claims.History>
+  <HH.Ins.UI.Claims.Left>{0} 남음</HH.Ins.UI.Claims.Left>
+  <HH.Ins.UI.Claims.Open>진행 중인 청구</HH.Ins.UI.Claims.Open>
+  <HH.Ins.UI.Claims.WindowLine>{0} ({1}). 가치: {2}, 물품 {3}개. 기한 전에 서식으로 청구하십시오.</HH.Ins.UI.Claims.WindowLine>
+  <HH.Ins.UI.Claims.Windows>열린 접수 기간</HH.Ins.UI.Claims.Windows>
+  <HH.Ins.UI.Cover.Colonist>콜로니스트</HH.Ins.UI.Cover.Colonist>
+  <HH.Ins.UI.Cover.Lead>누가 무엇을 보장받는지 보여줍니다. 연금과 사고 보장은 개인별이고, 건강·배상책임·법률 보장(*)은 정착지 전체에 적용됩니다.</HH.Ins.UI.Cover.Lead>
+  <HH.Ins.UI.Cover.None>콜로니스트가 없습니다.</HH.Ins.UI.Cover.None>
+  <HH.Ins.UI.CoverAll>모두 보장하기…</HH.Ins.UI.CoverAll>
+  <HH.Ins.UI.CoverAll.Tip>모든 콜로니스트의 보험을 한 번에 체결합니다.</HH.Ins.UI.CoverAll.Tip>
+  <HH.Ins.UI.CoverAllOne>모든 콜로니스트…</HH.Ins.UI.CoverAllOne>
+  <HH.Ins.UI.Mine.Change>보장 변경…</HH.Ins.UI.Mine.Change>
+  <HH.Ins.UI.Mine.ChangeTip>등급, 보상 한도 또는 특약을 변경합니다. 다음 청구 시점부터 적용됩니다.</HH.Ins.UI.Mine.ChangeTip>
+  <HH.Ins.UI.Mine.PendingChange>변경 신청됨, {0} 후 적용</HH.Ins.UI.Mine.PendingChange>
+  <HH.Ins.UI.Mine.PensionLost>연금 수급 자격을 잃었습니다.</HH.Ins.UI.Mine.PensionLost>
+  <HH.Ins.UI.Mine.PensionOk>연금 규정 충족: 노동 {0}시간 (허용 {1}시간), 아무거나 {2}시간.</HH.Ins.UI.Mine.PensionOk>
+  <HH.Ins.UI.Mine.PensionRisk>연금 위험: 노동 {0}시간, 허용은 {1}시간뿐입니다 (아무거나 {2}시간).</HH.Ins.UI.Mine.PensionRisk>
+  <HH.Ins.UI.Mine.PensionSuspended>규정 위반으로 이번 기간의 연금이 몰수되었습니다. {0} 후 재개됩니다.</HH.Ins.UI.Mine.PensionSuspended>
+  <HH.Ins.UI.Mine.PensionTip>연금 규정: 시간표의 하루 노동은 최대 {0}시간까지입니다. 아무거나는 여가로 치지만, 아무거나로 설정된 사람도 여전히 일을 고를 수 있습니다.</HH.Ins.UI.Mine.PensionTip>
+  <HH.Ins.UI.Mine.UpgradeWait>업그레이드 대기 기간: 다음 {0} 동안 발생한 사건은 여전히 이전 보장으로 심사됩니다.</HH.Ins.UI.Mine.UpgradeWait>
+  <HH.Ins.UI.Mine.WithdrawChange>변경 신청 철회</HH.Ins.UI.Mine.WithdrawChange>
 </LanguageData>

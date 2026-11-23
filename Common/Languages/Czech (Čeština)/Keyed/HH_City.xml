@@ -29,4 +29,20 @@
   <HH.City.TaxiFree>Taxík čeká.</HH.City.TaxiFree>
   <HH.City.TaxiBusy>Taxík je na jízdě.</HH.City.TaxiBusy>
   <HH.City.TaxiStats>Odjezdy: {0}, příjezdy: {1}, tržba: {2} stříbra</HH.City.TaxiStats>
+  <HH.City.Closed>zavřeno</HH.City.Closed>
+  <HH.City.Open>otevřeno</HH.City.Open>
+  <HH.City.Page.Cinema>Kino: {0} plátno(a), {1} s cedulí provozovny; {2} lístků, {3} stříbra</HH.City.Page.Cinema>
+  <HH.City.Page.CinemaRow>   {0}: {1} míst, {2}</HH.City.Page.CinemaRow>
+  <HH.City.Page.Gallery>Galerie: {0} galerie(í), {1} dílo(a); {2} návštěv, {3} stříbra</HH.City.Page.Gallery>
+  <HH.City.Page.Park>Park: {0} lavička(y); {1} hostů sedí</HH.City.Page.Park>
+  <HH.City.Page.Salon>Salon: {0} křeslo(a) v {1} salonu(ech); {2} nových účesů, {3} stříbra</HH.City.Page.Salon>
+  <HH.City.Page.Security>Ochranka: {0} strážný(ch) na službě, vyděláno {1} stříbra</HH.City.Page.Security>
+  <HH.City.Page.StateIdle>nečinný</HH.City.Page.StateIdle>
+  <HH.City.Page.StateNoPower>bez proudu</HH.City.Page.StateNoPower>
+  <HH.City.Page.StateShowing>promítá {0}</HH.City.Page.StateShowing>
+  <HH.City.Page.Taxi>Taxi: {0} stanoviště; {1} jízd, {2} výsadků, {3} stříbra</HH.City.Page.Taxi>
+  <HH.City.Page.Total>Celkové tržby z Městského života: {0} stříbra</HH.City.Page.Total>
+  <HH.City.Removal.Buildings>Projekční plátna, salonová křesla, parkové lavičky a taxi stanoviště zůstanou jako obyčejné budovy.</HH.City.Removal.Buildings>
+  <HH.City.Removal.Films>Zastaveno {0} běžících filmů.</HH.City.Removal.Films>
+  <HH.City.Removal.Guards>Ukončeno {0} smluv s ochrankou.</HH.City.Removal.Guards>
 </LanguageData>

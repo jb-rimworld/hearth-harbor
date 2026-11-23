@@ -31,7 +31,7 @@
   <HH.Setting.venues.maxPurchases>1人の客が1回の滞在で買う上限</HH.Setting.venues.maxPurchases>
   <HH.Setting.venues.maxPurchases.Desc>1回の滞在でこの回数の購入を済ませた客は、買い物をやめる。</HH.Setting.venues.maxPurchases.Desc>
   <HH.Setting.venues.nightBell>夜間ベル</HH.Setting.venues.nightBell>
-  <HH.Setting.venues.nightBell.Desc>客は閉まっている店のベルを鳴らせる。接客作業を持つ起きている入植者が来て、割増料金で店を開ける。誰も起こされることはない。</HH.Setting.venues.nightBell.Desc>
+  <HH.Setting.venues.nightBell.Desc>閉まっている店のベルを客が鳴らせる。ベルが聞こえた接客作業を持つ入植者は駆けつけ、割増料金で店を開ける（誰が呼ばれ、誰が起こされうるかは下の夜間ベルの設定を参照）。</HH.Setting.venues.nightBell.Desc>
   <HH.Setting.venues.nightBellMin>夜間ベルの最低料金</HH.Setting.venues.nightBellMin>
   <HH.Setting.venues.nightBellMin.Desc>ベルによる対応は、これより安くならない（銀）。</HH.Setting.venues.nightBellMin.Desc>
   <HH.Setting.venues.nightBellSurcharge>夜間ベルの割増料金</HH.Setting.venues.nightBellSurcharge>
@@ -107,20 +107,16 @@
   <HH.Venue.Price>価格</HH.Venue.Price>
   <HH.Venue.PriceDesc>この店が売るすべてのものへの価格係数。高すぎる価格は客を遠ざける。</HH.Venue.PriceDesc>
   <HH.Venue.PriceFactor>価格係数</HH.Venue.PriceFactor>
-  <HH.Venue.PriceHint>客は価格を、品物が自分にとってどれだけの価値があるかと比べる。裕福な客はより多く我慢する。勤務者のいない店は少し安くする（セルフサービス）。夜間ベルの対応は追加料金になる。無料は本当に無料。</HH.Venue.PriceHint>
   <HH.Venue.PriceLine>価格</HH.Venue.PriceLine>
   <HH.Venue.PriceTitle>価格</HH.Venue.PriceTitle>
   <HH.Venue.Pricey>割高</HH.Venue.Pricey>
   <HH.Venue.Rename>改名</HH.Venue.Rename>
   <HH.Venue.RenameDesc>この店に名前を付ける。</HH.Venue.RenameDesc>
   <HH.Venue.RenameTitle>店の名前を付ける</HH.Venue.RenameTitle>
-  <HH.Venue.Reset>既定の名前に戻す</HH.Venue.Reset>
   <HH.Venue.Restock>補充</HH.Venue.Restock>
   <HH.Venue.RestockDesc>この看板に、部屋の保管場所を「重要」優先度で品物を受け入れさせ、運搬係が棚を満たし続けるようにする。オプトイン制。オフにすると元の設定が戻る。</HH.Venue.RestockDesc>
   <HH.Venue.RestockHint>オンにすると、この部屋のすべての保管場所（備蓄エリアと棚、あなたのものでも他人のものでも）が、下でチェックした品物を「重要」優先度で受け入れ、運搬係が部屋を品物で満たし続ける。オフにすると保管場所の元の設定が戻る。</HH.Venue.RestockHint>
   <HH.Venue.RestockNoShop>この店は部屋から何も売っていないので、補充するものがない。</HH.Venue.RestockNoShop>
-  <HH.Venue.RestockSwitchOff>補充はオン – オフにして保管場所を戻す</HH.Venue.RestockSwitchOff>
-  <HH.Venue.RestockSwitchOn>補充はオフ – オンにする</HH.Venue.RestockSwitchOn>
   <HH.Venue.RestockTitle>補充</HH.Venue.RestockTitle>
   <HH.Venue.RippedOff>ぼったくられた</HH.Venue.RippedOff>
   <HH.Venue.Sales>本日の売上</HH.Venue.Sales>
@@ -141,4 +137,142 @@
   <HH.Venue.MarketBlock.NoShop>店がない</HH.Venue.MarketBlock.NoShop>
   <HH.Venue.MarketBlock.Stalls>市場の屋台 {0}/{1}</HH.Venue.MarketBlock.Stalls>
   <HH.Venue.MarketBlock.Renown>名声 {0}/{1}</HH.Venue.MarketBlock.Renown>
+  <HH.Core.FlipBlocked>反対側はふさがれています: 作業者がそこに立てません。</HH.Core.FlipBlocked>
+  <HH.Core.FlipBusy>使用中: {0} が今使っています。</HH.Core.FlipBusy>
+  <HH.Core.FlipNoSide>作業側がありません。</HH.Core.FlipNoSide>
+  <HH.Core.FlipSame>両側は同じです。</HH.Core.FlipSame>
+  <HH.Core.FlipSide>作業側を切り替える</HH.Core.FlipSide>
+  <HH.Core.FlipSideDesc>その場で向きを変え、ここで働く人が反対側に立つようにします。配置、料金、接続はそのままです。</HH.Core.FlipSideDesc>
+  <HH.Enum.BellWakes.AwakeOnly>起きている入植者のみ</HH.Enum.BellWakes.AwakeOnly>
+  <HH.Enum.BellWakes.Off>オフ（ベルを鳴らすだけ）</HH.Enum.BellWakes.Off>
+  <HH.Enum.BellWakes.WakeVolunteers>志願者も起こす</HH.Enum.BellWakes.WakeVolunteers>
+  <HH.Enum.BellWho.AnyColonist>どの入植者でも</HH.Enum.BellWho.AnyColonist>
+  <HH.Enum.BellWho.ServingOnly>接客中の入植者のみ</HH.Enum.BellWho.ServingOnly>
+  <HH.Honor.Line>信用制: 無人運営</HH.Honor.Line>
+  <HH.Honor.MemoPaid>信用箱: {1}中{0}が支払い済み</HH.Honor.MemoPaid>
+  <HH.Honor.MoteNothing>未払い！</HH.Honor.MoteNothing>
+  <HH.Honor.MotePart>{0}%支払い</HH.Honor.MotePart>
+  <HH.Honor.PriceNote>信用制: 定価。一部の客はより安く払います</HH.Honor.PriceNote>
+  <HH.Honor.Report>本日の信用箱: 販売{0}件、不足{1}銀（{2}%） · 通算: 販売{3}件、過少払い{4}件、未払い{5}件、不足{6}銀</HH.Honor.Report>
+  <HH.Honor.Section>信用箱</HH.Honor.Section>
+  <HH.Honor.Toggle>信用制</HH.Honor.Toggle>
+  <HH.Honor.ToggleDesc>この店を無人で運営します。客は欲しいものを取り、定価の代金を信用箱に入れて帰ります。番を置く必要はありませんが、定価より安く払う客や、まったく払わない客も出ます（確率は設定で変更可能。入植者に見られていると減ります）。看板の報告には、不足した分が表示されます。</HH.Honor.ToggleDesc>
+  <HH.Honor.Witnessed>{0}が支払わずに{1}を出ていきました。入植者が目撃しています。</HH.Honor.Witnessed>
+  <HH.Names.DefaultOwner>ハーバー</HH.Names.DefaultOwner>
+  <HH.Serve.IdleMote>（あくび）</HH.Serve.IdleMote>
+  <HH.Serve.ServedShift>このシフトで {0} 人に提供</HH.Serve.ServedShift>
+  <HH.Serve.TipMemo>{0} へのチップ</HH.Serve.TipMemo>
+  <HH.Serve.TipMote>チップ +{0}</HH.Serve.TipMote>
+  <HH.Serve.TipsTotal>これまでのスタッフへのチップ: {0} 銀</HH.Serve.TipsTotal>
+  <HH.Setting.venues.autoNames>新しい店の名前を自動で付ける</HH.Setting.venues.autoNames>
+  <HH.Setting.venues.autoNames.Desc>新しい看板には店の種類に合った名前が付く（例：酒場なら「まどろむアルパカ亭」）。名前はいつでも変えられるし、別の名前を振り直すこともできる。</HH.Setting.venues.autoNames.Desc>
+  <HH.Setting.venues.bellHurry>夜間ベル：入植者は急いで向かう</HH.Setting.venues.bellHurry>
+  <HH.Setting.venues.bellHurry.Desc>ベルに応じた入植者は、歩かずに小走りで店に向かう。</HH.Setting.venues.bellHurry.Desc>
+  <HH.Setting.venues.bellRange>夜間ベルの聞こえる範囲（マス）</HH.Setting.venues.bellRange>
+  <HH.Setting.venues.bellRange.Desc>普通の聴力の者にベルが届く距離。壁や閉じたドアがあると短くなり、聴力が弱いと大きく短くなる。聞こえない入植者にはベルは届かない。</HH.Setting.venues.bellRange.Desc>
+  <HH.Setting.venues.bellResponders>夜間ベル：1回に駆けつける入植者</HH.Setting.venues.bellResponders>
+  <HH.Setting.venues.bellResponders.Desc>ベルが鳴ったとき、駆けつけてくる入植者の最大人数。</HH.Setting.venues.bellResponders.Desc>
+  <HH.Setting.venues.bellWakeCooldownHours>夜間ベル：睡眠の保護（時間）</HH.Setting.venues.bellWakeCooldownHours>
+  <HH.Setting.venues.bellWakeCooldownHours.Desc>ベルで起こされた入植者を、この時間が経つまで再び起こすことはない。</HH.Setting.venues.bellWakeCooldownHours.Desc>
+  <HH.Setting.venues.bellWakes>夜間ベル：呼び出す対象</HH.Setting.venues.bellWakes>
+  <HH.Setting.venues.bellWakes.Desc>しない：ベルは音が鳴るだけで、入植者は仕事の合間に気づく。起きている者のみ：聞こえる範囲の起きている入植者が店に駆けつける。ボランティアを起こす：接客作業を優先度1か2に設定している眠っている入植者も起こす（簡易な作業設定の場合も含む）。各自、半日に1回まで、少しの気分の低下を伴う。</HH.Setting.venues.bellWakes.Desc>
+  <HH.Setting.venues.bellWho>夜間ベル：応じられる者</HH.Setting.venues.bellWho>
+  <HH.Setting.venues.bellWho.Desc>接客のみ：接客作業をオンにしている入植者だけ。全ての入植者：接客できる入植者なら誰でも。</HH.Setting.venues.bellWho.Desc>
+  <HH.Setting.venues.busyServedPerHour>忙しい勤務：1時間あたりの接客数</HH.Setting.venues.busyServedPerHour>
+  <HH.Setting.venues.busyServedPerHour.Desc>店員が1時間にこの人数以上の客を接客した勤務は、忙しい（良い気分）とみなされる。</HH.Setting.venues.busyServedPerHour.Desc>
+  <HH.Setting.venues.honorMessages>信用制度：見られた盗みを報告</HH.Setting.venues.honorMessages>
+  <HH.Setting.venues.honorMessages.Desc>入植者が、代金を払わずに立ち去る客を見たときにメッセージを表示する。</HH.Setting.venues.honorMessages.Desc>
+  <HH.Setting.venues.honorNoPay>信用制度：一切払わない確率</HH.Setting.venues.honorNoPay>
+  <HH.Setting.venues.honorNoPay.Desc>無人の信用制度の店で、客が代金を払わずに品物を持って行く確率。</HH.Setting.venues.honorNoPay.Desc>
+  <HH.Setting.venues.honorUnderpay>信用制度：払いが少ない確率</HH.Setting.venues.honorUnderpay>
+  <HH.Setting.venues.honorUnderpay.Desc>無人の信用制度の店で、客が箱に定価の一部（30〜80%）だけを入れて立ち去る確率。</HH.Setting.venues.honorUnderpay.Desc>
+  <HH.Setting.venues.honorWatched>信用制度：見張りの効果</HH.Setting.venues.honorWatched>
+  <HH.Setting.venues.honorWatched.Desc>入植者に見られている間、客が払いを誤魔化す頻度がどれだけ下がるか（1 = 見られている間は一切誤魔化さない）。</HH.Setting.venues.honorWatched.Desc>
+  <HH.Setting.venues.idleHours>退屈になるまで（客がいない時間、時間）</HH.Setting.venues.idleHours>
+  <HH.Setting.venues.idleHours.Desc>勤務中、この時間の間一人も接客しなかった店員は退屈になる（気分が下がり、その後も時間が経つごとに少しずつ悪化する）。</HH.Setting.venues.idleHours.Desc>
+  <HH.Setting.venues.requireSetup>店には家具が必要</HH.Setting.venues.requireSetup>
+  <HH.Setting.venues.requireSetup.Desc>店は、その種類に必要な家具が部屋に置かれて初めて開店する（酒場にはカウンター、テーブル、席が必要、カジノには最低1台のゲームが必要、など。看板の「設置」タブも参照）。オフ：家具が足りないのは助言として表示されるだけ。</HH.Setting.venues.requireSetup.Desc>
+  <HH.Setting.venues.serviceSkill>社交スキルの重み</HH.Setting.venues.serviceSkill>
+  <HH.Setting.venues.serviceSkill.Desc>担当者の社交スキルがどれだけ効くか：接客の良さ、購入額の増加、チップ、販売の速さ。0 = スキルは影響しない。</HH.Setting.venues.serviceSkill.Desc>
+  <HH.Setting.venues.setupHints>看板に建設ボタンを表示</HH.Setting.venues.setupHints>
+  <HH.Setting.venues.setupHints.Desc>選択中の店の看板に、まだ必要な家具の建設ボタンを表示する。</HH.Setting.venues.setupHints.Desc>
+  <HH.Setting.venues.shiftThoughts>勤務中の気分</HH.Setting.venues.shiftThoughts>
+  <HH.Setting.venues.shiftThoughts.Desc>店を担当する入植者は、忙しい勤務の後には満足し、何もせず何時間も立っているときには退屈する。</HH.Setting.venues.shiftThoughts.Desc>
+  <HH.Setting.venues.staffRule>人員ルール</HH.Setting.venues.staffRule>
+  <HH.Setting.venues.staffRule.Desc>店の種類ごとに：酒場、レストラン、カジノ、スパには担当者が必要だが、商店やラウンジは不要。なし：全ての店はセルフサービスで運営される。常に：全ての店に担当者が必要。</HH.Setting.venues.staffRule.Desc>
+  <HH.Setting.venues.tipShare>チップ</HH.Setting.venues.tipShare>
+  <HH.Setting.venues.tipShare.Desc>完璧な接客をした担当者に対して、客が購入額に上乗せして残す最大のチップ（価格に対する割合）。チップの確率と額は、担当者の社交スキルとともに増える。</HH.Setting.venues.tipShare.Desc>
+  <HH.Setup.Attention>確認: {0}</HH.Setup.Attention>
+  <HH.Setup.BannerAttention>家具は揃いました。客に応対できるよう、下の未解決項目を確認してください。</HH.Setup.BannerAttention>
+  <HH.Setup.BannerMissing>この{0}にはまだ一部の家具がありません。</HH.Setup.BannerMissing>
+  <HH.Setup.BannerNotReady>準備できていません: 「必須」と表示されたものがすべて部屋に置かれるまで、この{0}は開店しません。</HH.Setup.BannerNotReady>
+  <HH.Setup.BannerReady>この店に必要なものはすべて揃っています。</HH.Setup.BannerReady>
+  <HH.Setup.Build>建設</HH.Setup.Build>
+  <HH.Setup.BuildButton>建設: {0}</HH.Setup.BuildButton>
+  <HH.Setup.BuildButtonDesc>この{0}にはまだ{1}が必要です。クリックすると部屋に配置します。</HH.Setup.BuildButtonDesc>
+  <HH.Setup.ChipNoRoom>部屋がない</HH.Setup.ChipNoRoom>
+  <HH.Setup.ChipNoStaff>人員待ち</HH.Setup.ChipNoStaff>
+  <HH.Setup.FooterLoose>「施設には家具が必要」ルールはオフです。不足品は目安の表示のみになります。</HH.Setup.FooterLoose>
+  <HH.Setup.FooterStrict>必須の家具が部屋に置かれるまで、店は閉まったままです。このルールは「店と食事」の設定でオフにできます。</HH.Setup.FooterStrict>
+  <HH.Setup.GizmoDesc>この店のセットアップガイドを開きます。種類ごとに必要なもの、既にあるもの、不足分の建設ボタンが表示されます。</HH.Setup.GizmoDesc>
+  <HH.Setup.GizmoMissing>セットアップ: {0}不足</HH.Setup.GizmoMissing>
+  <HH.Setup.GizmoReady>セットアップ: 準備完了</HH.Setup.GizmoReady>
+  <HH.Setup.HonorNotNeeded>信用制度では不要</HH.Setup.HonorNotNeeded>
+  <HH.Setup.LoadNotice>開店の準備ができていません。不足の家具: {0}。看板のセットアップタブから建設できます。</HH.Setup.LoadNotice>
+  <HH.Setup.MissingLine>セットアップ – 不足: {0}</HH.Setup.MissingLine>
+  <HH.Setup.NeedsResearch>研究が必要: {0}</HH.Setup.NeedsResearch>
+  <HH.Setup.NoScreenYet>先に画面を建設してください</HH.Setup.NoScreenYet>
+  <HH.Setup.NotAvailable>現在利用できません</HH.Setup.NotAvailable>
+  <HH.Setup.NotBuildable>建設メニューにありません</HH.Setup.NotBuildable>
+  <HH.Setup.NotReadyLine>準備できていません – 不足: {0}</HH.Setup.NotReadyLine>
+  <HH.Setup.NotReadyState>準備できていません</HH.Setup.NotReadyState>
+  <HH.Setup.NowReady>{0}に必要なものが揃い、開店できます。</HH.Setup.NowReady>
+  <HH.Setup.OperationalTip>客への応対に必要です。ドアを閉ざすことはありません。</HH.Setup.OperationalTip>
+  <HH.Setup.PickType>店の種類</HH.Setup.PickType>
+  <HH.Setup.Planned>{0}計画中</HH.Setup.Planned>
+  <HH.Setup.ReadyLine>セットアップ: 準備完了</HH.Setup.ReadyLine>
+  <HH.Setup.Recommended>推奨項目 {0} 件が未完了</HH.Setup.Recommended>
+  <HH.Setup.RecommendedHead>推奨</HH.Setup.RecommendedHead>
+  <HH.Setup.RecommendedTip>推奨: なくても店は営業できますが、客は喜びます。</HH.Setup.RecommendedTip>
+  <HH.Setup.RenameTip>クリックしてこの店の名前を変更します。</HH.Setup.RenameTip>
+  <HH.Setup.Required>必須</HH.Setup.Required>
+  <HH.Setup.RestockTip>看板に部屋の棚と備蓄を設定させ、商品を置けるようにします。</HH.Setup.RestockTip>
+  <HH.Setup.ShowTip>部屋に既にあるものを指し示します。</HH.Setup.ShowTip>
+  <HH.Setup.Staff>接客作業をする人</HH.Setup.Staff>
+  <HH.Setup.StaffHint>少なくとも1人のコロニストで「接客」作業種類を有効にしてください。</HH.Setup.StaffHint>
+  <HH.Setup.Stock>販売品</HH.Setup.Stock>
+  <HH.Setup.StockHint>この店が売る品を部屋の中に保管してください。</HH.Setup.StockHint>
+  <HH.Setup.StockNote>販売用 {0} スタック</HH.Setup.StockNote>
+  <HH.Setup.TabLabel>セットアップ</HH.Setup.TabLabel>
+  <HH.Setup.WorkTab>作業タブ</HH.Setup.WorkTab>
+  <HH.Setup.WorkTabTip>作業タブを開き、社交的なコロニストに「接客」作業種類を与えてください。</HH.Setup.WorkTabTip>
+  <HH.Setup.WorkersNote>{0} 人のコロニストが接客中</HH.Setup.WorkersNote>
+  <HH.Venue.BellAnswered>今行きます！</HH.Venue.BellAnswered>
+  <HH.Venue.BellAnsweredBy>夜間ベル: {0} が応対</HH.Venue.BellAnsweredBy>
+  <HH.Venue.BellNobody>夜間ベル: 鳴っていますが、まだ誰も来ていません</HH.Venue.BellNobody>
+  <HH.Venue.BellNote>夜間ベル</HH.Venue.BellNote>
+  <HH.Venue.BellOnTheWay>夜間ベル: {0} が向かっています</HH.Venue.BellOnTheWay>
+  <HH.Venue.BellRungAgo>{0} 前に鳴った</HH.Venue.BellRungAgo>
+  <HH.Venue.BellUnanswered>{0} の夜間ベルが鳴っていますが、誰も来ません。給仕作業のコロニストが起きていて、音が届く範囲にいる必要があります。</HH.Venue.BellUnanswered>
+  <HH.Venue.ClosedNow>ただいま閉店中</HH.Venue.ClosedNow>
+  <HH.Venue.NameAutoHint>業種を変えると看板に推奨名が付きます。自分で入力した名前はそのまま残ります。</HH.Venue.NameAutoHint>
+  <HH.Venue.NamePlain>そのまま: {0}</HH.Venue.NamePlain>
+  <HH.Venue.NameSuggest>名前を提案</HH.Venue.NameSuggest>
+  <HH.Venue.NameSuggestTip>この業種に合う名前を振ります。気に入るまで振り直せます。</HH.Venue.NameSuggestTip>
+  <HH.Venue.Now>今</HH.Venue.Now>
+  <HH.Venue.OpenNow>ただいま営業中</HH.Venue.OpenNow>
+  <HH.Venue.PriceColItem>販売品</HH.Venue.PriceColItem>
+  <HH.Venue.PriceColPrice>客の支払い額</HH.Venue.PriceColPrice>
+  <HH.Venue.PriceColValue>価値</HH.Venue.PriceColValue>
+  <HH.Venue.PriceEmpty>この部屋ではまだ何も販売していません。</HH.Venue.PriceEmpty>
+  <HH.Venue.PriceHintShort>客は価格を、品物が自分にとってどれだけ価値があるかと比べます。裕福な客ほど高くても受け入れます。無料は本当に無料です。</HH.Venue.PriceHintShort>
+  <HH.Venue.PriceNoGoods>この業種は部屋から商品を販売しません。</HH.Venue.PriceNoGoods>
+  <HH.Venue.PriceNow>今、客は市場価値の {0} % を支払っています</HH.Venue.PriceNow>
+  <HH.Venue.PriceSetting>価格水準の設定</HH.Venue.PriceSetting>
+  <HH.Venue.RestockBtnOff>オフにする</HH.Venue.RestockBtnOff>
+  <HH.Venue.RestockBtnOn>オンにする</HH.Venue.RestockBtnOn>
+  <HH.Venue.RestockFooter>この部屋の保管場所: {0} · 現在販売中の山: {1}</HH.Venue.RestockFooter>
+  <HH.Venue.RestockStateOff>在庫補充はオフ: 部屋の保管場所は独自の設定を保ちます</HH.Venue.RestockStateOff>
+  <HH.Venue.RestockStateOn>在庫補充はオン: 部屋の保管場所はこのリストに従います</HH.Venue.RestockStateOn>
+  <HH.Venue.SelfServiceNote>セルフサービス</HH.Venue.SelfServiceNote>
 </LanguageData>

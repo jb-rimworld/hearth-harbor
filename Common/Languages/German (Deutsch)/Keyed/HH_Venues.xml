@@ -31,7 +31,7 @@
   <HH.Setting.venues.maxPurchases>Einkäufe pro Gast und Aufenthalt</HH.Setting.venues.maxPurchases>
   <HH.Setting.venues.maxPurchases.Desc>Ein Gast hört nach so vielen Einkäufen in einem Aufenthalt auf zu shoppen.</HH.Setting.venues.maxPurchases.Desc>
   <HH.Setting.venues.nightBell>Nachtglocke</HH.Setting.venues.nightBell>
-  <HH.Setting.venues.nightBell.Desc>Gäste dürfen bei einem geschlossenen Geschäft die Glocke läuten. Wache Kolonisten mit der Arbeitsart Bedienen kommen und öffnen gegen einen Aufpreis. Niemand wird geweckt.</HH.Setting.venues.nightBell.Desc>
+  <HH.Setting.venues.nightBell.Desc>Gäste dürfen bei einem geschlossenen Geschäft die Glocke läuten. Kolonisten mit der Arbeitsart Bedienen, die sie hören, kommen herbeigeeilt und öffnen das Geschäft gegen einen Aufpreis (wer gerufen wird und wer geweckt werden darf, steht in den Nachtglocken-Einstellungen unten).</HH.Setting.venues.nightBell.Desc>
   <HH.Setting.venues.nightBellMin>Mindestpreis der Nachtglocke</HH.Setting.venues.nightBellMin>
   <HH.Setting.venues.nightBellMin.Desc>Ein Glockendienst kostet nie weniger als das (Silber).</HH.Setting.venues.nightBellMin.Desc>
   <HH.Setting.venues.nightBellSurcharge>Aufpreis der Nachtglocke</HH.Setting.venues.nightBellSurcharge>
@@ -113,20 +113,16 @@
   <HH.Venue.Price>Preise</HH.Venue.Price>
   <HH.Venue.PriceDesc>Preisfaktor auf alles, was dieses Geschäft verkauft. Zu hohe Preise schrecken Gäste ab.</HH.Venue.PriceDesc>
   <HH.Venue.PriceFactor>Preisfaktor</HH.Venue.PriceFactor>
-  <HH.Venue.PriceHint>Gäste vergleichen den Preis mit dem Wert, den der Gegenstand für sie hat. Wohlhabende Gäste nehmen mehr in Kauf. Geschäfte ohne jemanden im Dienst verlangen etwas weniger (Selbstbedienung); ein nächtlicher Glockendienst kostet extra. Gratis heißt gratis.</HH.Venue.PriceHint>
   <HH.Venue.PriceLine>Preise</HH.Venue.PriceLine>
   <HH.Venue.PriceTitle>Preise</HH.Venue.PriceTitle>
   <HH.Venue.Pricey>Teuer</HH.Venue.Pricey>
   <HH.Venue.Rename>Umbenennen</HH.Venue.Rename>
   <HH.Venue.RenameDesc>Gib diesem Geschäft einen Namen.</HH.Venue.RenameDesc>
   <HH.Venue.RenameTitle>Dieses Geschäft benennen</HH.Venue.RenameTitle>
-  <HH.Venue.Reset>Standardnamen verwenden</HH.Venue.Reset>
   <HH.Venue.Restock>Nachfüllen</HH.Venue.Restock>
   <HH.Venue.RestockDesc>Lass dieses Schild die Lagerplätze in seinem Raum so einstellen, dass sie deine Waren mit der Priorität „Wichtig“ annehmen, damit Transporteure die Regale gefüllt halten. Freiwillig; die alten Einstellungen kommen zurück, wenn du es ausschaltest.</HH.Venue.RestockDesc>
   <HH.Venue.RestockHint>Wenn aktiv, nimmt jeder Lagerplatz in diesem Raum (Lagerzonen und Regale, deine oder fremde) die unten angehakten Waren mit der Priorität „Wichtig“ an, damit deine Transporteure den Raum gefüllt halten. Die alten Einstellungen der Plätze kommen zurück, wenn du das ausschaltest.</HH.Venue.RestockHint>
   <HH.Venue.RestockNoShop>Dieses Geschäft verkauft nichts aus seinem Raum, also gibt es nichts nachzufüllen.</HH.Venue.RestockNoShop>
-  <HH.Venue.RestockSwitchOff>Nachfüllen ist AN – ausschalten und das Lager zurückgeben</HH.Venue.RestockSwitchOff>
-  <HH.Venue.RestockSwitchOn>Nachfüllen ist aus – einschalten</HH.Venue.RestockSwitchOn>
   <HH.Venue.RestockTitle>Nachfüllen</HH.Venue.RestockTitle>
   <HH.Venue.RippedOff>Abgezockt</HH.Venue.RippedOff>
   <HH.Venue.Sales>Umsatz heute</HH.Venue.Sales>
@@ -141,4 +137,142 @@
   <HH.Venue.Tier.Luxury>Luxus</HH.Venue.Tier.Luxury>
   <HH.Venue.Tier.Premium>Premium</HH.Venue.Tier.Premium>
   <HH.Venue.Tier.Standard>Standard</HH.Venue.Tier.Standard>
+  <HH.Core.FlipBlocked>Die andere Seite ist blockiert: Dort könnte kein Arbeiter stehen.</HH.Core.FlipBlocked>
+  <HH.Core.FlipBusy>Belegt: {0} benutzt es gerade.</HH.Core.FlipBusy>
+  <HH.Core.FlipNoSide>Das hat keine Arbeitsseite.</HH.Core.FlipNoSide>
+  <HH.Core.FlipSame>Beide Seiten sind gleich.</HH.Core.FlipSame>
+  <HH.Core.FlipSide>Arbeitsseite wechseln</HH.Core.FlipSide>
+  <HH.Core.FlipSideDesc>Dreht dies an Ort und Stelle um, sodass, wer hier arbeitet, auf der anderen Seite steht. Es behält seinen Platz, seine Aufträge und Verbindungen.</HH.Core.FlipSideDesc>
+  <HH.Enum.BellWakes.AwakeOnly>Nur wache Kolonisten</HH.Enum.BellWakes.AwakeOnly>
+  <HH.Enum.BellWakes.Off>Aus (die Glocke läutet nur)</HH.Enum.BellWakes.Off>
+  <HH.Enum.BellWakes.WakeVolunteers>Auch Freiwillige wecken</HH.Enum.BellWakes.WakeVolunteers>
+  <HH.Enum.BellWho.AnyColonist>Jeder Kolonist</HH.Enum.BellWho.AnyColonist>
+  <HH.Enum.BellWho.ServingOnly>Nur bedienende Kolonisten</HH.Enum.BellWho.ServingOnly>
+  <HH.Honor.Line>Vertrauenskasse: unbeaufsichtigt</HH.Honor.Line>
+  <HH.Honor.MemoPaid>Vertrauenskasse: {0} von {1} gezahlt</HH.Honor.MemoPaid>
+  <HH.Honor.MoteNothing>nicht gezahlt!</HH.Honor.MoteNothing>
+  <HH.Honor.MotePart>{0} % gezahlt</HH.Honor.MotePart>
+  <HH.Honor.PriceNote>Vertrauenskasse: voller Preis, manche Gäste zahlen weniger</HH.Honor.PriceNote>
+  <HH.Honor.Report>Vertrauenskasse heute: {0} Verkäufe, {1} Silber fehlen ({2} %) · insgesamt: {3} Verkäufe, {4} zu wenig gezahlt, {5} nicht gezahlt, {6} Silber fehlen</HH.Honor.Report>
+  <HH.Honor.Section>Vertrauenskasse</HH.Honor.Section>
+  <HH.Honor.Toggle>Vertrauenskasse</HH.Honor.Toggle>
+  <HH.Honor.ToggleDesc>Betreibe dieses Geschäft unbeaufsichtigt: Gäste nehmen, was sie wollen, und legen das Geld zum vollen Preis in die Vertrauenskasse. Niemand muss im Dienst sein, aber manche Gäste zahlen weniger als den Preis und einige gar nichts (Wahrscheinlichkeiten in den Einstellungen; geringer, wenn ein Kolonist sie sehen kann). Der Bericht des Schilds zeigt, was fehlt.</HH.Honor.ToggleDesc>
+  <HH.Honor.Witnessed>{0} ist aus {1} gegangen, ohne zu zahlen – ein Kolonist hat es gesehen.</HH.Honor.Witnessed>
+  <HH.Names.DefaultOwner>Harbor</HH.Names.DefaultOwner>
+  <HH.Serve.IdleMote>*gähn*</HH.Serve.IdleMote>
+  <HH.Serve.ServedShift>{0} in dieser Schicht bedient</HH.Serve.ServedShift>
+  <HH.Serve.TipMemo>Trinkgeld für {0}</HH.Serve.TipMemo>
+  <HH.Serve.TipMote>Trinkgeld +{0}</HH.Serve.TipMote>
+  <HH.Serve.TipsTotal>Trinkgeld für das Personal bisher: {0} Silber</HH.Serve.TipsTotal>
+  <HH.Setting.venues.autoNames>Neue Geschäfte automatisch benennen</HH.Setting.venues.autoNames>
+  <HH.Setting.venues.autoNames.Desc>Ein neues Geschäftsschild bekommt einen Namen, der zur Art des Geschäfts passt (zum Beispiel „Zum dösenden Alpaka“ für eine Taverne). Du kannst es jederzeit umbenennen oder neu auswürfeln.</HH.Setting.venues.autoNames.Desc>
+  <HH.Setting.venues.bellHurry>Nachtglocke: Kolonisten eilen</HH.Setting.venues.bellHurry>
+  <HH.Setting.venues.bellHurry.Desc>Kolonisten, die der Glocke folgen, joggen zum Geschäft, statt zu gehen.</HH.Setting.venues.bellHurry.Desc>
+  <HH.Setting.venues.bellRange>Hörweite der Nachtglocke (Felder)</HH.Setting.venues.bellRange>
+  <HH.Setting.venues.bellRange.Desc>Wie weit die Glocke bei normalem Gehör zu hören ist. Wände und geschlossene Türen dazwischen verkürzen sie; schlechtes Gehör verkürzt sie stark, taube Kolonisten hören sie nie.</HH.Setting.venues.bellRange.Desc>
+  <HH.Setting.venues.bellResponders>Nachtglocke: Kolonisten pro Läuten</HH.Setting.venues.bellResponders>
+  <HH.Setting.venues.bellResponders.Desc>Wie viele Kolonisten höchstens herbeieilen, wenn die Glocke läutet.</HH.Setting.venues.bellResponders.Desc>
+  <HH.Setting.venues.bellWakeCooldownHours>Nachtglocke: Schlafschutz (Stunden)</HH.Setting.venues.bellWakeCooldownHours>
+  <HH.Setting.venues.bellWakeCooldownHours.Desc>Ein Kolonist, der von der Glocke geweckt wurde, wird für diese Anzahl Stunden nicht erneut geweckt.</HH.Setting.venues.bellWakeCooldownHours.Desc>
+  <HH.Setting.venues.bellWakes>Nachtglocke: Wer gerufen wird</HH.Setting.venues.bellWakes>
+  <HH.Setting.venues.bellWakes.Desc>Aus: Die Glocke macht nur ein Geräusch, Kolonisten bemerken sie, wenn ihre Arbeit es zulässt. Nur Wache: Wache Kolonisten in Hörweite eilen zum Geschäft. Freiwillige wecken: Auch schlafende Kolonisten, bei denen die Arbeit Bedienen auf Priorität 1 oder 2 steht (oder mit einfachen Arbeitseinstellungen), je höchstens einmal pro halbem Tag, mit kleinem Stimmungsabzug.</HH.Setting.venues.bellWakes.Desc>
+  <HH.Setting.venues.bellWho>Nachtglocke: Wer antworten darf</HH.Setting.venues.bellWho>
+  <HH.Setting.venues.bellWho.Desc>Nur Bedienen: Kolonisten mit aktivierter Arbeitsart Bedienen. Jeder Kolonist: alle Kolonisten, die bedienen können.</HH.Setting.venues.bellWho.Desc>
+  <HH.Setting.venues.busyServedPerHour>Stoßzeit: bediente Gäste pro Stunde</HH.Setting.venues.busyServedPerHour>
+  <HH.Setting.venues.busyServedPerHour.Desc>Eine Schicht zählt als stark ausgelastet (gute Stimmung), wenn die Bedienung mindestens so viele Gäste pro Stunde bedient hat.</HH.Setting.venues.busyServedPerHour.Desc>
+  <HH.Setting.venues.honorMessages>Vertrauenskasse: gesehene Diebstähle melden</HH.Setting.venues.honorMessages>
+  <HH.Setting.venues.honorMessages.Desc>Zeigt eine Nachricht, wenn ein Kolonist gesehen hat, wie ein Gast ohne zu zahlen gegangen ist.</HH.Setting.venues.honorMessages.Desc>
+  <HH.Setting.venues.honorNoPay>Vertrauenskasse: Chance, nichts zu zahlen</HH.Setting.venues.honorNoPay>
+  <HH.Setting.venues.honorNoPay.Desc>Bei einem unbesetzten Geschäft mit Vertrauenskasse die Chance, dass ein Gast die Ware nimmt, ohne überhaupt zu zahlen.</HH.Setting.venues.honorNoPay.Desc>
+  <HH.Setting.venues.honorUnderpay>Vertrauenskasse: Chance, zu wenig zu zahlen</HH.Setting.venues.honorUnderpay>
+  <HH.Setting.venues.honorUnderpay.Desc>Bei einem unbesetzten Geschäft mit Vertrauenskasse die Chance, dass ein Gast nur einen Teil des Preises (30–80 %) in die Kasse legt.</HH.Setting.venues.honorUnderpay.Desc>
+  <HH.Setting.venues.honorWatched>Vertrauenskasse: Wirkung von Beobachtung</HH.Setting.venues.honorWatched>
+  <HH.Setting.venues.honorWatched.Desc>Wie viel seltener Gäste zu wenig zahlen, solange ein Kolonist sie sehen kann (1 = nie, solange sie beobachtet werden).</HH.Setting.venues.honorWatched.Desc>
+  <HH.Setting.venues.idleHours>Gelangweilt nach (Stunden ohne Gast)</HH.Setting.venues.idleHours>
+  <HH.Setting.venues.idleHours.Desc>Eine Bedienung, die in so vielen Stunden einer Schicht niemanden bedient hat, langweilt sich (schlechte Stimmung, mit jedem weiteren Abschnitt etwas schlimmer).</HH.Setting.venues.idleHours.Desc>
+  <HH.Setting.venues.requireSetup>Geschäfte brauchen ihre Möbel</HH.Setting.venues.requireSetup>
+  <HH.Setting.venues.requireSetup.Desc>Ein Geschäft öffnet erst, wenn die Möbel, die seine Art braucht, im Raum stehen (eine Taverne braucht eine Theke, einen Tisch und Sitzplätze, ein Casino mindestens ein Spiel und so weiter; siehe Reiter „Einrichtung“ am Schild). Aus: Fehlende Möbel sind nur ein Hinweis.</HH.Setting.venues.requireSetup.Desc>
+  <HH.Setting.venues.serviceSkill>Gewicht der Soziales-Fertigkeit</HH.Setting.venues.serviceSkill>
+  <HH.Setting.venues.serviceSkill.Desc>Wie viel die Soziales-Fertigkeit der diensthabenden Person zählt: freundlicherer Service, größere Einkäufe, Trinkgelder und schnellere Verkäufe. 0 = Fertigkeit spielt keine Rolle.</HH.Setting.venues.serviceSkill.Desc>
+  <HH.Setting.venues.setupHints>Bau-Schaltflächen am Schild</HH.Setting.venues.setupHints>
+  <HH.Setting.venues.setupHints.Desc>Ein ausgewähltes Geschäftsschild zeigt Bau-Schaltflächen für die Möbel, die sein Geschäft noch braucht.</HH.Setting.venues.setupHints.Desc>
+  <HH.Setting.venues.shiftThoughts>Schichtstimmungen</HH.Setting.venues.shiftThoughts>
+  <HH.Setting.venues.shiftThoughts.Desc>Kolonisten, die ein Geschäft betreuen, sind nach einer vollen Schicht zufrieden und gelangweilt, wenn sie stundenlang ohne Aufgabe herumstehen.</HH.Setting.venues.shiftThoughts.Desc>
+  <HH.Setting.venues.staffRule>Besetzungsregel</HH.Setting.venues.staffRule>
+  <HH.Setting.venues.staffRule.Desc>Je Geschäftsart: Tavernen, Restaurants, Casinos und Spas brauchen jemanden im Dienst, Läden und Lounges nicht. Nie: Jedes Geschäft läuft als Selbstbedienung. Immer: Jedes Geschäft braucht jemanden im Dienst.</HH.Setting.venues.staffRule.Desc>
+  <HH.Setting.venues.tipShare>Trinkgeld</HH.Setting.venues.tipShare>
+  <HH.Setting.venues.tipShare.Desc>Höchstes Trinkgeld, das ein Gast bei einer perfekten Bedienung zusätzlich zum Kauf gibt, als Anteil am Preis. Chance und Höhe wachsen mit der Soziales-Fertigkeit der Bedienung.</HH.Setting.venues.tipShare.Desc>
+  <HH.Setup.Attention>prüfen: {0}</HH.Setup.Attention>
+  <HH.Setup.BannerAttention>Die Möbel sind vollständig. Prüfe die offenen Punkte unten, damit Gäste bedient werden.</HH.Setup.BannerAttention>
+  <HH.Setup.BannerMissing>Diesem Betrieb ({0}) fehlt noch ein Teil der Möbel.</HH.Setup.BannerMissing>
+  <HH.Setup.BannerNotReady>Nicht bereit: Dieser Betrieb ({0}) öffnet, sobald alles mit der Markierung „Erforderlich“ im Raum steht.</HH.Setup.BannerNotReady>
+  <HH.Setup.BannerReady>Alles, was dieser Betrieb braucht, ist vorhanden.</HH.Setup.BannerReady>
+  <HH.Setup.Build>Bauen</HH.Setup.Build>
+  <HH.Setup.BuildButton>Bauen: {0}</HH.Setup.BuildButton>
+  <HH.Setup.BuildButtonDesc>Diesem Betrieb ({0}) fehlt noch: {1}. Klicke, um eines im Raum zu platzieren.</HH.Setup.BuildButtonDesc>
+  <HH.Setup.ChipNoRoom>kein Raum</HH.Setup.ChipNoRoom>
+  <HH.Setup.ChipNoStaff>wartet auf Personal</HH.Setup.ChipNoStaff>
+  <HH.Setup.FooterLoose>Die Regel „Betriebe brauchen ihre Möbel“ ist aus: Fehlende Dinge sind nur Hinweise.</HH.Setup.FooterLoose>
+  <HH.Setup.FooterStrict>Erforderliche Möbel halten den Betrieb geschlossen, bis sie im Raum stehen. Diese Regel kannst du in den Einstellungen für Läden &amp; Essen ausschalten.</HH.Setup.FooterStrict>
+  <HH.Setup.GizmoDesc>Öffne die Einrichtungshilfe dieses Betriebs: Was seine Art braucht, was schon da ist, mit Baubuttons für alles, was fehlt.</HH.Setup.GizmoDesc>
+  <HH.Setup.GizmoMissing>Einrichtung: {0} fehlt</HH.Setup.GizmoMissing>
+  <HH.Setup.GizmoReady>Einrichtung: bereit</HH.Setup.GizmoReady>
+  <HH.Setup.HonorNotNeeded>beim Vertrauenssystem nicht nötig</HH.Setup.HonorNotNeeded>
+  <HH.Setup.LoadNotice>Nicht eröffnungsbereit, Möbel fehlen: {0}. Der Reiter „Einrichtung“ am Schild hat Baubuttons.</HH.Setup.LoadNotice>
+  <HH.Setup.MissingLine>Einrichtung – fehlt: {0}</HH.Setup.MissingLine>
+  <HH.Setup.NeedsResearch>braucht Forschung: {0}</HH.Setup.NeedsResearch>
+  <HH.Setup.NoScreenYet>baue zuerst den Bildschirm</HH.Setup.NoScreenYet>
+  <HH.Setup.NotAvailable>gerade nicht verfügbar</HH.Setup.NotAvailable>
+  <HH.Setup.NotBuildable>nicht im Baumenü</HH.Setup.NotBuildable>
+  <HH.Setup.NotReadyLine>Nicht bereit – fehlt: {0}</HH.Setup.NotReadyLine>
+  <HH.Setup.NotReadyState>nicht bereit</HH.Setup.NotReadyState>
+  <HH.Setup.NowReady>{0} hat alles, was es braucht, und ist eröffnungsbereit.</HH.Setup.NowReady>
+  <HH.Setup.OperationalTip>Nötig, damit Gäste bedient werden; hält die Türen aber nicht geschlossen.</HH.Setup.OperationalTip>
+  <HH.Setup.PickType>Art des Betriebs</HH.Setup.PickType>
+  <HH.Setup.Planned>{0} geplant</HH.Setup.Planned>
+  <HH.Setup.ReadyLine>Einrichtung: bereit</HH.Setup.ReadyLine>
+  <HH.Setup.Recommended>{0} empfohlene(r) Posten offen</HH.Setup.Recommended>
+  <HH.Setup.RecommendedHead>Empfohlen</HH.Setup.RecommendedHead>
+  <HH.Setup.RecommendedTip>Empfohlen: Der Betrieb läuft auch ohne, aber Gäste mögen es.</HH.Setup.RecommendedTip>
+  <HH.Setup.RenameTip>Klicke, um diesen Betrieb umzubenennen.</HH.Setup.RenameTip>
+  <HH.Setup.Required>Erforderlich</HH.Setup.Required>
+  <HH.Setup.RestockTip>Das Schild stellt die Regale und Lagerbereiche des Raums so ein, dass sie deine Waren aufnehmen.</HH.Setup.RestockTip>
+  <HH.Setup.ShowTip>Zeige, was der Raum schon hat.</HH.Setup.ShowTip>
+  <HH.Setup.Staff>jemand mit der Arbeit Bedienen</HH.Setup.Staff>
+  <HH.Setup.StaffHint>Schalte die Arbeitsart Bedienen für mindestens einen Kolonisten ein.</HH.Setup.StaffHint>
+  <HH.Setup.Stock>Waren zum Verkauf</HH.Setup.Stock>
+  <HH.Setup.StockHint>Lagere im Raum, was dieser Betrieb verkauft.</HH.Setup.StockHint>
+  <HH.Setup.StockNote>{0} Stapel zum Verkauf</HH.Setup.StockNote>
+  <HH.Setup.TabLabel>Einrichtung</HH.Setup.TabLabel>
+  <HH.Setup.WorkTab>Arbeitsreiter</HH.Setup.WorkTab>
+  <HH.Setup.WorkTabTip>Öffne den Arbeitsreiter und gib einem geselligen Kolonisten die Arbeitsart Bedienen.</HH.Setup.WorkTabTip>
+  <HH.Setup.WorkersNote>{0} Kolonist(en) bedienen</HH.Setup.WorkersNote>
+  <HH.Venue.BellAnswered>Bin unterwegs!</HH.Venue.BellAnswered>
+  <HH.Venue.BellAnsweredBy>Nachtglocke: beantwortet von {0}</HH.Venue.BellAnsweredBy>
+  <HH.Venue.BellNobody>Nachtglocke: läutet, bisher ist niemand gekommen</HH.Venue.BellNobody>
+  <HH.Venue.BellNote>Nachtglocke</HH.Venue.BellNote>
+  <HH.Venue.BellOnTheWay>Nachtglocke: {0} ist unterwegs</HH.Venue.BellOnTheWay>
+  <HH.Venue.BellRungAgo>vor {0} geläutet</HH.Venue.BellRungAgo>
+  <HH.Venue.BellUnanswered>Die Nachtglocke bei {0} läutet, aber niemand kommt. Kolonisten mit der Arbeitsart Bedienen müssen wach und in Hörweite sein.</HH.Venue.BellUnanswered>
+  <HH.Venue.ClosedNow>jetzt geschlossen</HH.Venue.ClosedNow>
+  <HH.Venue.NameAutoHint>Ein Namensvorschlag folgt dem Schild, wenn du die Geschäftsart änderst; ein selbst getippter Name bleibt.</HH.Venue.NameAutoHint>
+  <HH.Venue.NamePlain>Schlicht: {0}</HH.Venue.NamePlain>
+  <HH.Venue.NameSuggest>Namen vorschlagen</HH.Venue.NameSuggest>
+  <HH.Venue.NameSuggestTip>Würfle einen Namen, der zu dieser Geschäftsart passt. Würfle erneut, bis dir einer gefällt.</HH.Venue.NameSuggestTip>
+  <HH.Venue.Now>jetzt</HH.Venue.Now>
+  <HH.Venue.OpenNow>jetzt geöffnet</HH.Venue.OpenNow>
+  <HH.Venue.PriceColItem>Im Angebot</HH.Venue.PriceColItem>
+  <HH.Venue.PriceColPrice>Gäste zahlen</HH.Venue.PriceColPrice>
+  <HH.Venue.PriceColValue>Wert</HH.Venue.PriceColValue>
+  <HH.Venue.PriceEmpty>Im Raum steht noch nichts zum Verkauf.</HH.Venue.PriceEmpty>
+  <HH.Venue.PriceHintShort>Gäste vergleichen den Preis mit dem Wert, den der Gegenstand für sie hat; wohlhabende Gäste nehmen mehr in Kauf. Gratis heißt gratis.</HH.Venue.PriceHintShort>
+  <HH.Venue.PriceNoGoods>Diese Geschäftsart verkauft keine Waren aus ihrem Raum.</HH.Venue.PriceNoGoods>
+  <HH.Venue.PriceNow>Gäste zahlen derzeit {0} % des Marktwerts</HH.Venue.PriceNow>
+  <HH.Venue.PriceSetting>Einstellung Preisniveau</HH.Venue.PriceSetting>
+  <HH.Venue.RestockBtnOff>Ausschalten</HH.Venue.RestockBtnOff>
+  <HH.Venue.RestockBtnOn>Einschalten</HH.Venue.RestockBtnOn>
+  <HH.Venue.RestockFooter>Lagerplätze in diesem Raum: {0} · Stapel zum Verkauf: {1}</HH.Venue.RestockFooter>
+  <HH.Venue.RestockStateOff>Nachfüllen ist aus: Das Lager des Raums behält seine eigenen Einstellungen</HH.Venue.RestockStateOff>
+  <HH.Venue.RestockStateOn>Nachfüllen ist an: Das Lager des Raums folgt dieser Liste</HH.Venue.RestockStateOn>
+  <HH.Venue.SelfServiceNote>Selbstbedienung</HH.Venue.SelfServiceNote>
 </LanguageData>

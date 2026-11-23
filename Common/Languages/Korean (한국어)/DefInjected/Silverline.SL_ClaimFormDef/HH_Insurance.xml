@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ClaimForm_Money.description>벌금, 제3자 피해, 폐쇄에 대한 L-1 양식: 원인과 그것을 확인해 줄 수 있는 사람.</SL_ClaimForm_Money.description>
+  <SL_ClaimForm_Money.label>벌금 및 배상책임 청구서</SL_ClaimForm_Money.label>
+  <SL_ClaimForm_Person.description>사망과 사지 상실에 대한 P-2 양식: 정황과 목격자.</SL_ClaimForm_Person.description>
+  <SL_ClaimForm_Person.label>개인 청구서</SL_ClaimForm_Person.label>
+  <SL_ClaimForm_Property.description>파괴된 건물, 차량, 작물에 대한 B-4 양식: 무슨 일이 있었는지, 피해가 얼마나 컸는지, 누가 봤는지, 어떻게 보상받고 싶은지.</SL_ClaimForm_Property.description>
+  <SL_ClaimForm_Property.label>재산 청구서</SL_ClaimForm_Property.label>
+</LanguageData>

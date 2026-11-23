@@ -209,7 +209,7 @@
   <HH.UI.Guests.Col.Wing>동</HH.UI.Guests.Col.Wing>
   <HH.UI.Guests.Col.Handling>응대</HH.UI.Guests.Col.Handling>
   <HH.UI.Guests.Col.Leaves>떠나기까지</HH.UI.Guests.Col.Leaves>
-  <HH.UI.Guests.HandlingTip>클릭하여 전환: 기본 → 동행 → 영입. 동행과 영입에는 접객 작업을 하는 정착민이 필요합니다.</HH.UI.Guests.HandlingTip>
+  <HH.UI.Guests.HandlingTip>눌러서 응대 방식을 바꾸십시오. 동행, 영입, 개종에는 접대 작업을 할 수 있는 개척민이 필요합니다. 개종은 다른 이데올로기 손님에게만 나타납니다(이데올로기).</HH.UI.Guests.HandlingTip>
   <HH.UI.Overview.CatToday>오늘 {0}</HH.UI.Overview.CatToday>
   <HH.UI.Overview.CatWeek>7일 {0}</HH.UI.Overview.CatWeek>
   <HH.UI.Overview.Week>수입, 최근 7일</HH.UI.Overview.Week>
@@ -313,4 +313,26 @@
   <HH.Setting.core.ironBank.Desc>난이도와 관계없이 채권 추심은 항상 가장 높은 단계까지 올라갑니다. 아무도 할부금을 조용히 미뤄 주지 않습니다.</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.peacefulUnderworld.Desc>어두운 시설은 폭력 없이 운영됩니다: 싸움터 없음, 심문 없음, 사람 사냥 없음, 진료소 없음, 보호비 갈취 없음. 뒷방, 장물아비, 약물 라운지는 남습니다.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>손님 계획과 방 점검이 절반 빈도로 실행됩니다. 느린 컴퓨터에 도움이 되며, 손님의 반응이 조금 늦을 수 있습니다.</HH.Setting.core.perfMode.Desc>
+  <HH.Kitchen.Cookbook.ColCuisine>요리 계열</HH.Kitchen.Cookbook.ColCuisine>
+  <HH.Kitchen.Cookbook.ColDish>요리</HH.Kitchen.Cookbook.ColDish>
+  <HH.Kitchen.Cookbook.ColLevel>레벨</HH.Kitchen.Cookbook.ColLevel>
+  <HH.Kitchen.Cookbook.ColPrice>가격</HH.Kitchen.Cookbook.ColPrice>
+  <HH.Kitchen.Cookbook.ColSkill>요리 기술</HH.Kitchen.Cookbook.ColSkill>
+  <HH.Kitchen.Cookbook.ColStations>조리 장소</HH.Kitchen.Cookbook.ColStations>
+  <HH.Setting.core.windowScale>Hearth &amp; Harbor 창 크기</HH.Setting.core.windowScale>
+  <HH.Setting.core.windowScale.Desc>모든 Hearth &amp; Harbor 및 Silverline 창이 이 배율만큼 커지거나 작아진다 (큰 화면의 자동 크기에 더해서).</HH.Setting.core.windowScale.Desc>
+  <HH.UI.DevGroup.Desc>이 건물({0})용 Hearth &amp; Harbor 개발자 도구입니다. 개발자 모드에서만 표시됩니다. 여관 설정에서 그룹화를 끌 수 있습니다.</HH.UI.DevGroup.Desc>
+  <HH.UI.DevGroup.Label>개발용: Hearth &amp; Harbor</HH.UI.DevGroup.Label>
+  <HH.UI.Diag.Lines>{0}줄</HH.UI.Diag.Lines>
+  <HH.UI.Diff.Jump>이동</HH.UI.Diff.Jump>
+  <HH.UI.Diff.JumpTop>등급과 슬라이더</HH.UI.Diff.JumpTop>
+  <HH.UI.GuestTab.CollapseTip>눌러서 접기</HH.UI.GuestTab.CollapseTip>
+  <HH.UI.GuestTab.ExpandTip>눌러서 펼치기</HH.UI.GuestTab.ExpandTip>
+  <HH.UI.Handling.Convert>개종</HH.UI.Handling.Convert>
+  <HH.UI.Handling.Convert.Tip>동행과 같지만 당신의 이데올로기에 관한 이야기를 나눕니다. 대화할 때마다 손님이 자기 신념에 품은 확신이 흔들리고, 0이 되면 당신의 이데올로기를 받아들입니다. 너무 밀어붙이는 대화는 불쾌하게 만들 수 있습니다(기분 -4, 소비 감소). 이데올로기 DLC와 다른 이데올로기 손님이 필요합니다.</HH.UI.Handling.Convert.Tip>
+  <HH.UI.Page.Sub.casino>건물, 수입, 그리고 각 게임이 확률 대비 어떤지 보여줍니다.</HH.UI.Page.Sub.casino>
+  <HH.UI.Page.Sub.city>영화관, 살롱, 갤러리, 공원, 택시, 경비: 무엇이 지어졌고 얼마를 버는지 보여줍니다.</HH.UI.Page.Sub.city>
+  <HH.UI.Page.Sub.guests>여관에 묵거나 방문 중인 모든 사람. 줄을 누르면 손님에게 이동하고, 응대 칸을 누르면 바꿀 수 있습니다.</HH.UI.Page.Sub.guests>
+  <HH.UI.Page.Sub.overview>오늘 한눈에: 손님, 수입, 그리고 모든 시설의 상태.</HH.UI.Page.Sub.overview>
+  <HH.UI.Page.Sub.underworld>소문, 도착 가중치, 그리고 어두운 쪽의 수입.</HH.UI.Page.Sub.underworld>
 </LanguageData>

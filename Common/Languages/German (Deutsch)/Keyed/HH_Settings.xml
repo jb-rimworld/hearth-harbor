@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.BankResearchMode.Full>Voll</HH.Enum.BankResearchMode.Full>
+  <HH.Enum.BankResearchMode.Off>Aus</HH.Enum.BankResearchMode.Off>
+  <HH.Enum.ClaimMode.Automatic>Automatisch</HH.Enum.ClaimMode.Automatic>
+  <HH.Enum.ClaimMode.ByForm>Per Formular</HH.Enum.ClaimMode.ByForm>
+  <HH.Enum.FundDestination.ToDeity>An die Gottheit</HH.Enum.FundDestination.ToDeity>
+  <HH.Enum.FundDestination.ToFaction>An die Fraktion</HH.Enum.FundDestination.ToFaction>
+  <HH.Enum.PensionRuleMode.Enforce>Durchsetzen</HH.Enum.PensionRuleMode.Enforce>
+  <HH.Enum.PensionRuleMode.Off>Aus</HH.Enum.PensionRuleMode.Off>
+  <HH.Enum.PensionRuleMode.WarnOnly>Nur warnen</HH.Enum.PensionRuleMode.WarnOnly>
+  <HH.Enum.RngAlgorithm.ChaCha8>ChaCha8</HH.Enum.RngAlgorithm.ChaCha8>
+  <HH.Enum.RngAlgorithm.Pcg32>Pcg32</HH.Enum.RngAlgorithm.Pcg32>
+  <HH.Enum.RngAlgorithm.SplitMix64>SplitMix64</HH.Enum.RngAlgorithm.SplitMix64>
+  <HH.Enum.RngAlgorithm.Xoshiro256>Xoshiro256</HH.Enum.RngAlgorithm.Xoshiro256>
+  <HH.Enum.StaffRule.AlwaysRequired>Immer erforderlich</HH.Enum.StaffRule.AlwaysRequired>
+  <HH.Enum.StaffRule.NeverRequired>Nie erforderlich</HH.Enum.StaffRule.NeverRequired>
+  <HH.Enum.StaffRule.PerVenueType>Je Geschäftstyp</HH.Enum.StaffRule.PerVenueType>
+  <HH.Enum.UnderworldMode.AlwaysOn>Immer an</HH.Enum.UnderworldMode.AlwaysOn>
+  <HH.Enum.UnderworldMode.DiscoverInGame>Im Spiel entdecken</HH.Enum.UnderworldMode.DiscoverInGame>
+  <HH.Setting.bank.accountBeta>Kontozins-Exponent (seit 1.1.0 nicht mehr verwendet)</HH.Setting.bank.accountBeta>
+  <HH.Setting.bank.accountBeta.Desc>Ersetzt durch „Kontozins: Anteil der Marktrendite“. Bleibt erhalten, damit ältere Spielstände laden; eine Änderung bewirkt nichts.</HH.Setting.bank.accountBeta.Desc>
+  <HH.Setting.bank.accountShare>Kontozins: Anteil der Marktrendite</HH.Setting.bank.accountShare>
+  <HH.Setting.bank.accountShare.Desc>Ein Bankkonto zahlt pro Jahr nur diesen Bruchteil des Marktüberschusses (M - 1) und nie mehr als das Sparprodukt Matratze Plus (das der Rendite der Geldanlagen folgt). 0,2 bedeutet: bei M 1,2 zahlt das Konto +4 % im Jahr (das Sparprodukt Matratze Plus zahlt +8 %, der Index etwa +20 %); bei M 2 zahlt es +20 %. Unter M 1 verliert es etwas, nie mehr als 10 % im Jahr. Beide Renditeregler (dieses Bank-M und das Anlage-M) sollten möglichst nah beieinander liegen. Jede Bank bringt ihren eigenen kleinen Bonus oder Malus mit. Geldanlagen sind nicht betroffen.</HH.Setting.bank.accountShare.Desc>
+  <HH.Setting.bank.atmDailyLimit>Tageslimit am Geldautomaten</HH.Setting.bank.atmDailyLimit>
+  <HH.Setting.bank.atmDailyLimit.Desc>Das meiste Silber, das du pro Tag an Geldautomaten abheben kannst.</HH.Setting.bank.atmDailyLimit.Desc>
+  <HH.Setting.bank.bailout>Rettung „Too Big To Fail“</HH.Setting.bank.bailout>
+  <HH.Setting.bank.bailout.Desc>Die First Rim Bank of Too Big To Fail rettet einmal pro Spieljahr einen ruinierten Ex-Tycoon (ein zinsloser Kredit, kein Geschenk).</HH.Setting.bank.bailout.Desc>
+  <HH.Setting.bank.collectionAnger>Wut der Inkasso-Abteilung (Überfallgröße)</HH.Setting.bank.collectionAnger>
+  <HH.Setting.bank.collectionAnger.Desc>Vervielfacht die Größe von Pfändungstrupps und Inkasso-Überfällen. 0 schaltet die gewalttätigen Stufen ab.</HH.Setting.bank.collectionAnger.Desc>
+  <HH.Setting.bank.depositDelayHours>Einzahlungsverzögerung ohne Filiale (Stunden)</HH.Setting.bank.depositDelayHours>
+  <HH.Setting.bank.depositDelayHours.Desc>Silber, das ohne Bankschalter oder Geldautomaten in der Nähe aufs Konto eingezahlt wird, kommt nach so vielen Stunden an.</HH.Setting.bank.depositDelayHours.Desc>
+  <HH.Setting.bank.directDeposit>Kasseneinnahmen direkt an die Bank leiten</HH.Setting.bank.directDeposit>
+  <HH.Setting.bank.directDeposit.Desc>Sobald ein Konto existiert, werden die Kassen deiner Betriebe um Mitternacht aufs Konto geleert, statt Silber auf dem Boden liegen zu lassen.</HH.Setting.bank.directDeposit.Desc>
+  <HH.Setting.bank.directDepositFee>Gebühr für Direkteinzahlung</HH.Setting.bank.directDepositFee>
+  <HH.Setting.bank.directDepositFee.Desc>Gebühr auf Geld, das direkt aufs Konto geleitet wird (Kasseneinnahmen). 0 bis 100 %.</HH.Setting.bank.directDepositFee.Desc>
+  <HH.Setting.bank.feeFactor>Gebührenniveau der Bank</HH.Setting.bank.feeFactor>
+  <HH.Setting.bank.feeFactor.Desc>Vervielfacht alle Gebühren deiner Bank. 0 % = überhaupt keine Gebühren.</HH.Setting.bank.feeFactor.Desc>
+  <HH.Setting.bank.lateFee>Mahngebühr</HH.Setting.bank.lateFee>
+  <HH.Setting.bank.lateFee.Desc>Wird auf die überfällige Rate erhoben, wenn ein Kredit Inkassostufe 2 erreicht.</HH.Setting.bank.lateFee.Desc>
+  <HH.Setting.bank.loanFloor>Startkredit</HH.Setting.bank.loanFloor>
+  <HH.Setting.bank.loanFloor.Desc>Mindest-Kreditrahmen für eine Kolonie mit ordentlicher Bonität, damit sich eine junge Kolonie ein wenig leihen kann.</HH.Setting.bank.loanFloor.Desc>
+  <HH.Setting.bank.loanIntervalDays>Tage zwischen den Raten</HH.Setting.bank.loanIntervalDays>
+  <HH.Setting.bank.loanIntervalDays.Desc>Kreditraten werden alle so viele Tage fällig.</HH.Setting.bank.loanIntervalDays.Desc>
+  <HH.Setting.bank.loanMaxTermDays>Längste Kreditlaufzeit (Tage)</HH.Setting.bank.loanMaxTermDays>
+  <HH.Setting.bank.loanPortfolioShare>Für Kreditlimits angerechnete Geldanlagen</HH.Setting.bank.loanPortfolioShare>
+  <HH.Setting.bank.loanPortfolioShare.Desc>Wie viel deiner Geldanlagen (zum Marktwert) als Vermögen zählt, wenn die Bank entscheidet, wie viel du leihen darfst. 100 % = voll, 0 = gar nicht. Das in der Lobby angezeigte Nettovermögen rechnet sie immer voll mit.</HH.Setting.bank.loanPortfolioShare.Desc>
+  <HH.Setting.bank.maxCollectionStage>Höchste Inkassostufe</HH.Setting.bank.maxCollectionStage>
+  <HH.Setting.bank.maxCollectionStage.Desc>Die Inkasso-Leiter: 1 Erinnerung, 2 Mahngebühr, 3 Verrechnung mit Einlagen, 4 freundlicher Besuch, 5 Pfändungstrupp, 6 Inkasso-Überfall, 7 Kopfgeld. Der Standardraum hört bei 4 auf: Du zahlst deine Schulden und verlierst nur ein wenig Stimmung.</HH.Setting.bank.maxCollectionStage.Desc>
+  <HH.Setting.bank.moodOn>Koloniestimmung aus dem Kontostand</HH.Setting.bank.moodOn>
+  <HH.Setting.bank.moodOn.Desc>Ein kleiner Gedanke (von -4 bis +3, doppelt für gierige Kolonisten, keiner für Asketen) je nach Nettovermögen pro Kolonist.</HH.Setting.bank.moodOn.Desc>
+  <HH.Setting.bank.moodScale>Schwellen der Vermögensstufen</HH.Setting.bank.moodScale>
+  <HH.Setting.bank.moodScale.Desc>Skaliert die Nettovermögens-Schwellen der Stimmungsstufen (Pleite … Too Big To Fail).</HH.Setting.bank.moodScale.Desc>
+  <HH.Setting.bank.podMaxHours>Lieferung per Landekapsel: spätestens (Stunden)</HH.Setting.bank.podMaxHours>
+  <HH.Setting.bank.podMaxHours.Desc>… und höchstens so lange.</HH.Setting.bank.podMaxHours.Desc>
+  <HH.Setting.bank.podMaxLoad>Größte einzelne Landekapsel</HH.Setting.bank.podMaxLoad>
+  <HH.Setting.bank.podMaxLoad.Desc>Eine große Abhebung kommt in Landekapseln mit je etwa so viel Silber, nie mehr als 10 Kapseln pro Abhebung (riesige Summen ergeben schwerere Kapseln statt mehr davon). Sie begrenzt nicht, wie viel du ein- oder abheben kannst.</HH.Setting.bank.podMaxLoad.Desc>
+  <HH.Setting.bank.podMinHours>Lieferung per Landekapsel: frühestens (Stunden)</HH.Setting.bank.podMinHours>
+  <HH.Setting.bank.podMinHours.Desc>Abhebungen ohne Schalter oder Geldautomaten kommen frühestens nach dieser Zeit per Landekapsel.</HH.Setting.bank.podMinHours.Desc>
+  <HH.Setting.bank.profit>Bank-M pro Spieljahr (Rendite)</HH.Setting.bank.profit>
+  <HH.Setting.bank.profit.Desc>Wie stark angelegtes Geld im Schnitt pro Spieljahr (60 Tage) wächst. Das ist das eigene M der Bank: Es bestimmt den Kontozins und die Kreditzinsen. Das Anlage-M (Seite Geldanlagen) bestimmt die Märkte; das Konto zahlt bei diesem M nie mehr als Matratze Plus. Halte beide nah beieinander. 1,0 = plus/minus nichts, 1,2 = +20 % im Jahr, 0 = das Geld verschwindet. Logarithmische Skala von 0,01 bis 100; gib eine Zahl für den genauen Wert ein. Folgt dem Schwierigkeitsregler, bis du es selbst festlegst.</HH.Setting.bank.profit.Desc>
+  <HH.Setting.bank.researchMode>Bankforschung</HH.Setting.bank.researchMode>
+  <HH.Setting.bank.researchMode.Desc>Voll: Geldautomaten, Nachttresore, Filialen und Kredite brauchen ihre Forschung. Aus: Alles ist von Anfang an verfügbar. (Der globale Forschungsmodus in den Kerneinstellungen bewirkt dasselbe für jedes Modul.)</HH.Setting.bank.researchMode.Desc>
+  <HH.Setting.bank.seizureShare>Beschlagnahmeanteil des Black Ledger</HH.Setting.bank.seizureShare>
+  <HH.Setting.bank.seizureShare.Desc>Wenn das Black Ledger dein Konto beschlagnahmt (1 % Risiko pro Quadrum), ist dieser Anteil des Guthabens weg.</HH.Setting.bank.seizureShare.Desc>
+  <HH.Setting.bank.sounds>Menügeräusche der Bank</HH.Setting.bank.sounds>
+  <HH.Setting.bank.sounds.Desc>Klicken, Münzenzählen, Stempel im Bankfenster und der Gewinn- oder Verlustton der Lotterie, wenn eine Ziehung mit deinen gekauften Losen stattfindet.</HH.Setting.bank.sounds.Desc>
+  <HH.Setting.bank.switchFee>Gebühr für den Bankwechsel</HH.Setting.bank.switchFee>
+  <HH.Setting.bank.switchFee.Desc>Was es kostet, dein Konto zu einer anderen Bank zu verlegen (KONZEPT 2.2: 50 Silber).</HH.Setting.bank.switchFee.Desc>
+  <HH.Setting.bank.tradeDeposit>Handelssilber automatisch einzahlen</HH.Setting.bank.tradeDeposit>
+  <HH.Setting.bank.tradeDeposit.Desc>Standardmäßig aus, damit dir ein Verkauf an einen Händler weiterhin Münzen in die Hand gibt, die du sofort ausgeben kannst. Ist es an (und Direkteinzahlung an), wird Silber von Händlern und Handelsschiffen direkt nach dem Geschäft aufs Konto verschoben (mit der Gebühr für Direkteinzahlung). Karawanen sind nicht betroffen.</HH.Setting.bank.tradeDeposit.Desc>
+  <HH.Setting.bank.wealthShare>Kontostand zählt für den Erzähler (%)</HH.Setting.bank.wealthShare>
+  <HH.Setting.bank.wealthShare.Desc>Wie viel vom Konto zum Kolonievermögen zählt, das der Erzähler für Überfallpunkte nutzt. 100 % = fair: Geld einzuzahlen macht Überfälle nicht kleiner. 0 = die Bank ist ein Versteck.</HH.Setting.bank.wealthShare.Desc>
+  <HH.Setting.casino.abstinenceDays>Abstinenztage pro Suchtstufe</HH.Setting.casino.abstinenceDays>
+  <HH.Setting.casino.abstinenceDays.Desc>Tage ohne jede Sitzung, die nötig sind, um jede Suchtstufe zu heilen (Stufe 3 = 3 × dieser Wert).</HH.Setting.casino.abstinenceDays.Desc>
+  <HH.Setting.casino.addictionFreeSessions>Sitzungen, bevor eine Sucht entstehen kann</HH.Setting.casino.addictionFreeSessions>
+  <HH.Setting.casino.addictionFreeSessions.Desc>Unterhalb dieser Zahl an Sitzungen in drei Tagen passiert nichts.</HH.Setting.casino.addictionFreeSessions.Desc>
+  <HH.Setting.casino.addictionGrowth>Wachstum pro zusätzlicher Sitzung</HH.Setting.casino.addictionGrowth>
+  <HH.Setting.casino.addictionGrowth.Desc>p = p₀ · Wachstum^(Sitzungen − 3).</HH.Setting.casino.addictionGrowth.Desc>
+  <HH.Setting.casino.addictionP0>Spielsucht-Wahrscheinlichkeit p₀</HH.Setting.casino.addictionP0>
+  <HH.Setting.casino.addictionP0.Desc>Wahrscheinlichkeit einer Sucht nach der dritten Sitzung innerhalb von drei Tagen; sie wächst mit jeder weiteren Sitzung um ×1,35. 0 schaltet die Sucht ab.</HH.Setting.casino.addictionP0.Desc>
+  <HH.Setting.casino.ambience>Casino-Atmosphäre</HH.Setting.casino.ambience>
+  <HH.Setting.casino.ambience.Desc>Ein leises Gemurmel von Stimmen, Chips und fernen Spielautomaten-Glocken in einem belebten Casino-Raum, solange die Kamera in der Nähe ist.</HH.Setting.casino.ambience.Desc>
+  <HH.Setting.casino.animSpeed>Animationsgeschwindigkeit</HH.Setting.casino.animSpeed>
+  <HH.Setting.casino.animSpeed.Desc>100 % ist das vorgesehene Tempo. Höhere Werte lassen die Spiele schneller laufen; mit gedrückter Umschalttaste laufen sie mit 300 %.</HH.Setting.casino.animSpeed.Desc>
+  <HH.Setting.casino.animations>Animierte Spiele</HH.Setting.casino.animations>
+  <HH.Setting.casino.animations.Desc>Der Lucky Thrumbo und die Übungsspiele zeigen Walzen, Rad und Karten in Bewegung, bevor das Ergebnis erscheint. Aus: Das Ergebnis erscheint sofort. Ein Klick auf den Tisch, die Leertaste oder die Eingabetaste überspringt den Rest einer Animation immer.</HH.Setting.casino.animations.Desc>
+  <HH.Setting.casino.blackjackH17>Blackjack-Geber zieht bei weicher 17</HH.Setting.casino.blackjackH17>
+  <HH.Setting.casino.blackjackH17.Desc>0 = Geber bleibt bei weicher 17, 1 = Geber zieht (etwa +0,2 Punkte Hausvorteil).</HH.Setting.casino.blackjackH17.Desc>
+  <HH.Setting.casino.blackjackPays>Blackjack-Auszahlung (Blackjack-Bonus)</HH.Setting.casino.blackjackPays>
+  <HH.Setting.casino.blackjackPays.Desc>3:2 = 1,5, 6:5 = 1,2. Verändert den Hausvorteil um etwa 1,4 Punkte.</HH.Setting.casino.blackjackPays.Desc>
+  <HH.Setting.casino.chipSpendBonus>Ausgabenbonus mit Kassenschalter</HH.Setting.casino.chipSpendBonus>
+  <HH.Setting.casino.chipSpendBonus.Desc>Gäste bringen so viel mehr an die Tische, wenn ein Kassenschalter Chips verkauft („fühlt sich nicht wie Geld an“).</HH.Setting.casino.chipSpendBonus.Desc>
+  <HH.Setting.casino.chipTakeHome>Mit nach Hause genommene Chips</HH.Setting.casino.chipTakeHome>
+  <HH.Setting.casino.chipTakeHome.Desc>Höchstens dieser Anteil der Gewinne eines Gastes bleibt beim Gehen als Chips bei ihm: reiner Hausgewinn („Chip-Schwund“).</HH.Setting.casino.chipTakeHome.Desc>
+  <HH.Setting.casino.colonistChips>Hauschips pro Sitzung</HH.Setting.casino.colonistChips>
+  <HH.Setting.casino.colonistChips.Desc>Kolonisten spielen mit wertlosen Hauschips: An den Tischen geht nie Silber der Kolonie verloren.</HH.Setting.casino.colonistChips.Desc>
+  <HH.Setting.casino.croupierRequired>Tische brauchen einen Croupier</HH.Setting.casino.croupierRequired>
+  <HH.Setting.casino.croupierRequired.Desc>Roulette, Blackjack und Rimdeck laufen für Gäste nur, solange ein Kolonist mit der Arbeitsart Bedienen den Tisch betreut. Spielautomaten brauchen nie einen.</HH.Setting.casino.croupierRequired.Desc>
+  <HH.Setting.casino.fatalDespair>Tödliche Verzweiflung (nicht umgesetzt)</HH.Setting.casino.fatalDespair>
+  <HH.Setting.casino.fatalDespair.Desc>Reserviert. Nichts in diesem Modul kann einen Kolonisten töten; der Schalter hat keine Wirkung.</HH.Setting.casino.fatalDespair.Desc>
+  <HH.Setting.casino.guestBetShare>Einsatzhöhe der Gäste</HH.Setting.casino.guestBetShare>
+  <HH.Setting.casino.guestBetShare.Desc>Ein Gast setzt pro Runde diesen Anteil seines Spielgelds. Der Standard ist höher als in einem echten Casino, weil an den Tischen pro Spielstunde weit weniger Runden laufen; die Einnahmen pro Stunde bleiben ungefähr gleich.</HH.Setting.casino.guestBetShare.Desc>
+  <HH.Setting.casino.guestBudgetShare>Spielbudget der Gäste</HH.Setting.casino.guestBudgetShare>
+  <HH.Setting.casino.guestBudgetShare.Desc>Anteil des verbleibenden Budgets eines Gastes, den er an die Tische mitbringt (vor der Persönlichkeit).</HH.Setting.casino.guestBudgetShare.Desc>
+  <HH.Setting.casino.guestMinBuyIn>Kleinster Einstieg (Silber)</HH.Setting.casino.guestMinBuyIn>
+  <HH.Setting.casino.guestMinBuyIn.Desc>Gäste mit weniger Geld spielen nicht.</HH.Setting.casino.guestMinBuyIn.Desc>
+  <HH.Setting.casino.guestStopLoss>Gäste hören nach Verlust auf</HH.Setting.casino.guestStopLoss>
+  <HH.Setting.casino.guestStopLoss.Desc>Ein Gast verlässt die Tische, nachdem er diesen Anteil seines Spielgelds verloren hat.</HH.Setting.casino.guestStopLoss.Desc>
+  <HH.Setting.casino.guestWinTarget>Gäste lassen sich nach Gewinn auszahlen</HH.Setting.casino.guestWinTarget>
+  <HH.Setting.casino.guestWinTarget.Desc>Ein Gast lässt sich auszahlen, nachdem er diesen Anteil zusätzlich zu seinem Spielgeld gewonnen hat.</HH.Setting.casino.guestWinTarget.Desc>
+  <HH.Setting.casino.houseFloat>Kassenbestand des Hauses (Silber)</HH.Setting.casino.houseFloat>
+  <HH.Setting.casino.houseFloat.Desc>Bargeld, das das Haus in seiner Kassenlade behält. Was es darüber hinaus gewinnt (plus das, womit Gäste gerade spielen), geht an die Kasse der Kolonie, sobald das Casino schließt.</HH.Setting.casino.houseFloat.Desc>
+  <HH.Setting.casino.houseRiskLimit>Haus vor dem Ruin schützen</HH.Setting.casino.houseRiskLimit>
+  <HH.Setting.casino.houseRiskLimit.Desc>Begrenzt jeden Einsatz auf Bargeld ÷ (4 · σ · √Runden pro Tag): Eine schlechte Nacht kann das Haus nicht sprengen. Die Grenze sinkt, wenn das Bargeld knapp ist.</HH.Setting.casino.houseRiskLimit.Desc>
+  <HH.Setting.casino.howToSeen>„Spielanleitung“ schon gesehen</HH.Setting.casino.howToSeen>
+  <HH.Setting.casino.howToSeen.Desc>Merkt sich, dass sich die kurzen Spielerklärungen des Lucky Thrumbo einmal von selbst geöffnet haben. Ausschalten, um sie erneut automatisch zu sehen.</HH.Setting.casino.howToSeen.Desc>
+  <HH.Setting.casino.joyGain>Multiplikator für Glücksspiel-Freude</HH.Setting.casino.joyGain>
+  <HH.Setting.casino.joyGain.Desc>Freudegewinn im Vergleich zu einem Vanilla-Pokertisch.</HH.Setting.casino.joyGain.Desc>
+  <HH.Setting.casino.maxBet>Höchsteinsatz (Silber)</HH.Setting.casino.maxBet>
+  <HH.Setting.casino.maxBet.Desc>Größter Einsatz bei jedem Spiel, solange die Limits durchgesetzt werden.</HH.Setting.casino.maxBet.Desc>
+  <HH.Setting.casino.minBet>Mindesteinsatz (Silber)</HH.Setting.casino.minBet>
+  <HH.Setting.casino.minBet.Desc>Kleinster Einsatz. Bruchteile sind in Ordnung: Der Einsatz wird nicht in Münzen ausgezahlt.</HH.Setting.casino.minBet.Desc>
+  <HH.Setting.casino.pokerRake>Rimdeck-Rake</HH.Setting.casino.pokerRake>
+  <HH.Setting.casino.pokerRake.Desc>Der Anteil jedes Pots, den das Haus behält (bis zur Rake-Obergrenze).</HH.Setting.casino.pokerRake.Desc>
+  <HH.Setting.casino.pokerRakeCap>Rimdeck-Rake-Obergrenze (Silber)</HH.Setting.casino.pokerRakeCap>
+  <HH.Setting.casino.pokerRakeCap.Desc>Das meiste, was das Haus aus einem Pot nimmt.</HH.Setting.casino.pokerRakeCap.Desc>
+  <HH.Setting.casino.reactions>Reaktionen der Spieler</HH.Setting.casino.reactions>
+  <HH.Setting.casino.reactions.Desc>Spieler jubeln, stöhnen und werfen bei Gewinnen, Verlusten und knappen Fehlschlägen mit Münzen (kleine Symbole über ihren Köpfen und kurze Geräusche).</HH.Setting.casino.reactions.Desc>
+  <HH.Setting.casino.rouletteEdge>Hausvorteil beim Roulette</HH.Setting.casino.rouletteEdge>
+  <HH.Setting.casino.rouletteEdge.Desc>0,54 % bis 7,9 %: Kleine Vorteile nutzen ein Rad mit La-Partage-Regel, 2,7 % ist eine Null, über 4 % ist ein Rad mit Doppelnull. Jeder Einsatz bekommt genau diesen Vorteil.</HH.Setting.casino.rouletteEdge.Desc>
+  <HH.Setting.casino.roundsPerHour.blackjack>Blackjack-Hände pro Stunde</HH.Setting.casino.roundsPerHour.blackjack>
+  <HH.Setting.casino.roundsPerHour.blackjack.Desc>Hände pro Spielstunde.</HH.Setting.casino.roundsPerHour.blackjack.Desc>
+  <HH.Setting.casino.roundsPerHour.poker>Rimdeck-Hände pro Stunde</HH.Setting.casino.roundsPerHour.poker>
+  <HH.Setting.casino.roundsPerHour.poker.Desc>Hände pro Spielstunde.</HH.Setting.casino.roundsPerHour.poker.Desc>
+  <HH.Setting.casino.roundsPerHour.roulette>Roulette-Drehungen pro Stunde</HH.Setting.casino.roundsPerHour.roulette>
+  <HH.Setting.casino.roundsPerHour.roulette.Desc>Drehungen pro Spielstunde.</HH.Setting.casino.roundsPerHour.roulette.Desc>
+  <HH.Setting.casino.roundsPerHour.slot>Automaten-Drehungen pro Stunde</HH.Setting.casino.roundsPerHour.slot>
+  <HH.Setting.casino.roundsPerHour.slot.Desc>Wie schnell ein Automat dreht, pro Spielstunde (2500 Ticks, 40 sind also bei normaler Geschwindigkeit eine Drehung alle 1 bis 2 echten Sekunden).</HH.Setting.casino.roundsPerHour.slot.Desc>
+  <HH.Setting.casino.slotRtp>Auszahlung der Spielautomaten (RTP)</HH.Setting.casino.slotRtp>
+  <HH.Setting.casino.slotRtp.Desc>Anteil der Einsätze, den ein Einarmiger Muffalo auf lange Sicht zurückzahlt. 92 % = Hausvorteil 8 %. Über 100 % verliert das Haus Geld.</HH.Setting.casino.slotRtp.Desc>
+  <HH.Setting.casino.tableLimits>Tischlimits durchsetzen</HH.Setting.casino.tableLimits>
+  <HH.Setting.casino.tableLimits.Desc>An: Einsätze bleiben zwischen dem Mindest- und Höchsteinsatz unten. Aus: Nur die Risikoregel des Hauses begrenzt Einsätze.</HH.Setting.casino.tableLimits.Desc>
+  <HH.Setting.casino.toleranceFactor>Aufbau der Glücksspiel-Toleranz</HH.Setting.casino.toleranceFactor>
+  <HH.Setting.casino.toleranceFactor.Desc>Wie schnell sich die Freude-Toleranz im Vergleich zu Vanilla aufbaut (0,6 = 40 % langsamer).</HH.Setting.casino.toleranceFactor.Desc>
+  <HH.Setting.casino.worldFx>Casino-Leben auf der Karte</HH.Setting.casino.worldFx>
+  <HH.Setting.casino.worldFx.Desc>Drehende Walzen, das Roulette-Rad, ausgeteilte Karten, Chips und kleine Geräusche an Automaten und Tischen, während gespielt wird.</HH.Setting.casino.worldFx.Desc>
+  <HH.Setting.city.cinemaCooldownHours>Stunden zwischen Filmen pro Gast</HH.Setting.city.cinemaCooldownHours>
+  <HH.Setting.city.cinemaCooldownHours.Desc>Ein Gast sieht in dieser Zeit höchstens einen Film.</HH.Setting.city.cinemaCooldownHours.Desc>
+  <HH.Setting.city.cinemaMinSeats>Benötigte Sitze</HH.Setting.city.cinemaMinSeats>
+  <HH.Setting.city.cinemaMinSeats.Desc>Eine Projektionsleinwand zählt als Kino, wenn mindestens so viele Sitze zu ihr gewandt stehen.</HH.Setting.city.cinemaMinSeats.Desc>
+  <HH.Setting.city.cinemaShowTicks>Filmlänge (Ticks)</HH.Setting.city.cinemaShowTicks>
+  <HH.Setting.city.cinemaShowTicks.Desc>Wie lange eine Vorstellung läuft. 2.500 Ticks sind eine Stunde.</HH.Setting.city.cinemaShowTicks.Desc>
+  <HH.Setting.city.cinemaTicket>Kinokarte</HH.Setting.city.cinemaTicket>
+  <HH.Setting.city.cinemaTicket.Desc>Preis einer Karte. Gäste zahlen, wenn sie sich hinsetzen.</HH.Setting.city.cinemaTicket.Desc>
+  <HH.Setting.city.desireScale>Interesse der Gäste am Stadtleben</HH.Setting.city.desireScale>
+  <HH.Setting.city.desireScale.Desc>Skaliert, wie stark Gäste ins Kino, in den Salon, in die Galerie und auf die Parkbank wollen. 0 = nie.</HH.Setting.city.desireScale.Desc>
+  <HH.Setting.city.galleryCooldownHours>Stunden zwischen Besuchen pro Gast</HH.Setting.city.galleryCooldownHours>
+  <HH.Setting.city.galleryCooldownHours.Desc>Ein Gast geht in dieser Zeit höchstens einmal durch eine Galerie.</HH.Setting.city.galleryCooldownHours.Desc>
+  <HH.Setting.city.galleryFee>Galerie-Eintritt</HH.Setting.city.galleryFee>
+  <HH.Setting.city.galleryFee.Desc>Preis für einen Rundgang durch die Galerie.</HH.Setting.city.galleryFee.Desc>
+  <HH.Setting.city.galleryMaxViews>Werke pro Besuch</HH.Setting.city.galleryMaxViews>
+  <HH.Setting.city.galleryMaxViews.Desc>Wie viele Kunstwerke sich ein Gast pro Besuch ansieht.</HH.Setting.city.galleryMaxViews.Desc>
+  <HH.Setting.city.galleryMinArt>Benötigte Kunstwerke</HH.Setting.city.galleryMinArt>
+  <HH.Setting.city.galleryMinArt.Desc>Ein Raum zählt als Galerie, wenn er mindestens so viele Kunstwerke enthält.</HH.Setting.city.galleryMinArt.Desc>
+  <HH.Setting.city.galleryViewTicks>Betrachtungszeit pro Werk (Ticks)</HH.Setting.city.galleryViewTicks>
+  <HH.Setting.city.galleryViewTicks.Desc>Wie lange ein Gast vor einem Kunstwerk steht.</HH.Setting.city.galleryViewTicks.Desc>
+  <HH.Setting.city.movieNight>Filmabende für Kolonisten</HH.Setting.city.movieNight>
+  <HH.Setting.city.movieNight.Desc>Kolonisten veranstalten ab und zu einen Filmabend, wenn es eine Projektionsleinwand mit Strom und Sitzen gibt.</HH.Setting.city.movieNight.Desc>
+  <HH.Setting.city.movieNightChance>Filmabend-Chance pro Abend</HH.Setting.city.movieNightChance>
+  <HH.Setting.city.movieNightChance.Desc>Chance, dass die Kolonie an einem bestimmten Abend (18:00) einen Filmabend beginnt.</HH.Setting.city.movieNightChance.Desc>
+  <HH.Setting.city.parkCooldownHours>Stunden zwischen Bankbesuchen pro Gast</HH.Setting.city.parkCooldownHours>
+  <HH.Setting.city.parkCooldownHours.Desc>Ein Gast setzt sich in dieser Zeit höchstens einmal auf eine Bank.</HH.Setting.city.parkCooldownHours.Desc>
+  <HH.Setting.city.parkRestTicks>Ruhezeit auf der Parkbank (Ticks)</HH.Setting.city.parkRestTicks>
+  <HH.Setting.city.parkRestTicks.Desc>Wie lange jemand auf einer Parkbank sitzt.</HH.Setting.city.parkRestTicks.Desc>
+  <HH.Setting.city.priceTolerance>Preistoleranz der Gäste</HH.Setting.city.priceTolerance>
+  <HH.Setting.city.priceTolerance.Desc>Wie viel Gäste für städtische Dienste im Vergleich zum Referenzpreis zu zahlen bereit sind. Folgt dem Schwierigkeitsregler; 1 = Standard.</HH.Setting.city.priceTolerance.Desc>
+  <HH.Setting.city.researchMode>Forschungsmodus</HH.Setting.city.researchMode>
+  <HH.Setting.city.researchMode.Desc>Voll: Die Projekte des Stadtlebens müssen erforscht werden. Aus: Alles im Stadtleben ist sofort verfügbar.</HH.Setting.city.researchMode.Desc>
+  <HH.Setting.city.salonCooldownHours>Stunden zwischen Haarschnitten pro Gast</HH.Setting.city.salonCooldownHours>
+  <HH.Setting.city.salonCooldownHours.Desc>Ein Gast bekommt in dieser Zeit höchstens einen neuen Look.</HH.Setting.city.salonCooldownHours.Desc>
+  <HH.Setting.city.salonDyePrice>Aufpreis fürs Färben</HH.Setting.city.salonDyePrice>
+  <HH.Setting.city.salonDyePrice.Desc>Extra für eine Haarfarbänderung (benötigt Biotech oder Ideology).</HH.Setting.city.salonDyePrice.Desc>
+  <HH.Setting.city.salonPrice>Preis für den Haarschnitt</HH.Setting.city.salonPrice>
+  <HH.Setting.city.salonPrice.Desc>Was ein Gast für einen Haarschnitt und eine neue Frisur zahlt.</HH.Setting.city.salonPrice.Desc>
+  <HH.Setting.city.salonServiceTicks>Stylingzeit (Ticks)</HH.Setting.city.salonServiceTicks>
+  <HH.Setting.city.salonServiceTicks.Desc>Wie lange ein Haarschnitt mit einem durchschnittlichen Friseur dauert.</HH.Setting.city.salonServiceTicks.Desc>
+  <HH.Setting.city.salonTattooPrice>Aufpreis für Tätowierungen</HH.Setting.city.salonTattooPrice>
+  <HH.Setting.city.salonTattooPrice.Desc>Extra für eine Tätowierung (benötigt Ideology).</HH.Setting.city.salonTattooPrice.Desc>
+  <HH.Setting.city.salonWaitTicks>Wartegrenze (Ticks)</HH.Setting.city.salonWaitTicks>
+  <HH.Setting.city.salonWaitTicks.Desc>Ein Gast wartet so lange im Stuhl darauf, dass jemand auftaucht, und geht dann verärgert.</HH.Setting.city.salonWaitTicks.Desc>
+  <HH.Setting.city.securityChance>Chance auf Anheuern (Basis)</HH.Setting.city.securityChance>
+  <HH.Setting.city.securityChance.Desc>Grundchance pro infrage kommendem Gast; sehr wohlhabende Gäste (80+) bekommen +40 Punkte.</HH.Setting.city.securityChance.Desc>
+  <HH.Setting.city.securityDayShare>Tagesgebühr (Anteil am Budget)</HH.Setting.city.securityDayShare>
+  <HH.Setting.city.securityDayShare.Desc>Der Leibwächter kostet pro Tag diesen Anteil des Budgets des Gastes, stündlich abgerechnet.</HH.Setting.city.securityDayShare.Desc>
+  <HH.Setting.city.securityHireHours>Stunden bis zum Finden eines Leibwächters</HH.Setting.city.securityHireHours>
+  <HH.Setting.city.securityHireHours.Desc>Eine Anheuerung, die in dieser Zeit keinen freien bewaffneten Kolonisten findet, wird kostenlos abgebrochen.</HH.Setting.city.securityHireHours.Desc>
+  <HH.Setting.city.securityMinHourFee>Mindestgebühr pro Stunde</HH.Setting.city.securityMinHourFee>
+  <HH.Setting.city.securityMinHourFee.Desc>Ein Leibwächter kostet pro Stunde nie weniger als das.</HH.Setting.city.securityMinHourFee.Desc>
+  <HH.Setting.city.securityMinWealth>Nötiger Wohlstand für einen Leibwächter</HH.Setting.city.securityMinWealth>
+  <HH.Setting.city.securityMinWealth.Desc>Gäste unterhalb dieser Wohlstandsstufe (1 bis 100) heuern nie Schutz an.</HH.Setting.city.securityMinWealth.Desc>
+  <HH.Setting.city.securityOn>Leibwächterdienst</HH.Setting.city.securityOn>
+  <HH.Setting.city.securityOn.Desc>Wohlhabende Gäste können einen deiner bewaffneten Kolonisten als Leibwächter anheuern.</HH.Setting.city.securityOn.Desc>
+  <HH.Setting.city.taxiArrivalChance>Chance auf Ankunft per Taxi</HH.Setting.city.taxiArrivalChance>
+  <HH.Setting.city.taxiArrivalChance.Desc>Anteil der ankommenden Gäste, die am Taxistand abgesetzt werden, statt vom Kartenrand hereinzulaufen.</HH.Setting.city.taxiArrivalChance.Desc>
+  <HH.Setting.city.taxiArrivalFee>Landegebühr</HH.Setting.city.taxiArrivalFee>
+  <HH.Setting.city.taxiArrivalFee.Desc>Was ein ankommender Gast der Kolonie zahlt, dafür dass er am Taxistand abgesetzt wird.</HH.Setting.city.taxiArrivalFee.Desc>
+  <HH.Setting.city.taxiDepartureChance>Chance auf ein Taxi bei der Abreise</HH.Setting.city.taxiDepartureChance>
+  <HH.Setting.city.taxiDepartureChance.Desc>Anteil der abreisenden Gäste, die ein Taxi rufen, wenn ein freier Taxistand existiert (steigt mit dem Wohlstand).</HH.Setting.city.taxiDepartureChance.Desc>
+  <HH.Setting.city.taxiFare>Taxipreis</HH.Setting.city.taxiFare>
+  <HH.Setting.city.taxiFare.Desc>Was ein abreisender Gast für die Fahrt ab dem Taxistand zahlt.</HH.Setting.city.taxiFare.Desc>
+  <HH.Setting.city.taxiWaitTicks>Wartezeit des Taxis (Ticks)</HH.Setting.city.taxiWaitTicks>
+  <HH.Setting.city.taxiWaitTicks.Desc>Wie lange ein Gast am Stand wartet, bevor das Taxi abhebt.</HH.Setting.city.taxiWaitTicks.Desc>
+  <HH.Setting.core.guide>Hearth-&amp;-Harbor-Leitfaden anzeigen</HH.Setting.core.guide>
+  <HH.Setting.core.guide.Desc>Der Lernhelfer oben rechts. Rechtsklick darauf blendet ihn aus.</HH.Setting.core.guide.Desc>
+  <HH.Setting.core.helpHint>Kleinen Hilfehinweis aus dem echten Leben beim Glücksspiel anzeigen</HH.Setting.core.helpHint>
+  <HH.Setting.core.helpHint.Desc>Eine kleine, leise Zeile auf jedem Bildschirm, auf dem du selbst spielst: Wenn Glücksspiel im echten Leben ein Problem ist, gibt es Hilfe (findahelpline.com). Wird sonst nirgends angezeigt.</HH.Setting.core.helpHint.Desc>
+  <HH.Setting.core.rngAlgorithm>Zufallszahlen-Algorithmus</HH.Setting.core.rngAlgorithm>
+  <HH.Setting.core.rngAlgorithm.Desc>Algorithmus für alle Zufallsströme von Hearth &amp; Harbor. Gleiche Chancen für alle, nur die Abfolge unterscheidet sich. ChaCha8 ist kryptografisch (paranoid), SplitMix64 ist am schnellsten.</HH.Setting.core.rngAlgorithm.Desc>
+  <HH.Setting.core.sealedFate>Besiegeltes Schicksal</HH.Setting.core.sealedFate>
+  <HH.Setting.core.sealedFate.Desc>An: Das Neuladen eines Spielstands würfelt Gästeereignisse nicht neu aus (alles nutzt versiegelte Zufallsströme). Spielerwetten, Bankgeschäfte und Lotterie sind immer versiegelt.</HH.Setting.core.sealedFate.Desc>
+  <HH.Setting.dlc.aiIdeoPrecepts>Auch KI-Ideoligionen Geld-Gebote geben</HH.Setting.dlc.aiIdeoPrecepts>
+  <HH.Setting.dlc.aiIdeoPrecepts.Desc>Zufällige KI-Ideoligionen bekommen einmalig eine Haltung zu Ablässen und bezahltem Aufstieg, gewichtet nach ihren Memen. Feste Fraktions-Ideoligionen bleiben unberührt.</HH.Setting.dlc.aiIdeoPrecepts.Desc>
+  <HH.Setting.dlc.fundDestination>Spenden der Kolonisten gehen an</HH.Setting.dlc.fundDestination>
+  <HH.Setting.dlc.fundDestination.Desc>An die Gottheit: Das Silber verschwindet einfach. An die Fraktion des Glaubens: Teilt eine Fraktion den Glauben, gewinnt sie Wohlwollen (+1 pro 500 Silber, höchstens +5 pro Quadrum). Kolonisten zahlen nie in die Tempelkasse der eigenen Kolonie.</HH.Setting.dlc.fundDestination.Desc>
+  <HH.Setting.dlc.indulgenceCapScale>Kauflimits für Ablässe</HH.Setting.dlc.indulgenceCapScale>
+  <HH.Setting.dlc.indulgenceCapScale.Desc>Multiplikator auf die Kaufgrenzen pro Charakter, Kolonie und Ideoligion. 1 = Grenzen wie vorgesehen.</HH.Setting.dlc.indulgenceCapScale.Desc>
+  <HH.Setting.dlc.indulgenceFactor>Preisfaktor für Ablässe</HH.Setting.dlc.indulgenceFactor>
+  <HH.Setting.dlc.indulgenceFactor.Desc>Multiplikator auf jeden Preis für Ablass und Aufstieg (der Faktor „Glaube zu verkaufen“ der Geld-und-Glaube-Tabelle).</HH.Setting.dlc.indulgenceFactor.Desc>
+  <HH.Setting.dlc.luckShift>Glück: Auszahlungsverschiebung für Glückspilze und Pechvögel</HH.Setting.dlc.luckShift>
+  <HH.Setting.dlc.luckShift.Desc>Glückliche Leute bekommen so viele Prozentpunkte auf den Auszahlungsplan eines Spiels aufgeschlagen, Unglückliche verlieren ebenso viele. Die Verschiebung hebt ein Spiel nie auf 100 % oder darüber und verbiegt nie die Zufallsziehung.</HH.Setting.dlc.luckShift.Desc>
+  <HH.Setting.dlc.mandatoryBilleting>Pflicht-Gastfreundschaft bei imperialer Einquartierung</HH.Setting.dlc.mandatoryBilleting>
+  <HH.Setting.dlc.mandatoryBilleting.Desc>Einquartierungsbefehle des Imperiums treffen auch unterhalb von Überbucht ein. Aus: nur auf harten Stufen (Überbucht und höher). In jedem Fall nur in einer Kolonie mit Gästebetten.</HH.Setting.dlc.mandatoryBilleting.Desc>
+  <HH.Setting.dlc.nobleBasePrice>Grundpreis für Adelsaufenthalt pro Adligem und Tag</HH.Setting.dlc.nobleBasePrice>
+  <HH.Setting.dlc.nobleBasePrice.Desc>Silber pro Adligem und Tag vor dem Titelzuschlag (+15 % pro 100 Dienstalter) und dem Zufriedenheitsfaktor.</HH.Setting.dlc.nobleBasePrice.Desc>
+  <HH.Setting.dlc.nobleMoneyFactor>Geldfaktor der Adligen</HH.Setting.dlc.nobleMoneyFactor>
+  <HH.Setting.dlc.nobleMoneyFactor.Desc>Folgt der Gästegeld-Zeile der Schwierigkeitstabelle: reicher auf leichten Stufen, ärmer auf harten.</HH.Setting.dlc.nobleMoneyFactor.Desc>
+  <HH.Setting.dlc.nobleStays>Adelsaufenthalte</HH.Setting.dlc.nobleStays>
+  <HH.Setting.dlc.nobleStays.Desc>Adlige des Imperiums können um bezahlte Unterkunft bitten. Du kannst jederzeit ablehnen. Braucht ein Gästebett in einem Schlafzimmer, das ihrem Titel genügt; sie bleiben als Gäste und zahlen am Ende, je nachdem, wie zufrieden sie waren.</HH.Setting.dlc.nobleStays.Desc>
+  <HH.Setting.dlc.shrineReactions>Kolonisten reagieren auf Schreine anderer Glaubensrichtungen</HH.Setting.dlc.shrineReactions>
+  <HH.Setting.dlc.shrineReactions.Desc>Missionare und Suprematisten mögen keine Schreine anderer Glaubensrichtungen auf ihrem Land; tolerante Ideoligionen mögen sie.</HH.Setting.dlc.shrineReactions.Desc>
+  <HH.Setting.dlc.xenoHospitality>Xenotyp-Vorlieben</HH.Setting.dlc.xenoHospitality>
+  <HH.Setting.dlc.xenoHospitality.Desc>Xenotypen und Gene der Gäste bestimmen, welche Räume und Waren sie mögen (dunkle Räume für Sanguophagen, kalte Räume für Yttakin, ...).</HH.Setting.dlc.xenoHospitality.Desc>
+  <HH.Setting.finance.cryptoOn>Kryptowerte</HH.Setting.finance.cryptoOn>
+  <HH.Setting.finance.cryptoOn.Desc>RimCoin und die Memecoins anbieten.</HH.Setting.finance.cryptoOn.Desc>
+  <HH.Setting.finance.fallbackWindow>Geldanlagen im Menü der Kommunikationskonsole</HH.Setting.finance.fallbackWindow>
+  <HH.Setting.finance.fallbackWindow.Desc>Die Anlagebildschirme auch im Auswahlmenü der Kommunikationskonsole anbieten, selbst wenn das Bankfenster verfügbar ist.</HH.Setting.finance.fallbackWindow.Desc>
+  <HH.Setting.finance.hazardMult>Katastrophen ×</HH.Setting.finance.hazardMult>
+  <HH.Setting.finance.hazardMult.Desc>Multipliziert Crashs, Rug Pulls, Zahlungsausfälle, Börsenhacks und Bank-Runs. Der langfristige Durchschnitt ändert sich nicht, nur wie oft es wehtut.</HH.Setting.finance.hazardMult.Desc>
+  <HH.Setting.finance.jumpMult>Kurssprünge ×</HH.Setting.finance.jumpMult>
+  <HH.Setting.finance.jumpMult.Desc>Multipliziert, wie oft Werte eigene Sprünge machen (Quartalszahlen, Krypto-Sprünge, Memecoin-Pumps). Der langfristige Durchschnitt ändert sich nicht: Die Mathematik gleicht aus.</HH.Setting.finance.jumpMult.Desc>
+  <HH.Setting.finance.memeInterval>Tage zwischen neuen Memecoins</HH.Setting.finance.memeInterval>
+  <HH.Setting.finance.memeInterval.Desc>Durchschnittliche Zahl der Tage, bis der nächste Memecoin gelistet wird.</HH.Setting.finance.memeInterval.Desc>
+  <HH.Setting.finance.memeOn>Memecoins</HH.Setting.finance.memeOn>
+  <HH.Setting.finance.memeOn.Desc>Alle paar Tage erscheint ein neuer Memecoin und wird nach drei wieder ausgelistet. Die meisten Halter verlieren Geld, ein paar werden reich.</HH.Setting.finance.memeOn.Desc>
+  <HH.Setting.finance.newsMessages>Marktnachrichten als Meldungen</HH.Setting.finance.newsMessages>
+  <HH.Setting.finance.newsMessages.Desc>Crashs, Rallyes und Hacks als kurze Meldungen anzeigen (nur wenn du etwas Betroffenes hältst).</HH.Setting.finance.newsMessages.Desc>
+  <HH.Setting.finance.nftOn>NFTs</HH.Setting.finance.nftOn>
+  <HH.Setting.finance.nftOn.Desc>Eigentumszertifikate für Bilder. Der Verkauf dauert ein bis vier Tage und kostet eine Spanne.</HH.Setting.finance.nftOn.Desc>
+  <HH.Setting.finance.omenCapA>Positionslimit, Zufallsmärkte</HH.Setting.finance.omenCapA>
+  <HH.Setting.finance.omenCapA.Desc>Größter Anteil deines Vermögens in einem einzigen Omen-Zufallsmarkt.</HH.Setting.finance.omenCapA.Desc>
+  <HH.Setting.finance.omenCapB>Positionslimit, Weltmärkte</HH.Setting.finance.omenCapB>
+  <HH.Setting.finance.omenCapB.Desc>Größter Anteil deines Vermögens in einem einzigen Omen-Markt auf ein Weltereignis.</HH.Setting.finance.omenCapB.Desc>
+  <HH.Setting.finance.omenFee>Omen-Gebühr</HH.Setting.finance.omenFee>
+  <HH.Setting.finance.omenFee.Desc>Anteil jedes Einsatzes, den die Börse behält (und nochmals, wenn du eine Position vorzeitig schließt).</HH.Setting.finance.omenFee.Desc>
+  <HH.Setting.finance.omenGamma>Außenseiter-Verzerrung γ</HH.Setting.finance.omenGamma>
+  <HH.Setting.finance.omenGamma.Desc>Unter 1 überbewertet die Börse unwahrscheinliche Ausgänge (die klassische Favoriten-Außenseiter-Verzerrung). 1 = Kurse entsprechen den wahren Quoten.</HH.Setting.finance.omenGamma.Desc>
+  <HH.Setting.finance.omenSpread>Omen-Spanne</HH.Setting.finance.omenSpread>
+  <HH.Setting.finance.omenSpread.Desc>Marge des Buchmachers: Der JA-Preis und der NEIN-Preis ergeben zusammen 1 plus diesen Wert.</HH.Setting.finance.omenSpread.Desc>
+  <HH.Setting.finance.profit>Rentabilität (Jahresfaktor M)</HH.Setting.finance.profit>
+  <HH.Setting.finance.profit.Desc>Wie stark angelegtes Geld im Schnitt pro Spieljahr (60 Tage) für den Referenzfonds RimIndex 50 wächst: 1,2 bedeutet +20 % im Jahr, 1,0 bedeutet plus/minus nichts, unter 1 verliert Geld. Logarithmische Skala von 0,1 bis 100; gib eine Zahl für den genauen Wert ein. Folgt dem Schwierigkeitsregler, bis du ihn selbst setzt.</HH.Setting.finance.profit.Desc>
+  <HH.Setting.finance.projectStakePct>Einsatzlimit pro Projekt</HH.Setting.finance.projectStakePct>
+  <HH.Setting.finance.projectStakePct.Desc>Größter Einsatz auf ein Projekt, als Anteil deines Vermögens.</HH.Setting.finance.projectStakePct.Desc>
+  <HH.Setting.finance.projectTotalPct>Einsatzlimit, alle Projekte</HH.Setting.finance.projectTotalPct>
+  <HH.Setting.finance.projectTotalPct.Desc>Größte Gesamtsumme aller offenen Projektwetten (Longs und Shorts zusammen), als Anteil deines Vermögens.</HH.Setting.finance.projectTotalPct.Desc>
+  <HH.Setting.finance.projectYearCapPct>Jahresgewinn-Deckel</HH.Setting.finance.projectYearCapPct>
+  <HH.Setting.finance.projectYearCapPct.Desc>Der Nettogewinn aus Longs und Shorts pro Spieljahr ist auf diesen Anteil deines Vermögens zu Jahresbeginn gedeckelt. Darüber zahlt die Bank nur den Einsatz zurück.</HH.Setting.finance.projectYearCapPct.Desc>
+  <HH.Setting.finance.projectsOn>Fraktionsprojekte und Projekt-Shorts</HH.Setting.finance.projectsOn>
+  <HH.Setting.finance.projectsOn.Desc>Fraktionen kündigen Projekte an; du kannst investieren (Long) oder dagegen wetten (Short).</HH.Setting.finance.projectsOn.Desc>
+  <HH.Setting.finance.volMult>Volatilität ×</HH.Setting.finance.volMult>
+  <HH.Setting.finance.volMult.Desc>Multipliziert, wie wild die Kurse von Tag zu Tag schwanken. 1 = die Zahlen des Entwurfs (Index 1,5 % pro Tag, Memecoins 15 %).</HH.Setting.finance.volMult.Desc>
+  <HH.Setting.insurance.assessmentDays>Unfallbewertung (Tage)</HH.Setting.insurance.assessmentDays>
+  <HH.Setting.insurance.assessmentDays.Desc>Ein Unfalltarif bewertet den Invaliditätsgrad so viele Tage nach dem Unfall (standardmäßig ein Quadrum). Bis dahin zeigt der Brief eine Vorschau.</HH.Setting.insurance.assessmentDays.Desc>
+  <HH.Setting.insurance.billingDays>Abrechnungsintervall der Prämien (Tage)</HH.Setting.insurance.billingDays>
+  <HH.Setting.insurance.billingDays.Desc>Prämien werden automatisch alle so viele Tage abgebucht (vom Bankkonto, sonst aus der Kasse oder vom Silber im Lager).</HH.Setting.insurance.billingDays.Desc>
+  <HH.Setting.insurance.changeFee>Gebühr für eine Policenänderung (Silber)</HH.Setting.insurance.changeFee>
+  <HH.Setting.insurance.changeFee.Desc>Was Clawback Mutual für jede Änderung von Summe, Stufe oder Zusatzleistungen einer laufenden Police verlangt („Verwaltungsaufwand“). Kostenlos auf Standardzimmer.</HH.Setting.insurance.changeFee.Desc>
+  <HH.Setting.insurance.changeLimitPerQuadrum>Änderungen pro Police und Quadrum</HH.Setting.insurance.changeLimitPerQuadrum>
+  <HH.Setting.insurance.changeLimitPerQuadrum.Desc>Wie oft eine Police pro Quadrum geändert werden darf. 0 = unbegrenzt (Standardzimmer); Überbucht und härtere Stufen begrenzen es.</HH.Setting.insurance.changeLimitPerQuadrum.Desc>
+  <HH.Setting.insurance.changeWaitingDays>Wartezeit nach einer Erhöhung (Tage)</HH.Setting.insurance.changeWaitingDays>
+  <HH.Setting.insurance.changeWaitingDays.Desc>Wenn du Summe oder Stufe erhöhst oder eine Zusatzleistung hinzufügst, werden Schadensfälle innerhalb dieser Wartezeit weiter mit dem alten Schutz bewertet (eine Police, die eine Minute vor einem Überfall erhöht wurde, zahlt nicht auf der neuen Stufe). Eine Senkung des Schutzes hat keine Wartezeit.</HH.Setting.insurance.changeWaitingDays.Desc>
+  <HH.Setting.insurance.claimLetters>Briefe zu jedem Schadensfall</HH.Setting.insurance.claimLetters>
+  <HH.Setting.insurance.claimLetters.Desc>Clawback Mutual schreibt einen Brief zu jedem gemeldeten Schadensfall (höchstens eine Meldung „Schaden gemeldet“ pro Tag) und zu jeder Entscheidung.</HH.Setting.insurance.claimLetters.Desc>
+  <HH.Setting.insurance.claimMode>Wie Schadensfälle gemeldet werden</HH.Setting.insurance.claimMode>
+  <HH.Setting.insurance.claimMode.Desc>Per Formular: Ein versichertes Ereignis bringt einen Brief „Schadensmeldung möglich“, und du meldest den Schaden vor Fristablauf per Formular (das Ergebnis wird genau wie bisher ausgewürfelt; das Formular ist bis auf die Auszahlungswahl kosmetisch). Automatisch: Schäden werden im Moment des Schadens für dich gemeldet.</HH.Setting.insurance.claimMode.Desc>
+  <HH.Setting.insurance.claimReminder>Vor einer Meldefrist erinnern</HH.Setting.insurance.claimReminder>
+  <HH.Setting.insurance.claimReminder.Desc>Ein kurzer Erinnerungsbrief zwei Tage, bevor ein Meldefenster schließt.</HH.Setting.insurance.claimReminder.Desc>
+  <HH.Setting.insurance.claimsAttitude>Haltung der Schadensabteilung</HH.Setting.insurance.claimsAttitude>
+  <HH.Setting.insurance.claimsAttitude.Desc>Wie eifrig die Schadensabteilung einen Grund sucht, nicht zu zahlen. 0 % „Windet sich nie“ · 15 % „Kleingedrucktes“ (Standardzimmer) · 40 % „Kreative Buchführung“ · 75 % „Unsere Anwälte langweilen sich“ · 100 % „So gut wie immer“.</HH.Setting.insurance.claimsAttitude.Desc>
+  <HH.Setting.insurance.deadlineScale>Meldefristen (Faktor)</HH.Setting.insurance.deadlineScale>
+  <HH.Setting.insurance.deadlineScale.Desc>Multipliziert die Meldefrist jeder Police (Fernweh 5 Tage, Rechtsschutz 5 Tage, Sachschäden etwa 15 Tage bei Gut genug; Premium +50 %, Mindestschutz -30 %).</HH.Setting.insurance.deadlineScale.Desc>
+  <HH.Setting.insurance.formError>Fehlerchance beim Kündigungsformular</HH.Setting.insurance.formError>
+  <HH.Setting.insurance.formError.Desc>Klausel 30: Die Kündigung kommt mit einem Formfehler zurück. Auf Standardzimmer wird sie automatisch neu eingereicht und die Frist bleibt; härtere Stufen verlieren ein Quadrum.</HH.Setting.insurance.formError.Desc>
+  <HH.Setting.insurance.formTextAi>KI-Antwort auf die Schadensschilderung</HH.Setting.insurance.formTextAi>
+  <HH.Setting.insurance.formTextAi.Desc>Ist das KI-Würzmodul an und hast du zugestimmt, antwortet die Schadensabteilung in eigenen Worten auf deine Schilderung (Betrag und Ergebnis ändern sich nicht). Ohne sie wird die Schilderung gespeichert und ignoriert.</HH.Setting.insurance.formTextAi.Desc>
+  <HH.Setting.insurance.hospitalCapDays>Rim-Krankenplan: bezahlte Krankenbetttage</HH.Setting.insurance.hospitalCapDays>
+  <HH.Setting.insurance.hospitalCapDays.Desc>Die meisten Krankenbetttage, die der Rim-Krankenplan pro Kolonist im Fenster unten bezahlt (eine Krankenhaustagegeld-Grenze; sie verhindert, dass eine chronische Krankheit mehr einbringt, als die Prämie kostet).</HH.Setting.insurance.hospitalCapDays.Desc>
+  <HH.Setting.insurance.hospitalCapWindow>Rim-Krankenplan: Fenster (Tage)</HH.Setting.insurance.hospitalCapWindow>
+  <HH.Setting.insurance.hospitalCapWindow.Desc>Die Grenze oben zählt die bezahlten Tage jedes Kolonisten über so viele Tage (standardmäßig ein Quadrum).</HH.Setting.insurance.hospitalCapWindow.Desc>
+  <HH.Setting.insurance.loading>Versicherungsaufschlag</HH.Setting.insurance.loading>
+  <HH.Setting.insurance.loading.Desc>Zuschlag auf den erwarteten Schaden, aus dem sich die Prämie ergibt. Im Schnitt behält der Versicherer diesen Anteil; 0 % ist versicherungsmathematisch fair.</HH.Setting.insurance.loading.Desc>
+  <HH.Setting.insurance.maxPersonSum>Höchste Personensumme</HH.Setting.insurance.maxPersonSum>
+  <HH.Setting.insurance.maxPersonSum.Desc>Höchste Grundsumme einer Unfall-, Renten- oder Reisepolice (außerdem höchstens das Doppelte des Marktwerts der Spielfigur).</HH.Setting.insurance.maxPersonSum.Desc>
+  <HH.Setting.insurance.maxPropertySum>Höchste Sachsumme</HH.Setting.insurance.maxPropertySum>
+  <HH.Setting.insurance.maxPropertySum.Desc>Höchste Versicherungssumme einer Sachpolice.</HH.Setting.insurance.maxPropertySum.Desc>
+  <HH.Setting.insurance.negotiation>Verhandeln über Schäden erlauben</HH.Setting.insurance.negotiation>
+  <HH.Setting.insurance.negotiation.Desc>Schadensfälle lassen sich verhandeln (bis zu drei Runden). Im Standardzimmer kostet Verhandeln nie etwas.</HH.Setting.insurance.negotiation.Desc>
+  <HH.Setting.insurance.noticeDays>Kündigungsfrist (Tage)</HH.Setting.insurance.noticeDays>
+  <HH.Setting.insurance.noticeDays.Desc>Eine Kündigung wird zum ersten Quadrumwechsel wirksam, der mindestens so viele Tage nach der Einreichung liegt. Standardzimmer 3 Tage, Überbucht ein Quadrum, „Warum?“ ein Jahr.</HH.Setting.insurance.noticeDays.Desc>
+  <HH.Setting.insurance.pensionMaxWorkHours>Rente: erlaubte Arbeitsstunden pro Tag</HH.Setting.insurance.pensionMaxWorkHours>
+  <HH.Setting.insurance.pensionMaxWorkHours.Desc>Stunden pro Tag, die ein Rentner im Zeitplan auf Arbeit stellen darf. Beliebig, Freizeit, Schlafen und Meditation zählen als Freizeit.</HH.Setting.insurance.pensionMaxWorkHours.Desc>
+  <HH.Setting.insurance.pensionRule>Arbeitsregel für Rentner</HH.Setting.insurance.pensionRule>
+  <HH.Setting.insurance.pensionRule.Desc>Wer eine Tagesrente bezieht (Goldene Jahre, Gut genug oder Premium, ab 60), darf im Zeitplan nur wenige Stunden pro Tag arbeiten. Durchsetzen: Verstöße kosten die Rente (2.: die Rente dieses Zeitraums, 3.: der Anspruch). Nur warnen: Briefe und Alarm, keine Strafe. Aus: keine Regel.</HH.Setting.insurance.pensionRule.Desc>
+  <HH.Setting.insurance.requireResearch>Versicherung braucht Forschung</HH.Setting.insurance.requireResearch>
+  <HH.Setting.insurance.requireResearch.Desc>Policen werden mit den Forschungsprojekten SL_Insurance (Das Nötigste, Gut genug) und SL_Actuarial (Premium, Fernweh) freigeschaltet. Aus: alles ist sofort verfügbar.</HH.Setting.insurance.requireResearch.Desc>
+  <HH.Setting.insurance.retentionDialogs>Halteversuche</HH.Setting.insurance.retentionDialogs>
+  <HH.Setting.insurance.retentionDialogs.Desc>Wie oft Desmond Tally (Senior Retention Specialist) versucht, dir die Kündigung auszureden. Standardzimmer: ein ehrliches Angebot.</HH.Setting.insurance.retentionDialogs.Desc>
+  <HH.Setting.insurance.salesPressure>Verkaufsdruck</HH.Setting.insurance.salesPressure>
+  <HH.Setting.insurance.salesPressure.Desc>Wie hart Clawback Mutual verkauft: vorangekreuzte Zusatzleistungen, Halteangebote, Formularfehler, Upsell-Hinweise. Jeder Trick hat unten auch einen eigenen Schalter.</HH.Setting.insurance.salesPressure.Desc>
+  <HH.Setting.insurance.showStatusColumn>Versicherungsspalte in den Kolonistentabellen</HH.Setting.insurance.showStatusColumn>
+  <HH.Setting.insurance.showStatusColumn.Desc>Zeigt in der Zuweisungstabelle den Versicherungsstatus jedes Kolonisten (erst wenn die erste Police existiert).</HH.Setting.insurance.showStatusColumn.Desc>
+  <HH.Setting.insurance.showStatusTab>Versicherungsreiter bei Kolonisten</HH.Setting.insurance.showStatusTab>
+  <HH.Setting.insurance.showStatusTab.Desc>Fügt dem Inspektor von Kolonisten einen Versicherungsreiter hinzu (erst wenn die erste Police existiert).</HH.Setting.insurance.showStatusTab.Desc>
+  <HH.Setting.insurance.trick.badge>Trick: Siegel „Die meisten Kolonien wählen Premium“</HH.Setting.insurance.trick.badge>
+  <HH.Setting.insurance.trick.badge.Desc>Das Siegel auf der Premium-Spalte (und, aufdringlicher, das ausgegraute „Premium Plus“).</HH.Setting.insurance.trick.badge.Desc>
+  <HH.Setting.insurance.trick.formError>Trick: Formularfehler</HH.Setting.insurance.trick.formError>
+  <HH.Setting.insurance.trick.formError.Desc>Kündigungen, die mit einem Formularfehler zurückkommen.</HH.Setting.insurance.trick.formError.Desc>
+  <HH.Setting.insurance.trick.preTicked>Trick: vorangekreuzte Zusatzleistungen</HH.Setting.insurance.trick.preTicked>
+  <HH.Setting.insurance.trick.preTicked.Desc>Zusatzleistungen, die schon für dich angekreuzt sind (folgt dem Verkaufsdruck, immer oder nie).</HH.Setting.insurance.trick.preTicked.Desc>
+  <HH.Setting.insurance.trick.retention>Trick: Halteangebote</HH.Setting.insurance.trick.retention>
+  <HH.Setting.insurance.trick.retention.Desc>Halteversuche, wenn du kündigst.</HH.Setting.insurance.trick.retention.Desc>
+  <HH.Setting.insurance.trick.upsell>Trick: Upsell-Hinweise</HH.Setting.insurance.trick.upsell>
+  <HH.Setting.insurance.trick.upsell.Desc>Briefe, die mehr oder besseren Schutz nahelegen (nie in den fünf Tagen nach einem Todesfall).</HH.Setting.insurance.trick.upsell.Desc>
+  <HH.Setting.insurance.trickCap>Obergrenze für Verkaufstrick-Kosten</HH.Setting.insurance.trickCap>
+  <HH.Setting.insurance.trickCap.Desc>Alle Verkaufstricks zusammen dürfen höchstens diesen Anteil der Jahresprämien kosten; der Rest wird im Jahresbrief als „Kulanzgutschrift“ erstattet.</HH.Setting.insurance.trickCap.Desc>
+  <HH.Setting.insurance.waitingDays>Wartezeit (Tage)</HH.Setting.insurance.waitingDays>
+  <HH.Setting.insurance.waitingDays.Desc>Der Schutz beginnt nach so vielen Tagen („die beginnt, wenn der Schutz beginnt“). Schäden innerhalb der Wartezeit werden nicht gezahlt.</HH.Setting.insurance.waitingDays.Desc>
+  <HH.Setting.lottery.colonyFee>Annahmegebühr pro Los</HH.Setting.lottery.colonyFee>
+  <HH.Setting.lottery.colonyFee.Desc>Zusätzliches Silber pro Los, das du behältst (es erhöht den Preis, den Käufer sehen).</HH.Setting.lottery.colonyFee.Desc>
+  <HH.Setting.lottery.colonyInterval>Tage zwischen Kolonieziehungen</HH.Setting.lottery.colonyInterval>
+  <HH.Setting.lottery.colonyInterval.Desc>Alle so viele Tage eine Ziehung; der Jackpot wird übertragen.</HH.Setting.lottery.colonyInterval.Desc>
+  <HH.Setting.lottery.colonyJackpotCap>Obergrenze Koloniejackpot</HH.Setting.lottery.colonyJackpotCap>
+  <HH.Setting.lottery.colonyJackpotCap.Desc>Der Jackpot deiner Lotterie wird bis zu diesem Betrag übertragen.</HH.Setting.lottery.colonyJackpotCap.Desc>
+  <HH.Setting.lottery.colonyJackpotShare>Topfanteil: Jackpot</HH.Setting.lottery.colonyJackpotShare>
+  <HH.Setting.lottery.colonyJackpotShare.Desc>Anteil am Topf für 4 Richtige.</HH.Setting.lottery.colonyJackpotShare.Desc>
+  <HH.Setting.lottery.colonyOn>Kolonielotterie</HH.Setting.lottery.colonyOn>
+  <HH.Setting.lottery.colonyOn.Desc>Betreibe deine eigene Lotterie: Deine Gäste und die simulierten Spieler freundlicher Siedlungen kaufen Lose, du behältst, was nicht ausgezahlt wird.</HH.Setting.lottery.colonyOn.Desc>
+  <HH.Setting.lottery.colonyPrice>Kolonie-Lospreis</HH.Setting.lottery.colonyPrice>
+  <HH.Setting.lottery.colonyPrice.Desc>Preis eines Loses deiner eigenen Lotterie.</HH.Setting.lottery.colonyPrice.Desc>
+  <HH.Setting.lottery.colonyQuote>Kolonie-Auszahlungsquote</HH.Setting.lottery.colonyQuote>
+  <HH.Setting.lottery.colonyQuote.Desc>Anteil des Lospreis, der in den Topf geht. Der Rest gehört dir. Eine bessere Quote als bei der globalen Ziehung lockt mehr Käufer an.</HH.Setting.lottery.colonyQuote.Desc>
+  <HH.Setting.lottery.colonySecondShare>Topfanteil: 2. Rang</HH.Setting.lottery.colonySecondShare>
+  <HH.Setting.lottery.colonySecondShare.Desc>Anteil am Topf für 3 Richtige.</HH.Setting.lottery.colonySecondShare.Desc>
+  <HH.Setting.lottery.colonyThirdShare>Topfanteil: 3. Rang</HH.Setting.lottery.colonyThirdShare>
+  <HH.Setting.lottery.colonyThirdShare.Desc>Anteil am Topf für 2 Richtige.</HH.Setting.lottery.colonyThirdShare.Desc>
+  <HH.Setting.lottery.demandBase>Basis der Losnachfrage</HH.Setting.lottery.demandBase>
+  <HH.Setting.lottery.demandBase.Desc>Lose pro Person und Tag unter neutralen Bedingungen, die Grundlage der Nachfrageformel.</HH.Setting.lottery.demandBase.Desc>
+  <HH.Setting.lottery.globalInterval>Tage zwischen globalen Ziehungen</HH.Setting.lottery.globalInterval>
+  <HH.Setting.lottery.globalInterval.Desc>Alle so viele Tage eine Ziehung.</HH.Setting.lottery.globalInterval.Desc>
+  <HH.Setting.lottery.globalOn>Große Glitzerwelt-Ziehung</HH.Setting.lottery.globalOn>
+  <HH.Setting.lottery.globalOn.Desc>Die globale Lotterie: alle paar Tage eine Ziehung, Lose gibt es am Bankschalter.</HH.Setting.lottery.globalOn.Desc>
+  <HH.Setting.lottery.globalPrice>Globaler Lospreis</HH.Setting.lottery.globalPrice>
+  <HH.Setting.lottery.globalPrice.Desc>Preis eines Loses der globalen Ziehung.</HH.Setting.lottery.globalPrice.Desc>
+  <HH.Setting.lottery.globalQuote>Globale Auszahlungsquote</HH.Setting.lottery.globalQuote>
+  <HH.Setting.lottery.globalQuote.Desc>Anteil der Losverkäufe, der in die Preise geht (der Jackpot bekommt davon 40 %).</HH.Setting.lottery.globalQuote.Desc>
+  <HH.Setting.lottery.internationalScale>Simulierte Spieler ×</HH.Setting.lottery.internationalScale>
+  <HH.Setting.lottery.internationalScale.Desc>Vervielfacht die Lose, die die simulierten Spieler aller Siedlungen für die globale Ziehung kaufen.</HH.Setting.lottery.internationalScale.Desc>
+  <HH.Setting.lottery.jackpotCap>Obergrenze globaler Jackpot</HH.Setting.lottery.jackpotCap>
+  <HH.Setting.lottery.jackpotCap.Desc>Der Jackpot wird übertragen, bis er diesen Betrag erreicht.</HH.Setting.lottery.jackpotCap.Desc>
+  <HH.Setting.thrumbo.edgeShift>Lucky Thrumbo: Verschiebung des Hausvorteils</HH.Setting.thrumbo.edgeShift>
+  <HH.Setting.thrumbo.edgeShift.Desc>Prozentpunkte, die zum Hausvorteil jedes Lucky-Thrumbo-Spiels addiert werden (Basis: Spielautomat 8 %, Roulette 2,7 %, Blackjack nach den Regeln). 0 = die Standardvorteile; negative Werte sind zu deinen Gunsten. Folgt dem Schwierigkeitsregler.</HH.Setting.thrumbo.edgeShift.Desc>
+  <HH.Setting.thrumbo.maxBetCap>Lucky Thrumbo: Tischlimit, Obergrenze (Silber)</HH.Setting.thrumbo.maxBetCap>
+  <HH.Setting.thrumbo.maxBetCap.Desc>Nur bei aktivem Tischlimit: Kein Einsatz ist je höher als dieser Wert.</HH.Setting.thrumbo.maxBetCap.Desc>
+  <HH.Setting.thrumbo.maxBetFloor>Lucky Thrumbo: Tischlimit, Untergrenze (Silber)</HH.Setting.thrumbo.maxBetFloor>
+  <HH.Setting.thrumbo.maxBetFloor.Desc>Nur bei aktivem Tischlimit: Auch eine arme Kolonie darf pro Runde mindestens so viel setzen.</HH.Setting.thrumbo.maxBetFloor.Desc>
+  <HH.Setting.thrumbo.maxBetShare>Lucky Thrumbo: Tischlimit (Anteil am Nettovermögen)</HH.Setting.thrumbo.maxBetShare>
+  <HH.Setting.thrumbo.maxBetShare.Desc>Nur bei aktivem Tischlimit: Ein Einsatz darf höchstens diesen Anteil deines Nettovermögens betragen (Konto plus Silber zu Hause, minus Schulden), zwischen der Untergrenze und der Obergrenze unten.</HH.Setting.thrumbo.maxBetShare.Desc>
+  <HH.Setting.thrumbo.minBet>Lucky Thrumbo: kleinster Einsatz (Silber)</HH.Setting.thrumbo.minBet>
+  <HH.Setting.thrumbo.minBet.Desc>Der kleinste Einsatz, den der Lucky Thrumbo annimmt.</HH.Setting.thrumbo.minBet.Desc>
+  <HH.Setting.thrumbo.tableLimit>Lucky Thrumbo: Tischlimit</HH.Setting.thrumbo.tableLimit>
+  <HH.Setting.thrumbo.tableLimit.Desc>Wenn an, beträgt ein Einsatz höchstens einen Anteil deines Nettovermögens (die drei Einstellungen darunter). Aus: Du kannst alles setzen, was du hast.</HH.Setting.thrumbo.tableLimit.Desc>
+  <HH.Setting.underworld.exposureChance>Chance, dass ein ehrbarer Gast über das Hinterzimmer stolpert</HH.Setting.underworld.exposureChance>
+  <HH.Setting.underworld.exposureChance.Desc>Pro Prüfung (etwa alle 2 Stunden), solange ehrbare Gäste anwesend sind und das Hinterzimmer benutzt wurde. Folgt dem Schwierigkeitsregler.</HH.Setting.underworld.exposureChance.Desc>
+  <HH.Setting.underworld.fence.buyPercent>Hehler kauft zu</HH.Setting.underworld.fence.buyPercent>
+  <HH.Setting.underworld.fence.buyPercent.Desc>Anteil am Marktwert, den der Hehler für Diebesgut zahlt.</HH.Setting.underworld.fence.buyPercent.Desc>
+  <HH.Setting.underworld.fence.capital>Geldkassette des Hehlers</HH.Setting.underworld.fence.capital>
+  <HH.Setting.underworld.fence.capital.Desc>Der Hehler zahlt aus seiner eigenen Geldkassette. Er füllt sie aus der Kasse auf, und Überschuss geht zurück in die Kasse.</HH.Setting.underworld.fence.capital.Desc>
+  <HH.Setting.underworld.fence.exposureChance>Chance, dass der Besitzer es erfährt</HH.Setting.underworld.fence.exposureChance>
+  <HH.Setting.underworld.fence.exposureChance.Desc>Pro weiterverkauftem Diebesgut: Die Fraktion, der es gestohlen wurde, erfährt, wo es gelandet ist.</HH.Setting.underworld.fence.exposureChance.Desc>
+  <HH.Setting.underworld.fence.goodwillHit>Wohlwollensverlust bei Entdeckung</HH.Setting.underworld.fence.goodwillHit>
+  <HH.Setting.underworld.fence.goodwillHit.Desc>Vor der Schwierigkeitsgrenze deiner Stufe.</HH.Setting.underworld.fence.goodwillHit.Desc>
+  <HH.Setting.underworld.fence.sellPercent>Hehler verkauft zu</HH.Setting.underworld.fence.sellPercent>
+  <HH.Setting.underworld.fence.sellPercent.Desc>Anteil am Marktwert, den zwielichtige Käufer zahlen.</HH.Setting.underworld.fence.sellPercent.Desc>
+  <HH.Setting.underworld.gang.feeMax>Gebühr fürs Hinterzimmer (höchste)</HH.Setting.underworld.gang.feeMax>
+  <HH.Setting.underworld.gang.feeMin>Gebühr fürs Hinterzimmer (niedrigste)</HH.Setting.underworld.gang.feeMin>
+  <HH.Setting.underworld.gang.feeMin.Desc>Was ein Bandenmitglied für das Hinterzimmer zahlt.</HH.Setting.underworld.gang.feeMin.Desc>
+  <HH.Setting.underworld.gang.intervalDays>Tage zwischen Bandenbesuchen</HH.Setting.underworld.gang.intervalDays>
+  <HH.Setting.underworld.gang.intervalDays.Desc>Durchschnittliche Zeit zwischen Bandenbesuchen, sobald es Hinterzimmer, Kampfgrube oder Hehler gibt.</HH.Setting.underworld.gang.intervalDays.Desc>
+  <HH.Setting.underworld.gang.intimidateChance>Chance, dass eine Bande Schutzgeld verlangt</HH.Setting.underworld.gang.intimidateChance>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>Folgt dem Schwierigkeitsregler; im Standardzimmer und leichter wird dir nie etwas aufgezwungen außer einem Dialog, den du ablehnen kannst.</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.prisonAccess>Banden dürfen das Gefängnis besuchen</HH.Setting.underworld.gang.prisonAccess>
+  <HH.Setting.underworld.gang.prisonAccess.Desc>Erlaubt Bandengästen die Zellenführung (Befragung von Gefangenen). Standardmäßig aus; Gefängnisse sind sonst für jeden Gast gesperrt.</HH.Setting.underworld.gang.prisonAccess.Desc>
+  <HH.Setting.underworld.gang.protectionFee>Geforderte Schutzgeldsumme</HH.Setting.underworld.gang.protectionFee>
+  <HH.Setting.underworld.gang.sizeMax>Größte Bande</HH.Setting.underworld.gang.sizeMax>
+  <HH.Setting.underworld.gang.tourFee>Gebühr der Zellenführung</HH.Setting.underworld.gang.tourFee>
+  <HH.Setting.underworld.gang.tourFee.Desc>Zahlt ein Bandenmitglied dafür, eine Stunde lang einen Gefangenen zu befragen.</HH.Setting.underworld.gang.tourFee.Desc>
+  <HH.Setting.underworld.hunt.feeMax>Jagdgebühr (höchste)</HH.Setting.underworld.hunt.feeMax>
+  <HH.Setting.underworld.hunt.feeMin>Jagdgebühr (niedrigste)</HH.Setting.underworld.hunt.feeMin>
+  <HH.Setting.underworld.hunt.intervalDays>Tage zwischen Jagdgesellschaften</HH.Setting.underworld.hunt.intervalDays>
+  <HH.Setting.underworld.hunt.quarryCount>Beute pro Jagd</HH.Setting.underworld.hunt.quarryCount>
+  <HH.Setting.underworld.hunt.quarryCount.Desc>Tiere, welche die Gesellschaft ins Jagdgebiet mitbringt.</HH.Setting.underworld.hunt.quarryCount.Desc>
+  <HH.Setting.underworld.hunt.quarryHours>Stunden, die ein menschliches Wild überleben muss</HH.Setting.underworld.hunt.quarryHours>
+  <HH.Setting.underworld.hunt.quarryHours.Desc>Ein Gefangener, der so lange überlebt oder die Zaunlinie erreicht, ist frei.</HH.Setting.underworld.hunt.quarryHours.Desc>
+  <HH.Setting.underworld.lounge.price>Preis einer Sitzung</HH.Setting.underworld.lounge.price>
+  <HH.Setting.underworld.lounge.price.Desc>Was ein Gast in der Drogenlounge zahlt. Gäste nehmen nur, was ihre Ideologie erlaubt.</HH.Setting.underworld.lounge.price.Desc>
+  <HH.Setting.underworld.mode>Wie die Unterwelt erscheint</HH.Setting.underworld.mode>
+  <HH.Setting.underworld.mode.Desc>Im Spiel entdecken: Ein zwielichtiger Fremder fragt, ob du ein Hinterzimmer hast, und erst ein Ja öffnet die dunkle Seite. Immer an: Sie ist von Anfang an offen. (Aus ist der Modulschalter; die Inhaltsstärke Gemütlich blendet sie ganz aus.)</HH.Setting.underworld.mode.Desc>
+  <HH.Setting.underworld.organ.orderDays>Tage bis zur Lieferung einer Bestellung</HH.Setting.underworld.organ.orderDays>
+  <HH.Setting.underworld.organ.orderPremium>Aufpreis auf bestellte Organe</HH.Setting.underworld.organ.orderPremium>
+  <HH.Setting.underworld.organ.orderPremium.Desc>Nur grimmig: Ein fertiges Organ, das innerhalb der Frist geliefert wird, bringt das Soundsovielfache des normalen Preises.</HH.Setting.underworld.organ.orderPremium.Desc>
+  <HH.Setting.underworld.organ.priceFactor>Preis für Organe</HH.Setting.underworld.organ.priceFactor>
+  <HH.Setting.underworld.organ.priceFactor.Desc>Anteil am Marktwert, den die anonymen Käufer zahlen.</HH.Setting.underworld.organ.priceFactor.Desc>
+  <HH.Setting.underworld.pit.betMax>Höchster Einsatz</HH.Setting.underworld.pit.betMax>
+  <HH.Setting.underworld.pit.betMax.Desc>Gäste setzen höchstens so viel Silber (und nie mehr als ein Drittel ihres Budgets).</HH.Setting.underworld.pit.betMax.Desc>
+  <HH.Setting.underworld.pit.betMin>Niedrigster Einsatz</HH.Setting.underworld.pit.betMin>
+  <HH.Setting.underworld.pit.betMin.Desc>Gäste setzen mindestens so viel Silber.</HH.Setting.underworld.pit.betMin.Desc>
+  <HH.Setting.underworld.pit.fairRatio>Fairness der Paarung</HH.Setting.underworld.pit.fairRatio>
+  <HH.Setting.underworld.pit.fairRatio.Desc>Der stärkere Kämpfer darf höchstens so viel Mal die Kampfkraft des schwächeren haben.</HH.Setting.underworld.pit.fairRatio.Desc>
+  <HH.Setting.underworld.pit.houseCut>Anteil des Hauses an den Wetten</HH.Setting.underworld.pit.houseCut>
+  <HH.Setting.underworld.pit.houseCut.Desc>Der Anteil am Wettpool, den das Haus behält (Totalisator).</HH.Setting.underworld.pit.houseCut.Desc>
+  <HH.Setting.underworld.pit.intervalHours>Stunden zwischen den Kämpfen</HH.Setting.underworld.pit.intervalHours>
+  <HH.Setting.underworld.pit.intervalHours.Desc>Eine Kampfgrube mit genug Kämpfern und Zuschauern startet in diesem Abstand einen Kampf.</HH.Setting.underworld.pit.intervalHours.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks>Längster Kampf (Ticks)</HH.Setting.underworld.pit.maxBoutTicks>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>Ein Kampf, den in dieser Zeit niemand gewinnt, endet unentschieden: Alle Einsätze werden zurückgegeben.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.yieldHealth>Aufgabe bei Gesundheit</HH.Setting.underworld.pit.yieldHealth>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>Ein Kampf endet, wenn ein Kämpfer unter diesen Gesundheitsanteil fällt, außer er geht auf Leben und Tod.</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.scandalCooldownDays>Tage zwischen Skandalen</HH.Setting.underworld.scandalCooldownDays>
+  <HH.Setting.underworld.scandalCooldownDays.Desc>Höchstens ein Skandal pro Karte in dieser Anzahl Tage.</HH.Setting.underworld.scandalCooldownDays.Desc>
+  <HH.Setting.underworld.smuggler.inspectChance>Kontrollwahrscheinlichkeit</HH.Setting.underworld.smuggler.inspectChance>
+  <HH.Setting.underworld.smuggler.inspectChance.Desc>Pro Landung, wenn es eine imperiale Behörde gibt.</HH.Setting.underworld.smuggler.inspectChance.Desc>
+  <HH.Setting.underworld.smuggler.intervalDays>Tage zwischen Landungen</HH.Setting.underworld.smuggler.intervalDays>
+  <HH.Setting.underworld.smuggler.intervalDays.Desc>Durchschnittliche Zeit zwischen nächtlichen Landungen an einem Schmugglerdock.</HH.Setting.underworld.smuggler.intervalDays.Desc>
+  <HH.Setting.underworld.smuggler.maxValue>Größte Kiste</HH.Setting.underworld.smuggler.maxValue>
+  <HH.Setting.underworld.smuggler.maxValue.Desc>Marktwert der größten angebotenen Kiste.</HH.Setting.underworld.smuggler.maxValue.Desc>
+  <HH.Setting.underworld.smuggler.priceFactor>Preis für Schmuggelware</HH.Setting.underworld.smuggler.priceFactor>
+  <HH.Setting.underworld.smuggler.priceFactor.Desc>Anteil am Marktwert, den du für eine Kiste zahlst.</HH.Setting.underworld.smuggler.priceFactor.Desc>
+  <HH.Setting.underworld.strangerCooldownDays>Tage, bis er wieder fragt</HH.Setting.underworld.strangerCooldownDays>
+  <HH.Setting.underworld.strangerCooldownDays.Desc>Nach „Kein Interesse“ wartet der Fremde so viele Tage, bevor er erneut fragt.</HH.Setting.underworld.strangerCooldownDays.Desc>
+  <HH.Setting.underworld.strangerMaxAsks>Wie oft er fragt</HH.Setting.underworld.strangerMaxAsks>
+  <HH.Setting.underworld.strangerMaxAsks.Desc>Nach so vielen Absagen gibt der Fremde für immer auf.</HH.Setting.underworld.strangerMaxAsks.Desc>
+  <HH.Setting.underworld.strangerMaxWhispers>Höchster Flüsterruf für den Fremden</HH.Setting.underworld.strangerMaxWhispers>
+  <HH.Setting.underworld.strangerMaxWhispers.Desc>Er taucht nur auf, solange dein Flüsterruf auf oder unter diesem Wert liegt.</HH.Setting.underworld.strangerMaxWhispers.Desc>
+  <HH.Setting.underworld.strangerMeanDays>Tage bis zum Auftauchen des Fremden</HH.Setting.underworld.strangerMeanDays>
+  <HH.Setting.underworld.strangerMeanDays.Desc>Durchschnittliche Anzahl Tage zwischen den Zeitpunkten, zu denen der Fremde kommen darf (sobald die Kolonie Gäste oder ein Geschäft hat und dein Flüsterruf niedrig ist).</HH.Setting.underworld.strangerMeanDays.Desc>
+  <HH.Setting.underworld.whispers.fence>Flüsterruf pro Hehlergeschäft</HH.Setting.underworld.whispers.fence>
+  <HH.Setting.underworld.whispers.gang>Flüsterruf pro Banden-Besuch</HH.Setting.underworld.whispers.gang>
+  <HH.Setting.underworld.whispers.hunt>Flüsterruf pro Jagd</HH.Setting.underworld.whispers.hunt>
+  <HH.Setting.underworld.whispers.lounge>Flüsterruf pro Sitzung in der Drogenlounge</HH.Setting.underworld.whispers.lounge>
+  <HH.Setting.underworld.whispers.organ>Flüsterruf pro Organverkauf</HH.Setting.underworld.whispers.organ>
+  <HH.Setting.underworld.whispers.pit>Flüsterruf pro Kampf</HH.Setting.underworld.whispers.pit>
+  <HH.Setting.underworld.whispers.tour>Flüsterruf pro Führung durch die Arrestzellen</HH.Setting.underworld.whispers.tour>
+  <HH.Setting.underworld.whispersDecay>Abbau des Flüsterrufs je 15 Tage</HH.Setting.underworld.whispersDecay>
+  <HH.Setting.underworld.whispersDecay.Desc>Der Flüsterruf verliert alle 15 Tage diesen Anteil seines Werts.</HH.Setting.underworld.whispersDecay.Desc>
+  <HH.SettingCat.Account>Konto</HH.SettingCat.Account>
+  <HH.SettingCat.Addiction>Sucht</HH.SettingCat.Addiction>
+  <HH.SettingCat.Arrivals>Ankünfte</HH.SettingCat.Arrivals>
+  <HH.SettingCat.Cinema>Kino</HH.SettingCat.Cinema>
+  <HH.SettingCat.Collections>Sammlungen</HH.SettingCat.Collections>
+  <HH.SettingCat.Colonists>Kolonisten</HH.SettingCat.Colonists>
+  <HH.SettingCat.Compatibility>Kompatibilität</HH.SettingCat.Compatibility>
+  <HH.SettingCat.DLCandtraits>DLC und Eigenschaften</HH.SettingCat.DLCandtraits>
+  <HH.SettingCat.Difficulty>Schwierigkeit</HH.SettingCat.Difficulty>
+  <HH.SettingCat.Discovery>Entdeckung</HH.SettingCat.Discovery>
+  <HH.SettingCat.Druglounge>Drogenlounge</HH.SettingCat.Druglounge>
+  <HH.SettingCat.Effects>Effekte</HH.SettingCat.Effects>
+  <HH.SettingCat.Factionprojects>Fraktionsprojekte</HH.SettingCat.Factionprojects>
+  <HH.SettingCat.Faithandmoney>Glaube und Geld</HH.SettingCat.Faithandmoney>
+  <HH.SettingCat.Fees>Gebühren</HH.SettingCat.Fees>
+  <HH.SettingCat.Fence>Hehler</HH.SettingCat.Fence>
+  <HH.SettingCat.Fightpit>Kampfgrube</HH.SettingCat.Fightpit>
+  <HH.SettingCat.Fun>Spaß</HH.SettingCat.Fun>
+  <HH.SettingCat.Furniture>Möbel</HH.SettingCat.Furniture>
+  <HH.SettingCat.Gallery>Galerie</HH.SettingCat.Gallery>
+  <HH.SettingCat.Gangs>Banden</HH.SettingCat.Gangs>
+  <HH.SettingCat.General>Allgemein</HH.SettingCat.General>
+  <HH.SettingCat.Guestbehaviour>Gästeverhalten</HH.SettingCat.Guestbehaviour>
+  <HH.SettingCat.Guests>Gäste</HH.SettingCat.Guests>
+  <HH.SettingCat.Handling>Handhabung</HH.SettingCat.Handling>
+  <HH.SettingCat.Help>Hilfe</HH.SettingCat.Help>
+  <HH.SettingCat.Honorsystem>Vertrauenskasse</HH.SettingCat.Honorsystem>
+  <HH.SettingCat.Houseodds>Quoten des Hauses</HH.SettingCat.Houseodds>
+  <HH.SettingCat.InsuranceClawbackMutual>Versicherung (Clawback Mutual)</HH.SettingCat.InsuranceClawbackMutual>
+  <HH.SettingCat.Interestprofitability>Zinsen &amp; Rentabilität</HH.SettingCat.Interestprofitability>
+  <HH.SettingCat.Interface>Oberfläche</HH.SettingCat.Interface>
+  <HH.SettingCat.Investments>Investitionen</HH.SettingCat.Investments>
+  <HH.SettingCat.Kitchen>Küche</HH.SettingCat.Kitchen>
+  <HH.SettingCat.Limits>Grenzen</HH.SettingCat.Limits>
+  <HH.SettingCat.Loans>Kredite</HH.SettingCat.Loans>
+  <HH.SettingCat.Lookandsound>Optik und Ton</HH.SettingCat.Lookandsound>
+  <HH.SettingCat.Lottery>Lotterie</HH.SettingCat.Lottery>
+  <HH.SettingCat.Luck>Glück</HH.SettingCat.Luck>
+  <HH.SettingCat.LuckyThrumbo>Lucky-Thrumbo-Casino</HH.SettingCat.LuckyThrumbo>
+  <HH.SettingCat.Market>Markt</HH.SettingCat.Market>
+  <HH.SettingCat.Money>Geld</HH.SettingCat.Money>
+  <HH.SettingCat.Music>Musik</HH.SettingCat.Music>
+  <HH.SettingCat.Nobles>Adel</HH.SettingCat.Nobles>
+  <HH.SettingCat.OmenExchange>Omen-Börse</HH.SettingCat.OmenExchange>
+  <HH.SettingCat.Openinghours>Öffnungszeiten</HH.SettingCat.Openinghours>
+  <HH.SettingCat.Organclinic>Organklinik</HH.SettingCat.Organclinic>
+  <HH.SettingCat.Park>Park</HH.SettingCat.Park>
+  <HH.SettingCat.Prices>Preise</HH.SettingCat.Prices>
+  <HH.SettingCat.Randomness>Zufall</HH.SettingCat.Randomness>
+  <HH.SettingCat.Rehab>Reha</HH.SettingCat.Rehab>
+  <HH.SettingCat.Reports>Berichte</HH.SettingCat.Reports>
+  <HH.SettingCat.Reputation>Ruf</HH.SettingCat.Reputation>
+  <HH.SettingCat.Research>Forschung</HH.SettingCat.Research>
+  <HH.SettingCat.Salon>Salon</HH.SettingCat.Salon>
+  <HH.SettingCat.Sauna>Sauna</HH.SettingCat.Sauna>
+  <HH.SettingCat.Seats>Sitzplätze</HH.SettingCat.Seats>
+  <HH.SettingCat.Security>Sicherheit</HH.SettingCat.Security>
+  <HH.SettingCat.Services>Dienstleistungen</HH.SettingCat.Services>
+  <HH.SettingCat.Sessions>Sitzungen</HH.SettingCat.Sessions>
+  <HH.SettingCat.Setup>Einrichtung</HH.SettingCat.Setup>
+  <HH.SettingCat.Shrines>Schreine</HH.SettingCat.Shrines>
+  <HH.SettingCat.Smugglersdock>Schmugglerdock</HH.SettingCat.Smugglersdock>
+  <HH.SettingCat.Sound>Ton</HH.SettingCat.Sound>
+  <HH.SettingCat.Specialswitches>Sonderschalter</HH.SettingCat.Specialswitches>
+  <HH.SettingCat.Staffing>Personal</HH.SettingCat.Staffing>
+  <HH.SettingCat.Stay>Aufenthalt</HH.SettingCat.Stay>
+  <HH.SettingCat.Tables>Tische</HH.SettingCat.Tables>
+  <HH.SettingCat.Taxi>Taxi</HH.SettingCat.Taxi>
+  <HH.SettingCat.Texts>Texte</HH.SettingCat.Texts>
+  <HH.SettingCat.TheHunt>Die Jagd</HH.SettingCat.TheHunt>
+  <HH.SettingCat.Wealthandmood>Wohlstand und Stimmung</HH.SettingCat.Wealthandmood>
+  <HH.SettingCat.Whispers>Gerüchte</HH.SettingCat.Whispers>
+  <HH.SettingCat.Wing>Flügel</HH.SettingCat.Wing>
+</LanguageData>

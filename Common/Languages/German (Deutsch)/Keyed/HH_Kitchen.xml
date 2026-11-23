@@ -2,8 +2,6 @@
 <LanguageData>
   <HH.Kitchen.Missing>Fehlt: {0}</HH.Kitchen.Missing>
   <HH.Kitchen.RecipeInfo>Geräte: {0}. Schritte: {1}.</HH.Kitchen.RecipeInfo>
-  <HH.Kitchen.Finishing>ein letzter Schliff (Milch, Eier, Schokolade, Bier, Beeren oder Pilze)</HH.Kitchen.Finishing>
-  <HH.Kitchen.Finishing2>ein zweiter letzter Schliff (Bier, Beeren oder Pilze)</HH.Kitchen.Finishing2>
   <HH.Kitchen.Inspiration>Inspiration: {0}</HH.Kitchen.Inspiration>
   <HH.Kitchen.Cuisine>Küche: {0}</HH.Kitchen.Cuisine>
   <HH.Kitchen.Cooked>Gekocht an: {0} ({1})</HH.Kitchen.Cooked>
@@ -125,4 +123,9 @@
   <HH.Kitchen.NoNeighbours>Kein anderes Küchengerät in Reichweite.</HH.Kitchen.NoNeighbours>
   <HH.Kitchen.Neighbours>In Reichweite: {0}</HH.Kitchen.Neighbours>
   <HH.Kitchen.FreshHours>Frisch für {0} Std.</HH.Kitchen.FreshHours>
+  <HH.Kitchen.FinishingTouch>ein letzter Schliff ({0})</HH.Kitchen.FinishingTouch>
+  <HH.Kitchen.FinishingTouch2>ein zweiter letzter Schliff ({0})</HH.Kitchen.FinishingTouch2>
+  <HH.Kitchen.Or>oder</HH.Kitchen.Or>
+  <HH.Setting.kitchen.cookSounds>Koch- und Essgeräusche</HH.Setting.kitchen.cookSounds>
+  <HH.Setting.kitchen.cookSounds.Desc>Jede Zubereitungsart (Schneiden, Köcheln, Grillen, Backen, Braten, Dämpfen, Kneten, Räuchern, Kühlen) hat ihr eigenes Geräusch und einen kleinen Effekt, fertige feine Gerichte erklingen mit einem Signal, und gute Teller bringen eine fröhliche Reaktion. Aus: das Vanilla-Bratgeräusch für alles.</HH.Setting.kitchen.cookSounds.Desc>
 </LanguageData>

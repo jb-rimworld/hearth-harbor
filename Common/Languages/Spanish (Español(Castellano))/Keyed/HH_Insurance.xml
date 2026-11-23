@@ -285,4 +285,172 @@ Por cuadrante: {1}</HH.Ins.UI.Price.Tip>
   <HH.Enum.TrickMode.Follows>Según la presión comercial</HH.Enum.TrickMode.Follows>
   <HH.Enum.TrickMode.On>Siempre activo</HH.Enum.TrickMode.On>
   <HH.Enum.TrickMode.Off>Desactivado</HH.Enum.TrickMode.Off>
+  <HH.Ins.Btn.FillForm>Rellenar el formulario de reclamación</HH.Ins.Btn.FillForm>
+  <HH.Ins.Bulk.All>Todas</HH.Ins.Bulk.All>
+  <HH.Ins.Bulk.Colony>toda la colonia</HH.Ins.Bulk.Colony>
+  <HH.Ins.Bulk.Confirm>¿Firmar {0} pólizas ahora? Primas iniciales en total: {1}. Después {2} cada {3} días. Cada póliza se puede seguir cancelando por separado.</HH.Ins.Bulk.Confirm>
+  <HH.Ins.Bulk.Done>{0} de {1} pólizas firmadas.</HH.Ins.Bulk.Done>
+  <HH.Ins.Bulk.Lead>Marca las pólizas, elige nivel y suma, decide a quién cubre y Clawback Mutual firma todo de una vez. Recibes una carta resumen en lugar de una por póliza. El periodo de carencia empieza por póliza.</HH.Ins.Bulk.Lead>
+  <HH.Ins.Bulk.NoMoney>no hay dinero suficiente para la prima inicial</HH.Ins.Bulk.NoMoney>
+  <HH.Ins.Bulk.NoRiders>Aquí no hay complementos marcados de antemano. El descuento por paquete crece con cada póliza (como máximo {0} de descuento).</HH.Ins.Bulk.NoRiders>
+  <HH.Ins.Bulk.None>Ninguno</HH.Ins.Bulk.None>
+  <HH.Ins.Bulk.NothingToSign>Nada que firmar todavía: marca una póliza y al menos un colono.</HH.Ins.Bulk.NothingToSign>
+  <HH.Ins.Bulk.PerPerson>por colono</HH.Ins.Bulk.PerPerson>
+  <HH.Ins.Bulk.Policies>Pólizas</HH.Ins.Bulk.Policies>
+  <HH.Ins.Bulk.Sign>Firmar {0} pólizas</HH.Ins.Bulk.Sign>
+  <HH.Ins.Bulk.Spendable>Disponible: {0}</HH.Ins.Bulk.Spendable>
+  <HH.Ins.Bulk.Stopped>El dinero se acabó antes del final; el resto no se ha firmado.</HH.Ins.Bulk.Stopped>
+  <HH.Ins.Bulk.SumPerHead>Suma por colono: {0}</HH.Ins.Bulk.SumPerHead>
+  <HH.Ins.Bulk.Summary>{0} pólizas por firmar. Primas iniciales: {1}. Después {2} cada {3} días.</HH.Ins.Bulk.Summary>
+  <HH.Ins.Bulk.Title>Cubrir a todos</HH.Ins.Bulk.Title>
+  <HH.Ins.Bulk.TooExpensive>Solo tienes {0} disponibles: la lista se firma hasta donde alcance el dinero.</HH.Ins.Bulk.TooExpensive>
+  <HH.Ins.Bulk.Who>Colonos</HH.Ins.Bulk.Who>
+  <HH.Ins.Cancel.Step>Paso {0} de {1}</HH.Ins.Cancel.Step>
+  <HH.Ins.Change.AlreadyPending>Ya hay un cambio presentado. Retíralo primero.</HH.Ins.Change.AlreadyPending>
+  <HH.Ins.Change.Apply>Presentar cambio</HH.Ins.Change.Apply>
+  <HH.Ins.Change.CancelPending>Esta póliza se está cancelando. Retira primero la cancelación.</HH.Ins.Change.CancelPending>
+  <HH.Ins.Change.CannotPayFee>No se pudo cobrar la tasa de cambio de {0}.</HH.Ins.Change.CannotPayFee>
+  <HH.Ins.Change.Close>Cerrar</HH.Ins.Change.Close>
+  <HH.Ins.Change.Filed>Cambio presentado. Surte efecto en {0}.</HH.Ins.Change.Filed>
+  <HH.Ins.Change.Lead>Cambia el nivel, la suma o los complementos de esta póliza vigente. Las nuevas condiciones empiezan con la próxima facturación y la prima se recalcula. La cancelación sigue como estaba.</HH.Ins.Change.Lead>
+  <HH.Ins.Change.Limit>Esta póliza solo puede cambiarse {0} vez/veces por cuadrante.</HH.Ins.Change.Limit>
+  <HH.Ins.Change.NoChange>Todavía no hay cambios.</HH.Ins.Change.NoChange>
+  <HH.Ins.Change.NotActive>Esta póliza no está activa.</HH.Ins.Change.NotActive>
+  <HH.Ins.Change.Part.RiderOff>sin el complemento {0}</HH.Ins.Change.Part.RiderOff>
+  <HH.Ins.Change.Part.RiderOn>complemento {0}</HH.Ins.Change.Part.RiderOn>
+  <HH.Ins.Change.Part.Riders>otros complementos</HH.Ins.Change.Part.Riders>
+  <HH.Ins.Change.Part.Sum>suma de {0} a {1}</HH.Ins.Change.Part.Sum>
+  <HH.Ins.Change.Part.Tier>nivel de {0} a {1}</HH.Ins.Change.Part.Tier>
+  <HH.Ins.Change.Riders>Complementos</HH.Ins.Change.Riders>
+  <HH.Ins.Change.Sum.Cheaper>Eso son {0} menos por facturación.</HH.Ins.Change.Sum.Cheaper>
+  <HH.Ins.Change.Sum.Dearer>Eso son {0} más por facturación.</HH.Ins.Change.Sum.Dearer>
+  <HH.Ins.Change.Sum.Discount>Tu descuento de fidelidad vigente se mantiene.</HH.Ins.Change.Sum.Discount>
+  <HH.Ins.Change.Sum.Fee>Tasa de cambio: {0}, se cobra al presentar.</HH.Ins.Change.Sum.Fee>
+  <HH.Ins.Change.Sum.Lower>Reducir la cobertura no tiene periodo de carencia.</HH.Ins.Change.Sum.Lower>
+  <HH.Ins.Change.Sum.Premium>Prima: ahora {0}, después {1}</HH.Ins.Change.Sum.Premium>
+  <HH.Ins.Change.Sum.Title>Qué significa</HH.Ins.Change.Sum.Title>
+  <HH.Ins.Change.Sum.Wait>Periodo de carencia tras la mejora: {0} días. Los sucesos durante ese periodo se evalúan aún con la cobertura anterior.</HH.Ins.Change.Sum.Wait>
+  <HH.Ins.Change.Sum.When>Surte efecto en {0}.</HH.Ins.Change.Sum.When>
+  <HH.Ins.Change.SumRange>Rango permitido: de {0} a {1}.</HH.Ins.Change.SumRange>
+  <HH.Ins.Change.Title>Cambiar {0}</HH.Ins.Change.Title>
+  <HH.Ins.Change.TooOld>La cobertura de una pensión no puede subirse a la edad de jubilación.</HH.Ins.Change.TooOld>
+  <HH.Ins.End.Pension>derecho a pensión perdido</HH.Ins.End.Pension>
+  <HH.Ins.Form.AiNote>Clawback Mutual puede responder a tu declaración personalmente. Eso no cambia ni el importe ni la decisión.</HH.Ins.Form.AiNote>
+  <HH.Ins.Form.Closed>Este plazo de presentación está cerrado.</HH.Ins.Form.Closed>
+  <HH.Ins.Form.Deadline>Plazo: quedan {0} para presentar esta reclamación.</HH.Ins.Form.Deadline>
+  <HH.Ins.Form.Event>Qué ha pasado: {0}.\nPóliza: {1} ({2}).</HH.Ins.Form.Event>
+  <HH.Ins.Form.Items>Afectado: {0}. Valor: {1}.</HH.Ins.Form.Items>
+  <HH.Ins.Form.Later>Más tarde</HH.Ins.Form.Later>
+  <HH.Ins.Form.NoAiNote>Tu declaración se guarda con la reclamación. La decisión no depende de ella; solo cuenta la elección del pago.</HH.Ins.Form.NoAiNote>
+  <HH.Ins.Form.Nobody>nadie</HH.Ins.Form.Nobody>
+  <HH.Ins.Form.Payout.Materials>Materiales por cápsula</HH.Ins.Form.Payout.Materials>
+  <HH.Ins.Form.Payout.Silver>Plata</HH.Ins.Form.Payout.Silver>
+  <HH.Ins.Form.Placeholder>Describe lo ocurrido con tus propias palabras (opcional).</HH.Ins.Form.Placeholder>
+  <HH.Ins.Form.Sent>Reclamación presentada ({0}).</HH.Ins.Form.Sent>
+  <HH.Ins.Form.Statement>Tu declaración</HH.Ins.Form.Statement>
+  <HH.Ins.Form.Submit>Presentar reclamación</HH.Ins.Form.Submit>
+  <HH.Ins.Form.Title>Formulario de reclamación: {0}</HH.Ins.Form.Title>
+  <HH.Ins.Form.Value>Valor de la pérdida: {0}.</HH.Ins.Form.Value>
+  <HH.Ins.Letter.Batch.Body>Clawback Mutual da la bienvenida a {0} pólizas nuevas de una vez.</HH.Ins.Letter.Batch.Body>
+  <HH.Ins.Letter.Batch.Skipped>No se pudieron firmar {0}:</HH.Ins.Letter.Batch.Skipped>
+  <HH.Ins.Letter.Batch.Title>{0} pólizas firmadas</HH.Ins.Letter.Batch.Title>
+  <HH.Ins.Letter.Batch.Total>Según la facturación: {0} cada {1} días. Las primeras primas se cobraron de {2}.</HH.Ins.Letter.Batch.Total>
+  <HH.Ins.Letter.Change.Done.Body>{0} funciona ya como {1} con una suma de {2}. Prima: {3}.</HH.Ins.Letter.Change.Done.Body>
+  <HH.Ins.Letter.Change.Done.Title>Cambio en vigor: {0}</HH.Ins.Letter.Change.Done.Title>
+  <HH.Ins.Letter.Change.Done.Wait>Los sucesos durante los próximos {0} siguen valorándose con la cobertura anterior.</HH.Ins.Letter.Change.Done.Wait>
+  <HH.Ins.Letter.Change.Fee>Gastos de gestión: {0}.</HH.Ins.Letter.Change.Fee>
+  <HH.Ins.Letter.Change.Filed.Body>Clawback Mutual ha recibido tu solicitud de cambio de {0}: {1}.\nEntra en vigor en {2}; la prima se recalcula entonces.</HH.Ins.Letter.Change.Filed.Body>
+  <HH.Ins.Letter.Change.Filed.Title>Cambio solicitado: {0}</HH.Ins.Letter.Change.Filed.Title>
+  <HH.Ins.Letter.Change.Wait>Periodo de espera tras la mejora: {0} días.</HH.Ins.Letter.Change.Wait>
+  <HH.Ins.Letter.Decision.Statement>En relación con tu declaración: {0}</HH.Ins.Letter.Decision.Statement>
+  <HH.Ins.Letter.Expired.Body>El plazo para la reclamación {0} ({1}) venció sin formulario. Clawback Mutual no lamenta nada.</HH.Ins.Letter.Expired.Body>
+  <HH.Ins.Letter.Expired.Title>Reclamación caducada: {0}</HH.Ins.Letter.Expired.Title>
+  <HH.Ins.Letter.Filed.Statement>Tu declaración: «{0}»</HH.Ins.Letter.Filed.Statement>
+  <HH.Ins.Letter.Possible.Body>{0} es un suceso asegurado según {1}. Puedes presentar una reclamación.</HH.Ins.Letter.Possible.Body>
+  <HH.Ins.Letter.Possible.Deadline>Plazo: {0} a partir de ahora. Después, la reclamación caduca.</HH.Ins.Letter.Possible.Deadline>
+  <HH.Ins.Letter.Possible.Death>{0} ha fallecido. {1} podría pagar. Puedes presentar una reclamación.</HH.Ins.Letter.Possible.Death>
+  <HH.Ins.Letter.Possible.How>Abre el formulario de reclamación, marca unas casillas, escribe una frase si quieres y envíalo. El resultado se decide como siempre.</HH.Ins.Letter.Possible.How>
+  <HH.Ins.Letter.Possible.Title>Reclamación posible: {0}</HH.Ins.Letter.Possible.Title>
+  <HH.Ins.Letter.Possible.Waiting>El suceso ocurrió dentro del periodo de carencia de la póliza. El departamento de reclamaciones lo tendrá en cuenta.</HH.Ins.Letter.Possible.Waiting>
+  <HH.Ins.Letter.Reminder.Body>La reclamación por {0} debe presentarse en {1}.</HH.Ins.Letter.Reminder.Body>
+  <HH.Ins.Letter.Reminder.Title>Se acerca el plazo: {0}</HH.Ins.Letter.Reminder.Title>
+  <HH.Ins.Log.BulkSigned>Compra en bloque: {0} de {1} pólizas firmadas.</HH.Ins.Log.BulkSigned>
+  <HH.Ins.Log.ChangeApplied>{0} cambiado: {1}, suma {2}.</HH.Ins.Log.ChangeApplied>
+  <HH.Ins.Log.ChangeFiled>{0}: cambio solicitado, efectivo en {1}.</HH.Ins.Log.ChangeFiled>
+  <HH.Ins.Log.ChangeWithdrawn>{0}: cambio retirado.</HH.Ins.Log.ChangeWithdrawn>
+  <HH.Ins.Log.OppExpired>Plazo de presentación cerrado sin reclamación: {0} ({1}).</HH.Ins.Log.OppExpired>
+  <HH.Ins.Log.OppFiled>{0}: formulario de reclamación presentado ({1} reclamación/es).</HH.Ins.Log.OppFiled>
+  <HH.Ins.Log.OppOpened>{0}: suceso asegurado, reclamación posible durante {1} días.</HH.Ins.Log.OppOpened>
+  <HH.Ins.Log.PensionStrike>Norma de pensión: {0} tiene {1} falta(s).</HH.Ins.Log.PensionStrike>
+  <HH.Ins.Neg.OddsTip>Probabilidad de este enfoque: {0}</HH.Ins.Neg.OddsTip>
+  <HH.Ins.Neg.RoundOf>Ronda {0} de {1}</HH.Ins.Neg.RoundOf>
+  <HH.Ins.Neg.Why.Approved>Ya aprobada: nada que negociar.</HH.Ins.Neg.Why.Approved>
+  <HH.Ins.Neg.Why.Closed>La negociación está cerrada.</HH.Ins.Neg.Why.Closed>
+  <HH.Ins.Neg.Why.NotDecided>La reclamación aún no se ha resuelto.</HH.Ins.Neg.Why.NotDecided>
+  <HH.Ins.Pension.Alert.Body>Los pensionistas con más de {0} horas de trabajo en el horario pierden su tramo de pensión poco a poco: {1}.\n\nPon las horas sobrantes en Cualquiera o en Diversión. El botón Corregir horario de la pestaña Seguro lo hace por ti.</HH.Ins.Pension.Alert.Body>
+  <HH.Ins.Pension.Alert.Label>Pensión en riesgo</HH.Ins.Pension.Alert.Label>
+  <HH.Ins.Pension.FixSchedule>Corregir horario</HH.Ins.Pension.FixSchedule>
+  <HH.Ins.Pension.Fixed>{0}: {1} horas de trabajo puestas en Cualquiera.</HH.Ins.Pension.Fixed>
+  <HH.Ins.Pension.Legal.Body>{0} tiene {1} horas de trabajo en el horario ({2} permitidas). Brix &amp; Partners ha convertido la falta en advertencia este cuadrante.</HH.Ins.Pension.Legal.Body>
+  <HH.Ins.Pension.Legal.Title>Norma de pensión: advertencia para {0}</HH.Ins.Pension.Legal.Title>
+  <HH.Ins.Pension.Notice.Body>{0} cumple 60 años en una semana. A partir de entonces la pensión solo se paga mientras el horario tenga como máximo {1} horas de Trabajo al día. Cualquiera, Diversión, Dormir y Meditar cuentan como tiempo libre. Dos faltas cuestan la pensión del periodo; tres, el derecho.</HH.Ins.Pension.Notice.Body>
+  <HH.Ins.Pension.Notice.Title>Norma de pensión: {0}</HH.Ins.Pension.Notice.Title>
+  <HH.Ins.Pension.Strike1.Body>{0} tiene {1} horas de trabajo en el horario; se permiten {2}. Primera falta. La próxima comprobación es dentro de dos días. Dos faltas más y se pierde el derecho.</HH.Ins.Pension.Strike1.Body>
+  <HH.Ins.Pension.Strike1.Title>Falta de pensión 1 de 3: {0}</HH.Ins.Pension.Strike1.Title>
+  <HH.Ins.Pension.Strike2.Body>{0} tiene {1} horas de trabajo en el horario; se permiten {2}. Segunda falta: se pierde la pensión de este periodo ({3}). Una más y se pierde el derecho.</HH.Ins.Pension.Strike2.Body>
+  <HH.Ins.Pension.Strike2.Title>Falta de pensión 2 de 3: {0}</HH.Ins.Pension.Strike2.Title>
+  <HH.Ins.Pension.Strike3.Body>{0} tiene {1} horas de trabajo en el horario; se permiten {2}. Tercera falta: termina el derecho a la pensión y se cancela la póliza.</HH.Ins.Pension.Strike3.Body>
+  <HH.Ins.Pension.Strike3.Title>Pensión perdida: {0}</HH.Ins.Pension.Strike3.Title>
+  <HH.Ins.Pension.Warn.Body>{0} tiene {1} horas de trabajo en el horario; se permiten {2}. Esto es solo una advertencia.</HH.Ins.Pension.Warn.Body>
+  <HH.Ins.Pension.Warn.Title>Norma de pensión: {0} trabaja demasiado</HH.Ins.Pension.Warn.Title>
+  <HH.Ins.Status.Buy>Asegurar…</HH.Ins.Status.Buy>
+  <HH.Ins.Status.ColonyCover>cobertura de colonia</HH.Ins.Status.ColonyCover>
+  <HH.Ins.Status.Column>Cobertura</HH.Ins.Status.Column>
+  <HH.Ins.Status.ColumnTip>Estado del seguro: pensión, salud, accidente, responsabilidad civil, jurídico. Haz clic para ver el resumen.</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.Foot>Verde: activo. Amarillo: periodo de carencia. Naranja: cancelación pendiente. Rojo: pensión en riesgo. Gris: sin seguro. La cobertura de colonia se aplica a cada colono.</HH.Ins.Status.Foot>
+  <HH.Ins.Status.Kind.Accident>Accidente</HH.Ins.Status.Kind.Accident>
+  <HH.Ins.Status.Kind.Health>Salud</HH.Ins.Status.Kind.Health>
+  <HH.Ins.Status.Kind.Legal>Jurídico</HH.Ins.Status.Kind.Legal>
+  <HH.Ins.Status.Kind.Liability>Responsabilidad civil</HH.Ins.Status.Kind.Liability>
+  <HH.Ins.Status.Kind.Pension>Pensión</HH.Ins.Status.Kind.Pension>
+  <HH.Ins.Status.No>no</HH.Ins.Status.No>
+  <HH.Ins.Status.NoTip>Este colono no tiene {0}.</HH.Ins.Status.NoTip>
+  <HH.Ins.Status.NotInsurable>no asegurable</HH.Ins.Status.NotInsurable>
+  <HH.Ins.Status.NotInsurableTip>Los esclavos, prisioneros, huéspedes y animales no pueden asegurarse.</HH.Ins.Status.NotInsurableTip>
+  <HH.Ins.Status.PensionOk>Horario: {0} horas de trabajo ({1} permitidas).</HH.Ins.Status.PensionOk>
+  <HH.Ins.Status.PensionRisk>Horario: {0} horas de trabajo, solo se permiten {1}. La pensión está en riesgo.</HH.Ins.Status.PensionRisk>
+  <HH.Ins.Status.State.Active>activo</HH.Ins.Status.State.Active>
+  <HH.Ins.Status.State.AtRisk>en riesgo</HH.Ins.Status.State.AtRisk>
+  <HH.Ins.Status.State.CancelPending>cancelación pendiente</HH.Ins.Status.State.CancelPending>
+  <HH.Ins.Status.State.None>ninguno</HH.Ins.Status.State.None>
+  <HH.Ins.Status.State.Waiting>periodo de carencia</HH.Ins.Status.State.Waiting>
+  <HH.Ins.Status.Strikes>Quedan {0} faltas</HH.Ins.Status.Strikes>
+  <HH.Ins.Status.Title>Seguro: {0}</HH.Ins.Status.Title>
+  <HH.Ins.Status.Yes>sí</HH.Ins.Status.Yes>
+  <HH.Ins.Tab.Cover>Colonos</HH.Ins.Tab.Cover>
+  <HH.Ins.Tab.Pawn>Seguro</HH.Ins.Tab.Pawn>
+  <HH.Ins.UI.Claim.AiReply>Respuesta a tu declaración: {0}</HH.Ins.UI.Claim.AiReply>
+  <HH.Ins.UI.Claim.Form>Formulario: {0}</HH.Ins.UI.Claim.Form>
+  <HH.Ins.UI.Claim.Statement>Tu declaración: {0}</HH.Ins.UI.Claim.Statement>
+  <HH.Ins.UI.Claims.History>Historial</HH.Ins.UI.Claims.History>
+  <HH.Ins.UI.Claims.Left>quedan {0}</HH.Ins.UI.Claims.Left>
+  <HH.Ins.UI.Claims.Open>Reclamaciones abiertas</HH.Ins.UI.Claims.Open>
+  <HH.Ins.UI.Claims.WindowLine>{0} ({1}). Valor: {2}, {3} objeto(s). Presenta la reclamación en el formulario antes del plazo.</HH.Ins.UI.Claims.WindowLine>
+  <HH.Ins.UI.Claims.Windows>Plazos de presentación abiertos</HH.Ins.UI.Claims.Windows>
+  <HH.Ins.UI.Cover.Colonist>Colono</HH.Ins.UI.Cover.Colonist>
+  <HH.Ins.UI.Cover.Lead>Quién está asegurado y para qué. La pensión y el seguro de accidentes son personales; la cobertura de salud, responsabilidad civil y jurídica (*) se aplica a toda la colonia.</HH.Ins.UI.Cover.Lead>
+  <HH.Ins.UI.Cover.None>No hay colonos.</HH.Ins.UI.Cover.None>
+  <HH.Ins.UI.CoverAll>Asegurar a todos…</HH.Ins.UI.CoverAll>
+  <HH.Ins.UI.CoverAll.Tip>Firma pólizas para todos los colonos de una vez.</HH.Ins.UI.CoverAll.Tip>
+  <HH.Ins.UI.CoverAllOne>Todos los colonos…</HH.Ins.UI.CoverAllOne>
+  <HH.Ins.UI.Mine.Change>Cambiar cobertura…</HH.Ins.UI.Mine.Change>
+  <HH.Ins.UI.Mine.ChangeTip>Cambia el nivel, la suma o los complementos. Se aplica con la próxima facturación.</HH.Ins.UI.Mine.ChangeTip>
+  <HH.Ins.UI.Mine.PendingChange>Cambio solicitado, entra en vigor en {0}</HH.Ins.UI.Mine.PendingChange>
+  <HH.Ins.UI.Mine.PensionLost>Derecho a pensión perdido.</HH.Ins.UI.Mine.PensionLost>
+  <HH.Ins.UI.Mine.PensionOk>Norma de pensión cumplida: {0} horas de trabajo ({1} permitidas), {2} en Cualquiera.</HH.Ins.UI.Mine.PensionOk>
+  <HH.Ins.UI.Mine.PensionRisk>Pensión en riesgo: {0} horas de trabajo, solo se permiten {1} ({2} en Cualquiera).</HH.Ins.UI.Mine.PensionRisk>
+  <HH.Ins.UI.Mine.PensionSuspended>Pensión de este periodo perdida (incumplimiento de la norma), se reanuda en {0}.</HH.Ins.UI.Mine.PensionSuspended>
+  <HH.Ins.UI.Mine.PensionTip>Norma de pensión: como máximo {0} horas de Trabajo al día en el horario. Cualquiera cuenta como tiempo libre, pero un colono en Cualquiera puede seguir eligiendo trabajar.</HH.Ins.UI.Mine.PensionTip>
+  <HH.Ins.UI.Mine.UpgradeWait>Periodo de espera por mejora: los sucesos en los próximos {0} siguen valorándose con la cobertura antigua.</HH.Ins.UI.Mine.UpgradeWait>
+  <HH.Ins.UI.Mine.WithdrawChange>Retirar cambio</HH.Ins.UI.Mine.WithdrawChange>
 </LanguageData>

@@ -231,4 +231,121 @@
   <HH.Setting.thrumbo.raiseTheStakes.Desc>Añade el botón «Subir la apuesta…» al Lucky Thrumbo: apuesta mercancía al alcance de una baliza comercial orbital con energía en vez de plata, y desde la intensidad de contenido Estándar también animales de la colonia y presos (como la venta vanilla). Colonos, esclavos, niños e invitados nunca se ofrecen.</HH.Setting.thrumbo.raiseTheStakes.Desc>
   <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: margen del prestamista para mercancía apostada</HH.Setting.thrumbo.pawnbrokerSpread>
   <HH.Setting.thrumbo.pawnbrokerSpread.Desc>La mercancía apostada cuenta por lo que pagaría el prestamista de la casa (el precio de venta de vanilla con tu mejor negociador), menos este margen y una comisión fija del 2 %.</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
+  <HH.Casino.ChairsNote>hasta +{0} % en las apuestas con un asiento cómodo</HH.Casino.ChairsNote>
+  <HH.Casino.ComfySeat>Un asiento cómodo en la mesa</HH.Casino.ComfySeat>
+  <HH.Casino.Demo.Column>Columna {0}</HH.Casino.Demo.Column>
+  <HH.Casino.Demo.Number>Número:</HH.Casino.Demo.Number>
+  <HH.Casino.Demo.OddsBlackjack>{0}</HH.Casino.Demo.OddsBlackjack>
+  <HH.Casino.Demo.OddsPoker>comisión {0} % (como máximo {1} de plata por bote)</HH.Casino.Demo.OddsPoker>
+  <HH.Casino.Demo.OddsRoulette>ventaja de la casa {0} %</HH.Casino.Demo.OddsRoulette>
+  <HH.Casino.Demo.OddsSlots>devuelve el {0} %</HH.Casino.Demo.OddsSlots>
+  <HH.Casino.Demo.PokerSeatWins>{0} gana con {1}</HH.Casino.Demo.PokerSeatWins>
+  <HH.Casino.Demo.PokerYouWin>Ganas con {0}</HH.Casino.Demo.PokerYouWin>
+  <HH.Casino.Demo.Rake>comisión {0}</HH.Casino.Demo.Rake>
+  <HH.Casino.Demo.Regular>Habitual {0}</HH.Casino.Demo.Regular>
+  <HH.Casino.Demo.Straight>Un número</HH.Casino.Demo.Straight>
+  <HH.Casino.Demo.You>Tú</HH.Casino.Demo.You>
+  <HH.Casino.GhostChairs>{0} con silla</HH.Casino.GhostChairs>
+  <HH.Casino.GhostSeats>Asientos de huéspedes: {0} / {1}</HH.Casino.GhostSeats>
+  <HH.Casino.GhostTipSlot>Azul: donde se sienta el jugador · una silla o taburete en la casilla que pulsa sube las apuestas</HH.Casino.GhostTipSlot>
+  <HH.Casino.GhostTipTable>Azul: donde juegan los huéspedes · ámbar: el crupier · pon sillas en las casillas que pulsan para subir las apuestas</HH.Casino.GhostTipTable>
+  <HH.Casino.Hand.0>carta alta</HH.Casino.Hand.0>
+  <HH.Casino.Hand.1>una pareja</HH.Casino.Hand.1>
+  <HH.Casino.Hand.2>doble pareja</HH.Casino.Hand.2>
+  <HH.Casino.Hand.3>trío</HH.Casino.Hand.3>
+  <HH.Casino.Hand.4>escalera</HH.Casino.Hand.4>
+  <HH.Casino.Hand.5>color</HH.Casino.Hand.5>
+  <HH.Casino.Hand.6>full</HH.Casino.Hand.6>
+  <HH.Casino.Hand.7>póker</HH.Casino.Hand.7>
+  <HH.Casino.Hand.8>escalera de color</HH.Casino.Hand.8>
+  <HH.Casino.SeatsBonus>+{0} % en las apuestas</HH.Casino.SeatsBonus>
+  <HH.Casino.SeatsLine>Asientos de huéspedes: {0} de {1} libres para usar · {2} con silla</HH.Casino.SeatsLine>
+  <HH.Casino.SeatsTip>las sillas suben las apuestas hasta +{0} %</HH.Casino.SeatsTip>
+  <HH.Setting.casino.comfortSpend>Asientos cómodos: más gasto</HH.Setting.casino.comfortSpend>
+  <HH.Setting.casino.comfortSpend.Desc>Un huésped en un asiento con comodidad del 100 % apuesta esta cantidad extra por ronda (escalado según la comodidad del asiento; de pie = sin bonificación). La ventaja de la casa no cambia: más juego, no mejores probabilidades.</HH.Setting.casino.comfortSpend.Desc>
+  <HH.Setting.casino.comfortStay>Asientos cómodos: estancias más largas</HH.Setting.casino.comfortStay>
+  <HH.Setting.casino.comfortStay.Desc>Un huésped en un asiento con comodidad del 100 % juega esta cantidad extra antes de levantarse de la mesa.</HH.Setting.casino.comfortStay.Desc>
+  <HH.Thrumbo.AllIn>Todo dentro</HH.Thrumbo.AllIn>
+  <HH.Thrumbo.AllInTip>Todo lo que tienes en la fuente elegida.</HH.Thrumbo.AllInTip>
+  <HH.Thrumbo.Anim.BigWin>¡Gran premio!</HH.Thrumbo.Anim.BigWin>
+  <HH.Thrumbo.Anim.Dealing>El crupier reparte…</HH.Thrumbo.Anim.Dealing>
+  <HH.Thrumbo.Anim.Jackpot>¡Bote del Thrumbo!</HH.Thrumbo.Anim.Jackpot>
+  <HH.Thrumbo.Anim.Skip>Saltar</HH.Thrumbo.Anim.Skip>
+  <HH.Thrumbo.Anim.SkipHint>Haz clic en la mesa, Espacio o Intro: saltar. Mayús: más rápido.</HH.Thrumbo.Anim.SkipHint>
+  <HH.Thrumbo.Anim.Spinning>La ronda se desarrolla…</HH.Thrumbo.Anim.Spinning>
+  <HH.Thrumbo.Anim.Wait>Espera a que la ronda termine (o sáltala).</HH.Thrumbo.Anim.Wait>
+  <HH.Thrumbo.BJ.DealAgain>Repartir de nuevo</HH.Thrumbo.BJ.DealAgain>
+  <HH.Thrumbo.BJ.PayDouble>Ganar tras doblar (de la apuesta inicial)</HH.Thrumbo.BJ.PayDouble>
+  <HH.Thrumbo.BJ.PayLose>Perder o pasarse</HH.Thrumbo.BJ.PayLose>
+  <HH.Thrumbo.BJ.PayNatural>Blackjack (as y una carta de diez)</HH.Thrumbo.BJ.PayNatural>
+  <HH.Thrumbo.BJ.PayPush>Empate (se devuelve la apuesta)</HH.Thrumbo.BJ.PayPush>
+  <HH.Thrumbo.BJ.PayTitle>Lo que paga una mano (incluida la apuesta)</HH.Thrumbo.BJ.PayTitle>
+  <HH.Thrumbo.BJ.PayWin>Ganar</HH.Thrumbo.BJ.PayWin>
+  <HH.Thrumbo.Err.HouseCap>La casa se queda con como máximo {0} de plata en una apuesta (no hay límite de mesa; es el techo propio de la casa).</HH.Thrumbo.Err.HouseCap>
+  <HH.Thrumbo.HowTo.Blackjack>Acércate más a 21 que el crupier sin pasarte. Las cartas numéricas valen su número; sota, reina y rey valen 10; el as vale 1 u 11.
+
+• Pedir: tomar otra carta. Plantarse: quedarte con lo que tienes; el crupier entonces revela la carta boca abajo y roba hasta 17 o más.
+• Doblar: con tus dos primeras cartas, duplicas la apuesta y tomas exactamente una carta más.
+• Pasarse de 21 es perder al instante. Un as con una carta de diez es blackjack y paga una prima (3 a 2 en mesas estándar).
+• Un empate es un push: recuperas la apuesta.
+
+Jugar bien importa: la ventaja mostrada es para juego perfecto.</HH.Thrumbo.HowTo.Blackjack>
+  <HH.Thrumbo.HowTo.Button>Cómo se juega</HH.Thrumbo.HowTo.Button>
+  <HH.Thrumbo.HowTo.ButtonTip>Una breve explicación del juego en lugar de la tabla de pagos. Haz clic de nuevo para cerrarla.</HH.Thrumbo.HowTo.ButtonTip>
+  <HH.Thrumbo.HowTo.Poker>Rimdeck es póker contra los demás jugadores, no contra la casa. Todos ponen la misma apuesta inicial; cada jugador recibe dos cartas y luego salen cinco cartas comunes boca arriba en el centro (tres, una y otra más).
+
+• Las mejores cinco de tus siete cartas ganan el bote: carta alta, pareja, doble pareja, trío, escalera, color, full, póker, escalera de color (de menor a mayor).
+• Las mentes más afiladas ganan un poco más a menudo: las habilidades Intelectual y Social inclinan las probabilidades.
+• La casa solo se queda con una pequeña comisión de cada bote.</HH.Thrumbo.HowTo.Poker>
+  <HH.Thrumbo.HowTo.Roulette>Haz clic en un número o en una casilla del tablero para poner tu apuesta allí y luego gira. La bola cae en un casillero.
+
+• Un número solo paga 35 a 1.
+• Docenas y columnas (12 números) pagan 2 a 1.
+• Rojo o negro, par o impar, 1–18 o 19–36 pagan 1 a 1.
+• El cero verde (y el doble cero de una ruleta americana) no pertenece a ningún color ni mitad: de ahí sale la ventaja de la casa.
+
+Cada apuesta tiene la misma ventaja de la casa; solo cambian las oscilaciones.</HH.Thrumbo.HowTo.Roulette>
+  <HH.Thrumbo.HowTo.Slots>Fija tu apuesta y tira de la palanca (o pulsa Girar). Tres carretes se detienen uno tras otro; solo cuenta la fila del medio.
+
+• Tres iguales pagan lo que indica la tabla de pagos: bayas lo mínimo, el thrumbo lo máximo.
+• Las bayas son generosas: dos en los carretes 1 y 2, o una en el carrete 1, aún devuelven algo.
+• La volatilidad cambia cómo se reparte el pago, no cuánto vuelve a largo plazo: la baja paga importes pequeños a menudo, la alta paga poco pero grande.
+
+A largo plazo la máquina devuelve la proporción que se muestra sobre la tabla de pagos; el resto es la ventaja de la casa.</HH.Thrumbo.HowTo.Slots>
+  <HH.Thrumbo.HowTo.Title>Cómo se juega: {0}</HH.Thrumbo.HowTo.Title>
+  <HH.Thrumbo.LeverTip>Tira de la palanca: gira con la apuesta de arriba.</HH.Thrumbo.LeverTip>
+  <HH.Thrumbo.MaxTip>La apuesta más alta que permiten el límite de mesa y tus fondos.</HH.Thrumbo.MaxTip>
+  <HH.Thrumbo.NoLimit>Sin límite de mesa: desde {0} hasta todo lo que tienes ({1}).</HH.Thrumbo.NoLimit>
+  <HH.Thrumbo.NoLimitTip>The Lucky Thrumbo acepta cualquier apuesta que puedas pagar. Un límite de mesa (una parte de tu patrimonio neto) se puede activar en los ajustes del mod: Casino, Lucky Thrumbo.</HH.Thrumbo.NoLimitTip>
+  <HH.Thrumbo.Pay.First1>{0} en el carrete 1</HH.Thrumbo.Pay.First1>
+  <HH.Thrumbo.Pay.First2>2 × {0} (carretes 1+2)</HH.Thrumbo.Pay.First2>
+  <HH.Thrumbo.PayRowTip>Probabilidad por giro: {0} %</HH.Thrumbo.PayRowTip>
+  <HH.Thrumbo.Recent>Rondas recientes</HH.Thrumbo.Recent>
+  <HH.Thrumbo.RecentNone>Ninguna todavía.</HH.Thrumbo.RecentNone>
+  <HH.Thrumbo.SlotMarquee>Thrumbo de un brazo</HH.Thrumbo.SlotMarquee>
+  <HH.Thrumbo.StakeLockedTip>La apuesta está en la mesa hasta que la ronda termine o la mano se acabe.</HH.Thrumbo.StakeLockedTip>
+  <HH.Thrumbo.Stakes.ColEach>Valor unitario</HH.Thrumbo.Stakes.ColEach>
+  <HH.Thrumbo.Stakes.ColHeld>Al alcance</HH.Thrumbo.Stakes.ColHeld>
+  <HH.Thrumbo.Stakes.ColItem>Objeto</HH.Thrumbo.Stakes.ColItem>
+  <HH.Thrumbo.Stakes.ColStake>Apuesta</HH.Thrumbo.Stakes.ColStake>
+  <HH.Thrumbo.Stakes.HowTo.Roulette>Elige los objetos a apostar a la izquierda, luego una de las apuestas exteriores y pulsa el botón. Un giro de la ruleta decide.
+
+• Rojo o negro, impar o par, 1–18 o 19–36 pagan 1 a 1: si ganas, conservas todo más su valor en plata.
+• Una docena (12 números) paga 2 a 1: conservas todo más el doble de su valor.
+• El cero verde (y el doble cero) no pertenece a ninguna apuesta aquí: ahí está la ventaja de la casa.
+• Si pierdes, los objetos se quedan con la casa como si los hubieras vendido.</HH.Thrumbo.Stakes.HowTo.Roulette>
+  <HH.Thrumbo.Stakes.HowTo.Slots>Elige los objetos a apostar a la izquierda, luego una volatilidad y pulsa el botón. Un giro de los tres carretes decide.
+
+• Tres iguales (o bayas en los primeros carretes) multiplican el valor de tu apuesta, como en la tabla de premios del Lucky Thrumbo.
+• Ganas ×2 o más: todo sigue siendo tuyo y la casa paga valor × (m − 1) en plata.
+• Sin premio: los objetos se quedan con la casa. Un premio pequeño por debajo de ×1 se paga en plata; los objetos igualmente se pierden.</HH.Thrumbo.Stakes.HowTo.Slots>
+  <HH.Thrumbo.Stakes.ListFoot>Todo lo que hay aquí está al alcance de una baliza orbital de comercio alimentada y lo valora tu mejor negociador. Mantén Mayús en − o + para cambiar la cantidad de 10 en 10. Los objetos se quedan donde están hasta que se pierde una ronda.</HH.Thrumbo.Stakes.ListFoot>
+  <HH.Thrumbo.Stakes.NoLimit>Sin límite de mesa: cualquier valor desde {0} de plata.</HH.Thrumbo.Stakes.NoLimit>
+  <HH.Thrumbo.Sym.berries>bayas</HH.Thrumbo.Sym.berries>
+  <HH.Thrumbo.Sym.component>componente</HH.Thrumbo.Sym.component>
+  <HH.Thrumbo.Sym.core>núcleo de persona</HH.Thrumbo.Sym.core>
+  <HH.Thrumbo.Sym.corn>maíz</HH.Thrumbo.Sym.corn>
+  <HH.Thrumbo.Sym.meal>comida de supervivencia</HH.Thrumbo.Sym.meal>
+  <HH.Thrumbo.Sym.plasteel>plasteel</HH.Thrumbo.Sym.plasteel>
+  <HH.Thrumbo.Sym.thrumbo>thrumbo</HH.Thrumbo.Sym.thrumbo>
 </LanguageData>

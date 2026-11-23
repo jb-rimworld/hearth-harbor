@@ -38,4 +38,10 @@
   <HH_GuestWaitingRoom.stages.2.description>在那里等候几乎是一种享受。</HH_GuestWaitingRoom.stages.2.description>
   <HH_GuestWaitingRoom.stages.3.label>绝佳的候客室</HH_GuestWaitingRoom.stages.3.label>
   <HH_GuestWaitingRoom.stages.3.description>在那样的房间里，多等一会儿我也不介意。</HH_GuestWaitingRoom.stages.3.description>
+  <HH_GuestPreached.stages.0.description>我是来这儿睡觉的，不是来被人说教、改变信仰的。</HH_GuestPreached.stages.0.description>
+  <HH_GuestPreached.stages.0.label>被说教了</HH_GuestPreached.stages.0.label>
+  <HH_SleptTogether.stages.0.description>一张大床，我们俩一起睡。这趟旅行我只想要这个。</HH_SleptTogether.stages.0.description>
+  <HH_SleptTogether.stages.0.label>和伴侣睡在一起</HH_SleptTogether.stages.0.label>
+  <HH_WantedDoubleBed.stages.0.description>我们要的是给两个人睡的一张床，结果得到两张窄床。舒适？谈不上。</HH_WantedDoubleBed.stages.0.description>
+  <HH_WantedDoubleBed.stages.0.label>没有给我们的双人床</HH_WantedDoubleBed.stages.0.label>
 </LanguageData>

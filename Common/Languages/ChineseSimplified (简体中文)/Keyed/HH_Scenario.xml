@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Scen.BackRoom.Intro>这封信印在厚重的黑纸上，隐隐带着雪茄的味道。\n\n“您的债务已全部结清。我们会就厨房后面的那间房与您联系。请务必保持整洁。”\n\n您的驿站如今有了新的合作伙伴。他们耐心、有礼，而且从不，从不忘记任何一个数字。\n\n本次开局采用了 Hearth &amp; Harbor 中较为黑暗的内容。您可随时在模组设置中将其调淡。</HH.Scen.BackRoom.Intro>
+  <HH.Scen.Editor.Editing>正在编辑本场景的 Hearth &amp; Harbor 规则。</HH.Scen.Editor.Editing>
+  <HH.Scen.Editor.ModuleResetTip>保持此模块为玩家模板的设置。</HH.Scen.Editor.ModuleResetTip>
+  <HH.Scen.Editor.ModulesIntro>此情景会开启或关闭的模块。你未改动的模块将沿用玩家的模板。</HH.Scen.Editor.ModulesIntro>
+  <HH.Scen.Editor.Note>此处只有你修改的项目（琥珀色标记）由情景设定。未标记的行显示默认值；在新游戏中，这些值来自玩家自己的模板。“重置”会把某一行或某个模块交还给模板。</HH.Scen.Editor.Note>
+  <HH.Scen.Editor.Side>情景规则</HH.Scen.Editor.Side>
+  <HH.Scen.Editor.Title>本情景的 Hearth &amp; Harbor 规则</HH.Scen.Editor.Title>
+  <HH.Scen.HarborTown.Intro>地契签得匆忙，律师连茶都没喝完就走了。现在它归你所有了：一座饱经风霜的旅店，立在宁静的港湾上方，路上满是商队，却没有一个客人。\n\n扫扫地，修修屋顶，铺好床。挂起招牌。用不了多久就会有人敲门——如果你待他们周到，他们会把消息传遍整条路。\n\n提示：Hetty Hearthwell 是建造者的情节导演。右上角的 Hearth &amp; Harbor 指南会一步一步地为你讲解。</HH.Scen.HarborTown.Intro>
+  <HH.Scen.Module.Off>关</HH.Scen.Module.Off>
+  <HH.Scen.Module.On>开</HH.Scen.Module.On>
+  <HH.Scen.Module.Template>沿用模板</HH.Scen.Module.Template>
+  <HH.Scen.Picker.Nerd>极客设置</HH.Scen.Picker.Nerd>
+  <HH.Scen.Picker.Search>搜索…</HH.Scen.Picker.Search>
+  <HH.Scen.Picker.Title>选择一项 Hearth &amp; Harbor 设置</HH.Scen.Picker.Title>
+  <HH.Scen.Rules.Content>内容：{0}</HH.Scen.Rules.Content>
+  <HH.Scen.Rules.Count>已设定 {0} 项设置；如需添加单项设置，请使用“Hearth &amp; Harbor 设置”部分。</HH.Scen.Rules.Count>
+  <HH.Scen.Rules.Discovered>地下世界已被发现</HH.Scen.Rules.Discovered>
+  <HH.Scen.Rules.More>更多设置…（已设定 {0} 项）</HH.Scen.Rules.More>
+  <HH.Scen.Rules.MoreTip>打开此情景的完整 Hearth &amp; Harbor 设置。只有你在那里改动的项目才会由情景设定。</HH.Scen.Rules.MoreTip>
+  <HH.Scen.Rules.SumContent>内容：{0}</HH.Scen.Rules.SumContent>
+  <HH.Scen.Rules.SumDiscovered>地下世界已经认识你</HH.Scen.Rules.SumDiscovered>
+  <HH.Scen.Rules.SumMore>另有 {0} 项设置</HH.Scen.Rules.SumMore>
+  <HH.Scen.Rules.SumNothing>全部与模板相同</HH.Scen.Rules.SumNothing>
+  <HH.Scen.Rules.SumOff>关闭：{0}</HH.Scen.Rules.SumOff>
+  <HH.Scen.Rules.SumOn>开启：{0}</HH.Scen.Rules.SumOn>
+  <HH.Scen.Rules.SumTier>经营难度 {0}%（{1}）</HH.Scen.Rules.SumTier>
+  <HH.Scen.Rules.SummaryHead>Hearth &amp; Harbor：</HH.Scen.Rules.SummaryHead>
+  <HH.Scen.Rules.TierTemplate>经营难度：沿用模板</HH.Scen.Rules.TierTemplate>
+  <HH.Scen.Rules.TierTip>勾选后，此情景将设定经营难度（0–500%）。未勾选时，由玩家的模板决定。</HH.Scen.Rules.TierTip>
+  <HH.Scen.SetByScenario>由情景设定</HH.Scen.SetByScenario>
+  <HH.Scen.Setting.Intro>Hearth &amp; Harbor 设置</HH.Scen.Setting.Intro>
+  <HH.Scen.Setting.Pick>选择一项设置…</HH.Scen.Setting.Pick>
+  <HH.Scen.Setting.Unknown>未知设置（模块缺失？）</HH.Scen.Setting.Unknown>
+</LanguageData>

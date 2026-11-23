@@ -23,7 +23,7 @@
   <HH.Bank.Greet.Morning>Доброго ранку</HH.Bank.Greet.Morning>
   <HH.Bank.Greet.Night>Доброї ночі</HH.Bank.Greet.Night>
   <HH.Bank.Header.Tier>Рівень достатку: {0}</HH.Bank.Header.Tier>
-  <HH.Bank.Header.TierTip>Чистий капітал = рахунок + срібло вдома − борги: {0} срібла. Рівень змінюється лише після того, як нове значення трималося цілу добу. Він задає настрій колонії від цього банку (налаштування: bank.moodOn).</HH.Bank.Header.TierTip>
+  <HH.Bank.Header.TierTip>Чистий капітал = рахунок + перекази в дорозі + срібло вдома + інвестиції (за ринковою вартістю) − борги: {0} срібла. Рівень змінюється лише після того, як нове значення протримається цілий день. Він задає настрій колонії від цього банку (налаштування: bank.moodOn).</HH.Bank.Header.TierTip>
   <HH.Bank.Hist.Amount>Сума (5 знаків після коми)</HH.Bank.Hist.Amount>
   <HH.Bank.Hist.Empty>Транзакцій ще немає.</HH.Bank.Hist.Empty>
   <HH.Bank.Hist.TotalFees>Сплачено комісій досі</HH.Bank.Hist.TotalFees>
@@ -81,7 +81,7 @@
   <HH.Bank.Lobby.Amount>Сума</HH.Bank.Lobby.Amount>
   <HH.Bank.Lobby.Balance>Баланс</HH.Bank.Lobby.Balance>
   <HH.Bank.Lobby.BalanceTip>Точно: {0} срібла.
-Відсотки щодня: баланс × (M^({1} × {2} / 60) − 1), де M = {3} за ігровий рік (повзунок прибутковості). Це {4:0.##} % на день.</HH.Bank.Lobby.BalanceTip>
+Рахунок — ощадний: він платить {1} % від надлишку ринку (M − 1) на рік, помножений на {2} для цього банку. За M = {3} це {4} % на рік ({5} % на день). Інвестиції платять більше, але несуть ризик.</HH.Bank.Lobby.BalanceTip>
   <HH.Bank.Lobby.Cash>Готівка вдома</HH.Bank.Lobby.Cash>
   <HH.Bank.Lobby.CashTip>Срібло, що лежить на ваших домашніх картах.</HH.Bank.Lobby.CashTip>
   <HH.Bank.Lobby.ChangeBank>Змінити банк</HH.Bank.Lobby.ChangeBank>
@@ -91,23 +91,22 @@
   <HH.Bank.Lobby.DepDelay>зарахують через {0}</HH.Bank.Lobby.DepDelay>
   <HH.Bank.Lobby.DepInstant>проведено одразу</HH.Bank.Lobby.DepInstant>
   <HH.Bank.Lobby.Deposit>Внесок</HH.Bank.Lobby.Deposit>
-  <HH.Bank.Lobby.Direct>Пряме зарахування</HH.Bank.Lobby.Direct>
-  <HH.Bank.Lobby.DirectTip>Каси ваших підприємств опівночі переказуються на рахунок за вирахуванням {0} %.</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.DirectTip>Каси ваших закладів опівночі зараховуються на рахунок за вирахуванням {0} %. Змінити можна в налаштуваннях моду (Банк &gt; Рахунок).</HH.Bank.Lobby.DirectTip>
   <HH.Bank.Lobby.Interest>Відсотки цього квадруму</HH.Bank.Lobby.Interest>
   <HH.Bank.Lobby.InterestTip>Відсотки, нараховані на баланс від початку квадруму (15 днів).</HH.Bank.Lobby.InterestTip>
   <HH.Bank.Lobby.Max>Макс.</HH.Bank.Lobby.Max>
   <HH.Bank.Lobby.Net>Чистий капітал</HH.Bank.Lobby.Net>
-  <HH.Bank.Lobby.NetTip>Рахунок + срібло вдома − борги. Визначає ваш рівень достатку.</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.NetTip>Рахунок {0} + у дорозі {1} + срібло вдома {2} + інвестиції за ринковою вартістю {3} − борги {4} = {5}.
+Визначає ваш рівень капіталу. Ліміти кредиту враховують лише {6} % інвестицій (налаштування bank.loanPortfolioShare).</HH.Bank.Lobby.NetTip>
   <HH.Bank.Lobby.Nothing>Поки порожньо. Внесок був би гарним початком.</HH.Bank.Lobby.Nothing>
   <HH.Bank.Lobby.PendingDep>↓ {0} надійде через {1}</HH.Bank.Lobby.PendingDep>
   <HH.Bank.Lobby.PendingWd>↑ {0} капсулою через {1}</HH.Bank.Lobby.PendingWd>
   <HH.Bank.Lobby.Recent>Остання активність</HH.Bank.Lobby.Recent>
-  <HH.Bank.Lobby.Trade>Автозарахування торгової виручки</HH.Bank.Lobby.Trade>
-  <HH.Bank.Lobby.TradeTip>Срібло, яке ви отримуєте від торговців і торгових кораблів, зараховується на рахунок одразу після угоди за тією самою комісією, що й пряме зарахування, а не лежить на підлозі монетами. Потребує прямого зарахування. Вимкнено за замовчуванням, щоб можна було й далі платити наступному торговцеві готівкою. Караván не зачіпається.</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.TradeTip>Срібло, яке ви отримуєте від торговців і торговельних кораблів, одразу після угоди потрапляє на рахунок за тією самою комісією, що й прямий внесок, а не лежить на підлозі монетами. Потрібен прямий внесок. Типово вимкнено, тож наступного торговця можна і далі платити готівкою. Караванів це не стосується. Змінити можна в налаштуваннях моду (Банк &gt; Рахунок).</HH.Bank.Lobby.TradeTip>
   <HH.Bank.Lobby.Transfer>Внесок і зняття</HH.Bank.Lobby.Transfer>
   <HH.Bank.Lobby.TransferInfo>На складі: {0}. Внесок {1}. Комісія за зняття {2}, {3}.</HH.Bank.Lobby.TransferInfo>
   <HH.Bank.Lobby.Transit>У дорозі</HH.Bank.Lobby.Transit>
-  <HH.Bank.Lobby.TransitTip>Срібло, яке вже покинуло ваш склад, але ще не зараховано (затримка зарахування без філії чи банкомата).</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.TransitTip>Срібло в дорозі: внески, які ще не зараховано (затримка внеску без філії чи банкомата), і зняття, що ще в капсулі падіння. Воно враховується в чистому капіталі.</HH.Bank.Lobby.TransitTip>
   <HH.Bank.Lobby.WdInstant>готівка в будівлі одразу</HH.Bank.Lobby.WdInstant>
   <HH.Bank.Lobby.WdPod>десантна капсула за {0}, {1} год</HH.Bank.Lobby.WdPod>
   <HH.Bank.Lobby.Withdraw>Зняти</HH.Bank.Lobby.Withdraw>
@@ -142,8 +141,7 @@
   <HH.Bank.Msg.Switched>Тепер ваш рахунок веде {0}.</HH.Bank.Msg.Switched>
   <HH.Bank.Msg.TradeDeposit>Торгову виручку {0} срібла одразу зараховано на ваш рахунок у {1}.</HH.Bank.Msg.TradeDeposit>
   <HH.Bank.Open.Button>Відкрити рахунок</HH.Bank.Open.Button>
-  <HH.Bank.Open.Direct>Спрямовувати касову виручку прямо в банк опівночі</HH.Bank.Open.Direct>
-  <HH.Bank.Open.DirectTip>Виручка ваших крамниць, таверни й казино йде на рахунок, а не лежить срібними монетами. Пізніше можна змінити це в нічному сейфі або в налаштуваннях (bank.directDeposit).</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.DirectTip>Виручка ваших крамниць, таверни й казино зараховується на рахунок, а не лежить як срібло. Це умова банку: змінити можна в налаштуваннях моду (Банк &gt; Рахунок, bank.directDeposit).</HH.Bank.Open.DirectTip>
   <HH.Bank.Open.Intro>Оберіть банк. Відкриття рахунку безкоштовне; переведення потім коштує {0} срібла. Доки рахунку немає, тут нічого вас не турбує: ні листів, ні настрою, ні комісій.</HH.Bank.Open.Intro>
   <HH.Bank.Open.Sub>Ваше срібло, наша проблема.</HH.Bank.Open.Sub>
   <HH.Bank.Open.Title>Silverline: відкриття рахунку</HH.Bank.Open.Title>
@@ -194,21 +192,18 @@
   <HH.Bank.Tab.Terms>Умови</HH.Bank.Tab.Terms>
   <HH.Bank.Terms.AccFee>Плата за рахунок на квадрум</HH.Bank.Terms.AccFee>
   <HH.Bank.Terms.AccountDaily>Ваш рахунок за день</HH.Bank.Terms.AccountDaily>
-  <HH.Bank.Terms.AccountDailyTip>Множник рахунку за рік = M^({0} × {1}) = {2}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.AccountDailyTip>Денний множник = (річний множник)^(1/60) = {0}.</HH.Bank.Terms.AccountDailyTip>
   <HH.Bank.Terms.Anchors>За складністю</HH.Bank.Terms.Anchors>
-  <HH.Bank.Terms.AnchorsHead>M на рік / найвищий етап стягнення</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.AnchorsHead>Індекс M на рік  /  ваш рахунок на рік  /  найвища стадія збору</HH.Bank.Terms.AnchorsHead>
   <HH.Bank.Terms.Atm>Банкомат</HH.Bank.Terms.Atm>
-  <HH.Bank.Terms.Auto>Авто</HH.Bank.Terms.Auto>
-  <HH.Bank.Terms.AutoTip>Знову слідувати повзунку складності ({0} на вашій поточній складності).</HH.Bank.Terms.AutoTip>
   <HH.Bank.Terms.Daily>На день (індекс)</HH.Bank.Terms.Daily>
   <HH.Bank.Terms.DailyTip>M^(1/60) − 1. Ігровий рік має 60 днів.</HH.Bank.Terms.DailyTip>
   <HH.Bank.Terms.Dep>Внесок</HH.Bank.Terms.Dep>
   <HH.Bank.Terms.Direct>Прямий депозит</HH.Bank.Terms.Direct>
   <HH.Bank.Terms.Fees>Комісії вашого банку</HH.Bank.Terms.Fees>
   <HH.Bank.Terms.FeesNote>Усі комісії залежать від налаштування «рівень банківських комісій» ({0} %).</HH.Bank.Terms.FeesNote>
-  <HH.Bank.Terms.Preview>1 000 срібла за індексом стають {0} через один ігровий рік і {1} через десять.</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Preview>1 000 срібла за індексом стануть {0} після одного ігрового року і {1} після десяти. На вашому рахунку: {2} і {3}.</HH.Bank.Terms.Preview>
   <HH.Bank.Terms.Profit>Прибутковість</HH.Bank.Terms.Profit>
-  <HH.Bank.Terms.ProfitIntro>На скільки в середньому зростають інвестовані гроші за ігровий рік (60 днів). 1,0 означає ні плюсу, ні мінусу, 1,2 — +20 % на рік. Це також визначає вартість позик. Це налаштування цього збереження.</HH.Bank.Terms.ProfitIntro>
   <HH.Bank.Terms.StageNote>Драбина стягнення: 1 нагадування, 2 пеня, 3 залік проти внесків, 4 дружній візит, 5 група вилучення, 6 рейд стягнення, 7 винагорода. Зараз: зупиняється на етапі {0}.</HH.Bank.Terms.StageNote>
   <HH.Bank.Terms.Switch>Зміна банку</HH.Bank.Terms.Switch>
   <HH.Bank.Terms.Wd>Зняття (капсула / каса)</HH.Bank.Terms.Wd>
@@ -231,4 +226,52 @@
   <HH.Bank.Time.DayHour>день {0}, {1}:00</HH.Bank.Time.DayHour>
   <HH.Bank.Time.Hours>{0} г</HH.Bank.Time.Hours>
   <HH.Bank.Time.Minutes>{0} хв</HH.Bank.Time.Minutes>
+  <HH.Bank.Card.InterestTip>Відсоток на рахунку — це частка ({0}) ринкової доходності, помножена на власний коефіцієнт цього банку ({1}). Інвестиції приносять більше.</HH.Bank.Card.InterestTip>
+  <HH.Bank.Card.Numbers>Відсотки {0} на рік  ·  комісія за внесок {1} %  ·  зняття {2} %  ·  плата за рахунок {3} на квадрум</HH.Bank.Card.Numbers>
+  <HH.Bank.Clerk.Line>Клерк Ottoline: "{0}"</HH.Bank.Clerk.Line>
+  <HH.Bank.Lobby.DirectState>Прямий внесок: {0}</HH.Bank.Lobby.DirectState>
+  <HH.Bank.Lobby.Invested>Інвестиції</HH.Bank.Lobby.Invested>
+  <HH.Bank.Lobby.InvestedTip>Акції, фонди, криптовалюта та NFT за сьогоднішньою ринковою вартістю: {0}. Облігації терпіння за поточною вартістю: {1}. Гроші, вкладені в контракти Omen і проєкти фракцій (за собівартістю): {2}.</HH.Bank.Lobby.InvestedTip>
+  <HH.Bank.Lobby.MaxTip>Усе срібло колонії на складі та біля торгового маяка. Верхньої межі немає.</HH.Bank.Lobby.MaxTip>
+  <HH.Bank.Lobby.MaxTipWd>Усе, що рахунок може тут виплатити (після комісій).</HH.Bank.Lobby.MaxTipWd>
+  <HH.Bank.Lobby.ModeDeposit>Внести</HH.Bank.Lobby.ModeDeposit>
+  <HH.Bank.Lobby.ModeWithdraw>Зняти</HH.Bank.Lobby.ModeWithdraw>
+  <HH.Bank.Lobby.Off>вимк.</HH.Bank.Lobby.Off>
+  <HH.Bank.Lobby.On>увімк.</HH.Bank.Lobby.On>
+  <HH.Bank.Lobby.PerYear>на рік</HH.Bank.Lobby.PerYear>
+  <HH.Bank.Lobby.Percent>{0} % вашого срібла ({1} з {2})</HH.Bank.Lobby.Percent>
+  <HH.Bank.Lobby.PercentWd>{0} % того, що рахунок може виплатити ({1} з {2})</HH.Bank.Lobby.PercentWd>
+  <HH.Bank.Lobby.Rate>Процентна ставка</HH.Bank.Lobby.Rate>
+  <HH.Bank.Lobby.RateTip>Скільки рахунок заробляє за ігровий рік (60 днів) у середньому. Порівняйте з продуктами на вкладці Інвестиції:
+{0}</HH.Bank.Lobby.RateTip>
+  <HH.Bank.Lobby.Settings>Налаштування</HH.Bank.Lobby.Settings>
+  <HH.Bank.Lobby.TradeState>Переводити срібло на рахунок: {0}</HH.Bank.Lobby.TradeState>
+  <HH.Bank.Memo.ScenBalance>Початковий баланс</HH.Bank.Memo.ScenBalance>
+  <HH.Bank.Open.DirectState>Каса йде прямо в банк опівночі: {0}</HH.Bank.Open.DirectState>
+  <HH.Bank.Quip.Invest>Бачу, що у вас є інвестиції. Вдаватиму, що не заздрю цифрі.</HH.Bank.Quip.Invest>
+  <HH.Bank.Reason.NoSilverAtAll>На складі й біля торгового маяка немає срібла.</HH.Bank.Reason.NoSilverAtAll>
+  <HH.Bank.Reason.NothingToWithdraw>На рахунку зараз нічого виплатити тут.</HH.Bank.Reason.NothingToWithdraw>
+  <HH.Bank.Scen.Balance>Початковий баланс</HH.Bank.Scen.Balance>
+  <HH.Bank.Scen.DirectDeposit>Прямий внесок</HH.Bank.Scen.DirectDeposit>
+  <HH.Bank.Scen.Loan>Стартова позика</HH.Bank.Scen.Loan>
+  <HH.Bank.Scen.LoanTip>0 = без позики. Позика зараховується на рахунок і погашається частинами, як будь-яка інша позика.</HH.Bank.Scen.LoanTip>
+  <HH.Bank.Scen.Summary>Починається з рахунку в {0}, на якому {1} срібла.</HH.Bank.Scen.Summary>
+  <HH.Bank.Scen.SummaryLoan>Уже винен {0} срібла ({1} днів).</HH.Bank.Scen.SummaryLoan>
+  <HH.Bank.Site.Atm>Банкомат</HH.Bank.Site.Atm>
+  <HH.Bank.Site.Counter>Банківське віконце</HH.Bank.Site.Counter>
+  <HH.Bank.Tabs.More>Ще</HH.Bank.Tabs.More>
+  <HH.Bank.Tabs.MoreTip>Інші сторінки банку: {0}</HH.Bank.Tabs.MoreTip>
+  <HH.Bank.Terms.AccountYear>Ваш рахунок на рік</HH.Bank.Terms.AccountYear>
+  <HH.Bank.Terms.AccountYearTip>Річний множник рахунку = 1 + частка × коефіцієнт банку × (M − 1) = 1 + {0} × {1} × ({2} − 1) = {3}, але не нижче {4} і не вище {5}, і ніколи не вище ощадного продукту Mattress Plus ({6}).</HH.Bank.Terms.AccountYearTip>
+  <HH.Bank.Terms.Compare>Де гроші заробляють більше (за ігровий рік, у середньому)</HH.Bank.Terms.Compare>
+  <HH.Bank.Terms.CompareAccountTip>Рахунок безпечний і платить мало. Mattress Plus, облігація та все нижче несуть більше ризику або блокують гроші, зате в середньому платять більше; сам рахунок ніколи не платить більше за Mattress Plus.</HH.Bank.Terms.CompareAccountTip>
+  <HH.Bank.Terms.CompareTip>Довгостроковий середній показник цього продукту за поточної прибутковості. Ціни коливаються; за окремий рік може бути значно вище або нижче.</HH.Bank.Terms.CompareTip>
+  <HH.Bank.Terms.MInv>(інвестиції: M = {0})</HH.Bank.Terms.MInv>
+  <HH.Bank.Terms.MNow>M = {0} за ігровий рік</HH.Bank.Terms.MNow>
+  <HH.Bank.Terms.OpenSettings>Відкрити параметри моду</HH.Bank.Terms.OpenSettings>
+  <HH.Bank.Terms.OpenSettingsShort>Змінити в параметрах</HH.Bank.Terms.OpenSettingsShort>
+  <HH.Bank.Terms.OpenSettingsTip>Відкриває параметри моду Hearth &amp; Harbor на сторінці банку. Прибутковість, комісії, позики та лотерея є справжніми параметрами цього збереження і задаються лише там.</HH.Bank.Terms.OpenSettingsTip>
+  <HH.Bank.Terms.SetIn>Умови банку є параметрами цього збереження: змініть їх у Параметри моду &gt; Hearth &amp; Harbor &gt; Банк (Відсотки й прибутковість, Комісії, Позики, Стягнення, Лотерея). 1,0 означає без змін, 1,2 — це +20 % на рік для індексу; рахунок отримує лише частку цього. Позики також слідують за M.</HH.Bank.Terms.SetIn>
+  <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
+  <HH.Bank.Yield.Account>Ваш банківський рахунок</HH.Bank.Yield.Account>
 </LanguageData>

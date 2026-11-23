@@ -10,4 +10,6 @@
   <HH_MarketStall.description>一个带条纹遮阳篷的独立摊位。大集市只有在你拥有足够多的摊位后才会举办（参见「营业场所」设置）：每支商队都会在一个摊位上摆摊，并向你的钱箱支付摊位费。摊位摆在户外，任何天气都能用，但它本身不是一家营业场所。</HH_MarketStall.description>
   <HH_VendingMachine.label>自动售货机</HH_VendingMachine.label>
   <HH_VendingMachine.description>一个通电的柜子，装有食物、饮料、毒品和药品。客人可以在任何时候从中购买，无需任何员工，价格为市场价。搬运工会像给货架补货一样为它补货。殖民者可以免费自取；机器只向客人收费。需要电力才能售货。</HH_VendingMachine.description>
+  <HH_Mote_Bell.label>夜钟</HH_Mote_Bell.label>
+  <HH_Mote_RingArc.label>铃声</HH_Mote_RingArc.label>
 </LanguageData>

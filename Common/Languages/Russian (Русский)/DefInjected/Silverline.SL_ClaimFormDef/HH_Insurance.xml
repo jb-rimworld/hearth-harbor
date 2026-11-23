@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ClaimForm_Money.description>Форма Л-1 для штрафов, ущерба третьим лицам и закрытий: что произошло и кто может это подтвердить.</SL_ClaimForm_Money.description>
+  <SL_ClaimForm_Money.label>форма претензии о штрафах и ответственности</SL_ClaimForm_Money.label>
+  <SL_ClaimForm_Person.description>Форма П-2 для смертей и утраты конечностей: обстоятельства и свидетель.</SL_ClaimForm_Person.description>
+  <SL_ClaimForm_Person.label>личная форма претензии</SL_ClaimForm_Person.label>
+  <SL_ClaimForm_Property.description>Форма И-4 для разрушенных построек, транспорта и посевов: что случилось, насколько серьёзно, кто видел и как вы хотите получить выплату.</SL_ClaimForm_Property.description>
+  <SL_ClaimForm_Property.label>форма претензии на имущество</SL_ClaimForm_Property.label>
+</LanguageData>

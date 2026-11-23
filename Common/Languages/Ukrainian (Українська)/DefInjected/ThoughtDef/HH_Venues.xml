@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServedBusy.stages.0.description>Гості постійно підходили до стійки, і мені весь час було чим зайнятися. Так і має відчуватися робота.</HH_ServedBusy.stages.0.description>
+  <HH_ServedBusy.stages.0.label>добра зміна</HH_ServedBusy.stages.0.label>
+  <HH_ServedBusy.stages.1.description>Один гість за одним. Я знав кожне замовлення ще до того, як його договорювали. Добра втома.</HH_ServedBusy.stages.1.description>
+  <HH_ServedBusy.stages.1.label>напружена зміна</HH_ServedBusy.stages.1.label>
+  <HH_ServedBusy.stages.2.description>Уся зала хотіла чогось одразу, і я встигав за всім. Я пишаюся цією зміною.</HH_ServedBusy.stages.2.description>
+  <HH_ServedBusy.stages.2.label>збився з ніг</HH_ServedBusy.stages.2.label>
+  <HH_ServedIdle.stages.0.description>Я довго стояв за стійкою, і ніхто не приходив. Я натирав одну й ту саму склянку тричі.</HH_ServedIdle.stages.0.description>
+  <HH_ServedIdle.stages.0.label>нудьгую за стійкою</HH_ServedIdle.stages.0.label>
+  <HH_ServedIdle.stages.1.description>Години за стійкою без жодної справи. Я міг би робити щось корисне.</HH_ServedIdle.stages.1.description>
+  <HH_ServedIdle.stages.1.label>простояв усю зміну</HH_ServedIdle.stages.1.label>
+  <HH_ServedIdle.stages.2.description>Ціла зміна очікування гостей, які так і не прийшли. Навіщо я взагалі тут стою?</HH_ServedIdle.stages.2.description>
+  <HH_ServedIdle.stages.2.label>марна зміна</HH_ServedIdle.stages.2.label>
+  <HH_WokenByBell.stages.0.description>Хтось подзвонив у дзвін посеред мого сну. Служба є служба. Голосно.</HH_WokenByBell.stages.0.description>
+  <HH_WokenByBell.stages.0.label>розбудив нічний дзвін</HH_WokenByBell.stages.0.label>
+  <HH_WokenByBell.stages.1.description>Хтось подзвонив у дзвін посеред мого сну. Ну, це ж робота. Посплю пізніше.</HH_WokenByBell.stages.1.description>
+  <HH_WokenByBell.stages.1.label>розбудив нічний дзвін</HH_WokenByBell.stages.1.label>
+</LanguageData>

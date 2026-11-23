@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.MusicMode.Always>Vždy</HH.Enum.MusicMode.Always>
+  <HH.Enum.MusicMode.Off>Vypnuto</HH.Enum.MusicMode.Off>
+  <HH.Enum.MusicMode.WhenHosting>Když hostíme</HH.Enum.MusicMode.WhenHosting>
+  <HH.Setting.core.creatorPawn>Autor se může toulat po Okraji</HH.Setting.core.creatorPawn>
+  <HH.Setting.core.creatorPawn.Desc>Stejně jako tvůrčí postavy základní hry se autor Hearth &amp; Harbor občas může objevit jako vygenerovaná postava: laskavý, pracovitý toulavý hostinský.</HH.Setting.core.creatorPawn.Desc>
+  <HH.Setting.core.music>Hudba Hearth &amp; Harbor</HH.Setting.core.music>
+  <HH.Setting.core.music.Desc>Naše tři klidné písně (jedna pro jarní a letní dny, jedna pro podzim, jedna pro zimu) se přidají k běžnému seznamu skladeb RimWorld. Při hostování jen v koloniích, které používají Hearth &amp; Harbor (hostovské lůžko, cedule podniku nebo bankovní účet).</HH.Setting.core.music.Desc>
+  <HH.Setting.core.musicShare>Jak často se naše písně objevují</HH.Setting.core.musicShare>
+  <HH.Setting.core.musicShare.Desc>Váha našich písní v seznamu oproti jedné základní písni. 1 = jako každá jiná píseň daného ročního období, 0 = nikdy.</HH.Setting.core.musicShare.Desc>
+  <HH.Story.Suggests>{0} doporučuje: {1}</HH.Story.Suggests>
+  <HH.Story.SuggestsTip>Kliknutím použijete obtížnost hostitelství, kterou doporučuje tento vypravěč. Stále ji můžete změnit tlačítkem.</HH.Story.SuggestsTip>
+</LanguageData>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Scen.BackRoom.Intro>La lettre était imprimée sur un papier noir épais et sentait légèrement le cigare.\n\n« Vos dettes ont été réglées. Toutes. Nous reviendrons vers vous au sujet de la pièce derrière la cuisine. Gardez-la propre. »\n\nVotre relais a désormais de nouveaux partenaires. Ils sont patients, polis, et n'oublient jamais un chiffre.\n\nCe départ utilise le contenu le plus sombre de Hearth &amp; Harbor. Vous pouvez l'atténuer à tout moment dans les réglages du mod.</HH.Scen.BackRoom.Intro>
+  <HH.Scen.Editor.Editing>Modification des règles Hearth &amp; Harbor de ce scénario.</HH.Scen.Editor.Editing>
+  <HH.Scen.Editor.ModuleResetTip>Laisser ce module au modèle du joueur.</HH.Scen.Editor.ModuleResetTip>
+  <HH.Scen.Editor.ModulesIntro>Modules que ce scénario active ou désactive. Un module que vous ne touchez pas suit le modèle du joueur.</HH.Scen.Editor.ModulesIntro>
+  <HH.Scen.Editor.Note>Seul ce que vous modifiez ici (marqué en ambre) est fixé par le scénario. Les lignes non marquées affichent les valeurs par défaut ; dans une nouvelle partie, elles viennent du modèle du joueur. Réinitialiser rend une ligne ou un module au modèle.</HH.Scen.Editor.Note>
+  <HH.Scen.Editor.Side>Règles du scénario</HH.Scen.Editor.Side>
+  <HH.Scen.Editor.Title>Règles Hearth &amp; Harbor de ce scénario</HH.Scen.Editor.Title>
+  <HH.Scen.HarborTown.Intro>Le contrat a été signé à la hâte et l'avocat n'est pas resté pour le thé. Désormais, c'est à vous : une auberge patinée au-dessus d'un port tranquille, une route pleine de caravanes et pas un seul client.\n\nBalayez les planchers, réparez le toit, faites un lit. Accrochez une enseigne. Quelqu'un frappera bientôt à la porte — et si vous le traitez bien, il le racontera à tout le monde sur la route.\n\nAstuce : Hetty Hearthwell est la conteuse des bâtisseurs. Et le guide Hearth &amp; Harbor, en haut à droite, explique une étape à la fois.</HH.Scen.HarborTown.Intro>
+  <HH.Scen.Module.Off>désactivé</HH.Scen.Module.Off>
+  <HH.Scen.Module.On>activé</HH.Scen.Module.On>
+  <HH.Scen.Module.Template>selon le modèle</HH.Scen.Module.Template>
+  <HH.Scen.Picker.Nerd>Réglages avancés</HH.Scen.Picker.Nerd>
+  <HH.Scen.Picker.Search>Rechercher…</HH.Scen.Picker.Search>
+  <HH.Scen.Picker.Title>Choisir un réglage Hearth &amp; Harbor</HH.Scen.Picker.Title>
+  <HH.Scen.Rules.Content>Contenu : {0}</HH.Scen.Rules.Content>
+  <HH.Scen.Rules.Count>{0} réglage(s) défini(s) ; ajoutez des réglages isolés avec la partie « Réglage Hearth &amp; Harbor ».</HH.Scen.Rules.Count>
+  <HH.Scen.Rules.Discovered>Le monde souterrain est déjà découvert</HH.Scen.Rules.Discovered>
+  <HH.Scen.Rules.More>Autres réglages… ({0} définis)</HH.Scen.Rules.More>
+  <HH.Scen.Rules.MoreTip>Ouvre tous les réglages Hearth &amp; Harbor de ce scénario. Seul ce que vous y modifiez est fixé par le scénario.</HH.Scen.Rules.MoreTip>
+  <HH.Scen.Rules.SumContent>contenu : {0}</HH.Scen.Rules.SumContent>
+  <HH.Scen.Rules.SumDiscovered>le monde souterrain vous connaît déjà</HH.Scen.Rules.SumDiscovered>
+  <HH.Scen.Rules.SumMore>et {0} autres réglages</HH.Scen.Rules.SumMore>
+  <HH.Scen.Rules.SumNothing>tout comme dans votre modèle</HH.Scen.Rules.SumNothing>
+  <HH.Scen.Rules.SumOff>désactivés : {0}</HH.Scen.Rules.SumOff>
+  <HH.Scen.Rules.SumOn>activés : {0}</HH.Scen.Rules.SumOn>
+  <HH.Scen.Rules.SumTier>difficulté d'accueil {0} % ({1})</HH.Scen.Rules.SumTier>
+  <HH.Scen.Rules.SummaryHead>Hearth &amp; Harbor :</HH.Scen.Rules.SummaryHead>
+  <HH.Scen.Rules.TierTemplate>Difficulté d'accueil : selon le modèle</HH.Scen.Rules.TierTemplate>
+  <HH.Scen.Rules.TierTip>Cochez pour laisser ce scénario fixer la difficulté d'accueil (0–500 %). Sans cocher, le modèle du joueur décide.</HH.Scen.Rules.TierTip>
+  <HH.Scen.SetByScenario>fixé par le scénario</HH.Scen.SetByScenario>
+  <HH.Scen.Setting.Intro>Réglages Hearth &amp; Harbor</HH.Scen.Setting.Intro>
+  <HH.Scen.Setting.Pick>Choisir un réglage…</HH.Scen.Setting.Pick>
+  <HH.Scen.Setting.Unknown>Réglage inconnu (module manquant ?)</HH.Scen.Setting.Unknown>
+</LanguageData>

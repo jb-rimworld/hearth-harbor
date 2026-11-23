@@ -23,7 +23,7 @@
   <HH.Bank.Greet.Morning>Dobré ráno</HH.Bank.Greet.Morning>
   <HH.Bank.Greet.Night>Dobrou noc</HH.Bank.Greet.Night>
   <HH.Bank.Header.Tier>Úroveň majetku: {0}</HH.Bank.Header.Tier>
-  <HH.Bank.Header.TierTip>Čisté jmění = účet + stříbro doma − dluhy: {0} stříbra. Úroveň se změní až poté, co nová hodnota vydrží celý den. Určuje náladu kolonie z této banky (nastavení: bank.moodOn).</HH.Bank.Header.TierTip>
+  <HH.Bank.Header.TierTip>Čisté jmění = účet + vklady na cestě + stříbro doma + investice (za tržní cenu) − dluhy: {0} stříbra. Úroveň se změní až poté, co nová hodnota vydrží celý den. Z této banky ovlivňuje náladu kolonie (nastavení: bank.moodOn).</HH.Bank.Header.TierTip>
   <HH.Bank.Hist.Amount>Částka (5 desetinných míst)</HH.Bank.Hist.Amount>
   <HH.Bank.Hist.Empty>Zatím žádné transakce.</HH.Bank.Hist.Empty>
   <HH.Bank.Hist.TotalFees>Dosud zaplacené poplatky</HH.Bank.Hist.TotalFees>
@@ -81,7 +81,7 @@ S úctou,
   <HH.Bank.Lobby.Amount>Částka</HH.Bank.Lobby.Amount>
   <HH.Bank.Lobby.Balance>Zůstatek</HH.Bank.Lobby.Balance>
   <HH.Bank.Lobby.BalanceTip>Přesně: {0} stříbra.
-Úrok každý den: zůstatek × (M^({1} × {2} / 60) − 1), kde M = {3} za herní rok (posuvník ziskovosti). To je {4:0.##} % denně.</HH.Bank.Lobby.BalanceTip>
+Účet je spořicí účet: ročně vynáší {1} % přebytku trhu (M − 1), vynásobeno {2} pro tuto banku. Při M = {3} je to {4} % ročně ({5} % denně). Investice vynášejí víc, ale nesou riziko.</HH.Bank.Lobby.BalanceTip>
   <HH.Bank.Lobby.Cash>Hotovost doma</HH.Bank.Lobby.Cash>
   <HH.Bank.Lobby.CashTip>Stříbro ležící na vašich domácích mapách.</HH.Bank.Lobby.CashTip>
   <HH.Bank.Lobby.ChangeBank>Změnit banku</HH.Bank.Lobby.ChangeBank>
@@ -91,23 +91,22 @@ S úctou,
   <HH.Bank.Lobby.DepDelay>připsáno po {0}</HH.Bank.Lobby.DepDelay>
   <HH.Bank.Lobby.DepInstant>zaúčtováno okamžitě</HH.Bank.Lobby.DepInstant>
   <HH.Bank.Lobby.Deposit>Vklad</HH.Bank.Lobby.Deposit>
-  <HH.Bank.Lobby.Direct>Přímé vklady</HH.Bank.Lobby.Direct>
-  <HH.Bank.Lobby.DirectTip>Pokladny vašich podniků se o půlnoci vyprázdní na účet, minus {0} %.</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.DirectTip>Pokladny tvých podniků se o půlnoci vyprázdní na účet, minus {0} %. Změň v nastavení modu (Banka &gt; Účet).</HH.Bank.Lobby.DirectTip>
   <HH.Bank.Lobby.Interest>Úrok za tento kvadrum</HH.Bank.Lobby.Interest>
   <HH.Bank.Lobby.InterestTip>Úrok vyplacený ze zůstatku od začátku kvadrumu (15 dní).</HH.Bank.Lobby.InterestTip>
   <HH.Bank.Lobby.Max>Max</HH.Bank.Lobby.Max>
   <HH.Bank.Lobby.Net>Čisté jmění</HH.Bank.Lobby.Net>
-  <HH.Bank.Lobby.NetTip>Účet + stříbro doma − dluhy. Určuje vaši úroveň majetku.</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.NetTip>Účet {0} + na cestě {1} + stříbro doma {2} + investice za tržní hodnotu {3} − dluhy {4} = {5}.
+Určuje tvou úroveň bohatství. Úvěrové limity počítají jen {6} % investic (nastavení bank.loanPortfolioShare).</HH.Bank.Lobby.NetTip>
   <HH.Bank.Lobby.Nothing>Zatím nic. Vklad by byl dobrý začátek.</HH.Bank.Lobby.Nothing>
   <HH.Bank.Lobby.PendingDep>↓ {0} přijde za {1}</HH.Bank.Lobby.PendingDep>
   <HH.Bank.Lobby.PendingWd>↑ {0} dronem za {1}</HH.Bank.Lobby.PendingWd>
   <HH.Bank.Lobby.Recent>Poslední aktivita</HH.Bank.Lobby.Recent>
-  <HH.Bank.Lobby.Trade>Automaticky vkládat obchodní stříbro</HH.Bank.Lobby.Trade>
-  <HH.Bank.Lobby.TradeTip>Stříbro, které dostanete od obchodníků a obchodních lodí, se hned po obchodu připíše na účet za stejný poplatek jako přímý vklad, místo aby leželo na zemi jako mince. Vyžaduje přímé vklady. Ve výchozím stavu vypnuto, abyste mohli dalšímu obchodníkovi zaplatit v hotovosti. Karavany nejsou ovlivněny.</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.TradeTip>Stříbro, které dostaneš od obchodníků a obchodních lodí, jde na účet hned po obchodu, za stejný poplatek jako přímý vklad, místo aby leželo na zemi jako mince. Vyžaduje přímý vklad. Ve výchozím stavu vypnuto, takže můžeš dalšího obchodníka zaplatit hotově. Karavany nejsou dotčeny. Změň v nastavení modu (Banka &gt; Účet).</HH.Bank.Lobby.TradeTip>
   <HH.Bank.Lobby.Transfer>Vklad a výběr</HH.Bank.Lobby.Transfer>
   <HH.Bank.Lobby.TransferInfo>Ve skladu: {0}. Vklad {1}. Poplatek za výběr {2}, {3}.</HH.Bank.Lobby.TransferInfo>
   <HH.Bank.Lobby.Transit>Na cestě</HH.Bank.Lobby.Transit>
-  <HH.Bank.Lobby.TransitTip>Stříbro, které opustilo váš sklad, ale ještě nebylo připsáno (zpoždění vkladu bez pobočky nebo bankomatu).</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.TransitTip>Stříbro na cestě: vklady ještě nepřipsané (zpoždění vkladu bez pobočky nebo bankomatu) a výběry, které jsou ještě v výsadkové kapsli. Počítá se do čistého jmění.</HH.Bank.Lobby.TransitTip>
   <HH.Bank.Lobby.WdInstant>hotovost v budově okamžitě</HH.Bank.Lobby.WdInstant>
   <HH.Bank.Lobby.WdPod>výsadkový modul za {0} do {1} h</HH.Bank.Lobby.WdPod>
   <HH.Bank.Lobby.Withdraw>Vybrat</HH.Bank.Lobby.Withdraw>
@@ -142,8 +141,7 @@ S úctou,
   <HH.Bank.Msg.Switched>Váš účet nyní sídlí v {0}.</HH.Bank.Msg.Switched>
   <HH.Bank.Msg.TradeDeposit>Obchodní příjem {0} stříbra šel rovnou na váš účet v {1}.</HH.Bank.Msg.TradeDeposit>
   <HH.Bank.Open.Button>Otevřít účet</HH.Bank.Open.Button>
-  <HH.Bank.Open.Direct>Směrovat pokladní peníze rovnou do banky o půlnoci</HH.Bank.Open.Direct>
-  <HH.Bank.Open.DirectTip>Tržby vašich obchodů, hostince a kasina jdou na účet místo toho, aby ležely jako stříbro. Můžete to později přepnout u nočního trezoru nebo v nastavení (bank.directDeposit).</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.DirectTip>Tržby tvých obchodů, hostince a kasina jdou na účet, místo aby ležely jako stříbro. Je to podmínka banky: změň v nastavení modu (Banka &gt; Účet, bank.directDeposit).</HH.Bank.Open.DirectTip>
   <HH.Bank.Open.Intro>Vyberte banku. Otevření účtu je zdarma; přesun později stojí {0} stříbra. Dokud účet nemáte, vás tu nic netrápí – žádné dopisy, žádná nálada, žádné poplatky.</HH.Bank.Open.Intro>
   <HH.Bank.Open.Sub>Vaše stříbro, náš problém.</HH.Bank.Open.Sub>
   <HH.Bank.Open.Title>Silverline: otevřít účet</HH.Bank.Open.Title>
@@ -194,21 +192,18 @@ S úctou,
   <HH.Bank.Tab.Terms>Podmínky</HH.Bank.Tab.Terms>
   <HH.Bank.Terms.AccFee>Poplatek za účet za kvadrum</HH.Bank.Terms.AccFee>
   <HH.Bank.Terms.AccountDaily>Tvůj účet za den</HH.Bank.Terms.AccountDaily>
-  <HH.Bank.Terms.AccountDailyTip>Násobek účtu za rok = M^({0} × {1}) = {2}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.AccountDailyTip>Denní koeficient = (roční násobek)^(1/60) = {0}.</HH.Bank.Terms.AccountDailyTip>
   <HH.Bank.Terms.Anchors>Podle obtížnosti</HH.Bank.Terms.Anchors>
-  <HH.Bank.Terms.AnchorsHead>M za rok / nejvyšší stupeň vymáhání</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.AnchorsHead>Index M za rok  /  tvůj účet za rok  /  nejvyšší stupeň výběru</HH.Bank.Terms.AnchorsHead>
   <HH.Bank.Terms.Atm>bankomat</HH.Bank.Terms.Atm>
-  <HH.Bank.Terms.Auto>Automaticky</HH.Bank.Terms.Auto>
-  <HH.Bank.Terms.AutoTip>Znovu se řídí posuvníkem obtížnosti ({0} při aktuální obtížnosti).</HH.Bank.Terms.AutoTip>
   <HH.Bank.Terms.Daily>Denně (index)</HH.Bank.Terms.Daily>
   <HH.Bank.Terms.DailyTip>M^(1/60) − 1. Herní rok má 60 dní.</HH.Bank.Terms.DailyTip>
   <HH.Bank.Terms.Dep>Vklad</HH.Bank.Terms.Dep>
   <HH.Bank.Terms.Direct>Přímý vklad</HH.Bank.Terms.Direct>
   <HH.Bank.Terms.Fees>Poplatky tvé banky</HH.Bank.Terms.Fees>
   <HH.Bank.Terms.FeesNote>Všechny poplatky se řídí nastavením „úroveň bankovních poplatků“ ({0} %).</HH.Bank.Terms.FeesNote>
-  <HH.Bank.Terms.Preview>1 000 stříbra při indexu se po jednom herním roce promění v {0} a po deseti v {1}.</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Preview>1 000 stříbra v indexu se po jednom herním roce změní na {0} a po deseti na {1}. Na tvém účtu: {2} a {3}.</HH.Bank.Terms.Preview>
   <HH.Bank.Terms.Profit>Ziskovost</HH.Bank.Terms.Profit>
-  <HH.Bank.Terms.ProfitIntro>Kolik investovaných peněz v průměru naroste za herní rok (60 dní). 1,0 znamená ani plus, ani mínus, 1,2 znamená +20 % ročně. Určuje také, kolik stojí půjčky. Je to nastavení této uložené hry.</HH.Bank.Terms.ProfitIntro>
   <HH.Bank.Terms.StageNote>Žebřík vymáhání: 1 upomínka, 2 poplatek za pozdní platbu, 3 zápočet proti vkladům, 4 přátelská návštěva, 5 tým pro zabavování, 6 nájezd vymahačů, 7 odměna. Nyní: zastaví se na stupni {0}.</HH.Bank.Terms.StageNote>
   <HH.Bank.Terms.Switch>Změna banky</HH.Bank.Terms.Switch>
   <HH.Bank.Terms.Wd>Výběr (kapsle / přepážka)</HH.Bank.Terms.Wd>
@@ -231,4 +226,52 @@ S úctou,
   <HH.Bank.Time.DayHour>den {0}, {1}:00</HH.Bank.Time.DayHour>
   <HH.Bank.Time.Hours>{0} h</HH.Bank.Time.Hours>
   <HH.Bank.Time.Minutes>{0} min</HH.Bank.Time.Minutes>
+  <HH.Bank.Card.InterestTip>Úrok na účtu je podíl ({0}) tržního výnosu vynásobený vlastním koeficientem této banky ({1}). Investice vynášejí víc.</HH.Bank.Card.InterestTip>
+  <HH.Bank.Card.Numbers>Úrok {0} ročně  ·  poplatek za vklad {1} %  ·  výběr {2} %  ·  poplatek za účet {3} za kvadrum</HH.Bank.Card.Numbers>
+  <HH.Bank.Clerk.Line>Úřednice Ottoline: "{0}"</HH.Bank.Clerk.Line>
+  <HH.Bank.Lobby.DirectState>Přímý vklad: {0}</HH.Bank.Lobby.DirectState>
+  <HH.Bank.Lobby.Invested>Investice</HH.Bank.Lobby.Invested>
+  <HH.Bank.Lobby.InvestedTip>Akcie, fondy, krypto a NFT za dnešní tržní hodnotu: {0}. Obligace Trpělivosti za aktuální hodnotu: {1}. Peníze vložené do kontraktů Omen a projektů frakcí (za pořizovací cenu): {2}.</HH.Bank.Lobby.InvestedTip>
+  <HH.Bank.Lobby.MaxTip>Všechno stříbro kolonie ve skladu a u obchodního majáku. Žádná horní hranice.</HH.Bank.Lobby.MaxTip>
+  <HH.Bank.Lobby.MaxTipWd>Všechno, co může účet tady vyplatit (po poplatcích).</HH.Bank.Lobby.MaxTipWd>
+  <HH.Bank.Lobby.ModeDeposit>Vklad</HH.Bank.Lobby.ModeDeposit>
+  <HH.Bank.Lobby.ModeWithdraw>Výběr</HH.Bank.Lobby.ModeWithdraw>
+  <HH.Bank.Lobby.Off>vypnuto</HH.Bank.Lobby.Off>
+  <HH.Bank.Lobby.On>zapnuto</HH.Bank.Lobby.On>
+  <HH.Bank.Lobby.PerYear>ročně</HH.Bank.Lobby.PerYear>
+  <HH.Bank.Lobby.Percent>{0} % tvého stříbra ({1} z {2})</HH.Bank.Lobby.Percent>
+  <HH.Bank.Lobby.PercentWd>{0} % z toho, co účet může vyplatit ({1} z {2})</HH.Bank.Lobby.PercentWd>
+  <HH.Bank.Lobby.Rate>Úroková sazba</HH.Bank.Lobby.Rate>
+  <HH.Bank.Lobby.RateTip>Kolik účet v průměru vynese za herní rok (60 dní). Porovnej s produkty na kartě Investice:
+{0}</HH.Bank.Lobby.RateTip>
+  <HH.Bank.Lobby.Settings>Nastavení</HH.Bank.Lobby.Settings>
+  <HH.Bank.Lobby.TradeState>Obchodní stříbro na účet: {0}</HH.Bank.Lobby.TradeState>
+  <HH.Bank.Memo.ScenBalance>Počáteční zůstatek</HH.Bank.Memo.ScenBalance>
+  <HH.Bank.Open.DirectState>Tržby z pokladen jdou o půlnoci přímo do banky: {0}</HH.Bank.Open.DirectState>
+  <HH.Bank.Quip.Invest>Vidím, že máš investice. Budu dělat, že nežeravím na jedno číslo.</HH.Bank.Quip.Invest>
+  <HH.Bank.Reason.NoSilverAtAll>Ve skladu ani u obchodního majáku není žádné stříbro.</HH.Bank.Reason.NoSilverAtAll>
+  <HH.Bank.Reason.NothingToWithdraw>Účet tady teď nemá nic, co by mohl vyplatit.</HH.Bank.Reason.NothingToWithdraw>
+  <HH.Bank.Scen.Balance>Počáteční zůstatek</HH.Bank.Scen.Balance>
+  <HH.Bank.Scen.DirectDeposit>Přímý vklad</HH.Bank.Scen.DirectDeposit>
+  <HH.Bank.Scen.Loan>Počáteční půjčka</HH.Bank.Scen.Loan>
+  <HH.Bank.Scen.LoanTip>0 = bez půjčky. Půjčka se vyplatí na účet a splácí se po splátkách jako každá jiná půjčka.</HH.Bank.Scen.LoanTip>
+  <HH.Bank.Scen.Summary>Začíná s účtem v {0}, na kterém je {1} stříbra.</HH.Bank.Scen.Summary>
+  <HH.Bank.Scen.SummaryLoan>Už dluží {0} stříbra ({1} dní).</HH.Bank.Scen.SummaryLoan>
+  <HH.Bank.Site.Atm>Bankomat</HH.Bank.Site.Atm>
+  <HH.Bank.Site.Counter>Pokladna banky</HH.Bank.Site.Counter>
+  <HH.Bank.Tabs.More>Více</HH.Bank.Tabs.More>
+  <HH.Bank.Tabs.MoreTip>Další stránky banky: {0}</HH.Bank.Tabs.MoreTip>
+  <HH.Bank.Terms.AccountYear>Tvůj účet za rok</HH.Bank.Terms.AccountYear>
+  <HH.Bank.Terms.AccountYearTip>Násobek účtu za rok = 1 + podíl × koeficient banky × (M − 1) = 1 + {0} × {1} × ({2} − 1) = {3}, nikdy méně než {4} ani více než {5}, a nikdy více než spořicí produkt Mattress Plus ({6}).</HH.Bank.Terms.AccountYearTip>
+  <HH.Bank.Terms.Compare>Kde peníze vydělají víc (za herní rok, v průměru)</HH.Bank.Terms.Compare>
+  <HH.Bank.Terms.CompareAccountTip>Účet je bezpečný a vynáší málo. Mattress Plus, obligace a vše pod nimi nesou víc rizika nebo jsou zamčené a v průměru vynášejí víc; samotný účet nikdy nevynese víc než Mattress Plus.</HH.Bank.Terms.CompareAccountTip>
+  <HH.Bank.Terms.CompareTip>Dlouhodobý průměr tohoto produktu při současné ziskovosti. Ceny kolísají; jediný rok může být výrazně nad nebo pod tímto průměrem.</HH.Bank.Terms.CompareTip>
+  <HH.Bank.Terms.MInv>(investice: M = {0})</HH.Bank.Terms.MInv>
+  <HH.Bank.Terms.MNow>M = {0} za herní rok</HH.Bank.Terms.MNow>
+  <HH.Bank.Terms.OpenSettings>Otevřít nastavení modu</HH.Bank.Terms.OpenSettings>
+  <HH.Bank.Terms.OpenSettingsShort>Změnit v nastavení</HH.Bank.Terms.OpenSettingsShort>
+  <HH.Bank.Terms.OpenSettingsTip>Otevře Možnosti modu Hearth &amp; Harbor na stránce Banka. Ziskovost, poplatky, půjčky a loterie jsou skutečná nastavení této uložené hry a nastavují se jen tam.</HH.Bank.Terms.OpenSettingsTip>
+  <HH.Bank.Terms.SetIn>Podmínky banky jsou nastavení této uložené hry: změň je v Možnosti modu &gt; Hearth &amp; Harbor &gt; Banka (Úrok a ziskovost, Poplatky, Půjčky, Inkaso, Loterie). 1,0 znamená ani plus, ani minus; 1,2 znamená +20 % ročně pro index, účet dostane jen jeho podíl. Půjčky se řídí také M.</HH.Bank.Terms.SetIn>
+  <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
+  <HH.Bank.Yield.Account>Tvůj bankovní účet</HH.Bank.Yield.Account>
 </LanguageData>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Ai.Ans.Arrears>Dlužíte {0} stříbra. Prosím, nejdřív to urovnejte.</HH.Ai.Ans.Arrears>
+  <HH.Ai.Ans.Denied>Vaše žádost o pojistné plnění za „{0}“ byla zamítnuta: {1}. Doložku najdete na záložce pojištění, kde jsou i tlačítka pro zrušení a změnu.</HH.Ai.Ans.Denied>
+  <HH.Ai.Ans.Interest>Peníze na účtu přinášejí malý, stálý úrok, vyplácený jednou za kvadrant. Tento kvadrant zatím: {0} stříbra; celkem: {1} stříbra. Investice mohou vynést mnohem víc, ale stejně rychle i ztratit: účet je rozumný přítel, trh je ten vzrušující.</HH.Ai.Ans.Interest>
+  <HH.Ai.Ans.Invest>Vaše portfolio má hodnotu {0} stříbra na {1} pozici/pozicích.</HH.Ai.Ans.Invest>
+  <HH.Ai.Ans.Loan>Půjčka {0}: {1} stříbra dluhu, splátka {2} stříbra za {3} dní, zhruba {4} % ročně, zbývá {5} splátek.</HH.Ai.Ans.Loan>
+  <HH.Ai.Ans.Net>Vaše čistá hodnota je {0} stříbra: {1} na účtu, {2} doma ve stříbře, mínus {3} dluhů. Banka vás zařadila do úrovně „{4}“.</HH.Ai.Ans.Net>
+  <HH.Ai.Ans.NoClaims>Žádná žádost o pojistné plnění není evidována. Clawback Mutual si tu radost ještě neužil.</HH.Ai.Ans.NoClaims>
+  <HH.Ai.Ans.NoDenied>Žádná z vašich žádostí nebyla zamítnuta. Poslední, „{0}“, je {1}.</HH.Ai.Ans.NoDenied>
+  <HH.Ai.Ans.NoInvest>Nemáte žádné investice. Záložka Investice ukazuje nabídku; začněte s malým obnosem a než jí uvěříte, přečtěte si zpravodajský pás.</HH.Ai.Ans.NoInvest>
+  <HH.Ai.Ans.NoLoans>Nemáte žádné půjčky. Bez dluhů je krásný stav; budu dělat, že mě to nezklamalo.</HH.Ai.Ans.NoLoans>
+  <HH.Ai.Ans.NoReason>drobný tisk žádnou poznámku neuvedl</HH.Ai.Ans.NoReason>
+  <HH.Ai.Badge.Ai>AI</HH.Ai.Badge.Ai>
+  <HH.Ai.Badge.Books>z účetních knih</HH.Ai.Badge.Books>
+  <HH.Ai.Badge.TipChat>Napsala AI z pouze pro čtení pořízeného snímku vašich účtů. Umí vysvětlit, změnit nic nemůže.</HH.Ai.Badge.TipChat>
+  <HH.Ai.Badge.TipConcierge>napsala AI z vlastních faktů hry</HH.Ai.Badge.TipConcierge>
+  <HH.Ai.Badge.Written>Napsala AI. Hvězdičky pocházejí z hry.</HH.Ai.Badge.Written>
+  <HH.Ai.Chat.Clerk>Úřednice Ottoline</HH.Ai.Chat.Clerk>
+  <HH.Ai.Chat.Empty>Nejdřív napište otázku.</HH.Ai.Chat.Empty>
+  <HH.Ai.Chat.NoAccount>Účet zatím neexistuje. Nejdřív ho otevřete v hale a rád se na něj podívám.</HH.Ai.Chat.NoAccount>
+  <HH.Ai.Chat.NoMatch>Z účetních knih sama odpovím jen na pár otázek. Použijte rychlé otázky níže nebo se zeptejte znovu, až bude AI k dispozici.</HH.Ai.Chat.NoMatch>
+  <HH.Ai.Chat.OfflineHint>AI není dostupná, takže Ottoline odpovídá z účetních knih, pokud to jde.</HH.Ai.Chat.OfflineHint>
+  <HH.Ai.Chat.Placeholder>Zeptejte se Ottoline na cokoli o svých penězích...</HH.Ai.Chat.Placeholder>
+  <HH.Ai.Chat.Quick>Rychlé otázky</HH.Ai.Chat.Quick>
+  <HH.Ai.Chat.QuickTip>Odpovídá okamžitě z vašich účetních knih. Nic se nikam neposílá.</HH.Ai.Chat.QuickTip>
+  <HH.Ai.Chat.Recheck>Zkontrolovat znovu</HH.Ai.Chat.Recheck>
+  <HH.Ai.Chat.Send>Odeslat</HH.Ai.Chat.Send>
+  <HH.Ai.Chat.SetUp>Nastavit odpovědi AI</HH.Ai.Chat.SetUp>
+  <HH.Ai.Chat.Stop>Zastavit</HH.Ai.Chat.Stop>
+  <HH.Ai.Chat.Stopped>(Otázku jste zastavili.)</HH.Ai.Chat.Stopped>
+  <HH.Ai.Chat.Thinking>Ottoline přemýšlí</HH.Ai.Chat.Thinking>
+  <HH.Ai.Chat.Welcome>Zeptejte se mě na účet, půjčky, investice nebo pojistky. Vysvětluji; vaše peníze nikdy nehýbu. Když AI chybí, rychlé otázky níže fungují dál.</HH.Ai.Chat.Welcome>
+  <HH.Ai.Chat.You>Vy</HH.Ai.Chat.You>
+  <HH.Ai.Concierge.Ask>Zeptat se</HH.Ai.Concierge.Ask>
+  <HH.Ai.Concierge.Default>Co mám zlepšit jako první?</HH.Ai.Concierge.Default>
+  <HH.Ai.Concierge.Offline>AI neodpověděla; tohle jsou vlastní tipy hry.</HH.Ai.Concierge.Offline>
+  <HH.Ai.Concierge.Placeholder>Proč nepřichází žádná šlechta? Co mám zlepšit?</HH.Ai.Concierge.Placeholder>
+  <HH.Ai.Concierge.StateAi>AI online: odpovědi formuluje AI</HH.Ai.Concierge.StateAi>
+  <HH.Ai.Concierge.StateOffline>Odpovědi pocházejí z vlastních tipů hry</HH.Ai.Concierge.StateOffline>
+  <HH.Ai.Concierge.Stop>Zastavit</HH.Ai.Concierge.Stop>
+  <HH.Ai.Concierge.Thinking>Concierge přemýšlí</HH.Ai.Concierge.Thinking>
+  <HH.Ai.Concierge.Tips>Tohle vidím, nejčastější nahoře:</HH.Ai.Concierge.Tips>
+  <HH.Ai.Concierge.Title>Zeptat se concierge</HH.Ai.Concierge.Title>
+  <HH.Ai.Consent.Agree>Souhlasím a zapnout</HH.Ai.Consent.Agree>
+  <HH.Ai.Consent.Budget>Rozpočet AI sdílejí všichni hráči za 24 hodin. Když se vyčerpá, AI odpočívá a hra používá své vlastní texty.</HH.Ai.Consent.Budget>
+  <HH.Ai.Consent.D.Claim>Pojistné nároky: pojistka, jméno kolonisty, incident, rozhodnutí a částka, kterou hra už určila, a co jsi napsal do formuláře nároku (nejvýš 600 znaků).</HH.Ai.Consent.D.Claim>
+  <HH.Ai.Consent.D.Concierge>Concierge: tvoje otázka (nejvýš 300 znaků) a až 12 krátkých údajů, například sláva, počet hostů a lůžek a problémy, které hra zjistila.</HH.Ai.Consent.D.Concierge>
+  <HH.Ai.Consent.D.Headline>Titulky trhu: druh tržní události, název aktiva a velikost pohybu. Nejvýš 8 událostí na jeden dotaz.</HH.Ai.Consent.D.Headline>
+  <HH.Ai.Consent.D.Ottoline>Zeptej se Ottoline: tvoje otázka (nejvýš 500 znaků) a přehled účetnictví: zůstatek, úspory, až 10 půjček, investice, pojistky a poslední transakce, jako čísla a krátké popisky.</HH.Ai.Consent.D.Ottoline>
+  <HH.Ai.Consent.D.Review>Recenze hostů: křestní jméno hosta, hvězdičky, které mu hra udělila, několik slov o důvodu (například jak odešel) a druhy podniků, ve kterých utratil peníze.</HH.Ai.Consent.D.Review>
+  <HH.Ai.Consent.Done>Texty AI jsou zapnuté. Hra se teď spojí s relé.</HH.Ai.Consent.Done>
+  <HH.Ai.Consent.HideDetails>Skrýt podrobnosti</HH.Ai.Consent.HideDetails>
+  <HH.Ai.Consent.Intro>Hearth &amp; Harbor může nechat AI psát některé doplňkové texty: Ottolinin chat na pobočce, titulky trhu, recenze hostů, dopisy k pojistným nárokům a tipy concierge. Hra bez toho hraje úplně stejně a vlastní texty má vždy připravené pro případ, že AI chybí.</HH.Ai.Consent.Intro>
+  <HH.Ai.Consent.NotNow>Teď ne</HH.Ai.Consent.NotNow>
+  <HH.Ai.Consent.NotSent>Co se NEPOSÍLÁ: tvoje jméno nebo id na Steamu, cesty k souborům, název uložené hry nebo kolonie, další mody a cokoli, co vypadá jako klíč.</HH.Ai.Consent.NotSent>
+  <HH.Ai.Consent.Sent>Co se posílá: herní text k dotazu, například jména kolonistů (nejvýš 64 znaků), částky, text, který napíšeš do chatu, formulář nároku nebo políčko concierge, a počty, například hostů nebo lůžek.</HH.Ai.Consent.Sent>
+  <HH.Ai.Consent.ShowDetails>Co přesně se posílá?</HH.Ai.Consent.ShowDetails>
+  <HH.Ai.Consent.Stored>Co se ukládá: relé si drží jen čítače (kolik tokenů, kolik to stálo, jak dlouho to trvalo, kódy chyb). Nedrží, co jsi napsal, ani co AI odpověděla. Jako každý webový server může provozovatel relé krátce uchovat tvou IP adresu v technických logách spojení.</HH.Ai.Consent.Stored>
+  <HH.Ai.Consent.Title>Texty AI (volitelné)</HH.Ai.Consent.Title>
+  <HH.Ai.Consent.Where>Kam to jde: na malý server relé, který provozuje autor tohoto modu (hh-relay.jberger.de), a odtud přes OpenRouter k modelům Claude od Anthropic, a to jen u poskytovatelů, kteří nic neukládají (zero data retention).</HH.Ai.Consent.Where>
+  <HH.Ai.Consent.Withdraw>Souhlas můžeš kdykoli odvolat: Nastavení modů, Hearth &amp; Harbor, AI příchuť, Zapomenout můj souhlas.</HH.Ai.Consent.Withdraw>
+  <HH.Ai.Faq.Claim>Proč byl můj nárok zamítnut?</HH.Ai.Faq.Claim>
+  <HH.Ai.Faq.Interest>Jak získám úroky?</HH.Ai.Faq.Interest>
+  <HH.Ai.Faq.Invest>Jak si vedou mé investice?</HH.Ai.Faq.Invest>
+  <HH.Ai.Faq.Loans>Jaké mám půjčky?</HH.Ai.Faq.Loans>
+  <HH.Ai.Faq.Net>Kolik jsem vart?</HH.Ai.Faq.Net>
+  <HH.Ai.Notice.Title>Hearth &amp; Harbor: poznámka k textům AI</HH.Ai.Notice.Title>
+  <HH.Ai.Panel.Check>Zkontrolovat relé teď</HH.Ai.Panel.Check>
+  <HH.Ai.Panel.ConsentGiven>Souhlasil jsi {0} (verze textu {1}).</HH.Ai.Panel.ConsentGiven>
+  <HH.Ai.Panel.ConsentNone>Zatím jsi nesouhlasil. Nic se neposílá.</HH.Ai.Panel.ConsentNone>
+  <HH.Ai.Panel.Forget>Zapomenout můj souhlas</HH.Ai.Panel.Forget>
+  <HH.Ai.Panel.ForgetConfirm>Zapomenout tvůj souhlas a vypnout modul AI? Od teď se nic neposílá. Kdykoli můžeš znovu souhlasit.</HH.Ai.Panel.ForgetConfirm>
+  <HH.Ai.Panel.Relay>Relé: sdílený rozpočet využit z {0} % za posledních 24 hodin. Tahle relace: odesláno {1}, v pořádku {2}, selhalo {3}, použito vlastních textů {4}.</HH.Ai.Panel.Relay>
+  <HH.Ai.Panel.SetUp>Nastavit texty AI...</HH.Ai.Panel.SetUp>
+  <HH.Ai.Review.Fallback.1.0>Jedna hvězdička, a to jen proto, že formulář nemá nulu.</HH.Ai.Review.Fallback.1.0>
+  <HH.Ai.Review.Fallback.1.1>Chtěl jsem klidnou noc a dostal jsem lekci trpělivosti.</HH.Ai.Review.Fallback.1.1>
+  <HH.Ai.Review.Fallback.1.2>Nikdy znovu, i když dveře byly na odchodu hezké.</HH.Ai.Review.Fallback.1.2>
+  <HH.Ai.Review.Fallback.1.3>Už jsem byl v horším. Nevzpomínám si kde.</HH.Ai.Review.Fallback.1.3>
+  <HH.Ai.Review.Fallback.2.0>Bylo to fajn, pokud rád čekáš. Já ne.</HH.Ai.Review.Fallback.2.0>
+  <HH.Ai.Review.Fallback.2.1>Pár dobrých nápadů, ale špatně načasovaných.</HH.Ai.Review.Fallback.2.1>
+  <HH.Ai.Review.Fallback.2.2>Personál se snažil. Budova ne.</HH.Ai.Review.Fallback.2.2>
+  <HH.Ai.Review.Fallback.2.3>Dvě hvězdičky: jedna za snahu, jedna za dveře.</HH.Ai.Review.Fallback.2.3>
+  <HH.Ai.Review.Fallback.3.0>Pokoj, střecha a přiměřeně vřelé přivítání.</HH.Ai.Review.Fallback.3.0>
+  <HH.Ai.Review.Fallback.3.1>Nemám si na co stěžovat ani čím se chlubit, tak jsem tu.</HH.Ai.Review.Fallback.3.1>
+  <HH.Ai.Review.Fallback.3.2>Slušné. Vrátil bych se, kdyby mě cesta zase přivedla.</HH.Ai.Review.Fallback.3.2>
+  <HH.Ai.Review.Fallback.3.3>Tři hvězdičky. Střed silnice je dobré místo k stání.</HH.Ai.Review.Fallback.3.3>
+  <HH.Ai.Review.Fallback.4.0>Dobré jídlo, laskaví lidé, postel, která se chovala slušně.</HH.Ai.Review.Fallback.4.0>
+  <HH.Ai.Review.Fallback.4.1>Dobře jsem spal a zaplatil jsem férově. To je vzácnější, než se zdá.</HH.Ai.Review.Fallback.4.1>
+  <HH.Ai.Review.Fallback.4.2>Příjemné a dobře vedené. Řeknu to své karavaně.</HH.Ai.Review.Fallback.4.2>
+  <HH.Ai.Review.Fallback.4.3>Čtyři hvězdičky. Něco chybělo, a já zapomněl co, což o tom hodně říká.</HH.Ai.Review.Fallback.4.3>
+  <HH.Ai.Review.Fallback.5.0>Nejlepší pobyt sezóny. Personál si pamatoval moje jméno i moji objednávku.</HH.Ai.Review.Fallback.5.0>
+  <HH.Ai.Review.Fallback.5.1>Přišel jsem na jednu noc a málem jsem zapomněl odejít.</HH.Ai.Review.Fallback.5.1>
+  <HH.Ai.Review.Fallback.5.2>Vřelé, čisté, veselé. Pět hvězdiček a podání ruky.</HH.Ai.Review.Fallback.5.2>
+  <HH.Ai.Review.Fallback.5.3>Žil bych tu, kdyby mě nechali, a možná by nechtěli.</HH.Ai.Review.Fallback.5.3>
+  <HH.Ai.Review.Label>Recenze hosta: {0}</HH.Ai.Review.Label>
+  <HH.Ai.State.Checking>Kontroluji relé AI...</HH.Ai.State.Checking>
+  <HH.Ai.State.NoConsent>Texty AI nejsou nastavené</HH.Ai.State.NoConsent>
+  <HH.Ai.State.NoConsent.Tip>Nic se nikam neposílá, dokud nesouhlasíš. Hra používá své vlastní texty.</HH.Ai.State.NoConsent.Tip>
+  <HH.Ai.State.Off>Texty AI jsou vypnuté</HH.Ai.State.Off>
+  <HH.Ai.State.Off.Tip>Zapni modul v nastavení Hearth &amp; Harbor.</HH.Ai.State.Off.Tip>
+  <HH.Ai.State.Offline>AI offline</HH.Ai.State.Offline>
+  <HH.Ai.State.Offline.Tip>Relé se nepodařilo dosáhnout. Hra používá své vlastní texty a zkusí to později znovu.</HH.Ai.State.Offline.Tip>
+  <HH.Ai.State.Online>AI online</HH.Ai.State.Online>
+  <HH.Ai.State.Online.Tip>Relé odpovídá. Texty napsané AI jsou označené.</HH.Ai.State.Online.Tip>
+  <HH.Ai.State.Paused>AI na několik minut pozastavena</HH.Ai.State.Paused>
+  <HH.Ai.State.Paused.Tip>Několik dotazů za sebou selhalo. Hra deset minut používá své vlastní texty.</HH.Ai.State.Paused.Tip>
+  <HH.Ai.State.Resting>AI odpočívá</HH.Ai.State.Resting>
+  <HH.Ai.State.Resting.Tip>Sdílený denní rozpočet relé je vyčerpán. Hra používá své vlastní texty, dokud se nezotaví.</HH.Ai.State.Resting.Tip>
+  <HH.Ai.State.Unavailable>AI teď není k dispozici</HH.Ai.State.Unavailable>
+  <HH.Ai.State.Unavailable.Tip>Relé je vypnuté nebo není připravené. Hra používá své vlastní texty.</HH.Ai.State.Unavailable.Tip>
+  <HH.Ai.Status.LastError>Poslední kód chyby: {0}</HH.Ai.Status.LastError>
+  <HH.Ai.Tab.Ottoline>Zeptej se Ottoline</HH.Ai.Tab.Ottoline>
+  <HH.Setting.ai.func.claim>Dopisy k pojistným nárokům</HH.Setting.ai.func.claim>
+  <HH.Setting.ai.func.claim.Desc>Odpovědi pojišťovny Clawback Mutual reagují na to, co jste napsali do formuláře nároku. Rozhodnutí a částka se nikdy nemění.</HH.Setting.ai.func.claim.Desc>
+  <HH.Setting.ai.func.concierge>Concierge</HH.Setting.ai.func.concierge>
+  <HH.Setting.ai.func.concierge.Desc>Zeptejte se concierge na provoz vašich hostů. Formuluje tipy, které hra už zná.</HH.Setting.ai.func.concierge.Desc>
+  <HH.Setting.ai.func.headline>Titulky trhu</HH.Setting.ai.func.headline>
+  <HH.Setting.ai.func.headline.Desc>Zpravodajský pás burzy Rim Exchange dostává titulky psané AI. Čísla za nimi se nemění.</HH.Setting.ai.func.headline.Desc>
+  <HH.Setting.ai.func.ottoline>Zeptat se Ottoline</HH.Setting.ai.func.ottoline>
+  <HH.Setting.ai.func.ottoline.Desc>Pište s úřednicí Ottoline v bance. Vysvětlí vaše účty, úvěry, investice a pojistky. Bez AI odpoví na několik rychlých otázek z účetních knih.</HH.Setting.ai.func.ottoline.Desc>
+  <HH.Setting.ai.func.review>Hodnocení hostů</HH.Setting.ai.func.review>
+  <HH.Setting.ai.func.review.Desc>Některé odcházející hosty napíší recenzi vlastními slovy. Bez AI je recenze krátká ustálená věta.</HH.Setting.ai.func.review.Desc>
+  <HH.Setting.ai.maxPerDay>Žádosti na herní den (místní limit)</HH.Setting.ai.maxPerDay>
+  <HH.Setting.ai.maxPerDay.Desc>Zdvořilostní limit této hry pro vlastní žádosti na herní den. 0 = bez místního limitu. Předávací server má vlastní sdílený denní rozpočet.</HH.Setting.ai.maxPerDay.Desc>
+  <HH.Setting.ai.reviewShare>Podíl odcházejících skupin, které napíší hodnocení</HH.Setting.ai.reviewShare>
+  <HH.Setting.ai.reviewShare.Desc>Udržuje počet žádostí AI malý. 25 % znamená zhruba jednu skupinu ze čtyř.</HH.Setting.ai.reviewShare.Desc>
+  <HH.Setting.ai.showBadge>Označovat texty AI</HH.Setting.ai.showBadge>
+  <HH.Setting.ai.showBadge.Desc>Připíše poznámku k hodnocením hostů psaným AI a ukáže odznak AI v chatu a v okně concierge. Titulky trhu označení nedostanou.</HH.Setting.ai.showBadge.Desc>
+</LanguageData>

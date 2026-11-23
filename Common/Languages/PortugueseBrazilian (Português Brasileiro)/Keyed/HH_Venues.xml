@@ -31,7 +31,7 @@
   <HH.Setting.venues.maxPurchases>Compras por hóspede e estadia</HH.Setting.venues.maxPurchases>
   <HH.Setting.venues.maxPurchases.Desc>Um hóspede para de comprar após este número de compras em uma estadia.</HH.Setting.venues.maxPurchases.Desc>
   <HH.Setting.venues.nightBell>Campainha noturna</HH.Setting.venues.nightBell>
-  <HH.Setting.venues.nightBell.Desc>Hóspedes podem tocar a campainha de um estabelecimento fechado. Colonos acordados com o tipo de trabalho Atendimento vêm e o abrem por um adicional. Ninguém é acordado.</HH.Setting.venues.nightBell.Desc>
+  <HH.Setting.venues.nightBell.Desc>Hóspedes podem tocar a campainha de um estabelecimento fechado. Colonos com o tipo de trabalho Atendimento que ouvirem correm e abrem o estabelecimento mediante uma taxa extra (veja abaixo as configurações da campainha noturna sobre quem é chamado e quem pode ser acordado).</HH.Setting.venues.nightBell.Desc>
   <HH.Setting.venues.nightBellMin>Cobrança mínima da campainha noturna</HH.Setting.venues.nightBellMin>
   <HH.Setting.venues.nightBellMin.Desc>Um serviço de campainha nunca custa menos que isto (prata).</HH.Setting.venues.nightBellMin.Desc>
   <HH.Setting.venues.nightBellSurcharge>Adicional da campainha noturna</HH.Setting.venues.nightBellSurcharge>
@@ -107,20 +107,16 @@
   <HH.Venue.Price>Preços</HH.Venue.Price>
   <HH.Venue.PriceDesc>Fator de preço sobre tudo o que este negócio vende. Os hóspedes se afastam de preços altos demais.</HH.Venue.PriceDesc>
   <HH.Venue.PriceFactor>Fator de preço</HH.Venue.PriceFactor>
-  <HH.Venue.PriceHint>Os hóspedes comparam o preço com o valor que o item tem para eles. Hóspedes ricos aguentam mais. Estabelecimentos sem ninguém de serviço cobram um pouco menos (autoatendimento); um serviço de campainha noturna custa a mais. Grátis significa grátis.</HH.Venue.PriceHint>
   <HH.Venue.PriceLine>Preços</HH.Venue.PriceLine>
   <HH.Venue.PriceTitle>Preços</HH.Venue.PriceTitle>
   <HH.Venue.Pricey>Caro</HH.Venue.Pricey>
   <HH.Venue.Rename>Renomear</HH.Venue.Rename>
   <HH.Venue.RenameDesc>Dê um nome a este negócio.</HH.Venue.RenameDesc>
   <HH.Venue.RenameTitle>Nomear este negócio</HH.Venue.RenameTitle>
-  <HH.Venue.Reset>Usar nome padrão</HH.Venue.Reset>
   <HH.Venue.Restock>Reabastecer</HH.Venue.Restock>
   <HH.Venue.RestockDesc>Deixe esta placa definir os locais de armazenamento do cômodo para aceitar suas mercadorias com prioridade Importante, para que os carregadores mantenham as prateleiras cheias. Opcional; as configurações antigas voltam quando você desliga.</HH.Venue.RestockDesc>
   <HH.Venue.RestockHint>Quando ligado, todo local de armazenamento deste cômodo (zonas de estoque e prateleiras, seus ou de qualquer um) aceita as mercadorias marcadas abaixo com prioridade Importante, para que seus carregadores mantenham o cômodo abastecido. As configurações antigas dos locais voltam quando você desliga isto.</HH.Venue.RestockHint>
   <HH.Venue.RestockNoShop>Este negócio não vende nada do seu cômodo, então não há nada para reabastecer.</HH.Venue.RestockNoShop>
-  <HH.Venue.RestockSwitchOff>Reabastecimento LIGADO – desligar e devolver o armazenamento</HH.Venue.RestockSwitchOff>
-  <HH.Venue.RestockSwitchOn>Reabastecimento desligado – ligar</HH.Venue.RestockSwitchOn>
   <HH.Venue.RestockTitle>Reabastecer</HH.Venue.RestockTitle>
   <HH.Venue.RippedOff>Enganado</HH.Venue.RippedOff>
   <HH.Venue.Sales>Vendas de hoje</HH.Venue.Sales>
@@ -141,4 +137,142 @@
   <HH.Venue.MarketBlock.NoShop>sem loja</HH.Venue.MarketBlock.NoShop>
   <HH.Venue.MarketBlock.Stalls>barracas de mercado {0}/{1}</HH.Venue.MarketBlock.Stalls>
   <HH.Venue.MarketBlock.Renown>renome {0}/{1}</HH.Venue.MarketBlock.Renown>
+  <HH.Core.FlipBlocked>O outro lado está bloqueado: um trabalhador não conseguiria ficar ali.</HH.Core.FlipBlocked>
+  <HH.Core.FlipBusy>Ocupado: {0} está usando agora.</HH.Core.FlipBusy>
+  <HH.Core.FlipNoSide>Isto não tem lado de trabalho.</HH.Core.FlipNoSide>
+  <HH.Core.FlipSame>Os dois lados são iguais.</HH.Core.FlipSame>
+  <HH.Core.FlipSide>Trocar lado de trabalho</HH.Core.FlipSide>
+  <HH.Core.FlipSideDesc>Vira isto no lugar para que quem trabalha aqui fique do outro lado. Mantém o lugar, as contas e as conexões.</HH.Core.FlipSideDesc>
+  <HH.Enum.BellWakes.AwakeOnly>Só colonos acordados</HH.Enum.BellWakes.AwakeOnly>
+  <HH.Enum.BellWakes.Off>Desligado (a campainha só toca)</HH.Enum.BellWakes.Off>
+  <HH.Enum.BellWakes.WakeVolunteers>Também acordar voluntários</HH.Enum.BellWakes.WakeVolunteers>
+  <HH.Enum.BellWho.AnyColonist>Qualquer colono</HH.Enum.BellWho.AnyColonist>
+  <HH.Enum.BellWho.ServingOnly>Só colonos em serviço</HH.Enum.BellWho.ServingOnly>
+  <HH.Honor.Line>Sistema de confiança: sem vigilância</HH.Honor.Line>
+  <HH.Honor.MemoPaid>caixa de confiança: pagou {0} de {1}</HH.Honor.MemoPaid>
+  <HH.Honor.MoteNothing>não pagou!</HH.Honor.MoteNothing>
+  <HH.Honor.MotePart>pagou {0} %</HH.Honor.MotePart>
+  <HH.Honor.PriceNote>sistema de confiança: preço cheio, alguns hóspedes pagam menos</HH.Honor.PriceNote>
+  <HH.Honor.Report>Caixa de confiança hoje: {0} vendas, {1} de prata faltando ({2} %) · no total: {3} vendas, {4} pagaram a menos, {5} não pagaram, {6} de prata faltando</HH.Honor.Report>
+  <HH.Honor.Section>Caixa de confiança</HH.Honor.Section>
+  <HH.Honor.Toggle>Sistema de confiança</HH.Honor.Toggle>
+  <HH.Honor.ToggleDesc>Toque este negócio sem vigilância: os hóspedes pegam o que querem e deixam o dinheiro na caixa de confiança, pelo preço cheio. Ninguém precisa ficar de plantão, mas alguns hóspedes pagam menos que o preço e uns poucos não pagam nada (as chances estão nas configurações; há menos quando um colono os vê). A placa mostra o que sumiu.</HH.Honor.ToggleDesc>
+  <HH.Honor.Witnessed>{0} saiu de {1} sem pagar – um colono viu.</HH.Honor.Witnessed>
+  <HH.Names.DefaultOwner>Harbor</HH.Names.DefaultOwner>
+  <HH.Serve.IdleMote>*bocejo*</HH.Serve.IdleMote>
+  <HH.Serve.ServedShift>{0} atendidos neste turno</HH.Serve.ServedShift>
+  <HH.Serve.TipMemo>gorjeta para {0}</HH.Serve.TipMemo>
+  <HH.Serve.TipMote>gorjeta +{0}</HH.Serve.TipMote>
+  <HH.Serve.TipsTotal>Gorjetas da equipe até agora: {0} de prata</HH.Serve.TipsTotal>
+  <HH.Setting.venues.autoNames>Dar nomes automáticos a novos negócios</HH.Setting.venues.autoNames>
+  <HH.Setting.venues.autoNames.Desc>Uma nova placa de estabelecimento recebe um nome que combina com o tipo de negócio (por exemplo, 'A Alpaca Sonolenta' para uma estalagem). Você sempre pode renomear ou sortear outro.</HH.Setting.venues.autoNames.Desc>
+  <HH.Setting.venues.bellHurry>Campainha noturna: colonos correm</HH.Setting.venues.bellHurry>
+  <HH.Setting.venues.bellHurry.Desc>Colonos que atendem à campainha vão até o estabelecimento correndo, em vez de andar.</HH.Setting.venues.bellHurry.Desc>
+  <HH.Setting.venues.bellRange>Alcance de audição da campainha noturna (células)</HH.Setting.venues.bellRange>
+  <HH.Setting.venues.bellRange.Desc>Até onde a campainha se ouve para quem tem audição normal. Paredes e portas fechadas no caminho reduzem o alcance; audição ruim reduz muito; colonos surdos nunca a ouvem.</HH.Setting.venues.bellRange.Desc>
+  <HH.Setting.venues.bellResponders>Campainha noturna: colonos por toque</HH.Setting.venues.bellResponders>
+  <HH.Setting.venues.bellResponders.Desc>Quantos colonos, no máximo, vêm correndo quando a campainha toca.</HH.Setting.venues.bellResponders.Desc>
+  <HH.Setting.venues.bellWakeCooldownHours>Campainha noturna: proteção do sono (horas)</HH.Setting.venues.bellWakeCooldownHours>
+  <HH.Setting.venues.bellWakeCooldownHours.Desc>Um colono acordado pela campainha não é acordado de novo por este número de horas.</HH.Setting.venues.bellWakeCooldownHours.Desc>
+  <HH.Setting.venues.bellWakes>Campainha noturna: quem é chamado</HH.Setting.venues.bellWakes>
+  <HH.Setting.venues.bellWakes.Desc>Desligado: a campainha só faz barulho, e os colonos a percebem quando o trabalho deles permitir. Só acordados: colonos acordados ao alcance correm para o estabelecimento. Acordar voluntários: também colonos dormindo que tenham o tipo de trabalho Atendimento com prioridade 1 ou 2 (ou com configurações simples de trabalho), no máximo uma vez a cada meio dia cada um, com um pequeno custo de humor.</HH.Setting.venues.bellWakes.Desc>
+  <HH.Setting.venues.bellWho>Campainha noturna: quem pode atender</HH.Setting.venues.bellWho>
+  <HH.Setting.venues.bellWho.Desc>Só Atendimento: colonos com o tipo de trabalho Atendimento ativado. Qualquer colono: todo colono capaz de atender.</HH.Setting.venues.bellWho.Desc>
+  <HH.Setting.venues.busyServedPerHour>Turno movimentado: hóspedes atendidos por hora</HH.Setting.venues.busyServedPerHour>
+  <HH.Setting.venues.busyServedPerHour.Desc>Um turno conta como movimentado (bom humor) quando o atendente servir pelo menos este número de hóspedes por hora.</HH.Setting.venues.busyServedPerHour.Desc>
+  <HH.Setting.venues.honorMessages>Sistema de confiança: relatar furtos vistos</HH.Setting.venues.honorMessages>
+  <HH.Setting.venues.honorMessages.Desc>Mostrar uma mensagem quando um colono viu um hóspede sair sem pagar.</HH.Setting.venues.honorMessages.Desc>
+  <HH.Setting.venues.honorNoPay>Sistema de confiança: chance de não pagar nada</HH.Setting.venues.honorNoPay>
+  <HH.Setting.venues.honorNoPay.Desc>Em um estabelecimento de confiança sem ninguém, a chance de um hóspede levar os produtos sem pagar nada.</HH.Setting.venues.honorNoPay.Desc>
+  <HH.Setting.venues.honorUnderpay>Sistema de confiança: chance de pagar pouco</HH.Setting.venues.honorUnderpay>
+  <HH.Setting.venues.honorUnderpay.Desc>Em um estabelecimento de confiança sem ninguém, a chance de um hóspede deixar só parte do preço (30-80 %) na caixinha.</HH.Setting.venues.honorUnderpay.Desc>
+  <HH.Setting.venues.honorWatched>Sistema de confiança: efeito de ser observado</HH.Setting.venues.honorWatched>
+  <HH.Setting.venues.honorWatched.Desc>Quanto menos os hóspedes pagam a menos enquanto um colono consegue vê-los (1 = nunca, enquanto observados).</HH.Setting.venues.honorWatched.Desc>
+  <HH.Setting.venues.idleHours>Entediado depois de (horas sem hóspede)</HH.Setting.venues.idleHours>
+  <HH.Setting.venues.idleHours.Desc>Um atendente que não serviu ninguém por este número de horas de turno fica entediado (mau humor, um pouco pior a cada período seguinte).</HH.Setting.venues.idleHours.Desc>
+  <HH.Setting.venues.requireSetup>Estabelecimentos precisam de mobília</HH.Setting.venues.requireSetup>
+  <HH.Setting.venues.requireSetup.Desc>Um negócio só abre quando a mobília que o seu tipo exige estiver no cômodo (uma estalagem precisa de balcão, mesa e assentos; um cassino, pelo menos um jogo; e assim por diante. Veja a aba Montagem da placa). Desligado: mobília faltando é apenas uma dica.</HH.Setting.venues.requireSetup.Desc>
+  <HH.Setting.venues.serviceSkill>Peso da habilidade Social</HH.Setting.venues.serviceSkill>
+  <HH.Setting.venues.serviceSkill.Desc>Quanto a habilidade Social de quem está de serviço importa: atendimento mais simpático, compras maiores, gorjetas e vendas mais rápidas. 0 = a habilidade não importa.</HH.Setting.venues.serviceSkill.Desc>
+  <HH.Setting.venues.setupHints>Botões de construção na placa</HH.Setting.venues.setupHints>
+  <HH.Setting.venues.setupHints.Desc>Uma placa de estabelecimento selecionada mostra botões de construção para a mobília que o negócio ainda precisa.</HH.Setting.venues.setupHints.Desc>
+  <HH.Setting.venues.shiftThoughts>Humor dos turnos</HH.Setting.venues.shiftThoughts>
+  <HH.Setting.venues.shiftThoughts.Desc>Colonos que cuidam de um estabelecimento ficam satisfeitos depois de um turno movimentado e entediados quando ficam parados por horas sem nada para fazer.</HH.Setting.venues.shiftThoughts.Desc>
+  <HH.Setting.venues.staffRule>Regra de pessoal</HH.Setting.venues.staffRule>
+  <HH.Setting.venues.staffRule.Desc>Por tipo de estabelecimento: estalagens, restaurantes, cassinos e spas precisam de alguém de serviço; lojas e salões não. Nunca: todo estabelecimento funciona em autoatendimento. Sempre: todo estabelecimento precisa de alguém de serviço.</HH.Setting.venues.staffRule.Desc>
+  <HH.Setting.venues.tipShare>Gorjetas</HH.Setting.venues.tipShare>
+  <HH.Setting.venues.tipShare.Desc>Maior gorjeta que um hóspede deixa além da compra, como parcela do preço, para um atendente perfeito. A chance e o valor da gorjeta crescem com a habilidade Social do atendente.</HH.Setting.venues.tipShare.Desc>
+  <HH.Setup.Attention>atenção: {0}</HH.Setup.Attention>
+  <HH.Setup.BannerAttention>A mobília está completa. Confira os pontos abertos abaixo para que os hóspedes sejam atendidos.</HH.Setup.BannerAttention>
+  <HH.Setup.BannerMissing>Este {0} ainda não tem parte da mobília.</HH.Setup.BannerMissing>
+  <HH.Setup.BannerNotReady>Não está pronto: este {0} abre assim que tudo marcado como Obrigatório estiver no cômodo.</HH.Setup.BannerNotReady>
+  <HH.Setup.BannerReady>Tudo o que este estabelecimento precisa já está no lugar.</HH.Setup.BannerReady>
+  <HH.Setup.Build>Construir</HH.Setup.Build>
+  <HH.Setup.BuildButton>Construir: {0}</HH.Setup.BuildButton>
+  <HH.Setup.BuildButtonDesc>Este {0} ainda precisa de {1}. Clique para colocar um no cômodo.</HH.Setup.BuildButtonDesc>
+  <HH.Setup.ChipNoRoom>sem cômodo</HH.Setup.ChipNoRoom>
+  <HH.Setup.ChipNoStaff>aguardando equipe</HH.Setup.ChipNoStaff>
+  <HH.Setup.FooterLoose>A regra 'Estabelecimentos precisam da mobília' está desligada: itens faltando são apenas dicas.</HH.Setup.FooterLoose>
+  <HH.Setup.FooterStrict>A mobília obrigatória mantém o estabelecimento fechado até estar no cômodo. Você pode desligar essa regra nas configurações de Lojas e comida.</HH.Setup.FooterStrict>
+  <HH.Setup.GizmoDesc>Abre o guia de configuração deste estabelecimento: o que ele precisa, o que já tem, com botões de construção para tudo que falta.</HH.Setup.GizmoDesc>
+  <HH.Setup.GizmoMissing>Configuração: faltam {0}</HH.Setup.GizmoMissing>
+  <HH.Setup.GizmoReady>Configuração: pronto</HH.Setup.GizmoReady>
+  <HH.Setup.HonorNotNeeded>não é necessário com o sistema de confiança</HH.Setup.HonorNotNeeded>
+  <HH.Setup.LoadNotice>Não está pronto para abrir, falta mobília: {0}. A aba Configuração da placa tem botões de construção.</HH.Setup.LoadNotice>
+  <HH.Setup.MissingLine>Configuração – faltam: {0}</HH.Setup.MissingLine>
+  <HH.Setup.NeedsResearch>precisa de pesquisa: {0}</HH.Setup.NeedsResearch>
+  <HH.Setup.NoScreenYet>construa a tela primeiro</HH.Setup.NoScreenYet>
+  <HH.Setup.NotAvailable>não disponível agora</HH.Setup.NotAvailable>
+  <HH.Setup.NotBuildable>não está no menu de construção</HH.Setup.NotBuildable>
+  <HH.Setup.NotReadyLine>Não está pronto – faltam: {0}</HH.Setup.NotReadyLine>
+  <HH.Setup.NotReadyState>não está pronto</HH.Setup.NotReadyState>
+  <HH.Setup.NowReady>{0} tem tudo o que precisa e está pronto para abrir.</HH.Setup.NowReady>
+  <HH.Setup.OperationalTip>Necessário para atender os hóspedes; não mantém as portas fechadas.</HH.Setup.OperationalTip>
+  <HH.Setup.PickType>Tipo de estabelecimento</HH.Setup.PickType>
+  <HH.Setup.Planned>{0} planejado(s)</HH.Setup.Planned>
+  <HH.Setup.ReadyLine>Configuração: pronto</HH.Setup.ReadyLine>
+  <HH.Setup.Recommended>{0} item(ns) recomendado(s) em aberto</HH.Setup.Recommended>
+  <HH.Setup.RecommendedHead>Recomendado</HH.Setup.RecommendedHead>
+  <HH.Setup.RecommendedTip>Recomendado: o estabelecimento funciona sem isso, mas os hóspedes gostam.</HH.Setup.RecommendedTip>
+  <HH.Setup.RenameTip>Clique para renomear este estabelecimento.</HH.Setup.RenameTip>
+  <HH.Setup.Required>Obrigatório</HH.Setup.Required>
+  <HH.Setup.RestockTip>Deixe a placa definir as prateleiras e estoques do cômodo para receber suas mercadorias.</HH.Setup.RestockTip>
+  <HH.Setup.ShowTip>Aponte para o que o cômodo já tem.</HH.Setup.ShowTip>
+  <HH.Setup.Staff>alguém fazendo trabalho de Serviço</HH.Setup.Staff>
+  <HH.Setup.StaffHint>Ative o tipo de trabalho Serviço para pelo menos um colono.</HH.Setup.StaffHint>
+  <HH.Setup.Stock>mercadorias à venda</HH.Setup.Stock>
+  <HH.Setup.StockHint>Guarde dentro do cômodo o que este estabelecimento vende.</HH.Setup.StockHint>
+  <HH.Setup.StockNote>{0} pilhas à venda</HH.Setup.StockNote>
+  <HH.Setup.TabLabel>Configuração</HH.Setup.TabLabel>
+  <HH.Setup.WorkTab>Aba de trabalho</HH.Setup.WorkTab>
+  <HH.Setup.WorkTabTip>Abra a aba de trabalho e dê o tipo de trabalho Serviço a um colono sociável.</HH.Setup.WorkTabTip>
+  <HH.Setup.WorkersNote>{0} colono(s) fazendo Serviço</HH.Setup.WorkersNote>
+  <HH.Venue.BellAnswered>Já vou!</HH.Venue.BellAnswered>
+  <HH.Venue.BellAnsweredBy>Sino noturno: atendido por {0}</HH.Venue.BellAnsweredBy>
+  <HH.Venue.BellNobody>Sino noturno: tocando, ninguém veio ainda</HH.Venue.BellNobody>
+  <HH.Venue.BellNote>sino noturno</HH.Venue.BellNote>
+  <HH.Venue.BellOnTheWay>Sino noturno: {0} está a caminho</HH.Venue.BellOnTheWay>
+  <HH.Venue.BellRungAgo>tocou há {0}</HH.Venue.BellRungAgo>
+  <HH.Venue.BellUnanswered>O sino noturno de {0} está tocando, mas ninguém vem. Colonos com o tipo de trabalho Servir precisam estar acordados e ao alcance do som.</HH.Venue.BellUnanswered>
+  <HH.Venue.ClosedNow>fechado agora</HH.Venue.ClosedNow>
+  <HH.Venue.NameAutoHint>Um nome sugerido acompanha a placa se você mudar o tipo de negócio; um nome digitado por você fica.</HH.Venue.NameAutoHint>
+  <HH.Venue.NamePlain>Simples: {0}</HH.Venue.NamePlain>
+  <HH.Venue.NameSuggest>Sugerir um nome</HH.Venue.NameSuggest>
+  <HH.Venue.NameSuggestTip>Sortear um nome que combine com este tipo de negócio. Sorteie de novo até gostar de um.</HH.Venue.NameSuggestTip>
+  <HH.Venue.Now>agora</HH.Venue.Now>
+  <HH.Venue.OpenNow>aberto agora</HH.Venue.OpenNow>
+  <HH.Venue.PriceColItem>À venda</HH.Venue.PriceColItem>
+  <HH.Venue.PriceColPrice>Hóspedes pagam</HH.Venue.PriceColPrice>
+  <HH.Venue.PriceColValue>Valor</HH.Venue.PriceColValue>
+  <HH.Venue.PriceEmpty>Nada à venda no cômodo ainda.</HH.Venue.PriceEmpty>
+  <HH.Venue.PriceHintShort>Os hóspedes comparam o preço com o valor que o item tem para eles; hóspedes ricos aceitam mais. Grátis é grátis.</HH.Venue.PriceHintShort>
+  <HH.Venue.PriceNoGoods>Este tipo de negócio não vende mercadorias do seu cômodo.</HH.Venue.PriceNoGoods>
+  <HH.Venue.PriceNow>Os hóspedes pagam {0} % do valor de mercado agora</HH.Venue.PriceNow>
+  <HH.Venue.PriceSetting>configuração do nível de preço</HH.Venue.PriceSetting>
+  <HH.Venue.RestockBtnOff>Desligar</HH.Venue.RestockBtnOff>
+  <HH.Venue.RestockBtnOn>Ligar</HH.Venue.RestockBtnOn>
+  <HH.Venue.RestockFooter>Locais de armazenamento neste cômodo: {0} · pilhas à venda agora: {1}</HH.Venue.RestockFooter>
+  <HH.Venue.RestockStateOff>Reabastecimento desligado: o armazenamento do cômodo mantém as próprias configurações</HH.Venue.RestockStateOff>
+  <HH.Venue.RestockStateOn>Reabastecimento ligado: o armazenamento do cômodo segue esta lista</HH.Venue.RestockStateOn>
+  <HH.Venue.SelfServiceNote>autoatendimento</HH.Venue.SelfServiceNote>
 </LanguageData>

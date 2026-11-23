@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ScenStartingAccount.description>La colonia empieza con una cuenta en el banco que elijas, un saldo inicial y, si quieres, un préstamo que devolver.</SL_ScenStartingAccount.description>
+  <SL_ScenStartingAccount.label>empezar con una cuenta de Silverline</SL_ScenStartingAccount.label>
+</LanguageData>

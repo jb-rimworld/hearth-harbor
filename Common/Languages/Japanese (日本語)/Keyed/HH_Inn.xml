@@ -75,7 +75,6 @@
   <HH.Inn.Event.Returned>また宿泊に戻ってきました。</HH.Inn.Event.Returned>
   <HH.Inn.Event.SelfCheckIn>部屋は一人で見つけました。デスクには誰もいませんでした。</HH.Inn.Event.SelfCheckIn>
   <HH.Inn.Event.SentAway>追い返されました。</HH.Inn.Event.SentAway>
-  <HH.Inn.Event.SharedBed>{0}とベッドを共有しています（1泊あたり追加{1}銀）。</HH.Inn.Event.SharedBed>
   <HH.Inn.Event.ShortenedStay>部屋代を払うため、滞在を{0}泊に短縮しました。</HH.Inn.Event.ShortenedStay>
   <HH.Inn.Event.TooImportant>自分の家でやることが多すぎて、泊まれませんでした。</HH.Inn.Event.TooImportant>
   <HH.Inn.Event.Welcomed>フロントデスクで{0}に歓迎されました。</HH.Inn.Event.Welcomed>
@@ -85,9 +84,7 @@
   <HH.Inn.Forecast.Overnight>{0}泊</HH.Inn.Forecast.Overnight>
   <HH.Inn.Forecast.Return>再訪</HH.Inn.Forecast.Return>
   <HH.Inn.GuestBed.Booked>{0}が予約済み</HH.Inn.GuestBed.Booked>
-  <HH.Inn.GuestBed.Desc>このベッドを客に貸し出します。入植者はここでは寝ず、客は客用ベッドでのみ寝ます。1泊の料金は部屋、ベッド、そして同じ部屋のベッド数に応じて決まります。</HH.Inn.GuestBed.Desc>
   <HH.Inn.GuestBed.Inactive>客用ベッド（医療・囚人・奴隷用ベッドの間は無効）</HH.Inn.GuestBed.Inactive>
-  <HH.Inn.GuestBed.Inspect>客用ベッド: {0}銀/泊（{1}）</HH.Inn.GuestBed.Inspect>
   <HH.Inn.GuestBed.Label>客用ベッド</HH.Inn.GuestBed.Label>
   <HH.Inn.GuestBed.NoColonists>これは客用ベッドです。</HH.Inn.GuestBed.NoColonists>
   <HH.Inn.GuestBed.NotColonistBed>客用ベッドにできるのは、通常の入植者用ベッドだけです（医療・囚人・奴隷用は不可）。</HH.Inn.GuestBed.NotColonistBed>
@@ -96,7 +93,6 @@
   <HH.Inn.Handling.Basics>基本対応</HH.Inn.Handling.Basics>
   <HH.Inn.Handling.BasicsDesc>有料サービスのみで、娯楽はなし。入植者の時間は使いません。</HH.Inn.Handling.BasicsDesc>
   <HH.Inn.Handling.Bond>絆: {0} / {1}</HH.Inn.Handling.Bond>
-  <HH.Inn.Handling.Click>クリックで切り替え: 基本対応 → 付き添い → 勧誘。</HH.Inn.Handling.Click>
   <HH.Inn.Handling.Label>対応: {0}</HH.Inn.Handling.Label>
   <HH.Inn.Handling.Recruit>勧誘</HH.Inn.Handling.Recruit>
   <HH.Inn.Handling.RecruitDesc>付き添いと同様ですが、滞在についての話もします。入植地との絆が十分に強ければ、出発時に加わることがあります。しつこい勧誘は相手の気分を害することがあります。</HH.Inn.Handling.RecruitDesc>
@@ -295,4 +291,56 @@
   <HH.Inn.PriceMode.ManualSet>固定価格…</HH.Inn.PriceMode.ManualSet>
   <HH.Inn.PriceMode.ManualValue>1泊 {0} 銀</HH.Inn.PriceMode.ManualValue>
   <HH.Inn.PriceMode.Manual>固定価格</HH.Inn.PriceMode.Manual>
+  <HH.Inn.BedUse.ChipTip>1泊の料金: {0}。クリックで変更: 無料、−25%、自動、+25%、固定額のいずれか。</HH.Inn.BedUse.ChipTip>
+  <HH.Inn.BedUse.Click>クリックして、このベッドの用途を選びます。</HH.Inn.BedUse.Click>
+  <HH.Inn.BedUse.Colonist>入植者用ベッド</HH.Inn.BedUse.Colonist>
+  <HH.Inn.BedUse.ColonistDesc>入植者がふだん寝るための場所</HH.Inn.BedUse.ColonistDesc>
+  <HH.Inn.BedUse.Guest>客用ベッド</HH.Inn.BedUse.Guest>
+  <HH.Inn.BedUse.GuestDesc>客に貸し出します。入植者は立ち入りません</HH.Inn.BedUse.GuestDesc>
+  <HH.Inn.BedUse.Medical>医療用ベッド</HH.Inn.BedUse.Medical>
+  <HH.Inn.BedUse.NeedsRimWard>患者用・手術用ベッドには RimWard MOD が必要です。</HH.Inn.BedUse.NeedsRimWard>
+  <HH.Inn.BedUse.NoBed>このベッドは客用にできません。</HH.Inn.BedUse.NoBed>
+  <HH.Inn.BedUse.Owners>所有者: {0}</HH.Inn.BedUse.Owners>
+  <HH.Inn.BedUse.Patient>患者用ベッド</HH.Inn.BedUse.Patient>
+  <HH.Inn.BedUse.PatientDesc>病人や負傷者のため</HH.Inn.BedUse.PatientDesc>
+  <HH.Inn.BedUse.Price>料金: 1泊{0}銀（{1}）。</HH.Inn.BedUse.Price>
+  <HH.Inn.BedUse.PriceHint>隅の値札をクリックすると料金を変更できます。</HH.Inn.BedUse.PriceHint>
+  <HH.Inn.BedUse.Surgery>手術用ベッド</HH.Inn.BedUse.Surgery>
+  <HH.Inn.BedUse.SurgeryDesc>ここで手術を行います</HH.Inn.BedUse.SurgeryDesc>
+  <HH.Inn.Convert.Certainty>{0}への確信: {1}%</HH.Inn.Convert.Certainty>
+  <HH.Inn.Convert.Goal>確信が0%になると{0}を受け入れます</HH.Inn.Convert.Goal>
+  <HH.Inn.Convert.Insulted>説教されたと感じ、今回は耳を貸しません</HH.Inn.Convert.Insulted>
+  <HH.Inn.Convert.Nothing>改宗させる相手がいません: この客はすでに同じイデオロギーか、話が通じない相手です。</HH.Inn.Convert.Nothing>
+  <HH.Inn.Convert.Talks>これまでの話し合い: {0}回</HH.Inn.Convert.Talks>
+  <HH.Inn.Door.AgeTitle>年齢</HH.Inn.Door.AgeTitle>
+  <HH.Inn.Door.StayTitle>滞在の種類</HH.Inn.Door.StayTitle>
+  <HH.Inn.Door.WealthTitle>資産</HH.Inn.Door.WealthTitle>
+  <HH.Inn.Event.ConvertEnded>改宗させる相手がいなくなったので、ふつうの付き合いに戻りました。</HH.Inn.Event.ConvertEnded>
+  <HH.Inn.Event.CoupleBooked>{0}と二人部屋を予約しました: 1泊それぞれ{1}銀。</HH.Inn.Event.CoupleBooked>
+  <HH.Inn.Event.Embraced>{1}との話し合いの末、{0}に帰依しました。</HH.Inn.Event.Embraced>
+  <HH.Inn.Event.EmbracedSat>入植地で新しい信仰を見つけました。</HH.Inn.Event.EmbracedSat>
+  <HH.Inn.Event.NoFreeBed>客用ベッドがすべて埋まっていたため、日帰りだけ滞在しました。</HH.Inn.Event.NoFreeBed>
+  <HH.Inn.Event.PartnerMovedIn>{0}がベッドに入ってきました: 料金は割り勘です（1泊それぞれ{1}銀）。</HH.Inn.Event.PartnerMovedIn>
+  <HH.Inn.Event.Preached>{0}に説教されたと感じました。</HH.Inn.Event.Preached>
+  <HH.Inn.Event.SharedBed2>{0}とベッドを共有しています（1泊それぞれ{1}銀）。</HH.Inn.Event.SharedBed2>
+  <HH.Inn.Event.SleepsTogether>{0}の隣で眠ります。まさに本人たちの望みどおりです。</HH.Inn.Event.SleepsTogether>
+  <HH.Inn.Event.ThinkingOver>{1}について{0}と話し、今は自分の信念への確信が{2}%です。</HH.Inn.Event.ThinkingOver>
+  <HH.Inn.Event.Unmoved>{1}について{0}の話を聞きましたが、心は動きませんでした。</HH.Inn.Event.Unmoved>
+  <HH.Inn.Event.WantedDouble>{0}と二人用ベッドを望みましたが、一人用ベッドが二つになりました。</HH.Inn.Event.WantedDouble>
+  <HH.Inn.GuestBed.InspectShort>客用ベッド: 1泊{0}銀 · {1}</HH.Inn.GuestBed.InspectShort>
+  <HH.Inn.Handling.Click2>クリックで切替: {0}。</HH.Inn.Handling.Click2>
+  <HH.Inn.Handling.Convert>改宗</HH.Inn.Handling.Convert>
+  <HH.Inn.Handling.ConvertDesc>「付き添い」と同じですが、さらにあなたのイデオロギーについて話します。話すたびに客の自分の信念への確信が揺らぎ、0になるとあなたの信念を受け入れます。強引な話し方は気分を害することもあります。要DLC（Ideology）。</HH.Inn.Handling.ConvertDesc>
+  <HH.Inn.Msg.Preached>{0}は改宗の試みを押しつけがましいと感じ、支出を減らして早く帰ります。</HH.Inn.Msg.Preached>
+  <HH.Inn.Occupancy.DoubleBed>二人用ベッド</HH.Inn.Occupancy.DoubleBed>
+  <HH.Inn.Problem.Double>パートナーと二人用ベッドを希望しています: 作るか、ベッドひとつを客用に指定してください。</HH.Inn.Problem.Double>
+  <HH.Inn.Problem.DoubleMany>{0}組の客が二人用ベッドを希望しています: 作るか、ベッドひとつを客用に指定してください。</HH.Inn.Problem.DoubleMany>
+  <HH.Setting.inn.convertPower>改宗の強さ</HH.Setting.inn.convertPower>
+  <HH.Setting.inn.convertPower.Desc>「改宗」の対応での話し合いが、客の自分のイデオロギーへの確信をどれだけ揺さぶるか（100%=通常の強さ）。イデオロギーDLCが必要です。</HH.Setting.inn.convertPower.Desc>
+  <HH.Setting.inn.coupleWish>カップルはダブルベッドを希望する</HH.Setting.inn.coupleWish>
+  <HH.Setting.inn.coupleWish.Desc>一緒に到着したカップルは、ダブルベッド1台を好みます。それが手に入ると少し喜び、シングルベッド2台になると少し不満に思います。価格は決して変わりません。</HH.Setting.inn.coupleWish.Desc>
+  <HH.Setting.inn.doubleBedFactor>ダブルベッドの価格係数</HH.Setting.inn.doubleBedFactor>
+  <HH.Setting.inn.doubleBedFactor.Desc>2人用のベッドは、シングルベッドの価格のこの倍数を稼ぎます。1台のダブルベッドを使うカップルは、2人で半額ずつ支払うため、シングル2台より安く済みます。</HH.Setting.inn.doubleBedFactor.Desc>
+  <HH.Setting.inn.groupDevGizmos>開発用ボタンをまとめる</HH.Setting.inn.groupDevGizmos>
+  <HH.Setting.inn.groupDevGizmos.Desc>開発モードでは、Hearth &amp; Harbor の建物の DEV ボタンが「Dev: Hearth &amp; Harbor」という1つのボタンにまとめられ、ギズモの列が見やすく保たれます。バニラや他の Mod のボタンには一切触れません。</HH.Setting.inn.groupDevGizmos.Desc>
 </LanguageData>

@@ -228,4 +228,36 @@
   <HH_Dish_SashimiPlate.description>Pescado crudo en láminas finas y un pequeño dilema moral.</HH_Dish_SashimiPlate.description>
   <HH_Dish_FishTacos.label>Tacos de pescado</HH_Dish_FishTacos.label>
   <HH_Dish_FishTacos.description>Pescado en tortilla, entregado por una colona que corrió todo el camino.</HH_Dish_FishTacos.description>
+  <HH_Dish_BoomalopeConfit.description>Cocinado lentamente en su propia grasa. No te quedes junto a la olla. Tradicionalmente elaborado con boomalope, con cuidado.</HH_Dish_BoomalopeConfit.description>
+  <HH_Dish_BoomalopeConfit.label>carne confitada asada lentamente</HH_Dish_BoomalopeConfit.label>
+  <HH_Dish_CampfireStew.description>A la olla fue todo, incluida la discusión sobre lo que todo aquello significaba. Tradicionalmente elaborado con muffalo.</HH_Dish_CampfireStew.description>
+  <HH_Dish_CampfireStew.label>estofado de carne de fogata</HH_Dish_CampfireStew.label>
+  <HH_Dish_ClayOvenMuffalo.description>Marinado toda la noche, horneado en un horno de barro y servido con altivez. Tradicionalmente elaborado con muffalo.</HH_Dish_ClayOvenMuffalo.description>
+  <HH_Dish_ClayOvenMuffalo.label>asado al horno de barro</HH_Dish_ClayOvenMuffalo.label>
+  <HH_Dish_DromedaryTagine.description>Cocinado a fuego lento en un cono de barro, como a la mayoría le gustaría estar. Tradicionalmente elaborado con dromedario.</HH_Dish_DromedaryTagine.description>
+  <HH_Dish_DromedaryTagine.label>tajín de carne y bayas</HH_Dish_DromedaryTagine.label>
+  <HH_Dish_LacqueredThrumbo.description>Glaseado hasta brillar más que la cuenta bancaria de la colonia. Tradicionalmente elaborado con thrumbo, si la colonia tiene tanta suerte.</HH_Dish_LacqueredThrumbo.description>
+  <HH_Dish_LacqueredThrumbo.label>asado laqueado</HH_Dish_LacqueredThrumbo.label>
+  <HH_Dish_LambKoftasWithRice.description>Especiado, moldeado y servido sobre arroz como una conferencia muy sabrosa. Tradicionalmente elaborado con cordero.</HH_Dish_LambKoftasWithRice.description>
+  <HH_Dish_LambKoftasWithRice.label>köftas de carne con arroz</HH_Dish_LambKoftasWithRice.label>
+  <HH_Dish_MongolianMuffalo.description>Salteado al wok, dulce, pegajoso y un poco ruidoso. Tradicionalmente elaborado con muffalo.</HH_Dish_MongolianMuffalo.description>
+  <HH_Dish_MongolianMuffalo.label>carne a la mongola</HH_Dish_MongolianMuffalo.label>
+  <HH_Dish_MuffaloBourguignon.description>Estofado en cerveza, porque el vino se acabó el segundo día. Tradicionalmente elaborado con muffalo.</HH_Dish_MuffaloBourguignon.description>
+  <HH_Dish_MuffaloBourguignon.label>borgoñona de la colonia</HH_Dish_MuffaloBourguignon.label>
+  <HH_Dish_MuffaloCarpaccio.description>Cortado tan fino que se puede leer la carta a través de él. Tradicionalmente elaborado con muffalo.</HH_Dish_MuffaloCarpaccio.description>
+  <HH_Dish_MuffaloCarpaccio.label>carpaccio de carne</HH_Dish_MuffaloCarpaccio.label>
+  <HH_Dish_MuffaloGoulash.description>Rojo, espeso y, oficialmente, la discusión nacional no oficial. Tradicionalmente elaborado con muffalo.</HH_Dish_MuffaloGoulash.description>
+  <HH_Dish_MuffaloGoulash.label>gulasch de carne</HH_Dish_MuffaloGoulash.label>
+  <HH_Dish_MuffaloRamen.description>Sorbe ruidosamente. En una pelea por el último cuenco, sorbe aún más fuerte. Tradicionalmente elaborado con muffalo.</HH_Dish_MuffaloRamen.description>
+  <HH_Dish_MuffaloRamen.label>ramen de carne contundente</HH_Dish_MuffaloRamen.label>
+  <HH_Dish_MuffaloStroganoff.description>Cremoso, rico y acabado a la tercera cucharada. Tradicionalmente elaborado con muffalo.</HH_Dish_MuffaloStroganoff.description>
+  <HH_Dish_MuffaloStroganoff.label>stróganoff cremoso</HH_Dish_MuffaloStroganoff.label>
+  <HH_Dish_MuffaloWellington.description>Envuelto en hojaldre, un pequeño aislante para un ego muy grande. Tradicionalmente elaborado con muffalo.</HH_Dish_MuffaloWellington.description>
+  <HH_Dish_MuffaloWellington.label>wellington de carne</HH_Dish_MuffaloWellington.label>
+  <HH_Dish_PadThrumbo.description>Un enredo de fideos agridulce y crujiente, salteado en el wok hasta que obedece. El crujido viene de carne de insecto.</HH_Dish_PadThrumbo.description>
+  <HH_Dish_PadThrumbo.label>pad bug</HH_Dish_PadThrumbo.label>
+  <HH_Dish_ThrumboPho.description>Un caldo claro con una lista de pendientes muy larga detrás. Tradicionalmente elaborado con thrumbo, si la colonia tiene tanta suerte.</HH_Dish_ThrumboPho.description>
+  <HH_Dish_ThrumboPho.label>pho de carne</HH_Dish_ThrumboPho.label>
+  <HH_Dish_ThrumboTartare.description>Crudo, feroz y valiente. Firma antes la exención de responsabilidad. Tradicionalmente elaborado con thrumbo, si la colonia tiene tanta suerte.</HH_Dish_ThrumboTartare.description>
+  <HH_Dish_ThrumboTartare.label>tartar de carne</HH_Dish_ThrumboTartare.label>
 </LanguageData>

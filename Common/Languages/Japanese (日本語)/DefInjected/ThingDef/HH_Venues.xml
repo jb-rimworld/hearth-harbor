@@ -10,4 +10,6 @@
   <HH_MarketStall.description>縞模様の日よけがついた、自由に置ける露店。大市場は、露店を十分に所有したときにだけ開かれる（「店舗」設定を参照）。交易キャラバンはそれぞれ露店を1つ構え、露店料を入植地の金庫に納める。屋外に置かれ、どんな天候でも使えるが、それ自体は店ではない。</HH_MarketStall.description>
   <HH_VendingMachine.label>自動販売機</HH_VendingMachine.label>
   <HH_VendingMachine.description>電源で動く収納庫で、食べ物、飲み物、薬物、薬を入れられる。客は時間を問わず、人手なしで市場価値の価格で買える。運搬係は棚と同じように補充する。入植者は無料で自由に取ってよく、機械が請求するのは客だけ。売るには電力が必要。</HH_VendingMachine.description>
+  <HH_Mote_Bell.label>夜の鐘</HH_Mote_Bell.label>
+  <HH_Mote_RingArc.label>鐘の音</HH_Mote_RingArc.label>
 </LanguageData>

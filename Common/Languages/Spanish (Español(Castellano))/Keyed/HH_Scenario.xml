@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Scen.BackRoom.Intro>La carta estaba impresa en papel negro grueso y olía levemente a puro.\n\n"Tus deudas han quedado saldadas. Todas. Nos pondremos en contacto sobre la sala tras la cocina. Mantenla ordenada."\n\nTu parada tiene ahora nuevos socios. Son pacientes, educados y nunca, nunca olvidan una cifra.\n\nEste inicio usa el contenido más oscuro de Hearth &amp; Harbor. Puedes suavizarlo en cualquier momento en los ajustes del mod.</HH.Scen.BackRoom.Intro>
+  <HH.Scen.Editor.Editing>Editando las reglas de Hearth &amp; Harbor de este escenario.</HH.Scen.Editor.Editing>
+  <HH.Scen.Editor.ModuleResetTip>Deja este módulo en la plantilla del jugador.</HH.Scen.Editor.ModuleResetTip>
+  <HH.Scen.Editor.ModulesIntro>Módulos que este escenario activa o desactiva. Un módulo que no toques sigue la plantilla del jugador.</HH.Scen.Editor.ModulesIntro>
+  <HH.Scen.Editor.Note>Solo lo que cambies aquí (marcado en ámbar) lo fija el escenario. Las filas sin marcar muestran los valores por defecto; en una partida nueva vienen de la plantilla del jugador. Restablecer devuelve una fila o un módulo a la plantilla.</HH.Scen.Editor.Note>
+  <HH.Scen.Editor.Side>Reglas del escenario</HH.Scen.Editor.Side>
+  <HH.Scen.Editor.Title>Reglas de Hearth &amp; Harbor de este escenario</HH.Scen.Editor.Title>
+  <HH.Scen.HarborTown.Intro>La escritura se firmó con prisas y el abogado no se quedó a tomar el té. Ahora es tuya: una posada desgastada sobre un puerto tranquilo, un camino lleno de caravanas y ni un solo huésped.\n\nBarre los suelos, repara el tejado, haz una cama. Cuelga un cartel. Alguien llamará a la puerta muy pronto y, si lo tratas bien, se lo contará a todo el que circule por el camino.\n\nConsejo: Hetty Hearthwell es la narradora de los constructores. Y la guía de Hearth &amp; Harbor, arriba a la derecha, explica un paso cada vez.</HH.Scen.HarborTown.Intro>
+  <HH.Scen.Module.Off>desactivado</HH.Scen.Module.Off>
+  <HH.Scen.Module.On>activado</HH.Scen.Module.On>
+  <HH.Scen.Module.Template>según plantilla</HH.Scen.Module.Template>
+  <HH.Scen.Picker.Nerd>Ajustes avanzados</HH.Scen.Picker.Nerd>
+  <HH.Scen.Picker.Search>Buscar…</HH.Scen.Picker.Search>
+  <HH.Scen.Picker.Title>Elige un ajuste de Hearth &amp; Harbor</HH.Scen.Picker.Title>
+  <HH.Scen.Rules.Content>Contenido: {0}</HH.Scen.Rules.Content>
+  <HH.Scen.Rules.Count>{0} ajuste(s) definido(s); añade ajustes sueltos con la parte «Ajuste de Hearth &amp; Harbor».</HH.Scen.Rules.Count>
+  <HH.Scen.Rules.Discovered>El inframundo ya descubierto</HH.Scen.Rules.Discovered>
+  <HH.Scen.Rules.More>Más ajustes… ({0} definidos)</HH.Scen.Rules.More>
+  <HH.Scen.Rules.MoreTip>Abre todos los ajustes de Hearth &amp; Harbor de este escenario. Solo lo que cambies ahí lo fija el escenario.</HH.Scen.Rules.MoreTip>
+  <HH.Scen.Rules.SumContent>contenido: {0}</HH.Scen.Rules.SumContent>
+  <HH.Scen.Rules.SumDiscovered>el inframundo ya te conoce</HH.Scen.Rules.SumDiscovered>
+  <HH.Scen.Rules.SumMore>y {0} ajustes más</HH.Scen.Rules.SumMore>
+  <HH.Scen.Rules.SumNothing>todo como en tu plantilla</HH.Scen.Rules.SumNothing>
+  <HH.Scen.Rules.SumOff>desactivado: {0}</HH.Scen.Rules.SumOff>
+  <HH.Scen.Rules.SumOn>activado: {0}</HH.Scen.Rules.SumOn>
+  <HH.Scen.Rules.SumTier>dificultad de hospedaje {0} % ({1})</HH.Scen.Rules.SumTier>
+  <HH.Scen.Rules.SummaryHead>Ajustes de Hearth &amp; Harbor:</HH.Scen.Rules.SummaryHead>
+  <HH.Scen.Rules.TierTemplate>Dificultad de hospedaje: según plantilla</HH.Scen.Rules.TierTemplate>
+  <HH.Scen.Rules.TierTip>Marca esta casilla para que el escenario fije la dificultad de hospedaje (0–500 %). Sin marcar, decide la plantilla del jugador.</HH.Scen.Rules.TierTip>
+  <HH.Scen.SetByScenario>lo fija el escenario</HH.Scen.SetByScenario>
+  <HH.Scen.Setting.Intro>Ajustes de Hearth &amp; Harbor</HH.Scen.Setting.Intro>
+  <HH.Scen.Setting.Pick>Elige un ajuste…</HH.Scen.Setting.Pick>
+  <HH.Scen.Setting.Unknown>Ajuste desconocido (¿falta el módulo?)</HH.Scen.Setting.Unknown>
+</LanguageData>

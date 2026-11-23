@@ -209,7 +209,7 @@
   <HH.UI.Guests.Col.Wing>Ala</HH.UI.Guests.Col.Wing>
   <HH.UI.Guests.Col.Handling>Trato</HH.UI.Guests.Col.Handling>
   <HH.UI.Guests.Col.Leaves>Se va en</HH.UI.Guests.Col.Leaves>
-  <HH.UI.Guests.HandlingTip>Haz clic para cambiar: Básico → Acompañar → Reclutar. Acompañar y Reclutar requieren colonos con trabajo de Hospitalidad.</HH.UI.Guests.HandlingTip>
+  <HH.UI.Guests.HandlingTip>Haz clic para cambiar el trato. Acompañar, Reclutar y Convertir necesitan colonos con el trabajo de Hospitalidad; Convertir solo aparece para huéspedes de otra ideoligión (Ideología).</HH.UI.Guests.HandlingTip>
   <HH.UI.Overview.CatToday>hoy {0}</HH.UI.Overview.CatToday>
   <HH.UI.Overview.CatWeek>7 días {0}</HH.UI.Overview.CatWeek>
   <HH.UI.Overview.Week>Ingresos de los últimos 7 días</HH.UI.Overview.Week>
@@ -313,4 +313,26 @@
   <HH.Setting.core.ironBank.Desc>El cobro de deudas siempre sube hasta la fase más alta, sea cual sea la dificultad. Nadie aplaza tus plazos en silencio.</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.peacefulUnderworld.Desc>Los locales oscuros funcionan sin violencia: sin foso de peleas, sin interrogatorios, sin caza de personas, sin clínica, sin extorsión. Se mantienen la trastienda, el perista y el salón de drogas.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>La planificación de huéspedes y las revisiones de habitaciones se hacen la mitad de veces. Ayuda en ordenadores lentos; los huéspedes pueden reaccionar algo más tarde.</HH.Setting.core.perfMode.Desc>
+  <HH.Kitchen.Cookbook.ColCuisine>Estilo</HH.Kitchen.Cookbook.ColCuisine>
+  <HH.Kitchen.Cookbook.ColDish>Plato</HH.Kitchen.Cookbook.ColDish>
+  <HH.Kitchen.Cookbook.ColLevel>Nivel</HH.Kitchen.Cookbook.ColLevel>
+  <HH.Kitchen.Cookbook.ColPrice>Precio</HH.Kitchen.Cookbook.ColPrice>
+  <HH.Kitchen.Cookbook.ColSkill>Habilidad</HH.Kitchen.Cookbook.ColSkill>
+  <HH.Kitchen.Cookbook.ColStations>Se cocina en</HH.Kitchen.Cookbook.ColStations>
+  <HH.Setting.core.windowScale>Tamaño de las ventanas de Hearth &amp; Harbor</HH.Setting.core.windowScale>
+  <HH.Setting.core.windowScale.Desc>Todas las ventanas de Hearth &amp; Harbor y Silverline crecen o se reducen con este factor (además del tamaño automático para pantallas grandes).</HH.Setting.core.windowScale.Desc>
+  <HH.UI.DevGroup.Desc>Herramientas del modo desarrollador de Hearth &amp; Harbor para este edificio ({0}). Solo se muestran en modo desarrollador; desactiva la agrupación en los ajustes de la Posada.</HH.UI.DevGroup.Desc>
+  <HH.UI.DevGroup.Label>Desarrollo: Hearth &amp; Harbor</HH.UI.DevGroup.Label>
+  <HH.UI.Diag.Lines>{0} líneas</HH.UI.Diag.Lines>
+  <HH.UI.Diff.Jump>Ir a</HH.UI.Diff.Jump>
+  <HH.UI.Diff.JumpTop>Nivel y deslizador</HH.UI.Diff.JumpTop>
+  <HH.UI.GuestTab.CollapseTip>Haz clic para contraer</HH.UI.GuestTab.CollapseTip>
+  <HH.UI.GuestTab.ExpandTip>Haz clic para expandir</HH.UI.GuestTab.ExpandTip>
+  <HH.UI.Handling.Convert>Convertir</HH.UI.Handling.Convert>
+  <HH.UI.Handling.Convert.Tip>Como Acompañar, pero con charlas sobre tu ideoligión. Cada charla sacude la certeza del huésped en la suya; a cero, adopta la tuya. Una charla insistente puede ofender (humor -4, gasta menos). Necesita el DLC Ideología y un huésped de otra ideoligión.</HH.UI.Handling.Convert.Tip>
+  <HH.UI.Page.Sub.casino>Casas, recaudación y cómo va cada juego frente a sus probabilidades.</HH.UI.Page.Sub.casino>
+  <HH.UI.Page.Sub.city>Cine, salón, galería, parque, taxi y seguridad: qué está construido y cuánto gana.</HH.UI.Page.Sub.city>
+  <HH.UI.Page.Sub.guests>Todos los que se alojan o visitan tu posada. Haz clic en una fila para ir al huésped; haz clic en la celda de trato para cambiarlo.</HH.UI.Page.Sub.guests>
+  <HH.UI.Page.Sub.overview>Hoy de un vistazo: huéspedes, recaudación y estado de cada local.</HH.UI.Page.Sub.overview>
+  <HH.UI.Page.Sub.underworld>Susurros, pesos de llegada y la recaudación del lado oscuro.</HH.UI.Page.Sub.underworld>
 </LanguageData>

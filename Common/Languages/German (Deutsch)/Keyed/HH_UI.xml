@@ -226,7 +226,7 @@
   <HH.UI.Guests.Col.Wing>Flügel</HH.UI.Guests.Col.Wing>
   <HH.UI.Guests.Col.Handling>Betreuung</HH.UI.Guests.Col.Handling>
   <HH.UI.Guests.Col.Leaves>Abreise in</HH.UI.Guests.Col.Leaves>
-  <HH.UI.Guests.HandlingTip>Klicken zum Wechseln: Grundversorgung → Begleiten → Anwerben. Begleiten und Anwerben brauchen Kolonisten mit Gastgeben-Arbeit.</HH.UI.Guests.HandlingTip>
+  <HH.UI.Guests.HandlingTip>Klicken, um die Betreuung zu wechseln. Begleiten, Anwerben und Bekehren brauchen Kolonisten mit Gastgeben-Arbeit; Bekehren erscheint nur bei Gästen einer anderen Ideoligion (Ideology).</HH.UI.Guests.HandlingTip>
   <HH.UI.Overview.CatToday>heute {0}</HH.UI.Overview.CatToday>
   <HH.UI.Overview.CatWeek>7 Tage {0}</HH.UI.Overview.CatWeek>
   <HH.UI.Overview.Week>Einnahmen der letzten 7 Tage</HH.UI.Overview.Week>
@@ -313,4 +313,26 @@
   <HH.Setting.core.showMath.Desc>Zeigt überall Nerd-Einstellungen und Formeln.</HH.Setting.core.showMath.Desc>
   <HH.Setting.core.perfMode>Leistungsmodus</HH.Setting.core.perfMode>
   <HH.Setting.core.perfMode.Desc>Gästeplanung und Raumprüfungen laufen nur halb so oft. Hilft auf langsamen Rechnern; Gäste reagieren eventuell etwas später.</HH.Setting.core.perfMode.Desc>
+  <HH.Kitchen.Cookbook.ColCuisine>Küche</HH.Kitchen.Cookbook.ColCuisine>
+  <HH.Kitchen.Cookbook.ColDish>Gericht</HH.Kitchen.Cookbook.ColDish>
+  <HH.Kitchen.Cookbook.ColLevel>Stufe</HH.Kitchen.Cookbook.ColLevel>
+  <HH.Kitchen.Cookbook.ColPrice>Preis</HH.Kitchen.Cookbook.ColPrice>
+  <HH.Kitchen.Cookbook.ColSkill>Fertigkeit</HH.Kitchen.Cookbook.ColSkill>
+  <HH.Kitchen.Cookbook.ColStations>Gekocht an</HH.Kitchen.Cookbook.ColStations>
+  <HH.Setting.core.windowScale>Größe der Hearth-&amp;-Harbor-Fenster</HH.Setting.core.windowScale>
+  <HH.Setting.core.windowScale.Desc>Alle Fenster von Hearth &amp; Harbor und Silverline werden um diesen Faktor größer oder kleiner (zusätzlich zur automatischen Größe für große Bildschirme).</HH.Setting.core.windowScale.Desc>
+  <HH.UI.DevGroup.Desc>Entwicklermodus-Werkzeuge von Hearth &amp; Harbor für dieses Gebäude ({0}). Werden nur im Entwicklermodus angezeigt; die Gruppierung lässt sich in den Gasthof-Einstellungen abschalten.</HH.UI.DevGroup.Desc>
+  <HH.UI.DevGroup.Label>Entwickler: Hearth &amp; Harbor</HH.UI.DevGroup.Label>
+  <HH.UI.Diag.Lines>{0} Zeilen</HH.UI.Diag.Lines>
+  <HH.UI.Diff.Jump>Springe zu</HH.UI.Diff.Jump>
+  <HH.UI.Diff.JumpTop>Stufe und Regler</HH.UI.Diff.JumpTop>
+  <HH.UI.GuestTab.CollapseTip>Zum Einklappen klicken</HH.UI.GuestTab.CollapseTip>
+  <HH.UI.GuestTab.ExpandTip>Zum Ausklappen klicken</HH.UI.GuestTab.ExpandTip>
+  <HH.UI.Handling.Convert>Bekehren</HH.UI.Handling.Convert>
+  <HH.UI.Handling.Convert.Tip>Wie Begleiten, dazu Gespräche über deine Ideoligion. Jedes Gespräch erschüttert die Gewissheit des Gasts in die eigene; bei null übernimmt er deine. Ein aufdringliches Gespräch kann beleidigen (Stimmung -4, weniger Ausgaben). Braucht das Ideology-DLC und einen Gast einer anderen Ideoligion.</HH.UI.Handling.Convert.Tip>
+  <HH.UI.Page.Sub.casino>Häuser, Einnahmen und wie sich jedes Spiel gegen seine Quoten schlägt.</HH.UI.Page.Sub.casino>
+  <HH.UI.Page.Sub.city>Kino, Salon, Galerie, Park, Taxi und Sicherheit: was gebaut ist und was es einbringt.</HH.UI.Page.Sub.city>
+  <HH.UI.Page.Sub.guests>Alle, die in deinem Gasthof übernachten oder ihn besuchen. Klicke auf eine Zeile, um zum Gast zu springen; klicke auf die Betreuungszelle, um sie zu ändern.</HH.UI.Page.Sub.guests>
+  <HH.UI.Page.Sub.overview>Der heutige Tag auf einen Blick: Gäste, Einnahmen und der Zustand jedes Geschäfts.</HH.UI.Page.Sub.overview>
+  <HH.UI.Page.Sub.underworld>Gerüchte, Ankunftsgewichte und die Einnahmen der dunklen Seite.</HH.UI.Page.Sub.underworld>
 </LanguageData>

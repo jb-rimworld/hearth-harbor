@@ -285,4 +285,172 @@ Por quadro: {1}</HH.Ins.UI.Price.Tip>
   <HH.Enum.TrickMode.Follows>Segue a pressão de vendas</HH.Enum.TrickMode.Follows>
   <HH.Enum.TrickMode.On>Sempre ativo</HH.Enum.TrickMode.On>
   <HH.Enum.TrickMode.Off>Desligado</HH.Enum.TrickMode.Off>
+  <HH.Ins.Btn.FillForm>Preencher o formulário de sinistro</HH.Ins.Btn.FillForm>
+  <HH.Ins.Bulk.All>Todas</HH.Ins.Bulk.All>
+  <HH.Ins.Bulk.Colony>colônia inteira</HH.Ins.Bulk.Colony>
+  <HH.Ins.Bulk.Confirm>Assinar {0} apólices agora? Primeiros prêmios no total: {1}. Depois disso, {2} a cada {3} dias. Cada apólice ainda pode ser cancelada uma a uma.</HH.Ins.Bulk.Confirm>
+  <HH.Ins.Bulk.Done>{0} de {1} apólices assinadas.</HH.Ins.Bulk.Done>
+  <HH.Ins.Bulk.Lead>Marque as apólices, escolha o nível e o valor, defina quem será coberto, e a Clawback Mutual assina tudo de uma vez. Você recebe uma carta de resumo em vez de uma por apólice. A carência começa em cada apólice.</HH.Ins.Bulk.Lead>
+  <HH.Ins.Bulk.NoMoney>dinheiro insuficiente para o primeiro prêmio</HH.Ins.Bulk.NoMoney>
+  <HH.Ins.Bulk.NoRiders>Nenhum adicional vem marcado aqui. O desconto de pacote cresce com cada apólice (no máximo {0} de desconto).</HH.Ins.Bulk.NoRiders>
+  <HH.Ins.Bulk.None>Nenhuma</HH.Ins.Bulk.None>
+  <HH.Ins.Bulk.NothingToSign>Nada para assinar ainda: marque uma apólice e pelo menos um colono.</HH.Ins.Bulk.NothingToSign>
+  <HH.Ins.Bulk.PerPerson>por colono</HH.Ins.Bulk.PerPerson>
+  <HH.Ins.Bulk.Policies>Apólices</HH.Ins.Bulk.Policies>
+  <HH.Ins.Bulk.Sign>Assinar {0} apólices</HH.Ins.Bulk.Sign>
+  <HH.Ins.Bulk.Spendable>Disponível: {0}</HH.Ins.Bulk.Spendable>
+  <HH.Ins.Bulk.Stopped>O dinheiro acabou antes do fim; o restante não foi assinado.</HH.Ins.Bulk.Stopped>
+  <HH.Ins.Bulk.SumPerHead>Valor por colono: {0}</HH.Ins.Bulk.SumPerHead>
+  <HH.Ins.Bulk.Summary>{0} apólices para assinar. Primeiros prêmios: {1}. Depois disso, {2} a cada {3} dias.</HH.Ins.Bulk.Summary>
+  <HH.Ins.Bulk.Title>Cobrir todo mundo</HH.Ins.Bulk.Title>
+  <HH.Ins.Bulk.TooExpensive>Você tem apenas {0} disponíveis: a lista é assinada até onde o dinheiro alcança.</HH.Ins.Bulk.TooExpensive>
+  <HH.Ins.Bulk.Who>Colonos</HH.Ins.Bulk.Who>
+  <HH.Ins.Cancel.Step>Passo {0} de {1}</HH.Ins.Cancel.Step>
+  <HH.Ins.Change.AlreadyPending>Já há uma alteração registrada. Retire-a primeiro.</HH.Ins.Change.AlreadyPending>
+  <HH.Ins.Change.Apply>Registrar alteração</HH.Ins.Change.Apply>
+  <HH.Ins.Change.CancelPending>Esta apólice está sendo cancelada. Desfaça o cancelamento primeiro.</HH.Ins.Change.CancelPending>
+  <HH.Ins.Change.CannotPayFee>A taxa de alteração de {0} não pôde ser debitada.</HH.Ins.Change.CannotPayFee>
+  <HH.Ins.Change.Close>Fechar</HH.Ins.Change.Close>
+  <HH.Ins.Change.Filed>Alteração registrada. Ela vale em {0}.</HH.Ins.Change.Filed>
+  <HH.Ins.Change.Lead>Altere o nível, o valor ou os adicionais desta apólice em vigor. As novas condições começam na próxima cobrança e o prêmio é recalculado. O cancelamento continua como estava.</HH.Ins.Change.Lead>
+  <HH.Ins.Change.Limit>Esta apólice só pode ser alterada {0} vez(es) por quadrum.</HH.Ins.Change.Limit>
+  <HH.Ins.Change.NoChange>Nada foi alterado ainda.</HH.Ins.Change.NoChange>
+  <HH.Ins.Change.NotActive>Esta apólice não está ativa.</HH.Ins.Change.NotActive>
+  <HH.Ins.Change.Part.RiderOff>sem o adicional {0}</HH.Ins.Change.Part.RiderOff>
+  <HH.Ins.Change.Part.RiderOn>adicional {0}</HH.Ins.Change.Part.RiderOn>
+  <HH.Ins.Change.Part.Riders>outros adicionais</HH.Ins.Change.Part.Riders>
+  <HH.Ins.Change.Part.Sum>valor de {0} para {1}</HH.Ins.Change.Part.Sum>
+  <HH.Ins.Change.Part.Tier>nível de {0} para {1}</HH.Ins.Change.Part.Tier>
+  <HH.Ins.Change.Riders>Adicionais</HH.Ins.Change.Riders>
+  <HH.Ins.Change.Sum.Cheaper>Isso é {0} a menos por cobrança.</HH.Ins.Change.Sum.Cheaper>
+  <HH.Ins.Change.Sum.Dearer>Isso é {0} a mais por cobrança.</HH.Ins.Change.Sum.Dearer>
+  <HH.Ins.Change.Sum.Discount>O seu desconto de fidelidade em vigor continua.</HH.Ins.Change.Sum.Discount>
+  <HH.Ins.Change.Sum.Fee>Taxa de alteração: {0}, debitada ao registrar.</HH.Ins.Change.Sum.Fee>
+  <HH.Ins.Change.Sum.Lower>Reduzir a cobertura não tem carência.</HH.Ins.Change.Sum.Lower>
+  <HH.Ins.Change.Sum.Premium>Prêmio: agora {0}, depois {1}</HH.Ins.Change.Sum.Premium>
+  <HH.Ins.Change.Sum.Title>O que significa</HH.Ins.Change.Sum.Title>
+  <HH.Ins.Change.Sum.Wait>Carência após a melhoria: {0} dias. Eventos dentro dela ainda são avaliados com a cobertura antiga.</HH.Ins.Change.Sum.Wait>
+  <HH.Ins.Change.Sum.When>Vale em {0}.</HH.Ins.Change.Sum.When>
+  <HH.Ins.Change.SumRange>Faixa permitida: {0} a {1}.</HH.Ins.Change.SumRange>
+  <HH.Ins.Change.Title>Alterar {0}</HH.Ins.Change.Title>
+  <HH.Ins.Change.TooOld>A cobertura de uma pensão não pode ser aumentada na idade da aposentadoria.</HH.Ins.Change.TooOld>
+  <HH.Ins.End.Pension>direito à pensão perdido</HH.Ins.End.Pension>
+  <HH.Ins.Form.AiNote>A Clawback Mutual pode responder à sua declaração pessoalmente. O valor e a decisão não mudam por causa disso.</HH.Ins.Form.AiNote>
+  <HH.Ins.Form.Closed>O prazo para registrar este pedido está encerrado.</HH.Ins.Form.Closed>
+  <HH.Ins.Form.Deadline>Prazo: restam {0} para registrar este sinistro.</HH.Ins.Form.Deadline>
+  <HH.Ins.Form.Event>O que aconteceu: {0}.\nApólice: {1} ({2}).</HH.Ins.Form.Event>
+  <HH.Ins.Form.Items>Atingidos: {0}. Valor: {1}.</HH.Ins.Form.Items>
+  <HH.Ins.Form.Later>Depois</HH.Ins.Form.Later>
+  <HH.Ins.Form.NoAiNote>Sua declaração fica guardada com o sinistro. A decisão não depende dela; só conta a escolha do pagamento.</HH.Ins.Form.NoAiNote>
+  <HH.Ins.Form.Nobody>ninguém</HH.Ins.Form.Nobody>
+  <HH.Ins.Form.Payout.Materials>Materiais pela cápsula</HH.Ins.Form.Payout.Materials>
+  <HH.Ins.Form.Payout.Silver>Prata</HH.Ins.Form.Payout.Silver>
+  <HH.Ins.Form.Placeholder>Descreva o que aconteceu com as suas palavras (opcional).</HH.Ins.Form.Placeholder>
+  <HH.Ins.Form.Sent>Sinistro registrado ({0}).</HH.Ins.Form.Sent>
+  <HH.Ins.Form.Statement>Sua declaração</HH.Ins.Form.Statement>
+  <HH.Ins.Form.Submit>Registrar sinistro</HH.Ins.Form.Submit>
+  <HH.Ins.Form.Title>Formulário de sinistro: {0}</HH.Ins.Form.Title>
+  <HH.Ins.Form.Value>Valor do prejuízo: {0}.</HH.Ins.Form.Value>
+  <HH.Ins.Letter.Batch.Body>A Clawback Mutual dá boas-vindas a {0} novas apólices de uma vez.</HH.Ins.Letter.Batch.Body>
+  <HH.Ins.Letter.Batch.Skipped>{0} não puderam ser assinadas:</HH.Ins.Letter.Batch.Skipped>
+  <HH.Ins.Letter.Batch.Title>{0} apólices assinadas</HH.Ins.Letter.Batch.Title>
+  <HH.Ins.Letter.Batch.Total>Por cobrança: {0} a cada {1} dias. As primeiras parcelas foram debitadas de {2}.</HH.Ins.Letter.Batch.Total>
+  <HH.Ins.Letter.Change.Done.Body>{0} agora funciona como {1} com uma soma de {2}. Prêmio: {3}.</HH.Ins.Letter.Change.Done.Body>
+  <HH.Ins.Letter.Change.Done.Title>Alteração em vigor: {0}</HH.Ins.Letter.Change.Done.Title>
+  <HH.Ins.Letter.Change.Done.Wait>Os eventos nos próximos {0} ainda são avaliados com a cobertura anterior.</HH.Ins.Letter.Change.Done.Wait>
+  <HH.Ins.Letter.Change.Fee>Taxa administrativa: {0}.</HH.Ins.Letter.Change.Fee>
+  <HH.Ins.Letter.Change.Filed.Body>A Clawback Mutual recebeu seu pedido de alteração de {0}: {1}.\nEla entra em vigor em {2}; o prêmio é recalculado nessa data.</HH.Ins.Letter.Change.Filed.Body>
+  <HH.Ins.Letter.Change.Filed.Title>Alteração registrada: {0}</HH.Ins.Letter.Change.Filed.Title>
+  <HH.Ins.Letter.Change.Wait>Carência após a melhoria: {0} dias.</HH.Ins.Letter.Change.Wait>
+  <HH.Ins.Letter.Decision.Statement>Sobre a sua declaração: {0}</HH.Ins.Letter.Decision.Statement>
+  <HH.Ins.Letter.Expired.Body>O prazo para o sinistro {0} ({1}) venceu sem formulário. A Clawback Mutual não lamenta nada.</HH.Ins.Letter.Expired.Body>
+  <HH.Ins.Letter.Expired.Title>Sinistro caducado: {0}</HH.Ins.Letter.Expired.Title>
+  <HH.Ins.Letter.Filed.Statement>Sua declaração: “{0}”</HH.Ins.Letter.Filed.Statement>
+  <HH.Ins.Letter.Possible.Body>{0} é um evento coberto por {1}. Você pode registrar um sinistro.</HH.Ins.Letter.Possible.Body>
+  <HH.Ins.Letter.Possible.Deadline>Prazo: {0} a partir de agora. Depois disso, o sinistro caduca.</HH.Ins.Letter.Possible.Deadline>
+  <HH.Ins.Letter.Possible.Death>{0} morreu. {1} pode pagar. Você pode registrar um sinistro.</HH.Ins.Letter.Possible.Death>
+  <HH.Ins.Letter.Possible.How>Abra o formulário de sinistro, marque algumas caixas, escreva uma frase se quiser e envie. O resultado é decidido como sempre.</HH.Ins.Letter.Possible.How>
+  <HH.Ins.Letter.Possible.Title>Sinistro possível: {0}</HH.Ins.Letter.Possible.Title>
+  <HH.Ins.Letter.Possible.Waiting>O evento aconteceu dentro do período de carência da apólice. O setor de sinistros vai reparar.</HH.Ins.Letter.Possible.Waiting>
+  <HH.Ins.Letter.Reminder.Body>O sinistro de {0} precisa ser registrado em até {1}.</HH.Ins.Letter.Reminder.Body>
+  <HH.Ins.Letter.Reminder.Title>Prazo se aproximando: {0}</HH.Ins.Letter.Reminder.Title>
+  <HH.Ins.Log.BulkSigned>Compra em lote: {0} de {1} apólices assinadas.</HH.Ins.Log.BulkSigned>
+  <HH.Ins.Log.ChangeApplied>{0} alterada: {1}, soma {2}.</HH.Ins.Log.ChangeApplied>
+  <HH.Ins.Log.ChangeFiled>{0}: alteração registrada, válida em {1}.</HH.Ins.Log.ChangeFiled>
+  <HH.Ins.Log.ChangeWithdrawn>{0}: alteração retirada.</HH.Ins.Log.ChangeWithdrawn>
+  <HH.Ins.Log.OppExpired>Prazo para registro encerrado sem sinistro: {0} ({1}).</HH.Ins.Log.OppExpired>
+  <HH.Ins.Log.OppFiled>{0}: formulário de sinistro registrado ({1} sinistro(s)).</HH.Ins.Log.OppFiled>
+  <HH.Ins.Log.OppOpened>{0}: evento coberto, sinistro possível por {1} dias.</HH.Ins.Log.OppOpened>
+  <HH.Ins.Log.PensionStrike>Regra da aposentadoria: {0} tem {1} advertência(s).</HH.Ins.Log.PensionStrike>
+  <HH.Ins.Neg.OddsTip>Chance desta abordagem: {0}</HH.Ins.Neg.OddsTip>
+  <HH.Ins.Neg.RoundOf>Rodada {0} de {1}</HH.Ins.Neg.RoundOf>
+  <HH.Ins.Neg.Why.Approved>Já aprovado: nada a negociar.</HH.Ins.Neg.Why.Approved>
+  <HH.Ins.Neg.Why.Closed>A negociação está encerrada.</HH.Ins.Neg.Why.Closed>
+  <HH.Ins.Neg.Why.NotDecided>O sinistro ainda não foi decidido.</HH.Ins.Neg.Why.NotDecided>
+  <HH.Ins.Pension.Alert.Body>Aposentados com mais de {0} horas de trabalho na programação perdem a aposentadoria aos poucos: {1}.\n\nDefina as horas excedentes como Qualquer coisa ou Lazer. O botão Corrigir programação na aba Seguro faz isso para você.</HH.Ins.Pension.Alert.Body>
+  <HH.Ins.Pension.Alert.Label>Aposentadoria em risco</HH.Ins.Pension.Alert.Label>
+  <HH.Ins.Pension.FixSchedule>Corrigir programação</HH.Ins.Pension.FixSchedule>
+  <HH.Ins.Pension.Fixed>{0}: {1} horas de trabalho definidas como Qualquer coisa.</HH.Ins.Pension.Fixed>
+  <HH.Ins.Pension.Legal.Body>{0} tem {1} horas de trabalho na programação ({2} permitidas). A Brix &amp; Partners transformou a advertência em aviso neste quadrum.</HH.Ins.Pension.Legal.Body>
+  <HH.Ins.Pension.Legal.Title>Regra da aposentadoria: aviso para {0}</HH.Ins.Pension.Legal.Title>
+  <HH.Ins.Pension.Notice.Body>{0} completa 60 anos em uma semana. A partir daí, a aposentadoria só é paga enquanto a programação tiver no máximo {1} horas de Trabalho por dia. Qualquer coisa, Lazer, Dormir e Meditar contam como tempo livre. Duas advertências custam a aposentadoria do período, três o direito.</HH.Ins.Pension.Notice.Body>
+  <HH.Ins.Pension.Notice.Title>Regra da aposentadoria: {0}</HH.Ins.Pension.Notice.Title>
+  <HH.Ins.Pension.Strike1.Body>{0} tem {1} horas de trabalho na programação; {2} são permitidas. Primeira advertência. A próxima verificação é em dois dias. Mais duas advertências e o direito se perde.</HH.Ins.Pension.Strike1.Body>
+  <HH.Ins.Pension.Strike1.Title>Advertência de aposentadoria 1 de 3: {0}</HH.Ins.Pension.Strike1.Title>
+  <HH.Ins.Pension.Strike2.Body>{0} tem {1} horas de trabalho na programação; {2} são permitidas. Segunda advertência: a aposentadoria deste período ({3}) é perdida. Mais uma e o direito se perde.</HH.Ins.Pension.Strike2.Body>
+  <HH.Ins.Pension.Strike2.Title>Advertência de aposentadoria 2 de 3: {0}</HH.Ins.Pension.Strike2.Title>
+  <HH.Ins.Pension.Strike3.Body>{0} tem {1} horas de trabalho na programação; {2} são permitidas. Terceira advertência: o direito à aposentadoria termina e a apólice é cancelada.</HH.Ins.Pension.Strike3.Body>
+  <HH.Ins.Pension.Strike3.Title>Aposentadoria perdida: {0}</HH.Ins.Pension.Strike3.Title>
+  <HH.Ins.Pension.Warn.Body>{0} tem {1} horas de trabalho na programação; {2} são permitidas. Este é apenas um aviso.</HH.Ins.Pension.Warn.Body>
+  <HH.Ins.Pension.Warn.Title>Regra da aposentadoria: {0} trabalha demais</HH.Ins.Pension.Warn.Title>
+  <HH.Ins.Status.Buy>Segurar…</HH.Ins.Status.Buy>
+  <HH.Ins.Status.ColonyCover>cobertura da colônia</HH.Ins.Status.ColonyCover>
+  <HH.Ins.Status.Column>Cobertura</HH.Ins.Status.Column>
+  <HH.Ins.Status.ColumnTip>Situação do seguro: aposentadoria, saúde, acidente, responsabilidade, jurídico. Clique para ver o resumo.</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.Foot>Verde: ativo. Amarelo: período de carência. Laranja: cancelamento pendente. Vermelho: aposentadoria em risco. Cinza: sem seguro. A cobertura da colônia vale para todos os colonos.</HH.Ins.Status.Foot>
+  <HH.Ins.Status.Kind.Accident>Acidente</HH.Ins.Status.Kind.Accident>
+  <HH.Ins.Status.Kind.Health>Saúde</HH.Ins.Status.Kind.Health>
+  <HH.Ins.Status.Kind.Legal>Jurídico</HH.Ins.Status.Kind.Legal>
+  <HH.Ins.Status.Kind.Liability>Responsabilidade</HH.Ins.Status.Kind.Liability>
+  <HH.Ins.Status.Kind.Pension>Aposentadoria</HH.Ins.Status.Kind.Pension>
+  <HH.Ins.Status.No>não</HH.Ins.Status.No>
+  <HH.Ins.Status.NoTip>Sem {0} para este colono.</HH.Ins.Status.NoTip>
+  <HH.Ins.Status.NotInsurable>não segurável</HH.Ins.Status.NotInsurable>
+  <HH.Ins.Status.NotInsurableTip>Escravos, prisioneiros, hóspedes e animais não podem ser segurados.</HH.Ins.Status.NotInsurableTip>
+  <HH.Ins.Status.PensionOk>Programação: {0} horas de trabalho ({1} permitidas).</HH.Ins.Status.PensionOk>
+  <HH.Ins.Status.PensionRisk>Programação: {0} horas de trabalho, apenas {1} permitidas. A aposentadoria está em risco.</HH.Ins.Status.PensionRisk>
+  <HH.Ins.Status.State.Active>ativo</HH.Ins.Status.State.Active>
+  <HH.Ins.Status.State.AtRisk>em risco</HH.Ins.Status.State.AtRisk>
+  <HH.Ins.Status.State.CancelPending>cancelamento pendente</HH.Ins.Status.State.CancelPending>
+  <HH.Ins.Status.State.None>nenhum</HH.Ins.Status.State.None>
+  <HH.Ins.Status.State.Waiting>período de carência</HH.Ins.Status.State.Waiting>
+  <HH.Ins.Status.Strikes>{0} advertências restantes</HH.Ins.Status.Strikes>
+  <HH.Ins.Status.Title>Seguro: {0}</HH.Ins.Status.Title>
+  <HH.Ins.Status.Yes>sim</HH.Ins.Status.Yes>
+  <HH.Ins.Tab.Cover>Colonos</HH.Ins.Tab.Cover>
+  <HH.Ins.Tab.Pawn>Seguro</HH.Ins.Tab.Pawn>
+  <HH.Ins.UI.Claim.AiReply>Resposta à sua declaração: {0}</HH.Ins.UI.Claim.AiReply>
+  <HH.Ins.UI.Claim.Form>Formulário: {0}</HH.Ins.UI.Claim.Form>
+  <HH.Ins.UI.Claim.Statement>Sua declaração: {0}</HH.Ins.UI.Claim.Statement>
+  <HH.Ins.UI.Claims.History>Histórico</HH.Ins.UI.Claims.History>
+  <HH.Ins.UI.Claims.Left>{0} restantes</HH.Ins.UI.Claims.Left>
+  <HH.Ins.UI.Claims.Open>Sinistros abertos</HH.Ins.UI.Claims.Open>
+  <HH.Ins.UI.Claims.WindowLine>{0} ({1}). Valor: {2}, {3} item(ns). Registre o sinistro no formulário antes do prazo.</HH.Ins.UI.Claims.WindowLine>
+  <HH.Ins.UI.Claims.Windows>Prazos de registro abertos</HH.Ins.UI.Claims.Windows>
+  <HH.Ins.UI.Cover.Colonist>Colono</HH.Ins.UI.Cover.Colonist>
+  <HH.Ins.UI.Cover.Lead>Quem está segurado e para quê. Aposentadoria e cobertura de acidentes são pessoais; saúde, responsabilidade e jurídico (*) valem para a colônia inteira.</HH.Ins.UI.Cover.Lead>
+  <HH.Ins.UI.Cover.None>Nenhum colono.</HH.Ins.UI.Cover.None>
+  <HH.Ins.UI.CoverAll>Segurar todos…</HH.Ins.UI.CoverAll>
+  <HH.Ins.UI.CoverAll.Tip>Assinar apólices para todos os colonos de uma vez.</HH.Ins.UI.CoverAll.Tip>
+  <HH.Ins.UI.CoverAllOne>Todos os colonos…</HH.Ins.UI.CoverAllOne>
+  <HH.Ins.UI.Mine.Change>Alterar cobertura…</HH.Ins.UI.Mine.Change>
+  <HH.Ins.UI.Mine.ChangeTip>Mudar nível, soma ou adicionais. Entra em vigor na próxima cobrança.</HH.Ins.UI.Mine.ChangeTip>
+  <HH.Ins.UI.Mine.PendingChange>Alteração registrada, entra em vigor em {0}</HH.Ins.UI.Mine.PendingChange>
+  <HH.Ins.UI.Mine.PensionLost>Direito à aposentadoria perdido.</HH.Ins.UI.Mine.PensionLost>
+  <HH.Ins.UI.Mine.PensionOk>Regra da aposentadoria cumprida: {0} horas de trabalho ({1} permitidas), {2} em Qualquer coisa.</HH.Ins.UI.Mine.PensionOk>
+  <HH.Ins.UI.Mine.PensionRisk>Aposentadoria em risco: {0} horas de trabalho, apenas {1} permitidas ({2} em Qualquer coisa).</HH.Ins.UI.Mine.PensionRisk>
+  <HH.Ins.UI.Mine.PensionSuspended>Aposentadoria deste período perdida (violação da regra), volta em {0}.</HH.Ins.UI.Mine.PensionSuspended>
+  <HH.Ins.UI.Mine.PensionTip>Regra da aposentadoria: no máximo {0} horas de Trabalho por dia na programação. Qualquer coisa conta como tempo livre, mas um colono em Qualquer coisa ainda pode escolher trabalhar.</HH.Ins.UI.Mine.PensionTip>
+  <HH.Ins.UI.Mine.UpgradeWait>Carência após a melhoria: eventos nos próximos {0} ainda são avaliados com a cobertura antiga.</HH.Ins.UI.Mine.UpgradeWait>
+  <HH.Ins.UI.Mine.WithdrawChange>Retirar alteração</HH.Ins.UI.Mine.WithdrawChange>
 </LanguageData>

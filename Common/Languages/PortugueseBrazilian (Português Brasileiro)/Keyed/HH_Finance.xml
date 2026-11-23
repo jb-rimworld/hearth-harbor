@@ -202,5 +202,42 @@
   <HH.Finance.Help.Tip>Abre o site no seu navegador.</HH.Finance.Help.Tip>
   <HH.Finance.Help.Url1>https://findahelpline.com/</HH.Finance.Help.Url1>
   <HH.Finance.Help.Url2>https://www.gamblingtherapy.org/</HH.Finance.Help.Url2>
-  <HH.Finance.Lottery.FreeTicket>Bilhete grátis, graças à sorte de {1}: {0}.</HH.Finance.Lottery.FreeTicket>
+  <HH.Finance.Compare>Conta bancária e produtos, por ano</HH.Finance.Compare>
+  <HH.Finance.Lottery.BuyCard>Comprar bilhetes</HH.Finance.Lottery.BuyCard>
+  <HH.Finance.Lottery.BuyN>Comprar ×{0} ({1})</HH.Finance.Lottery.BuyN>
+  <HH.Finance.Lottery.BuyTicket>Comprar este bilhete ({0})</HH.Finance.Lottery.BuyTicket>
+  <HH.Finance.Lottery.CardTickets>Seus bilhetes</HH.Finance.Lottery.CardTickets>
+  <HH.Finance.Lottery.Clear>Limpar</HH.Finance.Lottery.Clear>
+  <HH.Finance.Lottery.ColonySold>Bilhetes vendidos neste sorteio: {0} · sua parte até agora: {1}</HH.Finance.Lottery.ColonySold>
+  <HH.Finance.Lottery.ColonyState>Loteria da colônia: {0}</HH.Finance.Lottery.ColonyState>
+  <HH.Finance.Lottery.ColonyTerms>Condições da sua loteria</HH.Finance.Lottery.ColonyTerms>
+  <HH.Finance.Lottery.CountTip>Cada bilhete que você compra fica aqui até o sorteio. Depois do sorteio ele vai para "Último sorteio" para você ver o que acertou.</HH.Finance.Lottery.CountTip>
+  <HH.Finance.Lottery.DaysUnit>{0} d</HH.Finance.Lottery.DaysUnit>
+  <HH.Finance.Lottery.Expected>Em média, um bilhete devolve {0} de seus {1} ({2} % de parte dos prêmios). O resto fica com a casa.</HH.Finance.Lottery.Expected>
+  <HH.Finance.Lottery.Flash>+{0} bilhete(s) · −{1}</HH.Finance.Lottery.Flash>
+  <HH.Finance.Lottery.FlashFree>+{0} bilhete(s) · {1} grátis</HH.Finance.Lottery.FlashFree>
+  <HH.Finance.Lottery.FreeTag>grátis</HH.Finance.Lottery.FreeTag>
+  <HH.Finance.Lottery.KeptNote> (mostrando os {0} melhores de seus {1} bilhetes)</HH.Finance.Lottery.KeptNote>
+  <HH.Finance.Lottery.LastDraw>Último sorteio nº {0}</HH.Finance.Lottery.LastDraw>
+  <HH.Finance.Lottery.LastDrawLine>Sorteado: {0}. Você tinha {1} bilhete(s) por {2} de prata. Melhor: {3} de 5 números{4}. Prêmio: {5}.</HH.Finance.Lottery.LastDrawLine>
+  <HH.Finance.Lottery.Matches>{0} de 5 números</HH.Finance.Lottery.Matches>
+  <HH.Finance.Lottery.MyCount>Seus bilhetes para este sorteio</HH.Finance.Lottery.MyCount>
+  <HH.Finance.Lottery.MyNone>Você ainda não tem bilhete para o próximo sorteio.</HH.Finance.Lottery.MyNone>
+  <HH.Finance.Lottery.MySpent>{0} gastos neste sorteio</HH.Finance.Lottery.MySpent>
+  <HH.Finance.Lottery.MySpentFree>{0} gastos neste sorteio, {1} dos bilhetes eram grátis</HH.Finance.Lottery.MySpentFree>
+  <HH.Finance.Lottery.NoLast>Ainda não houve sorteio. O primeiro está chegando.</HH.Finance.Lottery.NoLast>
+  <HH.Finance.Lottery.NotEnough>A conta não tem {0}.</HH.Finance.Lottery.NotEnough>
+  <HH.Finance.Lottery.Odds>Prêmio máximo: 1 em {0} por bilhete. Qualquer prêmio: cerca de 1 em {1}.</HH.Finance.Lottery.Odds>
+  <HH.Finance.Lottery.OpenSettings>Alterar nas configurações</HH.Finance.Lottery.OpenSettings>
+  <HH.Finance.Lottery.OpenSettingsTip>Abre as Opções do Mod do Hearth &amp; Harbor na página do Banco (categoria Loteria).</HH.Finance.Lottery.OpenSettingsTip>
+  <HH.Finance.Lottery.Preview>Seu bilhete até agora: {0} de {1} números, estrela {2}</HH.Finance.Lottery.Preview>
+  <HH.Finance.Lottery.QuickN>Escolha rápida</HH.Finance.Lottery.QuickN>
+  <HH.Finance.Lottery.QuickTip>Bilhetes aleatórios, comprados de uma vez. Até {0} por clique.</HH.Finance.Lottery.QuickTip>
+  <HH.Finance.Lottery.SetIn>Preço, parte dos prêmios, intervalo entre sorteios e taxa são configurações do mod deste jogo salvo.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SilverUnit>{0} de prata</HH.Finance.Lottery.SilverUnit>
+  <HH.Finance.Lottery.StarMatch> e a estrela</HH.Finance.Lottery.StarMatch>
+  <HH.Finance.Lottery.StarNone>não marcada</HH.Finance.Lottery.StarNone>
+  <HH.Finance.Lottery.StateClosed>fechado</HH.Finance.Lottery.StateClosed>
+  <HH.Finance.Lottery.StateOpen>aberto</HH.Finance.Lottery.StateOpen>
+  <HH.Finance.Lottery.TicketsCount>{0} bilhetes · mais recentes primeiro</HH.Finance.Lottery.TicketsCount>
 </LanguageData>

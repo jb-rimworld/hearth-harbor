@@ -29,4 +29,20 @@
   <HH.City.TaxiFree>出租车正在等候。</HH.City.TaxiFree>
   <HH.City.TaxiBusy>出租车正在外出载客。</HH.City.TaxiBusy>
   <HH.City.TaxiStats>发车：{0}，到达：{1}，营收：{2}银币</HH.City.TaxiStats>
+  <HH.City.Closed>关闭</HH.City.Closed>
+  <HH.City.Open>开放</HH.City.Open>
+  <HH.City.Page.Cinema>电影院：{0} 块屏幕，其中 {1} 块有场馆标识；{2} 张票，{3} 银币</HH.City.Page.Cinema>
+  <HH.City.Page.CinemaRow>   {0}：{1} 个座位，{2}</HH.City.Page.CinemaRow>
+  <HH.City.Page.Gallery>画廊：{0} 间展厅，{1} 件作品；{2} 次参观，{3} 银币</HH.City.Page.Gallery>
+  <HH.City.Page.Park>公园：{0} 张长椅；{1} 位客人就座</HH.City.Page.Park>
+  <HH.City.Page.Salon>沙龙：{1} 间沙龙共 {0} 把椅子；{2} 个新造型，{3} 银币</HH.City.Page.Salon>
+  <HH.City.Page.Security>安保：当班保镖 {0} 人，已赚 {1} 银币</HH.City.Page.Security>
+  <HH.City.Page.StateIdle>空闲</HH.City.Page.StateIdle>
+  <HH.City.Page.StateNoPower>没有电力</HH.City.Page.StateNoPower>
+  <HH.City.Page.StateShowing>正在放映 {0}</HH.City.Page.StateShowing>
+  <HH.City.Page.Taxi>出租车：{0} 个站点；{1} 次载客，{2} 次降落，{3} 银币</HH.City.Page.Taxi>
+  <HH.City.Page.Total>城市生活的总收入：{0} 银币</HH.City.Page.Total>
+  <HH.City.Removal.Buildings>投影屏幕、沙龙椅、公园长椅和出租车站将保留为普通建筑。</HH.City.Removal.Buildings>
+  <HH.City.Removal.Films>已停止 {0} 部正在放映的电影。</HH.City.Removal.Films>
+  <HH.City.Removal.Guards>已终止 {0} 份保镖合同。</HH.City.Removal.Guards>
 </LanguageData>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ScenStartingAccount.description>La colonie démarre avec un compte dans la banque de votre choix, un solde initial et, si vous le souhaitez, un prêt à rembourser.</SL_ScenStartingAccount.description>
+  <SL_ScenStartingAccount.label>commencer avec un compte Silverline</SL_ScenStartingAccount.label>
+</LanguageData>

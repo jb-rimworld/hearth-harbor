@@ -202,5 +202,42 @@
   <HH.Finance.Help.Tip>Otevře webovou stránku ve vašem prohlížeči.</HH.Finance.Help.Tip>
   <HH.Finance.Help.Url1>https://findahelpline.com/</HH.Finance.Help.Url1>
   <HH.Finance.Help.Url2>https://www.gamblingtherapy.org/</HH.Finance.Help.Url2>
-  <HH.Finance.Lottery.FreeTicket>Volný los díky štěstí {1}: {0}.</HH.Finance.Lottery.FreeTicket>
+  <HH.Finance.Compare>Bankovní účet a produkty, za rok</HH.Finance.Compare>
+  <HH.Finance.Lottery.BuyCard>Koupit losy</HH.Finance.Lottery.BuyCard>
+  <HH.Finance.Lottery.BuyN>Koupit ×{0} ({1})</HH.Finance.Lottery.BuyN>
+  <HH.Finance.Lottery.BuyTicket>Koupit tento los ({0})</HH.Finance.Lottery.BuyTicket>
+  <HH.Finance.Lottery.CardTickets>Tvé losy</HH.Finance.Lottery.CardTickets>
+  <HH.Finance.Lottery.Clear>Vymazat</HH.Finance.Lottery.Clear>
+  <HH.Finance.Lottery.ColonySold>Losy prodané v tomto losování: {0} · tvůj podíl zatím: {1}</HH.Finance.Lottery.ColonySold>
+  <HH.Finance.Lottery.ColonyState>Kolonijní loterie: {0}</HH.Finance.Lottery.ColonyState>
+  <HH.Finance.Lottery.ColonyTerms>Podmínky tvé loterie</HH.Finance.Lottery.ColonyTerms>
+  <HH.Finance.Lottery.CountTip>Každý los, který koupíš, zůstane tady až do losování. Po losování se přesune do "Poslední losování", abys viděl, co se shodovalo.</HH.Finance.Lottery.CountTip>
+  <HH.Finance.Lottery.DaysUnit>{0} d</HH.Finance.Lottery.DaysUnit>
+  <HH.Finance.Lottery.Expected>V průměru los vrací {0} z {1} ({2} % podíl na výhrách). Zbytek patří domu.</HH.Finance.Lottery.Expected>
+  <HH.Finance.Lottery.Flash>+{0} los(y) · −{1}</HH.Finance.Lottery.Flash>
+  <HH.Finance.Lottery.FlashFree>+{0} los(y) · {1} zdarma</HH.Finance.Lottery.FlashFree>
+  <HH.Finance.Lottery.FreeTag>zdarma</HH.Finance.Lottery.FreeTag>
+  <HH.Finance.Lottery.KeptNote> (ukazuje {0} nejlepších z tvých {1} losů)</HH.Finance.Lottery.KeptNote>
+  <HH.Finance.Lottery.LastDraw>Poslední losování #{0}</HH.Finance.Lottery.LastDraw>
+  <HH.Finance.Lottery.LastDrawLine>Taženo: {0}. Měl jsi {1} los(y) za {2} stříbra. Nejlépe: {3} z 5 čísel{4}. Výhra: {5}.</HH.Finance.Lottery.LastDrawLine>
+  <HH.Finance.Lottery.Matches>{0} z 5 čísel</HH.Finance.Lottery.Matches>
+  <HH.Finance.Lottery.MyCount>Tvé losy pro toto losování</HH.Finance.Lottery.MyCount>
+  <HH.Finance.Lottery.MyNone>Pro příští losování zatím nemáš žádný los.</HH.Finance.Lottery.MyNone>
+  <HH.Finance.Lottery.MySpent>Utraceno na toto losování: {0}</HH.Finance.Lottery.MySpent>
+  <HH.Finance.Lottery.MySpentFree>Utraceno na toto losování: {0}, z toho {1} losů zdarma</HH.Finance.Lottery.MySpentFree>
+  <HH.Finance.Lottery.NoLast>Zatím žádné losování. První přijde brzy.</HH.Finance.Lottery.NoLast>
+  <HH.Finance.Lottery.NotEnough>Na účtu není {0}.</HH.Finance.Lottery.NotEnough>
+  <HH.Finance.Lottery.Odds>Jackpot: 1 ku {0} na los. Jakákoli výhra: zhruba 1 ku {1}.</HH.Finance.Lottery.Odds>
+  <HH.Finance.Lottery.OpenSettings>Změnit v nastavení</HH.Finance.Lottery.OpenSettings>
+  <HH.Finance.Lottery.OpenSettingsTip>Otevře Možnosti modu Hearth &amp; Harbor na stránce Banka (kategorie Loterie).</HH.Finance.Lottery.OpenSettingsTip>
+  <HH.Finance.Lottery.Preview>Tvůj los zatím: {0} z {1} čísel, hvězda {2}</HH.Finance.Lottery.Preview>
+  <HH.Finance.Lottery.QuickN>Rychlý výběr</HH.Finance.Lottery.QuickN>
+  <HH.Finance.Lottery.QuickTip>Náhodné losy, koupené najednou. Až {0} na kliknutí.</HH.Finance.Lottery.QuickTip>
+  <HH.Finance.Lottery.SetIn>Cena, podíl na výhrách, interval losování a poplatek jsou nastavení modu této uložené hry.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SilverUnit>{0} stříbra</HH.Finance.Lottery.SilverUnit>
+  <HH.Finance.Lottery.StarMatch> a hvězdička</HH.Finance.Lottery.StarMatch>
+  <HH.Finance.Lottery.StarNone>nevybráno</HH.Finance.Lottery.StarNone>
+  <HH.Finance.Lottery.StateClosed>zavřeno</HH.Finance.Lottery.StateClosed>
+  <HH.Finance.Lottery.StateOpen>otevřeno</HH.Finance.Lottery.StateOpen>
+  <HH.Finance.Lottery.TicketsCount>{0} losů · nejnovější nahoře</HH.Finance.Lottery.TicketsCount>
 </LanguageData>

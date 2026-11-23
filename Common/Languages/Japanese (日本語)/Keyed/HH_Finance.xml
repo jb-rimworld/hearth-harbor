@@ -202,5 +202,42 @@
   <HH.Finance.Help.Tip>ブラウザで公式サイトを開きます。</HH.Finance.Help.Tip>
   <HH.Finance.Help.Url1>https://findahelpline.com/</HH.Finance.Help.Url1>
   <HH.Finance.Help.Url2>https://www.gamblingtherapy.org/</HH.Finance.Help.Url2>
-  <HH.Finance.Lottery.FreeTicket>無料チケット。{1} の運のおかげ: {0}。</HH.Finance.Lottery.FreeTicket>
+  <HH.Finance.Compare>銀行口座と商品、1年あたり</HH.Finance.Compare>
+  <HH.Finance.Lottery.BuyCard>チケットを買う</HH.Finance.Lottery.BuyCard>
+  <HH.Finance.Lottery.BuyN>×{0} 購入（{1}）</HH.Finance.Lottery.BuyN>
+  <HH.Finance.Lottery.BuyTicket>このチケットを買う（{0}）</HH.Finance.Lottery.BuyTicket>
+  <HH.Finance.Lottery.CardTickets>あなたのチケット</HH.Finance.Lottery.CardTickets>
+  <HH.Finance.Lottery.Clear>クリア</HH.Finance.Lottery.Clear>
+  <HH.Finance.Lottery.ColonySold>今回の抽選で売れたチケット: {0} · これまでのあなたの取り分: {1}</HH.Finance.Lottery.ColonySold>
+  <HH.Finance.Lottery.ColonyState>入植地の宝くじ: {0}</HH.Finance.Lottery.ColonyState>
+  <HH.Finance.Lottery.ColonyTerms>宝くじの条件</HH.Finance.Lottery.ColonyTerms>
+  <HH.Finance.Lottery.CountTip>買ったチケットは抽選まで、ここに残ります。抽選後は「前回の抽選」に移り、何が当たったかを確認できます。</HH.Finance.Lottery.CountTip>
+  <HH.Finance.Lottery.DaysUnit>{0} 日</HH.Finance.Lottery.DaysUnit>
+  <HH.Finance.Lottery.Expected>平均して1枚のチケットは、その {1} のうち {0} を返します（払い戻し率 {2}％）。残りは胴元のものです。</HH.Finance.Lottery.Expected>
+  <HH.Finance.Lottery.Flash>+チケット {0} 枚 · −{1}</HH.Finance.Lottery.Flash>
+  <HH.Finance.Lottery.FlashFree>+チケット {0} 枚 · 無料 {1}</HH.Finance.Lottery.FlashFree>
+  <HH.Finance.Lottery.FreeTag>無料</HH.Finance.Lottery.FreeTag>
+  <HH.Finance.Lottery.KeptNote>（あなたの {1} 枚のチケットのうち、最も良い {0} 枚を表示）</HH.Finance.Lottery.KeptNote>
+  <HH.Finance.Lottery.LastDraw>前回の抽選 #{0}</HH.Finance.Lottery.LastDraw>
+  <HH.Finance.Lottery.LastDrawLine>抽選番号: {0}。あなたは {2} 銀貨で {1} 枚のチケットを持っていました。最高: 5つの数字のうち {3} 一致{4}。賞金: {5}。</HH.Finance.Lottery.LastDrawLine>
+  <HH.Finance.Lottery.Matches>5つの数字のうち {0} 一致</HH.Finance.Lottery.Matches>
+  <HH.Finance.Lottery.MyCount>今回の抽選のあなたのチケット</HH.Finance.Lottery.MyCount>
+  <HH.Finance.Lottery.MyNone>次の抽選のチケットはまだありません。</HH.Finance.Lottery.MyNone>
+  <HH.Finance.Lottery.MySpent>今回の抽選に {0} 使用</HH.Finance.Lottery.MySpent>
+  <HH.Finance.Lottery.MySpentFree>今回の抽選に {0} 使用、うち {1} 枚のチケットは無料でした</HH.Finance.Lottery.MySpentFree>
+  <HH.Finance.Lottery.NoLast>まだ抽選はありません。最初の抽選が近づいています。</HH.Finance.Lottery.NoLast>
+  <HH.Finance.Lottery.NotEnough>口座に {0} がありません。</HH.Finance.Lottery.NotEnough>
+  <HH.Finance.Lottery.Odds>ジャックポット: チケット1枚につき 1/{0}。何らかの賞: 約 1/{1}。</HH.Finance.Lottery.Odds>
+  <HH.Finance.Lottery.OpenSettings>設定で変更</HH.Finance.Lottery.OpenSettings>
+  <HH.Finance.Lottery.OpenSettingsTip>銀行ページで Hearth &amp; Harbor の Mod設定（カテゴリ 宝くじ）を開きます。</HH.Finance.Lottery.OpenSettingsTip>
+  <HH.Finance.Lottery.Preview>今のあなたのチケット: {1}個の数字のうち {0} 一致、スター {2}</HH.Finance.Lottery.Preview>
+  <HH.Finance.Lottery.QuickN>おまかせ</HH.Finance.Lottery.QuickN>
+  <HH.Finance.Lottery.QuickTip>ランダムなチケットを一度にまとめて買います。クリックあたり最大 {0} 枚。</HH.Finance.Lottery.QuickTip>
+  <HH.Finance.Lottery.SetIn>チケットの価格、払い戻し率、抽選の間隔、手数料は、このセーブデータの Mod 設定です。</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SilverUnit>{0} 銀貨</HH.Finance.Lottery.SilverUnit>
+  <HH.Finance.Lottery.StarMatch> と星</HH.Finance.Lottery.StarMatch>
+  <HH.Finance.Lottery.StarNone>未選択</HH.Finance.Lottery.StarNone>
+  <HH.Finance.Lottery.StateClosed>締切</HH.Finance.Lottery.StateClosed>
+  <HH.Finance.Lottery.StateOpen>受付中</HH.Finance.Lottery.StateOpen>
+  <HH.Finance.Lottery.TicketsCount>くじ{0}枚 · 新しい順</HH.Finance.Lottery.TicketsCount>
 </LanguageData>

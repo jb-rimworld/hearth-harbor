@@ -31,7 +31,7 @@
   <HH.Setting.venues.maxPurchases>Покупок на гостя за один визит</HH.Setting.venues.maxPurchases>
   <HH.Setting.venues.maxPurchases.Desc>Гость перестаёт делать покупки после стольких покупок за один визит.</HH.Setting.venues.maxPurchases.Desc>
   <HH.Setting.venues.nightBell>Ночной звонок</HH.Setting.venues.nightBell>
-  <HH.Setting.venues.nightBell.Desc>Гости могут позвонить в колокольчик у закрытого заведения. Бодрствующие колонисты с типом работы «Обслуживание» придут и откроют его за наценку. Никого не будят.</HH.Setting.venues.nightBell.Desc>
+  <HH.Setting.venues.nightBell.Desc>Гости могут позвонить в колокольчик у закрытого заведения. Колонисты с типом работы «Обслуживание», которые его услышат, прибегут и откроют заведение за наценку (кого вызывают и кого можно разбудить, см. настройки ночного звонка ниже).</HH.Setting.venues.nightBell.Desc>
   <HH.Setting.venues.nightBellMin>Минимальная плата за ночной звонок</HH.Setting.venues.nightBellMin>
   <HH.Setting.venues.nightBellMin.Desc>Услуга ночного звонка никогда не стоит меньше этой суммы (серебро).</HH.Setting.venues.nightBellMin.Desc>
   <HH.Setting.venues.nightBellSurcharge>Наценка за ночной звонок</HH.Setting.venues.nightBellSurcharge>
@@ -107,20 +107,16 @@
   <HH.Venue.Price>Цены</HH.Venue.Price>
   <HH.Venue.PriceDesc>Ценовой коэффициент на всё, что продаёт это заведение. Гостей отпугивают слишком высокие цены.</HH.Venue.PriceDesc>
   <HH.Venue.PriceFactor>Ценовой коэффициент</HH.Venue.PriceFactor>
-  <HH.Venue.PriceHint>Гости сравнивают цену с тем, сколько вещь для них стоит. Состоятельные гости терпят больше. Заведения без персонала берут немного меньше (самообслуживание); услуга ночного звонка стоит дороже. Бесплатно значит бесплатно.</HH.Venue.PriceHint>
   <HH.Venue.PriceLine>Цены</HH.Venue.PriceLine>
   <HH.Venue.PriceTitle>Цены</HH.Venue.PriceTitle>
   <HH.Venue.Pricey>Дорого</HH.Venue.Pricey>
   <HH.Venue.Rename>Переименовать</HH.Venue.Rename>
   <HH.Venue.RenameDesc>Дайте этому заведению название.</HH.Venue.RenameDesc>
   <HH.Venue.RenameTitle>Назовите заведение</HH.Venue.RenameTitle>
-  <HH.Venue.Reset>Использовать название по умолчанию</HH.Venue.Reset>
   <HH.Venue.Restock>Пополнение</HH.Venue.Restock>
   <HH.Venue.RestockDesc>Позволить этой табличке устанавливать для мест хранения в её помещении приоритет «Важно», чтобы перевозчики держали полки полными. Включается по желанию; старые настройки вернутся при выключении.</HH.Venue.RestockDesc>
   <HH.Venue.RestockHint>Когда включено, каждое место хранения в этом помещении (зоны хранения и стеллажи, ваши или чьи-либо) принимает отмеченные ниже товары с приоритетом «Важно», и ваши перевозчики держат помещение заполненным. Прежние настройки мест вернутся, когда вы это выключите.</HH.Venue.RestockHint>
   <HH.Venue.RestockNoShop>Это заведение ничего не продаёт из своего помещения, так что пополнять нечего.</HH.Venue.RestockNoShop>
-  <HH.Venue.RestockSwitchOff>Пополнение ВКЛ – выключить и вернуть хранилище</HH.Venue.RestockSwitchOff>
-  <HH.Venue.RestockSwitchOn>Пополнение выкл. – включить</HH.Venue.RestockSwitchOn>
   <HH.Venue.RestockTitle>Пополнение</HH.Venue.RestockTitle>
   <HH.Venue.RippedOff>Облапошили</HH.Venue.RippedOff>
   <HH.Venue.Sales>Продажи за сегодня</HH.Venue.Sales>
@@ -141,4 +137,142 @@
   <HH.Venue.MarketBlock.NoShop>нет магазина</HH.Venue.MarketBlock.NoShop>
   <HH.Venue.MarketBlock.Stalls>торговых прилавков {0}/{1}</HH.Venue.MarketBlock.Stalls>
   <HH.Venue.MarketBlock.Renown>известность {0}/{1}</HH.Venue.MarketBlock.Renown>
+  <HH.Core.FlipBlocked>Другая сторона заблокирована: работник не может там встать.</HH.Core.FlipBlocked>
+  <HH.Core.FlipBusy>Занято: сейчас это использует {0}.</HH.Core.FlipBusy>
+  <HH.Core.FlipNoSide>У этого нет рабочей стороны.</HH.Core.FlipNoSide>
+  <HH.Core.FlipSame>Обе стороны одинаковые.</HH.Core.FlipSame>
+  <HH.Core.FlipSide>Сменить рабочую сторону</HH.Core.FlipSide>
+  <HH.Core.FlipSideDesc>Развернуть на месте, чтобы работающий здесь встал с другой стороны. Место, счета и связи сохраняются.</HH.Core.FlipSideDesc>
+  <HH.Enum.BellWakes.AwakeOnly>Только бодрствующие колонисты</HH.Enum.BellWakes.AwakeOnly>
+  <HH.Enum.BellWakes.Off>Выкл. (колокол только звонит)</HH.Enum.BellWakes.Off>
+  <HH.Enum.BellWakes.WakeVolunteers>Также будить добровольцев</HH.Enum.BellWakes.WakeVolunteers>
+  <HH.Enum.BellWho.AnyColonist>Любой колонист</HH.Enum.BellWho.AnyColonist>
+  <HH.Enum.BellWho.ServingOnly>Только колонисты на обслуживании</HH.Enum.BellWho.ServingOnly>
+  <HH.Honor.Line>Система доверия: без присмотра</HH.Honor.Line>
+  <HH.Honor.MemoPaid>ящик доверия: оплачено {0} из {1}</HH.Honor.MemoPaid>
+  <HH.Honor.MoteNothing>не заплатил!</HH.Honor.MoteNothing>
+  <HH.Honor.MotePart>оплачено {0} %</HH.Honor.MotePart>
+  <HH.Honor.PriceNote>система доверия: полная цена, но некоторые гости платят меньше</HH.Honor.PriceNote>
+  <HH.Honor.Report>Ящик доверия сегодня: продаж {0}, недостача {1} серебра ({2} %) · за всё время: продаж {3}, недоплат {4}, неоплат {5}, недостача {6} серебра</HH.Honor.Report>
+  <HH.Honor.Section>Ящик доверия</HH.Honor.Section>
+  <HH.Honor.Toggle>Система доверия</HH.Honor.Toggle>
+  <HH.Honor.ToggleDesc>Вести дело без присмотра: гости берут что хотят и оставляют деньги в ящике доверия по полной цене. Дежурить никому не нужно, но некоторые гости платят меньше цены, а некоторые не платят вовсе (шансы в настройках; меньше, если их видит колонист). Отчёт на вывеске покажет, что пропало.</HH.Honor.ToggleDesc>
+  <HH.Honor.Witnessed>{0} ушёл из {1}, не заплатив – это видел колонист.</HH.Honor.Witnessed>
+  <HH.Names.DefaultOwner>Harbor</HH.Names.DefaultOwner>
+  <HH.Serve.IdleMote>*зевает*</HH.Serve.IdleMote>
+  <HH.Serve.ServedShift>Обслужено за смену: {0}</HH.Serve.ServedShift>
+  <HH.Serve.TipMemo>чаевые для {0}</HH.Serve.TipMemo>
+  <HH.Serve.TipMote>чаевые +{0}</HH.Serve.TipMote>
+  <HH.Serve.TipsTotal>Чаевые персоналу на данный момент: {0} серебра</HH.Serve.TipsTotal>
+  <HH.Setting.venues.autoNames>Автоматически называть новые заведения</HH.Setting.venues.autoNames>
+  <HH.Setting.venues.autoNames.Desc>Новая вывеска получает название, подходящее типу заведения (например, «Сонная альпака» для таверны). Его всегда можно переименовать или выбрать другое.</HH.Setting.venues.autoNames.Desc>
+  <HH.Setting.venues.bellHurry>Ночной звонок: колонисты спешат</HH.Setting.venues.bellHurry>
+  <HH.Setting.venues.bellHurry.Desc>Колонисты, откликнувшиеся на звонок, бегут к заведению, а не идут шагом.</HH.Setting.venues.bellHurry.Desc>
+  <HH.Setting.venues.bellRange>Дальность слышимости ночного звонка (клетки)</HH.Setting.venues.bellRange>
+  <HH.Setting.venues.bellRange.Desc>Насколько далеко звонок слышен тому, у кого нормальный слух. Стены и закрытые двери сокращают дальность; плохой слух сокращает её сильно, глухие колонисты его не слышат.</HH.Setting.venues.bellRange.Desc>
+  <HH.Setting.venues.bellResponders>Ночной звонок: колонистов на один звонок</HH.Setting.venues.bellResponders>
+  <HH.Setting.venues.bellResponders.Desc>Сколько колонистов максимум прибегут, когда зазвонит колокольчик.</HH.Setting.venues.bellResponders.Desc>
+  <HH.Setting.venues.bellWakeCooldownHours>Ночной звонок: защита сна (часы)</HH.Setting.venues.bellWakeCooldownHours>
+  <HH.Setting.venues.bellWakeCooldownHours.Desc>Колониста, которого разбудил звонок, не будят снова в течение стольких часов.</HH.Setting.venues.bellWakeCooldownHours.Desc>
+  <HH.Setting.venues.bellWakes>Ночной звонок: кого вызывают</HH.Setting.venues.bellWakes>
+  <HH.Setting.venues.bellWakes.Desc>Выкл.: звонок только издаёт звук, колонисты замечают его, когда позволяет работа. Только бодрствующие: бодрствующие колонисты в пределах слышимости спешат к заведению. Будить добровольцев: также спящие колонисты с работой «Обслуживание» на приоритете 1 или 2 (или при простых настройках работ), не чаще раза в полдня каждый, с небольшим ударом по настроению.</HH.Setting.venues.bellWakes.Desc>
+  <HH.Setting.venues.bellWho>Ночной звонок: кто может откликнуться</HH.Setting.venues.bellWho>
+  <HH.Setting.venues.bellWho.Desc>Только «Обслуживание»: колонисты с включённым типом работы «Обслуживание». Любой колонист: каждый колонист, способный обслуживать.</HH.Setting.venues.bellWho.Desc>
+  <HH.Setting.venues.busyServedPerHour>Загруженная смена: гостей в час</HH.Setting.venues.busyServedPerHour>
+  <HH.Setting.venues.busyServedPerHour.Desc>Смена считается загруженной (хорошее настроение), когда работник обслужил не меньше такого числа гостей в час.</HH.Setting.venues.busyServedPerHour.Desc>
+  <HH.Setting.venues.honorMessages>Система доверия: сообщать о замеченных кражах</HH.Setting.venues.honorMessages>
+  <HH.Setting.venues.honorMessages.Desc>Показывать сообщение, когда колонист увидел, что гость ушёл, не заплатив.</HH.Setting.venues.honorMessages.Desc>
+  <HH.Setting.venues.honorNoPay>Система доверия: шанс не заплатить вовсе</HH.Setting.venues.honorNoPay>
+  <HH.Setting.venues.honorNoPay.Desc>В заведении с системой доверия без присмотра: шанс, что гость возьмёт товар и вовсе не заплатит.</HH.Setting.venues.honorNoPay.Desc>
+  <HH.Setting.venues.honorUnderpay>Система доверия: шанс заплатить слишком мало</HH.Setting.venues.honorUnderpay>
+  <HH.Setting.venues.honorUnderpay.Desc>В заведении с системой доверия без присмотра: шанс, что гость оставит в ящике лишь часть цены (30–80 %).</HH.Setting.venues.honorUnderpay.Desc>
+  <HH.Setting.venues.honorWatched>Система доверия: эффект присмотра</HH.Setting.venues.honorWatched>
+  <HH.Setting.venues.honorWatched.Desc>Насколько реже гости недоплачивают, пока колонист их видит (1 = под присмотром не недоплачивают никогда).</HH.Setting.venues.honorWatched.Desc>
+  <HH.Setting.venues.idleHours>Скука после (часов без гостя)</HH.Setting.venues.idleHours>
+  <HH.Setting.venues.idleHours.Desc>Работник, который за столько часов смены никого не обслужил, скучает (плохое настроение, немного хуже с каждым новым промежутком).</HH.Setting.venues.idleHours.Desc>
+  <HH.Setting.venues.requireSetup>Заведениям нужна их мебель</HH.Setting.venues.requireSetup>
+  <HH.Setting.venues.requireSetup.Desc>Предприятие открывается, только когда в комнате стоит мебель, нужная его типу (таверне нужны стойка, стол и места, казино хотя бы одна игра и так далее; см. вкладку «Настройка» на вывеске). Выкл.: отсутствующая мебель лишь подсказка.</HH.Setting.venues.requireSetup.Desc>
+  <HH.Setting.venues.serviceSkill>Вес навыка «Общение»</HH.Setting.venues.serviceSkill>
+  <HH.Setting.venues.serviceSkill.Desc>Насколько важен навык «Общение» дежурного: любезнее обслуживание, крупнее покупки, чаевые и быстрее продажи. 0 = навык не важен.</HH.Setting.venues.serviceSkill.Desc>
+  <HH.Setting.venues.setupHints>Кнопки постройки на вывеске</HH.Setting.venues.setupHints>
+  <HH.Setting.venues.setupHints.Desc>Выбранная вывеска заведения показывает кнопки постройки мебели, которой ещё не хватает его типу.</HH.Setting.venues.setupHints.Desc>
+  <HH.Setting.venues.shiftThoughts>Настроение смены</HH.Setting.venues.shiftThoughts>
+  <HH.Setting.venues.shiftThoughts.Desc>Колонисты, которые обслуживают заведение, радуются после загруженной смены и скучают, когда часами стоят без дела.</HH.Setting.venues.shiftThoughts.Desc>
+  <HH.Setting.venues.staffRule>Правило персонала</HH.Setting.venues.staffRule>
+  <HH.Setting.venues.staffRule.Desc>По типам заведений: таверны, рестораны, казино и спа требуют дежурного, магазины и курительные нет. Никогда: каждое заведение работает без персонала. Всегда: каждому заведению нужен дежурный.</HH.Setting.venues.staffRule.Desc>
+  <HH.Setting.venues.tipShare>Чаевые</HH.Setting.venues.tipShare>
+  <HH.Setting.venues.tipShare.Desc>Наибольшие чаевые, которые гость оставляет сверх покупки, как доля цены, для идеального работника. Шанс и размер чаевых растут с навыком «Общение» работника.</HH.Setting.venues.tipShare.Desc>
+  <HH.Setup.Attention>проверить: {0}</HH.Setup.Attention>
+  <HH.Setup.BannerAttention>Мебель установлена. Проверьте открытые пункты ниже, чтобы гостей обслуживали.</HH.Setup.BannerAttention>
+  <HH.Setup.BannerMissing>В этом заведении ({0}) всё ещё не хватает мебели.</HH.Setup.BannerMissing>
+  <HH.Setup.BannerNotReady>Не готово: это заведение ({0}) откроется, когда в комнате будет всё, что помечено как обязательное.</HH.Setup.BannerNotReady>
+  <HH.Setup.BannerReady>Всё, что нужно этому заведению, на месте.</HH.Setup.BannerReady>
+  <HH.Setup.Build>Строить</HH.Setup.Build>
+  <HH.Setup.BuildButton>Построить: {0}</HH.Setup.BuildButton>
+  <HH.Setup.BuildButtonDesc>Этому заведению ({0}) всё ещё нужно: {1}. Нажмите, чтобы поставить это в комнату.</HH.Setup.BuildButtonDesc>
+  <HH.Setup.ChipNoRoom>нет места</HH.Setup.ChipNoRoom>
+  <HH.Setup.ChipNoStaff>ждёт персонал</HH.Setup.ChipNoStaff>
+  <HH.Setup.FooterLoose>Правило «Заведениям нужна мебель» выключено: недостающее — только подсказки.</HH.Setup.FooterLoose>
+  <HH.Setup.FooterStrict>Обязательная мебель держит заведение закрытым, пока она не стоит в комнате. Это правило можно отключить в настройках «Магазины и еда».</HH.Setup.FooterStrict>
+  <HH.Setup.GizmoDesc>Открыть руководство по настройке этого заведения: что нужно его типу, что уже есть и кнопки постройки для всего недостающего.</HH.Setup.GizmoDesc>
+  <HH.Setup.GizmoMissing>Настройка: не хватает {0}</HH.Setup.GizmoMissing>
+  <HH.Setup.GizmoReady>Настройка: готово</HH.Setup.GizmoReady>
+  <HH.Setup.HonorNotNeeded>не нужно при системе доверия</HH.Setup.HonorNotNeeded>
+  <HH.Setup.LoadNotice>Не готово к открытию, не хватает мебели: {0}. На вкладке «Настройка» вывески есть кнопки постройки.</HH.Setup.LoadNotice>
+  <HH.Setup.MissingLine>Настройка – не хватает: {0}</HH.Setup.MissingLine>
+  <HH.Setup.NeedsResearch>нужны исследования: {0}</HH.Setup.NeedsResearch>
+  <HH.Setup.NoScreenYet>сначала постройте экран</HH.Setup.NoScreenYet>
+  <HH.Setup.NotAvailable>сейчас недоступно</HH.Setup.NotAvailable>
+  <HH.Setup.NotBuildable>нет в меню строительства</HH.Setup.NotBuildable>
+  <HH.Setup.NotReadyLine>Не готово – не хватает: {0}</HH.Setup.NotReadyLine>
+  <HH.Setup.NotReadyState>не готово</HH.Setup.NotReadyState>
+  <HH.Setup.NowReady>У {0} теперь есть всё нужное, и оно готово к открытию.</HH.Setup.NowReady>
+  <HH.Setup.OperationalTip>Нужно, чтобы гостей обслуживали; двери это не закрывает.</HH.Setup.OperationalTip>
+  <HH.Setup.PickType>Тип заведения</HH.Setup.PickType>
+  <HH.Setup.Planned>запланировано: {0}</HH.Setup.Planned>
+  <HH.Setup.ReadyLine>Настройка: готово</HH.Setup.ReadyLine>
+  <HH.Setup.Recommended>открыто рекомендуемых предметов: {0}</HH.Setup.Recommended>
+  <HH.Setup.RecommendedHead>Рекомендуется</HH.Setup.RecommendedHead>
+  <HH.Setup.RecommendedTip>Рекомендуется: заведение работает и без этого, но гостям нравится.</HH.Setup.RecommendedTip>
+  <HH.Setup.RenameTip>Нажмите, чтобы переименовать это заведение.</HH.Setup.RenameTip>
+  <HH.Setup.Required>Обязательно</HH.Setup.Required>
+  <HH.Setup.RestockTip>Пусть вывеска расставит полки и склады комнаты под ваши товары.</HH.Setup.RestockTip>
+  <HH.Setup.ShowTip>Укажите на то, что уже есть в комнате.</HH.Setup.ShowTip>
+  <HH.Setup.Staff>кто-то на работе «Обслуживание»</HH.Setup.Staff>
+  <HH.Setup.StaffHint>Включите тип работы «Обслуживание» хотя бы для одного колониста.</HH.Setup.StaffHint>
+  <HH.Setup.Stock>товары на продажу</HH.Setup.Stock>
+  <HH.Setup.StockHint>Храните внутри комнаты то, что продаёт это заведение.</HH.Setup.StockHint>
+  <HH.Setup.StockNote>стопок на продажу: {0}</HH.Setup.StockNote>
+  <HH.Setup.TabLabel>Настройка</HH.Setup.TabLabel>
+  <HH.Setup.WorkTab>Вкладка работ</HH.Setup.WorkTab>
+  <HH.Setup.WorkTabTip>Откройте вкладку работ и дайте общительному колонисту тип работы «Обслуживание».</HH.Setup.WorkTabTip>
+  <HH.Setup.WorkersNote>колонистов на обслуживании: {0}</HH.Setup.WorkersNote>
+  <HH.Venue.BellAnswered>Иду!</HH.Venue.BellAnswered>
+  <HH.Venue.BellAnsweredBy>Ночной звонок: ответил {0}</HH.Venue.BellAnsweredBy>
+  <HH.Venue.BellNobody>Ночной звонок: звонит, никто ещё не пришёл</HH.Venue.BellNobody>
+  <HH.Venue.BellNote>ночной звонок</HH.Venue.BellNote>
+  <HH.Venue.BellOnTheWay>Ночной звонок: {0} уже идёт</HH.Venue.BellOnTheWay>
+  <HH.Venue.BellRungAgo>звонили {0} назад</HH.Venue.BellRungAgo>
+  <HH.Venue.BellUnanswered>Ночной звонок у {0} звонит, но никто не идёт. Колонисты с типом работы «Обслуживание» должны быть на ногах и в пределах слышимости.</HH.Venue.BellUnanswered>
+  <HH.Venue.ClosedNow>сейчас закрыто</HH.Venue.ClosedNow>
+  <HH.Venue.NameAutoHint>Предложенное название следует за вывеской, если вы меняете вид бизнеса; название, которое вы ввели сами, остаётся.</HH.Venue.NameAutoHint>
+  <HH.Venue.NamePlain>Просто: {0}</HH.Venue.NamePlain>
+  <HH.Venue.NameSuggest>Предложить название</HH.Venue.NameSuggest>
+  <HH.Venue.NameSuggestTip>Подобрать название, подходящее этому виду бизнеса. Подбирайте, пока не понравится.</HH.Venue.NameSuggestTip>
+  <HH.Venue.Now>сейчас</HH.Venue.Now>
+  <HH.Venue.OpenNow>сейчас открыто</HH.Venue.OpenNow>
+  <HH.Venue.PriceColItem>На продажу</HH.Venue.PriceColItem>
+  <HH.Venue.PriceColPrice>Гости платят</HH.Venue.PriceColPrice>
+  <HH.Venue.PriceColValue>Стоит</HH.Venue.PriceColValue>
+  <HH.Venue.PriceEmpty>В комнате пока ничего не продаётся.</HH.Venue.PriceEmpty>
+  <HH.Venue.PriceHintShort>Гости сравнивают цену со стоимостью вещи для себя; состоятельные готовы переплатить. Бесплатно значит бесплатно.</HH.Venue.PriceHintShort>
+  <HH.Venue.PriceNoGoods>Этот вид бизнеса не продаёт товары из своей комнаты.</HH.Venue.PriceNoGoods>
+  <HH.Venue.PriceNow>Гости сейчас платят {0} % рыночной стоимости</HH.Venue.PriceNow>
+  <HH.Venue.PriceSetting>уровень цен</HH.Venue.PriceSetting>
+  <HH.Venue.RestockBtnOff>Выключить</HH.Venue.RestockBtnOff>
+  <HH.Venue.RestockBtnOn>Включить</HH.Venue.RestockBtnOn>
+  <HH.Venue.RestockFooter>Места хранения в этой комнате: {0} · стопок на продаже сейчас: {1}</HH.Venue.RestockFooter>
+  <HH.Venue.RestockStateOff>Пополнение выключено: хранилище комнаты использует собственные настройки</HH.Venue.RestockStateOff>
+  <HH.Venue.RestockStateOn>Пополнение включено: хранилище комнаты следует этому списку</HH.Venue.RestockStateOn>
+  <HH.Venue.SelfServiceNote>самообслуживание</HH.Venue.SelfServiceNote>
 </LanguageData>

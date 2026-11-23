@@ -31,7 +31,7 @@
   <HH.Setting.venues.maxPurchases>Achats par visiteur et par séjour</HH.Setting.venues.maxPurchases>
   <HH.Setting.venues.maxPurchases.Desc>Un visiteur cesse de faire ses achats après ce nombre d'achats au cours d'un même séjour.</HH.Setting.venues.maxPurchases.Desc>
   <HH.Setting.venues.nightBell>Sonnette de nuit</HH.Setting.venues.nightBell>
-  <HH.Setting.venues.nightBell.Desc>Les visiteurs peuvent sonner pour un commerce fermé. Les colons éveillés ayant le type de travail Service viennent l'ouvrir moyennant un supplément. Personne n'est réveillé.</HH.Setting.venues.nightBell.Desc>
+  <HH.Setting.venues.nightBell.Desc>Les invités peuvent sonner pour un commerce fermé. Les colons ayant le type de travail Service qui entendent la cloche accourent et ouvrent le commerce moyennant un supplément (voir plus bas les réglages de la cloche de nuit pour savoir qui est appelé et qui peut être réveillé).</HH.Setting.venues.nightBell.Desc>
   <HH.Setting.venues.nightBellMin>Tarif minimum de la sonnette de nuit</HH.Setting.venues.nightBellMin>
   <HH.Setting.venues.nightBellMin.Desc>Un service de sonnette ne coûte jamais moins que ce montant (en argent).</HH.Setting.venues.nightBellMin.Desc>
   <HH.Setting.venues.nightBellSurcharge>Supplément de la sonnette de nuit</HH.Setting.venues.nightBellSurcharge>
@@ -107,20 +107,16 @@
   <HH.Venue.Price>Prix</HH.Venue.Price>
   <HH.Venue.PriceDesc>Facteur de prix appliqué à tout ce que vend ce commerce. Les visiteurs sont rebutés par des prix trop élevés.</HH.Venue.PriceDesc>
   <HH.Venue.PriceFactor>Facteur de prix</HH.Venue.PriceFactor>
-  <HH.Venue.PriceHint>Les visiteurs comparent le prix à la valeur que l'article représente pour eux. Les visiteurs aisés acceptent davantage. Les commerces sans personnel en service pratiquent des prix un peu plus bas (libre-service) ; un service de sonnette de nuit coûte plus cher. Gratuit signifie gratuit.</HH.Venue.PriceHint>
   <HH.Venue.PriceLine>Prix</HH.Venue.PriceLine>
   <HH.Venue.PriceTitle>Prix</HH.Venue.PriceTitle>
   <HH.Venue.Pricey>Cher</HH.Venue.Pricey>
   <HH.Venue.Rename>Renommer</HH.Venue.Rename>
   <HH.Venue.RenameDesc>Donnez un nom à ce commerce.</HH.Venue.RenameDesc>
   <HH.Venue.RenameTitle>Nommer ce commerce</HH.Venue.RenameTitle>
-  <HH.Venue.Reset>Utiliser le nom par défaut</HH.Venue.Reset>
   <HH.Venue.Restock>Réapprovisionnement</HH.Venue.Restock>
   <HH.Venue.RestockDesc>Laisse cette enseigne définir les zones de stockage de sa pièce pour accueillir vos marchandises en priorité Important, afin que les transporteurs gardent les étagères pleines. Sur option ; les anciens réglages reviennent lorsque vous la désactivez.</HH.Venue.RestockDesc>
   <HH.Venue.RestockHint>Lorsque c'est activé, chaque zone de stockage de cette pièce (zones de stockage et étagères, qu'elles soient à vous ou non) accepte en priorité Important les marchandises cochées ci-dessous, afin que vos transporteurs approvisionnent la pièce. Les anciens réglages des zones reviennent lorsque vous désactivez cette option.</HH.Venue.RestockHint>
   <HH.Venue.RestockNoShop>Ce commerce ne vend rien depuis sa pièce : il n'y a donc rien à réapprovisionner.</HH.Venue.RestockNoShop>
-  <HH.Venue.RestockSwitchOff>Réapprovisionnement ACTIVÉ – désactiver et rendre le stockage</HH.Venue.RestockSwitchOff>
-  <HH.Venue.RestockSwitchOn>Réapprovisionnement désactivé – activer</HH.Venue.RestockSwitchOn>
   <HH.Venue.RestockTitle>Réapprovisionnement</HH.Venue.RestockTitle>
   <HH.Venue.RippedOff>Arnaqué</HH.Venue.RippedOff>
   <HH.Venue.Sales>Ventes du jour</HH.Venue.Sales>
@@ -141,4 +137,142 @@
   <HH.Venue.MarketBlock.NoShop>pas de boutique</HH.Venue.MarketBlock.NoShop>
   <HH.Venue.MarketBlock.Stalls>étals de marché {0}/{1}</HH.Venue.MarketBlock.Stalls>
   <HH.Venue.MarketBlock.Renown>renommée {0}/{1}</HH.Venue.MarketBlock.Renown>
+  <HH.Core.FlipBlocked>L'autre côté est bloqué : un travailleur ne peut pas s'y tenir.</HH.Core.FlipBlocked>
+  <HH.Core.FlipBusy>Occupé : {0} l'utilise en ce moment.</HH.Core.FlipBusy>
+  <HH.Core.FlipNoSide>Ceci n'a pas de côté de travail.</HH.Core.FlipNoSide>
+  <HH.Core.FlipSame>Les deux côtés sont identiques.</HH.Core.FlipSame>
+  <HH.Core.FlipSide>Changer le côté de travail</HH.Core.FlipSide>
+  <HH.Core.FlipSideDesc>Retourne ceci sur place pour que celui qui travaille ici se tienne de l'autre côté. Il garde sa place, ses factures et ses connexions.</HH.Core.FlipSideDesc>
+  <HH.Enum.BellWakes.AwakeOnly>Colons éveillés uniquement</HH.Enum.BellWakes.AwakeOnly>
+  <HH.Enum.BellWakes.Off>Désactivé (la cloche sonne seulement)</HH.Enum.BellWakes.Off>
+  <HH.Enum.BellWakes.WakeVolunteers>Réveiller aussi les volontaires</HH.Enum.BellWakes.WakeVolunteers>
+  <HH.Enum.BellWho.AnyColonist>N'importe quel colon</HH.Enum.BellWho.AnyColonist>
+  <HH.Enum.BellWho.ServingOnly>Colons en service uniquement</HH.Enum.BellWho.ServingOnly>
+  <HH.Honor.Line>Système de confiance : sans surveillance</HH.Honor.Line>
+  <HH.Honor.MemoPaid>caisse de confiance : {0} payé sur {1}</HH.Honor.MemoPaid>
+  <HH.Honor.MoteNothing>n'a rien payé !</HH.Honor.MoteNothing>
+  <HH.Honor.MotePart>payé {0} %</HH.Honor.MotePart>
+  <HH.Honor.PriceNote>système de confiance : plein tarif, certains invités paient moins</HH.Honor.PriceNote>
+  <HH.Honor.Report>Caisse de confiance aujourd'hui : {0} ventes, {1} d'argent manquant ({2} %) · depuis le début : {3} ventes, {4} sous-payées, {5} non payées, {6} d'argent manquant</HH.Honor.Report>
+  <HH.Honor.Section>Caisse de confiance</HH.Honor.Section>
+  <HH.Honor.Toggle>Système de confiance</HH.Honor.Toggle>
+  <HH.Honor.ToggleDesc>Faire tourner ce commerce sans surveillance : les invités prennent ce qu'ils veulent et laissent l'argent dans la caisse de confiance, au plein tarif. Personne n'a besoin d'être de service, mais certains invités paient moins que le prix et quelques-uns ne paient rien du tout (probabilités dans les paramètres ; moins quand un colon peut les voir). Le panneau indique ce qui a disparu.</HH.Honor.ToggleDesc>
+  <HH.Honor.Witnessed>{0} est sorti de {1} sans payer – un colon l'a vu.</HH.Honor.Witnessed>
+  <HH.Names.DefaultOwner>Harbor</HH.Names.DefaultOwner>
+  <HH.Serve.IdleMote>*bâillement*</HH.Serve.IdleMote>
+  <HH.Serve.ServedShift>{0} servi(s) pendant ce service</HH.Serve.ServedShift>
+  <HH.Serve.TipMemo>pourboire pour {0}</HH.Serve.TipMemo>
+  <HH.Serve.TipMote>pourboire +{0}</HH.Serve.TipMote>
+  <HH.Serve.TipsTotal>Pourboires du personnel jusqu'ici : {0} argent</HH.Serve.TipsTotal>
+  <HH.Setting.venues.autoNames>Nommer automatiquement les nouveaux commerces</HH.Setting.venues.autoNames>
+  <HH.Setting.venues.autoNames.Desc>Une nouvelle enseigne reçoit un nom adapté à son type de commerce (par exemple « L'Alpaga somnolent » pour une taverne). Vous pouvez toujours la renommer ou en tirer une autre.</HH.Setting.venues.autoNames.Desc>
+  <HH.Setting.venues.bellHurry>Cloche de nuit : les colons accourent</HH.Setting.venues.bellHurry>
+  <HH.Setting.venues.bellHurry.Desc>Les colons qui répondent à la cloche trottent jusqu'au commerce au lieu de marcher.</HH.Setting.venues.bellHurry.Desc>
+  <HH.Setting.venues.bellRange>Portée d'audition de la cloche de nuit (cases)</HH.Setting.venues.bellRange>
+  <HH.Setting.venues.bellRange.Desc>La distance à laquelle la cloche porte pour quelqu'un qui entend normalement. Les murs et les portes fermées la raccourcissent ; une mauvaise ouïe la réduit beaucoup, et les colons sourds ne l'entendent jamais.</HH.Setting.venues.bellRange.Desc>
+  <HH.Setting.venues.bellResponders>Cloche de nuit : colons par sonnerie</HH.Setting.venues.bellResponders>
+  <HH.Setting.venues.bellResponders.Desc>Nombre maximal de colons qui accourent lorsque la cloche sonne.</HH.Setting.venues.bellResponders.Desc>
+  <HH.Setting.venues.bellWakeCooldownHours>Cloche de nuit : protection du sommeil (heures)</HH.Setting.venues.bellWakeCooldownHours>
+  <HH.Setting.venues.bellWakeCooldownHours.Desc>Un colon réveillé par la cloche n'est pas réveillé de nouveau pendant ce nombre d'heures.</HH.Setting.venues.bellWakeCooldownHours.Desc>
+  <HH.Setting.venues.bellWakes>Cloche de nuit : qui est appelé</HH.Setting.venues.bellWakes>
+  <HH.Setting.venues.bellWakes.Desc>Désactivé : la cloche ne fait que du bruit, et les colons la remarquent quand leur travail le leur permet. Éveillés seulement : les colons éveillés à portée d'audition se précipitent au commerce. Réveiller les volontaires : aussi les colons endormis dont le travail Service est réglé sur la priorité 1 ou 2 (ou avec des réglages de travail simples), au plus une fois par demi-journée chacun, avec un petit malus d'humeur.</HH.Setting.venues.bellWakes.Desc>
+  <HH.Setting.venues.bellWho>Cloche de nuit : qui peut répondre</HH.Setting.venues.bellWho>
+  <HH.Setting.venues.bellWho.Desc>Service uniquement : les colons ayant le type de travail Service activé. Tout colon : chaque colon capable de servir.</HH.Setting.venues.bellWho.Desc>
+  <HH.Setting.venues.busyServedPerHour>Poste chargé : invités servis par heure</HH.Setting.venues.busyServedPerHour>
+  <HH.Setting.venues.busyServedPerHour.Desc>Un poste compte comme chargé (bonne humeur) lorsque le serveur a servi au moins ce nombre d'invités par heure.</HH.Setting.venues.busyServedPerHour.Desc>
+  <HH.Setting.venues.honorMessages>Caisse de confiance : signaler les vols vus</HH.Setting.venues.honorMessages>
+  <HH.Setting.venues.honorMessages.Desc>Affiche un message lorsqu'un colon a vu un invité partir sans payer.</HH.Setting.venues.honorMessages.Desc>
+  <HH.Setting.venues.honorNoPay>Caisse de confiance : chance de ne rien payer</HH.Setting.venues.honorNoPay>
+  <HH.Setting.venues.honorNoPay.Desc>Dans un commerce à caisse de confiance sans personnel, la chance qu'un invité prenne les marchandises sans rien payer.</HH.Setting.venues.honorNoPay.Desc>
+  <HH.Setting.venues.honorUnderpay>Caisse de confiance : chance de payer trop peu</HH.Setting.venues.honorUnderpay>
+  <HH.Setting.venues.honorUnderpay.Desc>Dans un commerce à caisse de confiance sans personnel, la chance qu'un invité ne laisse dans la caisse qu'une partie du prix (30 à 80 %).</HH.Setting.venues.honorUnderpay.Desc>
+  <HH.Setting.venues.honorWatched>Caisse de confiance : effet d'être observé</HH.Setting.venues.honorWatched>
+  <HH.Setting.venues.honorWatched.Desc>De combien les invités paient moins souvent lorsqu'un colon peut les voir (1 = jamais quand ils sont observés).</HH.Setting.venues.honorWatched.Desc>
+  <HH.Setting.venues.idleHours>Ennui après (heures sans invité)</HH.Setting.venues.idleHours>
+  <HH.Setting.venues.idleHours.Desc>Un serveur qui n'a servi personne pendant ce nombre d'heures de son poste s'ennuie (mauvaise humeur, un peu pire à chaque nouvelle période).</HH.Setting.venues.idleHours.Desc>
+  <HH.Setting.venues.requireSetup>Les commerces ont besoin de leur mobilier</HH.Setting.venues.requireSetup>
+  <HH.Setting.venues.requireSetup.Desc>Un commerce n'ouvre que lorsque le mobilier nécessaire à son type se trouve dans la pièce (une taverne a besoin d'un comptoir, d'une table et de sièges, un casino d'au moins un jeu, et ainsi de suite ; voir l'onglet Installation de l'enseigne). Désactivé : le mobilier manquant n'est qu'une indication.</HH.Setting.venues.requireSetup.Desc>
+  <HH.Setting.venues.serviceSkill>Poids de la compétence Social</HH.Setting.venues.serviceSkill>
+  <HH.Setting.venues.serviceSkill.Desc>L'importance de la compétence Social de la personne de service : service plus aimable, achats plus importants, pourboires et ventes plus rapides. 0 = la compétence n'a pas d'effet.</HH.Setting.venues.serviceSkill.Desc>
+  <HH.Setting.venues.setupHints>Boutons de construction sur l'enseigne</HH.Setting.venues.setupHints>
+  <HH.Setting.venues.setupHints.Desc>Une enseigne de commerce sélectionnée affiche des boutons de construction pour le mobilier dont son commerce a encore besoin.</HH.Setting.venues.setupHints.Desc>
+  <HH.Setting.venues.shiftThoughts>Humeurs de poste</HH.Setting.venues.shiftThoughts>
+  <HH.Setting.venues.shiftThoughts.Desc>Les colons qui s'occupent d'un commerce sont satisfaits après un poste chargé et s'ennuient lorsqu'ils attendent des heures sans rien à faire.</HH.Setting.venues.shiftThoughts.Desc>
+  <HH.Setting.venues.staffRule>Règle de personnel</HH.Setting.venues.staffRule>
+  <HH.Setting.venues.staffRule.Desc>Par type de commerce : tavernes, restaurants, casinos et spas ont besoin de quelqu'un en service, boutiques et salons non. Jamais : chaque commerce fonctionne en libre-service. Toujours : chaque commerce a besoin de quelqu'un en service.</HH.Setting.venues.staffRule.Desc>
+  <HH.Setting.venues.tipShare>Pourboires</HH.Setting.venues.tipShare>
+  <HH.Setting.venues.tipShare.Desc>Plus gros pourboire qu'un invité laisse en plus de son achat, en part du prix, pour un serveur parfait. La chance et la taille d'un pourboire augmentent avec la compétence Social du serveur.</HH.Setting.venues.tipShare.Desc>
+  <HH.Setup.Attention>à vérifier : {0}</HH.Setup.Attention>
+  <HH.Setup.BannerAttention>Le mobilier est complet. Vérifiez les points ouverts ci-dessous pour que les clients soient servis.</HH.Setup.BannerAttention>
+  <HH.Setup.BannerMissing>Ce {0} manque encore de certains meubles.</HH.Setup.BannerMissing>
+  <HH.Setup.BannerNotReady>Pas prêt : ce {0} ouvrira une fois que tout ce qui est marqué Requis se trouve dans la pièce.</HH.Setup.BannerNotReady>
+  <HH.Setup.BannerReady>Tout ce dont cet établissement a besoin est en place.</HH.Setup.BannerReady>
+  <HH.Setup.Build>Construire</HH.Setup.Build>
+  <HH.Setup.BuildButton>Construire : {0}</HH.Setup.BuildButton>
+  <HH.Setup.BuildButtonDesc>Ce {0} a encore besoin de {1}. Cliquez pour en placer un dans la pièce.</HH.Setup.BuildButtonDesc>
+  <HH.Setup.ChipNoRoom>pas de place</HH.Setup.ChipNoRoom>
+  <HH.Setup.ChipNoStaff>en attente de personnel</HH.Setup.ChipNoStaff>
+  <HH.Setup.FooterLoose>La règle « Les établissements ont besoin de leur mobilier » est désactivée : les éléments manquants ne sont que des indications.</HH.Setup.FooterLoose>
+  <HH.Setup.FooterStrict>Le mobilier requis garde l'établissement fermé tant qu'il n'est pas dans la pièce. Vous pouvez désactiver cette règle dans les réglages Boutiques et restauration.</HH.Setup.FooterStrict>
+  <HH.Setup.GizmoDesc>Ouvrir le guide d'installation de cet établissement : ce dont son type a besoin, ce qu'il possède déjà, avec des boutons de construction pour tout ce qui manque.</HH.Setup.GizmoDesc>
+  <HH.Setup.GizmoMissing>Installation : {0} manquant(s)</HH.Setup.GizmoMissing>
+  <HH.Setup.GizmoReady>Installation : prête</HH.Setup.GizmoReady>
+  <HH.Setup.HonorNotNeeded>inutile avec le système de confiance</HH.Setup.HonorNotNeeded>
+  <HH.Setup.LoadNotice>Pas prêt à ouvrir, mobilier manquant : {0}. L'onglet Installation de l'enseigne propose des boutons de construction.</HH.Setup.LoadNotice>
+  <HH.Setup.MissingLine>Installation – manquant : {0}</HH.Setup.MissingLine>
+  <HH.Setup.NeedsResearch>nécessite une recherche : {0}</HH.Setup.NeedsResearch>
+  <HH.Setup.NoScreenYet>construisez d'abord l'écran</HH.Setup.NoScreenYet>
+  <HH.Setup.NotAvailable>indisponible pour le moment</HH.Setup.NotAvailable>
+  <HH.Setup.NotBuildable>absent du menu de construction</HH.Setup.NotBuildable>
+  <HH.Setup.NotReadyLine>Pas prêt – manquant : {0}</HH.Setup.NotReadyLine>
+  <HH.Setup.NotReadyState>pas prêt</HH.Setup.NotReadyState>
+  <HH.Setup.NowReady>{0} possède tout ce qu'il lui faut et est prêt à ouvrir.</HH.Setup.NowReady>
+  <HH.Setup.OperationalTip>Nécessaire pour que les clients soient servis ; cela ne garde pas les portes fermées.</HH.Setup.OperationalTip>
+  <HH.Setup.PickType>Type d'établissement</HH.Setup.PickType>
+  <HH.Setup.Planned>{0} prévu(s)</HH.Setup.Planned>
+  <HH.Setup.ReadyLine>Installation : prête</HH.Setup.ReadyLine>
+  <HH.Setup.Recommended>{0} élément(s) recommandé(s) ouvert(s)</HH.Setup.Recommended>
+  <HH.Setup.RecommendedHead>Recommandé</HH.Setup.RecommendedHead>
+  <HH.Setup.RecommendedTip>Recommandé : l'établissement fonctionne sans, mais les clients apprécient.</HH.Setup.RecommendedTip>
+  <HH.Setup.RenameTip>Cliquez pour renommer cet établissement.</HH.Setup.RenameTip>
+  <HH.Setup.Required>Requis</HH.Setup.Required>
+  <HH.Setup.RestockTip>Laissez l'enseigne définir les étagères et stocks de la pièce pour recevoir vos marchandises.</HH.Setup.RestockTip>
+  <HH.Setup.ShowTip>Pointez ce que la pièce possède déjà.</HH.Setup.ShowTip>
+  <HH.Setup.Staff>quelqu'un en travail de Service</HH.Setup.Staff>
+  <HH.Setup.StaffHint>Activez le type de travail Service pour au moins un colon.</HH.Setup.StaffHint>
+  <HH.Setup.Stock>marchandises à vendre</HH.Setup.Stock>
+  <HH.Setup.StockHint>Stockez dans la pièce ce que cet établissement vend.</HH.Setup.StockHint>
+  <HH.Setup.StockNote>{0} piles à vendre</HH.Setup.StockNote>
+  <HH.Setup.TabLabel>Installation</HH.Setup.TabLabel>
+  <HH.Setup.WorkTab>Onglet Travail</HH.Setup.WorkTab>
+  <HH.Setup.WorkTabTip>Ouvrez l'onglet travail et donnez le type de travail Service à un colon sociable.</HH.Setup.WorkTabTip>
+  <HH.Setup.WorkersNote>{0} colon(s) au Service</HH.Setup.WorkersNote>
+  <HH.Venue.BellAnswered>J'arrive !</HH.Venue.BellAnswered>
+  <HH.Venue.BellAnsweredBy>Sonnette de nuit : répondu par {0}</HH.Venue.BellAnsweredBy>
+  <HH.Venue.BellNobody>Sonnette de nuit : ça sonne, personne n'est encore venu</HH.Venue.BellNobody>
+  <HH.Venue.BellNote>sonnette de nuit</HH.Venue.BellNote>
+  <HH.Venue.BellOnTheWay>Sonnette de nuit : {0} est en route</HH.Venue.BellOnTheWay>
+  <HH.Venue.BellRungAgo>sonnée il y a {0}</HH.Venue.BellRungAgo>
+  <HH.Venue.BellUnanswered>La sonnette de nuit de {0} sonne, mais personne ne vient. Les colons ayant le type de travail Service doivent être éveillés et à portée de voix.</HH.Venue.BellUnanswered>
+  <HH.Venue.ClosedNow>fermé pour l'instant</HH.Venue.ClosedNow>
+  <HH.Venue.NameAutoHint>Un nom suggéré suit l'enseigne si vous changez le type de commerce ; un nom que vous tapez reste.</HH.Venue.NameAutoHint>
+  <HH.Venue.NamePlain>Simple : {0}</HH.Venue.NamePlain>
+  <HH.Venue.NameSuggest>Proposer un nom</HH.Venue.NameSuggest>
+  <HH.Venue.NameSuggestTip>Tirer un nom qui correspond à ce type de commerce. Retirez-en un jusqu'à ce qu'un vous plaise.</HH.Venue.NameSuggestTip>
+  <HH.Venue.Now>maintenant</HH.Venue.Now>
+  <HH.Venue.OpenNow>ouvert maintenant</HH.Venue.OpenNow>
+  <HH.Venue.PriceColItem>En vente</HH.Venue.PriceColItem>
+  <HH.Venue.PriceColPrice>Prix payé</HH.Venue.PriceColPrice>
+  <HH.Venue.PriceColValue>Valeur</HH.Venue.PriceColValue>
+  <HH.Venue.PriceEmpty>Rien en vente dans la pièce pour l'instant.</HH.Venue.PriceEmpty>
+  <HH.Venue.PriceHintShort>Les invités comparent le prix à la valeur de l'objet pour eux ; les invités aisés acceptent davantage. Gratuit veut dire gratuit.</HH.Venue.PriceHintShort>
+  <HH.Venue.PriceNoGoods>Ce type de commerce ne vend pas de marchandises depuis sa pièce.</HH.Venue.PriceNoGoods>
+  <HH.Venue.PriceNow>Les invités paient {0} % de la valeur marchande en ce moment</HH.Venue.PriceNow>
+  <HH.Venue.PriceSetting>réglage du niveau des prix</HH.Venue.PriceSetting>
+  <HH.Venue.RestockBtnOff>Désactiver</HH.Venue.RestockBtnOff>
+  <HH.Venue.RestockBtnOn>Activer</HH.Venue.RestockBtnOn>
+  <HH.Venue.RestockFooter>Places de stockage dans cette pièce : {0} · piles en vente maintenant : {1}</HH.Venue.RestockFooter>
+  <HH.Venue.RestockStateOff>Réassort désactivé : le stockage de la pièce garde ses propres réglages</HH.Venue.RestockStateOff>
+  <HH.Venue.RestockStateOn>Réassort activé : le stockage de la pièce suit cette liste</HH.Venue.RestockStateOn>
+  <HH.Venue.SelfServiceNote>libre-service</HH.Venue.SelfServiceNote>
 </LanguageData>

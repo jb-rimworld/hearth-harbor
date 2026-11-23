@@ -29,4 +29,20 @@
   <HH.City.TaxiFree>タクシーが待機しています。</HH.City.TaxiFree>
   <HH.City.TaxiBusy>タクシーは乗客を乗せて外出中です。</HH.City.TaxiBusy>
   <HH.City.TaxiStats>出発: {0}回、到着: {1}回、売上: {2}銀</HH.City.TaxiStats>
+  <HH.City.Closed>閉店</HH.City.Closed>
+  <HH.City.Open>営業中</HH.City.Open>
+  <HH.City.Page.Cinema>映画館: スクリーン {0} 面（看板つき {1} 面）; チケット {2} 枚、{3} 銀貨</HH.City.Page.Cinema>
+  <HH.City.Page.CinemaRow>   {0}: 座席 {1} 席、{2}</HH.City.Page.CinemaRow>
+  <HH.City.Page.Gallery>ギャラリー: {0} 室、作品 {1} 点; 来場 {2} 回、{3} 銀貨</HH.City.Page.Gallery>
+  <HH.City.Page.Park>公園: ベンチ {0} 台; 座っている客 {1} 人</HH.City.Page.Park>
+  <HH.City.Page.Salon>サロン: {1} 室にある椅子 {0} 脚; 新しいヘアスタイル {2} 件、{3} 銀貨</HH.City.Page.Salon>
+  <HH.City.Page.Security>警備: 勤務中のボディガード {0} 人、稼ぎ {1} 銀貨</HH.City.Page.Security>
+  <HH.City.Page.StateIdle>待機中</HH.City.Page.StateIdle>
+  <HH.City.Page.StateNoPower>電源なし</HH.City.Page.StateNoPower>
+  <HH.City.Page.StateShowing>上映中 {0}</HH.City.Page.StateShowing>
+  <HH.City.Page.Taxi>タクシー: 乗り場 {0} 箇所; 乗車 {1} 回、到着 {2} 回、{3} 銀貨</HH.City.Page.Taxi>
+  <HH.City.Page.Total>都市生活の総収入: {0} 銀貨</HH.City.Page.Total>
+  <HH.City.Removal.Buildings>プロジェクタースクリーン、サロンの椅子、公園のベンチ、タクシー乗り場は通常の建物として残ります。</HH.City.Removal.Buildings>
+  <HH.City.Removal.Films>上映中の映画 {0} 本を停止しました。</HH.City.Removal.Films>
+  <HH.City.Removal.Guards>ボディガードの契約 {0} 件を終了しました。</HH.City.Removal.Guards>
 </LanguageData>

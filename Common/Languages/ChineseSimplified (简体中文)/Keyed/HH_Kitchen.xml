@@ -2,8 +2,6 @@
 <LanguageData>
   <HH.Kitchen.Missing>缺少：{0}</HH.Kitchen.Missing>
   <HH.Kitchen.RecipeInfo>设备：{0}。步骤：{1}。</HH.Kitchen.RecipeInfo>
-  <HH.Kitchen.Finishing>一道收尾配料（牛奶、鸡蛋、巧克力、啤酒、浆果或蘑菇）</HH.Kitchen.Finishing>
-  <HH.Kitchen.Finishing2>第二道收尾配料（啤酒、浆果或蘑菇）</HH.Kitchen.Finishing2>
   <HH.Kitchen.Inspiration>灵感：{0}</HH.Kitchen.Inspiration>
   <HH.Kitchen.Cuisine>菜系：{0}</HH.Kitchen.Cuisine>
   <HH.Kitchen.Cooked>烹饪地点：{0}（{1}）</HH.Kitchen.Cooked>
@@ -125,4 +123,9 @@
   <HH.Kitchen.NoNeighbours>可及范围内没有其他厨房设备。</HH.Kitchen.NoNeighbours>
   <HH.Kitchen.Neighbours>可及范围内：{0}</HH.Kitchen.Neighbours>
   <HH.Kitchen.FreshHours>保鲜 {0} 小时</HH.Kitchen.FreshHours>
+  <HH.Kitchen.FinishingTouch>一道点睛之笔（{0}）</HH.Kitchen.FinishingTouch>
+  <HH.Kitchen.FinishingTouch2>第二道点睛之笔（{0}）</HH.Kitchen.FinishingTouch2>
+  <HH.Kitchen.Or>或</HH.Kitchen.Or>
+  <HH.Setting.kitchen.cookSounds>烹饪与进食音效</HH.Setting.kitchen.cookSounds>
+  <HH.Setting.kitchen.cookSounds.Desc>每种烹饪方式（切、炖、烤、焗、炸、蒸、揉、熏、冷藏）都有各自的声音和小效果；做好的菜会响起提示音，优质菜品会引来愉快的反应。关闭：所有烹饪都使用原版的煎锅音效。</HH.Setting.kitchen.cookSounds.Desc>
 </LanguageData>

@@ -2,8 +2,6 @@
 <LanguageData>
   <HH.Kitchen.Missing>Chybí: {0}</HH.Kitchen.Missing>
   <HH.Kitchen.RecipeInfo>Zařízení: {0}. Kroky: {1}.</HH.Kitchen.RecipeInfo>
-  <HH.Kitchen.Finishing>dolaďovací příloha (mléko, vejce, čokoláda, pivo, bobule nebo houby)</HH.Kitchen.Finishing>
-  <HH.Kitchen.Finishing2>druhá dolaďovací příloha (pivo, bobule nebo houby)</HH.Kitchen.Finishing2>
   <HH.Kitchen.Inspiration>Inspirace: {0}</HH.Kitchen.Inspiration>
   <HH.Kitchen.Cuisine>Kuchyně: {0}</HH.Kitchen.Cuisine>
   <HH.Kitchen.Cooked>Vařeno u: {0} ({1})</HH.Kitchen.Cooked>
@@ -125,4 +123,9 @@
   <HH.Kitchen.NoNeighbours>V dosahu není žádné jiné kuchyňské zařízení.</HH.Kitchen.NoNeighbours>
   <HH.Kitchen.Neighbours>V dosahu: {0}</HH.Kitchen.Neighbours>
   <HH.Kitchen.FreshHours>Čerstvé po dobu {0} h</HH.Kitchen.FreshHours>
+  <HH.Kitchen.FinishingTouch>závěrečná úprava ({0})</HH.Kitchen.FinishingTouch>
+  <HH.Kitchen.FinishingTouch2>druhá závěrečná úprava ({0})</HH.Kitchen.FinishingTouch2>
+  <HH.Kitchen.Or>nebo</HH.Kitchen.Or>
+  <HH.Setting.kitchen.cookSounds>Zvuky vaření a jídla</HH.Setting.kitchen.cookSounds>
+  <HH.Setting.kitchen.cookSounds.Desc>Každý druh vaření (krájení, vaření na mírném ohni, grilování, pečení, smažení, dušení, hnětení, uzení, chlazení) má vlastní zvuk a drobný efekt; hotová jídla zazvoní a dobré talíře vyvolají radostnou reakci. Vypnuto: pro vše původní zvuk smažení na pánvi.</HH.Setting.kitchen.cookSounds.Desc>
 </LanguageData>

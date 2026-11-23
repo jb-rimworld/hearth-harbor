@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Ai.Ans.Arrears>Du bist {0} Silber im Rückstand. Bitte begleiche das zuerst.</HH.Ai.Ans.Arrears>
+  <HH.Ai.Ans.Denied>Dein Schadensfall "{0}" wurde abgelehnt: {1}. Die Klausel findest du im Versicherungs-Tab, dort liegen auch die Schaltflächen zum Kündigen und Ändern.</HH.Ai.Ans.Denied>
+  <HH.Ai.Ans.Interest>Geld auf dem Konto bringt kleine, stetige Zinsen, die einmal pro Quadrum ausgezahlt werden. Dieses Quadrum bisher: {0} Silber; insgesamt: {1} Silber. Geldanlagen können viel mehr einbringen und es ebenso schnell wieder verlieren: Das Konto ist der vernünftige Freund, der Markt der aufregende.</HH.Ai.Ans.Interest>
+  <HH.Ai.Ans.Invest>Dein Portfolio ist {0} Silber wert, verteilt auf {1} Position(en).</HH.Ai.Ans.Invest>
+  <HH.Ai.Ans.Loan>Kredit {0}: noch {1} Silber offen, Rate {2} Silber in {3} Tag(en), etwa {4} % im Jahr, noch {5} Rate(n).</HH.Ai.Ans.Loan>
+  <HH.Ai.Ans.Net>Dein Vermögen beträgt {0} Silber: {1} auf dem Konto, {2} als Silber zu Hause, abzüglich {3} Schulden. Die Bank ordnet dich der Stufe "{4}" zu.</HH.Ai.Ans.Net>
+  <HH.Ai.Ans.NoClaims>Es liegt kein Schadensfall vor. Clawback Mutual hatte noch nicht das Vergnügen.</HH.Ai.Ans.NoClaims>
+  <HH.Ai.Ans.NoDenied>Keiner deiner Schadensfälle wurde abgelehnt. Der letzte, "{0}", ist {1}.</HH.Ai.Ans.NoDenied>
+  <HH.Ai.Ans.NoInvest>Du hältst keine Geldanlagen. Der Tab Anlegen zeigt, was angeboten wird; fang klein an und lies den Nachrichtenticker, bevor du ihm traust.</HH.Ai.Ans.NoInvest>
+  <HH.Ai.Ans.NoLoans>Du hast keine Kredite. Schuldenfrei ist ein schöner Zustand; ich tue so, als wäre ich nicht enttäuscht.</HH.Ai.Ans.NoLoans>
+  <HH.Ai.Ans.NoReason>das Kleingedruckte hat keine Notiz hinterlassen</HH.Ai.Ans.NoReason>
+  <HH.Ai.Badge.Ai>KI</HH.Ai.Badge.Ai>
+  <HH.Ai.Badge.Books>aus den Büchern</HH.Ai.Badge.Books>
+  <HH.Ai.Badge.TipChat>Von der KI geschrieben, anhand eines schreibgeschützten Auszugs deiner Bücher. Sie kann erklären, aber nichts ändern.</HH.Ai.Badge.TipChat>
+  <HH.Ai.Badge.TipConcierge>von der KI aus den Fakten des Spiels geschrieben</HH.Ai.Badge.TipConcierge>
+  <HH.Ai.Badge.Written>Von der KI geschrieben. Die Sterne stammen aus dem Spiel.</HH.Ai.Badge.Written>
+  <HH.Ai.Chat.Clerk>Sachbearbeiterin Ottoline</HH.Ai.Chat.Clerk>
+  <HH.Ai.Chat.Empty>Gib zuerst eine Frage ein.</HH.Ai.Chat.Empty>
+  <HH.Ai.Chat.NoAccount>Es gibt noch kein Konto. Eröffne zuerst eines in der Eingangshalle, dann sehe ich es mir gern an.</HH.Ai.Chat.NoAccount>
+  <HH.Ai.Chat.NoMatch>Ich kann nur ein paar Fragen allein aus den Büchern beantworten. Nutze die Schnellfragen unten oder frag noch einmal, wenn die KI wieder da ist.</HH.Ai.Chat.NoMatch>
+  <HH.Ai.Chat.OfflineHint>Die KI ist nicht verfügbar, also antwortet Ottoline aus den Büchern, wenn sie kann.</HH.Ai.Chat.OfflineHint>
+  <HH.Ai.Chat.Placeholder>Frag Ottoline alles über dein Geld...</HH.Ai.Chat.Placeholder>
+  <HH.Ai.Chat.Quick>Schnellfragen</HH.Ai.Chat.Quick>
+  <HH.Ai.Chat.QuickTip>Wird sofort aus deinen Büchern beantwortet. Es wird nichts versendet.</HH.Ai.Chat.QuickTip>
+  <HH.Ai.Chat.Recheck>Erneut prüfen</HH.Ai.Chat.Recheck>
+  <HH.Ai.Chat.Send>Senden</HH.Ai.Chat.Send>
+  <HH.Ai.Chat.SetUp>KI-Antworten einrichten</HH.Ai.Chat.SetUp>
+  <HH.Ai.Chat.Stop>Stopp</HH.Ai.Chat.Stop>
+  <HH.Ai.Chat.Stopped>(Du hast die Frage abgebrochen.)</HH.Ai.Chat.Stopped>
+  <HH.Ai.Chat.Thinking>Ottoline denkt nach</HH.Ai.Chat.Thinking>
+  <HH.Ai.Chat.Welcome>Frag mich zu deinem Konto, deinen Krediten, Geldanlagen oder Policen. Ich erkläre; dein Geld bewege ich nie. Ist die KI nicht da, funktionieren die Schnellfragen unten trotzdem.</HH.Ai.Chat.Welcome>
+  <HH.Ai.Chat.You>Du</HH.Ai.Chat.You>
+  <HH.Ai.Concierge.Ask>Fragen</HH.Ai.Concierge.Ask>
+  <HH.Ai.Concierge.Default>Was sollte ich zuerst verbessern?</HH.Ai.Concierge.Default>
+  <HH.Ai.Concierge.Offline>Die KI hat nicht geantwortet; das sind die eigenen Tipps des Spiels.</HH.Ai.Concierge.Offline>
+  <HH.Ai.Concierge.Placeholder>Warum kommen keine Adligen? Was sollte ich verbessern?</HH.Ai.Concierge.Placeholder>
+  <HH.Ai.Concierge.StateAi>KI online: Antworten werden von der KI formuliert</HH.Ai.Concierge.StateAi>
+  <HH.Ai.Concierge.StateOffline>Antworten stammen aus den eigenen Tipps des Spiels</HH.Ai.Concierge.StateOffline>
+  <HH.Ai.Concierge.Stop>Stopp</HH.Ai.Concierge.Stop>
+  <HH.Ai.Concierge.Thinking>Der Concierge denkt nach</HH.Ai.Concierge.Thinking>
+  <HH.Ai.Concierge.Tips>Das sehe ich, das Häufigste zuerst:</HH.Ai.Concierge.Tips>
+  <HH.Ai.Concierge.Title>Den Concierge fragen</HH.Ai.Concierge.Title>
+  <HH.Ai.Consent.Agree>Ich stimme zu und schalte ein</HH.Ai.Consent.Agree>
+  <HH.Ai.Consent.Budget>Das KI-Budget teilen sich alle Spieler über 24 Stunden. Ist es aufgebraucht, ruht die KI und das Spiel nutzt seine eigenen Texte.</HH.Ai.Consent.Budget>
+  <HH.Ai.Consent.D.Claim>Schadensbriefe: die Police, der Name des Kolonisten, der Vorfall, die Entscheidung und der Betrag, die das Spiel bereits festgelegt hat, und was du im Schadensformular geschrieben hast (höchstens 600 Zeichen).</HH.Ai.Consent.D.Claim>
+  <HH.Ai.Consent.D.Concierge>Concierge: deine Frage (höchstens 300 Zeichen) und bis zu 12 kurze Fakten, etwa Renommee, Anzahl der Gäste und Betten sowie die Probleme, die das Spiel gefunden hat.</HH.Ai.Consent.D.Concierge>
+  <HH.Ai.Consent.D.Headline>Marktschlagzeilen: die Art des Marktereignisses, der Name des Wertes und die Größe der Bewegung. Höchstens 8 Ereignisse pro Anfrage.</HH.Ai.Consent.D.Headline>
+  <HH.Ai.Consent.D.Ottoline>Ottoline fragen: deine Frage (höchstens 500 Zeichen) und eine Momentaufnahme der Bücher: Kontostand, Erspartes, bis zu 10 Kredite, Geldanlagen, Policen und letzte Buchungen, als Zahlen und kurze Bezeichnungen.</HH.Ai.Consent.D.Ottoline>
+  <HH.Ai.Consent.D.Review>Gästebewertungen: der Vorname des Gastes, die Sterne, die das Spiel vergeben hat, ein paar Stichworte zum Grund (zum Beispiel wie er gegangen ist) und die Arten von Betrieben, in denen er Geld ausgegeben hat.</HH.Ai.Consent.D.Review>
+  <HH.Ai.Consent.Done>KI-Texte sind an. Das Spiel prüft jetzt das Relay.</HH.Ai.Consent.Done>
+  <HH.Ai.Consent.HideDetails>Details ausblenden</HH.Ai.Consent.HideDetails>
+  <HH.Ai.Consent.Intro>Hearth &amp; Harbor kann eine KI einige Würztexte schreiben lassen: die Chat-Antworten von Schalterbeamtin Ottoline, Marktschlagzeilen, Gästebewertungen, Schadensbriefe der Versicherung und die Tipps des Concierge. Das Spiel läuft ohne sie genau gleich und hat immer eigene Texte bereit, falls die KI nicht erreichbar ist.</HH.Ai.Consent.Intro>
+  <HH.Ai.Consent.NotNow>Jetzt nicht</HH.Ai.Consent.NotNow>
+  <HH.Ai.Consent.NotSent>Was NICHT gesendet wird: dein Steam-Name oder deine ID, Dateipfade, der Name deines Spielstands oder deiner Kolonie, deine anderen Mods oder alles, was wie ein Schlüssel aussieht.</HH.Ai.Consent.NotSent>
+  <HH.Ai.Consent.Sent>Was gesendet wird: Spieltext für die Anfrage, zum Beispiel Namen von Kolonisten (bis zu 64 Zeichen), Beträge, der Text, den du in den Chat, das Schadensformular oder das Concierge-Feld tippst, und Zählwerte wie Gäste oder Betten.</HH.Ai.Consent.Sent>
+  <HH.Ai.Consent.ShowDetails>Was genau wird gesendet?</HH.Ai.Consent.ShowDetails>
+  <HH.Ai.Consent.Stored>Was gespeichert wird: Das Relay behält nur Zähler (wie viele Tokens, was es gekostet hat, wie lange es dauerte, Fehlercodes). Es speichert weder, was du geschrieben hast, noch, was die KI geantwortet hat. Wie jeder Webserver kann der Betreiber des Relays deine IP-Adresse kurz in seinen technischen Verbindungsprotokollen halten.</HH.Ai.Consent.Stored>
+  <HH.Ai.Consent.Title>KI-Texte (optional)</HH.Ai.Consent.Title>
+  <HH.Ai.Consent.Where>Wohin es geht: an einen kleinen Relay-Server des Autors dieser Mod (hh-relay.jberger.de) und von dort über OpenRouter zu den Claude-Modellen von Anthropic, nur über Anbieter, die keine Daten behalten (Zero Data Retention).</HH.Ai.Consent.Where>
+  <HH.Ai.Consent.Withdraw>Du kannst jederzeit widerrufen: Mod-Einstellungen, Hearth &amp; Harbor, KI-Würze, Meine Zustimmung vergessen.</HH.Ai.Consent.Withdraw>
+  <HH.Ai.Faq.Claim>Warum wurde mein Schaden abgelehnt?</HH.Ai.Faq.Claim>
+  <HH.Ai.Faq.Interest>Wie bekomme ich Zinsen?</HH.Ai.Faq.Interest>
+  <HH.Ai.Faq.Invest>Wie stehen meine Geldanlagen?</HH.Ai.Faq.Invest>
+  <HH.Ai.Faq.Loans>Welche Kredite habe ich?</HH.Ai.Faq.Loans>
+  <HH.Ai.Faq.Net>Was bin ich wert?</HH.Ai.Faq.Net>
+  <HH.Ai.Notice.Title>Hearth &amp; Harbor: ein Hinweis zu den KI-Texten</HH.Ai.Notice.Title>
+  <HH.Ai.Panel.Check>Relay jetzt prüfen</HH.Ai.Panel.Check>
+  <HH.Ai.Panel.ConsentGiven>Du hast am {0} zugestimmt (Textversion {1}).</HH.Ai.Panel.ConsentGiven>
+  <HH.Ai.Panel.ConsentNone>Du hast noch nicht zugestimmt. Es wird nichts gesendet.</HH.Ai.Panel.ConsentNone>
+  <HH.Ai.Panel.Forget>Meine Zustimmung vergessen</HH.Ai.Panel.Forget>
+  <HH.Ai.Panel.ForgetConfirm>Zustimmung vergessen und das KI-Modul ausschalten? Danach wird nichts mehr gesendet. Du kannst jederzeit wieder zustimmen.</HH.Ai.Panel.ForgetConfirm>
+  <HH.Ai.Panel.Relay>Relay: gemeinsames Budget der letzten 24 Stunden zu {0} % verbraucht. Diese Sitzung: {1} gesendet, {2} ok, {3} fehlgeschlagen, {4} eigene Texte verwendet.</HH.Ai.Panel.Relay>
+  <HH.Ai.Panel.SetUp>KI-Texte einrichten...</HH.Ai.Panel.SetUp>
+  <HH.Ai.Review.Fallback.1.0>Ein Stern, und nur, weil das Formular keine Null kennt.</HH.Ai.Review.Fallback.1.0>
+  <HH.Ai.Review.Fallback.1.1>Ich wollte eine ruhige Nacht und bekam eine Lektion in Geduld.</HH.Ai.Review.Fallback.1.1>
+  <HH.Ai.Review.Fallback.1.2>Nie wieder, auch wenn die Tür beim Hinausgehen wunderschön war.</HH.Ai.Review.Fallback.1.2>
+  <HH.Ai.Review.Fallback.1.3>Ich habe schon schlechter übernachtet. Ich weiß nur nicht mehr, wo.</HH.Ai.Review.Fallback.1.3>
+  <HH.Ai.Review.Fallback.2.0>Ganz in Ordnung, wenn man gern wartet. Ich nicht.</HH.Ai.Review.Fallback.2.0>
+  <HH.Ai.Review.Fallback.2.1>Ein paar gute Ideen, schlecht getimt.</HH.Ai.Review.Fallback.2.1>
+  <HH.Ai.Review.Fallback.2.2>Das Personal hat sich bemüht. Das Gebäude nicht.</HH.Ai.Review.Fallback.2.2>
+  <HH.Ai.Review.Fallback.2.3>Zwei Sterne: einen für die Mühe, einen für die Tür.</HH.Ai.Review.Fallback.2.3>
+  <HH.Ai.Review.Fallback.3.0>Ein Zimmer, ein Dach und ein halbwegs warmer Empfang.</HH.Ai.Review.Fallback.3.0>
+  <HH.Ai.Review.Fallback.3.1>Nichts zu meckern und nichts, was man nach Hause schreibt, also schreibe ich hier.</HH.Ai.Review.Fallback.3.1>
+  <HH.Ai.Review.Fallback.3.2>Anständig. Ich käme wieder, wenn mich der Weg zufällig vorbeiführt.</HH.Ai.Review.Fallback.3.2>
+  <HH.Ai.Review.Fallback.3.3>Drei Sterne. Die goldene Mitte ist ein guter Platz zum Stehen.</HH.Ai.Review.Fallback.3.3>
+  <HH.Ai.Review.Fallback.4.0>Gutes Essen, nette Leute, ein Bett, das sich benommen hat.</HH.Ai.Review.Fallback.4.0>
+  <HH.Ai.Review.Fallback.4.1>Ich habe gut geschlafen und fair bezahlt. Das ist seltener, als es klingt.</HH.Ai.Review.Fallback.4.1>
+  <HH.Ai.Review.Fallback.4.2>Angenehm und gut geführt. Ich erzähle es meiner Karawane.</HH.Ai.Review.Fallback.4.2>
+  <HH.Ai.Review.Fallback.4.3>Vier Sterne. Irgendetwas fehlte, und ich habe vergessen, was, das sagt eigentlich alles.</HH.Ai.Review.Fallback.4.3>
+  <HH.Ai.Review.Fallback.5.0>Bester Aufenthalt der Saison. Das Personal kannte meinen Namen und meine Bestellung.</HH.Ai.Review.Fallback.5.0>
+  <HH.Ai.Review.Fallback.5.1>Ich kam für eine Nacht und hätte fast vergessen abzureisen.</HH.Ai.Review.Fallback.5.1>
+  <HH.Ai.Review.Fallback.5.2>Warm, sauber, lustig. Fünf Sterne und ein Handschlag.</HH.Ai.Review.Fallback.5.2>
+  <HH.Ai.Review.Fallback.5.3>Ich würde hier wohnen, wenn sie mich ließen, und das tun sie vielleicht nicht.</HH.Ai.Review.Fallback.5.3>
+  <HH.Ai.Review.Label>Gästebewertung: {0}</HH.Ai.Review.Label>
+  <HH.Ai.State.Checking>KI-Relay wird geprüft...</HH.Ai.State.Checking>
+  <HH.Ai.State.NoConsent>KI-Texte sind nicht eingerichtet</HH.Ai.State.NoConsent>
+  <HH.Ai.State.NoConsent.Tip>Es wird nichts gesendet, bis du zustimmst. Das Spiel nutzt seine eigenen Texte.</HH.Ai.State.NoConsent.Tip>
+  <HH.Ai.State.Off>KI-Texte sind aus</HH.Ai.State.Off>
+  <HH.Ai.State.Off.Tip>Schalte das Modul in den Hearth-&amp;-Harbor-Einstellungen ein.</HH.Ai.State.Off.Tip>
+  <HH.Ai.State.Offline>KI offline</HH.Ai.State.Offline>
+  <HH.Ai.State.Offline.Tip>Das Relay war nicht erreichbar. Das Spiel nutzt seine eigenen Texte und versucht es später erneut.</HH.Ai.State.Offline.Tip>
+  <HH.Ai.State.Online>KI online</HH.Ai.State.Online>
+  <HH.Ai.State.Online.Tip>Das Relay antwortet. Von der KI geschriebene Texte sind gekennzeichnet.</HH.Ai.State.Online.Tip>
+  <HH.Ai.State.Paused>KI für ein paar Minuten pausiert</HH.Ai.State.Paused>
+  <HH.Ai.State.Paused.Tip>Mehrere Anfragen sind hintereinander fehlgeschlagen. Das Spiel nutzt zehn Minuten lang seine eigenen Texte.</HH.Ai.State.Paused.Tip>
+  <HH.Ai.State.Resting>KI ruht</HH.Ai.State.Resting>
+  <HH.Ai.State.Resting.Tip>Das gemeinsame Tagesbudget des Relays ist aufgebraucht. Das Spiel nutzt seine eigenen Texte, bis es sich erholt.</HH.Ai.State.Resting.Tip>
+  <HH.Ai.State.Unavailable>KI gerade nicht verfügbar</HH.Ai.State.Unavailable>
+  <HH.Ai.State.Unavailable.Tip>Das Relay ist ausgeschaltet oder nicht bereit. Das Spiel nutzt seine eigenen Texte.</HH.Ai.State.Unavailable.Tip>
+  <HH.Ai.Status.LastError>Letzter Fehlercode: {0}</HH.Ai.Status.LastError>
+  <HH.Ai.Tab.Ottoline>Ottoline fragen</HH.Ai.Tab.Ottoline>
+  <HH.Setting.ai.func.claim>Schadensbriefe der Versicherung</HH.Setting.ai.func.claim>
+  <HH.Setting.ai.func.claim.Desc>Die Antwortbriefe von Clawback Mutual gehen auf das ein, was du im Schadensformular geschrieben hast. Die Entscheidung und der Betrag ändern sich nie.</HH.Setting.ai.func.claim.Desc>
+  <HH.Setting.ai.func.concierge>Concierge</HH.Setting.ai.func.concierge>
+  <HH.Setting.ai.func.concierge.Desc>Stell dem Concierge eine Frage zum Umgang mit deinen Gästen. Er formuliert die Tipps, die das Spiel ohnehin kennt.</HH.Setting.ai.func.concierge.Desc>
+  <HH.Setting.ai.func.headline>Marktschlagzeilen</HH.Setting.ai.func.headline>
+  <HH.Setting.ai.func.headline.Desc>Das Nachrichtenband der Rim Exchange bekommt von der KI geschriebene Schlagzeilen. Die Zahlen dahinter ändern sich nicht.</HH.Setting.ai.func.headline.Desc>
+  <HH.Setting.ai.func.ottoline>Ottoline fragen</HH.Setting.ai.func.ottoline>
+  <HH.Setting.ai.func.ottoline.Desc>Plaudere in der Bank mit Sachbearbeiterin Ottoline. Sie erklärt dir deine Konten, Kredite, Geldanlagen und Policen. Ohne KI beantwortet sie ein paar kurze Fragen aus den Büchern.</HH.Setting.ai.func.ottoline.Desc>
+  <HH.Setting.ai.func.review>Gästebewertungen</HH.Setting.ai.func.review>
+  <HH.Setting.ai.func.review.Desc>Manche abreisenden Gäste hinterlassen eine Bewertung in ihrer eigenen Stimme. Ohne KI ist die Bewertung eine kurze Standardzeile.</HH.Setting.ai.func.review.Desc>
+  <HH.Setting.ai.maxPerDay>Anfragen pro Spieltag (lokales Limit)</HH.Setting.ai.maxPerDay>
+  <HH.Setting.ai.maxPerDay.Desc>Eine Höflichkeitsgrenze, die sich dieses Spiel für eigene Anfragen pro Spieltag setzt. 0 = kein lokales Limit. Das Relay hat sein eigenes gemeinsames Tagesbudget.</HH.Setting.ai.maxPerDay.Desc>
+  <HH.Setting.ai.reviewShare>Anteil abreisender Gruppen, die eine Bewertung hinterlassen</HH.Setting.ai.reviewShare>
+  <HH.Setting.ai.reviewShare.Desc>Hält die Zahl der KI-Anfragen klein. 25 % bedeutet etwa jede vierte Gruppe.</HH.Setting.ai.reviewShare.Desc>
+  <HH.Setting.ai.showBadge>KI-Texte kennzeichnen</HH.Setting.ai.showBadge>
+  <HH.Setting.ai.showBadge.Desc>Fügt KI-geschriebenen Gästebewertungen einen Hinweis hinzu und zeigt das KI-Abzeichen im Chat und im Concierge-Fenster. Marktschlagzeilen werden nicht gekennzeichnet.</HH.Setting.ai.showBadge.Desc>
+</LanguageData>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Scen.BackRoom.Intro>A carta foi impressa em papel preto e grosso e tinha um leve cheiro de charuto.\n\n"Suas dívidas foram quitadas. Todas. Entraremos em contato sobre o quarto atrás da cozinha. Mantenha-o arrumado."\n\nSeu posto na estrada tem novos parceiros agora. Eles são pacientes, educados e nunca, jamais, esquecem um número.\n\nEste início usa o conteúdo mais sombrio do Hearth &amp; Harbor. Você pode suavizá-lo a qualquer momento nas configurações do mod.</HH.Scen.BackRoom.Intro>
+  <HH.Scen.Editor.Editing>Editando as regras do Hearth &amp; Harbor deste cenário.</HH.Scen.Editor.Editing>
+  <HH.Scen.Editor.ModuleResetTip>Deixe este módulo com o modelo do jogador.</HH.Scen.Editor.ModuleResetTip>
+  <HH.Scen.Editor.ModulesIntro>Módulos que este cenário liga ou desliga. Um módulo que você não mexe segue o modelo do jogador.</HH.Scen.Editor.ModulesIntro>
+  <HH.Scen.Editor.Note>Só o que você muda aqui (marcado em âmbar) é definido pelo cenário. As linhas sem marca mostram os valores padrão; em um jogo novo, eles vêm do modelo do próprio jogador. Redefinir devolve uma linha ou módulo ao modelo.</HH.Scen.Editor.Note>
+  <HH.Scen.Editor.Side>Regras do cenário</HH.Scen.Editor.Side>
+  <HH.Scen.Editor.Title>Regras de Hearth &amp; Harbor deste cenário</HH.Scen.Editor.Title>
+  <HH.Scen.HarborTown.Intro>A escritura foi assinada às pressas e o advogado não ficou para o chá. Agora ela é sua: uma hospedaria desgastada acima de um porto tranquilo, uma estrada cheia de caravanas e nenhum hóspede.\n\nVarra os pisos, conserte o telhado, arrume uma cama. Pendure uma placa. Alguém vai bater à porta logo, e se você tratar bem essa pessoa, ela vai contar para todo mundo na estrada.\n\nDica: Hetty Hearthwell é a narradora dos construtores. E o guia de Hearth &amp; Harbor, no canto superior direito, explica um passo de cada vez.</HH.Scen.HarborTown.Intro>
+  <HH.Scen.Module.Off>desligado</HH.Scen.Module.Off>
+  <HH.Scen.Module.On>ligado</HH.Scen.Module.On>
+  <HH.Scen.Module.Template>como no modelo</HH.Scen.Module.Template>
+  <HH.Scen.Picker.Nerd>Configurações nerd</HH.Scen.Picker.Nerd>
+  <HH.Scen.Picker.Search>Buscar…</HH.Scen.Picker.Search>
+  <HH.Scen.Picker.Title>Escolha uma configuração de Hearth &amp; Harbor</HH.Scen.Picker.Title>
+  <HH.Scen.Rules.Content>Conteúdo: {0}</HH.Scen.Rules.Content>
+  <HH.Scen.Rules.Count>{0} configuração(ões) definida(s); adicione configurações individuais pela parte 'Configuração de Hearth &amp; Harbor'.</HH.Scen.Rules.Count>
+  <HH.Scen.Rules.Discovered>Submundo já descoberto</HH.Scen.Rules.Discovered>
+  <HH.Scen.Rules.More>Mais configurações… ({0} definidas)</HH.Scen.Rules.More>
+  <HH.Scen.Rules.MoreTip>Abre todas as configurações de Hearth &amp; Harbor deste cenário. Só o que você mudar lá é definido pelo cenário.</HH.Scen.Rules.MoreTip>
+  <HH.Scen.Rules.SumContent>conteúdo: {0}</HH.Scen.Rules.SumContent>
+  <HH.Scen.Rules.SumDiscovered>o submundo já conhece você</HH.Scen.Rules.SumDiscovered>
+  <HH.Scen.Rules.SumMore>e mais {0} configurações</HH.Scen.Rules.SumMore>
+  <HH.Scen.Rules.SumNothing>tudo como no modelo</HH.Scen.Rules.SumNothing>
+  <HH.Scen.Rules.SumOff>desligado: {0}</HH.Scen.Rules.SumOff>
+  <HH.Scen.Rules.SumOn>ligado: {0}</HH.Scen.Rules.SumOn>
+  <HH.Scen.Rules.SumTier>dificuldade de hospedagem {0} % ({1})</HH.Scen.Rules.SumTier>
+  <HH.Scen.Rules.SummaryHead>Regras de Hearth &amp; Harbor:</HH.Scen.Rules.SummaryHead>
+  <HH.Scen.Rules.TierTemplate>Dificuldade de hospedagem: como no modelo</HH.Scen.Rules.TierTemplate>
+  <HH.Scen.Rules.TierTip>Marque para deixar este cenário definir a dificuldade de hospedagem (0–500 %). Desmarcado, vale o modelo do jogador.</HH.Scen.Rules.TierTip>
+  <HH.Scen.SetByScenario>definido pelo cenário</HH.Scen.SetByScenario>
+  <HH.Scen.Setting.Intro>Configurações de Hearth &amp; Harbor</HH.Scen.Setting.Intro>
+  <HH.Scen.Setting.Pick>Escolha uma configuração…</HH.Scen.Setting.Pick>
+  <HH.Scen.Setting.Unknown>Configuração desconhecida (módulo ausente?)</HH.Scen.Setting.Unknown>
+</LanguageData>

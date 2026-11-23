@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServedBusy.stages.0.description>Ständig kamen Gäste an den Tresen und ich hatte die ganze Zeit etwas zu tun. So soll sich Arbeit anfühlen.</HH_ServedBusy.stages.0.description>
+  <HH_ServedBusy.stages.0.label>eine gute Schicht</HH_ServedBusy.stages.0.label>
+  <HH_ServedBusy.stages.1.description>Ein Gast nach dem anderen. Ich kannte jede Bestellung, bevor sie ausgesprochen war. Eine gute Art von müde.</HH_ServedBusy.stages.1.description>
+  <HH_ServedBusy.stages.1.label>eine volle Schicht</HH_ServedBusy.stages.1.label>
+  <HH_ServedBusy.stages.2.description>Der ganze Raum wollte gleichzeitig etwas und ich bin bei allem hinterhergekommen. Auf diese Schicht bin ich stolz.</HH_ServedBusy.stages.2.description>
+  <HH_ServedBusy.stages.2.label>von den Füßen gerannt</HH_ServedBusy.stages.2.label>
+  <HH_ServedIdle.stages.0.description>Ich stand ewig hinter dem Tresen und niemand kam. Ich habe dasselbe Glas dreimal poliert.</HH_ServedIdle.stages.0.description>
+  <HH_ServedIdle.stages.0.label>gelangweilt am Tresen</HH_ServedIdle.stages.0.label>
+  <HH_ServedIdle.stages.1.description>Stundenlang am Tresen ohne etwas zu tun. Ich hätte etwas Nützliches machen können.</HH_ServedIdle.stages.1.description>
+  <HH_ServedIdle.stages.1.label>die ganze Schicht herumgestanden</HH_ServedIdle.stages.1.label>
+  <HH_ServedIdle.stages.2.description>Eine ganze Schicht lang auf Gäste gewartet, die nie kamen. Wofür stehe ich hier überhaupt?</HH_ServedIdle.stages.2.description>
+  <HH_ServedIdle.stages.2.label>eine sinnlose Schicht</HH_ServedIdle.stages.2.label>
+  <HH_WokenByBell.stages.0.description>Mitten im Schlaf hat jemand die Glocke geläutet. Die Pflicht ruft. Laut.</HH_WokenByBell.stages.0.description>
+  <HH_WokenByBell.stages.0.label>von der Nachtglocke geweckt</HH_WokenByBell.stages.0.label>
+  <HH_WokenByBell.stages.1.description>Mitten im Schlaf hat jemand die Glocke geläutet. Nun ja, das gehört zum Job. Ich schlafe später.</HH_WokenByBell.stages.1.description>
+  <HH_WokenByBell.stages.1.label>von der Nachtglocke geweckt</HH_WokenByBell.stages.1.label>
+</LanguageData>

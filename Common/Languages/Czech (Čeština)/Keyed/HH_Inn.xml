@@ -75,7 +75,6 @@
   <HH.Inn.Event.Returned>Vrátil(a) se na další pobyt.</HH.Inn.Event.Returned>
   <HH.Inn.Event.SelfCheckIn>Pokoj našel(a) sám(a); nikdo nebyl u pultu.</HH.Inn.Event.SelfCheckIn>
   <HH.Inn.Event.SentAway>Byl(a) vyprovozen(a).</HH.Inn.Event.SentAway>
-  <HH.Inn.Event.SharedBed>Sdílí postel s {0} (navíc {1} stříbra za noc).</HH.Inn.Event.SharedBed>
   <HH.Inn.Event.ShortenedStay>Zkrátil(a) pobyt na {0} noc/nocí, aby si pokoj mohl(a) dovolit.</HH.Inn.Event.ShortenedStay>
   <HH.Inn.Event.TooImportant>Doma příliš důležitý(á), aby zůstal(a).</HH.Inn.Event.TooImportant>
   <HH.Inn.Event.Welcomed>U recepce ho/ji přivítal {0}.</HH.Inn.Event.Welcomed>
@@ -85,9 +84,7 @@
   <HH.Inn.Forecast.Overnight>{0} noc/nocí</HH.Inn.Forecast.Overnight>
   <HH.Inn.Forecast.Return>vrací se</HH.Inn.Forecast.Return>
   <HH.Inn.GuestBed.Booked>Rezervoval {0}</HH.Inn.GuestBed.Booked>
-  <HH.Inn.GuestBed.Desc>Pronajímej tuto postel hostům. Kolonisté zde nespí; hosté spí jen na hostovských lůžkách. Cena za noc se řídí pokojem, postelí a počtem lůžek v pokoji.</HH.Inn.GuestBed.Desc>
   <HH.Inn.GuestBed.Inactive>Hostovské lůžko (neaktivní u lékařského, vězeňského nebo otrocké postele)</HH.Inn.GuestBed.Inactive>
-  <HH.Inn.GuestBed.Inspect>Hostovské lůžko: {0} stříbra/noc ({1})</HH.Inn.GuestBed.Inspect>
   <HH.Inn.GuestBed.Label>Hostovské lůžko</HH.Inn.GuestBed.Label>
   <HH.Inn.GuestBed.NoColonists>Toto je hostovské lůžko.</HH.Inn.GuestBed.NoColonists>
   <HH.Inn.GuestBed.NotColonistBed>Hostovským lůžkem může být jen běžná kolonistická postel (ne lékařská, vězeňská nebo otrocká).</HH.Inn.GuestBed.NotColonistBed>
@@ -96,7 +93,6 @@
   <HH.Inn.Handling.Basics>Základy</HH.Inn.Handling.Basics>
   <HH.Inn.Handling.BasicsDesc>Jen placené služby bez zábavy. Nestojí čas kolonistů.</HH.Inn.Handling.BasicsDesc>
   <HH.Inn.Handling.Bond>Pouto: {0} / {1}</HH.Inn.Handling.Bond>
-  <HH.Inn.Handling.Click>Kliknutím přepínáš: Základy → Doprovázet → Nábor.</HH.Inn.Handling.Click>
   <HH.Inn.Handling.Label>Způsob obsluhy: {0}</HH.Inn.Handling.Label>
   <HH.Inn.Handling.Recruit>Nábor</HH.Inn.Handling.Recruit>
   <HH.Inn.Handling.RecruitDesc>Jako Doprovázet, plus řeči o zůstání. Je-li pouto kolonie s hostem dost silné, může se při odjezdu připojit. Vnucující se řeči mohou urazit.</HH.Inn.Handling.RecruitDesc>
@@ -295,4 +291,56 @@
   <HH.Inn.PriceMode.ManualSet>Pevná cena…</HH.Inn.PriceMode.ManualSet>
   <HH.Inn.PriceMode.ManualValue>{0} stříbra za noc</HH.Inn.PriceMode.ManualValue>
   <HH.Inn.PriceMode.Manual>pevná cena</HH.Inn.PriceMode.Manual>
+  <HH.Inn.BedUse.ChipTip>Cena za noc: {0}. Kliknutím změníte: zdarma, −25 %, automaticky, +25 % nebo pevná cena.</HH.Inn.BedUse.ChipTip>
+  <HH.Inn.BedUse.Click>Kliknutím vyberte, k čemu se tato postel používá.</HH.Inn.BedUse.Click>
+  <HH.Inn.BedUse.Colonist>Kolonistická postel</HH.Inn.BedUse.Colonist>
+  <HH.Inn.BedUse.ColonistDesc>běžné místo ke spaní pro vaše kolonisty</HH.Inn.BedUse.ColonistDesc>
+  <HH.Inn.BedUse.Guest>Hostovské lůžko</HH.Inn.BedUse.Guest>
+  <HH.Inn.BedUse.GuestDesc>pronajímané hostům, kolonisté se sem nedostanou</HH.Inn.BedUse.GuestDesc>
+  <HH.Inn.BedUse.Medical>Lékařské lůžko</HH.Inn.BedUse.Medical>
+  <HH.Inn.BedUse.NeedsRimWard>Lůžka pro pacienty a operace vyžadují mod RimWard.</HH.Inn.BedUse.NeedsRimWard>
+  <HH.Inn.BedUse.NoBed>Tato postel nemůže být hostovským lůžkem.</HH.Inn.BedUse.NoBed>
+  <HH.Inn.BedUse.Owners>Majitel: {0}</HH.Inn.BedUse.Owners>
+  <HH.Inn.BedUse.Patient>Pacientské lůžko</HH.Inn.BedUse.Patient>
+  <HH.Inn.BedUse.PatientDesc>pro nemocné a zraněné</HH.Inn.BedUse.PatientDesc>
+  <HH.Inn.BedUse.Price>Cena: {0} stříbra za noc ({1}).</HH.Inn.BedUse.Price>
+  <HH.Inn.BedUse.PriceHint>Kliknutím na cenovku v rohu změníte cenu.</HH.Inn.BedUse.PriceHint>
+  <HH.Inn.BedUse.Surgery>Operační lůžko</HH.Inn.BedUse.Surgery>
+  <HH.Inn.BedUse.SurgeryDesc>zde se provádějí operace</HH.Inn.BedUse.SurgeryDesc>
+  <HH.Inn.Convert.Certainty>Jistota ve {0}: {1} %</HH.Inn.Convert.Certainty>
+  <HH.Inn.Convert.Goal>při 0 % přijmou {0}</HH.Inn.Convert.Goal>
+  <HH.Inn.Convert.Insulted>cítil se kázáním: tentokrát nebude poslouchat</HH.Inn.Convert.Insulted>
+  <HH.Inn.Convert.Nothing>Není koho obracet: host už sdílí vaši ideologii, nebo se s ním nedá mluvit.</HH.Inn.Convert.Nothing>
+  <HH.Inn.Convert.Talks>dosud rozhovorů: {0}</HH.Inn.Convert.Talks>
+  <HH.Inn.Door.AgeTitle>Věk</HH.Inn.Door.AgeTitle>
+  <HH.Inn.Door.StayTitle>Druh pobytu</HH.Inn.Door.StayTitle>
+  <HH.Inn.Door.WealthTitle>Majetek</HH.Inn.Door.WealthTitle>
+  <HH.Inn.Event.ConvertEnded>Nikoho už není koho obracet: zpět k běžnému popovídání.</HH.Inn.Event.ConvertEnded>
+  <HH.Inn.Event.CoupleBooked>Rezervována jedna dvoulůžková postel s {0}: {1} stříbra za noc každému.</HH.Inn.Event.CoupleBooked>
+  <HH.Inn.Event.Embraced>Přijal {0} po rozhovorech s {1}.</HH.Inn.Event.Embraced>
+  <HH.Inn.Event.EmbracedSat>Našel novou víru v kolonii.</HH.Inn.Event.EmbracedSat>
+  <HH.Inn.Event.NoFreeBed>Všechna hostovská lůžka byla obsazena, zůstal jen na den.</HH.Inn.Event.NoFreeBed>
+  <HH.Inn.Event.PartnerMovedIn>{0} se přestěhoval na lůžko: cena se rozdělí ({1} stříbra za noc každému).</HH.Inn.Event.PartnerMovedIn>
+  <HH.Inn.Event.Preached>{0} na něj kázal, cítil se nepříjemně.</HH.Inn.Event.Preached>
+  <HH.Inn.Event.SharedBed2>Sdílí postel s {0} ({1} stříbra za noc každému).</HH.Inn.Event.SharedBed2>
+  <HH.Inn.Event.SleepsTogether>Spí vedle {0}: přesně to, v co doufal.</HH.Inn.Event.SleepsTogether>
+  <HH.Inn.Event.ThinkingOver>Hovořil s {0} o {1}: teď si je na {2} % jistý svými přesvědčeními.</HH.Inn.Event.ThinkingOver>
+  <HH.Inn.Event.Unmoved>Poslouchal {0} o {1}, ale zůstal nepohnutý.</HH.Inn.Event.Unmoved>
+  <HH.Inn.Event.WantedDouble>Chtěl dvoulůžko s {0}, dostal dvě jednolůžka.</HH.Inn.Event.WantedDouble>
+  <HH.Inn.GuestBed.InspectShort>Hostovské lůžko: {0} stříbra/noc · {1}</HH.Inn.GuestBed.InspectShort>
+  <HH.Inn.Handling.Click2>Kliknutím přepnete: {0}.</HH.Inn.Handling.Click2>
+  <HH.Inn.Handling.Convert>Obracet</HH.Inn.Handling.Convert>
+  <HH.Inn.Handling.ConvertDesc>Jako Doprovázet, plus řeči o vaší ideologii. Každý rozhovor otřese jistotou hosta v jeho vlastní; na nule přijme tu vaši. Vtíravé řeči mohou urazit. Vyžaduje DLC Ideology.</HH.Inn.Handling.ConvertDesc>
+  <HH.Inn.Msg.Preached>{0} považuje obracení za vtíravé, utratí méně a odejde dřív.</HH.Inn.Msg.Preached>
+  <HH.Inn.Occupancy.DoubleBed>dvoulůžko</HH.Inn.Occupancy.DoubleBed>
+  <HH.Inn.Problem.Double>Chtějí dvoulůžko se svým partnerem: postavte jedno nebo ho označte jako hostovské lůžko.</HH.Inn.Problem.Double>
+  <HH.Inn.Problem.DoubleMany>{0} hostů by chtělo dvoulůžko pro pár: postavte jedno nebo ho označte jako hostovské lůžko.</HH.Inn.Problem.DoubleMany>
+  <HH.Setting.inn.convertPower>Síla přesvědčování</HH.Setting.inn.convertPower>
+  <HH.Setting.inn.convertPower.Desc>Jak silně rozhovor v režimu „Konvertovat“ otřese jistotu hosta v jeho vlastní ideologii (100 % = obvyklá síla). Vyžaduje DLC Ideology.</HH.Setting.inn.convertPower.Desc>
+  <HH.Setting.inn.coupleWish>Páry chtějí dvoulůžko</HH.Setting.inn.coupleWish>
+  <HH.Setting.inn.coupleWish.Desc>Páry, které přijdou spolu, dávají přednost jednomu dvoulůžku. Když ho dostanou, trochu se potěší; skončí-li ve dvou jednolůžkách, trochu je to naštve. Nikdy nemění ceny.</HH.Setting.inn.coupleWish.Desc>
+  <HH.Setting.inn.doubleBedFactor>Koeficient ceny dvoulůžka</HH.Setting.inn.doubleBedFactor>
+  <HH.Setting.inn.doubleBedFactor.Desc>Lůžko pro dva vydělá tolikrát cenu jednolůžka. Pár v jednom dvoulůžku platí společně, každý polovinu, takže zaplatí méně než za dvě jednolůžka.</HH.Setting.inn.doubleBedFactor.Desc>
+  <HH.Setting.inn.groupDevGizmos>Seskupit naše vývojářská tlačítka</HH.Setting.inn.groupDevGizmos>
+  <HH.Setting.inn.groupDevGizmos.Desc>V režimu vývojáře se tlačítka DEV budov Hearth &amp; Harbor sloučí do jednoho tlačítka „Dev: Hearth &amp; Harbor“, aby řádek ovládacích prvků zůstal přehledný. Tlačítka vanilla a jiných modů se nikdy nemění.</HH.Setting.inn.groupDevGizmos.Desc>
 </LanguageData>

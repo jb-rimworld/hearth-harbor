@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ScenStartingAccount.description>Колония начинает со счётом в выбранном вами банке, стартовым балансом и, если хотите, кредитом для погашения.</SL_ScenStartingAccount.description>
+  <SL_ScenStartingAccount.label>начать со счётом Silverline</SL_ScenStartingAccount.label>
+</LanguageData>

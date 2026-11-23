@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Creator_HarbourTinkerer.description>[PAWN_nameDef]在一座小港城的起重机之间长大，总爱拆解码头工人丢掉的东西，再把它们修得比原来更好。\n\n隔壁的店主用馅饼付给[PAWN_objective]修好吱呀作响的门，[PAWN_pronoun]很早就明白：一间温暖的屋子加上一盘满满的饭菜，能把陌生人变成朋友。</HH_Creator_HarbourTinkerer.description>
+  <HH_Creator_WanderingInnkeeper.description>[PAWN_nameDef]从不在一个地方久留。带着一只工具箱、一本翻破的食谱和太多计划，[PAWN_pronoun]在边缘地带四处游荡，为需要的人建起客栈、银行和小型诊所，然后把钥匙交出去，转身又走。\n\n沿商路的定居者至今还在讲那位陌生人：修好了他们的屋顶，做了晚饭，在有人付钱之前就已经不见了。某个地方，[PAWN_pronoun]仍在为别人建造着什么。</HH_Creator_WanderingInnkeeper.description>
+</LanguageData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.MusicMode.Always>常に</HH.Enum.MusicMode.Always>
+  <HH.Enum.MusicMode.Off>オフ</HH.Enum.MusicMode.Off>
+  <HH.Enum.MusicMode.WhenHosting>接客中のみ</HH.Enum.MusicMode.WhenHosting>
+  <HH.Setting.core.creatorPawn>作者が辺境を放浪することがある</HH.Setting.core.creatorPawn>
+  <HH.Setting.core.creatorPawn.Desc>ベースゲームの作成者ポーンのように、Hearth &amp; Harbor の作者も生成されたポーンとして時々現れることがあります。親切で働き者の放浪する宿屋の主人です。</HH.Setting.core.creatorPawn.Desc>
+  <HH.Setting.core.music>Hearth &amp; Harbor の音楽</HH.Setting.core.music>
+  <HH.Setting.core.music.Desc>落ち着いた3曲（春夏の日、秋、冬それぞれ1曲）が、通常の RimWorld のプレイリストに加わります。宿を運営している場合のみ（ゲストベッド、営業看板、銀行口座のいずれかがあるコロニーで）。</HH.Setting.core.music.Desc>
+  <HH.Setting.core.musicShare>私たちの曲が流れる頻度</HH.Setting.core.musicShare>
+  <HH.Setting.core.musicShare.Desc>プレイリストで、バニラの曲1曲と比べたこちらの曲の重み。1=その季節のほかの曲と同じ、0=流れない。</HH.Setting.core.musicShare.Desc>
+  <HH.Story.Suggests>{0}の提案: {1}</HH.Story.Suggests>
+  <HH.Story.SuggestsTip>クリックするとこの語り手が提案する開催難易度を使います。ボタンでいつでも変更できます。</HH.Story.SuggestsTip>
+</LanguageData>

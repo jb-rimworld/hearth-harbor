@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ScenRules.description>为本剧本的新殖民地设定 Hearth &amp; Harbor 与 Silverline 的模块、托管难度、内容强度以及各项殖民地设置。只有这里设定的项目会覆盖模板；玩家仍可在叙事者页面更改一切。</HH_ScenRules.description>
+  <HH_ScenRules.label>Hearth &amp; Harbor 规则</HH_ScenRules.label>
+  <HH_ScenSetting.description>为本剧本的新殖民地，将一项 Hearth &amp; Harbor 或 Silverline 设置调整为指定值。</HH_ScenSetting.description>
+  <HH_ScenSetting.label>Hearth &amp; Harbor 设置</HH_ScenSetting.label>
+  <HH_ScenStartingResearch.description>殖民地开局时，一项 Hearth &amp; Harbor 或 Silverline 研究项目已经完成。</HH_ScenStartingResearch.description>
+  <HH_ScenStartingResearch.label>以 Hearth &amp; Harbor 研究开局</HH_ScenStartingResearch.label>
+</LanguageData>

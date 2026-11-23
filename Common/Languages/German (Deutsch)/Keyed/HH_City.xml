@@ -29,4 +29,20 @@
   <HH.City.TaxiFree>Ein Taxi wartet.</HH.City.TaxiFree>
   <HH.City.TaxiBusy>Das Taxi ist gerade unterwegs.</HH.City.TaxiBusy>
   <HH.City.TaxiStats>Abfahrten: {0}, Ankünfte: {1}, Einnahmen: {2} Silber</HH.City.TaxiStats>
+  <HH.City.Closed>geschlossen</HH.City.Closed>
+  <HH.City.Open>geöffnet</HH.City.Open>
+  <HH.City.Page.Cinema>Kino: {0} Leinwand/Leinwände, {1} mit Geschäftsschild; {2} Karten, {3} Silber</HH.City.Page.Cinema>
+  <HH.City.Page.CinemaRow>   {0}: {1} Plätze, {2}</HH.City.Page.CinemaRow>
+  <HH.City.Page.Gallery>Galerie: {0} Galerie(n), {1} Kunstwerk(e); {2} Besuche, {3} Silber</HH.City.Page.Gallery>
+  <HH.City.Page.Park>Park: {0} Bank/Bänke; {1} Gast sitzt</HH.City.Page.Park>
+  <HH.City.Page.Salon>Salon: {0} Stuhl/Stühle in {1} Salon(s); {2} neue Looks, {3} Silber</HH.City.Page.Salon>
+  <HH.City.Page.Security>Sicherheit: {0} Leibwächter im Dienst, {1} Silber verdient</HH.City.Page.Security>
+  <HH.City.Page.StateIdle>leer</HH.City.Page.StateIdle>
+  <HH.City.Page.StateNoPower>kein Strom</HH.City.Page.StateNoPower>
+  <HH.City.Page.StateShowing>zeigt {0}</HH.City.Page.StateShowing>
+  <HH.City.Page.Taxi>Taxi: {0} Stand/Stände; {1} Fahrten, {2} Landungen, {3} Silber</HH.City.Page.Taxi>
+  <HH.City.Page.Total>Gesamteinnahmen des Stadtlebens: {0} Silber</HH.City.Page.Total>
+  <HH.City.Removal.Buildings>Leinwände, Salonstühle, Parkbänke und Taxistände bleiben als gewöhnliche Gebäude stehen.</HH.City.Removal.Buildings>
+  <HH.City.Removal.Films>{0} laufende(r) Film(e) gestoppt.</HH.City.Removal.Films>
+  <HH.City.Removal.Guards>{0} Leibwächter-Vertrag/-Verträge beendet.</HH.City.Removal.Guards>
 </LanguageData>

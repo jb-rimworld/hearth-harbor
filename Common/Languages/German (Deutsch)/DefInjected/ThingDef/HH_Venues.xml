@@ -10,4 +10,6 @@
   <HH_MarketStall.description>Ein freistehender Stand mit gestreiftem Sonnendach. Der große Markt findet erst statt, wenn du genug Stände besitzt (siehe Einstellungen für Geschäfte): Jede Händlerkarawane baut an einem auf und zahlt eine Standgebühr in deine Kasse. Im Freien funktioniert er bei jedem Wetter, ist aber kein eigenes Geschäft.</HH_MarketStall.description>
   <HH_VendingMachine.label>Verkaufsautomat</HH_VendingMachine.label>
   <HH_VendingMachine.description>Ein Schrank mit Strom, der Essen, Getränke, Drogen und Medizin enthält. Gäste kaufen zu jeder Stunde ohne Personal daran ein, zum Marktwert. Transporteure befüllen ihn wie ein Regal. Kolonisten dürfen sich gratis bedienen; der Automat verlangt nur von Gästen Geld. Braucht Strom zum Verkaufen.</HH_VendingMachine.description>
+  <HH_Mote_Bell.label>Nachtglocke</HH_Mote_Bell.label>
+  <HH_Mote_RingArc.label>Ring</HH_Mote_RingArc.label>
 </LanguageData>

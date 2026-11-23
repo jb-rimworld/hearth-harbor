@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ClaimForm_Money.description>Форма L-1 для штрафів, шкоди третім особам і закриттів: що спричинило і хто може це підтвердити.</SL_ClaimForm_Money.description>
+  <SL_ClaimForm_Money.label>форма заяви про штраф і відповідальність</SL_ClaimForm_Money.label>
+  <SL_ClaimForm_Person.description>Форма P-2 для смертей і втрачених кінцівок: обставини та свідок.</SL_ClaimForm_Person.description>
+  <SL_ClaimForm_Person.label>форма особистої заяви</SL_ClaimForm_Person.label>
+  <SL_ClaimForm_Property.description>Форма B-4 для знищених будівель, транспорту та посівів: що сталося, наскільки сильно, хто бачив і як ви хочете отримати виплату.</SL_ClaimForm_Property.description>
+  <SL_ClaimForm_Property.label>форма заяви про майно</SL_ClaimForm_Property.label>
+</LanguageData>

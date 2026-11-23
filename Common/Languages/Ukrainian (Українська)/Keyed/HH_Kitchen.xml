@@ -2,8 +2,6 @@
 <LanguageData>
   <HH.Kitchen.Missing>Відсутнє: {0}</HH.Kitchen.Missing>
   <HH.Kitchen.RecipeInfo>Пристрої: {0}. Кроки: {1}.</HH.Kitchen.RecipeInfo>
-  <HH.Kitchen.Finishing>завершальний штрих (молоко, яйця, шоколад, пиво, ягоди або гриби)</HH.Kitchen.Finishing>
-  <HH.Kitchen.Finishing2>другий завершальний штрих (пиво, ягоди або гриби)</HH.Kitchen.Finishing2>
   <HH.Kitchen.Inspiration>Натхнення: {0}</HH.Kitchen.Inspiration>
   <HH.Kitchen.Cuisine>Кухня: {0}</HH.Kitchen.Cuisine>
   <HH.Kitchen.Cooked>Приготовлено на: {0} ({1})</HH.Kitchen.Cooked>
@@ -125,4 +123,9 @@
   <HH.Kitchen.NoNeighbours>Жодного іншого кухонного пристрою в досяжності.</HH.Kitchen.NoNeighbours>
   <HH.Kitchen.Neighbours>У досяжності: {0}</HH.Kitchen.Neighbours>
   <HH.Kitchen.FreshHours>Свіжа ще {0} год</HH.Kitchen.FreshHours>
+  <HH.Kitchen.FinishingTouch>фінальний штрих ({0})</HH.Kitchen.FinishingTouch>
+  <HH.Kitchen.FinishingTouch2>другий фінальний штрих ({0})</HH.Kitchen.FinishingTouch2>
+  <HH.Kitchen.Or>або</HH.Kitchen.Or>
+  <HH.Setting.kitchen.cookSounds>Звуки приготування та їжі</HH.Setting.kitchen.cookSounds>
+  <HH.Setting.kitchen.cookSounds.Desc>Кожен вид приготування (нарізання, варіння, гриль, випікання, смаження, на пару, замішування, копчення, охолодження) має свій звук і невеликий ефект; готові страви дзвенять як сигнал, а хороші страви викликають радісну реакцію. Вимкнено: для всього звук смаження з оригінальної гри.</HH.Setting.kitchen.cookSounds.Desc>
 </LanguageData>

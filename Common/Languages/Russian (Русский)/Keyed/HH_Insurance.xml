@@ -285,4 +285,172 @@
   <HH.Enum.TrickMode.Follows>Зависит от давления продаж</HH.Enum.TrickMode.Follows>
   <HH.Enum.TrickMode.On>Всегда включено</HH.Enum.TrickMode.On>
   <HH.Enum.TrickMode.Off>Выключено</HH.Enum.TrickMode.Off>
+  <HH.Ins.Btn.FillForm>Заполнить заявление</HH.Ins.Btn.FillForm>
+  <HH.Ins.Bulk.All>Все</HH.Ins.Bulk.All>
+  <HH.Ins.Bulk.Colony>вся колония</HH.Ins.Bulk.Colony>
+  <HH.Ins.Bulk.Confirm>Оформить полисов: {0} прямо сейчас? Первые взносы итого: {1}. После этого {2} каждые {3} дней. Каждый полис всё ещё можно расторгнуть по отдельности.</HH.Ins.Bulk.Confirm>
+  <HH.Ins.Bulk.Done>Оформлено полисов: {0} из {1}.</HH.Ins.Bulk.Done>
+  <HH.Ins.Bulk.Lead>Отметьте полисы, выберите тариф и сумму, укажите, кто застрахован, и Clawback Mutual оформит всё сразу. Вы получите одно сводное письмо вместо письма на каждый полис. Срок ожидания начинается отдельно для каждого полиса.</HH.Ins.Bulk.Lead>
+  <HH.Ins.Bulk.NoMoney>не хватает денег на первый взнос</HH.Ins.Bulk.NoMoney>
+  <HH.Ins.Bulk.NoRiders>Дополнительные опции здесь заранее не отмечены. Скидка за пакет растёт с каждым полисом (не более {0}).</HH.Ins.Bulk.NoRiders>
+  <HH.Ins.Bulk.None>Нет</HH.Ins.Bulk.None>
+  <HH.Ins.Bulk.NothingToSign>Пока нечего оформлять: отметьте полис и хотя бы одного колониста.</HH.Ins.Bulk.NothingToSign>
+  <HH.Ins.Bulk.PerPerson>на колониста</HH.Ins.Bulk.PerPerson>
+  <HH.Ins.Bulk.Policies>Полисы</HH.Ins.Bulk.Policies>
+  <HH.Ins.Bulk.Sign>Оформить полисов: {0}</HH.Ins.Bulk.Sign>
+  <HH.Ins.Bulk.Spendable>Доступно: {0}</HH.Ins.Bulk.Spendable>
+  <HH.Ins.Bulk.Stopped>Деньги закончились раньше конца списка; остальное не оформлено.</HH.Ins.Bulk.Stopped>
+  <HH.Ins.Bulk.SumPerHead>Сумма на колониста: {0}</HH.Ins.Bulk.SumPerHead>
+  <HH.Ins.Bulk.Summary>Полисов к оформлению: {0}. Первые взносы: {1}. После этого {2} каждые {3} дней.</HH.Ins.Bulk.Summary>
+  <HH.Ins.Bulk.Title>Застраховать всех</HH.Ins.Bulk.Title>
+  <HH.Ins.Bulk.TooExpensive>Доступно только {0}: список оформлен настолько, насколько хватает денег.</HH.Ins.Bulk.TooExpensive>
+  <HH.Ins.Bulk.Who>Колонисты</HH.Ins.Bulk.Who>
+  <HH.Ins.Cancel.Step>Шаг {0} из {1}</HH.Ins.Cancel.Step>
+  <HH.Ins.Change.AlreadyPending>Изменение уже подано. Сначала отзовите его.</HH.Ins.Change.AlreadyPending>
+  <HH.Ins.Change.Apply>Подать изменение</HH.Ins.Change.Apply>
+  <HH.Ins.Change.CancelPending>Этот полис расторгается. Сначала отзовите расторжение.</HH.Ins.Change.CancelPending>
+  <HH.Ins.Change.CannotPayFee>Не удалось списать комиссию за изменение: {0}.</HH.Ins.Change.CannotPayFee>
+  <HH.Ins.Change.Close>Закрыть</HH.Ins.Change.Close>
+  <HH.Ins.Change.Filed>Изменение подано. Вступит в силу через {0}.</HH.Ins.Change.Filed>
+  <HH.Ins.Change.Lead>Измените тариф, сумму или дополнительные опции действующего полиса. Новые условия начнут действовать с ближайшего платежа, взнос пересчитается. Расторжение остаётся как было.</HH.Ins.Change.Lead>
+  <HH.Ins.Change.Limit>Этот полис можно менять не более {0} раз за квартал.</HH.Ins.Change.Limit>
+  <HH.Ins.Change.NoChange>Пока ничего не изменено.</HH.Ins.Change.NoChange>
+  <HH.Ins.Change.NotActive>Этот полис не действует.</HH.Ins.Change.NotActive>
+  <HH.Ins.Change.Part.RiderOff>без опции {0}</HH.Ins.Change.Part.RiderOff>
+  <HH.Ins.Change.Part.RiderOn>опция {0}</HH.Ins.Change.Part.RiderOn>
+  <HH.Ins.Change.Part.Riders>другие опции</HH.Ins.Change.Part.Riders>
+  <HH.Ins.Change.Part.Sum>сумма {0} → {1}</HH.Ins.Change.Part.Sum>
+  <HH.Ins.Change.Part.Tier>тариф {0} → {1}</HH.Ins.Change.Part.Tier>
+  <HH.Ins.Change.Riders>Дополнительные опции</HH.Ins.Change.Riders>
+  <HH.Ins.Change.Sum.Cheaper>Это на {0} меньше за платёж.</HH.Ins.Change.Sum.Cheaper>
+  <HH.Ins.Change.Sum.Dearer>Это на {0} больше за платёж.</HH.Ins.Change.Sum.Dearer>
+  <HH.Ins.Change.Sum.Discount>Ваша действующая скидка за лояльность сохраняется.</HH.Ins.Change.Sum.Discount>
+  <HH.Ins.Change.Sum.Fee>Комиссия за изменение: {0}, списывается при подаче.</HH.Ins.Change.Sum.Fee>
+  <HH.Ins.Change.Sum.Lower>При снижении покрытия срок ожидания не назначается.</HH.Ins.Change.Sum.Lower>
+  <HH.Ins.Change.Sum.Premium>Взнос: сейчас {0}, потом {1}</HH.Ins.Change.Sum.Premium>
+  <HH.Ins.Change.Sum.Title>Что это значит</HH.Ins.Change.Sum.Title>
+  <HH.Ins.Change.Sum.Wait>Срок ожидания после повышения: {0} дней. События в этот срок по-прежнему оцениваются по старому покрытию.</HH.Ins.Change.Sum.Wait>
+  <HH.Ins.Change.Sum.When>Вступит в силу через {0}.</HH.Ins.Change.Sum.When>
+  <HH.Ins.Change.SumRange>Допустимый диапазон: от {0} до {1}.</HH.Ins.Change.SumRange>
+  <HH.Ins.Change.Title>Изменить: {0}</HH.Ins.Change.Title>
+  <HH.Ins.Change.TooOld>Покрытие пенсии нельзя повысить в пенсионном возрасте.</HH.Ins.Change.TooOld>
+  <HH.Ins.End.Pension>право на пенсию утрачено</HH.Ins.End.Pension>
+  <HH.Ins.Form.AiNote>Clawback Mutual может ответить на ваше заявление лично. Сумма и решение от этого не меняются.</HH.Ins.Form.AiNote>
+  <HH.Ins.Form.Closed>Окно подачи заявлений закрыто.</HH.Ins.Form.Closed>
+  <HH.Ins.Form.Deadline>Срок: до подачи этого заявления осталось {0}.</HH.Ins.Form.Deadline>
+  <HH.Ins.Form.Event>Что произошло: {0}.\nПолис: {1} ({2}).</HH.Ins.Form.Event>
+  <HH.Ins.Form.Items>Затронуто: {0}. Стоимость: {1}.</HH.Ins.Form.Items>
+  <HH.Ins.Form.Later>Позже</HH.Ins.Form.Later>
+  <HH.Ins.Form.NoAiNote>Ваше заявление сохраняется вместе с заявкой. Решение от него не зависит; учитывается только выбор выплаты.</HH.Ins.Form.NoAiNote>
+  <HH.Ins.Form.Nobody>никто</HH.Ins.Form.Nobody>
+  <HH.Ins.Form.Payout.Materials>Материалы в капсулах</HH.Ins.Form.Payout.Materials>
+  <HH.Ins.Form.Payout.Silver>Серебро</HH.Ins.Form.Payout.Silver>
+  <HH.Ins.Form.Placeholder>Опишите своими словами, что произошло (необязательно).</HH.Ins.Form.Placeholder>
+  <HH.Ins.Form.Sent>Обращение подано ({0}).</HH.Ins.Form.Sent>
+  <HH.Ins.Form.Statement>Ваше заявление</HH.Ins.Form.Statement>
+  <HH.Ins.Form.Submit>Подать обращение</HH.Ins.Form.Submit>
+  <HH.Ins.Form.Title>Форма обращения: {0}</HH.Ins.Form.Title>
+  <HH.Ins.Form.Value>Размер убытка: {0}.</HH.Ins.Form.Value>
+  <HH.Ins.Letter.Batch.Body>Clawback Mutual приветствует сразу {0} новых полисов.</HH.Ins.Letter.Batch.Body>
+  <HH.Ins.Letter.Batch.Skipped>Не удалось оформить: {0}:</HH.Ins.Letter.Batch.Skipped>
+  <HH.Ins.Letter.Batch.Title>Оформлено полисов: {0}</HH.Ins.Letter.Batch.Title>
+  <HH.Ins.Letter.Batch.Total>По счёту: {0} каждые {1} дн. Первые взносы списаны с {2}.</HH.Ins.Letter.Batch.Total>
+  <HH.Ins.Letter.Change.Done.Body>{0} теперь действует как {1}, сумма {2}. Взнос: {3}.</HH.Ins.Letter.Change.Done.Body>
+  <HH.Ins.Letter.Change.Done.Title>Изменение вступило в силу: {0}</HH.Ins.Letter.Change.Done.Title>
+  <HH.Ins.Letter.Change.Done.Wait>События в течение следующих {0} всё ещё оцениваются по прежнему покрытию.</HH.Ins.Letter.Change.Done.Wait>
+  <HH.Ins.Letter.Change.Fee>Административный сбор: {0}.</HH.Ins.Letter.Change.Fee>
+  <HH.Ins.Letter.Change.Filed.Body>Clawback Mutual получила ваш запрос на изменение полиса {0}: {1}.\nОно вступит в силу через {2}; взнос тогда пересчитают.</HH.Ins.Letter.Change.Filed.Body>
+  <HH.Ins.Letter.Change.Filed.Title>Запрос на изменение: {0}</HH.Ins.Letter.Change.Filed.Title>
+  <HH.Ins.Letter.Change.Wait>Период ожидания после повышения: {0} дн.</HH.Ins.Letter.Change.Wait>
+  <HH.Ins.Letter.Decision.Statement>По вашему заявлению: {0}</HH.Ins.Letter.Decision.Statement>
+  <HH.Ins.Letter.Expired.Body>Срок подачи обращения {0} ({1}) истёк без формы. Clawback Mutual ни о чём не сожалеет.</HH.Ins.Letter.Expired.Body>
+  <HH.Ins.Letter.Expired.Title>Обращение утратило силу: {0}</HH.Ins.Letter.Expired.Title>
+  <HH.Ins.Letter.Filed.Statement>Ваше заявление: «{0}»</HH.Ins.Letter.Filed.Statement>
+  <HH.Ins.Letter.Possible.Body>{0} — страховой случай по полису {1}. Вы можете подать обращение.</HH.Ins.Letter.Possible.Body>
+  <HH.Ins.Letter.Possible.Deadline>Срок: {0} от сейчас. После этого обращение утрачивает силу.</HH.Ins.Letter.Possible.Deadline>
+  <HH.Ins.Letter.Possible.Death>{0} погиб(ла). {1} может выплатить. Вы можете подать обращение.</HH.Ins.Letter.Possible.Death>
+  <HH.Ins.Letter.Possible.How>Откройте форму обращения, отметьте несколько пунктов, при желании напишите фразу и отправьте. Решение принимается так же, как всегда.</HH.Ins.Letter.Possible.How>
+  <HH.Ins.Letter.Possible.Title>Возможно обращение: {0}</HH.Ins.Letter.Possible.Title>
+  <HH.Ins.Letter.Possible.Waiting>Событие произошло в период ожидания по полису. Отдел выплат обратит внимание.</HH.Ins.Letter.Possible.Waiting>
+  <HH.Ins.Letter.Reminder.Body>Обращение по {0} нужно подать в течение {1}.</HH.Ins.Letter.Reminder.Body>
+  <HH.Ins.Letter.Reminder.Title>Срок приближается: {0}</HH.Ins.Letter.Reminder.Title>
+  <HH.Ins.Log.BulkSigned>Оптовая покупка: оформлено {0} из {1} полисов.</HH.Ins.Log.BulkSigned>
+  <HH.Ins.Log.ChangeApplied>{0} изменён: {1}, сумма {2}.</HH.Ins.Log.ChangeApplied>
+  <HH.Ins.Log.ChangeFiled>{0}: запрос на изменение подан, вступит в силу через {1}.</HH.Ins.Log.ChangeFiled>
+  <HH.Ins.Log.ChangeWithdrawn>{0}: изменение отозвано.</HH.Ins.Log.ChangeWithdrawn>
+  <HH.Ins.Log.OppExpired>Окно подачи закрыто без обращения: {0} ({1}).</HH.Ins.Log.OppExpired>
+  <HH.Ins.Log.OppFiled>{0}: форма обращения подана (обращений: {1}).</HH.Ins.Log.OppFiled>
+  <HH.Ins.Log.OppOpened>{0}: страховой случай, обращение возможно в течение {1} дн.</HH.Ins.Log.OppOpened>
+  <HH.Ins.Log.PensionStrike>Правило пенсии: у {0} выговоров: {1}.</HH.Ins.Log.PensionStrike>
+  <HH.Ins.Neg.OddsTip>Шанс этого подхода: {0}</HH.Ins.Neg.OddsTip>
+  <HH.Ins.Neg.RoundOf>Раунд {0} из {1}</HH.Ins.Neg.RoundOf>
+  <HH.Ins.Neg.Why.Approved>Уже одобрено: торговаться не о чем.</HH.Ins.Neg.Why.Approved>
+  <HH.Ins.Neg.Why.Closed>Переговоры закрыты.</HH.Ins.Neg.Why.Closed>
+  <HH.Ins.Neg.Why.NotDecided>Обращение ещё не рассмотрено.</HH.Ins.Neg.Why.NotDecided>
+  <HH.Ins.Pension.Alert.Body>Пенсионеры с более чем {0} ч работы в расписании постепенно теряют ступень пенсии: {1}.\n\nПереведите лишние часы в «Что угодно» или «Радость». Кнопка «Исправить расписание» на вкладке «Страхование» сделает это за вас.</HH.Ins.Pension.Alert.Body>
+  <HH.Ins.Pension.Alert.Label>Пенсия под угрозой</HH.Ins.Pension.Alert.Label>
+  <HH.Ins.Pension.FixSchedule>Исправить расписание</HH.Ins.Pension.FixSchedule>
+  <HH.Ins.Pension.Fixed>{0}: {1} ч работы переведено в «Что угодно».</HH.Ins.Pension.Fixed>
+  <HH.Ins.Pension.Legal.Body>У {0} в расписании {1} ч работы (допустимо {2}). Brix &amp; Partners в этом квадруме заменили выговор предупреждением.</HH.Ins.Pension.Legal.Body>
+  <HH.Ins.Pension.Legal.Title>Правило пенсии: предупреждение для {0}</HH.Ins.Pension.Legal.Title>
+  <HH.Ins.Pension.Notice.Body>{0} исполняется 60 лет в течение недели. С этого момента пенсия выплачивается, только пока в расписании не больше {1} ч работы в день. «Что угодно», «Радость», «Сон» и «Медитация» считаются свободным временем. Два выговора стоят пенсии за период, три — права на пенсию.</HH.Ins.Pension.Notice.Body>
+  <HH.Ins.Pension.Notice.Title>Правило пенсии: {0}</HH.Ins.Pension.Notice.Title>
+  <HH.Ins.Pension.Strike1.Body>У {0} в расписании {1} ч работы; допустимо {2}. Первый выговор. Следующая проверка через два дня. Ещё два выговора — и право на пенсию утрачено.</HH.Ins.Pension.Strike1.Body>
+  <HH.Ins.Pension.Strike1.Title>Выговор пенсии 1 из 3: {0}</HH.Ins.Pension.Strike1.Title>
+  <HH.Ins.Pension.Strike2.Body>У {0} в расписании {1} ч работы; допустимо {2}. Второй выговор: пенсия за этот период ({3}) аннулирована. Ещё один — и право утрачено.</HH.Ins.Pension.Strike2.Body>
+  <HH.Ins.Pension.Strike2.Title>Выговор пенсии 2 из 3: {0}</HH.Ins.Pension.Strike2.Title>
+  <HH.Ins.Pension.Strike3.Body>У {0} в расписании {1} ч работы; допустимо {2}. Третий выговор: право на пенсию прекращено, полис расторгнут.</HH.Ins.Pension.Strike3.Body>
+  <HH.Ins.Pension.Strike3.Title>Пенсия утрачена: {0}</HH.Ins.Pension.Strike3.Title>
+  <HH.Ins.Pension.Warn.Body>У {0} в расписании {1} ч работы; допустимо {2}. Это только предупреждение.</HH.Ins.Pension.Warn.Body>
+  <HH.Ins.Pension.Warn.Title>Правило пенсии: {0} работает слишком много</HH.Ins.Pension.Warn.Title>
+  <HH.Ins.Status.Buy>Застраховать…</HH.Ins.Status.Buy>
+  <HH.Ins.Status.ColonyCover>страхование колонии</HH.Ins.Status.ColonyCover>
+  <HH.Ins.Status.Column>Покрытие</HH.Ins.Status.Column>
+  <HH.Ins.Status.ColumnTip>Статус страхования: пенсия, здоровье, несчастный случай, ответственность, юридическая защита. Нажмите для обзора.</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.Foot>Зелёный: активно. Жёлтый: период ожидания. Оранжевый: расторжение ожидает. Красный: пенсия под угрозой. Серый: не застраховано. Страхование колонии действует на каждого колониста.</HH.Ins.Status.Foot>
+  <HH.Ins.Status.Kind.Accident>Несчастный случай</HH.Ins.Status.Kind.Accident>
+  <HH.Ins.Status.Kind.Health>Здоровье</HH.Ins.Status.Kind.Health>
+  <HH.Ins.Status.Kind.Legal>Юридическая защита</HH.Ins.Status.Kind.Legal>
+  <HH.Ins.Status.Kind.Liability>Ответственность</HH.Ins.Status.Kind.Liability>
+  <HH.Ins.Status.Kind.Pension>Пенсия</HH.Ins.Status.Kind.Pension>
+  <HH.Ins.Status.No>нет</HH.Ins.Status.No>
+  <HH.Ins.Status.NoTip>Нет страхования {0} для этого колониста.</HH.Ins.Status.NoTip>
+  <HH.Ins.Status.NotInsurable>не страхуется</HH.Ins.Status.NotInsurable>
+  <HH.Ins.Status.NotInsurableTip>Рабы, заключённые, гости и животные не могут быть застрахованы.</HH.Ins.Status.NotInsurableTip>
+  <HH.Ins.Status.PensionOk>Расписание: {0} ч работы (допустимо {1}).</HH.Ins.Status.PensionOk>
+  <HH.Ins.Status.PensionRisk>Расписание: {0} ч работы, допустимо только {1}. Пенсия под угрозой.</HH.Ins.Status.PensionRisk>
+  <HH.Ins.Status.State.Active>активно</HH.Ins.Status.State.Active>
+  <HH.Ins.Status.State.AtRisk>под угрозой</HH.Ins.Status.State.AtRisk>
+  <HH.Ins.Status.State.CancelPending>расторжение ожидает</HH.Ins.Status.State.CancelPending>
+  <HH.Ins.Status.State.None>нет</HH.Ins.Status.State.None>
+  <HH.Ins.Status.State.Waiting>период ожидания</HH.Ins.Status.State.Waiting>
+  <HH.Ins.Status.Strikes>Осталось выговоров: {0}</HH.Ins.Status.Strikes>
+  <HH.Ins.Status.Title>Страхование: {0}</HH.Ins.Status.Title>
+  <HH.Ins.Status.Yes>да</HH.Ins.Status.Yes>
+  <HH.Ins.Tab.Cover>Колонисты</HH.Ins.Tab.Cover>
+  <HH.Ins.Tab.Pawn>Страхование</HH.Ins.Tab.Pawn>
+  <HH.Ins.UI.Claim.AiReply>Ответ на ваше заявление: {0}</HH.Ins.UI.Claim.AiReply>
+  <HH.Ins.UI.Claim.Form>Форма: {0}</HH.Ins.UI.Claim.Form>
+  <HH.Ins.UI.Claim.Statement>Ваше заявление: {0}</HH.Ins.UI.Claim.Statement>
+  <HH.Ins.UI.Claims.History>История</HH.Ins.UI.Claims.History>
+  <HH.Ins.UI.Claims.Left>осталось: {0}</HH.Ins.UI.Claims.Left>
+  <HH.Ins.UI.Claims.Open>Открытые обращения</HH.Ins.UI.Claims.Open>
+  <HH.Ins.UI.Claims.WindowLine>{0} ({1}). Стоимость: {2}, предметов: {3}. Подайте форму до истечения срока.</HH.Ins.UI.Claims.WindowLine>
+  <HH.Ins.UI.Claims.Windows>Открытые окна подачи</HH.Ins.UI.Claims.Windows>
+  <HH.Ins.UI.Cover.Colonist>Колонист</HH.Ins.UI.Cover.Colonist>
+  <HH.Ins.UI.Cover.Lead>Кто и на что застрахован. Пенсия и страхование от несчастного случая персональные; здоровье, ответственность и юридическая защита (*) действуют на всю колонию.</HH.Ins.UI.Cover.Lead>
+  <HH.Ins.UI.Cover.None>Колонистов нет.</HH.Ins.UI.Cover.None>
+  <HH.Ins.UI.CoverAll>Застраховать всех…</HH.Ins.UI.CoverAll>
+  <HH.Ins.UI.CoverAll.Tip>Оформить полисы для всех колонистов разом.</HH.Ins.UI.CoverAll.Tip>
+  <HH.Ins.UI.CoverAllOne>Все колонисты…</HH.Ins.UI.CoverAllOne>
+  <HH.Ins.UI.Mine.Change>Изменить покрытие…</HH.Ins.UI.Mine.Change>
+  <HH.Ins.UI.Mine.ChangeTip>Изменить тариф, сумму или дополнения. Вступит в силу со следующим платежом.</HH.Ins.UI.Mine.ChangeTip>
+  <HH.Ins.UI.Mine.PendingChange>Запрос на изменение подан, вступит в силу через {0}</HH.Ins.UI.Mine.PendingChange>
+  <HH.Ins.UI.Mine.PensionLost>Право на пенсию утрачено.</HH.Ins.UI.Mine.PensionLost>
+  <HH.Ins.UI.Mine.PensionOk>Правило пенсии соблюдено: {0} ч работы ({1} допустимо), {2} в «Что угодно».</HH.Ins.UI.Mine.PensionOk>
+  <HH.Ins.UI.Mine.PensionRisk>Пенсия под угрозой: {0} ч работы, допустимо только {1} ({2} в «Что угодно»).</HH.Ins.UI.Mine.PensionRisk>
+  <HH.Ins.UI.Mine.PensionSuspended>Пенсия за этот период аннулирована (нарушение правила), возобновится через {0}.</HH.Ins.UI.Mine.PensionSuspended>
+  <HH.Ins.UI.Mine.PensionTip>Правило пенсии: не больше {0} ч работы в день в расписании. «Что угодно» считается свободным временем, но колонист на «Что угодно» всё равно может выбрать работу.</HH.Ins.UI.Mine.PensionTip>
+  <HH.Ins.UI.Mine.UpgradeWait>Ожидание после повышения: события в течение следующих {0} всё ещё оцениваются по старому покрытию.</HH.Ins.UI.Mine.UpgradeWait>
+  <HH.Ins.UI.Mine.WithdrawChange>Отозвать изменение</HH.Ins.UI.Mine.WithdrawChange>
 </LanguageData>

@@ -75,7 +75,6 @@
   <HH.Inn.Event.Returned>Вернулся(ась) на новое пребывание.</HH.Inn.Event.Returned>
   <HH.Inn.Event.SelfCheckIn>Нашёл(а) комнату сам(а); за стойкой никого не было.</HH.Inn.Event.SelfCheckIn>
   <HH.Inn.Event.SentAway>Был(а) выпровожен(а).</HH.Inn.Event.SentAway>
-  <HH.Inn.Event.SharedBed>Делит койку с {0} (доплата {1} серебра в ночь).</HH.Inn.Event.SharedBed>
   <HH.Inn.Event.ShortenedStay>Сократил(а) пребывание до {0} ноч., чтобы оплатить комнату.</HH.Inn.Event.ShortenedStay>
   <HH.Inn.Event.TooImportant>Слишком важен дома, чтобы оставаться.</HH.Inn.Event.TooImportant>
   <HH.Inn.Event.Welcomed>Его(её) на стойке регистрации встретил {0}.</HH.Inn.Event.Welcomed>
@@ -85,9 +84,7 @@
   <HH.Inn.Forecast.Overnight>{0} ноч.</HH.Inn.Forecast.Overnight>
   <HH.Inn.Forecast.Return>возвращается</HH.Inn.Forecast.Return>
   <HH.Inn.GuestBed.Booked>Забронировал(а) {0}</HH.Inn.GuestBed.Booked>
-  <HH.Inn.GuestBed.Desc>Сдавайте эту койку гостям. Колонисты здесь спать не будут; гости спят только на гостевых койках. Цена за ночь зависит от комнаты, койки и числа коек в комнате.</HH.Inn.GuestBed.Desc>
   <HH.Inn.GuestBed.Inactive>Гостевая койка (неактивна у медицинской, тюремной или рабской койки)</HH.Inn.GuestBed.Inactive>
-  <HH.Inn.GuestBed.Inspect>Гостевая койка: {0} серебра/ночь ({1})</HH.Inn.GuestBed.Inspect>
   <HH.Inn.GuestBed.Label>Гостевая койка</HH.Inn.GuestBed.Label>
   <HH.Inn.GuestBed.NoColonists>Это гостевая койка.</HH.Inn.GuestBed.NoColonists>
   <HH.Inn.GuestBed.NotColonistBed>Гостевой койкой может быть только обычная койка колониста (не медицинская, не тюремная и не рабская).</HH.Inn.GuestBed.NotColonistBed>
@@ -96,7 +93,6 @@
   <HH.Inn.Handling.Basics>Основное</HH.Inn.Handling.Basics>
   <HH.Inn.Handling.BasicsDesc>Только платные услуги, без развлечений. Не тратит время колонистов.</HH.Inn.Handling.BasicsDesc>
   <HH.Inn.Handling.Bond>Связь: {0} / {1}</HH.Inn.Handling.Bond>
-  <HH.Inn.Handling.Click>Нажмите для переключения: Основное → Сопровождение → Вербовка.</HH.Inn.Handling.Click>
   <HH.Inn.Handling.Label>Обращение: {0}</HH.Inn.Handling.Label>
   <HH.Inn.Handling.Recruit>Вербовка</HH.Inn.Handling.Recruit>
   <HH.Inn.Handling.RecruitDesc>Как сопровождение, плюс разговоры о том, чтобы остаться. Если связь колонии с гостем достаточно крепка, он может присоединиться при отъезде. Навязчивые разговоры могут обидеть.</HH.Inn.Handling.RecruitDesc>
@@ -295,4 +291,56 @@
   <HH.Inn.PriceMode.ManualSet>Фиксированная цена…</HH.Inn.PriceMode.ManualSet>
   <HH.Inn.PriceMode.ManualValue>{0} серебра за ночь</HH.Inn.PriceMode.ManualValue>
   <HH.Inn.PriceMode.Manual>фиксированная цена</HH.Inn.PriceMode.Manual>
+  <HH.Inn.BedUse.ChipTip>Цена за ночь: {0}. Нажмите, чтобы изменить: бесплатно, −25 %, автоматически, +25 % или фиксированная цена.</HH.Inn.BedUse.ChipTip>
+  <HH.Inn.BedUse.Click>Нажмите, чтобы выбрать назначение этой кровати.</HH.Inn.BedUse.Click>
+  <HH.Inn.BedUse.Colonist>Кровать колониста</HH.Inn.BedUse.Colonist>
+  <HH.Inn.BedUse.ColonistDesc>обычное спальное место ваших колонистов</HH.Inn.BedUse.ColonistDesc>
+  <HH.Inn.BedUse.Guest>Гостевая кровать</HH.Inn.BedUse.Guest>
+  <HH.Inn.BedUse.GuestDesc>сдаётся гостям, колонистам вход закрыт</HH.Inn.BedUse.GuestDesc>
+  <HH.Inn.BedUse.Medical>Медицинская кровать</HH.Inn.BedUse.Medical>
+  <HH.Inn.BedUse.NeedsRimWard>Кровати для пациентов и операций требуют мод RimWard.</HH.Inn.BedUse.NeedsRimWard>
+  <HH.Inn.BedUse.NoBed>Эта кровать не может быть гостевой.</HH.Inn.BedUse.NoBed>
+  <HH.Inn.BedUse.Owners>Владелец: {0}</HH.Inn.BedUse.Owners>
+  <HH.Inn.BedUse.Patient>Кровать пациента</HH.Inn.BedUse.Patient>
+  <HH.Inn.BedUse.PatientDesc>для больных и раненых</HH.Inn.BedUse.PatientDesc>
+  <HH.Inn.BedUse.Price>Цена: {0} серебра за ночь ({1}).</HH.Inn.BedUse.Price>
+  <HH.Inn.BedUse.PriceHint>Нажмите на ценник в углу, чтобы изменить цену.</HH.Inn.BedUse.PriceHint>
+  <HH.Inn.BedUse.Surgery>Операционная кровать</HH.Inn.BedUse.Surgery>
+  <HH.Inn.BedUse.SurgeryDesc>здесь проводятся операции</HH.Inn.BedUse.SurgeryDesc>
+  <HH.Inn.Convert.Certainty>Уверенность в {0}: {1} %</HH.Inn.Convert.Certainty>
+  <HH.Inn.Convert.Goal>при 0 % принимает {0}</HH.Inn.Convert.Goal>
+  <HH.Inn.Convert.Insulted>почувствовал морализаторство: в этот раз не станет слушать</HH.Inn.Convert.Insulted>
+  <HH.Inn.Convert.Nothing>Обращать некого: гость уже разделяет вашу идеологию или не поддаётся разговору.</HH.Inn.Convert.Nothing>
+  <HH.Inn.Convert.Talks>бесед пока: {0}</HH.Inn.Convert.Talks>
+  <HH.Inn.Door.AgeTitle>Возраст</HH.Inn.Door.AgeTitle>
+  <HH.Inn.Door.StayTitle>Вид проживания</HH.Inn.Door.StayTitle>
+  <HH.Inn.Door.WealthTitle>Достаток</HH.Inn.Door.WealthTitle>
+  <HH.Inn.Event.ConvertEnded>Обращать больше некого: снова просто общаемся.</HH.Inn.Event.ConvertEnded>
+  <HH.Inn.Event.CoupleBooked>Снят один двуспальный номер для {0}: по {1} серебра за ночь с каждого.</HH.Inn.Event.CoupleBooked>
+  <HH.Inn.Event.Embraced>{0} принял веру после бесед с {1}.</HH.Inn.Event.Embraced>
+  <HH.Inn.Event.EmbracedSat>Нашёл новую веру в колонии.</HH.Inn.Event.EmbracedSat>
+  <HH.Inn.Event.NoFreeBed>Все гостевые кровати заняты, остался только на день.</HH.Inn.Event.NoFreeBed>
+  <HH.Inn.Event.PartnerMovedIn>{0} перебрался на кровать: плата делится ({1} серебра с каждого за ночь).</HH.Inn.Event.PartnerMovedIn>
+  <HH.Inn.Event.Preached>{0} почувствовал морализаторство.</HH.Inn.Event.Preached>
+  <HH.Inn.Event.SharedBed2>Делит кровать с {0} (по {1} серебра за ночь с каждого).</HH.Inn.Event.SharedBed2>
+  <HH.Inn.Event.SleepsTogether>Спит рядом с {0}: именно на это и надеялись.</HH.Inn.Event.SleepsTogether>
+  <HH.Inn.Event.ThinkingOver>Поговорил с {0} о {1}: теперь на {2} % уверен в своих убеждениях.</HH.Inn.Event.ThinkingOver>
+  <HH.Inn.Event.Unmoved>Выслушал {0} о {1}, но остался при своём.</HH.Inn.Event.Unmoved>
+  <HH.Inn.Event.WantedDouble>Хотел двуспальную кровать с {0}, но получил две односпальные.</HH.Inn.Event.WantedDouble>
+  <HH.Inn.GuestBed.InspectShort>Гостевая кровать: {0} серебра/ночь · {1}</HH.Inn.GuestBed.InspectShort>
+  <HH.Inn.Handling.Click2>Нажмите, чтобы переключить: {0}.</HH.Inn.Handling.Click2>
+  <HH.Inn.Handling.Convert>Обратить</HH.Inn.Handling.Convert>
+  <HH.Inn.Handling.ConvertDesc>Как «Сопровождать», плюс разговоры о вашей идеологии. Каждая беседа колеблет уверенность гостя в собственной; при нуле он принимает вашу. Напористые разговоры могут оскорбить. Нужно DLC «Идеология».</HH.Inn.Handling.ConvertDesc>
+  <HH.Inn.Msg.Preached>{0} счёл попытки обращения напористыми: будет тратить меньше и уедет раньше.</HH.Inn.Msg.Preached>
+  <HH.Inn.Occupancy.DoubleBed>двуспальная кровать</HH.Inn.Occupancy.DoubleBed>
+  <HH.Inn.Problem.Double>Хотят двуспальную кровать вместе со своим партнёром: постройте или назначьте гостевой одну из кроватей.</HH.Inn.Problem.Double>
+  <HH.Inn.Problem.DoubleMany>{0} гостям нужна двуспальная кровать для пары: постройте или назначьте гостевой одну из кроватей.</HH.Inn.Problem.DoubleMany>
+  <HH.Setting.inn.convertPower>Сила обращения</HH.Setting.inn.convertPower>
+  <HH.Setting.inn.convertPower.Desc>Насколько сильно разговор в обработке «Обратить» подрывает уверенность гостя в собственной идеологии (100 % = обычная сила). Нужно DLC «Идеология».</HH.Setting.inn.convertPower.Desc>
+  <HH.Setting.inn.coupleWish>Пары хотят двуспальную кровать</HH.Setting.inn.coupleWish>
+  <HH.Setting.inn.coupleWish.Desc>Пары, приехавшие вместе, предпочитают одну двуспальную кровать. Получив её, они немного радуются, а если их разместили на двух одноместных, немного раздражаются. Цены никогда не меняются.</HH.Setting.inn.coupleWish.Desc>
+  <HH.Setting.inn.doubleBedFactor>Множитель цены двуспальной кровати</HH.Setting.inn.doubleBedFactor>
+  <HH.Setting.inn.doubleBedFactor.Desc>Кровать на двоих приносит в это число раз больше цены одноместной. Пара на одной двуспальной кровати платит вместе, каждый половину, поэтому платит меньше, чем за две одноместные.</HH.Setting.inn.doubleBedFactor.Desc>
+  <HH.Setting.inn.groupDevGizmos>Объединить наши кнопки разработчика</HH.Setting.inn.groupDevGizmos>
+  <HH.Setting.inn.groupDevGizmos.Desc>В режиме разработчика кнопки DEV зданий Hearth &amp; Harbor сворачиваются в одну кнопку «Dev: Hearth &amp; Harbor», чтобы ряд кнопок оставался читаемым. Кнопки ванили и других модов никогда не затрагиваются.</HH.Setting.inn.groupDevGizmos.Desc>
 </LanguageData>

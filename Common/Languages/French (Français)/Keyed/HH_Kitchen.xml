@@ -2,8 +2,6 @@
 <LanguageData>
   <HH.Kitchen.Missing>Manquant : {0}</HH.Kitchen.Missing>
   <HH.Kitchen.RecipeInfo>Appareils : {0}. Étapes : {1}.</HH.Kitchen.RecipeInfo>
-  <HH.Kitchen.Finishing>une touche de finition (lait, œufs, chocolat, bière, baies ou champignons)</HH.Kitchen.Finishing>
-  <HH.Kitchen.Finishing2>une seconde touche de finition (bière, baies ou champignons)</HH.Kitchen.Finishing2>
   <HH.Kitchen.Inspiration>Inspiration : {0}</HH.Kitchen.Inspiration>
   <HH.Kitchen.Cuisine>Cuisine : {0}</HH.Kitchen.Cuisine>
   <HH.Kitchen.Cooked>Cuisiné à : {0} ({1})</HH.Kitchen.Cooked>
@@ -125,4 +123,9 @@
   <HH.Kitchen.NoNeighbours>Aucun autre appareil de cuisine à portée.</HH.Kitchen.NoNeighbours>
   <HH.Kitchen.Neighbours>À portée : {0}</HH.Kitchen.Neighbours>
   <HH.Kitchen.FreshHours>Frais pendant {0} h</HH.Kitchen.FreshHours>
+  <HH.Kitchen.FinishingTouch>une touche finale ({0})</HH.Kitchen.FinishingTouch>
+  <HH.Kitchen.FinishingTouch2>une seconde touche finale ({0})</HH.Kitchen.FinishingTouch2>
+  <HH.Kitchen.Or>ou</HH.Kitchen.Or>
+  <HH.Setting.kitchen.cookSounds>Sons de cuisson et de repas</HH.Setting.kitchen.cookSounds>
+  <HH.Setting.kitchen.cookSounds.Desc>Chaque type de cuisson (hacher, mijoter, griller, cuire au four, frire, cuire à la vapeur, pétrir, fumer, refroidir) a son propre son et son petit effet ; un plat réussi fait retentir un signal, et les bons plats déclenchent une réaction joyeuse. Désactivé : le son de poêle d'origine pour tout.</HH.Setting.kitchen.cookSounds.Desc>
 </LanguageData>

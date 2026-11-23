@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ScenRules.description>Задає модулі, складність хостингу, інтенсивність контенту та будь-які налаштування колонії для Hearth &amp; Harbor і Silverline у нових колоніях цього сценарію. Перевизначає шаблон лише те, що вказано тут; гравець і далі може змінити все на сторінці оповідача.</HH_ScenRules.description>
+  <HH_ScenRules.label>правила Hearth &amp; Harbor</HH_ScenRules.label>
+  <HH_ScenSetting.description>Задає одне налаштування Hearth &amp; Harbor або Silverline для нових колоній цього сценарію.</HH_ScenSetting.description>
+  <HH_ScenSetting.label>налаштування Hearth &amp; Harbor</HH_ScenSetting.label>
+  <HH_ScenStartingResearch.description>Дослідницький проєкт Hearth &amp; Harbor або Silverline вже завершено на момент початку колонії.</HH_ScenStartingResearch.description>
+  <HH_ScenStartingResearch.label>почати з дослідження Hearth &amp; Harbor</HH_ScenStartingResearch.label>
+</LanguageData>

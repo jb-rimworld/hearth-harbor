@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Scen.BackRoom.Intro>Der Brief war auf schweres schwarzes Papier gedruckt und roch schwach nach Zigarren.\n\n„Ihre Schulden sind beglichen. Alle. Wir melden uns wegen des Raums hinter der Küche. Halten Sie ihn bitte ordentlich.“\n\nDeine Rastsiedlung hat jetzt neue Partner. Sie sind geduldig, sie sind höflich, und sie vergessen nie, niemals eine Zahl.\n\nDieser Start nutzt die düstereren Inhalte von Hearth &amp; Harbor. Du kannst sie jederzeit in den Mod-Einstellungen abschwächen.</HH.Scen.BackRoom.Intro>
+  <HH.Scen.Editor.Editing>Du bearbeitest die Hearth-&amp;-Harbor-Regeln dieses Szenarios.</HH.Scen.Editor.Editing>
+  <HH.Scen.Editor.ModuleResetTip>Dieses Modul der Vorlage des Spielers überlassen.</HH.Scen.Editor.ModuleResetTip>
+  <HH.Scen.Editor.ModulesIntro>Module, die dieses Szenario ein- oder ausschaltet. Ein Modul, das du nicht anfasst, folgt der Vorlage des Spielers.</HH.Scen.Editor.ModulesIntro>
+  <HH.Scen.Editor.Note>Nur was du hier änderst (bernsteinfarben markiert), wird vom Szenario festgelegt. Nicht markierte Zeilen zeigen die Standardwerte; in einem neuen Spiel stammen sie aus der eigenen Vorlage des Spielers. Zurücksetzen gibt eine Zeile oder ein Modul an die Vorlage zurück.</HH.Scen.Editor.Note>
+  <HH.Scen.Editor.Side>Szenario-Regeln</HH.Scen.Editor.Side>
+  <HH.Scen.Editor.Title>Hearth &amp; Harbor-Regeln dieses Szenarios</HH.Scen.Editor.Title>
+  <HH.Scen.HarborTown.Intro>Die Urkunde wurde in aller Eile unterschrieben, und der Anwalt blieb nicht zum Tee. Jetzt gehört es dir: ein verwittertes Gasthaus über einem stillen Hafen, eine Straße voller Karawanen und kein einziger Gast.\n\nFeg die Böden, flick das Dach, mach ein Bett. Häng ein Schild auf. Bald klopft jemand an – und wenn du ihn gut behandelst, erzählt er es der ganzen Straße.\n\nTipp: Hetty Hearthwell ist die Erzählerin für Baumeister. Und der Hearth &amp; Harbor-Leitfaden oben rechts erklärt dir alles Schritt für Schritt.</HH.Scen.HarborTown.Intro>
+  <HH.Scen.Module.Off>aus</HH.Scen.Module.Off>
+  <HH.Scen.Module.On>an</HH.Scen.Module.On>
+  <HH.Scen.Module.Template>wie Vorlage</HH.Scen.Module.Template>
+  <HH.Scen.Picker.Nerd>Nerd-Einstellungen</HH.Scen.Picker.Nerd>
+  <HH.Scen.Picker.Search>Suchen…</HH.Scen.Picker.Search>
+  <HH.Scen.Picker.Title>Hearth &amp; Harbor-Einstellung wählen</HH.Scen.Picker.Title>
+  <HH.Scen.Rules.Content>Inhalt: {0}</HH.Scen.Rules.Content>
+  <HH.Scen.Rules.Count>{0} Einstellung(en) gesetzt; einzelne Einstellungen fügst du mit dem Teil „Hearth &amp; Harbor-Einstellung“ hinzu.</HH.Scen.Rules.Count>
+  <HH.Scen.Rules.Discovered>Unterwelt bereits entdeckt</HH.Scen.Rules.Discovered>
+  <HH.Scen.Rules.More>Weitere Einstellungen… ({0} gesetzt)</HH.Scen.Rules.More>
+  <HH.Scen.Rules.MoreTip>Öffnet die vollständigen Hearth &amp; Harbor-Einstellungen für dieses Szenario. Nur was du dort änderst, wird vom Szenario festgelegt.</HH.Scen.Rules.MoreTip>
+  <HH.Scen.Rules.SumContent>Inhalt: {0}</HH.Scen.Rules.SumContent>
+  <HH.Scen.Rules.SumDiscovered>die Unterwelt kennt dich schon</HH.Scen.Rules.SumDiscovered>
+  <HH.Scen.Rules.SumMore>und {0} weitere Einstellungen</HH.Scen.Rules.SumMore>
+  <HH.Scen.Rules.SumNothing>alles wie in deiner Vorlage</HH.Scen.Rules.SumNothing>
+  <HH.Scen.Rules.SumOff>aus: {0}</HH.Scen.Rules.SumOff>
+  <HH.Scen.Rules.SumOn>an: {0}</HH.Scen.Rules.SumOn>
+  <HH.Scen.Rules.SumTier>Gastgeber-Schwierigkeit {0} % ({1})</HH.Scen.Rules.SumTier>
+  <HH.Scen.Rules.SummaryHead>Hearth &amp; Harbor-Regeln:</HH.Scen.Rules.SummaryHead>
+  <HH.Scen.Rules.TierTemplate>Gastgeber-Schwierigkeit: wie Vorlage</HH.Scen.Rules.TierTemplate>
+  <HH.Scen.Rules.TierTip>Anhaken, damit dieses Szenario die Gastgeber-Schwierigkeit festlegt (0–500 %). Ohne Haken entscheidet die Vorlage des Spielers.</HH.Scen.Rules.TierTip>
+  <HH.Scen.SetByScenario>vom Szenario festgelegt</HH.Scen.SetByScenario>
+  <HH.Scen.Setting.Intro>Hearth &amp; Harbor-Einstellungen</HH.Scen.Setting.Intro>
+  <HH.Scen.Setting.Pick>Einstellung wählen…</HH.Scen.Setting.Pick>
+  <HH.Scen.Setting.Unknown>Unbekannte Einstellung (Modul fehlt?)</HH.Scen.Setting.Unknown>
+</LanguageData>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Ai.Ans.Arrears>{0} 銀の未払いがあります。何よりも先に清算してください。</HH.Ai.Ans.Arrears>
+  <HH.Ai.Ans.Denied>「{0}」の請求は却下されました：{1}。条項は保険タブで読めます。取り消しと変更のボタンもそこにあります。</HH.Ai.Ans.Denied>
+  <HH.Ai.Ans.Interest>口座の預金には小さく安定した利息がつき、四半期ごとに支払われます。今四半期のこれまで：{0} 銀、通算：{1} 銀。投資はもっと多く稼ぐこともあるが、同じ速さで失うこともあります。口座は堅実な友人、市場は刺激的な相手です。</HH.Ai.Ans.Interest>
+  <HH.Ai.Ans.Invest>あなたのポートフォリオは {1} 件の保有で {0} 銀の価値があります。</HH.Ai.Ans.Invest>
+  <HH.Ai.Ans.Loan>融資 {0}：未返済 {1} 銀、返済額 {2} 銀を {3} 日ごと、年約 {4} %、残り {5} 回。</HH.Ai.Ans.Loan>
+  <HH.Ai.Ans.Net>純資産は {0} 銀です：口座に {1}、自宅の銀 {2}、負債 {3} を差し引いて。銀行はあなたを階層「{4}」に分類しています。</HH.Ai.Ans.Net>
+  <HH.Ai.Ans.NoClaims>請求は記録されていません。Clawback Mutual はまだ出番がありません。</HH.Ai.Ans.NoClaims>
+  <HH.Ai.Ans.NoDenied>却下された請求はありません。直近の「{0}」は{1}。</HH.Ai.Ans.NoDenied>
+  <HH.Ai.Ans.NoInvest>投資はありません。投資タブに取扱商品があります。まず少額で始め、信用する前にニュース帯を読んでください。</HH.Ai.Ans.NoInvest>
+  <HH.Ai.Ans.NoLoans>融資はありません。借金なしは素晴らしい状態です。がっかりしていないふりをしておきます。</HH.Ai.Ans.NoLoans>
+  <HH.Ai.Ans.NoReason>約款の細字には何も記されていませんでした</HH.Ai.Ans.NoReason>
+  <HH.Ai.Badge.Ai>AI</HH.Ai.Badge.Ai>
+  <HH.Ai.Badge.Books>帳簿より</HH.Ai.Badge.Books>
+  <HH.Ai.Badge.TipChat>AI が、帳簿の読み取り専用スナップショットから書きました。説明はできますが、何も変えられません。</HH.Ai.Badge.TipChat>
+  <HH.Ai.Badge.TipConcierge>AI がゲーム自身の事実から書きました</HH.Ai.Badge.TipConcierge>
+  <HH.Ai.Badge.Written>AI が書きました。星はゲームから来ています。</HH.Ai.Badge.Written>
+  <HH.Ai.Chat.Clerk>事務員オットリーン</HH.Ai.Chat.Clerk>
+  <HH.Ai.Chat.Empty>まず質問を入力してください。</HH.Ai.Chat.Empty>
+  <HH.Ai.Chat.NoAccount>口座がまだありません。ロビーで開設してください。喜んで見ます。</HH.Ai.Chat.NoAccount>
+  <HH.Ai.Chat.NoMatch>私が自力で帳簿から答えられるのは、ほんの一部の質問だけです。下の定番質問を使うか、AI が戻ったら改めて聞いてください。</HH.Ai.Chat.NoMatch>
+  <HH.Ai.Chat.OfflineHint>AI は利用できないため、オットリーンは可能な範囲で帳簿から答えます。</HH.Ai.Chat.OfflineHint>
+  <HH.Ai.Chat.Placeholder>お金のことは何でも、オットリーンに聞いてください…</HH.Ai.Chat.Placeholder>
+  <HH.Ai.Chat.Quick>定番の質問</HH.Ai.Chat.Quick>
+  <HH.Ai.Chat.QuickTip>帳簿からすぐに答えます。どこにも送信されません。</HH.Ai.Chat.QuickTip>
+  <HH.Ai.Chat.Recheck>再確認</HH.Ai.Chat.Recheck>
+  <HH.Ai.Chat.Send>送信</HH.Ai.Chat.Send>
+  <HH.Ai.Chat.SetUp>AI の回答を設定</HH.Ai.Chat.SetUp>
+  <HH.Ai.Chat.Stop>停止</HH.Ai.Chat.Stop>
+  <HH.Ai.Chat.Stopped>（質問を停止しました。）</HH.Ai.Chat.Stopped>
+  <HH.Ai.Chat.Thinking>オットリーンが考え中</HH.Ai.Chat.Thinking>
+  <HH.Ai.Chat.Welcome>口座、融資、投資、約款について聞いてください。説明はしますが、お金は動かしません。AI が不在でも、下の定番質問は使えます。</HH.Ai.Chat.Welcome>
+  <HH.Ai.Chat.You>あなた</HH.Ai.Chat.You>
+  <HH.Ai.Concierge.Ask>質問</HH.Ai.Concierge.Ask>
+  <HH.Ai.Concierge.Default>まず何を改善すべき？</HH.Ai.Concierge.Default>
+  <HH.Ai.Concierge.Offline>AI が答えなかったため、ゲーム自身のヒントを示します。</HH.Ai.Concierge.Offline>
+  <HH.Ai.Concierge.Placeholder>なぜ貴族が来ないの？何を改善すべき？</HH.Ai.Concierge.Placeholder>
+  <HH.Ai.Concierge.StateAi>AI オンライン：回答は AI が言い回しを整えます</HH.Ai.Concierge.StateAi>
+  <HH.Ai.Concierge.StateOffline>回答はゲーム自身のヒントから</HH.Ai.Concierge.StateOffline>
+  <HH.Ai.Concierge.Stop>停止</HH.Ai.Concierge.Stop>
+  <HH.Ai.Concierge.Thinking>コンシェルジュが考え中</HH.Ai.Concierge.Thinking>
+  <HH.Ai.Concierge.Tips>見えている内容を、多い順にお伝えします:</HH.Ai.Concierge.Tips>
+  <HH.Ai.Concierge.Title>コンシェルジュに尋ねる</HH.Ai.Concierge.Title>
+  <HH.Ai.Consent.Agree>同意して有効にする</HH.Ai.Consent.Agree>
+  <HH.Ai.Consent.Budget>AIの予算は、すべてのプレイヤーで24時間ごとに共有されます。使い切ると、AIは休止し、ゲームは自前の文章を使います。</HH.Ai.Consent.Budget>
+  <HH.Ai.Consent.D.Claim>請求書: 保険契約、入植者の名前、事件、ゲームが既に決めた決定と金額、そして請求フォームに書いた内容（最大600字）。</HH.Ai.Consent.D.Claim>
+  <HH.Ai.Consent.D.Concierge>コンシェルジュ: あなたの質問（最大300字）と、評判、客や寝床の数、ゲームが見つけた問題などの短い事実（最大12件）。</HH.Ai.Consent.D.Concierge>
+  <HH.Ai.Consent.D.Headline>市場の見出し: 市場イベントの種類、資産の名前、値動きの大きさ。1回の要求につき最大8件のイベント。</HH.Ai.Consent.D.Headline>
+  <HH.Ai.Consent.D.Ottoline>Ottolineに尋ねる: あなたの質問（最大500字）と帳簿のスナップショット: 残高、貯金、最大10件の融資、投資、保険、最近の予約を数字と短いラベルで。</HH.Ai.Consent.D.Ottoline>
+  <HH.Ai.Consent.D.Review>客の評価: 客の名（ファーストネーム）、ゲームが付けた星の数、いくつかの理由の言葉（例: 退去の仕方）、客が金を使った施設の種類。</HH.Ai.Consent.D.Review>
+  <HH.Ai.Consent.Done>AIの文章が有効になりました。ゲームがこれから中継サーバーを確認します。</HH.Ai.Consent.Done>
+  <HH.Ai.Consent.HideDetails>詳細を隠す</HH.Ai.Consent.HideDetails>
+  <HH.Ai.Consent.Intro>Hearth &amp; Harbor は、AIにいくつかの雰囲気文を書かせることができます。窓口担当Ottolineのチャットの返答、市場の見出し、客の評価、保険の請求書の文面、コンシェルジュのヒントなどです。AIがなくてもゲームは全く同じように遊べ、AIが不在のときのために常に独自の文章を用意しています。</HH.Ai.Consent.Intro>
+  <HH.Ai.Consent.NotNow>今はしない</HH.Ai.Consent.NotNow>
+  <HH.Ai.Consent.NotSent>送信されないもの: Steamの名前やID、ファイルのパス、セーブデータや植民地の名前、ほかのMod、キーのように見えるもの。</HH.Ai.Consent.NotSent>
+  <HH.Ai.Consent.Sent>送信されるもの: 要求用のゲーム文、例えば入植者の名前（最大64字）、金額、チャットに入力した文、請求フォームやコンシェルジュの入力欄の文、客や寝床の数などの件数。</HH.Ai.Consent.Sent>
+  <HH.Ai.Consent.ShowDetails>正確に何が送信されますか？</HH.Ai.Consent.ShowDetails>
+  <HH.Ai.Consent.Stored>保存されるもの: 中継サーバーが保持するのは件数（トークン数、費用、所要時間、エラーコード）だけです。あなたが書いた内容やAIの返答は保持しません。ほかのWebサーバーと同様に、中継サーバーの運営者は技術的な接続ログにIPアドレスを一時的に残すことがあります。</HH.Ai.Consent.Stored>
+  <HH.Ai.Consent.Title>AIの文章（任意）</HH.Ai.Consent.Title>
+  <HH.Ai.Consent.Where>送信先: このModの作者が運営する小さな中継サーバー（hh-relay.jberger.de）へ送られ、そこからOpenRouter経由でAnthropicのClaudeモデルへ送られます。使用するのはデータを保持しない（ゼロデータ保持）プロバイダーだけです。</HH.Ai.Consent.Where>
+  <HH.Ai.Consent.Withdraw>いつでも撤回できます: Modの設定、Hearth &amp; Harbor、AIの雰囲気文、「同意を取り消す」。</HH.Ai.Consent.Withdraw>
+  <HH.Ai.Faq.Claim>なぜ請求は却下されたの？</HH.Ai.Faq.Claim>
+  <HH.Ai.Faq.Interest>利息はどうやって得られるの？</HH.Ai.Faq.Interest>
+  <HH.Ai.Faq.Invest>投資の状況はどう？</HH.Ai.Faq.Invest>
+  <HH.Ai.Faq.Loans>融資はどうなっている？</HH.Ai.Faq.Loans>
+  <HH.Ai.Faq.Net>私の資産はいくら？</HH.Ai.Faq.Net>
+  <HH.Ai.Notice.Title>Hearth &amp; Harbor: AIの文章について</HH.Ai.Notice.Title>
+  <HH.Ai.Panel.Check>今すぐ中継サーバーを確認</HH.Ai.Panel.Check>
+  <HH.Ai.Panel.ConsentGiven>{0}に同意しました（文面バージョン {1}）。</HH.Ai.Panel.ConsentGiven>
+  <HH.Ai.Panel.ConsentNone>まだ同意していません。何も送信されません。</HH.Ai.Panel.ConsentNone>
+  <HH.Ai.Panel.Forget>同意を取り消す</HH.Ai.Panel.Forget>
+  <HH.Ai.Panel.ForgetConfirm>同意を取り消してAIモジュールを切りますか？以後は何も送信されません。いつでも再び同意できます。</HH.Ai.Panel.ForgetConfirm>
+  <HH.Ai.Panel.Relay>中継: 共有予算の過去24時間分を {0} % 使用。このセッション: 送信 {1}、成功 {2}、失敗 {3}、自前の文章を使用 {4}。</HH.Ai.Panel.Relay>
+  <HH.Ai.Panel.SetUp>AIの文章を設定...</HH.Ai.Panel.SetUp>
+  <HH.Ai.Review.Fallback.1.0>星1つ。フォームに0がないので、これだけです。</HH.Ai.Review.Fallback.1.0>
+  <HH.Ai.Review.Fallback.1.1>静かな夜を頼んだのに、忍耐の授業を受けました。</HH.Ai.Review.Fallback.1.1>
+  <HH.Ai.Review.Fallback.1.2>二度とごめんです。ただ、出るときのドアは素敵でした。</HH.Ai.Review.Fallback.1.2>
+  <HH.Ai.Review.Fallback.1.3>もっと酷い宿に泊まったことはあります。どこだったかは思い出せませんが。</HH.Ai.Review.Fallback.1.3>
+  <HH.Ai.Review.Fallback.2.0>待つのが好きならよかったでしょう。私は嫌いです。</HH.Ai.Review.Fallback.2.0>
+  <HH.Ai.Review.Fallback.2.1>良い発想はあったが、タイミングが悪い。</HH.Ai.Review.Fallback.2.1>
+  <HH.Ai.Review.Fallback.2.2>スタッフは頑張っていた。建物が足を引っ張っていた。</HH.Ai.Review.Fallback.2.2>
+  <HH.Ai.Review.Fallback.2.3>星2つ: 努力に1つ、ドアに1つ。</HH.Ai.Review.Fallback.2.3>
+  <HH.Ai.Review.Fallback.3.0>部屋があり、屋根があり、そこそこ暖かく迎えてもらえる。</HH.Ai.Review.Fallback.3.0>
+  <HH.Ai.Review.Fallback.3.1>文句はないし、自慢できるほどでもないので、こうして書いています。</HH.Ai.Review.Fallback.3.1>
+  <HH.Ai.Review.Fallback.3.2>まあまあ。道の途中で寄る機会があれば、また来るかもしれません。</HH.Ai.Review.Fallback.3.2>
+  <HH.Ai.Review.Fallback.3.3>星3つ。道の真ん中も、立つのには悪くない場所です。</HH.Ai.Review.Fallback.3.3>
+  <HH.Ai.Review.Fallback.4.0>美味しい食事、親切な人々、ちゃんと行儀のよいベッド。</HH.Ai.Review.Fallback.4.0>
+  <HH.Ai.Review.Fallback.4.1>よく眠れて、公正な料金でした。それは思ったより珍しいことです。</HH.Ai.Review.Fallback.4.1>
+  <HH.Ai.Review.Fallback.4.2>快適で、よく運営されています。キャラバンの仲間に話します。</HH.Ai.Review.Fallback.4.2>
+  <HH.Ai.Review.Fallback.4.3>星4つ。何かが足りなかったのですが、何だったか忘れました。それがすべてを物語っています。</HH.Ai.Review.Fallback.4.3>
+  <HH.Ai.Review.Fallback.5.0>今シーズン最高の宿泊。スタッフが私の名前と注文を覚えていてくれました。</HH.Ai.Review.Fallback.5.0>
+  <HH.Ai.Review.Fallback.5.1>一泊のつもりで来たのに、出ていくのを忘れそうになりました。</HH.Ai.Review.Fallback.5.1>
+  <HH.Ai.Review.Fallback.5.2>暖かく、清潔で、面白い。星5つと握手を。</HH.Ai.Review.Fallback.5.2>
+  <HH.Ai.Review.Fallback.5.3>許されるなら住みたいくらいです。許されないかもしれませんが。</HH.Ai.Review.Fallback.5.3>
+  <HH.Ai.Review.Label>客の評価: {0}</HH.Ai.Review.Label>
+  <HH.Ai.State.Checking>AI中継を確認中...</HH.Ai.State.Checking>
+  <HH.Ai.State.NoConsent>AIの文章は未設定です</HH.Ai.State.NoConsent>
+  <HH.Ai.State.NoConsent.Tip>同意するまで何も送信されません。ゲームは自前の文章を使います。</HH.Ai.State.NoConsent.Tip>
+  <HH.Ai.State.Off>AIの文章はオフです</HH.Ai.State.Off>
+  <HH.Ai.State.Off.Tip>Hearth &amp; Harborの設定でモジュールを有効にしてください。</HH.Ai.State.Off.Tip>
+  <HH.Ai.State.Offline>AIオフライン</HH.Ai.State.Offline>
+  <HH.Ai.State.Offline.Tip>中継サーバーに接続できませんでした。ゲームは自前の文章を使い、後でまた試します。</HH.Ai.State.Offline.Tip>
+  <HH.Ai.State.Online>AIオンライン</HH.Ai.State.Online>
+  <HH.Ai.State.Online.Tip>中継サーバーが応答しています。AIが書いた文章には印が付きます。</HH.Ai.State.Online.Tip>
+  <HH.Ai.State.Paused>AIは数分間休止中</HH.Ai.State.Paused>
+  <HH.Ai.State.Paused.Tip>続けて複数の要求が失敗しました。ゲームは10分間、自前の文章を使います。</HH.Ai.State.Paused.Tip>
+  <HH.Ai.State.Resting>AIは休憩中</HH.Ai.State.Resting>
+  <HH.Ai.State.Resting.Tip>中継サーバーの共有の1日予算を使い切りました。回復するまでゲームは自前の文章を使います。</HH.Ai.State.Resting.Tip>
+  <HH.Ai.State.Unavailable>AIは現在利用できません</HH.Ai.State.Unavailable>
+  <HH.Ai.State.Unavailable.Tip>中継サーバーは停止中か準備ができていません。ゲームは自前の文章を使います。</HH.Ai.State.Unavailable.Tip>
+  <HH.Ai.Status.LastError>直近のエラーコード: {0}</HH.Ai.Status.LastError>
+  <HH.Ai.Tab.Ottoline>Ottolineに尋ねる</HH.Ai.Tab.Ottoline>
+  <HH.Setting.ai.func.claim>保険金請求の返信レター</HH.Setting.ai.func.claim>
+  <HH.Setting.ai.func.claim.Desc>Clawback Mutual の返信レターは、請求書に書いた内容に応じて変わります。決定と支払額は変わりません。</HH.Setting.ai.func.claim.Desc>
+  <HH.Setting.ai.func.concierge>コンシェルジュ</HH.Setting.ai.func.concierge>
+  <HH.Setting.ai.func.concierge.Desc>宿泊客の運営について、コンシェルジュに質問できます。ゲームがすでに知っているヒントを、言葉を選び直して伝えます。</HH.Setting.ai.func.concierge.Desc>
+  <HH.Setting.ai.func.headline>市場の見出し</HH.Setting.ai.func.headline>
+  <HH.Setting.ai.func.headline.Desc>Rim Exchange のニュース帯の見出しを AI が書きます。見出しの裏にある数字は変わりません。</HH.Setting.ai.func.headline.Desc>
+  <HH.Setting.ai.func.ottoline>Ottoline に相談</HH.Setting.ai.func.ottoline>
+  <HH.Setting.ai.func.ottoline.Desc>銀行の窓口係 Ottoline と話せます。口座、ローン、投資、保険について説明してくれます。AI がなくても、帳簿からの簡単な質問には答えます。</HH.Setting.ai.func.ottoline.Desc>
+  <HH.Setting.ai.func.review>宿泊客の口コミ</HH.Setting.ai.func.review>
+  <HH.Setting.ai.func.review.Desc>帰る客の一部は、自分の言葉で書いた口コミを残します。AI がなければ、定型の短い一文になります。</HH.Setting.ai.func.review.Desc>
+  <HH.Setting.ai.maxPerDay>1 ゲーム日あたりのリクエスト数（ローカル上限）</HH.Setting.ai.maxPerDay>
+  <HH.Setting.ai.maxPerDay.Desc>このゲームが AI に送るリクエスト数の上限です（ゲーム内の 1 日あたり）。0 = ローカル上限なし。中継サーバーには、別に共有の 1 日予算があります。</HH.Setting.ai.maxPerDay.Desc>
+  <HH.Setting.ai.reviewShare>口コミを残す出発グループの割合</HH.Setting.ai.reviewShare>
+  <HH.Setting.ai.reviewShare.Desc>AI リクエストの数を少なく抑えます。25 % なら、およそ 4 組に 1 組です。</HH.Setting.ai.reviewShare.Desc>
+  <HH.Setting.ai.showBadge>AI の文章に印を付ける</HH.Setting.ai.showBadge>
+  <HH.Setting.ai.showBadge.Desc>AI が書いた宿泊客の口コミに注記を加え、チャットとコンシェルジュの欄に AI バッジを表示します。市場の見出しには印は付きません。</HH.Setting.ai.showBadge.Desc>
+</LanguageData>

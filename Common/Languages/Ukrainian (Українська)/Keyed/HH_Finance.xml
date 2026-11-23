@@ -202,5 +202,42 @@
   <HH.Finance.Help.Tip>Відкриває сайт у вашому браузері.</HH.Finance.Help.Tip>
   <HH.Finance.Help.Url1>https://findahelpline.com/</HH.Finance.Help.Url1>
   <HH.Finance.Help.Url2>https://www.gamblingtherapy.org/</HH.Finance.Help.Url2>
-  <HH.Finance.Lottery.FreeTicket>Безкоштовний квиток завдяки удачі {1}: {0}.</HH.Finance.Lottery.FreeTicket>
+  <HH.Finance.Compare>Банківський рахунок і продукти, на рік</HH.Finance.Compare>
+  <HH.Finance.Lottery.BuyCard>Купити квитки</HH.Finance.Lottery.BuyCard>
+  <HH.Finance.Lottery.BuyN>Купити ×{0} ({1})</HH.Finance.Lottery.BuyN>
+  <HH.Finance.Lottery.BuyTicket>Купити цей квиток ({0})</HH.Finance.Lottery.BuyTicket>
+  <HH.Finance.Lottery.CardTickets>Ваші квитки</HH.Finance.Lottery.CardTickets>
+  <HH.Finance.Lottery.Clear>Очистити</HH.Finance.Lottery.Clear>
+  <HH.Finance.Lottery.ColonySold>Квитків продано на цей тираж: {0} · ваша частка поки що: {1}</HH.Finance.Lottery.ColonySold>
+  <HH.Finance.Lottery.ColonyState>Колонійна лотерея: {0}</HH.Finance.Lottery.ColonyState>
+  <HH.Finance.Lottery.ColonyTerms>Умови вашої лотереї</HH.Finance.Lottery.ColonyTerms>
+  <HH.Finance.Lottery.CountTip>Кожен придбаний квиток зберігається тут до тиражу. Після тиражу він переходить до „Останній тираж“, щоб ви побачили, що збіглося.</HH.Finance.Lottery.CountTip>
+  <HH.Finance.Lottery.DaysUnit>{0} дн.</HH.Finance.Lottery.DaysUnit>
+  <HH.Finance.Lottery.Expected>У середньому квиток повертає {0} з {1} (частка виплат {2} %). Решта належить дому.</HH.Finance.Lottery.Expected>
+  <HH.Finance.Lottery.Flash>+{0} квит. · −{1}</HH.Finance.Lottery.Flash>
+  <HH.Finance.Lottery.FlashFree>+{0} квит. · {1} безкоштовно</HH.Finance.Lottery.FlashFree>
+  <HH.Finance.Lottery.FreeTag>безкоштовно</HH.Finance.Lottery.FreeTag>
+  <HH.Finance.Lottery.KeptNote> (показано {0} найкращих із ваших {1} квитків)</HH.Finance.Lottery.KeptNote>
+  <HH.Finance.Lottery.LastDraw>Останній тираж №{0}</HH.Finance.Lottery.LastDraw>
+  <HH.Finance.Lottery.LastDrawLine>Витягнуто: {0}. У вас було {1} квит. на {2} срібла. Найкраще: {3} з 5 чисел{4}. Виграш: {5}.</HH.Finance.Lottery.LastDrawLine>
+  <HH.Finance.Lottery.Matches>{0} з 5 чисел</HH.Finance.Lottery.Matches>
+  <HH.Finance.Lottery.MyCount>Ваші квитки на цей тираж</HH.Finance.Lottery.MyCount>
+  <HH.Finance.Lottery.MyNone>На наступний тираж у вас поки немає квитка.</HH.Finance.Lottery.MyNone>
+  <HH.Finance.Lottery.MySpent>Витрачено на цей тираж: {0}</HH.Finance.Lottery.MySpent>
+  <HH.Finance.Lottery.MySpentFree>Витрачено на цей тираж: {0}, {1} квитків були безкоштовні</HH.Finance.Lottery.MySpentFree>
+  <HH.Finance.Lottery.NoLast>Тиражів ще не було. Перший незабаром.</HH.Finance.Lottery.NoLast>
+  <HH.Finance.Lottery.NotEnough>На рахунку немає {0}.</HH.Finance.Lottery.NotEnough>
+  <HH.Finance.Lottery.Odds>Джекпот: 1 до {0} за квиток. Будь-який виграш: приблизно 1 до {1}.</HH.Finance.Lottery.Odds>
+  <HH.Finance.Lottery.OpenSettings>Змінити в параметрах</HH.Finance.Lottery.OpenSettings>
+  <HH.Finance.Lottery.OpenSettingsTip>Відкриває параметри моду Hearth &amp; Harbor на сторінці банку (категорія Лотерея).</HH.Finance.Lottery.OpenSettingsTip>
+  <HH.Finance.Lottery.Preview>Ваш квиток поки що: {0} з {1} чисел, зірка {2}</HH.Finance.Lottery.Preview>
+  <HH.Finance.Lottery.QuickN>Швидкий вибір</HH.Finance.Lottery.QuickN>
+  <HH.Finance.Lottery.QuickTip>Випадкові квитки, купуються одразу. До {0} за клік.</HH.Finance.Lottery.QuickTip>
+  <HH.Finance.Lottery.SetIn>Ціна, частка виплат, інтервал тиражу й комісія є параметрами моду цього збереження.</HH.Finance.Lottery.SetIn>
+  <HH.Finance.Lottery.SilverUnit>{0} срібла</HH.Finance.Lottery.SilverUnit>
+  <HH.Finance.Lottery.StarMatch> і зірка</HH.Finance.Lottery.StarMatch>
+  <HH.Finance.Lottery.StarNone>не обрано</HH.Finance.Lottery.StarNone>
+  <HH.Finance.Lottery.StateClosed>закрито</HH.Finance.Lottery.StateClosed>
+  <HH.Finance.Lottery.StateOpen>відкрито</HH.Finance.Lottery.StateOpen>
+  <HH.Finance.Lottery.TicketsCount>квитків: {0} · спочатку найновіші</HH.Finance.Lottery.TicketsCount>
 </LanguageData>

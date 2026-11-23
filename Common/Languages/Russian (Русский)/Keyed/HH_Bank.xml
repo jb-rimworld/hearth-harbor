@@ -23,7 +23,7 @@
   <HH.Bank.Greet.Morning>Доброе утро</HH.Bank.Greet.Morning>
   <HH.Bank.Greet.Night>Доброй ночи</HH.Bank.Greet.Night>
   <HH.Bank.Header.Tier>Уровень состояния: {0}</HH.Bank.Header.Tier>
-  <HH.Bank.Header.TierTip>Чистое состояние = счёт + серебро дома − долги: {0} серебра. Уровень меняется только после того, как новое значение продержится целый день. Он задаёт настроение колонии от этого банка (настройка: bank.moodOn).</HH.Bank.Header.TierTip>
+  <HH.Bank.Header.TierTip>Чистое состояние = счёт + взносы в пути + серебро дома + инвестиции (по рыночной стоимости) − долги: {0} серебра. Уровень меняется только после того, как новое значение продержится целый день. Он задаёт настроение колонии от этого банка (настройка: bank.moodOn).</HH.Bank.Header.TierTip>
   <HH.Bank.Hist.Amount>Сумма (5 знаков)</HH.Bank.Hist.Amount>
   <HH.Bank.Hist.Empty>Операций пока нет.</HH.Bank.Hist.Empty>
   <HH.Bank.Hist.TotalFees>Уплачено комиссий всего</HH.Bank.Hist.TotalFees>
@@ -81,7 +81,7 @@
   <HH.Bank.Lobby.Amount>Сумма</HH.Bank.Lobby.Amount>
   <HH.Bank.Lobby.Balance>Баланс</HH.Bank.Lobby.Balance>
   <HH.Bank.Lobby.BalanceTip>Точно: {0} серебра.
-Проценты ежедневно: баланс × (M^({1} × {2} / 60) − 1), где M = {3} за игровой год (ползунок прибыльности). Это {4:0.##} % в день.</HH.Bank.Lobby.BalanceTip>
+Счёт — сберегательный: он приносит {1} % от избытка рынка (M − 1) в год, умноженных на {2} для этого банка. При M = {3} это {4} % в год ({5} % в день). Инвестиции приносят больше, но связаны с риском.</HH.Bank.Lobby.BalanceTip>
   <HH.Bank.Lobby.Cash>Наличные дома</HH.Bank.Lobby.Cash>
   <HH.Bank.Lobby.CashTip>Серебро, валяющееся на ваших домашних картах.</HH.Bank.Lobby.CashTip>
   <HH.Bank.Lobby.ChangeBank>Сменить банк</HH.Bank.Lobby.ChangeBank>
@@ -91,23 +91,22 @@
   <HH.Bank.Lobby.DepDelay>зачисление через {0}</HH.Bank.Lobby.DepDelay>
   <HH.Bank.Lobby.DepInstant>проведено сразу</HH.Bank.Lobby.DepInstant>
   <HH.Bank.Lobby.Deposit>Внести</HH.Bank.Lobby.Deposit>
-  <HH.Bank.Lobby.Direct>Прямое зачисление</HH.Bank.Lobby.Direct>
-  <HH.Bank.Lobby.DirectTip>Кассы ваших предприятий ровно в полночь переводятся на счёт за вычетом {0} %.</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.DirectTip>Кассы ваших предприятий ровно в полночь переводятся на счёт за вычетом {0} %. Меняется в настройках мода (Банк &gt; Счёт).</HH.Bank.Lobby.DirectTip>
   <HH.Bank.Lobby.Interest>Проценты за квадрум</HH.Bank.Lobby.Interest>
   <HH.Bank.Lobby.InterestTip>Проценты, начисленные на баланс с начала квадрума (15 дней).</HH.Bank.Lobby.InterestTip>
   <HH.Bank.Lobby.Max>Макс.</HH.Bank.Lobby.Max>
   <HH.Bank.Lobby.Net>Чистое состояние</HH.Bank.Lobby.Net>
-  <HH.Bank.Lobby.NetTip>Счёт + серебро дома − долги. Определяет ваш уровень состояния.</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.NetTip>Счёт {0} + в пути {1} + серебро дома {2} + инвестиции по рыночной стоимости {3} − долги {4} = {5}.
+Определяет ваш уровень состояния. Лимиты кредитов учитывают только {6} % инвестиций (настройка bank.loanPortfolioShare).</HH.Bank.Lobby.NetTip>
   <HH.Bank.Lobby.Nothing>Пока ничего. Взнос был бы неплохим началом.</HH.Bank.Lobby.Nothing>
   <HH.Bank.Lobby.PendingDep>↓ {0} придёт через {1}</HH.Bank.Lobby.PendingDep>
   <HH.Bank.Lobby.PendingWd>↑ {0} дроппод через {1}</HH.Bank.Lobby.PendingWd>
   <HH.Bank.Lobby.Recent>Недавние операции</HH.Bank.Lobby.Recent>
-  <HH.Bank.Lobby.Trade>Автозачисление торгового серебра</HH.Bank.Lobby.Trade>
-  <HH.Bank.Lobby.TradeTip>Серебро, полученное от торговцев и торговых кораблей, зачисляется на счёт сразу после сделки по той же комиссии, что и прямое зачисление, вместо того чтобы лежать на полу монетами. Требует прямого зачисления. По умолчанию выключено, чтобы следующего торговца можно было по-прежнему оплатить наличными. Караваны не затрагиваются.</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.TradeTip>Серебро от торговцев и торговых кораблей зачисляется на счёт сразу после сделки по той же комиссии, что и прямое зачисление, а не лежит монетами на полу. Нужно прямое зачисление. По умолчанию выключено, чтобы следующего торговца можно было по-прежнему оплатить наличными. Караваны не затрагиваются. Меняется в настройках мода (Банк &gt; Счёт).</HH.Bank.Lobby.TradeTip>
   <HH.Bank.Lobby.Transfer>Внести и снять</HH.Bank.Lobby.Transfer>
   <HH.Bank.Lobby.TransferInfo>На складе: {0}. Внесение {1}. Комиссия за снятие {2}, {3}.</HH.Bank.Lobby.TransferInfo>
   <HH.Bank.Lobby.Transit>В пути</HH.Bank.Lobby.Transit>
-  <HH.Bank.Lobby.TransitTip>Серебро, покинувшее склад, но ещё не зачисленное (задержка зачисления без отделения или банкомата).</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.TransitTip>Серебро в пути: взносы, ещё не зачисленные (задержка зачисления без отделения или банкомата), и выводы, которые ещё находятся в дропподе. Учитывается в чистом состоянии.</HH.Bank.Lobby.TransitTip>
   <HH.Bank.Lobby.WdInstant>наличные у здания сразу</HH.Bank.Lobby.WdInstant>
   <HH.Bank.Lobby.WdPod>дроппод через {0}, {1} ч</HH.Bank.Lobby.WdPod>
   <HH.Bank.Lobby.Withdraw>Снять</HH.Bank.Lobby.Withdraw>
@@ -142,8 +141,7 @@
   <HH.Bank.Msg.Switched>Ваш счёт теперь ведётся в {0}.</HH.Bank.Msg.Switched>
   <HH.Bank.Msg.TradeDeposit>Торговый доход {0} серебра сразу зачислен на ваш счёт в {1}.</HH.Bank.Msg.TradeDeposit>
   <HH.Bank.Open.Button>Открыть счёт</HH.Bank.Open.Button>
-  <HH.Bank.Open.Direct>Направлять выручку прямо в банк в полночь</HH.Bank.Open.Direct>
-  <HH.Bank.Open.DirectTip>Выручка ваших магазинов, таверны и казино попадает на счёт, а не лежит серебром. Позже можно переключить в ночном сейфе или в настройках (bank.directDeposit).</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.DirectTip>Выручка ваших магазинов, таверны и казино попадает на счёт, а не лежит серебром. Это условие банка: меняется в настройках мода (Банк &gt; Счёт, bank.directDeposit).</HH.Bank.Open.DirectTip>
   <HH.Bank.Open.Intro>Выберите банк. Открыть счёт бесплатно; перевести его позже стоит {0} серебра. Пока счёта нет, здесь ничто не беспокоит: ни письма, ни настроение, ни комиссии.</HH.Bank.Open.Intro>
   <HH.Bank.Open.Sub>Ваше серебро — наша забота.</HH.Bank.Open.Sub>
   <HH.Bank.Open.Title>Silverline: открытие счёта</HH.Bank.Open.Title>
@@ -194,21 +192,18 @@
   <HH.Bank.Tab.Terms>Условия</HH.Bank.Tab.Terms>
   <HH.Bank.Terms.AccFee>Плата за счёт в квадум</HH.Bank.Terms.AccFee>
   <HH.Bank.Terms.AccountDaily>Ваш счёт в день</HH.Bank.Terms.AccountDaily>
-  <HH.Bank.Terms.AccountDailyTip>Годовой множитель счёта = M^({0} × {1}) = {2}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.AccountDailyTip>Дневной коэффициент = (годовой множитель)^(1/60) = {0}.</HH.Bank.Terms.AccountDailyTip>
   <HH.Bank.Terms.Anchors>По сложности</HH.Bank.Terms.Anchors>
-  <HH.Bank.Terms.AnchorsHead>M в год / высшая стадия взыскания</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.AnchorsHead>Индекс M в год  /  ваш счёт в год  /  высшая стадия сбора</HH.Bank.Terms.AnchorsHead>
   <HH.Bank.Terms.Atm>Банкомат</HH.Bank.Terms.Atm>
-  <HH.Bank.Terms.Auto>Авто</HH.Bank.Terms.Auto>
-  <HH.Bank.Terms.AutoTip>Снова следовать ползунку сложности ({0} при вашей текущей сложности).</HH.Bank.Terms.AutoTip>
   <HH.Bank.Terms.Daily>В день (индекс)</HH.Bank.Terms.Daily>
   <HH.Bank.Terms.DailyTip>M^(1/60) − 1. Игровой год содержит 60 дней.</HH.Bank.Terms.DailyTip>
   <HH.Bank.Terms.Dep>Вклад</HH.Bank.Terms.Dep>
   <HH.Bank.Terms.Direct>Прямое зачисление</HH.Bank.Terms.Direct>
   <HH.Bank.Terms.Fees>Комиссии вашего банка</HH.Bank.Terms.Fees>
   <HH.Bank.Terms.FeesNote>Все комиссии масштабируются настройкой «уровень банковских комиссий» ({0} %).</HH.Bank.Terms.FeesNote>
-  <HH.Bank.Terms.Preview>1 000 серебра по индексу через один игровой год станут {0}, а через десять — {1}.</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Preview>1 000 серебра по индексу через один игровой год станут {0}, а через десять — {1}. На вашем счёте: {2} и {3}.</HH.Bank.Terms.Preview>
   <HH.Bank.Terms.Profit>Доходность</HH.Bank.Terms.Profit>
-  <HH.Bank.Terms.ProfitIntro>Насколько в среднем растут вложенные деньги за игровой год (60 дней). 1,0 — ни плюса, ни минуса, 1,2 — +20 % в год. Это также определяет стоимость кредитов. Настройка относится к этому сохранению.</HH.Bank.Terms.ProfitIntro>
   <HH.Bank.Terms.StageNote>Лестница взыскания: 1 напоминание, 2 пеня, 3 зачёт из вкладов, 4 дружеский визит, 5 группа изъятия, 6 налёт коллекторов, 7 награда за розыск. Сейчас: останавливается на стадии {0}.</HH.Bank.Terms.StageNote>
   <HH.Bank.Terms.Switch>Смена банка</HH.Bank.Terms.Switch>
   <HH.Bank.Terms.Wd>Снятие (терминал / окошко)</HH.Bank.Terms.Wd>
@@ -231,4 +226,52 @@
   <HH.Bank.Time.DayHour>день {0}, {1}:00</HH.Bank.Time.DayHour>
   <HH.Bank.Time.Hours>{0} ч</HH.Bank.Time.Hours>
   <HH.Bank.Time.Minutes>{0} мин</HH.Bank.Time.Minutes>
+  <HH.Bank.Card.InterestTip>Процент по счёту — это доля ({0}) доходности рынка, умноженная на собственный коэффициент этого банка ({1}). Инвестиции приносят больше.</HH.Bank.Card.InterestTip>
+  <HH.Bank.Card.Numbers>Процент {0} в год  ·  комиссия за взнос {1} %  ·  комиссия за снятие {2} %  ·  плата за счёт {3} за квартал</HH.Bank.Card.Numbers>
+  <HH.Bank.Clerk.Line>Клерк Оттолайн: «{0}»</HH.Bank.Clerk.Line>
+  <HH.Bank.Lobby.DirectState>Прямое зачисление: {0}</HH.Bank.Lobby.DirectState>
+  <HH.Bank.Lobby.Invested>Инвестиции</HH.Bank.Lobby.Invested>
+  <HH.Bank.Lobby.InvestedTip>Акции, фонды, криптовалюта и NFT по сегодняшней рыночной стоимости: {0}. Облигации терпения по текущей стоимости: {1}. Деньги, вложенные в контракты Omen и проекты фракций (по стоимости вложения): {2}.</HH.Bank.Lobby.InvestedTip>
+  <HH.Bank.Lobby.MaxTip>Всё серебро колонии на складе и у торгового маяка. Верхнего предела нет.</HH.Bank.Lobby.MaxTip>
+  <HH.Bank.Lobby.MaxTipWd>Всё, что счёт может выплатить здесь (после комиссий).</HH.Bank.Lobby.MaxTipWd>
+  <HH.Bank.Lobby.ModeDeposit>Взнос</HH.Bank.Lobby.ModeDeposit>
+  <HH.Bank.Lobby.ModeWithdraw>Снять</HH.Bank.Lobby.ModeWithdraw>
+  <HH.Bank.Lobby.Off>выкл.</HH.Bank.Lobby.Off>
+  <HH.Bank.Lobby.On>вкл.</HH.Bank.Lobby.On>
+  <HH.Bank.Lobby.PerYear>в год</HH.Bank.Lobby.PerYear>
+  <HH.Bank.Lobby.Percent>{0} % вашего серебра ({1} из {2})</HH.Bank.Lobby.Percent>
+  <HH.Bank.Lobby.PercentWd>{0} % от суммы, которую счёт может выплатить ({1} из {2})</HH.Bank.Lobby.PercentWd>
+  <HH.Bank.Lobby.Rate>Процентная ставка</HH.Bank.Lobby.Rate>
+  <HH.Bank.Lobby.RateTip>Сколько счёт в среднем зарабатывает за игровой год (60 дней). Сравните с продуктами на вкладке «Инвестиции»:
+{0}</HH.Bank.Lobby.RateTip>
+  <HH.Bank.Lobby.Settings>Настройки</HH.Bank.Lobby.Settings>
+  <HH.Bank.Lobby.TradeState>Серебро от торговцев на счёт: {0}</HH.Bank.Lobby.TradeState>
+  <HH.Bank.Memo.ScenBalance>Стартовый баланс</HH.Bank.Memo.ScenBalance>
+  <HH.Bank.Open.DirectState>Выручка из кассы уходит прямо в банк в полночь: {0}</HH.Bank.Open.DirectState>
+  <HH.Bank.Quip.Invest>Вижу, у вас есть инвестиции. Буду делать вид, что не завидую цифре.</HH.Bank.Quip.Invest>
+  <HH.Bank.Reason.NoSilverAtAll>На складе и у торгового маяка нет серебра.</HH.Bank.Reason.NoSilverAtAll>
+  <HH.Bank.Reason.NothingToWithdraw>Со счёта сейчас нечего выплатить здесь.</HH.Bank.Reason.NothingToWithdraw>
+  <HH.Bank.Scen.Balance>Стартовый баланс</HH.Bank.Scen.Balance>
+  <HH.Bank.Scen.DirectDeposit>Прямое зачисление</HH.Bank.Scen.DirectDeposit>
+  <HH.Bank.Scen.Loan>Стартовый кредит</HH.Bank.Scen.Loan>
+  <HH.Bank.Scen.LoanTip>0 = без кредита. Кредит выплачивается на счёт и погашается взносами, как любой другой кредит.</HH.Bank.Scen.LoanTip>
+  <HH.Bank.Scen.Summary>Начинает со счётом в банке {0}, на котором {1} серебра.</HH.Bank.Scen.Summary>
+  <HH.Bank.Scen.SummaryLoan>Уже должен {0} серебра ({1} дн.).</HH.Bank.Scen.SummaryLoan>
+  <HH.Bank.Site.Atm>Банкомат</HH.Bank.Site.Atm>
+  <HH.Bank.Site.Counter>Банковская стойка</HH.Bank.Site.Counter>
+  <HH.Bank.Tabs.More>Ещё</HH.Bank.Tabs.More>
+  <HH.Bank.Tabs.MoreTip>Ещё страницы банка: {0}</HH.Bank.Tabs.MoreTip>
+  <HH.Bank.Terms.AccountYear>Ваш счёт в год</HH.Bank.Terms.AccountYear>
+  <HH.Bank.Terms.AccountYearTip>Множитель счёта в год = 1 + доля × коэффициент банка × (M − 1) = 1 + {0} × {1} × ({2} − 1) = {3}, но не ниже {4} и не выше {5}, и никогда не выше сберегательного продукта Mattress Plus ({6}).</HH.Bank.Terms.AccountYearTip>
+  <HH.Bank.Terms.Compare>Где деньги приносят больше (за игровой год, в среднем)</HH.Bank.Terms.Compare>
+  <HH.Bank.Terms.CompareAccountTip>Счёт надёжен, но приносит мало. Mattress Plus, облигация и всё, что ниже них, несут больше риска или блокируют деньги и в среднем приносят больше. Сам счёт никогда не приносит больше, чем Mattress Plus.</HH.Bank.Terms.CompareAccountTip>
+  <HH.Bank.Terms.CompareTip>Долгосрочное среднее по этому продукту при текущей прибыльности. Цены колеблются, и один год может быть намного выше или ниже.</HH.Bank.Terms.CompareTip>
+  <HH.Bank.Terms.MInv>(инвестиции: M = {0})</HH.Bank.Terms.MInv>
+  <HH.Bank.Terms.MNow>M = {0} в игровой год</HH.Bank.Terms.MNow>
+  <HH.Bank.Terms.OpenSettings>Открыть настройки мода</HH.Bank.Terms.OpenSettings>
+  <HH.Bank.Terms.OpenSettingsShort>Изменить в настройках</HH.Bank.Terms.OpenSettingsShort>
+  <HH.Bank.Terms.OpenSettingsTip>Открывает параметры мода «Hearth &amp; Harbor» на странице банка. Доходность, комиссии, кредиты и лотерея — настоящие параметры этого сохранения, и задаются они только здесь.</HH.Bank.Terms.OpenSettingsTip>
+  <HH.Bank.Terms.SetIn>Условия банка — параметры этого сохранения. Меняются в «Параметры мода &gt; Hearth &amp; Harbor &gt; Банк» (Проценты и доходность, Комиссии, Кредиты, Взыскания, Лотерея). 1,0 — это ни плюса, ни минуса, 1,2 — это +20 % в год по индексу; счёт получает только его долю. Кредиты тоже следуют за M.</HH.Bank.Terms.SetIn>
+  <HH.Bank.Window.Title>Silverline</HH.Bank.Window.Title>
+  <HH.Bank.Yield.Account>Ваш банковский счёт</HH.Bank.Yield.Account>
 </LanguageData>

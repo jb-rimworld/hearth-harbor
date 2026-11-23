@@ -209,7 +209,7 @@
   <HH.UI.Guests.Col.Wing>Крыло</HH.UI.Guests.Col.Wing>
   <HH.UI.Guests.Col.Handling>Обращение</HH.UI.Guests.Col.Handling>
   <HH.UI.Guests.Col.Leaves>Уйдёт через</HH.UI.Guests.Col.Leaves>
-  <HH.UI.Guests.HandlingTip>Нажмите для переключения: Базовое → Сопровождение → Вербовка. Сопровождение и вербовка требуют колонистов с работой «Гостеприимство».</HH.UI.Guests.HandlingTip>
+  <HH.UI.Guests.HandlingTip>Нажмите, чтобы сменить обращение. Сопровождение, Вербовка и Обращение в веру требуют колонистов с работой «Приём гостей»; Обращение в веру показывается только для гостей другой идеологии (Идеология).</HH.UI.Guests.HandlingTip>
   <HH.UI.Overview.CatToday>сегодня {0}</HH.UI.Overview.CatToday>
   <HH.UI.Overview.CatWeek>7 дней {0}</HH.UI.Overview.CatWeek>
   <HH.UI.Overview.Week>Доход за последние 7 дней</HH.UI.Overview.Week>
@@ -313,4 +313,26 @@
   <HH.Setting.core.ironBank.Desc>Взыскание долга всегда доходит до высшей стадии, при любой сложности. Никто тихо не откладывает ваши взносы.</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.peacefulUnderworld.Desc>Тёмные заведения работают без насилия: нет ямы для боёв, допросов, охоты на людей, клиники и рэкета. Подсобка, скупщик и курильня остаются.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>Планирование гостей и проверки комнат идут вдвое реже. Помогает на слабых компьютерах; гости могут реагировать немного позже.</HH.Setting.core.perfMode.Desc>
+  <HH.Kitchen.Cookbook.ColCuisine>Кухня</HH.Kitchen.Cookbook.ColCuisine>
+  <HH.Kitchen.Cookbook.ColDish>Блюдо</HH.Kitchen.Cookbook.ColDish>
+  <HH.Kitchen.Cookbook.ColLevel>Уровень</HH.Kitchen.Cookbook.ColLevel>
+  <HH.Kitchen.Cookbook.ColPrice>Цена</HH.Kitchen.Cookbook.ColPrice>
+  <HH.Kitchen.Cookbook.ColSkill>Навык</HH.Kitchen.Cookbook.ColSkill>
+  <HH.Kitchen.Cookbook.ColStations>Готовится на</HH.Kitchen.Cookbook.ColStations>
+  <HH.Setting.core.windowScale>Размер окон Hearth &amp; Harbor</HH.Setting.core.windowScale>
+  <HH.Setting.core.windowScale.Desc>Все окна Hearth &amp; Harbor и Silverline увеличиваются или уменьшаются на этот множитель (поверх автоматического размера для больших экранов).</HH.Setting.core.windowScale.Desc>
+  <HH.UI.DevGroup.Desc>Инструменты разработчика Hearth &amp; Harbor для этого здания ({0}). Показываются только в режиме разработчика; отключить группировку можно в настройках гостиницы.</HH.UI.DevGroup.Desc>
+  <HH.UI.DevGroup.Label>Разработка: Hearth &amp; Harbor</HH.UI.DevGroup.Label>
+  <HH.UI.Diag.Lines>строк: {0}</HH.UI.Diag.Lines>
+  <HH.UI.Diff.Jump>Перейти к</HH.UI.Diff.Jump>
+  <HH.UI.Diff.JumpTop>Уровень и ползунок</HH.UI.Diff.JumpTop>
+  <HH.UI.GuestTab.CollapseTip>Нажмите, чтобы свернуть</HH.UI.GuestTab.CollapseTip>
+  <HH.UI.GuestTab.ExpandTip>Нажмите, чтобы развернуть</HH.UI.GuestTab.ExpandTip>
+  <HH.UI.Handling.Convert>Обращение в веру</HH.UI.Handling.Convert>
+  <HH.UI.Handling.Convert.Tip>Как сопровождение, плюс разговоры о вашей идеологии. Каждый разговор подтачивает уверенность гостя в своей; при нуле он принимает вашу. Навязчивый разговор может обидеть (настроение −4, меньше трат). Нужен DLC «Идеология» и гость другой идеологии.</HH.UI.Handling.Convert.Tip>
+  <HH.UI.Page.Sub.casino>Столы, выручка и то, как каждая игра держится против своих шансов.</HH.UI.Page.Sub.casino>
+  <HH.UI.Page.Sub.city>Кинотеатр, салон, галерея, парк, такси и охрана: что построено и что приносит.</HH.UI.Page.Sub.city>
+  <HH.UI.Page.Sub.guests>Все, кто живёт в вашей гостинице или приходит в неё. Щёлкните строку, чтобы перейти к гостю; щёлкните ячейку обращения, чтобы его сменить.</HH.UI.Page.Sub.guests>
+  <HH.UI.Page.Sub.overview>Сегодня одним взглядом: гости, выручка и состояние каждого заведения.</HH.UI.Page.Sub.overview>
+  <HH.UI.Page.Sub.underworld>Шепотки, веса прибытия и выручка тёмной стороны.</HH.UI.Page.Sub.underworld>
 </LanguageData>

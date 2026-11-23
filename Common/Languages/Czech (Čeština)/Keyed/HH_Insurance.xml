@@ -285,4 +285,172 @@ Za čtvrtrok: {1}</HH.Ins.UI.Price.Tip>
   <HH.Enum.TrickMode.Follows>Podle prodejního tlaku</HH.Enum.TrickMode.Follows>
   <HH.Enum.TrickMode.On>Vždy zapnuto</HH.Enum.TrickMode.On>
   <HH.Enum.TrickMode.Off>Vypnuto</HH.Enum.TrickMode.Off>
+  <HH.Ins.Btn.FillForm>Vyplnit formulář pojistné události</HH.Ins.Btn.FillForm>
+  <HH.Ins.Bulk.All>Vše</HH.Ins.Bulk.All>
+  <HH.Ins.Bulk.Colony>celá kolonie</HH.Ins.Bulk.Colony>
+  <HH.Ins.Bulk.Confirm>Podepsat {0} pojistek hned? První pojistné celkem: {1}. Poté {2} každých {3} dní. Každou pojistku lze ještě zrušit jednotlivě.</HH.Ins.Bulk.Confirm>
+  <HH.Ins.Bulk.Done>Podepsáno {0} z {1} pojistek.</HH.Ins.Bulk.Done>
+  <HH.Ins.Bulk.Lead>Zaškrtněte pojistky, vyberte stupeň a částku, zvolte, kdo bude kryt, a Clawback Mutual podepíše vše najednou. Dostanete jeden souhrnný dopis místo jednoho na každou pojistku. Čekací doba běží zvlášť u každé pojistky.</HH.Ins.Bulk.Lead>
+  <HH.Ins.Bulk.NoMoney>nedostatek peněz na první pojistné</HH.Ins.Bulk.NoMoney>
+  <HH.Ins.Bulk.NoRiders>Doplňky tu nejsou předem zaškrtnuté. Sleva za svazek roste s každou pojistkou (nejvýše {0}).</HH.Ins.Bulk.NoRiders>
+  <HH.Ins.Bulk.None>Žádné</HH.Ins.Bulk.None>
+  <HH.Ins.Bulk.NothingToSign>Zatím není co podepsat: zaškrtněte pojistku a aspoň jednoho kolonistu.</HH.Ins.Bulk.NothingToSign>
+  <HH.Ins.Bulk.PerPerson>na kolonistu</HH.Ins.Bulk.PerPerson>
+  <HH.Ins.Bulk.Policies>Pojistky</HH.Ins.Bulk.Policies>
+  <HH.Ins.Bulk.Sign>Podepsat {0} pojistek</HH.Ins.Bulk.Sign>
+  <HH.Ins.Bulk.Spendable>K dispozici: {0}</HH.Ins.Bulk.Spendable>
+  <HH.Ins.Bulk.Stopped>Peníze došly dřív, než se dokončilo; zbytek nebyl podepsán.</HH.Ins.Bulk.Stopped>
+  <HH.Ins.Bulk.SumPerHead>Částka na kolonistu: {0}</HH.Ins.Bulk.SumPerHead>
+  <HH.Ins.Bulk.Summary>{0} pojistek k podpisu. První pojistné: {1}. Poté {2} každých {3} dní.</HH.Ins.Bulk.Summary>
+  <HH.Ins.Bulk.Title>Pojistit všechny</HH.Ins.Bulk.Title>
+  <HH.Ins.Bulk.TooExpensive>K dispozici máte jen {0}: seznam se podepíše, dokud na to peníze stačí.</HH.Ins.Bulk.TooExpensive>
+  <HH.Ins.Bulk.Who>Kolonisté</HH.Ins.Bulk.Who>
+  <HH.Ins.Cancel.Step>Krok {0} z {1}</HH.Ins.Cancel.Step>
+  <HH.Ins.Change.AlreadyPending>Změna je už podána. Nejprve ji stáhněte.</HH.Ins.Change.AlreadyPending>
+  <HH.Ins.Change.Apply>Podat změnu</HH.Ins.Change.Apply>
+  <HH.Ins.Change.CancelPending>Tato pojistka se ruší. Nejprve stáhněte zrušení.</HH.Ins.Change.CancelPending>
+  <HH.Ins.Change.CannotPayFee>Poplatek za změnu {0} nebylo možné strhnout.</HH.Ins.Change.CannotPayFee>
+  <HH.Ins.Change.Close>Zavřít</HH.Ins.Change.Close>
+  <HH.Ins.Change.Filed>Změna podána. Platí od {0}.</HH.Ins.Change.Filed>
+  <HH.Ins.Change.Lead>Změňte stupeň, částku nebo doplňky u této běžící pojistky. Nové podmínky začnou při další platbě a pojistné se přepočítá. Zrušení zůstává, kde bylo.</HH.Ins.Change.Lead>
+  <HH.Ins.Change.Limit>Tuto pojistku lze změnit jen {0}× za čtvrtletí.</HH.Ins.Change.Limit>
+  <HH.Ins.Change.NoChange>Zatím nic nezměněno.</HH.Ins.Change.NoChange>
+  <HH.Ins.Change.NotActive>Tato pojistka není aktivní.</HH.Ins.Change.NotActive>
+  <HH.Ins.Change.Part.RiderOff>bez doplňku {0}</HH.Ins.Change.Part.RiderOff>
+  <HH.Ins.Change.Part.RiderOn>doplněk {0}</HH.Ins.Change.Part.RiderOn>
+  <HH.Ins.Change.Part.Riders>ostatní doplňky</HH.Ins.Change.Part.Riders>
+  <HH.Ins.Change.Part.Sum>částka {0} na {1}</HH.Ins.Change.Part.Sum>
+  <HH.Ins.Change.Part.Tier>stupeň {0} na {1}</HH.Ins.Change.Part.Tier>
+  <HH.Ins.Change.Riders>Doplňky</HH.Ins.Change.Riders>
+  <HH.Ins.Change.Sum.Cheaper>To je o {0} méně za platbu.</HH.Ins.Change.Sum.Cheaper>
+  <HH.Ins.Change.Sum.Dearer>To je o {0} více za platbu.</HH.Ins.Change.Sum.Dearer>
+  <HH.Ins.Change.Sum.Discount>Vaše sleva za věrnost zůstává.</HH.Ins.Change.Sum.Discount>
+  <HH.Ins.Change.Sum.Fee>Poplatek za změnu: {0}, strhne se při podání.</HH.Ins.Change.Sum.Fee>
+  <HH.Ins.Change.Sum.Lower>Snížení krytí nemá čekací dobu.</HH.Ins.Change.Sum.Lower>
+  <HH.Ins.Change.Sum.Premium>Pojistné: nyní {0}, pak {1}</HH.Ins.Change.Sum.Premium>
+  <HH.Ins.Change.Sum.Title>Co to znamená</HH.Ins.Change.Sum.Title>
+  <HH.Ins.Change.Sum.Wait>Čekací doba po navýšení: {0} dní. Události v jejím průběhu se stále posuzují podle původního krytí.</HH.Ins.Change.Sum.Wait>
+  <HH.Ins.Change.Sum.When>Platí od {0}.</HH.Ins.Change.Sum.When>
+  <HH.Ins.Change.SumRange>Povolený rozsah: {0} až {1}.</HH.Ins.Change.SumRange>
+  <HH.Ins.Change.Title>Změnit {0}</HH.Ins.Change.Title>
+  <HH.Ins.Change.TooOld>Krytí penze nelze v penzijním věku zvýšit.</HH.Ins.Change.TooOld>
+  <HH.Ins.End.Pension>nárok na penzi zanikl</HH.Ins.End.Pension>
+  <HH.Ins.Form.AiNote>Clawback Mutual může vaše vyjádření odpovědět osobně. Částku ani rozhodnutí tím nemění.</HH.Ins.Form.AiNote>
+  <HH.Ins.Form.Closed>Toto okno pro podání je zavřené.</HH.Ins.Form.Closed>
+  <HH.Ins.Form.Deadline>Lhůta: ještě {0} na podání této pojistné události.</HH.Ins.Form.Deadline>
+  <HH.Ins.Form.Event>Co se stalo: {0}.\nPojistka: {1} ({2}).</HH.Ins.Form.Event>
+  <HH.Ins.Form.Items>Dotčeno: {0}. Hodnota: {1}.</HH.Ins.Form.Items>
+  <HH.Ins.Form.Later>Později</HH.Ins.Form.Later>
+  <HH.Ins.Form.NoAiNote>Vaše vyjádření se uloží k pojistné události. Rozhodnutí na něm nezávisí; rozhoduje jen volba výplaty.</HH.Ins.Form.NoAiNote>
+  <HH.Ins.Form.Nobody>nikdo</HH.Ins.Form.Nobody>
+  <HH.Ins.Form.Payout.Materials>Materiály v kapslích</HH.Ins.Form.Payout.Materials>
+  <HH.Ins.Form.Payout.Silver>Stříbro</HH.Ins.Form.Payout.Silver>
+  <HH.Ins.Form.Placeholder>Popište vlastními slovy, co se stalo (nepovinné).</HH.Ins.Form.Placeholder>
+  <HH.Ins.Form.Sent>Nárok podán ({0}).</HH.Ins.Form.Sent>
+  <HH.Ins.Form.Statement>Vaše vyjádření</HH.Ins.Form.Statement>
+  <HH.Ins.Form.Submit>Podat nárok</HH.Ins.Form.Submit>
+  <HH.Ins.Form.Title>Formulář nároku: {0}</HH.Ins.Form.Title>
+  <HH.Ins.Form.Value>Hodnota škody: {0}.</HH.Ins.Form.Value>
+  <HH.Ins.Letter.Batch.Body>Clawback Mutual přivítá naráz {0} nových pojistek.</HH.Ins.Letter.Batch.Body>
+  <HH.Ins.Letter.Batch.Skipped>{0} nelze sjednat:</HH.Ins.Letter.Batch.Skipped>
+  <HH.Ins.Letter.Batch.Title>Sjednáno pojistek: {0}</HH.Ins.Letter.Batch.Title>
+  <HH.Ins.Letter.Batch.Total>Při vyúčtování: {0} každých {1} dní. První pojistné se strhlo z {2}.</HH.Ins.Letter.Batch.Total>
+  <HH.Ins.Letter.Change.Done.Body>{0} nyní běží jako {1} s pojistnou částkou {2}. Pojistné: {3}.</HH.Ins.Letter.Change.Done.Body>
+  <HH.Ins.Letter.Change.Done.Title>Změna platí: {0}</HH.Ins.Letter.Change.Done.Title>
+  <HH.Ins.Letter.Change.Done.Wait>Události během následujících {0} se stále posuzují podle předchozího krytí.</HH.Ins.Letter.Change.Done.Wait>
+  <HH.Ins.Letter.Change.Fee>Správní poplatek: {0}.</HH.Ins.Letter.Change.Fee>
+  <HH.Ins.Letter.Change.Filed.Body>Clawback Mutual přijal vaši žádost o změnu pojistky {0}: {1}.\nPlatit začne od {2}; pojistné se pak přepočítá.</HH.Ins.Letter.Change.Filed.Body>
+  <HH.Ins.Letter.Change.Filed.Title>Změna podána: {0}</HH.Ins.Letter.Change.Filed.Title>
+  <HH.Ins.Letter.Change.Wait>Čekací doba po navýšení: {0} dní.</HH.Ins.Letter.Change.Wait>
+  <HH.Ins.Letter.Decision.Statement>K vašemu vyjádření: {0}</HH.Ins.Letter.Decision.Statement>
+  <HH.Ins.Letter.Expired.Body>Lhůta pro nárok {0} ({1}) uplynula bez formuláře. Clawback Mutual nelituje ničeho.</HH.Ins.Letter.Expired.Body>
+  <HH.Ins.Letter.Expired.Title>Nárok propadl: {0}</HH.Ins.Letter.Expired.Title>
+  <HH.Ins.Letter.Filed.Statement>Vaše vyjádření: „{0}“</HH.Ins.Letter.Filed.Statement>
+  <HH.Ins.Letter.Possible.Body>{0} je pojistná událost podle {1}. Můžete podat nárok.</HH.Ins.Letter.Possible.Body>
+  <HH.Ins.Letter.Possible.Deadline>Lhůta: {0} od této chvíle. Poté nárok propadne.</HH.Ins.Letter.Possible.Deadline>
+  <HH.Ins.Letter.Possible.Death>{0} zemřel(a). {1} může vyplatit. Můžete podat nárok.</HH.Ins.Letter.Possible.Death>
+  <HH.Ins.Letter.Possible.How>Otevřete formulář nároku, zaškrtněte pár políček, případně napište větu a odešlete ho. Výsledek se rozhodne stejně jako vždy.</HH.Ins.Letter.Possible.How>
+  <HH.Ins.Letter.Possible.Title>Nárok možný: {0}</HH.Ins.Letter.Possible.Title>
+  <HH.Ins.Letter.Possible.Waiting>Událost nastala v čekací době pojistky. Oddělení pojistných událostí si toho všimne.</HH.Ins.Letter.Possible.Waiting>
+  <HH.Ins.Letter.Reminder.Body>Nárok na {0} je nutné podat do {1}.</HH.Ins.Letter.Reminder.Body>
+  <HH.Ins.Letter.Reminder.Title>Blíží se lhůta: {0}</HH.Ins.Letter.Reminder.Title>
+  <HH.Ins.Log.BulkSigned>Hromadný nákup: sjednáno {0} z {1} pojistek.</HH.Ins.Log.BulkSigned>
+  <HH.Ins.Log.ChangeApplied>{0} změněno: {1}, pojistná částka {2}.</HH.Ins.Log.ChangeApplied>
+  <HH.Ins.Log.ChangeFiled>{0}: změna podána, platí od {1}.</HH.Ins.Log.ChangeFiled>
+  <HH.Ins.Log.ChangeWithdrawn>{0}: změna vzata zpět.</HH.Ins.Log.ChangeWithdrawn>
+  <HH.Ins.Log.OppExpired>Lhůta pro podání uplynula bez nároku: {0} ({1}).</HH.Ins.Log.OppExpired>
+  <HH.Ins.Log.OppFiled>{0}: formulář nároku podán (nároků: {1}).</HH.Ins.Log.OppFiled>
+  <HH.Ins.Log.OppOpened>{0}: pojistná událost, nárok možný po dobu {1} dní.</HH.Ins.Log.OppOpened>
+  <HH.Ins.Log.PensionStrike>Penzijní pravidlo: {0}, porušení: {1}.</HH.Ins.Log.PensionStrike>
+  <HH.Ins.Neg.OddsTip>Šance na tento postup: {0}</HH.Ins.Neg.OddsTip>
+  <HH.Ins.Neg.RoundOf>Kolo {0} z {1}</HH.Ins.Neg.RoundOf>
+  <HH.Ins.Neg.Why.Approved>Již schváleno: není o čem vyjednávat.</HH.Ins.Neg.Why.Approved>
+  <HH.Ins.Neg.Why.Closed>Vyjednávání je uzavřeno.</HH.Ins.Neg.Why.Closed>
+  <HH.Ins.Neg.Why.NotDecided>Nárok ještě nebyl rozhodnut.</HH.Ins.Neg.Why.NotDecided>
+  <HH.Ins.Pension.Alert.Body>Penzisté s více než {0} pracovními hodinami v rozvrhu přicházejí o penzi po krocích: {1}.\n\nNastavte přebytečné hodiny na Cokoli nebo Radost. Tlačítko Opravit rozvrh na kartě Pojištění to udělá za vás.</HH.Ins.Pension.Alert.Body>
+  <HH.Ins.Pension.Alert.Label>Penze v ohrožení</HH.Ins.Pension.Alert.Label>
+  <HH.Ins.Pension.FixSchedule>Opravit rozvrh</HH.Ins.Pension.FixSchedule>
+  <HH.Ins.Pension.Fixed>{0}: {1} pracovních hodin přepnuto na Cokoli.</HH.Ins.Pension.Fixed>
+  <HH.Ins.Pension.Legal.Body>{0} má v rozvrhu {1} pracovních hodin (povoleno {2}). Brix &amp; Partners tento čtvrtletí proměnili porušení ve varování.</HH.Ins.Pension.Legal.Body>
+  <HH.Ins.Pension.Legal.Title>Penzijní pravidlo: varování pro {0}</HH.Ins.Pension.Legal.Title>
+  <HH.Ins.Pension.Notice.Body>{0} během týdne dosáhne 60 let. Od té doby se penze vyplácí jen tehdy, když rozvrh obsahuje nejvýše {1} hodin práce denně. Cokoli, Radost, Spánek a Meditace se počítají jako volný čas. Dvě porušení stojí penzi za dané období, tři nárok na penzi.</HH.Ins.Pension.Notice.Body>
+  <HH.Ins.Pension.Notice.Title>Penzijní pravidlo: {0}</HH.Ins.Pension.Notice.Title>
+  <HH.Ins.Pension.Strike1.Body>{0} má v rozvrhu {1} pracovních hodin; povoleno je {2}. První porušení. Další kontrola je za dva dny. Ještě dvě porušení a nárok na penzi zanikne.</HH.Ins.Pension.Strike1.Body>
+  <HH.Ins.Pension.Strike1.Title>Penzijní porušení 1 ze 3: {0}</HH.Ins.Pension.Strike1.Title>
+  <HH.Ins.Pension.Strike2.Body>{0} má v rozvrhu {1} pracovních hodin; povoleno je {2}. Druhé porušení: penze za toto období ({3}) propadá. Jedno další a nárok se ztratí.</HH.Ins.Pension.Strike2.Body>
+  <HH.Ins.Pension.Strike2.Title>Penzijní porušení 2 ze 3: {0}</HH.Ins.Pension.Strike2.Title>
+  <HH.Ins.Pension.Strike3.Body>{0} má v rozvrhu {1} pracovních hodin; povoleno je {2}. Třetí porušení: nárok na penzi končí a pojistka se ruší.</HH.Ins.Pension.Strike3.Body>
+  <HH.Ins.Pension.Strike3.Title>Penze ztracena: {0}</HH.Ins.Pension.Strike3.Title>
+  <HH.Ins.Pension.Warn.Body>{0} má v rozvrhu {1} pracovních hodin; povoleno je {2}. Jde jen o varování.</HH.Ins.Pension.Warn.Body>
+  <HH.Ins.Pension.Warn.Title>Penzijní pravidlo: {0} pracuje příliš mnoho</HH.Ins.Pension.Warn.Title>
+  <HH.Ins.Status.Buy>Pojistit…</HH.Ins.Status.Buy>
+  <HH.Ins.Status.ColonyCover>krytí kolonie</HH.Ins.Status.ColonyCover>
+  <HH.Ins.Status.Column>Krytí</HH.Ins.Status.Column>
+  <HH.Ins.Status.ColumnTip>Stav pojištění: penze, zdraví, úraz, odpovědnost, právní ochrana. Kliknutím zobrazíte přehled.</HH.Ins.Status.ColumnTip>
+  <HH.Ins.Status.Foot>Zeleně: aktivní. Žlutě: čekací doba. Oranžově: čeká na zrušení. Červeně: penze v ohrožení. Šedě: nepojištěno. Krytí kolonie platí pro každého kolonistu.</HH.Ins.Status.Foot>
+  <HH.Ins.Status.Kind.Accident>Úraz</HH.Ins.Status.Kind.Accident>
+  <HH.Ins.Status.Kind.Health>Zdraví</HH.Ins.Status.Kind.Health>
+  <HH.Ins.Status.Kind.Legal>Právní ochrana</HH.Ins.Status.Kind.Legal>
+  <HH.Ins.Status.Kind.Liability>Odpovědnost</HH.Ins.Status.Kind.Liability>
+  <HH.Ins.Status.Kind.Pension>Penze</HH.Ins.Status.Kind.Pension>
+  <HH.Ins.Status.No>ne</HH.Ins.Status.No>
+  <HH.Ins.Status.NoTip>Pro tohoto kolonistu žádné {0}.</HH.Ins.Status.NoTip>
+  <HH.Ins.Status.NotInsurable>nelze pojistit</HH.Ins.Status.NotInsurable>
+  <HH.Ins.Status.NotInsurableTip>Otroci, vězni, hosté a zvířata se pojistit nedají.</HH.Ins.Status.NotInsurableTip>
+  <HH.Ins.Status.PensionOk>Rozvrh: {0} pracovních hodin (povoleno {1}).</HH.Ins.Status.PensionOk>
+  <HH.Ins.Status.PensionRisk>Rozvrh: {0} pracovních hodin, povoleno jen {1}. Penze je v ohrožení.</HH.Ins.Status.PensionRisk>
+  <HH.Ins.Status.State.Active>aktivní</HH.Ins.Status.State.Active>
+  <HH.Ins.Status.State.AtRisk>v ohrožení</HH.Ins.Status.State.AtRisk>
+  <HH.Ins.Status.State.CancelPending>čeká na zrušení</HH.Ins.Status.State.CancelPending>
+  <HH.Ins.Status.State.None>žádné</HH.Ins.Status.State.None>
+  <HH.Ins.Status.State.Waiting>čekací doba</HH.Ins.Status.State.Waiting>
+  <HH.Ins.Status.Strikes>zbývající porušení: {0}</HH.Ins.Status.Strikes>
+  <HH.Ins.Status.Title>Pojištění: {0}</HH.Ins.Status.Title>
+  <HH.Ins.Status.Yes>ano</HH.Ins.Status.Yes>
+  <HH.Ins.Tab.Cover>Kolonisté</HH.Ins.Tab.Cover>
+  <HH.Ins.Tab.Pawn>Pojištění</HH.Ins.Tab.Pawn>
+  <HH.Ins.UI.Claim.AiReply>Odpověď na vaše vyjádření: {0}</HH.Ins.UI.Claim.AiReply>
+  <HH.Ins.UI.Claim.Form>Formulář: {0}</HH.Ins.UI.Claim.Form>
+  <HH.Ins.UI.Claim.Statement>Vaše vyjádření: {0}</HH.Ins.UI.Claim.Statement>
+  <HH.Ins.UI.Claims.History>Historie</HH.Ins.UI.Claims.History>
+  <HH.Ins.UI.Claims.Left>zbývá {0}</HH.Ins.UI.Claims.Left>
+  <HH.Ins.UI.Claims.Open>Otevřené nároky</HH.Ins.UI.Claims.Open>
+  <HH.Ins.UI.Claims.WindowLine>{0} ({1}). Hodnota: {2}, předmětů: {3}. Nárok podejte na formuláři před uplynutím lhůty.</HH.Ins.UI.Claims.WindowLine>
+  <HH.Ins.UI.Claims.Windows>Otevřené lhůty pro podání</HH.Ins.UI.Claims.Windows>
+  <HH.Ins.UI.Cover.Colonist>Kolonista</HH.Ins.UI.Cover.Colonist>
+  <HH.Ins.UI.Cover.Lead>Kdo je na co pojištěn. Penze a krytí úrazu jsou osobní; zdravotní, odpovědnostní a právní krytí (*) platí pro celou kolonii.</HH.Ins.UI.Cover.Lead>
+  <HH.Ins.UI.Cover.None>Žádní kolonisté.</HH.Ins.UI.Cover.None>
+  <HH.Ins.UI.CoverAll>Pojistit všechny…</HH.Ins.UI.CoverAll>
+  <HH.Ins.UI.CoverAll.Tip>Sjednat pojistky pro všechny kolonisty najednou.</HH.Ins.UI.CoverAll.Tip>
+  <HH.Ins.UI.CoverAllOne>Všichni kolonisté…</HH.Ins.UI.CoverAllOne>
+  <HH.Ins.UI.Mine.Change>Změnit krytí…</HH.Ins.UI.Mine.Change>
+  <HH.Ins.UI.Mine.ChangeTip>Změnit stupeň, částku nebo doplňky. Platí od příštího vyúčtování.</HH.Ins.UI.Mine.ChangeTip>
+  <HH.Ins.UI.Mine.PendingChange>Změna podána, platí od {0}</HH.Ins.UI.Mine.PendingChange>
+  <HH.Ins.UI.Mine.PensionLost>Nárok na penzi ztracen.</HH.Ins.UI.Mine.PensionLost>
+  <HH.Ins.UI.Mine.PensionOk>Penzijní pravidlo splněno: {0} pracovních hodin (povoleno {1}), {2} na Cokoli.</HH.Ins.UI.Mine.PensionOk>
+  <HH.Ins.UI.Mine.PensionRisk>Penze v ohrožení: {0} pracovních hodin, povoleno jen {1} ({2} na Cokoli).</HH.Ins.UI.Mine.PensionRisk>
+  <HH.Ins.UI.Mine.PensionSuspended>Penze za toto období propadla (porušení pravidla), obnoví se za {0}.</HH.Ins.UI.Mine.PensionSuspended>
+  <HH.Ins.UI.Mine.PensionTip>Penzijní pravidlo: v rozvrhu nejvýše {0} hodin práce denně. Cokoli se počítá jako volný čas, ale kolonista na Cokoli si může stále zvolit práci.</HH.Ins.UI.Mine.PensionTip>
+  <HH.Ins.UI.Mine.UpgradeWait>Čekací doba po navýšení: události během následujících {0} se stále posuzují podle starého krytí.</HH.Ins.UI.Mine.UpgradeWait>
+  <HH.Ins.UI.Mine.WithdrawChange>Vzít změnu zpět</HH.Ins.UI.Mine.WithdrawChange>
 </LanguageData>

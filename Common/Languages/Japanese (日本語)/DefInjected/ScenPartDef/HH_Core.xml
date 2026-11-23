@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ScenRules.description>このシナリオの新しいコロニーのために、Hearth &amp; Harbor と Silverline のモジュール、ホスティングの難易度、コンテンツの強度、コロニーごとの設定を定める。ここで設定された項目だけがテンプレートを上書きする。プレイヤーはストーリーテラーのページでなお全てを変更できる。</HH_ScenRules.description>
+  <HH_ScenRules.label>Hearth &amp; Harbor のルール</HH_ScenRules.label>
+  <HH_ScenSetting.description>このシナリオの新しいコロニーのために、Hearth &amp; Harbor または Silverline の設定ひとつを値に定める。</HH_ScenSetting.description>
+  <HH_ScenSetting.label>Hearth &amp; Harbor の設定</HH_ScenSetting.label>
+  <HH_ScenStartingResearch.description>コロニー開始時に、Hearth &amp; Harbor または Silverline の研究プロジェクトがひとつ完了済みになる。</HH_ScenStartingResearch.description>
+  <HH_ScenStartingResearch.label>Hearth &amp; Harbor の研究を済ませた状態で開始</HH_ScenStartingResearch.label>
+</LanguageData>

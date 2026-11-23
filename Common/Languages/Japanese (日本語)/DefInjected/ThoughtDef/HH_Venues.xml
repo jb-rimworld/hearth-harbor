@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServedBusy.stages.0.description>客がカウンターに途切れず来て、ずっと何かしら仕事があった。仕事とはそうあるべきだ。</HH_ServedBusy.stages.0.description>
+  <HH_ServedBusy.stages.0.label>良いシフト</HH_ServedBusy.stages.0.label>
+  <HH_ServedBusy.stages.1.description>客が次々と。注文は客が言い終える前に分かっていた。良い種類の疲れ。</HH_ServedBusy.stages.1.description>
+  <HH_ServedBusy.stages.1.label>忙しいシフト</HH_ServedBusy.stages.1.label>
+  <HH_ServedBusy.stages.2.description>部屋全体が一斉に何かを求め、私はその全てについていった。あのシフトは誇らしい。</HH_ServedBusy.stages.2.description>
+  <HH_ServedBusy.stages.2.label>目が回るほど忙しい</HH_ServedBusy.stages.2.label>
+  <HH_ServedIdle.stages.0.description>カウンターの後ろに長いこと立っていたが、誰も来なかった。同じグラスを三度磨いた。</HH_ServedIdle.stages.0.description>
+  <HH_ServedIdle.stages.0.label>カウンターで退屈</HH_ServedIdle.stages.0.label>
+  <HH_ServedIdle.stages.1.description>カウンターで何時間も、やることがなかった。もっと役に立つことができたはずだ。</HH_ServedIdle.stages.1.description>
+  <HH_ServedIdle.stages.1.label>シフト中ずっと立ちっぱなし</HH_ServedIdle.stages.1.label>
+  <HH_ServedIdle.stages.2.description>来ない客を待つだけのシフト丸ごと。いったい何のためにここに立っているんだ？</HH_ServedIdle.stages.2.description>
+  <HH_ServedIdle.stages.2.label>無意味なシフト</HH_ServedIdle.stages.2.label>
+  <HH_WokenByBell.stages.0.description>眠りの真ん中で誰かが鐘を鳴らした。仕事は仕事。大きな音で。</HH_WokenByBell.stages.0.description>
+  <HH_WokenByBell.stages.0.label>夜の鐘で起こされた</HH_WokenByBell.stages.0.label>
+  <HH_WokenByBell.stages.1.description>眠りの真ん中で誰かが鐘を鳴らした。まあ、それが仕事だ。眠りはあとで取る。</HH_WokenByBell.stages.1.description>
+  <HH_WokenByBell.stages.1.label>夜の鐘で起こされた</HH_WokenByBell.stages.1.label>
+</LanguageData>

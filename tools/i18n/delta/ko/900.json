@@ -1,0 +1,8 @@
+{
+ "d:ScenarioDef/HH_Scen_HarborTown.label": "Harbor Town",
+ "d:ScenarioDef/HH_Scen_HarborTown.description": "Three friends inherit a weathered roadside inn above a quiet natural harbour, right where the trade caravans pass. The roof leaks, the sign fell down years ago and the beds are bare - but the road is busy, the water is clear and the neighbours are friendly.\n\nBuild it back up: a few guest beds first, then a tavern and a market, and one day a whole little town that people travel to see.\n\nA bright, gentle start for Hearth & Harbor. Pairs well with Hetty Hearthwell, the storyteller who likes builders.",
+ "d:ScenarioDef/HH_Scen_HarborTown.scenario.summary": "Reopen an old inn by the harbour and grow it into a town people travel to see. A bright tourism start.",
+ "d:ScenarioDef/HH_Scen_BackRoom.label": "The Back Room",
+ "d:ScenarioDef/HH_Scen_BackRoom.description": "Your waystation on the old smugglers' road is failing. Then the debts are bought - quietly, all of them - by the Black Ledger. They do not want the money back. Not yet. They want the room behind the kitchen, a table with no questions, and a host who looks the other way.\n\nThe underworld already knows your name. Make it rich, make it fear you, or make it go away.\n\nA dark, morally grey start for the shady side of Hearth & Harbor: back room, fence, drug lounge, fight pit and an account at a bank that never forgets.",
+ "d:ScenarioDef/HH_Scen_BackRoom.scenario.summary": "A failing waystation in debt to the Black Ledger, with the underworld already at the door. A dark, shady start."
+}

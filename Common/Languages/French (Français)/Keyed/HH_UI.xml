@@ -209,7 +209,7 @@
   <HH.UI.Guests.Col.Wing>Aile</HH.UI.Guests.Col.Wing>
   <HH.UI.Guests.Col.Handling>Prise en charge</HH.UI.Guests.Col.Handling>
   <HH.UI.Guests.Col.Leaves>Départ dans</HH.UI.Guests.Col.Leaves>
-  <HH.UI.Guests.HandlingTip>Cliquer pour changer : Base → Accompagner → Recruter. Accompagner et Recruter demandent des colons ayant le travail Accueil.</HH.UI.Guests.HandlingTip>
+  <HH.UI.Guests.HandlingTip>Cliquez pour changer la prise en charge. Accompagner, Recruter et Convertir demandent des colons ayant le travail Accueil ; Convertir n'apparaît que pour les invités d'une autre idéologie (Idéologie).</HH.UI.Guests.HandlingTip>
   <HH.UI.Overview.CatToday>aujourd'hui {0}</HH.UI.Overview.CatToday>
   <HH.UI.Overview.CatWeek>7 jours {0}</HH.UI.Overview.CatWeek>
   <HH.UI.Overview.Week>Revenus, 7 derniers jours</HH.UI.Overview.Week>
@@ -313,4 +313,26 @@
   <HH.Setting.core.ironBank.Desc>Le recouvrement des dettes monte toujours au stade le plus élevé, quelle que soit la difficulté. Personne ne reporte discrètement vos échéances.</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.peacefulUnderworld.Desc>Les lieux sombres fonctionnent sans violence : pas d'arène de combat, pas d'interrogatoires, pas de chasse aux personnes, pas de clinique, pas de racket. L'arrière-salle, le receleur et le salon de drogue restent.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>La planification des invités et les contrôles de pièces tournent deux fois moins souvent. Utile sur les ordinateurs lents ; les invités peuvent réagir un peu plus tard.</HH.Setting.core.perfMode.Desc>
+  <HH.Kitchen.Cookbook.ColCuisine>Cuisine</HH.Kitchen.Cookbook.ColCuisine>
+  <HH.Kitchen.Cookbook.ColDish>Plat</HH.Kitchen.Cookbook.ColDish>
+  <HH.Kitchen.Cookbook.ColLevel>Niveau</HH.Kitchen.Cookbook.ColLevel>
+  <HH.Kitchen.Cookbook.ColPrice>Prix</HH.Kitchen.Cookbook.ColPrice>
+  <HH.Kitchen.Cookbook.ColSkill>Compétence</HH.Kitchen.Cookbook.ColSkill>
+  <HH.Kitchen.Cookbook.ColStations>Cuisiné à</HH.Kitchen.Cookbook.ColStations>
+  <HH.Setting.core.windowScale>Taille des fenêtres de Hearth &amp; Harbor</HH.Setting.core.windowScale>
+  <HH.Setting.core.windowScale.Desc>Toutes les fenêtres de Hearth &amp; Harbor et de Silverline grandissent ou rétrécissent selon ce facteur (en plus de la taille automatique pour les grands écrans).</HH.Setting.core.windowScale.Desc>
+  <HH.UI.DevGroup.Desc>Outils de développement de Hearth &amp; Harbor pour ce bâtiment ({0}). Affichés seulement en mode développeur ; désactivez le regroupement dans les réglages de l'auberge.</HH.UI.DevGroup.Desc>
+  <HH.UI.DevGroup.Label>Dev : Hearth &amp; Harbor</HH.UI.DevGroup.Label>
+  <HH.UI.Diag.Lines>{0} lignes</HH.UI.Diag.Lines>
+  <HH.UI.Diff.Jump>Aller à</HH.UI.Diff.Jump>
+  <HH.UI.Diff.JumpTop>Palier et curseur</HH.UI.Diff.JumpTop>
+  <HH.UI.GuestTab.CollapseTip>Cliquer pour replier</HH.UI.GuestTab.CollapseTip>
+  <HH.UI.GuestTab.ExpandTip>Cliquer pour déplier</HH.UI.GuestTab.ExpandTip>
+  <HH.UI.Handling.Convert>Convertir</HH.UI.Handling.Convert>
+  <HH.UI.Handling.Convert.Tip>Comme Accompagner, plus des discussions sur votre idéologie. Chaque discussion ébranle la certitude de l'invité envers la sienne ; à zéro, il adopte la vôtre. Une discussion trop insistante peut froisser (humeur −4, dépenses réduites). Nécessite l'extension Idéologie et un invité d'une autre idéologie.</HH.UI.Handling.Convert.Tip>
+  <HH.UI.Page.Sub.casino>Salles, recettes et la marge de chaque jeu.</HH.UI.Page.Sub.casino>
+  <HH.UI.Page.Sub.city>Cinéma, salon, galerie, parc, taxi et sécurité : ce qui est construit et ce que cela rapporte.</HH.UI.Page.Sub.city>
+  <HH.UI.Page.Sub.guests>Tous ceux qui logent ou rendent visite à votre auberge. Cliquez sur une ligne pour aller à l'invité ; cliquez sur la case de prise en charge pour la changer.</HH.UI.Page.Sub.guests>
+  <HH.UI.Page.Sub.overview>Aujourd'hui en un coup d'œil : invités, recettes et l'état de chaque commerce.</HH.UI.Page.Sub.overview>
+  <HH.UI.Page.Sub.underworld>Rumeurs, poids des arrivées et recettes du côté obscur.</HH.UI.Page.Sub.underworld>
 </LanguageData>

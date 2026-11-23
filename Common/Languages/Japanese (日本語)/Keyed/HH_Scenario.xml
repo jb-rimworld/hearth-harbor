@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Scen.BackRoom.Intro>手紙は厚手の黒い紙に印刷され、葉巻のかすかな匂いがしました。\n\n「あなたの借金は清算されました。すべて、です。厨房の裏の部屋については、改めてご連絡します。きちんと片付けておいてください。」\n\nあなたの宿場には、新しい出資者がつきました。彼らは辛抱強く、礼儀正しく、そして数字を決して忘れません。\n\nこの開始では Hearth &amp; Harbor のより暗い内容を使います。モッドの設定でいつでも和らげられます。</HH.Scen.BackRoom.Intro>
+  <HH.Scen.Editor.Editing>このシナリオの Hearth &amp; Harbor のルールを編集中。</HH.Scen.Editor.Editing>
+  <HH.Scen.Editor.ModuleResetTip>このモジュールはプレイヤーのテンプレートに任せます。</HH.Scen.Editor.ModuleResetTip>
+  <HH.Scen.Editor.ModulesIntro>このシナリオで ON または OFF にするモジュールです。触れていないモジュールは、プレイヤーのテンプレートに従います。</HH.Scen.Editor.ModulesIntro>
+  <HH.Scen.Editor.Note>このシナリオが設定するのは、ここで変更した項目（琥珀色の印）だけです。印のない行は既定値を示しています。新しいゲームでは、その値はプレイヤー自身のテンプレートから来ます。「リセット」で、行またはモジュールをテンプレートに戻せます。</HH.Scen.Editor.Note>
+  <HH.Scen.Editor.Side>シナリオのルール</HH.Scen.Editor.Side>
+  <HH.Scen.Editor.Title>このシナリオの Hearth &amp; Harbor ルール</HH.Scen.Editor.Title>
+  <HH.Scen.HarborTown.Intro>権利証書はあわただしく署名され、弁護士はお茶も飲まずに帰ってしまいました。こうして宿は今あなたのものです。静かな港を見下ろす古びた宿、キャラバンでいっぱいの街道、そして客は一人もいません。\n\n床を掃き、屋根を直し、ベッドを整えましょう。看板も掛けて。まもなく誰かがドアをノックするでしょう。よくもてなせば、その人は街道中に話して回ってくれます。\n\nヒント: 建設者の語り部は Hetty Hearthwell です。右上の Hearth &amp; Harbor ガイドが、手順を一つずつ説明します。</HH.Scen.HarborTown.Intro>
+  <HH.Scen.Module.Off>オフ</HH.Scen.Module.Off>
+  <HH.Scen.Module.On>オン</HH.Scen.Module.On>
+  <HH.Scen.Module.Template>テンプレートどおり</HH.Scen.Module.Template>
+  <HH.Scen.Picker.Nerd>マニア向け設定</HH.Scen.Picker.Nerd>
+  <HH.Scen.Picker.Search>検索…</HH.Scen.Picker.Search>
+  <HH.Scen.Picker.Title>Hearth &amp; Harbor の設定を選ぶ</HH.Scen.Picker.Title>
+  <HH.Scen.Rules.Content>内容: {0}</HH.Scen.Rules.Content>
+  <HH.Scen.Rules.Count>{0} 件の設定が指定されています。個別の設定は「Hearth &amp; Harbor の設定」パーツで追加してください。</HH.Scen.Rules.Count>
+  <HH.Scen.Rules.Discovered>地下世界はすでに発見済み</HH.Scen.Rules.Discovered>
+  <HH.Scen.Rules.More>その他の設定… （{0} 件指定）</HH.Scen.Rules.More>
+  <HH.Scen.Rules.MoreTip>このシナリオの Hearth &amp; Harbor 設定をすべて開きます。ここで変更したものだけが、シナリオで設定されます。</HH.Scen.Rules.MoreTip>
+  <HH.Scen.Rules.SumContent>内容: {0}</HH.Scen.Rules.SumContent>
+  <HH.Scen.Rules.SumDiscovered>地下世界はすでにあなたを知っている</HH.Scen.Rules.SumDiscovered>
+  <HH.Scen.Rules.SumMore>ほか {0} 件の設定</HH.Scen.Rules.SumMore>
+  <HH.Scen.Rules.SumNothing>すべてテンプレートどおり</HH.Scen.Rules.SumNothing>
+  <HH.Scen.Rules.SumOff>オフ: {0}</HH.Scen.Rules.SumOff>
+  <HH.Scen.Rules.SumOn>オン: {0}</HH.Scen.Rules.SumOn>
+  <HH.Scen.Rules.SumTier>宿泊の難易度 {0} %（{1}）</HH.Scen.Rules.SumTier>
+  <HH.Scen.Rules.SummaryHead>Hearth &amp; Harbor の設定:</HH.Scen.Rules.SummaryHead>
+  <HH.Scen.Rules.TierTemplate>宿泊の難易度: テンプレートどおり</HH.Scen.Rules.TierTemplate>
+  <HH.Scen.Rules.TierTip>チェックすると、このシナリオで宿泊の難易度（0〜500 %）を設定します。チェックを外すと、プレイヤーのテンプレートで決まります。</HH.Scen.Rules.TierTip>
+  <HH.Scen.SetByScenario>シナリオで設定</HH.Scen.SetByScenario>
+  <HH.Scen.Setting.Intro>Hearth &amp; Harbor の設定</HH.Scen.Setting.Intro>
+  <HH.Scen.Setting.Pick>設定を選ぶ…</HH.Scen.Setting.Pick>
+  <HH.Scen.Setting.Unknown>不明な設定（モジュールがない？）</HH.Scen.Setting.Unknown>
+</LanguageData>

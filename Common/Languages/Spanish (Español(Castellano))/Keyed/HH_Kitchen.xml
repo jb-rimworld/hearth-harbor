@@ -2,8 +2,6 @@
 <LanguageData>
   <HH.Kitchen.Missing>Falta: {0}</HH.Kitchen.Missing>
   <HH.Kitchen.RecipeInfo>Dispositivos: {0}. Pasos: {1}.</HH.Kitchen.RecipeInfo>
-  <HH.Kitchen.Finishing>un toque final (leche, huevos, chocolate, cerveza, bayas o setas)</HH.Kitchen.Finishing>
-  <HH.Kitchen.Finishing2>un segundo toque final (cerveza, bayas o setas)</HH.Kitchen.Finishing2>
   <HH.Kitchen.Inspiration>Inspiración: {0}</HH.Kitchen.Inspiration>
   <HH.Kitchen.Cuisine>Cocina: {0}</HH.Kitchen.Cuisine>
   <HH.Kitchen.Cooked>Cocinado en: {0} ({1})</HH.Kitchen.Cooked>
@@ -125,4 +123,9 @@
   <HH.Kitchen.NoNeighbours>No hay otro dispositivo de cocina al alcance.</HH.Kitchen.NoNeighbours>
   <HH.Kitchen.Neighbours>Al alcance: {0}</HH.Kitchen.Neighbours>
   <HH.Kitchen.FreshHours>Fresco durante {0} h</HH.Kitchen.FreshHours>
+  <HH.Kitchen.FinishingTouch>un toque final ({0})</HH.Kitchen.FinishingTouch>
+  <HH.Kitchen.FinishingTouch2>un segundo toque final ({0})</HH.Kitchen.FinishingTouch2>
+  <HH.Kitchen.Or>o</HH.Kitchen.Or>
+  <HH.Setting.kitchen.cookSounds>Sonidos de cocinar y comer</HH.Setting.kitchen.cookSounds>
+  <HH.Setting.kitchen.cookSounds.Desc>Cada tipo de cocción (picar, hervir a fuego lento, asar a la parrilla, hornear, freír, cocer al vapor, amasar, ahumar, enfriar) tiene su propio sonido y un pequeño efecto; los platos terminados suenan con un aviso y los buenos platos provocan una reacción alegre. Desactivado: el sonido de sartén de siempre para todo.</HH.Setting.kitchen.cookSounds.Desc>
 </LanguageData>
