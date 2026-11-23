@@ -76,6 +76,10 @@ Dependency direction: `Hearth → Silverline → Hearth.Core`. Silverline must n
 - `Hearth/Contracts/HearthTabs.cs` — pages of the main tab.
 - `Silverline/Contracts/BankApi.cs` — `BankApi.Impl`, bank window tabs.
 - Shared work types `HH_Hosting`, `HH_Serving` and research tab `HH_Hospitality` (Common/Defs/Hospitality); research tab `HH_Banking` (Common/Defs/Core).
+- `Hearth.Core/Foundation/ModuleGate.cs` — per-save module hiding: def → module by folder (`Common/Defs/<Folder>`, table `FolderModules`)
+  or `<li Class="Hearth.ModuleGateExtension"><module>X</module></li>`. A module switched off hides its buildings (architect + placement;
+  placed ones stay and say so), research (tab; progress kept), recipes/bills, work givers (work types stay), joy givers and incidents.
+  A new def folder of a switchable module must be added to `FolderModules`. `ModuleGate.Changed` fires after every switch.
 - Also: `Payments.TryPayout` / `GuestApi.CreditGuest` (payouts, refunds), optional `IModuleScoped` on providers, `Ledger.Post(..., category)` + `Ledger.DayIncome`,
   `ScribeMoney.Look`, `HearthGame.OnGameInit` (clear static caches here), `BankTab.Module`.
 
