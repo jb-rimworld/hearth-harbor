@@ -37,6 +37,8 @@ namespace Hearth.Guests
         public const string PriceBase = "inn.priceBase";
         public const string PriceTolerance = "inn.priceTolerance";
         public const string CardThreshold = "inn.cardThreshold";
+        public const string DoubleBedFactor = "inn.doubleBedFactor";
+        public const string CoupleWish = "inn.coupleWish";
         // Reputation
         public const string ExpectationOffset = "inn.expectationOffset";
         public const string GoodwillCapQuadrum = "inn.goodwillCapQuadrum";
@@ -46,6 +48,8 @@ namespace Hearth.Guests
         // Wing, handling, reports
         public const string AutoWing = "inn.autoWing";
         public const string InsultBase = "inn.insultBase";
+        public const string ConvertPower = "inn.convertPower";
+        public const string GroupDevGizmos = "inn.groupDevGizmos";
         public const string ReportMode = "inn.reportMode";
 
         const ModuleId M = ModuleId.Inn;
@@ -101,6 +105,11 @@ namespace Hearth.Guests
             HSettings.Silver(M, "Money", CardThreshold, 300, 0, 2000, "Card payment from budget",
                 "Guests from industrial or more advanced factions with a budget above this pay by card instead of carrying silver.", nerd: true);
 
+            HSettings.Float(M, "Money", DoubleBedFactor, 1.6f, 1f, 3f, "Double bed price factor",
+                "A bed for two earns this many times the price of a single bed. A couple in one double bed pays it together, each half, so they pay less than for two singles.", hardMin: 1f, hardMax: 10f);
+            HSettings.Bool(M, "Money", CoupleWish, true, "Couples wish for a double bed",
+                "Couples who arrive together prefer one double bed. Getting it cheers them up a little, ending up in two single beds annoys them a little. Never changes prices.");
+
             HSettings.Float(M, "Reputation", ExpectationOffset, 0f, -0.5f, 0.5f, "Guest expectations",
                 "Added to every guest's expectation (0 … 1). Higher means harder to please.", nerd: true, hardMin: -1f, hardMax: 1f,
                 tiers: new[] { -0.3f, -0.1f, -0.05f, 0f, 0.05f, 0.1f, 0.2f });
@@ -119,6 +128,10 @@ namespace Hearth.Guests
                 "The first guest bed creates Guest Wing 1 around its room; later guest rooms join the nearest wing.");
             HSettings.Percent(M, "Handling", InsultBase, 0.15f, 0f, 0.6f, "Recruitment insult risk",
                 "Base chance that a recruitment talk offends the guest (lower with better social skill).", nerd: true);
+            HSettings.Percent(M, "Handling", ConvertPower, 1f, 0.1f, 3f, "Conversion strength",
+                "How strongly a talk in the 'Convert' handling shakes a guest's certainty in their own ideoligion (100 % = the usual strength). Needs the Ideology DLC.", hardMin: 0f, hardMax: 10f);
+            HSettings.Bool(M, "Interface", GroupDevGizmos, true, "Group our dev buttons",
+                "In dev mode, the DEV buttons of Hearth & Harbor buildings are folded into one 'Dev: Hearth & Harbor' button so the gizmo row stays readable. Vanilla and other mods' buttons are never touched.", nerd: true);
             HSettings.Enum(M, "Reports", ReportMode, InnReportMode.Letter, "Departure reports",
                 "How the short report after each stay reaches you: as a letter, as a quiet message, or not at all.");
         }
@@ -144,6 +157,9 @@ namespace Hearth.Guests
         public static ThoughtDef HH_GuestWaited;
         public static ThoughtDef HH_GuestBellNobody;
         public static ThoughtDef HH_GuestWaitingRoom;
+        public static ThoughtDef HH_GuestPreached;
+        public static ThoughtDef HH_SleptTogether;
+        public static ThoughtDef HH_WantedDoubleBed;
         public static HistoryEventDef HH_HostedGuests;
         static InnDefOf() { DefOfHelper.EnsureInitializedInCtor(typeof(InnDefOf)); }
     }

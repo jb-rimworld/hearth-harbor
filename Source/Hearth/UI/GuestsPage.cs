@@ -54,11 +54,11 @@ namespace Hearth.Shell
             return st?.WingLabel.NullOrEmpty() == false ? st.WingLabel : "—";
         }
 
-        /// <summary>C2: the handling cell cycles Basics → Accompany → Recruit (same rule as the guest gizmo).</summary>
+        /// <summary>C2: the handling cell cycles Basics → Accompany → Recruit → Convert (Convert only with Ideology and a guest of another ideoligion; same rule as the guest gizmo).</summary>
         public static HandlingMode CycleHandling(Pawn p, GuestInfo gi)
         {
             if (gi == null) return HandlingMode.Basics;
-            var next = (HandlingMode)(((int)gi.Handling + 1) % 3);
+            var next = HandlingRules.Next(p, gi.Handling);
             ITab_HH_Guest.SetHandling(p, gi, next);
             return next;
         }

@@ -139,7 +139,7 @@ namespace Hearth.ShopsFood
                 if (!VenueApi.InHours(v) && VS.B(VS.NightBell))
                 {
                     VenueState.RingBell(Sign, VS.I(VS.NightBellWaitHours) * GenDate.TicksPerHour);
-                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "HH.Venue.BellRung".TranslateOr("*ding*"), 3f);
+                    NightBell.Ring(v, pawn);   // sound, swinging bell, and the call to the colonists who can hear it (F06/F16)
                 }
             };
             yield return ring;

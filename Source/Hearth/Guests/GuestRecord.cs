@@ -66,6 +66,14 @@ namespace Hearth.Guests
         public string Gift;
         public int GoodwillPoints;
         public string Outcome;
+        /// <summary>F02: arrived with a partner (lover, fiancé, spouse) in the group, so would like one double bed. Never changes prices.</summary>
+        public bool WantsDouble;
+        /// <summary>F02: the double-bed wish has been settled (granted or missed), so its small mood and satisfaction effects happen once per stay.</summary>
+        public bool DoubleWishDone;
+        /// <summary>F04: ideoligion certainty when the Convert handling started (0 = not measured), for the progress line.</summary>
+        public float ConvertStartCertainty;
+        /// <summary>F04: how many conversation attempts reached the guest in Convert handling.</summary>
+        public int ConvertTalks;
 
         // not saved: hot-path cache of GuestWings.WingFor
         internal Area_HH_GuestWing CachedWing;
@@ -149,6 +157,10 @@ namespace Hearth.Guests
             Scribe_Values.Look(ref Gift, "gift");
             Scribe_Values.Look(ref GoodwillPoints, "goodwillPoints");
             Scribe_Values.Look(ref Outcome, "outcome");
+            Scribe_Values.Look(ref WantsDouble, "wantsDouble");
+            Scribe_Values.Look(ref DoubleWishDone, "doubleWishDone");
+            Scribe_Values.Look(ref ConvertStartCertainty, "convertStartCertainty");
+            Scribe_Values.Look(ref ConvertTalks, "convertTalks");
             Scribe_Values.Look(ref Highlight, "highlight");
             Scribe_Values.Look(ref HighlightPrio, "highlightPrio");
 
@@ -157,6 +169,8 @@ namespace Hearth.Guests
             if (Scribe.mode == LoadSaveMode.LoadingVars) { Events.Clear(); if (tmpEvents != null) Events.AddRange(tmpEvents); }
             Scribe_Collections.Look(ref SpentBy, "spentBy", LookMode.Value, LookMode.Value, ref tmpK, ref tmpV);
             if (Scribe.mode == LoadSaveMode.PostLoadInit && SpentBy == null) SpentBy = new Dictionary<string, long>();
+            // F04: the Convert mode (3) needs Ideology; without it (DLC removed) or an unknown value the guest is simply handled as Basics
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && ((int)Handling < 0 || (int)Handling > (int)HandlingMode.Convert || (Handling == HandlingMode.Convert && !ModsConfig.IdeologyActive))) Handling = HandlingMode.Basics;
         }
 
         internal static void MoneyLook(ref Money m, string label)

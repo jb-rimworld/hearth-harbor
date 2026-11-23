@@ -89,11 +89,14 @@ namespace Hearth.Guests
             Scribe_Values.Look(ref ManualPrice, "hhManualPrice", 0);
         }
 
-        // ---- combined bed selector protocol v1 (RimWard draws "Use: Colonist / Guest / Patient"; see RimWard README) ----
+        // ---- combined bed selector protocol (RimWard, see docs/rimward.md)
         /// <summary>Protocol version this mod speaks. RimWard only takes over the bed button when this is >= 1.</summary>
         public static int BedSelectorVersion => 1;
-        /// <summary>True when Hearth &amp; Harbor itself draws the selector (not yet): RimWard then only hides its own toggles.</summary>
-        public static bool DrawsBedSelector => false;
+        /// <summary>
+        /// 1.1.0 (F10): Hearth &amp; Harbor draws the one bed button itself (<see cref="Command_HH_BedUse"/>), with Patient and Surgery entries when RimWard is there.
+        /// RimWard therefore only hides its own toggles and drives the bed through its BedApi, which this mod calls.
+        /// </summary>
+        public static bool DrawsBedSelector => true;
         /// <summary>The "Guest" entry exists for this bed (Inn module on, colony-owned humanlike bed).</summary>
         public bool SelectorAvailable { get { var b = Bed; return Modules.On(ModuleId.Inn) && b != null && b.Faction == Faction.OfPlayer && b.def.building.bed_humanlike; } }
         /// <summary>Why this bed cannot become a guest bed right now; null when it can (or already is one).</summary>
@@ -106,14 +109,14 @@ namespace Hearth.Guests
             }
         }
         static System.Reflection.MethodInfo otherDraws; static bool otherDrawsResolved;
-        /// <summary>Another mod (RimWard) draws the combined selector for this bed, so our own toggle stays hidden.</summary>
+        /// <summary>An older RimWard that still draws its own combined selector (it does not know that we draw it now): then we draw no role button of our own.</summary>
         public static bool OtherDrawsSelector(Building_Bed bed)
         {
             if (!otherDrawsResolved)
             {
                 otherDrawsResolved = true;
                 try { otherDraws = GenTypes.GetTypeInAnyAssembly("RimWard.BedSelector")?.GetMethod("Draws", new[] { typeof(Building_Bed) }); } catch (Exception) { }
-                if (otherDraws != null) HLog.Info("Inn", "RimWard.BedSelector found: RimWard draws the combined bed button, the Guest bed toggle moves into it");
+                if (otherDraws != null) HLog.Info("Inn", "RimWard.BedSelector found: if it still draws its own bed button, the role button of Hearth & Harbor stays hidden");
             }
             if (otherDraws == null) return false;
             try { return (bool)otherDraws.Invoke(null, new object[] { bed }); } catch (Exception) { return false; }
@@ -121,46 +124,46 @@ namespace Hearth.Guests
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (!Modules.On(ModuleId.Inn)) yield break;
             var b = Bed;
-            if (b == null || b.Faction != Faction.OfPlayer || !b.def.building.bed_humanlike) yield break;
-            // RimWard draws the combined bed selector (which includes "Guest"): only our toggle is hidden, the price button stays
+            if (b == null || b.Faction != Faction.OfPlayer || !b.def.building.bed_humanlike || !b.ForColonists) yield break;
+            // without the Inn module and without RimWard nothing here has any effect (N08)
+            if (!Modules.On(ModuleId.Inn) && !BedRoles.RimWardPresent) yield break;
             if (!OtherDrawsSelector(b))
             {
-            var cmd = new Command_Toggle
-            {
-                defaultLabel = "HH.Inn.GuestBed.Label".TranslateOr("Guest bed"),
-                defaultDesc = "HH.Inn.GuestBed.Desc".TranslateOr("Rent this bed to guests. Colonists will not sleep here; guests only sleep in guest beds. The price per night follows the room, the bed and how many beds share the room."),
-                icon = Icon,
-                isActive = () => guestBed,
-                toggleAction = () => SetGuestBed(!guestBed),
-                hotKey = KeyBindingDefOf.Misc5,
-            };
-            if (!guestBed && (b.Medical || !b.ForColonists))
-                cmd.Disable("HH.Inn.GuestBed.NotColonistBed".TranslateOr("Only a normal colonist bed (not medical, prisoner or slave) can be a guest bed."));
-            yield return cmd;
+                // the one button: role + price chip (a failure inside only costs the button, never the inspector)
+                // Core guard, not Inn: with Inn paused RimWard has still hidden its own button, so ours must stay (a paused Inn then only has no price chip)
+                Gizmo g = Guard.Run(ModuleId.Core, "Inn.BedUseGizmo", () => (Gizmo)new Command_HH_BedUse(this, b), null);
+                if (g != null) yield return g;
+                yield break;
             }
+            // an older RimWard draws the role button: only the price control stays ours
             if (!guestBed) yield break;
             yield return new Command_Action
             {
                 defaultLabel = "HH.Inn.PriceMode.Gizmo".TranslateOr("Price: {0}").Replace("{0}", PriceModeLabel(PriceMode)),
                 defaultDesc = "HH.Inn.PriceMode.GizmoDesc".TranslateOr("Change the price of this bed: free (for friends and recruits), 25 % off, the automatic price, or 25 % more. Applies to the next booking."),
                 icon = InnTex.Price,
-                action = () => Find.WindowStack.Add(new FloatMenu(new List<FloatMenuOption>
-                {
-                    new FloatMenuOption(PriceModeLabel(BedPriceMode.Free), () => SetPriceModeAll(BedPriceMode.Free)),
-                    new FloatMenuOption(PriceModeLabel(BedPriceMode.Discount), () => SetPriceModeAll(BedPriceMode.Discount)),
-                    new FloatMenuOption(PriceModeLabel(BedPriceMode.Auto), () => SetPriceModeAll(BedPriceMode.Auto)),
-                    new FloatMenuOption(PriceModeLabel(BedPriceMode.Premium), () => SetPriceModeAll(BedPriceMode.Premium)),
-                    new FloatMenuOption("HH.Inn.PriceMode.ManualSet".TranslateOr("Fixed price…"), () => Find.WindowStack.Add(new Dialog_Slider(
-                        v => "HH.Inn.PriceMode.ManualValue".TranslateOr("{0} silver per night").Replace("{0}", v.ToString()), 0, 500,
-                        v => SetPriceModeAll(BedPriceMode.Manual, v), Math.Max(0, ManualPrice)))),
-                })),
+                action = OpenPriceMenu,
             };
         }
 
+        /// <summary>The price menu of a guest bed: free, −25 %, automatic, +25 %, fixed price (applies to every selected guest bed).</summary>
+        public void OpenPriceMenu()
+        {
+            Find.WindowStack.Add(new FloatMenu(new List<FloatMenuOption>
+            {
+                new FloatMenuOption(PriceModeLabel(BedPriceMode.Free), () => SetPriceModeAll(BedPriceMode.Free)),
+                new FloatMenuOption(PriceModeLabel(BedPriceMode.Discount), () => SetPriceModeAll(BedPriceMode.Discount)),
+                new FloatMenuOption(PriceModeLabel(BedPriceMode.Auto) + (PriceMode == BedPriceMode.Auto ? "  ✓" : ""), () => SetPriceModeAll(BedPriceMode.Auto)),
+                new FloatMenuOption(PriceModeLabel(BedPriceMode.Premium), () => SetPriceModeAll(BedPriceMode.Premium)),
+                new FloatMenuOption("HH.Inn.PriceMode.ManualSet".TranslateOr("Fixed price…"), () => Find.WindowStack.Add(new Dialog_Slider(
+                    v => "HH.Inn.PriceMode.ManualValue".TranslateOr("{0} silver per night").Replace("{0}", v.ToString()), 0, 500,
+                    v => SetPriceModeAll(BedPriceMode.Manual, v), Math.Max(0, ManualPrice)))),
+            }));
+        }
+
         /// <summary>Applies the mode to every selected guest bed (multi-select works like vanilla gizmos).</summary>
-        void SetPriceModeAll(BedPriceMode m, int manualPrice = 0)
+        internal void SetPriceModeAll(BedPriceMode m, int manualPrice = 0)
         {
             bool any = false;
             foreach (var o in Find.Selector.SelectedObjectsListForReading)
@@ -187,13 +190,14 @@ namespace Hearth.Guests
             if (!IsGuestBed) return "HH.Inn.GuestBed.Inactive".TranslateOr("Guest bed (inactive while medical, prisoner or slave bed)");
             var q = GuestBedPricing.Quote(Bed);
             if (q == null) return "HH.Inn.GuestBed.Label".TranslateOr("Guest bed");
-            string s = "HH.Inn.GuestBed.Inspect".TranslateOr("Guest bed: {0} silver/night ({1})")
-                .Replace("{0}", q.Price.WholeSilver.ToString()).Replace("{1}", q.Breakdown);
+            // short (F10): the price with the room class, the wing line and who is booked or comes next; the full price breakdown is in the bed button's tooltip
+            string s = "HH.Inn.GuestBed.InspectShort".TranslateOr("Guest bed: {0} silver/night · {1}")
+                .Replace("{0}", q.Price.WholeSilver.ToString()).Replace("{1}", q.ClassLabel + (q.Slots >= 2 ? " · " + "HH.Inn.Occupancy.DoubleBed".TranslateOr("double bed") : ""));
             string wing = WingStatus.LineAt(parent.Map, parent.Position);
             if (wing != null) s += "\n" + wing;
             // B7: who comes next (only while the bed is free: an occupied bed shows its guest instead)
-            var owner = Bed.OwnersForReading.FirstOrDefault(o => GuestRegistry.IsRegisteredGuest(o));
-            if (owner != null) s += "\n" + "HH.Inn.GuestBed.Booked".TranslateOr("Booked by {0}").Replace("{0}", owner.LabelShortCap);
+            var owners = Bed.OwnersForReading.Where(o => GuestRegistry.IsRegisteredGuest(o)).ToList();
+            if (owners.Count > 0) s += "\n" + "HH.Inn.GuestBed.Booked".TranslateOr("Booked by {0}").Replace("{0}", string.Join(" + ", owners.Select(o => o.LabelShortCap)));
             else
             {
                 var next = parent.Map.GetComponent<MapComponent_HH_GuestScheduler>()?.NextArrival();
@@ -285,17 +289,21 @@ namespace Hearth.Guests
         public float RoomScore;
         public string ClassKey, ClassLabel, OccupancyLabel, QualityLabel;
         public float ClassMult, Occupancy, QualityMult, StarMult;
+        /// <summary>F03: sleeping slots of the bed and the price factor they earn (a double bed pays more than a single, guests like it).</summary>
+        public int Slots = 1;
+        public float SlotMult = 1f;
         public BedPriceMode Mode = BedPriceMode.Auto;
         public int Beds, Cells, Furniture;
         public string RoomName;
         public string Breakdown => $"{ClassLabel} · {OccupancyLabel} ×{Occupancy:0.00} · {QualityLabel} ×{QualityMult:0.00}" + (Math.Abs(StarMult - 1f) > 0.001f ? $" · {GuestRegistry.StarsText()} ×{StarMult:0.00}" : "")
+                                   + (Math.Abs(SlotMult - 1f) > 0.001f ? " · " + "HH.Inn.Occupancy.DoubleBed".TranslateOr("double bed") + $" ×{SlotMult:0.00}" : "")
                                    + (Mode != BedPriceMode.Auto ? " · " + CompHH_GuestBed.PriceModeLabel(Mode) : "");
     }
 
     /// <summary>
     /// Room score RS (0–100) and price per night (5.11):
     /// price = base × room class (economy 1 / standard 1.5 / deluxe 2.5 / suite 4 / royal 7) × occupancy (single 1.35 / two-bed 1.10 / dorm 0.85 /
-    /// hallway 0.72) × bed quality × (1 + 0.1·(stars − 3)), rounded to 5; then the bed's own price rule (free / −25 % / +25 %).
+    /// hallway 0.72) × bed quality × (1 + 0.1·(stars − 3)) × double-bed factor (1.6 with two sleeping slots), rounded to 5; then the bed's own price rule (free / −25 % / +25 %).
     /// Results are cached per room for 250 ticks.
     /// </summary>
     public static class GuestBedPricing
@@ -402,8 +410,10 @@ namespace Hearth.Guests
             if (bed.TryGetQuality(out var qc)) { q.QualityMult = QualityFactor(qc); q.QualityLabel = qc.GetLabel(); }
             else { q.QualityMult = 1f; q.QualityLabel = "HH.Inn.Quality.Plain".TranslateOr("plain"); }
             q.StarMult = 1f + 0.1f * (GuestRegistry.Stars - 3);
+            q.Slots = Math.Max(1, bed.SleepingSlotsCount);
+            q.SlotMult = SlotFactor(q.Slots);
             float baseP = HSettings.Get(InnSettings.PriceBase);
-            float raw = baseP * q.ClassMult * q.Occupancy * q.QualityMult * q.StarMult;
+            float raw = baseP * q.ClassMult * q.Occupancy * q.QualityMult * q.StarMult * q.SlotMult;
             float rounded = Math.Max(5f, (float)Math.Round(raw / 5f) * 5f);
             q.Mode = GuestBeds.Comp(bed)?.PriceMode ?? BedPriceMode.Auto;
             if (q.Mode == BedPriceMode.Free) rounded = 0f;
@@ -416,5 +426,16 @@ namespace Hearth.Guests
         }
 
         public static void ClearCache() => cache.Clear();
+
+        /// <summary>
+        /// F03: what a bed with this many sleeping slots earns compared with a single bed: 1 + (f − 1)·(slots − 1), f = setting "Double bed price factor"
+        /// (default 1.6). A couple in one double bed pays it together, each half, so the bed earns more and each guest still pays less than for a single.
+        /// </summary>
+        public static float SlotFactor(int slots)
+        {
+            if (slots <= 1) return 1f;
+            float f = Mathf.Max(1f, HSettings.Get(InnSettings.DoubleBedFactor));
+            return 1f + (f - 1f) * (slots - 1);
+        }
     }
 }

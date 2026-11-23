@@ -284,7 +284,9 @@ namespace Hearth.Guests
             bc.PriceMode = BedPriceMode.Auto; bc.ManualPrice = 0;
             t.Check(man.WholeSilver == 37, "manual price mode gives the stored fixed price: " + man);
             t.Check(free.Micro == 0 && disc <= auto && prem >= auto && prem.WholeSilver % 5 == 0, $"bed price rules: auto {auto}, free {free}, −25 % {disc}, +25 % {prem}");
-            t.Check(bed.GetGizmos().Any(gz => gz is Command_Action ca && ca.defaultLabel.Contains("Price")), "price gizmo on the guest bed");
+            var bedGizmos = bed.GetGizmos().ToList();
+            t.Check(bedGizmos.OfType<Command_HH_BedUse>().Count() == 1 && !bedGizmos.OfType<Command_Action>().Any(gz => !(gz is Command_HH_BedUse) && gz.defaultLabel != null && gz.defaultLabel.Contains("Price")),
+                "the guest bed shows exactly one Hearth & Harbor button (role + price chip): " + string.Join(", ", bedGizmos.OfType<Command_HH_BedUse>().Select(g => g.defaultLabel)));
             // B7: next arrival on the bed
             var f = InnTestKit.GuestFaction(map);
             if (f == null) { t.Check(false, "no guest faction"); InnUxKit.Teardown(site, map); yield break; }
@@ -341,8 +343,9 @@ namespace Hearth.Guests
             {
                 t.Check(a.Bed != null && a.Bed == b.Bed && a.Bed.SleepingSlotsCount >= 2, "the couple shares a double bed");
                 if (a.Bed != null) bed = a.Bed;
-                var payer = a.NightPrice >= b.NightPrice ? a : b; var partner = payer == a ? b : a;
-                t.Check(Math.Abs(partner.NightPrice.Silver - Math.Round(payer.NightPrice.Silver * 0.3)) < 0.51, $"together they pay ×1.3: {payer.NightPrice} + {partner.NightPrice}");
+                var quote = GuestBedPricing.Quote(a.Bed);
+                t.Check(Math.Abs((a.NightPrice + b.NightPrice).Silver - quote.Price.Silver) < 0.01 && Math.Abs(a.NightPrice.Silver - b.NightPrice.Silver) <= 1.01,
+                    $"the couple pays the price of the double bed together, half each (no surcharge): {a.NightPrice} + {b.NightPrice} = {quote.Price}");
                 t.Check(bed.OwnersForReading.Contains(a.Pawn) && bed.OwnersForReading.Contains(b.Pawn), "both own the bed");
                 bool valid = RestUtility.IsValidBedFor(bed, b.Pawn, b.Pawn, false);
                 if (!valid) t.Note($"partner bed check: canUseNow={RestUtility.CanUseBedNow(bed, b.Pawn, false)} reach={b.Pawn.CanReach(bed, PathEndMode.OnCell, Danger.Some)} reserve={b.Pawn.HasReserved(bed) || b.Pawn.CanReserve(bed, bed.SleepingSlotsCount, 0)} forbidden={bed.IsForbidden(b.Pawn)} job={b.Pawn.CurJobDef?.defName} inBed={b.Pawn.InBed()}");
@@ -354,7 +357,9 @@ namespace Hearth.Guests
             t.Check(row.Handled, "handling can be changed from the table");
             var h0 = a.Handling;
             var h1 = GuestsPage.CycleHandling(a.Pawn, a); var h2 = GuestsPage.CycleHandling(a.Pawn, a); var h3 = GuestsPage.CycleHandling(a.Pawn, a);
-            t.Check(h1 == (HandlingMode)(((int)h0 + 1) % 3) && h3 == h0 && a.Handling == h0, "handling cycles Basics → Accompany → Recruit");
+            t.Check(h1 == HandlingRules.Next(a.Pawn, h0) && a.Handling == h3 && HandlingRules.All(a.Pawn).Contains(h1) && HandlingRules.All(a.Pawn).Contains(h2) && HandlingRules.All(a.Pawn).Contains(h3),
+                "handling cycles through the offered modes: " + h0 + " → " + h1 + " → " + h2 + " → " + h3);
+            for (int cyc = 0; cyc < 5 && a.Handling != h0; cyc++) GuestsPage.CycleHandling(a.Pawn, a);   // back to where it started
             // C3: recruitment progress
             ITab_HH_Guest.SetHandling(a.Pawn, a, HandlingMode.Recruit);
             var st = HearthUI.GuestStatus(a.Pawn);

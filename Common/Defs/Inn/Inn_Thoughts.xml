@@ -85,6 +85,21 @@
   </ThoughtDef>
 
   <ThoughtDef>
+    <defName>HH_GuestPreached</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>preached at</label>
+        <description>I came here to sleep, not to be talked out of my beliefs.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
     <defName>HH_HostedWell</defName>
     <thoughtClass>Thought_MemorySocial</thoughtClass>
     <durationDays>5</durationDays>
@@ -159,6 +174,35 @@
         <label>splendid waiting room</label>
         <description>I would not have minded waiting longer in a room like that.</description>
         <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- F02: couples and their double bed (given through Hearth.Guests.GuestRegistry) -->
+  <ThoughtDef>
+    <defName>HH_SleptTogether</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>slept next to my partner</label>
+        <description>One big bed for the two of us. That is all I wanted from this trip.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HH_WantedDoubleBed</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>0.75</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>no double bed for us</label>
+        <description>We asked for one bed for the two of us and got two narrow ones. Cosy it is not.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>

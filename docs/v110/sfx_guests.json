@@ -1,0 +1,4 @@
+[
+  {"file": "Common/Sounds/HH/Venues/NightBell.ogg", "prompt": "A small brass hand service bell on a wooden counter, rung twice with a crisp bright ding, short natural room reverb that fades out, no music, no voices, no background noise", "seconds": 2.5, "loop": false},
+  {"file": "Common/Sounds/HH/Venues/NightBellAnswered.ogg", "prompt": "A single soft short ding of a small brass bell, friendly and quiet, like a shopkeeper tapping the bell once, very short reverb tail, no music", "seconds": 0.8, "loop": false}
+]

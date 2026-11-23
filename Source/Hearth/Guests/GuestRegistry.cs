@@ -15,7 +15,7 @@ namespace Hearth.Guests
     /// goodwill bookkeeping. Saved with the game; "is this a guest?" is a HashSet lookup for hot patches.
     /// Implements the shared <see cref="IGuestApiImpl"/> contract.
     /// </summary>
-    public sealed class GuestRegistry : GameComponent, IGuestApiImpl
+    public sealed partial class GuestRegistry : GameComponent, IGuestApiImpl
     {
         public static GuestRegistry Instance;
         static readonly HashSet<int> guestIds = new HashSet<int>();
@@ -105,6 +105,7 @@ namespace Hearth.Guests
             r.Expectation = Mathf.Clamp01(GuestEconomy.Expectation(r.Wealth, Renown, g.Faction) + Hearth.Dlc.DlcApi.GuestExpectationOffset(p));
             records.Add(r);
             Index(r);
+            UpdateCoupleFlags(r);
             if (r.PaysDigital) Ledger.Current?.Post("world", r.Account, r.Budget, "Inn: card funds of " + p.LabelShort);
             else GiveSilver(p, r.Budget);
             EnsureTravelFood(p, days);
@@ -227,12 +228,10 @@ namespace Hearth.Guests
                     r.PlannedLeaveTick = Math.Min(r.PlannedLeaveTick, Find.TickManager.TicksGame + 2500 * 2);
                 }
             }
+            if (r.Overnight && r.Bed != null) ResolveDoubleWish(r);
             UpdateRestriction(r);
             return true;
         }
-
-        /// <summary>A couple pays this many times the price of one bed (C4).</summary>
-        public const float CoupleFactor = 1.3f;
 
         /// <summary>Set by the DLC integration: a bed booked and paid for by someone else (noble stays pay at the end of the stay),
         /// or null to let the guest choose and pay as usual. The bed must be a free guest bed.</summary>
@@ -243,6 +242,8 @@ namespace Hearth.Guests
         public bool AssignBed(GuestRecord r)
         {
             var p = r.Pawn; var map = p?.MapHeld; if (map == null) return false;
+            // booked together with the partner before checking in (F02)
+            if (r.Bed != null && r.Bed.Spawned && r.Bed.OwnersForReading.Contains(p) && GuestBeds.IsGuestBed(r.Bed)) return true;
             Building_Bed sponsored = null;
             if (SponsoredBed != null) try { sponsored = SponsoredBed(r); } catch (Exception e) { HLog.Error("Inn", "Sponsored bed hook failed", e); }
             if (sponsored != null && sponsored.Spawned && GuestBeds.IsGuestBed(sponsored) && GuestBeds.IsFree(sponsored))
@@ -261,20 +262,24 @@ namespace Hearth.Guests
             if (SponsoredGuest != null) try { freeNights = SponsoredGuest(r); } catch (Exception e) { HLog.Error("Inn", "Sponsored guest hook failed", e); }
             var groupRooms = new HashSet<Room>();
             foreach (var m in records) if (m.GroupId == r.GroupId && m.Bed != null && m.Bed.Spawned) groupRooms.Add(m.Bed.GetRoom());
-            bool partnerWaiting = false;
-            foreach (var m in records)
-                if (m != r && m.GroupId == r.GroupId && m.Bed == null && !m.Settled && m.Pawn != null && LovePartnerRelationUtility.LovePartnerRelationExists(p, m.Pawn)) { partnerWaiting = true; break; }
-            // C4: couples share their partner's double bed and pay the room price × 1.3 together (the second pays the 0.3)
+            // F02: a couple is booked together, in one double bed, each paying half (no surcharge)
+            UpdateCoupleFlags(r);
+            var partnerRec = FindWaitingPartner(r);
+            if (partnerRec != null && AssignCouple(r, partnerRec, nights, freeNights, groupRooms)) return true;
+            bool partnerWaiting = partnerRec != null;
+            // late partner (arrived after the first one booked a bed for two): moves in and the price is split between them (F02/C4)
             foreach (var m in records)
             {
                 if (m == r || m.GroupId != r.GroupId || m.Bed == null || !m.Bed.Spawned) continue;
                 if (!GuestBeds.SharableWith(m.Bed, p, r.GroupId) || !p.CanReach(m.Bed, PathEndMode.OnCell, Danger.Some)) continue;
-                var share = Money.FromSilver(Math.Round(m.NightPrice.Silver * (CoupleFactor - 1f)));
-                if (share * nights > r.Budget) continue;
                 var cq = GuestBedPricing.Quote(m.Bed); if (cq == null) continue;
-                cq.Price = share;
+                if (freeNights) cq.Price = Money.Zero;
+                SplitPrice(cq.Price, out var first, out var second);
+                if (second * nights > r.Budget) continue;
+                cq.Price = second;
                 if (!ClaimBed(r, m.Bed, cq)) continue;
-                r.Log("HH.Inn.Event.SharedBed".TranslateOr("Shares the bed with {0} ({1} silver a night extra).").Replace("{0}", m.Pawn.LabelShort).Replace("{1}", share.WholeSilver.ToString()));
+                if (m.NightPrice > first) { m.NightPrice = first; m.Log("HH.Inn.Event.PartnerMovedIn".TranslateOr("{0} moved into the bed: the price is split ({1} silver each a night).").Replace("{0}", p.LabelShort).Replace("{1}", first.WholeSilver.ToString())); }
+                r.Log("HH.Inn.Event.SharedBed2".TranslateOr("Shares the bed with {0} ({1} silver a night each).").Replace("{0}", m.Pawn.LabelShort).Replace("{1}", second.WholeSilver.ToString()));
                 return true;
             }
             foreach (var b in GuestBeds.FreeOn(map))
@@ -298,7 +303,7 @@ namespace Hearth.Guests
             }
             if (best == null) return false;
             if (!ClaimBed(r, best, bestQ)) return false;
-            if (bestQ.Price > GuestEconomy.ComfortPrice(r.Wealth))
+            if (bestQ.Price > GuestEconomy.ComfortPrice(r.Wealth) && !(partnerWaiting && best.SleepingSlotsCount >= 2))
             {
                 r.ServiceSum -= 0.08f;
                 r.Log("HH.Inn.Event.Pricey".TranslateOr("Found {0} silver a night steep.").Replace("{0}", bestQ.Price.WholeSilver.ToString()), 4);
@@ -486,6 +491,7 @@ namespace Hearth.Guests
                 r.Pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(th);
             }
             catch (Exception e) { HLog.Once("inn.verdictThought", LogLevel.Warn, "Inn", "Room verdict thought failed: " + e.Message); }
+            GiveCoupleThought(r);
             string[] verdict = { "HH.Inn.Verdict.0", "HH.Inn.Verdict.1", "HH.Inn.Verdict.2", "HH.Inn.Verdict.3", "HH.Inn.Verdict.4", "HH.Inn.Verdict.5" };
             string[] fallback = { "Slept badly and blamed the room.", "Found the room below their standard.", "Slept so-so.", "Slept fine.", "Slept well.", "Slept like royalty." };
             r.Log(verdict[stage].TranslateOr(fallback[stage]), stage == 0 ? 6 : stage == 5 ? 6 : stage == 1 ? 5 : stage == 4 ? 3 : 1);
@@ -759,19 +765,25 @@ namespace Hearth.Guests
             }
             catch (Exception e) { HLog.Once("inn.talkThought", LogLevel.Warn, "Inn", "Accompany thought failed: " + e.Message); }
             host.skills?.Learn(SkillDefOf.Social, 40f);
-            if (r.Handling == HandlingMode.Recruit && !r.Insulted)
+            // F04: a Convert guest whose ideoligion already matches (or who cannot be talked to any more) simply keeps the company
+            if (r.Handling == HandlingMode.Convert && !HandlingRules.ConvertAvailable(guest)) { r.Handling = HandlingMode.Accompany; r.Log("HH.Inn.Event.ConvertEnded".TranslateOr("Nothing left to convert: back to keeping company."), 2); }
+            bool convert = r.Handling == HandlingMode.Convert;
+            if ((r.Handling == HandlingMode.Recruit || convert) && !r.Insulted)
             {
                 bool loyal = guest.Faction?.leader == guest || (guest.royalty != null && guest.royalty.AllTitlesForReading.Count > 0);
-                float p = InsultChanceOverride ?? (HSettings.Get(InnSettings.InsultBase) * (1f - social / 20f) + (loyal ? 0.10f : 0f));
+                float p = InsultChanceOverride ?? (HSettings.Get(InnSettings.InsultBase) * (convert ? 0.5f : 1f) * (1f - social / 20f) + (loyal ? 0.10f : 0f));
                 if (JRand.Stream("inn.insult").Chance(p))
                 {
                     r.Insulted = true;
                     r.Budget = r.Budget * 0.7;
                     r.PlannedLeaveTick -= 30000;
-                    try { guest.needs?.mood?.thoughts?.memories?.TryGainMemory(InnDefOf.HH_GuestPestered, host); } catch { }
-                    r.Log("HH.Inn.Event.Insulted".TranslateOr("Felt pestered by {0}'s recruiting.").Replace("{0}", host.LabelShort), 7);
-                    Messages.Message("HH.Inn.Msg.Insulted".TranslateOr("{0} found the recruiting pushy and will spend less and leave sooner.").Replace("{0}", guest.LabelShort), guest, MessageTypeDefOf.NegativeEvent, false);
+                    try { guest.needs?.mood?.thoughts?.memories?.TryGainMemory(convert ? InnDefOf.HH_GuestPreached : InnDefOf.HH_GuestPestered, host); } catch { }
+                    r.Log(convert ? "HH.Inn.Event.Preached".TranslateOr("Felt preached at by {0}.").Replace("{0}", host.LabelShort)
+                                  : "HH.Inn.Event.Insulted".TranslateOr("Felt pestered by {0}'s recruiting.").Replace("{0}", host.LabelShort), 7);
+                    Messages.Message(convert ? "HH.Inn.Msg.Preached".TranslateOr("{0} found the conversion attempts pushy and will spend less and leave sooner.").Replace("{0}", guest.LabelShort)
+                                             : "HH.Inn.Msg.Insulted".TranslateOr("{0} found the recruiting pushy and will spend less and leave sooner.").Replace("{0}", guest.LabelShort), guest, MessageTypeDefOf.NegativeEvent, false);
                 }
+                else if (convert) ConvertTalk(host, guest, r, social);
                 else r.Log("HH.Inn.Event.RecruitTalk".TranslateOr("Had a long talk with {0} about staying.").Replace("{0}", host.LabelShort), 3);
             }
             else if (firstToday) r.Log("HH.Inn.Event.Accompanied".TranslateOr("Was shown around by {0}.").Replace("{0}", host.LabelShort), 2);
@@ -932,6 +944,11 @@ namespace Hearth.Guests
                     label = "HH.Inn.Handling.Recruit".TranslateOr("Recruit");
                     desc = "HH.Inn.Handling.RecruitDesc".TranslateOr("Like Accompany, plus talks about staying. If the colony's bond with the guest is strong enough, they may join at departure. Pushy talks can offend.");
                     break;
+                case HandlingMode.Convert:
+                    icon = InnTex.Handling_Convert;
+                    label = "HH.Inn.Handling.Convert".TranslateOr("Convert");
+                    desc = "HH.Inn.Handling.ConvertDesc".TranslateOr("Like Accompany, plus talks about your ideoligion. Every talk shakes the guest's certainty in their own; at zero they take on yours. Pushy talks can offend. Needs the Ideology DLC.");
+                    break;
                 default:
                     icon = InnTex.Handling_Basics;
                     label = "HH.Inn.Handling.Basics".TranslateOr("Basics");
@@ -943,15 +960,17 @@ namespace Hearth.Guests
                 int bond = Bond(p, p.MapHeld, out int thr);
                 desc += "\n\n" + "HH.Inn.Handling.Bond".TranslateOr("Bond: {0} / {1}").Replace("{0}", bond.ToString()).Replace("{1}", thr.ToString());
             }
+            if (r.Handling == HandlingMode.Convert) { string cl = ConvertLine(p); if (cl != null) desc += "\n\n" + cl; }
             yield return new Command_Action
             {
                 defaultLabel = "HH.Inn.Handling.Label".TranslateOr("Handling: {0}").Replace("{0}", label),
-                defaultDesc = desc + "\n\n" + "HH.Inn.Handling.Click".TranslateOr("Click to switch: Basics → Accompany → Recruit."),
+                defaultDesc = desc + "\n\n" + "HH.Inn.Handling.Click2".TranslateOr("Click to switch: {0}.").Replace("{0}", HandlingRules.CycleText(p)),
                 icon = icon,
                 action = () =>
                 {
-                    var next = (HandlingMode)(((int)r.Handling + 1) % 3);
-                    foreach (var m in Members(Group(r.GroupId) ?? new GuestGroup { Id = r.GroupId })) if (!m.Settled && (Find.Selector.IsSelected(m.Pawn) || m == r)) m.Handling = next;
+                    var next = HandlingRules.Next(p, r.Handling);
+                    foreach (var m in Members(Group(r.GroupId) ?? new GuestGroup { Id = r.GroupId }))
+                        if (!m.Settled && (Find.Selector.IsSelected(m.Pawn) || m == r)) m.Handling = HandlingRules.Available(m.Pawn, next) ? next : HandlingRules.Next(m.Pawn, r.Handling);
                 },
             };
             yield return new Command_Action

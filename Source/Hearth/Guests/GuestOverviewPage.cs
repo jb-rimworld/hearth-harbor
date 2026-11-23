@@ -68,6 +68,7 @@ namespace Hearth.Guests
             var st = new Hearth.Shell.HearthUI.GuestTabStatus { ReadOnly = r.Settled, WingLabel = GuestWings.WingLabelFor(p) };
             if (r.Settled) st.StateLine = LeavingLine(r, reg.Group(r.GroupId));
             if (r.Handling == HandlingMode.Recruit && p.MapHeld != null) RecruitInfo(r, p, st);
+            else if (r.Handling == HandlingMode.Convert) ConvertInfo(r, p, st);
             if (!r.Settled) foreach (var pr in Problems(r)) st.Problems.Add(pr.line);
             return st;
         }
@@ -105,6 +106,16 @@ namespace Hearth.Guests
             st.RecruitLine = line;
         }
 
+        /// <summary>F04: the progress bar of the Convert handling is how far the guest's certainty has fallen (full = ready to take on the colony's ideoligion).</summary>
+        static void ConvertInfo(GuestRecord r, Pawn p, Hearth.Shell.HearthUI.GuestTabStatus st)
+        {
+            string line = GuestRegistry.ConvertLine(p);
+            if (line == null) { st.RecruitLine = "HH.Inn.Convert.Nothing".TranslateOr("Nothing to convert: the guest already shares your ideoligion or cannot be talked to."); return; }
+            st.RecruitProgress = Mathf.Clamp01(1f - p.ideo.Certainty);
+            if (r.Insulted) line += " · " + "HH.Inn.Convert.Insulted".TranslateOr("felt preached at: will not listen this time");
+            st.RecruitLine = line;
+        }
+
         // ------------------------------------------------------------------ why unhappy (C10)
         /// <summary>Actionable problems of one staying guest: (key, line for the guest, line for "n guests …").</summary>
         public static IEnumerable<(string key, string line, string many)> Problems(GuestRecord r)
@@ -130,6 +141,11 @@ namespace Hearth.Guests
             if (r.Bed != null && r.NightPrice > GuestEconomy.ComfortPrice(r.Wealth))
                 yield return ("pricey", "HH.Inn.Problem.Pricey".TranslateOr("Finds {0} silver a night steep: give the bed a lower price (−25 %) or a better room.").Replace("{0}", r.NightPrice.WholeSilver.ToString()),
                     "HH.Inn.Problem.PriceyMany".TranslateOr("{0} guests find their rooms too expensive: lower bed prices or improve the rooms."));
+            // F02: a couple that would like one double bed but has none (and no free one exists)
+            if (r.WantsDouble && r.Overnight && r.CheckedIn && HSettings.GetBool(InnSettings.CoupleWish) && p.MapHeld != null
+                && !GuestRegistry.SharesBed(r, GuestRegistry.Instance?.FindPartner(r)) && !GuestBeds.FreeOn(p.MapHeld).Any(b => b.SleepingSlotsCount >= 2))
+                yield return ("double", "HH.Inn.Problem.Double".TranslateOr("Would like a double bed together with their partner: build or mark one as a guest bed."),
+                    "HH.Inn.Problem.DoubleMany".TranslateOr("{0} guests would like a double bed for the couple: build or mark one as a guest bed."));
             var joy = p.needs?.joy;
             if (joy != null && joy.CurLevelPercentage < 0.2f && r.CheckedIn)
                 yield return ("bored", "HH.Inn.Problem.Bored".TranslateOr("Bored: add recreation to the guest wing (TV, chess, a venue)."),

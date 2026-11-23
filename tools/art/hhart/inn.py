@@ -127,3 +127,7 @@ def travelbag(view, cells, masked):
     c.rect(56, 36, 16, 20, P["wood_d"], r=4, sw=2.6)
     c.rect(60, 44, 8, 8, P["gold"], r=2, sw=1.6, hl=False, sh=False)
     return c
+
+
+# 1.1.0 guests package icons and motes (imported at the end: they use the helpers above)
+from . import guests110  # noqa: E402,F401

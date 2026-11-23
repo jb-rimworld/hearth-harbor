@@ -73,6 +73,25 @@ any activity module. `GuestFallback.Drives(p)` is false for every Inn-registered
 Diagnostics: `MapComponent_HH_GuestScheduler.DiagLog = new List<string>()` collects one line per decision (the long run writes it to
 `docs/longrun/longrun_sched.txt`). Suite `inn.forecast` also tests the projection, the drought breaker and the overview line.
 
+## 1.1.0 additions (guests package)
+
+- **Couples and double beds (F02/F03).** `GuestBedPricing.SlotFactor(slots)` = 1 + (f − 1)·(slots − 1), f = setting `inn.doubleBedFactor` (default 1.6): a bed with two sleeping slots earns 1.6× a single
+  (shown as "double bed ×1.60" in the quote). A couple (love relation, ideology allows sharing, `GuestRegistry.CanShareBed`) is booked **together** in one double bed at the first partner's check-in
+  (`GuestRegistry.AssignCouple`, file `GuestRegistry.Couples.cs`): each pays half of the bed's price in whole silver (`SplitPrice`, the first pays the larger half), no surcharge any more (the old
+  `CoupleFactor` 1.3 is gone). A partner who arrives later moves into the lone guest's double bed and the price is split from then on. Without a free double bed (or when one cannot afford their half) both
+  are booked separately as before. The wish (`GuestRecord.WantsDouble`, setting `inn.coupleWish`): getting the bed gives +0.06 satisfaction and the memory `HH_SleptTogether` (+2, 1 day) after the first night;
+  two single beds give −0.03 and `HH_WantedDoubleBed` (−2, 0.75 day), once per stay. The guest overview problem list says "build or mark a double bed". Prices never depend on the wish.
+- **Convert handling (F04).** `HandlingMode.Convert = 3` (Ideology only, `HandlingRules` in `Contracts/HandlingRules.cs` decides who may be in it and cycles Basics → Accompany → Recruit → Convert; the gizmo, the guests
+  table and the guest tab all go through it). Every Hosting talk in Convert rolls the insult chance (half the recruit risk, thought `HH_GuestPreached`) and otherwise calls vanilla's
+  `Pawn_IdeoTracker.IdeoConversionAttempt` with vanilla's certainty reduction (`InteractionWorker_ConvertIdeoAttempt.CertaintyReduction`) × setting `inn.convertPower`. A guest who takes on the colony's ideoligion goes
+  back to Accompany (+0.05 satisfaction, log "Embraced …"). The guest tab's progress bar is `1 − certainty`. Convert never recruits at departure. A saved Convert mode without Ideology loads as Basics.
+- **One bed button (F10).** `Command_HH_BedUse` (file `Guests/BedUseGizmo.cs`) replaces the Guest bed toggle and the price button: icon and name are the bed's role (Colonist / Guest bed; with RimWard also Patient / Surgery
+  through `RimWard.BedApi`, see `docs/rimward.md`), a click opens a menu with a short explanation per role, a guest bed shows a price chip in the button's corner that opens the price menu. The inspect text is two lines.
+  `Hearth.Shell.DevGizmos` folds our own `DEV:` buttons (casino simulation, fence loot) into one "Dev: Hearth & Harbor" button in dev mode (setting `inn.groupDevGizmos`); vanilla's are untouched.
+- **Windows (F35).** `ITab_HH_Guest` (sized by `HUI.Size` every frame, collapsible Stay / Satisfaction / Money / Handling sections, flags `ui.gt.<id>`) and `Dialog_HH_DoorPolicy` (`HUI.Size(720, 760)`, collapsible sections,
+  two-column check lists, debounced live preview in a sticky box, does not close on an outside click).
+- Tests: `inn.couples`, `inn.convert`, `inn.beduse`, `inn.windows` (and the changed `inn.ux`).
+
 ## Tests
 
 `tools/run_test.sh 'smoke,inn.*' <label>`: cleanup, contracts, dayvisit, door, enemies, fallback, forecast, handling, math, night,

@@ -267,7 +267,7 @@ namespace Hearth.Guests
             if (!(t is Pawn g)) return false;
             var r = GuestRegistry.Instance?.Get(g);
             if (r == null || r.Settled || r.Handling == HandlingMode.Basics || !r.CheckedIn) return false;
-            int cooldown = r.Handling == HandlingMode.Recruit ? 5000 : 7500;
+            int cooldown = r.Handling == HandlingMode.Recruit || r.Handling == HandlingMode.Convert ? 5000 : 7500;
             if (!forced && Find.TickManager.TicksGame - r.LastAccompanyTick < cooldown) return false;
             if (g.InBed() || !g.Awake() || g.Downed || g.InMentalState) return false;
             return pawn.CanReserveAndReach(g, PathEndMode.Touch, Danger.None);

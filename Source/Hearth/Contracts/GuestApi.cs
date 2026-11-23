@@ -10,7 +10,8 @@ using Verse.AI.Group;
 namespace Hearth
 {
     public enum StayKind { DayVisitor, Overnight, Traveler, Caravan, Lodger, Patient }
-    public enum HandlingMode { Basics = 0, Accompany = 1, Recruit = 2 }
+    /// <summary>Saved as an int: only ever append. Convert (3, 1.1.0) needs the Ideology DLC, see <see cref="HandlingRules"/>.</summary>
+    public enum HandlingMode { Basics = 0, Accompany = 1, Recruit = 2, Convert = 3 }
 
     /// <summary>Read-mostly view of one guest, shared by all modules (5.1). Owned and saved by the Inn module.</summary>
     public class GuestInfo
