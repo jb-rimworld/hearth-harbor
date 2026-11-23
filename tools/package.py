@@ -14,12 +14,15 @@ import hashlib, re, shutil, subprocess, sys
 from pathlib import Path
 
 R = Path(__file__).resolve().parent.parent
-OUT = R.parent / "_Release"
+import os
+OUT = Path(os.environ.get("HH_RELEASE_OUT", R.parent / "_Release"))
 MAIN, BANK = OUT / "HearthHarbor", OUT / "Silverline"
 VERSIONS = ["1.5", "1.6", "1.7"]
-BANK_DEF_DIRS = ["Core", "Bank", "Insurance"]
-BANK_LANG = ["HH_Core.xml", "HH_Bank.xml", "HH_Insurance.xml"]
-BANK_TEX = ["UI/HH/Bank", "UI/HH/Insurance", "Things/HH/Bank", "UI/HH/Core"]
+BANK_DEF_DIRS = ["Core", "Bank", "Insurance", "Finance"]
+BANK_LANG = ["HH_Bank.xml", "HH_Insurance.xml", "HH_Finance.xml", "HH_Research.xml", "HH_UI.xml"]
+# DefInjected: Silverline.* folders whole; generic folders filtered to bank defNames (written fresh, so outside the byte-identity check)
+BANK_DEFINJ_PREFIX = ("SL_", "HH_Bank", "HH_Banking")
+BANK_TEX = ["UI/HH/Bank", "UI/HH/Insurance", "UI/HH/Finance", "Things/HH/Bank", "UI/HH/Core"]
 
 
 def sh(cmd):
@@ -80,6 +83,21 @@ def main():
             if src.exists():
                 (C / "Languages" / lang.name / "Keyed").mkdir(parents=True, exist_ok=True)
                 shutil.copy2(src, C / "Languages" / lang.name / "Keyed" / f)
+        di = lang / "DefInjected"
+        if di.is_dir():
+            for sub in di.iterdir():
+                if not sub.is_dir():
+                    continue
+                dst = C / "Languages" / lang.name / "DefInjected" / sub.name
+                if sub.name.startswith("Silverline."):
+                    shutil.copytree(sub, dst)
+                    continue
+                for xf in sub.glob("*.xml"):
+                    txt = xf.read_text(encoding="utf-8")
+                    keep = [m.group(0) for m in re.finditer(r"^\s*<([A-Za-z0-9_]+)\.[^>]*>.*?</\1\.[^>]*>\s*$", txt, flags=re.M | re.S) if m.group(1).startswith(BANK_DEFINJ_PREFIX)]
+                    if keep:
+                        dst.mkdir(parents=True, exist_ok=True)
+                        (dst / xf.name).write_text('<?xml version="1.0" encoding="utf-8"?>\n<LanguageData>\n' + "\n".join(k.rstrip() for k in keep) + "\n</LanguageData>\n", encoding="utf-8")
     for t in BANK_TEX:
         if (R / "Common" / "Textures" / t).exists():
             shutil.copytree(R / "Common" / "Textures" / t, C / "Textures" / t)
@@ -96,7 +114,7 @@ def main():
             if sha(MAIN / v / "Assemblies" / dll) != sha(BANK / "Content" / v / "Assemblies" / dll):
                 bad.append(f"{v}/{dll}")
     for f in (BANK / "Content" / "Common").rglob("*"):
-        if f.is_file():
+        if f.is_file() and not ("DefInjected" in f.parts and not any(p.startswith("Silverline.") for p in f.parts)):
             rel = f.relative_to(BANK / "Content")
             if not (MAIN / rel).exists() or sha(MAIN / rel) != sha(f):
                 bad.append(str(rel))
