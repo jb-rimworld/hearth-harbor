@@ -32,14 +32,14 @@ namespace Hearth.ShopsFood
         /// <summary>The thing that stops a market right now, as a short sentence; null when nothing does. Conditions of 6.10: a shop, enough stalls, enough renown.</summary>
         public static string Blocker(Map map)
         {
-            if (map == null || !map.IsPlayerHome) return "no home map";
+            if (map == null || !map.IsPlayerHome) return "HH.Venue.MarketBlock.NoHome".Translate();
             bool shop = false;
             foreach (var v in Venues.All(map)) if (VenueApi.SellsOf(v) == SellKind.Goods) { shop = true; break; }
-            if (!shop) return "no shop";
+            if (!shop) return "HH.Venue.MarketBlock.NoShop".Translate();
             int need = VS.I(VS.MarketStalls), have = Stalls(map);
-            if (have < need) return $"market stalls {have}/{need}";
+            if (have < need) return "HH.Venue.MarketBlock.Stalls".Translate(have, need);
             float renown = Venues.Renown(), minRenown = VS.I(VS.MarketRenown);
-            if (renown < minRenown) return $"renown {renown:0}/{minRenown:0}";
+            if (renown < minRenown) return "HH.Venue.MarketBlock.Renown".Translate(renown.ToString("0"), minRenown.ToString("0"));
             return null;
         }
 

@@ -21,6 +21,8 @@ namespace Hearth.Guests
         bool guestBed;
         /// <summary>C8: per-bed price rule on top of the automatic price.</summary>
         public BedPriceMode PriceMode = BedPriceMode.Auto;
+        /// <summary>Fixed price in silver per night, used only while PriceMode is Manual (set when a Hospitality fee is taken over).</summary>
+        public int ManualPrice;
         static Texture2D Icon => InnTex.GuestBed;
 
         public Building_Bed Bed => parent as Building_Bed;
@@ -84,6 +86,7 @@ namespace Hearth.Guests
         {
             Scribe_Values.Look(ref guestBed, "hhGuestBed");
             Scribe_Values.Look(ref PriceMode, "hhPriceMode", BedPriceMode.Auto);
+            Scribe_Values.Look(ref ManualPrice, "hhManualPrice", 0);
         }
 
         // ---- combined bed selector protocol v1 (RimWard draws "Use: Colonist / Guest / Patient"; see RimWard README) ----
@@ -149,17 +152,21 @@ namespace Hearth.Guests
                     new FloatMenuOption(PriceModeLabel(BedPriceMode.Discount), () => SetPriceModeAll(BedPriceMode.Discount)),
                     new FloatMenuOption(PriceModeLabel(BedPriceMode.Auto), () => SetPriceModeAll(BedPriceMode.Auto)),
                     new FloatMenuOption(PriceModeLabel(BedPriceMode.Premium), () => SetPriceModeAll(BedPriceMode.Premium)),
+                    new FloatMenuOption("HH.Inn.PriceMode.ManualSet".TranslateOr("Fixed price…"), () => Find.WindowStack.Add(new Dialog_Slider(
+                        v => "HH.Inn.PriceMode.ManualValue".TranslateOr("{0} silver per night").Replace("{0}", v.ToString()), 0, 500,
+                        v => SetPriceModeAll(BedPriceMode.Manual, v), Math.Max(0, ManualPrice)))),
                 })),
             };
         }
 
         /// <summary>Applies the mode to every selected guest bed (multi-select works like vanilla gizmos).</summary>
-        void SetPriceModeAll(BedPriceMode m)
+        void SetPriceModeAll(BedPriceMode m, int manualPrice = 0)
         {
             bool any = false;
             foreach (var o in Find.Selector.SelectedObjectsListForReading)
-                if (o is Thing t && GuestBeds.Comp(t) is CompHH_GuestBed c && c.guestBed) { c.PriceMode = m; any = true; }
-            if (!any) PriceMode = m;
+                if (o is Thing t && GuestBeds.Comp(t) is CompHH_GuestBed c && c.guestBed) { c.PriceMode = m; c.ManualPrice = m == BedPriceMode.Manual ? manualPrice : 0; any = true; }
+            if (!any) { PriceMode = m; ManualPrice = m == BedPriceMode.Manual ? manualPrice : 0; }
+            GuestBedPricing.ClearCache();
         }
 
         public static string PriceModeLabel(BedPriceMode m)
@@ -169,6 +176,7 @@ namespace Hearth.Guests
                 case BedPriceMode.Free: return "HH.Inn.PriceMode.Free".TranslateOr("free");
                 case BedPriceMode.Discount: return "HH.Inn.PriceMode.Discount".TranslateOr("−25 %");
                 case BedPriceMode.Premium: return "HH.Inn.PriceMode.Premium".TranslateOr("+25 %");
+                case BedPriceMode.Manual: return "HH.Inn.PriceMode.Manual".TranslateOr("fixed price");
                 default: return "HH.Inn.PriceMode.Auto".TranslateOr("automatic");
             }
         }
@@ -268,7 +276,7 @@ namespace Hearth.Guests
     }
 
     /// <summary>C8: price rule of one guest bed.</summary>
-    public enum BedPriceMode { Auto = 0, Free = 1, Discount = 2, Premium = 3 }
+    public enum BedPriceMode { Auto = 0, Free = 1, Discount = 2, Premium = 3, Manual = 4 }
 
     /// <summary>A computed price for one guest bed (5.11).</summary>
     public sealed class BedQuote
@@ -401,6 +409,7 @@ namespace Hearth.Guests
             if (q.Mode == BedPriceMode.Free) rounded = 0f;
             else if (q.Mode == BedPriceMode.Discount) rounded = Math.Max(5f, (float)Math.Round(rounded * 0.75f / 5f) * 5f);
             else if (q.Mode == BedPriceMode.Premium) rounded = Math.Max(5f, (float)Math.Round(rounded * 1.25f / 5f) * 5f);
+            else if (q.Mode == BedPriceMode.Manual) rounded = Math.Max(0, GuestBeds.Comp(bed)?.ManualPrice ?? 0);
             q.Price = Money.FromSilver((int)rounded);
             q.RoomName = room.Role != null && room.Role != RoomRoleDefOf.None ? room.GetRoomRoleLabel() : q.ClassLabel;
             return q;

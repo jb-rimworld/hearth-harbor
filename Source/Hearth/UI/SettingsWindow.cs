@@ -315,11 +315,32 @@ namespace Hearth.Shell
             int i = 0;
             foreach (ContentIntensity c in Enum.GetValues(typeof(ContentIntensity)))
             {
-                if (UiStyle.Chip(new Rect(i * (cw + 6f), y, cw, 30f), ("HH.UI.Content." + c).Translate(), target.Content == c, ("HH.UI.Content." + c + ".Tip").Translate())) target.Content = c;
+                if (UiStyle.Chip(new Rect(i * (cw + 6f), y, cw, 30f), ("HH.UI.Content." + c).Translate(), target.Content == c, ("HH.UI.Content." + c + ".Tip").Translate())) ChooseContent(target, c);
                 i++;
             }
             y += 40f;
             return y;
+        }
+
+        /// <summary>Dark and Grim need a confirmation right where they are chosen (same text as the in-game content warning).</summary>
+        static void ChooseContent(HearthProfile target, ContentIntensity c)
+        {
+            if (c < ContentIntensity.Dark || target.Content == c || target.Content >= ContentIntensity.Dark && c <= target.Content) { target.Content = c; return; }
+            var previous = target.Content;
+            var node = new DiaNode((c >= ContentIntensity.Grim ? "HH.Underworld.Warn.Grim" : "HH.Underworld.Warn.Dark").Translate());
+            node.options.Add(new DiaOption("HH.Underworld.Warn.Accept".Translate())
+            {
+                action = () =>
+                {
+                    target.Content = c;
+                    // only the running game's own profile acknowledges the warning of the running game (the mod-wide template does not)
+                    var comp = Hearth.Underworld.Underworld.Comp; if (comp != null && target == HearthProfile.Current) comp.ContentWarningAck = true;
+                    HLog.Info("UI", "Content " + c + " confirmed in settings");
+                },
+                resolveTree = true
+            });
+            node.options.Add(new DiaOption("HH.UI.Content.Decline".Translate(("HH.UI.Content." + previous).Translate())) { action = () => target.Content = previous, resolveTree = true });
+            Find.WindowStack.Add(new Dialog_NodeTree(node, true, false, "HH.Underworld.Warn.Title".Translate()));
         }
 
         static void DrawUnderworld(Rect row, HearthProfile target, bool avail)

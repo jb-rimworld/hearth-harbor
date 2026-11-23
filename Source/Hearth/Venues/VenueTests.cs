@@ -24,6 +24,8 @@ namespace Hearth.ShopsFood
         }
 
         static int nextOffset;
+        // areas of rooms built and not yet torn down: a second room must not be placed over them (it destroyed the first room's walls and sign: the venues.wait flake)
+        static readonly List<CellRect> claimed = new List<CellRect>();
 
         public static TestRoom Build(Map map, int innerSize = 5)
         {
@@ -36,12 +38,15 @@ namespace Hearth.ShopsFood
                     var rect = CellRect.CenteredOn(c, half).ExpandedBy(1);
                     if (!rect.InBounds(map)) continue;
                     bool ok = true;
+                    foreach (var other in claimed) if (other.Overlaps(rect.ExpandedBy(2))) { ok = false; break; }
+                    if (!ok) continue;
                     foreach (var cell in rect) { var t = cell.GetTerrain(map); if (t.passability == Traversability.Impassable || t.IsWater || cell.Fogged(map)) { ok = false; break; } }
                     if (ok) { chosen = c; break; }
                 }
             nextOffset++;
             if (!chosen.IsValid) throw new Exception("no free area for a test room");
             var room = new TestRoom { Outer = CellRect.CenteredOn(chosen, half), Inner = CellRect.CenteredOn(chosen, half - 1) };
+            claimed.Add(room.Outer);
             room.Door = new IntVec3(room.Outer.CenterCell.x, 0, room.Outer.minZ);
             var keepOut = room.Outer.ExpandedBy(2);
             foreach (var c in room.Outer.ExpandedBy(1))
@@ -193,6 +198,7 @@ namespace Hearth.ShopsFood
 
         public static void Teardown(Map map, TestRoom room)
         {
+            claimed.Remove(room.Outer);
             foreach (var z in room.Zones) if (!z.Map.zoneManager.AllZones.Contains(z) == false) z.Delete();
             foreach (var c in room.Outer.ExpandedBy(1))
                 foreach (var t in c.GetThingList(map).ToList())
@@ -762,12 +768,16 @@ namespace Hearth.ShopsFood
             }
             yield return 5;
             t.Check(VenueMarket.Stalls(map) >= need, "stalls counted: " + VenueMarket.Stalls(map));
+            var realGetter = Venues.RenownGetter;
+            if (Modules.On(ModuleId.Inn)) t.Check(realGetter != null, "the Inn module wires Venues.RenownGetter");
+            if (realGetter != null) t.Check(Math.Abs(Venues.Renown() - GuestApi.Renown(Find.CurrentMap)) < 0.01f, "Venues.Renown() reads the real colony renown");
             Venues.RenownGetter = () => 5f;
             t.Check(!VenueMarket.CanHaveMarket(map) && (VenueMarket.Blocker(map) ?? "").Contains("renown"), "low renown blocks the market: " + VenueMarket.Blocker(map));
             Venues.RenownGetter = () => 60f;
             t.Check(VenueMarket.CanHaveMarket(map), "shop + enough stalls + renown 60 make a market possible: " + VenueMarket.Blocker(map));
             Venues.RenownGetter = null;
             t.Check(Math.Abs(Venues.Renown() - 50f) < 0.01f, "without a renown system the colony counts as neutral (50)");
+            Venues.RenownGetter = () => 60f;   // market day below runs with an explicit renown, not with whatever the live colony has
             var tillBefore = VenueTestKit.Till(map);
             int lordsBefore = map.lordManager.lords.Count(l => l.LordJob is LordJob_TradeWithColony);
             int lettersBefore = Find.LetterStack.LettersListForReading.Count;
@@ -791,6 +801,7 @@ namespace Hearth.ShopsFood
             float days = (game.NextMarketTick - 1000) / (float)GenDate.TicksPerDay;
             t.Check(days >= 15.9f && days <= 24.1f, "interval 20 days +-20 %: " + days.ToString("0.0"));
             HSettings.Set(VS.MarketDays, old);
+            Venues.RenownGetter = realGetter;
             game.Schedule(Find.TickManager.TicksGame);
             foreach (var st in stalls) if (!st.Destroyed) st.Destroy();
             VenueTestKit.Teardown(map, room);

@@ -193,52 +193,11 @@ namespace Hearth.Compat.Hospitality
             foreach (var b in rec.Beds) if (b.ThingIdNumber == bed.thingIDNumber) b.Adopted = true;
         }
 
-        /// <summary>Called by the importer for every bed: raises the event and, if the Inn module has a guest bed comp, sets it.</summary>
+        /// <summary>Called by the importer for every bed: raises the event; the Inn module adopts the bed (AdoptImportedBed marks it adopted).</summary>
         internal static void NotifyBedImported(Building_Bed bed, int fee)
         {
-            if (TryMarkInnComp(bed, fee)) MarkAdopted(bed);
             try { GuestBedImported?.Invoke(bed, fee); }
             catch (Exception e) { HLog.Error("Compat", "A GuestBedImported handler failed", e); }
-        }
-
-        static Type innCompType; static bool innCompLooked;
-
-        /// <summary>Soft bridge to the Inn module (type by name "Hearth.Guests.CompHH_GuestBed"): sets a guest bed flag and fee if they exist.</summary>
-        static bool TryMarkInnComp(Building_Bed bed, int fee)
-        {
-            if (!innCompLooked) { innCompLooked = true; innCompType = GenTypes.GetTypeInAnyAssembly("Hearth.Guests.CompHH_GuestBed"); }
-            if (innCompType == null) return false;
-            ThingComp comp = null;
-            foreach (var c in bed.AllComps) if (innCompType.IsInstanceOfType(c)) { comp = c; break; }
-            if (comp == null) return false;
-            try
-            {
-                const BindingFlags F = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
-                bool set = false;
-                var m = innCompType.GetMethod("SetGuestBed", F, null, new[] { typeof(bool) }, null);
-                if (m != null) { m.Invoke(comp, new object[] { true }); set = true; }
-                foreach (var name in new[] { "IsGuestBed", "isGuestBed", "Enabled", "enabled", "Active", "active" })
-                {
-                    if (set) break;
-                    var pi = innCompType.GetProperty(name, F);
-                    if (pi != null && pi.PropertyType == typeof(bool) && pi.CanWrite) { pi.SetValue(comp, true); set = true; break; }
-                    var fi = innCompType.GetField(name, F);
-                    if (fi != null && fi.FieldType == typeof(bool)) { fi.SetValue(comp, true); set = true; break; }
-                }
-                foreach (var name in new[] { "Fee", "fee", "RentalFee", "rentalFee", "Price", "price" })
-                {
-                    var pi = innCompType.GetProperty(name, F);
-                    var ft = pi?.PropertyType ?? innCompType.GetField(name, F)?.FieldType;
-                    if (ft == null) continue;
-                    object v = ft == typeof(int) ? (object)fee : ft == typeof(float) ? (object)(float)fee : ft == typeof(Money) ? (object)Money.FromSilver(fee) : null;
-                    if (v == null) continue;
-                    if (pi != null && pi.CanWrite) pi.SetValue(comp, v); else innCompType.GetField(name, F)?.SetValue(comp, v);
-                    break;
-                }
-                if (set) HLog.Info("Compat", $"Imported guest bed {bed.ThingID} handed to the Inn module (fee {fee})");
-                return set;
-            }
-            catch (Exception e) { HLog.Warn("Compat", "Inn guest bed comp found but could not be set: " + e.Message); return false; }
         }
     }
 }

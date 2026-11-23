@@ -216,7 +216,7 @@ namespace Silverline
             {
                 Basis = HSettings.Get("lottery.demandBase"), Reach = reach, OwnQuote = ColonyQuote, GlobalQuote = GlobalQuote,
                 OwnJackpot = ColonyJackpot.Silver + ColonyRankList()[0].Share * ColonyPot.Silver, GlobalJackpot = Math.Max(1, GlobalJackpot.Silver),
-                Renown = 50, GlobalPrice = GlobalPrice.Silver, TicketPrice = ColonyPrice.Silver, AcceptFee = ColonyFee,
+                Renown = RenownSource.Current, GlobalPrice = GlobalPrice.Silver, TicketPrice = ColonyPrice.Silver, AcceptFee = ColonyFee,
             };
         }
 

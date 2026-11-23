@@ -76,9 +76,12 @@ namespace Hearth.Kitchen
 
         public static IEnumerable<DishDef> Known() => DefDatabase<DishDef>.AllDefs.Where(IsKnown);
 
-        /// <summary>The dark menu (long pork †): only when the player's rules allow it. Setting, or an ideoligion that approves cannibalism.</summary>
+        /// <summary>The dark menu (long pork †): only when the player's rules allow it. Needs content Dark or Grim, plus the setting or an ideoligion that approves cannibalism.</summary>
         public static bool DarkAllowed()
         {
+            // needs content intensity Dark or Grim (confirmed, when the Underworld module keeps the confirmation)
+            var level = Hearth.Underworld.Underworld.ModuleActive ? Hearth.Underworld.Underworld.Effective : Hearth.Underworld.Underworld.Intensity;
+            if (level < ContentIntensity.Dark) return false;
             if (HSettings.GetBool("kitchen.darkMenu")) return true;
             try
             {

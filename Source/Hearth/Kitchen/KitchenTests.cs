@@ -206,6 +206,17 @@ namespace Hearth.Kitchen.Tests
             t.Check(DishKnowledge.LevelUnlocked(1) && DefDatabase<ResearchProjectDef>.GetNamedSilentFail("HH_Cooking_L1")?.IsFinished == true, "level 1 is free (research finished at game start)");
             var dark = KT.Dish("LongPorkStew");
             t.Check(!DishKnowledge.IsKnown(dark) || DishKnowledge.DarkAllowed(), "dark menu hidden by default");
+            {
+                // the dark menu needs content Dark or Grim even when the setting is on
+                var prof = HearthProfile.Current; var oldC = prof.Content; var uwc = Hearth.Underworld.Underworld.Comp; bool oldAck = uwc?.ContentWarningAck ?? false;
+                HSettings.Set("kitchen.darkMenu", 1f);
+                prof.Content = ContentIntensity.Standard;
+                t.Check(!DishKnowledge.DarkAllowed(), "dark menu setting alone does not open it at content Standard");
+                prof.Content = ContentIntensity.Dark; if (uwc != null) uwc.ContentWarningAck = true;
+                t.Check(DishKnowledge.DarkAllowed(), "dark menu opens at content Dark with the setting on");
+                HSettings.Set("kitchen.darkMenu", 0f);
+                prof.Content = oldC; if (uwc != null) uwc.ContentWarningAck = oldAck;
+            }
             HSettings.Set("kitchen.variants", 0f); t.Check(!l1.recipes[1].AvailableNow && l1.recipes[0].AvailableNow, "Fine and Signature forms can be switched off"); HSettings.Set("kitchen.variants", 1f);
             t.Check(DishKnowledge.Known().Count() >= 21, "known dishes listed: " + DishKnowledge.Known().Count());
             // foods of other mods are found by name

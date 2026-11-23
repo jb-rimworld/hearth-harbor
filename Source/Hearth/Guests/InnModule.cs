@@ -58,6 +58,9 @@ namespace Hearth.Guests
             // Underworld scandals change the house's renown (already capped by the tier there).
             Hearth.Underworld.Underworld.RenownDelta += (map, delta, reason) =>
                 Guard.Run(ModuleId.Inn, "Inn.UnderworldRenown", () => { if (Modules.On(ModuleId.Inn)) GuestRegistry.Instance?.ChangeRenown(delta, "underworld: " + reason); });
+            // Renown for the others: the venue market gate (Venues.Renown) and the bank's lottery demand (RenownSource, Hearth.Core).
+            Venues.RenownGetter = () => GuestApi.Renown(Find.CurrentMap);
+            RenownSource.Getter = () => GuestApi.Renown(Find.CurrentMap);
             // Waiting / night bell outcomes of the Venues module become mood thoughts (5.13).
             GuestApi.SatisfactionChanged += GuestThoughts.OnSatisfaction;
             // Guest beds imported from a Hospitality save become our guest beds.
@@ -86,14 +89,18 @@ namespace Hearth.Guests
             });
         }
 
-        /// <summary>Turns a bed imported from Hospitality into one of our guest beds (fee is replaced by our own pricing, 5.11).</summary>
+        /// <summary>Turns a bed imported from Hospitality into one of our guest beds (the old fee is kept: free or a fixed price).</summary>
         public static bool AdoptImportedBed(Building_Bed bed, int fee)
         {
             if (bed == null || bed.Destroyed || !Modules.On(ModuleId.Inn)) return false;
             var comp = GuestBeds.Comp(bed); if (comp == null) return false;
             comp.SetGuestBed(true, byPlayer: false);
+            // the old fee is kept: 0 means free, anything else becomes a fixed price (the player can switch back to automatic)
+            if (fee <= 0) comp.PriceMode = BedPriceMode.Free;
+            else { comp.PriceMode = BedPriceMode.Manual; comp.ManualPrice = fee; }
+            GuestBedPricing.ClearCache();
             Hearth.Compat.Hospitality.HospitalityImport.MarkAdopted(bed);
-            HLog.Info("Inn", $"Adopted guest bed {bed.ThingID} from Hospitality (old fee {fee} silver; our own pricing applies)");
+            HLog.Info("Inn", $"Adopted guest bed {bed.ThingID} from Hospitality (old fee {fee} silver kept as " + (fee <= 0 ? "free" : "fixed price") + ")");
             return true;
         }
 

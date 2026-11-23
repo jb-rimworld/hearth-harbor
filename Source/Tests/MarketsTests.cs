@@ -560,6 +560,8 @@ public class LotteryTests
         d.OwnQuote = 0.7; Assert.True(LotteryMath.TicketsPerDay(d) > baseline * 2.2);       // exp(4 * 0.2) = 2.23
         d.OwnQuote = 0.5; d.TicketPrice = 10; Assert.True(LotteryMath.TicketsPerDay(d) < baseline * 0.4);   // (5/10)^1.5 = 0.35
         d.TicketPrice = 5; d.Renown = 100; Assert.True(LotteryMath.TicketsPerDay(d) > baseline * 1.4);
+        d.Renown = 10; Assert.True(LotteryMath.TicketsPerDay(d) >= baseline * 0.59 && LotteryMath.TicketsPerDay(d) <= baseline * 0.61);   // new colony: 0.6x, never near zero
+        d.Renown = 0; Assert.True(LotteryMath.TicketsPerDay(d) >= baseline * 0.5 - 1e-9);
         d.Renown = 50; d.OwnJackpot = 200000; Assert.True(LotteryMath.TicketsPerDay(d) > baseline * 1.9);
     }
 
