@@ -221,6 +221,9 @@
   <HH.UI.Overview.Today>Heute</HH.UI.Overview.Today>
   <HH.UI.Overview.Yesterday>Gestern</HH.UI.Overview.Yesterday>
   <HH.UI.Overview.Sources>Bisherige Einnahmen nach Quelle</HH.UI.Overview.Sources>
+  <HH.UI.Overview.Arrivals>Ankünfte in den nächsten 24 Std.: {0}, erwartet etwa {1} Gruppen pro Tag.</HH.UI.Overview.Arrivals>
+  <HH.UI.Overview.Arrivals.None>noch niemand eingeplant</HH.UI.Overview.Arrivals.None>
+  <HH.UI.Overview.Arrivals.Planned>{0} Gruppe(n) geplant (etwa {1} Gast/Gäste)</HH.UI.Overview.Arrivals.Planned>
   <HH.UI.Overview.NoIncome>Noch keine Einnahmen. Sie erscheinen hier, sobald ein Gast zahlt.</HH.UI.Overview.NoIncome>
   <HH.UI.Guests.Head>Gäste · {0} hier · {1} Tagesgäste</HH.UI.Guests.Head>
   <HH.UI.Guests.None>Im Moment übernachtet niemand.</HH.UI.Guests.None>

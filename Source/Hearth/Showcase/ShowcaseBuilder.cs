@@ -29,6 +29,7 @@ namespace Hearth.Showcase
         public readonly List<Thing> powered = new List<Thing>();
         public readonly List<Thing> fuelled = new List<Thing>();
         public CellRect casino, lobby, restaurant, spa, bank;
+        Thing boutiqueSign;
         public List<Pawn> Cols = new List<Pawn>();
         ThingDef wallStuff, doorStuff;
 
@@ -249,6 +250,10 @@ namespace Hearth.Showcase
             foreach (var x in new[] { 5, 11, 22, 33 }) Lamp(x, 13);
             Put("Armchair", 17, 13, Rot4.South);
 
+            // ---- boutique: the corridor sells goods from a shelf (the "shop" line of the income table; the tavern's shelf in the lobby is the "drink" line)
+            boutiqueSign = Put("HH_VenueSign", 25, 13, Rot4.South, ThingDefOf.WoodLog); SetSign(boutiqueSign, "HH_Venue_Shop", "Corridor Boutique");
+            Put("Shelf", 27, 12, null, ThingDefOf.WoodLog);
+
             // ---- front: lamps and pots, power plant
             foreach (var x in new[] { 17, 23 }) { Lamp(x, -1); }
             foreach (var x in new[] { 16, 24 }) Pot(x, -1);
@@ -271,7 +276,7 @@ namespace Hearth.Showcase
             ConnectLoners();
             yield return 120;
             Venues.MarkDirty(map);
-            foreach (var sg in new[] { lobbySign, restSign, casSign, spaSign })
+            foreach (var sg in new[] { lobbySign, restSign, casSign, spaSign, boutiqueSign })
             {
                 if (sg == null) { t.Note("venue sign missing"); continue; }
                 var vc = sg.TryGetComp<CompVenueSign>(); var rm = Venues.RoomOfSign(sg);
@@ -307,12 +312,50 @@ namespace Hearth.Showcase
             }
             t.Check(cols.Count > 0, "colonists on the map: " + cols.Count);
 
+            Restock();
             if (money)
             {
                 yield return 5;
                 SetupMoney();
                 yield return 60;
             }
+        }
+
+        /// <summary>
+        /// Keeps the tavern shelf in drinks and the boutique shelf in goods (the run measures the hotel, not the colony's hauling): adds a few stacks
+        /// when a venue's stock runs low. Returns how many stacks were added.
+        /// </summary>
+        public int Restock()
+        {
+            int added = 0;
+            try
+            {
+                foreach (var v in Venues.All(map))
+                {
+                    var kind = VenueApi.SellsOf(v);
+                    if (kind == SellKind.None) continue;
+                    int units = VenueSales.Stock(v, true).Sum(x => x.stackCount);
+                    if (units >= (kind == SellKind.Drinks ? 12 : 10)) continue;
+                    var at = v.Sign.Position;
+                    var wares = kind == SellKind.Drinks ? new[] { ("Beer", 20), ("Milk", 15) } : new[] { ("Cloth", 20), ("MedicineHerbal", 4) };
+                    foreach (var (name, count) in wares)
+                    {
+                        var d = DefDatabase<ThingDef>.GetNamedSilentFail(name); if (d == null) continue;
+                        var th = ThingMaker.MakeThing(d); th.stackCount = Math.Min(count, d.stackLimit);
+                        if (GenPlace.TryPlaceThing(th, ShelfCell(v) ?? at, map, ThingPlaceMode.Near)) added++;
+                    }
+                }
+            }
+            catch (Exception e) { T.Note("restock: " + e.Message); }
+            return added;
+        }
+
+        /// <summary>A shelf cell inside the venue's room (null when it has none).</summary>
+        IntVec3? ShelfCell(Venue v)
+        {
+            var room = v.Room; if (room == null) return null;
+            foreach (var c in room.Cells) if (c.GetSlotGroup(map) != null) return c;
+            return null;
         }
 
         // ---------------------------------------------------------------- pieces

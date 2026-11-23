@@ -42,6 +42,9 @@ namespace Hearth.Showcase
             public int Present, Arrived, Left, Nights, DishesCooked, DishesSold, Claims, Pawns, Colonists, Errors, Warns;
             public double Till, Bank, Income, Renown, Whispers, Satisfaction, CasinoHouse, Premiums, Benefits, SalesTakings, Ledger, Tps;
             public int SatSamples;
+            // scheduler (end of day state, and what happened during the day)
+            public int FreeBeds, Beds, Forecast, GroupsPlanned, GroupsArrived, GroupsPostponed, GroupsDropped, DroughtBreaks, ThinnedOut, NoFaction;
+            public double Rate;
             public string IncomeByCat = "";
             public Dictionary<string, double> Cats = new Dictionary<string, double>();
         }
@@ -52,7 +55,7 @@ namespace Hearth.Showcase
         readonly HashSet<int> platesSeen = new HashSet<int>();
         readonly List<string> problems = new List<string>();      // first occurrences of invariant breaks
         readonly List<string> upkeepLog = new List<string>();
-        int refuels, foodAssists, rawTopUps, returns;
+        int refuels, foodAssists, rawTopUps, returns, shelfStacks;
         readonly Dictionary<int, string> stuckSeen = new Dictionary<int, string>();
         bool reportWritten;
         string firstPausedAt, firstImbalanceAt;
@@ -62,6 +65,7 @@ namespace Hearth.Showcase
         int dArrived, dLeft, dNights, dCooked, dSatN; double dSat;
         int salesAtDayStart, claimsAtDayStart, errAtDayStart, warnAtDayStart; double takingsAtDayStart, premAtDayStart, benAtDayStart;
         long tsAtDayStart; int tickAtDayStart;
+        SchedulerStats schedAtDayStart = new SchedulerStats();
 
         static int Days
         {
@@ -82,6 +86,7 @@ namespace Hearth.Showcase
             try
             {
                 MapComponent_HH_GuestScheduler.SuspendedForTests = false;
+                MapComponent_HH_GuestScheduler.DiagLog = new List<string>();
                 FinishResearch();
                 yield return 5;
                 foreach (var w in b.Build(t, true, true)) yield return w;
@@ -223,6 +228,7 @@ namespace Hearth.Showcase
         {
             try
             {
+                shelfStacks += b.Restock();
                 foreach (var th in b.fuelled)
                     if (th.Spawned) { var rf = th.TryGetComp<CompRefuelable>(); if (rf != null && rf.FuelPercentOfMax < 0.4f) { rf.Refuel(rf.Props.fuelCapacity); refuels++; } }
                 // colonists' own food: top up the pantry when it is nearly empty (the run is about the hotel, not about farming)
@@ -368,7 +374,11 @@ namespace Hearth.Showcase
             premAtDayStart = Ins(c => c.contracts.Sum(x => x.premiumPaid)); benAtDayStart = Ins(c => c.contracts.Sum(x => x.benefitPaid));
             errAtDayStart = HLog.ErrorCount; warnAtDayStart = HLog.WarnCount;
             tsAtDayStart = Stopwatch.GetTimestamp(); tickAtDayStart = now;
+            var c = SchedulerOf()?.Counters;
+            if (c != null) schedAtDayStart = new SchedulerStats { Planned = c.Planned, ThinnedOut = c.ThinnedOut, NoFaction = c.NoFaction, Arrived = c.Arrived, WaitingForBed = c.WaitingForBed, Postponed = c.Postponed, Dropped = c.Dropped, DroughtBreaks = c.DroughtBreaks };
         }
+
+        MapComponent_HH_GuestScheduler SchedulerOf() => map?.GetComponent<MapComponent_HH_GuestScheduler>();
 
         void SamplePoll(int now, int poll)
         {
@@ -435,6 +445,15 @@ namespace Hearth.Showcase
             double secs = (Stopwatch.GetTimestamp() - tsAtDayStart) / (double)Stopwatch.Frequency;
             row.Tps = secs > 0.01 ? (now - tickAtDayStart) / secs : 0;
             row.Pawns = map.mapPawns.AllPawnsSpawnedCount; row.Colonists = map.mapPawns.FreeColonistsSpawnedCount;
+            var sch = SchedulerOf();
+            if (sch != null)
+            {
+                var c = sch.Counters;
+                row.Beds = GuestBeds.CountOn(map); row.FreeBeds = GuestBeds.FreeOn(map).Count; row.Forecast = sch.Forecast.Count;
+                row.Rate = sch.RatePerDay(sch.OvernightPossible, sch.DayVisitsPossible);
+                row.GroupsPlanned = c.Planned - schedAtDayStart.Planned; row.GroupsArrived = c.Arrived - schedAtDayStart.Arrived; row.GroupsPostponed = c.Postponed - schedAtDayStart.Postponed;
+                row.GroupsDropped = c.Dropped - schedAtDayStart.Dropped; row.DroughtBreaks = c.DroughtBreaks - schedAtDayStart.DroughtBreaks; row.ThinnedOut = c.ThinnedOut - schedAtDayStart.ThinnedOut; row.NoFaction = c.NoFaction - schedAtDayStart.NoFaction;
+            }
             return row;
         }
 
@@ -475,10 +494,17 @@ namespace Hearth.Showcase
             T.Check(Guard.Paused.Count() == 0 && firstPausedAt == null, "no module paused by Guard" + (firstPausedAt != null ? " (paused at " + firstPausedAt + ")" : ""));
             int colAlive = map.mapPawns.FreeColonistsSpawnedCount;
             T.Note($"return visits of known guests: {returns}; threat pawns removed: {threatsRemoved}; heat/cold assists: {heatAssists}");
-            T.Note($"colonists alive at the end: {colAlive}/{b.Cols.Count}; upkeep: {refuels} generator refuels, {rawTopUps} pantry restocks, {foodAssists} starvation feeds");
+            T.Note($"colonists alive at the end: {colAlive}/{b.Cols.Count}; upkeep: {refuels} generator refuels, {rawTopUps} pantry restocks, {shelfStacks} shelf stacks (tavern drinks, boutique goods), {foodAssists} starvation feeds");
             foreach (var u in upkeepLog.Take(12)) T.Note(u);
             foreach (var u in letterLog) T.Note("incident: " + u);
             WriteFiles(true);
+            try
+            {
+                var diag = MapComponent_HH_GuestScheduler.DiagLog;
+                if (diag != null) File.WriteAllLines(OutBase() + "_sched.txt", diag);
+                MapComponent_HH_GuestScheduler.DiagLog = null;
+            }
+            catch (Exception e) { T.Log("could not write the scheduler log: " + e.Message); }
         }
 
         // ------------------------------------------------------------------------------------------------- files
@@ -497,12 +523,12 @@ namespace Hearth.Showcase
                 string bs = OutBase();
                 var cats = rows.SelectMany(r => r.Cats.Keys).Distinct().OrderBy(x => x).ToList();
                 var csv = new StringBuilder();
-                csv.AppendLine("day,ledger_day,guests_present,guests_arrived,guests_left,nights_sold,till_silver,bank_silver,income_silver,renown,whispers,avg_satisfaction,casino_house_result,dishes_cooked,dishes_sold,dish_takings,insurance_premiums,insurance_claims,insurance_benefit,ledger_sum,hlog_errors,hlog_warnings,tps,pawns,colonists" + string.Concat(cats.Select(c => ",income_" + c)));
+                csv.AppendLine("day,ledger_day,guests_present,guests_arrived,guests_left,nights_sold,till_silver,bank_silver,income_silver,renown,whispers,avg_satisfaction,casino_house_result,dishes_cooked,dishes_sold,dish_takings,insurance_premiums,insurance_claims,insurance_benefit,ledger_sum,hlog_errors,hlog_warnings,tps,pawns,colonists,free_beds,rate_per_day,groups_arrived,groups_planned,drought_breaks" + string.Concat(cats.Select(c => ",income_" + c)));
                 foreach (var r in rows)
                     csv.AppendLine(string.Join(",", new[] {
                         r.Day.ToString(), r.LedgerDay.ToString(), r.Present.ToString(), r.Arrived.ToString(), r.Left.ToString(), r.Nights.ToString(), F(r.Till), F(r.Bank), F(r.Income), F(r.Renown), F(r.Whispers),
                         double.IsNaN(r.Satisfaction) ? "" : r.Satisfaction.ToString("0.000", Inv), F(r.CasinoHouse), r.DishesCooked.ToString(), r.DishesSold.ToString(), F(r.SalesTakings), F(r.Premiums), r.Claims.ToString(), F(r.Benefits),
-                        r.Ledger.ToString("0.#####", Inv), r.Errors.ToString(), r.Warns.ToString(), r.Tps.ToString("0"), r.Pawns.ToString(), r.Colonists.ToString() }.Concat(cats.Select(c => r.Cats.TryGetValue(c, out var v) ? F(v) : "0"))));
+                        r.Ledger.ToString("0.#####", Inv), r.Errors.ToString(), r.Warns.ToString(), r.Tps.ToString("0"), r.Pawns.ToString(), r.Colonists.ToString(), r.FreeBeds.ToString(), F(r.Rate), r.GroupsArrived.ToString(), r.GroupsPlanned.ToString(), r.DroughtBreaks.ToString() }.Concat(cats.Select(c => r.Cats.TryGetValue(c, out var v) ? F(v) : "0"))));
                 File.WriteAllText(bs + ".csv", csv.ToString());
                 File.WriteAllText(bs + ".md", Markdown(cats, final));
             }
@@ -531,6 +557,14 @@ namespace Hearth.Showcase
             sb.AppendLine("| day | " + string.Join(" | ", cats) + " |");
             sb.AppendLine("|---|" + string.Concat(cats.Select(_ => "---|")));
             foreach (var r in rows) sb.AppendLine($"| {r.Day} | " + string.Join(" | ", cats.Select(c => r.Cats.TryGetValue(c, out var v) ? v.ToString("0.0", Inv) : "0")) + " |");
+            sb.AppendLine();
+            sb.AppendLine("## Arrival scheduler (per day)");
+            sb.AppendLine();
+            sb.AppendLine("Groups = planned groups that really came (the `arrived` column above counts guests, returners included). Free beds, rate and forecast are read at the end of the day.");
+            sb.AppendLine();
+            sb.AppendLine("| day | groups arrived | planned | thinned out | postponed | dropped | no faction | drought breaks | free beds | rate/day | forecast |");
+            sb.AppendLine("|---|---|---|---|---|---|---|---|---|---|---|");
+            foreach (var r in rows) sb.AppendLine($"| {r.Day} | {r.GroupsArrived} | {r.GroupsPlanned} | {r.ThinnedOut} | {r.GroupsPostponed} | {r.GroupsDropped} | {r.NoFaction} | {r.DroughtBreaks} | {r.FreeBeds}/{r.Beds} | {r.Rate:0.00} | {r.Forecast} |");
             sb.AppendLine();
             if (full.Count > 0)
             {

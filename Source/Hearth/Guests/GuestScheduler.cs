@@ -55,10 +55,18 @@ namespace Hearth.Guests
         }
     }
 
+    /// <summary>Counters of one scheduler: why groups were (not) planned and (not) arrived. In memory only.</summary>
+    public sealed class SchedulerStats
+    {
+        public int Planned, ThinnedOut, NoFaction, Arrived, WaitingForBed, Postponed, Dropped, DroughtBreaks;
+        public string Line() => $"planned {Planned}, thinned {ThinnedOut}, no faction {NoFaction}, arrived {Arrived}, waited for a bed {WaitingForBed}, postponed {Postponed}, dropped {Dropped}, drought breaks {DroughtBreaks}";
+    }
+
     /// <summary>
     /// Arrival plan of one map (5.4, 5.13). Runs only while the colony has a guest bed (overnight guests) or a venue (day visitors);
     /// otherwise it is empty and does nothing at all (N08). Keeps a forecast of the next days for the guest overview.
-    /// Rate = 1.0 groups/day × renown curve × capacity × arrival setting.
+    /// Rate = 1.0 groups/day × renown curve × capacity × arrival setting. The capacity is the one expected at the arrival time (guests that will have left
+    /// by then free their beds, groups already planned take theirs), and a house that stays quiet with room to spare gets a group nudged in (drought breaker).
     /// </summary>
     public sealed class MapComponent_HH_GuestScheduler : MapComponent
     {
@@ -66,6 +74,15 @@ namespace Hearth.Guests
         int nextId = 1;
         bool everActive;
         int planHorizon = -1;
+        /// <summary>Time of the next candidate group when it is drawn but still beyond the forecast window (-1 = none). Not saved: redrawing from the last candidate is harmless (memoryless).</summary>
+        int nextCandidate = -1;
+        const int Never = int.MinValue;
+        /// <summary>Last planned group that really arrived, when the plan woke up, and the last scheduler tick (drought breaker, 5.4). Ticks, or <see cref="Never"/>.</summary>
+        int lastArrivalTick = Never, activeSince = Never, lastTickSeen = Never;
+        /// <summary>What happened to the plan since the game was loaded (not saved): shown by the long run report and the dev overview.</summary>
+        public readonly SchedulerStats Counters = new SchedulerStats();
+        /// <summary>Tests switch this on to collect one line per scheduler decision (long run diagnostics); null = off, no cost.</summary>
+        public static List<string> DiagLog;
         /// <summary>Tests can switch the automatic scheduler off while they drive arrivals by hand.</summary>
         public static bool SuspendedForTests;
 
@@ -81,6 +98,14 @@ namespace Hearth.Guests
             return forecast.Where(g => g.ArrivalTick <= limit).OrderBy(g => g.ArrivalTick).ToList();
         }
 
+        /// <summary>Planned groups due within the next 24 hours and how many guests they bring (overview line).</summary>
+        public void Next24Hours(out int groups, out int guests)
+        {
+            groups = guests = 0;
+            int limit = Find.TickManager.TicksGame + 60000;
+            foreach (var g in forecast) if (g.ArrivalTick <= limit) { groups++; guests += g.IsReturn ? g.Returning.Count : g.Size; }
+        }
+
         public PlannedGroup NextArrival() => forecast.OrderBy(g => g.ArrivalTick).FirstOrDefault();
 
         /// <summary>Drops every planned return visit and releases the pinned world pawns (removal, tests).</summary>
@@ -90,6 +115,14 @@ namespace Hearth.Guests
         }
 
         internal void ClearReturnsForTests() => ClearAllReturns();
+
+#if HH_TESTS
+        internal void ClearForecastForTests() { foreach (var g in forecast) GuestReturns.Unpin(g.Returning); forecast.Clear(); }
+        internal PlannedGroup AddPlannedForTests(Faction f, int size, StayKind kind, int nights, int tick)
+        { var g = new PlannedGroup { Id = nextId++, Faction = f, Size = size, Kind = kind, Nights = nights, ArrivalTick = tick }; forecast.Add(g); return g; }
+        /// <summary>Pretends nobody has come for this many ticks (the plan woke up and the last arrival lies that far back).</summary>
+        internal void MakeQuietForTests(int ticks) { int now = Find.TickManager.TicksGame; lastArrivalTick = now - ticks; activeSince = now - ticks; }
+#endif
 
         /// <summary>Drops the planned return that brings this pawn back (pin cap). True if there was one.</summary>
         public bool DropReturnOf(Pawn p)
@@ -129,12 +162,15 @@ namespace Hearth.Guests
         void Tick()
         {
             int now = Find.TickManager.TicksGame;
+            // the plan was asleep (module off, suspended, no bed for a while): it starts a fresh quiet period instead of counting the whole sleep as a drought
+            if (lastTickSeen != Never && now - lastTickSeen > 2500) { activeSince = now; nextCandidate = -1; }
+            lastTickSeen = now;
             var door = GuestRegistry.Instance?.Door;
             bool night = OvernightPossible && (door == null || door.KindOk(StayKind.Overnight)), day = DayVisitsPossible && (door == null || door.KindOk(StayKind.DayVisitor));
             if (!map.IsPlayerHome || (!night && !day))
             {
                 if (forecast.Count > 0) { foreach (var x in forecast) GuestReturns.Unpin(x.Returning); forecast.Clear(); HLog.Debug("Inn", "Forecast cleared: no guest bed and no venue on " + map); }
-                planHorizon = -1;
+                planHorizon = -1; nextCandidate = -1;
                 return;
             }
             for (int i = forecast.Count - 1; i >= 0; i--)
@@ -150,7 +186,7 @@ namespace Hearth.Guests
                 float d = (float)rng.Range(HSettings.Get(InnSettings.FirstGuestMinDays), Math.Max(HSettings.Get(InnSettings.FirstGuestMinDays), HSettings.Get(InnSettings.FirstGuestMaxDays)));
                 var kind = night ? StayKind.Overnight : StayKind.DayVisitor;
                 var first = Plan(now + (int)(d * 60000), kind, rng);
-                if (first != null) { first.ArrivalTick = Math.Max(now + 2500, AlignToHours(first.ArrivalTick, kind, true)); forecast.Add(first); }
+                if (first != null) { first.ArrivalTick = Math.Max(now + 2500, AlignToHours(first.ArrivalTick, kind, true)); forecast.Add(first); Counters.Planned++; }
                 planHorizon = now + (int)(d * 60000);
                 HLog.Info("Inn", $"First guests planned for {map}: {first?.Describe(map)}");
                 // B7: tell the player once when the first guests are due
@@ -158,23 +194,28 @@ namespace Hearth.Guests
                     Messages.Message("HH.Inn.Msg.FirstGuestsEta".TranslateOr("Your first guests are on their way: {0}, expected {1}.")
                         .Replace("{0}", first.Faction?.Name ?? "?").Replace("{1}", first.Eta()), MessageTypeDefOf.PositiveEvent, false);
             }
-            if (planHorizon < now) planHorizon = now;
+            if (activeSince == Never) activeSince = now;
             TopUp(now, night, day);
+            BreakDrought(now, night, day);
             for (int i = forecast.Count - 1; i >= 0; i--)
             {
                 var g = forecast[i];
                 if (g.ArrivalTick > now) continue;
                 forecast.RemoveAt(i);
-                if (!TryArrive(g))
+                var res = TryArrive(g, out string why);
+                if (res == ArriveResult.Arrived) { Counters.Arrived++; lastArrivalTick = now; Diag($"arrived: {g.Describe(map)}"); continue; }
+                if (res == ArriveResult.Moot) { Diag($"moot: {g.Describe(map)} ({why})"); continue; }
+                if (res == ArriveResult.NoBed) Counters.WaitingForBed++;
+                if (++g.Postponed <= 3)
                 {
-                    if (++g.Postponed <= 3)
-                    {
-                        g.ArrivalTick = AlignToHours(now + 2500 * 8, g.Kind, false);
-                        forecast.Add(g);
-                    }
-                    else { HLog.Debug("Inn", "Planned group dropped after 3 postponements: " + g.Describe(map)); GuestReturns.Unpin(g.Returning); }
+                    Counters.Postponed++;
+                    g.ArrivalTick = AlignToHours(now + 2500 * 8, g.Kind, false);
+                    forecast.Add(g);
+                    Diag($"postponed ({why}): {g.Describe(map)}");
                 }
+                else { Counters.Dropped++; Diag($"dropped after 3 postponements ({why}): {g.Describe(map)}"); HLog.Debug("Inn", "Planned group dropped after 3 postponements: " + g.Describe(map)); GuestReturns.Unpin(g.Returning); }
             }
+            if (DiagLog != null && now % 2500 < 250) Diag($"state: beds {GuestBeds.CountOn(map)} free {GuestBeds.FreeOn(map).Count}, rate {RatePerDay(night, day):0.00}/day, forecast {forecast.Count}, last candidate {(planHorizon - now) / 60000f:0.0} d, candidates {CandidateFactions().Count}, {Counters.Line()}");
         }
 
         /// <summary>Renown curve: 0 → 0.9, 25 → 0.95, 50 → 1.0, 75 → 1.4, 100 → 1.8. The low end is nearly flat on purpose: a new house with a free bed
@@ -192,37 +233,134 @@ namespace Hearth.Guests
         /// <summary>Night capacity share: any free guest bed gives 0.8, two or more 1.0 (the old 1/3 per bed starved single-bed houses).</summary>
         public static float NightCapacity(int freeBeds) => freeBeds <= 0 ? 0f : Mathf.Min(1f, 0.6f + 0.2f * freeBeds);
 
+        /// <summary>Day-visitor capacity share: each venue opens 0.3, two or more 0.6.</summary>
+        float DayCapacity() => Mathf.Min(0.6f, Venues.All(map).Count * 0.3f);
+
         /// <summary>Groups per day for this map right now.</summary>
-        public float RatePerDay(bool night, bool day)
+        public float RatePerDay(bool night, bool day) => RateFor(night, day, GuestBeds.FreeOn(map).Count);
+
+        /// <summary>Groups per day with this many free guest beds.</summary>
+        float RateFor(bool night, bool day, int freeBeds)
         {
             float renown = GuestRegistry.Instance?.Renown ?? GuestRegistry.StartRenown;
             float cap = 0f;
-            if (night) cap += NightCapacity(GuestBeds.FreeOn(map).Count);
-            if (day) cap += Mathf.Min(0.6f, Venues.All(map).Count * 0.3f);
+            if (night) cap += NightCapacity(freeBeds);
+            if (day) cap += DayCapacity();
             return BaseRatePerDay * RenownCurve(renown) * cap * HSettings.Get(InnSettings.ArrivalRate);
         }
 
+        /// <summary>
+        /// Guest beds that should be free at <paramref name="tick"/>: every bed, minus overnight guests still booked then, minus planned
+        /// overnight groups (return visits included) that cover that moment. A group planned for tomorrow must not be judged by tonight's full house.
+        /// </summary>
+        public int ProjectedFreeBeds(int tick)
+        {
+            int taken = 0;
+            var reg = GuestRegistry.Instance;
+            if (reg != null) foreach (var r in reg.OnMap(map)) if (r.Overnight && !r.Settled && r.PlannedLeaveTick > tick) taken++;
+            foreach (var g in forecast)
+                if (g.Kind == StayKind.Overnight && g.ArrivalTick <= tick && tick < g.ArrivalTick + g.Nights * 60000 + 20000) taken += g.IsReturn ? g.Returning.Count : g.Size;
+            return Math.Max(0, GuestBeds.CountOn(map) - taken);
+        }
+
+        /// <summary>
+        /// Plans groups up to the forecast horizon. Candidates fall at the full-house-empty rate and are thinned by the capacity expected at their
+        /// arrival time (an inhomogeneous Poisson process): quiet beds give a steady stream, a full house a trickle of day visitors.
+        /// </summary>
         void TopUp(int now, bool night, bool day)
         {
             int horizon = now + HSettings.GetInt(InnSettings.ForecastDays) * 60000;
             var rng = JRand.Stream("inn.schedule");
+            int beds = GuestBeds.CountOn(map);
+            float lmax = RateFor(night, day, beds);
             int guard = 0;
-            while (planHorizon < horizon && guard++ < 50)
+            while (guard++ < 80)
             {
-                float lambda = RatePerDay(night, day);
-                // nothing to plan right now (all beds taken, arrivals off): do NOT jump the horizon ahead, or the house stays dark for the whole forecast window
+                // nothing to plan right now (no beds, arrivals off): do NOT jump the horizon ahead, or the house stays dark for the whole forecast window
                 // (long run: days 7-14 without a single arrival after a full house at planning time). It is looked at again every 250 ticks.
-                if (lambda <= 0.0001f) { planHorizon = Math.Max(planHorizon, now); break; }
-                double u = Math.Max(1e-6, rng.NextDouble());
-                int step = (int)(-Math.Log(u) / lambda * 60000);
-                planHorizon += Math.Max(2500, step);
-                if (planHorizon >= horizon) break;
-                StayKind kind = night && day ? (rng.Chance(0.7) ? StayKind.Overnight : StayKind.DayVisitor) : night ? StayKind.Overnight : StayKind.DayVisitor;
+                if (lmax <= 0.0001f) { nextCandidate = -1; break; }
+                // The next candidate is drawn once and kept until it falls inside the forecast window. (Drawing it anew on every call and dropping it
+                // when it overshot the window threw the candidate away: after the first fill the plan stalled, long run: up to 6 days without a group.)
+                if (nextCandidate >= 0 && nextCandidate < now) nextCandidate = -1;   // stale: the plan was asleep (module off, tests); never plan into the past
+                if (nextCandidate < 0)
+                {
+                    double gap = Math.Min(30.0, -Math.Log(Math.Max(1e-6, rng.NextDouble())) / lmax) * 60000.0;
+                    nextCandidate = (int)Math.Min(int.MaxValue / 2, Math.Max(planHorizon, now) + Math.Max(2500.0, gap));
+                }
+                if (nextCandidate > horizon) break;
+                planHorizon = nextCandidate;
+                nextCandidate = -1;
+                int freeAt = ProjectedFreeBeds(planHorizon);
+                float lt = RateFor(night, day, freeAt);
+                if (rng.NextDouble() * lmax > lt) { Counters.ThinnedOut++; continue; }
+                // night and day: the kind follows each side's share of the capacity at that moment
+                float capN = night ? NightCapacity(freeAt) : 0f, capD = day ? DayCapacity() : 0f;
+                StayKind kind = night && day ? (rng.Chance(capN / Math.Max(0.0001f, capN + capD)) ? StayKind.Overnight : StayKind.DayVisitor) : night ? StayKind.Overnight : StayKind.DayVisitor;
                 var g = Plan(planHorizon, kind, rng);
-                if (g == null) continue;
+                if (g == null) { Counters.NoFaction++; Diag($"no faction can come at +{(planHorizon - now) / 2500f:0.0} h: {WhyNobody()}"); continue; }
                 g.ArrivalTick = AlignToHours(planHorizon, kind, false);
                 forecast.Add(g);
+                Counters.Planned++;
+                Diag($"planned: {g.Describe(map)} (free beds then {freeAt}, rate {lt:0.00}/{lmax:0.00})");
             }
+        }
+
+        /// <summary>
+        /// Drought breaker: a house with room to spare that has seen nobody for far longer than its rate says is normal, and has nobody due within
+        /// half a day, gets one group in the next hours. Pure chance (or a plan that lost its group) must not leave free beds empty for days.
+        /// </summary>
+        void BreakDrought(int now, bool night, bool day)
+        {
+            float lam = RatePerDay(night, day);
+            if (lam <= 0.0001f) return;
+            float tolerateDays = Mathf.Clamp(1.5f / lam, 1f, 15f);
+            int quiet = now - Math.Max(lastArrivalTick, activeSince);   // activeSince is set before the first call
+            if (quiet < tolerateDays * 60000f) return;
+            foreach (var g in forecast) if (g.ArrivalTick <= now + 30000) return;
+            var rng = JRand.Stream("inn.schedule");
+            int freeNow = GuestBeds.FreeOn(map).Count;
+            float capN = night ? NightCapacity(freeNow) : 0f, capD = day ? DayCapacity() : 0f;
+            var kind = night && (!day || rng.Chance(capN / Math.Max(0.0001f, capN + capD))) ? StayKind.Overnight : StayKind.DayVisitor;
+            int at = now + 2500 * 2;
+            var rescue = Plan(at, kind, rng);
+            if (rescue == null) { Counters.NoFaction++; Diag("drought, but nobody can come: " + WhyNobody()); return; }
+            rescue.ArrivalTick = AlignToHours(at, kind, false);
+            forecast.Add(rescue);
+            Counters.Planned++; Counters.DroughtBreaks++;
+            lastArrivalTick = now;   // look again after another full wait, not on the next scheduler tick
+            Diag($"drought breaker after {quiet / 60000f:0.0} quiet days: {rescue.Describe(map)}");
+            HLog.Info("Inn", $"Drought breaker on {map}: no arrivals for {quiet / 60000f:0.0} days with room to spare, planned {rescue.Describe(map)}");
+        }
+
+        public static void Diag(string line) { DiagLog?.Add($"tick {Find.TickManager.TicksGame} (day {Find.TickManager.TicksGame / 60000f:0.00}): {line}"); }
+
+        /// <summary>Why no faction could be picked: one line per faction that is not allowed (diagnostics only).</summary>
+        string WhyNobody()
+        {
+            var sb = new System.Text.StringBuilder();
+            foreach (var f in Find.FactionManager.AllFactionsListForReading)
+            {
+                if (f.IsPlayer || f.Hidden || f.temporary || !f.def.humanlikeFaction) continue;
+                string why = WhyCannotVisit(f, map);
+                if (sb.Length > 0) sb.Append("; ");
+                sb.Append(f.Name).Append(": ").Append(why ?? "ok");
+            }
+            return sb.ToString();
+        }
+
+        /// <summary>The reason a faction cannot send guests now, or null when it can (mirrors <see cref="FactionCanVisit"/>).</summary>
+        public static string WhyCannotVisit(Faction f, Map map)
+        {
+            if (f == null) return "none";
+            if (f.IsPlayer) return "player";
+            if (f.Hidden) return "hidden";
+            if (f.defeated) return "defeated";
+            if (f.temporary) return "temporary";
+            if (!f.def.humanlikeFaction) return "not humanlike";
+            if (f.HostileTo(Faction.OfPlayer)) return "hostile to us (goodwill " + f.PlayerGoodwill + ")";
+            if (f.def.pawnGroupMakers == null || !f.def.pawnGroupMakers.Any(m => m.kindDef == PawnGroupKindDefOf.Peaceful || m.kindDef == PawnGroupKindDefOf.Trader)) return "no peaceful pawn group";
+            if (map != null && NeutralGroupIncidentUtility.AnyBlockingHostileLord(map, f)) return "a hostile lord is on the map";
+            return null;
         }
 
         PlannedGroup Plan(int tick, StayKind kind, RngStream rng)
@@ -277,11 +415,17 @@ namespace Hearth.Guests
             return true;
         }
 
+        /// <summary>Factions that may send guests right now (friendly enough, door policy, no hostile lord on the map).</summary>
+        List<Faction> CandidateFactions()
+        {
+            var door = GuestRegistry.Instance?.Door;
+            return Find.FactionManager.AllFactionsListForReading.Where(f => FactionCanVisit(f, map) && (door == null || door.FactionOk(f))).ToList();
+        }
+
         /// <summary>Weighted by goodwill; never a faction hostile to one that will be (or is) here at the same time (5.8).</summary>
         Faction PickFaction(int from, int to, RngStream rng)
         {
-            var door = GuestRegistry.Instance?.Door;
-            var cands = Find.FactionManager.AllFactionsListForReading.Where(f => FactionCanVisit(f, map) && (door == null || door.FactionOk(f))).ToList();
+            var cands = CandidateFactions();
             cands.RemoveAll(f => forecast.Any(g => g.Faction != null && g.Faction.HostileTo(f) && Overlaps(g, from, to)));
             if (cands.Count == 0) return null;
             float total = cands.Sum(f => FactionWeight(f));
@@ -314,41 +458,46 @@ namespace Hearth.Guests
             return false;
         }
 
-        bool TryArrive(PlannedGroup g)
+        enum ArriveResult { Arrived, NoBed, Closed, Refused, Moot }
+
+        /// <summary>Fires the planned group. <paramref name="why"/> says what stopped it; Moot = nothing more to do (return visit with nobody left).</summary>
+        ArriveResult TryArrive(PlannedGroup g, out string why)
         {
+            why = null;
             var f = g.Faction;
             var door = GuestRegistry.Instance?.Door;
-            if (door != null && !door.KindOk(g.Kind)) return false;
+            if (door != null && !door.KindOk(g.Kind)) { why = "door policy refuses " + g.Kind; return ArriveResult.Refused; }
             if (!FactionCanVisit(f, map) || EnemyPresent(map, f) || (door != null && !door.FactionOk(f)))
             {
                 var alt = Find.FactionManager.AllFactionsListForReading.Where(x => FactionCanVisit(x, map) && !EnemyPresent(map, x) && (door == null || door.FactionOk(x))).ToList();
-                if (alt.Count == 0) return false;
+                if (alt.Count == 0) { why = "no faction can come: " + (WhyCannotVisit(f, map) ?? (EnemyPresent(map, f) ? "an enemy is on the map" : "door policy")); return ArriveResult.Refused; }
                 f = alt.RandomElement();
             }
             int size = g.Size;
             if (g.Kind == StayKind.Overnight)
             {
                 int free = GuestBeds.FreeOn(map).Count;
-                if (free <= 0) return false;
+                if (free <= 0) { why = "no free guest bed"; return ArriveResult.NoBed; }
                 size = Math.Min(size, free);
             }
             else
             {
                 OpeningWindow(out int open, out int close);
                 float h = GenLocalDate.HourFloat(map);
-                if (h < open || h > close - 3) return false;
+                if (h < open || h > close - 3) { why = $"venues closed ({h:0.0} h, open {open}-{close})"; return ArriveResult.Closed; }
             }
             var req = new GuestArrivalRequest { Faction = f, Size = size, Kind = g.Kind, Nights = g.Nights };
             if (g.IsReturn)
             {
-                if (f != g.Faction) return false; // a return visit is the same people or nothing
+                if (f != g.Faction) { why = "a return visit is the same people or nobody"; return ArriveResult.Refused; }
                 req.Returning = g.Returning.Where(p => GuestReturns.CanReturn(p, f)).Take(size).ToList();
-                if (req.Returning.Count == 0) { GuestReturns.Unpin(g.Returning); return true; } // nobody left to come: drop quietly
+                if (req.Returning.Count == 0) { GuestReturns.Unpin(g.Returning); why = "nobody left to come back"; return ArriveResult.Moot; } // drop quietly
                 req.Size = req.Returning.Count;
             }
             bool ok = GuestArrival.TryFire(map, req) != null;
             if (ok) GuestReturns.Unpin(g.Returning);
-            return ok;
+            else why = "the arrival itself failed (see the Inn log)";
+            return ok ? ArriveResult.Arrived : ArriveResult.Refused;
         }
 
         public override void ExposeData()
@@ -357,6 +506,9 @@ namespace Hearth.Guests
             Scribe_Values.Look(ref nextId, "nextId", 1);
             Scribe_Values.Look(ref everActive, "everActive");
             Scribe_Values.Look(ref planHorizon, "planHorizon", -1);
+            Scribe_Values.Look(ref lastArrivalTick, "lastArrival", Never);
+            Scribe_Values.Look(ref activeSince, "activeSince", Never);
+            Scribe_Values.Look(ref lastTickSeen, "lastTickSeen", Never);
             if (Scribe.mode == LoadSaveMode.PostLoadInit) { forecast = forecast ?? new List<PlannedGroup>(); forecast.RemoveAll(x => x == null || x.Faction == null); }
         }
     }

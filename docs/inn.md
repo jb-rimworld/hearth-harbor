@@ -52,6 +52,27 @@ any activity module. `GuestFallback.Drives(p)` is false for every Inn-registered
   (`PlannedGroup.Returning`, pawns pinned in `WorldPawns.ForcefullyKeptPawns` until they arrive or the plan is dropped);
   gift chance `Lerp(0.2, 0.9, V)`, a small item at the front desk.
 
+## Arrival plan (balance round)
+
+`GuestScheduler` plans groups into a 5-day forecast (`inn.forecastDays`). Rules, in the order they matter:
+
+- **Rate** = `BaseRatePerDay (1.0) × RenownCurve × capacity × inn.arrivalRate`. Capacity is the night share (`NightCapacity(freeBeds)`: any free
+  bed 0.8, two or more 1.0) plus the day-visitor share (0.3 per open venue, at most 0.6). The renown curve is flat at the low end (0.9 at renown 0,
+  0.95 at 25) and grows from 50 on (1.0, 1.4 at 75, 1.8 at 100).
+- **Planning by thinning.** Candidate groups fall at the rate of a house with every bed free; each is kept with the probability
+  `rate(ProjectedFreeBeds(arrival)) / maxRate`. `ProjectedFreeBeds(t)` = all guest beds minus overnight guests still booked at `t` minus planned
+  overnight groups (return visits included) that cover `t`. A group for tomorrow is therefore not judged by tonight's full house, and the forecast
+  never books more beds than exist. The kind of a kept group (night or day) follows each side's share of the capacity at that moment.
+- **Drought breaker.** If the plan has been awake for more than `clamp(1.5 / rate, 1, 15)` days without a real arrival, free capacity exists and
+  nobody is due within 12 hours, one group is planned for the next hours (`Counters.DroughtBreaks`, log line `Drought breaker on …`). Pure chance or a
+  plan that lost its group must not leave free beds empty for days. With a low `inn.arrivalRate` the tolerated quiet time grows with it.
+- **Arrival.** A group that finds no free bed (`NoBed`), closed venues (`Closed`) or no faction waits 8 hours and tries again, three times, then it is
+  dropped (and the thinning plans new ones). `SchedulerStats` counts planned / thinned / arrived / postponed / dropped; the long run prints them per day.
+- The Overview page shows "Arrivals, next 24 h" (planned groups and the current rate).
+
+Diagnostics: `MapComponent_HH_GuestScheduler.DiagLog = new List<string>()` collects one line per decision (the long run writes it to
+`docs/longrun/longrun_sched.txt`). Suite `inn.forecast` also tests the projection, the drought breaker and the overview line.
+
 ## Tests
 
 `tools/run_test.sh 'smoke,inn.*' <label>`: cleanup, contracts, dayvisit, door, enemies, fallback, forecast, handling, math, night,

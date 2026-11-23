@@ -104,6 +104,7 @@ a("HH.UI.Storyteller.Head","HOSTING DIFFICULTY · {0} %"); a("HH.UI.Storyteller.
 a("HH.UI.Overview.Guests","Guests here"); a("HH.UI.Overview.GuestsTip","Guests on the current map."); a("HH.UI.Overview.Income","Income today"); a("HH.UI.Overview.IncomeTip","Silver paid into your tills since dawn.")
 a("HH.UI.Overview.Venues","Venues"); a("HH.UI.Overview.VenuesTip","Rooms with a venue sign on the current map."); a("HH.UI.Overview.Bank","Bank balance"); a("HH.UI.Overview.BankTip","Balance of the colony account at Silverline.")
 a("HH.UI.Overview.IncomeHead","Money"); a("HH.UI.Overview.Today","Today"); a("HH.UI.Overview.Yesterday","Yesterday"); a("HH.UI.Overview.Sources","Income by source so far"); a("HH.UI.Overview.NoIncome","No income yet. It shows up here as soon as a guest pays.")
+a("HH.UI.Overview.Arrivals","Arrivals, next 24 h: {0}, about {1} groups a day expected."); a("HH.UI.Overview.Arrivals.None","nobody planned yet"); a("HH.UI.Overview.Arrivals.Planned","{0} group(s) planned (about {1} guest(s))")
 # --- guests page
 a("HH.UI.Guests.Head","Guests · {0} here · {1} day guests"); a("HH.UI.Guests.None","Nobody is staying right now."); a("HH.UI.Guests.VanillaNote","The Inn module is off, so ordinary visitors are shown.")
 a("HH.UI.Guests.SatTip","How happy this guest is, from -1 to +1. Latest reasons:")
