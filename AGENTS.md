@@ -31,6 +31,12 @@ Dependency direction: `Hearth → Silverline → Hearth.Core`. Silverline must n
 - `tools/run_test.sh <suite,suite|all> <label>` — builds with tests, starts RimWorld 1.7 `-quicktest` in an isolated profile
   (3 parallel slots, waits if busy), runs the in-game suites, quits, prints results. Exit 0 = pass. Takes 1–4 minutes.
   `MODDIR=<worktree root>` to test a git worktree. Extra mods to load: pass their packageIds after the label.
+- `tools/run_saveload.sh <label> [roundtrip removal addition modules|all]` — save/load scenarios: one game saves (suite `saveload.build`),
+  the next loads that save (vanilla dev-mode `autostart`), with or without Hearth & Harbor. A test-only probe mod (`tools/probe`) records every
+  red error and drives the game when H&H is absent. `saveload.roundtrip` compares a reflection fingerprint of all our state at save time and
+  right after the load: a field that differs is either a save bug or must be listed as a cache in `KnownTransient` (with the reason).
+- Saving rule: never let our JobDef/DutyDef/LordJob/LetterDef sit unguarded in vanilla save data; `RemovalSafeSave` (Hearth.Core) writes
+  vanilla stand-ins plus `hh…` nodes so a raw removal loads without per-tick errors. Doubles that must reload bit-exact: `ScribeMoney.LookExact`.
 - Write in-game suites as `Hearth.Testing.HearthTestSuite` subclasses inside `#if HH_TESTS` (see `Source/Hearth.Core/Testing/HearthTests.cs`).
   Name them `<module>.<what>`, e.g. `bank.deposit`. A suite yields ticks to wait and calls `t.Check(cond, "what")`.
 - `uv run --with pillow python3 tools/placeholder_textures.py` creates placeholder PNGs for every referenced texture path that

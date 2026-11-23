@@ -19,5 +19,18 @@ namespace Hearth
             Scribe_Values.Look(ref micro, label, defaultValue.Micro);
             if (Scribe.mode == LoadSaveMode.LoadingVars) value = new Money(micro);
         }
+
+        /// <summary>
+        /// A double that must come back bit-identical (market prices feed sealed random walks: a reload must continue exactly).
+        /// Scribe_Values writes doubles with 15 significant digits, which changes the last bits; this writes the round-trip form.
+        /// Reads old saves written by Scribe_Values unchanged (same node, plain number).
+        /// </summary>
+        public static void LookExact(ref double value, string label, double defaultValue = 0)
+        {
+            string s = Scribe.mode == LoadSaveMode.Saving ? value.ToString("R", System.Globalization.CultureInfo.InvariantCulture) : null;
+            Scribe_Values.Look(ref s, label, defaultValue.ToString("R", System.Globalization.CultureInfo.InvariantCulture));
+            if (Scribe.mode == LoadSaveMode.LoadingVars)
+                value = s != null && double.TryParse(s, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var v) ? v : defaultValue;
+        }
     }
 }
