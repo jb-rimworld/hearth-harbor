@@ -69,6 +69,15 @@ namespace Hearth
 
         public string Label => ("HH.Setting." + Key).TranslateOr(LabelEn ?? Key);
         public string Desc => ("HH.Setting." + Key + ".Desc").TranslateOr(DescEn ?? "");
+        /// <summary>Translated category name (key HH.SettingCat.&lt;Category without spaces and punctuation&gt;), English fallback.</summary>
+        public string CategoryLabel => CatLabel(Category);
+        public static string CatLabel(string cat) => string.IsNullOrEmpty(cat) ? "" : ("HH.SettingCat." + CatKey(cat)).TranslateOr(cat);
+        public static string CatKey(string cat)
+        {
+            var sb = new System.Text.StringBuilder();
+            foreach (char c in cat) if (char.IsLetterOrDigit(c)) sb.Append(c);
+            return sb.ToString();
+        }
 
         public float EffectiveHardMax
         {

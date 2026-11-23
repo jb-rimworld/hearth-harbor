@@ -253,7 +253,7 @@ namespace Hearth.Shell
             if (ScenarioMode && s.Global) return false;   // preferences of the player, not of a colony: a scenario never sets them
             if (string.IsNullOrEmpty(search)) return true;
             string q = search.ToLowerInvariant();
-            return s.Label.ToLowerInvariant().Contains(q) || s.Key.ToLowerInvariant().Contains(q) || (s.Desc ?? "").ToLowerInvariant().Contains(q) || s.Category.ToLowerInvariant().Contains(q);
+            return s.Label.ToLowerInvariant().Contains(q) || s.Key.ToLowerInvariant().Contains(q) || (s.Desc ?? "").ToLowerInvariant().Contains(q) || s.Category.ToLowerInvariant().Contains(q) || s.CategoryLabel.ToLowerInvariant().Contains(q);
         }
 
         static float DrawSearch(float w, HearthProfile target, Rect visible)
@@ -298,7 +298,7 @@ namespace Hearth.Shell
             string last = null;
             foreach (var s in HSettings.All.Where(s => s.Module == m && Matches(s) && !(m == ModuleId.Core && s.Category == "Special switches")))
             {
-                if (s.Category != last) { y += 6f; y += UiStyle.Section(0, y, w, s.Category); last = s.Category; }
+                if (s.Category != last) { y += 6f; y += UiStyle.Section(0, y, w, s.CategoryLabel); last = s.Category; }
                 y += SettingRowUI.Draw(0, y, w, s, target, visible);
             }
             return y;

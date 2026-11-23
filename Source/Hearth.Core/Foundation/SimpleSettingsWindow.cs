@@ -61,7 +61,7 @@ namespace Hearth
             string lastHead = null;
             foreach (var s in HSettings.All.Where(s => (tpl.ShowNerd || !s.Nerd) && Modules.Available(s.Module) && Match(s)).OrderBy(s => s.Module).ThenBy(s => s.Category))
             {
-                string head = Modules.Label(s.Module) + " · " + s.Category;
+                string head = Modules.Label(s.Module) + " · " + s.CategoryLabel;
                 if (head != lastHead)
                 {
                     y += 6; Text.Font = GameFont.Medium; Widgets.Label(new Rect(0, y, view.width, 30), head); Text.Font = GameFont.Small; y += 32; lastHead = head;
