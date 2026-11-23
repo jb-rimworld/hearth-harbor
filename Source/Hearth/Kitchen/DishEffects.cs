@@ -55,6 +55,7 @@ namespace Hearth.Kitchen
                     memories.TryGainMemory(ThoughtMaker.MakeThought(def, stage));
                 }
             }
+            CookSounds.PlayEatReaction(c, eater);
             Restaurant.OnPlateEaten(c, eater);
         }
 

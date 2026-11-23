@@ -29,72 +29,88 @@
     <defName>HH_Plate_Soup</defName>
     <label>soup bowl</label>
     <description>A bowl of something hot and wet. Eaten with a spoon, a prayer, or both.</description>
+    <soundDrop>HH_Plate_Drop_Ceramic</soundDrop>
+    <ingestible><ingestSound>HH_Eat_Slurp</ingestSound></ingestible>
     <graphicData><texPath>Things/HH/Kitchen/Plate_Soup</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
   </ThingDef>
   <ThingDef ParentName="HH_PlateBase">
     <defName>HH_Plate_Stew</defName>
     <label>stew pot</label>
     <description>A heavy bowl of slow-cooked stew, steaming with the promise of a second helping.</description>
+    <soundDrop>HH_Plate_Drop_Ceramic</soundDrop>
     <graphicData><texPath>Things/HH/Kitchen/Plate_Stew</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
   </ThingDef>
   <ThingDef ParentName="HH_PlateBase">
     <defName>HH_Plate_Grill</defName>
     <label>grill platter</label>
     <description>Meat that has had a conversation with an open flame and lost.</description>
+    <soundDrop>HH_Plate_Drop_Wood</soundDrop>
     <graphicData><texPath>Things/HH/Kitchen/Plate_Grill</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
   </ThingDef>
   <ThingDef ParentName="HH_PlateBase">
     <defName>HH_Plate_Noodles</defName>
     <label>noodle bowl</label>
     <description>A tangle of noodles in a bowl. Slurping is not optional.</description>
+    <soundDrop>HH_Plate_Drop_Ceramic</soundDrop>
+    <ingestible><ingestSound>HH_Eat_Slurp</ingestSound></ingestible>
     <graphicData><texPath>Things/HH/Kitchen/Plate_Noodles</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
   </ThingDef>
   <ThingDef ParentName="HH_PlateBase">
     <defName>HH_Plate_Rice</defName>
     <label>rice dish</label>
     <description>A mound of rice with opinions, served on a plate with a fork nobody asked for.</description>
+    <soundDrop>HH_Plate_Drop_Ceramic</soundDrop>
     <graphicData><texPath>Things/HH/Kitchen/Plate_Rice</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
   </ThingDef>
   <ThingDef ParentName="HH_PlateBase">
     <defName>HH_Plate_Bake</defName>
     <label>baked dish</label>
     <description>Something that went into the oven as ingredients and came out as a decision.</description>
+    <soundDrop>HH_Plate_Drop_Ceramic</soundDrop>
     <graphicData><texPath>Things/HH/Kitchen/Plate_Bake</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
   </ThingDef>
   <ThingDef ParentName="HH_PlateBase">
     <defName>HH_Plate_Fry</defName>
     <label>fried plate</label>
     <description>Golden, crunchy and wildly unhealthy. Exactly what the colony ordered.</description>
+    <soundDrop>HH_Plate_Drop_Wood</soundDrop>
+    <ingestible><ingestSound>HH_Eat_Crunch</ingestSound></ingestible>
     <graphicData><texPath>Things/HH/Kitchen/Plate_Fry</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
   </ThingDef>
   <ThingDef ParentName="HH_PlateBase">
     <defName>HH_Plate_Salad</defName>
     <label>salad plate</label>
     <description>A cold plate with a lot of leaves, very little remorse, and a short shelf life.</description>
+    <soundDrop>HH_Plate_Drop_Glass</soundDrop>
     <graphicData><texPath>Things/HH/Kitchen/Plate_Salad</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
   </ThingDef>
   <ThingDef ParentName="HH_PlateBase">
     <defName>HH_Plate_Raw</defName>
     <label>raw plate</label>
     <description>Thinly sliced, expensively arranged and absolutely not cooked.</description>
+    <soundDrop>HH_Plate_Drop_Glass</soundDrop>
     <graphicData><texPath>Things/HH/Kitchen/Plate_Raw</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
   </ThingDef>
   <ThingDef ParentName="HH_PlateBase">
     <defName>HH_Plate_Breakfast</defName>
     <label>breakfast plate</label>
     <description>A plate that says the day has started, whether you like it or not.</description>
+    <soundDrop>HH_Plate_Drop_Ceramic</soundDrop>
     <graphicData><texPath>Things/HH/Kitchen/Plate_Breakfast</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
   </ThingDef>
   <ThingDef ParentName="HH_PlateBase">
     <defName>HH_Plate_Dessert</defName>
     <label>dessert dish</label>
     <description>A small, sweet reward for surviving another day on the Rim.</description>
+    <soundDrop>HH_Plate_Drop_Glass</soundDrop>
     <graphicData><texPath>Things/HH/Kitchen/Plate_Dessert</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
   </ThingDef>
   <ThingDef ParentName="HH_PlateBase">
     <defName>HH_Plate_StreetFood</defName>
     <label>street food tray</label>
     <description>Hot, handheld and best eaten standing up, quickly, with one eye on the exits.</description>
+    <soundDrop>HH_Plate_Drop_Wood</soundDrop>
+    <ingestible><ingestSound>HH_Eat_Crunch</ingestSound></ingestible>
     <graphicData><texPath>Things/HH/Kitchen/Plate_StreetFood</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
   </ThingDef>
 </Defs>

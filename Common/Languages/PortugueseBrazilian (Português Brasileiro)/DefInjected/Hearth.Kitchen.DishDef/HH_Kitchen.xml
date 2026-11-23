@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <HH_Dish_CampfireStew.label>Ensopado de muffalo na fogueira</HH_Dish_CampfireStew.label>
-  <HH_Dish_CampfireStew.description>Tudo foi para a panela, inclusive a discussão sobre o que tudo aquilo significava.</HH_Dish_CampfireStew.description>
   <HH_Dish_PotatoSoup.label>Sopa de batata</HH_Dish_PotatoSoup.label>
   <HH_Dish_PotatoSoup.description>Tem gosto de lar, se o lar tivesse chão de terra e expectativas baixas.</HH_Dish_PotatoSoup.description>
   <HH_Dish_SpitRoastedHaunch.label>Pernil assado no espeto</HH_Dish_SpitRoastedHaunch.label>
@@ -50,12 +48,8 @@
   <HH_Dish_InsectTacos.description>Três tacos, zero perguntas e um molho muito bom.</HH_Dish_InsectTacos.description>
   <HH_Dish_FishAndChips.label>Peixe com fritas</HH_Dish_FishAndChips.label>
   <HH_Dish_FishAndChips.description>Frito duas vezes por sorte e uma vez por despeito.</HH_Dish_FishAndChips.description>
-  <HH_Dish_MuffaloRamen.label>Lamen de muffalo</HH_Dish_MuffaloRamen.label>
-  <HH_Dish_MuffaloRamen.description>Tome a sopa ruidosamente. Numa briga pela última tigela, tome ainda mais alto.</HH_Dish_MuffaloRamen.description>
   <HH_Dish_EggFriedRice.label>Arroz frito com ovo</HH_Dish_EggFriedRice.label>
   <HH_Dish_EggFriedRice.description>Arroz de ontem, problema de hoje, almoço de amanhã.</HH_Dish_EggFriedRice.description>
-  <HH_Dish_PadThrumbo.label>Pad thrumbo</HH_Dish_PadThrumbo.label>
-  <HH_Dish_PadThrumbo.description>Um emaranhado agridoce de macarrão e crocância, frito no wok até obedecer.</HH_Dish_PadThrumbo.description>
   <HH_Dish_ChiliConCarne.label>Chili con carne</HH_Dish_ChiliConCarne.label>
   <HH_Dish_ChiliConCarne.description>Tão apimentado que cauteriza. Não use como remédio. Use como remédio.</HH_Dish_ChiliConCarne.description>
   <HH_Dish_JollofRice.label>Arroz jollof</HH_Dish_JollofRice.label>
@@ -78,8 +72,6 @@
   <HH_Dish_ChocolatePudding.description>O motivo pelo qual os ataques são adiados em exatamente uma sobremesa.</HH_Dish_ChocolatePudding.description>
   <HH_Dish_Ceviche.label>Ceviche</HH_Dish_Ceviche.label>
   <HH_Dish_Ceviche.description>Peixe cozido apenas pela acidez, que é como a maioria das colônias também funciona.</HH_Dish_Ceviche.description>
-  <HH_Dish_MuffaloGoulash.label>Gulasch de muffalo</HH_Dish_MuffaloGoulash.label>
-  <HH_Dish_MuffaloGoulash.description>Vermelho, grosso e oficialmente a discussão não oficial nacional.</HH_Dish_MuffaloGoulash.description>
   <HH_Dish_EggFlan.label>Flan de ovo</HH_Dish_EggFlan.label>
   <HH_Dish_EggFlan.description>Treme como um colono no fim de um longo turno.</HH_Dish_EggFlan.description>
   <HH_Dish_BeerBatteredInsects.label>Insetos empanados na cerveja</HH_Dish_BeerBatteredInsects.label>
@@ -104,22 +96,14 @@
   <HH_Dish_BloodBroth.description>Um caldo escuro e rico para os sedentos e os educados.</HH_Dish_BloodBroth.description>
   <HH_Dish_HemogenBlackPudding.label>Morcela de hemogênio</HH_Dish_HemogenBlackPudding.label>
   <HH_Dish_HemogenBlackPudding.description>Frita até parar de olhar para você.</HH_Dish_HemogenBlackPudding.description>
-  <HH_Dish_MuffaloBourguignon.label>Bourguignon de muffalo</HH_Dish_MuffaloBourguignon.label>
-  <HH_Dish_MuffaloBourguignon.description>Brasado na cerveja, porque o vinho acabou no segundo dia.</HH_Dish_MuffaloBourguignon.description>
   <HH_Dish_ColonyPaella.label>Paella da colônia</HH_Dish_ColonyPaella.label>
   <HH_Dish_ColonyPaella.description>O que tinha na despensa, arrumado com muita dignidade.</HH_Dish_ColonyPaella.description>
   <HH_Dish_NigiriPlatter.label>Travessa de nigiri</HH_Dish_NigiriPlatter.label>
   <HH_Dish_NigiriPlatter.description>Arroz e peixe, moldados por alguém que deveria estar na linha de frente.</HH_Dish_NigiriPlatter.description>
-  <HH_Dish_ThrumboPho.label>Pho de thrumbo</HH_Dish_ThrumboPho.label>
-  <HH_Dish_ThrumboPho.description>Um caldo claro com uma lista de tarefas enorme por trás.</HH_Dish_ThrumboPho.description>
   <HH_Dish_Biryani.label>Biryani</HH_Dish_Biryani.label>
   <HH_Dish_Biryani.description>Camadas de arroz, carne e diplomacia, selados com uma tampa.</HH_Dish_Biryani.description>
-  <HH_Dish_DromedaryTagine.label>Tagine de dromedário</HH_Dish_DromedaryTagine.label>
-  <HH_Dish_DromedaryTagine.description>Cozido lentamente num cone de barro, como a maioria das pessoas gostaria de ser.</HH_Dish_DromedaryTagine.description>
   <HH_Dish_MushroomMoussaka.label>Moussaka de cogumelos</HH_Dish_MushroomMoussaka.label>
   <HH_Dish_MushroomMoussaka.description>Sete camadas de profundidade, e cada camada tem uma opinião.</HH_Dish_MushroomMoussaka.description>
-  <HH_Dish_LacqueredThrumbo.label>Thrumbo laqueado</HH_Dish_LacqueredThrumbo.label>
-  <HH_Dish_LacqueredThrumbo.description>Glaceado até brilhar mais do que a conta bancária da colônia.</HH_Dish_LacqueredThrumbo.description>
   <HH_Dish_TomYumSoup.label>Sopa tom yum</HH_Dish_TomYumSoup.label>
   <HH_Dish_TomYumSoup.description>Azeda, picante, desentope os seios da face e também as dívidas.</HH_Dish_TomYumSoup.description>
   <HH_Dish_Laksa.label>Laksa</HH_Dish_Laksa.label>
@@ -138,14 +122,8 @@
   <HH_Dish_Churros.description>Massa frita com molho de chocolate e nenhum remorso.</HH_Dish_Churros.description>
   <HH_Dish_Bibimbap.label>Bibimbap</HH_Dish_Bibimbap.label>
   <HH_Dish_Bibimbap.description>Misture tudo numa tigela só, exatamente como a própria colônia.</HH_Dish_Bibimbap.description>
-  <HH_Dish_MongolianMuffalo.label>Muffalo mongol</HH_Dish_MongolianMuffalo.label>
-  <HH_Dish_MongolianMuffalo.description>Frito no wok, doce, pegajoso e um pouco alto demais.</HH_Dish_MongolianMuffalo.description>
   <HH_Dish_ColdNoodleSalad.label>Salada de macarrão frio</HH_Dish_ColdNoodleSalad.label>
   <HH_Dish_ColdNoodleSalad.description>Servida tão fria que o macarrão registra reclamações.</HH_Dish_ColdNoodleSalad.description>
-  <HH_Dish_MuffaloCarpaccio.label>Carpaccio de muffalo</HH_Dish_MuffaloCarpaccio.label>
-  <HH_Dish_MuffaloCarpaccio.description>Fatiado tão fino que dá para ler o cardápio através dele.</HH_Dish_MuffaloCarpaccio.description>
-  <HH_Dish_ThrumboTartare.label>Tartar de thrumbo</HH_Dish_ThrumboTartare.label>
-  <HH_Dish_ThrumboTartare.description>Cru, feroz e corajoso. Assine o termo de responsabilidade primeiro.</HH_Dish_ThrumboTartare.description>
   <HH_Dish_DanDanNoodles.label>Macarrão dan dan</HH_Dish_DanDanNoodles.label>
   <HH_Dish_DanDanNoodles.description>Macarrão picante que avisa com antecedência e mesmo assim vence.</HH_Dish_DanDanNoodles.description>
   <HH_Dish_GrilledLongPorkRibs.label>Costelas grelhadas de carne longa</HH_Dish_GrilledLongPorkRibs.label>
@@ -162,10 +140,6 @@
   <HH_Dish_RedSteakVeryRare.description>Quase balindo. Feito exatamente como um sanguinófago pediu.</HH_Dish_RedSteakVeryRare.description>
   <HH_Dish_TwistedMeatBao.label>Bao de carne torcida</HH_Dish_TwistedMeatBao.label>
   <HH_Dish_TwistedMeatBao.description>O pão se contorce só um pouco. Por favor, não conte ao recheio.</HH_Dish_TwistedMeatBao.description>
-  <HH_Dish_MuffaloWellington.label>Muffalo wellington</HH_Dish_MuffaloWellington.label>
-  <HH_Dish_MuffaloWellington.description>Envolto em massa folhada, um pequeno isolamento para um ego muito grandioso.</HH_Dish_MuffaloWellington.description>
-  <HH_Dish_BoomalopeConfit.label>Confit de boomalope</HH_Dish_BoomalopeConfit.label>
-  <HH_Dish_BoomalopeConfit.description>Cozido lentamente na própria gordura. Não fique perto da panela.</HH_Dish_BoomalopeConfit.description>
   <HH_Dish_FishThermidor.label>Peixe termidor</HH_Dish_FishThermidor.label>
   <HH_Dish_FishThermidor.description>Cremoso, gratinado e absurdamente orgulhoso de si mesmo.</HH_Dish_FishThermidor.description>
   <HH_Dish_Rendang.label>Rendang</HH_Dish_Rendang.label>
@@ -178,20 +152,14 @@
   <HH_Dish_CremeBrulee.description>A crosta racha sob a colher, como sob pressão.</HH_Dish_CremeBrulee.description>
   <HH_Dish_AgaveBaklava.label>Baklava de agave</HH_Dish_AgaveBaklava.label>
   <HH_Dish_AgaveBaklava.description>Tão doce que você vai precisar de um médico e de um poeta.</HH_Dish_AgaveBaklava.description>
-  <HH_Dish_MuffaloStroganoff.label>Estrogonofe de muffalo</HH_Dish_MuffaloStroganoff.label>
-  <HH_Dish_MuffaloStroganoff.description>Cremoso, rico e acabado na terceira colherada.</HH_Dish_MuffaloStroganoff.description>
   <HH_Dish_OmakaseNigiri.label>Nigiri omakase</HH_Dish_OmakaseNigiri.label>
   <HH_Dish_OmakaseNigiri.description>O chef decide o que você come. Você decide se impressionar.</HH_Dish_OmakaseNigiri.description>
   <HH_Dish_TeppanFeast.label>Banquete teppan</HH_Dish_TeppanFeast.label>
   <HH_Dish_TeppanFeast.description>Uma chapa flamejante, uma espátula voadora e um extintor por perto.</HH_Dish_TeppanFeast.description>
-  <HH_Dish_ClayOvenMuffalo.label>Muffalo do forno de barro</HH_Dish_ClayOvenMuffalo.label>
-  <HH_Dish_ClayOvenMuffalo.description>Marinado durante a noite, assado no forno de barro e servido com arrogância.</HH_Dish_ClayOvenMuffalo.description>
   <HH_Dish_Churrasco.label>Churrasco</HH_Dish_Churrasco.label>
   <HH_Dish_Churrasco.description>Carne em espetos, servida até você se render.</HH_Dish_Churrasco.description>
   <HH_Dish_HuntersBigos.label>Bigos do caçador</HH_Dish_HuntersBigos.label>
   <HH_Dish_HuntersBigos.description>Um ensopado que fica melhor a cada dia e pior a cada cheiro.</HH_Dish_HuntersBigos.description>
-  <HH_Dish_LambKoftasWithRice.label>Koftas de cordeiro com arroz</HH_Dish_LambKoftasWithRice.label>
-  <HH_Dish_LambKoftasWithRice.description>Temperados, moldados e servidos sobre arroz, como uma palestra muito saborosa.</HH_Dish_LambKoftasWithRice.description>
   <HH_Dish_SevenCourseColonyMenu.label>Menu colonial de sete pratos</HH_Dish_SevenCourseColonyMenu.label>
   <HH_Dish_SevenCourseColonyMenu.description>Entrada, entrada, entrada, prato principal, sobremesa, sobremesa e um brinde.</HH_Dish_SevenCourseColonyMenu.description>
   <HH_Dish_TartareOfTheFallen.label>Tartar dos caídos</HH_Dish_TartareOfTheFallen.label>

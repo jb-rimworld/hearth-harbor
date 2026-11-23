@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <HH_Dish_CampfireStew.label>キャンプファイヤーのムファロ・シチュー</HH_Dish_CampfireStew.label>
-  <HH_Dish_CampfireStew.description>材料は全部鍋に入った。何がどうなっているのかをめぐる口論も含めて。</HH_Dish_CampfireStew.description>
   <HH_Dish_PotatoSoup.label>ジャガイモのスープ</HH_Dish_PotatoSoup.label>
   <HH_Dish_PotatoSoup.description>故郷の味がする。故郷が土間で、期待値が低ければの話だが。</HH_Dish_PotatoSoup.description>
   <HH_Dish_SpitRoastedHaunch.label>丸焼きのもも肉</HH_Dish_SpitRoastedHaunch.label>
@@ -50,12 +48,8 @@
   <HH_Dish_InsectTacos.description>タコス三つ、疑問はゼロ、そしてとても良いソース。</HH_Dish_InsectTacos.description>
   <HH_Dish_FishAndChips.label>フィッシュ＆チップス</HH_Dish_FishAndChips.label>
   <HH_Dish_FishAndChips.description>幸運のために二度、腹立たしさのために一度揚げた。</HH_Dish_FishAndChips.description>
-  <HH_Dish_MuffaloRamen.label>マフェローラーメン</HH_Dish_MuffaloRamen.label>
-  <HH_Dish_MuffaloRamen.description>音を立てて思いきり啜れ。最後の一杯を巡って争うなら、もっと大きな音で啜れ。</HH_Dish_MuffaloRamen.description>
   <HH_Dish_EggFriedRice.label>卵チャーハン</HH_Dish_EggFriedRice.label>
   <HH_Dish_EggFriedRice.description>昨日のご飯、今日の悩みの種、明日の昼食。</HH_Dish_EggFriedRice.description>
-  <HH_Dish_PadThrumbo.label>スラムボのパッタイ</HH_Dish_PadThrumbo.label>
-  <HH_Dish_PadThrumbo.description>甘酸っぱい麺とカリッとした食感が絡み合う。言うことを聞くまで強火で炒めた。</HH_Dish_PadThrumbo.description>
   <HH_Dish_ChiliConCarne.label>チリコンカルネ</HH_Dish_ChiliConCarne.label>
   <HH_Dish_ChiliConCarne.description>傷口を焼き潰せるほど辛い。薬として使うな。……いや、薬として使え。</HH_Dish_ChiliConCarne.description>
   <HH_Dish_JollofRice.label>ジョロフライス</HH_Dish_JollofRice.label>
@@ -78,8 +72,6 @@
   <HH_Dish_ChocolatePudding.description>襲撃が、デザート一品ぶんだけ延期される理由。</HH_Dish_ChocolatePudding.description>
   <HH_Dish_Ceviche.label>セビーチェ</HH_Dish_Ceviche.label>
   <HH_Dish_Ceviche.description>酸味だけで火を通した魚。ほとんどの植民地も同じ仕組みで動いている。</HH_Dish_Ceviche.description>
-  <HH_Dish_MuffaloGoulash.label>マフェローのグヤーシュ</HH_Dish_MuffaloGoulash.label>
-  <HH_Dish_MuffaloGoulash.description>赤くて濃厚、そして非公式の国民的論争の的。</HH_Dish_MuffaloGoulash.description>
   <HH_Dish_EggFlan.label>卵のフラン</HH_Dish_EggFlan.label>
   <HH_Dish_EggFlan.description>長い勤務を終えた入植者のように、ぷるぷると揺れる。</HH_Dish_EggFlan.description>
   <HH_Dish_BeerBatteredInsects.label>ビール衣の虫揚げ</HH_Dish_BeerBatteredInsects.label>
@@ -104,22 +96,14 @@
   <HH_Dish_BloodBroth.description>喉の渇いた人と礼儀正しい人のための、濃く深い色のブロス。</HH_Dish_BloodBroth.description>
   <HH_Dish_HemogenBlackPudding.label>ヘモジェンのブラックプディング</HH_Dish_HemogenBlackPudding.label>
   <HH_Dish_HemogenBlackPudding.description>こちらを見なくなるまで揚げ焼きにした。</HH_Dish_HemogenBlackPudding.description>
-  <HH_Dish_MuffaloBourguignon.label>マフェローのブルギニョン</HH_Dish_MuffaloBourguignon.label>
-  <HH_Dish_MuffaloBourguignon.description>ワインは二日目に切れたので、ビールで煮込んだ。</HH_Dish_MuffaloBourguignon.description>
   <HH_Dish_ColonyPaella.label>コロニー・パエリア</HH_Dish_ColonyPaella.label>
   <HH_Dish_ColonyPaella.description>パントリーにあったものを、威厳をもって盛り付けた。</HH_Dish_ColonyPaella.description>
   <HH_Dish_NigiriPlatter.label>握りの盛り合わせ</HH_Dish_NigiriPlatter.label>
   <HH_Dish_NigiriPlatter.description>本来なら最前線に立つべき人が握った、ご飯と魚。</HH_Dish_NigiriPlatter.description>
-  <HH_Dish_ThrumboPho.label>スラムボのフォー</HH_Dish_ThrumboPho.label>
-  <HH_Dish_ThrumboPho.description>澄んだスープの裏には、とても長いやることリストがある。</HH_Dish_ThrumboPho.description>
   <HH_Dish_Biryani.label>ビリヤニ</HH_Dish_Biryani.label>
   <HH_Dish_Biryani.description>ご飯、肉、外交を何層にも重ね、蓋をして密閉した。</HH_Dish_Biryani.description>
-  <HH_Dish_DromedaryTagine.label>ヒトコブラクダのタジン</HH_Dish_DromedaryTagine.label>
-  <HH_Dish_DromedaryTagine.description>土鍋でじっくり煮込む。誰もがそうなりたがるように。</HH_Dish_DromedaryTagine.description>
   <HH_Dish_MushroomMoussaka.label>キノコのムサカ</HH_Dish_MushroomMoussaka.label>
   <HH_Dish_MushroomMoussaka.description>七層構造で、どの層にも意見がある。</HH_Dish_MushroomMoussaka.description>
-  <HH_Dish_LacqueredThrumbo.label>漆塗りのスラムボ</HH_Dish_LacqueredThrumbo.label>
-  <HH_Dish_LacqueredThrumbo.description>コロニーの銀行残高より輝くまで照りをかけた。</HH_Dish_LacqueredThrumbo.description>
   <HH_Dish_TomYumSoup.label>トムヤムスープ</HH_Dish_TomYumSoup.label>
   <HH_Dish_TomYumSoup.description>酸っぱくて辛い。副鼻腔も借金も、きれいに晴れる。</HH_Dish_TomYumSoup.description>
   <HH_Dish_Laksa.label>ラクサ</HH_Dish_Laksa.label>
@@ -138,14 +122,8 @@
   <HH_Dish_Churros.description>チョコレートディップを添えた揚げ生地。後悔は一切ない。</HH_Dish_Churros.description>
   <HH_Dish_Bibimbap.label>ビビンバ</HH_Dish_Bibimbap.label>
   <HH_Dish_Bibimbap.description>全部を一つの器で混ぜる。まさにこのコロニーそのものだ。</HH_Dish_Bibimbap.description>
-  <HH_Dish_MongolianMuffalo.label>モンゴリアン・マフェロー</HH_Dish_MongolianMuffalo.label>
-  <HH_Dish_MongolianMuffalo.description>強火で炒めた。甘くて、ベタついて、少しうるさい。</HH_Dish_MongolianMuffalo.description>
   <HH_Dish_ColdNoodleSalad.label>冷製麺サラダ</HH_Dish_ColdNoodleSalad.label>
   <HH_Dish_ColdNoodleSalad.description>麺が苦情を提出するほど冷やして出す。</HH_Dish_ColdNoodleSalad.description>
-  <HH_Dish_MuffaloCarpaccio.label>マフェローのカルパッチョ</HH_Dish_MuffaloCarpaccio.label>
-  <HH_Dish_MuffaloCarpaccio.description>メニューが透けて読めるほど薄く切った。</HH_Dish_MuffaloCarpaccio.description>
-  <HH_Dish_ThrumboTartare.label>スラムボのタルタル</HH_Dish_ThrumboTartare.label>
-  <HH_Dish_ThrumboTartare.description>生で、猛々しく、勇敢に。まずは免責同意書にサインを。</HH_Dish_ThrumboTartare.description>
   <HH_Dish_DanDanNoodles.label>担々麺</HH_Dish_DanDanNoodles.label>
   <HH_Dish_DanDanNoodles.description>辛い麺。先に警告しておいて、それでも勝つ。</HH_Dish_DanDanNoodles.description>
   <HH_Dish_GrilledLongPorkRibs.label>ロングポークのグリルリブ</HH_Dish_GrilledLongPorkRibs.label>
@@ -162,10 +140,6 @@
   <HH_Dish_RedSteakVeryRare.description>ほぼ鳴き声のよう。吸血鬼の注文どおりの焼き加減。</HH_Dish_RedSteakVeryRare.description>
   <HH_Dish_TwistedMeatBao.label>ねじれ肉バオ</HH_Dish_TwistedMeatBao.label>
   <HH_Dish_TwistedMeatBao.description>バンズがわずかに動いている。中身には言わないでほしい。</HH_Dish_TwistedMeatBao.description>
-  <HH_Dish_MuffaloWellington.label>マフェローのウェリントン</HH_Dish_MuffaloWellington.label>
-  <HH_Dish_MuffaloWellington.description>パイ生地に包まれて、大きすぎる自我をわずかに断熱している。</HH_Dish_MuffaloWellington.description>
-  <HH_Dish_BoomalopeConfit.label>ブーマロープのコンフィ</HH_Dish_BoomalopeConfit.label>
-  <HH_Dish_BoomalopeConfit.description>自分の脂でじっくり煮る。鍋のそばに立たないこと。</HH_Dish_BoomalopeConfit.description>
   <HH_Dish_FishThermidor.label>魚のテルミドール</HH_Dish_FishThermidor.label>
   <HH_Dish_FishThermidor.description>クリーミーでグラタン状、そして見当違いに自分を誇らしく思っている。</HH_Dish_FishThermidor.description>
   <HH_Dish_Rendang.label>ルンダン</HH_Dish_Rendang.label>
@@ -178,20 +152,14 @@
   <HH_Dish_CremeBrulee.description>焦がした表面はスプーンで割れる。プレッシャーの下にあるかのように。</HH_Dish_CremeBrulee.description>
   <HH_Dish_AgaveBaklava.label>アガベのバクラヴァ</HH_Dish_AgaveBaklava.label>
   <HH_Dish_AgaveBaklava.description>甘すぎて、医療班と詩人の両方が必要になる。</HH_Dish_AgaveBaklava.description>
-  <HH_Dish_MuffaloStroganoff.label>マフェローのストロガノフ</HH_Dish_MuffaloStroganoff.label>
-  <HH_Dish_MuffaloStroganoff.description>クリーミーで濃厚。三口目にはもう消えている。</HH_Dish_MuffaloStroganoff.description>
   <HH_Dish_OmakaseNigiri.label>おまかせ握り</HH_Dish_OmakaseNigiri.label>
   <HH_Dish_OmakaseNigiri.description>何を食べるかは料理人が決める。あなたは感心すると決める。</HH_Dish_OmakaseNigiri.description>
   <HH_Dish_TeppanFeast.label>鉄板御膳</HH_Dish_TeppanFeast.label>
   <HH_Dish_TeppanFeast.description>燃え上がる鉄板、舞うヘラ、そして近くには消火器。</HH_Dish_TeppanFeast.description>
-  <HH_Dish_ClayOvenMuffalo.label>窯焼きマフェロー</HH_Dish_ClayOvenMuffalo.label>
-  <HH_Dish_ClayOvenMuffalo.description>一晩マリネし、粘土窯で一気に焼き上げ、傲慢さを添えて出す。</HH_Dish_ClayOvenMuffalo.description>
   <HH_Dish_Churrasco.label>シュラスコ</HH_Dish_Churrasco.label>
   <HH_Dish_Churrasco.description>剣に刺した肉を、降参するまで運び続ける。</HH_Dish_Churrasco.description>
   <HH_Dish_HuntersBigos.label>猟師のビゴス</HH_Dish_HuntersBigos.label>
   <HH_Dish_HuntersBigos.description>日ごとにおいしくなり、日ごとに匂いはひどくなるシチュー。</HH_Dish_HuntersBigos.description>
-  <HH_Dish_LambKoftasWithRice.label>ラムのコフタ、ライス添え</HH_Dish_LambKoftasWithRice.label>
-  <HH_Dish_LambKoftasWithRice.description>香辛料で味付けし、形を整え、ご飯の上に。とてもおいしい説教のように。</HH_Dish_LambKoftasWithRice.description>
   <HH_Dish_SevenCourseColonyMenu.label>七品のコロニー・コース</HH_Dish_SevenCourseColonyMenu.label>
   <HH_Dish_SevenCourseColonyMenu.description>前菜、前菜、前菜、メイン、デザート、デザート、そして乾杯。</HH_Dish_SevenCourseColonyMenu.description>
   <HH_Dish_TartareOfTheFallen.label>倒れた者たちのタルタル</HH_Dish_TartareOfTheFallen.label>

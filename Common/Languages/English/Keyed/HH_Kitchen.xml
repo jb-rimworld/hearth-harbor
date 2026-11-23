@@ -3,8 +3,9 @@
   <!-- Kitchen, dishes and restaurant (module Shops & Food). English is the main language. -->
   <HH.Kitchen.Missing>Missing: {0}</HH.Kitchen.Missing>
   <HH.Kitchen.RecipeInfo>Devices: {0}. Steps: {1}.</HH.Kitchen.RecipeInfo>
-  <HH.Kitchen.Finishing>a finishing touch (milk, eggs, chocolate, beer, berries or mushrooms)</HH.Kitchen.Finishing>
-  <HH.Kitchen.Finishing2>a second finishing touch (beer, berries or mushrooms)</HH.Kitchen.Finishing2>
+  <HH.Kitchen.FinishingTouch>a finishing touch ({0})</HH.Kitchen.FinishingTouch>
+  <HH.Kitchen.FinishingTouch2>a second finishing touch ({0})</HH.Kitchen.FinishingTouch2>
+  <HH.Kitchen.Or>or</HH.Kitchen.Or>
   <HH.Kitchen.Inspiration>Inspiration: {0}</HH.Kitchen.Inspiration>
   <HH.Kitchen.Cuisine>Cuisine: {0}</HH.Kitchen.Cuisine>
   <HH.Kitchen.Cooked>Cooked at: {0} ({1})</HH.Kitchen.Cooked>
@@ -114,6 +115,8 @@
   <HH.Setting.kitchen.variants.Desc>Offer each dish in a Fine form (more and better ingredients, a better chance for good quality) and a Signature form (research needed).</HH.Setting.kitchen.variants.Desc>
   <HH.Setting.kitchen.allKnown>All dishes known</HH.Setting.kitchen.allKnown>
   <HH.Setting.kitchen.allKnown.Desc>Skip learning: every dish of the menu can be cooked as soon as its devices stand.</HH.Setting.kitchen.allKnown.Desc>
+  <HH.Setting.kitchen.cookSounds>Cooking and eating sounds</HH.Setting.kitchen.cookSounds>
+  <HH.Setting.kitchen.cookSounds.Desc>Every kind of cooking (chopping, simmering, grilling, baking, frying, steaming, kneading, smoking, chilling) has its own sound and little effect, finished fine dishes ring a cue and good plates get a happy reaction. Off: the vanilla pan-frying sound for everything.</HH.Setting.kitchen.cookSounds.Desc>
   <HH.Setting.kitchen.darkMenu>Dark menu (long pork)</HH.Setting.kitchen.darkMenu>
   <HH.Setting.kitchen.darkMenu.Desc>Allow the long pork dishes. Always needs content intensity Dark or Grim; with that, an ideoligion that approves of cannibalism unlocks them even when this is off.</HH.Setting.kitchen.darkMenu.Desc>
   <HH.Kitchen.Cookbook.Teaches>Teaches: {0}</HH.Kitchen.Cookbook.Teaches>

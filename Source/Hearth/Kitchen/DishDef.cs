@@ -58,6 +58,11 @@ namespace Hearth.Kitchen
         public string fromMod;                     // "Vanilla Cooking Expanded", for extra recipes
         public bool dark;                          // † long pork: hidden unless the player's rules allow it
         public float priceFactor = 1f;             // fine tuning of the menu price
+        /// <summary>Optional: ingredient class keys that fit this plate as finishing touches of the Fine/Signature forms (replaces the pool of the plate kind).
+        /// Classes the dish uses itself are never offered, see RecipeBuilder.</summary>
+        public List<string> finishers;
+        /// <summary>No Fine/Signature form (a plain steamed rice stays plain). The recipe defs of 1.0 stay in the game as hidden recipes so saved bills load.</summary>
+        public bool noVariants;
 
         [Unsaved] public ThingDef plateDef;
         [Unsaved] public List<RecipeDef> recipes = new List<RecipeDef>();
@@ -103,6 +108,20 @@ namespace Hearth.Kitchen
             if (stations.Count > 4) yield return "more than 4 stations";
             foreach (var ing in ingredients)
                 if (IngredientClasses.Find(ing.cls) == null) yield return "unknown ingredient class '" + ing.cls + "'";
+            // F11: one ingredient class once per dish (a second slot of the same class would let "more of the same" count as a second ingredient)
+            var seen = new HashSet<string>();
+            foreach (var ing in ingredients)
+                if (ing.cls != null && !seen.Add(ing.cls)) yield return "ingredient class '" + ing.cls + "' listed twice";
+            if (finishers != null)
+            {
+                var fs = new HashSet<string>();
+                foreach (var f in finishers)
+                {
+                    if (IngredientClasses.Find(f) == null) yield return "unknown finisher class '" + f + "'";
+                    else if (!fs.Add(f)) yield return "finisher class '" + f + "' listed twice";
+                    if (seen.Contains(f)) yield return "finisher class '" + f + "' is an ingredient of the dish itself";
+                }
+            }
         }
 
         public string IngredientSummary()
@@ -120,6 +139,8 @@ namespace Hearth.Kitchen
     {
         public DishDef dish;
         public int variant;
+        /// <summary>A recipe def that exists only so that bills of older saves still load (see DishDef.noVariants and RecipeBuilder). Never offered.</summary>
+        public bool retired;
         // Filled once by RecipeBuilder (startup, main thread) and only read afterwards: a hash lookup instead of a scan of modExtensions,
         // safe for mods that query recipes from several threads. Recipes without any extension return before the lookup.
         // Keyed by reference: Def.GetHashCode/Equals are not free (measured ~0.7 us per lookup with the default comparer).
