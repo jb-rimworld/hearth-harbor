@@ -29,7 +29,7 @@ namespace Hearth.Casino.PlayerHouse
         public const int HistoryMax = 60;
         public static ThrumboComponent Instance;
         public List<ThrumboEntry> History = new List<ThrumboEntry>();
-        List<long> totals = new List<long>();          // staked ×3, paid ×3, rounds ×3
+        List<long> totals = new List<long>();          // silver games: staked ×3, paid ×3, rounds ×3; then goods rounds: staked, paid, rounds (kept apart: a lost goods stake is not in the ledger)
         /// <summary>What the house owes the player below one coin (silver payouts only); always 0 … &lt; 1 silver.</summary>
         public long ChangeMicro;
         // the open blackjack hand
@@ -44,7 +44,7 @@ namespace Hearth.Casino.PlayerHouse
         public ThrumboComponent(Game g) { Instance = this; EnsureTotals(); }
         public static ThrumboComponent Get() => Instance ?? (Instance = Current.Game?.GetComponent<ThrumboComponent>());
 
-        void EnsureTotals() { while (totals.Count < 9) totals.Add(0); }
+        void EnsureTotals() { while (totals.Count < 12) totals.Add(0); }
         public long Staked(ThrumboGame g) { EnsureTotals(); return totals[(int)g]; }
         public long Paid(ThrumboGame g) { EnsureTotals(); return totals[3 + (int)g]; }
         public int Rounds(ThrumboGame g) { EnsureTotals(); return (int)totals[6 + (int)g]; }
@@ -52,10 +52,15 @@ namespace Hearth.Casino.PlayerHouse
         public long PaidAll => Paid(ThrumboGame.Slots) + Paid(ThrumboGame.Roulette) + Paid(ThrumboGame.Blackjack);
         public int RoundsAll => Rounds(ThrumboGame.Slots) + Rounds(ThrumboGame.Roulette) + Rounds(ThrumboGame.Blackjack);
 
+        public long GoodsStaked { get { EnsureTotals(); return totals[9]; } }
+        public long GoodsPaid { get { EnsureTotals(); return totals[10]; } }
+        public int GoodsRounds { get { EnsureTotals(); return (int)totals[11]; } }
+
         public void Record(ThrumboGame g, PayFrom from, Money staked, Money paid, string text)
         {
             EnsureTotals();
-            totals[(int)g] += staked.Micro; totals[3 + (int)g] += paid.Micro; totals[6 + (int)g]++;
+            if (from == PayFrom.Goods) { totals[9] += staked.Micro; totals[10] += paid.Micro; totals[11]++; }   // silver-equivalent value of goods, never mixed with the silver totals
+            else { totals[(int)g] += staked.Micro; totals[3 + (int)g] += paid.Micro; totals[6 + (int)g]++; }
             History.Add(new ThrumboEntry { Tick = Find.TickManager?.TicksGame ?? 0, Game = (int)g, From = (int)from, StakedMicro = staked.Micro, PaidMicro = paid.Micro, Text = text });
             if (History.Count > HistoryMax) History.RemoveRange(0, History.Count - HistoryMax);
         }

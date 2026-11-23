@@ -177,6 +177,9 @@ namespace Hearth.Casino.PlayerHouse
             return click && enabled && !on;
         }
 
+        /// <summary>The "Raise the stakes…" button is usable only while no blackjack hand is open.</summary>
+        public static bool StakesButtonEnabled(bool handOpen) => ThrumboStakes.Enabled && !handOpen;
+
         float DrawGameTabs(Rect r, float y, bool locked)
         {
             float x = 0;
@@ -184,6 +187,13 @@ namespace Hearth.Casino.PlayerHouse
             {
                 var rect = new Rect(x, y, 140f, 30f); x += 146f;
                 if (Choice(rect, ("HH.Thrumbo.Game." + g).Translate(), game == g, !locked || g == ThrumboGame.Blackjack, locked && g != ThrumboGame.Blackjack ? "HH.Thrumbo.HandOpenTip".Translate() : null)) game = g;
+            }
+            // "Raise the stakes…" (K15): only while the setting thrumbo.raiseTheStakes is on
+            if (ThrumboStakes.Enabled)
+            {
+                var rs = new Rect(r.width - 190f, y, 190f, 30f);
+                if (Choice(rs, "HH.Thrumbo.Stakes.Button".Translate(), false, StakesButtonEnabled(locked), locked ? "HH.Thrumbo.HandOpenTip".Translate().ToString() : "HH.Thrumbo.Stakes.ButtonTip".Translate().ToString()))
+                    Window_ThrumboStakes.Open(Seat.Map, from);
             }
             return y + 38f;
         }
@@ -253,10 +263,18 @@ namespace Hearth.Casino.PlayerHouse
             Widgets.DrawLineHorizontal(0, r.y, r.width);
             Text.Font = GameFont.Tiny;
             double staked = c.StakedAll / (double)Money.PerSilver, paid = c.PaidAll / (double)Money.PerSilver;
-            string tot = c.RoundsAll == 0 ? "HH.Thrumbo.NoHistory".Translate().ToString()
+            string tot = c.RoundsAll == 0 && c.GoodsRounds == 0 ? "HH.Thrumbo.NoHistory".Translate().ToString()
                 : "HH.Thrumbo.Totals".Translate(c.RoundsAll.ToString("N0"), staked.ToString("N0"), paid.ToString("N0"), staked > 0 ? (paid / staked * 100).ToString("0.0") : "–", ((paid - staked) >= 0 ? "+" : "") + (paid - staked).ToString("N0")).ToString();
-            GUI.color = dim; Widgets.Label(new Rect(0, r.y + 2f, r.width, 18f), "<b>" + "HH.Thrumbo.History".Translate() + "</b>   " + tot); GUI.color = Color.white;
-            var list = new Rect(0, r.y + 22f, r.width, r.height - 22f);
+            GUI.color = dim; Widgets.Label(new Rect(0, r.y + 2f, r.width, 18f), "<b>" + "HH.Thrumbo.History".Translate() + "</b>   " + tot);
+            float head = 22f;
+            if (c.GoodsRounds > 0)
+            {
+                double gs = c.GoodsStaked / (double)Money.PerSilver, gp = c.GoodsPaid / (double)Money.PerSilver;
+                Widgets.Label(new Rect(0, r.y + 20f, r.width, 18f), "HH.Thrumbo.TotalsGoods".Translate(c.GoodsRounds.ToString("N0"), gs.ToString("N0"), gp.ToString("N0"), ((gp - gs) >= 0 ? "+" : "") + (gp - gs).ToString("N0")));
+                head = 40f;
+            }
+            GUI.color = Color.white;
+            var list = new Rect(0, r.y + head, r.width, r.height - head);
             float rowH = 18f; int n = c.History.Count;
             var view = new Rect(0, 0, list.width - 18f, Math.Max(list.height, n * rowH));
             Widgets.BeginScrollView(list, ref histScroll, view);

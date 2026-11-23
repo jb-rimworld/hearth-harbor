@@ -166,6 +166,7 @@
   <HH.Thrumbo.History>History</HH.Thrumbo.History>
   <HH.Thrumbo.NoHistory>Nothing played yet.</HH.Thrumbo.NoHistory>
   <HH.Thrumbo.Totals>{0} rounds · staked {1} · paid back {2} ({3} %) · result {4}</HH.Thrumbo.Totals>
+  <HH.Thrumbo.TotalsGoods>Goods stakes (value in silver, not in the ledger): {0} rounds · staked {1} · paid back {2} · result {3}</HH.Thrumbo.TotalsGoods>
   <HH.Thrumbo.StakeShort>stake {0}</HH.Thrumbo.StakeShort>
   <HH.Thrumbo.Err.Closed>The Lucky Thrumbo is closed.</HH.Thrumbo.Err.Closed>
   <HH.Thrumbo.Err.NoMap>There is no colony to pay from.</HH.Thrumbo.Err.NoMap>
@@ -206,4 +207,49 @@
   <HH.Thrumbo.Bet.Even>Even</HH.Thrumbo.Bet.Even>
   <HH.Thrumbo.Bet.Low>Low 1-18</HH.Thrumbo.Bet.Low>
   <HH.Thrumbo.Bet.High>High 19-36</HH.Thrumbo.Bet.High>
+  <!-- "Raise the stakes…" of The Lucky Thrumbo (KONZEPT 6.13, K15/K16) -->
+  <HH.Thrumbo.Stakes.Button>Raise the stakes…</HH.Thrumbo.Stakes.Button>
+  <HH.Thrumbo.Stakes.ButtonTip>Stake goods, animals or prisoners instead of silver. They are valued by the house's pawnbroker.</HH.Thrumbo.Stakes.ButtonTip>
+  <HH.Thrumbo.Stakes.Title>Raise the stakes</HH.Thrumbo.Stakes.Title>
+  <HH.Thrumbo.Stakes.Intro>Put things on the table instead of silver. Lose, and they leave with the house as if you had sold them. Win, and you keep everything and the house pays out in silver.</HH.Thrumbo.Stakes.Intro>
+  <HH.Thrumbo.Stakes.Pawnbroker>pawnbroker of the Lucky Thrumbo</HH.Thrumbo.Stakes.Pawnbroker>
+  <HH.Thrumbo.Stakes.ValuedBy>Valued with the prices {0} gets (trade price improvement {1}).</HH.Thrumbo.Stakes.ValuedBy>
+  <HH.Thrumbo.Stakes.NoNegotiator>Nobody on this map can negotiate a price.</HH.Thrumbo.Stakes.NoNegotiator>
+  <HH.Thrumbo.Stakes.NoBeacon>No powered orbital trade beacon: no goods in reach.</HH.Thrumbo.Stakes.NoBeacon>
+  <HH.Thrumbo.Stakes.Refresh>Refresh</HH.Thrumbo.Stakes.Refresh>
+  <HH.Thrumbo.Stakes.Tab.Goods>Goods ({0})</HH.Thrumbo.Stakes.Tab.Goods>
+  <HH.Thrumbo.Stakes.Tab.Animals>Animals ({0})</HH.Thrumbo.Stakes.Tab.Animals>
+  <HH.Thrumbo.Stakes.Tab.Prisoners>Prisoners ({0})</HH.Thrumbo.Stakes.Tab.Prisoners>
+  <HH.Thrumbo.Stakes.PawnsCozy>Animals and prisoners can be staked from the content intensity Standard on.</HH.Thrumbo.Stakes.PawnsCozy>
+  <HH.Thrumbo.Stakes.Empty.Goods>Nothing in range of a powered orbital trade beacon that a trader would buy.</HH.Thrumbo.Stakes.Empty.Goods>
+  <HH.Thrumbo.Stakes.Empty.Animals>No colony animal could be handed over right now.</HH.Thrumbo.Stakes.Empty.Animals>
+  <HH.Thrumbo.Stakes.Empty.Prisoners>No secure adult prisoner. Colonists, slaves, children and guests are never stakes.</HH.Thrumbo.Stakes.Empty.Prisoners>
+  <HH.Thrumbo.Stakes.UnitTip>Sell price: {0} each\n− pawnbroker spread {1} %\n− fee {2} %\n= stake value {3} each</HH.Thrumbo.Stakes.UnitTip>
+  <HH.Thrumbo.Stakes.All>All</HH.Thrumbo.Stakes.All>
+  <HH.Thrumbo.Stakes.Game>Game</HH.Thrumbo.Stakes.Game>
+  <HH.Thrumbo.Stakes.RouletteEdge>House edge: {0} %</HH.Thrumbo.Stakes.RouletteEdge>
+  <HH.Thrumbo.Stakes.WinTo>Winnings</HH.Thrumbo.Stakes.WinTo>
+  <HH.Thrumbo.Stakes.ToAccount>to the account</HH.Thrumbo.Stakes.ToAccount>
+  <HH.Thrumbo.Stakes.ToPod>by drop pod</HH.Thrumbo.Stakes.ToPod>
+  <HH.Thrumbo.Stakes.ToPodTip>Silver arrives in drop pods at the trade drop spot. A fraction of a coin stays with the house until it adds up.</HH.Thrumbo.Stakes.ToPodTip>
+  <HH.Thrumbo.Stakes.Value>Stake value: {0}</HH.Thrumbo.Stakes.Value>
+  <HH.Thrumbo.Stakes.ValueTip>What the house's pawnbroker would pay: the vanilla sell price with the skills of {4}: {0}\n− pawnbroker spread {1} % (mod settings)\n− fee {2} %\n= stake value {3}\n\nOnly the market value is read; nothing about the items is changed.</HH.Thrumbo.Stakes.ValueTip>
+  <HH.Thrumbo.Stakes.Rule>Win ×m: keep everything and get value × (m − 1) in silver. Lose: the things are gone, as if sold. A small prize below ×1 is paid in silver, the things are still gone.</HH.Thrumbo.Stakes.Rule>
+  <HH.Thrumbo.Stakes.GoRoulette>Stake it and spin the wheel</HH.Thrumbo.Stakes.GoRoulette>
+  <HH.Thrumbo.Stakes.GoSlots>Stake it and pull the lever</HH.Thrumbo.Stakes.GoSlots>
+  <HH.Thrumbo.Stakes.Confirm>Stake {0} (worth {1}) on one round?\n\nIf you lose, they are gone for good.</HH.Thrumbo.Stakes.Confirm>
+  <HH.Thrumbo.Stakes.Won>pays ×{0}: you keep everything and win {1}</HH.Thrumbo.Stakes.Won>
+  <HH.Thrumbo.Stakes.Push>a push: you keep everything</HH.Thrumbo.Stakes.Push>
+  <HH.Thrumbo.Stakes.Lost>lost: the stake leaves with the house</HH.Thrumbo.Stakes.Lost>
+  <HH.Thrumbo.Stakes.LostPart>lost, {0} paid back: the stake leaves with the house</HH.Thrumbo.Stakes.LostPart>
+  <HH.Thrumbo.Stakes.HistoryLine>Stake: {0} · {1}</HH.Thrumbo.Stakes.HistoryLine>
+  <HH.Thrumbo.Stakes.More>and {0} more</HH.Thrumbo.Stakes.More>
+  <HH.Thrumbo.Stakes.Err.Off>"Raise the stakes" is switched off in the mod settings.</HH.Thrumbo.Stakes.Err.Off>
+  <HH.Thrumbo.Stakes.Err.NoNegotiator>A colonist who can negotiate has to be on the map.</HH.Thrumbo.Stakes.Err.NoNegotiator>
+  <HH.Thrumbo.Stakes.Err.Nothing>Choose something to stake.</HH.Thrumbo.Stakes.Err.Nothing>
+  <HH.Thrumbo.Stakes.Err.Gone>{0} is no longer in reach. Refresh the list.</HH.Thrumbo.Stakes.Err.Gone>
+  <HH.Setting.thrumbo.raiseTheStakes>Lucky Thrumbo: "Raise the stakes"</HH.Setting.thrumbo.raiseTheStakes>
+  <HH.Setting.thrumbo.raiseTheStakes.Desc>Adds the button "Raise the stakes…" to the Lucky Thrumbo: stake goods in range of a powered orbital trade beacon instead of silver, and from the content intensity Standard also colony animals and prisoners (like vanilla selling). Colonists, slaves, children and guests are never offered.</HH.Setting.thrumbo.raiseTheStakes.Desc>
+  <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: pawnbroker spread for staked goods</HH.Setting.thrumbo.pawnbrokerSpread>
+  <HH.Setting.thrumbo.pawnbrokerSpread.Desc>Staked goods count for what the house's pawnbroker would pay (the vanilla sell price with your best negotiator) minus this spread and a fixed 2 % fee.</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
 </LanguageData>

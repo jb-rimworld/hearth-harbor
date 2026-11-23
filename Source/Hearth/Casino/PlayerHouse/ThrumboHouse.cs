@@ -154,6 +154,35 @@ namespace Hearth.Casino.PlayerHouse
             }
         }
 
+        /// <summary>
+        /// Winnings of a "raise the stakes" round (KONZEPT 6.13: "Gewinne gehen aufs Konto oder kommen per Kapsel"): onto the account, or as
+        /// silver in drop pods at the trade drop spot. Both book the house account; a fraction of a coin stays owed like other silver payouts.
+        /// </summary>
+        public static void PayStakeWin(PayFrom to, Map map, Money pay, string memo)
+        {
+            var comp = Comp; var led = Ledger.Current; if (comp == null || led == null) return;
+            if (to == PayFrom.Bank && BankApi.Ready)
+            {
+                var due = pay + new Money(comp.ChangeMicro);
+                if (due.Micro <= 0) return;
+                if (BankApi.Receive(House, due, memo + " (account)")) { comp.ChangeMicro = 0; return; }
+                HLog.Warn("Casino", "Lucky Thrumbo: the account refused the stake payout; paying by drop pod instead");   // fall through to the pods
+            }
+            var total = pay + new Money(comp.ChangeMicro);
+            int coins = total.WholeSilver;
+            if (coins <= 0 || map == null) { comp.ChangeMicro = total.Micro; return; }
+            if (!led.Post(House, "world", Money.FromSilver(coins), memo + " (drop pod)", true)) { comp.ChangeMicro = total.Micro; HLog.Warn("Casino", "Lucky Thrumbo: could not book a drop pod payout of " + coins); return; }
+            comp.ChangeMicro = total.Micro - Money.FromSilver(coins).Micro;
+            var spot = DropCellFinder.TradeDropSpot(map);
+            int stackMax = Math.Max(1, ThingDefOf.Silver.stackLimit);
+            for (int left = coins; left > 0;)
+            {
+                int n = Math.Min(left, stackMax); left -= n;
+                var silver = ThingMaker.MakeThing(ThingDefOf.Silver); silver.stackCount = n;
+                TradeUtility.SpawnDropPod(spot, map, silver);
+            }
+        }
+
         static ThrumboResult Finish(ThrumboSeat s, ThrumboGame g, Money stake, Money pay, string text, double mult)
         {
             Give(s.From, s.Map, s.Player, pay, "Lucky Thrumbo: " + g.ToString().ToLowerInvariant());

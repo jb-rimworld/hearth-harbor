@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- The virtual pawnbroker of The Lucky Thrumbo (KONZEPT 6.13 "Raise the stakes…"). It only values and takes stakes through code; it never
+       arrives as an orbital trader or caravan (orbital false, not requestable, commonality 0) and sells nothing. -->
+  <TraderKindDef>
+    <defName>HH_Pawnbroker</defName>
+    <label>pawnbroker of the Lucky Thrumbo</label>
+    <description>Values what you put on the table at the Lucky Thrumbo: the price a trader would pay, minus the house's spread.</description>
+    <orbital>false</orbital>
+    <requestable>false</requestable>
+    <commonality>0</commonality>
+  </TraderKindDef>
+</Defs>
