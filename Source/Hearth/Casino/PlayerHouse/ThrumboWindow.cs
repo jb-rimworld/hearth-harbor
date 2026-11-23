@@ -163,6 +163,13 @@ namespace Hearth.Casino.PlayerHouse
                 var rect = new Rect(x, y, 140f, 30f); x += 146f;
                 if (Choice(rect, ("HH.Thrumbo.Game." + g).Translate(), game == g, !locked || g == ThrumboGame.Blackjack, locked && g != ThrumboGame.Blackjack ? "HH.Thrumbo.HandOpenTip".Translate() : null)) game = g;
             }
+            // "Raise the stakes…" (K15): only while the setting thrumbo.raiseTheStakes is on
+            if (ThrumboStakes.Enabled)
+            {
+                var rs = new Rect(r.width - 190f, y, 190f, 30f);
+                if (Choice(rs, "HH.Thrumbo.Stakes.Button".Translate(), false, !locked, locked ? "HH.Thrumbo.HandOpenTip".Translate().ToString() : "HH.Thrumbo.Stakes.ButtonTip".Translate().ToString()))
+                    Window_ThrumboStakes.Open(Seat.Map, from);
+            }
             return y + 38f;
         }
 

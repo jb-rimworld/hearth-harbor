@@ -171,4 +171,49 @@
   <HH.Thrumbo.Err.HandOpen>Eine Hand ist noch offen.</HH.Thrumbo.Err.HandOpen>
   <HH.Thrumbo.Err.NoHand>Es gibt keine offene Hand.</HH.Thrumbo.Err.NoHand>
   <HH.Thrumbo.Err.NoDouble>Du kannst nur bei deinen ersten zwei Karten verdoppeln.</HH.Thrumbo.Err.NoDouble>
+  <!-- „Raise the stakes…“ im Lucky Thrumbo (KONZEPT 6.13, K15/K16) -->
+  <HH.Thrumbo.Stakes.Button>Einsatz erhöhen…</HH.Thrumbo.Stakes.Button>
+  <HH.Thrumbo.Stakes.ButtonTip>Setze Waren, Tiere oder Gefangene statt Silber. Der Pfandleiher des Hauses schätzt ihren Wert.</HH.Thrumbo.Stakes.ButtonTip>
+  <HH.Thrumbo.Stakes.Title>Einsatz erhöhen</HH.Thrumbo.Stakes.Title>
+  <HH.Thrumbo.Stakes.Intro>Lege Dinge statt Silber auf den Tisch. Verlierst du, gehen sie ans Haus, als hättest du sie verkauft. Gewinnst du, behältst du alles und das Haus zahlt in Silber aus.</HH.Thrumbo.Stakes.Intro>
+  <HH.Thrumbo.Stakes.Pawnbroker>Pfandleiher des Lucky Thrumbo</HH.Thrumbo.Stakes.Pawnbroker>
+  <HH.Thrumbo.Stakes.ValuedBy>Geschätzt zu den Preisen, die {0} erzielt (Handelspreisverbesserung {1}).</HH.Thrumbo.Stakes.ValuedBy>
+  <HH.Thrumbo.Stakes.NoNegotiator>Auf dieser Karte kann niemand einen Preis aushandeln.</HH.Thrumbo.Stakes.NoNegotiator>
+  <HH.Thrumbo.Stakes.NoBeacon>Kein Orbitalhandelsbaken mit Strom: keine Waren in Reichweite.</HH.Thrumbo.Stakes.NoBeacon>
+  <HH.Thrumbo.Stakes.Refresh>Aktualisieren</HH.Thrumbo.Stakes.Refresh>
+  <HH.Thrumbo.Stakes.Tab.Goods>Waren ({0})</HH.Thrumbo.Stakes.Tab.Goods>
+  <HH.Thrumbo.Stakes.Tab.Animals>Tiere ({0})</HH.Thrumbo.Stakes.Tab.Animals>
+  <HH.Thrumbo.Stakes.Tab.Prisoners>Gefangene ({0})</HH.Thrumbo.Stakes.Tab.Prisoners>
+  <HH.Thrumbo.Stakes.PawnsCozy>Tiere und Gefangene lassen sich ab der Inhaltsstärke Standard setzen.</HH.Thrumbo.Stakes.PawnsCozy>
+  <HH.Thrumbo.Stakes.Empty.Goods>Nichts in Reichweite eines Orbitalhandelsbakens mit Strom, das ein Händler kaufen würde.</HH.Thrumbo.Stakes.Empty.Goods>
+  <HH.Thrumbo.Stakes.Empty.Animals>Gerade kann kein Tier der Kolonie übergeben werden.</HH.Thrumbo.Stakes.Empty.Animals>
+  <HH.Thrumbo.Stakes.Empty.Prisoners>Kein sicher verwahrter erwachsener Gefangener. Kolonist:innen, Sklav:innen, Kinder und Gäste sind nie ein Einsatz.</HH.Thrumbo.Stakes.Empty.Prisoners>
+  <HH.Thrumbo.Stakes.UnitTip>Verkaufspreis: {0} je Stück\n− Pfandleiher-Spanne {1} %\n− Gebühr {2} %\n= Einsatzwert {3} je Stück</HH.Thrumbo.Stakes.UnitTip>
+  <HH.Thrumbo.Stakes.All>Alle</HH.Thrumbo.Stakes.All>
+  <HH.Thrumbo.Stakes.Game>Spiel</HH.Thrumbo.Stakes.Game>
+  <HH.Thrumbo.Stakes.RouletteEdge>Hausvorteil: {0} %</HH.Thrumbo.Stakes.RouletteEdge>
+  <HH.Thrumbo.Stakes.WinTo>Gewinne</HH.Thrumbo.Stakes.WinTo>
+  <HH.Thrumbo.Stakes.ToAccount>aufs Konto</HH.Thrumbo.Stakes.ToAccount>
+  <HH.Thrumbo.Stakes.ToPod>per Kapsel</HH.Thrumbo.Stakes.ToPod>
+  <HH.Thrumbo.Stakes.ToPodTip>Das Silber kommt in Transportkapseln am Handelsabwurfpunkt an. Bruchteile einer Münze bleiben beim Haus, bis sie sich summieren.</HH.Thrumbo.Stakes.ToPodTip>
+  <HH.Thrumbo.Stakes.Value>Einsatzwert: {0}</HH.Thrumbo.Stakes.Value>
+  <HH.Thrumbo.Stakes.ValueTip>Was der Pfandleiher des Hauses zahlen würde: der Vanilla-Verkaufspreis mit den Fähigkeiten von {4}: {0}\n− Pfandleiher-Spanne {1} % (Mod-Einstellungen)\n− Gebühr {2} %\n= Einsatzwert {3}\n\nNur der Marktwert wird gelesen; an den Gegenständen ändert sich nichts.</HH.Thrumbo.Stakes.ValueTip>
+  <HH.Thrumbo.Stakes.Rule>Gewinn ×m: Du behältst alles und bekommst Wert × (m − 1) in Silber. Verlust: Die Dinge sind weg, wie verkauft. Ein kleiner Preis unter ×1 wird in Silber gezahlt, die Dinge sind trotzdem weg.</HH.Thrumbo.Stakes.Rule>
+  <HH.Thrumbo.Stakes.GoRoulette>Setzen und das Rad drehen</HH.Thrumbo.Stakes.GoRoulette>
+  <HH.Thrumbo.Stakes.GoSlots>Setzen und den Hebel ziehen</HH.Thrumbo.Stakes.GoSlots>
+  <HH.Thrumbo.Stakes.Confirm>{0} (Wert {1}) auf eine Runde setzen?\n\nVerlierst du, ist es endgültig weg.</HH.Thrumbo.Stakes.Confirm>
+  <HH.Thrumbo.Stakes.Won>zahlt ×{0}: Du behältst alles und gewinnst {1}</HH.Thrumbo.Stakes.Won>
+  <HH.Thrumbo.Stakes.Push>unentschieden: Du behältst alles</HH.Thrumbo.Stakes.Push>
+  <HH.Thrumbo.Stakes.Lost>verloren: Der Einsatz geht ans Haus</HH.Thrumbo.Stakes.Lost>
+  <HH.Thrumbo.Stakes.LostPart>verloren, {0} zurück: Der Einsatz geht ans Haus</HH.Thrumbo.Stakes.LostPart>
+  <HH.Thrumbo.Stakes.HistoryLine>Einsatz: {0} · {1}</HH.Thrumbo.Stakes.HistoryLine>
+  <HH.Thrumbo.Stakes.More>und {0} weitere</HH.Thrumbo.Stakes.More>
+  <HH.Thrumbo.Stakes.Err.Off>„Einsatz erhöhen“ ist in den Mod-Einstellungen ausgeschaltet.</HH.Thrumbo.Stakes.Err.Off>
+  <HH.Thrumbo.Stakes.Err.NoNegotiator>Eine Kolonistin oder ein Kolonist, der verhandeln kann, muss auf der Karte sein.</HH.Thrumbo.Stakes.Err.NoNegotiator>
+  <HH.Thrumbo.Stakes.Err.Nothing>Wähle etwas als Einsatz.</HH.Thrumbo.Stakes.Err.Nothing>
+  <HH.Thrumbo.Stakes.Err.Gone>{0} ist nicht mehr in Reichweite. Aktualisiere die Liste.</HH.Thrumbo.Stakes.Err.Gone>
+  <HH.Setting.thrumbo.raiseTheStakes>Lucky Thrumbo: „Einsatz erhöhen“</HH.Setting.thrumbo.raiseTheStakes>
+  <HH.Setting.thrumbo.raiseTheStakes.Desc>Fügt dem Lucky Thrumbo den Knopf „Einsatz erhöhen…“ hinzu: Setze Waren in Reichweite eines Orbitalhandelsbakens mit Strom statt Silber, ab der Inhaltsstärke Standard auch Tiere der Kolonie und Gefangene (wie beim Vanilla-Verkauf). Kolonist:innen, Sklav:innen, Kinder und Gäste werden nie angeboten.</HH.Setting.thrumbo.raiseTheStakes.Desc>
+  <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: Pfandleiher-Spanne für gesetzte Waren</HH.Setting.thrumbo.pawnbrokerSpread>
+  <HH.Setting.thrumbo.pawnbrokerSpread.Desc>Gesetzte Waren zählen so viel, wie der Pfandleiher des Hauses zahlen würde (Vanilla-Verkaufspreis mit deinem besten Verhandler), abzüglich dieser Spanne und einer festen Gebühr von 2 %.</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
 </LanguageData>

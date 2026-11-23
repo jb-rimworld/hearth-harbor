@@ -8,7 +8,7 @@ namespace Hearth.Casino.PlayerHouse
     public enum ThrumboGame { Slots = 0, Roulette = 1, Blackjack = 2 }
 
     /// <summary>Where the stake comes from and where winnings go: the colony account of Silverline, or silver on the map (storage, or inside the range of a trade beacon).</summary>
-    public enum PayFrom { Bank = 0, Silver = 1 }
+    public enum PayFrom { Bank = 0, Silver = 1, Goods = 2 }   // Goods: only in the history ("Raise the stakes…"); a seat is never Goods
 
     /// <summary>Settings of The Lucky Thrumbo (KONZEPT 6.13, K14–K16), key prefix "thrumbo.". The edge shift follows the "Hausvorteil extern" row of 9.2.</summary>
     public static class TS
@@ -35,10 +35,10 @@ namespace Hearth.Casino.PlayerHouse
                 "One stake may be at most this share of your net worth (account plus silver at home, minus debts), between the floor and the cap below.", hardMin: 0.0001f, hardMax: 1f);
             HSettings.Silver(M, "Lucky Thrumbo", MaxBetFloor, 50, 1, 1000, "Lucky Thrumbo: table limit, floor (silver)", "Even a poor colony may stake at least this much per round.");
             HSettings.Silver(M, "Lucky Thrumbo", MaxBetCap, 50000, 100, 1000000, "Lucky Thrumbo: table limit, cap (silver)", "No stake is ever higher than this.");
-            HSettings.Bool(M, "Lucky Thrumbo", AllIn, true, "Lucky Thrumbo: \"Raise the stakes\" (dark content only)",
-                "Lets you stake items, animals and prisoners instead of silver. Only available with the content intensity Dark or Grim, and only after a warning. Colonists can never be staked.");
-            HSettings.Percent(M, "Lucky Thrumbo", PawnSpread, 0.12f, 0f, 0.5f, "Lucky Thrumbo: valuation spread for goods",
-                "Staked goods count for their market value minus this spread (the pawnbroker's margin of 10 % and a 2 % fee).", hardMin: 0f, hardMax: 0.9f);
+            HSettings.Bool(M, "Lucky Thrumbo", AllIn, true, "Lucky Thrumbo: \"Raise the stakes\"",
+                "Adds the button \"Raise the stakes…\" to the Lucky Thrumbo: stake goods in range of a powered orbital trade beacon instead of silver, and from the content intensity Standard also colony animals and prisoners (like vanilla selling). Colonists, slaves, children and guests are never offered.");
+            HSettings.Percent(M, "Lucky Thrumbo", PawnSpread, 0.10f, 0f, 0.5f, "Lucky Thrumbo: pawnbroker spread for staked goods",
+                "Staked goods count for what the house's pawnbroker would pay (the vanilla sell price with your best negotiator) minus this spread and a fixed 2 % fee.", hardMin: 0f, hardMax: 0.9f);
         }
 
         public static double Shift => HSettings.Get(EdgeShift);
