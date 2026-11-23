@@ -98,7 +98,8 @@ namespace Hearth.Dlc
 
         public static float InterestWeight(Pawn p, ThingDef thing)
         {
-            var d = For(p); if (d == null || thing == null) return 1f;
+            if (thing == null || !HSettings.GetBool("dlc.xenoHospitality")) return 1f;
+            var d = For(p); if (d == null) return 1f;
             if (d.rejects.Contains(thing)) return 0f;
             var i = d.interests.FirstOrDefault(x => x.thing == thing);
             return i == null ? 1f : i.weight;
@@ -106,6 +107,8 @@ namespace Hearth.Dlc
 
         public static float SpendFactor(Pawn p) => HSettings.GetBool("dlc.xenoHospitality") ? For(p)?.spendFactor ?? 1f : 1f;
         public static float PriceToleranceOffset(Pawn p) => HSettings.GetBool("dlc.xenoHospitality") ? For(p)?.priceTolerance ?? 0f : 0f;
+
+        public const int NudgeInterval = 15000;
 
         /// <summary>Every 6 hours a guest feels how well their room fits their kind: a small satisfaction nudge (never spam).</summary>
         public static int NudgeGuests(Map map)

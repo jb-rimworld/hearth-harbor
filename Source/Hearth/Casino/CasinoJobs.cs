@@ -121,7 +121,7 @@ namespace Hearth.Casino
                 bool ended = false;
                 if (pawn.CurJob != null)
                 {
-                    ended = Hearth.City.Toils.JoyTick(pawn, delta, JoyTickFullJoyAction.EndJob, CS.F(CS.JoyGain), Device as Building);
+                    ended = Hearth.City.Toils.JoyTick(pawn, delta, JoyTickFullJoyAction.EndJob, CS.F(CS.JoyGain) * Hearth.Dlc.LuckApi.JoyFactor(pawn), Device as Building);
                     // gambling builds tolerance slower than vanilla play (casino.toleranceFactor): hand back the difference
                     if (joy != null)
                     {
@@ -218,6 +218,7 @@ namespace Hearth.Casino
         {
             if (!Modules.On(ModuleId.Casino) || !base.CanBeGivenTo(pawn)) return false;
             if (!Gambling.IsColonist(pawn) || !Gambling.IsAdult(pawn)) return false;
+            if (!Hearth.Dlc.LuckApi.WillGamble(pawn)) return false;      // gambling-averse: never plays
             var h = Gambling.AddictionOf(pawn);
             if (h != null) return Gambling.PolicyAllowsAddiction(pawn);
             return Gambling.PolicyAllowsJoy(pawn, out _);

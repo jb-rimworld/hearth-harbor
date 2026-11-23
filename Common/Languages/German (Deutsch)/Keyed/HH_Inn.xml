@@ -59,6 +59,8 @@
   <HH.Inn.Event.Declined>Hat überlegt, für immer zu bleiben, und ist dann doch nach Hause gegangen.</HH.Inn.Event.Declined>
   <HH.Inn.Event.Died>Ist während des Aufenthalts gestorben.</HH.Inn.Event.Died>
   <HH.Inn.Event.FreeNight>Übernachtet umsonst.</HH.Inn.Event.FreeNight>
+  <HH.Inn.Event.SponsoredBed>Das Bett ist von der Reisegruppe gebucht und bezahlt.</HH.Inn.Event.SponsoredBed>
+  <HH.Inn.Event.Charmed>{0} hat das Haus besser klingen lassen als erwartet.</HH.Inn.Event.Charmed>
   <HH.Inn.Event.Gift>Hat ein Geschenk hinterlassen: {0}.</HH.Inn.Event.Gift>
   <HH.Inn.Event.GotRoom>Hat ein Bett in einem Raum der Kategorie {0} für {1} Silber die Nacht genommen.</HH.Inn.Event.GotRoom>
   <HH.Inn.Event.HonestyBox>Hat an der Vertrauenskasse eingecheckt; niemand war im Dienst.</HH.Inn.Event.HonestyBox>

@@ -97,7 +97,8 @@ namespace Hearth.Casino
             var t = p.story?.traits; if (t == null) return f;
             if (t.HasTrait(TraitDefOf.Greedy)) f *= 1.5;
             var ascetic = DefDatabase<TraitDef>.GetNamedSilentFail("Ascetic"); if (ascetic != null && t.HasTrait(ascetic)) f *= 0.4;
-            var gambler = DefDatabase<TraitDef>.GetNamedSilentFail("Gambler"); if (gambler != null && t.HasTrait(gambler)) f *= 2.0;
+            if (Hearth.Dlc.DlcDefs.Gambler != null && t.HasTrait(Hearth.Dlc.DlcDefs.Gambler)) f *= 2.0;
+            if (Hearth.Dlc.LuckApi.IsHighRoller(p)) f *= 1.5;
             if (p.Ideo != null) { /* Ideology "Gambling" precept arrives with the Ideology module; nothing to read yet */ }
             return f;
         }
@@ -109,9 +110,10 @@ namespace Hearth.Casino
             if (t != null)
             {
                 if (t.HasTrait(TraitDefOf.Greedy)) s *= 1.5;
-                var gambler = DefDatabase<TraitDef>.GetNamedSilentFail("Gambler"); if (gambler != null && t.HasTrait(gambler)) s *= 2.0;
+                if (Hearth.Dlc.DlcDefs.Gambler != null && t.HasTrait(Hearth.Dlc.DlcDefs.Gambler)) s *= 2.0;
                 var nerves = DefDatabase<TraitDef>.GetNamedSilentFail("Nerves"); if (nerves != null && t.HasTrait(nerves) && t.DegreeOfTrait(nerves) >= 1) s *= 0.8;
             }
+            if (Hearth.Dlc.LuckApi.IsHighRoller(p)) s *= 1.5;   // high roller gene: bets bigger
             return (float)s;
         }
 

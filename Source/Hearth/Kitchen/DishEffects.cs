@@ -78,6 +78,17 @@ namespace Hearth.Kitchen
         }
 
         /// <summary>The vanilla roll of the quality (made by GenRecipe) is followed by 1 (Fine) or 2 (Signature) extra rolls with the cook's skill +3 / +5; the best counts (6.4).</summary>
+        /// <summary>Refined palate (HH_DishQuality 0.1): that chance to lift the finished dish by one quality step (never above legendary).</summary>
+        public static bool PalateLift(Thing plate, Pawn cook)
+        {
+            float chance = Hearth.Dlc.DlcApi.DishQualityLift(cook);
+            if (chance <= 0f) return false;
+            var qc = plate?.TryGetComp<CompQuality>();
+            if (qc == null || qc.Quality >= QualityCategory.Legendary || !JRand.Stream("kitchen.palate").Chance(chance)) return false;
+            qc.SetQuality(qc.Quality + 1, ArtGenerationContext.Colony);
+            return true;
+        }
+
         public static void RerollQuality(Thing plate, Pawn cook, int variant)
         {
             if (variant <= 0 || cook?.skills == null) return;

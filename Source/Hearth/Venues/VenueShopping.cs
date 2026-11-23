@@ -30,9 +30,18 @@ namespace Hearth.ShopsFood
             }
         }
 
-        /// <summary>Rho = price multiplier / (tolerance * perceived quality). Above 1.6 the guest does not buy.</summary>
-        public static float Rho(Pawn guest, GuestInfo info, float priceMultiplier, int businessId)
-            => priceMultiplier / (Tolerance(info) * 1.0f * (1f + Noise(guest, businessId)));
+        /// <summary>Rho = price multiplier / (tolerance * perceived quality). Above 1.6 the guest does not buy.
+        /// The guest's xenotype shifts the tolerance (baseliners -5 %), the seller's price feel (penny-pincher +0.1) makes prices feel steeper.</summary>
+        public static float Rho(Pawn guest, GuestInfo info, float priceMultiplier, int businessId, Pawn seller = null)
+        {
+            float tol = Tolerance(info) * Math.Max(0.2f, 1f + Hearth.Dlc.XenotypeHospitality.PriceToleranceOffset(guest));
+            float feel = seller == null ? 1f : Math.Max(0.2f, 1f + Hearth.Dlc.DlcApi.PriceFeelOffset(seller));
+            return priceMultiplier * feel / (tol * (1f + Noise(guest, businessId)));
+        }
+
+        /// <summary>Share of the budget a guest spends on one purchase: xenotype spend factor (hussars 1.15) x the guest's generosity stat.</summary>
+        public static float SpendFactor(Pawn guest)
+            => Mathf.Clamp(Hearth.Dlc.XenotypeHospitality.SpendFactor(guest) * Hearth.Dlc.DlcApi.TipFactor(guest), 0.5f, 2f);
 
         public static bool Accepts(float rho) => rho <= 1.6f;
 
@@ -54,11 +63,13 @@ namespace Hearth.ShopsFood
             var stock = VenueSales.Stock(v);
             if (stock.Count == 0) return null;
             float mult = VenueApi.PriceMultiplier(v);
-            float rho = Rho(guest, info, mult, v.Sign.thingIDNumber);
+            float rho = Rho(guest, info, mult, v.Sign.thingIDNumber, v.Staffer());
             if (!Accepts(rho)) return null;
             bool drink = def == HHVenueDefOf.HH_BuyDrink;
             scratch.Clear(); scratch.AddRange(stock);
             scratch.Shuffle();
+            // xenotype interests (11.5): favourites first (hemogen packs for sanguophages), rejected goods never
+            if (ModsConfig.BiotechActive) SortByInterest(guest, scratch);
             int tries = 0;
             foreach (var item in scratch)
             {
@@ -66,7 +77,7 @@ namespace Hearth.ShopsFood
                 if (!item.Spawned || item.Destroyed) continue;
                 var unit = VenueApi.PriceOf(item, 1, v);
                 if (unit.Micro <= 0 || unit > info.Budget) continue;
-                int count = ChooseCount(item, unit, info.Budget, drink);
+                int count = ChooseCount(item, unit, info.Budget, drink, SpendFactor(guest));
                 if (!guest.CanReserveAndReach(item, PathEndMode.Touch, Danger.None, 1, count)) continue;
                 var job = JobMaker.MakeJob(def, item, v.Sign);
                 job.count = count;
@@ -75,10 +86,20 @@ namespace Hearth.ShopsFood
             return null;
         }
 
-        static int ChooseCount(Thing item, Money unit, Money budget, bool single)
+        /// <summary>Stable sort by xenotype interest weight, highest first; weight 0 (rejected) is removed.</summary>
+        public static void SortByInterest(Pawn guest, List<Thing> items)
+        {
+            if (Hearth.Dlc.XenotypeHospitality.For(guest) == null) return;
+            var weighted = new List<(Thing t, float w, int i)>(items.Count);
+            for (int i = 0; i < items.Count; i++) { float w = Hearth.Dlc.XenotypeHospitality.InterestWeight(guest, items[i].def); if (w > 0f) weighted.Add((items[i], w, i)); }
+            weighted.Sort((a, b) => a.w != b.w ? b.w.CompareTo(a.w) : a.i.CompareTo(b.i));
+            items.Clear(); foreach (var x in weighted) items.Add(x.t);
+        }
+
+        static int ChooseCount(Thing item, Money unit, Money budget, bool single, float spend = 1f)
         {
             if (single || item.stackCount <= 1) return 1;
-            int afford = (int)Math.Floor(budget.Silver * 0.5 / Math.Max(0.01, unit.Silver));
+            int afford = (int)Math.Floor(budget.Silver * Math.Min(0.9, 0.5 * spend) / Math.Max(0.01, unit.Silver));
             int max = Mathf.Clamp(afford, 1, Math.Min(item.stackCount, 10));
             return Rand.RangeInclusive(1, max);
         }
@@ -205,7 +226,7 @@ namespace Hearth.ShopsFood
                 mult = VenueApi.PriceMultiplier(venue);
             }
             int business = job.targetB.Thing?.thingIDNumber ?? 0;
-            float rho = VenueShopping.Rho(pawn, info, mult, business);
+            float rho = VenueShopping.Rho(pawn, info, mult, business, venue?.Staffer());
             if (!VenueShopping.Accepts(rho)) { Fail("too expensive"); return; }
             string label = item.LabelNoCount;
             string memo = (vending ? "Vending machine: " : (venue.DisplayNameOf() + ": ")) + label + (count > 1 ? " x" + count : "");

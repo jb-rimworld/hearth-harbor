@@ -101,7 +101,8 @@ namespace Hearth.Guests
             r.Budget = forceBudget ?? GuestEconomy.RollBudget(p, r.Wealth, days, g.ByPod, rng);
             r.StartBudget = r.Budget;
             r.PaysDigital = forceDigital ?? GuestEconomy.PaysDigital(g.Faction, r.Budget);
-            r.Expectation = GuestEconomy.Expectation(r.Wealth, Renown, g.Faction);
+            // traits, genes, xenotype and faith of the guest shift what they expect (refined palate +0.05, genie +0.05, neanderthal -0.05 ...)
+            r.Expectation = Mathf.Clamp01(GuestEconomy.Expectation(r.Wealth, Renown, g.Faction) + Hearth.Dlc.DlcApi.GuestExpectationOffset(p));
             records.Add(r);
             Index(r);
             if (r.PaysDigital) Ledger.Current?.Post("world", r.Account, r.Budget, "Inn: card funds of " + p.LabelShort);
@@ -200,6 +201,7 @@ namespace Hearth.Guests
                     // C7: a host on duty welcomes the guest in person
                     r.ServiceSum += WelcomeBonus;
                     host.skills?.Learn(SkillDefOf.Social, 60f);
+                    Hosted(host, r);
                     r.Log("HH.Inn.Event.Welcomed".TranslateOr("Was welcomed at the front desk by {0}.").Replace("{0}", host.LabelShort), 2);
                 }
                 else r.Log("HH.Inn.Event.CheckedIn".TranslateOr("Checked in at the front desk."));
@@ -232,12 +234,31 @@ namespace Hearth.Guests
         /// <summary>A couple pays this many times the price of one bed (C4).</summary>
         public const float CoupleFactor = 1.3f;
 
+        /// <summary>Set by the DLC integration: a bed booked and paid for by someone else (noble stays pay at the end of the stay),
+        /// or null to let the guest choose and pay as usual. The bed must be a free guest bed.</summary>
+        public static Func<GuestRecord, Building_Bed> SponsoredBed;
+        /// <summary>True for guests whose stay is paid by someone else at the end: whatever bed they end up in costs nothing per night (no double charge).</summary>
+        public static Func<GuestRecord, bool> SponsoredGuest;
+
         public bool AssignBed(GuestRecord r)
         {
             var p = r.Pawn; var map = p?.MapHeld; if (map == null) return false;
+            Building_Bed sponsored = null;
+            if (SponsoredBed != null) try { sponsored = SponsoredBed(r); } catch (Exception e) { HLog.Error("Inn", "Sponsored bed hook failed", e); }
+            if (sponsored != null && sponsored.Spawned && GuestBeds.IsGuestBed(sponsored) && GuestBeds.IsFree(sponsored))
+            {
+                var sq = GuestBedPricing.Quote(sponsored);
+                if (sq != null)
+                {
+                    sq.Price = Money.Zero;
+                    if (ClaimBed(r, sponsored, sq)) { r.Log("HH.Inn.Event.SponsoredBed".TranslateOr("The bed is booked and paid for by the party.")); return true; }
+                }
+            }
             Building_Bed best = null; BedQuote bestQ = null; float bestU = float.MinValue;
             Building_Bed cheapest = null; BedQuote cheapQ = null;
             int nights = Math.Max(1, r.NightsPlanned);
+            bool freeNights = false;
+            if (SponsoredGuest != null) try { freeNights = SponsoredGuest(r); } catch (Exception e) { HLog.Error("Inn", "Sponsored guest hook failed", e); }
             var groupRooms = new HashSet<Room>();
             foreach (var m in records) if (m.GroupId == r.GroupId && m.Bed != null && m.Bed.Spawned) groupRooms.Add(m.Bed.GetRoom());
             bool partnerWaiting = false;
@@ -261,6 +282,7 @@ namespace Hearth.Guests
                 if (!p.CanReach(b, PathEndMode.OnCell, Danger.Some)) continue;
                 if (!RestUtility.CanUseBedEver(p, b.def)) continue;
                 var q = GuestBedPricing.Quote(b); if (q == null) continue;
+                if (freeNights) q.Price = Money.Zero;
                 if (cheapQ == null || q.Price < cheapQ.Price) { cheapest = b; cheapQ = q; }
                 if (q.Price * nights > r.Budget) continue;
                 float u = GuestEconomy.BedUtility(q.RoomScore, q.Price, r.Wealth, groupRooms.Contains(b.GetRoom()));
@@ -549,6 +571,7 @@ namespace Hearth.Guests
             if (!members.All(x => x.SentAway))
             {
                 float dR = 6f * Mathf.Sqrt(members.Count) / 2f * sBar * (sBar > 0 ? (1f - Renown / 120f) : (1f + Renown / 200f));
+                dR *= Hearth.Dlc.DlcApi.ColonyRumorFactor(map: Find.Maps.FirstOrDefault(m => m.uniqueID == g.MapId));   // gossips: stories travel further, good or bad
                 float cap = HSettings.Get(InnSettings.RenownLossCap);
                 if (dR < -cap) dR = -cap;
                 // an average stay (surplus within ±0.05) is no reason to lose renown; only clearly unhappy groups cost it
@@ -644,10 +667,10 @@ namespace Hearth.Guests
             if (bond < threshold) { r.Log("HH.Inn.Event.BondTooLow".TranslateOr("Liked the place, but not enough to stay (bond {0}/{1}).").Replace("{0}", bond.ToString()).Replace("{1}", threshold.ToString()), 5); return; }
             float chance = RecruitChanceOverride ?? RecruitChance(s, bond, threshold);
             if (!JRand.Stream("inn.recruit").Chance(chance)) { r.Log("HH.Inn.Event.Declined".TranslateOr("Thought about staying for good, then went home."), 5); return; }
-            var recruiter = colonists.Where(c => c.relations != null).OrderByDescending(c => c.relations.OpinionOf(p)).FirstOrDefault();
+            var recruiter = LikelyRecruiter(p, map);
             if (recruiter == null) return;
             var f = p.Faction;
-            int cost = RecruitGoodwillCost(p);
+            int cost = RecruitGoodwillCost(p, recruiter);
             try
             {
                 ReturnCardFunds(r);
@@ -674,6 +697,18 @@ namespace Hearth.Guests
             return Mathf.Clamp(Mathf.RoundToInt(5f + p.MarketValue / 200f + 30f / (1f + settlements)), 5, 40);
         }
 
+        /// <summary>The colonist who would win the guest over: the one with the highest opinion of them.</summary>
+        public static Pawn LikelyRecruiter(Pawn guest, Map map)
+            => map?.mapPawns?.FreeColonistsSpawned.Where(c => c.relations != null).OrderByDescending(c => c.relations.OpinionOf(guest)).FirstOrDefault();
+
+        /// <summary>The cost with the recruiter's traits: a silver tongue makes the surcharge above the floor of 5 cheaper (x0.9).</summary>
+        public static int RecruitGoodwillCost(Pawn p, Pawn recruiter)
+        {
+            int cost = RecruitGoodwillCost(p);
+            if (cost <= 5 || recruiter == null) return cost;
+            return Math.Max(5, 5 + Mathf.RoundToInt((cost - 5) * Hearth.Dlc.DlcApi.RecruitPriceFactor(recruiter)));
+        }
+
         /// <summary>Bond = sum of all colonists' opinions of the guest (rivals count negative); threshold 30 + 4·n (5.10).</summary>
         public static int Bond(Pawn guest, Map map, out int threshold)
         {
@@ -682,6 +717,25 @@ namespace Hearth.Guests
             int sum = 0;
             foreach (var c in cols) if (c.relations != null && c != guest) sum += c.relations.OpinionOf(guest);
             return sum;
+        }
+
+        /// <summary>Traits and genes of the host (11.1): a silver tongue lowers what the guest expects (once at the welcome, once at the first
+        /// talk); caregivers and kid magnets cheer up children and their families (welcome and first talk of the day).</summary>
+        void Hosted(Pawn host, GuestRecord r, bool firstTalk = true)
+        {
+            if (host == null || r?.Pawn == null) return;
+            float ex = Hearth.Dlc.DlcApi.HostExpectationOffset(host);
+            if (firstTalk && ex < 0f) { r.Expectation = Mathf.Clamp01(r.Expectation + ex); r.Log("HH.Inn.Event.Charmed".TranslateOr("{0} made the place sound better than expected.").Replace("{0}", host.LabelShort), 2); }
+            float cheer = Hearth.Dlc.DlcApi.FamilyCheer(host);
+            if (cheer > 0f && FamilyGuest(r)) r.ServiceSum += cheer;
+        }
+
+        /// <summary>A child, or a guest travelling with a child.</summary>
+        bool FamilyGuest(GuestRecord r)
+        {
+            if (r.Pawn != null && !r.Pawn.DevelopmentalStage.Adult()) return true;
+            foreach (var m in records) if (m.GroupId == r.GroupId && m.Pawn != null && !m.Pawn.DevelopmentalStage.Adult()) return true;
+            return false;
         }
 
         /// <summary>A Hosting colonist chatted with the guest (Accompany/Recruit). Recruit talks can offend (5.10).</summary>
@@ -694,6 +748,7 @@ namespace Hearth.Guests
             r.LastAccompanyTick = now;
             float social = host.skills?.GetSkill(SkillDefOf.Social)?.Level ?? 5;
             if (firstToday) r.ServiceSum += 0.1f;
+            if (r.Talks == 1 || firstToday) Hosted(host, r, firstTalk: r.Talks == 1);
             int stage = social < 5 ? 0 : social < 10 ? 1 : social < 15 ? 2 : 3;
             try
             {

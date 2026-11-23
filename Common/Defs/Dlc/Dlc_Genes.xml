@@ -34,14 +34,14 @@
   </GeneDef>
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="HH_GeneBase">
     <defName>HH_Gene_DexterousFingers</defName><label>dexterous fingers</label>
-    <description>Unusually fine hand control: shuffling, dealing and palming come naturally.</description>
+    <description>Unusually fine hand control. As a croupier the carrier deals noticeably faster.</description>
     <iconPath>UI/HH/Dlc/Genes/Dexterous</iconPath><displayOrderInCategory>9103</displayOrderInCategory>
     <biostatMet>-1</biostatMet>
     <statOffsets><HH_Dexterity>3</HH_Dexterity></statOffsets>
   </GeneDef>
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="HH_GeneBase">
     <defName>HH_Gene_RefinedPalate</defName><label>refined palate</label>
-    <description>A tongue that tells good cooking from merely edible. Cooks lift dish quality more often; as a guest the carrier expects more and tips more.</description>
+    <description>A tongue that tells good cooking from merely edible. A cook with it sometimes lifts a restaurant dish by one quality step; as a guest the carrier expects more and spends more freely.</description>
     <iconPath>UI/HH/Dlc/Genes/RefinedPalate</iconPath><displayOrderInCategory>9104</displayOrderInCategory>
     <biostatMet>-1</biostatMet>
     <statOffsets><HH_DishQuality>0.1</HH_DishQuality><HH_GuestExpectation>0.05</HH_GuestExpectation></statOffsets>
@@ -49,7 +49,7 @@
   </GeneDef>
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="HH_GeneBase">
     <defName>HH_Gene_NumberSense</defName><label>number sense</label>
-    <description>Numbers arrange themselves. Croupiers, cashiers and bank clerks with this gene work as if three skill levels better.</description>
+    <description>Numbers arrange themselves. At blackjack and poker the carrier plays as if three Intellectual levels better.</description>
     <iconPath>UI/HH/Dlc/Genes/NumberSense</iconPath><displayOrderInCategory>9105</displayOrderInCategory>
     <biostatMet>-1</biostatMet>
     <statOffsets><HH_TableSkill>3</HH_TableSkill></statOffsets>
@@ -63,7 +63,7 @@
   </GeneDef>
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="HH_GeneBase">
     <defName>HH_Gene_SilverTongue</defName><label>silver tongue</label>
-    <description>A voice that makes any price sound like a bargain. Guests expect slightly less and loyalty comes cheaper.</description>
+    <description>A voice that makes any price sound like a bargain. Guests expect slightly less after the carrier welcomes them or shows them around, and a guest the carrier won over costs less goodwill to keep.</description>
     <iconPath>UI/HH/Dlc/Genes/SilverTongue</iconPath><displayOrderInCategory>9107</displayOrderInCategory>
     <biostatMet>-1</biostatMet><biostatCpx>2</biostatCpx>
     <statOffsets><HH_GuestExpectation>-0.03</HH_GuestExpectation></statOffsets>
@@ -71,7 +71,7 @@
   </GeneDef>
   <GeneDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="HH_GeneBase">
     <defName>HH_Gene_HighRoller</defName><label>high roller</label>
-    <description>Carriers feel most alive when the stakes are high. They bet bigger, enjoy it more and tip generously, but they are also harder to pull away from the table.</description>
+    <description>Carriers feel most alive when the stakes are high. As guests they bring a bigger bankroll, bet bigger and spend more freely. Gambling is more fun for them, and harder to put down.</description>
     <iconPath>UI/HH/Dlc/Genes/HighRoller</iconPath><displayOrderInCategory>9108</displayOrderInCategory>
     <biostatMet>1</biostatMet>
     <exclusionTags><li>HH_GamblingDrive</li></exclusionTags>

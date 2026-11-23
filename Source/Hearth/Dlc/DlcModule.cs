@@ -39,14 +39,14 @@ namespace Hearth.Dlc
             HSettings.Bool(ModuleId.CityLife, "Shrines", "dlc.shrineReactions", true, "Colonists react to shrines of other faiths",
                 "Proselytizers and supremacists dislike shrines of other faiths on their land; tolerant ideoligions like them.");
             HSettings.Bool(ModuleId.Inn, "Nobles", "dlc.nobleStays", true, "Noble stays",
-                "Nobles of the Empire may ask for paid lodging. You can always decline. Needs a bedroom that meets their title.");
+                "Nobles of the Empire may ask for paid lodging. You can always decline. Needs a guest bed in a bedroom that meets their title; they stay as guests and pay at the end, by how happy they were.");
             HSettings.Silver(ModuleId.Inn, "Nobles", "dlc.nobleBasePrice", 120, 30, 600, "Noble stay base price per noble and day",
                 "Silver per noble and day before the title bonus (+15 % per 100 seniority) and the satisfaction factor.");
             HSettings.Float(ModuleId.Inn, "Nobles", "dlc.nobleMoneyFactor", 1f, 0.25f, 5f, "Noble money factor",
                 "Follows the guest-money row of the difficulty table: richer on easy tiers, poorer on hard ones.", hardMin: 0f, hardMax: 20f,
                 tiers: new[] { 5f, 1.6f, 1.25f, 1f, 0.85f, 0.7f, 0.5f });
             HSettings.Bool(ModuleId.Inn, "Nobles", "dlc.mandatoryBilleting", false, "Mandatory hospitality for imperial billeting",
-                "Billeting orders of the Empire arrive even below Overbooked. Off: only on hard tiers (Overbooked and higher).");
+                "Billeting orders of the Empire arrive even below Overbooked. Off: only on hard tiers (Overbooked and higher). Either way only in a colony with guest beds.");
             HSettings.Bool(ModuleId.Inn, "Guests", "dlc.xenoHospitality", true, "Xenotype preferences",
                 "Guests' xenotypes and genes shape what rooms and goods they like (dark rooms for sanguophages, cold rooms for yttakin, ...).");
         }
@@ -55,6 +55,9 @@ namespace Hearth.Dlc
         {
             HLog.Info("Dlc", $"DLC integration: royalty={ModsConfig.RoyaltyActive} ideology={ModsConfig.IdeologyActive} biotech={ModsConfig.BiotechActive} anomaly={ModsConfig.AnomalyActive} odyssey={ModsConfig.IsActive("ludeon.rimworld.odyssey")}");
             if (ModsConfig.IdeologyActive) GuestActivities.Register(new PrayActivity());
+            Silverline.LotteryGame.LuckyBuyer = LuckApi.LuckyLottoBuyer;
+            Hearth.Guests.GuestRegistry.SponsoredBed = NobleStays.SponsoredBedFor;
+            Hearth.Guests.GuestRegistry.SponsoredGuest = r => NobleStays.StayOf(r?.Pawn, out _) != null;
             Caretaker.Register(ModuleId.CityLife, "dlc.ideologyMoney", () => DlcState.Current?.Maintain() ?? 0);
             DlcDefs.Validate();
         }
@@ -120,6 +123,7 @@ namespace Hearth.Dlc
         public static TraitDef Unlucky => Get<TraitDef>("HH_Unlucky");
         public static TraitDef GamblingAverse => Get<TraitDef>("HH_GamblingAverse");
         public static TraitDef Gambler => Get<TraitDef>("HH_Gambler");
+        public static GeneDef GeneHighRoller => ModsConfig.BiotechActive ? Get<GeneDef>("HH_Gene_HighRoller") : null;
         public static IssueDef IssueIndulgences => Get<IssueDef>("HH_Indulgences");
         public static IssueDef IssueAscension => Get<IssueDef>("HH_PaidAscension");
         public static HistoryEventDef EvBoughtIndulgence => Get<HistoryEventDef>("HH_BoughtIndulgence");
@@ -145,34 +149,51 @@ namespace Hearth.Dlc
         static float Stat(Pawn p, StatDef s, float fallback) => (p != null && s != null && p.RaceProps != null && p.RaceProps.Humanlike) ? p.GetStatValue(s) : fallback;
         static float Stat(Pawn p, string name, float fallback) => Stat(p, DefDatabase<StatDef>.GetNamedSilentFail(name), fallback);
 
-        /// <summary>Service quality offset of a host, waiter or clerk (born host +0.15, grump -0.2 ...).</summary>
+        /// <summary>Service quality offset of a host (born host +0.15, grump -0.2 ...): read by Patch_ServiceQualityChat.</summary>
         public static float ServiceQuality(Pawn p) => Stat(p, DlcDefs.ServiceQuality, 0f);
-        /// <summary>Added to a guest's expectations: refined palate +0.05, silver tongue -0.03 around them, abhorrent faith +0.05 (11.4).</summary>
+        /// <summary>Added to a guest's expectations when the Inn registers them: refined palate +0.05, xenotype entry, abhorrent faith +0.05 (11.4).</summary>
         public static float GuestExpectationOffset(Pawn guest)
         {
-            float v = Stat(guest, "HH_GuestExpectation", 0f);
+            float v = Math.Max(0f, Stat(guest, "HH_GuestExpectation", 0f));   // the silver tongue only lowers what guests expect of the host (HostExpectationOffset)
             var ex = XenotypeHospitality.For(guest);
             if (ex != null && HSettings.GetBool("dlc.xenoHospitality")) v += ex.expectationOffset;
             if (DlcDefs.Ideology && IdeoStances.Of(guest, MoneyTheme.Indulgences) == MoneyStance.Abhorrent) v += 0.05f;
             return v;
         }
-        /// <summary>The nearby host lowers expectations (silver tongue -0.03).</summary>
+        /// <summary>A silver-tongued host lowers the expectation of the guests they welcome or first show around (-0.03, GuestRegistry.Hosted).</summary>
         public static float HostExpectationOffset(Pawn host) => Math.Min(0f, Stat(host, "HH_GuestExpectation", 0f));
+        /// <summary>Guest generosity (refined palate x1.3, high roller x1.5): share of the budget spent per purchase (VenueShopping.SpendFactor).</summary>
         public static float TipFactor(Pawn guest) => Stat(guest, "HH_TipFactor", 1f);
+        /// <summary>Watchfulness (eagle eye x1.5): divides the back-room exposure chance (Underworld scandals).</summary>
         public static float FraudDetection(Pawn p) => Stat(p, "HH_FraudDetection", 1f);
-        public static float TheftFactor(Pawn p) => Stat(p, "HH_TheftChance", 1f);
+        /// <summary>Peacemaker x0.6: social fights in the same room (Patch_PeacemakerFight).</summary>
         public static float BrawlRiskFactor(Pawn p) => Stat(p, "HH_BrawlRisk", 1f);
         public static float RumorFactor(Pawn p) => Stat(p, "HH_RumorSpread", 1f);
+        /// <summary>The colony's biggest gossip on that map sets how far guests' stories travel (renown change at departure x1.5).</summary>
+        public static float ColonyRumorFactor(Map map) => ColonyMax(map, "HH_RumorSpread", 1f);
+        /// <summary>The most watchful colonist on the map (eagle eye x1.5) divides the chance that a respectable guest finds the back room.</summary>
+        public static float ColonyWatchfulness(Map map) => ColonyMax(map, "HH_FraudDetection", 1f);
+
+        static float ColonyMax(Map map, string stat, float fallback)
+        {
+            var s = DefDatabase<StatDef>.GetNamedSilentFail(stat); if (map == null || s == null) return fallback;
+            float best = fallback;
+            foreach (var c in map.mapPawns.FreeColonistsSpawned) { if (c.Dead || c.Downed) continue; float v = c.GetStatValue(s); if (v > best) best = v; }
+            return best;
+        }
+        /// <summary>Caregiver x1.15: quality of the massages this pawn gives (Wellness).</summary>
         public static float CareProgressFactor(Pawn p) => Stat(p, "HH_CareProgress", 1f);
+        /// <summary>Penny-pincher x0.8: the lowest value among the free colonists scales the bank's fees (Silverline.BankSettings.FeeFactor reads the stat itself).</summary>
         public static float BankFeeFactor(Pawn p) => Stat(p, "HH_BankFeeFactor", 1f);
-        public static float NegotiationBonus(Pawn p) => Stat(p, "HH_Negotiation", 0f);
         /// <summary>Multiplier on the recruitment surcharge above the price floor (silver tongue 0.9).</summary>
         public static float RecruitPriceFactor(Pawn host) => Stat(host, "HH_RecruitPrice", 1f);
+        /// <summary>Caregiver +0.05, kid magnet +0.1: service score for children and families the host welcomes or shows around.</summary>
         public static float FamilyCheer(Pawn p) => Stat(p, "HH_FamilyCheer", 0f);
+        /// <summary>Penny-pincher +0.1: prices feel steeper when this pawn serves (VenueShopping.Rho).</summary>
         public static float PriceFeelOffset(Pawn seller) => Stat(seller, "HH_PriceFeel", 0f);
-        /// <summary>Skill levels added for croupiers, cashiers and bank clerks (number sense +3, gambler +1).</summary>
+        /// <summary>Intellectual levels added when playing blackjack or poker (number sense +3, gambler +1).</summary>
         public static float TableSkillBonus(Pawn p) => Stat(p, "HH_TableSkill", 0f);
-        /// <summary>Skill levels added to fine hand work: dealing, shuffling, house cheating (steady hands +4, dexterous fingers +3).</summary>
+        /// <summary>Croupier dealing speed: 3 % shorter rounds per point (steady hands +4, dexterous fingers +3; CasinoEngine.DealSpeedFactor).</summary>
         public static float DexterityBonus(Pawn p) => Stat(p, "HH_Dexterity", 0f);
         /// <summary>Chance to lift a cooked dish by one quality step (refined palate 0.1).</summary>
         public static float DishQualityLift(Pawn cook) => Math.Max(0f, Stat(cook, "HH_DishQuality", 0f));
@@ -186,11 +207,12 @@ namespace Hearth.Dlc
     public static class LuckApi
     {
         static readonly Dictionary<int, int> streak = new Dictionary<int, int>();
-        static readonly Dictionary<int, int> lottoBought = new Dictionary<int, int>();
-        static LuckApi() { HearthGame.OnGameInit += () => { streak.Clear(); lottoBought.Clear(); }; }
+        static LuckApi() { HearthGame.OnGameInit += () => streak.Clear(); }
 
         public static bool IsLucky(Pawn p) => p?.story?.traits != null && DlcDefs.Lucky != null && p.story.traits.HasTrait(DlcDefs.Lucky);
         public static bool IsUnlucky(Pawn p) => p?.story?.traits != null && DlcDefs.Unlucky != null && p.story.traits.HasTrait(DlcDefs.Unlucky);
+        /// <summary>Carrier of the high roller gene (Biotech): bets bigger as a guest.</summary>
+        public static bool IsHighRoller(Pawn p) => p?.genes != null && DlcDefs.GeneHighRoller != null && p.genes.HasActiveGene(DlcDefs.GeneHighRoller);
 
         /// <summary>Signed RTP shift (a fraction, +0.015 = +1.5 percentage points) for this player. 0 when the casino module is off.</summary>
         public static float RtpShiftFor(Pawn p)
@@ -211,12 +233,20 @@ namespace Hearth.Dlc
         /// <summary>Multiplier on the addiction chance: gambler 1.5, compulsive 2.0, addiction-proof 0.2, averse 0.</summary>
         public static float AddictionFactor(Pawn p) => p == null || DlcDefs.GamblingAddiction == null || !p.RaceProps.Humanlike ? 1f : p.GetStatValue(DlcDefs.GamblingAddiction);
 
-        /// <summary>Call for every lottery ticket the pawn buys; true if this one is free (every 10th for Lucky pawns).</summary>
-        public static bool LottoTicketIsFree(Pawn p)
+#if HH_TESTS
+        /// <summary>Tests: the lucky free ticket is only given while a suite switches this on (dlc.luck).</summary>
+        public static bool LottoLuckInTests;
+#endif
+        /// <summary>The lottery asks this for every ticket the colony buys (Silverline.LotteryGame.LuckyBuyer): the name of a lucky free
+        /// colonist, or null. While one lives in the colony, every tenth ticket is free. Off with the Casino module (the luck traits' module).</summary>
+        public static string LuckyLottoBuyer()
         {
-            if (p == null || !IsLucky(p)) return false;
-            lottoBought.TryGetValue(p.thingIDNumber, out int n); n++; lottoBought[p.thingIDNumber] = n;
-            return DlcMath.FreeLottoTicket(n);
+            if (!Modules.On(ModuleId.Casino) || DlcDefs.Lucky == null) return null;
+#if HH_TESTS
+            if (!LottoLuckInTests) return null;   // a random lucky starting colonist must not change the finance suites' ticket prices
+#endif
+            foreach (var p in PawnsFinder.AllMaps_FreeColonists) if (IsLucky(p)) return p.LabelShort;
+            return null;
         }
 
         /// <summary>Tell us how a bet ended: Lucky pawns get "Lucky streak" after two wins in a row (others after three); Unlucky ones "Of course I lost".</summary>

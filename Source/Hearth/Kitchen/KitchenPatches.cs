@@ -80,6 +80,7 @@ namespace Hearth.Kitchen
             {
                 comp.SetDish(ext.dish, ext.variant);
                 DishEffects.RerollQuality(__result, worker, ext.variant);
+                DishEffects.PalateLift(__result, worker);
             });
         }
     }
