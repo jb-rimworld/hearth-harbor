@@ -244,12 +244,20 @@ namespace Hearth.Ai
             if (why != null) HLog.Debug("AI", "All AI requests cancelled: " + why);
         }
 
+        /// <summary>Tests only: the next callbacks throw on purpose, so their failure is logged as a warning instead of a red error.</summary>
+        internal static bool ExpectCallbackFailure;
+
         static void Finish(AiTicket t, AiResult r, int http, double ms)
         {
             if (t.Done) return;
             t.Done = true; t.Handle = null;
             try { t.Callback(r); }
-            catch (Exception e) { Guard.Fail(ModuleId.AiFlavour, "Ai.Callback." + t.Function, e); }
+            catch (Exception e)
+            {
+                // a failed request is never an error (its callback just gets the fallback result); a callback that throws is a bug of the caller and is reported
+                if (ExpectCallbackFailure) HLog.Warn("AiFlavour", "Ai.Callback." + t.Function + " threw (expected by the test): " + e.Message);
+                else Guard.Fail(ModuleId.AiFlavour, "Ai.Callback." + t.Function, e);
+            }
         }
 
         // pump --------------------------------------------------------------------------------------------

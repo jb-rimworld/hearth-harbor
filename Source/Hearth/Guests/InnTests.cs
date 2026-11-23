@@ -450,7 +450,18 @@ namespace Hearth.Guests
             if (a.Pawn.needs?.rest != null) a.Pawn.needs.rest.CurLevel = 1f;
             if (a.Pawn.InBed() || !a.Pawn.Awake()) { t.Note("guest was in bed or asleep after the check-in: woken up"); a.Pawn.jobs?.EndCurrentJob(JobCondition.InterruptForced); yield return 60; }
             var wg = new WorkGiver_HH_AccompanyGuest();
-            bool has = wg.HasJobOnThing(col, a.Pawn, forced: true);
+            // the guest walks about after the check-in (to the room, to bed, to the desk) and the colonist may stand behind a wall that earlier suites left: the offer is checked for a little while,
+            // and a colonist who cannot reach the guest is put next to them (the work giver rightly refuses to send somebody who cannot get there)
+            bool has = false;
+            for (int attempt = 0; attempt < 12 && !has; attempt++)
+            {
+                if (a.Pawn.InBed() || !a.Pawn.Awake()) { if (a.Pawn.needs?.rest != null) a.Pawn.needs.rest.CurLevel = 1f; a.Pawn.jobs?.EndCurrentJob(JobCondition.InterruptForced); yield return 60; }
+                if (!col.CanReach(a.Pawn, PathEndMode.Touch, Danger.None) && CellFinder.TryFindRandomCellNear(a.Pawn.Position, map, 3, x => x.Standable(map) && x.GetFirstPawn(map) == null && col.CanReach(x, PathEndMode.OnCell, Danger.None), out var near))
+                { t.Note("colonist could not reach the guest: moved next to them"); col.jobs?.StopAll(); col.Position = near; col.Notify_Teleported(); }
+                has = wg.HasJobOnThing(col, a.Pawn, forced: true);
+                if (!has) yield return 60;
+            }
+            if (!has) { var rr = GuestRegistry.Instance.Get(a.Pawn); t.Note($"no offer: settled={rr.Settled} handling={rr.Handling} checkedIn={rr.CheckedIn} inBed={a.Pawn.InBed()} awake={a.Pawn.Awake()} downed={a.Pawn.Downed} mental={a.Pawn.InMentalState} canReserve={col.CanReserve(a.Pawn)} canReach={col.CanReach(a.Pawn, PathEndMode.Touch, Danger.None)} colPos={col.Position} guestPos={a.Pawn.Position} guestJob={a.Pawn.CurJob?.def.defName} hour={GenLocalDate.HourInteger(map)}"); }
             t.Check(has, "work giver offers to keep the guest company");
             if (has && a.Pawn.Awake() && !a.Pawn.InBed())
             {

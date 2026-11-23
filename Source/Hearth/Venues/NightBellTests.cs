@@ -17,15 +17,30 @@ namespace Hearth.ShopsFood
         public override ModuleId Module => ModuleId.ShopsFood;
         public override int MaxTicks => 16000;
 
+        static readonly Dictionary<Pawn, IntVec3> stations = new Dictionary<Pawn, IntVec3>();
+
+        /// <summary>Colonists with no job wander off (or go cleaning); the hearing checks depend on where they stand, so each check puts them back at their station first.</summary>
+        static void Place(Pawn p)
+        {
+            if (p == null || p.Destroyed || !p.Spawned || !stations.TryGetValue(p, out var at) || p.Position == at) return;
+            p.jobs?.StopAll();
+            p.Position = at;
+            p.Notify_Teleported(false);
+        }
+
         static Pawn NewColonist(Map map, IntVec3 at, List<Pawn> made)
         {
             for (int tries = 0; tries < 20; tries++)
             {
-                var np = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Colonist, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: true));
+                var np = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Colonist, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: true, fixedBiologicalAge: 28f, fixedChronologicalAge: 28f));
                 if (np.workSettings == null || np.WorkTypeIsDisabled(HHVenueDefOf.HH_Serving)) { np.Destroy(); continue; }
+                // a random colonist may come with old-age hearing loss, an illness or an injury: they would not hear the bell or would be sent to rest, which has nothing to do with the bell
+                foreach (var hd in np.health.hediffSet.hediffs.ToList()) np.health.RemoveHediff(hd);
                 GenSpawn.Spawn(np, at, map);
                 np.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
-                np.workSettings.SetPriority(HHVenueDefOf.HH_Serving, 0);
+                // no other work: a test colonist who goes off cleaning or hauling is not where the checks expect them
+                foreach (var wt in DefDatabase<WorkTypeDef>.AllDefsListForReading) if (!np.WorkTypeIsDisabled(wt)) np.workSettings.SetPriority(wt, 0);
+                stations[np] = at;
                 if (np.needs?.rest != null) np.needs.rest.CurLevel = 0.9f;
                 if (np.needs?.food != null) np.needs.food.CurLevel = 0.9f;
                 made.Add(np);
@@ -36,6 +51,7 @@ namespace Hearth.ShopsFood
 
         static void Sleep(Pawn p)
         {
+            Place(p);
             p.jobs.StartJob(JobMaker.MakeJob(JobDefOf.LayDown, p.Position), JobCondition.InterruptForced);
             if (p.jobs.curDriver != null) p.jobs.curDriver.asleep = true;
             if (p.needs?.rest != null) p.needs.rest.CurLevel = 0.9f;
@@ -58,6 +74,8 @@ namespace Hearth.ShopsFood
             foreach (var c in map.mapPawns.FreeColonistsSpawned) if (c.workSettings != null) { savedPrio[c] = c.workSettings.GetPriority(serving); c.workSettings.SetPriority(serving, 0); }
             var room = VenueTestKit.Build(map);
             var sign = VenueTestKit.SpawnSign(map, room, HHVenueDefOf.HH_VenueSign, HHVenueDefOf.HH_Venue_Tavern);
+            // 1.1.0 (F12): a venue that is not set up is not ready and nobody tends it, so the tavern gets what the checklist requires (counter, table, seats)
+            V11Kit.FurnishTavern(map, room);
             var comp = sign.TryGetComp<CompVenueSignHH>();
             int h = VenueTestKit.HourNow(map);
             comp.alwaysOpen = false; comp.openHour = (h + 8) % 24; comp.closeHour = (h + 11) % 24;
@@ -65,6 +83,7 @@ namespace Hearth.ShopsFood
             Venues.MarkDirty(map);
             var venue = VenueApi.VenueOfSign(map, sign);
             t.Check(venue != null && !VenueApi.InHours(venue), "a tavern that is closed now");
+            t.Check(venue != null && VenueSetup.IsReady(venue), "and ready to open (counter, table and seats stand in it)");
             var made = new List<Pawn>();
             // the colonists stand just outside the door, in a row, so the hearing checks do not depend on where the random room landed
             var outside = new IntVec3(room.Door.x, 0, room.Door.z - 2);
@@ -78,6 +97,7 @@ namespace Hearth.ShopsFood
             VenueState.RingBell(sign, 12000);
             try
             {
+                foreach (var c in made) Place(c);
                 awake.workSettings.SetPriority(serving, 1);
                 far.workSettings.SetPriority(serving, 1);
                 float farDist = (far.Position - sign.Position).LengthHorizontal;
@@ -122,7 +142,7 @@ namespace Hearth.ShopsFood
                 t.Check(!sleeper.Awake(), "the test colonist is asleep");
                 t.Check(NightBell.Candidates(venue, BellWakes.AwakeOnly).All(x => x.Pawn != sleeper) && NightBell.Alert(venue, null) == 0 && !sleeper.Awake(), "with 'awake only' a sleeper is left alone");
                 var sc = NightBell.Candidates(venue, BellWakes.WakeVolunteers).FirstOrDefault(x => x.Pawn == sleeper);
-                t.Check(sc != null && sc.Sleeping && sc.Chance > 0f, "with 'wake volunteers' the sleeper is a candidate (chance " + (sc?.Chance.ToString("0.00") ?? "-") + ")");
+                t.Check(sc != null && sc.Sleeping && sc.Chance > 0f, "with 'wake volunteers' the sleeper is a candidate (chance " + (sc?.Chance.ToString("0.00") ?? "-") + (sc != null ? "" : $"; hearing {sleeper.health.capacities.GetLevel(PawnCapacityDefOf.Hearing):0.00}, distance {NightBell.EffectiveDistance(map, sleeper.Position, sign.Position):0}, rest {sleeper.needs.rest?.CurLevel:0.00}, medical rest {HealthAIUtility.ShouldSeekMedicalRest(sleeper)}, danger {map.dangerWatcher.DangerRating}, age {sleeper.ageTracker.AgeBiologicalYears}") + ")");
                 sleeper.jobs.StopAll();
                 var sa = NightBell.Candidates(venue, BellWakes.AwakeOnly).FirstOrDefault(x => x.Pawn == sleeper);
                 t.Check(sc != null && sa != null && sc.Chance < sa.Chance, $"the same colonist hears it less easily asleep ({sc?.Chance:0.00}) than awake ({sa?.Chance:0.00})");
@@ -150,6 +170,7 @@ namespace Hearth.ShopsFood
                 HSettings.Set(NightBellSettings.Wakes, (float)(int)BellWakes.AwakeOnly);
                 HSettings.Set(NightBellSettings.Who, (float)(int)BellWho.AnyColonist);
                 sleeper.jobs.StopAll(); awake.workSettings.SetPriority(serving, 0);
+                Place(awake); Place(mover); Place(sleeper);
                 var any = NightBell.Candidates(venue, BellWakes.AwakeOnly);
                 t.Check(any.Any(x => x.Pawn == mover) && any.Any(x => x.Pawn == awake), "'any colonist' also calls colonists whose Serving work is switched off");
                 // review fix: a sleeper whose Serving work is off is never woken, not even with 'any colonist'
@@ -160,6 +181,7 @@ namespace Hearth.ShopsFood
                 HSettings.Set(NightBellSettings.Who, (float)(int)BellWho.ServingOnly);
 
                 // ---- one ring, one call: a second ring a moment later only refreshes
+                Place(awake);
                 awake.workSettings.SetPriority(serving, 1); sleeper.workSettings.SetPriority(serving, 0);
                 var rs = mc.StateOf(sign);
                 rs.LastAlert = -99999; rs.LastSound = -99999; rs.AnyResponder = false;
@@ -187,7 +209,7 @@ namespace Hearth.ShopsFood
 
         static void Cleanup(Map map, List<Pawn> made, Dictionary<Pawn, int> savedPrio, VenueTestKit.TestRoom room)
         {
-            foreach (var p in made) { if (p != null && !p.Destroyed) { p.jobs?.StopAll(); p.Destroy(); } }
+            foreach (var p in made) { if (p != null && !p.Destroyed) { p.jobs?.StopAll(); p.Destroy(); } stations.Remove(p); }
             foreach (var kv in savedPrio) if (kv.Key != null && !kv.Key.Dead && !kv.Key.Destroyed && kv.Key.workSettings != null) kv.Key.workSettings.SetPriority(HHVenueDefOf.HH_Serving, kv.Value);
             VenueTestKit.Teardown(map, room);
         }
