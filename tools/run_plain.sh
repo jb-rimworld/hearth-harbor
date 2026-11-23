@@ -13,4 +13,6 @@ V=$(sed -n 's/.*<version>\(.*\)<\/version>.*/\1/p' "$HOME/Library/Application Su
   echo '</activeMods><knownExpansions><li>ludeon.rimworld.royalty</li><li>ludeon.rimworld.ideology</li><li>ludeon.rimworld.biotech</li><li>ludeon.rimworld.anomaly</li><li>ludeon.rimworld.odyssey</li></knownExpansions></ModsConfigData>'; } > "$C/ModsConfig.xml"
 cd "$G/RimWorld.app/Contents/MacOS"; HOME=$FH timeout $T ./RimWorld -quicktest > $S/plain_$L.log 2>&1
 echo "log $S/plain_$L.log"; grep -c "Map generated\|Started new game\|quicktest" $S/plain_$L.log
+echo "game-ready lines (map generated): $(sed 's/\x1b\[[0-9;]*m//g' $S/plain_$L.log | grep -c 'Game ready: [1-9][0-9]* map')"
+echo "did-not-load-any-content lines: $(grep -c 'did not load any content' $S/plain_$L.log)"
 grep -B1 "at Verse.Log.Error" $S/plain_$L.log | grep -v "   at \|^--" | sed 's/\x1b\[[0-9;]*m//g' | sort | uniq -c | head -20
