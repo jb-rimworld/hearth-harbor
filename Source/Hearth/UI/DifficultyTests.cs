@@ -154,7 +154,7 @@ namespace Hearth.Shell.Tests
             t.Check(set != null, "the guests-never-die set exists as a game component");
             if (set != null)
             {
-                int before = set.Count;
+                set.Prune(); int before = set.Count;
                 var ghost = PawnGenerator.GeneratePawn(PawnKindDefOf.Colonist, Faction.OfPlayer);
                 set.Add(ghost);
                 t.Check(set.Count == before + 1, "the set remembers a pawn");
