@@ -49,6 +49,8 @@ namespace Hearth.Casino.Tests
             for (int i = 0; i < n; i++)
             {
                 var p = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Villager, faction, PawnGenerationContext.NonPlayer, forceGenerateNewPawn: true));
+                // generated people may roll the gambling-averse trait, and those never play (DLC traits): the suites need players
+                foreach (var tr in p.story?.traits?.allTraits.Where(x => x.def.defName == "HH_GamblingAverse").ToList() ?? new List<Trait>()) p.story.traits.RemoveTrait(tr);
                 var cell = CellFinder.RandomClosewalkCellNear(near, map, 6);
                 GenSpawn.Spawn(p, cell, map);
                 if (silver > 0) { var s = ThingMaker.MakeThing(ThingDefOf.Silver); s.stackCount = silver; p.inventory.innerContainer.TryAdd(s); }
