@@ -196,7 +196,8 @@ namespace Hearth.Testing
             else t.Note("right-click provider not present in this game version (patch skips itself)");
 
             // blueprints of an off module are not delivered to (positive control with the module on)
-            if (pawn != null && slot.blueprintDef != null && slot.CostList != null)
+            var builder = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(p => !p.WorkTypeIsDisabled(WorkTypeDefOf.Construction));
+            if (builder != null && slot.blueprintDef != null && slot.CostList != null)
             {
                 prof.SetModule(ModuleId.Casino, true);
                 yield return 1;
@@ -214,13 +215,35 @@ namespace Hearth.Testing
                     }
                     yield return 1;
                     var wg = new WorkGiver_ConstructDeliverResourcesToBlueprints { def = DefDatabase<WorkGiverDef>.GetNamedSilentFail("ConstructDeliverResourcesToBlueprints") };
-                    Job jobOn = null; try { jobOn = wg.JobOnThing(pawn, bp, false); } catch (Exception) { }
+                    Job jobOn = null; string whyNot = "";
+                    try { jobOn = wg.JobOnThing(builder, bp, true); } catch (Exception e) { whyNot = e.GetType().Name + " " + e.Message; }
+                    if (jobOn == null) whyNot += " | canConstruct=" + GenConstruct.CanConstruct(bp, builder, true, true) + "/noSkill=" + GenConstruct.CanConstruct(bp, builder, false, true) + " constrDisabled=" + builder.WorkTypeIsDisabled(WorkTypeDefOf.Construction) + " forbidden=" + bp.IsForbidden(pawn) + " pos=" + bp.Position + " inBounds=" + bp.Position.InBounds(map) + " skillReq=" + slot.constructionSkillPrerequisite + " skill=" + builder.skills?.GetSkill(SkillDefOf.Construction)?.Level + " wgDef=" + (wg.def?.defName ?? "null") + " bpFaction=" + bp.Faction?.Name + " bpClass=" + bp.GetType().Name + " cost=" + string.Join(",", slot.CostListAdjusted(stuff).Select(c => c.thingDef.defName + "x" + c.count)) + " resAt=" + string.Join(";", spawnedRes.Select(x => x.Position.ToString() + (x.IsForbidden(builder) ? "F" : ""))) + " spawned=" + builder.Spawned + " res=" + spawnedRes.Count(x => x.Spawned) + "/" + spawnedRes.Count + " reach=" + builder.CanReach(bp, Verse.AI.PathEndMode.Touch, Danger.Deadly);
                     prof.SetModule(ModuleId.Casino, false);
                     yield return 1;
-                    Job jobOff = null; try { jobOff = wg.JobOnThing(pawn, bp, false); } catch (Exception) { }
+                    Job jobOff = null; try { jobOff = wg.JobOnThing(builder, bp, true); } catch (Exception) { }
                     if (jobOn != null) t.Check(jobOff == null, "Casino off: blueprint of a casino building gets no delivery job");
-                    else t.Note("blueprint delivery positive control gave no job (resources not reachable?): check skipped");
+                    else t.Note("blueprint delivery positive control gave no job (" + whyNot + "): check skipped");
+                    // a finished-materials frame: the finish-work giver offers a job while Casino is on, none while it is off
                     bp.Destroy();
+                    var frameCell = t.FreeCellNearCenter(40);
+                    var frame = slot.frameDef == null ? null : ThingMaker.MakeThing(slot.frameDef, stuff) as Frame;
+                    if (frame != null)
+                    {
+                        frame.SetFactionDirect(Faction.OfPlayer);
+                        GenSpawn.Spawn(frame, frameCell, map, Rot4.North);
+                        foreach (var cc in slot.CostListAdjusted(stuff)) { var mt = ThingMaker.MakeThing(cc.thingDef); mt.stackCount = cc.count; frame.resourceContainer.TryAdd(mt, cc.count); }
+                        prof.SetModule(ModuleId.Casino, true);
+                        yield return 1;
+                        var fwg = new WorkGiver_ConstructFinishFrames { def = DefDatabase<WorkGiverDef>.GetNamedSilentFail("ConstructFinishFrames") };
+                        Job fOn = null; try { fOn = fwg.JobOnThing(builder, frame, true); } catch (Exception) { }
+                        prof.SetModule(ModuleId.Casino, false);
+                        yield return 1;
+                        Job fOff = null; try { fOff = fwg.JobOnThing(builder, frame, true); } catch (Exception) { }
+                        if (fOn != null) t.Check(fOff == null, "Casino off: frame of a casino building gets no build job");
+                        else t.Note("frame positive control gave no job (completed=" + frame.IsCompleted() + "): check skipped");
+                        if (!frame.Destroyed) frame.Destroy();
+                    }
+                    else t.Note("no frame def: frame check skipped");
                     foreach (var th in spawnedRes) if (!th.Destroyed) th.Destroy();
                 }
                 else t.Note("blueprint could not be placed: construction check skipped");
