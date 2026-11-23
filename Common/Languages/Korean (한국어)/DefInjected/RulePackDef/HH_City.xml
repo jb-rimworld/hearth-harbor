@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueNames_Cinema.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[light] 극장</li>
+    <li>r_name(p=3)-&gt;[adj] 필름 극장</li>
+    <li>r_name(p=2)-&gt;[light] 영화관</li>
+    <li>r_name-&gt;[owner]네 시네마</li>
+    <li>r_name-&gt;[adj] 영사기 극장</li>
+    <li>light-&gt;등불</li>
+    <li>light-&gt;별빛</li>
+    <li>light-&gt;달빛</li>
+    <li>light-&gt;반딧불</li>
+    <li>light-&gt;황혼</li>
+    <li>light-&gt;불씨</li>
+    <li>light-&gt;오로라</li>
+    <li>adj-&gt;은빛</li>
+    <li>adj-&gt;깜박이는</li>
+    <li>adj-&gt;황금빛</li>
+    <li>adj-&gt;벨벳</li>
+    <li>adj-&gt;한밤의</li>
+    <li>adj-&gt;웅장한</li>
+    <li>adj-&gt;작은</li>
+    <li>adj-&gt;소리 없는</li>
+  </HH_VenueNames_Cinema.rulePack.rulesStrings>
+  <HH_VenueNames_Salon.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[adj] [tool] 미용실</li>
+    <li>r_name-&gt;싹둑싹둑</li>
+    <li>r_name(p=2)-&gt;[owner]네 헤어 살롱</li>
+    <li>r_name-&gt;[style] &amp; [style2] 미용실</li>
+    <li>r_name-&gt;가위 &amp; [style2]</li>
+    <li>adj-&gt;날카로운</li>
+    <li>adj-&gt;은빛</li>
+    <li>adj-&gt;황금빛</li>
+    <li>adj-&gt;말끔한</li>
+    <li>adj-&gt;멋쟁이</li>
+    <li>adj-&gt;벨벳</li>
+    <li>adj-&gt;단정한</li>
+    <li>adj-&gt;반짝이는</li>
+    <li>tool-&gt;빗</li>
+    <li>tool-&gt;가위</li>
+    <li>tool-&gt;거울</li>
+    <li>tool-&gt;솔</li>
+    <li>tool-&gt;고데기</li>
+    <li>tool-&gt;면도날</li>
+    <li>tool-&gt;머리띠</li>
+    <li>style-&gt;곱슬머리</li>
+    <li>style-&gt;땋은머리</li>
+    <li>style-&gt;웨이브</li>
+    <li>style-&gt;앞머리</li>
+    <li>style2-&gt;윤기</li>
+    <li>style2-&gt;리본</li>
+    <li>style2-&gt;단발</li>
+    <li>style2-&gt;머리끝</li>
+    <li>style2-&gt;반짝임</li>
+  </HH_VenueNames_Salon.rulePack.rulesStrings>
+  <HH_VenueNames_Gallery.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[adj] 경이의 갤러리</li>
+    <li>r_name(p=3)-&gt;[adj2] 액자 갤러리</li>
+    <li>r_name(p=2)-&gt;[owner]네 소장관</li>
+    <li>r_name-&gt;[light]의 방</li>
+    <li>r_name-&gt;[art]의 집</li>
+    <li>adj-&gt;작은</li>
+    <li>adj-&gt;고요한</li>
+    <li>adj-&gt;호기심 많은</li>
+    <li>adj-&gt;숨겨진</li>
+    <li>adj-&gt;밝은</li>
+    <li>adj-&gt;떠도는</li>
+    <li>adj-&gt;온화한</li>
+    <li>adj2-&gt;도금한</li>
+    <li>adj2-&gt;은빛</li>
+    <li>adj2-&gt;대리석</li>
+    <li>adj2-&gt;삐딱한</li>
+    <li>adj2-&gt;황금빛</li>
+    <li>adj2-&gt;참나무</li>
+    <li>adj2-&gt;옥빛</li>
+    <li>light-&gt;등불</li>
+    <li>light-&gt;채광창</li>
+    <li>light-&gt;아침 햇살</li>
+    <li>light-&gt;햇빛</li>
+    <li>light-&gt;촛불</li>
+    <li>art-&gt;조각상</li>
+    <li>art-&gt;대리석</li>
+    <li>art-&gt;형상</li>
+    <li>art-&gt;메아리</li>
+    <li>art-&gt;얼굴</li>
+    <li>art-&gt;이야기</li>
+  </HH_VenueNames_Gallery.rulePack.rulesStrings>
+</LanguageData>

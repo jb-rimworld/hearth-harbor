@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueNames_Tavern.rulePack.rulesStrings>
+    <li>r_name(p=4)-&gt;[beastm] [adjm]</li>
+    <li>r_name(p=4)-&gt;[beastf] [adjf]</li>
+    <li>r_name(p=2)-&gt;[beastm] y [objectl]</li>
+    <li>r_name(p=2)-&gt;[beastf] y [objectl]</li>
+    <li>r_name(p=2)-&gt;El Descanso [beastg]</li>
+    <li>r_name-&gt;[objectm] [adjm]</li>
+    <li>r_name-&gt;[objectf] [adjf]</li>
+    <li>r_name-&gt;Casa [owner]</li>
+    <li>r_name-&gt;Taberna [owner]</li>
+    <li>r_name-&gt;Posada [objectg]</li>
+    <li>r_name-&gt;Los [number] [beastpl]</li>
+    <li>adjm-&gt;Oxidado</li>
+    <li>adjm-&gt;Dormilón</li>
+    <li>adjm-&gt;Alegre</li>
+    <li>adjm-&gt;Afortunado</li>
+    <li>adjm-&gt;Sediento</li>
+    <li>adjm-&gt;Errante</li>
+    <li>adjm-&gt;Torcido</li>
+    <li>adjm-&gt;Dorado</li>
+    <li>adjm-&gt;Risueño</li>
+    <li>adjm-&gt;Achispado</li>
+    <li>adjm-&gt;Cansado</li>
+    <li>adjm-&gt;Cantarín</li>
+    <li>adjm-&gt;Bailarín</li>
+    <li>adjm-&gt;Gruñón</li>
+    <li>adjm-&gt;Paciente</li>
+    <li>adjm-&gt;Embarrado</li>
+    <li>adjm-&gt;Cobrizo</li>
+    <li>adjm-&gt;Salado</li>
+    <li>adjm-&gt;Nevado</li>
+    <li>adjm-&gt;Neblinoso</li>
+    <li>adjf-&gt;Oxidada</li>
+    <li>adjf-&gt;Dormilona</li>
+    <li>adjf-&gt;Alegre</li>
+    <li>adjf-&gt;Afortunada</li>
+    <li>adjf-&gt;Sedienta</li>
+    <li>adjf-&gt;Errante</li>
+    <li>adjf-&gt;Torcida</li>
+    <li>adjf-&gt;Dorada</li>
+    <li>adjf-&gt;Risueña</li>
+    <li>adjf-&gt;Achispada</li>
+    <li>adjf-&gt;Cansada</li>
+    <li>adjf-&gt;Cantarina</li>
+    <li>adjf-&gt;Bailarina</li>
+    <li>adjf-&gt;Gruñona</li>
+    <li>adjf-&gt;Paciente</li>
+    <li>adjf-&gt;Embarrada</li>
+    <li>adjf-&gt;Cobriza</li>
+    <li>adjf-&gt;Salada</li>
+    <li>adjf-&gt;Nevada</li>
+    <li>adjf-&gt;Neblinosa</li>
+    <li>beastm-&gt;El Múfalo</li>
+    <li>beastm-&gt;El Trumbo</li>
+    <li>beastm-&gt;El Bumalope</li>
+    <li>beastm-&gt;El Megaperezoso</li>
+    <li>beastm-&gt;El Yak</li>
+    <li>beastm-&gt;El Dromedario</li>
+    <li>beastm-&gt;El Alce</li>
+    <li>beastm-&gt;El Casuario</li>
+    <li>beastm-&gt;El Zorro</li>
+    <li>beastm-&gt;El Emú</li>
+    <li>beastm-&gt;El Wargo</li>
+    <li>beastf-&gt;La Alpaca</li>
+    <li>beastf-&gt;La Capibara</li>
+    <li>beastf-&gt;La Liebre</li>
+    <li>beastf-&gt;La Ardilla</li>
+    <li>beastf-&gt;La Tortuga</li>
+    <li>beastf-&gt;La Gacela</li>
+    <li>beastf-&gt;La Iguana</li>
+    <li>beastf-&gt;La Lechuza</li>
+    <li>beastg-&gt;del Múfalo</li>
+    <li>beastg-&gt;del Trumbo</li>
+    <li>beastg-&gt;de la Alpaca</li>
+    <li>beastg-&gt;del Yak</li>
+    <li>beastg-&gt;del Zorro</li>
+    <li>beastg-&gt;de la Tortuga</li>
+    <li>beastg-&gt;de la Gacela</li>
+    <li>beastg-&gt;del Alce</li>
+    <li>beastg-&gt;de la Liebre</li>
+    <li>beastg-&gt;del Casuario</li>
+    <li>beastg-&gt;del Dromedario</li>
+    <li>beastpl-&gt;Múfalos</li>
+    <li>beastpl-&gt;Trumbos</li>
+    <li>beastpl-&gt;Alpacas</li>
+    <li>beastpl-&gt;Yaks</li>
+    <li>beastpl-&gt;Liebres</li>
+    <li>beastpl-&gt;Ardillas</li>
+    <li>beastpl-&gt;Tortugas</li>
+    <li>beastpl-&gt;Gacelas</li>
+    <li>beastpl-&gt;Zorros</li>
+    <li>beastpl-&gt;Capibaras</li>
+    <li>beastpl-&gt;Casuarios</li>
+    <li>beastpl-&gt;Dromedarios</li>
+    <li>objectm-&gt;El Barril</li>
+    <li>objectm-&gt;El Caldero</li>
+    <li>objectm-&gt;El Hogar</li>
+    <li>objectm-&gt;El Arado</li>
+    <li>objectm-&gt;El Compás</li>
+    <li>objectm-&gt;El Tonel</li>
+    <li>objectm-&gt;El Remo</li>
+    <li>objectf-&gt;La Linterna</li>
+    <li>objectf-&gt;La Campana</li>
+    <li>objectf-&gt;La Vela</li>
+    <li>objectf-&gt;La Herradura</li>
+    <li>objectf-&gt;La Jarra</li>
+    <li>objectf-&gt;La Rueda</li>
+    <li>objectf-&gt;La Cometa</li>
+    <li>objectf-&gt;La Cuchara</li>
+    <li>objectl-&gt;la Linterna</li>
+    <li>objectl-&gt;el Ancla</li>
+    <li>objectl-&gt;el Barril</li>
+    <li>objectl-&gt;la Campana</li>
+    <li>objectl-&gt;el Caldero</li>
+    <li>objectl-&gt;la Vela</li>
+    <li>objectl-&gt;la Jarra</li>
+    <li>objectl-&gt;el Compás</li>
+    <li>objectg-&gt;de la Linterna</li>
+    <li>objectg-&gt;del Ancla</li>
+    <li>objectg-&gt;del Barril</li>
+    <li>objectg-&gt;de la Campana</li>
+    <li>objectg-&gt;del Caldero</li>
+    <li>objectg-&gt;de la Jarra</li>
+    <li>objectg-&gt;del Compás</li>
+    <li>objectg-&gt;del Arado</li>
+    <li>objectg-&gt;de la Herradura</li>
+    <li>number-&gt;Dos</li>
+    <li>number-&gt;Tres</li>
+    <li>number-&gt;Siete</li>
+    <li>number-&gt;Nueve</li>
+    <li>number-&gt;Doce</li>
+  </HH_VenueNames_Tavern.rulePack.rulesStrings>
+  <HH_VenueNames_Shop.rulePack.rulesStrings>
+    <li>r_name-&gt;[owner] &amp; [kin]</li>
+    <li>r_name(p=3)-&gt;El [placem] [adjm]</li>
+    <li>r_name(p=3)-&gt;La [placef] [adjf]</li>
+    <li>r_name-&gt;[goods] [owner]</li>
+    <li>r_name-&gt;[goodsb] [materialg]</li>
+    <li>r_name-&gt;La Despensa de la Colonia</li>
+    <li>r_name-&gt;El Almacén de la Colonia</li>
+    <li>r_name-&gt;Ultramarinos [beastg]</li>
+    <li>r_name-&gt;Todo a Cien</li>
+    <li>r_name-&gt;[trinket] y [trinket2]</li>
+    <li>kin-&gt;Hijos</li>
+    <li>kin-&gt;Hijas</li>
+    <li>kin-&gt;Primos</li>
+    <li>kin-&gt;Socios</li>
+    <li>kin-&gt;Vecinos</li>
+    <li>kin-&gt;Cía.</li>
+    <li>goods-&gt;Ultramarinos</li>
+    <li>goods-&gt;Mercería</li>
+    <li>goods-&gt;Colmado</li>
+    <li>goods-&gt;Almacén</li>
+    <li>goods-&gt;Tienda</li>
+    <li>goods-&gt;Provisiones</li>
+    <li>goods-&gt;Bazar</li>
+    <li>goodsb-&gt;Tienda</li>
+    <li>goodsb-&gt;Almacén</li>
+    <li>goodsb-&gt;Rincón</li>
+    <li>goodsb-&gt;Bazar</li>
+    <li>adjm-&gt;Pequeño</li>
+    <li>adjm-&gt;Honrado</li>
+    <li>adjm-&gt;Sencillo</li>
+    <li>adjm-&gt;Cercano</li>
+    <li>adjm-&gt;Surtido</li>
+    <li>adjm-&gt;Ordenado</li>
+    <li>adjm-&gt;Amable</li>
+    <li>adjm-&gt;Robusto</li>
+    <li>adjm-&gt;Abierto</li>
+    <li>adjm-&gt;Servicial</li>
+    <li>adjm-&gt;Animado</li>
+    <li>adjf-&gt;Pequeña</li>
+    <li>adjf-&gt;Honrada</li>
+    <li>adjf-&gt;Sencilla</li>
+    <li>adjf-&gt;Cercana</li>
+    <li>adjf-&gt;Surtida</li>
+    <li>adjf-&gt;Ordenada</li>
+    <li>adjf-&gt;Amable</li>
+    <li>adjf-&gt;Robusta</li>
+    <li>adjf-&gt;Abierta</li>
+    <li>adjf-&gt;Servicial</li>
+    <li>adjf-&gt;Animada</li>
+    <li>placem-&gt;Almacén</li>
+    <li>placem-&gt;Mostrador</li>
+    <li>placem-&gt;Rincón</li>
+    <li>placem-&gt;Cesto</li>
+    <li>placem-&gt;Puesto</li>
+    <li>placem-&gt;Cajón</li>
+    <li>placem-&gt;Estante</li>
+    <li>placem-&gt;Carro</li>
+    <li>placef-&gt;Despensa</li>
+    <li>placef-&gt;Esquina</li>
+    <li>placef-&gt;Caja</li>
+    <li>placef-&gt;Tienda</li>
+    <li>placef-&gt;Alacena</li>
+    <li>placef-&gt;Cesta</li>
+    <li>placef-&gt;Bodega</li>
+    <li>placef-&gt;Trastienda</li>
+    <li>materialg-&gt;de Plastiacero</li>
+    <li>materialg-&gt;de Acero</li>
+    <li>materialg-&gt;de Granito</li>
+    <li>materialg-&gt;de Mármol</li>
+    <li>materialg-&gt;de Jade</li>
+    <li>materialg-&gt;de Plata</li>
+    <li>materialg-&gt;de Roble</li>
+    <li>materialg-&gt;de Pino</li>
+    <li>materialg-&gt;de Caliza</li>
+    <li>beastg-&gt;del Múfalo</li>
+    <li>beastg-&gt;del Trumbo</li>
+    <li>beastg-&gt;de la Alpaca</li>
+    <li>beastg-&gt;del Yak</li>
+    <li>beastg-&gt;del Zorro</li>
+    <li>beastg-&gt;de la Tortuga</li>
+    <li>beastg-&gt;de la Gacela</li>
+    <li>beastg-&gt;del Alce</li>
+    <li>beastg-&gt;de la Liebre</li>
+    <li>beastg-&gt;del Casuario</li>
+    <li>trinket-&gt;Botones</li>
+    <li>trinket-&gt;Bobinas</li>
+    <li>trinket-&gt;Velas</li>
+    <li>trinket-&gt;Clavos</li>
+    <li>trinket-&gt;Cintas</li>
+    <li>trinket-&gt;Jabones</li>
+    <li>trinket-&gt;Tornillos</li>
+    <li>trinket2-&gt;Baratijas</li>
+    <li>trinket2-&gt;Cachivaches</li>
+    <li>trinket2-&gt;Trastos</li>
+    <li>trinket2-&gt;Menudencias</li>
+    <li>trinket2-&gt;Tesoros</li>
+  </HH_VenueNames_Shop.rulePack.rulesStrings>
+  <HH_VenueNames_Restaurant.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;El Hogar y [utensill]</li>
+    <li>r_name(p=3)-&gt;El [utensilm] [adjm]</li>
+    <li>r_name(p=3)-&gt;La [utensilf] [adjf]</li>
+    <li>r_name-&gt;Mesa [owner]</li>
+    <li>r_name(p=2)-&gt;La Mesa [stoneg]</li>
+    <li>r_name-&gt;Asador [beastg]</li>
+    <li>r_name-&gt;[dish] y [dish2]</li>
+    <li>r_name-&gt;El [vesselm] Lleno</li>
+    <li>r_name-&gt;La [vesself] Llena</li>
+    <li>r_name-&gt;Cocina [owner]</li>
+    <li>utensill-&gt;la Cuchara</li>
+    <li>utensill-&gt;el Cucharón</li>
+    <li>utensill-&gt;la Sartén</li>
+    <li>utensill-&gt;el Tenedor</li>
+    <li>utensill-&gt;la Olla</li>
+    <li>utensill-&gt;el Caldero</li>
+    <li>utensill-&gt;la Fuente</li>
+    <li>utensill-&gt;el Cuchillo</li>
+    <li>utensill-&gt;el Horno</li>
+    <li>utensill-&gt;el Cuenco</li>
+    <li>utensilm-&gt;Cucharón</li>
+    <li>utensilm-&gt;Caldero</li>
+    <li>utensilm-&gt;Cuchillo</li>
+    <li>utensilm-&gt;Horno</li>
+    <li>utensilm-&gt;Cuenco</li>
+    <li>utensilm-&gt;Plato</li>
+    <li>utensilm-&gt;Perol</li>
+    <li>utensilf-&gt;Cuchara</li>
+    <li>utensilf-&gt;Sartén</li>
+    <li>utensilf-&gt;Olla</li>
+    <li>utensilf-&gt;Fuente</li>
+    <li>utensilf-&gt;Tetera</li>
+    <li>utensilf-&gt;Cazuela</li>
+    <li>utensilf-&gt;Parrilla</li>
+    <li>adjm-&gt;Cobrizo</li>
+    <li>adjm-&gt;Hambriento</li>
+    <li>adjm-&gt;Dorado</li>
+    <li>adjm-&gt;Humeante</li>
+    <li>adjm-&gt;Rústico</li>
+    <li>adjm-&gt;Generoso</li>
+    <li>adjm-&gt;Crepitante</li>
+    <li>adjm-&gt;Hogareño</li>
+    <li>adjf-&gt;Cobriza</li>
+    <li>adjf-&gt;Hambrienta</li>
+    <li>adjf-&gt;Dorada</li>
+    <li>adjf-&gt;Humeante</li>
+    <li>adjf-&gt;Rústica</li>
+    <li>adjf-&gt;Generosa</li>
+    <li>adjf-&gt;Crepitante</li>
+    <li>adjf-&gt;Hogareña</li>
+    <li>stoneg-&gt;de Granito</li>
+    <li>stoneg-&gt;de Mármol</li>
+    <li>stoneg-&gt;de Pizarra</li>
+    <li>stoneg-&gt;de Arenisca</li>
+    <li>stoneg-&gt;de Caliza</li>
+    <li>stoneg-&gt;de Piedra de Río</li>
+    <li>stoneg-&gt;de Piedra de Hogar</li>
+    <li>beastg-&gt;del Múfalo</li>
+    <li>beastg-&gt;del Bumalope</li>
+    <li>beastg-&gt;del Yak</li>
+    <li>beastg-&gt;de la Alpaca</li>
+    <li>beastg-&gt;del Alce</li>
+    <li>beastg-&gt;de la Liebre</li>
+    <li>beastg-&gt;de la Capibara</li>
+    <li>dish-&gt;Sal</li>
+    <li>dish-&gt;Pan</li>
+    <li>dish-&gt;Guiso</li>
+    <li>dish-&gt;Brasa</li>
+    <li>dish-&gt;Miel</li>
+    <li>dish-&gt;Pimienta</li>
+    <li>dish-&gt;Humo</li>
+    <li>dish2-&gt;Tomillo</li>
+    <li>dish2-&gt;Mantequilla</li>
+    <li>dish2-&gt;Cebada</li>
+    <li>dish2-&gt;Trébol</li>
+    <li>dish2-&gt;Ceniza</li>
+    <li>dish2-&gt;Arroz</li>
+    <li>dish2-&gt;Bayas</li>
+    <li>vesselm-&gt;Cuenco</li>
+    <li>vesselm-&gt;Plato</li>
+    <li>vesselm-&gt;Caldero</li>
+    <li>vesselm-&gt;Vientre</li>
+    <li>vesself-&gt;Olla</li>
+    <li>vesself-&gt;Cazuela</li>
+    <li>vesself-&gt;Despensa</li>
+    <li>vesself-&gt;Fuente</li>
+  </HH_VenueNames_Restaurant.rulePack.rulesStrings>
+  <HH_VenueNames_Casino.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[beastm] [adjm]</li>
+    <li>r_name(p=3)-&gt;[beastf] [adjf]</li>
+    <li>r_name(p=2)-&gt;[gamem] [adjm]</li>
+    <li>r_name(p=2)-&gt;[gamef] [adjf]</li>
+    <li>r_name-&gt;Las [number] [thingplf]</li>
+    <li>r_name-&gt;Los [number] [thingplm]</li>
+    <li>r_name-&gt;Fortuna [owner]</li>
+    <li>r_name-&gt;Casa [thingg]</li>
+    <li>r_name-&gt;La Apuesta [beastg]</li>
+    <li>adjm-&gt;Dorado</li>
+    <li>adjm-&gt;Plateado</li>
+    <li>adjm-&gt;Carmesí</li>
+    <li>adjm-&gt;de Medianoche</li>
+    <li>adjm-&gt;de Neón</li>
+    <li>adjm-&gt;Afortunado</li>
+    <li>adjm-&gt;de Jade</li>
+    <li>adjm-&gt;de Esmeralda</li>
+    <li>adjm-&gt;Estrellado</li>
+    <li>adjm-&gt;Reluciente</li>
+    <li>adjm-&gt;de Terciopelo</li>
+    <li>adjf-&gt;Dorada</li>
+    <li>adjf-&gt;Plateada</li>
+    <li>adjf-&gt;Carmesí</li>
+    <li>adjf-&gt;de Medianoche</li>
+    <li>adjf-&gt;de Neón</li>
+    <li>adjf-&gt;Afortunada</li>
+    <li>adjf-&gt;de Jade</li>
+    <li>adjf-&gt;de Esmeralda</li>
+    <li>adjf-&gt;Estrellada</li>
+    <li>adjf-&gt;Reluciente</li>
+    <li>adjf-&gt;de Terciopelo</li>
+    <li>beastm-&gt;El Trumbo</li>
+    <li>beastm-&gt;El Múfalo</li>
+    <li>beastm-&gt;El Bumalope</li>
+    <li>beastm-&gt;El Zorro</li>
+    <li>beastm-&gt;El Megaperezoso</li>
+    <li>beastm-&gt;El Casuario</li>
+    <li>beastf-&gt;La Alpaca</li>
+    <li>beastf-&gt;La Capibara</li>
+    <li>beastf-&gt;La Lechuza</li>
+    <li>beastf-&gt;La Tortuga</li>
+    <li>beastf-&gt;La Gacela</li>
+    <li>beastg-&gt;del Trumbo</li>
+    <li>beastg-&gt;del Múfalo</li>
+    <li>beastg-&gt;del Zorro</li>
+    <li>beastg-&gt;de la Alpaca</li>
+    <li>beastg-&gt;de la Tortuga</li>
+    <li>beastg-&gt;del Casuario</li>
+    <li>gamem-&gt;El Dado</li>
+    <li>gamem-&gt;El Comodín</li>
+    <li>gamem-&gt;El Trébol</li>
+    <li>gamem-&gt;El Premio</li>
+    <li>gamem-&gt;El As</li>
+    <li>gamem-&gt;El Envite</li>
+    <li>gamem-&gt;El Naipe</li>
+    <li>gamef-&gt;La Ruleta</li>
+    <li>gamef-&gt;La Carta</li>
+    <li>gamef-&gt;La Dama</li>
+    <li>gamef-&gt;La Suerte</li>
+    <li>gamef-&gt;La Apuesta</li>
+    <li>gamef-&gt;La Ficha</li>
+    <li>number-&gt;Siete</li>
+    <li>number-&gt;Doce</li>
+    <li>number-&gt;Trece</li>
+    <li>number-&gt;Cinco</li>
+    <li>number-&gt;Nueve</li>
+    <li>thingplf-&gt;Linternas</li>
+    <li>thingplf-&gt;Monedas</li>
+    <li>thingplf-&gt;Fichas</li>
+    <li>thingplf-&gt;Estrellas</li>
+    <li>thingplf-&gt;Coronas</li>
+    <li>thingplm-&gt;Ases</li>
+    <li>thingplm-&gt;Tréboles</li>
+    <li>thingplm-&gt;Dados</li>
+    <li>thingg-&gt;de las Linternas</li>
+    <li>thingg-&gt;de las Monedas</li>
+    <li>thingg-&gt;de las Fichas</li>
+    <li>thingg-&gt;de las Estrellas</li>
+    <li>thingg-&gt;de las Coronas</li>
+    <li>thingg-&gt;de los Ases</li>
+    <li>thingg-&gt;de los Tréboles</li>
+  </HH_VenueNames_Casino.rulePack.rulesStrings>
+  <HH_VenueNames_Spa.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[water] y [stone]</li>
+    <li>r_name(p=2)-&gt;El [poolm] [adjm]</li>
+    <li>r_name(p=2)-&gt;La [poolf] [adjf]</li>
+    <li>r_name(p=2)-&gt;Baños [bathg]</li>
+    <li>r_name-&gt;Termas [owner]</li>
+    <li>r_name-&gt;[poolwarm]</li>
+    <li>water-&gt;Vapor</li>
+    <li>water-&gt;Bruma</li>
+    <li>water-&gt;Lluvia</li>
+    <li>water-&gt;Manantial</li>
+    <li>water-&gt;Rocío</li>
+    <li>water-&gt;Marea</li>
+    <li>water-&gt;Nieve</li>
+    <li>stone-&gt;Piedra</li>
+    <li>stone-&gt;Cedro</li>
+    <li>stone-&gt;Musgo</li>
+    <li>stone-&gt;Guijarro</li>
+    <li>stone-&gt;Pino</li>
+    <li>stone-&gt;Sal</li>
+    <li>stone-&gt;Arcilla</li>
+    <li>adjm-&gt;Tranquilo</li>
+    <li>adjm-&gt;Cálido</li>
+    <li>adjm-&gt;Suave</li>
+    <li>adjm-&gt;Plateado</li>
+    <li>adjm-&gt;Oculto</li>
+    <li>adjm-&gt;Sereno</li>
+    <li>adjm-&gt;Templado</li>
+    <li>adjm-&gt;Perezoso</li>
+    <li>adjf-&gt;Tranquila</li>
+    <li>adjf-&gt;Cálida</li>
+    <li>adjf-&gt;Suave</li>
+    <li>adjf-&gt;Plateada</li>
+    <li>adjf-&gt;Oculta</li>
+    <li>adjf-&gt;Serena</li>
+    <li>adjf-&gt;Templada</li>
+    <li>adjf-&gt;Perezosa</li>
+    <li>poolm-&gt;Estanque</li>
+    <li>poolm-&gt;Pozo</li>
+    <li>poolm-&gt;Remanso</li>
+    <li>poolm-&gt;Baño</li>
+    <li>poolf-&gt;Poza</li>
+    <li>poolf-&gt;Laguna</li>
+    <li>poolf-&gt;Gruta</li>
+    <li>poolf-&gt;Fuente</li>
+    <li>bathg-&gt;de la Ribera</li>
+    <li>bathg-&gt;de la Colina</li>
+    <li>bathg-&gt;del Sauce</li>
+    <li>bathg-&gt;del Abedul</li>
+    <li>bathg-&gt;de la Linterna</li>
+    <li>bathg-&gt;del Puerto</li>
+    <li>bathg-&gt;del Valle</li>
+    <li>poolwarm-&gt;Las Fuentes Cálidas</li>
+    <li>poolwarm-&gt;Las Pozas Templadas</li>
+    <li>poolwarm-&gt;Las Lagunas Cálidas</li>
+    <li>poolwarm-&gt;Las Grutas Templadas</li>
+    <li>poolwarm-&gt;Los Estanques Tibios</li>
+  </HH_VenueNames_Spa.rulePack.rulesStrings>
+  <HH_VenueNames_Lounge.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;El [roomm] [adjm]</li>
+    <li>r_name(p=3)-&gt;La [roomf] [adjf]</li>
+    <li>r_name(p=2)-&gt;[waiting]</li>
+    <li>r_name-&gt;[roomall] [owner]</li>
+    <li>r_name-&gt;Rincón [thingg]</li>
+    <li>adjm-&gt;Tranquilo</li>
+    <li>adjm-&gt;Acogedor</li>
+    <li>adjm-&gt;Cómodo</li>
+    <li>adjm-&gt;Somnoliento</li>
+    <li>adjm-&gt;Paciente</li>
+    <li>adjm-&gt;Suave</li>
+    <li>adjm-&gt;Soleado</li>
+    <li>adjm-&gt;Cálido</li>
+    <li>adjf-&gt;Tranquila</li>
+    <li>adjf-&gt;Acogedora</li>
+    <li>adjf-&gt;Cómoda</li>
+    <li>adjf-&gt;Somnolienta</li>
+    <li>adjf-&gt;Paciente</li>
+    <li>adjf-&gt;Suave</li>
+    <li>adjf-&gt;Soleada</li>
+    <li>adjf-&gt;Cálida</li>
+    <li>roomm-&gt;Salón</li>
+    <li>roomm-&gt;Rincón</li>
+    <li>roomm-&gt;Gabinete</li>
+    <li>roomm-&gt;Refugio</li>
+    <li>roomf-&gt;Sala</li>
+    <li>roomf-&gt;Salita</li>
+    <li>roomf-&gt;Alcoba</li>
+    <li>roomf-&gt;Rinconada</li>
+    <li>roomall-&gt;Salón</li>
+    <li>roomall-&gt;Rincón</li>
+    <li>roomall-&gt;Sala</li>
+    <li>waiting-&gt;El Banco de Espera</li>
+    <li>waiting-&gt;La Silla de Espera</li>
+    <li>waiting-&gt;El Sillón de Espera</li>
+    <li>waiting-&gt;La Lámpara de Espera</li>
+    <li>thingg-&gt;del Banco</li>
+    <li>thingg-&gt;de la Lámpara</li>
+    <li>thingg-&gt;de la Tetera</li>
+    <li>thingg-&gt;del Reloj</li>
+    <li>thingg-&gt;del Cojín</li>
+    <li>thingg-&gt;del Sillón</li>
+  </HH_VenueNames_Lounge.rulePack.rulesStrings>
+  <HH_VenueNames_Chapel.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;Capilla de la [lightf] [adjf]</li>
+    <li>r_name(p=2)-&gt;Capilla del Hogar [adjm]</li>
+    <li>r_name(p=2)-&gt;El Santuario [adjm]</li>
+    <li>r_name-&gt;Capilla [placeg]</li>
+    <li>r_name-&gt;Casa [virtueg]</li>
+    <li>lightf-&gt;Luz</li>
+    <li>lightf-&gt;Llama</li>
+    <li>lightf-&gt;Vela</li>
+    <li>lightf-&gt;Linterna</li>
+    <li>lightf-&gt;Estrella</li>
+    <li>lightf-&gt;Aurora</li>
+    <li>adjf-&gt;Serena</li>
+    <li>adjf-&gt;Suave</li>
+    <li>adjf-&gt;Matinal</li>
+    <li>adjf-&gt;Vespertina</li>
+    <li>adjf-&gt;Paciente</li>
+    <li>adjf-&gt;Tranquila</li>
+    <li>adjf-&gt;Bondadosa</li>
+    <li>adjf-&gt;Humilde</li>
+    <li>adjm-&gt;Sereno</li>
+    <li>adjm-&gt;Suave</li>
+    <li>adjm-&gt;Tranquilo</li>
+    <li>adjm-&gt;Paciente</li>
+    <li>adjm-&gt;Humilde</li>
+    <li>adjm-&gt;Bondadoso</li>
+    <li>placeg-&gt;del Viajero</li>
+    <li>placeg-&gt;del Peregrino</li>
+    <li>placeg-&gt;del Puerto</li>
+    <li>placeg-&gt;de la Colina</li>
+    <li>placeg-&gt;del Sauce</li>
+    <li>placeg-&gt;de la Linterna</li>
+    <li>virtueg-&gt;de la Paz</li>
+    <li>virtueg-&gt;de la Bienvenida</li>
+    <li>virtueg-&gt;del Descanso</li>
+    <li>virtueg-&gt;de la Misericordia</li>
+    <li>virtueg-&gt;de la Esperanza</li>
+    <li>virtueg-&gt;de la Bondad</li>
+  </HH_VenueNames_Chapel.rulePack.rulesStrings>
+</LanguageData>

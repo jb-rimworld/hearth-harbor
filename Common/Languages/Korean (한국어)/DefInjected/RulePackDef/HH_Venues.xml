@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueNames_Tavern.rulePack.rulesStrings>
+    <li>r_name(p=4)-&gt;[adj] [beast] [tavtype]</li>
+    <li>r_name(p=2)-&gt;[beast] &amp; [object] [tavtype]</li>
+    <li>r_name(p=2)-&gt;[beast]의 쉼터</li>
+    <li>r_name-&gt;[adj] [object] [tavtype]</li>
+    <li>r_name-&gt;[owner]네 주점</li>
+    <li>r_name-&gt;[object] 여관</li>
+    <li>r_name-&gt;[beast]의 머리 주점</li>
+    <li>r_name-&gt;마지막 [object] [tavtype]</li>
+    <li>r_name-&gt;[number] 마리 [beast] 주점</li>
+    <li>tavtype-&gt;주점</li>
+    <li>tavtype-&gt;선술집</li>
+    <li>tavtype-&gt;여관</li>
+    <li>tavtype-&gt;술집</li>
+    <li>adj-&gt;녹슨</li>
+    <li>adj-&gt;졸린</li>
+    <li>adj-&gt;즐거운</li>
+    <li>adj-&gt;행운의</li>
+    <li>adj-&gt;목마른</li>
+    <li>adj-&gt;떠도는</li>
+    <li>adj-&gt;삐뚤어진</li>
+    <li>adj-&gt;황금빛</li>
+    <li>adj-&gt;웃는</li>
+    <li>adj-&gt;취한</li>
+    <li>adj-&gt;지친</li>
+    <li>adj-&gt;노래하는</li>
+    <li>adj-&gt;춤추는</li>
+    <li>adj-&gt;심술궂은</li>
+    <li>adj-&gt;참을성 있는</li>
+    <li>adj-&gt;진흙투성이</li>
+    <li>adj-&gt;벨벳</li>
+    <li>adj-&gt;구리</li>
+    <li>adj-&gt;오래된</li>
+    <li>adj-&gt;짭짤한</li>
+    <li>adj-&gt;눈 덮인</li>
+    <li>adj-&gt;안개 낀</li>
+    <li>beast-&gt;머팔로</li>
+    <li>beast-&gt;트럼보</li>
+    <li>beast-&gt;알파카</li>
+    <li>beast-&gt;폭탄사슴</li>
+    <li>beast-&gt;거대늘보</li>
+    <li>beast-&gt;카피바라</li>
+    <li>beast-&gt;야크</li>
+    <li>beast-&gt;낙타</li>
+    <li>beast-&gt;사슴</li>
+    <li>beast-&gt;토끼</li>
+    <li>beast-&gt;다람쥐</li>
+    <li>beast-&gt;거북이</li>
+    <li>beast-&gt;화식조</li>
+    <li>beast-&gt;산양</li>
+    <li>beast-&gt;비버</li>
+    <li>beast-&gt;여우</li>
+    <li>beast-&gt;가젤</li>
+    <li>beast-&gt;에뮤</li>
+    <li>beast-&gt;와르그</li>
+    <li>object-&gt;등불</li>
+    <li>object-&gt;닻</li>
+    <li>object-&gt;주전자</li>
+    <li>object-&gt;술통</li>
+    <li>object-&gt;화로</li>
+    <li>object-&gt;쟁기</li>
+    <li>object-&gt;나침반</li>
+    <li>object-&gt;맥주잔</li>
+    <li>object-&gt;편자</li>
+    <li>object-&gt;종</li>
+    <li>object-&gt;노</li>
+    <li>object-&gt;국자</li>
+    <li>object-&gt;연</li>
+    <li>object-&gt;양초</li>
+    <li>object-&gt;수레바퀴</li>
+    <li>number-&gt;두</li>
+    <li>number-&gt;세</li>
+    <li>number-&gt;일곱</li>
+    <li>number-&gt;아홉</li>
+    <li>number-&gt;열두</li>
+  </HH_VenueNames_Tavern.rulePack.rulesStrings>
+  <HH_VenueNames_Shop.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[owner] [kin] 상회</li>
+    <li>r_name(p=3)-&gt;[adj] [place]</li>
+    <li>r_name(p=2)-&gt;[owner]네 [goods]</li>
+    <li>r_name-&gt;[material] [goods]</li>
+    <li>r_name-&gt;식민지 [goods]</li>
+    <li>r_name-&gt;[beast] [goods]</li>
+    <li>r_name-&gt;[trinket] &amp; [trinket2]</li>
+    <li>kin-&gt;부자</li>
+    <li>kin-&gt;형제</li>
+    <li>kin-&gt;자매</li>
+    <li>kin-&gt;사촌</li>
+    <li>kin-&gt;이웃</li>
+    <li>kin-&gt;동업자</li>
+    <li>goods-&gt;잡화점</li>
+    <li>goods-&gt;만물상</li>
+    <li>goods-&gt;상점</li>
+    <li>goods-&gt;가게</li>
+    <li>goods-&gt;구멍가게</li>
+    <li>adj-&gt;작은</li>
+    <li>adj-&gt;정직한</li>
+    <li>adj-&gt;모퉁이</li>
+    <li>adj-&gt;편리한</li>
+    <li>adj-&gt;가득 찬</li>
+    <li>adj-&gt;단정한</li>
+    <li>adj-&gt;친절한</li>
+    <li>adj-&gt;튼튼한</li>
+    <li>adj-&gt;열린</li>
+    <li>place-&gt;잡화점</li>
+    <li>place-&gt;식료품 창고</li>
+    <li>place-&gt;진열대</li>
+    <li>place-&gt;노점</li>
+    <li>place-&gt;헛간</li>
+    <li>place-&gt;가게</li>
+    <li>material-&gt;플라스틸</li>
+    <li>material-&gt;강철</li>
+    <li>material-&gt;화강암</li>
+    <li>material-&gt;대리석</li>
+    <li>material-&gt;옥</li>
+    <li>material-&gt;은</li>
+    <li>material-&gt;참나무</li>
+    <li>material-&gt;소나무</li>
+    <li>material-&gt;석회암</li>
+    <li>beast-&gt;머팔로</li>
+    <li>beast-&gt;트럼보</li>
+    <li>beast-&gt;알파카</li>
+    <li>beast-&gt;야크</li>
+    <li>beast-&gt;낙타</li>
+    <li>beast-&gt;토끼</li>
+    <li>beast-&gt;거북이</li>
+    <li>beast-&gt;여우</li>
+    <li>beast-&gt;에뮤</li>
+    <li>trinket-&gt;단추</li>
+    <li>trinket-&gt;실</li>
+    <li>trinket-&gt;양초</li>
+    <li>trinket-&gt;못</li>
+    <li>trinket-&gt;리본</li>
+    <li>trinket-&gt;비누</li>
+    <li>trinket-&gt;나사</li>
+    <li>trinket2-&gt;잡동사니</li>
+    <li>trinket2-&gt;소품</li>
+    <li>trinket2-&gt;장신구</li>
+    <li>trinket2-&gt;보물</li>
+    <li>trinket2-&gt;신기한 물건</li>
+  </HH_VenueNames_Shop.rulePack.rulesStrings>
+  <HH_VenueNames_Restaurant.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;화롯불 &amp; [utensil] [resttype]</li>
+    <li>r_name(p=3)-&gt;[adj] [utensil] [resttype]</li>
+    <li>r_name(p=2)-&gt;[owner]네 주방</li>
+    <li>r_name(p=2)-&gt;[stone] 식탁</li>
+    <li>r_name-&gt;[beast] 그릴</li>
+    <li>r_name-&gt;[dish] &amp; [dish2] [resttype]</li>
+    <li>r_name-&gt;가득 찬 [vessel] [resttype]</li>
+    <li>r_name-&gt;[owner]네 밥상</li>
+    <li>resttype-&gt;식당</li>
+    <li>resttype-&gt;레스토랑</li>
+    <li>resttype-&gt;밥집</li>
+    <li>resttype-&gt;식탁</li>
+    <li>utensil-&gt;숟가락</li>
+    <li>utensil-&gt;국자</li>
+    <li>utensil-&gt;프라이팬</li>
+    <li>utensil-&gt;포크</li>
+    <li>utensil-&gt;냄비</li>
+    <li>utensil-&gt;주전자</li>
+    <li>utensil-&gt;큰 접시</li>
+    <li>utensil-&gt;식칼</li>
+    <li>utensil-&gt;화덕</li>
+    <li>utensil-&gt;밥그릇</li>
+    <li>adj-&gt;구리</li>
+    <li>adj-&gt;배고픈</li>
+    <li>adj-&gt;황금빛</li>
+    <li>adj-&gt;김이 나는</li>
+    <li>adj-&gt;무쇠</li>
+    <li>adj-&gt;소박한</li>
+    <li>adj-&gt;푸짐한</li>
+    <li>adj-&gt;지글지글</li>
+    <li>adj-&gt;보글보글</li>
+    <li>adj-&gt;따뜻한</li>
+    <li>stone-&gt;화강암</li>
+    <li>stone-&gt;대리석</li>
+    <li>stone-&gt;점판암</li>
+    <li>stone-&gt;사암</li>
+    <li>stone-&gt;난로석</li>
+    <li>stone-&gt;강돌</li>
+    <li>stone-&gt;석회암</li>
+    <li>beast-&gt;머팔로</li>
+    <li>beast-&gt;폭탄사슴</li>
+    <li>beast-&gt;야크</li>
+    <li>beast-&gt;알파카</li>
+    <li>beast-&gt;사슴</li>
+    <li>beast-&gt;토끼</li>
+    <li>beast-&gt;산양</li>
+    <li>beast-&gt;카피바라</li>
+    <li>dish-&gt;소금</li>
+    <li>dish-&gt;빵</li>
+    <li>dish-&gt;스튜</li>
+    <li>dish-&gt;불씨</li>
+    <li>dish-&gt;꿀</li>
+    <li>dish-&gt;후추</li>
+    <li>dish-&gt;훈연</li>
+    <li>dish2-&gt;타임</li>
+    <li>dish2-&gt;버터</li>
+    <li>dish2-&gt;보리</li>
+    <li>dish2-&gt;클로버</li>
+    <li>dish2-&gt;재</li>
+    <li>dish2-&gt;쌀</li>
+    <li>dish2-&gt;열매</li>
+    <li>vessel-&gt;냄비</li>
+    <li>vessel-&gt;접시</li>
+    <li>vessel-&gt;배</li>
+    <li>vessel-&gt;그릇</li>
+    <li>vessel-&gt;식료품 창고</li>
+  </HH_VenueNames_Restaurant.rulePack.rulesStrings>
+  <HH_VenueNames_Casino.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[adj] [beast] [castype]</li>
+    <li>r_name(p=3)-&gt;행운의 [beast] [castype]</li>
+    <li>r_name(p=2)-&gt;[adj] [game] [castype]</li>
+    <li>r_name-&gt;[number] [thing] [castype]</li>
+    <li>r_name-&gt;[owner]네 포춘 [castype]</li>
+    <li>r_name-&gt;[thing]의 집</li>
+    <li>r_name-&gt;[beast]의 내기</li>
+    <li>castype-&gt;카지노</li>
+    <li>castype-&gt;도박장</li>
+    <li>adj-&gt;황금빛</li>
+    <li>adj-&gt;벨벳</li>
+    <li>adj-&gt;은빛</li>
+    <li>adj-&gt;도금한</li>
+    <li>adj-&gt;진홍빛</li>
+    <li>adj-&gt;한밤의</li>
+    <li>adj-&gt;네온</li>
+    <li>adj-&gt;행운의</li>
+    <li>adj-&gt;옥빛</li>
+    <li>adj-&gt;에메랄드빛</li>
+    <li>adj-&gt;별빛</li>
+    <li>adj-&gt;반짝이는</li>
+    <li>beast-&gt;트럼보</li>
+    <li>beast-&gt;머팔로</li>
+    <li>beast-&gt;폭탄사슴</li>
+    <li>beast-&gt;여우</li>
+    <li>beast-&gt;거대늘보</li>
+    <li>beast-&gt;알파카</li>
+    <li>beast-&gt;카피바라</li>
+    <li>beast-&gt;화식조</li>
+    <li>game-&gt;주사위</li>
+    <li>game-&gt;룰렛</li>
+    <li>game-&gt;칩</li>
+    <li>game-&gt;카드</li>
+    <li>game-&gt;잭팟</li>
+    <li>game-&gt;에이스</li>
+    <li>game-&gt;승부</li>
+    <li>number-&gt;일곱</li>
+    <li>number-&gt;열두</li>
+    <li>number-&gt;열세</li>
+    <li>number-&gt;스물한</li>
+    <li>number-&gt;아홉</li>
+    <li>thing-&gt;등불</li>
+    <li>thing-&gt;동전</li>
+    <li>thing-&gt;칩</li>
+    <li>thing-&gt;별</li>
+    <li>thing-&gt;왕관</li>
+    <li>thing-&gt;에이스</li>
+    <li>thing-&gt;클로버</li>
+  </HH_VenueNames_Casino.rulePack.rulesStrings>
+  <HH_VenueNames_Spa.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[water] &amp; [stone] [spatype]</li>
+    <li>r_name(p=3)-&gt;[adj] [pool] [spatype]</li>
+    <li>r_name(p=2)-&gt;[place] [spatype]</li>
+    <li>r_name-&gt;[owner]네 온천</li>
+    <li>r_name-&gt;따뜻한 [pool] [spatype]</li>
+    <li>spatype-&gt;온천</li>
+    <li>spatype-&gt;목욕탕</li>
+    <li>spatype-&gt;스파</li>
+    <li>spatype-&gt;탕</li>
+    <li>water-&gt;증기</li>
+    <li>water-&gt;안개</li>
+    <li>water-&gt;빗물</li>
+    <li>water-&gt;샘물</li>
+    <li>water-&gt;이슬</li>
+    <li>water-&gt;밀물</li>
+    <li>water-&gt;눈</li>
+    <li>stone-&gt;돌</li>
+    <li>stone-&gt;삼나무</li>
+    <li>stone-&gt;이끼</li>
+    <li>stone-&gt;조약돌</li>
+    <li>stone-&gt;소나무</li>
+    <li>stone-&gt;소금</li>
+    <li>stone-&gt;점토</li>
+    <li>adj-&gt;고요한</li>
+    <li>adj-&gt;따뜻한</li>
+    <li>adj-&gt;부드러운</li>
+    <li>adj-&gt;은빛</li>
+    <li>adj-&gt;숨겨진</li>
+    <li>adj-&gt;포근한</li>
+    <li>adj-&gt;잔잔한</li>
+    <li>adj-&gt;뜨거운</li>
+    <li>adj-&gt;느긋한</li>
+    <li>pool-&gt;연못</li>
+    <li>pool-&gt;샘</li>
+    <li>pool-&gt;욕조</li>
+    <li>pool-&gt;늪</li>
+    <li>pool-&gt;석호</li>
+    <li>pool-&gt;동굴</li>
+    <li>pool-&gt;우물</li>
+    <li>place-&gt;강가</li>
+    <li>place-&gt;언덕</li>
+    <li>place-&gt;버드나무</li>
+    <li>place-&gt;자작나무</li>
+    <li>place-&gt;등불</li>
+    <li>place-&gt;항구</li>
+    <li>place-&gt;골짜기</li>
+  </HH_VenueNames_Spa.rulePack.rulesStrings>
+  <HH_VenueNames_Lounge.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[adj] [room]</li>
+    <li>r_name(p=2)-&gt;[thing] 대기 [room2]</li>
+    <li>r_name-&gt;[owner]네 [room]</li>
+    <li>r_name-&gt;[thing] 코너</li>
+    <li>adj-&gt;고요한</li>
+    <li>adj-&gt;아늑한</li>
+    <li>adj-&gt;편안한</li>
+    <li>adj-&gt;졸린</li>
+    <li>adj-&gt;참을성 있는</li>
+    <li>adj-&gt;푹신한</li>
+    <li>adj-&gt;볕 좋은</li>
+    <li>adj-&gt;따뜻한</li>
+    <li>room-&gt;응접실</li>
+    <li>room-&gt;휴게실</li>
+    <li>room-&gt;사랑방</li>
+    <li>room-&gt;작은 방</li>
+    <li>room-&gt;라운지</li>
+    <li>room-&gt;살롱</li>
+    <li>room-&gt;구석방</li>
+    <li>room2-&gt;휴게실</li>
+    <li>room2-&gt;라운지</li>
+    <li>room2-&gt;살롱</li>
+    <li>thing-&gt;벤치</li>
+    <li>thing-&gt;의자</li>
+    <li>thing-&gt;램프</li>
+    <li>thing-&gt;주전자</li>
+    <li>thing-&gt;시계</li>
+    <li>thing-&gt;쿠션</li>
+  </HH_VenueNames_Lounge.rulePack.rulesStrings>
+  <HH_VenueNames_Chapel.rulePack.rulesStrings>
+    <li>r_name(p=3)-&gt;[adj] [light]의 예배당</li>
+    <li>r_name(p=2)-&gt;[adj] 성소</li>
+    <li>r_name-&gt;[place] 예배당</li>
+    <li>r_name-&gt;[virtue]의 집</li>
+    <li>adj-&gt;고요한</li>
+    <li>adj-&gt;온화한</li>
+    <li>adj-&gt;아침</li>
+    <li>adj-&gt;저녁</li>
+    <li>adj-&gt;참을성 있는</li>
+    <li>adj-&gt;잔잔한</li>
+    <li>adj-&gt;자애로운</li>
+    <li>adj-&gt;열린</li>
+    <li>adj-&gt;겸손한</li>
+    <li>light-&gt;빛</li>
+    <li>light-&gt;불꽃</li>
+    <li>light-&gt;촛불</li>
+    <li>light-&gt;등불</li>
+    <li>light-&gt;별빛</li>
+    <li>light-&gt;새벽</li>
+    <li>light-&gt;화롯불</li>
+    <li>place-&gt;나그네</li>
+    <li>place-&gt;순례자</li>
+    <li>place-&gt;항구</li>
+    <li>place-&gt;언덕</li>
+    <li>place-&gt;버드나무</li>
+    <li>place-&gt;등불</li>
+    <li>virtue-&gt;평화</li>
+    <li>virtue-&gt;환영</li>
+    <li>virtue-&gt;안식</li>
+    <li>virtue-&gt;자비</li>
+    <li>virtue-&gt;희망</li>
+    <li>virtue-&gt;친절</li>
+  </HH_VenueNames_Chapel.rulePack.rulesStrings>
+</LanguageData>
