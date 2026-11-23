@@ -49,7 +49,7 @@ def main():
     # ---- main mod
     for d in ["About", "Common"] + VERSIONS:
         if (R / d).exists():
-            shutil.copytree(R / d, MAIN / d, ignore=shutil.ignore_patterns("*.pdb", ".DS_Store"))
+            shutil.copytree(R / d, MAIN / d, ignore=shutil.ignore_patterns("*.pdb", ".DS_Store", "Silverline_*"))
     for f in ["LoadFolders.xml", "LICENSE", "README.md", "AGENTS.md", "CREDITS.md"]:
         if (R / f).exists():
             shutil.copy2(R / f, MAIN / f)
@@ -68,6 +68,8 @@ def main():
         src = R / "About" / "Silverline_Preview.png"
         if src.exists():
             shutil.copy2(src, BANK / "About" / extra)
+    if (R / "About" / "Silverline_PublishedFileId.txt").exists():
+        shutil.copy2(R / "About" / "Silverline_PublishedFileId.txt", BANK / "About" / "PublishedFileId.txt")
     lf = ['<?xml version="1.0" encoding="utf-8"?>', "<loadFolders>"]
     for v in VERSIONS:
         lf.append(f'  <v{v}><li>/</li><li IfModNotActive="juliusberger00.hearthharbor">Content/Common</li><li IfModNotActive="juliusberger00.hearthharbor">Content/{v}</li></v{v}>')
