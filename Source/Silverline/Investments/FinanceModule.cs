@@ -106,16 +106,4 @@ namespace Silverline
             });
         }
     }
-
-    [HarmonyPatch(typeof(Building_CommsConsole), nameof(Building_CommsConsole.GetFloatMenuOptions))]
-    public static class Patch_CommsConsole_Silverline
-    {
-        static IEnumerable<FloatMenuOption> Postfix(IEnumerable<FloatMenuOption> __result, Building_CommsConsole __instance)
-        {
-            foreach (var o in __result) yield return o;
-            bool show = false;
-            try { show = Modules.On(ModuleId.Bank) && FinanceAccounts.Available && (BankApi.Impl == null || HSettings.GetBool("finance.fallbackWindow")) && __instance.CanUseCommsNow; } catch { }
-            if (show) yield return new FloatMenuOption(FT.T("HH.Finance.Window.Option"), () => Find.WindowStack.Add(new Window_Silverline()));
-        }
-    }
 }

@@ -6,10 +6,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Hearth;
+using Hearth.Insurance;
 using Hearth.Testing;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 using Verse.AI.Group;
 
 namespace Silverline
@@ -788,6 +790,174 @@ namespace Silverline
             }
             t.Check(HLog.ErrorCount == err0, "no errors while saving");
             c.TestReset(true);
+        }
+    }
+
+    /// <summary>Module removal (A3): the agency's faction, agents, lords and letters of Silverline leave the vanilla managers.</summary>
+    public sealed class BankRemovalSuite : HearthTestSuite
+    {
+        public override string Name => "bank.removal";
+        public override ModuleId Module => ModuleId.Bank;
+        public override int MaxTicks => 3000;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var c = BT.C; var map = t.Map;
+            c.TestReset(true); Collections.TestMode = false;
+            HearthProfile.Current.Tier = 3f; HSettings.Set("bank.researchMode", 1f); BankCaretaker.CheckResearchOff();
+            BT.Fund(Money.FromSilver(3000)); c.TryTakeLoan(100, 30, out _, out var loan);
+            var agency = Collections.Agency;
+            t.Check(agency != null && agency.temporary, "the agency is a temporary faction (vanilla removes it when idle)");
+            var visitors = Collections.SpawnVisitors(c, map, loan);
+            t.Check(visitors.Count == 2 && c.Collectors.Count == 2 && visitors.All(p => p.GetLord() != null), "two agents with a lord");
+            // letters of ours: a decision letter with buttons and a plain notice
+            var cl = (ClaimLetter)LetterMaker.MakeLetter("test", "claim letter", SLInsuranceDefOf.SL_ClawbackLetter);
+            Find.LetterStack.ReceiveLetter(cl);
+            Find.LetterStack.ReceiveLetter(LetterMaker.MakeLetter("notice", "text", SLInsuranceDefOf.SL_ClawbackNotice));
+            t.Check(Find.LetterStack.LettersListForReading.Count(ClaimLetters.IsOurs) >= 2, "our letters are in the stack");
+            // the module removal as the settings window runs it
+            var report = new List<string>();
+            new BankModule().PrepareRemoval(report);
+            new InsuranceModule().PrepareRemoval(report);
+            t.Note("report: " + string.Join(" | ", report));
+            t.Check(c.Collectors.Count == 0, "no collectors remain");
+            t.Check(visitors.All(p => p.Destroyed || !p.Spawned), "the agents are gone from the map");
+            t.Check(!map.lordManager.lords.Any(l => l.faction == agency), "no lord of the agency remains");
+            t.Check(!Find.LetterStack.LettersListForReading.Any(ClaimLetters.IsOurs), "no letter of ours remains in the stack");
+            t.Check(!Find.Archive.ArchivablesListForReading.OfType<Letter>().Any(ClaimLetters.IsOurs), "none in the archive either");
+            t.Check(report.Any(r => r.Contains("collection agency")), "the report says what was done");
+            yield return 30;   // vanilla removes the queued faction at its next faction tick
+            t.Check(!Find.FactionManager.AllFactionsListForReading.Any(f => f.def == SLDefOf.SL_CollectionsAgency), "the faction is gone from the faction manager");
+            t.Check(!Find.WorldPawns.AllPawnsAliveOrDead.Any(p => p.Faction != null && p.Faction.def == SLDefOf.SL_CollectionsAgency), "no world pawn carries the faction");
+            // a second run on a clean game does nothing and does not throw
+            var again = new List<string>(); new BankModule().PrepareRemoval(again);
+            t.Check(!again.Any(r => r.Contains("collection agency")), "second run: nothing left to clean");
+            // the agency is created again on demand
+            var f2 = Collections.Agency; t.Check(f2 != null && f2.temporary, "created again when needed");
+            foreach (var p in c.Collectors.ToList()) if (!p.Destroyed) p.Destroy();
+            c.TestReset(true);
+        }
+    }
+
+    /// <summary>Comms console (A9): one GetCommTargets patch, the vanilla job walks the colonist to the console, nothing opens from across the map.</summary>
+    public sealed class BankCommsSuite : HearthTestSuite
+    {
+        public override string Name => "bank.comms";
+        public override ModuleId Module => ModuleId.Bank;
+        public override int MaxTicks => 1500;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var map = t.Map; var pawn = map.mapPawns.FreeColonistsSpawned.FirstOrDefault();
+            if (pawn == null) { t.Note("no colonist"); yield break; }
+            // no patch of ours on GetFloatMenuOptions any more
+            var m = typeof(Building_CommsConsole).GetMethod(nameof(Building_CommsConsole.GetFloatMenuOptions));
+            var info = HarmonyLib.Harmony.GetPatchInfo(m);
+            bool ours = info != null && info.Postfixes.Concat(info.Prefixes).Concat(info.Finalizers).Any(p => p.PatchMethod.DeclaringType?.Namespace == "Silverline");
+            t.Check(!ours, "no Silverline patch on Building_CommsConsole.GetFloatMenuOptions");
+            var m2 = typeof(Building_CommsConsole).GetMethod(nameof(Building_CommsConsole.GetCommTargets));
+            var info2 = HarmonyLib.Harmony.GetPatchInfo(m2);
+            t.Check(info2 != null && info2.Postfixes.Count(p => p.PatchMethod.DeclaringType?.Namespace == "Silverline") == 1, "exactly one Silverline patch on GetCommTargets");
+            var def = DefDatabase<ThingDef>.GetNamed("CommsConsole");
+            var console = (Building_CommsConsole)ThingMaker.MakeThing(def, GenStuff.DefaultStuffFor(def));
+            GenSpawn.Spawn(console, t.FreeCellNearCenter(), map);
+            console.SetFaction(Faction.OfPlayer);
+            var power = console.GetComp<CompPowerTrader>(); if (power != null) power.PowerOn = true;
+            var targets = console.GetCommTargets(pawn).ToList();
+            t.Check(targets.Contains(SilverlineComm.Instance) && targets.Contains(ClawbackComm.Instance), "Silverline and Clawback Mutual are listed as call targets");
+            t.Check(targets.Count(x => x == SilverlineComm.Instance) == 1, "listed once");
+            // the menu entry hands the colonist the vanilla comms job; no window opens from across the map
+            Find.WindowStack.Windows.OfType<Window_Clawback>().ToList().ForEach(w => w.Close(false));
+            var opt = ClawbackComm.Instance.CommFloatMenuOption(console, pawn);
+            t.Check(opt != null && !opt.Disabled || opt != null, "menu option built");
+            opt.action?.Invoke();
+            yield return 1;
+            bool gotJob = pawn.CurJob != null && pawn.CurJob.def == JobDefOf.UseCommsConsole && pawn.CurJob.commTarget == ClawbackComm.Instance;
+            bool queued = pawn.jobs.jobQueue.Any(q => q.job.def == JobDefOf.UseCommsConsole && q.job.commTarget == ClawbackComm.Instance);
+            t.Check(gotJob || queued, "the colonist is sent to the console with the vanilla job (current: " + pawn.CurJob?.def + ")");
+            t.Check(!Find.WindowStack.Windows.Any(w => w is Window_Clawback), "no window opened from across the map");
+            // arriving opens it
+            ClawbackComm.Instance.TryOpenComms(pawn);
+            t.Check(Find.WindowStack.Windows.Any(w => w is Window_Clawback), "the window opens when the colonist uses the console");
+            foreach (var w in Find.WindowStack.Windows.OfType<Window_Clawback>().ToList()) w.Close(false);
+            pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
+            console.Destroy();
+        }
+    }
+
+    /// <summary>Screenshots of every bank window tab at the default window size and at 1280x720 (B5). Explicit only: HH_TEST=silver.shots</summary>
+    public sealed class SilverShotsSuite : HearthTestSuite
+    {
+        public override string Name => "silver.shots";
+        public override bool ExplicitOnly => true;
+        public override ModuleId Module => ModuleId.Bank;
+        public override int MaxTicks => 400000;
+        const string Out = "/private/tmp/claude-501/hh_tests/silver_shots_i";
+
+        IEnumerable<int> Shot(TestContext t, string name)
+        {
+            yield return 45;
+            string dir = GenFilePaths.ScreenshotFolderPath; Directory.CreateDirectory(dir); Directory.CreateDirectory(Out);
+            var before = new HashSet<string>(Directory.GetFiles(dir, "*.png"));
+            string found = null;
+            for (int attempt = 0; attempt < 5 && found == null; attempt++)
+            {
+                ScreenshotTaker.TakeNonSteamShot();
+                for (int i = 0; i < 12 && found == null; i++) { yield return 15; found = Directory.GetFiles(dir, "*.png").FirstOrDefault(f => !before.Contains(f)); }
+            }
+            if (found == null) { t.Check(false, "no screenshot for " + name); yield break; }
+            yield return 10;
+            File.Copy(found, Path.Combine(Out, name + ".png"), true);
+            t.Note("shot " + name);
+        }
+
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var c = BT.C; var map = t.Map;
+            HearthProfile.Current.Tier = 3f; HSettings.Set("bank.researchMode", 1f); BankCaretaker.CheckResearchOff();
+            HSettings.Set(InsSettings.RequireResearch, 0f);
+            c.TestReset(true, "SL_Mutual");
+            BT.Fund(Money.FromSilver(2461.36));
+            c.TryTakeLoan(300, 60, out _, out _);
+            var comp = InsuranceComponent.Instance;
+            if (comp != null)
+            {
+                comp.contracts.Clear(); comp.claims.Clear();
+                var col = map.mapPawns.FreeColonistsSpawned.FirstOrDefault();
+                comp.Sign(InsTest.Def("SL_RoofOverHead"), CoverTier.GoodEnough, null, 2000, null, null);
+                comp.Sign(InsTest.Def("SL_RimHealth"), CoverTier.GoodEnough, null, 1000, null, null);
+                if (col != null) comp.Sign(InsTest.Def("SL_LimbByLimb"), CoverTier.Premium, col, 3000, null, null);
+            }
+            Ledger.Current.Post(BankGameComp.Colony, "world", Money.FromSilver(1.29), "Clawback Mutual premium: Rim Health Plan");
+            Ledger.Current.Post(BankGameComp.Colony, "world", Money.FromSilver(17.11), "Clawback Mutual premium: Roof Over Your Head, extended edition");
+            t.Note($"screen {Screen.width}x{Screen.height}, UI {UI.screenWidth}x{UI.screenHeight}, scale {Prefs.UIScale}");
+            foreach (string label in new[] { "default", "720p" })
+            {
+                if (label == "720p")
+                {
+                    // 1280 x 720 virtual pixels: the UI scale that maps the real screen onto it
+                    float scale = Math.Max(1f, Math.Min(Screen.width / 1280f, Screen.height / 720f));
+                    Prefs.UIScale = scale; yield return 30;
+                    t.Note($"720p emulation: scale {scale}, UI now {UI.screenWidth}x{UI.screenHeight}");
+                }
+                var w = new Window_Bank(map, BankSite.Remote, null); Find.WindowStack.Add(w);
+                yield return 20;
+                t.Note($"{label}: window {w.windowRect}");
+                foreach (var tab in BankTabs.VisibleTabs.ToList())
+                {
+                    w.TabId = tab.Id;
+                    int pages = tab.Id == "insurance" || tab.Id == "invest" ? 4 : 1;
+                    for (int pg = 0; pg < pages; pg++)
+                    {
+                        if (tab.Id == "insurance") InsuranceUI.ShowPage(pg, pg == 0);
+                        if (tab.Id == "invest") InvestTab.TestSetPage(pg);
+                        foreach (var x in Shot(t, label + "_" + tab.Id + (pages > 1 ? "_" + pg : ""))) yield return x;
+                    }
+                }
+                InsuranceUI.ShowPage(0, false); InvestTab.TestSetPage(0);
+                w.Close(false); yield return 5;
+            }
+            Prefs.UIScale = 1f; yield return 10;
+            c.TestReset(true);
+            t.Check(true, "screenshots in " + Out);
         }
     }
 }

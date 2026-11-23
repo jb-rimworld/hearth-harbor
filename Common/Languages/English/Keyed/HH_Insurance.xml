@@ -43,6 +43,7 @@
   <HH.Ins.Source.PaidMaterials>materials by capsule: {0}</HH.Ins.Source.PaidMaterials>
   <HH.Ins.Sign.Off>Clawback Mutual is not open for business in this game.</HH.Ins.Sign.Off>
   <HH.Ins.Sign.NoHolder>Pick a colonist first.</HH.Ins.Sign.NoHolder>
+  <HH.Ins.Sign.TooOld>This colonist is already of pension age. A pension cannot be bought at pension age; that is what the plan is for.</HH.Ins.Sign.TooOld>
   <HH.Ins.Sign.Duplicate>You already hold this policy. We checked twice.</HH.Ins.Sign.Duplicate>
   <HH.Ins.Sign.Debt>No new policies until you have settled the {0} we are owed from clause 22.</HH.Ins.Sign.Debt>
   <HH.Ins.Sign.NoMap>We could not find your colony. This is unusual.</HH.Ins.Sign.NoMap>

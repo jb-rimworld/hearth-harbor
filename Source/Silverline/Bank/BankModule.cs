@@ -40,6 +40,9 @@ namespace Silverline
         {
             var c = BankGameComp.Current;
             if (c != null && c.HasAccount) report.Add($"Silverline: the account at {c.BankName} holds {c.Balance.ToStringShort()} silver. Withdraw it first; without the mod the ledger entries are ignored.");
+            // the collection agency (faction, agents, lords) lives in vanilla managers: take it out now
+            Guard.Run(ModuleId.Bank, "Bank.RemoveAgency", () => report.AddRange(Collections.CleanUpForRemoval()));
+            report.Add("Silverline: bank buildings (counters, ATMs, night safes) stay on the map until you deconstruct them; without the mod RimWorld drops them on load with a warning. See docs/removal_silverline.md.");
         }
     }
 

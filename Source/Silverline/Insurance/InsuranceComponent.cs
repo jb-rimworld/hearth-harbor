@@ -85,7 +85,7 @@ namespace Silverline
             if (!Modules.On(ModuleId.Bank)) return Ins.T("Sign.Off");
             if (!InsurancePricing.TierUnlocked(def, tier, out var why)) return why;
             if (def.kind == PolicyKind.Person && (holder == null || holder.Dead || !holder.IsColonist || !holder.RaceProps.Humanlike)) return Ins.T("Sign.NoHolder");
-            if (def.kind == PolicyKind.Person && def.defName == "SL_GoldenYears" && holder.ageTracker.AgeBiologicalYears < 60 && tier != CoverTier.BareMinimum) { /* sold early, pays from 60 */ }
+            if (def.kind == PolicyKind.Person && def.ageSensitive && holder.ageTracker.AgeBiologicalYears >= 60) return Ins.T("Sign.TooOld");   // a pension cannot be bought at pension age
             if (Has(def, def.kind == PolicyKind.Person ? holder : null)) return Ins.T("Sign.Duplicate");
             if (debt > 0.01) return Ins.T("Sign.Debt", Ins.Silver(debt));
             var map = InsurerBooks.HomeMap;
@@ -369,9 +369,9 @@ namespace Silverline
                 if (c.InWaitingPeriod(now)) continue;
                 if (def.dailyBenefit > 0 && def.HasTrigger(ClaimTrigger.Illness) && map != null)
                 {
-                    int bedridden = 0;
+                    int bedridden = 0, day = now / ClaimEngine.Day, cap = InsSettings.HospitalCap, window = InsSettings.HospitalWindow;
                     foreach (var p in map.mapPawns.FreeColonistsSpawned)
-                        if (p.InBed() && (p.health.HasHediffsNeedingTend() || p.health.hediffSet.HasImmunizableNotImmuneHediff())) bedridden++;
+                        if (p.InBed() && (p.health.HasHediffsNeedingTend() || p.health.hediffSet.HasImmunizableNotImmuneHediff()) && c.TryCountBedDay(p.thingIDNumber, day, cap, window)) bedridden++;
                     if (bedridden > 0)
                     {
                         double mult = c.tier == CoverTier.BareMinimum ? 1.0 : c.tier == CoverTier.GoodEnough ? 1.5 : 2.5;

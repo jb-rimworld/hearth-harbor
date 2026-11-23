@@ -47,7 +47,10 @@ namespace Silverline
         public SL_BankDef Bank => bankDefName == null ? null : DefDatabase<SL_BankDef>.GetNamedSilentFail(bankDefName) ?? SL_BankDef.Default;
         public string BankName => Bank?.Name ?? "Silverline";
         public Money Balance => Ledger.Current?.Balance(Colony) ?? Money.Zero;
-        public Money InTransit => new Money(pending.Where(p => p.Kind == TransferKind.Deposit).Sum(p => p.Micro));
+        public Money InTransit
+        {
+            get { long sum = 0; for (int i = 0; i < pending.Count; i++) if (pending[i].Kind == TransferKind.Deposit) sum += pending[i].Micro; return new Money(sum); }
+        }
         public Money Debt => new Money(loans.Sum(l => l.BalanceMicro));
         public IReadOnlyList<Loan> Loans => loans;
         public IReadOnlyList<PendingTransfer> Pending => pending;

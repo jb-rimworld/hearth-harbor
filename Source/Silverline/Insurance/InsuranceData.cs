@@ -48,6 +48,18 @@ namespace Silverline
         public string payMemo;
         public double travelHeadDays, accrued;
         public int accruedSince = -1, kulanzYear = -1;
+        /// <summary>Paid sickbed days of the Rim Health Plan (hospital-indemnity cap): parallel lists of the colonist's thingIDNumber and the game day.</summary>
+        public List<int> bedLogPawn = new List<int>(), bedLogDay = new List<int>();
+
+        /// <summary>Counts one more paid sickbed day for this colonist. False (nothing counted) when the colonist already had <paramref name="cap"/> paid days inside the last <paramref name="window"/> days.</summary>
+        public bool TryCountBedDay(int pawnId, int day, int cap, int window)
+        {
+            for (int i = bedLogDay.Count - 1; i >= 0; i--) if (day - bedLogDay[i] >= window || bedLogDay[i] > day) { bedLogDay.RemoveAt(i); bedLogPawn.RemoveAt(i); }
+            int n = 0; for (int i = 0; i < bedLogPawn.Count; i++) if (bedLogPawn[i] == pawnId) n++;
+            if (n >= cap) return false;
+            bedLogPawn.Add(pawnId); bedLogDay.Add(day);
+            return true;
+        }
 
         SL_PolicyDef def;
         public SL_PolicyDef Def => def ?? (def = DefDatabase<SL_PolicyDef>.GetNamedSilentFail(defName));
@@ -99,8 +111,11 @@ namespace Silverline
             Scribe_Values.Look(ref formErrorHit, "formErr");
             Scribe_Values.Look(ref travelHeadDays, "travelDays"); Scribe_Values.Look(ref accrued, "accrued");
             Scribe_Values.Look(ref accruedSince, "accruedSince", -1); Scribe_Values.Look(ref kulanzYear, "kulanzYear", -1);
+            Scribe_Collections.Look(ref bedLogPawn, "bedLogPawn", LookMode.Value); Scribe_Collections.Look(ref bedLogDay, "bedLogDay", LookMode.Value);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
+                bedLogPawn = bedLogPawn ?? new List<int>(); bedLogDay = bedLogDay ?? new List<int>();
+                if (bedLogPawn.Count != bedLogDay.Count) { bedLogPawn.Clear(); bedLogDay.Clear(); }
                 riders = riders ?? new List<string>(); preTickedKept = preTickedKept ?? new List<string>(); damageHistory = damageHistory ?? new List<double>();
             }
         }

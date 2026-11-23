@@ -11,6 +11,7 @@ using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 
 namespace Silverline
 {
@@ -837,18 +838,75 @@ namespace Silverline
             t.Check(ClawbackApi.ReportFine(InsTest.Map, Money.FromSilver(100), "test fine"), "fine reported to Legal Shield");
             var fine = comp.claims.Last(); t.Check(Math.Abs(fine.gross - 80) < 1e-3, "Good Enough pays 80 % of a fine: " + fine.gross);
             t.Check(!ClawbackApi.ReportClosure(InsTest.Map, Money.FromSilver(50), "x"), "no closure cover: nobody takes it");
-            // annuity of the golden years plan
+            // golden years plan: no pension can be bought at pension age, the premium follows the time left, the pension still accrues from 60
             var old = InsTest.Colonists.LastOrDefault(); if (old == null) { t.Note("no colonist left"); yield break; }
+            var gyDef = InsTest.Def("SL_GoldenYears");
             old.ageTracker.AgeBiologicalTicks = 63L * 3600000L;
-            var gy = comp.Sign(InsTest.Def("SL_GoldenYears"), CoverTier.GoodEnough, old, 1000, null, null);
+            t.Check(comp.CanSign(gyDef, CoverTier.GoodEnough, old) != null, "a 63-year-old cannot buy a pension: " + comp.CanSign(gyDef, CoverTier.GoodEnough, old));
+            old.ageTracker.AgeBiologicalTicks = 30L * 3600000L;
+            var qYoung = InsurancePricing.QuoteFor(gyDef, CoverTier.GoodEnough, old, 1000, null, 1);
+            old.ageTracker.AgeBiologicalTicks = (long)(59.0 * 3600000L);
+            var qNear = InsurancePricing.QuoteFor(gyDef, CoverTier.BareMinimum, old, 1000, null, 1);
+            // a lump sum of 1,000 a year from now must cost about 1,000 over the four quadrums that are left, not "a few silver"
+            t.Check(qNear.premiumQuadrum * 4 >= 1000 * 0.8, "Bare Minimum at 59: the premium over the last year pays for the lump sum: " + (qNear.premiumQuadrum * 4).ToString("0"));
+            t.Check(qYoung.premiumQuadrum < qNear.premiumQuadrum / 10, "far from 60 the plan stays cheap: " + qYoung.premiumQuadrum.ToString("0.0") + " vs " + qNear.premiumQuadrum.ToString("0.0"));
+            old.ageTracker.AgeBiologicalTicks = 58L * 3600000L;
+            var gy = comp.Sign(gyDef, CoverTier.GoodEnough, old, 1000, null, null);
+            t.Check(gy.Ok, "signed at 58: " + gy.error);
             if (gy.Ok)
             {
                 InsTest.SkipWaiting(gy.contract); int n = comp.claims.Count;
+                old.ageTracker.AgeBiologicalTicks = 63L * 3600000L;
                 for (int d = 0; d < 7; d++) comp.DailyChecks(Ins.Now + (d + 1) * 60000 + 1);
                 t.Check(comp.claims.Count > n, "pension accrues for a 63-year-old: " + (comp.claims.Count > n ? comp.claims.Last().gross.ToString("0.00") : "no claim"));
             }
             InsTest.RestoreSettings();
             yield break;
+        }
+    }
+
+    public sealed class InsuranceHospitalCapSuite : HearthTestSuite
+    {
+        public override string Name => "insurance.cap";
+        public override ModuleId Module => ModuleId.Bank;
+        public override int MaxTicks => 3000;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            InsTest.Reset(3000);
+            var comp = InsTest.Comp;
+            // the pure counter: 5 paid days per 15 days per colonist
+            var pc = new PolicyContract();
+            int paid = 0; for (int day = 100; day < 115; day++) if (pc.TryCountBedDay(7, day, 5, 15)) paid++;
+            t.Check(paid == 5, "one colonist in bed for 15 days: 5 paid days (" + paid + ")");
+            t.Check(pc.TryCountBedDay(8, 114, 5, 15), "another colonist has his own cap");
+            t.Check(!pc.TryCountBedDay(7, 114, 5, 15), "still capped on day 14 of the window");
+            t.Check(pc.TryCountBedDay(7, 115, 5, 15), "day 15: the first paid day has left the window, one more is paid");
+            t.Check(pc.bedLogPawn.Count == pc.bedLogDay.Count, "log lists stay parallel");
+            // price: the policy costs twice what it did (baseRisk 4.0)
+            var def = InsTest.Def("SL_RimHealth");
+            t.Check(Math.Abs(def.baseRisk - 4.0f) < 1e-6, "Rim Health Plan base risk is 4.0: " + def.baseRisk);
+            // in game: a colonist in a sickbed pays the cap and not a day more
+            var res = comp.Sign(def, CoverTier.BareMinimum, null, 1000, null, null);
+            t.Check(res.Ok, "Rim Health Plan signed: " + res.error);
+            if (!res.Ok) { InsTest.RestoreSettings(); yield break; }
+            var c = res.contract; InsTest.SkipWaiting(c);
+            var map = InsTest.Map; var pawn = InsTest.Colonists.FirstOrDefault();
+            if (pawn == null) { t.Note("no colonist"); InsTest.RestoreSettings(); yield break; }
+            var bed = InsTest.SpawnBuilding("Bed", pawn.Position);
+            pawn.Position = bed.Position; pawn.Notify_Teleported();
+            var flu = HediffMaker.MakeHediff(DefDatabase<HediffDef>.GetNamed("Flu"), pawn); pawn.health.AddHediff(flu);
+            pawn.jobs.StartJob(JobMaker.MakeJob(JobDefOf.LayDown, bed), JobCondition.InterruptForced);
+            yield return 5;
+            if (!pawn.InBed()) { t.Note("could not put the colonist to bed in the test; the counter itself is checked above"); }
+            else
+            {
+                for (int d = 0; d < 8; d++) comp.DailyChecks(Ins.Now + (d + 1) * 60000 + 1);
+                // bare minimum pays 10 a day: at most 5 days = 50 silver accrued or filed
+                double total = c.accrued + comp.claims.Where(x => x.contractId == c.id).Sum(x => x.gross);
+                t.Check(total > 0 && total <= 5 * 10 + 1e-6, "8 sick days in a row: at most 5 paid days = 50 silver (" + total.ToString("0.0") + ")");
+            }
+            pawn.health.RemoveHediff(flu); bed.Destroy();
+            InsTest.RestoreSettings();
         }
     }
 }
