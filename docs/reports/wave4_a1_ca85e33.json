@@ -1,0 +1,28 @@
+{
+ "summary": "Drew the four textures that were still placeholders (MarketStall, DoorPolicy, Cmd_Restock, Type_Chapel). The audit now finds no referenced path without real art. No game test was run, since only PNGs and art generator code changed.",
+ "done": [
+  "B4/art scope: Things/HH/Venues/MarketStall drawn (Graphic_Multi, 2x1 to match def size/drawSize (2,1); south/east/north, 128x64 and 64x128 east, striped awning, crates, coin dish, loaf)",
+  "UI/HH/Inn/DoorPolicy drawn (door plus hanging board with tick and cross)",
+  "UI/HH/Venues/Cmd_Restock drawn (arrow down into a crate)",
+  "UI/HH/Venues/Type_Chapel drawn (chapel with bell tower, arched door, no religious symbol)",
+  "Audit: needs.py reports 111 registered entries and no missing path. Full re-render reproduces every other PNG byte-identical. placeholder_textures.py creates 0 placeholders. An extra scan of every Things/UI HH literal in Source and Defs found nothing missing; the dynamic paths Plate_<k> and Logo_<bank> resolve to existing files.",
+  "Reviewed the contact sheet of the new textures myself (all views plus 48 px readability)"
+ ],
+ "rejected": [
+  "B4 bank logo 'LSM' placeholder: this is stale. All six UI/HH/Bank/Logo_SL_* logos are registered generator art, and a full re-render leaves them unchanged. The six bank defs in Common/Defs/Bank/Bank_Banks.xml point at them correctly via iconPath, and BankDef.cs loads that path. No def change needed. The reviewer most likely saw an old placeholder PNG in the screenshot.",
+  "Review claim that 59 textures are still letter placeholders: stale. Only the 4 listed paths were missing, and they are fixed now. The README warning that tools/out/placeholders.txt is out of date applies; regenerate the screenshots."
+ ],
+ "tests": [
+  "uv run --with resvg-py --with pillow python3 tools/art/build.py: renders 111 textures, no unintended diffs",
+  "tools/art/needs.py: 107 referenced paths, all registered",
+  "tools/placeholder_textures.py: 0 placeholders created",
+  "In-game suites not run: no code or defs changed."
+ ],
+ "notes_for_integrator": [
+  "Screenshots in docs/screenshots predate the art round and still show placeholders; regenerate them.",
+  "Unreferenced registered textures remain: Things/HH/Inn/Wallet, Things/HH/Inn/TravelBag, UI/HH/UI/Guide, UI/HH/Casino/VenueCasino (harmless).",
+  "Common/Textures/Things/HH/Underworld/BackRoomDoor is still a single left half used as a uiIconPath: the build menu icon shows half a door leaf (as the README already notes).",
+  "tools/art/out contact sheets were re-rendered and committed too, so expect binary diffs there."
+ ],
+ "commit": "ca85e33"
+}

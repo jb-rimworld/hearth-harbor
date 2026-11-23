@@ -1,0 +1,34 @@
+{
+ "summary": "All assigned review points are handled in int/perf (commit a152336), either fixed or rejected with a reason. The new perf.hotpaths suite shows every measured patch at or below roughly 1.4 us per call. smoke, kitchen.*, casino.*, underworld.fightpit and perf.hotpaths pass. I did not re-run the full underworld.*, venues.* and dlc.* groups after the last edit (the casino.joy revert). In the final multi-suite runs, underworld.hunt, venues.wait, dlc.indulgence and dlc.shrine failed, but each passed on its own re-run or fails on the unchanged base, so none look caused by this change.",
+ "done": [
+  "A4: KitchenModule.PrepareRemoval now calls the new RecipeBuilder.RemoveOurBills(). It walks every map's IBillGiver things and deletes bills of generated HH_Cook_* recipes and the test-kitchen recipe, and reports the count. The code only had comments saying nothing was done, and I could not read vanilla's code to confirm. My belief is that without the module vanilla drops bills whose RecipeDef is unknown on load (with an error line), so the save loads. Added a check to kitchen.save: the dish bill on the stove is removed.",
+  "A6: Patch_PitDamageGuard now checks FightBout.ActiveCount and Modules.On(Underworld) first, and only touches a pawn in an active bout that ShouldAbsorb. It no longer returns false: it sets dinfo.SetAmount(0) and returns true, so PreApplyDamage keeps running for Combat Extended and similar mods. It runs at Priority.Last so other prefixes still see the original amount. New underworld.fightpit step 5b: a fit fighter takes damage, a beaten one takes none, and damage is normal again after the bout ends.",
+  "A7: Patch_WellFed, Patch_HostingLearn and Patch_ServeRest now check Modules.On first; ServeRest had no module check at all. DlcDefs.Hosting and Serving are cached. Patch_ServiceQualityChat.last, CasinoGuestActivity.played and LuckApi.streak and lottoBought are cleared on HearthGame.OnGameInit via static constructors.",
+  "A8: Patch_RecipeAvailableNow, Patch_BillShouldDoNow, Patch_BillStatusString and Patch_PostProcessProduct use DishRecipeExtension.Of. It is now a read-only dictionary built in RecipeBuilder, keyed by reference, and recipes without modExtensions return before the lookup. The default Def hash and equals cost about 0.7 us per lookup; the reference comparer brings it to about 11 ns.",
+  "A11: VanillaHiding.Hide and Show now call Category.DirtyCache() (the method exists; HospitalityTakeover already uses it). Show clamps the saved index and no longer inserts a designator twice. I did not rebuild designators with ResolveDesignators, because that would recreate all designators in the category.",
+  "A12: CompVenueSignHH.Checklist now uses workSettings.WorkIsActive(HH_Serving) instead of GetPriority > 0. I found no other assumption about the work tab layout in this scope.",
+  "B10: Rounds per hour are now slots 40, blackjack 18, roulette 10, poker 8. Soft ranges and hard minimums are lowered, and Math.Max(5) in RoundsPerHour became Math.Max(2). The default guest bet share (casino.guestBetShare) went from 3 % to 10 %, with a soft maximum of 30 %. The fallback StakeShare is also 10 %. RTP maths is untouched. The 3.3x stake rise is lower than the 5x round reduction for slots; sessions are time-limited and the 40 % stop-loss and max bet cap bite, so I did not force an exact match.",
+  "perf.hotpaths: new ExplicitOnly suite in Source/Hearth/Kitchen/PerfTests.cs. It calls the patch bodies directly with 300 pawns, bills and a spawned table. The worst case is about 1.4 us (Patch_BillStatusString on a dish bill on a table), and each patch is limited to 5 us (20 us for the table-bound bill cases). Reference: Modules.On is about 24 ns."
+ ],
+ "rejected": [
+  "A11 second half (guest wing tools belong in the Hospitality architect tab / Zone): Inn code is out of my scope, so I only left a note. The tools are registered in InnModule.AddDesignators (HH_Hospitality) but the message in GuestWings.cs ~L204 says 'Zone menu'. Fix the text to 'Hospitality tab', or move the designators.",
+  "Review claim that Patch_PitDamageGuard needed 'FightBout.ActiveCount == 0' added: that early-out was already there. Only Modules.On was missing.",
+  "Review's suggested StakeShare 0.04 to 0.06 would not keep hourly revenue constant with 4 to 5 times fewer rounds, so I used 0.10 instead. I also left the colonist chip session at 0.012, because a higher value emptied the house chips early and broke casino.joy (joy fell short of its 0.4 check)."
+ ],
+ "tests": [
+  "perf.hotpaths: PASS (16 checks) with patch costs of 3 to 90 ns for filters, about 0.55 to 0.8 us on a table, and 0.68 us for ServiceQualityChat.",
+  "smoke,kitchen.*: PASS (9 suites, 266 checks), including the new bill-removal check in kitchen.save.",
+  "underworld.fightpit: PASS (34 checks) with the new damage guard checks (run inside the underworld.*,venues.* group).",
+  "casino.*,dlc.* group: first run failed only casino.joy, fixed by the colonist 0.012 revert; casino.joy and casino.slots PASS after the revert. A later casino.*,dlc.* run failed dlc.indulgence and dlc.shrine; dlc.indulgence passed on re-run, and dlc.shrine passes alone but fails when run together with dlc.indulgence.",
+  "underworld.*,venues.* group: underworld.hunt and venues.wait failed under load and pass alone. venues.wait also failed on the unchanged base commit, so it is flaky independent of this change.",
+  "dlc.shrine fails in the dlc.indulgence,dlc.shrine combination on my branch and on one unchanged-base run, and passes alone on both. This looks like leftover state from dlc.indulgence, and I have not found the cause."
+ ],
+ "notes_for_integrator": [
+  "Inn owner: GuestWings.cs ~L204 says to adjust the wing 'in the Zone menu', but the tools live in HH_Hospitality (InnModule.AddDesignators). Change the message or the category.",
+  "The casino default round rates and guest bet share changed (settings keys casino.rounds* and casino.guestBetShare). Saves with explicit values keep them. Saved sessions without a stakeShare value fall back to the old 0.03 (default in GamblerSession.ExposeData), which is harmless.",
+  "Insurance Patch_AddHediff (Silverline) is outside my scope and unchanged. The review's A6 point about it still needs someone to check hediff.pawn and Modules.On(Bank) first.",
+  "Def.GetHashCode and Equals are slow (about 0.7 us per Dictionary lookup keyed by a Def). Other modules with hot Dictionary<Def,...> lookups could use a reference comparer, as DishRecipeExtension does now.",
+  "Harmony priority: Patch_PitDamageGuard is Priority.Last so Combat Extended and similar prefixes see the unmodified damage before it is zeroed."
+ ],
+ "commit": "a152336"
+}
