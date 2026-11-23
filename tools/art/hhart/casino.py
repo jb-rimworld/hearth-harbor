@@ -1,4 +1,5 @@
 """Casino textures: slot machine, roulette, blackjack, poker, cashier's cage, chips."""
+import math
 from .style import *
 from .parts import *
 from .registry import tex
@@ -199,4 +200,53 @@ def chips(view, cells, masked):
     chip_stack(c, 82, 76, 17, P["emerald"], 4)
     chip_stack(c, 80, 42, 15, P["blue"], 3)
     chip_top(c, 30, 98, 13, P["gold"])
+    return c
+
+
+# ------------------------------------------------------------------ The Lucky Thrumbo (orbital casino of the player-against-the-house feature, KONZEPT 6.13)
+@tex("UI/HH/Casino/LuckyThrumbo", "single", (6, 1), ppc=128, grain=0, doc="The Lucky Thrumbo logo banner 768x128: thrumbo on a casino coin, orbit ring, die; the title is drawn by the window (no text in the texture)")
+def lucky_thrumbo(view, cells, masked):
+    from .style import Canvas
+    c = Canvas(6, 1, masked)
+    W, H = 768, 128
+    # night-sky banner (the house is in orbit): flat plum-navy, a lighter band, a few stars
+    c.rect(4, 6, W - 8, H - 12, "#262b45", r=14, sw=3.6)
+    c.raw('<path d="M18 14 H%d" stroke="#3a4266" stroke-width="3" stroke-linecap="round"/>' % (W - 18))
+    import random
+    rnd = random.Random(11)
+    for _ in range(46):
+        x, y = rnd.randint(150, W - 24), rnd.randint(16, H - 20)
+        r = rnd.choice((1.2, 1.6, 2.0, 2.6))
+        c.dot(x, y, r, rnd.choice(("#efe3c2", "#b9c7ea", "#f4d28a")))
+    for x, y in ((250, 30), (610, 92), (690, 36)):
+        spark(c, x, y, 7, "#f4e3b0")
+    # orbit: a thin ring around the coin that continues as a long arc to the right, with a small station
+    c.raw('<g transform="rotate(-14 64 64)"><ellipse cx="64" cy="64" rx="104" ry="26" fill="none" stroke="#8aa0c8" stroke-opacity=".75" stroke-width="3.4"/></g>')
+    c.raw('<path d="M150 104 Q 420 150 742 44" fill="none" stroke="#8aa0c8" stroke-opacity=".45" stroke-width="2.6" stroke-dasharray="3 9" stroke-linecap="round"/>')
+    # coin: casino felt with a rim of chip dashes
+    cx, cy, R = 64, 66, 50
+    c.circle(cx, cy, R, P["felt_d"], sw=4)
+    c.circle(cx, cy, R - 9, P["felt"], sw=2.6, hl=False)
+    for i in range(12):
+        a = i * math.pi / 6
+        c.line(cx + math.cos(a) * (R - 3), cy + math.sin(a) * (R - 3), cx + math.cos(a) * (R - 8), cy + math.sin(a) * (R - 8), "#f4ecd4", w=4.2)
+    # thrumbo, head in profile facing right: pale body, dark mane, one long spiral horn
+    head = [(34, 100), (38, 78), (44, 60), (54, 50), (66, 46), (80, 48), (92, 58), (98, 68), (96, 76), (88, 80), (80, 79), (73, 88), (68, 100)]
+    c.poly([(36, 74), (24, 66), (26, 86), (34, 98), (44, 98)], "#5c2420", sw=3, hl=False)                       # mane at the back
+    c.poly([(40, 62), (30, 54), (34, 74), (46, 72)], "#8a3b34", sw=3, hl=False)
+    c.poly(head, "#efe3c2", sw=3.6)
+    c.poly([(60, 50), (58, 36), (68, 46)], "#efe3c2", sw=3, hl=False)                                         # ear
+    c.poly([(70, 92), (88, 82), (100, 84), (98, 90), (84, 98), (74, 100)], "#d8cdb2", sw=3, hl=False)          # muzzle shade
+    c.circle(76, 60, 3.6, OUT, sw=0, hl=False, sh=False)                                                      # eye
+    c.circle(77, 59, 1.1, "#fff3c0", sw=0, hl=False, sh=False)
+    c.circle(94, 72, 1.8, OUT, sw=0, hl=False, sh=False)                                                      # nostril
+    # horn: a tall tapered cone leaving the coin, with spiral bands
+    horn = [(72, 48), (86, 4), (92, 48)]
+    c.poly(horn, P["amber"], sw=3.4)
+    for t in (0.22, 0.42, 0.62, 0.8):
+        x0 = 72 + (86 - 72) * t; x1 = 92 + (86 - 92) * t; y = 48 + (4 - 48) * t
+        c.line(x0 + 1.5, y + 3, x1 - 1.5, y - 3, dark(P["amber"], .45), w=2.6)
+    spark(c, 86, 2, 9, "#fff3c0")
+    # a die for luck, overlapping the coin
+    die(c, 100, 86, 26, 5)
     return c

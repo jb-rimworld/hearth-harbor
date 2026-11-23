@@ -265,6 +265,8 @@ namespace Hearth.Casino
             float y = 0f;
             Text.Font = GameFont.Medium; Widgets.Label(new Rect(0, y, view.width, 32f), "HH.Casino.TabTitle".Translate()); Text.Font = GameFont.Small; y += 36f;
 
+            PlayerHouse.ThrumboCard.Draw(ref y, view.width);
+
             bool limits = CS.B(CS.LimitsOn);
             Widgets.CheckboxLabeled(new Rect(0, y, 360f, 24f), "HH.Casino.LimitsToggle".Translate(CS.F(CS.MinBet).ToString("0.##"), CS.F(CS.MaxBet).ToString("0.##")), ref limits);
             if (limits != CS.B(CS.LimitsOn)) HSettings.Set(CS.LimitsOn, limits ? 1f : 0f);

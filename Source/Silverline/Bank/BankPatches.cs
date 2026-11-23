@@ -54,30 +54,63 @@ namespace Silverline
         public override void TryOpenComms(Pawn negotiator) => Find.WindowStack.Add(new Window_Silverline());
     }
 
+    /// <summary>Entries other modules add to the comms console menu (the Lucky Thrumbo of the casino module). They ride on the same single
+    /// GetCommTargets patch below, so there is still exactly one patch and no patch on GetFloatMenuOptions.</summary>
+    public static class ConsoleComms
+    {
+        sealed class Entry { public ModuleId Module; public ConsoleComm Comm; public System.Func<bool> Visible; }
+        static readonly List<Entry> extra = new List<Entry>();
+        public static int Count => extra.Count;
+
+        /// <summary>Registers an entry; it is listed while <paramref name="module"/> is on and <paramref name="visible"/> (optional) is true.</summary>
+        public static void Register(ModuleId module, ConsoleComm comm, System.Func<bool> visible = null)
+        {
+            extra.RemoveAll(e => e.Comm == comm);
+            extra.Add(new Entry { Module = module, Comm = comm, Visible = visible });
+        }
+
+        /// <summary>The registered entries that are visible right now.</summary>
+        public static IEnumerable<ConsoleComm> Visible()
+        {
+            for (int i = 0; i < extra.Count; i++)
+            {
+                var e = extra[i];
+                if (!Modules.On(e.Module)) continue;
+                bool ok = e.Visible == null || Guard.Run(e.Module, "ConsoleComms.Visible", e.Visible, false);
+                if (ok) yield return e.Comm;
+            }
+        }
+    }
+
     /// <summary>The only patch on the comms console: adds Silverline, Clawback Mutual and (without a bank window) the finance window to the list of
-    /// things a colonist can call. The vanilla float menu, the vanilla "can use comms now" and "can talk" checks and the vanilla job do the rest.</summary>
+    /// things a colonist can call, plus the entries other modules registered in <see cref="ConsoleComms"/>. The vanilla float menu, the vanilla
+    /// "can use comms now" and "can talk" checks and the vanilla job do the rest.</summary>
     [HarmonyPatch(typeof(Building_CommsConsole), nameof(Building_CommsConsole.GetCommTargets))]
     public static class Patch_CommsConsole_Targets
     {
         static void Postfix(ref IEnumerable<ICommunicable> __result)
         {
-            if (!Modules.On(ModuleId.Bank)) return;
+            if (!Modules.On(ModuleId.Bank) && ConsoleComms.Count == 0) return;
             __result = Extend(__result);
         }
 
         static IEnumerable<ICommunicable> Extend(IEnumerable<ICommunicable> orig)
         {
             foreach (var o in orig) yield return o;
-            bool bank = false, fallback = false;
-            try
+            if (Modules.On(ModuleId.Bank))
             {
-                bank = BankApi.Impl != null;
-                fallback = FinanceAccounts.Available && (BankApi.Impl == null || HSettings.GetBool("finance.fallbackWindow"));
+                bool bank = false, fallback = false;
+                try
+                {
+                    bank = BankApi.Impl != null;
+                    fallback = FinanceAccounts.Available && (BankApi.Impl == null || HSettings.GetBool("finance.fallbackWindow"));
+                }
+                catch (System.Exception e) { HLog.Once("bank.commTargets", LogLevel.Warn, "Bank", "Comms console entries failed: " + e.Message); }
+                if (bank) yield return SilverlineComm.Instance;
+                yield return ClawbackComm.Instance;
+                if (fallback) yield return SilverlineFallbackComm.Instance;
             }
-            catch (System.Exception e) { HLog.Once("bank.commTargets", LogLevel.Warn, "Bank", "Comms console entries failed: " + e.Message); }
-            if (bank) yield return SilverlineComm.Instance;
-            yield return ClawbackComm.Instance;
-            if (fallback) yield return SilverlineFallbackComm.Instance;
+            foreach (var c in ConsoleComms.Visible()) yield return c;
         }
     }
 

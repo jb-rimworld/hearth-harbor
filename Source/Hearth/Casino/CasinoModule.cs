@@ -14,12 +14,13 @@ namespace Hearth.Casino
     {
         public override ModuleId Id => ModuleId.Casino;
 
-        public override void RegisterSettings() => CS.Register();
+        public override void RegisterSettings() { CS.Register(); PlayerHouse.TS.Register(); }
 
         public override void OnDefsLoaded()
         {
             GuestActivities.Register(new CasinoGuestActivity());
-            HearthTabs.Register(new HearthTabPage { Id = "casino", LabelKey = "HH.Tab.Casino", LabelEn = "Casino", Module = ModuleId.Casino, Order = 40, Draw = CasinoTab.Draw, Visible = CasinoTab.Any });
+            Silverline.ConsoleComms.Register(ModuleId.Casino, PlayerHouse.ThrumboComm.Instance);
+            HearthTabs.Register(new HearthTabPage { Id = "casino", LabelKey = "HH.Tab.Casino", LabelEn = "Casino", Module = ModuleId.Casino, Order = 40, Draw = CasinoTab.Draw, Visible = () => CasinoTab.Any() || PlayerHouse.ThrumboCard.Available });
             Caretaker.Register(ModuleId.Casino, "Casino.DrugPolicy", Gambling.InitPolicies);
             Caretaker.Register(ModuleId.Casino, "Casino.Sessions", CasinoCaretaker.RepairSessions);
             if (DefDatabase<ThingDef>.GetNamedSilentFail("PokerTable") != null)
