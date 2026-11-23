@@ -63,3 +63,11 @@ def barrel(view, cells, masked):
 - **Epoch and Ideology styles (KONZEPT 14.7) are not generated yet.** Plan: give every `@tex` an optional `style` argument (`palette`, `ornament set`) and render `<Def>/<Style>/<Def>_south.png`; epochs differ by material palette (neolithic bone/hide, medieval timber/iron, industrial brass/riveted steel, spacer white/blue light strips, ultra black/violet), Ideology categories add ornament modules (notch, rivet, panel, light strip, bone, spikes).
 - Colour-blind patterns for guest bed covers (grey, blue, green, gold plus pattern) come with the bed textures once the Inn agent names the paths.
 - A second-pass of small details for all views (east/north) of the upright machines.
+
+## Previews for all of Julius' mods (`tools/art/previews/`)
+`uv run --with resvg-py --with pillow python3 tools/art/previews/mods.py [out_dir] [ModFolder ...]` renders a 1280x720 Workshop preview for every published mod
+(RimWard, HospitalBedsGen2, LuciferiumOverhaul, MudAndPlasteelFloor, PawnCompatibilityGlobalAdjuster, BetterWorkbenchDefaults, QualityBuilderRobots, DefinitelyNotDevMode, Rimling)
+plus `contact_sheet.png` (together with the H&H and Silverline previews as reference). Default output: `../_Release/Vorschaubilder/2026-11-23/`.
+`kit.py` holds the shared parts (backgrounds, drawn props, title band, byline, class frames), `mods.py` one scene function per mod and the `MODS` table.
+Class frame: game mod = thin gold frame + diamond, content mod = gold hairline, technical mod = steel frame + gear + muted colours. Only the H&H preview has the "Main Mod" ribbon.
+Title font: system "Arial Rounded Bold" (falls back to Arial Bold); the PNGs are the deliverable, no font ships with the repo.
