@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- F08 (1.1.0): the colony starts as a customer of a Silverline bank. Saved only in the "hhParts" node (RemovalSafeSave). -->
+  <ScenPartDef>
+    <defName>SL_ScenStartingAccount</defName>
+    <label>start with a Silverline account</label>
+    <description>The colony starts with an account at a bank of your choice, an opening balance and, if you like, a loan to pay off.</description>
+    <category>StartingImportant</category>
+    <scenPartClass>Silverline.ScenPart_SLStartingAccount</scenPartClass>
+    <summaryPriority>398</summaryPriority>
+    <maxUses>1</maxUses>
+    <canBeRandomlyAdded>false</canBeRandomlyAdded>
+  </ScenPartDef>
+</Defs>

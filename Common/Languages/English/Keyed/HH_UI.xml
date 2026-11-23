@@ -62,7 +62,6 @@
   <HH.UI.Modules.ContentDesc>How dark the optional content may get. Never sexual content, whatever you pick.</HH.UI.Modules.ContentDesc>
   <HH.UI.Content.Cozy>Cozy</HH.UI.Content.Cozy>
   <HH.UI.Content.Cozy.Tip>Mild stories and consequences only.</HH.UI.Content.Cozy.Tip>
-  <HH.UI.Content.Decline>No, keep {0}</HH.UI.Content.Decline>
   <HH.UI.Content.Standard>Standard</HH.UI.Content.Standard>
   <HH.UI.Content.Standard.Tip>The default. Rough edges, nothing nasty.</HH.UI.Content.Standard.Tip>
   <HH.UI.Content.Dark>Dark</HH.UI.Content.Dark>
@@ -112,8 +111,6 @@
   <HH.UI.Calc.arrivalRate.Desc>How often guests turn up.</HH.UI.Calc.arrivalRate.Desc>
   <HH.UI.Calc.expectation>Guest expectation</HH.UI.Calc.expectation>
   <HH.UI.Calc.expectation.Desc>Added to what every guest expects. Higher is harder to satisfy.</HH.UI.Calc.expectation.Desc>
-  <HH.UI.Calc.slotRtp>Slot machine payout (RTP)</HH.UI.Calc.slotRtp>
-  <HH.UI.Calc.slotRtp.Desc>Share of every bet a slot machine pays back on average. The house keeps the rest.</HH.UI.Calc.slotRtp.Desc>
   <HH.UI.Calc.bankM>Bank market return (M per year)</HH.UI.Calc.bankM>
   <HH.UI.Calc.bankM.Desc>Yearly multiplier of the Silverline market. 1.2 means plus twenty percent.</HH.UI.Calc.bankM.Desc>
   <HH.UI.Calc.collectionStage>Highest collection stage</HH.UI.Calc.collectionStage>
@@ -313,4 +310,9 @@
   <HH.Setting.core.showMath.Desc>Shows nerd settings and formulas everywhere.</HH.Setting.core.showMath.Desc>
   <HH.Setting.core.perfMode>Performance mode</HH.Setting.core.perfMode>
   <HH.Setting.core.perfMode.Desc>Guest planning and room checks run half as often. Helps on slow computers; guests may react a little later.</HH.Setting.core.perfMode.Desc>
+  <HH.UI.Calc.slotRtp>Slot machine payout (RTP)</HH.UI.Calc.slotRtp>
+  <HH.UI.Calc.slotRtp.Desc>Share of every bet a slot machine pays back on average. The house keeps the rest.</HH.UI.Calc.slotRtp.Desc>
+  <HH.UI.Content.Decline>No, keep {0}</HH.UI.Content.Decline>
+  <HH.Setting.core.windowScale>Size of Hearth &amp; Harbor windows</HH.Setting.core.windowScale>
+  <HH.Setting.core.windowScale.Desc>All Hearth &amp; Harbor and Silverline windows grow or shrink by this factor (on top of the automatic size for large screens).</HH.Setting.core.windowScale.Desc>
 </LanguageData>

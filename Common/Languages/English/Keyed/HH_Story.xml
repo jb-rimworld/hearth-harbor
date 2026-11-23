@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- 1.1.0 content of Hearth & Harbor: music (F07/F32), storyteller Hetty Hearthwell (F09), creator pawn (F18). -->
+  <HH.Setting.core.music>Hearth &amp; Harbor music</HH.Setting.core.music>
+  <HH.Setting.core.music.Desc>Our three calm songs (one for spring and summer days, one for autumn, one for winter) join the normal RimWorld playlist. When hosting: only in colonies that use Hearth &amp; Harbor (a guest bed, a venue sign or a bank account).</HH.Setting.core.music.Desc>
+  <HH.Setting.core.musicShare>How often our songs come up</HH.Setting.core.musicShare>
+  <HH.Setting.core.musicShare.Desc>Weight of our songs in the playlist compared with one vanilla song. 1 = like any other song of the season, 0 = never.</HH.Setting.core.musicShare.Desc>
+  <HH.Enum.MusicMode.Off>Off</HH.Enum.MusicMode.Off>
+  <HH.Enum.MusicMode.WhenHosting>When hosting</HH.Enum.MusicMode.WhenHosting>
+  <HH.Enum.MusicMode.Always>Always</HH.Enum.MusicMode.Always>
+  <HH.Setting.core.creatorPawn>The author may wander the rim</HH.Setting.core.creatorPawn>
+  <HH.Setting.core.creatorPawn.Desc>Like the creator pawns of the base game, Hearth &amp; Harbor's author can turn up now and then as a generated pawn: a kind, hard-working wandering innkeeper.</HH.Setting.core.creatorPawn.Desc>
+  <HH.Story.Suggests>{0} suggests: {1}</HH.Story.Suggests>
+  <HH.Story.SuggestsTip>Click to use the hosting difficulty this storyteller suggests. You can still change it with the button.</HH.Story.SuggestsTip>
+</LanguageData>

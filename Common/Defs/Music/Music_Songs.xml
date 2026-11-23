@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- F07/F32 (1.1.0): three calm instrumental songs that join the normal RimWorld playlist, one per season. Plain SongDefs, so vanilla,
+       P-Music and Music Expanded's "vanilla" theme pick them up by themselves. playOnMap and commonality are set at runtime from the
+       settings "Hearth & Harbor music" and "How often our songs come up" (Source/Hearth/Music/HearthMusic.cs); never tense (peace only).
+       Volume matches the vanilla relax songs (about -18.5 LUFS after the factor). Folder Music: Core module, not shipped with Silverline. -->
+
+  <SongDef>
+    <defName>HH_Song_HarborMorning</defName>
+    <label>Harbor Morning</label>
+    <description>A bright acoustic morning by the water. Spring and summer days.</description>
+    <clipPath>HH/Music/HH_HarborMorning</clipPath>
+    <volume>0.93</volume>
+    <allowedTimeOfDay>Day</allowedTimeOfDay>
+    <allowedSeasons>
+      <li>Spring</li>
+      <li>Summer</li>
+      <li>PermanentSummer</li>
+    </allowedSeasons>
+    <modExtensions>
+      <li Class="Hearth.Music.HHSongExtension">
+        <baseCommonality>1.5</baseCommonality>
+      </li>
+    </modExtensions>
+  </SongDef>
+
+  <SongDef>
+    <defName>HH_Song_LanternsAtTheInn</defName>
+    <label>Lanterns at the Inn</label>
+    <description>Warm lights in the common room while the leaves turn. Autumn.</description>
+    <clipPath>HH/Music/HH_LanternsAtTheInn</clipPath>
+    <volume>0.80</volume>
+    <allowedSeasons>
+      <li>Fall</li>
+    </allowedSeasons>
+    <modExtensions>
+      <li Class="Hearth.Music.HHSongExtension">
+        <baseCommonality>1.5</baseCommonality>
+      </li>
+    </modExtensions>
+  </SongDef>
+
+  <SongDef>
+    <defName>HH_Song_SnowOnTheSign</defName>
+    <label>Snow on the Sign</label>
+    <description>Quiet snowfall over the inn sign, the fire still burning inside. Winter.</description>
+    <clipPath>HH/Music/HH_SnowOnTheSign</clipPath>
+    <volume>0.78</volume>
+    <allowedSeasons>
+      <li>Winter</li>
+      <li>PermanentWinter</li>
+    </allowedSeasons>
+    <modExtensions>
+      <li Class="Hearth.Music.HHSongExtension">
+        <baseCommonality>1.5</baseCommonality>
+      </li>
+    </modExtensions>
+  </SongDef>
+</Defs>

@@ -22,7 +22,9 @@ namespace Hearth
             var tpl = HearthMod.Template;
             bool inGame = HearthProfile.Current != null;
             var top = new Rect(inRect.x, inRect.y, inRect.width, 30f);
-            Widgets.Label(top.LeftPart(0.6f), inGame ? "HH.Settings.ThisSave".TranslateOr("Settings of this save game") : "HH.Settings.Template".TranslateOr("Template for new games"));
+            var titleR = top.LeftPart(0.6f);
+            if (HHIcons.Mark != null) { HHIcons.Draw(new Rect(titleR.x, titleR.y + 1, 28, 28), HHIcons.Mark); titleR.xMin += 34; }   // F34
+            Widgets.Label(titleR, inGame ? "HH.Settings.ThisSave".TranslateOr("Settings of this save game") : "HH.Settings.Template".TranslateOr("Template for new games"));
             search = Widgets.TextField(top.RightPart(0.38f), search);
             var opts = new Rect(inRect.x, inRect.y + 32f, inRect.width, 26f);
             Widgets.CheckboxLabeled(opts.LeftHalf(), "HH.Settings.ShowNerd".TranslateOr("Show nerd settings"), ref tpl.ShowNerd);
@@ -45,7 +47,8 @@ namespace Hearth
             foreach (var m in Modules.All.Where(m => m != ModuleId.Core && Modules.Available(m)))
             {
                 bool was = prof.ModuleOn(m), on = was;
-                Widgets.CheckboxLabeled(new Rect(0, y, Math.Min(420, view.width), 24), Modules.Label(m), ref on);
+                HHIcons.Draw(new Rect(0, y + 2, 20, 20), HHIcons.Module(m), !was);   // F34
+                Widgets.CheckboxLabeled(new Rect(26, y, Math.Min(420, view.width - 26), 24), Modules.Label(m), ref on);
                 if (on != was) ChangeModule(prof, m, on);
                 y += 26;
             }

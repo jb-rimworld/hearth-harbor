@@ -15,7 +15,7 @@ namespace Hearth.Shell
     /// </summary>
     public static class HearthSettingsWindow
     {
-        public sealed class PageEntry { public string Id; public string Label; public ModuleId? Module; public bool Dim; }
+        public sealed class PageEntry { public string Id; public string Label; public ModuleId? Module; public bool Dim; public Texture2D Icon => HHIcons.Page(Id); }
 
         static string pageId = "modules";
         static bool editTemplate;
@@ -28,7 +28,19 @@ namespace Hearth.Shell
         public static bool EditTemplate { get => editTemplate; set => editTemplate = value; }
         public static bool ShowNerd => HearthMod.Template.ShowNerd || (HearthProfile.Current != null && HSettings.GetBool("core.showMath"));
 
-        public static HearthProfile Target => editTemplate || HearthProfile.Current == null ? HearthMod.Template.Profile : HearthProfile.Current;
+        public static HearthProfile Target => scenarioTarget ?? (editTemplate || HearthProfile.Current == null ? HearthMod.Template.Profile : HearthProfile.Current);
+
+        /// <summary>F08: while the scenario editor's "More settings…" window draws, every page edits this scratch profile instead of the colony or
+        /// the template, and the template/colony switches, interface preferences, diagnosis and about are hidden.</summary>
+        static HearthProfile scenarioTarget;
+        public static bool ScenarioMode => scenarioTarget != null;
+
+        /// <summary>Draws the whole window against <paramref name="scratch"/> (scenario rules part).</summary>
+        public static void DrawForScenario(Rect inRect, HearthProfile scratch)
+        {
+            var prev = scenarioTarget; scenarioTarget = scratch;
+            try { Draw(inRect); } finally { scenarioTarget = prev; }
+        }
 
         public static List<PageEntry> BuildPages()
         {
@@ -44,6 +56,7 @@ namespace Hearth.Shell
                 if (!HSettings.All.Any(s => s.Module == m && !(m == ModuleId.Core && s.Category == "Special switches"))) continue;
                 list.Add(new PageEntry { Id = "mod:" + m, Label = m == ModuleId.Core ? "HH.UI.Page.General".Translate() : Modules.Label(m), Module = m, Dim = m != ModuleId.Core && !target.ModuleOn(m) });
             }
+            if (ScenarioMode) return list;
             list.Add(new PageEntry { Id = "diagnosis", Label = "HH.UI.Page.Diagnosis".Translate() });
             list.Add(new PageEntry { Id = "about", Label = "HH.UI.Page.About".Translate() });
             return list;
@@ -62,8 +75,8 @@ namespace Hearth.Shell
         static void DrawInner(Rect inRect)
         {
             UiProbe.Hit("settings");
-            bool inGame = HearthProfile.Current != null;
-            if (!inGame) editTemplate = true;
+            bool inGame = HearthProfile.Current != null && !ScenarioMode;
+            if (HearthProfile.Current == null) editTemplate = true;
             var pages = BuildPages();
             if (pages.All(p => p.Id != pageId)) pageId = pages[0].Id;
 
@@ -78,7 +91,22 @@ namespace Hearth.Shell
         static void DrawSidebar(Rect r, List<PageEntry> pages, bool inGame)
         {
             float y = r.y;
-            if (inGame)
+            // F34: the mod mark heads the sidebar
+            var mark = HHIcons.Mark;
+            if (mark != null)
+            {
+                HHIcons.Draw(new Rect(r.x, y, 32f, 32f), mark);
+                UiStyle.LabelColored(new Rect(r.x + 38f, y, r.width - 38f, 32f), ScenarioMode ? "HH.Scen.Editor.Side".TranslateOr("Scenario rules") : "Hearth & Harbor", UiStyle.Amber, TextAnchor.MiddleLeft);
+                y += 38f;
+            }
+            if (ScenarioMode)
+            {
+                string note = "HH.Scen.Editor.Note".TranslateOr("Only what you change here (marked amber) is set by the scenario. Unmarked rows show the default values; in a new game they come from the player's own template. Reset hands a row or module back to the template.");
+                float nh = UiStyle.CachedHeight(note, r.width, GameFont.Tiny);
+                UiStyle.LabelColored(new Rect(r.x, y, r.width, nh), note, UiStyle.Grey, TextAnchor.UpperLeft, GameFont.Tiny);
+                y += nh + 6f;
+            }
+            else if (inGame)
             {
                 float hw = (r.width - 6f) / 2f;
                 if (UiStyle.Chip(new Rect(r.x, y, hw, 28f), "HH.UI.Settings.ThisSave".Translate(), !editTemplate, "HH.UI.Settings.ThisSaveTip".Translate())) editTemplate = false;
@@ -102,7 +130,10 @@ namespace Hearth.Shell
                 bool sel = p.Id == pageId;
                 if (sel) { Widgets.DrawBoxSolid(row, UiStyle.AmberSoft); Widgets.DrawBoxSolid(new Rect(row.x, row.y, 3f, row.height), UiStyle.Amber); }
                 else if (Mouse.IsOver(row)) Widgets.DrawHighlight(row);
-                UiStyle.LabelColored(new Rect(row.x + 10f, row.y, row.width - 12f, row.height), p.Label + (p.Dim ? "  (" + "HH.UI.Settings.Off".Translate() + ")" : ""), p.Dim ? UiStyle.DimGrey : Color.white, TextAnchor.MiddleLeft);
+                var icon = p.Icon;
+                float lx = row.x + 10f;
+                if (icon != null) { HHIcons.Draw(new Rect(row.x + 8f, row.y + 4f, 20f, 20f), icon, p.Dim); lx = row.x + 34f; }
+                UiStyle.LabelColored(new Rect(lx, row.y, row.xMax - lx - 2f, row.height), p.Label + (p.Dim ? "  (" + "HH.UI.Settings.Off".Translate() + ")" : ""), p.Dim ? UiStyle.DimGrey : Color.white, TextAnchor.MiddleLeft);
                 if (Widgets.ButtonInvisible(row)) { pageId = p.Id; scrollMain = Vector2.zero; mainViewH = 1000f; }
                 py += 30f;
             }
@@ -146,9 +177,13 @@ namespace Hearth.Shell
             var page = pages.First(p => p.Id == pageId);
             var target = Target;
             // header: title, search, nerd
+            float tx = r.x;
+            var picon = string.IsNullOrEmpty(search) ? page.Icon : null;
+            if (picon != null) { HHIcons.Draw(new Rect(r.x, r.y + 3f, 28f, 28f), picon); tx += 36f; }
             Text.Font = GameFont.Medium;
-            Widgets.Label(new Rect(r.x, r.y, r.width * 0.5f, 34f), string.IsNullOrEmpty(search) ? page.Label : "HH.UI.Settings.SearchResults".Translate().ToString());
+            Widgets.Label(new Rect(tx, r.y, r.width * 0.5f - (tx - r.x), 34f), string.IsNullOrEmpty(search) ? page.Label : "HH.UI.Settings.SearchResults".Translate().ToString());
             Text.Font = GameFont.Small;
+            Widgets.DrawBoxSolid(new Rect(r.x, r.y + 35f, Mathf.Min(r.width, 160f), 2f), UiStyle.Amber);
             bool searchable = pageId != "diagnosis" && pageId != "about";
             if (searchable)
             {
@@ -165,7 +200,9 @@ namespace Hearth.Shell
                 HearthMod.Template.ShowNerd = nerd;
             }
             float top = r.y + 38f;
-            if (inGame && editTemplate)
+            if (ScenarioMode)
+            { UiStyle.LabelColored(new Rect(r.x, top, r.width, 22f), "HH.Scen.Editor.Editing".TranslateOr("Editing the Hearth & Harbor rules of this scenario."), UiStyle.Amber, TextAnchor.UpperLeft, GameFont.Tiny); top += 22f; }
+            else if (inGame && editTemplate)
             { UiStyle.LabelColored(new Rect(r.x, top, r.width, 22f), "HH.UI.Settings.EditingTemplate".Translate(), UiStyle.Amber, TextAnchor.UpperLeft, GameFont.Tiny); top += 22f; }
             var outR = new Rect(r.x, top, r.width, r.yMax - top);
             var view = new Rect(0, 0, outR.width - 18f, mainViewH);
@@ -193,6 +230,7 @@ namespace Hearth.Shell
         static bool Matches(HSetting s)
         {
             if (!ShowNerd && s.Nerd) return false;
+            if (ScenarioMode && s.Global) return false;   // preferences of the player, not of a colony: a scenario never sets them
             if (string.IsNullOrEmpty(search)) return true;
             string q = search.ToLowerInvariant();
             return s.Label.ToLowerInvariant().Contains(q) || s.Key.ToLowerInvariant().Contains(q) || (s.Desc ?? "").ToLowerInvariant().Contains(q) || s.Category.ToLowerInvariant().Contains(q);
@@ -230,7 +268,7 @@ namespace Hearth.Shell
                 }
                 if (m == ModuleId.AiFlavour) y += Hearth.Ai.AiSettingsPanel.Draw(y, w, target);   // F05: consent, relay state, counters
             }
-            else y = DrawGeneral(w, target, y);
+            else if (!ScenarioMode) y = DrawGeneral(w, target, y);
             string last = null;
             foreach (var s in HSettings.All.Where(s => s.Module == m && Matches(s) && !(m == ModuleId.Core && s.Category == "Special switches")))
             {
@@ -283,7 +321,7 @@ namespace Hearth.Shell
         static float DrawModules(float w, HearthProfile target, Rect visible)
         {
             float y = 0;
-            UiStyle.LabelColored(new Rect(0, y, w, 40f), target == HearthMod.Template.Profile ? "HH.UI.Modules.IntroTemplate".Translate() : "HH.UI.Modules.IntroSave".Translate(), UiStyle.Grey);
+            UiStyle.LabelColored(new Rect(0, y, w, 40f), ScenarioMode ? "HH.Scen.Editor.ModulesIntro".TranslateOr("Modules this scenario switches on or off. A module you do not touch follows the player's template.") : target == HearthMod.Template.Profile ? "HH.UI.Modules.IntroTemplate".Translate() : "HH.UI.Modules.IntroSave".Translate(), UiStyle.Grey);
             y += 44f;
             y += UiStyle.Section(0, y, w, "HH.UI.Page.Modules".Translate());
             foreach (var m in Modules.All.Where(m => m != ModuleId.Core))
@@ -298,11 +336,13 @@ namespace Hearth.Shell
                     bool on = target.ModuleOn(m), nb = on;
                     Widgets.Checkbox(new Vector2(row.x + 4f, row.y + 8f), ref nb, 24f, !avail);
                     if (nb != on) target.SetModule(m, nb);
-                    UiStyle.LabelColored(new Rect(row.x + 36f, row.y, 200f, h), Modules.Label(m), avail ? Color.white : UiStyle.DimGrey, TextAnchor.MiddleLeft);
+                    HHIcons.Draw(new Rect(row.x + 34f, row.y + 9f, 22f, 22f), HHIcons.Module(m), !avail || !nb);
+                    UiStyle.LabelColored(new Rect(row.x + 62f, row.y, 176f, h), Modules.Label(m), avail ? Color.white : UiStyle.DimGrey, TextAnchor.MiddleLeft);
                     string desc = avail ? ("HH.UI.ModuleDesc." + m).Translate().ToString() : "HH.UI.Modules.NotInstalled".Translate().ToString();
-                    UiStyle.LabelColored(new Rect(row.x + 240f, row.y, row.width - 250f, h), desc, UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny);
+                    UiStyle.LabelColored(new Rect(row.x + 240f, row.y, row.width - 250f - (ScenarioMode ? ScenResetW : 0f), h), desc, UiStyle.Grey, TextAnchor.MiddleLeft, GameFont.Tiny);
                     if (avail && Guard.IsPaused(m)) UiStyle.LabelColored(new Rect(row.xMax - 130f, row.y, 126f, 16f), "HH.UI.Diag.Paused".Translate(), UiStyle.Bad, TextAnchor.MiddleRight, GameFont.Tiny);
                 }
+                if (ScenarioMode && avail) DrawScenarioModuleReset(row, m, target);
                 y += h + 2f;
             }
             y += 4f;
@@ -344,12 +384,30 @@ namespace Hearth.Shell
             Find.WindowStack.Add(new Dialog_NodeTree(node, true, false, "HH.Underworld.Warn.Title".Translate()));
         }
 
+        const float ScenResetW = 56f;
+
+        /// <summary>F08 scenario editor: a module the scenario switches is marked amber and gets a Reset that hands it back to the player's template
+        /// (without it, switching a module back to its old value would still be recorded as an explicit "on"/"off").</summary>
+        static void DrawScenarioModuleReset(Rect row, ModuleId m, HearthProfile target)
+        {
+            if (!target.modules.ContainsKey(m)) return;
+            Widgets.DrawBoxSolid(new Rect(row.x, row.y + 4f, 2f, row.height - 8f), UiStyle.Amber);
+            var b = new Rect(row.xMax - ScenResetW + 4f, row.y + (row.height - 22f) / 2f, ScenResetW - 6f, 22f);
+            TooltipHandler.TipRegion(b, "HH.Scen.Editor.ModuleResetTip".TranslateOr("Leave this module to the player's template."));
+            if (Widgets.ButtonText(b, "HH.UI.Row.Reset".Translate()))
+            {
+                target.modules.Remove(m);
+                if (m == ModuleId.Underworld) target.UnderworldDiscovered = false;
+            }
+        }
+
         static void DrawUnderworld(Rect row, HearthProfile target, bool avail)
         {
-            UiStyle.LabelColored(new Rect(row.x + 36f, row.y, 200f, row.height), Modules.Label(ModuleId.Underworld), avail ? Color.white : UiStyle.DimGrey, TextAnchor.MiddleLeft);
             bool on = target.ModuleOn(ModuleId.Underworld);
+            HHIcons.Draw(new Rect(row.x + 34f, row.y + 9f, 22f, 22f), HHIcons.Module(ModuleId.Underworld), !avail || !on);
+            UiStyle.LabelColored(new Rect(row.x + 62f, row.y, 176f, row.height), Modules.Label(ModuleId.Underworld), avail ? Color.white : UiStyle.DimGrey, TextAnchor.MiddleLeft);
             int state = !on ? 2 : (target.UnderworldDiscovered ? 1 : 0); // 0 discover, 1 on, 2 off
-            float x = row.x + 240f, cw = Mathf.Min(120f, (row.width - 250f) / 3f);
+            float x = row.x + 240f, cw = Mathf.Min(120f, (row.width - 250f - (ScenarioMode ? ScenResetW : 0f)) / 3f);
             string[] names = { "HH.UI.Underworld.Discover", "HH.UI.Underworld.On", "HH.UI.Underworld.Off" };
             for (int i = 0; i < 3; i++)
             {
@@ -364,8 +422,10 @@ namespace Hearth.Shell
         static float DrawAbout(float w)
         {
             float y = 0;
-            Text.Font = GameFont.Medium; Widgets.Label(new Rect(0, y, w, 34f), "Hearth & Harbor"); Text.Font = GameFont.Small; y += 36f;
-            UiStyle.LabelColored(new Rect(0, y, w, 24f), HearthMod.Version + "  ·  RimWorld " + VersionControl.CurrentVersionString, UiStyle.Grey); y += 30f;
+            float ax = 0f;
+            if (HHIcons.Mark != null) { HHIcons.Draw(new Rect(0f, y, 64f, 64f), HHIcons.Mark); ax = 76f; }
+            Text.Font = GameFont.Medium; Widgets.Label(new Rect(ax, y + (ax > 0 ? 6f : 0f), w - ax, 34f), "Hearth & Harbor"); Text.Font = GameFont.Small; y += ax > 0 ? 40f : 36f;
+            UiStyle.LabelColored(new Rect(ax, y, w - ax, 24f), HearthMod.Version + "  ·  RimWorld " + VersionControl.CurrentVersionString, UiStyle.Grey); y += ax > 0 ? 34f : 30f;
             string body = "HH.UI.About.Body".Translate();
             float h = UiStyle.CachedHeight(body, Mathf.Min(w, 700f), GameFont.Small);
             Widgets.Label(new Rect(0, y, Mathf.Min(w, 700f), h), body); y += h + 14f;
