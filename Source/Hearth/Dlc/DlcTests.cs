@@ -448,7 +448,9 @@ namespace Hearth.Dlc.Tests
             var map = t.Map; var l = Ledger.Current; var own = Faction.OfPlayer.ideos.PrimaryIdeo;
             var other = Find.IdeoManager.IdeosListForReading.FirstOrDefault(i => i != own);
             if (other == null) { t.Note("only one ideoligion in this world: skipped"); yield break; }
-            var cell = t.FreeCellNearCenter(10);
+            // a free ring around the altar, reachable from the colony: the first free cell near the centre can sit in a pocket of rock, trees or water on a random map
+            var altarSize = DefDatabase<ThingDef>.GetNamed("HH_GuestAltar").size;
+            var cell = TestSetup.FindOrMakeSpot(map, map.Center, altarSize.x, altarSize.z, 2);
             var altar = (Building_GuestAltar)ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("HH_GuestAltar"), ThingDefOf.WoodLog);
             altar.SetFaction(Faction.OfPlayer); GenSpawn.Spawn(altar, cell, map); altar.Ideo = other;
             t.Check(altar.Spawned && ShrineApi.Altars(map).Contains(altar), "guest altar built and registered");
@@ -466,7 +468,8 @@ namespace Hearth.Dlc.Tests
             DlcState.SetStance(other, MoneyTheme.Indulgences, MoneyStance.Accepted);
             var act = new PrayActivity();
             t.Check(act.Desire(guest, info) > 0.5f, "guests of that faith want to pray here");
-            t.Check(ShrineApi.FindAltarFor(guest) == altar, "closest reachable altar of their faith found");
+            t.Check(ShrineApi.FindAltarFor(guest) == altar, "closest reachable altar of their faith found (guest at " + guest.Position + ", altar at " + altar.Position + ", altars of the faith: "
+                + ShrineApi.Altars(map).Count(a => a.Ideo == guest.Ideo) + ", reach " + guest.CanReach(altar, PathEndMode.InteractionCell, Danger.Some) + ", forbidden " + altar.IsForbidden(guest) + ")");
             var stranger = Kit.Visitor(map, cell); if (stranger != null) { if (stranger.Ideo == other) stranger.ideo.SetIdeo(own); t.Check(act.Desire(stranger, GuestApi.Info(stranger)) == 0f || stranger.Ideo == other, "other faiths do not come"); }
 
             float sat0 = info.Satisfaction; float temple0 = (float)IndulgenceApi.TempleBalance(other).Silver; float cert0 = guest.ideo.Certainty;

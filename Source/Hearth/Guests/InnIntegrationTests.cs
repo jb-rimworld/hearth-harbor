@@ -84,6 +84,7 @@ namespace Hearth.Guests
                 int j0 = GuestFallback.JobsStarted, sales0 = comp.salesCount;
                 var visitors = VenueTestKit.SpawnVisitors(map, f, VenueTestKit.OutsideCell(map, room));
                 t.Check(visitors.Count > 0, "vanilla visitor group spawned: " + visitors.Count);
+                GuestTestKit.FundVisitors(visitors);   // the group's random purse (60 to 150 silver) and wealth must not decide whether the shop sells
                 t.Check(visitors.All(v => GuestApi.IsGuest(v) && !GuestRegistry.IsRegisteredGuest(v)), "vanilla visitors count as day visitors with the Inn on, without an Inn file");
                 int waited = 0;
                 while (waited < 24000 && !(visitors.Any(v => GuestFallback.Driven.Contains(v.thingIDNumber)) && comp.salesCount > sales0)) { yield return 200; waited += 200; }
@@ -104,6 +105,7 @@ namespace Hearth.Guests
                 GuestFallback.ResetOffers();
                 var visitors2 = VenueTestKit.SpawnVisitors(map, f, VenueTestKit.OutsideCell(map, room));
                 t.Check(visitors2.Count > 0 && visitors2.All(GuestApi.IsGuest), "visitors are guests without the Inn: " + visitors2.Count);
+                GuestTestKit.FundVisitors(visitors2);
                 waited = 0;
                 while (waited < 15000 && !visitors2.Any(v => GuestFallback.Driven.Contains(v.thingIDNumber))) { yield return 200; waited += 200; }
                 t.Check(visitors2.Any(v => GuestFallback.Driven.Contains(v.thingIDNumber)), "fallback drives vanilla visitors with the Inn off (" + waited + " ticks)");

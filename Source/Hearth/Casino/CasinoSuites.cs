@@ -19,20 +19,16 @@ namespace Hearth.Casino.Tests
     {
         public static ModuleId Module => ModuleId.Casino;
 
-        /// <summary>Spawns a building on free ground with a free ring around it (so people can stand at it).</summary>
+        /// <summary>Spawns a building on free ground with a free ring around it (so people can stand at it). The random quicktest map decides what is free around the
+        /// colonists (rock, trees, water, fog), so when no natural spot fits the nearest reachable one is cleared and floored instead of failing the suite.</summary>
         public static Thing Spawn(TestContext t, ThingDef def, Rot4 rot, IntVec3 around)
         {
             var map = t.Map;
-            foreach (var c in GenRadial.RadialCellsAround(around, 30, true))
-            {
-                var rect = GenAdj.OccupiedRect(c, rot, def.size).ExpandedBy(2);
-                if (!rect.Cells.All(x => x.InBounds(map) && x.Standable(map) && x.GetFirstBuilding(map) == null && !x.Fogged(map) && x.GetTerrain(map).affordances.Contains(TerrainAffordanceDefOf.Light))) continue;
-                var thing = ThingMaker.MakeThing(def, def.MadeFromStuff ? GenStuff.DefaultStuffFor(def) : null);
-                thing.SetFaction(Faction.OfPlayer);
-                GenSpawn.Spawn(thing, c, map, rot);
-                return thing;
-            }
-            return null;
+            var c = TestSetup.FindOrMakeSpot(map, around, def.size.x, def.size.z, 2);
+            var thing = ThingMaker.MakeThing(def, def.MadeFromStuff ? GenStuff.DefaultStuffFor(def) : null);
+            thing.SetFaction(Faction.OfPlayer);
+            GenSpawn.Spawn(thing, c, map, rot);
+            return thing;
         }
 
         public static void Power(Thing t) { var p = t?.TryGetComp<CompPowerTrader>(); if (p != null) p.PowerOn = true; }
@@ -75,7 +71,7 @@ namespace Hearth.Casino.Tests
             return true;
         }
 
-        public static Pawn Colonist(TestContext t, int idx = 0) => t.Map.mapPawns.FreeColonistsSpawned.ElementAt(idx);
+        public static Pawn Colonist(TestContext t, int idx = 0) => TestSetup.Colonist(t.Map, idx) ?? t.Map.mapPawns.FreeColonistsSpawned.ElementAt(idx);
 
         /// <summary>Clean slate for a colonist's gambling state (suites share one game).</summary>
         public static void ResetGambler(Pawn p)
@@ -398,9 +394,10 @@ namespace Hearth.Casino.Tests
             int silverBefore = map.resourceCounter.GetCount(ThingDefOf.Silver);
             Money tillBefore = ledger.Balance(Payments.ColonyTill(map)); long ledgerBefore = ledger.Balance(Payments.ColonyTill(map)).Micro;
             t.Check(Gambling.PolicyAllowsJoy(pawn, out string why), "policy allows gambling for joy: " + why);
-            t.Check(CasinoDefOf.HH_PlayCasinoJoy.Worker.CanBeGivenTo(pawn), "joy giver may give gambling to the colonist");
+            t.Check(CasinoDefOf.HH_PlayCasinoJoy.Worker.CanBeGivenTo(pawn), "joy giver may give gambling to the colonist: adult " + Gambling.IsAdult(pawn) + ", colonist " + Gambling.IsColonist(pawn)
+                + ", missing capacity " + CasinoDefOf.HH_PlayCasinoJoy.Worker.MissingRequiredCapacity(pawn)?.defName + ", module on " + Modules.On(ModuleId.Casino) + ", addicted " + (Gambling.AddictionOf(pawn) != null));
             var job = CasinoDefOf.HH_PlayCasinoJoy.Worker.TryGiveJob(pawn);
-            t.Check(job != null && job.def == CasinoDefOf.HH_PlayCasino, "joy giver offers the machine");
+            t.Check(job != null && job.def == CasinoDefOf.HH_PlayCasino, "joy giver offers the machine" + (job == null ? " (" + TestSetup.WhyNoJoy(pawn, machine) + "; usable " + comp.Usable(false, out string unusable) + " " + unusable + ")" : ""));
             if (job == null) { machine.Destroy(); yield break; }
             pawn.jobs.StartJob(job, JobCondition.InterruptForced);
             int guard = 0;

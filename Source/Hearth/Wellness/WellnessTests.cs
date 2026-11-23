@@ -221,7 +221,7 @@ namespace Hearth.Wellness.Tests
             WT.Teleport(pawn, center + new IntVec3(0, 0, -1));
             pawn.needs.joy.CurLevel = 0.1f;
             var job = DefDatabase<JoyGiverDef>.GetNamed("HH_Joy_Sauna").Worker.TryGiveJob(pawn);
-            t.Check(job != null && job.def == WellnessDefOf.HH_UseSauna, "joy giver offers the sauna");
+            t.Check(job != null && job.def == WellnessDefOf.HH_UseSauna, "joy giver offers the sauna" + (job == null ? " (" + Hearth.Testing.TestSetup.WhyNoJoy(pawn, stove) + "; usable " + comp.UsableNow(out var whyNo) + " " + whyNo + ", room " + room.Temperature.ToString("0") + " C, fuel " + fuel.Fuel.ToString("0.0") + ", spot " + SaunaUtil.FindSpot(pawn, stove) + ")" : ""));
             if (job != null)
             {
                 t.Check(room.ContainsCell(job.targetB.Cell), "sauna spot is inside the room");
@@ -281,7 +281,9 @@ namespace Hearth.Wellness.Tests
             WT.Teleport(client, area + new IntVec3(0, 0, -3));
             WT.Teleport(masseur, area + new IntVec3(-3, 0, -3));
             var job = giver.TryGiveJob(client);
-            t.Check(job != null && job.def == WellnessDefOf.HH_ReceiveMassage, "client is offered the table");
+            t.Check(job != null && job.def == WellnessDefOf.HH_ReceiveMassage, "client is offered the table" + (job == null ? " (" + Hearth.Testing.TestSetup.WhyNoJoy(client, table) + "; usable " + comp.UsableNow(out var whyNot) + " " + whyNot + ", allows " + comp.AllowsUser(client)
+                + ", masseur available " + WellnessStaff.MasseurAvailable(map, client) + " (" + masseur.LabelShort + " awake " + masseur.Awake() + " drafted " + masseur.Drafted + " job " + masseur.CurJob?.def.defName + "), seeks medical rest " + HealthAIUtility.ShouldSeekMedicalRest(client)
+                + ", recipient " + comp.recipient?.LabelShort + ")" : ""));
             if (job == null) yield break;
             float xp0 = masseur.skills.GetSkill(SkillDefOf.Social).xpSinceLastLevel + masseur.skills.GetSkill(SkillDefOf.Social).Level * 1000f;
             client.jobs.StartJob(job, JobCondition.InterruptForced);
@@ -340,7 +342,8 @@ namespace Hearth.Wellness.Tests
             var tub = WT.Spawn(map, WellnessDefOf.HH_HotTub, center + new IntVec3(1, 0, 1));
             WT.Power(tub);
             var stove = WT.Spawn(map, WellnessDefOf.HH_Sauna, center + new IntVec3(-2, 0, 2));
-            stove.TryGetComp<CompRefuelable>().Refuel(25f);
+            // the stove stays cold: a fuelled stove warms its small room by 10+ C per 1000 ticks, and a room above the safe temperature range is a danger region that
+            // visitors will not path into (Danger.None), so whether the guest got a tub job depended on how long the visitor took to walk in. Billing needs no fuel.
 
             // venue: the real HH_Venue_Spa with a real sign if the Venues module exists, else a test-only sign + type
             var type = DefDatabase<VenueTypeDef>.GetNamedSilentFail("HH_Venue_Spa");
@@ -362,10 +365,7 @@ namespace Hearth.Wellness.Tests
             stove.GetRoom().Temperature = 24f; // below the sauna minimum: only the tub is on offer, and the room is safe to walk into
 
             // visitors through the vanilla incident
-            var parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.Misc, map);
-            bool fired = false;
-            try { fired = IncidentDefOf.VisitorGroup.Worker.TryExecute(parms); } catch (Exception e) { t.Note("incident threw: " + e.Message); }
-            t.Note("VisitorGroup fired=" + fired);
+            t.Note("visitors spawned: " + Hearth.Testing.GuestTestKit.SpawnVisitors(map, 1).Count);
             Pawn guest = null;
             foreach (var x in WT.WaitUntil(() => (guest = map.mapPawns.AllPawnsSpawned.FirstOrDefault(GuestApi.IsGuest)) != null, 900, 30)) yield return x;
             t.Check(guest != null, "a visitor counts as a guest");
@@ -392,8 +392,10 @@ namespace Hearth.Wellness.Tests
             var tillBefore = Ledger.Current.Balance(till);
             float satBefore = info.Satisfaction; var budgetBefore = info.Budget;
             // pick the tub explicitly (sauna would also be fine)
+            tub.GetRoom().Temperature = 24f;
             var job = WellnessStaff.MakeUseJob(guest, tub);
-            t.Check(job != null && job.def == WellnessDefOf.HH_UseHotTub, "tub job for the guest");
+            t.Check(job != null && job.def == WellnessDefOf.HH_UseHotTub, "tub job for the guest" + (job == null ? " (guest at " + guest.Position + " spawned " + guest.Spawned + ", reserve " + guest.CanReserve(tub, 2, 0) + ", reach " + guest.CanReach(tub, PathEndMode.OnCell, Danger.None)
+                + ", room " + tub.GetRoom()?.Temperature.ToString("0") + " C, outdoor " + map.mapTemperature.OutdoorTemp.ToString("0") + " C, safe range " + guest.SafeTemperatureRange() + ")" : ""));
             WT.ClearJob(guest);
             guest.jobs.StartJob(job, JobCondition.InterruptForced);
             // the visitor may walk across the map first, and earlier suites already counted soaks: wait for THIS guest's finished session

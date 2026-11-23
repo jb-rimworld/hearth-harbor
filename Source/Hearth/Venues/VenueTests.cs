@@ -123,9 +123,17 @@ namespace Hearth.ShopsFood
 
         public static List<Pawn> SpawnVisitors(Map map, Faction f, IntVec3 spawn)
         {
-            var parms = new IncidentParms { target = map, faction = f, forced = true, sendLetter = false, points = 120f, spawnCenter = spawn, storeGeneratedNeutralPawns = new List<Pawn>() };
-            IncidentDefOf.VisitorGroup.Worker.TryExecute(parms);
-            return parms.storeGeneratedNeutralPawns;
+            // a faction that cannot send a group right now (temperature range, tech level) or a blocked entry cell yields nothing: retry, then try the other friendly factions
+            var all = new List<Pawn>();
+            var tried = new List<Faction> { f };
+            tried.AddRange(Friendly(4, false).Where(x => x != f));
+            for (int i = 0; i < 6 && all.Count == 0; i++)
+            {
+                var parms = new IncidentParms { target = map, faction = tried[i % tried.Count], forced = true, sendLetter = false, points = 120f, spawnCenter = spawn, storeGeneratedNeutralPawns = new List<Pawn>() };
+                try { IncidentDefOf.VisitorGroup.Worker.TryExecute(parms); } catch (Exception e) { HLog.Warn("Test", "VisitorGroup incident threw: " + e.Message); }
+                all.AddRange(parms.storeGeneratedNeutralPawns.Where(p => p.Spawned));
+            }
+            return all;
         }
 
         public static IntVec3 OutsideCell(Map map, TestRoom room)

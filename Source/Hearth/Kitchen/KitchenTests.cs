@@ -574,10 +574,7 @@ namespace Hearth.Kitchen.Tests
             t.Check(Restaurant.Stock(spot).Count() == 3, "three fresh plates on the shelf: " + Restaurant.Stock(spot).Count());
 
             // visitors via the vanilla incident
-            var parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.Misc, map);
-            bool fired = false;
-            try { fired = IncidentDefOf.VisitorGroup.Worker.TryExecute(parms); } catch (Exception e) { t.Note("incident threw: " + e.Message); }
-            t.Note("VisitorGroup fired=" + fired);
+            t.Note("visitors spawned: " + GuestTestKit.SpawnVisitors(map, 1).Count);
             Pawn guest = null;
             foreach (var w in KT.WaitUntil(() => (guest = map.mapPawns.AllPawnsSpawned.FirstOrDefault(GuestApi.IsGuest)) != null, 900, 30)) yield return w;
             t.Check(guest != null, "a visitor counts as a guest");

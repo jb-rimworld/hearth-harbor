@@ -34,9 +34,7 @@ namespace Hearth.Shell.Tests
 
         public static List<Pawn> SpawnVisitors(Map map)
         {
-            var parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.Misc, map);
-            bool ok = false;
-            try { ok = IncidentDefOf.VisitorGroup.Worker.TryExecute(parms); } catch (Exception e) { Log.Warning("[HHTEST] visitor incident failed: " + e.Message); }
+            GuestTestKit.SpawnVisitors(map, 1);
             return map.mapPawns.AllPawnsSpawned.Where(GuestApi.IsVanillaVisitor).ToList();
         }
     }

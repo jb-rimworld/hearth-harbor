@@ -119,17 +119,14 @@ namespace Hearth.City.Tests
             Func<List<Pawn>> current = () => map.mapPawns.AllPawnsSpawned.Where(GuestApi.IsVanillaVisitor).ToList();
             try
             {
-                var def = IncidentDefOf.VisitorGroup;
-                for (int i = 0; i < 6 && current().Count < count; i++)
-                {
-                    var parms = StorytellerUtility.DefaultParmsNow(def.category, map); parms.forced = true; parms.target = map;
-                    def.Worker.TryExecute(parms);
-                }
+                for (int i = 0; i < 4 && current().Count < count; i++) GuestTestKit.SpawnVisitors(map, count);
             }
             catch (Exception e) { HLog.Warn("City", "VisitorGroup incident failed in the test: " + e.Message); }
             var list = current();
             if (list.Count < count) HLog.Warn("City", "Only " + list.Count + " vanilla visitors could be spawned");
             var picked = list.Take(count).ToList();
+            // the rest of the incident's group would walk to the colony and take benches, seats and screens by itself (the guest brain offers them City activities): send them away
+            foreach (var extra in list.Skip(count).ToList()) { extra.GetLord()?.Notify_PawnLost(extra, PawnLostCondition.ForcedByPlayerAction); extra.Destroy(); }
             foreach (var p in picked)
             {
                 var cell = CellFinder.RandomClosewalkCellNear(at, map, 3);
@@ -633,7 +630,9 @@ namespace Hearth.City.Tests
         public override ModuleId Module => ModuleId.CityLife;
         public override int MaxTicks => 8000;
 
-        public override IEnumerable<int> Run(TestContext t)
+        public override IEnumerable<int> Run(TestContext t) => GuestTestKit.WithoutGuestBrain(Body(t));
+
+        IEnumerable<int> Body(TestContext t)
         {
             var map = t.Map;
             HSettings.Set(CitySettings.ParkRestTicks, 300);
@@ -669,9 +668,13 @@ namespace Hearth.City.Tests
                 yield return 5;
                 col.DeSpawn(); GenSpawn.Spawn(col, area.CenterCell + new IntVec3(0, 0, -2), map);
                 CityTestKit.TimetableAnything(col);
+                // nobody else may hold the bench or its seat: other colonists with a low joy need and the guests of earlier checks look for a seat on their own
+                foreach (var other in map.mapPawns.AllPawnsSpawned.Where(p => p != col && p.CurJob?.def == CityDefs.ParkRest).ToList()) other.jobs.StopAll();
+                foreach (var other in map.mapPawns.FreeColonistsSpawned) { if (other != col && other.needs?.joy != null) other.needs.joy.CurLevel = 1f; }
+                map.reservationManager.ReleaseAllForTarget(bench);
                 var jg = new JoyGiver_ParkBench { def = DefDatabase<JoyGiverDef>.GetNamed("HH_ParkBenchJoy") };
                 var jj = jg.TryGiveJob(col);
-                t.Check(jj != null && jj.def == CityDefs.ParkRest, "the colonist joy giver offers the bench");
+                t.Check(jj != null && jj.def == CityDefs.ParkRest, "the colonist joy giver offers the bench" + (jj == null ? " (" + TestSetup.WhyNoJoy(col, bench) + "; seat " + ParkUtility.FreeSeat(bench, col) + ")" : ""));
                 if (jj != null)
                 {
                     col.needs.joy.CurLevel = 0.2f;
@@ -781,7 +784,9 @@ namespace Hearth.City.Tests
         public override ModuleId Module => ModuleId.CityLife;
         public override int MaxTicks => 20000;
 
-        public override IEnumerable<int> Run(TestContext t)
+        public override IEnumerable<int> Run(TestContext t) => GuestTestKit.WithoutGuestBrain(Body(t));
+
+        IEnumerable<int> Body(TestContext t)
         {
             var map = t.Map;
             CityTestKit.ResearchOff();
@@ -798,6 +803,9 @@ namespace Hearth.City.Tests
             if (guardPawn == null) yield break;
             CityTestKit.TimetableAnything(guardPawn);
             guardPawn.DeSpawn(); GenSpawn.Spawn(guardPawn, area.CenterCell + new IntVec3(3, 0, 0), map);
+            // the job below is started by hand, without a work giver priority behind it: any other work the colonist has switched on (tending a leftover venue sign of an
+            // earlier suite, cleaning, hauling) overrides it at the next override check and walks the guard away. Only the guard work stays on.
+            foreach (var wt in DefDatabase<WorkTypeDef>.AllDefsListForReading) if (wt != HHWork.Hosting && !guardPawn.WorkTypeIsDisabled(wt) && guardPawn.workSettings != null) guardPawn.workSettings.SetPriority(wt, 0);
 
             // no armed colonist: no hire
             foreach (var c in map.mapPawns.FreeColonistsSpawned) { if (c.workSettings != null && !c.WorkTypeIsDisabled(HHWork.Hosting)) c.workSettings.SetPriority(HHWork.Hosting, 3); var w = c.equipment?.Primary; if (w != null) c.equipment.Remove(w); }
