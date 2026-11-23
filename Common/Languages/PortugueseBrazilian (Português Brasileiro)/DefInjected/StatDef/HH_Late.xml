@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServiceQuality.description>O quão agradável esta pessoa é para ser atendida. Somado à satisfação dos hóspedes com quem ela conversa.</HH_ServiceQuality.description>
+  <HH_GuestExpectation.description>Somado ao que um hóspede espera de uma estadia. Positivo significa mais difícil de agradar. Um paladar refinado aumenta a expectativa do próprio hóspede; um anfitrião de língua de prata reduz a expectativa dos hóspedes que recebe ou acompanha.</HH_GuestExpectation.description>
+  <HH_Dexterity.description>Velocidade de distribuição como crupiê: as rodadas na sua mesa são 3 % mais curtas por ponto (no máximo 30 %).</HH_Dexterity.description>
+  <HH_TableSkill.label>sentido das cartas</HH_TableSkill.label>
+  <HH_TableSkill.description>Níveis de Intelectual somados quando esta pessoa joga blackjack ou pôquer.</HH_TableSkill.description>
+  <HH_FraudDetection.label>vigilância</HH_FraudDetection.label>
+  <HH_FraudDetection.description>Enquanto esta pessoa estiver no mapa, a chance de um hóspede respeitável tropeçar na sala dos fundos é dividida por este valor. Conta o colono mais vigilante.</HH_FraudDetection.description>
+  <HH_BrawlRisk.description>Multiplicador da chance de uma discussão no quarto desta pessoa virar briga. Conta o menor valor por perto.</HH_BrawlRisk.description>
+  <HH_RumorSpread.description>Multiplicador de quanto os hóspedes que partem alteram o renome da casa, para o bem ou para o mal. Conta a maior fofoca da colônia.</HH_RumorSpread.description>
+  <HH_CareProgress.label>qualidade do cuidado</HH_CareProgress.label>
+  <HH_CareProgress.description>Multiplicador da qualidade das massagens que esta pessoa oferece.</HH_CareProgress.description>
+  <HH_BankFeeFactor.description>Multiplicador das taxas do banco enquanto esta pessoa viver na colônia. Conta o menor valor.</HH_BankFeeFactor.description>
+  <HH_RecruitPrice.description>Multiplicador do acréscimo de boa vontade acima do piso de 5 quando um hóspede entra na colônia e esta pessoa o conquistou.</HH_RecruitPrice.description>
+  <HH_TipFactor.label>generosidade do hóspede</HH_TipFactor.label>
+  <HH_TipFactor.description>Multiplicador de quanto do orçamento esta pessoa gasta em uma compra como hóspede.</HH_TipFactor.description>
+  <HH_DishQuality.description>Chance de elevar um prato de restaurante cozido em um degrau de qualidade.</HH_DishQuality.description>
+  <HH_FamilyCheer.description>Somado à nota de atendimento de crianças e famílias que esta pessoa recebe ou acompanha.</HH_FamilyCheer.description>
+  <HH_PriceFeel.description>Somado ao quanto os hóspedes acham caros os preços quando esta pessoa os atende.</HH_PriceFeel.description>
+</LanguageData>

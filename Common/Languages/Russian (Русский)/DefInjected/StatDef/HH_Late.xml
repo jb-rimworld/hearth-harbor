@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServiceQuality.description>Насколько приятно обслуживает этот человек. Прибавляется к удовлетворённости гостей, с которыми он общается.</HH_ServiceQuality.description>
+  <HH_GuestExpectation.description>Прибавляется к тому, чего ждёт гость от проживания. Положительное значение означает, что угодить труднее. Утончённый вкус повышает собственные ожидания гостя; хозяин с серебряным языком их снижает для гостей, которых приветствует или проводит по окрестностям.</HH_GuestExpectation.description>
+  <HH_Dexterity.description>Скорость раздачи крупье: раунды за его столом короче на 3 % за очко (не более 30 %).</HH_Dexterity.description>
+  <HH_TableSkill.label>чутьё к картам</HH_TableSkill.label>
+  <HH_TableSkill.description>Уровни Интеллекта, прибавляемые, когда этот человек играет в блэкджек или покер.</HH_TableSkill.description>
+  <HH_FraudDetection.label>бдительность</HH_FraudDetection.label>
+  <HH_FraudDetection.description>Пока этот человек на карте, шанс, что солидный гость наткнётся на подсобку, делится на это значение. Учитывается самый бдительный колонист.</HH_FraudDetection.description>
+  <HH_BrawlRisk.description>Множитель шанса, что ссора в комнате этого человека перерастёт в драку. Учитывается самое низкое значение рядом.</HH_BrawlRisk.description>
+  <HH_RumorSpread.description>Множитель того, насколько уходящие гости двигают известность заведения, в плюс или в минус. Учитывается самый большой сплетник колонии.</HH_RumorSpread.description>
+  <HH_CareProgress.label>качество ухода</HH_CareProgress.label>
+  <HH_CareProgress.description>Множитель качества массажей, которые делает этот человек.</HH_CareProgress.description>
+  <HH_BankFeeFactor.description>Множитель комиссий банка, пока этот человек живёт в колонии. Учитывается самое низкое значение.</HH_BankFeeFactor.description>
+  <HH_RecruitPrice.description>Множитель наценки благосклонности сверх базы 5, когда гость присоединяется к колонии и этот человек его переубедил.</HH_RecruitPrice.description>
+  <HH_TipFactor.label>щедрость гостя</HH_TipFactor.label>
+  <HH_TipFactor.description>Множитель того, какую часть своего бюджета этот человек тратит на одну покупку как гость.</HH_TipFactor.description>
+  <HH_DishQuality.description>Шанс поднять приготовленное блюдо ресторана на одну ступень качества.</HH_DishQuality.description>
+  <HH_FamilyCheer.description>Прибавляется к оценке обслуживания детей и семей, которых этот человек приветствует или проводит по окрестностям.</HH_FamilyCheer.description>
+  <HH_PriceFeel.description>Прибавляется к тому, насколько дорогими гости находят цены, когда этот человек их обслуживает.</HH_PriceFeel.description>
+</LanguageData>

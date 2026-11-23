@@ -114,7 +114,7 @@
   <HH.Setting.kitchen.allKnown>Усі страви відомі</HH.Setting.kitchen.allKnown>
   <HH.Setting.kitchen.allKnown.Desc>Пропустити навчання: кожну страву меню можна готувати, щойно стоять її пристрої.</HH.Setting.kitchen.allKnown.Desc>
   <HH.Setting.kitchen.darkMenu>Темне меню (довга свинина)</HH.Setting.kitchen.darkMenu>
-  <HH.Setting.kitchen.darkMenu.Desc>Дозволити страви з довгої свинини. Їх також відкриває ідеорелігія, що схвалює канібалізм.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Setting.kitchen.darkMenu.Desc>Дозволити страви з довгої свинини. Завжди потрібна інтенсивність контенту «Темно» або «Похмуро»; тоді ідеологія, що схвалює канібалізм, відкриває їх, навіть коли це вимкнено.</HH.Setting.kitchen.darkMenu.Desc>
   <HH.Kitchen.Cookbook.Teaches>Навчає: {0}</HH.Kitchen.Cookbook.Teaches>
   <HH.Kitchen.Cookbook.Empty>Сторінки порожні.</HH.Kitchen.Cookbook.Empty>
   <HH.Kitchen.Cookbook.AllKnown>Колонія вже знає кожну страву з цієї книги.</HH.Kitchen.Cookbook.AllKnown>

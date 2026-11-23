@@ -43,4 +43,7 @@
   <HH.Setting.dlc.traitSpawn.Desc>Afortunado, Desafortunado, Anfitrión nato y otros rasgos de Hearth &amp; Harbor pueden aparecer en los colonos recién generados. Los existentes conservan los suyos. Desactivado: solo se añaden a mano o con el editor.</HH.Setting.dlc.traitSpawn.Desc>
   <HH.Setting.dlc.traitRarity>Frecuencia de rasgos</HH.Setting.dlc.traitRarity>
   <HH.Setting.dlc.traitRarity.Desc>Multiplicador de la frecuencia con que se sortean nuestros rasgos para los colonos nuevos (1 = la misma rareza que la mayoría de rasgos de vanilla).</HH.Setting.dlc.traitRarity.Desc>
+  <HH.Dlc.Noble.NoBed>Ninguna cama digna de un huésped</HH.Dlc.Noble.NoBed>
+  <HH.Dlc.Noble.RoomFits>La habitación está a la altura de mi título</HH.Dlc.Noble.RoomFits>
+  <HH.Dlc.Noble.RoomBeneath>Habitación por debajo de mi título</HH.Dlc.Noble.RoomBeneath>
 </LanguageData>

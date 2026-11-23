@@ -290,4 +290,9 @@
   <HH.Setting.inn.stayNightsMin.Desc>过夜客人至少住这么多晚。</HH.Setting.inn.stayNightsMin.Desc>
   <HH.Setting.inn.waitThoughts>等待与夜间铃声的想法</HH.Setting.inn.waitThoughts>
   <HH.Setting.inn.waitThoughts.Desc>白白等待或按了夜间铃却无人应答的客人，心情会受影响；候客室能缓和这种感受。</HH.Setting.inn.waitThoughts.Desc>
+  <HH.Inn.Event.SponsoredBed>这张床已由派对预订并付款。</HH.Inn.Event.SponsoredBed>
+  <HH.Inn.Event.Charmed>{0} 把这里说得比预期还要好。</HH.Inn.Event.Charmed>
+  <HH.Inn.PriceMode.ManualSet>固定价格…</HH.Inn.PriceMode.ManualSet>
+  <HH.Inn.PriceMode.ManualValue>每晚 {0} 银币</HH.Inn.PriceMode.ManualValue>
+  <HH.Inn.PriceMode.Manual>固定价格</HH.Inn.PriceMode.Manual>
 </LanguageData>

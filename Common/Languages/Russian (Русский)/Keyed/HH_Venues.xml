@@ -135,4 +135,10 @@
   <HH.Venue.Tier.Luxury>Роскошный</HH.Venue.Tier.Luxury>
   <HH.Venue.Tier.Premium>Премиум</HH.Venue.Tier.Premium>
   <HH.Venue.Tier.Standard>Стандартный</HH.Venue.Tier.Standard>
+  <HH.Venue.CheckDishes>Посуда на полках</HH.Venue.CheckDishes>
+  <HH.Venue.CheckNoDishes>Посуды для продажи нет → готовьте блюда и храните их в комнате</HH.Venue.CheckNoDishes>
+  <HH.Venue.MarketBlock.NoHome>нет домашней карты</HH.Venue.MarketBlock.NoHome>
+  <HH.Venue.MarketBlock.NoShop>нет магазина</HH.Venue.MarketBlock.NoShop>
+  <HH.Venue.MarketBlock.Stalls>торговых прилавков {0}/{1}</HH.Venue.MarketBlock.Stalls>
+  <HH.Venue.MarketBlock.Renown>известность {0}/{1}</HH.Venue.MarketBlock.Renown>
 </LanguageData>

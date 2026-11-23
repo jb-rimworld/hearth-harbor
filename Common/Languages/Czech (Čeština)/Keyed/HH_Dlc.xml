@@ -43,4 +43,7 @@
   <HH.Setting.dlc.traitSpawn.Desc>Šťastlivec, Nešťastník, Narozený hostitel a další vlastnosti Hearth &amp; Harbor se mohou objevit u nově vygenerovaných postav. Stávající postavy si ponechají své. Vypnuto: vlastnosti se přidají jen ručně nebo v editoru.</HH.Setting.dlc.traitSpawn.Desc>
   <HH.Setting.dlc.traitRarity>Četnost vlastností</HH.Setting.dlc.traitRarity>
   <HH.Setting.dlc.traitRarity.Desc>Násobitel toho, jak často se naše vlastnosti losují u nových postav (1 = stejná vzácnost jako u většiny vanilla vlastností).</HH.Setting.dlc.traitRarity.Desc>
+  <HH.Dlc.Noble.NoBed>Žádná postel hodná hosta</HH.Dlc.Noble.NoBed>
+  <HH.Dlc.Noble.RoomFits>Pokoj odpovídá mému titulu</HH.Dlc.Noble.RoomFits>
+  <HH.Dlc.Noble.RoomBeneath>Pokoj pod mou úroveň</HH.Dlc.Noble.RoomBeneath>
 </LanguageData>

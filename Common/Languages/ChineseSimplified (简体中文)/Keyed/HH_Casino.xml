@@ -171,4 +171,73 @@
   <HH.Thrumbo.Err.HandOpen>本手牌尚未结束。</HH.Thrumbo.Err.HandOpen>
   <HH.Thrumbo.Err.NoHand>没有进行中的手牌。</HH.Thrumbo.Err.NoHand>
   <HH.Thrumbo.Err.NoDouble>只能在前两张牌时加倍。</HH.Thrumbo.Err.NoDouble>
+  <HH.Thrumbo.TotalsGoods>货物赌注（按银币计价，不入账）：{0} 轮 · 下注 {1} · 返还 {2} · 结果 {3}</HH.Thrumbo.TotalsGoods>
+  <HH.Thrumbo.Ago>前</HH.Thrumbo.Ago>
+  <HH.Thrumbo.Sym.cherry>樱桃</HH.Thrumbo.Sym.cherry>
+  <HH.Thrumbo.Sym.lemon>柠檬</HH.Thrumbo.Sym.lemon>
+  <HH.Thrumbo.Sym.plum>李子</HH.Thrumbo.Sym.plum>
+  <HH.Thrumbo.Sym.bell>铃铛</HH.Thrumbo.Sym.bell>
+  <HH.Thrumbo.Sym.bar>横杠</HH.Thrumbo.Sym.bar>
+  <HH.Thrumbo.Sym.seven>七</HH.Thrumbo.Sym.seven>
+  <HH.Thrumbo.Sym.muffalo>麝牛</HH.Thrumbo.Sym.muffalo>
+  <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
+  <HH.Thrumbo.Pay.Cherry2>2 × 樱桃（转轮 1+2）</HH.Thrumbo.Pay.Cherry2>
+  <HH.Thrumbo.Pay.Cherry1>转轮 1 上的樱桃</HH.Thrumbo.Pay.Cherry1>
+  <HH.Thrumbo.Bet.Straight>直注 {0}</HH.Thrumbo.Bet.Straight>
+  <HH.Thrumbo.Bet.Split>分注 {0}/{1}</HH.Thrumbo.Bet.Split>
+  <HH.Thrumbo.Bet.Street>街注 {0}-{1}</HH.Thrumbo.Bet.Street>
+  <HH.Thrumbo.Bet.Corner>角注 {0}</HH.Thrumbo.Bet.Corner>
+  <HH.Thrumbo.Bet.SixLine>六线注 {0}-{1}</HH.Thrumbo.Bet.SixLine>
+  <HH.Thrumbo.Bet.Column>列注 {0}</HH.Thrumbo.Bet.Column>
+  <HH.Thrumbo.Bet.Dozen>打注 {0}</HH.Thrumbo.Bet.Dozen>
+  <HH.Thrumbo.Bet.Red>红</HH.Thrumbo.Bet.Red>
+  <HH.Thrumbo.Bet.Black>黑</HH.Thrumbo.Bet.Black>
+  <HH.Thrumbo.Bet.Odd>单</HH.Thrumbo.Bet.Odd>
+  <HH.Thrumbo.Bet.Even>双</HH.Thrumbo.Bet.Even>
+  <HH.Thrumbo.Bet.Low>小 1-18</HH.Thrumbo.Bet.Low>
+  <HH.Thrumbo.Bet.High>大 19-36</HH.Thrumbo.Bet.High>
+  <HH.Thrumbo.Stakes.Button>加码…</HH.Thrumbo.Stakes.Button>
+  <HH.Thrumbo.Stakes.ButtonTip>用货物、动物或囚犯代替银币下注。它们由本店的典当商估价。</HH.Thrumbo.Stakes.ButtonTip>
+  <HH.Thrumbo.Stakes.Title>加码</HH.Thrumbo.Stakes.Title>
+  <HH.Thrumbo.Stakes.Intro>把东西放上赌桌代替银币。输了，它们会像被卖掉一样归店里所有；赢了，你留下一切，店里以银币支付奖金。</HH.Thrumbo.Stakes.Intro>
+  <HH.Thrumbo.Stakes.Pawnbroker>幸运 Thrumbo 的典当商</HH.Thrumbo.Stakes.Pawnbroker>
+  <HH.Thrumbo.Stakes.ValuedBy>按 {0} 能拿到的价格估价（贸易价格改善 {1}）。</HH.Thrumbo.Stakes.ValuedBy>
+  <HH.Thrumbo.Stakes.NoNegotiator>本地图上没有人能谈价格。</HH.Thrumbo.Stakes.NoNegotiator>
+  <HH.Thrumbo.Stakes.NoBeacon>没有通电的轨道贸易信标：够不到任何货物。</HH.Thrumbo.Stakes.NoBeacon>
+  <HH.Thrumbo.Stakes.Refresh>刷新</HH.Thrumbo.Stakes.Refresh>
+  <HH.Thrumbo.Stakes.Tab.Goods>货物（{0}）</HH.Thrumbo.Stakes.Tab.Goods>
+  <HH.Thrumbo.Stakes.Tab.Animals>动物（{0}）</HH.Thrumbo.Stakes.Tab.Animals>
+  <HH.Thrumbo.Stakes.Tab.Prisoners>囚犯（{0}）</HH.Thrumbo.Stakes.Tab.Prisoners>
+  <HH.Thrumbo.Stakes.PawnsCozy>从「标准」内容强度起，可以用动物和囚犯下注。</HH.Thrumbo.Stakes.PawnsCozy>
+  <HH.Thrumbo.Stakes.Empty.Goods>信标范围内没有商人会购买的东西。</HH.Thrumbo.Stakes.Empty.Goods>
+  <HH.Thrumbo.Stakes.Empty.Animals>眼下没有殖民地动物可以交出。</HH.Thrumbo.Stakes.Empty.Animals>
+  <HH.Thrumbo.Stakes.Empty.Prisoners>没有安全看管的成年囚犯。殖民者、奴隶、儿童和访客永远不能作为赌注。</HH.Thrumbo.Stakes.Empty.Prisoners>
+  <HH.Thrumbo.Stakes.UnitTip>售价：每件 {0}\n− 典当商差价 {1} %\n− 手续费 {2} %\n= 每件赌注价值 {3}</HH.Thrumbo.Stakes.UnitTip>
+  <HH.Thrumbo.Stakes.All>全部</HH.Thrumbo.Stakes.All>
+  <HH.Thrumbo.Stakes.Game>游戏</HH.Thrumbo.Stakes.Game>
+  <HH.Thrumbo.Stakes.RouletteEdge>庄家优势：{0} %</HH.Thrumbo.Stakes.RouletteEdge>
+  <HH.Thrumbo.Stakes.WinTo>赢利</HH.Thrumbo.Stakes.WinTo>
+  <HH.Thrumbo.Stakes.ToAccount>存入账户</HH.Thrumbo.Stakes.ToAccount>
+  <HH.Thrumbo.Stakes.ToPod>由空投舱送达</HH.Thrumbo.Stakes.ToPod>
+  <HH.Thrumbo.Stakes.ToPodTip>银币由空投舱送到交易空投点。零头会暂存在店里，直到凑满一枚。</HH.Thrumbo.Stakes.ToPodTip>
+  <HH.Thrumbo.Stakes.Value>赌注价值：{0}</HH.Thrumbo.Stakes.Value>
+  <HH.Thrumbo.Stakes.ValueTip>店里典当商愿意出的价：原版售价，按 {4} 的技能计算：{0}\n− 典当商差价 {1} %（模组设置）\n− 手续费 {2} %\n= 赌注价值 {3}\n\n只读取市场价值；物品本身不会被改动。</HH.Thrumbo.Stakes.ValueTip>
+  <HH.Thrumbo.Stakes.Rule>赢 ×m：你留下一切，并以银币获得 价值 ×（m − 1）。输：东西没了，如同卖掉。低于 ×1 的小奖以银币支付，东西仍然没了。</HH.Thrumbo.Stakes.Rule>
+  <HH.Thrumbo.Stakes.GoRoulette>下注并转动轮盘</HH.Thrumbo.Stakes.GoRoulette>
+  <HH.Thrumbo.Stakes.GoSlots>下注并拉动拉杆</HH.Thrumbo.Stakes.GoSlots>
+  <HH.Thrumbo.Stakes.Confirm>把 {0}（价值 {1}）押在这一局上？\n\n输了的话，它们就永远没了。</HH.Thrumbo.Stakes.Confirm>
+  <HH.Thrumbo.Stakes.Won>按 ×{0} 支付：你留下一切，赢得 {1}</HH.Thrumbo.Stakes.Won>
+  <HH.Thrumbo.Stakes.Push>平手：你留下一切</HH.Thrumbo.Stakes.Push>
+  <HH.Thrumbo.Stakes.Lost>输了：赌注归店里所有</HH.Thrumbo.Stakes.Lost>
+  <HH.Thrumbo.Stakes.LostPart>输了，返还 {0}：赌注归店里所有</HH.Thrumbo.Stakes.LostPart>
+  <HH.Thrumbo.Stakes.HistoryLine>赌注：{0} · {1}</HH.Thrumbo.Stakes.HistoryLine>
+  <HH.Thrumbo.Stakes.More>还有 {0} 项</HH.Thrumbo.Stakes.More>
+  <HH.Thrumbo.Stakes.Err.Off>模组设置中已关闭「加码」。</HH.Thrumbo.Stakes.Err.Off>
+  <HH.Thrumbo.Stakes.Err.NoNegotiator>地图上必须有一位能谈价格的殖民者。</HH.Thrumbo.Stakes.Err.NoNegotiator>
+  <HH.Thrumbo.Stakes.Err.Nothing>请选择要下注的东西。</HH.Thrumbo.Stakes.Err.Nothing>
+  <HH.Thrumbo.Stakes.Err.Gone>{0} 已够不到。请刷新列表。</HH.Thrumbo.Stakes.Err.Gone>
+  <HH.Setting.thrumbo.raiseTheStakes>幸运 Thrumbo：「加码」</HH.Setting.thrumbo.raiseTheStakes>
+  <HH.Setting.thrumbo.raiseTheStakes.Desc>在幸运 Thrumbo 上添加「加码…」按钮：用通电的轨道贸易信标范围内的货物代替银币下注；从「标准」内容强度起，还可以用殖民地动物和囚犯下注（与原版出售相同）。殖民者、奴隶、儿童和访客永远不会被列入。</HH.Setting.thrumbo.raiseTheStakes.Desc>
+  <HH.Setting.thrumbo.pawnbrokerSpread>幸运 Thrumbo：货物赌注的典当商差价</HH.Setting.thrumbo.pawnbrokerSpread>
+  <HH.Setting.thrumbo.pawnbrokerSpread.Desc>下注货物按典当商的出价计算（原版售价，以你最会谈价的人为准），再减去这个差价和固定的 2 % 手续费。</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
 </LanguageData>

@@ -4,4 +4,16 @@
   <HH.Setting.core.researchMode.Desc>Полный: дерево исследований Hearth &amp; Harbor и дерево Silverline ограничивают постройки и функции. Выкл.: всё доступно с самого начала (тёмным проектам подземелья всё равно нужно открытие).</HH.Setting.core.researchMode.Desc>
   <HH.Enum.CoreResearchMode.Full>Полный</HH.Enum.CoreResearchMode.Full>
   <HH.Enum.CoreResearchMode.Off>Выкл.</HH.Enum.CoreResearchMode.Off>
+  <HH.Gate.ModuleOff>Модуль выключен: {0}</HH.Gate.ModuleOff>
+  <HH.Gate.ModuleOffInspect>ничего не делает, пока модуль снова не включат.</HH.Gate.ModuleOffInspect>
+  <HH.Gate.CannotPlace>Недоступно: {0} выключен в этой игре.</HH.Gate.CannotPlace>
+  <HH.Module.Core>Ядро</HH.Module.Core>
+  <HH.Module.Inn>Гостиница и отель</HH.Module.Inn>
+  <HH.Module.ShopsFood>Магазины и еда</HH.Module.ShopsFood>
+  <HH.Module.Casino>Казино</HH.Module.Casino>
+  <HH.Module.Wellness>Велнес</HH.Module.Wellness>
+  <HH.Module.CityLife>Городская жизнь</HH.Module.CityLife>
+  <HH.Module.Underworld>Криминальный мир</HH.Module.Underworld>
+  <HH.Module.Bank>Банк (Silverline)</HH.Module.Bank>
+  <HH.Module.AiFlavour>ИИ-добавки</HH.Module.AiFlavour>
 </LanguageData>

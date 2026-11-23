@@ -135,4 +135,10 @@
   <HH.Venue.Tier.Luxury>Luxe</HH.Venue.Tier.Luxury>
   <HH.Venue.Tier.Premium>Haut de gamme</HH.Venue.Tier.Premium>
   <HH.Venue.Tier.Standard>Standard</HH.Venue.Tier.Standard>
+  <HH.Venue.CheckDishes>Assiettes sur les étagères</HH.Venue.CheckDishes>
+  <HH.Venue.CheckNoDishes>Aucune assiette en vente → cuisiner des plats et les ranger dans la pièce</HH.Venue.CheckNoDishes>
+  <HH.Venue.MarketBlock.NoHome>pas de carte de base</HH.Venue.MarketBlock.NoHome>
+  <HH.Venue.MarketBlock.NoShop>pas de boutique</HH.Venue.MarketBlock.NoShop>
+  <HH.Venue.MarketBlock.Stalls>étals de marché {0}/{1}</HH.Venue.MarketBlock.Stalls>
+  <HH.Venue.MarketBlock.Renown>renommée {0}/{1}</HH.Venue.MarketBlock.Renown>
 </LanguageData>

@@ -135,4 +135,10 @@
   <HH.Venue.Tier.Luxury>Lujo</HH.Venue.Tier.Luxury>
   <HH.Venue.Tier.Premium>Premium</HH.Venue.Tier.Premium>
   <HH.Venue.Tier.Standard>Estándar</HH.Venue.Tier.Standard>
+  <HH.Venue.CheckDishes>Platos en las estanterías</HH.Venue.CheckDishes>
+  <HH.Venue.CheckNoDishes>No hay platos a la venta → cocina y guárdalos en la habitación</HH.Venue.CheckNoDishes>
+  <HH.Venue.MarketBlock.NoHome>sin mapa base</HH.Venue.MarketBlock.NoHome>
+  <HH.Venue.MarketBlock.NoShop>sin tienda</HH.Venue.MarketBlock.NoShop>
+  <HH.Venue.MarketBlock.Stalls>puestos de mercado {0}/{1}</HH.Venue.MarketBlock.Stalls>
+  <HH.Venue.MarketBlock.Renown>renombre {0}/{1}</HH.Venue.MarketBlock.Renown>
 </LanguageData>

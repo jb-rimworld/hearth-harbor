@@ -4,4 +4,16 @@
   <HH.Setting.core.researchMode.Desc>完整：Hearth &amp; Harbor 与 Silverline 的研究树会限制其建筑和功能的解锁。关闭：一切从一开始即可使用（地下世界的暗影项目仍需先被发现）。</HH.Setting.core.researchMode.Desc>
   <HH.Enum.CoreResearchMode.Full>完整</HH.Enum.CoreResearchMode.Full>
   <HH.Enum.CoreResearchMode.Off>关闭</HH.Enum.CoreResearchMode.Off>
+  <HH.Gate.ModuleOff>模块已关闭：{0}</HH.Gate.ModuleOff>
+  <HH.Gate.ModuleOffInspect>在模块重新开启之前，这不会产生任何效果。</HH.Gate.ModuleOffInspect>
+  <HH.Gate.CannotPlace>不可用：本局游戏中 {0} 已关闭。</HH.Gate.CannotPlace>
+  <HH.Module.Core>核心</HH.Module.Core>
+  <HH.Module.Inn>客栈与酒店</HH.Module.Inn>
+  <HH.Module.ShopsFood>商店与餐饮</HH.Module.ShopsFood>
+  <HH.Module.Casino>赌场</HH.Module.Casino>
+  <HH.Module.Wellness>养生</HH.Module.Wellness>
+  <HH.Module.CityLife>城市生活</HH.Module.CityLife>
+  <HH.Module.Underworld>地下世界</HH.Module.Underworld>
+  <HH.Module.Bank>银行（Silverline）</HH.Module.Bank>
+  <HH.Module.AiFlavour>AI 风味</HH.Module.AiFlavour>
 </LanguageData>

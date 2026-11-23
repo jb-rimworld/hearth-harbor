@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServiceQuality.description>この人にサービスされるのがどれだけ心地よいか。おしゃべりした宿泊客の満足度に加算される。</HH_ServiceQuality.description>
+  <HH_GuestExpectation.description>宿泊客が滞在に抱く期待に加算される。正なら満足させにくくなる。洗練された舌は、ゲスト自身の期待を上げる。口のうまいホストは、歓迎したり案内したりするゲストの期待を下げる。</HH_GuestExpectation.description>
+  <HH_Dexterity.description>ディーラーとしての配る速さ: 1ポイントごとに、そのテーブルのラウンドが 3 % 短くなる（最大 30 %）。</HH_Dexterity.description>
+  <HH_TableSkill.label>カードの勘</HH_TableSkill.label>
+  <HH_TableSkill.description>この人がブラックジャックやポーカーをするとき、加算される知性の段階。</HH_TableSkill.description>
+  <HH_FraudDetection.label>目配り</HH_FraudDetection.label>
+  <HH_FraudDetection.description>この人がマップにいる間、まっとうな宿泊客が奥の部屋につまずく確率をこの値で割る。最も注意深いコロニストが数えられる。</HH_FraudDetection.description>
+  <HH_BrawlRisk.description>この人の部屋での口論が殴り合いに発展する確率の倍率。近くで最も低い値が数えられる。</HH_BrawlRisk.description>
+  <HH_RumorSpread.description>帰っていく宿泊客が宿の名声を良くも悪くも動かす量の倍率。コロニーで最もおしゃべりな者が数えられる。</HH_RumorSpread.description>
+  <HH_CareProgress.label>施術の質</HH_CareProgress.label>
+  <HH_CareProgress.description>この人が行うマッサージの質の倍率。</HH_CareProgress.description>
+  <HH_BankFeeFactor.description>この人がコロニーに住んでいる間の、銀行の手数料の倍率。最も低い値が数えられる。</HH_BankFeeFactor.description>
+  <HH_RecruitPrice.description>宿泊客がコロニーに加わるとき、この人が味方につけた場合に、下限5を超えて上乗せされる信用の割増しの倍率。</HH_RecruitPrice.description>
+  <HH_TipFactor.label>宿泊客の気前のよさ</HH_TipFactor.label>
+  <HH_TipFactor.description>宿泊客としてこの人が 1 回の購入に予算のどれだけを使うかの倍率。</HH_TipFactor.description>
+  <HH_DishQuality.description>調理されたレストランの料理を、品質 1 段階上げる確率。</HH_DishQuality.description>
+  <HH_FamilyCheer.description>この人が歓迎したり案内したりする子どもや家族のサービス評価に加算される。</HH_FamilyCheer.description>
+  <HH_PriceFeel.description>この人が接客するとき、宿泊客が値段を高いと感じる度合いに加算される。</HH_PriceFeel.description>
+</LanguageData>

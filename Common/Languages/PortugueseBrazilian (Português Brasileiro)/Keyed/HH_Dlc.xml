@@ -43,4 +43,7 @@
   <HH.Setting.dlc.traitSpawn.Desc>Sortudo, Azarado, Anfitrião nato e os outros traços de Hearth &amp; Harbor podem surgir em novos personagens gerados. Personagens existentes mantêm os seus. Desligado: só são adicionados manualmente ou pelo editor.</HH.Setting.dlc.traitSpawn.Desc>
   <HH.Setting.dlc.traitRarity>Frequência dos traços</HH.Setting.dlc.traitRarity>
   <HH.Setting.dlc.traitRarity.Desc>Multiplicador da frequência com que nossos traços são sorteados para novos personagens (1 = mesma raridade da maioria dos traços vanilla).</HH.Setting.dlc.traitRarity.Desc>
+  <HH.Dlc.Noble.NoBed>Nenhuma cama digna de um hóspede</HH.Dlc.Noble.NoBed>
+  <HH.Dlc.Noble.RoomFits>Quarto condizente com meu título</HH.Dlc.Noble.RoomFits>
+  <HH.Dlc.Noble.RoomBeneath>Quarto abaixo do meu título</HH.Dlc.Noble.RoomBeneath>
 </LanguageData>

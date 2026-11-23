@@ -4,4 +4,16 @@
   <HH.Setting.core.researchMode.Desc>フル: Hearth &amp; Harbor と Silverline の研究ツリーが、それぞれの建物や機能を解放します。オフ: 最初からすべてが利用可能になります（ただし冥界の暗いプロジェクトは、なお発見が必要です）。</HH.Setting.core.researchMode.Desc>
   <HH.Enum.CoreResearchMode.Full>フル</HH.Enum.CoreResearchMode.Full>
   <HH.Enum.CoreResearchMode.Off>オフ</HH.Enum.CoreResearchMode.Off>
+  <HH.Gate.ModuleOff>モジュールオフ: {0}</HH.Gate.ModuleOff>
+  <HH.Gate.ModuleOffInspect>モジュールを再びオンにするまで、何の効果もありません。</HH.Gate.ModuleOffInspect>
+  <HH.Gate.CannotPlace>使用不可: {0} はこのゲームではオフになっています。</HH.Gate.CannotPlace>
+  <HH.Module.Core>コア</HH.Module.Core>
+  <HH.Module.Inn>宿＆ホテル</HH.Module.Inn>
+  <HH.Module.ShopsFood>店＆飲食</HH.Module.ShopsFood>
+  <HH.Module.Casino>カジノ</HH.Module.Casino>
+  <HH.Module.Wellness>ウェルネス</HH.Module.Wellness>
+  <HH.Module.CityLife>街の暮らし</HH.Module.CityLife>
+  <HH.Module.Underworld>裏社会</HH.Module.Underworld>
+  <HH.Module.Bank>銀行（Silverline）</HH.Module.Bank>
+  <HH.Module.AiFlavour>AI風味</HH.Module.AiFlavour>
 </LanguageData>

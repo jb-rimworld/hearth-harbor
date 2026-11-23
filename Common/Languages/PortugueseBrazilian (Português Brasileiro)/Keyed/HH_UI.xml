@@ -284,7 +284,7 @@
   <HH.Setting.core.infiniteMoney>Dinheiro infinito dos hóspedes</HH.Setting.core.infiniteMoney>
   <HH.Setting.core.picky>Hóspedes exigentes</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>Os hóspedes esperam um pouco mais de cada estadia (expectativa +0,1).</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.ironBank>Bolsa de ferro / Banco de ferro</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank>Banco de ferro</HH.Setting.core.ironBank>
   <HH.Setting.core.noResearchGating>Sem bloqueio de pesquisa</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Tudo das árvores do Hearth &amp; Harbor e do Silverline está disponível desde o início.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>Submundo pacífico</HH.Setting.core.peacefulUnderworld>
@@ -294,4 +294,23 @@
   <HH.UI.Overview.Arrivals>Chegadas, próximas 24 h: {0}, cerca de {1} grupos por dia esperados.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>ninguém agendado ainda</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>{0} grupo(s) agendado(s) (cerca de {1} hóspede(s))</HH.UI.Overview.Arrivals.Planned>
+  <HH.UI.Content.Decline>Não, manter {0}</HH.UI.Content.Decline>
+  <HH.UI.Diff.Ladder>Submundo: limites de penalidade por incidente</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.WarnHard>A partir de Overbooked, incidentes do submundo podem custar boa vontade, renome e prata de verdade (veja os limites abaixo).</HH.UI.Diff.WarnHard>
+  <HH.UI.Feel.4>Incidentes do submundo passam a custar boa vontade, renome e multas.</HH.UI.Feel.4>
+  <HH.UI.Feel.5>Penalidades maiores por incidentes do submundo, um banco mais duro.</HH.UI.Feel.5>
+  <HH.UI.Feel.6>Tudo é difícil e nada tem limite.</HH.UI.Feel.6>
+  <HH.UI.Calc.slotRtp>Retorno dos caça-níqueis (RTP)</HH.UI.Calc.slotRtp>
+  <HH.UI.Calc.slotRtp.Desc>Parcela de cada aposta que a máquina devolve em média. A casa fica com o resto.</HH.UI.Calc.slotRtp.Desc>
+  <HH.UI.Ladder.Goodwill>Perda de boa vontade por incidente (limite)</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>O máximo de boa vontade que um incidente do submundo pode tirar de você.</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Renown.Desc>O máximo de renome que um incidente do submundo pode lhe custar.</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Fine>Multas (limite, em prata)</HH.UI.Ladder.Fine>
+  <HH.UI.Ladder.Fine.Desc>O máximo que um único incidente do submundo pode multar você.</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Footer>Estes limites valem para incidentes do submundo. As etapas de cobrança do banco seguem as próprias configurações.</HH.UI.Ladder.Footer>
+  <HH.Setting.core.neverDie.Desc>Hóspedes são derrubados em vez de mortos. Continuam vivos, caídos, até alguém cuidar deles.</HH.Setting.core.neverDie.Desc>
+  <HH.Setting.core.infiniteMoney.Desc>Hóspedes que chegam com esta opção ligada levam uma carteira sem fundo. O fator de dinheiro dos hóspedes não tem efeito sobre eles.</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.ironBank.Desc>A cobrança de dívidas sempre sobe à etapa mais alta, qualquer que seja a dificuldade. Ninguém adia suas parcelas em silêncio.</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Locais sombrios funcionam sem violência: sem ringue de luta, sem interrogatório, sem caça a pessoas, sem clínica, sem extorsão de proteção. Sala dos fundos, receptador e lounge de drogas permanecem.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.perfMode.Desc>O planejamento dos hóspedes e as verificações de cômodos rodam pela metade das vezes. Ajuda em computadores lentos; os hóspedes podem reagir um pouco mais tarde.</HH.Setting.core.perfMode.Desc>
 </LanguageData>

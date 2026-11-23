@@ -43,4 +43,7 @@
   <HH.Setting.dlc.traitSpawn.Desc>행운, 불운, 타고난 주인 등 Hearth &amp; Harbor 특성이 새로 생성되는 캐릭터에게 나타날 수 있습니다. 기존 캐릭터는 그대로 유지됩니다. 끄면 직접 또는 편집기로만 추가됩니다.</HH.Setting.dlc.traitSpawn.Desc>
   <HH.Setting.dlc.traitRarity>특성 빈도</HH.Setting.dlc.traitRarity>
   <HH.Setting.dlc.traitRarity.Desc>새 캐릭터에게 우리 특성이 뽑힐 빈도의 배율입니다 (1 = 대부분의 바닐라 특성과 같은 희귀도).</HH.Setting.dlc.traitRarity.Desc>
+  <HH.Dlc.Noble.NoBed>손님에게 어울리는 침대가 없음</HH.Dlc.Noble.NoBed>
+  <HH.Dlc.Noble.RoomFits>방이 제 직함에 어울림</HH.Dlc.Noble.RoomFits>
+  <HH.Dlc.Noble.RoomBeneath>방이 제 직함에 못 미침</HH.Dlc.Noble.RoomBeneath>
 </LanguageData>

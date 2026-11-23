@@ -135,4 +135,10 @@
   <HH.Venue.Tier.Luxury>고급</HH.Venue.Tier.Luxury>
   <HH.Venue.Tier.Premium>프리미엄</HH.Venue.Tier.Premium>
   <HH.Venue.Tier.Standard>표준</HH.Venue.Tier.Standard>
+  <HH.Venue.CheckDishes>선반에 놓인 접시</HH.Venue.CheckDishes>
+  <HH.Venue.CheckNoDishes>판매할 접시 없음 → 요리를 만들어 방에 보관</HH.Venue.CheckNoDishes>
+  <HH.Venue.MarketBlock.NoHome>홈 지도 없음</HH.Venue.MarketBlock.NoHome>
+  <HH.Venue.MarketBlock.NoShop>상점 없음</HH.Venue.MarketBlock.NoShop>
+  <HH.Venue.MarketBlock.Stalls>시장 노점 {0}/{1}</HH.Venue.MarketBlock.Stalls>
+  <HH.Venue.MarketBlock.Renown>명성 {0}/{1}</HH.Venue.MarketBlock.Renown>
 </LanguageData>

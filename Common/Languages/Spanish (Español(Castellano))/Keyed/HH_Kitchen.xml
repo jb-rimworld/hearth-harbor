@@ -114,7 +114,7 @@
   <HH.Setting.kitchen.allKnown>Todos los platos conocidos</HH.Setting.kitchen.allKnown>
   <HH.Setting.kitchen.allKnown.Desc>Omite el aprendizaje: cada plato del menú puede cocinarse en cuanto estén listos sus dispositivos.</HH.Setting.kitchen.allKnown.Desc>
   <HH.Setting.kitchen.darkMenu>Menú oscuro (cerdo largo)</HH.Setting.kitchen.darkMenu>
-  <HH.Setting.kitchen.darkMenu.Desc>Permite los platos de cerdo largo. También se desbloquean con una ideoreligión que aprueba el canibalismo.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Setting.kitchen.darkMenu.Desc>Permite los platos de «cerdo largo». Siempre requiere la intensidad de contenido Oscuro o Sombrío; con eso, una ideología que aprueba el canibalismo los desbloquea aunque esto esté desactivado.</HH.Setting.kitchen.darkMenu.Desc>
   <HH.Kitchen.Cookbook.Teaches>Enseña: {0}</HH.Kitchen.Cookbook.Teaches>
   <HH.Kitchen.Cookbook.Empty>Las páginas están en blanco.</HH.Kitchen.Cookbook.Empty>
   <HH.Kitchen.Cookbook.AllKnown>La colonia ya conoce todos los platos de este libro.</HH.Kitchen.Cookbook.AllKnown>

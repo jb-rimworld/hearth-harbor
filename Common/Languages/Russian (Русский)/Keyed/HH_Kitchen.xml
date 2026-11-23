@@ -114,7 +114,7 @@
   <HH.Setting.kitchen.allKnown>Все блюда известны</HH.Setting.kitchen.allKnown>
   <HH.Setting.kitchen.allKnown.Desc>Пропустить освоение: каждое блюдо меню можно готовить, как только стоит нужное оборудование.</HH.Setting.kitchen.allKnown.Desc>
   <HH.Setting.kitchen.darkMenu>Темное меню (длинная свинина)</HH.Setting.kitchen.darkMenu>
-  <HH.Setting.kitchen.darkMenu.Desc>Разрешить блюда из длинной свинины. Их также открывает идеология, одобряющая каннибализм.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Setting.kitchen.darkMenu.Desc>Разрешить блюда из «длинной свинины». Требует интенсивности «Тёмный» или «Мрачный»; при этом идеология, одобряющая каннибализм, открывает их даже при выключенной настройке.</HH.Setting.kitchen.darkMenu.Desc>
   <HH.Kitchen.Cookbook.Teaches>Учит: {0}</HH.Kitchen.Cookbook.Teaches>
   <HH.Kitchen.Cookbook.Empty>Страницы пусты.</HH.Kitchen.Cookbook.Empty>
   <HH.Kitchen.Cookbook.AllKnown>Колония уже знает все блюда из этой книги.</HH.Kitchen.Cookbook.AllKnown>

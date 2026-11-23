@@ -290,4 +290,9 @@
   <HH.Setting.inn.stayNightsMin.Desc>숙박 손님이 머물러야 하는 최소 박 수입니다.</HH.Setting.inn.stayNightsMin.Desc>
   <HH.Setting.inn.waitThoughts>대기 및 야간 호출 벨 생각</HH.Setting.inn.waitThoughts>
   <HH.Setting.inn.waitThoughts.Desc>아무도 오지 않는데 헛되이 기다리거나 야간 벨을 울리는 손님은 기분이 상합니다. 대기실이 있으면 덜합니다.</HH.Setting.inn.waitThoughts.Desc>
+  <HH.Inn.Event.SponsoredBed>침대는 파티가 예약하고 값을 치렀습니다.</HH.Inn.Event.SponsoredBed>
+  <HH.Inn.Event.Charmed>{0}이(가) 이곳을 예상보다 훨씬 괜찮게 소개했습니다.</HH.Inn.Event.Charmed>
+  <HH.Inn.PriceMode.ManualSet>고정 가격…</HH.Inn.PriceMode.ManualSet>
+  <HH.Inn.PriceMode.ManualValue>1박 {0} 은화</HH.Inn.PriceMode.ManualValue>
+  <HH.Inn.PriceMode.Manual>고정 가격</HH.Inn.PriceMode.Manual>
 </LanguageData>

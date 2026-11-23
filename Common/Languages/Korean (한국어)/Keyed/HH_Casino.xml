@@ -171,4 +171,73 @@
   <HH.Thrumbo.Err.HandOpen>아직 진행 중인 판이 있습니다.</HH.Thrumbo.Err.HandOpen>
   <HH.Thrumbo.Err.NoHand>진행 중인 판이 없습니다.</HH.Thrumbo.Err.NoHand>
   <HH.Thrumbo.Err.NoDouble>더블다운은 처음 두 장에서만 할 수 있습니다.</HH.Thrumbo.Err.NoDouble>
+  <HH.Thrumbo.TotalsGoods>물품 걸기 (가치는 은화 기준, 장부에는 없음): {0} 라운드 · 건 금액 {1} · 환급 {2} · 결과 {3}</HH.Thrumbo.TotalsGoods>
+  <HH.Thrumbo.Ago>전</HH.Thrumbo.Ago>
+  <HH.Thrumbo.Sym.cherry>체리</HH.Thrumbo.Sym.cherry>
+  <HH.Thrumbo.Sym.lemon>레몬</HH.Thrumbo.Sym.lemon>
+  <HH.Thrumbo.Sym.plum>자두</HH.Thrumbo.Sym.plum>
+  <HH.Thrumbo.Sym.bell>종</HH.Thrumbo.Sym.bell>
+  <HH.Thrumbo.Sym.bar>바</HH.Thrumbo.Sym.bar>
+  <HH.Thrumbo.Sym.seven>세븐</HH.Thrumbo.Sym.seven>
+  <HH.Thrumbo.Sym.muffalo>머팔로</HH.Thrumbo.Sym.muffalo>
+  <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
+  <HH.Thrumbo.Pay.Cherry2>2 × 체리 (1번+2번 릴)</HH.Thrumbo.Pay.Cherry2>
+  <HH.Thrumbo.Pay.Cherry1>1번 릴의 체리</HH.Thrumbo.Pay.Cherry1>
+  <HH.Thrumbo.Bet.Straight>단일 {0}</HH.Thrumbo.Bet.Straight>
+  <HH.Thrumbo.Bet.Split>분할 {0}/{1}</HH.Thrumbo.Bet.Split>
+  <HH.Thrumbo.Bet.Street>가로줄 {0}-{1}</HH.Thrumbo.Bet.Street>
+  <HH.Thrumbo.Bet.Corner>코너 {0}</HH.Thrumbo.Bet.Corner>
+  <HH.Thrumbo.Bet.SixLine>여섯 줄 {0}-{1}</HH.Thrumbo.Bet.SixLine>
+  <HH.Thrumbo.Bet.Column>열 {0}</HH.Thrumbo.Bet.Column>
+  <HH.Thrumbo.Bet.Dozen>다스 {0}</HH.Thrumbo.Bet.Dozen>
+  <HH.Thrumbo.Bet.Red>빨강</HH.Thrumbo.Bet.Red>
+  <HH.Thrumbo.Bet.Black>검정</HH.Thrumbo.Bet.Black>
+  <HH.Thrumbo.Bet.Odd>홀수</HH.Thrumbo.Bet.Odd>
+  <HH.Thrumbo.Bet.Even>짝수</HH.Thrumbo.Bet.Even>
+  <HH.Thrumbo.Bet.Low>낮음 1-18</HH.Thrumbo.Bet.Low>
+  <HH.Thrumbo.Bet.High>높음 19-36</HH.Thrumbo.Bet.High>
+  <HH.Thrumbo.Stakes.Button>판돈 올리기…</HH.Thrumbo.Stakes.Button>
+  <HH.Thrumbo.Stakes.ButtonTip>은화 대신 물건, 동물 또는 죄수를 겁니다. 하우스의 전당포 주인이 가치를 매깁니다.</HH.Thrumbo.Stakes.ButtonTip>
+  <HH.Thrumbo.Stakes.Title>판돈 올리기</HH.Thrumbo.Stakes.Title>
+  <HH.Thrumbo.Stakes.Intro>은화 대신 물건을 테이블에 올립니다. 지면, 물건은 하우스가 사들인 것처럼 가져갑니다. 이기면 모두 되찾고, 하우스가 은화로 지급합니다.</HH.Thrumbo.Stakes.Intro>
+  <HH.Thrumbo.Stakes.Pawnbroker>The Lucky Thrumbo의 전당포 주인</HH.Thrumbo.Stakes.Pawnbroker>
+  <HH.Thrumbo.Stakes.ValuedBy>{0}이(가) 받는 가격으로 평가 (교역 가격 개선 {1}).</HH.Thrumbo.Stakes.ValuedBy>
+  <HH.Thrumbo.Stakes.NoNegotiator>이 지도에서 가격을 흥정할 수 있는 사람이 없습니다.</HH.Thrumbo.Stakes.NoNegotiator>
+  <HH.Thrumbo.Stakes.NoBeacon>전력이 들어온 궤도 교역 비콘이 없음: 닿는 물건 없음.</HH.Thrumbo.Stakes.NoBeacon>
+  <HH.Thrumbo.Stakes.Refresh>새로고침</HH.Thrumbo.Stakes.Refresh>
+  <HH.Thrumbo.Stakes.Tab.Goods>물건 ({0})</HH.Thrumbo.Stakes.Tab.Goods>
+  <HH.Thrumbo.Stakes.Tab.Animals>동물 ({0})</HH.Thrumbo.Stakes.Tab.Animals>
+  <HH.Thrumbo.Stakes.Tab.Prisoners>죄수 ({0})</HH.Thrumbo.Stakes.Tab.Prisoners>
+  <HH.Thrumbo.Stakes.PawnsCozy>동물과 죄수는 콘텐츠 강도 표준 이상에서 걸 수 있습니다.</HH.Thrumbo.Stakes.PawnsCozy>
+  <HH.Thrumbo.Stakes.Empty.Goods>전력이 들어온 궤도 교역 비콘 범위 안에 상인이 살 만한 물건이 없습니다.</HH.Thrumbo.Stakes.Empty.Goods>
+  <HH.Thrumbo.Stakes.Empty.Animals>지금 넘길 수 있는 식민지 동물이 없습니다.</HH.Thrumbo.Stakes.Empty.Animals>
+  <HH.Thrumbo.Stakes.Empty.Prisoners>안전하게 구금된 성인 죄수가 없습니다. 식민지 주민, 노예, 아이, 손님은 절대 판돈이 되지 않습니다.</HH.Thrumbo.Stakes.Empty.Prisoners>
+  <HH.Thrumbo.Stakes.UnitTip>판매 가격: 개당 {0}\n− 전당포 스프레드 {1} %\n− 수수료 {2} %\n= 판돈 가치 개당 {3}</HH.Thrumbo.Stakes.UnitTip>
+  <HH.Thrumbo.Stakes.All>전체</HH.Thrumbo.Stakes.All>
+  <HH.Thrumbo.Stakes.Game>게임</HH.Thrumbo.Stakes.Game>
+  <HH.Thrumbo.Stakes.RouletteEdge>하우스 엣지: {0} %</HH.Thrumbo.Stakes.RouletteEdge>
+  <HH.Thrumbo.Stakes.WinTo>당첨금</HH.Thrumbo.Stakes.WinTo>
+  <HH.Thrumbo.Stakes.ToAccount>계좌로</HH.Thrumbo.Stakes.ToAccount>
+  <HH.Thrumbo.Stakes.ToPod>드롭 포드로</HH.Thrumbo.Stakes.ToPod>
+  <HH.Thrumbo.Stakes.ToPodTip>은화는 교역 드롭 지점의 드롭 포드로 도착합니다. 쌓이기 전까지 자잘한 동전 몇 푼은 하우스에 남습니다.</HH.Thrumbo.Stakes.ToPodTip>
+  <HH.Thrumbo.Stakes.Value>판돈 가치: {0}</HH.Thrumbo.Stakes.Value>
+  <HH.Thrumbo.Stakes.ValueTip>하우스의 전당포 주인이 줄 금액: {4} 기술로 계산한 바닐라 판매 가격: {0}\n− 전당포 스프레드 {1} % (모드 설정)\n− 수수료 {2} %\n= 판돈 가치 {3}\n\n시장 가치만 읽습니다. 물건 자체는 바뀌지 않습니다.</HH.Thrumbo.Stakes.ValueTip>
+  <HH.Thrumbo.Stakes.Rule>이기면 ×m: 모두 되찾고 가치 × (m − 1)을 은화로 받습니다. 지면: 물건은 판매된 것처럼 사라집니다. ×1 미만의 작은 상금은 은화로 지급되지만, 물건은 그래도 사라집니다.</HH.Thrumbo.Stakes.Rule>
+  <HH.Thrumbo.Stakes.GoRoulette>걸고 룰렛 돌리기</HH.Thrumbo.Stakes.GoRoulette>
+  <HH.Thrumbo.Stakes.GoSlots>걸고 레버 당기기</HH.Thrumbo.Stakes.GoSlots>
+  <HH.Thrumbo.Stakes.Confirm>{1} 가치의 {0}을(를) 한 라운드에 걸까요?\n\n지면 영영 사라집니다.</HH.Thrumbo.Stakes.Confirm>
+  <HH.Thrumbo.Stakes.Won>×{0} 지급: 모두 되찾고 {1} 획득</HH.Thrumbo.Stakes.Won>
+  <HH.Thrumbo.Stakes.Push>무승부: 모두 되찾음</HH.Thrumbo.Stakes.Push>
+  <HH.Thrumbo.Stakes.Lost>패배: 판돈은 하우스가 가져감</HH.Thrumbo.Stakes.Lost>
+  <HH.Thrumbo.Stakes.LostPart>패배, {0} 환급: 판돈은 하우스가 가져감</HH.Thrumbo.Stakes.LostPart>
+  <HH.Thrumbo.Stakes.HistoryLine>판돈: {0} · {1}</HH.Thrumbo.Stakes.HistoryLine>
+  <HH.Thrumbo.Stakes.More>그 밖에 {0}개</HH.Thrumbo.Stakes.More>
+  <HH.Thrumbo.Stakes.Err.Off>"판돈 올리기"는 모드 설정에서 꺼져 있습니다.</HH.Thrumbo.Stakes.Err.Off>
+  <HH.Thrumbo.Stakes.Err.NoNegotiator>가격을 흥정할 수 있는 식민지 주민이 지도에 있어야 합니다.</HH.Thrumbo.Stakes.Err.NoNegotiator>
+  <HH.Thrumbo.Stakes.Err.Nothing>판돈으로 걸 것을 고르세요.</HH.Thrumbo.Stakes.Err.Nothing>
+  <HH.Thrumbo.Stakes.Err.Gone>{0}은(는) 더 이상 닿지 않습니다. 목록을 새로고침하세요.</HH.Thrumbo.Stakes.Err.Gone>
+  <HH.Setting.thrumbo.raiseTheStakes>Lucky Thrumbo: "판돈 올리기"</HH.Setting.thrumbo.raiseTheStakes>
+  <HH.Setting.thrumbo.raiseTheStakes.Desc>Lucky Thrumbo에 "판돈 올리기…" 버튼을 추가합니다: 전력이 들어온 궤도 교역 비콘 범위의 물건을 은화 대신 걸고, 콘텐츠 강도 표준부터는 식민지 동물과 죄수도 걸 수 있습니다(바닐라 판매와 같은 방식). 식민지 주민, 노예, 아이, 손님에게는 절대 제안되지 않습니다.</HH.Setting.thrumbo.raiseTheStakes.Desc>
+  <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: 판돈 물건의 전당포 스프레드</HH.Setting.thrumbo.pawnbrokerSpread>
+  <HH.Setting.thrumbo.pawnbrokerSpread.Desc>판돈 물건은 하우스의 전당포 주인이 줄 금액(바닐라 판매 가격, 가장 뛰어난 흥정꾼 기준)에서 이 스프레드와 고정 2 % 수수료를 뺀 값으로 계산됩니다.</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
 </LanguageData>

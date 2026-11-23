@@ -290,4 +290,9 @@
   <HH.Setting.inn.stayNightsMin.Desc>泊まり客が滞在する最小泊数です。</HH.Setting.inn.stayNightsMin.Desc>
   <HH.Setting.inn.waitThoughts>待ち時間とナイトベルの思考</HH.Setting.inn.waitThoughts>
   <HH.Setting.inn.waitThoughts.Desc>待っても無駄だった客や、誰も来ないのにナイトベルを鳴らした客は、その気分に響きます。待合室があると和らぎます。</HH.Setting.inn.waitThoughts.Desc>
+  <HH.Inn.Event.SponsoredBed>ベッドは一行が予約して支払い済みです。</HH.Inn.Event.SponsoredBed>
+  <HH.Inn.Event.Charmed>{0} のおかげで、ここは思ったより良く聞こえた。</HH.Inn.Event.Charmed>
+  <HH.Inn.PriceMode.ManualSet>固定価格…</HH.Inn.PriceMode.ManualSet>
+  <HH.Inn.PriceMode.ManualValue>1泊 {0} 銀</HH.Inn.PriceMode.ManualValue>
+  <HH.Inn.PriceMode.Manual>固定価格</HH.Inn.PriceMode.Manual>
 </LanguageData>

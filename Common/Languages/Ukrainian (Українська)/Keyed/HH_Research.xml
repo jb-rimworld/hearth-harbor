@@ -4,4 +4,16 @@
   <HH.Setting.core.researchMode.Desc>Повний: дерева досліджень Hearth &amp; Harbor і Silverline визначають, які будівлі та функції доступні. Вимкнено: усе доступне з початку (темні проєкти підземного світу все одно потребують відкриття).</HH.Setting.core.researchMode.Desc>
   <HH.Enum.CoreResearchMode.Full>Повний</HH.Enum.CoreResearchMode.Full>
   <HH.Enum.CoreResearchMode.Off>Вимкнено</HH.Enum.CoreResearchMode.Off>
+  <HH.Gate.ModuleOff>Модуль вимкнено: {0}</HH.Gate.ModuleOff>
+  <HH.Gate.ModuleOffInspect>нічого не робить, доки модуль знову не увімкнено.</HH.Gate.ModuleOffInspect>
+  <HH.Gate.CannotPlace>Недоступно: {0} вимкнено в цій грі.</HH.Gate.CannotPlace>
+  <HH.Module.Core>Ядро</HH.Module.Core>
+  <HH.Module.Inn>Корчма й готель</HH.Module.Inn>
+  <HH.Module.ShopsFood>Крамниці й їжа</HH.Module.ShopsFood>
+  <HH.Module.Casino>Казино</HH.Module.Casino>
+  <HH.Module.Wellness>Велнес</HH.Module.Wellness>
+  <HH.Module.CityLife>Міське життя</HH.Module.CityLife>
+  <HH.Module.Underworld>Підпілля</HH.Module.Underworld>
+  <HH.Module.Bank>Банк (Silverline)</HH.Module.Bank>
+  <HH.Module.AiFlavour>ШІ-колорит</HH.Module.AiFlavour>
 </LanguageData>

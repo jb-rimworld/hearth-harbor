@@ -5,7 +5,7 @@
   <HH_Venue_Shop.label>крамниця</HH_Venue_Shop.label>
   <HH_Venue_Shop.description>Кімната, де гості купують товари. Усе, що лежить на полицях і в складах усередині кімнати, продається за ринковою вартістю, помноженою на коефіцієнт ціни вивіски. Без продавця крамниця працює як самообслуговування зі знижкою.</HH_Venue_Shop.description>
   <HH_Venue_Restaurant.label>ресторан</HH_Venue_Restaurant.label>
-  <HH_Venue_Restaurant.description>Кімната, де гості сідають і їдять. Столи, кухня та офіціант роблять її рестораном; самі страви готує кухня.</HH_Venue_Restaurant.description>
+  <HH_Venue_Restaurant.description>Кімната, де гості сідають їсти. Столи, кухня й офіціант роблять її рестораном; гості платять за страви й обіди з її полиць і столів. Готує кухня; несвіжі страви не продаються.</HH_Venue_Restaurant.description>
   <HH_Venue_Casino.label>казино</HH_Venue_Casino.label>
   <HH_Venue_Casino.description>Кімната з карточними столами, ігровими автоматами та крупʼє. Гості ставлять срібло на азартні ігри; дім тримає невелику, чесну перевагу.</HH_Venue_Casino.description>
   <HH_Venue_Spa.label>спа</HH_Venue_Spa.label>

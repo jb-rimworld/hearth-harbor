@@ -171,4 +171,73 @@
   <HH.Thrumbo.Err.HandOpen>Uma mão ainda está aberta.</HH.Thrumbo.Err.HandOpen>
   <HH.Thrumbo.Err.NoHand>Não há mão aberta.</HH.Thrumbo.Err.NoHand>
   <HH.Thrumbo.Err.NoDouble>Só é possível dobrar nas suas duas primeiras cartas.</HH.Thrumbo.Err.NoDouble>
+  <HH.Thrumbo.TotalsGoods>Apostas em mercadorias (valor em prata, fora do livro-caixa): {0} rodadas · apostado {1} · devolvido {2} · resultado {3}</HH.Thrumbo.TotalsGoods>
+  <HH.Thrumbo.Ago>atrás</HH.Thrumbo.Ago>
+  <HH.Thrumbo.Sym.cherry>cereja</HH.Thrumbo.Sym.cherry>
+  <HH.Thrumbo.Sym.lemon>limão</HH.Thrumbo.Sym.lemon>
+  <HH.Thrumbo.Sym.plum>ameixa</HH.Thrumbo.Sym.plum>
+  <HH.Thrumbo.Sym.bell>sino</HH.Thrumbo.Sym.bell>
+  <HH.Thrumbo.Sym.bar>barra</HH.Thrumbo.Sym.bar>
+  <HH.Thrumbo.Sym.seven>sete</HH.Thrumbo.Sym.seven>
+  <HH.Thrumbo.Sym.muffalo>muffalo</HH.Thrumbo.Sym.muffalo>
+  <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
+  <HH.Thrumbo.Pay.Cherry2>2 × cereja (carretéis 1+2)</HH.Thrumbo.Pay.Cherry2>
+  <HH.Thrumbo.Pay.Cherry1>cereja no carretel 1</HH.Thrumbo.Pay.Cherry1>
+  <HH.Thrumbo.Bet.Straight>Reta {0}</HH.Thrumbo.Bet.Straight>
+  <HH.Thrumbo.Bet.Split>Dividida {0}/{1}</HH.Thrumbo.Bet.Split>
+  <HH.Thrumbo.Bet.Street>Rua {0}-{1}</HH.Thrumbo.Bet.Street>
+  <HH.Thrumbo.Bet.Corner>Canto {0}</HH.Thrumbo.Bet.Corner>
+  <HH.Thrumbo.Bet.SixLine>Seis linhas {0}-{1}</HH.Thrumbo.Bet.SixLine>
+  <HH.Thrumbo.Bet.Column>Coluna {0}</HH.Thrumbo.Bet.Column>
+  <HH.Thrumbo.Bet.Dozen>Dúzia {0}</HH.Thrumbo.Bet.Dozen>
+  <HH.Thrumbo.Bet.Red>Vermelho</HH.Thrumbo.Bet.Red>
+  <HH.Thrumbo.Bet.Black>Preto</HH.Thrumbo.Bet.Black>
+  <HH.Thrumbo.Bet.Odd>Ímpar</HH.Thrumbo.Bet.Odd>
+  <HH.Thrumbo.Bet.Even>Par</HH.Thrumbo.Bet.Even>
+  <HH.Thrumbo.Bet.Low>Baixo 1-18</HH.Thrumbo.Bet.Low>
+  <HH.Thrumbo.Bet.High>Alto 19-36</HH.Thrumbo.Bet.High>
+  <HH.Thrumbo.Stakes.Button>Aumentar as apostas…</HH.Thrumbo.Stakes.Button>
+  <HH.Thrumbo.Stakes.ButtonTip>Aposte mercadorias, animais ou prisioneiros em vez de prata. São avaliados pelo penhorista da casa.</HH.Thrumbo.Stakes.ButtonTip>
+  <HH.Thrumbo.Stakes.Title>Aumentar as apostas</HH.Thrumbo.Stakes.Title>
+  <HH.Thrumbo.Stakes.Intro>Coloque coisas na mesa em vez de prata. Se perder, elas vão com a casa como se tivessem sido vendidas. Se ganhar, você fica com tudo e a casa paga em prata.</HH.Thrumbo.Stakes.Intro>
+  <HH.Thrumbo.Stakes.Pawnbroker>penhorista do Lucky Thrumbo</HH.Thrumbo.Stakes.Pawnbroker>
+  <HH.Thrumbo.Stakes.ValuedBy>Avaliado com os preços que {0} consegue (melhoria de preço comercial {1}).</HH.Thrumbo.Stakes.ValuedBy>
+  <HH.Thrumbo.Stakes.NoNegotiator>Ninguém neste mapa consegue negociar um preço.</HH.Thrumbo.Stakes.NoNegotiator>
+  <HH.Thrumbo.Stakes.NoBeacon>Nenhum farol orbital de comércio com energia: nenhuma mercadoria ao alcance.</HH.Thrumbo.Stakes.NoBeacon>
+  <HH.Thrumbo.Stakes.Refresh>Atualizar</HH.Thrumbo.Stakes.Refresh>
+  <HH.Thrumbo.Stakes.Tab.Goods>Mercadorias ({0})</HH.Thrumbo.Stakes.Tab.Goods>
+  <HH.Thrumbo.Stakes.Tab.Animals>Animais ({0})</HH.Thrumbo.Stakes.Tab.Animals>
+  <HH.Thrumbo.Stakes.Tab.Prisoners>Prisioneiros ({0})</HH.Thrumbo.Stakes.Tab.Prisoners>
+  <HH.Thrumbo.Stakes.PawnsCozy>Animais e prisioneiros podem ser apostados a partir da intensidade de conteúdo Padrão.</HH.Thrumbo.Stakes.PawnsCozy>
+  <HH.Thrumbo.Stakes.Empty.Goods>Nada ao alcance de um farol orbital de comércio com energia que um comerciante compraria.</HH.Thrumbo.Stakes.Empty.Goods>
+  <HH.Thrumbo.Stakes.Empty.Animals>Nenhum animal da colônia pode ser entregue agora.</HH.Thrumbo.Stakes.Empty.Animals>
+  <HH.Thrumbo.Stakes.Empty.Prisoners>Nenhum prisioneiro adulto seguro. Colonos, escravos, crianças e hóspedes nunca são apostas.</HH.Thrumbo.Stakes.Empty.Prisoners>
+  <HH.Thrumbo.Stakes.UnitTip>Preço de venda: {0} cada\n− margem do penhorista {1} %\n− taxa {2} %\n= valor da aposta {3} cada</HH.Thrumbo.Stakes.UnitTip>
+  <HH.Thrumbo.Stakes.All>Tudo</HH.Thrumbo.Stakes.All>
+  <HH.Thrumbo.Stakes.Game>Jogo</HH.Thrumbo.Stakes.Game>
+  <HH.Thrumbo.Stakes.RouletteEdge>Vantagem da casa: {0} %</HH.Thrumbo.Stakes.RouletteEdge>
+  <HH.Thrumbo.Stakes.WinTo>Ganhos</HH.Thrumbo.Stakes.WinTo>
+  <HH.Thrumbo.Stakes.ToAccount>para a conta</HH.Thrumbo.Stakes.ToAccount>
+  <HH.Thrumbo.Stakes.ToPod>por cápsula de queda</HH.Thrumbo.Stakes.ToPod>
+  <HH.Thrumbo.Stakes.ToPodTip>A prata chega em cápsulas de queda no ponto de queda comercial. Uma fração de moeda fica com a casa até somar.</HH.Thrumbo.Stakes.ToPodTip>
+  <HH.Thrumbo.Stakes.Value>Valor da aposta: {0}</HH.Thrumbo.Stakes.Value>
+  <HH.Thrumbo.Stakes.ValueTip>O que o penhorista da casa pagaria: o preço de venda vanilla com as habilidades de {4}: {0}\n− margem do penhorista {1} % (configurações do mod)\n− taxa {2} %\n= valor da aposta {3}\n\nSó o valor de mercado é lido; nada sobre os itens é alterado.</HH.Thrumbo.Stakes.ValueTip>
+  <HH.Thrumbo.Stakes.Rule>Ganha ×m: você fica com tudo e recebe valor × (m − 1) em prata. Perde: as coisas se foram, como se vendidas. Um pequeno prêmio abaixo de ×1 é pago em prata, as coisas ainda se foram.</HH.Thrumbo.Stakes.Rule>
+  <HH.Thrumbo.Stakes.GoRoulette>Apostar e girar a roleta</HH.Thrumbo.Stakes.GoRoulette>
+  <HH.Thrumbo.Stakes.GoSlots>Apostar e puxar a alavanca</HH.Thrumbo.Stakes.GoSlots>
+  <HH.Thrumbo.Stakes.Confirm>Apostar {0} (valendo {1}) em uma rodada?\n\nSe perder, elas se vão para sempre.</HH.Thrumbo.Stakes.Confirm>
+  <HH.Thrumbo.Stakes.Won>paga ×{0}: você fica com tudo e ganha {1}</HH.Thrumbo.Stakes.Won>
+  <HH.Thrumbo.Stakes.Push>empate: você fica com tudo</HH.Thrumbo.Stakes.Push>
+  <HH.Thrumbo.Stakes.Lost>perdeu: a aposta vai com a casa</HH.Thrumbo.Stakes.Lost>
+  <HH.Thrumbo.Stakes.LostPart>perdeu, {0} devolvido: a aposta vai com a casa</HH.Thrumbo.Stakes.LostPart>
+  <HH.Thrumbo.Stakes.HistoryLine>Aposta: {0} · {1}</HH.Thrumbo.Stakes.HistoryLine>
+  <HH.Thrumbo.Stakes.More>e mais {0}</HH.Thrumbo.Stakes.More>
+  <HH.Thrumbo.Stakes.Err.Off>"Aumentar as apostas" está desligado nas configurações do mod.</HH.Thrumbo.Stakes.Err.Off>
+  <HH.Thrumbo.Stakes.Err.NoNegotiator>Um colono que saiba negociar precisa estar no mapa.</HH.Thrumbo.Stakes.Err.NoNegotiator>
+  <HH.Thrumbo.Stakes.Err.Nothing>Escolha algo para apostar.</HH.Thrumbo.Stakes.Err.Nothing>
+  <HH.Thrumbo.Stakes.Err.Gone>{0} não está mais ao alcance. Atualize a lista.</HH.Thrumbo.Stakes.Err.Gone>
+  <HH.Setting.thrumbo.raiseTheStakes>Lucky Thrumbo: "Aumentar as apostas"</HH.Setting.thrumbo.raiseTheStakes>
+  <HH.Setting.thrumbo.raiseTheStakes.Desc>Adiciona o botão "Aumentar as apostas…" ao Lucky Thrumbo: aposte mercadorias ao alcance de um farol orbital de comércio com energia em vez de prata, e a partir da intensidade de conteúdo Padrão também animais e prisioneiros da colônia (como a venda vanilla). Colonos, escravos, crianças e hóspedes nunca são oferecidos.</HH.Setting.thrumbo.raiseTheStakes.Desc>
+  <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: margem do penhorista para mercadorias apostadas</HH.Setting.thrumbo.pawnbrokerSpread>
+  <HH.Setting.thrumbo.pawnbrokerSpread.Desc>Mercadorias apostadas valem o que o penhorista da casa pagaria (o preço de venda vanilla com seu melhor negociador) menos esta margem e uma taxa fixa de 2 %.</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
 </LanguageData>

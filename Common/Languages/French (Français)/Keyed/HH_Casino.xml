@@ -171,4 +171,73 @@
   <HH.Thrumbo.Err.HandOpen>Une main est encore en cours.</HH.Thrumbo.Err.HandOpen>
   <HH.Thrumbo.Err.NoHand>Aucune main en cours.</HH.Thrumbo.Err.NoHand>
   <HH.Thrumbo.Err.NoDouble>Vous ne pouvez doubler que sur vos deux premières cartes.</HH.Thrumbo.Err.NoDouble>
+  <HH.Thrumbo.TotalsGoods>Mises en marchandises (valeur en argent, pas au registre) : {0} tours · misé {1} · rendu {2} · résultat {3}</HH.Thrumbo.TotalsGoods>
+  <HH.Thrumbo.Ago>il y a</HH.Thrumbo.Ago>
+  <HH.Thrumbo.Sym.cherry>cerise</HH.Thrumbo.Sym.cherry>
+  <HH.Thrumbo.Sym.lemon>citron</HH.Thrumbo.Sym.lemon>
+  <HH.Thrumbo.Sym.plum>prune</HH.Thrumbo.Sym.plum>
+  <HH.Thrumbo.Sym.bell>cloche</HH.Thrumbo.Sym.bell>
+  <HH.Thrumbo.Sym.bar>barre</HH.Thrumbo.Sym.bar>
+  <HH.Thrumbo.Sym.seven>sept</HH.Thrumbo.Sym.seven>
+  <HH.Thrumbo.Sym.muffalo>muffalo</HH.Thrumbo.Sym.muffalo>
+  <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
+  <HH.Thrumbo.Pay.Cherry2>2 × cerise (rouleaux 1+2)</HH.Thrumbo.Pay.Cherry2>
+  <HH.Thrumbo.Pay.Cherry1>cerise sur le rouleau 1</HH.Thrumbo.Pay.Cherry1>
+  <HH.Thrumbo.Bet.Straight>Plein {0}</HH.Thrumbo.Bet.Straight>
+  <HH.Thrumbo.Bet.Split>Cheval {0}/{1}</HH.Thrumbo.Bet.Split>
+  <HH.Thrumbo.Bet.Street>Transversale {0}-{1}</HH.Thrumbo.Bet.Street>
+  <HH.Thrumbo.Bet.Corner>Carré {0}</HH.Thrumbo.Bet.Corner>
+  <HH.Thrumbo.Bet.SixLine>Sixain {0}-{1}</HH.Thrumbo.Bet.SixLine>
+  <HH.Thrumbo.Bet.Column>Colonne {0}</HH.Thrumbo.Bet.Column>
+  <HH.Thrumbo.Bet.Dozen>Douzaine {0}</HH.Thrumbo.Bet.Dozen>
+  <HH.Thrumbo.Bet.Red>Rouge</HH.Thrumbo.Bet.Red>
+  <HH.Thrumbo.Bet.Black>Noir</HH.Thrumbo.Bet.Black>
+  <HH.Thrumbo.Bet.Odd>Impair</HH.Thrumbo.Bet.Odd>
+  <HH.Thrumbo.Bet.Even>Pair</HH.Thrumbo.Bet.Even>
+  <HH.Thrumbo.Bet.Low>Manque 1-18</HH.Thrumbo.Bet.Low>
+  <HH.Thrumbo.Bet.High>Passe 19-36</HH.Thrumbo.Bet.High>
+  <HH.Thrumbo.Stakes.Button>Relever la mise…</HH.Thrumbo.Stakes.Button>
+  <HH.Thrumbo.Stakes.ButtonTip>Misez des marchandises, des animaux ou des prisonniers au lieu d'argent. Ils sont estimés par le prêteur sur gages de la maison.</HH.Thrumbo.Stakes.ButtonTip>
+  <HH.Thrumbo.Stakes.Title>Relever la mise</HH.Thrumbo.Stakes.Title>
+  <HH.Thrumbo.Stakes.Intro>Posez des objets sur la table au lieu d'argent. Si vous perdez, ils partent avec la maison, comme si vous les aviez vendus. Si vous gagnez, vous gardez tout et la maison vous verse le gain en argent.</HH.Thrumbo.Stakes.Intro>
+  <HH.Thrumbo.Stakes.Pawnbroker>prêteur sur gages du Lucky Thrumbo</HH.Thrumbo.Stakes.Pawnbroker>
+  <HH.Thrumbo.Stakes.ValuedBy>Estimé aux prix obtenus par {0} (amélioration du prix de commerce {1}).</HH.Thrumbo.Stakes.ValuedBy>
+  <HH.Thrumbo.Stakes.NoNegotiator>Personne sur cette carte ne sait négocier un prix.</HH.Thrumbo.Stakes.NoNegotiator>
+  <HH.Thrumbo.Stakes.NoBeacon>Aucune balise de commerce orbitale alimentée : aucune marchandise à portée.</HH.Thrumbo.Stakes.NoBeacon>
+  <HH.Thrumbo.Stakes.Refresh>Actualiser</HH.Thrumbo.Stakes.Refresh>
+  <HH.Thrumbo.Stakes.Tab.Goods>Marchandises ({0})</HH.Thrumbo.Stakes.Tab.Goods>
+  <HH.Thrumbo.Stakes.Tab.Animals>Animaux ({0})</HH.Thrumbo.Stakes.Tab.Animals>
+  <HH.Thrumbo.Stakes.Tab.Prisoners>Prisonniers ({0})</HH.Thrumbo.Stakes.Tab.Prisoners>
+  <HH.Thrumbo.Stakes.PawnsCozy>Animaux et prisonniers peuvent être misés à partir de l'intensité de contenu Standard.</HH.Thrumbo.Stakes.PawnsCozy>
+  <HH.Thrumbo.Stakes.Empty.Goods>Rien à portée d'une balise de commerce orbitale alimentée qu'un marchand achèterait.</HH.Thrumbo.Stakes.Empty.Goods>
+  <HH.Thrumbo.Stakes.Empty.Animals>Aucun animal de colonie ne peut être remis pour le moment.</HH.Thrumbo.Stakes.Empty.Animals>
+  <HH.Thrumbo.Stakes.Empty.Prisoners>Aucun prisonnier adulte sous bonne garde. Colons, esclaves, enfants et invités ne sont jamais des mises.</HH.Thrumbo.Stakes.Empty.Prisoners>
+  <HH.Thrumbo.Stakes.UnitTip>Prix de vente : {0} chacun\n− écart du prêteur {1} %\n− commission {2} %\n= valeur de mise {3} chacun</HH.Thrumbo.Stakes.UnitTip>
+  <HH.Thrumbo.Stakes.All>Tout</HH.Thrumbo.Stakes.All>
+  <HH.Thrumbo.Stakes.Game>Partie</HH.Thrumbo.Stakes.Game>
+  <HH.Thrumbo.Stakes.RouletteEdge>Avantage de la maison : {0} %</HH.Thrumbo.Stakes.RouletteEdge>
+  <HH.Thrumbo.Stakes.WinTo>Gains</HH.Thrumbo.Stakes.WinTo>
+  <HH.Thrumbo.Stakes.ToAccount>vers le compte</HH.Thrumbo.Stakes.ToAccount>
+  <HH.Thrumbo.Stakes.ToPod>par capsule de largage</HH.Thrumbo.Stakes.ToPod>
+  <HH.Thrumbo.Stakes.ToPodTip>L'argent arrive dans des capsules de largage au point de largage commercial. Une fraction de pièce reste à la maison jusqu'à former une pièce entière.</HH.Thrumbo.Stakes.ToPodTip>
+  <HH.Thrumbo.Stakes.Value>Valeur de mise : {0}</HH.Thrumbo.Stakes.Value>
+  <HH.Thrumbo.Stakes.ValueTip>Ce que paierait le prêteur sur gages de la maison : le prix de vente vanilla avec les compétences de {4} : {0}\n− écart du prêteur {1} % (réglages du mod)\n− commission {2} %\n= valeur de mise {3}\n\nSeule la valeur marchande est lue ; les objets ne sont pas modifiés.</HH.Thrumbo.Stakes.ValueTip>
+  <HH.Thrumbo.Stakes.Rule>Gain ×m : vous gardez tout et recevez valeur × (m − 1) en argent. Perte : les objets sont perdus, comme vendus. Un petit gain inférieur à ×1 est payé en argent, les objets sont tout de même perdus.</HH.Thrumbo.Stakes.Rule>
+  <HH.Thrumbo.Stakes.GoRoulette>Miser et lancer la roue</HH.Thrumbo.Stakes.GoRoulette>
+  <HH.Thrumbo.Stakes.GoSlots>Miser et tirer le levier</HH.Thrumbo.Stakes.GoSlots>
+  <HH.Thrumbo.Stakes.Confirm>Miser {0} (valeur {1}) sur un tour ?\n\nEn cas de perte, ils sont perdus pour de bon.</HH.Thrumbo.Stakes.Confirm>
+  <HH.Thrumbo.Stakes.Won>paie ×{0} : vous gardez tout et gagnez {1}</HH.Thrumbo.Stakes.Won>
+  <HH.Thrumbo.Stakes.Push>égalité : vous gardez tout</HH.Thrumbo.Stakes.Push>
+  <HH.Thrumbo.Stakes.Lost>perdu : la mise part avec la maison</HH.Thrumbo.Stakes.Lost>
+  <HH.Thrumbo.Stakes.LostPart>perdu, {0} remboursé : la mise part avec la maison</HH.Thrumbo.Stakes.LostPart>
+  <HH.Thrumbo.Stakes.HistoryLine>Mise : {0} · {1}</HH.Thrumbo.Stakes.HistoryLine>
+  <HH.Thrumbo.Stakes.More>et {0} de plus</HH.Thrumbo.Stakes.More>
+  <HH.Thrumbo.Stakes.Err.Off>« Relever la mise » est désactivé dans les réglages du mod.</HH.Thrumbo.Stakes.Err.Off>
+  <HH.Thrumbo.Stakes.Err.NoNegotiator>Un colon capable de négocier doit être sur la carte.</HH.Thrumbo.Stakes.Err.NoNegotiator>
+  <HH.Thrumbo.Stakes.Err.Nothing>Choisissez quelque chose à miser.</HH.Thrumbo.Stakes.Err.Nothing>
+  <HH.Thrumbo.Stakes.Err.Gone>{0} n'est plus à portée. Actualisez la liste.</HH.Thrumbo.Stakes.Err.Gone>
+  <HH.Setting.thrumbo.raiseTheStakes>Lucky Thrumbo : « Relever la mise »</HH.Setting.thrumbo.raiseTheStakes>
+  <HH.Setting.thrumbo.raiseTheStakes.Desc>Ajoute le bouton « Relever la mise… » au Lucky Thrumbo : misez des marchandises à portée d'une balise de commerce orbitale alimentée au lieu d'argent, et, à partir de l'intensité Standard, aussi des animaux et des prisonniers de colonie (comme la vente vanilla). Colons, esclaves, enfants et invités ne sont jamais proposés.</HH.Setting.thrumbo.raiseTheStakes.Desc>
+  <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo : écart du prêteur sur gages pour les marchandises misées</HH.Setting.thrumbo.pawnbrokerSpread>
+  <HH.Setting.thrumbo.pawnbrokerSpread.Desc>Les marchandises misées valent ce que paierait le prêteur sur gages de la maison (prix de vente vanilla avec votre meilleur négociateur), moins cet écart et une commission fixe de 2 %.</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
 </LanguageData>

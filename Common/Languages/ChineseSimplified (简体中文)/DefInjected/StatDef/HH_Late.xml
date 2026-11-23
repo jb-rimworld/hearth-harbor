@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServiceQuality.description>这个人服务起来有多令人愉快。加在他们聊天的访客的满意度上。</HH_ServiceQuality.description>
+  <HH_GuestExpectation.description>加在访客对住宿的期望上。正值意味着更难取悦。有品位的人会提高访客自己的期望；会说话的主人会降低他们迎接或带领的访客的期望。</HH_GuestExpectation.description>
+  <HH_Dexterity.description>作为荷官的发牌速度：每点让其牌桌的每轮缩短 3 %（最多 30 %）。</HH_Dexterity.description>
+  <HH_TableSkill.label>牌感</HH_TableSkill.label>
+  <HH_TableSkill.description>这个人玩二十一点或 Rimdeck 时额外增加的智力等级。</HH_TableSkill.description>
+  <HH_FraudDetection.label>警觉</HH_FraudDetection.label>
+  <HH_FraudDetection.description>只要这个人在地图上，体面的访客撞见后间的几率就会被它除以。最警觉的殖民者计入。</HH_FraudDetection.description>
+  <HH_BrawlRisk.description>这个人房间里的争吵演变成拳头打架的几率乘数。附近最低的值计入。</HH_BrawlRisk.description>
+  <HH_RumorSpread.description>离开的访客改变店里声望（好或坏）的幅度乘数。殖民地里最爱八卦的人计入。</HH_RumorSpread.description>
+  <HH_CareProgress.label>护理质量</HH_CareProgress.label>
+  <HH_CareProgress.description>这个人提供的按摩质量乘数。</HH_CareProgress.description>
+  <HH_BankFeeFactor.description>这个人住在殖民地期间，银行手续费的乘数。最低值计入。</HH_BankFeeFactor.description>
+  <HH_RecruitPrice.description>访客加入殖民地时，若由这个人说服，好感附加费（底线为 5）之上的乘数。</HH_RecruitPrice.description>
+  <HH_TipFactor.label>访客慷慨度</HH_TipFactor.label>
+  <HH_TipFactor.description>这个人作为访客单次消费时，花掉其预算比例的乘数。</HH_TipFactor.description>
+  <HH_DishQuality.description>把烹饪好的餐厅菜品提升一个品质等级的几率。</HH_DishQuality.description>
+  <HH_FamilyCheer.description>加在这个人迎接或带领的儿童和家庭的服务分数上。</HH_FamilyCheer.description>
+  <HH_PriceFeel.description>这个人服务访客时，加在访客觉得价格有多贵上的值。</HH_PriceFeel.description>
+</LanguageData>

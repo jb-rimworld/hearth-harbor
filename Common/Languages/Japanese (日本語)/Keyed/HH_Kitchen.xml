@@ -114,7 +114,7 @@
   <HH.Setting.kitchen.allKnown>全料理を習得済み</HH.Setting.kitchen.allKnown>
   <HH.Setting.kitchen.allKnown.Desc>習得をスキップします。設備が整えば、メニューのすべての料理を調理できます。</HH.Setting.kitchen.allKnown.Desc>
   <HH.Setting.kitchen.darkMenu>ダークメニュー（ロングポーク）</HH.Setting.kitchen.darkMenu>
-  <HH.Setting.kitchen.darkMenu.Desc>ロングポーク料理を許可します。カニバリズムを容認するイデオロギーでも解禁されます。</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Setting.kitchen.darkMenu.Desc>長い豚料理の献立を許可する。内容の濃さ「ダーク」か「陰惨」が常に必要。その条件では、カニバリズムを認める思想宗教は、この設定がオフでも解禁する。</HH.Setting.kitchen.darkMenu.Desc>
   <HH.Kitchen.Cookbook.Teaches>習得できる料理: {0}</HH.Kitchen.Cookbook.Teaches>
   <HH.Kitchen.Cookbook.Empty>ページは白紙です。</HH.Kitchen.Cookbook.Empty>
   <HH.Kitchen.Cookbook.AllKnown>コロニーはこの本のすべての料理を既に習得しています。</HH.Kitchen.Cookbook.AllKnown>

@@ -284,7 +284,7 @@
   <HH.Setting.core.infiniteMoney>Argent des hôtes infini</HH.Setting.core.infiniteMoney>
   <HH.Setting.core.picky>Hôtes difficiles</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>Les hôtes attendent un peu plus de chaque séjour (attente +0,1).</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.ironBank>Bourse de fer / Banque de fer</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank>Banque de fer</HH.Setting.core.ironBank>
   <HH.Setting.core.noResearchGating>Recherche sans verrou</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Tout l'arbre Hearth &amp; Harbor et Silverline est disponible dès le départ.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>Pègre pacifique</HH.Setting.core.peacefulUnderworld>
@@ -294,4 +294,23 @@
   <HH.UI.Overview.Arrivals>Arrivées, prochaines 24 h : {0}, environ {1} groupes par jour attendus.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>personne n'est encore prévu</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>{0} groupe(s) prévu(s) (environ {1} client(s))</HH.UI.Overview.Arrivals.Planned>
+  <HH.UI.Content.Decline>Non, garder {0}</HH.UI.Content.Decline>
+  <HH.UI.Diff.Ladder>Pègre : plafonds de pénalité par incident</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.WarnHard>À partir de Surréservé, les incidents de la pègre peuvent coûter une vraie bonne volonté, de la renommée et de l'argent (voir les plafonds ci-dessous).</HH.UI.Diff.WarnHard>
+  <HH.UI.Feel.4>Les incidents de la pègre commencent à coûter bonne volonté, renommée et amendes.</HH.UI.Feel.4>
+  <HH.UI.Feel.5>Pénalités plus lourdes pour les incidents de la pègre, une banque plus dure.</HH.UI.Feel.5>
+  <HH.UI.Feel.6>Tout est dur et rien n'est plafonné.</HH.UI.Feel.6>
+  <HH.UI.Calc.slotRtp>Taux de retour des machines à sous (RTP)</HH.UI.Calc.slotRtp>
+  <HH.UI.Calc.slotRtp.Desc>Part de chaque mise qu'une machine à sous rend en moyenne. La maison garde le reste.</HH.UI.Calc.slotRtp.Desc>
+  <HH.UI.Ladder.Goodwill>Perte de bonne volonté par incident (plafond)</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>La bonne volonté maximale qu'un incident de la pègre peut vous retirer.</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Renown.Desc>La renommée maximale qu'un incident de la pègre peut vous coûter.</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Fine>Amendes (plafond, argent)</HH.UI.Ladder.Fine>
+  <HH.UI.Ladder.Fine.Desc>L'amende maximale qu'un seul incident de la pègre peut vous infliger.</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Footer>Ces plafonds s'appliquent aux incidents de la pègre. Les étapes de recouvrement de la banque suivent leurs propres réglages.</HH.UI.Ladder.Footer>
+  <HH.Setting.core.neverDie.Desc>Les invités sont assommés au lieu d'être tués. Ils restent en vie, à terre, jusqu'à ce que quelqu'un s'occupe d'eux.</HH.Setting.core.neverDie.Desc>
+  <HH.Setting.core.infiniteMoney.Desc>Les invités qui arrivent pendant que ce réglage est actif ont une bourse sans fond. Le facteur d'argent des invités n'a aucun effet sur eux.</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.ironBank.Desc>Le recouvrement des dettes monte toujours au stade le plus élevé, quelle que soit la difficulté. Personne ne reporte discrètement vos échéances.</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Les lieux sombres fonctionnent sans violence : pas d'arène de combat, pas d'interrogatoires, pas de chasse aux personnes, pas de clinique, pas de racket. L'arrière-salle, le receleur et le salon de drogue restent.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.perfMode.Desc>La planification des invités et les contrôles de pièces tournent deux fois moins souvent. Utile sur les ordinateurs lents ; les invités peuvent réagir un peu plus tard.</HH.Setting.core.perfMode.Desc>
 </LanguageData>

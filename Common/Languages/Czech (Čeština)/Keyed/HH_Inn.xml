@@ -290,4 +290,9 @@
   <HH.Setting.inn.stayNightsMin.Desc>Hosté přes noc zůstanou alespoň tolik nocí.</HH.Setting.inn.stayNightsMin.Desc>
   <HH.Setting.inn.waitThoughts>Myšlenky při čekání a u nočního zvonku</HH.Setting.inn.waitThoughts>
   <HH.Setting.inn.waitThoughts.Desc>Hosté, kteří marně čekají nebo zvoní na noční zvonek, když nikdo nepřichází, to pocítí na náladě; čekárna to zmírní.</HH.Setting.inn.waitThoughts.Desc>
+  <HH.Inn.Event.SponsoredBed>Postel je zaplacená a rezervovaná družinou.</HH.Inn.Event.SponsoredBed>
+  <HH.Inn.Event.Charmed>{0} zařídil, že to tu zní lépe, než se čekalo.</HH.Inn.Event.Charmed>
+  <HH.Inn.PriceMode.ManualSet>Pevná cena…</HH.Inn.PriceMode.ManualSet>
+  <HH.Inn.PriceMode.ManualValue>{0} stříbra za noc</HH.Inn.PriceMode.ManualValue>
+  <HH.Inn.PriceMode.Manual>pevná cena</HH.Inn.PriceMode.Manual>
 </LanguageData>

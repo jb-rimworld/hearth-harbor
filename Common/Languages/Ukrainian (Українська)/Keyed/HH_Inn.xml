@@ -290,4 +290,9 @@
   <HH.Setting.inn.stayNightsMin.Desc>Гості, які ночують, залишаються щонайменше стільки ночей.</HH.Setting.inn.stayNightsMin.Desc>
   <HH.Setting.inn.waitThoughts>Думки про очікування й нічний дзвоник</HH.Setting.inn.waitThoughts>
   <HH.Setting.inn.waitThoughts.Desc>Гості, які марно чекають або дзвонять уночі, коли ніхто не йде, відчувають це в настрої; зала очікування це пом'якшує.</HH.Setting.inn.waitThoughts.Desc>
+  <HH.Inn.Event.SponsoredBed>Ліжко заброньовано й оплачено всією компанією.</HH.Inn.Event.SponsoredBed>
+  <HH.Inn.Event.Charmed>{0} зробив місце приємнішим, ніж очікувалося.</HH.Inn.Event.Charmed>
+  <HH.Inn.PriceMode.ManualSet>Фіксована ціна…</HH.Inn.PriceMode.ManualSet>
+  <HH.Inn.PriceMode.ManualValue>{0} срібла за ніч</HH.Inn.PriceMode.ManualValue>
+  <HH.Inn.PriceMode.Manual>фіксована ціна</HH.Inn.PriceMode.Manual>
 </LanguageData>

@@ -284,7 +284,7 @@
   <HH.Setting.core.infiniteMoney>Neomezené peníze hostů</HH.Setting.core.infiniteMoney>
   <HH.Setting.core.picky>Vybíraví hosté</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>Hosté očekávají od každého pobytu trochu víc (očekávání +0,1).</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.ironBank>Železný váček / Železná banka</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank>Železná banka</HH.Setting.core.ironBank>
   <HH.Setting.core.noResearchGating>Bez omezení výzkumu</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Vše ze stromů Hearth &amp; Harbor a Silverline je dostupné od začátku.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>Mírumilovné podsvětí</HH.Setting.core.peacefulUnderworld>
@@ -294,4 +294,23 @@
   <HH.UI.Overview.Arrivals>Příjezdy, příštích 24 h: {0}, očekává se asi {1} skupin denně.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>zatím nikdo neplánován</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>naplánováno skupin: {0} (asi hostů: {1})</HH.UI.Overview.Arrivals.Planned>
+  <HH.UI.Content.Decline>Ne, nechat {0}</HH.UI.Content.Decline>
+  <HH.UI.Diff.Ladder>Podsvětí: stropy trestů za incident</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.WarnHard>Od stupně Přeplněno výš mohou incidenty podsvětí stát skutečnou dobrou vůli, pověst a stříbro (viz stropy níže).</HH.UI.Diff.WarnHard>
+  <HH.UI.Feel.4>Incidenty podsvětí začínají stát dobrou vůli, pověst a pokuty.</HH.UI.Feel.4>
+  <HH.UI.Feel.5>Vyšší tresty za incidenty podsvětí a tvrdší banka.</HH.UI.Feel.5>
+  <HH.UI.Feel.6>Všechno je tvrdé a nic není omezené.</HH.UI.Feel.6>
+  <HH.UI.Calc.slotRtp>Výplata výherního automatu (RTP)</HH.UI.Calc.slotRtp>
+  <HH.UI.Calc.slotRtp.Desc>Podíl každé sázky, který automat v průměru vyplácí. Zbytek si dům nechá.</HH.UI.Calc.slotRtp.Desc>
+  <HH.UI.Ladder.Goodwill>Ztráta dobré vůle za incident (strop)</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>Nejvíc dobré vůle, které vám jeden incident podsvětí může vzít.</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Renown.Desc>Nejvíc pověsti, kterou vás může jeden incident podsvětí stát.</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Fine>Pokuty (strop, stříbro)</HH.UI.Ladder.Fine>
+  <HH.UI.Ladder.Fine.Desc>Nejvíc, co vás jeden incident podsvětí může pokutovat.</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Footer>Tyto stropy platí pro incidenty podsvětí. Fáze vymáhání banky mají svá vlastní nastavení.</HH.UI.Ladder.Footer>
+  <HH.Setting.core.neverDie.Desc>Hosté jsou sraženi k zemi místo zabití. Dál žijí, ležící, dokud se o ně někdo nepostará.</HH.Setting.core.neverDie.Desc>
+  <HH.Setting.core.infiniteMoney.Desc>Hosté, kteří přijdou, když je to zapnuté, nosí bezedný měšec. Faktor peněz hostů na ně nemá vliv.</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.ironBank.Desc>Vymáhání dluhů vždy vyšplhá na nejvyšší stupeň, ať je obtížnost jakákoli. Nikdo vám tiše neodkládá splátky.</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Temné provozovny fungují bez násilí: žádná zápasnická jáma, žádný výslech, žádné lovení lidí, žádná klinika, žádné výpalné. Zadní místnost, výkupce a drogový salon zůstávají.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.perfMode.Desc>Plánování hostů a kontroly pokojů běží poloviční rychlostí. Pomůže na pomalých počítačích; hosté můžou reagovat o něco později.</HH.Setting.core.perfMode.Desc>
 </LanguageData>

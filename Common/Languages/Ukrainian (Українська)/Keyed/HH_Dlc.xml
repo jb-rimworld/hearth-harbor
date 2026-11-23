@@ -43,4 +43,7 @@
   <HH.Setting.dlc.traitSpawn.Desc>Везучий, Невезучий, Народжений господар та інші риси Hearth &amp; Harbor можуть траплятися в новостворених персонажів. Наявні персонажі зберігають свої риси. Вимкнено: риси додаються лише вручну або в редакторі.</HH.Setting.dlc.traitSpawn.Desc>
   <HH.Setting.dlc.traitRarity>Частота рис</HH.Setting.dlc.traitRarity>
   <HH.Setting.dlc.traitRarity.Desc>Множник частоти, з якою наші риси випадають новим персонажам (1 = та сама рідкість, що в більшості ванільних рис).</HH.Setting.dlc.traitRarity.Desc>
+  <HH.Dlc.Noble.NoBed>Немає ліжка, гідного гостя</HH.Dlc.Noble.NoBed>
+  <HH.Dlc.Noble.RoomFits>Кімната відповідає моєму титулу</HH.Dlc.Noble.RoomFits>
+  <HH.Dlc.Noble.RoomBeneath>Кімната нижча за мій титул</HH.Dlc.Noble.RoomBeneath>
 </LanguageData>

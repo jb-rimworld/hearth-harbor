@@ -114,7 +114,7 @@
   <HH.Setting.kitchen.allKnown>Tous les plats connus</HH.Setting.kitchen.allKnown>
   <HH.Setting.kitchen.allKnown.Desc>Pas d'apprentissage : chaque plat du menu peut être cuisiné dès que ses appareils sont installés.</HH.Setting.kitchen.allKnown.Desc>
   <HH.Setting.kitchen.darkMenu>Menu obscur (porc long)</HH.Setting.kitchen.darkMenu>
-  <HH.Setting.kitchen.darkMenu.Desc>Autorise les plats de porc long. Ils sont aussi débloqués par une idéologie qui approuve le cannibalisme.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Setting.kitchen.darkMenu.Desc>Autorise les plats de porc long. Exige toujours l'intensité de contenu Sombre ou Lugubre ; dans ce cas, une idéologie qui approuve le cannibalisme les débloque même lorsque ce réglage est désactivé.</HH.Setting.kitchen.darkMenu.Desc>
   <HH.Kitchen.Cookbook.Teaches>Enseigne : {0}</HH.Kitchen.Cookbook.Teaches>
   <HH.Kitchen.Cookbook.Empty>Les pages sont vierges.</HH.Kitchen.Cookbook.Empty>
   <HH.Kitchen.Cookbook.AllKnown>La colonie connaît déjà tous les plats de ce livre.</HH.Kitchen.Cookbook.AllKnown>

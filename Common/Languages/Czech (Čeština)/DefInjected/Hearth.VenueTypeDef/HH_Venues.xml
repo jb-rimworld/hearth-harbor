@@ -5,7 +5,7 @@
   <HH_Venue_Shop.label>obchod</HH_Venue_Shop.label>
   <HH_Venue_Shop.description>Místnost, kde hosté kupují zboží. Vše uložené na regálech a ve skladech uvnitř místnosti je na prodej, za tržní cenu násobenou koeficientem ceny cedule. Bez prodavače běží obchod jako samoobsluha se slevou.</HH_Venue_Shop.description>
   <HH_Venue_Restaurant.label>restaurace</HH_Venue_Restaurant.label>
-  <HH_Venue_Restaurant.description>Místnost, kde hosté sedí a jedí. Stoly, kuchyně a číšník z ní dělají restauraci; jídla samotná řeší kuchyně.</HH_Venue_Restaurant.description>
+  <HH_Venue_Restaurant.description>Místnost, kde hosté sedí a jedí. Stoly, kuchyně a číšník z ní dělají restauraci; hosté platí za pokrmy a jídla na jejích policích a stolech. Vaření obstarává kuchyně; staré talíře se neprodávají.</HH_Venue_Restaurant.description>
   <HH_Venue_Casino.label>kasino</HH_Venue_Casino.label>
   <HH_Venue_Casino.description>Místnost plná hracích stolů, hracích automatů a krupiérů. Hosté vsazí stříbro na hry štěstí; dům si nechává malou, poctivou výhodu.</HH_Venue_Casino.description>
   <HH_Venue_Spa.label>lázně</HH_Venue_Spa.label>

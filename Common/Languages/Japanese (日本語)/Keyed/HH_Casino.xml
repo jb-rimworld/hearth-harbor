@@ -171,4 +171,73 @@
   <HH.Thrumbo.Err.HandOpen>まだ勝負が続いています。</HH.Thrumbo.Err.HandOpen>
   <HH.Thrumbo.Err.NoHand>進行中の勝負がありません。</HH.Thrumbo.Err.NoHand>
   <HH.Thrumbo.Err.NoDouble>ダブルダウンは最初の2枚のみ可能です。</HH.Thrumbo.Err.NoDouble>
+  <HH.Thrumbo.TotalsGoods>品物の賭け（価値は銀換算、帳簿には入らない）: {0} 回 · 賭け {1} · 払い戻し {2} · 結果 {3}</HH.Thrumbo.TotalsGoods>
+  <HH.Thrumbo.Ago>前</HH.Thrumbo.Ago>
+  <HH.Thrumbo.Sym.cherry>チェリー</HH.Thrumbo.Sym.cherry>
+  <HH.Thrumbo.Sym.lemon>レモン</HH.Thrumbo.Sym.lemon>
+  <HH.Thrumbo.Sym.plum>プラム</HH.Thrumbo.Sym.plum>
+  <HH.Thrumbo.Sym.bell>ベル</HH.Thrumbo.Sym.bell>
+  <HH.Thrumbo.Sym.bar>BAR</HH.Thrumbo.Sym.bar>
+  <HH.Thrumbo.Sym.seven>セブン</HH.Thrumbo.Sym.seven>
+  <HH.Thrumbo.Sym.muffalo>マフアロ</HH.Thrumbo.Sym.muffalo>
+  <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
+  <HH.Thrumbo.Pay.Cherry2>2 × チェリー（リール1+2）</HH.Thrumbo.Pay.Cherry2>
+  <HH.Thrumbo.Pay.Cherry1>リール1のチェリー</HH.Thrumbo.Pay.Cherry1>
+  <HH.Thrumbo.Bet.Straight>ストレート {0}</HH.Thrumbo.Bet.Straight>
+  <HH.Thrumbo.Bet.Split>スプリット {0}/{1}</HH.Thrumbo.Bet.Split>
+  <HH.Thrumbo.Bet.Street>ストリート {0}-{1}</HH.Thrumbo.Bet.Street>
+  <HH.Thrumbo.Bet.Corner>コーナー {0}</HH.Thrumbo.Bet.Corner>
+  <HH.Thrumbo.Bet.SixLine>シックスライン {0}-{1}</HH.Thrumbo.Bet.SixLine>
+  <HH.Thrumbo.Bet.Column>コラム {0}</HH.Thrumbo.Bet.Column>
+  <HH.Thrumbo.Bet.Dozen>ダース {0}</HH.Thrumbo.Bet.Dozen>
+  <HH.Thrumbo.Bet.Red>赤</HH.Thrumbo.Bet.Red>
+  <HH.Thrumbo.Bet.Black>黒</HH.Thrumbo.Bet.Black>
+  <HH.Thrumbo.Bet.Odd>奇数</HH.Thrumbo.Bet.Odd>
+  <HH.Thrumbo.Bet.Even>偶数</HH.Thrumbo.Bet.Even>
+  <HH.Thrumbo.Bet.Low>低 1-18</HH.Thrumbo.Bet.Low>
+  <HH.Thrumbo.Bet.High>高 19-36</HH.Thrumbo.Bet.High>
+  <HH.Thrumbo.Stakes.Button>賭け金を上げる…</HH.Thrumbo.Stakes.Button>
+  <HH.Thrumbo.Stakes.ButtonTip>銀の代わりに品物、動物、捕虜を賭けられる。宿の質屋が価値を査定する。</HH.Thrumbo.Stakes.ButtonTip>
+  <HH.Thrumbo.Stakes.Title>賭け金を上げる</HH.Thrumbo.Stakes.Title>
+  <HH.Thrumbo.Stakes.Intro>銀の代わりにテーブルへ品物を出す。負ければ品物は、売ったのと同じく宿のものになる。勝てばすべて手元に残り、宿は銀で払い戻す。</HH.Thrumbo.Stakes.Intro>
+  <HH.Thrumbo.Stakes.Pawnbroker>The Lucky Thrumbo の質屋</HH.Thrumbo.Stakes.Pawnbroker>
+  <HH.Thrumbo.Stakes.ValuedBy>{0} が得る価格（交渉ボーナス {1}）で査定する。</HH.Thrumbo.Stakes.ValuedBy>
+  <HH.Thrumbo.Stakes.NoNegotiator>このマップには価格を交渉できる者がいない。</HH.Thrumbo.Stakes.NoNegotiator>
+  <HH.Thrumbo.Stakes.NoBeacon>電源の入った軌道交易ビーコンがない: 届く範囲に品物がない。</HH.Thrumbo.Stakes.NoBeacon>
+  <HH.Thrumbo.Stakes.Refresh>更新</HH.Thrumbo.Stakes.Refresh>
+  <HH.Thrumbo.Stakes.Tab.Goods>品物（{0}）</HH.Thrumbo.Stakes.Tab.Goods>
+  <HH.Thrumbo.Stakes.Tab.Animals>動物（{0}）</HH.Thrumbo.Stakes.Tab.Animals>
+  <HH.Thrumbo.Stakes.Tab.Prisoners>捕虜（{0}）</HH.Thrumbo.Stakes.Tab.Prisoners>
+  <HH.Thrumbo.Stakes.PawnsCozy>動物と捕虜は、内容の濃さ「標準」以上で賭けられる。</HH.Thrumbo.Stakes.PawnsCozy>
+  <HH.Thrumbo.Stakes.Empty.Goods>電源の入った軌道交易ビーコンの範囲に、商人が買いそうな品物がない。</HH.Thrumbo.Stakes.Empty.Goods>
+  <HH.Thrumbo.Stakes.Empty.Animals>今すぐ引き渡せるコロニーの動物がいない。</HH.Thrumbo.Stakes.Empty.Animals>
+  <HH.Thrumbo.Stakes.Empty.Prisoners>安全に拘束されている成人の捕虜がいない。コロニスト、奴隷、子ども、宿泊客は賭けの対象にならない。</HH.Thrumbo.Stakes.Empty.Prisoners>
+  <HH.Thrumbo.Stakes.UnitTip>売値: 1個 {0}\n− 質屋の差額 {1} %\n− 手数料 {2} %\n= 賭け価値 1個 {3}</HH.Thrumbo.Stakes.UnitTip>
+  <HH.Thrumbo.Stakes.All>すべて</HH.Thrumbo.Stakes.All>
+  <HH.Thrumbo.Stakes.Game>ゲーム</HH.Thrumbo.Stakes.Game>
+  <HH.Thrumbo.Stakes.RouletteEdge>ハウスエッジ: {0} %</HH.Thrumbo.Stakes.RouletteEdge>
+  <HH.Thrumbo.Stakes.WinTo>勝ち金</HH.Thrumbo.Stakes.WinTo>
+  <HH.Thrumbo.Stakes.ToAccount>口座へ</HH.Thrumbo.Stakes.ToAccount>
+  <HH.Thrumbo.Stakes.ToPod>ドロップポッドで</HH.Thrumbo.Stakes.ToPod>
+  <HH.Thrumbo.Stakes.ToPodTip>銀はトレードドロップスポットにドロップポッドで届く。端数の硬貨は、合計が揃うまで店に残る。</HH.Thrumbo.Stakes.ToPodTip>
+  <HH.Thrumbo.Stakes.Value>賭け価値: {0}</HH.Thrumbo.Stakes.Value>
+  <HH.Thrumbo.Stakes.ValueTip>質屋が払う額: {4} のスキルで計算したバニラの売値 {0}\n− 質屋の差額 {1} %（Mod設定）\n− 手数料 {2} %\n= 賭け価値 {3}\n\n読まれるのは市場価値だけで、品物には何も変更されない。</HH.Thrumbo.Stakes.ValueTip>
+  <HH.Thrumbo.Stakes.Rule>勝ち ×m: すべて手元に残り、銀で 価値 ×（m − 1）を受け取る。負け: 品物は売ったのと同じく消える。×1 未満の小さな賞金は銀で払われるが、品物は消える。</HH.Thrumbo.Stakes.Rule>
+  <HH.Thrumbo.Stakes.GoRoulette>賭けて、ルーレットを回す</HH.Thrumbo.Stakes.GoRoulette>
+  <HH.Thrumbo.Stakes.GoSlots>賭けて、レバーを引く</HH.Thrumbo.Stakes.GoSlots>
+  <HH.Thrumbo.Stakes.Confirm>{1} 相当の {0} を1回賭ける？\n\n負けると、それは完全に失われる。</HH.Thrumbo.Stakes.Confirm>
+  <HH.Thrumbo.Stakes.Won>×{0} 払い: すべて手元に残り、{1} を得る</HH.Thrumbo.Stakes.Won>
+  <HH.Thrumbo.Stakes.Push>引き分け: すべて手元に残る</HH.Thrumbo.Stakes.Push>
+  <HH.Thrumbo.Stakes.Lost>負け: 賭けた品物は宿のものになる</HH.Thrumbo.Stakes.Lost>
+  <HH.Thrumbo.Stakes.LostPart>負け、{0} は払い戻し: 賭けた品物は宿のものになる</HH.Thrumbo.Stakes.LostPart>
+  <HH.Thrumbo.Stakes.HistoryLine>賭け: {0} · {1}</HH.Thrumbo.Stakes.HistoryLine>
+  <HH.Thrumbo.Stakes.More>ほか {0} 件</HH.Thrumbo.Stakes.More>
+  <HH.Thrumbo.Stakes.Err.Off>「賭け金を上げる」はMod設定でオフになっている。</HH.Thrumbo.Stakes.Err.Off>
+  <HH.Thrumbo.Stakes.Err.NoNegotiator>賭けられる能力のあるコロニストがマップにいる必要がある。</HH.Thrumbo.Stakes.Err.NoNegotiator>
+  <HH.Thrumbo.Stakes.Err.Nothing>何か賭けるものを選ぶ。</HH.Thrumbo.Stakes.Err.Nothing>
+  <HH.Thrumbo.Stakes.Err.Gone>{0} はもう届く範囲にない。リストを更新する。</HH.Thrumbo.Stakes.Err.Gone>
+  <HH.Setting.thrumbo.raiseTheStakes>Lucky Thrumbo: 「賭け金を上げる」</HH.Setting.thrumbo.raiseTheStakes>
+  <HH.Setting.thrumbo.raiseTheStakes.Desc>電源の入った軌道交易ビーコンの範囲にある品物を、銀の代わりに賭けられるボタン「賭け金を上げる…」を Lucky Thrumbo に追加する。内容の濃さ「標準」以上では、コロニーの動物と捕虜も（バニラの売却と同じく）賭けられる。コロニスト、奴隷、子ども、宿泊客は決して対象にならない。</HH.Setting.thrumbo.raiseTheStakes.Desc>
+  <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: 賭けた品物の質屋の差額</HH.Setting.thrumbo.pawnbrokerSpread>
+  <HH.Setting.thrumbo.pawnbrokerSpread.Desc>賭けた品物は、宿の質屋が払う額（最も交渉の得意なコロニストによるバニラの売値）から、この差額と固定の手数料 2 % を引いた額で数えられる。</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
 </LanguageData>

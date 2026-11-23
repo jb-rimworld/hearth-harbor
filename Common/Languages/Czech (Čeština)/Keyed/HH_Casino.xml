@@ -171,4 +171,73 @@
   <HH.Thrumbo.Err.HandOpen>Ruka je ještě rozehraná.</HH.Thrumbo.Err.HandOpen>
   <HH.Thrumbo.Err.NoHand>Žádná rozehraná ruka.</HH.Thrumbo.Err.NoHand>
   <HH.Thrumbo.Err.NoDouble>Zdvojit můžete jen na prvních dvou kartách.</HH.Thrumbo.Err.NoDouble>
+  <HH.Thrumbo.TotalsGoods>Sázky zbožím (hodnota ve stříbře, ne v účetní knize): {0} kol · vsazeno {1} · vyplaceno {2} · výsledek {3}</HH.Thrumbo.TotalsGoods>
+  <HH.Thrumbo.Ago>před</HH.Thrumbo.Ago>
+  <HH.Thrumbo.Sym.cherry>třešeň</HH.Thrumbo.Sym.cherry>
+  <HH.Thrumbo.Sym.lemon>citron</HH.Thrumbo.Sym.lemon>
+  <HH.Thrumbo.Sym.plum>švestka</HH.Thrumbo.Sym.plum>
+  <HH.Thrumbo.Sym.bell>zvonek</HH.Thrumbo.Sym.bell>
+  <HH.Thrumbo.Sym.bar>bar</HH.Thrumbo.Sym.bar>
+  <HH.Thrumbo.Sym.seven>sedmička</HH.Thrumbo.Sym.seven>
+  <HH.Thrumbo.Sym.muffalo>muffalo</HH.Thrumbo.Sym.muffalo>
+  <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
+  <HH.Thrumbo.Pay.Cherry2>2 × třešeň (válce 1+2)</HH.Thrumbo.Pay.Cherry2>
+  <HH.Thrumbo.Pay.Cherry1>třešeň na válci 1</HH.Thrumbo.Pay.Cherry1>
+  <HH.Thrumbo.Bet.Straight>Plná {0}</HH.Thrumbo.Bet.Straight>
+  <HH.Thrumbo.Bet.Split>Dělená {0}/{1}</HH.Thrumbo.Bet.Split>
+  <HH.Thrumbo.Bet.Street>Řada {0}-{1}</HH.Thrumbo.Bet.Street>
+  <HH.Thrumbo.Bet.Corner>Roh {0}</HH.Thrumbo.Bet.Corner>
+  <HH.Thrumbo.Bet.SixLine>Šestka {0}-{1}</HH.Thrumbo.Bet.SixLine>
+  <HH.Thrumbo.Bet.Column>Sloupec {0}</HH.Thrumbo.Bet.Column>
+  <HH.Thrumbo.Bet.Dozen>Dvanáctka {0}</HH.Thrumbo.Bet.Dozen>
+  <HH.Thrumbo.Bet.Red>Červená</HH.Thrumbo.Bet.Red>
+  <HH.Thrumbo.Bet.Black>Černá</HH.Thrumbo.Bet.Black>
+  <HH.Thrumbo.Bet.Odd>Liché</HH.Thrumbo.Bet.Odd>
+  <HH.Thrumbo.Bet.Even>Sudé</HH.Thrumbo.Bet.Even>
+  <HH.Thrumbo.Bet.Low>Nízké 1-18</HH.Thrumbo.Bet.Low>
+  <HH.Thrumbo.Bet.High>Vysoké 19-36</HH.Thrumbo.Bet.High>
+  <HH.Thrumbo.Stakes.Button>Zvýšit sázky…</HH.Thrumbo.Stakes.Button>
+  <HH.Thrumbo.Stakes.ButtonTip>Sázejte zboží, zvířata nebo vězně místo stříbra. Ocení je zastavárník domu.</HH.Thrumbo.Stakes.ButtonTip>
+  <HH.Thrumbo.Stakes.Title>Zvýšit sázky</HH.Thrumbo.Stakes.Title>
+  <HH.Thrumbo.Stakes.Intro>Položte na stůl věci místo stříbra. Prohrajete – odejdou do domu, jako byste je prodali. Vyhrajete – všechno si necháte a dům vyplatí stříbro.</HH.Thrumbo.Stakes.Intro>
+  <HH.Thrumbo.Stakes.Pawnbroker>zastavárník The Lucky Thrumbo</HH.Thrumbo.Stakes.Pawnbroker>
+  <HH.Thrumbo.Stakes.ValuedBy>Oceněno cenami, které dostane {0} (zlepšení obchodní ceny {1}).</HH.Thrumbo.Stakes.ValuedBy>
+  <HH.Thrumbo.Stakes.NoNegotiator>Nikdo na této mapě neumí vyjednávat cenu.</HH.Thrumbo.Stakes.NoNegotiator>
+  <HH.Thrumbo.Stakes.NoBeacon>Žádný napájený orbitální obchodní maják: žádné zboží v dosahu.</HH.Thrumbo.Stakes.NoBeacon>
+  <HH.Thrumbo.Stakes.Refresh>Obnovit</HH.Thrumbo.Stakes.Refresh>
+  <HH.Thrumbo.Stakes.Tab.Goods>Zboží ({0})</HH.Thrumbo.Stakes.Tab.Goods>
+  <HH.Thrumbo.Stakes.Tab.Animals>Zvířata ({0})</HH.Thrumbo.Stakes.Tab.Animals>
+  <HH.Thrumbo.Stakes.Tab.Prisoners>Vězni ({0})</HH.Thrumbo.Stakes.Tab.Prisoners>
+  <HH.Thrumbo.Stakes.PawnsCozy>Zvířata a vězni lze vsadit od intenzity obsahu Standardní výš.</HH.Thrumbo.Stakes.PawnsCozy>
+  <HH.Thrumbo.Stakes.Empty.Goods>V dosahu napájeného orbitálního obchodního majáku nic, co by obchodník koupil.</HH.Thrumbo.Stakes.Empty.Goods>
+  <HH.Thrumbo.Stakes.Empty.Animals>Teď nelze předat žádné zvíře kolonie.</HH.Thrumbo.Stakes.Empty.Animals>
+  <HH.Thrumbo.Stakes.Empty.Prisoners>Žádný zabezpečený dospělý vězeň. Kolonisté, otroci, děti a hosté nikdy nejsou sázkou.</HH.Thrumbo.Stakes.Empty.Prisoners>
+  <HH.Thrumbo.Stakes.UnitTip>Prodejní cena: {0} za kus\n− rozpětí zastavárníka {1} %\n− poplatek {2} %\n= hodnota sázky {3} za kus</HH.Thrumbo.Stakes.UnitTip>
+  <HH.Thrumbo.Stakes.All>Vše</HH.Thrumbo.Stakes.All>
+  <HH.Thrumbo.Stakes.Game>Hra</HH.Thrumbo.Stakes.Game>
+  <HH.Thrumbo.Stakes.RouletteEdge>Výhoda domu: {0} %</HH.Thrumbo.Stakes.RouletteEdge>
+  <HH.Thrumbo.Stakes.WinTo>Výhra</HH.Thrumbo.Stakes.WinTo>
+  <HH.Thrumbo.Stakes.ToAccount>na účet</HH.Thrumbo.Stakes.ToAccount>
+  <HH.Thrumbo.Stakes.ToPod>přepravní kapslí</HH.Thrumbo.Stakes.ToPod>
+  <HH.Thrumbo.Stakes.ToPodTip>Stříbro přijde v přepravních kapslích na místo shozu. Zlomek mince zůstane domu, dokud se nesečte.</HH.Thrumbo.Stakes.ToPodTip>
+  <HH.Thrumbo.Stakes.Value>Hodnota sázky: {0}</HH.Thrumbo.Stakes.Value>
+  <HH.Thrumbo.Stakes.ValueTip>Co by zaplatil zastavárník domu: běžná prodejní cena se zručností {4}: {0}\n− rozpětí zastavárníka {1} % (nastavení modu)\n− poplatek {2} %\n= hodnota sázky {3}\n\nČte se jen tržní hodnota; na předmětech se nic nemění.</HH.Thrumbo.Stakes.ValueTip>
+  <HH.Thrumbo.Stakes.Rule>Výhra ×m: všechno si necháte a dostanete hodnotu × (m − 1) ve stříbře. Prohra: věci jsou pryč, jako by byly prodány. Malá výhra pod ×1 se vyplatí stříbrem, věci jsou přesto pryč.</HH.Thrumbo.Stakes.Rule>
+  <HH.Thrumbo.Stakes.GoRoulette>Vsadit a roztočit kolo</HH.Thrumbo.Stakes.GoRoulette>
+  <HH.Thrumbo.Stakes.GoSlots>Vsadit a zatáhnout za páku</HH.Thrumbo.Stakes.GoSlots>
+  <HH.Thrumbo.Stakes.Confirm>Vsadit {0} (hodnota {1}) na jedno kolo?\n\nPři prohře jsou navždy pryč.</HH.Thrumbo.Stakes.Confirm>
+  <HH.Thrumbo.Stakes.Won>vyplácí ×{0}: všechno si necháte a vyhráváte {1}</HH.Thrumbo.Stakes.Won>
+  <HH.Thrumbo.Stakes.Push>remíza: všechno si necháte</HH.Thrumbo.Stakes.Push>
+  <HH.Thrumbo.Stakes.Lost>prohra: sázka odchází do domu</HH.Thrumbo.Stakes.Lost>
+  <HH.Thrumbo.Stakes.LostPart>prohra, vráceno {0}: sázka odchází do domu</HH.Thrumbo.Stakes.LostPart>
+  <HH.Thrumbo.Stakes.HistoryLine>Sázka: {0} · {1}</HH.Thrumbo.Stakes.HistoryLine>
+  <HH.Thrumbo.Stakes.More>a ještě {0}</HH.Thrumbo.Stakes.More>
+  <HH.Thrumbo.Stakes.Err.Off>„Zvýšit sázky“ je v nastavení modu vypnuté.</HH.Thrumbo.Stakes.Err.Off>
+  <HH.Thrumbo.Stakes.Err.NoNegotiator>Na mapě musí být kolonista, který umí vyjednávat.</HH.Thrumbo.Stakes.Err.NoNegotiator>
+  <HH.Thrumbo.Stakes.Err.Nothing>Vyberte něco k vsazení.</HH.Thrumbo.Stakes.Err.Nothing>
+  <HH.Thrumbo.Stakes.Err.Gone>{0} už není v dosahu. Obnovte seznam.</HH.Thrumbo.Stakes.Err.Gone>
+  <HH.Setting.thrumbo.raiseTheStakes>Lucky Thrumbo: „Zvýšit sázky“</HH.Setting.thrumbo.raiseTheStakes>
+  <HH.Setting.thrumbo.raiseTheStakes.Desc>Přidá tlačítko „Zvýšit sázky…“ do The Lucky Thrumbo: místo stříbra lze vsadit zboží v dosahu napájeného orbitálního obchodního majáku a od intenzity obsahu Standardní i kolonistická zvířata a vězně (jako prodej ve vanille). Kolonisté, otroci, děti a hosté se nikdy nenabízejí.</HH.Setting.thrumbo.raiseTheStakes.Desc>
+  <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: rozpětí zastavárníka pro vsazené zboží</HH.Setting.thrumbo.pawnbrokerSpread>
+  <HH.Setting.thrumbo.pawnbrokerSpread.Desc>Vsazené zboží se počítá za to, co by zaplatil zastavárník domu (běžná prodejní cena s vaším nejlepším vyjednavačem) minus toto rozpětí a pevný poplatek 2 %.</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
 </LanguageData>

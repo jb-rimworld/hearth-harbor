@@ -4,4 +4,16 @@
   <HH.Setting.core.researchMode.Desc>Completo: as árvores de pesquisa de Hearth &amp; Harbor e Silverline controlam as construções e os recursos. Desligado: tudo está disponível desde o início (os projetos sombrios do submundo ainda precisam ser descobertos).</HH.Setting.core.researchMode.Desc>
   <HH.Enum.CoreResearchMode.Full>Completo</HH.Enum.CoreResearchMode.Full>
   <HH.Enum.CoreResearchMode.Off>Desligado</HH.Enum.CoreResearchMode.Off>
+  <HH.Gate.ModuleOff>Módulo desligado: {0}</HH.Gate.ModuleOff>
+  <HH.Gate.ModuleOffInspect>isto não faz nada até o módulo ser ligado de novo.</HH.Gate.ModuleOffInspect>
+  <HH.Gate.CannotPlace>Indisponível: {0} está desligado neste jogo.</HH.Gate.CannotPlace>
+  <HH.Module.Core>Núcleo</HH.Module.Core>
+  <HH.Module.Inn>Pousada e hotel</HH.Module.Inn>
+  <HH.Module.ShopsFood>Lojas e comida</HH.Module.ShopsFood>
+  <HH.Module.Casino>Cassino</HH.Module.Casino>
+  <HH.Module.Wellness>Bem-estar</HH.Module.Wellness>
+  <HH.Module.CityLife>Vida urbana</HH.Module.CityLife>
+  <HH.Module.Underworld>Submundo</HH.Module.Underworld>
+  <HH.Module.Bank>Banco (Silverline)</HH.Module.Bank>
+  <HH.Module.AiFlavour>Toque de IA</HH.Module.AiFlavour>
 </LanguageData>

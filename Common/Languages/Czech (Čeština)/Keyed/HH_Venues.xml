@@ -135,4 +135,10 @@
   <HH.Venue.Tier.Luxury>Luxusní</HH.Venue.Tier.Luxury>
   <HH.Venue.Tier.Premium>Prémiová</HH.Venue.Tier.Premium>
   <HH.Venue.Tier.Standard>Standardní</HH.Venue.Tier.Standard>
+  <HH.Venue.CheckDishes>Talíře na policích</HH.Venue.CheckDishes>
+  <HH.Venue.CheckNoDishes>Žádné talíře k prodeji → uvařte pokrmy a uložte je do pokoje</HH.Venue.CheckNoDishes>
+  <HH.Venue.MarketBlock.NoHome>žádná domovská mapa</HH.Venue.MarketBlock.NoHome>
+  <HH.Venue.MarketBlock.NoShop>žádný obchod</HH.Venue.MarketBlock.NoShop>
+  <HH.Venue.MarketBlock.Stalls>tržní stánky {0}/{1}</HH.Venue.MarketBlock.Stalls>
+  <HH.Venue.MarketBlock.Renown>pověst {0}/{1}</HH.Venue.MarketBlock.Renown>
 </LanguageData>

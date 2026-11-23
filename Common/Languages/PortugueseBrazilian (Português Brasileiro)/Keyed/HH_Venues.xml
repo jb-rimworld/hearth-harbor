@@ -135,4 +135,10 @@
   <HH.Venue.Tier.Luxury>Luxuoso</HH.Venue.Tier.Luxury>
   <HH.Venue.Tier.Premium>Premium</HH.Venue.Tier.Premium>
   <HH.Venue.Tier.Standard>Padrão</HH.Venue.Tier.Standard>
+  <HH.Venue.CheckDishes>Pratos nas prateleiras</HH.Venue.CheckDishes>
+  <HH.Venue.CheckNoDishes>Sem pratos à venda → cozinhe pratos e guarde-os no quarto</HH.Venue.CheckNoDishes>
+  <HH.Venue.MarketBlock.NoHome>sem mapa de casa</HH.Venue.MarketBlock.NoHome>
+  <HH.Venue.MarketBlock.NoShop>sem loja</HH.Venue.MarketBlock.NoShop>
+  <HH.Venue.MarketBlock.Stalls>barracas de mercado {0}/{1}</HH.Venue.MarketBlock.Stalls>
+  <HH.Venue.MarketBlock.Renown>renome {0}/{1}</HH.Venue.MarketBlock.Renown>
 </LanguageData>

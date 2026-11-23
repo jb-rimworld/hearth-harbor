@@ -5,7 +5,7 @@
   <HH_Venue_Shop.label>商店</HH_Venue_Shop.label>
   <HH_Venue_Shop.description>客人在这里购买商品的房间。房间内货架和储存区里的所有东西都可出售，价格为市场价乘以招牌的价格系数。没有店员时，商店以小幅折扣自助经营。</HH_Venue_Shop.description>
   <HH_Venue_Restaurant.label>餐厅</HH_Venue_Restaurant.label>
-  <HH_Venue_Restaurant.description>客人在这里落座用餐的房间。餐桌、厨房和服务员使它成为餐厅；菜品本身由厨房负责。</HH_Venue_Restaurant.description>
+  <HH_Venue_Restaurant.description>客人坐下来用餐的房间。有桌子、厨房和服务员，就成了餐厅；客人为这里货架和桌上的餐盘与餐食付费。菜肴由厨房烹饪；放久了的餐盘不再出售。</HH_Venue_Restaurant.description>
   <HH_Venue_Casino.label>赌场</HH_Venue_Casino.label>
   <HH_Venue_Casino.description>摆满牌桌、老虎机和荷官的房间。客人用银币参与机会游戏；庄家保留一个小而诚实的优势。</HH_Venue_Casino.description>
   <HH_Venue_Spa.label>水疗馆</HH_Venue_Spa.label>

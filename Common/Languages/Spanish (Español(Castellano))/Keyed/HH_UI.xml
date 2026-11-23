@@ -284,7 +284,7 @@
   <HH.Setting.core.infiniteMoney>Dinero infinito de los huéspedes</HH.Setting.core.infiniteMoney>
   <HH.Setting.core.picky>Huéspedes exigentes</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>Los huéspedes esperan un poco más de cada estancia (expectativas +0,1).</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.ironBank>Monedero de hierro / Banco de hierro</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank>Banco de hierro</HH.Setting.core.ironBank>
   <HH.Setting.core.noResearchGating>Sin restricciones de investigación</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Todo lo de los árboles de Hearth &amp; Harbor y Silverline está disponible desde el principio.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>Bajos fondos pacíficos</HH.Setting.core.peacefulUnderworld>
@@ -294,4 +294,23 @@
   <HH.UI.Overview.Arrivals>Llegadas, próximas 24 h: {0}, se esperan unos {1} grupos al día.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>nadie planeado todavía</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>{0} grupo(s) planeado(s) (unos {1} huésped(es))</HH.UI.Overview.Arrivals.Planned>
+  <HH.UI.Content.Decline>No, mantener {0}</HH.UI.Content.Decline>
+  <HH.UI.Diff.Ladder>Bajos fondos: penalización máxima por incidente</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.WarnHard>Desde Sobrereservado, los incidentes de bajos fondos pueden costar buena voluntad, renombre y plata de verdad (ver los límites de abajo).</HH.UI.Diff.WarnHard>
+  <HH.UI.Feel.4>Los incidentes de bajos fondos empiezan a costar buena voluntad, renombre y multas.</HH.UI.Feel.4>
+  <HH.UI.Feel.5>Penalizaciones mayores por incidentes de bajos fondos, y un banco más duro.</HH.UI.Feel.5>
+  <HH.UI.Feel.6>Todo es duro y nada tiene límite.</HH.UI.Feel.6>
+  <HH.UI.Calc.slotRtp>Pago de la tragaperras (RTP)</HH.UI.Calc.slotRtp>
+  <HH.UI.Calc.slotRtp.Desc>Parte de cada apuesta que una tragaperras devuelve de media. La casa se queda con el resto.</HH.UI.Calc.slotRtp.Desc>
+  <HH.UI.Ladder.Goodwill>Pérdida de buena voluntad por incidente (límite)</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>Lo máximo de buena voluntad que puede quitarte un incidente de bajos fondos.</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Renown.Desc>Lo máximo de renombre que te puede costar un incidente de bajos fondos.</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Fine>Multas (límite, en plata)</HH.UI.Ladder.Fine>
+  <HH.UI.Ladder.Fine.Desc>La multa máxima que puede imponerte un solo incidente de bajos fondos.</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Footer>Estos límites se aplican a los incidentes de bajos fondos. Las fases de cobro del banco siguen sus propios ajustes.</HH.UI.Ladder.Footer>
+  <HH.Setting.core.neverDie.Desc>Los huéspedes quedan derribados en lugar de morir. Siguen vivos, caídos, hasta que alguien los atienda.</HH.Setting.core.neverDie.Desc>
+  <HH.Setting.core.infiniteMoney.Desc>Los huéspedes que lleguen mientras esté activo llevan un monedero sin fondo. El factor de dinero de huéspedes no les afecta.</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.ironBank.Desc>El cobro de deudas siempre sube hasta la fase más alta, sea cual sea la dificultad. Nadie aplaza tus plazos en silencio.</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Los locales oscuros funcionan sin violencia: sin foso de peleas, sin interrogatorios, sin caza de personas, sin clínica, sin extorsión. Se mantienen la trastienda, el perista y el salón de drogas.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.perfMode.Desc>La planificación de huéspedes y las revisiones de habitaciones se hacen la mitad de veces. Ayuda en ordenadores lentos; los huéspedes pueden reaccionar algo más tarde.</HH.Setting.core.perfMode.Desc>
 </LanguageData>

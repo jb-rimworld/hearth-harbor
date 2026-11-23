@@ -43,4 +43,7 @@
   <HH.Setting.dlc.traitSpawn.Desc>Везунчик, Невезучий, Прирождённый хозяин и другие черты Hearth &amp; Harbor могут появиться у новых персонажей. Существующие персонажи сохраняют свои. Выключено: черты добавляются только вручную или в редакторе.</HH.Setting.dlc.traitSpawn.Desc>
   <HH.Setting.dlc.traitRarity>Частота черт</HH.Setting.dlc.traitRarity>
   <HH.Setting.dlc.traitRarity.Desc>Множитель частоты, с которой наши черты выпадают новым персонажам (1 = та же редкость, что у большинства черт ванили).</HH.Setting.dlc.traitRarity.Desc>
+  <HH.Dlc.Noble.NoBed>Нет кровати, достойной гостя</HH.Dlc.Noble.NoBed>
+  <HH.Dlc.Noble.RoomFits>Комната соответствует моему титулу</HH.Dlc.Noble.RoomFits>
+  <HH.Dlc.Noble.RoomBeneath>Комната ниже моего титула</HH.Dlc.Noble.RoomBeneath>
 </LanguageData>

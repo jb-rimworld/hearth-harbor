@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServiceQuality.description>Наскільки приємно цій людині прислуговувати. Додається до задоволеності гостей, з якими вона розмовляє.</HH_ServiceQuality.description>
+  <HH_GuestExpectation.description>Додається до того, чого гість очікує від перебування. Додатне значення означає важче догодити. Вибагливе піднебіння підвищує власне очікування гостя; спритний на слово господар знижує його для гостей, яких вітає або проводить.</HH_GuestExpectation.description>
+  <HH_Dexterity.description>Швидкість роздачі як крупʼє: раунди за їхнім столом коротші на 3 % за пункт (максимум 30 %).</HH_Dexterity.description>
+  <HH_TableSkill.label>відчуття карт</HH_TableSkill.label>
+  <HH_TableSkill.description>Рівні Інтелекту, що додаються, коли ця людина грає в блекджек або покер.</HH_TableSkill.description>
+  <HH_FraudDetection.label>пильність</HH_FraudDetection.label>
+  <HH_FraudDetection.description>Поки ця людина на карті, шанс, що поважний гість натрапить на задню кімнату, ділиться на це значення. Враховується найпильніший колоніст.</HH_FraudDetection.description>
+  <HH_BrawlRisk.description>Множник шансу, що сварка в кімнаті цієї людини перетвориться на бійку. Враховується найнижче значення поруч.</HH_BrawlRisk.description>
+  <HH_RumorSpread.description>Множник того, наскільки гості, що їдуть, змінюють славу закладу, на добре чи на погане. Враховується найбільший пліткар колонії.</HH_RumorSpread.description>
+  <HH_CareProgress.label>якість догляду</HH_CareProgress.label>
+  <HH_CareProgress.description>Множник якості масажів, які дає ця людина.</HH_CareProgress.description>
+  <HH_BankFeeFactor.description>Множник комісій банку, поки ця людина живе в колонії. Враховується найнижче значення.</HH_BankFeeFactor.description>
+  <HH_RecruitPrice.description>Множник надбавки прихильності понад мінімум 5, коли гість приєднується до колонії, а ця людина його переконала.</HH_RecruitPrice.description>
+  <HH_TipFactor.label>щедрість гостя</HH_TipFactor.label>
+  <HH_TipFactor.description>Множник того, яку частину свого бюджету ця людина витрачає на одну покупку як гість.</HH_TipFactor.description>
+  <HH_DishQuality.description>Шанс підняти приготовлену страву ресторану на один крок якості.</HH_DishQuality.description>
+  <HH_FamilyCheer.description>Додається до оцінки обслуговування дітей і родин, яких ця людина вітає або проводить.</HH_FamilyCheer.description>
+  <HH_PriceFeel.description>Додається до того, наскільки дорогими гості вважають ціни, коли цю людину обслуговують.</HH_PriceFeel.description>
+</LanguageData>

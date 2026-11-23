@@ -4,4 +4,16 @@
   <HH.Setting.core.researchMode.Desc>Plný: stromy výzkumu Hearth &amp; Harbor a Silverline určují, které budovy a funkce jsou dostupné. Vypnuto: vše je dostupné od začátku (temné projekty podsvětí stále vyžadují objevení).</HH.Setting.core.researchMode.Desc>
   <HH.Enum.CoreResearchMode.Full>Plný</HH.Enum.CoreResearchMode.Full>
   <HH.Enum.CoreResearchMode.Off>Vypnuto</HH.Enum.CoreResearchMode.Off>
+  <HH.Gate.ModuleOff>Modul vypnut: {0}</HH.Gate.ModuleOff>
+  <HH.Gate.ModuleOffInspect>nedělá nic, dokud se modul znovu nezapne.</HH.Gate.ModuleOffInspect>
+  <HH.Gate.CannotPlace>Nedostupné: {0} je v této hře vypnuté.</HH.Gate.CannotPlace>
+  <HH.Module.Core>Jádro</HH.Module.Core>
+  <HH.Module.Inn>Hostinec a hotel</HH.Module.Inn>
+  <HH.Module.ShopsFood>Obchody a jídlo</HH.Module.ShopsFood>
+  <HH.Module.Casino>Kasino</HH.Module.Casino>
+  <HH.Module.Wellness>Wellness</HH.Module.Wellness>
+  <HH.Module.CityLife>Městský život</HH.Module.CityLife>
+  <HH.Module.Underworld>Podsvětí</HH.Module.Underworld>
+  <HH.Module.Bank>Banka (Silverline)</HH.Module.Bank>
+  <HH.Module.AiFlavour>AI příchuť</HH.Module.AiFlavour>
 </LanguageData>

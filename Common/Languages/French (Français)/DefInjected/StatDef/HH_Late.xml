@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServiceQuality.description>Le plaisir qu'on éprouve à être servi par cette personne. S'ajoute à la satisfaction des invités avec qui elle discute.</HH_ServiceQuality.description>
+  <HH_GuestExpectation.description>S'ajoute à ce qu'un invité attend d'un séjour. Positif signifie plus difficile à satisfaire. Un palais raffiné augmente l'exigence propre de l'invité ; un hôte à la langue d'argent la baisse pour les invités qu'il accueille ou guide.</HH_GuestExpectation.description>
+  <HH_Dexterity.description>Vitesse de distribution en tant que croupier : les tours à sa table sont plus courts de 3 % par point (au maximum 30 %).</HH_Dexterity.description>
+  <HH_TableSkill.label>sens des cartes</HH_TableSkill.label>
+  <HH_TableSkill.description>Niveaux d'Intellect ajoutés quand cette personne joue au blackjack ou au poker.</HH_TableSkill.description>
+  <HH_FraudDetection.label>vigilance</HH_FraudDetection.label>
+  <HH_FraudDetection.description>Tant que cette personne est sur la carte, la probabilité qu'un invité respectable tombe sur l'arrière-salle est divisée par cette valeur. Le colon le plus vigilant compte.</HH_FraudDetection.description>
+  <HH_BrawlRisk.description>Multiplicateur sur la probabilité qu'une querelle dans la chambre de cette personne tourne à la bagarre. La valeur la plus basse à proximité compte.</HH_BrawlRisk.description>
+  <HH_RumorSpread.description>Multiplicateur sur l'effet des invités qui partent sur la renommée de la maison, en bien ou en mal. Le plus grand bavard de la colonie compte.</HH_RumorSpread.description>
+  <HH_CareProgress.label>qualité des soins</HH_CareProgress.label>
+  <HH_CareProgress.description>Multiplicateur sur la qualité des massages que cette personne donne.</HH_CareProgress.description>
+  <HH_BankFeeFactor.description>Multiplicateur sur les frais de la banque tant que cette personne vit dans la colonie. La valeur la plus basse compte.</HH_BankFeeFactor.description>
+  <HH_RecruitPrice.description>Multiplicateur sur la surtaxe de bonne volonté au-dessus du plancher de 5 quand un invité rejoint la colonie et que cette personne l'a conquis.</HH_RecruitPrice.description>
+  <HH_TipFactor.label>générosité de l'invité</HH_TipFactor.label>
+  <HH_TipFactor.description>Multiplicateur sur la part de leur budget que cette personne dépense pour un achat en tant qu'invité.</HH_TipFactor.description>
+  <HH_DishQuality.description>Chance de faire monter d'un cran la qualité d'un plat de restaurant cuisiné.</HH_DishQuality.description>
+  <HH_FamilyCheer.description>S'ajoute au score de service des enfants et des familles que cette personne accueille ou guide.</HH_FamilyCheer.description>
+  <HH_PriceFeel.description>S'ajoute à la perception du caractère cher des prix par les invités quand cette personne les sert.</HH_PriceFeel.description>
+</LanguageData>

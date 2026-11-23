@@ -114,7 +114,7 @@
   <HH.Setting.kitchen.allKnown>Všechny pokrmy známy</HH.Setting.kitchen.allKnown>
   <HH.Setting.kitchen.allKnown.Desc>Přeskočí učení: každý pokrm menu lze uvařit, jakmile stojí jeho zařízení.</HH.Setting.kitchen.allKnown.Desc>
   <HH.Setting.kitchen.darkMenu>Temné menu (dlouhé vepřové)</HH.Setting.kitchen.darkMenu>
-  <HH.Setting.kitchen.darkMenu.Desc>Povolí pokrmy z dlouhého vepřového. Odemkne je také ideologie, která schvaluje kanibalismus.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Setting.kitchen.darkMenu.Desc>Povolí pokrmy z dlouhého vepřového. Vždy vyžaduje intenzitu obsahu Temný nebo Krutý; s ní je odemkne i ideologie, která kanibalismus schvaluje, i když je toto vypnuté.</HH.Setting.kitchen.darkMenu.Desc>
   <HH.Kitchen.Cookbook.Teaches>Učí: {0}</HH.Kitchen.Cookbook.Teaches>
   <HH.Kitchen.Cookbook.Empty>Stránky jsou prázdné.</HH.Kitchen.Cookbook.Empty>
   <HH.Kitchen.Cookbook.AllKnown>Kolonie už zná každý pokrm v této knize.</HH.Kitchen.Cookbook.AllKnown>

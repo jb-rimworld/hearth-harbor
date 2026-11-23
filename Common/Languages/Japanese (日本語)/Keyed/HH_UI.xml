@@ -284,7 +284,7 @@
   <HH.Setting.core.infiniteMoney>ゲストの金は無限</HH.Setting.core.infiniteMoney>
   <HH.Setting.core.picky>うるさいゲスト</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>ゲストは毎回の滞在に少しだけ多くを期待する（期待値 +0.1）。</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.ironBank>鉄の財布 / 鉄の銀行</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank>鉄の銀行</HH.Setting.core.ironBank>
   <HH.Setting.core.noResearchGating>研究の制限なし</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Hearth &amp; Harbor と Silverline の研究ツリーのすべてが最初から使える。</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>平和な裏社会</HH.Setting.core.peacefulUnderworld>
@@ -294,4 +294,23 @@
   <HH.UI.Overview.Arrivals>到着予定、次の24時間: {0}、1日あたり約 {1} 組を見込む。</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>まだ予定なし</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>{0} 組を予定（約 {1} 名）</HH.UI.Overview.Arrivals.Planned>
+  <HH.UI.Content.Decline>いいえ、{0} を続ける</HH.UI.Content.Decline>
+  <HH.UI.Diff.Ladder>裏社会: 事件ごとの罰則の上限</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.WarnHard>「過剰予約」からは、裏社会の事件が本物の好意、名声、銀を失わせることがある（下の上限を参照）。</HH.UI.Diff.WarnHard>
+  <HH.UI.Feel.4>裏社会の事件で、好意、名声、罰金を失い始める。</HH.UI.Feel.4>
+  <HH.UI.Feel.5>裏社会の事件への罰則が重くなり、銀行も厳しくなる。</HH.UI.Feel.5>
+  <HH.UI.Feel.6>すべてが厳しく、上限もない。</HH.UI.Feel.6>
+  <HH.UI.Calc.slotRtp>スロットマシンの払い戻し率（RTP）</HH.UI.Calc.slotRtp>
+  <HH.UI.Calc.slotRtp.Desc>スロットマシンが各賭け金の平均どれだけを払い戻すか。残りは店の取り分になる。</HH.UI.Calc.slotRtp.Desc>
+  <HH.UI.Ladder.Goodwill>事件ごとの好意の損失（上限）</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>裏社会の事件 1 件で失われうる好意の最大量。</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Renown.Desc>裏社会の事件 1 件で失われうる名声の最大量。</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Fine>罰金（上限、銀）</HH.UI.Ladder.Fine>
+  <HH.UI.Ladder.Fine.Desc>裏社会の事件 1 件で課されうる罰金の最大額。</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Footer>これらの上限は裏社会の事件に適用される。銀行の取り立て段階は、それぞれ独自の設定に従う。</HH.UI.Ladder.Footer>
+  <HH.Setting.core.neverDie.Desc>ゲストは殺されず、倒れるだけになる。誰かが手当てするまで、倒れたまま生き続ける。</HH.Setting.core.neverDie.Desc>
+  <HH.Setting.core.infiniteMoney.Desc>この設定がオンの間に到着したゲストは、底なしの財布を持つ。ゲストの金の係数は彼らには効かない。</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.ironBank.Desc>難易度に関係なく、取り立ては必ず最も厳しい段階まで上がる。誰も分割払いを黙って延ばしてはくれない。</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>暗い店は暴力なしで営業する: 闘技場も、尋問も、人狩りも、診療所も、みかじめ料もない。奥の部屋、故買屋、麻薬の溜まり場は残る。</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.perfMode.Desc>ゲストの計画と部屋の確認が半分の頻度になる。遅いパソコンに効く。ゲストの反応が少し遅れることがある。</HH.Setting.core.perfMode.Desc>
 </LanguageData>

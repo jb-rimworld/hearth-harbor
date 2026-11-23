@@ -284,7 +284,7 @@
   <HH.Setting.core.infiniteMoney>손님 돈 무한</HH.Setting.core.infiniteMoney>
   <HH.Setting.core.picky>까다로운 손님</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>손님은 매 체류마다 조금 더 많은 것을 기대합니다 (기대치 +0.1).</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.ironBank>철의 지갑 / 철의 은행</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank>철의 은행</HH.Setting.core.ironBank>
   <HH.Setting.core.noResearchGating>연구 잠금 없음</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Hearth &amp; Harbor와 Silverline 연구 트리의 모든 항목을 처음부터 쓸 수 있습니다.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>평화로운 지하세계</HH.Setting.core.peacefulUnderworld>
@@ -294,4 +294,23 @@
   <HH.UI.Overview.Arrivals>다음 24시간 도착: {0}, 하루 약 {1}팀 예상.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>아직 아무도 예정되지 않았습니다</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>{0}팀 예정 (손님 약 {1}명)</HH.UI.Overview.Arrivals.Planned>
+  <HH.UI.Content.Decline>아니요, {0} 유지</HH.UI.Content.Decline>
+  <HH.UI.Diff.Ladder>지하세계: 사건당 피해 상한</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.WarnHard>과밀 예약부터는 지하세계 사건이 실제 호감도, 명성, 은화를 깎을 수 있습니다 (아래 상한 참고).</HH.UI.Diff.WarnHard>
+  <HH.UI.Feel.4>지하세계 사건으로 호감도, 명성, 벌금이 깎이기 시작합니다.</HH.UI.Feel.4>
+  <HH.UI.Feel.5>지하세계 사건 벌금이 커지고, 은행은 더 가혹해집니다.</HH.UI.Feel.5>
+  <HH.UI.Feel.6>모든 것이 어렵고 상한이 없습니다.</HH.UI.Feel.6>
+  <HH.UI.Calc.slotRtp>슬롯머신 환급률 (RTP)</HH.UI.Calc.slotRtp>
+  <HH.UI.Calc.slotRtp.Desc>슬롯머신이 평균적으로 모든 베팅의 몇 %를 돌려주는지. 나머지는 하우스가 가져갑니다.</HH.UI.Calc.slotRtp.Desc>
+  <HH.UI.Ladder.Goodwill>사건당 호감도 손실 (상한)</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>지하세계 사건 하나가 빼앗을 수 있는 호감도의 최댓값.</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Renown.Desc>지하세계 사건 하나가 깎을 수 있는 명성의 최댓값.</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Fine>벌금 (상한, 은화)</HH.UI.Ladder.Fine>
+  <HH.UI.Ladder.Fine.Desc>지하세계 사건 하나에 매길 수 있는 벌금의 최댓값.</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Footer>이 상한은 지하세계 사건에 적용됩니다. 은행 추심 단계는 자체 설정을 따릅니다.</HH.UI.Ladder.Footer>
+  <HH.Setting.core.neverDie.Desc>손님은 죽는 대신 쓰러집니다. 누군가 돌보기 전까지 쓰러진 채로 살아 있습니다.</HH.Setting.core.neverDie.Desc>
+  <HH.Setting.core.infiniteMoney.Desc>이 설정이 켜진 상태로 도착한 손님은 바닥없는 지갑을 가지고 옵니다. 손님 돈 배율은 이들에게 영향을 주지 않습니다.</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.ironBank.Desc>난이도와 관계없이 채권 추심은 항상 가장 높은 단계까지 올라갑니다. 아무도 할부금을 조용히 미뤄 주지 않습니다.</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>어두운 시설은 폭력 없이 운영됩니다: 싸움터 없음, 심문 없음, 사람 사냥 없음, 진료소 없음, 보호비 갈취 없음. 뒷방, 장물아비, 약물 라운지는 남습니다.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.perfMode.Desc>손님 계획과 방 점검이 절반 빈도로 실행됩니다. 느린 컴퓨터에 도움이 되며, 손님의 반응이 조금 늦을 수 있습니다.</HH.Setting.core.perfMode.Desc>
 </LanguageData>

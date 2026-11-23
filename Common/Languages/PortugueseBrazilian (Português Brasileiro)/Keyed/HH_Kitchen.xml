@@ -114,7 +114,7 @@
   <HH.Setting.kitchen.allKnown>Todos os pratos conhecidos</HH.Setting.kitchen.allKnown>
   <HH.Setting.kitchen.allKnown.Desc>Pula o aprendizado: cada prato do cardápio pode ser preparado assim que seus dispositivos estiverem prontos.</HH.Setting.kitchen.allKnown.Desc>
   <HH.Setting.kitchen.darkMenu>Cardápio sombrio (carne longa)</HH.Setting.kitchen.darkMenu>
-  <HH.Setting.kitchen.darkMenu.Desc>Permite os pratos de carne longa. Eles também são desbloqueados por uma ideoreligião que aprova o canibalismo.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Setting.kitchen.darkMenu.Desc>Permite os pratos de carne humana. Exige sempre intensidade de conteúdo Sombrio ou Sinistro; com isso, uma ideoreligião que aprova canibalismo os libera mesmo com esta opção desligada.</HH.Setting.kitchen.darkMenu.Desc>
   <HH.Kitchen.Cookbook.Teaches>Ensina: {0}</HH.Kitchen.Cookbook.Teaches>
   <HH.Kitchen.Cookbook.Empty>As páginas estão em branco.</HH.Kitchen.Cookbook.Empty>
   <HH.Kitchen.Cookbook.AllKnown>A colônia já conhece todos os pratos deste livro.</HH.Kitchen.Cookbook.AllKnown>

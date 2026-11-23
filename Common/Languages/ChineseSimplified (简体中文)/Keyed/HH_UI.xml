@@ -284,7 +284,7 @@
   <HH.Setting.core.infiniteMoney>访客金钱无限</HH.Setting.core.infiniteMoney>
   <HH.Setting.core.picky>挑剔的访客</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>访客对每次停留的期望都会略高（期望 +0.1）。</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.ironBank>铁钱包 / 铁银行</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank>铁银行</HH.Setting.core.ironBank>
   <HH.Setting.core.noResearchGating>研究不设门槛</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Hearth &amp; Harbor 与 Silverline 研究树上的所有内容从一开始就可用。</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>和平的地下世界</HH.Setting.core.peacefulUnderworld>
@@ -294,4 +294,23 @@
   <HH.UI.Overview.Arrivals>未来 24 小时到访：{0}，预计每天约 {1} 批客人。</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>尚无人计划</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>已计划 {0} 批（约 {1} 位客人）</HH.UI.Overview.Arrivals.Planned>
+  <HH.UI.Content.Decline>不，保留 {0}</HH.UI.Content.Decline>
+  <HH.UI.Diff.Ladder>地下世界：每次事件的惩罚上限</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.WarnHard>从「超额预订」起，地下世界事件可能真正损失好感、声望和银币（见下方上限）。</HH.UI.Diff.WarnHard>
+  <HH.UI.Feel.4>地下世界事件开始让你损失好感、声望并支付罚款。</HH.UI.Feel.4>
+  <HH.UI.Feel.5>地下世界事件的惩罚更重，银行也更难缠。</HH.UI.Feel.5>
+  <HH.UI.Feel.6>一切都很苛刻，而且没有上限。</HH.UI.Feel.6>
+  <HH.UI.Calc.slotRtp>老虎机派彩率（RTP）</HH.UI.Calc.slotRtp>
+  <HH.UI.Calc.slotRtp.Desc>老虎机平均每笔下注返还的比例，其余归店里所有。</HH.UI.Calc.slotRtp.Desc>
+  <HH.UI.Ladder.Goodwill>每次事件的好感损失（上限）</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>一次地下世界事件最多能让你损失多少好感。</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Renown.Desc>一次地下世界事件最多能让你损失多少声望。</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Fine>罚款（上限，银币）</HH.UI.Ladder.Fine>
+  <HH.UI.Ladder.Fine.Desc>一次地下世界事件最多对你罚款多少。</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Footer>这些上限适用于地下世界事件。银行催收阶段按其自身设置执行。</HH.UI.Ladder.Footer>
+  <HH.Setting.core.neverDie.Desc>访客会被击倒而不是杀死。他们会倒地但仍活着，直到有人照料他们。</HH.Setting.core.neverDie.Desc>
+  <HH.Setting.core.infiniteMoney.Desc>此开关开启期间抵达的访客携带无底钱包。访客资金系数对他们无效。</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.ironBank.Desc>无论难度如何，债务催收都会升到最高阶段。没有人会悄悄替你延后分期付款。</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>阴暗场所不使用暴力：没有斗殴场、没有审讯、没有追捕人、没有诊所、没有保护费勒索。后间、销赃人和毒品休息室保留。</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.perfMode.Desc>访客规划和房间检查的频率减半。对慢速电脑有帮助；访客的反应可能略慢。</HH.Setting.core.perfMode.Desc>
 </LanguageData>

@@ -43,4 +43,7 @@
   <HH.Setting.dlc.traitSpawn.Desc>幸运、倒霉、天生东道主以及其他「炉火与港湾」特质可能出现在新生成的角色身上。已存在的角色保留原有特质。关闭：只能手动或通过编辑器添加。</HH.Setting.dlc.traitSpawn.Desc>
   <HH.Setting.dlc.traitRarity>特质出现频率</HH.Setting.dlc.traitRarity>
   <HH.Setting.dlc.traitRarity.Desc>新角色抽取本模组特质频率的倍率（1 = 与大多数原版特质同等稀有）。</HH.Setting.dlc.traitRarity.Desc>
+  <HH.Dlc.Noble.NoBed>没有配得上访客的床</HH.Dlc.Noble.NoBed>
+  <HH.Dlc.Noble.RoomFits>房间与我的头衔相称</HH.Dlc.Noble.RoomFits>
+  <HH.Dlc.Noble.RoomBeneath>房间配不上我的头衔</HH.Dlc.Noble.RoomBeneath>
 </LanguageData>

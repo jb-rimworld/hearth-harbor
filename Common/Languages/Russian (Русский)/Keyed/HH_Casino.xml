@@ -171,4 +171,73 @@
   <HH.Thrumbo.Err.HandOpen>Раздача ещё не окончена.</HH.Thrumbo.Err.HandOpen>
   <HH.Thrumbo.Err.NoHand>Нет открытой раздачи.</HH.Thrumbo.Err.NoHand>
   <HH.Thrumbo.Err.NoDouble>Удвоить можно только первые две карты.</HH.Thrumbo.Err.NoDouble>
+  <HH.Thrumbo.TotalsGoods>Ставки товарами (стоимость в серебре, в книги не попадает): {0} раундов · поставлено {1} · возвращено {2} · итог {3}</HH.Thrumbo.TotalsGoods>
+  <HH.Thrumbo.Ago>назад</HH.Thrumbo.Ago>
+  <HH.Thrumbo.Sym.cherry>вишня</HH.Thrumbo.Sym.cherry>
+  <HH.Thrumbo.Sym.lemon>лимон</HH.Thrumbo.Sym.lemon>
+  <HH.Thrumbo.Sym.plum>слива</HH.Thrumbo.Sym.plum>
+  <HH.Thrumbo.Sym.bell>колокол</HH.Thrumbo.Sym.bell>
+  <HH.Thrumbo.Sym.bar>бар</HH.Thrumbo.Sym.bar>
+  <HH.Thrumbo.Sym.seven>семёрка</HH.Thrumbo.Sym.seven>
+  <HH.Thrumbo.Sym.muffalo>маффало</HH.Thrumbo.Sym.muffalo>
+  <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
+  <HH.Thrumbo.Pay.Cherry2>2 × вишня (барабаны 1+2)</HH.Thrumbo.Pay.Cherry2>
+  <HH.Thrumbo.Pay.Cherry1>вишня на барабане 1</HH.Thrumbo.Pay.Cherry1>
+  <HH.Thrumbo.Bet.Straight>Прямая {0}</HH.Thrumbo.Bet.Straight>
+  <HH.Thrumbo.Bet.Split>Сплит {0}/{1}</HH.Thrumbo.Bet.Split>
+  <HH.Thrumbo.Bet.Street>Стрит {0}-{1}</HH.Thrumbo.Bet.Street>
+  <HH.Thrumbo.Bet.Corner>Угловая {0}</HH.Thrumbo.Bet.Corner>
+  <HH.Thrumbo.Bet.SixLine>Шестёрка {0}-{1}</HH.Thrumbo.Bet.SixLine>
+  <HH.Thrumbo.Bet.Column>Колонна {0}</HH.Thrumbo.Bet.Column>
+  <HH.Thrumbo.Bet.Dozen>Дюжина {0}</HH.Thrumbo.Bet.Dozen>
+  <HH.Thrumbo.Bet.Red>Красное</HH.Thrumbo.Bet.Red>
+  <HH.Thrumbo.Bet.Black>Чёрное</HH.Thrumbo.Bet.Black>
+  <HH.Thrumbo.Bet.Odd>Нечётное</HH.Thrumbo.Bet.Odd>
+  <HH.Thrumbo.Bet.Even>Чётное</HH.Thrumbo.Bet.Even>
+  <HH.Thrumbo.Bet.Low>Низкие 1-18</HH.Thrumbo.Bet.Low>
+  <HH.Thrumbo.Bet.High>Высокие 19-36</HH.Thrumbo.Bet.High>
+  <HH.Thrumbo.Stakes.Button>Поднять ставки…</HH.Thrumbo.Stakes.Button>
+  <HH.Thrumbo.Stakes.ButtonTip>Ставьте товары, животных или пленников вместо серебра. Их оценивает ростовщик заведения.</HH.Thrumbo.Stakes.ButtonTip>
+  <HH.Thrumbo.Stakes.Title>Поднять ставки</HH.Thrumbo.Stakes.Title>
+  <HH.Thrumbo.Stakes.Intro>Кладите на стол вещи вместо серебра. Проиграете, и они уйдут к заведению, как будто вы их продали. Выиграете, и вы сохраните всё, а заведение выплатит серебром.</HH.Thrumbo.Stakes.Intro>
+  <HH.Thrumbo.Stakes.Pawnbroker>ростовщик The Lucky Thrumbo</HH.Thrumbo.Stakes.Pawnbroker>
+  <HH.Thrumbo.Stakes.ValuedBy>Оценка по ценам, которые даёт {0} (улучшение торговой цены {1}).</HH.Thrumbo.Stakes.ValuedBy>
+  <HH.Thrumbo.Stakes.NoNegotiator>На этой карте никто не умеет торговаться.</HH.Thrumbo.Stakes.NoNegotiator>
+  <HH.Thrumbo.Stakes.NoBeacon>Нет питаемого орбитального торгового маячка: товары вне досягаемости.</HH.Thrumbo.Stakes.NoBeacon>
+  <HH.Thrumbo.Stakes.Refresh>Обновить</HH.Thrumbo.Stakes.Refresh>
+  <HH.Thrumbo.Stakes.Tab.Goods>Товары ({0})</HH.Thrumbo.Stakes.Tab.Goods>
+  <HH.Thrumbo.Stakes.Tab.Animals>Животные ({0})</HH.Thrumbo.Stakes.Tab.Animals>
+  <HH.Thrumbo.Stakes.Tab.Prisoners>Пленники ({0})</HH.Thrumbo.Stakes.Tab.Prisoners>
+  <HH.Thrumbo.Stakes.PawnsCozy>Животных и пленников можно ставить при интенсивности контента «Стандартный» и выше.</HH.Thrumbo.Stakes.PawnsCozy>
+  <HH.Thrumbo.Stakes.Empty.Goods>В радиусе питаемого орбитального торгового маячка нет товаров, которые купил бы торговец.</HH.Thrumbo.Stakes.Empty.Goods>
+  <HH.Thrumbo.Stakes.Empty.Animals>Ни одно животное колонии сейчас не может быть передано.</HH.Thrumbo.Stakes.Empty.Animals>
+  <HH.Thrumbo.Stakes.Empty.Prisoners>Нет надёжно содержащихся взрослых пленников. Колонисты, рабы, дети и гости никогда не становятся ставками.</HH.Thrumbo.Stakes.Empty.Prisoners>
+  <HH.Thrumbo.Stakes.UnitTip>Цена продажи: {0} за штуку\n− разница ростовщика {1} %\n− комиссия {2} %\n= стоимость ставки {3} за штуку</HH.Thrumbo.Stakes.UnitTip>
+  <HH.Thrumbo.Stakes.All>Все</HH.Thrumbo.Stakes.All>
+  <HH.Thrumbo.Stakes.Game>Игра</HH.Thrumbo.Stakes.Game>
+  <HH.Thrumbo.Stakes.RouletteEdge>Преимущество дома: {0} %</HH.Thrumbo.Stakes.RouletteEdge>
+  <HH.Thrumbo.Stakes.WinTo>Выигрыш</HH.Thrumbo.Stakes.WinTo>
+  <HH.Thrumbo.Stakes.ToAccount>на счёт</HH.Thrumbo.Stakes.ToAccount>
+  <HH.Thrumbo.Stakes.ToPod>капсулой со сбросом</HH.Thrumbo.Stakes.ToPod>
+  <HH.Thrumbo.Stakes.ToPodTip>Серебро прибывает капсулами в точке сброса торговли. Доля монеты остаётся у заведения, пока не накопится целая.</HH.Thrumbo.Stakes.ToPodTip>
+  <HH.Thrumbo.Stakes.Value>Стоимость ставки: {0}</HH.Thrumbo.Stakes.Value>
+  <HH.Thrumbo.Stakes.ValueTip>Сколько заплатил бы ростовщик заведения: ванильная цена продажи с навыками {4}: {0}\n− разница ростовщика {1} % (настройки мода)\n− комиссия {2} %\n= стоимость ставки {3}\n\nЧитается только рыночная стоимость; предметы не меняются.</HH.Thrumbo.Stakes.ValueTip>
+  <HH.Thrumbo.Stakes.Rule>Выигрыш ×m: вы сохраняете всё и получаете в серебре стоимость × (m − 1). Проигрыш: вещи пропали, как при продаже. Малый приз ниже ×1 выплачивается серебром, вещи всё равно уходят.</HH.Thrumbo.Stakes.Rule>
+  <HH.Thrumbo.Stakes.GoRoulette>Поставить и крутить колесо</HH.Thrumbo.Stakes.GoRoulette>
+  <HH.Thrumbo.Stakes.GoSlots>Поставить и дёрнуть рычаг</HH.Thrumbo.Stakes.GoSlots>
+  <HH.Thrumbo.Stakes.Confirm>Поставить {0} (стоимость {1}) на один раунд?\n\nЕсли проиграете, они пропадут навсегда.</HH.Thrumbo.Stakes.Confirm>
+  <HH.Thrumbo.Stakes.Won>выплата ×{0}: вы сохраняете всё и выигрываете {1}</HH.Thrumbo.Stakes.Won>
+  <HH.Thrumbo.Stakes.Push>ничья: вы сохраняете всё</HH.Thrumbo.Stakes.Push>
+  <HH.Thrumbo.Stakes.Lost>проигрыш: ставка уходит заведению</HH.Thrumbo.Stakes.Lost>
+  <HH.Thrumbo.Stakes.LostPart>проигрыш, возвращено {0}: ставка уходит заведению</HH.Thrumbo.Stakes.LostPart>
+  <HH.Thrumbo.Stakes.HistoryLine>Ставка: {0} · {1}</HH.Thrumbo.Stakes.HistoryLine>
+  <HH.Thrumbo.Stakes.More>и ещё {0}</HH.Thrumbo.Stakes.More>
+  <HH.Thrumbo.Stakes.Err.Off>«Поднять ставки» выключено в настройках мода.</HH.Thrumbo.Stakes.Err.Off>
+  <HH.Thrumbo.Stakes.Err.NoNegotiator>На карте должен быть колонист, умеющий торговаться.</HH.Thrumbo.Stakes.Err.NoNegotiator>
+  <HH.Thrumbo.Stakes.Err.Nothing>Выберите, что поставить.</HH.Thrumbo.Stakes.Err.Nothing>
+  <HH.Thrumbo.Stakes.Err.Gone>{0} больше недоступно. Обновите список.</HH.Thrumbo.Stakes.Err.Gone>
+  <HH.Setting.thrumbo.raiseTheStakes>Lucky Thrumbo: «Поднять ставки»</HH.Setting.thrumbo.raiseTheStakes>
+  <HH.Setting.thrumbo.raiseTheStakes.Desc>Добавляет кнопку «Поднять ставки…» к The Lucky Thrumbo: ставить товары в радиусе питаемого орбитального торгового маячка вместо серебра, а при интенсивности «Стандартный» и выше также животных колонии и пленников (как при ванильной продаже). Колонистам, рабам, детям и гостям такое не предлагается.</HH.Setting.thrumbo.raiseTheStakes.Desc>
+  <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: разница ростовщика для ставок товарами</HH.Setting.thrumbo.pawnbrokerSpread>
+  <HH.Setting.thrumbo.pawnbrokerSpread.Desc>Ставленные товары считаются по цене, которую дал бы ростовщик заведения (ванильная цена продажи с вашим лучшим переговорщиком), минус эта разница и фиксированная комиссия 2 %.</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
 </LanguageData>

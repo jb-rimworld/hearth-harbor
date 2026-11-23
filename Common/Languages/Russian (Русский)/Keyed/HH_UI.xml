@@ -284,7 +284,7 @@
   <HH.Setting.core.infiniteMoney>Бесконечные деньги гостей</HH.Setting.core.infiniteMoney>
   <HH.Setting.core.picky>Придирчивые гости</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>Гости ждут чуть большего от каждого проживания (ожидание +0,1).</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.ironBank>Железный кошелёк / Железный банк</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank>Железный банк</HH.Setting.core.ironBank>
   <HH.Setting.core.noResearchGating>Без ограничений исследований</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Всё из ветвей Hearth &amp; Harbor и Silverline доступно с самого начала.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>Мирный преступный мир</HH.Setting.core.peacefulUnderworld>
@@ -294,4 +294,23 @@
   <HH.UI.Overview.Arrivals>Прибытия за следующие 24 ч: {0}, ожидается около {1} групп в день.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>пока никто не запланирован</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>запланировано групп: {0} (около гостей: {1})</HH.UI.Overview.Arrivals.Planned>
+  <HH.UI.Content.Decline>Нет, оставить {0}</HH.UI.Content.Decline>
+  <HH.UI.Diff.Ladder>Криминальный мир: предел штрафов за случай</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.WarnHard>Начиная с «Перегруженного», инциденты криминального мира могут стоить реальной благосклонности, известности и серебра (см. пределы ниже).</HH.UI.Diff.WarnHard>
+  <HH.UI.Feel.4>Инциденты криминального мира начинают стоить благосклонности, известности и штрафов.</HH.UI.Feel.4>
+  <HH.UI.Feel.5>Больше штрафов за инциденты криминального мира, банк жёстче.</HH.UI.Feel.5>
+  <HH.UI.Feel.6>Всё сложно, и ничего не ограничено.</HH.UI.Feel.6>
+  <HH.UI.Calc.slotRtp>Выплата игрового автомата (RTP)</HH.UI.Calc.slotRtp>
+  <HH.UI.Calc.slotRtp.Desc>Доля каждой ставки, которую автомат в среднем возвращает. Остальное забирает заведение.</HH.UI.Calc.slotRtp.Desc>
+  <HH.UI.Ladder.Goodwill>Потеря благосклонности за случай (предел)</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>Самое большое, что один инцидент криминального мира может у вас отнять из благосклонности.</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Renown.Desc>Самое большое, что один инцидент криминального мира может стоить вам известности.</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Fine>Штрафы (предел, серебро)</HH.UI.Ladder.Fine>
+  <HH.UI.Ladder.Fine.Desc>Самый большой штраф, который один инцидент криминального мира может наложить.</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Footer>Эти пределы действуют на инциденты криминального мира. Стадии взыскания банка работают по собственным настройкам.</HH.UI.Ladder.Footer>
+  <HH.Setting.core.neverDie.Desc>Гостей вырубают вместо убийства. Они остаются живы, лежа без сознания, пока кто-нибудь о них не позаботится.</HH.Setting.core.neverDie.Desc>
+  <HH.Setting.core.infiniteMoney.Desc>Гости, прибывшие при включённой настройке, носят с собой бездонный кошелёк. Множитель денег гостей на них не действует.</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.ironBank.Desc>Взыскание долга всегда доходит до высшей стадии, при любой сложности. Никто тихо не откладывает ваши взносы.</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Тёмные заведения работают без насилия: нет ямы для боёв, допросов, охоты на людей, клиники и рэкета. Подсобка, скупщик и курильня остаются.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.perfMode.Desc>Планирование гостей и проверки комнат идут вдвое реже. Помогает на слабых компьютерах; гости могут реагировать немного позже.</HH.Setting.core.perfMode.Desc>
 </LanguageData>

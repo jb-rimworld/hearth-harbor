@@ -290,4 +290,9 @@
   <HH.Setting.inn.stayNightsMin.Desc>Ночующие гости остаются не меньше этого числа ночей.</HH.Setting.inn.stayNightsMin.Desc>
   <HH.Setting.inn.waitThoughts>Мысли об ожидании и звонке ночного колокольчика</HH.Setting.inn.waitThoughts>
   <HH.Setting.inn.waitThoughts.Desc>Гости, которые напрасно ждут или звонят в ночной колокольчик, когда никто не едет, чувствуют это в настроении; комната ожидания смягчает это.</HH.Setting.inn.waitThoughts.Desc>
+  <HH.Inn.Event.SponsoredBed>Кровать забронирована и оплачена отрядом.</HH.Inn.Event.SponsoredBed>
+  <HH.Inn.Event.Charmed>Благодаря {0} заведение звучит лучше, чем ожидалось.</HH.Inn.Event.Charmed>
+  <HH.Inn.PriceMode.ManualSet>Фиксированная цена…</HH.Inn.PriceMode.ManualSet>
+  <HH.Inn.PriceMode.ManualValue>{0} серебра за ночь</HH.Inn.PriceMode.ManualValue>
+  <HH.Inn.PriceMode.Manual>фиксированная цена</HH.Inn.PriceMode.Manual>
 </LanguageData>

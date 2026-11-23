@@ -5,7 +5,7 @@
   <HH_Venue_Shop.label>tienda</HH_Venue_Shop.label>
   <HH_Venue_Shop.description>Una sala donde los huéspedes compran mercancía. Todo lo almacenado en estanterías y depósitos dentro de la sala está a la venta, a valor de mercado multiplicado por el factor de precio del cartel. Sin tendero, la tienda funciona como autoservicio con un pequeño descuento.</HH_Venue_Shop.description>
   <HH_Venue_Restaurant.label>restaurante</HH_Venue_Restaurant.label>
-  <HH_Venue_Restaurant.description>Una sala donde los huéspedes se sientan a comer. Mesas, cocina y un camarero la convierten en restaurante; los platos los gestiona la cocina.</HH_Venue_Restaurant.description>
+  <HH_Venue_Restaurant.description>Una sala donde los huéspedes se sientan a comer. Mesas, cocina y camarero la convierten en restaurante; los huéspedes pagan los platos y comidas de sus estanterías y mesas. Cocina la cocina; los platos pasados no se venden.</HH_Venue_Restaurant.description>
   <HH_Venue_Casino.label>casino</HH_Venue_Casino.label>
   <HH_Venue_Casino.description>Una sala de mesas de cartas, tragaperras y crupieres. Los huéspedes apuestan su plata a juegos de azar; la casa mantiene una pequeña ventaja honrada.</HH_Venue_Casino.description>
   <HH_Venue_Spa.label>spa</HH_Venue_Spa.label>

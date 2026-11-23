@@ -43,4 +43,7 @@
   <HH.Setting.dlc.traitSpawn.Desc>Chanceux, Malchanceux, Hôte né et les autres traits Hearth &amp; Harbor peuvent apparaître chez les nouveaux individus. Les individus existants gardent les leurs. Désactivé : ajoutés seulement à la main ou dans l'éditeur.</HH.Setting.dlc.traitSpawn.Desc>
   <HH.Setting.dlc.traitRarity>Fréquence des traits</HH.Setting.dlc.traitRarity>
   <HH.Setting.dlc.traitRarity.Desc>Multiplicateur sur la fréquence de tirage de nos traits pour les nouveaux individus (1 = même rareté que la plupart des traits vanilla).</HH.Setting.dlc.traitRarity.Desc>
+  <HH.Dlc.Noble.NoBed>Aucun lit digne d'un invité</HH.Dlc.Noble.NoBed>
+  <HH.Dlc.Noble.RoomFits>Chambre à la hauteur de mon titre</HH.Dlc.Noble.RoomFits>
+  <HH.Dlc.Noble.RoomBeneath>Chambre indigne de mon titre</HH.Dlc.Noble.RoomBeneath>
 </LanguageData>

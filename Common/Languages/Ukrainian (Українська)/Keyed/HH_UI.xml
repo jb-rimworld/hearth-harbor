@@ -284,7 +284,7 @@
   <HH.Setting.core.infiniteMoney>Нескінченні гроші гостей</HH.Setting.core.infiniteMoney>
   <HH.Setting.core.picky>Вибагливі гості</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>Гості очікують трохи більше від кожного проживання (очікування +0,1).</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.ironBank>Залізний гаманець / Залізний банк</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank>Залізний банк</HH.Setting.core.ironBank>
   <HH.Setting.core.noResearchGating>Без обмежень досліджень</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Усе з дерев Hearth &amp; Harbor і Silverline доступне з самого початку.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>Мирне підпілля</HH.Setting.core.peacefulUnderworld>
@@ -294,4 +294,23 @@
   <HH.UI.Overview.Arrivals>Прибуття, наступні 24 год: {0}, очікується близько {1} груп на день.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>ще нікого не заплановано</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>заплановано груп: {0} (близько {1} гостей)</HH.UI.Overview.Arrivals.Planned>
+  <HH.UI.Content.Decline>Ні, залишити {0}</HH.UI.Content.Decline>
+  <HH.UI.Diff.Ladder>Підпілля: ліміти штрафів за випадок</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.WarnHard>Від «Переповнено» підпільні випадки можуть коштувати справжньої прихильності, слави й срібла (див. ліміти нижче).</HH.UI.Diff.WarnHard>
+  <HH.UI.Feel.4>Підпільні випадки починають коштувати прихильності, слави й штрафів.</HH.UI.Feel.4>
+  <HH.UI.Feel.5>Більші штрафи за підпільні випадки, жорсткіший банк.</HH.UI.Feel.5>
+  <HH.UI.Feel.6>Усе важко, і ніщо не обмежено.</HH.UI.Feel.6>
+  <HH.UI.Calc.slotRtp>Виплата автоматів (RTP)</HH.UI.Calc.slotRtp>
+  <HH.UI.Calc.slotRtp.Desc>Частка кожної ставки, яку автомат у середньому повертає. Решту залишає заклад.</HH.UI.Calc.slotRtp.Desc>
+  <HH.UI.Ladder.Goodwill>Втрата прихильності за випадок (ліміт)</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>Найбільше прихильності, яке може забрати в вас один підпільний випадок.</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Renown.Desc>Найбільше слави, яку може коштувати вам один підпільний випадок.</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Fine>Штрафи (ліміт, срібло)</HH.UI.Ladder.Fine>
+  <HH.UI.Ladder.Fine.Desc>Найбільший штраф, який може накласти один підпільний випадок.</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Footer>Ці ліміти діють на підпільні випадки. Етапи стягнення банку мають власні налаштування.</HH.UI.Ladder.Footer>
+  <HH.Setting.core.neverDie.Desc>Гості не гинуть, а збиваються з ніг. Вони далі живі, лежачи, доки хтось не допоможе.</HH.Setting.core.neverDie.Desc>
+  <HH.Setting.core.infiniteMoney.Desc>Гості, які прибувають, коли це увімкнено, мають бездонний гаманець. Коефіцієнт грошей гостей на них не діє.</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.ironBank.Desc>Стягнення боргу завжди доходить до найвищого етапу, незалежно від складності. Ніхто тихо не відстрочує ваші виплати.</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Темні заклади працюють без насильства: немає бійцівської ями, допитів, полювання на людей, клініки й рекету. Задня кімната, переробник і наркотична кімната лишаються.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.perfMode.Desc>Планування гостей і перевірки кімнат виконуються вдвічі рідше. Допомагає на повільних комп'ютерах; гості можуть реагувати трохи пізніше.</HH.Setting.core.perfMode.Desc>
 </LanguageData>

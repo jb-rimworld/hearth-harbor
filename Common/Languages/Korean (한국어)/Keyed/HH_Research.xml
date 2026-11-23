@@ -4,4 +4,16 @@
   <HH.Setting.core.researchMode.Desc>전체: Hearth &amp; Harbor와 Silverline 연구 트리가 건물과 기능을 잠급니다. 끔: 모든 것이 처음부터 사용 가능합니다(지하 세계의 어두운 프로젝트는 여전히 발견이 필요합니다).</HH.Setting.core.researchMode.Desc>
   <HH.Enum.CoreResearchMode.Full>전체</HH.Enum.CoreResearchMode.Full>
   <HH.Enum.CoreResearchMode.Off>끔</HH.Enum.CoreResearchMode.Off>
+  <HH.Gate.ModuleOff>모듈 꺼짐: {0}</HH.Gate.ModuleOff>
+  <HH.Gate.ModuleOffInspect>모듈을 다시 켜기 전까지는 아무 일도 하지 않습니다.</HH.Gate.ModuleOffInspect>
+  <HH.Gate.CannotPlace>사용할 수 없음: 이 게임에서 {0}이(가) 꺼져 있습니다.</HH.Gate.CannotPlace>
+  <HH.Module.Core>핵심</HH.Module.Core>
+  <HH.Module.Inn>여관 &amp; 호텔</HH.Module.Inn>
+  <HH.Module.ShopsFood>상점 &amp; 음식</HH.Module.ShopsFood>
+  <HH.Module.Casino>카지노</HH.Module.Casino>
+  <HH.Module.Wellness>웰니스</HH.Module.Wellness>
+  <HH.Module.CityLife>도시 생활</HH.Module.CityLife>
+  <HH.Module.Underworld>지하세계</HH.Module.Underworld>
+  <HH.Module.Bank>은행 (Silverline)</HH.Module.Bank>
+  <HH.Module.AiFlavour>AI 분위기 문구</HH.Module.AiFlavour>
 </LanguageData>

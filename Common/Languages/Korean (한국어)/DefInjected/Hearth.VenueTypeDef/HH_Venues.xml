@@ -5,7 +5,7 @@
   <HH_Venue_Shop.label>상점</HH_Venue_Shop.label>
   <HH_Venue_Shop.description>손님이 물건을 사는 방입니다. 방 안의 선반과 보관 구역에 있는 모든 것은 판매 대상이며, 시장 가치에 간판의 가격 계수를 곱한 값입니다. 상점 주인이 없으면 상점은 약간의 할인을 받는 셀프 서비스로 운영됩니다.</HH_Venue_Shop.description>
   <HH_Venue_Restaurant.label>식당</HH_Venue_Restaurant.label>
-  <HH_Venue_Restaurant.description>손님이 자리에 앉아 식사하는 방입니다. 테이블, 주방, 웨이터가 있으면 식당이 됩니다. 요리 자체는 주방이 맡습니다.</HH_Venue_Restaurant.description>
+  <HH_Venue_Restaurant.description>손님이 앉아서 먹는 방. 테이블, 주방, 웨이터가 있으면 레스토랑이 됩니다. 손님은 선반과 테이블의 접시와 식사에 돈을 냅니다. 요리는 주방이 맡고, 상한 접시는 팔지 않습니다.</HH_Venue_Restaurant.description>
   <HH_Venue_Casino.label>카지노</HH_Venue_Casino.label>
   <HH_Venue_Casino.description>카드 테이블, 슬롯머신, 크루피에(딜러)가 있는 방입니다. 손님은 운을 거는 게임에 은화를 걸고, 영업장은 작지만 정직한 이익을 챙깁니다.</HH_Venue_Casino.description>
   <HH_Venue_Spa.label>스파</HH_Venue_Spa.label>

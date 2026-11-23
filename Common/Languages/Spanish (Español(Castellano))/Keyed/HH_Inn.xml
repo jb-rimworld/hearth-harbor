@@ -290,4 +290,9 @@
   <HH.Setting.inn.stayNightsMin.Desc>Los huéspedes que pasan la noche se quedan al menos este número de noches.</HH.Setting.inn.stayNightsMin.Desc>
   <HH.Setting.inn.waitThoughts>Pensamientos de espera y del timbre nocturno</HH.Setting.inn.waitThoughts>
   <HH.Setting.inn.waitThoughts.Desc>Los huéspedes que esperan en vano o tocan el timbre nocturno sin que nadie venga lo notan en su ánimo; una sala de espera lo suaviza.</HH.Setting.inn.waitThoughts.Desc>
+  <HH.Inn.Event.SponsoredBed>La cama la ha reservado y pagado la expedición.</HH.Inn.Event.SponsoredBed>
+  <HH.Inn.Event.Charmed>{0} hizo que el sitio sonara mejor de lo esperado.</HH.Inn.Event.Charmed>
+  <HH.Inn.PriceMode.ManualSet>Precio fijo…</HH.Inn.PriceMode.ManualSet>
+  <HH.Inn.PriceMode.ManualValue>{0} de plata por noche</HH.Inn.PriceMode.ManualValue>
+  <HH.Inn.PriceMode.Manual>precio fijo</HH.Inn.PriceMode.Manual>
 </LanguageData>

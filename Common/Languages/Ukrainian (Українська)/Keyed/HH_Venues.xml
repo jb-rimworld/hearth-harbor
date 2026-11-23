@@ -135,4 +135,10 @@
   <HH.Venue.Tier.Luxury>Розкіш</HH.Venue.Tier.Luxury>
   <HH.Venue.Tier.Premium>Преміум</HH.Venue.Tier.Premium>
   <HH.Venue.Tier.Standard>Стандарт</HH.Venue.Tier.Standard>
+  <HH.Venue.CheckDishes>Страви на полицях</HH.Venue.CheckDishes>
+  <HH.Venue.CheckNoDishes>Страв на продаж немає → готуйте страви й зберігайте їх у кімнаті</HH.Venue.CheckNoDishes>
+  <HH.Venue.MarketBlock.NoHome>немає домашньої карти</HH.Venue.MarketBlock.NoHome>
+  <HH.Venue.MarketBlock.NoShop>немає крамниці</HH.Venue.MarketBlock.NoShop>
+  <HH.Venue.MarketBlock.Stalls>торгові місця {0}/{1}</HH.Venue.MarketBlock.Stalls>
+  <HH.Venue.MarketBlock.Renown>слава {0}/{1}</HH.Venue.MarketBlock.Renown>
 </LanguageData>

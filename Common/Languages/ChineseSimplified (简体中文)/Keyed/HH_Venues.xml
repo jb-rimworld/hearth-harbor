@@ -135,4 +135,10 @@
   <HH.Venue.Tier.Luxury>奢华</HH.Venue.Tier.Luxury>
   <HH.Venue.Tier.Premium>高档</HH.Venue.Tier.Premium>
   <HH.Venue.Tier.Standard>标准</HH.Venue.Tier.Standard>
+  <HH.Venue.CheckDishes>货架上有餐盘</HH.Venue.CheckDishes>
+  <HH.Venue.CheckNoDishes>没有可售餐盘 → 烹饪菜品并存放在房间里</HH.Venue.CheckNoDishes>
+  <HH.Venue.MarketBlock.NoHome>没有主地图</HH.Venue.MarketBlock.NoHome>
+  <HH.Venue.MarketBlock.NoShop>没有商店</HH.Venue.MarketBlock.NoShop>
+  <HH.Venue.MarketBlock.Stalls>市场摊位 {0}/{1}</HH.Venue.MarketBlock.Stalls>
+  <HH.Venue.MarketBlock.Renown>声望 {0}/{1}</HH.Venue.MarketBlock.Renown>
 </LanguageData>

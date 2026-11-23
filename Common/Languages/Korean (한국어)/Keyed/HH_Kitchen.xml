@@ -114,7 +114,7 @@
   <HH.Setting.kitchen.allKnown>모든 요리 알고 있음</HH.Setting.kitchen.allKnown>
   <HH.Setting.kitchen.allKnown.Desc>배우는 과정을 건너뛴다. 메뉴의 모든 요리를 설비만 갖춰지면 바로 만들 수 있다.</HH.Setting.kitchen.allKnown.Desc>
   <HH.Setting.kitchen.darkMenu>어두운 메뉴 (롱 포크)</HH.Setting.kitchen.darkMenu>
-  <HH.Setting.kitchen.darkMenu.Desc>롱 포크 요리를 허용한다. 식인을 승인하는 이데올로기에서도 잠금이 풀린다.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Setting.kitchen.darkMenu.Desc>긴 돼지고기 요리를 허용합니다. 항상 콘텐츠 강도 어두움 또는 암울함이 필요하며, 그 조건에서는 식인을 인정하는 이념 종교는 이 설정이 꺼져 있어도 요리를 해제합니다.</HH.Setting.kitchen.darkMenu.Desc>
   <HH.Kitchen.Cookbook.Teaches>가르치는 요리: {0}</HH.Kitchen.Cookbook.Teaches>
   <HH.Kitchen.Cookbook.Empty>페이지가 비어 있다.</HH.Kitchen.Cookbook.Empty>
   <HH.Kitchen.Cookbook.AllKnown>식민지가 이 책의 모든 요리를 이미 알고 있다.</HH.Kitchen.Cookbook.AllKnown>

@@ -290,4 +290,9 @@
   <HH.Setting.inn.stayNightsMin.Desc>Les invités d'une nuit restent au moins ce nombre de nuits.</HH.Setting.inn.stayNightsMin.Desc>
   <HH.Setting.inn.waitThoughts>Pensées liées à l'attente et à la sonnette de nuit</HH.Setting.inn.waitThoughts>
   <HH.Setting.inn.waitThoughts.Desc>Les invités qui attendent en vain ou sonnent la nuit sans que personne ne vienne s'en ressentent sur leur humeur ; une salle d'attente atténue cet effet.</HH.Setting.inn.waitThoughts.Desc>
+  <HH.Inn.Event.SponsoredBed>Le lit est réglé et payé par le groupe.</HH.Inn.Event.SponsoredBed>
+  <HH.Inn.Event.Charmed>{0} a fait paraître l'endroit bien mieux qu'espéré.</HH.Inn.Event.Charmed>
+  <HH.Inn.PriceMode.ManualSet>Prix fixe…</HH.Inn.PriceMode.ManualSet>
+  <HH.Inn.PriceMode.ManualValue>{0} argent par nuit</HH.Inn.PriceMode.ManualValue>
+  <HH.Inn.PriceMode.Manual>prix fixe</HH.Inn.PriceMode.Manual>
 </LanguageData>

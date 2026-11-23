@@ -5,7 +5,7 @@
   <HH_Venue_Shop.label>магазин</HH_Venue_Shop.label>
   <HH_Venue_Shop.description>Помещение, где гости покупают товары. Всё, что хранится на стеллажах и в зонах хранения внутри помещения, продаётся по рыночной стоимости, умноженной на ценовой коэффициент таблички. Без продавца магазин работает как самообслуживание с небольшой скидкой.</HH_Venue_Shop.description>
   <HH_Venue_Restaurant.label>ресторан</HH_Venue_Restaurant.label>
-  <HH_Venue_Restaurant.description>Помещение, где гости садятся и едят. Столы, кухня и официант делают его рестораном; сами блюда готовит кухня.</HH_Venue_Restaurant.description>
+  <HH_Venue_Restaurant.description>Комната, где гости садятся и едят. Столы, кухня и официант делают её рестораном; гости платят за блюда и еду на её полках и столах. Готовит кухня; несвежие блюда не продаются.</HH_Venue_Restaurant.description>
   <HH_Venue_Casino.label>казино</HH_Venue_Casino.label>
   <HH_Venue_Casino.description>Помещение с карточными столами, игровыми автоматами и крупье. Гости ставят серебро на азартные игры; заведение оставляет себе небольшое, честное преимущество.</HH_Venue_Casino.description>
   <HH_Venue_Spa.label>спа</HH_Venue_Spa.label>

@@ -171,4 +171,73 @@
   <HH.Thrumbo.Err.HandOpen>Роздача ще відкрита.</HH.Thrumbo.Err.HandOpen>
   <HH.Thrumbo.Err.NoHand>Немає відкритої роздачі.</HH.Thrumbo.Err.NoHand>
   <HH.Thrumbo.Err.NoDouble>Подвоїти можна лише на перші дві карти.</HH.Thrumbo.Err.NoDouble>
+  <HH.Thrumbo.TotalsGoods>Ставки товарами (вартість у сріблі, не в книзі): {0} раундів · поставлено {1} · повернуто {2} · результат {3}</HH.Thrumbo.TotalsGoods>
+  <HH.Thrumbo.Ago>тому</HH.Thrumbo.Ago>
+  <HH.Thrumbo.Sym.cherry>вишня</HH.Thrumbo.Sym.cherry>
+  <HH.Thrumbo.Sym.lemon>лимон</HH.Thrumbo.Sym.lemon>
+  <HH.Thrumbo.Sym.plum>слива</HH.Thrumbo.Sym.plum>
+  <HH.Thrumbo.Sym.bell>дзвіночок</HH.Thrumbo.Sym.bell>
+  <HH.Thrumbo.Sym.bar>бар</HH.Thrumbo.Sym.bar>
+  <HH.Thrumbo.Sym.seven>сімка</HH.Thrumbo.Sym.seven>
+  <HH.Thrumbo.Sym.muffalo>маффало</HH.Thrumbo.Sym.muffalo>
+  <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
+  <HH.Thrumbo.Pay.Cherry2>2 × вишня (барабани 1+2)</HH.Thrumbo.Pay.Cherry2>
+  <HH.Thrumbo.Pay.Cherry1>вишня на барабані 1</HH.Thrumbo.Pay.Cherry1>
+  <HH.Thrumbo.Bet.Straight>Пряма {0}</HH.Thrumbo.Bet.Straight>
+  <HH.Thrumbo.Bet.Split>Розділена {0}/{1}</HH.Thrumbo.Bet.Split>
+  <HH.Thrumbo.Bet.Street>Вулиця {0}-{1}</HH.Thrumbo.Bet.Street>
+  <HH.Thrumbo.Bet.Corner>Кут {0}</HH.Thrumbo.Bet.Corner>
+  <HH.Thrumbo.Bet.SixLine>Шість номерів {0}-{1}</HH.Thrumbo.Bet.SixLine>
+  <HH.Thrumbo.Bet.Column>Колонка {0}</HH.Thrumbo.Bet.Column>
+  <HH.Thrumbo.Bet.Dozen>Дюжина {0}</HH.Thrumbo.Bet.Dozen>
+  <HH.Thrumbo.Bet.Red>Червоне</HH.Thrumbo.Bet.Red>
+  <HH.Thrumbo.Bet.Black>Чорне</HH.Thrumbo.Bet.Black>
+  <HH.Thrumbo.Bet.Odd>Непарне</HH.Thrumbo.Bet.Odd>
+  <HH.Thrumbo.Bet.Even>Парне</HH.Thrumbo.Bet.Even>
+  <HH.Thrumbo.Bet.Low>Низькі 1-18</HH.Thrumbo.Bet.Low>
+  <HH.Thrumbo.Bet.High>Високі 19-36</HH.Thrumbo.Bet.High>
+  <HH.Thrumbo.Stakes.Button>Підняти ставки…</HH.Thrumbo.Stakes.Button>
+  <HH.Thrumbo.Stakes.ButtonTip>Ставте товари, тварин або полонених замість срібла. Їх оцінює ломбардник закладу.</HH.Thrumbo.Stakes.ButtonTip>
+  <HH.Thrumbo.Stakes.Title>Підняти ставки</HH.Thrumbo.Stakes.Title>
+  <HH.Thrumbo.Stakes.Intro>Кладіть на стіл речі замість срібла. Програєте, і вони підуть із закладом, наче їх продали. Виграєте, і ви лишаєте все, а заклад платить сріблом.</HH.Thrumbo.Stakes.Intro>
+  <HH.Thrumbo.Stakes.Pawnbroker>ломбардник The Lucky Thrumbo</HH.Thrumbo.Stakes.Pawnbroker>
+  <HH.Thrumbo.Stakes.ValuedBy>Оцінено за цінами, які отримує {0} (покращення торгової ціни {1}).</HH.Thrumbo.Stakes.ValuedBy>
+  <HH.Thrumbo.Stakes.NoNegotiator>Ніхто на цій карті не може торгуватися.</HH.Thrumbo.Stakes.NoNegotiator>
+  <HH.Thrumbo.Stakes.NoBeacon>Немає живленого орбітального торгового маяка: товарів у досяжності немає.</HH.Thrumbo.Stakes.NoBeacon>
+  <HH.Thrumbo.Stakes.Refresh>Оновити</HH.Thrumbo.Stakes.Refresh>
+  <HH.Thrumbo.Stakes.Tab.Goods>Товари ({0})</HH.Thrumbo.Stakes.Tab.Goods>
+  <HH.Thrumbo.Stakes.Tab.Animals>Тварини ({0})</HH.Thrumbo.Stakes.Tab.Animals>
+  <HH.Thrumbo.Stakes.Tab.Prisoners>Полонені ({0})</HH.Thrumbo.Stakes.Tab.Prisoners>
+  <HH.Thrumbo.Stakes.PawnsCozy>Тварин і полонених можна ставити, починаючи з інтенсивності контенту «Стандартно».</HH.Thrumbo.Stakes.PawnsCozy>
+  <HH.Thrumbo.Stakes.Empty.Goods>У досяжності живленого орбітального торгового маяка немає нічого, що купив би торговець.</HH.Thrumbo.Stakes.Empty.Goods>
+  <HH.Thrumbo.Stakes.Empty.Animals>Жодну тварину колонії зараз віддати не можна.</HH.Thrumbo.Stakes.Empty.Animals>
+  <HH.Thrumbo.Stakes.Empty.Prisoners>Немає надійного дорослого полоненого. Колоністи, раби, діти та гості ставками не бувають.</HH.Thrumbo.Stakes.Empty.Prisoners>
+  <HH.Thrumbo.Stakes.UnitTip>Ціна продажу: {0} за одиницю\n− спред ломбардника {1} %\n− комісія {2} %\n= вартість ставки {3} за одиницю</HH.Thrumbo.Stakes.UnitTip>
+  <HH.Thrumbo.Stakes.All>Усе</HH.Thrumbo.Stakes.All>
+  <HH.Thrumbo.Stakes.Game>Гра</HH.Thrumbo.Stakes.Game>
+  <HH.Thrumbo.Stakes.RouletteEdge>Перевага дому: {0} %</HH.Thrumbo.Stakes.RouletteEdge>
+  <HH.Thrumbo.Stakes.WinTo>Виграш</HH.Thrumbo.Stakes.WinTo>
+  <HH.Thrumbo.Stakes.ToAccount>на рахунок</HH.Thrumbo.Stakes.ToAccount>
+  <HH.Thrumbo.Stakes.ToPod>дропподом</HH.Thrumbo.Stakes.ToPod>
+  <HH.Thrumbo.Stakes.ToPodTip>Срібло прилітає в дроп-капсулах до місця торгової скидки. Частина монети лишається в закладі, доки не складеться ціла.</HH.Thrumbo.Stakes.ToPodTip>
+  <HH.Thrumbo.Stakes.Value>Вартість ставки: {0}</HH.Thrumbo.Stakes.Value>
+  <HH.Thrumbo.Stakes.ValueTip>Скільки заплатив би ломбардник закладу: ванільна ціна продажу з навичками {4}: {0}\n− спред ломбардника {1} % (налаштування моду)\n− комісія {2} %\n= вартість ставки {3}\n\nЧитається лише ринкова вартість; самі речі не змінюються.</HH.Thrumbo.Stakes.ValueTip>
+  <HH.Thrumbo.Stakes.Rule>Виграш ×m: ви лишаєте все й отримуєте вартість × (m − 1) сріблом. Програш: речі пропали, наче продані. Малий виграш нижче ×1 виплачується сріблом, речі все одно пропадають.</HH.Thrumbo.Stakes.Rule>
+  <HH.Thrumbo.Stakes.GoRoulette>Поставити й крутити колесо</HH.Thrumbo.Stakes.GoRoulette>
+  <HH.Thrumbo.Stakes.GoSlots>Поставити й смикнути важіль</HH.Thrumbo.Stakes.GoSlots>
+  <HH.Thrumbo.Stakes.Confirm>Поставити {0} (вартістю {1}) на один раунд?\n\nЯкщо програєте, їх уже не повернути.</HH.Thrumbo.Stakes.Confirm>
+  <HH.Thrumbo.Stakes.Won>виплата ×{0}: ви лишаєте все й вигравши {1}</HH.Thrumbo.Stakes.Won>
+  <HH.Thrumbo.Stakes.Push>нічия: ви лишаєте все</HH.Thrumbo.Stakes.Push>
+  <HH.Thrumbo.Stakes.Lost>програно: ставка йде із закладом</HH.Thrumbo.Stakes.Lost>
+  <HH.Thrumbo.Stakes.LostPart>програно, повернуто {0}: ставка йде із закладом</HH.Thrumbo.Stakes.LostPart>
+  <HH.Thrumbo.Stakes.HistoryLine>Ставка: {0} · {1}</HH.Thrumbo.Stakes.HistoryLine>
+  <HH.Thrumbo.Stakes.More>і ще {0}</HH.Thrumbo.Stakes.More>
+  <HH.Thrumbo.Stakes.Err.Off>«Підняти ставки» вимкнено в налаштуваннях моду.</HH.Thrumbo.Stakes.Err.Off>
+  <HH.Thrumbo.Stakes.Err.NoNegotiator>На карті має бути колоніст, який уміє торгуватися.</HH.Thrumbo.Stakes.Err.NoNegotiator>
+  <HH.Thrumbo.Stakes.Err.Nothing>Оберіть, що ставити.</HH.Thrumbo.Stakes.Err.Nothing>
+  <HH.Thrumbo.Stakes.Err.Gone>{0} більше не в досяжності. Оновіть список.</HH.Thrumbo.Stakes.Err.Gone>
+  <HH.Setting.thrumbo.raiseTheStakes>Lucky Thrumbo: «Підняти ставки»</HH.Setting.thrumbo.raiseTheStakes>
+  <HH.Setting.thrumbo.raiseTheStakes.Desc>Додає кнопку «Підняти ставки…» до Lucky Thrumbo: ставте товари в досяжності живленого орбітального торгового маяка замість срібла, а з інтенсивності контенту «Стандартно» також тварин колонії й полонених (як ванільний продаж). Колоністів, рабів, дітей і гостей ніколи не пропонують.</HH.Setting.thrumbo.raiseTheStakes.Desc>
+  <HH.Setting.thrumbo.pawnbrokerSpread>Lucky Thrumbo: спред ломбардника для ставок товарами</HH.Setting.thrumbo.pawnbrokerSpread>
+  <HH.Setting.thrumbo.pawnbrokerSpread.Desc>Ставлені товари рахуються за тим, що заплатив би ломбардник закладу (ванільна ціна продажу з вашим найкращим переговорником), мінус цей спред і фіксована комісія 2 %.</HH.Setting.thrumbo.pawnbrokerSpread.Desc>
 </LanguageData>

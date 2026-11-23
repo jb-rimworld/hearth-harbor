@@ -290,4 +290,9 @@
   <HH.Setting.inn.stayNightsMin.Desc>Hóspedes que pernoitam ficam pelo menos este número de noites.</HH.Setting.inn.stayNightsMin.Desc>
   <HH.Setting.inn.waitThoughts>Pensamentos de espera e do sino noturno</HH.Setting.inn.waitThoughts>
   <HH.Setting.inn.waitThoughts.Desc>Hóspedes que esperam em vão ou tocam o sino noturno sem que ninguém venha sentem isso no humor; uma sala de espera suaviza.</HH.Setting.inn.waitThoughts.Desc>
+  <HH.Inn.Event.SponsoredBed>A cama está reservada e paga pelo grupo.</HH.Inn.Event.SponsoredBed>
+  <HH.Inn.Event.Charmed>{0} fez o lugar parecer melhor do que o esperado.</HH.Inn.Event.Charmed>
+  <HH.Inn.PriceMode.ManualSet>Preço fixo…</HH.Inn.PriceMode.ManualSet>
+  <HH.Inn.PriceMode.ManualValue>{0} de prata por noite</HH.Inn.PriceMode.ManualValue>
+  <HH.Inn.PriceMode.Manual>preço fixo</HH.Inn.PriceMode.Manual>
 </LanguageData>

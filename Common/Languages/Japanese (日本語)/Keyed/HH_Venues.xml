@@ -135,4 +135,10 @@
   <HH.Venue.Tier.Luxury>豪華</HH.Venue.Tier.Luxury>
   <HH.Venue.Tier.Premium>上等</HH.Venue.Tier.Premium>
   <HH.Venue.Tier.Standard>標準</HH.Venue.Tier.Standard>
+  <HH.Venue.CheckDishes>棚に並んだ皿</HH.Venue.CheckDishes>
+  <HH.Venue.CheckNoDishes>販売できる皿がない → 料理して部屋に保管する</HH.Venue.CheckNoDishes>
+  <HH.Venue.MarketBlock.NoHome>自宅マップがない</HH.Venue.MarketBlock.NoHome>
+  <HH.Venue.MarketBlock.NoShop>店がない</HH.Venue.MarketBlock.NoShop>
+  <HH.Venue.MarketBlock.Stalls>市場の屋台 {0}/{1}</HH.Venue.MarketBlock.Stalls>
+  <HH.Venue.MarketBlock.Renown>名声 {0}/{1}</HH.Venue.MarketBlock.Renown>
 </LanguageData>

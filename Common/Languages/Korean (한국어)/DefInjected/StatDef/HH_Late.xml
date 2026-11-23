@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServiceQuality.description>이 사람이 서비스를 얼마나 기분 좋게 해 주는지. 함께 대화하는 손님의 만족도에 더해집니다.</HH_ServiceQuality.description>
+  <HH_GuestExpectation.description>손님이 머무름에서 기대하는 것에 더해집니다. 양수는 만족시키기 어렵다는 뜻입니다. 세련된 입맛은 그 손님 자신의 기대를 높이고, 은혜로운 말솜씨를 가진 주인은 맞이하거나 안내하는 손님의 기대를 낮춥니다.</HH_GuestExpectation.description>
+  <HH_Dexterity.description>딜러로서의 카드 돌리는 속도: 테이블의 라운드가 점마다 3 % 짧아짐 (최대 30 %).</HH_Dexterity.description>
+  <HH_TableSkill.label>카드 감각</HH_TableSkill.label>
+  <HH_TableSkill.description>이 사람이 블랙잭이나 포커를 할 때 더해지는 지능 단계.</HH_TableSkill.description>
+  <HH_FraudDetection.label>경계심</HH_FraudDetection.label>
+  <HH_FraudDetection.description>이 사람이 지도에 있는 동안 점잖은 손님이 뒷방을 우연히 발견할 확률이 이 값으로 나뉩니다. 가장 경계심 강한 식민지 주민이 적용됩니다.</HH_FraudDetection.description>
+  <HH_BrawlRisk.description>이 사람의 방에서 다툼이 주먹다짐으로 번질 확률에 곱해지는 배율. 근처의 가장 낮은 값이 적용됩니다.</HH_BrawlRisk.description>
+  <HH_RumorSpread.description>떠나는 손님이 하우스의 명성을 좋든 나쁘든 얼마나 움직이는지에 곱해지는 배율. 식민지에서 가장 수다스러운 사람이 적용됩니다.</HH_RumorSpread.description>
+  <HH_CareProgress.label>돌봄 품질</HH_CareProgress.label>
+  <HH_CareProgress.description>이 사람이 해 주는 마사지 품질에 곱해지는 배율.</HH_CareProgress.description>
+  <HH_BankFeeFactor.description>이 사람이 식민지에 사는 동안 은행 수수료에 곱해지는 배율. 가장 낮은 값이 적용됩니다.</HH_BankFeeFactor.description>
+  <HH_RecruitPrice.description>손님이 식민지에 합류할 때, 이 사람이 설득했다면 최저 5를 넘는 호감도 할증에 곱해지는 배율.</HH_RecruitPrice.description>
+  <HH_TipFactor.label>손님의 관대함</HH_TipFactor.label>
+  <HH_TipFactor.description>손님으로서 이 사람이 한 번의 구매에 예산의 얼마를 쓸지에 곱해지는 배율.</HH_TipFactor.description>
+  <HH_DishQuality.description>레스토랑 요리를 품질 한 단계 끌어올릴 확률.</HH_DishQuality.description>
+  <HH_FamilyCheer.description>이 사람이 맞이하거나 안내하는 아이와 가족의 서비스 점수에 더해집니다.</HH_FamilyCheer.description>
+  <HH_PriceFeel.description>이 사람이 손님을 응대할 때, 손님이 가격을 얼마나 비싸게 느끼는지에 더해집니다.</HH_PriceFeel.description>
+</LanguageData>

@@ -114,7 +114,7 @@
   <HH.Setting.kitchen.allKnown>已掌握全部菜品</HH.Setting.kitchen.allKnown>
   <HH.Setting.kitchen.allKnown.Desc>跳过学习：菜单上的每道菜在设备就位后即可烹饪。</HH.Setting.kitchen.allKnown.Desc>
   <HH.Setting.kitchen.darkMenu>黑暗菜单（长猪肉）</HH.Setting.kitchen.darkMenu>
-  <HH.Setting.kitchen.darkMenu.Desc>允许长猪肉菜品。信仰认可食人的意识形态也会解锁它们。</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Setting.kitchen.darkMenu.Desc>允许供应「长猪」菜肴。始终需要内容强度「黑暗」或「严酷」；届时，即使此项关闭，认可食人的意识形态也会解锁它们。</HH.Setting.kitchen.darkMenu.Desc>
   <HH.Kitchen.Cookbook.Teaches>学会：{0}</HH.Kitchen.Cookbook.Teaches>
   <HH.Kitchen.Cookbook.Empty>书页是空白的。</HH.Kitchen.Cookbook.Empty>
   <HH.Kitchen.Cookbook.AllKnown>殖民地已经掌握这本书里的全部菜品。</HH.Kitchen.Cookbook.AllKnown>

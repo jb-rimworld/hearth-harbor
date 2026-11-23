@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServiceQuality.description>Jak příjemné je být obsluhován touto osobou. Přičítá se spokojenosti hostů, se kterými se baví.</HH_ServiceQuality.description>
+  <HH_GuestExpectation.description>Přičítá se k tomu, co host od pobytu očekává. Kladné znamená těžší uspokojení. Jemné patro zvyšuje vlastní očekávání hosta; host s stříbrným jazykem je snižuje pro hosty, které přivítá nebo provede.</HH_GuestExpectation.description>
+  <HH_Dexterity.description>Rychlost rozdávání krupiéra: kola u jeho stolu jsou o 3 % kratší za bod (nejvýš 30 %).</HH_Dexterity.description>
+  <HH_TableSkill.label>smysl pro karty</HH_TableSkill.label>
+  <HH_TableSkill.description>Úrovně Intelektu přidané, když tato osoba hraje blackjack nebo poker.</HH_TableSkill.description>
+  <HH_FraudDetection.label>bdělost</HH_FraudDetection.label>
+  <HH_FraudDetection.description>Dokud je tato osoba na mapě, šance, že na zadní místnost narazí slušný host, se tímto dělí. Počítá se nejbdělejší kolonista.</HH_FraudDetection.description>
+  <HH_BrawlRisk.description>Násobitel šance, že se hádka v pokoji této osoby změní v pěstní souboj. Počítá se nejnižší hodnota v okolí.</HH_BrawlRisk.description>
+  <HH_RumorSpread.description>Násobitel toho, jak moc odcházející hosté hýbou pověstí domu, dobrou či špatnou. Počítá se největší drbna v kolonii.</HH_RumorSpread.description>
+  <HH_CareProgress.label>kvalita péče</HH_CareProgress.label>
+  <HH_CareProgress.description>Násobitel kvality masáží, které tato osoba dává.</HH_CareProgress.description>
+  <HH_BankFeeFactor.description>Násobitel poplatků banky, dokud tato osoba žije v kolonii. Počítá se nejnižší hodnota.</HH_BankFeeFactor.description>
+  <HH_RecruitPrice.description>Násobitel přirážky dobré vůle nad základní hodnotu 5, když se host připojí ke kolonii a tato osoba ho získala.</HH_RecruitPrice.description>
+  <HH_TipFactor.label>štědrost hosta</HH_TipFactor.label>
+  <HH_TipFactor.description>Násobitel toho, kolik ze svého rozpočtu tato osoba utratí za jeden nákup jako host.</HH_TipFactor.description>
+  <HH_DishQuality.description>Šance povýšit uvařený pokrm restaurace o jeden stupeň kvality.</HH_DishQuality.description>
+  <HH_FamilyCheer.description>Přičítá se skóre obsluhy dětem a rodinám, které tato osoba přivítá nebo provede.</HH_FamilyCheer.description>
+  <HH_PriceFeel.description>Přičítá se k tomu, jak drahé hosté považují ceny, když je tato osoba obsluhuje.</HH_PriceFeel.description>
+</LanguageData>

@@ -43,4 +43,7 @@
   <HH.Setting.dlc.traitSpawn.Desc>幸運、不運、生まれながらのもてなし役など、Hearth &amp; Harborの特性が新しく生成されたポーンに現れることがあります。既存のポーンは従来の特性を保ちます。オフの場合は手作業やエディタでのみ追加されます。</HH.Setting.dlc.traitSpawn.Desc>
   <HH.Setting.dlc.traitRarity>特性の出現頻度</HH.Setting.dlc.traitRarity>
   <HH.Setting.dlc.traitRarity.Desc>新しいポーンに本MODの特性が抽選される頻度の倍率です（1 = バニラの多くの特性と同じ希少性）。</HH.Setting.dlc.traitRarity.Desc>
+  <HH.Dlc.Noble.NoBed>宿泊客にふさわしいベッドがない</HH.Dlc.Noble.NoBed>
+  <HH.Dlc.Noble.RoomFits>部屋は称号にふさわしい</HH.Dlc.Noble.RoomFits>
+  <HH.Dlc.Noble.RoomBeneath>部屋は称号に見合わない</HH.Dlc.Noble.RoomBeneath>
 </LanguageData>

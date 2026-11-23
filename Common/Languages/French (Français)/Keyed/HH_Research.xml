@@ -4,4 +4,16 @@
   <HH.Setting.core.researchMode.Desc>Complet : les arbres de recherche de Hearth &amp; Harbor et de Silverline conditionnent leurs bâtiments et fonctions. Désactivé : tout est disponible dès le départ (les projets obscurs du monde souterrain exigent tout de même leur découverte).</HH.Setting.core.researchMode.Desc>
   <HH.Enum.CoreResearchMode.Full>Complet</HH.Enum.CoreResearchMode.Full>
   <HH.Enum.CoreResearchMode.Off>Désactivé</HH.Enum.CoreResearchMode.Off>
+  <HH.Gate.ModuleOff>Module désactivé : {0}</HH.Gate.ModuleOff>
+  <HH.Gate.ModuleOffInspect>sans effet tant que le module n'est pas réactivé.</HH.Gate.ModuleOffInspect>
+  <HH.Gate.CannotPlace>Indisponible : {0} est désactivé dans cette partie.</HH.Gate.CannotPlace>
+  <HH.Module.Core>Noyau</HH.Module.Core>
+  <HH.Module.Inn>Auberge et hôtel</HH.Module.Inn>
+  <HH.Module.ShopsFood>Boutiques et restauration</HH.Module.ShopsFood>
+  <HH.Module.Casino>Casino</HH.Module.Casino>
+  <HH.Module.Wellness>Bien-être</HH.Module.Wellness>
+  <HH.Module.CityLife>Vie urbaine</HH.Module.CityLife>
+  <HH.Module.Underworld>Pègre</HH.Module.Underworld>
+  <HH.Module.Bank>Banque (Silverline)</HH.Module.Bank>
+  <HH.Module.AiFlavour>Textes IA</HH.Module.AiFlavour>
 </LanguageData>

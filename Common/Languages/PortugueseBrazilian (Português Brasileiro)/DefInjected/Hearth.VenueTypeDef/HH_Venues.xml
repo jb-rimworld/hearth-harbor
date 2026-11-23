@@ -5,7 +5,7 @@
   <HH_Venue_Shop.label>loja</HH_Venue_Shop.label>
   <HH_Venue_Shop.description>Um cômodo em que os hóspedes compram mercadorias. Tudo o que estiver guardado em prateleiras e depósitos dentro do cômodo está à venda, pelo valor de mercado multiplicado pelo fator de preço da placa. Sem um lojista, a loja funciona em autoatendimento com um pequeno desconto.</HH_Venue_Shop.description>
   <HH_Venue_Restaurant.label>restaurante</HH_Venue_Restaurant.label>
-  <HH_Venue_Restaurant.description>Um cômodo em que os hóspedes se sentam para comer. Mesas, uma cozinha e um garçom fazem dele um restaurante; os pratos em si são preparados pela cozinha.</HH_Venue_Restaurant.description>
+  <HH_Venue_Restaurant.description>Um cômodo onde os hóspedes sentam para comer. Mesas, cozinha e garçom fazem dele um restaurante; os hóspedes pagam pelos pratos e refeições nas prateleiras e mesas. A cozinha prepara a comida; pratos velhos não são vendidos.</HH_Venue_Restaurant.description>
   <HH_Venue_Casino.label>cassino</HH_Venue_Casino.label>
   <HH_Venue_Casino.description>Um cômodo com mesas de cartas, caça-níqueis e crupiês. Os hóspedes apostam sua prata em jogos de azar; a casa mantém uma pequena e honesta vantagem.</HH_Venue_Casino.description>
   <HH_Venue_Spa.label>spa</HH_Venue_Spa.label>
