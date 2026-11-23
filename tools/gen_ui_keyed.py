@@ -155,6 +155,26 @@ S = {
 for k,(l,d) in S.items(): a("HH.Setting."+k,l); a("HH.Setting."+k+".Desc",d)
 for k,v in {"Automatic":"Automatic","StoneAge":"Stone age","Medieval":"Medieval","Industrial":"Industrial","Spacer":"Spacer","Ultra":"Ultra"}.items(): a("HH.Enum.HouseStyle."+k,v)
 
+# --- reconciled with the shipped English file after the difficulty rework (removed dead switches, honest texts)
+for _k in ['HH.Enum.HouseStyle.Automatic', 'HH.Enum.HouseStyle.Industrial', 'HH.Enum.HouseStyle.Medieval', 'HH.Enum.HouseStyle.Spacer', 'HH.Enum.HouseStyle.StoneAge', 'HH.Enum.HouseStyle.Ultra', 'HH.Setting.core.consequenceStage', 'HH.Setting.core.consequenceStage.Desc', 'HH.Setting.core.feuding', 'HH.Setting.core.feuding.Desc', 'HH.Setting.core.houseStyle', 'HH.Setting.core.houseStyle.Desc', 'HH.Setting.core.keepBuiltStyle', 'HH.Setting.core.keepBuiltStyle.Desc', 'HH.Setting.core.mandatory', 'HH.Setting.core.mandatory.Desc', 'HH.Setting.core.noHostile', 'HH.Setting.core.noHostile.Desc', 'HH.Setting.core.realConsequences', 'HH.Setting.core.realConsequences.Desc', 'HH.Setting.core.strictInspectors', 'HH.Setting.core.strictInspectors.Desc', 'HH.Setting.core.upkeep', 'HH.Setting.core.upkeep.Desc', 'HH.UI.Calc.defaultFactor', 'HH.UI.Calc.defaultFactor.Desc', 'HH.UI.Calc.detection', 'HH.UI.Calc.detection.Desc', 'HH.UI.Calc.slotEdge', 'HH.UI.Calc.slotEdge.Desc', 'HH.UI.Calc.stage', 'HH.UI.Calc.stage.Desc', 'HH.UI.Calc.trouble', 'HH.UI.Calc.trouble.Desc', 'HH.UI.Calc.upkeep', 'HH.UI.Calc.upkeep.Desc', 'HH.UI.Ladder.No', 'HH.UI.Ladder.Raids', 'HH.UI.Ladder.Raids.Desc', 'HH.UI.Ladder.Yes']: K.pop(_k, None)
+a('HH.UI.Diff.Ladder','Underworld: penalty caps per incident')
+a('HH.UI.Diff.WarnHard','From Overbooked on, underworld incidents can cost real goodwill, renown and silver (see the caps below).')
+a('HH.UI.Feel.4','Underworld incidents start to cost goodwill, renown and fines.')
+a('HH.UI.Feel.5','Bigger penalties for underworld incidents, a harder bank.')
+a('HH.UI.Calc.slotRtp','Slot machine payout (RTP)')
+a('HH.UI.Calc.slotRtp.Desc','Share of every bet a slot machine pays back on average. The house keeps the rest.')
+a('HH.UI.Ladder.Goodwill','Goodwill loss per incident (cap)')
+a('HH.UI.Ladder.Goodwill.Desc','The most goodwill one underworld incident can take away from you.')
+a('HH.UI.Ladder.Renown.Desc','The most renown one underworld incident can cost you.')
+a('HH.UI.Ladder.Fine.Desc','The most a single underworld incident can fine you.')
+a('HH.UI.Ladder.Footer','These caps apply to underworld incidents. The bank collection stages follow their own settings.')
+a('HH.Setting.core.neverDie.Desc','Guests are knocked down instead of killed. They keep living, downed, until someone tends them.')
+a('HH.Setting.core.infiniteMoney.Desc','Guests who arrive while this is on carry a bottomless purse. The guest money factor has no effect on them.')
+a('HH.Setting.core.ironBank','Iron bank')
+a('HH.Setting.core.ironBank.Desc','Debt collection always climbs to the highest stage, whatever the difficulty. Nobody quietly defers your instalments.')
+a('HH.Setting.core.peacefulUnderworld.Desc','Dark venues work without violence: no fight pit, no questioning, no hunting of people, no clinic, no protection racket. Back room, fence and drug lounge stay.')
+a('HH.Setting.core.perfMode.Desc','Guest planning and room checks run half as often. Helps on slow computers; guests may react a little later.')
+
 # verify against source
 src = ""
 import glob

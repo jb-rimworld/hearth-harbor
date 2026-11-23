@@ -156,6 +156,24 @@ namespace Hearth
         /// <summary>Changes renown through the Inn module (no effect without it). Returns the delta actually applied.</summary>
         public static float AddRenown(Map map, float delta, string reason) => HasRenown ? ((IGuestRenownImpl)Impl).AddRenown(map, delta, reason) : 0f;
 
+        /// <summary>
+        /// Special switch core.infiniteMoney: "a guest can always pay". The rolled budget stays normal (casino bankrolls, bodyguard fees and every
+        /// other budget-scaled amount are unchanged); when a payment of <paramref name="price"/> would fail, the guest is topped up by exactly the
+        /// shortfall (card funds or silver, booked from "world" like the arrival money) and the budget is raised to the price.
+        /// </summary>
+        public static void EnsureFunds(Pawn guest, Money price)
+        {
+            if (guest == null || price.Micro <= 0 || !CoreSettings.Switch("core.infiniteMoney")) return;
+            var gi = Info(guest); if (gi == null) return;
+            if (gi.Budget < price) gi.Budget = price;
+            var have = Payments.Available(guest);
+            if (have >= price) return;
+            var gap = price - have;
+            var rec = gi as Hearth.Guests.GuestRecord;
+            if (rec != null && rec.PaysDigital) { Ledger.Current?.Post("world", rec.Account, gap, "Infinite money: card funds of " + guest.LabelShort); return; }
+            Hearth.Guests.GuestRegistry.GiveSilver(guest, gap);
+        }
+
         /// <summary>Money left that the guest is willing to spend this stay.</summary>
         public static Money Budget(Pawn p) => Info(p)?.Budget ?? Money.Zero;
 
@@ -173,6 +191,7 @@ namespace Hearth
         public static bool ChargeGuest(Pawn guest, Money price, string category, string memo)
         {
             if (!IsGuest(guest)) return false;
+            EnsureFunds(guest, price);
             if (Budget(guest) < price) return false;
             string till = Payments.ColonyTill(guest.MapHeld);
             if (!Payments.TryCharge(guest, price, till, memo, out _, category))

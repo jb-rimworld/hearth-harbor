@@ -101,8 +101,8 @@ namespace Hearth.ShopsFood
         {
             if (!Modules.On(ModuleId.ShopsFood) || !map.IsPlayerHome) return;
             int t = Find.TickManager.TicksGame;
-            if (t % 250 == 40) Guard.Run(ModuleId.ShopsFood, "Venues.SyncForbidden", SyncForbidden);
-            if (t % 250 == 140) Guard.Run(ModuleId.ShopsFood, "Venues.Restock", SyncRestock);
+            if (t % PerfMode.Interval(250) == 40) Guard.Run(ModuleId.ShopsFood, "Venues.SyncForbidden", SyncForbidden);
+            if (t % PerfMode.Interval(250) == 140) Guard.Run(ModuleId.ShopsFood, "Venues.Restock", SyncRestock);
             if (t % 90 == 0) Guard.Run(ModuleId.ShopsFood, "Venues.GuestFallback", () => GuestFallback.Run(map));
             if (t % 2500 == 2000) GuestMemory.Prune(id => !map.mapPawns.AllPawnsSpawned.Any(p => p.thingIDNumber == id));
         }

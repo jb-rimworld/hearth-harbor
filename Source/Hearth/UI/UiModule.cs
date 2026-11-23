@@ -9,49 +9,31 @@ using Verse;
 
 namespace Hearth.Shell
 {
-    /// <summary>Looks of furniture (4.9). Only the setting exists in this module; the furniture textures follow with the styles work.</summary>
-    public enum HouseStyle { Automatic = 0, StoneAge = 1, Medieval = 2, Industrial = 3, Spacer = 4, Ultra = 5 }
-
     /// <summary>
     /// Entry point of the player-facing shell (ModuleId.Core, lives in Hearth.dll): main tab, guest tab, rich settings window,
-    /// first-start card, guide, difficulty dialog. It registers the Core settings that belong to difficulty and style.
+    /// first-start card, guide, difficulty dialog. It registers the Core settings that belong to difficulty.
     /// </summary>
     public sealed class UiModule : HearthModuleBase
     {
         public override ModuleId Id => ModuleId.Core;
-        static readonly float[] StageAnchors = { 0f, 1f, 2f, 4f, 5f, 6f, 7f };
 
         public override void RegisterSettings()
         {
-            const string diff = "Difficulty", special = "Special switches", style = "Style";
+            const string diff = "Difficulty", special = "Special switches";
             // tier-driven numbers every module may read (9.2)
-            HSettings.Int(ModuleId.Core, diff, "core.consequenceStage", 4, 0, 7, "Highest consequence stage",
-                "How far bad outcomes can climb: 1 mood, 2 renown, 3 goodwill, 4 money, 5 licence, 6 raids, 7 bounty. Follows the hosting difficulty.", hardMin: 0, hardMax: 7, tiers: StageAnchors);
             HSettings.Float(ModuleId.Core, diff, "core.researchCost", 1f, 0.1f, 3f, "Research cost factor",
                 "Multiplies the cost of Hearth & Harbor and Silverline research projects. Follows the hosting difficulty.", hardMin: 0.01f, hardMax: 100f, tiers: new[] { 0.25f, 0.6f, 0.8f, 1f, 1.2f, 1.4f, 2f });
-            HSettings.Float(ModuleId.Core, diff, "core.upkeep", 1f, 0f, 3f, "Upkeep factor",
-                "Multiplies the running costs of your venues and rooms. Follows the hosting difficulty.", hardMin: 0f, hardMax: 100f, tiers: new[] { 0f, 0.5f, 0.8f, 1f, 1.2f, 1.5f, 2f });
 
-            // special switches (9.1). Switches that double a real setting elsewhere are shortcuts to it; until that module reads them, these are the source.
-            HSettings.Bool(ModuleId.Core, special, "core.neverDie", false, "Guests never die", "Guests are knocked down instead of killed and are rescued for free.");
-            HSettings.Bool(ModuleId.Core, special, "core.noHostile", false, "No hostile guests ever", "Guests never turn hostile, whatever their faction thinks of you.");
-            HSettings.Bool(ModuleId.Core, special, "core.infiniteMoney", false, "Infinite guest money", "Guests always have enough to pay. The guest money factor has no effect while this is on.");
+            // special switches (9.1). Every switch listed here is read by game code (see DifficultyTests); a switch nobody reads does not ship.
+            HSettings.Bool(ModuleId.Core, special, "core.neverDie", false, "Guests never die", "Guests are knocked down instead of killed. They keep living, downed, until someone tends them.");
+            HSettings.Bool(ModuleId.Core, special, "core.infiniteMoney", false, "Infinite guest money", "Guests who arrive while this is on carry a bottomless purse. The guest money factor has no effect on them.");
             HSettings.Bool(ModuleId.Core, special, "core.picky", false, "Picky guests", "Guests expect a little more from every stay (expectation +0.1).");
-            HSettings.Bool(ModuleId.Core, special, "core.feuding", false, "Feuding factions", "Hostile factions dislike each other twice as much when they share a roof.");
-            HSettings.Bool(ModuleId.Core, special, "core.mandatory", false, "Mandatory hospitality", "Contracts and billeting are forced on you, even below the Overbooked tier.");
-            HSettings.Bool(ModuleId.Core, special, "core.strictInspectors", false, "Strict inspectors", "Inspectors check three times as often.");
-            HSettings.Bool(ModuleId.Core, special, "core.realConsequences", false, "Real consequences", "Raises the consequence ladder by one stage.");
-            HSettings.Bool(ModuleId.Core, special, "core.ironBank", false, "Iron purse / Iron bank", "No bailout, no overdraft, compound interest without mercy.");
+            HSettings.Bool(ModuleId.Core, special, "core.ironBank", false, "Iron bank", "Debt collection always climbs to the highest stage, whatever the difficulty. Nobody quietly defers your instalments.");
             HSettings.Bool(ModuleId.Core, special, "core.noResearchGating", false, "No research gating", "Everything on the Hearth & Harbor and Silverline trees is available from the start.");
-            HSettings.Bool(ModuleId.Core, special, "core.peacefulUnderworld", false, "Peaceful underworld", "Dark venues work without violence.");
+            HSettings.Bool(ModuleId.Core, special, "core.peacefulUnderworld", false, "Peaceful underworld", "Dark venues work without violence: no fight pit, no questioning, no hunting of people, no clinic, no protection racket. Back room, fence and drug lounge stay.");
             HSettings.Bool(ModuleId.Core, special, "core.showMath", false, "Show me the math", "Shows nerd settings and formulas everywhere.");
-            HSettings.Bool(ModuleId.Core, special, "core.perfMode", false, "Performance mode", "Fewer guests at once and simpler guest behaviour on slow computers.");
+            HSettings.Bool(ModuleId.Core, special, "core.perfMode", false, "Performance mode", "Guest planning and room checks run half as often. Helps on slow computers; guests may react a little later.");
 
-            // style (4.9): appearance only, never what guests can do
-            HSettings.Enum(ModuleId.Core, style, "core.houseStyle", HouseStyle.Automatic, "House style",
-                "The look of furniture and signs. Automatic follows your ideology style, otherwise your highest researched era. Looks only: guests and prices are not affected.");
-            HSettings.Bool(ModuleId.Core, style, "core.keepBuiltStyle", false, "Built furniture keeps its old style",
-                "When the house style changes with a new era, already built furniture keeps its look.");
         }
 
         public override void OnDefsLoaded()

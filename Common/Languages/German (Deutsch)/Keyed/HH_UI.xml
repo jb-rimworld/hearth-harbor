@@ -86,10 +86,10 @@
   <HH.UI.Diff.Intensity>Gastgeber-Intensität {0} %</HH.UI.Diff.Intensity>
   <HH.UI.Diff.ChipTip>{0}: etwa {1} % Gastgeber-Intensität.</HH.UI.Diff.ChipTip>
   <HH.UI.Diff.Calculator>Was diese Stufe für dich bedeutet</HH.UI.Diff.Calculator>
-  <HH.UI.Diff.Ladder>Was schiefgehen kann</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.Ladder>Unterwelt: Strafdeckel pro Vorfall</HH.UI.Diff.Ladder>
   <HH.UI.Diff.Special>Sonderschalter</HH.UI.Diff.Special>
   <HH.UI.Diff.ShowAll>Alle {0} Werte zeigen, die der Schwierigkeit folgen</HH.UI.Diff.ShowAll>
-  <HH.UI.Diff.WarnHard>Ab Überbucht sind echte Folgen eingeschaltet: Bußgelder, Lizenzverlust und Schlimmeres.</HH.UI.Diff.WarnHard>
+  <HH.UI.Diff.WarnHard>Ab Überbucht können Unterwelt-Vorfälle echtes Wohlwollen, Renommee und Silber kosten (siehe Deckel unten).</HH.UI.Diff.WarnHard>
   <HH.UI.Diff.WarnEasy>Diese Stufe verzeiht sehr viel. Geld kommt leicht, und nichts geht schief.</HH.UI.Diff.WarnEasy>
   <HH.UI.Diff.WarnBreaks>Das sprengt die Spielbalance. Mit Absicht?</HH.UI.Diff.WarnBreaks>
   <HH.UI.Calc.StandardIs>Standardzimmer: {0}</HH.UI.Calc.StandardIs>
@@ -100,8 +100,8 @@
   <HH.UI.Feel.1>Das Geld fließt, und nichts geht schief.</HH.UI.Feel.1>
   <HH.UI.Feel.2>Sanft und großzügig.</HH.UI.Feel.2>
   <HH.UI.Feel.3>Kleine Verluste sind möglich. Gewinn will erarbeitet sein.</HH.UI.Feel.3>
-  <HH.UI.Feel.4>Folgen schalten sich ein: Streit, Bußgelder, Lizenzverlust.</HH.UI.Feel.4>
-  <HH.UI.Feel.5>Fehden, Verträge, strenge Inspektoren, Rachefeldzüge.</HH.UI.Feel.5>
+  <HH.UI.Feel.4>Unterwelt-Vorfälle kosten nun Wohlwollen, Renommee und Bußgelder.</HH.UI.Feel.4>
+  <HH.UI.Feel.5>Größere Strafen bei Unterwelt-Vorfällen, eine härtere Bank.</HH.UI.Feel.5>
   <HH.UI.Feel.6>Alles ist hart, und nichts ist gedeckelt.</HH.UI.Feel.6>
   <HH.UI.Calc.guestMoney>Gästegeld</HH.UI.Calc.guestMoney>
   <HH.UI.Calc.guestMoney.Desc>Multipliziert, was Gäste dabeihaben und auszugeben bereit sind.</HH.UI.Calc.guestMoney.Desc>
@@ -111,30 +111,20 @@
   <HH.UI.Calc.arrivalRate.Desc>Wie oft Gäste auftauchen.</HH.UI.Calc.arrivalRate.Desc>
   <HH.UI.Calc.expectation>Gästeerwartung</HH.UI.Calc.expectation>
   <HH.UI.Calc.expectation.Desc>Wird auf das aufgeschlagen, was jeder Gast erwartet. Höher heißt schwerer zufriedenzustellen.</HH.UI.Calc.expectation.Desc>
-  <HH.UI.Calc.trouble>Ärgergefahr</HH.UI.Calc.trouble>
-  <HH.UI.Calc.trouble.Desc>Wahrscheinlichkeit und Gewicht von Streit, Schlägereien und Diebstählen unter Gästen.</HH.UI.Calc.trouble.Desc>
-  <HH.UI.Calc.stage>Schwerste Folge</HH.UI.Calc.stage>
-  <HH.UI.Calc.stage.Desc>Das Schlimmste, was ein schlechter Aufenthalt dir auf dieser Stufe antun kann.</HH.UI.Calc.stage.Desc>
-  <HH.UI.Calc.slotEdge>Hausvorteil der Spielautomaten</HH.UI.Calc.slotEdge>
-  <HH.UI.Calc.slotEdge.Desc>Anteil jedes Einsatzes, den ein Spielautomat im Schnitt behält.</HH.UI.Calc.slotEdge.Desc>
+  <HH.UI.Calc.slotRtp>Auszahlungsquote der Spielautomaten</HH.UI.Calc.slotRtp>
+  <HH.UI.Calc.slotRtp.Desc>Anteil jedes Einsatzes, den ein Spielautomat im Schnitt auszahlt. Den Rest behält das Haus.</HH.UI.Calc.slotRtp.Desc>
   <HH.UI.Calc.bankM>Marktrendite der Bank (M pro Jahr)</HH.UI.Calc.bankM>
   <HH.UI.Calc.bankM.Desc>Jahresmultiplikator des Silverline-Markts. 1,2 bedeutet plus zwanzig Prozent.</HH.UI.Calc.bankM.Desc>
-  <HH.UI.Calc.defaultFactor>Zahlungsausfälle</HH.UI.Calc.defaultFactor>
-  <HH.UI.Calc.defaultFactor.Desc>Wie oft Kunden nicht bezahlen, was sie schulden.</HH.UI.Calc.defaultFactor.Desc>
   <HH.UI.Calc.collectionStage>Höchste Inkassostufe</HH.UI.Calc.collectionStage>
   <HH.UI.Calc.collectionStage.Desc>Wie ruppig das Eintreiben von Schulden werden kann, wenn du Geld schuldest.</HH.UI.Calc.collectionStage.Desc>
   <HH.UI.Calc.researchCost>Forschungskosten</HH.UI.Calc.researchCost>
   <HH.UI.Calc.researchCost.Desc>Multipliziert die Kosten der Forschung von Hearth &amp; Harbor und Silverline.</HH.UI.Calc.researchCost.Desc>
-  <HH.UI.Calc.upkeep>Unterhalt</HH.UI.Calc.upkeep>
-  <HH.UI.Calc.upkeep.Desc>Multipliziert die laufenden Kosten deiner Geschäfte und Zimmer.</HH.UI.Calc.upkeep.Desc>
   <HH.UI.Calc.insuranceLoading>Versicherungsaufschlag</HH.UI.Calc.insuranceLoading>
   <HH.UI.Calc.insuranceLoading.Desc>Der Aufschlag des Versicherers auf eine faire Prämie.</HH.UI.Calc.insuranceLoading.Desc>
   <HH.UI.Calc.salesPressure>Verkaufsdruck der Versicherung</HH.UI.Calc.salesPressure>
   <HH.UI.Calc.salesPressure.Desc>Wie aufdringlich die Verkaufstricks des Versicherers werden.</HH.UI.Calc.salesPressure.Desc>
   <HH.UI.Calc.addiction>Spielsuchtwahrscheinlichkeit</HH.UI.Calc.addiction>
   <HH.UI.Calc.addiction.Desc>Grundwahrscheinlichkeit, dass ein Kolonist, der viel spielt, süchtig wird.</HH.UI.Calc.addiction.Desc>
-  <HH.UI.Calc.detection>Entdeckungsrate bei Betrug</HH.UI.Calc.detection>
-  <HH.UI.Calc.detection.Desc>Wie schnell Betrug am Tisch bemerkt wird.</HH.UI.Calc.detection.Desc>
   <HH.UI.Stage.0>Kein Schaden</HH.UI.Stage.0>
   <HH.UI.Stage.1>Stimmung</HH.UI.Stage.1>
   <HH.UI.Stage.2>Renommee</HH.UI.Stage.2>
@@ -143,17 +133,13 @@
   <HH.UI.Stage.5>Lizenz</HH.UI.Stage.5>
   <HH.UI.Stage.6>Überfälle</HH.UI.Stage.6>
   <HH.UI.Stage.7>Kopfgeld</HH.UI.Stage.7>
-  <HH.UI.Ladder.Goodwill>Wohlwollensverlust pro schlechtem Aufenthalt (Deckel)</HH.UI.Ladder.Goodwill>
-  <HH.UI.Ladder.Goodwill.Desc>Das meiste Wohlwollen, das dir eine Fraktion pro Vorfall entziehen kann.</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Goodwill>Wohlwollensverlust pro Vorfall (Deckel)</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>Das meiste Wohlwollen, das dir ein Unterwelt-Vorfall entziehen kann.</HH.UI.Ladder.Goodwill.Desc>
   <HH.UI.Ladder.Renown>Renommeeverlust pro Vorfall (Deckel)</HH.UI.Ladder.Renown>
-  <HH.UI.Ladder.Renown.Desc>Das meiste Renommee, das dich ein Vorfall kosten kann.</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Renown.Desc>Das meiste Renommee, das dich ein Unterwelt-Vorfall kosten kann.</HH.UI.Ladder.Renown.Desc>
   <HH.UI.Ladder.Fine>Bußgelder (Deckel, Silber)</HH.UI.Ladder.Fine>
-  <HH.UI.Ladder.Fine.Desc>Das meiste, was dich eine einzelne Inspektion oder ein einzelner Vorfall an Bußgeld kosten kann.</HH.UI.Ladder.Fine.Desc>
-  <HH.UI.Ladder.Raids>Vergeltungsüberfälle</HH.UI.Ladder.Raids>
-  <HH.UI.Ladder.Raids.Desc>Ob verärgerte Fraktionen oder Söldner dir nachstellen dürfen.</HH.UI.Ladder.Raids.Desc>
-  <HH.UI.Ladder.No>nein</HH.UI.Ladder.No>
-  <HH.UI.Ladder.Yes>ja</HH.UI.Ladder.Yes>
-  <HH.UI.Ladder.Footer>Höhere Stufen schalten mehr Folgen frei, statt nur die Wahrscheinlichkeit zu erhöhen.</HH.UI.Ladder.Footer>
+  <HH.UI.Ladder.Fine.Desc>Das meiste, was dich ein einzelner Unterwelt-Vorfall an Bußgeld kosten kann.</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Footer>Diese Deckel gelten für Unterwelt-Vorfälle. Die Mahnstufen der Bank folgen ihren eigenen Einstellungen.</HH.UI.Ladder.Footer>
   <HH.UI.Diag.Copy>Diagnose in die Zwischenablage kopieren</HH.UI.Diag.Copy>
   <HH.UI.Diag.Copied>Diagnose in die Zwischenablage kopiert.</HH.UI.Diag.Copied>
   <HH.UI.Diag.PrepareRemoval>Entfernung vorbereiten</HH.UI.Diag.PrepareRemoval>
@@ -308,46 +294,22 @@
   <HH.UI.Guide.More>+{0} weitere Themen folgen</HH.UI.Guide.More>
   <HH.UI.Guide.Done>Erledigt ({0})</HH.UI.Guide.Done>
   <HH.UI.Guide.ClickJump>Klicken, um dorthin zu springen.</HH.UI.Guide.ClickJump>
-  <HH.Setting.core.consequenceStage>Höchste Konsequenzstufe</HH.Setting.core.consequenceStage>
-  <HH.Setting.core.consequenceStage.Desc>Wie weit schlechte Ausgänge eskalieren können: 1 Stimmung, 2 Renommee, 3 Wohlwollen, 4 Geld, 5 Lizenz, 6 Überfälle, 7 Kopfgeld. Folgt der Gastgeber-Schwierigkeit.</HH.Setting.core.consequenceStage.Desc>
   <HH.Setting.core.researchCost>Forschungskostenfaktor</HH.Setting.core.researchCost>
   <HH.Setting.core.researchCost.Desc>Multipliziert die Kosten der Forschungsprojekte von Hearth &amp; Harbor und Silverline. Folgt der Gastgeber-Schwierigkeit.</HH.Setting.core.researchCost.Desc>
-  <HH.Setting.core.upkeep>Unterhaltsfaktor</HH.Setting.core.upkeep>
-  <HH.Setting.core.upkeep.Desc>Multipliziert die laufenden Kosten deiner Geschäfte und Räume. Folgt der Gastgeber-Schwierigkeit.</HH.Setting.core.upkeep.Desc>
   <HH.Setting.core.neverDie>Gäste sterben nie</HH.Setting.core.neverDie>
-  <HH.Setting.core.neverDie.Desc>Gäste werden niedergestreckt statt getötet und kostenlos gerettet.</HH.Setting.core.neverDie.Desc>
-  <HH.Setting.core.noHostile>Nie feindliche Gäste</HH.Setting.core.noHostile>
-  <HH.Setting.core.noHostile.Desc>Gäste werden nie feindlich, egal was ihre Fraktion von dir hält.</HH.Setting.core.noHostile.Desc>
+  <HH.Setting.core.neverDie.Desc>Gäste werden niedergestreckt statt getötet. Sie bleiben am Leben, am Boden, bis sich jemand um sie kümmert.</HH.Setting.core.neverDie.Desc>
   <HH.Setting.core.infiniteMoney>Unendlich Gästegeld</HH.Setting.core.infiniteMoney>
-  <HH.Setting.core.infiniteMoney.Desc>Gäste haben immer genug zum Bezahlen. Der Gästegeld-Faktor hat keine Wirkung, solange das an ist.</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.infiniteMoney.Desc>Gäste, die ankommen, während das an ist, haben einen bodenlosen Geldbeutel. Der Gästegeld-Faktor wirkt bei ihnen nicht.</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.picky>Anspruchsvolle Gäste</HH.Setting.core.picky>
-  <HH.Setting.core.picky.Desc>Gäste erwarten von jedem Aufenthalt etwas mehr (Erwartung +0,1).</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.feuding>Verfeindete Fraktionen</HH.Setting.core.feuding>
-  <HH.Setting.core.feuding.Desc>Feindliche Fraktionen mögen sich unter einem Dach doppelt so wenig.</HH.Setting.core.feuding.Desc>
-  <HH.Setting.core.mandatory>Verpflichtende Gastfreundschaft</HH.Setting.core.mandatory>
-  <HH.Setting.core.mandatory.Desc>Verträge und Einquartierungen werden dir aufgezwungen, auch unterhalb der Stufe Überbucht.</HH.Setting.core.mandatory.Desc>
-  <HH.Setting.core.strictInspectors>Strenge Inspektoren</HH.Setting.core.strictInspectors>
-  <HH.Setting.core.strictInspectors.Desc>Inspektoren kontrollieren dreimal so oft.</HH.Setting.core.strictInspectors.Desc>
-  <HH.Setting.core.realConsequences>Echte Konsequenzen</HH.Setting.core.realConsequences>
-  <HH.Setting.core.realConsequences.Desc>Hebt die Konsequenzleiter um eine Stufe an.</HH.Setting.core.realConsequences.Desc>
-  <HH.Setting.core.ironBank>Eiserner Beutel / Eiserne Bank</HH.Setting.core.ironBank>
-  <HH.Setting.core.ironBank.Desc>Keine Rettung, kein Dispo, Zinseszins ohne Gnade.</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.picky.Desc>Gäste erwarten bei jedem Aufenthalt etwas mehr (Erwartung +0,1).</HH.Setting.core.picky.Desc>
+  <HH.Setting.core.ironBank>Eiserne Bank</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank.Desc>Das Inkasso läuft immer bis zur höchsten Stufe, egal bei welcher Schwierigkeit. Niemand stundet deine Raten stillschweigend.</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.noResearchGating>Keine Forschungssperre</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Alles in den Hearth &amp; Harbor- und Silverline-Bäumen ist von Anfang an verfügbar.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>Friedliche Unterwelt</HH.Setting.core.peacefulUnderworld>
-  <HH.Setting.core.peacefulUnderworld.Desc>Dunkle Geschäfte funktionieren ohne Gewalt.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Dunkle Betriebe laufen ohne Gewalt: keine Kampfgrube, keine Verhöre, keine Menschenjagd, keine Klinik, keine Schutzgelder. Hinterzimmer, Hehler und Lounge bleiben.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.showMath>Zeig mir die Mathematik</HH.Setting.core.showMath>
   <HH.Setting.core.showMath.Desc>Zeigt überall Nerd-Einstellungen und Formeln.</HH.Setting.core.showMath.Desc>
   <HH.Setting.core.perfMode>Leistungsmodus</HH.Setting.core.perfMode>
-  <HH.Setting.core.perfMode.Desc>Weniger Gäste gleichzeitig und einfacheres Gästeverhalten auf langsamen Computern.</HH.Setting.core.perfMode.Desc>
-  <HH.Setting.core.houseStyle>Hausstil</HH.Setting.core.houseStyle>
-  <HH.Setting.core.houseStyle.Desc>Das Aussehen von Möbeln und Schildern. Automatisch folgt deinem Ideologie-Stil, sonst deiner höchsten erforschten Epoche. Nur Optik: Gäste und Preise bleiben unberührt.</HH.Setting.core.houseStyle.Desc>
-  <HH.Setting.core.keepBuiltStyle>Gebaute Möbel behalten ihren alten Stil</HH.Setting.core.keepBuiltStyle>
-  <HH.Setting.core.keepBuiltStyle.Desc>Wenn sich der Hausstil mit einer neuen Epoche ändert, behalten bereits gebaute Möbel ihr Aussehen.</HH.Setting.core.keepBuiltStyle.Desc>
-  <HH.Enum.HouseStyle.Automatic>Automatisch</HH.Enum.HouseStyle.Automatic>
-  <HH.Enum.HouseStyle.StoneAge>Steinzeit</HH.Enum.HouseStyle.StoneAge>
-  <HH.Enum.HouseStyle.Medieval>Mittelalter</HH.Enum.HouseStyle.Medieval>
-  <HH.Enum.HouseStyle.Industrial>Industriell</HH.Enum.HouseStyle.Industrial>
-  <HH.Enum.HouseStyle.Spacer>Raumfahrer</HH.Enum.HouseStyle.Spacer>
-  <HH.Enum.HouseStyle.Ultra>Ultra</HH.Enum.HouseStyle.Ultra>
+  <HH.Setting.core.perfMode.Desc>Gästeplanung und Raumprüfungen laufen nur halb so oft. Hilft auf langsamen Rechnern; Gäste reagieren eventuell etwas später.</HH.Setting.core.perfMode.Desc>
 </LanguageData>

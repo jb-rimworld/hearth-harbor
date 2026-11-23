@@ -154,7 +154,7 @@ namespace Hearth.Guests
 
         public override void MapComponentTick()
         {
-            if (Find.TickManager.TicksGame % 250 != 123) return;
+            if (Find.TickManager.TicksGame % PerfMode.Interval(250) != 123) return;
             if (!Modules.On(ModuleId.Inn) || SuspendedForTests) return;
             Guard.Run(ModuleId.Inn, "Inn.Scheduler", Tick);
         }

@@ -87,26 +87,20 @@ namespace Hearth.Shell
             R("guestMoney",      "inn.guestMoney",      new[] { 5f, 1.6f, 1.25f, 1f, 0.85f, 0.7f, 0.5f },        TierScale.Log,    TierFormat.Factor),
             R("priceTolerance",  "inn.priceTolerance",  new[] { 3f, 1.3f, 1.15f, 1f, 0.9f, 0.8f, 0.65f },        TierScale.Log,    TierFormat.Factor),
             R("arrivalRate",     "inn.arrivalRate",     new[] { 3f, 1.4f, 1.2f, 1f, 0.9f, 0.8f, 0.6f },          TierScale.Log,    TierFormat.Factor),
-            R("expectation",     "inn.expectation",     new[] { -0.3f, -0.1f, -0.05f, 0f, 0.05f, 0.1f, 0.2f },   TierScale.Linear, TierFormat.Signed),
-            R("trouble",         "inn.trouble",         new[] { 0f, 0.2f, 0.5f, 1f, 1.5f, 2.2f, 3.5f },          TierScale.SymLog, TierFormat.Factor),
-            R("stage",           "core.consequenceStage", new[] { 0f, 1f, 2f, 4f, 5f, 6f, 7f },                 TierScale.Step,   TierFormat.Stage),
-            R("slotEdge",        "casino.slotEdge",     new[] { 0.02f, 0.035f, 0.05f, 0.08f, 0.12f, 0.15f, 0.18f }, TierScale.Linear, TierFormat.Percent),
-            R("bankM",           "bank.interestM",      new[] { 100f, 2f, 1.5f, 1.2f, 1f, 0.7f, 0.1f },          TierScale.Log,    TierFormat.Factor),
-            R("defaultFactor",   "bank.defaultFactor",  new[] { 0f, 0.2f, 0.35f, 0.5f, 1f, 1.5f, 2.5f },         TierScale.SymLog, TierFormat.Factor),
-            R("collectionStage", "bank.collectionStage",new[] { 0f, 1f, 2f, 4f, 5f, 6f, 7f },                    TierScale.Step,   TierFormat.Stage),
+            R("expectation",     "inn.expectationOffset",     new[] { -0.3f, -0.1f, -0.05f, 0f, 0.05f, 0.1f, 0.2f },   TierScale.Linear, TierFormat.Signed),
+            R("slotRtp",        "casino.slotRtp",      new[] { 0.98f, 0.965f, 0.95f, 0.92f, 0.88f, 0.85f, 0.82f }, TierScale.Linear, TierFormat.Percent),
+            R("bankM",           "bank.profit",      new[] { 100f, 2f, 1.5f, 1.2f, 1f, 0.7f, 0.1f },          TierScale.Log,    TierFormat.Factor),
+            R("collectionStage", "bank.maxCollectionStage",new[] { 0f, 1f, 2f, 4f, 5f, 6f, 7f },                    TierScale.Step,   TierFormat.Stage),
             R("researchCost",    "core.researchCost",   new[] { 0.25f, 0.6f, 0.8f, 1f, 1.2f, 1.4f, 2f },         TierScale.Log,    TierFormat.Factor),
-            R("upkeep",          "core.upkeep",         new[] { 0f, 0.5f, 0.8f, 1f, 1.2f, 1.5f, 2f },            TierScale.SymLog, TierFormat.Factor),
             R("insuranceLoading","insurance.loading",   new[] { 0f, 0.10f, 0.15f, 0.25f, 0.35f, 0.50f, 0.80f },  TierScale.Linear, TierFormat.Percent),
             R("salesPressure",   "insurance.salesPressure", new[] { 0f, 0.05f, 0.10f, 0.30f, 0.60f, 0.80f, 1f }, TierScale.SymLog, TierFormat.Percent),
-            R("addiction",       "casino.addictionChance",  new[] { 0f, 0f, 0.04f, 0.08f, 0.10f, 0.13f, 0.18f }, TierScale.SymLog, TierFormat.Percent),
-            R("detection",       "casino.detection",    new[] { 0f, 0.002f, 0.003f, 0.004f, 0.005f, 0.006f, 0.008f }, TierScale.SymLog, TierFormat.Permille),
+            R("addiction",       "casino.addictionP0",  new[] { 0f, 0f, 0.04f, 0.08f, 0.10f, 0.13f, 0.18f }, TierScale.SymLog, TierFormat.Percent),
         };
 
         // Consequence ladder (9.4): what each tier lets the game do to you. Index = tier 0..6.
         public static readonly string[] GoodwillCap = { "0", "0", "−2", "−5", "−15", "−40", "∞" };
         public static readonly string[] RenownCap = { "0", "0", "−2", "−3", "−8", "−15", "∞" };
         public static readonly string[] FineCap = { "0", "0", "0", "300", "1000", "3000", "∞" };
-        public static readonly string[] Raids = { "no", "no", "no", "no", "no", "yes ×0.6", "yes ×1.0" };
 
         /// <summary>Real value if the setting is registered, otherwise the reference value; second result tells which.</summary>
         public static float Effective(TierRow row, HearthProfile target, out bool fromSetting, out bool overridden)

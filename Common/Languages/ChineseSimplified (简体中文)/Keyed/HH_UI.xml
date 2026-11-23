@@ -86,10 +86,8 @@
   <HH.UI.Diff.Intensity>经营强度 {0}%</HH.UI.Diff.Intensity>
   <HH.UI.Diff.ChipTip>{0}：约为 {1}% 的经营强度。</HH.UI.Diff.ChipTip>
   <HH.UI.Diff.Calculator>此档位对你意味着什么</HH.UI.Diff.Calculator>
-  <HH.UI.Diff.Ladder>可能出什么问题</HH.UI.Diff.Ladder>
   <HH.UI.Diff.Special>特殊开关</HH.UI.Diff.Special>
   <HH.UI.Diff.ShowAll>显示全部 {0} 个随难度变化的数值</HH.UI.Diff.ShowAll>
-  <HH.UI.Diff.WarnHard>从“超额预订”档起，真实后果开启：罚款、吊销执照及更糟的情况。</HH.UI.Diff.WarnHard>
   <HH.UI.Diff.WarnEasy>此档位非常宽容。钱来得轻松，也不会出什么问题。</HH.UI.Diff.WarnEasy>
   <HH.UI.Diff.WarnBreaks>这会破坏游戏平衡。是有意为之吗？</HH.UI.Diff.WarnBreaks>
   <HH.UI.Calc.StandardIs>标准房间：{0}</HH.UI.Calc.StandardIs>
@@ -100,9 +98,6 @@
   <HH.UI.Feel.1>钱流动起来，也不会出什么问题。</HH.UI.Feel.1>
   <HH.UI.Feel.2>温和而慷慨。</HH.UI.Feel.2>
   <HH.UI.Feel.3>可能有小额亏损。盈利需要努力。</HH.UI.Feel.3>
-  <HH.UI.Feel.4>后果开始生效：争吵、罚款、吊销执照。</HH.UI.Feel.4>
-  <HH.UI.Feel.5>世仇、合约、严格的检查员、报复性突袭。</HH.UI.Feel.5>
-  <HH.UI.Feel.6>一切都很艰难，且没有上限。</HH.UI.Feel.6>
   <HH.UI.Calc.guestMoney>访客资金</HH.UI.Calc.guestMoney>
   <HH.UI.Calc.guestMoney.Desc>乘以访客携带的钱及其愿意花的钱。</HH.UI.Calc.guestMoney.Desc>
   <HH.UI.Calc.priceTolerance>价格容忍度</HH.UI.Calc.priceTolerance>
@@ -111,30 +106,18 @@
   <HH.UI.Calc.arrivalRate.Desc>访客来访的频繁程度。</HH.UI.Calc.arrivalRate.Desc>
   <HH.UI.Calc.expectation>访客期望</HH.UI.Calc.expectation>
   <HH.UI.Calc.expectation.Desc>加在每位访客的期望之上。越高越难满足。</HH.UI.Calc.expectation.Desc>
-  <HH.UI.Calc.trouble>麻烦危险度</HH.UI.Calc.trouble>
-  <HH.UI.Calc.trouble.Desc>访客之间争吵、打斗与偷窃的概率及严重程度。</HH.UI.Calc.trouble.Desc>
-  <HH.UI.Calc.stage>最高后果等级</HH.UI.Calc.stage>
-  <HH.UI.Calc.stage.Desc>在此档位上，糟糕的入住最多能给你造成的后果。</HH.UI.Calc.stage.Desc>
-  <HH.UI.Calc.slotEdge>老虎机庄家优势</HH.UI.Calc.slotEdge>
-  <HH.UI.Calc.slotEdge.Desc>老虎机平均每笔赌注保留的比例。</HH.UI.Calc.slotEdge.Desc>
   <HH.UI.Calc.bankM>银行市场收益（每年倍数 M）</HH.UI.Calc.bankM>
   <HH.UI.Calc.bankM.Desc>Silverline 市场的年度倍数。1.2 即增长百分之二十。</HH.UI.Calc.bankM.Desc>
-  <HH.UI.Calc.defaultFactor>付款违约</HH.UI.Calc.defaultFactor>
-  <HH.UI.Calc.defaultFactor.Desc>客户未能支付所欠款项的频率。</HH.UI.Calc.defaultFactor.Desc>
   <HH.UI.Calc.collectionStage>最高催收等级</HH.UI.Calc.collectionStage>
   <HH.UI.Calc.collectionStage.Desc>欠款时，债务催收可以变得多粗暴。</HH.UI.Calc.collectionStage.Desc>
   <HH.UI.Calc.researchCost>研究成本</HH.UI.Calc.researchCost>
   <HH.UI.Calc.researchCost.Desc>乘以 Hearth &amp; Harbor 与 Silverline 研究的成本。</HH.UI.Calc.researchCost.Desc>
-  <HH.UI.Calc.upkeep>维护费</HH.UI.Calc.upkeep>
-  <HH.UI.Calc.upkeep.Desc>乘以你的场所与房间的运营成本。</HH.UI.Calc.upkeep.Desc>
   <HH.UI.Calc.insuranceLoading>保险附加费</HH.UI.Calc.insuranceLoading>
   <HH.UI.Calc.insuranceLoading.Desc>保险公司在公允保费之上加收的部分。</HH.UI.Calc.insuranceLoading.Desc>
   <HH.UI.Calc.salesPressure>保险推销压力</HH.UI.Calc.salesPressure>
   <HH.UI.Calc.salesPressure.Desc>保险公司的推销手段有多强硬。</HH.UI.Calc.salesPressure.Desc>
   <HH.UI.Calc.addiction>赌博成瘾概率</HH.UI.Calc.addiction>
   <HH.UI.Calc.addiction.Desc>经常赌博的殖民者成瘾的基础概率。</HH.UI.Calc.addiction.Desc>
-  <HH.UI.Calc.detection>作弊识破率</HH.UI.Calc.detection>
-  <HH.UI.Calc.detection.Desc>牌桌上的作弊被发现的速度。</HH.UI.Calc.detection.Desc>
   <HH.UI.Stage.0>无伤害</HH.UI.Stage.0>
   <HH.UI.Stage.1>心情</HH.UI.Stage.1>
   <HH.UI.Stage.2>声望</HH.UI.Stage.2>
@@ -143,17 +126,7 @@
   <HH.UI.Stage.5>执照</HH.UI.Stage.5>
   <HH.UI.Stage.6>突袭</HH.UI.Stage.6>
   <HH.UI.Stage.7>悬赏</HH.UI.Stage.7>
-  <HH.UI.Ladder.Goodwill>每次糟糕入住的好感损失（上限）</HH.UI.Ladder.Goodwill>
-  <HH.UI.Ladder.Goodwill.Desc>一个派系每次事件最多能从你这里夺走的好感。</HH.UI.Ladder.Goodwill.Desc>
   <HH.UI.Ladder.Renown>每次事件的声望损失（上限）</HH.UI.Ladder.Renown>
-  <HH.UI.Ladder.Renown.Desc>一次事件最多能让你损失的声望。</HH.UI.Ladder.Renown.Desc>
-  <HH.UI.Ladder.Fine>罚款（上限，银币）</HH.UI.Ladder.Fine>
-  <HH.UI.Ladder.Fine.Desc>单次检查或事件最多能罚你的金额。</HH.UI.Ladder.Fine.Desc>
-  <HH.UI.Ladder.Raids>报复性突袭</HH.UI.Ladder.Raids>
-  <HH.UI.Ladder.Raids.Desc>愤怒的派系或雇佣兵是否可能找上门。</HH.UI.Ladder.Raids.Desc>
-  <HH.UI.Ladder.No>否</HH.UI.Ladder.No>
-  <HH.UI.Ladder.Yes>是</HH.UI.Ladder.Yes>
-  <HH.UI.Ladder.Footer>更高的档位会解锁更多后果，而不仅仅是提高概率。</HH.UI.Ladder.Footer>
   <HH.UI.Diag.Copy>将诊断复制到剪贴板</HH.UI.Diag.Copy>
   <HH.UI.Diag.Copied>诊断已复制到剪贴板。</HH.UI.Diag.Copied>
   <HH.UI.Diag.PrepareRemoval>准备移除</HH.UI.Diag.PrepareRemoval>
@@ -305,48 +278,19 @@
   <HH.UI.Guide.More>还有 {0} 个主题</HH.UI.Guide.More>
   <HH.UI.Guide.Done>已完成（{0}）</HH.UI.Guide.Done>
   <HH.UI.Guide.ClickJump>点击前往该处。</HH.UI.Guide.ClickJump>
-  <HH.Setting.core.consequenceStage>最高后果阶段</HH.Setting.core.consequenceStage>
-  <HH.Setting.core.consequenceStage.Desc>坏结果可以升级到多高：1 心情，2 声望，3 好感，4 金钱，5 许可证，6 袭击，7 赏金。随招待难度变化。</HH.Setting.core.consequenceStage.Desc>
   <HH.Setting.core.researchCost>研究成本系数</HH.Setting.core.researchCost>
   <HH.Setting.core.researchCost.Desc>乘以 Hearth &amp; Harbor 与 Silverline 研究项目的成本。随招待难度变化。</HH.Setting.core.researchCost.Desc>
-  <HH.Setting.core.upkeep>维护成本系数</HH.Setting.core.upkeep>
-  <HH.Setting.core.upkeep.Desc>乘以你的场所和房间的运营成本。随招待难度变化。</HH.Setting.core.upkeep.Desc>
   <HH.Setting.core.neverDie>访客永不死亡</HH.Setting.core.neverDie>
-  <HH.Setting.core.neverDie.Desc>访客会被击倒而不是被杀死，并可免费救治。</HH.Setting.core.neverDie.Desc>
-  <HH.Setting.core.noHostile>访客永不敌对</HH.Setting.core.noHostile>
-  <HH.Setting.core.noHostile.Desc>无论其派系对你的看法如何，访客都不会变得敌对。</HH.Setting.core.noHostile.Desc>
   <HH.Setting.core.infiniteMoney>访客金钱无限</HH.Setting.core.infiniteMoney>
-  <HH.Setting.core.infiniteMoney.Desc>访客总是有足够的钱付款。开启时，访客金钱系数不起作用。</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.picky>挑剔的访客</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>访客对每次停留的期望都会略高（期望 +0.1）。</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.feuding>互相仇视的派系</HH.Setting.core.feuding>
-  <HH.Setting.core.feuding.Desc>敌对派系在同一屋檐下时，互相的厌恶会加倍。</HH.Setting.core.feuding.Desc>
-  <HH.Setting.core.mandatory>强制招待</HH.Setting.core.mandatory>
-  <HH.Setting.core.mandatory.Desc>即使未达到超额预订等级，也会强制你接受合同和住宿安排。</HH.Setting.core.mandatory.Desc>
-  <HH.Setting.core.strictInspectors>严格的检查员</HH.Setting.core.strictInspectors>
-  <HH.Setting.core.strictInspectors.Desc>检查员的检查频率提高到三倍。</HH.Setting.core.strictInspectors.Desc>
-  <HH.Setting.core.realConsequences>真实后果</HH.Setting.core.realConsequences>
-  <HH.Setting.core.realConsequences.Desc>将后果阶梯提高一级。</HH.Setting.core.realConsequences.Desc>
   <HH.Setting.core.ironBank>铁钱包 / 铁银行</HH.Setting.core.ironBank>
-  <HH.Setting.core.ironBank.Desc>没有救助，没有透支，复利毫不留情。</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.noResearchGating>研究不设门槛</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Hearth &amp; Harbor 与 Silverline 研究树上的所有内容从一开始就可用。</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>和平的地下世界</HH.Setting.core.peacefulUnderworld>
-  <HH.Setting.core.peacefulUnderworld.Desc>阴暗场所无需暴力即可运营。</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.showMath>让我看看算式</HH.Setting.core.showMath>
   <HH.Setting.core.showMath.Desc>在各处显示极客设置和公式。</HH.Setting.core.showMath.Desc>
   <HH.Setting.core.perfMode>性能模式</HH.Setting.core.perfMode>
-  <HH.Setting.core.perfMode.Desc>在较慢的电脑上减少同时出现的访客，并简化访客行为。</HH.Setting.core.perfMode.Desc>
-  <HH.Setting.core.houseStyle>房屋风格</HH.Setting.core.houseStyle>
-  <HH.Setting.core.houseStyle.Desc>家具和招牌的外观。自动模式会跟随你的意识形态风格，否则跟随你最高已研究的时代。仅影响外观：访客和价格不受影响。</HH.Setting.core.houseStyle.Desc>
-  <HH.Setting.core.keepBuiltStyle>已建家具保留旧风格</HH.Setting.core.keepBuiltStyle>
-  <HH.Setting.core.keepBuiltStyle.Desc>房屋风格随新时代改变时，已建造的家具保持原有外观。</HH.Setting.core.keepBuiltStyle.Desc>
-  <HH.Enum.HouseStyle.Automatic>自动</HH.Enum.HouseStyle.Automatic>
-  <HH.Enum.HouseStyle.StoneAge>石器时代</HH.Enum.HouseStyle.StoneAge>
-  <HH.Enum.HouseStyle.Medieval>中世纪</HH.Enum.HouseStyle.Medieval>
-  <HH.Enum.HouseStyle.Industrial>工业</HH.Enum.HouseStyle.Industrial>
-  <HH.Enum.HouseStyle.Spacer>太空</HH.Enum.HouseStyle.Spacer>
-  <HH.Enum.HouseStyle.Ultra>超级</HH.Enum.HouseStyle.Ultra>
   <HH.UI.Overview.Arrivals>未来 24 小时到访：{0}，预计每天约 {1} 批客人。</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>尚无人计划</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>已计划 {0} 批（约 {1} 位客人）</HH.UI.Overview.Arrivals.Planned>

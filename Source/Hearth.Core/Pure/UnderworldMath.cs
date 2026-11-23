@@ -24,6 +24,25 @@ namespace Hearth
     public static class UnderworldMath
     {
         // ---- content gate ---------------------------------------------------------------------
+        /// <summary>Features that need violence, threats or harm to people; the peaceful-underworld switch closes them all. Back room, fence, lounge and animal hunts stay.</summary>
+        public static bool IsViolent(UwFeature f)
+        {
+            switch (f)
+            {
+                case UwFeature.PitToIncapacitation:
+                case UwFeature.PitToDeath:
+                case UwFeature.PrisonInterrogation:
+                case UwFeature.PrisonHardQuestioning:
+                case UwFeature.HuntPrisoners:
+                case UwFeature.HuntPrisonersNoPrecept:
+                case UwFeature.OrganClinic:
+                case UwFeature.OrganOrders:
+                case UwFeature.ProtectionRacket:
+                    return true;
+                default: return false;
+            }
+        }
+
         /// <summary>intensity: 0 Cozy, 1 Standard, 2 Dark, 3 Grim.</summary>
         public static bool Allows(int intensity, UwFeature f)
         {

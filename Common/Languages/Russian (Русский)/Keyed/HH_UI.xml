@@ -86,10 +86,8 @@
   <HH.UI.Diff.Intensity>Интенсивность хостинга {0} %</HH.UI.Diff.Intensity>
   <HH.UI.Diff.ChipTip>{0}: примерно {1} % интенсивности хостинга.</HH.UI.Diff.ChipTip>
   <HH.UI.Diff.Calculator>Что означает эта ступень для вас</HH.UI.Diff.Calculator>
-  <HH.UI.Diff.Ladder>Что может пойти не так</HH.UI.Diff.Ladder>
   <HH.UI.Diff.Special>Особые переключатели</HH.UI.Diff.Special>
   <HH.UI.Diff.ShowAll>Показать все {0} значений, которые зависят от сложности</HH.UI.Diff.ShowAll>
-  <HH.UI.Diff.WarnHard>Начиная с Overbooked, включаются настоящие последствия: штрафы, потеря лицензии и кое-что похуже.</HH.UI.Diff.WarnHard>
   <HH.UI.Diff.WarnEasy>Эта ступень очень снисходительна. Деньги даются легко, и ничего не идёт не так.</HH.UI.Diff.WarnEasy>
   <HH.UI.Diff.WarnBreaks>Это ломает баланс игры. Намеренно?</HH.UI.Diff.WarnBreaks>
   <HH.UI.Calc.StandardIs>Стандартный номер: {0}</HH.UI.Calc.StandardIs>
@@ -100,9 +98,6 @@
   <HH.UI.Feel.1>Деньги текут, и ничего не идёт не так.</HH.UI.Feel.1>
   <HH.UI.Feel.2>Мягко и щедро.</HH.UI.Feel.2>
   <HH.UI.Feel.3>Небольшие потери возможны. Прибыль требует труда.</HH.UI.Feel.3>
-  <HH.UI.Feel.4>Включаются последствия: ссоры, штрафы, потеря лицензии.</HH.UI.Feel.4>
-  <HH.UI.Feel.5>Вражды, контракты, строгие инспекторы, рейды в отместку.</HH.UI.Feel.5>
-  <HH.UI.Feel.6>Всё трудно, и ничем не ограничено.</HH.UI.Feel.6>
   <HH.UI.Calc.guestMoney>Деньги гостей</HH.UI.Calc.guestMoney>
   <HH.UI.Calc.guestMoney.Desc>Умножает сумму, которую гости носят с собой и готовы потратить.</HH.UI.Calc.guestMoney.Desc>
   <HH.UI.Calc.priceTolerance>Терпимость к цене</HH.UI.Calc.priceTolerance>
@@ -111,30 +106,18 @@
   <HH.UI.Calc.arrivalRate.Desc>Как часто приходят гости.</HH.UI.Calc.arrivalRate.Desc>
   <HH.UI.Calc.expectation>Ожидания гостей</HH.UI.Calc.expectation>
   <HH.UI.Calc.expectation.Desc>Добавляется к ожиданиям каждого гостя. Чем выше, тем труднее угодить.</HH.UI.Calc.expectation.Desc>
-  <HH.UI.Calc.trouble>Опасность неприятностей</HH.UI.Calc.trouble>
-  <HH.UI.Calc.trouble.Desc>Шанс и вес ссор, драк и краж между гостями.</HH.UI.Calc.trouble.Desc>
-  <HH.UI.Calc.stage>Высшая ступень последствий</HH.UI.Calc.stage>
-  <HH.UI.Calc.stage.Desc>Худшее, что плохое пребывание может сделать с вами на этой ступени.</HH.UI.Calc.stage.Desc>
-  <HH.UI.Calc.slotEdge>Преимущество дома в игровом автомате</HH.UI.Calc.slotEdge>
-  <HH.UI.Calc.slotEdge.Desc>Доля каждой ставки, которую автомат в среднем оставляет себе.</HH.UI.Calc.slotEdge.Desc>
   <HH.UI.Calc.bankM>Доходность рынка банка (M в год)</HH.UI.Calc.bankM>
   <HH.UI.Calc.bankM.Desc>Годовой множитель рынка Silverline. 1,2 означает плюс двадцать процентов.</HH.UI.Calc.bankM.Desc>
-  <HH.UI.Calc.defaultFactor>Неплатежи</HH.UI.Calc.defaultFactor>
-  <HH.UI.Calc.defaultFactor.Desc>Как часто клиенты не оплачивают свои долги.</HH.UI.Calc.defaultFactor.Desc>
   <HH.UI.Calc.collectionStage>Высшая ступень взыскания</HH.UI.Calc.collectionStage>
   <HH.UI.Calc.collectionStage.Desc>Насколько жёстким может быть взыскание долга, когда вы должны деньги.</HH.UI.Calc.collectionStage.Desc>
   <HH.UI.Calc.researchCost>Стоимость исследований</HH.UI.Calc.researchCost>
   <HH.UI.Calc.researchCost.Desc>Умножает стоимость исследований Hearth &amp; Harbor и Silverline.</HH.UI.Calc.researchCost.Desc>
-  <HH.UI.Calc.upkeep>Содержание</HH.UI.Calc.upkeep>
-  <HH.UI.Calc.upkeep.Desc>Умножает текущие расходы ваших заведений и комнат.</HH.UI.Calc.upkeep.Desc>
   <HH.UI.Calc.insuranceLoading>Наценка страховщика</HH.UI.Calc.insuranceLoading>
   <HH.UI.Calc.insuranceLoading.Desc>Наценка страховщика сверх справедливой премии.</HH.UI.Calc.insuranceLoading.Desc>
   <HH.UI.Calc.salesPressure>Давление продаж страховки</HH.UI.Calc.salesPressure>
   <HH.UI.Calc.salesPressure.Desc>Насколько навязчивыми становятся уловки страховщика.</HH.UI.Calc.salesPressure.Desc>
   <HH.UI.Calc.addiction>Шанс игровой зависимости</HH.UI.Calc.addiction>
   <HH.UI.Calc.addiction.Desc>Базовый шанс, что колонист, который много играет, станет зависимым.</HH.UI.Calc.addiction.Desc>
-  <HH.UI.Calc.detection>Скорость обнаружения читерства</HH.UI.Calc.detection>
-  <HH.UI.Calc.detection.Desc>Как быстро замечают жульничество за столом.</HH.UI.Calc.detection.Desc>
   <HH.UI.Stage.0>Без вреда</HH.UI.Stage.0>
   <HH.UI.Stage.1>Настроение</HH.UI.Stage.1>
   <HH.UI.Stage.2>Известность</HH.UI.Stage.2>
@@ -143,17 +126,7 @@
   <HH.UI.Stage.5>Лицензия</HH.UI.Stage.5>
   <HH.UI.Stage.6>Рейды</HH.UI.Stage.6>
   <HH.UI.Stage.7>Награда</HH.UI.Stage.7>
-  <HH.UI.Ladder.Goodwill>Потеря расположения за плохое пребывание (предел)</HH.UI.Ladder.Goodwill>
-  <HH.UI.Ladder.Goodwill.Desc>Наибольшее расположение, которое одна фракция может отнять у вас за один инцидент.</HH.UI.Ladder.Goodwill.Desc>
   <HH.UI.Ladder.Renown>Потеря известности за инцидент (предел)</HH.UI.Ladder.Renown>
-  <HH.UI.Ladder.Renown.Desc>Наибольшая потеря известности, которую может стоить один инцидент.</HH.UI.Ladder.Renown.Desc>
-  <HH.UI.Ladder.Fine>Штрафы (предел, серебро)</HH.UI.Ladder.Fine>
-  <HH.UI.Ladder.Fine.Desc>Наибольший штраф, который может выписать одна проверка или инцидент.</HH.UI.Ladder.Fine.Desc>
-  <HH.UI.Ladder.Raids>Ответные рейды</HH.UI.Ladder.Raids>
-  <HH.UI.Ladder.Raids.Desc>Могут ли разозлённые фракции или наёмники прийти за вами.</HH.UI.Ladder.Raids.Desc>
-  <HH.UI.Ladder.No>нет</HH.UI.Ladder.No>
-  <HH.UI.Ladder.Yes>да</HH.UI.Ladder.Yes>
-  <HH.UI.Ladder.Footer>Высшие ступени открывают новые последствия, а не просто повышают шансы.</HH.UI.Ladder.Footer>
   <HH.UI.Diag.Copy>Скопировать диагностику в буфер обмена</HH.UI.Diag.Copy>
   <HH.UI.Diag.Copied>Диагностика скопирована в буфер обмена.</HH.UI.Diag.Copied>
   <HH.UI.Diag.PrepareRemoval>Подготовить удаление</HH.UI.Diag.PrepareRemoval>
@@ -305,48 +278,19 @@
   <HH.UI.Guide.More>Ещё тем: +{0}</HH.UI.Guide.More>
   <HH.UI.Guide.Done>Готово ({0})</HH.UI.Guide.Done>
   <HH.UI.Guide.ClickJump>Нажмите, чтобы перейти.</HH.UI.Guide.ClickJump>
-  <HH.Setting.core.consequenceStage>Максимальная ступень последствий</HH.Setting.core.consequenceStage>
-  <HH.Setting.core.consequenceStage.Desc>Насколько далеко могут зайти плохие последствия: 1 настроение, 2 известность, 3 расположение, 4 деньги, 5 лицензия, 6 рейды, 7 награда за голову. Следует за сложностью приёма гостей.</HH.Setting.core.consequenceStage.Desc>
   <HH.Setting.core.researchCost>Коэффициент стоимости исследований</HH.Setting.core.researchCost>
   <HH.Setting.core.researchCost.Desc>Умножает стоимость исследовательских проектов Hearth &amp; Harbor и Silverline. Следует за сложностью приёма гостей.</HH.Setting.core.researchCost.Desc>
-  <HH.Setting.core.upkeep>Коэффициент содержания</HH.Setting.core.upkeep>
-  <HH.Setting.core.upkeep.Desc>Умножает текущие расходы ваших заведений и комнат. Следует за сложностью приёма гостей.</HH.Setting.core.upkeep.Desc>
   <HH.Setting.core.neverDie>Гости никогда не умирают</HH.Setting.core.neverDie>
-  <HH.Setting.core.neverDie.Desc>Гостей сбивают с ног вместо убийства, и их бесплатно спасают.</HH.Setting.core.neverDie.Desc>
-  <HH.Setting.core.noHostile>Враждебных гостей не бывает никогда</HH.Setting.core.noHostile>
-  <HH.Setting.core.noHostile.Desc>Гости никогда не становятся враждебными, что бы ни думала о вас их фракция.</HH.Setting.core.noHostile.Desc>
   <HH.Setting.core.infiniteMoney>Бесконечные деньги гостей</HH.Setting.core.infiniteMoney>
-  <HH.Setting.core.infiniteMoney.Desc>У гостей всегда хватает на оплату. Коэффициент денег гостей не действует, пока это включено.</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.picky>Придирчивые гости</HH.Setting.core.picky>
   <HH.Setting.core.picky.Desc>Гости ждут чуть большего от каждого проживания (ожидание +0,1).</HH.Setting.core.picky.Desc>
-  <HH.Setting.core.feuding>Враждующие фракции</HH.Setting.core.feuding>
-  <HH.Setting.core.feuding.Desc>Враждебные фракции не любят друг друга вдвое сильнее, когда оказываются под одной крышей.</HH.Setting.core.feuding.Desc>
-  <HH.Setting.core.mandatory>Обязательное гостеприимство</HH.Setting.core.mandatory>
-  <HH.Setting.core.mandatory.Desc>Контракты и размещение навязываются вам, даже ниже уровня «Переполнено».</HH.Setting.core.mandatory.Desc>
-  <HH.Setting.core.strictInspectors>Строгие инспекторы</HH.Setting.core.strictInspectors>
-  <HH.Setting.core.strictInspectors.Desc>Инспекторы проверяют втрое чаще.</HH.Setting.core.strictInspectors.Desc>
-  <HH.Setting.core.realConsequences>Настоящие последствия</HH.Setting.core.realConsequences>
-  <HH.Setting.core.realConsequences.Desc>Поднимает лестницу последствий на одну ступень.</HH.Setting.core.realConsequences.Desc>
   <HH.Setting.core.ironBank>Железный кошелёк / Железный банк</HH.Setting.core.ironBank>
-  <HH.Setting.core.ironBank.Desc>Никаких спасательных выплат, никакого овердрафта, сложные проценты без пощады.</HH.Setting.core.ironBank.Desc>
   <HH.Setting.core.noResearchGating>Без ограничений исследований</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Всё из ветвей Hearth &amp; Harbor и Silverline доступно с самого начала.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>Мирный преступный мир</HH.Setting.core.peacefulUnderworld>
-  <HH.Setting.core.peacefulUnderworld.Desc>Тёмные заведения работают без насилия.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.showMath>Покажи мне математику</HH.Setting.core.showMath>
   <HH.Setting.core.showMath.Desc>Показывает технические настройки и формулы везде.</HH.Setting.core.showMath.Desc>
   <HH.Setting.core.perfMode>Режим производительности</HH.Setting.core.perfMode>
-  <HH.Setting.core.perfMode.Desc>Меньше гостей одновременно и более простое поведение гостей на слабых компьютерах.</HH.Setting.core.perfMode.Desc>
-  <HH.Setting.core.houseStyle>Стиль дома</HH.Setting.core.houseStyle>
-  <HH.Setting.core.houseStyle.Desc>Вид мебели и вывесок. «Автоматически» следует стилю вашей идеологии, иначе вашей самой изученной эпохе. Только внешний вид: гости и цены не меняются.</HH.Setting.core.houseStyle.Desc>
-  <HH.Setting.core.keepBuiltStyle>Построенная мебель сохраняет старый стиль</HH.Setting.core.keepBuiltStyle>
-  <HH.Setting.core.keepBuiltStyle.Desc>Когда стиль дома меняется с новой эпохой, уже построенная мебель сохраняет свой вид.</HH.Setting.core.keepBuiltStyle.Desc>
-  <HH.Enum.HouseStyle.Automatic>Автоматически</HH.Enum.HouseStyle.Automatic>
-  <HH.Enum.HouseStyle.StoneAge>Каменный век</HH.Enum.HouseStyle.StoneAge>
-  <HH.Enum.HouseStyle.Medieval>Средневековье</HH.Enum.HouseStyle.Medieval>
-  <HH.Enum.HouseStyle.Industrial>Индустриальный</HH.Enum.HouseStyle.Industrial>
-  <HH.Enum.HouseStyle.Spacer>Космический</HH.Enum.HouseStyle.Spacer>
-  <HH.Enum.HouseStyle.Ultra>Ультра</HH.Enum.HouseStyle.Ultra>
   <HH.UI.Overview.Arrivals>Прибытия за следующие 24 ч: {0}, ожидается около {1} групп в день.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>пока никто не запланирован</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>запланировано групп: {0} (около гостей: {1})</HH.UI.Overview.Arrivals.Planned>

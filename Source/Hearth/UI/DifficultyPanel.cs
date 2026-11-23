@@ -19,8 +19,8 @@ namespace Hearth.Shell
         /// <summary>Special switches of 9.1 in display order (keys registered by the UI module; sealed fate is the Core randomness setting).</summary>
         public static readonly string[] SpecialKeys =
         {
-            "core.neverDie", "core.noHostile", "core.infiniteMoney", "core.picky", "core.feuding", "core.mandatory", "core.strictInspectors",
-            "core.realConsequences", "core.ironBank", "core.sealedFate", "core.noResearchGating", "core.peacefulUnderworld", "core.showMath", "core.perfMode",
+            "core.neverDie", "core.infiniteMoney", "core.picky", "core.ironBank", "core.sealedFate", "core.noResearchGating",
+            "core.peacefulUnderworld", "core.showMath", "core.perfMode",
         };
 
         public static string FeelText(float tier) => ("HH.UI.Feel." + Mathf.Clamp(Mathf.RoundToInt(tier), 0, 6)).Translate();
@@ -102,8 +102,8 @@ namespace Hearth.Shell
             y += 8f;
             y += UiStyle.Section(x, y, w, "HH.UI.Diff.Ladder".Translate());
             int ti = Mathf.Clamp(Mathf.RoundToInt(target.Tier), 0, 6);
-            string[][] ladder = { TierTable.GoodwillCap, TierTable.RenownCap, TierTable.FineCap, TierTable.Raids };
-            string[] ladderKeys = { "Goodwill", "Renown", "Fine", "Raids" };
+            string[][] ladder = { TierTable.GoodwillCap, TierTable.RenownCap, TierTable.FineCap };
+            string[] ladderKeys = { "Goodwill", "Renown", "Fine" };
             for (int i = 0; i < ladder.Length; i++)
             {
                 float h = 22f;
@@ -111,7 +111,6 @@ namespace Hearth.Shell
                 {
                     UiStyle.LabelColored(new Rect(x + 4f, y, colW * 0.46f, h), ("HH.UI.Ladder." + ladderKeys[i]).Translate(), Color.white, TextAnchor.MiddleLeft);
                     string val = ladder[i][ti];
-                    if (i == 3) val = val == "no" ? "HH.UI.Ladder.No".Translate() : val.Replace("yes", "HH.UI.Ladder.Yes".Translate());
                     UiStyle.LabelColored(new Rect(x + colW * 0.46f, y, colW * 0.4f, h), val, Color.white, TextAnchor.MiddleLeft);
                     TooltipHandler.TipRegion(new Rect(x, y, colW, h), ("HH.UI.Ladder." + ladderKeys[i] + ".Desc").Translate());
                 }

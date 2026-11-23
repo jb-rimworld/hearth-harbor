@@ -121,7 +121,9 @@ namespace Hearth.Casino
         public static bool TryBuyIn(GamblerSession s, Money amount, string account)
         {
             var info = GuestApi.Info(s.Pawn);
-            if (info == null || info.Budget < amount || amount.Micro <= 0) return false;
+            if (info == null || amount.Micro <= 0) return false;
+            GuestApi.EnsureFunds(s.Pawn, amount);
+            if (info.Budget < amount) return false;
             if (!Payments.TryCharge(s.Pawn, amount, account, "Casino buy-in: " + s.Pawn.LabelShortCap, out _))
             {
                 // Vanilla visitors that carry no silver gamble "virtually" (same rule as GuestApi.ChargeGuest)

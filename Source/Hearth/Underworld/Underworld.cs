@@ -62,7 +62,10 @@ namespace Hearth.Underworld
             }
         }
 
-        public static bool Allows(UwFeature f) => ModuleActive && UnderworldMath.Allows((int)Effective, f);
+        public static bool Allows(UwFeature f) => ModuleActive && !(Peaceful && UnderworldMath.IsViolent(f)) && UnderworldMath.Allows((int)Effective, f);
+
+        /// <summary>Special switch core.peacefulUnderworld: every violent feature is closed, whatever the content intensity.</summary>
+        public static bool Peaceful => CoreSettings.Switch("core.peacefulUnderworld");
 
         /// <summary>Content intensity allows the underworld at all (not Cozy, module on). Does not require discovery.</summary>
         public static bool Visible => Allows(UwFeature.Facilities);
