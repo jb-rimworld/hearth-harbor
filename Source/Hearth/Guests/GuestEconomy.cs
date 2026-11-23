@@ -107,6 +107,16 @@ namespace Hearth.Guests
             return roomScore * (0.5f + wealth / 100f) - 100f * (float)price.Silver / (0.35f * b * tol) * (1.5f - wealth / 100f) + (nearGroup ? 10f : 0f);
         }
 
+        /// <summary>
+        /// F03 (1.1.0 fix): guests travelling alone like a double bed a little: extra bed utility of 8 (poor) to 15 (rich), so with similar
+        /// rooms they take the bed for two; together with <see cref="SoloDoubleComfort"/> they accept its higher price more easily.
+        /// </summary>
+        public static float SoloDoubleBonus(int wealth) => 8f + 7f * Mathf.Clamp01(wealth / 100f);
+        /// <summary>F03: a guest alone in a double bed grumbles about the price only above this multiple of the comfort price.</summary>
+        public const float SoloDoubleComfort = 1.15f;
+        /// <summary>F03: satisfaction when a guest alone lies down in a double bed for the first time this stay ("roomy bed").</summary>
+        public const float RoomyBedSatisfaction = 0.03f;
+
         /// <summary>Most a guest pays per night without grumbling: 60 % of the daily budget × price tolerance.</summary>
         public static Money ComfortPrice(int wealth) => Money.FromSilver(0.6 * DailyBudget(wealth) * Math.Max(0.05f, HSettings.Get(InnSettings.PriceTolerance)));
     }

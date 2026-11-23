@@ -53,13 +53,21 @@ namespace Hearth.ShopsFood
         /// After a served sale: the guest may add a tip (<see cref="RollTip"/>), charged like the sale and booked under the same category.
         /// Shops, taverns and restaurants share this. Returns the tip (zero when none).
         /// </summary>
+        /// <summary>Tests only: the tip TryTip charges instead of rolling one (null = roll).</summary>
+        internal static Money? ForceTipForTests;
+
         public static Money TryTip(Pawn staffer, Pawn guest, Venue venue, Money price, string incomeCat, float q)
         {
             if (staffer == null || guest == null || venue == null) return Money.Zero;
-            var tip = RollTip(q, price, JRand.Stream("venues.tip"));
+            var tip = ForceTipForTests ?? RollTip(q, price, JRand.Stream("venues.tip"));
             if (!tip.IsPositive || tip > (GuestApi.Info(guest)?.Budget ?? Money.Zero)) return Money.Zero;
             string memo = venue.DisplayNameOf() + ": " + "HH.Serve.TipMemo".TranslateOr("tip for {0}").Replace("{0}", staffer.LabelShort);
-            if (!GuestApi.ChargeGuest(guest, tip, incomeCat, memo)) return Money.Zero;
+            bool paid;
+            Hearth.Life.GuestLifeFx.TipCharging = guest;    // F31: the tip shows its own coin flip, not the pay cue
+            try { paid = GuestApi.ChargeGuest(guest, tip, incomeCat, memo); }
+            finally { Hearth.Life.GuestLifeFx.TipCharging = null; }
+            if (!paid) return Money.Zero;
+            Hearth.Life.GuestLifeFx.NoteTip(guest, staffer);
             (venue.Comp as CompVenueSignHH)?.RecordTip(tip);
             if (staffer.Spawned)
                 MoteMaker.ThrowText(staffer.DrawPos + new Vector3(0f, 0f, 0.35f), staffer.Map, "HH.Serve.TipMote".TranslateOr("tip +{0}").Replace("{0}", tip.ToStringShort()), new Color(0.55f, 0.9f, 0.55f), 2.5f);

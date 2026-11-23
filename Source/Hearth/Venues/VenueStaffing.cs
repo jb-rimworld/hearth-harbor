@@ -163,6 +163,13 @@ namespace Hearth.ShopsFood
                     if (v == null) { EndJobWith(JobCondition.Incompletable); return; }
                     if (VenueApi.Gate(v) == VenueGate.Open) { EndJobWith(JobCondition.Succeeded); return; }
                     pawn.rotationTracker.FaceTarget(Sign);
+                    // F06 acceptance: while nobody is on the way the guest rings again now and then, so one unheard ring does not end the visit;
+                    // NightBell.Ring keeps one sound per 240 ticks and one call per RetryGap, and does nothing while a colonist is coming
+                    if (bell && Find.TickManager.TicksGame - NightBell.LastRingOf(Sign) >= NightBell.ReRingTicks && !VenueApi.InHours(v) && VS.B(VS.NightBell) && !NightBell.SomeoneComing(Sign))
+                    {
+                        VenueState.RingBell(Sign, Math.Max(VenueState.BellServiceTicks, ticksLeftThisToil));
+                        NightBell.Ring(v, pawn);
+                    }
                 }
             };
             yield return wait;
