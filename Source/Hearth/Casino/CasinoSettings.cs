@@ -42,6 +42,13 @@ namespace Hearth.Casino
         public const string AddictionGrowth = "casino.addictionGrowth";
         public const string AbstinenceDays = "casino.abstinenceDays";
         public const string FatalDespair = "casino.fatalDespair";
+        // Look and sound (1.1.0, F30/F31): player preferences, the same in every save ----------------
+        public const string Animations = "casino.animations";
+        public const string AnimSpeed = "casino.animSpeed";
+        public const string HowToFirst = "casino.howToSeen";
+        public const string WorldFx = "casino.worldFx";
+        public const string Reactions = "casino.reactions";
+        public const string Ambience = "casino.ambience";
 
         static readonly float[] slotRtpAnchors = { 0.98f, 0.965f, 0.95f, 0.92f, 0.88f, 0.85f, 0.82f };
         static readonly float[] rouletteAnchors = { 0.0054f, 0.00945f, 0.0135f, 0.027f, 0.0526f, 0.06575f, 0.0789f };
@@ -87,8 +94,22 @@ namespace Hearth.Casino
             HSettings.Int(M, "Addiction", AddictionFree, 3, 1, 10, "Sessions before addiction can happen", "Below this many sessions in three days nothing happens.", nerd: true, hardMin: 1, hardMax: 100);
             HSettings.Float(M, "Addiction", AddictionGrowth, 1.35f, 1.0f, 2.0f, "Growth per extra session", "p = p₀ · growth^(sessions − 3).", nerd: true, hardMin: 1f, hardMax: 5f);
             HSettings.Float(M, "Addiction", AbstinenceDays, 10f, 3f, 30f, "Abstinence days per addiction stage", "Days without any session needed to cure each stage of the addiction (stage 3 = 3 × this).", hardMin: 1f, hardMax: 100f, tiers: new[] { 7f, 7f, 7f, 10f, 12f, 15f, 20f });
+            Global(HSettings.Bool(M, "Look and sound", Animations, true, "Animated games",
+                "The Lucky Thrumbo and the practice games show the reels, the wheel and the cards in motion before the result. Off: the result appears at once. A click on the table, Space or Enter always skips the rest of an animation."));
+            Global(HSettings.Percent(M, "Look and sound", AnimSpeed, 1f, 0.5f, 3f, "Animation speed",
+                "100 % is the designed pace. Higher numbers play the games faster; holding Shift plays them at 300 %.", hardMin: 0.25f, hardMax: 5f));
+            Global(HSettings.Bool(M, "Look and sound", HowToFirst, false, "\"How to play\" already seen",
+                "Remembers that the short game explanations of the Lucky Thrumbo opened once by themselves. Turn it off to see them open again.", nerd: true));
+            Global(HSettings.Bool(M, "Look and sound", WorldFx, true, "Casino life on the map",
+                "Spinning reels, the roulette wheel, dealt cards, chips and small sounds at the machines and tables while people play."));
+            Global(HSettings.Bool(M, "Look and sound", Reactions, true, "Gambler reactions",
+                "Players cheer, groan and toss coins on wins, losses and near misses (small icons above their heads and short sounds)."));
+            Global(HSettings.Bool(M, "Look and sound", Ambience, true, "Casino ambience",
+                "A soft murmur of voices, chips and distant slot bells in a busy casino room while the camera is near it."));
             HSettings.Bool(M, "Addiction", FatalDespair, false, "Fatal despair (not implemented)", "Reserved. Nothing in this module can kill a colonist; the switch has no effect.", nerd: true);
         }
+
+        static void Global(HSetting s) { if (s != null) s.Global = true; }
 
         // Readers --------------------------------------------------------------------------------------
         public static float F(string key) => HSettings.Get(key);

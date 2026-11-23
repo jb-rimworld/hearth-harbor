@@ -186,6 +186,30 @@ namespace Hearth.Casino
 
         public IntVec3 CroupierCell => parent.def.hasInteractionCell ? parent.InteractionCell : parent.Position;
 
+        /// <summary>The live parts of the device on the map (reels, wheel, cards, chips; 1.1.0, F31). Only things in view are drawn by the game.</summary>
+        public override void PostDraw()
+        {
+            base.PostDraw();
+            if (Guard.IsPaused(ModuleId.Casino)) return;
+            try { CasinoFx.DrawOverlay(this); }
+            catch (Exception e) { Guard.Fail(ModuleId.Casino, "Casino.Fx.Draw", e); }
+        }
+
+        /// <summary>The device leaves the map: its transient table show is dropped (nothing saved, nothing else changes).</summary>
+        public override void PostDeSpawn(Map map
+#if RW16PLUS
+            , DestroyMode mode = DestroyMode.Vanish
+#endif
+            )
+        {
+#if RW16PLUS
+            base.PostDeSpawn(map, mode);
+#else
+            base.PostDeSpawn(map);
+#endif
+            CasinoFx.Forget(this);
+        }
+
         // Rounds ----------------------------------------------------------------------------------------------------
         public override void CompTick()
         {

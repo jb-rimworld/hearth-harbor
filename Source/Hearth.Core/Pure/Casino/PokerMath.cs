@@ -55,7 +55,8 @@ namespace Hearth.CasinoMath
         public static readonly string[] HandNames = { "high card", "a pair", "two pair", "three of a kind", "a straight", "a flush", "a full house", "four of a kind", "a straight flush" };
         static readonly double[] handWeights = { 17.4, 43.8, 23.5, 4.8, 3.9, 3.0, 2.6, 0.7, 0.3 };
 
-        public sealed class Hand { public int Winner; public double Pot, Rake, Payout; public string WinningHand; public double[] Chances; }
+        public sealed class Hand { public int Winner; public double Pot, Rake, Payout; public string WinningHand; public double[] Chances; /// <summary>Index into <see cref="HandNames"/> (the animation deals cards that match it).</summary>
+            public int WinningCategory; }
 
         /// <summary>Deals one hand for the given seats. Only the winner's seat index and the money move; the hand name is flavour.</summary>
         public static Hand Deal(RngStream rng, IReadOnlyList<double> skills, double ante, double rate, double cap)
@@ -67,7 +68,7 @@ namespace Hearth.CasinoMath
             double pot = ante * n, rake = Rake(pot, rate, cap);
             double tot = handWeights.Sum(), x = rng.NextDouble() * tot, hacc = 0; int h = 0;
             for (int i = 0; i < handWeights.Length; i++) { hacc += handWeights[i]; if (x < hacc) { h = i; break; } }
-            return new Hand { Winner = win, Pot = pot, Rake = rake, Payout = pot - rake, WinningHand = HandNames[h], Chances = probs };
+            return new Hand { Winner = win, Pot = pot, Rake = rake, Payout = pot - rake, WinningHand = HandNames[h], WinningCategory = h, Chances = probs };
         }
     }
 }

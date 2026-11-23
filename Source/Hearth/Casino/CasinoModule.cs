@@ -23,12 +23,18 @@ namespace Hearth.Casino
             HearthTabs.Register(new HearthTabPage { Id = "casino", LabelKey = "HH.Tab.Casino", LabelEn = "Casino", Module = ModuleId.Casino, Order = 40, Draw = CasinoTab.Draw, Visible = () => CasinoTab.Any() || PlayerHouse.ThrumboCard.Available });
             Caretaker.Register(ModuleId.Casino, "Casino.DrugPolicy", Gambling.InitPolicies);
             Caretaker.Register(ModuleId.Casino, "Casino.Sessions", CasinoCaretaker.RepairSessions);
+            // 1.1.0 (F31): the machines and tables draw their live parts every frame (reels, wheel, cards), so they need the realtime drawer too
+            int realtime = 0;
+            foreach (var d in DefDatabase<ThingDef>.AllDefsListForReading)
+                if (d.HasComp(typeof(CompCasinoGame)) && d.drawerType == DrawerType.MapMeshOnly) { d.drawerType = DrawerType.MapMeshAndRealTime; realtime++; }
+            if (realtime > 0) HLog.Debug("Casino", realtime + " casino devices draw their live parts in real time");
             if (DefDatabase<ThingDef>.GetNamedSilentFail("PokerTable") != null)
                 HLog.Info("Casino", "Vanilla PokerTable is still buildable: add it to the venue hide-list (N49, Common/Defs/Venues) when that def type exists; HH_PokerTable replaces it.");
         }
 
         public override void GameTick(int ticksGame)
         {
+            try { CasinoFx.Tick(ticksGame); } catch (Exception e) { Guard.Fail(ModuleId.Casino, "Casino.Fx", e); }
             if (ticksGame % 250 == 11) Guard.Run(ModuleId.Casino, "Casino.Closing", CasinoBank.ClosingCheck);
         }
 

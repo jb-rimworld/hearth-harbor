@@ -15,6 +15,8 @@ namespace Hearth.Casino.PlayerHouse
     {
         public const string EdgeShift = "thrumbo.edgeShift";
         public const string MinBet = "thrumbo.minBet";
+        /// <summary>1.1.0 (F29): the table limit is optional and off by default.</summary>
+        public const string LimitOn = "thrumbo.tableLimit";
         public const string MaxBetShare = "thrumbo.maxBetShare";
         public const string MaxBetFloor = "thrumbo.maxBetFloor";
         public const string MaxBetCap = "thrumbo.maxBetCap";
@@ -31,10 +33,12 @@ namespace Hearth.Casino.PlayerHouse
                 "Percentage points added to the house edge of every Lucky Thrumbo game (base: slots 8 %, roulette 2.7 %, blackjack by the rules). 0 = the standard edges; negative numbers are in your favour. Follows the difficulty slider.",
                 hardMin: -0.5f, hardMax: 0.5f, tiers: edgeAnchors);
             HSettings.Silver(M, "Lucky Thrumbo", MinBet, 1, 1, 100, "Lucky Thrumbo: smallest stake (silver)", "The smallest stake the Lucky Thrumbo accepts.");
+            HSettings.Bool(M, "Lucky Thrumbo", LimitOn, false, "Lucky Thrumbo: table limit",
+                "When on, one stake is at most a share of your net worth (the three settings below). Off: you can stake everything you have.");
             HSettings.Percent(M, "Lucky Thrumbo", MaxBetShare, 0.05f, 0.005f, 0.5f, "Lucky Thrumbo: table limit (share of net worth)",
-                "One stake may be at most this share of your net worth (account plus silver at home, minus debts), between the floor and the cap below.", hardMin: 0.0001f, hardMax: 1f);
-            HSettings.Silver(M, "Lucky Thrumbo", MaxBetFloor, 50, 1, 1000, "Lucky Thrumbo: table limit, floor (silver)", "Even a poor colony may stake at least this much per round.");
-            HSettings.Silver(M, "Lucky Thrumbo", MaxBetCap, 50000, 100, 1000000, "Lucky Thrumbo: table limit, cap (silver)", "No stake is ever higher than this.");
+                "Only when the table limit is on: one stake may be at most this share of your net worth (account plus silver at home, minus debts), between the floor and the cap below.", hardMin: 0.0001f, hardMax: 1f);
+            HSettings.Silver(M, "Lucky Thrumbo", MaxBetFloor, 50, 1, 1000, "Lucky Thrumbo: table limit, floor (silver)", "Only when the table limit is on: even a poor colony may stake at least this much per round.");
+            HSettings.Silver(M, "Lucky Thrumbo", MaxBetCap, 50000, 100, 1000000, "Lucky Thrumbo: table limit, cap (silver)", "Only when the table limit is on: no stake is ever higher than this.");
             HSettings.Bool(M, "Lucky Thrumbo", AllIn, true, "Lucky Thrumbo: \"Raise the stakes\"",
                 "Adds the button \"Raise the stakes…\" to the Lucky Thrumbo: stake goods in range of a powered orbital trade beacon instead of silver, and from the content intensity Standard also colony animals and prisoners (like vanilla selling). Colonists, slaves, children and guests are never offered.");
             HSettings.Percent(M, "Lucky Thrumbo", PawnSpread, 0.10f, 0f, 0.5f, "Lucky Thrumbo: pawnbroker spread for staked goods",

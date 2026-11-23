@@ -1,0 +1,263 @@
+[
+ {
+  "file": "Common/Sounds/HH/Casino/UI/Chip.ogg",
+  "prompt": "a single clay casino chip clicked onto a felt table, short and crisp, close up, dry",
+  "seconds": 0.3,
+  "loop": false,
+  "defName": "HH_Casino_Chip",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/SlotLever.ogg",
+  "prompt": "pulling the lever of an old mechanical slot machine: a metal ratchet click and a heavy spring clunk, retro, no music",
+  "seconds": 0.9,
+  "loop": false,
+  "defName": "HH_Slot_Lever",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/SlotSpin.ogg",
+  "prompt": "three mechanical slot machine reels whirring and rattling while they spin, steady, ends abruptly, retro brass machine",
+  "seconds": 1.8,
+  "loop": false,
+  "defName": "HH_Slot_Spin",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/SlotReelStop.ogg",
+  "prompt": "one slot machine reel snapping to a stop: a short solid mechanical clunk with a tiny metal rattle",
+  "seconds": 0.35,
+  "loop": false,
+  "defName": "HH_Slot_ReelStop",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/SlotNearMiss.ogg",
+  "prompt": "slow tense ticking of a slot reel about to stop, a few clicks getting slower, suspense, mechanical",
+  "seconds": 0.9,
+  "loop": false,
+  "defName": "HH_Slot_NearMiss",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/SlotWinSmall.ogg",
+  "prompt": "a cheerful brass bell ding from an old slot machine followed by a few silver coins dropping into a metal tray",
+  "seconds": 1.2,
+  "loop": false,
+  "defName": "HH_Slot_WinSmall",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/SlotWinBig.ogg",
+  "prompt": "a big slot machine win: ringing bells and a long cascade of coins pouring into a metal tray, joyful, mechanical, no voice",
+  "seconds": 2.6,
+  "loop": false,
+  "defName": "HH_Slot_WinBig",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/SlotJackpot.ogg",
+  "prompt": "jackpot of a frontier slot machine: rapid bell ringing, a deep friendly horn call like a large gentle beast, then a flood of coins, celebratory, no voice",
+  "seconds": 3.5,
+  "loop": false,
+  "defName": "HH_Slot_Jackpot",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/RouletteSpin.ogg",
+  "prompt": "a wooden roulette wheel spinning with a small ivory ball rolling fast around the rim, slowing down gradually, close up",
+  "seconds": 4.0,
+  "loop": false,
+  "defName": "HH_Roulette_Spin",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/RouletteDrop.ogg",
+  "prompt": "a small roulette ball dropping off the rim and clattering between the metal pocket frets, then settling in one pocket",
+  "seconds": 1.0,
+  "loop": false,
+  "defName": "HH_Roulette_Drop",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/CardDeal.ogg",
+  "prompt": "one playing card dealt quickly across a felt table: a short swish and a soft snap",
+  "seconds": 0.3,
+  "loop": false,
+  "defName": "HH_Card_Deal",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/CardFlip.ogg",
+  "prompt": "a playing card flipped face up on a felt table, short crisp paper flick",
+  "seconds": 0.3,
+  "loop": false,
+  "defName": "HH_Card_Flip",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/CardShuffle.ogg",
+  "prompt": "a deck of playing cards riffle shuffled and bridged by a dealer, close up, dry room",
+  "seconds": 1.2,
+  "loop": false,
+  "defName": "HH_Card_Shuffle",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/ChipsPlace.ogg",
+  "prompt": "a small stack of clay casino chips placed on a felt table, soft clacks",
+  "seconds": 0.5,
+  "loop": false,
+  "defName": "HH_Chips_Place",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/ChipsPush.ogg",
+  "prompt": "a croupier pushing a pile of casino chips across felt to a winner, chips clacking together",
+  "seconds": 0.9,
+  "loop": false,
+  "defName": "HH_Chips_Push",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/Win.ogg",
+  "prompt": "a short warm two-note chime for a small win at a card table, pleasant, wooden marimba and a soft bell, no voice",
+  "seconds": 1.0,
+  "loop": false,
+  "defName": "HH_Casino_Win",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/Lose.ogg",
+  "prompt": "a soft muted wooden knock and a low descending two-note marimba for losing a bet, gentle, not mocking",
+  "seconds": 0.8,
+  "loop": false,
+  "defName": "HH_Casino_Lose",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/UI/Bust.ogg",
+  "prompt": "a dull thud of cards slapped down on felt after a blackjack bust, with a low short wooden tone",
+  "seconds": 0.7,
+  "loop": false,
+  "defName": "HH_Casino_Bust",
+  "use": "UI, on camera",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/World/SlotPlay.ogg",
+  "prompt": "a slot machine in a room: lever pull and reels whirring briefly, heard from a few metres away",
+  "seconds": 1.4,
+  "loop": false,
+  "defName": "HH_World_SlotPlay",
+  "use": "map, 3D",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/World/SlotStop.ogg",
+  "prompt": "three quick mechanical clunks of slot reels stopping one after another, small and distant",
+  "seconds": 0.6,
+  "loop": false,
+  "defName": "HH_World_SlotStop",
+  "use": "map, 3D",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/World/RouletteRoll.ogg",
+  "prompt": "a roulette ball rolling around a spinning wheel and dropping into a pocket, heard across a quiet casino room",
+  "seconds": 3.0,
+  "loop": false,
+  "defName": "HH_World_RouletteRoll",
+  "use": "map, 3D",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/World/CardSnap.ogg",
+  "prompt": "cards dealt and a couple of chips tossed on a felt table, short, a few metres away",
+  "seconds": 0.6,
+  "loop": false,
+  "defName": "HH_World_CardSnap",
+  "use": "map, 3D",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/World/Shuffle.ogg",
+  "prompt": "a croupier riffle shuffling a deck at a card table, a few metres away",
+  "seconds": 1.0,
+  "loop": false,
+  "defName": "HH_World_Shuffle",
+  "use": "map, 3D",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/World/WinBell.ogg",
+  "prompt": "a small brass bell ding and a few coins, a modest win at a slot machine across the room",
+  "seconds": 1.0,
+  "loop": false,
+  "defName": "HH_World_WinBell",
+  "use": "map, 3D",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/World/WinBig.ogg",
+  "prompt": "a big win across a casino room: bells ringing and a long cascade of coins, joyful, no voice",
+  "seconds": 2.5,
+  "loop": false,
+  "defName": "HH_World_WinBig",
+  "use": "map, 3D",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/World/Cheer.ogg",
+  "prompt": "a small group of people cheering and clapping briefly after a lucky win, wordless, friendly, indoors",
+  "seconds": 1.2,
+  "loop": false,
+  "defName": "HH_World_Cheer",
+  "use": "map, 3D",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/World/Groan.ogg",
+  "prompt": "one person groaning in mild disappointment after losing a bet, wordless 'aww', not sad, indoors",
+  "seconds": 0.9,
+  "loop": false,
+  "defName": "HH_World_Groan",
+  "use": "map, 3D",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/World/CashOut.ogg",
+  "prompt": "chips exchanged for coins at a cashier: chips clack, coins jingle into a pouch, short happy",
+  "seconds": 1.0,
+  "loop": false,
+  "defName": "HH_World_CashOut",
+  "use": "map, 3D",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ },
+ {
+  "file": "Common/Sounds/HH/Casino/World/Ambience.ogg",
+  "prompt": "seamless loop of a cosy frontier casino room: soft murmur of a few voices without words, chips clacking, distant slot machine bells and reels, a roulette ball now and then, warm, no music",
+  "seconds": 20.0,
+  "loop": true,
+  "defName": "HH_World_Ambience",
+  "use": "map, 3D sustainer (seamless loop)",
+  "current": "synth stand-in (tools/sfx/casino_synth.py); replace with the generated clip at the same path"
+ }
+]

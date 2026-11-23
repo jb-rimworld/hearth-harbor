@@ -173,16 +173,7 @@
   <HH.Thrumbo.Err.NoDouble>더블다운은 처음 두 장에서만 할 수 있습니다.</HH.Thrumbo.Err.NoDouble>
   <HH.Thrumbo.TotalsGoods>물품 걸기 (가치는 은화 기준, 장부에는 없음): {0} 라운드 · 건 금액 {1} · 환급 {2} · 결과 {3}</HH.Thrumbo.TotalsGoods>
   <HH.Thrumbo.Ago>전</HH.Thrumbo.Ago>
-  <HH.Thrumbo.Sym.cherry>체리</HH.Thrumbo.Sym.cherry>
-  <HH.Thrumbo.Sym.lemon>레몬</HH.Thrumbo.Sym.lemon>
-  <HH.Thrumbo.Sym.plum>자두</HH.Thrumbo.Sym.plum>
-  <HH.Thrumbo.Sym.bell>종</HH.Thrumbo.Sym.bell>
-  <HH.Thrumbo.Sym.bar>바</HH.Thrumbo.Sym.bar>
-  <HH.Thrumbo.Sym.seven>세븐</HH.Thrumbo.Sym.seven>
-  <HH.Thrumbo.Sym.muffalo>머팔로</HH.Thrumbo.Sym.muffalo>
   <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
-  <HH.Thrumbo.Pay.Cherry2>2 × 체리 (1번+2번 릴)</HH.Thrumbo.Pay.Cherry2>
-  <HH.Thrumbo.Pay.Cherry1>1번 릴의 체리</HH.Thrumbo.Pay.Cherry1>
   <HH.Thrumbo.Bet.Straight>단일 {0}</HH.Thrumbo.Bet.Straight>
   <HH.Thrumbo.Bet.Split>분할 {0}/{1}</HH.Thrumbo.Bet.Split>
   <HH.Thrumbo.Bet.Street>가로줄 {0}-{1}</HH.Thrumbo.Bet.Street>

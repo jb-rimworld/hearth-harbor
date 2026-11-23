@@ -6,10 +6,10 @@ using Verse;
 namespace Hearth.Casino
 {
     /// <summary>Reel symbol icons (UI/HH/Casino/Symbols/&lt;id&gt;) for the Lucky Thrumbo window and slot machines.
-    /// Ids are <c>SlotPaytable.SymbolNames</c>: cherry, lemon, plum, bell, bar, seven, muffalo.</summary>
+    /// Ids are <c>SlotPaytable.SymbolNames</c>: berries, corn, meal, component, plasteel, core, thrumbo (1.1.0: things of the rim).</summary>
     public static class SlotSymbolIcons
     {
-        const string Dir = "UI/HH/Casino/Symbols/";
+        public const string Dir = "UI/HH/Casino/Symbols/";
         static readonly Dictionary<string, Texture2D> cache = new Dictionary<string, Texture2D>();
 
         /// <summary>Icon for a symbol id, or null if there is no texture (callers fall back to the word).</summary>

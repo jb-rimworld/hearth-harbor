@@ -61,21 +61,37 @@ namespace Hearth.Casino.PlayerHouse.Tests
             // ---- stakes and payouts through the account ---------------------------------------------------------------
             led.Post("world", BankGameComp.Colony, Money.FromSilver(100000), "test funding"); bank.InvalidateCache();
             var seat = new ThrumboSeat(map, col, PayFrom.Bank);
-            long sum0 = led.SumAll(); var before = bank.Balance;
+            long sum0 = led.SumAll(); var before = bank.Balance; var house0 = led.Balance(ThrumboHouse.House);
             var r = ThrumboHouse.PlaySlots(seat, Money.FromSilver(10), SlotVolatility.Medium);
             t.Check(r.Ok, "a slot round at the account works: " + r.Text + r.Error);
             t.Check(bank.Balance == before - r.Staked + r.Paid, "the account moved by exactly -stake + payout (" + before + " -> " + bank.Balance + ")");
-            t.Check(led.Balance(ThrumboHouse.House) == r.Staked - r.Paid, "the house account holds stake minus payout");
+            t.Check(led.Balance(ThrumboHouse.House) - house0 == r.Staked - r.Paid, "the house account gained stake minus payout");
             t.Check(led.SumAll() == sum0, "the ledger stays balanced");
             t.Check(comp.History.Count == 1 && comp.RoundsAll == 1 && comp.StakedAll == r.Staked.Micro, "one history line and the totals match");
 
-            // limits: nothing is booked for a refused stake
+            // limits: nothing is booked for a refused stake (the table limit is optional since 1.1.0 and off by default, F29)
+            bool oldLimit = HSettings.GetBool(TS.LimitOn);
+            t.Check(HSettings.Find(TS.LimitOn) != null && HSettings.Find(TS.LimitOn).Default == 0f, "F29: the Lucky Thrumbo table limit is a setting and off by default");
+            HSettings.Set(TS.LimitOn, 1f);
             var bal = bank.Balance;
             t.Check(!ThrumboHouse.PlaySlots(seat, Money.FromSilver(0.5), SlotVolatility.Low).Ok, "below the smallest stake is refused");
             var limit = ThrumboHouse.TableLimit(map);
-            t.Check(!ThrumboHouse.PlaySlots(seat, limit + Money.FromSilver(1), SlotVolatility.Low).Ok, "above the table limit is refused (limit " + limit + ")");
+            t.Check(!ThrumboHouse.PlaySlots(seat, limit + Money.FromSilver(1), SlotVolatility.Low).Ok, "limit on: above the table limit is refused (limit " + limit + ")");
             t.Check(limit.Silver >= 50 && limit.Silver <= 50000, "table limit between floor and cap");
             t.Check(bank.Balance == bal && comp.RoundsAll == 1, "refused stakes book nothing");
+            // limit off: a stake far above the old cap of 50,000 is fine as long as the account holds it
+            HSettings.Set(TS.LimitOn, 0f);
+            t.Check(ThrumboHouse.TableLimit(map) == ThrumboHouse.HouseCap, "limit off: only the house ceiling of " + ThrumboHouse.HouseCap.ToStringShort() + " remains");
+            t.Check(ThrumboHouse.MaxStake(seat) == bank.Balance, "limit off: the largest stake is everything on the account (" + ThrumboHouse.MaxStake(seat) + ")");
+            led.Post("world", BankGameComp.Colony, Money.FromSilver(60000), "test funding (no limit)"); bank.InvalidateCache();
+            var big = Money.FromSilver(60000); var balBig = bank.Balance; long sumBig = led.SumAll();
+            var rb = ThrumboHouse.PlayRoulette(seat, big, RouletteBet.Red());
+            t.Check(rb.Ok, "limit off: a stake of 60,000 silver (above the old cap) is played: " + rb.Text + rb.Error);
+            t.Check(bank.Balance == balBig - rb.Staked + rb.Paid && rb.Staked == big, "limit off: the account moved by exactly -stake + payout");
+            t.Check(led.SumAll() == sumBig, "limit off: the ledger stays balanced");
+            t.Check(!ThrumboHouse.PlaySlots(seat, bank.Balance + Money.FromSilver(1), SlotVolatility.Low).Ok, "limit off: more than the account holds is still refused");
+            HSettings.Set(TS.LimitOn, oldLimit ? 1f : 0f);
+            comp.Clear();
             yield return 1;
 
             // ---- stakes and payouts through storage silver ------------------------------------------------------------

@@ -20,20 +20,19 @@ namespace Hearth.Casino.PlayerHouse
             return Key("HH.Thrumbo.Sym." + raw, raw);
         }
 
-        /// <summary>Maps a paytable row label of SlotPaytable.Rows() ("3 × plum", "2 × cherry (reels 1+2)", "cherry on reel 1").</summary>
-        public static string PayRow(string label)
+        /// <summary>Label of a paytable row ("3 × thrumbo", "2 × berries (reels 1+2)", "berries on reel 1").</summary>
+        public static string PayRow(int symbol, SlotPaytable.RowKind kind)
         {
-            if (label == null) return "";
-            const string three = "3 × ";
-            if (label.StartsWith(three))
+            switch (kind)
             {
-                string sym = label.Substring(three.Length); int idx = System.Array.IndexOf(SlotPaytable.SymbolNames, sym);
-                return idx >= 0 ? "HH.Thrumbo.Pay.Three".Translate(Symbol(idx)).ToString() : label;
+                case SlotPaytable.RowKind.Three: return Key("HH.Thrumbo.Pay.Three", "3 × " + Symbol(symbol), Symbol(symbol));
+                case SlotPaytable.RowKind.FirstTwo: return Key("HH.Thrumbo.Pay.First2", "2 × " + Symbol(0) + " (reels 1+2)", Symbol(0));
+                default: return Key("HH.Thrumbo.Pay.First1", Symbol(0) + " on reel 1", Symbol(0));
             }
-            if (label.StartsWith("2 × cherry")) return Key("HH.Thrumbo.Pay.Cherry2", label);
-            if (label.StartsWith("cherry on reel")) return Key("HH.Thrumbo.Pay.Cherry1", label);
-            return label;
         }
+
+        /// <summary>"thrumbo · core · corn" for history lines and the guest machines' last result.</summary>
+        public static string Reels(int a, int b, int c) => Symbol(a) + " · " + Symbol(b) + " · " + Symbol(c);
 
         /// <summary>Display name of a roulette bet (the pure Label is English).</summary>
         public static string Bet(RouletteBet b)

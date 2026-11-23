@@ -165,7 +165,7 @@ namespace Hearth.DevTools
             Money payout = Money.FromSilver(Math.Round(stake.Silver * mult, 5));
             try
             {
-                mi.Invoke(null, new object[] { comp, session, stake, payout, stake.Silver * (1 - table.Rtp), Math.Pow(table.Sigma * stake.Silver, 2), "seven · seven · seven  → ×" + mult.ToString("0.##") + " (dev jackpot)", null });
+                mi.Invoke(null, new object[] { comp, session, stake, payout, stake.Silver * (1 - table.Rtp), Math.Pow(table.Sigma * stake.Silver, 2), "thrumbo · thrumbo · thrumbo  → ×" + mult.ToString("0.##") + " (dev jackpot)", null });
                 Say($"Jackpot x{mult:0.#} ({payout.WholeSilver} silver for 1 staked) at {comp.parent.LabelCap}{(demo ? " (demo player, nobody was seated)" : " for " + session.Pawn?.LabelShort)}.");
             }
             catch (Exception e) { HLog.Error("DevTools", "Jackpot failed", e.InnerException ?? e); Say("Jackpot failed, see the log.", true); }

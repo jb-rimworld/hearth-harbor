@@ -173,16 +173,7 @@
   <HH.Thrumbo.Err.NoDouble>只能在前两张牌时加倍。</HH.Thrumbo.Err.NoDouble>
   <HH.Thrumbo.TotalsGoods>货物赌注（按银币计价，不入账）：{0} 轮 · 下注 {1} · 返还 {2} · 结果 {3}</HH.Thrumbo.TotalsGoods>
   <HH.Thrumbo.Ago>前</HH.Thrumbo.Ago>
-  <HH.Thrumbo.Sym.cherry>樱桃</HH.Thrumbo.Sym.cherry>
-  <HH.Thrumbo.Sym.lemon>柠檬</HH.Thrumbo.Sym.lemon>
-  <HH.Thrumbo.Sym.plum>李子</HH.Thrumbo.Sym.plum>
-  <HH.Thrumbo.Sym.bell>铃铛</HH.Thrumbo.Sym.bell>
-  <HH.Thrumbo.Sym.bar>横杠</HH.Thrumbo.Sym.bar>
-  <HH.Thrumbo.Sym.seven>七</HH.Thrumbo.Sym.seven>
-  <HH.Thrumbo.Sym.muffalo>麝牛</HH.Thrumbo.Sym.muffalo>
   <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
-  <HH.Thrumbo.Pay.Cherry2>2 × 樱桃（转轮 1+2）</HH.Thrumbo.Pay.Cherry2>
-  <HH.Thrumbo.Pay.Cherry1>转轮 1 上的樱桃</HH.Thrumbo.Pay.Cherry1>
   <HH.Thrumbo.Bet.Straight>直注 {0}</HH.Thrumbo.Bet.Straight>
   <HH.Thrumbo.Bet.Split>分注 {0}/{1}</HH.Thrumbo.Bet.Split>
   <HH.Thrumbo.Bet.Street>街注 {0}-{1}</HH.Thrumbo.Bet.Street>

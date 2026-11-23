@@ -173,16 +173,7 @@
   <HH.Thrumbo.Err.NoDouble>ダブルダウンは最初の2枚のみ可能です。</HH.Thrumbo.Err.NoDouble>
   <HH.Thrumbo.TotalsGoods>品物の賭け（価値は銀換算、帳簿には入らない）: {0} 回 · 賭け {1} · 払い戻し {2} · 結果 {3}</HH.Thrumbo.TotalsGoods>
   <HH.Thrumbo.Ago>前</HH.Thrumbo.Ago>
-  <HH.Thrumbo.Sym.cherry>チェリー</HH.Thrumbo.Sym.cherry>
-  <HH.Thrumbo.Sym.lemon>レモン</HH.Thrumbo.Sym.lemon>
-  <HH.Thrumbo.Sym.plum>プラム</HH.Thrumbo.Sym.plum>
-  <HH.Thrumbo.Sym.bell>ベル</HH.Thrumbo.Sym.bell>
-  <HH.Thrumbo.Sym.bar>BAR</HH.Thrumbo.Sym.bar>
-  <HH.Thrumbo.Sym.seven>セブン</HH.Thrumbo.Sym.seven>
-  <HH.Thrumbo.Sym.muffalo>マフアロ</HH.Thrumbo.Sym.muffalo>
   <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
-  <HH.Thrumbo.Pay.Cherry2>2 × チェリー（リール1+2）</HH.Thrumbo.Pay.Cherry2>
-  <HH.Thrumbo.Pay.Cherry1>リール1のチェリー</HH.Thrumbo.Pay.Cherry1>
   <HH.Thrumbo.Bet.Straight>ストレート {0}</HH.Thrumbo.Bet.Straight>
   <HH.Thrumbo.Bet.Split>スプリット {0}/{1}</HH.Thrumbo.Bet.Split>
   <HH.Thrumbo.Bet.Street>ストリート {0}-{1}</HH.Thrumbo.Bet.Street>

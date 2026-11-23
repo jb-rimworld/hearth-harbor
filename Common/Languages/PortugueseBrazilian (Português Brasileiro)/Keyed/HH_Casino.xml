@@ -173,16 +173,7 @@
   <HH.Thrumbo.Err.NoDouble>Só é possível dobrar nas suas duas primeiras cartas.</HH.Thrumbo.Err.NoDouble>
   <HH.Thrumbo.TotalsGoods>Apostas em mercadorias (valor em prata, fora do livro-caixa): {0} rodadas · apostado {1} · devolvido {2} · resultado {3}</HH.Thrumbo.TotalsGoods>
   <HH.Thrumbo.Ago>atrás</HH.Thrumbo.Ago>
-  <HH.Thrumbo.Sym.cherry>cereja</HH.Thrumbo.Sym.cherry>
-  <HH.Thrumbo.Sym.lemon>limão</HH.Thrumbo.Sym.lemon>
-  <HH.Thrumbo.Sym.plum>ameixa</HH.Thrumbo.Sym.plum>
-  <HH.Thrumbo.Sym.bell>sino</HH.Thrumbo.Sym.bell>
-  <HH.Thrumbo.Sym.bar>barra</HH.Thrumbo.Sym.bar>
-  <HH.Thrumbo.Sym.seven>sete</HH.Thrumbo.Sym.seven>
-  <HH.Thrumbo.Sym.muffalo>muffalo</HH.Thrumbo.Sym.muffalo>
   <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
-  <HH.Thrumbo.Pay.Cherry2>2 × cereja (carretéis 1+2)</HH.Thrumbo.Pay.Cherry2>
-  <HH.Thrumbo.Pay.Cherry1>cereja no carretel 1</HH.Thrumbo.Pay.Cherry1>
   <HH.Thrumbo.Bet.Straight>Reta {0}</HH.Thrumbo.Bet.Straight>
   <HH.Thrumbo.Bet.Split>Dividida {0}/{1}</HH.Thrumbo.Bet.Split>
   <HH.Thrumbo.Bet.Street>Rua {0}-{1}</HH.Thrumbo.Bet.Street>
