@@ -4,6 +4,8 @@
   <!-- ===== Venue Sign, free-standing (KONZEPT 6.1) ===== -->
   <ThingDef ParentName="BuildingBase">
     <defName>HH_VenueSign</defName>
+    <!-- serves every module (casino, spa, cinema ...): never hidden by the module gate -->
+    <modExtensions><li Class="Hearth.ModuleGateExtension"><module>Core</module></li></modExtensions>
     <label>venue sign</label>
     <description>A sign that turns the room it stands in into a business: tavern, shop, restaurant, casino, spa or lounge. Choose the kind of business, opening hours and prices in the sign's controls. Without a sign, a room is just a room.</description>
     <graphicData>
@@ -42,6 +44,8 @@
   <!-- ===== Venue Sign, wall-mounted (works like the vanilla wall lamp; the room in front of it is the business) ===== -->
   <ThingDef ParentName="BuildingBase">
     <defName>HH_VenueSignWall</defName>
+    <!-- serves every module: never hidden by the module gate -->
+    <modExtensions><li Class="Hearth.ModuleGateExtension"><module>Core</module></li></modExtensions>
     <label>venue sign (wall)</label>
     <description>The same sign, hung on a wall. The room it faces becomes the business. Choose the kind of business, opening hours and prices in the sign's controls.</description>
     <rotatable>true</rotatable>

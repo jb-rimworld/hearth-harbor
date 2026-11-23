@@ -43,6 +43,7 @@ namespace Hearth
 
         static void RaiseGameInit()
         {
+            ModuleGate.Poll(force: true);   // a loaded or new game has its own module switches
             var h = OnGameInit; if (h == null) return;
             foreach (var d in h.GetInvocationList())
             {
@@ -103,6 +104,7 @@ namespace Hearth
             }
             Caretaker.Tick(t);
             if (t % 600 == 29) ResearchGate.Apply();   // the research mode may change in the middle of a game
+            if (t % 60 == 17) ModuleGate.Poll();       // cheap: a few lookups; catches switches made without SetModule
             if (t % 60000 == 1234) Ledger.DailyCheck();
             // midnight (local time of the first player home map): empty tills
             var home = Find.AnyPlayerHomeMap;

@@ -10,7 +10,10 @@ using Verse;
 namespace Hearth.Kitchen
 {
     /// <summary>
-    /// "Do until you have X" must count THIS dish, not all plates of the same kind. Plain recipe counter semantics otherwise.
+    /// "Do until you have X" must count THIS dish, not all plates of the same kind. Plain recipe counter semantics otherwise:
+    /// a chosen stockpile/shelf ("count only in") counts only what it holds, carried plates count, held plates of haul sources (bookcases,
+    /// outfit stands, modded containers) count once. Every plate is counted at most once: a thing that is spawned is counted by the
+    /// map's lister only, even if a modded storage also reports it as held.
     /// </summary>
     public class RecipeWorkerCounter_Dish : RecipeWorkerCounter
     {
@@ -22,14 +25,33 @@ namespace Hearth.Kitchen
             if (ext?.dish == null || bill.Map == null) return 0;
             var plateDef = recipe.products[0].thingDef;
             int n = 0;
-            foreach (var t in bill.Map.listerThings.ThingsOfDef(plateDef)) n += Counted(t, bill, ext);
+            var group = bill.GetIncludeSlotGroup();
+            if (group != null)
+            {
+                foreach (var t in group.HeldThings) if (t != null && t.def == plateDef) n += Counted(t, bill, ext);
+                return n;
+            }
+            var listed = bill.Map.listerThings.ThingsOfDef(plateDef);
+            for (int i = 0; i < listed.Count; i++) n += Counted(listed[i], bill, ext);
             foreach (var src in bill.Map.haulDestinationManager.AllHaulSourcesListForReading)
             {
                 var held = src.GetDirectlyHeldThings();
-                for (int i = 0; i < held.Count; i++) n += Counted(held[i], bill, ext);
+                if (held == null) continue;
+                for (int i = 0; i < held.Count; i++)
+                {
+                    var t = held[i];
+                    if (t == null || t.Spawned || t.def != plateDef) continue;   // spawned: already counted by the lister
+                    n += Counted(t, bill, ext);
+                }
             }
             foreach (var p in bill.Map.mapPawns.FreeColonistsSpawned)
-                if (p.carryTracker?.CarriedThing != null) n += Counted(p.carryTracker.CarriedThing, bill, ext);
+            {
+                var c = p.carryTracker?.CarriedThing;
+                if (c != null && !c.Spawned && c.def == plateDef) n += Counted(c, bill, ext);
+                if (!bill.includeEquipped || p.inventory == null) continue;
+                var inv = p.inventory.innerContainer;
+                for (int i = 0; i < inv.Count; i++) if (inv[i].def == plateDef) n += Counted(inv[i], bill, ext);
+            }
             return n;
         }
 

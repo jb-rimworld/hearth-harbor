@@ -137,6 +137,7 @@ namespace Hearth
         static HearthStartup()
         {
             foreach (var m in HearthMod.ModuleObjects) Guard.Run(m.Id, m.GetType().Name + ".OnDefsLoaded", m.OnDefsLoaded);
+            Guard.Run(ModuleId.Core, "ModuleGate.Init", ModuleGate.Init);   // after OnDefsLoaded: generated defs (dish recipes) are in the table too
             HLog.Info("Core", $"Defs loaded. Modules: {string.Join(", ", HearthMod.ModuleObjects.Select(m => m.Id + (Modules.Available(m.Id) ? "" : "(missing)")))}; settings registered: {HSettings.All.Count}");
         }
     }

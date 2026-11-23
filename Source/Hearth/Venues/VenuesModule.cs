@@ -25,6 +25,8 @@ namespace Hearth.ShopsFood
             Caretaker.Register(ModuleId.ShopsFood, "venues.releaseOrphans", RepairForbidden);
             // designators are resolved after the long loading event; hide replaced furniture once they exist
             LongEventHandler.ExecuteWhenFinished(() => Guard.Run(ModuleId.ShopsFood, "VanillaHiding.Refresh(startup)", VanillaHiding.Refresh));
+            // switching Shops & Food off gives the replaced vanilla furniture back at once (and hides it again when switched on)
+            ModuleGate.Changed += _ => Guard.Run(ModuleId.ShopsFood, "VanillaHiding.Refresh(module switch)", VanillaHiding.Refresh);
         }
 
         /// <summary>Caretaker (S8): goods we forbade that are no longer for sale (sign gone, type changed, thing moved) are released.</summary>
