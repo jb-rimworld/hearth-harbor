@@ -10,12 +10,16 @@ is a setting.
 |---|---|
 | Inn | guest beds priced by room class, a forecast of arrivals, front desk, guest wings, door policy, departure reports, renown |
 | Shops & Food | Venue Sign (tavern, shop, restaurant, casino, spa, lounge, cinema, gallery), the Serving work type, shops, vending machines, market days, a kitchen with 100 dishes |
-| Casino | slots, roulette, blackjack, Rimdeck poker with exact payout rates; The Lucky Thrumbo, an orbital casino where you gamble yourself |
+| Casino | slots, roulette, blackjack, Rimdeck poker with exact payout rates; The Lucky Thrumbo, an animated orbital casino where you gamble yourself |
 | Wellness | hot tub, sauna, massage, day passes |
 | City Life | cinema, salon, gallery, park, taxi stand, bodyguards |
 | Underworld | on, but hidden until a stranger offers it (Discover mode); back rooms, fight pit, fence, smuggling, gangs, Whispers and scandals |
 | Silverline | six banks, interest, loans, 17 investments, a lottery, twelve insurance policies |
+| AI flavour | optional, off until you opt in: Ottoline answers bank questions, AI guest reviews, market headlines and insurance letters through a small relay (no key needed) |
 | DLC extras | Royalty, Ideology and Biotech content, plus 14 traits |
+
+Also included: the storyteller Hetty Hearthwell, two scenarios (Harbor Town, The Back Room), scenario-editor rules, three soundtrack
+pieces and over a hundred sound effects.
 
 Silverline also ships as a standalone mod. When both are active, the standalone one steps aside.
 
