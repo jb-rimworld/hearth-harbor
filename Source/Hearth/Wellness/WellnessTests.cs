@@ -250,8 +250,10 @@ namespace Hearth.Wellness.Tests
         {
             var map = t.Map;
             // the masseur must be able to do Serving work at all: the test colonists are random pawns and some backstories disable it
-            var masseur = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => !c.Downed && !c.Dead && !c.WorkTypeIsDisabled(WellnessDefOf.HH_Serving) && c.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation));
-            var client = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => c != masseur && !c.Downed && !c.Dead);
+            // healthy ones: a hurt or sick colonist is sent to bed rest and drops the table job half way
+            var masseur = Hearth.Testing.TestSetup.Colonist(map, 0, c => !c.WorkTypeIsDisabled(WellnessDefOf.HH_Serving))
+                ?? map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => !c.Downed && !c.Dead && !c.WorkTypeIsDisabled(WellnessDefOf.HH_Serving) && c.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation));
+            var client = Hearth.Testing.TestSetup.Colonist(map, 0, c => c != masseur) ?? map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => c != masseur && !c.Downed && !c.Dead);
             if (client == null || masseur == null || client == masseur)
                 t.Note("colonists: " + string.Join("; ", map.mapPawns.AllPawns.Where(p => p.IsColonist).Select(p => p.LabelShort + " spawned " + p.Spawned + " dead " + p.Dead + " downed " + p.Downed + " job " + p.CurJob?.def.defName + " hp " + p.health.summaryHealth.SummaryHealthPercent.ToString("0.00") + " hediffs " + string.Join("/", p.health.hediffSet.hediffs.Select(h => h.def.defName)))));
             t.Check(client != null && masseur != null && client != masseur, "two colonists available");
@@ -289,7 +291,7 @@ namespace Hearth.Wellness.Tests
             float xp0 = masseur.skills.GetSkill(SkillDefOf.Social).xpSinceLastLevel + masseur.skills.GetSkill(SkillDefOf.Social).Level * 1000f;
             client.jobs.StartJob(job, JobCondition.InterruptForced);
             foreach (var x in WT.WaitUntil(() => comp.recipientReady, 1500, 20)) yield return x;
-            t.Check(comp.recipientReady && comp.recipient == client, "client lies on the table and waits");
+            t.Check(comp.recipientReady && comp.recipient == client, "client lies on the table and waits" + (comp.recipientReady ? "" : " (client job " + (client.CurJob?.def.defName ?? "none") + " at " + client.Position + ", table at " + table.Position + ", rest " + client.needs?.rest?.CurLevel.ToString("0.00") + ", medical rest " + HealthAIUtility.ShouldSeekMedicalRest(client) + ", mental " + client.InMentalState + ", drafted " + client.Drafted + ")"));
             t.Check(client.jobs.posture != PawnPosture.Standing, "client lies down");
             // the Serving work giver finds the request
             var wg = (WorkGiver_GiveMassage)DefDatabase<WorkGiverDef>.GetNamed("HH_GiveMassage").Worker;

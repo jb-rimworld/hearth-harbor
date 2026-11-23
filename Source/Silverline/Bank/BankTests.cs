@@ -859,7 +859,7 @@ namespace Silverline
             var def = DefDatabase<ThingDef>.GetNamed("CommsConsole");
             var console = (Building_CommsConsole)ThingMaker.MakeThing(def, GenStuff.DefaultStuffFor(def));
             // reachable from the colonist with a free ring around it: the first free cell near the map centre can be in a pocket the colonist cannot walk to
-            GenSpawn.Spawn(console, TestSetup.FindOrMakeSpot(map, pawn.Position, def.size.x, def.size.z, 1), map);
+            GenSpawn.Spawn(console, TestSetup.FindOrMakeSpot(map, pawn.Position, def.size.x, def.size.z, 1, minDist: 4f), map);
             console.SetFaction(Faction.OfPlayer);
             var power = console.GetComp<CompPowerTrader>(); if (power != null) power.PowerOn = true;
             pawn.jobs.StopAll(); map.reservationManager.ReleaseAllClaimedBy(pawn);

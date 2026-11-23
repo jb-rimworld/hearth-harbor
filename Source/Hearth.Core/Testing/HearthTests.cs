@@ -228,11 +228,12 @@ namespace Hearth.Testing
 
         /// <summary>A reachable spot near <paramref name="around"/> for something of <paramref name="rect"/> size: the first free one if there is one, otherwise the nearest
         /// reachable spot, prepared with <see cref="PrepareGround"/>. Never null on a map with a walkable cell near <paramref name="around"/>.</summary>
-        public static IntVec3 FindOrMakeSpot(Map map, IntVec3 around, int w, int h, int ring, bool lightTerrain = true)
+        public static IntVec3 FindOrMakeSpot(Map map, IntVec3 around, int w, int h, int ring, bool lightTerrain = true, float minDist = 0f)
         {
             IntVec3 first = IntVec3.Invalid;
             foreach (var c in GenRadial.RadialCellsAround(around, 40, true))
             {
+                if (minDist > 0f && (c - around).LengthHorizontal < minDist) continue;   // not on top of the colonist who is going to use it
                 var rect = new CellRect(c.x - w / 2, c.z - h / 2, w, h).ExpandedBy(ring);
                 if (!rect.FullyContainedWithin(CellRect.WholeMap(map).ContractedBy(2))) continue;
                 if (!map.reachability.CanReach(around, c, PathEndMode.OnCell, TraverseMode.PassDoors, Danger.Deadly)) continue;
