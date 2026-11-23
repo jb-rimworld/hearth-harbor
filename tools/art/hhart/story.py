@@ -158,23 +158,29 @@ def hetty(c, lantern_glow=True):
     return c
 
 
+# 1.1.0 feedback: the vector Hetty above stood out next to the vanilla storytellers. The portraits are now painted in the
+# vanilla storyteller style (inked comic illustration, cel shading, transparent background, outer silhouette line):
+# generated with Nano Banana Pro (Gemini 3 Pro Image) from a written brief, vanilla portraits as style reference only,
+# cut out and outlined by hand. The finished rasters live in tools/art/raster/ and are embedded here so the build keeps them.
+# The vector function hetty() is kept for reference and is no longer rendered.
+def _raster(c, name, w, h):
+    import base64, os
+    p = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "raster", name)
+    b64 = base64.b64encode(open(p, "rb").read()).decode()
+    c.raw('<image x="0" y="0" width="%d" height="%d" preserveAspectRatio="none" href="data:image/png;base64,%s"/>' % (w, h, b64))
+    return c
+
+
 @tex("UI/HH/Storyteller/HettyLarge", "single", (580 / 128, 620 / 128), ppc=256, grain=0,
-     doc="Storyteller portrait Hetty Hearthwell, 1160x1240 (drawn at 580x620): warm innkeeper, copper bun with a pencil, amber shawl, lantern and ledger")
+     doc="Storyteller portrait Hetty Hearthwell, 1160x1240, painted in the vanilla storyteller style (raster source tools/art/raster/HettyLarge.png)")
 def hetty_large(view, cells, masked):
-    c = Canvas(cells[0], cells[1], masked)
-    return hetty(c)
+    return _raster(Canvas(cells[0], cells[1], masked), "HettyLarge.png", 580, 620)
 
 
 @tex("UI/HH/Storyteller/HettyTiny", "single", (122 / 128, 130 / 128), ppc=256, grain=0,
-     doc="Storyteller portrait Hetty Hearthwell, tiny 244x260 (drawn at 122x130): head and shoulders crop of the large portrait")
+     doc="Storyteller portrait Hetty Hearthwell, tiny 244x260: face crop like the vanilla tiny portraits (raster source tools/art/raster/HettyTiny.png)")
 def hetty_tiny(view, cells, masked):
-    x, y, w, h = 134, 76, 312, 332
-    c = CropCanvas(cells[0], cells[1], (x, y, w, h), masked)
-    c.raw('<rect x="%d" y="%d" width="%d" height="%d" rx="26" fill="#3a2a22"/>' % (x, y, w, h))
-    c.raw('<rect x="%d" y="%d" width="%d" height="%d" rx="26" fill="#d9803f" fill-opacity=".18"/>' % (x, y, w, h))
-    hetty(c, lantern_glow=False)
-    c.raw('<rect x="%d" y="%d" width="%d" height="%d" rx="24" fill="none" stroke="#1c1411" stroke-width="6"/>' % (x + 2, y + 2, w - 4, h - 4))
-    return c
+    return _raster(Canvas(cells[0], cells[1], masked), "HettyTiny.png", 122, 130)
 
 
 # ============================================================================ brand marks (comms console, settings header, mod icons)
