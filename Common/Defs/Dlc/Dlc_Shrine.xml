@@ -3,6 +3,8 @@
   <!-- KONZEPT 11.6: guest chapel altar. The ideoligion is chosen in the gizmo; the altar takes its colour and symbol. -->
   <ThingDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="BuildingBase">
     <defName>HH_GuestAltar</defName>
+    <!-- temples belong to City Life (Shrines.cs) -->
+    <modExtensions><li Class="Hearth.ModuleGateExtension"><module>CityLife</module></li></modExtensions>
     <label>guest altar</label>
     <description>A small altar for the faith of travellers. Pick an ideoligion you know: guests who follow it find a place to pray, donate to the temple fund, and may buy indulgences here. Your own colonists of other faiths may object.</description>
     <thingClass>Hearth.Dlc.Building_GuestAltar</thingClass>

@@ -5,4 +5,8 @@
   <HH.Setting.core.researchMode.Desc>Full: the Hearth &amp; Harbor and Silverline research trees gate their buildings and features. Off: everything is available from the start (the dark projects of the underworld still need their discovery).</HH.Setting.core.researchMode.Desc>
   <HH.Enum.CoreResearchMode.Full>Full</HH.Enum.CoreResearchMode.Full>
   <HH.Enum.CoreResearchMode.Off>Off</HH.Enum.CoreResearchMode.Off>
+  <!-- Module gate: buildings, research, recipes and work of a module that is switched off in this game. -->
+  <HH.Gate.ModuleOff>Module off: {0}</HH.Gate.ModuleOff>
+  <HH.Gate.ModuleOffInspect>this does nothing until the module is switched on again.</HH.Gate.ModuleOffInspect>
+  <HH.Gate.CannotPlace>Not available: {0} is switched off in this game.</HH.Gate.CannotPlace>
 </LanguageData>

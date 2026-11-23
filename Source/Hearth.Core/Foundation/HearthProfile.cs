@@ -37,6 +37,7 @@ namespace Hearth
             if (m == ModuleId.Core) return false;
             if (modules.TryGetValue(m, out bool cur) && cur == on) return false;
             modules[m] = on;
+            ModuleGate.Poll();   // architect, research tab and work lists follow the switch at once
             return true;
         }
 

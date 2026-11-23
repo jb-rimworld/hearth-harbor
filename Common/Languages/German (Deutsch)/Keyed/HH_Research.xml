@@ -4,4 +4,8 @@
   <HH.Setting.core.researchMode.Desc>Voll: Die Forschungsbäume von Hearth &amp; Harbor und Silverline schalten ihre Gebäude und Funktionen frei. Aus: Alles ist von Anfang an verfügbar (die dunklen Projekte der Unterwelt brauchen trotzdem ihre Entdeckung).</HH.Setting.core.researchMode.Desc>
   <HH.Enum.CoreResearchMode.Full>Voll</HH.Enum.CoreResearchMode.Full>
   <HH.Enum.CoreResearchMode.Off>Aus</HH.Enum.CoreResearchMode.Off>
+  <!-- Modulsperre: Gebäude, Forschung, Rezepte und Arbeit eines Moduls, das in diesem Spiel aus ist. -->
+  <HH.Gate.ModuleOff>Modul aus: {0}</HH.Gate.ModuleOff>
+  <HH.Gate.ModuleOffInspect>tut nichts, bis das Modul wieder eingeschaltet wird.</HH.Gate.ModuleOffInspect>
+  <HH.Gate.CannotPlace>Nicht verfügbar: {0} ist in diesem Spiel ausgeschaltet.</HH.Gate.CannotPlace>
 </LanguageData>
