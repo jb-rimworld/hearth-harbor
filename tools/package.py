@@ -57,14 +57,28 @@ def main():
     # ---- standalone bank
     (BANK / "About").mkdir(parents=True)
     about = (R / "About" / "About.xml").read_text(encoding="utf-8")
-    about = re.sub(r"<name>.*?</name>", "<name>Silverline – Banking, Loans &amp; Insurance</name>", about, flags=re.S)
+    def must_sub(pat, repl, txt, what):
+        out, n = re.subn(pat, lambda m: repl, txt, flags=re.S)
+        if n != 1:
+            sys.exit(f"Silverline About.xml: '{what}' matched {n} times (expected 1) - About/About.xml changed shape")
+        return out
+    about = must_sub(r"<name>.*?</name>", "<name>Silverline – Banking, Loans &amp; Insurance</name>", about, "name")
+    if about.count("juliusberger00.hearthharbor") != 1:
+        sys.exit("Silverline About.xml: packageId marker not found exactly once")
     about = about.replace("juliusberger00.hearthharbor", "juliusberger00.silverline")
-    about = re.sub(r"<url>.*?</url>", "<url>https://github.com/jb-rimworld/hearth-harbor</url>", about)
-    about = re.sub(r"<description>.*?</description>", "<description>Silverline is the bank of Hearth &amp; Harbor as a standalone mod: accounts at six very different banks, deposits and withdrawals, ATMs and branches, interest, loans with a polite-then-not-so-polite collections ladder, and insurance by Clawback Mutual.\n\nAlready using Hearth &amp; Harbor? Then you do not need this mod – the bank is built in. If both are active, this one steps aside automatically.</description>", about, flags=re.S)
-    about = re.sub(r"<loadBefore>.*?</loadBefore>", "", about, flags=re.S)
+    about = must_sub(r"<url>.*?</url>", "<url>https://github.com/jb-rimworld/hearth-harbor</url>", about, "url")
+    about = must_sub(r"<description>.*?</description>", "<description>Silverline is the bank of Hearth &amp; Harbor as a standalone mod: accounts at six very different banks, deposits and withdrawals, ATMs and branches, interest, loans with a polite-then-not-so-polite collections ladder, and insurance by Clawback Mutual.\n\nAlready using Hearth &amp; Harbor? Then you do not need this mod – the bank is built in. If both are active, this one steps aside automatically.</description>", about, "description")
+    about = must_sub(r"<loadBefore>.*?</loadBefore>", "", about, "loadBefore")
     # safe next to Hearth & Harbor: load after it so the (inactive) content folders and the stub resolve in a fixed order
+    if about.count("<loadAfter>") != 1:
+        sys.exit("Silverline About.xml: <loadAfter> block not found exactly once")
     about = about.replace("<loadAfter>", "<loadAfter>\n    <li>juliusberger00.hearthharbor</li>", 1)
-    about = re.sub(r"<incompatibleWith>.*?</incompatibleWith>", "", about, flags=re.S)
+    about = must_sub(r"<incompatibleWith>.*?</incompatibleWith>", "", about, "incompatibleWith")
+    for need in ("<packageId>juliusberger00.silverline</packageId>", "<li>juliusberger00.hearthharbor</li>", "steps aside automatically"):
+        if need not in about:
+            sys.exit(f"Silverline About.xml: missing {need}")
+    if "<loadBefore>" in about or "<incompatibleWith>" in about or about.count("Orion.Hospitality") != 0:
+        sys.exit("Silverline About.xml: loadBefore/incompatibleWith not removed")
     (BANK / "About" / "About.xml").write_text(about, encoding="utf-8")
     for extra in ["Preview.png"]:
         src = R / "About" / "Silverline_Preview.png"

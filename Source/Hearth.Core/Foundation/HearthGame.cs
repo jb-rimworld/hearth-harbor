@@ -88,6 +88,8 @@ namespace Hearth
         {
             Instance = this;
             HearthMod.Template.EverPlayed = true;
+            // FinalizeInit runs after the map is generated/loaded: smokes grep this line to know late init got through
+            HLog.Info("Core", "Game ready: " + (Find.Maps?.Count ?? 0) + " map(s) generated");
         }
 
         public override void GameComponentTick()
