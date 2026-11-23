@@ -55,10 +55,16 @@ namespace Hearth.Guests
         }
     }
 
-    /// <summary>Counters of one scheduler: why groups were (not) planned and (not) arrived. In memory only.</summary>
-    public sealed class SchedulerStats
+    /// <summary>Counters of one scheduler: why groups were (not) planned and (not) arrived. Saved with the scheduler (whole game, not per session).</summary>
+    public sealed class SchedulerStats : IExposable
     {
         public int Planned, ThinnedOut, NoFaction, Arrived, WaitingForBed, Postponed, Dropped, DroughtBreaks;
+        public void ExposeData()
+        {
+            Scribe_Values.Look(ref Planned, "planned"); Scribe_Values.Look(ref ThinnedOut, "thinned"); Scribe_Values.Look(ref NoFaction, "noFaction");
+            Scribe_Values.Look(ref Arrived, "arrived"); Scribe_Values.Look(ref WaitingForBed, "waitedForBed"); Scribe_Values.Look(ref Postponed, "postponed");
+            Scribe_Values.Look(ref Dropped, "dropped"); Scribe_Values.Look(ref DroughtBreaks, "droughtBreaks");
+        }
         public string Line() => $"planned {Planned}, thinned {ThinnedOut}, no faction {NoFaction}, arrived {Arrived}, waited for a bed {WaitingForBed}, postponed {Postponed}, dropped {Dropped}, drought breaks {DroughtBreaks}";
     }
 
@@ -74,13 +80,14 @@ namespace Hearth.Guests
         int nextId = 1;
         bool everActive;
         int planHorizon = -1;
-        /// <summary>Time of the next candidate group when it is drawn but still beyond the forecast window (-1 = none). Not saved: redrawing from the last candidate is harmless (memoryless).</summary>
+        /// <summary>Time of the next candidate group when it is drawn but still beyond the forecast window (-1 = none). Saved: redrawing it after a load
+        /// would be statistically harmless (memoryless) but would take another number from the saved random stream, so a reloaded game would plan differently.</summary>
         int nextCandidate = -1;
         const int Never = int.MinValue;
         /// <summary>Last planned group that really arrived, when the plan woke up, and the last scheduler tick (drought breaker, 5.4). Ticks, or <see cref="Never"/>.</summary>
         int lastArrivalTick = Never, activeSince = Never, lastTickSeen = Never;
-        /// <summary>What happened to the plan since the game was loaded (not saved): shown by the long run report and the dev overview.</summary>
-        public readonly SchedulerStats Counters = new SchedulerStats();
+        /// <summary>What happened to the plan in this game: shown by the long run report and the dev overview.</summary>
+        public SchedulerStats Counters = new SchedulerStats();
         /// <summary>Tests switch this on to collect one line per scheduler decision (long run diagnostics); null = off, no cost.</summary>
         public static List<string> DiagLog;
         /// <summary>Tests can switch the automatic scheduler off while they drive arrivals by hand.</summary>
@@ -509,6 +516,9 @@ namespace Hearth.Guests
             Scribe_Values.Look(ref lastArrivalTick, "lastArrival", Never);
             Scribe_Values.Look(ref activeSince, "activeSince", Never);
             Scribe_Values.Look(ref lastTickSeen, "lastTickSeen", Never);
+            Scribe_Values.Look(ref nextCandidate, "nextCandidate", -1);
+            Scribe_Deep.Look(ref Counters, "stats");
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && Counters == null) Counters = new SchedulerStats();
             if (Scribe.mode == LoadSaveMode.PostLoadInit) { forecast = forecast ?? new List<PlannedGroup>(); forecast.RemoveAll(x => x == null || x.Faction == null); }
         }
     }

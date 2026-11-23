@@ -24,6 +24,12 @@ namespace Hearth
         public virtual void GameTick(int ticksGame) { }
         /// <summary>Called when the player prepares to remove the module (S6): send guests home, refund, strip hediffs …</summary>
         public virtual void PrepareRemoval(List<string> report) { }
+        /// <summary>
+        /// Called when the module is switched off in a running game (both "keep things in place" and after PrepareRemoval). Everything stays
+        /// where it is, except state that cannot wait for the module to come back: money a guest has handed over for something that is
+        /// running right now (a casino purse) is settled here, so nothing sits in limbo while the module sleeps.
+        /// </summary>
+        public virtual void OnSwitchedOff(List<string> report) { }
         /// <summary>Lines for the diagnosis window.</summary>
         public virtual IEnumerable<string> Diagnosis() { yield break; }
     }
@@ -62,6 +68,20 @@ namespace Hearth
         static readonly HearthTemplate fallbackTemplate = new HearthTemplate();
         public static Harmony Harmony;
         public static readonly List<HearthModuleBase> ModuleObjects = new List<HearthModuleBase>();
+
+        /// <summary>Runs OnSwitchedOff of every module object of <paramref name="m"/> (see HearthProfile.SetModule).</summary>
+        internal static void NotifySwitchedOff(ModuleId m)
+        {
+            var report = new List<string>();
+            foreach (var obj in ModuleObjects)
+            {
+                if (obj.Id != m) continue;
+                // not Guard.Run: a module paused by the error barrier must still settle what it holds
+                try { obj.OnSwitchedOff(report); }
+                catch (Exception e) { HLog.Error(m.ToString(), obj.GetType().Name + ".OnSwitchedOff failed", e); }
+            }
+            foreach (var line in report) HLog.Info(m.ToString(), "Switched off: " + line);
+        }
         public static bool BankAssemblyLoaded, GuestAssemblyLoaded;
         /// <summary>Set by HearthUI when Hearth.dll provides the full settings window.</summary>
         public static Action<Rect> SettingsWindowOverride;

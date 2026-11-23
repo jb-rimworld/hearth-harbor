@@ -179,6 +179,15 @@ namespace Hearth.Testing
         /// <summary>Fingerprint taken right after the load (before the first tick), or null.</summary>
         public static List<string> AfterLoad;
         public static int AfterLoadTick = -1;
+        /// <summary>Hearth.dll hooks in here to note its player-visible facts at the same moment as the fingerprint (right after the load,
+        /// before the first tick). Suites start a few hundred ticks later, when guests may already have moved on.</summary>
+        public static event Action AfterLoadHook;
+        internal static void RaiseAfterLoad()
+        {
+            var h = AfterLoadHook; if (h == null) return;
+            foreach (var d in h.GetInvocationList())
+                try { ((Action)d)(); } catch (Exception e) { Verse.Log.Error("[HHTEST] after-load hook failed: " + e); }
+        }
 
         public static string SavesDir => GenFilePaths.SavedGamesFolderPath;
         public static string SidePath(string save, string what) => Path.Combine(SavesDir, save + "." + what + ".txt");

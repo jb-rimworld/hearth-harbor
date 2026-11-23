@@ -484,7 +484,7 @@ namespace Silverline
             Scribe_Values.Look(ref firstPolicyTick, "firstPolicy", -1); Scribe_Values.Look(ref lastDay, "lastDay", -1); Scribe_Values.Look(ref lastHour, "lastHour", -1);
             Scribe_Values.Look(ref lastFiledLetterDay, "lastFiledDay", -1); Scribe_Values.Look(ref lastUpsellTick, "lastUpsell", -9999999);
             Scribe_Values.Look(ref lastDeathTick, "lastDeath", -9999999); Scribe_Values.Look(ref yearStamp, "yearStamp", -1);
-            Scribe_Values.Look(ref letterCounter, "letterCounter"); Scribe_Values.Look(ref debt, "debt"); Scribe_Values.Look(ref courtesyTotal, "courtesy");
+            Scribe_Values.Look(ref letterCounter, "letterCounter"); ScribeMoney.LookExact(ref debt, "debt"); ScribeMoney.LookExact(ref courtesyTotal, "courtesy");
             Scribe_Collections.Look(ref log, "log", LookMode.Value);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {

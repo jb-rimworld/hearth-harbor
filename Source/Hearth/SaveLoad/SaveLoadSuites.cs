@@ -8,7 +8,9 @@ using System.Linq;
 using System.Reflection;
 using RimWorld;
 using Verse;
+using Verse.AI.Group;
 using Hearth.Casino;
+using Hearth.City;
 using Hearth.Guests;
 using Hearth.Insurance;
 using Hearth.Shell;
@@ -25,6 +27,26 @@ namespace Hearth.SaveLoad
     {
         public const string RoundtripSave = "hh_roundtrip";
         public const string ChangedSetting = "casino.guestMinBuyIn";
+        /// <summary>The facts taken right after the load, at the same moment as the fingerprint (null in a game that was not loaded).</summary>
+        public static List<string> AfterLoad;
+        public static int AfterLoadTick = -1;
+        public static string Get(List<string> facts, string key) => facts?.FirstOrDefault(x => x.StartsWith(key + "="));
+
+        /// <summary>Compares the saved facts with the ones right after the load, one check per fact.</summary>
+        public static void CompareAfterLoad(TestContext t, string save, IEnumerable<string> keys = null, string prefix = "survived the load: ")
+        {
+            var before = SaveLoadKit.ReadSide(save, "facts") ?? new List<string>();
+            t.Check(before.Count > 0, "facts of the save found");
+            t.Check(AfterLoad != null, "facts taken right after the load (tick " + AfterLoadTick + ")");
+            var now = AfterLoad ?? Take(Find.CurrentMap);
+            foreach (var l in before)
+            {
+                var key = l.Split('=')[0];
+                if (keys != null && !keys.Contains(key)) continue;
+                var cur = Get(now, key);
+                t.Check(cur == l, prefix + l + (cur == l ? "" : "   now: " + cur));
+            }
+        }
 
         public static List<string> Take(Map map)
         {
@@ -42,8 +64,10 @@ namespace Hearth.SaveLoad
             l.Add("portfolio=" + (FinanceGame.Current?.PortfolioValue().ToStringFull() ?? "-"));
             l.Add("lotteryTickets=" + (LotteryGame.Current?.tickets.Count ?? -1));
             l.Add("casinoSessions=" + (CasinoComponent.Get()?.Sessions.Count ?? -1));
+            l.Add("screenings=" + map.lordManager.lords.Count(x => x.LordJob is LordJob_Joinable_Screening));
             l.Add("uwDiscovered=" + UW.Discovered);
-            l.Add("whispers=" + UW.Comp?.WhispersAt(SaveLoadKit.AfterLoadTick >= 0 ? SaveLoadKit.AfterLoadTick : Find.TickManager.TicksGame).ToString("0.000"));
+            // facts are taken at save time and right after the load, i.e. at the same tick: the decaying whispers compare as they are
+            l.Add("whispers=" + UW.Comp?.WhispersAt(Find.TickManager.TicksGame).ToString("0.000"));
             l.Add("setting " + ChangedSetting + "=" + HSettings.Get(ChangedSetting));
             l.Add("venueSigns=" + string.Join(";", map.listerThings.AllThings.Select(t => t.TryGetComp<CompVenueSignHH>()).Where(c => c != null)
                 .Select(c => c.parent.ThingID + ":" + c.type?.defName + ":" + c.customName + ":" + c.alwaysOpen + ":" + c.priceFactor).OrderBy(x => x)));
@@ -72,6 +96,20 @@ namespace Hearth.SaveLoad
         public static int OurErrors => HLog.ErrorCount;
     }
 
+    /// <summary>Takes the facts at the moment the fingerprint is taken (SaveLoadKit.AfterLoadHook), before the first tick of the loaded game.</summary>
+    [StaticConstructorOnStartup]
+    static class FactsAfterLoad
+    {
+        static FactsAfterLoad()
+        {
+            SaveLoadKit.AfterLoadHook += () =>
+            {
+                var map = Find.CurrentMap ?? Find.AnyPlayerHomeMap; if (map == null) return;
+                Facts.AfterLoad = Facts.Take(map); Facts.AfterLoadTick = Find.TickManager.TicksGame;
+            };
+        }
+    }
+
     /// <summary>Fields that are caches by design (rebuilt before use after a load); the fingerprint comparison ignores them.</summary>
     static class KnownTransient
     {
@@ -87,9 +125,8 @@ namespace Hearth.SaveLoad
             l.Add((@"^game/GuestRegistry\.records\[\]\.(CachedWing|CachedWingBed|CachedWingVersion|LastActivityTick)$", "per-guest wing lookup cache and the 600-tick activity throttle"));
             l.Add((@"^map\d+/MapComponent_HH_GuestWings\.(venueCells|venueSignature|venueGridTick)", "venue-room grid, rebuilt within 250 ticks"));
             l.Add((@"^map\d+/[^/]+/CompCasinoGame\.(seatedCache|seatedCacheTick|paytable|paytableRtp|Expected|Variance|LastResultTick)", "seat cache, paytable built from the def, last-spin display"));
-            l.Add((@"^game/CasinoComponent\.Rows\[\]\.(Expected|Variance)$", "statistics rows: 15-digit doubles, display only"));
-            l.Add((@"^game/InsuranceComponent\.contracts\[\]\.(premiumYear|premiumPaid|lastPremiumQuadrum|sum)$", "policy doubles written by Scribe_Values with 15 significant digits (relative error 1e-15)"));
             l.Add((@"^game/ImportedGuestBeds\.bedIndex", "lazy lookup index over the saved bed list"));
+            l.Add((@"^map\d+/[^/]+/CompProjectorScreen\.power$", "lazy lookup of the power comp"));
             l.Add((@"^game/HearthGame\.Rand\.live", "live random streams; their counters are saved and the streams recreated on use"));
         }
     }
@@ -154,6 +191,20 @@ namespace Hearth.SaveLoad
             UW.AddWhispers(12.5f, "save/load test");
             t.Check(UW.Unlocked && UW.Whispers > 10f, "underworld unlocked, whispers " + UW.Whispers.ToString("0.0"));
 
+            // a movie night of the colony (a player-faction lord with our LordJob) that is running at save time
+            HSettings.Set(CitySettings.CinemaShowTicks, 20000);
+            var org = map.mapPawns.FreeColonistsSpawned.FirstOrDefault(p => !p.Downed && !p.InMentalState);
+            var spot = org != null ? t.FreeCellNearCenter(25) : IntVec3.Invalid;
+            if (org != null && spot.IsValid && (spot + IntVec3.North * 3).InBounds(map))
+            {
+                var screen = Hearth.City.Tests.CityTestKit.Spawn(map, "HH_ProjectorScreen", spot + IntVec3.North * 3, Rot4.South);
+                Hearth.City.Tests.CityTestKit.Power(screen);
+                var gdef = DefDatabase<GatheringDef>.GetNamed("HH_Screening");
+                LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_Joinable_Screening(spot, org, gdef, screen), map, new[] { org });
+                yield return 60;
+            }
+            t.Check(map.lordManager.lords.Any(x => x.LordJob is LordJob_Joinable_Screening), "movie night running: " + map.lordManager.lords.Count(x => x.LordJob is LordJob_Joinable_Screening));
+
             // a per-save setting that differs from the template
             float tmpl = HSettings.Get(Facts.ChangedSetting);
             HSettings.Set(Facts.ChangedSetting, tmpl + 7f);
@@ -173,6 +224,7 @@ namespace Hearth.SaveLoad
     {
         public override string Name => "saveload.roundtrip";
         public override bool ExplicitOnly => true;
+        public override bool KeepsLoadedGame => true;
         public override int MaxTicks => 140000;
 
         public override IEnumerable<int> Run(TestContext t)
@@ -183,13 +235,14 @@ namespace Hearth.SaveLoad
             var map = t.Map;
             KnownTransient.Register();
             SaveLoadKit.CompareFingerprints(save, t);
-            var before = SaveLoadKit.ReadSide(save, "facts") ?? new List<string>();
+            // the facts are taken right after the load (with the fingerprint); the suite itself starts a few hundred ticks later
+            Facts.CompareAfterLoad(t, save);
+            // ... and the guests are still in the house when the game has run for a moment (a load that sends them away shows up here)
             var now = Facts.Take(map);
-            foreach (var l in before)
+            foreach (var key in new[] { "guests", "guestRecords", "checkedIn", "screenings" })
             {
-                var key = l.Split('=')[0];
-                var cur = now.FirstOrDefault(x => x.Split('=')[0] == key);
-                t.Check(cur == l, "survived the load: " + l + (cur == l ? "" : "   now: " + cur));
+                var a = Facts.Get(Facts.AfterLoad, key); var b = Facts.Get(now, key);
+                t.Check(a == b, "still there " + (Find.TickManager.TicksGame - Facts.AfterLoadTick) + " ticks after the load: " + a + (a == b ? "" : "   now: " + b));
             }
             t.Check(!HearthMod.Template.Store.Has(Facts.ChangedSetting), "the per-save setting did not leak into the template");
             Facts.ReportErrors(t, "loading", true);
@@ -211,6 +264,7 @@ namespace Hearth.SaveLoad
     {
         public override string Name => "saveload.prepare";
         public override bool ExplicitOnly => true;
+        public override bool KeepsLoadedGame => true;
         public override int MaxTicks => 60000;
 
         public override IEnumerable<int> Run(TestContext t)
@@ -246,6 +300,7 @@ namespace Hearth.SaveLoad
     {
         public override string Name => "saveload.addition";
         public override bool ExplicitOnly => true;
+        public override bool KeepsLoadedGame => true;
         public override int MaxTicks => 70000;
 
         public override IEnumerable<int> Run(TestContext t)
@@ -284,13 +339,34 @@ namespace Hearth.SaveLoad
     {
         public override string Name => "saveload.modulesoff";
         public override bool ExplicitOnly => true;
+        public override bool KeepsLoadedGame => true;
         public override int MaxTicks => 20000;
         internal static readonly ModuleId[] Switched = { ModuleId.Casino, ModuleId.Underworld, ModuleId.Wellness, ModuleId.Bank };
 
         public override IEnumerable<int> Run(TestContext t)
         {
             var prof = HearthProfile.Current;
+            // the running casino session of the save is cashed out when the Casino goes to sleep ("keep things in place" settles money in play)
+            var cc = CasinoComponent.Get();
+            if (!cc.Sessions.Any(s => s.Kind == SessionKind.Guest))
+            {
+                // the session of the save may have been settled by the caretaker since the load (no guest at the table): start another one
+                var map = t.Map;
+                var guest = map.mapPawns.AllPawnsSpawned.FirstOrDefault(p => GuestApi.IsGuest(p) && cc.SessionOf(p) == null && p.DevelopmentalStage.Adult());
+                var table = map.listerThings.AllThings.Select(x => x.TryGetComp<CompCasinoGame>()).FirstOrDefault(c => c != null && cc.CountAt(c.parent) == 0);
+                if (guest != null && table != null) { var s0 = CasinoEngine.Begin(guest, table, SessionKind.Guest, false, out string why); t.Note("casino session started: " + (s0 != null ? "running" : why)); }
+            }
+            var guestSessions = cc.Sessions.Where(s => s.Kind == SessionKind.Guest && s.Pawn != null).Select(s => (s.Pawn, s.Purse, budget: GuestApi.Info(s.Pawn)?.Budget ?? Money.Zero)).ToList();
+            t.Check(guestSessions.Count > 0, "a guest session is running before the switch: " + guestSessions.Count);
             foreach (var m in Switched) { prof.SetModule(m, false); t.Check(!Modules.On(m), m + " switched off"); }
+            t.Check(cc.Sessions.Count == 0, "casino sessions settled at the switch: " + cc.Sessions.Count + " left");
+            foreach (var (pawn, purse, budget) in guestSessions)
+            {
+                var info = GuestApi.Info(pawn);
+                bool paid = purse.Silver < 1.0 || (info != null && info.Budget > budget);
+                t.Check(paid, $"{pawn.LabelShort} got the purse back ({purse}): budget {budget} → {info?.Budget}");
+            }
+            t.Check(Ledger.Current.SumAll() == 0, "ledger balanced after the cash-out");
             int errs0 = Facts.OurErrors;
             yield return 5000;
             t.Check(Facts.OurErrors == errs0, "modules off for a while without errors: " + (Facts.OurErrors - errs0));
@@ -303,6 +379,7 @@ namespace Hearth.SaveLoad
     {
         public override string Name => "saveload.moduleson";
         public override bool ExplicitOnly => true;
+        public override bool KeepsLoadedGame => true;
         public override int MaxTicks => 80000;
 
         public override IEnumerable<int> Run(TestContext t)
@@ -312,13 +389,9 @@ namespace Hearth.SaveLoad
             KnownTransient.Register();
             SaveLoadKit.CompareFingerprints(save, t, 40);
             foreach (var m in SaveModulesOffSuite.Switched) t.Check(!Modules.On(m), m + " is still off after the load");
-            var before = SaveLoadKit.ReadSide(save, "facts") ?? new List<string>();
-            var now = Facts.Take(t.Map);
-            foreach (var key in new[] { "casinoSessions", "lotteryTickets", "policies", "bankBalance", "uwDiscovered", "ledgerSum" })
-            {
-                var a = before.FirstOrDefault(x => x.StartsWith(key + "=")); var b = now.FirstOrDefault(x => x.StartsWith(key + "="));
-                t.Check(a == b, "kept while off: " + a + (a == b ? "" : "   now: " + b));
-            }
+            // casinoSessions: 0 on both sides, the session was cashed out when the Casino was switched off (saveload.modulesoff checks that)
+            Facts.CompareAfterLoad(t, save, new[] { "casinoSessions", "lotteryTickets", "policies", "bankBalance", "portfolio", "uwDiscovered", "whispers", "ledgerSum", "guests", "guestRecords" }, "kept while off: ");
+            t.Check(CasinoComponent.Get().Sessions.Count == 0, "no casino session waiting in limbo while the module is off: " + CasinoComponent.Get().Sessions.Count);
             var prof = HearthProfile.Current;
             foreach (var m in SaveModulesOffSuite.Switched) { prof.SetModule(m, true); t.Check(Modules.On(m), m + " switched on again"); }
             int errs0 = Facts.OurErrors;

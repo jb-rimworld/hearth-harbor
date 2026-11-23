@@ -27,7 +27,8 @@ namespace Hearth.City
 
         public int ShowStart = -1, ShowEnd = -1, FilmIndex = -1, ShowLength;
         public int ShowsHeld;
-        readonly HashSet<int> viewers = new HashSet<int>();
+        /// <summary>thingIDNumbers of the pawns watching (saved: the watch jobs that joined do not join again after a load).</summary>
+        HashSet<int> viewers = new HashSet<int>();
 
         CompPowerTrader power;
         public CompPowerTrader Power => power ?? (power = parent.TryGetComp<CompPowerTrader>());
@@ -123,6 +124,8 @@ namespace Hearth.City
             Scribe_Values.Look(ref FilmIndex, "filmIndex", -1);
             Scribe_Values.Look(ref ShowLength, "showLength");
             Scribe_Values.Look(ref ShowsHeld, "showsHeld");
+            Scribe_Collections.Look(ref viewers, "viewers", LookMode.Value);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && viewers == null) viewers = new HashSet<int>();
         }
     }
 }

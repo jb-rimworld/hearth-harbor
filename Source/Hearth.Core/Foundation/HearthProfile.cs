@@ -37,8 +37,21 @@ namespace Hearth
             if (m == ModuleId.Core) return false;
             if (modules.TryGetValue(m, out bool cur) && cur == on) return false;
             modules[m] = on;
+            // switched off in the running game: the module settles what cannot wait (CasinoModule: running sessions)
+            if (!on && this == Current && Verse.Current.ProgramState == ProgramState.Playing && Modules.Available(m)) HearthMod.NotifySwitchedOff(m);
             ModuleGate.Poll();   // architect, research tab and work lists follow the switch at once
             return true;
+        }
+
+        /// <summary>Replaces the whole module table (hosting difficulty). Modules that go from on to off are announced like SetModule does, so no path can skip OnSwitchedOff.</summary>
+        public void ReplaceModules(Dictionary<ModuleId, bool> next)
+        {
+            var wasOn = new List<ModuleId>();
+            foreach (var m in Modules.All) if (m != ModuleId.Core && ModuleOn(m)) wasOn.Add(m);
+            modules = new Dictionary<ModuleId, bool>(next);
+            foreach (var m in wasOn)
+                if (!ModuleOn(m) && this == Current && Verse.Current.ProgramState == ProgramState.Playing && Modules.Available(m)) HearthMod.NotifySwitchedOff(m);
+            ModuleGate.Poll();
         }
 
         public HearthProfile CloneForNewGame()

@@ -170,7 +170,7 @@ namespace Hearth.Shell
         {
             var p = PendingProfile; PendingProfile = null;
             if (p == null || into == null) return;
-            into.modules = new Dictionary<ModuleId, bool>(p.modules);
+            into.ReplaceModules(p.modules);
             into.Tier = p.Tier; into.Content = p.Content; into.UnderworldDiscovered = p.UnderworldDiscovered;
             into.Store = p.Store.Clone();
             HLog.Info("UI", "Hosting difficulty from the storyteller page applied: tier " + p.Tier.ToString("0.00"));

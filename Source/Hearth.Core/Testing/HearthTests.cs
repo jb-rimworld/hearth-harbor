@@ -27,6 +27,10 @@ namespace Hearth.Testing
         public abstract IEnumerable<int> Run(TestContext t);
         /// <summary>True for suites that need special mods/env (e.g. Hospitality loaded); they run only when named explicitly, never with "all" or a prefix.</summary>
         public virtual bool ExplicitOnly => false;
+        /// <summary>True for suites that check a loaded save (saveload.*): before them the harness only stops the storyteller and leaves pawns,
+        /// jobs, lords and the till alone. The general clean-up destroys every pawn that is not the player's, i.e. the very guests a
+        /// save/load suite wants to find again.</summary>
+        public virtual bool KeepsLoadedGame => false;
     }
 
     public sealed class TestContext
@@ -73,6 +77,7 @@ namespace Hearth.Testing
             {
                 try { SaveLoadKit.AfterLoad = SaveFingerprint.Take(); SaveLoadKit.AfterLoadTick = Find.TickManager.TicksGame; }
                 catch (Exception e) { Verse.Log.Error("[HHTEST] fingerprint after load failed: " + e); }
+                SaveLoadKit.RaiseAfterLoad();
             });
         }
 
@@ -108,7 +113,7 @@ namespace Hearth.Testing
             }
             if (current >= runs.Count) { finished = true; return; }
             var r = runs[current];
-            if (r.It == null) NeutralizeGame();
+            if (r.It == null) NeutralizeGame(r.Suite.KeepsLoadedGame);
             if (r.It == null) { r.Started = now; r.WaitUntil = now; try { r.It = r.Suite.Run(r.Ctx).GetEnumerator(); } catch (Exception e) { r.Error = e.ToString(); r.Done = true; } r.Ctx.Log("start at tick " + now); }
             if (!r.Done && now >= r.WaitUntil)
             {
@@ -134,12 +139,13 @@ namespace Hearth.Testing
         /// <summary>Modules hook in here to calm their own background activity before every suite (the guest scheduler stops sending groups).</summary>
         public static event Action BeforeEachSuite;
 
-        static void NeutralizeGame()
+        static void NeutralizeGame(bool keepLoadedGame)
         {
             try { BeforeEachSuite?.Invoke(); } catch (Exception e) { Verse.Log.Warning("[HHTEST] BeforeEachSuite hook failed: " + e.Message); }
             try
             {
                 Find.Storyteller?.storytellerComps?.Clear();
+                if (keepLoadedGame) return;
                 HearthGame.Instance?.HoldTillFlushForTests();
                 var map = Find.CurrentMap; if (map == null) return;
                 // outdoor joy (benches, saunas) is refused in rain or snow

@@ -25,7 +25,8 @@ namespace Hearth.Wellness
     {
         public bool colonistsMayUse = true, guestsMayUse = true;
 
-        // Massage table session (not saved: after a load the waiting simply restarts, see JobDriver_ReceiveMassage)
+        // Massage table session. Saved: the client's job is already past the toil that announces it (recipient/recipientReady), so a load that
+        // forgot the pairing left the client lying on the table until the wait ran out and no masseur would come (nothing marks the table as waiting).
         public Pawn recipient, masseur;
         public bool recipientReady, sessionActive, sessionDone, sessionDenied;
         public int sessionTicks;
@@ -115,6 +116,29 @@ namespace Hearth.Wellness
         {
             Scribe_Values.Look(ref colonistsMayUse, "colonistsMayUse", true);
             Scribe_Values.Look(ref guestsMayUse, "guestsMayUse", true);
+            Scribe_References.Look(ref recipient, "recipient");
+            Scribe_References.Look(ref masseur, "masseur");
+            Scribe_Values.Look(ref recipientReady, "recipientReady");
+            Scribe_Values.Look(ref sessionActive, "sessionActive");
+            Scribe_Values.Look(ref sessionDone, "sessionDone");
+            Scribe_Values.Look(ref sessionDenied, "sessionDenied");
+            Scribe_Values.Look(ref sessionTicks, "sessionTicks");
+            // a client that did not come back (left the map, removed by a mod) frees the table
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && recipient == null && (recipientReady || sessionActive || masseur != null)) ResetSession();
+        }
+
+        // A saved pairing with someone who is no longer on this map (world pawn, left the map): pawns are not spawned yet in PostLoadInit,
+        // so the check waits until loading is finished.
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            if (!respawningAfterLoad || (recipient == null && masseur == null)) return;
+            LongEventHandler.ExecuteWhenFinished(() =>
+            {
+                if (parent == null || parent.Destroyed) return;
+                bool bad(Pawn p) => p != null && (p.Destroyed || p.Discarded || !p.Spawned || p.Map != parent.Map);
+                if (bad(recipient) || bad(masseur)) ResetSession();
+            });
         }
 
         public override void PostDeSpawn(Map map
