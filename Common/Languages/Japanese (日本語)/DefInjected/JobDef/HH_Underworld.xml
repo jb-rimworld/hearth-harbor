@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchBout.reportString>闘技場を見張っています。</HH_WatchBout.reportString>
+  <HH_BackRoomVisit.reportString>奥の部屋を使っています。</HH_BackRoomVisit.reportString>
+  <HH_FenceDeal.reportString>故買屋のカウンターで商売をしています。</HH_FenceDeal.reportString>
+  <HH_UseLounge.reportString>ラウンジでくつろいでいます。</HH_UseLounge.reportString>
+  <HH_Interrogate.reportString>TargetA を尋問しています。</HH_Interrogate.reportString>
+  <HH_HuntQuarry.reportString>TargetA を狩っています。</HH_HuntQuarry.reportString>
+  <HH_QuarryFlee.reportString>逃げています。</HH_QuarryFlee.reportString>
+</LanguageData>

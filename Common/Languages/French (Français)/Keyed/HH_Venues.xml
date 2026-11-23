@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Setting.venues.browseTicks>Durée de consultation (ticks)</HH.Setting.venues.browseTicks>
+  <HH.Setting.venues.browseTicks.Desc>Le temps qu'un visiteur passe à examiner un article avant de se décider. 60 ticks correspondent à une seconde à vitesse normale.</HH.Setting.venues.browseTicks.Desc>
+  <HH.Setting.venues.dayClose>Fermeture du préréglage « Jour »</HH.Setting.venues.dayClose>
+  <HH.Setting.venues.dayClose.Desc>Heure à laquelle ferme le préréglage « Jour ».</HH.Setting.venues.dayClose.Desc>
+  <HH.Setting.venues.dayOpen>Ouverture du préréglage « Jour »</HH.Setting.venues.dayOpen>
+  <HH.Setting.venues.dayOpen.Desc>Heure à laquelle s'ouvre le préréglage « Jour » dans la boîte de dialogue des horaires de l'enseigne.</HH.Setting.venues.dayOpen.Desc>
+  <HH.Setting.venues.drinkGapHours>Heures entre deux boissons</HH.Setting.venues.drinkGapHours>
+  <HH.Setting.venues.drinkGapHours.Desc>Un visiteur ne commande pas une nouvelle boisson avant que ce nombre d'heures ne soit écoulé.</HH.Setting.venues.drinkGapHours.Desc>
+  <HH.Setting.venues.eveningClose>Fermeture du préréglage « Soir »</HH.Setting.venues.eveningClose>
+  <HH.Setting.venues.eveningClose.Desc>Heure à laquelle ferme le préréglage « Soir » (une heure inférieure à l'heure d'ouverture signifie après minuit).</HH.Setting.venues.eveningClose.Desc>
+  <HH.Setting.venues.eveningOpen>Ouverture du préréglage « Soir »</HH.Setting.venues.eveningOpen>
+  <HH.Setting.venues.eveningOpen.Desc>Heure à laquelle s'ouvre le préréglage « Soir ».</HH.Setting.venues.eveningOpen.Desc>
+  <HH.Setting.venues.hideVanilla>Masquer le mobilier vanilla remplacé</HH.Setting.venues.hideVanilla>
+  <HH.Setting.venues.hideVanilla.Desc>Lorsqu'un bâtiment de Hearth &amp; Harbor remplace un élément vanilla (par exemple la table de cartes à la place de la table de poker), l'élément vanilla disparaît du menu de construction dès que le remplacement est disponible. Les bâtiments déjà placés restent en place. Prend effet après un redémarrage ou au prochain chargement de la partie.</HH.Setting.venues.hideVanilla.Desc>
+  <HH.Setting.venues.lastOrdersMinutes>Dernières commandes (minutes avant la fermeture)</HH.Setting.venues.lastOrdersMinutes>
+  <HH.Setting.venues.lastOrdersMinutes.Desc>Pendant cette dernière période avant l'heure de fermeture, les visiteurs pressés achètent encore une tournée, aucun visiteur ne commence une longue consultation, et un achat déjà en cours est encore servi après la fermeture. 0 = pas de dernières commandes.</HH.Setting.venues.lastOrdersMinutes.Desc>
+  <HH.Setting.venues.marketCaravans>Caravanes de marchands par marché</HH.Setting.venues.marketCaravans>
+  <HH.Setting.venues.marketCaravans.Desc>Nombre de caravanes de marchands qui viennent le jour du marché (moins si peu de factions sont amicales).</HH.Setting.venues.marketCaravans.Desc>
+  <HH.Setting.venues.marketDays>Jours entre deux marchés</HH.Setting.venues.marketDays>
+  <HH.Setting.venues.marketDays.Desc>Intervalle moyen du grand marché, avec un peu de hasard.</HH.Setting.venues.marketDays.Desc>
+  <HH.Setting.venues.marketEnabled>Grand marché</HH.Setting.venues.marketEnabled>
+  <HH.Setting.venues.marketEnabled.Desc>De temps en temps, les factions amicales amènent simultanément plusieurs caravanes de marchands et des visiteurs de la journée. Ne se produit que si vous exploitez au moins un commerce.</HH.Setting.venues.marketEnabled.Desc>
+  <HH.Setting.venues.marketRenown>Renommée requise pour le marché</HH.Setting.venues.marketRenown>
+  <HH.Setting.venues.marketRenown.Desc>Renommée minimale (0 à 100) pour que les marchands et les visiteurs souhaitent organiser un marché chez vous. Sans système de renommée, la colonie compte comme neutre (50).</HH.Setting.venues.marketRenown.Desc>
+  <HH.Setting.venues.marketStalls>Étals de marché requis</HH.Setting.venues.marketStalls>
+  <HH.Setting.venues.marketStalls.Desc>Le grand marché n'a lieu que lorsque vous possédez ce nombre d'étals de marché indépendants (les marchands s'installent à leurs côtés). Avec moins d'étals, moins de caravanes viennent.</HH.Setting.venues.marketStalls.Desc>
+  <HH.Setting.venues.marketVisitors>Groupes de visiteurs par marché</HH.Setting.venues.marketVisitors>
+  <HH.Setting.venues.marketVisitors.Desc>Nombre de groupes de visiteurs de la journée qui viennent le jour du marché pour faire leurs achats dans vos commerces.</HH.Setting.venues.marketVisitors.Desc>
+  <HH.Setting.venues.maxPurchases>Achats par visiteur et par séjour</HH.Setting.venues.maxPurchases>
+  <HH.Setting.venues.maxPurchases.Desc>Un visiteur cesse de faire ses achats après ce nombre d'achats au cours d'un même séjour.</HH.Setting.venues.maxPurchases.Desc>
+  <HH.Setting.venues.nightBell>Sonnette de nuit</HH.Setting.venues.nightBell>
+  <HH.Setting.venues.nightBell.Desc>Les visiteurs peuvent sonner pour un commerce fermé. Les colons éveillés ayant le type de travail Service viennent l'ouvrir moyennant un supplément. Personne n'est réveillé.</HH.Setting.venues.nightBell.Desc>
+  <HH.Setting.venues.nightBellMin>Tarif minimum de la sonnette de nuit</HH.Setting.venues.nightBellMin>
+  <HH.Setting.venues.nightBellMin.Desc>Un service de sonnette ne coûte jamais moins que ce montant (en argent).</HH.Setting.venues.nightBellMin.Desc>
+  <HH.Setting.venues.nightBellSurcharge>Supplément de la sonnette de nuit</HH.Setting.venues.nightBellSurcharge>
+  <HH.Setting.venues.nightBellSurcharge.Desc>Part supplémentaire du prix que paient les visiteurs lorsqu'ils sonnent en dehors des heures d'ouverture.</HH.Setting.venues.nightBellSurcharge.Desc>
+  <HH.Setting.venues.nightBellWaitHours>Patience à la sonnette de nuit (heures)</HH.Setting.venues.nightBellWaitHours>
+  <HH.Setting.venues.nightBellWaitHours.Desc>Durée d'attente d'un visiteur après avoir sonné avant d'abandonner (« A sonné. Personne n'est venu. »).</HH.Setting.venues.nightBellWaitHours.Desc>
+  <HH.Setting.venues.nightClose>Fermeture du préréglage « Nuit »</HH.Setting.venues.nightClose>
+  <HH.Setting.venues.nightClose.Desc>Heure à laquelle ferme le préréglage « Nuit ».</HH.Setting.venues.nightClose.Desc>
+  <HH.Setting.venues.nightOpen>Ouverture du préréglage « Nuit »</HH.Setting.venues.nightOpen>
+  <HH.Setting.venues.nightOpen.Desc>Heure à laquelle s'ouvre le préréglage « Nuit ».</HH.Setting.venues.nightOpen.Desc>
+  <HH.Setting.venues.priceTolerance>Tolérance des visiteurs au prix</HH.Setting.venues.priceTolerance>
+  <HH.Setting.venues.priceTolerance.Desc>Ce que les visiteurs sont prêts à accepter. Au-dessus de 1, ils acceptent des prix plus élevés ; en dessous de 1, ils marchandent en tournant les talons. Suit le curseur de difficulté.</HH.Setting.venues.priceTolerance.Desc>
+  <HH.Setting.venues.selfService>Remise en libre-service</HH.Setting.venues.selfService>
+  <HH.Setting.venues.selfService.Desc>Les commerces qui n'ont pas besoin de personnel mais dont le comptoir est sans personne pratiquent une remise de ce montant (le visiteur va chercher lui-même tout ce qu'il achète).</HH.Setting.venues.selfService.Desc>
+  <HH.Setting.venues.shopDesire>Appétit des visiteurs pour les achats</HH.Setting.venues.shopDesire>
+  <HH.Setting.venues.shopDesire.Desc>Empressement des visiteurs à entrer dans les boutiques et les tavernes par rapport à leurs autres activités possibles. 0 = ils ne font jamais d'achats.</HH.Setting.venues.shopDesire.Desc>
+  <HH.Setting.venues.shopPrice>Niveau des prix en boutique</HH.Setting.venues.shopPrice>
+  <HH.Setting.venues.shopPrice.Desc>Multiplie la valeur marchande des biens vendus dans les boutiques et les tavernes, en plus du facteur de prix propre à chaque enseigne.</HH.Setting.venues.shopPrice.Desc>
+  <HH.Setting.venues.stallFee>Droit d'étal par marchand</HH.Setting.venues.stallFee>
+  <HH.Setting.venues.stallFee.Desc>Chaque caravane de marchands verse ce montant d'argent pour son étal le jour du marché (il rejoint la caisse de la colonie).</HH.Setting.venues.stallFee.Desc>
+  <HH.Setting.venues.tendHours>Heures par service</HH.Setting.venues.tendHours>
+  <HH.Setting.venues.tendHours.Desc>Durée pendant laquelle un colon s'occupe d'un commerce avant de chercher un autre travail (il cesse aussi à la fermeture).</HH.Setting.venues.tendHours.Desc>
+  <HH.Setting.venues.vendingPrice>Niveau des prix des distributeurs</HH.Setting.venues.vendingPrice>
+  <HH.Setting.venues.vendingPrice.Desc>Multiplie la valeur marchande des articles vendus par les distributeurs.</HH.Setting.venues.vendingPrice.Desc>
+  <HH.Setting.venues.waitForStaffTicks>Patience des visiteurs pour le personnel (ticks)</HH.Setting.venues.waitForStaffTicks>
+  <HH.Setting.venues.waitForStaffTicks.Desc>Durée pendant laquelle un visiteur attend qu'une personne vienne dans un commerce ouvert mais sans personnel, avant d'abandonner, contrarié.</HH.Setting.venues.waitForStaffTicks.Desc>
+  <HH.Venue.AlwaysOpen>ouvert en permanence</HH.Venue.AlwaysOpen>
+  <HH.Venue.Bargain>Affaire !</HH.Venue.Bargain>
+  <HH.Venue.BellRung>*ding*</HH.Venue.BellRung>
+  <HH.Venue.CheckCounter>Comptoir pour le tenancier</HH.Venue.CheckCounter>
+  <HH.Venue.CheckDrinks>Boissons en stock</HH.Venue.CheckDrinks>
+  <HH.Venue.CheckNoCounter>Pas de comptoir (facultatif) → le tenancier se tient à côté de l'enseigne</HH.Venue.CheckNoCounter>
+  <HH.Venue.CheckNoDrinks>Pas de boissons en stock → entreposez de la bière ou d'autres boissons dans la pièce</HH.Venue.CheckNoDrinks>
+  <HH.Venue.CheckNoStock>Aucune marchandise à vendre → placez une étagère ou une zone de stockage contenant des marchandises dans la pièce</HH.Venue.CheckNoStock>
+  <HH.Venue.CheckNoWorker>Personne n'a le type de travail Service activé</HH.Venue.CheckNoWorker>
+  <HH.Venue.CheckStock>Marchandises sur les étagères</HH.Venue.CheckStock>
+  <HH.Venue.CheckWorker>Un colon effectue du travail de Service</HH.Venue.CheckWorker>
+  <HH.Venue.ChooseType>Type de commerce</HH.Venue.ChooseType>
+  <HH.Venue.ChooseTypeDesc>Choisissez le type de commerce que constitue la pièce de cette enseigne : taverne, boutique, restaurant, casino, spa ou salon.</HH.Venue.ChooseTypeDesc>
+  <HH.Venue.Closed>fermé</HH.Venue.Closed>
+  <HH.Venue.Closes>Ferme à</HH.Venue.Closes>
+  <HH.Venue.ColonyMayTake>La colonie peut prendre des marchandises</HH.Venue.ColonyMayTake>
+  <HH.Venue.ColonyMayTakeDesc>Désactivé : les marchandises en vente dans cette pièce sont interdites à vos colons, si bien que personne n'emporte votre stock. Activé : les colons traitent les marchandises comme tout autre objet entreposé.</HH.Venue.ColonyMayTakeDesc>
+  <HH.Venue.ColonyMayTakeShort>la colonie peut prendre des marchandises</HH.Venue.ColonyMayTakeShort>
+  <HH.Venue.Current>actuel</HH.Venue.Current>
+  <HH.Venue.CustomersOnly>clients uniquement</HH.Venue.CustomersOnly>
+  <HH.Venue.Done>Terminé</HH.Venue.Done>
+  <HH.Venue.ForSale>À vendre</HH.Venue.ForSale>
+  <HH.Venue.GoodService>Service aimable</HH.Venue.GoodService>
+  <HH.Venue.GoodValue>Bon rapport qualité-prix</HH.Venue.GoodValue>
+  <HH.Venue.Hours>Horaires d'ouverture</HH.Venue.Hours>
+  <HH.Venue.HoursDesc>Définit les heures d'ouverture du commerce. Préréglages pour le jour, le soir, la nuit et ouvert en permanence.</HH.Venue.HoursDesc>
+  <HH.Venue.HoursHint>Une heure de fermeture antérieure à l'heure d'ouverture signifie que le commerce reste ouvert après minuit.</HH.Venue.HoursHint>
+  <HH.Venue.HoursTitle>Horaires d'ouverture</HH.Venue.HoursTitle>
+  <HH.Venue.LastOrders>dernières commandes</HH.Venue.LastOrders>
+  <HH.Venue.MarketFees>Les marchands versent {0} d'argent pour leurs étals.</HH.Venue.MarketFees>
+  <HH.Venue.MarketLabel>Jour de marché</HH.Venue.MarketLabel>
+  <HH.Venue.MarketText>La nouvelle s'est répandue : c'est jour de marché. {0} caravanes de marchands et {1} groupes de visiteurs venant de {2} sont en route vers votre colonie. Les marchands commerceront comme d'habitude dans leurs campements ; les visiteurs feront leurs achats dans vos boutiques et tavernes si elles sont ouvertes.\n\nGardez vos étagères approvisionnées et vos comptoirs tenus.</HH.Venue.MarketText>
+  <HH.Venue.NoRoom>Pas encore un commerce : l'enseigne a besoin d'une pièce fermée et couverte.</HH.Venue.NoRoom>
+  <HH.Venue.NoStaffState>ouvert, mais personne en service</HH.Venue.NoStaffState>
+  <HH.Venue.NoTypes>Aucun type de commerce disponible</HH.Venue.NoTypes>
+  <HH.Venue.Nobody>personne</HH.Venue.Nobody>
+  <HH.Venue.NobodyCameBell>A sonné. Personne n'est venu.</HH.Venue.NobodyCameBell>
+  <HH.Venue.NobodyCameStaff>A attendu un service. Personne n'est venu.</HH.Venue.NobodyCameStaff>
+  <HH.Venue.Off>désactivé</HH.Venue.Off>
+  <HH.Venue.On>activé</HH.Venue.On>
+  <HH.Venue.Open>ouvert</HH.Venue.Open>
+  <HH.Venue.Opens>Ouvre à</HH.Venue.Opens>
+  <HH.Venue.PresetAlways>Toujours</HH.Venue.PresetAlways>
+  <HH.Venue.PresetDay>Jour</HH.Venue.PresetDay>
+  <HH.Venue.PresetEvening>Soir</HH.Venue.PresetEvening>
+  <HH.Venue.PresetNight>Nuit</HH.Venue.PresetNight>
+  <HH.Venue.Price>Prix</HH.Venue.Price>
+  <HH.Venue.PriceDesc>Facteur de prix appliqué à tout ce que vend ce commerce. Les visiteurs sont rebutés par des prix trop élevés.</HH.Venue.PriceDesc>
+  <HH.Venue.PriceFactor>Facteur de prix</HH.Venue.PriceFactor>
+  <HH.Venue.PriceHint>Les visiteurs comparent le prix à la valeur que l'article représente pour eux. Les visiteurs aisés acceptent davantage. Les commerces sans personnel en service pratiquent des prix un peu plus bas (libre-service) ; un service de sonnette de nuit coûte plus cher. Gratuit signifie gratuit.</HH.Venue.PriceHint>
+  <HH.Venue.PriceLine>Prix</HH.Venue.PriceLine>
+  <HH.Venue.PriceTitle>Prix</HH.Venue.PriceTitle>
+  <HH.Venue.Pricey>Cher</HH.Venue.Pricey>
+  <HH.Venue.Rename>Renommer</HH.Venue.Rename>
+  <HH.Venue.RenameDesc>Donnez un nom à ce commerce.</HH.Venue.RenameDesc>
+  <HH.Venue.RenameTitle>Nommer ce commerce</HH.Venue.RenameTitle>
+  <HH.Venue.Reset>Utiliser le nom par défaut</HH.Venue.Reset>
+  <HH.Venue.Restock>Réapprovisionnement</HH.Venue.Restock>
+  <HH.Venue.RestockDesc>Laisse cette enseigne définir les zones de stockage de sa pièce pour accueillir vos marchandises en priorité Important, afin que les transporteurs gardent les étagères pleines. Sur option ; les anciens réglages reviennent lorsque vous la désactivez.</HH.Venue.RestockDesc>
+  <HH.Venue.RestockHint>Lorsque c'est activé, chaque zone de stockage de cette pièce (zones de stockage et étagères, qu'elles soient à vous ou non) accepte en priorité Important les marchandises cochées ci-dessous, afin que vos transporteurs approvisionnent la pièce. Les anciens réglages des zones reviennent lorsque vous désactivez cette option.</HH.Venue.RestockHint>
+  <HH.Venue.RestockNoShop>Ce commerce ne vend rien depuis sa pièce : il n'y a donc rien à réapprovisionner.</HH.Venue.RestockNoShop>
+  <HH.Venue.RestockSwitchOff>Réapprovisionnement ACTIVÉ – désactiver et rendre le stockage</HH.Venue.RestockSwitchOff>
+  <HH.Venue.RestockSwitchOn>Réapprovisionnement désactivé – activer</HH.Venue.RestockSwitchOn>
+  <HH.Venue.RestockTitle>Réapprovisionnement</HH.Venue.RestockTitle>
+  <HH.Venue.RippedOff>Arnaqué</HH.Venue.RippedOff>
+  <HH.Venue.Sales>Ventes du jour</HH.Venue.Sales>
+  <HH.Venue.SalesTotal>total</HH.Venue.SalesTotal>
+  <HH.Venue.Silver>argent</HH.Venue.Silver>
+  <HH.Venue.StacksWord>piles</HH.Venue.StacksWord>
+  <HH.Venue.Staff>En service</HH.Venue.Staff>
+  <HH.Venue.Tier.Budget>Économique</HH.Venue.Tier.Budget>
+  <HH.Venue.Tier.Charity>Charité</HH.Venue.Tier.Charity>
+  <HH.Venue.Tier.Discount>Remise</HH.Venue.Tier.Discount>
+  <HH.Venue.Tier.Free>Gratuit</HH.Venue.Tier.Free>
+  <HH.Venue.Tier.Luxury>Luxe</HH.Venue.Tier.Luxury>
+  <HH.Venue.Tier.Premium>Haut de gamme</HH.Venue.Tier.Premium>
+  <HH.Venue.Tier.Standard>Standard</HH.Venue.Tier.Standard>
+</LanguageData>

@@ -1,0 +1,5 @@
+{
+ "d:DesignationCategoryDef/HH_Bank.label": "은행",
+ "d:DesignationCategoryDef/HH_Bank.description": "은행의 현금자동입출금기, 창구, 야간 금고와 보험 사무실의 책상입니다.",
+ "d:ResearchTabDef/HH_Banking.label": "은행 업무"
+}

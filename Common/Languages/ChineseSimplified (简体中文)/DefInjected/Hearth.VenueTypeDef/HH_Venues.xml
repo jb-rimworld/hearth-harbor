@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Tavern.label>酒馆</HH_Venue_Tavern.label>
+  <HH_Venue_Tavern.description>客人在这里买一杯饮品并当场喝掉的房间。在货架或储存区放上啤酒或其他饮品；招牌或柜台后的酒保会保持营业。除非招牌另有说明，房间里的饮品只留给顾客。</HH_Venue_Tavern.description>
+  <HH_Venue_Shop.label>商店</HH_Venue_Shop.label>
+  <HH_Venue_Shop.description>客人在这里购买商品的房间。房间内货架和储存区里的所有东西都可出售，价格为市场价乘以招牌的价格系数。没有店员时，商店以小幅折扣自助经营。</HH_Venue_Shop.description>
+  <HH_Venue_Restaurant.label>餐厅</HH_Venue_Restaurant.label>
+  <HH_Venue_Restaurant.description>客人在这里落座用餐的房间。餐桌、厨房和服务员使它成为餐厅；菜品本身由厨房负责。</HH_Venue_Restaurant.description>
+  <HH_Venue_Casino.label>赌场</HH_Venue_Casino.label>
+  <HH_Venue_Casino.description>摆满牌桌、老虎机和荷官的房间。客人用银币参与机会游戏；庄家保留一个小而诚实的优势。</HH_Venue_Casino.description>
+  <HH_Venue_Spa.label>水疗馆</HH_Venue_Spa.label>
+  <HH_Venue_Spa.description>一个安静的房间，用于沐浴、蒸汽浴和休息。服务员负责保持毛巾温热；客人按次付费。</HH_Venue_Spa.description>
+  <HH_Venue_Lounge.label>休息室</HH_Venue_Lounge.label>
+  <HH_Venue_Lounge.description>带座位的候客室。发现营业场所关门或无人值守的客人会在这里等待，而不是堵在门口，并且等得更有耐心。始终开放，无需员工。</HH_Venue_Lounge.description>
+  <HH_Venue_Chapel.label>宾客礼拜堂</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>一个安静的房间，内设宾客祭坛，各种信仰的访客都会来此祈祷。宾客无需付费，但离开时会更加平静；带有一座精致祭坛和几排长椅的礼拜堂，是旅店的好邻居。白天始终开放，无需员工。</HH_Venue_Chapel.description>
+</LanguageData>

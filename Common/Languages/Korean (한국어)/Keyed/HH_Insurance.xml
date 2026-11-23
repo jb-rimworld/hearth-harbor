@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Ins.Slogan.1>클로백 상호보험. 든든하게 책임집니다.*  (*1조부터 무한대까지의 조항 참조)</HH.Ins.Slogan.1>
+  <HH.Ins.Slogan.2>마음의 평화, 분기별 납부.</HH.Ins.Slogan.2>
+  <HH.Ins.Slogan.3>사고는 일어납니다. 보험금은 가끔 나갑니다.</HH.Ins.Slogan.3>
+  <HH.Ins.Slogan.4>필요하실 때 곁에 있겠습니다. 영업시간 내에 한함.</HH.Ins.Slogan.4>
+  <HH.Ins.Slogan.5>모든 팔다리에는 가격이 있습니다. 저희가 미리 적어 두었습니다.</HH.Ins.Slogan.5>
+  <HH.Ins.Slogan.6>고객님의 청구는 저희에게 중요합니다. 잠시만 기다려 주십시오.</HH.Ins.Slogan.6>
+  <HH.Ins.Slogan.7>포괄적인 보장, 400쪽에 걸쳐 포괄적으로 설명드립니다.</HH.Ins.Slogan.7>
+  <HH.Ins.Slogan.8>대부분의 정착지가 프리미엄을 선택합니다. 대부분의 정착지는 아직 기다리는 중입니다.</HH.Ins.Slogan.8>
+  <HH.Ins.Tier.Bare>최소한만</HH.Ins.Tier.Bare>
+  <HH.Ins.Tier.Good>그럭저럭 충분함</HH.Ins.Tier.Good>
+  <HH.Ins.Tier.Premium>프리미엄 중의 프리미엄</HH.Ins.Tier.Premium>
+  <HH.Ins.Outcome.Pending>심사 중</HH.Ins.Outcome.Pending>
+  <HH.Ins.Outcome.Approved>승인</HH.Ins.Outcome.Approved>
+  <HH.Ins.Outcome.Partial>일부 승인</HH.Ins.Outcome.Partial>
+  <HH.Ins.Outcome.Denied>거절</HH.Ins.Outcome.Denied>
+  <HH.Ins.Stage.0>무사함</HH.Ins.Stage.0>
+  <HH.Ins.Stage.1>찰과상</HH.Ins.Stage.1>
+  <HH.Ins.Stage.2>불편함</HH.Ins.Stage.2>
+  <HH.Ins.Stage.3>상당히 재구성됨</HH.Ins.Stage.3>
+  <HH.Ins.Stage.4>대부분 서류 작업</HH.Ins.Stage.4>
+  <HH.Ins.Stage.5>완전하고 영구적임</HH.Ins.Stage.5>
+  <HH.Ins.Tab.Bank>보험</HH.Ins.Tab.Bank>
+  <HH.Ins.Tab.Shop>약관</HH.Ins.Tab.Shop>
+  <HH.Ins.Tab.Mine>내 약관 ({0})</HH.Ins.Tab.Mine>
+  <HH.Ins.Tab.Claims>청구 ({0})</HH.Ins.Tab.Claims>
+  <HH.Ins.Tab.FinePrint>세부 조항</HH.Ins.Tab.FinePrint>
+  <HH.Ins.Menu.Call>클로백 상호보험에 전화</HH.Ins.Menu.Call>
+  <HH.Ins.Btn.Accept>수락</HH.Ins.Btn.Accept>
+  <HH.Ins.Btn.Negotiate>협상</HH.Ins.Btn.Negotiate>
+  <HH.Ins.Btn.OpenDesk>클로백 창구 열기</HH.Ins.Btn.OpenDesk>
+  <HH.Ins.Btn.Dismiss>무시</HH.Ins.Btn.Dismiss>
+  <HH.Ins.Btn.Close>닫기</HH.Ins.Btn.Close>
+  <HH.Ins.Btn.Materials>은화 대신 자재로 받기</HH.Ins.Btn.Materials>
+  <HH.Ins.Source.Bank>고객님의 은행 계좌</HH.Ins.Source.Bank>
+  <HH.Ins.Source.Till>금고</HH.Ins.Source.Till>
+  <HH.Ins.Source.Silver>창고의 은화</HH.Ins.Source.Silver>
+  <HH.Ins.Source.Free>없음 (무료였습니다)</HH.Ins.Source.Free>
+  <HH.Ins.Source.PaidBank>고객님의 은행 계좌로</HH.Ins.Source.PaidBank>
+  <HH.Ins.Source.PaidTill>금고로</HH.Ins.Source.PaidTill>
+  <HH.Ins.Source.PaidCapsule>드롭 캡슐 속 은화 {0}</HH.Ins.Source.PaidCapsule>
+  <HH.Ins.Source.PaidMaterials>캡슐로 보낸 자재: {0}</HH.Ins.Source.PaidMaterials>
+  <HH.Ins.Sign.Off>이 게임에서 클로백 상호보험은 영업하지 않습니다.</HH.Ins.Sign.Off>
+  <HH.Ins.Sign.NoHolder>먼저 식민지 주민을 선택하십시오.</HH.Ins.Sign.NoHolder>
+  <HH.Ins.Sign.TooOld>이 식민지 주민은 이미 연금 수령 연령입니다. 연금 수령 연령에는 연금을 새로 들 수 없습니다. 그러라고 있는 제도입니다.</HH.Ins.Sign.TooOld>
+  <HH.Ins.Sign.Duplicate>고객님은 이미 이 약관을 보유하고 계십니다. 두 번 확인했습니다.</HH.Ins.Sign.Duplicate>
+  <HH.Ins.Sign.Debt>22조에 따라 저희가 받을 {0}을(를) 정산하실 때까지 신규 약관은 가입하실 수 없습니다.</HH.Ins.Sign.Debt>
+  <HH.Ins.Sign.NoMap>정착지를 찾을 수 없습니다. 이례적인 일입니다.</HH.Ins.Sign.NoMap>
+  <HH.Ins.Sign.Threat>적대 세력, 습격 또는 대형 화재가 진행 중일 때는 클로백 상호보험이 보장을 체결하지 않습니다. 저희 자신에게 불공정하게 굴고 싶지 않습니다.</HH.Ins.Sign.Threat>
+  <HH.Ins.Sign.CannotPay>{0}의 첫 분할금을 인출할 수 없었습니다. 저희도 빈 지갑은 보험에 들 수 없습니다.</HH.Ins.Sign.CannotPay>
+  <HH.Ins.Locked.Insurance>연구 프로젝트 '보험'이 필요합니다</HH.Ins.Locked.Insurance>
+  <HH.Ins.Locked.Actuarial>연구 프로젝트 '보험수리학'이 필요합니다</HH.Ins.Locked.Actuarial>
+  <HH.Ins.Log.Signed>{0} 가입 ({1}).</HH.Ins.Log.Signed>
+  <HH.Ins.Log.Ended>{0} 종료: {1}.</HH.Ins.Log.Ended>
+  <HH.Ins.Log.Filed>청구 #{0} 접수: {1}.</HH.Ins.Log.Filed>
+  <HH.Ins.Log.Decided>청구 #{0} 결정: {1} ({2}).</HH.Ins.Log.Decided>
+  <HH.Ins.Log.Paid>청구 #{0} 지급: {1}.</HH.Ins.Log.Paid>
+  <HH.Ins.Log.Negotiated>청구 #{0}, {1}라운드: {2}.</HH.Ins.Log.Negotiated>
+  <HH.Ins.Log.CancelFiled>{0}: 해지 신청 접수, {1} 후 효력 발생.</HH.Ins.Log.CancelFiled>
+  <HH.Ins.Log.Retained>{0}: {1} 할인 적용으로 유지됨.</HH.Ins.Log.Retained>
+  <HH.Ins.Log.Settled>22조 정산금 지급: {0}.</HH.Ins.Log.Settled>
+  <HH.Ins.Log.Regrowth>청구 #{0}: 신체 일부가 다시 자랐습니다. {1} 환수.</HH.Ins.Log.Regrowth>
+  <HH.Ins.Claim.Several>건물 {0}개</HH.Ins.Claim.Several>
+  <HH.Ins.Claim.Death>{0}의 사망</HH.Ins.Claim.Death>
+  <HH.Ins.Claim.Limb>{0}의 사고</HH.Ins.Claim.Limb>
+  <HH.Ins.Claim.Retirement>{0}의 연금</HH.Ins.Claim.Retirement>
+  <HH.Ins.Claim.BedRest>병상 대기 일수</HH.Ins.Claim.BedRest>
+  <HH.Ins.Claim.Scratches>길 위의 부상 {0}건</HH.Ins.Claim.Scratches>
+  <HH.Ins.Claim.Crop>{0}(으)로 인한 작물 피해</HH.Ins.Claim.Crop>
+  <HH.Ins.End.Cancelled>고객님의 해지로 종료</HH.Ins.End.Cancelled>
+  <HH.Ins.End.Holder>피보험자가 더 이상 우리와 함께하지 않습니다</HH.Ins.End.Holder>
+  <HH.Ins.End.Insurer>클로백 상호보험의 해지로 종료</HH.Ins.End.Insurer>
+  <HH.Ins.End.Lapsed>보험료 미납</HH.Ins.End.Lapsed>
+  <HH.Ins.Clause.Exclusion>이것은 결정이 아니라 면책 조항입니다. 저희는 그저 읽어 드릴 뿐입니다.</HH.Ins.Clause.Exclusion>
+  <HH.Ins.Quote.Damage>분기당 예상 피해액: {0}</HH.Ins.Quote.Damage>
+  <HH.Ins.Quote.Payout>예상 지급 비율: {0}</HH.Ins.Quote.Payout>
+  <HH.Ins.Quote.Loading>할증: +{0}</HH.Ins.Quote.Loading>
+  <HH.Ins.Quote.NoClaims>무사고 할인: -{0}</HH.Ins.Quote.NoClaims>
+  <HH.Ins.Quote.Bundle>묶음 할인: -{0}</HH.Ins.Quote.Bundle>
+  <HH.Ins.Quote.Riders>특약: +{0}</HH.Ins.Quote.Riders>
+  <HH.Ins.Quote.Discount>유지 할인: -{0}</HH.Ins.Quote.Discount>
+  <HH.Ins.Bd.Grade>장해 등급 {0} % ({1}).</HH.Ins.Bd.Grade>
+  <HH.Ins.Bd.Part>{0}: {1} %. {2}</HH.Ins.Bd.Part>
+  <HH.Ins.Bd.PreExisting>차감: 가입 당시 이미 있던 {0} % (9조).</HH.Ins.Bd.PreExisting>
+  <HH.Ins.Bd.PartialNotPaid>'최소한만' 등급에서는 일부 장해를 지급하지 않습니다.</HH.Ins.Bd.PartialNotPaid>
+  <HH.Ins.Bd.BelowThreshold>등급이 고객님 등급의 기준치 {0} % 미만입니다. 보험금: 은화 0. 축하드립니다.</HH.Ins.Bd.BelowThreshold>
+  <HH.Ins.Bd.Progression>{0}: 진행 상태에 따라 기본 보험금 {2}의 {1}을 지급합니다. 세부 조항 적용 전 보험금: {3}.</HH.Ins.Bd.Progression>
+  <HH.Ins.Bd.Contributed>같은 부위의 오래된 질환으로 보험금이 25 % 삭감됩니다 (9조, 과부킹 기준).</HH.Ins.Bd.Contributed>
+  <HH.Ins.Bd.Death>사망 보험금: {0}.</HH.Ins.Bd.Death>
+  <HH.Ins.Bd.DeathAssess>청구 #{0}은 사망으로 종료되었습니다 (23조): 둘 중 높은 금액을 지급합니다.</HH.Ins.Bd.DeathAssess>
+  <HH.Ins.Bd.Loss>손실 품목 {0}개, 가치 {1}.</HH.Ins.Bd.Loss>
+  <HH.Ins.Bd.Replacement>재조달 가치 기준 {0}, 고객님 자부담 {1}.</HH.Ins.Bd.Replacement>
+  <HH.Ins.Bd.UnderInsured>보험 가액 부족: 보험금액 {0}, 실제 가치 {1}. 저희는 그중 {2}을(를) 자랑스럽게 지급합니다.</HH.Ins.Bd.UnderInsured>
+  <HH.Ins.Bd.Gross>세부 조항 적용 전 보험금: {0}.</HH.Ins.Bd.Gross>
+  <HH.Ins.Bd.Flat>손실 {0}, 지급액 {1}: {2}.</HH.Ins.Bd.Flat>
+  <HH.Ins.Bd.Kulanz>호의적 배려 (연 1회, 프리미엄 한정). 익숙해지지 마십시오.</HH.Ins.Bd.Kulanz>
+  <HH.Ins.Bd.Legal>법률 보호 특약 덕분에 이 청구를 거절하는 데 덜 적극적이었습니다.</HH.Ins.Bd.Legal>
+  <HH.Ins.Bd.Offset>이전 환수액과 상계: {0}.</HH.Ins.Bd.Offset>
+  <HH.Ins.Letter.From.Claims>보상부, 지하 2층</HH.Ins.Letter.From.Claims>
+  <HH.Ins.Letter.From.Neutral>클로백 상호보험</HH.Ins.Letter.From.Neutral>
+  <HH.Ins.Letter.Welcome.Title>클로백 상호보험에 오신 것을 환영합니다: {0}</HH.Ins.Letter.Welcome.Title>
+  <HH.Ins.Letter.Welcome.Body>친애하는 계약자님께,
+
+{1}의 {0}을(를) 선택해 주셔서 감사합니다. 보험료 {2}은(는) {3}일마다 자동으로 인출됩니다. 고객님께서는 아무것도 하실 필요가 없습니다. 원래 그런 취지입니다.</HH.Ins.Letter.Welcome.Body>
+  <HH.Ins.Letter.Welcome.Waiting>보장은 {0}일의 대기 기간 후에 시작됩니다. 대기 기간은 보장이 시작될 때 함께 시작됩니다. 1조를 참조하십시오.</HH.Ins.Letter.Welcome.Waiting>
+  <HH.Ins.Letter.Welcome.Riders>고객님의 시간을 아껴 드리고자 다음 특약이 함께 포함되었습니다: {0}. 원칙적으로는 창구에서 언제든지 제외하실 수 있습니다.</HH.Ins.Letter.Welcome.Riders>
+  <HH.Ins.Letter.Welcome.Paid>첫 분할금은 {0}에서 인출되었습니다.</HH.Ins.Letter.Welcome.Paid>
+  <HH.Ins.Letter.Filed.Title>청구 #{0} 접수 완료</HH.Ins.Letter.Filed.Title>
+  <HH.Ins.Letter.Filed.Body>{2}에 따른 고객님의 청구 #{0} ({1})을(를) 접수했습니다. 고객님의 청구는 저희에게 중요합니다. 보상부에서 사안의 경위에 따라 1~3일 내에 검토하겠습니다.</HH.Ins.Letter.Filed.Body>
+  <HH.Ins.Letter.Filed.Death>삼가 애도를 표합니다. 청구 ({0})가 접수되었으며 세심하게 처리하겠습니다.</HH.Ins.Letter.Filed.Death>
+  <HH.Ins.Letter.Filed.Assessment>사고 보험은 사고 후 {0}, 피해가 안정된 뒤에 평가합니다. 오늘 기준 보험금 예상액: {1}.</HH.Ins.Letter.Filed.Assessment>
+  <HH.Ins.Letter.Filed.Waiting>사건이 대기 기간 중에 발생했음을 알려 드립니다. 유감스럽지만 말씀드립니다.</HH.Ins.Letter.Filed.Waiting>
+  <HH.Ins.Letter.Decision.TitleApproved>청구 #{0}: 승인</HH.Ins.Letter.Decision.TitleApproved>
+  <HH.Ins.Letter.Decision.TitlePartial>청구 #{0}: 일부 승인</HH.Ins.Letter.Decision.TitlePartial>
+  <HH.Ins.Letter.Decision.TitleDenied>청구 #{0}: 거절</HH.Ins.Letter.Decision.TitleDenied>
+  <HH.Ins.Letter.Decision.Approved>좋은 소식입니다. 고객님의 청구가 승인되었습니다: {0}.</HH.Ins.Letter.Decision.Approved>
+  <HH.Ins.Letter.Decision.Partial>고객님의 청구는 일부 승인되었습니다: {1} 중 {0}. 승인한 부분에 대해 저희는 매우 자랑스럽게 생각합니다.</HH.Ins.Letter.Decision.Partial>
+  <HH.Ins.Letter.Decision.Denied>신중히 검토한 결과, 시간이 다소 걸렸으나 고객님의 청구는 거절되었습니다.</HH.Ins.Letter.Decision.Denied>
+  <HH.Ins.Letter.Decision.DeniedHow>지급되는 금액은 없습니다. {0}</HH.Ins.Letter.Decision.DeniedHow>
+  <HH.Ins.Letter.Decision.CanNegotiate>10일 이내에 협상하실 수 있습니다. 저희 문은 열려 있습니다, 어떤 의미에서는요.</HH.Ins.Letter.Decision.CanNegotiate>
+  <HH.Ins.Letter.Decision.PayNow>지급은 즉시 이루어집니다.</HH.Ins.Letter.Decision.PayNow>
+  <HH.Ins.Letter.Decision.PayLater>{0} 후 지급됩니다. 처리 기간은 약속이 아니라 바람입니다.</HH.Ins.Letter.Decision.PayLater>
+  <HH.Ins.Letter.Decision.InKind>은화 대신 캡슐로 건축 자재를 받으실 수도 있습니다 (창구를 여십시오).</HH.Ins.Letter.Decision.InKind>
+  <HH.Ins.Letter.Clause.Cited>사유: {0}</HH.Ins.Letter.Clause.Cited>
+  <HH.Ins.Letter.Clause.Neutral>결정 근거: {0}.</HH.Ins.Letter.Clause.Neutral>
+  <HH.Ins.Letter.Paid.Title>청구 #{0}: 지급 완료</HH.Ins.Letter.Paid.Title>
+  <HH.Ins.Letter.Paid.Body>청구 #{0}이(가) 지급되었습니다: {1}, {2}. 고객님께서 함께해 주셔서 감사합니다. 다음 보험료 산정 때 기억하겠습니다.</HH.Ins.Letter.Paid.Body>
+  <HH.Ins.Letter.Paid.Neutral>보험금 {0}이(가) 지급되었습니다, {1}. 힘내시길 바랍니다.</HH.Ins.Letter.Paid.Neutral>
+  <HH.Ins.Letter.Ended.Title>{0}: 종료</HH.Ins.Letter.Ended.Title>
+  <HH.Ins.Letter.Ended.Body>고객님의 약관 {0}이(가) 종료되었습니다: {1}.
+
+{2}</HH.Ins.Letter.Ended.Body>
+  <HH.Ins.Letter.Ended.Debt>22조에 따른 환수금 {0}이(가) 남아 있습니다. 신규 약관 가입 전에 먼저 정산하셔야 합니다.</HH.Ins.Letter.Ended.Debt>
+  <HH.Ins.Letter.Missed.Title>{0}: 보험료 미수령</HH.Ins.Letter.Missed.Title>
+  <HH.Ins.Letter.Missed.Body>{0}의 {1}을(를) 인출하지 못했습니다. 친절한 안내입니다: 내일 다시 시도하고, 그다음 날도 시도하겠습니다. 그 후에는 더 이상 친절하지 않을 것입니다.</HH.Ins.Letter.Missed.Body>
+  <HH.Ins.Letter.Lapsed.Title>{0}: 실효</HH.Ins.Letter.Lapsed.Title>
+  <HH.Ins.Letter.Lapsed.Body>고객님의 약관 {0}이(가) 연속 3회 미납(매회 {1})으로 실효되었습니다. 보장이 종료되었습니다. 이 사실을 적는 것은 저희에게도 슬픈 일이지만, 청구서를 보내는 것은 효율적인 일입니다.</HH.Ins.Letter.Lapsed.Body>
+  <HH.Ins.Letter.Premium.Title>{0}: 보험료 조정</HH.Ins.Letter.Premium.Title>
+  <HH.Ins.Letter.Premium.Body>{0}의 보험료가 고객님의 사정을 반영하여 분기당 {1}에서 {2}(으)로 조정되었습니다. 5일 동안은 즉시 해지하실 수 있습니다. 법이 요구하기 때문에 알려 드립니다.</HH.Ins.Letter.Premium.Body>
+  <HH.Ins.Letter.Regrowth.Title>{0}: 신체 일부가 다시 자랐습니다</HH.Ins.Letter.Regrowth.Title>
+  <HH.Ins.Letter.Regrowth.Body>{0}의 일부가 다시 자랐다는 소식을 듣고 기뻤습니다. 저희는 {1}을(를) 환수합니다. {2} {3}</HH.Ins.Letter.Regrowth.Body>
+  <HH.Ins.Letter.Regrowth.Offset>이 금액은 향후 보험금과 상계됩니다.</HH.Ins.Letter.Regrowth.Offset>
+  <HH.Ins.Letter.Regrowth.Debt>미정산 채무로 남아 있으며, 정산 전까지 신규 약관은 가입하실 수 없습니다.</HH.Ins.Letter.Regrowth.Debt>
+  <HH.Ins.Letter.Renew.Title>{0}: 갱신 안내</HH.Ins.Letter.Renew.Title>
+  <HH.Ins.Letter.Renew.Body>고객님의 약관 {0}이(가) 3일 후 갱신됩니다. {1}</HH.Ins.Letter.Renew.Body>
+  <HH.Ins.Letter.Retro.Title>묶음 할인 재계산</HH.Ins.Letter.Retro.Title>
+  <HH.Ins.Letter.Retro.Body>고객님께서 탈퇴하셨으므로 현재 분기의 묶음 할인이 재계산되었습니다. {0}을(를) 인출했습니다. 마지막 페이지에 있습니다.</HH.Ins.Letter.Retro.Body>
+  <HH.Ins.Letter.Uncovered.Title>보장받으실 수 있었습니다.</HH.Ins.Letter.Uncovered.Title>
+  <HH.Ins.Letter.Uncovered.Body>{0}의 손실을 확인했습니다. 보험에 가입되어 있지 않았습니다. {1}이(가) 기꺼이 도와드렸을 것입니다. 지금도 도와드릴 수 있습니다, 보험료만 내시면요.</HH.Ins.Letter.Uncovered.Body>
+  <HH.Ins.Letter.Year.Title>고객님의 클로백 한 해</HH.Ins.Letter.Year.Title>
+  <HH.Ins.Letter.Year.Intro>클로백 상호보험과 함께한 한 해: 활성 약관 {1}건에 대해 보험료 {0}. 저희 영업 기법이 고객님께 얼마나 들었는지 보여 드립니다.</HH.Ins.Letter.Year.Intro>
+  <HH.Ins.Letter.Year.Trick>{0}: 미리 체크된 특약 ({1})으로 {2}이(가) 발생했습니다.</HH.Ins.Letter.Year.Trick>
+  <HH.Ins.Letter.Year.Total>합계 {0}, 연간 보험료의 {1}에 해당합니다 (상한: {2}).</HH.Ins.Letter.Year.Total>
+  <HH.Ins.Letter.Year.Credit>호의적 환급: {0}을(를) 고객님께 되돌려 드립니다, {1}.</HH.Ins.Letter.Year.Credit>
+  <HH.Ins.Letter.Year.NoCredit>모든 금액이 상한 이내입니다. 저희는 이를 공정하다고 부릅니다.</HH.Ins.Letter.Year.NoCredit>
+  <HH.Ins.Upsell.Title>클로백 상호보험 추천</HH.Ins.Upsell.Title>
+  <HH.Ins.Upsell.Body>{1}의 고객님의 {0}은(는) 훌륭합니다. 대부분의 정착지가 프리미엄을 선택합니다.</HH.Ins.Upsell.Body>
+  <HH.Ins.Neg.Title>청구 #{0} 협상 중</HH.Ins.Neg.Title>
+  <HH.Ins.Neg.Lead>{0}. 현재 제시안: {1} (청구 가치 {2}). 최대 3라운드. 어조를 고르십시오.</HH.Ins.Neg.Lead>
+  <HH.Ins.Neg.Negotiator>담당 협상가: {0} (협상 {1})</HH.Ins.Neg.Negotiator>
+  <HH.Ins.Neg.NoNegotiator>지금은 정착지의 누구도 대화할 수 없습니다.</HH.Ins.Neg.NoNegotiator>
+  <HH.Ins.Neg.Rounds>남은 라운드: {0}</HH.Ins.Neg.Rounds>
+  <HH.Ins.Neg.Approach.Decency>상식에 호소하기</HH.Ins.Neg.Approach.Decency>
+  <HH.Ins.Neg.Approach.Quote>계약서 조항을 그대로 되짚기</HH.Ins.Neg.Approach.Quote>
+  <HH.Ins.Neg.Approach.Lawyers>변호사 언급하기</HH.Ins.Neg.Approach.Lawyers>
+  <HH.Ins.Neg.HintDecency>정중하고 평범하게.</HH.Ins.Neg.HintDecency>
+  <HH.Ins.Neg.HintQuote>해석의 여지가 있는 조항에 가장 잘 먹힙니다. 면책 조항에는 소용이 없습니다.</HH.Ins.Neg.HintQuote>
+  <HH.Ins.Neg.HintLawyers>법률 보호 특약이 고객님 편입니다. Brix &amp; Partners는 분쟁을 사랑합니다.</HH.Ins.Neg.HintLawyers>
+  <HH.Ins.Neg.HintNoLawyers>법률 보호 특약이 없습니다. 그들이 알아챌 것입니다.</HH.Ins.Neg.HintNoLawyers>
+  <HH.Ins.Neg.Odds>가능성: {0}</HH.Ins.Neg.Odds>
+  <HH.Ins.Neg.Odds.Slim>희박</HH.Ins.Neg.Odds.Slim>
+  <HH.Ins.Neg.Odds.Fair>보통</HH.Ins.Neg.Odds.Fair>
+  <HH.Ins.Neg.Odds.Decent>괜찮음</HH.Ins.Neg.Odds.Decent>
+  <HH.Ins.Neg.Odds.Good>좋음</HH.Ins.Neg.Odds.Good>
+  <HH.Ins.Neg.Odds.Excellent>매우 좋음</HH.Ins.Neg.Odds.Excellent>
+  <HH.Ins.Neg.Try>이렇게 시도</HH.Ins.Neg.Try>
+  <HH.Ins.Neg.Won>성공</HH.Ins.Neg.Won>
+  <HH.Ins.Neg.Part>일부 성공</HH.Ins.Neg.Part>
+  <HH.Ins.Neg.Lost>실패</HH.Ins.Neg.Lost>
+  <HH.Ins.Neg.Success>그들이 물러섰습니다. 아마도 처음일 것입니다. 전액 보험금은 고객님의 것입니다: {0}.</HH.Ins.Neg.Success>
+  <HH.Ins.Neg.Partial>한숨 끝에 {0}을(를) 제시합니다 (보험금의 {1}). 받으시거나 다시 시도하십시오.</HH.Ins.Neg.Partial>
+  <HH.Ins.Neg.Fail>보상부는 고객님의 의견에 감사드리며 결정을 유지합니다.</HH.Ins.Neg.Fail>
+  <HH.Ins.Neg.NotPossible>이 청구는 더 이상 협상할 수 없습니다.</HH.Ins.Neg.NotPossible>
+  <HH.Ins.Neg.Cancelled>고객님께서 약관에 대해 무례하게 말씀하셨으므로 클로백 상호보험은 고객님과 이별하기로 결정했습니다. 약관이 해지됩니다.</HH.Ins.Neg.Cancelled>
+  <HH.Ins.Neg.Free>이 난이도에서는 협상에 비용이 전혀 들지 않습니다.</HH.Ins.Neg.Free>
+  <HH.Ins.Neg.RiskHard>더 어려운 난이도에서는 세 번째 협상 라운드가 실패하면 보험사가 보험 계약을 해지할 수 있습니다.</HH.Ins.Neg.RiskHard>
+  <HH.Ins.Cancel.Title>보험 해지</HH.Ins.Cancel.Title>
+  <HH.Ins.Cancel.Back>그만두기</HH.Ins.Cancel.Back>
+  <HH.Ins.Cancel.Confirm>양식 C-7 제출</HH.Ins.Cancel.Confirm>
+  <HH.Ins.Cancel.When>해지는 약 {0}일 뒤에 효력이 발생합니다. 제출 후 최소 {1}일이 지난 뒤 맞이하는 첫 분기 전환 시점에 적용됩니다.</HH.Ins.Cancel.When>
+  <HH.Ins.Cancel.When.Special>특별 해지: 정산된 보상 청구 또는 보험료 인상을 사유로 즉시 효력이 발생합니다.</HH.Ins.Cancel.When.Special>
+  <HH.Ins.Cancel.Bundle>해지하면 다른 보험료가 {0} 오릅니다. {1}</HH.Ins.Cancel.Bundle>
+  <HH.Ins.Cancel.Bundle.Future>묶음 할인은 지금부터 줄어들며, 소급되지는 않습니다.</HH.Ins.Cancel.Bundle.Future>
+  <HH.Ins.Cancel.Bundle.Retro>현재 분기의 할인액이 다시 계산되어 청구됩니다.</HH.Ins.Cancel.Bundle.Retro>
+  <HH.Ins.Cancel.FormNote>해지에는 양식 C-7이 필요합니다. 가끔 반려되기도 합니다. {0}</HH.Ins.Cancel.FormNote>
+  <HH.Ins.Cancel.Owed>이 보험의 미결 환수금: {0}. 최종 정산 때 처리됩니다.</HH.Ins.Cancel.Owed>
+  <HH.Ins.Cancel.Filed>해지 신청이 접수되었습니다. {0} 뒤에 효력이 발생합니다. 떠나셔서 아쉽고, 언젠가 다시 뵙기를 바랍니다.</HH.Ins.Cancel.Filed>
+  <HH.Ins.Cancel.Special>특별 해지가 접수되었습니다. 보험은 지금 종료됩니다.</HH.Ins.Cancel.Special>
+  <HH.Ins.Cancel.FormErrorSoft>양식 C-7이 양식 오류로 반려되었습니다. 저희가 대신 다시 제출해 두었으니 기한은 안전합니다. 천만에요.</HH.Ins.Cancel.FormErrorSoft>
+  <HH.Ins.Cancel.FormErrorHard>양식 C-7이 오류(잉크 색상)로 반려되었습니다. 기한을 넘겨 한 분기 밀립니다. 더 드릴 말씀은 없습니다.</HH.Ins.Cancel.FormErrorHard>
+  <HH.Ins.Retention.Title>떠나시기 전에</HH.Ins.Retention.Title>
+  <HH.Ins.Retention.Title2>한 가지만 더</HH.Ins.Retention.Title2>
+  <HH.Ins.Retention.Title3>데즈먼드 씨가 연결되었습니다</HH.Ins.Retention.Title3>
+  <HH.Ins.Retention.From>데즈먼드 탤리, 선임 고객 유지 담당자</HH.Ins.Retention.From>
+  <HH.Ins.Retention.Body>{0}이(가) 떠나시는 것이 안타깝습니다. 보험료를 {1} 낮춰 {2}분기 동안 적용해 드리면 어떨까요? 솔직한 제안이고 조건도 없습니다. (조건이 조금 있긴 합니다. 아주 얇은 것들이라서요.)</HH.Ins.Retention.Body>
+  <HH.Ins.Retention.Body2>좋은 제안이었습니다. 이번 제안은 더 좋습니다: {1} 할인을 {0}에 대해 {2}분기 동안 드리는 것입니다. 이것을 함정으로 생각하지 말아 주십시오.</HH.Ins.Retention.Body2>
+  <HH.Ins.Retention.Body3>담당 파일을 전달받았습니다. {0}, {1} 할인, {2}분기. 해지 건은 휴가 중인 동료에게 제가 직접 넘기겠습니다.</HH.Ins.Retention.Body3>
+  <HH.Ins.Retention.MinTerm>할인에는 새로운 최소 계약 기간이 따릅니다. 기간이 끝날 때까지는 해지할 수 없습니다.</HH.Ins.Retention.MinTerm>
+  <HH.Ins.Retention.Keep>{0} 할인된 조건으로 보험 유지하기</HH.Ins.Retention.Keep>
+  <HH.Ins.Retention.Still>아니요, 그래도 해지하겠습니다</HH.Ins.Retention.Still>
+  <HH.Ins.Retention.Kept>다시 오신 것을 환영합니다. 할인율은 {0}이고, {1}분기 동안 적용됩니다.</HH.Ins.Retention.Kept>
+  <HH.Ins.UI.NoGame>클로백 뮤추얼은 게임 밖에서는 문을 닫습니다.</HH.Ins.UI.NoGame>
+  <HH.Ins.UI.Footer>보험은 약속입니다. 저희는 서면으로 된 부분만 지킵니다.</HH.Ins.UI.Footer>
+  <HH.Ins.UI.Spendable>결제에 사용할 금액: {0}</HH.Ins.UI.Spendable>
+  <HH.Ins.UI.PayFrom>보험료는 {0}에서 인출됩니다.</HH.Ins.UI.PayFrom>
+  <HH.Ins.UI.Running>현재 보험료: 하루 {0}</HH.Ins.UI.Running>
+  <HH.Ins.UI.Bundle.Title>묶음:</HH.Ins.UI.Bundle.Title>
+  <HH.Ins.UI.Bundle.None>첫 번째 보험이 가장 비쌉니다. 세 번째 보험부터는 전체 보험료의 10%를 할인해 드립니다.</HH.Ins.UI.Bundle.None>
+  <HH.Ins.UI.Bundle.Some>유효한 보험 {0}건, {1} 할인. 세 번째 보험에는 {2} 할인이 적용됩니다.</HH.Ins.UI.Bundle.Some>
+  <HH.Ins.UI.Bundle.Full>유효한 보험 {0}건: 전체 보험료 {1} 할인.</HH.Ins.UI.Bundle.Full>
+  <HH.Ins.UI.Bundle.Retro>(해지하면 현재 분기가 다시 계산됩니다.)</HH.Ins.UI.Bundle.Retro>
+  <HH.Ins.UI.Covers>보장 내용:</HH.Ins.UI.Covers>
+  <HH.Ins.UI.Badge>대부분의 정착지가 프리미엄을 선택합니다</HH.Ins.UI.Badge>
+  <HH.Ins.UI.Price>{0}, {1}일마다</HH.Ins.UI.Price>
+  <HH.Ins.UI.Price.Travel>1인당, 이동일마다 {0}</HH.Ins.UI.Price.Travel>
+  <HH.Ins.UI.Price.Tip>가격이 정해지는 방식
+{0}
+
+분기당: {1}</HH.Ins.UI.Price.Tip>
+  <HH.Ins.UI.Mech.Property>자기 지분 {0}, 가치의 {1}을(를) 지급합니다.</HH.Ins.UI.Mech.Property>
+  <HH.Ins.UI.Mech.Person>장애율 {0}%부터, 보장 금액의 최대 {1}까지 지급합니다.</HH.Ins.UI.Mech.Person>
+  <HH.Ins.UI.Pay.Instant>즉시 지급됩니다.</HH.Ins.UI.Pay.Instant>
+  <HH.Ins.UI.Pay.Days>{0}~{1}일 안에 지급됩니다.</HH.Ins.UI.Pay.Days>
+  <HH.Ins.UI.SignNow>지금 서명</HH.Ins.UI.SignNow>
+  <HH.Ins.UI.Signed>서명 완료</HH.Ins.UI.Signed>
+  <HH.Ins.UI.SignedOther>{0} 보유 중</HH.Ins.UI.SignedOther>
+  <HH.Ins.UI.SignedMsg>{0}({1}) 서명 완료. 클로백 뮤추얼에 오신 것을 환영합니다.</HH.Ins.UI.SignedMsg>
+  <HH.Ins.UI.For>대상: {0}</HH.Ins.UI.For>
+  <HH.Ins.UI.Insured>피보험자</HH.Ins.UI.Insured>
+  <HH.Ins.UI.SumProperty>보험 금액: {0}</HH.Ins.UI.SumProperty>
+  <HH.Ins.UI.SumPerson>기본 보험 금액: {0}</HH.Ins.UI.SumPerson>
+  <HH.Ins.UI.SumCap>건당 상한: {0}</HH.Ins.UI.SumCap>
+  <HH.Ins.UI.Customize>맞춤 설정</HH.Ins.UI.Customize>
+  <HH.Ins.UI.Riders.Hidden>특약 {0}개가 자동으로 선택되었습니다.</HH.Ins.UI.Riders.Hidden>
+  <HH.Ins.UI.Riders.Pre>(자동 선택됨)</HH.Ins.UI.Riders.Pre>
+  <HH.Ins.UI.Riders.Sum>특약: +{0}</HH.Ins.UI.Riders.Sum>
+  <HH.Ins.UI.Riders.BasicOnly>기본만</HH.Ins.UI.Riders.BasicOnly>
+  <HH.Ins.UI.PremiumPlus>프리미엄 플러스 (출시 예정)</HH.Ins.UI.PremiumPlus>
+  <HH.Ins.UI.FinePrint>약관</HH.Ins.UI.FinePrint>
+  <HH.Ins.UI.Fine.Intro>{0}의 약관 (편의를 위해 요약):</HH.Ins.UI.Fine.Intro>
+  <HH.Ins.UI.Fine.Tail>전체 약관은 저희 슬로건에 나오는 400쪽짜리 문서입니다. 약관 탭도 함께 참고하십시오.</HH.Ins.UI.Fine.Tail>
+  <HH.Ins.UI.Mine.None>아직 가입한 보험이 없습니다. 이것만큼은 확실합니다.</HH.Ins.UI.Mine.None>
+  <HH.Ins.UI.Mine.Sum>보험 금액: {0}</HH.Ins.UI.Mine.Sum>
+  <HH.Ins.UI.Mine.NoClaims>무사고 등급 {0} (-{1})</HH.Ins.UI.Mine.NoClaims>
+  <HH.Ins.UI.Mine.Waiting>대기 기간: {0} 남음</HH.Ins.UI.Mine.Waiting>
+  <HH.Ins.UI.Mine.Discount>유지 할인 -{0}</HH.Ins.UI.Mine.Discount>
+  <HH.Ins.UI.Mine.Owed>미결 환수금 {0}</HH.Ins.UI.Mine.Owed>
+  <HH.Ins.UI.Mine.Paid>납입 보험료: {0}  ·  수령 보험금: {1}</HH.Ins.UI.Mine.Paid>
+  <HH.Ins.UI.Mine.Ended>종료일: {0}</HH.Ins.UI.Mine.Ended>
+  <HH.Ins.UI.Mine.Upsell>대부분의 정착지가 프리미엄을 선택합니다.</HH.Ins.UI.Mine.Upsell>
+  <HH.Ins.UI.Mine.CancelLink>보험 해지</HH.Ins.UI.Mine.CancelLink>
+  <HH.Ins.UI.Mine.CancelPending>해지는 {0} 뒤에 효력이 발생합니다</HH.Ins.UI.Mine.CancelPending>
+  <HH.Ins.UI.Mine.FormError>(양식 오류)</HH.Ins.UI.Mine.FormError>
+  <HH.Ins.UI.Mine.Withdraw>해지 철회</HH.Ins.UI.Mine.Withdraw>
+  <HH.Ins.UI.Mine.Foot>보험은 자동으로 갱신됩니다(31조). 특별 해지: 정산된 보상 청구나 보험료 인상 뒤에는 5일 이내에 즉시 해지할 수 있습니다.</HH.Ins.UI.Mine.Foot>
+  <HH.Ins.UI.Debt>22조에 따라 클로백 뮤추얼에 {0}을(를) 지급해야 합니다.</HH.Ins.UI.Debt>
+  <HH.Ins.UI.Debt.Settle>지금 정산</HH.Ins.UI.Debt.Settle>
+  <HH.Ins.UI.Debt.Cannot>지금은 그 금액을 지불할 수 없습니다.</HH.Ins.UI.Debt.Cannot>
+  <HH.Ins.UI.Claims.None>보상 청구 없음. 클로백 뮤추얼은 기뻐하면서도 조금 의심스러워합니다.</HH.Ins.UI.Claims.None>
+  <HH.Ins.UI.Claims.Log>경과 기록</HH.Ins.UI.Claims.Log>
+  <HH.Ins.UI.Claim.Review>심사 중: {0} 남음</HH.Ins.UI.Claim.Review>
+  <HH.Ins.UI.Claim.Window>협상 기간: {0}</HH.Ins.UI.Claim.Window>
+  <HH.Ins.UI.Claim.PaysIn>{0} 뒤 지급</HH.Ins.UI.Claim.PaysIn>
+  <HH.Ins.UI.Claim.Paid>지급됨: {0}</HH.Ins.UI.Claim.Paid>
+  <HH.Ins.UI.Claim.Closed>종결</HH.Ins.UI.Claim.Closed>
+  <HH.Ins.UI.Claim.Line>{0}  ·  손실 {1}  ·  청구 {2}  ·  제시액 {3}</HH.Ins.UI.Claim.Line>
+  <HH.Ins.UI.Claim.Preview>미리보기: 등급 {0}%, 보상금 {1}, 심사 완료까지 {2}</HH.Ins.UI.Claim.Preview>
+  <HH.Ins.UI.Claim.Details>세부 사항</HH.Ins.UI.Claim.Details>
+  <HH.Ins.UI.Fine.Title>깨알 같은 글씨</HH.Ins.UI.Fine.Title>
+  <HH.Ins.UI.Fine.Lead>15개 조항을 인쇄된 그대로 옮겼습니다. 영업 압박이 일정 수준을 넘으면 참고용으로만 표시됩니다. 회색으로 표시된 조항은 현재 난이도에서 적용되지 않습니다.</HH.Ins.UI.Fine.Lead>
+  <HH.Ins.UI.Fine.Inactive>여기서는 미적용</HH.Ins.UI.Fine.Inactive>
+  <HH.Ins.UI.Limbs.Title>사지 보상표</HH.Ins.UI.Limbs.Title>
+  <HH.Ins.UI.Limbs.Lead>기본 보험 금액에 대한 백분율이며, 한쪽 기준입니다. 잃은 부위는 자신의 값을 계산하고 하위 부위의 값을 대신합니다. 여러 부위의 합계는 최대 100%입니다.</HH.Ins.UI.Limbs.Lead>
+  <HH.Enum.TrickMode.Follows>영업 압박 수준에 따름</HH.Enum.TrickMode.Follows>
+  <HH.Enum.TrickMode.On>항상 켜짐</HH.Enum.TrickMode.On>
+  <HH.Enum.TrickMode.Off>끔</HH.Enum.TrickMode.Off>
+</LanguageData>

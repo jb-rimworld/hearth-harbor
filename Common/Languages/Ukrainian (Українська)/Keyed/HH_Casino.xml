@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.Casino>Казино</HH.Tab.Casino>
+  <HH.Casino.TabTitle>Казино</HH.Casino.TabTitle>
+  <HH.Casino.LimitsToggle>Дотримуватися лімітів столу (ставки {0}–{1} срібла)</HH.Casino.LimitsToggle>
+  <HH.Casino.LosingWarning>Заклад втрачає гроші на: {0}. За таких коефіцієнтів гості виграють більше, ніж ставлять.</HH.Casino.LosingWarning>
+  <HH.Casino.BalancedBadge>Кожна гра має перевагу дому: казино заробляє на довгій дистанції.</HH.Casino.BalancedBadge>
+  <HH.Casino.Houses>Заклади</HH.Casino.Houses>
+  <HH.Casino.NoHouses>Ніхто з гостей ще не грав. Заклад відкриває свої книги з першою ставкою.</HH.Casino.NoHouses>
+  <HH.Casino.HouseOfMap>Казино {0}</HH.Casino.HouseOfMap>
+  <HH.Casino.Drawer>Каса: {0}</HH.Casino.Drawer>
+  <HH.Casino.TodayNet>Сьогодні: {0}</HH.Casino.TodayNet>
+  <HH.Casino.HouseTip>Гості зараз грають на {0} срібла. Заклад тримає резерв {1} срібла; усе понад це йде колонії, коли казино зачиняється.</HH.Casino.HouseTip>
+  <HH.Casino.Games>Ігри: виплати фактичні проти розрахункових</HH.Casino.Games>
+  <HH.Casino.ColGame>Гра</HH.Casino.ColGame>
+  <HH.Casino.ColRounds>Раундів</HH.Casino.ColRounds>
+  <HH.Casino.ColStaked>Поставлено</HH.Casino.ColStaked>
+  <HH.Casino.ColRtp>Виплата (фактична)</HH.Casino.ColRtp>
+  <HH.Casino.ColExpected>Виплата (розрахункова)</HH.Casino.ColExpected>
+  <HH.Casino.ColLuck>Удача</HH.Casino.ColLuck>
+  <HH.Casino.ColHouse>Результат дому</HH.Casino.ColHouse>
+  <HH.Casino.Game.Slots>Ігрові автомати</HH.Casino.Game.Slots>
+  <HH.Casino.Game.Roulette>Рулетка</HH.Casino.Game.Roulette>
+  <HH.Casino.Game.Blackjack>Блекджек</HH.Casino.Game.Blackjack>
+  <HH.Casino.Game.Poker>Rimdeck</HH.Casino.Game.Poker>
+  <HH.Casino.Gamblers>Колоністи, що грають</HH.Casino.Gamblers>
+  <HH.Casino.NoGamblers>У колонії ще ніхто не грав.</HH.Casino.NoGamblers>
+  <HH.Casino.InspectGame>{0}: зайнято {1} з {2} місць</HH.Casino.InspectGame>
+  <HH.Casino.InspectBooks>{0} раундів · банк {1} · фактична перевага {2} % (розрахункова {3} %)</HH.Casino.InspectBooks>
+  <HH.Casino.InspectToday>Сьогодні: {0} раундів, банк {1}</HH.Casino.InspectToday>
+  <HH.Casino.InspectLuck>Удача за весь час: {0}</HH.Casino.InspectLuck>
+  <HH.Casino.Staffed>крупʼє на місці</HH.Casino.Staffed>
+  <HH.Casino.NoCroupier>без крупʼє</HH.Casino.NoCroupier>
+  <HH.Casino.Vol.Low>низька волатильність</HH.Casino.Vol.Low>
+  <HH.Casino.Vol.Medium>середня волатильність</HH.Casino.Vol.Medium>
+  <HH.Casino.Vol.High>висока волатильність</HH.Casino.Vol.High>
+  <HH.Casino.VolDesc>Натисніть, щоб змінити виплати автомата. Частота виграшів {0}, розкид {1} ставок, джекпот ×{2}, виплата {3} % за будь-якого налаштування.</HH.Casino.VolDesc>
+  <HH.Casino.OpenToGuests>Відкрито для гостей</HH.Casino.OpenToGuests>
+  <HH.Casino.OpenToGuestsDesc>Якщо вимкнено, користуватися пристроєм можуть лише колоністи.</HH.Casino.OpenToGuestsDesc>
+  <HH.Casino.TryDemo>Спробувати (тренувальні фішки)</HH.Casino.TryDemo>
+  <HH.Casino.TryDemoDesc>Зіграйте кілька раундів самостійно на тренувальні фішки. Срібло не використовується.</HH.Casino.TryDemoDesc>
+  <HH.Casino.Simulate>Змоделювати 10 000 раундів</HH.Casino.Simulate>
+  <HH.Casino.SimulateDesc>Начальник зали: на папері грає 10 000 раундів за поточних коефіцієнтів і показує результат. Нічого не проводиться в книгах.</HH.Casino.SimulateDesc>
+  <HH.Casino.SimResult>Начальник зали: {0} раундів на папері повернули {1} % ставок (розрахунково: {2} %).</HH.Casino.SimResult>
+  <HH.Casino.LuckNoData>поки замало раундів</HH.Casino.LuckNoData>
+  <HH.Casino.LuckNormal>звичайна удача</HH.Casino.LuckNormal>
+  <HH.Casino.LuckHouseUp>дому везе</HH.Casino.LuckHouseUp>
+  <HH.Casino.LuckHouseDown>дому не везе</HH.Casino.LuckHouseDown>
+  <HH.Casino.LuckHouseWayUp>дому дуже везе</HH.Casino.LuckHouseWayUp>
+  <HH.Casino.LuckHouseWayDown>дому дуже не везе</HH.Casino.LuckHouseWayDown>
+  <HH.Casino.BigWin>{0} зірвав великий куш у {2}: фішок на {1} срібла.</HH.Casino.BigWin>
+  <HH.Casino.DemoInfo>Лише тренувальні фішки, тут ніщо не коштує срібла. Коефіцієнти, встановлені в цій колонії: {ODDS}. Ваша ставка зафіксована: перезавантаження не змінює результат.</HH.Casino.DemoInfo>
+  <HH.Casino.DemoChips>Тренувальні фішки: {0} · раундів: {1}</HH.Casino.DemoChips>
+  <HH.Casino.DemoReset>Почати спочатку</HH.Casino.DemoReset>
+  <HH.Casino.DemoStake>Ставка</HH.Casino.DemoStake>
+  <HH.Casino.DemoBet>Поставити</HH.Casino.DemoBet>
+  <HH.Casino.DemoBroke>Для цієї ставки у вас не вистачає тренувальних фішок.</HH.Casino.DemoBroke>
+  <HH.Casino.DemoPays>виплата ×{0}</HH.Casino.DemoPays>
+  <HH.Casino.DemoNoWin>без виграшу</HH.Casino.DemoNoWin>
+  <HH.Casino.DemoPoker>Ви сідаєте за стіл із трьома постійними гравцями. Кожен вносить ставку; заклад залишає собі комісію.</HH.Casino.DemoPoker>
+  <HH.Casino.DemoStats>Повернуто на даний момент: {0} % ставок (розрахунково: {1} %)</HH.Casino.DemoStats>
+  <HH.Casino.Spin>Крутити</HH.Casino.Spin>
+  <HH.Casino.Deal>Роздати</HH.Casino.Deal>
+  <HH.Casino.Hit>Ще</HH.Casino.Hit>
+  <HH.Casino.Stand>Стоп</HH.Casino.Stand>
+  <HH.Casino.DoubleDown>Подвоїти</HH.Casino.DoubleDown>
+  <HH.Casino.HelpHint>Якщо азартні ігри стають проблемою в реальному житті, допомога доступна: {LINK}</HH.Casino.HelpHint>
+  <HH.Casino.HelpHintTip>Натисніть, щоб відкрити гарячу лінію. Правий клік сховає цей рядок (його можна знову ввімкнути в налаштуваннях моду).</HH.Casino.HelpHintTip>
+  <HH.Casino.HideHint>Сховати цю підказку</HH.Casino.HideHint>
+  <HH.Casino.OpenHelpline>Відкрити гарячу лінію</HH.Casino.OpenHelpline>
+  <HH.Casino.AddictionBrackets>стадія {0}, {1} з {2} днів без гри</HH.Casino.AddictionBrackets>
+  <HH.Casino.AddictionTip>Стадія залежності {0}. Днів без жодної гри: {1} з потрібних {2}. Щоб залишатися спокійним, потрібно близько {3} сеансів на день. Вилікувати може лише повна відмова.</HH.Casino.AddictionTip>
+  <HH.Casino.AddictedTitle>{0}: залежність від азартних ігор</HH.Casino.AddictedTitle>
+  <HH.Casino.AddictedText>{0} переграв і тепер залежний від азартних ігор. Без регулярної гри ломка накриє {PAWN_objective}: поганий настрій і, на глибших стадіях, гральні запої. Срібло не втрачено, фішки були безкоштовні, а от час і нерви — ні.\n\nЛише тривалий період без жодного сеансу вилікує це. Ви можете змінити, що {PAWN_nameDef} може робити, у політиці щодо наркотиків (рядок «азартні ігри»).</HH.Casino.AddictedText>
+  <HH.Casino.RelapseTitle>{0}: рецидив</HH.Casino.RelapseTitle>
+  <HH.Casino.RelapseText>{0} сів за столи під час періоду тяги після лікування, і залежність повернулася (на одну стадію нижче, ніж раніше). Потрібен ще один тривалий період без жодного сеансу.</HH.Casino.RelapseText>
+  <HH.Casino.CuredMessage>{0} позбувся звички до азартних ігор. Протягом наступних {1} днів будь-який сеанс ризикує викликати рецидив.</HH.Casino.CuredMessage>
+  <HH.Casino.SpreeReason>ломка від азартних ігор</HH.Casino.SpreeReason>
+  <HH.Casino.Counter>{0} з {1} сеансів за 3 дні.</HH.Casino.Counter>
+  <HH.Casino.CounterNext>{0} з {1} сеансів за 3 дні – наступний ризикує викликати залежність.</HH.Casino.CounterNext>
+  <HH.Casino.CounterRisk>{0} сеансів за 3 дні – наступний має ризик залежності {1}.</HH.Casino.CounterRisk>
+  <HH.Casino.CounterAddicted>Залежний. {0} сеансів за останні 3 дні.</HH.Casino.CounterAddicted>
+</LanguageData>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Setting.venues.browseTicks>Время осмотра (тики)</HH.Setting.venues.browseTicks>
+  <HH.Setting.venues.browseTicks.Desc>Сколько времени гость рассматривает товар, прежде чем решить. 60 тиков — это одна секунда при обычной скорости.</HH.Setting.venues.browseTicks.Desc>
+  <HH.Setting.venues.dayClose>Пресет «День»: закрытие</HH.Setting.venues.dayClose>
+  <HH.Setting.venues.dayClose.Desc>Час, в который закрывается пресет «День».</HH.Setting.venues.dayClose.Desc>
+  <HH.Setting.venues.dayOpen>Пресет «День»: открытие</HH.Setting.venues.dayOpen>
+  <HH.Setting.venues.dayOpen.Desc>Час, в который открывается пресет «День» в диалоге часов работы таблички.</HH.Setting.venues.dayOpen.Desc>
+  <HH.Setting.venues.drinkGapHours>Часов между напитками</HH.Setting.venues.drinkGapHours>
+  <HH.Setting.venues.drinkGapHours.Desc>Гость не закажет следующий напиток, пока не пройдёт столько часов.</HH.Setting.venues.drinkGapHours.Desc>
+  <HH.Setting.venues.eveningClose>Пресет «Вечер»: закрытие</HH.Setting.venues.eveningClose>
+  <HH.Setting.venues.eveningClose.Desc>Час, в который закрывается пресет «Вечер» (час закрытия раньше часа открытия означает время после полуночи).</HH.Setting.venues.eveningClose.Desc>
+  <HH.Setting.venues.eveningOpen>Пресет «Вечер»: открытие</HH.Setting.venues.eveningOpen>
+  <HH.Setting.venues.eveningOpen.Desc>Час, в который открывается пресет «Вечер».</HH.Setting.venues.eveningOpen.Desc>
+  <HH.Setting.venues.hideVanilla>Скрывать заменённую стандартную мебель</HH.Setting.venues.hideVanilla>
+  <HH.Setting.venues.hideVanilla.Desc>Когда здание Hearth &amp; Harbor заменяет стандартное (например, карточный стол — покерным столом), стандартное здание пропадает из меню строительства, как только замена доступна. Уже построенные здания остаются. Вступает в силу после перезапуска или следующей загрузки игры.</HH.Setting.venues.hideVanilla.Desc>
+  <HH.Setting.venues.lastOrdersMinutes>Последний заказ (минут до закрытия)</HH.Setting.venues.lastOrdersMinutes>
+  <HH.Setting.venues.lastOrdersMinutes.Desc>В этот отрезок перед закрытием спешащие гости покупают ещё по одной порции, никто не начинает долгий осмотр, а уже начатая покупка обслуживается и после закрытия. 0 = без последнего заказа.</HH.Setting.venues.lastOrdersMinutes.Desc>
+  <HH.Setting.venues.marketCaravans>Торговых караванов на рынке</HH.Setting.venues.marketCaravans>
+  <HH.Setting.venues.marketCaravans.Desc>Сколько торговых караванов приходит в день рынка (меньше, если дружественных фракций мало).</HH.Setting.venues.marketCaravans.Desc>
+  <HH.Setting.venues.marketDays>Дней между рынками</HH.Setting.venues.marketDays>
+  <HH.Setting.venues.marketDays.Desc>Средний интервал большого рынка, с небольшим разбросом.</HH.Setting.venues.marketDays.Desc>
+  <HH.Setting.venues.marketEnabled>Большой рынок</HH.Setting.venues.marketEnabled>
+  <HH.Setting.venues.marketEnabled.Desc>Время от времени дружественные фракции приводят сразу несколько торговых караванов и дневных посетителей. Происходит только тогда, когда открыта хотя бы одна лавка.</HH.Setting.venues.marketEnabled.Desc>
+  <HH.Setting.venues.marketRenown>Нужная репутация для рынка</HH.Setting.venues.marketRenown>
+  <HH.Setting.venues.marketRenown.Desc>Минимальная репутация (0–100), при которой торговцы и посетители хотят провести с вами рынок. Без системы репутации колония считается нейтральной (50).</HH.Setting.venues.marketRenown.Desc>
+  <HH.Setting.venues.marketStalls>Нужно торговых прилавков</HH.Setting.venues.marketStalls>
+  <HH.Setting.venues.marketStalls.Desc>Большой рынок случается только тогда, когда у вас есть столько отдельно стоящих торговых прилавков (торговцы занимают их). При меньшем количестве прилавков приходит меньше караванов.</HH.Setting.venues.marketStalls.Desc>
+  <HH.Setting.venues.marketVisitors>Групп посетителей на рынок</HH.Setting.venues.marketVisitors>
+  <HH.Setting.venues.marketVisitors.Desc>Сколько групп дневных посетителей приходит в день рынка, чтобы делать покупки в ваших заведениях.</HH.Setting.venues.marketVisitors.Desc>
+  <HH.Setting.venues.maxPurchases>Покупок на гостя за один визит</HH.Setting.venues.maxPurchases>
+  <HH.Setting.venues.maxPurchases.Desc>Гость перестаёт делать покупки после стольких покупок за один визит.</HH.Setting.venues.maxPurchases.Desc>
+  <HH.Setting.venues.nightBell>Ночной звонок</HH.Setting.venues.nightBell>
+  <HH.Setting.venues.nightBell.Desc>Гости могут позвонить в колокольчик у закрытого заведения. Бодрствующие колонисты с типом работы «Обслуживание» придут и откроют его за наценку. Никого не будят.</HH.Setting.venues.nightBell.Desc>
+  <HH.Setting.venues.nightBellMin>Минимальная плата за ночной звонок</HH.Setting.venues.nightBellMin>
+  <HH.Setting.venues.nightBellMin.Desc>Услуга ночного звонка никогда не стоит меньше этой суммы (серебро).</HH.Setting.venues.nightBellMin.Desc>
+  <HH.Setting.venues.nightBellSurcharge>Наценка за ночной звонок</HH.Setting.venues.nightBellSurcharge>
+  <HH.Setting.venues.nightBellSurcharge.Desc>Дополнительная доля цены, которую гости платят, если звонят в колокольчик вне часов работы.</HH.Setting.venues.nightBellSurcharge.Desc>
+  <HH.Setting.venues.nightBellWaitHours>Терпение при ночном звонке (часов)</HH.Setting.venues.nightBellWaitHours>
+  <HH.Setting.venues.nightBellWaitHours.Desc>Сколько гость ждёт после звонка, прежде чем сдаться («Позвонил в колокольчик. Никто не пришёл».).</HH.Setting.venues.nightBellWaitHours.Desc>
+  <HH.Setting.venues.nightClose>Пресет «Ночь»: закрытие</HH.Setting.venues.nightClose>
+  <HH.Setting.venues.nightClose.Desc>Час, в который закрывается пресет «Ночь».</HH.Setting.venues.nightClose.Desc>
+  <HH.Setting.venues.nightOpen>Пресет «Ночь»: открытие</HH.Setting.venues.nightOpen>
+  <HH.Setting.venues.nightOpen.Desc>Час, в который открывается пресет «Ночь».</HH.Setting.venues.nightOpen.Desc>
+  <HH.Setting.venues.priceTolerance>Терпимость гостей к ценам</HH.Setting.venues.priceTolerance>
+  <HH.Setting.venues.priceTolerance.Desc>Насколько гости готовы терпеть. Выше 1 — принимают более крутые цены, ниже 1 — уходят, не торгуясь. Следует за ползунком сложности.</HH.Setting.venues.priceTolerance.Desc>
+  <HH.Setting.venues.selfService>Скидка за самообслуживание</HH.Setting.venues.selfService>
+  <HH.Setting.venues.selfService.Desc>Заведения, которым не нужен персонал, но за стойкой никого нет, берут на столько меньше (гость сам берёт всё, что нужно).</HH.Setting.venues.selfService.Desc>
+  <HH.Setting.venues.shopDesire>Желание гостей ходить за покупками</HH.Setting.venues.shopDesire>
+  <HH.Setting.venues.shopDesire.Desc>Насколько охотно гости заходят в магазины и таверны по сравнению с другими делами. 0 = никогда не покупают.</HH.Setting.venues.shopDesire.Desc>
+  <HH.Setting.venues.shopPrice>Уровень цен в магазинах</HH.Setting.venues.shopPrice>
+  <HH.Setting.venues.shopPrice.Desc>Умножает рыночную стоимость товаров в магазинах и тавернах поверх собственного ценового коэффициента каждой таблички.</HH.Setting.venues.shopPrice.Desc>
+  <HH.Setting.venues.stallFee>Плата за прилавок с торговца</HH.Setting.venues.stallFee>
+  <HH.Setting.venues.stallFee.Desc>Каждый торговый караван платит столько серебра за свой прилавок в день рынка (деньги идут в колониальную казну).</HH.Setting.venues.stallFee.Desc>
+  <HH.Setting.venues.tendHours>Часов на смену</HH.Setting.venues.tendHours>
+  <HH.Setting.venues.tendHours.Desc>Сколько времени колонист обслуживает заведение, прежде чем искать другую работу (также прекращает, когда заведение закрывается).</HH.Setting.venues.tendHours.Desc>
+  <HH.Setting.venues.vendingPrice>Уровень цен торговых автоматов</HH.Setting.venues.vendingPrice>
+  <HH.Setting.venues.vendingPrice.Desc>Умножает рыночную стоимость того, что продают торговые автоматы.</HH.Setting.venues.vendingPrice.Desc>
+  <HH.Setting.venues.waitForStaffTicks>Терпение гостей к персоналу (тики)</HH.Setting.venues.waitForStaffTicks>
+  <HH.Setting.venues.waitForStaffTicks.Desc>Гость ждёт столько, пока кто-нибудь подойдёт к открытому, но не обслуживаемому заведению, а потом уходит раздражённым.</HH.Setting.venues.waitForStaffTicks.Desc>
+  <HH.Venue.AlwaysOpen>открыто круглосуточно</HH.Venue.AlwaysOpen>
+  <HH.Venue.Bargain>Торг!</HH.Venue.Bargain>
+  <HH.Venue.BellRung>*дзынь*</HH.Venue.BellRung>
+  <HH.Venue.CheckCounter>Прилавок для обслуживающего</HH.Venue.CheckCounter>
+  <HH.Venue.CheckDrinks>Напитки в наличии</HH.Venue.CheckDrinks>
+  <HH.Venue.CheckNoCounter>Нет прилавка (необязательно) → обслуживающий стоит рядом с табличкой</HH.Venue.CheckNoCounter>
+  <HH.Venue.CheckNoDrinks>Нет напитков в наличии → положите в помещение пиво или другие напитки</HH.Venue.CheckNoDrinks>
+  <HH.Venue.CheckNoStock>Нет товаров на продажу → поставьте в помещение стеллаж или зону хранения с товарами</HH.Venue.CheckNoStock>
+  <HH.Venue.CheckNoWorker>Ни у кого не включён тип работы «Обслуживание»</HH.Venue.CheckNoWorker>
+  <HH.Venue.CheckStock>Товары на стеллажах</HH.Venue.CheckStock>
+  <HH.Venue.CheckWorker>Колонист выполняет работу «Обслуживание»</HH.Venue.CheckWorker>
+  <HH.Venue.ChooseType>Вид заведения</HH.Venue.ChooseType>
+  <HH.Venue.ChooseTypeDesc>Выберите, каким заведением будет помещение этой таблички: таверна, магазин, ресторан, казино, спа или лаундж.</HH.Venue.ChooseTypeDesc>
+  <HH.Venue.Closed>закрыто</HH.Venue.Closed>
+  <HH.Venue.Closes>Закрывается в</HH.Venue.Closes>
+  <HH.Venue.ColonyMayTake>Колония может брать товары</HH.Venue.ColonyMayTake>
+  <HH.Venue.ColonyMayTakeDesc>Выкл.: товары на продажу в этом помещении запрещено брать колонистам, так что никто не унесёт ваш запас. Вкл.: колонисты относятся к товарам как к любому другому складскому предмету.</HH.Venue.ColonyMayTakeDesc>
+  <HH.Venue.ColonyMayTakeShort>колония может брать товары</HH.Venue.ColonyMayTakeShort>
+  <HH.Venue.Current>текущее</HH.Venue.Current>
+  <HH.Venue.CustomersOnly>только для клиентов</HH.Venue.CustomersOnly>
+  <HH.Venue.Done>Готово</HH.Venue.Done>
+  <HH.Venue.ForSale>На продажу</HH.Venue.ForSale>
+  <HH.Venue.GoodService>Дружелюбное обслуживание</HH.Venue.GoodService>
+  <HH.Venue.GoodValue>Хорошая цена</HH.Venue.GoodValue>
+  <HH.Venue.Hours>Часы работы</HH.Venue.Hours>
+  <HH.Venue.HoursDesc>Задайте, когда открыто заведение. Пресеты: день, вечер, ночь и круглосуточно.</HH.Venue.HoursDesc>
+  <HH.Venue.HoursHint>Час закрытия раньше часа открытия означает, что заведение работает после полуночи.</HH.Venue.HoursHint>
+  <HH.Venue.HoursTitle>Часы работы</HH.Venue.HoursTitle>
+  <HH.Venue.LastOrders>последний заказ</HH.Venue.LastOrders>
+  <HH.Venue.MarketFees>Торговцы платят {0} серебра за свои прилавки.</HH.Venue.MarketFees>
+  <HH.Venue.MarketLabel>День рынка</HH.Venue.MarketLabel>
+  <HH.Venue.MarketText>Слух разошёлся: сегодня день рынка. {0} торговых караванов и {1} групп посетителей из {2} направляются в вашу колонию. Торговцы будут торговать как обычно у своих лагерей; посетители будут ходить по вашим магазинам и тавернам, если они открыты.\n\nСледите, чтобы полки были полны, а прилавки занятыми.</HH.Venue.MarketText>
+  <HH.Venue.NoRoom>Пока не заведение: табличке нужно закрытое помещение с крышей.</HH.Venue.NoRoom>
+  <HH.Venue.NoStaffState>открыто, но никого на смене</HH.Venue.NoStaffState>
+  <HH.Venue.NoTypes>Нет доступных видов заведений</HH.Venue.NoTypes>
+  <HH.Venue.Nobody>никто</HH.Venue.Nobody>
+  <HH.Venue.NobodyCameBell>Позвонил в колокольчик. Никто не пришёл.</HH.Venue.NobodyCameBell>
+  <HH.Venue.NobodyCameStaff>Ждал обслуживания. Никто не пришёл.</HH.Venue.NobodyCameStaff>
+  <HH.Venue.Off>выкл.</HH.Venue.Off>
+  <HH.Venue.On>вкл.</HH.Venue.On>
+  <HH.Venue.Open>открыто</HH.Venue.Open>
+  <HH.Venue.Opens>Открывается в</HH.Venue.Opens>
+  <HH.Venue.PresetAlways>Всегда</HH.Venue.PresetAlways>
+  <HH.Venue.PresetDay>День</HH.Venue.PresetDay>
+  <HH.Venue.PresetEvening>Вечер</HH.Venue.PresetEvening>
+  <HH.Venue.PresetNight>Ночь</HH.Venue.PresetNight>
+  <HH.Venue.Price>Цены</HH.Venue.Price>
+  <HH.Venue.PriceDesc>Ценовой коэффициент на всё, что продаёт это заведение. Гостей отпугивают слишком высокие цены.</HH.Venue.PriceDesc>
+  <HH.Venue.PriceFactor>Ценовой коэффициент</HH.Venue.PriceFactor>
+  <HH.Venue.PriceHint>Гости сравнивают цену с тем, сколько вещь для них стоит. Состоятельные гости терпят больше. Заведения без персонала берут немного меньше (самообслуживание); услуга ночного звонка стоит дороже. Бесплатно значит бесплатно.</HH.Venue.PriceHint>
+  <HH.Venue.PriceLine>Цены</HH.Venue.PriceLine>
+  <HH.Venue.PriceTitle>Цены</HH.Venue.PriceTitle>
+  <HH.Venue.Pricey>Дорого</HH.Venue.Pricey>
+  <HH.Venue.Rename>Переименовать</HH.Venue.Rename>
+  <HH.Venue.RenameDesc>Дайте этому заведению название.</HH.Venue.RenameDesc>
+  <HH.Venue.RenameTitle>Назовите заведение</HH.Venue.RenameTitle>
+  <HH.Venue.Reset>Использовать название по умолчанию</HH.Venue.Reset>
+  <HH.Venue.Restock>Пополнение</HH.Venue.Restock>
+  <HH.Venue.RestockDesc>Позволить этой табличке устанавливать для мест хранения в её помещении приоритет «Важно», чтобы перевозчики держали полки полными. Включается по желанию; старые настройки вернутся при выключении.</HH.Venue.RestockDesc>
+  <HH.Venue.RestockHint>Когда включено, каждое место хранения в этом помещении (зоны хранения и стеллажи, ваши или чьи-либо) принимает отмеченные ниже товары с приоритетом «Важно», и ваши перевозчики держат помещение заполненным. Прежние настройки мест вернутся, когда вы это выключите.</HH.Venue.RestockHint>
+  <HH.Venue.RestockNoShop>Это заведение ничего не продаёт из своего помещения, так что пополнять нечего.</HH.Venue.RestockNoShop>
+  <HH.Venue.RestockSwitchOff>Пополнение ВКЛ – выключить и вернуть хранилище</HH.Venue.RestockSwitchOff>
+  <HH.Venue.RestockSwitchOn>Пополнение выкл. – включить</HH.Venue.RestockSwitchOn>
+  <HH.Venue.RestockTitle>Пополнение</HH.Venue.RestockTitle>
+  <HH.Venue.RippedOff>Облапошили</HH.Venue.RippedOff>
+  <HH.Venue.Sales>Продажи за сегодня</HH.Venue.Sales>
+  <HH.Venue.SalesTotal>итого</HH.Venue.SalesTotal>
+  <HH.Venue.Silver>серебро</HH.Venue.Silver>
+  <HH.Venue.StacksWord>стопок</HH.Venue.StacksWord>
+  <HH.Venue.Staff>На смене</HH.Venue.Staff>
+  <HH.Venue.Tier.Budget>Бюджетный</HH.Venue.Tier.Budget>
+  <HH.Venue.Tier.Charity>Благотворительный</HH.Venue.Tier.Charity>
+  <HH.Venue.Tier.Discount>Скидочный</HH.Venue.Tier.Discount>
+  <HH.Venue.Tier.Free>Бесплатно</HH.Venue.Tier.Free>
+  <HH.Venue.Tier.Luxury>Роскошный</HH.Venue.Tier.Luxury>
+  <HH.Venue.Tier.Premium>Премиум</HH.Venue.Tier.Premium>
+  <HH.Venue.Tier.Standard>Стандартный</HH.Venue.Tier.Standard>
+</LanguageData>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_UseHotTub.reportString>badet in TargetA.</HH_UseHotTub.reportString>
+  <HH_UseSauna.reportString>schwitzt in der Sauna.</HH_UseSauna.reportString>
+  <HH_ReceiveMassage.reportString>lässt sich massieren.</HH_ReceiveMassage.reportString>
+  <HH_GiveMassage.reportString>massiert TargetB.</HH_GiveMassage.reportString>
+</LanguageData>

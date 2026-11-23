@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingWithdrawal.stages.0.label>ломка від азартних ігор (слабка)</HH_GamblingWithdrawal.stages.0.label>
+  <HH_GamblingWithdrawal.stages.0.description>Я постійно думаю про столи. Одна гра не зашкодить.</HH_GamblingWithdrawal.stages.0.description>
+  <HH_GamblingWithdrawal.stages.1.label>ломка від азартних ігор (помірна)</HH_GamblingWithdrawal.stages.1.label>
+  <HH_GamblingWithdrawal.stages.1.description>Я не можу зосередитися. Мені треба грати.</HH_GamblingWithdrawal.stages.1.description>
+  <HH_GamblingWithdrawal.stages.2.label>ломка від азартних ігор (сильна)</HH_GamblingWithdrawal.stages.2.label>
+  <HH_GamblingWithdrawal.stages.2.description>Усе сіре, крім колеса.</HH_GamblingWithdrawal.stages.2.description>
+  <HH_GamblingWithdrawal.stages.3.label>ломка від азартних ігор (важка)</HH_GamblingWithdrawal.stages.3.label>
+  <HH_GamblingWithdrawal.stages.3.description>У мене тремтять руки. Комусь, мабуть, є колода карт.</HH_GamblingWithdrawal.stages.3.description>
+  <HH_GamblingWithdrawal.stages.4.label>ломка від азартних ігор (крайня)</HH_GamblingWithdrawal.stages.4.label>
+  <HH_GamblingWithdrawal.stages.4.description>Нічого іншого не має значення.</HH_GamblingWithdrawal.stages.4.description>
+  <HH_WonAtTheTables.stages.0.label>виграв за столами</HH_WonAtTheTables.stages.0.label>
+  <HH_WonAtTheTables.stages.0.description>Фішки лягли як треба. Вперше за довгий час.</HH_WonAtTheTables.stages.0.description>
+  <HH_LostAtTheTables.stages.0.label>програв усе за столами</HH_LostAtTheTables.stages.0.label>
+  <HH_LostAtTheTables.stages.0.description>Кожна фішка пропала. Вони були безкоштовні, а все одно болить.</HH_LostAtTheTables.stages.0.description>
+</LanguageData>

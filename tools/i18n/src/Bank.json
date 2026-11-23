@@ -90,6 +90,8 @@
   "HH.Bank.Lobby.PendingDep": "↓ {0} arriving in {1}",
   "HH.Bank.Lobby.PendingWd": "↑ {0} by pod in {1}",
   "HH.Bank.Lobby.Recent": "Recent activity",
+  "HH.Bank.Lobby.Trade": "Auto-deposit trade silver",
+  "HH.Bank.Lobby.TradeTip": "Silver you get from traders and trade ships goes into the account right after the deal, at the same fee as direct deposit, instead of lying on the floor as coins. Needs direct deposit. Off by default, so you can still pay the next trader in cash. Caravans are not affected.",
   "HH.Bank.Lobby.Transfer": "Deposit and withdraw",
   "HH.Bank.Lobby.TransferInfo": "In storage: {0}. Deposit {1}. Withdrawal fee {2}, {3}.",
   "HH.Bank.Lobby.Transit": "In transit",

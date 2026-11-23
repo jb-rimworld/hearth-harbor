@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Tavern.label>таверна</HH_Venue_Tavern.label>
+  <HH_Venue_Tavern.description>Помещение, где гости покупают напиток и пьют его на месте. Заполните помещение пивом или другими напитками на стеллаже или в зоне хранения; бармен за табличкой или прилавком держит его открытым. Напитки в помещении предназначены для клиентов, если табличка не указывает иное.</HH_Venue_Tavern.description>
+  <HH_Venue_Shop.label>магазин</HH_Venue_Shop.label>
+  <HH_Venue_Shop.description>Помещение, где гости покупают товары. Всё, что хранится на стеллажах и в зонах хранения внутри помещения, продаётся по рыночной стоимости, умноженной на ценовой коэффициент таблички. Без продавца магазин работает как самообслуживание с небольшой скидкой.</HH_Venue_Shop.description>
+  <HH_Venue_Restaurant.label>ресторан</HH_Venue_Restaurant.label>
+  <HH_Venue_Restaurant.description>Помещение, где гости садятся и едят. Столы, кухня и официант делают его рестораном; сами блюда готовит кухня.</HH_Venue_Restaurant.description>
+  <HH_Venue_Casino.label>казино</HH_Venue_Casino.label>
+  <HH_Venue_Casino.description>Помещение с карточными столами, игровыми автоматами и крупье. Гости ставят серебро на азартные игры; заведение оставляет себе небольшое, честное преимущество.</HH_Venue_Casino.description>
+  <HH_Venue_Spa.label>спа</HH_Venue_Spa.label>
+  <HH_Venue_Spa.description>Тихое помещение для бань, пара и отдыха. Служитель держит полотенца тёплыми; гости платят за каждое посещение.</HH_Venue_Spa.description>
+  <HH_Venue_Lounge.label>лаундж</HH_Venue_Lounge.label>
+  <HH_Venue_Lounge.description>Зал ожидания с сиденьями. Гости, которые видят, что заведение закрыто или без персонала, ждут здесь, а не в дверях, и терпят дольше. Всегда открыт, персонал не нужен.</HH_Venue_Lounge.description>
+  <HH_Venue_Chapel.label>гостевая часовня</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>Тихое помещение с гостевым алтарём, где посетители любой веры приходят молиться. Гости ничего не платят, но уходят спокойнее; часовня с красивым алтарём и парой скамей — хороший сосед для гостиницы. Днём открыта всегда, персонал не нужен.</HH_Venue_Chapel.description>
+</LanguageData>

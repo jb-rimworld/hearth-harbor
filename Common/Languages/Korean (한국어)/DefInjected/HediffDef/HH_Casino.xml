@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingAddiction.label>도박 중독</HH_GamblingAddiction.label>
+  <HH_GamblingAddiction.description>테이블에 완전히 사로잡혔습니다. 정기적인 도박이 없으면 금단 증상이 찾아옵니다: 기분 저하, 짜증, 그리고 가장 깊은 단계에서는 도박 광기. 세션을 한 번도 하지 않는 시간만이 치료하며, 이후 갈망 기간에는 재발이 쉽습니다.\n\n은화는 들지 않고, 시간과 기분과 신경이 듭니다.</HH_GamblingAddiction.description>
+  <HH_GamblingAddiction.stages.1.label>금단 (경미)</HH_GamblingAddiction.stages.1.label>
+  <HH_GamblingAddiction.stages.2.label>금단 (중간)</HH_GamblingAddiction.stages.2.label>
+  <HH_GamblingAddiction.stages.3.label>금단 (강함)</HH_GamblingAddiction.stages.3.label>
+  <HH_GamblingAddiction.stages.4.label>금단 (심각)</HH_GamblingAddiction.stages.4.label>
+  <HH_GamblingAddiction.stages.5.label>금단 (극심)</HH_GamblingAddiction.stages.5.label>
+</LanguageData>

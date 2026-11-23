@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchBout.reportString>спостерігає за ямою.</HH_WatchBout.reportString>
+  <HH_BackRoomVisit.reportString>користується задньою кімнатою.</HH_BackRoomVisit.reportString>
+  <HH_FenceDeal.reportString>веде справи біля прилавка скупника.</HH_FenceDeal.reportString>
+  <HH_UseLounge.reportString>відпочиває в салоні.</HH_UseLounge.reportString>
+  <HH_Interrogate.reportString>допитує TargetA.</HH_Interrogate.reportString>
+  <HH_HuntQuarry.reportString>полює на TargetA.</HH_HuntQuarry.reportString>
+  <HH_QuarryFlee.reportString>тікає.</HH_QuarryFlee.reportString>
+</LanguageData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Guide_OpeningDay.label>开业之日</HH_Guide_OpeningDay.label>
+  <HH_Guide_OpeningDay.description>从一张床到你的第一笔银币，只需三步。无需研究、无需划区、无需设置。</HH_Guide_OpeningDay.description>
+  <HH_Guide_YourGuests.label>一览你的访客</HH_Guide_YourGuests.label>
+  <HH_Guide_YourGuests.description>在这里查看访客的状况。</HH_Guide_YourGuests.description>
+  <HH_Guide_FirstVenue.label>你的第一个场所</HH_Guide_FirstVenue.label>
+  <HH_Guide_FirstVenue.description>一块招牌就能把房间变成生意。</HH_Guide_FirstVenue.description>
+  <HH_Guide_Bank.label>银行里的钱</HH_Guide_Bank.label>
+  <HH_Guide_Bank.description>Silverline 会替你保管营业收入，并允许访客用卡付款。</HH_Guide_Bank.description>
+</LanguageData>

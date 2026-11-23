@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ProjectorScreen.label>tela de projeção</HH_ProjectorScreen.label>
+  <HH_ProjectorScreen.description>Uma tela larga com um projetor preso na viga do teto logo acima. Coloque cadeiras em frente, uma placa de estabelecimento no cômodo e apague as luzes: os visitantes pagam por um assento e os colonos ganham uma noite de cinema. Os filmes são antigos, barulhentos, e ninguém se lembra de quem os fez.</HH_ProjectorScreen.description>
+  <HH_SalonChair.label>cadeira de salão</HH_SalonChair.label>
+  <HH_SalonChair.description>Uma cadeira estofada, com altura ajustável, capa de corte, um espelho na parede atrás e uma gaveta de tesouras. Um colono de pé atrás dela dá à pessoa sentada um visual novo. Os colonos a usam de graça; visitantes pagam.</HH_SalonChair.description>
+  <HH_ParkBench.label>banco de praça</HH_ParkBench.label>
+  <HH_ParkBench.description>Um banco simples para dois, com vista. Nada para comprar, nada para assinar: as pessoas se sentam, olham para o que há para ver e se sentem um pouco melhor por isso. Quanto mais bonito o entorno, melhor.</HH_ParkBench.description>
+  <HH_TaxiStand.label>ponto de táxi</HH_TaxiStand.label>
+  <HH_TaxiStand.description>Um quadrado de chão pintado, uma placa de sinalização e um interfone. Visitantes que vão embora e preferem não caminhar até a borda do mapa chamam aqui um pequeno transporte e pagam a corrida; alguns visitantes que chegam são deixados no ponto com estilo. Precisa de céu aberto acima para que o táxi possa pousar.</HH_TaxiStand.description>
+  <HH_TaxiIncoming.label>táxi (chegando)</HH_TaxiIncoming.label>
+  <HH_TaxiLeaving.label>táxi (partindo)</HH_TaxiLeaving.label>
+</LanguageData>

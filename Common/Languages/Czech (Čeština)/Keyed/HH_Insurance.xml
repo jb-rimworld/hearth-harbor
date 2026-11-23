@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Ins.Slogan.1>Clawback Mutual. Máme vás pokryté.*  (*viz doložky 1 až do nekonečna)</HH.Ins.Slogan.1>
+  <HH.Ins.Slogan.2>Klid na duši, splatné čtvrtletně.</HH.Ins.Slogan.2>
+  <HH.Ins.Slogan.3>Nehody se stávají. Vyplácení občas.</HH.Ins.Slogan.3>
+  <HH.Ins.Slogan.4>Jsme tu, když nás potřebujete. Platí úřední hodiny.</HH.Ins.Slogan.4>
+  <HH.Ins.Slogan.5>Každá končetina má cenu. Zapsali jsme ji.</HH.Ins.Slogan.5>
+  <HH.Ins.Slogan.6>Vaše pojistná událost je pro nás důležitá. Prosíme, vydržte na lince.</HH.Ins.Slogan.6>
+  <HH.Ins.Slogan.7>Komplexní krytí, komplexně vysvětlené na 400 stranách.</HH.Ins.Slogan.7>
+  <HH.Ins.Slogan.8>Většina kolonií volí Premium. Většina kolonií stále čeká.</HH.Ins.Slogan.8>
+  <HH.Ins.Tier.Bare>Jen nejnutnější</HH.Ins.Tier.Bare>
+  <HH.Ins.Tier.Good>Dost dobré</HH.Ins.Tier.Good>
+  <HH.Ins.Tier.Premium>Premium nad Premium</HH.Ins.Tier.Premium>
+  <HH.Ins.Outcome.Pending>Čeká se</HH.Ins.Outcome.Pending>
+  <HH.Ins.Outcome.Approved>Schváleno</HH.Ins.Outcome.Approved>
+  <HH.Ins.Outcome.Partial>Částečně schváleno</HH.Ins.Outcome.Partial>
+  <HH.Ins.Outcome.Denied>Zamítnuto</HH.Ins.Outcome.Denied>
+  <HH.Ins.Stage.0>Nedotčen</HH.Ins.Stage.0>
+  <HH.Ins.Stage.1>Škrábnutí</HH.Ins.Stage.1>
+  <HH.Ins.Stage.2>Nepříjemnost</HH.Ins.Stage.2>
+  <HH.Ins.Stage.3>Podstatně přepracován</HH.Ins.Stage.3>
+  <HH.Ins.Stage.4>Většinou papírování</HH.Ins.Stage.4>
+  <HH.Ins.Stage.5>Úplně a trvale</HH.Ins.Stage.5>
+  <HH.Ins.Tab.Bank>Pojištění</HH.Ins.Tab.Bank>
+  <HH.Ins.Tab.Shop>Pojistky</HH.Ins.Tab.Shop>
+  <HH.Ins.Tab.Mine>Moje pojistky ({0})</HH.Ins.Tab.Mine>
+  <HH.Ins.Tab.Claims>Pojistné události ({0})</HH.Ins.Tab.Claims>
+  <HH.Ins.Tab.FinePrint>Drobný tisk</HH.Ins.Tab.FinePrint>
+  <HH.Ins.Menu.Call>Zavolat Clawback Mutual</HH.Ins.Menu.Call>
+  <HH.Ins.Btn.Accept>Přijmout</HH.Ins.Btn.Accept>
+  <HH.Ins.Btn.Negotiate>Vyjednávat</HH.Ins.Btn.Negotiate>
+  <HH.Ins.Btn.OpenDesk>Otevřít pult Clawback</HH.Ins.Btn.OpenDesk>
+  <HH.Ins.Btn.Dismiss>Zavřít</HH.Ins.Btn.Dismiss>
+  <HH.Ins.Btn.Close>Zavřít</HH.Ins.Btn.Close>
+  <HH.Ins.Btn.Materials>Vzít materiály místo stříbra</HH.Ins.Btn.Materials>
+  <HH.Ins.Source.Bank>váš bankovní účet</HH.Ins.Source.Bank>
+  <HH.Ins.Source.Till>pokladna</HH.Ins.Source.Till>
+  <HH.Ins.Source.Silver>stříbro ve skladu</HH.Ins.Source.Silver>
+  <HH.Ins.Source.Free>nic (bylo to zdarma)</HH.Ins.Source.Free>
+  <HH.Ins.Source.PaidBank>na váš bankovní účet</HH.Ins.Source.PaidBank>
+  <HH.Ins.Source.PaidTill>do pokladny</HH.Ins.Source.PaidTill>
+  <HH.Ins.Source.PaidCapsule>{0} stříbra v dodávkové kapsli</HH.Ins.Source.PaidCapsule>
+  <HH.Ins.Source.PaidMaterials>materiály dodávkovou kapslí: {0}</HH.Ins.Source.PaidMaterials>
+  <HH.Ins.Sign.Off>Clawback Mutual v této hře neobchoduje.</HH.Ins.Sign.Off>
+  <HH.Ins.Sign.NoHolder>Nejdřív vyberte kolonistu.</HH.Ins.Sign.NoHolder>
+  <HH.Ins.Sign.TooOld>Tento kolonista už je v penzijním věku. Penzi nelze koupit v penzijním věku; na to je ten plán.</HH.Ins.Sign.TooOld>
+  <HH.Ins.Sign.Duplicate>Tuto pojistku už máte. Kontrolovali jsme dvakrát.</HH.Ins.Sign.Duplicate>
+  <HH.Ins.Sign.Debt>Žádné nové pojistky, dokud neuhradíte {0}, které nám dlužíte podle doložky 22.</HH.Ins.Sign.Debt>
+  <HH.Ins.Sign.NoMap>Vaši kolonii jsme nenašli. To je neobvyklé.</HH.Ins.Sign.NoMap>
+  <HH.Ins.Sign.Threat>Clawback Mutual nesjednává krytí, zatímco běží hrozba, nálet nebo velký požár. Nerad bych byl nespravedlivý sám k sobě.</HH.Ins.Sign.Threat>
+  <HH.Ins.Sign.CannotPay>První splátku ve výši {0} nebylo možné strhnout. Ani my nepojistíme prázdnou peněženku.</HH.Ins.Sign.CannotPay>
+  <HH.Ins.Locked.Insurance>Vyžaduje výzkumný projekt Pojištění</HH.Ins.Locked.Insurance>
+  <HH.Ins.Locked.Actuarial>Vyžaduje výzkumný projekt Pojistná matematika</HH.Ins.Locked.Actuarial>
+  <HH.Ins.Log.Signed>Sjednáno {0} ({1}).</HH.Ins.Log.Signed>
+  <HH.Ins.Log.Ended>{0} skončilo: {1}.</HH.Ins.Log.Ended>
+  <HH.Ins.Log.Filed>Pojistná událost č. {0} podána: {1}.</HH.Ins.Log.Filed>
+  <HH.Ins.Log.Decided>Pojistná událost č. {0} rozhodnuta: {1} ({2}).</HH.Ins.Log.Decided>
+  <HH.Ins.Log.Paid>Pojistná událost č. {0} vyplacena: {1}.</HH.Ins.Log.Paid>
+  <HH.Ins.Log.Negotiated>Pojistná událost č. {0}, kolo {1}: {2}.</HH.Ins.Log.Negotiated>
+  <HH.Ins.Log.CancelFiled>{0}: podána výpověď, účinná za {1}.</HH.Ins.Log.CancelFiled>
+  <HH.Ins.Log.Retained>{0}: ponecháno se slevou {1}.</HH.Ins.Log.Retained>
+  <HH.Ins.Log.Settled>Vyrovnání podle doložky 22 vyplaceno: {0}.</HH.Ins.Log.Settled>
+  <HH.Ins.Log.Regrowth>Pojistná událost č. {0}: část dorostla, vráceno {1}.</HH.Ins.Log.Regrowth>
+  <HH.Ins.Claim.Several>{0} budov</HH.Ins.Claim.Several>
+  <HH.Ins.Claim.Death>Úmrtí: {0}</HH.Ins.Claim.Death>
+  <HH.Ins.Claim.Limb>Úraz: {0}</HH.Ins.Claim.Limb>
+  <HH.Ins.Claim.Retirement>Penze: {0}</HH.Ins.Claim.Retirement>
+  <HH.Ins.Claim.BedRest>Dny na lůžku</HH.Ins.Claim.BedRest>
+  <HH.Ins.Claim.Scratches>{0} zranění na cestě</HH.Ins.Claim.Scratches>
+  <HH.Ins.Claim.Crop>Plodiny ztracené kvůli: {0}</HH.Ins.Claim.Crop>
+  <HH.Ins.End.Cancelled>vypovězeno vámi</HH.Ins.End.Cancelled>
+  <HH.Ins.End.Holder>pojištěná osoba už mezi námi není</HH.Ins.End.Holder>
+  <HH.Ins.End.Insurer>vypovězeno Clawback Mutual</HH.Ins.End.Insurer>
+  <HH.Ins.End.Lapsed>neuhrazené pojistné</HH.Ins.End.Lapsed>
+  <HH.Ins.Clause.Exclusion>Toto je výluka, ne rozhodnutí. Jen ji předčítáme.</HH.Ins.Clause.Exclusion>
+  <HH.Ins.Quote.Damage>Očekávaná škoda za čtvrtletí: {0}</HH.Ins.Quote.Damage>
+  <HH.Ins.Quote.Payout>Očekávaný podíl, který vyplatíme: {0}</HH.Ins.Quote.Payout>
+  <HH.Ins.Quote.Loading>Naše přirážka: +{0}</HH.Ins.Quote.Loading>
+  <HH.Ins.Quote.NoClaims>Sleva za bezeškodní průběh: -{0}</HH.Ins.Quote.NoClaims>
+  <HH.Ins.Quote.Bundle>Balíčková sleva: -{0}</HH.Ins.Quote.Bundle>
+  <HH.Ins.Quote.Riders>Doplňky: +{0}</HH.Ins.Quote.Riders>
+  <HH.Ins.Quote.Discount>Věrnostní sleva: -{0}</HH.Ins.Quote.Discount>
+  <HH.Ins.Bd.Grade>Stupeň invalidity {0} % ({1}).</HH.Ins.Bd.Grade>
+  <HH.Ins.Bd.Part>{0}: {1} %. {2}</HH.Ins.Bd.Part>
+  <HH.Ins.Bd.PreExisting>Odečteno: {0} %, které tam bylo už při sjednání (doložka 9).</HH.Ins.Bd.PreExisting>
+  <HH.Ins.Bd.PartialNotPaid>Částečné ztráty se na stupni Jen nejnutnější nevyplácejí.</HH.Ins.Bd.PartialNotPaid>
+  <HH.Ins.Bd.BelowThreshold>Stupeň je pod hranicí {0} % pro vaši úroveň. Plnění: 0 stříbra. Gratulujeme.</HH.Ins.Bd.BelowThreshold>
+  <HH.Ins.Bd.Progression>{0}: progrese dává {1} ze základní částky {2}. Plnění před drobným tiskem: {3}.</HH.Ins.Bd.Progression>
+  <HH.Ins.Bd.Contributed>Stará nemoc na téže části snižuje plnění o 25 % (doložka 9, z Přeplněnosti).</HH.Ins.Bd.Contributed>
+  <HH.Ins.Bd.Death>Plnění při úmrtí: {0}.</HH.Ins.Bd.Death>
+  <HH.Ins.Bd.DeathAssess>Pojistná událost č. {0} skončila úmrtím (doložka 23): vyplácí se vyšší z obou částek.</HH.Ins.Bd.DeathAssess>
+  <HH.Ins.Bd.Loss>Ztraceno položek: {0}, hodnota {1}.</HH.Ins.Bd.Loss>
+  <HH.Ins.Bd.Replacement>Základ náhrady {0}, váš vlastní podíl {1}.</HH.Ins.Bd.Replacement>
+  <HH.Ins.Bd.UnderInsured>Podpojištění: částka {0} oproti hodnotě {1}. Vyplácíme z ní {2}, s hrdostí.</HH.Ins.Bd.UnderInsured>
+  <HH.Ins.Bd.Gross>Plnění před drobným tiskem: {0}.</HH.Ins.Bd.Gross>
+  <HH.Ins.Bd.Flat>Ztráta {0}, vyplácíme {1}: {2}.</HH.Ins.Bd.Flat>
+  <HH.Ins.Bd.Kulanz>Vstřícné gesto (jednou ročně, jen Premium). Nezvykejte si na něj.</HH.Ins.Bd.Kulanz>
+  <HH.Ins.Bd.Legal>Právní štít nás učinil méně nadšenými z odmítnutí.</HH.Ins.Bd.Legal>
+  <HH.Ins.Bd.Offset>Započteno proti dřívějšímu zpětnému vymáhání: {0}.</HH.Ins.Bd.Offset>
+  <HH.Ins.Letter.From.Claims>Oddělení pojistných událostí, patro -2</HH.Ins.Letter.From.Claims>
+  <HH.Ins.Letter.From.Neutral>Clawback Mutual</HH.Ins.Letter.From.Neutral>
+  <HH.Ins.Letter.Welcome.Title>Vítejte u Clawback Mutual: {0}</HH.Ins.Letter.Welcome.Title>
+  <HH.Ins.Letter.Welcome.Body>Vážený pojistníku,
+
+děkujeme, že jste si vybral {0} v {1}. Vaše pojistné ve výši {2} bude automaticky strháváno každých {3} dní. Nemusíte dělat nic, nikdy, a v tom je smysl.</HH.Ins.Letter.Welcome.Body>
+  <HH.Ins.Letter.Welcome.Waiting>Krytí začíná po čekací lhůtě {0} dní. Čekací lhůta začíná spolu s krytím. Viz doložka 1.</HH.Ins.Letter.Welcome.Waiting>
+  <HH.Ins.Letter.Welcome.Riders>Abychom vám ušetřili čas, byly pro vás zahrnuty tyto doplňky: {0}. Kdykoli je můžete v pultu odebrat, zásadně.</HH.Ins.Letter.Welcome.Riders>
+  <HH.Ins.Letter.Welcome.Paid>První splátka byla strhnuta z {0}.</HH.Ins.Letter.Welcome.Paid>
+  <HH.Ins.Letter.Filed.Title>Pojistná událost č. {0} přijata</HH.Ins.Letter.Filed.Title>
+  <HH.Ins.Letter.Filed.Body>Přijali jsme vaši pojistnou událost č. {0} ({1}) v rámci {2}. Je pro nás důležitá. Oddělení pojistných událostí ji posoudí za jeden až tři dny, podle toho, jak bude vypadat při pohledu zpět.</HH.Ins.Letter.Filed.Body>
+  <HH.Ins.Letter.Filed.Death>Je nám líto vaší ztráty. Pojistná událost ({0}) byla přijata a bude vyřízena s péčí.</HH.Ins.Letter.Filed.Death>
+  <HH.Ins.Letter.Filed.Assessment>Úrazové krytí se posuzuje {0} po nehodě, až se škoda usadí. Náhled plnění dnes: {1}.</HH.Ins.Letter.Filed.Assessment>
+  <HH.Ins.Letter.Filed.Waiting>Upozorňujeme, že se událost stala během čekací lhůty. Říkáme to laskavě.</HH.Ins.Letter.Filed.Waiting>
+  <HH.Ins.Letter.Decision.TitleApproved>Pojistná událost č. {0}: schváleno</HH.Ins.Letter.Decision.TitleApproved>
+  <HH.Ins.Letter.Decision.TitlePartial>Pojistná událost č. {0}: částečně schváleno</HH.Ins.Letter.Decision.TitlePartial>
+  <HH.Ins.Letter.Decision.TitleDenied>Pojistná událost č. {0}: zamítnuto</HH.Ins.Letter.Decision.TitleDenied>
+  <HH.Ins.Letter.Decision.Approved>Dobrá zpráva. Vaše pojistná událost je schválena: {0}.</HH.Ins.Letter.Decision.Approved>
+  <HH.Ins.Letter.Decision.Partial>Vaše pojistná událost je částečně schválena: {0} z {1}. Jsme velmi hrdi na část, kterou jsme schválili.</HH.Ins.Letter.Decision.Partial>
+  <HH.Ins.Letter.Decision.Denied>Po pečlivém zvážení, které trvalo nějakou dobu, je vaše pojistná událost zamítnuta.</HH.Ins.Letter.Decision.Denied>
+  <HH.Ins.Letter.Decision.DeniedHow>Nic nebude vyplaceno. {0}</HH.Ins.Letter.Decision.DeniedHow>
+  <HH.Ins.Letter.Decision.CanNegotiate>Můžete vyjednávat do deseti dnů; naše dveře jsou otevřené, v přeneseném smyslu.</HH.Ins.Letter.Decision.CanNegotiate>
+  <HH.Ins.Letter.Decision.PayNow>Platba bude provedena okamžitě.</HH.Ins.Letter.Decision.PayNow>
+  <HH.Ins.Letter.Decision.PayLater>Platba bude provedena za {0}. Doby zpracování nejsou slib, jsou naděje.</HH.Ins.Letter.Decision.PayLater>
+  <HH.Ins.Letter.Decision.InKind>Můžete také vzít stavební materiály dodávkovou kapslí místo stříbra (otevřete pult).</HH.Ins.Letter.Decision.InKind>
+  <HH.Ins.Letter.Clause.Cited>Důvod: {0}</HH.Ins.Letter.Clause.Cited>
+  <HH.Ins.Letter.Clause.Neutral>Základ rozhodnutí: {0}.</HH.Ins.Letter.Clause.Neutral>
+  <HH.Ins.Letter.Paid.Title>Pojistná událost č. {0}: vyplaceno</HH.Ins.Letter.Paid.Title>
+  <HH.Ins.Letter.Paid.Body>Pojistná událost č. {0} byla vyplacena: {1}, {2}. Děkujeme, že jste naším zákazníkem. Při vašem dalším pojistném na to vzpomeneme.</HH.Ins.Letter.Paid.Body>
+  <HH.Ins.Letter.Paid.Neutral>Plnění ve výši {0} bylo vyplaceno, {1}. Přejeme vám sílu.</HH.Ins.Letter.Paid.Neutral>
+  <HH.Ins.Letter.Ended.Title>{0}: skončeno</HH.Ins.Letter.Ended.Title>
+  <HH.Ins.Letter.Ended.Body>Vaše pojistka {0} skončila: {1}.
+
+{2}</HH.Ins.Letter.Ended.Body>
+  <HH.Ins.Letter.Ended.Debt>Zpětné vymáhání ve výši {0} (doložka 22) zůstává otevřené. Nové pojistky to vyžadují nejdřív vyrovnat.</HH.Ins.Letter.Ended.Debt>
+  <HH.Ins.Letter.Missed.Title>{0}: pojistné nepřijato</HH.Ins.Letter.Missed.Title>
+  <HH.Ins.Letter.Missed.Body>Nepodařilo se nám strhnout {1} za {0}. Přátelská připomínka: zkusíme to zítra a pozítří. Potom přestaneme být přátelští.</HH.Ins.Letter.Missed.Body>
+  <HH.Ins.Letter.Lapsed.Title>{0}: zaniklo</HH.Ins.Letter.Lapsed.Title>
+  <HH.Ins.Letter.Lapsed.Body>Vaše pojistka {0} zanikla po třech nezaplacených splátkách (každá {1}). Krytí skončilo, což je smutné napsat a efektivní vyúčtovat.</HH.Ins.Letter.Lapsed.Body>
+  <HH.Ins.Letter.Premium.Title>{0}: pojistné upraveno</HH.Ins.Letter.Premium.Title>
+  <HH.Ins.Letter.Premium.Body>Vaše pojistné za {0} bylo upraveno z {1} na {2} za čtvrtletí podle vašich okolností. Pět dní ji můžete okamžitě vypovědět, což zmiňujeme, protože nás k tomu zavazuje zákon.</HH.Ins.Letter.Premium.Body>
+  <HH.Ins.Letter.Regrowth.Title>{0}: část dorostla</HH.Ins.Letter.Regrowth.Title>
+  <HH.Ins.Letter.Regrowth.Body>Potěšilo nás zjistit, že část {0} dorostla. Vymáháme zpět {1}. {2} {3}</HH.Ins.Letter.Regrowth.Body>
+  <HH.Ins.Letter.Regrowth.Offset>Bude započteno proti budoucím plněním.</HH.Ins.Letter.Regrowth.Offset>
+  <HH.Ins.Letter.Regrowth.Debt>Je vedeno jako dluh; žádné nové pojistky, dokud nebude uhrazeno.</HH.Ins.Letter.Regrowth.Debt>
+  <HH.Ins.Letter.Renew.Title>{0}: oznámení o obnovení</HH.Ins.Letter.Renew.Title>
+  <HH.Ins.Letter.Renew.Body>Vaše pojistka {0} se obnoví za tři dny. {1}</HH.Ins.Letter.Renew.Body>
+  <HH.Ins.Letter.Retro.Title>Balíčková sleva přepočítána</HH.Ins.Letter.Retro.Title>
+  <HH.Ins.Letter.Retro.Body>Protože jste odešel, byla přepočítána balíčková sleva běžícího čtvrtletí. Strhli jsme {0}. Je na poslední straně.</HH.Ins.Letter.Retro.Body>
+  <HH.Ins.Letter.Uncovered.Title>Mohl jste být pojištěn.</HH.Ins.Letter.Uncovered.Title>
+  <HH.Ins.Letter.Uncovered.Body>Všimli jsme si ztráty: {0}. Nebylo to pojištěno. {1} by rád pomohl. Pořád by rád, za pojistné.</HH.Ins.Letter.Uncovered.Body>
+  <HH.Ins.Letter.Year.Title>Váš rok u Clawbacku</HH.Ins.Letter.Year.Title>
+  <HH.Ins.Letter.Year.Intro>Rok u Clawback Mutual: {0} na pojistném za {1} aktivních pojistek. Tady je, co vás stály naše prodejní triky.</HH.Ins.Letter.Year.Intro>
+  <HH.Ins.Letter.Year.Trick>{0}: předem zaškrtnuté doplňky ({1}) stály {2}.</HH.Ins.Letter.Year.Trick>
+  <HH.Ins.Letter.Year.Total>Dohromady: {0}, což je {1} vašeho ročního pojistného (strop: {2}).</HH.Ins.Letter.Year.Total>
+  <HH.Ins.Letter.Year.Credit>Vstřícný kredit: {0} vrácených vám, {1}.</HH.Ins.Letter.Year.Credit>
+  <HH.Ins.Letter.Year.NoCredit>Všechno je v rámci stropu. Tomu říkáme férové.</HH.Ins.Letter.Year.NoCredit>
+  <HH.Ins.Upsell.Title>Clawback Mutual doporučuje</HH.Ins.Upsell.Title>
+  <HH.Ins.Upsell.Body>Vaše {0} za {1} je pěkné. Většina kolonií volí Premium.</HH.Ins.Upsell.Body>
+  <HH.Ins.Neg.Title>Vyjednávání o pojistné události č. {0}</HH.Ins.Neg.Title>
+  <HH.Ins.Neg.Lead>{0}. Nabídka nyní: {1} (hodnota pojistné události {2}). Až tři kola. Zvolte tón.</HH.Ins.Neg.Lead>
+  <HH.Ins.Neg.Negotiator>Váš vyjednavač: {0} (vyjednávání {1})</HH.Ins.Neg.Negotiator>
+  <HH.Ins.Neg.NoNegotiator>Nikdo v kolonii teď nemůže mluvit.</HH.Ins.Neg.NoNegotiator>
+  <HH.Ins.Neg.Rounds>Zbývající kola: {0}</HH.Ins.Neg.Rounds>
+  <HH.Ins.Neg.Approach.Decency>Apelovat na obyčejnou slušnost</HH.Ins.Neg.Approach.Decency>
+  <HH.Ins.Neg.Approach.Quote>Citovat jim smlouvu zpět</HH.Ins.Neg.Approach.Quote>
+  <HH.Ins.Neg.Approach.Lawyers>Zmínit právníky</HH.Ins.Neg.Approach.Lawyers>
+  <HH.Ins.Neg.HintDecency>Zdvořilé a nenápadné.</HH.Ins.Neg.HintDecency>
+  <HH.Ins.Neg.HintQuote>Funguje nejlépe u doložky, která je otevřená výkladu. Beznadějné u výluky.</HH.Ins.Neg.HintQuote>
+  <HH.Ins.Neg.HintLawyers>Právní štít je na vaší straně. Brix &amp; Partners milují spor.</HH.Ins.Neg.HintLawyers>
+  <HH.Ins.Neg.HintNoLawyers>Nemáte Právní štít; všimnou si toho.</HH.Ins.Neg.HintNoLawyers>
+  <HH.Ins.Neg.Odds>šance: {0}</HH.Ins.Neg.Odds>
+  <HH.Ins.Neg.Odds.Slim>mizivé</HH.Ins.Neg.Odds.Slim>
+  <HH.Ins.Neg.Odds.Fair>slušné</HH.Ins.Neg.Odds.Fair>
+  <HH.Ins.Neg.Odds.Decent>solidní</HH.Ins.Neg.Odds.Decent>
+  <HH.Ins.Neg.Odds.Good>dobré</HH.Ins.Neg.Odds.Good>
+  <HH.Ins.Neg.Odds.Excellent>výborné</HH.Ins.Neg.Odds.Excellent>
+  <HH.Ins.Neg.Try>Zkuste toto</HH.Ins.Neg.Try>
+  <HH.Ins.Neg.Won>vyhráno</HH.Ins.Neg.Won>
+  <HH.Ins.Neg.Part>částečně vyhráno</HH.Ins.Neg.Part>
+  <HH.Ins.Neg.Lost>prohráno</HH.Ins.Neg.Lost>
+  <HH.Ins.Neg.Success>Ustoupili. Možná poprvé. Plné plnění je vaše: {0}.</HH.Ins.Neg.Success>
+  <HH.Ins.Neg.Partial>Po povzdechnutí nabízejí {0} ({1} plnění). Vezměte, nebo zkuste znovu.</HH.Ins.Neg.Partial>
+  <HH.Ins.Neg.Fail>Oddělení pojistných událostí děkuje za vaše podněty a své rozhodnutí si ponechává.</HH.Ins.Neg.Fail>
+  <HH.Ins.Neg.NotPossible>Tuto pojistnou událost už nelze vyjednávat.</HH.Ins.Neg.NotPossible>
+  <HH.Ins.Neg.Cancelled>Protože jste byl k doložkám neslušný, Clawback Mutual se rozhodl se s vámi rozloučit. Pojistka je zrušena.</HH.Ins.Neg.Cancelled>
+  <HH.Ins.Neg.Free>Na této obtížnosti vás vyjednávání nikdy nic nestojí.</HH.Ins.Neg.Free>
+  <HH.Ins.Neg.RiskHard>Vyšší obtížnosti: po třetím neúspěšném kole vám mohou vypovědět pojistku.</HH.Ins.Neg.RiskHard>
+  <HH.Ins.Cancel.Title>Výpověď pojistky</HH.Ins.Cancel.Title>
+  <HH.Ins.Cancel.Back>Nakonec ne</HH.Ins.Cancel.Back>
+  <HH.Ins.Cancel.Confirm>Podat formulář C-7</HH.Ins.Cancel.Confirm>
+  <HH.Ins.Cancel.When>Výpověď nabude účinnosti asi za {0} dní: nejdříve při nejbližší změně čtvrtroku, alespoň {1} dní po podání.</HH.Ins.Cancel.When>
+  <HH.Ins.Cancel.When.Special>Mimořádná výpověď: účinná okamžitě kvůli vyrovnané pojistné události nebo zvýšení pojistného.</HH.Ins.Cancel.When.Special>
+  <HH.Ins.Cancel.Bundle>Odchod zvýší vaše ostatní pojistné o {0}. {1}</HH.Ins.Cancel.Bundle>
+  <HH.Ins.Cancel.Bundle.Future>Sleva za balíček od nynějška ubude, zpětně se nic nemění.</HH.Ins.Cancel.Bundle.Future>
+  <HH.Ins.Cancel.Bundle.Retro>Sleva za probíhající čtvrtrok bude přepočtena a vyúčtována.</HH.Ins.Cancel.Bundle.Retro>
+  <HH.Ins.Cancel.FormNote>Výpovědi vyžadují formulář C-7. Občas se vrátí. {0}</HH.Ins.Cancel.FormNote>
+  <HH.Ins.Cancel.Owed>Otevřený nárok na vrácení u této pojistky: {0}. Bude vypořádán v závěrečném vyúčtování.</HH.Ins.Cancel.Owed>
+  <HH.Ins.Cancel.Filed>Vaše výpověď je podána. Nabude účinnosti za {0}. Je nám líto, že odcházíte, a pokusíme se vás získat zpět.</HH.Ins.Cancel.Filed>
+  <HH.Ins.Cancel.Special>Mimořádná výpověď podána. Pojistka končí teď.</HH.Ins.Cancel.Special>
+  <HH.Ins.Cancel.FormErrorSoft>Váš formulář C-7 se vrátil s chybou formuláře. Podali jsme ho za vás znovu, takže vaše lhůta je v bezpečí. Rádi jsme pomohli.</HH.Ins.Cancel.FormErrorSoft>
+  <HH.Ins.Cancel.FormErrorHard>Váš formulář C-7 se vrátil s chybou (barva inkoustu). Lhůta byla promeškána a posouvá se o jeden čtvrtrok. K tomu už nemáme co dodat.</HH.Ins.Cancel.FormErrorHard>
+  <HH.Ins.Retention.Title>Než odejdete</HH.Ins.Retention.Title>
+  <HH.Ins.Retention.Title2>Ještě jedna věc</HH.Ins.Retention.Title2>
+  <HH.Ins.Retention.Title3>Desmond je na lince</HH.Ins.Retention.Title3>
+  <HH.Ins.Retention.From>Desmond Tally, vedoucí specialista pro udržení klientů</HH.Ins.Retention.From>
+  <HH.Ins.Retention.Body>Je nám líto, že {0} odchází. Co kdybychom to na {2} čtvrtroků zlevnili o {1}? Poctivá nabídka, bez háčku. (Háčky jsou. Jsou ale dost tenké.)</HH.Ins.Retention.Body>
+  <HH.Ins.Retention.Body2>To byla dobrá nabídka. Tahle je lepší: {1} sleva na {0} na {2} čtvrtroků. Prosím, nepovažujte to za past.</HH.Ins.Retention.Body2>
+  <HH.Ins.Retention.Body3>Váš spis mi byl předán. {0} za {1} slevu, {2} čtvrtroků. Vaši výpověď osobně předám kolegovi, který je zrovna na dovolené.</HH.Ins.Retention.Body3>
+  <HH.Ins.Retention.MinTerm>Sleva znamená novou minimální dobu trvání: dokud neuplyne, nelze odejít.</HH.Ins.Retention.MinTerm>
+  <HH.Ins.Retention.Keep>Ponechat pojistku se slevou {0}</HH.Ins.Retention.Keep>
+  <HH.Ins.Retention.Still>Ne, díky, pořád chci vypovědět</HH.Ins.Retention.Still>
+  <HH.Ins.Retention.Kept>Vítejte zpět. Vaše sleva je {0} na {1} čtvrtroků.</HH.Ins.Retention.Kept>
+  <HH.Ins.UI.NoGame>Clawback Mutual je mimo hru zavřená.</HH.Ins.UI.NoGame>
+  <HH.Ins.UI.Footer>Pojištění je slib. Držíme se té části, která je písemně.</HH.Ins.UI.Footer>
+  <HH.Ins.UI.Spendable>Platit z: {0}</HH.Ins.UI.Spendable>
+  <HH.Ins.UI.PayFrom>Pojistné se strhává z: {0}.</HH.Ins.UI.PayFrom>
+  <HH.Ins.UI.Running>Průběžné pojistné: {0} denně</HH.Ins.UI.Running>
+  <HH.Ins.UI.Bundle.Title>Balíček:</HH.Ins.UI.Bundle.Title>
+  <HH.Ins.UI.Bundle.None>Vaše první pojistka je nejtvrdší. Třetí dává 10 % slevu na všechny.</HH.Ins.UI.Bundle.None>
+  <HH.Ins.UI.Bundle.Some>Aktivních pojistek: {0}, sleva {1}. Třetí dává {2}.</HH.Ins.UI.Bundle.Some>
+  <HH.Ins.UI.Bundle.Full>Aktivních pojistek: {0}, sleva {1} na veškeré pojistné.</HH.Ins.UI.Bundle.Full>
+  <HH.Ins.UI.Bundle.Retro>(Odchod přepočítá probíhající čtvrtrok.)</HH.Ins.UI.Bundle.Retro>
+  <HH.Ins.UI.Covers>Kryje:</HH.Ins.UI.Covers>
+  <HH.Ins.UI.Badge>Většina kolonií volí Premium</HH.Ins.UI.Badge>
+  <HH.Ins.UI.Price>{0} každých {1} dní</HH.Ins.UI.Price>
+  <HH.Ins.UI.Price.Travel>{0} na hlavu a den cesty</HH.Ins.UI.Price.Travel>
+  <HH.Ins.UI.Price.Tip>Jak se cena tvoří
+{0}
+
+Za čtvrtrok: {1}</HH.Ins.UI.Price.Tip>
+  <HH.Ins.UI.Mech.Property>Vlastní podíl {0}, hradí {1} hodnoty.</HH.Ins.UI.Mech.Property>
+  <HH.Ins.UI.Mech.Person>Od {0} % invalidity, až do výše {1} základní částky.</HH.Ins.UI.Mech.Person>
+  <HH.Ins.UI.Pay.Instant>Vyplaceno okamžitě.</HH.Ins.UI.Pay.Instant>
+  <HH.Ins.UI.Pay.Days>Vyplaceno za {0}–{1} dní.</HH.Ins.UI.Pay.Days>
+  <HH.Ins.UI.SignNow>Podepsat hned</HH.Ins.UI.SignNow>
+  <HH.Ins.UI.Signed>Podepsáno</HH.Ins.UI.Signed>
+  <HH.Ins.UI.SignedOther>Máte: {0}</HH.Ins.UI.SignedOther>
+  <HH.Ins.UI.SignedMsg>Podepsáno {0} ({1}). Vítejte u Clawback Mutual.</HH.Ins.UI.SignedMsg>
+  <HH.Ins.UI.For>Pro: {0}</HH.Ins.UI.For>
+  <HH.Ins.UI.Insured>pojištěný</HH.Ins.UI.Insured>
+  <HH.Ins.UI.SumProperty>Pojistná částka: {0}</HH.Ins.UI.SumProperty>
+  <HH.Ins.UI.SumPerson>Základní částka: {0}</HH.Ins.UI.SumPerson>
+  <HH.Ins.UI.SumCap>Strop na jednu pojistnou událost: {0}</HH.Ins.UI.SumCap>
+  <HH.Ins.UI.Customize>Upravit</HH.Ins.UI.Customize>
+  <HH.Ins.UI.Riders.Hidden>Pro vás vybráno doplňků: {0}.</HH.Ins.UI.Riders.Hidden>
+  <HH.Ins.UI.Riders.Pre>(za vás zaškrtnuto)</HH.Ins.UI.Riders.Pre>
+  <HH.Ins.UI.Riders.Sum>Doplňky: +{0}</HH.Ins.UI.Riders.Sum>
+  <HH.Ins.UI.Riders.BasicOnly>Jen základ</HH.Ins.UI.Riders.BasicOnly>
+  <HH.Ins.UI.PremiumPlus>Premium Plus (již brzy)</HH.Ins.UI.PremiumPlus>
+  <HH.Ins.UI.FinePrint>Drobný tisk</HH.Ins.UI.FinePrint>
+  <HH.Ins.UI.Fine.Intro>Podmínky {0} (pro vaši pohodlí zkrácené):</HH.Ins.UI.Fine.Intro>
+  <HH.Ins.UI.Fine.Tail>Úplné podmínky jsou těch 400 stran zmíněných v našem sloganu. Viz též záložka Drobný tisk.</HH.Ins.UI.Fine.Tail>
+  <HH.Ins.UI.Mine.None>Zatím nemáte žádnou pojistku. Je to jediná věc, o které jsme si jistí.</HH.Ins.UI.Mine.None>
+  <HH.Ins.UI.Mine.Sum>Částka: {0}</HH.Ins.UI.Mine.Sum>
+  <HH.Ins.UI.Mine.NoClaims>Třída bezeškodnosti {0} (-{1})</HH.Ins.UI.Mine.NoClaims>
+  <HH.Ins.UI.Mine.Waiting>čekací doba: zbývá {0}</HH.Ins.UI.Mine.Waiting>
+  <HH.Ins.UI.Mine.Discount>sleva za udržení -{0}</HH.Ins.UI.Mine.Discount>
+  <HH.Ins.UI.Mine.Owed>otevřený nárok na vrácení {0}</HH.Ins.UI.Mine.Owed>
+  <HH.Ins.UI.Mine.Paid>Zaplacené pojistné: {0}  ·  Přijatá plnění: {1}</HH.Ins.UI.Mine.Paid>
+  <HH.Ins.UI.Mine.Ended>Ukončeno: {0}</HH.Ins.UI.Mine.Ended>
+  <HH.Ins.UI.Mine.Upsell>Většina kolonií volí Premium.</HH.Ins.UI.Mine.Upsell>
+  <HH.Ins.UI.Mine.CancelLink>Výpověď pojistky</HH.Ins.UI.Mine.CancelLink>
+  <HH.Ins.UI.Mine.CancelPending>Výpověď nabude účinnosti za {0}</HH.Ins.UI.Mine.CancelPending>
+  <HH.Ins.UI.Mine.FormError>(chyba formuláře)</HH.Ins.UI.Mine.FormError>
+  <HH.Ins.UI.Mine.Withdraw>Vzít výpověď zpět</HH.Ins.UI.Mine.Withdraw>
+  <HH.Ins.UI.Mine.Foot>Pojistky se obnovují automaticky (článek 31). Mimořádná výpověď: po vyrovnané pojistné události nebo zvýšení pojistného můžete odejít do pěti dnů, okamžitě.</HH.Ins.UI.Mine.Foot>
+  <HH.Ins.UI.Debt>Dlužíte Clawback Mutual {0} podle článku 22.</HH.Ins.UI.Debt>
+  <HH.Ins.UI.Debt.Settle>Vyrovnat hned</HH.Ins.UI.Debt.Settle>
+  <HH.Ins.UI.Debt.Cannot>Teď to nemůžete zaplatit.</HH.Ins.UI.Debt.Cannot>
+  <HH.Ins.UI.Claims.None>Žádné pojistné události. Clawback Mutual je potěšena a trochu podezřívavá.</HH.Ins.UI.Claims.None>
+  <HH.Ins.UI.Claims.Log>Časová osa</HH.Ins.UI.Claims.Log>
+  <HH.Ins.UI.Claim.Review>V posouzení: zbývá {0}</HH.Ins.UI.Claim.Review>
+  <HH.Ins.UI.Claim.Window>lhůta k jednání: {0}</HH.Ins.UI.Claim.Window>
+  <HH.Ins.UI.Claim.PaysIn>vyplatí za {0}</HH.Ins.UI.Claim.PaysIn>
+  <HH.Ins.UI.Claim.Paid>Vyplaceno: {0}</HH.Ins.UI.Claim.Paid>
+  <HH.Ins.UI.Claim.Closed>Uzavřeno</HH.Ins.UI.Claim.Closed>
+  <HH.Ins.UI.Claim.Line>{0}  ·  škoda {1}  ·  nárok {2}  ·  nabídka {3}</HH.Ins.UI.Claim.Line>
+  <HH.Ins.UI.Claim.Preview>Náhled: stupeň {0} %, plnění {1}, posouzení za {2}</HH.Ins.UI.Claim.Preview>
+  <HH.Ins.UI.Claim.Details>Podrobnosti</HH.Ins.UI.Claim.Details>
+  <HH.Ins.UI.Fine.Title>Drobný tisk</HH.Ins.UI.Fine.Title>
+  <HH.Ins.UI.Fine.Lead>Patnáct článků, tak jak jsou vytištěny. Při určité úrovni prodejního tlaku se zobrazují jen jako odkazy. Články šedě na vaší obtížnosti neplatí.</HH.Ins.UI.Fine.Lead>
+  <HH.Ins.UI.Fine.Inactive>zde neaktivní</HH.Ins.UI.Fine.Inactive>
+  <HH.Ins.UI.Limbs.Title>Tabulka končetin</HH.Ins.UI.Limbs.Title>
+  <HH.Ins.UI.Limbs.Lead>Hodnoty v procentech základní částky, na stranu. Ztracená část se počítá svou hodnotou a nahrazuje hodnoty svých podřízených částí; několik částí dohromady činí nejvýše 100 %.</HH.Ins.UI.Limbs.Lead>
+  <HH.Enum.TrickMode.Follows>Podle prodejního tlaku</HH.Enum.TrickMode.Follows>
+  <HH.Enum.TrickMode.On>Vždy zapnuto</HH.Enum.TrickMode.On>
+  <HH.Enum.TrickMode.Off>Vypnuto</HH.Enum.TrickMode.Off>
+</LanguageData>

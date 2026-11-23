@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_AteDish.label>съел правильное блюдо</HH_AteDish.label>
+  <HH_AteDish.stages.0.label>ужасная домашняя кухня</HH_AteDish.stages.0.label>
+  <HH_AteDish.stages.0.description>Я съел ужасное блюдо домашней кухни.</HH_AteDish.stages.0.description>
+  <HH_AteDish.stages.1.label>плохая домашняя кухня</HH_AteDish.stages.1.label>
+  <HH_AteDish.stages.1.description>Я съел плохое блюдо домашней кухни.</HH_AteDish.stages.1.description>
+  <HH_AteDish.stages.2.label>обычная домашняя кухня</HH_AteDish.stages.2.label>
+  <HH_AteDish.stages.2.description>Я съел обычное блюдо домашней кухни.</HH_AteDish.stages.2.description>
+  <HH_AteDish.stages.3.label>хорошая домашняя кухня</HH_AteDish.stages.3.label>
+  <HH_AteDish.stages.3.description>Я съел хорошее блюдо домашней кухни.</HH_AteDish.stages.3.description>
+  <HH_AteDish.stages.4.label>отличная домашняя кухня</HH_AteDish.stages.4.label>
+  <HH_AteDish.stages.4.description>Я съел отличное блюдо домашней кухни.</HH_AteDish.stages.4.description>
+  <HH_AteDish.stages.5.label>шедевральная домашняя кухня</HH_AteDish.stages.5.label>
+  <HH_AteDish.stages.5.description>Я съел шедевральное блюдо домашней кухни.</HH_AteDish.stages.5.description>
+  <HH_AteDish.stages.6.label>легендарная домашняя кухня</HH_AteDish.stages.6.label>
+  <HH_AteDish.stages.6.description>Я съел легендарное блюдо домашней кухни.</HH_AteDish.stages.6.description>
+  <HH_AteDish.stages.7.label>ужасная хорошая домашняя кухня</HH_AteDish.stages.7.label>
+  <HH_AteDish.stages.7.description>Я съел ужасное блюдо хорошей домашней кухни.</HH_AteDish.stages.7.description>
+  <HH_AteDish.stages.8.label>плохая хорошая домашняя кухня</HH_AteDish.stages.8.label>
+  <HH_AteDish.stages.8.description>Я съел плохое блюдо хорошей домашней кухни.</HH_AteDish.stages.8.description>
+  <HH_AteDish.stages.9.label>обычная хорошая домашняя кухня</HH_AteDish.stages.9.label>
+  <HH_AteDish.stages.9.description>Я съел обычное блюдо хорошей домашней кухни.</HH_AteDish.stages.9.description>
+  <HH_AteDish.stages.10.label>хорошая хорошая домашняя кухня</HH_AteDish.stages.10.label>
+  <HH_AteDish.stages.10.description>Я съел хорошее блюдо хорошей домашней кухни.</HH_AteDish.stages.10.description>
+  <HH_AteDish.stages.11.label>отличная хорошая домашняя кухня</HH_AteDish.stages.11.label>
+  <HH_AteDish.stages.11.description>Я съел отличное блюдо хорошей домашней кухни.</HH_AteDish.stages.11.description>
+  <HH_AteDish.stages.12.label>шедевральная хорошая домашняя кухня</HH_AteDish.stages.12.label>
+  <HH_AteDish.stages.12.description>Я съел шедевральное блюдо хорошей домашней кухни.</HH_AteDish.stages.12.description>
+  <HH_AteDish.stages.13.label>легендарная хорошая домашняя кухня</HH_AteDish.stages.13.label>
+  <HH_AteDish.stages.13.description>Я съел легендарное блюдо хорошей домашней кухни.</HH_AteDish.stages.13.description>
+  <HH_AteDish.stages.14.label>ужасная изысканная кухня</HH_AteDish.stages.14.label>
+  <HH_AteDish.stages.14.description>Я съел ужасное блюдо изысканной кухни.</HH_AteDish.stages.14.description>
+  <HH_AteDish.stages.15.label>плохая изысканная кухня</HH_AteDish.stages.15.label>
+  <HH_AteDish.stages.15.description>Я съел плохое блюдо изысканной кухни.</HH_AteDish.stages.15.description>
+  <HH_AteDish.stages.16.label>обычная изысканная кухня</HH_AteDish.stages.16.label>
+  <HH_AteDish.stages.16.description>Я съел обычное блюдо изысканной кухни.</HH_AteDish.stages.16.description>
+  <HH_AteDish.stages.17.label>хорошая изысканная кухня</HH_AteDish.stages.17.label>
+  <HH_AteDish.stages.17.description>Я съел хорошее блюдо изысканной кухни.</HH_AteDish.stages.17.description>
+  <HH_AteDish.stages.18.label>отличная изысканная кухня</HH_AteDish.stages.18.label>
+  <HH_AteDish.stages.18.description>Я съел отличное блюдо изысканной кухни.</HH_AteDish.stages.18.description>
+  <HH_AteDish.stages.19.label>шедевральная изысканная кухня</HH_AteDish.stages.19.label>
+  <HH_AteDish.stages.19.description>Я съел шедевральное блюдо изысканной кухни.</HH_AteDish.stages.19.description>
+  <HH_AteDish.stages.20.label>легендарная изысканная кухня</HH_AteDish.stages.20.label>
+  <HH_AteDish.stages.20.description>Я съел легендарное блюдо изысканной кухни.</HH_AteDish.stages.20.description>
+  <HH_AteDish.stages.21.label>ужасная высокая кухня</HH_AteDish.stages.21.label>
+  <HH_AteDish.stages.21.description>Я съел ужасное блюдо высокой кухни.</HH_AteDish.stages.21.description>
+  <HH_AteDish.stages.22.label>плохая высокая кухня</HH_AteDish.stages.22.label>
+  <HH_AteDish.stages.22.description>Я съел плохое блюдо высокой кухни.</HH_AteDish.stages.22.description>
+  <HH_AteDish.stages.23.label>обычная высокая кухня</HH_AteDish.stages.23.label>
+  <HH_AteDish.stages.23.description>Я съел обычное блюдо высокой кухни.</HH_AteDish.stages.23.description>
+  <HH_AteDish.stages.24.label>хорошая высокая кухня</HH_AteDish.stages.24.label>
+  <HH_AteDish.stages.24.description>Я съел хорошее блюдо высокой кухни.</HH_AteDish.stages.24.description>
+  <HH_AteDish.stages.25.label>отличная высокая кухня</HH_AteDish.stages.25.label>
+  <HH_AteDish.stages.25.description>Я съел отличное блюдо высокой кухни.</HH_AteDish.stages.25.description>
+  <HH_AteDish.stages.26.label>шедевральная высокая кухня</HH_AteDish.stages.26.label>
+  <HH_AteDish.stages.26.description>Я съел шедевральное блюдо высокой кухни.</HH_AteDish.stages.26.description>
+  <HH_AteDish.stages.27.label>легендарная высокая кухня</HH_AteDish.stages.27.label>
+  <HH_AteDish.stages.27.description>Я съел легендарное блюдо высокой кухни.</HH_AteDish.stages.27.description>
+</LanguageData>

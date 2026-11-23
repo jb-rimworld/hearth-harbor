@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchScreening.reportString>sleduje film.</HH_WatchScreening.reportString>
+  <HH_SalonSit.reportString>čeká na nový vzhled.</HH_SalonSit.reportString>
+  <HH_SalonStyle.reportString>stylizuje zákazníka TargetA.</HH_SalonStyle.reportString>
+  <HH_SalonSelf.reportString>nechává si ostříhat vlasy.</HH_SalonSelf.reportString>
+  <HH_GalleryVisit.reportString>prohlíží umění.</HH_GalleryVisit.reportString>
+  <HH_ParkRest.reportString>odpočívá na lavičce.</HH_ParkRest.reportString>
+  <HH_TaxiDeparture.reportString>čeká na taxi.</HH_TaxiDeparture.reportString>
+  <HH_Bodyguard.reportString>hlídá TargetA.</HH_Bodyguard.reportString>
+</LanguageData>

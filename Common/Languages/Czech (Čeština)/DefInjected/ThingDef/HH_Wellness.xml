@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_HotTub.label>vířivka</HH_HotTub.label>
+  <HH_HotTub.description>Dřevěná káď s topnou spirálou a čerpadlem, které většinou funguje. Dva lidé se mohou namáčet najednou. Kolonisté si odpočinou a získají klidnou náladu; hosté v lázeňském místě za to platí.</HH_HotTub.description>
+  <HH_Sauna.label>saunová kamna</HH_Sauna.label>
+  <HH_Sauna.description>Kamna na dřevo vyzděná kamenem, která promění malou uzavřenou místnost v saunu. Místnost se počítá jako sauna, jakmile se udrží alespoň na minimální teplotě nastavené v nastavení modu (výchozích 45 °C). Krmte je dřevem a držte místnost malou a zazděnou.</HH_Sauna.description>
+  <HH_MassageTable.label>masážní stůl</HH_MassageTable.label>
+  <HH_MassageTable.description>Polstrovaný stůl s otvorem pro obličej a policí s oleji. Potřebuje kolonistu s pracovním typem Obsluha, který masíruje; získává zkušenosti ze Společenských dovedností a Medicíny, klient platí (hosté) nebo si odpočine (kolonisté).</HH_MassageTable.description>
+  <HH_TestOnly_VenueSign.label>testovací cedule místa (jen test)</HH_TestOnly_VenueSign.label>
+  <HH_TestOnly_VenueSign.description>Jen pro automatické testy. Nelze postavit.</HH_TestOnly_VenueSign.description>
+</LanguageData>

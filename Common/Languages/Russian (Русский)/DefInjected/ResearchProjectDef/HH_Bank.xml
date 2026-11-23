@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Banking.label>автоматические кассиры</SL_Banking.label>
+  <SL_Banking.description>Машины, которые выдают серебро любому, кто введёт верные четыре цифры. Открывает банкомат и ночной сейф.</SL_Banking.description>
+  <SL_Branches.label>банковские отделения</SL_Branches.label>
+  <SL_Branches.description>Настоящая стойка, настоящее хранилище и настоящая очередь. Открывает банковскую стойку: мгновенные вклады, мгновенные наличные, заявки на кредит лично.</SL_Branches.description>
+  <SL_Credit.label>потребительский кредит</SL_Credit.label>
+  <SL_Credit.description>Деньги, которых у вас нет, для тех, у кого их нет. Открывает кредиты, кредитный рейтинг и, если дойдёт до этого, агентство взыскания.</SL_Credit.description>
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_FrontDesk.label>フロントデスク</HH_FrontDesk.label>
+  <HH_FrontDesk.description>台帳、ベル、紐付きのペンが置かれたカウンターです。到着した客はここでチェックインし、初泊の料金を払い、ベッドを割り当てられます。その日の売上は、深夜になるとその横に置かれます。\n\nフロントデスクがないと、客は自分で部屋を探すことになり、本人たちは見るからに渋々それをやります。</HH_FrontDesk.description>
+</LanguageData>

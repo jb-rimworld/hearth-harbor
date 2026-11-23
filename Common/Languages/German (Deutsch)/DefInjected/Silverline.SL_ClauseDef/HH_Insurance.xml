@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Clause_1.label>Wartezeit</SL_Clause_1.label>
+  <SL_Clause_1.description>Der Schutz beginnt nach der Wartezeit.</SL_Clause_1.description>
+  <SL_Clause_3_2.label>Unfälle und Kochen</SL_Clause_3_2.label>
+  <SL_Clause_3_2.description>Krankheit ist kein Unfall.</SL_Clause_3_2.description>
+  <SL_Clause_4.label>Taten des Erzählers</SL_Clause_4.label>
+  <SL_Clause_4.description>Wetterschäden sind eine Grauzone.</SL_Clause_4.description>
+  <SL_Clause_7b.label>Überfälle und Belagerungen</SL_Clause_7b.label>
+  <SL_Clause_7b.description>Belagerungen und Mechanoiden-Cluster sind eine Grauzone.</SL_Clause_7b.description>
+  <SL_Clause_9.label>Vorerkrankungen</SL_Clause_9.label>
+  <SL_Clause_9.description>Vorschäden werden abgezogen.</SL_Clause_9.description>
+  <SL_Clause_11.label>selbst verursachte Schäden</SL_Clause_11.label>
+  <SL_Clause_11.description>Schäden durch die eigenen Leute sind ausgeschlossen.</SL_Clause_11.description>
+  <SL_Clause_14b.label>Wände und Türen</SL_Clause_14b.label>
+  <SL_Clause_14b.description>Eine kaputte Tür ist eine Grauzone.</SL_Clause_14b.description>
+  <SL_Clause_17.label>die andere Klausel</SL_Clause_17.label>
+  <SL_Clause_17.description>Ein weiterer Tag Prüfung. Ab Überbucht eine Grauzone.</SL_Clause_17.description>
+  <SL_Clause_21.label>bionische Teile</SL_Clause_21.label>
+  <SL_Clause_21.description>Bionik ist Ausrüstung.</SL_Clause_21.description>
+  <SL_Clause_22.label>Nachwachsen</SL_Clause_22.label>
+  <SL_Clause_22.description>Wächst ein verlorenes Körperteil nach, wächst auch die Forderung.</SL_Clause_22.description>
+  <SL_Clause_23.label>Begutachtung und Tod</SL_Clause_23.label>
+  <SL_Clause_23.description>Wer vor Ende der Begutachtung stirbt, beendet die Begutachtung.</SL_Clause_23.description>
+  <SL_Clause_26.label>Risikoänderungen</SL_Clause_26.label>
+  <SL_Clause_26.description>Die Prämien folgen der Gefahr.</SL_Clause_26.description>
+  <SL_Clause_30.label>Formular C-7</SL_Clause_30.label>
+  <SL_Clause_30.description>Kündigungen können mit einem Formfehler zurückkommen.</SL_Clause_30.description>
+  <SL_Clause_31.label>automatische Verlängerung</SL_Clause_31.label>
+  <SL_Clause_31.description>Policen verlängern sich von selbst.</SL_Clause_31.description>
+  <SL_Clause_40.label>Interessenkonflikt</SL_Clause_40.label>
+  <SL_Clause_40.description>Ab Überbucht hilft der Rechtsschutz nicht gegen Clawback Mutual.</SL_Clause_40.description>
+</LanguageData>

@@ -1,0 +1,6 @@
+{
+ "k:HH.Setting.core.researchMode": "Режим исследований",
+ "k:HH.Setting.core.researchMode.Desc": "Полный: дерево исследований Hearth & Harbor и дерево Silverline ограничивают постройки и функции. Выкл.: всё доступно с самого начала (тёмным проектам подземелья всё равно нужно открытие).",
+ "k:HH.Enum.CoreResearchMode.Full": "Полный",
+ "k:HH.Enum.CoreResearchMode.Off": "Выкл."
+}

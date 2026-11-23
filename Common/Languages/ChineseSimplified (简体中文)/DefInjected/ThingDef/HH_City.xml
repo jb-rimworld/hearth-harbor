@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ProjectorScreen.label>投影幕</HH_ProjectorScreen.label>
+  <HH_ProjectorScreen.description>一块宽大的屏幕，上方的横梁上固定着一台投影机。在屏幕前摆上椅子，房间里挂好场所招牌，再把灯光调暗：访客付费买座位，殖民者则能享受一个电影之夜。电影都很老旧、声音很吵，而且没人记得是谁拍的。</HH_ProjectorScreen.description>
+  <HH_SalonChair.label>沙龙椅</HH_SalonChair.label>
+  <HH_SalonChair.description>一把带软垫、可调节高度的椅子，配有理发披肩，背后的墙上挂着镜子，旁边的抽屉里装着剪刀。站在椅子后面的殖民者会为坐在椅上的人换一个新造型。殖民者免费使用，访客则需付费。</HH_SalonChair.description>
+  <HH_ParkBench.label>公园长椅</HH_ParkBench.label>
+  <HH_ParkBench.description>一张朴素的双人长椅，视野开阔。不用花钱，也不用签字：人们坐下来看看眼前的风景，心情就会好一点。周围的风景越漂亮，效果越好。</HH_ParkBench.description>
+  <HH_TaxiStand.label>出租车站</HH_TaxiStand.label>
+  <HH_TaxiStand.description>一块涂了漆的方形地面、一根路牌柱和一个呼叫箱。想离开的访客如果不想走到地图边缘，可以在这里叫一辆小型穿梭车并付费乘坐；一些抵达的访客也会被体面地送到这里。上方需要有开阔的天空，好让出租车降落。</HH_TaxiStand.description>
+  <HH_TaxiIncoming.label>出租车（驶入中）</HH_TaxiIncoming.label>
+  <HH_TaxiLeaving.label>出租车（驶离中）</HH_TaxiLeaving.label>
+</LanguageData>

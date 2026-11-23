@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Clause_1.label>等待期</SL_Clause_1.label>
+  <SL_Clause_1.description>保障在等待期结束后开始。</SL_Clause_1.description>
+  <SL_Clause_3_2.label>意外与烹饪</SL_Clause_3_2.label>
+  <SL_Clause_3_2.description>疾病不是意外。</SL_Clause_3_2.description>
+  <SL_Clause_4.label>叙事者的行为</SL_Clause_4.label>
+  <SL_Clause_4.description>天气造成的损害属于灰色地带。</SL_Clause_4.description>
+  <SL_Clause_7b.label>袭击与围攻</SL_Clause_7b.label>
+  <SL_Clause_7b.description>围攻和机械族集群属于灰色地带。</SL_Clause_7b.description>
+  <SL_Clause_9.label>既有状况</SL_Clause_9.label>
+  <SL_Clause_9.description>事前已存在的损害将被扣除。</SL_Clause_9.description>
+  <SL_Clause_11.label>自我造成的损害</SL_Clause_11.label>
+  <SL_Clause_11.description>由你自己的人造成的损害不予承保。</SL_Clause_11.description>
+  <SL_Clause_14b.label>墙壁与门</SL_Clause_14b.label>
+  <SL_Clause_14b.description>门被破坏属于灰色地带。</SL_Clause_14b.description>
+  <SL_Clause_17.label>另一条款</SL_Clause_17.label>
+  <SL_Clause_17.description>再多审核一天。在超额预订阶段属于灰色地带。</SL_Clause_17.description>
+  <SL_Clause_21.label>仿生部件</SL_Clause_21.label>
+  <SL_Clause_21.description>仿生体属于装备。</SL_Clause_21.description>
+  <SL_Clause_22.label>再生</SL_Clause_22.label>
+  <SL_Clause_22.description>如果失去的部位重新长出，理赔也随之恢复。</SL_Clause_22.description>
+  <SL_Clause_23.label>评估与死亡</SL_Clause_23.label>
+  <SL_Clause_23.description>在评估结束前死亡，评估即告终止。</SL_Clause_23.description>
+  <SL_Clause_26.label>风险变化</SL_Clause_26.label>
+  <SL_Clause_26.description>保费随危险程度变动。</SL_Clause_26.description>
+  <SL_Clause_30.label>C-7表格</SL_Clause_30.label>
+  <SL_Clause_30.description>退保申请可能因表格错误被退回。</SL_Clause_30.description>
+  <SL_Clause_31.label>自动续期</SL_Clause_31.label>
+  <SL_Clause_31.description>保单自动续期。</SL_Clause_31.description>
+  <SL_Clause_40.label>利益冲突</SL_Clause_40.label>
+  <SL_Clause_40.description>在超额预订阶段，法律护盾对 Clawback Mutual 无效。</SL_Clause_40.description>
+</LanguageData>

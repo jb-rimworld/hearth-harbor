@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.InnReportMode.Letter>Brief</HH.Enum.InnReportMode.Letter>
+  <HH.Enum.InnReportMode.Message>Nachricht</HH.Enum.InnReportMode.Message>
+  <HH.Enum.InnReportMode.Off>Aus</HH.Enum.InnReportMode.Off>
+  <HH.Inn.And>und</HH.Inn.And>
+  <HH.Inn.Arrival.Day>Sie sind nur für den Tag gekommen.</HH.Inn.Arrival.Day>
+  <HH.Inn.Arrival.Label>Gäste: {0}</HH.Inn.Arrival.Label>
+  <HH.Inn.Arrival.Overnight>Sie wollen über Nacht bleiben.</HH.Inn.Arrival.Overnight>
+  <HH.Inn.Arrival.Text>{0} aus {1} sind eingetroffen. {2} Zusammen haben sie etwa {3} Silber dabei.</HH.Inn.Arrival.Text>
+  <HH.Inn.Arrival.TipDesk>Tipp: Mit einer Rezeption können Gäste ordentlich einchecken; ohne suchen sie sich ihre Betten selbst.</HH.Inn.Arrival.TipDesk>
+  <HH.Inn.Card>Karte</HH.Inn.Card>
+  <HH.Inn.Cash>bar</HH.Inn.Cash>
+  <HH.Inn.Concierge>Concierge</HH.Inn.Concierge>
+  <HH.Inn.Concierge.AllClear>alles in Ordnung, die Gäste sind zufrieden.</HH.Inn.Concierge.AllClear>
+  <HH.Inn.Desk.Door>Hausregeln: {0}</HH.Inn.Desk.Door>
+  <HH.Inn.Desk.Inspect>Check-ins heute: {0} · insgesamt: {1}</HH.Inn.Desk.Inspect>
+  <HH.Inn.Desk.Next>Nächste Gäste: {0}</HH.Inn.Desk.Next>
+  <HH.Inn.Desk.NoBeds>Noch keine Gästebetten: Markiere ein Bett als Gästebett, um Übernachtungsgäste zu empfangen.</HH.Inn.Desk.NoBeds>
+  <HH.Inn.Door.Age>Alter: {0}–{1}</HH.Inn.Door.Age>
+  <HH.Inn.Door.AllowAll>Alle hereinlassen (alle Filter unten ignorieren)</HH.Inn.Door.AllowAll>
+  <HH.Inn.Door.Any>beliebig</HH.Inn.Door.Any>
+  <HH.Inn.Door.Day>Tagesgäste</HH.Inn.Door.Day>
+  <HH.Inn.Door.Everyone>Alle</HH.Inn.Door.Everyone>
+  <HH.Inn.Door.Except>Alle außer diesen</HH.Inn.Door.Except>
+  <HH.Inn.Door.Factions>Fraktionen</HH.Inn.Door.Factions>
+  <HH.Inn.Door.Gender>Geschlecht</HH.Inn.Door.Gender>
+  <HH.Inn.Door.Gizmo>Hausregeln</HH.Inn.Door.Gizmo>
+  <HH.Inn.Door.GizmoDesc>Lege fest, wer bleiben darf: Fraktionen, Xenotypen, Geschlecht, Alter, Adelstitel, Technologiestufe, Vermögen und Aufenthaltsart. Die Filter gelten, wenn Gäste geplant und erzeugt werden.</HH.Inn.Door.GizmoDesc>
+  <HH.Inn.Door.Intro>Wer kommen darf. Die Filter gelten, wenn Gäste geplant und erzeugt werden; feindliche Fraktionen kommen nie zu Besuch.</HH.Inn.Door.Intro>
+  <HH.Inn.Door.Only>Nur diese</HH.Inn.Door.Only>
+  <HH.Inn.Door.Overnight>Übernachtungsgäste</HH.Inn.Door.Overnight>
+  <HH.Inn.Door.Preview>{0} der Leute aus freundlichen Fraktionen wären willkommen.</HH.Inn.Door.Preview>
+  <HH.Inn.Door.Quip.Age>Altersdiskriminierung. Oma wird sich das merken.</HH.Inn.Door.Quip.Age>
+  <HH.Inn.Door.Quip.AllowAll>Ugh. Ein Hippie.</HH.Inn.Door.Quip.AllowAll>
+  <HH.Inn.Door.Quip.Default>Weltoffen, aber mit Grenzen, was?</HH.Inn.Door.Quip.Default>
+  <HH.Inn.Door.Quip.Factions>Nachtragend? Sehr stilvoll.</HH.Inn.Door.Quip.Factions>
+  <HH.Inn.Door.Quip.Gender>Die halbe Welt ausgeladen. Effizient, du Sexist.</HH.Inn.Door.Quip.Gender>
+  <HH.Inn.Door.Quip.Saved>Gästefilter gespeichert.</HH.Inn.Door.Quip.Saved>
+  <HH.Inn.Door.Quip.StayKind>Bindungsängste, was?</HH.Inn.Door.Quip.StayKind>
+  <HH.Inn.Door.Quip.Tech>Zu primitiv für dein feines Essen? Notiert.</HH.Inn.Door.Quip.Tech>
+  <HH.Inn.Door.Quip.Title>Klassenkampf, aber als Gastgewerbe.</HH.Inn.Door.Quip.Title>
+  <HH.Inn.Door.Quip.Wealth>Nur die Reichen. Dein Vermieter wäre stolz.</HH.Inn.Door.Quip.Wealth>
+  <HH.Inn.Door.Quip.Xenotypes>Gen-Snob entdeckt. Du bist es.</HH.Inn.Door.Quip.Xenotypes>
+  <HH.Inn.Door.Reset>Fast alle (Standard)</HH.Inn.Door.Reset>
+  <HH.Inn.Door.Tech>Niedrigste Technologiestufe</HH.Inn.Door.Tech>
+  <HH.Inn.Door.Title>Hausregeln</HH.Inn.Door.Title>
+  <HH.Inn.Door.Title2>Adelstitel (nur mit Titel / ohne Titel)</HH.Inn.Door.Title2>
+  <HH.Inn.Door.Wealth>Vermögensspanne: {0}–{1}</HH.Inn.Door.Wealth>
+  <HH.Inn.Door.Xenotypes>Xenotypen</HH.Inn.Door.Xenotypes>
+  <HH.Inn.Event.Accompanied>Wurde von {0} herumgeführt.</HH.Inn.Event.Accompanied>
+  <HH.Inn.Event.Activity>Ging zu {0}.</HH.Inn.Event.Activity>
+  <HH.Inn.Event.Arrested>Wurde festgenommen.</HH.Inn.Event.Arrested>
+  <HH.Inn.Event.Arrived>Ist aus {0} angekommen.</HH.Inn.Event.Arrived>
+  <HH.Inn.Event.BedTaken>Hat mitten im Aufenthalt das Bett verloren.</HH.Inn.Event.BedTaken>
+  <HH.Inn.Event.BondTooLow>Fand den Ort gut, aber nicht gut genug, um zu bleiben (Bindung {0}/{1}).</HH.Inn.Event.BondTooLow>
+  <HH.Inn.Event.CheckedIn>Hat an der Rezeption eingecheckt.</HH.Inn.Event.CheckedIn>
+  <HH.Inn.Event.CouldNotPay>Konnte die Nacht nicht bezahlen.</HH.Inn.Event.CouldNotPay>
+  <HH.Inn.Event.Declined>Hat überlegt, für immer zu bleiben, und ist dann doch nach Hause gegangen.</HH.Inn.Event.Declined>
+  <HH.Inn.Event.Died>Ist während des Aufenthalts gestorben.</HH.Inn.Event.Died>
+  <HH.Inn.Event.FreeNight>Übernachtet umsonst.</HH.Inn.Event.FreeNight>
+  <HH.Inn.Event.Gift>Hat ein Geschenk hinterlassen: {0}.</HH.Inn.Event.Gift>
+  <HH.Inn.Event.GotRoom>Hat ein Bett in einem Raum der Kategorie {0} für {1} Silber die Nacht genommen.</HH.Inn.Event.GotRoom>
+  <HH.Inn.Event.HonestyBox>Hat an der Vertrauenskasse eingecheckt; niemand war im Dienst.</HH.Inn.Event.HonestyBox>
+  <HH.Inn.Event.HonestyPrice>Hat den Vertrauenskassenpreis von {0} Silber die Nacht gezahlt.</HH.Inn.Event.HonestyPrice>
+  <HH.Inn.Event.Insulted>Fühlte sich von {0}s Anwerbeversuchen bedrängt.</HH.Inn.Event.Insulted>
+  <HH.Inn.Event.Joined>Hat sich entschieden zu bleiben und ist der Siedlung beigetreten.</HH.Inn.Event.Joined>
+  <HH.Inn.Event.LeftBroke>Ist früher abgereist: Das Geld ging aus.</HH.Inn.Event.LeftBroke>
+  <HH.Inn.Event.LeftUnhappy>Ist früher abgereist, unzufrieden.</HH.Inn.Event.LeftUnhappy>
+  <HH.Inn.Event.NoBed>Hat kein bezahlbares Bett bekommen und ist nur für den Tag geblieben.</HH.Inn.Event.NoBed>
+  <HH.Inn.Event.PaidFirstNight>Hat {0} Silber für die erste Nacht gezahlt ({1}).</HH.Inn.Event.PaidFirstNight>
+  <HH.Inn.Event.PaidNight>Hat {0} Silber für eine weitere Nacht gezahlt ({1}).</HH.Inn.Event.PaidNight>
+  <HH.Inn.Event.Pricey>Fand {0} Silber die Nacht happig.</HH.Inn.Event.Pricey>
+  <HH.Inn.Event.RecruitTalk>Hatte ein langes Gespräch mit {0} über das Bleiben.</HH.Inn.Event.RecruitTalk>
+  <HH.Inn.Event.Returned>Ist für einen weiteren Aufenthalt zurückgekommen.</HH.Inn.Event.Returned>
+  <HH.Inn.Event.SelfCheckIn>Hat das Zimmer allein gefunden; niemand war an der Rezeption.</HH.Inn.Event.SelfCheckIn>
+  <HH.Inn.Event.SentAway>Wurde weggeschickt.</HH.Inn.Event.SentAway>
+  <HH.Inn.Event.SharedBed>Teilt sich das Bett mit {0} ({1} Silber die Nacht extra).</HH.Inn.Event.SharedBed>
+  <HH.Inn.Event.ShortenedStay>Hat den Aufenthalt auf {0} Nacht/Nächte verkürzt, um sich das Zimmer leisten zu können.</HH.Inn.Event.ShortenedStay>
+  <HH.Inn.Event.TooImportant>Zu wichtig zu Hause, um zu bleiben.</HH.Inn.Event.TooImportant>
+  <HH.Inn.Event.Welcomed>Wurde an der Rezeption von {0} begrüßt.</HH.Inn.Event.Welcomed>
+  <HH.Inn.Forecast.Day>Tagesbesuch</HH.Inn.Forecast.Day>
+  <HH.Inn.Forecast.InTime>in {0}</HH.Inn.Forecast.InTime>
+  <HH.Inn.Forecast.Now>jeden Moment</HH.Inn.Forecast.Now>
+  <HH.Inn.Forecast.Overnight>{0} Nacht/Nächte</HH.Inn.Forecast.Overnight>
+  <HH.Inn.Forecast.Return>kommt wieder</HH.Inn.Forecast.Return>
+  <HH.Inn.GuestBed.Booked>Gebucht von {0}</HH.Inn.GuestBed.Booked>
+  <HH.Inn.GuestBed.Desc>Vermiete dieses Bett an Gäste. Kolonisten schlafen hier nicht; Gäste schlafen nur in Gästebetten. Der Preis pro Nacht richtet sich nach Raum, Bett und der Zahl der Betten im Raum.</HH.Inn.GuestBed.Desc>
+  <HH.Inn.GuestBed.Inactive>Gästebett (inaktiv, solange es Kranken-, Gefangenen- oder Sklavenbett ist)</HH.Inn.GuestBed.Inactive>
+  <HH.Inn.GuestBed.Inspect>Gästebett: {0} Silber/Nacht ({1})</HH.Inn.GuestBed.Inspect>
+  <HH.Inn.GuestBed.Label>Gästebett</HH.Inn.GuestBed.Label>
+  <HH.Inn.GuestBed.NoColonists>Das ist ein Gästebett.</HH.Inn.GuestBed.NoColonists>
+  <HH.Inn.GuestBed.NotColonistBed>Nur ein normales Kolonistenbett (kein Kranken-, Gefangenen- oder Sklavenbett) kann ein Gästebett sein.</HH.Inn.GuestBed.NotColonistBed>
+  <HH.Inn.Handling.Accompany>Begleiten</HH.Inn.Handling.Accompany>
+  <HH.Inn.Handling.AccompanyDesc>Kolonisten mit Gastgeben-Arbeit leisten diesem Gast Gesellschaft: bessere Stimmung, bessere Bewertungen. Kostet Kolonistenzeit. Fällt auf Grundversorgung zurück, wenn niemand Gastgeber sein kann.</HH.Inn.Handling.AccompanyDesc>
+  <HH.Inn.Handling.Basics>Grundversorgung</HH.Inn.Handling.Basics>
+  <HH.Inn.Handling.BasicsDesc>Nur bezahlte Leistungen, keine Unterhaltung. Kostet keine Kolonistenzeit.</HH.Inn.Handling.BasicsDesc>
+  <HH.Inn.Handling.Bond>Bindung: {0} / {1}</HH.Inn.Handling.Bond>
+  <HH.Inn.Handling.Click>Klicken zum Wechseln: Grundversorgung → Begleiten → Anwerben.</HH.Inn.Handling.Click>
+  <HH.Inn.Handling.Label>Betreuung: {0}</HH.Inn.Handling.Label>
+  <HH.Inn.Handling.Recruit>Anwerben</HH.Inn.Handling.Recruit>
+  <HH.Inn.Handling.RecruitDesc>Wie Begleiten, dazu Gespräche übers Bleiben. Ist die Bindung der Siedlung zum Gast stark genug, schließt er sich beim Abschied womöglich an. Aufdringliche Gespräche können beleidigen.</HH.Inn.Handling.RecruitDesc>
+  <HH.Inn.Leaving.Closing>Geht nach Hause: Die Geschäfte schließen</HH.Inn.Leaving.Closing>
+  <HH.Inn.Leaving.Hostile>Geht als Feind</HH.Inn.Leaving.Hostile>
+  <HH.Inn.Leaving.Money>Reist früher ab: Das Geld ging aus</HH.Inn.Leaving.Money>
+  <HH.Inn.Leaving.Paid>{0} Silber gezahlt</HH.Inn.Leaving.Paid>
+  <HH.Inn.Leaving.Planned>Ausgecheckt</HH.Inn.Leaving.Planned>
+  <HH.Inn.Leaving.Removal>Geht nach Hause: Das Gasthaus-Modul wurde abgeschaltet</HH.Inn.Leaving.Removal>
+  <HH.Inn.Leaving.SentAway>Weggeschickt</HH.Inn.Leaving.SentAway>
+  <HH.Inn.Leaving.Temperature>Reist früher ab: Die Temperatur war gefährlich</HH.Inn.Leaving.Temperature>
+  <HH.Inn.Leaving.Unhappy>Reist früher ab: unzufrieden mit dem Aufenthalt</HH.Inn.Leaving.Unhappy>
+  <HH.Inn.Leaving.Wounded>Reist früher ab: bringt die Verwundeten nach Hause</HH.Inn.Leaving.Wounded>
+  <HH.Inn.Msg.FirstGuestsEta>Deine ersten Gäste sind unterwegs: {0}, erwartet {1}.</HH.Inn.Msg.FirstGuestsEta>
+  <HH.Inn.Msg.Insulted>{0} fand das Anwerben aufdringlich und wird weniger ausgeben und früher gehen.</HH.Inn.Msg.Insulted>
+  <HH.Inn.Msg.LeavingTemperature>Deine Gäste aus {0} reisen ab: Es ist gefährlich heiß oder kalt.</HH.Inn.Msg.LeavingTemperature>
+  <HH.Inn.Msg.LeavingWounded>Deine Gäste aus {0} bringen ihre Verwundeten nach Hause.</HH.Inn.Msg.LeavingWounded>
+  <HH.Inn.Msg.WingCreated>{0} wurde um dein Gästebett herum angelegt. Gäste bleiben darin. Passe ihn mit den Gästeflügel-Werkzeugen im Gastlichkeits-Menü an.</HH.Inn.Msg.WingCreated>
+  <HH.Inn.Msg.WingGrown>{0} reicht jetzt bis {1}: Gäste können dorthin laufen.</HH.Inn.Msg.WingGrown>
+  <HH.Inn.Occupancy.Dorm>Schlafsaal</HH.Inn.Occupancy.Dorm>
+  <HH.Inn.Occupancy.Hallway>Flur</HH.Inn.Occupancy.Hallway>
+  <HH.Inn.Occupancy.Single>Einzelzimmer</HH.Inn.Occupancy.Single>
+  <HH.Inn.Occupancy.TwoBed>Zweibettzimmer</HH.Inn.Occupancy.TwoBed>
+  <HH.Inn.PriceMode.Auto>automatisch</HH.Inn.PriceMode.Auto>
+  <HH.Inn.PriceMode.Discount>−25 %</HH.Inn.PriceMode.Discount>
+  <HH.Inn.PriceMode.Free>gratis</HH.Inn.PriceMode.Free>
+  <HH.Inn.PriceMode.Gizmo>Preis: {0}</HH.Inn.PriceMode.Gizmo>
+  <HH.Inn.PriceMode.GizmoDesc>Ändere den Preis dieses Betts: gratis (für Freunde und Anzuwerbende), 25 % Rabatt, der automatische Preis oder 25 % mehr. Gilt für die nächste Buchung.</HH.Inn.PriceMode.GizmoDesc>
+  <HH.Inn.PriceMode.Premium>+25 %</HH.Inn.PriceMode.Premium>
+  <HH.Inn.Problem.Bored>Gelangweilt: Stelle Freizeitmöglichkeiten in den Gästeflügel (Fernseher, Schach, ein Geschäft).</HH.Inn.Problem.Bored>
+  <HH.Inn.Problem.BoredMany>{0} Gäste langweilen sich: Stelle Freizeitmöglichkeiten in den Gästeflügel.</HH.Inn.Problem.BoredMany>
+  <HH.Inn.Problem.Broke>Fast pleite: Wird früher abreisen.</HH.Inn.Problem.Broke>
+  <HH.Inn.Problem.BrokeMany>{0} Gäste sind fast pleite.</HH.Inn.Problem.BrokeMany>
+  <HH.Inn.Problem.Cold>Zu kalt ({0}): Heize den Gästeflügel.</HH.Inn.Problem.Cold>
+  <HH.Inn.Problem.ColdMany>{0} Gästen ist zu kalt: Heize den Gästeflügel.</HH.Inn.Problem.ColdMany>
+  <HH.Inn.Problem.Hot>Zu heiß ({0}): Kühle den Gästeflügel mit Kühlern.</HH.Inn.Problem.Hot>
+  <HH.Inn.Problem.HotMany>{0} Gästen ist zu heiß: Kühle den Gästeflügel mit Kühlern.</HH.Inn.Problem.HotMany>
+  <HH.Inn.Problem.Hungry>Hungrig: Bestücke ein Restaurant oder eine Taverne mit Mahlzeiten (geöffnet, mit Personal).</HH.Inn.Problem.Hungry>
+  <HH.Inn.Problem.HungryMany>{0} Gäste sind hungrig: Bestücke ein Restaurant oder eine Taverne mit Mahlzeiten.</HH.Inn.Problem.HungryMany>
+  <HH.Inn.Problem.Insulted>Fühlte sich vom Anwerben bedrängt: Stelle die Betreuung auf Begleiten um.</HH.Inn.Problem.Insulted>
+  <HH.Inn.Problem.InsultedMany>{0} Gäste fühlten sich bedrängt: Wirb weniger aufdringlich an.</HH.Inn.Problem.InsultedMany>
+  <HH.Inn.Problem.Mood>Schlecht gelaunt: {0}.</HH.Inn.Problem.Mood>
+  <HH.Inn.Problem.MoodMany>{0} Gäste sind schlecht gelaunt (siehe ihren Gast-Reiter).</HH.Inn.Problem.MoodMany>
+  <HH.Inn.Problem.NoBed>Hat kein Bett: Markiere ein weiteres Gästebett oder mache eines günstiger.</HH.Inn.Problem.NoBed>
+  <HH.Inn.Problem.NoBedMany>{0} Gäste haben kein Bett: Markiere mehr Gästebetten oder mache sie günstiger.</HH.Inn.Problem.NoBedMany>
+  <HH.Inn.Problem.Pricey>Findet {0} Silber die Nacht happig: Gib dem Bett einen niedrigeren Preis (−25 %) oder einen besseren Raum.</HH.Inn.Problem.Pricey>
+  <HH.Inn.Problem.PriceyMany>{0} Gäste finden ihre Zimmer zu teuer: Senke die Bettpreise oder verbessere die Zimmer.</HH.Inn.Problem.PriceyMany>
+  <HH.Inn.Problem.Waited>Hat vergeblich auf Bedienung gewartet: Besetze deine Geschäfte mit Personal (Bedienen-Arbeit).</HH.Inn.Problem.Waited>
+  <HH.Inn.Problem.WaitedMany>{0} Gäste haben vergeblich gewartet: Besetze deine Geschäfte mit Personal (Bedienen-Arbeit).</HH.Inn.Problem.WaitedMany>
+  <HH.Inn.Quality.Plain>schlicht</HH.Inn.Quality.Plain>
+  <HH.Inn.Recruit.Chance>schließt sich beim Auschecken womöglich an (etwa {0} %)</HH.Inn.Recruit.Chance>
+  <HH.Inn.Recruit.Cost>kostet {0} Wohlwollen bei {1}</HH.Inn.Recruit.Cost>
+  <HH.Inn.Recruit.Insulted>fühlte sich bedrängt: schließt sich diesmal nicht an</HH.Inn.Recruit.Insulted>
+  <HH.Inn.Recruit.NotYet>noch nicht eng genug</HH.Inn.Recruit.NotYet>
+  <HH.Inn.Recruit.TooImportant>zu wichtig zu Hause, um sich anzuschließen</HH.Inn.Recruit.TooImportant>
+  <HH.Inn.RenownLine>Renommee {0} {1}</HH.Inn.RenownLine>
+  <HH.Inn.Report.Budget>Budget {0}</HH.Inn.Report.Budget>
+  <HH.Inn.Report.Day>Tagesgast</HH.Inn.Report.Day>
+  <HH.Inn.Report.Goodwill>Wohlwollen {0}</HH.Inn.Report.Goodwill>
+  <HH.Inn.Report.Hostile>Sie gingen als Feinde. Kein Trinkgeld.</HH.Inn.Report.Hostile>
+  <HH.Inn.Report.Label>Gäste abgereist: {0}</HH.Inn.Report.Label>
+  <HH.Inn.Report.Leaving>Gast auf dem Heimweg</HH.Inn.Report.Leaving>
+  <HH.Inn.Report.LeftBroke>Ihr Geld war alle, bevor ihr Aufenthalt zu Ende war.</HH.Inn.Report.LeftBroke>
+  <HH.Inn.Report.LeftEarly>Sie sind vor dem geplanten Tag abgereist.</HH.Inn.Report.LeftEarly>
+  <HH.Inn.Report.Mood>Zufriedenheit {0}</HH.Inn.Report.Mood>
+  <HH.Inn.Report.NoRoom>Tagesbesuch</HH.Inn.Report.NoRoom>
+  <HH.Inn.Report.NotCheckedIn>checkt ein</HH.Inn.Report.NotCheckedIn>
+  <HH.Inn.Report.Opener.bad.0>Die Gäste aus {FACTION} sind mit einer Liste abgereist. Es war keine Einkaufsliste.</HH.Inn.Report.Opener.bad.0>
+  <HH.Inn.Report.Opener.bad.1>{NAME} hat versprochen, allen vom {ROOM} zu erzählen. Das ist das Problem.</HH.Inn.Report.Opener.bad.1>
+  <HH.Inn.Report.Opener.bad.2>Ein Aufenthalt zum Vergessen, falls {FACTION} jemanden vergessen lässt.</HH.Inn.Report.Opener.bad.2>
+  <HH.Inn.Report.Opener.fine.0>Die Gäste aus {FACTION} sind abgereist. Es ist passiert, und das war es auch schon.</HH.Inn.Report.Opener.fine.0>
+  <HH.Inn.Report.Opener.fine.1>Ein Aufenthalt, über den niemand nach Hause schreibt. {NAME} hat trotzdem geschrieben.</HH.Inn.Report.Opener.fine.1>
+  <HH.Inn.Report.Opener.fine.2>{NAME} bewertete das {ROOM} mit „ein Zimmer“. Schwer zu widersprechen.</HH.Inn.Report.Opener.fine.2>
+  <HH.Inn.Report.Opener.good.0>Die Gäste aus {FACTION} sind zufrieden abgereist und nur ein wenig leichter im Geldbeutel.</HH.Inn.Report.Opener.good.0>
+  <HH.Inn.Report.Opener.good.1>Ein angenehmer Aufenthalt. Niemand hat laut genug gemeckert, dass es zählt.</HH.Inn.Report.Opener.good.1>
+  <HH.Inn.Report.Opener.good.2>{NAME} nannte das {ROOM} „ehrlich“, was von {FACTION} ein Kompliment ist.</HH.Inn.Report.Opener.good.2>
+  <HH.Inn.Report.Opener.great.0>Die Gäste aus {FACTION} sind strahlend abgereist. Einer hat den Türrahmen umarmt.</HH.Inn.Report.Opener.great.0>
+  <HH.Inn.Report.Opener.great.1>{FACTION} wird noch eine Weile von diesem Aufenthalt reden, überwiegend im Guten.</HH.Inn.Report.Opener.great.1>
+  <HH.Inn.Report.Opener.great.2>Ein makelloser Aufenthalt. {NAME} fragte, ob sich das {ROOM} „auf Lebenszeit“ wieder buchen lässt.</HH.Inn.Report.Opener.great.2>
+  <HH.Inn.Report.Opener.poor.0>Die Gäste aus {FACTION} sind im Geiste früh und körperlich pünktlich abgereist.</HH.Inn.Report.Opener.poor.0>
+  <HH.Inn.Report.Opener.poor.1>{NAME} beschrieb das {ROOM} mit einem Wort, das unser Empfangsangestellter nicht aufschreiben wollte.</HH.Inn.Report.Opener.poor.1>
+  <HH.Inn.Report.Opener.poor.2>Keine Katastrophe. Aber auch kein Aufenthalt, den man aufs Schild schreiben würde.</HH.Inn.Report.Opener.poor.2>
+  <HH.Inn.Report.Overnight>Übernachtungsgast</HH.Inn.Report.Overnight>
+  <HH.Inn.Report.Points>Wohlwollen {0}</HH.Inn.Report.Points>
+  <HH.Inn.Report.Premises>Geschäft</HH.Inn.Report.Premises>
+  <HH.Inn.Report.Renown>Renommee {0}</HH.Inn.Report.Renown>
+  <HH.Inn.Report.Room>{0}, {1} Nacht/Nächte</HH.Inn.Report.Room>
+  <HH.Inn.Report.SentAway>Du hast sie gebeten zu gehen. Sie gingen, mit dem Gesichtsausdruck, den man dafür aufsetzt.</HH.Inn.Report.SentAway>
+  <HH.Inn.Report.Spent>{0} Silber ausgegeben</HH.Inn.Report.Spent>
+  <HH.Inn.Report.SpentTotal>{0} Silber ausgegeben</HH.Inn.Report.SpentTotal>
+  <HH.Inn.Report.Temperature>Das Wetter hat sie früher nach Hause geschickt.</HH.Inn.Report.Temperature>
+  <HH.Inn.Report.Wounded>Sie haben ihre Verwundeten nach Hause getragen.</HH.Inn.Report.Wounded>
+  <HH.Inn.RoomClass.Deluxe>Deluxe-Zimmer</HH.Inn.RoomClass.Deluxe>
+  <HH.Inn.RoomClass.Economy>Sparzimmer</HH.Inn.RoomClass.Economy>
+  <HH.Inn.RoomClass.Royal>königliche Suite</HH.Inn.RoomClass.Royal>
+  <HH.Inn.RoomClass.Standard>Standardzimmer</HH.Inn.RoomClass.Standard>
+  <HH.Inn.RoomClass.Suite>Suite</HH.Inn.RoomClass.Suite>
+  <HH.Inn.SendAway.Confirm>Gruppe von {0} fortschicken?</HH.Inn.SendAway.Confirm>
+  <HH.Inn.SendAway.Desc>Bitte die ganze Gruppe dieses Gastes, sofort zu gehen. Bereits bezahlte Nächte bleiben bestehen, es gibt kein Wohlwollen, Renommee −1.</HH.Inn.SendAway.Desc>
+  <HH.Inn.SendAway.Label>Fortschicken</HH.Inn.SendAway.Label>
+  <HH.Inn.Tab.Forecast>Erwartete Ankünfte</HH.Inn.Tab.Forecast>
+  <HH.Inn.Tab.Inactive>Niemand kommt: Markiere ein Bett als Gästebett oder eröffne ein Geschäft.</HH.Inn.Tab.Inactive>
+  <HH.Inn.Tab.NoneYet>Noch keine Gruppen geplant.</HH.Inn.Tab.NoneYet>
+  <HH.Inn.Tab.Summary>Renommee {0} · Flüsterruf {1} · {2} Gruppen bewirtet · {3} Gästebetten ({4} frei)</HH.Inn.Tab.Summary>
+  <HH.Inn.Verdict.0>Hat schlecht geschlafen und dem Zimmer die Schuld gegeben.</HH.Inn.Verdict.0>
+  <HH.Inn.Verdict.1>Fand das Zimmer unter ihrem Niveau.</HH.Inn.Verdict.1>
+  <HH.Inn.Verdict.2>Hat so là là geschlafen.</HH.Inn.Verdict.2>
+  <HH.Inn.Verdict.3>Hat gut geschlafen.</HH.Inn.Verdict.3>
+  <HH.Inn.Verdict.4>Hat sehr gut geschlafen.</HH.Inn.Verdict.4>
+  <HH.Inn.Verdict.5>Hat geschlafen wie ein König.</HH.Inn.Verdict.5>
+  <HH.Inn.Wing.Base>Gästeflügel</HH.Inn.Wing.Base>
+  <HH.Inn.Wing.Clear>Gästeflügel verkleinern</HH.Inn.Wing.Clear>
+  <HH.Inn.Wing.ClearDesc>Felder aus dem Gästeflügel entfernen.</HH.Inn.Wing.ClearDesc>
+  <HH.Inn.Wing.Expand>Gästeflügel erweitern</HH.Inn.Wing.Expand>
+  <HH.Inn.Wing.ExpandDesc>Male, wohin Gäste gehen dürfen. Gäste bleiben in ihrem Flügel (der Raum des Bettes ist immer erlaubt). Ohne Flügel streunen Gäste in der Nähe ihrer Zimmer umher.</HH.Inn.Wing.ExpandDesc>
+  <HH.Inn.Wing.Name>Gästeflügel {0}</HH.Inn.Wing.Name>
+  <HH.Inn.Wing.New>Neuer Gästeflügel</HH.Inn.Wing.New>
+  <HH.Inn.WingStatus.Bathroom>Badezimmer</HH.Inn.WingStatus.Bathroom>
+  <HH.Inn.WingStatus.Bedroom>Schlafzimmer</HH.Inn.WingStatus.Bedroom>
+  <HH.Inn.WingStatus.Est>geschätzt</HH.Inn.WingStatus.Est>
+  <HH.Inn.WingStatus.Kitchen>Küche</HH.Inn.WingStatus.Kitchen>
+  <HH.Inn.WingStatus.Missing>fehlt</HH.Inn.WingStatus.Missing>
+  <HH.Inn.WingStatus.NoCook>niemand darf kochen</HH.Inn.WingStatus.NoCook>
+  <HH.Inn.WingStatus.NoGuestBed>kein Gästebett</HH.Inn.WingStatus.NoGuestBed>
+  <HH.Inn.WingStatus.NoHours>keine Öffnungszeiten</HH.Inn.WingStatus.NoHours>
+  <HH.Inn.WingStatus.NoPower>kein Strom oder Brennstoff</HH.Inn.WingStatus.NoPower>
+  <HH.Inn.WingStatus.NoStove>keine Kochstelle</HH.Inn.WingStatus.NoStove>
+  <HH.Inn.WingStatus.Restaurant>Restaurant</HH.Inn.WingStatus.Restaurant>
+  <HH.Inn.WingStatus.RoomOpen>Raum offen oder ohne Dach</HH.Inn.WingStatus.RoomOpen>
+  <HH.Setting.inn.arrivalNotice>Ankünfte melden</HH.Setting.inn.arrivalNotice>
+  <HH.Setting.inn.arrivalNotice.Desc>Ein kurzer Brief für deine ersten Gruppen, danach eine stille Nachricht.</HH.Setting.inn.arrivalNotice.Desc>
+  <HH.Setting.inn.arrivalRate>Ankunftsrate der Gäste</HH.Setting.inn.arrivalRate>
+  <HH.Setting.inn.arrivalRate.Desc>Multiplikator dafür, wie oft Gästegruppen ankommen. 1 = der normale Rhythmus deines Schwierigkeitsgrads; 0 stoppt neue Ankünfte.</HH.Setting.inn.arrivalRate.Desc>
+  <HH.Setting.inn.autoWing>Gästeflügel automatisch erweitern</HH.Setting.inn.autoWing>
+  <HH.Setting.inn.autoWing.Desc>Das erste Gästebett erzeugt Gästeflügel 1 um seinen Raum; spätere Gästezimmer schließen sich dem nächsten Flügel an.</HH.Setting.inn.autoWing.Desc>
+  <HH.Setting.inn.cardThreshold>Kartenzahlung ab Budget</HH.Setting.inn.cardThreshold>
+  <HH.Setting.inn.cardThreshold.Desc>Gäste aus Industrie- oder fortgeschritteneren Fraktionen mit einem Budget über diesem Wert zahlen mit Karte, statt Silber mitzuschleppen.</HH.Setting.inn.cardThreshold.Desc>
+  <HH.Setting.inn.checkInHour>Check-in ab (Uhr)</HH.Setting.inn.checkInHour>
+  <HH.Setting.inn.checkInHour.Desc>Übernachtungsgäste planen, ab dieser Stunde anzukommen.</HH.Setting.inn.checkInHour.Desc>
+  <HH.Setting.inn.checkOutHour>Check-out (Uhr)</HH.Setting.inn.checkOutHour>
+  <HH.Setting.inn.checkOutHour.Desc>Übernachtungsgäste reisen an ihrem letzten Morgen um diese Stunde ab.</HH.Setting.inn.checkOutHour.Desc>
+  <HH.Setting.inn.dayVisitors>Tagesgäste</HH.Setting.inn.dayVisitors>
+  <HH.Setting.inn.dayVisitors.Desc>Gruppen, die nur zu deinen geöffneten Geschäften während der Öffnungszeiten kommen und vor Ladenschluss wieder gehen. Benötigt mindestens ein Geschäftsschild.</HH.Setting.inn.dayVisitors.Desc>
+  <HH.Setting.inn.deskCloseHour>Rezeption schließt (Uhr)</HH.Setting.inn.deskCloseHour>
+  <HH.Setting.inn.deskCloseHour.Desc>Ab dieser Stunde ist die Rezeption eine Vertrauenskasse: Gäste checken selbst ein und zahlen etwas weniger.</HH.Setting.inn.deskCloseHour.Desc>
+  <HH.Setting.inn.deskOpenHour>Rezeption öffnet (Uhr)</HH.Setting.inn.deskOpenHour>
+  <HH.Setting.inn.deskOpenHour.Desc>Ab dieser Stunde kann ein Gastgeber Gäste an der Rezeption einchecken. Außerhalb der Zeiten funktioniert die Rezeption als Vertrauenskasse.</HH.Setting.inn.deskOpenHour.Desc>
+  <HH.Setting.inn.expectationOffset>Erwartungen der Gäste</HH.Setting.inn.expectationOffset>
+  <HH.Setting.inn.expectationOffset.Desc>Wird auf die Erwartung jedes Gastes addiert (0 … 1). Höher bedeutet schwerer zufriedenzustellen.</HH.Setting.inn.expectationOffset.Desc>
+  <HH.Setting.inn.firstGuestMaxDays>Erste Gäste: spätester Tag</HH.Setting.inn.firstGuestMaxDays>
+  <HH.Setting.inn.firstGuestMaxDays.Desc>Tage nach deinem ersten Gästebett (oder Geschäft), bis zu denen die allererste Gruppe spätestens angekommen sein wird.</HH.Setting.inn.firstGuestMaxDays.Desc>
+  <HH.Setting.inn.firstGuestMinDays>Erste Gäste: frühester Tag</HH.Setting.inn.firstGuestMinDays>
+  <HH.Setting.inn.firstGuestMinDays.Desc>Tage nach deinem ersten Gästebett (oder Geschäft), bis die allererste Gruppe frühestens ankommen kann.</HH.Setting.inn.firstGuestMinDays.Desc>
+  <HH.Setting.inn.forecastDays>Ankunftsprognose (Tage)</HH.Setting.inn.forecastDays>
+  <HH.Setting.inn.forecastDays.Desc>Wie weit im Voraus der Ankunftsplan aufgestellt wird (in der Gästeübersicht angezeigt).</HH.Setting.inn.forecastDays.Desc>
+  <HH.Setting.inn.goodwillCapQuadrum>Wohlwollen durch Gastgeben pro Quadrum</HH.Setting.inn.goodwillCapQuadrum>
+  <HH.Setting.inn.goodwillCapQuadrum.Desc>Gastgeben kann das Wohlwollen einer Fraktion pro Quadrum höchstens um diesen Wert steigern.</HH.Setting.inn.goodwillCapQuadrum.Desc>
+  <HH.Setting.inn.goodwillCeiling>Wohlwollensgrenze durch Gastgeben</HH.Setting.inn.goodwillCeiling>
+  <HH.Setting.inn.goodwillCeiling.Desc>Gastgeben allein hebt eine Fraktion nie über dieses Wohlwollen (75 = Verbündetenschwelle).</HH.Setting.inn.goodwillCeiling.Desc>
+  <HH.Setting.inn.goodwillLossCap>Größter Wohlwollensverlust pro schlechtem Aufenthalt</HH.Setting.inn.goodwillLossCap>
+  <HH.Setting.inn.goodwillLossCap.Desc>Ein schlechter Aufenthalt kostet eine Fraktion höchstens so viel Wohlwollen.</HH.Setting.inn.goodwillLossCap.Desc>
+  <HH.Setting.inn.guestMoney>Geld der Gäste</HH.Setting.inn.guestMoney>
+  <HH.Setting.inn.guestMoney.Desc>Multiplikator dafür, wie viel Silber Gäste mitbringen.</HH.Setting.inn.guestMoney.Desc>
+  <HH.Setting.inn.honestyDiscount>Rabatt bei Vertrauenskasse</HH.Setting.inn.honestyDiscount>
+  <HH.Setting.inn.honestyDiscount.Desc>Gäste, die an der unbesetzten Rezeption (außerhalb ihrer Zeiten) einchecken, zahlen pro Nacht so viel weniger.</HH.Setting.inn.honestyDiscount.Desc>
+  <HH.Setting.inn.insultBase>Beleidigungsrisiko beim Anwerben</HH.Setting.inn.insultBase>
+  <HH.Setting.inn.insultBase.Desc>Grundwahrscheinlichkeit, dass ein Anwerbegespräch den Gast beleidigt (geringer bei besseren sozialen Fähigkeiten).</HH.Setting.inn.insultBase.Desc>
+  <HH.Setting.inn.leaveEarly>Unglückliche Gäste reisen früher ab</HH.Setting.inn.leaveEarly>
+  <HH.Setting.inn.leaveEarly.Desc>Gäste, die lange unglücklich sind oder kein Geld mehr haben, packen vor ihrem geplanten Tag ihre Sachen.</HH.Setting.inn.leaveEarly.Desc>
+  <HH.Setting.inn.leavingGifts>Geschenke zum Abschied</HH.Setting.inn.leavingGifts>
+  <HH.Setting.inn.leavingGifts.Desc>Zufriedene Gäste hinterlassen manchmal ein kleines Geschenk an der Rezeption (wahrscheinlicher, je besser der Aufenthalt war).</HH.Setting.inn.leavingGifts.Desc>
+  <HH.Setting.inn.maxGroupSize>Größte Gästegruppe</HH.Setting.inn.maxGroupSize>
+  <HH.Setting.inn.maxGroupSize.Desc>Keine Gruppe bringt mehr Gäste mit. Übernachtungsgruppen sind außerdem durch deine freien Gästebetten begrenzt.</HH.Setting.inn.maxGroupSize.Desc>
+  <HH.Setting.inn.podDistance>Landekapsel-Entfernung</HH.Setting.inn.podDistance>
+  <HH.Setting.inn.podDistance.Desc>Gäste aus Industrie- oder besseren Fraktionen kommen per Landekapsel, wenn der Fußweg vom Kartenrand länger als diese Anzahl Felder wäre.</HH.Setting.inn.podDistance.Desc>
+  <HH.Setting.inn.priceBase>Grundpreis pro Nacht</HH.Setting.inn.priceBase>
+  <HH.Setting.inn.priceBase.Desc>Preis eines Sparbetts für eine Nacht. Bessere Zimmer, Betten und Einzelzimmer vervielfachen ihn (an jedem Gästebett angezeigt).</HH.Setting.inn.priceBase.Desc>
+  <HH.Setting.inn.priceTolerance>Preistoleranz</HH.Setting.inn.priceTolerance>
+  <HH.Setting.inn.priceTolerance.Desc>Wie viel über ihrem Wohlfühlpreis Gäste noch zu zahlen bereit sind.</HH.Setting.inn.priceTolerance.Desc>
+  <HH.Setting.inn.renownLossCap>Größter Renommeeverlust pro Gruppe</HH.Setting.inn.renownLossCap>
+  <HH.Setting.inn.renownLossCap.Desc>Eine unzufriedene Gruppe senkt dein Renommee höchstens um diesen Wert.</HH.Setting.inn.renownLossCap.Desc>
+  <HH.Setting.inn.reportMode>Abreiseberichte</HH.Setting.inn.reportMode>
+  <HH.Setting.inn.reportMode.Desc>Wie dich der kurze Bericht nach jedem Aufenthalt erreicht: als Brief, als stille Nachricht oder gar nicht.</HH.Setting.inn.reportMode.Desc>
+  <HH.Setting.inn.returnPinCap>Wiederkehrende Gäste höchstens gespeichert</HH.Setting.inn.returnPinCap>
+  <HH.Setting.inn.returnPinCap.Desc>Gäste, die wiederkommen wollen, werden bis zu ihrem Besuch als Weltcharaktere vorgehalten. Darüber werden die ältesten geplanten Wiederholungsbesuche verworfen.</HH.Setting.inn.returnPinCap.Desc>
+  <HH.Setting.inn.returnVisits>Wiederholungsbesuche</HH.Setting.inn.returnVisits>
+  <HH.Setting.inn.returnVisits.Desc>Gäste, denen ihr Aufenthalt gefallen hat, kommen nach 3 bis 10 Tagen wieder (unzufriedene nach 14 bis 30), plus der doppelten Reisezeit.</HH.Setting.inn.returnVisits.Desc>
+  <HH.Setting.inn.stayNightsMax>Längster Aufenthalt (Nächte)</HH.Setting.inn.stayNightsMax>
+  <HH.Setting.inn.stayNightsMax.Desc>Übernachtungsgäste bleiben höchstens so viele Nächte.</HH.Setting.inn.stayNightsMax.Desc>
+  <HH.Setting.inn.stayNightsMin>Kürzester Aufenthalt (Nächte)</HH.Setting.inn.stayNightsMin>
+  <HH.Setting.inn.stayNightsMin.Desc>Übernachtungsgäste bleiben mindestens so viele Nächte.</HH.Setting.inn.stayNightsMin.Desc>
+  <HH.Setting.inn.waitThoughts>Gedanken beim Warten und zur Nachtglocke</HH.Setting.inn.waitThoughts>
+  <HH.Setting.inn.waitThoughts.Desc>Gäste, die vergeblich warten oder die Nachtglocke läuten, ohne dass jemand kommt, spüren das in ihrer Stimmung; ein Warteraum mildert es.</HH.Setting.inn.waitThoughts.Desc>
+</LanguageData>

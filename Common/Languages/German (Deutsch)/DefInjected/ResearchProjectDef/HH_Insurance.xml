@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Insurance.label>Versicherungswesen</SL_Insurance.label>
+  <SL_Insurance.description>Eine Police für jedes Unglück, verkauft von einer Gesellschaft, die noch nie einen Streit verloren hat. Schaltet das Versicherungsbüro und die Policen der Grundschutzstufen "Bare Minimum" und "Good Enough" frei.</SL_Insurance.description>
+  <SL_Actuarial.label>Versicherungsmathematik</SL_Actuarial.label>
+  <SL_Actuarial.description>Tabellen darüber, wie wahrscheinlich es ist, dass alles schiefgeht, und was das wert ist. Schaltet die oberste Schutzstufe "Premium of Premium", die Premium-Policen und die Dienste der Gesellschaft frei.</SL_Actuarial.description>
+</LanguageData>

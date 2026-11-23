@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_Mattress.label>Mattress Plus</SL_Asset_Mattress.label>
+  <SL_Asset_Mattress.description>Una cuenta de ahorro. El dinero reposa en un colchón muy seguro y crece un poco. En una corrida bancaria, los reintegros quedan bloqueados durante dos días.</SL_Asset_Mattress.description>
+  <SL_Asset_OutlanderBond.label>Bono de infraestructuras de la Unión Forastera</SL_Asset_OutlanderBond.label>
+  <SL_Asset_OutlanderBond.description>Préstamos a una unión de poblados forasteros que construye caminos, pozos y un puente muy disputado. Paga a tiempo, hasta que deja de hacerlo. Tras un impago recuperas aproximadamente un tercio.</SL_Asset_OutlanderBond.description>
+  <SL_Asset_EmpireWarBond.label>Bonos de guerra del Imperio</SL_Asset_EmpireWarBond.label>
+  <SL_Asset_EmpireWarBond.description>Bonos que financian una guerra del Imperio. Cuando la guerra acaba en victoria se disparan; en derrota valen lo que un buen marco. La guerra lleva mucho tiempo en marcha, sobre todo en los folletos.</SL_Asset_EmpireWarBond.description>
+  <SL_Asset_Index.label>RimIndex 50</SL_Asset_Index.label>
+  <SL_Asset_Index.description>Las cincuenta mayores empresas del Borde en un solo producto. La referencia para todo lo demás de esta página: el control de rentabilidad se define según lo que gana este de media.</SL_Asset_Index.description>
+  <SL_Asset_StockMicaton.label>MCTN, Liga de Micaton</SL_Asset_StockMicaton.label>
+  <SL_Asset_StockMicaton.description>Acciones de una liga de poblados forasteros. Los resultados trimestrales mueven el precio; también tus relaciones con la liga, un poco. No reparte dividendos, pero envía un calendario precioso.</SL_Asset_StockMicaton.description>
+  <SL_Asset_StockTribal.label>HIDE, Cooperativa de Pieles y Hogar</SL_Asset_StockTribal.label>
+  <SL_Asset_StockTribal.description>Acciones de una cooperativa tribal que vende pieles, leña para el hogar y una cantidad asombrosa de hospitalidad. Muy dependiente del clima y del humor de un tío muy grande.</SL_Asset_StockTribal.description>
+  <SL_Asset_StockEmpire.label>IMPR, Imperial Pageantry Ltd</SL_Asset_StockEmpire.label>
+  <SL_Asset_StockEmpire.description>La empresa tras las ceremonias imperiales: estandartes, trompetas y coronas diminutas. Los beneficios dependen de cuántos nobles se sienten ofendidos por lo poco que se les ofrece.</SL_Asset_StockEmpire.description>
+  <SL_Asset_StockColony.label>HHH, Hearth Harbor Holdings</SL_Asset_StockColony.label>
+  <SL_Asset_StockColony.description>Un holding que posee exactamente una cosa: la idea de que tu colonia es un destino. Reacciona a tu riqueza y a las incursiones que sobrevives. Tienes parte de su éxito, pero también todo el que ha leído esto.</SL_Asset_StockColony.description>
+  <SL_Asset_GrowthFund.label>Glitterworld Growth Fund</SL_Asset_GrowthFund.label>
+  <SL_Asset_GrowthFund.description>Un fondo de gestión activa. Los gestores tienen un folleto impresionante y un barco. Su habilidad es, de media, ligeramente negativa, y se fijó cuando se fundó el fondo.</SL_Asset_GrowthFund.description>
+  <SL_Asset_PietyBonds.label>Bonos de Piedad</SL_Asset_PietyBonds.label>
+  <SL_Asset_PietyBonds.description>Bonos respaldados por las donaciones de diecisiete fes, cada una convencida de que las otras dieciséis lo hacen mal. Estables, solemnes y muy ligeramente presumidos.</SL_Asset_PietyBonds.description>
+  <SL_Asset_RelicFutures.label>Futuros de reliquias</SL_Asset_RelicFutures.label>
+  <SL_Asset_RelicFutures.description>Futuros sobre reliquias que quizá existan, a entregar por un mensajero que quizá sea profeta. El contrato fue bendecido.</SL_Asset_RelicFutures.description>
+  <SL_Asset_RimCoin.label>RimCoin</SL_Asset_RimCoin.label>
+  <SL_Asset_RimCoin.description>Una moneda digital hecha por entero de electricidad y convicción. Oscila varios puntos al día, da saltos que nadie explica y opera en un intercambio que ya fue hackeado antes. Y volverá a serlo.</SL_Asset_RimCoin.description>
+  <SL_Asset_MemeThrumbo.label>$THRUMBO</SL_Asset_MemeThrumbo.label>
+  <SL_Asset_MemeThrumbo.description>Una moneda con el nombre de una bestia rara y respaldo exactamente igual de raro. El libro blanco es un dibujo de un thrumbo. El fundador es, según el dibujo, un thrumbo.</SL_Asset_MemeThrumbo.description>
+  <SL_Asset_MemeBoomalope.label>Moneda Boomalope</SL_Asset_MemeBoomalope.label>
+  <SL_Asset_MemeBoomalope.description>Una moneda que explota en valor. Y a veces, simplemente explota. Popular entre quien disfruta del olor a dinero quemándose.</SL_Asset_MemeBoomalope.description>
+  <SL_Asset_MemeMuffalo.label>MUFFALO MOON</SL_Asset_MemeMuffalo.label>
+  <SL_Asset_MemeMuffalo.description>La moneda comunitaria de todos los que aman a los muffalos y a nada más. Su hoja de ruta es un dibujo de un muffalo mirando la luna. La hoja de ruta no ha cambiado.</SL_Asset_MemeMuffalo.description>
+  <SL_Asset_NftThrumbos.label>Thrumbos no fungibles</SL_Asset_NftThrumbos.label>
+  <SL_Asset_NftThrumbos.description>Una colección de imágenes de thrumbos, cada una única, cada una un poco parecida a las demás. Tienes un recibo de una imagen de una imagen. Los compradores aparecen despacio y piden descuento.</SL_Asset_NftThrumbos.description>
+  <SL_Asset_NftMuffalo.label>Certificado de propiedad: imagen de un muffalo</SL_Asset_NftMuffalo.label>
+  <SL_Asset_NftMuffalo.description>Un certificado de propiedad de una imagen de un muffalo. La imagen está guardada en algún sitio. El certificado está guardado en tu cuenta. Ninguno de los dos huele a muffalo.</SL_Asset_NftMuffalo.description>
+</LanguageData>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Bank.Building.Account>{0}: zůstatek {1}</HH.Bank.Building.Account>
+  <HH.Bank.Building.DirectDeposit>Přímé vklady</HH.Bank.Building.DirectDeposit>
+  <HH.Bank.Building.DirectDepositDesc>Zapnuto: pokladny vašich podniků se o půlnoci vyprázdní na váš účet v bance. Vypnuto: tržby se odkládají jako stříbro vedle trezoru.</HH.Bank.Building.DirectDepositDesc>
+  <HH.Bank.Building.NoAccount>Zatím bez účtu. Otevřete si ho tady nebo na komunikační konzoli.</HH.Bank.Building.NoAccount>
+  <HH.Bank.Building.SafeDirect>Tržby jdou o půlnoci rovnou na účet.</HH.Bank.Building.SafeDirect>
+  <HH.Bank.Building.SafeFloor>Tržby se o půlnoci odkládají jako stříbro.</HH.Bank.Building.SafeFloor>
+  <HH.Bank.Building.SafeNoAccount>Bez bankovního účtu: tržby se o půlnoci odkládají jako stříbro.</HH.Bank.Building.SafeNoAccount>
+  <HH.Bank.Building.UseAtm>Použít bankomat</HH.Bank.Building.UseAtm>
+  <HH.Bank.Building.UseBranch>Jít k přepážce</HH.Bank.Building.UseBranch>
+  <HH.Bank.Chart.DayN>den {0}</HH.Bank.Chart.DayN>
+  <HH.Bank.Chart.Tip>Den {0}: {1} stříbra</HH.Bank.Chart.Tip>
+  <HH.Bank.Chart.Today>dnes</HH.Bank.Chart.Today>
+  <HH.Bank.Choose.Current>vaše banka</HH.Bank.Choose.Current>
+  <HH.Bank.Choose.Intro>Přesun účtu stojí {0} stříbra, které se strhnou z účtu. Půjčky zůstávají u banky, která je poskytla.</HH.Bank.Choose.Intro>
+  <HH.Bank.Choose.Switch>Přepnout ({0})</HH.Bank.Choose.Switch>
+  <HH.Bank.Choose.Title>Změnit banku</HH.Bank.Choose.Title>
+  <HH.Bank.Comm.Call>Zavolat Silverline</HH.Bank.Comm.Call>
+  <HH.Bank.Comm.Info>Bankovnictví, půjčky a občasná suchá poznámka.</HH.Bank.Comm.Info>
+  <HH.Bank.Greet.Afternoon>Dobré odpoledne</HH.Bank.Greet.Afternoon>
+  <HH.Bank.Greet.Evening>Dobrý večer</HH.Bank.Greet.Evening>
+  <HH.Bank.Greet.Morning>Dobré ráno</HH.Bank.Greet.Morning>
+  <HH.Bank.Greet.Night>Dobrou noc</HH.Bank.Greet.Night>
+  <HH.Bank.Header.Tier>Úroveň majetku: {0}</HH.Bank.Header.Tier>
+  <HH.Bank.Header.TierTip>Čisté jmění = účet + stříbro doma − dluhy: {0} stříbra. Úroveň se změní až poté, co nová hodnota vydrží celý den. Určuje náladu kolonie z této banky (nastavení: bank.moodOn).</HH.Bank.Header.TierTip>
+  <HH.Bank.Hist.Amount>Částka (5 desetinných míst)</HH.Bank.Hist.Amount>
+  <HH.Bank.Hist.Empty>Zatím žádné transakce.</HH.Bank.Hist.Empty>
+  <HH.Bank.Hist.TotalFees>Dosud zaplacené poplatky</HH.Bank.Hist.TotalFees>
+  <HH.Bank.Hist.TotalFeesTip>Všechny poplatky, penále za pozdní splátky a cena za změnu banky.</HH.Bank.Hist.TotalFeesTip>
+  <HH.Bank.Hist.TotalInterest>Dosud získané úroky</HH.Bank.Hist.TotalInterest>
+  <HH.Bank.Hist.TotalInterestTip>Vše, co vám banka vyplatila na úrocích (záporné úroky se počítají proti ní).</HH.Bank.Hist.TotalInterestTip>
+  <HH.Bank.Hist.What>Co</HH.Bank.Hist.What>
+  <HH.Bank.Hist.When>Kdy</HH.Bank.Hist.When>
+  <HH.Bank.Letter.Bailout>{0} rozhodla, že jste ve skutečnosti příliš velcí na to, aby padli, a zachránila vás bezúročnou půjčkou ve výši {1} stříbra. Běží 60 dní. Je to půjčka, ne dar. Tu část nikdo nikdy nečte.</HH.Bank.Letter.Bailout>
+  <HH.Bank.Letter.BailoutTitle>Záchrana</HH.Bank.Letter.BailoutTitle>
+  <HH.Bank.Letter.Late>Vážený zákazníku,
+
+půjčka {0} je nyní několik dní po splatnosti. Byl připsán poplatek za prodlení a váš úvěrový rating utrpěl malou, nevyhnutelnou ránu. Dlužná částka činí {1} stříbra.
+
+Tón těchto dopisů se změní.
+
+Úředník Ottoline</HH.Bank.Letter.Late>
+  <HH.Bank.Letter.LateTitle>Splatnost překročena</HH.Bank.Letter.LateTitle>
+  <HH.Bank.Letter.Offset>Dokud nebude půjčka {0} splacena, polovina každého vkladu, který dorazí na váš účet, se započte na dluh a nové půjčky nejsou k dispozici. Tuto část smlouvy si nikdo nepamatuje, že podepisoval.</HH.Bank.Letter.Offset>
+  <HH.Bank.Letter.OffsetTitle>Započtení vůči vkladům</HH.Bank.Letter.OffsetTitle>
+  <HH.Bank.Letter.Reminder>Vážený zákazníku,
+
+zaznamenali jsme, že splátka {0} stříbra na půjčce {1} k nám zatím nedorazila. Jsme si jisti, že jde o přehlédnutí, a zůstáváme, jako vždy, zcela k vašim službám.
+
+S úctou,
+Úředník Ottoline, {2}</HH.Bank.Letter.Reminder>
+  <HH.Bank.Letter.ReminderTitle>Laskavé připomenutí</HH.Bank.Letter.ReminderTitle>
+  <HH.Bank.Letter.Seized>Úředník banky {0} s lítostí oznamuje, že {1} stříbra z vašeho zůstatku bylo "přerozděleno z administrativních důvodů". Formulář pro odvolání neexistuje. Zato je tu velmi pěkné pero.</HH.Bank.Letter.Seized>
+  <HH.Bank.Letter.SeizedTitle>Audit účetní knihy</HH.Bank.Letter.SeizedTitle>
+  <HH.Bank.Letter.Visit>Dva zástupci firmy Rim Recovery Partners dorazili. Mají na sobě buřinky. Nemají zbraně ani schůzku. Klidně postojí u vašich dveří, dokud nebude splacena půjčka {0}. Nikdy neútočí a odejdou ve chvíli, kdy budou peníze zaplaceny.</HH.Bank.Letter.Visit>
+  <HH.Bank.Letter.VisitTitle>Přátelská návštěva</HH.Bank.Letter.VisitTitle>
+  <HH.Bank.Loans.Available>K dispozici</HH.Bank.Loans.Available>
+  <HH.Bank.Loans.BailoutTag> (záchrana, bez úroku)</HH.Bank.Loans.BailoutTag>
+  <HH.Bank.Loans.Credit>Váš úvěr</HH.Bank.Loans.Credit>
+  <HH.Bank.Loans.DaysShort> d</HH.Bank.Loans.DaysShort>
+  <HH.Bank.Loans.Limit>Úvěrový limit</HH.Bank.Loans.Limit>
+  <HH.Bank.Loans.LimitTip>0,15 × majetek × (skóre − 300) / 550, kde majetek = čisté jmění + čtvrtina bohatství kolonie. U dobrého skóre alespoň startovní úvěr ({0} stříbra).</HH.Bank.Loans.LimitTip>
+  <HH.Bank.Loans.Line>Půjčka {0}: vypůjčeno {1}, ještě dlužno {2}</HH.Bank.Loans.Line>
+  <HH.Bank.Loans.Mine>Vaše půjčky</HH.Bank.Loans.Mine>
+  <HH.Bank.Loans.New>Nová půjčka</HH.Bank.Loans.New>
+  <HH.Bank.Loans.NextDue>další splátka {0} za {1}</HH.Bank.Loans.NextDue>
+  <HH.Bank.Loans.None>Žádné půjčky. Ottoline je skoro zklamaná.</HH.Bank.Loans.None>
+  <HH.Bank.Loans.Overdue>PO SPLATNOSTI, stupeň {0}: dluží se {1}</HH.Bank.Loans.Overdue>
+  <HH.Bank.Loans.Quote>{0} stříbra při {1} % ročně: {2} každých {3} dní, celkem {4} ({5} úroků).</HH.Bank.Loans.Quote>
+  <HH.Bank.Loans.Rate>Úroková sazba za herní rok</HH.Bank.Loans.Rate>
+  <HH.Bank.Loans.RateTip>Základní sazba max(2 %, M − 1) = {0} % plus marže vaší banky ({1} bodů). Sleduje posuvník ziskovosti, takže půjčka na investice nikdy nemá kladné očekávání.</HH.Bank.Loans.RateTip>
+  <HH.Bank.Loans.Repay100>Splatit {0}</HH.Bank.Loans.Repay100>
+  <HH.Bank.Loans.RepayAll>Splatit vše</HH.Bank.Loans.RepayAll>
+  <HH.Bank.Loans.Score>Skóre v účetní knize</HH.Bank.Loans.Score>
+  <HH.Bank.Loans.ScoreTip>300 až 850, začíná na 600. Splátka včas +4, každý den prodlení −6, nesplacení −120, využití více než 70 % limitu −20, plus 20 × log10(majetek / 10 000). Základní skóre {0}.</HH.Bank.Loans.ScoreTip>
+  <HH.Bank.Loans.Take>Vzít půjčku</HH.Bank.Loans.Take>
+  <HH.Bank.Loans.Term>Doba splatnosti</HH.Bank.Loans.Term>
+  <HH.Bank.Loans.Used>Využito</HH.Bank.Loans.Used>
+  <HH.Bank.Lobby.Accounts>Účty</HH.Bank.Lobby.Accounts>
+  <HH.Bank.Lobby.Amount>Částka</HH.Bank.Lobby.Amount>
+  <HH.Bank.Lobby.Balance>Zůstatek</HH.Bank.Lobby.Balance>
+  <HH.Bank.Lobby.BalanceTip>Přesně: {0} stříbra.
+Úrok každý den: zůstatek × (M^({1} × {2} / 60) − 1), kde M = {3} za herní rok (posuvník ziskovosti). To je {4:0.##} % denně.</HH.Bank.Lobby.BalanceTip>
+  <HH.Bank.Lobby.Cash>Hotovost doma</HH.Bank.Lobby.Cash>
+  <HH.Bank.Lobby.CashTip>Stříbro ležící na vašich domácích mapách.</HH.Bank.Lobby.CashTip>
+  <HH.Bank.Lobby.ChangeBank>Změnit banku</HH.Bank.Lobby.ChangeBank>
+  <HH.Bank.Lobby.Chart>Posledních 30 dní</HH.Bank.Lobby.Chart>
+  <HH.Bank.Lobby.Debt>Dluh</HH.Bank.Lobby.Debt>
+  <HH.Bank.Lobby.DebtTip>Součet vašich otevřených půjček včetně nahromaděných úroků.</HH.Bank.Lobby.DebtTip>
+  <HH.Bank.Lobby.DepDelay>připsáno po {0}</HH.Bank.Lobby.DepDelay>
+  <HH.Bank.Lobby.DepInstant>zaúčtováno okamžitě</HH.Bank.Lobby.DepInstant>
+  <HH.Bank.Lobby.Deposit>Vklad</HH.Bank.Lobby.Deposit>
+  <HH.Bank.Lobby.Direct>Přímé vklady</HH.Bank.Lobby.Direct>
+  <HH.Bank.Lobby.DirectTip>Pokladny vašich podniků se o půlnoci vyprázdní na účet, minus {0} %.</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.Interest>Úrok za tento kvadrum</HH.Bank.Lobby.Interest>
+  <HH.Bank.Lobby.InterestTip>Úrok vyplacený ze zůstatku od začátku kvadrumu (15 dní).</HH.Bank.Lobby.InterestTip>
+  <HH.Bank.Lobby.Max>Max</HH.Bank.Lobby.Max>
+  <HH.Bank.Lobby.Net>Čisté jmění</HH.Bank.Lobby.Net>
+  <HH.Bank.Lobby.NetTip>Účet + stříbro doma − dluhy. Určuje vaši úroveň majetku.</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.Nothing>Zatím nic. Vklad by byl dobrý začátek.</HH.Bank.Lobby.Nothing>
+  <HH.Bank.Lobby.PendingDep>↓ {0} přijde za {1}</HH.Bank.Lobby.PendingDep>
+  <HH.Bank.Lobby.PendingWd>↑ {0} dronem za {1}</HH.Bank.Lobby.PendingWd>
+  <HH.Bank.Lobby.Recent>Poslední aktivita</HH.Bank.Lobby.Recent>
+  <HH.Bank.Lobby.Trade>Automaticky vkládat obchodní stříbro</HH.Bank.Lobby.Trade>
+  <HH.Bank.Lobby.TradeTip>Stříbro, které dostanete od obchodníků a obchodních lodí, se hned po obchodu připíše na účet za stejný poplatek jako přímý vklad, místo aby leželo na zemi jako mince. Vyžaduje přímé vklady. Ve výchozím stavu vypnuto, abyste mohli dalšímu obchodníkovi zaplatit v hotovosti. Karavany nejsou ovlivněny.</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.Transfer>Vklad a výběr</HH.Bank.Lobby.Transfer>
+  <HH.Bank.Lobby.TransferInfo>Ve skladu: {0}. Vklad {1}. Poplatek za výběr {2}, {3}.</HH.Bank.Lobby.TransferInfo>
+  <HH.Bank.Lobby.Transit>Na cestě</HH.Bank.Lobby.Transit>
+  <HH.Bank.Lobby.TransitTip>Stříbro, které opustilo váš sklad, ale ještě nebylo připsáno (zpoždění vkladu bez pobočky nebo bankomatu).</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.WdInstant>hotovost v budově okamžitě</HH.Bank.Lobby.WdInstant>
+  <HH.Bank.Lobby.WdPod>výsadkový modul za {0} do {1} h</HH.Bank.Lobby.WdPod>
+  <HH.Bank.Lobby.Withdraw>Vybrat</HH.Bank.Lobby.Withdraw>
+  <HH.Bank.Lobby.WithdrawPod>Vybrat (modul)</HH.Bank.Lobby.WithdrawPod>
+  <HH.Bank.Memo.AccountFee>Poplatek za vedení účtu</HH.Bank.Memo.AccountFee>
+  <HH.Bank.Memo.Bailout>Záchranná půjčka</HH.Bank.Memo.Bailout>
+  <HH.Bank.Memo.Deposit>Vklad (stříbro)</HH.Bank.Memo.Deposit>
+  <HH.Bank.Memo.DepositTransit>Vklad na cestě</HH.Bank.Memo.DepositTransit>
+  <HH.Bank.Memo.Installment>Půjčka {0}: splátka</HH.Bank.Memo.Installment>
+  <HH.Bank.Memo.Interest>Úrok</HH.Bank.Memo.Interest>
+  <HH.Bank.Memo.Late>Půjčka {0}: pozdní platba</HH.Bank.Memo.Late>
+  <HH.Bank.Memo.LateFee>Půjčka {0}: poplatek za prodlení</HH.Bank.Memo.LateFee>
+  <HH.Bank.Memo.Loan>Půjčka {0}</HH.Bank.Memo.Loan>
+  <HH.Bank.Memo.LoanInterest>Půjčka {0}: úrok</HH.Bank.Memo.LoanInterest>
+  <HH.Bank.Memo.NegInterest>Záporný úrok</HH.Bank.Memo.NegInterest>
+  <HH.Bank.Memo.Offset>Započtení z vymáhání</HH.Bank.Memo.Offset>
+  <HH.Bank.Memo.Repay>Půjčka {0}: splacení</HH.Bank.Memo.Repay>
+  <HH.Bank.Memo.Seized>Zabaveno</HH.Bank.Memo.Seized>
+  <HH.Bank.Memo.Seizure>Výtěžek z vymáhání (půjčka {0})</HH.Bank.Memo.Seizure>
+  <HH.Bank.Memo.SeizurePay>Půjčka {0}: uhrazeno vymáháním</HH.Bank.Memo.SeizurePay>
+  <HH.Bank.Memo.Trade>Příjem z obchodu</HH.Bank.Memo.Trade>
+  <HH.Bank.Memo.Withdraw>Výběr (hotovost)</HH.Bank.Memo.Withdraw>
+  <HH.Bank.Memo.WithdrawCash>Výběr (hotovost)</HH.Bank.Memo.WithdrawCash>
+  <HH.Bank.Memo.WithdrawFee>Poplatek: výběr</HH.Bank.Memo.WithdrawFee>
+  <HH.Bank.Memo.WithdrawPod>Výběr výsadkovým modulem</HH.Bank.Memo.WithdrawPod>
+  <HH.Bank.Msg.DepositArrived>Na váš účet bylo připsáno {0} stříbra.</HH.Bank.Msg.DepositArrived>
+  <HH.Bank.Msg.LoanRepaid>Půjčka {0} je plně splacena.</HH.Bank.Msg.LoanRepaid>
+  <HH.Bank.Msg.Missed>Splátku půjčky {0} nebylo možné zaplatit.</HH.Bank.Msg.Missed>
+  <HH.Bank.Msg.Opened>Účet otevřen v {0}.</HH.Bank.Msg.Opened>
+  <HH.Bank.Msg.PodsComing>{0} stříbra je na cestě dolů ve výsadkových modulech.</HH.Bank.Msg.PodsComing>
+  <HH.Bank.Msg.Settled>Půjčka {0} je opět v pořádku.</HH.Bank.Msg.Settled>
+  <HH.Bank.Msg.Switched>Váš účet nyní sídlí v {0}.</HH.Bank.Msg.Switched>
+  <HH.Bank.Msg.TradeDeposit>Obchodní příjem {0} stříbra šel rovnou na váš účet v {1}.</HH.Bank.Msg.TradeDeposit>
+  <HH.Bank.Open.Button>Otevřít účet</HH.Bank.Open.Button>
+  <HH.Bank.Open.Direct>Směrovat pokladní peníze rovnou do banky o půlnoci</HH.Bank.Open.Direct>
+  <HH.Bank.Open.DirectTip>Tržby vašich obchodů, hostince a kasina jdou na účet místo toho, aby ležely jako stříbro. Můžete to později přepnout u nočního trezoru nebo v nastavení (bank.directDeposit).</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.Intro>Vyberte banku. Otevření účtu je zdarma; přesun později stojí {0} stříbra. Dokud účet nemáte, vás tu nic netrápí – žádné dopisy, žádná nálada, žádné poplatky.</HH.Bank.Open.Intro>
+  <HH.Bank.Open.Sub>Vaše stříbro, náš problém.</HH.Bank.Open.Sub>
+  <HH.Bank.Open.Title>Silverline: otevřít účet</HH.Bank.Open.Title>
+  <HH.Bank.Quip.A>Vaše stříbro je v bezpečí*. *Platí podmínky.</HH.Bank.Quip.A>
+  <HH.Bank.Quip.B>Vezměte si prosím lístek s pořadovým číslem. Od Třetího kolapsu jsme žádná čísla nevydávali, ale to gesto se počítá.</HH.Bank.Quip.B>
+  <HH.Bank.Quip.C>Každá mince zde je evidována. Většinou ručně. V noci.</HH.Bank.Quip.C>
+  <HH.Bank.Quip.Collectors>Moji kolegové v buřinkách sem nejsou kvůli vám. Nekoukejte se na ně. Vědí.</HH.Bank.Quip.Collectors>
+  <HH.Bank.Quip.D>Matrace nejsou finanční produkt. I když slyším, že mají své příznivce.</HH.Bank.Quip.D>
+  <HH.Bank.Quip.Debt>Dluh je jen úspora z budoucnosti. Budoucnost ji nezvykle ráda dostává zpět.</HH.Bank.Quip.Debt>
+  <HH.Bank.Quip.E>Kdyby se kdokoli ptal, pero se neprodává.</HH.Bank.Quip.E>
+  <HH.Bank.Quip.Empty>Prázdný účet je jen velmi poctivý účet.</HH.Bank.Quip.Empty>
+  <HH.Bank.Quip.Huge>V této velikosti už nejsme vaše banka. Jsme vaše klima.</HH.Bank.Quip.Huge>
+  <HH.Bank.Quip.Interest>Úrok za tento kvadrum: {0}. To jsou, pokud počítám správně, nějaká jídla. Gratulujeme?</HH.Bank.Quip.Interest>
+  <HH.Bank.Quip.Overdue>Nechceme vás znepokojovat. Jen jsme si všimli, že jste si nevšiml.</HH.Bank.Quip.Overdue>
+  <HH.Bank.Quip.Rich>Čtyřmístné číslo. Váš klobouk je prakticky cylindr.</HH.Bank.Quip.Rich>
+  <HH.Bank.Raid.Bounty>{0} prodala dluh půjčky {1} lidem, kteří žádné dopisy neposílají. Na hlavu vedoucího vaší kolonie je vypsána odměna.</HH.Bank.Raid.Bounty>
+  <HH.Bank.Raid.BountyTitle>Odměna</HH.Bank.Raid.BountyTitle>
+  <HH.Bank.Raid.Text>Rim Recovery Partners ztratila trpělivost s půjčkou {0}. Jejich agenti přicházejí pro cennosti v hodnotě převyšující dluh. Vezmou, co unesou, a odejdou.</HH.Bank.Raid.Text>
+  <HH.Bank.Raid.Title>Výpadová akce vymáhání</HH.Bank.Raid.Title>
+  <HH.Bank.Reason.Amount>Nejdřív vyberte částku.</HH.Bank.Reason.Amount>
+  <HH.Bank.Reason.Arrears>Jste v prodlení se splátkou. Dokud to nebude vyřešeno, nikdo vám nepůjčí.</HH.Bank.Reason.Arrears>
+  <HH.Bank.Reason.AtmLimit>Bankomat dnes vydá jen ještě {0}.</HH.Bank.Reason.AtmLimit>
+  <HH.Bank.Reason.BankUnavailable>Tato banka pro vás není otevřena.</HH.Bank.Reason.BankUnavailable>
+  <HH.Bank.Reason.Funds>Účet nepokryje {0} plus {1} poplatků.</HH.Bank.Reason.Funds>
+  <HH.Bank.Reason.Funds2>Na účtu není {0}.</HH.Bank.Reason.Funds2>
+  <HH.Bank.Reason.LoansResearch>Půjčky vyžadují výzkumný projekt "spotřebitelský úvěr".</HH.Bank.Reason.LoansResearch>
+  <HH.Bank.Reason.MinLoan>Nejmenší půjčka je {0} stříbra.</HH.Bank.Reason.MinLoan>
+  <HH.Bank.Reason.NoAccount>Účet zatím nemáte.</HH.Bank.Reason.NoAccount>
+  <HH.Bank.Reason.NoCredit>Váš úvěrový limit je vyčerpán (zbývá {0} stříbra).</HH.Bank.Reason.NoCredit>
+  <HH.Bank.Reason.NoSilver>Ve skladu ani u obchodního majáku není dost stříbra (k dispozici {0}).</HH.Bank.Reason.NoSilver>
+  <HH.Bank.Reason.OverLimit>To je více, než smíte ještě půjčit: {0} stříbra.</HH.Bank.Reason.OverLimit>
+  <HH.Bank.Reason.SameBank>U této banky už účet máte.</HH.Bank.Reason.SameBank>
+  <HH.Bank.Reason.SwitchFunds>Přesun účtu stojí {0} stříbra a účet tolik nemá.</HH.Bank.Reason.SwitchFunds>
+  <HH.Bank.Reason.Title>{0} půjčuje jen držitelům královského titulu.</HH.Bank.Reason.Title>
+  <HH.Bank.Seizure.Allow>Nechat je vzít cennosti</HH.Bank.Seizure.Allow>
+  <HH.Bank.Seizure.Done>Tým naložil cennosti za {0} stříbra ({1}) a odešel a pohvizdoval si. Dluh činí {2}.</HH.Bank.Seizure.Done>
+  <HH.Bank.Seizure.DoneTitle>Zabaveno</HH.Bank.Seizure.DoneTitle>
+  <HH.Bank.Seizure.Partly>jen částečně uhrazeno</HH.Bank.Seizure.Partly>
+  <HH.Bank.Seizure.Refuse>Odmítnout</HH.Bank.Seizure.Refuse>
+  <HH.Bank.Seizure.Refused>Vymáhací tým přestává být zdvořilý – a zdvořile to oznamuje.</HH.Bank.Seizure.Refused>
+  <HH.Bank.Seizure.RefusedTitle>Neodejdou</HH.Bank.Seizure.RefusedTitle>
+  <HH.Bank.Seizure.Settled>uhrazeno</HH.Bank.Seizure.Settled>
+  <HH.Bank.Seizure.Text>Vymáhací tým firmy Rim Recovery Partners stojí u dveří se soudním příkazem, který vypadá jako laminovaný ubrousek. Chtějí cennosti v hodnotě asi {0} stříbra (120 % půjčky {1}). Nechte je vzít a půjčka je pryč. Odmítnete-li, vezmou si to po tvrdém.</HH.Bank.Seizure.Text>
+  <HH.Bank.Seizure.Title>Oznámení o zabavení</HH.Bank.Seizure.Title>
+  <HH.Bank.Tab.History>Historie</HH.Bank.Tab.History>
+  <HH.Bank.Tab.Loans>Půjčky</HH.Bank.Tab.Loans>
+  <HH.Bank.Tab.Lobby>Hala</HH.Bank.Tab.Lobby>
+  <HH.Bank.Tab.Terms>Podmínky</HH.Bank.Tab.Terms>
+  <HH.Bank.Terms.AccFee>Poplatek za účet za kvadrum</HH.Bank.Terms.AccFee>
+  <HH.Bank.Terms.AccountDaily>Tvůj účet za den</HH.Bank.Terms.AccountDaily>
+  <HH.Bank.Terms.AccountDailyTip>Násobek účtu za rok = M^({0} × {1}) = {2}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.Anchors>Podle obtížnosti</HH.Bank.Terms.Anchors>
+  <HH.Bank.Terms.AnchorsHead>M za rok / nejvyšší stupeň vymáhání</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.Atm>bankomat</HH.Bank.Terms.Atm>
+  <HH.Bank.Terms.Auto>Automaticky</HH.Bank.Terms.Auto>
+  <HH.Bank.Terms.AutoTip>Znovu se řídí posuvníkem obtížnosti ({0} při aktuální obtížnosti).</HH.Bank.Terms.AutoTip>
+  <HH.Bank.Terms.Daily>Denně (index)</HH.Bank.Terms.Daily>
+  <HH.Bank.Terms.DailyTip>M^(1/60) − 1. Herní rok má 60 dní.</HH.Bank.Terms.DailyTip>
+  <HH.Bank.Terms.Dep>Vklad</HH.Bank.Terms.Dep>
+  <HH.Bank.Terms.Direct>Přímý vklad</HH.Bank.Terms.Direct>
+  <HH.Bank.Terms.Fees>Poplatky tvé banky</HH.Bank.Terms.Fees>
+  <HH.Bank.Terms.FeesNote>Všechny poplatky se řídí nastavením „úroveň bankovních poplatků“ ({0} %).</HH.Bank.Terms.FeesNote>
+  <HH.Bank.Terms.Preview>1 000 stříbra při indexu se po jednom herním roce promění v {0} a po deseti v {1}.</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Profit>Ziskovost</HH.Bank.Terms.Profit>
+  <HH.Bank.Terms.ProfitIntro>Kolik investovaných peněz v průměru naroste za herní rok (60 dní). 1,0 znamená ani plus, ani mínus, 1,2 znamená +20 % ročně. Určuje také, kolik stojí půjčky. Je to nastavení této uložené hry.</HH.Bank.Terms.ProfitIntro>
+  <HH.Bank.Terms.StageNote>Žebřík vymáhání: 1 upomínka, 2 poplatek za pozdní platbu, 3 zápočet proti vkladům, 4 přátelská návštěva, 5 tým pro zabavování, 6 nájezd vymahačů, 7 odměna. Nyní: zastaví se na stupni {0}.</HH.Bank.Terms.StageNote>
+  <HH.Bank.Terms.Switch>Změna banky</HH.Bank.Terms.Switch>
+  <HH.Bank.Terms.Wd>Výběr (kapsle / přepážka)</HH.Bank.Terms.Wd>
+  <HH.Bank.Tier.0>Topí se v dluzích</HH.Bank.Tier.0>
+  <HH.Bank.Tier.1>Na mizině</HH.Bank.Tier.1>
+  <HH.Bank.Tier.2>Živoří</HH.Bank.Tier.2>
+  <HH.Bank.Tier.3>Vychází se</HH.Bank.Tier.3>
+  <HH.Bank.Tier.4>V pohodě</HH.Bank.Tier.4>
+  <HH.Bank.Tier.5>Zámožný</HH.Bank.Tier.5>
+  <HH.Bank.Tier.6>Bohatý</HH.Bank.Tier.6>
+  <HH.Bank.Tier.7>Příšerně bohatý</HH.Bank.Tier.7>
+  <HH.Bank.Tier.8>Příliš velký na pád</HH.Bank.Tier.8>
+  <HH.Bank.Tier.Name0>Pozváno zdarma</HH.Bank.Tier.Name0>
+  <HH.Bank.Tier.Name1>Vše v ceně</HH.Bank.Tier.Name1>
+  <HH.Bank.Tier.Name2>Penzion se snídaní</HH.Bank.Tier.Name2>
+  <HH.Bank.Tier.Name3>Standardní pokoj</HH.Bank.Tier.Name3>
+  <HH.Bank.Tier.Name4>Přeplněno</HH.Bank.Tier.Name4>
+  <HH.Bank.Tier.Name5>Hodnocení jednou hvězdou</HH.Bank.Tier.Name5>
+  <HH.Bank.Tier.Name6>Proč si takhle ubližuješ?</HH.Bank.Tier.Name6>
+  <HH.Bank.Time.DayHour>den {0}, {1}:00</HH.Bank.Time.DayHour>
+  <HH.Bank.Time.Hours>{0} h</HH.Bank.Time.Hours>
+  <HH.Bank.Time.Minutes>{0} min</HH.Bank.Time.Minutes>
+</LanguageData>

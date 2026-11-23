@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Casino_Slots.label>スロットマシン</HH_Casino_Slots.label>
+  <HH_Casino_Slots.description>一本腕マフェロのスロットマシンを作る: 電動で、うるさく、余った銀を店の利益に変えるのがとても得意です。</HH_Casino_Slots.description>
+  <HH_Casino_Tables.label>ゲームテーブル</HH_Casino_Tables.label>
+  <HH_Casino_Tables.description>ルーレット、ブラックジャック、リムデックのテーブルと換金所を作る。客向けに運営するには、テーブルにディーラーが必要です。</HH_Casino_Tables.description>
+</LanguageData>

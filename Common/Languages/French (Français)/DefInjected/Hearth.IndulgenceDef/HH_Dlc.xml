@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Ind_ExpressAbsolution.label>absolution express</HH_Ind_ExpressAbsolution.label>
+  <HH_Ind_ExpressAbsolution.description>Un billet tamponné qui efface un souvenir de commandement brisé. Le prêtre ne demande pas ce que vous avez fait.</HH_Ind_ExpressAbsolution.description>
+  <HH_Ind_MinorMercy.label>petite clémence</HH_Ind_MinorMercy.label>
+  <HH_Ind_MinorMercy.description>Un bandage béni, vendu au prix de deux doses de médicament. Soigne une blessure fraîche de 10 points de vie maximum.</HH_Ind_MinorMercy.description>
+  <HH_Ind_UnshakenFaith.label>certificat de foi inébranlable</HH_Ind_UnshakenFaith.label>
+  <HH_Ind_UnshakenFaith.description>Un certificat encadré attestant que vous n'avez jamais douté. Augmente la certitude de dix points de pourcentage.</HH_Ind_UnshakenFaith.description>
+  <HH_Ind_GreaterMercy.label>grande clémence</HH_Ind_GreaterMercy.label>
+  <HH_Ind_GreaterMercy.description>Un miracle à prix fixe. Soigne définitivement une cicatrice durable ou une vieille blessure.</HH_Ind_GreaterMercy.description>
+  <HH_Asc_Rank1.label>ascension : chercheur</HH_Asc_Rank1.label>
+  <HH_Asc_Rank1.description>Payez les droits d'entrée et devenez Chercheur. Un début, rien de plus.</HH_Asc_Rank1.description>
+  <HH_Asc_Rank2.label>ascension : adepte</HH_Asc_Rank2.label>
+  <HH_Asc_Rank2.description>Rang II, Adepte. Dès lors, le détenteur peut vendre des indulgences à l'autel aux hôtes et visiteurs d'autres maisons.</HH_Asc_Rank2.description>
+  <HH_Asc_Rank3.label>ascension : luminaire</HH_Asc_Rank3.label>
+  <HH_Asc_Rank3.description>Rang III, Luminaire. Assez de lumière pour être remarqué de loin.</HH_Asc_Rank3.description>
+  <HH_Asc_Rank4.label>ascension : ascendant</HH_Asc_Rank4.label>
+  <HH_Asc_Rank4.description>Rang IV, Ascendant. Le sommet de l'échelle, pour ceux qui peuvent se payer la vue.</HH_Asc_Rank4.description>
+  <HH_Ind_ReformTithe.label>dîme de réforme</HH_Ind_ReformTithe.label>
+  <HH_Ind_ReformTithe.description>Une dîme volontaire pour la prochaine réforme d'une idéologie fluide : un point de réforme.</HH_Ind_ReformTithe.description>
+</LanguageData>

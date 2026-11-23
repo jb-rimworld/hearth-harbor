@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ProjectorScreen.label>프로젝터 스크린</HH_ProjectorScreen.label>
+  <HH_ProjectorScreen.description>천장 들보에 프로젝터가 달린 넓은 스크린입니다. 앞에 의자를 놓고, 방에 간판을 걸고, 조명을 끄면 손님은 좌석 요금을 내고 식민지 주민은 영화의 밤을 즐깁니다. 영화는 낡고 시끄러우며, 누가 만들었는지는 아무도 기억하지 못합니다.</HH_ProjectorScreen.description>
+  <HH_SalonChair.label>미용 의자</HH_SalonChair.label>
+  <HH_SalonChair.description>패드가 들어간 높이 조절식 의자로, 망토와 뒤쪽 벽의 거울, 가위가 든 서랍이 딸려 있습니다. 뒤에 선 식민지 주민이 의자에 앉은 사람에게 새 모습을 만들어 줍니다. 식민지 주민은 무료로 이용하고, 손님은 요금을 냅니다.</HH_SalonChair.description>
+  <HH_ParkBench.label>공원 벤치</HH_ParkBench.label>
+  <HH_ParkBench.description>전망이 있는 2인용 소박한 벤치입니다. 살 것도, 서명할 것도 없습니다. 사람들은 앉아서 보이는 풍경을 바라보고, 그만큼 조금 나아진 기분을 느낍니다. 주변이 아름다울수록 좋습니다.</HH_ParkBench.description>
+  <HH_TaxiStand.label>택시 승강장</HH_TaxiStand.label>
+  <HH_TaxiStand.description>페인트로 칠한 사각형 바닥, 표지판, 호출 단말기로 이루어져 있습니다. 맵 가장자리까지 걷기 싫은 떠나는 손님은 여기서 작은 셔틀을 부르고 요금을 냅니다. 도착하는 일부 손님은 이 승강장에 우아하게 내려 줍니다. 택시가 착륙할 수 있도록 위쪽이 트여 있어야 합니다.</HH_TaxiStand.description>
+  <HH_TaxiIncoming.label>택시 (도착 중)</HH_TaxiIncoming.label>
+  <HH_TaxiLeaving.label>택시 (출발 중)</HH_TaxiLeaving.label>
+</LanguageData>

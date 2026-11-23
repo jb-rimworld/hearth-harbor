@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Kitchen.Missing>Chybí: {0}</HH.Kitchen.Missing>
+  <HH.Kitchen.RecipeInfo>Zařízení: {0}. Kroky: {1}.</HH.Kitchen.RecipeInfo>
+  <HH.Kitchen.Finishing>dolaďovací příloha (mléko, vejce, čokoláda, pivo, bobule nebo houby)</HH.Kitchen.Finishing>
+  <HH.Kitchen.Finishing2>druhá dolaďovací příloha (pivo, bobule nebo houby)</HH.Kitchen.Finishing2>
+  <HH.Kitchen.Inspiration>Inspirace: {0}</HH.Kitchen.Inspiration>
+  <HH.Kitchen.Cuisine>Kuchyně: {0}</HH.Kitchen.Cuisine>
+  <HH.Kitchen.Cooked>Vařeno u: {0} ({1})</HH.Kitchen.Cooked>
+  <HH.Kitchen.Made>Připraveno z: {0}</HH.Kitchen.Made>
+  <HH.Kitchen.Signature>Signaturní pokrm</HH.Kitchen.Signature>
+  <HH.Kitchen.Fine>Výběrový pokrm</HH.Kitchen.Fine>
+  <HH.Kitchen.Everyday>Každodenní pokrm</HH.Kitchen.Everyday>
+  <HH.Kitchen.Level>úroveň {0}</HH.Kitchen.Level>
+  <HH.Kitchen.Stale>Zvětralé: žádné Dobře najezen, žádný bonus k náladě.</HH.Kitchen.Stale>
+  <HH.Kitchen.FreshFor>Čerstvé po dobu {0}</HH.Kitchen.FreshFor>
+  <HH.Kitchen.Stat.Well>Dobře najezen</HH.Kitchen.Stat.Well>
+  <HH.Kitchen.Stat.WellDesc>Jak dlouho hlad klesá pomaleji po jídle tohoto pokrmu. Roste s úrovní učení a kvalitou.</HH.Kitchen.Stat.WellDesc>
+  <HH.Kitchen.Stat.Mood>Nálada po jídle</HH.Kitchen.Stat.Mood>
+  <HH.Kitchen.Stat.MoodDesc>Bonus k náladě z řádného pokrmu podle úrovně učení a kvality (zvětralé pokrmy žádný nedávají).</HH.Kitchen.Stat.MoodDesc>
+  <HH.Tab.Kitchen>Kuchařka</HH.Tab.Kitchen>
+  <HH.Kitchen.Cookbook.Title>Kuchařka kolonie</HH.Kitchen.Cookbook.Title>
+  <HH.Kitchen.Cookbook.Known>Známo {0} z {1} pokrmů</HH.Kitchen.Cookbook.Known>
+  <HH.Kitchen.Cookbook.Unknown>???</HH.Kitchen.Cookbook.Unknown>
+  <HH.Kitchen.Cookbook.UnknownHint>Zatím nenaučeno. Vyzkoumej {0}, nebo najdi kuchařku.</HH.Kitchen.Cookbook.UnknownHint>
+  <HH.Kitchen.Cookbook.Level>Úroveň {0}</HH.Kitchen.Cookbook.Level>
+  <HH.Kitchen.Cookbook.NoRecipe>Bez receptu: {0}</HH.Kitchen.Cookbook.NoRecipe>
+  <HH.Kitchen.Cookbook.Dark>Skryto: temné menu je vypnuto.</HH.Kitchen.Cookbook.Dark>
+  <HH.Kitchen.Cookbook.Filter>Zobrazit jen známé</HH.Kitchen.Cookbook.Filter>
+  <HH.Kitchen.Cookbook.Search>Hledat</HH.Kitchen.Cookbook.Search>
+  <HH.Kitchen.Station.PrepCounter>Pracovní pult</HH.Kitchen.Station.PrepCounter>
+  <HH.Kitchen.Station.StockPot>Kotel na vývar</HH.Kitchen.Station.StockPot>
+  <HH.Kitchen.Station.Grill>Gril</HH.Kitchen.Station.Grill>
+  <HH.Kitchen.Station.Oven>Trouba</HH.Kitchen.Station.Oven>
+  <HH.Kitchen.Station.Wok>Wok stanice</HH.Kitchen.Station.Wok>
+  <HH.Kitchen.Station.Fryer>Fritéza</HH.Kitchen.Station.Fryer>
+  <HH.Kitchen.Station.Smoker>Udírna</HH.Kitchen.Station.Smoker>
+  <HH.Kitchen.Station.Steamer>Napařovač</HH.Kitchen.Station.Steamer>
+  <HH.Kitchen.Station.DoughBench>Pracovní stůl na těsto</HH.Kitchen.Station.DoughBench>
+  <HH.Kitchen.Station.ColdStation>Chladicí stanice</HH.Kitchen.Station.ColdStation>
+  <HH.Kitchen.Station.Campfire>Ohniště</HH.Kitchen.Station.Campfire>
+  <HH.Kitchen.Station.Stove>Sporák</HH.Kitchen.Station.Stove>
+  <HH.Kitchen.Station.ButcherTable>Řeznický stůl</HH.Kitchen.Station.ButcherTable>
+  <HH.Kitchen.Step.Chop>nakrájet</HH.Kitchen.Step.Chop>
+  <HH.Kitchen.Step.Simmer>dusit</HH.Kitchen.Step.Simmer>
+  <HH.Kitchen.Step.Boil>vařit</HH.Kitchen.Step.Boil>
+  <HH.Kitchen.Step.Grill>grilovat</HH.Kitchen.Step.Grill>
+  <HH.Kitchen.Step.KneadDough>hníst těsto</HH.Kitchen.Step.KneadDough>
+  <HH.Kitchen.Step.Smoke>udit</HH.Kitchen.Step.Smoke>
+  <HH.Kitchen.Step.Roast>péct</HH.Kitchen.Step.Roast>
+  <HH.Kitchen.Step.StirFry>smažit na woku</HH.Kitchen.Step.StirFry>
+  <HH.Kitchen.Step.DeepFry>fritovat</HH.Kitchen.Step.DeepFry>
+  <HH.Kitchen.Step.Steam>napařit</HH.Kitchen.Step.Steam>
+  <HH.Kitchen.Step.Chill>vychladit</HH.Kitchen.Step.Chill>
+  <HH.Kitchen.Step.Carve>porcovat</HH.Kitchen.Step.Carve>
+  <HH.Kitchen.Step.SpitRoast>péct na rožni</HH.Kitchen.Step.SpitRoast>
+  <HH.Kitchen.Step.PanFry>osmažit na pánvi</HH.Kitchen.Step.PanFry>
+  <HH.Kitchen.Step.Sear>opéct</HH.Kitchen.Step.Sear>
+  <HH.Kitchen.Cuisine.Frontier>Venkovská / pohraniční</HH.Kitchen.Cuisine.Frontier>
+  <HH.Kitchen.Cuisine.TribalFeast>Kmenová hostina</HH.Kitchen.Cuisine.TribalFeast>
+  <HH.Kitchen.Cuisine.TavernFare>Krčmová kuchyně</HH.Kitchen.Cuisine.TavernFare>
+  <HH.Kitchen.Cuisine.ImperialHaute>Imperiální haute cuisine</HH.Kitchen.Cuisine.ImperialHaute>
+  <HH.Kitchen.Cuisine.GlitterFusion>Třpytivá fůze</HH.Kitchen.Cuisine.GlitterFusion>
+  <HH.Kitchen.Cuisine.Street>Pouliční</HH.Kitchen.Cuisine.Street>
+  <HH.Kitchen.Cuisine.Seafood>Mořské plody</HH.Kitchen.Cuisine.Seafood>
+  <HH.Kitchen.Cuisine.Insect>Hmyzí</HH.Kitchen.Cuisine.Insect>
+  <HH.Kitchen.Cuisine.Fungal>Houbová</HH.Kitchen.Cuisine.Fungal>
+  <HH.Kitchen.Cuisine.Vegetarian>Vegetariánská</HH.Kitchen.Cuisine.Vegetarian>
+  <HH.Kitchen.Cuisine.Ascetic>Asketická</HH.Kitchen.Cuisine.Ascetic>
+  <HH.Kitchen.Cuisine.LongPork>Dlouhé vepřové</HH.Kitchen.Cuisine.LongPork>
+  <HH.Kitchen.Ingredient.meat>maso</HH.Kitchen.Ingredient.meat>
+  <HH.Kitchen.Ingredient.insectmeat>hmyzí maso</HH.Kitchen.Ingredient.insectmeat>
+  <HH.Kitchen.Ingredient.humanmeat>lidské maso</HH.Kitchen.Ingredient.humanmeat>
+  <HH.Kitchen.Ingredient.twistedmeat>zkřivené maso</HH.Kitchen.Ingredient.twistedmeat>
+  <HH.Kitchen.Ingredient.fish>ryba</HH.Kitchen.Ingredient.fish>
+  <HH.Kitchen.Ingredient.eggs>vejce</HH.Kitchen.Ingredient.eggs>
+  <HH.Kitchen.Ingredient.milk>mléko</HH.Kitchen.Ingredient.milk>
+  <HH.Kitchen.Ingredient.potatoes>brambory</HH.Kitchen.Ingredient.potatoes>
+  <HH.Kitchen.Ingredient.corn>kukuřice</HH.Kitchen.Ingredient.corn>
+  <HH.Kitchen.Ingredient.rice>rýže</HH.Kitchen.Ingredient.rice>
+  <HH.Kitchen.Ingredient.berries>bobule</HH.Kitchen.Ingredient.berries>
+  <HH.Kitchen.Ingredient.agave>plody agáve</HH.Kitchen.Ingredient.agave>
+  <HH.Kitchen.Ingredient.mushrooms>houby</HH.Kitchen.Ingredient.mushrooms>
+  <HH.Kitchen.Ingredient.chocolate>čokoláda</HH.Kitchen.Ingredient.chocolate>
+  <HH.Kitchen.Ingredient.beer>pivo</HH.Kitchen.Ingredient.beer>
+  <HH.Kitchen.Ingredient.hemogen>balení hemogenu</HH.Kitchen.Ingredient.hemogen>
+  <HH.Kitchen.Ingredient.cheese>sýr</HH.Kitchen.Ingredient.cheese>
+  <HH.Kitchen.Ingredient.pumpkin>dýně</HH.Kitchen.Ingredient.pumpkin>
+  <HH.Kitchen.Ingredient.flour>mouka</HH.Kitchen.Ingredient.flour>
+  <HH.Kitchen.Ingredient.fruit>ovoce</HH.Kitchen.Ingredient.fruit>
+  <HH.Kitchen.Ingredient.soysauce>sojová omáčka</HH.Kitchen.Ingredient.soysauce>
+  <HH.Kitchen.Ingredient.wasabi>wasabi pasta</HH.Kitchen.Ingredient.wasabi>
+  <HH.Kitchen.Ingredient.vegetables>zelenina</HH.Kitchen.Ingredient.vegetables>
+  <HH.Kitchen.Ingredient.sugar>cukr</HH.Kitchen.Ingredient.sugar>
+  <HH.Kitchen.Ingredient.gourmet>lahůdkové suroviny</HH.Kitchen.Ingredient.gourmet>
+  <HH.Kitchen.Ingredient.herbs>bylinky</HH.Kitchen.Ingredient.herbs>
+  <HH.Kitchen.Ingredient.nuts>ořechy</HH.Kitchen.Ingredient.nuts>
+  <HH.Kitchen.Ingredient.tealeaves>čajové lístky</HH.Kitchen.Ingredient.tealeaves>
+  <HH.Kitchen.Ingredient.strawflour>slaměná mouka</HH.Kitchen.Ingredient.strawflour>
+  <HH.Kitchen.Ingredient.pricklypear>opuncie</HH.Kitchen.Ingredient.pricklypear>
+  <HH.Kitchen.Ingredient.greenfruit>zelené ovoce</HH.Kitchen.Ingredient.greenfruit>
+  <HH.Setting.kitchen.shelfLife>Trvanlivost pokrmů</HH.Setting.kitchen.shelfLife>
+  <HH.Setting.kitchen.shelfLife.Desc>Jak dlouho zůstávají talíře čerstvé, vzhledem k 3 až 24 hodinám každého pokrmu. Zvětralé talíře jsou stále jedlé, ale nedávají Dobře najezen ani bonus k náladě.</HH.Setting.kitchen.shelfLife.Desc>
+  <HH.Setting.kitchen.wellFedStrength>Síla Dobře najezen</HH.Setting.kitchen.wellFedStrength>
+  <HH.Setting.kitchen.wellFedStrength.Desc>O kolik pomaleji klesá hlad po řádném pokrmu (100 % = o 40 % pomaleji).</HH.Setting.kitchen.wellFedStrength.Desc>
+  <HH.Setting.kitchen.wellFedDuration>Délka Dobře najezen</HH.Setting.kitchen.wellFedDuration>
+  <HH.Setting.kitchen.wellFedDuration.Desc>Jak dlouho stav Dobře najezen trvá, vzhledem k 4 / 6 / 8 / 10 hodinám podle úrovně učení (a podle kvality).</HH.Setting.kitchen.wellFedDuration.Desc>
+  <HH.Setting.kitchen.menuPrice>Ceny v menu</HH.Setting.kitchen.menuPrice>
+  <HH.Setting.kitchen.menuPrice.Desc>Ceny, které restaurace účtuje za pokrmy, vzhledem ke standardnímu menu (úroveň pokrmu, kvalita a podoba).</HH.Setting.kitchen.menuPrice.Desc>
+  <HH.Setting.kitchen.poisonRule>Žádná otrava jídlem z dobré kuchyně</HH.Setting.kitchen.poisonRule>
+  <HH.Setting.kitchen.poisonRule.Desc>Talíře uvařené kuchařem se Vařením 4 nebo vyšším v čisté kuchyni (čistota -0,2 nebo lepší) se nikdy nemohou otrávit. Vypnuto: platí vanilková pravidla.</HH.Setting.kitchen.poisonRule.Desc>
+  <HH.Setting.kitchen.variants>Výběrové a signaturní podoby</HH.Setting.kitchen.variants>
+  <HH.Setting.kitchen.variants.Desc>Nabídne každý pokrm ve výběrové podobě (více a lepších surovin, vyšší šance na dobrou kvalitu) a v signaturní podobě (nutný výzkum).</HH.Setting.kitchen.variants.Desc>
+  <HH.Setting.kitchen.allKnown>Všechny pokrmy známy</HH.Setting.kitchen.allKnown>
+  <HH.Setting.kitchen.allKnown.Desc>Přeskočí učení: každý pokrm menu lze uvařit, jakmile stojí jeho zařízení.</HH.Setting.kitchen.allKnown.Desc>
+  <HH.Setting.kitchen.darkMenu>Temné menu (dlouhé vepřové)</HH.Setting.kitchen.darkMenu>
+  <HH.Setting.kitchen.darkMenu.Desc>Povolí pokrmy z dlouhého vepřového. Odemkne je také ideologie, která schvaluje kanibalismus.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Kitchen.Cookbook.Teaches>Učí: {0}</HH.Kitchen.Cookbook.Teaches>
+  <HH.Kitchen.Cookbook.Empty>Stránky jsou prázdné.</HH.Kitchen.Cookbook.Empty>
+  <HH.Kitchen.Cookbook.AllKnown>Kolonie už zná každý pokrm v této knize.</HH.Kitchen.Cookbook.AllKnown>
+  <HH.Kitchen.Cookbook.CannotCook>Nelze vařit.</HH.Kitchen.Cookbook.CannotCook>
+  <HH.Kitchen.Cookbook.Learned>{0} studuje knihu. Kolonie teď umí vařit: {1}.</HH.Kitchen.Cookbook.Learned>
+  <HH.Kitchen.TestKitchen.Success>{0} přišel na to, jak uvařit {1}. Kolonie si to zapamatuje.</HH.Kitchen.TestKitchen.Success>
+  <HH.Kitchen.TestKitchen.Failure>{0} se pokusil uvařit {1} a vyrobil z toho příšerný talíř. Příště snad.</HH.Kitchen.TestKitchen.Failure>
+  <HH.Kitchen.NoNeighbours>V dosahu není žádné jiné kuchyňské zařízení.</HH.Kitchen.NoNeighbours>
+  <HH.Kitchen.Neighbours>V dosahu: {0}</HH.Kitchen.Neighbours>
+  <HH.Kitchen.FreshHours>Čerstvé po dobu {0} h</HH.Kitchen.FreshHours>
+</LanguageData>

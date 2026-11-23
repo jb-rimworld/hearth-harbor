@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ATM.label>caixa eletrônico</SL_ATM.label>
+  <SL_ATM.description>Uma caixa de aço com tela, teclado e uma fenda que diz "prata" em quatro idiomas. Os colonos a usam para ver a conta, sacar prata (limite diário, taxa pequena) e depositar o que têm. Precisa de energia.</SL_ATM.description>
+  <SL_BankCounter.label>guichê bancário</SL_BankCounter.label>
+  <SL_BankCounter.description>Um longo balcão de madeira com ferragens de latão e um sininho que ninguém tem permissão de tocar. Uma agência do seu banco: os depósitos são lançados na hora, o dinheiro sai direto do cofre e os empréstimos são assinados pessoalmente. Precisa de energia.</SL_BankCounter.description>
+  <SL_NightSafe.label>cofre noturno</SL_NightSafe.label>
+  <SL_NightSafe.description>Uma escotilha num bloco de aço. Coloque a féria do dia, ouça o clique e vá para casa. Toda meia-noite os caixas dos seus negócios são esvaziados aqui: na sua conta bancária, se você tiver uma, ou como prata no chão ao lado, se não tiver.</SL_NightSafe.description>
+</LanguageData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Guide_OpeningDay.label>Día de apertura</HH_Guide_OpeningDay.label>
+  <HH_Guide_OpeningDay.description>Tres pasos desde una cama hasta tu primera plata. Sin investigación, sin zonas y sin ajustes.</HH_Guide_OpeningDay.description>
+  <HH_Guide_YourGuests.label>Tus huéspedes de un vistazo</HH_Guide_YourGuests.label>
+  <HH_Guide_YourGuests.description>Dónde ver cómo les va a tus huéspedes.</HH_Guide_YourGuests.description>
+  <HH_Guide_FirstVenue.label>Tu primer local</HH_Guide_FirstVenue.label>
+  <HH_Guide_FirstVenue.description>Un cartel convierte una habitación en un negocio.</HH_Guide_FirstVenue.description>
+  <HH_Guide_Bank.label>Dinero en el banco</HH_Guide_Bank.label>
+  <HH_Guide_Bank.description>Silverline guarda a salvo tus ingresos y permite a los huéspedes pagar con tarjeta.</HH_Guide_Bank.description>
+</LanguageData>

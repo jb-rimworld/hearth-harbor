@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.UI.Page.Overview>Обзор</HH.UI.Page.Overview>
+  <HH.UI.Page.Guests>Гости</HH.UI.Page.Guests>
+  <HH.UI.Page.Modules>Модули</HH.UI.Page.Modules>
+  <HH.UI.Page.Difficulty>Сложность</HH.UI.Page.Difficulty>
+  <HH.UI.Page.General>Общие</HH.UI.Page.General>
+  <HH.UI.Page.Diagnosis>Диагностика</HH.UI.Page.Diagnosis>
+  <HH.UI.Page.About>О моде</HH.UI.Page.About>
+  <HH.UI.Silver>серебро</HH.UI.Silver>
+  <HH.UI.Tab.Settings>Настройки</HH.UI.Tab.Settings>
+  <HH.UI.Tab.Guide>Справка</HH.UI.Tab.Guide>
+  <HH.UI.Tab.GuideTip>Показать или скрыть небольшую панель с уроками в правом верхнем углу.</HH.UI.Tab.GuideTip>
+  <HH.UI.Tab.NoPages>Пока нечего показать.</HH.UI.Tab.NoPages>
+  <HH.UI.Settings.ThisSave>Это сохранение</HH.UI.Settings.ThisSave>
+  <HH.UI.Settings.Template>Шаблон</HH.UI.Settings.Template>
+  <HH.UI.Settings.ThisSaveTip>Изменить настройки текущей колонии. Они сохраняются вместе с ней.</HH.UI.Settings.ThisSaveTip>
+  <HH.UI.Settings.TemplateTip>Изменить шаблон, с которого начинаются новые колонии. Текущая колония не меняется.</HH.UI.Settings.TemplateTip>
+  <HH.UI.Settings.TemplateOnly>Шаблон для новых игр. Каждая новая колония получает собственную копию.</HH.UI.Settings.TemplateOnly>
+  <HH.UI.Settings.EditingTemplate>Редактируется шаблон для новых игр. Текущая колония не меняется.</HH.UI.Settings.EditingTemplate>
+  <HH.UI.Settings.SaveAsTemplate>Сохранить колонию как шаблон</HH.UI.Settings.SaveAsTemplate>
+  <HH.UI.Settings.SaveAsTemplateTip>Копирует модули, сложность и все настройки этой колонии в шаблон для новых игр.</HH.UI.Settings.SaveAsTemplateTip>
+  <HH.UI.Settings.SaveAsTemplateConfirm>Заменить шаблон для новых игр настройками этой колонии?</HH.UI.Settings.SaveAsTemplateConfirm>
+  <HH.UI.Settings.ApplyTemplate>Применить шаблон к колонии</HH.UI.Settings.ApplyTemplate>
+  <HH.UI.Settings.ApplyTemplateTip>Заменяет настройки этой колонии шаблоном.</HH.UI.Settings.ApplyTemplateTip>
+  <HH.UI.Settings.ApplyTemplateConfirm>Заменить модули, сложность и все настройки этой колонии шаблоном? Это нельзя отменить.</HH.UI.Settings.ApplyTemplateConfirm>
+  <HH.UI.Settings.TemplateSaved>Шаблон для новых игр сохранён.</HH.UI.Settings.TemplateSaved>
+  <HH.UI.Settings.TemplateApplied>Шаблон применён к этой колонии.</HH.UI.Settings.TemplateApplied>
+  <HH.UI.Settings.Search>Поиск настроек...</HH.UI.Settings.Search>
+  <HH.UI.Settings.SearchResults>Результаты поиска</HH.UI.Settings.SearchResults>
+  <HH.UI.Settings.NoMatch>Ни одна настройка не подходит. Экспертные настройки скрыты, пока их не включить.</HH.UI.Settings.NoMatch>
+  <HH.UI.Settings.Nerd>Показать экспертные настройки</HH.UI.Settings.Nerd>
+  <HH.UI.Settings.NerdTip>Показывает настройки для любителей цифр. Всё остальное не меняется.</HH.UI.Settings.NerdTip>
+  <HH.UI.Settings.Off>выкл.</HH.UI.Settings.Off>
+  <HH.UI.Settings.Yes>да</HH.UI.Settings.Yes>
+  <HH.UI.Settings.No>нет</HH.UI.Settings.No>
+  <HH.UI.Settings.ResetModule>Сбросить модуль</HH.UI.Settings.ResetModule>
+  <HH.UI.Settings.ResetModuleConfirm>Сбросить все настройки модуля {0} до значений по умолчанию?</HH.UI.Settings.ResetModuleConfirm>
+  <HH.UI.Settings.ModuleIsOff>Этот модуль отключён для этой колонии. Его настройки не действуют.</HH.UI.Settings.ModuleIsOff>
+  <HH.UI.Settings.SwitchOn>Включить</HH.UI.Settings.SwitchOn>
+  <HH.UI.Row.On>вкл.</HH.UI.Row.On>
+  <HH.UI.Row.Off>выкл.</HH.UI.Row.Off>
+  <HH.UI.Row.Free>Свободно</HH.UI.Row.Free>
+  <HH.UI.Row.FreeTip>Свободный ввод: можно ввести любое число до технического предела игры.</HH.UI.Row.FreeTip>
+  <HH.UI.Row.Reset>сброс</HH.UI.Row.Reset>
+  <HH.UI.Row.Nerd>эксперт</HH.UI.Row.Nerd>
+  <HH.UI.Row.Beyond>Значение за пределами ползунка. Свободный ввод это позволяет.</HH.UI.Row.Beyond>
+  <HH.UI.Row.Limited>предел {0}</HH.UI.Row.Limited>
+  <HH.UI.Row.Limit>Технический предел</HH.UI.Row.Limit>
+  <HH.UI.Row.LimitGeneric>Игра не может использовать это значение, поэтому берётся ближайшее возможное.</HH.UI.Row.LimitGeneric>
+  <HH.UI.Row.FollowsTier>По умолчанию следует за сложностью хостинга.</HH.UI.Row.FollowsTier>
+  <HH.UI.General.Interface>Интерфейс</HH.UI.General.Interface>
+  <HH.UI.General.ShowCard>Показывать карточку первого запуска в каждой новой игре</HH.UI.General.ShowCard>
+  <HH.UI.General.ShowCardTip>Выкл.: новые игры тихо используют шаблон, и карточка не появляется.</HH.UI.General.ShowCardTip>
+  <HH.UI.General.Tutorial>Обучение</HH.UI.General.Tutorial>
+  <HH.UI.General.Verbose>Подробный журнал (HearthHarbor.log)</HH.UI.General.Verbose>
+  <HH.UI.Modules.IntroSave>Модули можно включать и выключать для каждой колонии отдельно. Выключенный модуль не имеет никакого видимого эффекта.</HH.UI.Modules.IntroSave>
+  <HH.UI.Modules.IntroTemplate>Модули для новых колоний. Каждая колония всё ещё может менять свои.</HH.UI.Modules.IntroTemplate>
+  <HH.UI.Modules.NotInstalled>не входит в эту установку</HH.UI.Modules.NotInstalled>
+  <HH.UI.Modules.BankHint>Банк: используйте банк внутри Hearth &amp; Harbor и выключите все гостевые модули. Отдельный пункт не нужен.</HH.UI.Modules.BankHint>
+  <HH.UI.Modules.Content>Интенсивность контента</HH.UI.Modules.Content>
+  <HH.UI.Modules.ContentDesc>Насколько мрачным может быть необязательный контент. Сексуального контента не будет, что бы вы ни выбрали.</HH.UI.Modules.ContentDesc>
+  <HH.UI.Content.Cozy>Уютный</HH.UI.Content.Cozy>
+  <HH.UI.Content.Cozy.Tip>Только мягкие истории и последствия.</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Standard>Стандартный</HH.UI.Content.Standard>
+  <HH.UI.Content.Standard.Tip>По умолчанию. Шероховатости есть, ничего неприятного.</HH.UI.Content.Standard.Tip>
+  <HH.UI.Content.Dark>Тёмный</HH.UI.Content.Dark>
+  <HH.UI.Content.Dark.Tip>Могут появляться преступления, долги и насилие.</HH.UI.Content.Dark.Tip>
+  <HH.UI.Content.Grim>Мрачный</HH.UI.Content.Grim>
+  <HH.UI.Content.Grim.Tip>Всё, что предлагает игра, в полном объёме.</HH.UI.Content.Grim.Tip>
+  <HH.UI.Underworld.Discover>Открывается в игре</HH.UI.Underworld.Discover>
+  <HH.UI.Underworld.On>Вкл.</HH.UI.Underworld.On>
+  <HH.UI.Underworld.Off>Выкл.</HH.UI.Underworld.Off>
+  <HH.UI.Underworld.Discover.Tip>Скрыто, пока в вашей игре не появится сомнительный незнакомец.</HH.UI.Underworld.Discover.Tip>
+  <HH.UI.Underworld.On.Tip>Доступно с самого начала.</HH.UI.Underworld.On.Tip>
+  <HH.UI.Underworld.Off.Tip>Никогда не доступно. Сомнительный незнакомец тоже не появится.</HH.UI.Underworld.Off.Tip>
+  <HH.UI.ModuleDesc.Inn>Гости, гостевые кровати, крылья, приёмная, путешественники и вербовка.</HH.UI.ModuleDesc.Inn>
+  <HH.UI.ModuleDesc.ShopsFood>Вывески заведений, магазины, торговые автоматы, рынки, рестораны и блюда.</HH.UI.ModuleDesc.ShopsFood>
+  <HH.UI.ModuleDesc.Casino>Столы, игровые автоматы, фишки и риски азартных игр для гостей и колонистов.</HH.UI.ModuleDesc.Casino>
+  <HH.UI.ModuleDesc.Wellness>Спа, сауна и курсы реабилитации.</HH.UI.ModuleDesc.Wellness>
+  <HH.UI.ModuleDesc.CityLife>Кинотеатр, торговый центр, салон, храмы, такси и охрана.</HH.UI.ModuleDesc.CityLife>
+  <HH.UI.ModuleDesc.Underworld>Закрытая комната, арена для боёв и скупщик краденого. Находится в игре, никогда не навязывается.</HH.UI.ModuleDesc.Underworld>
+  <HH.UI.ModuleDesc.Bank>Silverline: счета, платежи, банкоматы, инвестиции, кредиты, страхование и лотерея.</HH.UI.ModuleDesc.Bank>
+  <HH.UI.ModuleDesc.AiFlavour>Необязательные тексты-добавки, написанные ИИ через ретрансляцию. По умолчанию выключено.</HH.UI.ModuleDesc.AiFlavour>
+  <HH.UI.Diff.Title>Сложность хостинга</HH.UI.Diff.Title>
+  <HH.UI.Diff.Intensity>Интенсивность хостинга {0} %</HH.UI.Diff.Intensity>
+  <HH.UI.Diff.ChipTip>{0}: примерно {1} % интенсивности хостинга.</HH.UI.Diff.ChipTip>
+  <HH.UI.Diff.Calculator>Что означает эта ступень для вас</HH.UI.Diff.Calculator>
+  <HH.UI.Diff.Ladder>Что может пойти не так</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.Special>Особые переключатели</HH.UI.Diff.Special>
+  <HH.UI.Diff.ShowAll>Показать все {0} значений, которые зависят от сложности</HH.UI.Diff.ShowAll>
+  <HH.UI.Diff.WarnHard>Начиная с Overbooked, включаются настоящие последствия: штрафы, потеря лицензии и кое-что похуже.</HH.UI.Diff.WarnHard>
+  <HH.UI.Diff.WarnEasy>Эта ступень очень снисходительна. Деньги даются легко, и ничего не идёт не так.</HH.UI.Diff.WarnEasy>
+  <HH.UI.Diff.WarnBreaks>Это ломает баланс игры. Намеренно?</HH.UI.Diff.WarnBreaks>
+  <HH.UI.Calc.StandardIs>Стандартный номер: {0}</HH.UI.Calc.StandardIs>
+  <HH.UI.Calc.Reference>опорное значение</HH.UI.Calc.Reference>
+  <HH.UI.Calc.SetByYou>Вы сами изменили это значение, поэтому оно не следует за ползунком.</HH.UI.Calc.SetByYou>
+  <HH.UI.Calc.NoEffectInfinite>Не действует, пока включены бесконечные деньги гостей.</HH.UI.Calc.NoEffectInfinite>
+  <HH.UI.Feel.0>Всё за счёт заведения.</HH.UI.Feel.0>
+  <HH.UI.Feel.1>Деньги текут, и ничего не идёт не так.</HH.UI.Feel.1>
+  <HH.UI.Feel.2>Мягко и щедро.</HH.UI.Feel.2>
+  <HH.UI.Feel.3>Небольшие потери возможны. Прибыль требует труда.</HH.UI.Feel.3>
+  <HH.UI.Feel.4>Включаются последствия: ссоры, штрафы, потеря лицензии.</HH.UI.Feel.4>
+  <HH.UI.Feel.5>Вражды, контракты, строгие инспекторы, рейды в отместку.</HH.UI.Feel.5>
+  <HH.UI.Feel.6>Всё трудно, и ничем не ограничено.</HH.UI.Feel.6>
+  <HH.UI.Calc.guestMoney>Деньги гостей</HH.UI.Calc.guestMoney>
+  <HH.UI.Calc.guestMoney.Desc>Умножает сумму, которую гости носят с собой и готовы потратить.</HH.UI.Calc.guestMoney.Desc>
+  <HH.UI.Calc.priceTolerance>Терпимость к цене</HH.UI.Calc.priceTolerance>
+  <HH.UI.Calc.priceTolerance.Desc>На сколько выше справедливой цены гости ещё покупают.</HH.UI.Calc.priceTolerance.Desc>
+  <HH.UI.Calc.arrivalRate>Частота прибытия</HH.UI.Calc.arrivalRate>
+  <HH.UI.Calc.arrivalRate.Desc>Как часто приходят гости.</HH.UI.Calc.arrivalRate.Desc>
+  <HH.UI.Calc.expectation>Ожидания гостей</HH.UI.Calc.expectation>
+  <HH.UI.Calc.expectation.Desc>Добавляется к ожиданиям каждого гостя. Чем выше, тем труднее угодить.</HH.UI.Calc.expectation.Desc>
+  <HH.UI.Calc.trouble>Опасность неприятностей</HH.UI.Calc.trouble>
+  <HH.UI.Calc.trouble.Desc>Шанс и вес ссор, драк и краж между гостями.</HH.UI.Calc.trouble.Desc>
+  <HH.UI.Calc.stage>Высшая ступень последствий</HH.UI.Calc.stage>
+  <HH.UI.Calc.stage.Desc>Худшее, что плохое пребывание может сделать с вами на этой ступени.</HH.UI.Calc.stage.Desc>
+  <HH.UI.Calc.slotEdge>Преимущество дома в игровом автомате</HH.UI.Calc.slotEdge>
+  <HH.UI.Calc.slotEdge.Desc>Доля каждой ставки, которую автомат в среднем оставляет себе.</HH.UI.Calc.slotEdge.Desc>
+  <HH.UI.Calc.bankM>Доходность рынка банка (M в год)</HH.UI.Calc.bankM>
+  <HH.UI.Calc.bankM.Desc>Годовой множитель рынка Silverline. 1,2 означает плюс двадцать процентов.</HH.UI.Calc.bankM.Desc>
+  <HH.UI.Calc.defaultFactor>Неплатежи</HH.UI.Calc.defaultFactor>
+  <HH.UI.Calc.defaultFactor.Desc>Как часто клиенты не оплачивают свои долги.</HH.UI.Calc.defaultFactor.Desc>
+  <HH.UI.Calc.collectionStage>Высшая ступень взыскания</HH.UI.Calc.collectionStage>
+  <HH.UI.Calc.collectionStage.Desc>Насколько жёстким может быть взыскание долга, когда вы должны деньги.</HH.UI.Calc.collectionStage.Desc>
+  <HH.UI.Calc.researchCost>Стоимость исследований</HH.UI.Calc.researchCost>
+  <HH.UI.Calc.researchCost.Desc>Умножает стоимость исследований Hearth &amp; Harbor и Silverline.</HH.UI.Calc.researchCost.Desc>
+  <HH.UI.Calc.upkeep>Содержание</HH.UI.Calc.upkeep>
+  <HH.UI.Calc.upkeep.Desc>Умножает текущие расходы ваших заведений и комнат.</HH.UI.Calc.upkeep.Desc>
+  <HH.UI.Calc.insuranceLoading>Наценка страховщика</HH.UI.Calc.insuranceLoading>
+  <HH.UI.Calc.insuranceLoading.Desc>Наценка страховщика сверх справедливой премии.</HH.UI.Calc.insuranceLoading.Desc>
+  <HH.UI.Calc.salesPressure>Давление продаж страховки</HH.UI.Calc.salesPressure>
+  <HH.UI.Calc.salesPressure.Desc>Насколько навязчивыми становятся уловки страховщика.</HH.UI.Calc.salesPressure.Desc>
+  <HH.UI.Calc.addiction>Шанс игровой зависимости</HH.UI.Calc.addiction>
+  <HH.UI.Calc.addiction.Desc>Базовый шанс, что колонист, который много играет, станет зависимым.</HH.UI.Calc.addiction.Desc>
+  <HH.UI.Calc.detection>Скорость обнаружения читерства</HH.UI.Calc.detection>
+  <HH.UI.Calc.detection.Desc>Как быстро замечают жульничество за столом.</HH.UI.Calc.detection.Desc>
+  <HH.UI.Stage.0>Без вреда</HH.UI.Stage.0>
+  <HH.UI.Stage.1>Настроение</HH.UI.Stage.1>
+  <HH.UI.Stage.2>Известность</HH.UI.Stage.2>
+  <HH.UI.Stage.3>Расположение</HH.UI.Stage.3>
+  <HH.UI.Stage.4>Деньги</HH.UI.Stage.4>
+  <HH.UI.Stage.5>Лицензия</HH.UI.Stage.5>
+  <HH.UI.Stage.6>Рейды</HH.UI.Stage.6>
+  <HH.UI.Stage.7>Награда</HH.UI.Stage.7>
+  <HH.UI.Ladder.Goodwill>Потеря расположения за плохое пребывание (предел)</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>Наибольшее расположение, которое одна фракция может отнять у вас за один инцидент.</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Renown>Потеря известности за инцидент (предел)</HH.UI.Ladder.Renown>
+  <HH.UI.Ladder.Renown.Desc>Наибольшая потеря известности, которую может стоить один инцидент.</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Fine>Штрафы (предел, серебро)</HH.UI.Ladder.Fine>
+  <HH.UI.Ladder.Fine.Desc>Наибольший штраф, который может выписать одна проверка или инцидент.</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Raids>Ответные рейды</HH.UI.Ladder.Raids>
+  <HH.UI.Ladder.Raids.Desc>Могут ли разозлённые фракции или наёмники прийти за вами.</HH.UI.Ladder.Raids.Desc>
+  <HH.UI.Ladder.No>нет</HH.UI.Ladder.No>
+  <HH.UI.Ladder.Yes>да</HH.UI.Ladder.Yes>
+  <HH.UI.Ladder.Footer>Высшие ступени открывают новые последствия, а не просто повышают шансы.</HH.UI.Ladder.Footer>
+  <HH.UI.Diag.Copy>Скопировать диагностику в буфер обмена</HH.UI.Diag.Copy>
+  <HH.UI.Diag.Copied>Диагностика скопирована в буфер обмена.</HH.UI.Diag.Copied>
+  <HH.UI.Diag.PrepareRemoval>Подготовить удаление</HH.UI.Diag.PrepareRemoval>
+  <HH.UI.Diag.PrepareRemovalTip>Готовит колонию к удалению мода: гости уходят домой, открытые счета закрываются, особые предметы убираются.</HH.UI.Diag.PrepareRemovalTip>
+  <HH.UI.Diag.PrepareRemovalConfirm>Подготовить эту колонию к удалению Hearth &amp; Harbor? Гости уйдут домой, счета будут закрыты. Сначала сделайте резервную копию сохранения.</HH.UI.Diag.PrepareRemovalConfirm>
+  <HH.UI.Diag.RemovalTitle>Подготовка удаления</HH.UI.Diag.RemovalTitle>
+  <HH.UI.Diag.RemovalDone>Готово. Сохраните игру, затем удалите мод.</HH.UI.Diag.RemovalDone>
+  <HH.UI.Diag.NothingToDo>Ничего не нужно было убирать.</HH.UI.Diag.NothingToDo>
+  <HH.UI.Diag.NeedsSave>Сначала откройте колонию. Подготовка удаления работает в запущенной игре.</HH.UI.Diag.NeedsSave>
+  <HH.UI.Diag.Summary>Зарегистрировано настроек: {0} · предупреждений: {1} · ошибок в журнале: {2}</HH.UI.Diag.Summary>
+  <HH.UI.Diag.Modules>Модули</HH.UI.Diag.Modules>
+  <HH.UI.Diag.Paused>приостановлено после ошибок</HH.UI.Diag.Paused>
+  <HH.UI.Diag.Resume>Продолжить</HH.UI.Diag.Resume>
+  <HH.UI.Diag.Caretaker>Смотритель (исправлений до сих пор: {0})</HH.UI.Diag.Caretaker>
+  <HH.UI.Diag.NoChecks>Проверок не зарегистрировано.</HH.UI.Diag.NoChecks>
+  <HH.UI.Diag.Fixes>последний запуск {0} · всего {1}</HH.UI.Diag.Fixes>
+  <HH.UI.Diag.Patches>Патчи (пропущено: {0})</HH.UI.Diag.Patches>
+  <HH.UI.Diag.PatchesOk>Все классы патчей применены.</HH.UI.Diag.PatchesOk>
+  <HH.UI.Diag.Log>Последние строки журнала</HH.UI.Diag.Log>
+  <HH.UI.About.Body>Hearth &amp; Harbor превращает вашу колонию в хозяина заведения: гости, постоялые дворы и отели, магазины и рестораны, казино, спа, городская жизнь, закрытая комната и Silverline, полноценный банк. Ничего не навязывается. Пока вы не отметите гостевую кровать или не повесите вывеску, игра идёт как ванильная.</HH.UI.About.Body>
+  <HH.UI.About.Parts>Части</HH.UI.About.Parts>
+  <HH.UI.About.PartsBody>Банк Silverline включён: {0}. Гостевые модули включены: {1}.</HH.UI.About.PartsBody>
+  <HH.UI.About.Project>Открыть страницу проекта</HH.UI.About.Project>
+  <HH.UI.About.License>Лицензия MIT. Автор: juliusberger00.</HH.UI.About.License>
+  <HH.UI.Card.Title>Добро пожаловать в Hearth &amp; Harbor</HH.UI.Card.Title>
+  <HH.UI.Card.Sub>Выберите стиль хостинга. Всё можно изменить позже в настройках мода.</HH.UI.Card.Sub>
+  <HH.UI.Card.TitleJoined>Hearth &amp; Harbor вошёл в колонию</HH.UI.Card.TitleJoined>
+  <HH.UI.Card.SubJoined>Ничего не изменится, пока вы не построите что-нибудь для гостей. Выберите, как вы хотите принимать гостей.</HH.UI.Card.SubJoined>
+  <HH.UI.Card.Modules>Модули</HH.UI.Card.Modules>
+  <HH.UI.Card.Difficulty>Сложность и обучение</HH.UI.Card.Difficulty>
+  <HH.UI.Card.DifficultyLine>Сложность приёма гостей: {0} · {1} %</HH.UI.Card.DifficultyLine>
+  <HH.UI.Card.Change>Изменить...</HH.UI.Card.Change>
+  <HH.UI.Card.UseForAll>Использовать этот выбор для всех будущих игр</HH.UI.Card.UseForAll>
+  <HH.UI.Card.UseForAllTip>Копирует модули, сложность и уровень обучения в шаблон, с которого начинаются новые игры.</HH.UI.Card.UseForAllTip>
+  <HH.UI.Card.Start>Начать</HH.UI.Card.Start>
+  <HH.UI.Preset.JustWork>Просто работать</HH.UI.Preset.JustWork>
+  <HH.UI.Preset.JustWork.Desc>Стандартная сложность, всё включено. Начинайте строить, по ходу дела мы всё объясним.</HH.UI.Preset.JustWork.Desc>
+  <HH.UI.Preset.CozyInn>Уютный постоялый двор</HH.UI.Preset.CozyInn>
+  <HH.UI.Preset.CozyInn.Desc>Мягче, с меньшим количеством способов проиграть: без казино и без преступного мира.</HH.UI.Preset.CozyInn.Desc>
+  <HH.UI.Preset.Tycoon>Магнат</HH.UI.Preset.Tycoon>
+  <HH.UI.Preset.Tycoon.Desc>Всё включено, с коротким руководством. Персонал, бронирования и бухгалтерия в ваших руках.</HH.UI.Preset.Tycoon.Desc>
+  <HH.UI.Preset.Nerd>Ботаник</HH.UI.Preset.Nerd>
+  <HH.UI.Preset.Nerd.Desc>Все ползунки, формулы и технические настройки. Без руководства.</HH.UI.Preset.Nerd.Desc>
+  <HH.UI.Tutorial.Off>Выкл.</HH.UI.Tutorial.Off>
+  <HH.UI.Tutorial.Off.Tip>Ничего не открывается само по себе.</HH.UI.Tutorial.Off.Tip>
+  <HH.UI.Tutorial.Short>Коротко</HH.UI.Tutorial.Short>
+  <HH.UI.Tutorial.Short.Tip>Темы руководства открываются свёрнутыми.</HH.UI.Tutorial.Short.Tip>
+  <HH.UI.Tutorial.FullFirstTime>Полностью в первый раз, потом коротко</HH.UI.Tutorial.FullFirstTime>
+  <HH.UI.Tutorial.FullFirstTime.Tip>Полное руководство в первой колонии с этим модом, потом короткое.</HH.UI.Tutorial.FullFirstTime.Tip>
+  <HH.UI.Tutorial.AlwaysFull>Всегда полностью</HH.UI.Tutorial.AlwaysFull>
+  <HH.UI.Tutorial.AlwaysFull.Tip>Темы открываются при первом контакте, каждый раз.</HH.UI.Tutorial.AlwaysFull.Tip>
+  <HH.UI.Tutorial.Full>В этот раз полностью</HH.UI.Tutorial.Full>
+  <HH.UI.Storyteller.Head>СЛОЖНОСТЬ ПРИЁМА ГОСТЕЙ · {0} %</HH.UI.Storyteller.Head>
+  <HH.UI.Storyteller.Button>Сложность приёма гостей...</HH.UI.Storyteller.Button>
+  <HH.UI.Storyteller.Tip>Насколько трудно принимать гостей в этой колонии. Это отдельно от сложности рейдов выше.</HH.UI.Storyteller.Tip>
+  <HH.UI.Overview.Guests>Гости здесь</HH.UI.Overview.Guests>
+  <HH.UI.Overview.GuestsTip>Гости на текущей карте.</HH.UI.Overview.GuestsTip>
+  <HH.UI.Overview.Income>Доход сегодня</HH.UI.Overview.Income>
+  <HH.UI.Overview.IncomeTip>Серебро, поступившее в ваши кассы с рассвета.</HH.UI.Overview.IncomeTip>
+  <HH.UI.Overview.Venues>Заведения</HH.UI.Overview.Venues>
+  <HH.UI.Overview.VenuesTip>Комнаты с вывеской заведения на текущей карте.</HH.UI.Overview.VenuesTip>
+  <HH.UI.Overview.Bank>Баланс счёта</HH.UI.Overview.Bank>
+  <HH.UI.Overview.BankTip>Баланс счёта колонии в Silverline.</HH.UI.Overview.BankTip>
+  <HH.UI.Overview.IncomeHead>Деньги</HH.UI.Overview.IncomeHead>
+  <HH.UI.Overview.Today>Сегодня</HH.UI.Overview.Today>
+  <HH.UI.Overview.Yesterday>Вчера</HH.UI.Overview.Yesterday>
+  <HH.UI.Overview.Sources>Доход по источникам на данный момент</HH.UI.Overview.Sources>
+  <HH.UI.Overview.NoIncome>Дохода пока нет. Он появится здесь, как только гость заплатит.</HH.UI.Overview.NoIncome>
+  <HH.UI.Guests.Head>Гости · {0} здесь · {1} гостей на день</HH.UI.Guests.Head>
+  <HH.UI.Guests.None>Сейчас никто не проживает.</HH.UI.Guests.None>
+  <HH.UI.Guests.VanillaNote>Модуль «Гостиница» выключен, поэтому показаны обычные посетители.</HH.UI.Guests.VanillaNote>
+  <HH.UI.Guests.SatTip>Насколько доволен этот гость, от -1 до +1. Последние причины:</HH.UI.Guests.SatTip>
+  <HH.UI.Guests.Col.Name>Гость</HH.UI.Guests.Col.Name>
+  <HH.UI.Guests.Col.Faction>Фракция</HH.UI.Guests.Col.Faction>
+  <HH.UI.Guests.Col.Stay>Проживание</HH.UI.Guests.Col.Stay>
+  <HH.UI.Guests.Col.Mood>Настроение</HH.UI.Guests.Col.Mood>
+  <HH.UI.Guests.Col.Satisfaction>Удовлетворённость</HH.UI.Guests.Col.Satisfaction>
+  <HH.UI.Guests.Col.Budget>Осталось бюджета</HH.UI.Guests.Col.Budget>
+  <HH.UI.Guests.Col.Spent>Потрачено</HH.UI.Guests.Col.Spent>
+  <HH.UI.Guests.Col.Wing>Крыло</HH.UI.Guests.Col.Wing>
+  <HH.UI.Guests.Col.Handling>Обращение</HH.UI.Guests.Col.Handling>
+  <HH.UI.Guests.Col.Leaves>Уйдёт через</HH.UI.Guests.Col.Leaves>
+  <HH.UI.Guests.HandlingTip>Нажмите для переключения: Базовое → Сопровождение → Вербовка. Сопровождение и вербовка требуют колонистов с работой «Гостеприимство».</HH.UI.Guests.HandlingTip>
+  <HH.UI.Overview.CatToday>сегодня {0}</HH.UI.Overview.CatToday>
+  <HH.UI.Overview.CatWeek>7 дней {0}</HH.UI.Overview.CatWeek>
+  <HH.UI.Overview.Week>Доход за последние 7 дней</HH.UI.Overview.Week>
+  <HH.UI.Overview.DayTip>День {0}: {1} серебра</HH.UI.Overview.DayTip>
+  <HH.UI.Overview.VenuesHead>Заведения</HH.UI.Overview.VenuesHead>
+  <HH.UI.Overview.AllDay>круглосуточно</HH.UI.Overview.AllDay>
+  <HH.UI.Income.inn_room>Комнаты</HH.UI.Income.inn_room>
+  <HH.UI.Income.food>Еда</HH.UI.Income.food>
+  <HH.UI.Income.shop>Магазин</HH.UI.Income.shop>
+  <HH.UI.Income.vending>Автоматы</HH.UI.Income.vending>
+  <HH.UI.Income.drink>Напитки</HH.UI.Income.drink>
+  <HH.UI.Income.casino>Казино</HH.UI.Income.casino>
+  <HH.UI.Income.spa>Спа</HH.UI.Income.spa>
+  <HH.UI.Income.cinema>Кинотеатр</HH.UI.Income.cinema>
+  <HH.UI.Income.gallery>Галерея</HH.UI.Income.gallery>
+  <HH.UI.Income.salon>Салон</HH.UI.Income.salon>
+  <HH.UI.Income.security>Телохранители</HH.UI.Income.security>
+  <HH.UI.Income.taxi>Такси</HH.UI.Income.taxi>
+  <HH.UI.Income.Faith>Пожертвования</HH.UI.Income.Faith>
+  <HH.UI.Income.other>Прочее</HH.UI.Income.other>
+  <HH.UI.Venue.Closed>Закрыто</HH.UI.Venue.Closed>
+  <HH.UI.Venue.ClosedTip>Вне часов работы. Измените часы на вывеске заведения.</HH.UI.Venue.ClosedTip>
+  <HH.UI.Venue.NoStaff>Нет персонала</HH.UI.Venue.NoStaff>
+  <HH.UI.Venue.NoStaffTip>Открыто, но дежурных нет. Назначьте колониста на работу «Обслуживание» (или разрешите заведению работать без персонала на его вывеске).</HH.UI.Venue.NoStaffTip>
+  <HH.UI.Venue.NoStock>Нет товара</HH.UI.Venue.NoStock>
+  <HH.UI.Venue.NoStockTip>В комнате нечего продавать. Положите товары, напитки или блюда на полку или склад внутри неё.</HH.UI.Venue.NoStockTip>
+  <HH.UI.Venue.OpenStaffed>Открыто и укомплектовано</HH.UI.Venue.OpenStaffed>
+  <HH.UI.Venue.Open>Открыто</HH.UI.Venue.Open>
+  <HH.UI.Kind.DayVisitor>Гость на день</HH.UI.Kind.DayVisitor>
+  <HH.UI.Kind.Overnight>Ночёвка</HH.UI.Kind.Overnight>
+  <HH.UI.Kind.Traveler>Путешественник</HH.UI.Kind.Traveler>
+  <HH.UI.Kind.Caravan>Караван</HH.UI.Kind.Caravan>
+  <HH.UI.Kind.Lodger>Постоялец</HH.UI.Kind.Lodger>
+  <HH.UI.Kind.Patient>Пациент</HH.UI.Kind.Patient>
+  <HH.UI.GuestTab.Label>Гость</HH.UI.GuestTab.Label>
+  <HH.UI.GuestTab.NoInfo>Для этого персонажа нет записи о госте.</HH.UI.GuestTab.NoInfo>
+  <HH.UI.GuestTab.Stay>Проживание</HH.UI.GuestTab.Stay>
+  <HH.UI.GuestTab.Faction>Фракция</HH.UI.GuestTab.Faction>
+  <HH.UI.GuestTab.Kind>Тип проживания</HH.UI.GuestTab.Kind>
+  <HH.UI.GuestTab.Wing>Крыло</HH.UI.GuestTab.Wing>
+  <HH.UI.GuestTab.Arrived>Прибыл</HH.UI.GuestTab.Arrived>
+  <HH.UI.GuestTab.Ago>{0} назад</HH.UI.GuestTab.Ago>
+  <HH.UI.GuestTab.Leaves>Уходит</HH.UI.GuestTab.Leaves>
+  <HH.UI.GuestTab.In>через {0}</HH.UI.GuestTab.In>
+  <HH.UI.GuestTab.Payment>Платит</HH.UI.GuestTab.Payment>
+  <HH.UI.GuestTab.Card>картой</HH.UI.GuestTab.Card>
+  <HH.UI.GuestTab.Purse>наличными</HH.UI.GuestTab.Purse>
+  <HH.UI.GuestTab.Problems>Что поможет</HH.UI.GuestTab.Problems>
+  <HH.UI.GuestTab.Satisfaction>Удовлетворённость</HH.UI.GuestTab.Satisfaction>
+  <HH.UI.GuestTab.SatisfactionTip>От -1 (в ярости) до +1 (в восторге). От этого зависят известность, расположение и то, вернётся ли гость.</HH.UI.GuestTab.SatisfactionTip>
+  <HH.UI.GuestTab.Reasons>Что думает этот гость</HH.UI.GuestTab.Reasons>
+  <HH.UI.GuestTab.NoReasons>Пока ничего примечательного.</HH.UI.GuestTab.NoReasons>
+  <HH.UI.GuestTab.Money>Деньги</HH.UI.GuestTab.Money>
+  <HH.UI.GuestTab.Budget>Осталось бюджета</HH.UI.GuestTab.Budget>
+  <HH.UI.GuestTab.Spent>Потрачено к этому моменту</HH.UI.GuestTab.Spent>
+  <HH.UI.GuestTab.Handling>Обращение</HH.UI.GuestTab.Handling>
+  <HH.UI.Handling.Basics>Базовое</HH.UI.Handling.Basics>
+  <HH.UI.Handling.Basics.Tip>Только платные услуги, без развлечений. Не требует времени колонистов.</HH.UI.Handling.Basics.Tip>
+  <HH.UI.Handling.Accompany>Сопровождение</HH.UI.Handling.Accompany>
+  <HH.UI.Handling.Accompany.Tip>Колонисты с работой «Гостеприимство» развлекают гостя и показывают ему окрестности: настроение +1 до +4 в зависимости от социального навыка. Требует времени колонистов. Без колониста с «Гостеприимством» остаётся «Базовое».</HH.UI.Handling.Accompany.Tip>
+  <HH.UI.Handling.Recruit>Вербовка</HH.UI.Handling.Recruit>
+  <HH.UI.Handling.Recruit.Tip>Как сопровождение, плюс переговоры о вербовке. Неловкий разговор может обидеть: настроение -6, на 30 % меньше трат, уходит на полдня раньше.</HH.UI.Handling.Recruit.Tip>
+  <HH.UI.Guide.Title>Руководство Hearth &amp; Harbor</HH.UI.Guide.Title>
+  <HH.UI.Guide.TitleTip>Правый клик, чтобы скрыть. Вернуть можно на вкладке Hearth &amp; Harbor или в настройках.</HH.UI.Guide.TitleTip>
+  <HH.UI.Guide.Hidden>Руководство скрыто. Вернуть его можно кнопкой «Руководство» на вкладке Hearth &amp; Harbor или в настройках.</HH.UI.Guide.Hidden>
+  <HH.UI.Guide.More>Ещё тем: +{0}</HH.UI.Guide.More>
+  <HH.UI.Guide.Done>Готово ({0})</HH.UI.Guide.Done>
+  <HH.UI.Guide.ClickJump>Нажмите, чтобы перейти.</HH.UI.Guide.ClickJump>
+  <HH.Setting.core.consequenceStage>Максимальная ступень последствий</HH.Setting.core.consequenceStage>
+  <HH.Setting.core.consequenceStage.Desc>Насколько далеко могут зайти плохие последствия: 1 настроение, 2 известность, 3 расположение, 4 деньги, 5 лицензия, 6 рейды, 7 награда за голову. Следует за сложностью приёма гостей.</HH.Setting.core.consequenceStage.Desc>
+  <HH.Setting.core.researchCost>Коэффициент стоимости исследований</HH.Setting.core.researchCost>
+  <HH.Setting.core.researchCost.Desc>Умножает стоимость исследовательских проектов Hearth &amp; Harbor и Silverline. Следует за сложностью приёма гостей.</HH.Setting.core.researchCost.Desc>
+  <HH.Setting.core.upkeep>Коэффициент содержания</HH.Setting.core.upkeep>
+  <HH.Setting.core.upkeep.Desc>Умножает текущие расходы ваших заведений и комнат. Следует за сложностью приёма гостей.</HH.Setting.core.upkeep.Desc>
+  <HH.Setting.core.neverDie>Гости никогда не умирают</HH.Setting.core.neverDie>
+  <HH.Setting.core.neverDie.Desc>Гостей сбивают с ног вместо убийства, и их бесплатно спасают.</HH.Setting.core.neverDie.Desc>
+  <HH.Setting.core.noHostile>Враждебных гостей не бывает никогда</HH.Setting.core.noHostile>
+  <HH.Setting.core.noHostile.Desc>Гости никогда не становятся враждебными, что бы ни думала о вас их фракция.</HH.Setting.core.noHostile.Desc>
+  <HH.Setting.core.infiniteMoney>Бесконечные деньги гостей</HH.Setting.core.infiniteMoney>
+  <HH.Setting.core.infiniteMoney.Desc>У гостей всегда хватает на оплату. Коэффициент денег гостей не действует, пока это включено.</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.picky>Придирчивые гости</HH.Setting.core.picky>
+  <HH.Setting.core.picky.Desc>Гости ждут чуть большего от каждого проживания (ожидание +0,1).</HH.Setting.core.picky.Desc>
+  <HH.Setting.core.feuding>Враждующие фракции</HH.Setting.core.feuding>
+  <HH.Setting.core.feuding.Desc>Враждебные фракции не любят друг друга вдвое сильнее, когда оказываются под одной крышей.</HH.Setting.core.feuding.Desc>
+  <HH.Setting.core.mandatory>Обязательное гостеприимство</HH.Setting.core.mandatory>
+  <HH.Setting.core.mandatory.Desc>Контракты и размещение навязываются вам, даже ниже уровня «Переполнено».</HH.Setting.core.mandatory.Desc>
+  <HH.Setting.core.strictInspectors>Строгие инспекторы</HH.Setting.core.strictInspectors>
+  <HH.Setting.core.strictInspectors.Desc>Инспекторы проверяют втрое чаще.</HH.Setting.core.strictInspectors.Desc>
+  <HH.Setting.core.realConsequences>Настоящие последствия</HH.Setting.core.realConsequences>
+  <HH.Setting.core.realConsequences.Desc>Поднимает лестницу последствий на одну ступень.</HH.Setting.core.realConsequences.Desc>
+  <HH.Setting.core.ironBank>Железный кошелёк / Железный банк</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank.Desc>Никаких спасательных выплат, никакого овердрафта, сложные проценты без пощады.</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.noResearchGating>Без ограничений исследований</HH.Setting.core.noResearchGating>
+  <HH.Setting.core.noResearchGating.Desc>Всё из ветвей Hearth &amp; Harbor и Silverline доступно с самого начала.</HH.Setting.core.noResearchGating.Desc>
+  <HH.Setting.core.peacefulUnderworld>Мирный преступный мир</HH.Setting.core.peacefulUnderworld>
+  <HH.Setting.core.peacefulUnderworld.Desc>Тёмные заведения работают без насилия.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.showMath>Покажи мне математику</HH.Setting.core.showMath>
+  <HH.Setting.core.showMath.Desc>Показывает технические настройки и формулы везде.</HH.Setting.core.showMath.Desc>
+  <HH.Setting.core.perfMode>Режим производительности</HH.Setting.core.perfMode>
+  <HH.Setting.core.perfMode.Desc>Меньше гостей одновременно и более простое поведение гостей на слабых компьютерах.</HH.Setting.core.perfMode.Desc>
+  <HH.Setting.core.houseStyle>Стиль дома</HH.Setting.core.houseStyle>
+  <HH.Setting.core.houseStyle.Desc>Вид мебели и вывесок. «Автоматически» следует стилю вашей идеологии, иначе вашей самой изученной эпохе. Только внешний вид: гости и цены не меняются.</HH.Setting.core.houseStyle.Desc>
+  <HH.Setting.core.keepBuiltStyle>Построенная мебель сохраняет старый стиль</HH.Setting.core.keepBuiltStyle>
+  <HH.Setting.core.keepBuiltStyle.Desc>Когда стиль дома меняется с новой эпохой, уже построенная мебель сохраняет свой вид.</HH.Setting.core.keepBuiltStyle.Desc>
+  <HH.Enum.HouseStyle.Automatic>Автоматически</HH.Enum.HouseStyle.Automatic>
+  <HH.Enum.HouseStyle.StoneAge>Каменный век</HH.Enum.HouseStyle.StoneAge>
+  <HH.Enum.HouseStyle.Medieval>Средневековье</HH.Enum.HouseStyle.Medieval>
+  <HH.Enum.HouseStyle.Industrial>Индустриальный</HH.Enum.HouseStyle.Industrial>
+  <HH.Enum.HouseStyle.Spacer>Космический</HH.Enum.HouseStyle.Spacer>
+  <HH.Enum.HouseStyle.Ultra>Ультра</HH.Enum.HouseStyle.Ultra>
+</LanguageData>

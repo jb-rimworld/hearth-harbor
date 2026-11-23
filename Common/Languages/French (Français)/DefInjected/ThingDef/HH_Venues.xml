@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueSign.label>enseigne de commerce</HH_VenueSign.label>
+  <HH_VenueSign.description>Une enseigne qui transforme la pièce où elle se trouve en commerce : taverne, boutique, restaurant, casino, spa ou salon. Choisissez le type de commerce, les horaires d'ouverture et les prix dans les commandes de l'enseigne. Sans enseigne, une pièce n'est qu'une pièce.</HH_VenueSign.description>
+  <HH_VenueSignWall.label>enseigne de commerce (murale)</HH_VenueSignWall.label>
+  <HH_VenueSignWall.description>La même enseigne, accrochée à un mur. La pièce qui lui fait face devient le commerce. Choisissez le type de commerce, les horaires d'ouverture et les prix dans les commandes de l'enseigne.</HH_VenueSignWall.description>
+  <HH_ShopCounter.label>comptoir de boutique</HH_ShopCounter.label>
+  <HH_ShopCounter.description>Un comptoir pour un commerçant ou un barman. Celui qui tient le commerce se tient derrière, et la recette de la journée est déposée ici sous forme d'argent à minuit. Le comptoir est facultatif : sans lui, le tenancier se tient à côté de l'enseigne.</HH_ShopCounter.description>
+  <HH_MarketStall.label>étal de marché</HH_MarketStall.label>
+  <HH_MarketStall.description>Un étal indépendant à auvent rayé. Le grand marché n'a lieu qu'une fois que vous possédez assez d'étals (voir les réglages des Commerces) : chaque caravane de marchands s'installe à l'un d'eux et verse un droit d'étal dans votre caisse. Installé à l'extérieur, il fonctionne par tous les temps mais n'est pas un commerce à part entière.</HH_MarketStall.description>
+  <HH_VendingMachine.label>distributeur automatique</HH_VendingMachine.label>
+  <HH_VendingMachine.description>Une armoire alimentée en électricité qui contient de la nourriture, des boissons, des drogues et des médicaments. Les visiteurs achètent à tout moment, sans personnel, au prix du marché. Les transporteurs le remplissent comme une étagère. Les colons peuvent se servir gratuitement ; la machine ne fait payer que les visiteurs. Il faut de l'électricité pour vendre.</HH_VendingMachine.description>
+</LanguageData>

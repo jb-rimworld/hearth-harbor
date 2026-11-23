@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Finances.stages.0.label>topí se v dluzích</SL_Finances.stages.0.label>
+  <SL_Finances.stages.0.description>Dlužíme víc, než kolonie stojí. Pošta páchne upomínkami.</SL_Finances.stages.0.description>
+  <SL_Finances.stages.1.label>na mizině</SL_Finances.stages.1.label>
+  <SL_Finances.stages.1.description>Účet je prázdný. I bankomat se na nás dívá se soucitem.</SL_Finances.stages.1.description>
+  <SL_Finances.stages.2.label>živoří</SL_Finances.stages.2.label>
+  <SL_Finances.stages.2.description>Něco málo máme v bance. Opravdu málo. Nikdo to nahlas neříká.</SL_Finances.stages.2.description>
+  <SL_Finances.stages.3.label>vychází se</SL_Finances.stages.3.label>
+  <SL_Finances.stages.3.description>Ani bohatí, ani chudí.</SL_Finances.stages.3.description>
+  <SL_Finances.stages.4.label>v pohodě</SL_Finances.stages.4.label>
+  <SL_Finances.stages.4.description>V pohodě a nestaráme se o to.</SL_Finances.stages.4.description>
+  <SL_Finances.stages.5.label>úspory</SL_Finances.stages.5.label>
+  <SL_Finances.stages.5.description>Máme úspory. Je to zvláštní, teplý pocit.</SL_Finances.stages.5.description>
+  <SL_Finances.stages.6.label>bohatý</SL_Finances.stages.6.label>
+  <SL_Finances.stages.6.description>Jsme bohatí. Při večeři to ale nikdo nezmiňuje.</SL_Finances.stages.6.description>
+  <SL_Finances.stages.7.label>příšerně bohatý</SL_Finances.stages.7.label>
+  <SL_Finances.stages.7.description>Kolonie je příšerně bohatá. Začali jsme kupovat věci, které nepotřebujeme.</SL_Finances.stages.7.description>
+  <SL_Finances.stages.8.label>příliš velký na pád</SL_Finances.stages.8.label>
+  <SL_Finances.stages.8.description>Jsme příliš velcí na to, aby padli. Někdo to musí říct a klidně to můžeme být my.</SL_Finances.stages.8.description>
+  <SL_FinancesGreedy.stages.0.label>topí se v dluzích</SL_FinancesGreedy.stages.0.label>
+  <SL_FinancesGreedy.stages.0.description>Dluhy. Dluhy! Cítím každou stříbrnou minci, kterou nemáme.</SL_FinancesGreedy.stages.0.description>
+  <SL_FinancesGreedy.stages.1.label>na mizině</SL_FinancesGreedy.stages.1.label>
+  <SL_FinancesGreedy.stages.1.description>Na mizině. Nestal jsem se chamtivým proto, abych byl na mizině.</SL_FinancesGreedy.stages.1.description>
+  <SL_FinancesGreedy.stages.2.label>živoří</SL_FinancesGreedy.stages.2.label>
+  <SL_FinancesGreedy.stages.2.description>Na účtu skoro nic. Kontroluji ho každou hodinu.</SL_FinancesGreedy.stages.2.description>
+  <SL_FinancesGreedy.stages.3.label>vychází se</SL_FinancesGreedy.stages.3.label>
+  <SL_FinancesGreedy.stages.3.description>Dobré. Ale mohlo by to být víc.</SL_FinancesGreedy.stages.3.description>
+  <SL_FinancesGreedy.stages.4.label>v pohodě</SL_FinancesGreedy.stages.4.label>
+  <SL_FinancesGreedy.stages.4.description>V pohodě. Ale mohlo by to být víc.</SL_FinancesGreedy.stages.4.description>
+  <SL_FinancesGreedy.stages.5.label>úspory</SL_FinancesGreedy.stages.5.label>
+  <SL_FinancesGreedy.stages.5.description>Úspory v trezoru s mým jménem u nich. Nádhera.</SL_FinancesGreedy.stages.5.description>
+  <SL_FinancesGreedy.stages.6.label>bohatý</SL_FinancesGreedy.stages.6.label>
+  <SL_FinancesGreedy.stages.6.description>Bohatý! Nepřestanu počítat.</SL_FinancesGreedy.stages.6.description>
+  <SL_FinancesGreedy.stages.7.label>příšerně bohatý</SL_FinancesGreedy.stages.7.label>
+  <SL_FinancesGreedy.stages.7.description>Příšerně bohatý. Na tohle jsem se narodil.</SL_FinancesGreedy.stages.7.description>
+  <SL_FinancesGreedy.stages.8.label>příliš velký na pád</SL_FinancesGreedy.stages.8.label>
+  <SL_FinancesGreedy.stages.8.description>Příliš velký na pád. Rozvahu si dej do rámečku.</SL_FinancesGreedy.stages.8.description>
+  <SL_CollectorsNearby.stages.0.label>vymahači postávají poblíž</SL_CollectorsNearby.stages.0.label>
+  <SL_CollectorsNearby.stages.0.description>Dva muži v kloboucích stojí u dveří. Jsou u toho velmi zdvořilí.</SL_CollectorsNearby.stages.0.description>
+</LanguageData>

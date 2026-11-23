@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchBout.reportString>观看格斗坑。</HH_WatchBout.reportString>
+  <HH_BackRoomVisit.reportString>在后屋。</HH_BackRoomVisit.reportString>
+  <HH_FenceDeal.reportString>在销赃柜台做生意。</HH_FenceDeal.reportString>
+  <HH_UseLounge.reportString>在休息室放松。</HH_UseLounge.reportString>
+  <HH_Interrogate.reportString>审问TargetA。</HH_Interrogate.reportString>
+  <HH_HuntQuarry.reportString>猎杀TargetA。</HH_HuntQuarry.reportString>
+  <HH_QuarryFlee.reportString>逃命中。</HH_QuarryFlee.reportString>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ATM.label>bankomat</SL_ATM.label>
+  <SL_ATM.description>Ocelová skříňka s displejem, klávesnicí a štěrbinou, na které je ve čtyřech jazycích napsáno „stříbro“. Kolonisté se na ní dívají na svůj účet, vybírají stříbro (denní limit, malý poplatek) a vkládají, co mají. Potřebuje elektřinu.</SL_ATM.description>
+  <SL_BankCounter.label>bankovní přepážka</SL_BankCounter.label>
+  <SL_BankCounter.description>Dlouhý dřevěný pult s mosaznými kováními a malým zvonkem, který nesmí zazvonit nikdo. Pobočka tvé banky: vklady se zaúčtují okamžitě, hotovost jde přímo z trezoru a půjčky se podepisují osobně. Potřebuje elektřinu.</SL_BankCounter.description>
+  <SL_NightSafe.label>noční trezor</SL_NightSafe.label>
+  <SL_NightSafe.description>Otvor v ocelovém bloku. Vhodíš denní tržbu, slyšíš cvaknutí a jdeš domů. Každou půlnoc se sem vyprazdňují pokladny tvých podniků: na účet, máš-li ho, a jako stříbro na podlaze vedle, pokud ho nemáš.</SL_NightSafe.description>
+</LanguageData>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Insurance.label>保険</SL_Insurance.label>
+  <SL_Insurance.description>あらゆる不運に対する契約を、一度も議論で負けたことのない相互会社が売っています。保険事務所と、基本補償レベル「最低限」「まあまあ」の契約を解放します。</SL_Insurance.description>
+  <SL_Actuarial.label>保険数理学</SL_Actuarial.label>
+  <SL_Actuarial.description>あらゆることがどれほど起こりそうか、そしてそれがいくらの価値があるかを示す表です。最上位の補償レベル「プレミアムのプレミアム」、プレミアム契約、そして相互会社のサービスを解放します。</SL_Actuarial.description>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ATM.label>Geldautomat</SL_ATM.label>
+  <SL_ATM.description>Ein Stahlkasten mit Bildschirm, Tastenfeld und einem Schlitz, auf dem in vier Sprachen „Silber“ steht. Kolonisten sehen hier ihren Kontostand ein, heben Silber ab (Tageslimit, kleine Gebühr) und zahlen ein, was sie dabeihaben. Benötigt Strom.</SL_ATM.description>
+  <SL_BankCounter.label>Bankschalter</SL_BankCounter.label>
+  <SL_BankCounter.description>Ein langer Holztresen mit Messingbeschlägen und einer kleinen Glocke, die niemand läuten darf. Eine Filiale deiner Bank: Einzahlungen werden sofort gebucht, Bargeld kommt direkt aus dem Tresor, und Kredite werden persönlich unterschrieben. Benötigt Strom.</SL_BankCounter.description>
+  <SL_NightSafe.label>Nachttresor</SL_NightSafe.label>
+  <SL_NightSafe.description>Eine Klappe in einem Stahlblock. Tageseinnahmen hineinwerfen, es klonken hören, nach Hause gehen. Jede Mitternacht werden hier die Kassen deiner Geschäfte geleert: auf dein Bankkonto, falls du eines hast, als Silber auf den Boden daneben, falls nicht.</SL_NightSafe.description>
+</LanguageData>

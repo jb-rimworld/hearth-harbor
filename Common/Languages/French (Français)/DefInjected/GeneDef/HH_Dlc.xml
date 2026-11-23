@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Gene_Hospitable.label>accueillant</HH_Gene_Hospitable.label>
+  <HH_Gene_Hospitable.description>Les porteurs sont chaleureux sans effort. Les hôtes les trouvent faciles à fréquenter, et l'accueil leur vient plus vite.</HH_Gene_Hospitable.description>
+  <HH_Gene_AddictionProofReward.label>circuit de récompense résistant aux addictions</HH_Gene_AddictionProofReward.label>
+  <HH_Gene_AddictionProofReward.description>Le circuit de récompense du cerveau réagit à peine au risque et au hasard. Le jeu devient rarement une habitude.</HH_Gene_AddictionProofReward.description>
+  <HH_Gene_Compulsive.label>compulsif</HH_Gene_Compulsive.label>
+  <HH_Gene_Compulsive.description>Un circuit de récompense hyperactif. Le jeu est un peu plus amusant, et beaucoup plus difficile à quitter.</HH_Gene_Compulsive.description>
+  <HH_Gene_DexterousFingers.label>doigts habiles</HH_Gene_DexterousFingers.label>
+  <HH_Gene_DexterousFingers.description>Un contrôle des mains inhabituellement fin : mélanger, distribuer et faire disparaître des cartes viennent naturellement.</HH_Gene_DexterousFingers.description>
+  <HH_Gene_RefinedPalate.label>palais raffiné</HH_Gene_RefinedPalate.label>
+  <HH_Gene_RefinedPalate.description>Une langue qui distingue une bonne cuisine d'une simple comestibilité. Les cuisiniers relèvent plus souvent la qualité des plats ; en tant qu'hôte, le porteur attend davantage et laisse plus de pourboires.</HH_Gene_RefinedPalate.description>
+  <HH_Gene_NumberSense.label>sens des nombres</HH_Gene_NumberSense.label>
+  <HH_Gene_NumberSense.description>Les nombres s'arrangent d'eux-mêmes. Croupiers, caissiers et employés de banque porteurs de ce gène travaillent comme s'ils avaient trois niveaux de compétence de plus.</HH_Gene_NumberSense.description>
+  <HH_Gene_TirelessSmile.label>sourire infatigable</HH_Gene_TirelessSmile.label>
+  <HH_Gene_TirelessSmile.description>Les muscles du sourire ne se fatiguent pas. Le service aux tables et aux comptoirs use bien plus lentement le repos.</HH_Gene_TirelessSmile.description>
+  <HH_Gene_SilverTongue.label>langue de velours</HH_Gene_SilverTongue.label>
+  <HH_Gene_SilverTongue.description>Une voix qui fait paraître n'importe quel prix avantageux. Les hôtes attendent un peu moins et la fidélité coûte moins cher.</HH_Gene_SilverTongue.description>
+  <HH_Gene_HighRoller.label>grand joueur</HH_Gene_HighRoller.label>
+  <HH_Gene_HighRoller.description>Les porteurs se sentent le plus vivants quand l'enjeu est élevé. Ils misent plus gros, en profitent davantage et donnent généreusement, mais sont aussi plus difficiles à arracher à la table.</HH_Gene_HighRoller.description>
+</LanguageData>

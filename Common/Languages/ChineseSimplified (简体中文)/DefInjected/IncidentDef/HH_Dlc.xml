@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_NobleStay.label>贵族留宿</HH_NobleStay.label>
+  <HH_NobleStay.letterLabel>提出贵族留宿</HH_NobleStay.letterLabel>
+  <HH_NobleStay.letterText>一支贵族队伍请求提供住处。</HH_NobleStay.letterText>
+  <HH_ImperialBilleting.label>帝国征用住宿</HH_ImperialBilleting.label>
+  <HH_ImperialBilleting.letterLabel>帝国征用住宿</HH_ImperialBilleting.letterLabel>
+  <HH_ImperialBilleting.letterText>帝国要求提供住宿。</HH_ImperialBilleting.letterText>
+</LanguageData>

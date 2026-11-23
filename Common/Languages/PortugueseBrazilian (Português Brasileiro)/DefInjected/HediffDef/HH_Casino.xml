@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingAddiction.label>vício em jogo</HH_GamblingAddiction.label>
+  <HH_GamblingAddiction.description>As mesas tomaram conta. Sem jogar regularmente, instala-se a abstinência: mau humor, pavio curto e, nos estágios mais profundos, surtos de jogatina. Só o tempo sem uma única sessão cura, e uma recaída é fácil durante o período de desejo que vem depois.\n\nNão custa prata, apenas tempo, humor e nervos.</HH_GamblingAddiction.description>
+  <HH_GamblingAddiction.stages.1.label>abstinência (leve)</HH_GamblingAddiction.stages.1.label>
+  <HH_GamblingAddiction.stages.2.label>abstinência (moderada)</HH_GamblingAddiction.stages.2.label>
+  <HH_GamblingAddiction.stages.3.label>abstinência (forte)</HH_GamblingAddiction.stages.3.label>
+  <HH_GamblingAddiction.stages.4.label>abstinência (severa)</HH_GamblingAddiction.stages.4.label>
+  <HH_GamblingAddiction.stages.5.label>abstinência (extrema)</HH_GamblingAddiction.stages.5.label>
+</LanguageData>

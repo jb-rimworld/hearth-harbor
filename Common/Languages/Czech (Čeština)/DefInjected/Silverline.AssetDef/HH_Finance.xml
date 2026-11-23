@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_Mattress.label>Mattress Plus</SL_Asset_Mattress.label>
+  <SL_Asset_Mattress.description>Spořicí účet. Peníze leží v velmi bezpečné matraci a trochu rostou. Při run na banku jsou výběry na dva dny zamčené.</SL_Asset_Mattress.description>
+  <SL_Asset_OutlanderBond.label>Infrastrukturní dluhopis Outlander Union</SL_Asset_OutlanderBond.label>
+  <SL_Asset_OutlanderBond.description>Půjčky svazu outlanderských měst, který staví silnice, studny a jeden sporný most. Platí včas, dokud neplatí. Po selhání dostanete zhruba třetinu zpět.</SL_Asset_OutlanderBond.description>
+  <SL_Asset_EmpireWarBond.label>Válečné dluhopisy Impéria</SL_Asset_EmpireWarBond.label>
+  <SL_Asset_EmpireWarBond.description>Dluhopisy financující válku Impéria. Když válka skončí vítězstvím, vyskočí; při porážce mají hodnotu hezkého rámu. Válka trvá už velmi dlouho, hlavně v brožurách.</SL_Asset_EmpireWarBond.description>
+  <SL_Asset_Index.label>RimIndex 50</SL_Asset_Index.label>
+  <SL_Asset_Index.description>Padesát největších firem Okraje v jednom produktu. Vztažný bod pro všechno ostatní na této stránce: jezdec ziskovosti se definuje podle toho, kolik tenhle index vydělává v průměru.</SL_Asset_Index.description>
+  <SL_Asset_StockMicaton.label>MCTN, Liga Micatonu</SL_Asset_StockMicaton.label>
+  <SL_Asset_StockMicaton.description>Akcie ligy outlanderských měst. Čtvrtletní čísla hýbou cenou; trochu i vaše vztahy s ligou. Nevyplácí dividendu, ale posílá krásný kalendář.</SL_Asset_StockMicaton.description>
+  <SL_Asset_StockTribal.label>HIDE, družstvo Hide and Hearth</SL_Asset_StockTribal.label>
+  <SL_Asset_StockTribal.description>Akcie kmenového družstva, které prodává kožešiny, palivové dříví a neuvěřitelné množství pohostinnosti. Silně závislé na počasí a na náladě jednoho velmi velkého strýce.</SL_Asset_StockTribal.description>
+  <SL_Asset_StockEmpire.label>IMPR, Imperial Pageantry Ltd</SL_Asset_StockEmpire.label>
+  <SL_Asset_StockEmpire.description>Firma za císařskými obřady: prapory, trubky a drobné koruny. Zisky závisejí na tom, kolik šlechty se urazí tím, jak málo se jí dostane.</SL_Asset_StockEmpire.description>
+  <SL_Asset_StockColony.label>HHH, Hearth Harbor Holdings</SL_Asset_StockColony.label>
+  <SL_Asset_StockColony.description>Holding, který vlastní přesně jednu věc: představu, že vaše kolonie je cílem. Reaguje na vaše bohatství a na nájezdy, které přežijete. Na jejím úspěchu máte podíl, stejně jako každý, kdo tohle četl.</SL_Asset_StockColony.description>
+  <SL_Asset_GrowthFund.label>Glitterworld Growth Fund</SL_Asset_GrowthFund.label>
+  <SL_Asset_GrowthFund.description>Aktivně spravovaný fond. Správci mají velmi působivou brožuru a loď. Jejich schopnost je v průměru mírně záporná a byla určena už při založení fondu.</SL_Asset_GrowthFund.description>
+  <SL_Asset_PietyBonds.label>Dluhopisy zbožnosti</SL_Asset_PietyBonds.label>
+  <SL_Asset_PietyBonds.description>Dluhopisy kryté dary sedmnácti vír, z nichž každá je přesvědčena, že ostatních šestnáct to dělá špatně. Stálé, vážné a velmi mírně samolibé.</SL_Asset_PietyBonds.description>
+  <SL_Asset_RelicFutures.label>Termínované relikvie</SL_Asset_RelicFutures.label>
+  <SL_Asset_RelicFutures.description>Termínové kontrakty na relikvie, které možná existují, k dodání kurýrem, který možná je prorok. Smlouva byla požehnána.</SL_Asset_RelicFutures.description>
+  <SL_Asset_RimCoin.label>RimCoin</SL_Asset_RimCoin.label>
+  <SL_Asset_RimCoin.description>Digitální mince složená celá z elektřiny a přesvědčení. Kolísá o několik procent denně, dělá skoky, které nikdo nevysvětlí, a sedí na burze, která už byla dřív hacknutá. A bude zase.</SL_Asset_RimCoin.description>
+  <SL_Asset_MemeThrumbo.label>$THRUMBO</SL_Asset_MemeThrumbo.label>
+  <SL_Asset_MemeThrumbo.description>Mince pojmenovaná po vzácném zvířeti a krytá přesně tolika. Whitepaper je kresba thrumba. Zakladatel je podle kresby thrumbo.</SL_Asset_MemeThrumbo.description>
+  <SL_Asset_MemeBoomalope.label>Boomalope Coin</SL_Asset_MemeBoomalope.label>
+  <SL_Asset_MemeBoomalope.description>Mince, jejíž hodnota exploduje. A občas prostě exploduje. Oblíbená mezi lidmi, kteří mají rádi vůni hořících peněz.</SL_Asset_MemeBoomalope.description>
+  <SL_Asset_MemeMuffalo.label>MUFFALO MOON</SL_Asset_MemeMuffalo.label>
+  <SL_Asset_MemeMuffalo.description>Komunitní mince všech, kdo milují muffala a nic jiného. Jejich plán je obrázek muffala hledícího na Měsíc. Plán se od té doby nezměnil.</SL_Asset_MemeMuffalo.description>
+  <SL_Asset_NftThrumbos.label>Nezaměnitelní thrumbové</SL_Asset_NftThrumbos.label>
+  <SL_Asset_NftThrumbos.description>Kolekce obrázků thrumbů, každý jedinečný, každý trochu jako ostatní. Vlastníte doklad o obrázku obrázku. Kupci se objevují pomalu a chtějí slevu.</SL_Asset_NftThrumbos.description>
+  <SL_Asset_NftMuffalo.label>Vlastnický certifikát: obrázek muffala</SL_Asset_NftMuffalo.label>
+  <SL_Asset_NftMuffalo.description>Vlastnický certifikát k obrázku muffala. Obrázek je uložen někde jinde. Certifikát je uložen ve vašem účtu. Ani jedno nevoní po muffalovi.</SL_Asset_NftMuffalo.description>
+</LanguageData>

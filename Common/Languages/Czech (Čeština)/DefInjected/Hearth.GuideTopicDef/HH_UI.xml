@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Guide_OpeningDay.label>První den</HH_Guide_OpeningDay.label>
+  <HH_Guide_OpeningDay.description>Tři kroky od postele k prvnímu stříbru. Žádný výzkum, žádné zóny, žádná nastavení.</HH_Guide_OpeningDay.description>
+  <HH_Guide_YourGuests.label>Tvoji hosté na první pohled</HH_Guide_YourGuests.label>
+  <HH_Guide_YourGuests.description>Kde uvidíš, jak se tvoji hosté mají.</HH_Guide_YourGuests.description>
+  <HH_Guide_FirstVenue.label>Tvoje první provozovna</HH_Guide_FirstVenue.label>
+  <HH_Guide_FirstVenue.description>Cedule promění místnost v podnik.</HH_Guide_FirstVenue.description>
+  <HH_Guide_Bank.label>Peníze v bance</HH_Guide_Bank.label>
+  <HH_Guide_Bank.description>Silverline bezpečně uchovává tržby a umožňuje hostům platit kartou.</HH_Guide_Bank.description>
+</LanguageData>

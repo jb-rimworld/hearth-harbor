@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_SawFightPit_Kind.stages.0.label>смотрел бой в яме</HH_SawFightPit_Kind.stages.0.label>
+  <HH_SawFightPit_Kind.stages.0.description>Людей заставляли драться на ставки, и я стоял достаточно близко, чтобы это слышать.</HH_SawFightPit_Kind.stages.0.description>
+  <HH_SawFightPit_Bloodlust.stages.0.label>смотрел бой в яме</HH_SawFightPit_Bloodlust.stages.0.label>
+  <HH_SawFightPit_Bloodlust.stages.0.description>Вот это был настоящий бой.</HH_SawFightPit_Bloodlust.stages.0.description>
+  <HH_Interrogated.stages.0.label>допрашивали незнакомцы</HH_Interrogated.stages.0.label>
+  <HH_Interrogated.stages.0.description>Незнакомцы сидели напротив меня целый час и задавали одни и те же вопросы снова и снова.</HH_Interrogated.stages.0.description>
+  <HH_OrganTradeOutrage.stages.0.label>торговля органами в доме</HH_OrganTradeOutrage.stages.0.label>
+  <HH_OrganTradeOutrage.stages.0.description>Здесь продают органы. Под нашей крышей. И никто ничего не делает.</HH_OrganTradeOutrage.stages.0.description>
+  <HH_HuntOnPrisoners.stages.0.label>человек погиб на охоте</HH_HuntOnPrisoners.stages.0.label>
+  <HH_HuntOnPrisoners.stages.0.description>Здесь, на нашей земле, охотились на человека. Я не могу перестать об этом думать.</HH_HuntOnPrisoners.stages.0.description>
+</LanguageData>

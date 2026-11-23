@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueSign.label>营业招牌</HH_VenueSign.label>
+  <HH_VenueSign.description>一个能把所在房间变成营业场所的招牌：酒馆、商店、餐厅、赌场、水疗馆或休息室。在招牌的控制面板中选择经营类型、营业时间和价格。没有招牌的房间只是一个房间。</HH_VenueSign.description>
+  <HH_VenueSignWall.label>营业招牌（墙挂）</HH_VenueSignWall.label>
+  <HH_VenueSignWall.description>同样的招牌，挂在墙上。它面对的房间就会成为营业场所。在招牌的控制面板中选择经营类型、营业时间和价格。</HH_VenueSignWall.description>
+  <HH_ShopCounter.label>商店柜台</HH_ShopCounter.label>
+  <HH_ShopCounter.description>给店主或酒保用的柜台。照看营业场所的人站在柜台后面，当天的收入会在午夜时在这里以银币的形式放下。柜台是可选的：没有柜台时，照看者站在招牌旁边。</HH_ShopCounter.description>
+  <HH_MarketStall.label>集市摊位</HH_MarketStall.label>
+  <HH_MarketStall.description>一个带条纹遮阳篷的独立摊位。大集市只有在你拥有足够多的摊位后才会举办（参见「营业场所」设置）：每支商队都会在一个摊位上摆摊，并向你的钱箱支付摊位费。摊位摆在户外，任何天气都能用，但它本身不是一家营业场所。</HH_MarketStall.description>
+  <HH_VendingMachine.label>自动售货机</HH_VendingMachine.label>
+  <HH_VendingMachine.description>一个通电的柜子，装有食物、饮料、毒品和药品。客人可以在任何时候从中购买，无需任何员工，价格为市场价。搬运工会像给货架补货一样为它补货。殖民者可以免费自取；机器只向客人收费。需要电力才能售货。</HH_VendingMachine.description>
+</LanguageData>

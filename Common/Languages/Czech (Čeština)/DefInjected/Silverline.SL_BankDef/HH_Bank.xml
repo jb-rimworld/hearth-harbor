@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Mutual.label>Silverline Mutual</SL_Mutual.label>
+  <SL_Mutual.description>Klidná, neutrální výchozí volba. Tiše schovává tvé stříbro, účtuje férové poplatky a ještě nikdy se neobjevila v novinách. Úřednici jsou podezřele dobře vyspaní.</SL_Mutual.description>
+  <SL_Mutual.slogan>Tiše něco držíme od Třetího kolapsu.</SL_Mutual.slogan>
+  <SL_TooBigToFail.label>First Rim Bank of Too Big To Fail</SL_TooBigToFail.label>
+  <SL_TooBigToFail.description>Satira v mramorové hale. Vyšší výnosy, vyšší poplatky a jednou za herní rok zachrání zákazníka, který byl skutečně, pompézně bohatý a teď už není. Záchrana je půjčka, ne dar. Tuto část nikdo nečte.</SL_TooBigToFail.description>
+  <SL_TooBigToFail.slogan>Tak velká, že jsme ji museli pojmenovat dvakrát.</SL_TooBigToFail.slogan>
+  <SL_ImperialTreasury.label>Imperial Treasury</SL_ImperialTreasury.label>
+  <SL_ImperialTreasury.description>Vlastní účtárna Trůnu. Nízké poplatky, slabý pach leštidla na podlahy a úvěr jen pro ty, kdo nesou titul. Výběry se nazývají „výplaty“ a doprovází je lehká úklona.</SL_ImperialTreasury.description>
+  <SL_ImperialTreasury.slogan>Každá mince nese profil Trůnu. Prosíme, nekousejte ji.</SL_ImperialTreasury.slogan>
+  <SL_OrbitalExchange.label>Orbital Exchange</SL_OrbitalExchange.label>
+  <SL_OrbitalExchange.description>Bankovní dům obchodní gildy na velmi drahém rotujícím prstenci. Nejlepší přístup na trhy v Okraji, nejvyšší poplatky v Okraji a každý účtenka přijde s malým grafem, který jde nahoru a doprava.</SL_OrbitalExchange.description>
+  <SL_OrbitalExchange.slogan>Likvidita rychlostí světla. Poplatky také.</SL_OrbitalExchange.slogan>
+  <SL_BlackLedger.label>The Black Ledger</SL_BlackLedger.label>
+  <SL_BlackLedger.description>Žádné otázky, žádné formuláře, žádná jména. Půjčí komukoli bez ohledu na jeho skóre, za cenu. Občas některá kniha „zmizí“ i s částí vkladů.</SL_BlackLedger.description>
+  <SL_BlackLedger.slogan>Neptáme se. Ty neříkáš. Úroky se přesto skládají.</SL_BlackLedger.slogan>
+  <SL_CompoundInterest.label>First Church of Compound Interest</SL_CompoundInterest.label>
+  <SL_CompoundInterest.description>Sbor, který uctívá zázrak exponenciálního růstu. Mírné poplatky, hymnus pro každou rozvahu a pokladnička, která je, přísně vzato, dobrovolná.</SL_CompoundInterest.description>
+  <SL_CompoundInterest.slogan>Ve složené úroky věříme. Desátky platte brzy, platte často.</SL_CompoundInterest.slogan>
+</LanguageData>

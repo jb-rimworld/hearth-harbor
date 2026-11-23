@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServiceQuality.label>kvalita obsluhy</HH_ServiceQuality.label>
+  <HH_ServiceQuality.description>Jak příjemné je být touto osobou obsluhován. Přičítá se ke spokojenosti hostů, se kterými mluví, a čtou ji obchody, kuchyně a recepce.</HH_ServiceQuality.description>
+  <HH_HostingLearn.label>učení se hostitelství</HH_HostingLearn.label>
+  <HH_HostingLearn.description>Násobitel společenské zkušenosti získané při hostění.</HH_HostingLearn.description>
+  <HH_GuestExpectation.label>očekávání hostů</HH_GuestExpectation.label>
+  <HH_GuestExpectation.description>Přičítá se k tomu, co host od pobytu očekává. Kladná hodnota znamená těžší spokojenost. Šarm a dobré mravy ji snižují; vybraný jazyk ji zvyšuje.</HH_GuestExpectation.description>
+  <HH_GamblingJoy.label>radost z hazardu</HH_GamblingJoy.label>
+  <HH_GamblingJoy.description>Násobitel radosti, kterou tato osoba z hazardu čerpá.</HH_GamblingJoy.description>
+  <HH_GamblingAddiction.label>šance na závislost na hazardu</HH_GamblingAddiction.label>
+  <HH_GamblingAddiction.description>Násobitel šance, že se hazard změní v závislost. Nula znamená, že na to tato osoba nikdy nechytne.</HH_GamblingAddiction.description>
+  <HH_Dexterity.label>šikovnost rukou</HH_Dexterity.label>
+  <HH_Dexterity.description>Přidané úrovně dovednosti pro jemnou práci u stolů: rozdávání, míchání a domácí podvádění.</HH_Dexterity.description>
+  <HH_TableSkill.label>dovednost počítání</HH_TableSkill.label>
+  <HH_TableSkill.description>Přidané úrovně dovednosti při práci krupiéra, pokladníka nebo bankovního úředníka.</HH_TableSkill.description>
+  <HH_FraudDetection.label>odhalování podvodů</HH_FraudDetection.label>
+  <HH_FraudDetection.description>Násobitel pro odhalování padělaných žetonů, podvádějících hostů a krácení při výdeji.</HH_FraudDetection.description>
+  <HH_TheftChance.label>krádeže v jejich pokoji</HH_TheftChance.label>
+  <HH_TheftChance.description>Násobitel šance, že se v pokoji, o který tato osoba pečuje, něco ukradne.</HH_TheftChance.description>
+  <HH_BrawlRisk.label>riziko rvaček v jejich okolí</HH_BrawlRisk.label>
+  <HH_BrawlRisk.description>Násobitel šance, že se hádka v pokoji této osoby změní v rvačku.</HH_BrawlRisk.description>
+  <HH_RumorSpread.label>šíření pověstí</HH_RumorSpread.label>
+  <HH_RumorSpread.description>Násobitel toho, jak daleko se šíří příběhy o domě, dobré i špatné.</HH_RumorSpread.description>
+  <HH_CareProgress.label>pokrok v péči</HH_CareProgress.label>
+  <HH_CareProgress.description>Násobitel pokroku pacientů a rehabilitace, když se o ně tato osoba stará.</HH_CareProgress.description>
+  <HH_BankFeeFactor.label>bankovní poplatky</HH_BankFeeFactor.label>
+  <HH_BankFeeFactor.description>Násobitel poplatků, které banka této osobě účtuje.</HH_BankFeeFactor.description>
+  <HH_Negotiation.label>bonus na vyjednávání</HH_Negotiation.label>
+  <HH_Negotiation.description>Přidává se k vyjednávání pojistek a smluv.</HH_Negotiation.description>
+  <HH_RecruitPrice.label>přirážka za získání</HH_RecruitPrice.label>
+  <HH_RecruitPrice.description>Násobitel přirážky nad cenovou podlahou při koupi loajality hosta.</HH_RecruitPrice.description>
+  <HH_ServeRestFactor.label>únava při obsluze</HH_ServeRestFactor.label>
+  <HH_ServeRestFactor.description>Násobitel toho, jak rychle ubývá odpočinek při obsluhování u stolů nebo za pultem.</HH_ServeRestFactor.description>
+  <HH_TipFactor.label>spropitné</HH_TipFactor.label>
+  <HH_TipFactor.description>Násobitel spropitného, které tato osoba jako host nechává.</HH_TipFactor.description>
+  <HH_DishQuality.label>šance na kvalitu pokrmu</HH_DishQuality.label>
+  <HH_DishQuality.description>Šance zvednout kvalitu uvařeného pokrmu o jeden stupeň.</HH_DishQuality.description>
+  <HH_FamilyCheer.label>rodinná pohoda</HH_FamilyCheer.label>
+  <HH_FamilyCheer.description>Přidává se ke spokojenosti rodin a dětí v péči této osoby.</HH_FamilyCheer.description>
+  <HH_PriceFeel.label>vnímání cen</HH_PriceFeel.label>
+  <HH_PriceFeel.description>Přidává se k tomu, jak drahé hosté považují ceny této osoby.</HH_PriceFeel.description>
+</LanguageData>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Finances.stages.0.label>noyé dans les dettes</SL_Finances.stages.0.label>
+  <SL_Finances.stages.0.description>Nous devons plus que ce que vaut la colonie. Le courrier sent les lettres de relance.</SL_Finances.stages.0.description>
+  <SL_Finances.stages.1.label>fauché</SL_Finances.stages.1.label>
+  <SL_Finances.stages.1.description>Le compte est vide. Même le DAB nous regarde avec pitié.</SL_Finances.stages.1.description>
+  <SL_Finances.stages.2.label>tire le diable par la queue</SL_Finances.stages.2.label>
+  <SL_Finances.stages.2.description>Nous avons un peu d'argent à la banque. Très peu. Personne ne le dit à voix haute.</SL_Finances.stages.2.description>
+  <SL_Finances.stages.3.label>s'en sort</SL_Finances.stages.3.label>
+  <SL_Finances.stages.3.description>Ni riches ni pauvres.</SL_Finances.stages.3.description>
+  <SL_Finances.stages.4.label>à l'aise</SL_Finances.stages.4.label>
+  <SL_Finances.stages.4.description>À l'aise, et sans s'en inquiéter.</SL_Finances.stages.4.description>
+  <SL_Finances.stages.5.label>épargne</SL_Finances.stages.5.label>
+  <SL_Finances.stages.5.description>Nous avons de l'épargne. C'est une sensation étrange et chaleureuse.</SL_Finances.stages.5.description>
+  <SL_Finances.stages.6.label>riche</SL_Finances.stages.6.label>
+  <SL_Finances.stages.6.description>Nous sommes riches. Personne n'en parle au dîner.</SL_Finances.stages.6.description>
+  <SL_Finances.stages.7.label>immensément riche</SL_Finances.stages.7.label>
+  <SL_Finances.stages.7.description>La colonie est immensément riche. Nous avons commencé à acheter des choses dont nous n'avons pas besoin.</SL_Finances.stages.7.description>
+  <SL_Finances.stages.8.label>trop gros pour faire faillite</SL_Finances.stages.8.label>
+  <SL_Finances.stages.8.description>Nous sommes trop gros pour faire faillite. Quelqu'un doit le dire, autant que ce soit nous.</SL_Finances.stages.8.description>
+  <SL_FinancesGreedy.stages.0.label>noyé dans les dettes</SL_FinancesGreedy.stages.0.label>
+  <SL_FinancesGreedy.stages.0.description>Des dettes. Des dettes ! Je sens chaque pièce qui nous manque.</SL_FinancesGreedy.stages.0.description>
+  <SL_FinancesGreedy.stages.1.label>fauché</SL_FinancesGreedy.stages.1.label>
+  <SL_FinancesGreedy.stages.1.description>Fauché. Je ne suis pas devenu avide pour finir fauché.</SL_FinancesGreedy.stages.1.description>
+  <SL_FinancesGreedy.stages.2.label>tire le diable par la queue</SL_FinancesGreedy.stages.2.label>
+  <SL_FinancesGreedy.stages.2.description>Presque rien sur le compte. Je le vérifie toutes les heures.</SL_FinancesGreedy.stages.2.description>
+  <SL_FinancesGreedy.stages.3.label>s'en sort</SL_FinancesGreedy.stages.3.label>
+  <SL_FinancesGreedy.stages.3.description>Ça va. Mais ça pourrait être plus.</SL_FinancesGreedy.stages.3.description>
+  <SL_FinancesGreedy.stages.4.label>à l'aise</SL_FinancesGreedy.stages.4.label>
+  <SL_FinancesGreedy.stages.4.description>À l'aise. Mais ça pourrait être plus.</SL_FinancesGreedy.stages.4.description>
+  <SL_FinancesGreedy.stages.5.label>épargne</SL_FinancesGreedy.stages.5.label>
+  <SL_FinancesGreedy.stages.5.description>De l'épargne, dans un coffre, avec mon nom tout près. Délicieux.</SL_FinancesGreedy.stages.5.description>
+  <SL_FinancesGreedy.stages.6.label>riche</SL_FinancesGreedy.stages.6.label>
+  <SL_FinancesGreedy.stages.6.description>Riche ! Je ne cesserai pas de compter.</SL_FinancesGreedy.stages.6.description>
+  <SL_FinancesGreedy.stages.7.label>immensément riche</SL_FinancesGreedy.stages.7.label>
+  <SL_FinancesGreedy.stages.7.description>Immensément riche. C'est pour ça que je suis né.</SL_FinancesGreedy.stages.7.description>
+  <SL_FinancesGreedy.stages.8.label>trop gros pour faire faillite</SL_FinancesGreedy.stages.8.label>
+  <SL_FinancesGreedy.stages.8.description>Trop gros pour faire faillite. Encadrez le bilan.</SL_FinancesGreedy.stages.8.description>
+  <SL_CollectorsNearby.stages.0.label>créanciers qui rôdent</SL_CollectorsNearby.stages.0.label>
+  <SL_CollectorsNearby.stages.0.description>Deux hommes en chapeau melon se tiennent près de la porte. Ils sont très polis à ce sujet.</SL_CollectorsNearby.stages.0.description>
+</LanguageData>

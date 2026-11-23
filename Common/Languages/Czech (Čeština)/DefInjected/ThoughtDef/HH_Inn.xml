@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GuestRoomVerdict.stages.0.label>příšerný hostovský pokoj</HH_GuestRoomVerdict.stages.0.label>
+  <HH_GuestRoomVerdict.stages.0.description>Tohle jsem platil? Spal jsem už lépe v příkopu, a ten aspoň nic nebral.</HH_GuestRoomVerdict.stages.0.description>
+  <HH_GuestRoomVerdict.stages.1.label>zklamavý hostovský pokoj</HH_GuestRoomVerdict.stages.1.label>
+  <HH_GuestRoomVerdict.stages.1.description>Pokoj byl pod tím, co jsem čekal. Hodně pod.</HH_GuestRoomVerdict.stages.1.description>
+  <HH_GuestRoomVerdict.stages.2.label>vlažný hostovský pokoj</HH_GuestRoomVerdict.stages.2.label>
+  <HH_GuestRoomVerdict.stages.2.description>Pokoj byl v pořádku, když se člověk pořádně zadívá.</HH_GuestRoomVerdict.stages.2.description>
+  <HH_GuestRoomVerdict.stages.3.label>slušný hostovský pokoj</HH_GuestRoomVerdict.stages.3.label>
+  <HH_GuestRoomVerdict.stages.3.description>Pořádná postel a dveře, které se zavírají. To je vše, co chci.</HH_GuestRoomVerdict.stages.3.description>
+  <HH_GuestRoomVerdict.stages.4.label>dobrý hostovský pokoj</HH_GuestRoomVerdict.stages.4.label>
+  <HH_GuestRoomVerdict.stages.4.description>Krásný pokoj. Spal jsem dobře.</HH_GuestRoomVerdict.stages.4.description>
+  <HH_GuestRoomVerdict.stages.5.label>skvělý hostovský pokoj</HH_GuestRoomVerdict.stages.5.label>
+  <HH_GuestRoomVerdict.stages.5.description>Pokoj takového rázu vyváží celou cestu.</HH_GuestRoomVerdict.stages.5.description>
+  <HH_GuestAccompanied.stages.0.label>trapná společnost</HH_GuestAccompanied.stages.0.label>
+  <HH_GuestAccompanied.stages.0.description>Jeden z hostitelů mi dělal společnost. Mluvili jsme o počasí. Dlouho.</HH_GuestAccompanied.stages.0.description>
+  <HH_GuestAccompanied.stages.1.label>dobrá společnost</HH_GuestAccompanied.stages.1.label>
+  <HH_GuestAccompanied.stages.1.description>Jeden z hostitelů mě provedl a dělal mi společnost.</HH_GuestAccompanied.stages.1.description>
+  <HH_GuestAccompanied.stages.2.label>okouzlující společnost</HH_GuestAccompanied.stages.2.label>
+  <HH_GuestAccompanied.stages.2.description>Hostitel byl rozkoš. Možná jsem se nahlas zasmál.</HH_GuestAccompanied.stages.2.description>
+  <HH_GuestAccompanied.stages.3.label>úžasná společnost</HH_GuestAccompanied.stages.3.label>
+  <HH_GuestAccompanied.stages.3.description>Už léta o mě nikdo nepečoval tak dobře.</HH_GuestAccompanied.stages.3.description>
+  <HH_GuestPestered.stages.0.label>přemlouván k připojení</HH_GuestPestered.stages.0.label>
+  <HH_GuestPestered.stages.0.description>Přišel jsem spát, ne se nechat naverbovat.</HH_GuestPestered.stages.0.description>
+  <HH_HostedWell.stages.0.label>dobré rozhovory</HH_HostedWell.stages.0.label>
+  <HH_HostedWell.stages.0.description>Měli jsme pár dobrých rozhovorů.</HH_HostedWell.stages.0.description>
+  <HH_GuestWaited.stages.0.label>chvíli čekal</HH_GuestWaited.stages.0.label>
+  <HH_GuestWaited.stages.0.description>Musel jsem čekat, než mě obslouží. Nebylo to dlouho, ale všiml jsem si toho.</HH_GuestWaited.stages.0.description>
+  <HH_GuestWaited.stages.1.label>čekal nadarmo</HH_GuestWaited.stages.1.label>
+  <HH_GuestWaited.stages.1.description>Čekal jsem a čekal, a nikdo nepřišel, aby mě obsloužil.</HH_GuestWaited.stages.1.description>
+  <HH_GuestBellNobody.stages.0.label>zazvonil, nikdo nepřišel</HH_GuestBellNobody.stages.0.label>
+  <HH_GuestBellNobody.stages.0.description>Zazvonil jsem. Nikdo nepřišel.</HH_GuestBellNobody.stages.0.description>
+  <HH_GuestWaitingRoom.stages.0.label>prostá čekárna</HH_GuestWaitingRoom.stages.0.label>
+  <HH_GuestWaitingRoom.stages.0.description>Aspoň bylo kde sedět, zatímco jsem čekal.</HH_GuestWaitingRoom.stages.0.description>
+  <HH_GuestWaitingRoom.stages.1.label>slušná čekárna</HH_GuestWaitingRoom.stages.1.label>
+  <HH_GuestWaitingRoom.stages.1.description>Čekárna byla dost pohodlná.</HH_GuestWaitingRoom.stages.1.description>
+  <HH_GuestWaitingRoom.stages.2.label>pěkná čekárna</HH_GuestWaitingRoom.stages.2.label>
+  <HH_GuestWaitingRoom.stages.2.description>Čekat tam bylo skoro potěšením.</HH_GuestWaitingRoom.stages.2.description>
+  <HH_GuestWaitingRoom.stages.3.label>skvělá čekárna</HH_GuestWaitingRoom.stages.3.label>
+  <HH_GuestWaitingRoom.stages.3.description>V takovém pokoji bych nevadil čekat i déle.</HH_GuestWaitingRoom.stages.3.description>
+</LanguageData>

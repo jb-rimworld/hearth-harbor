@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Ind_ExpressAbsolution.label>即時の赦免</HH_Ind_ExpressAbsolution.label>
+  <HH_Ind_ExpressAbsolution.description>スタンプの押された札で、戒律を破った記憶を一つ消し去ります。神父はあなたが何をしたかを尋ねません。</HH_Ind_ExpressAbsolution.description>
+  <HH_Ind_MinorMercy.label>小さな慈悲</HH_Ind_MinorMercy.label>
+  <HH_Ind_MinorMercy.description>祝福された包帯で、医薬品二服分の値段で売られます。耐久値10以下の新しい傷を一つ癒やします。</HH_Ind_MinorMercy.description>
+  <HH_Ind_UnshakenFaith.label>揺るぎなき信仰の証書</HH_Ind_UnshakenFaith.label>
+  <HH_Ind_UnshakenFaith.description>一度も疑わなかったことを示す額入りの証書です。確信を10ポイント引き上げます。</HH_Ind_UnshakenFaith.description>
+  <HH_Ind_GreaterMercy.label>大いなる慈悲</HH_Ind_GreaterMercy.label>
+  <HH_Ind_GreaterMercy.description>値段のついた奇跡です。消えない傷跡や古い傷を一つ、永久に癒やします。</HH_Ind_GreaterMercy.description>
+  <HH_Asc_Rank1.label>昇格：求道者</HH_Asc_Rank1.label>
+  <HH_Asc_Rank1.description>参加料を支払い、求道者となります。始まりにすぎません。</HH_Asc_Rank1.description>
+  <HH_Asc_Rank2.label>昇格：修行者</HH_Asc_Rank2.label>
+  <HH_Asc_Rank2.description>階級II、修行者です。ここからは、保持者は他家の客や訪問者に祭壇で免罪符を売ることができます。</HH_Asc_Rank2.description>
+  <HH_Asc_Rank3.label>昇格：導き手</HH_Asc_Rank3.label>
+  <HH_Asc_Rank3.description>階級III、導き手です。遠くからでも気づかれるほどの光を放ちます。</HH_Asc_Rank3.description>
+  <HH_Asc_Rank4.label>昇格：昇華者</HH_Asc_Rank4.label>
+  <HH_Asc_Rank4.description>階級IV、昇華者です。階段の頂点であり、眺めに金を払える者のための場所です。</HH_Asc_Rank4.description>
+  <HH_Ind_ReformTithe.label>改革のお布施</HH_Ind_ReformTithe.label>
+  <HH_Ind_ReformTithe.description>流動的なイデオロギーの次の改革に向けた任意のお布施です。改革ポイント1点分です。</HH_Ind_ReformTithe.description>
+</LanguageData>

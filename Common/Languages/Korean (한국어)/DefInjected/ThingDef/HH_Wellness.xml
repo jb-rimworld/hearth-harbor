@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_HotTub.label>온탕</HH_HotTub.label>
+  <HH_HotTub.description>가열 코일과 펌프가 있는 나무 욕조. 대체로 제대로 작동한다. 두 명이 동시에 몸을 담글 수 있다. 개척민은 여가와 차분한 기분을 얻고, 스파 시설의 손님은 그 호사에 돈을 낸다.</HH_HotTub.description>
+  <HH_Sauna.label>사우나 난로</HH_Sauna.label>
+  <HH_Sauna.description>돌로 둘러싼 장작 난로로, 작고 밀폐된 방을 사우나로 바꾼다. 방 온도가 모드 설정의 최저 온도(기본 45 °C) 이상으로 유지되면 사우나로 인정된다. 장작을 계속 채우고, 방은 작고 벽으로 둘러싸인 상태로 유지한다.</HH_Sauna.description>
+  <HH_MassageTable.label>마사지 테이블</HH_MassageTable.label>
+  <HH_MassageTable.description>얼굴 구멍과 기름 선반이 달린 패드 테이블. 주무르는 일은 서비스(Serving) 작업 유형의 개척민이 해야 한다. 마사지사는 사회 및 의학 경험치를 얻고, 손님은 돈을 내고, 개척민은 긴장을 푼다.</HH_MassageTable.description>
+  <HH_TestOnly_VenueSign.label>테스트 시설 표지판(테스트 전용)</HH_TestOnly_VenueSign.label>
+  <HH_TestOnly_VenueSign.description>자동 테스트 전용. 건설할 수 없다.</HH_TestOnly_VenueSign.description>
+</LanguageData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Hosting.labelShort>accueil</HH_Hosting.labelShort>
+  <HH_Hosting.pawnLabel>Hôte</HH_Hosting.pawnLabel>
+  <HH_Hosting.gerundLabel>accueil</HH_Hosting.gerundLabel>
+  <HH_Hosting.description>Enregistrer les clients à l'arrivée et au départ, leur faire visiter les lieux, les divertir et les convaincre de rester (ou de se joindre à la maison).</HH_Hosting.description>
+  <HH_Hosting.verb>Accueillir</HH_Hosting.verb>
+  <HH_Serving.labelShort>servir</HH_Serving.labelShort>
+  <HH_Serving.pawnLabel>Serveur</HH_Serving.pawnLabel>
+  <HH_Serving.gerundLabel>service</HH_Serving.gerundLabel>
+  <HH_Serving.description>Tenir les comptoirs, les tables et les caisses : prendre les commandes, servir plats et boissons, animer la salle de jeux, réapprovisionner les rayons.</HH_Serving.description>
+  <HH_Serving.verb>Servir</HH_Serving.verb>
+</LanguageData>

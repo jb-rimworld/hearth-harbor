@@ -1,0 +1,8 @@
+{
+ "keyed": {},
+ "defs": {
+  "DesignationCategoryDef/HH_Bank.label": "銀行",
+  "DesignationCategoryDef/HH_Bank.description": "銀行のATM、窓口カウンター、夜間金庫、そして保険事務所の机を指定します。",
+  "ResearchTabDef/HH_Banking.label": "銀行業務"
+ }
+}

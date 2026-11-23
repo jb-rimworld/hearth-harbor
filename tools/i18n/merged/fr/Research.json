@@ -1,0 +1,9 @@
+{
+ "keyed": {
+  "HH.Setting.core.researchMode": "Mode de recherche",
+  "HH.Setting.core.researchMode.Desc": "Complet : les arbres de recherche de Hearth & Harbor et de Silverline conditionnent leurs bâtiments et fonctions. Désactivé : tout est disponible dès le départ (les projets obscurs du monde souterrain exigent tout de même leur découverte).",
+  "HH.Enum.CoreResearchMode.Full": "Complet",
+  "HH.Enum.CoreResearchMode.Off": "Désactivé"
+ },
+ "defs": {}
+}

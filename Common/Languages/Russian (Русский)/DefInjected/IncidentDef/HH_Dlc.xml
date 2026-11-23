@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_NobleStay.label>пребывание знати</HH_NobleStay.label>
+  <HH_NobleStay.letterLabel>Предложено пребывание знати</HH_NobleStay.letterLabel>
+  <HH_NobleStay.letterText>Знатная делегация просит крова.</HH_NobleStay.letterText>
+  <HH_ImperialBilleting.label>имперский постой</HH_ImperialBilleting.label>
+  <HH_ImperialBilleting.letterLabel>Имперский постой</HH_ImperialBilleting.letterLabel>
+  <HH_ImperialBilleting.letterText>Империя требует размещения.</HH_ImperialBilleting.letterText>
+</LanguageData>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Kitchen.Missing>不足: {0}</HH.Kitchen.Missing>
+  <HH.Kitchen.RecipeInfo>設備: {0}。手順: {1}。</HH.Kitchen.RecipeInfo>
+  <HH.Kitchen.Finishing>仕上げの一品（牛乳、卵、チョコレート、ビール、ベリー、またはキノコ）</HH.Kitchen.Finishing>
+  <HH.Kitchen.Finishing2>二つ目の仕上げの一品（ビール、ベリー、またはキノコ）</HH.Kitchen.Finishing2>
+  <HH.Kitchen.Inspiration>着想: {0}</HH.Kitchen.Inspiration>
+  <HH.Kitchen.Cuisine>料理系統: {0}</HH.Kitchen.Cuisine>
+  <HH.Kitchen.Cooked>調理場所: {0}（{1}）</HH.Kitchen.Cooked>
+  <HH.Kitchen.Made>原材料: {0}</HH.Kitchen.Made>
+  <HH.Kitchen.Signature>看板料理</HH.Kitchen.Signature>
+  <HH.Kitchen.Fine>上等な料理</HH.Kitchen.Fine>
+  <HH.Kitchen.Everyday>日常の料理</HH.Kitchen.Everyday>
+  <HH.Kitchen.Level>レベル {0}</HH.Kitchen.Level>
+  <HH.Kitchen.Stale>古くなっている: 満腹効果も気分ボーナスもありません。</HH.Kitchen.Stale>
+  <HH.Kitchen.FreshFor>{0}の間は新鮮</HH.Kitchen.FreshFor>
+  <HH.Kitchen.Stat.Well>満腹</HH.Kitchen.Stat.Well>
+  <HH.Kitchen.Stat.WellDesc>この料理を食べた後、空腹の減りがどれだけ遅くなるか。習得レベルと品質に応じて変わります。</HH.Kitchen.Stat.WellDesc>
+  <HH.Kitchen.Stat.Mood>食事時の気分</HH.Kitchen.Stat.Mood>
+  <HH.Kitchen.Stat.MoodDesc>まともな料理による気分ボーナス。習得レベルと品質で決まります（古くなった料理は与えません）。</HH.Kitchen.Stat.MoodDesc>
+  <HH.Tab.Kitchen>料理本</HH.Tab.Kitchen>
+  <HH.Kitchen.Cookbook.Title>コロニーの料理本</HH.Kitchen.Cookbook.Title>
+  <HH.Kitchen.Cookbook.Known>{1}品中{0}品を習得済み</HH.Kitchen.Cookbook.Known>
+  <HH.Kitchen.Cookbook.Unknown>???</HH.Kitchen.Cookbook.Unknown>
+  <HH.Kitchen.Cookbook.UnknownHint>まだ習得していません。{0}を研究するか、料理本を見つけてください。</HH.Kitchen.Cookbook.UnknownHint>
+  <HH.Kitchen.Cookbook.Level>レベル {0}</HH.Kitchen.Cookbook.Level>
+  <HH.Kitchen.Cookbook.NoRecipe>レシピなし: {0}</HH.Kitchen.Cookbook.NoRecipe>
+  <HH.Kitchen.Cookbook.Dark>非表示: ダークメニューがオフです。</HH.Kitchen.Cookbook.Dark>
+  <HH.Kitchen.Cookbook.Filter>習得済みのみ表示</HH.Kitchen.Cookbook.Filter>
+  <HH.Kitchen.Cookbook.Search>検索</HH.Kitchen.Cookbook.Search>
+  <HH.Kitchen.Station.PrepCounter>下ごしらえ台</HH.Kitchen.Station.PrepCounter>
+  <HH.Kitchen.Station.StockPot>寸胴鍋</HH.Kitchen.Station.StockPot>
+  <HH.Kitchen.Station.Grill>グリル</HH.Kitchen.Station.Grill>
+  <HH.Kitchen.Station.Oven>オーブン</HH.Kitchen.Station.Oven>
+  <HH.Kitchen.Station.Wok>中華鍋コンロ</HH.Kitchen.Station.Wok>
+  <HH.Kitchen.Station.Fryer>フライヤー</HH.Kitchen.Station.Fryer>
+  <HH.Kitchen.Station.Smoker>燻製器</HH.Kitchen.Station.Smoker>
+  <HH.Kitchen.Station.Steamer>蒸し器</HH.Kitchen.Station.Steamer>
+  <HH.Kitchen.Station.DoughBench>生地作業台</HH.Kitchen.Station.DoughBench>
+  <HH.Kitchen.Station.ColdStation>冷製台</HH.Kitchen.Station.ColdStation>
+  <HH.Kitchen.Station.Campfire>キャンプファイヤー</HH.Kitchen.Station.Campfire>
+  <HH.Kitchen.Station.Stove>コンロ</HH.Kitchen.Station.Stove>
+  <HH.Kitchen.Station.ButcherTable>解体台</HH.Kitchen.Station.ButcherTable>
+  <HH.Kitchen.Step.Chop>刻む</HH.Kitchen.Step.Chop>
+  <HH.Kitchen.Step.Simmer>弱火で煮る</HH.Kitchen.Step.Simmer>
+  <HH.Kitchen.Step.Boil>茹でる</HH.Kitchen.Step.Boil>
+  <HH.Kitchen.Step.Grill>網で焼く</HH.Kitchen.Step.Grill>
+  <HH.Kitchen.Step.KneadDough>生地をこねる</HH.Kitchen.Step.KneadDough>
+  <HH.Kitchen.Step.Smoke>燻す</HH.Kitchen.Step.Smoke>
+  <HH.Kitchen.Step.Roast>ローストする</HH.Kitchen.Step.Roast>
+  <HH.Kitchen.Step.StirFry>炒める</HH.Kitchen.Step.StirFry>
+  <HH.Kitchen.Step.DeepFry>揚げる</HH.Kitchen.Step.DeepFry>
+  <HH.Kitchen.Step.Steam>蒸す</HH.Kitchen.Step.Steam>
+  <HH.Kitchen.Step.Chill>冷やす</HH.Kitchen.Step.Chill>
+  <HH.Kitchen.Step.Carve>切り分ける</HH.Kitchen.Step.Carve>
+  <HH.Kitchen.Step.SpitRoast>丸焼きにする</HH.Kitchen.Step.SpitRoast>
+  <HH.Kitchen.Step.PanFry>フライパンで焼く</HH.Kitchen.Step.PanFry>
+  <HH.Kitchen.Step.Sear>表面を焼き固める</HH.Kitchen.Step.Sear>
+  <HH.Kitchen.Cuisine.Frontier>田舎風／開拓地</HH.Kitchen.Cuisine.Frontier>
+  <HH.Kitchen.Cuisine.TribalFeast>部族の宴</HH.Kitchen.Cuisine.TribalFeast>
+  <HH.Kitchen.Cuisine.TavernFare>居酒屋料理</HH.Kitchen.Cuisine.TavernFare>
+  <HH.Kitchen.Cuisine.ImperialHaute>帝国の高級料理</HH.Kitchen.Cuisine.ImperialHaute>
+  <HH.Kitchen.Cuisine.GlitterFusion>グリッターフュージョン</HH.Kitchen.Cuisine.GlitterFusion>
+  <HH.Kitchen.Cuisine.Street>屋台料理</HH.Kitchen.Cuisine.Street>
+  <HH.Kitchen.Cuisine.Seafood>海鮮</HH.Kitchen.Cuisine.Seafood>
+  <HH.Kitchen.Cuisine.Insect>昆虫食</HH.Kitchen.Cuisine.Insect>
+  <HH.Kitchen.Cuisine.Fungal>菌類</HH.Kitchen.Cuisine.Fungal>
+  <HH.Kitchen.Cuisine.Vegetarian>ベジタリアン</HH.Kitchen.Cuisine.Vegetarian>
+  <HH.Kitchen.Cuisine.Ascetic>苦行僧風</HH.Kitchen.Cuisine.Ascetic>
+  <HH.Kitchen.Cuisine.LongPork>ロングポーク</HH.Kitchen.Cuisine.LongPork>
+  <HH.Kitchen.Ingredient.meat>肉</HH.Kitchen.Ingredient.meat>
+  <HH.Kitchen.Ingredient.insectmeat>昆虫肉</HH.Kitchen.Ingredient.insectmeat>
+  <HH.Kitchen.Ingredient.humanmeat>人肉</HH.Kitchen.Ingredient.humanmeat>
+  <HH.Kitchen.Ingredient.twistedmeat>歪んだ肉</HH.Kitchen.Ingredient.twistedmeat>
+  <HH.Kitchen.Ingredient.fish>魚</HH.Kitchen.Ingredient.fish>
+  <HH.Kitchen.Ingredient.eggs>卵</HH.Kitchen.Ingredient.eggs>
+  <HH.Kitchen.Ingredient.milk>牛乳</HH.Kitchen.Ingredient.milk>
+  <HH.Kitchen.Ingredient.potatoes>ジャガイモ</HH.Kitchen.Ingredient.potatoes>
+  <HH.Kitchen.Ingredient.corn>トウモロコシ</HH.Kitchen.Ingredient.corn>
+  <HH.Kitchen.Ingredient.rice>米</HH.Kitchen.Ingredient.rice>
+  <HH.Kitchen.Ingredient.berries>ベリー</HH.Kitchen.Ingredient.berries>
+  <HH.Kitchen.Ingredient.agave>リュウゼツランの実</HH.Kitchen.Ingredient.agave>
+  <HH.Kitchen.Ingredient.mushrooms>キノコ</HH.Kitchen.Ingredient.mushrooms>
+  <HH.Kitchen.Ingredient.chocolate>チョコレート</HH.Kitchen.Ingredient.chocolate>
+  <HH.Kitchen.Ingredient.beer>ビール</HH.Kitchen.Ingredient.beer>
+  <HH.Kitchen.Ingredient.hemogen>ヘモジェンパック</HH.Kitchen.Ingredient.hemogen>
+  <HH.Kitchen.Ingredient.cheese>チーズ</HH.Kitchen.Ingredient.cheese>
+  <HH.Kitchen.Ingredient.pumpkin>カボチャ</HH.Kitchen.Ingredient.pumpkin>
+  <HH.Kitchen.Ingredient.flour>小麦粉</HH.Kitchen.Ingredient.flour>
+  <HH.Kitchen.Ingredient.fruit>果物</HH.Kitchen.Ingredient.fruit>
+  <HH.Kitchen.Ingredient.soysauce>醤油</HH.Kitchen.Ingredient.soysauce>
+  <HH.Kitchen.Ingredient.wasabi>ワサビペースト</HH.Kitchen.Ingredient.wasabi>
+  <HH.Kitchen.Ingredient.vegetables>野菜</HH.Kitchen.Ingredient.vegetables>
+  <HH.Kitchen.Ingredient.sugar>砂糖</HH.Kitchen.Ingredient.sugar>
+  <HH.Kitchen.Ingredient.gourmet>高級食材</HH.Kitchen.Ingredient.gourmet>
+  <HH.Kitchen.Ingredient.herbs>ハーブ</HH.Kitchen.Ingredient.herbs>
+  <HH.Kitchen.Ingredient.nuts>ナッツ</HH.Kitchen.Ingredient.nuts>
+  <HH.Kitchen.Ingredient.tealeaves>茶葉</HH.Kitchen.Ingredient.tealeaves>
+  <HH.Kitchen.Ingredient.strawflour>ストローフラワー粉</HH.Kitchen.Ingredient.strawflour>
+  <HH.Kitchen.Ingredient.pricklypear>サボテンの実</HH.Kitchen.Ingredient.pricklypear>
+  <HH.Kitchen.Ingredient.greenfruit>グリーンフルーツ</HH.Kitchen.Ingredient.greenfruit>
+  <HH.Setting.kitchen.shelfLife>料理の保存期間</HH.Setting.kitchen.shelfLife>
+  <HH.Setting.kitchen.shelfLife.Desc>皿が新鮮さを保つ時間。各料理の3〜24時間に対する割合で決まります。古くなった皿も食べられますが、満腹効果も気分ボーナスもありません。</HH.Setting.kitchen.shelfLife.Desc>
+  <HH.Setting.kitchen.wellFedStrength>満腹効果の強さ</HH.Setting.kitchen.wellFedStrength>
+  <HH.Setting.kitchen.wellFedStrength.Desc>まともな料理の後、空腹の減りがどれだけ遅くなるか（100％ = 40％遅くなる）。</HH.Setting.kitchen.wellFedStrength.Desc>
+  <HH.Setting.kitchen.wellFedDuration>満腹効果の持続時間</HH.Setting.kitchen.wellFedDuration>
+  <HH.Setting.kitchen.wellFedDuration.Desc>満腹状態の続く時間。習得レベル（と品質）に応じて4／6／8／10時間を基準とした割合。</HH.Setting.kitchen.wellFedDuration.Desc>
+  <HH.Setting.kitchen.menuPrice>メニュー価格</HH.Setting.kitchen.menuPrice>
+  <HH.Setting.kitchen.menuPrice.Desc>レストランが料理に求める価格。標準メニューに対する割合（料理のレベル、品質、形式による）。</HH.Setting.kitchen.menuPrice.Desc>
+  <HH.Setting.kitchen.poisonRule>上手な厨房では食中毒を起こさない</HH.Setting.kitchen.poisonRule>
+  <HH.Setting.kitchen.poisonRule.Desc>調理技能4以上の料理人が清潔な厨房（清潔度-0.2以上）で作った皿は、決して食中毒を起こしません。オフにするとバニラの判定が適用されます。</HH.Setting.kitchen.poisonRule.Desc>
+  <HH.Setting.kitchen.variants>上等版と看板版の形式</HH.Setting.kitchen.variants>
+  <HH.Setting.kitchen.variants.Desc>各料理を上等版（より多く、より良い食材を使い、良品質になりやすい）と看板版（研究が必要）として提供します。</HH.Setting.kitchen.variants.Desc>
+  <HH.Setting.kitchen.allKnown>全料理を習得済み</HH.Setting.kitchen.allKnown>
+  <HH.Setting.kitchen.allKnown.Desc>習得をスキップします。設備が整えば、メニューのすべての料理を調理できます。</HH.Setting.kitchen.allKnown.Desc>
+  <HH.Setting.kitchen.darkMenu>ダークメニュー（ロングポーク）</HH.Setting.kitchen.darkMenu>
+  <HH.Setting.kitchen.darkMenu.Desc>ロングポーク料理を許可します。カニバリズムを容認するイデオロギーでも解禁されます。</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Kitchen.Cookbook.Teaches>習得できる料理: {0}</HH.Kitchen.Cookbook.Teaches>
+  <HH.Kitchen.Cookbook.Empty>ページは白紙です。</HH.Kitchen.Cookbook.Empty>
+  <HH.Kitchen.Cookbook.AllKnown>コロニーはこの本のすべての料理を既に習得しています。</HH.Kitchen.Cookbook.AllKnown>
+  <HH.Kitchen.Cookbook.CannotCook>調理できません。</HH.Kitchen.Cookbook.CannotCook>
+  <HH.Kitchen.Cookbook.Learned>{0}がこの本を読みました。コロニーは今や次を調理できます: {1}。</HH.Kitchen.Cookbook.Learned>
+  <HH.Kitchen.TestKitchen.Success>{0}は{1}の作り方を編み出しました。コロニーはこれを覚えておきます。</HH.Kitchen.TestKitchen.Success>
+  <HH.Kitchen.TestKitchen.Failure>{0}は{1}を作ろうとして、ひどい一皿に仕上げてしまいました。次はうまくいくかも。</HH.Kitchen.TestKitchen.Failure>
+  <HH.Kitchen.NoNeighbours>手の届く範囲に他の調理設備がありません。</HH.Kitchen.NoNeighbours>
+  <HH.Kitchen.Neighbours>手の届く範囲: {0}</HH.Kitchen.Neighbours>
+  <HH.Kitchen.FreshHours>{0}時間の間は新鮮</HH.Kitchen.FreshHours>
+</LanguageData>

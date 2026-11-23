@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ProjectorScreen.label>проекционный экран</HH_ProjectorScreen.label>
+  <HH_ProjectorScreen.description>Широкий экран с проектором, прикреплённым к потолочной балке над ним. Поставьте перед ним стулья, повесьте вывеску зала и погасите свет: гости платят за место, а колонисты получают киновечер. Фильмы старые, громкие, и никто уже не помнит, кто их снимал.</HH_ProjectorScreen.description>
+  <HH_SalonChair.label>кресло салона</HH_SalonChair.label>
+  <HH_SalonChair.description>Мягкое кресло с регулируемой высотой, накидкой, зеркалом на стене за ним и ящиком с ножницами. Колонист, стоящий за креслом, сделает сидящему новую прическу. Колонисты пользуются бесплатно, гости платят.</HH_SalonChair.description>
+  <HH_ParkBench.label>скамейка в парке</HH_ParkBench.label>
+  <HH_ParkBench.description>Простая скамья на двоих с видом. Ничего не покупать и ничего не подписывать: люди садятся, смотрят на то, что есть, и от этого им становится немного лучше. Чем красивее окрестности, тем лучше.</HH_ParkBench.description>
+  <HH_TaxiStand.label>стоянка такси</HH_TaxiStand.label>
+  <HH_TaxiStand.description>Окрашенный квадрат земли, указатель и вызывной пост. Уезжающие гости, которые не хотят идти до края карты, вызывают здесь маленький шаттл и платят за поездку; некоторых прибывающих гостей здесь высаживают с шиком. Нужно открытое небо над стоянкой, чтобы такси могло приземлиться.</HH_TaxiStand.description>
+  <HH_TaxiIncoming.label>такси (прибытие)</HH_TaxiIncoming.label>
+  <HH_TaxiLeaving.label>такси (отбытие)</HH_TaxiLeaving.label>
+</LanguageData>

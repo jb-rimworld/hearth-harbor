@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchScreening.reportString>映画を見ています。</HH_WatchScreening.reportString>
+  <HH_SalonSit.reportString>新しい見た目を待っています。</HH_SalonSit.reportString>
+  <HH_SalonStyle.reportString>TargetAの客の髪を整えています。</HH_SalonStyle.reportString>
+  <HH_SalonSelf.reportString>ヘアスタイルを変えています。</HH_SalonSelf.reportString>
+  <HH_GalleryVisit.reportString>芸術作品を見ています。</HH_GalleryVisit.reportString>
+  <HH_ParkRest.reportString>ベンチに座っています。</HH_ParkRest.reportString>
+  <HH_TaxiDeparture.reportString>タクシーを待っています。</HH_TaxiDeparture.reportString>
+  <HH_Bodyguard.reportString>TargetAを護衛しています。</HH_Bodyguard.reportString>
+</LanguageData>

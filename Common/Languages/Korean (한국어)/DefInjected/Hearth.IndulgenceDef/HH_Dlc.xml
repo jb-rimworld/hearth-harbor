@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Ind_ExpressAbsolution.label>신속 사면</HH_Ind_ExpressAbsolution.label>
+  <HH_Ind_ExpressAbsolution.description>도장이 찍힌 쪽지 한 장으로 깨진 계율에 대한 기억 하나를 지웁니다. 사제는 무엇을 했는지 묻지 않습니다.</HH_Ind_ExpressAbsolution.description>
+  <HH_Ind_MinorMercy.label>작은 자비</HH_Ind_MinorMercy.label>
+  <HH_Ind_MinorMercy.description>축복받은 붕대, 약 두 회분 가격에 팝니다. 체력 10 이하의 새 상처 하나를 치료합니다.</HH_Ind_MinorMercy.description>
+  <HH_Ind_UnshakenFaith.label>흔들림 없는 신앙 증명서</HH_Ind_UnshakenFaith.label>
+  <HH_Ind_UnshakenFaith.description>한 번도 의심한 적 없다고 적힌 액자 증명서. 확신을 10퍼센트포인트 높입니다.</HH_Ind_UnshakenFaith.description>
+  <HH_Ind_GreaterMercy.label>큰 자비</HH_Ind_GreaterMercy.label>
+  <HH_Ind_GreaterMercy.description>가격이 붙은 기적. 남은 흉터나 오래된 상처 하나를 영원히 치료합니다.</HH_Ind_GreaterMercy.description>
+  <HH_Asc_Rank1.label>승격: 구도자</HH_Asc_Rank1.label>
+  <HH_Asc_Rank1.description>입교비를 내고 구도자가 됩니다. 시작일 뿐입니다.</HH_Asc_Rank1.description>
+  <HH_Asc_Rank2.label>승격: 수행자</HH_Asc_Rank2.label>
+  <HH_Asc_Rank2.description>계급 II, 수행자. 이후 보유자는 다른 집의 손님과 방문객에게 제단에서 면죄부를 팔 수 있습니다.</HH_Asc_Rank2.description>
+  <HH_Asc_Rank3.label>승격: 빛나는 자</HH_Asc_Rank3.label>
+  <HH_Asc_Rank3.description>계급 III, 빛나는 자. 멀리서도 눈에 띌 만큼 밝습니다.</HH_Asc_Rank3.description>
+  <HH_Asc_Rank4.label>승격: 승천자</HH_Asc_Rank4.label>
+  <HH_Asc_Rank4.description>계급 IV, 승천자. 전망을 살 여유가 있는 이들을 위한 사다리의 꼭대기입니다.</HH_Asc_Rank4.description>
+  <HH_Ind_ReformTithe.label>개혁 헌금</HH_Ind_ReformTithe.label>
+  <HH_Ind_ReformTithe.description>유동적인 이데올로기의 다음 개혁을 위한 자발적 헌금: 개혁 포인트 1.</HH_Ind_ReformTithe.description>
+</LanguageData>

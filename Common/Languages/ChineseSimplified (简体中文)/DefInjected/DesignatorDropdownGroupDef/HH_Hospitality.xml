@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Group_Casino.label>赌场</HH_Group_Casino.label>
+  <HH_Group_Casino.description>老虎机、赌桌和兑换柜台。</HH_Group_Casino.description>
+  <HH_Group_Wellness.label>养生</HH_Group_Wellness.label>
+  <HH_Group_Wellness.description>桑拿、热水浴池和按摩床。</HH_Group_Wellness.description>
+  <HH_Group_City.label>城市生活</HH_Group_City.label>
+  <HH_Group_City.description>电影银幕、理发椅、公园长椅和出租车站。</HH_Group_City.description>
+  <HH_Group_Underworld.label>暗室</HH_Group_Underworld.label>
+  <HH_Group_Underworld.description>门、坑、柜台和码头，用于那些没人愿意谈论的东西。只有发现地下世界后才会显示。</HH_Group_Underworld.description>
+</LanguageData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchScreening.reportString>在看电影。</HH_WatchScreening.reportString>
+  <HH_SalonSit.reportString>在等待新造型。</HH_SalonSit.reportString>
+  <HH_SalonStyle.reportString>正在为TargetA的顾客做造型。</HH_SalonStyle.reportString>
+  <HH_SalonSelf.reportString>在换一个新发型。</HH_SalonSelf.reportString>
+  <HH_GalleryVisit.reportString>在欣赏艺术品。</HH_GalleryVisit.reportString>
+  <HH_ParkRest.reportString>坐在长椅上。</HH_ParkRest.reportString>
+  <HH_TaxiDeparture.reportString>在等出租车。</HH_TaxiDeparture.reportString>
+  <HH_Bodyguard.reportString>正在保护TargetA。</HH_Bodyguard.reportString>
+</LanguageData>

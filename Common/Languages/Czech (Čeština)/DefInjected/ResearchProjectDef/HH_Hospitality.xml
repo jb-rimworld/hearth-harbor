@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Innkeeping.label>hostinská činnost</HH_Innkeeping.label>
+  <HH_Innkeeping.description>Třídy pokojů, cenové kategorie, krčma, recepce, stání pro koně a první placená jídla. Vše, co dům potřebuje, jakmile první hosté zůstanou i druhou noc. Odemyká udírnu, pec, oltář pro hosty a 2. úroveň učení kuchyně.</HH_Innkeeping.description>
+  <HH_Gastronomy.label>gastronomie</HH_Gastronomy.label>
+  <HH_Gastronomy.description>Jídelníčky, číšníci, kuchyňské styly a pořádná jídelna. Odemyká parní hrnec, wok stanoviště, studenou kuchyni a 3. úroveň učení kuchyně.</HH_Gastronomy.description>
+  <HH_HotelManagement.label>hotelový management</HH_HotelManagement.label>
+  <HH_HotelManagement.description>Rezervační terminály, předpovědi příjezdů, směny a fritéza. Rozdíl mezi hostincem a hotelem je v tom, že hotel ví, kdo přijede.</HH_HotelManagement.description>
+  <HH_FineDining.label>haute cuisine</HH_FineDining.label>
+  <HH_FineDining.description>Prádlo, sommelieři a kritici. 4. úroveň učení kuchyně: podpisová podoba každého jídla.</HH_FineDining.description>
+</LanguageData>

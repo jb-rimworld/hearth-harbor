@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingAddiction.label>赌博成瘾</HH_GamblingAddiction.label>
+  <HH_GamblingAddiction.description>赌桌已经控制了他。没有定期赌博，戒断反应就会出现：心情变差、脾气暴躁，在最深的阶段还会出现赌博狂潮。只有完全不赌上一段时间才能治愈，而且在之后的渴望期里很容易复发。\n\n它不花银币，只耗费时间、心情和神经。</HH_GamblingAddiction.description>
+  <HH_GamblingAddiction.stages.1.label>戒断（轻度）</HH_GamblingAddiction.stages.1.label>
+  <HH_GamblingAddiction.stages.2.label>戒断（中度）</HH_GamblingAddiction.stages.2.label>
+  <HH_GamblingAddiction.stages.3.label>戒断（强烈）</HH_GamblingAddiction.stages.3.label>
+  <HH_GamblingAddiction.stages.4.label>戒断（严重）</HH_GamblingAddiction.stages.4.label>
+  <HH_GamblingAddiction.stages.5.label>戒断（极端）</HH_GamblingAddiction.stages.5.label>
+</LanguageData>

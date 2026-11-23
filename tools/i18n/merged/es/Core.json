@@ -1,0 +1,8 @@
+{
+ "keyed": {},
+ "defs": {
+  "DesignationCategoryDef/HH_Bank.label": "Banco",
+  "DesignationCategoryDef/HH_Bank.description": "Cajeros automáticos, ventanillas y cajas de seguridad nocturnas del banco, y los escritorios de su oficina de seguros.",
+  "ResearchTabDef/HH_Banking.label": "Banca"
+ }
+}

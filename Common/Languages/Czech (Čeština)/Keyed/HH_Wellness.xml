@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Setting.wellness.priceHotTub>Cena vířivky</HH.Setting.wellness.priceHotTub>
+  <HH.Setting.wellness.priceHotTub.Desc>Kolik host zaplatí za jedno namočení ve vířivce. Násobeno cenovým koeficientem místa.</HH.Setting.wellness.priceHotTub.Desc>
+  <HH.Setting.wellness.priceSauna>Cena sauny</HH.Setting.wellness.priceSauna>
+  <HH.Setting.wellness.priceSauna.Desc>Kolik host zaplatí za jedno sezení v sauně.</HH.Setting.wellness.priceSauna.Desc>
+  <HH.Setting.wellness.priceMassage>Cena masáže</HH.Setting.wellness.priceMassage>
+  <HH.Setting.wellness.priceMassage.Desc>Kolik host zaplatí za jednu masáž. Nabízí se jen tehdy, když je volný kolonista s pracovním typem Obsluha.</HH.Setting.wellness.priceMassage.Desc>
+  <HH.Setting.wellness.dayPass>Prodávat denní vstupenky</HH.Setting.wellness.dayPass>
+  <HH.Setting.wellness.dayPass.Desc>Movitější hosté si místo platby za jednotlivá sezení koupí denní vstupenku. Pokrývá vířivku a saunu, ne masáž.</HH.Setting.wellness.dayPass.Desc>
+  <HH.Setting.wellness.priceDayPass>Cena denní vstupenky</HH.Setting.wellness.priceDayPass>
+  <HH.Setting.wellness.priceDayPass.Desc>Cena denní lázeňské vstupenky (vířivka a sauna po dobu platnosti vstupenky).</HH.Setting.wellness.priceDayPass.Desc>
+  <HH.Setting.wellness.dayPassHours>Délka denní vstupenky (hodiny)</HH.Setting.wellness.dayPassHours>
+  <HH.Setting.wellness.dayPassHours.Desc>Jak dlouho zůstává denní vstupenka platná.</HH.Setting.wellness.dayPassHours.Desc>
+  <HH.Setting.wellness.selfServiceDiscount>Sleva za samoobsluhu</HH.Setting.wellness.selfServiceDiscount>
+  <HH.Setting.wellness.selfServiceDiscount.Desc>Snížení ceny, když v místnosti není nikdo z personálu. Kolonista s pracovním typem Obsluha stojící v místnosti se počítá jako personál.</HH.Setting.wellness.selfServiceDiscount.Desc>
+  <HH.Setting.wellness.hoursHotTub>Sezení ve vířivce (hodiny)</HH.Setting.wellness.hoursHotTub>
+  <HH.Setting.wellness.hoursHotTub.Desc>Jak dlouho trvá jedno namočení.</HH.Setting.wellness.hoursHotTub.Desc>
+  <HH.Setting.wellness.hoursSauna>Sezení v sauně (hodiny)</HH.Setting.wellness.hoursSauna>
+  <HH.Setting.wellness.hoursSauna.Desc>Jak dlouho trvá jedno sezení v sauně.</HH.Setting.wellness.hoursSauna.Desc>
+  <HH.Setting.wellness.hoursMassage>Masáž (hodiny)</HH.Setting.wellness.hoursMassage>
+  <HH.Setting.wellness.hoursMassage.Desc>Jak dlouho trvá jedna masáž. Masér i klient jsou po tu dobu zaneprázdněni.</HH.Setting.wellness.hoursMassage.Desc>
+  <HH.Setting.wellness.massageWaitHours>Čekání na maséra (hodiny)</HH.Setting.wellness.massageWaitHours>
+  <HH.Setting.wellness.massageWaitHours.Desc>Jak dlouho zůstává někdo ležet na stole a čeká na maséra, než to vzdá.</HH.Setting.wellness.massageWaitHours.Desc>
+  <HH.Setting.wellness.saunaMinTemp>Minimální teplota sauny (°C)</HH.Setting.wellness.saunaMinTemp>
+  <HH.Setting.wellness.saunaMinTemp.Desc>Kamna sauny se počítají jako funkční sauna, jen když je jejich místnost alespoň tak teplá.</HH.Setting.wellness.saunaMinTemp.Desc>
+  <HH.Setting.wellness.joyFactor>Koeficient zisku z rekreace</HH.Setting.wellness.joyFactor>
+  <HH.Setting.wellness.joyFactor.Desc>Násobitel rekreace, kterou kolonisté získají z vířivky, sauny a masáže.</HH.Setting.wellness.joyFactor.Desc>
+  <HH.Setting.wellness.restBonus>Bonus odpočinku za sezení</HH.Setting.wellness.restBonus>
+  <HH.Setting.wellness.restBonus.Desc>Podíl lišty odpočinku obnovený jedním sezením (u masáže o něco víc). Nastavte 0 pro žádný.</HH.Setting.wellness.restBonus.Desc>
+  <HH.Setting.wellness.soothe>Uklidnění po sezení</HH.Setting.wellness.soothe>
+  <HH.Setting.wellness.soothe.Desc>Sezení nechá pacienta uklidněného zhruba jeden den: bolest je pociťována o 15 % méně.</HH.Setting.wellness.soothe.Desc>
+  <HH.Setting.wellness.massageXp>Zkušenost maséra za masáž</HH.Setting.wellness.massageXp>
+  <HH.Setting.wellness.massageXp.Desc>Zkušenost ze Společenských dovedností a Medicíny, kterou masér získá za celou masáž.</HH.Setting.wellness.massageXp.Desc>
+  <HH.Setting.wellness.satisfaction>Spokojenost hosta za sezení</HH.Setting.wellness.satisfaction>
+  <HH.Setting.wellness.satisfaction.Desc>O kolik zvedne dokončené sezení spokojenost hosta (stupnice -1 až +1).</HH.Setting.wellness.satisfaction.Desc>
+  <HH.Setting.wellness.guestWeight>Zájem hostů o lázně</HH.Setting.wellness.guestWeight>
+  <HH.Setting.wellness.guestWeight.Desc>Jak moc hosté chtějí do lázní oproti jiným aktivitám. 0 = nikdy nechodí.</HH.Setting.wellness.guestWeight.Desc>
+  <HH.Setting.wellness.guestCooldownHours>Pauza hosta mezi sezeními (hodiny)</HH.Setting.wellness.guestCooldownHours>
+  <HH.Setting.wellness.guestCooldownHours.Desc>Host nezačne další lázeňské sezení dříve, než po této době.</HH.Setting.wellness.guestCooldownHours.Desc>
+  <HH.Setting.wellness.rehabJoy>Pacienti mohou využívat lázně</HH.Setting.wellness.rehabJoy>
+  <HH.Setting.wellness.rehabJoy.Desc>Když je aktivní RimWard, mohou pacienti chodící na kolonistickém lékařském lůžku navštívit vířivku, saunu a masážní stůl pro rekreaci (nikdy saunu po operaci nebo s otevřenými ranami).</HH.Setting.wellness.rehabJoy.Desc>
+  <HH.Wellness.Yes>ano</HH.Wellness.Yes>
+  <HH.Wellness.No>ne</HH.Wellness.No>
+  <HH.Wellness.Inspect.SaunaReady>Sauna připravena: {0} °C.</HH.Wellness.Inspect.SaunaReady>
+  <HH.Wellness.Inspect.SaunaNotReady>Zatím není funkční sauna: {0} °C z potřebných {1} °C ({2}).</HH.Wellness.Inspect.SaunaNotReady>
+  <HH.Wellness.Inspect.TubReady>Vířivka připravena.</HH.Wellness.Inspect.TubReady>
+  <HH.Wellness.Inspect.TubNotReady>Vířivka nepoužitelná: {0}.</HH.Wellness.Inspect.TubNotReady>
+  <HH.Wellness.Inspect.MassageFree>Masážní stůl volný.</HH.Wellness.Inspect.MassageFree>
+  <HH.Wellness.Inspect.MassageWaiting>Někdo čeká na maséra.</HH.Wellness.Inspect.MassageWaiting>
+  <HH.Wellness.Inspect.MassageRunning>Probíhá masáž.</HH.Wellness.Inspect.MassageRunning>
+  <HH.Wellness.Inspect.Users>Kolonisté mohou používat: {0}. Hosté mohou používat: {1}.</HH.Wellness.Inspect.Users>
+  <HH.Wellness.Gizmo.Colonists>Kolonisté mohou používat</HH.Wellness.Gizmo.Colonists>
+  <HH.Wellness.Gizmo.ColonistsDesc>Povolit kolonistům používat tohle k rekreaci. Vypněte, když jsou lázně otevřené pro hosty.</HH.Wellness.Gizmo.ColonistsDesc>
+  <HH.Wellness.Gizmo.Guests>Hosté mohou používat</HH.Wellness.Gizmo.Guests>
+  <HH.Wellness.Gizmo.GuestsDesc>Povolit hostům používat tohle (platí, když stojí v lázeňském místě).</HH.Wellness.Gizmo.GuestsDesc>
+</LanguageData>

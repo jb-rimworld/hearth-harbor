@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_TestKitchen.label>experimentar con un plato nuevo</HH_TestKitchen.label>
+  <HH_TestKitchen.description>Echa comida cruda sobre la encimera y a ver qué sale. A veces la colonia descubre un plato nuevo (cuanto mejor cocinero, más probable); si no, el experimento acaba en un plato espantoso de ese mismo tipo.</HH_TestKitchen.description>
+  <HH_TestKitchen.jobString>Experimentando con un plato nuevo.</HH_TestKitchen.jobString>
+</LanguageData>

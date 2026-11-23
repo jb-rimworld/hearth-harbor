@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Setting.core.researchMode>研究モード</HH.Setting.core.researchMode>
+  <HH.Setting.core.researchMode.Desc>フル: Hearth &amp; Harbor と Silverline の研究ツリーが、それぞれの建物や機能を解放します。オフ: 最初からすべてが利用可能になります（ただし冥界の暗いプロジェクトは、なお発見が必要です）。</HH.Setting.core.researchMode.Desc>
+  <HH.Enum.CoreResearchMode.Full>フル</HH.Enum.CoreResearchMode.Full>
+  <HH.Enum.CoreResearchMode.Off>オフ</HH.Enum.CoreResearchMode.Off>
+</LanguageData>

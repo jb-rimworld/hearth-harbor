@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.Casino>Казино</HH.Tab.Casino>
+  <HH.Casino.TabTitle>Казино</HH.Casino.TabTitle>
+  <HH.Casino.LimitsToggle>Соблюдать лимиты столов (ставки {0}–{1} серебра)</HH.Casino.LimitsToggle>
+  <HH.Casino.LosingWarning>Дом теряет деньги на: {0}. При таких коэффициентах гости выигрывают больше, чем ставят.</HH.Casino.LosingWarning>
+  <HH.Casino.BalancedBadge>У каждой игры есть преимущество дома: в долгосрочной перспективе казино в плюсе.</HH.Casino.BalancedBadge>
+  <HH.Casino.Houses>Заведения</HH.Casino.Houses>
+  <HH.Casino.NoHouses>Ни один гость ещё не играл. Заведение открывает свои книги с первым взносом.</HH.Casino.NoHouses>
+  <HH.Casino.HouseOfMap>Казино {0}</HH.Casino.HouseOfMap>
+  <HH.Casino.Drawer>Касса: {0}</HH.Casino.Drawer>
+  <HH.Casino.TodayNet>Сегодня: {0}</HH.Casino.TodayNet>
+  <HH.Casino.HouseTip>Сейчас гости играют на {0} серебра. Заведение держит запас {1} серебра; всё сверх него уходит колонии при закрытии казино.</HH.Casino.HouseTip>
+  <HH.Casino.Games>Игры: выплаты фактические и по замыслу</HH.Casino.Games>
+  <HH.Casino.ColGame>Игра</HH.Casino.ColGame>
+  <HH.Casino.ColRounds>Раунды</HH.Casino.ColRounds>
+  <HH.Casino.ColStaked>Поставлено</HH.Casino.ColStaked>
+  <HH.Casino.ColRtp>Выплата (факт)</HH.Casino.ColRtp>
+  <HH.Casino.ColExpected>Выплата (по замыслу)</HH.Casino.ColExpected>
+  <HH.Casino.ColLuck>Удача</HH.Casino.ColLuck>
+  <HH.Casino.ColHouse>Итог заведения</HH.Casino.ColHouse>
+  <HH.Casino.Game.Slots>Игровые автоматы</HH.Casino.Game.Slots>
+  <HH.Casino.Game.Roulette>Рулетка</HH.Casino.Game.Roulette>
+  <HH.Casino.Game.Blackjack>Блэкджек</HH.Casino.Game.Blackjack>
+  <HH.Casino.Game.Poker>Rimdeck</HH.Casino.Game.Poker>
+  <HH.Casino.Gamblers>Колонисты-игроки</HH.Casino.Gamblers>
+  <HH.Casino.NoGamblers>В колонии ещё никто не играл.</HH.Casino.NoGamblers>
+  <HH.Casino.InspectGame>{0}: занято мест {1} из {2}</HH.Casino.InspectGame>
+  <HH.Casino.InspectBooks>{0} раундов · дом {1} · фактическое преимущество {2} % (по замыслу {3} %)</HH.Casino.InspectBooks>
+  <HH.Casino.InspectToday>Сегодня: {0} раундов, дом {1}</HH.Casino.InspectToday>
+  <HH.Casino.InspectLuck>Удача за всё время: {0}</HH.Casino.InspectLuck>
+  <HH.Casino.Staffed>крупье на месте</HH.Casino.Staffed>
+  <HH.Casino.NoCroupier>нет крупье</HH.Casino.NoCroupier>
+  <HH.Casino.Vol.Low>низкая волатильность</HH.Casino.Vol.Low>
+  <HH.Casino.Vol.Medium>средняя волатильность</HH.Casino.Vol.Medium>
+  <HH.Casino.Vol.High>высокая волатильность</HH.Casino.Vol.High>
+  <HH.Casino.VolDesc>Нажмите, чтобы изменить режим выплат автомата. Частота выигрышей {0}, разброс {1} ставок, джекпот ×{2}, выплата {3} % при любой настройке.</HH.Casino.VolDesc>
+  <HH.Casino.OpenToGuests>Открыт для гостей</HH.Casino.OpenToGuests>
+  <HH.Casino.OpenToGuestsDesc>Если выключено, пользоваться устройством могут только колонисты.</HH.Casino.OpenToGuestsDesc>
+  <HH.Casino.TryDemo>Попробовать (тренировочные фишки)</HH.Casino.TryDemo>
+  <HH.Casino.TryDemoDesc>Сыграйте несколько раундов сами на тренировочные фишки. Серебро не используется.</HH.Casino.TryDemoDesc>
+  <HH.Casino.Simulate>Смоделировать 10 000 раундов</HH.Casino.Simulate>
+  <HH.Casino.SimulateDesc>Старший крупье: проигрывает на бумаге 10 000 раундов по текущим коэффициентам и сообщает итог. Ничего не записывается в книги.</HH.Casino.SimulateDesc>
+  <HH.Casino.SimResult>Старший крупье: {0} раундов на бумаге вернули {1} % ставок (по замыслу: {2} %).</HH.Casino.SimResult>
+  <HH.Casino.LuckNoData>пока слишком мало раундов</HH.Casino.LuckNoData>
+  <HH.Casino.LuckNormal>обычная удача</HH.Casino.LuckNormal>
+  <HH.Casino.LuckHouseUp>дому везёт</HH.Casino.LuckHouseUp>
+  <HH.Casino.LuckHouseDown>дому не везёт</HH.Casino.LuckHouseDown>
+  <HH.Casino.LuckHouseWayUp>дому очень везёт</HH.Casino.LuckHouseWayUp>
+  <HH.Casino.LuckHouseWayDown>дому очень не везёт</HH.Casino.LuckHouseWayDown>
+  <HH.Casino.BigWin>{0} сорвал крупный куш у {2}: фишек на {1} серебра.</HH.Casino.BigWin>
+  <HH.Casino.DemoInfo>Только тренировочные фишки, здесь ничего не стоит серебра. Коэффициенты в этой колонии: {ODDS}. Ваша ставка зафиксирована: перезагрузка результат не меняет.</HH.Casino.DemoInfo>
+  <HH.Casino.DemoChips>Тренировочные фишки: {0} · раундов: {1}</HH.Casino.DemoChips>
+  <HH.Casino.DemoReset>Начать заново</HH.Casino.DemoReset>
+  <HH.Casino.DemoStake>Ставка</HH.Casino.DemoStake>
+  <HH.Casino.DemoBet>Поставить</HH.Casino.DemoBet>
+  <HH.Casino.DemoBroke>У вас не хватает тренировочных фишек на эту ставку.</HH.Casino.DemoBroke>
+  <HH.Casino.DemoPays>выплата ×{0}</HH.Casino.DemoPays>
+  <HH.Casino.DemoNoWin>без выигрыша</HH.Casino.DemoNoWin>
+  <HH.Casino.DemoPoker>Вы сидите с тремя завсегдатаями. Каждый вносит ставку в банк; дом забирает комиссию.</HH.Casino.DemoPoker>
+  <HH.Casino.DemoStats>Возвращено на данный момент: {0} % ставок (по замыслу: {1} %)</HH.Casino.DemoStats>
+  <HH.Casino.Spin>Крутить</HH.Casino.Spin>
+  <HH.Casino.Deal>Раздать</HH.Casino.Deal>
+  <HH.Casino.Hit>Взять</HH.Casino.Hit>
+  <HH.Casino.Stand>Хватит</HH.Casino.Stand>
+  <HH.Casino.DoubleDown>Удвоить</HH.Casino.DoubleDown>
+  <HH.Casino.HelpHint>Если азартные игры становятся проблемой в реальной жизни, помощь доступна: {LINK}</HH.Casino.HelpHint>
+  <HH.Casino.HelpHintTip>Нажмите, чтобы открыть линию помощи. Правый клик скрывает эту строку (её можно снова включить в настройках мода).</HH.Casino.HelpHintTip>
+  <HH.Casino.HideHint>Скрыть эту подсказку</HH.Casino.HideHint>
+  <HH.Casino.OpenHelpline>Открыть линию помощи</HH.Casino.OpenHelpline>
+  <HH.Casino.AddictionBrackets>стадия {0}, {1} из {2} дней без игр</HH.Casino.AddictionBrackets>
+  <HH.Casino.AddictionTip>Стадия зависимости {0}. Дней без единой игровой сессии: {1} из {2} нужных. Для спокойствия нужно около {3} сессий в день. Вылечить может только полное воздержание.</HH.Casino.AddictionTip>
+  <HH.Casino.AddictedTitle>{0}: игровая зависимость</HH.Casino.AddictedTitle>
+  <HH.Casino.AddictedText>{0} сыграл одной сессией больше, чем следовало, и теперь зависим от азартных игр. Без регулярной игры ломка будет давить на {PAWN_objective}: плохое настроение и, на глубоких стадиях, загулы в азартные игры. Серебро не потеряно — фишки были бесплатными, а вот время и нервы — нет.\n\nВылечить может только долгий перерыв без единой сессии. Изменить, что {PAWN_nameDef} может делать, можно в политике по наркотикам (строка «азартные игры»).</HH.Casino.AddictedText>
+  <HH.Casino.RelapseTitle>{0}: рецидив</HH.Casino.RelapseTitle>
+  <HH.Casino.RelapseText>{0} сел за столы в период тяги после излечения, и зависимость вернулась (на одну стадию ниже прежней). Нужен ещё один долгий перерыв без единой сессии.</HH.Casino.RelapseText>
+  <HH.Casino.CuredMessage>{0} избавился от привычки к азартным играм. Следующие {1} дней любая сессия грозит рецидивом.</HH.Casino.CuredMessage>
+  <HH.Casino.SpreeReason>ломка от азартных игр</HH.Casino.SpreeReason>
+  <HH.Casino.Counter>{0} из {1} сессий за 3 дня.</HH.Casino.Counter>
+  <HH.Casino.CounterNext>{0} из {1} сессий за 3 дня – следующая грозит зависимостью.</HH.Casino.CounterNext>
+  <HH.Casino.CounterRisk>{0} сессий за 3 дня – следующая несёт риск зависимости {1}.</HH.Casino.CounterRisk>
+  <HH.Casino.CounterAddicted>Зависимость. {0} сессий за последние 3 дня.</HH.Casino.CounterAddicted>
+</LanguageData>

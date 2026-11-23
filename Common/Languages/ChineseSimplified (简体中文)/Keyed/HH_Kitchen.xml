@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Kitchen.Missing>缺少：{0}</HH.Kitchen.Missing>
+  <HH.Kitchen.RecipeInfo>设备：{0}。步骤：{1}。</HH.Kitchen.RecipeInfo>
+  <HH.Kitchen.Finishing>一道收尾配料（牛奶、鸡蛋、巧克力、啤酒、浆果或蘑菇）</HH.Kitchen.Finishing>
+  <HH.Kitchen.Finishing2>第二道收尾配料（啤酒、浆果或蘑菇）</HH.Kitchen.Finishing2>
+  <HH.Kitchen.Inspiration>灵感：{0}</HH.Kitchen.Inspiration>
+  <HH.Kitchen.Cuisine>菜系：{0}</HH.Kitchen.Cuisine>
+  <HH.Kitchen.Cooked>烹饪地点：{0}（{1}）</HH.Kitchen.Cooked>
+  <HH.Kitchen.Made>原料：{0}</HH.Kitchen.Made>
+  <HH.Kitchen.Signature>招牌菜</HH.Kitchen.Signature>
+  <HH.Kitchen.Fine>精品菜</HH.Kitchen.Fine>
+  <HH.Kitchen.Everyday>家常菜</HH.Kitchen.Everyday>
+  <HH.Kitchen.Level>等级 {0}</HH.Kitchen.Level>
+  <HH.Kitchen.Stale>已变味：没有饱足加成，也没有心情加成。</HH.Kitchen.Stale>
+  <HH.Kitchen.FreshFor>保鲜 {0}</HH.Kitchen.FreshFor>
+  <HH.Kitchen.Stat.Well>饱足</HH.Kitchen.Stat.Well>
+  <HH.Kitchen.Stat.WellDesc>吃下这道菜后，饥饿下降得多慢，能持续多久。随烹饪等级和品质变化。</HH.Kitchen.Stat.WellDesc>
+  <HH.Kitchen.Stat.Mood>进食时心情</HH.Kitchen.Stat.Mood>
+  <HH.Kitchen.Stat.MoodDesc>正经菜肴带来的心情加成，随烹饪等级和品质变化（变味的菜没有加成）。</HH.Kitchen.Stat.MoodDesc>
+  <HH.Tab.Kitchen>食谱</HH.Tab.Kitchen>
+  <HH.Kitchen.Cookbook.Title>殖民地食谱</HH.Kitchen.Cookbook.Title>
+  <HH.Kitchen.Cookbook.Known>已掌握 {0}/{1} 道菜</HH.Kitchen.Cookbook.Known>
+  <HH.Kitchen.Cookbook.Unknown>???</HH.Kitchen.Cookbook.Unknown>
+  <HH.Kitchen.Cookbook.UnknownHint>尚未学会。研究 {0}，或者找一本食谱。</HH.Kitchen.Cookbook.UnknownHint>
+  <HH.Kitchen.Cookbook.Level>等级 {0}</HH.Kitchen.Cookbook.Level>
+  <HH.Kitchen.Cookbook.NoRecipe>没有配方：{0}</HH.Kitchen.Cookbook.NoRecipe>
+  <HH.Kitchen.Cookbook.Dark>已隐藏：黑暗菜单未开启。</HH.Kitchen.Cookbook.Dark>
+  <HH.Kitchen.Cookbook.Filter>仅显示已掌握</HH.Kitchen.Cookbook.Filter>
+  <HH.Kitchen.Cookbook.Search>搜索</HH.Kitchen.Cookbook.Search>
+  <HH.Kitchen.Station.PrepCounter>备料台</HH.Kitchen.Station.PrepCounter>
+  <HH.Kitchen.Station.StockPot>高汤锅</HH.Kitchen.Station.StockPot>
+  <HH.Kitchen.Station.Grill>烤架</HH.Kitchen.Station.Grill>
+  <HH.Kitchen.Station.Oven>烤箱</HH.Kitchen.Station.Oven>
+  <HH.Kitchen.Station.Wok>炒锅台</HH.Kitchen.Station.Wok>
+  <HH.Kitchen.Station.Fryer>油炸锅</HH.Kitchen.Station.Fryer>
+  <HH.Kitchen.Station.Smoker>烟熏炉</HH.Kitchen.Station.Smoker>
+  <HH.Kitchen.Station.Steamer>蒸笼</HH.Kitchen.Station.Steamer>
+  <HH.Kitchen.Station.DoughBench>揉面台</HH.Kitchen.Station.DoughBench>
+  <HH.Kitchen.Station.ColdStation>冷藏台</HH.Kitchen.Station.ColdStation>
+  <HH.Kitchen.Station.Campfire>篝火</HH.Kitchen.Station.Campfire>
+  <HH.Kitchen.Station.Stove>炉灶</HH.Kitchen.Station.Stove>
+  <HH.Kitchen.Station.ButcherTable>屠宰台</HH.Kitchen.Station.ButcherTable>
+  <HH.Kitchen.Step.Chop>切碎</HH.Kitchen.Step.Chop>
+  <HH.Kitchen.Step.Simmer>慢炖</HH.Kitchen.Step.Simmer>
+  <HH.Kitchen.Step.Boil>煮沸</HH.Kitchen.Step.Boil>
+  <HH.Kitchen.Step.Grill>烤</HH.Kitchen.Step.Grill>
+  <HH.Kitchen.Step.KneadDough>揉面</HH.Kitchen.Step.KneadDough>
+  <HH.Kitchen.Step.Smoke>烟熏</HH.Kitchen.Step.Smoke>
+  <HH.Kitchen.Step.Roast>烤制</HH.Kitchen.Step.Roast>
+  <HH.Kitchen.Step.StirFry>翻炒</HH.Kitchen.Step.StirFry>
+  <HH.Kitchen.Step.DeepFry>油炸</HH.Kitchen.Step.DeepFry>
+  <HH.Kitchen.Step.Steam>蒸</HH.Kitchen.Step.Steam>
+  <HH.Kitchen.Step.Chill>冷藏</HH.Kitchen.Step.Chill>
+  <HH.Kitchen.Step.Carve>切片</HH.Kitchen.Step.Carve>
+  <HH.Kitchen.Step.SpitRoast>串烤</HH.Kitchen.Step.SpitRoast>
+  <HH.Kitchen.Step.PanFry>煎</HH.Kitchen.Step.PanFry>
+  <HH.Kitchen.Step.Sear>煎封</HH.Kitchen.Step.Sear>
+  <HH.Kitchen.Cuisine.Frontier>乡野 / 边疆风味</HH.Kitchen.Cuisine.Frontier>
+  <HH.Kitchen.Cuisine.TribalFeast>部落盛宴</HH.Kitchen.Cuisine.TribalFeast>
+  <HH.Kitchen.Cuisine.TavernFare>酒馆美食</HH.Kitchen.Cuisine.TavernFare>
+  <HH.Kitchen.Cuisine.ImperialHaute>帝国高级料理</HH.Kitchen.Cuisine.ImperialHaute>
+  <HH.Kitchen.Cuisine.GlitterFusion>闪光融合菜</HH.Kitchen.Cuisine.GlitterFusion>
+  <HH.Kitchen.Cuisine.Street>街头小吃</HH.Kitchen.Cuisine.Street>
+  <HH.Kitchen.Cuisine.Seafood>海鲜</HH.Kitchen.Cuisine.Seafood>
+  <HH.Kitchen.Cuisine.Insect>昆虫料理</HH.Kitchen.Cuisine.Insect>
+  <HH.Kitchen.Cuisine.Fungal>菌类料理</HH.Kitchen.Cuisine.Fungal>
+  <HH.Kitchen.Cuisine.Vegetarian>素食</HH.Kitchen.Cuisine.Vegetarian>
+  <HH.Kitchen.Cuisine.Ascetic>苦修</HH.Kitchen.Cuisine.Ascetic>
+  <HH.Kitchen.Cuisine.LongPork>长猪肉</HH.Kitchen.Cuisine.LongPork>
+  <HH.Kitchen.Ingredient.meat>肉</HH.Kitchen.Ingredient.meat>
+  <HH.Kitchen.Ingredient.insectmeat>昆虫肉</HH.Kitchen.Ingredient.insectmeat>
+  <HH.Kitchen.Ingredient.humanmeat>人肉</HH.Kitchen.Ingredient.humanmeat>
+  <HH.Kitchen.Ingredient.twistedmeat>扭曲肉</HH.Kitchen.Ingredient.twistedmeat>
+  <HH.Kitchen.Ingredient.fish>鱼</HH.Kitchen.Ingredient.fish>
+  <HH.Kitchen.Ingredient.eggs>鸡蛋</HH.Kitchen.Ingredient.eggs>
+  <HH.Kitchen.Ingredient.milk>牛奶</HH.Kitchen.Ingredient.milk>
+  <HH.Kitchen.Ingredient.potatoes>土豆</HH.Kitchen.Ingredient.potatoes>
+  <HH.Kitchen.Ingredient.corn>玉米</HH.Kitchen.Ingredient.corn>
+  <HH.Kitchen.Ingredient.rice>大米</HH.Kitchen.Ingredient.rice>
+  <HH.Kitchen.Ingredient.berries>浆果</HH.Kitchen.Ingredient.berries>
+  <HH.Kitchen.Ingredient.agave>龙舌兰果</HH.Kitchen.Ingredient.agave>
+  <HH.Kitchen.Ingredient.mushrooms>蘑菇</HH.Kitchen.Ingredient.mushrooms>
+  <HH.Kitchen.Ingredient.chocolate>巧克力</HH.Kitchen.Ingredient.chocolate>
+  <HH.Kitchen.Ingredient.beer>啤酒</HH.Kitchen.Ingredient.beer>
+  <HH.Kitchen.Ingredient.hemogen>血原补充包</HH.Kitchen.Ingredient.hemogen>
+  <HH.Kitchen.Ingredient.cheese>奶酪</HH.Kitchen.Ingredient.cheese>
+  <HH.Kitchen.Ingredient.pumpkin>南瓜</HH.Kitchen.Ingredient.pumpkin>
+  <HH.Kitchen.Ingredient.flour>面粉</HH.Kitchen.Ingredient.flour>
+  <HH.Kitchen.Ingredient.fruit>水果</HH.Kitchen.Ingredient.fruit>
+  <HH.Kitchen.Ingredient.soysauce>酱油</HH.Kitchen.Ingredient.soysauce>
+  <HH.Kitchen.Ingredient.wasabi>芥末酱</HH.Kitchen.Ingredient.wasabi>
+  <HH.Kitchen.Ingredient.vegetables>蔬菜</HH.Kitchen.Ingredient.vegetables>
+  <HH.Kitchen.Ingredient.sugar>糖</HH.Kitchen.Ingredient.sugar>
+  <HH.Kitchen.Ingredient.gourmet>美食级食材</HH.Kitchen.Ingredient.gourmet>
+  <HH.Kitchen.Ingredient.herbs>香草</HH.Kitchen.Ingredient.herbs>
+  <HH.Kitchen.Ingredient.nuts>坚果</HH.Kitchen.Ingredient.nuts>
+  <HH.Kitchen.Ingredient.tealeaves>茶叶</HH.Kitchen.Ingredient.tealeaves>
+  <HH.Kitchen.Ingredient.strawflour>草面粉</HH.Kitchen.Ingredient.strawflour>
+  <HH.Kitchen.Ingredient.pricklypear>仙人掌果</HH.Kitchen.Ingredient.pricklypear>
+  <HH.Kitchen.Ingredient.greenfruit>青果</HH.Kitchen.Ingredient.greenfruit>
+  <HH.Setting.kitchen.shelfLife>菜品保鲜期</HH.Setting.kitchen.shelfLife>
+  <HH.Setting.kitchen.shelfLife.Desc>盘装菜品能保持新鲜多久，相对于每道菜 3 到 24 小时的基础值。变味的菜仍可食用，但不再提供饱足和心情加成。</HH.Setting.kitchen.shelfLife.Desc>
+  <HH.Setting.kitchen.wellFedStrength>饱足强度</HH.Setting.kitchen.wellFedStrength>
+  <HH.Setting.kitchen.wellFedStrength.Desc>正经菜肴之后饥饿下降的减缓程度（100% = 慢 40%）。</HH.Setting.kitchen.wellFedStrength.Desc>
+  <HH.Setting.kitchen.wellFedDuration>饱足持续时间</HH.Setting.kitchen.wellFedDuration>
+  <HH.Setting.kitchen.wellFedDuration.Desc>饱足状态持续多久，相对于按烹饪等级（及品质）计算的 4 / 6 / 8 / 10 小时。</HH.Setting.kitchen.wellFedDuration.Desc>
+  <HH.Setting.kitchen.menuPrice>菜单价格</HH.Setting.kitchen.menuPrice>
+  <HH.Setting.kitchen.menuPrice.Desc>餐厅为菜品开出的价格，相对于标准菜单（菜品等级、品质和形式）。</HH.Setting.kitchen.menuPrice.Desc>
+  <HH.Setting.kitchen.poisonRule>好厨房不会食物中毒</HH.Setting.kitchen.poisonRule>
+  <HH.Setting.kitchen.poisonRule.Desc>由烹饪 4 级及以上的厨师在干净厨房（清洁度 -0.2 或更好）做出的菜永远不会导致中毒。关闭则使用原版规则。</HH.Setting.kitchen.poisonRule.Desc>
+  <HH.Setting.kitchen.variants>精品与招牌形式</HH.Setting.kitchen.variants>
+  <HH.Setting.kitchen.variants.Desc>为每道菜提供精品形式（食材更多更好，更有机会做出好品质）和招牌形式（需要研究）。</HH.Setting.kitchen.variants.Desc>
+  <HH.Setting.kitchen.allKnown>已掌握全部菜品</HH.Setting.kitchen.allKnown>
+  <HH.Setting.kitchen.allKnown.Desc>跳过学习：菜单上的每道菜在设备就位后即可烹饪。</HH.Setting.kitchen.allKnown.Desc>
+  <HH.Setting.kitchen.darkMenu>黑暗菜单（长猪肉）</HH.Setting.kitchen.darkMenu>
+  <HH.Setting.kitchen.darkMenu.Desc>允许长猪肉菜品。信仰认可食人的意识形态也会解锁它们。</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Kitchen.Cookbook.Teaches>学会：{0}</HH.Kitchen.Cookbook.Teaches>
+  <HH.Kitchen.Cookbook.Empty>书页是空白的。</HH.Kitchen.Cookbook.Empty>
+  <HH.Kitchen.Cookbook.AllKnown>殖民地已经掌握这本书里的全部菜品。</HH.Kitchen.Cookbook.AllKnown>
+  <HH.Kitchen.Cookbook.CannotCook>无法烹饪。</HH.Kitchen.Cookbook.CannotCook>
+  <HH.Kitchen.Cookbook.Learned>{0} 研读了这本书。殖民地现在可以烹饪：{1}。</HH.Kitchen.Cookbook.Learned>
+  <HH.Kitchen.TestKitchen.Success>{0} 摸索出了如何烹饪{1}。殖民地会记住的。</HH.Kitchen.TestKitchen.Success>
+  <HH.Kitchen.TestKitchen.Failure>{0} 尝试烹饪{1}，做出了一盘糟糕的成品。下次再说吧。</HH.Kitchen.TestKitchen.Failure>
+  <HH.Kitchen.NoNeighbours>可及范围内没有其他厨房设备。</HH.Kitchen.NoNeighbours>
+  <HH.Kitchen.Neighbours>可及范围内：{0}</HH.Kitchen.Neighbours>
+  <HH.Kitchen.FreshHours>保鲜 {0} 小时</HH.Kitchen.FreshHours>
+</LanguageData>

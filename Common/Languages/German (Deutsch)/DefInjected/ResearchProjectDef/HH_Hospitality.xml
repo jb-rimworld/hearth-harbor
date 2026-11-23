@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Innkeeping.label>Gastwirtschaft</HH_Innkeeping.label>
+  <HH_Innkeeping.description>Zimmerklassen, Preisstufen, die Schenke, die Rezeption, der Anbindepfosten und die ersten bezahlten Gerichte. Alles, was ein Haus braucht, sobald die ersten Gäste eine zweite Nacht bleiben. Schaltet den Räucherofen, den Ofen, den Gästealtar und Lernstufe 2 der Küche frei.</HH_Innkeeping.description>
+  <HH_Gastronomy.label>Gastronomie</HH_Gastronomy.label>
+  <HH_Gastronomy.description>Speisekarten, Kellner, Küchenstile und ein richtiger Speisesaal. Schaltet den Dampfgarer, die Wok-Station, die kalte Küche und Lernstufe 3 der Küche frei.</HH_Gastronomy.description>
+  <HH_HotelManagement.label>Hotelmanagement</HH_HotelManagement.label>
+  <HH_HotelManagement.description>Buchungsterminals, Ankunftsprognosen, Schichten und die Fritteuse. Der Unterschied zwischen einem Gasthaus und einem Hotel: Ein Hotel weiß, wer kommt.</HH_HotelManagement.description>
+  <HH_FineDining.label>gehobene Küche</HH_FineDining.label>
+  <HH_FineDining.description>Leinen, Sommeliers und Kritiker. Lernstufe 4 der Küche: die Signaturform jedes Gerichts.</HH_FineDining.description>
+</LanguageData>

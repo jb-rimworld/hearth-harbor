@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Insurance.label>pojištění</SL_Insurance.label>
+  <SL_Insurance.description>Pojistka na každé neštěstí, prodávaná vzájemnou pojišťovnou, která ještě nikdy neprohrála hádku. Odemyká pojišťovnu a pojistky základních úrovní krytí „Bare Minimum“ a „Good Enough“.</SL_Insurance.description>
+  <SL_Actuarial.label>aktuárská věda</SL_Actuarial.label>
+  <SL_Actuarial.description>Tabulky toho, jak pravděpodobné je, že se všechno pokazí, a co to stojí. Odemyká nejvyšší úroveň krytí „Premium of Premium“, pojistky Premium a služby vzájemné pojišťovny.</SL_Actuarial.description>
+</LanguageData>

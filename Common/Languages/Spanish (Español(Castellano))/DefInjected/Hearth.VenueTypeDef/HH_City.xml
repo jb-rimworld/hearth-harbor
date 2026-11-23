@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Cinema.label>cine</HH_Venue_Cinema.label>
+  <HH_Venue_Cinema.description>Una sala oscura con una pantalla de proyector y muchas sillas. Los visitantes compran una entrada para la próxima proyección; una proyección dura lo que la película y nadie recibe reembolso por quedarse dormido. Necesita una pantalla de proyector con energía y al menos unos cuantos asientos delante.</HH_Venue_Cinema.description>
+  <HH_Venue_Salon.label>salón de belleza</HH_Venue_Salon.label>
+  <HH_Venue_Salon.description>Una sala con sillas de salón. Los visitantes pagan por un corte de pelo, un peinado nuevo, un tinte o, con la ideología adecuada, un tatuaje; un colono con el trabajo de atender se encarga. Sin nadie que atienda, el salón está cerrado.</HH_Venue_Salon.description>
+  <HH_Venue_Gallery.label>galería</HH_Venue_Gallery.label>
+  <HH_Venue_Gallery.description>Una sala llena de esculturas, colgadas con buena luz. Los visitantes pagan una pequeña entrada y pasan junto a las piezas una a una; cuanto más bello el arte, más contentos se marchan. Necesita un puñado de obras de arte en la sala.</HH_Venue_Gallery.description>
+</LanguageData>

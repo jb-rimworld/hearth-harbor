@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Innkeeping.label>여관 경영</HH_Innkeeping.label>
+  <HH_Innkeeping.description>객실 등급, 가격대, 선술집, 프런트, 말 매는 기둥, 그리고 첫 유료 요리. 첫 손님이 이틀째 묵기 시작하면 집에 필요한 모든 것입니다. 훈연기, 오븐, 손님 제단을 해금하고 주방 2단계 학습을 열어 줍니다.</HH_Innkeeping.description>
+  <HH_Gastronomy.label>미식학</HH_Gastronomy.label>
+  <HH_Gastronomy.description>메뉴, 웨이터, 주방 양식, 제대로 된 식당 홀. 찜기, 웍 스테이션, 냉채 스테이션을 해금하고 주방 3단계 학습을 열어 줍니다.</HH_Gastronomy.description>
+  <HH_HotelManagement.label>호텔 경영</HH_HotelManagement.label>
+  <HH_HotelManagement.description>예약 단말기, 도착 예측, 교대 근무, 튀김기. 여관과 호텔의 차이는, 호텔은 누가 올지 안다는 것입니다.</HH_HotelManagement.description>
+  <HH_FineDining.label>파인 다이닝</HH_FineDining.label>
+  <HH_FineDining.description>리넨, 소믈리에, 평론가. 주방 4단계 학습입니다. 모든 요리의 시그니처 형태를 배웁니다.</HH_FineDining.description>
+</LanguageData>

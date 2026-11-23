@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Finances.stages.0.label>hundido en deudas</SL_Finances.stages.0.label>
+  <SL_Finances.stages.0.description>Debemos más de lo que vale la colonia. El correo huele a cartas vencidas.</SL_Finances.stages.0.description>
+  <SL_Finances.stages.1.label>sin blanca</SL_Finances.stages.1.label>
+  <SL_Finances.stages.1.description>La cuenta está vacía. Hasta el cajero automático nos mira con lástima.</SL_Finances.stages.1.description>
+  <SL_Finances.stages.2.label>llegando a fin de mes</SL_Finances.stages.2.label>
+  <SL_Finances.stages.2.description>Tenemos algo en el banco. Muy poco. Nadie lo dice en voz alta.</SL_Finances.stages.2.description>
+  <SL_Finances.stages.3.label>tirando</SL_Finances.stages.3.label>
+  <SL_Finances.stages.3.description>Ni ricos ni pobres.</SL_Finances.stages.3.description>
+  <SL_Finances.stages.4.label>desahogados</SL_Finances.stages.4.label>
+  <SL_Finances.stages.4.description>Desahogados, y sin preocuparnos por ello.</SL_Finances.stages.4.description>
+  <SL_Finances.stages.5.label>ahorros</SL_Finances.stages.5.label>
+  <SL_Finances.stages.5.description>Tenemos ahorros. Es una sensación extraña y cálida.</SL_Finances.stages.5.description>
+  <SL_Finances.stages.6.label>ricos</SL_Finances.stages.6.label>
+  <SL_Finances.stages.6.description>Somos ricos. Aunque nadie lo menciona en la cena.</SL_Finances.stages.6.description>
+  <SL_Finances.stages.7.label>forrados</SL_Finances.stages.7.label>
+  <SL_Finances.stages.7.description>La colonia está forrada. Hemos empezado a comprar cosas que no necesitamos.</SL_Finances.stages.7.description>
+  <SL_Finances.stages.8.label>demasiado grandes para caer</SL_Finances.stages.8.label>
+  <SL_Finances.stages.8.description>Somos demasiado grandes para caer. Alguien tiene que decirlo y bien podríamos ser nosotros.</SL_Finances.stages.8.description>
+  <SL_FinancesGreedy.stages.0.label>hundido en deudas</SL_FinancesGreedy.stages.0.label>
+  <SL_FinancesGreedy.stages.0.description>¡Deuda! Siento cada moneda de plata que no tenemos.</SL_FinancesGreedy.stages.0.description>
+  <SL_FinancesGreedy.stages.1.label>sin blanca</SL_FinancesGreedy.stages.1.label>
+  <SL_FinancesGreedy.stages.1.description>Sin blanca. No me volví codicioso para acabar sin blanca.</SL_FinancesGreedy.stages.1.description>
+  <SL_FinancesGreedy.stages.2.label>llegando a fin de mes</SL_FinancesGreedy.stages.2.label>
+  <SL_FinancesGreedy.stages.2.description>Casi nada en la cuenta. La miro cada hora.</SL_FinancesGreedy.stages.2.description>
+  <SL_FinancesGreedy.stages.3.label>tirando</SL_FinancesGreedy.stages.3.label>
+  <SL_FinancesGreedy.stages.3.description>Bien. Pero podría ser más.</SL_FinancesGreedy.stages.3.description>
+  <SL_FinancesGreedy.stages.4.label>desahogados</SL_FinancesGreedy.stages.4.label>
+  <SL_FinancesGreedy.stages.4.description>Desahogados. Pero podría ser más.</SL_FinancesGreedy.stages.4.description>
+  <SL_FinancesGreedy.stages.5.label>ahorros</SL_FinancesGreedy.stages.5.label>
+  <SL_FinancesGreedy.stages.5.description>Ahorros, en una bóveda, con mi nombre al lado. Precioso.</SL_FinancesGreedy.stages.5.description>
+  <SL_FinancesGreedy.stages.6.label>ricos</SL_FinancesGreedy.stages.6.label>
+  <SL_FinancesGreedy.stages.6.description>¡Ricos! No voy a dejar de contar.</SL_FinancesGreedy.stages.6.description>
+  <SL_FinancesGreedy.stages.7.label>forrados</SL_FinancesGreedy.stages.7.label>
+  <SL_FinancesGreedy.stages.7.description>Forrados. Para esto nací.</SL_FinancesGreedy.stages.7.description>
+  <SL_FinancesGreedy.stages.8.label>demasiado grandes para caer</SL_FinancesGreedy.stages.8.label>
+  <SL_FinancesGreedy.stages.8.description>Demasiado grande para caer. Enmárquenme el balance.</SL_FinancesGreedy.stages.8.description>
+  <SL_CollectorsNearby.stages.0.label>cobradores merodeando</SL_CollectorsNearby.stages.0.label>
+  <SL_CollectorsNearby.stages.0.description>Dos hombres con sombrero de bombín están junto a la puerta. Son muy educados al respecto.</SL_CollectorsNearby.stages.0.description>
+</LanguageData>

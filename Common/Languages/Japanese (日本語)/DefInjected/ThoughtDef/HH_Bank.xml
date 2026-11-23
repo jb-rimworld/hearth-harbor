@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Finances.stages.0.label>借金まみれ</SL_Finances.stages.0.label>
+  <SL_Finances.stages.0.description>入植地の価値以上に借りがある。郵便受けからは督促状の匂いがする。</SL_Finances.stages.0.description>
+  <SL_Finances.stages.1.label>一文無し</SL_Finances.stages.1.label>
+  <SL_Finances.stages.1.description>口座は空っぽだ。ATMさえ同情の目でこちらを見る。</SL_Finances.stages.1.description>
+  <SL_Finances.stages.2.label>その日暮らし</SL_Finances.stages.2.label>
+  <SL_Finances.stages.2.description>銀行に少しはある。ほんのわずかだ。誰もそれを口にしない。</SL_Finances.stages.2.description>
+  <SL_Finances.stages.3.label>なんとかやっていける</SL_Finances.stages.3.label>
+  <SL_Finances.stages.3.description>金持ちでも貧乏でもない。</SL_Finances.stages.3.description>
+  <SL_Finances.stages.4.label>ゆとりあり</SL_Finances.stages.4.label>
+  <SL_Finances.stages.4.description>ゆとりがあり、そのことで悩んでもいない。</SL_Finances.stages.4.description>
+  <SL_Finances.stages.5.label>貯金</SL_Finances.stages.5.label>
+  <SL_Finances.stages.5.description>貯金がある。温かく、少し妙な感覚だ。</SL_Finances.stages.5.description>
+  <SL_Finances.stages.6.label>金持ち</SL_Finances.stages.6.label>
+  <SL_Finances.stages.6.description>金持ちだ。夕食の席で誰もそれを口にはしないけれど。</SL_Finances.stages.6.description>
+  <SL_Finances.stages.7.label>成金</SL_Finances.stages.7.label>
+  <SL_Finances.stages.7.description>入植地は成金だ。要らないものを買い始めている。</SL_Finances.stages.7.description>
+  <SL_Finances.stages.8.label>潰すには大きすぎる</SL_Finances.stages.8.label>
+  <SL_Finances.stages.8.description>潰すには大きすぎる。誰かが言わねばならず、それならわたしたちでいい。</SL_Finances.stages.8.description>
+  <SL_FinancesGreedy.stages.0.label>借金まみれ</SL_FinancesGreedy.stages.0.label>
+  <SL_FinancesGreedy.stages.0.description>借金。借金だ！ 持っていないすべての銀貨が肌で感じられる。</SL_FinancesGreedy.stages.0.description>
+  <SL_FinancesGreedy.stages.1.label>一文無し</SL_FinancesGreedy.stages.1.label>
+  <SL_FinancesGreedy.stages.1.description>一文無しだ。強欲になったのは、一文無しになるためではなかった。</SL_FinancesGreedy.stages.1.description>
+  <SL_FinancesGreedy.stages.2.label>その日暮らし</SL_FinancesGreedy.stages.2.label>
+  <SL_FinancesGreedy.stages.2.description>口座にはほとんど何もない。一時間おきに確認している。</SL_FinancesGreedy.stages.2.description>
+  <SL_FinancesGreedy.stages.3.label>なんとかやっていける</SL_FinancesGreedy.stages.3.label>
+  <SL_FinancesGreedy.stages.3.description>まあまあだ。でも、もっと増えてもいいはず。</SL_FinancesGreedy.stages.3.description>
+  <SL_FinancesGreedy.stages.4.label>ゆとりあり</SL_FinancesGreedy.stages.4.label>
+  <SL_FinancesGreedy.stages.4.description>ゆとりはある。でも、もっと増えてもいいはず。</SL_FinancesGreedy.stages.4.description>
+  <SL_FinancesGreedy.stages.5.label>貯金</SL_FinancesGreedy.stages.5.label>
+  <SL_FinancesGreedy.stages.5.description>貯金は金庫の中に、わたしの名前の近くに。素敵だ。</SL_FinancesGreedy.stages.5.description>
+  <SL_FinancesGreedy.stages.6.label>金持ち</SL_FinancesGreedy.stages.6.label>
+  <SL_FinancesGreedy.stages.6.description>金持ちだ！ 数えるのをやめられない。</SL_FinancesGreedy.stages.6.description>
+  <SL_FinancesGreedy.stages.7.label>成金</SL_FinancesGreedy.stages.7.label>
+  <SL_FinancesGreedy.stages.7.description>成金だ。このために生まれてきたのだ。</SL_FinancesGreedy.stages.7.description>
+  <SL_FinancesGreedy.stages.8.label>潰すには大きすぎる</SL_FinancesGreedy.stages.8.label>
+  <SL_FinancesGreedy.stages.8.description>潰すには大きすぎる。貸借対照表を額装しよう。</SL_FinancesGreedy.stages.8.description>
+  <SL_CollectorsNearby.stages.0.label>取り立て屋がうろついている</SL_CollectorsNearby.stages.0.label>
+  <SL_CollectorsNearby.stages.0.description>山高帽の男が二人、入口の近くに立っている。とても丁寧な態度だ。</SL_CollectorsNearby.stages.0.description>
+</LanguageData>

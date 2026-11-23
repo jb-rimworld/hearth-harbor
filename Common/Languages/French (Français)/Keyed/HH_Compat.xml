@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Compat.DialogTitle>Hospitality est actif en parallèle de Hearth &amp; Harbor. Le désactiver pour vous ?</HH.Compat.DialogTitle>
+  <HH.Compat.DialogBody>Hearth &amp; Harbor remplace Hospitality et ses extensions. Tant que les deux sont actifs, Hearth &amp; Harbor a désactivé Hospitality pour cette session : ses correctifs, événements, bâtiments et onglet d'invités ne font rien. Vos lits et zones d'invités Hospitality sont conservés et repris lorsque Hospitality disparaît.</HH.Compat.DialogBody>
+  <HH.Compat.DialogListHeader>Ces mods seront désactivés :</HH.Compat.DialogListHeader>
+  <HH.Compat.DialogMentionHeader>Ces mods d'invités restent tels quels ; leurs visiteurs leur appartiennent toujours :</HH.Compat.DialogMentionHeader>
+  <HH.Compat.DialogFailed>La liste des mods n'a pas pu être modifiée automatiquement ({0}). Veuillez le faire à la main :</HH.Compat.DialogFailed>
+  <HH.Compat.DialogStep1>1. Menu principal → Mods</HH.Compat.DialogStep1>
+  <HH.Compat.DialogStep2>2. Décochez les mods listés ci-dessus</HH.Compat.DialogStep2>
+  <HH.Compat.DialogStep3>3. Enregistrez la liste des mods et redémarrez le jeu</HH.Compat.DialogStep3>
+  <HH.Compat.Yes>Oui, désactiver et redémarrer</HH.Compat.Yes>
+  <HH.Compat.OpenMods>Ouvrir la liste des mods</HH.Compat.OpenMods>
+  <HH.Compat.Later>Plus tard</HH.Compat.Later>
+  <HH.Compat.Never>Ne plus demander</HH.Compat.Never>
+  <HH.Compat.ImportLetterTitle>Importé depuis Hospitality</HH.Compat.ImportLetterTitle>
+  <HH.Compat.ImportLetterText>Cette colonie a été jouée avec Hospitality. Hearth &amp; Harbor a repris ce qu'il pouvait.\n\nImporté : {0}.\nAbandonné : {1}.\n\nLes lits d'invités importés redeviennent des lits normaux et sont mémorisés comme lits d'invités ; la partie invités de Hearth &amp; Harbor les reprend. Rien d'autre dans votre colonie n'a changé.</HH.Compat.ImportLetterText>
+  <HH.Compat.ImportNothing>rien</HH.Compat.ImportNothing>
+  <HH.Setting.compat.hospitalityNeverAsk>Ne pas proposer de désactiver Hospitality</HH.Setting.compat.hospitalityNeverAsk>
+  <HH.Setting.compat.hospitalityNeverAsk.Desc>Quand Hospitality tourne en parallèle de Hearth &amp; Harbor, Hearth &amp; Harbor le désactive pour la session et propose de le désactiver dans le menu principal. Activé : plus aucune proposition (la désactivation pour la session a tout de même lieu).</HH.Setting.compat.hospitalityNeverAsk.Desc>
+  <HH.Setting.compat.importLetter>Lettre après l'importation d'une sauvegarde Hospitality</HH.Setting.compat.importLetter>
+  <HH.Setting.compat.importLetter.Desc>Après le chargement d'une sauvegarde jouée avec Hospitality, une lettre indique ce que Hearth &amp; Harbor a repris (lits d'invités, zones, visiteurs) et ce qui a été abandonné.</HH.Setting.compat.importLetter.Desc>
+</LanguageData>

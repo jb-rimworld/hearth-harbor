@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Banking.label>自動預け払い機</SL_Banking.label>
+  <SL_Banking.description>正しい4桁の番号を打ち込んだ者に銀貨を渡す機械。ATMと夜間金庫を解禁する。</SL_Banking.description>
+  <SL_Branches.label>銀行支店</SL_Branches.label>
+  <SL_Branches.description>本格的な窓口、本格的な金庫、本格的な行列。銀行窓口を解禁する：即時預金、即時現金、対面でのローン申込み。</SL_Branches.description>
+  <SL_Credit.label>消費者信用</SL_Credit.label>
+  <SL_Credit.description>持っていない金を、持っていない人のために。ローン、信用スコア、そしてそれでも必要なら取り立て会社を解禁する。</SL_Credit.description>
+</LanguageData>

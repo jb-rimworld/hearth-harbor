@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchedMovie.stages.0.label>영화를 보았다</HH_WatchedMovie.stages.0.label>
+  <HH_WatchedMovie.stages.0.description>어둠 속에서 바삭한 간식을 들고, 나보다 더 나은 고민을 가진 사람들이 나오는 영화를 봤다.</HH_WatchedMovie.stages.0.description>
+  <HH_ScreeningAttended.stages.0.label>영화의 밤</HH_ScreeningAttended.stages.0.label>
+  <HH_ScreeningAttended.stages.0.description>방 한쪽에는 모두가, 반대쪽에는 화면이 있었다. 좋은 저녁이었다.</HH_ScreeningAttended.stages.0.description>
+  <HH_FreshLook.stages.0.label>새 단장</HH_FreshLook.stages.0.label>
+  <HH_FreshLook.stages.0.description>새 머리. 사람은 그대로인데, 거울은 동의하지 않는다.</HH_FreshLook.stages.0.description>
+  <HH_AdmiredArt.stages.0.label>예술 작품을 감상했다</HH_AdmiredArt.stages.0.label>
+  <HH_AdmiredArt.stages.0.description>누군가 손으로 만든 것이다. 한동안 그 앞에 서 있었고, 그게 싫지 않았다.</HH_AdmiredArt.stages.0.description>
+  <HH_ParkRested.stages.0.label>탁 트인 곳에서 쉬었다</HH_ParkRested.stages.0.label>
+  <HH_ParkRested.stages.0.description>벤치, 바람, 풍경. 대단하진 않지만 충분했다.</HH_ParkRested.stages.0.description>
+</LanguageData>

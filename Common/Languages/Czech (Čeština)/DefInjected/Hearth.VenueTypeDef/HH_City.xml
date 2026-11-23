@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Cinema.label>kino</HH_Venue_Cinema.label>
+  <HH_Venue_Cinema.description>Tmavá místnost s projekčním plátnem a spoustou židlí. Hosté si koupí lístek na nejbližší promítání; promítání trvá tak dlouho, jak dlouho film, a nikdo nedostane peníze zpět za usnutí. Potřebuje napájené projekční plátno a alespoň pár sedadel před ním.</HH_Venue_Cinema.description>
+  <HH_Venue_Salon.label>kadeřnictví</HH_Venue_Salon.label>
+  <HH_Venue_Salon.description>Místnost s kadeřnickými křesly. Hosté platí za střih, nový účes, barvení nebo, se správnou ideologií, tetování; práci dělá kolonista s pracovním typem obsluhy. Bez někoho, kdo obsluhuje, je salon zavřený.</HH_Venue_Salon.description>
+  <HH_Venue_Gallery.label>galerie</HH_Venue_Gallery.label>
+  <HH_Venue_Gallery.description>Místnost plná soch, pověšených v dobrém světle. Hosté zaplatí malé vstupné a procházejí kolem exponátů jeden po druhém; čím krásnější umění, tím spokojenější odcházejí. Potřebuje hrstku uměleckých děl v místnosti.</HH_Venue_Gallery.description>
+</LanguageData>

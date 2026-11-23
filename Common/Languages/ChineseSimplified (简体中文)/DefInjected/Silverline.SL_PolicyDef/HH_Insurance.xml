@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ActsOfStoryteller.label>排除叙事者行为</SL_ActsOfStoryteller.label>
+  <SL_ActsOfStoryteller.description>赔付因袭击者、机械族以及偶尔的攻城器误会而被毁的建筑。不适用于火灾、天气或你本人。</SL_ActsOfStoryteller.description>
+  <SL_ActsOfStoryteller.slogan>我们替你兜着。*</SL_ActsOfStoryteller.slogan>
+  <SL_MuffaloMachine.label>穆法洛与机械保险</SL_MuffaloMachine.label>
+  <SL_MuffaloMachine.description>适用于能移动或飞行的东西：穿梭机、空投舱及被敌人摧毁的载具。</SL_MuffaloMachine.description>
+  <SL_MuffaloMachine.slogan>车轮、旋翼，还有一份非常周全的表格。</SL_MuffaloMachine.slogan>
+  <SL_RoofOverHead.label>头顶有片瓦</SL_RoofOverHead.label>
+  <SL_RoofOverHead.description>火灾、爆炸和雷击。不过，火必须是别人放的。</SL_RoofOverHead.description>
+  <SL_RoofOverHead.slogan>温暖的墙，冷冰冰的安慰，按季度缴费。</SL_RoofOverHead.slogan>
+  <SL_ItWasntMe.label>不是我责任险</SL_ItWasntMe.label>
+  <SL_ItWasntMe.description>对你照看期间造成的客人、商贩及其货物的损害，且绝对不是你造成的。</SL_ItWasntMe.description>
+  <SL_ItWasntMe.slogan>总得有人付钱。最好是我们，收点手续费。</SL_ItWasntMe.slogan>
+  <SL_LegalShield.label>法律护盾</SL_LegalShield.label>
+  <SL_LegalShield.description>Kanzlei Brix &amp; Partners 律师事务所为你支付罚款，并与开罚单的人争辩。对 Clawback Mutual 也有帮助，只要没人读第40条。</SL_LegalShield.description>
+  <SL_LegalShield.slogan>Brix &amp; Partners：职业道德随叫随到。</SL_LegalShield.slogan>
+  <SL_RimHealth.label>边缘星健康计划</SL_RimHealth.label>
+  <SL_RimHealth.description>为每位在病床上躺过一天的殖民者提供一笔固定金额。</SL_RimHealth.description>
+  <SL_RimHealth.slogan>早日康复。或者至少按季度康复。</SL_RimHealth.slogan>
+  <SL_GoldenYears.label>金色岁月计划</SL_GoldenYears.label>
+  <SL_GoldenYears.description>为活到六十岁的殖民者提供养老金。保费在他们年轻时很便宜，这正是重点。</SL_GoldenYears.description>
+  <SL_GoldenYears.slogan>早早退休，然后晚点退休，然后按季度退休。</SL_GoldenYears.slogan>
+  <SL_BlightBeGone.label>病害退散</SL_BlightBeGone.label>
+  <SL_BlightBeGone.description>寒潮和有毒沉降物会侵蚀农作物。这份保险侵蚀的是损失。</SL_BlightBeGone.description>
+  <SL_BlightBeGone.slogan>收获的正是我们赔付的。</SL_BlightBeGone.slogan>
+  <SL_ClosedForRepairs.label>维修停业</SL_ClosedForRepairs.label>
+  <SL_ClosedForRepairs.description>当你的生意不得不停业时，收入并不停。</SL_ClosedForRepairs.description>
+  <SL_ClosedForRepairs.slogan>停用不等于停缴保费。</SL_ClosedForRepairs.slogan>
+  <SL_UnspeakableEvents.label>无法言说事件附加条款</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>针对保单措辞若没有律师在场便无法描述的损害。</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>有些事，宁可投保也不宜点名。</SL_UnspeakableEvents.slogan>
+  <SL_Wanderlust.label>漫游者旅行保险</SL_Wanderlust.label>
+  <SL_Wanderlust.description>为商队提供：你不在时依然在场的保险。按人头及旅行日计费，只在人们上路时生效。</SL_Wanderlust.description>
+  <SL_Wanderlust.slogan>想念你。我们会承保你不在的那部分。</SL_Wanderlust.slogan>
+  <SL_LimbByLimb.label>逐肢意外计划</SL_LimbByLimb.label>
+  <SL_LimbByLimb.description>每一肢都有价格。我们把它写下来了，就在最后一页的肢体赔付表中。</SL_LimbByLimb.description>
+  <SL_LimbByLimb.slogan>每一肢都有价格。我们把它写下来了。</SL_LimbByLimb.slogan>
+</LanguageData>

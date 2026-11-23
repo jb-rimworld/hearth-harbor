@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingWithdrawal.stages.0.label>abstinência do jogo (leve)</HH_GamblingWithdrawal.stages.0.label>
+  <HH_GamblingWithdrawal.stages.0.description>Não paro de pensar nas mesas. Uma partida não faria mal.</HH_GamblingWithdrawal.stages.0.description>
+  <HH_GamblingWithdrawal.stages.1.label>abstinência do jogo (moderada)</HH_GamblingWithdrawal.stages.1.label>
+  <HH_GamblingWithdrawal.stages.1.description>Não consigo me concentrar. Preciso jogar.</HH_GamblingWithdrawal.stages.1.description>
+  <HH_GamblingWithdrawal.stages.2.label>abstinência do jogo (forte)</HH_GamblingWithdrawal.stages.2.label>
+  <HH_GamblingWithdrawal.stages.2.description>Tudo está cinza, exceto a roleta.</HH_GamblingWithdrawal.stages.2.description>
+  <HH_GamblingWithdrawal.stages.3.label>abstinência do jogo (severa)</HH_GamblingWithdrawal.stages.3.label>
+  <HH_GamblingWithdrawal.stages.3.description>Minhas mãos tremem. Alguém precisa ter um baralho.</HH_GamblingWithdrawal.stages.3.description>
+  <HH_GamblingWithdrawal.stages.4.label>abstinência do jogo (extrema)</HH_GamblingWithdrawal.stages.4.label>
+  <HH_GamblingWithdrawal.stages.4.description>Nada mais importa.</HH_GamblingWithdrawal.stages.4.description>
+  <HH_WonAtTheTables.stages.0.label>ganhou nas mesas</HH_WonAtTheTables.stages.0.label>
+  <HH_WonAtTheTables.stages.0.description>As fichas caíram para mim. Dessa vez.</HH_WonAtTheTables.stages.0.description>
+  <HH_LostAtTheTables.stages.0.label>perdeu tudo nas mesas</HH_LostAtTheTables.stages.0.label>
+  <HH_LostAtTheTables.stages.0.description>Cada ficha, perdida. Eram de graça, e mesmo assim dói.</HH_LostAtTheTables.stages.0.description>
+</LanguageData>

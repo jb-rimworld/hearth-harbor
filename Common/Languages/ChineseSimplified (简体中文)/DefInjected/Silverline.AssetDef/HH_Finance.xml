@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_Mattress.label>床垫存款 Plus</SL_Asset_Mattress.label>
+  <SL_Asset_Mattress.description>一种储蓄账户。钱藏在一张非常安全的床垫里，会缓慢增值一点点。银行挤兑时，取款会被锁定两天。</SL_Asset_Mattress.description>
+  <SL_Asset_OutlanderBond.label>外乡人联盟基础设施债券</SL_Asset_OutlanderBond.label>
+  <SL_Asset_OutlanderBond.description>向一个外乡人城镇联盟发放的贷款，该联盟正在修建道路、水井，以及一座有争议的桥。按时付息，直到不再付息为止。违约后大约能收回三分之一。</SL_Asset_OutlanderBond.description>
+  <SL_Asset_EmpireWarBond.label>帝国战争债券</SL_Asset_EmpireWarBond.label>
+  <SL_Asset_EmpireWarBond.description>为帝国某场战争融资的债券。战争以胜利告终时它们会暴涨，战败时则只值一个漂亮的相框。这场战争已经打了很久，主要存在于宣传册里。</SL_Asset_EmpireWarBond.description>
+  <SL_Asset_Index.label>RimIndex 50</SL_Asset_Index.label>
+  <SL_Asset_Index.description>环世界最大的五十家公司，装进一个产品里。是本页其他一切的参照：收益滑块以它的平均收益来定义。</SL_Asset_Index.description>
+  <SL_Asset_StockMicaton.label>MCTN，米卡顿联盟</SL_Asset_StockMicaton.label>
+  <SL_Asset_StockMicaton.description>一个外乡人城镇联盟的股票。季度数据会推动股价；与联盟的关系也会有些影响。它不派发股息，但会寄来一份非常漂亮的日历。</SL_Asset_StockMicaton.description>
+  <SL_Asset_StockTribal.label>HIDE，兽皮与炉火合作社</SL_Asset_StockTribal.label>
+  <SL_Asset_StockTribal.description>一家部落合作社的股票，该社出售兽皮、炉火用柴，以及数量惊人的待客之道。高度依赖天气，以及一位非常庞大的叔叔的心情。</SL_Asset_StockTribal.description>
+  <SL_Asset_StockEmpire.label>IMPR，帝国典礼有限公司</SL_Asset_StockEmpire.label>
+  <SL_Asset_StockEmpire.description>帝国典礼背后的公司：旗帜、号角和小小的王冠。利润取决于有多少贵族会因得到的太少而感到冒犯。</SL_Asset_StockEmpire.description>
+  <SL_Asset_StockColony.label>HHH，炉火港控股</SL_Asset_StockColony.label>
+  <SL_Asset_StockColony.description>一家只持有一样东西的控股公司：你的殖民地是一个目的地这一理念。它对你的财富以及你挺过的袭击有所反应。你的成功与它有利害关系，读到这段话的每个人也一样。</SL_Asset_StockColony.description>
+  <SL_Asset_GrowthFund.label>辉光世界增长基金</SL_Asset_GrowthFund.label>
+  <SL_Asset_GrowthFund.description>一只主动管理型基金。经理们有一份非常令人印象深刻的宣传册，还有一条船。平均而言，他们的能力略为负值，而且这一点在基金成立时就已确定。</SL_Asset_GrowthFund.description>
+  <SL_Asset_PietyBonds.label>虔诚债券</SL_Asset_PietyBonds.label>
+  <SL_Asset_PietyBonds.description>由十七种信仰的捐款作担保的债券，每一种都确信其他十六种做错了。稳健、庄重，还带着一丝极轻微的自满。</SL_Asset_PietyBonds.description>
+  <SL_Asset_RelicFutures.label>圣物期货</SL_Asset_RelicFutures.label>
+  <SL_Asset_RelicFutures.description>针对可能存在也可能不存在的圣物的期货，由一名可能是先知也可能不是的信使送达。合同已经过祝福。</SL_Asset_RelicFutures.description>
+  <SL_Asset_RimCoin.label>RimCoin</SL_Asset_RimCoin.label>
+  <SL_Asset_RimCoin.description>一种完全由电力和信念构成的数字货币。每天波动数个百分点，时不时出现没人能解释的跳动，并且在一家曾遭黑客入侵的交易所交易。而且还会再次被入侵。</SL_Asset_RimCoin.description>
+  <SL_Asset_MemeThrumbo.label>$THRUMBO</SL_Asset_MemeThrumbo.label>
+  <SL_Asset_MemeThrumbo.description>一种以稀有兽类 thrumbo 命名、同样只有这么多价值支撑的币。白皮书是一张 thrumbo 的画。根据那张画，创始人本人就是一只 thrumbo。</SL_Asset_MemeThrumbo.description>
+  <SL_Asset_MemeBoomalope.label>Boomalope 币</SL_Asset_MemeBoomalope.label>
+  <SL_Asset_MemeBoomalope.description>一种价值会爆炸式增长的币。偶尔也会干脆爆炸。在那些喜欢烧钱气味的人中很受欢迎。</SL_Asset_MemeBoomalope.description>
+  <SL_Asset_MemeMuffalo.label>MUFFALO MOON</SL_Asset_MemeMuffalo.label>
+  <SL_Asset_MemeMuffalo.description>所有只爱 muffalo、别无所爱的人的社区币。它的路线图是一张 muffalo 望着月亮的画。路线图从未改变。</SL_Asset_MemeMuffalo.description>
+  <SL_Asset_NftThrumbos.label>不可替代的 Thrumbo</SL_Asset_NftThrumbos.label>
+  <SL_Asset_NftThrumbos.description>一批 thrumbo 图片的收藏，每张都独一无二，又都有点像其他的。你拥有的是一张图片的图片的收据。买家慢慢现身，并且想要折扣。</SL_Asset_NftThrumbos.description>
+  <SL_Asset_NftMuffalo.label>所有权证书：一张 muffalo 图片</SL_Asset_NftMuffalo.label>
+  <SL_Asset_NftMuffalo.description>一张 muffalo 图片的所有权证书。图片存放在某处，证书存放在你的账户里。两者都没有 muffalo 的气味。</SL_Asset_NftMuffalo.description>
+</LanguageData>

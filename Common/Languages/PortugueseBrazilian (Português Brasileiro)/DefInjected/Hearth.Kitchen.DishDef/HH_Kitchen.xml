@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_CampfireStew.label>Ensopado de muffalo na fogueira</HH_Dish_CampfireStew.label>
+  <HH_Dish_CampfireStew.description>Tudo foi para a panela, inclusive a discussão sobre o que tudo aquilo significava.</HH_Dish_CampfireStew.description>
+  <HH_Dish_PotatoSoup.label>Sopa de batata</HH_Dish_PotatoSoup.label>
+  <HH_Dish_PotatoSoup.description>Tem gosto de lar, se o lar tivesse chão de terra e expectativas baixas.</HH_Dish_PotatoSoup.description>
+  <HH_Dish_SpitRoastedHaunch.label>Pernil assado no espeto</HH_Dish_SpitRoastedHaunch.label>
+  <HH_Dish_SpitRoastedHaunch.description>Girado à mão por uma hora por quem perdeu no sorteio.</HH_Dish_SpitRoastedHaunch.description>
+  <HH_Dish_HashAndEgg.label>Hash com ovo</HH_Dish_HashAndEgg.label>
+  <HH_Dish_HashAndEgg.description>Um café da manhã que diz que o dia não vai melhorar, mas pelo menos vai ser frito.</HH_Dish_HashAndEgg.description>
+  <HH_Dish_CornPorridge.label>Mingau de milho</HH_Dish_CornPorridge.label>
+  <HH_Dish_CornPorridge.description>Grosso o bastante para tapar uma parede numa emergência.</HH_Dish_CornPorridge.description>
+  <HH_Dish_BerryCompote.label>Compota de frutas vermelhas</HH_Dish_BerryCompote.label>
+  <HH_Dish_BerryCompote.description>A única coisa no Rim que é doce e barata ao mesmo tempo.</HH_Dish_BerryCompote.description>
+  <HH_Dish_PlainSteamedRice.label>Arroz cozido no vapor</HH_Dish_PlainSteamedRice.label>
+  <HH_Dish_PlainSteamedRice.description>Arroz. É arroz. Por favor, pare de procurar mais no cardápio.</HH_Dish_PlainSteamedRice.description>
+  <HH_Dish_Congee.label>Canja de arroz</HH_Dish_Congee.label>
+  <HH_Dish_Congee.description>Mingau de arroz para quem teve uma semana muito longa e uma incursão ainda mais longa.</HH_Dish_Congee.description>
+  <HH_Dish_FriedMushrooms.label>Cogumelos fritos</HH_Dish_FriedMushrooms.label>
+  <HH_Dish_FriedMushrooms.description>Crocantes por fora, com um sabor vagamente de caverna por dentro.</HH_Dish_FriedMushrooms.description>
+  <HH_Dish_EggDropSoup.label>Sopa de ovo batido</HH_Dish_EggDropSoup.label>
+  <HH_Dish_EggDropSoup.description>Ovos batidos no caldo quente, porque o caldo precisava de um passatempo.</HH_Dish_EggDropSoup.description>
+  <HH_Dish_RoastCornOnTheCob.label>Milho assado na espiga</HH_Dish_RoastCornOnTheCob.label>
+  <HH_Dish_RoastCornOnTheCob.description>Comido em pé, na chuva, enquanto alguém atira na barraca.</HH_Dish_RoastCornOnTheCob.description>
+  <HH_Dish_RoastPotatoes.label>Batatas assadas</HH_Dish_RoastPotatoes.label>
+  <HH_Dish_RoastPotatoes.description>Douradas, crocantes e a coisa mais parecida com alegria no setor sete.</HH_Dish_RoastPotatoes.description>
+  <HH_Dish_MilkRicePudding.label>Pudim de arroz com leite</HH_Dish_MilkRicePudding.label>
+  <HH_Dish_MilkRicePudding.description>Comida de conforto para colonos cujo conforto foi recolhido.</HH_Dish_MilkRicePudding.description>
+  <HH_Dish_ScrambledEggs.label>Ovos mexidos</HH_Dish_ScrambledEggs.label>
+  <HH_Dish_ScrambledEggs.description>Ovos, mas rearranjados até pararem de reclamar.</HH_Dish_ScrambledEggs.description>
+  <HH_Dish_BugSkewers.label>Espetinhos de inseto de pele salgada</HH_Dish_BugSkewers.label>
+  <HH_Dish_BugSkewers.description>Crocantes por fora e sem muitas perguntas por dentro.</HH_Dish_BugSkewers.description>
+  <HH_Dish_RawFishSlices.label>Fatias de peixe cru</HH_Dish_RawFishSlices.label>
+  <HH_Dish_RawFishSlices.description>Cortadas por alguém que assistiu a um vídeo sobre isso uma vez.</HH_Dish_RawFishSlices.description>
+  <HH_Dish_PanFriedFish.label>Peixe na frigideira</HH_Dish_PanFriedFish.label>
+  <HH_Dish_PanFriedFish.description>Se nadou ontem, hoje é frito.</HH_Dish_PanFriedFish.description>
+  <HH_Dish_AgavePancakes.label>Panquecas de agave</HH_Dish_AgavePancakes.label>
+  <HH_Dish_AgavePancakes.description>Empilhadas bem altas para esconder o fato de que há apenas um ovo.</HH_Dish_AgavePancakes.description>
+  <HH_Dish_FruitBowl.label>Tigela de frutas</HH_Dish_FruitBowl.label>
+  <HH_Dish_FruitBowl.description>Saudável, fresca e acabada em quatro segundos quando as crianças chegam.</HH_Dish_FruitBowl.description>
+  <HH_Dish_MushroomPlate.label>Prato de cogumelos</HH_Dish_MushroomPlate.label>
+  <HH_Dish_MushroomPlate.description>Cogumelos gelados, porque a geladeira já estava ligada.</HH_Dish_MushroomPlate.description>
+  <HH_Dish_CrimsonSmoothie.label>Vitamina carmesim</HH_Dish_CrimsonSmoothie.label>
+  <HH_Dish_CrimsonSmoothie.description>Frutas vermelhas, leite e um rosa secreto.</HH_Dish_CrimsonSmoothie.description>
+  <HH_Dish_SmokedJerkyStrips.label>Tiras de carne-seca defumada</HH_Dish_SmokedJerkyStrips.label>
+  <HH_Dish_SmokedJerkyStrips.description>Dura para sempre, que também é o tempo que leva para mastigar.</HH_Dish_SmokedJerkyStrips.description>
+  <HH_Dish_BratwurstAndBeer.label>Bratwurst com cerveja</HH_Dish_BratwurstAndBeer.label>
+  <HH_Dish_BratwurstAndBeer.description>Salsicha no pão, cerveja no caneco, arrependimento de manhã.</HH_Dish_BratwurstAndBeer.description>
+  <HH_Dish_InsectTacos.label>Tacos de inseto</HH_Dish_InsectTacos.label>
+  <HH_Dish_InsectTacos.description>Três tacos, zero perguntas e um molho muito bom.</HH_Dish_InsectTacos.description>
+  <HH_Dish_FishAndChips.label>Peixe com fritas</HH_Dish_FishAndChips.label>
+  <HH_Dish_FishAndChips.description>Frito duas vezes por sorte e uma vez por despeito.</HH_Dish_FishAndChips.description>
+  <HH_Dish_MuffaloRamen.label>Lamen de muffalo</HH_Dish_MuffaloRamen.label>
+  <HH_Dish_MuffaloRamen.description>Tome a sopa ruidosamente. Numa briga pela última tigela, tome ainda mais alto.</HH_Dish_MuffaloRamen.description>
+  <HH_Dish_EggFriedRice.label>Arroz frito com ovo</HH_Dish_EggFriedRice.label>
+  <HH_Dish_EggFriedRice.description>Arroz de ontem, problema de hoje, almoço de amanhã.</HH_Dish_EggFriedRice.description>
+  <HH_Dish_PadThrumbo.label>Pad thrumbo</HH_Dish_PadThrumbo.label>
+  <HH_Dish_PadThrumbo.description>Um emaranhado agridoce de macarrão e crocância, frito no wok até obedecer.</HH_Dish_PadThrumbo.description>
+  <HH_Dish_ChiliConCarne.label>Chili con carne</HH_Dish_ChiliConCarne.label>
+  <HH_Dish_ChiliConCarne.description>Tão apimentado que cauteriza. Não use como remédio. Use como remédio.</HH_Dish_ChiliConCarne.description>
+  <HH_Dish_JollofRice.label>Arroz jollof</HH_Dish_JollofRice.label>
+  <HH_Dish_JollofRice.description>A receita é uma briga entre três colônias, todas elas com razão.</HH_Dish_JollofRice.description>
+  <HH_Dish_UgaliWithStew.label>Ugali com ensopado</HH_Dish_UgaliWithStew.label>
+  <HH_Dish_UgaliWithStew.description>Massa de milho que se come com as mãos, assim nada se perde na fuga.</HH_Dish_UgaliWithStew.description>
+  <HH_Dish_BakedEggs.label>Ovos assados</HH_Dish_BakedEggs.label>
+  <HH_Dish_BakedEggs.description>Ovos que passaram por muita coisa e saíram com molho.</HH_Dish_BakedEggs.description>
+  <HH_Dish_HashBrowns.label>Hash browns</HH_Dish_HashBrowns.label>
+  <HH_Dish_HashBrowns.description>Uma panqueca de batata que já viu coisas no drive-through.</HH_Dish_HashBrowns.description>
+  <HH_Dish_CornFritters.label>Bolinhos de milho</HH_Dish_CornFritters.label>
+  <HH_Dish_CornFritters.description>Fritos, dourados e acabados antes que alguém lembre de dividir.</HH_Dish_CornFritters.description>
+  <HH_Dish_PotatoGratin.label>Gratinado de batata</HH_Dish_PotatoGratin.label>
+  <HH_Dish_PotatoGratin.description>Creme, batata, paciência. Nada funciona tão bem no Rim.</HH_Dish_PotatoGratin.description>
+  <HH_Dish_MushroomRisotto.label>Risoto de cogumelos</HH_Dish_MushroomRisotto.label>
+  <HH_Dish_MushroomRisotto.description>Mexa por vinte minutos ou perca um amigo. A escolha é sua.</HH_Dish_MushroomRisotto.description>
+  <HH_Dish_SteamedBuns.label>Pãezinhos cozidos no vapor</HH_Dish_SteamedBuns.label>
+  <HH_Dish_SteamedBuns.description>Macios como travesseiro, recheados com algo que definitivamente era carne.</HH_Dish_SteamedBuns.description>
+  <HH_Dish_ChocolatePudding.label>Pudim de chocolate</HH_Dish_ChocolatePudding.label>
+  <HH_Dish_ChocolatePudding.description>O motivo pelo qual os ataques são adiados em exatamente uma sobremesa.</HH_Dish_ChocolatePudding.description>
+  <HH_Dish_Ceviche.label>Ceviche</HH_Dish_Ceviche.label>
+  <HH_Dish_Ceviche.description>Peixe cozido apenas pela acidez, que é como a maioria das colônias também funciona.</HH_Dish_Ceviche.description>
+  <HH_Dish_MuffaloGoulash.label>Gulasch de muffalo</HH_Dish_MuffaloGoulash.label>
+  <HH_Dish_MuffaloGoulash.description>Vermelho, grosso e oficialmente a discussão não oficial nacional.</HH_Dish_MuffaloGoulash.description>
+  <HH_Dish_EggFlan.label>Flan de ovo</HH_Dish_EggFlan.label>
+  <HH_Dish_EggFlan.description>Treme como um colono no fim de um longo turno.</HH_Dish_EggFlan.description>
+  <HH_Dish_BeerBatteredInsects.label>Insetos empanados na cerveja</HH_Dish_BeerBatteredInsects.label>
+  <HH_Dish_BeerBatteredInsects.description>Crocância, espuma e nenhuma palavra para os vizinhos.</HH_Dish_BeerBatteredInsects.description>
+  <HH_Dish_CreamyNoodleBake.label>Gratinado cremoso de macarrão</HH_Dish_CreamyNoodleBake.label>
+  <HH_Dish_CreamyNoodleBake.description>Uma travessa que mantém a colônia unida melhor do que os líderes.</HH_Dish_CreamyNoodleBake.description>
+  <HH_Dish_FermentedMushrooms.label>Cogumelos fermentados</HH_Dish_FermentedMushrooms.label>
+  <HH_Dish_FermentedMushrooms.description>Fermentados, ferozes e difíceis de perdoar. Dizem que fazem bem para o estômago.</HH_Dish_FermentedMushrooms.description>
+  <HH_Dish_RimMein.label>Rim mein</HH_Dish_RimMein.label>
+  <HH_Dish_RimMein.description>Macarrão frito, mexido no wok, e exatamente tão saudável quanto parece.</HH_Dish_RimMein.description>
+  <HH_Dish_ColdPotatoSalad.label>Salada de batata fria</HH_Dish_ColdPotatoSalad.label>
+  <HH_Dish_ColdPotatoSalad.description>O prato de festa que ninguém planejou e todos terminam.</HH_Dish_ColdPotatoSalad.description>
+  <HH_Dish_CreamyMushroomNoodles.label>Macarrão cremoso com cogumelos</HH_Dish_CreamyMushroomNoodles.label>
+  <HH_Dish_CreamyMushroomNoodles.description>Macarrão no creme, como aquela massa que você lembra, depois de algumas rodadas de boatos.</HH_Dish_CreamyMushroomNoodles.description>
+  <HH_Dish_LongPorkStew.label>Ensopado de carne longa</HH_Dish_LongPorkStew.label>
+  <HH_Dish_LongPorkStew.description>A receita é segredo. O ingrediente não.</HH_Dish_LongPorkStew.description>
+  <HH_Dish_SmokedLongJerky.label>Carne longa defumada</HH_Dish_SmokedLongJerky.label>
+  <HH_Dish_SmokedLongJerky.description>Dura o inverno todo. A culpa também.</HH_Dish_SmokedLongJerky.description>
+  <HH_Dish_CongeeOfTheFallen.label>Canja dos caídos</HH_Dish_CongeeOfTheFallen.label>
+  <HH_Dish_CongeeOfTheFallen.description>Um mingau quente para uma consciência fria, muito fria.</HH_Dish_CongeeOfTheFallen.description>
+  <HH_Dish_BloodBroth.label>Caldo de sangue</HH_Dish_BloodBroth.label>
+  <HH_Dish_BloodBroth.description>Um caldo escuro e rico para os sedentos e os educados.</HH_Dish_BloodBroth.description>
+  <HH_Dish_HemogenBlackPudding.label>Morcela de hemogênio</HH_Dish_HemogenBlackPudding.label>
+  <HH_Dish_HemogenBlackPudding.description>Frita até parar de olhar para você.</HH_Dish_HemogenBlackPudding.description>
+  <HH_Dish_MuffaloBourguignon.label>Bourguignon de muffalo</HH_Dish_MuffaloBourguignon.label>
+  <HH_Dish_MuffaloBourguignon.description>Brasado na cerveja, porque o vinho acabou no segundo dia.</HH_Dish_MuffaloBourguignon.description>
+  <HH_Dish_ColonyPaella.label>Paella da colônia</HH_Dish_ColonyPaella.label>
+  <HH_Dish_ColonyPaella.description>O que tinha na despensa, arrumado com muita dignidade.</HH_Dish_ColonyPaella.description>
+  <HH_Dish_NigiriPlatter.label>Travessa de nigiri</HH_Dish_NigiriPlatter.label>
+  <HH_Dish_NigiriPlatter.description>Arroz e peixe, moldados por alguém que deveria estar na linha de frente.</HH_Dish_NigiriPlatter.description>
+  <HH_Dish_ThrumboPho.label>Pho de thrumbo</HH_Dish_ThrumboPho.label>
+  <HH_Dish_ThrumboPho.description>Um caldo claro com uma lista de tarefas enorme por trás.</HH_Dish_ThrumboPho.description>
+  <HH_Dish_Biryani.label>Biryani</HH_Dish_Biryani.label>
+  <HH_Dish_Biryani.description>Camadas de arroz, carne e diplomacia, selados com uma tampa.</HH_Dish_Biryani.description>
+  <HH_Dish_DromedaryTagine.label>Tagine de dromedário</HH_Dish_DromedaryTagine.label>
+  <HH_Dish_DromedaryTagine.description>Cozido lentamente num cone de barro, como a maioria das pessoas gostaria de ser.</HH_Dish_DromedaryTagine.description>
+  <HH_Dish_MushroomMoussaka.label>Moussaka de cogumelos</HH_Dish_MushroomMoussaka.label>
+  <HH_Dish_MushroomMoussaka.description>Sete camadas de profundidade, e cada camada tem uma opinião.</HH_Dish_MushroomMoussaka.description>
+  <HH_Dish_LacqueredThrumbo.label>Thrumbo laqueado</HH_Dish_LacqueredThrumbo.label>
+  <HH_Dish_LacqueredThrumbo.description>Glaceado até brilhar mais do que a conta bancária da colônia.</HH_Dish_LacqueredThrumbo.description>
+  <HH_Dish_TomYumSoup.label>Sopa tom yum</HH_Dish_TomYumSoup.label>
+  <HH_Dish_TomYumSoup.description>Azeda, picante, desentope os seios da face e também as dívidas.</HH_Dish_TomYumSoup.description>
+  <HH_Dish_Laksa.label>Laksa</HH_Dish_Laksa.label>
+  <HH_Dish_Laksa.description>Uma sopa de curry sem coco que não pede desculpas.</HH_Dish_Laksa.description>
+  <HH_Dish_Tamales.label>Tamales</HH_Dish_Tamales.label>
+  <HH_Dish_Tamales.description>Embrulhados em folhas, como um presente que ninguém pediu.</HH_Dish_Tamales.description>
+  <HH_Dish_DimSumBasket.label>Cesta de dim sum</HH_Dish_DimSumBasket.label>
+  <HH_Dish_DimSumBasket.description>Porções minúsculas para orçamentos minúsculos, com pretensões enormes.</HH_Dish_DimSumBasket.description>
+  <HH_Dish_ChocolateLayerCake.label>Bolo de chocolate em camadas</HH_Dish_ChocolateLayerCake.label>
+  <HH_Dish_ChocolateLayerCake.description>Muitas camadas, nenhuma honesta.</HH_Dish_ChocolateLayerCake.description>
+  <HH_Dish_GravyFries.label>Batata frita com molho</HH_Dish_GravyFries.label>
+  <HH_Dish_GravyFries.description>Batata frita, molho e um momento silencioso de orgulho nacional.</HH_Dish_GravyFries.description>
+  <HH_Dish_SmokedBrisket.label>Peito defumado</HH_Dish_SmokedBrisket.label>
+  <HH_Dish_SmokedBrisket.description>Defumado por doze horas por um homem que não quer falar sobre isso.</HH_Dish_SmokedBrisket.description>
+  <HH_Dish_Churros.label>Churros</HH_Dish_Churros.label>
+  <HH_Dish_Churros.description>Massa frita com molho de chocolate e nenhum remorso.</HH_Dish_Churros.description>
+  <HH_Dish_Bibimbap.label>Bibimbap</HH_Dish_Bibimbap.label>
+  <HH_Dish_Bibimbap.description>Misture tudo numa tigela só, exatamente como a própria colônia.</HH_Dish_Bibimbap.description>
+  <HH_Dish_MongolianMuffalo.label>Muffalo mongol</HH_Dish_MongolianMuffalo.label>
+  <HH_Dish_MongolianMuffalo.description>Frito no wok, doce, pegajoso e um pouco alto demais.</HH_Dish_MongolianMuffalo.description>
+  <HH_Dish_ColdNoodleSalad.label>Salada de macarrão frio</HH_Dish_ColdNoodleSalad.label>
+  <HH_Dish_ColdNoodleSalad.description>Servida tão fria que o macarrão registra reclamações.</HH_Dish_ColdNoodleSalad.description>
+  <HH_Dish_MuffaloCarpaccio.label>Carpaccio de muffalo</HH_Dish_MuffaloCarpaccio.label>
+  <HH_Dish_MuffaloCarpaccio.description>Fatiado tão fino que dá para ler o cardápio através dele.</HH_Dish_MuffaloCarpaccio.description>
+  <HH_Dish_ThrumboTartare.label>Tartar de thrumbo</HH_Dish_ThrumboTartare.label>
+  <HH_Dish_ThrumboTartare.description>Cru, feroz e corajoso. Assine o termo de responsabilidade primeiro.</HH_Dish_ThrumboTartare.description>
+  <HH_Dish_DanDanNoodles.label>Macarrão dan dan</HH_Dish_DanDanNoodles.label>
+  <HH_Dish_DanDanNoodles.description>Macarrão picante que avisa com antecedência e mesmo assim vence.</HH_Dish_DanDanNoodles.description>
+  <HH_Dish_GrilledLongPorkRibs.label>Costelas grelhadas de carne longa</HH_Dish_GrilledLongPorkRibs.label>
+  <HH_Dish_GrilledLongPorkRibs.description>Defumadas, doces e extremamente difíceis de explicar num jantar.</HH_Dish_GrilledLongPorkRibs.description>
+  <HH_Dish_LongPorkDumplings.label>Pastéis de carne longa</HH_Dish_LongPorkDumplings.label>
+  <HH_Dish_LongPorkDumplings.description>Dobrados à mão, com um recheio sobre o qual ninguém pergunta duas vezes.</HH_Dish_LongPorkDumplings.description>
+  <HH_Dish_StrangersRoast.label>Assado do estranho</HH_Dish_StrangersRoast.label>
+  <HH_Dish_StrangersRoast.description>Almoço de domingo, com um convidado que não veio por vontade própria.</HH_Dish_StrangersRoast.description>
+  <HH_Dish_CannibalsChili.label>Chili do canibal</HH_Dish_CannibalsChili.label>
+  <HH_Dish_CannibalsChili.description>Apimentado o suficiente para esconder o sabor, e o pensamento.</HH_Dish_CannibalsChili.description>
+  <HH_Dish_HemogenRisotto.label>Risoto de hemogênio</HH_Dish_HemogenRisotto.label>
+  <HH_Dish_HemogenRisotto.description>Cremoso, vermelho e um pouco intenso demais.</HH_Dish_HemogenRisotto.description>
+  <HH_Dish_RedSteakVeryRare.label>Bife vermelho, mal passado</HH_Dish_RedSteakVeryRare.label>
+  <HH_Dish_RedSteakVeryRare.description>Quase balindo. Feito exatamente como um sanguinófago pediu.</HH_Dish_RedSteakVeryRare.description>
+  <HH_Dish_TwistedMeatBao.label>Bao de carne torcida</HH_Dish_TwistedMeatBao.label>
+  <HH_Dish_TwistedMeatBao.description>O pão se contorce só um pouco. Por favor, não conte ao recheio.</HH_Dish_TwistedMeatBao.description>
+  <HH_Dish_MuffaloWellington.label>Muffalo wellington</HH_Dish_MuffaloWellington.label>
+  <HH_Dish_MuffaloWellington.description>Envolto em massa folhada, um pequeno isolamento para um ego muito grandioso.</HH_Dish_MuffaloWellington.description>
+  <HH_Dish_BoomalopeConfit.label>Confit de boomalope</HH_Dish_BoomalopeConfit.label>
+  <HH_Dish_BoomalopeConfit.description>Cozido lentamente na própria gordura. Não fique perto da panela.</HH_Dish_BoomalopeConfit.description>
+  <HH_Dish_FishThermidor.label>Peixe termidor</HH_Dish_FishThermidor.label>
+  <HH_Dish_FishThermidor.description>Cremoso, gratinado e absurdamente orgulhoso de si mesmo.</HH_Dish_FishThermidor.description>
+  <HH_Dish_Rendang.label>Rendang</HH_Dish_Rendang.label>
+  <HH_Dish_Rendang.description>Cozido até o molho desistir e se juntar à carne.</HH_Dish_Rendang.description>
+  <HH_Dish_MoleNegro.label>Mole negro</HH_Dish_MoleNegro.label>
+  <HH_Dish_MoleNegro.description>Escuro, amargo e doce: como o melhor conselho.</HH_Dish_MoleNegro.description>
+  <HH_Dish_ChocolateSouffle.label>Suflê de chocolate</HH_Dish_ChocolateSouffle.label>
+  <HH_Dish_ChocolateSouffle.description>Sobe como um boato ruim e cai na mesma velocidade.</HH_Dish_ChocolateSouffle.description>
+  <HH_Dish_CremeBrulee.label>Creme brûlée</HH_Dish_CremeBrulee.label>
+  <HH_Dish_CremeBrulee.description>A crosta racha sob a colher, como sob pressão.</HH_Dish_CremeBrulee.description>
+  <HH_Dish_AgaveBaklava.label>Baklava de agave</HH_Dish_AgaveBaklava.label>
+  <HH_Dish_AgaveBaklava.description>Tão doce que você vai precisar de um médico e de um poeta.</HH_Dish_AgaveBaklava.description>
+  <HH_Dish_MuffaloStroganoff.label>Estrogonofe de muffalo</HH_Dish_MuffaloStroganoff.label>
+  <HH_Dish_MuffaloStroganoff.description>Cremoso, rico e acabado na terceira colherada.</HH_Dish_MuffaloStroganoff.description>
+  <HH_Dish_OmakaseNigiri.label>Nigiri omakase</HH_Dish_OmakaseNigiri.label>
+  <HH_Dish_OmakaseNigiri.description>O chef decide o que você come. Você decide se impressionar.</HH_Dish_OmakaseNigiri.description>
+  <HH_Dish_TeppanFeast.label>Banquete teppan</HH_Dish_TeppanFeast.label>
+  <HH_Dish_TeppanFeast.description>Uma chapa flamejante, uma espátula voadora e um extintor por perto.</HH_Dish_TeppanFeast.description>
+  <HH_Dish_ClayOvenMuffalo.label>Muffalo do forno de barro</HH_Dish_ClayOvenMuffalo.label>
+  <HH_Dish_ClayOvenMuffalo.description>Marinado durante a noite, assado no forno de barro e servido com arrogância.</HH_Dish_ClayOvenMuffalo.description>
+  <HH_Dish_Churrasco.label>Churrasco</HH_Dish_Churrasco.label>
+  <HH_Dish_Churrasco.description>Carne em espetos, servida até você se render.</HH_Dish_Churrasco.description>
+  <HH_Dish_HuntersBigos.label>Bigos do caçador</HH_Dish_HuntersBigos.label>
+  <HH_Dish_HuntersBigos.description>Um ensopado que fica melhor a cada dia e pior a cada cheiro.</HH_Dish_HuntersBigos.description>
+  <HH_Dish_LambKoftasWithRice.label>Koftas de cordeiro com arroz</HH_Dish_LambKoftasWithRice.label>
+  <HH_Dish_LambKoftasWithRice.description>Temperados, moldados e servidos sobre arroz, como uma palestra muito saborosa.</HH_Dish_LambKoftasWithRice.description>
+  <HH_Dish_SevenCourseColonyMenu.label>Menu colonial de sete pratos</HH_Dish_SevenCourseColonyMenu.label>
+  <HH_Dish_SevenCourseColonyMenu.description>Entrada, entrada, entrada, prato principal, sobremesa, sobremesa e um brinde.</HH_Dish_SevenCourseColonyMenu.description>
+  <HH_Dish_TartareOfTheFallen.label>Tartar dos caídos</HH_Dish_TartareOfTheFallen.label>
+  <HH_Dish_TartareOfTheFallen.description>Servido cru, porque cozinhar é para quem tem algo a esconder.</HH_Dish_TartareOfTheFallen.description>
+  <HH_Dish_HemogenCarpaccio.label>Carpaccio de hemogênio</HH_Dish_HemogenCarpaccio.label>
+  <HH_Dish_HemogenCarpaccio.description>Fino, vermelho e servido com um olhar fixo.</HH_Dish_HemogenCarpaccio.description>
+  <HH_Dish_TwistedHotpot.label>Hotpot torcido</HH_Dish_TwistedHotpot.label>
+  <HH_Dish_TwistedHotpot.description>Borbulha sozinho. Ninguém ligou o fogão.</HH_Dish_TwistedHotpot.description>
+  <HH_Dish_CheeseFondue.label>Fondue de queijo</HH_Dish_CheeseFondue.label>
+  <HH_Dish_CheeseFondue.description>Uma panela de queijo derretido e a regra de que quem deixar cair o pão, paga.</HH_Dish_CheeseFondue.description>
+  <HH_Dish_PumpkinAndCheeseGratin.label>Gratinado de abóbora com queijo</HH_Dish_PumpkinAndCheeseGratin.label>
+  <HH_Dish_PumpkinAndCheeseGratin.description>Laranja, cheio de queijo e decorado com uma fina camada de perigo.</HH_Dish_PumpkinAndCheeseGratin.description>
+  <HH_Dish_FlourDumplingSoup.label>Sopa de bolinhos de farinha</HH_Dish_FlourDumplingSoup.label>
+  <HH_Dish_FlourDumplingSoup.description>Bolinhos do tamanho de punhos, para quem prefere uma sopa com soco.</HH_Dish_FlourDumplingSoup.description>
+  <HH_Dish_CheeseOmelette.label>Omelete de queijo</HH_Dish_CheeseOmelette.label>
+  <HH_Dish_CheeseOmelette.description>A omelete que não pede desculpas por nada e não se dobra para ninguém.</HH_Dish_CheeseOmelette.description>
+  <HH_Dish_FruitGlazedRoast.label>Assado glaceado com frutas</HH_Dish_FruitGlazedRoast.label>
+  <HH_Dish_FruitGlazedRoast.description>Pegajoso, doce e levado à mesa com luvas de forno e preces.</HH_Dish_FruitGlazedRoast.description>
+  <HH_Dish_SushiRollSet.label>Combinado de rolinhos de sushi</HH_Dish_SushiRollSet.label>
+  <HH_Dish_SushiRollSet.description>Enrolados apertado, mergulhados de leve e comidos antes que alguém tenha ideias.</HH_Dish_SushiRollSet.description>
+  <HH_Dish_WasabiGlazedFish.label>Peixe glaceado com wasabi</HH_Dish_WasabiGlazedFish.label>
+  <HH_Dish_WasabiGlazedFish.description>Limpa o nariz, a garganta e todas as opiniões anteriores.</HH_Dish_WasabiGlazedFish.description>
+  <HH_Dish_TempuraSushi.label>Sushi tempura</HH_Dish_TempuraSushi.label>
+  <HH_Dish_TempuraSushi.description>Sushi que pegou um caminho errado até a fritadeira e gostou.</HH_Dish_TempuraSushi.description>
+  <HH_Dish_HeartyWinterStew.label>Ensopado reconfortante de inverno</HH_Dish_HeartyWinterStew.label>
+  <HH_Dish_HeartyWinterStew.description>Cozido por dias numa panela sobre fogo de lenha. Coma antes que a panela responda.</HH_Dish_HeartyWinterStew.description>
+  <HH_Dish_LongNightMushroomStew.label>Ensopado de cogumelos da longa noite</HH_Dish_LongNightMushroomStew.label>
+  <HH_Dish_LongNightMushroomStew.description>Cozido a noite toda por alguém que não tinha planos melhores.</HH_Dish_LongNightMushroomStew.description>
+  <HH_Dish_StewOfQuestionableMeat.label>Ensopado de carne duvidosa</HH_Dish_StewOfQuestionableMeat.label>
+  <HH_Dish_StewOfQuestionableMeat.description>O ensopado remove qualquer arrependimento sobre os insetos. O arrependimento sobre o ensopado permanece.</HH_Dish_StewOfQuestionableMeat.description>
+  <HH_Dish_SugarCookies.label>Biscoitos de açúcar</HH_Dish_SugarCookies.label>
+  <HH_Dish_SugarCookies.description>Decorados por um colono cujas mãos tremem por causa do combate, e isso se nota.</HH_Dish_SugarCookies.description>
+  <HH_Dish_FancyCupcakes.label>Cupcakes finos</HH_Dish_FancyCupcakes.label>
+  <HH_Dish_FancyCupcakes.description>Um bolinho pequeno com um grande problema de granulado.</HH_Dish_FancyCupcakes.description>
+  <HH_Dish_GlazedDonuts.label>Rosquinhas glaceadas</HH_Dish_GlazedDonuts.label>
+  <HH_Dish_GlazedDonuts.description>Um anel de massa em volta de um buraco no orçamento.</HH_Dish_GlazedDonuts.description>
+  <HH_Dish_HauteCuisineTastingMenu.label>Menu degustação de alta cozinha</HH_Dish_HauteCuisineTastingMenu.label>
+  <HH_Dish_HauteCuisineTastingMenu.description>Oito pratinhos, uma conta gigantesca.</HH_Dish_HauteCuisineTastingMenu.description>
+  <HH_Dish_GlazedFruitTart.label>torta de frutas glaceadas</HH_Dish_GlazedFruitTart.label>
+  <HH_Dish_GlazedFruitTart.description>Uma torta com mais fruta do que estrutura, que é a proporção correta.</HH_Dish_GlazedFruitTart.description>
+  <HH_Dish_PickledVegetableSalad.label>salada de legumes em conserva</HH_Dish_PickledVegetableSalad.label>
+  <HH_Dish_PickledVegetableSalad.description>Em conserva por tanto tempo que sobreviveu ao primeiro líder da colônia.</HH_Dish_PickledVegetableSalad.description>
+  <HH_Dish_HerbRoastedPotatoes.label>batatas assadas com ervas</HH_Dish_HerbRoastedPotatoes.label>
+  <HH_Dish_HerbRoastedPotatoes.description>Batatas que foram a uma festa no jardim e voltaram com uma planta.</HH_Dish_HerbRoastedPotatoes.description>
+  <HH_Dish_BerryAndNutBreakfastBowl.label>tigela de café da manhã com frutas vermelhas e nozes</HH_Dish_BerryAndNutBreakfastBowl.label>
+  <HH_Dish_BerryAndNutBreakfastBowl.description>Crocante, saudável e extremamente diferente do que os invasores pediram.</HH_Dish_BerryAndNutBreakfastBowl.description>
+  <HH_Dish_TeaSmokedMeat.label>carne defumada no chá</HH_Dish_TeaSmokedMeat.label>
+  <HH_Dish_TeaSmokedMeat.description>Defumada com chá, porque por que a carne também não deveria relaxar.</HH_Dish_TeaSmokedMeat.description>
+  <HH_Dish_StrawFlourFlatbread.label>pão chato de farinha de palha</HH_Dish_StrawFlourFlatbread.label>
+  <HH_Dish_StrawFlourFlatbread.description>Chato, honesto e um pouco arenoso. Como o deserto de onde veio.</HH_Dish_StrawFlourFlatbread.description>
+  <HH_Dish_CactusFruitSalad.label>salada de frutas de cacto</HH_Dish_CactusFruitSalad.label>
+  <HH_Dish_CactusFruitSalad.description>Doce e espinhosa, assim como o seu melhor amigo.</HH_Dish_CactusFruitSalad.description>
+  <HH_Dish_GreenfruitStew.label>ensopado de frutas verdes</HH_Dish_GreenfruitStew.label>
+  <HH_Dish_GreenfruitStew.description>Um ensopado tão verde que o muffalo se ofendeu.</HH_Dish_GreenfruitStew.description>
+  <HH_Dish_StrawflourDumplings.label>bolinhos de farinha de palha</HH_Dish_StrawflourDumplings.label>
+  <HH_Dish_StrawflourDumplings.description>Bolinhos do deserto recheados com algo que talvez já tenha sido carne.</HH_Dish_StrawflourDumplings.description>
+  <HH_Dish_DesertBreadAndBeer.label>pão e cerveja do deserto</HH_Dish_DesertBreadAndBeer.label>
+  <HH_Dish_DesertBreadAndBeer.description>Café da manhã líquido e sólido, na ordem certa.</HH_Dish_DesertBreadAndBeer.description>
+  <HH_Dish_GrilledWholeFish.label>peixe inteiro grelhado</HH_Dish_GrilledWholeFish.label>
+  <HH_Dish_GrilledWholeFish.description>Um peixe inteiro, um pouco de sal e nenhum pedido de desculpas ao peixe.</HH_Dish_GrilledWholeFish.description>
+  <HH_Dish_FishStew.label>ensopado de peixe</HH_Dish_FishStew.label>
+  <HH_Dish_FishStew.description>Tudo o que nada acaba aqui, mais cedo ou mais tarde.</HH_Dish_FishStew.description>
+  <HH_Dish_SmokedFishFillet.label>filé de peixe defumado</HH_Dish_SmokedFishFillet.label>
+  <HH_Dish_SmokedFishFillet.description>Filé do dia, defumado até esquecer o rio.</HH_Dish_SmokedFishFillet.description>
+  <HH_Dish_SashimiPlate.label>prato de sashimi</HH_Dish_SashimiPlate.label>
+  <HH_Dish_SashimiPlate.description>Peixe cru, cortado em fatias finas, e um pequeno dilema moral.</HH_Dish_SashimiPlate.description>
+  <HH_Dish_FishTacos.label>tacos de peixe</HH_Dish_FishTacos.label>
+  <HH_Dish_FishTacos.description>Peixe numa tortilha, entregue por um colono que correu o caminho todo.</HH_Dish_FishTacos.description>
+</LanguageData>

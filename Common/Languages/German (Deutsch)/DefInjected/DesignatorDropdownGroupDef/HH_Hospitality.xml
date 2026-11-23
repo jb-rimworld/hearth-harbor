@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Group_Casino.label>Casino</HH_Group_Casino.label>
+  <HH_Group_Casino.description>Spielautomaten, Spieltische und der Kassenschalter.</HH_Group_Casino.description>
+  <HH_Group_Wellness.label>Wellness</HH_Group_Wellness.label>
+  <HH_Group_Wellness.description>Saunen, Whirlpools und Massageliegen.</HH_Group_Wellness.description>
+  <HH_Group_City.label>Stadtleben</HH_Group_City.label>
+  <HH_Group_City.description>Kinoleinwände, Friseurstühle, Parkbänke und der Taxistand.</HH_Group_City.description>
+  <HH_Group_Underworld.label>Hinterzimmer</HH_Group_Underworld.label>
+  <HH_Group_Underworld.description>Türen, Gruben, Theken und Anleger für die Dinge, über die niemand spricht. Wird erst angezeigt, wenn du die Unterwelt entdeckt hast.</HH_Group_Underworld.description>
+</LanguageData>

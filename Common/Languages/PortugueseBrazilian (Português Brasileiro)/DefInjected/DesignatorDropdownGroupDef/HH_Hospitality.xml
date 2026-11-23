@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Group_Casino.label>cassino</HH_Group_Casino.label>
+  <HH_Group_Casino.description>Caça-níqueis, mesas de jogos e o guichê do caixa.</HH_Group_Casino.description>
+  <HH_Group_Wellness.label>bem-estar</HH_Group_Wellness.label>
+  <HH_Group_Wellness.description>Saunas, banheiras de hidromassagem e mesas de massagem.</HH_Group_Wellness.description>
+  <HH_Group_City.label>vida urbana</HH_Group_City.label>
+  <HH_Group_City.description>Telas de cinema, cadeiras de salão de beleza, bancos de parque e o ponto de táxi.</HH_Group_City.description>
+  <HH_Group_Underworld.label>sala dos fundos</HH_Group_Underworld.label>
+  <HH_Group_Underworld.description>Portas, poços, balcões e docas para as coisas de que ninguém fala. Só aparece depois que você descobrir o submundo.</HH_Group_Underworld.description>
+</LanguageData>

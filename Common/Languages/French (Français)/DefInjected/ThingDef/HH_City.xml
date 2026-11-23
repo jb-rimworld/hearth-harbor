@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ProjectorScreen.label>écran de projection</HH_ProjectorScreen.label>
+  <HH_ProjectorScreen.description>Un grand écran avec un projecteur fixé à la poutre du plafond au-dessus. Mettez des chaises devant, une enseigne de salle dans la pièce et baissez les lumières : les visiteurs paient une place et les colons ont une soirée cinéma. Les films sont vieux, bruyants, et personne ne se souvient qui les a faits.</HH_ProjectorScreen.description>
+  <HH_SalonChair.label>fauteuil de salon de coiffure</HH_SalonChair.label>
+  <HH_SalonChair.description>Un fauteuil rembourré, réglable en hauteur, avec une cape, un miroir au mur derrière et un tiroir de ciseaux. Un colon debout derrière lui donne à la personne assise une nouvelle allure. Les colons l'utilisent gratuitement ; les visiteurs paient.</HH_SalonChair.description>
+  <HH_ParkBench.label>banc de parc</HH_ParkBench.label>
+  <HH_ParkBench.description>Un banc simple pour deux avec vue. Rien à acheter, rien à signer : on s'assoit, on regarde ce qu'il y a à voir, et on se sent un peu mieux. Plus le cadre est beau, mieux c'est.</HH_ParkBench.description>
+  <HH_TaxiStand.label>station de taxi</HH_TaxiStand.label>
+  <HH_TaxiStand.description>Un carré de sol peint, un poteau indicateur et un interphone. Les visiteurs qui partent et ne veulent pas marcher jusqu'au bord de la carte appellent ici une petite navette et paient le trajet ; certains visiteurs arrivants sont déposés à la station avec style. Il faut un ciel dégagé au-dessus pour que le taxi puisse atterrir.</HH_TaxiStand.description>
+  <HH_TaxiIncoming.label>taxi (arrivée)</HH_TaxiIncoming.label>
+  <HH_TaxiLeaving.label>taxi (départ)</HH_TaxiLeaving.label>
+</LanguageData>

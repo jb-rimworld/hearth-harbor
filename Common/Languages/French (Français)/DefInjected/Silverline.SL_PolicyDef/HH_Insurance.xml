@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ActsOfStoryteller.label>Actes du conteur exclus</SL_ActsOfStoryteller.label>
+  <SL_ActsOfStoryteller.description>Couvre les bâtiments détruits par les pillards, les mécanoïdes et, à l'occasion, une méprise avec un engin de siège. Non valable pour les incendies, la météo ou vous.</SL_ActsOfStoryteller.description>
+  <SL_ActsOfStoryteller.slogan>Nous vous couvrons.*</SL_ActsOfStoryteller.slogan>
+  <SL_MuffaloMachine.label>Couverture Muffalo &amp; Machine</SL_MuffaloMachine.label>
+  <SL_MuffaloMachine.description>Pour les choses qui roulent ou volent : navettes, capsules de largage et véhicules détruits par un ennemi.</SL_MuffaloMachine.description>
+  <SL_MuffaloMachine.slogan>Roues, rotors et un formulaire très complet.</SL_MuffaloMachine.slogan>
+  <SL_RoofOverHead.label>Un toit au-dessus de la tête</SL_RoofOverHead.label>
+  <SL_RoofOverHead.description>Incendie, explosions et foudre. L'incendie doit toutefois avoir été causé par quelqu'un d'autre.</SL_RoofOverHead.description>
+  <SL_RoofOverHead.slogan>Murs chauds, réconfort froid, primes trimestrielles.</SL_RoofOverHead.slogan>
+  <SL_ItWasntMe.label>Responsabilité « Ce n'est pas moi »</SL_ItWasntMe.label>
+  <SL_ItWasntMe.description>Pour les dommages causés aux visiteurs, aux marchands et à leurs marchandises, pendant qu'ils sont sous votre garde, et certainement pas par vous.</SL_ItWasntMe.description>
+  <SL_ItWasntMe.slogan>Quelqu'un doit payer. De préférence nous, moyennant frais.</SL_ItWasntMe.slogan>
+  <SL_LegalShield.label>Legal Shield</SL_LegalShield.label>
+  <SL_LegalShield.description>Le cabinet Brix &amp; Partners paie vos amendes et conteste auprès de ceux qui les ont émises. Aide aussi contre Clawback Mutual, tant que personne ne lit la clause 40.</SL_LegalShield.description>
+  <SL_LegalShield.slogan>Brix &amp; Partners : l'éthique sous contrat.</SL_LegalShield.slogan>
+  <SL_RimHealth.label>Régime de santé du Rim</SL_RimHealth.label>
+  <SL_RimHealth.description>Une somme forfaitaire pour chaque colon qui passe une journée au lit des malades.</SL_RimHealth.description>
+  <SL_RimHealth.slogan>Prompt rétablissement. Ou du moins un rétablissement trimestriel.</SL_RimHealth.slogan>
+  <SL_GoldenYears.label>Régime Années dorées</SL_GoldenYears.label>
+  <SL_GoldenYears.description>Une retraite pour les colons qui atteignent soixante ans. La prime est bon marché tant qu'ils sont jeunes, et c'est là tout l'intérêt.</SL_GoldenYears.description>
+  <SL_GoldenYears.slogan>Prendre sa retraite tôt. Puis tard. Puis trimestriellement.</SL_GoldenYears.slogan>
+  <SL_BlightBeGone.label>Fléau, va-t'en</SL_BlightBeGone.label>
+  <SL_BlightBeGone.description>Les coups de froid et les retombées toxiques dévorent les cultures. Ceci dévore la perte.</SL_BlightBeGone.description>
+  <SL_BlightBeGone.slogan>Nous payons la récolte.</SL_BlightBeGone.slogan>
+  <SL_ClosedForRepairs.label>Fermé pour travaux</SL_ClosedForRepairs.label>
+  <SL_ClosedForRepairs.description>Lorsque votre commerce doit fermer, le revenu, lui, ne ferme pas.</SL_ClosedForRepairs.description>
+  <SL_ClosedForRepairs.slogan>Hors service n'est pas hors prime.</SL_ClosedForRepairs.slogan>
+  <SL_UnspeakableEvents.label>Avenant aux événements innommables</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>Pour les dommages que la formulation de la police ne peut décrire sans un avocat dans la pièce.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>Certaines choses sont mieux assurées que nommées.</SL_UnspeakableEvents.slogan>
+  <SL_Wanderlust.label>Couverture voyage Wanderlust</SL_Wanderlust.label>
+  <SL_Wanderlust.description>Pour les caravanes : une assurance présente quand vous ne l'êtes pas. Facturée par tête et par jour de voyage, uniquement pendant que les gens sont sur la route.</SL_Wanderlust.description>
+  <SL_Wanderlust.slogan>Dommage que vous ne soyez pas là. Nous couvrons la partie où vous n'êtes pas.</SL_Wanderlust.slogan>
+  <SL_LimbByLimb.label>Régime accident membre par membre</SL_LimbByLimb.label>
+  <SL_LimbByLimb.description>Chaque membre a un prix. Nous l'avons écrit. C'est en dernière page, dans le Tableau des membres.</SL_LimbByLimb.description>
+  <SL_LimbByLimb.slogan>Chaque membre a un prix. Nous l'avons écrit.</SL_LimbByLimb.slogan>
+</LanguageData>

@@ -1,0 +1,24 @@
+{
+ "keyed": {
+  "HH.Compat.DialogTitle": "Hospitality läuft zusammen mit Hearth & Harbor. Für dich deaktivieren?",
+  "HH.Compat.DialogBody": "Hearth & Harbor ersetzt Hospitality und dessen Erweiterungen. Solange beide aktiv sind, hat Hearth & Harbor Hospitality für diese Sitzung abgeschaltet: Dessen Patches, Ereignisse, Gebäude und der Gäste-Reiter tun nichts. Deine Hospitality-Gästebetten und -Bereiche bleiben erhalten und werden übernommen, sobald Hospitality weg ist.",
+  "HH.Compat.DialogListHeader": "Diese Mods werden deaktiviert:",
+  "HH.Compat.DialogMentionHeader": "Diese Gäste-Mods bleiben, wie sie sind; ihre Besucher bleiben ihre Sache:",
+  "HH.Compat.DialogFailed": "Die Modliste konnte nicht automatisch geändert werden ({0}). Bitte erledige das von Hand:",
+  "HH.Compat.DialogStep1": "1. Hauptmenü → Mods",
+  "HH.Compat.DialogStep2": "2. Die oben aufgeführten Mods abwählen",
+  "HH.Compat.DialogStep3": "3. Modliste speichern und das Spiel neu starten",
+  "HH.Compat.Yes": "Ja, deaktivieren und neu starten",
+  "HH.Compat.OpenMods": "Modliste öffnen",
+  "HH.Compat.Later": "Später",
+  "HH.Compat.Never": "Nicht mehr fragen",
+  "HH.Compat.ImportLetterTitle": "Aus Hospitality importiert",
+  "HH.Compat.ImportLetterText": "Diese Kolonie wurde mit Hospitality gespielt. Hearth & Harbor hat übernommen, was ging.\\n\\nImportiert: {0}.\\nVerworfen: {1}.\\n\\nImportierte Gästebetten sind wieder normale Betten und werden als Gästebetten vermerkt; der Gästeteil von Hearth & Harbor greift sie auf. Sonst hat sich in deiner Kolonie nichts geändert.",
+  "HH.Compat.ImportNothing": "nichts",
+  "HH.Setting.compat.hospitalityNeverAsk": "Nicht anbieten, Hospitality zu deaktivieren",
+  "HH.Setting.compat.hospitalityNeverAsk.Desc": "Läuft Hospitality zusammen mit Hearth & Harbor, schaltet Hearth & Harbor es für die Sitzung ab und bietet an, es im Hauptmenü zu deaktivieren. An: keine Angebote mehr (das Abschalten passiert trotzdem).",
+  "HH.Setting.compat.importLetter": "Brief nach dem Import eines Hospitality-Spielstands",
+  "HH.Setting.compat.importLetter.Desc": "Nach dem Laden eines Spielstands, der mit Hospitality gespielt wurde, listet ein Brief auf, was Hearth & Harbor übernommen hat (Gästebetten, Bereiche, Besucher) und was verworfen wurde."
+ },
+ "defs": {}
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GuestRoomVerdict.stages.0.label>끔찍한 손님방</HH_GuestRoomVerdict.stages.0.label>
+  <HH_GuestRoomVerdict.stages.0.description>이 방값을 냈다고요? 도랑에서 자는 편이 낫겠어요. 도랑은 돈이라도 받지 않죠.</HH_GuestRoomVerdict.stages.0.description>
+  <HH_GuestRoomVerdict.stages.1.label>실망스러운 손님방</HH_GuestRoomVerdict.stages.1.label>
+  <HH_GuestRoomVerdict.stages.1.description>방이 기대에 한참 못 미쳤습니다. 아주 많이요.</HH_GuestRoomVerdict.stages.1.description>
+  <HH_GuestRoomVerdict.stages.2.label>그저 그런 손님방</HH_GuestRoomVerdict.stages.2.label>
+  <HH_GuestRoomVerdict.stages.2.description>눈을 가늘게 뜨면 괜찮은 방이었습니다.</HH_GuestRoomVerdict.stages.2.description>
+  <HH_GuestRoomVerdict.stages.3.label>쓸 만한 손님방</HH_GuestRoomVerdict.stages.3.label>
+  <HH_GuestRoomVerdict.stages.3.description>제대로 된 침대와 닫히는 문. 제가 바라는 건 그게 다입니다.</HH_GuestRoomVerdict.stages.3.description>
+  <HH_GuestRoomVerdict.stages.4.label>좋은 손님방</HH_GuestRoomVerdict.stages.4.label>
+  <HH_GuestRoomVerdict.stages.4.description>멋진 방이었습니다. 잘 잤어요.</HH_GuestRoomVerdict.stages.4.description>
+  <HH_GuestRoomVerdict.stages.5.label>훌륭한 손님방</HH_GuestRoomVerdict.stages.5.label>
+  <HH_GuestRoomVerdict.stages.5.description>이런 방이라면 여행 전체가 값어치를 합니다.</HH_GuestRoomVerdict.stages.5.description>
+  <HH_GuestAccompanied.stages.0.label>어색한 동행</HH_GuestAccompanied.stages.0.label>
+  <HH_GuestAccompanied.stages.0.description>정착민 한 명이 같이 있어 줬습니다. 날씨 얘기를 했습니다. 아주 오래.</HH_GuestAccompanied.stages.0.description>
+  <HH_GuestAccompanied.stages.1.label>좋은 동행</HH_GuestAccompanied.stages.1.label>
+  <HH_GuestAccompanied.stages.1.description>정착민 한 명이 시설을 안내해 주고 같이 있어 줬습니다.</HH_GuestAccompanied.stages.1.description>
+  <HH_GuestAccompanied.stages.2.label>즐거운 동행</HH_GuestAccompanied.stages.2.label>
+  <HH_GuestAccompanied.stages.2.description>함께한 정착민이 즐거운 사람이었습니다. 소리 내어 웃었을지도 모르겠습니다.</HH_GuestAccompanied.stages.2.description>
+  <HH_GuestAccompanied.stages.3.label>훌륭한 동행</HH_GuestAccompanied.stages.3.label>
+  <HH_GuestAccompanied.stages.3.description>몇 년 동안 이렇게 잘 보살핌을 받아 본 적이 없습니다.</HH_GuestAccompanied.stages.3.description>
+  <HH_GuestPestered.stages.0.label>영입 권유를 받음</HH_GuestPestered.stages.0.label>
+  <HH_GuestPestered.stages.0.description>잠을 자러 왔지, 영입당하러 온 게 아닙니다.</HH_GuestPestered.stages.0.description>
+  <HH_HostedWell.stages.0.label>좋은 대화</HH_HostedWell.stages.0.label>
+  <HH_HostedWell.stages.0.description>좋은 이야기를 나눴습니다.</HH_HostedWell.stages.0.description>
+  <HH_GuestWaited.stages.0.label>조금 기다림</HH_GuestWaited.stages.0.label>
+  <HH_GuestWaited.stages.0.description>시중을 받을 때까지 기다려야 했습니다. 길지는 않았지만 눈에 띄었습니다.</HH_GuestWaited.stages.0.description>
+  <HH_GuestWaited.stages.1.label>헛되이 기다림</HH_GuestWaited.stages.1.label>
+  <HH_GuestWaited.stages.1.description>기다리고 기다렸지만 아무도 시중을 들러 오지 않았습니다.</HH_GuestWaited.stages.1.description>
+  <HH_GuestBellNobody.stages.0.label>벨을 울렸지만 아무도 오지 않음</HH_GuestBellNobody.stages.0.label>
+  <HH_GuestBellNobody.stages.0.description>벨을 울렸습니다. 아무도 오지 않았습니다.</HH_GuestBellNobody.stages.0.description>
+  <HH_GuestWaitingRoom.stages.0.label>평범한 대기실</HH_GuestWaitingRoom.stages.0.label>
+  <HH_GuestWaitingRoom.stages.0.description>기다리는 동안 앉을 곳이라도 있어서 다행이었습니다.</HH_GuestWaitingRoom.stages.0.description>
+  <HH_GuestWaitingRoom.stages.1.label>괜찮은 대기실</HH_GuestWaitingRoom.stages.1.label>
+  <HH_GuestWaitingRoom.stages.1.description>대기실이 그럭저럭 편안했습니다.</HH_GuestWaitingRoom.stages.1.description>
+  <HH_GuestWaitingRoom.stages.2.label>좋은 대기실</HH_GuestWaitingRoom.stages.2.label>
+  <HH_GuestWaitingRoom.stages.2.description>그곳에서 기다리는 건 거의 즐거움이었습니다.</HH_GuestWaitingRoom.stages.2.description>
+  <HH_GuestWaitingRoom.stages.3.label>훌륭한 대기실</HH_GuestWaitingRoom.stages.3.label>
+  <HH_GuestWaitingRoom.stages.3.description>이런 방이라면 더 오래 기다려도 상관없었겠습니다.</HH_GuestWaitingRoom.stages.3.description>
+</LanguageData>

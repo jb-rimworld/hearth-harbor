@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Compat.DialogTitle>A Hospitalidade está ativa junto com o Hearth &amp; Harbor. Desativá-la para você?</HH.Compat.DialogTitle>
+  <HH.Compat.DialogBody>O Hearth &amp; Harbor substitui a Hospitalidade e os seus complementos. Enquanto os dois estiverem ativos, o Hearth &amp; Harbor desligou a Hospitalidade nesta sessão: os patches, eventos, construções e a aba de hóspedes dela não fazem nada. As suas camas e áreas de hóspedes da Hospitalidade são mantidas e assumidas quando a Hospitalidade for removida.</HH.Compat.DialogBody>
+  <HH.Compat.DialogListHeader>Estes mods serão desativados:</HH.Compat.DialogListHeader>
+  <HH.Compat.DialogMentionHeader>Estes mods de hóspedes permanecem como estão; os visitantes deles continuam sendo deles:</HH.Compat.DialogMentionHeader>
+  <HH.Compat.DialogFailed>A lista de mods não pôde ser alterada automaticamente ({0}). Faça isso manualmente:</HH.Compat.DialogFailed>
+  <HH.Compat.DialogStep1>1. Menu principal → Mods</HH.Compat.DialogStep1>
+  <HH.Compat.DialogStep2>2. Desmarque os mods listados acima</HH.Compat.DialogStep2>
+  <HH.Compat.DialogStep3>3. Salve a lista de mods e reinicie o jogo</HH.Compat.DialogStep3>
+  <HH.Compat.Yes>Sim, desativar e reiniciar</HH.Compat.Yes>
+  <HH.Compat.OpenMods>Abrir a lista de mods</HH.Compat.OpenMods>
+  <HH.Compat.Later>Mais tarde</HH.Compat.Later>
+  <HH.Compat.Never>Não perguntar novamente</HH.Compat.Never>
+  <HH.Compat.ImportLetterTitle>Importado da Hospitalidade</HH.Compat.ImportLetterTitle>
+  <HH.Compat.ImportLetterText>Esta colônia foi jogada com a Hospitalidade. O Hearth &amp; Harbor assumiu o que pôde.\n\nImportado: {0}.\nDescartado: {1}.\n\nAs camas de hóspedes importadas voltaram a ser camas normais e ficam registradas como camas de hóspedes; a parte de hóspedes do Hearth &amp; Harbor as reconhece. Nada mais na sua colônia foi alterado.</HH.Compat.ImportLetterText>
+  <HH.Compat.ImportNothing>nada</HH.Compat.ImportNothing>
+  <HH.Setting.compat.hospitalityNeverAsk>Não oferecer a desativação da Hospitalidade</HH.Setting.compat.hospitalityNeverAsk>
+  <HH.Setting.compat.hospitalityNeverAsk.Desc>Quando a Hospitalidade roda junto com o Hearth &amp; Harbor, o Hearth &amp; Harbor a desliga para a sessão e oferece desativá-la no menu principal. Ligado: não há mais ofertas (o desligamento continua acontecendo).</HH.Setting.compat.hospitalityNeverAsk.Desc>
+  <HH.Setting.compat.importLetter>Carta após importar um save da Hospitalidade</HH.Setting.compat.importLetter>
+  <HH.Setting.compat.importLetter.Desc>Após carregar um save jogado com a Hospitalidade, uma carta lista o que o Hearth &amp; Harbor assumiu (camas de hóspedes, áreas, visitantes) e o que foi descartado.</HH.Setting.compat.importLetter.Desc>
+</LanguageData>

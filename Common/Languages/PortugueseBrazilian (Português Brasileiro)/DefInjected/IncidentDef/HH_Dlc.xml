@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_NobleStay.label>estadia nobre</HH_NobleStay.label>
+  <HH_NobleStay.letterLabel>Estadia nobre oferecida</HH_NobleStay.letterLabel>
+  <HH_NobleStay.letterText>Uma comitiva nobre pede hospedagem.</HH_NobleStay.letterText>
+  <HH_ImperialBilleting.label>alojamento imperial</HH_ImperialBilleting.label>
+  <HH_ImperialBilleting.letterLabel>Alojamento imperial</HH_ImperialBilleting.letterLabel>
+  <HH_ImperialBilleting.letterText>O Império exige alojamento.</HH_ImperialBilleting.letterText>
+</LanguageData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueSign.label>Geschäftsschild</HH_VenueSign.label>
+  <HH_VenueSign.description>Ein Schild, das den Raum, in dem es steht, in ein Geschäft verwandelt: Taverne, Laden, Restaurant, Casino, Spa oder Lounge. Wähle Geschäftsart, Öffnungszeiten und Preise in den Steuerelementen des Schilds. Ohne Schild ist ein Raum eben nur ein Raum.</HH_VenueSign.description>
+  <HH_VenueSignWall.label>Geschäftsschild (Wand)</HH_VenueSignWall.label>
+  <HH_VenueSignWall.description>Dasselbe Schild, an eine Wand gehängt. Der Raum, auf den es blickt, wird zum Geschäft. Wähle Geschäftsart, Öffnungszeiten und Preise in den Steuerelementen des Schilds.</HH_VenueSignWall.description>
+  <HH_ShopCounter.label>Ladentheke</HH_ShopCounter.label>
+  <HH_ShopCounter.description>Eine Theke für Verkäufer oder Barkeeper. Wer das Geschäft betreut, steht dahinter, und die Tageseinnahmen werden um Mitternacht hier als Silber abgelegt. Die Theke ist optional: Ohne sie steht die Bedienung neben dem Schild.</HH_ShopCounter.description>
+  <HH_MarketStall.label>Marktstand</HH_MarketStall.label>
+  <HH_MarketStall.description>Ein freistehender Stand mit gestreiftem Sonnendach. Der große Markt findet erst statt, wenn du genug Stände besitzt (siehe Einstellungen für Geschäfte): Jede Händlerkarawane baut an einem auf und zahlt eine Standgebühr in deine Kasse. Im Freien funktioniert er bei jedem Wetter, ist aber kein eigenes Geschäft.</HH_MarketStall.description>
+  <HH_VendingMachine.label>Verkaufsautomat</HH_VendingMachine.label>
+  <HH_VendingMachine.description>Ein Schrank mit Strom, der Essen, Getränke, Drogen und Medizin enthält. Gäste kaufen zu jeder Stunde ohne Personal daran ein, zum Marktwert. Transporteure befüllen ihn wie ein Regal. Kolonisten dürfen sich gratis bedienen; der Automat verlangt nur von Gästen Geld. Braucht Strom zum Verkaufen.</HH_VendingMachine.description>
+</LanguageData>

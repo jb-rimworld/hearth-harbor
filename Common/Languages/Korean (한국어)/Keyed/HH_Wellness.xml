@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Setting.wellness.priceHotTub>온탕 가격</HH.Setting.wellness.priceHotTub>
+  <HH.Setting.wellness.priceHotTub.Desc>손님이 온탕에서 한 번 몸을 담글 때 내는 요금. 시설의 가격 배율이 곱해진다.</HH.Setting.wellness.priceHotTub.Desc>
+  <HH.Setting.wellness.priceSauna>사우나 가격</HH.Setting.wellness.priceSauna>
+  <HH.Setting.wellness.priceSauna.Desc>손님이 사우나를 한 번 이용할 때 내는 요금.</HH.Setting.wellness.priceSauna.Desc>
+  <HH.Setting.wellness.priceMassage>마사지 가격</HH.Setting.wellness.priceMassage>
+  <HH.Setting.wellness.priceMassage.Desc>마사지 한 번에 내는 요금. 서비스(Serving) 작업 유형의 개척민이 시간이 있을 때만 제공된다.</HH.Setting.wellness.priceMassage.Desc>
+  <HH.Setting.wellness.dayPass>일일권 판매</HH.Setting.wellness.dayPass>
+  <HH.Setting.wellness.dayPass.Desc>여유 있는 손님은 이용할 때마다 내는 대신 일일권을 산다. 온탕과 사우나에 적용되며 마사지에는 적용되지 않는다.</HH.Setting.wellness.dayPass.Desc>
+  <HH.Setting.wellness.priceDayPass>일일권 가격</HH.Setting.wellness.priceDayPass>
+  <HH.Setting.wellness.priceDayPass.Desc>스파 일일권 가격(일일권 유효 시간 동안 온탕과 사우나 이용 가능).</HH.Setting.wellness.priceDayPass.Desc>
+  <HH.Setting.wellness.dayPassHours>일일권 유효 시간(시간)</HH.Setting.wellness.dayPassHours>
+  <HH.Setting.wellness.dayPassHours.Desc>일일권이 유효한 시간.</HH.Setting.wellness.dayPassHours.Desc>
+  <HH.Setting.wellness.selfServiceDiscount>셀프 서비스 할인</HH.Setting.wellness.selfServiceDiscount>
+  <HH.Setting.wellness.selfServiceDiscount.Desc>방 안에 직원이 아무도 없을 때 적용되는 가격 인하. 서비스(Serving) 작업 유형의 개척민이 방 안에 서 있으면 직원으로 친다.</HH.Setting.wellness.selfServiceDiscount.Desc>
+  <HH.Setting.wellness.hoursHotTub>온탕 이용 시간(시간)</HH.Setting.wellness.hoursHotTub>
+  <HH.Setting.wellness.hoursHotTub.Desc>한 번 몸을 담그는 시간.</HH.Setting.wellness.hoursHotTub.Desc>
+  <HH.Setting.wellness.hoursSauna>사우나 이용 시간(시간)</HH.Setting.wellness.hoursSauna>
+  <HH.Setting.wellness.hoursSauna.Desc>사우나를 한 번 이용하는 시간.</HH.Setting.wellness.hoursSauna.Desc>
+  <HH.Setting.wellness.hoursMassage>마사지 시간(시간)</HH.Setting.wellness.hoursMassage>
+  <HH.Setting.wellness.hoursMassage.Desc>마사지 한 번이 걸리는 시간. 마사지사와 손님이 모두 그 시간 동안 묶인다.</HH.Setting.wellness.hoursMassage.Desc>
+  <HH.Setting.wellness.massageWaitHours>마사지사 대기 시간(시간)</HH.Setting.wellness.massageWaitHours>
+  <HH.Setting.wellness.massageWaitHours.Desc>마사지사를 기다리며 마사지 테이블에 누워 있는 시간. 그 뒤에는 포기한다.</HH.Setting.wellness.massageWaitHours.Desc>
+  <HH.Setting.wellness.saunaMinTemp>사우나 최저 온도(°C)</HH.Setting.wellness.saunaMinTemp>
+  <HH.Setting.wellness.saunaMinTemp.Desc>사우나 난로는 방 온도가 이 값 이상일 때만 제대로 작동하는 사우나로 인정된다.</HH.Setting.wellness.saunaMinTemp.Desc>
+  <HH.Setting.wellness.joyFactor>여가 획득 배율</HH.Setting.wellness.joyFactor>
+  <HH.Setting.wellness.joyFactor.Desc>온탕, 사우나, 마사지에서 개척민이 얻는 여가(Joy)에 곱해지는 배율.</HH.Setting.wellness.joyFactor.Desc>
+  <HH.Setting.wellness.restBonus>이용 1회당 휴식 보너스</HH.Setting.wellness.restBonus>
+  <HH.Setting.wellness.restBonus.Desc>이용으로 회복되는 휴식 막대의 비율(마사지는 조금 더 많다). 0으로 두면 보너스가 없다.</HH.Setting.wellness.restBonus.Desc>
+  <HH.Setting.wellness.soothe>이용 후 진정</HH.Setting.wellness.soothe>
+  <HH.Setting.wellness.soothe.Desc>이용 후 약 하루 동안 진정 상태가 유지되어 통증을 15% 덜 느낀다.</HH.Setting.wellness.soothe.Desc>
+  <HH.Setting.wellness.massageXp>마사지 1회당 마사지사 경험치</HH.Setting.wellness.massageXp>
+  <HH.Setting.wellness.massageXp.Desc>마사지를 끝까지 했을 때 마사지사가 얻는 사회 및 의학 경험치.</HH.Setting.wellness.massageXp.Desc>
+  <HH.Setting.wellness.satisfaction>이용 1회당 손님 만족도</HH.Setting.wellness.satisfaction>
+  <HH.Setting.wellness.satisfaction.Desc>이용을 마쳤을 때 손님의 만족도가 오르는 정도(-1에서 +1 범위).</HH.Setting.wellness.satisfaction.Desc>
+  <HH.Setting.wellness.guestWeight>손님의 스파 관심도</HH.Setting.wellness.guestWeight>
+  <HH.Setting.wellness.guestWeight.Desc>다른 활동과 비교했을 때 손님이 스파를 얼마나 원하는지. 0이면 손님이 전혀 가지 않는다.</HH.Setting.wellness.guestWeight.Desc>
+  <HH.Setting.wellness.guestCooldownHours>손님의 이용 간격(시간)</HH.Setting.wellness.guestCooldownHours>
+  <HH.Setting.wellness.guestCooldownHours.Desc>손님은 이 시간보다 빨리 다음 스파 이용을 시작하지 않는다.</HH.Setting.wellness.guestCooldownHours.Desc>
+  <HH.Setting.wellness.rehabJoy>환자도 스파 이용 가능</HH.Setting.wellness.rehabJoy>
+  <HH.Setting.wellness.rehabJoy.Desc>RimWard가 활성화된 경우, 식민지 의료 침대의 보행 가능한 환자도 여가를 위해 온탕, 사우나, 마사지 테이블을 이용할 수 있다(수술 후나 열린 상처가 있을 때의 사우나는 제외).</HH.Setting.wellness.rehabJoy.Desc>
+  <HH.Wellness.Yes>예</HH.Wellness.Yes>
+  <HH.Wellness.No>아니요</HH.Wellness.No>
+  <HH.Wellness.Inspect.SaunaReady>사우나 준비 완료: {0} °C.</HH.Wellness.Inspect.SaunaReady>
+  <HH.Wellness.Inspect.SaunaNotReady>아직 작동하는 사우나가 아님: 필요 {1} °C 중 현재 {0} °C ({2}).</HH.Wellness.Inspect.SaunaNotReady>
+  <HH.Wellness.Inspect.TubReady>온탕 준비 완료.</HH.Wellness.Inspect.TubReady>
+  <HH.Wellness.Inspect.TubNotReady>온탕 사용 불가: {0}.</HH.Wellness.Inspect.TubNotReady>
+  <HH.Wellness.Inspect.MassageFree>마사지 테이블 비어 있음.</HH.Wellness.Inspect.MassageFree>
+  <HH.Wellness.Inspect.MassageWaiting>마사지사를 기다리는 사람이 있음.</HH.Wellness.Inspect.MassageWaiting>
+  <HH.Wellness.Inspect.MassageRunning>마사지 진행 중.</HH.Wellness.Inspect.MassageRunning>
+  <HH.Wellness.Inspect.Users>개척민 이용 가능: {0}. 손님 이용 가능: {1}.</HH.Wellness.Inspect.Users>
+  <HH.Wellness.Gizmo.Colonists>개척민 이용 가능</HH.Wellness.Gizmo.Colonists>
+  <HH.Wellness.Gizmo.ColonistsDesc>개척민이 여가를 위해 이용하도록 허용한다. 스파를 영업 중일 때는 끈다.</HH.Wellness.Gizmo.ColonistsDesc>
+  <HH.Wellness.Gizmo.Guests>손님 이용 가능</HH.Wellness.Gizmo.Guests>
+  <HH.Wellness.Gizmo.GuestsDesc>손님이 이용하도록 허용한다(스파 시설 안에 있으면 손님이 요금을 낸다).</HH.Wellness.Gizmo.GuestsDesc>
+</LanguageData>

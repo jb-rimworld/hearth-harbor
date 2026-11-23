@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ATM.label>ATM</SL_ATM.label>
+  <SL_ATM.description>スクリーン、テンキー、そして四か国語で「銀貨」と書かれた投入口を備えた鋼鉄の箱。入植者は口座を確認し、銀貨を引き出し（1日の上限、少額の手数料）、手持ちの銀貨を預け入れる。電力が必要。</SL_ATM.description>
+  <SL_BankCounter.label>銀行窓口</SL_BankCounter.label>
+  <SL_BankCounter.description>真鍮の金具と、誰も鳴らしてはいけない小さなベルが付いた長い木製のカウンター。銀行の支店。預金は即時に記帳され、現金は金庫からすぐに出て、ローンは対面で契約される。電力が必要。</SL_BankCounter.description>
+  <SL_NightSafe.label>夜間金庫</SL_NightSafe.label>
+  <SL_NightSafe.description>鋼鉄のブロックにある投入口。その日の売上を入れて、カチャンと音がするのを聞き、帰宅する。毎晩零時に、所有する店舗の金庫はここで空にされる。口座があればその口座へ、なければ隣の床に銀貨として置かれる。</SL_NightSafe.description>
+</LanguageData>

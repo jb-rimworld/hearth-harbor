@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Tavern.label>taverna</HH_Venue_Tavern.label>
+  <HH_Venue_Tavern.description>Um cômodo em que os hóspedes compram uma bebida e a consomem ali mesmo. Abasteça o cômodo com cerveja ou outras bebidas em uma prateleira ou depósito; um barman atrás da placa ou do balcão o mantém aberto. As bebidas no cômodo são reservadas para clientes, a menos que a placa indique o contrário.</HH_Venue_Tavern.description>
+  <HH_Venue_Shop.label>loja</HH_Venue_Shop.label>
+  <HH_Venue_Shop.description>Um cômodo em que os hóspedes compram mercadorias. Tudo o que estiver guardado em prateleiras e depósitos dentro do cômodo está à venda, pelo valor de mercado multiplicado pelo fator de preço da placa. Sem um lojista, a loja funciona em autoatendimento com um pequeno desconto.</HH_Venue_Shop.description>
+  <HH_Venue_Restaurant.label>restaurante</HH_Venue_Restaurant.label>
+  <HH_Venue_Restaurant.description>Um cômodo em que os hóspedes se sentam para comer. Mesas, uma cozinha e um garçom fazem dele um restaurante; os pratos em si são preparados pela cozinha.</HH_Venue_Restaurant.description>
+  <HH_Venue_Casino.label>cassino</HH_Venue_Casino.label>
+  <HH_Venue_Casino.description>Um cômodo com mesas de cartas, caça-níqueis e crupiês. Os hóspedes apostam sua prata em jogos de azar; a casa mantém uma pequena e honesta vantagem.</HH_Venue_Casino.description>
+  <HH_Venue_Spa.label>spa</HH_Venue_Spa.label>
+  <HH_Venue_Spa.description>Um cômodo tranquilo para banhos, vapor e descanso. Um atendente mantém as toalhas aquecidas; os hóspedes pagam por visita.</HH_Venue_Spa.description>
+  <HH_Venue_Lounge.label>salão de espera</HH_Venue_Lounge.label>
+  <HH_Venue_Lounge.description>Uma sala de espera com assentos. Hóspedes que encontram um negócio fechado ou sem pessoal esperam aqui, em vez de na porta, e esperam com mais paciência. Sempre aberto, sem necessidade de funcionários.</HH_Venue_Lounge.description>
+  <HH_Venue_Chapel.label>capela para hóspedes</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>Um cômodo tranquilo com um altar para hóspedes, onde visitantes de todas as crenças vêm rezar. Os hóspedes não pagam nada, mas saem mais calmos; uma capela com um altar bonito e alguns bancos é uma boa vizinha para uma estalagem. Sempre aberta durante o dia, sem necessidade de funcionários.</HH_Venue_Chapel.description>
+</LanguageData>

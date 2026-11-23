@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_AteDish.label>a mangé un plat soigné</HH_AteDish.label>
+  <HH_AteDish.stages.0.label>cuisine maison, affreuse</HH_AteDish.stages.0.label>
+  <HH_AteDish.stages.0.description>J'ai mangé un plat affreux de cuisine maison.</HH_AteDish.stages.0.description>
+  <HH_AteDish.stages.1.label>cuisine maison, médiocre</HH_AteDish.stages.1.label>
+  <HH_AteDish.stages.1.description>J'ai mangé un plat médiocre de cuisine maison.</HH_AteDish.stages.1.description>
+  <HH_AteDish.stages.2.label>cuisine maison, correcte</HH_AteDish.stages.2.label>
+  <HH_AteDish.stages.2.description>J'ai mangé un plat correct de cuisine maison.</HH_AteDish.stages.2.description>
+  <HH_AteDish.stages.3.label>cuisine maison, bonne</HH_AteDish.stages.3.label>
+  <HH_AteDish.stages.3.description>J'ai mangé un plat bon de cuisine maison.</HH_AteDish.stages.3.description>
+  <HH_AteDish.stages.4.label>cuisine maison, excellente</HH_AteDish.stages.4.label>
+  <HH_AteDish.stages.4.description>J'ai mangé un plat excellent de cuisine maison.</HH_AteDish.stages.4.description>
+  <HH_AteDish.stages.5.label>cuisine maison, chef-d'œuvre</HH_AteDish.stages.5.label>
+  <HH_AteDish.stages.5.description>J'ai mangé un plat chef-d'œuvre de cuisine maison.</HH_AteDish.stages.5.description>
+  <HH_AteDish.stages.6.label>cuisine maison, légendaire</HH_AteDish.stages.6.label>
+  <HH_AteDish.stages.6.description>J'ai mangé un plat légendaire de cuisine maison.</HH_AteDish.stages.6.description>
+  <HH_AteDish.stages.7.label>bonne cuisine maison, affreuse</HH_AteDish.stages.7.label>
+  <HH_AteDish.stages.7.description>J'ai mangé un plat affreux de bonne cuisine maison.</HH_AteDish.stages.7.description>
+  <HH_AteDish.stages.8.label>bonne cuisine maison, médiocre</HH_AteDish.stages.8.label>
+  <HH_AteDish.stages.8.description>J'ai mangé un plat médiocre de bonne cuisine maison.</HH_AteDish.stages.8.description>
+  <HH_AteDish.stages.9.label>bonne cuisine maison, correcte</HH_AteDish.stages.9.label>
+  <HH_AteDish.stages.9.description>J'ai mangé un plat correct de bonne cuisine maison.</HH_AteDish.stages.9.description>
+  <HH_AteDish.stages.10.label>bonne cuisine maison, bonne</HH_AteDish.stages.10.label>
+  <HH_AteDish.stages.10.description>J'ai mangé un plat bon de bonne cuisine maison.</HH_AteDish.stages.10.description>
+  <HH_AteDish.stages.11.label>bonne cuisine maison, excellente</HH_AteDish.stages.11.label>
+  <HH_AteDish.stages.11.description>J'ai mangé un plat excellent de bonne cuisine maison.</HH_AteDish.stages.11.description>
+  <HH_AteDish.stages.12.label>bonne cuisine maison, chef-d'œuvre</HH_AteDish.stages.12.label>
+  <HH_AteDish.stages.12.description>J'ai mangé un plat chef-d'œuvre de bonne cuisine maison.</HH_AteDish.stages.12.description>
+  <HH_AteDish.stages.13.label>bonne cuisine maison, légendaire</HH_AteDish.stages.13.label>
+  <HH_AteDish.stages.13.description>J'ai mangé un plat légendaire de bonne cuisine maison.</HH_AteDish.stages.13.description>
+  <HH_AteDish.stages.14.label>cuisine raffinée, affreuse</HH_AteDish.stages.14.label>
+  <HH_AteDish.stages.14.description>J'ai mangé un plat affreux de cuisine raffinée.</HH_AteDish.stages.14.description>
+  <HH_AteDish.stages.15.label>cuisine raffinée, médiocre</HH_AteDish.stages.15.label>
+  <HH_AteDish.stages.15.description>J'ai mangé un plat médiocre de cuisine raffinée.</HH_AteDish.stages.15.description>
+  <HH_AteDish.stages.16.label>cuisine raffinée, correcte</HH_AteDish.stages.16.label>
+  <HH_AteDish.stages.16.description>J'ai mangé un plat correct de cuisine raffinée.</HH_AteDish.stages.16.description>
+  <HH_AteDish.stages.17.label>cuisine raffinée, bonne</HH_AteDish.stages.17.label>
+  <HH_AteDish.stages.17.description>J'ai mangé un plat bon de cuisine raffinée.</HH_AteDish.stages.17.description>
+  <HH_AteDish.stages.18.label>cuisine raffinée, excellente</HH_AteDish.stages.18.label>
+  <HH_AteDish.stages.18.description>J'ai mangé un plat excellent de cuisine raffinée.</HH_AteDish.stages.18.description>
+  <HH_AteDish.stages.19.label>cuisine raffinée, chef-d'œuvre</HH_AteDish.stages.19.label>
+  <HH_AteDish.stages.19.description>J'ai mangé un plat chef-d'œuvre de cuisine raffinée.</HH_AteDish.stages.19.description>
+  <HH_AteDish.stages.20.label>cuisine raffinée, légendaire</HH_AteDish.stages.20.label>
+  <HH_AteDish.stages.20.description>J'ai mangé un plat légendaire de cuisine raffinée.</HH_AteDish.stages.20.description>
+  <HH_AteDish.stages.21.label>haute cuisine, affreuse</HH_AteDish.stages.21.label>
+  <HH_AteDish.stages.21.description>J'ai mangé un plat affreux de haute cuisine.</HH_AteDish.stages.21.description>
+  <HH_AteDish.stages.22.label>haute cuisine, médiocre</HH_AteDish.stages.22.label>
+  <HH_AteDish.stages.22.description>J'ai mangé un plat médiocre de haute cuisine.</HH_AteDish.stages.22.description>
+  <HH_AteDish.stages.23.label>haute cuisine, correcte</HH_AteDish.stages.23.label>
+  <HH_AteDish.stages.23.description>J'ai mangé un plat correct de haute cuisine.</HH_AteDish.stages.23.description>
+  <HH_AteDish.stages.24.label>haute cuisine, bonne</HH_AteDish.stages.24.label>
+  <HH_AteDish.stages.24.description>J'ai mangé un plat bon de haute cuisine.</HH_AteDish.stages.24.description>
+  <HH_AteDish.stages.25.label>haute cuisine, excellente</HH_AteDish.stages.25.label>
+  <HH_AteDish.stages.25.description>J'ai mangé un plat excellent de haute cuisine.</HH_AteDish.stages.25.description>
+  <HH_AteDish.stages.26.label>haute cuisine, chef-d'œuvre</HH_AteDish.stages.26.label>
+  <HH_AteDish.stages.26.description>J'ai mangé un plat chef-d'œuvre de haute cuisine.</HH_AteDish.stages.26.description>
+  <HH_AteDish.stages.27.label>haute cuisine, légendaire</HH_AteDish.stages.27.label>
+  <HH_AteDish.stages.27.description>J'ai mangé un plat légendaire de haute cuisine.</HH_AteDish.stages.27.description>
+</LanguageData>

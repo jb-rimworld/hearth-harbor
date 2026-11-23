@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_CampfireStew.label>Guláš z muffala u ohniště</HH_Dish_CampfireStew.label>
+  <HH_Dish_CampfireStew.description>Do hrnce šlo všechno, včetně hádky o tom, co to všechno znamená.</HH_Dish_CampfireStew.description>
+  <HH_Dish_PotatoSoup.label>Bramborová polévka</HH_Dish_PotatoSoup.label>
+  <HH_Dish_PotatoSoup.description>Chutná jako domov, kdyby domov měl hliněnou podlahu a nízká očekávání.</HH_Dish_PotatoSoup.description>
+  <HH_Dish_SpitRoastedHaunch.label>Kýta pečená na rožni</HH_Dish_SpitRoastedHaunch.label>
+  <HH_Dish_SpitRoastedHaunch.description>Hodinu ji ručně otáčel ten, kdo v losování prohrál.</HH_Dish_SpitRoastedHaunch.description>
+  <HH_Dish_HashAndEgg.label>Hash s vejcem</HH_Dish_HashAndEgg.label>
+  <HH_Dish_HashAndEgg.description>Snídaně, která říká, že den nebude lepší, ale aspoň bude osmažený.</HH_Dish_HashAndEgg.description>
+  <HH_Dish_CornPorridge.label>Kukuřičná kaše</HH_Dish_CornPorridge.label>
+  <HH_Dish_CornPorridge.description>Dost hustá na to, aby v nouzi zalepila díru ve zdi.</HH_Dish_CornPorridge.description>
+  <HH_Dish_BerryCompote.label>Bobulový kompot</HH_Dish_BerryCompote.label>
+  <HH_Dish_BerryCompote.description>Jediná věc na Rimu, která je zároveň sladká a levná.</HH_Dish_BerryCompote.description>
+  <HH_Dish_PlainSteamedRice.label>Prostě napařená rýže</HH_Dish_PlainSteamedRice.label>
+  <HH_Dish_PlainSteamedRice.description>Rýže. Je to rýže. Prosím, přestaňte v menu hledat další.</HH_Dish_PlainSteamedRice.description>
+  <HH_Dish_Congee.label>Congee</HH_Dish_Congee.label>
+  <HH_Dish_Congee.description>Rýžová kaše pro lidi, kteří měli velmi dlouhý týden a velmi dlouhý nájezd.</HH_Dish_Congee.description>
+  <HH_Dish_FriedMushrooms.label>Smažené houby</HH_Dish_FriedMushrooms.label>
+  <HH_Dish_FriedMushrooms.description>Zvenku křupavé, uvnitř s trochu jeskynní chutí.</HH_Dish_FriedMushrooms.description>
+  <HH_Dish_EggDropSoup.label>Polévka s vejci</HH_Dish_EggDropSoup.label>
+  <HH_Dish_EggDropSoup.description>Vejce rozšlehaná do horkého vývaru, protože vývar potřeboval koníček.</HH_Dish_EggDropSoup.description>
+  <HH_Dish_RoastCornOnTheCob.label>Pečená kukuřice na klasu</HH_Dish_RoastCornOnTheCob.label>
+  <HH_Dish_RoastCornOnTheCob.description>Jedená ve stoje, v dešti, zatímco někdo střílí na stánek.</HH_Dish_RoastCornOnTheCob.description>
+  <HH_Dish_RoastPotatoes.label>Pečené brambory</HH_Dish_RoastPotatoes.label>
+  <HH_Dish_RoastPotatoes.description>Zlaté, křupavé a nejblíž radosti v sektoru sedm.</HH_Dish_RoastPotatoes.description>
+  <HH_Dish_MilkRicePudding.label>Mléčný rýžový nákyp</HH_Dish_MilkRicePudding.label>
+  <HH_Dish_MilkRicePudding.description>Jídlo pohodlí pro kolonisty, jejichž pohodlí bylo odvoláno.</HH_Dish_MilkRicePudding.description>
+  <HH_Dish_ScrambledEggs.label>Míchaná vejce</HH_Dish_ScrambledEggs.label>
+  <HH_Dish_ScrambledEggs.description>Vejce, ale přeskládaná, dokud nepřestala reptat.</HH_Dish_ScrambledEggs.description>
+  <HH_Dish_BugSkewers.label>Špízy z hmyzu v solné kůži</HH_Dish_BugSkewers.label>
+  <HH_Dish_BugSkewers.description>Křupavé zvenku a uvnitř bez mnoha otázek.</HH_Dish_BugSkewers.description>
+  <HH_Dish_RawFishSlices.label>Plátky syrové ryby</HH_Dish_RawFishSlices.label>
+  <HH_Dish_RawFishSlices.description>Nakrájeno někým, kdo se na to jednou podíval na videu.</HH_Dish_RawFishSlices.description>
+  <HH_Dish_PanFriedFish.label>Ryba osmažená na pánvi</HH_Dish_PanFriedFish.label>
+  <HH_Dish_PanFriedFish.description>Pokud včera plavala, dnes se smaží.</HH_Dish_PanFriedFish.description>
+  <HH_Dish_AgavePancakes.label>Palačinky z agáve</HH_Dish_AgavePancakes.label>
+  <HH_Dish_AgavePancakes.description>Naskládané vysoko, aby zakryly fakt, že je jen jedno vejce.</HH_Dish_AgavePancakes.description>
+  <HH_Dish_FruitBowl.label>Mísa ovoce</HH_Dish_FruitBowl.label>
+  <HH_Dish_FruitBowl.description>Zdravé, čerstvé a sežrané za čtyři vteřiny, jakmile přijdou děti.</HH_Dish_FruitBowl.description>
+  <HH_Dish_MushroomPlate.label>Talíř hub</HH_Dish_MushroomPlate.label>
+  <HH_Dish_MushroomPlate.description>Vychlazené houby, protože lednička už běžela.</HH_Dish_MushroomPlate.description>
+  <HH_Dish_CrimsonSmoothie.label>Karmínové smoothie</HH_Dish_CrimsonSmoothie.label>
+  <HH_Dish_CrimsonSmoothie.description>Bobule, mléko a tajná růžová.</HH_Dish_CrimsonSmoothie.description>
+  <HH_Dish_SmokedJerkyStrips.label>Uzené sušené pásky</HH_Dish_SmokedJerkyStrips.label>
+  <HH_Dish_SmokedJerkyStrips.description>Vydrží věčně, což je také tak dlouho, než se to rozžvýká.</HH_Dish_SmokedJerkyStrips.description>
+  <HH_Dish_BratwurstAndBeer.label>Klobása a pivo</HH_Dish_BratwurstAndBeer.label>
+  <HH_Dish_BratwurstAndBeer.description>Klobása v housce, pivo v hrnku, ráno lítost.</HH_Dish_BratwurstAndBeer.description>
+  <HH_Dish_InsectTacos.label>Tacos s hmyzem</HH_Dish_InsectTacos.label>
+  <HH_Dish_InsectTacos.description>Tři tacos, nula otázek a velmi dobrá omáčka.</HH_Dish_InsectTacos.description>
+  <HH_Dish_FishAndChips.label>Ryba s hranolky</HH_Dish_FishAndChips.label>
+  <HH_Dish_FishAndChips.description>Smažené dvakrát pro štěstí a jednou ze vzteku.</HH_Dish_FishAndChips.description>
+  <HH_Dish_MuffaloRamen.label>Muffalo ramen</HH_Dish_MuffaloRamen.label>
+  <HH_Dish_MuffaloRamen.description>Hlasitě srkej. Když jde o poslední misku, srkej ještě hlasitěji.</HH_Dish_MuffaloRamen.description>
+  <HH_Dish_EggFriedRice.label>Smažená rýže s vejci</HH_Dish_EggFriedRice.label>
+  <HH_Dish_EggFriedRice.description>Včerejší rýže, dnešní problém, zítřejší oběd.</HH_Dish_EggFriedRice.description>
+  <HH_Dish_PadThrumbo.label>Pad thrumbo</HH_Dish_PadThrumbo.label>
+  <HH_Dish_PadThrumbo.description>Sladkokyselé spletence nudlí a křupavosti, na woku dopékané, dokud neposlouchá.</HH_Dish_PadThrumbo.description>
+  <HH_Dish_ChiliConCarne.label>Chili con carne</HH_Dish_ChiliConCarne.label>
+  <HH_Dish_ChiliConCarne.description>Dost žhavé na to, aby vypálilo rány. Nepoužívat jako lék. Používat jako lék.</HH_Dish_ChiliConCarne.description>
+  <HH_Dish_JollofRice.label>Jollof rýže</HH_Dish_JollofRice.label>
+  <HH_Dish_JollofRice.description>Recept je bitva tří kolonií, z nichž každá má pravdu.</HH_Dish_JollofRice.description>
+  <HH_Dish_UgaliWithStew.label>Ugali s dušeninou</HH_Dish_UgaliWithStew.label>
+  <HH_Dish_UgaliWithStew.description>Kukuřičné těsto, jí se rukama, takže při útěku nic nepřijde nazmar.</HH_Dish_UgaliWithStew.description>
+  <HH_Dish_BakedEggs.label>Pečená vejce</HH_Dish_BakedEggs.label>
+  <HH_Dish_BakedEggs.description>Vejce, která si prošla hodně a vylezla šťavnatá.</HH_Dish_BakedEggs.description>
+  <HH_Dish_HashBrowns.label>Bramborové placky</HH_Dish_HashBrowns.label>
+  <HH_Dish_HashBrowns.description>Bramborová placka, která už v drive-through viděla své.</HH_Dish_HashBrowns.description>
+  <HH_Dish_CornFritters.label>Kukuřičné lívance</HH_Dish_CornFritters.label>
+  <HH_Dish_CornFritters.description>Osmažené, zlatavé a snědené dřív, než si na sdílení kdokoli vzpomene.</HH_Dish_CornFritters.description>
+  <HH_Dish_PotatoGratin.label>Bramborový gratin</HH_Dish_PotatoGratin.label>
+  <HH_Dish_PotatoGratin.description>Smetana, brambory, trpělivost. Na Okraji nic jiného nefunguje tak dobře.</HH_Dish_PotatoGratin.description>
+  <HH_Dish_MushroomRisotto.label>Houbové rizoto</HH_Dish_MushroomRisotto.label>
+  <HH_Dish_MushroomRisotto.description>Míchej dvacet minut, nebo ztratíš přítele. Tvoje volba.</HH_Dish_MushroomRisotto.description>
+  <HH_Dish_SteamedBuns.label>Dušené bao</HH_Dish_SteamedBuns.label>
+  <HH_Dish_SteamedBuns.description>Měkké jako polštář, plněné něčím, co určitě kdysi bylo masem.</HH_Dish_SteamedBuns.description>
+  <HH_Dish_ChocolatePudding.label>Čokoládový pudink</HH_Dish_ChocolatePudding.label>
+  <HH_Dish_ChocolatePudding.description>Důvod, proč se nálety odkládají přesně o jeden dezert.</HH_Dish_ChocolatePudding.description>
+  <HH_Dish_Ceviche.label>Ceviche</HH_Dish_Ceviche.label>
+  <HH_Dish_Ceviche.description>Ryba uvařená jen kyselostí, což platí i pro většinu kolonií.</HH_Dish_Ceviche.description>
+  <HH_Dish_MuffaloGoulash.label>Muffalo guláš</HH_Dish_MuffaloGoulash.label>
+  <HH_Dish_MuffaloGoulash.description>Červený, hustý a oficiálně neoficiální národní hádka.</HH_Dish_MuffaloGoulash.description>
+  <HH_Dish_EggFlan.label>Vaječný flan</HH_Dish_EggFlan.label>
+  <HH_Dish_EggFlan.description>Třese se jako kolonista na konci dlouhé směny.</HH_Dish_EggFlan.description>
+  <HH_Dish_BeerBatteredInsects.label>Hmyz v pivním těstíčku</HH_Dish_BeerBatteredInsects.label>
+  <HH_Dish_BeerBatteredInsects.description>Křupání, pěna a ani slovo sousedům.</HH_Dish_BeerBatteredInsects.description>
+  <HH_Dish_CreamyNoodleBake.label>Krémová nudlová zapečenka</HH_Dish_CreamyNoodleBake.label>
+  <HH_Dish_CreamyNoodleBake.description>Zapékaná mísa, která drží kolonii pohromadě lépe než vedení.</HH_Dish_CreamyNoodleBake.description>
+  <HH_Dish_FermentedMushrooms.label>Kvašené houby</HH_Dish_FermentedMushrooms.label>
+  <HH_Dish_FermentedMushrooms.description>Zkvašené, divoké a těžko odpustitelné. Prý dobré pro břicho.</HH_Dish_FermentedMushrooms.description>
+  <HH_Dish_RimMein.label>Rim mein</HH_Dish_RimMein.label>
+  <HH_Dish_RimMein.description>Smažené nudle opečené na woku, a přesně tak zdravé, jak vypadají.</HH_Dish_RimMein.description>
+  <HH_Dish_ColdPotatoSalad.label>Studený bramborový salát</HH_Dish_ColdPotatoSalad.label>
+  <HH_Dish_ColdPotatoSalad.description>Pokrm z potlucku, který nikdo neplánoval a všichni dojedí.</HH_Dish_ColdPotatoSalad.description>
+  <HH_Dish_CreamyMushroomNoodles.label>Krémové houbové nudle</HH_Dish_CreamyMushroomNoodles.label>
+  <HH_Dish_CreamyMushroomNoodles.description>Nudle ve smetaně, jako těstoviny, které si pamatuješ, po několika kolech drbů.</HH_Dish_CreamyMushroomNoodles.description>
+  <HH_Dish_LongPorkStew.label>Dušenina z dlouhého vepřového</HH_Dish_LongPorkStew.label>
+  <HH_Dish_LongPorkStew.description>Recept je tajný. Surovina ne.</HH_Dish_LongPorkStew.description>
+  <HH_Dish_SmokedLongJerky.label>Uzené sušené dlouhé maso</HH_Dish_SmokedLongJerky.label>
+  <HH_Dish_SmokedLongJerky.description>Vydrží celou zimu. Stejně jako výčitky.</HH_Dish_SmokedLongJerky.description>
+  <HH_Dish_CongeeOfTheFallen.label>Kaše padlých</HH_Dish_CongeeOfTheFallen.label>
+  <HH_Dish_CongeeOfTheFallen.description>Teplá kaše pro studené, velmi studené svědomí.</HH_Dish_CongeeOfTheFallen.description>
+  <HH_Dish_BloodBroth.label>Krevní vývar</HH_Dish_BloodBroth.label>
+  <HH_Dish_BloodBroth.description>Tmavý, bohatý vývar pro žíznivé a zdvořilé.</HH_Dish_BloodBroth.description>
+  <HH_Dish_HemogenBlackPudding.label>Hemogenová krvavá jelita</HH_Dish_HemogenBlackPudding.label>
+  <HH_Dish_HemogenBlackPudding.description>Osmažená, dokud přestanou na tebe koukat.</HH_Dish_HemogenBlackPudding.description>
+  <HH_Dish_MuffaloBourguignon.label>Muffalo bourguignon</HH_Dish_MuffaloBourguignon.label>
+  <HH_Dish_MuffaloBourguignon.description>Dušeno v pivu, protože víno došlo už druhý den.</HH_Dish_MuffaloBourguignon.description>
+  <HH_Dish_ColonyPaella.label>Kolonijní paella</HH_Dish_ColonyPaella.label>
+  <HH_Dish_ColonyPaella.description>Cokoli bylo ve spižírně, uspořádáno s velkou důstojností.</HH_Dish_ColonyPaella.description>
+  <HH_Dish_NigiriPlatter.label>Mísa nigiri</HH_Dish_NigiriPlatter.label>
+  <HH_Dish_NigiriPlatter.description>Rýže a ryba, tvarované někým, kdo měl místo toho být na frontě.</HH_Dish_NigiriPlatter.description>
+  <HH_Dish_ThrumboPho.label>Thrumbo pho</HH_Dish_ThrumboPho.label>
+  <HH_Dish_ThrumboPho.description>Čistý vývar s velmi dlouhým seznamem úkolů v zádech.</HH_Dish_ThrumboPho.description>
+  <HH_Dish_Biryani.label>Biryani</HH_Dish_Biryani.label>
+  <HH_Dish_Biryani.description>Vrstvy rýže, masa a diplomacie, zapečetěné pokličkou.</HH_Dish_Biryani.description>
+  <HH_Dish_DromedaryTagine.label>Tažine z dromedára</HH_Dish_DromedaryTagine.label>
+  <HH_Dish_DromedaryTagine.description>Pomalu dušeno v hliněném kuželu, jako si většina lidí přeje být.</HH_Dish_DromedaryTagine.description>
+  <HH_Dish_MushroomMoussaka.label>Houbová moussaka</HH_Dish_MushroomMoussaka.label>
+  <HH_Dish_MushroomMoussaka.description>Sedm vrstev do hloubky a každá vrstva má vlastní názor.</HH_Dish_MushroomMoussaka.description>
+  <HH_Dish_LacqueredThrumbo.label>Lakované thrumbo</HH_Dish_LacqueredThrumbo.label>
+  <HH_Dish_LacqueredThrumbo.description>Glazováno, dokud nezáří víc než bankovní účet kolonie.</HH_Dish_LacqueredThrumbo.description>
+  <HH_Dish_TomYumSoup.label>Polévka tom jam</HH_Dish_TomYumSoup.label>
+  <HH_Dish_TomYumSoup.description>Kyselá, pálivá a vyčistí ti dýchací cesty i dluhy.</HH_Dish_TomYumSoup.description>
+  <HH_Dish_Laksa.label>Laksa</HH_Dish_Laksa.label>
+  <HH_Dish_Laksa.description>Kari polévka bez kokosu, která se neomlouvá.</HH_Dish_Laksa.description>
+  <HH_Dish_Tamales.label>Tamales</HH_Dish_Tamales.label>
+  <HH_Dish_Tamales.description>Zabalené v listech jako dárek, o který nikdo nestál.</HH_Dish_Tamales.description>
+  <HH_Dish_DimSumBasket.label>Koš dim sum</HH_Dish_DimSumBasket.label>
+  <HH_Dish_DimSumBasket.description>Drobné porce pro drobné rozpočty s velkými ambicemi.</HH_Dish_DimSumBasket.description>
+  <HH_Dish_ChocolateLayerCake.label>Čokoládový vrstvený dort</HH_Dish_ChocolateLayerCake.label>
+  <HH_Dish_ChocolateLayerCake.description>Mnoho vrstev, ani jedna upřímná.</HH_Dish_ChocolateLayerCake.description>
+  <HH_Dish_GravyFries.label>Hranolky s omáčkou</HH_Dish_GravyFries.label>
+  <HH_Dish_GravyFries.description>Hranolky, omáčka a tichá chvilka národní hrdosti.</HH_Dish_GravyFries.description>
+  <HH_Dish_SmokedBrisket.label>Uzený hovězí brisket</HH_Dish_SmokedBrisket.label>
+  <HH_Dish_SmokedBrisket.description>Uzený dvanáct hodin člověkem, který o tom nechce mluvit.</HH_Dish_SmokedBrisket.description>
+  <HH_Dish_Churros.label>Churros</HH_Dish_Churros.label>
+  <HH_Dish_Churros.description>Smažené těsto s čokoládovým dipem a bez výčitek.</HH_Dish_Churros.description>
+  <HH_Dish_Bibimbap.label>Bibimbap</HH_Dish_Bibimbap.label>
+  <HH_Dish_Bibimbap.description>Vše promíchej v jedné míse, přesně jako sama kolonie.</HH_Dish_Bibimbap.description>
+  <HH_Dish_MongolianMuffalo.label>Mongolské muffalo</HH_Dish_MongolianMuffalo.label>
+  <HH_Dish_MongolianMuffalo.description>Na woku, sladké, lepkavé a trochu moc hlasité.</HH_Dish_MongolianMuffalo.description>
+  <HH_Dish_ColdNoodleSalad.label>Studený nudlový salát</HH_Dish_ColdNoodleSalad.label>
+  <HH_Dish_ColdNoodleSalad.description>Podávaný tak studený, že nudle podávají stížnosti.</HH_Dish_ColdNoodleSalad.description>
+  <HH_Dish_MuffaloCarpaccio.label>Muffalo carpaccio</HH_Dish_MuffaloCarpaccio.label>
+  <HH_Dish_MuffaloCarpaccio.description>Nakrájeno tak tence, že jím skrz vidíš jídelní lístek.</HH_Dish_MuffaloCarpaccio.description>
+  <HH_Dish_ThrumboTartare.label>Thrumbo tatarák</HH_Dish_ThrumboTartare.label>
+  <HH_Dish_ThrumboTartare.description>Syrové, divoké a statečné. Nejdřív podepiš zřeknutí.</HH_Dish_ThrumboTartare.description>
+  <HH_Dish_DanDanNoodles.label>Dan dan nudle</HH_Dish_DanDanNoodles.label>
+  <HH_Dish_DanDanNoodles.description>Pálivé nudle, které tě předem varují, a přesto vyhrají.</HH_Dish_DanDanNoodles.description>
+  <HH_Dish_GrilledLongPorkRibs.label>Grilovaná žebra z dlouhého vepřového</HH_Dish_GrilledLongPorkRibs.label>
+  <HH_Dish_GrilledLongPorkRibs.description>Uzená, sladká a na večírku extrémně těžko vysvětlitelná.</HH_Dish_GrilledLongPorkRibs.description>
+  <HH_Dish_LongPorkDumplings.label>Knedlíčky z dlouhého vepřového</HH_Dish_LongPorkDumplings.label>
+  <HH_Dish_LongPorkDumplings.description>Ručně skládané, s náplní, na kterou se nikdo nezeptá dvakrát.</HH_Dish_LongPorkDumplings.description>
+  <HH_Dish_StrangersRoast.label>Pečeně z cizince</HH_Dish_StrangersRoast.label>
+  <HH_Dish_StrangersRoast.description>Nedělní oběd s hostem, který nepřišel dobrovolně.</HH_Dish_StrangersRoast.description>
+  <HH_Dish_CannibalsChili.label>Kanibalské chili</HH_Dish_CannibalsChili.label>
+  <HH_Dish_CannibalsChili.description>Dost pálivé, aby zakrylo chuť i myšlenku.</HH_Dish_CannibalsChili.description>
+  <HH_Dish_HemogenRisotto.label>Hemogenové rizoto</HH_Dish_HemogenRisotto.label>
+  <HH_Dish_HemogenRisotto.description>Krémové, červené a o chlup příliš intenzivní.</HH_Dish_HemogenRisotto.description>
+  <HH_Dish_RedSteakVeryRare.label>Červený steak, velmi krvavý</HH_Dish_RedSteakVeryRare.label>
+  <HH_Dish_RedSteakVeryRare.description>Prakticky bečí. Připraveno přesně tak, jak si objednal sanguinář.</HH_Dish_RedSteakVeryRare.description>
+  <HH_Dish_TwistedMeatBao.label>Zkroucené masové bao</HH_Dish_TwistedMeatBao.label>
+  <HH_Dish_TwistedMeatBao.description>Buchta se jen lehce zachvěje. Prosím, neříkej to náplni.</HH_Dish_TwistedMeatBao.description>
+  <HH_Dish_MuffaloWellington.label>Muffalo wellington</HH_Dish_MuffaloWellington.label>
+  <HH_Dish_MuffaloWellington.description>Zabalené v těstě, malá izolace pro velmi velké ego.</HH_Dish_MuffaloWellington.description>
+  <HH_Dish_BoomalopeConfit.label>Konfitovaný boomalope</HH_Dish_BoomalopeConfit.label>
+  <HH_Dish_BoomalopeConfit.description>Pomalu vařeno ve vlastním tuku. Nestůj u hrnce.</HH_Dish_BoomalopeConfit.description>
+  <HH_Dish_FishThermidor.label>Ryba thermidor</HH_Dish_FishThermidor.label>
+  <HH_Dish_FishThermidor.description>Krémová, zapečená a absurdně pyšná sama na sebe.</HH_Dish_FishThermidor.description>
+  <HH_Dish_Rendang.label>Rendang</HH_Dish_Rendang.label>
+  <HH_Dish_Rendang.description>Vařeno, dokud se omáčka nevzdá a nespojí s masem.</HH_Dish_Rendang.description>
+  <HH_Dish_MoleNegro.label>Mole negro</HH_Dish_MoleNegro.label>
+  <HH_Dish_MoleNegro.description>Tmavé, hořké a sladké: jako ta nejlepší rada.</HH_Dish_MoleNegro.description>
+  <HH_Dish_ChocolateSouffle.label>Čokoládové soufflé</HH_Dish_ChocolateSouffle.label>
+  <HH_Dish_ChocolateSouffle.description>Vyroste jako špatný drb a stejně rychle spadne.</HH_Dish_ChocolateSouffle.description>
+  <HH_Dish_CremeBrulee.label>Crème brûlée</HH_Dish_CremeBrulee.label>
+  <HH_Dish_CremeBrulee.description>Krusta praská pod lžičkou, jako pod tlakem.</HH_Dish_CremeBrulee.description>
+  <HH_Dish_AgaveBaklava.label>Agávová baklava</HH_Dish_AgaveBaklava.label>
+  <HH_Dish_AgaveBaklava.description>Tak sladké, že budeš potřebovat zdravotníka a básníka.</HH_Dish_AgaveBaklava.description>
+  <HH_Dish_MuffaloStroganoff.label>Muffalo stroganov</HH_Dish_MuffaloStroganoff.label>
+  <HH_Dish_MuffaloStroganoff.description>Krémové, bohaté a po třetí lžíci pryč.</HH_Dish_MuffaloStroganoff.description>
+  <HH_Dish_OmakaseNigiri.label>Omakase nigiri</HH_Dish_OmakaseNigiri.label>
+  <HH_Dish_OmakaseNigiri.description>Šéfkuchař rozhodne, co sníš. Ty se rozhodneš být ohromen.</HH_Dish_OmakaseNigiri.description>
+  <HH_Dish_TeppanFeast.label>Teppan hostina</HH_Dish_TeppanFeast.label>
+  <HH_Dish_TeppanFeast.description>Plamenný gril, létající špachtle a hasicí přístroj v dosahu.</HH_Dish_TeppanFeast.description>
+  <HH_Dish_ClayOvenMuffalo.label>Muffalo z hliněné pece</HH_Dish_ClayOvenMuffalo.label>
+  <HH_Dish_ClayOvenMuffalo.description>Přes noc marinováno, zapečeno v rozpálené hliněné peci a podáváno s arogancí.</HH_Dish_ClayOvenMuffalo.description>
+  <HH_Dish_Churrasco.label>Churrasco</HH_Dish_Churrasco.label>
+  <HH_Dish_Churrasco.description>Maso na mečích, podávané, dokud se nevzdáš.</HH_Dish_Churrasco.description>
+  <HH_Dish_HuntersBigos.label>Myslivecký bigos</HH_Dish_HuntersBigos.label>
+  <HH_Dish_HuntersBigos.description>Dušenina, která každým dnem chutná lépe a každým dnem hůř voní.</HH_Dish_HuntersBigos.description>
+  <HH_Dish_LambKoftasWithRice.label>Jehněčí kofty s rýží</HH_Dish_LambKoftasWithRice.label>
+  <HH_Dish_LambKoftasWithRice.description>Kořeněné, tvarované a podávané na rýži jako velmi chutná přednáška.</HH_Dish_LambKoftasWithRice.description>
+  <HH_Dish_SevenCourseColonyMenu.label>Sedmichodové kolonijní menu</HH_Dish_SevenCourseColonyMenu.label>
+  <HH_Dish_SevenCourseColonyMenu.description>Předkrm, předkrm, předkrm, hlavní chod, dezert, dezert a přípitek.</HH_Dish_SevenCourseColonyMenu.description>
+  <HH_Dish_TartareOfTheFallen.label>Tatarák padlých</HH_Dish_TartareOfTheFallen.label>
+  <HH_Dish_TartareOfTheFallen.description>Podává se syrový, protože vaření je pro ty, co mají co skrývat.</HH_Dish_TartareOfTheFallen.description>
+  <HH_Dish_HemogenCarpaccio.label>Hemogenové carpaccio</HH_Dish_HemogenCarpaccio.label>
+  <HH_Dish_HemogenCarpaccio.description>Tenké, červené a podávané se pohledem.</HH_Dish_HemogenCarpaccio.description>
+  <HH_Dish_TwistedHotpot.label>Zkroucený hotpot</HH_Dish_TwistedHotpot.label>
+  <HH_Dish_TwistedHotpot.description>Bublá sám od sebe. Nikdo nezapnul plotnu.</HH_Dish_TwistedHotpot.description>
+  <HH_Dish_CheeseFondue.label>Sýrové fondue</HH_Dish_CheeseFondue.label>
+  <HH_Dish_CheeseFondue.description>Hrnec roztaveného sýra a pravidlo, že kdo upustí chléb, platí.</HH_Dish_CheeseFondue.description>
+  <HH_Dish_PumpkinAndCheeseGratin.label>Dýňový gratin se sýrem</HH_Dish_PumpkinAndCheeseGratin.label>
+  <HH_Dish_PumpkinAndCheeseGratin.description>Oranžový, sýrový a zdobený tenkou vrstvou nebezpečí.</HH_Dish_PumpkinAndCheeseGratin.description>
+  <HH_Dish_FlourDumplingSoup.label>Polévka s moučnými knedlíky</HH_Dish_FlourDumplingSoup.label>
+  <HH_Dish_FlourDumplingSoup.description>Knedlíky velikosti pěstí pro ty, kdo dávají přednost polévce s ránou.</HH_Dish_FlourDumplingSoup.description>
+  <HH_Dish_CheeseOmelette.label>Sýrová omeleta</HH_Dish_CheeseOmelette.label>
+  <HH_Dish_CheeseOmelette.description>Omeleta, která se za nic neomlouvá a nikomu se nepodvolí.</HH_Dish_CheeseOmelette.description>
+  <HH_Dish_FruitGlazedRoast.label>Pečeně s ovocnou glazurou</HH_Dish_FruitGlazedRoast.label>
+  <HH_Dish_FruitGlazedRoast.description>Lepkavé, sladké a na stůl donesené v chňapkách a s modlitbou.</HH_Dish_FruitGlazedRoast.description>
+  <HH_Dish_SushiRollSet.label>Sada sushi rolek</HH_Dish_SushiRollSet.label>
+  <HH_Dish_SushiRollSet.description>Pevně svinuté, lehce namočené a snědené dřív, než někdo dostane nápady.</HH_Dish_SushiRollSet.description>
+  <HH_Dish_WasabiGlazedFish.label>Ryba s wasabi glazurou</HH_Dish_WasabiGlazedFish.label>
+  <HH_Dish_WasabiGlazedFish.description>Vyčistí nos, krk i každý předchozí názor.</HH_Dish_WasabiGlazedFish.description>
+  <HH_Dish_TempuraSushi.label>Tempura sushi</HH_Dish_TempuraSushi.label>
+  <HH_Dish_TempuraSushi.description>Sushi, které zabloudilo do fritézy a zalíbilo se mu tam.</HH_Dish_TempuraSushi.description>
+  <HH_Dish_HeartyWinterStew.label>Výdatná zimní dušenina</HH_Dish_HeartyWinterStew.label>
+  <HH_Dish_HeartyWinterStew.description>Vařeno celé dny na dřevem topeném hrnci. Sněz to, dřív než hrnec začne mluvit.</HH_Dish_HeartyWinterStew.description>
+  <HH_Dish_LongNightMushroomStew.label>Houbová dušenina dlouhé noci</HH_Dish_LongNightMushroomStew.label>
+  <HH_Dish_LongNightMushroomStew.description>Dušeno přes noc někým, kdo neměl lepší plány.</HH_Dish_LongNightMushroomStew.description>
+  <HH_Dish_StewOfQuestionableMeat.label>Dušenina ze sporného masa</HH_Dish_StewOfQuestionableMeat.label>
+  <HH_Dish_StewOfQuestionableMeat.description>Dušenina smaže výčitky kvůli hmyzu. Výčitky kvůli dušenině zůstávají.</HH_Dish_StewOfQuestionableMeat.description>
+  <HH_Dish_SugarCookies.label>Cukrové sušenky</HH_Dish_SugarCookies.label>
+  <HH_Dish_SugarCookies.description>Zdobené kolonistou, jehož ruce se od boje třesou, a je to znát.</HH_Dish_SugarCookies.description>
+  <HH_Dish_FancyCupcakes.label>Luxusní košíčky</HH_Dish_FancyCupcakes.label>
+  <HH_Dish_FancyCupcakes.description>Malý dortík s velkým problémem s posypem.</HH_Dish_FancyCupcakes.description>
+  <HH_Dish_GlazedDonuts.label>Glazované donuty</HH_Dish_GlazedDonuts.label>
+  <HH_Dish_GlazedDonuts.description>Prstenec těsta kolem díry v rozpočtu.</HH_Dish_GlazedDonuts.description>
+  <HH_Dish_HauteCuisineTastingMenu.label>Haute cuisine degustační menu</HH_Dish_HauteCuisineTastingMenu.label>
+  <HH_Dish_HauteCuisineTastingMenu.description>Osm drobných talířků, jeden obří účet.</HH_Dish_HauteCuisineTastingMenu.description>
+  <HH_Dish_GlazedFruitTart.label>glazovaný ovocný koláč</HH_Dish_GlazedFruitTart.label>
+  <HH_Dish_GlazedFruitTart.description>Koláč s více ovocem než konstrukcí, a to je správný poměr.</HH_Dish_GlazedFruitTart.description>
+  <HH_Dish_PickledVegetableSalad.label>nakládaný zeleninový salát</HH_Dish_PickledVegetableSalad.label>
+  <HH_Dish_PickledVegetableSalad.description>Naložený tak dlouho, že přežil prvního vůdce kolonie.</HH_Dish_PickledVegetableSalad.description>
+  <HH_Dish_HerbRoastedPotatoes.label>brambory pečené s bylinkami</HH_Dish_HerbRoastedPotatoes.label>
+  <HH_Dish_HerbRoastedPotatoes.description>Brambory, které byly na zahradní party a vrátily se s rostlinkou.</HH_Dish_HerbRoastedPotatoes.description>
+  <HH_Dish_BerryAndNutBreakfastBowl.label>snídaňová miska s bobulemi a oříšky</HH_Dish_BerryAndNutBreakfastBowl.label>
+  <HH_Dish_BerryAndNutBreakfastBowl.description>Křupavé, zdravé a rozhodně ne to, co si nájezdníci objednali.</HH_Dish_BerryAndNutBreakfastBowl.description>
+  <HH_Dish_TeaSmokedMeat.label>maso uzené čajem</HH_Dish_TeaSmokedMeat.label>
+  <HH_Dish_TeaSmokedMeat.description>Uzené čajem, protože proč by se maso taky nemohlo trochu uvolnit.</HH_Dish_TeaSmokedMeat.description>
+  <HH_Dish_StrawFlourFlatbread.label>placka ze slaměné mouky</HH_Dish_StrawFlourFlatbread.label>
+  <HH_Dish_StrawFlourFlatbread.description>Plochá, poctivá a trochu písečná. Stejně jako poušť, odkud pochází.</HH_Dish_StrawFlourFlatbread.description>
+  <HH_Dish_CactusFruitSalad.label>salát z kaktusového ovoce</HH_Dish_CactusFruitSalad.label>
+  <HH_Dish_CactusFruitSalad.description>Sladký a trnitý, přesně jako tvůj nejlepší kamarád.</HH_Dish_CactusFruitSalad.description>
+  <HH_Dish_GreenfruitStew.label>dušenina ze zeleného ovoce</HH_Dish_GreenfruitStew.label>
+  <HH_Dish_GreenfruitStew.description>Dušenina tak zelená, že se muffalo urazilo.</HH_Dish_GreenfruitStew.description>
+  <HH_Dish_StrawflourDumplings.label>knedlíky ze slaměné mouky</HH_Dish_StrawflourDumplings.label>
+  <HH_Dish_StrawflourDumplings.description>Knedlíky z pustiny, plněné něčím, co možná kdysi bylo masem.</HH_Dish_StrawflourDumplings.description>
+  <HH_Dish_DesertBreadAndBeer.label>pouštní chléb a pivo</HH_Dish_DesertBreadAndBeer.label>
+  <HH_Dish_DesertBreadAndBeer.description>Tekutá a pevná snídaně, ve správném pořadí.</HH_Dish_DesertBreadAndBeer.description>
+  <HH_Dish_GrilledWholeFish.label>celá grilovaná ryba</HH_Dish_GrilledWholeFish.label>
+  <HH_Dish_GrilledWholeFish.description>Celá ryba, trochu soli a žádná omluva rybě.</HH_Dish_GrilledWholeFish.description>
+  <HH_Dish_FishStew.label>rybí dušenina</HH_Dish_FishStew.label>
+  <HH_Dish_FishStew.description>Cokoli, co plave, dříve nebo později skončí tady.</HH_Dish_FishStew.description>
+  <HH_Dish_SmokedFishFillet.label>uzený rybí filet</HH_Dish_SmokedFishFillet.label>
+  <HH_Dish_SmokedFishFillet.description>Filet dne, uzený tak dlouho, až zapomněl na řeku.</HH_Dish_SmokedFishFillet.description>
+  <HH_Dish_SashimiPlate.label>talíř sašimi</HH_Dish_SashimiPlate.label>
+  <HH_Dish_SashimiPlate.description>Syrová ryba nakrájená na tenké plátky a malé morální dilema.</HH_Dish_SashimiPlate.description>
+  <HH_Dish_FishTacos.label>rybí tacos</HH_Dish_FishTacos.label>
+  <HH_Dish_FishTacos.description>Ryba v tortille, doručená kolonistou, který běžel celou cestu.</HH_Dish_FishTacos.description>
+</LanguageData>

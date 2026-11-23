@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GuestRoomVerdict.stages.0.label>furchtbares Gästezimmer</HH_GuestRoomVerdict.stages.0.label>
+  <HH_GuestRoomVerdict.stages.0.description>Dafür habe ich bezahlt? Im Straßengraben habe ich schon besser geschlafen, und der Graben hat nichts berechnet.</HH_GuestRoomVerdict.stages.0.description>
+  <HH_GuestRoomVerdict.stages.1.label>enttäuschendes Gästezimmer</HH_GuestRoomVerdict.stages.1.label>
+  <HH_GuestRoomVerdict.stages.1.description>Das Zimmer war schlechter als erwartet. Deutlich schlechter.</HH_GuestRoomVerdict.stages.1.description>
+  <HH_GuestRoomVerdict.stages.2.label>mittelmäßiges Gästezimmer</HH_GuestRoomVerdict.stages.2.label>
+  <HH_GuestRoomVerdict.stages.2.description>Das Zimmer ging in Ordnung, wenn man die Augen zukneift.</HH_GuestRoomVerdict.stages.2.description>
+  <HH_GuestRoomVerdict.stages.3.label>anständiges Gästezimmer</HH_GuestRoomVerdict.stages.3.label>
+  <HH_GuestRoomVerdict.stages.3.description>Ein richtiges Bett und eine Tür, die schließt. Mehr verlange ich nicht.</HH_GuestRoomVerdict.stages.3.description>
+  <HH_GuestRoomVerdict.stages.4.label>gutes Gästezimmer</HH_GuestRoomVerdict.stages.4.label>
+  <HH_GuestRoomVerdict.stages.4.description>Ein hübsches Zimmer. Ich habe gut geschlafen.</HH_GuestRoomVerdict.stages.4.description>
+  <HH_GuestRoomVerdict.stages.5.label>prächtiges Gästezimmer</HH_GuestRoomVerdict.stages.5.label>
+  <HH_GuestRoomVerdict.stages.5.description>Bei so einem Zimmer hat sich die ganze Reise gelohnt.</HH_GuestRoomVerdict.stages.5.description>
+  <HH_GuestAccompanied.stages.0.label>peinliche Gesellschaft</HH_GuestAccompanied.stages.0.label>
+  <HH_GuestAccompanied.stages.0.description>Einer der Gastgeber hat mir Gesellschaft geleistet. Wir haben über das Wetter gesprochen. Ausführlich.</HH_GuestAccompanied.stages.0.description>
+  <HH_GuestAccompanied.stages.1.label>gute Gesellschaft</HH_GuestAccompanied.stages.1.label>
+  <HH_GuestAccompanied.stages.1.description>Einer der Gastgeber hat mir alles gezeigt und mir Gesellschaft geleistet.</HH_GuestAccompanied.stages.1.description>
+  <HH_GuestAccompanied.stages.2.label>charmante Gesellschaft</HH_GuestAccompanied.stages.2.label>
+  <HH_GuestAccompanied.stages.2.description>Der Gastgeber war eine Freude. Ich habe vielleicht laut gelacht.</HH_GuestAccompanied.stages.2.description>
+  <HH_GuestAccompanied.stages.3.label>wundervolle Gesellschaft</HH_GuestAccompanied.stages.3.label>
+  <HH_GuestAccompanied.stages.3.description>So gut wurde ich seit Jahren nicht mehr umsorgt.</HH_GuestAccompanied.stages.3.description>
+  <HH_GuestPestered.stages.0.label>zum Beitritt bedrängt</HH_GuestPestered.stages.0.label>
+  <HH_GuestPestered.stages.0.description>Ich bin hergekommen, um zu schlafen, nicht um angeworben zu werden.</HH_GuestPestered.stages.0.description>
+  <HH_HostedWell.stages.0.label>gute Gespräche</HH_HostedWell.stages.0.label>
+  <HH_HostedWell.stages.0.description>Wir hatten ein paar gute Gespräche.</HH_HostedWell.stages.0.description>
+  <HH_GuestWaited.stages.0.label>kurz gewartet</HH_GuestWaited.stages.0.label>
+  <HH_GuestWaited.stages.0.description>Ich musste warten, bis ich bedient wurde. Nicht lange, aber ich habe es bemerkt.</HH_GuestWaited.stages.0.description>
+  <HH_GuestWaited.stages.1.label>umsonst gewartet</HH_GuestWaited.stages.1.label>
+  <HH_GuestWaited.stages.1.description>Ich habe gewartet und gewartet, und niemand kam, um mich zu bedienen.</HH_GuestWaited.stages.1.description>
+  <HH_GuestBellNobody.stages.0.label>geläutet, niemand kam</HH_GuestBellNobody.stages.0.label>
+  <HH_GuestBellNobody.stages.0.description>Ich habe geläutet. Niemand kam.</HH_GuestBellNobody.stages.0.description>
+  <HH_GuestWaitingRoom.stages.0.label>schlichter Warteraum</HH_GuestWaitingRoom.stages.0.label>
+  <HH_GuestWaitingRoom.stages.0.description>Wenigstens gab es einen Platz zum Sitzen, während ich gewartet habe.</HH_GuestWaitingRoom.stages.0.description>
+  <HH_GuestWaitingRoom.stages.1.label>anständiger Warteraum</HH_GuestWaitingRoom.stages.1.label>
+  <HH_GuestWaitingRoom.stages.1.description>Der Warteraum war bequem genug.</HH_GuestWaitingRoom.stages.1.description>
+  <HH_GuestWaitingRoom.stages.2.label>netter Warteraum</HH_GuestWaitingRoom.stages.2.label>
+  <HH_GuestWaitingRoom.stages.2.description>Dort zu warten war fast ein Vergnügen.</HH_GuestWaitingRoom.stages.2.description>
+  <HH_GuestWaitingRoom.stages.3.label>prächtiger Warteraum</HH_GuestWaitingRoom.stages.3.label>
+  <HH_GuestWaitingRoom.stages.3.description>In so einem Raum hätte ich gern länger gewartet.</HH_GuestWaitingRoom.stages.3.description>
+</LanguageData>

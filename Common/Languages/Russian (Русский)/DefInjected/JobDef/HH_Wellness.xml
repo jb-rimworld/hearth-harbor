@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_UseHotTub.reportString>парится в TargetA.</HH_UseHotTub.reportString>
+  <HH_UseSauna.reportString>потеет в сауне.</HH_UseSauna.reportString>
+  <HH_ReceiveMassage.reportString>получает массаж.</HH_ReceiveMassage.reportString>
+  <HH_GiveMassage.reportString>делает массаж TargetB.</HH_GiveMassage.reportString>
+</LanguageData>

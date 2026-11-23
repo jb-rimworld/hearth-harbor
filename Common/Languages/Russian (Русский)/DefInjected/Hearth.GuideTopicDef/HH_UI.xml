@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Guide_OpeningDay.label>День открытия</HH_Guide_OpeningDay.label>
+  <HH_Guide_OpeningDay.description>Три шага от кровати до первого серебра. Без исследований, зон и настроек.</HH_Guide_OpeningDay.description>
+  <HH_Guide_YourGuests.label>Ваши гости одним взглядом</HH_Guide_YourGuests.label>
+  <HH_Guide_YourGuests.description>Где посмотреть, как дела у ваших гостей.</HH_Guide_YourGuests.description>
+  <HH_Guide_FirstVenue.label>Ваше первое заведение</HH_Guide_FirstVenue.label>
+  <HH_Guide_FirstVenue.description>Вывеска превращает комнату в бизнес.</HH_Guide_FirstVenue.description>
+  <HH_Guide_Bank.label>Деньги в банке</HH_Guide_Bank.label>
+  <HH_Guide_Bank.description>Silverline хранит вашу выручку в целости и позволяет гостям платить картой.</HH_Guide_Bank.description>
+</LanguageData>

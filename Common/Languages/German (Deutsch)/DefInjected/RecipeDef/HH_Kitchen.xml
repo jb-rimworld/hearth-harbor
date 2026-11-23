@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_TestKitchen.label>mit einem neuen Gericht experimentieren</HH_TestKitchen.label>
+  <HH_TestKitchen.description>Wirf rohe Lebensmittel auf die Arbeitsplatte und schau, was dabei herauskommt. Manchmal findet die Kolonie ein neues Gericht heraus (je besser der Koch, desto wahrscheinlicher); andernfalls endet das Experiment als schrecklicher Teller dieses Gerichts.</HH_TestKitchen.description>
+  <HH_TestKitchen.jobString>Experimentiert mit einem neuen Gericht.</HH_TestKitchen.jobString>
+</LanguageData>

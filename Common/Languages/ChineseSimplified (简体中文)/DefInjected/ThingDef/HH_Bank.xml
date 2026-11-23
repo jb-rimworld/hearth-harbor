@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ATM.label>自动取款机</SL_ATM.label>
+  <SL_ATM.description>一个带屏幕、键盘和一个用四种语言写着“银币”的投币口的钢制箱子。殖民者用它查看账户、取出银币（有每日限额，手续费很低）并存入手头的钱。需要电力。</SL_ATM.description>
+  <SL_BankCounter.label>银行柜台</SL_BankCounter.label>
+  <SL_BankCounter.description>一张带黄铜配件的长木柜台，还有一个谁都不许摇响的小铃铛。是你所属银行的分支：存款立即入账，现金直接从金库取出，贷款需要本人签字。需要电力。</SL_BankCounter.description>
+  <SL_NightSafe.label>夜间保险箱</SL_NightSafe.label>
+  <SL_NightSafe.description>钢块上的一个投递口。把当天的营业款投进去，听见咔哒一声，回家去。每天午夜，你的生意的钱柜都会在这里清空：若你有银行账户，就存入账户；若没有，就以银币的形式堆在它旁边的地上。</SL_NightSafe.description>
+</LanguageData>

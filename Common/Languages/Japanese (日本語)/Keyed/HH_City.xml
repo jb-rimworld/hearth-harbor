@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.City>都市生活</HH.Tab.City>
+  <HH.City.TabTitle>都市生活</HH.City.TabTitle>
+  <HH.City.TabResearch>研究: レベル1（映画館、サロン、ギャラリー）: {0}; レベル2（タクシー、警備）: {1}</HH.City.TabResearch>
+  <HH.Enum.CityResearchMode.Full>全部</HH.Enum.CityResearchMode.Full>
+  <HH.Enum.CityResearchMode.Off>オフ（すべて利用可能）</HH.Enum.CityResearchMode.Off>
+  <HH.City.ScreenNoPower>電力がないため、スクリーンは暗いままです。</HH.City.ScreenNoPower>
+  <HH.City.ScreenShowing>「{0}」を上映中（残り{1}、視聴者{2}人）</HH.City.ScreenShowing>
+  <HH.City.ScreenIdle>上映中の映画はありません。</HH.City.ScreenIdle>
+  <HH.City.ScreenBusy>すでに映画が上映中です</HH.City.ScreenBusy>
+  <HH.City.NoSeats>スクリーン前に座席がありません</HH.City.NoSeats>
+  <HH.City.MovieNightLabel>映画の夜</HH.City.MovieNightLabel>
+  <HH.City.MovieNightDesc>このスクリーンでの映画の夜に入植者全員を呼び集めます。席に着いた者は娯楽を得て、気分が良くなります。</HH.City.MovieNightDesc>
+  <HH.City.MovieNightFailed>今は映画の夜を始められません: 電源のあるスクリーン、十分な座席、手の空いている入植者が必要です。</HH.City.MovieNightFailed>
+  <HH.City.LordReport>入植地のみんなと映画を見ている</HH.City.LordReport>
+  <HH.City.Film.0>マフェイロ・ラブIII</HH.City.Film.0>
+  <HH.City.Film.1>最後のスラムボ</HH.City.Film.1>
+  <HH.City.Film.2>カーゴポッド・ブルース</HH.City.Film.2>
+  <HH.City.Film.3>星々の間の塵</HH.City.Film.3>
+  <HH.City.Film.4>ブーマロープの物語</HH.City.Film.4>
+  <HH.City.Film.5>石切丘の包囲戦</HH.City.Film.5>
+  <HH.City.Film.6>長い眠り</HH.City.Film.6>
+  <HH.City.Film.7>ヘイブン上空の煙</HH.City.Film.7>
+  <HH.City.SalonGuests>客の受け入れ</HH.City.SalonGuests>
+  <HH.City.SalonGuestsDesc>客はこの椅子に座って有料でヘアカットを受けられます（部屋には美容院の看板と接客を行う者が必要です）。</HH.City.SalonGuestsDesc>
+  <HH.City.SalonCustomer>客: {0}</HH.City.SalonCustomer>
+  <HH.City.NewHaircut>ヘアスタイルを変える</HH.City.NewHaircut>
+  <HH.City.TaxiFree>タクシーが待機しています。</HH.City.TaxiFree>
+  <HH.City.TaxiBusy>タクシーは乗客を乗せて外出中です。</HH.City.TaxiBusy>
+  <HH.City.TaxiStats>出発: {0}回、到着: {1}回、売上: {2}銀</HH.City.TaxiStats>
+</LanguageData>

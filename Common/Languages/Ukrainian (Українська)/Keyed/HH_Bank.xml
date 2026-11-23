@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Bank.Building.Account>{0}: баланс {1}</HH.Bank.Building.Account>
+  <HH.Bank.Building.DirectDeposit>Пряме зарахування</HH.Bank.Building.DirectDeposit>
+  <HH.Bank.Building.DirectDepositDesc>Увімкнено: каси ваших підприємств опівночі переказуються на рахунок у банку. Вимкнено: виручка лежить поруч із сейфом у вигляді срібла.</HH.Bank.Building.DirectDepositDesc>
+  <HH.Bank.Building.NoAccount>Рахунку ще немає. Відкрийте його тут або на консолі зв’язку.</HH.Bank.Building.NoAccount>
+  <HH.Bank.Building.SafeDirect>Виручка опівночі йде просто на рахунок.</HH.Bank.Building.SafeDirect>
+  <HH.Bank.Building.SafeFloor>Виручка опівночі лежить на підлозі у вигляді срібла.</HH.Bank.Building.SafeFloor>
+  <HH.Bank.Building.SafeNoAccount>Банківського рахунку немає: виручка опівночі лежить у вигляді срібла.</HH.Bank.Building.SafeNoAccount>
+  <HH.Bank.Building.UseAtm>Скористатися банкоматом</HH.Bank.Building.UseAtm>
+  <HH.Bank.Building.UseBranch>Підійти до віконця</HH.Bank.Building.UseBranch>
+  <HH.Bank.Chart.DayN>день {0}</HH.Bank.Chart.DayN>
+  <HH.Bank.Chart.Tip>День {0}: {1} срібла</HH.Bank.Chart.Tip>
+  <HH.Bank.Chart.Today>сьогодні</HH.Bank.Chart.Today>
+  <HH.Bank.Choose.Current>ваш банк</HH.Bank.Choose.Current>
+  <HH.Bank.Choose.Intro>Переведення рахунку коштує {0} срібла, які списуються з рахунку. Кредити залишаються в банку, який їх видав.</HH.Bank.Choose.Intro>
+  <HH.Bank.Choose.Switch>Перейти ({0})</HH.Bank.Choose.Switch>
+  <HH.Bank.Choose.Title>Зміна банку</HH.Bank.Choose.Title>
+  <HH.Bank.Comm.Call>Зателефонувати до Silverline</HH.Bank.Comm.Call>
+  <HH.Bank.Comm.Info>Банківські послуги, кредити й час від часу сухе зауваження.</HH.Bank.Comm.Info>
+  <HH.Bank.Greet.Afternoon>Добрий день</HH.Bank.Greet.Afternoon>
+  <HH.Bank.Greet.Evening>Добрий вечір</HH.Bank.Greet.Evening>
+  <HH.Bank.Greet.Morning>Доброго ранку</HH.Bank.Greet.Morning>
+  <HH.Bank.Greet.Night>Доброї ночі</HH.Bank.Greet.Night>
+  <HH.Bank.Header.Tier>Рівень достатку: {0}</HH.Bank.Header.Tier>
+  <HH.Bank.Header.TierTip>Чистий капітал = рахунок + срібло вдома − борги: {0} срібла. Рівень змінюється лише після того, як нове значення трималося цілу добу. Він задає настрій колонії від цього банку (налаштування: bank.moodOn).</HH.Bank.Header.TierTip>
+  <HH.Bank.Hist.Amount>Сума (5 знаків після коми)</HH.Bank.Hist.Amount>
+  <HH.Bank.Hist.Empty>Транзакцій ще немає.</HH.Bank.Hist.Empty>
+  <HH.Bank.Hist.TotalFees>Сплачено комісій досі</HH.Bank.Hist.TotalFees>
+  <HH.Bank.Hist.TotalFeesTip>Усі комісії, пені за прострочення та плата за зміну банку.</HH.Bank.Hist.TotalFeesTip>
+  <HH.Bank.Hist.TotalInterest>Зароблено відсотків досі</HH.Bank.Hist.TotalInterest>
+  <HH.Bank.Hist.TotalInterestTip>Усі відсотки, які банк вам виплатив (від’ємні відсотки зараховуються проти нього).</HH.Bank.Hist.TotalInterestTip>
+  <HH.Bank.Hist.What>Що</HH.Bank.Hist.What>
+  <HH.Bank.Hist.When>Коли</HH.Bank.Hist.When>
+  <HH.Bank.Letter.Bailout>{0} вирішив, що ви, насправді, занадто великі, щоб збанкрутувати, і врятував вас безвідсотковим кредитом на {1} срібла. Він діє 60 днів. Це позика, а не подарунок. Цю частину ніхто ніколи не читає.</HH.Bank.Letter.Bailout>
+  <HH.Bank.Letter.BailoutTitle>Рятівний кредит</HH.Bank.Letter.BailoutTitle>
+  <HH.Bank.Letter.Late>Шановний клієнте,
+
+кредит {0} уже кілька днів прострочено. Нараховано пеню, а ваш кредитний рейтинг отримав невеликий, але неминучий удар. Сума до сплати: {1} срібла.
+
+Тон цих листів зміниться.
+
+Клерк Ottoline</HH.Bank.Letter.Late>
+  <HH.Bank.Letter.LateTitle>Платіж прострочено</HH.Bank.Letter.LateTitle>
+  <HH.Bank.Letter.Offset>Доки кредит {0} не буде погашено, половина кожного внеску, що надходить на ваш рахунок, спрямовується на борг, і нові кредити недоступні. Це та частина договору, яку ніхто не пам’ятає, що підписував.</HH.Bank.Letter.Offset>
+  <HH.Bank.Letter.OffsetTitle>Зарахування внесків у погашення</HH.Bank.Letter.OffsetTitle>
+  <HH.Bank.Letter.Reminder>Шановний клієнте,
+
+ми помітили, що черговий внесок у розмірі {0} срібла за кредитом {1} до нас ще не надійшов. Ми впевнені, що це недогляд, і, як завжди, залишаємося повністю до ваших послуг.
+
+з теплом,
+клерк Ottoline, {2}</HH.Bank.Letter.Reminder>
+  <HH.Bank.Letter.ReminderTitle>Делікатне нагадування</HH.Bank.Letter.ReminderTitle>
+  <HH.Bank.Letter.Seized>Клерк {0} з жалем повідомляє, що {1} срібла з вашого балансу було «перерозподілено з адміністративних причин». Бланка для оскарження немає. Зате є дуже гарна ручка.</HH.Bank.Letter.Seized>
+  <HH.Bank.Letter.SeizedTitle>Аудит рахунків</HH.Bank.Letter.SeizedTitle>
+  <HH.Bank.Letter.Visit>До вас прибули два представники Rim Recovery Partners. На них котелки. Зброї немає, запису теж. Вони спокійно стоятимуть біля ваших дверей, доки не буде сплачено кредит {0}. Вони ніколи не нападають і йдуть щойно сплачено гроші.</HH.Bank.Letter.Visit>
+  <HH.Bank.Letter.VisitTitle>Дружній візит</HH.Bank.Letter.VisitTitle>
+  <HH.Bank.Loans.Available>Доступно</HH.Bank.Loans.Available>
+  <HH.Bank.Loans.BailoutTag> (рятівний, без відсотків)</HH.Bank.Loans.BailoutTag>
+  <HH.Bank.Loans.Credit>Ваш кредит</HH.Bank.Loans.Credit>
+  <HH.Bank.Loans.DaysShort> д</HH.Bank.Loans.DaysShort>
+  <HH.Bank.Loans.Limit>Кредитний ліміт</HH.Bank.Loans.Limit>
+  <HH.Bank.Loans.LimitTip>0,15 × капітал × (рейтинг − 300) / 550, де капітал = чистий капітал + чверть багатства колонії. Для гарного рейтингу — щонайменше стартовий кредит ({0} срібла).</HH.Bank.Loans.LimitTip>
+  <HH.Bank.Loans.Line>Кредит {0}: взято {1}, ще винні {2}</HH.Bank.Loans.Line>
+  <HH.Bank.Loans.Mine>Ваші кредити</HH.Bank.Loans.Mine>
+  <HH.Bank.Loans.New>Новий кредит</HH.Bank.Loans.New>
+  <HH.Bank.Loans.NextDue>наступний внесок {0} через {1}</HH.Bank.Loans.NextDue>
+  <HH.Bank.Loans.None>Кредитів немає. Ottoline ледь не розчарована.</HH.Bank.Loans.None>
+  <HH.Bank.Loans.Overdue>ПРОСТРОЧЕНО, стадія {0}: до сплати {1}</HH.Bank.Loans.Overdue>
+  <HH.Bank.Loans.Quote>{0} срібла під {1} % річних: {2} кожні {3} днів, разом {4} (відсотки: {5}).</HH.Bank.Loans.Quote>
+  <HH.Bank.Loans.Rate>Ставка за ігровий рік</HH.Bank.Loans.Rate>
+  <HH.Bank.Loans.RateTip>Базова ставка max(2 %, M − 1) = {0} % плюс маржа вашого банку ({1} пунктів). Вона слідує за повзунком прибутковості, тож позики на інвестиції ніколи не мають позитивного очікування.</HH.Bank.Loans.RateTip>
+  <HH.Bank.Loans.Repay100>Погасити {0}</HH.Bank.Loans.Repay100>
+  <HH.Bank.Loans.RepayAll>Погасити все</HH.Bank.Loans.RepayAll>
+  <HH.Bank.Loans.Score>Кредитний рейтинг</HH.Bank.Loans.Score>
+  <HH.Bank.Loans.ScoreTip>Від 300 до 850, починається з 600. Внесок вчасно +4, кожен день прострочки −6, дефолт −120, використання понад 70 % ліміту −20, плюс 20 × log10(капітал / 10 000). Базовий рейтинг {0}.</HH.Bank.Loans.ScoreTip>
+  <HH.Bank.Loans.Take>Взяти кредит</HH.Bank.Loans.Take>
+  <HH.Bank.Loans.Term>Строк</HH.Bank.Loans.Term>
+  <HH.Bank.Loans.Used>Використано</HH.Bank.Loans.Used>
+  <HH.Bank.Lobby.Accounts>Рахунки</HH.Bank.Lobby.Accounts>
+  <HH.Bank.Lobby.Amount>Сума</HH.Bank.Lobby.Amount>
+  <HH.Bank.Lobby.Balance>Баланс</HH.Bank.Lobby.Balance>
+  <HH.Bank.Lobby.BalanceTip>Точно: {0} срібла.
+Відсотки щодня: баланс × (M^({1} × {2} / 60) − 1), де M = {3} за ігровий рік (повзунок прибутковості). Це {4:0.##} % на день.</HH.Bank.Lobby.BalanceTip>
+  <HH.Bank.Lobby.Cash>Готівка вдома</HH.Bank.Lobby.Cash>
+  <HH.Bank.Lobby.CashTip>Срібло, що лежить на ваших домашніх картах.</HH.Bank.Lobby.CashTip>
+  <HH.Bank.Lobby.ChangeBank>Змінити банк</HH.Bank.Lobby.ChangeBank>
+  <HH.Bank.Lobby.Chart>Останні 30 днів</HH.Bank.Lobby.Chart>
+  <HH.Bank.Lobby.Debt>Борг</HH.Bank.Lobby.Debt>
+  <HH.Bank.Lobby.DebtTip>Сума ваших відкритих кредитів, включно з нарахованими відсотками.</HH.Bank.Lobby.DebtTip>
+  <HH.Bank.Lobby.DepDelay>зарахують через {0}</HH.Bank.Lobby.DepDelay>
+  <HH.Bank.Lobby.DepInstant>проведено одразу</HH.Bank.Lobby.DepInstant>
+  <HH.Bank.Lobby.Deposit>Внесок</HH.Bank.Lobby.Deposit>
+  <HH.Bank.Lobby.Direct>Пряме зарахування</HH.Bank.Lobby.Direct>
+  <HH.Bank.Lobby.DirectTip>Каси ваших підприємств опівночі переказуються на рахунок за вирахуванням {0} %.</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.Interest>Відсотки цього квадруму</HH.Bank.Lobby.Interest>
+  <HH.Bank.Lobby.InterestTip>Відсотки, нараховані на баланс від початку квадруму (15 днів).</HH.Bank.Lobby.InterestTip>
+  <HH.Bank.Lobby.Max>Макс.</HH.Bank.Lobby.Max>
+  <HH.Bank.Lobby.Net>Чистий капітал</HH.Bank.Lobby.Net>
+  <HH.Bank.Lobby.NetTip>Рахунок + срібло вдома − борги. Визначає ваш рівень достатку.</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.Nothing>Поки порожньо. Внесок був би гарним початком.</HH.Bank.Lobby.Nothing>
+  <HH.Bank.Lobby.PendingDep>↓ {0} надійде через {1}</HH.Bank.Lobby.PendingDep>
+  <HH.Bank.Lobby.PendingWd>↑ {0} капсулою через {1}</HH.Bank.Lobby.PendingWd>
+  <HH.Bank.Lobby.Recent>Остання активність</HH.Bank.Lobby.Recent>
+  <HH.Bank.Lobby.Trade>Автозарахування торгової виручки</HH.Bank.Lobby.Trade>
+  <HH.Bank.Lobby.TradeTip>Срібло, яке ви отримуєте від торговців і торгових кораблів, зараховується на рахунок одразу після угоди за тією самою комісією, що й пряме зарахування, а не лежить на підлозі монетами. Потребує прямого зарахування. Вимкнено за замовчуванням, щоб можна було й далі платити наступному торговцеві готівкою. Караván не зачіпається.</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.Transfer>Внесок і зняття</HH.Bank.Lobby.Transfer>
+  <HH.Bank.Lobby.TransferInfo>На складі: {0}. Внесок {1}. Комісія за зняття {2}, {3}.</HH.Bank.Lobby.TransferInfo>
+  <HH.Bank.Lobby.Transit>У дорозі</HH.Bank.Lobby.Transit>
+  <HH.Bank.Lobby.TransitTip>Срібло, яке вже покинуло ваш склад, але ще не зараховано (затримка зарахування без філії чи банкомата).</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.WdInstant>готівка в будівлі одразу</HH.Bank.Lobby.WdInstant>
+  <HH.Bank.Lobby.WdPod>десантна капсула за {0}, {1} год</HH.Bank.Lobby.WdPod>
+  <HH.Bank.Lobby.Withdraw>Зняти</HH.Bank.Lobby.Withdraw>
+  <HH.Bank.Lobby.WithdrawPod>Зняти (капсулою)</HH.Bank.Lobby.WithdrawPod>
+  <HH.Bank.Memo.AccountFee>Плата за рахунок</HH.Bank.Memo.AccountFee>
+  <HH.Bank.Memo.Bailout>Рятівний кредит</HH.Bank.Memo.Bailout>
+  <HH.Bank.Memo.Deposit>Внесок (срібло)</HH.Bank.Memo.Deposit>
+  <HH.Bank.Memo.DepositTransit>Внесок у дорозі</HH.Bank.Memo.DepositTransit>
+  <HH.Bank.Memo.Installment>Кредит {0}: внесок</HH.Bank.Memo.Installment>
+  <HH.Bank.Memo.Interest>Відсотки</HH.Bank.Memo.Interest>
+  <HH.Bank.Memo.Late>Кредит {0}: прострочений платіж</HH.Bank.Memo.Late>
+  <HH.Bank.Memo.LateFee>Кредит {0}: пеня</HH.Bank.Memo.LateFee>
+  <HH.Bank.Memo.Loan>Кредит {0}</HH.Bank.Memo.Loan>
+  <HH.Bank.Memo.LoanInterest>Кредит {0}: відсотки</HH.Bank.Memo.LoanInterest>
+  <HH.Bank.Memo.NegInterest>Від’ємні відсотки</HH.Bank.Memo.NegInterest>
+  <HH.Bank.Memo.Offset>Зарахування стягнень</HH.Bank.Memo.Offset>
+  <HH.Bank.Memo.Repay>Кредит {0}: погашення</HH.Bank.Memo.Repay>
+  <HH.Bank.Memo.Seized>Вилучено</HH.Bank.Memo.Seized>
+  <HH.Bank.Memo.Seizure>Виручка від вилучення (кредит {0})</HH.Bank.Memo.Seizure>
+  <HH.Bank.Memo.SeizurePay>Кредит {0}: сплачено вилученням</HH.Bank.Memo.SeizurePay>
+  <HH.Bank.Memo.Trade>Торгова виручка</HH.Bank.Memo.Trade>
+  <HH.Bank.Memo.Withdraw>Зняття (готівка)</HH.Bank.Memo.Withdraw>
+  <HH.Bank.Memo.WithdrawCash>Зняття (готівка)</HH.Bank.Memo.WithdrawCash>
+  <HH.Bank.Memo.WithdrawFee>Комісія: зняття</HH.Bank.Memo.WithdrawFee>
+  <HH.Bank.Memo.WithdrawPod>Зняття капсулою</HH.Bank.Memo.WithdrawPod>
+  <HH.Bank.Msg.DepositArrived>На ваш рахунок зараховано {0} срібла.</HH.Bank.Msg.DepositArrived>
+  <HH.Bank.Msg.LoanRepaid>Кредит {0} повністю погашено.</HH.Bank.Msg.LoanRepaid>
+  <HH.Bank.Msg.Missed>Внесок за кредитом {0} не вдалося сплатити.</HH.Bank.Msg.Missed>
+  <HH.Bank.Msg.Opened>Рахунок відкрито в {0}.</HH.Bank.Msg.Opened>
+  <HH.Bank.Msg.PodsComing>{0} срібла вже летить вниз у десантних капсулах.</HH.Bank.Msg.PodsComing>
+  <HH.Bank.Msg.Settled>Кредит {0} знову в належному стані.</HH.Bank.Msg.Settled>
+  <HH.Bank.Msg.Switched>Тепер ваш рахунок веде {0}.</HH.Bank.Msg.Switched>
+  <HH.Bank.Msg.TradeDeposit>Торгову виручку {0} срібла одразу зараховано на ваш рахунок у {1}.</HH.Bank.Msg.TradeDeposit>
+  <HH.Bank.Open.Button>Відкрити рахунок</HH.Bank.Open.Button>
+  <HH.Bank.Open.Direct>Спрямовувати касову виручку прямо в банк опівночі</HH.Bank.Open.Direct>
+  <HH.Bank.Open.DirectTip>Виручка ваших крамниць, таверни й казино йде на рахунок, а не лежить срібними монетами. Пізніше можна змінити це в нічному сейфі або в налаштуваннях (bank.directDeposit).</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.Intro>Оберіть банк. Відкриття рахунку безкоштовне; переведення потім коштує {0} срібла. Доки рахунку немає, тут нічого вас не турбує: ні листів, ні настрою, ні комісій.</HH.Bank.Open.Intro>
+  <HH.Bank.Open.Sub>Ваше срібло, наша проблема.</HH.Bank.Open.Sub>
+  <HH.Bank.Open.Title>Silverline: відкриття рахунку</HH.Bank.Open.Title>
+  <HH.Bank.Quip.A>Ваше срібло в безпеці*. *Діють умови.</HH.Bank.Quip.A>
+  <HH.Bank.Quip.B>Будь ласка, візьміть номерок. Номерків у нас немає з часів Третього обвалу, але жест важливий.</HH.Bank.Quip.B>
+  <HH.Bank.Quip.C>Кожна монета тут обліковується. Здебільшого мною. Вночі.</HH.Bank.Quip.C>
+  <HH.Bank.Quip.Collectors>Мої колеги в котелках прийшли не до вас. Не дивіться на них. Вони знають.</HH.Bank.Quip.Collectors>
+  <HH.Bank.Quip.D>Матрац не є фінансовим продуктом. Хоча, чув, у нього є прихильники.</HH.Bank.Quip.D>
+  <HH.Bank.Quip.Debt>Борг — це заощадження з майбутнього. Майбутнє дуже хоче їх повернути.</HH.Bank.Quip.Debt>
+  <HH.Bank.Quip.E>Якщо хтось запитає, ручка не продається.</HH.Bank.Quip.E>
+  <HH.Bank.Quip.Empty>Порожній рахунок — це просто дуже чесний рахунок.</HH.Bank.Quip.Empty>
+  <HH.Bank.Quip.Huge>При такому розмірі ми вже не ваш банк. Ми ваш клімат.</HH.Bank.Quip.Huge>
+  <HH.Bank.Quip.Interest>Відсотки цього квадруму: {0}. Це, якщо я правильно порахувала, кілька обідів. Вітаю?</HH.Bank.Quip.Interest>
+  <HH.Bank.Quip.Overdue>Не хочемо вас лякати. Ми просто помітили, що ви не помітили.</HH.Bank.Quip.Overdue>
+  <HH.Bank.Quip.Rich>Чотиризначна сума. Ваш котелок уже майже циліндр.</HH.Bank.Quip.Rich>
+  <HH.Bank.Raid.Bounty>{0} продав борг за кредитом {1} людям, які не надсилають листів. На голову лідера вашої колонії встановлено ціну.</HH.Bank.Raid.Bounty>
+  <HH.Bank.Raid.BountyTitle>Винагорода</HH.Bank.Raid.BountyTitle>
+  <HH.Bank.Raid.Text>Rim Recovery Partners втратила терпіння щодо кредиту {0}. Їхні агенти йдуть за цінностями, вартість яких перевищує борг. Вони заберуть, що зможуть донести, і підуть.</HH.Bank.Raid.Text>
+  <HH.Bank.Raid.Title>Рейд стягувачів</HH.Bank.Raid.Title>
+  <HH.Bank.Reason.Amount>Спершу оберіть суму.</HH.Bank.Reason.Amount>
+  <HH.Bank.Reason.Arrears>Ви відстаєте з платежем. Поки це не врегулюють, вам ніхто не позичає.</HH.Bank.Reason.Arrears>
+  <HH.Bank.Reason.AtmLimit>Банкомат видасть ще лише {0} сьогодні.</HH.Bank.Reason.AtmLimit>
+  <HH.Bank.Reason.BankUnavailable>Цей банк вам недоступний.</HH.Bank.Reason.BankUnavailable>
+  <HH.Bank.Reason.Funds>На рахунку недостатньо коштів для {0} плюс {1} комісії.</HH.Bank.Reason.Funds>
+  <HH.Bank.Reason.Funds2>На рахунку немає {0}.</HH.Bank.Reason.Funds2>
+  <HH.Bank.Reason.LoansResearch>Для кредитів потрібен дослідницький проєкт «споживчий кредит».</HH.Bank.Reason.LoansResearch>
+  <HH.Bank.Reason.MinLoan>Найменший кредит — {0} срібла.</HH.Bank.Reason.MinLoan>
+  <HH.Bank.Reason.NoAccount>Рахунку ще немає.</HH.Bank.Reason.NoAccount>
+  <HH.Bank.Reason.NoCredit>Ваш кредитний ліміт вичерпано (залишилось {0} срібла).</HH.Bank.Reason.NoCredit>
+  <HH.Bank.Reason.NoSilver>Недостатньо срібла на складі або біля торгового маяка (доступно {0}).</HH.Bank.Reason.NoSilver>
+  <HH.Bank.Reason.OverLimit>Це більше, ніж {0} срібла, які ви ще можете позичити.</HH.Bank.Reason.OverLimit>
+  <HH.Bank.Reason.SameBank>Ви вже обслуговуєтеся тут.</HH.Bank.Reason.SameBank>
+  <HH.Bank.Reason.SwitchFunds>Переведення рахунку коштує {0} срібла, а на рахунку цієї суми немає.</HH.Bank.Reason.SwitchFunds>
+  <HH.Bank.Reason.Title>{0} позичає лише власникам королівського титулу.</HH.Bank.Reason.Title>
+  <HH.Bank.Seizure.Allow>Дозволити забрати цінності</HH.Bank.Seizure.Allow>
+  <HH.Bank.Seizure.Done>Команда завантажила цінностей на {0} срібла ({1}) і пішла, насвистуючи. Борг: {2}.</HH.Bank.Seizure.Done>
+  <HH.Bank.Seizure.DoneTitle>Вилучено</HH.Bank.Seizure.DoneTitle>
+  <HH.Bank.Seizure.Partly>погашено лише частково</HH.Bank.Seizure.Partly>
+  <HH.Bank.Seizure.Refuse>Відмовити</HH.Bank.Seizure.Refuse>
+  <HH.Bank.Seizure.Refused>Команда стягувачів ввічливо перестає бути ввічливою.</HH.Bank.Seizure.Refused>
+  <HH.Bank.Seizure.RefusedTitle>Вони не йдуть</HH.Bank.Seizure.RefusedTitle>
+  <HH.Bank.Seizure.Settled>погашено</HH.Bank.Seizure.Settled>
+  <HH.Bank.Seizure.Text>Команда вилучення від Rim Recovery Partners стоїть на порозі з ордером, який схожий на ламінований серветку. Вони хочуть цінності приблизно на {0} срібла (120 % кредиту {1}). Дозвольте їм забрати — і кредит зникне. Відмовите — заберуть силоміць.</HH.Bank.Seizure.Text>
+  <HH.Bank.Seizure.Title>Повідомлення про вилучення</HH.Bank.Seizure.Title>
+  <HH.Bank.Tab.History>Історія</HH.Bank.Tab.History>
+  <HH.Bank.Tab.Loans>Кредити</HH.Bank.Tab.Loans>
+  <HH.Bank.Tab.Lobby>Вестибюль</HH.Bank.Tab.Lobby>
+  <HH.Bank.Tab.Terms>Умови</HH.Bank.Tab.Terms>
+  <HH.Bank.Terms.AccFee>Плата за рахунок на квадрум</HH.Bank.Terms.AccFee>
+  <HH.Bank.Terms.AccountDaily>Ваш рахунок за день</HH.Bank.Terms.AccountDaily>
+  <HH.Bank.Terms.AccountDailyTip>Множник рахунку за рік = M^({0} × {1}) = {2}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.Anchors>За складністю</HH.Bank.Terms.Anchors>
+  <HH.Bank.Terms.AnchorsHead>M на рік / найвищий етап стягнення</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.Atm>Банкомат</HH.Bank.Terms.Atm>
+  <HH.Bank.Terms.Auto>Авто</HH.Bank.Terms.Auto>
+  <HH.Bank.Terms.AutoTip>Знову слідувати повзунку складності ({0} на вашій поточній складності).</HH.Bank.Terms.AutoTip>
+  <HH.Bank.Terms.Daily>На день (індекс)</HH.Bank.Terms.Daily>
+  <HH.Bank.Terms.DailyTip>M^(1/60) − 1. Ігровий рік має 60 днів.</HH.Bank.Terms.DailyTip>
+  <HH.Bank.Terms.Dep>Внесок</HH.Bank.Terms.Dep>
+  <HH.Bank.Terms.Direct>Прямий депозит</HH.Bank.Terms.Direct>
+  <HH.Bank.Terms.Fees>Комісії вашого банку</HH.Bank.Terms.Fees>
+  <HH.Bank.Terms.FeesNote>Усі комісії залежать від налаштування «рівень банківських комісій» ({0} %).</HH.Bank.Terms.FeesNote>
+  <HH.Bank.Terms.Preview>1 000 срібла за індексом стають {0} через один ігровий рік і {1} через десять.</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Profit>Прибутковість</HH.Bank.Terms.Profit>
+  <HH.Bank.Terms.ProfitIntro>На скільки в середньому зростають інвестовані гроші за ігровий рік (60 днів). 1,0 означає ні плюсу, ні мінусу, 1,2 — +20 % на рік. Це також визначає вартість позик. Це налаштування цього збереження.</HH.Bank.Terms.ProfitIntro>
+  <HH.Bank.Terms.StageNote>Драбина стягнення: 1 нагадування, 2 пеня, 3 залік проти внесків, 4 дружній візит, 5 група вилучення, 6 рейд стягнення, 7 винагорода. Зараз: зупиняється на етапі {0}.</HH.Bank.Terms.StageNote>
+  <HH.Bank.Terms.Switch>Зміна банку</HH.Bank.Terms.Switch>
+  <HH.Bank.Terms.Wd>Зняття (капсула / каса)</HH.Bank.Terms.Wd>
+  <HH.Bank.Tier.0>Тоне в боргах</HH.Bank.Tier.0>
+  <HH.Bank.Tier.1>Без грошей</HH.Bank.Tier.1>
+  <HH.Bank.Tier.2>Ледве зводимо кінці</HH.Bank.Tier.2>
+  <HH.Bank.Tier.3>Якось виживаємо</HH.Bank.Tier.3>
+  <HH.Bank.Tier.4>Комфортно</HH.Bank.Tier.4>
+  <HH.Bank.Tier.5>Забезпечений</HH.Bank.Tier.5>
+  <HH.Bank.Tier.6>Багатий</HH.Bank.Tier.6>
+  <HH.Bank.Tier.7>Шалено багатий</HH.Bank.Tier.7>
+  <HH.Bank.Tier.8>Надто великий, щоб збанкрутувати</HH.Bank.Tier.8>
+  <HH.Bank.Tier.Name0>Безкоштовне проживання</HH.Bank.Tier.Name0>
+  <HH.Bank.Tier.Name1>Все включено</HH.Bank.Tier.Name1>
+  <HH.Bank.Tier.Name2>Ліжко й сніданок</HH.Bank.Tier.Name2>
+  <HH.Bank.Tier.Name3>Стандартний номер</HH.Bank.Tier.Name3>
+  <HH.Bank.Tier.Name4>Переповнено</HH.Bank.Tier.Name4>
+  <HH.Bank.Tier.Name5>Відгук на одну зірку</HH.Bank.Tier.Name5>
+  <HH.Bank.Tier.Name6>Навіщо ти себе так мучиш?</HH.Bank.Tier.Name6>
+  <HH.Bank.Time.DayHour>день {0}, {1}:00</HH.Bank.Time.DayHour>
+  <HH.Bank.Time.Hours>{0} г</HH.Bank.Time.Hours>
+  <HH.Bank.Time.Minutes>{0} хв</HH.Bank.Time.Minutes>
+</LanguageData>

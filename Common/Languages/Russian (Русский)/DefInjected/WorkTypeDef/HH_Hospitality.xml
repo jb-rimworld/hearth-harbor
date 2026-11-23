@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Hosting.labelShort>гости</HH_Hosting.labelShort>
+  <HH_Hosting.pawnLabel>Администратор</HH_Hosting.pawnLabel>
+  <HH_Hosting.gerundLabel>приём гостей</HH_Hosting.gerundLabel>
+  <HH_Hosting.description>Регистрация гостей при заезде и выезде, экскурсии, развлечение и уговоры остаться (или присоединиться).</HH_Hosting.description>
+  <HH_Hosting.verb>Принимать гостей</HH_Hosting.verb>
+  <HH_Serving.labelShort>подача</HH_Serving.labelShort>
+  <HH_Serving.pawnLabel>Официант</HH_Serving.pawnLabel>
+  <HH_Serving.gerundLabel>обслуживание</HH_Serving.gerundLabel>
+  <HH_Serving.description>Обслуживание стоек, столов и касс: принимать заказы, подавать еду и напитки, управлять игорным залом, пополнять полки.</HH_Serving.description>
+  <HH_Serving.verb>Обслуживать</HH_Serving.verb>
+</LanguageData>

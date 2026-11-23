@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Cinema.label>Kino</HH_Venue_Cinema.label>
+  <HH_Venue_Cinema.description>Ein dunkler Raum mit Projektorleinwand und reichlich Stühlen. Gäste kaufen eine Karte für die nächste Vorführung; eine Vorführung dauert so lang wie der Film, und wer einschläft, bekommt sein Geld nicht zurück. Braucht eine Projektorleinwand mit Strom und mindestens ein paar Sitzplätze davor.</HH_Venue_Cinema.description>
+  <HH_Venue_Salon.label>Schönheitssalon</HH_Venue_Salon.label>
+  <HH_Venue_Salon.description>Ein Raum mit Salonstühlen. Gäste zahlen für einen Haarschnitt, einen neuen Stil, eine Färbung oder, mit der passenden Ideologie, ein Tattoo; ein Kolonist mit der Arbeitsart Bedienen erledigt die Arbeit. Ohne jemanden zum Bedienen ist der Salon geschlossen.</HH_Venue_Salon.description>
+  <HH_Venue_Gallery.label>Galerie</HH_Venue_Gallery.label>
+  <HH_Venue_Gallery.description>Ein Raum voller Skulpturen, in gutem Licht aufgehängt. Gäste zahlen einen kleinen Eintritt und gehen Stück für Stück an den Werken vorbei; je schöner die Kunst, desto zufriedener gehen sie. Braucht eine Handvoll Kunstwerke im Raum.</HH_Venue_Gallery.description>
+</LanguageData>

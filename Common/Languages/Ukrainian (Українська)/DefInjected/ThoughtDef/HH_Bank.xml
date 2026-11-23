@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Finances.stages.0.label>тоне в боргах</SL_Finances.stages.0.label>
+  <SL_Finances.stages.0.description>Ми винні більше, ніж коштує колонія. Від пошти тхне простроченими листами.</SL_Finances.stages.0.description>
+  <SL_Finances.stages.1.label>без грошей</SL_Finances.stages.1.label>
+  <SL_Finances.stages.1.description>Рахунок порожній. Навіть банкомат дивиться на нас із жалістю.</SL_Finances.stages.1.description>
+  <SL_Finances.stages.2.label>ледве зводимо кінці</SL_Finances.stages.2.label>
+  <SL_Finances.stages.2.description>У нас трохи є в банку. Дуже трохи. Ніхто не каже цього вголос.</SL_Finances.stages.2.description>
+  <SL_Finances.stages.3.label>якось виживаємо</SL_Finances.stages.3.label>
+  <SL_Finances.stages.3.description>Ні багаті, ні бідні.</SL_Finances.stages.3.description>
+  <SL_Finances.stages.4.label>комфортно</SL_Finances.stages.4.label>
+  <SL_Finances.stages.4.description>Комфортно, і не переживаємо з цього приводу.</SL_Finances.stages.4.description>
+  <SL_Finances.stages.5.label>заощадження</SL_Finances.stages.5.label>
+  <SL_Finances.stages.5.description>У нас є заощадження. Це дивне, тепле відчуття.</SL_Finances.stages.5.description>
+  <SL_Finances.stages.6.label>багатство</SL_Finances.stages.6.label>
+  <SL_Finances.stages.6.description>Ми багаті. Хоча за вечерею ніхто про це не згадує.</SL_Finances.stages.6.description>
+  <SL_Finances.stages.7.label>шалено багаті</SL_Finances.stages.7.label>
+  <SL_Finances.stages.7.description>Колонія шалено багата. Ми почали купувати речі, яких нам не треба.</SL_Finances.stages.7.description>
+  <SL_Finances.stages.8.label>надто великі, щоб збанкрутувати</SL_Finances.stages.8.label>
+  <SL_Finances.stages.8.description>Ми надто великі, щоб збанкрутувати. Хтось мусить це сказати, нехай це будемо ми.</SL_Finances.stages.8.description>
+  <SL_FinancesGreedy.stages.0.label>тоне в боргах</SL_FinancesGreedy.stages.0.label>
+  <SL_FinancesGreedy.stages.0.description>Борги. Борги! Я відчуваю кожну срібну монету, якої в нас немає.</SL_FinancesGreedy.stages.0.description>
+  <SL_FinancesGreedy.stages.1.label>без грошей</SL_FinancesGreedy.stages.1.label>
+  <SL_FinancesGreedy.stages.1.description>Без грошей. Я не ставав жадібним, щоб залишитися без грошей.</SL_FinancesGreedy.stages.1.description>
+  <SL_FinancesGreedy.stages.2.label>ледве зводимо кінці</SL_FinancesGreedy.stages.2.label>
+  <SL_FinancesGreedy.stages.2.description>На рахунку майже нічого. Перевіряю щогодини.</SL_FinancesGreedy.stages.2.description>
+  <SL_FinancesGreedy.stages.3.label>якось виживаємо</SL_FinancesGreedy.stages.3.label>
+  <SL_FinancesGreedy.stages.3.description>Непогано. Але могло б бути більше.</SL_FinancesGreedy.stages.3.description>
+  <SL_FinancesGreedy.stages.4.label>комфортно</SL_FinancesGreedy.stages.4.label>
+  <SL_FinancesGreedy.stages.4.description>Комфортно. Але могло б бути більше.</SL_FinancesGreedy.stages.4.description>
+  <SL_FinancesGreedy.stages.5.label>заощадження</SL_FinancesGreedy.stages.5.label>
+  <SL_FinancesGreedy.stages.5.description>Заощадження в сховищі, з моїм ім'ям поруч. Чудово.</SL_FinancesGreedy.stages.5.description>
+  <SL_FinancesGreedy.stages.6.label>багатий</SL_FinancesGreedy.stages.6.label>
+  <SL_FinancesGreedy.stages.6.description>Багатий! Я не зупинюся в рахуванні.</SL_FinancesGreedy.stages.6.description>
+  <SL_FinancesGreedy.stages.7.label>шалено багатий</SL_FinancesGreedy.stages.7.label>
+  <SL_FinancesGreedy.stages.7.description>Шалено багатий. Заради цього я й народився.</SL_FinancesGreedy.stages.7.description>
+  <SL_FinancesGreedy.stages.8.label>надто великий, щоб збанкрутувати</SL_FinancesGreedy.stages.8.label>
+  <SL_FinancesGreedy.stages.8.description>Надто великий, щоб збанкрутувати. Оправте балансовий звіт у рамку.</SL_FinancesGreedy.stages.8.description>
+  <SL_CollectorsNearby.stages.0.label>колектори ошиваються поруч</SL_CollectorsNearby.stages.0.label>
+  <SL_CollectorsNearby.stages.0.description>Двоє чоловіків у котелках стоять біля дверей. Вони дуже ввічливі щодо цього.</SL_CollectorsNearby.stages.0.description>
+</LanguageData>

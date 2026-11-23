@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingAddiction.label>závislost na hazardu</HH_GamblingAddiction.label>
+  <HH_GamblingAddiction.description>Stoly ho pevně chytily. Bez pravidelné hry přichází abstinence: špatná nálada, podrážděnost a v nejhlubších stadiích hazardní záchvaty. Vyléčit to umí jen čas bez jediné hry a během následného období chuti je recidiva snadná.\n\nStojí to žádné stříbro, jen čas, náladu a nervy.</HH_GamblingAddiction.description>
+  <HH_GamblingAddiction.stages.1.label>abstinence (mírná)</HH_GamblingAddiction.stages.1.label>
+  <HH_GamblingAddiction.stages.2.label>abstinence (střední)</HH_GamblingAddiction.stages.2.label>
+  <HH_GamblingAddiction.stages.3.label>abstinence (silná)</HH_GamblingAddiction.stages.3.label>
+  <HH_GamblingAddiction.stages.4.label>abstinence (těžká)</HH_GamblingAddiction.stages.4.label>
+  <HH_GamblingAddiction.stages.5.label>abstinence (extrémní)</HH_GamblingAddiction.stages.5.label>
+</LanguageData>

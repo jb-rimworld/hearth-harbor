@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Enum.InnReportMode.Letter>手紙</HH.Enum.InnReportMode.Letter>
+  <HH.Enum.InnReportMode.Message>メッセージ</HH.Enum.InnReportMode.Message>
+  <HH.Enum.InnReportMode.Off>オフ</HH.Enum.InnReportMode.Off>
+  <HH.Inn.And>と</HH.Inn.And>
+  <HH.Inn.Arrival.Day>今日だけの滞在で来ました。</HH.Inn.Arrival.Day>
+  <HH.Inn.Arrival.Label>客: {0}</HH.Inn.Arrival.Label>
+  <HH.Inn.Arrival.Overnight>一晩泊まりたいそうです。</HH.Inn.Arrival.Overnight>
+  <HH.Inn.Arrival.Text>{1}から来た{0}が到着しました。{2} 合計で約{3}銀を持っています。</HH.Inn.Arrival.Text>
+  <HH.Inn.Arrival.TipDesk>ヒント: フロントデスクがあると、客は正式にチェックインできます。なければ客は自分でベッドを探します。</HH.Inn.Arrival.TipDesk>
+  <HH.Inn.Card>カード</HH.Inn.Card>
+  <HH.Inn.Cash>現金</HH.Inn.Cash>
+  <HH.Inn.Concierge>コンシェルジュ</HH.Inn.Concierge>
+  <HH.Inn.Concierge.AllClear>異常なし。客は満足しています。</HH.Inn.Concierge.AllClear>
+  <HH.Inn.Desk.Door>入館方針: {0}</HH.Inn.Desk.Door>
+  <HH.Inn.Desk.Inspect>本日のチェックイン: {0} · 累計: {1}</HH.Inn.Desk.Inspect>
+  <HH.Inn.Desk.Next>次の客: {0}</HH.Inn.Desk.Next>
+  <HH.Inn.Desk.NoBeds>まだ客用ベッドがありません。ベッドを客用に指定すると、宿泊客を受け入れられます。</HH.Inn.Desk.NoBeds>
+  <HH.Inn.Door.Age>年齢: {0}～{1}</HH.Inn.Door.Age>
+  <HH.Inn.Door.AllowAll>全員を入れる（下のフィルターをすべて無視）</HH.Inn.Door.AllowAll>
+  <HH.Inn.Door.Any>すべて</HH.Inn.Door.Any>
+  <HH.Inn.Door.Day>日帰り客</HH.Inn.Door.Day>
+  <HH.Inn.Door.Everyone>全員</HH.Inn.Door.Everyone>
+  <HH.Inn.Door.Except>これら以外の全員</HH.Inn.Door.Except>
+  <HH.Inn.Door.Factions>派閥</HH.Inn.Door.Factions>
+  <HH.Inn.Door.Gender>性別</HH.Inn.Door.Gender>
+  <HH.Inn.Door.Gizmo>入館方針</HH.Inn.Door.Gizmo>
+  <HH.Inn.Door.GizmoDesc>誰が泊まれるかを選びます: 派閥、ゼノタイプ、性別、年齢、王室の称号、テクノロジーレベル、資産、滞在の種類。フィルターは客を計画・生成するときに適用されます。</HH.Inn.Door.GizmoDesc>
+  <HH.Inn.Door.Intro>誰が来てよいかを決めます。フィルターは客の計画と生成時に適用され、敵対的な派閥は決して訪れません。</HH.Inn.Door.Intro>
+  <HH.Inn.Door.Only>これらだけ</HH.Inn.Door.Only>
+  <HH.Inn.Door.Overnight>宿泊客</HH.Inn.Door.Overnight>
+  <HH.Inn.Door.Preview>友好的な派閥の人々のうち、{0}が歓迎されます。</HH.Inn.Door.Preview>
+  <HH.Inn.Door.Quip.Age>年齢で選別ですか。おばあちゃんが覚えておきますよ。</HH.Inn.Door.Quip.Age>
+  <HH.Inn.Door.Quip.AllowAll>うわ、ヒッピーじゃん。</HH.Inn.Door.Quip.AllowAll>
+  <HH.Inn.Door.Quip.Default>配慮はあるけど、制限付きですか。</HH.Inn.Door.Quip.Default>
+  <HH.Inn.Door.Quip.Factions>派閥に恨みでも？ 上品ですこと。</HH.Inn.Door.Quip.Factions>
+  <HH.Inn.Door.Quip.Gender>世界の半分を締め出しですか。効率的ですね、性差別主義者さん。</HH.Inn.Door.Quip.Gender>
+  <HH.Inn.Door.Quip.Saved>客フィルターを保存しました。</HH.Inn.Door.Quip.Saved>
+  <HH.Inn.Door.Quip.StayKind>コミットメント恐怖症ですか？</HH.Inn.Door.Quip.StayKind>
+  <HH.Inn.Door.Quip.Tech>高級料理には原始的すぎると？ 了解しました。</HH.Inn.Door.Quip.Tech>
+  <HH.Inn.Door.Quip.Title>階級闘争ですが、おもてなしの名目で。</HH.Inn.Door.Quip.Title>
+  <HH.Inn.Door.Quip.Wealth>お金持ちだけ？ 大家さんも喜びますね。</HH.Inn.Door.Quip.Wealth>
+  <HH.Inn.Door.Quip.Xenotypes>遺伝子選民思想を検知しました。それはあなたです。</HH.Inn.Door.Quip.Xenotypes>
+  <HH.Inn.Door.Reset>ほぼ全員（既定）</HH.Inn.Door.Reset>
+  <HH.Inn.Door.Tech>最低テクノロジーレベル</HH.Inn.Door.Tech>
+  <HH.Inn.Door.Title>入館方針</HH.Inn.Door.Title>
+  <HH.Inn.Door.Title2>王室の称号（称号あり / 称号なしのみ）</HH.Inn.Door.Title2>
+  <HH.Inn.Door.Wealth>資産帯: {0}～{1}</HH.Inn.Door.Wealth>
+  <HH.Inn.Door.Xenotypes>ゼノタイプ</HH.Inn.Door.Xenotypes>
+  <HH.Inn.Event.Accompanied>{0}に館内を案内してもらいました。</HH.Inn.Event.Accompanied>
+  <HH.Inn.Event.Activity>{0}に行きました。</HH.Inn.Event.Activity>
+  <HH.Inn.Event.Arrested>逮捕されました。</HH.Inn.Event.Arrested>
+  <HH.Inn.Event.Arrived>{0}から到着しました。</HH.Inn.Event.Arrived>
+  <HH.Inn.Event.BedTaken>滞在の途中でベッドを失いました。</HH.Inn.Event.BedTaken>
+  <HH.Inn.Event.BondTooLow>居心地は良かったものの、滞在するほどの絆はありませんでした（絆 {0}/{1}）。</HH.Inn.Event.BondTooLow>
+  <HH.Inn.Event.CheckedIn>フロントデスクでチェックインしました。</HH.Inn.Event.CheckedIn>
+  <HH.Inn.Event.CouldNotPay>その夜の宿泊料を払えませんでした。</HH.Inn.Event.CouldNotPay>
+  <HH.Inn.Event.Declined>住み着くことも考えましたが、結局家に帰りました。</HH.Inn.Event.Declined>
+  <HH.Inn.Event.Died>滞在中に死亡しました。</HH.Inn.Event.Died>
+  <HH.Inn.Event.FreeNight>無料で一晩泊まりました。</HH.Inn.Event.FreeNight>
+  <HH.Inn.Event.Gift>贈り物を置いていきました: {0}。</HH.Inn.Event.Gift>
+  <HH.Inn.Event.GotRoom>{1}銀/泊で{0}のベッドを取りました。</HH.Inn.Event.GotRoom>
+  <HH.Inn.Event.HonestyBox>正直箱でチェックインしました。当番の人はいませんでした。</HH.Inn.Event.HonestyBox>
+  <HH.Inn.Event.HonestyPrice>正直箱の価格、1泊{0}銀を支払いました。</HH.Inn.Event.HonestyPrice>
+  <HH.Inn.Event.Insulted>{0}の勧誘にしつこさを感じました。</HH.Inn.Event.Insulted>
+  <HH.Inn.Event.Joined>滞在を決め、入植地に加わりました。</HH.Inn.Event.Joined>
+  <HH.Inn.Event.LeftBroke>早めに退去: 所持金が尽きました。</HH.Inn.Event.LeftBroke>
+  <HH.Inn.Event.LeftUnhappy>不満を抱えて早めに退去しました。</HH.Inn.Event.LeftUnhappy>
+  <HH.Inn.Event.NoBed>手頃なベッドが見つからず、日帰りだけになりました。</HH.Inn.Event.NoBed>
+  <HH.Inn.Event.PaidFirstNight>初日の宿泊料として{0}銀を支払いました（{1}）。</HH.Inn.Event.PaidFirstNight>
+  <HH.Inn.Event.PaidNight>さらに1泊分として{0}銀を支払いました（{1}）。</HH.Inn.Event.PaidNight>
+  <HH.Inn.Event.Pricey>1泊{0}銀は高すぎると感じました。</HH.Inn.Event.Pricey>
+  <HH.Inn.Event.RecruitTalk>{0}と滞在について長く話し込みました。</HH.Inn.Event.RecruitTalk>
+  <HH.Inn.Event.Returned>また宿泊に戻ってきました。</HH.Inn.Event.Returned>
+  <HH.Inn.Event.SelfCheckIn>部屋は一人で見つけました。デスクには誰もいませんでした。</HH.Inn.Event.SelfCheckIn>
+  <HH.Inn.Event.SentAway>追い返されました。</HH.Inn.Event.SentAway>
+  <HH.Inn.Event.SharedBed>{0}とベッドを共有しています（1泊あたり追加{1}銀）。</HH.Inn.Event.SharedBed>
+  <HH.Inn.Event.ShortenedStay>部屋代を払うため、滞在を{0}泊に短縮しました。</HH.Inn.Event.ShortenedStay>
+  <HH.Inn.Event.TooImportant>自分の家でやることが多すぎて、泊まれませんでした。</HH.Inn.Event.TooImportant>
+  <HH.Inn.Event.Welcomed>フロントデスクで{0}に歓迎されました。</HH.Inn.Event.Welcomed>
+  <HH.Inn.Forecast.Day>日帰り</HH.Inn.Forecast.Day>
+  <HH.Inn.Forecast.InTime>あと{0}</HH.Inn.Forecast.InTime>
+  <HH.Inn.Forecast.Now>まもなく</HH.Inn.Forecast.Now>
+  <HH.Inn.Forecast.Overnight>{0}泊</HH.Inn.Forecast.Overnight>
+  <HH.Inn.Forecast.Return>再訪</HH.Inn.Forecast.Return>
+  <HH.Inn.GuestBed.Booked>{0}が予約済み</HH.Inn.GuestBed.Booked>
+  <HH.Inn.GuestBed.Desc>このベッドを客に貸し出します。入植者はここでは寝ず、客は客用ベッドでのみ寝ます。1泊の料金は部屋、ベッド、そして同じ部屋のベッド数に応じて決まります。</HH.Inn.GuestBed.Desc>
+  <HH.Inn.GuestBed.Inactive>客用ベッド（医療・囚人・奴隷用ベッドの間は無効）</HH.Inn.GuestBed.Inactive>
+  <HH.Inn.GuestBed.Inspect>客用ベッド: {0}銀/泊（{1}）</HH.Inn.GuestBed.Inspect>
+  <HH.Inn.GuestBed.Label>客用ベッド</HH.Inn.GuestBed.Label>
+  <HH.Inn.GuestBed.NoColonists>これは客用ベッドです。</HH.Inn.GuestBed.NoColonists>
+  <HH.Inn.GuestBed.NotColonistBed>客用ベッドにできるのは、通常の入植者用ベッドだけです（医療・囚人・奴隷用は不可）。</HH.Inn.GuestBed.NotColonistBed>
+  <HH.Inn.Handling.Accompany>付き添い</HH.Inn.Handling.Accompany>
+  <HH.Inn.Handling.AccompanyDesc>接客作業を持つ入植者がこの客に付き添い、気分と評価が上がります。入植者の時間を使います。誰も接客できないときは基本対応に戻ります。</HH.Inn.Handling.AccompanyDesc>
+  <HH.Inn.Handling.Basics>基本対応</HH.Inn.Handling.Basics>
+  <HH.Inn.Handling.BasicsDesc>有料サービスのみで、娯楽はなし。入植者の時間は使いません。</HH.Inn.Handling.BasicsDesc>
+  <HH.Inn.Handling.Bond>絆: {0} / {1}</HH.Inn.Handling.Bond>
+  <HH.Inn.Handling.Click>クリックで切り替え: 基本対応 → 付き添い → 勧誘。</HH.Inn.Handling.Click>
+  <HH.Inn.Handling.Label>対応: {0}</HH.Inn.Handling.Label>
+  <HH.Inn.Handling.Recruit>勧誘</HH.Inn.Handling.Recruit>
+  <HH.Inn.Handling.RecruitDesc>付き添いと同様ですが、滞在についての話もします。入植地との絆が十分に強ければ、出発時に加わることがあります。しつこい勧誘は相手の気分を害することがあります。</HH.Inn.Handling.RecruitDesc>
+  <HH.Inn.Leaving.Closing>帰宅: 施設が閉店します</HH.Inn.Leaving.Closing>
+  <HH.Inn.Leaving.Hostile>敵として去る</HH.Inn.Leaving.Hostile>
+  <HH.Inn.Leaving.Money>早めに退去: 所持金が尽きました</HH.Inn.Leaving.Money>
+  <HH.Inn.Leaving.Paid>{0}銀を支払い済み</HH.Inn.Leaving.Paid>
+  <HH.Inn.Leaving.Planned>チェックアウト</HH.Inn.Leaving.Planned>
+  <HH.Inn.Leaving.Removal>帰宅: 宿泊モジュールが停止されました</HH.Inn.Leaving.Removal>
+  <HH.Inn.Leaving.SentAway>追い返された</HH.Inn.Leaving.SentAway>
+  <HH.Inn.Leaving.Temperature>早めに退去: 気温が危険な水準でした</HH.Inn.Leaving.Temperature>
+  <HH.Inn.Leaving.Unhappy>早めに退去: 滞在に不満があります</HH.Inn.Leaving.Unhappy>
+  <HH.Inn.Leaving.Wounded>早めに退去: 負傷者を連れて帰ります</HH.Inn.Leaving.Wounded>
+  <HH.Inn.Msg.FirstGuestsEta>最初の客がこちらへ向かっています: {0}、到着予定 {1}。</HH.Inn.Msg.FirstGuestsEta>
+  <HH.Inn.Msg.Insulted>{0}は勧誘がしつこいと感じ、支出を減らして早めに帰るでしょう。</HH.Inn.Msg.Insulted>
+  <HH.Inn.Msg.LeavingTemperature>{0}から来た客が退去しています。気温が危険なほど暑い、または寒いためです。</HH.Inn.Msg.LeavingTemperature>
+  <HH.Inn.Msg.LeavingWounded>{0}から来た客が負傷者を連れて帰ろうとしています。</HH.Inn.Msg.LeavingWounded>
+  <HH.Inn.Msg.WingCreated>客用ベッドの周囲に{0}ができました。客はその中に留まります。もてなしメニューの客室区画ツールで調整できます。</HH.Inn.Msg.WingCreated>
+  <HH.Inn.Msg.WingGrown>{0}が{1}まで広がりました: 客はそこまで歩けます。</HH.Inn.Msg.WingGrown>
+  <HH.Inn.Occupancy.Dorm>大部屋</HH.Inn.Occupancy.Dorm>
+  <HH.Inn.Occupancy.Hallway>廊下</HH.Inn.Occupancy.Hallway>
+  <HH.Inn.Occupancy.Single>個室</HH.Inn.Occupancy.Single>
+  <HH.Inn.Occupancy.TwoBed>二人部屋</HH.Inn.Occupancy.TwoBed>
+  <HH.Inn.PriceMode.Auto>自動</HH.Inn.PriceMode.Auto>
+  <HH.Inn.PriceMode.Discount>−25%</HH.Inn.PriceMode.Discount>
+  <HH.Inn.PriceMode.Free>無料</HH.Inn.PriceMode.Free>
+  <HH.Inn.PriceMode.Gizmo>価格: {0}</HH.Inn.PriceMode.Gizmo>
+  <HH.Inn.PriceMode.GizmoDesc>このベッドの価格を変えます: 無料（友人や勧誘者向け）、25%引き、自動価格、または25%増し。次の予約から適用されます。</HH.Inn.PriceMode.GizmoDesc>
+  <HH.Inn.PriceMode.Premium>+25%</HH.Inn.PriceMode.Premium>
+  <HH.Inn.Problem.Bored>退屈しています: 客室区画に娯楽を追加してください（テレビ、チェス、施設など）。</HH.Inn.Problem.Bored>
+  <HH.Inn.Problem.BoredMany>{0}人の客が退屈しています: 客室区画に娯楽を追加してください。</HH.Inn.Problem.BoredMany>
+  <HH.Inn.Problem.Broke>所持金がほぼ尽きました: 早めに退去します。</HH.Inn.Problem.Broke>
+  <HH.Inn.Problem.BrokeMany>{0}人の客の所持金がほぼ尽きています。</HH.Inn.Problem.BrokeMany>
+  <HH.Inn.Problem.Cold>寒すぎます（{0}）: 客室区画を暖めてください。</HH.Inn.Problem.Cold>
+  <HH.Inn.Problem.ColdMany>{0}人の客が寒すぎると感じています: 客室区画を暖めてください。</HH.Inn.Problem.ColdMany>
+  <HH.Inn.Problem.Hot>暑すぎます（{0}）: 冷却器で客室区画を冷やしてください。</HH.Inn.Problem.Hot>
+  <HH.Inn.Problem.HotMany>{0}人の客が暑すぎると感じています: 冷却器で客室区画を冷やしてください。</HH.Inn.Problem.HotMany>
+  <HH.Inn.Problem.Hungry>空腹です: レストランや酒場に食事を用意してください（営業中で人員があること）。</HH.Inn.Problem.Hungry>
+  <HH.Inn.Problem.HungryMany>{0}人の客が空腹です: レストランや酒場に食事を用意してください。</HH.Inn.Problem.HungryMany>
+  <HH.Inn.Problem.Insulted>勧誘にしつこさを感じています: 対応を付き添いに切り替えてください。</HH.Inn.Problem.Insulted>
+  <HH.Inn.Problem.InsultedMany>{0}人の客がしつこさを感じています: 勧誘の強さを下げてください。</HH.Inn.Problem.InsultedMany>
+  <HH.Inn.Problem.Mood>機嫌が悪い: {0}。</HH.Inn.Problem.Mood>
+  <HH.Inn.Problem.MoodMany>{0}人の客の機嫌が悪いです（客タブを確認）。</HH.Inn.Problem.MoodMany>
+  <HH.Inn.Problem.NoBed>ベッドがありません: 別の客用ベッドを指定するか、価格を下げてください。</HH.Inn.Problem.NoBed>
+  <HH.Inn.Problem.NoBedMany>{0}人の客がベッドを持てません: 客用ベッドを増やすか、価格を下げてください。</HH.Inn.Problem.NoBedMany>
+  <HH.Inn.Problem.Pricey>1泊{0}銀は高すぎると感じています: ベッドの価格を下げる（−25%）か、部屋を改善してください。</HH.Inn.Problem.Pricey>
+  <HH.Inn.Problem.PriceyMany>{0}人の客が部屋を高すぎると感じています: ベッドの価格を下げるか、部屋を改善してください。</HH.Inn.Problem.PriceyMany>
+  <HH.Inn.Problem.Waited>サービスを待ちぼうけしました: 施設に給仕の人員を置いてください（給仕作業）。</HH.Inn.Problem.Waited>
+  <HH.Inn.Problem.WaitedMany>{0}人の客が待ちぼうけしました: 施設に給仕の人員を置いてください（給仕作業）。</HH.Inn.Problem.WaitedMany>
+  <HH.Inn.Quality.Plain>普通</HH.Inn.Quality.Plain>
+  <HH.Inn.Recruit.Chance>チェックアウト時に加わるかもしれません（約{0}%）</HH.Inn.Recruit.Chance>
+  <HH.Inn.Recruit.Cost>{1}との友好度を{0}失います</HH.Inn.Recruit.Cost>
+  <HH.Inn.Recruit.Insulted>しつこさを感じ、今回は加わりません</HH.Inn.Recruit.Insulted>
+  <HH.Inn.Recruit.NotYet>まだ十分に親しくありません</HH.Inn.Recruit.NotYet>
+  <HH.Inn.Recruit.TooImportant>自分の家でやることが多すぎて加われません</HH.Inn.Recruit.TooImportant>
+  <HH.Inn.RenownLine>名声 {0} {1}</HH.Inn.RenownLine>
+  <HH.Inn.Report.Budget>予算 {0}</HH.Inn.Report.Budget>
+  <HH.Inn.Report.Day>日帰り客</HH.Inn.Report.Day>
+  <HH.Inn.Report.Goodwill>友好度 {0}</HH.Inn.Report.Goodwill>
+  <HH.Inn.Report.Hostile>敵として去りました。チップなし。</HH.Inn.Report.Hostile>
+  <HH.Inn.Report.Label>退去した客: {0}</HH.Inn.Report.Label>
+  <HH.Inn.Report.Leaving>客、帰宅中</HH.Inn.Report.Leaving>
+  <HH.Inn.Report.LeftBroke>滞在期間が終わる前に所持金が尽きました。</HH.Inn.Report.LeftBroke>
+  <HH.Inn.Report.LeftEarly>予定の日より前に去りました。</HH.Inn.Report.LeftEarly>
+  <HH.Inn.Report.Mood>満足度 {0}</HH.Inn.Report.Mood>
+  <HH.Inn.Report.NoRoom>日帰り</HH.Inn.Report.NoRoom>
+  <HH.Inn.Report.NotCheckedIn>チェックイン中</HH.Inn.Report.NotCheckedIn>
+  <HH.Inn.Report.Opener.bad.0>{FACTION}の客は、リストを持って去りました。買い物リストではありませんでした。</HH.Inn.Report.Opener.bad.0>
+  <HH.Inn.Report.Opener.bad.1>{NAME}は{ROOM}のことを皆に言いふらすと約束しました。それが問題です。</HH.Inn.Report.Opener.bad.1>
+  <HH.Inn.Report.Opener.bad.2>{FACTION}が忘れさせてくれるならの話ですが、忘れたい滞在でした。</HH.Inn.Report.Opener.bad.2>
+  <HH.Inn.Report.Opener.fine.0>{FACTION}の客は去りました。そういうこともあります、以上です。</HH.Inn.Report.Opener.fine.0>
+  <HH.Inn.Report.Opener.fine.1>誰も手紙に書かないような、ありきたりな滞在。{NAME}は結局書きましたが。</HH.Inn.Report.Opener.fine.1>
+  <HH.Inn.Report.Opener.fine.2>{NAME}は{ROOM}を「部屋」と評価しました。反論は難しいですね。</HH.Inn.Report.Opener.fine.2>
+  <HH.Inn.Report.Opener.good.0>{FACTION}の客は満足して去りました。財布は少し軽くなりましたが。</HH.Inn.Report.Opener.good.0>
+  <HH.Inn.Report.Opener.good.1>心地よい滞在でした。大きな苦情は、数えるほどもありませんでした。</HH.Inn.Report.Opener.good.1>
+  <HH.Inn.Report.Opener.good.2>{NAME}は{ROOM}を「正直」と呼びました。{FACTION}からすれば褒め言葉です。</HH.Inn.Report.Opener.good.2>
+  <HH.Inn.Report.Opener.great.0>{FACTION}の客は輝くような笑顔で去りました。一人は戸枠に抱きつきました。</HH.Inn.Report.Opener.great.0>
+  <HH.Inn.Report.Opener.great.1>{FACTION}はしばらくこの滞在の話をするでしょう。大半は良い意味で。</HH.Inn.Report.Opener.great.1>
+  <HH.Inn.Report.Opener.great.2>完璧な滞在でした。{NAME}は{ROOM}を「一生もう一度予約したい」と言いました。</HH.Inn.Report.Opener.great.2>
+  <HH.Inn.Report.Opener.poor.0>{FACTION}の客は、気持ちの上では早めに、体の上では時間通りに去りました。</HH.Inn.Report.Opener.poor.0>
+  <HH.Inn.Report.Opener.poor.1>{NAME}は{ROOM}を、うちの受付が書き留めることを拒んだ言葉で表現しました。</HH.Inn.Report.Opener.poor.1>
+  <HH.Inn.Report.Opener.poor.2>大惨事ではありません。看板に載せたい滞在でもありませんが。</HH.Inn.Report.Opener.poor.2>
+  <HH.Inn.Report.Overnight>宿泊客</HH.Inn.Report.Overnight>
+  <HH.Inn.Report.Points>好感度 {0}</HH.Inn.Report.Points>
+  <HH.Inn.Report.Premises>施設</HH.Inn.Report.Premises>
+  <HH.Inn.Report.Renown>名声 {0}</HH.Inn.Report.Renown>
+  <HH.Inn.Report.Room>{0}、{1}泊</HH.Inn.Report.Room>
+  <HH.Inn.Report.SentAway>退去を求めた。相手は、そういうときに人がする表情で出ていった。</HH.Inn.Report.SentAway>
+  <HH.Inn.Report.Spent>{0}銀貨を使用</HH.Inn.Report.Spent>
+  <HH.Inn.Report.SpentTotal>合計{0}銀貨を使用</HH.Inn.Report.SpentTotal>
+  <HH.Inn.Report.Temperature>天候のせいで、早めに帰っていった。</HH.Inn.Report.Temperature>
+  <HH.Inn.Report.Wounded>負傷者を担いで帰っていった。</HH.Inn.Report.Wounded>
+  <HH.Inn.RoomClass.Deluxe>デラックスルーム</HH.Inn.RoomClass.Deluxe>
+  <HH.Inn.RoomClass.Economy>エコノミールーム</HH.Inn.RoomClass.Economy>
+  <HH.Inn.RoomClass.Royal>ロイヤルスイート</HH.Inn.RoomClass.Royal>
+  <HH.Inn.RoomClass.Standard>スタンダードルーム</HH.Inn.RoomClass.Standard>
+  <HH.Inn.RoomClass.Suite>スイートルーム</HH.Inn.RoomClass.Suite>
+  <HH.Inn.SendAway.Confirm>{0}の一行を退去させますか？</HH.Inn.SendAway.Confirm>
+  <HH.Inn.SendAway.Desc>この客の一行全員に、今すぐ退去するよう求めます。支払い済みの宿泊分は返金されず、好感度は得られず、名声が−1されます。</HH.Inn.SendAway.Desc>
+  <HH.Inn.SendAway.Label>退去させる</HH.Inn.SendAway.Label>
+  <HH.Inn.Tab.Forecast>到着予定</HH.Inn.Tab.Forecast>
+  <HH.Inn.Tab.Inactive>誰も来ていません。ベッドを客用に指定するか、施設を開いてください。</HH.Inn.Tab.Inactive>
+  <HH.Inn.Tab.NoneYet>まだ予定された一行はいません。</HH.Inn.Tab.NoneYet>
+  <HH.Inn.Tab.Summary>名声 {0} · 噂 {1} · 受け入れた一行 {2} · 客用ベッド {3}（空き {4}）</HH.Inn.Tab.Summary>
+  <HH.Inn.Verdict.0>眠れず、部屋のせいにした。</HH.Inn.Verdict.0>
+  <HH.Inn.Verdict.1>期待より低い部屋だと感じた。</HH.Inn.Verdict.1>
+  <HH.Inn.Verdict.2>まあまあ眠れた。</HH.Inn.Verdict.2>
+  <HH.Inn.Verdict.3>よく眠れた。</HH.Inn.Verdict.3>
+  <HH.Inn.Verdict.4>ぐっすり眠れた。</HH.Inn.Verdict.4>
+  <HH.Inn.Verdict.5>王族のように眠れた。</HH.Inn.Verdict.5>
+  <HH.Inn.Wing.Base>客棟</HH.Inn.Wing.Base>
+  <HH.Inn.Wing.Clear>客棟を縮小</HH.Inn.Wing.Clear>
+  <HH.Inn.Wing.ClearDesc>客棟からマス目を取り除きます。</HH.Inn.Wing.ClearDesc>
+  <HH.Inn.Wing.Expand>客棟を拡張</HH.Inn.Wing.Expand>
+  <HH.Inn.Wing.ExpandDesc>客が入ってよい場所を塗ります。客は自分の棟の中にとどまります（ベッドのある部屋は常に許可されます）。棟がない場合、客は自分の部屋の近くをうろつきます。</HH.Inn.Wing.ExpandDesc>
+  <HH.Inn.Wing.Name>客棟 {0}</HH.Inn.Wing.Name>
+  <HH.Inn.Wing.New>新しい客棟</HH.Inn.Wing.New>
+  <HH.Inn.WingStatus.Bathroom>浴室</HH.Inn.WingStatus.Bathroom>
+  <HH.Inn.WingStatus.Bedroom>寝室</HH.Inn.WingStatus.Bedroom>
+  <HH.Inn.WingStatus.Est>推定</HH.Inn.WingStatus.Est>
+  <HH.Inn.WingStatus.Kitchen>台所</HH.Inn.WingStatus.Kitchen>
+  <HH.Inn.WingStatus.Missing>不足</HH.Inn.WingStatus.Missing>
+  <HH.Inn.WingStatus.NoCook>調理してはいけない</HH.Inn.WingStatus.NoCook>
+  <HH.Inn.WingStatus.NoGuestBed>客用ベッドがない</HH.Inn.WingStatus.NoGuestBed>
+  <HH.Inn.WingStatus.NoHours>営業時間が未設定</HH.Inn.WingStatus.NoHours>
+  <HH.Inn.WingStatus.NoPower>電力または燃料がない</HH.Inn.WingStatus.NoPower>
+  <HH.Inn.WingStatus.NoStove>調理設備がない</HH.Inn.WingStatus.NoStove>
+  <HH.Inn.WingStatus.Restaurant>食堂</HH.Inn.WingStatus.Restaurant>
+  <HH.Inn.WingStatus.RoomOpen>部屋が開放されているか屋根がない</HH.Inn.WingStatus.RoomOpen>
+  <HH.Setting.inn.arrivalNotice>到着の告知</HH.Setting.inn.arrivalNotice>
+  <HH.Setting.inn.arrivalNotice.Desc>最初の数組には短い手紙を、その後は静かな知らせを送ります。</HH.Setting.inn.arrivalNotice.Desc>
+  <HH.Setting.inn.arrivalRate>客の到着率</HH.Setting.inn.arrivalRate>
+  <HH.Setting.inn.arrivalRate.Desc>客の一行が来る頻度の倍率。1は難易度に応じた通常のペース、0で新たな到着を止めます。</HH.Setting.inn.arrivalRate.Desc>
+  <HH.Setting.inn.autoWing>客棟を自動で拡張</HH.Setting.inn.autoWing>
+  <HH.Setting.inn.autoWing.Desc>最初の客用ベッドがその部屋の周りに客棟1を作ります。以降の客室は最も近い棟に加わります。</HH.Setting.inn.autoWing.Desc>
+  <HH.Setting.inn.cardThreshold>カード払いになる予算</HH.Setting.inn.cardThreshold>
+  <HH.Setting.inn.cardThreshold.Desc>工業的またはそれ以上の技術段階の派閥で、この額を超える予算を持つ客は、銀貨を持ち歩かずカードで支払います。</HH.Setting.inn.cardThreshold.Desc>
+  <HH.Setting.inn.checkInHour>チェックイン開始（時刻）</HH.Setting.inn.checkInHour>
+  <HH.Setting.inn.checkInHour.Desc>泊まり客は、この時刻以降に到着する予定を立てます。</HH.Setting.inn.checkInHour.Desc>
+  <HH.Setting.inn.checkOutHour>チェックアウト（時刻）</HH.Setting.inn.checkOutHour>
+  <HH.Setting.inn.checkOutHour.Desc>泊まり客は、最終日の朝のこの時刻ごろに出発します。</HH.Setting.inn.checkOutHour.Desc>
+  <HH.Setting.inn.dayVisitors>日帰り客</HH.Setting.inn.dayVisitors>
+  <HH.Setting.inn.dayVisitors.Desc>営業時間中に開いている施設だけを目当てに来て、閉店時刻の前に帰る一行です。営業看板が少なくとも1つ必要です。</HH.Setting.inn.dayVisitors.Desc>
+  <HH.Setting.inn.deskCloseHour>フロントの閉店（時刻）</HH.Setting.inn.deskCloseHour>
+  <HH.Setting.inn.deskCloseHour.Desc>この時刻以降、フロントは無人の信用箱になります。客は自分でチェックインし、少し安く支払います。</HH.Setting.inn.deskCloseHour.Desc>
+  <HH.Setting.inn.deskOpenHour>フロントの開店（時刻）</HH.Setting.inn.deskOpenHour>
+  <HH.Setting.inn.deskOpenHour.Desc>この時刻から、係がフロントで客をチェックインさせられます。営業時間外は信用箱として機能します。</HH.Setting.inn.deskOpenHour.Desc>
+  <HH.Setting.inn.expectationOffset>客の期待値</HH.Setting.inn.expectationOffset>
+  <HH.Setting.inn.expectationOffset.Desc>すべての客の期待値（0〜1）に加算されます。高いほど満足させにくくなります。</HH.Setting.inn.expectationOffset.Desc>
+  <HH.Setting.inn.firstGuestMaxDays>最初の客: 最遅の日</HH.Setting.inn.firstGuestMaxDays>
+  <HH.Setting.inn.firstGuestMaxDays.Desc>最初の客用ベッド（または施設）を置いてから、最初の一行が必ず到着している日数。</HH.Setting.inn.firstGuestMaxDays.Desc>
+  <HH.Setting.inn.firstGuestMinDays>最初の客: 最も早い日</HH.Setting.inn.firstGuestMinDays>
+  <HH.Setting.inn.firstGuestMinDays.Desc>最初の客用ベッド（または施設）を置いてから、最初の一行が到着しうる最も早い日数。</HH.Setting.inn.firstGuestMinDays.Desc>
+  <HH.Setting.inn.forecastDays>到着予測（日数）</HH.Setting.inn.forecastDays>
+  <HH.Setting.inn.forecastDays.Desc>到着予定を何日先まで立てるか（客の一覧に表示されます）。</HH.Setting.inn.forecastDays.Desc>
+  <HH.Setting.inn.goodwillCapQuadrum>四季ごとの受け入れによる好感度上限</HH.Setting.inn.goodwillCapQuadrum>
+  <HH.Setting.inn.goodwillCapQuadrum.Desc>受け入れによって、派閥の好感度が四季ごとに上がる最大量です。</HH.Setting.inn.goodwillCapQuadrum.Desc>
+  <HH.Setting.inn.goodwillCeiling>受け入れによる好感度の天井</HH.Setting.inn.goodwillCeiling>
+  <HH.Setting.inn.goodwillCeiling.Desc>受け入れだけでは、派閥の好感度をこの値より上には上げられません（75が同盟の基準です）。</HH.Setting.inn.goodwillCeiling.Desc>
+  <HH.Setting.inn.goodwillLossCap>一度の悪い滞在で失う好感度の最大値</HH.Setting.inn.goodwillLossCap>
+  <HH.Setting.inn.goodwillLossCap.Desc>悪い滞在で派閥が失う好感度は、最大でこの量までです。</HH.Setting.inn.goodwillLossCap.Desc>
+  <HH.Setting.inn.guestMoney>客の所持金</HH.Setting.inn.guestMoney>
+  <HH.Setting.inn.guestMoney.Desc>客が持ってくる銀貨の量の倍率です。</HH.Setting.inn.guestMoney.Desc>
+  <HH.Setting.inn.honestyDiscount>信用箱の割引</HH.Setting.inn.honestyDiscount>
+  <HH.Setting.inn.honestyDiscount.Desc>無人のフロント（営業時間外）で自分でチェックインした客は、1泊あたりこの分だけ安く支払います。</HH.Setting.inn.honestyDiscount.Desc>
+  <HH.Setting.inn.insultBase>勧誘で侮辱するリスク</HH.Setting.inn.insultBase>
+  <HH.Setting.inn.insultBase.Desc>勧誘の話が客を侮辱してしまう基本確率です（社交スキルが高いほど下がります）。</HH.Setting.inn.insultBase.Desc>
+  <HH.Setting.inn.leaveEarly>不満な客は早く出ていく</HH.Setting.inn.leaveEarly>
+  <HH.Setting.inn.leaveEarly.Desc>長く不快な思いをしている客、または所持金が尽きた客は、予定日より前に荷物をまとめて出ていきます。</HH.Setting.inn.leaveEarly.Desc>
+  <HH.Setting.inn.leavingGifts>退去時の贈り物</HH.Setting.inn.leavingGifts>
+  <HH.Setting.inn.leavingGifts.Desc>満足した客は、フロントに小さな贈り物を残していくことがあります（滞在が良いほど起こりやすくなります）。</HH.Setting.inn.leavingGifts.Desc>
+  <HH.Setting.inn.maxGroupSize>最大の一行人数</HH.Setting.inn.maxGroupSize>
+  <HH.Setting.inn.maxGroupSize.Desc>どの一行もこれより多くの客を連れてきません。泊まり客の一行は、空いている客用ベッドの数によってもさらに制限されます。</HH.Setting.inn.maxGroupSize.Desc>
+  <HH.Setting.inn.podDistance>ドロップポッドの距離</HH.Setting.inn.podDistance>
+  <HH.Setting.inn.podDistance.Desc>工業的またはそれ以上の派閥の客は、マップ端からの徒歩距離がこのマス数を超える場合、ドロップポッドで到着します。</HH.Setting.inn.podDistance.Desc>
+  <HH.Setting.inn.priceBase>1泊あたりの基本料金</HH.Setting.inn.priceBase>
+  <HH.Setting.inn.priceBase.Desc>エコノミーのベッド1泊の料金です。より良い部屋、ベッド、個室はこの額を倍率で上げます（すべての客用ベッドに表示されます）。</HH.Setting.inn.priceBase.Desc>
+  <HH.Setting.inn.priceTolerance>価格の許容度</HH.Setting.inn.priceTolerance>
+  <HH.Setting.inn.priceTolerance.Desc>客が快適だと感じる価格を、どれだけ超えても支払う意思があるかを決めます。</HH.Setting.inn.priceTolerance.Desc>
+  <HH.Setting.inn.renownLossCap>一行あたりの名声の最大損失</HH.Setting.inn.renownLossCap>
+  <HH.Setting.inn.renownLossCap.Desc>不満な一行1組が名声を下げるのは、最大でこの量までです。</HH.Setting.inn.renownLossCap.Desc>
+  <HH.Setting.inn.reportMode>出発報告</HH.Setting.inn.reportMode>
+  <HH.Setting.inn.reportMode.Desc>各滞在の後の短い報告が届く方法です。手紙として、静かなメッセージとして、または届けないか。</HH.Setting.inn.reportMode.Desc>
+  <HH.Setting.inn.returnPinCap>再訪する客の保持上限</HH.Setting.inn.returnPinCap>
+  <HH.Setting.inn.returnPinCap.Desc>また来ると予定している客は、その訪問まで世界の住人として保持されます。この数を超えると、最も古い再訪予定から削除されます。</HH.Setting.inn.returnPinCap.Desc>
+  <HH.Setting.inn.returnVisits>再訪</HH.Setting.inn.returnVisits>
+  <HH.Setting.inn.returnVisits.Desc>滞在を気に入った客は3〜10日後に（不満だった客は14〜30日後に）戻ってきます。さらに移動時間の2倍が加わります。</HH.Setting.inn.returnVisits.Desc>
+  <HH.Setting.inn.stayNightsMax>最長の滞在（泊）</HH.Setting.inn.stayNightsMax>
+  <HH.Setting.inn.stayNightsMax.Desc>泊まり客が滞在する最大泊数です。</HH.Setting.inn.stayNightsMax.Desc>
+  <HH.Setting.inn.stayNightsMin>最短の滞在（泊）</HH.Setting.inn.stayNightsMin>
+  <HH.Setting.inn.stayNightsMin.Desc>泊まり客が滞在する最小泊数です。</HH.Setting.inn.stayNightsMin.Desc>
+  <HH.Setting.inn.waitThoughts>待ち時間とナイトベルの思考</HH.Setting.inn.waitThoughts>
+  <HH.Setting.inn.waitThoughts.Desc>待っても無駄だった客や、誰も来ないのにナイトベルを鳴らした客は、その気分に響きます。待合室があると和らぎます。</HH.Setting.inn.waitThoughts.Desc>
+</LanguageData>

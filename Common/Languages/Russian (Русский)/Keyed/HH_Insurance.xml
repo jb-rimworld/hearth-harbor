@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Ins.Slogan.1>Clawback Mutual. Мы вас прикроем.*  (*см. пункты с 1 по бесконечность)</HH.Ins.Slogan.1>
+  <HH.Ins.Slogan.2>Спокойствие на уровне взноса, оплачивается ежеквартально.</HH.Ins.Slogan.2>
+  <HH.Ins.Slogan.3>Несчастные случаи бывают. Выплаты, иногда.</HH.Ins.Slogan.3>
+  <HH.Ins.Slogan.4>Мы на месте, когда вы нам нужны. Действуют часы приёма.</HH.Ins.Slogan.4>
+  <HH.Ins.Slogan.5>У каждой конечности есть цена. Мы её записали.</HH.Ins.Slogan.5>
+  <HH.Ins.Slogan.6>Ваше обращение важно для нас. Пожалуйста, ожидайте на линии.</HH.Ins.Slogan.6>
+  <HH.Ins.Slogan.7>Полное покрытие, подробно разъяснённое на 400 страницах.</HH.Ins.Slogan.7>
+  <HH.Ins.Slogan.8>Большинство колоний выбирают Premium. Большинство колоний всё ещё ждут.</HH.Ins.Slogan.8>
+  <HH.Ins.Tier.Bare>Минимум</HH.Ins.Tier.Bare>
+  <HH.Ins.Tier.Good>Достаточно хорошо</HH.Ins.Tier.Good>
+  <HH.Ins.Tier.Premium>Премиум из премиумов</HH.Ins.Tier.Premium>
+  <HH.Ins.Outcome.Pending>На рассмотрении</HH.Ins.Outcome.Pending>
+  <HH.Ins.Outcome.Approved>Одобрено</HH.Ins.Outcome.Approved>
+  <HH.Ins.Outcome.Partial>Одобрено частично</HH.Ins.Outcome.Partial>
+  <HH.Ins.Outcome.Denied>Отказано</HH.Ins.Outcome.Denied>
+  <HH.Ins.Stage.0>Цел и невредим</HH.Ins.Stage.0>
+  <HH.Ins.Stage.1>Царапина</HH.Ins.Stage.1>
+  <HH.Ins.Stage.2>Неудобство</HH.Ins.Stage.2>
+  <HH.Ins.Stage.3>Существенно переосмыслен</HH.Ins.Stage.3>
+  <HH.Ins.Stage.4>Почти одни бумаги</HH.Ins.Stage.4>
+  <HH.Ins.Stage.5>Полная и постоянная утрата</HH.Ins.Stage.5>
+  <HH.Ins.Tab.Bank>Страхование</HH.Ins.Tab.Bank>
+  <HH.Ins.Tab.Shop>Полисы</HH.Ins.Tab.Shop>
+  <HH.Ins.Tab.Mine>Мои полисы ({0})</HH.Ins.Tab.Mine>
+  <HH.Ins.Tab.Claims>Обращения ({0})</HH.Ins.Tab.Claims>
+  <HH.Ins.Tab.FinePrint>Мелкий шрифт</HH.Ins.Tab.FinePrint>
+  <HH.Ins.Menu.Call>Позвонить в Clawback Mutual</HH.Ins.Menu.Call>
+  <HH.Ins.Btn.Accept>Принять</HH.Ins.Btn.Accept>
+  <HH.Ins.Btn.Negotiate>Торговаться</HH.Ins.Btn.Negotiate>
+  <HH.Ins.Btn.OpenDesk>Открыть окошко Clawback</HH.Ins.Btn.OpenDesk>
+  <HH.Ins.Btn.Dismiss>Отклонить</HH.Ins.Btn.Dismiss>
+  <HH.Ins.Btn.Close>Закрыть</HH.Ins.Btn.Close>
+  <HH.Ins.Btn.Materials>Получить материалами вместо серебра</HH.Ins.Btn.Materials>
+  <HH.Ins.Source.Bank>ваш банковский счёт</HH.Ins.Source.Bank>
+  <HH.Ins.Source.Till>касса</HH.Ins.Source.Till>
+  <HH.Ins.Source.Silver>серебро на складе</HH.Ins.Source.Silver>
+  <HH.Ins.Source.Free>ничего (это было бесплатно)</HH.Ins.Source.Free>
+  <HH.Ins.Source.PaidBank>на ваш банковский счёт</HH.Ins.Source.PaidBank>
+  <HH.Ins.Source.PaidTill>в кассу</HH.Ins.Source.PaidTill>
+  <HH.Ins.Source.PaidCapsule>{0} серебра в капсуле сброса</HH.Ins.Source.PaidCapsule>
+  <HH.Ins.Source.PaidMaterials>материалы капсулой: {0}</HH.Ins.Source.PaidMaterials>
+  <HH.Ins.Sign.Off>Clawback Mutual в этой игре не ведёт дел.</HH.Ins.Sign.Off>
+  <HH.Ins.Sign.NoHolder>Сначала выберите колониста.</HH.Ins.Sign.NoHolder>
+  <HH.Ins.Sign.TooOld>Этот колонист уже достиг пенсионного возраста. Пенсию в пенсионном возрасте не покупают: для этого и существует план.</HH.Ins.Sign.TooOld>
+  <HH.Ins.Sign.Duplicate>У вас уже есть этот полис. Мы проверили дважды.</HH.Ins.Sign.Duplicate>
+  <HH.Ins.Sign.Debt>Новые полисы не оформляются, пока вы не погасите {0}, которые нам причитаются по пункту 22.</HH.Ins.Sign.Debt>
+  <HH.Ins.Sign.NoMap>Мы не смогли найти вашу колонию. Это необычно.</HH.Ins.Sign.NoMap>
+  <HH.Ins.Sign.Threat>Clawback Mutual не оформляет страховку, пока идёт угроза, налёт или крупный пожар. Нам бы не хотелось быть несправедливыми к самим себе.</HH.Ins.Sign.Threat>
+  <HH.Ins.Sign.CannotPay>Первый взнос в размере {0} не удалось списать. Даже мы не можем застраховать пустой кошелёк.</HH.Ins.Sign.CannotPay>
+  <HH.Ins.Locked.Insurance>Требуется исследовательский проект «Страхование»</HH.Ins.Locked.Insurance>
+  <HH.Ins.Locked.Actuarial>Требуется исследовательский проект «Актуарная наука»</HH.Ins.Locked.Actuarial>
+  <HH.Ins.Log.Signed>Оформлен {0} ({1}).</HH.Ins.Log.Signed>
+  <HH.Ins.Log.Ended>{0} прекращён: {1}.</HH.Ins.Log.Ended>
+  <HH.Ins.Log.Filed>Обращение №{0} подано: {1}.</HH.Ins.Log.Filed>
+  <HH.Ins.Log.Decided>По обращению №{0} принято решение: {1} ({2}).</HH.Ins.Log.Decided>
+  <HH.Ins.Log.Paid>Обращение №{0} оплачено: {1}.</HH.Ins.Log.Paid>
+  <HH.Ins.Log.Negotiated>Обращение №{0}, раунд {1}: {2}.</HH.Ins.Log.Negotiated>
+  <HH.Ins.Log.CancelFiled>{0}: подано заявление о расторжении, вступает в силу через {1}.</HH.Ins.Log.CancelFiled>
+  <HH.Ins.Log.Retained>{0}: сохранён со скидкой {1}.</HH.Ins.Log.Retained>
+  <HH.Ins.Log.Settled>Выплата по пункту 22 произведена: {0}.</HH.Ins.Log.Settled>
+  <HH.Ins.Log.Regrowth>Обращение №{0}: часть тела отросла, взыскано {1}.</HH.Ins.Log.Regrowth>
+  <HH.Ins.Claim.Several>Зданий: {0}</HH.Ins.Claim.Several>
+  <HH.Ins.Claim.Death>Смерть: {0}</HH.Ins.Claim.Death>
+  <HH.Ins.Claim.Limb>Несчастный случай: {0}</HH.Ins.Claim.Limb>
+  <HH.Ins.Claim.Retirement>Пенсия: {0}</HH.Ins.Claim.Retirement>
+  <HH.Ins.Claim.BedRest>Дни на больничной койке</HH.Ins.Claim.BedRest>
+  <HH.Ins.Claim.Scratches>Травмы в пути: {0}</HH.Ins.Claim.Scratches>
+  <HH.Ins.Claim.Crop>Урожай, погибший из-за: {0}</HH.Ins.Claim.Crop>
+  <HH.Ins.End.Cancelled>расторгнуто вами</HH.Ins.End.Cancelled>
+  <HH.Ins.End.Holder>застрахованного больше нет с нами</HH.Ins.End.Holder>
+  <HH.Ins.End.Insurer>расторгнуто Clawback Mutual</HH.Ins.End.Insurer>
+  <HH.Ins.End.Lapsed>взносы не оплачены</HH.Ins.End.Lapsed>
+  <HH.Ins.Clause.Exclusion>Это исключение, а не решение. Мы его всего лишь зачитываем.</HH.Ins.Clause.Exclusion>
+  <HH.Ins.Quote.Damage>Ожидаемый ущерб за квартал: {0}</HH.Ins.Quote.Damage>
+  <HH.Ins.Quote.Payout>Ожидаемая доля нашей выплаты: {0}</HH.Ins.Quote.Payout>
+  <HH.Ins.Quote.Loading>Наша надбавка: +{0}</HH.Ins.Quote.Loading>
+  <HH.Ins.Quote.NoClaims>Скидка за безубыточность: -{0}</HH.Ins.Quote.NoClaims>
+  <HH.Ins.Quote.Bundle>Скидка за комплекс: -{0}</HH.Ins.Quote.Bundle>
+  <HH.Ins.Quote.Riders>Дополнения: +{0}</HH.Ins.Quote.Riders>
+  <HH.Ins.Quote.Discount>Скидка за лояльность: -{0}</HH.Ins.Quote.Discount>
+  <HH.Ins.Bd.Grade>Степень нетрудоспособности {0} % ({1}).</HH.Ins.Bd.Grade>
+  <HH.Ins.Bd.Part>{0}: {1} %. {2}</HH.Ins.Bd.Part>
+  <HH.Ins.Bd.PreExisting>Вычтено: {0} %, которые уже были на момент оформления (пункт 9).</HH.Ins.Bd.PreExisting>
+  <HH.Ins.Bd.PartialNotPaid>При минимальном тарифе частичные повреждения не выплачиваются.</HH.Ins.Bd.PartialNotPaid>
+  <HH.Ins.Bd.BelowThreshold>Степень ниже порога {0} % для вашего тарифа. Выплата: 0 серебра. Поздравляем.</HH.Ins.Bd.BelowThreshold>
+  <HH.Ins.Bd.Progression>{0}: прогрессирование даёт {1} от базовой суммы {2}. Выплата до мелкого шрифта: {3}.</HH.Ins.Bd.Progression>
+  <HH.Ins.Bd.Contributed>Старое недомогание на той же части тела снижает выплату на 25 % (пункт 9, из раздела «Перебронирование»).</HH.Ins.Bd.Contributed>
+  <HH.Ins.Bd.Death>Выплата по случаю смерти: {0}.</HH.Ins.Bd.Death>
+  <HH.Ins.Bd.DeathAssess>Обращение №{0} завершилось смертью (пункт 23): выплачивается большая из двух сумм.</HH.Ins.Bd.DeathAssess>
+  <HH.Ins.Bd.Loss>Утрачено предметов: {0}, стоимость {1}.</HH.Ins.Bd.Loss>
+  <HH.Ins.Bd.Replacement>База возмещения {0}, ваша собственная доля {1}.</HH.Ins.Bd.Replacement>
+  <HH.Ins.Bd.UnderInsured>Недострахование: сумма {0} при стоимости {1}. Мы выплачиваем из неё {2}, с гордостью.</HH.Ins.Bd.UnderInsured>
+  <HH.Ins.Bd.Gross>Выплата до мелкого шрифта: {0}.</HH.Ins.Bd.Gross>
+  <HH.Ins.Bd.Flat>Ущерб {0}, мы выплачиваем {1}: {2}.</HH.Ins.Bd.Flat>
+  <HH.Ins.Bd.Kulanz>Жест доброй воли (раз в год, только Premium). Не привыкайте.</HH.Ins.Bd.Kulanz>
+  <HH.Ins.Bd.Legal>Legal Shield заставил нас отказывать в этом с меньшим энтузиазмом.</HH.Ins.Bd.Legal>
+  <HH.Ins.Bd.Offset>Зачтено в счёт прежнего взыскания: {0}.</HH.Ins.Bd.Offset>
+  <HH.Ins.Letter.From.Claims>Отдел урегулирования обращений, этаж -2</HH.Ins.Letter.From.Claims>
+  <HH.Ins.Letter.From.Neutral>Clawback Mutual</HH.Ins.Letter.From.Neutral>
+  <HH.Ins.Letter.Welcome.Title>Добро пожаловать в Clawback Mutual: {0}</HH.Ins.Letter.Welcome.Title>
+  <HH.Ins.Letter.Welcome.Body>Уважаемый страхователь,
+
+спасибо, что выбрали {0} в {1}. Ваш взнос в размере {2} будет списываться автоматически каждые {3} дней. Вам ничего не нужно делать, никогда, в этом и смысл.</HH.Ins.Letter.Welcome.Body>
+  <HH.Ins.Letter.Welcome.Waiting>Страховка вступает в силу после ожидательного периода {0} дней. Ожидательный период начинается одновременно с действием страховки. См. пункт 1.</HH.Ins.Letter.Welcome.Waiting>
+  <HH.Ins.Letter.Welcome.Riders>Чтобы сэкономить ваше время, для вас включены дополнения: {0}. Их можно убрать в окошке в любое время, в принципе.</HH.Ins.Letter.Welcome.Riders>
+  <HH.Ins.Letter.Welcome.Paid>Первый взнос был списан с {0}.</HH.Ins.Letter.Welcome.Paid>
+  <HH.Ins.Letter.Filed.Title>Обращение №{0} получено</HH.Ins.Letter.Filed.Title>
+  <HH.Ins.Letter.Filed.Body>Мы получили ваше обращение №{0} ({1}) по полису {2}. Оно важно для нас. Отдел урегулирования обращений рассмотрит его в течение одного–трёх дней, в зависимости от того, как оно будет выглядеть задним числом.</HH.Ins.Letter.Filed.Body>
+  <HH.Ins.Letter.Filed.Death>Мы скорбим вместе с вами. Обращение ({0}) получено и будет рассмотрено с должным вниманием.</HH.Ins.Letter.Filed.Death>
+  <HH.Ins.Letter.Filed.Assessment>Страховка от несчастного случая оценивается {0} после происшествия, когда ущерб стабилизируется. Предварительная выплата на сегодня: {1}.</HH.Ins.Letter.Filed.Assessment>
+  <HH.Ins.Letter.Filed.Waiting>Обращаем ваше внимание, что событие произошло в ожидательном периоде. Мы говорим это с сочувствием.</HH.Ins.Letter.Filed.Waiting>
+  <HH.Ins.Letter.Decision.TitleApproved>Обращение №{0}: одобрено</HH.Ins.Letter.Decision.TitleApproved>
+  <HH.Ins.Letter.Decision.TitlePartial>Обращение №{0}: одобрено частично</HH.Ins.Letter.Decision.TitlePartial>
+  <HH.Ins.Letter.Decision.TitleDenied>Обращение №{0}: отказано</HH.Ins.Letter.Decision.TitleDenied>
+  <HH.Ins.Letter.Decision.Approved>Хорошие новости. Ваше обращение одобрено: {0}.</HH.Ins.Letter.Decision.Approved>
+  <HH.Ins.Letter.Decision.Partial>Ваше обращение одобрено частично: {0} из {1}. Мы очень гордимся той частью, которую одобрили.</HH.Ins.Letter.Decision.Partial>
+  <HH.Ins.Letter.Decision.Denied>После тщательного рассмотрения, которое заняло некоторое время, ваше обращение отклонено.</HH.Ins.Letter.Decision.Denied>
+  <HH.Ins.Letter.Decision.DeniedHow>Выплат не будет. {0}</HH.Ins.Letter.Decision.DeniedHow>
+  <HH.Ins.Letter.Decision.CanNegotiate>Вы можете торговаться в течение десяти дней; наша дверь открыта, в каком-то смысле.</HH.Ins.Letter.Decision.CanNegotiate>
+  <HH.Ins.Letter.Decision.PayNow>Выплата производится немедленно.</HH.Ins.Letter.Decision.PayNow>
+  <HH.Ins.Letter.Decision.PayLater>Выплата последует через {0}. Сроки обработки — не обещание, а надежда.</HH.Ins.Letter.Decision.PayLater>
+  <HH.Ins.Letter.Decision.InKind>Вы также можете получить строительные материалы капсулой вместо серебра (откройте окошко).</HH.Ins.Letter.Decision.InKind>
+  <HH.Ins.Letter.Clause.Cited>Основание: {0}</HH.Ins.Letter.Clause.Cited>
+  <HH.Ins.Letter.Clause.Neutral>Основание решения: {0}.</HH.Ins.Letter.Clause.Neutral>
+  <HH.Ins.Letter.Paid.Title>Обращение №{0}: выплачено</HH.Ins.Letter.Paid.Title>
+  <HH.Ins.Letter.Paid.Body>Обращение №{0} оплачено: {1}, {2}. Спасибо, что вы наш клиент. Мы учтём это при следующем взносе.</HH.Ins.Letter.Paid.Body>
+  <HH.Ins.Letter.Paid.Neutral>Выплата в размере {0} произведена, {1}. Желаем вам сил.</HH.Ins.Letter.Paid.Neutral>
+  <HH.Ins.Letter.Ended.Title>{0}: прекращён</HH.Ins.Letter.Ended.Title>
+  <HH.Ins.Letter.Ended.Body>Ваш полис {0} прекращён: {1}.
+
+{2}</HH.Ins.Letter.Ended.Body>
+  <HH.Ins.Letter.Ended.Debt>Взыскание в размере {0} (пункт 22) остаётся открытым. Для новых полисов его нужно сначала погасить.</HH.Ins.Letter.Ended.Debt>
+  <HH.Ins.Letter.Missed.Title>{0}: взнос не получен</HH.Ins.Letter.Missed.Title>
+  <HH.Ins.Letter.Missed.Body>Нам не удалось списать {1} за {0}. Дружеское напоминание: попробуем снова завтра и послезавтра. Затем мы перестанем быть дружелюбными.</HH.Ins.Letter.Missed.Body>
+  <HH.Ins.Letter.Lapsed.Title>{0}: аннулирован</HH.Ins.Letter.Lapsed.Title>
+  <HH.Ins.Letter.Lapsed.Body>Ваш полис {0} аннулирован после трёх пропущенных взносов (по {1} каждый). Страховка прекратила действие — нам грустно это писать и эффективно выставлять счёт.</HH.Ins.Letter.Lapsed.Body>
+  <HH.Ins.Letter.Premium.Title>{0}: взнос пересмотрен</HH.Ins.Letter.Premium.Title>
+  <HH.Ins.Letter.Premium.Body>Ваш взнос по полису {0} пересмотрен с {1} до {2} за квартал с учётом ваших обстоятельств. В течение пяти дней вы можете расторгнуть полис немедленно; упоминаем это, потому что закон нас обязывает.</HH.Ins.Letter.Premium.Body>
+  <HH.Ins.Letter.Regrowth.Title>{0}: часть тела отросла</HH.Ins.Letter.Regrowth.Title>
+  <HH.Ins.Letter.Regrowth.Body>Мы рады узнать, что часть тела ({0}) отросла. Мы взыскиваем {1}. {2} {3}</HH.Ins.Letter.Regrowth.Body>
+  <HH.Ins.Letter.Regrowth.Offset>Сумма будет зачтена в счёт будущих выплат.</HH.Ins.Letter.Regrowth.Offset>
+  <HH.Ins.Letter.Regrowth.Debt>Сумма числится как задолженность; новые полисы не оформляются, пока она не погашена.</HH.Ins.Letter.Regrowth.Debt>
+  <HH.Ins.Letter.Renew.Title>{0}: уведомление о продлении</HH.Ins.Letter.Renew.Title>
+  <HH.Ins.Letter.Renew.Body>Ваш полис {0} продлевается через три дня. {1}</HH.Ins.Letter.Renew.Body>
+  <HH.Ins.Letter.Retro.Title>Скидка за комплекс пересчитана</HH.Ins.Letter.Retro.Title>
+  <HH.Ins.Letter.Retro.Body>Поскольку вы расторгли договор, скидка за комплекс за текущий квартал была пересчитана. Мы списали {0}. Подробности на последней странице.</HH.Ins.Letter.Retro.Body>
+  <HH.Ins.Letter.Uncovered.Title>Вы могли бы быть застрахованы.</HH.Ins.Letter.Uncovered.Title>
+  <HH.Ins.Letter.Uncovered.Body>Мы заметили утрату: {0}. Она не была застрахована. {1} с радостью помог бы. Он готов помочь и сейчас, за взнос.</HH.Ins.Letter.Uncovered.Body>
+  <HH.Ins.Letter.Year.Title>Ваш год с Clawback</HH.Ins.Letter.Year.Title>
+  <HH.Ins.Letter.Year.Intro>Год с Clawback Mutual: {0} взносов при {1} действующих полисах. Вот во что обошлись вам наши маркетинговые приёмы.</HH.Ins.Letter.Year.Intro>
+  <HH.Ins.Letter.Year.Trick>{0}: дополнения, отмеченные по умолчанию ({1}), стоили {2}.</HH.Ins.Letter.Year.Trick>
+  <HH.Ins.Letter.Year.Total>Итого: {0}, это {1} от ваших годовых взносов (предел: {2}).</HH.Ins.Letter.Year.Total>
+  <HH.Ins.Letter.Year.Credit>Любезный кредит: {0} возвращено вам, {1}.</HH.Ins.Letter.Year.Credit>
+  <HH.Ins.Letter.Year.NoCredit>Всё укладывается в предел. Мы называем это справедливым.</HH.Ins.Letter.Year.NoCredit>
+  <HH.Ins.Upsell.Title>Clawback Mutual рекомендует</HH.Ins.Upsell.Title>
+  <HH.Ins.Upsell.Body>Ваш {0} в {1} — прекрасно. Большинство колоний выбирают Premium.</HH.Ins.Upsell.Body>
+  <HH.Ins.Neg.Title>Торг по обращению №{0}</HH.Ins.Neg.Title>
+  <HH.Ins.Neg.Lead>{0}. Предложение сейчас: {1} (стоимость обращения {2}). До трёх раундов. Выберите тон.</HH.Ins.Neg.Lead>
+  <HH.Ins.Neg.Negotiator>Ваш переговорщик: {0} (переговоры {1})</HH.Ins.Neg.Negotiator>
+  <HH.Ins.Neg.NoNegotiator>Сейчас в колонии никто не может вести переговоры.</HH.Ins.Neg.NoNegotiator>
+  <HH.Ins.Neg.Rounds>Осталось раундов: {0}</HH.Ins.Neg.Rounds>
+  <HH.Ins.Neg.Approach.Decency>Апеллировать к элементарной порядочности</HH.Ins.Neg.Approach.Decency>
+  <HH.Ins.Neg.Approach.Quote>Процитировать им их же договор</HH.Ins.Neg.Approach.Quote>
+  <HH.Ins.Neg.Approach.Lawyers>Упомянуть юристов</HH.Ins.Neg.Approach.Lawyers>
+  <HH.Ins.Neg.HintDecency>Вежливо и без эффектов.</HH.Ins.Neg.HintDecency>
+  <HH.Ins.Neg.HintQuote>Лучше всего работает против пункта, допускающего толкование. Против исключения бесполезно.</HH.Ins.Neg.HintQuote>
+  <HH.Ins.Neg.HintLawyers>Legal Shield на вашей стороне. Brix &amp; Partners обожают спор.</HH.Ins.Neg.HintLawyers>
+  <HH.Ins.Neg.HintNoLawyers>У вас нет Legal Shield; они заметят.</HH.Ins.Neg.HintNoLawyers>
+  <HH.Ins.Neg.Odds>шансы: {0}</HH.Ins.Neg.Odds>
+  <HH.Ins.Neg.Odds.Slim>ничтожные</HH.Ins.Neg.Odds.Slim>
+  <HH.Ins.Neg.Odds.Fair>средние</HH.Ins.Neg.Odds.Fair>
+  <HH.Ins.Neg.Odds.Decent>неплохие</HH.Ins.Neg.Odds.Decent>
+  <HH.Ins.Neg.Odds.Good>хорошие</HH.Ins.Neg.Odds.Good>
+  <HH.Ins.Neg.Odds.Excellent>отличные</HH.Ins.Neg.Odds.Excellent>
+  <HH.Ins.Neg.Try>Попробовать так</HH.Ins.Neg.Try>
+  <HH.Ins.Neg.Won>выиграно</HH.Ins.Neg.Won>
+  <HH.Ins.Neg.Part>выиграно частично</HH.Ins.Neg.Part>
+  <HH.Ins.Neg.Lost>проиграно</HH.Ins.Neg.Lost>
+  <HH.Ins.Neg.Success>Они уступили. Возможно, впервые. Полная выплата ваша: {0}.</HH.Ins.Neg.Success>
+  <HH.Ins.Neg.Partial>После некоторых вздохов они предлагают {0} ({1} от выплаты). Берите или попробуйте снова.</HH.Ins.Neg.Partial>
+  <HH.Ins.Neg.Fail>Отдел урегулирования обращений благодарит вас за мнение и сохраняет своё решение.</HH.Ins.Neg.Fail>
+  <HH.Ins.Neg.NotPossible>Это обращение больше не подлежит переговорам.</HH.Ins.Neg.NotPossible>
+  <HH.Ins.Neg.Cancelled>Поскольку вы грубили по поводу пунктов договора, Clawback Mutual решила расстаться с вами. Полис расторгнут.</HH.Ins.Neg.Cancelled>
+  <HH.Ins.Neg.Free>На этой сложности торг никогда ничего вам не стоит.</HH.Ins.Neg.Free>
+  <HH.Ins.Neg.RiskHard>Более высокие уровни: если третий раунд переговоров провалится, они могут аннулировать ваш полис.</HH.Ins.Neg.RiskHard>
+  <HH.Ins.Cancel.Title>Расторжение полиса</HH.Ins.Cancel.Title>
+  <HH.Ins.Cancel.Back>Передумал</HH.Ins.Cancel.Back>
+  <HH.Ins.Cancel.Confirm>Подать форму C-7</HH.Ins.Cancel.Confirm>
+  <HH.Ins.Cancel.When>Расторжение вступит в силу примерно через {0} дн.: при ближайшей смене квадрума, но не раньше чем через {1} дн. после подачи.</HH.Ins.Cancel.When>
+  <HH.Ins.Cancel.When.Special>Особое расторжение: вступает в силу немедленно из-за урегулированного случая или повышения взноса.</HH.Ins.Cancel.When.Special>
+  <HH.Ins.Cancel.Bundle>Уход повысит ваши остальные взносы на {0}. {1}</HH.Ins.Cancel.Bundle>
+  <HH.Ins.Cancel.Bundle.Future>Скидка за пакет снижается с этого момента, задним числом не пересчитывается.</HH.Ins.Cancel.Bundle.Future>
+  <HH.Ins.Cancel.Bundle.Retro>Скидка текущего квадрума будет пересчитана и начислена.</HH.Ins.Cancel.Bundle.Retro>
+  <HH.Ins.Cancel.FormNote>Расторжение требует формы C-7. Иногда она возвращается. {0}</HH.Ins.Cancel.FormNote>
+  <HH.Ins.Cancel.Owed>Открытый возврат по этому полису: {0}. Будет урегулирован в итоговом расчёте.</HH.Ins.Cancel.Owed>
+  <HH.Ins.Cancel.Filed>Ваше расторжение подано. Оно вступит в силу через {0}. Нам жаль расставаться, и мы постараемся когда-нибудь снова вас вернуть.</HH.Ins.Cancel.Filed>
+  <HH.Ins.Cancel.Special>Особое расторжение подано. Полис прекращён сейчас.</HH.Ins.Cancel.Special>
+  <HH.Ins.Cancel.FormErrorSoft>Ваша форма C-7 вернулась с ошибкой оформления. Мы подали её повторно за вас, так что ваш срок не нарушен. Пожалуйста.</HH.Ins.Cancel.FormErrorSoft>
+  <HH.Ins.Cancel.FormErrorHard>Ваша форма C-7 вернулась с ошибкой (цвет чернил). Срок пропущен и сдвигается на один квадрум. Комментариев больше нет.</HH.Ins.Cancel.FormErrorHard>
+  <HH.Ins.Retention.Title>Прежде чем уйти</HH.Ins.Retention.Title>
+  <HH.Ins.Retention.Title2>Ещё одно</HH.Ins.Retention.Title2>
+  <HH.Ins.Retention.Title3>Десмонд на линии</HH.Ins.Retention.Title3>
+  <HH.Ins.Retention.From>Десмонд Талли, старший специалист по удержанию клиентов</HH.Ins.Retention.From>
+  <HH.Ins.Retention.Body>Нам жаль, что {0} уходит. Что, если сделать его на {1} дешевле на {2} квадрумов? Честное предложение, без условий. (Условия есть. Они очень тонкие.)</HH.Ins.Retention.Body>
+  <HH.Ins.Retention.Body2>Это было хорошее предложение. Это лучше: {1} скидки на {0} на {2} квадрумов. Пожалуйста, не считайте это ловушкой.</HH.Ins.Retention.Body2>
+  <HH.Ins.Retention.Body3>Мне передали ваше дело. {0} за {1} скидки, {2} квадрумов. Лично передам ваше расторжение коллеге, который сейчас в отпуске.</HH.Ins.Retention.Body3>
+  <HH.Ins.Retention.MinTerm>Скидка означает новый минимальный срок: выйти из полиса нельзя, пока он не истечёт.</HH.Ins.Retention.MinTerm>
+  <HH.Ins.Retention.Keep>Сохранить мой полис со скидкой {0}</HH.Ins.Retention.Keep>
+  <HH.Ins.Retention.Still>Нет, спасибо, я всё равно хочу расторгнуть</HH.Ins.Retention.Still>
+  <HH.Ins.Retention.Kept>С возвращением. Ваша скидка: {0} на {1} квадрумов.</HH.Ins.Retention.Kept>
+  <HH.Ins.UI.NoGame>Clawback Mutual закрыта вне игры.</HH.Ins.UI.NoGame>
+  <HH.Ins.UI.Footer>Страхование — это обещание. Мы выполняем ту его часть, что записана на бумаге.</HH.Ins.UI.Footer>
+  <HH.Ins.UI.Spendable>Оплатить из: {0}</HH.Ins.UI.Spendable>
+  <HH.Ins.UI.PayFrom>Взносы списываются с {0}.</HH.Ins.UI.PayFrom>
+  <HH.Ins.UI.Running>Текущие взносы: {0} в день</HH.Ins.UI.Running>
+  <HH.Ins.UI.Bundle.Title>Пакет:</HH.Ins.UI.Bundle.Title>
+  <HH.Ins.UI.Bundle.None>Ваш первый полис самый трудный. Третий даёт скидку 10 % на все.</HH.Ins.UI.Bundle.None>
+  <HH.Ins.UI.Bundle.Some>Действующих полисов: {0}, скидка {1}. Третий даёт {2}.</HH.Ins.UI.Bundle.Some>
+  <HH.Ins.UI.Bundle.Full>Действующих полисов: {0}. Скидка {1} на все взносы.</HH.Ins.UI.Bundle.Full>
+  <HH.Ins.UI.Bundle.Retro>(При уходе текущий квадрум пересчитывается.)</HH.Ins.UI.Bundle.Retro>
+  <HH.Ins.UI.Covers>Покрытие:</HH.Ins.UI.Covers>
+  <HH.Ins.UI.Badge>Большинство колоний выбирают «Премиум»</HH.Ins.UI.Badge>
+  <HH.Ins.UI.Price>{0} каждые {1} дн.</HH.Ins.UI.Price>
+  <HH.Ins.UI.Price.Travel>{0} за человека и день в пути</HH.Ins.UI.Price.Travel>
+  <HH.Ins.UI.Price.Tip>Как формируется цена
+{0}
+
+За квадрум: {1}</HH.Ins.UI.Price.Tip>
+  <HH.Ins.UI.Mech.Property>Собственная доля {0}, выплачивает {1} стоимости.</HH.Ins.UI.Mech.Property>
+  <HH.Ins.UI.Mech.Person>От {0} % нетрудоспособности, до {1} от суммы.</HH.Ins.UI.Mech.Person>
+  <HH.Ins.UI.Pay.Instant>Выплачивается мгновенно.</HH.Ins.UI.Pay.Instant>
+  <HH.Ins.UI.Pay.Days>Выплата за {0}–{1} дн.</HH.Ins.UI.Pay.Days>
+  <HH.Ins.UI.SignNow>Подписать сейчас</HH.Ins.UI.SignNow>
+  <HH.Ins.UI.Signed>Подписано</HH.Ins.UI.Signed>
+  <HH.Ins.UI.SignedOther>У вас есть: {0}</HH.Ins.UI.SignedOther>
+  <HH.Ins.UI.SignedMsg>Подписано {0} ({1}). Добро пожаловать в Clawback Mutual.</HH.Ins.UI.SignedMsg>
+  <HH.Ins.UI.For>Для: {0}</HH.Ins.UI.For>
+  <HH.Ins.UI.Insured>застрахован</HH.Ins.UI.Insured>
+  <HH.Ins.UI.SumProperty>Страховая сумма: {0}</HH.Ins.UI.SumProperty>
+  <HH.Ins.UI.SumPerson>Базовая сумма: {0}</HH.Ins.UI.SumPerson>
+  <HH.Ins.UI.SumCap>Лимит на случай: {0}</HH.Ins.UI.SumCap>
+  <HH.Ins.UI.Customize>Настроить</HH.Ins.UI.Customize>
+  <HH.Ins.UI.Riders.Hidden>Выбрано доп. пакетов для вас: {0}.</HH.Ins.UI.Riders.Hidden>
+  <HH.Ins.UI.Riders.Pre>(отмечено за вас)</HH.Ins.UI.Riders.Pre>
+  <HH.Ins.UI.Riders.Sum>Доп. пакеты: +{0}</HH.Ins.UI.Riders.Sum>
+  <HH.Ins.UI.Riders.BasicOnly>Только базовое</HH.Ins.UI.Riders.BasicOnly>
+  <HH.Ins.UI.PremiumPlus>Премиум Плюс (скоро)</HH.Ins.UI.PremiumPlus>
+  <HH.Ins.UI.FinePrint>Мелкий шрифт</HH.Ins.UI.FinePrint>
+  <HH.Ins.UI.Fine.Intro>Условия {0} (сокращённо для вашего удобства):</HH.Ins.UI.Fine.Intro>
+  <HH.Ins.UI.Fine.Tail>Полные условия — это те 400 страниц, о которых говорит наш слоган. См. также вкладку «Мелкий шрифт».</HH.Ins.UI.Fine.Tail>
+  <HH.Ins.UI.Mine.None>У вас пока нет полиса. Это единственное, в чём мы уверены.</HH.Ins.UI.Mine.None>
+  <HH.Ins.UI.Mine.Sum>Сумма: {0}</HH.Ins.UI.Mine.Sum>
+  <HH.Ins.UI.Mine.NoClaims>Класс без выплат {0} (-{1})</HH.Ins.UI.Mine.NoClaims>
+  <HH.Ins.UI.Mine.Waiting>период ожидания: осталось {0}</HH.Ins.UI.Mine.Waiting>
+  <HH.Ins.UI.Mine.Discount>скидка за удержание -{0}</HH.Ins.UI.Mine.Discount>
+  <HH.Ins.UI.Mine.Owed>открытый возврат {0}</HH.Ins.UI.Mine.Owed>
+  <HH.Ins.UI.Mine.Paid>Уплачено взносов: {0}  ·  Получено выплат: {1}</HH.Ins.UI.Mine.Paid>
+  <HH.Ins.UI.Mine.Ended>Завершён: {0}</HH.Ins.UI.Mine.Ended>
+  <HH.Ins.UI.Mine.Upsell>Большинство колоний выбирают «Премиум».</HH.Ins.UI.Mine.Upsell>
+  <HH.Ins.UI.Mine.CancelLink>Расторгнуть полис</HH.Ins.UI.Mine.CancelLink>
+  <HH.Ins.UI.Mine.CancelPending>Расторжение вступит в силу через {0}</HH.Ins.UI.Mine.CancelPending>
+  <HH.Ins.UI.Mine.FormError>(ошибка формы)</HH.Ins.UI.Mine.FormError>
+  <HH.Ins.UI.Mine.Withdraw>Отозвать расторжение</HH.Ins.UI.Mine.Withdraw>
+  <HH.Ins.UI.Mine.Foot>Полисы продлеваются автоматически (пункт 31). Особое расторжение: после урегулированного случая или повышения взноса можно выйти в течение пяти дней, немедленно.</HH.Ins.UI.Mine.Foot>
+  <HH.Ins.UI.Debt>Вы должны Clawback Mutual {0} по пункту 22.</HH.Ins.UI.Debt>
+  <HH.Ins.UI.Debt.Settle>Погасить сейчас</HH.Ins.UI.Debt.Settle>
+  <HH.Ins.UI.Debt.Cannot>Сейчас вы не можете это оплатить.</HH.Ins.UI.Debt.Cannot>
+  <HH.Ins.UI.Claims.None>Выплат не было. Clawback Mutual в восторге и немного подозревает.</HH.Ins.UI.Claims.None>
+  <HH.Ins.UI.Claims.Log>Хронология</HH.Ins.UI.Claims.Log>
+  <HH.Ins.UI.Claim.Review>На проверке: осталось {0}</HH.Ins.UI.Claim.Review>
+  <HH.Ins.UI.Claim.Window>окно переговоров: {0}</HH.Ins.UI.Claim.Window>
+  <HH.Ins.UI.Claim.PaysIn>выплата через {0}</HH.Ins.UI.Claim.PaysIn>
+  <HH.Ins.UI.Claim.Paid>Выплачено: {0}</HH.Ins.UI.Claim.Paid>
+  <HH.Ins.UI.Claim.Closed>Закрыт</HH.Ins.UI.Claim.Closed>
+  <HH.Ins.UI.Claim.Line>{0}  ·  убыток {1}  ·  требование {2}  ·  предложение {3}</HH.Ins.UI.Claim.Line>
+  <HH.Ins.UI.Claim.Preview>Предварительно: степень {0} %, выплата {1}, оценка через {2}</HH.Ins.UI.Claim.Preview>
+  <HH.Ins.UI.Claim.Details>Подробности</HH.Ins.UI.Claim.Details>
+  <HH.Ins.UI.Fine.Title>Мелкий шрифт</HH.Ins.UI.Fine.Title>
+  <HH.Ins.UI.Fine.Lead>Пятнадцать пунктов, как напечатано. При определённом уровне давления продаж они показываются лишь как справочные. Пункты серым цветом на вашей сложности не действуют.</HH.Ins.UI.Fine.Lead>
+  <HH.Ins.UI.Fine.Inactive>здесь не действует</HH.Ins.UI.Fine.Inactive>
+  <HH.Ins.UI.Limbs.Title>Таблица конечностей</HH.Ins.UI.Limbs.Title>
+  <HH.Ins.UI.Limbs.Lead>Значения в процентах от базовой суммы, за каждую сторону. Утраченная часть засчитывает своё значение и заменяет значения своих дочерних частей; несколько частей суммируются, но не более 100 %.</HH.Ins.UI.Limbs.Lead>
+  <HH.Enum.TrickMode.Follows>Зависит от давления продаж</HH.Enum.TrickMode.Follows>
+  <HH.Enum.TrickMode.On>Всегда включено</HH.Enum.TrickMode.On>
+  <HH.Enum.TrickMode.Off>Выключено</HH.Enum.TrickMode.Off>
+</LanguageData>

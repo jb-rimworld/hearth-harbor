@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_HotTub.label>banheira de hidromassagem</HH_HotTub.label>
+  <HH_HotTub.description>Uma tina de madeira com uma serpentina de aquecimento e uma bomba que quase sempre funciona. Duas pessoas podem se encharcar ao mesmo tempo. Os colonos ganham lazer e um humor calmo; hóspedes em um local de spa pagam pelo privilégio.</HH_HotTub.description>
+  <HH_Sauna.label>fogão de sauna</HH_Sauna.label>
+  <HH_Sauna.description>Um fogão a lenha forrado de pedra que transforma um pequeno cômodo fechado em sauna. O cômodo conta como sauna assim que se mantém na temperatura mínima definida nas configurações do mod (45 °C por padrão). Mantenha-o abastecido de lenha e o cômodo pequeno e bem fechado.</HH_Sauna.description>
+  <HH_MassageTable.label>mesa de massagem</HH_MassageTable.label>
+  <HH_MassageTable.description>Uma mesa estofada com um buraco para o rosto e uma prateleira de óleos. Precisa de um colono com o tipo de trabalho Serviço para fazer o amassamento; ele ganha experiência de Social e Medicina, o cliente paga (hóspedes) ou relaxa (colonos).</HH_MassageTable.description>
+  <HH_TestOnly_VenueSign.label>placa de local de teste (só teste)</HH_TestOnly_VenueSign.label>
+  <HH_TestOnly_VenueSign.description>Apenas para testes automatizados. Não pode ser construído.</HH_TestOnly_VenueSign.description>
+</LanguageData>

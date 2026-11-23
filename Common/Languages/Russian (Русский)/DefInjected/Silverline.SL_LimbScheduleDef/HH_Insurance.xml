@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_LimbSchedule_Standard.label>Таблица конечностей</SL_LimbSchedule_Standard.label>
+  <SL_LimbSchedule_Standard.description>Стандартная таблица (Приложение B.2) встроена. Добавляйте здесь строки для частей тела из модов.</SL_LimbSchedule_Standard.description>
+</LanguageData>

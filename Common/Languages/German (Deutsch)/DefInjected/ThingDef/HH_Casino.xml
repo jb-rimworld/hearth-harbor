@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_SlotMachine.label>einarmiger Muffalo</HH_SlotMachine.label>
+  <HH_SlotMachine.description>Ein münzfressender Spielautomat mit drei Walzen und einem Hebel in Form eines Muffalohorns. Die Quoten legt das Haus fest, die Lichter nicht. Gäste spielen ohne Croupier; Kolonisten spielen mit wertlosen Hausjetons.\n\nWähle die Schwankung (wie oft und wie hoch er auszahlt) mit dem Knopf am Automaten.</HH_SlotMachine.description>
+  <HH_RouletteTable.label>Roulettetisch</HH_RouletteTable.label>
+  <HH_RouletteTable.description>Ein Filzlayout mit eingelassenem Rad. Setze deine Jetons; die Kugel entscheidet. Braucht für Gäste einen Croupier (ein Kolonist mit der Arbeit Bedienen). Kolonisten können zum Vergnügen auch ohne einen mit Hausjetons spielen.</HH_RouletteTable.description>
+  <HH_BlackjackTable.label>Blackjacktisch</HH_BlackjackTable.label>
+  <HH_BlackjackTable.description>Ein halbmondförmiger Tisch mit Kartenschuh. Komme der 21 näher als die Bank, ohne sie zu überschreiten. Gute Spieler verlieren weniger; der Hausvorteil hängt von den Regeln ab und davon, wie gut gespielt wird. Braucht für Gäste einen Croupier.</HH_BlackjackTable.description>
+  <HH_PokerTable.label>Rimdeck-Tisch</HH_PokerTable.label>
+  <HH_PokerTable.description>Das Haus gibt Rimdeck, ein Kartenspiel gegen die anderen Spieler: Das Haus behält nur eine kleine Rake von jedem Pot. Kluge und gesellige Spieler gewinnen öfter. Ersetzt den Pokertisch des Basisspiels. Braucht für Gäste einen Croupier.</HH_PokerTable.description>
+  <HH_CashierCage.label>Kassenkäfig</HH_CashierCage.label>
+  <HH_CashierCage.description>Ein vergittertes Fenster, an dem Silber zu Jetons wird und zurück. Mit einem Käfig in der Kolonie spielen Gäste mit Jetons: Sie bringen etwa 5 % mehr mit, und einige gehen mit Jetons heim, die außerhalb des Hauses wertlos sind (der Jetonbestand bleibt in der Kasse). Die nächtlichen Einnahmen des Casinos werden hier als Silber abgelegt.</HH_CashierCage.description>
+  <HH_CasinoChips.label>Casinojeton</HH_CasinoChips.label>
+  <HH_CasinoChips.description>Ein Tonjeton mit dem Zeichen eines Hauses. Am Käfig, der ihn verkauft hat, ist er ein Silber wert und sonst nirgends etwas: Händler fassen ihn nicht an, und er zählt nicht zu deinem Wohlstand.</HH_CasinoChips.description>
+  <HH_GamblingSession.label>Glücksspiel</HH_GamblingSession.label>
+  <HH_GamblingSession.description>Eine Sitzung an den Tischen, wie eine Droge über Drogenrichtlinien verwaltet: ob sie zum Vergnügen erlaubt ist, wie oft und ob Süchtige spielen dürfen. Das ist kein Gegenstand und existiert nie in der Welt.</HH_GamblingSession.description>
+</LanguageData>

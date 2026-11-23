@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ATM.label>ATM</SL_ATM.label>
+  <SL_ATM.description>화면, 키패드, 그리고 "은화"라고 네 개 국어로 적힌 투입구가 달린 강철 상자. 주민들은 여기서 계좌를 확인하고, 은화를 인출(일일 한도, 소액 수수료)하며, 가진 은화를 예금합니다. 전력이 필요합니다.</SL_ATM.description>
+  <SL_BankCounter.label>은행 창구</SL_BankCounter.label>
+  <SL_BankCounter.description>황동 장식과 아무도 울려서는 안 되는 작은 종이 달린 긴 나무 카운터. 당신 은행의 지점입니다. 예금은 즉시 기장되고, 현금은 금고에서 바로 나오며, 대출은 직접 서명합니다. 전력이 필요합니다.</SL_BankCounter.description>
+  <SL_NightSafe.label>야간 금고</SL_NightSafe.label>
+  <SL_NightSafe.description>강철 블록에 달린 투입구. 하루 매상을 넣고, 철컥 소리를 듣고, 집에 갑니다. 매일 자정, 당신 사업체들의 금전 등록기가 여기서 비워집니다. 계좌가 있으면 계좌로, 없으면 옆 바닥에 은화로 쌓입니다.</SL_NightSafe.description>
+</LanguageData>

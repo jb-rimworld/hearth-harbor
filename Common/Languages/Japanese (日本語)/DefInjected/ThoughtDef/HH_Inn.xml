@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GuestRoomVerdict.stages.0.label>ひどい客室</HH_GuestRoomVerdict.stages.0.label>
+  <HH_GuestRoomVerdict.stages.0.description>あの部屋に金を払ったのか？ 溝の中の方がまだ眠れた。しかも溝は料金を取らない。</HH_GuestRoomVerdict.stages.0.description>
+  <HH_GuestRoomVerdict.stages.1.label>がっかりな客室</HH_GuestRoomVerdict.stages.1.label>
+  <HH_GuestRoomVerdict.stages.1.description>部屋は期待より下だった。かなり下だ。</HH_GuestRoomVerdict.stages.1.description>
+  <HH_GuestRoomVerdict.stages.2.label>まずまずの客室</HH_GuestRoomVerdict.stages.2.label>
+  <HH_GuestRoomVerdict.stages.2.description>目を細めれば、部屋は悪くなかった。</HH_GuestRoomVerdict.stages.2.description>
+  <HH_GuestRoomVerdict.stages.3.label>そこそこの客室</HH_GuestRoomVerdict.stages.3.label>
+  <HH_GuestRoomVerdict.stages.3.description>ちゃんとしたベッドと、閉まるドア。それ以上は求めない。</HH_GuestRoomVerdict.stages.3.description>
+  <HH_GuestRoomVerdict.stages.4.label>良い客室</HH_GuestRoomVerdict.stages.4.label>
+  <HH_GuestRoomVerdict.stages.4.description>素敵な部屋だった。よく眠れた。</HH_GuestRoomVerdict.stages.4.description>
+  <HH_GuestRoomVerdict.stages.5.label>素晴らしい客室</HH_GuestRoomVerdict.stages.5.label>
+  <HH_GuestRoomVerdict.stages.5.description>あんな部屋があれば、旅の全てが報われる。</HH_GuestRoomVerdict.stages.5.description>
+  <HH_GuestAccompanied.stages.0.label>ぎこちない付き添い</HH_GuestAccompanied.stages.0.label>
+  <HH_GuestAccompanied.stages.0.description>宿の人が付き添ってくれた。天気の話をした。延々と。</HH_GuestAccompanied.stages.0.description>
+  <HH_GuestAccompanied.stages.1.label>良い付き添い</HH_GuestAccompanied.stages.1.label>
+  <HH_GuestAccompanied.stages.1.description>宿の人が案内してくれて、付き添ってくれた。</HH_GuestAccompanied.stages.1.description>
+  <HH_GuestAccompanied.stages.2.label>楽しい付き添い</HH_GuestAccompanied.stages.2.label>
+  <HH_GuestAccompanied.stages.2.description>宿の人は愉快だった。思わず声を出して笑ってしまったかもしれない。</HH_GuestAccompanied.stages.2.description>
+  <HH_GuestAccompanied.stages.3.label>素晴らしい付き添い</HH_GuestAccompanied.stages.3.label>
+  <HH_GuestAccompanied.stages.3.description>何年もこれほど大切にされたことはなかった。</HH_GuestAccompanied.stages.3.description>
+  <HH_GuestPestered.stages.0.label>勧誘されてしまった</HH_GuestPestered.stages.0.label>
+  <HH_GuestPestered.stages.0.description>寝に来たのであって、勧誘されに来たのではない。</HH_GuestPestered.stages.0.description>
+  <HH_HostedWell.stages.0.label>良い語らい</HH_HostedWell.stages.0.label>
+  <HH_HostedWell.stages.0.description>いくつか良い会話ができた。</HH_HostedWell.stages.0.description>
+  <HH_GuestWaited.stages.0.label>少し待たされた</HH_GuestWaited.stages.0.label>
+  <HH_GuestWaited.stages.0.description>給仕されるまで待たされた。長くはなかったが、気づいた。</HH_GuestWaited.stages.0.description>
+  <HH_GuestWaited.stages.1.label>待ちぼうけ</HH_GuestWaited.stages.1.label>
+  <HH_GuestWaited.stages.1.description>待って待って、誰も給仕に来なかった。</HH_GuestWaited.stages.1.description>
+  <HH_GuestBellNobody.stages.0.label>ベルを鳴らしたが、誰も来ない</HH_GuestBellNobody.stages.0.label>
+  <HH_GuestBellNobody.stages.0.description>ベルを鳴らした。誰も来なかった。</HH_GuestBellNobody.stages.0.description>
+  <HH_GuestWaitingRoom.stages.0.label>簡素な待合室</HH_GuestWaitingRoom.stages.0.label>
+  <HH_GuestWaitingRoom.stages.0.description>少なくとも、待つあいだ座れる場所はあった。</HH_GuestWaitingRoom.stages.0.description>
+  <HH_GuestWaitingRoom.stages.1.label>まずまずの待合室</HH_GuestWaitingRoom.stages.1.label>
+  <HH_GuestWaitingRoom.stages.1.description>待合室は十分に快適だった。</HH_GuestWaitingRoom.stages.1.description>
+  <HH_GuestWaitingRoom.stages.2.label>良い待合室</HH_GuestWaitingRoom.stages.2.label>
+  <HH_GuestWaitingRoom.stages.2.description>そこで待つのは、ほとんど楽しみだった。</HH_GuestWaitingRoom.stages.2.description>
+  <HH_GuestWaitingRoom.stages.3.label>素晴らしい待合室</HH_GuestWaitingRoom.stages.3.label>
+  <HH_GuestWaitingRoom.stages.3.description>あんな部屋なら、もっと長く待っても構わなかった。</HH_GuestWaitingRoom.stages.3.description>
+</LanguageData>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingAddiction.label>залежність від азартних ігор</HH_GamblingAddiction.label>
+  <HH_GamblingAddiction.description>Столи взяли гору. Без регулярної гри починається ломка: поганий настрій, короткий запал і, на найглибших стадіях, гральні запої. Вилікувати може лише час без жодного сеансу, а рецидив легко трапляється в період тяги після лікування.\n\nСрібла це не коштує, лише час, настрій і нерви.</HH_GamblingAddiction.description>
+  <HH_GamblingAddiction.stages.1.label>ломка (слабка)</HH_GamblingAddiction.stages.1.label>
+  <HH_GamblingAddiction.stages.2.label>ломка (помірна)</HH_GamblingAddiction.stages.2.label>
+  <HH_GamblingAddiction.stages.3.label>ломка (сильна)</HH_GamblingAddiction.stages.3.label>
+  <HH_GamblingAddiction.stages.4.label>ломка (важка)</HH_GamblingAddiction.stages.4.label>
+  <HH_GamblingAddiction.stages.5.label>ломка (крайня)</HH_GamblingAddiction.stages.5.label>
+</LanguageData>

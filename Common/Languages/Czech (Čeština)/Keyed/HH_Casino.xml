@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.Casino>Kasino</HH.Tab.Casino>
+  <HH.Casino.TabTitle>Kasino</HH.Casino.TabTitle>
+  <HH.Casino.LimitsToggle>Vynucovat limity stolů (sázky {0}–{1} stříbra)</HH.Casino.LimitsToggle>
+  <HH.Casino.LosingWarning>Dům na těchto hrách prodělává: {0}. Při těchto kurzech hosté vyhrají víc, než vsadí.</HH.Casino.LosingWarning>
+  <HH.Casino.BalancedBadge>Každá hra má výhodu domu: kasino vydělává v dlouhém běhu.</HH.Casino.BalancedBadge>
+  <HH.Casino.Houses>Banky</HH.Casino.Houses>
+  <HH.Casino.NoHouses>Žádný host zatím nehrál. Banka se otevře první sázkou.</HH.Casino.NoHouses>
+  <HH.Casino.HouseOfMap>Kasino v {0}</HH.Casino.HouseOfMap>
+  <HH.Casino.Drawer>Zásuvka: {0}</HH.Casino.Drawer>
+  <HH.Casino.TodayNet>Dnes: {0}</HH.Casino.TodayNet>
+  <HH.Casino.HouseTip>Hosté právě hrají se {0} stříbra. Banka si nechává rezervu {1} stříbra; cokoli nad ni jde kolonii, až se kasino zavře.</HH.Casino.HouseTip>
+  <HH.Casino.Games>Hry: výplata ve skutečnosti oproti výplatě navržené</HH.Casino.Games>
+  <HH.Casino.ColGame>Hra</HH.Casino.ColGame>
+  <HH.Casino.ColRounds>Kola</HH.Casino.ColRounds>
+  <HH.Casino.ColStaked>Vsazeno</HH.Casino.ColStaked>
+  <HH.Casino.ColRtp>Výplata (skutečná)</HH.Casino.ColRtp>
+  <HH.Casino.ColExpected>Výplata (návrh)</HH.Casino.ColExpected>
+  <HH.Casino.ColLuck>Štěstí</HH.Casino.ColLuck>
+  <HH.Casino.ColHouse>Výsledek banky</HH.Casino.ColHouse>
+  <HH.Casino.Game.Slots>Výherní automaty</HH.Casino.Game.Slots>
+  <HH.Casino.Game.Roulette>Ruleta</HH.Casino.Game.Roulette>
+  <HH.Casino.Game.Blackjack>Blackjack</HH.Casino.Game.Blackjack>
+  <HH.Casino.Game.Poker>Rimdeck</HH.Casino.Game.Poker>
+  <HH.Casino.Gamblers>Kolonisté, kteří hrají</HH.Casino.Gamblers>
+  <HH.Casino.NoGamblers>Nikdo v kolonii zatím nehrál.</HH.Casino.NoGamblers>
+  <HH.Casino.InspectGame>{0}: obsazeno {1} z {2} míst</HH.Casino.InspectGame>
+  <HH.Casino.InspectBooks>{0} kol · banka {1} · skutečná výhoda {2} % (navržená {3} %)</HH.Casino.InspectBooks>
+  <HH.Casino.InspectToday>Dnes: {0} kol, banka {1}</HH.Casino.InspectToday>
+  <HH.Casino.InspectLuck>Štěstí za celý život: {0}</HH.Casino.InspectLuck>
+  <HH.Casino.Staffed>krupiér u stolu</HH.Casino.Staffed>
+  <HH.Casino.NoCroupier>bez krupiéra</HH.Casino.NoCroupier>
+  <HH.Casino.Vol.Low>nízká volatilita</HH.Casino.Vol.Low>
+  <HH.Casino.Vol.Medium>střední volatilita</HH.Casino.Vol.Medium>
+  <HH.Casino.Vol.High>vysoká volatilita</HH.Casino.Vol.High>
+  <HH.Casino.VolDesc>Kliknutím změníte, jak stroj vyplácí. Míra výher {0}, rozptyl {1} sázek, jackpot ×{2}, výplata {3} % v každém nastavení.</HH.Casino.VolDesc>
+  <HH.Casino.OpenToGuests>Přístupné hostům</HH.Casino.OpenToGuests>
+  <HH.Casino.OpenToGuestsDesc>Když je vypnuto, smí zařízení používat jen kolonisté.</HH.Casino.OpenToGuestsDesc>
+  <HH.Casino.TryDemo>Vyzkoušet (zkušební žetony)</HH.Casino.TryDemo>
+  <HH.Casino.TryDemoDesc>Sami si zahrajte několik kol za zkušební žetony. Žádné stříbro se neúčtuje.</HH.Casino.TryDemoDesc>
+  <HH.Casino.Simulate>Simulovat 10 000 kol</HH.Casino.Simulate>
+  <HH.Casino.SimulateDesc>Dozorce stolů: na papíře odehraje 10 000 kol se současnými kurzy a ohlásí výsledek. Nic se nezaúčtuje.</HH.Casino.SimulateDesc>
+  <HH.Casino.SimResult>Dozorce stolů: {0} kol na papíře vrátilo {1} % sázek (navrženo: {2} %).</HH.Casino.SimResult>
+  <HH.Casino.LuckNoData>zatím příliš málo kol</HH.Casino.LuckNoData>
+  <HH.Casino.LuckNormal>běžné štěstí</HH.Casino.LuckNormal>
+  <HH.Casino.LuckHouseUp>banka má štěstí</HH.Casino.LuckHouseUp>
+  <HH.Casino.LuckHouseDown>banka má smůlu</HH.Casino.LuckHouseDown>
+  <HH.Casino.LuckHouseWayUp>banka má velké štěstí</HH.Casino.LuckHouseWayUp>
+  <HH.Casino.LuckHouseWayDown>banka má velkou smůlu</HH.Casino.LuckHouseWayDown>
+  <HH.Casino.BigWin>{0} si u {2} vyhrál velkou výhru: žetony v hodnotě {1} stříbra.</HH.Casino.BigWin>
+  <HH.Casino.DemoInfo>Jen zkušební žetony, nic tady nestojí stříbro. Kurzy nastavené v této kolonii: {ODDS}. Vaše sázka je zapečetěna: znovunačtení výsledek nemění.</HH.Casino.DemoInfo>
+  <HH.Casino.DemoChips>Zkušební žetony: {0} · kola: {1}</HH.Casino.DemoChips>
+  <HH.Casino.DemoReset>Začít znovu</HH.Casino.DemoReset>
+  <HH.Casino.DemoStake>Sázka</HH.Casino.DemoStake>
+  <HH.Casino.DemoBet>Vsadit</HH.Casino.DemoBet>
+  <HH.Casino.DemoBroke>Na tuto sázku už nemáte zkušební žetony.</HH.Casino.DemoBroke>
+  <HH.Casino.DemoPays>vyplácí ×{0}</HH.Casino.DemoPays>
+  <HH.Casino.DemoNoWin>bez výhry</HH.Casino.DemoNoWin>
+  <HH.Casino.DemoPoker>Sedíte se třemi štamgasty. Každý složí vklad; banka si nechá poplatek.</HH.Casino.DemoPoker>
+  <HH.Casino.DemoStats>Dosud vyplaceno: {0} % sázek (navrženo: {1} %)</HH.Casino.DemoStats>
+  <HH.Casino.Spin>Roztočit</HH.Casino.Spin>
+  <HH.Casino.Deal>Rozdat</HH.Casino.Deal>
+  <HH.Casino.Hit>Vzít kartu</HH.Casino.Hit>
+  <HH.Casino.Stand>Stát</HH.Casino.Stand>
+  <HH.Casino.DoubleDown>Zdvojit</HH.Casino.DoubleDown>
+  <HH.Casino.HelpHint>Pokud je hazard ve vašem skutečném životě problém, pomoc je k dispozici: {LINK}</HH.Casino.HelpHint>
+  <HH.Casino.HelpHintTip>Kliknutím otevřete linku pomoci. Pravým tlačítkem tuto větu skryjete (v nastavení modu ji lze znovu zapnout).</HH.Casino.HelpHintTip>
+  <HH.Casino.HideHint>Skrýt tuto nápovědu</HH.Casino.HideHint>
+  <HH.Casino.OpenHelpline>Otevřít linku pomoci</HH.Casino.OpenHelpline>
+  <HH.Casino.AddictionBrackets>stadium {0}, čistých {1} z {2} dní</HH.Casino.AddictionBrackets>
+  <HH.Casino.AddictionTip>Stadium závislosti {0}. Dny bez jakékoli hry: {1} z {2} potřebných. Pro spokojenost je potřeba asi {3} her denně. Vyléčit to umí jen abstinence.</HH.Casino.AddictionTip>
+  <HH.Casino.AddictedTitle>{0}: závislost na hazardu</HH.Casino.AddictedTitle>
+  <HH.Casino.AddictedText>{0} si zahrál o jednu hru moc a je nyní závislý na hazardu. Bez pravidelné hry bude abstinence tížit {PAWN_objective}: špatná nálada a v hlubších stadiích hazardní záchvaty. Stříbro se neztratilo, žetony byly zdarma, ale čas a nervy ano.\n\nVyléčit to umí jen dlouhé období bez jakékoli hry. Co smí {PAWN_nameDef} dělat, můžete změnit v zásadách pro drogy (řádek „gambling“).</HH.Casino.AddictedText>
+  <HH.Casino.RelapseTitle>{0}: recidiva</HH.Casino.RelapseTitle>
+  <HH.Casino.RelapseText>{0} si sedl ke stolům během období chuti po léčbě a závislost se vrátila (o jedno stadium níž než dřív). Potřeba je další dlouhé období bez jakékoli hry.</HH.Casino.RelapseText>
+  <HH.Casino.CuredMessage>{0} se zbavil návyku na hazard. Dalších {1} dní každá hra riskuje recidivu.</HH.Casino.CuredMessage>
+  <HH.Casino.SpreeReason>abstinence od hazardu</HH.Casino.SpreeReason>
+  <HH.Casino.Counter>{0} z {1} her za 3 dny.</HH.Casino.Counter>
+  <HH.Casino.CounterNext>{0} z {1} her za 3 dny – další může vést k závislosti.</HH.Casino.CounterNext>
+  <HH.Casino.CounterRisk>{0} her za 3 dny – další nese riziko závislosti {1}.</HH.Casino.CounterRisk>
+  <HH.Casino.CounterAddicted>Závislý. {0} her za poslední 3 dny.</HH.Casino.CounterAddicted>
+</LanguageData>

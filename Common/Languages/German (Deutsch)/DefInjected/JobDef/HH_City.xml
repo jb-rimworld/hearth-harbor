@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchScreening.reportString>schaut einen Film.</HH_WatchScreening.reportString>
+  <HH_SalonSit.reportString>wartet auf einen neuen Look.</HH_SalonSit.reportString>
+  <HH_SalonStyle.reportString>stylt TargetAs Kunden.</HH_SalonStyle.reportString>
+  <HH_SalonSelf.reportString>holt sich einen neuen Haarschnitt.</HH_SalonSelf.reportString>
+  <HH_GalleryVisit.reportString>betrachtet Kunst.</HH_GalleryVisit.reportString>
+  <HH_ParkRest.reportString>sitzt auf einer Bank.</HH_ParkRest.reportString>
+  <HH_TaxiDeparture.reportString>wartet auf ein Taxi.</HH_TaxiDeparture.reportString>
+  <HH_Bodyguard.reportString>bewacht TargetA.</HH_Bodyguard.reportString>
+</LanguageData>

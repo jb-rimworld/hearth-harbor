@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_TestKitchen.label>experimentar um prato novo</HH_TestKitchen.label>
+  <HH_TestKitchen.description>Jogue comida crua na bancada e veja o que sai. Às vezes a colônia descobre um prato novo (quanto melhor o cozinheiro, maior a chance); caso contrário, o experimento termina como um prato horrível desse tipo.</HH_TestKitchen.description>
+  <HH_TestKitchen.jobString>Experimentando um prato novo.</HH_TestKitchen.jobString>
+</LanguageData>

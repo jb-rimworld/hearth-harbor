@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_FaithForSale.stages.0.label>odpustky na prodej</HH_FaithForSale.stages.0.label>
+  <HH_FaithForSale.stages.0.description>Rozhřešení prodávají nahlas, jako řepu.</HH_FaithForSale.stages.0.description>
+  <HH_FaithNotForSale.stages.0.label>hodnosti na prodej</HH_FaithNotForSale.stages.0.label>
+  <HH_FaithNotForSale.stages.0.description>Víra není na prodej. A přesto existuje ceník.</HH_FaithNotForSale.stages.0.description>
+  <HH_BoughtMyWayOut.stages.0.label>koupil jsem si cestu ven</HH_BoughtMyWayOut.stages.0.label>
+  <HH_BoughtMyWayOut.stages.0.description>Fungovalo to, ale zaplatil jsem za to a přesně vím, co to ze mě dělá.</HH_BoughtMyWayOut.stages.0.description>
+  <HH_PaidMyDues.stages.0.label>zaplatil jsem své dluhy</HH_PaidMyDues.stages.0.label>
+  <HH_PaidMyDues.stages.0.description>Dluhy jsou zaplaceny. Účty jsou čisté a svědomí taky.</HH_PaidMyDues.stages.0.description>
+  <HH_StingySoul.stages.0.label>lakomá duše</HH_StingySoul.stages.0.label>
+  <HH_StingySoul.stages.0.description>Celé čtvrtletí bez placení dluhů. Měl bych se stydět.</HH_StingySoul.stages.0.description>
+  <HH_AscensionMood.stages.0.label>hodnost I</HH_AscensionMood.stages.0.label>
+  <HH_AscensionMood.stages.0.description>Udělal jsem první krok po žebříku.</HH_AscensionMood.stages.0.description>
+  <HH_AscensionMood.stages.1.label>hodnost II</HH_AscensionMood.stages.1.label>
+  <HH_AscensionMood.stages.1.description>Druhá příčka. Lidé začínají používat můj titul.</HH_AscensionMood.stages.1.description>
+  <HH_AscensionMood.stages.2.label>hodnost III</HH_AscensionMood.stages.2.label>
+  <HH_AscensionMood.stages.2.description>Třetí příčka. Výhled je už lepší.</HH_AscensionMood.stages.2.description>
+  <HH_AscensionMood.stages.3.label>hodnost IV</HH_AscensionMood.stages.3.label>
+  <HH_AscensionMood.stages.3.description>Poslední příčka. Nade mnou už jen obloha.</HH_AscensionMood.stages.3.description>
+  <HH_AscensionDisapproval.stages.0.label>koupená hodnost</HH_AscensionDisapproval.stages.0.label>
+  <HH_AscensionDisapproval.stages.0.description>Tu hodnost si koupili. Nic neznamená.</HH_AscensionDisapproval.stages.0.description>
+  <HH_AscensionRespect.stages.0.label>vyšší hodnost</HH_AscensionRespect.stages.0.label>
+  <HH_AscensionRespect.stages.0.description>Vystoupali výš než já. Respektuji to.</HH_AscensionRespect.stages.0.description>
+  <HH_PlaceToPray.stages.0.label>místo k modlitbě</HH_PlaceToPray.stages.0.label>
+  <HH_PlaceToPray.stages.0.description>Skromný kout pro modlitbu. Lepší než nic.</HH_PlaceToPray.stages.0.description>
+  <HH_PlaceToPray.stages.1.label>místo k modlitbě</HH_PlaceToPray.stages.1.label>
+  <HH_PlaceToPray.stages.1.description>Klidná, slušná kaple. Mohl bych se tu modlit.</HH_PlaceToPray.stages.1.description>
+  <HH_PlaceToPray.stages.2.label>místo k modlitbě</HH_PlaceToPray.stages.2.label>
+  <HH_PlaceToPray.stages.2.description>Pěkná kaple mé vlastní víry, daleko od domova. Jsem vděčný.</HH_PlaceToPray.stages.2.description>
+  <HH_PlaceToPray.stages.3.label>místo k modlitbě</HH_PlaceToPray.stages.3.label>
+  <HH_PlaceToPray.stages.3.description>Krásná kaple se správnými lavicemi. Moje víra byla vidět.</HH_PlaceToPray.stages.3.description>
+  <HH_PlaceToPray.stages.4.label>místo k modlitbě</HH_PlaceToPray.stages.4.label>
+  <HH_PlaceToPray.stages.4.description>Skvělé. Postavili tu dům mému bohu. Tohle si zapamatuju.</HH_PlaceToPray.stages.4.description>
+  <HH_HereticShrine.stages.0.label>kacířská svatyně na našem pozemku</HH_HereticShrine.stages.0.label>
+  <HH_HereticShrine.stages.0.description>Na našem pozemku stojí svatyně falešné víry.</HH_HereticShrine.stages.0.description>
+  <HH_HereticShrine.stages.1.label>kacířská svatyně na našem pozemku</HH_HereticShrine.stages.1.label>
+  <HH_HereticShrine.stages.1.description>Svatyně falešné víry, kterou toleruje můj vlastní lid. Hanba.</HH_HereticShrine.stages.1.description>
+  <HH_HereticShrine.stages.2.label>kacířská svatyně na našem pozemku</HH_HereticShrine.stages.2.label>
+  <HH_HereticShrine.stages.2.description>Postavili svatyni pro kacíře vedle našeho domova. Nemůžu to snést.</HH_HereticShrine.stages.2.description>
+  <HH_ShrineRespected.stages.0.label>ctěné jiné víry</HH_ShrineRespected.stages.0.label>
+  <HH_ShrineRespected.stages.0.description>Děláme místo pro jiné víry. Tak to má být.</HH_ShrineRespected.stages.0.description>
+  <HH_ShrineRespected.stages.1.label>ctěné jiné víry</HH_ShrineRespected.stages.1.label>
+  <HH_ShrineRespected.stages.1.description>Svatyni pro každou víru, která tudy projde. Tak to má být.</HH_ShrineRespected.stages.1.description>
+  <HH_ShrineRespected.stages.2.label>jiné víry pohrdány</HH_ShrineRespected.stages.2.label>
+  <HH_ShrineRespected.stages.2.description>Proč stavíme svatyně pro lidi, kteří věří nesprávným věcem?</HH_ShrineRespected.stages.2.description>
+  <HH_LuckyStreak.stages.0.label>šťastná série</HH_LuckyStreak.stages.0.label>
+  <HH_LuckyStreak.stages.0.description>Kostky mi dnes večer padají na moji stranu.</HH_LuckyStreak.stages.0.description>
+  <HH_OfCourseILost.stages.0.label>samozřejmě jsem prohrál</HH_OfCourseILost.stages.0.label>
+  <HH_OfCourseILost.stages.0.description>Samozřejmě jsem prohrál. Samozřejmě.</HH_OfCourseILost.stages.0.description>
+  <HH_GamblingAround.stages.0.label>hazard v okolí</HH_GamblingAround.stages.0.label>
+  <HH_GamblingAround.stages.0.description>Lidé vyhazují peníze přímo přede mnou.</HH_GamblingAround.stages.0.description>
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Need_Gambling.label>ギャンブル</HH_Need_Gambling.label>
+  <HH_Need_Gambling.description>ギャンブル依存のため、この人は定期的にテーブルや機械に座る必要があります。依存が深いほど、この欲求は速く低下します。</HH_Need_Gambling.description>
+</LanguageData>

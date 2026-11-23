@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ProjectorScreen.label>проекційний екран</HH_ProjectorScreen.label>
+  <HH_ProjectorScreen.description>Широкий екран із проектором, закріпленим на балці над ним. Поставте стільці перед ним, вивіску закладу в кімнаті та пригасіть світло: гості платять за місце, а колоністи отримують вечір кіно. Фільми старі, гучні, і ніхто не пам'ятає, хто їх зняв.</HH_ProjectorScreen.description>
+  <HH_SalonChair.label>крісло салону</HH_SalonChair.label>
+  <HH_SalonChair.description>М'яке крісло з регульованою висотою, накидкою, дзеркалом на стіні за ним і шухлядкою з ножицями. Колоніст, що стоїть позаду, зробить людині в кріслі нову зачіску. Колоністи користуються безкоштовно, гості платять.</HH_SalonChair.description>
+  <HH_ParkBench.label>лавка в парку</HH_ParkBench.label>
+  <HH_ParkBench.description>Проста лавка на двох із гарним видом. Нічого не купувати, нічого не підписувати: люди сідають, дивляться на те, що є навколо, і стають трохи краще. Чим гарніше довкілля, тим краще.</HH_ParkBench.description>
+  <HH_TaxiStand.label>стоянка таксі</HH_TaxiStand.label>
+  <HH_TaxiStand.description>Розмічений квадрат землі, покажчик і виклична панель. Гості, що відбувають і не хочуть іти до краю карти пішки, викликають тут маленький шатл і платять за поїздку; деяких гостей, що прибувають, висаджують на стоянці з помпою. Потрібне вільне небо над нею, щоб таксі могло сісти.</HH_TaxiStand.description>
+  <HH_TaxiIncoming.label>таксі (прибуває)</HH_TaxiIncoming.label>
+  <HH_TaxiLeaving.label>таксі (відбуває)</HH_TaxiLeaving.label>
+</LanguageData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Guide_OpeningDay.label>개장일</HH_Guide_OpeningDay.label>
+  <HH_Guide_OpeningDay.description>침대에서 첫 은화까지 세 단계. 연구도, 구역도, 설정도 필요 없습니다.</HH_Guide_OpeningDay.description>
+  <HH_Guide_YourGuests.label>손님 한눈에 보기</HH_Guide_YourGuests.label>
+  <HH_Guide_YourGuests.description>손님들이 어떻게 지내는지 확인하는 곳.</HH_Guide_YourGuests.description>
+  <HH_Guide_FirstVenue.label>첫 시설</HH_Guide_FirstVenue.label>
+  <HH_Guide_FirstVenue.description>간판 하나면 방이 사업장이 됩니다.</HH_Guide_FirstVenue.description>
+  <HH_Guide_Bank.label>은행의 돈</HH_Guide_Bank.label>
+  <HH_Guide_Bank.description>Silverline이 매출을 안전하게 보관하고, 손님이 카드로 결제할 수 있게 해 줍니다.</HH_Guide_Bank.description>
+</LanguageData>

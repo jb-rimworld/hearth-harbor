@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Hosting.labelShort>안내</HH_Hosting.labelShort>
+  <HH_Hosting.pawnLabel>안내원</HH_Hosting.pawnLabel>
+  <HH_Hosting.gerundLabel>손님 안내</HH_Hosting.gerundLabel>
+  <HH_Hosting.description>손님을 체크인하고 체크아웃시키고, 시설을 구경시키고, 심심하지 않게 해 주고, 머물러 달라고(혹은 합류해 달라고) 설득합니다.</HH_Hosting.description>
+  <HH_Hosting.verb>안내</HH_Hosting.verb>
+  <HH_Serving.labelShort>서빙</HH_Serving.labelShort>
+  <HH_Serving.pawnLabel>서빙 담당</HH_Serving.pawnLabel>
+  <HH_Serving.gerundLabel>서빙</HH_Serving.gerundLabel>
+  <HH_Serving.description>카운터, 테이블, 계산대를 담당합니다. 주문을 받고, 음식과 음료를 내고, 카지노 홀을 운영하고, 선반을 채웁니다.</HH_Serving.description>
+  <HH_Serving.verb>서빙</HH_Serving.verb>
+</LanguageData>

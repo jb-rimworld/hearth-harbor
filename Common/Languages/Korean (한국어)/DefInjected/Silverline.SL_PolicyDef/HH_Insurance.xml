@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ActsOfStoryteller.label>이야기꾼의 행위 제외</SL_ActsOfStoryteller.label>
+  <SL_ActsOfStoryteller.description>습격자, 기계 군집, 그리고 가끔 생기는 공성 병기 오해로 파괴된 건물에 보상합니다. 화재, 날씨 또는 당신 자신의 행동에는 적용되지 않습니다.</SL_ActsOfStoryteller.description>
+  <SL_ActsOfStoryteller.slogan>저희가 든든하게 지켜 드립니다.*</SL_ActsOfStoryteller.slogan>
+  <SL_MuffaloMachine.label>머팔로 &amp; 기계 보험</SL_MuffaloMachine.label>
+  <SL_MuffaloMachine.description>움직이거나 나는 것들을 보장합니다: 셔틀, 강하 포드, 적에게 파괴된 차량.</SL_MuffaloMachine.description>
+  <SL_MuffaloMachine.slogan>바퀴, 로터, 그리고 아주 꼼꼼한 양식.</SL_MuffaloMachine.slogan>
+  <SL_RoofOverHead.label>머리 위의 지붕</SL_RoofOverHead.label>
+  <SL_RoofOverHead.description>화재, 폭발, 번개를 보장합니다. 다만 화재의 원인은 다른 누군가여야 합니다.</SL_RoofOverHead.description>
+  <SL_RoofOverHead.slogan>따뜻한 벽, 차가운 위안, 분기별 보험료.</SL_RoofOverHead.slogan>
+  <SL_ItWasntMe.label>내가 아니었어요 배상책임</SL_ItWasntMe.label>
+  <SL_ItWasntMe.description>당신의 관리 아래에서 손님, 상인과 그들의 물품이 입은 피해를 보장합니다. 당신 때문이 아닌 경우에 한합니다.</SL_ItWasntMe.description>
+  <SL_ItWasntMe.slogan>누군가는 내야 합니다. 가능하면 저희가, 수수료를 받고.</SL_ItWasntMe.slogan>
+  <SL_LegalShield.label>법률 방패</SL_LegalShield.label>
+  <SL_LegalShield.description>브릭스 &amp; 파트너스 법률사무소가 벌금을 대신 내고, 벌금을 부과한 쪽과 다툽니다. 클로백 뮤추얼에 대해서도 도움을 주지만, 아무도 40조를 읽지 않는 한에서입니다.</SL_LegalShield.description>
+  <SL_LegalShield.slogan>브릭스 &amp; 파트너스: 상시 계약된 윤리.</SL_LegalShield.slogan>
+  <SL_RimHealth.label>림 건강 플랜</SL_RimHealth.label>
+  <SL_RimHealth.description>병상에서 하루를 보내는 정착민마다 지급되는 정액 보험금입니다.</SL_RimHealth.description>
+  <SL_RimHealth.slogan>빨리 나으세요. 적어도 분기별로는 나으세요.</SL_RimHealth.slogan>
+  <SL_GoldenYears.label>황금기 연금 플랜</SL_GoldenYears.label>
+  <SL_GoldenYears.description>예순 살까지 살아남은 정착민을 위한 연금입니다. 젊을 때는 보험료가 저렴한데, 그것이 요점입니다.</SL_GoldenYears.description>
+  <SL_GoldenYears.slogan>일찍 은퇴하세요. 그다음엔 늦게. 그다음엔 분기별로.</SL_GoldenYears.slogan>
+  <SL_BlightBeGone.label>역병 물러가라</SL_BlightBeGone.label>
+  <SL_BlightBeGone.description>한파와 독성 낙진은 작물을 갉아먹습니다. 이 보험은 손실을 갉아먹습니다.</SL_BlightBeGone.description>
+  <SL_BlightBeGone.slogan>보장한 만큼 수확하세요.</SL_BlightBeGone.slogan>
+  <SL_ClosedForRepairs.label>수리 중 휴업</SL_ClosedForRepairs.label>
+  <SL_ClosedForRepairs.description>사업장이 문을 닫아야 할 때, 수입은 멈추지 않습니다.</SL_ClosedForRepairs.description>
+  <SL_ClosedForRepairs.slogan>고장 나도 보험료는 멈추지 않습니다.</SL_ClosedForRepairs.slogan>
+  <SL_UnspeakableEvents.label>말할 수 없는 사건 특약</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>변호사가 같은 방에 있지 않으면 약관 문구로 설명할 수 없는 피해를 보장합니다.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>어떤 일은 이름을 붙이기보다 보험에 드는 편이 낫습니다.</SL_UnspeakableEvents.slogan>
+  <SL_Wanderlust.label>방랑벽 여행 보험</SL_Wanderlust.label>
+  <SL_Wanderlust.description>캐러밴을 위한 보험: 당신이 없을 때도 곁에 있습니다. 인원 수와 이동일 기준으로, 사람들이 길 위에 있는 동안에만 청구됩니다.</SL_Wanderlust.description>
+  <SL_Wanderlust.slogan>그리울 거예요. 당신이 없는 부분은 저희가 보장합니다.</SL_Wanderlust.slogan>
+  <SL_LimbByLimb.label>사지별 상해 플랜</SL_LimbByLimb.label>
+  <SL_LimbByLimb.description>사지마다 가격이 있습니다. 저희가 적어 두었습니다. 마지막 쪽, 사지 보상표에 있습니다.</SL_LimbByLimb.description>
+  <SL_LimbByLimb.slogan>사지마다 가격이 있습니다. 저희가 적어 두었습니다.</SL_LimbByLimb.slogan>
+</LanguageData>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Cookbook.label>кулінарна книга</HH_Cookbook.label>
+  <HH_Cookbook.description>Засалена, зачитана книга рецептів із позначками від когось, хто явно готував під обстрілом. Читання навчає колонію страв, що в ній містяться.</HH_Cookbook.description>
+  <HH_Plate_Soup.label>миска супу</HH_Plate_Soup.label>
+  <HH_Plate_Soup.description>Миска чогось гарячого й рідкого. Їсться ложкою, молитвою або і тим, і тим.</HH_Plate_Soup.description>
+  <HH_Plate_Stew.label>горщик рагу</HH_Plate_Stew.label>
+  <HH_Plate_Stew.description>Важка миска рагу, тривало тушкованого, парує обіцянкою другої порції.</HH_Plate_Stew.description>
+  <HH_Plate_Grill.label>блюдо з грилю</HH_Plate_Grill.label>
+  <HH_Plate_Grill.description>М'ясо, яке розмовляло з відкритим вогнем і програло.</HH_Plate_Grill.description>
+  <HH_Plate_Noodles.label>миска локшини</HH_Plate_Noodles.label>
+  <HH_Plate_Noodles.description>Клубок локшини в мисці. Чмокати не обов'язково, але бажано.</HH_Plate_Noodles.description>
+  <HH_Plate_Rice.label>рисова страва</HH_Plate_Rice.label>
+  <HH_Plate_Rice.description>Гора рису з власною думкою, подана на тарілці з виделкою, про яку ніхто не просив.</HH_Plate_Rice.description>
+  <HH_Plate_Bake.label>запечена страва</HH_Plate_Bake.label>
+  <HH_Plate_Bake.description>Те, що пішло в духовку як інгредієнти, а вийшло як рішення.</HH_Plate_Bake.description>
+  <HH_Plate_Fry.label>смажена тарілка</HH_Plate_Fry.label>
+  <HH_Plate_Fry.description>Золотиста, хрустка і страшенно нездорова. Саме те, що замовила колонія.</HH_Plate_Fry.description>
+  <HH_Plate_Salad.label>салатна тарілка</HH_Plate_Salad.label>
+  <HH_Plate_Salad.description>Холодна тарілка з великою кількістю листя, дуже малим каяттям і коротким терміном придатності.</HH_Plate_Salad.description>
+  <HH_Plate_Raw.label>сира тарілка</HH_Plate_Raw.label>
+  <HH_Plate_Raw.description>Тонко нарізано, дорого викладено і абсолютно не приготовано.</HH_Plate_Raw.description>
+  <HH_Plate_Breakfast.label>сніданкова тарілка</HH_Plate_Breakfast.label>
+  <HH_Plate_Breakfast.description>Тарілка, яка каже, що день почався, хочете ви того чи ні.</HH_Plate_Breakfast.description>
+  <HH_Plate_Dessert.label>миска десерту</HH_Plate_Dessert.label>
+  <HH_Plate_Dessert.description>Невелика солодка нагорода за те, що ви пережили ще один день на Краю.</HH_Plate_Dessert.description>
+  <HH_Plate_StreetFood.label>лоток вуличної їжі</HH_Plate_StreetFood.label>
+  <HH_Plate_StreetFood.description>Гаряче, для руки, найкраще їсти стоячи, швидко, поглядаючи на виходи.</HH_Plate_StreetFood.description>
+  <HH_Station_PrepCounter.label>робочий стіл для нарізки</HH_Station_PrepCounter.label>
+  <HH_Station_PrepCounter.description>Подряпаний стіл із обробною дошкою, добрим ножем і дренажним жолобом, про який ніхто не питав. Нарізайте, шматкуйте й розбирайте тут; інші пристрої для страви мають стояти поруч.</HH_Station_PrepCounter.description>
+  <HH_Station_StockPot.label>казан</HH_Station_StockPot.label>
+  <HH_Station_StockPot.description>Великий залізний казан над дровами. Вариться, кипить і тушкує все, що колись було живим. Під час роботи спалює дрова.</HH_Station_StockPot.description>
+  <HH_Station_Grill.label>гриль</HH_Station_Grill.label>
+  <HH_Station_Grill.description>Ґрати над розжареним вугіллям. Сире м'ясо кладеться, а знімається з думками. Під час роботи спалює дрова.</HH_Station_Grill.description>
+  <HH_Station_Oven.label>піч</HH_Station_Oven.label>
+  <HH_Station_Oven.description>Кам'яна та залізна піч для смаження й випікання. Довго розігрівається, а вечерю псує швидко. Під час роботи спалює дрова.</HH_Station_Oven.description>
+  <HH_Station_WokStation.label>станція вока</HH_Station_WokStation.label>
+  <HH_Station_WokStation.description>Круглодонна сковорода над ревучим полум'ям. Тут усе смажиться помішуванням, включно з бровами кухаря. Під час роботи спалює дрова.</HH_Station_WokStation.description>
+  <HH_Station_DeepFryer.label>фритюрниця</HH_Station_DeepFryer.label>
+  <HH_Station_DeepFryer.description>Чан киплячої олії з кошиком і сильним відчуттям власної небезпеки. Електрична. Загоряється легше за будь-що інше на кухні.</HH_Station_DeepFryer.description>
+  <HH_Station_Smoker.label>коптильня</HH_Station_Smoker.label>
+  <HH_Station_Smoker.description>Висока дерев'яна шафа, яка перетворює м'ясо на щось, що довго зберігається. Потрібні тріска, терпіння і відсутність сусідів. Під час роботи спалює дрова.</HH_Station_Smoker.description>
+  <HH_Station_Steamer.label>пароварка</HH_Station_Steamer.label>
+  <HH_Station_Steamer.description>Складені бамбукові кошики над каструлею з киплячою водою. М'яка, ніжна і майже неможлива до підгоряння. Під час роботи спалює дрова.</HH_Station_Steamer.description>
+  <HH_Station_DoughBench.label>стіл для тіста</HH_Station_DoughBench.label>
+  <HH_Station_DoughBench.description>Важкий стіл із верхом, припорошеним борошном. Тут рис і кукурудзу товчуть у тісто, що дешевше за терапію.</HH_Station_DoughBench.description>
+  <HH_Station_ColdStation.label>холодна станція</HH_Station_ColdStation.label>
+  <HH_Station_ColdStation.description>Охолоджена стійка, яка тримає салати хрусткими, а десерти твердими. Електрична.</HH_Station_ColdStation.description>
+</LanguageData>

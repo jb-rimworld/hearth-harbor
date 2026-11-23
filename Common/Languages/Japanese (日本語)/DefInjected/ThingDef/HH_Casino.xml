@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_SlotMachine.label>一本腕マフェロ</HH_SlotMachine.label>
+  <HH_SlotMachine.description>硬貨を飲み込むスロットマシン。3つのリールと、マフェロの角の形をしたレバー付き。オッズは店が決めますが、ライトは決めていません。客はディーラーなしで遊び、コロニストは価値のない店のチップで遊びます。\n\n機械のボタンで、ボラティリティ（払い出しの頻度と大きさ）を選べます。</HH_SlotMachine.description>
+  <HH_RouletteTable.label>ルーレットテーブル</HH_RouletteTable.label>
+  <HH_RouletteTable.description>ホイールがはめ込まれたフェルトのテーブル。チップを置けば、ボールが決めます。客向けに運営するには、ディーラー（サービス作業タイプで働くコロニスト）が必要です。コロニストは、ディーラーなしでも店のチップで楽しく遊べます。</HH_RouletteTable.description>
+  <HH_BlackjackTable.label>ブラックジャックテーブル</HH_BlackjackTable.label>
+  <HH_BlackjackTable.description>半月形のテーブルに、カードシューが付いています。21 に近づきつつ、超えないようにします。上手なプレイヤーは損が少なくなります。ハウスエッジはルールとプレイヤーの腕前によって変わります。客向けには、ディーラーが必要です。</HH_BlackjackTable.description>
+  <HH_PokerTable.label>リムデックテーブル</HH_PokerTable.label>
+  <HH_PokerTable.description>店はリムデックを配ります。これは他のプレイヤーと競うカードゲームで、店はどのポットからも少額のレイクだけを取ります。賢く社交的なプレイヤーほど勝ちやすいです。バニラのポーカーテーブルを置き換えます。客向けには、ディーラーが必要です。</HH_PokerTable.description>
+  <HH_CashierCage.label>換金所</HH_CashierCage.label>
+  <HH_CashierCage.description>銀とチップを交換する格子窓。コロニーに換金所があると、客はチップで遊びます: 客は約5%多く持ち込み、一部はチップを持って帰りますが、そのチップは店の外では無価値です（チップの手元資金は手元に残ります）。カジノの夜間の売上は、ここで銀として記帳されます。</HH_CashierCage.description>
+  <HH_CasinoChips.label>カジノチップ</HH_CasinoChips.label>
+  <HH_CasinoChips.description>店の印が押された粘土のチップ。売った換金所では1銀の価値があり、ほかではどこでも無価値です。商人は受け取らず、資産にも数えられません。</HH_CasinoChips.description>
+  <HH_GamblingSession.label>ギャンブル</HH_GamblingSession.label>
+  <HH_GamblingSession.description>テーブルでのセッション。薬物と同じように薬物ポリシーで管理されます: 楽しみとして許可するか、回数、依存者が遊んでよいかどうか。アイテムではなく、世界に存在することはありません。</HH_GamblingSession.description>
+</LanguageData>

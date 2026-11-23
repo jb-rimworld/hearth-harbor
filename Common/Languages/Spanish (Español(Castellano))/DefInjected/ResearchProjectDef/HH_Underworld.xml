@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Underworld_Discovery.label>una trastienda (clave)</HH_Underworld_Discovery.label>
+  <HH_Underworld_Discovery.description>Proyecto interno clave. Termina cuando se acepta la oferta del desconocido. Nunca se muestra.</HH_Underworld_Discovery.description>
+  <HH_Underworld_1.label>la trastienda</HH_Underworld_1.label>
+  <HH_Underworld_1.description>Puertas de trastienda, el foso de combate, el mostrador del perista, el muelle de contrabandistas y el salón de drogas: todo lo que necesita una casa para un negocio que no está en la carta.</HH_Underworld_1.description>
+  <HH_TheHunt.label>la caza</HH_TheHunt.label>
+  <HH_TheHunt.description>Un coto de caza vallado. Los visitantes adinerados pagan bien por disparar a lo que sueltes en él. Desde el contenido oscuro en adelante, un prisionero puede ser la presa, tras una advertencia clara.</HH_TheHunt.description>
+  <HH_BlackClinic.label>clínica negra</HH_BlackClinic.label>
+  <HH_BlackClinic.description>Un mostrador donde donantes anónimos compran órganos extraídos, sin preguntas. Solo con contenido oscuro o sombrío.</HH_BlackClinic.description>
+</LanguageData>

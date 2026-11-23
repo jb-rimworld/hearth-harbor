@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Tavern.label>술집</HH_Venue_Tavern.label>
+  <HH_Venue_Tavern.description>손님이 술을 사서 그 자리에서 마시는 방입니다. 선반이나 보관 구역에 맥주나 다른 음료를 채워 두세요. 간판이나 카운터 뒤의 바텐더가 영업을 유지합니다. 간판이 달리 말하지 않는 한 방 안의 음료는 손님 전용입니다.</HH_Venue_Tavern.description>
+  <HH_Venue_Shop.label>상점</HH_Venue_Shop.label>
+  <HH_Venue_Shop.description>손님이 물건을 사는 방입니다. 방 안의 선반과 보관 구역에 있는 모든 것은 판매 대상이며, 시장 가치에 간판의 가격 계수를 곱한 값입니다. 상점 주인이 없으면 상점은 약간의 할인을 받는 셀프 서비스로 운영됩니다.</HH_Venue_Shop.description>
+  <HH_Venue_Restaurant.label>식당</HH_Venue_Restaurant.label>
+  <HH_Venue_Restaurant.description>손님이 자리에 앉아 식사하는 방입니다. 테이블, 주방, 웨이터가 있으면 식당이 됩니다. 요리 자체는 주방이 맡습니다.</HH_Venue_Restaurant.description>
+  <HH_Venue_Casino.label>카지노</HH_Venue_Casino.label>
+  <HH_Venue_Casino.description>카드 테이블, 슬롯머신, 크루피에(딜러)가 있는 방입니다. 손님은 운을 거는 게임에 은화를 걸고, 영업장은 작지만 정직한 이익을 챙깁니다.</HH_Venue_Casino.description>
+  <HH_Venue_Spa.label>스파</HH_Venue_Spa.label>
+  <HH_Venue_Spa.description>목욕, 증기, 휴식을 위한 조용한 방입니다. 직원이 수건을 따뜻하게 유지하며, 손님은 방문 한 번에 요금을 냅니다.</HH_Venue_Spa.description>
+  <HH_Venue_Lounge.label>라운지</HH_Venue_Lounge.label>
+  <HH_Venue_Lounge.description>좌석이 있는 대기실입니다. 영업장이 닫혀 있거나 직원이 없는 것을 본 손님은 문간 대신 여기서 기다리며, 더 참을성 있게 기다립니다. 항상 열려 있고 직원도 필요 없습니다.</HH_Venue_Lounge.description>
+  <HH_Venue_Chapel.label>손님 예배당</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>모든 신앙의 방문객이 기도하러 오는 손님용 제단이 있는 조용한 방입니다. 손님은 아무것도 내지 않지만 더 차분해져 돌아갑니다. 멋진 제단과 긴 의자 몇 개가 있는 예배당은 여관의 좋은 이웃입니다. 낮에는 항상 열려 있고 직원도 필요 없습니다.</HH_Venue_Chapel.description>
+</LanguageData>

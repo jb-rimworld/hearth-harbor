@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.Casino>카지노</HH.Tab.Casino>
+  <HH.Casino.TabTitle>카지노</HH.Casino.TabTitle>
+  <HH.Casino.LimitsToggle>테이블 한도 적용 (베팅 {0}–{1} 은화)</HH.Casino.LimitsToggle>
+  <HH.Casino.LosingWarning>하우스가 손해를 보는 게임: {0}. 이 배당률에서는 손님이 건 돈보다 더 많이 땁니다.</HH.Casino.LosingWarning>
+  <HH.Casino.BalancedBadge>모든 게임에는 하우스 엣지가 있습니다. 카지노는 장기적으로 이익을 냅니다.</HH.Casino.BalancedBadge>
+  <HH.Casino.Houses>하우스</HH.Casino.Houses>
+  <HH.Casino.NoHouses>아직 도박을 한 손님이 없습니다. 하우스는 첫 바이인과 함께 장부를 엽니다.</HH.Casino.NoHouses>
+  <HH.Casino.HouseOfMap>{0}의 카지노</HH.Casino.HouseOfMap>
+  <HH.Casino.Drawer>금고: {0}</HH.Casino.Drawer>
+  <HH.Casino.TodayNet>오늘: {0}</HH.Casino.TodayNet>
+  <HH.Casino.HouseTip>지금 손님들이 {0} 은화를 걸고 있습니다. 하우스는 {1} 은화의 시재금을 보유하며, 그 이상은 카지노가 문을 닫을 때까지 식민지 금고로 들어갑니다.</HH.Casino.HouseTip>
+  <HH.Casino.Games>게임: 실제 지급률 대 설계 지급률</HH.Casino.Games>
+  <HH.Casino.ColGame>게임</HH.Casino.ColGame>
+  <HH.Casino.ColRounds>라운드</HH.Casino.ColRounds>
+  <HH.Casino.ColStaked>건 금액</HH.Casino.ColStaked>
+  <HH.Casino.ColRtp>지급률 (실제)</HH.Casino.ColRtp>
+  <HH.Casino.ColExpected>지급률 (설계)</HH.Casino.ColExpected>
+  <HH.Casino.ColLuck>운</HH.Casino.ColLuck>
+  <HH.Casino.ColHouse>하우스 수익</HH.Casino.ColHouse>
+  <HH.Casino.Game.Slots>슬롯머신</HH.Casino.Game.Slots>
+  <HH.Casino.Game.Roulette>룰렛</HH.Casino.Game.Roulette>
+  <HH.Casino.Game.Blackjack>블랙잭</HH.Casino.Game.Blackjack>
+  <HH.Casino.Game.Poker>림덱</HH.Casino.Game.Poker>
+  <HH.Casino.Gamblers>도박하는 식민지 주민</HH.Casino.Gamblers>
+  <HH.Casino.NoGamblers>식민지에서 아직 아무도 도박을 하지 않았습니다.</HH.Casino.NoGamblers>
+  <HH.Casino.InspectGame>{0}: 좌석 {2}개 중 {1}개 사용 중</HH.Casino.InspectGame>
+  <HH.Casino.InspectBooks>{0} 라운드 · 하우스 {1} · 실제 엣지 {2}% (설계 {3}%)</HH.Casino.InspectBooks>
+  <HH.Casino.InspectToday>오늘: {0} 라운드, 하우스 {1}</HH.Casino.InspectToday>
+  <HH.Casino.InspectLuck>누적 운: {0}</HH.Casino.InspectLuck>
+  <HH.Casino.Staffed>딜러 근무 중</HH.Casino.Staffed>
+  <HH.Casino.NoCroupier>딜러 없음</HH.Casino.NoCroupier>
+  <HH.Casino.Vol.Low>낮은 변동성</HH.Casino.Vol.Low>
+  <HH.Casino.Vol.Medium>중간 변동성</HH.Casino.Vol.Medium>
+  <HH.Casino.Vol.High>높은 변동성</HH.Casino.Vol.High>
+  <HH.Casino.VolDesc>클릭하면 기계의 지급 방식을 바꿉니다. 모든 설정에서 적중률 {0}, 베팅 폭 {1}배, 잭팟 ×{2}, 지급률 {3}%입니다.</HH.Casino.VolDesc>
+  <HH.Casino.OpenToGuests>손님에게 개방</HH.Casino.OpenToGuests>
+  <HH.Casino.OpenToGuestsDesc>끄면 이 기기는 식민지 주민만 사용할 수 있습니다.</HH.Casino.OpenToGuestsDesc>
+  <HH.Casino.TryDemo>체험하기 (연습용 칩)</HH.Casino.TryDemo>
+  <HH.Casino.TryDemoDesc>연습용 칩으로 직접 몇 라운드 해 보세요. 은화는 사용되지 않습니다.</HH.Casino.TryDemoDesc>
+  <HH.Casino.Simulate>10,000 라운드 시뮬레이션</HH.Casino.Simulate>
+  <HH.Casino.SimulateDesc>Pit Boss: 현재 배당률로 종이 위에서 10,000 라운드를 돌리고 결과를 보고합니다. 아무것도 장부에 기록되지 않습니다.</HH.Casino.SimulateDesc>
+  <HH.Casino.SimResult>Pit Boss: 종이 위의 {0} 라운드가 건 금액의 {1}%를 돌려주었습니다 (설계: {2}%).</HH.Casino.SimResult>
+  <HH.Casino.LuckNoData>아직 라운드가 너무 적음</HH.Casino.LuckNoData>
+  <HH.Casino.LuckNormal>보통 운</HH.Casino.LuckNormal>
+  <HH.Casino.LuckHouseUp>하우스 운 좋음</HH.Casino.LuckHouseUp>
+  <HH.Casino.LuckHouseDown>하우스 운 나쁨</HH.Casino.LuckHouseDown>
+  <HH.Casino.LuckHouseWayUp>하우스 매우 운 좋음</HH.Casino.LuckHouseWayUp>
+  <HH.Casino.LuckHouseWayDown>하우스 매우 운 나쁨</HH.Casino.LuckHouseWayDown>
+  <HH.Casino.BigWin>{0}, {2}에서 큰 당첨: 칩 {1} 은화어치를 땄습니다.</HH.Casino.BigWin>
+  <HH.Casino.DemoInfo>연습용 칩만 사용하며 여기서는 은화가 들지 않습니다. 이 식민지에 설정된 배당률: {ODDS}. 건 금액은 확정되어 있어 다시 불러와도 결과가 바뀌지 않습니다.</HH.Casino.DemoInfo>
+  <HH.Casino.DemoChips>연습용 칩: {0} · 라운드: {1}</HH.Casino.DemoChips>
+  <HH.Casino.DemoReset>처음부터 다시</HH.Casino.DemoReset>
+  <HH.Casino.DemoStake>건 금액</HH.Casino.DemoStake>
+  <HH.Casino.DemoBet>베팅</HH.Casino.DemoBet>
+  <HH.Casino.DemoBroke>이 금액에 필요한 연습용 칩이 부족합니다.</HH.Casino.DemoBroke>
+  <HH.Casino.DemoPays>×{0} 지급</HH.Casino.DemoPays>
+  <HH.Casino.DemoNoWin>당첨 없음</HH.Casino.DemoNoWin>
+  <HH.Casino.DemoPoker>단골 세 명과 함께 앉습니다. 모두 건 금액을 앤티로 내고, 하우스는 레이크를 가져갑니다.</HH.Casino.DemoPoker>
+  <HH.Casino.DemoStats>지금까지 돌려준 금액: 건 금액의 {0}% (설계: {1}%)</HH.Casino.DemoStats>
+  <HH.Casino.Spin>돌리기</HH.Casino.Spin>
+  <HH.Casino.Deal>딜</HH.Casino.Deal>
+  <HH.Casino.Hit>히트</HH.Casino.Hit>
+  <HH.Casino.Stand>스탠드</HH.Casino.Stand>
+  <HH.Casino.DoubleDown>더블</HH.Casino.DoubleDown>
+  <HH.Casino.HelpHint>현실에서 도박이 문제가 된다면 도움을 받을 수 있습니다: {LINK}</HH.Casino.HelpHint>
+  <HH.Casino.HelpHintTip>클릭하면 상담 전화 안내가 열립니다. 오른쪽 클릭으로 이 줄을 숨길 수 있습니다 (모드 설정에서 다시 켤 수 있음).</HH.Casino.HelpHintTip>
+  <HH.Casino.HideHint>이 안내 숨기기</HH.Casino.HideHint>
+  <HH.Casino.OpenHelpline>상담 전화 열기</HH.Casino.OpenHelpline>
+  <HH.Casino.AddictionBrackets>{0}단계, 도박 없이 {1}/{2}일 경과</HH.Casino.AddictionBrackets>
+  <HH.Casino.AddictionTip>도박 중독 {0}단계. 세션 없이 보낸 날: {1}/{2}일 필요. 만족을 유지하려면 하루 약 {3}회의 세션이 필요합니다. 금단만이 이를 치료합니다.</HH.Casino.AddictionTip>
+  <HH.Casino.AddictedTitle>{0}: 도박 중독</HH.Casino.AddictedTitle>
+  <HH.Casino.AddictedText>{0}은(는) 한 번 더 도박을 하여 이제 도박에 중독되었습니다. 정기적인 도박이 없으면 금단 증상이 {PAWN_objective}을(를) 괴롭힙니다. 기분이 나빠지고, 더 깊은 단계에서는 도박 광기에 빠집니다. 은화는 잃지 않았습니다. 칩은 공짜였지만, 시간과 신경은 그렇지 않습니다.\n\n한동안 도박을 전혀 하지 않아야만 치료됩니다. 약물 정책의 「도박」 항목에서 {PAWN_nameDef}이(가) 할 수 있는 일을 바꿀 수 있습니다.</HH.Casino.AddictedText>
+  <HH.Casino.RelapseTitle>{0}: 재발</HH.Casino.RelapseTitle>
+  <HH.Casino.RelapseText>{0}은(는) 치료 후 갈망 기간 중에 테이블에 앉았고, 중독이 다시 돌아왔습니다 (이전보다 한 단계 낮음). 다시 한동안 도박을 전혀 하지 않아야 합니다.</HH.Casino.RelapseText>
+  <HH.Casino.CuredMessage>{0}은(는) 도박 습관을 끊었습니다. 앞으로 {1}일 동안은 어떤 세션이든 재발 위험이 있습니다.</HH.Casino.CuredMessage>
+  <HH.Casino.SpreeReason>도박 금단</HH.Casino.SpreeReason>
+  <HH.Casino.Counter>3일 동안 {0}/{1}회 세션.</HH.Casino.Counter>
+  <HH.Casino.CounterNext>3일 동안 {0}/{1}회 세션 – 다음 세션은 중독 위험이 있습니다.</HH.Casino.CounterNext>
+  <HH.Casino.CounterRisk>3일 동안 {0}회 세션 – 다음 세션의 중독 위험은 {1}입니다.</HH.Casino.CounterRisk>
+  <HH.Casino.CounterAddicted>중독됨. 최근 3일 동안 {0}회 세션.</HH.Casino.CounterAddicted>
+</LanguageData>

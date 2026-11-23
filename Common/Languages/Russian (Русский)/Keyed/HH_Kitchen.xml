@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Kitchen.Missing>Не хватает: {0}</HH.Kitchen.Missing>
+  <HH.Kitchen.RecipeInfo>Оборудование: {0}. Шаги: {1}.</HH.Kitchen.RecipeInfo>
+  <HH.Kitchen.Finishing>завершающий штрих (молоко, яйца, шоколад, пиво, ягоды или грибы)</HH.Kitchen.Finishing>
+  <HH.Kitchen.Finishing2>второй завершающий штрих (пиво, ягоды или грибы)</HH.Kitchen.Finishing2>
+  <HH.Kitchen.Inspiration>Вдохновение: {0}</HH.Kitchen.Inspiration>
+  <HH.Kitchen.Cuisine>Кухня: {0}</HH.Kitchen.Cuisine>
+  <HH.Kitchen.Cooked>Приготовлено на: {0} ({1})</HH.Kitchen.Cooked>
+  <HH.Kitchen.Made>Сделано из: {0}</HH.Kitchen.Made>
+  <HH.Kitchen.Signature>Фирменное блюдо</HH.Kitchen.Signature>
+  <HH.Kitchen.Fine>Изысканное блюдо</HH.Kitchen.Fine>
+  <HH.Kitchen.Everyday>Повседневное блюдо</HH.Kitchen.Everyday>
+  <HH.Kitchen.Level>уровень {0}</HH.Kitchen.Level>
+  <HH.Kitchen.Stale>Черствое: нет сытости, нет бонуса к настроению.</HH.Kitchen.Stale>
+  <HH.Kitchen.FreshFor>Свежее еще {0}</HH.Kitchen.FreshFor>
+  <HH.Kitchen.Stat.Well>Сытость</HH.Kitchen.Stat.Well>
+  <HH.Kitchen.Stat.WellDesc>Насколько медленнее падает голод после этого блюда. Зависит от уровня освоения и качества.</HH.Kitchen.Stat.WellDesc>
+  <HH.Kitchen.Stat.Mood>Настроение после еды</HH.Kitchen.Stat.Mood>
+  <HH.Kitchen.Stat.MoodDesc>Бонус к настроению от нормального блюда, по уровню освоения и качеству (черствые блюда не дают ничего).</HH.Kitchen.Stat.MoodDesc>
+  <HH.Tab.Kitchen>Кулинарная книга</HH.Tab.Kitchen>
+  <HH.Kitchen.Cookbook.Title>Кулинарная книга колонии</HH.Kitchen.Cookbook.Title>
+  <HH.Kitchen.Cookbook.Known>Известно блюд: {0} из {1}</HH.Kitchen.Cookbook.Known>
+  <HH.Kitchen.Cookbook.Unknown>???</HH.Kitchen.Cookbook.Unknown>
+  <HH.Kitchen.Cookbook.UnknownHint>Пока не освоено. Исследуйте {0} или найдите кулинарную книгу.</HH.Kitchen.Cookbook.UnknownHint>
+  <HH.Kitchen.Cookbook.Level>Уровень {0}</HH.Kitchen.Cookbook.Level>
+  <HH.Kitchen.Cookbook.NoRecipe>Нет рецепта: {0}</HH.Kitchen.Cookbook.NoRecipe>
+  <HH.Kitchen.Cookbook.Dark>Скрыто: темное меню отключено.</HH.Kitchen.Cookbook.Dark>
+  <HH.Kitchen.Cookbook.Filter>Только известные</HH.Kitchen.Cookbook.Filter>
+  <HH.Kitchen.Cookbook.Search>Поиск</HH.Kitchen.Cookbook.Search>
+  <HH.Kitchen.Station.PrepCounter>Разделочный стол</HH.Kitchen.Station.PrepCounter>
+  <HH.Kitchen.Station.StockPot>Котел для бульона</HH.Kitchen.Station.StockPot>
+  <HH.Kitchen.Station.Grill>Гриль</HH.Kitchen.Station.Grill>
+  <HH.Kitchen.Station.Oven>Духовка</HH.Kitchen.Station.Oven>
+  <HH.Kitchen.Station.Wok>Станция вок</HH.Kitchen.Station.Wok>
+  <HH.Kitchen.Station.Fryer>Фритюрница</HH.Kitchen.Station.Fryer>
+  <HH.Kitchen.Station.Smoker>Коптильня</HH.Kitchen.Station.Smoker>
+  <HH.Kitchen.Station.Steamer>Пароварка</HH.Kitchen.Station.Steamer>
+  <HH.Kitchen.Station.DoughBench>Стол для теста</HH.Kitchen.Station.DoughBench>
+  <HH.Kitchen.Station.ColdStation>Холодильная станция</HH.Kitchen.Station.ColdStation>
+  <HH.Kitchen.Station.Campfire>Костер</HH.Kitchen.Station.Campfire>
+  <HH.Kitchen.Station.Stove>Плита</HH.Kitchen.Station.Stove>
+  <HH.Kitchen.Station.ButcherTable>Разделочный стол мясника</HH.Kitchen.Station.ButcherTable>
+  <HH.Kitchen.Step.Chop>нарезать</HH.Kitchen.Step.Chop>
+  <HH.Kitchen.Step.Simmer>томить</HH.Kitchen.Step.Simmer>
+  <HH.Kitchen.Step.Boil>варить</HH.Kitchen.Step.Boil>
+  <HH.Kitchen.Step.Grill>жарить на гриле</HH.Kitchen.Step.Grill>
+  <HH.Kitchen.Step.KneadDough>месить тесто</HH.Kitchen.Step.KneadDough>
+  <HH.Kitchen.Step.Smoke>коптить</HH.Kitchen.Step.Smoke>
+  <HH.Kitchen.Step.Roast>запекать</HH.Kitchen.Step.Roast>
+  <HH.Kitchen.Step.StirFry>обжаривать в воке</HH.Kitchen.Step.StirFry>
+  <HH.Kitchen.Step.DeepFry>жарить во фритюре</HH.Kitchen.Step.DeepFry>
+  <HH.Kitchen.Step.Steam>готовить на пару</HH.Kitchen.Step.Steam>
+  <HH.Kitchen.Step.Chill>охлаждать</HH.Kitchen.Step.Chill>
+  <HH.Kitchen.Step.Carve>нарезать порциями</HH.Kitchen.Step.Carve>
+  <HH.Kitchen.Step.SpitRoast>жарить на вертеле</HH.Kitchen.Step.SpitRoast>
+  <HH.Kitchen.Step.PanFry>жарить на сковороде</HH.Kitchen.Step.PanFry>
+  <HH.Kitchen.Step.Sear>обжаривать</HH.Kitchen.Step.Sear>
+  <HH.Kitchen.Cuisine.Frontier>Деревенская / Пограничная</HH.Kitchen.Cuisine.Frontier>
+  <HH.Kitchen.Cuisine.TribalFeast>Племенной пир</HH.Kitchen.Cuisine.TribalFeast>
+  <HH.Kitchen.Cuisine.TavernFare>Трактирная кухня</HH.Kitchen.Cuisine.TavernFare>
+  <HH.Kitchen.Cuisine.ImperialHaute>Имперская высокая кухня</HH.Kitchen.Cuisine.ImperialHaute>
+  <HH.Kitchen.Cuisine.GlitterFusion>Блестящий фьюжн</HH.Kitchen.Cuisine.GlitterFusion>
+  <HH.Kitchen.Cuisine.Street>Уличная</HH.Kitchen.Cuisine.Street>
+  <HH.Kitchen.Cuisine.Seafood>Морепродукты</HH.Kitchen.Cuisine.Seafood>
+  <HH.Kitchen.Cuisine.Insect>Насекомые</HH.Kitchen.Cuisine.Insect>
+  <HH.Kitchen.Cuisine.Fungal>Грибная</HH.Kitchen.Cuisine.Fungal>
+  <HH.Kitchen.Cuisine.Vegetarian>Вегетарианская</HH.Kitchen.Cuisine.Vegetarian>
+  <HH.Kitchen.Cuisine.Ascetic>Аскетичная</HH.Kitchen.Cuisine.Ascetic>
+  <HH.Kitchen.Cuisine.LongPork>Длинная свинина</HH.Kitchen.Cuisine.LongPork>
+  <HH.Kitchen.Ingredient.meat>мясо</HH.Kitchen.Ingredient.meat>
+  <HH.Kitchen.Ingredient.insectmeat>мясо насекомых</HH.Kitchen.Ingredient.insectmeat>
+  <HH.Kitchen.Ingredient.humanmeat>человечина</HH.Kitchen.Ingredient.humanmeat>
+  <HH.Kitchen.Ingredient.twistedmeat>извращенное мясо</HH.Kitchen.Ingredient.twistedmeat>
+  <HH.Kitchen.Ingredient.fish>рыба</HH.Kitchen.Ingredient.fish>
+  <HH.Kitchen.Ingredient.eggs>яйца</HH.Kitchen.Ingredient.eggs>
+  <HH.Kitchen.Ingredient.milk>молоко</HH.Kitchen.Ingredient.milk>
+  <HH.Kitchen.Ingredient.potatoes>картофель</HH.Kitchen.Ingredient.potatoes>
+  <HH.Kitchen.Ingredient.corn>кукуруза</HH.Kitchen.Ingredient.corn>
+  <HH.Kitchen.Ingredient.rice>рис</HH.Kitchen.Ingredient.rice>
+  <HH.Kitchen.Ingredient.berries>ягоды</HH.Kitchen.Ingredient.berries>
+  <HH.Kitchen.Ingredient.agave>плод агавы</HH.Kitchen.Ingredient.agave>
+  <HH.Kitchen.Ingredient.mushrooms>грибы</HH.Kitchen.Ingredient.mushrooms>
+  <HH.Kitchen.Ingredient.chocolate>шоколад</HH.Kitchen.Ingredient.chocolate>
+  <HH.Kitchen.Ingredient.beer>пиво</HH.Kitchen.Ingredient.beer>
+  <HH.Kitchen.Ingredient.hemogen>пакет гемогена</HH.Kitchen.Ingredient.hemogen>
+  <HH.Kitchen.Ingredient.cheese>сыр</HH.Kitchen.Ingredient.cheese>
+  <HH.Kitchen.Ingredient.pumpkin>тыква</HH.Kitchen.Ingredient.pumpkin>
+  <HH.Kitchen.Ingredient.flour>мука</HH.Kitchen.Ingredient.flour>
+  <HH.Kitchen.Ingredient.fruit>фрукты</HH.Kitchen.Ingredient.fruit>
+  <HH.Kitchen.Ingredient.soysauce>соевый соус</HH.Kitchen.Ingredient.soysauce>
+  <HH.Kitchen.Ingredient.wasabi>васаби</HH.Kitchen.Ingredient.wasabi>
+  <HH.Kitchen.Ingredient.vegetables>овощи</HH.Kitchen.Ingredient.vegetables>
+  <HH.Kitchen.Ingredient.sugar>сахар</HH.Kitchen.Ingredient.sugar>
+  <HH.Kitchen.Ingredient.gourmet>деликатесные продукты</HH.Kitchen.Ingredient.gourmet>
+  <HH.Kitchen.Ingredient.herbs>травы</HH.Kitchen.Ingredient.herbs>
+  <HH.Kitchen.Ingredient.nuts>орехи</HH.Kitchen.Ingredient.nuts>
+  <HH.Kitchen.Ingredient.tealeaves>чайные листья</HH.Kitchen.Ingredient.tealeaves>
+  <HH.Kitchen.Ingredient.strawflour>соломенная мука</HH.Kitchen.Ingredient.strawflour>
+  <HH.Kitchen.Ingredient.pricklypear>опунция</HH.Kitchen.Ingredient.pricklypear>
+  <HH.Kitchen.Ingredient.greenfruit>зеленый фрукт</HH.Kitchen.Ingredient.greenfruit>
+  <HH.Setting.kitchen.shelfLife>Срок годности блюд</HH.Setting.kitchen.shelfLife>
+  <HH.Setting.kitchen.shelfLife.Desc>Сколько блюдо остается свежим, относительно 3–24 часов каждого блюда. Черствые блюда еще съедобны, но не дают сытости и бонуса к настроению.</HH.Setting.kitchen.shelfLife.Desc>
+  <HH.Setting.kitchen.wellFedStrength>Сила сытости</HH.Setting.kitchen.wellFedStrength>
+  <HH.Setting.kitchen.wellFedStrength.Desc>Насколько медленнее падает голод после нормального блюда (100 % = на 40 % медленнее).</HH.Setting.kitchen.wellFedStrength.Desc>
+  <HH.Setting.kitchen.wellFedDuration>Длительность сытости</HH.Setting.kitchen.wellFedDuration>
+  <HH.Setting.kitchen.wellFedDuration.Desc>Как долго действует состояние сытости, относительно 4 / 6 / 8 / 10 часов по уровню освоения (и по качеству).</HH.Setting.kitchen.wellFedDuration.Desc>
+  <HH.Setting.kitchen.menuPrice>Цены в меню</HH.Setting.kitchen.menuPrice>
+  <HH.Setting.kitchen.menuPrice.Desc>Цены, которые ресторан запрашивает за блюда, относительно стандартного меню (уровень блюда, качество и форма).</HH.Setting.kitchen.menuPrice.Desc>
+  <HH.Setting.kitchen.poisonRule>Без пищевого отравления на хорошей кухне</HH.Setting.kitchen.poisonRule>
+  <HH.Setting.kitchen.poisonRule.Desc>Блюда, приготовленные поваром с Готовкой 4 и выше на чистой кухне (чистота -0,2 или лучше), не могут отравить. Выкл.: действуют правила ванили.</HH.Setting.kitchen.poisonRule.Desc>
+  <HH.Setting.kitchen.variants>Изысканная и фирменная формы</HH.Setting.kitchen.variants>
+  <HH.Setting.kitchen.variants.Desc>Предлагать каждое блюдо в изысканной форме (больше и лучше ингредиентов, выше шанс хорошего качества) и в фирменной форме (нужно исследование).</HH.Setting.kitchen.variants.Desc>
+  <HH.Setting.kitchen.allKnown>Все блюда известны</HH.Setting.kitchen.allKnown>
+  <HH.Setting.kitchen.allKnown.Desc>Пропустить освоение: каждое блюдо меню можно готовить, как только стоит нужное оборудование.</HH.Setting.kitchen.allKnown.Desc>
+  <HH.Setting.kitchen.darkMenu>Темное меню (длинная свинина)</HH.Setting.kitchen.darkMenu>
+  <HH.Setting.kitchen.darkMenu.Desc>Разрешить блюда из длинной свинины. Их также открывает идеология, одобряющая каннибализм.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Kitchen.Cookbook.Teaches>Учит: {0}</HH.Kitchen.Cookbook.Teaches>
+  <HH.Kitchen.Cookbook.Empty>Страницы пусты.</HH.Kitchen.Cookbook.Empty>
+  <HH.Kitchen.Cookbook.AllKnown>Колония уже знает все блюда из этой книги.</HH.Kitchen.Cookbook.AllKnown>
+  <HH.Kitchen.Cookbook.CannotCook>Невозможно приготовить.</HH.Kitchen.Cookbook.CannotCook>
+  <HH.Kitchen.Cookbook.Learned>{0} изучает книгу. Колония теперь может готовить: {1}.</HH.Kitchen.Cookbook.Learned>
+  <HH.Kitchen.TestKitchen.Success>{0} разобрался, как приготовить {1}. Колония запомнит.</HH.Kitchen.TestKitchen.Success>
+  <HH.Kitchen.TestKitchen.Failure>{0} попытался приготовить {1} и получилась ужасная порция. Может, в следующий раз.</HH.Kitchen.TestKitchen.Failure>
+  <HH.Kitchen.NoNeighbours>Другого кухонного оборудования в досягаемости нет.</HH.Kitchen.NoNeighbours>
+  <HH.Kitchen.Neighbours>В досягаемости: {0}</HH.Kitchen.Neighbours>
+  <HH.Kitchen.FreshHours>Свежее еще {0} ч</HH.Kitchen.FreshHours>
+</LanguageData>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_AteDish.label>snědl jsem pořádné jídlo</HH_AteDish.label>
+  <HH_AteDish.stages.0.label>příšerné domácí vaření</HH_AteDish.stages.0.label>
+  <HH_AteDish.stages.0.description>Snědl jsem příšerné jídlo domácího vaření.</HH_AteDish.stages.0.description>
+  <HH_AteDish.stages.1.label>chudé domácí vaření</HH_AteDish.stages.1.label>
+  <HH_AteDish.stages.1.description>Snědl jsem chudé jídlo domácího vaření.</HH_AteDish.stages.1.description>
+  <HH_AteDish.stages.2.label>obyčejné domácí vaření</HH_AteDish.stages.2.label>
+  <HH_AteDish.stages.2.description>Snědl jsem obyčejné jídlo domácího vaření.</HH_AteDish.stages.2.description>
+  <HH_AteDish.stages.3.label>dobré domácí vaření</HH_AteDish.stages.3.label>
+  <HH_AteDish.stages.3.description>Snědl jsem dobré jídlo domácího vaření.</HH_AteDish.stages.3.description>
+  <HH_AteDish.stages.4.label>výborné domácí vaření</HH_AteDish.stages.4.label>
+  <HH_AteDish.stages.4.description>Snědl jsem výborné jídlo domácího vaření.</HH_AteDish.stages.4.description>
+  <HH_AteDish.stages.5.label>mistrovské domácí vaření</HH_AteDish.stages.5.label>
+  <HH_AteDish.stages.5.description>Snědl jsem mistrovské jídlo domácího vaření.</HH_AteDish.stages.5.description>
+  <HH_AteDish.stages.6.label>legendární domácí vaření</HH_AteDish.stages.6.label>
+  <HH_AteDish.stages.6.description>Snědl jsem legendární jídlo domácího vaření.</HH_AteDish.stages.6.description>
+  <HH_AteDish.stages.7.label>příšerné dobré domácí vaření</HH_AteDish.stages.7.label>
+  <HH_AteDish.stages.7.description>Snědl jsem příšerné jídlo z dobrého domácího vaření.</HH_AteDish.stages.7.description>
+  <HH_AteDish.stages.8.label>chudé dobré domácí vaření</HH_AteDish.stages.8.label>
+  <HH_AteDish.stages.8.description>Snědl jsem chudé jídlo z dobrého domácího vaření.</HH_AteDish.stages.8.description>
+  <HH_AteDish.stages.9.label>obyčejné dobré domácí vaření</HH_AteDish.stages.9.label>
+  <HH_AteDish.stages.9.description>Snědl jsem obyčejné jídlo z dobrého domácího vaření.</HH_AteDish.stages.9.description>
+  <HH_AteDish.stages.10.label>dobré dobré domácí vaření</HH_AteDish.stages.10.label>
+  <HH_AteDish.stages.10.description>Snědl jsem dobré jídlo z dobrého domácího vaření.</HH_AteDish.stages.10.description>
+  <HH_AteDish.stages.11.label>výborné dobré domácí vaření</HH_AteDish.stages.11.label>
+  <HH_AteDish.stages.11.description>Snědl jsem výborné jídlo z dobrého domácího vaření.</HH_AteDish.stages.11.description>
+  <HH_AteDish.stages.12.label>mistrovské dobré domácí vaření</HH_AteDish.stages.12.label>
+  <HH_AteDish.stages.12.description>Snědl jsem mistrovské jídlo z dobrého domácího vaření.</HH_AteDish.stages.12.description>
+  <HH_AteDish.stages.13.label>legendární dobré domácí vaření</HH_AteDish.stages.13.label>
+  <HH_AteDish.stages.13.description>Snědl jsem legendární jídlo z dobrého domácího vaření.</HH_AteDish.stages.13.description>
+  <HH_AteDish.stages.14.label>příšerná jemná kuchyně</HH_AteDish.stages.14.label>
+  <HH_AteDish.stages.14.description>Snědl jsem příšerné jídlo z jemné kuchyně.</HH_AteDish.stages.14.description>
+  <HH_AteDish.stages.15.label>chudá jemná kuchyně</HH_AteDish.stages.15.label>
+  <HH_AteDish.stages.15.description>Snědl jsem chudé jídlo z jemné kuchyně.</HH_AteDish.stages.15.description>
+  <HH_AteDish.stages.16.label>obyčejná jemná kuchyně</HH_AteDish.stages.16.label>
+  <HH_AteDish.stages.16.description>Snědl jsem obyčejné jídlo z jemné kuchyně.</HH_AteDish.stages.16.description>
+  <HH_AteDish.stages.17.label>dobrá jemná kuchyně</HH_AteDish.stages.17.label>
+  <HH_AteDish.stages.17.description>Snědl jsem dobré jídlo z jemné kuchyně.</HH_AteDish.stages.17.description>
+  <HH_AteDish.stages.18.label>výborná jemná kuchyně</HH_AteDish.stages.18.label>
+  <HH_AteDish.stages.18.description>Snědl jsem výborné jídlo z jemné kuchyně.</HH_AteDish.stages.18.description>
+  <HH_AteDish.stages.19.label>mistrovská jemná kuchyně</HH_AteDish.stages.19.label>
+  <HH_AteDish.stages.19.description>Snědl jsem mistrovské jídlo z jemné kuchyně.</HH_AteDish.stages.19.description>
+  <HH_AteDish.stages.20.label>legendární jemná kuchyně</HH_AteDish.stages.20.label>
+  <HH_AteDish.stages.20.description>Snědl jsem legendární jídlo z jemné kuchyně.</HH_AteDish.stages.20.description>
+  <HH_AteDish.stages.21.label>příšerná vrcholná gastronomie</HH_AteDish.stages.21.label>
+  <HH_AteDish.stages.21.description>Snědl jsem příšerné jídlo z vrcholné gastronomie.</HH_AteDish.stages.21.description>
+  <HH_AteDish.stages.22.label>chudá vrcholná gastronomie</HH_AteDish.stages.22.label>
+  <HH_AteDish.stages.22.description>Snědl jsem chudé jídlo z vrcholné gastronomie.</HH_AteDish.stages.22.description>
+  <HH_AteDish.stages.23.label>obyčejná vrcholná gastronomie</HH_AteDish.stages.23.label>
+  <HH_AteDish.stages.23.description>Snědl jsem obyčejné jídlo z vrcholné gastronomie.</HH_AteDish.stages.23.description>
+  <HH_AteDish.stages.24.label>dobrá vrcholná gastronomie</HH_AteDish.stages.24.label>
+  <HH_AteDish.stages.24.description>Snědl jsem dobré jídlo z vrcholné gastronomie.</HH_AteDish.stages.24.description>
+  <HH_AteDish.stages.25.label>výborná vrcholná gastronomie</HH_AteDish.stages.25.label>
+  <HH_AteDish.stages.25.description>Snědl jsem výborné jídlo z vrcholné gastronomie.</HH_AteDish.stages.25.description>
+  <HH_AteDish.stages.26.label>mistrovská vrcholná gastronomie</HH_AteDish.stages.26.label>
+  <HH_AteDish.stages.26.description>Snědl jsem mistrovské jídlo z vrcholné gastronomie.</HH_AteDish.stages.26.description>
+  <HH_AteDish.stages.27.label>legendární vrcholná gastronomie</HH_AteDish.stages.27.label>
+  <HH_AteDish.stages.27.description>Snědl jsem legendární jídlo z vrcholné gastronomie.</HH_AteDish.stages.27.description>
+</LanguageData>

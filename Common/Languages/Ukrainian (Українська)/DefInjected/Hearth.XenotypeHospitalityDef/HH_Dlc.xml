@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_XenoHosp_Baseliner.label>базовий</HH_XenoHosp_Baseliner.label>
+  <HH_XenoHosp_Baseliner.description>Звичайний люд: скромні смаки, ощадливість у грошах. Великі, ощадливі компанії.</HH_XenoHosp_Baseliner.description>
+  <HH_XenoHosp_Sanguophage.label>сангуофаг</HH_XenoHosp_Sanguophage.label>
+  <HH_XenoHosp_Sanguophage.description>Сангуофагам потрібні темні кімнати та міні-бар із гемогеном під рукою. Лаунж для денного сну вони оплатять.</HH_XenoHosp_Sanguophage.description>
+  <HH_XenoHosp_Hemogenic.label>гемогенний (будь-який ксенотип)</HH_XenoHosp_Hemogenic.label>
+  <HH_XenoHosp_Hemogenic.description>Будь-хто з гемогенним геном, зокрема користувацькі ксенотипи, поділяє смак сангуофагів до темних кімнат і гемогенових пакетів.</HH_XenoHosp_Hemogenic.description>
+  <HH_XenoHosp_UVSensitive.label>чутливий до УФ (будь-який ксенотип)</HH_XenoHosp_UVSensitive.label>
+  <HH_XenoHosp_UVSensitive.description>Сонце шкодить. Затишна кімната — темна та закрита.</HH_XenoHosp_UVSensitive.description>
+  <HH_XenoHosp_Dirtmole.label>землерийка</HH_XenoHosp_Dirtmole.label>
+  <HH_XenoHosp_Dirtmole.description>Землерийки вважають за краще темні кімнати без вікон і грибні страви. Вони пропонують оплатити екскурсію по шахті.</HH_XenoHosp_Dirtmole.description>
+  <HH_XenoHosp_Genie.label>геній</HH_XenoHosp_Genie.label>
+  <HH_XenoHosp_Genie.description>Генії очікують читального куточка й тихого столика. Вони орендують дослідницькі кімнати.</HH_XenoHosp_Genie.description>
+  <HH_XenoHosp_Hussar.label>гусар</HH_XenoHosp_Hussar.label>
+  <HH_XenoHosp_Hussar.description>Гусари щедро витрачаються в барі й люблять добру бійку, разом із сутичками, які з нею приходять.</HH_XenoHosp_Hussar.description>
+  <HH_XenoHosp_Neanderthal.label>неандерталець</HH_XenoHosp_Neanderthal.label>
+  <HH_XenoHosp_Neanderthal.description>Великі порції, прості кімнати. Оздоблення має менше значення.</HH_XenoHosp_Neanderthal.description>
+  <HH_XenoHosp_Pigskin.label>свинолюд</HH_XenoHosp_Pigskin.label>
+  <HH_XenoHosp_Pigskin.description>Свинолюди їдять майже все й не переймаються безладом у кімнаті.</HH_XenoHosp_Pigskin.description>
+  <HH_XenoHosp_Impid.label>імпід</HH_XenoHosp_Impid.label>
+  <HH_XenoHosp_Impid.description>Імпіди люблять теплі кімнати та гостру їжу. Вони виступають за частку виручки.</HH_XenoHosp_Impid.description>
+  <HH_XenoHosp_Waster.label>розтратник</HH_XenoHosp_Waster.label>
+  <HH_XenoHosp_Waster.description>Розтратники почуваються як удома в брудних кімнатах, багато витрачають і залишають після себе безлад.</HH_XenoHosp_Waster.description>
+  <HH_XenoHosp_Yttakin.label>іттакін</HH_XenoHosp_Yttakin.label>
+  <HH_XenoHosp_Yttakin.description>Іттакіни хочуть холодних кімнат; теплі роблять їх нещасними.</HH_XenoHosp_Yttakin.description>
+  <HH_XenoHosp_Highmate.label>хайміт</HH_XenoHosp_Highmate.label>
+  <HH_XenoHosp_Highmate.description>Хайміти люблять красу й товариство. Гарні спільні кімнати їм подобаються.</HH_XenoHosp_Highmate.description>
+</LanguageData>

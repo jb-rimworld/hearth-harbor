@@ -1,0 +1,8 @@
+{
+ "keyed": {},
+ "defs": {
+  "DesignationCategoryDef/HH_Bank.label": "банк",
+  "DesignationCategoryDef/HH_Bank.description": "Банкомати, каси та нічні сейфи банку, а також столи його страхового відділу.",
+  "ResearchTabDef/HH_Banking.label": "банківська справа"
+ }
+}

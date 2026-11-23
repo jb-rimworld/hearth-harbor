@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_XenoHosp_Baseliner.label>Baseliner</HH_XenoHosp_Baseliner.label>
+  <HH_XenoHosp_Baseliner.description>Einfaches Volk: nüchterner Geschmack, sparsam mit Geld. Große, genügsame Gruppen.</HH_XenoHosp_Baseliner.description>
+  <HH_XenoHosp_Sanguophage.label>Sanguophage</HH_XenoHosp_Sanguophage.label>
+  <HH_XenoHosp_Sanguophage.description>Sanguophagen wollen dunkle Zimmer und eine Hämogen-Minibar in Reichweite. Für eine Todesruhe-Lounge zahlen sie gern.</HH_XenoHosp_Sanguophage.description>
+  <HH_XenoHosp_Hemogenic.label>hämogen (jeder Xenotyp)</HH_XenoHosp_Hemogenic.label>
+  <HH_XenoHosp_Hemogenic.description>Jeder mit dem Hämogen-Gen, auch benutzerdefinierte Xenotypen, teilt den Geschmack der Sanguophagen für dunkle Zimmer und Hämogenpacks.</HH_XenoHosp_Hemogenic.description>
+  <HH_XenoHosp_UVSensitive.label>UV-empfindlich (jeder Xenotyp)</HH_XenoHosp_UVSensitive.label>
+  <HH_XenoHosp_UVSensitive.description>Sonnenlicht tut weh. Ein dunkles Zimmer im Inneren ist ein angenehmes Zimmer.</HH_XenoHosp_UVSensitive.description>
+  <HH_XenoHosp_Dirtmole.label>Erdmaulwurf</HH_XenoHosp_Dirtmole.label>
+  <HH_XenoHosp_Dirtmole.description>Erdmaulwürfe bevorzugen dunkle, fensterlose Zimmer und Pilzgerichte. Sie zahlen gern für eine Führung durch die Mine.</HH_XenoHosp_Dirtmole.description>
+  <HH_XenoHosp_Genie.label>Genie</HH_XenoHosp_Genie.label>
+  <HH_XenoHosp_Genie.description>Genies erwarten eine Leseecke und einen ruhigen Tisch. Sie mieten Forschungsräume.</HH_XenoHosp_Genie.description>
+  <HH_XenoHosp_Hussar.label>Husar</HH_XenoHosp_Hussar.label>
+  <HH_XenoHosp_Hussar.description>Husaren geben an der Bar großzügig aus und lieben eine ordentliche Schlägerei samt den Streitigkeiten, die dazugehören.</HH_XenoHosp_Hussar.description>
+  <HH_XenoHosp_Neanderthal.label>Neandertaler</HH_XenoHosp_Neanderthal.label>
+  <HH_XenoHosp_Neanderthal.description>Große Portionen, einfache Zimmer. Die Einrichtung zählt weniger.</HH_XenoHosp_Neanderthal.description>
+  <HH_XenoHosp_Pigskin.label>Schweinshaut</HH_XenoHosp_Pigskin.label>
+  <HH_XenoHosp_Pigskin.description>Schweinshäute essen fast alles und stören sich nicht an einem unordentlichen Zimmer.</HH_XenoHosp_Pigskin.description>
+  <HH_XenoHosp_Impid.label>Impide</HH_XenoHosp_Impid.label>
+  <HH_XenoHosp_Impid.description>Impiden mögen warme Zimmer und scharfes Essen. Sie treten gegen einen Anteil an den Einnahmen auf.</HH_XenoHosp_Impid.description>
+  <HH_XenoHosp_Waster.label>Ödländer</HH_XenoHosp_Waster.label>
+  <HH_XenoHosp_Waster.description>Ödländer fühlen sich in schmutzigen Zimmern zu Hause, geben viel aus und hinterlassen Chaos.</HH_XenoHosp_Waster.description>
+  <HH_XenoHosp_Yttakin.label>Yttakin</HH_XenoHosp_Yttakin.label>
+  <HH_XenoHosp_Yttakin.description>Yttakin wollen kalte Zimmer; in warmen werden sie unglücklich.</HH_XenoHosp_Yttakin.description>
+  <HH_XenoHosp_Highmate.label>Hochgemahl</HH_XenoHosp_Highmate.label>
+  <HH_XenoHosp_Highmate.description>Hochgemahle lieben Schönheit und Gesellschaft. Hübsche Gemeinschaftsräume gefallen ihnen.</HH_XenoHosp_Highmate.description>
+</LanguageData>

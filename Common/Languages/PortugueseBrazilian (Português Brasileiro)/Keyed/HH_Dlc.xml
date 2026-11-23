@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Dlc.Bought>{0} comprou {1} por {2} de prata.</HH.Dlc.Bought>
+  <HH.Dlc.Gizmo.Buy>Indulgências</HH.Dlc.Gizmo.Buy>
+  <HH.Dlc.Gizmo.BuyDesc>Compre absolvição, misericórdia ou posto para um colono. Os preços seguem a postura da ideologia dele. A prata sai do estoque da colônia ou do bolso do colono.</HH.Dlc.Gizmo.BuyDesc>
+  <HH.Dlc.Gizmo.ChooseFaith>Escolher fé</HH.Dlc.Gizmo.ChooseFaith>
+  <HH.Dlc.Gizmo.ChooseFaithDesc>Dedique este altar a uma ideologia. Seus seguidores entre os hóspedes virão aqui para rezar.</HH.Dlc.Gizmo.ChooseFaithDesc>
+  <HH.Dlc.Gizmo.FundDesc>Para onde vão os pagamentos dos seus colonos. A divindade os guarda para sempre; uma facção da mesma fé se aproxima de você (+1 de boa vontade a cada 500 de prata, no máximo +5 por quadrum).</HH.Dlc.Gizmo.FundDesc>
+  <HH.Dlc.Gizmo.ToDeity>Oferendas: à divindade</HH.Dlc.Gizmo.ToDeity>
+  <HH.Dlc.Gizmo.ToFaction>Oferendas: à facção da fé</HH.Dlc.Gizmo.ToFaction>
+  <HH.Dlc.NoBuyers>nenhum colono com ideologia</HH.Dlc.NoBuyers>
+  <HH.Dlc.NoFaith>Nenhuma fé escolhida ainda.</HH.Dlc.NoFaith>
+  <HH.Dlc.Noble.AcceptOrders>Obedecer à ordem</HH.Dlc.Noble.AcceptOrders>
+  <HH.Dlc.Noble.Arrived>Um {0} e sua comitiva chegam por {1} dias.</HH.Dlc.Noble.Arrived>
+  <HH.Dlc.Noble.BilletText>O Império ordena que você hospede um {0} e {1} séquitos por {2} dias. Eles esperam um quarto de dormir à altura do seu posto ({3}). Você receberá cerca de {4} de prata para despesas. Recusar custa boa vontade e honra.</HH.Dlc.Noble.BilletText>
+  <HH.Dlc.Noble.Left>A comitiva nobre parte. Pagamento: {0} de prata.</HH.Dlc.Noble.Left>
+  <HH.Dlc.Noble.OfferText>Um {0} com {1} séquitos pede para ficar por {2} dias e pagará cerca de {3} de prata se estiver confortável. Eles esperam: {4}. Recusar não custa nada.</HH.Dlc.Noble.OfferText>
+  <HH.Dlc.Noble.Refuse>Recusar (boa vontade e honra sofrem)</HH.Dlc.Noble.Refuse>
+  <HH.Dlc.NothingOffered>a fé deles não oferece nada à venda</HH.Dlc.NothingOffered>
+  <HH.Dlc.Reason.Abhorrent>a fé deles abomina isso</HH.Dlc.Reason.Abhorrent>
+  <HH.Dlc.Reason.CannotPay>não pode pagar {0}</HH.Dlc.Reason.CannotPay>
+  <HH.Dlc.Reason.CapColony>a colônia já comprou isto neste quadrum</HH.Dlc.Reason.CapColony>
+  <HH.Dlc.Reason.CapIdeo>a ideologia já teve o bastante disto neste quadrum</HH.Dlc.Reason.CapIdeo>
+  <HH.Dlc.Reason.CapPawnQ>limite atingido neste quadrum</HH.Dlc.Reason.CapPawnQ>
+  <HH.Dlc.Reason.CapPawnY>limite atingido neste ano</HH.Dlc.Reason.CapPawnY>
+  <HH.Dlc.Reason.CertainEnough>a certeza já está no máximo</HH.Dlc.Reason.CertainEnough>
+  <HH.Dlc.Reason.NeedRank>precisa do posto {0}</HH.Dlc.Reason.NeedRank>
+  <HH.Dlc.Reason.NeedRoyalty>precisa de Realeza</HH.Dlc.Reason.NeedRoyalty>
+  <HH.Dlc.Reason.NoFresh>nenhuma ferida recente de até 10 pontos de vida</HH.Dlc.Reason.NoFresh>
+  <HH.Dlc.Reason.NoGuilt>nenhuma lembrança de um mandamento quebrado</HH.Dlc.Reason.NoGuilt>
+  <HH.Dlc.Reason.NoIdeo>nenhuma ideologia</HH.Dlc.Reason.NoIdeo>
+  <HH.Dlc.Reason.NoScar>nenhuma cicatriz duradoura</HH.Dlc.Reason.NoScar>
+  <HH.Dlc.Reason.NotAThing>a fé deles não tem nada assim</HH.Dlc.Reason.NotAThing>
+  <HH.Dlc.Reason.NotFluid>só ideologias fluidas podem reformar</HH.Dlc.Reason.NotFluid>
+  <HH.Dlc.Reason.NotPsychic>não pode formar um elo psíquico</HH.Dlc.Reason.NotPsychic>
+  <HH.Dlc.Reason.PsylinkMax>o elo psíquico já está no limite</HH.Dlc.Reason.PsylinkMax>
+  <HH.Dlc.Reason.RankHeld>já possui este posto ou um superior</HH.Dlc.Reason.RankHeld>
+  <HH.Dlc.Reason.RankOrder>precisa do posto anterior primeiro</HH.Dlc.Reason.RankOrder>
+  <HH.Dlc.Reason.ReformReady>a reforma já é possível</HH.Dlc.Reason.ReformReady>
+  <HH.Dlc.ShrineQuality>Fé: {0}. Qualidade da capela: {1}.</HH.Dlc.ShrineQuality>
+  <HH.Dlc.TempleFund>Fundo do templo: {0} de prata</HH.Dlc.TempleFund>
+  <HH.Setting.dlc.traitSpawn>Novos traços aparecem em pessoas geradas</HH.Setting.dlc.traitSpawn>
+  <HH.Setting.dlc.traitSpawn.Desc>Sortudo, Azarado, Anfitrião nato e os outros traços de Hearth &amp; Harbor podem surgir em novos personagens gerados. Personagens existentes mantêm os seus. Desligado: só são adicionados manualmente ou pelo editor.</HH.Setting.dlc.traitSpawn.Desc>
+  <HH.Setting.dlc.traitRarity>Frequência dos traços</HH.Setting.dlc.traitRarity>
+  <HH.Setting.dlc.traitRarity.Desc>Multiplicador da frequência com que nossos traços são sorteados para novos personagens (1 = mesma raridade da maioria dos traços vanilla).</HH.Setting.dlc.traitRarity.Desc>
+</LanguageData>

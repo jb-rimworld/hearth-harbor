@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Bank.Building.Account>{0}: 残高 {1}</HH.Bank.Building.Account>
+  <HH.Bank.Building.DirectDeposit>直接入金</HH.Bank.Building.DirectDeposit>
+  <HH.Bank.Building.DirectDepositDesc>オン: 事業の売上は毎晩0時に銀行口座へ振り込まれます。オフ: 売上は金庫のそばに銀貨として置かれます。</HH.Bank.Building.DirectDepositDesc>
+  <HH.Bank.Building.NoAccount>まだ口座がありません。ここか通信コンソールで開設できます。</HH.Bank.Building.NoAccount>
+  <HH.Bank.Building.SafeDirect>売上は毎晩0時に直接口座へ入ります。</HH.Bank.Building.SafeDirect>
+  <HH.Bank.Building.SafeFloor>売上は毎晩0時に銀貨として置かれます。</HH.Bank.Building.SafeFloor>
+  <HH.Bank.Building.SafeNoAccount>銀行口座がありません: 売上は毎晩0時に銀貨として置かれます。</HH.Bank.Building.SafeNoAccount>
+  <HH.Bank.Building.UseAtm>ATMを使う</HH.Bank.Building.UseAtm>
+  <HH.Bank.Building.UseBranch>窓口に行く</HH.Bank.Building.UseBranch>
+  <HH.Bank.Chart.DayN>{0}日目</HH.Bank.Chart.DayN>
+  <HH.Bank.Chart.Tip>{0}日目: {1} 銀</HH.Bank.Chart.Tip>
+  <HH.Bank.Chart.Today>今日</HH.Bank.Chart.Today>
+  <HH.Bank.Choose.Current>現在の銀行</HH.Bank.Choose.Current>
+  <HH.Bank.Choose.Intro>口座の移転には {0} 銀かかり、口座から引き落とされます。融資は、融資を行った銀行に残ります。</HH.Bank.Choose.Intro>
+  <HH.Bank.Choose.Switch>切り替える ({0})</HH.Bank.Choose.Switch>
+  <HH.Bank.Choose.Title>銀行の変更</HH.Bank.Choose.Title>
+  <HH.Bank.Comm.Call>Silverlineに電話する</HH.Bank.Comm.Call>
+  <HH.Bank.Comm.Info>銀行業務、融資、そして時折の辛辣な一言。</HH.Bank.Comm.Info>
+  <HH.Bank.Greet.Afternoon>こんにちは</HH.Bank.Greet.Afternoon>
+  <HH.Bank.Greet.Evening>こんばんは</HH.Bank.Greet.Evening>
+  <HH.Bank.Greet.Morning>おはようございます</HH.Bank.Greet.Morning>
+  <HH.Bank.Greet.Night>おやすみなさい</HH.Bank.Greet.Night>
+  <HH.Bank.Header.Tier>資産階層: {0}</HH.Bank.Header.Tier>
+  <HH.Bank.Header.TierTip>純資産 = 口座 + 自宅の銀 − 借金: {0} 銀。階層は新しい値が丸1日維持された後にのみ変わります。この銀行による入植地の気分を左右します（設定: bank.moodOn）。</HH.Bank.Header.TierTip>
+  <HH.Bank.Hist.Amount>金額（小数点以下5桁）</HH.Bank.Hist.Amount>
+  <HH.Bank.Hist.Empty>取引はまだありません。</HH.Bank.Hist.Empty>
+  <HH.Bank.Hist.TotalFees>これまでに支払った手数料</HH.Bank.Hist.TotalFees>
+  <HH.Bank.Hist.TotalFeesTip>すべての手数料、延滞料、銀行変更の費用を含みます。</HH.Bank.Hist.TotalFeesTip>
+  <HH.Bank.Hist.TotalInterest>これまでに得た利息</HH.Bank.Hist.TotalInterest>
+  <HH.Bank.Hist.TotalInterestTip>銀行があなたに支払ったすべての利息（マイナス金利は差し引かれます）。</HH.Bank.Hist.TotalInterestTip>
+  <HH.Bank.Hist.What>内容</HH.Bank.Hist.What>
+  <HH.Bank.Hist.When>日時</HH.Bank.Hist.When>
+  <HH.Bank.Letter.Bailout>{0}は、あなたが実のところ「潰すには大きすぎる」と判断し、無利子の融資 {1} 銀で救済いたしました。期間は60日です。これは贈与ではなく融資です。この部分を最後まで読んだ方は、これまでおられません。</HH.Bank.Letter.Bailout>
+  <HH.Bank.Letter.BailoutTitle>救済措置</HH.Bank.Letter.BailoutTitle>
+  <HH.Bank.Letter.Late>お客様
+
+融資 {0} の返済が数日遅れております。延滞料が加算され、信用スコアにも小さく、避けられない傷がつきました。お支払い額は {1} 銀です。
+
+これらの書状の文面は、今後変わってまいります。
+
+窓口担当 Ottoline</HH.Bank.Letter.Late>
+  <HH.Bank.Letter.LateTitle>支払い期限超過</HH.Bank.Letter.LateTitle>
+  <HH.Bank.Letter.Offset>融資 {0} の完済まで、口座に入るすべての入金の半分が借金に充当され、新規の融資はご利用いただけません。契約書の中で、誰も署名したことを覚えていない部分です。</HH.Bank.Letter.Offset>
+  <HH.Bank.Letter.OffsetTitle>入金からの相殺</HH.Bank.Letter.OffsetTitle>
+  <HH.Bank.Letter.Reminder>お客様
+
+融資 {1} に対する {0} 銀の分割払いが、まだ当行に届いていないことを確認いたしました。何かの手違いと確信しておりますし、当行はこれまでどおり、変わらずお客様にご奉仕いたします。
+
+敬具
+窓口担当 Ottoline、{2}</HH.Bank.Letter.Reminder>
+  <HH.Bank.Letter.ReminderTitle>ご入金のご案内</HH.Bank.Letter.ReminderTitle>
+  <HH.Bank.Letter.Seized>{0}の行員より、お客様の残高のうち {1} 銀が「事務上の理由により再配分」されたことをお知らせいたします。異議申し立ての用紙はございません。ただし、とても良いペンはございます。</HH.Bank.Letter.Seized>
+  <HH.Bank.Letter.SeizedTitle>帳簿監査</HH.Bank.Letter.SeizedTitle>
+  <HH.Bank.Letter.Visit>Rim Recovery Partnersの担当者2名が到着しました。山高帽をかぶっています。武器も予約もありません。融資 {0} が支払われるまで、ドアの近くで極めて穏やかに立っています。決して襲いかかることはありません。お金が支払われた瞬間に帰ります。</HH.Bank.Letter.Visit>
+  <HH.Bank.Letter.VisitTitle>穏やかな訪問</HH.Bank.Letter.VisitTitle>
+  <HH.Bank.Loans.Available>利用可能額</HH.Bank.Loans.Available>
+  <HH.Bank.Loans.BailoutTag>（救済、無利子）</HH.Bank.Loans.BailoutTag>
+  <HH.Bank.Loans.Credit>あなたの信用</HH.Bank.Loans.Credit>
+  <HH.Bank.Loans.DaysShort> 日</HH.Bank.Loans.DaysShort>
+  <HH.Bank.Loans.Limit>与信限度額</HH.Bank.Loans.Limit>
+  <HH.Bank.Loans.LimitTip>0.15 × 資産 × (スコア − 300) / 550。資産 = 純資産 + 入植地の資産の4分の1。良好なスコアの場合、少なくとも初期与信（{0} 銀）が保証されます。</HH.Bank.Loans.LimitTip>
+  <HH.Bank.Loans.Line>融資 {0}: 借入 {1}、残債 {2}</HH.Bank.Loans.Line>
+  <HH.Bank.Loans.Mine>あなたの融資</HH.Bank.Loans.Mine>
+  <HH.Bank.Loans.New>新規融資</HH.Bank.Loans.New>
+  <HH.Bank.Loans.NextDue>次回の分割払い {0}、あと {1}</HH.Bank.Loans.NextDue>
+  <HH.Bank.Loans.None>融資はありません。Ottolineは少しがっかりしています。</HH.Bank.Loans.None>
+  <HH.Bank.Loans.Overdue>延滞、段階 {0}: {1} が未払い</HH.Bank.Loans.Overdue>
+  <HH.Bank.Loans.Quote>{0} 銀、年利 {1} %: {3} 日ごとに {2}、総額 {4}（利息 {5}）。</HH.Bank.Loans.Quote>
+  <HH.Bank.Loans.Rate>ゲーム年あたりの金利</HH.Bank.Loans.Rate>
+  <HH.Bank.Loans.RateTip>基準金利 max(2 %, M − 1) = {0} % に、あなたの銀行の上乗せ分（{1} ポイント）が加わります。収益性スライダーに連動するため、投資のための借入がプラスの期待値を持つことはありません。</HH.Bank.Loans.RateTip>
+  <HH.Bank.Loans.Repay100>{0} を返済</HH.Bank.Loans.Repay100>
+  <HH.Bank.Loans.RepayAll>すべて返済</HH.Bank.Loans.RepayAll>
+  <HH.Bank.Loans.Score>帳簿スコア</HH.Bank.Loans.Score>
+  <HH.Bank.Loans.ScoreTip>300〜850、600から開始。期日どおりの分割払い +4、遅延1日ごとに −6、債務不履行 −120、限度額の70 %超の利用 −20、さらに 20 × log10(資産 / 10,000)。基本スコア {0}。</HH.Bank.Loans.ScoreTip>
+  <HH.Bank.Loans.Take>融資を受ける</HH.Bank.Loans.Take>
+  <HH.Bank.Loans.Term>期間</HH.Bank.Loans.Term>
+  <HH.Bank.Loans.Used>利用中</HH.Bank.Loans.Used>
+  <HH.Bank.Lobby.Accounts>口座</HH.Bank.Lobby.Accounts>
+  <HH.Bank.Lobby.Amount>金額</HH.Bank.Lobby.Amount>
+  <HH.Bank.Lobby.Balance>残高</HH.Bank.Lobby.Balance>
+  <HH.Bank.Lobby.BalanceTip>正確な額: {0} 銀。毎日の利息: 残高 × (M^({1} × {2} / 60) − 1)、M = ゲーム年あたり {3}（収益性スライダー）。1日あたり {4:0.##} % です。</HH.Bank.Lobby.BalanceTip>
+  <HH.Bank.Lobby.Cash>自宅の現金</HH.Bank.Lobby.Cash>
+  <HH.Bank.Lobby.CashTip>自宅のマップに置かれている銀。</HH.Bank.Lobby.CashTip>
+  <HH.Bank.Lobby.ChangeBank>銀行を変更</HH.Bank.Lobby.ChangeBank>
+  <HH.Bank.Lobby.Chart>過去30日</HH.Bank.Lobby.Chart>
+  <HH.Bank.Lobby.Debt>借金</HH.Bank.Lobby.Debt>
+  <HH.Bank.Lobby.DebtTip>発生済み利息を含む、未返済の融資の合計。</HH.Bank.Lobby.DebtTip>
+  <HH.Bank.Lobby.DepDelay>{0} 後に入金</HH.Bank.Lobby.DepDelay>
+  <HH.Bank.Lobby.DepInstant>即時計上</HH.Bank.Lobby.DepInstant>
+  <HH.Bank.Lobby.Deposit>入金</HH.Bank.Lobby.Deposit>
+  <HH.Bank.Lobby.Direct>直接入金</HH.Bank.Lobby.Direct>
+  <HH.Bank.Lobby.DirectTip>事業の売上は毎晩0時に、{0} %を差し引いて口座へ入ります。</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.Interest>今季の利息</HH.Bank.Lobby.Interest>
+  <HH.Bank.Lobby.InterestTip>今季（15日間）の開始以降に口座の残高へ支払われた利息。</HH.Bank.Lobby.InterestTip>
+  <HH.Bank.Lobby.Max>最大</HH.Bank.Lobby.Max>
+  <HH.Bank.Lobby.Net>純資産</HH.Bank.Lobby.Net>
+  <HH.Bank.Lobby.NetTip>口座 + 自宅の銀 − 借金。資産階層を決めます。</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.Nothing>まだ何もありません。入金から始めるのがよいでしょう。</HH.Bank.Lobby.Nothing>
+  <HH.Bank.Lobby.PendingDep>↓ {0} が {1} 後に到着</HH.Bank.Lobby.PendingDep>
+  <HH.Bank.Lobby.PendingWd>↑ {0} がポッドで {1} 後に</HH.Bank.Lobby.PendingWd>
+  <HH.Bank.Lobby.Recent>最近の動き</HH.Bank.Lobby.Recent>
+  <HH.Bank.Lobby.Trade>取引の銀を自動入金</HH.Bank.Lobby.Trade>
+  <HH.Bank.Lobby.TradeTip>商人や交易船から受け取った銀は、取引の直後に直接入金と同じ手数料で口座に入ります。床の上に硬貨として置かれることはありません。直接入金が必要です。初期設定はオフなので、次の商人にも現金で払えます。キャラバンには影響しません。</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.Transfer>入金と出金</HH.Bank.Lobby.Transfer>
+  <HH.Bank.Lobby.TransferInfo>保管中: {0}。入金 {1}。出金手数料 {2}、{3}。</HH.Bank.Lobby.TransferInfo>
+  <HH.Bank.Lobby.Transit>輸送中</HH.Bank.Lobby.Transit>
+  <HH.Bank.Lobby.TransitTip>保管から離れたがまだ入金されていない銀（支店もATMもない場合の入金遅延）。</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.WdInstant>建物で即時に現金</HH.Bank.Lobby.WdInstant>
+  <HH.Bank.Lobby.WdPod>ドロップポッドで {0}、{1} 時間</HH.Bank.Lobby.WdPod>
+  <HH.Bank.Lobby.Withdraw>出金</HH.Bank.Lobby.Withdraw>
+  <HH.Bank.Lobby.WithdrawPod>出金（ポッド）</HH.Bank.Lobby.WithdrawPod>
+  <HH.Bank.Memo.AccountFee>口座手数料</HH.Bank.Memo.AccountFee>
+  <HH.Bank.Memo.Bailout>救済融資</HH.Bank.Memo.Bailout>
+  <HH.Bank.Memo.Deposit>入金（銀）</HH.Bank.Memo.Deposit>
+  <HH.Bank.Memo.DepositTransit>輸送中の入金</HH.Bank.Memo.DepositTransit>
+  <HH.Bank.Memo.Installment>融資 {0}: 分割払い</HH.Bank.Memo.Installment>
+  <HH.Bank.Memo.Interest>利息</HH.Bank.Memo.Interest>
+  <HH.Bank.Memo.Late>融資 {0}: 遅延支払い</HH.Bank.Memo.Late>
+  <HH.Bank.Memo.LateFee>融資 {0}: 延滞料</HH.Bank.Memo.LateFee>
+  <HH.Bank.Memo.Loan>融資 {0}</HH.Bank.Memo.Loan>
+  <HH.Bank.Memo.LoanInterest>融資 {0}: 利息</HH.Bank.Memo.LoanInterest>
+  <HH.Bank.Memo.NegInterest>マイナス金利</HH.Bank.Memo.NegInterest>
+  <HH.Bank.Memo.Offset>回収の相殺</HH.Bank.Memo.Offset>
+  <HH.Bank.Memo.Repay>融資 {0}: 返済</HH.Bank.Memo.Repay>
+  <HH.Bank.Memo.Seized>差し押さえ</HH.Bank.Memo.Seized>
+  <HH.Bank.Memo.Seizure>差し押さえ収入（融資 {0}）</HH.Bank.Memo.Seizure>
+  <HH.Bank.Memo.SeizurePay>融資 {0}: 差し押さえで支払い</HH.Bank.Memo.SeizurePay>
+  <HH.Bank.Memo.Trade>取引収入</HH.Bank.Memo.Trade>
+  <HH.Bank.Memo.Withdraw>出金（現金）</HH.Bank.Memo.Withdraw>
+  <HH.Bank.Memo.WithdrawCash>出金（現金）</HH.Bank.Memo.WithdrawCash>
+  <HH.Bank.Memo.WithdrawFee>手数料: 出金</HH.Bank.Memo.WithdrawFee>
+  <HH.Bank.Memo.WithdrawPod>ドロップポッドによる出金</HH.Bank.Memo.WithdrawPod>
+  <HH.Bank.Msg.DepositArrived>{0} 銀が口座に入金されました。</HH.Bank.Msg.DepositArrived>
+  <HH.Bank.Msg.LoanRepaid>融資 {0} の返済が完了しました。</HH.Bank.Msg.LoanRepaid>
+  <HH.Bank.Msg.Missed>融資 {0} の分割払いを支払えませんでした。</HH.Bank.Msg.Missed>
+  <HH.Bank.Msg.Opened>{0} に口座を開設しました。</HH.Bank.Msg.Opened>
+  <HH.Bank.Msg.PodsComing>{0} 銀がドロップポッドで降下中です。</HH.Bank.Msg.PodsComing>
+  <HH.Bank.Msg.Settled>融資 {0} は正常な状態に戻りました。</HH.Bank.Msg.Settled>
+  <HH.Bank.Msg.Switched>口座が {0} に移りました。</HH.Bank.Msg.Switched>
+  <HH.Bank.Msg.TradeDeposit>取引収入 {0} 銀が、{1} の口座へ直接入金されました。</HH.Bank.Msg.TradeDeposit>
+  <HH.Bank.Open.Button>口座を開設</HH.Bank.Open.Button>
+  <HH.Bank.Open.Direct>売上を毎晩0時に直接銀行へ入金する</HH.Bank.Open.Direct>
+  <HH.Bank.Open.DirectTip>店舗、宿屋、カジノの売上は、銀貨のまま散らばらず口座に入ります。後から夜間金庫や設定（bank.directDeposit）で切り替えられます。</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.Intro>銀行をお選びください。口座の開設は無料ですが、後で移転するには {0} 銀かかります。口座を持つまでは、ここでの手続きでお煩わせすることはありません。督促状も、気分の低下も、手数料もありません。</HH.Bank.Open.Intro>
+  <HH.Bank.Open.Sub>あなたの銀、当行の責任。</HH.Bank.Open.Sub>
+  <HH.Bank.Open.Title>Silverline: 口座開設</HH.Bank.Open.Title>
+  <HH.Bank.Quip.A>あなたの銀は安全です*。*適用条件あり。</HH.Bank.Quip.A>
+  <HH.Bank.Quip.B>番号札をお取りください。第三の崩壊以来、番号は使っておりませんが、この心遣いが大事なのです。</HH.Bank.Quip.B>
+  <HH.Bank.Quip.C>ここのすべての硬貨は記帳されております。ほとんど私が。夜に。</HH.Bank.Quip.C>
+  <HH.Bank.Quip.Collectors>帽子の同僚は、あなたのためにここにいるわけではありません。見ないでください。彼らは分かっていますから。</HH.Bank.Quip.Collectors>
+  <HH.Bank.Quip.D>マットレスは金融商品ではありません。もっとも、熱心な支持者がいるとは聞いております。</HH.Bank.Quip.D>
+  <HH.Bank.Quip.Debt>借金とは、未来からの貯金にすぎません。未来は、それをとても早く返してほしがっています。</HH.Bank.Quip.Debt>
+  <HH.Bank.Quip.E>誰かに聞かれても、このペンは売り物ではありません。</HH.Bank.Quip.E>
+  <HH.Bank.Quip.Empty>空っぽの口座とは、ただとても正直な口座のことです。</HH.Bank.Quip.Empty>
+  <HH.Bank.Quip.Huge>この規模になりますと、もはや当行はあなたの銀行ではありません。あなたの気候です。</HH.Bank.Quip.Huge>
+  <HH.Bank.Quip.Interest>今季の利息: {0}。私の計算が正しければ、食事数回分です。おめでとうございます？</HH.Bank.Quip.Interest>
+  <HH.Bank.Quip.Overdue>驚かせるつもりはございません。ただ、あなたがお気づきでないことに当方が気づいた、というだけです。</HH.Bank.Quip.Overdue>
+  <HH.Bank.Quip.Rich>四桁ですね。お帽子が、ほぼシルクハットです。</HH.Bank.Quip.Rich>
+  <HH.Bank.Raid.Bounty>{0} は融資 {1} の債権を、手紙を送らない方々へ売却しました。入植地の指導者の首に賞金がかけられています。</HH.Bank.Raid.Bounty>
+  <HH.Bank.Raid.BountyTitle>懸賞金</HH.Bank.Raid.BountyTitle>
+  <HH.Bank.Raid.Text>Rim Recovery Partnersは、融資 {0} に対する忍耐を使い果たしました。彼らの代理人は、借金より高価な財産を取りに来ています。持ち運べるだけ持って、去っていきます。</HH.Bank.Raid.Text>
+  <HH.Bank.Raid.Title>取り立て襲撃</HH.Bank.Raid.Title>
+  <HH.Bank.Reason.Amount>先に金額を選んでください。</HH.Bank.Reason.Amount>
+  <HH.Bank.Reason.Arrears>支払いが滞っています。解決するまで、誰もあなたに貸しません。</HH.Bank.Reason.Arrears>
+  <HH.Bank.Reason.AtmLimit>ATMは本日あと {0} しか出せません。</HH.Bank.Reason.AtmLimit>
+  <HH.Bank.Reason.BankUnavailable>その銀行はあなたにはご利用いただけません。</HH.Bank.Reason.BankUnavailable>
+  <HH.Bank.Reason.Funds>口座では {0} と手数料 {1} を賄えません。</HH.Bank.Reason.Funds>
+  <HH.Bank.Reason.Funds2>口座には {0} がありません。</HH.Bank.Reason.Funds2>
+  <HH.Bank.Reason.LoansResearch>融資には研究プロジェクト「消費者信用」が必要です。</HH.Bank.Reason.LoansResearch>
+  <HH.Bank.Reason.MinLoan>最小の融資額は {0} 銀です。</HH.Bank.Reason.MinLoan>
+  <HH.Bank.Reason.NoAccount>まだ口座がありません。</HH.Bank.Reason.NoAccount>
+  <HH.Bank.Reason.NoCredit>与信限度額を使い切りました（残り {0} 銀）。</HH.Bank.Reason.NoCredit>
+  <HH.Bank.Reason.NoSilver>保管庫または交易ビーコンに十分な銀がありません（利用可能 {0}）。</HH.Bank.Reason.NoSilver>
+  <HH.Bank.Reason.OverLimit>借りられる残りの {0} 銀を超えています。</HH.Bank.Reason.OverLimit>
+  <HH.Bank.Reason.SameBank>すでにこの銀行をご利用です。</HH.Bank.Reason.SameBank>
+  <HH.Bank.Reason.SwitchFunds>口座の移転には {0} 銀かかりますが、口座にはその額がありません。</HH.Bank.Reason.SwitchFunds>
+  <HH.Bank.Reason.Title>{0} は王室の称号を持つ方にしか貸しません。</HH.Bank.Reason.Title>
+  <HH.Bank.Seizure.Allow>財産を持っていかせる</HH.Bank.Seizure.Allow>
+  <HH.Bank.Seizure.Done>回収チームは {0} 銀相当の持ち物（{1}）を積み込み、口笛を吹きながら去りました。借金は {2}。</HH.Bank.Seizure.Done>
+  <HH.Bank.Seizure.DoneTitle>差し押さえ完了</HH.Bank.Seizure.DoneTitle>
+  <HH.Bank.Seizure.Partly>一部のみ返済</HH.Bank.Seizure.Partly>
+  <HH.Bank.Seizure.Refuse>拒否する</HH.Bank.Seizure.Refuse>
+  <HH.Bank.Seizure.Refused>回収チームは、丁寧な態度をやめました。</HH.Bank.Seizure.Refused>
+  <HH.Bank.Seizure.RefusedTitle>彼らは帰りません</HH.Bank.Seizure.RefusedTitle>
+  <HH.Bank.Seizure.Settled>完済</HH.Bank.Seizure.Settled>
+  <HH.Bank.Seizure.Text>Rim Recovery Partnersの差し押さえチームが、ラミネート加工のナプキンに見える裁判所命令を持って玄関に来ています。融資 {1} の120 %にあたる、約 {0} 銀相当の財産を求めています。渡せば融資は消えます。拒めば、力ずくで持っていきます。</HH.Bank.Seizure.Text>
+  <HH.Bank.Seizure.Title>差し押さえ通知</HH.Bank.Seizure.Title>
+  <HH.Bank.Tab.History>履歴</HH.Bank.Tab.History>
+  <HH.Bank.Tab.Loans>融資</HH.Bank.Tab.Loans>
+  <HH.Bank.Tab.Lobby>ロビー</HH.Bank.Tab.Lobby>
+  <HH.Bank.Tab.Terms>約款</HH.Bank.Tab.Terms>
+  <HH.Bank.Terms.AccFee>クアドラムごとの口座手数料</HH.Bank.Terms.AccFee>
+  <HH.Bank.Terms.AccountDaily>あなたの口座の日利</HH.Bank.Terms.AccountDaily>
+  <HH.Bank.Terms.AccountDailyTip>年間の口座倍率 = M^({0} × {1}) = {2}。</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.Anchors>難易度別</HH.Bank.Terms.Anchors>
+  <HH.Bank.Terms.AnchorsHead>年間M / 最高の取り立て段階</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.Atm>ATM</HH.Bank.Terms.Atm>
+  <HH.Bank.Terms.Auto>自動</HH.Bank.Terms.Auto>
+  <HH.Bank.Terms.AutoTip>難易度スライダーに従う（現在の難易度では {0}）。</HH.Bank.Terms.AutoTip>
+  <HH.Bank.Terms.Daily>日利（指数）</HH.Bank.Terms.Daily>
+  <HH.Bank.Terms.DailyTip>M^(1/60) − 1。ゲームの1年は60日。</HH.Bank.Terms.DailyTip>
+  <HH.Bank.Terms.Dep>預金</HH.Bank.Terms.Dep>
+  <HH.Bank.Terms.Direct>直接入金</HH.Bank.Terms.Direct>
+  <HH.Bank.Terms.Fees>銀行の手数料</HH.Bank.Terms.Fees>
+  <HH.Bank.Terms.FeesNote>すべての手数料は「銀行手数料レベル」設定（{0} %）に比例する。</HH.Bank.Terms.FeesNote>
+  <HH.Bank.Terms.Preview>指数で1,000銀貨を置くと、ゲーム1年後には {0}、10年後には {1} になる。</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Profit>収益性</HH.Bank.Terms.Profit>
+  <HH.Bank.Terms.ProfitIntro>投資した金が1ゲーム年（60日）で平均してどれだけ増えるか。1.0は増減なし、1.2は年+20 %。ローンの金利もここで決まる。これはこのセーブデータの設定。</HH.Bank.Terms.ProfitIntro>
+  <HH.Bank.Terms.StageNote>取り立ての段階：1 督促、2 延滞料、3 預金との相殺、4 友好的な訪問、5 差し押さえチーム、6 取り立て急襲、7 懸賞金。現在：段階 {0} で止まる。</HH.Bank.Terms.StageNote>
+  <HH.Bank.Terms.Switch>銀行の変更</HH.Bank.Terms.Switch>
+  <HH.Bank.Terms.Wd>引き出し（ポッド / 窓口）</HH.Bank.Terms.Wd>
+  <HH.Bank.Tier.0>借金まみれ</HH.Bank.Tier.0>
+  <HH.Bank.Tier.1>一文無し</HH.Bank.Tier.1>
+  <HH.Bank.Tier.2>その日暮らし</HH.Bank.Tier.2>
+  <HH.Bank.Tier.3>なんとかやっていける</HH.Bank.Tier.3>
+  <HH.Bank.Tier.4>ゆとりあり</HH.Bank.Tier.4>
+  <HH.Bank.Tier.5>裕福</HH.Bank.Tier.5>
+  <HH.Bank.Tier.6>金持ち</HH.Bank.Tier.6>
+  <HH.Bank.Tier.7>成金</HH.Bank.Tier.7>
+  <HH.Bank.Tier.8>潰すには大きすぎる</HH.Bank.Tier.8>
+  <HH.Bank.Tier.Name0>無料ご招待</HH.Bank.Tier.Name0>
+  <HH.Bank.Tier.Name1>オールインクルーシブ</HH.Bank.Tier.Name1>
+  <HH.Bank.Tier.Name2>ベッド＆ブレックファスト</HH.Bank.Tier.Name2>
+  <HH.Bank.Tier.Name3>スタンダードルーム</HH.Bank.Tier.Name3>
+  <HH.Bank.Tier.Name4>オーバーブッキング</HH.Bank.Tier.Name4>
+  <HH.Bank.Tier.Name5>星1つのレビュー</HH.Bank.Tier.Name5>
+  <HH.Bank.Tier.Name6>なぜ自分を傷つけるのですか？</HH.Bank.Tier.Name6>
+  <HH.Bank.Time.DayHour>{0}日目 {1}:00</HH.Bank.Time.DayHour>
+  <HH.Bank.Time.Hours>{0} 時間</HH.Bank.Time.Hours>
+  <HH.Bank.Time.Minutes>{0} 分</HH.Bank.Time.Minutes>
+</LanguageData>

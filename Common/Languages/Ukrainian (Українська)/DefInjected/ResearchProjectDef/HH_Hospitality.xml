@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Innkeeping.label>корчмарство</HH_Innkeeping.label>
+  <HH_Innkeeping.description>Класи кімнат, цінові категорії, корчма, стійка реєстрації, коновязь і перші платні страви. Усе, що потрібно домівці, щойно перші гості залишаються на другу ніч. Відкриває коптильню, піч, гостьовий вівтар і другий рівень навчання кухні.</HH_Innkeeping.description>
+  <HH_Gastronomy.label>гастрономія</HH_Gastronomy.label>
+  <HH_Gastronomy.description>Меню, офіціанти, кухонні стилі та справжня їдальня. Відкриває парову шафу, станцію вока, холодну станцію і третій рівень навчання кухні.</HH_Gastronomy.description>
+  <HH_HotelManagement.label>управління готелем</HH_HotelManagement.label>
+  <HH_HotelManagement.description>Термінали бронювання, прогнози прибуття, зміни та фритюрниця. Різниця між корчмою і готелем полягає в тому, що готель знає, хто прибуває.</HH_HotelManagement.description>
+  <HH_FineDining.label>фін-дайнінг</HH_FineDining.label>
+  <HH_FineDining.description>Білизна, сомельє та критики. Четвертий рівень навчання кухні: форма «Signature» для кожної страви.</HH_FineDining.description>
+</LanguageData>

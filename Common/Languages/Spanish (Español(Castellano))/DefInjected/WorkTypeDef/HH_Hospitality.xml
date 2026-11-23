@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Hosting.labelShort>anfitrión</HH_Hosting.labelShort>
+  <HH_Hosting.pawnLabel>Anfitrión</HH_Hosting.pawnLabel>
+  <HH_Hosting.gerundLabel>atendiendo</HH_Hosting.gerundLabel>
+  <HH_Hosting.description>Registrar entradas y salidas de huéspedes, enseñarles el lugar, mantenerlos entretenidos y convencerlos de que se queden (o se unan).</HH_Hosting.description>
+  <HH_Hosting.verb>Recibir</HH_Hosting.verb>
+  <HH_Serving.labelShort>servir</HH_Serving.labelShort>
+  <HH_Serving.pawnLabel>Camarero</HH_Serving.pawnLabel>
+  <HH_Serving.gerundLabel>sirviendo</HH_Serving.gerundLabel>
+  <HH_Serving.description>Atender barras, mesas y cajas: tomar comandas, servir comida y bebidas, gestionar la zona de juego del casino, reponer estanterías.</HH_Serving.description>
+  <HH_Serving.verb>Servir</HH_Serving.verb>
+</LanguageData>

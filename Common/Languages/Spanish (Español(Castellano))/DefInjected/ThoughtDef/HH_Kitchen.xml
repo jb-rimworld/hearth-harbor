@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_AteDish.label>comió un plato como es debido</HH_AteDish.label>
+  <HH_AteDish.stages.0.label>pésima cocina casera</HH_AteDish.stages.0.label>
+  <HH_AteDish.stages.0.description>Comí un plato pésimo de cocina casera.</HH_AteDish.stages.0.description>
+  <HH_AteDish.stages.1.label>mala cocina casera</HH_AteDish.stages.1.label>
+  <HH_AteDish.stages.1.description>Comí un plato malo de cocina casera.</HH_AteDish.stages.1.description>
+  <HH_AteDish.stages.2.label>cocina casera normal</HH_AteDish.stages.2.label>
+  <HH_AteDish.stages.2.description>Comí un plato normal de cocina casera.</HH_AteDish.stages.2.description>
+  <HH_AteDish.stages.3.label>buena cocina casera</HH_AteDish.stages.3.label>
+  <HH_AteDish.stages.3.description>Comí un plato bueno de cocina casera.</HH_AteDish.stages.3.description>
+  <HH_AteDish.stages.4.label>excelente cocina casera</HH_AteDish.stages.4.label>
+  <HH_AteDish.stages.4.description>Comí un plato excelente de cocina casera.</HH_AteDish.stages.4.description>
+  <HH_AteDish.stages.5.label>cocina casera de obra maestra</HH_AteDish.stages.5.label>
+  <HH_AteDish.stages.5.description>Comí un plato de obra maestra de cocina casera.</HH_AteDish.stages.5.description>
+  <HH_AteDish.stages.6.label>cocina casera legendaria</HH_AteDish.stages.6.label>
+  <HH_AteDish.stages.6.description>Comí un plato legendario de cocina casera.</HH_AteDish.stages.6.description>
+  <HH_AteDish.stages.7.label>pésima buena cocina casera</HH_AteDish.stages.7.label>
+  <HH_AteDish.stages.7.description>Comí un plato pésimo de buena cocina casera.</HH_AteDish.stages.7.description>
+  <HH_AteDish.stages.8.label>mala buena cocina casera</HH_AteDish.stages.8.label>
+  <HH_AteDish.stages.8.description>Comí un plato malo de buena cocina casera.</HH_AteDish.stages.8.description>
+  <HH_AteDish.stages.9.label>normal buena cocina casera</HH_AteDish.stages.9.label>
+  <HH_AteDish.stages.9.description>Comí un plato normal de buena cocina casera.</HH_AteDish.stages.9.description>
+  <HH_AteDish.stages.10.label>buena buena cocina casera</HH_AteDish.stages.10.label>
+  <HH_AteDish.stages.10.description>Comí un plato bueno de buena cocina casera.</HH_AteDish.stages.10.description>
+  <HH_AteDish.stages.11.label>excelente buena cocina casera</HH_AteDish.stages.11.label>
+  <HH_AteDish.stages.11.description>Comí un plato excelente de buena cocina casera.</HH_AteDish.stages.11.description>
+  <HH_AteDish.stages.12.label>buena cocina casera de obra maestra</HH_AteDish.stages.12.label>
+  <HH_AteDish.stages.12.description>Comí un plato de obra maestra de buena cocina casera.</HH_AteDish.stages.12.description>
+  <HH_AteDish.stages.13.label>buena cocina casera legendaria</HH_AteDish.stages.13.label>
+  <HH_AteDish.stages.13.description>Comí un plato legendario de buena cocina casera.</HH_AteDish.stages.13.description>
+  <HH_AteDish.stages.14.label>pésima cocina fina</HH_AteDish.stages.14.label>
+  <HH_AteDish.stages.14.description>Comí un plato pésimo de cocina fina.</HH_AteDish.stages.14.description>
+  <HH_AteDish.stages.15.label>mala cocina fina</HH_AteDish.stages.15.label>
+  <HH_AteDish.stages.15.description>Comí un plato malo de cocina fina.</HH_AteDish.stages.15.description>
+  <HH_AteDish.stages.16.label>cocina fina normal</HH_AteDish.stages.16.label>
+  <HH_AteDish.stages.16.description>Comí un plato normal de cocina fina.</HH_AteDish.stages.16.description>
+  <HH_AteDish.stages.17.label>buena cocina fina</HH_AteDish.stages.17.label>
+  <HH_AteDish.stages.17.description>Comí un plato bueno de cocina fina.</HH_AteDish.stages.17.description>
+  <HH_AteDish.stages.18.label>excelente cocina fina</HH_AteDish.stages.18.label>
+  <HH_AteDish.stages.18.description>Comí un plato excelente de cocina fina.</HH_AteDish.stages.18.description>
+  <HH_AteDish.stages.19.label>cocina fina de obra maestra</HH_AteDish.stages.19.label>
+  <HH_AteDish.stages.19.description>Comí un plato de obra maestra de cocina fina.</HH_AteDish.stages.19.description>
+  <HH_AteDish.stages.20.label>cocina fina legendaria</HH_AteDish.stages.20.label>
+  <HH_AteDish.stages.20.description>Comí un plato legendario de cocina fina.</HH_AteDish.stages.20.description>
+  <HH_AteDish.stages.21.label>pésima alta cocina</HH_AteDish.stages.21.label>
+  <HH_AteDish.stages.21.description>Comí un plato pésimo de alta cocina.</HH_AteDish.stages.21.description>
+  <HH_AteDish.stages.22.label>mala alta cocina</HH_AteDish.stages.22.label>
+  <HH_AteDish.stages.22.description>Comí un plato malo de alta cocina.</HH_AteDish.stages.22.description>
+  <HH_AteDish.stages.23.label>alta cocina normal</HH_AteDish.stages.23.label>
+  <HH_AteDish.stages.23.description>Comí un plato normal de alta cocina.</HH_AteDish.stages.23.description>
+  <HH_AteDish.stages.24.label>buena alta cocina</HH_AteDish.stages.24.label>
+  <HH_AteDish.stages.24.description>Comí un plato bueno de alta cocina.</HH_AteDish.stages.24.description>
+  <HH_AteDish.stages.25.label>excelente alta cocina</HH_AteDish.stages.25.label>
+  <HH_AteDish.stages.25.description>Comí un plato excelente de alta cocina.</HH_AteDish.stages.25.description>
+  <HH_AteDish.stages.26.label>alta cocina de obra maestra</HH_AteDish.stages.26.label>
+  <HH_AteDish.stages.26.description>Comí un plato de obra maestra de alta cocina.</HH_AteDish.stages.26.description>
+  <HH_AteDish.stages.27.label>alta cocina legendaria</HH_AteDish.stages.27.label>
+  <HH_AteDish.stages.27.description>Comí un plato legendario de alta cocina.</HH_AteDish.stages.27.description>
+</LanguageData>

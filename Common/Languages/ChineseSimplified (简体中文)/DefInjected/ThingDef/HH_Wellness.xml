@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_HotTub.label>热水浴缸</HH_HotTub.label>
+  <HH_HotTub.description>一个带加热线圈、勉强能用的水泵的木制浴缸。可同时容纳两人泡澡。殖民者能获得娱乐和平静的心情；水疗场所里的访客则要为这份享受付费。</HH_HotTub.description>
+  <HH_Sauna.label>桑拿炉</HH_Sauna.label>
+  <HH_Sauna.description>一个用石块砌成、烧木柴的炉子，能把一间小而密闭的房间变成桑拿房。房间温度保持在模组设置中的最低温度（默认 45 °C）或以上，才算作桑拿。请持续添加木柴，并保持房间小巧、四面封闭。</HH_Sauna.description>
+  <HH_MassageTable.label>按摩台</HH_MassageTable.label>
+  <HH_MassageTable.description>一张带脸部孔洞和一排油瓶架的软垫台子。需要一名负责“服务”工作类型的殖民者来揉捏；按摩师获得社交和医疗经验，客人（访客）付费，殖民者则得以放松。</HH_MassageTable.description>
+  <HH_TestOnly_VenueSign.label>测试用场所标识（仅限测试）</HH_TestOnly_VenueSign.label>
+  <HH_TestOnly_VenueSign.description>仅供自动化测试使用，无法建造。</HH_TestOnly_VenueSign.description>
+</LanguageData>

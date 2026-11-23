@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingSpree.label>загул в азартные игры</HH_GamblingSpree.label>
+  <HH_GamblingSpree.beginLetterLabel>загул в азартные игры</HH_GamblingSpree.beginLetterLabel>
+  <HH_GamblingSpree.beginLetter>{0} больше не может держаться подальше от столов и уходит в загул в азартные игры, игнорируя все правила политики по наркотикам.</HH_GamblingSpree.beginLetter>
+  <HH_GamblingSpree.baseInspectLine>Душевное состояние: загул в азартные игры</HH_GamblingSpree.baseInspectLine>
+</LanguageData>

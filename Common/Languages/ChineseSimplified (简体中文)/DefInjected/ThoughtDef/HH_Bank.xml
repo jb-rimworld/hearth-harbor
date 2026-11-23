@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Finances.stages.0.label>负债累累</SL_Finances.stages.0.label>
+  <SL_Finances.stages.0.description>我们欠的钱超过了殖民地的价值。邮件里全是逾期催款函的味道。</SL_Finances.stages.0.description>
+  <SL_Finances.stages.1.label>身无分文</SL_Finances.stages.1.label>
+  <SL_Finances.stages.1.description>账户空了。连自动取款机都用怜悯的目光看着我们。</SL_Finances.stages.1.description>
+  <SL_Finances.stages.2.label>勉强度日</SL_Finances.stages.2.label>
+  <SL_Finances.stages.2.description>银行里还有一点点钱。非常少。没人会大声说出来。</SL_Finances.stages.2.description>
+  <SL_Finances.stages.3.label>过得去</SL_Finances.stages.3.label>
+  <SL_Finances.stages.3.description>既不富有，也不贫穷。</SL_Finances.stages.3.description>
+  <SL_Finances.stages.4.label>小康</SL_Finances.stages.4.label>
+  <SL_Finances.stages.4.description>小康，而且并不为此担心。</SL_Finances.stages.4.description>
+  <SL_Finances.stages.5.label>积蓄</SL_Finances.stages.5.label>
+  <SL_Finances.stages.5.description>我们有积蓄了。这种感觉有点陌生，暖暖的。</SL_Finances.stages.5.description>
+  <SL_Finances.stages.6.label>富有</SL_Finances.stages.6.label>
+  <SL_Finances.stages.6.description>我们很富有。只是饭桌上从来没人提起。</SL_Finances.stages.6.description>
+  <SL_Finances.stages.7.label>富得流油</SL_Finances.stages.7.label>
+  <SL_Finances.stages.7.description>殖民地富得流油。我们开始买一些根本用不着的东西了。</SL_Finances.stages.7.description>
+  <SL_Finances.stages.8.label>大到不能倒</SL_Finances.stages.8.label>
+  <SL_Finances.stages.8.description>我们大到不能倒。总得有人说出口，那就由我们来说吧。</SL_Finances.stages.8.description>
+  <SL_FinancesGreedy.stages.0.label>负债累累</SL_FinancesGreedy.stages.0.label>
+  <SL_FinancesGreedy.stages.0.description>负债！我能感觉到每一枚我们没有的银币。</SL_FinancesGreedy.stages.0.description>
+  <SL_FinancesGreedy.stages.1.label>身无分文</SL_FinancesGreedy.stages.1.label>
+  <SL_FinancesGreedy.stages.1.description>身无分文。我可不是为了变穷才变贪的。</SL_FinancesGreedy.stages.1.description>
+  <SL_FinancesGreedy.stages.2.label>勉强度日</SL_FinancesGreedy.stages.2.label>
+  <SL_FinancesGreedy.stages.2.description>账户里几乎没有钱。我每小时都要查一次。</SL_FinancesGreedy.stages.2.description>
+  <SL_FinancesGreedy.stages.3.label>过得去</SL_FinancesGreedy.stages.3.label>
+  <SL_FinancesGreedy.stages.3.description>还行。但还能更多。</SL_FinancesGreedy.stages.3.description>
+  <SL_FinancesGreedy.stages.4.label>小康</SL_FinancesGreedy.stages.4.label>
+  <SL_FinancesGreedy.stages.4.description>小康。但还能更多。</SL_FinancesGreedy.stages.4.description>
+  <SL_FinancesGreedy.stages.5.label>积蓄</SL_FinancesGreedy.stages.5.label>
+  <SL_FinancesGreedy.stages.5.description>积蓄，存在金库里，还印着我的名字。真美好。</SL_FinancesGreedy.stages.5.description>
+  <SL_FinancesGreedy.stages.6.label>富有</SL_FinancesGreedy.stages.6.label>
+  <SL_FinancesGreedy.stages.6.description>富有！我停不下来数钱。</SL_FinancesGreedy.stages.6.description>
+  <SL_FinancesGreedy.stages.7.label>富得流油</SL_FinancesGreedy.stages.7.label>
+  <SL_FinancesGreedy.stages.7.description>富得流油。这就是我生来的使命。</SL_FinancesGreedy.stages.7.description>
+  <SL_FinancesGreedy.stages.8.label>大到不能倒</SL_FinancesGreedy.stages.8.label>
+  <SL_FinancesGreedy.stages.8.description>大到不能倒。把资产负债表裱起来。</SL_FinancesGreedy.stages.8.description>
+  <SL_CollectorsNearby.stages.0.label>催收人员在附近徘徊</SL_CollectorsNearby.stages.0.label>
+  <SL_CollectorsNearby.stages.0.description>门口附近站着两个戴圆顶礼帽的男人。他们的态度非常客气。</SL_CollectorsNearby.stages.0.description>
+</LanguageData>

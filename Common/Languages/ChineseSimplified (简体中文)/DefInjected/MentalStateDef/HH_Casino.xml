@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingSpree.label>赌博狂潮</HH_GamblingSpree.label>
+  <HH_GamblingSpree.beginLetterLabel>赌博狂潮</HH_GamblingSpree.beginLetterLabel>
+  <HH_GamblingSpree.beginLetter>{0} 再也无法远离赌桌，陷入了赌博狂潮，无视毒品政策的所有规定。</HH_GamblingSpree.beginLetter>
+  <HH_GamblingSpree.baseInspectLine>精神状态：赌博狂潮</HH_GamblingSpree.baseInspectLine>
+</LanguageData>

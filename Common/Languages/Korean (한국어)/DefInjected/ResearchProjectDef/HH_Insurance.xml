@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Insurance.label>보험</SL_Insurance.label>
+  <SL_Insurance.description>모든 불운에 대한 보험. 한 번도 논쟁에서 져 본 적 없는 상호회사가 판매합니다. 보험 사무소와 기본 보장 단계인 “최소 보장”, “그럭저럭 충분” 보험을 해금합니다.</SL_Insurance.description>
+  <SL_Actuarial.label>보험계리학</SL_Actuarial.label>
+  <SL_Actuarial.description>모든 것이 잘못될 가능성과 그 가치를 정리한 표. 최상위 보장 단계인 “프리미엄 중의 프리미엄”, 프리미엄 보험 및 상호회사의 서비스를 해금합니다.</SL_Actuarial.description>
+</LanguageData>

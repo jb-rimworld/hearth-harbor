@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingSpree.label>surto de jogatina</HH_GamblingSpree.label>
+  <HH_GamblingSpree.beginLetterLabel>surto de jogatina</HH_GamblingSpree.beginLetterLabel>
+  <HH_GamblingSpree.beginLetter>{0} não consegue mais ficar longe das mesas e entra em um surto de jogatina, ignorando todas as regras da política de drogas.</HH_GamblingSpree.beginLetter>
+  <HH_GamblingSpree.baseInspectLine>Estado mental: surto de jogatina</HH_GamblingSpree.baseInspectLine>
+</LanguageData>

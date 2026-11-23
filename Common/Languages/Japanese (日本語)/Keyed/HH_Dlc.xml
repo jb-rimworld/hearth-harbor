@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Dlc.Bought>{0}が{2}銀で{1}を購入しました。</HH.Dlc.Bought>
+  <HH.Dlc.Gizmo.Buy>免罪符</HH.Dlc.Gizmo.Buy>
+  <HH.Dlc.Gizmo.BuyDesc>入植者のために赦免、慈悲、または階級を購入します。価格は本人のイデオロギーの立場に従います。銀は入植地の備蓄か、本人の財布から支払われます。</HH.Dlc.Gizmo.BuyDesc>
+  <HH.Dlc.Gizmo.ChooseFaith>信仰を選ぶ</HH.Dlc.Gizmo.ChooseFaith>
+  <HH.Dlc.Gizmo.ChooseFaithDesc>この祭壇をイデオロギーに捧げます。客人のうちその信者たちがここへ祈りに来るようになります。</HH.Dlc.Gizmo.ChooseFaithDesc>
+  <HH.Dlc.Gizmo.FundDesc>入植者の支払いが行き先となる場所です。神はそれを永遠に保管し、同じ信仰の派閥はあなたに好意を寄せます（500銀ごとに好感度+1、1クァドルムにつき最大+5）。</HH.Dlc.Gizmo.FundDesc>
+  <HH.Dlc.Gizmo.ToDeity>お布施：神へ</HH.Dlc.Gizmo.ToDeity>
+  <HH.Dlc.Gizmo.ToFaction>お布施：信仰の派閥へ</HH.Dlc.Gizmo.ToFaction>
+  <HH.Dlc.NoBuyers>イデオロギーを持つ入植者がいません</HH.Dlc.NoBuyers>
+  <HH.Dlc.NoFaith>まだ信仰が選ばれていません。</HH.Dlc.NoFaith>
+  <HH.Dlc.Noble.AcceptOrders>命令に従う</HH.Dlc.Noble.AcceptOrders>
+  <HH.Dlc.Noble.Arrived>{0}とその供回りが{1}日間の滞在に到着しました。</HH.Dlc.Noble.Arrived>
+  <HH.Dlc.Noble.BilletText>帝国は、{0}と{1}名の従者を{2}日間宿泊させるよう命じています。彼らは身分にふさわしい寝室を期待しています（{3}）。滞在費として約{4}銀を受け取ります。拒否すると好感度と名誉が損なわれます。</HH.Dlc.Noble.BilletText>
+  <HH.Dlc.Noble.Left>貴族の一行が去りました。支払い：{0}銀。</HH.Dlc.Noble.Left>
+  <HH.Dlc.Noble.OfferText>{1}名の従者を連れた{0}が{2}日間の滞在を願い出ています。居心地が良ければ約{3}銀を支払うとのことです。彼らの期待：{4}。断っても費用はかかりません。</HH.Dlc.Noble.OfferText>
+  <HH.Dlc.Noble.Refuse>拒否する（好感度と名誉が下がる）</HH.Dlc.Noble.Refuse>
+  <HH.Dlc.NothingOffered>その信仰は販売するものが何もありません</HH.Dlc.NothingOffered>
+  <HH.Dlc.Reason.Abhorrent>その信仰はこれを忌み嫌っています</HH.Dlc.Reason.Abhorrent>
+  <HH.Dlc.Reason.CannotPay>{0}を支払えません</HH.Dlc.Reason.CannotPay>
+  <HH.Dlc.Reason.CapColony>入植地は今クァドルム中にこれをすでに購入しました</HH.Dlc.Reason.CapColony>
+  <HH.Dlc.Reason.CapIdeo>このイデオロギーは今クァドルム中にこれで十分なほど得ています</HH.Dlc.Reason.CapIdeo>
+  <HH.Dlc.Reason.CapPawnQ>今クァドルムの上限に達しています</HH.Dlc.Reason.CapPawnQ>
+  <HH.Dlc.Reason.CapPawnY>今年の上限に達しています</HH.Dlc.Reason.CapPawnY>
+  <HH.Dlc.Reason.CertainEnough>確信はすでに満ちています</HH.Dlc.Reason.CertainEnough>
+  <HH.Dlc.Reason.NeedRank>階級{0}が必要です</HH.Dlc.Reason.NeedRank>
+  <HH.Dlc.Reason.NeedRoyalty>王族DLCが必要です</HH.Dlc.Reason.NeedRoyalty>
+  <HH.Dlc.Reason.NoFresh>耐久値10以下の新しい傷がありません</HH.Dlc.Reason.NoFresh>
+  <HH.Dlc.Reason.NoGuilt>破られた戒律の記憶がありません</HH.Dlc.Reason.NoGuilt>
+  <HH.Dlc.Reason.NoIdeo>イデオロギーがありません</HH.Dlc.Reason.NoIdeo>
+  <HH.Dlc.Reason.NoScar>消えない傷跡がありません</HH.Dlc.Reason.NoScar>
+  <HH.Dlc.Reason.NotAThing>その信仰にはそのようなものはありません</HH.Dlc.Reason.NotAThing>
+  <HH.Dlc.Reason.NotFluid>流動的なイデオロギーのみ改革できます</HH.Dlc.Reason.NotFluid>
+  <HH.Dlc.Reason.NotPsychic>サイリンクを形成できません</HH.Dlc.Reason.NotPsychic>
+  <HH.Dlc.Reason.PsylinkMax>サイリンクはすでに上限に達しています</HH.Dlc.Reason.PsylinkMax>
+  <HH.Dlc.Reason.RankHeld>この階級またはそれより上の階級をすでに保持しています</HH.Dlc.Reason.RankHeld>
+  <HH.Dlc.Reason.RankOrder>先に一つ下の階級が必要です</HH.Dlc.Reason.RankOrder>
+  <HH.Dlc.Reason.ReformReady>改革はすでに可能です</HH.Dlc.Reason.ReformReady>
+  <HH.Dlc.ShrineQuality>信仰：{0}。礼拝堂の質：{1}。</HH.Dlc.ShrineQuality>
+  <HH.Dlc.TempleFund>神殿基金：{0}銀</HH.Dlc.TempleFund>
+  <HH.Setting.dlc.traitSpawn>生成された人物に新しい特性が現れる</HH.Setting.dlc.traitSpawn>
+  <HH.Setting.dlc.traitSpawn.Desc>幸運、不運、生まれながらのもてなし役など、Hearth &amp; Harborの特性が新しく生成されたポーンに現れることがあります。既存のポーンは従来の特性を保ちます。オフの場合は手作業やエディタでのみ追加されます。</HH.Setting.dlc.traitSpawn.Desc>
+  <HH.Setting.dlc.traitRarity>特性の出現頻度</HH.Setting.dlc.traitRarity>
+  <HH.Setting.dlc.traitRarity.Desc>新しいポーンに本MODの特性が抽選される頻度の倍率です（1 = バニラの多くの特性と同じ希少性）。</HH.Setting.dlc.traitRarity.Desc>
+</LanguageData>

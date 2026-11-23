@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServiceQuality.label>calidad del servicio</HH_ServiceQuality.label>
+  <HH_ServiceQuality.description>Lo agradable que resulta ser atendido por esta persona. Se suma a la satisfacción de los huéspedes con los que habla, y lo leen las tiendas, las cocinas y la recepción.</HH_ServiceQuality.description>
+  <HH_HostingLearn.label>aprendizaje de hospitalidad</HH_HostingLearn.label>
+  <HH_HostingLearn.description>Multiplicador de la experiencia social ganada al alojar huéspedes.</HH_HostingLearn.description>
+  <HH_GuestExpectation.label>expectativa del huésped</HH_GuestExpectation.label>
+  <HH_GuestExpectation.description>Se suma a lo que un huésped espera de su estancia. Positivo significa más difícil de contentar. El encanto y los buenos modales la reducen; un paladar refinado la sube.</HH_GuestExpectation.description>
+  <HH_GamblingJoy.label>placer del juego</HH_GamblingJoy.label>
+  <HH_GamblingJoy.description>Multiplicador del placer que esta persona obtiene del juego.</HH_GamblingJoy.description>
+  <HH_GamblingAddiction.label>probabilidad de adicción al juego</HH_GamblingAddiction.label>
+  <HH_GamblingAddiction.description>Multiplicador de la probabilidad de que el juego se convierta en adicción. Cero significa que esta persona nunca se engancha.</HH_GamblingAddiction.description>
+  <HH_Dexterity.label>juego de manos</HH_Dexterity.label>
+  <HH_Dexterity.description>Niveles de habilidad que se suman al trabajo fino de manos en las mesas: repartir, barajar y hacer trampas en la casa.</HH_Dexterity.description>
+  <HH_TableSkill.label>habilidad de cuenta</HH_TableSkill.label>
+  <HH_TableSkill.description>Niveles de habilidad que se suman al trabajar como crupier, cajero o empleado de banca.</HH_TableSkill.description>
+  <HH_FraudDetection.label>detección de fraude</HH_FraudDetection.label>
+  <HH_FraudDetection.description>Multiplicador para detectar fichas falsificadas, huéspedes tramposos y errores en el cambio.</HH_FraudDetection.description>
+  <HH_TheftChance.label>robos en su habitación</HH_TheftChance.label>
+  <HH_TheftChance.description>Multiplicador de la probabilidad de que se robe algo en una habitación que cuida esta persona.</HH_TheftChance.description>
+  <HH_BrawlRisk.label>riesgo de pelea a su alrededor</HH_BrawlRisk.label>
+  <HH_BrawlRisk.description>Multiplicador de la probabilidad de que una discusión acabe en pelea en la habitación de esta persona.</HH_BrawlRisk.description>
+  <HH_RumorSpread.label>difusión de rumores</HH_RumorSpread.label>
+  <HH_RumorSpread.description>Multiplicador de lo lejos que viajan las historias sobre la casa, buenas o malas.</HH_RumorSpread.description>
+  <HH_CareProgress.label>progreso de los cuidados</HH_CareProgress.label>
+  <HH_CareProgress.description>Multiplicador del avance de pacientes y de rehabilitación mientras esta persona los cuida.</HH_CareProgress.description>
+  <HH_BankFeeFactor.label>comisiones bancarias</HH_BankFeeFactor.label>
+  <HH_BankFeeFactor.description>Multiplicador de las comisiones que el banco cobra a esta persona.</HH_BankFeeFactor.description>
+  <HH_Negotiation.label>bonificación de negociación</HH_Negotiation.label>
+  <HH_Negotiation.description>Se suma a las negociaciones de seguros y contratos.</HH_Negotiation.description>
+  <HH_RecruitPrice.label>recargo de reclutamiento</HH_RecruitPrice.label>
+  <HH_RecruitPrice.description>Multiplicador del recargo por encima del precio mínimo al comprar la lealtad de un huésped.</HH_RecruitPrice.description>
+  <HH_ServeRestFactor.label>cansancio al servir</HH_ServeRestFactor.label>
+  <HH_ServeRestFactor.description>Multiplicador de la velocidad con la que se agota el descanso mientras atiende mesas o sirve en la barra.</HH_ServeRestFactor.description>
+  <HH_TipFactor.label>propinas</HH_TipFactor.label>
+  <HH_TipFactor.description>Multiplicador de las propinas que esta persona deja como huésped.</HH_TipFactor.description>
+  <HH_DishQuality.label>probabilidad de calidad del plato</HH_DishQuality.label>
+  <HH_DishQuality.description>Probabilidad de subir la calidad de un plato cocinado un escalón.</HH_DishQuality.description>
+  <HH_FamilyCheer.label>ánimo familiar</HH_FamilyCheer.label>
+  <HH_FamilyCheer.description>Se suma a la satisfacción de las familias y los niños bajo el cuidado de esta persona.</HH_FamilyCheer.description>
+  <HH_PriceFeel.label>percepción de precios</HH_PriceFeel.label>
+  <HH_PriceFeel.description>Se suma a lo caros que los huéspedes consideran los precios de esta persona.</HH_PriceFeel.description>
+</LanguageData>

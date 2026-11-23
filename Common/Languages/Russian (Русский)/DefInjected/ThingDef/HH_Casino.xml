@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_SlotMachine.label>одноручный муффало</HH_SlotMachine.label>
+  <HH_SlotMachine.description>Прожорливый до монет игровой автомат с тремя барабанами и рычагом в форме рога муффало. Коэффициенты задаёт дом, огни — нет. Гости играют без крупье; колонисты играют на бесполезные фишки дома.\n\nВыбирайте волатильность (как часто и насколько крупно он платит) кнопкой на автомате.</HH_SlotMachine.description>
+  <HH_RouletteTable.label>рулеточный стол</HH_RouletteTable.label>
+  <HH_RouletteTable.description>Сукно с колесом, вделанным в него. Ставьте фишки; решает шарик. Для гостей нужен крупье (колонист с типом работы «Обслуживание»). Колонисты могут играть для удовольствия на фишки дома и без крупье.</HH_RouletteTable.description>
+  <HH_BlackjackTable.label>стол для блэкджека</HH_BlackjackTable.label>
+  <HH_BlackjackTable.description>Стол полумесяцем с карточным башмаком. Наберите ближе к 21, чем дилер, но не больше. Хорошие игроки проигрывают меньше; преимущество дома зависит от правил и от того, как играет игрок. Для гостей нужен крупье.</HH_BlackjackTable.description>
+  <HH_PokerTable.label>стол Rimdeck</HH_PokerTable.label>
+  <HH_PokerTable.description>Дом раздаёт Rimdeck — карточную игру против других игроков: дом берёт лишь небольшую комиссию с каждого банка. Умные и общительные игроки выигрывают чаще. Заменяет ванильный покерный стол. Для гостей нужен крупье.</HH_PokerTable.description>
+  <HH_CashierCage.label>кассовая клетка</HH_CashierCage.label>
+  <HH_CashierCage.description>Зарешечённое окошко, где серебро превращается в фишки и обратно. С кассой в колонии гости играют фишками: приносят около 5 % больше, а некоторые уходят с фишками, которые за пределами заведения ничего не стоят (запас фишек остаётся в кассе). Вечерняя выручка казино сдаётся сюда в виде серебра.</HH_CashierCage.description>
+  <HH_CasinoChips.label>фишка казино</HH_CasinoChips.label>
+  <HH_CasinoChips.description>Глиняная фишка с клеймом заведения. Стоит одно серебро в кассе, которая её продала, и ничего больше нигде: торговцы её не берут, и в богатство она не входит.</HH_CasinoChips.description>
+  <HH_GamblingSession.label>азартная игра</HH_GamblingSession.label>
+  <HH_GamblingSession.description>Сессия за столами, управляемая политикой по наркотикам как наркотиком: разрешена ли для удовольствия, как часто и могут ли зависимые играть. Это не предмет и никогда не существует в мире.</HH_GamblingSession.description>
+</LanguageData>

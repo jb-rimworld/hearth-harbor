@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Ind_ExpressAbsolution.label>absolvição expressa</HH_Ind_ExpressAbsolution.label>
+  <HH_Ind_ExpressAbsolution.description>Um bilhete carimbado que apaga uma lembrança de mandamento quebrado. O padre não pergunta o que você fez.</HH_Ind_ExpressAbsolution.description>
+  <HH_Ind_MinorMercy.label>pequena misericórdia</HH_Ind_MinorMercy.label>
+  <HH_Ind_MinorMercy.description>Uma bandagem abençoada, vendida pelo preço de duas doses de remédio. Cura uma ferida recente de até 10 pontos de vida.</HH_Ind_MinorMercy.description>
+  <HH_Ind_UnshakenFaith.label>certificado de fé inabalável</HH_Ind_UnshakenFaith.label>
+  <HH_Ind_UnshakenFaith.description>Um certificado emoldurado dizendo que você nunca duvidou. Aumenta a certeza em dez pontos percentuais.</HH_Ind_UnshakenFaith.description>
+  <HH_Ind_GreaterMercy.label>misericórdia maior</HH_Ind_GreaterMercy.label>
+  <HH_Ind_GreaterMercy.description>Um milagre com preço. Cura uma cicatriz duradoura ou uma ferida antiga para sempre.</HH_Ind_GreaterMercy.description>
+  <HH_Asc_Rank1.label>ascensão: buscador</HH_Asc_Rank1.label>
+  <HH_Asc_Rank1.description>Pague a taxa de entrada e torne-se um Buscador. Um começo, nada mais.</HH_Asc_Rank1.description>
+  <HH_Asc_Rank2.label>ascensão: adepto</HH_Asc_Rank2.label>
+  <HH_Asc_Rank2.description>Posto II, Adepto. A partir daqui, o portador pode vender indulgências no altar a hóspedes e visitantes de outras casas.</HH_Asc_Rank2.description>
+  <HH_Asc_Rank3.label>ascensão: luminar</HH_Asc_Rank3.label>
+  <HH_Asc_Rank3.description>Posto III, Luminar. Luz suficiente para ser notado de longe.</HH_Asc_Rank3.description>
+  <HH_Asc_Rank4.label>ascensão: ascendente</HH_Asc_Rank4.label>
+  <HH_Asc_Rank4.description>Posto IV, Ascendente. O topo da escada, para quem pode pagar a vista.</HH_Asc_Rank4.description>
+  <HH_Ind_ReformTithe.label>dízimo de reforma</HH_Ind_ReformTithe.label>
+  <HH_Ind_ReformTithe.description>Um dízimo voluntário para a próxima reforma de uma ideologia fluida: um ponto de reforma.</HH_Ind_ReformTithe.description>
+</LanguageData>

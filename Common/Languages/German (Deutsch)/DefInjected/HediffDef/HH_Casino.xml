@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingAddiction.label>Spielsucht</HH_GamblingAddiction.label>
+  <HH_GamblingAddiction.description>Die Tische haben die Person im Griff. Ohne regelmäßiges Spielen setzt der Entzug ein: schlechte Stimmung, kurze Zündschnur und, in den tiefsten Stufen, Spielrausch. Nur Zeit ohne eine einzige Sitzung heilt die Sucht, und in der Verlangensphase danach ist ein Rückfall schnell passiert.\n\nSie kostet kein Silber, nur Zeit, Stimmung und Nerven.</HH_GamblingAddiction.description>
+  <HH_GamblingAddiction.stages.1.label>Entzug (leicht)</HH_GamblingAddiction.stages.1.label>
+  <HH_GamblingAddiction.stages.2.label>Entzug (mäßig)</HH_GamblingAddiction.stages.2.label>
+  <HH_GamblingAddiction.stages.3.label>Entzug (stark)</HH_GamblingAddiction.stages.3.label>
+  <HH_GamblingAddiction.stages.4.label>Entzug (schwer)</HH_GamblingAddiction.stages.4.label>
+  <HH_GamblingAddiction.stages.5.label>Entzug (extrem)</HH_GamblingAddiction.stages.5.label>
+</LanguageData>

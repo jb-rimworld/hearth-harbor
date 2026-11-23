@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Dlc.Bought>{0} a acheté {1} pour {2} argent.</HH.Dlc.Bought>
+  <HH.Dlc.Gizmo.Buy>Indulgences</HH.Dlc.Gizmo.Buy>
+  <HH.Dlc.Gizmo.BuyDesc>Achète l'absolution, la clémence ou un rang pour un colon. Les prix suivent la position de leur idéologie. L'argent provient du stock de la colonie ou de leur poche.</HH.Dlc.Gizmo.BuyDesc>
+  <HH.Dlc.Gizmo.ChooseFaith>Choisir une foi</HH.Dlc.Gizmo.ChooseFaith>
+  <HH.Dlc.Gizmo.ChooseFaithDesc>Consacre cet autel à une idéologie. Ses fidèles parmi vos hôtes viendront y prier.</HH.Dlc.Gizmo.ChooseFaithDesc>
+  <HH.Dlc.Gizmo.FundDesc>Destination des paiements des colons. La divinité les garde à jamais ; une faction de même foi se rapproche de vous (+1 de bienveillance par 500 d'argent, au maximum +5 par quadrum).</HH.Dlc.Gizmo.FundDesc>
+  <HH.Dlc.Gizmo.ToDeity>Offrandes : à la divinité</HH.Dlc.Gizmo.ToDeity>
+  <HH.Dlc.Gizmo.ToFaction>Offrandes : à la faction de la foi</HH.Dlc.Gizmo.ToFaction>
+  <HH.Dlc.NoBuyers>aucun colon avec une idéologie</HH.Dlc.NoBuyers>
+  <HH.Dlc.NoFaith>Aucune foi choisie pour l'instant.</HH.Dlc.NoFaith>
+  <HH.Dlc.Noble.AcceptOrders>Obéir à l'ordre</HH.Dlc.Noble.AcceptOrders>
+  <HH.Dlc.Noble.Arrived>Un {0} et sa suite arrivent pour {1} jours.</HH.Dlc.Noble.Arrived>
+  <HH.Dlc.Noble.BilletText>L'Empire vous ordonne d'héberger un {0} et {1} suivants pendant {2} jours. Ils attendent une chambre digne de leur rang ({3}). Vous recevrez environ {4} argent pour les frais. Refuser coûte de la bienveillance et de l'honneur.</HH.Dlc.Noble.BilletText>
+  <HH.Dlc.Noble.Left>Le cortège noble repart. Paiement : {0} argent.</HH.Dlc.Noble.Left>
+  <HH.Dlc.Noble.OfferText>Un {0} accompagné de {1} suivants demande à rester {2} jours et paiera environ {3} argent s'il est bien installé. Il attend : {4}. Refuser ne coûte rien.</HH.Dlc.Noble.OfferText>
+  <HH.Dlc.Noble.Refuse>Refuser (bienveillance et honneur touchés)</HH.Dlc.Noble.Refuse>
+  <HH.Dlc.NothingOffered>leur foi ne propose rien à la vente</HH.Dlc.NothingOffered>
+  <HH.Dlc.Reason.Abhorrent>leur foi réprouve cela</HH.Dlc.Reason.Abhorrent>
+  <HH.Dlc.Reason.CannotPay>ne peut pas payer {0}</HH.Dlc.Reason.CannotPay>
+  <HH.Dlc.Reason.CapColony>la colonie a déjà acheté ceci ce quadrum</HH.Dlc.Reason.CapColony>
+  <HH.Dlc.Reason.CapIdeo>l'idéologie en a eu assez de ceci pour ce quadrum</HH.Dlc.Reason.CapIdeo>
+  <HH.Dlc.Reason.CapPawnQ>limite atteinte pour ce quadrum</HH.Dlc.Reason.CapPawnQ>
+  <HH.Dlc.Reason.CapPawnY>limite atteinte pour cette année</HH.Dlc.Reason.CapPawnY>
+  <HH.Dlc.Reason.CertainEnough>la certitude est déjà pleine</HH.Dlc.Reason.CertainEnough>
+  <HH.Dlc.Reason.NeedRank>nécessite le rang {0}</HH.Dlc.Reason.NeedRank>
+  <HH.Dlc.Reason.NeedRoyalty>nécessite Royauté</HH.Dlc.Reason.NeedRoyalty>
+  <HH.Dlc.Reason.NoFresh>aucune blessure fraîche de 10 points de vie maximum</HH.Dlc.Reason.NoFresh>
+  <HH.Dlc.Reason.NoGuilt>aucun souvenir d'un commandement brisé</HH.Dlc.Reason.NoGuilt>
+  <HH.Dlc.Reason.NoIdeo>aucune idéologie</HH.Dlc.Reason.NoIdeo>
+  <HH.Dlc.Reason.NoScar>aucune cicatrice durable</HH.Dlc.Reason.NoScar>
+  <HH.Dlc.Reason.NotAThing>leur foi ne connaît pas une telle chose</HH.Dlc.Reason.NotAThing>
+  <HH.Dlc.Reason.NotFluid>seules les idéologies fluides peuvent se réformer</HH.Dlc.Reason.NotFluid>
+  <HH.Dlc.Reason.NotPsychic>ne peut pas former un lien psychique</HH.Dlc.Reason.NotPsychic>
+  <HH.Dlc.Reason.PsylinkMax>le lien psychique est déjà à sa limite</HH.Dlc.Reason.PsylinkMax>
+  <HH.Dlc.Reason.RankHeld>détient déjà ce rang ou un rang supérieur</HH.Dlc.Reason.RankHeld>
+  <HH.Dlc.Reason.RankOrder>nécessite d'abord le rang précédent</HH.Dlc.Reason.RankOrder>
+  <HH.Dlc.Reason.ReformReady>une réforme est déjà possible</HH.Dlc.Reason.ReformReady>
+  <HH.Dlc.ShrineQuality>Foi : {0}. Qualité de la chapelle : {1}.</HH.Dlc.ShrineQuality>
+  <HH.Dlc.TempleFund>Caisse du temple : {0} argent</HH.Dlc.TempleFund>
+  <HH.Setting.dlc.traitSpawn>De nouveaux traits apparaissent chez les individus générés</HH.Setting.dlc.traitSpawn>
+  <HH.Setting.dlc.traitSpawn.Desc>Chanceux, Malchanceux, Hôte né et les autres traits Hearth &amp; Harbor peuvent apparaître chez les nouveaux individus. Les individus existants gardent les leurs. Désactivé : ajoutés seulement à la main ou dans l'éditeur.</HH.Setting.dlc.traitSpawn.Desc>
+  <HH.Setting.dlc.traitRarity>Fréquence des traits</HH.Setting.dlc.traitRarity>
+  <HH.Setting.dlc.traitRarity.Desc>Multiplicateur sur la fréquence de tirage de nos traits pour les nouveaux individus (1 = même rareté que la plupart des traits vanilla).</HH.Setting.dlc.traitRarity.Desc>
+</LanguageData>

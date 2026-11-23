@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Mutual.label>Silverline Mutual</SL_Mutual.label>
+  <SL_Mutual.description>차분하고 중립적인 기본 은행. 조용히 은화를 보관하고, 공정한 수수료를 받으며, 지금까지 뉴스에 한 번도 오른 적이 없습니다. 직원들은 의심스러울 만큼 잘 쉰 얼굴입니다.</SL_Mutual.description>
+  <SL_Mutual.slogan>제3차 붕괴 이후, 조용히 맡아 드립니다.</SL_Mutual.slogan>
+  <SL_TooBigToFail.label>First Rim Bank of Too Big To Fail</SL_TooBigToFail.label>
+  <SL_TooBigToFail.description>대리석 로비에서 펼치는 풍자극. 높은 이자, 높은 수수료, 그리고 게임 1년에 한 번, 정말 엄청나게 부유했다가 지금은 아닌 고객을 구제해 줍니다. 구제는 선물이 아니라 대출입니다. 아무도 그 부분은 읽지 않습니다.</SL_TooBigToFail.description>
+  <SL_TooBigToFail.slogan>너무 커서 이름을 두 번 붙여야 했습니다.</SL_TooBigToFail.slogan>
+  <SL_ImperialTreasury.label>Imperial Treasury</SL_ImperialTreasury.label>
+  <SL_ImperialTreasury.description>왕좌 직속 금고. 낮은 수수료, 은은한 바닥 광택제 냄새, 작위를 가진 자에게만 주어지는 신용. 출금은 "지급"이라 부르며 작은 인사가 곁들여집니다.</SL_ImperialTreasury.description>
+  <SL_ImperialTreasury.slogan>모든 동전에는 왕좌의 얼굴이 새겨져 있습니다. 깨물지 마십시오.</SL_ImperialTreasury.slogan>
+  <SL_OrbitalExchange.label>Orbital Exchange</SL_OrbitalExchange.label>
+  <SL_OrbitalExchange.description>아주 비싼 회전 고리 위의 무역 길드 은행. 림 최고의 시장 접근성, 림 최고의 수수료, 그리고 모든 영수증에는 위로 치솟는 작은 차트가 함께 옵니다.</SL_OrbitalExchange.description>
+  <SL_OrbitalExchange.slogan>빛의 속도의 유동성. 수수료도 그렇습니다.</SL_OrbitalExchange.slogan>
+  <SL_BlackLedger.label>The Black Ledger</SL_BlackLedger.label>
+  <SL_BlackLedger.description>질문도, 양식도, 이름도 없습니다. 신용 점수와 상관없이 누구에게나 대가를 받고 빌려줍니다. 가끔 장부 한 권이 "행방불명"되고, 예금의 일부도 함께 사라집니다.</SL_BlackLedger.description>
+  <SL_BlackLedger.slogan>묻지 않습니다. 말하지 마십시오. 이자는 그래도 복리로 불어납니다.</SL_BlackLedger.slogan>
+  <SL_CompoundInterest.label>First Church of Compound Interest</SL_CompoundInterest.label>
+  <SL_CompoundInterest.description>기하급수적 성장의 기적을 숭배하는 교단. 적당한 수수료, 모든 대차대조표를 위한 찬송가, 그리고 엄밀히 말하면 선택 사항인 헌금함.</SL_CompoundInterest.description>
+  <SL_CompoundInterest.slogan>복리를 믿습니다. 일찍, 자주 십일조를 바치십시오.</SL_CompoundInterest.slogan>
+</LanguageData>

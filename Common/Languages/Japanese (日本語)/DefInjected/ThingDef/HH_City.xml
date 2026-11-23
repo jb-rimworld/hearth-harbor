@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ProjectorScreen.label>プロジェクタースクリーン</HH_ProjectorScreen.label>
+  <HH_ProjectorScreen.description>広いスクリーンで、その上の梁には投影機が取り付けられています。前に椅子を並べ、部屋に看板を掲げ、照明を落とせば、客は席代を払い、入植者は映画の夜を楽しめます。映画は古く、音がうるさく、誰が作ったのか誰も覚えていません。</HH_ProjectorScreen.description>
+  <HH_SalonChair.label>サロンチェア</HH_SalonChair.label>
+  <HH_SalonChair.description>パッド入りで高さを調節できる椅子で、ケープ、背後の壁の鏡、ハサミの入った引き出しがあります。その後ろに立つ入植者が座っている人に新しい髪型を施します。入植者は無料で使え、客は料金を払います。</HH_SalonChair.description>
+  <HH_ParkBench.label>公園のベンチ</HH_ParkBench.label>
+  <HH_ParkBench.description>景色の見える二人掛けの簡素なベンチ。買うものも署名するものもありません。人々は座り、そこにある景色を眺め、少しだけ気分がよくなります。周囲が美しいほど効果があります。</HH_ParkBench.description>
+  <HH_TaxiStand.label>タクシー乗り場</HH_TaxiStand.label>
+  <HH_TaxiStand.description>塗装された四角い地面、標識柱、呼び出しボックス。マップの端まで歩くのが嫌な出発する客は、ここで小型シャトルを呼び、料金を払います。到着する客の一部はこの乗り場で優雅に降ろされます。タクシーが着陸できるよう、上空が開けている必要があります。</HH_TaxiStand.description>
+  <HH_TaxiIncoming.label>タクシー（到着）</HH_TaxiIncoming.label>
+  <HH_TaxiLeaving.label>タクシー（出発）</HH_TaxiLeaving.label>
+</LanguageData>

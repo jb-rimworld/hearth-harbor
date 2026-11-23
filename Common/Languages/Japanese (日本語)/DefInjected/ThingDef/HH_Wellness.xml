@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_HotTub.label>ホットタブ</HH_HotTub.label>
+  <HH_HotTub.description>加熱コイルとポンプを備えた木製の湯船。だいたい動く。二人同時に浸かれる。入植者は娯楽と穏やかな気分を得られ、スパ会場の客はその特権に料金を払う。</HH_HotTub.description>
+  <HH_Sauna.label>サウナストーブ</HH_Sauna.label>
+  <HH_Sauna.description>石で囲まれた薪ストーブで、小さく閉じた部屋をサウナに変える。部屋が Mod 設定で定めた最低温度（既定で45 °C）以上を保つと、サウナとみなされる。薪を絶やさず、部屋は小さく壁で囲んでおくこと。</HH_Sauna.description>
+  <HH_MassageTable.label>マッサージ台</HH_MassageTable.label>
+  <HH_MassageTable.description>顔の穴と油の棚がついた詰め物の台。こねる作業には給仕作業の入植者が必要で、その入植者は社交と医療の経験値を得る。客は料金を払い（客の場合）、入植者はくつろげる（入植者の場合）。</HH_MassageTable.description>
+  <HH_TestOnly_VenueSign.label>テスト用会場看板（テスト専用）</HH_TestOnly_VenueSign.label>
+  <HH_TestOnly_VenueSign.description>自動テスト専用。建設はできない。</HH_TestOnly_VenueSign.description>
+</LanguageData>

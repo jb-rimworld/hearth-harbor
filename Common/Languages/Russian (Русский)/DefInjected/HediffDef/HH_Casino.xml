@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingAddiction.label>игровая зависимость</HH_GamblingAddiction.label>
+  <HH_GamblingAddiction.description>Столы прочно взяли верх. Без регулярной игры наступает ломка: плохое настроение, раздражительность и, на самых глубоких стадиях, загулы в азартные игры. Вылечить может только время без единой сессии, а после — в период тяги — рецидив легко случается.\n\nСеребра это не стоит, только время, настроение и нервы.</HH_GamblingAddiction.description>
+  <HH_GamblingAddiction.stages.1.label>ломка (лёгкая)</HH_GamblingAddiction.stages.1.label>
+  <HH_GamblingAddiction.stages.2.label>ломка (средняя)</HH_GamblingAddiction.stages.2.label>
+  <HH_GamblingAddiction.stages.3.label>ломка (сильная)</HH_GamblingAddiction.stages.3.label>
+  <HH_GamblingAddiction.stages.4.label>ломка (тяжёлая)</HH_GamblingAddiction.stages.4.label>
+  <HH_GamblingAddiction.stages.5.label>ломка (крайняя)</HH_GamblingAddiction.stages.5.label>
+</LanguageData>

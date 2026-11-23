@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchBout.reportString>наблюдает за ямой.</HH_WatchBout.reportString>
+  <HH_BackRoomVisit.reportString>пользуется задней комнатой.</HH_BackRoomVisit.reportString>
+  <HH_FenceDeal.reportString>ведёт дела у прилавка скупщика.</HH_FenceDeal.reportString>
+  <HH_UseLounge.reportString>расслабляется в салоне.</HH_UseLounge.reportString>
+  <HH_Interrogate.reportString>допрашивает TargetA.</HH_Interrogate.reportString>
+  <HH_HuntQuarry.reportString>охотится на TargetA.</HH_HuntQuarry.reportString>
+  <HH_QuarryFlee.reportString>убегает.</HH_QuarryFlee.reportString>
+</LanguageData>

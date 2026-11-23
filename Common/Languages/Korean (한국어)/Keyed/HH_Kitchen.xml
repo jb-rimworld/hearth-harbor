@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Kitchen.Missing>부족: {0}</HH.Kitchen.Missing>
+  <HH.Kitchen.RecipeInfo>설비: {0}. 단계: {1}.</HH.Kitchen.RecipeInfo>
+  <HH.Kitchen.Finishing>마무리 재료 하나 (우유, 달걀, 초콜릿, 맥주, 베리 또는 버섯)</HH.Kitchen.Finishing>
+  <HH.Kitchen.Finishing2>두 번째 마무리 재료 (맥주, 베리 또는 버섯)</HH.Kitchen.Finishing2>
+  <HH.Kitchen.Inspiration>영감: {0}</HH.Kitchen.Inspiration>
+  <HH.Kitchen.Cuisine>요리 계열: {0}</HH.Kitchen.Cuisine>
+  <HH.Kitchen.Cooked>조리 장소: {0} ({1})</HH.Kitchen.Cooked>
+  <HH.Kitchen.Made>재료: {0}</HH.Kitchen.Made>
+  <HH.Kitchen.Signature>시그니처 요리</HH.Kitchen.Signature>
+  <HH.Kitchen.Fine>파인 요리</HH.Kitchen.Fine>
+  <HH.Kitchen.Everyday>일상 요리</HH.Kitchen.Everyday>
+  <HH.Kitchen.Level>{0}단계</HH.Kitchen.Level>
+  <HH.Kitchen.Stale>상함: 든든함 효과도 기분 보너스도 없음.</HH.Kitchen.Stale>
+  <HH.Kitchen.FreshFor>{0} 동안 신선함</HH.Kitchen.FreshFor>
+  <HH.Kitchen.Stat.Well>든든함</HH.Kitchen.Stat.Well>
+  <HH.Kitchen.Stat.WellDesc>이 요리를 먹은 뒤 배고픔이 줄어드는 속도가 느려지는 시간. 요리 학습 단계와 품질에 따라 늘어난다.</HH.Kitchen.Stat.WellDesc>
+  <HH.Kitchen.Stat.Mood>먹었을 때 기분</HH.Kitchen.Stat.Mood>
+  <HH.Kitchen.Stat.MoodDesc>제대로 된 요리를 먹었을 때 주는 기분 보너스. 학습 단계와 품질에 따라 다르며, 상한 요리는 보너스를 주지 않는다.</HH.Kitchen.Stat.MoodDesc>
+  <HH.Tab.Kitchen>요리책</HH.Tab.Kitchen>
+  <HH.Kitchen.Cookbook.Title>식민지 요리책</HH.Kitchen.Cookbook.Title>
+  <HH.Kitchen.Cookbook.Known>요리 {1}개 중 {0}개를 알고 있음</HH.Kitchen.Cookbook.Known>
+  <HH.Kitchen.Cookbook.Unknown>???</HH.Kitchen.Cookbook.Unknown>
+  <HH.Kitchen.Cookbook.UnknownHint>아직 배우지 않았다. {0}을(를) 연구하거나 요리책을 찾아라.</HH.Kitchen.Cookbook.UnknownHint>
+  <HH.Kitchen.Cookbook.Level>{0}단계</HH.Kitchen.Cookbook.Level>
+  <HH.Kitchen.Cookbook.NoRecipe>레시피 없음: {0}</HH.Kitchen.Cookbook.NoRecipe>
+  <HH.Kitchen.Cookbook.Dark>숨김: 어두운 메뉴가 꺼져 있다.</HH.Kitchen.Cookbook.Dark>
+  <HH.Kitchen.Cookbook.Filter>아는 요리만 보기</HH.Kitchen.Cookbook.Filter>
+  <HH.Kitchen.Cookbook.Search>검색</HH.Kitchen.Cookbook.Search>
+  <HH.Kitchen.Station.PrepCounter>조리대</HH.Kitchen.Station.PrepCounter>
+  <HH.Kitchen.Station.StockPot>육수 솥</HH.Kitchen.Station.StockPot>
+  <HH.Kitchen.Station.Grill>그릴</HH.Kitchen.Station.Grill>
+  <HH.Kitchen.Station.Oven>오븐</HH.Kitchen.Station.Oven>
+  <HH.Kitchen.Station.Wok>웍 작업대</HH.Kitchen.Station.Wok>
+  <HH.Kitchen.Station.Fryer>튀김기</HH.Kitchen.Station.Fryer>
+  <HH.Kitchen.Station.Smoker>훈연기</HH.Kitchen.Station.Smoker>
+  <HH.Kitchen.Station.Steamer>찜기</HH.Kitchen.Station.Steamer>
+  <HH.Kitchen.Station.DoughBench>반죽대</HH.Kitchen.Station.DoughBench>
+  <HH.Kitchen.Station.ColdStation>냉장 작업대</HH.Kitchen.Station.ColdStation>
+  <HH.Kitchen.Station.Campfire>모닥불</HH.Kitchen.Station.Campfire>
+  <HH.Kitchen.Station.Stove>난로</HH.Kitchen.Station.Stove>
+  <HH.Kitchen.Station.ButcherTable>도축 작업대</HH.Kitchen.Station.ButcherTable>
+  <HH.Kitchen.Step.Chop>썰기</HH.Kitchen.Step.Chop>
+  <HH.Kitchen.Step.Simmer>뭉근히 끓이기</HH.Kitchen.Step.Simmer>
+  <HH.Kitchen.Step.Boil>끓이기</HH.Kitchen.Step.Boil>
+  <HH.Kitchen.Step.Grill>그릴에 굽기</HH.Kitchen.Step.Grill>
+  <HH.Kitchen.Step.KneadDough>반죽 치대기</HH.Kitchen.Step.KneadDough>
+  <HH.Kitchen.Step.Smoke>훈연하기</HH.Kitchen.Step.Smoke>
+  <HH.Kitchen.Step.Roast>오븐에 굽기</HH.Kitchen.Step.Roast>
+  <HH.Kitchen.Step.StirFry>볶기</HH.Kitchen.Step.StirFry>
+  <HH.Kitchen.Step.DeepFry>튀기기</HH.Kitchen.Step.DeepFry>
+  <HH.Kitchen.Step.Steam>찌기</HH.Kitchen.Step.Steam>
+  <HH.Kitchen.Step.Chill>차갑게 식히기</HH.Kitchen.Step.Chill>
+  <HH.Kitchen.Step.Carve>썰어내기</HH.Kitchen.Step.Carve>
+  <HH.Kitchen.Step.SpitRoast>꼬치에 굽기</HH.Kitchen.Step.SpitRoast>
+  <HH.Kitchen.Step.PanFry>지지기</HH.Kitchen.Step.PanFry>
+  <HH.Kitchen.Step.Sear>겉면 익히기</HH.Kitchen.Step.Sear>
+  <HH.Kitchen.Cuisine.Frontier>시골 / 개척지 요리</HH.Kitchen.Cuisine.Frontier>
+  <HH.Kitchen.Cuisine.TribalFeast>부족 잔치</HH.Kitchen.Cuisine.TribalFeast>
+  <HH.Kitchen.Cuisine.TavernFare>주점 요리</HH.Kitchen.Cuisine.TavernFare>
+  <HH.Kitchen.Cuisine.ImperialHaute>제국 고급 요리</HH.Kitchen.Cuisine.ImperialHaute>
+  <HH.Kitchen.Cuisine.GlitterFusion>글리터 퓨전</HH.Kitchen.Cuisine.GlitterFusion>
+  <HH.Kitchen.Cuisine.Street>길거리 음식</HH.Kitchen.Cuisine.Street>
+  <HH.Kitchen.Cuisine.Seafood>해산물</HH.Kitchen.Cuisine.Seafood>
+  <HH.Kitchen.Cuisine.Insect>곤충</HH.Kitchen.Cuisine.Insect>
+  <HH.Kitchen.Cuisine.Fungal>버섯</HH.Kitchen.Cuisine.Fungal>
+  <HH.Kitchen.Cuisine.Vegetarian>채식</HH.Kitchen.Cuisine.Vegetarian>
+  <HH.Kitchen.Cuisine.Ascetic>금욕 요리</HH.Kitchen.Cuisine.Ascetic>
+  <HH.Kitchen.Cuisine.LongPork>롱 포크</HH.Kitchen.Cuisine.LongPork>
+  <HH.Kitchen.Ingredient.meat>고기</HH.Kitchen.Ingredient.meat>
+  <HH.Kitchen.Ingredient.insectmeat>곤충 고기</HH.Kitchen.Ingredient.insectmeat>
+  <HH.Kitchen.Ingredient.humanmeat>인육</HH.Kitchen.Ingredient.humanmeat>
+  <HH.Kitchen.Ingredient.twistedmeat>뒤틀린 고기</HH.Kitchen.Ingredient.twistedmeat>
+  <HH.Kitchen.Ingredient.fish>생선</HH.Kitchen.Ingredient.fish>
+  <HH.Kitchen.Ingredient.eggs>달걀</HH.Kitchen.Ingredient.eggs>
+  <HH.Kitchen.Ingredient.milk>우유</HH.Kitchen.Ingredient.milk>
+  <HH.Kitchen.Ingredient.potatoes>감자</HH.Kitchen.Ingredient.potatoes>
+  <HH.Kitchen.Ingredient.corn>옥수수</HH.Kitchen.Ingredient.corn>
+  <HH.Kitchen.Ingredient.rice>쌀</HH.Kitchen.Ingredient.rice>
+  <HH.Kitchen.Ingredient.berries>베리</HH.Kitchen.Ingredient.berries>
+  <HH.Kitchen.Ingredient.agave>용설란 열매</HH.Kitchen.Ingredient.agave>
+  <HH.Kitchen.Ingredient.mushrooms>버섯</HH.Kitchen.Ingredient.mushrooms>
+  <HH.Kitchen.Ingredient.chocolate>초콜릿</HH.Kitchen.Ingredient.chocolate>
+  <HH.Kitchen.Ingredient.beer>맥주</HH.Kitchen.Ingredient.beer>
+  <HH.Kitchen.Ingredient.hemogen>헤모젠 팩</HH.Kitchen.Ingredient.hemogen>
+  <HH.Kitchen.Ingredient.cheese>치즈</HH.Kitchen.Ingredient.cheese>
+  <HH.Kitchen.Ingredient.pumpkin>호박</HH.Kitchen.Ingredient.pumpkin>
+  <HH.Kitchen.Ingredient.flour>밀가루</HH.Kitchen.Ingredient.flour>
+  <HH.Kitchen.Ingredient.fruit>과일</HH.Kitchen.Ingredient.fruit>
+  <HH.Kitchen.Ingredient.soysauce>간장</HH.Kitchen.Ingredient.soysauce>
+  <HH.Kitchen.Ingredient.wasabi>와사비 페이스트</HH.Kitchen.Ingredient.wasabi>
+  <HH.Kitchen.Ingredient.vegetables>채소</HH.Kitchen.Ingredient.vegetables>
+  <HH.Kitchen.Ingredient.sugar>설탕</HH.Kitchen.Ingredient.sugar>
+  <HH.Kitchen.Ingredient.gourmet>고급 식재료</HH.Kitchen.Ingredient.gourmet>
+  <HH.Kitchen.Ingredient.herbs>허브</HH.Kitchen.Ingredient.herbs>
+  <HH.Kitchen.Ingredient.nuts>견과류</HH.Kitchen.Ingredient.nuts>
+  <HH.Kitchen.Ingredient.tealeaves>찻잎</HH.Kitchen.Ingredient.tealeaves>
+  <HH.Kitchen.Ingredient.strawflour>짚풀 가루</HH.Kitchen.Ingredient.strawflour>
+  <HH.Kitchen.Ingredient.pricklypear>손바닥선인장 열매</HH.Kitchen.Ingredient.pricklypear>
+  <HH.Kitchen.Ingredient.greenfruit>그린프루트</HH.Kitchen.Ingredient.greenfruit>
+  <HH.Setting.kitchen.shelfLife>요리 유통기한</HH.Setting.kitchen.shelfLife>
+  <HH.Setting.kitchen.shelfLife.Desc>접시가 신선하게 유지되는 시간. 각 요리의 3~24시간을 기준으로 한 비율이다. 상한 접시도 먹을 수는 있지만 든든함과 기분 보너스는 주지 않는다.</HH.Setting.kitchen.shelfLife.Desc>
+  <HH.Setting.kitchen.wellFedStrength>든든함 강도</HH.Setting.kitchen.wellFedStrength>
+  <HH.Setting.kitchen.wellFedStrength.Desc>제대로 된 요리를 먹은 뒤 배고픔이 얼마나 느리게 줄어드는지 정한다 (100 % = 40 % 느려짐).</HH.Setting.kitchen.wellFedStrength.Desc>
+  <HH.Setting.kitchen.wellFedDuration>든든함 지속 시간</HH.Setting.kitchen.wellFedDuration>
+  <HH.Setting.kitchen.wellFedDuration.Desc>든든함 상태가 얼마나 오래가는지 정한다. 학습 단계별 4 / 6 / 8 / 10시간을 기준으로 하며 품질에 따라서도 달라진다.</HH.Setting.kitchen.wellFedDuration.Desc>
+  <HH.Setting.kitchen.menuPrice>메뉴 가격</HH.Setting.kitchen.menuPrice>
+  <HH.Setting.kitchen.menuPrice.Desc>식당이 요리에 매기는 가격을 기본 메뉴 기준으로 정한다 (요리 단계, 품질, 형태에 따라 다름).</HH.Setting.kitchen.menuPrice.Desc>
+  <HH.Setting.kitchen.poisonRule>좋은 주방에서는 식중독 없음</HH.Setting.kitchen.poisonRule>
+  <HH.Setting.kitchen.poisonRule.Desc>청결도 -0.2 이상인 깨끗한 주방에서 요리 4 이상인 요리사가 만든 접시는 절대 식중독을 일으키지 않는다. 끄면 바닐라 판정이 적용된다.</HH.Setting.kitchen.poisonRule.Desc>
+  <HH.Setting.kitchen.variants>파인 및 시그니처 형태</HH.Setting.kitchen.variants>
+  <HH.Setting.kitchen.variants.Desc>각 요리를 파인 형태(재료가 더 많고 좋아서 품질이 좋을 확률이 높음)와 시그니처 형태(연구 필요)로도 제공한다.</HH.Setting.kitchen.variants.Desc>
+  <HH.Setting.kitchen.allKnown>모든 요리 알고 있음</HH.Setting.kitchen.allKnown>
+  <HH.Setting.kitchen.allKnown.Desc>배우는 과정을 건너뛴다. 메뉴의 모든 요리를 설비만 갖춰지면 바로 만들 수 있다.</HH.Setting.kitchen.allKnown.Desc>
+  <HH.Setting.kitchen.darkMenu>어두운 메뉴 (롱 포크)</HH.Setting.kitchen.darkMenu>
+  <HH.Setting.kitchen.darkMenu.Desc>롱 포크 요리를 허용한다. 식인을 승인하는 이데올로기에서도 잠금이 풀린다.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Kitchen.Cookbook.Teaches>가르치는 요리: {0}</HH.Kitchen.Cookbook.Teaches>
+  <HH.Kitchen.Cookbook.Empty>페이지가 비어 있다.</HH.Kitchen.Cookbook.Empty>
+  <HH.Kitchen.Cookbook.AllKnown>식민지가 이 책의 모든 요리를 이미 알고 있다.</HH.Kitchen.Cookbook.AllKnown>
+  <HH.Kitchen.Cookbook.CannotCook>요리할 수 없다.</HH.Kitchen.Cookbook.CannotCook>
+  <HH.Kitchen.Cookbook.Learned>{0}이(가) 책을 읽었다. 이제 식민지는 {1}을(를) 요리할 수 있다.</HH.Kitchen.Cookbook.Learned>
+  <HH.Kitchen.TestKitchen.Success>{0}이(가) {1} 만드는 법을 알아냈다. 식민지가 이를 기억할 것이다.</HH.Kitchen.TestKitchen.Success>
+  <HH.Kitchen.TestKitchen.Failure>{0}이(가) {1}을(를) 만들어 보다가 끔찍한 한 접시가 나왔다. 다음에는 잘 되겠지.</HH.Kitchen.TestKitchen.Failure>
+  <HH.Kitchen.NoNeighbours>닿는 거리에 다른 주방 설비가 없다.</HH.Kitchen.NoNeighbours>
+  <HH.Kitchen.Neighbours>닿는 거리: {0}</HH.Kitchen.Neighbours>
+  <HH.Kitchen.FreshHours>{0}시간 동안 신선함</HH.Kitchen.FreshHours>
+</LanguageData>

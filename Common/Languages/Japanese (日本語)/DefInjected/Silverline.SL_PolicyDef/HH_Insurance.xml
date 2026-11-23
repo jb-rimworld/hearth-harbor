@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ActsOfStoryteller.label>語り部の行為は対象外</SL_ActsOfStoryteller.label>
+  <SL_ActsOfStoryteller.description>襲撃者、機械化兵、そしてときどき起きる攻城兵器の誤解によって破壊された建物に支払います。火災、天候、お客様ご自身による損害は対象外です。</SL_ActsOfStoryteller.description>
+  <SL_ActsOfStoryteller.slogan>あなたを、きっちり守ります。*</SL_ActsOfStoryteller.slogan>
+  <SL_MuffaloMachine.label>ミュッファロー＆マシン補償</SL_MuffaloMachine.label>
+  <SL_MuffaloMachine.description>動くもの、飛ぶものが対象です。シャトル、ドロップポッド、敵に破壊された車両などです。</SL_MuffaloMachine.description>
+  <SL_MuffaloMachine.slogan>車輪、ローター、そしてとても丁寧な書類。</SL_MuffaloMachine.slogan>
+  <SL_RoofOverHead.label>頭上の屋根</SL_RoofOverHead.label>
+  <SL_RoofOverHead.description>火災、爆発、落雷が対象です。ただし火元は他人のものでなければなりません。</SL_RoofOverHead.description>
+  <SL_RoofOverHead.slogan>温かい壁、冷たい慰め、四半期ごとの保険料。</SL_RoofOverHead.slogan>
+  <SL_ItWasntMe.label>「私ではない」賠償責任</SL_ItWasntMe.label>
+  <SL_ItWasntMe.description>お客様の管理下で、しかも決してお客様のせいではなく発生した、客人、交易商人とその商品への損害が対象です。</SL_ItWasntMe.description>
+  <SL_ItWasntMe.slogan>誰かが払う必要があります。できれば、手数料つきで私たちが。</SL_ItWasntMe.slogan>
+  <SL_LegalShield.label>法律の盾</SL_LegalShield.label>
+  <SL_LegalShield.description>法律事務所Brix &amp; Partnersが罰金を支払い、罰金を科した側と争います。クローバック相互保険に対しても助けになります。第40条を誰も読まない限りは。</SL_LegalShield.description>
+  <SL_LegalShield.slogan>Brix &amp; Partners：倫理は顧問契約つき。</SL_LegalShield.slogan>
+  <SL_RimHealth.label>リム医療プラン</SL_RimHealth.label>
+  <SL_RimHealth.description>病床で1日過ごした入植者ひとりにつき、定額を支払います。</SL_RimHealth.description>
+  <SL_RimHealth.slogan>すぐに良くなりますように。少なくとも、四半期ごとには良くなりますように。</SL_RimHealth.slogan>
+  <SL_GoldenYears.label>黄金期プラン</SL_GoldenYears.label>
+  <SL_GoldenYears.description>60歳まで生き延びた入植者のための年金です。若いうちは保険料が安いのが、このプランの狙いです。</SL_GoldenYears.description>
+  <SL_GoldenYears.slogan>早期退職。それから遅めの退職。そして四半期ごとの年金。</SL_GoldenYears.slogan>
+  <SL_BlightBeGone.label>病害よさらば</SL_BlightBeGone.label>
+  <SL_BlightBeGone.description>寒波と有毒な降下物は作物を食い荒らします。こちらは損失を食い荒らします。</SL_BlightBeGone.description>
+  <SL_BlightBeGone.slogan>支払った分は、きちんと収穫してください。</SL_BlightBeGone.slogan>
+  <SL_ClosedForRepairs.label>修理のため休業</SL_ClosedForRepairs.label>
+  <SL_ClosedForRepairs.description>事業を休業せざるを得ないとき、収入は止まりません。</SL_ClosedForRepairs.description>
+  <SL_ClosedForRepairs.slogan>故障中でも、保険料は故障しません。</SL_ClosedForRepairs.slogan>
+  <SL_UnspeakableEvents.label>口にできない出来事の特約</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>弁護士が同席しなければ約款で表現できない損害が対象です。</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>名前をつけるより、保険に入るほうがよいものもあります。</SL_UnspeakableEvents.slogan>
+  <SL_Wanderlust.label>放浪者の旅行補償</SL_Wanderlust.label>
+  <SL_Wanderlust.description>隊商のための保険です。あなたがいないときにも、そこにあります。人数と移動日単位で、人々が旅路にいる間だけ請求されます。</SL_Wanderlust.description>
+  <SL_Wanderlust.slogan>会いたかったです。あなたがいない部分は、私たちが補償します。</SL_Wanderlust.slogan>
+  <SL_LimbByLimb.label>四肢ごとの事故プラン</SL_LimbByLimb.label>
+  <SL_LimbByLimb.description>手足ひとつひとつに値段がついています。私たちはそれを書き留めました。最後のページの四肢給付表にあります。</SL_LimbByLimb.description>
+  <SL_LimbByLimb.slogan>手足ひとつひとつに値段がついています。私たちはそれを書き留めました。</SL_LimbByLimb.slogan>
+</LanguageData>

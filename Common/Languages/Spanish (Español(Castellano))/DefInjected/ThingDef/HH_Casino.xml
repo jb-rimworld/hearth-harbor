@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_SlotMachine.label>muffalo de un brazo</HH_SlotMachine.label>
+  <HH_SlotMachine.description>Una tragaperras que se come monedas, con tres carretes y una palanca con forma de cuerno de muffalo. Las probabilidades las fija la casa; las luces, no. Los huéspedes juegan sin crupier; los colonos juegan con fichas de la casa sin valor.\n\nElige su volatilidad (con qué frecuencia y cuánto paga) con el botón de la máquina.</HH_SlotMachine.description>
+  <HH_RouletteTable.label>mesa de ruleta</HH_RouletteTable.label>
+  <HH_RouletteTable.description>Un tapete de fieltro con una rueda empotrada. Pon tus fichas; la bola decide. Hace falta un crupier (un colono con el tipo de trabajo Servicio) para atender a los huéspedes. Los colonos pueden jugar por diversión con fichas de la casa sin él.</HH_RouletteTable.description>
+  <HH_BlackjackTable.label>mesa de blackjack</HH_BlackjackTable.label>
+  <HH_BlackjackTable.description>Una mesa en forma de media luna con un zapato de cartas. Acércate lo más posible a 21 sin pasarte, y más que el crupier. Los buenos jugadores pierden menos; la ventaja de la casa depende de las reglas y de lo bien que juegue cada cual. Hace falta un crupier para los huéspedes.</HH_BlackjackTable.description>
+  <HH_PokerTable.label>mesa de Rimdeck</HH_PokerTable.label>
+  <HH_PokerTable.description>La casa reparte Rimdeck, un juego de cartas contra los demás jugadores: la casa solo se queda con una pequeña comisión de cada bote. Los jugadores astutos y sociables ganan más a menudo. Sustituye a la mesa de póker original. Hace falta un crupier para los huéspedes.</HH_PokerTable.description>
+  <HH_CashierCage.label>caja enrejada</HH_CashierCage.label>
+  <HH_CashierCage.description>Una ventanilla enrejada donde la plata se convierte en fichas y viceversa. Con una caja en la colonia, los huéspedes juegan con fichas: traen alrededor de un 5 % más y algunos salen con fichas sin valor fuera de la casa (el fondo de fichas se queda en la caja). Las ganancias nocturnas del casino se anotan aquí como plata.</HH_CashierCage.description>
+  <HH_CasinoChips.label>ficha de casino</HH_CasinoChips.label>
+  <HH_CasinoChips.description>Una ficha de arcilla con la marca de una casa. Vale una plata en la caja que la vendió y nada en ningún otro sitio: los comerciantes no la aceptan y no cuenta para tu riqueza.</HH_CasinoChips.description>
+  <HH_GamblingSession.label>juego</HH_GamblingSession.label>
+  <HH_GamblingSession.description>Una sesión en las mesas, gestionada mediante políticas de drogas como si fuera una droga: si se permite por diversión, con qué frecuencia y si las personas adictas pueden jugar. No es un objeto y nunca existe en el mundo.</HH_GamblingSession.description>
+</LanguageData>

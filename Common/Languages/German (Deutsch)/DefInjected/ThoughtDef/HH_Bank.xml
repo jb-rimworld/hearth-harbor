@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Finances.stages.0.label>bis zum Hals verschuldet</SL_Finances.stages.0.label>
+  <SL_Finances.stages.0.description>Wir schulden mehr, als die Kolonie wert ist. Die Post riecht nach überfälligen Briefen.</SL_Finances.stages.0.description>
+  <SL_Finances.stages.1.label>pleite</SL_Finances.stages.1.label>
+  <SL_Finances.stages.1.description>Das Konto ist leer. Sogar der Geldautomat sieht uns mitleidig an.</SL_Finances.stages.1.description>
+  <SL_Finances.stages.2.label>knapp bei Kasse</SL_Finances.stages.2.label>
+  <SL_Finances.stages.2.description>Wir haben ein wenig auf der Bank. Sehr wenig. Keiner spricht es aus.</SL_Finances.stages.2.description>
+  <SL_Finances.stages.3.label>über die Runden</SL_Finances.stages.3.label>
+  <SL_Finances.stages.3.description>Weder reich noch arm.</SL_Finances.stages.3.description>
+  <SL_Finances.stages.4.label>gut situiert</SL_Finances.stages.4.label>
+  <SL_Finances.stages.4.description>Gut situiert, und es macht uns keine Sorgen.</SL_Finances.stages.4.description>
+  <SL_Finances.stages.5.label>Erspartes</SL_Finances.stages.5.label>
+  <SL_Finances.stages.5.description>Wir haben Erspartes. Ein seltsames, warmes Gefühl.</SL_Finances.stages.5.description>
+  <SL_Finances.stages.6.label>reich</SL_Finances.stages.6.label>
+  <SL_Finances.stages.6.description>Wir sind reich. Beim Abendessen erwähnt das natürlich keiner.</SL_Finances.stages.6.description>
+  <SL_Finances.stages.7.label>steinreich</SL_Finances.stages.7.label>
+  <SL_Finances.stages.7.description>Die Kolonie ist steinreich. Wir haben angefangen, Dinge zu kaufen, die wir nicht brauchen.</SL_Finances.stages.7.description>
+  <SL_Finances.stages.8.label>zu groß zum Scheitern</SL_Finances.stages.8.label>
+  <SL_Finances.stages.8.description>Wir sind zu groß zum Scheitern. Jemand muss es sagen, und das können genauso gut wir sein.</SL_Finances.stages.8.description>
+  <SL_FinancesGreedy.stages.0.label>bis zum Hals verschuldet</SL_FinancesGreedy.stages.0.label>
+  <SL_FinancesGreedy.stages.0.description>Schulden. Schulden! Ich spüre jede einzelne Silbermünze, die wir nicht haben.</SL_FinancesGreedy.stages.0.description>
+  <SL_FinancesGreedy.stages.1.label>pleite</SL_FinancesGreedy.stages.1.label>
+  <SL_FinancesGreedy.stages.1.description>Pleite. Ich bin nicht gierig geworden, um pleite zu sein.</SL_FinancesGreedy.stages.1.description>
+  <SL_FinancesGreedy.stages.2.label>knapp bei Kasse</SL_FinancesGreedy.stages.2.label>
+  <SL_FinancesGreedy.stages.2.description>Kaum etwas auf dem Konto. Ich schaue jede Stunde nach.</SL_FinancesGreedy.stages.2.description>
+  <SL_FinancesGreedy.stages.3.label>über die Runden</SL_FinancesGreedy.stages.3.label>
+  <SL_FinancesGreedy.stages.3.description>In Ordnung. Aber es könnte mehr sein.</SL_FinancesGreedy.stages.3.description>
+  <SL_FinancesGreedy.stages.4.label>gut situiert</SL_FinancesGreedy.stages.4.label>
+  <SL_FinancesGreedy.stages.4.description>Gut situiert. Aber es könnte mehr sein.</SL_FinancesGreedy.stages.4.description>
+  <SL_FinancesGreedy.stages.5.label>Erspartes</SL_FinancesGreedy.stages.5.label>
+  <SL_FinancesGreedy.stages.5.description>Erspartes, in einem Tresor, mit meinem Namen daneben. Herrlich.</SL_FinancesGreedy.stages.5.description>
+  <SL_FinancesGreedy.stages.6.label>reich</SL_FinancesGreedy.stages.6.label>
+  <SL_FinancesGreedy.stages.6.description>Reich! Ich höre nicht auf zu zählen.</SL_FinancesGreedy.stages.6.description>
+  <SL_FinancesGreedy.stages.7.label>steinreich</SL_FinancesGreedy.stages.7.label>
+  <SL_FinancesGreedy.stages.7.description>Steinreich. Dafür wurde ich geboren.</SL_FinancesGreedy.stages.7.description>
+  <SL_FinancesGreedy.stages.8.label>zu groß zum Scheitern</SL_FinancesGreedy.stages.8.label>
+  <SL_FinancesGreedy.stages.8.description>Zu groß zum Scheitern. Die Bilanz gehört gerahmt.</SL_FinancesGreedy.stages.8.description>
+  <SL_CollectorsNearby.stages.0.label>Inkassoleute lungern herum</SL_CollectorsNearby.stages.0.label>
+  <SL_CollectorsNearby.stages.0.description>Zwei Männer in Bowlerhüten stehen an der Tür. Sie sind dabei sehr höflich.</SL_CollectorsNearby.stages.0.description>
+</LanguageData>

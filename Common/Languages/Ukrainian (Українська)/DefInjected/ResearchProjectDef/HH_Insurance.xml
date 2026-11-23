@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Insurance.label>страхування</SL_Insurance.label>
+  <SL_Insurance.description>Поліс на кожне нещастя, його продає взаємне товариство, яке ніколи не програвало суперечок. Відкриває страховий офіс і поліси базових рівнів покриття «Мінімум» і «Достатньо».</SL_Insurance.description>
+  <SL_Actuarial.label>актуарна наука</SL_Actuarial.label>
+  <SL_Actuarial.description>Таблиці того, наскільки ймовірно, що все піде не так, і що це коштує. Відкриває найвищий рівень покриття «Преміум із преміумом», преміум-поліси та послуги товариства.</SL_Actuarial.description>
+</LanguageData>

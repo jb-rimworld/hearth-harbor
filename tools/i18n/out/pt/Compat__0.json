@@ -1,0 +1,21 @@
+{
+ "k:HH.Compat.DialogTitle": "A Hospitalidade está ativa junto com o Hearth & Harbor. Desativá-la para você?",
+ "k:HH.Compat.DialogBody": "O Hearth & Harbor substitui a Hospitalidade e os seus complementos. Enquanto os dois estiverem ativos, o Hearth & Harbor desligou a Hospitalidade nesta sessão: os patches, eventos, construções e a aba de hóspedes dela não fazem nada. As suas camas e áreas de hóspedes da Hospitalidade são mantidas e assumidas quando a Hospitalidade for removida.",
+ "k:HH.Compat.DialogListHeader": "Estes mods serão desativados:",
+ "k:HH.Compat.DialogMentionHeader": "Estes mods de hóspedes permanecem como estão; os visitantes deles continuam sendo deles:",
+ "k:HH.Compat.DialogFailed": "A lista de mods não pôde ser alterada automaticamente ({0}). Faça isso manualmente:",
+ "k:HH.Compat.DialogStep1": "1. Menu principal → Mods",
+ "k:HH.Compat.DialogStep2": "2. Desmarque os mods listados acima",
+ "k:HH.Compat.DialogStep3": "3. Salve a lista de mods e reinicie o jogo",
+ "k:HH.Compat.Yes": "Sim, desativar e reiniciar",
+ "k:HH.Compat.OpenMods": "Abrir a lista de mods",
+ "k:HH.Compat.Later": "Mais tarde",
+ "k:HH.Compat.Never": "Não perguntar novamente",
+ "k:HH.Compat.ImportLetterTitle": "Importado da Hospitalidade",
+ "k:HH.Compat.ImportLetterText": "Esta colônia foi jogada com a Hospitalidade. O Hearth & Harbor assumiu o que pôde.\\n\\nImportado: {0}.\\nDescartado: {1}.\\n\\nAs camas de hóspedes importadas voltaram a ser camas normais e ficam registradas como camas de hóspedes; a parte de hóspedes do Hearth & Harbor as reconhece. Nada mais na sua colônia foi alterado.",
+ "k:HH.Compat.ImportNothing": "nada",
+ "k:HH.Setting.compat.hospitalityNeverAsk": "Não oferecer a desativação da Hospitalidade",
+ "k:HH.Setting.compat.hospitalityNeverAsk.Desc": "Quando a Hospitalidade roda junto com o Hearth & Harbor, o Hearth & Harbor a desliga para a sessão e oferece desativá-la no menu principal. Ligado: não há mais ofertas (o desligamento continua acontecendo).",
+ "k:HH.Setting.compat.importLetter": "Carta após importar um save da Hospitalidade",
+ "k:HH.Setting.compat.importLetter.Desc": "Após carregar um save jogado com a Hospitalidade, uma carta lista o que o Hearth & Harbor assumiu (camas de hóspedes, áreas, visitantes) e o que foi descartado."
+}

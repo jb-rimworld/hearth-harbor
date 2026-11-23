@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Innkeeping.label>posadería</HH_Innkeeping.label>
+  <HH_Innkeeping.description>Clases de habitación, niveles de precio, la taberna, la recepción, el poste de amarre y los primeros platos de pago. Todo lo que una casa necesita cuando los primeros huéspedes se quedan una segunda noche. Desbloquea el ahumador, el horno, el altar para huéspedes y el nivel 2 de aprendizaje de la cocina.</HH_Innkeeping.description>
+  <HH_Gastronomy.label>gastronomía</HH_Gastronomy.label>
+  <HH_Gastronomy.description>Menús, camareros, estilos de cocina y un comedor en condiciones. Desbloquea el vaporera, la estación de wok, la estación fría y el nivel 3 de aprendizaje de la cocina.</HH_Gastronomy.description>
+  <HH_HotelManagement.label>gestión hotelera</HH_HotelManagement.label>
+  <HH_HotelManagement.description>Terminales de reserva, previsiones de llegadas, turnos y la freidora profunda. La diferencia entre una posada y un hotel es que el hotel sabe quién viene.</HH_HotelManagement.description>
+  <HH_FineDining.label>alta cocina</HH_FineDining.label>
+  <HH_FineDining.description>Mantelería, sumilleres y críticos. Nivel 4 de aprendizaje de la cocina: la forma Signature de cada plato.</HH_FineDining.description>
+</LanguageData>

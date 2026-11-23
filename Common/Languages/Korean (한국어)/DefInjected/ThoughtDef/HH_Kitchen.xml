@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_AteDish.label>제대로 된 요리를 먹음</HH_AteDish.label>
+  <HH_AteDish.stages.0.label>끔찍한 가정 요리</HH_AteDish.stages.0.label>
+  <HH_AteDish.stages.0.description>나는 끔찍한 가정 요리 한 접시를 먹었다.</HH_AteDish.stages.0.description>
+  <HH_AteDish.stages.1.label>형편없는 가정 요리</HH_AteDish.stages.1.label>
+  <HH_AteDish.stages.1.description>나는 형편없는 가정 요리 한 접시를 먹었다.</HH_AteDish.stages.1.description>
+  <HH_AteDish.stages.2.label>평범한 가정 요리</HH_AteDish.stages.2.label>
+  <HH_AteDish.stages.2.description>나는 평범한 가정 요리 한 접시를 먹었다.</HH_AteDish.stages.2.description>
+  <HH_AteDish.stages.3.label>좋은 가정 요리</HH_AteDish.stages.3.label>
+  <HH_AteDish.stages.3.description>나는 좋은 가정 요리 한 접시를 먹었다.</HH_AteDish.stages.3.description>
+  <HH_AteDish.stages.4.label>훌륭한 가정 요리</HH_AteDish.stages.4.label>
+  <HH_AteDish.stages.4.description>나는 훌륭한 가정 요리 한 접시를 먹었다.</HH_AteDish.stages.4.description>
+  <HH_AteDish.stages.5.label>걸작급 가정 요리</HH_AteDish.stages.5.label>
+  <HH_AteDish.stages.5.description>나는 걸작급 가정 요리 한 접시를 먹었다.</HH_AteDish.stages.5.description>
+  <HH_AteDish.stages.6.label>전설적인 가정 요리</HH_AteDish.stages.6.label>
+  <HH_AteDish.stages.6.description>나는 전설적인 가정 요리 한 접시를 먹었다.</HH_AteDish.stages.6.description>
+  <HH_AteDish.stages.7.label>끔찍한 괜찮은 가정 요리</HH_AteDish.stages.7.label>
+  <HH_AteDish.stages.7.description>나는 끔찍한 괜찮은 가정 요리 한 접시를 먹었다.</HH_AteDish.stages.7.description>
+  <HH_AteDish.stages.8.label>형편없는 괜찮은 가정 요리</HH_AteDish.stages.8.label>
+  <HH_AteDish.stages.8.description>나는 형편없는 괜찮은 가정 요리 한 접시를 먹었다.</HH_AteDish.stages.8.description>
+  <HH_AteDish.stages.9.label>평범한 괜찮은 가정 요리</HH_AteDish.stages.9.label>
+  <HH_AteDish.stages.9.description>나는 평범한 괜찮은 가정 요리 한 접시를 먹었다.</HH_AteDish.stages.9.description>
+  <HH_AteDish.stages.10.label>좋은 괜찮은 가정 요리</HH_AteDish.stages.10.label>
+  <HH_AteDish.stages.10.description>나는 좋은 괜찮은 가정 요리 한 접시를 먹었다.</HH_AteDish.stages.10.description>
+  <HH_AteDish.stages.11.label>훌륭한 괜찮은 가정 요리</HH_AteDish.stages.11.label>
+  <HH_AteDish.stages.11.description>나는 훌륭한 괜찮은 가정 요리 한 접시를 먹었다.</HH_AteDish.stages.11.description>
+  <HH_AteDish.stages.12.label>걸작급 괜찮은 가정 요리</HH_AteDish.stages.12.label>
+  <HH_AteDish.stages.12.description>나는 걸작급 괜찮은 가정 요리 한 접시를 먹었다.</HH_AteDish.stages.12.description>
+  <HH_AteDish.stages.13.label>전설적인 괜찮은 가정 요리</HH_AteDish.stages.13.label>
+  <HH_AteDish.stages.13.description>나는 전설적인 괜찮은 가정 요리 한 접시를 먹었다.</HH_AteDish.stages.13.description>
+  <HH_AteDish.stages.14.label>끔찍한 고급 요리</HH_AteDish.stages.14.label>
+  <HH_AteDish.stages.14.description>나는 끔찍한 고급 요리 한 접시를 먹었다.</HH_AteDish.stages.14.description>
+  <HH_AteDish.stages.15.label>형편없는 고급 요리</HH_AteDish.stages.15.label>
+  <HH_AteDish.stages.15.description>나는 형편없는 고급 요리 한 접시를 먹었다.</HH_AteDish.stages.15.description>
+  <HH_AteDish.stages.16.label>평범한 고급 요리</HH_AteDish.stages.16.label>
+  <HH_AteDish.stages.16.description>나는 평범한 고급 요리 한 접시를 먹었다.</HH_AteDish.stages.16.description>
+  <HH_AteDish.stages.17.label>좋은 고급 요리</HH_AteDish.stages.17.label>
+  <HH_AteDish.stages.17.description>나는 좋은 고급 요리 한 접시를 먹었다.</HH_AteDish.stages.17.description>
+  <HH_AteDish.stages.18.label>훌륭한 고급 요리</HH_AteDish.stages.18.label>
+  <HH_AteDish.stages.18.description>나는 훌륭한 고급 요리 한 접시를 먹었다.</HH_AteDish.stages.18.description>
+  <HH_AteDish.stages.19.label>걸작급 고급 요리</HH_AteDish.stages.19.label>
+  <HH_AteDish.stages.19.description>나는 걸작급 고급 요리 한 접시를 먹었다.</HH_AteDish.stages.19.description>
+  <HH_AteDish.stages.20.label>전설적인 고급 요리</HH_AteDish.stages.20.label>
+  <HH_AteDish.stages.20.description>나는 전설적인 고급 요리 한 접시를 먹었다.</HH_AteDish.stages.20.description>
+  <HH_AteDish.stages.21.label>끔찍한 오트 퀴진</HH_AteDish.stages.21.label>
+  <HH_AteDish.stages.21.description>나는 끔찍한 오트 퀴진 한 접시를 먹었다.</HH_AteDish.stages.21.description>
+  <HH_AteDish.stages.22.label>형편없는 오트 퀴진</HH_AteDish.stages.22.label>
+  <HH_AteDish.stages.22.description>나는 형편없는 오트 퀴진 한 접시를 먹었다.</HH_AteDish.stages.22.description>
+  <HH_AteDish.stages.23.label>평범한 오트 퀴진</HH_AteDish.stages.23.label>
+  <HH_AteDish.stages.23.description>나는 평범한 오트 퀴진 한 접시를 먹었다.</HH_AteDish.stages.23.description>
+  <HH_AteDish.stages.24.label>좋은 오트 퀴진</HH_AteDish.stages.24.label>
+  <HH_AteDish.stages.24.description>나는 좋은 오트 퀴진 한 접시를 먹었다.</HH_AteDish.stages.24.description>
+  <HH_AteDish.stages.25.label>훌륭한 오트 퀴진</HH_AteDish.stages.25.label>
+  <HH_AteDish.stages.25.description>나는 훌륭한 오트 퀴진 한 접시를 먹었다.</HH_AteDish.stages.25.description>
+  <HH_AteDish.stages.26.label>걸작급 오트 퀴진</HH_AteDish.stages.26.label>
+  <HH_AteDish.stages.26.description>나는 걸작급 오트 퀴진 한 접시를 먹었다.</HH_AteDish.stages.26.description>
+  <HH_AteDish.stages.27.label>전설적인 오트 퀴진</HH_AteDish.stages.27.label>
+  <HH_AteDish.stages.27.description>나는 전설적인 오트 퀴진 한 접시를 먹었다.</HH_AteDish.stages.27.description>
+</LanguageData>

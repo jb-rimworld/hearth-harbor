@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Innkeeping.label>hospedagem</HH_Innkeeping.label>
+  <HH_Innkeeping.description>Classes de quartos, faixas de preço, a taverna, a recepção, o poste de amarração e os primeiros pratos pagos. Tudo o que uma casa precisa quando os primeiros hóspedes ficam uma segunda noite. Desbloqueia a defumadora, o forno, o altar para hóspedes e o nível 2 de aprendizado da cozinha.</HH_Innkeeping.description>
+  <HH_Gastronomy.label>gastronomia</HH_Gastronomy.label>
+  <HH_Gastronomy.description>Cardápios, garçons, estilos de cozinha e um salão de jantar de verdade. Desbloqueia o vaporizador, a estação de wok, a estação fria e o nível 3 de aprendizado da cozinha.</HH_Gastronomy.description>
+  <HH_HotelManagement.label>gestão hoteleira</HH_HotelManagement.label>
+  <HH_HotelManagement.description>Terminais de reserva, previsões de chegada, turnos e a fritadeira funda. A diferença entre uma hospedaria e um hotel é que o hotel sabe quem está chegando.</HH_HotelManagement.description>
+  <HH_FineDining.label>alta gastronomia</HH_FineDining.label>
+  <HH_FineDining.description>Roupa de mesa, sommeliers e críticos. Nível 4 de aprendizado da cozinha: a forma Assinatura de cada prato.</HH_FineDining.description>
+</LanguageData>

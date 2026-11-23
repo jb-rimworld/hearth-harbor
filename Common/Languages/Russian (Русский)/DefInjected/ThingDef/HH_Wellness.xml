@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_HotTub.label>джакузи</HH_HotTub.label>
+  <HH_HotTub.description>Деревянная купель с нагревательной спиралью и насосом, который в основном работает. Двое могут париться одновременно. Колонисты получают развлечение и спокойное настроение; гости в заведении спа платят за удовольствие.</HH_HotTub.description>
+  <HH_Sauna.label>печь сауны</HH_Sauna.label>
+  <HH_Sauna.description>Печь на дровах, выложенная камнем, которая превращает небольшое закрытое помещение в сауну. Помещение считается сауной, когда температура в нём не опускается ниже минимума из настроек мода (по умолчанию 45 °C). Подкидывайте дрова и держите комнату маленькой и с глухими стенами.</HH_Sauna.description>
+  <HH_MassageTable.label>массажный стол</HH_MassageTable.label>
+  <HH_MassageTable.description>Мягкий стол с отверстием для лица и полкой с маслами. Для разминания нужен колонист с типом работы «Обслуживание»; он получает опыт в Общении и Медицине, гость платит, а колонист расслабляется.</HH_MassageTable.description>
+  <HH_TestOnly_VenueSign.label>тестовая табличка заведения (только для тестов)</HH_TestOnly_VenueSign.label>
+  <HH_TestOnly_VenueSign.description>Только для автоматических тестов. Построить нельзя.</HH_TestOnly_VenueSign.description>
+</LanguageData>

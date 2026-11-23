@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_LimbSchedule_Standard.label>사지 보상표</SL_LimbSchedule_Standard.label>
+  <SL_LimbSchedule_Standard.description>표준 보상표(부록 B.2)가 내장되어 있습니다. 모드로 추가된 신체 부위의 항목은 여기에 넣으십시오.</SL_LimbSchedule_Standard.description>
+</LanguageData>

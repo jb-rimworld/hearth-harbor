@@ -1,0 +1,24 @@
+{
+ "keyed": {
+  "HH.Compat.DialogTitle": "Hospitality работает вместе с Hearth & Harbor. Отключить его для вас?",
+  "HH.Compat.DialogBody": "Hearth & Harbor заменяет Hospitality и его дополнения. Пока оба активны, Hearth & Harbor отключил Hospitality на эту сессию: его патчи, события, постройки и вкладка гостей не работают. Ваши гостевые кровати и зоны Hospitality сохраняются и переходят к Hearth & Harbor, когда Hospitality будет убран.",
+  "HH.Compat.DialogListHeader": "Эти моды будут отключены:",
+  "HH.Compat.DialogMentionHeader": "Эти гостевые моды остаются как есть; их посетители остаются за ними:",
+  "HH.Compat.DialogFailed": "Список модов не удалось изменить автоматически ({0}). Пожалуйста, сделайте это вручную:",
+  "HH.Compat.DialogStep1": "1. Главное меню → Моды",
+  "HH.Compat.DialogStep2": "2. Снимите галочки с модов из списка выше",
+  "HH.Compat.DialogStep3": "3. Сохраните список модов и перезапустите игру",
+  "HH.Compat.Yes": "Да, отключить и перезапустить",
+  "HH.Compat.OpenMods": "Открыть список модов",
+  "HH.Compat.Later": "Позже",
+  "HH.Compat.Never": "Больше не спрашивать",
+  "HH.Compat.ImportLetterTitle": "Импорт из Hospitality",
+  "HH.Compat.ImportLetterText": "Эта колония велась с Hospitality. Hearth & Harbor перенял то, что смог.\\n\\nПеренесено: {0}.\\nОтброшено: {1}.\\n\\nПеренесённые гостевые кровати снова стали обычными кроватями и запомнены как гостевые; гостевая часть Hearth & Harbor подхватит их. Ничто другое в вашей колонии не изменилось.",
+  "HH.Compat.ImportNothing": "ничего",
+  "HH.Setting.compat.hospitalityNeverAsk": "Не предлагать отключить Hospitality",
+  "HH.Setting.compat.hospitalityNeverAsk.Desc": "Если Hospitality работает вместе с Hearth & Harbor, Hearth & Harbor отключает его на время сессии и предлагает отключить его окончательно в главном меню. Включено: предложений больше не будет (отключение на сессию всё равно произойдёт).",
+  "HH.Setting.compat.importLetter": "Письмо после импорта сохранения Hospitality",
+  "HH.Setting.compat.importLetter.Desc": "После загрузки сохранения, которое велось с Hospitality, письмо перечисляет, что Hearth & Harbor перенял (гостевые кровати, зоны, посетителей), и что было отброшено."
+ },
+ "defs": {}
+}

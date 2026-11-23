@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Finance.Tab.Invest>Інвестиції</HH.Finance.Tab.Invest>
+  <HH.Finance.Tab.Lottery>Лотерея</HH.Finance.Tab.Lottery>
+  <HH.Finance.Page.Portfolio>Портфель</HH.Finance.Page.Portfolio>
+  <HH.Finance.Page.Bonds>Облігації терпіння</HH.Finance.Page.Bonds>
+  <HH.Finance.Page.Omen>Omen Exchange</HH.Finance.Page.Omen>
+  <HH.Finance.Page.Projects>Проєкти фракцій</HH.Finance.Page.Projects>
+  <HH.Finance.Header>Готівка {0}  ·  Вкладено {1}  ·  Прибутковість ×{2} на рік ({3}% на день)</HH.Finance.Header>
+  <HH.Finance.Header.Tip>Прибутковість — це множник, який еталонний фонд заробляє за ігровий рік (60 днів). Її задають у налаштуваннях мода; вона змінює кожен продукт у цьому вікні, кожен зі своїм зв'язком.</HH.Finance.Header.Tip>
+  <HH.Finance.Fallback>[локальний банківський рахунок, банківський модуль не встановлено]</HH.Finance.Fallback>
+  <HH.Finance.Halted>Торгівлю призупинено (сонячний спалах). Лише готівка.</HH.Finance.Halted>
+  <HH.Finance.NotReady>Біржа ще відчиняє двері.</HH.Finance.NotReady>
+  <HH.Finance.Frozen>заморожено</HH.Finance.Frozen>
+  <HH.Finance.Rugged>rug pull</HH.Finance.Rugged>
+  <HH.Finance.Window.Option>Інвестиції Silverline</HH.Finance.Window.Option>
+  <HH.Finance.Amount>Сума</HH.Finance.Amount>
+  <HH.Finance.Buy>Купити</HH.Finance.Buy>
+  <HH.Finance.Buy.Tip>Купити на стільки срібняків. Одиниці зберігаються з п'ятьма знаками після коми.</HH.Finance.Buy.Tip>
+  <HH.Finance.Sell>Продати</HH.Finance.Sell>
+  <HH.Finance.Sell.Tip>Продати одиниці на суму в стільки срібняків.</HH.Finance.Sell.Tip>
+  <HH.Finance.SellAll>Продати все</HH.Finance.SellAll>
+  <HH.Finance.Decimals>Рахуються п'ять знаків після коми. 0.00001 срібняка — найменший крок.</HH.Finance.Decimals>
+  <HH.Finance.Row.Held>у наявності {0}</HH.Finance.Row.Held>
+  <HH.Finance.Change24>24 год {0}  ·  сьогодні {1}</HH.Finance.Change24>
+  <HH.Finance.Position>У вас {0} одиниць, вартістю {1} срібняків ({2} відносно собівартості).</HH.Finance.Position>
+  <HH.Finance.Position.None>Тут у вас нічого немає. Поки що.</HH.Finance.Position.None>
+  <HH.Finance.PendingSale>Продаж у процесі: {0} одиниць, розрахунок через {1}, спред {2}%.</HH.Finance.PendingSale>
+  <HH.Finance.Trade.Unknown>Біржа не знає такого продукту.</HH.Finance.Trade.Unknown>
+  <HH.Finance.Trade.NoBank>Для торгівлі потрібен рахунок Silverline.</HH.Finance.Trade.NoBank>
+  <HH.Finance.Trade.Halted>Торгівлю призупинено, поки триває сонячний спалах. Біржа працює на електриці, і це свідомий вибір.</HH.Finance.Trade.Halted>
+  <HH.Finance.Trade.Frozen>{0} заморожено після інциденту з безпекою. Ваші гроші в порядку. Імовірно.</HH.Finance.Trade.Frozen>
+  <HH.Finance.Trade.Delisted>{0} вилучено з лістингу.</HH.Finance.Trade.Delisted>
+  <HH.Finance.Trade.Off>Цей продукт вимкнено в налаштуваннях.</HH.Finance.Trade.Off>
+  <HH.Finance.Trade.BankRun>Зняття заблоковано після банківської паніки. Ваші гроші в безпеці*. *Діють умови.</HH.Finance.Trade.BankRun>
+  <HH.Finance.Trade.TooSmall>Це менше за найменшу угоду (0.01 срібняка).</HH.Finance.Trade.TooSmall>
+  <HH.Finance.Trade.NoCash>На вашому рахунку недостатньо грошей.</HH.Finance.Trade.NoCash>
+  <HH.Finance.Trade.NothingToSell>Вам нічого продавати.</HH.Finance.Trade.NothingToSell>
+  <HH.Finance.Trade.Bought>Куплено {0} одиниць {1} за {2} срібняків.</HH.Finance.Trade.Bought>
+  <HH.Finance.Trade.Sold>Продано {0} одиниць {1} за {2} срібняків.</HH.Finance.Trade.Sold>
+  <HH.Finance.Trade.NftQueued>Продаж {0} виставлено. Розрахунок приблизно через {1} днів зі спредом {2}%. Покупці картинок повільні.</HH.Finance.Trade.NftQueued>
+  <HH.Finance.Risk.Meme>Мемкоїни вилучають з лістингу через три дні. Більшість утримувачів втрачають гроші, поки середнє виглядає пристойно: це математика, а не невезіння. Rug pull — остаточний.</HH.Finance.Risk.Meme>
+  <HH.Finance.Risk.Nft>Продаж займає від {0} до {1} днів і коштує спред від {2} до {3}%. Ви володієте квитанцією на картинку картинки.</HH.Finance.Risk.Nft>
+  <HH.Finance.Risk.Crypto>Коливання на кілька відсотків на день — норма. Зломи бірж заморожують торгівлю на дні.</HH.Finance.Risk.Crypto>
+  <HH.Finance.Risk.Savings>Практично без коливань. Під час банківської паніки зняття блокують на два дні.</HH.Finance.Risk.Savings>
+  <HH.Finance.Risk.Bond>Спокійно, доки емітент не дефолтує. Тоді повертаєте приблизно третину.</HH.Finance.Risk.Bond>
+  <HH.Finance.Risk.Stock>Квартальні цифри рухають ціну. Відносини з фракцією теж її рухають, трохи.</HH.Finance.Risk.Stock>
+  <HH.Finance.Nerd.Distribution>Розподіл після терміну утримання (змодельовано): медіана ×{0}, середнє ×{1}, 90-й квантиль ×{2}, сукупний збиток {3}% утримувачів, нижче старту {4}%.</HH.Finance.Nerd.Distribution>
+  <HH.Finance.Bond.Intro>Облігація терпіння з фіксованим терміном: заблокуйте гроші на 30, 60 або 120 днів. Вона приносить ставку накопичень плюс невеликий бонус за кожен заблокований квадрум і бонус лояльності {0}% наприкінці. Розірвете достроково — втратите {1}%. Терпіння підходить не всім.</HH.Finance.Bond.Intro>
+  <HH.Finance.Bond.Offer>{0} днів, ×{1} на рік</HH.Finance.Bond.Offer>
+  <HH.Finance.Bond.Open>Заблокувати цю суму</HH.Finance.Bond.Open>
+  <HH.Finance.Bond.Opened>Облігацію терпіння відкрито: {1} на {0} днів.</HH.Finance.Bond.Opened>
+  <HH.Finance.Bond.Yours>Ваші облігації</HH.Finance.Bond.Yours>
+  <HH.Finance.Bond.None>Терпіння у вас ще немає.</HH.Finance.Bond.None>
+  <HH.Finance.Bond.Row>{0} днів · внесено {1} · зараз {2} · залишилось {3} днів</HH.Finance.Bond.Row>
+  <HH.Finance.Bond.Collect>Забрати з бонусом</HH.Finance.Bond.Collect>
+  <HH.Finance.Bond.Break>Розірвати достроково</HH.Finance.Bond.Break>
+  <HH.Finance.Bond.Break.Tip>Забрати гроші зараз. Банк залишить кілька відсотків як урок.</HH.Finance.Bond.Break.Tip>
+  <HH.Finance.Bond.Early>Термін ще не настав. Якщо мусите, скористайтеся кнопкою розриву.</HH.Finance.Bond.Early>
+  <HH.Finance.Bond.Matured>Терпіння окупилося: {0} срібняків.</HH.Finance.Bond.Matured>
+  <HH.Finance.Bond.Broken>Облігацію розірвано достроково: {0} срібняків.</HH.Finance.Bond.Broken>
+  <HH.Finance.Omen.Intro>Omen Exchange: ставте на події, якими ніхто не може керувати. Ціни — це коефіцієнти з маржею. Виграш, і одна частка платить 1 срібняк.</HH.Finance.Omen.Intro>
+  <HH.Finance.Omen.Chance>ринок випадку</HH.Finance.Omen.Chance>
+  <HH.Finance.Omen.World>світовий ринок</HH.Finance.Omen.World>
+  <HH.Finance.Omen.YouHold>у вас є</HH.Finance.Omen.YouHold>
+  <HH.Finance.Omen.ChanceNote>Подія ринку на кубику. Біржа знає точні шанси. Ви — ні. Ніхто не може вплинути на результат.</HH.Finance.Omen.ChanceNote>
+  <HH.Finance.Omen.WorldNote>Розраховується за Книгою Оракула, а не за тим, що справді відбувається на майданчику: те, що ви робите з проєктом, тут не враховується.</HH.Finance.Omen.WorldNote>
+  <HH.Finance.Omen.Quote>YES коштує {1} срібняка за частку, NO — {2} (середня ціна {0}%).</HH.Finance.Omen.Quote>
+  <HH.Finance.Omen.Nerd>Справжня ймовірність: {0}%</HH.Finance.Omen.Nerd>
+  <HH.Finance.Omen.Fee>Комісія {0}% від вашої ставки, знову при достроковому закритті.</HH.Finance.Omen.Fee>
+  <HH.Finance.Omen.BuyYes>Купити YES</HH.Finance.Omen.BuyYes>
+  <HH.Finance.Omen.BuyNo>Купити NO</HH.Finance.Omen.BuyNo>
+  <HH.Finance.Omen.MaxStake>Тут ви ще можете внести до {0}.</HH.Finance.Omen.MaxStake>
+  <HH.Finance.Omen.Holding>{0} часток {1}, вартістю {2}, якщо закрити зараз</HH.Finance.Omen.Holding>
+  <HH.Finance.Omen.Close>Закрити позицію</HH.Finance.Omen.Close>
+  <HH.Finance.Omen.Closed>Цей ринок закрито.</HH.Finance.Omen.Closed>
+  <HH.Finance.Omen.Closed.Ok>Позицію закрито за {0} срібняків.</HH.Finance.Omen.Closed.Ok>
+  <HH.Finance.Omen.Limit>Це понад ваш ліміт позиції тут. Можна внести {0}.</HH.Finance.Omen.Limit>
+  <HH.Finance.Omen.Bought>Куплено {0} часток {1} за {2} срібняків.</HH.Finance.Omen.Bought>
+  <HH.Finance.Omen.Result.Yes>сталося</HH.Finance.Omen.Result.Yes>
+  <HH.Finance.Omen.Result.No>не сталося</HH.Finance.Omen.Result.No>
+  <HH.Finance.Omen.Settled.Yes>Omen Exchange: {0} — сталося.</HH.Finance.Omen.Settled.Yes>
+  <HH.Finance.Omen.Settled.No>Omen Exchange: {0} — не сталося.</HH.Finance.Omen.Settled.No>
+  <HH.Finance.Omen.Title.Crash>Обвал ринку протягом {0} днів</HH.Finance.Omen.Title.Crash>
+  <HH.Finance.Omen.Title.Rally>Бичаче зростання протягом {0} днів</HH.Finance.Omen.Title.Rally>
+  <HH.Finance.Omen.Title.Razzia>Регулятори проведуть обшуки крипторинку протягом {0} днів</HH.Finance.Omen.Title.Razzia>
+  <HH.Finance.Omen.Title.BankRun>Банківська паніка протягом {0} днів</HH.Finance.Omen.Title.BankRun>
+  <HH.Finance.Omen.Title.Hack>Біржу {0} зламано протягом {1} днів</HH.Finance.Omen.Title.Hack>
+  <HH.Finance.Omen.Title.Rug>{0} виявиться rug pull до того, як його вилучать з лістингу</HH.Finance.Omen.Title.Rug>
+  <HH.Finance.Omen.Title.Project>Успіх: {0}</HH.Finance.Omen.Title.Project>
+  <HH.Finance.Project.Intro>Фракції оголошують проєкти. Інвестуйте (Long) і отримайте котирування, фіксоване при покупці, або ставте проти них (Short): більші ставки дають гірші котирування. Розраховується, коли проєкт завершено.</HH.Finance.Project.Intro>
+  <HH.Finance.Project.None>Жодна фракція зараз не оголосила проєкту.</HH.Finance.Project.None>
+  <HH.Finance.Project.Title.Palace>{0}: дуже великий палац</HH.Finance.Project.Title.Palace>
+  <HH.Finance.Project.Title.TradeRoad>{0}: торговий шлях</HH.Finance.Project.Title.TradeRoad>
+  <HH.Finance.Project.Title.GreatHall>{0}: велика зала</HH.Finance.Project.Title.GreatHall>
+  <HH.Finance.Project.Title.Observatory>{0}: обсерваторія дальнього космосу</HH.Finance.Project.Title.Observatory>
+  <HH.Finance.Project.Title.Harbour>{0}: гавань амбітного розміру</HH.Finance.Project.Title.Harbour>
+  <HH.Finance.Project.Estimate>Ринкова оцінка успіху: {0}% · залишилось {1} · ударів саботажу: {2}</HH.Finance.Project.Estimate>
+  <HH.Finance.Project.Quotes>Long платить ×{0} за успіх (фіксується при покупці). Short платить до ×{1} за провал.</HH.Finance.Project.Quotes>
+  <HH.Finance.Project.ShortAt>Short такого розміру платить ×{0}.</HH.Finance.Project.ShortAt>
+  <HH.Finance.Project.MaxStake>Тут ви ще можете поставити {0}. Усі відкриті ставки на проєкти: {1}.</HH.Finance.Project.MaxStake>
+  <HH.Finance.Project.YearCap>Залишок під річною межею прибутку: {0}.</HH.Finance.Project.YearCap>
+  <HH.Finance.Project.Long>Long</HH.Finance.Project.Long>
+  <HH.Finance.Project.Long.Tip>Інвестувати в проєкт. Платить, якщо він успішний.</HH.Finance.Project.Long.Tip>
+  <HH.Finance.Project.Short>Short</HH.Finance.Project.Short>
+  <HH.Finance.Project.Short.Tip>Ставити проти проєкту. Платить, якщо він провалиться.</HH.Finance.Project.Short.Tip>
+  <HH.Finance.Project.YourLong>Ваш Long: {0}, котирування ×{1}</HH.Finance.Project.YourLong>
+  <HH.Finance.Project.YourShort>Ваш Short: {0}, котирування ×{1}</HH.Finance.Project.YourShort>
+  <HH.Finance.Project.Longed>Long розміщено: {0}, котирування ×{1}.</HH.Finance.Project.Longed>
+  <HH.Finance.Project.Shorted>Short розміщено: {0}, котирування ×{1}.</HH.Finance.Project.Shorted>
+  <HH.Finance.Project.Done>збудовано</HH.Finance.Project.Done>
+  <HH.Finance.Project.Failed>провалено</HH.Finance.Project.Failed>
+  <HH.Finance.Project.Off>Проєкти фракцій вимкнено в налаштуваннях.</HH.Finance.Project.Off>
+  <HH.Finance.Project.Over>Цей проєкт завершено.</HH.Finance.Project.Over>
+  <HH.Finance.Project.Cutoff>Банк перестає приймати ставки за {0} днів до кінця.</HH.Finance.Project.Cutoff>
+  <HH.Finance.Project.NoBoth>Не можна Long і Short на один проєкт. Банк не настільки наївний.</HH.Finance.Project.NoBoth>
+  <HH.Finance.Project.Smoke>Ринок відчуває запах диму. Нові Short на цей проєкт на деякий час не приймаються.</HH.Finance.Project.Smoke>
+  <HH.Finance.Project.Limit>Це понад ваш ліміт ставки. Можна поставити {0}.</HH.Finance.Project.Limit>
+  <HH.Finance.Project.Noticed>Ринок вас помітив. Прибуток понад річну межу не виплачується, лише ваша ставка.</HH.Finance.Project.Noticed>
+  <HH.Finance.Project.SabotageNote>Silverline не питає, звідки йшов дим. Допомога або саботаж — це справжня робота на світовій карті; банк бачить лише результат.</HH.Finance.Project.SabotageNote>
+  <HH.Finance.News.Title>Новини ринку</HH.Finance.News.Title>
+  <HH.Finance.News.None>Нічого не сталося. Підозріло.</HH.Finance.News.None>
+  <HH.Finance.News.Chance>Кубик: випадок, ніхто цього не робив.</HH.Finance.News.Chance>
+  <HH.Finance.News.You>Механізм: це ви зробили.</HH.Finance.News.You>
+  <HH.Finance.News.Crash.1>Ринки падають на {0}. Аналітики звинувачують графік, який читали догори ногами.</HH.Finance.News.Crash.1>
+  <HH.Finance.News.Crash.2>Обвал: {0} за годину. Банк нагадує всім, що минулі результати — то була зовсім інша річ.</HH.Finance.News.Crash.2>
+  <HH.Finance.News.Crash.3>Розпродаж, {0}. Трейдер старої школи кричить у подушку.</HH.Finance.News.Crash.3>
+  <HH.Finance.News.Rally.1>Зростання на {0}. Ніхто не знає чому. У кожного є теорія.</HH.Finance.News.Rally.1>
+  <HH.Finance.News.Rally.2>Ринки ростуть на {0} через чутки про чутку.</HH.Finance.News.Rally.2>
+  <HH.Finance.News.Rally.3>{0} вгору: оптимізм знову став класом активів.</HH.Finance.News.Rally.3>
+  <HH.Finance.News.Razzia.1>Регулятори обшукують крипторайон. Крипта {0} після новини.</HH.Finance.News.Razzia.1>
+  <HH.Finance.News.Razzia.2>Інспектори знайшли таблицю. Крипта {0}.</HH.Finance.News.Razzia.2>
+  <HH.Finance.News.BankRun.1>Банківська паніка! Mattress Plus блокує зняття на два дні.</HH.Finance.News.BankRun.1>
+  <HH.Finance.News.BankRun.2>Довгі черги біля каси. Зняття призупинено на два дні, для вашої безпеки.</HH.Finance.News.BankRun.2>
+  <HH.Finance.News.Rug.1>{0}: засновника немає, і ліквідності теж. Rug pull.</HH.Finance.News.Rug.1>
+  <HH.Finance.News.Rug.2>{0} виявилося малюнком монети. Rug pull, остаточно.</HH.Finance.News.Rug.2>
+  <HH.Finance.News.Hack.1>Біржу {0} зламано. Торгівлю заморожено на {1} днів. Кошти в безпеці, з великим спокоєм запевняє речник.</HH.Finance.News.Hack.1>
+  <HH.Finance.News.Hack.2>Інцидент безпеки у {0}. Заморожено на {1} днів. Пароль був «password».</HH.Finance.News.Hack.2>
+  <HH.Finance.News.WarWon.1>{0}: проголошено перемогу. Облігації стрибають.</HH.Finance.News.WarWon.1>
+  <HH.Finance.News.WarWon.2>Війну виграно, каже сторона {0}. Власники облігацій радіють.</HH.Finance.News.WarWon.2>
+  <HH.Finance.News.WarLost.1>{0}: війну програно. Облігації обвалюються.</HH.Finance.News.WarLost.1>
+  <HH.Finance.News.WarLost.2>Поразка. {0} торгується за ціною гарної історії.</HH.Finance.News.WarLost.2>
+  <HH.Finance.News.Default.1>{0}: платежі зупинено. Відновлення: близько третини.</HH.Finance.News.Default.1>
+  <HH.Finance.News.Default.2>Емітент {0} дефолтує. Позичайте людям із списами, казали.</HH.Finance.News.Default.2>
+  <HH.Finance.News.Pump.1>{0} розігнали на {1} через інфлюенсера, якому належить багато цього.</HH.Finance.News.Pump.1>
+  <HH.Finance.News.Pump.2>{0} стрибає на {1}. Допис, три емодзі і човен.</HH.Finance.News.Pump.2>
+  <HH.Finance.News.Quarter.Up.1>{0} ({1}) звітує про квартальні цифри, які перевершили самі цифри.</HH.Finance.News.Quarter.Up.1>
+  <HH.Finance.News.Quarter.Up.2>{1}: результати перевершили очікування. Очікування знизили у вівторок.</HH.Finance.News.Quarter.Up.2>
+  <HH.Finance.News.Quarter.Down.1>{0} ({1}) не досягає своїх цифр. Керівництво звинувачує цифри.</HH.Finance.News.Quarter.Down.1>
+  <HH.Finance.News.Quarter.Down.2>{1}: попередження про прибуток. Саме попередження було прибутковим для друкарні.</HH.Finance.News.Quarter.Down.2>
+  <HH.Finance.News.Whale.Up.1>Кит купив {0}. Або дуже велика риба. Ціни стрибають.</HH.Finance.News.Whale.Up.1>
+  <HH.Finance.News.Whale.Down.1>Кит вийшов із {0}, і ставок струснуло.</HH.Finance.News.Whale.Down.1>
+  <HH.Finance.News.Listing.1>Новий лістинг: {0}. Технічна документація — два речення, і одне з них малюнок.</HH.Finance.News.Listing.1>
+  <HH.Finance.News.Listing.2>{0} виходить на біржу сьогодні. Ніхто не перевірив, хто його зробив. Тікер уже доступний.</HH.Finance.News.Listing.2>
+  <HH.Finance.News.Delisted>{0} вилучено з лістингу. Ваш актив виплачено за останньою ціною: {1}.</HH.Finance.News.Delisted>
+  <HH.Finance.News.Delisted.None>{0} вилучено з лістингу. Ніхто не помітив.</HH.Finance.News.Delisted.None>
+  <HH.Finance.News.Gear.Warm.1>{0} зростає після потепління відносин із {1}.</HH.Finance.News.Gear.Warm.1>
+  <HH.Finance.News.Gear.Cold.1>{0} сповзає, бо відносини з {1} холонуть.</HH.Finance.News.Gear.Cold.1>
+  <HH.Finance.News.Gear.Settle.1>{0} зростає, бо {1} заснувала поселення.</HH.Finance.News.Gear.Settle.1>
+  <HH.Finance.News.Gear.Fall.1>{0} падає: {1} втратила поселення.</HH.Finance.News.Gear.Fall.1>
+  <HH.Finance.News.Gear.Raid.1>{0} реагує на наліт, який ваша колонія пережила. Стійкість закладено в ціну.</HH.Finance.News.Gear.Raid.1>
+  <HH.Finance.News.NftSold>Продаж NFT розраховано: {0}, ви отримали {1}. Хтось тепер володіє картинкою картинки.</HH.Finance.News.NftSold>
+  <HH.Finance.News.Smoke>Дим над будмайданчиком {0}.</HH.Finance.News.Smoke>
+  <HH.Finance.News.Caught>Ходять чутки, що хтось саботував {0}. Ринок дивиться на вас.</HH.Finance.News.Caught>
+  <HH.Finance.News.ProjectNew>Оголошено проєкт: {0}. Тривалість {1} днів.</HH.Finance.News.ProjectNew>
+  <HH.Finance.News.ProjectDone>Проєкт завершено: {0}.</HH.Finance.News.ProjectDone>
+  <HH.Finance.News.ProjectFailed>Проєкт провалився: {0}.</HH.Finance.News.ProjectFailed>
+  <HH.Finance.Lottery.GlobalTitle>Великий тираж Glitterworld</HH.Finance.Lottery.GlobalTitle>
+  <HH.Finance.Lottery.GlobalTag>П'ять чисел з 40 і зірочка з 10. Хтось мусить виграти. Статистично не ви.</HH.Finance.Lottery.GlobalTag>
+  <HH.Finance.Lottery.Jackpot>Джекпот: {0}</HH.Finance.Lottery.Jackpot>
+  <HH.Finance.Lottery.NextDraw>Наступний тираж через {0} · квиток {1} · {2}% продажів виплачується</HH.Finance.Lottery.NextDraw>
+  <HH.Finance.Lottery.Tax>Очікувана віддача з квитка: {0} із {1}. Податок на оптимізм. Шанси на джекпот: 1 до {2}.</HH.Finance.Lottery.Tax>
+  <HH.Finance.Lottery.Pick>Оберіть п'ять чисел і зірочку або довірте удачі.</HH.Finance.Lottery.Pick>
+  <HH.Finance.Lottery.BuyPicked>Купити цей квиток</HH.Finance.Lottery.BuyPicked>
+  <HH.Finance.Lottery.Quick1>Швидкий вибір ×1</HH.Finance.Lottery.Quick1>
+  <HH.Finance.Lottery.Quick5>Швидкий вибір ×5</HH.Finance.Lottery.Quick5>
+  <HH.Finance.Lottery.Quick20>Швидкий вибір ×20</HH.Finance.Lottery.Quick20>
+  <HH.Finance.Lottery.YourTickets>Ваші квитки на наступний тираж: {0} · витрачено всього {1} · виграно всього {2}</HH.Finance.Lottery.YourTickets>
+  <HH.Finance.Lottery.History>Останні тиражі</HH.Finance.Lottery.History>
+  <HH.Finance.Lottery.HistoryRow>#{0}: {1} · джекпот {2} · ваших квитків {3} · ви виграли {4}</HH.Finance.Lottery.HistoryRow>
+  <HH.Finance.Lottery.JackpotHit>ВИГРАНО</HH.Finance.Lottery.JackpotHit>
+  <HH.Finance.Lottery.BadTicket>Квиток потребує п'яти різних чисел від 1 до 40 і зірочки від 1 до 10.</HH.Finance.Lottery.BadTicket>
+  <HH.Finance.Lottery.Bought>Квиток куплено: {0}.</HH.Finance.Lottery.Bought>
+  <HH.Finance.Lottery.BoughtMany>Куплено квитків: {0}.</HH.Finance.Lottery.BoughtMany>
+  <HH.Finance.Lottery.News.Drawn>Велика лотерея Glitterworld: {0}. {1}</HH.Finance.Lottery.News.Drawn>
+  <HH.Finance.Lottery.News.Won>Велика лотерея Glitterworld: {0}. {1} Ви виграли {2}.</HH.Finance.Lottery.News.Won>
+  <HH.Finance.Lottery.News.Colony>Ваша лотерея витягнула {0}: {1} переможців джекпоту серед {2} квитків.</HH.Finance.Lottery.News.Colony>
+  <HH.Finance.Lottery.ColonyTitle>Власна лотерея</HH.Finance.Lottery.ColonyTitle>
+  <HH.Finance.Lottery.ColonyOpen>Відкрити колонійну лотерею</HH.Finance.Lottery.ColonyOpen>
+  <HH.Finance.Lottery.ColonyIntro>Гості та симульовані гравці дружніх поселень купують квитки. Чотири числа з 25. Ви залишаєте те, що не виплачено; банк платить лише те, що в ньому є.</HH.Finance.Lottery.ColonyIntro>
+  <HH.Finance.Lottery.Price>Ціна квитка</HH.Finance.Lottery.Price>
+  <HH.Finance.Lottery.Quote>Частка виплат</HH.Finance.Lottery.Quote>
+  <HH.Finance.Lottery.Interval>Тираж кожні</HH.Finance.Lottery.Interval>
+  <HH.Finance.Lottery.Fee>Комісія за прийом</HH.Finance.Lottery.Fee>
+  <HH.Finance.Lottery.Pot>Банк {0} · джекпот {1}</HH.Finance.Lottery.Pot>
+  <HH.Finance.Lottery.Demand>Ваш тираж: {0} % назад, глобально: {1} % → близько {2} квитків на день ({3} від гостей, {4} з далеких країв).</HH.Finance.Lottery.Demand>
+  <HH.Finance.Lottery.Earned>Зароблено досі: {0}</HH.Finance.Lottery.Earned>
+  <HH.Finance.Lottery.ColonyNext>Наступний тираж через {0}</HH.Finance.Lottery.ColonyNext>
+  <HH.Finance.Lottery.ColonyLast>Останній тираж: {0} · переможці джекпоту {1} · {2} квитків</HH.Finance.Lottery.ColonyLast>
+  <HH.Finance.Lottery.PotModel>Модель банку: без ризику. Виграші виплачуються лише з банку, більше ні з чого.</HH.Finance.Lottery.PotModel>
+  <HH.Finance.Help.Line>Азартні ігри стали серйозною проблемою? Якщо це перестає бути розвагою, справжня допомога тут:</HH.Finance.Help.Line>
+  <HH.Finance.Help.Tip>Відкриває сайт у вашому браузері.</HH.Finance.Help.Tip>
+  <HH.Finance.Help.Url1>https://findahelpline.com/</HH.Finance.Help.Url1>
+  <HH.Finance.Help.Url2>https://www.gamblingtherapy.org/</HH.Finance.Help.Url2>
+</LanguageData>

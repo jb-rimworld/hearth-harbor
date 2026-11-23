@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_FaithForSale.stages.0.label>индульгенции на продажу</HH_FaithForSale.stages.0.label>
+  <HH_FaithForSale.stages.0.description>Прощение продают открыто, как репу.</HH_FaithForSale.stages.0.description>
+  <HH_FaithNotForSale.stages.0.label>ранги на продажу</HH_FaithNotForSale.stages.0.label>
+  <HH_FaithNotForSale.stages.0.description>Вера не продаётся. И всё же есть прейскурант.</HH_FaithNotForSale.stages.0.description>
+  <HH_BoughtMyWayOut.stages.0.label>откупился(-лась)</HH_BoughtMyWayOut.stages.0.label>
+  <HH_BoughtMyWayOut.stages.0.description>Сработало, но я заплатил(а), и я точно знаю, кем это меня делает.</HH_BoughtMyWayOut.stages.0.description>
+  <HH_PaidMyDues.stages.0.label>уплатил(а) долги</HH_PaidMyDues.stages.0.label>
+  <HH_PaidMyDues.stages.0.description>Мои долги уплачены. Книги чисты, и совесть тоже.</HH_PaidMyDues.stages.0.description>
+  <HH_StingySoul.stages.0.label>скупая душа</HH_StingySoul.stages.0.label>
+  <HH_StingySoul.stages.0.description>Целый квадрум без уплаты долгов. Мне должно быть стыдно.</HH_StingySoul.stages.0.description>
+  <HH_AscensionMood.stages.0.label>ранг I</HH_AscensionMood.stages.0.label>
+  <HH_AscensionMood.stages.0.description>Я сделал(а) первый шаг по лестнице.</HH_AscensionMood.stages.0.description>
+  <HH_AscensionMood.stages.1.label>ранг II</HH_AscensionMood.stages.1.label>
+  <HH_AscensionMood.stages.1.description>Вторая ступень. Люди начинают называть меня моим титулом.</HH_AscensionMood.stages.1.description>
+  <HH_AscensionMood.stages.2.label>ранг III</HH_AscensionMood.stages.2.label>
+  <HH_AscensionMood.stages.2.description>Третья ступень. Вид уже лучше.</HH_AscensionMood.stages.2.description>
+  <HH_AscensionMood.stages.3.label>ранг IV</HH_AscensionMood.stages.3.label>
+  <HH_AscensionMood.stages.3.description>Последняя ступень. Выше меня только небо.</HH_AscensionMood.stages.3.description>
+  <HH_AscensionDisapproval.stages.0.label>купленный ранг</HH_AscensionDisapproval.stages.0.label>
+  <HH_AscensionDisapproval.stages.0.description>Они купили этот ранг. Он ничего не значит.</HH_AscensionDisapproval.stages.0.description>
+  <HH_AscensionRespect.stages.0.label>более высокий ранг</HH_AscensionRespect.stages.0.label>
+  <HH_AscensionRespect.stages.0.description>Они поднялись выше меня. Я это уважаю.</HH_AscensionRespect.stages.0.description>
+  <HH_PlaceToPray.stages.0.label>место для молитвы</HH_PlaceToPray.stages.0.label>
+  <HH_PlaceToPray.stages.0.description>Скромный уголок для молитвы. Лучше, чем ничего.</HH_PlaceToPray.stages.0.description>
+  <HH_PlaceToPray.stages.1.label>место для молитвы</HH_PlaceToPray.stages.1.label>
+  <HH_PlaceToPray.stages.1.description>Тихая, приличная часовня. Здесь можно помолиться.</HH_PlaceToPray.stages.1.description>
+  <HH_PlaceToPray.stages.2.label>место для молитвы</HH_PlaceToPray.stages.2.label>
+  <HH_PlaceToPray.stages.2.description>Хорошая часовня моей веры, далеко от дома. Я благодарен.</HH_PlaceToPray.stages.2.description>
+  <HH_PlaceToPray.stages.3.label>место для молитвы</HH_PlaceToPray.stages.3.label>
+  <HH_PlaceToPray.stages.3.description>Прекрасная часовня с настоящими скамьями. Мою веру заметили.</HH_PlaceToPray.stages.3.description>
+  <HH_PlaceToPray.stages.4.label>место для молитвы</HH_PlaceToPray.stages.4.label>
+  <HH_PlaceToPray.stages.4.description>Великолепно. Здесь построили дом для моего бога. Я это запомню.</HH_PlaceToPray.stages.4.description>
+  <HH_HereticShrine.stages.0.label>капище еретиков на нашей земле</HH_HereticShrine.stages.0.label>
+  <HH_HereticShrine.stages.0.description>На нашей земле стоит святилище ложной веры.</HH_HereticShrine.stages.0.description>
+  <HH_HereticShrine.stages.1.label>капище еретиков на нашей земле</HH_HereticShrine.stages.1.label>
+  <HH_HereticShrine.stages.1.description>Святилище ложной веры, которое терпят мои собственные люди. Позорно.</HH_HereticShrine.stages.1.description>
+  <HH_HereticShrine.stages.2.label>капище еретиков на нашей земле</HH_HereticShrine.stages.2.label>
+  <HH_HereticShrine.stages.2.description>Для еретиков построили святилище прямо рядом с нашим домом. Я этого не выношу.</HH_HereticShrine.stages.2.description>
+  <HH_ShrineRespected.stages.0.label>другие веры почитаются</HH_ShrineRespected.stages.0.label>
+  <HH_ShrineRespected.stages.0.description>Мы находим место для других вер. Так и должно быть.</HH_ShrineRespected.stages.0.description>
+  <HH_ShrineRespected.stages.1.label>другие веры почитаются</HH_ShrineRespected.stages.1.label>
+  <HH_ShrineRespected.stages.1.description>Святилище для каждой веры, что проходит мимо. Так и должно быть.</HH_ShrineRespected.stages.1.description>
+  <HH_ShrineRespected.stages.2.label>другие веры презираются</HH_ShrineRespected.stages.2.label>
+  <HH_ShrineRespected.stages.2.description>Зачем строить святилища для людей, которые верят в неправильное?</HH_ShrineRespected.stages.2.description>
+  <HH_LuckyStreak.stages.0.label>везучая полоса</HH_LuckyStreak.stages.0.label>
+  <HH_LuckyStreak.stages.0.description>Сегодня вечером кости ложатся как надо.</HH_LuckyStreak.stages.0.description>
+  <HH_OfCourseILost.stages.0.label>ну конечно, я проиграл</HH_OfCourseILost.stages.0.label>
+  <HH_OfCourseILost.stages.0.description>Ну конечно, я проиграл. Конечно.</HH_OfCourseILost.stages.0.description>
+  <HH_GamblingAround.stages.0.label>азартные игры рядом</HH_GamblingAround.stages.0.label>
+  <HH_GamblingAround.stages.0.description>Люди выбрасывают деньги прямо у меня на глазах.</HH_GamblingAround.stages.0.description>
+</LanguageData>

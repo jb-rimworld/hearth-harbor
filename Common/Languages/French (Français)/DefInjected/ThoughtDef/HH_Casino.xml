@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingWithdrawal.stages.0.label>manque de jeu (léger)</HH_GamblingWithdrawal.stages.0.label>
+  <HH_GamblingWithdrawal.stages.0.description>Je pense sans cesse aux tables. Une seule partie ne ferait pas de mal.</HH_GamblingWithdrawal.stages.0.description>
+  <HH_GamblingWithdrawal.stages.1.label>manque de jeu (modéré)</HH_GamblingWithdrawal.stages.1.label>
+  <HH_GamblingWithdrawal.stages.1.description>Je n'arrive pas à me concentrer. J'ai besoin de jouer.</HH_GamblingWithdrawal.stages.1.description>
+  <HH_GamblingWithdrawal.stages.2.label>manque de jeu (fort)</HH_GamblingWithdrawal.stages.2.label>
+  <HH_GamblingWithdrawal.stages.2.description>Tout est gris, sauf la roue.</HH_GamblingWithdrawal.stages.2.description>
+  <HH_GamblingWithdrawal.stages.3.label>manque de jeu (sévère)</HH_GamblingWithdrawal.stages.3.label>
+  <HH_GamblingWithdrawal.stages.3.description>Mes mains tremblent. Quelqu'un doit avoir un jeu de cartes.</HH_GamblingWithdrawal.stages.3.description>
+  <HH_GamblingWithdrawal.stages.4.label>manque de jeu (extrême)</HH_GamblingWithdrawal.stages.4.label>
+  <HH_GamblingWithdrawal.stages.4.description>Rien d'autre ne compte.</HH_GamblingWithdrawal.stages.4.description>
+  <HH_WonAtTheTables.stages.0.label>gagné aux tables</HH_WonAtTheTables.stages.0.label>
+  <HH_WonAtTheTables.stages.0.description>Les jetons ont tourné en ma faveur. Pour une fois.</HH_WonAtTheTables.stages.0.description>
+  <HH_LostAtTheTables.stages.0.label>tout perdu aux tables</HH_LostAtTheTables.stages.0.label>
+  <HH_LostAtTheTables.stages.0.description>Chaque jeton, parti. Ils étaient gratuits, et ça fait quand même mal.</HH_LostAtTheTables.stages.0.description>
+</LanguageData>

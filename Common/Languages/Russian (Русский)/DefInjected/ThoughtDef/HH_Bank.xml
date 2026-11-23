@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Finances.stages.0.label>в долгах по уши</SL_Finances.stages.0.label>
+  <SL_Finances.stages.0.description>Мы должны больше, чем стоит колония. От почты пахнет просроченными письмами.</SL_Finances.stages.0.description>
+  <SL_Finances.stages.1.label>без гроша</SL_Finances.stages.1.label>
+  <SL_Finances.stages.1.description>Счёт пуст. Даже банкомат смотрит на нас с жалостью.</SL_Finances.stages.1.description>
+  <SL_Finances.stages.2.label>еле сводим концы</SL_Finances.stages.2.label>
+  <SL_Finances.stages.2.description>У нас немного денег в банке. Очень немного. Никто не говорит об этом вслух.</SL_Finances.stages.2.description>
+  <SL_Finances.stages.3.label>перебиваемся</SL_Finances.stages.3.label>
+  <SL_Finances.stages.3.description>Ни богаты, ни бедны.</SL_Finances.stages.3.description>
+  <SL_Finances.stages.4.label>устойчиво</SL_Finances.stages.4.label>
+  <SL_Finances.stages.4.description>Устойчиво, и мы об этом не беспокоимся.</SL_Finances.stages.4.description>
+  <SL_Finances.stages.5.label>сбережения</SL_Finances.stages.5.label>
+  <SL_Finances.stages.5.description>У нас есть сбережения. Странное, тёплое чувство.</SL_Finances.stages.5.description>
+  <SL_Finances.stages.6.label>богато</SL_Finances.stages.6.label>
+  <SL_Finances.stages.6.description>Мы богаты. Не то чтобы кто-то упоминал это за ужином.</SL_Finances.stages.6.description>
+  <SL_Finances.stages.7.label>сказочно богато</SL_Finances.stages.7.label>
+  <SL_Finances.stages.7.description>Колония сказочно богата. Мы начали покупать вещи, которые нам не нужны.</SL_Finances.stages.7.description>
+  <SL_Finances.stages.8.label>слишком большой, чтобы обанкротиться</SL_Finances.stages.8.label>
+  <SL_Finances.stages.8.description>Мы слишком большие, чтобы обанкротиться. Кто-то должен это сказать, и пусть это будем мы.</SL_Finances.stages.8.description>
+  <SL_FinancesGreedy.stages.0.label>в долгах по уши</SL_FinancesGreedy.stages.0.label>
+  <SL_FinancesGreedy.stages.0.description>Долг. Долг! Я чувствую каждую серебряную монету, которой у нас нет.</SL_FinancesGreedy.stages.0.description>
+  <SL_FinancesGreedy.stages.1.label>без гроша</SL_FinancesGreedy.stages.1.label>
+  <SL_FinancesGreedy.stages.1.description>Без гроша. Я не становился жадным, чтобы остаться без гроша.</SL_FinancesGreedy.stages.1.description>
+  <SL_FinancesGreedy.stages.2.label>еле сводим концы</SL_FinancesGreedy.stages.2.label>
+  <SL_FinancesGreedy.stages.2.description>Почти ничего на счёте. Я проверяю его каждый час.</SL_FinancesGreedy.stages.2.description>
+  <SL_FinancesGreedy.stages.3.label>перебиваемся</SL_FinancesGreedy.stages.3.label>
+  <SL_FinancesGreedy.stages.3.description>Неплохо. Но могло бы быть больше.</SL_FinancesGreedy.stages.3.description>
+  <SL_FinancesGreedy.stages.4.label>устойчиво</SL_FinancesGreedy.stages.4.label>
+  <SL_FinancesGreedy.stages.4.description>Устойчиво. Но могло бы быть больше.</SL_FinancesGreedy.stages.4.description>
+  <SL_FinancesGreedy.stages.5.label>сбережения</SL_FinancesGreedy.stages.5.label>
+  <SL_FinancesGreedy.stages.5.description>Сбережения в хранилище, с моим именем рядом. Чудесно.</SL_FinancesGreedy.stages.5.description>
+  <SL_FinancesGreedy.stages.6.label>богато</SL_FinancesGreedy.stages.6.label>
+  <SL_FinancesGreedy.stages.6.description>Богат! Я не перестану считать.</SL_FinancesGreedy.stages.6.description>
+  <SL_FinancesGreedy.stages.7.label>сказочно богато</SL_FinancesGreedy.stages.7.label>
+  <SL_FinancesGreedy.stages.7.description>Сказочно богат. Ради этого я и родился.</SL_FinancesGreedy.stages.7.description>
+  <SL_FinancesGreedy.stages.8.label>слишком большой, чтобы обанкротиться</SL_FinancesGreedy.stages.8.label>
+  <SL_FinancesGreedy.stages.8.description>Слишком большой, чтобы обанкротиться. Оформите баланс в рамку.</SL_FinancesGreedy.stages.8.description>
+  <SL_CollectorsNearby.stages.0.label>коллекторы околачиваются рядом</SL_CollectorsNearby.stages.0.label>
+  <SL_CollectorsNearby.stages.0.description>Двое мужчин в котелках стоят у двери. Они очень вежливы по этому поводу.</SL_CollectorsNearby.stages.0.description>
+</LanguageData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueSign.label>placa de estabelecimento</HH_VenueSign.label>
+  <HH_VenueSign.description>Uma placa que transforma o cômodo em que está em um negócio: taverna, loja, restaurante, cassino, spa ou salão. Escolha o tipo de negócio, o horário de funcionamento e os preços nos controles da placa. Sem placa, um cômodo é apenas um cômodo.</HH_VenueSign.description>
+  <HH_VenueSignWall.label>placa de estabelecimento (parede)</HH_VenueSignWall.label>
+  <HH_VenueSignWall.description>A mesma placa, pendurada em uma parede. O cômodo para o qual ela está voltada se torna o negócio. Escolha o tipo de negócio, o horário de funcionamento e os preços nos controles da placa.</HH_VenueSignWall.description>
+  <HH_ShopCounter.label>balcão de loja</HH_ShopCounter.label>
+  <HH_ShopCounter.description>Um balcão para um lojista ou barman. Quem cuida do estabelecimento fica atrás dele, e o caixa do dia é depositado aqui como prata à meia-noite. O balcão é opcional: sem ele, o atendente fica ao lado da placa.</HH_ShopCounter.description>
+  <HH_MarketStall.label>barraca de feira</HH_MarketStall.label>
+  <HH_MarketStall.description>Uma barraca independente com toldo listrado. A grande feira só acontece quando você possui barracas suficientes (veja as configurações de Estabelecimentos): cada caravana de comerciantes monta uma delas e paga uma taxa de barraca para o seu caixa. Ao ar livre, funciona com qualquer clima, mas não é um negócio próprio.</HH_MarketStall.description>
+  <HH_VendingMachine.label>máquina de venda</HH_VendingMachine.label>
+  <HH_VendingMachine.description>Um armário alimentado por energia que guarda comida, bebidas, drogas e medicamentos. Os hóspedes compram nela a qualquer hora, sem nenhum funcionário, pelo valor de mercado. Carregadores a abastecem como uma prateleira. Colonos podem se servir de graça; a máquina só cobra dos hóspedes. Precisa de energia para vender.</HH_VendingMachine.description>
+</LanguageData>

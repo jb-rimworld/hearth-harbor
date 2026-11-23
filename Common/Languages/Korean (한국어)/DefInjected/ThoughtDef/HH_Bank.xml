@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Finances.stages.0.label>빚더미에 앉음</SL_Finances.stages.0.label>
+  <SL_Finances.stages.0.description>콜로니가 가진 것보다 더 많이 빚지고 있습니다. 우편함에서는 연체 독촉장 냄새가 납니다.</SL_Finances.stages.0.description>
+  <SL_Finances.stages.1.label>무일푼</SL_Finances.stages.1.label>
+  <SL_Finances.stages.1.description>계좌가 비었습니다. ATM조차 우리를 측은하게 바라봅니다.</SL_Finances.stages.1.description>
+  <SL_Finances.stages.2.label>간신히 버팀</SL_Finances.stages.2.label>
+  <SL_Finances.stages.2.description>은행에 조금 있습니다. 아주 조금. 아무도 소리 내어 말하지 않습니다.</SL_Finances.stages.2.description>
+  <SL_Finances.stages.3.label>근근이 버팀</SL_Finances.stages.3.label>
+  <SL_Finances.stages.3.description>부유하지도, 가난하지도 않습니다.</SL_Finances.stages.3.description>
+  <SL_Finances.stages.4.label>여유 있음</SL_Finances.stages.4.label>
+  <SL_Finances.stages.4.description>여유가 있고, 그 일로 걱정하지 않습니다.</SL_Finances.stages.4.description>
+  <SL_Finances.stages.5.label>저축</SL_Finances.stages.5.label>
+  <SL_Finances.stages.5.description>저축이 있습니다. 묘하고 따뜻한 기분입니다.</SL_Finances.stages.5.description>
+  <SL_Finances.stages.6.label>부자</SL_Finances.stages.6.label>
+  <SL_Finances.stages.6.description>우리는 부자입니다. 저녁 식사 자리에서 아무도 그 얘기는 꺼내지 않지만요.</SL_Finances.stages.6.description>
+  <SL_Finances.stages.7.label>엄청난 부자</SL_Finances.stages.7.label>
+  <SL_Finances.stages.7.description>콜로니가 엄청난 부자가 되었습니다. 우리는 필요 없는 물건을 사기 시작했습니다.</SL_Finances.stages.7.description>
+  <SL_Finances.stages.8.label>대마불사</SL_Finances.stages.8.label>
+  <SL_Finances.stages.8.description>우리는 너무 커서 망하지 않습니다. 누군가는 말해야 하고, 그게 우리여도 괜찮겠죠.</SL_Finances.stages.8.description>
+  <SL_FinancesGreedy.stages.0.label>빚더미에 앉음</SL_FinancesGreedy.stages.0.label>
+  <SL_FinancesGreedy.stages.0.description>빚. 빚! 우리에게 없는 은화 한 닢 한 닢이 느껴집니다.</SL_FinancesGreedy.stages.0.description>
+  <SL_FinancesGreedy.stages.1.label>무일푼</SL_FinancesGreedy.stages.1.label>
+  <SL_FinancesGreedy.stages.1.description>무일푼. 무일푼이 되려고 탐욕스러워진 게 아닌데.</SL_FinancesGreedy.stages.1.description>
+  <SL_FinancesGreedy.stages.2.label>간신히 버팀</SL_FinancesGreedy.stages.2.label>
+  <SL_FinancesGreedy.stages.2.description>계좌에 거의 아무것도 없습니다. 매시간 확인합니다.</SL_FinancesGreedy.stages.2.description>
+  <SL_FinancesGreedy.stages.3.label>근근이 버팀</SL_FinancesGreedy.stages.3.label>
+  <SL_FinancesGreedy.stages.3.description>괜찮습니다. 하지만 더 많았으면 좋겠습니다.</SL_FinancesGreedy.stages.3.description>
+  <SL_FinancesGreedy.stages.4.label>여유 있음</SL_FinancesGreedy.stages.4.label>
+  <SL_FinancesGreedy.stages.4.description>여유 있습니다. 하지만 더 많았으면 좋겠습니다.</SL_FinancesGreedy.stages.4.description>
+  <SL_FinancesGreedy.stages.5.label>저축</SL_FinancesGreedy.stages.5.label>
+  <SL_FinancesGreedy.stages.5.description>금고 속 저축, 내 이름이 적힌 곳에 보관되어 있습니다. 근사합니다.</SL_FinancesGreedy.stages.5.description>
+  <SL_FinancesGreedy.stages.6.label>부자</SL_FinancesGreedy.stages.6.label>
+  <SL_FinancesGreedy.stages.6.description>부자! 세는 걸 멈출 수가 없습니다.</SL_FinancesGreedy.stages.6.description>
+  <SL_FinancesGreedy.stages.7.label>엄청난 부자</SL_FinancesGreedy.stages.7.label>
+  <SL_FinancesGreedy.stages.7.description>엄청난 부자. 이것이 내가 태어난 이유입니다.</SL_FinancesGreedy.stages.7.description>
+  <SL_FinancesGreedy.stages.8.label>대마불사</SL_FinancesGreedy.stages.8.label>
+  <SL_FinancesGreedy.stages.8.description>너무 커서 망하지 않습니다. 대차대조표를 액자에 넣읍시다.</SL_FinancesGreedy.stages.8.description>
+  <SL_CollectorsNearby.stages.0.label>추심원 배회</SL_CollectorsNearby.stages.0.label>
+  <SL_CollectorsNearby.stages.0.description>중절모를 쓴 두 남자가 문 근처에 서 있습니다. 아주 공손하게요.</SL_CollectorsNearby.stages.0.description>
+</LanguageData>

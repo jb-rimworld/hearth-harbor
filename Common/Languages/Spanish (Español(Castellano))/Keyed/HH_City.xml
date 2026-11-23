@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.City>Vida urbana</HH.Tab.City>
+  <HH.City.TabTitle>Vida urbana</HH.City.TabTitle>
+  <HH.City.TabResearch>Investigación: nivel 1 (cine, salón, galería): {0}; nivel 2 (taxi, seguridad): {1}</HH.City.TabResearch>
+  <HH.Enum.CityResearchMode.Full>Completa</HH.Enum.CityResearchMode.Full>
+  <HH.Enum.CityResearchMode.Off>Desactivada (todo disponible)</HH.Enum.CityResearchMode.Off>
+  <HH.City.ScreenNoPower>Sin energía: la pantalla permanece apagada.</HH.City.ScreenNoPower>
+  <HH.City.ScreenShowing>Proyectando «{0}» (quedan {1}, {2} espectadores)</HH.City.ScreenShowing>
+  <HH.City.ScreenIdle>No hay ninguna película en marcha.</HH.City.ScreenIdle>
+  <HH.City.ScreenBusy>Ya hay una película en marcha</HH.City.ScreenBusy>
+  <HH.City.NoSeats>No hay asientos delante de la pantalla</HH.City.NoSeats>
+  <HH.City.MovieNightLabel>Noche de cine</HH.City.MovieNightLabel>
+  <HH.City.MovieNightDesc>Convoca a la colonia a una noche de cine frente a esta pantalla. Todos los que se sienten reciben recreo y buen ánimo.</HH.City.MovieNightDesc>
+  <HH.City.MovieNightFailed>No se puede iniciar una noche de cine ahora: se necesita una pantalla con energía, suficientes asientos y colonos libres.</HH.City.MovieNightFailed>
+  <HH.City.LordReport>viendo una película con la colonia</HH.City.LordReport>
+  <HH.City.Film.0>Muffalo Love III</HH.City.Film.0>
+  <HH.City.Film.1>El último Thrumbo</HH.City.Film.1>
+  <HH.City.Film.2>Blues de la cápsula de carga</HH.City.Film.2>
+  <HH.City.Film.3>Polvo entre las estrellas</HH.City.Film.3>
+  <HH.City.Film.4>La historia de un boomalope</HH.City.Film.4>
+  <HH.City.Film.5>Asedio de la colina Cortapiedras</HH.City.Film.5>
+  <HH.City.Film.6>El largo sueño</HH.City.Film.6>
+  <HH.City.Film.7>Humo sobre Haven</HH.City.Film.7>
+  <HH.City.SalonGuests>Abierto a visitantes</HH.City.SalonGuests>
+  <HH.City.SalonGuestsDesc>Los visitantes pueden ocupar esta silla para un corte de pelo de pago (la sala necesita un rótulo de salón de belleza y alguien que atienda).</HH.City.SalonGuestsDesc>
+  <HH.City.SalonCustomer>Cliente: {0}</HH.City.SalonCustomer>
+  <HH.City.NewHaircut>Hacerse un corte de pelo nuevo</HH.City.NewHaircut>
+  <HH.City.TaxiFree>Hay un taxi esperando.</HH.City.TaxiFree>
+  <HH.City.TaxiBusy>El taxi está en un trayecto.</HH.City.TaxiBusy>
+  <HH.City.TaxiStats>Salidas: {0}, llegadas: {1}, ingresos: {2} de plata</HH.City.TaxiStats>
+</LanguageData>

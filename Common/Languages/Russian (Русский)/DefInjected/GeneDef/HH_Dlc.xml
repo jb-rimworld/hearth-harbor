@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Gene_Hospitable.label>гостеприимный</HH_Gene_Hospitable.label>
+  <HH_Gene_Hospitable.description>Носители тепло относятся к людям без всяких усилий. Гостям с ними легко, а принимать гостей им даётся быстрее.</HH_Gene_Hospitable.description>
+  <HH_Gene_AddictionProofReward.label>устойчивая к зависимости система вознаграждения</HH_Gene_AddictionProofReward.label>
+  <HH_Gene_AddictionProofReward.description>Система вознаграждения в мозгу почти не реагирует на риск и случай. Азартные игры редко становятся привычкой.</HH_Gene_AddictionProofReward.description>
+  <HH_Gene_Compulsive.label>навязчивый</HH_Gene_Compulsive.label>
+  <HH_Gene_Compulsive.description>Гиперактивная система вознаграждения. Азартные игры немного приятнее и гораздо труднее бросить.</HH_Gene_Compulsive.description>
+  <HH_Gene_DexterousFingers.label>ловкие пальцы</HH_Gene_DexterousFingers.label>
+  <HH_Gene_DexterousFingers.description>Необычайно тонкий контроль над руками: тасовка, раздача и манипуляции с картами даются легко.</HH_Gene_DexterousFingers.description>
+  <HH_Gene_RefinedPalate.label>изысканный вкус</HH_Gene_RefinedPalate.label>
+  <HH_Gene_RefinedPalate.description>Язык, который отличает хорошую кухню от просто съедобной. Повара чаще повышают качество блюд; как гость, носитель ждёт большего и оставляет больше чаевых.</HH_Gene_RefinedPalate.description>
+  <HH_Gene_NumberSense.label>чувство чисел</HH_Gene_NumberSense.label>
+  <HH_Gene_NumberSense.description>Числа сами укладываются в порядок. Крупье, кассиры и банковские служащие с этим геном работают так, будто их навык на три уровня выше.</HH_Gene_NumberSense.description>
+  <HH_Gene_TirelessSmile.label>неутомимая улыбка</HH_Gene_TirelessSmile.label>
+  <HH_Gene_TirelessSmile.description>Мышцы улыбки не устают. Обслуживание за столами и стойками отнимает отдых гораздо медленнее.</HH_Gene_TirelessSmile.description>
+  <HH_Gene_SilverTongue.label>серебряный язык</HH_Gene_SilverTongue.label>
+  <HH_Gene_SilverTongue.description>Голос, который делает любую цену похожей на выгодную сделку. Гости ждут чуть меньшего, а лояльность обходится дешевле.</HH_Gene_SilverTongue.description>
+  <HH_Gene_HighRoller.label>крупный игрок</HH_Gene_HighRoller.label>
+  <HH_Gene_HighRoller.description>Носители чувствуют себя живее всего, когда ставки высоки. Они ставят крупнее, получают от этого больше удовольствия и щедро дают на чай, но их трудно оторвать от стола.</HH_Gene_HighRoller.description>
+</LanguageData>

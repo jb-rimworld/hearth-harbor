@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Dlc.Bought>{0} купив(ла) {1} за {2} срібла.</HH.Dlc.Bought>
+  <HH.Dlc.Gizmo.Buy>Індульгенції</HH.Dlc.Gizmo.Buy>
+  <HH.Dlc.Gizmo.BuyDesc>Купуйте відпущення, милість або ранг для колоніста. Ціни залежать від позиції його ідеоідеології. Срібло береться з колоніальних запасів або з його кишені.</HH.Dlc.Gizmo.BuyDesc>
+  <HH.Dlc.Gizmo.ChooseFaith>Обрати віру</HH.Dlc.Gizmo.ChooseFaith>
+  <HH.Dlc.Gizmo.ChooseFaithDesc>Присвятіть цей вівтар ідеоідеології. Її послідовники серед ваших гостей прийдуть сюди молитися.</HH.Dlc.Gizmo.ChooseFaithDesc>
+  <HH.Dlc.Gizmo.FundDesc>Куди йдуть платежі колоністів. Божество зберігає їх назавжди; фракція тієї самої віри тепліше ставиться до вас (+1 до прихильності за кожні 500 срібла, але не більше +5 за квадрум).</HH.Dlc.Gizmo.FundDesc>
+  <HH.Dlc.Gizmo.ToDeity>Пожертви: божеству</HH.Dlc.Gizmo.ToDeity>
+  <HH.Dlc.Gizmo.ToFaction>Пожертви: фракції віри</HH.Dlc.Gizmo.ToFaction>
+  <HH.Dlc.NoBuyers>жоден колоніст не має ідеоідеології</HH.Dlc.NoBuyers>
+  <HH.Dlc.NoFaith>Віру ще не обрано.</HH.Dlc.NoFaith>
+  <HH.Dlc.Noble.AcceptOrders>Виконати наказ</HH.Dlc.Noble.AcceptOrders>
+  <HH.Dlc.Noble.Arrived>{0} і свита прибувають на {1} дн.</HH.Dlc.Noble.Arrived>
+  <HH.Dlc.Noble.BilletText>Імперія наказує вам розмістити {0} і {1} слуг на {2} дн. Вони очікують спальню, гідну їхнього рангу ({3}). На витрати ви отримаєте близько {4} срібла. Відмова коштуватиме прихильності та честі.</HH.Dlc.Noble.BilletText>
+  <HH.Dlc.Noble.Left>Знатна делегація відбуває. Оплата: {0} срібла.</HH.Dlc.Noble.Left>
+  <HH.Dlc.Noble.OfferText>{0} з {1} слугами просить зупинитися на {2} дн. і заплатить близько {3} срібла, якщо їм буде зручно. Вони очікують: {4}. Відмова нічого не коштує.</HH.Dlc.Noble.OfferText>
+  <HH.Dlc.Noble.Refuse>Відмовити (страждають прихильність і честь)</HH.Dlc.Noble.Refuse>
+  <HH.Dlc.NothingOffered>їхня віра нічого не пропонує на продаж</HH.Dlc.NothingOffered>
+  <HH.Dlc.Reason.Abhorrent>їхня віра це засуджує</HH.Dlc.Reason.Abhorrent>
+  <HH.Dlc.Reason.CannotPay>не може заплатити {0}</HH.Dlc.Reason.CannotPay>
+  <HH.Dlc.Reason.CapColony>колонія вже купила це цього квадруму</HH.Dlc.Reason.CapColony>
+  <HH.Dlc.Reason.CapIdeo>ідеоідеологія вже мала достатньо цього в цьому квадрумі</HH.Dlc.Reason.CapIdeo>
+  <HH.Dlc.Reason.CapPawnQ>ліміт досягнуто на цей квадрум</HH.Dlc.Reason.CapPawnQ>
+  <HH.Dlc.Reason.CapPawnY>ліміт досягнуто на цей рік</HH.Dlc.Reason.CapPawnY>
+  <HH.Dlc.Reason.CertainEnough>певність уже повна</HH.Dlc.Reason.CertainEnough>
+  <HH.Dlc.Reason.NeedRank>потрібен ранг {0}</HH.Dlc.Reason.NeedRank>
+  <HH.Dlc.Reason.NeedRoyalty>потрібна Royalty</HH.Dlc.Reason.NeedRoyalty>
+  <HH.Dlc.Reason.NoFresh>немає свіжої рани до 10 очок здоров'я</HH.Dlc.Reason.NoFresh>
+  <HH.Dlc.Reason.NoGuilt>немає спогаду про порушену заповідь</HH.Dlc.Reason.NoGuilt>
+  <HH.Dlc.Reason.NoIdeo>немає ідеоідеології</HH.Dlc.Reason.NoIdeo>
+  <HH.Dlc.Reason.NoScar>немає стійкого шраму</HH.Dlc.Reason.NoScar>
+  <HH.Dlc.Reason.NotAThing>їхня віра такого не знає</HH.Dlc.Reason.NotAThing>
+  <HH.Dlc.Reason.NotFluid>реформувати можна лише гнучкі ідеоідеології</HH.Dlc.Reason.NotFluid>
+  <HH.Dlc.Reason.NotPsychic>не може утворити психозв'язок</HH.Dlc.Reason.NotPsychic>
+  <HH.Dlc.Reason.PsylinkMax>психозв'язок уже на межі</HH.Dlc.Reason.PsylinkMax>
+  <HH.Dlc.Reason.RankHeld>вже має цей ранг або вищий</HH.Dlc.Reason.RankHeld>
+  <HH.Dlc.Reason.RankOrder>спершу потрібен попередній ранг</HH.Dlc.Reason.RankOrder>
+  <HH.Dlc.Reason.ReformReady>реформа вже можлива</HH.Dlc.Reason.ReformReady>
+  <HH.Dlc.ShrineQuality>Віра: {0}. Якість каплиці: {1}.</HH.Dlc.ShrineQuality>
+  <HH.Dlc.TempleFund>Фонд храму: {0} срібла</HH.Dlc.TempleFund>
+  <HH.Setting.dlc.traitSpawn>Нові риси з'являються в згенерованих людей</HH.Setting.dlc.traitSpawn>
+  <HH.Setting.dlc.traitSpawn.Desc>Везучий, Невезучий, Народжений господар та інші риси Hearth &amp; Harbor можуть траплятися в новостворених персонажів. Наявні персонажі зберігають свої риси. Вимкнено: риси додаються лише вручну або в редакторі.</HH.Setting.dlc.traitSpawn.Desc>
+  <HH.Setting.dlc.traitRarity>Частота рис</HH.Setting.dlc.traitRarity>
+  <HH.Setting.dlc.traitRarity.Desc>Множник частоти, з якою наші риси випадають новим персонажам (1 = та сама рідкість, що в більшості ванільних рис).</HH.Setting.dlc.traitRarity.Desc>
+</LanguageData>

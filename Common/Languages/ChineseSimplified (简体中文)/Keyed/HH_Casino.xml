@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.Casino>赌场</HH.Tab.Casino>
+  <HH.Casino.TabTitle>赌场</HH.Casino.TabTitle>
+  <HH.Casino.LimitsToggle>强制执行赌桌限额（赌注 {0}–{1} 银币）</HH.Casino.LimitsToggle>
+  <HH.Casino.LosingWarning>庄家在以下项目上亏钱：{0}。以目前的赔率，宾客赢走的比他们下注的多。</HH.Casino.LosingWarning>
+  <HH.Casino.BalancedBadge>每种游戏都有庄家优势：从长期看，赌场是赚钱的。</HH.Casino.BalancedBadge>
+  <HH.Casino.Houses>赌场</HH.Casino.Houses>
+  <HH.Casino.NoHouses>还没有宾客下过注。赌场会在第一笔入场筹码出现时开账。</HH.Casino.NoHouses>
+  <HH.Casino.HouseOfMap>{0}的赌场</HH.Casino.HouseOfMap>
+  <HH.Casino.Drawer>抽屉：{0}</HH.Casino.Drawer>
+  <HH.Casino.TodayNet>今日：{0}</HH.Casino.TodayNet>
+  <HH.Casino.HouseTip>宾客此刻正用 {0} 银币下注。赌场保留 {1} 银币的备用金；超出部分在赌场关门时归殖民地所有。</HH.Casino.HouseTip>
+  <HH.Casino.Games>游戏：实际派彩与设计派彩对比</HH.Casino.Games>
+  <HH.Casino.ColGame>游戏</HH.Casino.ColGame>
+  <HH.Casino.ColRounds>局数</HH.Casino.ColRounds>
+  <HH.Casino.ColStaked>下注额</HH.Casino.ColStaked>
+  <HH.Casino.ColRtp>派彩（实际）</HH.Casino.ColRtp>
+  <HH.Casino.ColExpected>派彩（设计）</HH.Casino.ColExpected>
+  <HH.Casino.ColLuck>运气</HH.Casino.ColLuck>
+  <HH.Casino.ColHouse>庄家结果</HH.Casino.ColHouse>
+  <HH.Casino.Game.Slots>老虎机</HH.Casino.Game.Slots>
+  <HH.Casino.Game.Roulette>轮盘</HH.Casino.Game.Roulette>
+  <HH.Casino.Game.Blackjack>二十一点</HH.Casino.Game.Blackjack>
+  <HH.Casino.Game.Poker>Rimdeck</HH.Casino.Game.Poker>
+  <HH.Casino.Gamblers>赌博的殖民者</HH.Casino.Gamblers>
+  <HH.Casino.NoGamblers>殖民地里还没有人玩过。</HH.Casino.NoGamblers>
+  <HH.Casino.InspectGame>{0}：{2} 个座位中有 {1} 个有人</HH.Casino.InspectGame>
+  <HH.Casino.InspectBooks>{0} 局 · 庄家 {1} · 实际优势 {2} %（设计 {3} %）</HH.Casino.InspectBooks>
+  <HH.Casino.InspectToday>今日：{0} 局，庄家 {1}</HH.Casino.InspectToday>
+  <HH.Casino.InspectLuck>历史运气：{0}</HH.Casino.InspectLuck>
+  <HH.Casino.Staffed>荷官在岗</HH.Casino.Staffed>
+  <HH.Casino.NoCroupier>没有荷官</HH.Casino.NoCroupier>
+  <HH.Casino.Vol.Low>低波动</HH.Casino.Vol.Low>
+  <HH.Casino.Vol.Medium>中波动</HH.Casino.Vol.Medium>
+  <HH.Casino.Vol.High>高波动</HH.Casino.Vol.High>
+  <HH.Casino.VolDesc>点击改变机器的派彩方式。各设置下命中率 {0}，押注幅度 {1} 倍下注额，大奖 ×{2}，派彩率始终为 {3} %。</HH.Casino.VolDesc>
+  <HH.Casino.OpenToGuests>对宾客开放</HH.Casino.OpenToGuests>
+  <HH.Casino.OpenToGuestsDesc>关闭后，只有殖民者可以使用此设备。</HH.Casino.OpenToGuestsDesc>
+  <HH.Casino.TryDemo>试玩（练习筹码）</HH.Casino.TryDemo>
+  <HH.Casino.TryDemoDesc>用练习筹码亲自玩几局。不涉及银币。</HH.Casino.TryDemoDesc>
+  <HH.Casino.Simulate>模拟 10,000 局</HH.Casino.Simulate>
+  <HH.Casino.SimulateDesc>赌场经理：按当前赔率在纸面上玩 10,000 局，并报告结果。不记入账目。</HH.Casino.SimulateDesc>
+  <HH.Casino.SimResult>赌场经理：纸面上的 {0} 局返还了下注额的 {1} %（设计值：{2} %）。</HH.Casino.SimResult>
+  <HH.Casino.LuckNoData>目前局数太少</HH.Casino.LuckNoData>
+  <HH.Casino.LuckNormal>运气正常</HH.Casino.LuckNormal>
+  <HH.Casino.LuckHouseUp>庄家走运</HH.Casino.LuckHouseUp>
+  <HH.Casino.LuckHouseDown>庄家背运</HH.Casino.LuckHouseDown>
+  <HH.Casino.LuckHouseWayUp>庄家大走运</HH.Casino.LuckHouseWayUp>
+  <HH.Casino.LuckHouseWayDown>庄家非常背运</HH.Casino.LuckHouseWayDown>
+  <HH.Casino.BigWin>{0} 在{2}赢得大奖：价值 {1} 银币的筹码。</HH.Casino.BigWin>
+  <HH.Casino.DemoInfo>只用练习筹码，这里的一切都不花银币。本殖民地的赔率设置为：{ODDS}。你的赌注已经封存：重新读取存档不会改变结果。</HH.Casino.DemoInfo>
+  <HH.Casino.DemoChips>练习筹码：{0} · 局数：{1}</HH.Casino.DemoChips>
+  <HH.Casino.DemoReset>重新开始</HH.Casino.DemoReset>
+  <HH.Casino.DemoStake>赌注</HH.Casino.DemoStake>
+  <HH.Casino.DemoBet>下注</HH.Casino.DemoBet>
+  <HH.Casino.DemoBroke>你的练习筹码不够支付这个赌注。</HH.Casino.DemoBroke>
+  <HH.Casino.DemoPays>赔 ×{0}</HH.Casino.DemoPays>
+  <HH.Casino.DemoNoWin>没中</HH.Casino.DemoNoWin>
+  <HH.Casino.DemoPoker>你和三位常客同桌。每人先下底注，庄家抽取佣金。</HH.Casino.DemoPoker>
+  <HH.Casino.DemoStats>目前返还：下注额的 {0} %（设计值：{1} %）</HH.Casino.DemoStats>
+  <HH.Casino.Spin>转动</HH.Casino.Spin>
+  <HH.Casino.Deal>发牌</HH.Casino.Deal>
+  <HH.Casino.Hit>要牌</HH.Casino.Hit>
+  <HH.Casino.Stand>停牌</HH.Casino.Stand>
+  <HH.Casino.DoubleDown>加倍</HH.Casino.DoubleDown>
+  <HH.Casino.HelpHint>如果赌博在现实生活中成了问题，可以获得帮助：{LINK}</HH.Casino.HelpHint>
+  <HH.Casino.HelpHintTip>点击打开求助热线。右键点击可隐藏此行（可在模组设置中重新开启）。</HH.Casino.HelpHintTip>
+  <HH.Casino.HideHint>隐藏此提示</HH.Casino.HideHint>
+  <HH.Casino.OpenHelpline>打开求助热线</HH.Casino.OpenHelpline>
+  <HH.Casino.AddictionBrackets>第 {0} 阶段，已戒除 {1}/{2} 天</HH.Casino.AddictionBrackets>
+  <HH.Casino.AddictionTip>赌博成瘾第 {0} 阶段。连续无任何赌局的天数：{1}/{2}。每天需要约 {3} 次赌局才能保持满足。只有戒断才能治愈。</HH.Casino.AddictionTip>
+  <HH.Casino.AddictedTitle>{0}：赌博成瘾</HH.Casino.AddictedTitle>
+  <HH.Casino.AddictedText>{0} 玩得太过头了，现在已经对赌博成瘾。没有定期赌博，戒断反应会折磨{PAWN_objective}：心情变差，在更深的阶段还会出现赌博狂潮。没有损失银币，筹码是免费的，但时间和神经可不是。\n\n只有长时间不进行任何赌局才能治愈。你可以在毒品政策中更改{PAWN_nameDef}被允许做什么（“赌博”一行）。</HH.Casino.AddictedText>
+  <HH.Casino.RelapseTitle>{0}：复发</HH.Casino.RelapseTitle>
+  <HH.Casino.RelapseText>{0} 在戒断后的渴望期内坐到了赌桌旁，成瘾又回来了（比之前低一个阶段）。需要再次长时间不进行任何赌局。</HH.Casino.RelapseText>
+  <HH.Casino.CuredMessage>{0} 已戒掉赌博的习惯。在接下来的 {1} 天里，任何一次赌局都有复发的风险。</HH.Casino.CuredMessage>
+  <HH.Casino.SpreeReason>赌博戒断</HH.Casino.SpreeReason>
+  <HH.Casino.Counter>3 天内 {0}/{1} 次赌局。</HH.Casino.Counter>
+  <HH.Casino.CounterNext>3 天内 {0}/{1} 次赌局——下一次有成瘾风险。</HH.Casino.CounterNext>
+  <HH.Casino.CounterRisk>3 天内 {0} 次赌局——下一次的成瘾风险为 {1}。</HH.Casino.CounterRisk>
+  <HH.Casino.CounterAddicted>已成瘾。最近 3 天内 {0} 次赌局。</HH.Casino.CounterAddicted>
+</LanguageData>

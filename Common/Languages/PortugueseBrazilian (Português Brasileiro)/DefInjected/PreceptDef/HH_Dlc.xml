@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Indulgences_NotAThing.label>não é coisa</HH_Indulgences_NotAThing.label>
+  <HH_Indulgences_NotAThing.description>Ninguém aqui jamais pensou em vender perdão. Nada para comprar, nada a objetar.</HH_Indulgences_NotAThing.description>
+  <HH_Indulgences_Abhorrent.label>abominável</HH_Indulgences_Abhorrent.label>
+  <HH_Indulgences_Abhorrent.description>Perdão não é mercadoria. Quem o vende deveria ser expulso do templo.</HH_Indulgences_Abhorrent.description>
+  <HH_Indulgences_Disapproved.label>reprovado</HH_Indulgences_Disapproved.label>
+  <HH_Indulgences_Disapproved.description>Comprar absolvição é um hábito mesquinho. Funciona, mas ninguém deveria se orgulhar disso.</HH_Indulgences_Disapproved.description>
+  <HH_Indulgences_Accepted.label>aceito</HH_Indulgences_Accepted.label>
+  <HH_Indulgences_Accepted.description>Uma oferenda justa por uma misericórdia justa. O preço está na placa.</HH_Indulgences_Accepted.description>
+  <HH_Indulgences_Sacred.label>sagrado</HH_Indulgences_Sacred.label>
+  <HH_Indulgences_Sacred.description>Pagar as próprias dívidas é um sacramento. Os fiéis têm desconto, e uma consciência barata é um dever.</HH_Indulgences_Sacred.description>
+  <HH_PaidAscension_NotAThing.label>não é coisa</HH_PaidAscension_NotAThing.label>
+  <HH_PaidAscension_NotAThing.description>Posto se conquista aqui, nunca se compra. Nada para comprar, nada a objetar.</HH_PaidAscension_NotAThing.description>
+  <HH_PaidAscension_Abhorrent.label>abominável</HH_PaidAscension_Abhorrent.label>
+  <HH_PaidAscension_Abhorrent.description>A fé não está à venda. Quem vende posto já o perdeu.</HH_PaidAscension_Abhorrent.description>
+  <HH_PaidAscension_Disapproved.label>reprovado</HH_PaidAscension_Disapproved.label>
+  <HH_PaidAscension_Disapproved.description>Posto comprado é posto oco. A congregação percebe.</HH_PaidAscension_Disapproved.description>
+  <HH_PaidAscension_Accepted.label>aceito</HH_PaidAscension_Accepted.label>
+  <HH_PaidAscension_Accepted.description>Posto pode ser comprado, ao preço anunciado, como tudo que tem valor.</HH_PaidAscension_Accepted.description>
+  <HH_PaidAscension_Sacred.label>sagrado</HH_PaidAscension_Sacred.label>
+  <HH_PaidAscension_Sacred.description>A escada é a fé. Cada degrau comprado é um degrau subido, e os de baixo olham para cima com respeito.</HH_PaidAscension_Sacred.description>
+</LanguageData>

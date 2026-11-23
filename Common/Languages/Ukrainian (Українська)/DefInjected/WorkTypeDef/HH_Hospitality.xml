@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Hosting.labelShort>приймати гостей</HH_Hosting.labelShort>
+  <HH_Hosting.pawnLabel>Господар</HH_Hosting.pawnLabel>
+  <HH_Hosting.gerundLabel>прийом гостей</HH_Hosting.gerundLabel>
+  <HH_Hosting.description>Реєструвати гостей при заїзді та виїзді, показувати їм округу, розважати та вмовляти їх залишитися (або приєднатися).</HH_Hosting.description>
+  <HH_Hosting.verb>Приймати гостей</HH_Hosting.verb>
+  <HH_Serving.labelShort>обслуговувати</HH_Serving.labelShort>
+  <HH_Serving.pawnLabel>Офіціант</HH_Serving.pawnLabel>
+  <HH_Serving.gerundLabel>обслуговування</HH_Serving.gerundLabel>
+  <HH_Serving.description>Прилавки, столи та каси: приймати замовлення, подавати страви й напої, керувати залом казино, поповнювати полиці.</HH_Serving.description>
+  <HH_Serving.verb>Обслуговувати</HH_Serving.verb>
+</LanguageData>

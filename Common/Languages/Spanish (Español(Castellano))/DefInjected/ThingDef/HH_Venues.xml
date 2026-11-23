@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueSign.label>cartel de local</HH_VenueSign.label>
+  <HH_VenueSign.description>Un cartel que convierte la sala en la que está en un negocio: taberna, tienda, restaurante, casino, spa o salón. Elige el tipo de negocio, el horario y los precios en los controles del cartel. Sin cartel, una sala es solo una sala.</HH_VenueSign.description>
+  <HH_VenueSignWall.label>cartel de local (pared)</HH_VenueSignWall.label>
+  <HH_VenueSignWall.description>El mismo cartel, colgado en una pared. La sala a la que mira se convierte en el negocio. Elige el tipo de negocio, el horario y los precios en los controles del cartel.</HH_VenueSignWall.description>
+  <HH_ShopCounter.label>mostrador de tienda</HH_ShopCounter.label>
+  <HH_ShopCounter.description>Un mostrador para un tendero o camarero. Quien atienda el local se pone detrás, y la recaudación del día se deposita aquí en plata a medianoche. El mostrador es opcional: sin él, el encargado se queda junto al cartel.</HH_ShopCounter.description>
+  <HH_MarketStall.label>puesto de mercado</HH_MarketStall.label>
+  <HH_MarketStall.description>Un puesto independiente con toldo a rayas. El gran mercado solo se celebra cuando tienes suficientes puestos (véanse los ajustes de Locales): cada caravana de comerciantes se instala en uno y paga una tasa de puesto a tu caja. Al aire libre funciona con cualquier tiempo, pero no es un negocio propio.</HH_MarketStall.description>
+  <HH_VendingMachine.label>máquina expendedora</HH_VendingMachine.label>
+  <HH_VendingMachine.description>Un armario con corriente que guarda comida, bebidas, drogas y medicinas. Los huéspedes compran en ella a cualquier hora sin personal, a valor de mercado. Los transportistas la llenan como una estantería. Los colonos pueden servirse gratis; la máquina solo cobra a los huéspedes. Necesita energía para vender.</HH_VendingMachine.description>
+</LanguageData>

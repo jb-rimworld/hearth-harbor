@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Banking.label>自动柜员机</SL_Banking.label>
+  <SL_Banking.description>只要输入正确的四位数字，就会把银币吐给任何人的机器。解锁自动取款机和夜间保险箱。</SL_Banking.description>
+  <SL_Branches.label>银行分行</SL_Branches.label>
+  <SL_Branches.description>正规的柜台、正规的金库和正规的队伍。解锁银行柜台：即时存款、即时取现，贷款申请须本人办理。</SL_Branches.description>
+  <SL_Credit.label>消费信贷</SL_Credit.label>
+  <SL_Credit.description>给没有钱的人花的、你并没有的钱。解锁贷款、信用评分，以及在必要时使用的催收机构。</SL_Credit.description>
+</LanguageData>

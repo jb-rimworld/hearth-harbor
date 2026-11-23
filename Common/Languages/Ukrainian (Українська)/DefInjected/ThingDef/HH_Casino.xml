@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_SlotMachine.label>однорукий муффало</HH_SlotMachine.label>
+  <HH_SlotMachine.description>Жадібний до монет ігровий автомат із трьома барабанами та важелем у формі роги муффало. Коефіцієнти встановлює дім, світло — ні. Гості грають без крупʼє; колоністи грають тренувальними фішками без цінності.\n\nОберіть волатильність (як часто і наскільки великі виплати) кнопкою на автоматі.</HH_SlotMachine.description>
+  <HH_RouletteTable.label>рулетка</HH_RouletteTable.label>
+  <HH_RouletteTable.description>Сукно з колесом, вбудованим у стіл. Ставте фішки; кулька вирішує. Для гостей потрібне крупʼє (колоніст із типом роботи «Обслуговування»). Колоністи можуть грати для задоволення тренувальними фішками й без нього.</HH_RouletteTable.description>
+  <HH_BlackjackTable.label>блекджек</HH_BlackjackTable.label>
+  <HH_BlackjackTable.description>Стіл-півмісяць із картковим башмаком. Набрати ближче до 21, ніж дилер, не перебравши. Добрі гравці програють менше; перевага дому залежить від правил і від того, як грає гравець. Для гостей потрібне крупʼє.</HH_BlackjackTable.description>
+  <HH_PokerTable.label>стіл Rimdeck</HH_PokerTable.label>
+  <HH_PokerTable.description>Дім роздає Rimdeck — карткову гру проти інших гравців: дім бере лише невелику комісію з кожного банку. Розумні та товариські гравці виграють частіше. Замінює ванільний покерний стіл. Для гостей потрібне крупʼє.</HH_PokerTable.description>
+  <HH_CashierCage.label>каса-клітка</HH_CashierCage.label>
+  <HH_CashierCage.description>Зарешечене віконце, де срібло міняють на фішки і навпаки. За наявності каси в колонії гості грають фішками: приносять близько на 5 % більше, а дехто виходить із фішками, які поза домом нічого не варті (резерв фішок лишається в касі). Нічні виручки казино записуються сюди як срібло.</HH_CashierCage.description>
+  <HH_CasinoChips.label>казинова фішка</HH_CasinoChips.label>
+  <HH_CasinoChips.description>Глиняна фішка з печаткою дому. Варта одне срібло в касі, яка її продала, і ніде більше: торговці її не беруть, і вона не враховується в ваше багатство.</HH_CasinoChips.description>
+  <HH_GamblingSession.label>азартні ігри</HH_GamblingSession.label>
+  <HH_GamblingSession.description>Сеанс за столами, яким керують через політику щодо наркотиків, як наркотиком: чи дозволено це для задоволення, як часто і чи можуть залежні грати. Це не предмет і ніколи не існує у світі.</HH_GamblingSession.description>
+</LanguageData>

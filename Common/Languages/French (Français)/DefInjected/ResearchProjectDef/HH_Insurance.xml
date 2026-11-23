@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Insurance.label>assurance</SL_Insurance.label>
+  <SL_Insurance.description>Une police pour chaque infortune, vendue par une mutuelle qui n'a jamais perdu une discussion. Débloque le bureau d'assurance et les polices des niveaux de couverture de base « Strict minimum » et « Suffisant ».</SL_Insurance.description>
+  <SL_Actuarial.label>science actuarielle</SL_Actuarial.label>
+  <SL_Actuarial.description>Tables de la probabilité que tout tourne mal, et de ce que cela vaut. Débloque le niveau de couverture suprême « Premium du Premium », les polices premium et les services de la mutuelle.</SL_Actuarial.description>
+</LanguageData>

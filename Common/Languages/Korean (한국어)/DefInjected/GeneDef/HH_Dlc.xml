@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Gene_Hospitable.label>환대하는</HH_Gene_Hospitable.label>
+  <HH_Gene_Hospitable.description>보유자는 애쓰지 않아도 따뜻합니다. 손님들은 그와 함께 있기 편하다고 느끼고, 접대도 그에게 더 쉽게 찾아옵니다.</HH_Gene_Hospitable.description>
+  <HH_Gene_AddictionProofReward.label>중독 방지 보상 회로</HH_Gene_AddictionProofReward.label>
+  <HH_Gene_AddictionProofReward.description>뇌의 보상 회로가 위험과 우연에 거의 반응하지 않습니다. 도박이 습관이 되는 일은 드뭅니다.</HH_Gene_AddictionProofReward.description>
+  <HH_Gene_Compulsive.label>강박적인</HH_Gene_Compulsive.label>
+  <HH_Gene_Compulsive.description>과활성 보상 회로. 도박이 조금 더 재미있고, 그만두기는 훨씬 어렵습니다.</HH_Gene_Compulsive.description>
+  <HH_Gene_DexterousFingers.label>재빠른 손가락</HH_Gene_DexterousFingers.label>
+  <HH_Gene_DexterousFingers.description>유난히 정교한 손 조절: 셔플, 딜링, 카드 감추기가 자연스럽습니다.</HH_Gene_DexterousFingers.description>
+  <HH_Gene_RefinedPalate.label>세련된 미각</HH_Gene_RefinedPalate.label>
+  <HH_Gene_RefinedPalate.description>좋은 요리와 그저 먹을 만한 요리를 구별하는 혀. 요리사는 요리 품질을 더 자주 올리고, 손님으로서 보유자는 더 많이 기대하며 팁도 더 줍니다.</HH_Gene_RefinedPalate.description>
+  <HH_Gene_NumberSense.label>숫자 감각</HH_Gene_NumberSense.label>
+  <HH_Gene_NumberSense.description>숫자들이 저절로 정리됩니다. 이 유전자를 가진 크루피어, 출납원, 은행원은 기술 3단계 높은 것처럼 일합니다.</HH_Gene_NumberSense.description>
+  <HH_Gene_TirelessSmile.label>지치지 않는 미소</HH_Gene_TirelessSmile.label>
+  <HH_Gene_TirelessSmile.description>웃는 근육은 지치지 않습니다. 테이블과 카운터에서 서빙하면 휴식이 훨씬 천천히 줄어듭니다.</HH_Gene_TirelessSmile.description>
+  <HH_Gene_SilverTongue.label>은빛 혀</HH_Gene_SilverTongue.label>
+  <HH_Gene_SilverTongue.description>어떤 가격도 특가처럼 들리게 하는 목소리. 손님은 조금 덜 기대하고, 충성심은 더 싸게 얻어집니다.</HH_Gene_SilverTongue.description>
+  <HH_Gene_HighRoller.label>하이롤러</HH_Gene_HighRoller.label>
+  <HH_Gene_HighRoller.description>보유자는 판돈이 클 때 가장 살아 있다고 느낍니다. 더 크게 걸고 더 즐기며 팁도 넉넉히 주지만, 테이블에서 떠나기가 더 어렵습니다.</HH_Gene_HighRoller.description>
+</LanguageData>

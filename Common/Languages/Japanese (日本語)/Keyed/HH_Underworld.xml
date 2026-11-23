@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.Underworld>地下世界</HH.Tab.Underworld>
+  <HH.Underworld.GateClosed>利用不可: このゲームでは地下世界は閉ざされています。</HH.Underworld.GateClosed>
+  <HH.Underworld.BackRoomDoorInfo>スタッフ、入植者、そして怪しげな客だけがこの扉を開けられます。</HH.Underworld.BackRoomDoorInfo>
+  <HH.Underworld.Stranger.Title>門前の見知らぬ男</HH.Underworld.Stranger.Title>
+  <HH.Underworld.Stranger.Text>帽子を深くかぶった見知らぬ男が、スタッフの声が届かなくなるまで扉の前で待っています。\n\n「いい店だな」と彼は言います。「奥の部屋はあるか?」\n\nどういう意味かは言いません。言う必要もないのです。</HH.Underworld.Stranger.Text>
+  <HH.Underworld.Stranger.Show>見せてくれ</HH.Underworld.Stranger.Show>
+  <HH.Underworld.Stranger.No>興味はない</HH.Underworld.Stranger.No>
+  <HH.Underworld.Stranger.Never>二度と聞かないでくれ</HH.Underworld.Stranger.Never>
+  <HH.Underworld.Unlocked.Title>奥の部屋</HH.Underworld.Unlocked.Title>
+  <HH.Underworld.Unlocked.Text>奥の部屋を見せると、男は試験に合格させたかのようにうなずきました。新しい研究系統が開放されます: 扉、闘技場、故買屋のカウンター、密輸者の桟橋、そしてラウンジです。地下世界での評判である「囁き」は、あなたが築いたものに従って変動するようになります。\n\nすべて無視することもできます。ここにあるものは何も必須ではありません。</HH.Underworld.Unlocked.Text>
+  <HH.Underworld.Warn.Title>内容に関する注意</HH.Underworld.Warn.Title>
+  <HH.Underworld.Warn.Dark>ダークな内容を有効にすると、地下世界が広がります。囚人は闘技場で死ぬまで戦わされることがあり、ギャングは囚人をより厳しく尋問することがあり、狩人は(適合する信条がある場合)囚人を狩ることがあります。また、診療所のカウンターは摘出された臓器を買い取ります。\n\n表示はテキストと通常のゲーム内の負傷だけです。子供が参加することはなく、ここにあるものは自動的に有効になることはありません。\n\nこのゲームでこの内容を有効にしますか?</HH.Underworld.Warn.Dark>
+  <HH.Underworld.Warn.Grim>グリムな内容にはダークな内容のすべてが含まれ、さらに囚人への狩りは信条を問わなくなります。臓器の買い手は期限付きで注文を出します。\n\n表示はテキストと通常のゲーム内の負傷だけです。子供が参加することはなく、ここにあるものは自動的に有効になることはありません。\n\nこのゲームでこの内容を有効にしますか?</HH.Underworld.Warn.Grim>
+  <HH.Underworld.Warn.Accept>はい、理解しました</HH.Underworld.Warn.Accept>
+  <HH.Underworld.Warn.Back>いいえ、標準に戻る</HH.Underworld.Warn.Back>
+  <HH.Underworld.Warn.Hunt>狩場での囚人狩りを許可しようとしています。囚人は先行の余裕を与えられて狩場に放たれます。設定された時間を生き延びるか、柵線に到達すれば自由になり、どちらの場合も所属派閥にそのことが伝わります。死亡した場合、所属派閥、入植者、そして客はそれを許しません。\n\nこれはテキストでのみ表示されます。許可しますか?</HH.Underworld.Warn.Hunt>
+  <HH.Underworld.Warn.Organ>診療所のカウンターは、夜間に匿名の提供者から摘出された臓器を買い取ります。臓器取引を忌み嫌う思想は、あなたをそのことで責めるでしょう。販売のたびに「囁き」は高まります。\n\nこれはテキストでのみ表示されます。維持しますか?</HH.Underworld.Warn.Organ>
+  <HH.Underworld.Warn.Keep>はい、維持する</HH.Underworld.Warn.Keep>
+  <HH.Underworld.Warn.Remove>いいえ、取り除く</HH.Underworld.Warn.Remove>
+  <HH.Underworld.Scandal.BackRoomFound.Title>奥の部屋が露見した</HH.Underworld.Scandal.BackRoomFound.Title>
+  <HH.Underworld.Scandal.BackRoomFound.Text>ある立派な客が間違った扉を開け、この店が奥に隠しているものを目にしてしまいました。夕方までには町中の人が知ることになるでしょう。</HH.Underworld.Scandal.BackRoomFound.Text>
+  <HH.Underworld.Scandal.LeakedLedger.Title>流出した帳簿</HH.Underworld.Scandal.LeakedLedger.Title>
+  <HH.Underworld.Scandal.LeakedLedger.Text>故買屋の集計表の一枚が、誤った人の手に渡ってしまいました。品物はあなたのカウンターまで遡ることができます。</HH.Underworld.Scandal.LeakedLedger.Text>
+  <HH.Underworld.Scandal.SecretCasinoRumour.Title>秘密のカジノの噂</HH.Underworld.Scandal.SecretCasinoRumour.Title>
+  <HH.Underworld.Scandal.SecretCasinoRumour.Text>この店には口外しない人々のための賭博場がある、という噂が広まりました。大金を賭ける客たちがその扉を探しています。</HH.Underworld.Scandal.SecretCasinoRumour.Text>
+  <HH.Underworld.Scandal.HonourAmongThieves.Title>盗人の仁義</HH.Underworld.Scandal.HonourAmongThieves.Title>
+  <HH.Underworld.Scandal.HonourAmongThieves.Text>ある一味が、大事な場所であなたの店を褒めています。</HH.Underworld.Scandal.HonourAmongThieves.Text>
+  <HH.Underworld.Scandal.Effects>囁き {0}、名声 {1}。</HH.Underworld.Scandal.Effects>
+  <HH.Underworld.Pit.Enabled>闘技場 開放</HH.Underworld.Pit.Enabled>
+  <HH.Underworld.Pit.Enabled.Desc>この闘技場で試合を予定します。</HH.Underworld.Pit.Enabled.Desc>
+  <HH.Underworld.Pit.Animals>動物</HH.Underworld.Pit.Animals>
+  <HH.Underworld.Pit.Animals.Desc>入植者の動物がここで戦うことがあります。</HH.Underworld.Pit.Animals.Desc>
+  <HH.Underworld.Pit.Volunteers>志願者</HH.Underworld.Pit.Volunteers>
+  <HH.Underworld.Pit.Volunteers.Desc>戦いを好む入植者(血に飢えた者や近接戦闘の得意な者)は志願できます。志願者が死ぬまで戦わされることはありません。</HH.Underworld.Pit.Volunteers.Desc>
+  <HH.Underworld.Pit.Prisoners>囚人</HH.Underworld.Pit.Prisoners>
+  <HH.Underworld.Pit.Prisoners.Desc>囚人を闘技場に送り込むことがあります。成人のみ。</HH.Underworld.Pit.Prisoners.Desc>
+  <HH.Underworld.Pit.Lethal>死ぬまで</HH.Underworld.Pit.Lethal>
+  <HH.Underworld.Pit.Lethal.Desc>囚人と動物の試合は、どちらかが倒れて初めて終わります。志願者には決して適用されません。</HH.Underworld.Pit.Lethal.Desc>
+  <HH.Underworld.Pit.StartNow>試合を始める</HH.Underworld.Pit.StartNow>
+  <HH.Underworld.Pit.StartNow.Desc>今すぐ公平な戦士を二人選び、客に賭けをさせます。</HH.Underworld.Pit.StartNow.Desc>
+  <HH.Underworld.Pit.CannotStart>試合不可: {0}</HH.Underworld.Pit.CannotStart>
+  <HH.Underworld.Pit.ArenaOk>闘技場: {0} マス、閉鎖済み。</HH.Underworld.Pit.ArenaOk>
+  <HH.Underworld.Pit.ArenaOpen>闘技場が開いているか、大きすぎます: 柵を閉じてください。</HH.Underworld.Pit.ArenaOpen>
+  <HH.Underworld.Pit.NoFighters>許可された戦士が二人未満です</HH.Underworld.Pit.NoFighters>
+  <HH.Underworld.Pit.NoFairPair>公平な組み合わせの戦士がいません</HH.Underworld.Pit.NoFairPair>
+  <HH.Underworld.Pit.BoutRunning>試合: {0} 対 {1}。</HH.Underworld.Pit.BoutRunning>
+  <HH.Underworld.Pit.BoutAnnounced>闘技場での試合: {0} 対 {1}。賭けを受け付けています。</HH.Underworld.Pit.BoutAnnounced>
+  <HH.Underworld.Pit.Won>{0} が試合に勝ちました。店は {1} 銀貨を受け取ります。</HH.Underworld.Pit.Won>
+  <HH.Underworld.Pit.Draw>試合は勝者なしで終わりました。賭け金はすべて返却されます。</HH.Underworld.Pit.Draw>
+  <HH.Underworld.Fence.Inspect>在庫: {0} 点、価値 {1} 銀貨。現金箱: {2} 銀貨。</HH.Underworld.Fence.Inspect>
+  <HH.Underworld.Fence.Fund>現金箱を補充</HH.Underworld.Fence.Fund>
+  <HH.Underworld.Fence.Fund.Desc>設定の上限まで、金庫から故買屋の現金箱へ銀貨を移します。</HH.Underworld.Fence.Fund.Desc>
+  <HH.Underworld.Fence.Funded>{0} 銀貨を現金箱へ移しました。</HH.Underworld.Fence.Funded>
+  <HH.Underworld.Fence.NoCash>現金箱は空です。</HH.Underworld.Fence.NoCash>
+  <HH.Underworld.Fence.CannotPay>買い手が支払えません。</HH.Underworld.Fence.CannotPay>
+  <HH.Underworld.Fence.Exposed>品物は {0} から来たもので、彼らは品物の行き先を知っています。</HH.Underworld.Fence.Exposed>
+  <HH.Underworld.Gang.Title>扉前のギャング</HH.Underworld.Gang.Title>
+  <HH.Underworld.Gang.Text>{1} から来た {0} 人が静かにやって来て、スタッフにうなずき、奥の部屋を求めます。彼らには金があり、質問されないことを期待しています。</HH.Underworld.Gang.Text>
+  <HH.Underworld.Gang.Demand.Title>親切な申し出</HH.Underworld.Gang.Demand.Title>
+  <HH.Underworld.Gang.Demand.Text>{0} のギャングの首領がカウンターにもたれかかります。「立派な店だ。何かあっては困るだろう。{1} 銀貨払えば、何も起きないよう取り計らうぜ。」</HH.Underworld.Gang.Demand.Text>
+  <HH.Underworld.Gang.Demand.Pay>{0} 銀貨を支払う</HH.Underworld.Gang.Demand.Pay>
+  <HH.Underworld.Gang.Demand.Refuse>出口を指し示す</HH.Underworld.Gang.Demand.Refuse>
+  <HH.Underworld.Gang.Demand.NoCash>金庫に足りません</HH.Underworld.Gang.Demand.NoCash>
+  <HH.Underworld.Tour.IntelTitle>尋問で得た情報</HH.Underworld.Tour.IntelTitle>
+  <HH.Underworld.Tour.IntelText>{0} を一時間尋問した後、ギャングはカウンターに一枚の書き置きを残しました。名前、場所、日付。外の誰かが何かを企んでいて、あなたは今それを少しだけ知ったのです。</HH.Underworld.Tour.IntelText>
+  <HH.Underworld.Smuggler.Title>桟橋の木箱</HH.Underworld.Smuggler.Title>
+  <HH.Underworld.Smuggler.Text>ライトを消したシャトルが桟橋に降り立ちました。ある声が、{2} と引き換えに、およそ {1} 銀貨相当の {0} 点を提供しています。質問はなし、領収書もなし。</HH.Underworld.Smuggler.Text>
+  <HH.Underworld.Smuggler.Buy>{0} 銀貨で買う</HH.Underworld.Smuggler.Buy>
+  <HH.Underworld.Smuggler.Decline>追い返す</HH.Underworld.Smuggler.Decline>
+  <HH.Underworld.Smuggler.NoCash>金庫に足りません</HH.Underworld.Smuggler.NoCash>
+  <HH.Underworld.Smuggler.InspectTitle>パトロールがランプに気づいた</HH.Underworld.Smuggler.InspectTitle>
+  <HH.Underworld.Smuggler.InspectText>帝国のパトロールが桟橋の明かりに気づき、記録に残しました。</HH.Underworld.Smuggler.InspectText>
+  <HH.Underworld.Hunt.Title>狩猟隊</HH.Underworld.Hunt.Title>
+  <HH.Underworld.Hunt.Text>{0} 人の狩人がライフルと資金を携えて到着しました。土地に {1} 銀貨を支払い、{2} 匹の動物が放たれました。</HH.Underworld.Hunt.Text>
+  <HH.Underworld.Hunt.GroundOk>狩場: {0} マス、閉鎖済み。獲物: {1}。</HH.Underworld.Hunt.GroundOk>
+  <HH.Underworld.Hunt.QuarryAnimals>動物</HH.Underworld.Hunt.QuarryAnimals>
+  <HH.Underworld.Hunt.QuarryHuman>動物と囚人</HH.Underworld.Hunt.QuarryHuman>
+  <HH.Underworld.Hunt.Prisoners>囚人を獲物にする</HH.Underworld.Hunt.Prisoners>
+  <HH.Underworld.Hunt.Prisoners.Desc>狩場に放たれた囚人を狩人に狩らせます。ダークな内容のみ、適合する信条がある場合に限る。</HH.Underworld.Hunt.Prisoners.Desc>
+  <HH.Underworld.Hunt.GateContent>ダークまたはグリムな内容が必要で、確認済みであること。</HH.Underworld.Hunt.GateContent>
+  <HH.Underworld.Hunt.GatePrecept>入植地の戒律がこれを許しません。</HH.Underworld.Hunt.GatePrecept>
+  <HH.Underworld.Hunt.DeathTitle>狩りで人が死んだ</HH.Underworld.Hunt.DeathTitle>
+  <HH.Underworld.Hunt.DeathText>{0} は狩りを生き延びられませんでした。その人の仲間がそのことを耳にするでしょうし、見ていた者たちもみな同じです。</HH.Underworld.Hunt.DeathText>
+  <HH.Underworld.Hunt.FreedTitle>獲物が逃げ切った</HH.Underworld.Hunt.FreedTitle>
+  <HH.Underworld.Hunt.FreedText>{0} は時間いっぱい逃げ延び、自由の身となりました。狩人たちは怒って帰っていきました。その所属派閥は、どのようにして事が運んだかを耳にするでしょう。</HH.Underworld.Hunt.FreedText>
+  <HH.Underworld.Organ.Inspect>待機中の臓器: {0}。未処理の注文: {1}。</HH.Underworld.Organ.Inspect>
+  <HH.Underworld.Organ.Sold>診療所のカウンターで {0} 個の臓器を回収しました。</HH.Underworld.Organ.Sold>
+  <HH.Underworld.Organ.OrderTitle>注文</HH.Underworld.Organ.OrderTitle>
+  <HH.Underworld.Organ.OrderText>ある買い手が {1} 日以内に {0} を求めており、割増価格を支払うとのことです。</HH.Underworld.Organ.OrderText>
+  <HH.Underworld.Organ.OrderDone>{0} の注文を満たしました。</HH.Underworld.Organ.OrderDone>
+  <HH.Underworld.Organ.OrderMissed>{0} の注文は期限内に満たされませんでした。</HH.Underworld.Organ.OrderMissed>
+  <HH.Underworld.Page.Title>地下世界</HH.Underworld.Page.Title>
+  <HH.Underworld.Page.Whispers>囁き: 100 中 {0}。</HH.Underworld.Page.Whispers>
+  <HH.Underworld.Page.Weights>来訪の重み: 立派な客 x{0}、無法者 x{1}。</HH.Underworld.Page.Weights>
+  <HH.Underworld.Page.Content>内容: {0} (適用中: {1})。</HH.Underworld.Page.Content>
+  <HH.Underworld.Page.Stats1>闘技場: 試合 {0} 回、賭け {1} 件、店の取り分 {2} 銀貨。</HH.Underworld.Page.Stats1>
+  <HH.Underworld.Page.Stats2>故買屋: 購入 {0}、販売 {1}、利益 {2} 銀貨。</HH.Underworld.Page.Stats2>
+  <HH.Underworld.Page.Stats3>ラウンジの利用 {0} 回、ギャングの来訪 {1} 回、着陸 {2} 回、狩り {3} 回、臓器 {4} 個。</HH.Underworld.Page.Stats3>
+  <HH.Underworld.Page.HighRollers>秘密のカジノという噂が、大金を賭ける客を引き寄せています。</HH.Underworld.Page.HighRollers>
+</LanguageData>

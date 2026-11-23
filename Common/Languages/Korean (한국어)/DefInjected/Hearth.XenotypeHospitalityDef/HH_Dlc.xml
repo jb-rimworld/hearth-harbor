@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_XenoHosp_Baseliner.label>베이스라이너</HH_XenoHosp_Baseliner.label>
+  <HH_XenoHosp_Baseliner.description>평범한 사람들: 검소한 입맛, 돈 씀씀이가 알뜰하다. 대규모의 알뜰한 단체 손님.</HH_XenoHosp_Baseliner.description>
+  <HH_XenoHosp_Sanguophage.label>산구오파지</HH_XenoHosp_Sanguophage.label>
+  <HH_XenoHosp_Sanguophage.description>산구오파지는 어두운 방과 손 닿는 곳의 헤모젠 미니바를 원한다. 죽음 휴식 라운지라면 기꺼이 돈을 낸다.</HH_XenoHosp_Sanguophage.description>
+  <HH_XenoHosp_Hemogenic.label>헤모제닉 (모든 제노타입)</HH_XenoHosp_Hemogenic.label>
+  <HH_XenoHosp_Hemogenic.description>헤모제닉 유전자를 가진 모든 사람(커스텀 제노타입 포함)은 산구오파지와 같이 어두운 방과 헤모젠 팩을 선호한다.</HH_XenoHosp_Hemogenic.description>
+  <HH_XenoHosp_UVSensitive.label>자외선 민감 (모든 제노타입)</HH_XenoHosp_UVSensitive.label>
+  <HH_XenoHosp_UVSensitive.description>햇빛에 약하다. 어둡고 바깥 빛이 들지 않는 실내가 편안한 방이다.</HH_XenoHosp_UVSensitive.description>
+  <HH_XenoHosp_Dirtmole.label>더트몰</HH_XenoHosp_Dirtmole.label>
+  <HH_XenoHosp_Dirtmole.description>더트몰은 어둡고 창문 없는 방과 버섯 요리를 선호한다. 광산 안내 투어에 기꺼이 돈을 내겠다고 제안한다.</HH_XenoHosp_Dirtmole.description>
+  <HH_XenoHosp_Genie.label>지니</HH_XenoHosp_Genie.label>
+  <HH_XenoHosp_Genie.description>지니는 독서 공간과 조용한 테이블을 기대한다. 연구실을 빌려 간다.</HH_XenoHosp_Genie.description>
+  <HH_XenoHosp_Hussar.label>후사르</HH_XenoHosp_Hussar.label>
+  <HH_XenoHosp_Hussar.description>후사르는 바에서 돈을 아낌없이 쓰고 한판 붙는 것을 즐긴다. 그에 따른 다툼도 함께 온다.</HH_XenoHosp_Hussar.description>
+  <HH_XenoHosp_Neanderthal.label>네안데르탈인</HH_XenoHosp_Neanderthal.label>
+  <HH_XenoHosp_Neanderthal.description>푸짐한 양, 소박한 방. 가구 배치는 덜 중요하다.</HH_XenoHosp_Neanderthal.description>
+  <HH_XenoHosp_Pigskin.label>피그스킨</HH_XenoHosp_Pigskin.label>
+  <HH_XenoHosp_Pigskin.description>피그스킨은 거의 무엇이든 먹고, 어수선한 방도 개의치 않는다.</HH_XenoHosp_Pigskin.description>
+  <HH_XenoHosp_Impid.label>임피드</HH_XenoHosp_Impid.label>
+  <HH_XenoHosp_Impid.description>임피드는 따뜻한 방과 향신료를 좋아한다. 매출의 일부를 받고 공연한다.</HH_XenoHosp_Impid.description>
+  <HH_XenoHosp_Waster.label>웨이스터</HH_XenoHosp_Waster.label>
+  <HH_XenoHosp_Waster.description>웨이스터는 지저분한 방에서 편안함을 느끼고, 돈을 많이 쓰며, 어질러 놓고 간다.</HH_XenoHosp_Waster.description>
+  <HH_XenoHosp_Yttakin.label>이타킨</HH_XenoHosp_Yttakin.label>
+  <HH_XenoHosp_Yttakin.description>이타킨은 서늘한 방을 원한다. 따뜻하면 괴로워한다.</HH_XenoHosp_Yttakin.description>
+  <HH_XenoHosp_Highmate.label>하이메이트</HH_XenoHosp_Highmate.label>
+  <HH_XenoHosp_Highmate.description>하이메이트는 아름다움과 교제를 좋아한다. 근사한 공용 방이 그들을 기쁘게 한다.</HH_XenoHosp_Highmate.description>
+</LanguageData>

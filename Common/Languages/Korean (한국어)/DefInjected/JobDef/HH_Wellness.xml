@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_UseHotTub.reportString>TargetA에서 몸을 담그는 중.</HH_UseHotTub.reportString>
+  <HH_UseSauna.reportString>사우나에서 땀을 빼는 중.</HH_UseSauna.reportString>
+  <HH_ReceiveMassage.reportString>마사지를 받는 중.</HH_ReceiveMassage.reportString>
+  <HH_GiveMassage.reportString>TargetB에게 마사지를 하는 중.</HH_GiveMassage.reportString>
+</LanguageData>

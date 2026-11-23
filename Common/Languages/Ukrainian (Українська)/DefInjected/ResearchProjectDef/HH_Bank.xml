@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Banking.label>автоматичні каси</SL_Banking.label>
+  <SL_Banking.description>Машини, що видають срібло кожному, хто набере правильні чотири цифри. Відкриває банкомат і нічний сейф.</SL_Banking.description>
+  <SL_Branches.label>відділення банку</SL_Branches.label>
+  <SL_Branches.description>Справжня стійка, справжнє сховище і справжня черга. Відкриває банківську стійку: миттєві внески, миттєва готівка, позики особисто.</SL_Branches.description>
+  <SL_Credit.label>споживчий кредит</SL_Credit.label>
+  <SL_Credit.description>Гроші, яких у вас немає, для людей, яких їх немає. Відкриває позики, кредитний рейтинг і, якщо дійде до цього, агенцію стягнення.</SL_Credit.description>
+</LanguageData>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.City>도시 생활</HH.Tab.City>
+  <HH.City.TabTitle>도시 생활</HH.City.TabTitle>
+  <HH.City.TabResearch>연구: 1단계 (영화관, 미용실, 갤러리): {0}; 2단계 (택시, 경호): {1}</HH.City.TabResearch>
+  <HH.Enum.CityResearchMode.Full>전체</HH.Enum.CityResearchMode.Full>
+  <HH.Enum.CityResearchMode.Off>끔 (모든 항목 사용 가능)</HH.Enum.CityResearchMode.Off>
+  <HH.City.ScreenNoPower>전력이 없어 화면이 꺼져 있습니다.</HH.City.ScreenNoPower>
+  <HH.City.ScreenShowing>"{0}" 상영 중 (남은 시간 {1}, 관람객 {2}명)</HH.City.ScreenShowing>
+  <HH.City.ScreenIdle>상영 중인 영화가 없습니다.</HH.City.ScreenIdle>
+  <HH.City.ScreenBusy>이미 영화가 상영 중입니다</HH.City.ScreenBusy>
+  <HH.City.NoSeats>화면 앞에 좌석이 없습니다</HH.City.NoSeats>
+  <HH.City.MovieNightLabel>영화의 밤</HH.City.MovieNightLabel>
+  <HH.City.MovieNightDesc>이 화면 앞으로 식민지 주민들을 불러 영화의 밤을 엽니다. 자리에 앉는 사람은 모두 여가를 얻고 기분이 좋아집니다.</HH.City.MovieNightDesc>
+  <HH.City.MovieNightFailed>지금은 영화의 밤을 시작할 수 없습니다: 전력이 공급된 화면, 충분한 좌석, 한가한 식민지 주민이 필요합니다.</HH.City.MovieNightFailed>
+  <HH.City.LordReport>식민지 주민들과 함께 영화를 보는 중</HH.City.LordReport>
+  <HH.City.Film.0>머펄로 러브 III</HH.City.Film.0>
+  <HH.City.Film.1>마지막 트럼보</HH.City.Film.1>
+  <HH.City.Film.2>화물 포드 블루스</HH.City.Film.2>
+  <HH.City.Film.3>별 사이의 먼지</HH.City.Film.3>
+  <HH.City.Film.4>붐알롭의 이야기</HH.City.Film.4>
+  <HH.City.Film.5>석공 언덕 공방전</HH.City.Film.5>
+  <HH.City.Film.6>긴 잠</HH.City.Film.6>
+  <HH.City.Film.7>헤이븐 위의 연기</HH.City.Film.7>
+  <HH.City.SalonGuests>손님 이용 허용</HH.City.SalonGuests>
+  <HH.City.SalonGuestsDesc>손님이 이 의자에서 유료로 머리를 자를 수 있습니다 (방에 미용실 간판과 응대할 사람이 필요합니다).</HH.City.SalonGuestsDesc>
+  <HH.City.SalonCustomer>손님: {0}</HH.City.SalonCustomer>
+  <HH.City.NewHaircut>새 머리 자르기</HH.City.NewHaircut>
+  <HH.City.TaxiFree>택시가 대기 중입니다.</HH.City.TaxiFree>
+  <HH.City.TaxiBusy>택시가 운행 중입니다.</HH.City.TaxiBusy>
+  <HH.City.TaxiStats>출발: {0}회, 도착: {1}회, 수입: 은화 {2}</HH.City.TaxiStats>
+</LanguageData>

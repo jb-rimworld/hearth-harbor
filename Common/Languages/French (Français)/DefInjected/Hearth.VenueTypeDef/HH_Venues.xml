@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Tavern.label>taverne</HH_Venue_Tavern.label>
+  <HH_Venue_Tavern.description>Une pièce où les visiteurs achètent une boisson et la boivent sur place. Stockez de la bière ou d'autres boissons sur une étagère ou dans une zone de stockage ; un barman derrière l'enseigne ou le comptoir maintient l'ouverture. Les boissons de la pièce sont réservées aux clients, sauf indication contraire de l'enseigne.</HH_Venue_Tavern.description>
+  <HH_Venue_Shop.label>boutique</HH_Venue_Shop.label>
+  <HH_Venue_Shop.description>Une pièce où les visiteurs achètent des marchandises. Tout ce qui est stocké sur des étagères et dans des zones de stockage à l'intérieur de la pièce est à vendre, au prix du marché multiplié par le facteur de prix de l'enseigne. Sans commerçant, la boutique fonctionne en libre-service avec une petite remise.</HH_Venue_Shop.description>
+  <HH_Venue_Restaurant.label>restaurant</HH_Venue_Restaurant.label>
+  <HH_Venue_Restaurant.description>Une pièce où les visiteurs s'assoient pour manger. Des tables, une cuisine et un serveur en font un restaurant ; les plats eux-mêmes sont préparés par la cuisine.</HH_Venue_Restaurant.description>
+  <HH_Venue_Casino.label>casino</HH_Venue_Casino.label>
+  <HH_Venue_Casino.description>Une salle de tables de cartes, de machines à sous et de croupiers. Les visiteurs misent leur argent sur des jeux de hasard ; la maison garde une petite marge honnête.</HH_Venue_Casino.description>
+  <HH_Venue_Spa.label>spa</HH_Venue_Spa.label>
+  <HH_Venue_Spa.description>Une pièce calme pour les bains, la vapeur et le repos. Un préposé garde les serviettes au chaud ; les visiteurs paient par visite.</HH_Venue_Spa.description>
+  <HH_Venue_Lounge.label>salon</HH_Venue_Lounge.label>
+  <HH_Venue_Lounge.description>Une salle d'attente avec des sièges. Les visiteurs qui trouvent un commerce fermé ou sans personnel attendent ici plutôt que sur le seuil, et patientent plus calmement. Toujours ouvert, sans personnel.</HH_Venue_Lounge.description>
+  <HH_Venue_Chapel.label>chapelle d'accueil</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>Une pièce calme avec un autel d'accueil où les visiteurs de toutes confessions viennent prier. Les visiteurs ne paient rien mais repartent plus sereins ; une chapelle avec un bel autel et quelques bancs est un bon voisin pour une auberge. Toujours ouverte le jour, sans personnel.</HH_Venue_Chapel.description>
+</LanguageData>

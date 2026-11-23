@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Banking.label>Geldautomaten</SL_Banking.label>
+  <SL_Banking.description>Maschinen, die jedem Silber ausgeben, der die richtigen vier Ziffern eintippt. Schaltet den Geldautomaten und den Nachttresor frei.</SL_Banking.description>
+  <SL_Branches.label>Bankfilialen</SL_Branches.label>
+  <SL_Branches.description>Ein richtiger Schalter, ein richtiger Tresor und eine richtige Warteschlange. Schaltet den Bankschalter frei: sofortige Einzahlungen, sofortiges Bargeld, Kreditanträge persönlich.</SL_Branches.description>
+  <SL_Credit.label>Verbraucherkredit</SL_Credit.label>
+  <SL_Credit.description>Geld, das du nicht hast, für Leute, die es nicht haben. Schaltet Kredite, die Bonität und, wenn es so weit kommt, das Inkassobüro frei.</SL_Credit.description>
+</LanguageData>

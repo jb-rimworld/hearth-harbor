@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_TestKitchen.label>尝试新菜式</HH_TestKitchen.label>
+  <HH_TestKitchen.description>把生食材扔到台面上，看会做出什么。有时殖民地能琢磨出一道新菜（厨师越好，可能性越大）；否则实验只会得到一盘糟糕的成品。</HH_TestKitchen.description>
+  <HH_TestKitchen.jobString>正在尝试新菜式。</HH_TestKitchen.jobString>
+</LanguageData>

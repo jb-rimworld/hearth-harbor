@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchBout.reportString>sieht dem Kampf in der Grube zu.</HH_WatchBout.reportString>
+  <HH_BackRoomVisit.reportString>nutzt das Hinterzimmer.</HH_BackRoomVisit.reportString>
+  <HH_FenceDeal.reportString>macht Geschäfte am Tresen des Hehlers.</HH_FenceDeal.reportString>
+  <HH_UseLounge.reportString>entspannt in der Lounge.</HH_UseLounge.reportString>
+  <HH_Interrogate.reportString>verhört TargetA.</HH_Interrogate.reportString>
+  <HH_HuntQuarry.reportString>jagt TargetA.</HH_HuntQuarry.reportString>
+  <HH_QuarryFlee.reportString>rennt.</HH_QuarryFlee.reportString>
+</LanguageData>

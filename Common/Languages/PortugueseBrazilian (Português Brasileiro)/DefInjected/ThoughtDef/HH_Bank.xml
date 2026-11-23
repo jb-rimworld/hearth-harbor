@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Finances.stages.0.label>afogado em dívidas</SL_Finances.stages.0.label>
+  <SL_Finances.stages.0.description>Devemos mais do que a colônia vale. A correspondência cheira a cartas vencidas.</SL_Finances.stages.0.description>
+  <SL_Finances.stages.1.label>quebrado</SL_Finances.stages.1.label>
+  <SL_Finances.stages.1.description>A conta está vazia. Até o caixa eletrônico nos olha com pena.</SL_Finances.stages.1.description>
+  <SL_Finances.stages.2.label>sobrevivendo</SL_Finances.stages.2.label>
+  <SL_Finances.stages.2.description>Temos um pouco no banco. Muito pouco. Ninguém diz isso em voz alta.</SL_Finances.stages.2.description>
+  <SL_Finances.stages.3.label>levando a vida</SL_Finances.stages.3.label>
+  <SL_Finances.stages.3.description>Nem ricos, nem pobres.</SL_Finances.stages.3.description>
+  <SL_Finances.stages.4.label>confortável</SL_Finances.stages.4.label>
+  <SL_Finances.stages.4.description>Confortáveis, e sem nos preocuparmos com isso.</SL_Finances.stages.4.description>
+  <SL_Finances.stages.5.label>economias</SL_Finances.stages.5.label>
+  <SL_Finances.stages.5.description>Temos economias. É uma sensação estranha e calorosa.</SL_Finances.stages.5.description>
+  <SL_Finances.stages.6.label>rico</SL_Finances.stages.6.label>
+  <SL_Finances.stages.6.description>Somos ricos. Não que alguém mencione isso no jantar.</SL_Finances.stages.6.description>
+  <SL_Finances.stages.7.label>podre de rico</SL_Finances.stages.7.label>
+  <SL_Finances.stages.7.description>A colônia está podre de rica. Começamos a comprar coisas de que não precisamos.</SL_Finances.stages.7.description>
+  <SL_Finances.stages.8.label>grande demais para quebrar</SL_Finances.stages.8.label>
+  <SL_Finances.stages.8.description>Somos grandes demais para quebrar. Alguém tinha de dizer, e que sejamos nós.</SL_Finances.stages.8.description>
+  <SL_FinancesGreedy.stages.0.label>afogado em dívidas</SL_FinancesGreedy.stages.0.label>
+  <SL_FinancesGreedy.stages.0.description>Dívida. Dívida! Sinto cada moeda de prata que não temos.</SL_FinancesGreedy.stages.0.description>
+  <SL_FinancesGreedy.stages.1.label>quebrado</SL_FinancesGreedy.stages.1.label>
+  <SL_FinancesGreedy.stages.1.description>Quebrado. Não me tornei ganancioso para ficar quebrado.</SL_FinancesGreedy.stages.1.description>
+  <SL_FinancesGreedy.stages.2.label>sobrevivendo</SL_FinancesGreedy.stages.2.label>
+  <SL_FinancesGreedy.stages.2.description>Quase nada na conta. Confiro a cada hora.</SL_FinancesGreedy.stages.2.description>
+  <SL_FinancesGreedy.stages.3.label>levando a vida</SL_FinancesGreedy.stages.3.label>
+  <SL_FinancesGreedy.stages.3.description>Bem. Mas poderia ser mais.</SL_FinancesGreedy.stages.3.description>
+  <SL_FinancesGreedy.stages.4.label>confortável</SL_FinancesGreedy.stages.4.label>
+  <SL_FinancesGreedy.stages.4.description>Confortável. Mas poderia ser mais.</SL_FinancesGreedy.stages.4.description>
+  <SL_FinancesGreedy.stages.5.label>economias</SL_FinancesGreedy.stages.5.label>
+  <SL_FinancesGreedy.stages.5.description>Economias, num cofre, com meu nome por perto. Adorável.</SL_FinancesGreedy.stages.5.description>
+  <SL_FinancesGreedy.stages.6.label>rico</SL_FinancesGreedy.stages.6.label>
+  <SL_FinancesGreedy.stages.6.description>Rico! Não vou parar de contar.</SL_FinancesGreedy.stages.6.description>
+  <SL_FinancesGreedy.stages.7.label>podre de rico</SL_FinancesGreedy.stages.7.label>
+  <SL_FinancesGreedy.stages.7.description>Podre de rico. Para isso eu nasci.</SL_FinancesGreedy.stages.7.description>
+  <SL_FinancesGreedy.stages.8.label>grande demais para quebrar</SL_FinancesGreedy.stages.8.label>
+  <SL_FinancesGreedy.stages.8.description>Grande demais para quebrar. Emoldurem o balanço.</SL_FinancesGreedy.stages.8.description>
+  <SL_CollectorsNearby.stages.0.label>cobradores rondando</SL_CollectorsNearby.stages.0.label>
+  <SL_CollectorsNearby.stages.0.description>Dois homens de chapéu-coco estão parados perto da porta. São muito educados a respeito.</SL_CollectorsNearby.stages.0.description>
+</LanguageData>

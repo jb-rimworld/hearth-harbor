@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_FrontDesk.label>프런트 데스크</HH_FrontDesk.label>
+  <HH_FrontDesk.description>장부, 종, 줄에 매단 펜이 놓인 카운터입니다. 도착한 손님은 여기서 체크인하고 첫날 숙박비를 내며 침대를 배정받습니다. 그날의 수입은 자정에 그 옆에 놓입니다.\n\n프런트 데스크가 없으면 손님은 스스로 방을 찾아갑니다. 그러면서 눈에 띄게 못마땅해합니다.</HH_FrontDesk.description>
+</LanguageData>

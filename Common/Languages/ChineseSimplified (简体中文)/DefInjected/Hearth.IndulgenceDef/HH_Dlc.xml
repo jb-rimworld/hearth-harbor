@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Ind_ExpressAbsolution.label>速效赦免</HH_Ind_ExpressAbsolution.label>
+  <HH_Ind_ExpressAbsolution.description>一张盖了章的纸条，能抹去一次违反戒律的记忆。神父不会问你做过什么。</HH_Ind_ExpressAbsolution.description>
+  <HH_Ind_MinorMercy.label>小额恩赐</HH_Ind_MinorMercy.label>
+  <HH_Ind_MinorMercy.description>一块加持过的绷带，价格等同于两剂药品。可治愈一处不超过 10 点生命值的新鲜伤口。</HH_Ind_MinorMercy.description>
+  <HH_Ind_UnshakenFaith.label>坚定信念证书</HH_Ind_UnshakenFaith.label>
+  <HH_Ind_UnshakenFaith.description>一纸装裱好的证书，证明你从未动摇过。确信度提高十个百分点。</HH_Ind_UnshakenFaith.description>
+  <HH_Ind_GreaterMercy.label>大额恩赐</HH_Ind_GreaterMercy.label>
+  <HH_Ind_GreaterMercy.description>一场明码标价的神迹。永久治愈一处持久疤痕或陈旧伤口。</HH_Ind_GreaterMercy.description>
+  <HH_Asc_Rank1.label>晋升：探求者</HH_Asc_Rank1.label>
+  <HH_Asc_Rank1.description>缴纳入门费，成为探求者。仅是个开始，别无其他。</HH_Asc_Rank1.description>
+  <HH_Asc_Rank2.label>晋升：修习者</HH_Asc_Rank2.label>
+  <HH_Asc_Rank2.description>二级，修习者。从此持有者可以在祭坛上向其他家族的客人和访客出售赎罪券。</HH_Asc_Rank2.description>
+  <HH_Asc_Rank3.label>晋升：光耀者</HH_Asc_Rank3.label>
+  <HH_Asc_Rank3.description>三级，光耀者。光芒足以从远处被看见。</HH_Asc_Rank3.description>
+  <HH_Asc_Rank4.label>晋升：升华者</HH_Asc_Rank4.label>
+  <HH_Asc_Rank4.description>四级，升华者。阶梯的顶端，属于那些买得起视野的人。</HH_Asc_Rank4.description>
+  <HH_Ind_ReformTithe.label>改革什一税</HH_Ind_ReformTithe.label>
+  <HH_Ind_ReformTithe.description>为可变意识形态的下一次改革自愿缴纳的什一税：一点改革点数。</HH_Ind_ReformTithe.description>
+</LanguageData>

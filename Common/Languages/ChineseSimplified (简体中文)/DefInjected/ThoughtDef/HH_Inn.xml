@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GuestRoomVerdict.stages.0.label>糟糕的客房</HH_GuestRoomVerdict.stages.0.label>
+  <HH_GuestRoomVerdict.stages.0.description>我为这个付了钱？我睡在沟里都比这强，而且沟里不收费。</HH_GuestRoomVerdict.stages.0.description>
+  <HH_GuestRoomVerdict.stages.1.label>令人失望的客房</HH_GuestRoomVerdict.stages.1.label>
+  <HH_GuestRoomVerdict.stages.1.description>房间低于我的预期，低了很多。</HH_GuestRoomVerdict.stages.1.description>
+  <HH_GuestRoomVerdict.stages.2.label>一般般的客房</HH_GuestRoomVerdict.stages.2.label>
+  <HH_GuestRoomVerdict.stages.2.description>房间还行，如果你眯着眼看的话。</HH_GuestRoomVerdict.stages.2.description>
+  <HH_GuestRoomVerdict.stages.3.label>还不错的客房</HH_GuestRoomVerdict.stages.3.label>
+  <HH_GuestRoomVerdict.stages.3.description>一张像样的床和一扇能关上的门，我只求这些。</HH_GuestRoomVerdict.stages.3.description>
+  <HH_GuestRoomVerdict.stages.4.label>不错的客房</HH_GuestRoomVerdict.stages.4.label>
+  <HH_GuestRoomVerdict.stages.4.description>一间可爱的房间，我睡得很好。</HH_GuestRoomVerdict.stages.4.description>
+  <HH_GuestRoomVerdict.stages.5.label>绝佳的客房</HH_GuestRoomVerdict.stages.5.label>
+  <HH_GuestRoomVerdict.stages.5.description>有这样的房间，整段旅程都值了。</HH_GuestRoomVerdict.stages.5.description>
+  <HH_GuestAccompanied.stages.0.label>尴尬的陪伴</HH_GuestAccompanied.stages.0.label>
+  <HH_GuestAccompanied.stages.0.description>一位接待员陪着我。我们聊了天气，聊了很久。</HH_GuestAccompanied.stages.0.description>
+  <HH_GuestAccompanied.stages.1.label>不错的陪伴</HH_GuestAccompanied.stages.1.label>
+  <HH_GuestAccompanied.stages.1.description>一位接待员带我四处参观，陪我聊天。</HH_GuestAccompanied.stages.1.description>
+  <HH_GuestAccompanied.stages.2.label>迷人的陪伴</HH_GuestAccompanied.stages.2.label>
+  <HH_GuestAccompanied.stages.2.description>这位接待员很讨人喜欢，我可能笑出了声。</HH_GuestAccompanied.stages.2.description>
+  <HH_GuestAccompanied.stages.3.label>极佳的陪伴</HH_GuestAccompanied.stages.3.label>
+  <HH_GuestAccompanied.stages.3.description>多年来我从未受到如此周到的照顾。</HH_GuestAccompanied.stages.3.description>
+  <HH_GuestPestered.stages.0.label>被纠缠着劝加入</HH_GuestPestered.stages.0.label>
+  <HH_GuestPestered.stages.0.description>我来这里是为了睡觉，不是为了被招募的。</HH_GuestPestered.stages.0.description>
+  <HH_HostedWell.stages.0.label>愉快的交谈</HH_HostedWell.stages.0.label>
+  <HH_HostedWell.stages.0.description>我们有过几次愉快的交谈。</HH_HostedWell.stages.0.description>
+  <HH_GuestWaited.stages.0.label>等了一会儿</HH_GuestWaited.stages.0.label>
+  <HH_GuestWaited.stages.0.description>我得等着才有人招待。不算久，但我注意到了。</HH_GuestWaited.stages.0.description>
+  <HH_GuestWaited.stages.1.label>白等一场</HH_GuestWaited.stages.1.label>
+  <HH_GuestWaited.stages.1.description>我等了又等，没有一个人来招待我。</HH_GuestWaited.stages.1.description>
+  <HH_GuestBellNobody.stages.0.label>按了铃，没人来</HH_GuestBellNobody.stages.0.label>
+  <HH_GuestBellNobody.stages.0.description>按了铃。没有人来。</HH_GuestBellNobody.stages.0.description>
+  <HH_GuestWaitingRoom.stages.0.label>简陋的候客室</HH_GuestWaitingRoom.stages.0.label>
+  <HH_GuestWaitingRoom.stages.0.description>至少等候时有地方可以坐。</HH_GuestWaitingRoom.stages.0.description>
+  <HH_GuestWaitingRoom.stages.1.label>还不错的候客室</HH_GuestWaitingRoom.stages.1.label>
+  <HH_GuestWaitingRoom.stages.1.description>候客室足够舒适。</HH_GuestWaitingRoom.stages.1.description>
+  <HH_GuestWaitingRoom.stages.2.label>不错的候客室</HH_GuestWaitingRoom.stages.2.label>
+  <HH_GuestWaitingRoom.stages.2.description>在那里等候几乎是一种享受。</HH_GuestWaitingRoom.stages.2.description>
+  <HH_GuestWaitingRoom.stages.3.label>绝佳的候客室</HH_GuestWaitingRoom.stages.3.label>
+  <HH_GuestWaitingRoom.stages.3.description>在那样的房间里，多等一会儿我也不介意。</HH_GuestWaitingRoom.stages.3.description>
+</LanguageData>

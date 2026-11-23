@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Setting.wellness.priceHotTub>ホットタブ料金</HH.Setting.wellness.priceHotTub>
+  <HH.Setting.wellness.priceHotTub.Desc>客が一度ホットタブに浸かるときの料金。会場の価格係数を掛けて算出される。</HH.Setting.wellness.priceHotTub.Desc>
+  <HH.Setting.wellness.priceSauna>サウナ料金</HH.Setting.wellness.priceSauna>
+  <HH.Setting.wellness.priceSauna.Desc>客が一回サウナを利用するときの料金。</HH.Setting.wellness.priceSauna.Desc>
+  <HH.Setting.wellness.priceMassage>マッサージ料金</HH.Setting.wellness.priceMassage>
+  <HH.Setting.wellness.priceMassage.Desc>客が一回マッサージを受けるときの料金。給仕作業の入植者が手が空いているときにのみ提供される。</HH.Setting.wellness.priceMassage.Desc>
+  <HH.Setting.wellness.dayPass>日帰りパスを販売</HH.Setting.wellness.dayPass>
+  <HH.Setting.wellness.dayPass.Desc>裕福な客は利用のたびに払う代わりに日帰りパスを購入する。ホットタブとサウナが対象で、マッサージは含まれない。</HH.Setting.wellness.dayPass.Desc>
+  <HH.Setting.wellness.priceDayPass>日帰りパス料金</HH.Setting.wellness.priceDayPass>
+  <HH.Setting.wellness.priceDayPass.Desc>スパの日帰りパスの料金（パスの有効時間内はホットタブとサウナが利用可能）。</HH.Setting.wellness.priceDayPass.Desc>
+  <HH.Setting.wellness.dayPassHours>日帰りパスの有効時間（時間）</HH.Setting.wellness.dayPassHours>
+  <HH.Setting.wellness.dayPassHours.Desc>日帰りパスが有効な時間。</HH.Setting.wellness.dayPassHours.Desc>
+  <HH.Setting.wellness.selfServiceDiscount>セルフサービス割引</HH.Setting.wellness.selfServiceDiscount>
+  <HH.Setting.wellness.selfServiceDiscount.Desc>部屋にスタッフがいない場合の値引き率。部屋に給仕作業の入植者がいる場合はスタッフとみなされる。</HH.Setting.wellness.selfServiceDiscount.Desc>
+  <HH.Setting.wellness.hoursHotTub>ホットタブの利用時間（時間）</HH.Setting.wellness.hoursHotTub>
+  <HH.Setting.wellness.hoursHotTub.Desc>一回の入浴の長さ。</HH.Setting.wellness.hoursHotTub.Desc>
+  <HH.Setting.wellness.hoursSauna>サウナの利用時間（時間）</HH.Setting.wellness.hoursSauna>
+  <HH.Setting.wellness.hoursSauna.Desc>一回のサウナ利用の長さ。</HH.Setting.wellness.hoursSauna.Desc>
+  <HH.Setting.wellness.hoursMassage>マッサージ時間（時間）</HH.Setting.wellness.hoursMassage>
+  <HH.Setting.wellness.hoursMassage.Desc>一回のマッサージの長さ。施術者と客の双方がその時間拘束される。</HH.Setting.wellness.hoursMassage.Desc>
+  <HH.Setting.wellness.massageWaitHours>マッサージ師の待ち時間（時間）</HH.Setting.wellness.massageWaitHours>
+  <HH.Setting.wellness.massageWaitHours.Desc>施術台に横たわった客がマッサージ師を待つ時間。これを過ぎると諦める。</HH.Setting.wellness.massageWaitHours.Desc>
+  <HH.Setting.wellness.saunaMinTemp>サウナの最低温度（°C）</HH.Setting.wellness.saunaMinTemp>
+  <HH.Setting.wellness.saunaMinTemp.Desc>サウナストーブは、その部屋がこの温度以上に暖まっている場合にのみ稼働中のサウナとみなされる。</HH.Setting.wellness.saunaMinTemp.Desc>
+  <HH.Setting.wellness.joyFactor>娯楽獲得係数</HH.Setting.wellness.joyFactor>
+  <HH.Setting.wellness.joyFactor.Desc>ホットタブ、サウナ、マッサージで入植者が得る娯楽に掛ける倍率。</HH.Setting.wellness.joyFactor.Desc>
+  <HH.Setting.wellness.restBonus>利用一回あたりの休息ボーナス</HH.Setting.wellness.restBonus>
+  <HH.Setting.wellness.restBonus.Desc>一回の利用で回復する休息バーの割合（マッサージはやや多め）。なしにする場合は0。</HH.Setting.wellness.restBonus.Desc>
+  <HH.Setting.wellness.soothe>利用後の安らぎ</HH.Setting.wellness.soothe>
+  <HH.Setting.wellness.soothe.Desc>利用後、約1日の間ペーンは安らいだ状態になり、痛みを15%少なく感じる。</HH.Setting.wellness.soothe.Desc>
+  <HH.Setting.wellness.massageXp>マッサージ一回あたりの施術者の経験値</HH.Setting.wellness.massageXp>
+  <HH.Setting.wellness.massageXp.Desc>完全なマッサージを行ったときに施術者が得る社交と医療の経験値。</HH.Setting.wellness.massageXp.Desc>
+  <HH.Setting.wellness.satisfaction>利用一回あたりの客の満足度</HH.Setting.wellness.satisfaction>
+  <HH.Setting.wellness.satisfaction.Desc>利用を終えたときに客の満足度がどれだけ上がるか（-1から+1の尺度）。</HH.Setting.wellness.satisfaction.Desc>
+  <HH.Setting.wellness.guestWeight>客のスパへの関心</HH.Setting.wellness.guestWeight>
+  <HH.Setting.wellness.guestWeight.Desc>他の活動と比べて客がスパをどれだけ求めるか。0の場合は決して利用しない。</HH.Setting.wellness.guestWeight.Desc>
+  <HH.Setting.wellness.guestCooldownHours>利用の間の客の休止時間（時間）</HH.Setting.wellness.guestCooldownHours>
+  <HH.Setting.wellness.guestCooldownHours.Desc>客はこの時間より早く次のスパ利用を始めない。</HH.Setting.wellness.guestCooldownHours.Desc>
+  <HH.Setting.wellness.rehabJoy>患者もスパを利用可能</HH.Setting.wellness.rehabJoy>
+  <HH.Setting.wellness.rehabJoy.Desc>RimWard有効時、入植地の医療ベッドにいる歩行可能な患者は娯楽目的でホットタブ、サウナ、マッサージ台を利用できる（手術後や開放創のある場合のサウナは不可）。</HH.Setting.wellness.rehabJoy.Desc>
+  <HH.Wellness.Yes>はい</HH.Wellness.Yes>
+  <HH.Wellness.No>いいえ</HH.Wellness.No>
+  <HH.Wellness.Inspect.SaunaReady>サウナ稼働可能：{0} °C。</HH.Wellness.Inspect.SaunaReady>
+  <HH.Wellness.Inspect.SaunaNotReady>まだ稼働中のサウナではない：必要温度 {1} °C に対して現在 {0} °C（{2}）。</HH.Wellness.Inspect.SaunaNotReady>
+  <HH.Wellness.Inspect.TubReady>ホットタブ利用可能。</HH.Wellness.Inspect.TubReady>
+  <HH.Wellness.Inspect.TubNotReady>ホットタブは使用不可：{0}。</HH.Wellness.Inspect.TubNotReady>
+  <HH.Wellness.Inspect.MassageFree>マッサージ台は空いている。</HH.Wellness.Inspect.MassageFree>
+  <HH.Wellness.Inspect.MassageWaiting>マッサージ師を待っている人がいる。</HH.Wellness.Inspect.MassageWaiting>
+  <HH.Wellness.Inspect.MassageRunning>マッサージ中。</HH.Wellness.Inspect.MassageRunning>
+  <HH.Wellness.Inspect.Users>入植者が利用可能：{0}。客が利用可能：{1}。</HH.Wellness.Inspect.Users>
+  <HH.Wellness.Gizmo.Colonists>入植者が利用可能</HH.Wellness.Gizmo.Colonists>
+  <HH.Wellness.Gizmo.ColonistsDesc>入植者がこれを娯楽目的で利用することを許可する。スパを営業中はオフにしておく。</HH.Wellness.Gizmo.ColonistsDesc>
+  <HH.Wellness.Gizmo.Guests>客が利用可能</HH.Wellness.Gizmo.Guests>
+  <HH.Wellness.Gizmo.GuestsDesc>客がこれを利用することを許可する（スパ会場内に置かれている場合は料金を支払う）。</HH.Wellness.Gizmo.GuestsDesc>
+</LanguageData>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServiceQuality.label>서비스 품질</HH_ServiceQuality.label>
+  <HH_ServiceQuality.description>이 사람에게 시중을 받는 것이 얼마나 즐거운지. 대화하는 손님의 만족도에 더해지며, 상점, 주방, 안내 데스크가 참고합니다.</HH_ServiceQuality.description>
+  <HH_HostingLearn.label>접대 학습</HH_HostingLearn.label>
+  <HH_HostingLearn.description>손님을 접대하는 동안 얻는 사교 경험치의 배율입니다.</HH_HostingLearn.description>
+  <HH_GuestExpectation.label>손님의 기대</HH_GuestExpectation.label>
+  <HH_GuestExpectation.description>손님이 체류에서 기대하는 것에 더해지는 값. 양수면 만족시키기 어렵다는 뜻입니다. 매력과 예의는 이 값을 낮추고, 세련된 미각은 높입니다.</HH_GuestExpectation.description>
+  <HH_GamblingJoy.label>도박의 즐거움</HH_GamblingJoy.label>
+  <HH_GamblingJoy.description>이 사람이 도박에서 얻는 즐거움의 배율입니다.</HH_GamblingJoy.description>
+  <HH_GamblingAddiction.label>도박 중독 확률</HH_GamblingAddiction.label>
+  <HH_GamblingAddiction.description>도박이 중독이 될 확률의 배율입니다. 0이면 이 사람은 절대 빠지지 않습니다.</HH_GamblingAddiction.description>
+  <HH_Dexterity.label>손재주</HH_Dexterity.label>
+  <HH_Dexterity.description>테이블에서 정교한 손 작업(딜링, 셔플, 속임수)에 더해지는 기술 단계입니다.</HH_Dexterity.description>
+  <HH_TableSkill.label>계산 기술</HH_TableSkill.label>
+  <HH_TableSkill.description>크루피어, 출납원 또는 은행원으로 일할 때 더해지는 기술 단계입니다.</HH_TableSkill.description>
+  <HH_FraudDetection.label>사기 탐지</HH_FraudDetection.label>
+  <HH_FraudDetection.description>위조 칩, 손님의 속임수, 잔돈 떼먹기를 알아채는 배율입니다.</HH_FraudDetection.description>
+  <HH_TheftChance.label>방 안 절도</HH_TheftChance.label>
+  <HH_TheftChance.description>이 사람이 관리하는 방에서 무언가 도난당할 확률의 배율입니다.</HH_TheftChance.description>
+  <HH_BrawlRisk.label>주변 싸움 위험</HH_BrawlRisk.label>
+  <HH_BrawlRisk.description>이 사람의 방에서 말다툼이 싸움으로 번질 확률의 배율입니다.</HH_BrawlRisk.description>
+  <HH_RumorSpread.label>소문 확산</HH_RumorSpread.label>
+  <HH_RumorSpread.description>집에 관한 이야기(좋든 나쁘든)가 멀리 퍼지는 배율입니다.</HH_RumorSpread.description>
+  <HH_CareProgress.label>간호 진행</HH_CareProgress.label>
+  <HH_CareProgress.description>이 사람이 돌보는 동안 환자와 재활의 진행 배율입니다.</HH_CareProgress.description>
+  <HH_BankFeeFactor.label>은행 수수료</HH_BankFeeFactor.label>
+  <HH_BankFeeFactor.description>이 사람에게 은행이 부과하는 수수료에 곱해지는 배율.</HH_BankFeeFactor.description>
+  <HH_Negotiation.label>협상 보너스</HH_Negotiation.label>
+  <HH_Negotiation.description>보험 및 계약 협상에 더해진다.</HH_Negotiation.description>
+  <HH_RecruitPrice.label>영입 할증</HH_RecruitPrice.label>
+  <HH_RecruitPrice.description>손님의 충성심을 사들일 때, 최저 가격 위에 붙는 할증금에 곱해지는 배율.</HH_RecruitPrice.description>
+  <HH_ServeRestFactor.label>서빙 중 피로</HH_ServeRestFactor.label>
+  <HH_ServeRestFactor.description>테이블을 서빙하거나 카운터에서 응대하는 동안 휴식이 줄어드는 속도에 곱해지는 배율.</HH_ServeRestFactor.description>
+  <HH_TipFactor.label>팁</HH_TipFactor.label>
+  <HH_TipFactor.description>손님으로서 이 사람이 남기는 팁에 곱해지는 배율.</HH_TipFactor.description>
+  <HH_DishQuality.label>요리 품질 상승 확률</HH_DishQuality.label>
+  <HH_DishQuality.description>조리한 요리의 품질을 한 단계 올릴 확률.</HH_DishQuality.description>
+  <HH_FamilyCheer.label>가족 활기</HH_FamilyCheer.label>
+  <HH_FamilyCheer.description>이 사람이 돌보는 가족과 아이들의 만족도에 더해진다.</HH_FamilyCheer.description>
+  <HH_PriceFeel.label>가격 체감</HH_PriceFeel.label>
+  <HH_PriceFeel.description>손님이 이 사람의 가격을 얼마나 비싸게 느끼는지에 더해진다.</HH_PriceFeel.description>
+</LanguageData>

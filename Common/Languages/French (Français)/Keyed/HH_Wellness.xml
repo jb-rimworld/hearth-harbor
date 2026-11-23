@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Setting.wellness.priceHotTub>Prix du bain à remous</HH.Setting.wellness.priceHotTub>
+  <HH.Setting.wellness.priceHotTub.Desc>Ce qu'un visiteur paie pour un trempage dans le bain à remous. Multiplié par le coefficient de prix du lieu.</HH.Setting.wellness.priceHotTub.Desc>
+  <HH.Setting.wellness.priceSauna>Prix du sauna</HH.Setting.wellness.priceSauna>
+  <HH.Setting.wellness.priceSauna.Desc>Ce qu'un visiteur paie pour une séance de sauna.</HH.Setting.wellness.priceSauna.Desc>
+  <HH.Setting.wellness.priceMassage>Prix du massage</HH.Setting.wellness.priceMassage>
+  <HH.Setting.wellness.priceMassage.Desc>Ce qu'un visiteur paie pour un massage. Proposé uniquement lorsqu'un colon affecté au travail Service est libre pour le faire.</HH.Setting.wellness.priceMassage.Desc>
+  <HH.Setting.wellness.dayPass>Vendre des passes journée</HH.Setting.wellness.dayPass>
+  <HH.Setting.wellness.dayPass.Desc>Les visiteurs les plus aisés achètent une passe journée au lieu de payer à chaque séance. Elle couvre le bain à remous et le sauna, pas le massage.</HH.Setting.wellness.dayPass.Desc>
+  <HH.Setting.wellness.priceDayPass>Prix de la passe journée</HH.Setting.wellness.priceDayPass>
+  <HH.Setting.wellness.priceDayPass.Desc>Prix de la passe journée du spa (bain à remous et sauna pendant la durée de la passe).</HH.Setting.wellness.priceDayPass.Desc>
+  <HH.Setting.wellness.dayPassHours>Durée de la passe journée (heures)</HH.Setting.wellness.dayPassHours>
+  <HH.Setting.wellness.dayPassHours.Desc>Durée de validité d'une passe journée.</HH.Setting.wellness.dayPassHours.Desc>
+  <HH.Setting.wellness.selfServiceDiscount>Remise en libre-service</HH.Setting.wellness.selfServiceDiscount>
+  <HH.Setting.wellness.selfServiceDiscount.Desc>Réduction de prix lorsque personne du personnel ne se trouve dans la pièce. Un colon affecté au travail Service présent dans la pièce compte comme personnel.</HH.Setting.wellness.selfServiceDiscount.Desc>
+  <HH.Setting.wellness.hoursHotTub>Séance au bain à remous (heures)</HH.Setting.wellness.hoursHotTub>
+  <HH.Setting.wellness.hoursHotTub.Desc>Durée d'un trempage.</HH.Setting.wellness.hoursHotTub.Desc>
+  <HH.Setting.wellness.hoursSauna>Séance de sauna (heures)</HH.Setting.wellness.hoursSauna>
+  <HH.Setting.wellness.hoursSauna.Desc>Durée d'une séance de sauna.</HH.Setting.wellness.hoursSauna.Desc>
+  <HH.Setting.wellness.hoursMassage>Massage (heures)</HH.Setting.wellness.hoursMassage>
+  <HH.Setting.wellness.hoursMassage.Desc>Durée d'un massage. Le masseur et le client sont occupés pendant toute cette durée.</HH.Setting.wellness.hoursMassage.Desc>
+  <HH.Setting.wellness.massageWaitHours>Attente d'un masseur (heures)</HH.Setting.wellness.massageWaitHours>
+  <HH.Setting.wellness.massageWaitHours.Desc>Durée pendant laquelle une personne reste allongée sur la table en attendant un masseur avant d'abandonner.</HH.Setting.wellness.massageWaitHours.Desc>
+  <HH.Setting.wellness.saunaMinTemp>Température minimale du sauna (°C)</HH.Setting.wellness.saunaMinTemp>
+  <HH.Setting.wellness.saunaMinTemp.Desc>Un poêle de sauna n'est considéré comme un sauna fonctionnel que si sa pièce atteint au moins cette température.</HH.Setting.wellness.saunaMinTemp.Desc>
+  <HH.Setting.wellness.joyFactor>Coefficient de gain de loisirs</HH.Setting.wellness.joyFactor>
+  <HH.Setting.wellness.joyFactor.Desc>Multiplicateur appliqué aux loisirs que les colons tirent du bain à remous, du sauna et du massage.</HH.Setting.wellness.joyFactor.Desc>
+  <HH.Setting.wellness.restBonus>Bonus de repos par séance</HH.Setting.wellness.restBonus>
+  <HH.Setting.wellness.restBonus.Desc>Part de la jauge de repos restaurée par une séance (un peu plus pour un massage). Mettre 0 pour aucun.</HH.Setting.wellness.restBonus.Desc>
+  <HH.Setting.wellness.soothe>Apaisé après une séance</HH.Setting.wellness.soothe>
+  <HH.Setting.wellness.soothe.Desc>Une séance laisse le pion apaisé pendant environ un jour : il ressent la douleur 15 % moins fortement.</HH.Setting.wellness.soothe.Desc>
+  <HH.Setting.wellness.massageXp>Expérience du masseur par massage</HH.Setting.wellness.massageXp>
+  <HH.Setting.wellness.massageXp.Desc>Expérience en Social et en Médecine que le masseur gagne pour un massage complet.</HH.Setting.wellness.massageXp.Desc>
+  <HH.Setting.wellness.satisfaction>Satisfaction des visiteurs par séance</HH.Setting.wellness.satisfaction>
+  <HH.Setting.wellness.satisfaction.Desc>Ce qu'une séance terminée ajoute à la satisfaction d'un visiteur (échelle de -1 à +1).</HH.Setting.wellness.satisfaction.Desc>
+  <HH.Setting.wellness.guestWeight>Intérêt des visiteurs pour le spa</HH.Setting.wellness.guestWeight>
+  <HH.Setting.wellness.guestWeight.Desc>À quel point les visiteurs veulent aller au spa par rapport à d'autres activités. 0 = ils n'y vont jamais.</HH.Setting.wellness.guestWeight.Desc>
+  <HH.Setting.wellness.guestCooldownHours>Pause des visiteurs entre les séances (heures)</HH.Setting.wellness.guestCooldownHours>
+  <HH.Setting.wellness.guestCooldownHours.Desc>Un visiteur ne commence pas une nouvelle séance de spa avant ce délai.</HH.Setting.wellness.guestCooldownHours.Desc>
+  <HH.Setting.wellness.rehabJoy>Les patients peuvent profiter du spa</HH.Setting.wellness.rehabJoy>
+  <HH.Setting.wellness.rehabJoy.Desc>Avec RimWard actif, les patients ambulants installés dans un lit médical de la colonie peuvent aller au bain à remous, au sauna et à la table de massage pour se détendre (jamais au sauna après une opération ni avec des plaies ouvertes).</HH.Setting.wellness.rehabJoy.Desc>
+  <HH.Wellness.Yes>oui</HH.Wellness.Yes>
+  <HH.Wellness.No>non</HH.Wellness.No>
+  <HH.Wellness.Inspect.SaunaReady>Sauna opérationnel : {0} °C.</HH.Wellness.Inspect.SaunaReady>
+  <HH.Wellness.Inspect.SaunaNotReady>Pas encore un sauna opérationnel : {0} °C sur {1} °C nécessaires ({2}).</HH.Wellness.Inspect.SaunaNotReady>
+  <HH.Wellness.Inspect.TubReady>Bain à remous prêt.</HH.Wellness.Inspect.TubReady>
+  <HH.Wellness.Inspect.TubNotReady>Bain à remous inutilisable : {0}.</HH.Wellness.Inspect.TubNotReady>
+  <HH.Wellness.Inspect.MassageFree>Table de massage libre.</HH.Wellness.Inspect.MassageFree>
+  <HH.Wellness.Inspect.MassageWaiting>Quelqu'un attend un masseur.</HH.Wellness.Inspect.MassageWaiting>
+  <HH.Wellness.Inspect.MassageRunning>Massage en cours.</HH.Wellness.Inspect.MassageRunning>
+  <HH.Wellness.Inspect.Users>Les colons peuvent l'utiliser : {0}. Les visiteurs peuvent l'utiliser : {1}.</HH.Wellness.Inspect.Users>
+  <HH.Wellness.Gizmo.Colonists>Colons autorisés</HH.Wellness.Gizmo.Colonists>
+  <HH.Wellness.Gizmo.ColonistsDesc>Autoriser les colons à utiliser ceci pour se détendre. À désactiver pendant que le spa accueille des visiteurs.</HH.Wellness.Gizmo.ColonistsDesc>
+  <HH.Wellness.Gizmo.Guests>Visiteurs autorisés</HH.Wellness.Gizmo.Guests>
+  <HH.Wellness.Gizmo.GuestsDesc>Autoriser les visiteurs à l'utiliser (ils paient lorsque cela se trouve dans un lieu de spa).</HH.Wellness.Gizmo.GuestsDesc>
+</LanguageData>

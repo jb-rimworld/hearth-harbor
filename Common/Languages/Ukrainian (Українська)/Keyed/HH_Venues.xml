@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Setting.venues.browseTicks>Час огляду (тіки)</HH.Setting.venues.browseTicks>
+  <HH.Setting.venues.browseTicks.Desc>Скільки часу гість розглядає товар, перш ніж вирішити. 60 тіків — одна секунда при звичайній швидкості.</HH.Setting.venues.browseTicks.Desc>
+  <HH.Setting.venues.dayClose>Пресет «День» закривається</HH.Setting.venues.dayClose>
+  <HH.Setting.venues.dayClose.Desc>Година, коли закривається пресет «День».</HH.Setting.venues.dayClose.Desc>
+  <HH.Setting.venues.dayOpen>Пресет «День» відкривається</HH.Setting.venues.dayOpen>
+  <HH.Setting.venues.dayOpen.Desc>Година, коли відкривається пресет «День» у діалозі годин роботи вивіски.</HH.Setting.venues.dayOpen.Desc>
+  <HH.Setting.venues.drinkGapHours>Години між напоями</HH.Setting.venues.drinkGapHours>
+  <HH.Setting.venues.drinkGapHours.Desc>Гість не замовляє наступний напій, доки не минуть стільки годин.</HH.Setting.venues.drinkGapHours.Desc>
+  <HH.Setting.venues.eveningClose>Пресет «Вечір» закривається</HH.Setting.venues.eveningClose>
+  <HH.Setting.venues.eveningClose.Desc>Година, коли закривається пресет «Вечір» (раніша година, ніж відкриття, означає після півночі).</HH.Setting.venues.eveningClose.Desc>
+  <HH.Setting.venues.eveningOpen>Пресет «Вечір» відкривається</HH.Setting.venues.eveningOpen>
+  <HH.Setting.venues.eveningOpen.Desc>Година, коли відкривається пресет «Вечір».</HH.Setting.venues.eveningOpen.Desc>
+  <HH.Setting.venues.hideVanilla>Приховувати замінені ванільні меблі</HH.Setting.venues.hideVanilla>
+  <HH.Setting.venues.hideVanilla.Desc>Коли будівля Hearth &amp; Harbor замінює ванільну (наприклад, карточний стіл на покерний), ванільна зникає з меню будівництва, щойно замінник доступний. Вже розставлені будівлі залишаються. Набуває чинності після перезапуску або наступного завантаження гри.</HH.Setting.venues.hideVanilla.Desc>
+  <HH.Setting.venues.lastOrdersMinutes>Останнє замовлення (хвилин до закриття)</HH.Setting.venues.lastOrdersMinutes>
+  <HH.Setting.venues.lastOrdersMinutes.Desc>В останній відрізок перед закриттям поспішаючі гості купують ще один раунд, жоден гість не починає довгий огляд, а покупка, що вже триває, обслуговується й після закриття. 0 = без останнього замовлення.</HH.Setting.venues.lastOrdersMinutes.Desc>
+  <HH.Setting.venues.marketCaravans>Торговельні каравани на ринок</HH.Setting.venues.marketCaravans>
+  <HH.Setting.venues.marketCaravans.Desc>Скільки торговельних караванів приходить у ринковий день (менше, якщо мало дружніх фракцій).</HH.Setting.venues.marketCaravans.Desc>
+  <HH.Setting.venues.marketDays>Дні між ринками</HH.Setting.venues.marketDays>
+  <HH.Setting.venues.marketDays.Desc>Середній інтервал великого ринку з невеликою випадковістю.</HH.Setting.venues.marketDays.Desc>
+  <HH.Setting.venues.marketEnabled>Великий ринок</HH.Setting.venues.marketEnabled>
+  <HH.Setting.venues.marketEnabled.Desc>Час від часу дружні фракції приводять одразу кілька торговельних караванів і денних відвідувачів. Відбувається лише тоді, коли працює принаймні одна крамниця.</HH.Setting.venues.marketEnabled.Desc>
+  <HH.Setting.venues.marketRenown>Потрібна репутація для ринку</HH.Setting.venues.marketRenown>
+  <HH.Setting.venues.marketRenown.Desc>Мінімальна репутація (0–100), за якої торговці й відвідувачі хочуть провести з вами ринок. Без системи репутації колонія вважається нейтральною (50).</HH.Setting.venues.marketRenown.Desc>
+  <HH.Setting.venues.marketStalls>Потрібно торгових прилавків</HH.Setting.venues.marketStalls>
+  <HH.Setting.venues.marketStalls.Desc>Великий ринок відбувається лише тоді, коли у вас є стільки окремо стоячих торгових прилавків (торговці розташовуються біля них). Якщо прилавків менше, приходить менше караванів.</HH.Setting.venues.marketStalls.Desc>
+  <HH.Setting.venues.marketVisitors>Групи відвідувачів на ринок</HH.Setting.venues.marketVisitors>
+  <HH.Setting.venues.marketVisitors.Desc>Скільки груп денних відвідувачів приходить у ринковий день, щоб робити покупки у ваших закладах.</HH.Setting.venues.marketVisitors.Desc>
+  <HH.Setting.venues.maxPurchases>Покупок на одного гостя за візит</HH.Setting.venues.maxPurchases>
+  <HH.Setting.venues.maxPurchases.Desc>Гість припиняє покупки після стількох покупок за один візит.</HH.Setting.venues.maxPurchases.Desc>
+  <HH.Setting.venues.nightBell>Нічний дзвінок</HH.Setting.venues.nightBell>
+  <HH.Setting.venues.nightBell.Desc>Гості можуть подзвонити у дзвоник закладу, що зачинений. Вільні колоністи з типом роботи «Обслуговування» приходять і відкривають його за доплату. Нікого не будять.</HH.Setting.venues.nightBell.Desc>
+  <HH.Setting.venues.nightBellMin>Мінімальна плата за нічний дзвінок</HH.Setting.venues.nightBellMin>
+  <HH.Setting.venues.nightBellMin.Desc>Послуга дзвінка ніколи не коштує менше за це (срібло).</HH.Setting.venues.nightBellMin.Desc>
+  <HH.Setting.venues.nightBellSurcharge>Доплата за нічний дзвінок</HH.Setting.venues.nightBellSurcharge>
+  <HH.Setting.venues.nightBellSurcharge.Desc>Додаткова частка ціни, яку гості платять, коли дзвонять поза годинами роботи.</HH.Setting.venues.nightBellSurcharge.Desc>
+  <HH.Setting.venues.nightBellWaitHours>Терпіння при нічному дзвінку (години)</HH.Setting.venues.nightBellWaitHours>
+  <HH.Setting.venues.nightBellWaitHours.Desc>Скільки гість чекає після дзвінка, перш ніж здатися («Подзвонив. Ніхто не прийшов.»).</HH.Setting.venues.nightBellWaitHours.Desc>
+  <HH.Setting.venues.nightClose>Пресет «Ніч» закривається</HH.Setting.venues.nightClose>
+  <HH.Setting.venues.nightClose.Desc>Година, коли закривається пресет «Ніч».</HH.Setting.venues.nightClose.Desc>
+  <HH.Setting.venues.nightOpen>Пресет «Ніч» відкривається</HH.Setting.venues.nightOpen>
+  <HH.Setting.venues.nightOpen.Desc>Година, коли відкривається пресет «Ніч».</HH.Setting.venues.nightOpen.Desc>
+  <HH.Setting.venues.priceTolerance>Цінова терпимість гостей</HH.Setting.venues.priceTolerance>
+  <HH.Setting.venues.priceTolerance.Desc>Наскільки гості миряться. Понад 1 вони приймають вищі ціни, нижче 1 — торгуються ногами. Залежить від повзунка складності.</HH.Setting.venues.priceTolerance.Desc>
+  <HH.Setting.venues.selfService>Знижка за самообслуговування</HH.Setting.venues.selfService>
+  <HH.Setting.venues.selfService.Desc>Заклади, яким не потрібен персонал, але за прилавком нікого немає, беруть стільки менше (гість усе бере сам).</HH.Setting.venues.selfService.Desc>
+  <HH.Setting.venues.shopDesire>Бажання гостей робити покупки</HH.Setting.venues.shopDesire>
+  <HH.Setting.venues.shopDesire.Desc>Наскільки охоче гості заходять у крамниці та таверни порівняно з іншими справами. 0 = вони ніколи не роблять покупок.</HH.Setting.venues.shopDesire.Desc>
+  <HH.Setting.venues.shopPrice>Рівень цін у крамницях</HH.Setting.venues.shopPrice>
+  <HH.Setting.venues.shopPrice.Desc>Множить ринкову вартість товарів у крамницях і тавернах поверх власного коефіцієнта кожної вивіски.</HH.Setting.venues.shopPrice.Desc>
+  <HH.Setting.venues.stallFee>Плата за прилавок з торговця</HH.Setting.venues.stallFee>
+  <HH.Setting.venues.stallFee.Desc>Кожен торговельний караван сплачує стільки срібла за свій прилавок у ринковий день (іде в колоніальну скарбницю).</HH.Setting.venues.stallFee.Desc>
+  <HH.Setting.venues.tendHours>Годин на зміну</HH.Setting.venues.tendHours>
+  <HH.Setting.venues.tendHours.Desc>Скільки колоніст обслуговує заклад, перш ніж шукати іншу роботу (зупиняється також при закритті).</HH.Setting.venues.tendHours.Desc>
+  <HH.Setting.venues.vendingPrice>Рівень цін торгових автоматів</HH.Setting.venues.vendingPrice>
+  <HH.Setting.venues.vendingPrice.Desc>Множить ринкову вартість того, що продають торгові автомати.</HH.Setting.venues.vendingPrice.Desc>
+  <HH.Setting.venues.waitForStaffTicks>Терпіння гостей до персоналу (тіки)</HH.Setting.venues.waitForStaffTicks>
+  <HH.Setting.venues.waitForStaffTicks.Desc>Скільки гість чекає, поки хтось підійде до відкритого, але незайнятого закладу, а потім іде роздратованим.</HH.Setting.venues.waitForStaffTicks.Desc>
+  <HH.Venue.AlwaysOpen>відкрито цілодобово</HH.Venue.AlwaysOpen>
+  <HH.Venue.Bargain>Вигідна угода!</HH.Venue.Bargain>
+  <HH.Venue.BellRung>*дзень*</HH.Venue.BellRung>
+  <HH.Venue.CheckCounter>Прилавок для касира</HH.Venue.CheckCounter>
+  <HH.Venue.CheckDrinks>Напої на складі</HH.Venue.CheckDrinks>
+  <HH.Venue.CheckNoCounter>Немає прилавка (необов'язково) → касир стоїть біля вивіски</HH.Venue.CheckNoCounter>
+  <HH.Venue.CheckNoDrinks>Немає напоїв на складі → зберігайте пиво або інші напої в кімнаті</HH.Venue.CheckNoDrinks>
+  <HH.Venue.CheckNoStock>Немає товарів для продажу → поставте полицю або склад з товарами в кімнату</HH.Venue.CheckNoStock>
+  <HH.Venue.CheckNoWorker>Ніхто не має увімкненого типу роботи «Обслуговування»</HH.Venue.CheckNoWorker>
+  <HH.Venue.CheckStock>Товари на полицях</HH.Venue.CheckStock>
+  <HH.Venue.CheckWorker>Колоніст виконує роботу «Обслуговування»</HH.Venue.CheckWorker>
+  <HH.Venue.ChooseType>Вид бізнесу</HH.Venue.ChooseType>
+  <HH.Venue.ChooseTypeDesc>Оберіть, який це бізнес у кімнаті цієї вивіски: таверна, крамниця, ресторан, казино, спа або лаунж.</HH.Venue.ChooseTypeDesc>
+  <HH.Venue.Closed>зачинено</HH.Venue.Closed>
+  <HH.Venue.Closes>Закривається о</HH.Venue.Closes>
+  <HH.Venue.ColonyMayTake>Колонія може брати товари</HH.Venue.ColonyMayTake>
+  <HH.Venue.ColonyMayTakeDesc>Вимкнено: товари на продаж у цій кімнаті заборонені для колоністів, тож ніхто не виносить ваш запас. Увімкнено: колоністи ставляться до товарів, як до будь-якого іншого складованого предмета.</HH.Venue.ColonyMayTakeDesc>
+  <HH.Venue.ColonyMayTakeShort>колонія може брати товари</HH.Venue.ColonyMayTakeShort>
+  <HH.Venue.Current>поточний</HH.Venue.Current>
+  <HH.Venue.CustomersOnly>лише клієнти</HH.Venue.CustomersOnly>
+  <HH.Venue.Done>Готово</HH.Venue.Done>
+  <HH.Venue.ForSale>На продаж</HH.Venue.ForSale>
+  <HH.Venue.GoodService>Привітне обслуговування</HH.Venue.GoodService>
+  <HH.Venue.GoodValue>Гарна ціна</HH.Venue.GoodValue>
+  <HH.Venue.Hours>Години роботи</HH.Venue.Hours>
+  <HH.Venue.HoursDesc>Задає, коли відкрито заклад. Пресети: день, вечір, ніч і цілодобово.</HH.Venue.HoursDesc>
+  <HH.Venue.HoursHint>Година закриття раніша за годину відкриття означає, що заклад працює після півночі.</HH.Venue.HoursHint>
+  <HH.Venue.HoursTitle>Години роботи</HH.Venue.HoursTitle>
+  <HH.Venue.LastOrders>останнє замовлення</HH.Venue.LastOrders>
+  <HH.Venue.MarketFees>Торговці платять {0} срібла за свої прилавки.</HH.Venue.MarketFees>
+  <HH.Venue.MarketLabel>Ринковий день</HH.Venue.MarketLabel>
+  <HH.Venue.MarketText>Звістка розійшлася: сьогодні ринковий день. {0} торговельних караванів і {1} груп відвідувачів з {2} прямують до вашої колонії. Торговці вестимуть торг як звичайно у своїх таборах; відвідувачі пройдуться вашими крамницями та тавернами, якщо вони відкриті.\n\nСтежте, щоб полиці були заповнені, а прилавки — з людьми.</HH.Venue.MarketText>
+  <HH.Venue.NoRoom>Це ще не бізнес: вивісці потрібна замкнена кімната з дахом.</HH.Venue.NoRoom>
+  <HH.Venue.NoStaffState>відкрито, але нікого на зміні</HH.Venue.NoStaffState>
+  <HH.Venue.NoTypes>Немає доступних видів бізнесу</HH.Venue.NoTypes>
+  <HH.Venue.Nobody>нікого</HH.Venue.Nobody>
+  <HH.Venue.NobodyCameBell>Подзвонив. Ніхто не прийшов.</HH.Venue.NobodyCameBell>
+  <HH.Venue.NobodyCameStaff>Чекав на обслуговування. Ніхто не прийшов.</HH.Venue.NobodyCameStaff>
+  <HH.Venue.Off>вимк.</HH.Venue.Off>
+  <HH.Venue.On>увімк.</HH.Venue.On>
+  <HH.Venue.Open>відкрито</HH.Venue.Open>
+  <HH.Venue.Opens>Відкривається о</HH.Venue.Opens>
+  <HH.Venue.PresetAlways>Завжди</HH.Venue.PresetAlways>
+  <HH.Venue.PresetDay>День</HH.Venue.PresetDay>
+  <HH.Venue.PresetEvening>Вечір</HH.Venue.PresetEvening>
+  <HH.Venue.PresetNight>Ніч</HH.Venue.PresetNight>
+  <HH.Venue.Price>Ціни</HH.Venue.Price>
+  <HH.Venue.PriceDesc>Коефіцієнт ціни для всього, що продає цей заклад. Гостей відлякують завищені ціни.</HH.Venue.PriceDesc>
+  <HH.Venue.PriceFactor>Коефіцієнт ціни</HH.Venue.PriceFactor>
+  <HH.Venue.PriceHint>Гості порівнюють ціну з тим, скільки товар для них вартий. Заможні гості миряться з більшим. Заклади без персоналу трохи дешевші (самообслуговування); послуга нічного дзвінка коштує додатково. Безкоштовно означає безкоштовно.</HH.Venue.PriceHint>
+  <HH.Venue.PriceLine>Ціни</HH.Venue.PriceLine>
+  <HH.Venue.PriceTitle>Ціни</HH.Venue.PriceTitle>
+  <HH.Venue.Pricey>Дорого</HH.Venue.Pricey>
+  <HH.Venue.Rename>Перейменувати</HH.Venue.Rename>
+  <HH.Venue.RenameDesc>Дайте цьому закладу назву.</HH.Venue.RenameDesc>
+  <HH.Venue.RenameTitle>Назвіть цей заклад</HH.Venue.RenameTitle>
+  <HH.Venue.Reset>Використати типову назву</HH.Venue.Reset>
+  <HH.Venue.Restock>Поповнення</HH.Venue.Restock>
+  <HH.Venue.RestockDesc>Дозволити цій вивісці ставити для складських місць у своїй кімнаті пріоритет «Важливо», щоб переносники підтримували полиці повними. За бажанням; старі налаштування повертаються після вимкнення.</HH.Venue.RestockDesc>
+  <HH.Venue.RestockHint>Коли увімкнено, кожне складське місце в цій кімнаті (зони складування й полиці, ваші чи чиїсь) отримує відмічені нижче товари з пріоритетом «Важливо», тож ваші переносники підтримують кімнату заповненою. Старі налаштування місць повертаються після вимкнення.</HH.Venue.RestockHint>
+  <HH.Venue.RestockNoShop>Цей заклад не продає нічого зі своєї кімнати, тож поповнювати нічого.</HH.Venue.RestockNoShop>
+  <HH.Venue.RestockSwitchOff>Поповнення УВІМКНЕНО – вимкнути й повернути сховище</HH.Venue.RestockSwitchOff>
+  <HH.Venue.RestockSwitchOn>Поповнення вимкнено – увімкнути</HH.Venue.RestockSwitchOn>
+  <HH.Venue.RestockTitle>Поповнення</HH.Venue.RestockTitle>
+  <HH.Venue.RippedOff>Обдурили</HH.Venue.RippedOff>
+  <HH.Venue.Sales>Продажі сьогодні</HH.Venue.Sales>
+  <HH.Venue.SalesTotal>разом</HH.Venue.SalesTotal>
+  <HH.Venue.Silver>срібло</HH.Venue.Silver>
+  <HH.Venue.StacksWord>стоси</HH.Venue.StacksWord>
+  <HH.Venue.Staff>На зміні</HH.Venue.Staff>
+  <HH.Venue.Tier.Budget>Економ</HH.Venue.Tier.Budget>
+  <HH.Venue.Tier.Charity>Благодійність</HH.Venue.Tier.Charity>
+  <HH.Venue.Tier.Discount>Знижка</HH.Venue.Tier.Discount>
+  <HH.Venue.Tier.Free>Безкоштовно</HH.Venue.Tier.Free>
+  <HH.Venue.Tier.Luxury>Розкіш</HH.Venue.Tier.Luxury>
+  <HH.Venue.Tier.Premium>Преміум</HH.Venue.Tier.Premium>
+  <HH.Venue.Tier.Standard>Стандарт</HH.Venue.Tier.Standard>
+</LanguageData>

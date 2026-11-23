@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchBout.reportString>싸움터를 지켜보고 있습니다.</HH_WatchBout.reportString>
+  <HH_BackRoomVisit.reportString>뒷방을 이용하고 있습니다.</HH_BackRoomVisit.reportString>
+  <HH_FenceDeal.reportString>장물아비의 카운터에서 거래하고 있습니다.</HH_FenceDeal.reportString>
+  <HH_UseLounge.reportString>휴게실에서 쉬고 있습니다.</HH_UseLounge.reportString>
+  <HH_Interrogate.reportString>TargetA을(를) 심문하고 있습니다.</HH_Interrogate.reportString>
+  <HH_HuntQuarry.reportString>TargetA을(를) 사냥하고 있습니다.</HH_HuntQuarry.reportString>
+  <HH_QuarryFlee.reportString>달아나고 있습니다.</HH_QuarryFlee.reportString>
+</LanguageData>

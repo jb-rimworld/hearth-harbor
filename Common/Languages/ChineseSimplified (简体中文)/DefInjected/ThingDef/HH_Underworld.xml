@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_BackRoomDoor.label>后屋门</HH_BackRoomDoor.label>
+  <HH_BackRoomDoor.description>一扇外观朴素、锁却很好的门。只有你自己的人和可疑的客人能打开它。仅由后屋门围成的房间不计入宅邸的声望。</HH_BackRoomDoor.description>
+  <HH_FightPitMarker.label>格斗坑标记</HH_FightPitMarker.label>
+  <HH_FightPitMarker.description>标出其周围的一块围栏竞技场。在内侧至少 3×3 格的封闭围栏（门也可以）中央放置此标记，格斗坑即开放：志愿者、囚犯和动物战斗，客人下注，宅邸抽取奖池的十分之一。比赛在有人认输或倒下时结束；只有黑暗内容及以上才允许战至死亡，且永远不适用于志愿者和儿童。</HH_FightPitMarker.description>
+  <HH_FenceCounter.label>销赃柜台</HH_FenceCounter.label>
+  <HH_FenceCounter.description>一个满是划痕的柜台，可靠的销赃者在此以物品价值的四成买入赃物，再以七成卖给可疑的买家。销赃者使用自己的现金箱运作，现金箱从你的钱柜补充。货物的主人有时会查出真相。</HH_FenceCounter.description>
+  <HH_SmugglerDock.label>走私码头</HH_SmugglerDock.label>
+  <HH_SmugglerDock.description>一个光秃秃的降落平台，配有一盏加了遮光罩的灯。夜里偶尔会有一只箱子降落，一个声音不问来历地低价提供。偶尔会有人注意到那盏灯。</HH_SmugglerDock.description>
+  <HH_HuntingGroundMarker.label>猎场标记</HH_HuntingGroundMarker.label>
+  <HH_HuntingGroundMarker.description>标出一块围栏猎场（至少六十格，并且封闭）。有钱的猎人会付费射杀你带入其中的动物。在黑暗内容和相应意识形态下，囚犯也可以成为猎物；此项需单独开启，并附带警告。</HH_HuntingGroundMarker.description>
+  <HH_OrganClinic.label>诊所柜台</HH_OrganClinic.label>
+  <HH_OrganClinic.description>一个冰冷的柜台，摘取的器官会被放在这里，供匿名捐献者领取。他们在夜间取走，付款时一言不发。仅在黑暗或残酷内容下可用。憎恶器官交易的意识形态会因此记恨你。</HH_OrganClinic.description>
+</LanguageData>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchBout.reportString>surveille la fosse.</HH_WatchBout.reportString>
+  <HH_BackRoomVisit.reportString>utilise l'arrière-salle.</HH_BackRoomVisit.reportString>
+  <HH_FenceDeal.reportString>fait affaire au comptoir du receleur.</HH_FenceDeal.reportString>
+  <HH_UseLounge.reportString>se détend au salon.</HH_UseLounge.reportString>
+  <HH_Interrogate.reportString>interroge TargetA.</HH_Interrogate.reportString>
+  <HH_HuntQuarry.reportString>chasse TargetA.</HH_HuntQuarry.reportString>
+  <HH_QuarryFlee.reportString>prend la fuite.</HH_QuarryFlee.reportString>
+</LanguageData>

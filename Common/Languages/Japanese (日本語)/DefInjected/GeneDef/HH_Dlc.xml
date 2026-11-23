@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Gene_Hospitable.label>もてなし上手</HH_Gene_Hospitable.label>
+  <HH_Gene_Hospitable.description>保持者は意識せずとも温かく、客人は一緒にいて居心地の良さを感じます。もてなしも自然と身につきやすくなります。</HH_Gene_Hospitable.description>
+  <HH_Gene_AddictionProofReward.label>依存耐性の報酬回路</HH_Gene_AddictionProofReward.label>
+  <HH_Gene_AddictionProofReward.description>脳の報酬回路はリスクや偶然にほとんど反応しません。賭け事が習慣になることはめったにありません。</HH_Gene_AddictionProofReward.description>
+  <HH_Gene_Compulsive.label>強迫的</HH_Gene_Compulsive.label>
+  <HH_Gene_Compulsive.description>報酬回路が過剰に働きます。賭け事は少し楽しく、やめるのはずっと難しくなります。</HH_Gene_Compulsive.description>
+  <HH_Gene_DexterousFingers.label>器用な指</HH_Gene_DexterousFingers.label>
+  <HH_Gene_DexterousFingers.description>手先の制御が並外れて細かく、シャッフル、配札、すり替えが自然にできます。</HH_Gene_DexterousFingers.description>
+  <HH_Gene_RefinedPalate.label>肥えた舌</HH_Gene_RefinedPalate.label>
+  <HH_Gene_RefinedPalate.description>食べられるものと美味しいものを味で見分ける舌です。料理人は料理の質を上げやすくなります。客として訪れると、保持者はより多くを期待し、チップも多めに払います。</HH_Gene_RefinedPalate.description>
+  <HH_Gene_NumberSense.label>数の感覚</HH_Gene_NumberSense.label>
+  <HH_Gene_NumberSense.description>数字が頭の中で自然に整理されます。この遺伝子を持つクルーピエ、出納係、銀行員は技能レベルが3段階高いかのように働きます。</HH_Gene_NumberSense.description>
+  <HH_Gene_TirelessSmile.label>疲れを知らない笑顔</HH_Gene_TirelessSmile.label>
+  <HH_Gene_TirelessSmile.description>笑顔の筋肉は疲れません。テーブルやカウンターでの接客で休息が減る速度がずっと緩やかです。</HH_Gene_TirelessSmile.description>
+  <HH_Gene_SilverTongue.label>弁舌の才</HH_Gene_SilverTongue.label>
+  <HH_Gene_SilverTongue.description>どんな値段もお買い得に聞こえる声の持ち主です。客の期待はわずかに下がり、忠誠心も安く手に入ります。</HH_Gene_SilverTongue.description>
+  <HH_Gene_HighRoller.label>大勝負師</HH_Gene_HighRoller.label>
+  <HH_Gene_HighRoller.description>保持者は賭けが熱くなるほど生き生きとします。より大きく賭け、より楽しみ、気前よくチップを払いますが、テーブルから離れるのはずっと難しくなります。</HH_Gene_HighRoller.description>
+</LanguageData>

@@ -1,0 +1,21 @@
+{
+ "k:HH.Compat.DialogTitle": "Hospitality працює разом із Hearth & Harbor. Вимкнути його?",
+ "k:HH.Compat.DialogBody": "Hearth & Harbor замінює Hospitality та його доповнення. Поки обидва активні, Hearth & Harbor вимкнув Hospitality на цю сесію: його патчі, події, будівлі та вкладка гостей не діють. Твої гостьові ліжка й зони з Hospitality зберігаються і переходять до Hearth & Harbor, щойно Hospitality зникне.",
+ "k:HH.Compat.DialogListHeader": "Ці модифікації буде вимкнено:",
+ "k:HH.Compat.DialogMentionHeader": "Ці гостьові модифікації залишаються без змін; їхні відвідувачі лишаються їхніми:",
+ "k:HH.Compat.DialogFailed": "Список модифікацій не вдалося змінити автоматично ({0}). Зроби це, будь ласка, вручну:",
+ "k:HH.Compat.DialogStep1": "1. Головне меню → Модифікації",
+ "k:HH.Compat.DialogStep2": "2. Зніми позначки з модифікацій, перелічених вище",
+ "k:HH.Compat.DialogStep3": "3. Збережи список модифікацій і перезапусти гру",
+ "k:HH.Compat.Yes": "Так, вимкнути і перезапустити",
+ "k:HH.Compat.OpenMods": "Відкрити список модифікацій",
+ "k:HH.Compat.Later": "Пізніше",
+ "k:HH.Compat.Never": "Більше не питати",
+ "k:HH.Compat.ImportLetterTitle": "Імпортовано з Hospitality",
+ "k:HH.Compat.ImportLetterText": "Цю колонію грали з Hospitality. Hearth & Harbor перейняв те, що зміг.\\n\\nІмпортовано: {0}.\\nВідкинуто: {1}.\\n\\nІмпортовані гостьові ліжка знову є звичайними ліжками і запам'ятовуються як гостьові; гостьова частина Hearth & Harbor їх підхоплює. Більше нічого у твоїй колонії не змінилося.",
+ "k:HH.Compat.ImportNothing": "нічого",
+ "k:HH.Setting.compat.hospitalityNeverAsk": "Не пропонувати вимкнути Hospitality",
+ "k:HH.Setting.compat.hospitalityNeverAsk.Desc": "Коли Hospitality працює разом із Hearth & Harbor, Hearth & Harbor вимикає його на сесію і пропонує вимкнути його в головному меню. Увімкнено: пропозицій більше не буде (вимкнення все одно відбувається).",
+ "k:HH.Setting.compat.importLetter": "Лист після імпорту збереження Hospitality",
+ "k:HH.Setting.compat.importLetter.Desc": "Після завантаження збереження, яке грали з Hospitality, лист перелічує, що Hearth & Harbor перейняв (гостьові ліжка, зони, відвідувачі), і що було відкинуто."
+}

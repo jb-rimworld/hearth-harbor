@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchedMovie.stages.0.label>a regardé un film</HH_WatchedMovie.stages.0.label>
+  <HH_WatchedMovie.stages.0.description>Je me suis assis dans le noir avec un sac de quelque chose de croquant et j'ai regardé des gens qui avaient de meilleurs problèmes que les miens.</HH_WatchedMovie.stages.0.description>
+  <HH_ScreeningAttended.stages.0.label>soirée cinéma</HH_ScreeningAttended.stages.0.label>
+  <HH_ScreeningAttended.stages.0.description>Tout le monde d'un côté de la pièce, un écran de l'autre. Nous avons passé une bonne soirée.</HH_ScreeningAttended.stages.0.description>
+  <HH_FreshLook.stages.0.label>nouvelle allure</HH_FreshLook.stages.0.label>
+  <HH_FreshLook.stages.0.description>Nouvelle coiffure. Même personne, mais le miroir n'est pas d'accord.</HH_FreshLook.stages.0.description>
+  <HH_AdmiredArt.stages.0.label>a admiré des œuvres d'art</HH_AdmiredArt.stages.0.label>
+  <HH_AdmiredArt.stages.0.description>Quelqu'un a fait ces choses de ses mains. Je suis resté là un moment sans rien regretter.</HH_AdmiredArt.stages.0.description>
+  <HH_ParkRested.stages.0.label>assis au grand air</HH_ParkRested.stages.0.label>
+  <HH_ParkRested.stages.0.description>Un banc, de l'air, une vue. Ce n'est pas grand-chose, mais c'était suffisant.</HH_ParkRested.stages.0.description>
+</LanguageData>

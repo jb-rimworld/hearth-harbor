@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Insurance.label>seguro</SL_Insurance.label>
+  <SL_Insurance.description>Uma apólice para cada infortúnio, vendida por uma mútua que nunca perdeu uma discussão. Desbloqueia o escritório de seguros e as apólices dos níveis básicos de cobertura "Mínimo Necessário" e "Bom o Suficiente".</SL_Insurance.description>
+  <SL_Actuarial.label>ciência atuarial</SL_Actuarial.label>
+  <SL_Actuarial.description>Tabelas de quão provável é que tudo dê errado e quanto isso vale. Desbloqueia o nível máximo de cobertura "Premium de Premium", as apólices premium e os serviços da mútua.</SL_Actuarial.description>
+</LanguageData>

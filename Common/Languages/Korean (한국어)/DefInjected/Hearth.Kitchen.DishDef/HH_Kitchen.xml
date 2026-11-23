@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_CampfireStew.label>모닥불 무플론 스튜</HH_Dish_CampfireStew.label>
+  <HH_Dish_CampfireStew.description>냄비에 모든 것을 넣었다. 그 모든 것이 무슨 뜻인지에 대한 말다툼까지 함께.</HH_Dish_CampfireStew.description>
+  <HH_Dish_PotatoSoup.label>감자 수프</HH_Dish_PotatoSoup.label>
+  <HH_Dish_PotatoSoup.description>집의 맛이 나긴 한다. 바닥이 흙바닥이고 기대치가 낮은 집이라면.</HH_Dish_PotatoSoup.description>
+  <HH_Dish_SpitRoastedHaunch.label>꼬치구이 뒷다리살</HH_Dish_SpitRoastedHaunch.label>
+  <HH_Dish_SpitRoastedHaunch.description>동전 던지기에서 진 사람이 한 시간 동안 손으로 돌렸다.</HH_Dish_SpitRoastedHaunch.description>
+  <HH_Dish_HashAndEgg.label>해시와 달걀</HH_Dish_HashAndEgg.label>
+  <HH_Dish_HashAndEgg.description>오늘이 나아지지는 않을 거라고 말하는 아침 식사. 다만 바삭하게 구워지기는 한다.</HH_Dish_HashAndEgg.description>
+  <HH_Dish_CornPorridge.label>옥수수 죽</HH_Dish_CornPorridge.label>
+  <HH_Dish_CornPorridge.description>비상시 벽의 구멍을 막을 수 있을 만큼 걸쭉하다.</HH_Dish_CornPorridge.description>
+  <HH_Dish_BerryCompote.label>베리 콩포트</HH_Dish_BerryCompote.label>
+  <HH_Dish_BerryCompote.description>림 전체에서 달면서도 싼 유일한 것.</HH_Dish_BerryCompote.description>
+  <HH_Dish_PlainSteamedRice.label>그냥 찐 쌀밥</HH_Dish_PlainSteamedRice.label>
+  <HH_Dish_PlainSteamedRice.description>밥이다. 그냥 밥이다. 메뉴에서 더 찾아보는 건 그만하라.</HH_Dish_PlainSteamedRice.description>
+  <HH_Dish_Congee.label>죽 (콘지)</HH_Dish_Congee.label>
+  <HH_Dish_Congee.description>아주 길었던 한 주와 아주 길었던 습격을 마친 사람들을 위한 쌀죽.</HH_Dish_Congee.description>
+  <HH_Dish_FriedMushrooms.label>버섯 튀김</HH_Dish_FriedMushrooms.label>
+  <HH_Dish_FriedMushrooms.description>겉은 바삭하고, 속은 어딘가 동굴 같은 맛이 난다.</HH_Dish_FriedMushrooms.description>
+  <HH_Dish_EggDropSoup.label>달걀 국물 수프</HH_Dish_EggDropSoup.label>
+  <HH_Dish_EggDropSoup.description>뜨거운 육수에 달걀을 풀어 넣었다. 육수에게도 취미가 필요했으니까.</HH_Dish_EggDropSoup.description>
+  <HH_Dish_RoastCornOnTheCob.label>구운 옥수수</HH_Dish_RoastCornOnTheCob.label>
+  <HH_Dish_RoastCornOnTheCob.description>누군가 가판대에 총을 쏘는 동안, 비를 맞으며 선 채로 먹는다.</HH_Dish_RoastCornOnTheCob.description>
+  <HH_Dish_RoastPotatoes.label>구운 감자</HH_Dish_RoastPotatoes.label>
+  <HH_Dish_RoastPotatoes.description>노릇하고 바삭하다. 섹터 7에서 행복에 가장 가까운 것.</HH_Dish_RoastPotatoes.description>
+  <HH_Dish_MilkRicePudding.label>우유 쌀 푸딩</HH_Dish_MilkRicePudding.label>
+  <HH_Dish_MilkRicePudding.description>위안이 소환된 식민지 주민들을 위한 위로 음식.</HH_Dish_MilkRicePudding.description>
+  <HH_Dish_ScrambledEggs.label>스크램블드에그</HH_Dish_ScrambledEggs.label>
+  <HH_Dish_ScrambledEggs.description>달걀이다. 불평을 그만할 때까지 이리저리 휘저어 놓았다.</HH_Dish_ScrambledEggs.description>
+  <HH_Dish_BugSkewers.label>소금 껍질 벌레 꼬치</HH_Dish_BugSkewers.label>
+  <HH_Dish_BugSkewers.description>겉은 바삭하고, 속에 대해서는 묻지 않는 편이 좋다.</HH_Dish_BugSkewers.description>
+  <HH_Dish_RawFishSlices.label>생선 회</HH_Dish_RawFishSlices.label>
+  <HH_Dish_RawFishSlices.description>영상을 한 번 보고 따라 썰었다.</HH_Dish_RawFishSlices.description>
+  <HH_Dish_PanFriedFish.label>생선 지짐</HH_Dish_PanFriedFish.label>
+  <HH_Dish_PanFriedFish.description>어제까지 헤엄쳤다면, 오늘은 지져진다.</HH_Dish_PanFriedFish.description>
+  <HH_Dish_AgavePancakes.label>용설란 팬케이크</HH_Dish_AgavePancakes.label>
+  <HH_Dish_AgavePancakes.description>달걀이 하나뿐이라는 사실을 가리려고 높이 쌓아 올렸다.</HH_Dish_AgavePancakes.description>
+  <HH_Dish_FruitBowl.label>과일 그릇</HH_Dish_FruitBowl.label>
+  <HH_Dish_FruitBowl.description>건강하고 신선하지만, 아이들이 오면 4초 만에 사라진다.</HH_Dish_FruitBowl.description>
+  <HH_Dish_MushroomPlate.label>버섯 접시</HH_Dish_MushroomPlate.label>
+  <HH_Dish_MushroomPlate.description>차갑게 식힌 버섯. 냉장고가 이미 돌아가고 있었으니까.</HH_Dish_MushroomPlate.description>
+  <HH_Dish_CrimsonSmoothie.label>진홍 스무디</HH_Dish_CrimsonSmoothie.label>
+  <HH_Dish_CrimsonSmoothie.description>베리, 우유, 그리고 정체 모를 분홍빛.</HH_Dish_CrimsonSmoothie.description>
+  <HH_Dish_SmokedJerkyStrips.label>훈제 육포 스트립</HH_Dish_SmokedJerkyStrips.label>
+  <HH_Dish_SmokedJerkyStrips.description>영원히 보관할 수 있다. 씹어 먹는 데 걸리는 시간도 영원하다.</HH_Dish_SmokedJerkyStrips.description>
+  <HH_Dish_BratwurstAndBeer.label>브라트부어스트와 맥주</HH_Dish_BratwurstAndBeer.label>
+  <HH_Dish_BratwurstAndBeer.description>빵에 끼운 소시지, 잔에 담긴 맥주, 그리고 아침의 후회.</HH_Dish_BratwurstAndBeer.description>
+  <HH_Dish_InsectTacos.label>곤충 타코</HH_Dish_InsectTacos.label>
+  <HH_Dish_InsectTacos.description>타코 세 개, 질문은 없음, 소스는 아주 훌륭함.</HH_Dish_InsectTacos.description>
+  <HH_Dish_FishAndChips.label>피시 앤 칩스</HH_Dish_FishAndChips.label>
+  <HH_Dish_FishAndChips.description>행운을 위해 두 번, 심술 때문에 한 번 튀긴다.</HH_Dish_FishAndChips.description>
+  <HH_Dish_MuffaloRamen.label>뮤팔로 라멘</HH_Dish_MuffaloRamen.label>
+  <HH_Dish_MuffaloRamen.description>후루룩 크게 소리 내며 먹어라. 마지막 그릇을 두고 싸운다면, 더 크게 후루룩거려라.</HH_Dish_MuffaloRamen.description>
+  <HH_Dish_EggFriedRice.label>달걀 볶음밥</HH_Dish_EggFriedRice.label>
+  <HH_Dish_EggFriedRice.description>어제의 밥, 오늘의 골칫거리, 내일의 점심.</HH_Dish_EggFriedRice.description>
+  <HH_Dish_PadThrumbo.label>팟 트럼보</HH_Dish_PadThrumbo.label>
+  <HH_Dish_PadThrumbo.description>달콤새콤한 국수와 바삭한 식감이 얽힌 요리, 말을 들을 때까지 웍에 볶는다.</HH_Dish_PadThrumbo.description>
+  <HH_Dish_ChiliConCarne.label>칠리 콘 카르네</HH_Dish_ChiliConCarne.label>
+  <HH_Dish_ChiliConCarne.description>상처를 지질 만큼 맵다. 약으로 쓰지 말 것. 약으로 쓸 것.</HH_Dish_ChiliConCarne.description>
+  <HH_Dish_JollofRice.label>졸로프 라이스</HH_Dish_JollofRice.label>
+  <HH_Dish_JollofRice.description>이 레시피는 세 식민지의 싸움이며, 셋 모두 옳다.</HH_Dish_JollofRice.description>
+  <HH_Dish_UgaliWithStew.label>우갈리와 스튜</HH_Dish_UgaliWithStew.label>
+  <HH_Dish_UgaliWithStew.description>손으로 먹는 옥수수 반죽이라, 도망칠 때도 한 톨도 남지 않는다.</HH_Dish_UgaliWithStew.description>
+  <HH_Dish_BakedEggs.label>구운 달걀</HH_Dish_BakedEggs.label>
+  <HH_Dish_BakedEggs.description>온갖 일을 겪고 나와서 소스가 흥건해진 달걀.</HH_Dish_BakedEggs.description>
+  <HH_Dish_HashBrowns.label>해시 브라운</HH_Dish_HashBrowns.label>
+  <HH_Dish_HashBrowns.description>드라이브스루에서 온갖 것을 본 감자 팬케이크.</HH_Dish_HashBrowns.description>
+  <HH_Dish_CornFritters.label>옥수수 프리터</HH_Dish_CornFritters.label>
+  <HH_Dish_CornFritters.description>노릇노릇하게 튀겨져, 누가 나눠 먹자고 떠올리기도 전에 사라진다.</HH_Dish_CornFritters.description>
+  <HH_Dish_PotatoGratin.label>감자 그라탱</HH_Dish_PotatoGratin.label>
+  <HH_Dish_PotatoGratin.description>크림, 감자, 인내심. 림에서 이만큼 잘 되는 건 없다.</HH_Dish_PotatoGratin.description>
+  <HH_Dish_MushroomRisotto.label>버섯 리조또</HH_Dish_MushroomRisotto.label>
+  <HH_Dish_MushroomRisotto.description>20분 동안 저어라, 아니면 친구를 잃는다. 선택은 너의 몫이다.</HH_Dish_MushroomRisotto.description>
+  <HH_Dish_SteamedBuns.label>찐빵</HH_Dish_SteamedBuns.label>
+  <HH_Dish_SteamedBuns.description>베개처럼 부드럽고, 분명 고기였을 무언가가 속에 들어 있다.</HH_Dish_SteamedBuns.description>
+  <HH_Dish_ChocolatePudding.label>초콜릿 푸딩</HH_Dish_ChocolatePudding.label>
+  <HH_Dish_ChocolatePudding.description>습격이 디저트 하나만큼 정확히 미뤄지는 이유.</HH_Dish_ChocolatePudding.description>
+  <HH_Dish_Ceviche.label>세비체</HH_Dish_Ceviche.label>
+  <HH_Dish_Ceviche.description>신맛만으로 익힌 생선. 대부분의 식민지 운영도 그렇다.</HH_Dish_Ceviche.description>
+  <HH_Dish_MuffaloGoulash.label>뮤팔로 굴라시</HH_Dish_MuffaloGoulash.label>
+  <HH_Dish_MuffaloGoulash.description>붉고 진하며, 공식적으로는 비공식적인 국민 논쟁거리.</HH_Dish_MuffaloGoulash.description>
+  <HH_Dish_EggFlan.label>달걀 플랑</HH_Dish_EggFlan.label>
+  <HH_Dish_EggFlan.description>긴 교대를 마친 식민지 주민처럼 흔들린다.</HH_Dish_EggFlan.description>
+  <HH_Dish_BeerBatteredInsects.label>맥주 튀김 곤충</HH_Dish_BeerBatteredInsects.label>
+  <HH_Dish_BeerBatteredInsects.description>바삭함, 거품, 그리고 이웃에게는 한마디도 하지 말 것.</HH_Dish_BeerBatteredInsects.description>
+  <HH_Dish_CreamyNoodleBake.label>크리미 누들 베이크</HH_Dish_CreamyNoodleBake.label>
+  <HH_Dish_CreamyNoodleBake.description>지도부보다 식민지를 더 잘 붙들어 주는 캐서롤.</HH_Dish_CreamyNoodleBake.description>
+  <HH_Dish_FermentedMushrooms.label>발효 버섯</HH_Dish_FermentedMushrooms.label>
+  <HH_Dish_FermentedMushrooms.description>발효되었고, 사납고, 용서하기 어렵다. 속에는 좋다고들 한다.</HH_Dish_FermentedMushrooms.description>
+  <HH_Dish_RimMein.label>림 미엔</HH_Dish_RimMein.label>
+  <HH_Dish_RimMein.description>볶은 면을 웍에 던져 익힌 요리, 생김새만큼 건강하다.</HH_Dish_RimMein.description>
+  <HH_Dish_ColdPotatoSalad.label>차가운 감자 샐러드</HH_Dish_ColdPotatoSalad.label>
+  <HH_Dish_ColdPotatoSalad.description>아무도 계획하지 않았지만 모두가 비우는 포틀럭 요리.</HH_Dish_ColdPotatoSalad.description>
+  <HH_Dish_CreamyMushroomNoodles.label>크리미 버섯 누들</HH_Dish_CreamyMushroomNoodles.label>
+  <HH_Dish_CreamyMushroomNoodles.description>기억 속 파스타처럼 크림에 버무린 면, 소문이 몇 바퀴 돈 뒤의 맛.</HH_Dish_CreamyMushroomNoodles.description>
+  <HH_Dish_LongPorkStew.label>롱 포크 스튜</HH_Dish_LongPorkStew.label>
+  <HH_Dish_LongPorkStew.description>레시피는 비밀이다. 재료는 비밀이 아니다.</HH_Dish_LongPorkStew.description>
+  <HH_Dish_SmokedLongJerky.label>훈제 롱 저키</HH_Dish_SmokedLongJerky.label>
+  <HH_Dish_SmokedLongJerky.description>겨울 내내 간다. 죄책감도 그렇다.</HH_Dish_SmokedLongJerky.description>
+  <HH_Dish_CongeeOfTheFallen.label>쓰러진 자들의 죽</HH_Dish_CongeeOfTheFallen.label>
+  <HH_Dish_CongeeOfTheFallen.description>차갑고 차가운 양심을 데우는 따뜻한 죽.</HH_Dish_CongeeOfTheFallen.description>
+  <HH_Dish_BloodBroth.label>피 육수</HH_Dish_BloodBroth.label>
+  <HH_Dish_BloodBroth.description>목마르고 예의 바른 자들을 위한 진하고 어두운 육수.</HH_Dish_BloodBroth.description>
+  <HH_Dish_HemogenBlackPudding.label>헤모겐 블랙 푸딩</HH_Dish_HemogenBlackPudding.label>
+  <HH_Dish_HemogenBlackPudding.description>너를 쳐다보지 않을 때까지 튀긴다.</HH_Dish_HemogenBlackPudding.description>
+  <HH_Dish_MuffaloBourguignon.label>뮤팔로 부르기뇽</HH_Dish_MuffaloBourguignon.label>
+  <HH_Dish_MuffaloBourguignon.description>둘째 날 와인이 떨어져서 맥주에 졸였다.</HH_Dish_MuffaloBourguignon.description>
+  <HH_Dish_ColonyPaella.label>식민지 파엘라</HH_Dish_ColonyPaella.label>
+  <HH_Dish_ColonyPaella.description>식료품 창고에 있던 무엇이든, 대단한 품위로 차려냈다.</HH_Dish_ColonyPaella.description>
+  <HH_Dish_NigiriPlatter.label>니기리 모둠</HH_Dish_NigiriPlatter.label>
+  <HH_Dish_NigiriPlatter.description>밥과 생선을, 전선에 서 있어야 할 누군가가 빚어냈다.</HH_Dish_NigiriPlatter.description>
+  <HH_Dish_ThrumboPho.label>트럼보 쌀국수</HH_Dish_ThrumboPho.label>
+  <HH_Dish_ThrumboPho.description>맑은 육수 뒤에 아주 긴 할 일 목록이 숨어 있다.</HH_Dish_ThrumboPho.description>
+  <HH_Dish_Biryani.label>비리야니</HH_Dish_Biryani.label>
+  <HH_Dish_Biryani.description>밥, 고기, 외교를 층층이 쌓고 뚜껑을 덮었다.</HH_Dish_Biryani.description>
+  <HH_Dish_DromedaryTagine.label>드로메다리 타진</HH_Dish_DromedaryTagine.label>
+  <HH_Dish_DromedaryTagine.description>점토 원뿔 안에서 천천히 익힌다, 대부분의 사람들이 바라는 방식처럼.</HH_Dish_DromedaryTagine.description>
+  <HH_Dish_MushroomMoussaka.label>버섯 무사카</HH_Dish_MushroomMoussaka.label>
+  <HH_Dish_MushroomMoussaka.description>일곱 겹이며, 모든 겹이 저마다 의견을 가지고 있다.</HH_Dish_MushroomMoussaka.description>
+  <HH_Dish_LacqueredThrumbo.label>옻칠 트럼보</HH_Dish_LacqueredThrumbo.label>
+  <HH_Dish_LacqueredThrumbo.description>식민지 은행 잔고보다 더 빛나도록 윤이 나게 구웠다.</HH_Dish_LacqueredThrumbo.description>
+  <HH_Dish_TomYumSoup.label>똠얌 수프</HH_Dish_TomYumSoup.label>
+  <HH_Dish_TomYumSoup.description>새콤하고 매콤해서 코와 빚을 함께 뚫어 준다.</HH_Dish_TomYumSoup.description>
+  <HH_Dish_Laksa.label>락사</HH_Dish_Laksa.label>
+  <HH_Dish_Laksa.description>코코넛 없는 카레 국물, 사과하지 않는다.</HH_Dish_Laksa.description>
+  <HH_Dish_Tamales.label>타말레</HH_Dish_Tamales.label>
+  <HH_Dish_Tamales.description>잎에 싸여 있어, 아무도 원하지 않은 선물 같다.</HH_Dish_Tamales.description>
+  <HH_Dish_DimSumBasket.label>딤섬 바구니</HH_Dish_DimSumBasket.label>
+  <HH_Dish_DimSumBasket.description>작은 예산에 비해 턱없이 큰 허세를 담은 작은 한 입.</HH_Dish_DimSumBasket.description>
+  <HH_Dish_ChocolateLayerCake.label>초콜릿 레이어 케이크</HH_Dish_ChocolateLayerCake.label>
+  <HH_Dish_ChocolateLayerCake.description>층은 많지만, 정직한 층은 하나도 없다.</HH_Dish_ChocolateLayerCake.description>
+  <HH_Dish_GravyFries.label>그레이비 프라이</HH_Dish_GravyFries.label>
+  <HH_Dish_GravyFries.description>감자튀김, 그레이비, 그리고 조용한 민족적 자부심의 순간.</HH_Dish_GravyFries.description>
+  <HH_Dish_SmokedBrisket.label>훈제 브리스킷</HH_Dish_SmokedBrisket.label>
+  <HH_Dish_SmokedBrisket.description>열두 시간 동안 훈제했다, 그 얘기는 입을 다무는 남자가 만들었다.</HH_Dish_SmokedBrisket.description>
+  <HH_Dish_Churros.label>츄로스</HH_Dish_Churros.label>
+  <HH_Dish_Churros.description>튀긴 반죽에 초콜릿 소스, 죄책감은 없다.</HH_Dish_Churros.description>
+  <HH_Dish_Bibimbap.label>비빔밥</HH_Dish_Bibimbap.label>
+  <HH_Dish_Bibimbap.description>식민지 자체처럼, 모든 것을 한 그릇에 섞어라.</HH_Dish_Bibimbap.description>
+  <HH_Dish_MongolianMuffalo.label>몽골식 뮤팔로</HH_Dish_MongolianMuffalo.label>
+  <HH_Dish_MongolianMuffalo.description>웍에 볶아 달콤하고 끈적하며, 약간 지나치게 시끄럽다.</HH_Dish_MongolianMuffalo.description>
+  <HH_Dish_ColdNoodleSalad.label>차가운 국수 샐러드</HH_Dish_ColdNoodleSalad.label>
+  <HH_Dish_ColdNoodleSalad.description>너무 차갑게 내와서 면이 항의서를 낸다.</HH_Dish_ColdNoodleSalad.description>
+  <HH_Dish_MuffaloCarpaccio.label>뮤팔로 카르파초</HH_Dish_MuffaloCarpaccio.label>
+  <HH_Dish_MuffaloCarpaccio.description>메뉴판이 비쳐 보일 만큼 얇게 썰었다.</HH_Dish_MuffaloCarpaccio.description>
+  <HH_Dish_ThrumboTartare.label>트럼보 타르타르</HH_Dish_ThrumboTartare.label>
+  <HH_Dish_ThrumboTartare.description>날것이고, 사납고, 용감하다. 먼저 면책 동의서에 서명할 것.</HH_Dish_ThrumboTartare.description>
+  <HH_Dish_DanDanNoodles.label>탄탄면</HH_Dish_DanDanNoodles.label>
+  <HH_Dish_DanDanNoodles.description>미리 경고하고도 결국 이기는 매운 면.</HH_Dish_DanDanNoodles.description>
+  <HH_Dish_GrilledLongPorkRibs.label>구운 롱 포크 갈비</HH_Dish_GrilledLongPorkRibs.label>
+  <HH_Dish_GrilledLongPorkRibs.description>연기 향과 단맛이 나지만, 저녁 식사 자리에서 설명하기가 몹시 어렵다.</HH_Dish_GrilledLongPorkRibs.description>
+  <HH_Dish_LongPorkDumplings.label>롱 포크 만두</HH_Dish_LongPorkDumplings.label>
+  <HH_Dish_LongPorkDumplings.description>손으로 빚었고, 속재료는 두 번 묻는 사람이 없다.</HH_Dish_LongPorkDumplings.description>
+  <HH_Dish_StrangersRoast.label>이방인 로스트</HH_Dish_StrangersRoast.label>
+  <HH_Dish_StrangersRoast.description>일요일 저녁, 원해서 온 게 아닌 손님과 함께.</HH_Dish_StrangersRoast.description>
+  <HH_Dish_CannibalsChili.label>식인자의 칠리</HH_Dish_CannibalsChili.label>
+  <HH_Dish_CannibalsChili.description>맛도 생각도 가릴 만큼 맵다.</HH_Dish_CannibalsChili.description>
+  <HH_Dish_HemogenRisotto.label>헤모겐 리조또</HH_Dish_HemogenRisotto.label>
+  <HH_Dish_HemogenRisotto.description>크리미하고 붉으며, 살짝 지나치게 강렬하다.</HH_Dish_HemogenRisotto.description>
+  <HH_Dish_RedSteakVeryRare.label>레어 레드 스테이크</HH_Dish_RedSteakVeryRare.label>
+  <HH_Dish_RedSteakVeryRare.description>거의 울음소리가 난다. 흡혈귀가 주문한 대로 정확히 조리했다.</HH_Dish_RedSteakVeryRare.description>
+  <HH_Dish_TwistedMeatBao.label>뒤틀린 고기 바오</HH_Dish_TwistedMeatBao.label>
+  <HH_Dish_TwistedMeatBao.description>빵이 아주 살짝 꿈틀댄다. 속재료에게는 말하지 마라.</HH_Dish_TwistedMeatBao.description>
+  <HH_Dish_MuffaloWellington.label>뮤팔로 웰링턴</HH_Dish_MuffaloWellington.label>
+  <HH_Dish_MuffaloWellington.description>페이스트리에 싸였다, 아주 거대한 자존심을 위한 작은 단열재.</HH_Dish_MuffaloWellington.description>
+  <HH_Dish_BoomalopeConfit.label>분알로프 콩피</HH_Dish_BoomalopeConfit.label>
+  <HH_Dish_BoomalopeConfit.description>자기 지방에 천천히 익혔다. 솥 옆에 서 있지 마라.</HH_Dish_BoomalopeConfit.description>
+  <HH_Dish_FishThermidor.label>생선 테르미도르</HH_Dish_FishThermidor.label>
+  <HH_Dish_FishThermidor.description>크리미하고, 그라탱으로 구워 내며, 터무니없이 자부심이 강하다.</HH_Dish_FishThermidor.description>
+  <HH_Dish_Rendang.label>렌당</HH_Dish_Rendang.label>
+  <HH_Dish_Rendang.description>소스가 항복하고 고기와 하나가 될 때까지 졸인다.</HH_Dish_Rendang.description>
+  <HH_Dish_MoleNegro.label>몰레 네그로</HH_Dish_MoleNegro.label>
+  <HH_Dish_MoleNegro.description>어둡고, 쓰고, 달다. 최고의 조언처럼.</HH_Dish_MoleNegro.description>
+  <HH_Dish_ChocolateSouffle.label>초콜릿 수플레</HH_Dish_ChocolateSouffle.label>
+  <HH_Dish_ChocolateSouffle.description>나쁜 소문처럼 부풀었다가, 똑같이 빨리 가라앉는다.</HH_Dish_ChocolateSouffle.description>
+  <HH_Dish_CremeBrulee.label>크렘 브륄레</HH_Dish_CremeBrulee.label>
+  <HH_Dish_CremeBrulee.description>숟가락에 눌리면 겉면이 바삭하게 깨진다, 압박을 받을 때처럼.</HH_Dish_CremeBrulee.description>
+  <HH_Dish_AgaveBaklava.label>아가베 바클라바</HH_Dish_AgaveBaklava.label>
+  <HH_Dish_AgaveBaklava.description>너무 달아서 의무병과 시인이 둘 다 필요해진다.</HH_Dish_AgaveBaklava.description>
+  <HH_Dish_MuffaloStroganoff.label>뮤팔로 스트로가노프</HH_Dish_MuffaloStroganoff.label>
+  <HH_Dish_MuffaloStroganoff.description>크리미하고 진하며, 세 번째 숟가락에 이미 사라졌다.</HH_Dish_MuffaloStroganoff.description>
+  <HH_Dish_OmakaseNigiri.label>오마카세 니기리</HH_Dish_OmakaseNigiri.label>
+  <HH_Dish_OmakaseNigiri.description>주방장이 무엇을 먹을지 정한다. 너는 감탄하기로 정한다.</HH_Dish_OmakaseNigiri.description>
+  <HH_Dish_TeppanFeast.label>철판 잔치</HH_Dish_TeppanFeast.label>
+  <HH_Dish_TeppanFeast.description>불타는 철판, 뒤집는 주걱, 그리고 근처의 소화기.</HH_Dish_TeppanFeast.description>
+  <HH_Dish_ClayOvenMuffalo.label>점토 오븐 뮤팔로</HH_Dish_ClayOvenMuffalo.label>
+  <HH_Dish_ClayOvenMuffalo.description>밤새 재운 뒤 점토 오븐에 강하게 구워, 거만하게 내놓는다.</HH_Dish_ClayOvenMuffalo.description>
+  <HH_Dish_Churrasco.label>슈라스코</HH_Dish_Churrasco.label>
+  <HH_Dish_Churrasco.description>칼에 꽂은 고기가 항복할 때까지 계속 나온다.</HH_Dish_Churrasco.description>
+  <HH_Dish_HuntersBigos.label>사냥꾼 비고스</HH_Dish_HuntersBigos.label>
+  <HH_Dish_HuntersBigos.description>하루가 지날수록 맛은 좋아지고 냄새는 점점 나빠지는 스튜.</HH_Dish_HuntersBigos.description>
+  <HH_Dish_LambKoftasWithRice.label>양고기 코프타와 밥</HH_Dish_LambKoftasWithRice.label>
+  <HH_Dish_LambKoftasWithRice.description>양념하고 빚어서 밥 위에 올렸다, 아주 맛있는 강의처럼.</HH_Dish_LambKoftasWithRice.description>
+  <HH_Dish_SevenCourseColonyMenu.label>일곱 코스 식민지 메뉴</HH_Dish_SevenCourseColonyMenu.label>
+  <HH_Dish_SevenCourseColonyMenu.description>전채, 전채, 전채, 메인, 디저트, 디저트, 그리고 건배.</HH_Dish_SevenCourseColonyMenu.description>
+  <HH_Dish_TartareOfTheFallen.label>쓰러진 자들의 타르타르</HH_Dish_TartareOfTheFallen.label>
+  <HH_Dish_TartareOfTheFallen.description>요리는 숨길 게 있는 자들의 몫이라, 날것으로 낸다.</HH_Dish_TartareOfTheFallen.description>
+  <HH_Dish_HemogenCarpaccio.label>헤모겐 카르파초</HH_Dish_HemogenCarpaccio.label>
+  <HH_Dish_HemogenCarpaccio.description>얇고, 붉고, 응시와 함께 나온다.</HH_Dish_HemogenCarpaccio.description>
+  <HH_Dish_TwistedHotpot.label>뒤틀린 전골</HH_Dish_TwistedHotpot.label>
+  <HH_Dish_TwistedHotpot.description>혼자서 끓는다. 아무도 가스레인지를 켜지 않았다.</HH_Dish_TwistedHotpot.description>
+  <HH_Dish_CheeseFondue.label>치즈 퐁듀</HH_Dish_CheeseFondue.label>
+  <HH_Dish_CheeseFondue.description>녹은 치즈 냄비, 그리고 빵을 떨어뜨리는 사람이 계산한다는 규칙.</HH_Dish_CheeseFondue.description>
+  <HH_Dish_PumpkinAndCheeseGratin.label>호박과 치즈 그라탱</HH_Dish_PumpkinAndCheeseGratin.label>
+  <HH_Dish_PumpkinAndCheeseGratin.description>주황빛에 치즈가 듬뿍, 얇은 위험의 막으로 장식했다.</HH_Dish_PumpkinAndCheeseGratin.description>
+  <HH_Dish_FlourDumplingSoup.label>밀가루 경단 수프</HH_Dish_FlourDumplingSoup.label>
+  <HH_Dish_FlourDumplingSoup.description>주먹만 한 경단, 한 방 먹이는 수프를 좋아하는 사람들을 위해.</HH_Dish_FlourDumplingSoup.description>
+  <HH_Dish_CheeseOmelette.label>치즈 오믈렛</HH_Dish_CheeseOmelette.label>
+  <HH_Dish_CheeseOmelette.description>아무것도 사과하지 않고, 누구에게도 굽히지 않는 오믈렛.</HH_Dish_CheeseOmelette.description>
+  <HH_Dish_FruitGlazedRoast.label>과일 글레이즈 로스트</HH_Dish_FruitGlazedRoast.label>
+  <HH_Dish_FruitGlazedRoast.description>끈적하고 달며, 오븐 장갑과 기도와 함께 식탁으로 옮긴다.</HH_Dish_FruitGlazedRoast.description>
+  <HH_Dish_SushiRollSet.label>스시 롤 세트</HH_Dish_SushiRollSet.label>
+  <HH_Dish_SushiRollSet.description>단단히 말고, 살짝 찍어서, 누가 딴 생각을 하기 전에 먹는다.</HH_Dish_SushiRollSet.description>
+  <HH_Dish_WasabiGlazedFish.label>와사비 글레이즈 생선</HH_Dish_WasabiGlazedFish.label>
+  <HH_Dish_WasabiGlazedFish.description>코, 목, 그리고 그 전의 모든 의견을 뚫어 준다.</HH_Dish_WasabiGlazedFish.description>
+  <HH_Dish_TempuraSushi.label>튀김 스시</HH_Dish_TempuraSushi.label>
+  <HH_Dish_TempuraSushi.description>튀김기로 잘못 빠졌다가 오히려 좋아해 버린 스시.</HH_Dish_TempuraSushi.description>
+  <HH_Dish_HeartyWinterStew.label>든든한 겨울 스튜</HH_Dish_HeartyWinterStew.label>
+  <HH_Dish_HeartyWinterStew.description>장작불 솥에서 며칠을 끓였다. 솥이 말대꾸하기 전에 먹어라.</HH_Dish_HeartyWinterStew.description>
+  <HH_Dish_LongNightMushroomStew.label>긴 밤 버섯 스튜</HH_Dish_LongNightMushroomStew.label>
+  <HH_Dish_LongNightMushroomStew.description>더 나은 계획이 없던 누군가가 밤새 끓였다.</HH_Dish_LongNightMushroomStew.description>
+  <HH_Dish_StewOfQuestionableMeat.label>의심스러운 고기 스튜</HH_Dish_StewOfQuestionableMeat.label>
+  <HH_Dish_StewOfQuestionableMeat.description>스튜가 곤충에 대한 후회는 지워 주지만, 스튜에 대한 후회는 남는다.</HH_Dish_StewOfQuestionableMeat.description>
+  <HH_Dish_SugarCookies.label>설탕 쿠키</HH_Dish_SugarCookies.label>
+  <HH_Dish_SugarCookies.description>전투로 손이 떨리는 주민이 장식했고, 티가 난다.</HH_Dish_SugarCookies.description>
+  <HH_Dish_FancyCupcakes.label>고급 컵케이크</HH_Dish_FancyCupcakes.label>
+  <HH_Dish_FancyCupcakes.description>작은 케이크에 큰 스프링클 문제.</HH_Dish_FancyCupcakes.description>
+  <HH_Dish_GlazedDonuts.label>글레이즈 도넛</HH_Dish_GlazedDonuts.label>
+  <HH_Dish_GlazedDonuts.description>예산에 뚫린 구멍 둘레를 두른 반죽 고리.</HH_Dish_GlazedDonuts.description>
+  <HH_Dish_HauteCuisineTastingMenu.label>오트 퀴진 테이스팅 메뉴</HH_Dish_HauteCuisineTastingMenu.label>
+  <HH_Dish_HauteCuisineTastingMenu.description>작은 접시 여덟 개, 거대한 청구서 하나.</HH_Dish_HauteCuisineTastingMenu.description>
+  <HH_Dish_GlazedFruitTart.label>과일 글레이즈 타르트</HH_Dish_GlazedFruitTart.label>
+  <HH_Dish_GlazedFruitTart.description>타르트 틀보다 과일이 더 많다. 올바른 비율이다.</HH_Dish_GlazedFruitTart.description>
+  <HH_Dish_PickledVegetableSalad.label>절임 채소 샐러드</HH_Dish_PickledVegetableSalad.label>
+  <HH_Dish_PickledVegetableSalad.description>너무 오래 절여서 콜로니의 초대 지도자보다 더 오래 살아남았다.</HH_Dish_PickledVegetableSalad.description>
+  <HH_Dish_HerbRoastedPotatoes.label>허브 구운 감자</HH_Dish_HerbRoastedPotatoes.label>
+  <HH_Dish_HerbRoastedPotatoes.description>정원 파티에 다녀오더니 식물 한 포기를 데리고 돌아온 감자.</HH_Dish_HerbRoastedPotatoes.description>
+  <HH_Dish_BerryAndNutBreakfastBowl.label>베리와 견과류 아침 그릇</HH_Dish_BerryAndNutBreakfastBowl.label>
+  <HH_Dish_BerryAndNutBreakfastBowl.description>바삭하고 건강하며, 습격자들이 주문한 것과는 극과 극이다.</HH_Dish_BerryAndNutBreakfastBowl.description>
+  <HH_Dish_TeaSmokedMeat.label>차 훈제 고기</HH_Dish_TeaSmokedMeat.label>
+  <HH_Dish_TeaSmokedMeat.description>차 향으로 훈연했다. 고기도 좀 쉬어야 하지 않겠나.</HH_Dish_TeaSmokedMeat.description>
+  <HH_Dish_StrawFlourFlatbread.label>짚가루 납작빵</HH_Dish_StrawFlourFlatbread.label>
+  <HH_Dish_StrawFlourFlatbread.description>납작하고 솔직하며 살짝 모래가 씹힌다. 출신지인 사막을 닮았다.</HH_Dish_StrawFlourFlatbread.description>
+  <HH_Dish_CactusFruitSalad.label>선인장 열매 샐러드</HH_Dish_CactusFruitSalad.label>
+  <HH_Dish_CactusFruitSalad.description>달콤하고 가시가 돋쳐 있다. 가장 친한 친구와 꼭 닮았다.</HH_Dish_CactusFruitSalad.description>
+  <HH_Dish_GreenfruitStew.label>녹과일 스튜</HH_Dish_GreenfruitStew.label>
+  <HH_Dish_GreenfruitStew.description>너무 푸른 나머지 머스팔로가 기분 상한 스튜.</HH_Dish_GreenfruitStew.description>
+  <HH_Dish_StrawflourDumplings.label>짚가루 만두</HH_Dish_StrawflourDumplings.label>
+  <HH_Dish_StrawflourDumplings.description>황무지에서 빚은 만두. 속에 든 것은 한때 고기였을지도 모른다.</HH_Dish_StrawflourDumplings.description>
+  <HH_Dish_DesertBreadAndBeer.label>사막 빵과 맥주</HH_Dish_DesertBreadAndBeer.label>
+  <HH_Dish_DesertBreadAndBeer.description>액체와 고체, 올바른 순서로 즐기는 아침 식사.</HH_Dish_DesertBreadAndBeer.description>
+  <HH_Dish_GrilledWholeFish.label>생선 통구이</HH_Dish_GrilledWholeFish.label>
+  <HH_Dish_GrilledWholeFish.description>생선 한 마리, 약간의 소금, 그리고 생선에게 미안해하는 기색은 없다.</HH_Dish_GrilledWholeFish.description>
+  <HH_Dish_FishStew.label>생선 스튜</HH_Dish_FishStew.label>
+  <HH_Dish_FishStew.description>헤엄치는 것치고 결국 여기로 오지 않는 것은 없다.</HH_Dish_FishStew.description>
+  <HH_Dish_SmokedFishFillet.label>훈제 생선 필레</HH_Dish_SmokedFishFillet.label>
+  <HH_Dish_SmokedFishFillet.description>오늘의 필레. 강을 잊어버릴 때까지 훈연했다.</HH_Dish_SmokedFishFillet.description>
+  <HH_Dish_SashimiPlate.label>사시미 접시</HH_Dish_SashimiPlate.label>
+  <HH_Dish_SashimiPlate.description>생선을 얇게 썬 날것, 그리고 작은 도덕적 딜레마 한 접시.</HH_Dish_SashimiPlate.description>
+  <HH_Dish_FishTacos.label>생선 타코</HH_Dish_FishTacos.label>
+  <HH_Dish_FishTacos.description>토르티야에 싼 생선. 콜로니스트 한 명이 전력 질주해서 배달했다.</HH_Dish_FishTacos.description>
+</LanguageData>

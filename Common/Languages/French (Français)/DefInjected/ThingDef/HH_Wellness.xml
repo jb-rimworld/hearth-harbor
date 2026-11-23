@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_HotTub.label>bain à remous</HH_HotTub.label>
+  <HH_HotTub.description>Une cuve en bois dotée d'une résistance chauffante et d'une pompe qui fonctionne la plupart du temps. Deux personnes peuvent tremper en même temps. Les colons y trouvent des loisirs et un moral apaisé ; les visiteurs d'un lieu de spa paient pour ce privilège.</HH_HotTub.description>
+  <HH_Sauna.label>poêle de sauna</HH_Sauna.label>
+  <HH_Sauna.description>Un poêle à bois bordé de pierre qui transforme une petite pièce fermée en sauna. La pièce compte comme sauna dès qu'elle reste au moins à la température minimale réglée dans les paramètres du mod (45 °C par défaut). Gardez-le alimenté en bois et la pièce petite et bien close.</HH_Sauna.description>
+  <HH_MassageTable.label>table de massage</HH_MassageTable.label>
+  <HH_MassageTable.description>Une table rembourrée avec un trou pour le visage et une étagère d'huiles. Il faut un colon affecté au travail Service pour pétrir ; il gagne de l'expérience en Social et en Médecine, le client paie (visiteurs) ou se détend (colons).</HH_MassageTable.description>
+  <HH_TestOnly_VenueSign.label>panneau de lieu de test (test uniquement)</HH_TestOnly_VenueSign.label>
+  <HH_TestOnly_VenueSign.description>Uniquement pour les tests automatisés. Ne peut pas être construit.</HH_TestOnly_VenueSign.description>
+</LanguageData>

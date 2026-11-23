@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_TestKitchen.label>эксперимент с новым блюдом</HH_TestKitchen.label>
+  <HH_TestKitchen.description>Бросить сырые продукты на стол и посмотреть, что получится. Иногда колония осваивает новое блюдо (чем опытнее повар, тем вероятнее); иначе эксперимент заканчивается ужасной порцией этого блюда.</HH_TestKitchen.description>
+  <HH_TestKitchen.jobString>Экспериментирует с новым блюдом.</HH_TestKitchen.jobString>
+</LanguageData>

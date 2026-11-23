@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Innkeeping.label>宿屋経営</HH_Innkeeping.label>
+  <HH_Innkeeping.description>部屋のクラス、料金帯、酒場、フロント、馬つなぎ場、そして最初の有料料理。客が二泊目を過ごすようになった家に必要なものが一通り揃う。燻製器、オーブン、客用の祭壇、そして台所の習熟レベル2を解放する。</HH_Innkeeping.description>
+  <HH_Gastronomy.label>美食学</HH_Gastronomy.label>
+  <HH_Gastronomy.description>献立、給仕、調理様式、そして本格的な食堂。蒸し器、中華鍋台、冷製台、そして台所の習熟レベル3を解放する。</HH_Gastronomy.description>
+  <HH_HotelManagement.label>ホテル経営</HH_HotelManagement.label>
+  <HH_HotelManagement.description>予約端末、到着予測、交代制、そして深型フライヤー。宿屋とホテルの違いは、ホテルは誰が来るかを把握している点だ。</HH_HotelManagement.description>
+  <HH_FineDining.label>高級料理</HH_FineDining.label>
+  <HH_FineDining.description>リネン、ソムリエ、そして批評家。台所の習熟レベル4を学ぶ: 全料理の『シグネチャー』形態。</HH_FineDining.description>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_NobleStay.label>Adelsaufenthalt</HH_NobleStay.label>
+  <HH_NobleStay.letterLabel>Adelsaufenthalt angeboten</HH_NobleStay.letterLabel>
+  <HH_NobleStay.letterText>Eine Adelsgesellschaft bittet um Unterkunft.</HH_NobleStay.letterText>
+  <HH_ImperialBilleting.label>imperiale Einquartierung</HH_ImperialBilleting.label>
+  <HH_ImperialBilleting.letterLabel>Imperiale Einquartierung</HH_ImperialBilleting.letterLabel>
+  <HH_ImperialBilleting.letterText>Das Imperium verlangt Unterkunft.</HH_ImperialBilleting.letterText>
+</LanguageData>

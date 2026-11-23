@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ATM.label>cajero automático</SL_ATM.label>
+  <SL_ATM.description>Una caja de acero con pantalla, teclado y una ranura que dice "plata" en cuatro idiomas. Los colonos la usan para consultar su cuenta, retirar plata (límite diario, comisión pequeña) e ingresar lo que tengan. Necesita energía.</SL_ATM.description>
+  <SL_BankCounter.label>mostrador bancario</SL_BankCounter.label>
+  <SL_BankCounter.description>Un largo mostrador de madera con herrajes de latón y una campanita que nadie tiene permiso para tocar. Una sucursal de tu banco: los ingresos se contabilizan al momento, el efectivo sale directamente de la bóveda y los préstamos se firman en persona. Necesita energía.</SL_BankCounter.description>
+  <SL_NightSafe.label>caja nocturna</SL_NightSafe.label>
+  <SL_NightSafe.description>Una trampilla en un bloque de acero. Metes la recaudación del día, oyes el clic y te vas a casa. Cada medianoche se vacían aquí las cajas de tus negocios: en tu cuenta bancaria si tienes una, y como plata en el suelo junto a ella si no la tienes.</SL_NightSafe.description>
+</LanguageData>

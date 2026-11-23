@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Ind_ExpressAbsolution.label>експрес-відпущення</HH_Ind_ExpressAbsolution.label>
+  <HH_Ind_ExpressAbsolution.description>Посвідчений штамп, що стирає один спогад про порушену заповідь. Священик не питає, що ви зробили.</HH_Ind_ExpressAbsolution.description>
+  <HH_Ind_MinorMercy.label>мала милість</HH_Ind_MinorMercy.label>
+  <HH_Ind_MinorMercy.description>Освячений бинт за ціною двох доз медикаментів. Лікує одну свіжу рану до 10 очок здоров'я.</HH_Ind_MinorMercy.description>
+  <HH_Ind_UnshakenFaith.label>сертифікат незламної віри</HH_Ind_UnshakenFaith.label>
+  <HH_Ind_UnshakenFaith.description>Оправлений у рамку сертифікат, що ви ніколи не сумнівалися. Підвищує певність на десять відсоткових пунктів.</HH_Ind_UnshakenFaith.description>
+  <HH_Ind_GreaterMercy.label>велика милість</HH_Ind_GreaterMercy.label>
+  <HH_Ind_GreaterMercy.description>Оцінене за ціною диво. Назавжди лікує один стійкий шрам або стару рану.</HH_Ind_GreaterMercy.description>
+  <HH_Asc_Rank1.label>сходження: шукач</HH_Asc_Rank1.label>
+  <HH_Asc_Rank1.description>Сплатіть вступний внесок і станьте Шукачем. Це лише початок.</HH_Asc_Rank1.description>
+  <HH_Asc_Rank2.label>сходження: адепт</HH_Asc_Rank2.label>
+  <HH_Asc_Rank2.description>Ранг II, Адепт. Відтепер власник може продавати індульгенції на вівтарі гостям і відвідувачам з інших домівок.</HH_Asc_Rank2.description>
+  <HH_Asc_Rank3.label>сходження: світоч</HH_Asc_Rank3.label>
+  <HH_Asc_Rank3.description>Ранг III, Світоч. Досить яскравий, щоб його помітили здалеку.</HH_Asc_Rank3.description>
+  <HH_Asc_Rank4.label>сходження: вознесений</HH_Asc_Rank4.label>
+  <HH_Asc_Rank4.description>Ранг IV, Вознесений. Вершина драбини для тих, хто може дозволити собі вид звідти.</HH_Asc_Rank4.description>
+  <HH_Ind_ReformTithe.label>реформаційна десятина</HH_Ind_ReformTithe.label>
+  <HH_Ind_ReformTithe.description>Добровільна десятина на наступну реформу гнучкої ідеоідеології: один очко реформи.</HH_Ind_ReformTithe.description>
+</LanguageData>

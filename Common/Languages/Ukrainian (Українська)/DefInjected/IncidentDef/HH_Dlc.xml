@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_NobleStay.label>знатна зупинка</HH_NobleStay.label>
+  <HH_NobleStay.letterLabel>Запропоновано зупинку знаті</HH_NobleStay.letterLabel>
+  <HH_NobleStay.letterText>Знатна делегація просить житла.</HH_NobleStay.letterText>
+  <HH_ImperialBilleting.label>імперський постій</HH_ImperialBilleting.label>
+  <HH_ImperialBilleting.letterLabel>Імперський постій</HH_ImperialBilleting.letterLabel>
+  <HH_ImperialBilleting.letterText>Імперія вимагає житла.</HH_ImperialBilleting.letterText>
+</LanguageData>

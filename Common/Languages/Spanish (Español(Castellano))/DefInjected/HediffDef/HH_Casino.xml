@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingAddiction.label>adicción al juego</HH_GamblingAddiction.label>
+  <HH_GamblingAddiction.description>Las mesas se han apoderado de él. Sin partidas regulares aparece la abstinencia: mal humor, mal genio y, en las etapas más profundas, derroches de juego. Solo el tiempo sin una sola sesión lo cura, y durante el periodo de ansia posterior es fácil recaer.\n\nNo cuesta plata, solo tiempo, ánimo y nervios.</HH_GamblingAddiction.description>
+  <HH_GamblingAddiction.stages.1.label>abstinencia (leve)</HH_GamblingAddiction.stages.1.label>
+  <HH_GamblingAddiction.stages.2.label>abstinencia (moderada)</HH_GamblingAddiction.stages.2.label>
+  <HH_GamblingAddiction.stages.3.label>abstinencia (intensa)</HH_GamblingAddiction.stages.3.label>
+  <HH_GamblingAddiction.stages.4.label>abstinencia (grave)</HH_GamblingAddiction.stages.4.label>
+  <HH_GamblingAddiction.stages.5.label>abstinencia (extrema)</HH_GamblingAddiction.stages.5.label>
+</LanguageData>

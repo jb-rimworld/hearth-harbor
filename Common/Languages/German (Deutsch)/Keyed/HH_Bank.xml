@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Bank.Building.Account>{0}: Kontostand {1}</HH.Bank.Building.Account>
+  <HH.Bank.Building.DirectDeposit>Direkteinzahlung</HH.Bank.Building.DirectDeposit>
+  <HH.Bank.Building.DirectDepositDesc>An: Die Kassen deiner Geschäfte werden um Mitternacht auf dein Bankkonto geleert. Aus: Die Einnahmen werden als Silber neben dem Tresor abgelegt.</HH.Bank.Building.DirectDepositDesc>
+  <HH.Bank.Building.NoAccount>Noch kein Konto. Eröffne hier oder an einer Kommunikationskonsole eines.</HH.Bank.Building.NoAccount>
+  <HH.Bank.Building.SafeDirect>Die Einnahmen gehen um Mitternacht direkt aufs Konto.</HH.Bank.Building.SafeDirect>
+  <HH.Bank.Building.SafeFloor>Die Einnahmen werden um Mitternacht als Silber abgelegt.</HH.Bank.Building.SafeFloor>
+  <HH.Bank.Building.SafeNoAccount>Kein Bankkonto: Die Einnahmen werden um Mitternacht als Silber abgelegt.</HH.Bank.Building.SafeNoAccount>
+  <HH.Bank.Building.UseAtm>Geldautomat benutzen</HH.Bank.Building.UseAtm>
+  <HH.Bank.Building.UseBranch>Zum Schalter gehen</HH.Bank.Building.UseBranch>
+  <HH.Bank.Chart.DayN>Tag {0}</HH.Bank.Chart.DayN>
+  <HH.Bank.Chart.Tip>Tag {0}: {1} Silber</HH.Bank.Chart.Tip>
+  <HH.Bank.Chart.Today>heute</HH.Bank.Chart.Today>
+  <HH.Bank.Choose.Current>deine Bank</HH.Bank.Choose.Current>
+  <HH.Bank.Choose.Intro>Der Kontowechsel kostet {0} Silber, die vom Konto abgebucht werden. Kredite bleiben bei der Bank, die sie vergeben hat.</HH.Bank.Choose.Intro>
+  <HH.Bank.Choose.Switch>Wechseln ({0})</HH.Bank.Choose.Switch>
+  <HH.Bank.Choose.Title>Bank wechseln</HH.Bank.Choose.Title>
+  <HH.Bank.Comm.Call>Silverline anrufen</HH.Bank.Comm.Call>
+  <HH.Bank.Comm.Info>Bankgeschäfte, Kredite und gelegentlich eine trockene Bemerkung.</HH.Bank.Comm.Info>
+  <HH.Bank.Greet.Afternoon>Guten Tag</HH.Bank.Greet.Afternoon>
+  <HH.Bank.Greet.Evening>Guten Abend</HH.Bank.Greet.Evening>
+  <HH.Bank.Greet.Morning>Guten Morgen</HH.Bank.Greet.Morning>
+  <HH.Bank.Greet.Night>Gute Nacht</HH.Bank.Greet.Night>
+  <HH.Bank.Header.Tier>Vermögensstufe: {0}</HH.Bank.Header.Tier>
+  <HH.Bank.Header.TierTip>Nettovermögen = Konto + Silber zu Hause − Schulden: {0} Silber. Die Stufe ändert sich erst, wenn ein neuer Wert einen ganzen Tag lang gehalten hat. Sie bestimmt die Kolonistenstimmung von dieser Bank aus (Einstellung: bank.moodOn).</HH.Bank.Header.TierTip>
+  <HH.Bank.Hist.Amount>Betrag (5 Nachkommastellen)</HH.Bank.Hist.Amount>
+  <HH.Bank.Hist.Empty>Noch keine Buchungen.</HH.Bank.Hist.Empty>
+  <HH.Bank.Hist.TotalFees>Bisher gezahlte Gebühren</HH.Bank.Hist.TotalFees>
+  <HH.Bank.Hist.TotalFeesTip>Alle Gebühren, Mahngebühren und der Preis für Bankwechsel.</HH.Bank.Hist.TotalFeesTip>
+  <HH.Bank.Hist.TotalInterest>Bisher verdiente Zinsen</HH.Bank.Hist.TotalInterest>
+  <HH.Bank.Hist.TotalInterestTip>Alles, was die Bank dir an Zinsen gezahlt hat (Negativzinsen werden gegengerechnet).</HH.Bank.Hist.TotalInterestTip>
+  <HH.Bank.Hist.What>Was</HH.Bank.Hist.What>
+  <HH.Bank.Hist.When>Wann</HH.Bank.Hist.When>
+  <HH.Bank.Letter.Bailout>{0} ist zu dem Schluss gekommen, dass du tatsächlich zu groß zum Scheitern bist, und hat dich mit einem zinslosen Kredit über {1} Silber gerettet. Er läuft 60 Tage. Das ist ein Kredit, kein Geschenk. Diesen Teil liest nie jemand.</HH.Bank.Letter.Bailout>
+  <HH.Bank.Letter.BailoutTitle>Rettungspaket</HH.Bank.Letter.BailoutTitle>
+  <HH.Bank.Letter.Late>Sehr geehrte Kundin, sehr geehrter Kunde,
+
+Kredit {0} ist nun mehrere Tage im Rückstand. Eine Mahngebühr wurde aufgeschlagen, und deine Kreditwürdigkeit hat eine kleine, unvermeidliche Delle abbekommen. Der fällige Betrag beträgt {1} Silber.
+
+Der Ton dieser Briefe wird sich ändern.
+
+Sachbearbeiterin Ottoline</HH.Bank.Letter.Late>
+  <HH.Bank.Letter.LateTitle>Zahlung überfällig</HH.Bank.Letter.LateTitle>
+  <HH.Bank.Letter.Offset>Bis Kredit {0} beglichen ist, wird die Hälfte jeder Einzahlung auf deinem Konto mit der Schuld verrechnet, und neue Kredite sind nicht verfügbar. Das ist der Teil des Vertrags, an dessen Unterzeichnung sich niemand erinnert.</HH.Bank.Letter.Offset>
+  <HH.Bank.Letter.OffsetTitle>Verrechnung mit Einzahlungen</HH.Bank.Letter.OffsetTitle>
+  <HH.Bank.Letter.Reminder>Sehr geehrte Kundin, sehr geehrter Kunde,
+
+uns ist aufgefallen, dass eine Rate über {0} Silber für Kredit {1} noch nicht bei uns eingegangen ist. Wir sind sicher, dass es sich um ein Versehen handelt, und stehen Ihnen wie immer vollständig zu Diensten.
+
+Herzliche Grüße
+Sachbearbeiterin Ottoline, {2}</HH.Bank.Letter.Reminder>
+  <HH.Bank.Letter.ReminderTitle>Eine freundliche Erinnerung</HH.Bank.Letter.ReminderTitle>
+  <HH.Bank.Letter.Seized>Ein Sachbearbeiter von {0} bedauert, dir mitteilen zu müssen, dass {1} Silber deines Guthabens „aus verwaltungstechnischen Gründen umgebucht“ wurden. Es gibt kein Widerspruchsformular. Es gibt allerdings einen sehr schönen Kugelschreiber.</HH.Bank.Letter.Seized>
+  <HH.Bank.Letter.SeizedTitle>Kontoprüfung</HH.Bank.Letter.SeizedTitle>
+  <HH.Bank.Letter.Visit>Zwei Vertreter von Rim Recovery Partners sind eingetroffen. Sie tragen Bowlerhüte. Sie haben keine Waffen und keinen Termin. Sie werden ganz ruhig in der Nähe deiner Tür stehen, bis Kredit {0} bezahlt ist. Sie greifen nie an und gehen in dem Moment, in dem das Geld da ist.</HH.Bank.Letter.Visit>
+  <HH.Bank.Letter.VisitTitle>Ein freundlicher Besuch</HH.Bank.Letter.VisitTitle>
+  <HH.Bank.Loans.Available>Verfügbar</HH.Bank.Loans.Available>
+  <HH.Bank.Loans.BailoutTag> (Rettungspaket, zinslos)</HH.Bank.Loans.BailoutTag>
+  <HH.Bank.Loans.Credit>Dein Kredit</HH.Bank.Loans.Credit>
+  <HH.Bank.Loans.DaysShort> T</HH.Bank.Loans.DaysShort>
+  <HH.Bank.Loans.Limit>Kreditlimit</HH.Bank.Loans.Limit>
+  <HH.Bank.Loans.LimitTip>0,15 × Vermögen × (Score − 300) / 550, wobei Vermögen = Nettovermögen + ein Viertel des Kolonievermögens. Bei einem guten Score mindestens der Starterkredit ({0} Silber).</HH.Bank.Loans.LimitTip>
+  <HH.Bank.Loans.Line>Kredit {0}: {1} geliehen, {2} noch offen</HH.Bank.Loans.Line>
+  <HH.Bank.Loans.Mine>Deine Kredite</HH.Bank.Loans.Mine>
+  <HH.Bank.Loans.New>Neuer Kredit</HH.Bank.Loans.New>
+  <HH.Bank.Loans.NextDue>nächste Rate {0} in {1}</HH.Bank.Loans.NextDue>
+  <HH.Bank.Loans.None>Keine Kredite. Ottoline ist beinahe enttäuscht.</HH.Bank.Loans.None>
+  <HH.Bank.Loans.Overdue>ÜBERFÄLLIG, Stufe {0}: {1} fällig</HH.Bank.Loans.Overdue>
+  <HH.Bank.Loans.Quote>{0} Silber zu {1} % im Jahr: {2} alle {3} Tage, insgesamt {4} ({5} Zinsen).</HH.Bank.Loans.Quote>
+  <HH.Bank.Loans.Rate>Zinssatz pro Spieljahr</HH.Bank.Loans.Rate>
+  <HH.Bank.Loans.RateTip>Basiszins max(2 %, M − 1) = {0} % plus der Aufschlag deiner Bank ({1} Punkte). Er folgt dem Rentabilitätsregler, daher hat Kreditaufnahme zum Investieren nie einen positiven Erwartungswert.</HH.Bank.Loans.RateTip>
+  <HH.Bank.Loans.Repay100>{0} zurückzahlen</HH.Bank.Loans.Repay100>
+  <HH.Bank.Loans.RepayAll>Alles zurückzahlen</HH.Bank.Loans.RepayAll>
+  <HH.Bank.Loans.Score>Kontobuch-Score</HH.Bank.Loans.Score>
+  <HH.Bank.Loans.ScoreTip>300 bis 850, Start bei 600. Pünktliche Rate +4, jeder Verzugstag −6, Zahlungsausfall −120, mehr als 70 % des Limits genutzt −20, dazu 20 × log10(Vermögen / 10.000). Basis-Score {0}.</HH.Bank.Loans.ScoreTip>
+  <HH.Bank.Loans.Take>Kredit aufnehmen</HH.Bank.Loans.Take>
+  <HH.Bank.Loans.Term>Laufzeit</HH.Bank.Loans.Term>
+  <HH.Bank.Loans.Used>In Nutzung</HH.Bank.Loans.Used>
+  <HH.Bank.Lobby.Accounts>Konten</HH.Bank.Lobby.Accounts>
+  <HH.Bank.Lobby.Amount>Betrag</HH.Bank.Lobby.Amount>
+  <HH.Bank.Lobby.Balance>Kontostand</HH.Bank.Lobby.Balance>
+  <HH.Bank.Lobby.BalanceTip>Exakt: {0} Silber.
+Zinsen jeden Tag: Kontostand × (M^({1} × {2} / 60) − 1), mit M = {3} pro Spieljahr (dem Rentabilitätsregler). Das sind {4:0.##} % am Tag.</HH.Bank.Lobby.BalanceTip>
+  <HH.Bank.Lobby.Cash>Bargeld zu Hause</HH.Bank.Lobby.Cash>
+  <HH.Bank.Lobby.CashTip>Silber, das auf deinen Heimatkarten herumliegt.</HH.Bank.Lobby.CashTip>
+  <HH.Bank.Lobby.ChangeBank>Bank wechseln</HH.Bank.Lobby.ChangeBank>
+  <HH.Bank.Lobby.Chart>Letzte 30 Tage</HH.Bank.Lobby.Chart>
+  <HH.Bank.Lobby.Debt>Schulden</HH.Bank.Lobby.Debt>
+  <HH.Bank.Lobby.DebtTip>Summe deiner offenen Kredite samt aufgelaufener Zinsen.</HH.Bank.Lobby.DebtTip>
+  <HH.Bank.Lobby.DepDelay>gutgeschrieben nach {0}</HH.Bank.Lobby.DepDelay>
+  <HH.Bank.Lobby.DepInstant>sofort gebucht</HH.Bank.Lobby.DepInstant>
+  <HH.Bank.Lobby.Deposit>Einzahlen</HH.Bank.Lobby.Deposit>
+  <HH.Bank.Lobby.Direct>Direkteinzahlung</HH.Bank.Lobby.Direct>
+  <HH.Bank.Lobby.DirectTip>Die Kassen deiner Geschäfte werden um Mitternacht aufs Konto geleert, abzüglich {0} %.</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.Interest>Zinsen in diesem Quadrum</HH.Bank.Lobby.Interest>
+  <HH.Bank.Lobby.InterestTip>Auf den Kontostand gezahlte Zinsen seit Beginn des Quadrums (15 Tage).</HH.Bank.Lobby.InterestTip>
+  <HH.Bank.Lobby.Max>Max</HH.Bank.Lobby.Max>
+  <HH.Bank.Lobby.Net>Nettovermögen</HH.Bank.Lobby.Net>
+  <HH.Bank.Lobby.NetTip>Konto + Silber zu Hause − Schulden. Bestimmt deine Vermögensstufe.</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.Nothing>Noch nichts. Eine Einzahlung wäre ein guter Anfang.</HH.Bank.Lobby.Nothing>
+  <HH.Bank.Lobby.PendingDep>↓ {0} kommen in {1} an</HH.Bank.Lobby.PendingDep>
+  <HH.Bank.Lobby.PendingWd>↑ {0} per Kapsel in {1}</HH.Bank.Lobby.PendingWd>
+  <HH.Bank.Lobby.Recent>Letzte Aktivität</HH.Bank.Lobby.Recent>
+  <HH.Bank.Lobby.Trade>Handelssilber automatisch einzahlen</HH.Bank.Lobby.Trade>
+  <HH.Bank.Lobby.TradeTip>Silber, das du von Händlern und Handelsschiffen bekommst, geht direkt nach dem Geschäft aufs Konto, zur gleichen Gebühr wie die Direkteinzahlung, statt als Münzen auf dem Boden zu liegen. Benötigt Direkteinzahlung. Standardmäßig aus, damit du den nächsten Händler weiter bar bezahlen kannst. Karawanen sind nicht betroffen.</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.Transfer>Ein- und auszahlen</HH.Bank.Lobby.Transfer>
+  <HH.Bank.Lobby.TransferInfo>Im Lager: {0}. Einzahlung {1}. Auszahlungsgebühr {2}, {3}.</HH.Bank.Lobby.TransferInfo>
+  <HH.Bank.Lobby.Transit>Unterwegs</HH.Bank.Lobby.Transit>
+  <HH.Bank.Lobby.TransitTip>Silber, das dein Lager verlassen hat, aber noch nicht gutgeschrieben ist (Einzahlungsverzögerung ohne Filiale oder Geldautomat).</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.WdInstant>sofort Bargeld am Gebäude</HH.Bank.Lobby.WdInstant>
+  <HH.Bank.Lobby.WdPod>Landekapsel in {0} bis {1} Std.</HH.Bank.Lobby.WdPod>
+  <HH.Bank.Lobby.Withdraw>Auszahlen</HH.Bank.Lobby.Withdraw>
+  <HH.Bank.Lobby.WithdrawPod>Auszahlen (Kapsel)</HH.Bank.Lobby.WithdrawPod>
+  <HH.Bank.Memo.AccountFee>Kontogebühr</HH.Bank.Memo.AccountFee>
+  <HH.Bank.Memo.Bailout>Rettungskredit</HH.Bank.Memo.Bailout>
+  <HH.Bank.Memo.Deposit>Einzahlung (Silber)</HH.Bank.Memo.Deposit>
+  <HH.Bank.Memo.DepositTransit>Einzahlung unterwegs</HH.Bank.Memo.DepositTransit>
+  <HH.Bank.Memo.Installment>Kredit {0}: Rate</HH.Bank.Memo.Installment>
+  <HH.Bank.Memo.Interest>Zinsen</HH.Bank.Memo.Interest>
+  <HH.Bank.Memo.Late>Kredit {0}: verspätete Zahlung</HH.Bank.Memo.Late>
+  <HH.Bank.Memo.LateFee>Kredit {0}: Mahngebühr</HH.Bank.Memo.LateFee>
+  <HH.Bank.Memo.Loan>Kredit {0}</HH.Bank.Memo.Loan>
+  <HH.Bank.Memo.LoanInterest>Kredit {0}: Zinsen</HH.Bank.Memo.LoanInterest>
+  <HH.Bank.Memo.NegInterest>Negativzinsen</HH.Bank.Memo.NegInterest>
+  <HH.Bank.Memo.Offset>Inkasso-Verrechnung</HH.Bank.Memo.Offset>
+  <HH.Bank.Memo.Repay>Kredit {0}: Rückzahlung</HH.Bank.Memo.Repay>
+  <HH.Bank.Memo.Seized>Gepfändet</HH.Bank.Memo.Seized>
+  <HH.Bank.Memo.Seizure>Pfändungserlös (Kredit {0})</HH.Bank.Memo.Seizure>
+  <HH.Bank.Memo.SeizurePay>Kredit {0}: durch Pfändung bezahlt</HH.Bank.Memo.SeizurePay>
+  <HH.Bank.Memo.Trade>Handelseinnahmen</HH.Bank.Memo.Trade>
+  <HH.Bank.Memo.Withdraw>Auszahlung (bar)</HH.Bank.Memo.Withdraw>
+  <HH.Bank.Memo.WithdrawCash>Auszahlung (bar)</HH.Bank.Memo.WithdrawCash>
+  <HH.Bank.Memo.WithdrawFee>Gebühr: Auszahlung</HH.Bank.Memo.WithdrawFee>
+  <HH.Bank.Memo.WithdrawPod>Auszahlung per Landekapsel</HH.Bank.Memo.WithdrawPod>
+  <HH.Bank.Msg.DepositArrived>{0} Silber wurden deinem Konto gutgeschrieben.</HH.Bank.Msg.DepositArrived>
+  <HH.Bank.Msg.LoanRepaid>Kredit {0} ist vollständig zurückgezahlt.</HH.Bank.Msg.LoanRepaid>
+  <HH.Bank.Msg.Missed>Die Rate von Kredit {0} konnte nicht bezahlt werden.</HH.Bank.Msg.Missed>
+  <HH.Bank.Msg.Opened>Konto bei {0} eröffnet.</HH.Bank.Msg.Opened>
+  <HH.Bank.Msg.PodsComing>{0} Silber sind in Landekapseln unterwegs nach unten.</HH.Bank.Msg.PodsComing>
+  <HH.Bank.Msg.Settled>Kredit {0} ist wieder in gutem Stand.</HH.Bank.Msg.Settled>
+  <HH.Bank.Msg.Switched>Dein Konto liegt jetzt bei {0}.</HH.Bank.Msg.Switched>
+  <HH.Bank.Msg.TradeDeposit>Handelseinnahmen von {0} Silber gingen direkt auf dein Konto bei {1}.</HH.Bank.Msg.TradeDeposit>
+  <HH.Bank.Open.Button>Konto eröffnen</HH.Bank.Open.Button>
+  <HH.Bank.Open.Direct>Kassengeld um Mitternacht direkt zur Bank leiten</HH.Bank.Open.Direct>
+  <HH.Bank.Open.DirectTip>Die Einnahmen deiner Läden, des Gasthofs und des Casinos gehen aufs Konto, statt als Silber herumzuliegen. Du kannst das später an einem Nachttresor oder in den Einstellungen ändern (bank.directDeposit).</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.Intro>Such dir eine Bank aus. Ein Konto zu eröffnen ist kostenlos; ein späterer Wechsel kostet {0} Silber. Solange du kein Konto hast, belästigt dich hier nichts: keine Briefe, keine Stimmung, keine Gebühren.</HH.Bank.Open.Intro>
+  <HH.Bank.Open.Sub>Dein Silber, unser Problem.</HH.Bank.Open.Sub>
+  <HH.Bank.Open.Title>Silverline: Konto eröffnen</HH.Bank.Open.Title>
+  <HH.Bank.Quip.A>Dein Silber ist sicher*. *Es gelten Bedingungen.</HH.Bank.Quip.A>
+  <HH.Bank.Quip.B>Bitte ziehen Sie eine Nummer. Seit dem Dritten Zusammenbruch haben wir keine Nummern mehr, aber die Geste zählt.</HH.Bank.Quip.B>
+  <HH.Bank.Quip.C>Jede Münze hier ist verbucht. Größtenteils von mir. Nachts.</HH.Bank.Quip.C>
+  <HH.Bank.Quip.Collectors>Meine Kollegen mit den Hüten sind nicht wegen dir hier. Sieh sie nicht an. Sie wissen Bescheid.</HH.Bank.Quip.Collectors>
+  <HH.Bank.Quip.D>Matratzen sind kein Finanzprodukt. Ich höre allerdings, sie haben ihre Anhänger.</HH.Bank.Quip.D>
+  <HH.Bank.Quip.Debt>Schulden sind nur Ersparnisse aus der Zukunft. Die Zukunft hätte sie ungewöhnlich gern zurück.</HH.Bank.Quip.Debt>
+  <HH.Bank.Quip.E>Falls jemand fragt: Der Kugelschreiber ist nicht verkäuflich.</HH.Bank.Quip.E>
+  <HH.Bank.Quip.Empty>Ein leeres Konto ist nur ein sehr ehrliches Konto.</HH.Bank.Quip.Empty>
+  <HH.Bank.Quip.Huge>Bei dieser Größe sind wir nicht mehr deine Bank. Wir sind dein Klima.</HH.Bank.Quip.Huge>
+  <HH.Bank.Quip.Interest>Zinsen in diesem Quadrum: {0}. Das sind, wenn ich richtig rechne, einige Mahlzeiten. Glückwunsch?</HH.Bank.Quip.Interest>
+  <HH.Bank.Quip.Overdue>Wir wollen dich nicht beunruhigen. Uns ist lediglich aufgefallen, dass dir nichts aufgefallen ist.</HH.Bank.Quip.Overdue>
+  <HH.Bank.Quip.Rich>Vier Stellen. Dein Hut ist praktisch schon ein Zylinder.</HH.Bank.Quip.Rich>
+  <HH.Bank.Raid.Bounty>{0} hat die Schuld aus Kredit {1} an Leute verkauft, die keine Briefe schicken. Auf den Anführer deiner Kolonie ist ein Kopfgeld ausgesetzt.</HH.Bank.Raid.Bounty>
+  <HH.Bank.Raid.BountyTitle>Kopfgeld</HH.Bank.Raid.BountyTitle>
+  <HH.Bank.Raid.Text>Rim Recovery Partners ist mit Kredit {0} die Geduld ausgegangen. Ihre Agenten kommen wegen Wertsachen, die mehr wert sind als die Schuld. Sie nehmen, was sie tragen können, und gehen.</HH.Bank.Raid.Text>
+  <HH.Bank.Raid.Title>Inkasso-Überfall</HH.Bank.Raid.Title>
+  <HH.Bank.Reason.Amount>Wähle zuerst einen Betrag.</HH.Bank.Reason.Amount>
+  <HH.Bank.Reason.Arrears>Du bist mit einer Zahlung im Rückstand. Niemand leiht dir etwas, bis das erledigt ist.</HH.Bank.Reason.Arrears>
+  <HH.Bank.Reason.AtmLimit>Der Geldautomat gibt heute nur noch {0} aus.</HH.Bank.Reason.AtmLimit>
+  <HH.Bank.Reason.BankUnavailable>Diese Bank steht dir nicht offen.</HH.Bank.Reason.BankUnavailable>
+  <HH.Bank.Reason.Funds>Das Konto deckt {0} plus {1} Gebühren nicht.</HH.Bank.Reason.Funds>
+  <HH.Bank.Reason.Funds2>Das Konto enthält keine {0}.</HH.Bank.Reason.Funds2>
+  <HH.Bank.Reason.LoansResearch>Kredite erfordern das Forschungsprojekt „Verbraucherkredit“.</HH.Bank.Reason.LoansResearch>
+  <HH.Bank.Reason.MinLoan>Der kleinste Kredit beträgt {0} Silber.</HH.Bank.Reason.MinLoan>
+  <HH.Bank.Reason.NoAccount>Es gibt noch kein Konto.</HH.Bank.Reason.NoAccount>
+  <HH.Bank.Reason.NoCredit>Dein Kreditlimit ist ausgeschöpft (noch {0} Silber).</HH.Bank.Reason.NoCredit>
+  <HH.Bank.Reason.NoSilver>Nicht genug Silber im Lager oder an der Handelsbake ({0} verfügbar).</HH.Bank.Reason.NoSilver>
+  <HH.Bank.Reason.OverLimit>Das ist mehr als die {0} Silber, die du noch leihen darfst.</HH.Bank.Reason.OverLimit>
+  <HH.Bank.Reason.SameBank>Du bist dort bereits Kunde.</HH.Bank.Reason.SameBank>
+  <HH.Bank.Reason.SwitchFunds>Der Kontowechsel kostet {0} Silber, und das Konto enthält so viel nicht.</HH.Bank.Reason.SwitchFunds>
+  <HH.Bank.Reason.Title>{0} verleiht nur an Inhaber eines königlichen Titels.</HH.Bank.Reason.Title>
+  <HH.Bank.Seizure.Allow>Die Wertsachen mitnehmen lassen</HH.Bank.Seizure.Allow>
+  <HH.Bank.Seizure.Done>Das Team hat Besitz im Wert von {0} Silber ({1}) aufgeladen und ist pfeifend abgezogen. Die Schuld ist {2}.</HH.Bank.Seizure.Done>
+  <HH.Bank.Seizure.DoneTitle>Gepfändet</HH.Bank.Seizure.DoneTitle>
+  <HH.Bank.Seizure.Partly>nur teilweise beglichen</HH.Bank.Seizure.Partly>
+  <HH.Bank.Seizure.Refuse>Verweigern</HH.Bank.Seizure.Refuse>
+  <HH.Bank.Seizure.Refused>Das Inkasso-Team hört höflich auf, höflich zu sein.</HH.Bank.Seizure.Refused>
+  <HH.Bank.Seizure.RefusedTitle>Sie gehen nicht</HH.Bank.Seizure.RefusedTitle>
+  <HH.Bank.Seizure.Settled>beglichen</HH.Bank.Seizure.Settled>
+  <HH.Bank.Seizure.Text>Ein Pfändungstrupp von Rim Recovery Partners steht mit einem Gerichtsbeschluss vor der Tür, der anscheinend eine laminierte Serviette ist. Sie wollen Wertsachen im Wert von etwa {0} Silber (120 % von Kredit {1}). Lass sie sie nehmen, und der Kredit ist erledigt. Verweigere, und sie holen es sich auf die harte Tour.</HH.Bank.Seizure.Text>
+  <HH.Bank.Seizure.Title>Pfändungsbescheid</HH.Bank.Seizure.Title>
+  <HH.Bank.Tab.History>Verlauf</HH.Bank.Tab.History>
+  <HH.Bank.Tab.Loans>Kredite</HH.Bank.Tab.Loans>
+  <HH.Bank.Tab.Lobby>Schalterhalle</HH.Bank.Tab.Lobby>
+  <HH.Bank.Tab.Terms>Konditionen</HH.Bank.Tab.Terms>
+  <HH.Bank.Terms.AccFee>Kontogebühr pro Quadrum</HH.Bank.Terms.AccFee>
+  <HH.Bank.Terms.AccountDaily>Dein Konto pro Tag</HH.Bank.Terms.AccountDaily>
+  <HH.Bank.Terms.AccountDailyTip>Kontofaktor pro Jahr = M^({0} × {1}) = {2}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.Anchors>Nach Schwierigkeitsgrad</HH.Bank.Terms.Anchors>
+  <HH.Bank.Terms.AnchorsHead>M pro Jahr / höchste Inkassostufe</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.Atm>Geldautomat</HH.Bank.Terms.Atm>
+  <HH.Bank.Terms.Auto>Auto</HH.Bank.Terms.Auto>
+  <HH.Bank.Terms.AutoTip>Dem Schwierigkeitsregler wieder folgen ({0} bei deinem aktuellen Schwierigkeitsgrad).</HH.Bank.Terms.AutoTip>
+  <HH.Bank.Terms.Daily>Pro Tag (Index)</HH.Bank.Terms.Daily>
+  <HH.Bank.Terms.DailyTip>M^(1/60) − 1. Ein Spieljahr hat 60 Tage.</HH.Bank.Terms.DailyTip>
+  <HH.Bank.Terms.Dep>Einzahlung</HH.Bank.Terms.Dep>
+  <HH.Bank.Terms.Direct>Direkteinzahlung</HH.Bank.Terms.Direct>
+  <HH.Bank.Terms.Fees>Gebühren deiner Bank</HH.Bank.Terms.Fees>
+  <HH.Bank.Terms.FeesNote>Alle Gebühren skalieren mit der Einstellung „Bankgebühren-Stufe“ ({0} %).</HH.Bank.Terms.FeesNote>
+  <HH.Bank.Terms.Preview>1.000 Silber zum Index werden nach einem Spieljahr zu {0} und nach zehn zu {1}.</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Profit>Rentabilität</HH.Bank.Terms.Profit>
+  <HH.Bank.Terms.ProfitIntro>Wie stark angelegtes Geld im Schnitt pro Spieljahr (60 Tage) wächst. 1,0 bedeutet plus/minus nichts, 1,2 sind +20 % im Jahr. Das bestimmt auch, was Kredite kosten. Diese Einstellung gilt für diesen Spielstand.</HH.Bank.Terms.ProfitIntro>
+  <HH.Bank.Terms.StageNote>Inkassoleiter: 1 Erinnerung, 2 Mahngebühr, 3 Verrechnung mit Einlagen, 4 freundlicher Besuch, 5 Pfändungstrupp, 6 Inkasso-Überfall, 7 Kopfgeld. Aktuell: endet bei Stufe {0}.</HH.Bank.Terms.StageNote>
+  <HH.Bank.Terms.Switch>Bankwechsel</HH.Bank.Terms.Switch>
+  <HH.Bank.Terms.Wd>Abhebung (Kapsel / Schalter)</HH.Bank.Terms.Wd>
+  <HH.Bank.Tier.0>Bis zum Hals verschuldet</HH.Bank.Tier.0>
+  <HH.Bank.Tier.1>Pleite</HH.Bank.Tier.1>
+  <HH.Bank.Tier.2>Knapp bei Kasse</HH.Bank.Tier.2>
+  <HH.Bank.Tier.3>Über die Runden</HH.Bank.Tier.3>
+  <HH.Bank.Tier.4>Gut situiert</HH.Bank.Tier.4>
+  <HH.Bank.Tier.5>Wohlhabend</HH.Bank.Tier.5>
+  <HH.Bank.Tier.6>Reich</HH.Bank.Tier.6>
+  <HH.Bank.Tier.7>Steinreich</HH.Bank.Tier.7>
+  <HH.Bank.Tier.8>Zu groß zum Scheitern</HH.Bank.Tier.8>
+  <HH.Bank.Tier.Name0>Aufs Haus</HH.Bank.Tier.Name0>
+  <HH.Bank.Tier.Name1>Alles inklusive</HH.Bank.Tier.Name1>
+  <HH.Bank.Tier.Name2>Frühstückspension</HH.Bank.Tier.Name2>
+  <HH.Bank.Tier.Name3>Standardzimmer</HH.Bank.Tier.Name3>
+  <HH.Bank.Tier.Name4>Überbucht</HH.Bank.Tier.Name4>
+  <HH.Bank.Tier.Name5>Ein-Stern-Bewertung</HH.Bank.Tier.Name5>
+  <HH.Bank.Tier.Name6>Warum tust du dir das an?</HH.Bank.Tier.Name6>
+  <HH.Bank.Time.DayHour>Tag {0}, {1}:00 Uhr</HH.Bank.Time.DayHour>
+  <HH.Bank.Time.Hours>{0} Std.</HH.Bank.Time.Hours>
+  <HH.Bank.Time.Minutes>{0} Min.</HH.Bank.Time.Minutes>
+</LanguageData>

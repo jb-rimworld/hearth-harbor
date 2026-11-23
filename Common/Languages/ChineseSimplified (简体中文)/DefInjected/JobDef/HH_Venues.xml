@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_TendVenue.reportString>照看营业场所。</HH_TendVenue.reportString>
+  <HH_BuyGoods.reportString>为TargetA购物。</HH_BuyGoods.reportString>
+  <HH_BuyDrink.reportString>为TargetA点单。</HH_BuyDrink.reportString>
+  <HH_WaitAtVenue.reportString>等待服务。</HH_WaitAtVenue.reportString>
+</LanguageData>

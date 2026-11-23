@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_AteDish.label>comeu um prato decente</HH_AteDish.label>
+  <HH_AteDish.stages.0.label>culinária caseira péssima</HH_AteDish.stages.0.label>
+  <HH_AteDish.stages.0.description>Comi um prato péssimo de culinária caseira.</HH_AteDish.stages.0.description>
+  <HH_AteDish.stages.1.label>culinária caseira ruim</HH_AteDish.stages.1.label>
+  <HH_AteDish.stages.1.description>Comi um prato ruim de culinária caseira.</HH_AteDish.stages.1.description>
+  <HH_AteDish.stages.2.label>culinária caseira comum</HH_AteDish.stages.2.label>
+  <HH_AteDish.stages.2.description>Comi um prato comum de culinária caseira.</HH_AteDish.stages.2.description>
+  <HH_AteDish.stages.3.label>culinária caseira boa</HH_AteDish.stages.3.label>
+  <HH_AteDish.stages.3.description>Comi um prato bom de culinária caseira.</HH_AteDish.stages.3.description>
+  <HH_AteDish.stages.4.label>culinária caseira excelente</HH_AteDish.stages.4.label>
+  <HH_AteDish.stages.4.description>Comi um prato excelente de culinária caseira.</HH_AteDish.stages.4.description>
+  <HH_AteDish.stages.5.label>culinária caseira de obra-prima</HH_AteDish.stages.5.label>
+  <HH_AteDish.stages.5.description>Comi um prato de obra-prima de culinária caseira.</HH_AteDish.stages.5.description>
+  <HH_AteDish.stages.6.label>culinária caseira lendária</HH_AteDish.stages.6.label>
+  <HH_AteDish.stages.6.description>Comi um prato lendário de culinária caseira.</HH_AteDish.stages.6.description>
+  <HH_AteDish.stages.7.label>prato péssimo de culinária caseira boa</HH_AteDish.stages.7.label>
+  <HH_AteDish.stages.7.description>Comi um prato péssimo de culinária caseira boa.</HH_AteDish.stages.7.description>
+  <HH_AteDish.stages.8.label>prato ruim de culinária caseira boa</HH_AteDish.stages.8.label>
+  <HH_AteDish.stages.8.description>Comi um prato ruim de culinária caseira boa.</HH_AteDish.stages.8.description>
+  <HH_AteDish.stages.9.label>prato comum de culinária caseira boa</HH_AteDish.stages.9.label>
+  <HH_AteDish.stages.9.description>Comi um prato comum de culinária caseira boa.</HH_AteDish.stages.9.description>
+  <HH_AteDish.stages.10.label>prato bom de culinária caseira boa</HH_AteDish.stages.10.label>
+  <HH_AteDish.stages.10.description>Comi um prato bom de culinária caseira boa.</HH_AteDish.stages.10.description>
+  <HH_AteDish.stages.11.label>prato excelente de culinária caseira boa</HH_AteDish.stages.11.label>
+  <HH_AteDish.stages.11.description>Comi um prato excelente de culinária caseira boa.</HH_AteDish.stages.11.description>
+  <HH_AteDish.stages.12.label>prato de obra-prima de culinária caseira boa</HH_AteDish.stages.12.label>
+  <HH_AteDish.stages.12.description>Comi um prato de obra-prima de culinária caseira boa.</HH_AteDish.stages.12.description>
+  <HH_AteDish.stages.13.label>prato lendário de culinária caseira boa</HH_AteDish.stages.13.label>
+  <HH_AteDish.stages.13.description>Comi um prato lendário de culinária caseira boa.</HH_AteDish.stages.13.description>
+  <HH_AteDish.stages.14.label>prato péssimo de culinária fina</HH_AteDish.stages.14.label>
+  <HH_AteDish.stages.14.description>Comi um prato péssimo de culinária fina.</HH_AteDish.stages.14.description>
+  <HH_AteDish.stages.15.label>prato ruim de culinária fina</HH_AteDish.stages.15.label>
+  <HH_AteDish.stages.15.description>Comi um prato ruim de culinária fina.</HH_AteDish.stages.15.description>
+  <HH_AteDish.stages.16.label>prato comum de culinária fina</HH_AteDish.stages.16.label>
+  <HH_AteDish.stages.16.description>Comi um prato comum de culinária fina.</HH_AteDish.stages.16.description>
+  <HH_AteDish.stages.17.label>prato bom de culinária fina</HH_AteDish.stages.17.label>
+  <HH_AteDish.stages.17.description>Comi um prato bom de culinária fina.</HH_AteDish.stages.17.description>
+  <HH_AteDish.stages.18.label>prato excelente de culinária fina</HH_AteDish.stages.18.label>
+  <HH_AteDish.stages.18.description>Comi um prato excelente de culinária fina.</HH_AteDish.stages.18.description>
+  <HH_AteDish.stages.19.label>prato de obra-prima de culinária fina</HH_AteDish.stages.19.label>
+  <HH_AteDish.stages.19.description>Comi um prato de obra-prima de culinária fina.</HH_AteDish.stages.19.description>
+  <HH_AteDish.stages.20.label>prato lendário de culinária fina</HH_AteDish.stages.20.label>
+  <HH_AteDish.stages.20.description>Comi um prato lendário de culinária fina.</HH_AteDish.stages.20.description>
+  <HH_AteDish.stages.21.label>prato péssimo de alta cozinha</HH_AteDish.stages.21.label>
+  <HH_AteDish.stages.21.description>Comi um prato péssimo de alta cozinha.</HH_AteDish.stages.21.description>
+  <HH_AteDish.stages.22.label>prato ruim de alta cozinha</HH_AteDish.stages.22.label>
+  <HH_AteDish.stages.22.description>Comi um prato ruim de alta cozinha.</HH_AteDish.stages.22.description>
+  <HH_AteDish.stages.23.label>prato comum de alta cozinha</HH_AteDish.stages.23.label>
+  <HH_AteDish.stages.23.description>Comi um prato comum de alta cozinha.</HH_AteDish.stages.23.description>
+  <HH_AteDish.stages.24.label>prato bom de alta cozinha</HH_AteDish.stages.24.label>
+  <HH_AteDish.stages.24.description>Comi um prato bom de alta cozinha.</HH_AteDish.stages.24.description>
+  <HH_AteDish.stages.25.label>prato excelente de alta cozinha</HH_AteDish.stages.25.label>
+  <HH_AteDish.stages.25.description>Comi um prato excelente de alta cozinha.</HH_AteDish.stages.25.description>
+  <HH_AteDish.stages.26.label>prato de obra-prima de alta cozinha</HH_AteDish.stages.26.label>
+  <HH_AteDish.stages.26.description>Comi um prato de obra-prima de alta cozinha.</HH_AteDish.stages.26.description>
+  <HH_AteDish.stages.27.label>prato lendário de alta cozinha</HH_AteDish.stages.27.label>
+  <HH_AteDish.stages.27.description>Comi um prato lendário de alta cozinha.</HH_AteDish.stages.27.description>
+</LanguageData>

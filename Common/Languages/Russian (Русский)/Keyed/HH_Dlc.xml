@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Dlc.Bought>{0} купил(а) {1} за {2} серебра.</HH.Dlc.Bought>
+  <HH.Dlc.Gizmo.Buy>Индульгенции</HH.Dlc.Gizmo.Buy>
+  <HH.Dlc.Gizmo.BuyDesc>Купить отпущение, милость или ранг для колониста. Цены зависят от позиции его идеологии. Серебро берётся из запасов колонии или из кармана самого колониста.</HH.Dlc.Gizmo.BuyDesc>
+  <HH.Dlc.Gizmo.ChooseFaith>Выбрать веру</HH.Dlc.Gizmo.ChooseFaith>
+  <HH.Dlc.Gizmo.ChooseFaithDesc>Посвятить этот алтарь идеологии. Её последователи среди ваших гостей будут приходить сюда молиться.</HH.Dlc.Gizmo.ChooseFaithDesc>
+  <HH.Dlc.Gizmo.FundDesc>Куда идут платежи колонистов. Божество оставляет их себе навсегда; фракция той же веры проникается к вам теплотой (+1 расположения за каждые 500 серебра, не более +5 за квадрум).</HH.Dlc.Gizmo.FundDesc>
+  <HH.Dlc.Gizmo.ToDeity>Подношения: божеству</HH.Dlc.Gizmo.ToDeity>
+  <HH.Dlc.Gizmo.ToFaction>Подношения: фракции веры</HH.Dlc.Gizmo.ToFaction>
+  <HH.Dlc.NoBuyers>нет колонистов с идеологией</HH.Dlc.NoBuyers>
+  <HH.Dlc.NoFaith>Вера ещё не выбрана.</HH.Dlc.NoFaith>
+  <HH.Dlc.Noble.AcceptOrders>Подчиниться приказу</HH.Dlc.Noble.AcceptOrders>
+  <HH.Dlc.Noble.Arrived>{0} и свита прибывают на {1} дн.</HH.Dlc.Noble.Arrived>
+  <HH.Dlc.Noble.BilletText>Империя приказывает разместить {0} и {1} слуг на {2} дн. Они ожидают спальню, достойную их ранга ({3}). На расходы вы получите около {4} серебра. Отказ обойдётся в расположение и честь.</HH.Dlc.Noble.BilletText>
+  <HH.Dlc.Noble.Left>Знатная делегация уезжает. Оплата: {0} серебра.</HH.Dlc.Noble.Left>
+  <HH.Dlc.Noble.OfferText>{0} с {1} слугами просит остаться на {2} дн. и заплатит около {3} серебра, если им будет удобно. Они ожидают: {4}. Отказ ничего не стоит.</HH.Dlc.Noble.OfferText>
+  <HH.Dlc.Noble.Refuse>Отказать (пострадают расположение и честь)</HH.Dlc.Noble.Refuse>
+  <HH.Dlc.NothingOffered>их вера ничего не предлагает на продажу</HH.Dlc.NothingOffered>
+  <HH.Dlc.Reason.Abhorrent>их вера это отвергает</HH.Dlc.Reason.Abhorrent>
+  <HH.Dlc.Reason.CannotPay>не может заплатить {0}</HH.Dlc.Reason.CannotPay>
+  <HH.Dlc.Reason.CapColony>колония уже покупала это в этом квадруме</HH.Dlc.Reason.CapColony>
+  <HH.Dlc.Reason.CapIdeo>идеология уже получила достаточно этого в этом квадруме</HH.Dlc.Reason.CapIdeo>
+  <HH.Dlc.Reason.CapPawnQ>достигнут предел на этот квадрум</HH.Dlc.Reason.CapPawnQ>
+  <HH.Dlc.Reason.CapPawnY>достигнут предел на этот год</HH.Dlc.Reason.CapPawnY>
+  <HH.Dlc.Reason.CertainEnough>уверенность уже полная</HH.Dlc.Reason.CertainEnough>
+  <HH.Dlc.Reason.NeedRank>нужен ранг {0}</HH.Dlc.Reason.NeedRank>
+  <HH.Dlc.Reason.NeedRoyalty>нужна «Королевская власть»</HH.Dlc.Reason.NeedRoyalty>
+  <HH.Dlc.Reason.NoFresh>нет свежей раны до 10 очков здоровья</HH.Dlc.Reason.NoFresh>
+  <HH.Dlc.Reason.NoGuilt>нет воспоминания о нарушенной заповеди</HH.Dlc.Reason.NoGuilt>
+  <HH.Dlc.Reason.NoIdeo>нет идеологии</HH.Dlc.Reason.NoIdeo>
+  <HH.Dlc.Reason.NoScar>нет постоянного шрама</HH.Dlc.Reason.NoScar>
+  <HH.Dlc.Reason.NotAThing>в их вере такого нет</HH.Dlc.Reason.NotAThing>
+  <HH.Dlc.Reason.NotFluid>реформировать могут только текучие идеологии</HH.Dlc.Reason.NotFluid>
+  <HH.Dlc.Reason.NotPsychic>не может образовать псилинк</HH.Dlc.Reason.NotPsychic>
+  <HH.Dlc.Reason.PsylinkMax>псилинк уже на пределе</HH.Dlc.Reason.PsylinkMax>
+  <HH.Dlc.Reason.RankHeld>уже занимает этот ранг или выше</HH.Dlc.Reason.RankHeld>
+  <HH.Dlc.Reason.RankOrder>сначала нужен предыдущий ранг</HH.Dlc.Reason.RankOrder>
+  <HH.Dlc.Reason.ReformReady>реформа уже возможна</HH.Dlc.Reason.ReformReady>
+  <HH.Dlc.ShrineQuality>Вера: {0}. Качество часовни: {1}.</HH.Dlc.ShrineQuality>
+  <HH.Dlc.TempleFund>Фонд храма: {0} серебра</HH.Dlc.TempleFund>
+  <HH.Setting.dlc.traitSpawn>Новые черты появляются у созданных людей</HH.Setting.dlc.traitSpawn>
+  <HH.Setting.dlc.traitSpawn.Desc>Везунчик, Невезучий, Прирождённый хозяин и другие черты Hearth &amp; Harbor могут появиться у новых персонажей. Существующие персонажи сохраняют свои. Выключено: черты добавляются только вручную или в редакторе.</HH.Setting.dlc.traitSpawn.Desc>
+  <HH.Setting.dlc.traitRarity>Частота черт</HH.Setting.dlc.traitRarity>
+  <HH.Setting.dlc.traitRarity.Desc>Множитель частоты, с которой наши черты выпадают новым персонажам (1 = та же редкость, что у большинства черт ванили).</HH.Setting.dlc.traitRarity.Desc>
+</LanguageData>

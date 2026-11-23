@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Compat.DialogTitle>Hospitality běží vedle Hearth &amp; Harbor. Má se pro tebe deaktivovat?</HH.Compat.DialogTitle>
+  <HH.Compat.DialogBody>Hearth &amp; Harbor nahrazuje Hospitality a jeho doplňky. Dokud jsou aktivní oba, Hearth &amp; Harbor Hospitality pro tuto relaci vypnul: jeho patche, události, budovy a záložka hostů nedělají nic. Tvoje hostovská lůžka a oblasti z Hospitality zůstanou zachovány a převezmou se, až bude Hospitality odstraněno.</HH.Compat.DialogBody>
+  <HH.Compat.DialogListHeader>Tyto mody budou deaktivovány:</HH.Compat.DialogListHeader>
+  <HH.Compat.DialogMentionHeader>Tyto hostovské mody zůstávají beze změny; jejich návštěvníci zůstávají jejich:</HH.Compat.DialogMentionHeader>
+  <HH.Compat.DialogFailed>Seznam modů nebylo možné změnit automaticky ({0}). Udělej to prosím ručně:</HH.Compat.DialogFailed>
+  <HH.Compat.DialogStep1>1. Hlavní menu → Mody</HH.Compat.DialogStep1>
+  <HH.Compat.DialogStep2>2. Odznač výše uvedené mody</HH.Compat.DialogStep2>
+  <HH.Compat.DialogStep3>3. Ulož seznam modů a restartuj hru</HH.Compat.DialogStep3>
+  <HH.Compat.Yes>Ano, deaktivovat a restartovat</HH.Compat.Yes>
+  <HH.Compat.OpenMods>Otevřít seznam modů</HH.Compat.OpenMods>
+  <HH.Compat.Later>Později</HH.Compat.Later>
+  <HH.Compat.Never>Už se neptat</HH.Compat.Never>
+  <HH.Compat.ImportLetterTitle>Importováno z Hospitality</HH.Compat.ImportLetterTitle>
+  <HH.Compat.ImportLetterText>Tato kolonie byla hrána s Hospitality. Hearth &amp; Harbor převzal, co mohl.\n\nImportováno: {0}.\nZahozeno: {1}.\n\nImportovaná hostovská lůžka jsou znovu běžnými postelemi a jsou zapamatována jako hostovská lůžka; hostovská část Hearth &amp; Harbor je převezme. Nic jiného ve tvé kolonii se nezměnilo.</HH.Compat.ImportLetterText>
+  <HH.Compat.ImportNothing>nic</HH.Compat.ImportNothing>
+  <HH.Setting.compat.hospitalityNeverAsk>Nenabízet deaktivaci Hospitality</HH.Setting.compat.hospitalityNeverAsk>
+  <HH.Setting.compat.hospitalityNeverAsk.Desc>Když Hospitality běží vedle Hearth &amp; Harbor, Hearth &amp; Harbor ho pro relaci vypne a v hlavním menu nabídne jeho deaktivaci. Zapnuto: žádné další nabídky (vypnutí proběhne i tak).</HH.Setting.compat.hospitalityNeverAsk.Desc>
+  <HH.Setting.compat.importLetter>Dopis po importu uložené hry Hospitality</HH.Setting.compat.importLetter>
+  <HH.Setting.compat.importLetter.Desc>Po načtení uložené hry, která byla hrána s Hospitality, dopis vypíše, co Hearth &amp; Harbor převzal (hostovská lůžka, oblasti, návštěvníky) a co bylo zahozeno.</HH.Setting.compat.importLetter.Desc>
+</LanguageData>

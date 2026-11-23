@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.UI.Page.Overview>개요</HH.UI.Page.Overview>
+  <HH.UI.Page.Guests>손님</HH.UI.Page.Guests>
+  <HH.UI.Page.Modules>모듈</HH.UI.Page.Modules>
+  <HH.UI.Page.Difficulty>난이도</HH.UI.Page.Difficulty>
+  <HH.UI.Page.General>일반</HH.UI.Page.General>
+  <HH.UI.Page.Diagnosis>진단</HH.UI.Page.Diagnosis>
+  <HH.UI.Page.About>정보</HH.UI.Page.About>
+  <HH.UI.Silver>은화</HH.UI.Silver>
+  <HH.UI.Tab.Settings>설정</HH.UI.Tab.Settings>
+  <HH.UI.Tab.Guide>안내</HH.UI.Tab.Guide>
+  <HH.UI.Tab.GuideTip>오른쪽 위의 작은 안내 패널을 표시하거나 숨깁니다.</HH.UI.Tab.GuideTip>
+  <HH.UI.Tab.NoPages>아직 표시할 내용이 없습니다.</HH.UI.Tab.NoPages>
+  <HH.UI.Settings.ThisSave>이 저장</HH.UI.Settings.ThisSave>
+  <HH.UI.Settings.Template>템플릿</HH.UI.Settings.Template>
+  <HH.UI.Settings.ThisSaveTip>실행 중인 식민지의 설정을 편집합니다. 설정은 저장 파일과 함께 저장됩니다.</HH.UI.Settings.ThisSaveTip>
+  <HH.UI.Settings.TemplateTip>새 식민지가 시작할 템플릿을 편집합니다. 실행 중인 식민지는 바뀌지 않습니다.</HH.UI.Settings.TemplateTip>
+  <HH.UI.Settings.TemplateOnly>새 게임용 템플릿입니다. 새 식민지마다 자기 사본을 받습니다.</HH.UI.Settings.TemplateOnly>
+  <HH.UI.Settings.EditingTemplate>새 게임용 템플릿을 편집 중입니다. 실행 중인 식민지는 바뀌지 않습니다.</HH.UI.Settings.EditingTemplate>
+  <HH.UI.Settings.SaveAsTemplate>식민지를 템플릿으로 저장</HH.UI.Settings.SaveAsTemplate>
+  <HH.UI.Settings.SaveAsTemplateTip>이 식민지의 모듈, 난이도 및 모든 설정을 새 게임용 템플릿에 복사합니다.</HH.UI.Settings.SaveAsTemplateTip>
+  <HH.UI.Settings.SaveAsTemplateConfirm>새 게임용 템플릿을 이 식민지의 설정으로 바꾸시겠습니까?</HH.UI.Settings.SaveAsTemplateConfirm>
+  <HH.UI.Settings.ApplyTemplate>템플릿을 식민지에 적용</HH.UI.Settings.ApplyTemplate>
+  <HH.UI.Settings.ApplyTemplateTip>이 식민지의 설정을 템플릿으로 바꿉니다.</HH.UI.Settings.ApplyTemplateTip>
+  <HH.UI.Settings.ApplyTemplateConfirm>이 식민지의 모듈, 난이도 및 모든 설정을 템플릿으로 바꾸시겠습니까? 이 작업은 되돌릴 수 없습니다.</HH.UI.Settings.ApplyTemplateConfirm>
+  <HH.UI.Settings.TemplateSaved>새 게임용 템플릿을 저장했습니다.</HH.UI.Settings.TemplateSaved>
+  <HH.UI.Settings.TemplateApplied>이 식민지에 템플릿을 적용했습니다.</HH.UI.Settings.TemplateApplied>
+  <HH.UI.Settings.Search>설정 검색...</HH.UI.Settings.Search>
+  <HH.UI.Settings.SearchResults>검색 결과</HH.UI.Settings.SearchResults>
+  <HH.UI.Settings.NoMatch>일치하는 설정이 없습니다. 너드 설정은 켜기 전까지 숨겨집니다.</HH.UI.Settings.NoMatch>
+  <HH.UI.Settings.Nerd>너드 설정 표시</HH.UI.Settings.Nerd>
+  <HH.UI.Settings.NerdTip>숫자를 좋아하는 사람을 위한 설정을 표시합니다. 나머지는 바뀌지 않습니다.</HH.UI.Settings.NerdTip>
+  <HH.UI.Settings.Off>끔</HH.UI.Settings.Off>
+  <HH.UI.Settings.Yes>예</HH.UI.Settings.Yes>
+  <HH.UI.Settings.No>아니요</HH.UI.Settings.No>
+  <HH.UI.Settings.ResetModule>모듈 초기화</HH.UI.Settings.ResetModule>
+  <HH.UI.Settings.ResetModuleConfirm>{0}의 모든 설정을 기본값으로 되돌리시겠습니까?</HH.UI.Settings.ResetModuleConfirm>
+  <HH.UI.Settings.ModuleIsOff>이 모듈은 이 식민지에서 꺼져 있습니다. 이 모듈의 설정은 효과가 없습니다.</HH.UI.Settings.ModuleIsOff>
+  <HH.UI.Settings.SwitchOn>켜기</HH.UI.Settings.SwitchOn>
+  <HH.UI.Row.On>켬</HH.UI.Row.On>
+  <HH.UI.Row.Off>끔</HH.UI.Row.Off>
+  <HH.UI.Row.Free>자유 입력</HH.UI.Row.Free>
+  <HH.UI.Row.FreeTip>자유 입력: 게임의 기술적 한계까지 원하는 숫자를 입력할 수 있습니다.</HH.UI.Row.FreeTip>
+  <HH.UI.Row.Reset>초기화</HH.UI.Row.Reset>
+  <HH.UI.Row.Nerd>너드</HH.UI.Row.Nerd>
+  <HH.UI.Row.Beyond>슬라이더 범위를 벗어났습니다. 자유 입력으로 이 값을 설정할 수 있습니다.</HH.UI.Row.Beyond>
+  <HH.UI.Row.Limited>한계 {0}</HH.UI.Row.Limited>
+  <HH.UI.Row.Limit>기술적 한계</HH.UI.Row.Limit>
+  <HH.UI.Row.LimitGeneric>게임이 이 값을 사용할 수 없어 가능한 가장 가까운 값을 사용합니다.</HH.UI.Row.LimitGeneric>
+  <HH.UI.Row.FollowsTier>기본값은 호스팅 난이도를 따릅니다.</HH.UI.Row.FollowsTier>
+  <HH.UI.General.Interface>인터페이스</HH.UI.General.Interface>
+  <HH.UI.General.ShowCard>모든 새 게임에서 첫 시작 카드 표시</HH.UI.General.ShowCard>
+  <HH.UI.General.ShowCardTip>끔: 새 게임은 조용히 템플릿을 사용하며 카드는 나타나지 않습니다.</HH.UI.General.ShowCardTip>
+  <HH.UI.General.Tutorial>튜토리얼</HH.UI.General.Tutorial>
+  <HH.UI.General.Verbose>상세 로그 (HearthHarbor.log)</HH.UI.General.Verbose>
+  <HH.UI.Modules.IntroSave>모듈은 식민지마다 따로 켜고 끌 수 있습니다. 꺼진 모듈은 눈에 보이는 효과가 전혀 없습니다.</HH.UI.Modules.IntroSave>
+  <HH.UI.Modules.IntroTemplate>새 식민지를 위한 모듈입니다. 각 식민지는 여전히 자기 설정을 바꿀 수 있습니다.</HH.UI.Modules.IntroTemplate>
+  <HH.UI.Modules.NotInstalled>이 설치에 포함되지 않음</HH.UI.Modules.NotInstalled>
+  <HH.UI.Modules.BankHint>은행: Hearth &amp; Harbor 안의 은행을 이용하고 모든 손님 모듈을 끄세요. 별도 항목은 필요 없습니다.</HH.UI.Modules.BankHint>
+  <HH.UI.Modules.Content>콘텐츠 강도</HH.UI.Modules.Content>
+  <HH.UI.Modules.ContentDesc>선택적 콘텐츠가 얼마나 어두워질 수 있는지. 무엇을 고르든 성적인 내용은 절대 없습니다.</HH.UI.Modules.ContentDesc>
+  <HH.UI.Content.Cozy>아늑함</HH.UI.Content.Cozy>
+  <HH.UI.Content.Cozy.Tip>순한 이야기와 결과만 나옵니다.</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Standard>표준</HH.UI.Content.Standard>
+  <HH.UI.Content.Standard.Tip>기본값입니다. 거친 면은 있지만 불쾌한 내용은 없습니다.</HH.UI.Content.Standard.Tip>
+  <HH.UI.Content.Dark>어두움</HH.UI.Content.Dark>
+  <HH.UI.Content.Dark.Tip>범죄, 빚, 폭력이 나타날 수 있습니다.</HH.UI.Content.Dark.Tip>
+  <HH.UI.Content.Grim>암울함</HH.UI.Content.Grim>
+  <HH.UI.Content.Grim.Tip>게임이 제공하는 모든 것을 그대로 담습니다.</HH.UI.Content.Grim.Tip>
+  <HH.UI.Underworld.Discover>게임 중 발견</HH.UI.Underworld.Discover>
+  <HH.UI.Underworld.On>켬</HH.UI.Underworld.On>
+  <HH.UI.Underworld.Off>끔</HH.UI.Underworld.Off>
+  <HH.UI.Underworld.Discover.Tip>수상한 낯선 사람이 게임에 나타날 때까지 레이더 밖에 있습니다.</HH.UI.Underworld.Discover.Tip>
+  <HH.UI.Underworld.On.Tip>처음부터 이용할 수 있습니다.</HH.UI.Underworld.On.Tip>
+  <HH.UI.Underworld.Off.Tip>절대 이용할 수 없습니다. 수상한 낯선 사람도 나타나지 않습니다.</HH.UI.Underworld.Off.Tip>
+  <HH.UI.ModuleDesc.Inn>손님, 손님 침대, 날개동, 접수, 여행자 및 모집.</HH.UI.ModuleDesc.Inn>
+  <HH.UI.ModuleDesc.ShopsFood>간판, 상점, 자판기, 시장, 식당 및 요리.</HH.UI.ModuleDesc.ShopsFood>
+  <HH.UI.ModuleDesc.Casino>테이블, 슬롯머신, 칩, 그리고 손님과 식민지 주민이 도박을 할 때의 위험.</HH.UI.ModuleDesc.Casino>
+  <HH.UI.ModuleDesc.Wellness>스파, 사우나 및 재활 체류.</HH.UI.ModuleDesc.Wellness>
+  <HH.UI.ModuleDesc.CityLife>영화관, 쇼핑몰, 미용실, 사원, 택시 및 경비.</HH.UI.ModuleDesc.CityLife>
+  <HH.UI.ModuleDesc.Underworld>은밀한 뒷방, 싸움터, 장물아비. 게임 중에 발견되며 강요되지 않습니다.</HH.UI.ModuleDesc.Underworld>
+  <HH.UI.ModuleDesc.Bank>Silverline: 계좌, 결제, 현금자동입출금기, 투자, 대출, 보험 및 복권.</HH.UI.ModuleDesc.Bank>
+  <HH.UI.ModuleDesc.AiFlavour>AI가 중계 서버를 통해 쓴 선택적 분위기 문구. 기본값은 꺼짐.</HH.UI.ModuleDesc.AiFlavour>
+  <HH.UI.Diff.Title>호스팅 난이도</HH.UI.Diff.Title>
+  <HH.UI.Diff.Intensity>호스팅 강도 {0} %</HH.UI.Diff.Intensity>
+  <HH.UI.Diff.ChipTip>{0}: 호스팅 강도 약 {1} %.</HH.UI.Diff.ChipTip>
+  <HH.UI.Diff.Calculator>이 단계가 당신에게 의미하는 것</HH.UI.Diff.Calculator>
+  <HH.UI.Diff.Ladder>무엇이 잘못될 수 있나</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.Special>특수 스위치</HH.UI.Diff.Special>
+  <HH.UI.Diff.ShowAll>난이도에 따라 달라지는 값 {0}개 모두 표시</HH.UI.Diff.ShowAll>
+  <HH.UI.Diff.WarnHard>과밀 단계부터는 실제 결과가 켜집니다: 벌금, 영업 허가 상실 등.</HH.UI.Diff.WarnHard>
+  <HH.UI.Diff.WarnEasy>이 단계는 매우 관대합니다. 돈이 쉽게 들어오고 아무 일도 생기지 않습니다.</HH.UI.Diff.WarnEasy>
+  <HH.UI.Diff.WarnBreaks>이 단계는 게임 균형을 깨뜨립니다. 의도한 것입니까?</HH.UI.Diff.WarnBreaks>
+  <HH.UI.Calc.StandardIs>표준 방: {0}</HH.UI.Calc.StandardIs>
+  <HH.UI.Calc.Reference>기준값</HH.UI.Calc.Reference>
+  <HH.UI.Calc.SetByYou>직접 바꾼 값이라 슬라이더를 따르지 않습니다.</HH.UI.Calc.SetByYou>
+  <HH.UI.Calc.NoEffectInfinite>무한 손님 돈이 켜져 있으면 효과가 없습니다.</HH.UI.Calc.NoEffectInfinite>
+  <HH.UI.Feel.0>모든 것이 공짜입니다.</HH.UI.Feel.0>
+  <HH.UI.Feel.1>돈이 흐르고 아무 일도 생기지 않습니다.</HH.UI.Feel.1>
+  <HH.UI.Feel.2>부드럽고 너그럽습니다.</HH.UI.Feel.2>
+  <HH.UI.Feel.3>작은 손실이 생길 수 있습니다. 이익은 노력해야 얻습니다.</HH.UI.Feel.3>
+  <HH.UI.Feel.4>결과가 켜집니다: 다툼, 벌금, 영업 허가 상실.</HH.UI.Feel.4>
+  <HH.UI.Feel.5>반목, 계약, 엄격한 감독관, 보복 습격.</HH.UI.Feel.5>
+  <HH.UI.Feel.6>모든 것이 힘들고 상한이 없습니다.</HH.UI.Feel.6>
+  <HH.UI.Calc.guestMoney>손님 돈</HH.UI.Calc.guestMoney>
+  <HH.UI.Calc.guestMoney.Desc>손님이 지니고 쓰려는 돈을 곱합니다.</HH.UI.Calc.guestMoney.Desc>
+  <HH.UI.Calc.priceTolerance>가격 허용치</HH.UI.Calc.priceTolerance>
+  <HH.UI.Calc.priceTolerance.Desc>공정한 가격보다 얼마나 더 비싸도 손님이 여전히 사는지.</HH.UI.Calc.priceTolerance.Desc>
+  <HH.UI.Calc.arrivalRate>도착률</HH.UI.Calc.arrivalRate>
+  <HH.UI.Calc.arrivalRate.Desc>손님이 얼마나 자주 나타나는지.</HH.UI.Calc.arrivalRate.Desc>
+  <HH.UI.Calc.expectation>손님 기대치</HH.UI.Calc.expectation>
+  <HH.UI.Calc.expectation.Desc>모든 손님의 기대에 더해집니다. 높을수록 만족시키기 어렵습니다.</HH.UI.Calc.expectation.Desc>
+  <HH.UI.Calc.trouble>소란 위험도</HH.UI.Calc.trouble>
+  <HH.UI.Calc.trouble.Desc>손님끼리 다툼, 싸움, 절도가 일어날 확률과 무게.</HH.UI.Calc.trouble.Desc>
+  <HH.UI.Calc.stage>최고 결과 단계</HH.UI.Calc.stage>
+  <HH.UI.Calc.stage.Desc>이 단계에서 나쁜 체류가 당신에게 줄 수 있는 가장 심한 일.</HH.UI.Calc.stage.Desc>
+  <HH.UI.Calc.slotEdge>슬롯머신 하우스 엣지</HH.UI.Calc.slotEdge>
+  <HH.UI.Calc.slotEdge.Desc>슬롯머신이 모든 베팅에서 평균적으로 가져가는 몫.</HH.UI.Calc.slotEdge.Desc>
+  <HH.UI.Calc.bankM>은행 시장 수익 (연간 M)</HH.UI.Calc.bankM>
+  <HH.UI.Calc.bankM.Desc>실버라인 시장의 연간 배율. 1.2는 20퍼센트 상승을 뜻합니다.</HH.UI.Calc.bankM.Desc>
+  <HH.UI.Calc.defaultFactor>지불 연체</HH.UI.Calc.defaultFactor>
+  <HH.UI.Calc.defaultFactor.Desc>고객이 빚진 돈을 내지 못하는 빈도.</HH.UI.Calc.defaultFactor.Desc>
+  <HH.UI.Calc.collectionStage>최고 추심 단계</HH.UI.Calc.collectionStage>
+  <HH.UI.Calc.collectionStage.Desc>돈을 빚졌을 때 채권 추심이 얼마나 거칠어질 수 있는지.</HH.UI.Calc.collectionStage.Desc>
+  <HH.UI.Calc.researchCost>연구 비용</HH.UI.Calc.researchCost>
+  <HH.UI.Calc.researchCost.Desc>Hearth &amp; Harbor와 Silverline 연구 비용을 곱합니다.</HH.UI.Calc.researchCost.Desc>
+  <HH.UI.Calc.upkeep>유지비</HH.UI.Calc.upkeep>
+  <HH.UI.Calc.upkeep.Desc>시설과 방의 운영비를 곱합니다.</HH.UI.Calc.upkeep.Desc>
+  <HH.UI.Calc.insuranceLoading>보험 할증</HH.UI.Calc.insuranceLoading>
+  <HH.UI.Calc.insuranceLoading.Desc>공정 보험료 위에 보험사가 붙이는 마진.</HH.UI.Calc.insuranceLoading.Desc>
+  <HH.UI.Calc.salesPressure>보험 판매 압박</HH.UI.Calc.salesPressure>
+  <HH.UI.Calc.salesPressure.Desc>보험사의 판매 수법이 얼마나 집요해지는지.</HH.UI.Calc.salesPressure.Desc>
+  <HH.UI.Calc.addiction>도박 중독 확률</HH.UI.Calc.addiction>
+  <HH.UI.Calc.addiction.Desc>도박을 많이 하는 식민지 주민이 중독될 기본 확률.</HH.UI.Calc.addiction.Desc>
+  <HH.UI.Calc.detection>부정행위 적발률</HH.UI.Calc.detection>
+  <HH.UI.Calc.detection.Desc>테이블에서 부정행위가 얼마나 빨리 알아채지는지.</HH.UI.Calc.detection.Desc>
+  <HH.UI.Stage.0>피해 없음</HH.UI.Stage.0>
+  <HH.UI.Stage.1>기분</HH.UI.Stage.1>
+  <HH.UI.Stage.2>명성</HH.UI.Stage.2>
+  <HH.UI.Stage.3>호감도</HH.UI.Stage.3>
+  <HH.UI.Stage.4>돈</HH.UI.Stage.4>
+  <HH.UI.Stage.5>영업 허가</HH.UI.Stage.5>
+  <HH.UI.Stage.6>습격</HH.UI.Stage.6>
+  <HH.UI.Stage.7>현상금</HH.UI.Stage.7>
+  <HH.UI.Ladder.Goodwill>나쁜 체류당 호감도 손실 (상한)</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>사건 하나당 한 세력이 당신에게서 빼앗을 수 있는 호감도 최대치.</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Renown>사건당 명성 손실 (상한)</HH.UI.Ladder.Renown>
+  <HH.UI.Ladder.Renown.Desc>사건 하나가 빼앗을 수 있는 명성 최대치.</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Fine>벌금 (상한, 은화)</HH.UI.Ladder.Fine>
+  <HH.UI.Ladder.Fine.Desc>감독이나 사건 하나가 부과할 수 있는 벌금 최대치.</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Raids>보복 습격</HH.UI.Ladder.Raids>
+  <HH.UI.Ladder.Raids.Desc>화난 세력이나 용병이 당신을 쫓아올 수 있는지 여부.</HH.UI.Ladder.Raids.Desc>
+  <HH.UI.Ladder.No>아니요</HH.UI.Ladder.No>
+  <HH.UI.Ladder.Yes>예</HH.UI.Ladder.Yes>
+  <HH.UI.Ladder.Footer>높은 단계는 확률만 올리지 않고 더 많은 결과를 열어 줍니다.</HH.UI.Ladder.Footer>
+  <HH.UI.Diag.Copy>진단을 클립보드에 복사</HH.UI.Diag.Copy>
+  <HH.UI.Diag.Copied>진단을 클립보드에 복사했습니다.</HH.UI.Diag.Copied>
+  <HH.UI.Diag.PrepareRemoval>제거 준비</HH.UI.Diag.PrepareRemoval>
+  <HH.UI.Diag.PrepareRemovalTip>모드를 제거할 수 있도록 식민지를 준비합니다: 손님은 집으로 돌아가고, 열린 계좌는 정산되며, 특수 물품은 정리됩니다.</HH.UI.Diag.PrepareRemovalTip>
+  <HH.UI.Diag.PrepareRemovalConfirm>이 식민지에서 Hearth &amp; Harbor를 제거할 준비를 하시겠습니까? 손님은 집으로 보내지고 계좌는 정산됩니다. 먼저 백업을 저장하세요.</HH.UI.Diag.PrepareRemovalConfirm>
+  <HH.UI.Diag.RemovalTitle>제거 준비</HH.UI.Diag.RemovalTitle>
+  <HH.UI.Diag.RemovalDone>완료. 게임을 저장한 뒤 모드를 제거하세요.</HH.UI.Diag.RemovalDone>
+  <HH.UI.Diag.NothingToDo>정리할 것이 없었습니다.</HH.UI.Diag.NothingToDo>
+  <HH.UI.Diag.NeedsSave>먼저 식민지를 여세요. 제거 준비는 실행 중인 게임에서 작동합니다.</HH.UI.Diag.NeedsSave>
+  <HH.UI.Diag.Summary>등록된 설정 {0}개 · 경고 {1}개 · 로그의 오류 {2}개</HH.UI.Diag.Summary>
+  <HH.UI.Diag.Modules>모듈</HH.UI.Diag.Modules>
+  <HH.UI.Diag.Paused>오류 후 일시 중지됨</HH.UI.Diag.Paused>
+  <HH.UI.Diag.Resume>재개</HH.UI.Diag.Resume>
+  <HH.UI.Diag.Caretaker>관리인 (지금까지 수리: {0})</HH.UI.Diag.Caretaker>
+  <HH.UI.Diag.NoChecks>등록된 검사가 없습니다.</HH.UI.Diag.NoChecks>
+  <HH.UI.Diag.Fixes>마지막 실행 {0} · 누적 {1}</HH.UI.Diag.Fixes>
+  <HH.UI.Diag.Patches>패치 ({0}개 건너뜀)</HH.UI.Diag.Patches>
+  <HH.UI.Diag.PatchesOk>모든 패치 클래스가 적용되었습니다.</HH.UI.Diag.PatchesOk>
+  <HH.UI.Diag.Log>최근 로그 줄</HH.UI.Diag.Log>
+  <HH.UI.About.Body>Hearth &amp; Harbor는 당신의 식민지를 여관으로 바꿉니다: 손님, 여관과 호텔, 상점과 식당, 카지노, 스파, 도시 생활, 은밀한 뒷방, 그리고 Silverline 은행 전체. 아무것도 강요되지 않습니다. 손님 침대를 지정하거나 간판을 세우기 전까지 게임은 바닐라처럼 돌아갑니다.</HH.UI.About.Body>
+  <HH.UI.About.Parts>구성 요소</HH.UI.About.Parts>
+  <HH.UI.About.PartsBody>포함된 Silverline 은행: {0}. 포함된 손님 모듈: {1}.</HH.UI.About.PartsBody>
+  <HH.UI.About.Project>프로젝트 페이지 열기</HH.UI.About.Project>
+  <HH.UI.About.License>MIT 라이선스. 제작: juliusberger00.</HH.UI.About.License>
+  <HH.UI.Card.Title>Hearth &amp; Harbor에 오신 것을 환영합니다</HH.UI.Card.Title>
+  <HH.UI.Card.Sub>호스팅 스타일을 고르세요. 모든 것은 나중에 모드 설정에서 바꿀 수 있습니다.</HH.UI.Card.Sub>
+  <HH.UI.Card.TitleJoined>Hearth &amp; Harbor가 이 식민지에 합류했습니다</HH.UI.Card.TitleJoined>
+  <HH.UI.Card.SubJoined>손님을 위한 무언가를 짓기 전까지는 아무것도 달라지지 않습니다. 손님을 맞이하는 방식을 고르세요.</HH.UI.Card.SubJoined>
+  <HH.UI.Card.Modules>모듈</HH.UI.Card.Modules>
+  <HH.UI.Card.Difficulty>난이도와 튜토리얼</HH.UI.Card.Difficulty>
+  <HH.UI.Card.DifficultyLine>손님 대접 난이도: {0} · {1} %</HH.UI.Card.DifficultyLine>
+  <HH.UI.Card.Change>변경...</HH.UI.Card.Change>
+  <HH.UI.Card.UseForAll>앞으로 모든 게임에 이 선택 사용</HH.UI.Card.UseForAll>
+  <HH.UI.Card.UseForAllTip>모듈, 난이도, 튜토리얼 수준을 새 게임이 시작될 때 쓰는 템플릿에 복사합니다.</HH.UI.Card.UseForAllTip>
+  <HH.UI.Card.Start>시작</HH.UI.Card.Start>
+  <HH.UI.Preset.JustWork>그냥 일하기</HH.UI.Preset.JustWork>
+  <HH.UI.Preset.JustWork.Desc>표준 난이도, 모든 기능 켜짐. 바로 짓기 시작하세요. 진행하면서 설명해 드립니다.</HH.UI.Preset.JustWork.Desc>
+  <HH.UI.Preset.CozyInn>아늑한 여관</HH.UI.Preset.CozyInn>
+  <HH.UI.Preset.CozyInn.Desc>더 부드럽고 잃을 기회가 적습니다: 카지노와 지하세계 없음.</HH.UI.Preset.CozyInn.Desc>
+  <HH.UI.Preset.Tycoon>타이쿤</HH.UI.Preset.Tycoon>
+  <HH.UI.Preset.Tycoon.Desc>모든 기능이 켜져 있고 짧은 안내가 붙습니다. 직원, 예약, 장부는 당신이 운영합니다.</HH.UI.Preset.Tycoon.Desc>
+  <HH.UI.Preset.Nerd>너드</HH.UI.Preset.Nerd>
+  <HH.UI.Preset.Nerd.Desc>모든 슬라이더, 공식, 너드용 설정. 안내 없음.</HH.UI.Preset.Nerd.Desc>
+  <HH.UI.Tutorial.Off>끄기</HH.UI.Tutorial.Off>
+  <HH.UI.Tutorial.Off.Tip>아무것도 스스로 열리지 않습니다.</HH.UI.Tutorial.Off.Tip>
+  <HH.UI.Tutorial.Short>짧게</HH.UI.Tutorial.Short>
+  <HH.UI.Tutorial.Short.Tip>안내 주제는 접힌 상태로 시작합니다.</HH.UI.Tutorial.Short.Tip>
+  <HH.UI.Tutorial.FullFirstTime>처음만 전체, 이후 짧게</HH.UI.Tutorial.FullFirstTime>
+  <HH.UI.Tutorial.FullFirstTime.Tip>이 모드로 처음 세우는 식민지에서는 전체 안내, 그 뒤로는 짧게.</HH.UI.Tutorial.FullFirstTime.Tip>
+  <HH.UI.Tutorial.AlwaysFull>항상 전체</HH.UI.Tutorial.AlwaysFull>
+  <HH.UI.Tutorial.AlwaysFull.Tip>주제는 처음 접할 때마다 열립니다.</HH.UI.Tutorial.AlwaysFull.Tip>
+  <HH.UI.Tutorial.Full>이번에는 전체</HH.UI.Tutorial.Full>
+  <HH.UI.Storyteller.Head>손님 대접 난이도 · {0} %</HH.UI.Storyteller.Head>
+  <HH.UI.Storyteller.Button>손님 대접 난이도...</HH.UI.Storyteller.Button>
+  <HH.UI.Storyteller.Tip>이 식민지에서 손님 대접이 얼마나 어려울지 정합니다. 위의 습격 난이도와는 별개입니다.</HH.UI.Storyteller.Tip>
+  <HH.UI.Overview.Guests>지금 머무는 손님</HH.UI.Overview.Guests>
+  <HH.UI.Overview.GuestsTip>현재 지도의 손님 수.</HH.UI.Overview.GuestsTip>
+  <HH.UI.Overview.Income>오늘 수입</HH.UI.Overview.Income>
+  <HH.UI.Overview.IncomeTip>새벽 이후 금고에 들어온 은화.</HH.UI.Overview.IncomeTip>
+  <HH.UI.Overview.Venues>시설</HH.UI.Overview.Venues>
+  <HH.UI.Overview.VenuesTip>현재 지도에서 시설 간판이 달린 방.</HH.UI.Overview.VenuesTip>
+  <HH.UI.Overview.Bank>은행 잔고</HH.UI.Overview.Bank>
+  <HH.UI.Overview.BankTip>Silverline에 있는 식민지 계좌의 잔액.</HH.UI.Overview.BankTip>
+  <HH.UI.Overview.IncomeHead>돈</HH.UI.Overview.IncomeHead>
+  <HH.UI.Overview.Today>오늘</HH.UI.Overview.Today>
+  <HH.UI.Overview.Yesterday>어제</HH.UI.Overview.Yesterday>
+  <HH.UI.Overview.Sources>지금까지 출처별 수입</HH.UI.Overview.Sources>
+  <HH.UI.Overview.NoIncome>아직 수입이 없습니다. 손님이 돈을 내면 바로 여기에 표시됩니다.</HH.UI.Overview.NoIncome>
+  <HH.UI.Guests.Head>손님 · 현재 {0}명 · 당일 손님 {1}명</HH.UI.Guests.Head>
+  <HH.UI.Guests.None>지금 머무는 손님이 없습니다.</HH.UI.Guests.None>
+  <HH.UI.Guests.VanillaNote>여관 모듈이 꺼져 있어 일반 방문객이 표시됩니다.</HH.UI.Guests.VanillaNote>
+  <HH.UI.Guests.SatTip>이 손님이 얼마나 만족하는지, -1에서 +1까지. 최근 이유:</HH.UI.Guests.SatTip>
+  <HH.UI.Guests.Col.Name>손님</HH.UI.Guests.Col.Name>
+  <HH.UI.Guests.Col.Faction>진영</HH.UI.Guests.Col.Faction>
+  <HH.UI.Guests.Col.Stay>체류</HH.UI.Guests.Col.Stay>
+  <HH.UI.Guests.Col.Mood>기분</HH.UI.Guests.Col.Mood>
+  <HH.UI.Guests.Col.Satisfaction>만족도</HH.UI.Guests.Col.Satisfaction>
+  <HH.UI.Guests.Col.Budget>남은 예산</HH.UI.Guests.Col.Budget>
+  <HH.UI.Guests.Col.Spent>쓴 돈</HH.UI.Guests.Col.Spent>
+  <HH.UI.Guests.Col.Wing>동</HH.UI.Guests.Col.Wing>
+  <HH.UI.Guests.Col.Handling>응대</HH.UI.Guests.Col.Handling>
+  <HH.UI.Guests.Col.Leaves>떠나기까지</HH.UI.Guests.Col.Leaves>
+  <HH.UI.Guests.HandlingTip>클릭하여 전환: 기본 → 동행 → 영입. 동행과 영입에는 접객 작업을 하는 정착민이 필요합니다.</HH.UI.Guests.HandlingTip>
+  <HH.UI.Overview.CatToday>오늘 {0}</HH.UI.Overview.CatToday>
+  <HH.UI.Overview.CatWeek>7일 {0}</HH.UI.Overview.CatWeek>
+  <HH.UI.Overview.Week>수입, 최근 7일</HH.UI.Overview.Week>
+  <HH.UI.Overview.DayTip>{0}일차: 은화 {1}</HH.UI.Overview.DayTip>
+  <HH.UI.Overview.VenuesHead>시설</HH.UI.Overview.VenuesHead>
+  <HH.UI.Overview.AllDay>종일</HH.UI.Overview.AllDay>
+  <HH.UI.Income.inn_room>객실</HH.UI.Income.inn_room>
+  <HH.UI.Income.food>음식</HH.UI.Income.food>
+  <HH.UI.Income.shop>상점</HH.UI.Income.shop>
+  <HH.UI.Income.vending>자판기</HH.UI.Income.vending>
+  <HH.UI.Income.drink>음료</HH.UI.Income.drink>
+  <HH.UI.Income.casino>카지노</HH.UI.Income.casino>
+  <HH.UI.Income.spa>스파</HH.UI.Income.spa>
+  <HH.UI.Income.cinema>영화관</HH.UI.Income.cinema>
+  <HH.UI.Income.gallery>갤러리</HH.UI.Income.gallery>
+  <HH.UI.Income.salon>살롱</HH.UI.Income.salon>
+  <HH.UI.Income.security>경호원</HH.UI.Income.security>
+  <HH.UI.Income.taxi>택시</HH.UI.Income.taxi>
+  <HH.UI.Income.Faith>헌금</HH.UI.Income.Faith>
+  <HH.UI.Income.other>기타</HH.UI.Income.other>
+  <HH.UI.Venue.Closed>영업 종료</HH.UI.Venue.Closed>
+  <HH.UI.Venue.ClosedTip>영업 시간이 아닙니다. 시설 간판에서 영업 시간을 바꾸세요.</HH.UI.Venue.ClosedTip>
+  <HH.UI.Venue.NoStaff>직원 없음</HH.UI.Venue.NoStaff>
+  <HH.UI.Venue.NoStaffTip>문은 열려 있지만 근무 중인 사람이 없습니다. 정착민에게 서빙 작업을 주거나, 간판에서 직원 없이 운영하도록 설정하세요.</HH.UI.Venue.NoStaffTip>
+  <HH.UI.Venue.NoStock>재고 없음</HH.UI.Venue.NoStock>
+  <HH.UI.Venue.NoStockTip>방에 팔 물건이 없습니다. 방 안의 선반이나 비축 구역에 상품, 음료 또는 식사를 두세요.</HH.UI.Venue.NoStockTip>
+  <HH.UI.Venue.OpenStaffed>영업 중, 직원 배치됨</HH.UI.Venue.OpenStaffed>
+  <HH.UI.Venue.Open>영업 중</HH.UI.Venue.Open>
+  <HH.UI.Kind.DayVisitor>당일 손님</HH.UI.Kind.DayVisitor>
+  <HH.UI.Kind.Overnight>숙박</HH.UI.Kind.Overnight>
+  <HH.UI.Kind.Traveler>여행자</HH.UI.Kind.Traveler>
+  <HH.UI.Kind.Caravan>캐러밴</HH.UI.Kind.Caravan>
+  <HH.UI.Kind.Lodger>하숙인</HH.UI.Kind.Lodger>
+  <HH.UI.Kind.Patient>환자</HH.UI.Kind.Patient>
+  <HH.UI.GuestTab.Label>손님</HH.UI.GuestTab.Label>
+  <HH.UI.GuestTab.NoInfo>이 사람에 대한 손님 기록이 없습니다.</HH.UI.GuestTab.NoInfo>
+  <HH.UI.GuestTab.Stay>체류</HH.UI.GuestTab.Stay>
+  <HH.UI.GuestTab.Faction>진영</HH.UI.GuestTab.Faction>
+  <HH.UI.GuestTab.Kind>체류 유형</HH.UI.GuestTab.Kind>
+  <HH.UI.GuestTab.Wing>동</HH.UI.GuestTab.Wing>
+  <HH.UI.GuestTab.Arrived>도착</HH.UI.GuestTab.Arrived>
+  <HH.UI.GuestTab.Ago>{0} 전</HH.UI.GuestTab.Ago>
+  <HH.UI.GuestTab.Leaves>떠남</HH.UI.GuestTab.Leaves>
+  <HH.UI.GuestTab.In>{0} 후</HH.UI.GuestTab.In>
+  <HH.UI.GuestTab.Payment>결제 수단</HH.UI.GuestTab.Payment>
+  <HH.UI.GuestTab.Card>카드</HH.UI.GuestTab.Card>
+  <HH.UI.GuestTab.Purse>지갑</HH.UI.GuestTab.Purse>
+  <HH.UI.GuestTab.Problems>도움이 될 것</HH.UI.GuestTab.Problems>
+  <HH.UI.GuestTab.Satisfaction>만족도</HH.UI.GuestTab.Satisfaction>
+  <HH.UI.GuestTab.SatisfactionTip>-1(격노)에서 +1(매우 만족)까지. 명성, 호감도, 재방문 여부에 영향을 줍니다.</HH.UI.GuestTab.SatisfactionTip>
+  <HH.UI.GuestTab.Reasons>이 손님의 생각</HH.UI.GuestTab.Reasons>
+  <HH.UI.GuestTab.NoReasons>아직 특별한 점은 없습니다.</HH.UI.GuestTab.NoReasons>
+  <HH.UI.GuestTab.Money>돈</HH.UI.GuestTab.Money>
+  <HH.UI.GuestTab.Budget>남은 예산</HH.UI.GuestTab.Budget>
+  <HH.UI.GuestTab.Spent>지금까지 쓴 돈</HH.UI.GuestTab.Spent>
+  <HH.UI.GuestTab.Handling>응대</HH.UI.GuestTab.Handling>
+  <HH.UI.Handling.Basics>기본</HH.UI.Handling.Basics>
+  <HH.UI.Handling.Basics.Tip>유료 서비스만 제공하고 오락은 없습니다. 정착민의 시간을 쓰지 않습니다.</HH.UI.Handling.Basics.Tip>
+  <HH.UI.Handling.Accompany>동행</HH.UI.Handling.Accompany>
+  <HH.UI.Handling.Accompany.Tip>접객 작업을 하는 정착민이 이 손님을 즐겁게 해 주고 안내합니다: 사교 기술에 따라 기분 +1~+4. 정착민의 시간을 씁니다. 접객 작업을 하는 정착민이 없으면 기본으로 유지됩니다.</HH.UI.Handling.Accompany.Tip>
+  <HH.UI.Handling.Recruit>영입</HH.UI.Handling.Recruit>
+  <HH.UI.Handling.Recruit.Tip>동행과 같지만 영입 대화도 합니다. 서툰 대화는 기분을 상하게 할 수 있습니다: 기분 -6, 지출 30% 감소, 반나절 일찍 떠남.</HH.UI.Handling.Recruit.Tip>
+  <HH.UI.Guide.Title>Hearth &amp; Harbor 안내서</HH.UI.Guide.Title>
+  <HH.UI.Guide.TitleTip>우클릭으로 숨깁니다. Hearth &amp; Harbor 탭이나 설정에서 다시 열 수 있습니다.</HH.UI.Guide.TitleTip>
+  <HH.UI.Guide.Hidden>안내서를 숨겼습니다. Hearth &amp; Harbor 탭 또는 설정의 안내서 버튼으로 다시 열 수 있습니다.</HH.UI.Guide.Hidden>
+  <HH.UI.Guide.More>주제 {0}개 더 있음</HH.UI.Guide.More>
+  <HH.UI.Guide.Done>완료 ({0})</HH.UI.Guide.Done>
+  <HH.UI.Guide.ClickJump>클릭하면 그곳으로 이동합니다.</HH.UI.Guide.ClickJump>
+  <HH.Setting.core.consequenceStage>최고 결과 단계</HH.Setting.core.consequenceStage>
+  <HH.Setting.core.consequenceStage.Desc>나쁜 결과가 어디까지 올라갈 수 있는지: 1 기분, 2 명성, 3 호감도, 4 돈, 5 면허, 6 습격, 7 현상금. 손님 대접 난이도를 따릅니다.</HH.Setting.core.consequenceStage.Desc>
+  <HH.Setting.core.researchCost>연구 비용 배율</HH.Setting.core.researchCost>
+  <HH.Setting.core.researchCost.Desc>Hearth &amp; Harbor와 Silverline 연구 프로젝트의 비용에 곱해집니다. 손님 대접 난이도를 따릅니다.</HH.Setting.core.researchCost.Desc>
+  <HH.Setting.core.upkeep>유지비 배율</HH.Setting.core.upkeep>
+  <HH.Setting.core.upkeep.Desc>시설과 방의 운영비에 곱해집니다. 손님 대접 난이도를 따릅니다.</HH.Setting.core.upkeep.Desc>
+  <HH.Setting.core.neverDie>손님은 죽지 않음</HH.Setting.core.neverDie>
+  <HH.Setting.core.neverDie.Desc>손님은 죽는 대신 쓰러지고, 무료로 구조됩니다.</HH.Setting.core.neverDie.Desc>
+  <HH.Setting.core.noHostile>적대적인 손님은 전혀 없음</HH.Setting.core.noHostile>
+  <HH.Setting.core.noHostile.Desc>진영이 당신을 어떻게 생각하든 손님이 적대적으로 돌변하지 않습니다.</HH.Setting.core.noHostile.Desc>
+  <HH.Setting.core.infiniteMoney>손님 돈 무한</HH.Setting.core.infiniteMoney>
+  <HH.Setting.core.infiniteMoney.Desc>손님은 항상 낼 돈이 충분합니다. 이 옵션이 켜져 있으면 손님 돈 배율은 효과가 없습니다.</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.picky>까다로운 손님</HH.Setting.core.picky>
+  <HH.Setting.core.picky.Desc>손님은 매 체류마다 조금 더 많은 것을 기대합니다 (기대치 +0.1).</HH.Setting.core.picky.Desc>
+  <HH.Setting.core.feuding>반목하는 진영</HH.Setting.core.feuding>
+  <HH.Setting.core.feuding.Desc>적대적인 진영은 한 지붕 아래 있으면 서로를 두 배로 싫어합니다.</HH.Setting.core.feuding.Desc>
+  <HH.Setting.core.mandatory>의무적 환대</HH.Setting.core.mandatory>
+  <HH.Setting.core.mandatory.Desc>초과 예약 단계 아래에서도 계약과 숙소 배정이 강제로 주어집니다.</HH.Setting.core.mandatory.Desc>
+  <HH.Setting.core.strictInspectors>엄격한 감찰관</HH.Setting.core.strictInspectors>
+  <HH.Setting.core.strictInspectors.Desc>감찰관이 세 배 더 자주 검사합니다.</HH.Setting.core.strictInspectors.Desc>
+  <HH.Setting.core.realConsequences>실제 결과</HH.Setting.core.realConsequences>
+  <HH.Setting.core.realConsequences.Desc>결과 단계를 한 단계 올립니다.</HH.Setting.core.realConsequences.Desc>
+  <HH.Setting.core.ironBank>철의 지갑 / 철의 은행</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank.Desc>구제금융도, 당좌대월도 없습니다. 복리 이자는 가차 없습니다.</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.noResearchGating>연구 잠금 없음</HH.Setting.core.noResearchGating>
+  <HH.Setting.core.noResearchGating.Desc>Hearth &amp; Harbor와 Silverline 연구 트리의 모든 항목을 처음부터 쓸 수 있습니다.</HH.Setting.core.noResearchGating.Desc>
+  <HH.Setting.core.peacefulUnderworld>평화로운 지하세계</HH.Setting.core.peacefulUnderworld>
+  <HH.Setting.core.peacefulUnderworld.Desc>어두운 시설도 폭력 없이 운영됩니다.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.showMath>계산 과정을 보여 주세요</HH.Setting.core.showMath>
+  <HH.Setting.core.showMath.Desc>어디서든 너드용 설정과 공식을 보여 줍니다.</HH.Setting.core.showMath.Desc>
+  <HH.Setting.core.perfMode>성능 모드</HH.Setting.core.perfMode>
+  <HH.Setting.core.perfMode.Desc>느린 컴퓨터에서는 동시에 나타나는 손님 수를 줄이고 손님 행동을 단순하게 합니다.</HH.Setting.core.perfMode.Desc>
+  <HH.Setting.core.houseStyle>건물 양식</HH.Setting.core.houseStyle>
+  <HH.Setting.core.houseStyle.Desc>가구와 간판의 모습입니다. 자동은 이념 양식을 따르고, 그 밖에는 가장 높이 연구한 시대를 따릅니다. 외형만 바뀌며 손님과 가격에는 영향이 없습니다.</HH.Setting.core.houseStyle.Desc>
+  <HH.Setting.core.keepBuiltStyle>지은 가구는 예전 양식 유지</HH.Setting.core.keepBuiltStyle>
+  <HH.Setting.core.keepBuiltStyle.Desc>새 시대에 따라 건물 양식이 바뀌어도 이미 지은 가구는 원래 모습을 유지합니다.</HH.Setting.core.keepBuiltStyle.Desc>
+  <HH.Enum.HouseStyle.Automatic>자동</HH.Enum.HouseStyle.Automatic>
+  <HH.Enum.HouseStyle.StoneAge>석기 시대</HH.Enum.HouseStyle.StoneAge>
+  <HH.Enum.HouseStyle.Medieval>중세</HH.Enum.HouseStyle.Medieval>
+  <HH.Enum.HouseStyle.Industrial>산업</HH.Enum.HouseStyle.Industrial>
+  <HH.Enum.HouseStyle.Spacer>우주인</HH.Enum.HouseStyle.Spacer>
+  <HH.Enum.HouseStyle.Ultra>울트라</HH.Enum.HouseStyle.Ultra>
+</LanguageData>

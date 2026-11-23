@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Kitchen.Missing>Відсутнє: {0}</HH.Kitchen.Missing>
+  <HH.Kitchen.RecipeInfo>Пристрої: {0}. Кроки: {1}.</HH.Kitchen.RecipeInfo>
+  <HH.Kitchen.Finishing>завершальний штрих (молоко, яйця, шоколад, пиво, ягоди або гриби)</HH.Kitchen.Finishing>
+  <HH.Kitchen.Finishing2>другий завершальний штрих (пиво, ягоди або гриби)</HH.Kitchen.Finishing2>
+  <HH.Kitchen.Inspiration>Натхнення: {0}</HH.Kitchen.Inspiration>
+  <HH.Kitchen.Cuisine>Кухня: {0}</HH.Kitchen.Cuisine>
+  <HH.Kitchen.Cooked>Приготовлено на: {0} ({1})</HH.Kitchen.Cooked>
+  <HH.Kitchen.Made>Зроблено з: {0}</HH.Kitchen.Made>
+  <HH.Kitchen.Signature>Фірмова страва</HH.Kitchen.Signature>
+  <HH.Kitchen.Fine>Вишукана страва</HH.Kitchen.Fine>
+  <HH.Kitchen.Everyday>Повсякденна страва</HH.Kitchen.Everyday>
+  <HH.Kitchen.Level>рівень {0}</HH.Kitchen.Level>
+  <HH.Kitchen.Stale>Черствіє: немає ефекту «Добре нагодований» і бонусу настрою.</HH.Kitchen.Stale>
+  <HH.Kitchen.FreshFor>Свіжа ще {0}</HH.Kitchen.FreshFor>
+  <HH.Kitchen.Stat.Well>Добре нагодований</HH.Kitchen.Stat.Well>
+  <HH.Kitchen.Stat.WellDesc>Наскільки довше голод падає повільніше після цієї страви. Залежить від рівня навчання та якості.</HH.Kitchen.Stat.WellDesc>
+  <HH.Kitchen.Stat.Mood>Настрій після їжі</HH.Kitchen.Stat.Mood>
+  <HH.Kitchen.Stat.MoodDesc>Бонус настрою від належної страви за рівнем навчання та якістю (черствіші страви його не дають).</HH.Kitchen.Stat.MoodDesc>
+  <HH.Tab.Kitchen>Кулінарна книга</HH.Tab.Kitchen>
+  <HH.Kitchen.Cookbook.Title>Кулінарна книга колонії</HH.Kitchen.Cookbook.Title>
+  <HH.Kitchen.Cookbook.Known>Відомо страв: {0} з {1}</HH.Kitchen.Cookbook.Known>
+  <HH.Kitchen.Cookbook.Unknown>???</HH.Kitchen.Cookbook.Unknown>
+  <HH.Kitchen.Cookbook.UnknownHint>Ще не вивчено. Досліджуйте {0} або знайдіть кулінарну книгу.</HH.Kitchen.Cookbook.UnknownHint>
+  <HH.Kitchen.Cookbook.Level>Рівень {0}</HH.Kitchen.Cookbook.Level>
+  <HH.Kitchen.Cookbook.NoRecipe>Немає рецепта: {0}</HH.Kitchen.Cookbook.NoRecipe>
+  <HH.Kitchen.Cookbook.Dark>Приховано: темне меню вимкнено.</HH.Kitchen.Cookbook.Dark>
+  <HH.Kitchen.Cookbook.Filter>Показувати лише відомі</HH.Kitchen.Cookbook.Filter>
+  <HH.Kitchen.Cookbook.Search>Пошук</HH.Kitchen.Cookbook.Search>
+  <HH.Kitchen.Station.PrepCounter>Робочий стіл</HH.Kitchen.Station.PrepCounter>
+  <HH.Kitchen.Station.StockPot>Казан для бульйону</HH.Kitchen.Station.StockPot>
+  <HH.Kitchen.Station.Grill>Гриль</HH.Kitchen.Station.Grill>
+  <HH.Kitchen.Station.Oven>Піч</HH.Kitchen.Station.Oven>
+  <HH.Kitchen.Station.Wok>Станція для вока</HH.Kitchen.Station.Wok>
+  <HH.Kitchen.Station.Fryer>Фритюрниця</HH.Kitchen.Station.Fryer>
+  <HH.Kitchen.Station.Smoker>Коптильня</HH.Kitchen.Station.Smoker>
+  <HH.Kitchen.Station.Steamer>Пароварка</HH.Kitchen.Station.Steamer>
+  <HH.Kitchen.Station.DoughBench>Стіл для тіста</HH.Kitchen.Station.DoughBench>
+  <HH.Kitchen.Station.ColdStation>Холодильна станція</HH.Kitchen.Station.ColdStation>
+  <HH.Kitchen.Station.Campfire>Вогнище</HH.Kitchen.Station.Campfire>
+  <HH.Kitchen.Station.Stove>Плита</HH.Kitchen.Station.Stove>
+  <HH.Kitchen.Station.ButcherTable>Стіл м'ясника</HH.Kitchen.Station.ButcherTable>
+  <HH.Kitchen.Step.Chop>нарізати</HH.Kitchen.Step.Chop>
+  <HH.Kitchen.Step.Simmer>тушкувати</HH.Kitchen.Step.Simmer>
+  <HH.Kitchen.Step.Boil>варити</HH.Kitchen.Step.Boil>
+  <HH.Kitchen.Step.Grill>гриляти</HH.Kitchen.Step.Grill>
+  <HH.Kitchen.Step.KneadDough>місити тісто</HH.Kitchen.Step.KneadDough>
+  <HH.Kitchen.Step.Smoke>коптити</HH.Kitchen.Step.Smoke>
+  <HH.Kitchen.Step.Roast>смажити в духовці</HH.Kitchen.Step.Roast>
+  <HH.Kitchen.Step.StirFry>обсмажувати у воку</HH.Kitchen.Step.StirFry>
+  <HH.Kitchen.Step.DeepFry>фритюрити</HH.Kitchen.Step.DeepFry>
+  <HH.Kitchen.Step.Steam>готувати на парі</HH.Kitchen.Step.Steam>
+  <HH.Kitchen.Step.Chill>охолодити</HH.Kitchen.Step.Chill>
+  <HH.Kitchen.Step.Carve>порізати</HH.Kitchen.Step.Carve>
+  <HH.Kitchen.Step.SpitRoast>запікати на вертелі</HH.Kitchen.Step.SpitRoast>
+  <HH.Kitchen.Step.PanFry>обсмажувати на сковороді</HH.Kitchen.Step.PanFry>
+  <HH.Kitchen.Step.Sear>підсмажити</HH.Kitchen.Step.Sear>
+  <HH.Kitchen.Cuisine.Frontier>Селянська / фронтирна</HH.Kitchen.Cuisine.Frontier>
+  <HH.Kitchen.Cuisine.TribalFeast>Племінний бенкет</HH.Kitchen.Cuisine.TribalFeast>
+  <HH.Kitchen.Cuisine.TavernFare>Таверна</HH.Kitchen.Cuisine.TavernFare>
+  <HH.Kitchen.Cuisine.ImperialHaute>Імперська висока кухня</HH.Kitchen.Cuisine.ImperialHaute>
+  <HH.Kitchen.Cuisine.GlitterFusion>Блискучий фьюжн</HH.Kitchen.Cuisine.GlitterFusion>
+  <HH.Kitchen.Cuisine.Street>Вулична</HH.Kitchen.Cuisine.Street>
+  <HH.Kitchen.Cuisine.Seafood>Морепродукти</HH.Kitchen.Cuisine.Seafood>
+  <HH.Kitchen.Cuisine.Insect>Комахи</HH.Kitchen.Cuisine.Insect>
+  <HH.Kitchen.Cuisine.Fungal>Грибна</HH.Kitchen.Cuisine.Fungal>
+  <HH.Kitchen.Cuisine.Vegetarian>Вегетаріанська</HH.Kitchen.Cuisine.Vegetarian>
+  <HH.Kitchen.Cuisine.Ascetic>Аскетична</HH.Kitchen.Cuisine.Ascetic>
+  <HH.Kitchen.Cuisine.LongPork>Довга свинина</HH.Kitchen.Cuisine.LongPork>
+  <HH.Kitchen.Ingredient.meat>м'ясо</HH.Kitchen.Ingredient.meat>
+  <HH.Kitchen.Ingredient.insectmeat>м'ясо комах</HH.Kitchen.Ingredient.insectmeat>
+  <HH.Kitchen.Ingredient.humanmeat>людське м'ясо</HH.Kitchen.Ingredient.humanmeat>
+  <HH.Kitchen.Ingredient.twistedmeat>спотворене м'ясо</HH.Kitchen.Ingredient.twistedmeat>
+  <HH.Kitchen.Ingredient.fish>риба</HH.Kitchen.Ingredient.fish>
+  <HH.Kitchen.Ingredient.eggs>яйця</HH.Kitchen.Ingredient.eggs>
+  <HH.Kitchen.Ingredient.milk>молоко</HH.Kitchen.Ingredient.milk>
+  <HH.Kitchen.Ingredient.potatoes>картопля</HH.Kitchen.Ingredient.potatoes>
+  <HH.Kitchen.Ingredient.corn>кукурудза</HH.Kitchen.Ingredient.corn>
+  <HH.Kitchen.Ingredient.rice>рис</HH.Kitchen.Ingredient.rice>
+  <HH.Kitchen.Ingredient.berries>ягоди</HH.Kitchen.Ingredient.berries>
+  <HH.Kitchen.Ingredient.agave>плід агави</HH.Kitchen.Ingredient.agave>
+  <HH.Kitchen.Ingredient.mushrooms>гриби</HH.Kitchen.Ingredient.mushrooms>
+  <HH.Kitchen.Ingredient.chocolate>шоколад</HH.Kitchen.Ingredient.chocolate>
+  <HH.Kitchen.Ingredient.beer>пиво</HH.Kitchen.Ingredient.beer>
+  <HH.Kitchen.Ingredient.hemogen>пакет гемогену</HH.Kitchen.Ingredient.hemogen>
+  <HH.Kitchen.Ingredient.cheese>сир</HH.Kitchen.Ingredient.cheese>
+  <HH.Kitchen.Ingredient.pumpkin>гарбуз</HH.Kitchen.Ingredient.pumpkin>
+  <HH.Kitchen.Ingredient.flour>борошно</HH.Kitchen.Ingredient.flour>
+  <HH.Kitchen.Ingredient.fruit>фрукти</HH.Kitchen.Ingredient.fruit>
+  <HH.Kitchen.Ingredient.soysauce>соєвий соус</HH.Kitchen.Ingredient.soysauce>
+  <HH.Kitchen.Ingredient.wasabi>паста васабі</HH.Kitchen.Ingredient.wasabi>
+  <HH.Kitchen.Ingredient.vegetables>овочі</HH.Kitchen.Ingredient.vegetables>
+  <HH.Kitchen.Ingredient.sugar>цукор</HH.Kitchen.Ingredient.sugar>
+  <HH.Kitchen.Ingredient.gourmet>делікатесні інгредієнти</HH.Kitchen.Ingredient.gourmet>
+  <HH.Kitchen.Ingredient.herbs>трави</HH.Kitchen.Ingredient.herbs>
+  <HH.Kitchen.Ingredient.nuts>горіхи</HH.Kitchen.Ingredient.nuts>
+  <HH.Kitchen.Ingredient.tealeaves>чайне листя</HH.Kitchen.Ingredient.tealeaves>
+  <HH.Kitchen.Ingredient.strawflour>соломяне борошно</HH.Kitchen.Ingredient.strawflour>
+  <HH.Kitchen.Ingredient.pricklypear>опунція</HH.Kitchen.Ingredient.pricklypear>
+  <HH.Kitchen.Ingredient.greenfruit>зелений фрукт</HH.Kitchen.Ingredient.greenfruit>
+  <HH.Setting.kitchen.shelfLife>Строк придатності страв</HH.Setting.kitchen.shelfLife>
+  <HH.Setting.kitchen.shelfLife.Desc>Як довго тарілки залишаються свіжими, відносно 3–24 годин для кожної страви. Черствілі тарілки їстівні, але не дають ефекту «Добре нагодований» і бонусу настрою.</HH.Setting.kitchen.shelfLife.Desc>
+  <HH.Setting.kitchen.wellFedStrength>Сила ефекту «Добре нагодований»</HH.Setting.kitchen.wellFedStrength>
+  <HH.Setting.kitchen.wellFedStrength.Desc>Наскільки повільніше падає голод після належної страви (100 % = на 40 % повільніше).</HH.Setting.kitchen.wellFedStrength.Desc>
+  <HH.Setting.kitchen.wellFedDuration>Тривалість «Добре нагодований»</HH.Setting.kitchen.wellFedDuration>
+  <HH.Setting.kitchen.wellFedDuration.Desc>Як довго діє стан «Добре нагодований», відносно 4 / 6 / 8 / 10 годин за рівнем навчання (і за якістю).</HH.Setting.kitchen.wellFedDuration.Desc>
+  <HH.Setting.kitchen.menuPrice>Ціна в меню</HH.Setting.kitchen.menuPrice>
+  <HH.Setting.kitchen.menuPrice.Desc>Ціни, які ресторан просить за страви, відносно стандартного меню (рівень страви, якість і форма).</HH.Setting.kitchen.menuPrice.Desc>
+  <HH.Setting.kitchen.poisonRule>Без отруєння їжею від доброї кухні</HH.Setting.kitchen.poisonRule>
+  <HH.Setting.kitchen.poisonRule.Desc>Тарілки, приготовлені кухарем з Кулінарією 4 або вище на чистій кухні (чистота −0,2 або краще), ніколи не можуть отруїти. Вимкнено: діють звичайні правила гри.</HH.Setting.kitchen.poisonRule.Desc>
+  <HH.Setting.kitchen.variants>Вишукані та фірмові форми</HH.Setting.kitchen.variants>
+  <HH.Setting.kitchen.variants.Desc>Пропонувати кожну страву у вишуканій формі (більше й кращих інгредієнтів, вищий шанс доброї якості) та у фірмовій формі (потрібне дослідження).</HH.Setting.kitchen.variants.Desc>
+  <HH.Setting.kitchen.allKnown>Усі страви відомі</HH.Setting.kitchen.allKnown>
+  <HH.Setting.kitchen.allKnown.Desc>Пропустити навчання: кожну страву меню можна готувати, щойно стоять її пристрої.</HH.Setting.kitchen.allKnown.Desc>
+  <HH.Setting.kitchen.darkMenu>Темне меню (довга свинина)</HH.Setting.kitchen.darkMenu>
+  <HH.Setting.kitchen.darkMenu.Desc>Дозволити страви з довгої свинини. Їх також відкриває ідеорелігія, що схвалює канібалізм.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Kitchen.Cookbook.Teaches>Навчає: {0}</HH.Kitchen.Cookbook.Teaches>
+  <HH.Kitchen.Cookbook.Empty>Сторінки порожні.</HH.Kitchen.Cookbook.Empty>
+  <HH.Kitchen.Cookbook.AllKnown>Колонія вже знає кожну страву з цієї книги.</HH.Kitchen.Cookbook.AllKnown>
+  <HH.Kitchen.Cookbook.CannotCook>Не можна готувати.</HH.Kitchen.Cookbook.CannotCook>
+  <HH.Kitchen.Cookbook.Learned>{0} вивчає книгу. Тепер колонія може готувати: {1}.</HH.Kitchen.Cookbook.Learned>
+  <HH.Kitchen.TestKitchen.Success>{0} з'ясував(ла), як приготувати {1}. Колонія це запам'ятає.</HH.Kitchen.TestKitchen.Success>
+  <HH.Kitchen.TestKitchen.Failure>{0} спробував(ла) приготувати {1} і отримав(ла) жахливу тарілку. Може, наступного разу.</HH.Kitchen.TestKitchen.Failure>
+  <HH.Kitchen.NoNeighbours>Жодного іншого кухонного пристрою в досяжності.</HH.Kitchen.NoNeighbours>
+  <HH.Kitchen.Neighbours>У досяжності: {0}</HH.Kitchen.Neighbours>
+  <HH.Kitchen.FreshHours>Свіжа ще {0} год</HH.Kitchen.FreshHours>
+</LanguageData>

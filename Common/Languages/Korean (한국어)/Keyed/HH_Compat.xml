@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Compat.DialogTitle>Hospitality가 Hearth &amp; Harbor와 함께 활성화되어 있습니다. 지금 비활성화할까요?</HH.Compat.DialogTitle>
+  <HH.Compat.DialogBody>Hearth &amp; Harbor는 Hospitality와 그 추가 모드를 대체합니다. 둘이 함께 활성화된 동안 Hearth &amp; Harbor는 이번 세션에서 Hospitality를 꺼 두었습니다. 패치, 이벤트, 건물, 손님 탭은 아무 작업도 하지 않습니다. Hospitality의 손님 침대와 구역은 그대로 남아 있으며, Hospitality가 사라지면 인계됩니다.</HH.Compat.DialogBody>
+  <HH.Compat.DialogListHeader>다음 모드가 비활성화됩니다:</HH.Compat.DialogListHeader>
+  <HH.Compat.DialogMentionHeader>다음 손님 모드는 그대로 유지되며, 방문자는 계속 해당 모드의 방문자로 남습니다:</HH.Compat.DialogMentionHeader>
+  <HH.Compat.DialogFailed>모드 목록을 자동으로 변경할 수 없습니다 ({0}). 직접 변경해 주세요:</HH.Compat.DialogFailed>
+  <HH.Compat.DialogStep1>1. 메인 메뉴 → 모드</HH.Compat.DialogStep1>
+  <HH.Compat.DialogStep2>2. 위에 나열된 모드의 체크를 해제하세요</HH.Compat.DialogStep2>
+  <HH.Compat.DialogStep3>3. 모드 목록을 저장하고 게임을 다시 시작하세요</HH.Compat.DialogStep3>
+  <HH.Compat.Yes>예, 비활성화하고 다시 시작</HH.Compat.Yes>
+  <HH.Compat.OpenMods>모드 목록 열기</HH.Compat.OpenMods>
+  <HH.Compat.Later>나중에</HH.Compat.Later>
+  <HH.Compat.Never>다시 묻지 않기</HH.Compat.Never>
+  <HH.Compat.ImportLetterTitle>Hospitality에서 가져옴</HH.Compat.ImportLetterTitle>
+  <HH.Compat.ImportLetterText>이 식민지는 Hospitality로 플레이되었습니다. Hearth &amp; Harbor가 가능한 것을 인계했습니다.\n\n가져온 항목: {0}.\n제외된 항목: {1}.\n\n가져온 손님 침대는 다시 일반 침대가 되며 손님 침대로 기억됩니다. Hearth &amp; Harbor의 손님 부분이 이를 인식합니다. 식민지의 다른 부분은 변경되지 않았습니다.</HH.Compat.ImportLetterText>
+  <HH.Compat.ImportNothing>없음</HH.Compat.ImportNothing>
+  <HH.Setting.compat.hospitalityNeverAsk>Hospitality 비활성화를 제안하지 않기</HH.Setting.compat.hospitalityNeverAsk>
+  <HH.Setting.compat.hospitalityNeverAsk.Desc>Hospitality가 Hearth &amp; Harbor와 함께 실행되면, Hearth &amp; Harbor는 세션 동안 이를 끄고 메인 메뉴에서 비활성화를 제안합니다. 켜면 더 이상 제안하지 않습니다(끄기 자체는 그대로 진행됩니다).</HH.Setting.compat.hospitalityNeverAsk.Desc>
+  <HH.Setting.compat.importLetter>Hospitality 저장 파일을 가져온 후 알림 편지</HH.Setting.compat.importLetter>
+  <HH.Setting.compat.importLetter.Desc>Hospitality로 플레이한 저장 파일을 불러오면, Hearth &amp; Harbor가 인계한 항목(손님 침대, 구역, 방문자)과 제외된 항목을 나열하는 편지가 도착합니다.</HH.Setting.compat.importLetter.Desc>
+</LanguageData>

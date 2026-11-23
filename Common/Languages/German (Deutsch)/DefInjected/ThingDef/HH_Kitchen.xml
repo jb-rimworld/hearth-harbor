@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Cookbook.label>Rezeptbuch</HH_Cookbook.label>
+  <HH_Cookbook.description>Ein fettiges, abgegriffenes Rezeptbuch, kommentiert von jemandem, der offensichtlich unter Beschuss gekocht hat. Wer es liest, lehrt die Kolonie die darin enthaltenen Gerichte.</HH_Cookbook.description>
+  <HH_Plate_Soup.label>Suppenschale</HH_Plate_Soup.label>
+  <HH_Plate_Soup.description>Eine Schale mit etwas Heißem und Nassem. Gegessen mit Löffel, Gebet oder beidem.</HH_Plate_Soup.description>
+  <HH_Plate_Stew.label>Eintopfschale</HH_Plate_Stew.label>
+  <HH_Plate_Stew.description>Eine schwere Schale mit langsam geschmortem Eintopf, dampfend im Versprechen auf einen Nachschlag.</HH_Plate_Stew.description>
+  <HH_Plate_Grill.label>Grillplatte</HH_Plate_Grill.label>
+  <HH_Plate_Grill.description>Fleisch, das ein Gespräch mit offenem Feuer geführt und verloren hat.</HH_Plate_Grill.description>
+  <HH_Plate_Noodles.label>Nudelschale</HH_Plate_Noodles.label>
+  <HH_Plate_Noodles.description>Ein Gewirr aus Nudeln in einer Schale. Schlürfen ist Pflicht.</HH_Plate_Noodles.description>
+  <HH_Plate_Rice.label>Reisgericht</HH_Plate_Rice.label>
+  <HH_Plate_Rice.description>Ein Berg Reis mit eigener Meinung, serviert auf einem Teller mit einer Gabel, die niemand wollte.</HH_Plate_Rice.description>
+  <HH_Plate_Bake.label>Ofengericht</HH_Plate_Bake.label>
+  <HH_Plate_Bake.description>Etwas, das als Zutaten in den Ofen kam und als Entscheidung wieder herauskam.</HH_Plate_Bake.description>
+  <HH_Plate_Fry.label>Frittierteller</HH_Plate_Fry.label>
+  <HH_Plate_Fry.description>Goldgelb, knusprig und wahnsinnig ungesund. Genau das, was die Kolonie bestellt hat.</HH_Plate_Fry.description>
+  <HH_Plate_Salad.label>Salatteller</HH_Plate_Salad.label>
+  <HH_Plate_Salad.description>Ein kalter Teller mit viel Blattwerk, sehr wenig Reue und kurzer Haltbarkeit.</HH_Plate_Salad.description>
+  <HH_Plate_Raw.label>Rohkostteller</HH_Plate_Raw.label>
+  <HH_Plate_Raw.description>Hauchdünn geschnitten, teuer angerichtet und absolut nicht gekocht.</HH_Plate_Raw.description>
+  <HH_Plate_Breakfast.label>Frühstücksteller</HH_Plate_Breakfast.label>
+  <HH_Plate_Breakfast.description>Ein Teller, der verkündet, dass der Tag begonnen hat, ob du willst oder nicht.</HH_Plate_Breakfast.description>
+  <HH_Plate_Dessert.label>Dessertschale</HH_Plate_Dessert.label>
+  <HH_Plate_Dessert.description>Eine kleine, süße Belohnung dafür, einen weiteren Tag am Rand überlebt zu haben.</HH_Plate_Dessert.description>
+  <HH_Plate_StreetFood.label>Straßenessen-Tablett</HH_Plate_StreetFood.label>
+  <HH_Plate_StreetFood.description>Heiß, handlich und am besten im Stehen gegessen, schnell, mit einem Auge auf den Ausgängen.</HH_Plate_StreetFood.description>
+  <HH_Station_PrepCounter.label>Vorbereitungstheke</HH_Station_PrepCounter.label>
+  <HH_Station_PrepCounter.description>Eine zerkratzte Theke mit Schneidebrett, einem guten Messer und einer Abflussrinne, nach der niemand gefragt hat. Hier wird gehackt, geschnitten und tranchiert; andere Geräte eines Gerichts müssen in der Nähe stehen.</HH_Station_PrepCounter.description>
+  <HH_Station_StockPot.label>Suppentopf</HH_Station_StockPot.label>
+  <HH_Station_StockPot.description>Ein großer Eisentopf über einem Holzfeuer. Köchelt, kocht und schmort alles, was jemals gelebt hat. Verbrennt Holz, während er arbeitet.</HH_Station_StockPot.description>
+  <HH_Station_Grill.label>Grill</HH_Station_Grill.label>
+  <HH_Station_Grill.description>Ein Rost über glühender Kohle. Das Fleisch kommt roh drauf und mit eigener Meinung wieder runter. Verbrennt Holz, während er arbeitet.</HH_Station_Grill.description>
+  <HH_Station_Oven.label>Ofen</HH_Station_Oven.label>
+  <HH_Station_Oven.description>Ein Ofen aus Stein und Eisen zum Braten und Backen. Braucht lange zum Aufheizen und kurz, um das Abendessen zu ruinieren. Verbrennt Holz, während er arbeitet.</HH_Station_Oven.description>
+  <HH_Station_WokStation.label>Wok-Station</HH_Station_WokStation.label>
+  <HH_Station_WokStation.description>Eine rundbödige Pfanne über einer tosenden Flamme. Hier wird alles gebraten, auch die Augenbrauen des Kochs. Verbrennt Holz, während sie arbeitet.</HH_Station_WokStation.description>
+  <HH_Station_DeepFryer.label>Fritteuse</HH_Station_DeepFryer.label>
+  <HH_Station_DeepFryer.description>Ein Bottich mit kochendem Öl, einem Korb und einem ausgeprägten Bewusstsein für die eigene Gefährlichkeit. Elektrisch. Fängt leichter Feuer als alles andere in der Küche.</HH_Station_DeepFryer.description>
+  <HH_Station_Smoker.label>Räucherofen</HH_Station_Smoker.label>
+  <HH_Station_Smoker.description>Ein hoher Holzschrank, der Fleisch haltbar macht. Braucht Holzspäne, Geduld und keine Nachbarn. Verbrennt Holz, während er arbeitet.</HH_Station_Smoker.description>
+  <HH_Station_Steamer.label>Dämpfer</HH_Station_Steamer.label>
+  <HH_Station_Steamer.description>Gestapelte Bambuskörbe über einem Topf mit kochendem Wasser. Sanft, schonend und fast unmöglich anzubrennen. Verbrennt Holz, während er arbeitet.</HH_Station_Steamer.description>
+  <HH_Station_DoughBench.label>Teigbank</HH_Station_DoughBench.label>
+  <HH_Station_DoughBench.description>Eine schwere Bank mit mehlbestäubter Platte. Reis und Mais werden hier zu Teig gestampft, was billiger ist als eine Therapie.</HH_Station_DoughBench.description>
+  <HH_Station_ColdStation.label>Kühlstation</HH_Station_ColdStation.label>
+  <HH_Station_ColdStation.description>Eine gekühlte Theke, die Salate knackig und Desserts fest hält. Elektrisch.</HH_Station_ColdStation.description>
+</LanguageData>

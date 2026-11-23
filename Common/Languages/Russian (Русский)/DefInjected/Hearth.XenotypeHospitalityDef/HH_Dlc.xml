@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_XenoHosp_Baseliner.label>базовый</HH_XenoHosp_Baseliner.label>
+  <HH_XenoHosp_Baseliner.description>Обычные люди: трезвый вкус, бережливость с деньгами. Большие экономные компании.</HH_XenoHosp_Baseliner.description>
+  <HH_XenoHosp_Sanguophage.label>сангофаг</HH_XenoHosp_Sanguophage.label>
+  <HH_XenoHosp_Sanguophage.description>Сангофагам нужны тёмные комнаты и мини-бар с гемогеном под рукой. Комната для дневного сна им по карману.</HH_XenoHosp_Sanguophage.description>
+  <HH_XenoHosp_Hemogenic.label>гемогенные (любой ксенотип)</HH_XenoHosp_Hemogenic.label>
+  <HH_XenoHosp_Hemogenic.description>Любой с гемогенным геном, включая пользовательские ксенотипы, разделяет вкус сангофагов к тёмным комнатам и пакетам с гемогеном.</HH_XenoHosp_Hemogenic.description>
+  <HH_XenoHosp_UVSensitive.label>чувствительные к UV (любой ксенотип)</HH_XenoHosp_UVSensitive.label>
+  <HH_XenoHosp_UVSensitive.description>Солнце вредит. Тёмная комната без окон — удобная комната.</HH_XenoHosp_UVSensitive.description>
+  <HH_XenoHosp_Dirtmole.label>землекрот</HH_XenoHosp_Dirtmole.label>
+  <HH_XenoHosp_Dirtmole.description>Землекроты предпочитают тёмные комнаты без окон и грибные блюда. Они предлагают заплатить за экскурсию по шахте.</HH_XenoHosp_Dirtmole.description>
+  <HH_XenoHosp_Genie.label>гений</HH_XenoHosp_Genie.label>
+  <HH_XenoHosp_Genie.description>Гении ждут уголка для чтения и тихого столика. Они арендуют исследовательские комнаты.</HH_XenoHosp_Genie.description>
+  <HH_XenoHosp_Hussar.label>гусар</HH_XenoHosp_Hussar.label>
+  <HH_XenoHosp_Hussar.description>Гусары щедро тратятся у бара и любят хорошую драку, вместе с ссорами, которые из неё вытекают.</HH_XenoHosp_Hussar.description>
+  <HH_XenoHosp_Neanderthal.label>неандерталец</HH_XenoHosp_Neanderthal.label>
+  <HH_XenoHosp_Neanderthal.description>Большие порции, простые комнаты. Обстановка значит меньше.</HH_XenoHosp_Neanderthal.description>
+  <HH_XenoHosp_Pigskin.label>свинокожий</HH_XenoHosp_Pigskin.label>
+  <HH_XenoHosp_Pigskin.description>Свинокожие едят почти всё и не против беспорядка в комнате.</HH_XenoHosp_Pigskin.description>
+  <HH_XenoHosp_Impid.label>импид</HH_XenoHosp_Impid.label>
+  <HH_XenoHosp_Impid.description>Импиды любят тёплые комнаты и пряности. Они выступают за долю выручки.</HH_XenoHosp_Impid.description>
+  <HH_XenoHosp_Waster.label>транжира</HH_XenoHosp_Waster.label>
+  <HH_XenoHosp_Waster.description>Транжирам уютно в грязных комнатах, они много тратят и оставляют после себя бардак.</HH_XenoHosp_Waster.description>
+  <HH_XenoHosp_Yttakin.label>иттакин</HH_XenoHosp_Yttakin.label>
+  <HH_XenoHosp_Yttakin.description>Иттакинам нужны холодные комнаты; тёплые делают их несчастными.</HH_XenoHosp_Yttakin.description>
+  <HH_XenoHosp_Highmate.label>хайметы</HH_XenoHosp_Highmate.label>
+  <HH_XenoHosp_Highmate.description>Хайметы любят красоту и компанию. Красивые общие комнаты им по душе.</HH_XenoHosp_Highmate.description>
+</LanguageData>

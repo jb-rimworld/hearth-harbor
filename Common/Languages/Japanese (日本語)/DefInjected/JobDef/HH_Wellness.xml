@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_UseHotTub.reportString>TargetA で浸かっている。</HH_UseHotTub.reportString>
+  <HH_UseSauna.reportString>サウナで汗を流している。</HH_UseSauna.reportString>
+  <HH_ReceiveMassage.reportString>マッサージを受けている。</HH_ReceiveMassage.reportString>
+  <HH_GiveMassage.reportString>TargetB をマッサージしている。</HH_GiveMassage.reportString>
+</LanguageData>

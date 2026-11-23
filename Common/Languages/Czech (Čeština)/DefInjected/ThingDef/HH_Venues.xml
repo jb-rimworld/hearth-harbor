@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueSign.label>cedule provozovny</HH_VenueSign.label>
+  <HH_VenueSign.description>Cedule, která promění místnost, ve které stojí, v provozovnu: hospodu, obchod, restauraci, kasino, lázně nebo salónek. Druh provozovny, otevírací dobu a ceny nastavíte v ovládání cedule. Bez cedule je místnost jen místnost.</HH_VenueSign.description>
+  <HH_VenueSignWall.label>cedule provozovny (nástěnná)</HH_VenueSignWall.label>
+  <HH_VenueSignWall.description>Stejná cedule, zavěšená na zeď. Místnost, které je obrácena, se stane provozovnou. Druh provozovny, otevírací dobu a ceny nastavíte v ovládání cedule.</HH_VenueSignWall.description>
+  <HH_ShopCounter.label>pult obchodu</HH_ShopCounter.label>
+  <HH_ShopCounter.description>Pult pro prodavače nebo barmana. Za ním stojí ten, kdo provozovnu obsluhuje, a denní tržby se tu o půlnoci ukládají jako stříbro. Pult je volitelný: bez něj obsluha stojí vedle cedule.</HH_ShopCounter.description>
+  <HH_MarketStall.label>tržní stánek</HH_MarketStall.label>
+  <HH_MarketStall.description>Volně stojící stánek s pruhovanou markýzou. Velký trh se uskuteční, až vlastníte dost stánků (viz nastavení Provozoven): každá obchodní karavana se u jednoho rozloží a zaplatí poplatek za stánek do vaší pokladny. Stojí-li venku, funguje za každého počasí, ale není to samostatná provozovna.</HH_MarketStall.description>
+  <HH_VendingMachine.label>automat</HH_VendingMachine.label>
+  <HH_VendingMachine.description>Napájená skříň, v níž je jídlo, nápoje, drogy a léky. Hosté z ní nakupují kdykoli bez personálu, za tržní cenu. Přepravci ji plní jako regál. Kolonisté si mohou brát zdarma; automat účtuje jen hostům. K prodeji potřebuje energii.</HH_VendingMachine.description>
+</LanguageData>

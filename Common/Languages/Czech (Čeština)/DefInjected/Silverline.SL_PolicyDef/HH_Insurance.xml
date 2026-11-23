@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ActsOfStoryteller.label>Činy vypravěče vyloučeny</SL_ActsOfStoryteller.label>
+  <SL_ActsOfStoryteller.description>Hradí budovy zničené nájezdníky, mechanoidy a občasným nedorozuměním s obléhacím strojem. Neplatí pro požáry, počasí ani pro vás.</SL_ActsOfStoryteller.description>
+  <SL_ActsOfStoryteller.slogan>Máme vás kryté.*</SL_ActsOfStoryteller.slogan>
+  <SL_MuffaloMachine.label>Krytí muffalů a strojů</SL_MuffaloMachine.label>
+  <SL_MuffaloMachine.description>Pro věci, které se hýbou nebo létají: raketoplány, výsadkové kapsle a vozidla zničená nepřítelem.</SL_MuffaloMachine.description>
+  <SL_MuffaloMachine.slogan>Kola, rotory a velmi důkladný formulář.</SL_MuffaloMachine.slogan>
+  <SL_RoofOverHead.label>Střecha nad hlavou</SL_RoofOverHead.label>
+  <SL_RoofOverHead.description>Oheň, výbuchy a blesk. Oheň ale musí být něčí jiný.</SL_RoofOverHead.description>
+  <SL_RoofOverHead.slogan>Teplé zdi, studené útěchy, čtvrtletní pojistné.</SL_RoofOverHead.slogan>
+  <SL_ItWasntMe.label>Odpovědnost „To nebyl já“</SL_ItWasntMe.label>
+  <SL_ItWasntMe.description>Za škody na hostech, obchodnících a jejich zboží, způsobené v naší péči a rozhodně ne vámi.</SL_ItWasntMe.description>
+  <SL_ItWasntMe.slogan>Někdo musí platit. Raději my, za poplatek.</SL_ItWasntMe.slogan>
+  <SL_LegalShield.label>Právní štít</SL_LegalShield.label>
+  <SL_LegalShield.description>Kancelář Brix &amp; Partners platí vaše pokuty a hádá se s těmi, kdo je udělili. Pomáhá i proti Clawback Mutual, pokud nikdo nečte článek 40.</SL_LegalShield.description>
+  <SL_LegalShield.slogan>Brix &amp; Partners: etika na zavolání.</SL_LegalShield.slogan>
+  <SL_RimHealth.label>Plán zdraví Rimu</SL_RimHealth.label>
+  <SL_RimHealth.description>Pevná částka za každého kolonistu, který stráví den na lůžku.</SL_RimHealth.description>
+  <SL_RimHealth.slogan>Brzy se uzdravte. Nebo aspoň čtvrtletně.</SL_RimHealth.slogan>
+  <SL_GoldenYears.label>Plán zlatých let</SL_GoldenYears.label>
+  <SL_GoldenYears.description>Penze pro kolonisty, kteří se dožili šedesáti. Pojistné je mladým levné, a v tom je smysl.</SL_GoldenYears.description>
+  <SL_GoldenYears.slogan>Odejděte brzy. Pak pozdě. Pak čtvrtletně.</SL_GoldenYears.slogan>
+  <SL_BlightBeGone.label>Pryč s plísní</SL_BlightBeGone.label>
+  <SL_BlightBeGone.description>Mrazy a toxický spad ničí úrodu. Tohle ničí ztrátu.</SL_BlightBeGone.description>
+  <SL_BlightBeGone.slogan>Sklízíme to, co platíme.</SL_BlightBeGone.slogan>
+  <SL_ClosedForRepairs.label>Zavřeno kvůli opravám</SL_ClosedForRepairs.label>
+  <SL_ClosedForRepairs.description>Když musí váš podnik zavřít, příjem nezavře.</SL_ClosedForRepairs.description>
+  <SL_ClosedForRepairs.slogan>Mimo provoz není mimo pojistné.</SL_ClosedForRepairs.slogan>
+  <SL_UnspeakableEvents.label>Doložka nevyslovitelných událostí</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>Pro škody, které znění smlouvy nedokáže popsat bez právníka v místnosti.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>Některé věci je lepší pojistit, než pojmenovat.</SL_UnspeakableEvents.slogan>
+  <SL_Wanderlust.label>Cestovní krytí Wanderlust</SL_Wanderlust.label>
+  <SL_Wanderlust.description>Pro karavany: pojištění, které je tu, když vy ne. Účtuje se na hlavu a den cesty, jen dokud jsou lidé na cestě.</SL_Wanderlust.description>
+  <SL_Wanderlust.slogan>Přáli bychom si, abyste tu byli. Kryjeme část, kde nejste.</SL_Wanderlust.slogan>
+  <SL_LimbByLimb.label>Pojištění úrazů končetina po končetině</SL_LimbByLimb.label>
+  <SL_LimbByLimb.description>Každá končetina má cenu. Zapsali jsme ji. Je na poslední straně, v tabulce končetin.</SL_LimbByLimb.description>
+  <SL_LimbByLimb.slogan>Každá končetina má cenu. Zapsali jsme ji.</SL_LimbByLimb.slogan>
+</LanguageData>

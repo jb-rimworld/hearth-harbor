@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Clause_1.label>период ожидания</SL_Clause_1.label>
+  <SL_Clause_1.description>Покрытие начинается после периода ожидания.</SL_Clause_1.description>
+  <SL_Clause_3_2.label>несчастные случаи и готовка</SL_Clause_3_2.label>
+  <SL_Clause_3_2.description>Болезнь не является несчастным случаем.</SL_Clause_3_2.description>
+  <SL_Clause_4.label>действия рассказчика</SL_Clause_4.label>
+  <SL_Clause_4.description>Ущерб от погоды — серая зона.</SL_Clause_4.description>
+  <SL_Clause_7b.label>рейды и осады</SL_Clause_7b.label>
+  <SL_Clause_7b.description>Осады и скопления механоидов — серая зона.</SL_Clause_7b.description>
+  <SL_Clause_9.label>предсуществующие состояния</SL_Clause_9.label>
+  <SL_Clause_9.description>Ущерб, существовавший до наступления случая, вычитается.</SL_Clause_9.description>
+  <SL_Clause_11.label>самонанесённый ущерб</SL_Clause_11.label>
+  <SL_Clause_11.description>Ущерб, причинённый вашими собственными людьми, исключён.</SL_Clause_11.description>
+  <SL_Clause_14b.label>стены и двери</SL_Clause_14b.label>
+  <SL_Clause_14b.description>Сломанная дверь — серая зона.</SL_Clause_14b.description>
+  <SL_Clause_17.label>другой пункт</SL_Clause_17.label>
+  <SL_Clause_17.description>Ещё один день проверки. Начиная с «Overbooked» — серая зона.</SL_Clause_17.description>
+  <SL_Clause_21.label>бионические части</SL_Clause_21.label>
+  <SL_Clause_21.description>Бионика приравнивается к оборудованию.</SL_Clause_21.description>
+  <SL_Clause_22.label>регенерация</SL_Clause_22.label>
+  <SL_Clause_22.description>Если утраченная часть отрастает, отрастает и требование.</SL_Clause_22.description>
+  <SL_Clause_23.label>оценка и смерть</SL_Clause_23.label>
+  <SL_Clause_23.description>Смерть до завершения оценки прекращает оценку.</SL_Clause_23.description>
+  <SL_Clause_26.label>изменения риска</SL_Clause_26.label>
+  <SL_Clause_26.description>Взносы следуют за опасностью.</SL_Clause_26.description>
+  <SL_Clause_30.label>форма C-7</SL_Clause_30.label>
+  <SL_Clause_30.description>Расторжения могут вернуться с ошибкой оформления.</SL_Clause_30.description>
+  <SL_Clause_31.label>автоматическое продление</SL_Clause_31.label>
+  <SL_Clause_31.description>Полисы продлеваются сами.</SL_Clause_31.description>
+  <SL_Clause_40.label>конфликт интересов</SL_Clause_40.label>
+  <SL_Clause_40.description>Начиная с «Overbooked» Legal Shield не помогает против Clawback Mutual.</SL_Clause_40.description>
+</LanguageData>

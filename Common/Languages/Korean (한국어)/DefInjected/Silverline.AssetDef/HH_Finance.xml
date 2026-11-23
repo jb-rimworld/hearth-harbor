@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_Mattress.label>매트리스 플러스</SL_Asset_Mattress.label>
+  <SL_Asset_Mattress.description>저축 계좌입니다. 돈은 아주 안전한 매트리스 속에 놓여 있고 조금씩 불어납니다. 뱅크런 때에는 인출이 이틀 동안 잠깁니다.</SL_Asset_Mattress.description>
+  <SL_Asset_OutlanderBond.label>외곽인 연합 인프라 채권</SL_Asset_OutlanderBond.label>
+  <SL_Asset_OutlanderBond.description>도로, 우물, 그리고 논란 많은 다리 하나를 건설 중인 외곽 마을 연합에 빌려주는 대출입니다. 기한 내 지급하지만, 어느 날부터는 지급하지 않습니다. 채무 불이행 후에는 약 3분의 1을 돌려받습니다.</SL_Asset_OutlanderBond.description>
+  <SL_Asset_EmpireWarBond.label>제국 전쟁 채권</SL_Asset_EmpireWarBond.label>
+  <SL_Asset_EmpireWarBond.description>제국의 전쟁 자금을 조달하는 채권입니다. 전쟁이 승리로 끝나면 가격이 뛰고, 패배하면 근사한 액자 값 정도가 됩니다. 전쟁은 오래전부터 이어지고 있으며, 대부분 홍보 책자 속에서 벌어지고 있습니다.</SL_Asset_EmpireWarBond.description>
+  <SL_Asset_Index.label>RimIndex 50</SL_Asset_Index.label>
+  <SL_Asset_Index.description>림에서 가장 큰 50개 기업을 하나의 상품에 담았습니다. 이 페이지의 기준점입니다. 수익성 슬라이더는 이 지수가 평균적으로 버는 수준으로 정해집니다.</SL_Asset_Index.description>
+  <SL_Asset_StockMicaton.label>MCTN, 미카톤 연맹</SL_Asset_StockMicaton.label>
+  <SL_Asset_StockMicaton.description>외곽 마을 연맹의 주식입니다. 분기 실적이 주가를 움직이고, 연맹과의 관계도 조금 움직입니다. 배당은 없지만 멋진 달력을 보내 줍니다.</SL_Asset_StockMicaton.description>
+  <SL_Asset_StockTribal.label>HIDE, 가죽과 화덕 협동조합</SL_Asset_StockTribal.label>
+  <SL_Asset_StockTribal.description>가죽, 화덕 장작, 그리고 놀라울 만큼 많은 환대를 파는 부족 협동조합의 주식입니다. 날씨와 아주 큰 삼촌 한 분의 기분에 크게 좌우됩니다.</SL_Asset_StockTribal.description>
+  <SL_Asset_StockEmpire.label>IMPR, 제국 장엄 행사 주식회사</SL_Asset_StockEmpire.label>
+  <SL_Asset_StockEmpire.description>제국 의식을 맡은 회사입니다: 깃발, 트럼펫, 작은 왕관. 이익은 조금밖에 대접받지 못했다고 느끼는 귀족이 얼마나 많은지에 달려 있습니다.</SL_Asset_StockEmpire.description>
+  <SL_Asset_StockColony.label>HHH, Hearth Harbor 홀딩스</SL_Asset_StockColony.label>
+  <SL_Asset_StockColony.description>정확히 한 가지만 소유한 지주회사입니다: 당신의 정착지가 목적지라는 생각. 당신의 부와 살아남은 습격에 반응합니다. 성공에는 당신도 지분이 있지만, 이 글을 읽은 모든 사람도 마찬가지입니다.</SL_Asset_StockColony.description>
+  <SL_Asset_GrowthFund.label>Glitterworld 성장 펀드</SL_Asset_GrowthFund.label>
+  <SL_Asset_GrowthFund.description>능동적으로 운용되는 펀드입니다. 운용자들은 매우 인상적인 홍보 책자와 배 한 척을 가지고 있습니다. 그들의 실력은 평균적으로 약간 마이너스이며, 펀드를 설립할 때 이미 그렇게 정해졌습니다.</SL_Asset_GrowthFund.description>
+  <SL_Asset_PietyBonds.label>경건 채권</SL_Asset_PietyBonds.label>
+  <SL_Asset_PietyBonds.description>열일곱 신앙의 기부금으로 뒷받침되는 채권입니다. 각 신앙은 나머지 열여섯 개가 잘못하고 있다고 확신합니다. 꾸준하고 엄숙하며, 아주 약간 우쭐합니다.</SL_Asset_PietyBonds.description>
+  <SL_Asset_RelicFutures.label>유물 선물</SL_Asset_RelicFutures.label>
+  <SL_Asset_RelicFutures.description>존재할지도, 아닐지도 모르는 유물에 대한 선물 거래입니다. 예언자일지도, 아닐지도 모르는 전달자가 배송합니다. 계약서는 축복받았습니다.</SL_Asset_RelicFutures.description>
+  <SL_Asset_RimCoin.label>RimCoin</SL_Asset_RimCoin.label>
+  <SL_Asset_RimCoin.description>전기와 확신만으로 만들어진 디지털 코인입니다. 하루에 몇 퍼센트씩 출렁이고, 아무도 설명하지 못하는 급등을 보이며, 과거에 해킹된 적이 있는 거래소에 상장되어 있습니다. 그리고 앞으로도 해킹될 것입니다.</SL_Asset_RimCoin.description>
+  <SL_Asset_MemeThrumbo.label>$THRUMBO</SL_Asset_MemeThrumbo.label>
+  <SL_Asset_MemeThrumbo.description>희귀 짐승의 이름을 딴 코인이며, 뒷받침도 그만큼만 있습니다. 백서는 thrumbo 그림 한 장입니다. 창립자는 그림에 따르면 thrumbo입니다.</SL_Asset_MemeThrumbo.description>
+  <SL_Asset_MemeBoomalope.label>Boomalope 코인</SL_Asset_MemeBoomalope.label>
+  <SL_Asset_MemeBoomalope.description>가치가 폭발적으로 오르는 코인입니다. 그리고 가끔 그냥 폭발합니다. 돈이 타는 냄새를 좋아하는 사람들 사이에서 인기가 있습니다.</SL_Asset_MemeBoomalope.description>
+  <SL_Asset_MemeMuffalo.label>MUFFALO MOON</SL_Asset_MemeMuffalo.label>
+  <SL_Asset_MemeMuffalo.description>muffalo를 사랑하고 그 밖에는 아무것도 사랑하지 않는 모든 이의 커뮤니티 코인입니다. 로드맵은 달을 바라보는 muffalo 그림입니다. 로드맵은 바뀌지 않았습니다.</SL_Asset_MemeMuffalo.description>
+  <SL_Asset_NftThrumbos.label>대체 불가능 Thrumbo</SL_Asset_NftThrumbos.label>
+  <SL_Asset_NftThrumbos.description>thrumbo 그림 모음입니다. 각각 유일하지만 서로 조금씩 닮았습니다. 당신은 그림의 그림에 대한 영수증을 소유하고 있습니다. 구매자는 천천히 나타나며 할인을 원합니다.</SL_Asset_NftThrumbos.description>
+  <SL_Asset_NftMuffalo.label>소유권 증명서: muffalo 그림</SL_Asset_NftMuffalo.label>
+  <SL_Asset_NftMuffalo.description>muffalo 그림의 소유권 증명서입니다. 그림은 어딘가에 저장되어 있고, 증명서는 당신의 계정에 저장되어 있습니다. 둘 중 어느 것도 muffalo 냄새가 나지 않습니다.</SL_Asset_NftMuffalo.description>
+</LanguageData>

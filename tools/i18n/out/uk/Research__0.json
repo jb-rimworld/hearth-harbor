@@ -1,0 +1,6 @@
+{
+ "k:HH.Setting.core.researchMode": "Режим досліджень",
+ "k:HH.Setting.core.researchMode.Desc": "Повний: дерева досліджень Hearth & Harbor і Silverline визначають, які будівлі та функції доступні. Вимкнено: усе доступне з початку (темні проєкти підземного світу все одно потребують відкриття).",
+ "k:HH.Enum.CoreResearchMode.Full": "Повний",
+ "k:HH.Enum.CoreResearchMode.Off": "Вимкнено"
+}

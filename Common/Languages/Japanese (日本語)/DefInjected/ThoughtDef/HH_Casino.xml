@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingWithdrawal.stages.0.label>ギャンブル離脱（軽度）</HH_GamblingWithdrawal.stages.0.label>
+  <HH_GamblingWithdrawal.stages.0.description>テーブルのことが頭から離れない。一回だけなら害はないはず。</HH_GamblingWithdrawal.stages.0.description>
+  <HH_GamblingWithdrawal.stages.1.label>ギャンブル離脱（中度）</HH_GamblingWithdrawal.stages.1.label>
+  <HH_GamblingWithdrawal.stages.1.description>集中できない。遊ばなければ。</HH_GamblingWithdrawal.stages.1.description>
+  <HH_GamblingWithdrawal.stages.2.label>ギャンブル離脱（強）</HH_GamblingWithdrawal.stages.2.label>
+  <HH_GamblingWithdrawal.stages.2.description>車輪以外のすべてが灰色に見える。</HH_GamblingWithdrawal.stages.2.description>
+  <HH_GamblingWithdrawal.stages.3.label>ギャンブル離脱（重度）</HH_GamblingWithdrawal.stages.3.label>
+  <HH_GamblingWithdrawal.stages.3.description>手が震える。誰かがトランプを持っているに違いない。</HH_GamblingWithdrawal.stages.3.description>
+  <HH_GamblingWithdrawal.stages.4.label>ギャンブル離脱（極度）</HH_GamblingWithdrawal.stages.4.label>
+  <HH_GamblingWithdrawal.stages.4.description>ほかのことはどうでもいい。</HH_GamblingWithdrawal.stages.4.description>
+  <HH_WonAtTheTables.stages.0.label>テーブルで勝った</HH_WonAtTheTables.stages.0.label>
+  <HH_WonAtTheTables.stages.0.description>チップの流れが味方した。今回は。</HH_WonAtTheTables.stages.0.description>
+  <HH_LostAtTheTables.stages.0.label>テーブルで全部負けた</HH_LostAtTheTables.stages.0.label>
+  <HH_LostAtTheTables.stages.0.description>チップは全部なくなった。タダだったとはいえ、それでも痛い。</HH_LostAtTheTables.stages.0.description>
+</LanguageData>

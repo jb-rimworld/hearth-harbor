@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Banking.label>cajeros automáticos</SL_Banking.label>
+  <SL_Banking.description>Máquinas que entregan plata a quien teclee las cuatro cifras correctas. Desbloquea el cajero automático y la caja nocturna.</SL_Banking.description>
+  <SL_Branches.label>sucursales bancarias</SL_Branches.label>
+  <SL_Branches.description>Un mostrador como es debido, una bóveda como es debida y una cola como es debida. Desbloquea el mostrador bancario: ingresos y retiradas al instante, solicitudes de préstamo en persona.</SL_Branches.description>
+  <SL_Credit.label>crédito al consumo</SL_Credit.label>
+  <SL_Credit.description>Dinero que no tienes, para gente que no lo tiene. Desbloquea los préstamos, la puntuación crediticia y, si llega el caso, la agencia de cobros.</SL_Credit.description>
+</LanguageData>

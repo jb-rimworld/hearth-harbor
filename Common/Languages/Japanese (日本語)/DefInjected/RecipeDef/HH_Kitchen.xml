@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_TestKitchen.label>新しい料理を試作する</HH_TestKitchen.label>
+  <HH_TestKitchen.description>生の食材を調理台に放り込み、何ができるか確かめる。時にはコロニーが新しい料理を編み出す（料理人が上手いほど可能性は上がる）。そうでなければ、その料理のひどい一皿として試作は終わる。</HH_TestKitchen.description>
+  <HH_TestKitchen.jobString>新しい料理を試作しているところ。</HH_TestKitchen.jobString>
+</LanguageData>

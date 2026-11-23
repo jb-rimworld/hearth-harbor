@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_BackRoomDoor.label>porte d'arrière-salle</HH_BackRoomDoor.label>
+  <HH_BackRoomDoor.description>Une porte banale au verrou solide. Seuls vos gens et quelques invités louches peuvent l'ouvrir. Une pièce derrière des portes d'arrière-salle uniquement ne compte pas dans la renommée de votre maison.</HH_BackRoomDoor.description>
+  <HH_FightPitMarker.label>marqueur de fosse de combat</HH_FightPitMarker.label>
+  <HH_FightPitMarker.description>Délimite une arène clôturée autour de lui. Construisez une clôture fermée (un portail convient) à au moins 3 par 3 cases à l'intérieur, placez ce marqueur au centre et la fosse s'ouvre : volontaires, prisonniers et animaux se battent, les invités parient, la maison garde un dixième de la cagnotte. Les combats s'arrêtent quand l'un cède ou tombe ; à mort seulement à partir du contenu sombre, jamais pour les volontaires, jamais pour les enfants.</HH_FightPitMarker.description>
+  <HH_FenceCounter.label>comptoir de receleur</HH_FenceCounter.label>
+  <HH_FenceCounter.description>Un comptoir marqué où un receleur de confiance achète les biens volés à quarante pour cent de leur valeur et les revend à des acheteurs louches à soixante-dix pour cent. Le receleur travaille avec sa propre caisse, alimentée depuis votre caisse enregistreuse. Les propriétaires des marchandises finissent parfois par le savoir.</HH_FenceCounter.description>
+  <HH_SmugglerDock.label>quai de contrebandier</HH_SmugglerDock.label>
+  <HH_SmugglerDock.description>Une simple plateforme d'atterrissage avec une lampe voilée. La nuit, une caisse descend parfois et une voix la propose à bas prix, sans question. De temps en temps, quelqu'un remarque la lampe.</HH_SmugglerDock.description>
+  <HH_HuntingGroundMarker.label>marqueur de terrain de chasse</HH_HuntingGroundMarker.label>
+  <HH_HuntingGroundMarker.description>Délimite un terrain de chasse clôturé (au moins soixante cases, fermé). Des chasseurs fortunés paient pour abattre les animaux qu'on y lâche. Avec le contenu sombre et une idéologie adaptée, un prisonnier peut devenir la proie ; cette option s'active séparément, derrière un avertissement.</HH_HuntingGroundMarker.description>
+  <HH_OrganClinic.label>comptoir de clinique</HH_OrganClinic.label>
+  <HH_OrganClinic.description>Un comptoir froid où l'on dépose les organes prélevés pour des donneurs anonymes, qui viennent les chercher la nuit et paient sans un mot. Uniquement avec le contenu sombre ou macabre. Les idéologies qui réprouvent le trafic d'organes vous en tiendront rigueur.</HH_OrganClinic.description>
+</LanguageData>

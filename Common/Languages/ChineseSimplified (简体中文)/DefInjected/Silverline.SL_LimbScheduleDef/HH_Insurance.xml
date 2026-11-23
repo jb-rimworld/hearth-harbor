@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_LimbSchedule_Standard.label>肢体赔付表</SL_LimbSchedule_Standard.label>
+  <SL_LimbSchedule_Standard.description>标准赔付表（附录 B.2）已内置。在此为模组中的身体部位添加条目。</SL_LimbSchedule_Standard.description>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Banking.label>guichets automatiques</SL_Banking.label>
+  <SL_Banking.description>Des machines qui distribuent de l'argent à quiconque tape les bons quatre chiffres. Débloque le DAB et le coffre de nuit.</SL_Banking.description>
+  <SL_Branches.label>agences bancaires</SL_Branches.label>
+  <SL_Branches.description>Un vrai guichet, une vraie chambre forte et une vraie file d'attente. Débloque le guichet bancaire : dépôts instantanés, liquidités instantanées, demandes de prêt en personne.</SL_Branches.description>
+  <SL_Credit.label>crédit à la consommation</SL_Credit.label>
+  <SL_Credit.description>De l'argent qu'on n'a pas, pour des gens qui ne l'ont pas. Débloque les prêts, le score de crédit et, si besoin en est, l'agence de recouvrement.</SL_Credit.description>
+</LanguageData>

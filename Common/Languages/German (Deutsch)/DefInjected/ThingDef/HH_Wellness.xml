@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_HotTub.label>Whirlpool</HH_HotTub.label>
+  <HH_HotTub.description>Eine Holzwanne mit Heizspirale und einer Pumpe, die meistens funktioniert. Zwei Personen können gleichzeitig baden. Kolonisten gewinnen Erholung und eine ruhige Stimmung; Gäste in einem Spa-Geschäft zahlen für das Vergnügen.</HH_HotTub.description>
+  <HH_Sauna.label>Saunaofen</HH_Sauna.label>
+  <HH_Sauna.description>Ein steingefasster Holzofen, der einen kleinen geschlossenen Raum in eine Sauna verwandelt. Der Raum zählt als Sauna, sobald er dauerhaft mindestens die in den Mod-Einstellungen festgelegte Temperatur hält (standardmäßig 45 °C). Mit Holz am Laufen halten und den Raum klein und ummauert lassen.</HH_Sauna.description>
+  <HH_MassageTable.label>Massageliege</HH_MassageTable.label>
+  <HH_MassageTable.description>Eine gepolsterte Liege mit Gesichtsöffnung und einem Regal voller Öle. Benötigt einen Kolonisten mit dem Arbeitstyp Bedienen, der knetet; er gewinnt Erfahrung in Soziales und Medizin, der Kunde zahlt (Gäste) oder entspannt sich (Kolonisten).</HH_MassageTable.description>
+  <HH_TestOnly_VenueSign.label>Test-Geschäftsschild (nur für Tests)</HH_TestOnly_VenueSign.label>
+  <HH_TestOnly_VenueSign.description>Nur für automatisierte Tests. Kann nicht gebaut werden.</HH_TestOnly_VenueSign.description>
+</LanguageData>

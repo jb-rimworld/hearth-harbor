@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Insurance.label>страхование</SL_Insurance.label>
+  <SL_Insurance.description>Полис на каждое несчастье, продаваемый взаимным обществом, которое ни разу не проиграло спор. Открывает страховую контору и полисы базовых уровней покрытия «Минимум» и «Достаточно».</SL_Insurance.description>
+  <SL_Actuarial.label>актуарная наука</SL_Actuarial.label>
+  <SL_Actuarial.description>Таблицы того, насколько вероятно всё пойти не так и чего это стоит. Открывает высший уровень покрытия «Премиум премиума», премиум-полисы и услуги общества.</SL_Actuarial.description>
+</LanguageData>

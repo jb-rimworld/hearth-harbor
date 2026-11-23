@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Compat.DialogTitle>Hospitality працює разом із Hearth &amp; Harbor. Вимкнути його?</HH.Compat.DialogTitle>
+  <HH.Compat.DialogBody>Hearth &amp; Harbor замінює Hospitality та його доповнення. Поки обидва активні, Hearth &amp; Harbor вимкнув Hospitality на цю сесію: його патчі, події, будівлі та вкладка гостей не діють. Твої гостьові ліжка й зони з Hospitality зберігаються і переходять до Hearth &amp; Harbor, щойно Hospitality зникне.</HH.Compat.DialogBody>
+  <HH.Compat.DialogListHeader>Ці модифікації буде вимкнено:</HH.Compat.DialogListHeader>
+  <HH.Compat.DialogMentionHeader>Ці гостьові модифікації залишаються без змін; їхні відвідувачі лишаються їхніми:</HH.Compat.DialogMentionHeader>
+  <HH.Compat.DialogFailed>Список модифікацій не вдалося змінити автоматично ({0}). Зроби це, будь ласка, вручну:</HH.Compat.DialogFailed>
+  <HH.Compat.DialogStep1>1. Головне меню → Модифікації</HH.Compat.DialogStep1>
+  <HH.Compat.DialogStep2>2. Зніми позначки з модифікацій, перелічених вище</HH.Compat.DialogStep2>
+  <HH.Compat.DialogStep3>3. Збережи список модифікацій і перезапусти гру</HH.Compat.DialogStep3>
+  <HH.Compat.Yes>Так, вимкнути і перезапустити</HH.Compat.Yes>
+  <HH.Compat.OpenMods>Відкрити список модифікацій</HH.Compat.OpenMods>
+  <HH.Compat.Later>Пізніше</HH.Compat.Later>
+  <HH.Compat.Never>Більше не питати</HH.Compat.Never>
+  <HH.Compat.ImportLetterTitle>Імпортовано з Hospitality</HH.Compat.ImportLetterTitle>
+  <HH.Compat.ImportLetterText>Цю колонію грали з Hospitality. Hearth &amp; Harbor перейняв те, що зміг.\n\nІмпортовано: {0}.\nВідкинуто: {1}.\n\nІмпортовані гостьові ліжка знову є звичайними ліжками і запам'ятовуються як гостьові; гостьова частина Hearth &amp; Harbor їх підхоплює. Більше нічого у твоїй колонії не змінилося.</HH.Compat.ImportLetterText>
+  <HH.Compat.ImportNothing>нічого</HH.Compat.ImportNothing>
+  <HH.Setting.compat.hospitalityNeverAsk>Не пропонувати вимкнути Hospitality</HH.Setting.compat.hospitalityNeverAsk>
+  <HH.Setting.compat.hospitalityNeverAsk.Desc>Коли Hospitality працює разом із Hearth &amp; Harbor, Hearth &amp; Harbor вимикає його на сесію і пропонує вимкнути його в головному меню. Увімкнено: пропозицій більше не буде (вимкнення все одно відбувається).</HH.Setting.compat.hospitalityNeverAsk.Desc>
+  <HH.Setting.compat.importLetter>Лист після імпорту збереження Hospitality</HH.Setting.compat.importLetter>
+  <HH.Setting.compat.importLetter.Desc>Після завантаження збереження, яке грали з Hospitality, лист перелічує, що Hearth &amp; Harbor перейняв (гостьові ліжка, зони, відвідувачі), і що було відкинуто.</HH.Setting.compat.importLetter.Desc>
+</LanguageData>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Tavern.label>taberna</HH_Venue_Tavern.label>
+  <HH_Venue_Tavern.description>Una sala donde los huéspedes compran una bebida y la toman allí mismo. Llena la sala de cerveza u otras bebidas en una estantería o depósito; un camarero tras el cartel o el mostrador la mantiene abierta. Las bebidas de la sala están reservadas para los clientes salvo que el cartel indique lo contrario.</HH_Venue_Tavern.description>
+  <HH_Venue_Shop.label>tienda</HH_Venue_Shop.label>
+  <HH_Venue_Shop.description>Una sala donde los huéspedes compran mercancía. Todo lo almacenado en estanterías y depósitos dentro de la sala está a la venta, a valor de mercado multiplicado por el factor de precio del cartel. Sin tendero, la tienda funciona como autoservicio con un pequeño descuento.</HH_Venue_Shop.description>
+  <HH_Venue_Restaurant.label>restaurante</HH_Venue_Restaurant.label>
+  <HH_Venue_Restaurant.description>Una sala donde los huéspedes se sientan a comer. Mesas, cocina y un camarero la convierten en restaurante; los platos los gestiona la cocina.</HH_Venue_Restaurant.description>
+  <HH_Venue_Casino.label>casino</HH_Venue_Casino.label>
+  <HH_Venue_Casino.description>Una sala de mesas de cartas, tragaperras y crupieres. Los huéspedes apuestan su plata a juegos de azar; la casa mantiene una pequeña ventaja honrada.</HH_Venue_Casino.description>
+  <HH_Venue_Spa.label>spa</HH_Venue_Spa.label>
+  <HH_Venue_Spa.description>Una sala tranquila para baños, vapor y descanso. Un asistente mantiene las toallas calientes; los huéspedes pagan por visita.</HH_Venue_Spa.description>
+  <HH_Venue_Lounge.label>salón</HH_Venue_Lounge.label>
+  <HH_Venue_Lounge.description>Una sala de espera con asientos. Los huéspedes que encuentran un negocio cerrado o sin personal esperan aquí en lugar de en la puerta, y lo hacen con más paciencia. Siempre abierta, no necesita personal.</HH_Venue_Lounge.description>
+  <HH_Venue_Chapel.label>capilla para huéspedes</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>Una sala tranquila con un altar para huéspedes donde visitantes de todas las fes vienen a rezar. Los huéspedes no pagan nada pero salen más tranquilos; una capilla con un altar bonito y unos bancos es un buen vecino para una posada. Siempre abierta de día, no necesita personal.</HH_Venue_Chapel.description>
+</LanguageData>

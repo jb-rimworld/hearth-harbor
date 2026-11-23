@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ActsOfStoryteller.label>Taten des Erzählers ausgeschlossen</SL_ActsOfStoryteller.label>
+  <SL_ActsOfStoryteller.description>Zahlt für Gebäude, die von Plünderern, Mechanoiden und dem gelegentlichen Missverständnis mit einer Belagerungsmaschine zerstört wurden. Nicht gültig bei Bränden, Wetter oder dir.</SL_ActsOfStoryteller.description>
+  <SL_ActsOfStoryteller.slogan>Wir haben dich abgedeckt.*</SL_ActsOfStoryteller.slogan>
+  <SL_MuffaloMachine.label>Muffalo-und-Maschinen-Schutz</SL_MuffaloMachine.label>
+  <SL_MuffaloMachine.description>Für Dinge, die sich bewegen oder fliegen: Shuttles, Landekapseln und Fahrzeuge, die von einem Feind zerstört werden.</SL_MuffaloMachine.description>
+  <SL_MuffaloMachine.slogan>Räder, Rotoren und ein sehr gründliches Formular.</SL_MuffaloMachine.slogan>
+  <SL_RoofOverHead.label>Dach über dem Kopf</SL_RoofOverHead.label>
+  <SL_RoofOverHead.description>Feuer, Explosionen und Blitzschlag. Das Feuer muss allerdings das eines anderen sein.</SL_RoofOverHead.description>
+  <SL_RoofOverHead.slogan>Warme Wände, kalter Trost, vierteljährliche Prämien.</SL_RoofOverHead.slogan>
+  <SL_ItWasntMe.label>Ich war's nicht-Haftpflicht</SL_ItWasntMe.label>
+  <SL_ItWasntMe.description>Für Schäden an Gästen, Händlern und deren Waren, die in deiner Obhut entstanden und definitiv nicht von dir verursacht wurden.</SL_ItWasntMe.description>
+  <SL_ItWasntMe.slogan>Irgendjemand muss zahlen. Am liebsten wir, gegen Gebühr.</SL_ItWasntMe.slogan>
+  <SL_LegalShield.label>Rechtsschild</SL_LegalShield.label>
+  <SL_LegalShield.description>Die Kanzlei Brix &amp; Partners zahlt deine Bußgelder und streitet mit denen, die sie verhängt haben. Hilft auch gegen Clawback Mutual, solange niemand Klausel 40 liest.</SL_LegalShield.description>
+  <SL_LegalShield.slogan>Brix &amp; Partners: Ethik auf Honorarbasis.</SL_LegalShield.slogan>
+  <SL_RimHealth.label>Rim-Gesundheitsplan</SL_RimHealth.label>
+  <SL_RimHealth.description>Ein Pauschalbetrag für jeden Kolonisten, der einen Tag im Krankenbett verbringt.</SL_RimHealth.description>
+  <SL_RimHealth.slogan>Gute Besserung. Oder wenigstens vierteljährlich.</SL_RimHealth.slogan>
+  <SL_GoldenYears.label>Goldene-Jahre-Plan</SL_GoldenYears.label>
+  <SL_GoldenYears.description>Eine Rente für Kolonisten, die es bis sechzig geschafft haben. Die Prämie ist günstig, solange sie jung sind, und genau das ist der Sinn.</SL_GoldenYears.description>
+  <SL_GoldenYears.slogan>Früh in Rente. Dann spät. Dann vierteljährlich.</SL_GoldenYears.slogan>
+  <SL_BlightBeGone.label>Pflanzenfäule ade</SL_BlightBeGone.label>
+  <SL_BlightBeGone.description>Kälteeinbrüche und giftiger Niederschlag fressen Ernten. Das hier frisst den Verlust.</SL_BlightBeGone.description>
+  <SL_BlightBeGone.slogan>Ernte, was wir bezahlen.</SL_BlightBeGone.slogan>
+  <SL_ClosedForRepairs.label>Wegen Reparatur geschlossen</SL_ClosedForRepairs.label>
+  <SL_ClosedForRepairs.description>Wenn dein Geschäft schließen muss, schließt das Einkommen nicht.</SL_ClosedForRepairs.description>
+  <SL_ClosedForRepairs.slogan>Außer Betrieb heißt nicht außer Prämie.</SL_ClosedForRepairs.slogan>
+  <SL_UnspeakableEvents.label>Zusatz für unaussprechliche Ereignisse</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>Für Schäden, die der Vertragstext nicht ohne einen Anwalt im Raum beschreiben kann.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>Manches versichert man besser, als es zu benennen.</SL_UnspeakableEvents.slogan>
+  <SL_Wanderlust.label>Fernweh-Reiseschutz</SL_Wanderlust.label>
+  <SL_Wanderlust.description>Für Karawanen: eine Versicherung, die da ist, wenn du es nicht bist. Abgerechnet pro Kopf und Reisetag, nur solange Leute unterwegs sind.</SL_Wanderlust.description>
+  <SL_Wanderlust.slogan>Wärst du doch hier. Wir decken den Teil ab, in dem du es nicht bist.</SL_Wanderlust.slogan>
+  <SL_LimbByLimb.label>Glied-für-Glied-Unfallplan</SL_LimbByLimb.label>
+  <SL_LimbByLimb.description>Jedes Körperteil hat einen Preis. Wir haben ihn aufgeschrieben. Er steht auf der letzten Seite, in der Gliedertabelle.</SL_LimbByLimb.description>
+  <SL_LimbByLimb.slogan>Jedes Körperteil hat einen Preis. Wir haben ihn aufgeschrieben.</SL_LimbByLimb.slogan>
+</LanguageData>

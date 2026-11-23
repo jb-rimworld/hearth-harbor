@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.Casino>Cassino</HH.Tab.Casino>
+  <HH.Casino.TabTitle>Cassino</HH.Casino.TabTitle>
+  <HH.Casino.LimitsToggle>Aplicar limites da mesa (apostas de {0}–{1} de prata)</HH.Casino.LimitsToggle>
+  <HH.Casino.LosingWarning>A casa perde dinheiro com: {0}. Com estas probabilidades, os hóspedes ganham mais do que apostam.</HH.Casino.LosingWarning>
+  <HH.Casino.BalancedBadge>Todo jogo tem vantagem da casa: o cassino lucra a longo prazo.</HH.Casino.BalancedBadge>
+  <HH.Casino.Houses>Casas</HH.Casino.Houses>
+  <HH.Casino.NoHouses>Nenhum hóspede jogou ainda. Uma casa abre seus livros com a primeira entrada.</HH.Casino.NoHouses>
+  <HH.Casino.HouseOfMap>Cassino de {0}</HH.Casino.HouseOfMap>
+  <HH.Casino.Drawer>Gaveta: {0}</HH.Casino.Drawer>
+  <HH.Casino.TodayNet>Hoje: {0}</HH.Casino.TodayNet>
+  <HH.Casino.HouseTip>Hóspedes estão jogando com {0} de prata agora. A casa mantém um fundo de {1} de prata; o que exceder vai para a colônia até o cassino fechar.</HH.Casino.HouseTip>
+  <HH.Casino.Games>Jogos: pagamento real comparado ao pagamento projetado</HH.Casino.Games>
+  <HH.Casino.ColGame>Jogo</HH.Casino.ColGame>
+  <HH.Casino.ColRounds>Rodadas</HH.Casino.ColRounds>
+  <HH.Casino.ColStaked>Apostado</HH.Casino.ColStaked>
+  <HH.Casino.ColRtp>Pagamento (real)</HH.Casino.ColRtp>
+  <HH.Casino.ColExpected>Pagamento (projeto)</HH.Casino.ColExpected>
+  <HH.Casino.ColLuck>Sorte</HH.Casino.ColLuck>
+  <HH.Casino.ColHouse>Resultado da casa</HH.Casino.ColHouse>
+  <HH.Casino.Game.Slots>Caça-níqueis</HH.Casino.Game.Slots>
+  <HH.Casino.Game.Roulette>Roleta</HH.Casino.Game.Roulette>
+  <HH.Casino.Game.Blackjack>Blackjack</HH.Casino.Game.Blackjack>
+  <HH.Casino.Game.Poker>Rimdeck</HH.Casino.Game.Poker>
+  <HH.Casino.Gamblers>Colonos que apostam</HH.Casino.Gamblers>
+  <HH.Casino.NoGamblers>Ninguém na colônia jogou ainda.</HH.Casino.NoGamblers>
+  <HH.Casino.InspectGame>{0}: {1} de {2} lugares ocupados</HH.Casino.InspectGame>
+  <HH.Casino.InspectBooks>{0} rodadas · casa {1} · vantagem real {2} % (projetada {3} %)</HH.Casino.InspectBooks>
+  <HH.Casino.InspectToday>Hoje: {0} rodadas, casa {1}</HH.Casino.InspectToday>
+  <HH.Casino.InspectLuck>Sorte acumulada: {0}</HH.Casino.InspectLuck>
+  <HH.Casino.Staffed>crupiê trabalhando</HH.Casino.Staffed>
+  <HH.Casino.NoCroupier>sem crupiê</HH.Casino.NoCroupier>
+  <HH.Casino.Vol.Low>volatilidade baixa</HH.Casino.Vol.Low>
+  <HH.Casino.Vol.Medium>volatilidade média</HH.Casino.Vol.Medium>
+  <HH.Casino.Vol.High>volatilidade alta</HH.Casino.Vol.High>
+  <HH.Casino.VolDesc>Clique para mudar como a máquina paga. Taxa de acerto {0}, amplitude de {1} apostas, prêmio máximo ×{2}, pagamento de {3} % em todas as configurações.</HH.Casino.VolDesc>
+  <HH.Casino.OpenToGuests>Aberto a hóspedes</HH.Casino.OpenToGuests>
+  <HH.Casino.OpenToGuestsDesc>Se desligado, só colonos podem usar este aparelho.</HH.Casino.OpenToGuestsDesc>
+  <HH.Casino.TryDemo>Experimentar (fichas de treino)</HH.Casino.TryDemo>
+  <HH.Casino.TryDemoDesc>Jogue algumas rodadas com fichas de treino. Nenhuma prata está envolvida.</HH.Casino.TryDemoDesc>
+  <HH.Casino.Simulate>Simular 10.000 rodadas</HH.Casino.Simulate>
+  <HH.Casino.SimulateDesc>Chefe de sala: joga 10.000 rodadas no papel com as probabilidades atuais e informa o resultado. Nada é lançado nos livros.</HH.Casino.SimulateDesc>
+  <HH.Casino.SimResult>Chefe de sala: {0} rodadas no papel devolveram {1} % das apostas (projetado: {2} %).</HH.Casino.SimResult>
+  <HH.Casino.LuckNoData>rodadas insuficientes até agora</HH.Casino.LuckNoData>
+  <HH.Casino.LuckNormal>sorte normal</HH.Casino.LuckNormal>
+  <HH.Casino.LuckHouseUp>casa com sorte</HH.Casino.LuckHouseUp>
+  <HH.Casino.LuckHouseDown>casa sem sorte</HH.Casino.LuckHouseDown>
+  <HH.Casino.LuckHouseWayUp>casa com muita sorte</HH.Casino.LuckHouseWayUp>
+  <HH.Casino.LuckHouseWayDown>casa com muito azar</HH.Casino.LuckHouseWayDown>
+  <HH.Casino.BigWin>{0} ganhou uma grande bolada na {2}: fichas no valor de {1} de prata.</HH.Casino.BigWin>
+  <HH.Casino.DemoInfo>Apenas fichas de treino, nada aqui custa prata. Probabilidades definidas nesta colônia: {ODDS}. Sua aposta está selada: recarregar não muda o resultado.</HH.Casino.DemoInfo>
+  <HH.Casino.DemoChips>Fichas de treino: {0} · rodadas: {1}</HH.Casino.DemoChips>
+  <HH.Casino.DemoReset>Recomeçar</HH.Casino.DemoReset>
+  <HH.Casino.DemoStake>Aposta</HH.Casino.DemoStake>
+  <HH.Casino.DemoBet>Apostar</HH.Casino.DemoBet>
+  <HH.Casino.DemoBroke>Você não tem fichas de treino suficientes para essa aposta.</HH.Casino.DemoBroke>
+  <HH.Casino.DemoPays>paga ×{0}</HH.Casino.DemoPays>
+  <HH.Casino.DemoNoWin>sem prêmio</HH.Casino.DemoNoWin>
+  <HH.Casino.DemoPoker>Você senta com três frequentadores fixos. Todos pagam a aposta de entrada; a casa fica com a comissão.</HH.Casino.DemoPoker>
+  <HH.Casino.DemoStats>Devolvido até agora: {0} % das apostas (projetado: {1} %)</HH.Casino.DemoStats>
+  <HH.Casino.Spin>Girar</HH.Casino.Spin>
+  <HH.Casino.Deal>Distribuir</HH.Casino.Deal>
+  <HH.Casino.Hit>Pedir carta</HH.Casino.Hit>
+  <HH.Casino.Stand>Parar</HH.Casino.Stand>
+  <HH.Casino.DoubleDown>Dobrar</HH.Casino.DoubleDown>
+  <HH.Casino.HelpHint>Se o jogo for um problema na vida real, há ajuda disponível: {LINK}</HH.Casino.HelpHint>
+  <HH.Casino.HelpHintTip>Clique para abrir a linha de apoio. Clique com o botão direito para ocultar esta linha (ela pode ser reativada nas configurações do mod).</HH.Casino.HelpHintTip>
+  <HH.Casino.HideHint>Ocultar esta dica</HH.Casino.HideHint>
+  <HH.Casino.OpenHelpline>Abrir a linha de apoio</HH.Casino.OpenHelpline>
+  <HH.Casino.AddictionBrackets>estágio {0}, {1} de {2} dias limpo</HH.Casino.AddictionBrackets>
+  <HH.Casino.AddictionTip>Estágio de vício {0}. Dias sem nenhuma sessão: {1} de {2} necessários. Precisa de cerca de {3} sessões por dia para ficar satisfeito. Só a abstinência cura.</HH.Casino.AddictionTip>
+  <HH.Casino.AddictedTitle>{0}: vício em jogo</HH.Casino.AddictedTitle>
+  <HH.Casino.AddictedText>{0} jogou uma sessão a mais e agora é viciado em jogo. Sem jogar regularmente, a abstinência vai pesar sobre {PAWN_objective}: mau humor e, nos estágios mais profundos, surtos de jogatina. Nenhuma prata foi perdida, as fichas eram gratuitas, mas o tempo e os nervos não são.\n\nSó um longo período sem nenhuma sessão cura. Você pode mudar o que {PAWN_nameDef} pode fazer na política de drogas (a linha "jogo").</HH.Casino.AddictedText>
+  <HH.Casino.RelapseTitle>{0}: recaída</HH.Casino.RelapseTitle>
+  <HH.Casino.RelapseText>{0} sentou-se às mesas durante o período de desejo após a cura, e o vício voltou (um estágio abaixo do anterior). É preciso outro longo período sem nenhuma sessão.</HH.Casino.RelapseText>
+  <HH.Casino.CuredMessage>{0} largou o hábito de jogar. Pelos próximos {1} dias, qualquer sessão arrisca uma recaída.</HH.Casino.CuredMessage>
+  <HH.Casino.SpreeReason>abstinência do jogo</HH.Casino.SpreeReason>
+  <HH.Casino.Counter>{0} de {1} sessões em 3 dias.</HH.Casino.Counter>
+  <HH.Casino.CounterNext>{0} de {1} sessões em 3 dias – a próxima arrisca o vício.</HH.Casino.CounterNext>
+  <HH.Casino.CounterRisk>{0} sessões em 3 dias – a próxima tem risco de vício de {1}.</HH.Casino.CounterRisk>
+  <HH.Casino.CounterAddicted>Viciado. {0} sessões nos últimos 3 dias.</HH.Casino.CounterAddicted>
+</LanguageData>

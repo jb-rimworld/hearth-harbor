@@ -1,0 +1,9 @@
+{
+ "keyed": {
+  "HH.Setting.core.researchMode": "研究模式",
+  "HH.Setting.core.researchMode.Desc": "完整：Hearth & Harbor 与 Silverline 的研究树会限制其建筑和功能的解锁。关闭：一切从一开始即可使用（地下世界的暗影项目仍需先被发现）。",
+  "HH.Enum.CoreResearchMode.Full": "完整",
+  "HH.Enum.CoreResearchMode.Off": "关闭"
+ },
+ "defs": {}
+}

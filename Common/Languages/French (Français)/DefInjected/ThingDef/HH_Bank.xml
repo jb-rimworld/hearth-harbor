@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ATM.label>DAB</SL_ATM.label>
+  <SL_ATM.description>Une boîte d'acier avec un écran, un clavier et une fente marquée « argent » en quatre langues. Les colons s'en servent pour consulter leur compte, retirer de l'argent (plafond journalier, petits frais) et déposer ce qu'ils ont. Nécessite de l'énergie.</SL_ATM.description>
+  <SL_BankCounter.label>guichet bancaire</SL_BankCounter.label>
+  <SL_BankCounter.description>Un long comptoir en bois avec des garnitures en laiton et une petite sonnette que personne n'a le droit de faire tinter. Une agence de ta banque : les dépôts sont enregistrés aussitôt, les espèces sortent directement de la chambre forte et les prêts se signent en personne. Nécessite de l'énergie.</SL_BankCounter.description>
+  <SL_NightSafe.label>coffre de nuit</SL_NightSafe.label>
+  <SL_NightSafe.description>Une trappe dans un bloc d'acier. Tu y glisses la recette du jour, tu entends le clac, tu rentres chez toi. Chaque minuit, les caisses de tes entreprises y sont vidées : sur ton compte bancaire si tu en as un, sous forme de pièces d'argent au sol à côté si tu n'en as pas.</SL_NightSafe.description>
+</LanguageData>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Dlc.Bought>{0} 以 {2} 银币购买了 {1}。</HH.Dlc.Bought>
+  <HH.Dlc.Gizmo.Buy>赎罪券</HH.Dlc.Gizmo.Buy>
+  <HH.Dlc.Gizmo.BuyDesc>为殖民者购买赦免、怜悯或晋升。价格随其意识形态的立场浮动。银币取自殖民地库存或其个人口袋。</HH.Dlc.Gizmo.BuyDesc>
+  <HH.Dlc.Gizmo.ChooseFaith>选择信仰</HH.Dlc.Gizmo.ChooseFaith>
+  <HH.Dlc.Gizmo.ChooseFaithDesc>将此祭坛奉献给某个意识形态。客人中的信徒会来此祈祷。</HH.Dlc.Gizmo.ChooseFaithDesc>
+  <HH.Dlc.Gizmo.FundDesc>殖民者的付款去向。神明会永久保留这些银币；同一信仰的派系会对你更有好感（每 500 银币 +1 好感，每季度最多 +5）。</HH.Dlc.Gizmo.FundDesc>
+  <HH.Dlc.Gizmo.ToDeity>供奉：归于神明</HH.Dlc.Gizmo.ToDeity>
+  <HH.Dlc.Gizmo.ToFaction>供奉：归于信仰的派系</HH.Dlc.Gizmo.ToFaction>
+  <HH.Dlc.NoBuyers>没有拥有意识形态的殖民者</HH.Dlc.NoBuyers>
+  <HH.Dlc.NoFaith>尚未选择信仰。</HH.Dlc.NoFaith>
+  <HH.Dlc.Noble.AcceptOrders>服从命令</HH.Dlc.Noble.AcceptOrders>
+  <HH.Dlc.Noble.Arrived>一位{0}及随从前来，将停留 {1} 天。</HH.Dlc.Noble.Arrived>
+  <HH.Dlc.Noble.BilletText>帝国命令你为一位{0}及其 {1} 名随从提供住宿，为期 {2} 天。他们期望一间配得上其身份的卧室（{3}）。你将获得约 {4} 银币作为费用。拒绝会损失好感与荣誉。</HH.Dlc.Noble.BilletText>
+  <HH.Dlc.Noble.Left>贵族一行离开了。付款：{0} 银币。</HH.Dlc.Noble.Left>
+  <HH.Dlc.Noble.OfferText>一位{0}带着 {1} 名随从请求留宿 {2} 天，若住得舒心，将支付约 {3} 银币。他们的期望：{4}。拒绝没有任何代价。</HH.Dlc.Noble.OfferText>
+  <HH.Dlc.Noble.Refuse>拒绝（好感与荣誉受损）</HH.Dlc.Noble.Refuse>
+  <HH.Dlc.NothingOffered>他们的信仰没有任何可出售的东西</HH.Dlc.NothingOffered>
+  <HH.Dlc.Reason.Abhorrent>他们的信仰厌恶此事</HH.Dlc.Reason.Abhorrent>
+  <HH.Dlc.Reason.CannotPay>无力支付 {0}</HH.Dlc.Reason.CannotPay>
+  <HH.Dlc.Reason.CapColony>殖民地本季度已购买过此项</HH.Dlc.Reason.CapColony>
+  <HH.Dlc.Reason.CapIdeo>该意识形态本季度对此已经受够了</HH.Dlc.Reason.CapIdeo>
+  <HH.Dlc.Reason.CapPawnQ>本季度已达上限</HH.Dlc.Reason.CapPawnQ>
+  <HH.Dlc.Reason.CapPawnY>本年度已达上限</HH.Dlc.Reason.CapPawnY>
+  <HH.Dlc.Reason.CertainEnough>确信度已满</HH.Dlc.Reason.CertainEnough>
+  <HH.Dlc.Reason.NeedRank>需要 {0} 级身份</HH.Dlc.Reason.NeedRank>
+  <HH.Dlc.Reason.NeedRoyalty>需要王权</HH.Dlc.Reason.NeedRoyalty>
+  <HH.Dlc.Reason.NoFresh>没有生命值不超过 10 的新鲜伤口</HH.Dlc.Reason.NoFresh>
+  <HH.Dlc.Reason.NoGuilt>没有违反戒律的记忆</HH.Dlc.Reason.NoGuilt>
+  <HH.Dlc.Reason.NoIdeo>没有意识形态</HH.Dlc.Reason.NoIdeo>
+  <HH.Dlc.Reason.NoScar>没有持久的疤痕</HH.Dlc.Reason.NoScar>
+  <HH.Dlc.Reason.NotAThing>他们的信仰没有此类事物</HH.Dlc.Reason.NotAThing>
+  <HH.Dlc.Reason.NotFluid>只有可变的意识形态才能改革</HH.Dlc.Reason.NotFluid>
+  <HH.Dlc.Reason.NotPsychic>无法形成心灵链接</HH.Dlc.Reason.NotPsychic>
+  <HH.Dlc.Reason.PsylinkMax>心灵链接已达上限</HH.Dlc.Reason.PsylinkMax>
+  <HH.Dlc.Reason.RankHeld>已持有此身份或更高身份</HH.Dlc.Reason.RankHeld>
+  <HH.Dlc.Reason.RankOrder>需要先获得前一身份</HH.Dlc.Reason.RankOrder>
+  <HH.Dlc.Reason.ReformReady>已可以进行改革</HH.Dlc.Reason.ReformReady>
+  <HH.Dlc.ShrineQuality>信仰：{0}。礼拜堂品质：{1}。</HH.Dlc.ShrineQuality>
+  <HH.Dlc.TempleFund>神殿基金：{0} 银币</HH.Dlc.TempleFund>
+  <HH.Setting.dlc.traitSpawn>新生成的人物身上会出现新特质</HH.Setting.dlc.traitSpawn>
+  <HH.Setting.dlc.traitSpawn.Desc>幸运、倒霉、天生东道主以及其他「炉火与港湾」特质可能出现在新生成的角色身上。已存在的角色保留原有特质。关闭：只能手动或通过编辑器添加。</HH.Setting.dlc.traitSpawn.Desc>
+  <HH.Setting.dlc.traitRarity>特质出现频率</HH.Setting.dlc.traitRarity>
+  <HH.Setting.dlc.traitRarity.Desc>新角色抽取本模组特质频率的倍率（1 = 与大多数原版特质同等稀有）。</HH.Setting.dlc.traitRarity.Desc>
+</LanguageData>

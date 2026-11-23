@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_AteDish.label>ein anständiges Gericht gegessen</HH_AteDish.label>
+  <HH_AteDish.stages.0.label>miserable Hausmannskost</HH_AteDish.stages.0.label>
+  <HH_AteDish.stages.0.description>Ich habe ein miserables Gericht aus Hausmannskost gegessen.</HH_AteDish.stages.0.description>
+  <HH_AteDish.stages.1.label>schlechte Hausmannskost</HH_AteDish.stages.1.label>
+  <HH_AteDish.stages.1.description>Ich habe ein schlechtes Gericht aus Hausmannskost gegessen.</HH_AteDish.stages.1.description>
+  <HH_AteDish.stages.2.label>normale Hausmannskost</HH_AteDish.stages.2.label>
+  <HH_AteDish.stages.2.description>Ich habe ein normales Gericht aus Hausmannskost gegessen.</HH_AteDish.stages.2.description>
+  <HH_AteDish.stages.3.label>gute Hausmannskost</HH_AteDish.stages.3.label>
+  <HH_AteDish.stages.3.description>Ich habe ein gutes Gericht aus Hausmannskost gegessen.</HH_AteDish.stages.3.description>
+  <HH_AteDish.stages.4.label>exzellente Hausmannskost</HH_AteDish.stages.4.label>
+  <HH_AteDish.stages.4.description>Ich habe ein exzellentes Gericht aus Hausmannskost gegessen.</HH_AteDish.stages.4.description>
+  <HH_AteDish.stages.5.label>meisterhafte Hausmannskost</HH_AteDish.stages.5.label>
+  <HH_AteDish.stages.5.description>Ich habe ein meisterhaftes Gericht aus Hausmannskost gegessen.</HH_AteDish.stages.5.description>
+  <HH_AteDish.stages.6.label>legendäre Hausmannskost</HH_AteDish.stages.6.label>
+  <HH_AteDish.stages.6.description>Ich habe ein legendäres Gericht aus Hausmannskost gegessen.</HH_AteDish.stages.6.description>
+  <HH_AteDish.stages.7.label>miserable gehobene Hausmannskost</HH_AteDish.stages.7.label>
+  <HH_AteDish.stages.7.description>Ich habe ein miserables Gericht aus gehobener Hausmannskost gegessen.</HH_AteDish.stages.7.description>
+  <HH_AteDish.stages.8.label>schlechte gehobene Hausmannskost</HH_AteDish.stages.8.label>
+  <HH_AteDish.stages.8.description>Ich habe ein schlechtes Gericht aus gehobener Hausmannskost gegessen.</HH_AteDish.stages.8.description>
+  <HH_AteDish.stages.9.label>normale gehobene Hausmannskost</HH_AteDish.stages.9.label>
+  <HH_AteDish.stages.9.description>Ich habe ein normales Gericht aus gehobener Hausmannskost gegessen.</HH_AteDish.stages.9.description>
+  <HH_AteDish.stages.10.label>gute gehobene Hausmannskost</HH_AteDish.stages.10.label>
+  <HH_AteDish.stages.10.description>Ich habe ein gutes Gericht aus gehobener Hausmannskost gegessen.</HH_AteDish.stages.10.description>
+  <HH_AteDish.stages.11.label>exzellente gehobene Hausmannskost</HH_AteDish.stages.11.label>
+  <HH_AteDish.stages.11.description>Ich habe ein exzellentes Gericht aus gehobener Hausmannskost gegessen.</HH_AteDish.stages.11.description>
+  <HH_AteDish.stages.12.label>meisterhafte gehobene Hausmannskost</HH_AteDish.stages.12.label>
+  <HH_AteDish.stages.12.description>Ich habe ein meisterhaftes Gericht aus gehobener Hausmannskost gegessen.</HH_AteDish.stages.12.description>
+  <HH_AteDish.stages.13.label>legendäre gehobene Hausmannskost</HH_AteDish.stages.13.label>
+  <HH_AteDish.stages.13.description>Ich habe ein legendäres Gericht aus gehobener Hausmannskost gegessen.</HH_AteDish.stages.13.description>
+  <HH_AteDish.stages.14.label>miserable feine Küche</HH_AteDish.stages.14.label>
+  <HH_AteDish.stages.14.description>Ich habe ein miserables Gericht aus feiner Küche gegessen.</HH_AteDish.stages.14.description>
+  <HH_AteDish.stages.15.label>schlechte feine Küche</HH_AteDish.stages.15.label>
+  <HH_AteDish.stages.15.description>Ich habe ein schlechtes Gericht aus feiner Küche gegessen.</HH_AteDish.stages.15.description>
+  <HH_AteDish.stages.16.label>normale feine Küche</HH_AteDish.stages.16.label>
+  <HH_AteDish.stages.16.description>Ich habe ein normales Gericht aus feiner Küche gegessen.</HH_AteDish.stages.16.description>
+  <HH_AteDish.stages.17.label>gute feine Küche</HH_AteDish.stages.17.label>
+  <HH_AteDish.stages.17.description>Ich habe ein gutes Gericht aus feiner Küche gegessen.</HH_AteDish.stages.17.description>
+  <HH_AteDish.stages.18.label>exzellente feine Küche</HH_AteDish.stages.18.label>
+  <HH_AteDish.stages.18.description>Ich habe ein exzellentes Gericht aus feiner Küche gegessen.</HH_AteDish.stages.18.description>
+  <HH_AteDish.stages.19.label>meisterhafte feine Küche</HH_AteDish.stages.19.label>
+  <HH_AteDish.stages.19.description>Ich habe ein meisterhaftes Gericht aus feiner Küche gegessen.</HH_AteDish.stages.19.description>
+  <HH_AteDish.stages.20.label>legendäre feine Küche</HH_AteDish.stages.20.label>
+  <HH_AteDish.stages.20.description>Ich habe ein legendäres Gericht aus feiner Küche gegessen.</HH_AteDish.stages.20.description>
+  <HH_AteDish.stages.21.label>miserable Haute Cuisine</HH_AteDish.stages.21.label>
+  <HH_AteDish.stages.21.description>Ich habe ein miserables Gericht aus Haute Cuisine gegessen.</HH_AteDish.stages.21.description>
+  <HH_AteDish.stages.22.label>schlechte Haute Cuisine</HH_AteDish.stages.22.label>
+  <HH_AteDish.stages.22.description>Ich habe ein schlechtes Gericht aus Haute Cuisine gegessen.</HH_AteDish.stages.22.description>
+  <HH_AteDish.stages.23.label>normale Haute Cuisine</HH_AteDish.stages.23.label>
+  <HH_AteDish.stages.23.description>Ich habe ein normales Gericht aus Haute Cuisine gegessen.</HH_AteDish.stages.23.description>
+  <HH_AteDish.stages.24.label>gute Haute Cuisine</HH_AteDish.stages.24.label>
+  <HH_AteDish.stages.24.description>Ich habe ein gutes Gericht aus Haute Cuisine gegessen.</HH_AteDish.stages.24.description>
+  <HH_AteDish.stages.25.label>exzellente Haute Cuisine</HH_AteDish.stages.25.label>
+  <HH_AteDish.stages.25.description>Ich habe ein exzellentes Gericht aus Haute Cuisine gegessen.</HH_AteDish.stages.25.description>
+  <HH_AteDish.stages.26.label>meisterhafte Haute Cuisine</HH_AteDish.stages.26.label>
+  <HH_AteDish.stages.26.description>Ich habe ein meisterhaftes Gericht aus Haute Cuisine gegessen.</HH_AteDish.stages.26.description>
+  <HH_AteDish.stages.27.label>legendäre Haute Cuisine</HH_AteDish.stages.27.label>
+  <HH_AteDish.stages.27.description>Ich habe ein legendäres Gericht aus Haute Cuisine gegessen.</HH_AteDish.stages.27.description>
+</LanguageData>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_SlotMachine.label>muffalo de um braço</HH_SlotMachine.label>
+  <HH_SlotMachine.description>Um caça-níqueis que engole moedas, com três rolos e uma alavanca em forma de chifre de muffalo. As probabilidades são fixadas pela casa; as luzes, não. Hóspedes jogam sem crupiê; colonos jogam com fichas de casa sem valor.\n\nEscolha a volatilidade (com que frequência e quão alto paga) com o botão na máquina.</HH_SlotMachine.description>
+  <HH_RouletteTable.label>mesa de roleta</HH_RouletteTable.label>
+  <HH_RouletteTable.description>Um tapete de feltro com uma roleta embutida. Coloque suas fichas; a bola decide. Precisa de um crupiê (um colono com o tipo de trabalho Atendimento) para atender hóspedes. Colonos podem jogar por diversão com fichas da casa sem um.</HH_RouletteTable.description>
+  <HH_BlackjackTable.label>mesa de blackjack</HH_BlackjackTable.label>
+  <HH_BlackjackTable.description>Uma mesa em meia-lua com sapato de cartas. Chegue mais perto de 21 que o crupiê sem estourar. Bons jogadores perdem menos; a vantagem da casa depende das regras e de quão bem o jogador joga. Precisa de um crupiê para hóspedes.</HH_BlackjackTable.description>
+  <HH_PokerTable.label>mesa de Rimdeck</HH_PokerTable.label>
+  <HH_PokerTable.description>A casa distribui o Rimdeck, um jogo de cartas disputado contra os outros jogadores: a casa só fica com uma pequena comissão de cada pote. Jogadores espertos e sociáveis ganham com mais frequência. Substitui a mesa de pôquer original. Precisa de um crupiê para hóspedes.</HH_PokerTable.description>
+  <HH_CashierCage.label>guichê do caixa</HH_CashierCage.label>
+  <HH_CashierCage.description>Um guichê gradeado onde prata vira fichas e vice-versa. Com um guichê na colônia, hóspedes jogam com fichas: trazem cerca de 5 % a mais e alguns saem com fichas sem valor fora da casa (o fundo de fichas fica no caixa). A arrecadação noturna do cassino é registrada aqui como prata.</HH_CashierCage.description>
+  <HH_CasinoChips.label>ficha de cassino</HH_CasinoChips.label>
+  <HH_CasinoChips.description>Uma ficha de argila com a marca de uma casa. Vale uma prata no guichê que a vendeu e nada em lugar nenhum: comerciantes não a aceitam e ela não conta para sua riqueza.</HH_CasinoChips.description>
+  <HH_GamblingSession.label>jogo</HH_GamblingSession.label>
+  <HH_GamblingSession.description>Uma sessão nas mesas, administrada pelas políticas de drogas como uma droga: se é permitida por diversão, com que frequência, e se pessoas viciadas podem jogar. Não é um item e nunca existe no mundo.</HH_GamblingSession.description>
+</LanguageData>

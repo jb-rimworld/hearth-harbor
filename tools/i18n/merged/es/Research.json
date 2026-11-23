@@ -1,0 +1,9 @@
+{
+ "keyed": {
+  "HH.Setting.core.researchMode": "Modo de investigación",
+  "HH.Setting.core.researchMode.Desc": "Completo: los árboles de investigación de Hearth & Harbor y Silverline condicionan sus edificios y funciones. Desactivado: todo está disponible desde el inicio (los proyectos oscuros del inframundo siguen necesitando su descubrimiento).",
+  "HH.Enum.CoreResearchMode.Full": "Completo",
+  "HH.Enum.CoreResearchMode.Off": "Desactivado"
+ },
+ "defs": {}
+}

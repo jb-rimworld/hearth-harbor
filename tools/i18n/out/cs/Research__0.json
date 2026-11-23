@@ -1,0 +1,6 @@
+{
+ "k:HH.Setting.core.researchMode": "Režim výzkumu",
+ "k:HH.Setting.core.researchMode.Desc": "Plný: stromy výzkumu Hearth & Harbor a Silverline určují, které budovy a funkce jsou dostupné. Vypnuto: vše je dostupné od začátku (temné projekty podsvětí stále vyžadují objevení).",
+ "k:HH.Enum.CoreResearchMode.Full": "Plný",
+ "k:HH.Enum.CoreResearchMode.Off": "Vypnuto"
+}

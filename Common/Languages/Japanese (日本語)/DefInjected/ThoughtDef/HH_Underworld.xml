@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_SawFightPit_Kind.stages.0.label>闘技場の試合を見た</HH_SawFightPit_Kind.stages.0.label>
+  <HH_SawFightPit_Kind.stages.0.description>人々が賭けのために戦わされていて、私は話が聞こえるほど近くに立っていた。</HH_SawFightPit_Kind.stages.0.description>
+  <HH_SawFightPit_Bloodlust.stages.0.label>闘技場の試合を見た</HH_SawFightPit_Bloodlust.stages.0.label>
+  <HH_SawFightPit_Bloodlust.stages.0.description>ああ、あれこそ本物の試合だった。</HH_SawFightPit_Bloodlust.stages.0.description>
+  <HH_Interrogated.stages.0.label>見知らぬ者に尋問された</HH_Interrogated.stages.0.label>
+  <HH_Interrogated.stages.0.description>見知らぬ者たちが一時間私の向かいに座り、同じことを何度も何度も尋ねた。</HH_Interrogated.stages.0.description>
+  <HH_OrganTradeOutrage.stages.0.label>店での臓器取引</HH_OrganTradeOutrage.stages.0.label>
+  <HH_OrganTradeOutrage.stages.0.description>ここでは臓器を売っている。私たちの屋根の下で。それなのに誰も何もしない。</HH_OrganTradeOutrage.stages.0.description>
+  <HH_HuntOnPrisoners.stages.0.label>狩りで人が死んだ</HH_HuntOnPrisoners.stages.0.label>
+  <HH_HuntOnPrisoners.stages.0.description>我々の土地で人が狩られた。そのことが頭から離れない。</HH_HuntOnPrisoners.stages.0.description>
+</LanguageData>

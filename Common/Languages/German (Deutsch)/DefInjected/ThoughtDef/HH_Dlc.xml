@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_FaithForSale.stages.0.label>Ablässe zu verkaufen</HH_FaithForSale.stages.0.label>
+  <HH_FaithForSale.stages.0.description>Sie verkaufen Vergebung ganz offen, wie Rüben.</HH_FaithForSale.stages.0.description>
+  <HH_FaithNotForSale.stages.0.label>Rang zu verkaufen</HH_FaithNotForSale.stages.0.label>
+  <HH_FaithNotForSale.stages.0.description>Glaube ist nicht käuflich. Und trotzdem gibt es eine Preisliste.</HH_FaithNotForSale.stages.0.description>
+  <HH_BoughtMyWayOut.stages.0.label>freigekauft</HH_BoughtMyWayOut.stages.0.label>
+  <HH_BoughtMyWayOut.stages.0.description>Es hat funktioniert, aber ich habe dafür bezahlt, und ich weiß genau, was mich das ausmacht.</HH_BoughtMyWayOut.stages.0.description>
+  <HH_PaidMyDues.stages.0.label>Schuldigkeit bezahlt</HH_PaidMyDues.stages.0.label>
+  <HH_PaidMyDues.stages.0.description>Meine Schuldigkeit ist bezahlt. Die Bücher sind sauber und mein Gewissen auch.</HH_PaidMyDues.stages.0.description>
+  <HH_StingySoul.stages.0.label>geizige Seele</HH_StingySoul.stages.0.label>
+  <HH_StingySoul.stages.0.description>Ein ganzes Quadrum ohne meine Schuldigkeit zu zahlen. Ich sollte mich schämen.</HH_StingySoul.stages.0.description>
+  <HH_AscensionMood.stages.0.label>Rang I</HH_AscensionMood.stages.0.label>
+  <HH_AscensionMood.stages.0.description>Ich habe die erste Stufe der Leiter genommen.</HH_AscensionMood.stages.0.description>
+  <HH_AscensionMood.stages.1.label>Rang II</HH_AscensionMood.stages.1.label>
+  <HH_AscensionMood.stages.1.description>Die zweite Sprosse. Die Leute fangen an, meinen Titel zu benutzen.</HH_AscensionMood.stages.1.description>
+  <HH_AscensionMood.stages.2.label>Rang III</HH_AscensionMood.stages.2.label>
+  <HH_AscensionMood.stages.2.description>Die dritte Sprosse. Die Aussicht ist schon besser.</HH_AscensionMood.stages.2.description>
+  <HH_AscensionMood.stages.3.label>Rang IV</HH_AscensionMood.stages.3.label>
+  <HH_AscensionMood.stages.3.description>Die letzte Sprosse. Über mir ist nur noch der Himmel.</HH_AscensionMood.stages.3.description>
+  <HH_AscensionDisapproval.stages.0.label>gekaufter Rang</HH_AscensionDisapproval.stages.0.label>
+  <HH_AscensionDisapproval.stages.0.description>Sie haben sich diesen Rang gekauft. Er bedeutet nichts.</HH_AscensionDisapproval.stages.0.description>
+  <HH_AscensionRespect.stages.0.label>höherer Rang</HH_AscensionRespect.stages.0.label>
+  <HH_AscensionRespect.stages.0.description>Sie sind höher gestiegen als ich. Das respektiere ich.</HH_AscensionRespect.stages.0.description>
+  <HH_PlaceToPray.stages.0.label>ein Ort zum Beten</HH_PlaceToPray.stages.0.label>
+  <HH_PlaceToPray.stages.0.description>Eine bescheidene Ecke zum Beten. Besser als nichts.</HH_PlaceToPray.stages.0.description>
+  <HH_PlaceToPray.stages.1.label>ein Ort zum Beten</HH_PlaceToPray.stages.1.label>
+  <HH_PlaceToPray.stages.1.description>Eine ruhige, anständige Kapelle. Hier könnte ich beten.</HH_PlaceToPray.stages.1.description>
+  <HH_PlaceToPray.stages.2.label>ein Ort zum Beten</HH_PlaceToPray.stages.2.label>
+  <HH_PlaceToPray.stages.2.description>Eine schöne Kapelle meines eigenen Glaubens, weit weg von zu Hause. Ich bin dankbar.</HH_PlaceToPray.stages.2.description>
+  <HH_PlaceToPray.stages.3.label>ein Ort zum Beten</HH_PlaceToPray.stages.3.label>
+  <HH_PlaceToPray.stages.3.description>Eine wunderschöne Kapelle mit richtigen Sitzen. Mein Glaube wurde gesehen.</HH_PlaceToPray.stages.3.description>
+  <HH_PlaceToPray.stages.4.label>ein Ort zum Beten</HH_PlaceToPray.stages.4.label>
+  <HH_PlaceToPray.stages.4.description>Prächtig. Sie haben hier ein Haus für meinen Gott gebaut. Das werde ich nicht vergessen.</HH_PlaceToPray.stages.4.description>
+  <HH_HereticShrine.stages.0.label>Ketzerschrein auf unserem Land</HH_HereticShrine.stages.0.label>
+  <HH_HereticShrine.stages.0.description>Auf unserem Land steht ein Schrein für einen falschen Glauben.</HH_HereticShrine.stages.0.description>
+  <HH_HereticShrine.stages.1.label>Ketzerschrein auf unserem Land</HH_HereticShrine.stages.1.label>
+  <HH_HereticShrine.stages.1.description>Ein Schrein für einen falschen Glauben, geduldet von den eigenen Leuten. Beschämend.</HH_HereticShrine.stages.1.description>
+  <HH_HereticShrine.stages.2.label>Ketzerschrein auf unserem Land</HH_HereticShrine.stages.2.label>
+  <HH_HereticShrine.stages.2.description>Sie haben einen Schrein für Ketzer neben unser Zuhause gebaut. Ich ertrage es nicht.</HH_HereticShrine.stages.2.description>
+  <HH_ShrineRespected.stages.0.label>andere Glauben geehrt</HH_ShrineRespected.stages.0.label>
+  <HH_ShrineRespected.stages.0.description>Wir machen Platz für andere Glauben. So gehört sich das.</HH_ShrineRespected.stages.0.description>
+  <HH_ShrineRespected.stages.1.label>andere Glauben geehrt</HH_ShrineRespected.stages.1.label>
+  <HH_ShrineRespected.stages.1.description>Ein Schrein für jeden Glauben, der hier durchzieht. So gehört sich das.</HH_ShrineRespected.stages.1.description>
+  <HH_ShrineRespected.stages.2.label>andere Glauben verachtet</HH_ShrineRespected.stages.2.label>
+  <HH_ShrineRespected.stages.2.description>Warum bauen wir Schreine für Leute, die das Falsche glauben?</HH_ShrineRespected.stages.2.description>
+  <HH_LuckyStreak.stages.0.label>Glückssträhne</HH_LuckyStreak.stages.0.label>
+  <HH_LuckyStreak.stages.0.description>Die Würfel fallen heute Nacht immer zu meinen Gunsten.</HH_LuckyStreak.stages.0.description>
+  <HH_OfCourseILost.stages.0.label>natürlich verloren</HH_OfCourseILost.stages.0.label>
+  <HH_OfCourseILost.stages.0.description>Natürlich habe ich verloren. Natürlich.</HH_OfCourseILost.stages.0.description>
+  <HH_GamblingAround.stages.0.label>Glücksspiel in der Nähe</HH_GamblingAround.stages.0.label>
+  <HH_GamblingAround.stages.0.description>Direkt vor meinen Augen werfen Leute ihr Geld weg.</HH_GamblingAround.stages.0.description>
+</LanguageData>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Ins.Slogan.1>Clawback Mutual，替您兜底。*（*见第1条至无穷条）</HH.Ins.Slogan.1>
+  <HH.Ins.Slogan.2>心安无忧，按季缴费。</HH.Ins.Slogan.2>
+  <HH.Ins.Slogan.3>意外总会发生。赔付嘛，偶尔会有。</HH.Ins.Slogan.3>
+  <HH.Ins.Slogan.4>我们随时恭候您的需要。办公时间另行适用。</HH.Ins.Slogan.4>
+  <HH.Ins.Slogan.5>每根肢体都有价码。我们已白纸黑字记下。</HH.Ins.Slogan.5>
+  <HH.Ins.Slogan.6>您的理赔对我们很重要。请稍候。</HH.Ins.Slogan.6>
+  <HH.Ins.Slogan.7>全面保障，400页条款作全面解释。</HH.Ins.Slogan.7>
+  <HH.Ins.Slogan.8>多数殖民地选择高端版。多数殖民地仍在等待。</HH.Ins.Slogan.8>
+  <HH.Ins.Tier.Bare>最低保障</HH.Ins.Tier.Bare>
+  <HH.Ins.Tier.Good>够用就好</HH.Ins.Tier.Good>
+  <HH.Ins.Tier.Premium>高端中的高端</HH.Ins.Tier.Premium>
+  <HH.Ins.Outcome.Pending>待处理</HH.Ins.Outcome.Pending>
+  <HH.Ins.Outcome.Approved>已批准</HH.Ins.Outcome.Approved>
+  <HH.Ins.Outcome.Partial>部分批准</HH.Ins.Outcome.Partial>
+  <HH.Ins.Outcome.Denied>已拒绝</HH.Ins.Outcome.Denied>
+  <HH.Ins.Stage.0>毫发无伤</HH.Ins.Stage.0>
+  <HH.Ins.Stage.1>皮肉伤</HH.Ins.Stage.1>
+  <HH.Ins.Stage.2>略有不便</HH.Ins.Stage.2>
+  <HH.Ins.Stage.3>大幅重新构想</HH.Ins.Stage.3>
+  <HH.Ins.Stage.4>基本全是文书工作</HH.Ins.Stage.4>
+  <HH.Ins.Stage.5>完全且永久性丧失</HH.Ins.Stage.5>
+  <HH.Ins.Tab.Bank>保险</HH.Ins.Tab.Bank>
+  <HH.Ins.Tab.Shop>保单</HH.Ins.Tab.Shop>
+  <HH.Ins.Tab.Mine>我的保单（{0}）</HH.Ins.Tab.Mine>
+  <HH.Ins.Tab.Claims>理赔（{0}）</HH.Ins.Tab.Claims>
+  <HH.Ins.Tab.FinePrint>细则</HH.Ins.Tab.FinePrint>
+  <HH.Ins.Menu.Call>致电 Clawback Mutual</HH.Ins.Menu.Call>
+  <HH.Ins.Btn.Accept>接受</HH.Ins.Btn.Accept>
+  <HH.Ins.Btn.Negotiate>协商</HH.Ins.Btn.Negotiate>
+  <HH.Ins.Btn.OpenDesk>打开 Clawback 服务台</HH.Ins.Btn.OpenDesk>
+  <HH.Ins.Btn.Dismiss>忽略</HH.Ins.Btn.Dismiss>
+  <HH.Ins.Btn.Close>关闭</HH.Ins.Btn.Close>
+  <HH.Ins.Btn.Materials>改取建材，不要银币</HH.Ins.Btn.Materials>
+  <HH.Ins.Source.Bank>您的银行账户</HH.Ins.Source.Bank>
+  <HH.Ins.Source.Till>钱柜</HH.Ins.Source.Till>
+  <HH.Ins.Source.Silver>仓库里的银币</HH.Ins.Source.Silver>
+  <HH.Ins.Source.Free>没有（免费的）</HH.Ins.Source.Free>
+  <HH.Ins.Source.PaidBank>转入您的银行账户</HH.Ins.Source.PaidBank>
+  <HH.Ins.Source.PaidTill>转入钱柜</HH.Ins.Source.PaidTill>
+  <HH.Ins.Source.PaidCapsule>投放舱内的 {0} 银币</HH.Ins.Source.PaidCapsule>
+  <HH.Ins.Source.PaidMaterials>舱内建材：{0}</HH.Ins.Source.PaidMaterials>
+  <HH.Ins.Sign.Off>Clawback Mutual 在本游戏中不营业。</HH.Ins.Sign.Off>
+  <HH.Ins.Sign.NoHolder>请先选一名殖民者。</HH.Ins.Sign.NoHolder>
+  <HH.Ins.Sign.TooOld>该殖民者已到退休年龄。退休年龄时无法购买养老金；养老金本来就是为此设计的。</HH.Ins.Sign.TooOld>
+  <HH.Ins.Sign.Duplicate>您已持有此保单。我们核对过两遍了。</HH.Ins.Sign.Duplicate>
+  <HH.Ins.Sign.Debt>在您结清第22条所列的欠款 {0} 之前，不得签订新保单。</HH.Ins.Sign.Debt>
+  <HH.Ins.Sign.NoMap>我们找不到您的殖民地。这不寻常。</HH.Ins.Sign.NoMap>
+  <HH.Ins.Sign.Threat>威胁、袭击或大火发生期间，Clawback Mutual 不签约承保。我们不想对自己不公平。</HH.Ins.Sign.Threat>
+  <HH.Ins.Sign.CannotPay>首期 {0} 无法扣款。即便是我们，也无法为空钱包投保。</HH.Ins.Sign.CannotPay>
+  <HH.Ins.Locked.Insurance>需要研究项目「保险」</HH.Ins.Locked.Insurance>
+  <HH.Ins.Locked.Actuarial>需要研究项目「精算学」</HH.Ins.Locked.Actuarial>
+  <HH.Ins.Log.Signed>已签约 {0}（{1}）。</HH.Ins.Log.Signed>
+  <HH.Ins.Log.Ended>{0}已终止：{1}。</HH.Ins.Log.Ended>
+  <HH.Ins.Log.Filed>理赔 #{0} 已提交：{1}。</HH.Ins.Log.Filed>
+  <HH.Ins.Log.Decided>理赔 #{0} 已裁定：{1}（{2}）。</HH.Ins.Log.Decided>
+  <HH.Ins.Log.Paid>理赔 #{0} 已赔付：{1}。</HH.Ins.Log.Paid>
+  <HH.Ins.Log.Negotiated>理赔 #{0}，第 {1} 轮：{2}。</HH.Ins.Log.Negotiated>
+  <HH.Ins.Log.CancelFiled>{0}：已提交退保，{1}生效。</HH.Ins.Log.CancelFiled>
+  <HH.Ins.Log.Retained>{0}：已保留，并扣减 {1}。</HH.Ins.Log.Retained>
+  <HH.Ins.Log.Settled>第22条结算款已支付：{0}。</HH.Ins.Log.Settled>
+  <HH.Ins.Log.Regrowth>理赔 #{0}：部分肢体重新长出，追回 {1}。</HH.Ins.Log.Regrowth>
+  <HH.Ins.Claim.Several>{0}座建筑</HH.Ins.Claim.Several>
+  <HH.Ins.Claim.Death>{0}的死亡</HH.Ins.Claim.Death>
+  <HH.Ins.Claim.Limb>{0}的意外</HH.Ins.Claim.Limb>
+  <HH.Ins.Claim.Retirement>{0}的养老金</HH.Ins.Claim.Retirement>
+  <HH.Ins.Claim.BedRest>卧床天数</HH.Ins.Claim.BedRest>
+  <HH.Ins.Claim.Scratches>路上的{0}处伤</HH.Ins.Claim.Scratches>
+  <HH.Ins.Claim.Crop>因{0}损失的作物</HH.Ins.Claim.Crop>
+  <HH.Ins.End.Cancelled>由您退保</HH.Ins.End.Cancelled>
+  <HH.Ins.End.Holder>被保险人已不在我们之中</HH.Ins.End.Holder>
+  <HH.Ins.End.Insurer>由 Clawback Mutual 终止</HH.Ins.End.Insurer>
+  <HH.Ins.End.Lapsed>保费未缴</HH.Ins.End.Lapsed>
+  <HH.Ins.Clause.Exclusion>这是一条除外条款，不是裁定。我们只是照本宣科。</HH.Ins.Clause.Exclusion>
+  <HH.Ins.Quote.Damage>每季度预期损失：{0}</HH.Ins.Quote.Damage>
+  <HH.Ins.Quote.Payout>我们预期支付的份额：{0}</HH.Ins.Quote.Payout>
+  <HH.Ins.Quote.Loading>我们的附加费：+{0}</HH.Ins.Quote.Loading>
+  <HH.Ins.Quote.NoClaims>无理赔折扣：-{0}</HH.Ins.Quote.NoClaims>
+  <HH.Ins.Quote.Bundle>套餐折扣：-{0}</HH.Ins.Quote.Bundle>
+  <HH.Ins.Quote.Riders>附加险：+{0}</HH.Ins.Quote.Riders>
+  <HH.Ins.Quote.Discount>续保折扣：-{0}</HH.Ins.Quote.Discount>
+  <HH.Ins.Bd.Grade>伤残等级 {0}%（{1}）。</HH.Ins.Bd.Grade>
+  <HH.Ins.Bd.Part>{0}：{1}%。{2}</HH.Ins.Bd.Part>
+  <HH.Ins.Bd.PreExisting>已扣除：签约前已存在的 {0}%（第9条）。</HH.Ins.Bd.PreExisting>
+  <HH.Ins.Bd.PartialNotPaid>最低保障不赔付部分伤残。</HH.Ins.Bd.PartialNotPaid>
+  <HH.Ins.Bd.BelowThreshold>伤残等级低于您所选档位的起赔线 {0}%。赔付：0银币。恭喜您。</HH.Ins.Bd.BelowThreshold>
+  <HH.Ins.Bd.Progression>{0}：病程推进按基础保额{2}给付{1}。细则前赔付：{3}。</HH.Ins.Bd.Progression>
+  <HH.Ins.Bd.Contributed>同一部位的旧病症使赔付减少25%（第9条，源自 Overbooked）。</HH.Ins.Bd.Contributed>
+  <HH.Ins.Bd.Death>死亡赔付：{0}。</HH.Ins.Bd.Death>
+  <HH.Ins.Bd.DeathAssess>理赔 #{0} 以死亡告终（第23条）：两者取高额支付。</HH.Ins.Bd.DeathAssess>
+  <HH.Ins.Bd.Loss>损失物品 {0} 件，价值 {1}。</HH.Ins.Bd.Loss>
+  <HH.Ins.Bd.Replacement>重置价基准 {0}，您的自付份额 {1}。</HH.Ins.Bd.Replacement>
+  <HH.Ins.Bd.UnderInsured>保额不足：保额 {0}，价值 {1}。我们依此赔付 {2}，并且颇为自豪。</HH.Ins.Bd.UnderInsured>
+  <HH.Ins.Bd.Gross>细则前赔付：{0}。</HH.Ins.Bd.Gross>
+  <HH.Ins.Bd.Flat>损失 {0}，我们赔付 {1}：{2}。</HH.Ins.Bd.Flat>
+  <HH.Ins.Bd.Kulanz>体恤性补偿（每年一次，仅限高端版）。请勿习以为常。</HH.Ins.Bd.Kulanz>
+  <HH.Ins.Bd.Legal>法律盾让我们对拒赔这件事没那么热心了。</HH.Ins.Bd.Legal>
+  <HH.Ins.Bd.Offset>抵扣此前的追缴款：{0}。</HH.Ins.Bd.Offset>
+  <HH.Ins.Letter.From.Claims>理赔部，负二层</HH.Ins.Letter.From.Claims>
+  <HH.Ins.Letter.From.Neutral>Clawback Mutual</HH.Ins.Letter.From.Neutral>
+  <HH.Ins.Letter.Welcome.Title>欢迎加入 Clawback Mutual：{0}</HH.Ins.Letter.Welcome.Title>
+  <HH.Ins.Letter.Welcome.Body>尊敬的投保人：
+
+感谢您在{1}选择{0}。您的保费 {2} 将每隔 {3} 天自动扣款。您无需做任何事，永远如此，这正是设计初衷。</HH.Ins.Letter.Welcome.Body>
+  <HH.Ins.Letter.Welcome.Waiting>保障将在 {0} 天的等待期后开始。等待期自保障开始之日起计算。详见第1条。</HH.Ins.Letter.Welcome.Waiting>
+  <HH.Ins.Letter.Welcome.Riders>为节省您的时间，已为您附带以下附加险：{0}。原则上您可随时在服务台取消。</HH.Ins.Letter.Welcome.Riders>
+  <HH.Ins.Letter.Welcome.Paid>首期款项已从{0}扣除。</HH.Ins.Letter.Welcome.Paid>
+  <HH.Ins.Letter.Filed.Title>已收到理赔 #{0}</HH.Ins.Letter.Filed.Title>
+  <HH.Ins.Letter.Filed.Body>我们已收到您依据{2}提交的理赔 #{0}（{1}）。此事对我们很重要。我们的理赔部将在一至三天内审阅，视回溯情况而定。</HH.Ins.Letter.Filed.Body>
+  <HH.Ins.Letter.Filed.Death>谨对您的损失表示哀悼。理赔（{0}）已收到，我们将妥善处理。</HH.Ins.Letter.Filed.Death>
+  <HH.Ins.Letter.Filed.Assessment>意外险于事故后{0}评估，待损伤稳定后进行。目前赔付预估：{1}。</HH.Ins.Letter.Filed.Assessment>
+  <HH.Ins.Letter.Filed.Waiting>请注意，该事件发生于等待期内。我们谨慎地告知您。</HH.Ins.Letter.Filed.Waiting>
+  <HH.Ins.Letter.Decision.TitleApproved>理赔 #{0}：已批准</HH.Ins.Letter.Decision.TitleApproved>
+  <HH.Ins.Letter.Decision.TitlePartial>理赔 #{0}：部分批准</HH.Ins.Letter.Decision.TitlePartial>
+  <HH.Ins.Letter.Decision.TitleDenied>理赔 #{0}：已拒绝</HH.Ins.Letter.Decision.TitleDenied>
+  <HH.Ins.Letter.Decision.Approved>好消息。您的理赔已获批准：{0}。</HH.Ins.Letter.Decision.Approved>
+  <HH.Ins.Letter.Decision.Partial>您的理赔获部分批准：{1}中的{0}。对于我们批准的那部分，我们深感自豪。</HH.Ins.Letter.Decision.Partial>
+  <HH.Ins.Letter.Decision.Denied>经过仔细考虑（这花了一些时间），您的理赔被拒绝。</HH.Ins.Letter.Decision.Denied>
+  <HH.Ins.Letter.Decision.DeniedHow>不予赔付。{0}</HH.Ins.Letter.Decision.DeniedHow>
+  <HH.Ins.Letter.Decision.CanNegotiate>您可以在十日内协商；我们的大门是敞开的，某种意义上。</HH.Ins.Letter.Decision.CanNegotiate>
+  <HH.Ins.Letter.Decision.PayNow>赔款即刻支付。</HH.Ins.Letter.Decision.PayNow>
+  <HH.Ins.Letter.Decision.PayLater>赔款将在{0}内支付。办理时限不是承诺，只是希望。</HH.Ins.Letter.Decision.PayLater>
+  <HH.Ins.Letter.Decision.InKind>您也可以改取舱内投放的建材，而非银币（请打开服务台）。</HH.Ins.Letter.Decision.InKind>
+  <HH.Ins.Letter.Clause.Cited>理由：{0}</HH.Ins.Letter.Clause.Cited>
+  <HH.Ins.Letter.Clause.Neutral>裁定依据：{0}。</HH.Ins.Letter.Clause.Neutral>
+  <HH.Ins.Letter.Paid.Title>理赔 #{0}：已赔付</HH.Ins.Letter.Paid.Title>
+  <HH.Ins.Letter.Paid.Body>理赔 #{0} 已赔付：{1}，{2}。感谢您成为我们的客户。我们会在您下次缴费时记住这一点。</HH.Ins.Letter.Paid.Body>
+  <HH.Ins.Letter.Paid.Neutral>{0}的赔付已支付，{1}。谨祝您坚强。</HH.Ins.Letter.Paid.Neutral>
+  <HH.Ins.Letter.Ended.Title>{0}：已终止</HH.Ins.Letter.Ended.Title>
+  <HH.Ins.Letter.Ended.Body>您的保单{0}已终止：{1}。
+
+{2}</HH.Ins.Letter.Ended.Body>
+  <HH.Ins.Letter.Ended.Debt>第22条下的追缴款{0}尚未结清。新保单须先结清此款。</HH.Ins.Letter.Ended.Debt>
+  <HH.Ins.Letter.Missed.Title>{0}：未收到保费</HH.Ins.Letter.Missed.Title>
+  <HH.Ins.Letter.Missed.Body>我们无法为{0}扣除{1}。温馨提醒：我们明天还会再试，后天也会。之后我们就不再温馨了。</HH.Ins.Letter.Missed.Body>
+  <HH.Ins.Letter.Lapsed.Title>{0}：已失效</HH.Ins.Letter.Lapsed.Title>
+  <HH.Ins.Letter.Lapsed.Body>您的保单{0}因连续三期未缴（每期{1}）而失效。您的保障已终止。这件事我们写来很遗憾，收费却很高效。</HH.Ins.Letter.Lapsed.Body>
+  <HH.Ins.Letter.Premium.Title>{0}：保费已调整</HH.Ins.Letter.Premium.Title>
+  <HH.Ins.Letter.Premium.Body>您的{0}保费已依您的情况，由每季度{1}调整为{2}。五日内您可立即退保，我们提及此事，是因为法律要求。</HH.Ins.Letter.Premium.Body>
+  <HH.Ins.Letter.Regrowth.Title>{0}：部分肢体重新长出</HH.Ins.Letter.Regrowth.Title>
+  <HH.Ins.Letter.Regrowth.Body>我们很高兴得知{0}的一部分已重新长出。我们追回{1}。{2}{3}</HH.Ins.Letter.Regrowth.Body>
+  <HH.Ins.Letter.Regrowth.Offset>该款将从未来赔付中抵扣。</HH.Ins.Letter.Regrowth.Offset>
+  <HH.Ins.Letter.Regrowth.Debt>此款作为欠款挂账；在结清之前不得签订新保单。</HH.Ins.Letter.Regrowth.Debt>
+  <HH.Ins.Letter.Renew.Title>{0}：续保通知</HH.Ins.Letter.Renew.Title>
+  <HH.Ins.Letter.Renew.Body>您的保单{0}将于三日后续保。{1}</HH.Ins.Letter.Renew.Body>
+  <HH.Ins.Letter.Retro.Title>套餐折扣已重新计算</HH.Ins.Letter.Retro.Title>
+  <HH.Ins.Letter.Retro.Body>因您已退保，本季度的套餐折扣已重新计算。我们已扣除{0}。详见末页。</HH.Ins.Letter.Retro.Body>
+  <HH.Ins.Letter.Uncovered.Title>您本来可以获得保障。</HH.Ins.Letter.Uncovered.Title>
+  <HH.Ins.Letter.Uncovered.Body>我们注意到{0}的损失。该损失未投保。{1}本可乐于相助。它现在仍然乐于相助，只是需要保费。</HH.Ins.Letter.Uncovered.Body>
+  <HH.Ins.Letter.Year.Title>您的 Clawback 年度报告</HH.Ins.Letter.Year.Title>
+  <HH.Ins.Letter.Year.Intro>与 Clawback Mutual 相伴的一年：{1}份有效保单共缴纳保费{0}。以下是我们的促销手段让您付出的代价。</HH.Ins.Letter.Year.Intro>
+  <HH.Ins.Letter.Year.Trick>{0}：默认勾选的附加险（{1}）共计{2}。</HH.Ins.Letter.Year.Trick>
+  <HH.Ins.Letter.Year.Total>合计：{0}，占您全年保费的{1}（上限：{2}）。</HH.Ins.Letter.Year.Total>
+  <HH.Ins.Letter.Year.Credit>礼节性返还：已退还您{0}，{1}。</HH.Ins.Letter.Year.Credit>
+  <HH.Ins.Letter.Year.NoCredit>一切均在上限之内。我们称之为公平。</HH.Ins.Letter.Year.NoCredit>
+  <HH.Ins.Upsell.Title>Clawback Mutual 建议</HH.Ins.Upsell.Title>
+  <HH.Ins.Upsell.Body>您在{1}的{0}很不错。多数殖民地选择高端版。</HH.Ins.Upsell.Body>
+  <HH.Ins.Neg.Title>正在就理赔 #{0} 协商</HH.Ins.Neg.Title>
+  <HH.Ins.Neg.Lead>{0}。现报价：{1}（理赔额{2}）。最多三轮。请选择语气。</HH.Ins.Neg.Lead>
+  <HH.Ins.Neg.Negotiator>您的谈判代表：{0}（谈判{1}）</HH.Ins.Neg.Negotiator>
+  <HH.Ins.Neg.NoNegotiator>殖民地里此刻无人能与对方交涉。</HH.Ins.Neg.NoNegotiator>
+  <HH.Ins.Neg.Rounds>剩余轮次：{0}</HH.Ins.Neg.Rounds>
+  <HH.Ins.Neg.Approach.Decency>诉诸基本体面</HH.Ins.Neg.Approach.Decency>
+  <HH.Ins.Neg.Approach.Quote>把合同条款原样念给他们听</HH.Ins.Neg.Approach.Quote>
+  <HH.Ins.Neg.Approach.Lawyers>提及律师</HH.Ins.Neg.Approach.Lawyers>
+  <HH.Ins.Neg.HintDecency>温和而平淡。</HH.Ins.Neg.HintDecency>
+  <HH.Ins.Neg.HintQuote>对可作不同解释的条款最有效。对除外条款毫无用处。</HH.Ins.Neg.HintQuote>
+  <HH.Ins.Neg.HintLawyers>法律盾站在您这边。Brix &amp; Partners 最喜欢纠纷。</HH.Ins.Neg.HintLawyers>
+  <HH.Ins.Neg.HintNoLawyers>您没有法律盾；他们会注意到的。</HH.Ins.Neg.HintNoLawyers>
+  <HH.Ins.Neg.Odds>胜算：{0}</HH.Ins.Neg.Odds>
+  <HH.Ins.Neg.Odds.Slim>渺茫</HH.Ins.Neg.Odds.Slim>
+  <HH.Ins.Neg.Odds.Fair>一般</HH.Ins.Neg.Odds.Fair>
+  <HH.Ins.Neg.Odds.Decent>尚可</HH.Ins.Neg.Odds.Decent>
+  <HH.Ins.Neg.Odds.Good>良好</HH.Ins.Neg.Odds.Good>
+  <HH.Ins.Neg.Odds.Excellent>极佳</HH.Ins.Neg.Odds.Excellent>
+  <HH.Ins.Neg.Try>试试这个</HH.Ins.Neg.Try>
+  <HH.Ins.Neg.Won>已胜</HH.Ins.Neg.Won>
+  <HH.Ins.Neg.Part>部分胜出</HH.Ins.Neg.Part>
+  <HH.Ins.Neg.Lost>已败</HH.Ins.Neg.Lost>
+  <HH.Ins.Neg.Success>他们让步了。或许是首次。全额赔付归您所有：{0}。</HH.Ins.Neg.Success>
+  <HH.Ins.Neg.Partial>经过一番叹息，他们提出{0}（赔付额的{1}）。接受或再试一次。</HH.Ins.Neg.Partial>
+  <HH.Ins.Neg.Fail>理赔部感谢您的意见，但维持其裁定。</HH.Ins.Neg.Fail>
+  <HH.Ins.Neg.NotPossible>此理赔已无法再协商。</HH.Ins.Neg.NotPossible>
+  <HH.Ins.Neg.Cancelled>由于您对条款无礼，Clawback Mutual 决定与您分道扬镳。保单已注销。</HH.Ins.Neg.Cancelled>
+  <HH.Ins.Neg.Free>在此难度下，协商从不让您付出任何代价。</HH.Ins.Neg.Free>
+  <HH.Ins.Neg.RiskHard>较高难度下：第三次失败的救援可能让他们取消你的保单。</HH.Ins.Neg.RiskHard>
+  <HH.Ins.Cancel.Title>取消保单</HH.Ins.Cancel.Title>
+  <HH.Ins.Cancel.Back>算了</HH.Ins.Cancel.Back>
+  <HH.Ins.Cancel.Confirm>提交C-7表格</HH.Ins.Cancel.Confirm>
+  <HH.Ins.Cancel.When>退保大约在 {0} 天后生效：即在你提交之后、至少 {1} 天后的下一次季节更替时。</HH.Ins.Cancel.When>
+  <HH.Ins.Cancel.When.Special>特别退保：因已结算的理赔或保费上涨，即刻生效。</HH.Ins.Cancel.When.Special>
+  <HH.Ins.Cancel.Bundle>退保会使你其他保费上涨 {0}。{1}</HH.Ins.Cancel.Bundle>
+  <HH.Ins.Cancel.Bundle.Future>组合折扣从此刻起下降，不会追溯。</HH.Ins.Cancel.Bundle.Future>
+  <HH.Ins.Cancel.Bundle.Retro>当前季度的折扣将被重新计算并收取。</HH.Ins.Cancel.Bundle.Retro>
+  <HH.Ins.Cancel.FormNote>退保需要C-7表格。偶尔会被退回。{0}</HH.Ins.Cancel.FormNote>
+  <HH.Ins.Cancel.Owed>本保单上有未结的追偿款：{0}。将在最终结算中清偿。</HH.Ins.Cancel.Owed>
+  <HH.Ins.Cancel.Filed>你的退保申请已提交，将于 {0} 后生效。很遗憾你要离开，我们会努力争取再次为你服务。</HH.Ins.Cancel.Filed>
+  <HH.Ins.Cancel.Special>特别退保已提交。保单即刻终止。</HH.Ins.Cancel.Special>
+  <HH.Ins.Cancel.FormErrorSoft>你的C-7表格因格式错误被退回。我们已代你重新提交，所以你的期限得以保全。不必客气。</HH.Ins.Cancel.FormErrorSoft>
+  <HH.Ins.Cancel.FormErrorHard>你的C-7表格因错误被退回（墨水颜色）。期限已错过，顺延一个季度。我们不再置评。</HH.Ins.Cancel.FormErrorHard>
+  <HH.Ins.Retention.Title>离开之前</HH.Ins.Retention.Title>
+  <HH.Ins.Retention.Title2>还有一件事</HH.Ins.Retention.Title2>
+  <HH.Ins.Retention.Title3>德斯蒙德在线上</HH.Ins.Retention.Title3>
+  <HH.Ins.Retention.From>德斯蒙德·塔利，资深挽留专员</HH.Ins.Retention.From>
+  <HH.Ins.Retention.Body>得知 {0} 要离开，我们很难过。如果我们让它为你便宜 {1}，持续 {2} 个季度，怎么样？诚意报价，没有附加条件。（确实有一些条件。它们相当细。）</HH.Ins.Retention.Body>
+  <HH.Ins.Retention.Body2>刚才那个报价不错。这个更好：{0} 享 {1} 折，持续 {2} 个季度。请别把它当成陷阱。</HH.Ins.Retention.Body2>
+  <HH.Ins.Retention.Body3>你的档案已转到我这里。{0}，享 {1} 折，{2} 个季度。我会亲自把你的退保转给正在休假的同事。</HH.Ins.Retention.Body3>
+  <HH.Ins.Retention.MinTerm>折扣意味着新的最短期限：在它结束前你不能离开。</HH.Ins.Retention.MinTerm>
+  <HH.Ins.Retention.Keep>保留我的保单，享 {0} 折</HH.Ins.Retention.Keep>
+  <HH.Ins.Retention.Still>不了，谢谢，我还是要退保</HH.Ins.Retention.Still>
+  <HH.Ins.Retention.Kept>欢迎回来。你的折扣为 {0}，持续 {1} 个季度。</HH.Ins.Retention.Kept>
+  <HH.Ins.UI.NoGame>Clawback Mutual 在游戏之外不营业。</HH.Ins.UI.NoGame>
+  <HH.Ins.UI.Footer>保险是一种承诺。我们只兑现写在纸面上的部分。</HH.Ins.UI.Footer>
+  <HH.Ins.UI.Spendable>支付来源：{0}</HH.Ins.UI.Spendable>
+  <HH.Ins.UI.PayFrom>保费从 {0} 中扣除。</HH.Ins.UI.PayFrom>
+  <HH.Ins.UI.Running>当前保费：每天 {0}</HH.Ins.UI.Running>
+  <HH.Ins.UI.Bundle.Title>组合：</HH.Ins.UI.Bundle.Title>
+  <HH.Ins.UI.Bundle.None>你的第一份保单最难办。第三份可使所有保单享 10% 优惠。</HH.Ins.UI.Bundle.None>
+  <HH.Ins.UI.Bundle.Some>有效保单 {0} 份，优惠 {1}。第三份可得 {2}。</HH.Ins.UI.Bundle.Some>
+  <HH.Ins.UI.Bundle.Full>有效保单 {0} 份：所有保费优惠 {1}。</HH.Ins.UI.Bundle.Full>
+  <HH.Ins.UI.Bundle.Retro>（退保会重新计算当前季度。）</HH.Ins.UI.Bundle.Retro>
+  <HH.Ins.UI.Covers>承保范围：</HH.Ins.UI.Covers>
+  <HH.Ins.UI.Badge>多数殖民地选择高级版</HH.Ins.UI.Badge>
+  <HH.Ins.UI.Price>每 {1} 天 {0}</HH.Ins.UI.Price>
+  <HH.Ins.UI.Price.Travel>每人每个旅行日 {0}</HH.Ins.UI.Price.Travel>
+  <HH.Ins.UI.Price.Tip>价格是如何算出的
+{0}
+
+每季度：{1}</HH.Ins.UI.Price.Tip>
+  <HH.Ins.UI.Mech.Property>自留份额 {0}，赔付价值的 {1}。</HH.Ins.UI.Mech.Property>
+  <HH.Ins.UI.Mech.Person>残疾率 {0} % 起赔，最高可达基本保额的 {1}。</HH.Ins.UI.Mech.Person>
+  <HH.Ins.UI.Pay.Instant>即时赔付。</HH.Ins.UI.Pay.Instant>
+  <HH.Ins.UI.Pay.Days>在 {0}-{1} 天内赔付。</HH.Ins.UI.Pay.Days>
+  <HH.Ins.UI.SignNow>立即签约</HH.Ins.UI.SignNow>
+  <HH.Ins.UI.Signed>已签约</HH.Ins.UI.Signed>
+  <HH.Ins.UI.SignedOther>你已拥有 {0}</HH.Ins.UI.SignedOther>
+  <HH.Ins.UI.SignedMsg>已于 {0} 签约（{1}）。欢迎加入 Clawback Mutual。</HH.Ins.UI.SignedMsg>
+  <HH.Ins.UI.For>投保对象：{0}</HH.Ins.UI.For>
+  <HH.Ins.UI.Insured>被保险人</HH.Ins.UI.Insured>
+  <HH.Ins.UI.SumProperty>保险金额：{0}</HH.Ins.UI.SumProperty>
+  <HH.Ins.UI.SumPerson>基本保额：{0}</HH.Ins.UI.SumPerson>
+  <HH.Ins.UI.SumCap>每次理赔上限：{0}</HH.Ins.UI.SumCap>
+  <HH.Ins.UI.Customize>自定义</HH.Ins.UI.Customize>
+  <HH.Ins.UI.Riders.Hidden>已为你选定 {0} 项附加险。</HH.Ins.UI.Riders.Hidden>
+  <HH.Ins.UI.Riders.Pre>（已为你勾选）</HH.Ins.UI.Riders.Pre>
+  <HH.Ins.UI.Riders.Sum>附加险：+{0}</HH.Ins.UI.Riders.Sum>
+  <HH.Ins.UI.Riders.BasicOnly>仅基本险</HH.Ins.UI.Riders.BasicOnly>
+  <HH.Ins.UI.PremiumPlus>高级加强版（即将推出）</HH.Ins.UI.PremiumPlus>
+  <HH.Ins.UI.FinePrint>细则</HH.Ins.UI.FinePrint>
+  <HH.Ins.UI.Fine.Intro>{0} 条款（为方便阅读而节选）：</HH.Ins.UI.Fine.Intro>
+  <HH.Ins.UI.Fine.Tail>完整条款即我们标语中提到的400页。另见「细则」标签页。</HH.Ins.UI.Fine.Tail>
+  <HH.Ins.UI.Mine.None>你还没有保单。这是我们唯一确定的一件事。</HH.Ins.UI.Mine.None>
+  <HH.Ins.UI.Mine.Sum>保额：{0}</HH.Ins.UI.Mine.Sum>
+  <HH.Ins.UI.Mine.NoClaims>无理赔等级 {0}（-{1}）</HH.Ins.UI.Mine.NoClaims>
+  <HH.Ins.UI.Mine.Waiting>等待期：还剩 {0}</HH.Ins.UI.Mine.Waiting>
+  <HH.Ins.UI.Mine.Discount>挽留折扣 -{0}</HH.Ins.UI.Mine.Discount>
+  <HH.Ins.UI.Mine.Owed>未结追偿 {0}</HH.Ins.UI.Mine.Owed>
+  <HH.Ins.UI.Mine.Paid>已付保费：{0}  ·  已获赔付：{1}</HH.Ins.UI.Mine.Paid>
+  <HH.Ins.UI.Mine.Ended>终止于：{0}</HH.Ins.UI.Mine.Ended>
+  <HH.Ins.UI.Mine.Upsell>多数殖民地选择高级版。</HH.Ins.UI.Mine.Upsell>
+  <HH.Ins.UI.Mine.CancelLink>取消保单</HH.Ins.UI.Mine.CancelLink>
+  <HH.Ins.UI.Mine.CancelPending>退保将于 {0} 后生效</HH.Ins.UI.Mine.CancelPending>
+  <HH.Ins.UI.Mine.FormError>（表格错误）</HH.Ins.UI.Mine.FormError>
+  <HH.Ins.UI.Mine.Withdraw>撤回退保</HH.Ins.UI.Mine.Withdraw>
+  <HH.Ins.UI.Mine.Foot>保单自动续期（第31条）。特别退保：在理赔结算或保费上涨后，你可在五天内即刻离开。</HH.Ins.UI.Mine.Foot>
+  <HH.Ins.UI.Debt>根据第22条，你欠 Clawback Mutual {0}。</HH.Ins.UI.Debt>
+  <HH.Ins.UI.Debt.Settle>立即结清</HH.Ins.UI.Debt.Settle>
+  <HH.Ins.UI.Debt.Cannot>你目前无法支付这笔款项。</HH.Ins.UI.Debt.Cannot>
+  <HH.Ins.UI.Claims.None>没有理赔。Clawback Mutual 很高兴，也有一点怀疑。</HH.Ins.UI.Claims.None>
+  <HH.Ins.UI.Claims.Log>时间线</HH.Ins.UI.Claims.Log>
+  <HH.Ins.UI.Claim.Review>审核中：还剩 {0}</HH.Ins.UI.Claim.Review>
+  <HH.Ins.UI.Claim.Window>协商期：{0}</HH.Ins.UI.Claim.Window>
+  <HH.Ins.UI.Claim.PaysIn>{0} 后赔付</HH.Ins.UI.Claim.PaysIn>
+  <HH.Ins.UI.Claim.Paid>已赔付：{0}</HH.Ins.UI.Claim.Paid>
+  <HH.Ins.UI.Claim.Closed>已结案</HH.Ins.UI.Claim.Closed>
+  <HH.Ins.UI.Claim.Line>{0}  ·  损失 {1}  ·  理赔 {2}  ·  报价 {3}</HH.Ins.UI.Claim.Line>
+  <HH.Ins.UI.Claim.Preview>预览：等级 {0}%，赔付 {1}，评估于 {2} 后完成</HH.Ins.UI.Claim.Preview>
+  <HH.Ins.UI.Claim.Details>详情</HH.Ins.UI.Claim.Details>
+  <HH.Ins.UI.Fine.Title>细则条款</HH.Ins.UI.Fine.Title>
+  <HH.Ins.UI.Fine.Lead>十五条条款，按原文印出。在一定的销售压力下，它们只作为参考显示。灰色条款在你的难度下不生效。</HH.Ins.UI.Fine.Lead>
+  <HH.Ins.UI.Fine.Inactive>此难度下未生效</HH.Ins.UI.Fine.Inactive>
+  <HH.Ins.UI.Limbs.Title>肢体赔付表</HH.Ins.UI.Limbs.Title>
+  <HH.Ins.UI.Limbs.Lead>数值为基本保额的百分比，按侧计算。失去的部位计其自身数值，并替代其下属部位的数值；多个部位相加最多为 100%。</HH.Ins.UI.Limbs.Lead>
+  <HH.Enum.TrickMode.Follows>随销售压力变化</HH.Enum.TrickMode.Follows>
+  <HH.Enum.TrickMode.On>始终开启</HH.Enum.TrickMode.On>
+  <HH.Enum.TrickMode.Off>关闭</HH.Enum.TrickMode.Off>
+</LanguageData>

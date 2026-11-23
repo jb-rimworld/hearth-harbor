@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_BackRoomDoor.label>奥の部屋の扉</HH_BackRoomDoor.label>
+  <HH_BackRoomDoor.description>ありふれた見た目の、頑丈な鍵のついた扉です。入植者本人と怪しげな客だけが開けられます。奥の部屋の扉以外に何もない部屋は、店の名声に影響しません。</HH_BackRoomDoor.description>
+  <HH_FightPitMarker.label>闘技場マーカー</HH_FightPitMarker.label>
+  <HH_FightPitMarker.description>周囲を柵で囲んだ競技場を示します。内側に少なくとも 3×3 マス以上の閉じた柵(門でも可)を作り、その中央にこのマーカーを置くと闘技場が開きます。志願者、囚人、動物が戦い、客が賭け、店は賭け金の総額の一割を受け取ります。試合は、どちらかが降参するか倒れると終わります。死ぬまで戦うのはダークな内容以降のみで、志願者と子供には決して適用されません。</HH_FightPitMarker.description>
+  <HH_FenceCounter.label>故買屋のカウンター</HH_FenceCounter.label>
+  <HH_FenceCounter.description>傷だらけのカウンターです。信頼できる故買屋が盗品を価値の四割で買い取り、怪しげな買い手に七割で売ります。故買屋は独自の現金箱で動き、あなたの金庫から補充されます。品物の持ち主が、時々それを突き止めることがあります。</HH_FenceCounter.description>
+  <HH_SmugglerDock.label>密輸者の桟橋</HH_SmugglerDock.label>
+  <HH_SmugglerDock.description>日陰のランプが置かれた、むき出しの着陸台です。夜になると、時々木箱が降ろされ、質問なしで安く売り出されます。時折、誰かがそのランプに気づきます。</HH_SmugglerDock.description>
+  <HH_HuntingGroundMarker.label>狩場マーカー</HH_HuntingGroundMarker.label>
+  <HH_HuntingGroundMarker.description>周囲を柵で囲んだ狩場を示します(少なくとも 60 マス、閉鎖済み)。裕福な狩人は、ここへ連れてこられた動物を撃つために金を払います。ダークな内容と適合する信条があれば、囚人が獲物になることもあります。これは別途、警告の上で有効にします。</HH_HuntingGroundMarker.description>
+  <HH_OrganClinic.label>診療所のカウンター</HH_OrganClinic.label>
+  <HH_OrganClinic.description>冷たいカウンターで、摘出された臓器が匿名の提供者のために置かれます。提供者は夜に取りに来て、何も言わずに支払います。ダークまたはグリムな内容のときのみ。臓器取引を忌み嫌う思想は、あなたをそのことで責めるでしょう。</HH_OrganClinic.description>
+</LanguageData>

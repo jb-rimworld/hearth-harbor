@@ -1,0 +1,5 @@
+{
+ "d:DesignationCategoryDef/HH_Bank.label": "银行",
+ "d:DesignationCategoryDef/HH_Bank.description": "银行的自动取款机、柜台和夜间保险箱，以及其保险办公室的办公桌。",
+ "d:ResearchTabDef/HH_Banking.label": "银行业务"
+}

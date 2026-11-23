@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Cookbook.label>libro de recetas</HH_Cookbook.label>
+  <HH_Cookbook.description>Un libro de recetas grasiento y con las esquinas dobladas, anotado por alguien que claramente cocinaba bajo fuego. Leerlo enseña a la colonia los platos que contiene.</HH_Cookbook.description>
+  <HH_Plate_Soup.label>bol de sopa</HH_Plate_Soup.label>
+  <HH_Plate_Soup.description>Un bol de algo caliente y líquido. Se come con cuchara, con una oración o con las dos.</HH_Plate_Soup.description>
+  <HH_Plate_Stew.label>olla de guiso</HH_Plate_Stew.label>
+  <HH_Plate_Stew.description>Un cuenco pesado de guiso cocinado a fuego lento, humeando con la promesa de una segunda ración.</HH_Plate_Stew.description>
+  <HH_Plate_Grill.label>bandeja a la parrilla</HH_Plate_Grill.label>
+  <HH_Plate_Grill.description>Carne que ha tenido una conversación con una llama abierta y la ha perdido.</HH_Plate_Grill.description>
+  <HH_Plate_Noodles.label>bol de fideos</HH_Plate_Noodles.label>
+  <HH_Plate_Noodles.description>Un enredo de fideos en un bol. Sorber no es opcional.</HH_Plate_Noodles.description>
+  <HH_Plate_Rice.label>plato de arroz</HH_Plate_Rice.label>
+  <HH_Plate_Rice.description>Un montón de arroz con opiniones, servido en un plato con un tenedor que nadie pidió.</HH_Plate_Rice.description>
+  <HH_Plate_Bake.label>plato al horno</HH_Plate_Bake.label>
+  <HH_Plate_Bake.description>Algo que entró en el horno como ingredientes y salió como una decisión.</HH_Plate_Bake.description>
+  <HH_Plate_Fry.label>plato frito</HH_Plate_Fry.label>
+  <HH_Plate_Fry.description>Dorado, crujiente y brutalmente poco saludable. Exactamente lo que pidió la colonia.</HH_Plate_Fry.description>
+  <HH_Plate_Salad.label>plato de ensalada</HH_Plate_Salad.label>
+  <HH_Plate_Salad.description>Un plato frío con muchas hojas, muy poco remordimiento y una vida útil corta.</HH_Plate_Salad.description>
+  <HH_Plate_Raw.label>plato crudo</HH_Plate_Raw.label>
+  <HH_Plate_Raw.description>En láminas finas, con una presentación cara y definitivamente sin cocinar.</HH_Plate_Raw.description>
+  <HH_Plate_Breakfast.label>plato de desayuno</HH_Plate_Breakfast.label>
+  <HH_Plate_Breakfast.description>Un plato que anuncia que el día ha empezado, te guste o no.</HH_Plate_Breakfast.description>
+  <HH_Plate_Dessert.label>plato de postre</HH_Plate_Dessert.label>
+  <HH_Plate_Dessert.description>Una pequeña recompensa, dulce, por sobrevivir a otro día en el Rim.</HH_Plate_Dessert.description>
+  <HH_Plate_StreetFood.label>bandeja de comida callejera</HH_Plate_StreetFood.label>
+  <HH_Plate_StreetFood.description>Caliente, para comer con la mano y mejor de pie, rápido, con un ojo puesto en las salidas.</HH_Plate_StreetFood.description>
+  <HH_Station_PrepCounter.label>mesa de preparación</HH_Station_PrepCounter.label>
+  <HH_Station_PrepCounter.description>Una encimera con marcas, con tabla de cortar, un buen cuchillo y una ranura de desagüe que nadie pidió. Pica, corta y trincha aquí; los demás aparatos de un plato deben estar cerca.</HH_Station_PrepCounter.description>
+  <HH_Station_StockPot.label>olla de caldo</HH_Station_StockPot.label>
+  <HH_Station_StockPot.description>Una gran olla de hierro sobre un fuego de leña. Cuece a fuego lento, hierve y guisa cualquier cosa que alguna vez estuvo viva. Consume leña mientras trabaja.</HH_Station_StockPot.description>
+  <HH_Station_Grill.label>parrilla</HH_Station_Grill.label>
+  <HH_Station_Grill.description>Una rejilla sobre brasas incandescentes. La carne entra cruda y sale con opiniones. Consume leña mientras trabaja.</HH_Station_Grill.description>
+  <HH_Station_Oven.label>horno</HH_Station_Oven.label>
+  <HH_Station_Oven.description>Un horno de piedra y hierro para asar y hornear. Tarda mucho en calentarse y poco en arruinar la cena. Consume leña mientras trabaja.</HH_Station_Oven.description>
+  <HH_Station_WokStation.label>estación de wok</HH_Station_WokStation.label>
+  <HH_Station_WokStation.description>Una sartén de fondo redondo sobre una llama rugiente. Aquí todo se saltea, incluidas las cejas del cocinero. Consume leña mientras trabaja.</HH_Station_WokStation.description>
+  <HH_Station_DeepFryer.label>freidora</HH_Station_DeepFryer.label>
+  <HH_Station_DeepFryer.description>Una cuba de aceite hirviendo con una cesta y una fuerte noción de su propio peligro. Eléctrica. Se incendia más fácilmente que cualquier otra cosa de la cocina.</HH_Station_DeepFryer.description>
+  <HH_Station_Smoker.label>ahumador</HH_Station_Smoker.label>
+  <HH_Station_Smoker.description>Un alto armario de madera que convierte la carne en algo que dura. Necesita virutas de madera, paciencia y ningún vecino. Consume leña mientras trabaja.</HH_Station_Smoker.description>
+  <HH_Station_Steamer.label>vaporera</HH_Station_Steamer.label>
+  <HH_Station_Steamer.description>Cestas de bambú apiladas sobre una olla de agua hirviendo. Blandas, suaves y casi imposibles de quemar. Consume leña mientras trabaja.</HH_Station_Steamer.description>
+  <HH_Station_DoughBench.label>mesa de amasar</HH_Station_DoughBench.label>
+  <HH_Station_DoughBench.description>Un banco pesado con la superficie espolvoreada de harina. Aquí se machacan arroz y maíz hasta hacer masa, lo cual sale más barato que la terapia.</HH_Station_DoughBench.description>
+  <HH_Station_ColdStation.label>estación fría</HH_Station_ColdStation.label>
+  <HH_Station_ColdStation.description>Una encimera refrigerada que mantiene crujientes las ensaladas y firmes los postres. Eléctrica.</HH_Station_ColdStation.description>
+</LanguageData>

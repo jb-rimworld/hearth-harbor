@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Clause_1.label>periodo de carencia</SL_Clause_1.label>
+  <SL_Clause_1.description>La cobertura empieza tras el periodo de carencia.</SL_Clause_1.description>
+  <SL_Clause_3_2.label>accidentes y cocina</SL_Clause_3_2.label>
+  <SL_Clause_3_2.description>La enfermedad no es un accidente.</SL_Clause_3_2.description>
+  <SL_Clause_4.label>actos del narrador</SL_Clause_4.label>
+  <SL_Clause_4.description>Los daños por el clima son una zona gris.</SL_Clause_4.description>
+  <SL_Clause_7b.label>incursiones y asedios</SL_Clause_7b.label>
+  <SL_Clause_7b.description>Los asedios y los grupos de mecanoides son una zona gris.</SL_Clause_7b.description>
+  <SL_Clause_9.label>preexistencias</SL_Clause_9.label>
+  <SL_Clause_9.description>Los daños que ya existían antes se descuentan.</SL_Clause_9.description>
+  <SL_Clause_11.label>daños autoinfligidos</SL_Clause_11.label>
+  <SL_Clause_11.description>Los daños causados por tu propia gente quedan excluidos.</SL_Clause_11.description>
+  <SL_Clause_14b.label>muros y puertas</SL_Clause_14b.label>
+  <SL_Clause_14b.description>Una puerta rota es una zona gris.</SL_Clause_14b.description>
+  <SL_Clause_17.label>la otra cláusula</SL_Clause_17.label>
+  <SL_Clause_17.description>Un día más de revisión. Desde Overbooked, zona gris.</SL_Clause_17.description>
+  <SL_Clause_21.label>piezas biónicas</SL_Clause_21.label>
+  <SL_Clause_21.description>Las biónicas son equipamiento.</SL_Clause_21.description>
+  <SL_Clause_22.label>regeneración</SL_Clause_22.label>
+  <SL_Clause_22.description>Si una parte perdida vuelve a crecer, también vuelve la reclamación.</SL_Clause_22.description>
+  <SL_Clause_23.label>evaluación y muerte</SL_Clause_23.label>
+  <SL_Clause_23.description>Morir antes de terminar la evaluación la da por concluida.</SL_Clause_23.description>
+  <SL_Clause_26.label>cambios de riesgo</SL_Clause_26.label>
+  <SL_Clause_26.description>Las primas siguen al peligro.</SL_Clause_26.description>
+  <SL_Clause_30.label>formulario C-7</SL_Clause_30.label>
+  <SL_Clause_30.description>Las cancelaciones pueden volver con un error de formulario.</SL_Clause_30.description>
+  <SL_Clause_31.label>renovación automática</SL_Clause_31.label>
+  <SL_Clause_31.description>Las pólizas se renuevan solas.</SL_Clause_31.description>
+  <SL_Clause_40.label>conflicto de intereses</SL_Clause_40.label>
+  <SL_Clause_40.description>Desde Overbooked, Legal Shield no ayuda frente a Clawback Mutual.</SL_Clause_40.description>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Banking.label>caixas eletrônicos automáticos</SL_Banking.label>
+  <SL_Banking.description>Máquinas que entregam prata a quem digitar os quatro dígitos certos. Desbloqueia o caixa eletrônico e o cofre noturno.</SL_Banking.description>
+  <SL_Branches.label>agências bancárias</SL_Branches.label>
+  <SL_Branches.description>Um balcão decente, um cofre decente e uma fila decente. Desbloqueia o guichê bancário: depósitos instantâneos, dinheiro instantâneo, pedidos de empréstimo presenciais.</SL_Branches.description>
+  <SL_Credit.label>crédito ao consumidor</SL_Credit.label>
+  <SL_Credit.description>Dinheiro que você não tem, para pessoas que também não têm. Desbloqueia empréstimos, a pontuação de crédito e, se chegar a esse ponto, a agência de cobrança.</SL_Credit.description>
+</LanguageData>

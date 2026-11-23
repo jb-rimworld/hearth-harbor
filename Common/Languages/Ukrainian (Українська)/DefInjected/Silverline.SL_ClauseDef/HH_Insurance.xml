@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Clause_1.label>період очікування</SL_Clause_1.label>
+  <SL_Clause_1.description>Покриття починається після періоду очікування.</SL_Clause_1.description>
+  <SL_Clause_3_2.label>нещасні випадки і кулінарія</SL_Clause_3_2.label>
+  <SL_Clause_3_2.description>Хвороба не є нещасним випадком.</SL_Clause_3_2.description>
+  <SL_Clause_4.label>дії оповідача</SL_Clause_4.label>
+  <SL_Clause_4.description>Пошкодження від погоди — сіра зона.</SL_Clause_4.description>
+  <SL_Clause_7b.label>рейди й облоги</SL_Clause_7b.label>
+  <SL_Clause_7b.description>Облоги та скупчення механоїдів — сіра зона.</SL_Clause_7b.description>
+  <SL_Clause_9.label>попередні захворювання</SL_Clause_9.label>
+  <SL_Clause_9.description>Пошкодження, що були раніше, віднімаються.</SL_Clause_9.description>
+  <SL_Clause_11.label>самозавдане пошкодження</SL_Clause_11.label>
+  <SL_Clause_11.description>Пошкодження, завдані власними людьми, виключаються.</SL_Clause_11.description>
+  <SL_Clause_14b.label>стіни й двері</SL_Clause_14b.label>
+  <SL_Clause_14b.description>Зламані двері — сіра зона.</SL_Clause_14b.description>
+  <SL_Clause_17.label>інший пункт</SL_Clause_17.label>
+  <SL_Clause_17.description>Ще один день перегляду. З Overbooked — сіра зона.</SL_Clause_17.description>
+  <SL_Clause_21.label>біонічні частини</SL_Clause_21.label>
+  <SL_Clause_21.description>Біоніка — це спорядження.</SL_Clause_21.description>
+  <SL_Clause_22.label>регенерація</SL_Clause_22.label>
+  <SL_Clause_22.description>Якщо втрачена частина відросте, відросте й вимога.</SL_Clause_22.description>
+  <SL_Clause_23.label>оцінка і смерть</SL_Clause_23.label>
+  <SL_Clause_23.description>Смерть до завершення оцінки припиняє оцінку.</SL_Clause_23.description>
+  <SL_Clause_26.label>зміни ризику</SL_Clause_26.label>
+  <SL_Clause_26.description>Премії йдуть за небезпекою.</SL_Clause_26.description>
+  <SL_Clause_30.label>форма C-7</SL_Clause_30.label>
+  <SL_Clause_30.description>Розірвання може повернутися з помилкою оформлення.</SL_Clause_30.description>
+  <SL_Clause_31.label>автоматичне поновлення</SL_Clause_31.label>
+  <SL_Clause_31.description>Поліси поновлюються самі.</SL_Clause_31.description>
+  <SL_Clause_40.label>конфлікт інтересів</SL_Clause_40.label>
+  <SL_Clause_40.description>З Overbooked Legal Shield не допомагає проти Clawback Mutual.</SL_Clause_40.description>
+</LanguageData>

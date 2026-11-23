@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Cinema.label>영화관</HH_Venue_Cinema.label>
+  <HH_Venue_Cinema.description>프로젝터 스크린과 좌석이 많이 놓인 어두운 방입니다. 손님은 다음 상영 티켓을 삽니다. 상영은 영화 길이만큼 이어지며, 잠들었다고 환불되지는 않습니다. 전력이 공급된 프로젝터 스크린과 그 앞의 좌석이 최소 몇 개는 필요합니다.</HH_Venue_Cinema.description>
+  <HH_Venue_Salon.label>미용실</HH_Venue_Salon.label>
+  <HH_Venue_Salon.description>미용 의자가 놓인 방입니다. 손님은 머리 자르기, 새 스타일, 염색, 또는 올바른 이념이 있다면 문신에 돈을 냅니다. 응대 작업 종류를 가진 식민지 주민이 작업을 합니다. 응대할 사람이 없으면 미용실은 문을 닫습니다.</HH_Venue_Salon.description>
+  <HH_Venue_Gallery.label>갤러리</HH_Venue_Gallery.label>
+  <HH_Venue_Gallery.description>좋은 빛 아래 걸린 조각들로 가득한 방입니다. 손님은 소액의 입장료를 내고 작품을 하나씩 지나갑니다. 작품이 아름다울수록 손님은 더 행복하게 떠납니다. 방에 작품이 몇 점 있어야 합니다.</HH_Venue_Gallery.description>
+</LanguageData>

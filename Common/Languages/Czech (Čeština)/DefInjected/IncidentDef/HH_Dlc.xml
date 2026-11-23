@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_NobleStay.label>šlechtický pobyt</HH_NobleStay.label>
+  <HH_NobleStay.letterLabel>Nabídnut šlechtický pobyt</HH_NobleStay.letterLabel>
+  <HH_NobleStay.letterText>Šlechtická družina žádá o ubytování.</HH_NobleStay.letterText>
+  <HH_ImperialBilleting.label>císařské ubytování</HH_ImperialBilleting.label>
+  <HH_ImperialBilleting.letterLabel>Císařské ubytování</HH_ImperialBilleting.letterLabel>
+  <HH_ImperialBilleting.letterText>Říše vyžaduje ubytování.</HH_ImperialBilleting.letterText>
+</LanguageData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Hosting.labelShort>hostit</HH_Hosting.labelShort>
+  <HH_Hosting.pawnLabel>Hostitel</HH_Hosting.pawnLabel>
+  <HH_Hosting.gerundLabel>hostění</HH_Hosting.gerundLabel>
+  <HH_Hosting.description>Odbavovat hosty při příjezdu i odjezdu, provázet je, zabavit je a přesvědčit je, aby zůstali (nebo se přidali).</HH_Hosting.description>
+  <HH_Hosting.verb>Hostit</HH_Hosting.verb>
+  <HH_Serving.labelShort>obsluhovat</HH_Serving.labelShort>
+  <HH_Serving.pawnLabel>Číšník</HH_Serving.pawnLabel>
+  <HH_Serving.gerundLabel>obsluhování</HH_Serving.gerundLabel>
+  <HH_Serving.description>Obsluha pultů, stolů a pokladen: přijímat objednávky, podávat jídla a nápoje, provozovat kasinový parket a doplňovat regály.</HH_Serving.description>
+  <HH_Serving.verb>Obsluhovat</HH_Serving.verb>
+</LanguageData>

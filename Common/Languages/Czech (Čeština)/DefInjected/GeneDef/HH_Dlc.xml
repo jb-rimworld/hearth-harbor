@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Gene_Hospitable.label>pohostinný</HH_Gene_Hospitable.label>
+  <HH_Gene_Hospitable.description>Nositelé jsou vřelí, aniž by se snažili. Hosté se s nimi snadno cítí a pohostinství jim jde rychleji.</HH_Gene_Hospitable.description>
+  <HH_Gene_AddictionProofReward.label>odolný odměnový okruh</HH_Gene_AddictionProofReward.label>
+  <HH_Gene_AddictionProofReward.description>Odměnový okruh mozku téměř nereaguje na riziko a náhodu. Hazard se jen zřídka změní v návyk.</HH_Gene_AddictionProofReward.description>
+  <HH_Gene_Compulsive.label>nutkavý</HH_Gene_Compulsive.label>
+  <HH_Gene_Compulsive.description>Přehnaně aktivní odměnový okruh. Hazard baví o trochu víc a přestat s ním je mnohem těžší.</HH_Gene_Compulsive.description>
+  <HH_Gene_DexterousFingers.label>obratné prsty</HH_Gene_DexterousFingers.label>
+  <HH_Gene_DexterousFingers.description>Neobvykle jemná kontrola rukou: míchání, rozdávání i šikovné schovávání karet jdou samo.</HH_Gene_DexterousFingers.description>
+  <HH_Gene_RefinedPalate.label>vybraný jazyk</HH_Gene_RefinedPalate.label>
+  <HH_Gene_RefinedPalate.description>Jazyk, který pozná dobré vaření od pouze jedlého. Kuchaři častěji zvyšují kvalitu pokrmů; jako host nositel očekává víc a víc spropituje.</HH_Gene_RefinedPalate.description>
+  <HH_Gene_NumberSense.label>smysl pro čísla</HH_Gene_NumberSense.label>
+  <HH_Gene_NumberSense.description>Čísla se sama uspořádají. Krupiéři, pokladní a bankovní úředníci s tímto genem pracují, jako by měli o tři úrovně vyšší dovednost.</HH_Gene_NumberSense.description>
+  <HH_Gene_TirelessSmile.label>nepolevující úsměv</HH_Gene_TirelessSmile.label>
+  <HH_Gene_TirelessSmile.description>Svaly úsměvu se neunaví. Obsluha u stolů a pultů ubírá odpočinek mnohem pomaleji.</HH_Gene_TirelessSmile.description>
+  <HH_Gene_SilverTongue.label>stříbrný jazyk</HH_Gene_SilverTongue.label>
+  <HH_Gene_SilverTongue.description>Hlas, díky kterému zní každá cena jako výhodná nabídka. Hosté očekávají o něco méně a loajalita přijde levněji.</HH_Gene_SilverTongue.description>
+  <HH_Gene_HighRoller.label>velký sázkař</HH_Gene_HighRoller.label>
+  <HH_Gene_HighRoller.description>Nositelé se cítí nejživěji, když jsou sázky vysoké. Sázejí víc, baví je to více a štědře spropitují, ale od stolu se jich těžko odtrhne.</HH_Gene_HighRoller.description>
+</LanguageData>

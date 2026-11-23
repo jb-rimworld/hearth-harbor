@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.Underworld>Unterwelt</HH.Tab.Underworld>
+  <HH.Underworld.GateClosed>Nicht verfügbar: Die Unterwelt ist in diesem Spiel geschlossen.</HH.Underworld.GateClosed>
+  <HH.Underworld.BackRoomDoorInfo>Nur Personal, Kolonisten und zwielichtige Gäste können diese Tür öffnen.</HH.Underworld.BackRoomDoorInfo>
+  <HH.Underworld.Stranger.Title>Ein Fremder am Tor</HH.Underworld.Stranger.Title>
+  <HH.Underworld.Stranger.Text>Ein Fremder mit tief ins Gesicht gezogenem Hut wartet vor deiner Tür, bis das Personal außer Hörweite ist.\n\n"Nettes Haus", sagt er. "Gibt es ein Hinterzimmer?"\n\nWas er damit meint, sagt er nicht. Er muss es auch nicht.</HH.Underworld.Stranger.Text>
+  <HH.Underworld.Stranger.Show>Zeig es ihm</HH.Underworld.Stranger.Show>
+  <HH.Underworld.Stranger.No>Kein Interesse</HH.Underworld.Stranger.No>
+  <HH.Underworld.Stranger.Never>Nie wieder fragen</HH.Underworld.Stranger.Never>
+  <HH.Underworld.Unlocked.Title>Das Hinterzimmer</HH.Underworld.Unlocked.Title>
+  <HH.Underworld.Unlocked.Text>Du hast ihm das Hinterzimmer gezeigt, und er nickte, als hättest du eine Prüfung bestanden. Ein neuer Forschungszweig steht dir offen: das Hinterzimmer, mit Türen, einer Kampfgrube, dem Tresen eines Hehlers, einem Schmugglerdock und einer Lounge. Dein Flüsterruf (das Ansehen in der Unterwelt) folgt ab jetzt dem, was du baust.\n\nDu kannst das alles ignorieren. Nichts davon ist Pflicht.</HH.Underworld.Unlocked.Text>
+  <HH.Underworld.Warn.Title>Inhaltswarnung</HH.Underworld.Warn.Title>
+  <HH.Underworld.Warn.Dark>Düstere Inhalte erweitern die Unterwelt: Gefangene können in der Grube auf Leben und Tod kämpfen, Banden können Gefangene härter verhören, Jäger können Gefangene jagen (mit passender Ideologie), und ein Klinikschalter kauft entnommene Organe.\n\nDas erscheint nur als Text und als gewöhnliche Spielverletzungen. Kinder nehmen nie teil, und nichts davon schaltet sich von selbst ein.\n\nWillst du das in diesem Spiel?</HH.Underworld.Warn.Dark>
+  <HH.Underworld.Warn.Grim>Grimmige Inhalte umfassen alles aus den düsteren Inhalten, und die Jagd auf Gefangene fragt nicht mehr nach deiner Ideologie. Organkäufer geben Bestellungen mit Fristen auf.\n\nDas erscheint nur als Text und als gewöhnliche Spielverletzungen. Kinder nehmen nie teil, und nichts davon schaltet sich von selbst ein.\n\nWillst du das in diesem Spiel?</HH.Underworld.Warn.Grim>
+  <HH.Underworld.Warn.Accept>Ja, ich verstehe</HH.Underworld.Warn.Accept>
+  <HH.Underworld.Warn.Back>Nein, zurück zu Standard</HH.Underworld.Warn.Back>
+  <HH.Underworld.Warn.Hunt>Du bist dabei, die Jagd auf Gefangene in einem Jagdgebiet zu erlauben. Ein Gefangener wird mit Vorsprung ins Gebiet entlassen; hält er die festgelegte Zeit durch oder erreicht die Zaunlinie, ist er frei, und seine Fraktion erfährt in jedem Fall davon. Stirbt er, werden es ihm seine Fraktion, deine Kolonisten und deine Gäste nicht verzeihen.\n\nDas wird nur als Text dargestellt. Willst du es erlauben?</HH.Underworld.Warn.Hunt>
+  <HH.Underworld.Warn.Organ>Ein Klinikschalter kauft nachts entnommene Organe von anonymen Spendern. Ideologien, die den Organhandel verabscheuen, werden es dir anlasten, und dein Flüsterruf steigt mit jedem Verkauf.\n\nDas wird nur als Text dargestellt. Willst du ihn behalten?</HH.Underworld.Warn.Organ>
+  <HH.Underworld.Warn.Keep>Ja, behalten</HH.Underworld.Warn.Keep>
+  <HH.Underworld.Warn.Remove>Nein, entfernen</HH.Underworld.Warn.Remove>
+  <HH.Underworld.Scandal.BackRoomFound.Title>Das Hinterzimmer ist aufgeflogen</HH.Underworld.Scandal.BackRoomFound.Title>
+  <HH.Underworld.Scandal.BackRoomFound.Text>Ein ehrbarer Gast hat die falsche Tür geöffnet und gesehen, was das Haus dahinter verbirgt. Bis zum Abend weiß es die ganze Stadt.</HH.Underworld.Scandal.BackRoomFound.Text>
+  <HH.Underworld.Scandal.LeakedLedger.Title>Durchgesickertes Kassenbuch</HH.Underworld.Scandal.LeakedLedger.Title>
+  <HH.Underworld.Scandal.LeakedLedger.Text>Eine Seite aus der Bestandsliste des Hehlers ist in die falschen Hände geraten. Die Waren lassen sich bis zu deinem Tresen zurückverfolgen.</HH.Underworld.Scandal.LeakedLedger.Text>
+  <HH.Underworld.Scandal.SecretCasinoRumour.Title>Gerücht über ein Geheimcasino</HH.Underworld.Scandal.SecretCasinoRumour.Title>
+  <HH.Underworld.Scandal.SecretCasinoRumour.Text>Es hat sich herumgesprochen, dass dein Haus ein Casino für Leute verbirgt, die nicht darüber reden. Highroller suchen nach der Tür.</HH.Underworld.Scandal.SecretCasinoRumour.Text>
+  <HH.Underworld.Scandal.HonourAmongThieves.Title>Ehre unter Dieben</HH.Underworld.Scandal.HonourAmongThieves.Title>
+  <HH.Underworld.Scandal.HonourAmongThieves.Text>Eine Bande spricht an den Orten, an denen es zählt, gut über dein Haus.</HH.Underworld.Scandal.HonourAmongThieves.Text>
+  <HH.Underworld.Scandal.Effects>Flüsterruf {0}, Renommee {1}.</HH.Underworld.Scandal.Effects>
+  <HH.Underworld.Pit.Enabled>Grube geöffnet</HH.Underworld.Pit.Enabled>
+  <HH.Underworld.Pit.Enabled.Desc>Kämpfe in dieser Grube ansetzen.</HH.Underworld.Pit.Enabled.Desc>
+  <HH.Underworld.Pit.Animals>Tiere</HH.Underworld.Pit.Animals>
+  <HH.Underworld.Pit.Animals.Desc>Tiere deiner Kolonie dürfen hier kämpfen.</HH.Underworld.Pit.Animals.Desc>
+  <HH.Underworld.Pit.Volunteers>Freiwillige</HH.Underworld.Pit.Volunteers>
+  <HH.Underworld.Pit.Volunteers.Desc>Kolonisten, die gern kämpfen (Blutrausch oder guter Nahkampf), können sich freiwillig melden. Freiwillige kämpfen nie auf Leben und Tod.</HH.Underworld.Pit.Volunteers.Desc>
+  <HH.Underworld.Pit.Prisoners>Gefangene</HH.Underworld.Pit.Prisoners>
+  <HH.Underworld.Pit.Prisoners.Desc>Gefangene dürfen in die Grube geschickt werden. Nur Erwachsene.</HH.Underworld.Pit.Prisoners.Desc>
+  <HH.Underworld.Pit.Lethal>Auf Leben und Tod</HH.Underworld.Pit.Lethal>
+  <HH.Underworld.Pit.Lethal.Desc>Kämpfe zwischen Gefangenen und Tieren enden erst, wenn einer am Boden liegt. Nie bei Freiwilligen.</HH.Underworld.Pit.Lethal.Desc>
+  <HH.Underworld.Pit.StartNow>Kampf starten</HH.Underworld.Pit.StartNow>
+  <HH.Underworld.Pit.StartNow.Desc>Jetzt zwei ebenbürtige Kämpfer auswählen und die Gäste wetten lassen.</HH.Underworld.Pit.StartNow.Desc>
+  <HH.Underworld.Pit.CannotStart>Kein Kampf: {0}</HH.Underworld.Pit.CannotStart>
+  <HH.Underworld.Pit.ArenaOk>Arena: {0} Felder, geschlossen.</HH.Underworld.Pit.ArenaOk>
+  <HH.Underworld.Pit.ArenaOpen>Arena offen oder zu groß: Schließe den Zaun.</HH.Underworld.Pit.ArenaOpen>
+  <HH.Underworld.Pit.NoFighters>weniger als zwei Kämpfer erlaubt</HH.Underworld.Pit.NoFighters>
+  <HH.Underworld.Pit.NoFairPair>kein ebenbürtiges Kämpferpaar</HH.Underworld.Pit.NoFairPair>
+  <HH.Underworld.Pit.BoutRunning>Kampf: {0} gegen {1}.</HH.Underworld.Pit.BoutRunning>
+  <HH.Underworld.Pit.BoutAnnounced>Ein Kampf in der Grube: {0} gegen {1}. Wetten sind eröffnet.</HH.Underworld.Pit.BoutAnnounced>
+  <HH.Underworld.Pit.Won>{0} gewinnt den Kampf. Das Haus behält {1} Silber.</HH.Underworld.Pit.Won>
+  <HH.Underworld.Pit.Draw>Der Kampf endet ohne Sieger. Alle Einsätze werden zurückgegeben.</HH.Underworld.Pit.Draw>
+  <HH.Underworld.Fence.Inspect>Bestand: {0} Gegenstände im Wert von {1} Silber. Kasse: {2} Silber.</HH.Underworld.Fence.Inspect>
+  <HH.Underworld.Fence.Fund>Kasse füllen</HH.Underworld.Fence.Fund>
+  <HH.Underworld.Fence.Fund.Desc>Silber aus der Kasse in die Geldkassette des Hehlers verschieben, bis zur Grenze in den Einstellungen.</HH.Underworld.Fence.Fund.Desc>
+  <HH.Underworld.Fence.Funded>{0} Silber in die Geldkassette verschoben.</HH.Underworld.Fence.Funded>
+  <HH.Underworld.Fence.NoCash>Die Geldkassette ist leer.</HH.Underworld.Fence.NoCash>
+  <HH.Underworld.Fence.CannotPay>Der Käufer kann nicht zahlen.</HH.Underworld.Fence.CannotPay>
+  <HH.Underworld.Fence.Exposed>Die Waren stammten von {0}, und die wissen, wo sie gelandet sind.</HH.Underworld.Fence.Exposed>
+  <HH.Underworld.Gang.Title>Eine Bande vor der Tür</HH.Underworld.Gang.Title>
+  <HH.Underworld.Gang.Text>{0} Leute von {1} treffen leise ein, nicken dem Personal zu und fragen nach dem Hinterzimmer. Sie haben Geld und erwarten keine Fragen.</HH.Underworld.Gang.Text>
+  <HH.Underworld.Gang.Demand.Title>Ein freundliches Angebot</HH.Underworld.Gang.Demand.Title>
+  <HH.Underworld.Gang.Demand.Text>Der Anführer der Bande von {0} lehnt sich auf deinen Tresen. "Schönes Haus. Es wäre schade, wenn ihm etwas zustößt. Für {1} Silber sorgen wir dafür, dass nichts passiert."</HH.Underworld.Gang.Demand.Text>
+  <HH.Underworld.Gang.Demand.Pay>{0} Silber zahlen</HH.Underworld.Gang.Demand.Pay>
+  <HH.Underworld.Gang.Demand.Refuse>Zeig ihnen die Tür</HH.Underworld.Gang.Demand.Refuse>
+  <HH.Underworld.Gang.Demand.NoCash>nicht genug in der Kasse</HH.Underworld.Gang.Demand.NoCash>
+  <HH.Underworld.Tour.IntelTitle>Etwas aus der Befragung</HH.Underworld.Tour.IntelTitle>
+  <HH.Underworld.Tour.IntelText>Nach einer Stunde mit {0} ließ die Bande einen Zettel auf dem Tresen zurück: ein Name, ein Ort, ein Tag. Irgendwo plant jemand etwas, und du weißt jetzt ein wenig mehr.</HH.Underworld.Tour.IntelText>
+  <HH.Underworld.Smuggler.Title>Eine Kiste am Dock</HH.Underworld.Smuggler.Title>
+  <HH.Underworld.Smuggler.Text>Ein Shuttle mit ausgeschalteten Lichtern ist am Dock gelandet. Eine Stimme bietet {0} Gegenstände im Wert von etwa {1} Silber für {2} an. Keine Fragen, keine Quittung.</HH.Underworld.Smuggler.Text>
+  <HH.Underworld.Smuggler.Buy>Für {0} Silber kaufen</HH.Underworld.Smuggler.Buy>
+  <HH.Underworld.Smuggler.Decline>Wegschicken</HH.Underworld.Smuggler.Decline>
+  <HH.Underworld.Smuggler.NoCash>nicht genug in der Kasse</HH.Underworld.Smuggler.NoCash>
+  <HH.Underworld.Smuggler.InspectTitle>Eine Patrouille hat die Lampe bemerkt</HH.Underworld.Smuggler.InspectTitle>
+  <HH.Underworld.Smuggler.InspectText>Eine imperiale Patrouille hat die Lichter an deinem Dock gesehen und es notiert.</HH.Underworld.Smuggler.InspectText>
+  <HH.Underworld.Hunt.Title>Eine Jagdgesellschaft</HH.Underworld.Hunt.Title>
+  <HH.Underworld.Hunt.Text>{0} Jäger treffen mit Gewehren und Geld ein. Sie haben {1} Silber für das Gelände gezahlt, und {2} Tiere wurden darin ausgesetzt.</HH.Underworld.Hunt.Text>
+  <HH.Underworld.Hunt.GroundOk>Jagdgebiet: {0} Felder, geschlossen. Beute: {1}.</HH.Underworld.Hunt.GroundOk>
+  <HH.Underworld.Hunt.QuarryAnimals>Tiere</HH.Underworld.Hunt.QuarryAnimals>
+  <HH.Underworld.Hunt.QuarryHuman>Tiere und ein Gefangener</HH.Underworld.Hunt.QuarryHuman>
+  <HH.Underworld.Hunt.Prisoners>Gefangene als Beute</HH.Underworld.Hunt.Prisoners>
+  <HH.Underworld.Hunt.Prisoners.Desc>Jäger dürfen einen ins Gelände entlassenen Gefangenen jagen. Nur bei düsteren Inhalten, mit passender Ideologie.</HH.Underworld.Hunt.Prisoners.Desc>
+  <HH.Underworld.Hunt.GateContent>Erfordert düstere oder grimmige Inhalte, bestätigt.</HH.Underworld.Hunt.GateContent>
+  <HH.Underworld.Hunt.GatePrecept>Die Ideologie der Kolonie erlaubt das nicht.</HH.Underworld.Hunt.GatePrecept>
+  <HH.Underworld.Hunt.DeathTitle>Ein Mensch starb bei der Jagd</HH.Underworld.Hunt.DeathTitle>
+  <HH.Underworld.Hunt.DeathText>{0} hat die Jagd nicht überlebt. Seine Leute werden davon erfahren, ebenso alle, die zugesehen haben.</HH.Underworld.Hunt.DeathText>
+  <HH.Underworld.Hunt.FreedTitle>Die Beute ist entkommen</HH.Underworld.Hunt.FreedTitle>
+  <HH.Underworld.Hunt.FreedText>{0} hat die Zeit durchgehalten und geht frei davon. Die Jäger zogen wütend ab; seine Fraktion wird erfahren, wie es ablief.</HH.Underworld.Hunt.FreedText>
+  <HH.Underworld.Organ.Inspect>Wartende Organe: {0}. Offene Bestellungen: {1}.</HH.Underworld.Organ.Inspect>
+  <HH.Underworld.Organ.Sold>{0} Organe am Klinikschalter abgeholt.</HH.Underworld.Organ.Sold>
+  <HH.Underworld.Organ.OrderTitle>Eine Bestellung</HH.Underworld.Organ.OrderTitle>
+  <HH.Underworld.Organ.OrderText>Ein Käufer will innerhalb von {1} Tagen ein(e) {0} und zahlt einen Aufpreis.</HH.Underworld.Organ.OrderText>
+  <HH.Underworld.Organ.OrderDone>Die Bestellung für ein(e) {0} wurde erfüllt.</HH.Underworld.Organ.OrderDone>
+  <HH.Underworld.Organ.OrderMissed>Die Bestellung für ein(e) {0} wurde nicht rechtzeitig erfüllt.</HH.Underworld.Organ.OrderMissed>
+  <HH.Underworld.Page.Title>Unterwelt</HH.Underworld.Page.Title>
+  <HH.Underworld.Page.Whispers>Flüsterruf: {0} von 100.</HH.Underworld.Page.Whispers>
+  <HH.Underworld.Page.Weights>Ankunftsgewichte: Ehrbare x{0}, Gesetzlose x{1}.</HH.Underworld.Page.Weights>
+  <HH.Underworld.Page.Content>Inhalte: {0} (gilt: {1}).</HH.Underworld.Page.Content>
+  <HH.Underworld.Page.Stats1>Kampfgrube: {0} Kämpfe, {1} Wetten, Anteil des Hauses {2} Silber.</HH.Underworld.Page.Stats1>
+  <HH.Underworld.Page.Stats2>Hehler: {0} gekauft, {1} verkauft, Gewinn {2} Silber.</HH.Underworld.Page.Stats2>
+  <HH.Underworld.Page.Stats3>Lounge-Sitzungen {0}, Banden-Besuche {1}, Landungen {2}, Jagden {3}, Organe {4}.</HH.Underworld.Page.Stats3>
+  <HH.Underworld.Page.HighRollers>Ein Gerücht über ein Geheimcasino lockt Highroller an.</HH.Underworld.Page.HighRollers>
+</LanguageData>

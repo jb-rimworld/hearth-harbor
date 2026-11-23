@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Tavern.label>酒場</HH_Venue_Tavern.label>
+  <HH_Venue_Tavern.description>客が飲み物を買い、その場で飲む部屋。棚や備蓄エリアにビールなどの飲み物を入れておく。看板かカウンターの後ろのバーテンダーが店を開けておく。部屋の飲み物は、看板で別段の設定がない限り客専用になる。</HH_Venue_Tavern.description>
+  <HH_Venue_Shop.label>商店</HH_Venue_Shop.label>
+  <HH_Venue_Shop.description>客が品物を買う部屋。部屋の中の棚や備蓄エリアにあるものはすべて販売品となり、市場価値に看板の価格係数を掛けた値段になる。店主がいなければ、少し安いセルフサービス店として運営される。</HH_Venue_Shop.description>
+  <HH_Venue_Restaurant.label>レストラン</HH_Venue_Restaurant.label>
+  <HH_Venue_Restaurant.description>客が席に着いて食べる部屋。テーブル、厨房、給仕がそろうとレストランになる。料理そのものは厨房が担当する。</HH_Venue_Restaurant.description>
+  <HH_Venue_Casino.label>カジノ</HH_Venue_Casino.label>
+  <HH_Venue_Casino.description>カードテーブル、スロットマシン、ディーラーのある部屋。客は賭け事に銀を賭ける。胴元はわずかで誠実な利益を取る。</HH_Venue_Casino.description>
+  <HH_Venue_Spa.label>スパ</HH_Venue_Spa.label>
+  <HH_Venue_Spa.description>風呂、蒸気、休息のための静かな部屋。係員がタオルを温めておく。客は来店ごとに支払う。</HH_Venue_Spa.description>
+  <HH_Venue_Lounge.label>ラウンジ</HH_Venue_Lounge.label>
+  <HH_Venue_Lounge.description>座席のある待合室。閉まっている、または人のいない店を見つけた客は、戸口ではなくここで待つ。より辛抱強く待つ。いつでも開いていて、人手は要らない。</HH_Venue_Lounge.description>
+  <HH_Venue_Chapel.label>客用礼拝堂</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>あらゆる信仰の訪問者が祈りに来る、客用の祭壇がある静かな部屋。客は何も払わないが、より穏やかになって帰る。立派な祭壇と数列の長椅子がある礼拝堂は、宿屋にとってよい隣人になる。昼間はいつでも開いており、人手は要らない。</HH_Venue_Chapel.description>
+</LanguageData>

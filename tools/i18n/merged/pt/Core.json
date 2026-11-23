@@ -1,0 +1,8 @@
+{
+ "keyed": {},
+ "defs": {
+  "DesignationCategoryDef/HH_Bank.label": "Banco",
+  "DesignationCategoryDef/HH_Bank.description": "Caixas eletrônicos, guichês e cofres noturnos do banco, e as mesas do seu escritório de seguros.",
+  "ResearchTabDef/HH_Banking.label": "Bancos"
+ }
+}

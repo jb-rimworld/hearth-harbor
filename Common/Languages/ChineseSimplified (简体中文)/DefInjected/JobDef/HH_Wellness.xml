@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_UseHotTub.reportString>正在 TargetA 里泡澡。</HH_UseHotTub.reportString>
+  <HH_UseSauna.reportString>在桑拿里蒸汗。</HH_UseSauna.reportString>
+  <HH_ReceiveMassage.reportString>正在接受按摩。</HH_ReceiveMassage.reportString>
+  <HH_GiveMassage.reportString>正在为 TargetB 按摩。</HH_GiveMassage.reportString>
+</LanguageData>

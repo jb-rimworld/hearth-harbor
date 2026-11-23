@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Hosting.labelShort>接待</HH_Hosting.labelShort>
+  <HH_Hosting.pawnLabel>接待员</HH_Hosting.pawnLabel>
+  <HH_Hosting.gerundLabel>接待</HH_Hosting.gerundLabel>
+  <HH_Hosting.description>为客人办理入住和退房，带他们参观，让他们保持愉快，并劝说他们留下（或加入）。</HH_Hosting.description>
+  <HH_Hosting.verb>接待</HH_Hosting.verb>
+  <HH_Serving.labelShort>服务</HH_Serving.labelShort>
+  <HH_Serving.pawnLabel>服务员</HH_Serving.pawnLabel>
+  <HH_Serving.gerundLabel>服务</HH_Serving.gerundLabel>
+  <HH_Serving.description>管理柜台、餐桌和收银台：接单、上菜和上饮品、经营赌场区、补货货架。</HH_Serving.description>
+  <HH_Serving.verb>服务</HH_Serving.verb>
+</LanguageData>

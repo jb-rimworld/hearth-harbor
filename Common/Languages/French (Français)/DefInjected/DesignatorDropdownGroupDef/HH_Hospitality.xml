@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Group_Casino.label>casino</HH_Group_Casino.label>
+  <HH_Group_Casino.description>Machines à sous, tables de jeu et le guichet de la caisse.</HH_Group_Casino.description>
+  <HH_Group_Wellness.label>bien-être</HH_Group_Wellness.label>
+  <HH_Group_Wellness.description>Saunas, bains à remous et tables de massage.</HH_Group_Wellness.description>
+  <HH_Group_City.label>vie urbaine</HH_Group_City.label>
+  <HH_Group_City.description>Écrans de cinéma, fauteuils de salon de coiffure, bancs de parc et station de taxis.</HH_Group_City.description>
+  <HH_Group_Underworld.label>arrière-salle</HH_Group_Underworld.label>
+  <HH_Group_Underworld.description>Portes, fosses, comptoirs et quais pour les choses dont personne ne parle. Visible seulement une fois le monde souterrain découvert.</HH_Group_Underworld.description>
+</LanguageData>

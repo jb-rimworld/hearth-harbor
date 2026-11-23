@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_XenoHosp_Baseliner.label>základní typ</HH_XenoHosp_Baseliner.label>
+  <HH_XenoHosp_Baseliner.description>Obyčejní lidé: střízlivý vkus, opatrnost s penězi. Velké, úsporné skupiny.</HH_XenoHosp_Baseliner.description>
+  <HH_XenoHosp_Sanguophage.label>sanguofág</HH_XenoHosp_Sanguophage.label>
+  <HH_XenoHosp_Sanguophage.description>Sanguofágové chtějí tmavé pokoje a minibar s hemogenem na dosah. Odpočinkový salon se smrtelným spánkem je něco, za co zaplatí.</HH_XenoHosp_Sanguophage.description>
+  <HH_XenoHosp_Hemogenic.label>hemogenní (libovolná xenotypa)</HH_XenoHosp_Hemogenic.label>
+  <HH_XenoHosp_Hemogenic.description>Každý s hemogenním genem, včetně vlastních xenotyp, sdílí sanguofágův vkus na tmavé pokoje a hemogenní balení.</HH_XenoHosp_Hemogenic.description>
+  <HH_XenoHosp_UVSensitive.label>citlivý na UV (libovolná xenotypa)</HH_XenoHosp_UVSensitive.label>
+  <HH_XenoHosp_UVSensitive.description>Slunce bolí. Tmavý vnitřní pokoj je pohodlný pokoj.</HH_XenoHosp_UVSensitive.description>
+  <HH_XenoHosp_Dirtmole.label>dirtmole</HH_XenoHosp_Dirtmole.label>
+  <HH_XenoHosp_Dirtmole.description>Dirtmolové dávají přednost tmavým pokojům bez oken a houbovým pokrmům. Nabízejí, že zaplatí za prohlídku dolu s průvodcem.</HH_XenoHosp_Dirtmole.description>
+  <HH_XenoHosp_Genie.label>génius</HH_XenoHosp_Genie.label>
+  <HH_XenoHosp_Genie.description>Géniové očekávají čtecí kout a tichý stůl. Pronajímají si výzkumné místnosti.</HH_XenoHosp_Genie.description>
+  <HH_XenoHosp_Hussar.label>husar</HH_XenoHosp_Hussar.label>
+  <HH_XenoHosp_Hussar.description>Husaři utrácejí u baru štědře a rádi se poperou, i s hádkami, které k tomu patří.</HH_XenoHosp_Hussar.description>
+  <HH_XenoHosp_Neanderthal.label>neandertálec</HH_XenoHosp_Neanderthal.label>
+  <HH_XenoHosp_Neanderthal.description>Velké porce, jednoduché pokoje. Vybavení se počítá méně.</HH_XenoHosp_Neanderthal.description>
+  <HH_XenoHosp_Pigskin.label>pigskin</HH_XenoHosp_Pigskin.label>
+  <HH_XenoHosp_Pigskin.description>Pigskinové sní skoro cokoli a neválí se jim nepořádek v pokoji.</HH_XenoHosp_Pigskin.description>
+  <HH_XenoHosp_Impid.label>impid</HH_XenoHosp_Impid.label>
+  <HH_XenoHosp_Impid.description>Impidové mají rádi teplé pokoje a koření. Vystupují za podíl z tržeb.</HH_XenoHosp_Impid.description>
+  <HH_XenoHosp_Waster.label>marnotratník</HH_XenoHosp_Waster.label>
+  <HH_XenoHosp_Waster.description>Marnotratníci se cítí jako doma v špinavých pokojích, hodně utrácejí a nechávají za sebou nepořádek.</HH_XenoHosp_Waster.description>
+  <HH_XenoHosp_Yttakin.label>yttakin</HH_XenoHosp_Yttakin.label>
+  <HH_XenoHosp_Yttakin.description>Yttakinové chtějí studené pokoje; teplé jim dělají neštěstí.</HH_XenoHosp_Yttakin.description>
+  <HH_XenoHosp_Highmate.label>highmate</HH_XenoHosp_Highmate.label>
+  <HH_XenoHosp_Highmate.description>Highmate milují krásu a společnost. Pohledné sdílené pokoje je potěší.</HH_XenoHosp_Highmate.description>
+</LanguageData>

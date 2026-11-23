@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.UI.Page.Overview>Übersicht</HH.UI.Page.Overview>
+  <HH.UI.Page.Guests>Gäste</HH.UI.Page.Guests>
+  <HH.UI.Page.Modules>Module</HH.UI.Page.Modules>
+  <HH.UI.Page.Difficulty>Schwierigkeit</HH.UI.Page.Difficulty>
+  <HH.UI.Page.General>Allgemein</HH.UI.Page.General>
+  <HH.UI.Page.Diagnosis>Diagnose</HH.UI.Page.Diagnosis>
+  <HH.UI.Page.About>Info</HH.UI.Page.About>
+  <HH.UI.Silver>Silber</HH.UI.Silver>
+  <HH.UI.Tab.Settings>Einstellungen</HH.UI.Tab.Settings>
+  <HH.UI.Tab.Guide>Leitfaden</HH.UI.Tab.Guide>
+  <HH.UI.Tab.GuideTip>Blendet das kleine Lehrfenster oben rechts ein oder aus.</HH.UI.Tab.GuideTip>
+  <HH.UI.Tab.NoPages>Noch nichts anzuzeigen.</HH.UI.Tab.NoPages>
+  <HH.UI.Settings.ThisSave>Dieser Spielstand</HH.UI.Settings.ThisSave>
+  <HH.UI.Settings.Template>Vorlage</HH.UI.Settings.Template>
+  <HH.UI.Settings.ThisSaveTip>Bearbeite die Einstellungen der laufenden Kolonie. Sie werden mit ihr gespeichert.</HH.UI.Settings.ThisSaveTip>
+  <HH.UI.Settings.TemplateTip>Bearbeite die Vorlage, mit der neue Kolonien starten. Die laufende Kolonie bleibt unverändert.</HH.UI.Settings.TemplateTip>
+  <HH.UI.Settings.TemplateOnly>Vorlage für neue Spiele. Jede neue Kolonie bekommt ihre eigene Kopie.</HH.UI.Settings.TemplateOnly>
+  <HH.UI.Settings.EditingTemplate>Du bearbeitest die Vorlage für neue Spiele. Die laufende Kolonie bleibt unverändert.</HH.UI.Settings.EditingTemplate>
+  <HH.UI.Settings.SaveAsTemplate>Kolonie als Vorlage speichern</HH.UI.Settings.SaveAsTemplate>
+  <HH.UI.Settings.SaveAsTemplateTip>Kopiert Module, Schwierigkeit und alle Einstellungen dieser Kolonie in die Vorlage für neue Spiele.</HH.UI.Settings.SaveAsTemplateTip>
+  <HH.UI.Settings.SaveAsTemplateConfirm>Die Vorlage für neue Spiele durch die Einstellungen dieser Kolonie ersetzen?</HH.UI.Settings.SaveAsTemplateConfirm>
+  <HH.UI.Settings.ApplyTemplate>Vorlage auf Kolonie anwenden</HH.UI.Settings.ApplyTemplate>
+  <HH.UI.Settings.ApplyTemplateTip>Ersetzt die Einstellungen dieser Kolonie durch die Vorlage.</HH.UI.Settings.ApplyTemplateTip>
+  <HH.UI.Settings.ApplyTemplateConfirm>Module, Schwierigkeit und alle Einstellungen dieser Kolonie durch die Vorlage ersetzen? Das lässt sich nicht rückgängig machen.</HH.UI.Settings.ApplyTemplateConfirm>
+  <HH.UI.Settings.TemplateSaved>Vorlage für neue Spiele gespeichert.</HH.UI.Settings.TemplateSaved>
+  <HH.UI.Settings.TemplateApplied>Vorlage auf diese Kolonie angewendet.</HH.UI.Settings.TemplateApplied>
+  <HH.UI.Settings.Search>Einstellungen durchsuchen ...</HH.UI.Settings.Search>
+  <HH.UI.Settings.SearchResults>Suchergebnisse</HH.UI.Settings.SearchResults>
+  <HH.UI.Settings.NoMatch>Keine Einstellung passt. Nerd-Einstellungen bleiben versteckt, bis du sie einschaltest.</HH.UI.Settings.NoMatch>
+  <HH.UI.Settings.Nerd>Nerd-Einstellungen anzeigen</HH.UI.Settings.Nerd>
+  <HH.UI.Settings.NerdTip>Zeigt die Einstellungen für Leute, die Zahlen mögen. Alles andere bleibt, wie es ist.</HH.UI.Settings.NerdTip>
+  <HH.UI.Settings.Off>aus</HH.UI.Settings.Off>
+  <HH.UI.Settings.Yes>ja</HH.UI.Settings.Yes>
+  <HH.UI.Settings.No>nein</HH.UI.Settings.No>
+  <HH.UI.Settings.ResetModule>Modul zurücksetzen</HH.UI.Settings.ResetModule>
+  <HH.UI.Settings.ResetModuleConfirm>Jede Einstellung von {0} auf den Standardwert zurücksetzen?</HH.UI.Settings.ResetModuleConfirm>
+  <HH.UI.Settings.ModuleIsOff>Dieses Modul ist für diese Kolonie ausgeschaltet. Seine Einstellungen haben keine Wirkung.</HH.UI.Settings.ModuleIsOff>
+  <HH.UI.Settings.SwitchOn>Einschalten</HH.UI.Settings.SwitchOn>
+  <HH.UI.Row.On>an</HH.UI.Row.On>
+  <HH.UI.Row.Off>aus</HH.UI.Row.Off>
+  <HH.UI.Row.Free>Frei</HH.UI.Row.Free>
+  <HH.UI.Row.FreeTip>Freie Eingabe: Tippe eine beliebige Zahl bis zur technischen Grenze des Spiels.</HH.UI.Row.FreeTip>
+  <HH.UI.Row.Reset>zurücksetzen</HH.UI.Row.Reset>
+  <HH.UI.Row.Nerd>Nerd</HH.UI.Row.Nerd>
+  <HH.UI.Row.Beyond>Jenseits des Reglerbereichs. Die freie Eingabe erlaubt das.</HH.UI.Row.Beyond>
+  <HH.UI.Row.Limited>Grenze {0}</HH.UI.Row.Limited>
+  <HH.UI.Row.Limit>Technische Grenze</HH.UI.Row.Limit>
+  <HH.UI.Row.LimitGeneric>Das Spiel kann diesen Wert nicht verwenden, daher wird der nächstmögliche genommen.</HH.UI.Row.LimitGeneric>
+  <HH.UI.Row.FollowsTier>Der Standardwert richtet sich nach der Gastgeber-Schwierigkeit.</HH.UI.Row.FollowsTier>
+  <HH.UI.General.Interface>Oberfläche</HH.UI.General.Interface>
+  <HH.UI.General.ShowCard>Die Startkarte in jedem neuen Spiel zeigen</HH.UI.General.ShowCard>
+  <HH.UI.General.ShowCardTip>Aus: Neue Spiele nutzen still die Vorlage, und es erscheint keine Karte.</HH.UI.General.ShowCardTip>
+  <HH.UI.General.Tutorial>Tutorial</HH.UI.General.Tutorial>
+  <HH.UI.General.Verbose>Ausführliches Protokoll (HearthHarbor.log)</HH.UI.General.Verbose>
+  <HH.UI.Modules.IntroSave>Module lassen sich pro Kolonie schalten. Ein ausgeschaltetes Modul hat überhaupt keine sichtbare Wirkung.</HH.UI.Modules.IntroSave>
+  <HH.UI.Modules.IntroTemplate>Module für neue Kolonien. Jede Kolonie kann ihre eigenen trotzdem ändern.</HH.UI.Modules.IntroTemplate>
+  <HH.UI.Modules.NotInstalled>nicht Teil dieser Installation</HH.UI.Modules.NotInstalled>
+  <HH.UI.Modules.BankHint>Bank: Nutze die Bank in Hearth &amp; Harbor und schalte alle Gastmodule aus. Den eigenständigen Eintrag brauchst du nicht.</HH.UI.Modules.BankHint>
+  <HH.UI.Modules.Content>Inhaltsintensität</HH.UI.Modules.Content>
+  <HH.UI.Modules.ContentDesc>Wie düster der optionale Inhalt werden darf. Niemals sexuelle Inhalte, egal was du wählst.</HH.UI.Modules.ContentDesc>
+  <HH.UI.Content.Cozy>Gemütlich</HH.UI.Content.Cozy>
+  <HH.UI.Content.Cozy.Tip>Nur milde Geschichten und Folgen.</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Standard>Standard</HH.UI.Content.Standard>
+  <HH.UI.Content.Standard.Tip>Die Voreinstellung. Ecken und Kanten, nichts Fieses.</HH.UI.Content.Standard.Tip>
+  <HH.UI.Content.Dark>Düster</HH.UI.Content.Dark>
+  <HH.UI.Content.Dark.Tip>Verbrechen, Schulden und Gewalt können auftauchen.</HH.UI.Content.Dark.Tip>
+  <HH.UI.Content.Grim>Grimmig</HH.UI.Content.Grim>
+  <HH.UI.Content.Grim.Tip>Alles, was das Spiel bietet, in voller Länge.</HH.UI.Content.Grim.Tip>
+  <HH.UI.Underworld.Discover>Im Spiel entdecken</HH.UI.Underworld.Discover>
+  <HH.UI.Underworld.On>An</HH.UI.Underworld.On>
+  <HH.UI.Underworld.Off>Aus</HH.UI.Underworld.Off>
+  <HH.UI.Underworld.Discover.Tip>Unter dem Radar, bis ein zwielichtiger Fremder in deinem Spiel auftaucht.</HH.UI.Underworld.Discover.Tip>
+  <HH.UI.Underworld.On.Tip>Von Anfang an verfügbar.</HH.UI.Underworld.On.Tip>
+  <HH.UI.Underworld.Off.Tip>Nie verfügbar. Auch der zwielichtige Fremde bleibt weg.</HH.UI.Underworld.Off.Tip>
+  <HH.UI.ModuleDesc.Inn>Gäste, Gästebetten, Flügel, Rezeption, Reisende und Anwerben.</HH.UI.ModuleDesc.Inn>
+  <HH.UI.ModuleDesc.ShopsFood>Geschäftsschilder, Läden, Automaten, Märkte, Restaurants und Gerichte.</HH.UI.ModuleDesc.ShopsFood>
+  <HH.UI.ModuleDesc.Casino>Tische, Spielautomaten, Chips und die Risiken des Glücksspiels für Gäste und Kolonisten.</HH.UI.ModuleDesc.Casino>
+  <HH.UI.ModuleDesc.Wellness>Spa, Sauna und Reha-Aufenthalte.</HH.UI.ModuleDesc.Wellness>
+  <HH.UI.ModuleDesc.CityLife>Kino, Einkaufszentrum, Salon, Tempel, Taxis und Sicherheitsdienst.</HH.UI.ModuleDesc.CityLife>
+  <HH.UI.ModuleDesc.Underworld>Ein diskretes Hinterzimmer, eine Kampfgrube und ein Hehler. Im Spiel zu finden, nie aufgezwungen.</HH.UI.ModuleDesc.Underworld>
+  <HH.UI.ModuleDesc.Bank>Silverline: Konten, Zahlungen, Geldautomaten, Geldanlagen, Kredite, Versicherungen und Lotterie.</HH.UI.ModuleDesc.Bank>
+  <HH.UI.ModuleDesc.AiFlavour>Optionale Stimmungstexte, die eine KI über ein Relay schreibt. Standardmäßig aus.</HH.UI.ModuleDesc.AiFlavour>
+  <HH.UI.Diff.Title>Gastgeber-Schwierigkeit</HH.UI.Diff.Title>
+  <HH.UI.Diff.Intensity>Gastgeber-Intensität {0} %</HH.UI.Diff.Intensity>
+  <HH.UI.Diff.ChipTip>{0}: etwa {1} % Gastgeber-Intensität.</HH.UI.Diff.ChipTip>
+  <HH.UI.Diff.Calculator>Was diese Stufe für dich bedeutet</HH.UI.Diff.Calculator>
+  <HH.UI.Diff.Ladder>Was schiefgehen kann</HH.UI.Diff.Ladder>
+  <HH.UI.Diff.Special>Sonderschalter</HH.UI.Diff.Special>
+  <HH.UI.Diff.ShowAll>Alle {0} Werte zeigen, die der Schwierigkeit folgen</HH.UI.Diff.ShowAll>
+  <HH.UI.Diff.WarnHard>Ab Überbucht sind echte Folgen eingeschaltet: Bußgelder, Lizenzverlust und Schlimmeres.</HH.UI.Diff.WarnHard>
+  <HH.UI.Diff.WarnEasy>Diese Stufe verzeiht sehr viel. Geld kommt leicht, und nichts geht schief.</HH.UI.Diff.WarnEasy>
+  <HH.UI.Diff.WarnBreaks>Das sprengt die Spielbalance. Mit Absicht?</HH.UI.Diff.WarnBreaks>
+  <HH.UI.Calc.StandardIs>Standardzimmer: {0}</HH.UI.Calc.StandardIs>
+  <HH.UI.Calc.Reference>Referenzwert</HH.UI.Calc.Reference>
+  <HH.UI.Calc.SetByYou>Du hast diesen Wert selbst geändert, deshalb folgt er dem Regler nicht.</HH.UI.Calc.SetByYou>
+  <HH.UI.Calc.NoEffectInfinite>Ohne Wirkung, solange unendliches Gästegeld an ist.</HH.UI.Calc.NoEffectInfinite>
+  <HH.UI.Feel.0>Alles geht aufs Haus.</HH.UI.Feel.0>
+  <HH.UI.Feel.1>Das Geld fließt, und nichts geht schief.</HH.UI.Feel.1>
+  <HH.UI.Feel.2>Sanft und großzügig.</HH.UI.Feel.2>
+  <HH.UI.Feel.3>Kleine Verluste sind möglich. Gewinn will erarbeitet sein.</HH.UI.Feel.3>
+  <HH.UI.Feel.4>Folgen schalten sich ein: Streit, Bußgelder, Lizenzverlust.</HH.UI.Feel.4>
+  <HH.UI.Feel.5>Fehden, Verträge, strenge Inspektoren, Rachefeldzüge.</HH.UI.Feel.5>
+  <HH.UI.Feel.6>Alles ist hart, und nichts ist gedeckelt.</HH.UI.Feel.6>
+  <HH.UI.Calc.guestMoney>Gästegeld</HH.UI.Calc.guestMoney>
+  <HH.UI.Calc.guestMoney.Desc>Multipliziert, was Gäste dabeihaben und auszugeben bereit sind.</HH.UI.Calc.guestMoney.Desc>
+  <HH.UI.Calc.priceTolerance>Preistoleranz</HH.UI.Calc.priceTolerance>
+  <HH.UI.Calc.priceTolerance.Desc>Wie weit über einem fairen Preis Gäste noch kaufen.</HH.UI.Calc.priceTolerance.Desc>
+  <HH.UI.Calc.arrivalRate>Ankunftsrate</HH.UI.Calc.arrivalRate>
+  <HH.UI.Calc.arrivalRate.Desc>Wie oft Gäste auftauchen.</HH.UI.Calc.arrivalRate.Desc>
+  <HH.UI.Calc.expectation>Gästeerwartung</HH.UI.Calc.expectation>
+  <HH.UI.Calc.expectation.Desc>Wird auf das aufgeschlagen, was jeder Gast erwartet. Höher heißt schwerer zufriedenzustellen.</HH.UI.Calc.expectation.Desc>
+  <HH.UI.Calc.trouble>Ärgergefahr</HH.UI.Calc.trouble>
+  <HH.UI.Calc.trouble.Desc>Wahrscheinlichkeit und Gewicht von Streit, Schlägereien und Diebstählen unter Gästen.</HH.UI.Calc.trouble.Desc>
+  <HH.UI.Calc.stage>Schwerste Folge</HH.UI.Calc.stage>
+  <HH.UI.Calc.stage.Desc>Das Schlimmste, was ein schlechter Aufenthalt dir auf dieser Stufe antun kann.</HH.UI.Calc.stage.Desc>
+  <HH.UI.Calc.slotEdge>Hausvorteil der Spielautomaten</HH.UI.Calc.slotEdge>
+  <HH.UI.Calc.slotEdge.Desc>Anteil jedes Einsatzes, den ein Spielautomat im Schnitt behält.</HH.UI.Calc.slotEdge.Desc>
+  <HH.UI.Calc.bankM>Marktrendite der Bank (M pro Jahr)</HH.UI.Calc.bankM>
+  <HH.UI.Calc.bankM.Desc>Jahresmultiplikator des Silverline-Markts. 1,2 bedeutet plus zwanzig Prozent.</HH.UI.Calc.bankM.Desc>
+  <HH.UI.Calc.defaultFactor>Zahlungsausfälle</HH.UI.Calc.defaultFactor>
+  <HH.UI.Calc.defaultFactor.Desc>Wie oft Kunden nicht bezahlen, was sie schulden.</HH.UI.Calc.defaultFactor.Desc>
+  <HH.UI.Calc.collectionStage>Höchste Inkassostufe</HH.UI.Calc.collectionStage>
+  <HH.UI.Calc.collectionStage.Desc>Wie ruppig das Eintreiben von Schulden werden kann, wenn du Geld schuldest.</HH.UI.Calc.collectionStage.Desc>
+  <HH.UI.Calc.researchCost>Forschungskosten</HH.UI.Calc.researchCost>
+  <HH.UI.Calc.researchCost.Desc>Multipliziert die Kosten der Forschung von Hearth &amp; Harbor und Silverline.</HH.UI.Calc.researchCost.Desc>
+  <HH.UI.Calc.upkeep>Unterhalt</HH.UI.Calc.upkeep>
+  <HH.UI.Calc.upkeep.Desc>Multipliziert die laufenden Kosten deiner Geschäfte und Zimmer.</HH.UI.Calc.upkeep.Desc>
+  <HH.UI.Calc.insuranceLoading>Versicherungsaufschlag</HH.UI.Calc.insuranceLoading>
+  <HH.UI.Calc.insuranceLoading.Desc>Der Aufschlag des Versicherers auf eine faire Prämie.</HH.UI.Calc.insuranceLoading.Desc>
+  <HH.UI.Calc.salesPressure>Verkaufsdruck der Versicherung</HH.UI.Calc.salesPressure>
+  <HH.UI.Calc.salesPressure.Desc>Wie aufdringlich die Verkaufstricks des Versicherers werden.</HH.UI.Calc.salesPressure.Desc>
+  <HH.UI.Calc.addiction>Spielsuchtwahrscheinlichkeit</HH.UI.Calc.addiction>
+  <HH.UI.Calc.addiction.Desc>Grundwahrscheinlichkeit, dass ein Kolonist, der viel spielt, süchtig wird.</HH.UI.Calc.addiction.Desc>
+  <HH.UI.Calc.detection>Entdeckungsrate bei Betrug</HH.UI.Calc.detection>
+  <HH.UI.Calc.detection.Desc>Wie schnell Betrug am Tisch bemerkt wird.</HH.UI.Calc.detection.Desc>
+  <HH.UI.Stage.0>Kein Schaden</HH.UI.Stage.0>
+  <HH.UI.Stage.1>Stimmung</HH.UI.Stage.1>
+  <HH.UI.Stage.2>Renommee</HH.UI.Stage.2>
+  <HH.UI.Stage.3>Wohlwollen</HH.UI.Stage.3>
+  <HH.UI.Stage.4>Geld</HH.UI.Stage.4>
+  <HH.UI.Stage.5>Lizenz</HH.UI.Stage.5>
+  <HH.UI.Stage.6>Überfälle</HH.UI.Stage.6>
+  <HH.UI.Stage.7>Kopfgeld</HH.UI.Stage.7>
+  <HH.UI.Ladder.Goodwill>Wohlwollensverlust pro schlechtem Aufenthalt (Deckel)</HH.UI.Ladder.Goodwill>
+  <HH.UI.Ladder.Goodwill.Desc>Das meiste Wohlwollen, das dir eine Fraktion pro Vorfall entziehen kann.</HH.UI.Ladder.Goodwill.Desc>
+  <HH.UI.Ladder.Renown>Renommeeverlust pro Vorfall (Deckel)</HH.UI.Ladder.Renown>
+  <HH.UI.Ladder.Renown.Desc>Das meiste Renommee, das dich ein Vorfall kosten kann.</HH.UI.Ladder.Renown.Desc>
+  <HH.UI.Ladder.Fine>Bußgelder (Deckel, Silber)</HH.UI.Ladder.Fine>
+  <HH.UI.Ladder.Fine.Desc>Das meiste, was dich eine einzelne Inspektion oder ein einzelner Vorfall an Bußgeld kosten kann.</HH.UI.Ladder.Fine.Desc>
+  <HH.UI.Ladder.Raids>Vergeltungsüberfälle</HH.UI.Ladder.Raids>
+  <HH.UI.Ladder.Raids.Desc>Ob verärgerte Fraktionen oder Söldner dir nachstellen dürfen.</HH.UI.Ladder.Raids.Desc>
+  <HH.UI.Ladder.No>nein</HH.UI.Ladder.No>
+  <HH.UI.Ladder.Yes>ja</HH.UI.Ladder.Yes>
+  <HH.UI.Ladder.Footer>Höhere Stufen schalten mehr Folgen frei, statt nur die Wahrscheinlichkeit zu erhöhen.</HH.UI.Ladder.Footer>
+  <HH.UI.Diag.Copy>Diagnose in die Zwischenablage kopieren</HH.UI.Diag.Copy>
+  <HH.UI.Diag.Copied>Diagnose in die Zwischenablage kopiert.</HH.UI.Diag.Copied>
+  <HH.UI.Diag.PrepareRemoval>Entfernung vorbereiten</HH.UI.Diag.PrepareRemoval>
+  <HH.UI.Diag.PrepareRemovalTip>Macht die Kolonie bereit, den Mod zu entfernen: Gäste gehen heim, offene Konten werden beglichen, Spezialgegenstände werden aufgeräumt.</HH.UI.Diag.PrepareRemovalTip>
+  <HH.UI.Diag.PrepareRemovalConfirm>Diese Kolonie für das Entfernen von Hearth &amp; Harbor vorbereiten? Gäste werden heimgeschickt und Konten beglichen. Speichere vorher ein Backup.</HH.UI.Diag.PrepareRemovalConfirm>
+  <HH.UI.Diag.RemovalTitle>Entfernung vorbereiten</HH.UI.Diag.RemovalTitle>
+  <HH.UI.Diag.RemovalDone>Erledigt. Speichere das Spiel und entferne dann den Mod.</HH.UI.Diag.RemovalDone>
+  <HH.UI.Diag.NothingToDo>Es musste nichts aufgeräumt werden.</HH.UI.Diag.NothingToDo>
+  <HH.UI.Diag.NeedsSave>Öffne zuerst eine Kolonie. Die Vorbereitung der Entfernung funktioniert nur in einem laufenden Spiel.</HH.UI.Diag.NeedsSave>
+  <HH.UI.Diag.Summary>{0} Einstellungen registriert · {1} Warnungen · {2} Fehler im Protokoll</HH.UI.Diag.Summary>
+  <HH.UI.Diag.Modules>Module</HH.UI.Diag.Modules>
+  <HH.UI.Diag.Paused>nach Fehlern pausiert</HH.UI.Diag.Paused>
+  <HH.UI.Diag.Resume>Fortsetzen</HH.UI.Diag.Resume>
+  <HH.UI.Diag.Caretaker>Hausmeister (bisherige Reparaturen: {0})</HH.UI.Diag.Caretaker>
+  <HH.UI.Diag.NoChecks>Keine Prüfungen registriert.</HH.UI.Diag.NoChecks>
+  <HH.UI.Diag.Fixes>letzter Lauf {0} · gesamt {1}</HH.UI.Diag.Fixes>
+  <HH.UI.Diag.Patches>Patches ({0} übersprungen)</HH.UI.Diag.Patches>
+  <HH.UI.Diag.PatchesOk>Alle Patch-Klassen angewendet.</HH.UI.Diag.PatchesOk>
+  <HH.UI.Diag.Log>Letzte Protokollzeilen</HH.UI.Diag.Log>
+  <HH.UI.About.Body>Hearth &amp; Harbor macht aus deiner Kolonie einen Gastgeber: Gäste, Gasthäuser und Hotels, Läden und Restaurants, ein Casino, ein Spa, Stadtleben, ein diskretes Hinterzimmer und Silverline, eine vollwertige Bank. Nichts wird dir aufgezwungen. Solange du kein Gästebett markierst und kein Schild aufstellst, spielt sich das Spiel wie Vanilla.</HH.UI.About.Body>
+  <HH.UI.About.Parts>Bestandteile</HH.UI.About.Parts>
+  <HH.UI.About.PartsBody>Silverline-Bank enthalten: {0}. Gastmodule enthalten: {1}.</HH.UI.About.PartsBody>
+  <HH.UI.About.Project>Projektseite öffnen</HH.UI.About.Project>
+  <HH.UI.About.License>MIT-Lizenz. Gemacht von juliusberger00.</HH.UI.About.License>
+  <HH.UI.Card.Title>Willkommen bei Hearth &amp; Harbor</HH.UI.Card.Title>
+  <HH.UI.Card.Sub>Wähle deinen Gastgeberstil. Alles lässt sich später in den Mod-Einstellungen ändern.</HH.UI.Card.Sub>
+  <HH.UI.Card.TitleJoined>Hearth &amp; Harbor ist dieser Kolonie beigetreten</HH.UI.Card.TitleJoined>
+  <HH.UI.Card.SubJoined>Es ändert sich nichts, bis du etwas für Gäste baust. Such dir aus, wie du Gastgeber sein willst.</HH.UI.Card.SubJoined>
+  <HH.UI.Card.Modules>Module</HH.UI.Card.Modules>
+  <HH.UI.Card.Difficulty>Schwierigkeit und Tutorial</HH.UI.Card.Difficulty>
+  <HH.UI.Card.DifficultyLine>Gastgeber-Schwierigkeit: {0} · {1} %</HH.UI.Card.DifficultyLine>
+  <HH.UI.Card.Change>Ändern...</HH.UI.Card.Change>
+  <HH.UI.Card.UseForAll>Diese Auswahl für alle künftigen Spiele verwenden</HH.UI.Card.UseForAll>
+  <HH.UI.Card.UseForAllTip>Kopiert Module, Schwierigkeit und Tutorial-Stufe in die Vorlage, mit der neue Spiele starten.</HH.UI.Card.UseForAllTip>
+  <HH.UI.Card.Start>Starten</HH.UI.Card.Start>
+  <HH.UI.Preset.JustWork>Läuft einfach</HH.UI.Preset.JustWork>
+  <HH.UI.Preset.JustWork.Desc>Standardschwierigkeit, alles an. Fang an zu bauen, wir erklären unterwegs.</HH.UI.Preset.JustWork.Desc>
+  <HH.UI.Preset.CozyInn>Gemütliches Gasthaus</HH.UI.Preset.CozyInn>
+  <HH.UI.Preset.CozyInn.Desc>Milder, mit weniger Möglichkeiten zu verlieren: kein Casino und keine Unterwelt.</HH.UI.Preset.CozyInn.Desc>
+  <HH.UI.Preset.Tycoon>Tycoon</HH.UI.Preset.Tycoon>
+  <HH.UI.Preset.Tycoon.Desc>Alles an, mit kurzer Anleitung. Personal, Buchungen und das Hauptbuch führst du selbst.</HH.UI.Preset.Tycoon.Desc>
+  <HH.UI.Preset.Nerd>Nerd</HH.UI.Preset.Nerd>
+  <HH.UI.Preset.Nerd.Desc>Jeder Regler, Formeln und Nerd-Einstellungen. Keine Anleitung.</HH.UI.Preset.Nerd.Desc>
+  <HH.UI.Tutorial.Off>Aus</HH.UI.Tutorial.Off>
+  <HH.UI.Tutorial.Off.Tip>Nichts öffnet sich von selbst.</HH.UI.Tutorial.Off.Tip>
+  <HH.UI.Tutorial.Short>Kurz</HH.UI.Tutorial.Short>
+  <HH.UI.Tutorial.Short.Tip>Anleitungsthemen starten eingeklappt.</HH.UI.Tutorial.Short.Tip>
+  <HH.UI.Tutorial.FullFirstTime>Beim ersten Mal ausführlich, danach kurz</HH.UI.Tutorial.FullFirstTime>
+  <HH.UI.Tutorial.FullFirstTime.Tip>Ausführliche Anleitung in der ersten Kolonie mit diesem Mod, danach kurz.</HH.UI.Tutorial.FullFirstTime.Tip>
+  <HH.UI.Tutorial.AlwaysFull>Immer ausführlich</HH.UI.Tutorial.AlwaysFull>
+  <HH.UI.Tutorial.AlwaysFull.Tip>Themen öffnen sich beim ersten Kontakt, jedes Mal.</HH.UI.Tutorial.AlwaysFull.Tip>
+  <HH.UI.Tutorial.Full>Diesmal ausführlich</HH.UI.Tutorial.Full>
+  <HH.UI.Storyteller.Head>GASTGEBER-SCHWIERIGKEIT · {0} %</HH.UI.Storyteller.Head>
+  <HH.UI.Storyteller.Button>Gastgeber-Schwierigkeit...</HH.UI.Storyteller.Button>
+  <HH.UI.Storyteller.Tip>Wie schwer es in dieser Kolonie wird, Gäste zu beherbergen. Sie ist unabhängig von der Überfall-Schwierigkeit oben.</HH.UI.Storyteller.Tip>
+  <HH.UI.Overview.Guests>Gäste hier</HH.UI.Overview.Guests>
+  <HH.UI.Overview.GuestsTip>Gäste auf der aktuellen Karte.</HH.UI.Overview.GuestsTip>
+  <HH.UI.Overview.Income>Einnahmen heute</HH.UI.Overview.Income>
+  <HH.UI.Overview.IncomeTip>Silber, das seit Tagesanbruch in deine Kassen geflossen ist.</HH.UI.Overview.IncomeTip>
+  <HH.UI.Overview.Venues>Geschäfte</HH.UI.Overview.Venues>
+  <HH.UI.Overview.VenuesTip>Räume mit Geschäftsschild auf der aktuellen Karte.</HH.UI.Overview.VenuesTip>
+  <HH.UI.Overview.Bank>Kontostand</HH.UI.Overview.Bank>
+  <HH.UI.Overview.BankTip>Kontostand des Kolonie-Kontos bei Silverline.</HH.UI.Overview.BankTip>
+  <HH.UI.Overview.IncomeHead>Geld</HH.UI.Overview.IncomeHead>
+  <HH.UI.Overview.Today>Heute</HH.UI.Overview.Today>
+  <HH.UI.Overview.Yesterday>Gestern</HH.UI.Overview.Yesterday>
+  <HH.UI.Overview.Sources>Bisherige Einnahmen nach Quelle</HH.UI.Overview.Sources>
+  <HH.UI.Overview.NoIncome>Noch keine Einnahmen. Sie erscheinen hier, sobald ein Gast zahlt.</HH.UI.Overview.NoIncome>
+  <HH.UI.Guests.Head>Gäste · {0} hier · {1} Tagesgäste</HH.UI.Guests.Head>
+  <HH.UI.Guests.None>Im Moment übernachtet niemand.</HH.UI.Guests.None>
+  <HH.UI.Guests.VanillaNote>Das Gasthaus-Modul ist aus, daher werden gewöhnliche Besucher angezeigt.</HH.UI.Guests.VanillaNote>
+  <HH.UI.Guests.SatTip>Wie zufrieden dieser Gast ist, von -1 bis +1. Neueste Gründe:</HH.UI.Guests.SatTip>
+  <HH.UI.Guests.Col.Name>Gast</HH.UI.Guests.Col.Name>
+  <HH.UI.Guests.Col.Faction>Fraktion</HH.UI.Guests.Col.Faction>
+  <HH.UI.Guests.Col.Stay>Aufenthalt</HH.UI.Guests.Col.Stay>
+  <HH.UI.Guests.Col.Mood>Stimmung</HH.UI.Guests.Col.Mood>
+  <HH.UI.Guests.Col.Satisfaction>Zufriedenheit</HH.UI.Guests.Col.Satisfaction>
+  <HH.UI.Guests.Col.Budget>Restbudget</HH.UI.Guests.Col.Budget>
+  <HH.UI.Guests.Col.Spent>Ausgegeben</HH.UI.Guests.Col.Spent>
+  <HH.UI.Guests.Col.Wing>Flügel</HH.UI.Guests.Col.Wing>
+  <HH.UI.Guests.Col.Handling>Betreuung</HH.UI.Guests.Col.Handling>
+  <HH.UI.Guests.Col.Leaves>Abreise in</HH.UI.Guests.Col.Leaves>
+  <HH.UI.Guests.HandlingTip>Klicken zum Wechseln: Grundversorgung → Begleiten → Anwerben. Begleiten und Anwerben brauchen Kolonisten mit Gastgeben-Arbeit.</HH.UI.Guests.HandlingTip>
+  <HH.UI.Overview.CatToday>heute {0}</HH.UI.Overview.CatToday>
+  <HH.UI.Overview.CatWeek>7 Tage {0}</HH.UI.Overview.CatWeek>
+  <HH.UI.Overview.Week>Einnahmen der letzten 7 Tage</HH.UI.Overview.Week>
+  <HH.UI.Overview.DayTip>Tag {0}: {1} Silber</HH.UI.Overview.DayTip>
+  <HH.UI.Overview.VenuesHead>Geschäfte</HH.UI.Overview.VenuesHead>
+  <HH.UI.Overview.AllDay>ganztägig</HH.UI.Overview.AllDay>
+  <HH.UI.Income.inn_room>Zimmer</HH.UI.Income.inn_room>
+  <HH.UI.Income.food>Essen</HH.UI.Income.food>
+  <HH.UI.Income.shop>Laden</HH.UI.Income.shop>
+  <HH.UI.Income.vending>Automaten</HH.UI.Income.vending>
+  <HH.UI.Income.drink>Getränke</HH.UI.Income.drink>
+  <HH.UI.Income.casino>Casino</HH.UI.Income.casino>
+  <HH.UI.Income.spa>Wellness</HH.UI.Income.spa>
+  <HH.UI.Income.cinema>Kino</HH.UI.Income.cinema>
+  <HH.UI.Income.gallery>Galerie</HH.UI.Income.gallery>
+  <HH.UI.Income.salon>Salon</HH.UI.Income.salon>
+  <HH.UI.Income.security>Leibwächter</HH.UI.Income.security>
+  <HH.UI.Income.taxi>Taxi</HH.UI.Income.taxi>
+  <HH.UI.Income.Faith>Spenden</HH.UI.Income.Faith>
+  <HH.UI.Income.other>Sonstiges</HH.UI.Income.other>
+  <HH.UI.Venue.Closed>Geschlossen</HH.UI.Venue.Closed>
+  <HH.UI.Venue.ClosedTip>Außerhalb der Öffnungszeiten. Ändere die Zeiten am Geschäftsschild.</HH.UI.Venue.ClosedTip>
+  <HH.UI.Venue.NoStaff>Kein Personal</HH.UI.Venue.NoStaff>
+  <HH.UI.Venue.NoStaffTip>Geöffnet, aber niemand ist im Dienst. Gib einem Kolonisten Bedienen-Arbeit (oder lass das Geschäft am Schild ohne Personal laufen).</HH.UI.Venue.NoStaffTip>
+  <HH.UI.Venue.NoStock>Ausverkauft</HH.UI.Venue.NoStock>
+  <HH.UI.Venue.NoStockTip>Im Raum gibt es nichts zu verkaufen. Leg Waren, Getränke oder Mahlzeiten in ein Regal oder Lager darin.</HH.UI.Venue.NoStockTip>
+  <HH.UI.Venue.OpenStaffed>Geöffnet &amp; besetzt</HH.UI.Venue.OpenStaffed>
+  <HH.UI.Venue.Open>Geöffnet</HH.UI.Venue.Open>
+  <HH.UI.Kind.DayVisitor>Tagesgast</HH.UI.Kind.DayVisitor>
+  <HH.UI.Kind.Overnight>Übernachtung</HH.UI.Kind.Overnight>
+  <HH.UI.Kind.Traveler>Reisender</HH.UI.Kind.Traveler>
+  <HH.UI.Kind.Caravan>Karawane</HH.UI.Kind.Caravan>
+  <HH.UI.Kind.Lodger>Untermieter</HH.UI.Kind.Lodger>
+  <HH.UI.Kind.Patient>Patient</HH.UI.Kind.Patient>
+  <HH.UI.GuestTab.Label>Gast</HH.UI.GuestTab.Label>
+  <HH.UI.GuestTab.NoInfo>Kein Gästeeintrag für diese Person.</HH.UI.GuestTab.NoInfo>
+  <HH.UI.GuestTab.Stay>Aufenthalt</HH.UI.GuestTab.Stay>
+  <HH.UI.GuestTab.Faction>Fraktion</HH.UI.GuestTab.Faction>
+  <HH.UI.GuestTab.Kind>Aufenthaltsart</HH.UI.GuestTab.Kind>
+  <HH.UI.GuestTab.Wing>Flügel</HH.UI.GuestTab.Wing>
+  <HH.UI.GuestTab.Arrived>Angekommen</HH.UI.GuestTab.Arrived>
+  <HH.UI.GuestTab.Ago>vor {0}</HH.UI.GuestTab.Ago>
+  <HH.UI.GuestTab.Leaves>Abreise</HH.UI.GuestTab.Leaves>
+  <HH.UI.GuestTab.In>in {0}</HH.UI.GuestTab.In>
+  <HH.UI.GuestTab.Payment>Zahlt mit</HH.UI.GuestTab.Payment>
+  <HH.UI.GuestTab.Card>Karte</HH.UI.GuestTab.Card>
+  <HH.UI.GuestTab.Purse>Geldbeutel</HH.UI.GuestTab.Purse>
+  <HH.UI.GuestTab.Problems>Was helfen würde</HH.UI.GuestTab.Problems>
+  <HH.UI.GuestTab.Satisfaction>Zufriedenheit</HH.UI.GuestTab.Satisfaction>
+  <HH.UI.GuestTab.SatisfactionTip>Von -1 (wütend) bis +1 (begeistert). Sie bestimmt Renommee, Wohlwollen und ob der Gast wiederkommt.</HH.UI.GuestTab.SatisfactionTip>
+  <HH.UI.GuestTab.Reasons>Was dieser Gast denkt</HH.UI.GuestTab.Reasons>
+  <HH.UI.GuestTab.NoReasons>Bisher nichts Besonderes.</HH.UI.GuestTab.NoReasons>
+  <HH.UI.GuestTab.Money>Geld</HH.UI.GuestTab.Money>
+  <HH.UI.GuestTab.Budget>Restbudget</HH.UI.GuestTab.Budget>
+  <HH.UI.GuestTab.Spent>Bisher ausgegeben</HH.UI.GuestTab.Spent>
+  <HH.UI.GuestTab.Handling>Betreuung</HH.UI.GuestTab.Handling>
+  <HH.UI.Handling.Basics>Grundversorgung</HH.UI.Handling.Basics>
+  <HH.UI.Handling.Basics.Tip>Nur bezahlte Leistungen, keine Unterhaltung. Kostet keine Kolonistenzeit.</HH.UI.Handling.Basics.Tip>
+  <HH.UI.Handling.Accompany>Begleiten</HH.UI.Handling.Accompany>
+  <HH.UI.Handling.Accompany.Tip>Kolonisten mit Gastgeben unterhalten diesen Gast und zeigen ihm alles: Stimmung +1 bis +4 je nach Soziales. Kostet Kolonistenzeit. Ohne Kolonisten mit Gastgeben bleibt es bei der Grundversorgung.</HH.UI.Handling.Accompany.Tip>
+  <HH.UI.Handling.Recruit>Anwerben</HH.UI.Handling.Recruit>
+  <HH.UI.Handling.Recruit.Tip>Wie Begleiten, plus Anwerbegespräche. Ein ungeschicktes Gespräch kann beleidigen: Stimmung -6, 30 % weniger Ausgaben, der Gast reist einen halben Tag früher ab.</HH.UI.Handling.Recruit.Tip>
+  <HH.UI.Guide.Title>Hearth &amp; Harbor Anleitung</HH.UI.Guide.Title>
+  <HH.UI.Guide.TitleTip>Rechtsklick zum Ausblenden. Du kannst sie im Hearth &amp; Harbor-Tab oder in den Einstellungen wieder einblenden.</HH.UI.Guide.TitleTip>
+  <HH.UI.Guide.Hidden>Anleitung ausgeblendet. Hol sie mit dem Anleitung-Button im Hearth &amp; Harbor-Tab oder in den Einstellungen zurück.</HH.UI.Guide.Hidden>
+  <HH.UI.Guide.More>+{0} weitere Themen folgen</HH.UI.Guide.More>
+  <HH.UI.Guide.Done>Erledigt ({0})</HH.UI.Guide.Done>
+  <HH.UI.Guide.ClickJump>Klicken, um dorthin zu springen.</HH.UI.Guide.ClickJump>
+  <HH.Setting.core.consequenceStage>Höchste Konsequenzstufe</HH.Setting.core.consequenceStage>
+  <HH.Setting.core.consequenceStage.Desc>Wie weit schlechte Ausgänge eskalieren können: 1 Stimmung, 2 Renommee, 3 Wohlwollen, 4 Geld, 5 Lizenz, 6 Überfälle, 7 Kopfgeld. Folgt der Gastgeber-Schwierigkeit.</HH.Setting.core.consequenceStage.Desc>
+  <HH.Setting.core.researchCost>Forschungskostenfaktor</HH.Setting.core.researchCost>
+  <HH.Setting.core.researchCost.Desc>Multipliziert die Kosten der Forschungsprojekte von Hearth &amp; Harbor und Silverline. Folgt der Gastgeber-Schwierigkeit.</HH.Setting.core.researchCost.Desc>
+  <HH.Setting.core.upkeep>Unterhaltsfaktor</HH.Setting.core.upkeep>
+  <HH.Setting.core.upkeep.Desc>Multipliziert die laufenden Kosten deiner Geschäfte und Räume. Folgt der Gastgeber-Schwierigkeit.</HH.Setting.core.upkeep.Desc>
+  <HH.Setting.core.neverDie>Gäste sterben nie</HH.Setting.core.neverDie>
+  <HH.Setting.core.neverDie.Desc>Gäste werden niedergestreckt statt getötet und kostenlos gerettet.</HH.Setting.core.neverDie.Desc>
+  <HH.Setting.core.noHostile>Nie feindliche Gäste</HH.Setting.core.noHostile>
+  <HH.Setting.core.noHostile.Desc>Gäste werden nie feindlich, egal was ihre Fraktion von dir hält.</HH.Setting.core.noHostile.Desc>
+  <HH.Setting.core.infiniteMoney>Unendlich Gästegeld</HH.Setting.core.infiniteMoney>
+  <HH.Setting.core.infiniteMoney.Desc>Gäste haben immer genug zum Bezahlen. Der Gästegeld-Faktor hat keine Wirkung, solange das an ist.</HH.Setting.core.infiniteMoney.Desc>
+  <HH.Setting.core.picky>Anspruchsvolle Gäste</HH.Setting.core.picky>
+  <HH.Setting.core.picky.Desc>Gäste erwarten von jedem Aufenthalt etwas mehr (Erwartung +0,1).</HH.Setting.core.picky.Desc>
+  <HH.Setting.core.feuding>Verfeindete Fraktionen</HH.Setting.core.feuding>
+  <HH.Setting.core.feuding.Desc>Feindliche Fraktionen mögen sich unter einem Dach doppelt so wenig.</HH.Setting.core.feuding.Desc>
+  <HH.Setting.core.mandatory>Verpflichtende Gastfreundschaft</HH.Setting.core.mandatory>
+  <HH.Setting.core.mandatory.Desc>Verträge und Einquartierungen werden dir aufgezwungen, auch unterhalb der Stufe Überbucht.</HH.Setting.core.mandatory.Desc>
+  <HH.Setting.core.strictInspectors>Strenge Inspektoren</HH.Setting.core.strictInspectors>
+  <HH.Setting.core.strictInspectors.Desc>Inspektoren kontrollieren dreimal so oft.</HH.Setting.core.strictInspectors.Desc>
+  <HH.Setting.core.realConsequences>Echte Konsequenzen</HH.Setting.core.realConsequences>
+  <HH.Setting.core.realConsequences.Desc>Hebt die Konsequenzleiter um eine Stufe an.</HH.Setting.core.realConsequences.Desc>
+  <HH.Setting.core.ironBank>Eiserner Beutel / Eiserne Bank</HH.Setting.core.ironBank>
+  <HH.Setting.core.ironBank.Desc>Keine Rettung, kein Dispo, Zinseszins ohne Gnade.</HH.Setting.core.ironBank.Desc>
+  <HH.Setting.core.noResearchGating>Keine Forschungssperre</HH.Setting.core.noResearchGating>
+  <HH.Setting.core.noResearchGating.Desc>Alles in den Hearth &amp; Harbor- und Silverline-Bäumen ist von Anfang an verfügbar.</HH.Setting.core.noResearchGating.Desc>
+  <HH.Setting.core.peacefulUnderworld>Friedliche Unterwelt</HH.Setting.core.peacefulUnderworld>
+  <HH.Setting.core.peacefulUnderworld.Desc>Dunkle Geschäfte funktionieren ohne Gewalt.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.showMath>Zeig mir die Mathematik</HH.Setting.core.showMath>
+  <HH.Setting.core.showMath.Desc>Zeigt überall Nerd-Einstellungen und Formeln.</HH.Setting.core.showMath.Desc>
+  <HH.Setting.core.perfMode>Leistungsmodus</HH.Setting.core.perfMode>
+  <HH.Setting.core.perfMode.Desc>Weniger Gäste gleichzeitig und einfacheres Gästeverhalten auf langsamen Computern.</HH.Setting.core.perfMode.Desc>
+  <HH.Setting.core.houseStyle>Hausstil</HH.Setting.core.houseStyle>
+  <HH.Setting.core.houseStyle.Desc>Das Aussehen von Möbeln und Schildern. Automatisch folgt deinem Ideologie-Stil, sonst deiner höchsten erforschten Epoche. Nur Optik: Gäste und Preise bleiben unberührt.</HH.Setting.core.houseStyle.Desc>
+  <HH.Setting.core.keepBuiltStyle>Gebaute Möbel behalten ihren alten Stil</HH.Setting.core.keepBuiltStyle>
+  <HH.Setting.core.keepBuiltStyle.Desc>Wenn sich der Hausstil mit einer neuen Epoche ändert, behalten bereits gebaute Möbel ihr Aussehen.</HH.Setting.core.keepBuiltStyle.Desc>
+  <HH.Enum.HouseStyle.Automatic>Automatisch</HH.Enum.HouseStyle.Automatic>
+  <HH.Enum.HouseStyle.StoneAge>Steinzeit</HH.Enum.HouseStyle.StoneAge>
+  <HH.Enum.HouseStyle.Medieval>Mittelalter</HH.Enum.HouseStyle.Medieval>
+  <HH.Enum.HouseStyle.Industrial>Industriell</HH.Enum.HouseStyle.Industrial>
+  <HH.Enum.HouseStyle.Spacer>Raumfahrer</HH.Enum.HouseStyle.Spacer>
+  <HH.Enum.HouseStyle.Ultra>Ultra</HH.Enum.HouseStyle.Ultra>
+</LanguageData>

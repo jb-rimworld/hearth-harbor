@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Hosting.labelShort>anfitrião</HH_Hosting.labelShort>
+  <HH_Hosting.pawnLabel>Anfitrião</HH_Hosting.pawnLabel>
+  <HH_Hosting.gerundLabel>recepcionando</HH_Hosting.gerundLabel>
+  <HH_Hosting.description>Fazer o check-in e o check-out dos hóspedes, mostrar o lugar, mantê-los entretidos e convencê-los a ficar (ou a se juntar).</HH_Hosting.description>
+  <HH_Hosting.verb>Recepcionar</HH_Hosting.verb>
+  <HH_Serving.labelShort>servir</HH_Serving.labelShort>
+  <HH_Serving.pawnLabel>Garçom</HH_Serving.pawnLabel>
+  <HH_Serving.gerundLabel>servindo</HH_Serving.gerundLabel>
+  <HH_Serving.description>Atender balcões, mesas e caixas: anotar pedidos, servir comidas e bebidas, administrar o salão do cassino, reabastecer prateleiras.</HH_Serving.description>
+  <HH_Serving.verb>Servir</HH_Serving.verb>
+</LanguageData>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_XenoHosp_Baseliner.label>baseliner</HH_XenoHosp_Baseliner.label>
+  <HH_XenoHosp_Baseliner.description>Gens ordinaires : goûts sobres, sens aigu de l'économie. Groupes nombreux et économes.</HH_XenoHosp_Baseliner.description>
+  <HH_XenoHosp_Sanguophage.label>sanguophage</HH_XenoHosp_Sanguophage.label>
+  <HH_XenoHosp_Sanguophage.description>Les sanguophages veulent des pièces sombres et un minibar d'hémogène à portée de main. Un salon de repos mortuaire, ils sont prêts à le payer.</HH_XenoHosp_Sanguophage.description>
+  <HH_XenoHosp_Hemogenic.label>hémogénique (tout xénotype)</HH_XenoHosp_Hemogenic.label>
+  <HH_XenoHosp_Hemogenic.description>Toute personne porteuse du gène hémogénique, y compris les xénotypes personnalisés, partage le goût des sanguophages pour les pièces sombres et les poches d'hémogène.</HH_XenoHosp_Hemogenic.description>
+  <HH_XenoHosp_UVSensitive.label>sensible aux UV (tout xénotype)</HH_XenoHosp_UVSensitive.label>
+  <HH_XenoHosp_UVSensitive.description>Le soleil fait mal. Une pièce intérieure sombre, sans fenêtre, est une pièce confortable.</HH_XenoHosp_UVSensitive.description>
+  <HH_XenoHosp_Dirtmole.label>dirtmole</HH_XenoHosp_Dirtmole.label>
+  <HH_XenoHosp_Dirtmole.description>Les dirtmoles préfèrent les pièces sombres et sans fenêtre ainsi que les plats aux champignons. Ils proposent de payer une visite guidée de la mine.</HH_XenoHosp_Dirtmole.description>
+  <HH_XenoHosp_Genie.label>génie</HH_XenoHosp_Genie.label>
+  <HH_XenoHosp_Genie.description>Les génies attendent un coin lecture et une table tranquille. Ils louent des salles de recherche.</HH_XenoHosp_Genie.description>
+  <HH_XenoHosp_Hussar.label>hussard</HH_XenoHosp_Hussar.label>
+  <HH_XenoHosp_Hussar.description>Les hussards dépensent sans compter au bar et aiment une bonne bagarre, avec les querelles qui vont avec.</HH_XenoHosp_Hussar.description>
+  <HH_XenoHosp_Neanderthal.label>néandertalien</HH_XenoHosp_Neanderthal.label>
+  <HH_XenoHosp_Neanderthal.description>De grosses portions, des chambres simples. L'aménagement compte moins.</HH_XenoHosp_Neanderthal.description>
+  <HH_XenoHosp_Pigskin.label>pigskin</HH_XenoHosp_Pigskin.label>
+  <HH_XenoHosp_Pigskin.description>Les pigskins mangent presque n'importe quoi et ne se soucient guère d'une pièce en désordre.</HH_XenoHosp_Pigskin.description>
+  <HH_XenoHosp_Impid.label>impide</HH_XenoHosp_Impid.label>
+  <HH_XenoHosp_Impid.description>Les impides aiment les pièces chaudes et les épices. Ils se produisent pour une part de la recette.</HH_XenoHosp_Impid.description>
+  <HH_XenoHosp_Waster.label>gaspilleur</HH_XenoHosp_Waster.label>
+  <HH_XenoHosp_Waster.description>Les gaspilleurs se sentent chez eux dans les pièces sales, dépensent beaucoup et laissent du désordre derrière eux.</HH_XenoHosp_Waster.description>
+  <HH_XenoHosp_Yttakin.label>yttakin</HH_XenoHosp_Yttakin.label>
+  <HH_XenoHosp_Yttakin.description>Les yttakins veulent des pièces froides ; les pièces chaudes les rendent malheureux.</HH_XenoHosp_Yttakin.description>
+  <HH_XenoHosp_Highmate.label>highmate</HH_XenoHosp_Highmate.label>
+  <HH_XenoHosp_Highmate.description>Les highmates aiment la beauté et la compagnie. De belles pièces communes les enchantent.</HH_XenoHosp_Highmate.description>
+</LanguageData>

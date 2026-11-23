@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Insurance.label>seguros</SL_Insurance.label>
+  <SL_Insurance.description>Una póliza para cada desgracia, vendida por una mutua que nunca ha perdido una discusión. Desbloquea la oficina de seguros y las pólizas de los niveles básicos de cobertura «Lo mínimo» y «Suficientemente bueno».</SL_Insurance.description>
+  <SL_Actuarial.label>ciencia actuarial</SL_Actuarial.label>
+  <SL_Actuarial.description>Tablas de la probabilidad de que todo salga mal y de lo que eso vale. Desbloquea el nivel de cobertura máximo «Prima de primas», las pólizas premium y los servicios de la mutua.</SL_Actuarial.description>
+</LanguageData>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_XenoHosp_Baseliner.label>baseliner</HH_XenoHosp_Baseliner.label>
+  <HH_XenoHosp_Baseliner.description>Gente comum: gostos sóbrios, cuidadosa com dinheiro. Grupos grandes e econômicos.</HH_XenoHosp_Baseliner.description>
+  <HH_XenoHosp_Sanguophage.label>sanguófago</HH_XenoHosp_Sanguophage.label>
+  <HH_XenoHosp_Sanguophage.description>Sanguófagos querem quartos escuros e um frigobar de hemogênio à mão. Uma sala de descanso mortal é algo que eles pagam com gosto.</HH_XenoHosp_Sanguophage.description>
+  <HH_XenoHosp_Hemogenic.label>hemogênico (qualquer xenótipo)</HH_XenoHosp_Hemogenic.label>
+  <HH_XenoHosp_Hemogenic.description>Quem tem o gene hemogênico, incluindo xenótipos personalizados, compartilha o gosto dos sanguófagos por quartos escuros e pacotes de hemogênio.</HH_XenoHosp_Hemogenic.description>
+  <HH_XenoHosp_UVSensitive.label>sensível a UV (qualquer xenótipo)</HH_XenoHosp_UVSensitive.label>
+  <HH_XenoHosp_UVSensitive.description>A luz do sol machuca. Um quarto escuro e fechado é um quarto confortável.</HH_XenoHosp_UVSensitive.description>
+  <HH_XenoHosp_Dirtmole.label>dirtmole</HH_XenoHosp_Dirtmole.label>
+  <HH_XenoHosp_Dirtmole.description>Toupeiras preferem quartos escuros, sem janelas, e pratos de cogumelo. Oferecem pagar por um tour guiado pela mina.</HH_XenoHosp_Dirtmole.description>
+  <HH_XenoHosp_Genie.label>genie</HH_XenoHosp_Genie.label>
+  <HH_XenoHosp_Genie.description>Gênios esperam um canto de leitura e uma mesa silenciosa. Alugam salas de pesquisa.</HH_XenoHosp_Genie.description>
+  <HH_XenoHosp_Hussar.label>hussar</HH_XenoHosp_Hussar.label>
+  <HH_XenoHosp_Hussar.description>Hussares gastam à vontade no bar e curtem uma boa briga, com as desavenças que vêm junto.</HH_XenoHosp_Hussar.description>
+  <HH_XenoHosp_Neanderthal.label>neandertal</HH_XenoHosp_Neanderthal.label>
+  <HH_XenoHosp_Neanderthal.description>Porções grandes, quartos simples. A mobília conta menos.</HH_XenoHosp_Neanderthal.description>
+  <HH_XenoHosp_Pigskin.label>pigskin</HH_XenoHosp_Pigskin.label>
+  <HH_XenoHosp_Pigskin.description>Pigskins comem quase qualquer coisa e não se importam com um quarto bagunçado.</HH_XenoHosp_Pigskin.description>
+  <HH_XenoHosp_Impid.label>impid</HH_XenoHosp_Impid.label>
+  <HH_XenoHosp_Impid.description>Impids gostam de quartos quentes e temperos. Apresentam-se por uma parte da receita.</HH_XenoHosp_Impid.description>
+  <HH_XenoHosp_Waster.label>waster</HH_XenoHosp_Waster.label>
+  <HH_XenoHosp_Waster.description>Wasters se sentem em casa em quartos sujos, gastam muito e deixam bagunça.</HH_XenoHosp_Waster.description>
+  <HH_XenoHosp_Yttakin.label>yttakin</HH_XenoHosp_Yttakin.label>
+  <HH_XenoHosp_Yttakin.description>Yttakin querem quartos frios; os quentes os deixam infelizes.</HH_XenoHosp_Yttakin.description>
+  <HH_XenoHosp_Highmate.label>highmate</HH_XenoHosp_Highmate.label>
+  <HH_XenoHosp_Highmate.description>Highmates adoram beleza e companhia. Salas compartilhadas bonitas os agradam.</HH_XenoHosp_Highmate.description>
+</LanguageData>

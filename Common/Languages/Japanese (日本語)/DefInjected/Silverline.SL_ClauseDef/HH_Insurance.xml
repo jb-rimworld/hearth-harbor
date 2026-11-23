@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Clause_1.label>待機期間</SL_Clause_1.label>
+  <SL_Clause_1.description>補償は待機期間の経過後に始まります。</SL_Clause_1.description>
+  <SL_Clause_3_2.label>事故と料理</SL_Clause_3_2.label>
+  <SL_Clause_3_2.description>病気は事故ではありません。</SL_Clause_3_2.description>
+  <SL_Clause_4.label>語り部の行為</SL_Clause_4.label>
+  <SL_Clause_4.description>天候による損害はグレーゾーンです。</SL_Clause_4.description>
+  <SL_Clause_7b.label>襲撃と包囲</SL_Clause_7b.label>
+  <SL_Clause_7b.description>包囲や機械化兵の集団はグレーゾーンです。</SL_Clause_7b.description>
+  <SL_Clause_9.label>既往の損傷</SL_Clause_9.label>
+  <SL_Clause_9.description>以前からあった損傷は差し引かれます。</SL_Clause_9.description>
+  <SL_Clause_11.label>自傷による損害</SL_Clause_11.label>
+  <SL_Clause_11.description>入植者自身による損害は対象外です。</SL_Clause_11.description>
+  <SL_Clause_14b.label>壁と扉</SL_Clause_14b.label>
+  <SL_Clause_14b.description>壊れた扉はグレーゾーンです。</SL_Clause_14b.description>
+  <SL_Clause_17.label>もう一つの条項</SL_Clause_17.label>
+  <SL_Clause_17.description>審査にもう一日かかります。「予約超過」の難易度からはグレーゾーンです。</SL_Clause_17.description>
+  <SL_Clause_21.label>義体部品</SL_Clause_21.label>
+  <SL_Clause_21.description>義体は設備として扱われます。</SL_Clause_21.description>
+  <SL_Clause_22.label>再生</SL_Clause_22.label>
+  <SL_Clause_22.description>失った部位が再生すれば、請求も戻ります。</SL_Clause_22.description>
+  <SL_Clause_23.label>査定と死亡</SL_Clause_23.label>
+  <SL_Clause_23.description>査定が終わる前に死亡すると、査定も終わります。</SL_Clause_23.description>
+  <SL_Clause_26.label>リスクの変化</SL_Clause_26.label>
+  <SL_Clause_26.description>保険料は危険に応じて変動します。</SL_Clause_26.description>
+  <SL_Clause_30.label>C-7様式</SL_Clause_30.label>
+  <SL_Clause_30.description>解約は書式の不備で差し戻されることがあります。</SL_Clause_30.description>
+  <SL_Clause_31.label>自動更新</SL_Clause_31.label>
+  <SL_Clause_31.description>契約は自動で更新されます。</SL_Clause_31.description>
+  <SL_Clause_40.label>利益相反</SL_Clause_40.label>
+  <SL_Clause_40.description>「予約超過」の難易度では、Legal Shieldはクローバック相互保険に対して役立ちません。</SL_Clause_40.description>
+</LanguageData>

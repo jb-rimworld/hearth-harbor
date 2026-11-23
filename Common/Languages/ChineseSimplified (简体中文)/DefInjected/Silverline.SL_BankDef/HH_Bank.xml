@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Mutual.label>Silverline Mutual</SL_Mutual.label>
+  <SL_Mutual.description>平静、中立的默认选项。默默保管你的银币，收费公道，从未上过新闻。柜员们精神好得令人起疑。</SL_Mutual.description>
+  <SL_Mutual.slogan>自大灾变以来，默默替你保管一切。</SL_Mutual.slogan>
+  <SL_TooBigToFail.label>First Rim Bank of Too Big To Fail</SL_TooBigToFail.label>
+  <SL_TooBigToFail.description>大理石大厅里的讽刺作品。利息更高，手续费也更高；每个游戏年，它会救助一位真正富得流油、如今却已一文不名的客户。这笔救助是贷款，不是赠与。没人会读到那部分。</SL_TooBigToFail.description>
+  <SL_TooBigToFail.slogan>大到我们不得不把名字说两遍。</SL_TooBigToFail.slogan>
+  <SL_ImperialTreasury.label>Imperial Treasury</SL_ImperialTreasury.label>
+  <SL_ImperialTreasury.description>王座自己的钱庄。手续费低，空气里隐约有地板蜡的味道，信贷只对有头衔的人开放。取款被称作“拨付”，并附带一个小小的鞠躬。</SL_ImperialTreasury.description>
+  <SL_ImperialTreasury.slogan>每枚银币上都印着王座的侧影。请勿咬币。</SL_ImperialTreasury.slogan>
+  <SL_OrbitalExchange.label>Orbital Exchange</SL_OrbitalExchange.label>
+  <SL_OrbitalExchange.description>一家交易行公会经营的银行，位于一个造价极高的旋转环上。边缘地带最好的市场准入，也是边缘地带最高的手续费；每张收据上都附着一张向右上方攀升的小图表。</SL_OrbitalExchange.description>
+  <SL_OrbitalExchange.slogan>流动性如光速。手续费也是。</SL_OrbitalExchange.slogan>
+  <SL_BlackLedger.label>The Black Ledger</SL_BlackLedger.label>
+  <SL_BlackLedger.description>不问，不填表，不记名。无论信用如何都放贷，价格另议。偶尔会有一本账簿“不见了”，连同一部分存款一起消失。</SL_BlackLedger.description>
+  <SL_BlackLedger.slogan>我们不问，你不说。利息照样复利。</SL_BlackLedger.slogan>
+  <SL_CompoundInterest.label>First Church of Compound Interest</SL_CompoundInterest.label>
+  <SL_CompoundInterest.description>一个崇拜指数增长奇迹的教会。手续费适度，每张资产负债表都配有一首赞美诗，还有一个严格来说可有可无的捐款箱。</SL_CompoundInterest.description>
+  <SL_CompoundInterest.slogan>我们信仰复利。早奉献，常奉献。</SL_CompoundInterest.slogan>
+</LanguageData>

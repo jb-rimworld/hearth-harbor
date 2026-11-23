@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Bank.Building.Account>{0}: баланс {1}</HH.Bank.Building.Account>
+  <HH.Bank.Building.DirectDeposit>Прямое зачисление</HH.Bank.Building.DirectDeposit>
+  <HH.Bank.Building.DirectDepositDesc>Вкл.: выручка ваших предприятий ровно в полночь переводится на банковский счёт. Выкл.: выручка лежит серебром рядом с сейфом.</HH.Bank.Building.DirectDepositDesc>
+  <HH.Bank.Building.NoAccount>Счёта пока нет. Откройте его здесь или у консоли связи.</HH.Bank.Building.NoAccount>
+  <HH.Bank.Building.SafeDirect>Выручка уходит прямо на счёт в полночь.</HH.Bank.Building.SafeDirect>
+  <HH.Bank.Building.SafeFloor>Выручка кладётся серебром в полночь.</HH.Bank.Building.SafeFloor>
+  <HH.Bank.Building.SafeNoAccount>Банковского счёта нет: выручка кладётся серебром в полночь.</HH.Bank.Building.SafeNoAccount>
+  <HH.Bank.Building.UseAtm>Воспользоваться банкоматом</HH.Bank.Building.UseAtm>
+  <HH.Bank.Building.UseBranch>Подойти к окошку</HH.Bank.Building.UseBranch>
+  <HH.Bank.Chart.DayN>день {0}</HH.Bank.Chart.DayN>
+  <HH.Bank.Chart.Tip>День {0}: {1} серебра</HH.Bank.Chart.Tip>
+  <HH.Bank.Chart.Today>сегодня</HH.Bank.Chart.Today>
+  <HH.Bank.Choose.Current>ваш банк</HH.Bank.Choose.Current>
+  <HH.Bank.Choose.Intro>Перевод счёта стоит {0} серебра, которые списываются со счёта. Кредиты остаются в том банке, который их выдал.</HH.Bank.Choose.Intro>
+  <HH.Bank.Choose.Switch>Перевести ({0})</HH.Bank.Choose.Switch>
+  <HH.Bank.Choose.Title>Смена банка</HH.Bank.Choose.Title>
+  <HH.Bank.Comm.Call>Позвонить в Silverline</HH.Bank.Comm.Call>
+  <HH.Bank.Comm.Info>Банковские услуги, кредиты и изредка сухие замечания.</HH.Bank.Comm.Info>
+  <HH.Bank.Greet.Afternoon>Добрый день</HH.Bank.Greet.Afternoon>
+  <HH.Bank.Greet.Evening>Добрый вечер</HH.Bank.Greet.Evening>
+  <HH.Bank.Greet.Morning>Доброе утро</HH.Bank.Greet.Morning>
+  <HH.Bank.Greet.Night>Доброй ночи</HH.Bank.Greet.Night>
+  <HH.Bank.Header.Tier>Уровень состояния: {0}</HH.Bank.Header.Tier>
+  <HH.Bank.Header.TierTip>Чистое состояние = счёт + серебро дома − долги: {0} серебра. Уровень меняется только после того, как новое значение продержится целый день. Он задаёт настроение колонии от этого банка (настройка: bank.moodOn).</HH.Bank.Header.TierTip>
+  <HH.Bank.Hist.Amount>Сумма (5 знаков)</HH.Bank.Hist.Amount>
+  <HH.Bank.Hist.Empty>Операций пока нет.</HH.Bank.Hist.Empty>
+  <HH.Bank.Hist.TotalFees>Уплачено комиссий всего</HH.Bank.Hist.TotalFees>
+  <HH.Bank.Hist.TotalFeesTip>Все комиссии, штрафы за просрочку и стоимость смены банка.</HH.Bank.Hist.TotalFeesTip>
+  <HH.Bank.Hist.TotalInterest>Получено процентов всего</HH.Bank.Hist.TotalInterest>
+  <HH.Bank.Hist.TotalInterestTip>Всё, что банк выплатил вам в виде процентов (отрицательные проценты засчитываются против банка).</HH.Bank.Hist.TotalInterestTip>
+  <HH.Bank.Hist.What>Что</HH.Bank.Hist.What>
+  <HH.Bank.Hist.When>Когда</HH.Bank.Hist.When>
+  <HH.Bank.Letter.Bailout>{0} решил, что вы всё-таки слишком крупны, чтобы обанкротиться, и выдал вам беспроцентный кредит на {1} серебра. Срок — 60 дней. Это кредит, а не подарок. Этой части никто никогда не читает.</HH.Bank.Letter.Bailout>
+  <HH.Bank.Letter.BailoutTitle>Спасение</HH.Bank.Letter.BailoutTitle>
+  <HH.Bank.Letter.Late>Уважаемый клиент,
+
+кредит {0} теперь просрочен на несколько дней. Начислен штраф за просрочку, ваш кредитный рейтинг получил небольшую, неизбежную царапину. Сумма к оплате: {1} серебра.
+
+Тон этих писем скоро изменится.
+
+Клерк Оттолайн</HH.Bank.Letter.Late>
+  <HH.Bank.Letter.LateTitle>Просроченный платёж</HH.Bank.Letter.LateTitle>
+  <HH.Bank.Letter.Offset>Пока кредит {0} не погашен, половина каждого взноса, поступающего на ваш счёт, идёт в счёт долга, а новые кредиты недоступны. Это тот пункт договора, который никто не помнит подписанным.</HH.Bank.Letter.Offset>
+  <HH.Bank.Letter.OffsetTitle>Зачёт против взносов</HH.Bank.Letter.OffsetTitle>
+  <HH.Bank.Letter.Reminder>Уважаемый клиент,
+
+мы заметили, что очередной взнос в {0} серебра по кредиту {1} до нас ещё не дошёл. Мы уверены, что это недоразумение, и остаёмся, как всегда, полностью к вашим услугам.
+
+С теплыми пожеланиями,
+Клерк Оттолайн, {2}</HH.Bank.Letter.Reminder>
+  <HH.Bank.Letter.ReminderTitle>Деликатное напоминание</HH.Bank.Letter.ReminderTitle>
+  <HH.Bank.Letter.Seized>Клерк {0} с сожалением сообщает, что {1} серебра с вашего счёта «переведены в другую статью по административным причинам». Бланка для обжалования нет. Зато есть очень красивая ручка.</HH.Bank.Letter.Seized>
+  <HH.Bank.Letter.SeizedTitle>Ревизия счёта</HH.Bank.Letter.SeizedTitle>
+  <HH.Bank.Letter.Visit>Прибыли два представителя Rim Recovery Partners. Они в котелках. Оружия при них нет, и записи на приём тоже нет. Они спокойно постоят у вашей двери, пока кредит {0} не будет выплачен. Они никогда не нападают и уходят сразу, как только заплатят деньги.</HH.Bank.Letter.Visit>
+  <HH.Bank.Letter.VisitTitle>Дружеский визит</HH.Bank.Letter.VisitTitle>
+  <HH.Bank.Loans.Available>Доступно</HH.Bank.Loans.Available>
+  <HH.Bank.Loans.BailoutTag> (спасение, без процентов)</HH.Bank.Loans.BailoutTag>
+  <HH.Bank.Loans.Credit>Ваш кредит</HH.Bank.Loans.Credit>
+  <HH.Bank.Loans.DaysShort> дн.</HH.Bank.Loans.DaysShort>
+  <HH.Bank.Loans.Limit>Кредитный лимит</HH.Bank.Loans.Limit>
+  <HH.Bank.Loans.LimitTip>0,15 × состояние × (рейтинг − 300) / 550, где состояние = чистое состояние + четверть богатства колонии. Не менее стартового кредита ({0} серебра) при хорошем рейтинге.</HH.Bank.Loans.LimitTip>
+  <HH.Bank.Loans.Line>Кредит {0}: взято {1}, ещё должны {2}</HH.Bank.Loans.Line>
+  <HH.Bank.Loans.Mine>Ваши кредиты</HH.Bank.Loans.Mine>
+  <HH.Bank.Loans.New>Новый кредит</HH.Bank.Loans.New>
+  <HH.Bank.Loans.NextDue>следующий взнос {0} через {1}</HH.Bank.Loans.NextDue>
+  <HH.Bank.Loans.None>Кредитов нет. Оттолайн почти разочарована.</HH.Bank.Loans.None>
+  <HH.Bank.Loans.Overdue>ПРОСРОЧЕНО, стадия {0}: к оплате {1}</HH.Bank.Loans.Overdue>
+  <HH.Bank.Loans.Quote>{0} серебра под {1} % годовых: {2} каждые {3} дн., всего {4} ({5} процентов).</HH.Bank.Loans.Quote>
+  <HH.Bank.Loans.Rate>Ставка за игровой год</HH.Bank.Loans.Rate>
+  <HH.Bank.Loans.RateTip>Базовая ставка max(2 %, M − 1) = {0} % плюс надбавка вашего банка ({1} пункт.). Она следует за ползунком прибыльности, поэтому занимать деньги на инвестиции никогда не имеет положительного ожидания.</HH.Bank.Loans.RateTip>
+  <HH.Bank.Loans.Repay100>Погасить {0}</HH.Bank.Loans.Repay100>
+  <HH.Bank.Loans.RepayAll>Погасить всё</HH.Bank.Loans.RepayAll>
+  <HH.Bank.Loans.Score>Кредитный рейтинг</HH.Bank.Loans.Score>
+  <HH.Bank.Loans.ScoreTip>От 300 до 850, стартует с 600. Взнос вовремя +4, каждый день просрочки −6, дефолт −120, использование более 70 % лимита −20, плюс 20 × log10(состояние / 10 000). Базовый рейтинг {0}.</HH.Bank.Loans.ScoreTip>
+  <HH.Bank.Loans.Take>Взять кредит</HH.Bank.Loans.Take>
+  <HH.Bank.Loans.Term>Срок</HH.Bank.Loans.Term>
+  <HH.Bank.Loans.Used>Использовано</HH.Bank.Loans.Used>
+  <HH.Bank.Lobby.Accounts>Счета</HH.Bank.Lobby.Accounts>
+  <HH.Bank.Lobby.Amount>Сумма</HH.Bank.Lobby.Amount>
+  <HH.Bank.Lobby.Balance>Баланс</HH.Bank.Lobby.Balance>
+  <HH.Bank.Lobby.BalanceTip>Точно: {0} серебра.
+Проценты ежедневно: баланс × (M^({1} × {2} / 60) − 1), где M = {3} за игровой год (ползунок прибыльности). Это {4:0.##} % в день.</HH.Bank.Lobby.BalanceTip>
+  <HH.Bank.Lobby.Cash>Наличные дома</HH.Bank.Lobby.Cash>
+  <HH.Bank.Lobby.CashTip>Серебро, валяющееся на ваших домашних картах.</HH.Bank.Lobby.CashTip>
+  <HH.Bank.Lobby.ChangeBank>Сменить банк</HH.Bank.Lobby.ChangeBank>
+  <HH.Bank.Lobby.Chart>Последние 30 дней</HH.Bank.Lobby.Chart>
+  <HH.Bank.Lobby.Debt>Долг</HH.Bank.Lobby.Debt>
+  <HH.Bank.Lobby.DebtTip>Сумма ваших открытых кредитов с начисленными процентами.</HH.Bank.Lobby.DebtTip>
+  <HH.Bank.Lobby.DepDelay>зачисление через {0}</HH.Bank.Lobby.DepDelay>
+  <HH.Bank.Lobby.DepInstant>проведено сразу</HH.Bank.Lobby.DepInstant>
+  <HH.Bank.Lobby.Deposit>Внести</HH.Bank.Lobby.Deposit>
+  <HH.Bank.Lobby.Direct>Прямое зачисление</HH.Bank.Lobby.Direct>
+  <HH.Bank.Lobby.DirectTip>Кассы ваших предприятий ровно в полночь переводятся на счёт за вычетом {0} %.</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.Interest>Проценты за квадрум</HH.Bank.Lobby.Interest>
+  <HH.Bank.Lobby.InterestTip>Проценты, начисленные на баланс с начала квадрума (15 дней).</HH.Bank.Lobby.InterestTip>
+  <HH.Bank.Lobby.Max>Макс.</HH.Bank.Lobby.Max>
+  <HH.Bank.Lobby.Net>Чистое состояние</HH.Bank.Lobby.Net>
+  <HH.Bank.Lobby.NetTip>Счёт + серебро дома − долги. Определяет ваш уровень состояния.</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.Nothing>Пока ничего. Взнос был бы неплохим началом.</HH.Bank.Lobby.Nothing>
+  <HH.Bank.Lobby.PendingDep>↓ {0} придёт через {1}</HH.Bank.Lobby.PendingDep>
+  <HH.Bank.Lobby.PendingWd>↑ {0} дроппод через {1}</HH.Bank.Lobby.PendingWd>
+  <HH.Bank.Lobby.Recent>Недавние операции</HH.Bank.Lobby.Recent>
+  <HH.Bank.Lobby.Trade>Автозачисление торгового серебра</HH.Bank.Lobby.Trade>
+  <HH.Bank.Lobby.TradeTip>Серебро, полученное от торговцев и торговых кораблей, зачисляется на счёт сразу после сделки по той же комиссии, что и прямое зачисление, вместо того чтобы лежать на полу монетами. Требует прямого зачисления. По умолчанию выключено, чтобы следующего торговца можно было по-прежнему оплатить наличными. Караваны не затрагиваются.</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.Transfer>Внести и снять</HH.Bank.Lobby.Transfer>
+  <HH.Bank.Lobby.TransferInfo>На складе: {0}. Внесение {1}. Комиссия за снятие {2}, {3}.</HH.Bank.Lobby.TransferInfo>
+  <HH.Bank.Lobby.Transit>В пути</HH.Bank.Lobby.Transit>
+  <HH.Bank.Lobby.TransitTip>Серебро, покинувшее склад, но ещё не зачисленное (задержка зачисления без отделения или банкомата).</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.WdInstant>наличные у здания сразу</HH.Bank.Lobby.WdInstant>
+  <HH.Bank.Lobby.WdPod>дроппод через {0}, {1} ч</HH.Bank.Lobby.WdPod>
+  <HH.Bank.Lobby.Withdraw>Снять</HH.Bank.Lobby.Withdraw>
+  <HH.Bank.Lobby.WithdrawPod>Снять (дроппод)</HH.Bank.Lobby.WithdrawPod>
+  <HH.Bank.Memo.AccountFee>Плата за счёт</HH.Bank.Memo.AccountFee>
+  <HH.Bank.Memo.Bailout>Кредит спасения</HH.Bank.Memo.Bailout>
+  <HH.Bank.Memo.Deposit>Взнос (серебро)</HH.Bank.Memo.Deposit>
+  <HH.Bank.Memo.DepositTransit>Взнос в пути</HH.Bank.Memo.DepositTransit>
+  <HH.Bank.Memo.Installment>Кредит {0}: взнос</HH.Bank.Memo.Installment>
+  <HH.Bank.Memo.Interest>Проценты</HH.Bank.Memo.Interest>
+  <HH.Bank.Memo.Late>Кредит {0}: просрочка</HH.Bank.Memo.Late>
+  <HH.Bank.Memo.LateFee>Кредит {0}: штраф за просрочку</HH.Bank.Memo.LateFee>
+  <HH.Bank.Memo.Loan>Кредит {0}</HH.Bank.Memo.Loan>
+  <HH.Bank.Memo.LoanInterest>Кредит {0}: проценты</HH.Bank.Memo.LoanInterest>
+  <HH.Bank.Memo.NegInterest>Отрицательные проценты</HH.Bank.Memo.NegInterest>
+  <HH.Bank.Memo.Offset>Зачёт при взыскании</HH.Bank.Memo.Offset>
+  <HH.Bank.Memo.Repay>Кредит {0}: погашение</HH.Bank.Memo.Repay>
+  <HH.Bank.Memo.Seized>Изъято</HH.Bank.Memo.Seized>
+  <HH.Bank.Memo.Seizure>Выручка от изъятия (кредит {0})</HH.Bank.Memo.Seizure>
+  <HH.Bank.Memo.SeizurePay>Кредит {0}: погашено изъятием</HH.Bank.Memo.SeizurePay>
+  <HH.Bank.Memo.Trade>Торговый доход</HH.Bank.Memo.Trade>
+  <HH.Bank.Memo.Withdraw>Снятие (наличные)</HH.Bank.Memo.Withdraw>
+  <HH.Bank.Memo.WithdrawCash>Снятие (наличные)</HH.Bank.Memo.WithdrawCash>
+  <HH.Bank.Memo.WithdrawFee>Комиссия: снятие</HH.Bank.Memo.WithdrawFee>
+  <HH.Bank.Memo.WithdrawPod>Снятие дропподом</HH.Bank.Memo.WithdrawPod>
+  <HH.Bank.Msg.DepositArrived>{0} серебра зачислено на ваш счёт.</HH.Bank.Msg.DepositArrived>
+  <HH.Bank.Msg.LoanRepaid>Кредит {0} полностью погашен.</HH.Bank.Msg.LoanRepaid>
+  <HH.Bank.Msg.Missed>Взнос по кредиту {0} не удалось внести.</HH.Bank.Msg.Missed>
+  <HH.Bank.Msg.Opened>Счёт открыт в {0}.</HH.Bank.Msg.Opened>
+  <HH.Bank.Msg.PodsComing>{0} серебра летит вниз в дропподах.</HH.Bank.Msg.PodsComing>
+  <HH.Bank.Msg.Settled>Кредит {0} снова в порядке.</HH.Bank.Msg.Settled>
+  <HH.Bank.Msg.Switched>Ваш счёт теперь ведётся в {0}.</HH.Bank.Msg.Switched>
+  <HH.Bank.Msg.TradeDeposit>Торговый доход {0} серебра сразу зачислен на ваш счёт в {1}.</HH.Bank.Msg.TradeDeposit>
+  <HH.Bank.Open.Button>Открыть счёт</HH.Bank.Open.Button>
+  <HH.Bank.Open.Direct>Направлять выручку прямо в банк в полночь</HH.Bank.Open.Direct>
+  <HH.Bank.Open.DirectTip>Выручка ваших магазинов, таверны и казино попадает на счёт, а не лежит серебром. Позже можно переключить в ночном сейфе или в настройках (bank.directDeposit).</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.Intro>Выберите банк. Открыть счёт бесплатно; перевести его позже стоит {0} серебра. Пока счёта нет, здесь ничто не беспокоит: ни письма, ни настроение, ни комиссии.</HH.Bank.Open.Intro>
+  <HH.Bank.Open.Sub>Ваше серебро — наша забота.</HH.Bank.Open.Sub>
+  <HH.Bank.Open.Title>Silverline: открытие счёта</HH.Bank.Open.Title>
+  <HH.Bank.Quip.A>Ваше серебро в безопасности*. *Действуют условия.</HH.Bank.Quip.A>
+  <HH.Bank.Quip.B>Пожалуйста, возьмите номерок. Номерков у нас нет со времён Третьего краха, но жест важен.</HH.Bank.Quip.B>
+  <HH.Bank.Quip.C>Каждая монета здесь учтена. В основном мной. Ночью.</HH.Bank.Quip.C>
+  <HH.Bank.Quip.Collectors>Мои коллеги в котелках здесь не ради вас. Не смотрите на них. Они знают.</HH.Bank.Quip.Collectors>
+  <HH.Bank.Quip.D>Матрас — не финансовый продукт. Хотя, говорят, у него есть поклонники.</HH.Bank.Quip.D>
+  <HH.Bank.Quip.Debt>Долг — это просто сбережения из будущего. Будущее очень хочет их вернуть.</HH.Bank.Quip.Debt>
+  <HH.Bank.Quip.E>Если кто-нибудь спросит, ручка не продаётся.</HH.Bank.Quip.E>
+  <HH.Bank.Quip.Empty>Пустой счёт — это просто очень честный счёт.</HH.Bank.Quip.Empty>
+  <HH.Bank.Quip.Huge>Такого размера мы уже не ваш банк. Мы ваш климат.</HH.Bank.Quip.Huge>
+  <HH.Bank.Quip.Interest>Проценты за квадрум: {0}. Это, если я правильно считаю, несколько обедов. Поздравляю?</HH.Bank.Quip.Interest>
+  <HH.Bank.Quip.Overdue>Не хотим вас пугать. Мы просто заметили, что вы не заметили.</HH.Bank.Quip.Overdue>
+  <HH.Bank.Quip.Rich>Четыре цифры. Ваш котелок почти цилиндр.</HH.Bank.Quip.Rich>
+  <HH.Bank.Raid.Bounty>{0} продал долг по кредиту {1} людям, которые не присылают писем. На голову лидера вашей колонии назначена награда.</HH.Bank.Raid.Bounty>
+  <HH.Bank.Raid.BountyTitle>Награда</HH.Bank.Raid.BountyTitle>
+  <HH.Bank.Raid.Text>Rim Recovery Partners потеряли терпение из-за кредита {0}. Их агенты идут за ценностями, стоящими больше долга. Они возьмут всё, что смогут унести, и уйдут.</HH.Bank.Raid.Text>
+  <HH.Bank.Raid.Title>Рейд за долгом</HH.Bank.Raid.Title>
+  <HH.Bank.Reason.Amount>Сначала выберите сумму.</HH.Bank.Reason.Amount>
+  <HH.Bank.Reason.Arrears>Вы просрочили платёж. Пока это не урегулировано, никто не даст вам кредит.</HH.Bank.Reason.Arrears>
+  <HH.Bank.Reason.AtmLimit>Банкомат выдаст сегодня ещё только {0}.</HH.Bank.Reason.AtmLimit>
+  <HH.Bank.Reason.BankUnavailable>Этот банк для вас недоступен.</HH.Bank.Reason.BankUnavailable>
+  <HH.Bank.Reason.Funds>На счёте не хватает на {0} плюс {1} комиссии.</HH.Bank.Reason.Funds>
+  <HH.Bank.Reason.Funds2>На счёте нет {0}.</HH.Bank.Reason.Funds2>
+  <HH.Bank.Reason.LoansResearch>Для кредитов нужен исследовательский проект «потребительский кредит».</HH.Bank.Reason.LoansResearch>
+  <HH.Bank.Reason.MinLoan>Минимальный кредит — {0} серебра.</HH.Bank.Reason.MinLoan>
+  <HH.Bank.Reason.NoAccount>Счёта пока нет.</HH.Bank.Reason.NoAccount>
+  <HH.Bank.Reason.NoCredit>Кредитный лимит исчерпан (осталось {0} серебра).</HH.Bank.Reason.NoCredit>
+  <HH.Bank.Reason.NoSilver>Недостаточно серебра на складе или у торгового маяка (доступно {0}).</HH.Bank.Reason.NoSilver>
+  <HH.Bank.Reason.OverLimit>Это больше {0} серебра, которые вы ещё можете занять.</HH.Bank.Reason.OverLimit>
+  <HH.Bank.Reason.SameBank>Вы уже обслуживаетесь там.</HH.Bank.Reason.SameBank>
+  <HH.Bank.Reason.SwitchFunds>Перевод счёта стоит {0} серебра, а на счёте этой суммы нет.</HH.Bank.Reason.SwitchFunds>
+  <HH.Bank.Reason.Title>{0} выдаёт кредиты только владельцам королевского титула.</HH.Bank.Reason.Title>
+  <HH.Bank.Seizure.Allow>Пусть забирают ценности</HH.Bank.Seizure.Allow>
+  <HH.Bank.Seizure.Done>Бригада погрузила ценности вашего имущества на {0} серебра ({1}) и ушла, насвистывая. Долг: {2}.</HH.Bank.Seizure.Done>
+  <HH.Bank.Seizure.DoneTitle>Изъято</HH.Bank.Seizure.DoneTitle>
+  <HH.Bank.Seizure.Partly>погашено лишь частично</HH.Bank.Seizure.Partly>
+  <HH.Bank.Seizure.Refuse>Отказать</HH.Bank.Seizure.Refuse>
+  <HH.Bank.Seizure.Refused>Бригада взыскателей вежливо перестаёт быть вежливой.</HH.Bank.Seizure.Refused>
+  <HH.Bank.Seizure.RefusedTitle>Они не уходят</HH.Bank.Seizure.RefusedTitle>
+  <HH.Bank.Seizure.Settled>погашено</HH.Bank.Seizure.Settled>
+  <HH.Bank.Seizure.Text>У вашей двери бригада изъятия из Rim Recovery Partners с судебным приказом, который похож на ламинированную салфетку. Им нужны ценности примерно на {0} серебра (120 % кредита {1}). Отдадите — и кредит закрыт. Откажете — заберут силой.</HH.Bank.Seizure.Text>
+  <HH.Bank.Seizure.Title>Уведомление об изъятии</HH.Bank.Seizure.Title>
+  <HH.Bank.Tab.History>История</HH.Bank.Tab.History>
+  <HH.Bank.Tab.Loans>Кредиты</HH.Bank.Tab.Loans>
+  <HH.Bank.Tab.Lobby>Холл</HH.Bank.Tab.Lobby>
+  <HH.Bank.Tab.Terms>Условия</HH.Bank.Tab.Terms>
+  <HH.Bank.Terms.AccFee>Плата за счёт в квадум</HH.Bank.Terms.AccFee>
+  <HH.Bank.Terms.AccountDaily>Ваш счёт в день</HH.Bank.Terms.AccountDaily>
+  <HH.Bank.Terms.AccountDailyTip>Годовой множитель счёта = M^({0} × {1}) = {2}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.Anchors>По сложности</HH.Bank.Terms.Anchors>
+  <HH.Bank.Terms.AnchorsHead>M в год / высшая стадия взыскания</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.Atm>Банкомат</HH.Bank.Terms.Atm>
+  <HH.Bank.Terms.Auto>Авто</HH.Bank.Terms.Auto>
+  <HH.Bank.Terms.AutoTip>Снова следовать ползунку сложности ({0} при вашей текущей сложности).</HH.Bank.Terms.AutoTip>
+  <HH.Bank.Terms.Daily>В день (индекс)</HH.Bank.Terms.Daily>
+  <HH.Bank.Terms.DailyTip>M^(1/60) − 1. Игровой год содержит 60 дней.</HH.Bank.Terms.DailyTip>
+  <HH.Bank.Terms.Dep>Вклад</HH.Bank.Terms.Dep>
+  <HH.Bank.Terms.Direct>Прямое зачисление</HH.Bank.Terms.Direct>
+  <HH.Bank.Terms.Fees>Комиссии вашего банка</HH.Bank.Terms.Fees>
+  <HH.Bank.Terms.FeesNote>Все комиссии масштабируются настройкой «уровень банковских комиссий» ({0} %).</HH.Bank.Terms.FeesNote>
+  <HH.Bank.Terms.Preview>1 000 серебра по индексу через один игровой год станут {0}, а через десять — {1}.</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Profit>Доходность</HH.Bank.Terms.Profit>
+  <HH.Bank.Terms.ProfitIntro>Насколько в среднем растут вложенные деньги за игровой год (60 дней). 1,0 — ни плюса, ни минуса, 1,2 — +20 % в год. Это также определяет стоимость кредитов. Настройка относится к этому сохранению.</HH.Bank.Terms.ProfitIntro>
+  <HH.Bank.Terms.StageNote>Лестница взыскания: 1 напоминание, 2 пеня, 3 зачёт из вкладов, 4 дружеский визит, 5 группа изъятия, 6 налёт коллекторов, 7 награда за розыск. Сейчас: останавливается на стадии {0}.</HH.Bank.Terms.StageNote>
+  <HH.Bank.Terms.Switch>Смена банка</HH.Bank.Terms.Switch>
+  <HH.Bank.Terms.Wd>Снятие (терминал / окошко)</HH.Bank.Terms.Wd>
+  <HH.Bank.Tier.0>В долгах по уши</HH.Bank.Tier.0>
+  <HH.Bank.Tier.1>Без гроша</HH.Bank.Tier.1>
+  <HH.Bank.Tier.2>Еле сводим концы</HH.Bank.Tier.2>
+  <HH.Bank.Tier.3>Перебиваемся</HH.Bank.Tier.3>
+  <HH.Bank.Tier.4>Устойчиво</HH.Bank.Tier.4>
+  <HH.Bank.Tier.5>Зажиточно</HH.Bank.Tier.5>
+  <HH.Bank.Tier.6>Богато</HH.Bank.Tier.6>
+  <HH.Bank.Tier.7>Сказочно богато</HH.Bank.Tier.7>
+  <HH.Bank.Tier.8>Слишком большой, чтобы обанкротиться</HH.Bank.Tier.8>
+  <HH.Bank.Tier.Name0>За счёт заведения</HH.Bank.Tier.Name0>
+  <HH.Bank.Tier.Name1>Всё включено</HH.Bank.Tier.Name1>
+  <HH.Bank.Tier.Name2>Ночлег с завтраком</HH.Bank.Tier.Name2>
+  <HH.Bank.Tier.Name3>Стандартный номер</HH.Bank.Tier.Name3>
+  <HH.Bank.Tier.Name4>Перебронирование</HH.Bank.Tier.Name4>
+  <HH.Bank.Tier.Name5>Отзыв на одну звезду</HH.Bank.Tier.Name5>
+  <HH.Bank.Tier.Name6>Зачем вы себя мучаете?</HH.Bank.Tier.Name6>
+  <HH.Bank.Time.DayHour>день {0}, {1}:00</HH.Bank.Time.DayHour>
+  <HH.Bank.Time.Hours>{0} ч</HH.Bank.Time.Hours>
+  <HH.Bank.Time.Minutes>{0} мин</HH.Bank.Time.Minutes>
+</LanguageData>

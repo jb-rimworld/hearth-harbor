@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Cookbook.label>livre de recettes</HH_Cookbook.label>
+  <HH_Cookbook.description>Un livre de recettes gras et corné, annoté par quelqu'un qui cuisinait visiblement sous le feu. Le lire apprend à la colonie les plats qu'il contient.</HH_Cookbook.description>
+  <HH_Plate_Soup.label>bol de soupe</HH_Plate_Soup.label>
+  <HH_Plate_Soup.description>Un bol de quelque chose de chaud et liquide. Mangé à la cuillère, avec une prière, ou les deux.</HH_Plate_Soup.description>
+  <HH_Plate_Stew.label>marmite de ragoût</HH_Plate_Stew.label>
+  <HH_Plate_Stew.description>Un lourd bol de ragoût mijoté, fumant avec la promesse d'une deuxième part.</HH_Plate_Stew.description>
+  <HH_Plate_Grill.label>plateau grillade</HH_Plate_Grill.label>
+  <HH_Plate_Grill.description>De la viande qui a eu une conversation avec une flamme vive et l'a perdue.</HH_Plate_Grill.description>
+  <HH_Plate_Noodles.label>bol de nouilles</HH_Plate_Noodles.label>
+  <HH_Plate_Noodles.description>Un enchevêtrement de nouilles dans un bol. Le bruit de succion n'est pas facultatif.</HH_Plate_Noodles.description>
+  <HH_Plate_Rice.label>plat de riz</HH_Plate_Rice.label>
+  <HH_Plate_Rice.description>Un tas de riz qui a des opinions, servi avec une fourchette que personne n'a demandée.</HH_Plate_Rice.description>
+  <HH_Plate_Bake.label>plat au four</HH_Plate_Bake.label>
+  <HH_Plate_Bake.description>Quelque chose qui est entré au four comme ingrédients et en est sorti comme une décision.</HH_Plate_Bake.description>
+  <HH_Plate_Fry.label>assiette frite</HH_Plate_Fry.label>
+  <HH_Plate_Fry.description>Dorée, croustillante et follement malsaine. Exactement ce que la colonie a commandé.</HH_Plate_Fry.description>
+  <HH_Plate_Salad.label>assiette de salade</HH_Plate_Salad.label>
+  <HH_Plate_Salad.description>Une assiette froide avec beaucoup de feuilles, très peu de remords et une courte durée de conservation.</HH_Plate_Salad.description>
+  <HH_Plate_Raw.label>assiette crue</HH_Plate_Raw.label>
+  <HH_Plate_Raw.description>Finement tranchée, joliment dressée et absolument pas cuite.</HH_Plate_Raw.description>
+  <HH_Plate_Breakfast.label>assiette du petit-déjeuner</HH_Plate_Breakfast.label>
+  <HH_Plate_Breakfast.description>Une assiette qui affirme que la journée a commencé, que vous le vouliez ou non.</HH_Plate_Breakfast.description>
+  <HH_Plate_Dessert.label>coupe de dessert</HH_Plate_Dessert.label>
+  <HH_Plate_Dessert.description>Une petite récompense sucrée pour avoir survécu à une journée de plus sur le Rim.</HH_Plate_Dessert.description>
+  <HH_Plate_StreetFood.label>plateau de street food</HH_Plate_StreetFood.label>
+  <HH_Plate_StreetFood.description>Chaud, à la main, à manger debout et vite, un œil sur les sorties.</HH_Plate_StreetFood.description>
+  <HH_Station_PrepCounter.label>plan de préparation</HH_Station_PrepCounter.label>
+  <HH_Station_PrepCounter.description>Un comptoir marqué, avec une planche à découper, un bon couteau et une rigole d'évacuation dont personne n'a demandé l'existence. Découpez, tranchez et dépecez ici ; les autres appareils d'un plat doivent se trouver à proximité.</HH_Station_PrepCounter.description>
+  <HH_Station_StockPot.label>marmite à bouillon</HH_Station_StockPot.label>
+  <HH_Station_StockPot.description>Une grande marmite en fer sur un feu de bois. Mijote, bout et cuit tout ce qui a jamais été vivant. Consomme du bois pendant son travail.</HH_Station_StockPot.description>
+  <HH_Station_Grill.label>gril</HH_Station_Grill.label>
+  <HH_Station_Grill.description>Une grille au-dessus de braises incandescentes. La viande y est posée crue et en ressort avec des opinions. Consomme du bois pendant son travail.</HH_Station_Grill.description>
+  <HH_Station_Oven.label>four</HH_Station_Oven.label>
+  <HH_Station_Oven.description>Un four en pierre et fer pour rôtir et cuire au four. Met longtemps à chauffer et peu de temps à gâcher le dîner. Consomme du bois pendant son travail.</HH_Station_Oven.description>
+  <HH_Station_WokStation.label>station wok</HH_Station_WokStation.label>
+  <HH_Station_WokStation.description>Une poêle à fond rond sur une flamme ronflante. Tout y est sauté, y compris les sourcils du cuisinier. Consomme du bois pendant son travail.</HH_Station_WokStation.description>
+  <HH_Station_DeepFryer.label>friteuse</HH_Station_DeepFryer.label>
+  <HH_Station_DeepFryer.description>Une cuve d'huile bouillante avec un panier et un fort sentiment de son propre danger. Électrique. S'enflamme plus facilement que n'importe quel autre appareil de la cuisine.</HH_Station_DeepFryer.description>
+  <HH_Station_Smoker.label>fumoir</HH_Station_Smoker.label>
+  <HH_Station_Smoker.description>Une grande armoire en bois qui transforme la viande en quelque chose qui se conserve. Demande des copeaux de bois, de la patience et pas de voisins. Consomme du bois pendant son travail.</HH_Station_Smoker.description>
+  <HH_Station_Steamer.label>cuiseur vapeur</HH_Station_Steamer.label>
+  <HH_Station_Steamer.description>Paniers de bambou empilés au-dessus d'une marmite d'eau bouillante. Moelleux, délicat et presque impossible à brûler. Consomme du bois pendant son travail.</HH_Station_Steamer.description>
+  <HH_Station_DoughBench.label>plan de pétrissage</HH_Station_DoughBench.label>
+  <HH_Station_DoughBench.description>Un lourd plan de travail au dessus poudré de farine. Le riz et le maïs y sont pilés en pâte, ce qui coûte moins cher qu'une thérapie.</HH_Station_DoughBench.description>
+  <HH_Station_ColdStation.label>poste froid</HH_Station_ColdStation.label>
+  <HH_Station_ColdStation.description>Un comptoir réfrigéré qui garde les salades croquantes et les desserts fermes. Électrique.</HH_Station_ColdStation.description>
+</LanguageData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Group_Casino.label>казино</HH_Group_Casino.label>
+  <HH_Group_Casino.description>Ігрові автомати, ігрові столи та каса.</HH_Group_Casino.description>
+  <HH_Group_Wellness.label>велнес</HH_Group_Wellness.label>
+  <HH_Group_Wellness.description>Сауни, гідромасажні ванни та масажні столи.</HH_Group_Wellness.description>
+  <HH_Group_City.label>міське життя</HH_Group_City.label>
+  <HH_Group_City.description>Екрани кінотеатру, салонні крісла, лавки в парку та стоянка таксі.</HH_Group_City.description>
+  <HH_Group_Underworld.label>задня кімната</HH_Group_Underworld.label>
+  <HH_Group_Underworld.description>Двері, ями, прилавки та причали для речей, про які ніхто не говорить. Показується лише після того, як ви відкрили підземний світ.</HH_Group_Underworld.description>
+</LanguageData>

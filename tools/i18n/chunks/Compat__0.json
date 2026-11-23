@@ -1,0 +1,21 @@
+{
+ "k:HH.Compat.DialogTitle": "Hospitality is active alongside Hearth & Harbor. Disable it for you?",
+ "k:HH.Compat.DialogBody": "Hearth & Harbor replaces Hospitality and its add-ons. While both are active, Hearth & Harbor has switched Hospitality off for this session: its patches, events, buildings and guest tab do nothing. Your Hospitality guest beds and areas are kept and taken over when Hospitality is gone.",
+ "k:HH.Compat.DialogListHeader": "These mods will be disabled:",
+ "k:HH.Compat.DialogMentionHeader": "These guest mods stay as they are; their visitors remain theirs:",
+ "k:HH.Compat.DialogFailed": "The mod list could not be changed automatically ({0}). Please do it by hand:",
+ "k:HH.Compat.DialogStep1": "1. Main menu → Mods",
+ "k:HH.Compat.DialogStep2": "2. Untick the mods listed above",
+ "k:HH.Compat.DialogStep3": "3. Save the mod list and restart the game",
+ "k:HH.Compat.Yes": "Yes, disable and restart",
+ "k:HH.Compat.OpenMods": "Open the mod list",
+ "k:HH.Compat.Later": "Later",
+ "k:HH.Compat.Never": "Don't ask again",
+ "k:HH.Compat.ImportLetterTitle": "Imported from Hospitality",
+ "k:HH.Compat.ImportLetterText": "This colony was played with Hospitality. Hearth & Harbor took over what it could.\\n\\nImported: {0}.\\nDropped: {1}.\\n\\nImported guest beds are normal beds again and are remembered as guest beds; the guest part of Hearth & Harbor picks them up. Nothing else in your colony changed.",
+ "k:HH.Compat.ImportNothing": "nothing",
+ "k:HH.Setting.compat.hospitalityNeverAsk": "Don't offer to disable Hospitality",
+ "k:HH.Setting.compat.hospitalityNeverAsk.Desc": "When Hospitality runs alongside Hearth & Harbor, Hearth & Harbor switches it off for the session and offers to disable it in the main menu. On: no more offers (the switch-off still happens).",
+ "k:HH.Setting.compat.importLetter": "Letter after importing a Hospitality save",
+ "k:HH.Setting.compat.importLetter.Desc": "After loading a save that was played with Hospitality, a letter lists what Hearth & Harbor took over (guest beds, areas, visitors) and what was dropped."
+}

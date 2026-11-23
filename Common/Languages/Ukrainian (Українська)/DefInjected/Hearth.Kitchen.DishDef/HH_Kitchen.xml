@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_CampfireStew.label>Рагу з м'яса мафало над вогнищем</HH_Dish_CampfireStew.label>
+  <HH_Dish_CampfireStew.description>У каструлю пішло все, включно з суперечкою про те, що все це означає.</HH_Dish_CampfireStew.description>
+  <HH_Dish_PotatoSoup.label>Картопляний суп</HH_Dish_PotatoSoup.label>
+  <HH_Dish_PotatoSoup.description>Смакує як дім, якби дім мав земляну підлогу та низькі очікування.</HH_Dish_PotatoSoup.description>
+  <HH_Dish_SpitRoastedHaunch.label>Окіст на вертелі</HH_Dish_SpitRoastedHaunch.label>
+  <HH_Dish_SpitRoastedHaunch.description>Годину обертав вручну той, хто програв у підкидання монети.</HH_Dish_SpitRoastedHaunch.description>
+  <HH_Dish_HashAndEgg.label>Гаш з яйцем</HH_Dish_HashAndEgg.label>
+  <HH_Dish_HashAndEgg.description>Сніданок, який каже, що день не стане кращим, але хоча б буде смажений.</HH_Dish_HashAndEgg.description>
+  <HH_Dish_CornPorridge.label>Кукурудзяна каша</HH_Dish_CornPorridge.label>
+  <HH_Dish_CornPorridge.description>Досить густа, щоб у разі потреби залатати стіну.</HH_Dish_CornPorridge.description>
+  <HH_Dish_BerryCompote.label>Ягідний компот</HH_Dish_BerryCompote.label>
+  <HH_Dish_BerryCompote.description>Єдине на Рубежі, що одночасно солодке й дешеве.</HH_Dish_BerryCompote.description>
+  <HH_Dish_PlainSteamedRice.label>Простий відварений рис</HH_Dish_PlainSteamedRice.label>
+  <HH_Dish_PlainSteamedRice.description>Рис. Це рис. Будь ласка, перестаньте шукати в меню щось ще.</HH_Dish_PlainSteamedRice.description>
+  <HH_Dish_Congee.label>Рисова каша конджі</HH_Dish_Congee.label>
+  <HH_Dish_Congee.description>Рисова каша для тих, хто провів дуже довгий тиждень і дуже довгий рейд.</HH_Dish_Congee.description>
+  <HH_Dish_FriedMushrooms.label>Смажені гриби</HH_Dish_FriedMushrooms.label>
+  <HH_Dish_FriedMushrooms.description>Хрусткі зовні, трохи печерні всередині.</HH_Dish_FriedMushrooms.description>
+  <HH_Dish_EggDropSoup.label>Суп з яйцем</HH_Dish_EggDropSoup.label>
+  <HH_Dish_EggDropSoup.description>Яйця, вмішані в гарячий бульйон, бо бульйону бракувало хобі.</HH_Dish_EggDropSoup.description>
+  <HH_Dish_RoastCornOnTheCob.label>Печена кукурудза в качанах</HH_Dish_RoastCornOnTheCob.label>
+  <HH_Dish_RoastCornOnTheCob.description>Їсться стоячи, під дощем, поки хтось стріляє по ятці.</HH_Dish_RoastCornOnTheCob.description>
+  <HH_Dish_RoastPotatoes.label>Печена картопля</HH_Dish_RoastPotatoes.label>
+  <HH_Dish_RoastPotatoes.description>Золота, хрустка і найближча до радості в сьомому секторі.</HH_Dish_RoastPotatoes.description>
+  <HH_Dish_MilkRicePudding.label>Молочний рисовий пудинг</HH_Dish_MilkRicePudding.label>
+  <HH_Dish_MilkRicePudding.description>Їжа втіхи для колоністів, чия втіха була відкликана.</HH_Dish_MilkRicePudding.description>
+  <HH_Dish_ScrambledEggs.label>Яєчня-болтунья</HH_Dish_ScrambledEggs.label>
+  <HH_Dish_ScrambledEggs.description>Яйця, переставлені доти, доки перестали скаржитися.</HH_Dish_ScrambledEggs.description>
+  <HH_Dish_BugSkewers.label>Шашлички з комах із солоною шкіркою</HH_Dish_BugSkewers.label>
+  <HH_Dish_BugSkewers.description>Хрусткі зовні, а всередині питань небагато.</HH_Dish_BugSkewers.description>
+  <HH_Dish_RawFishSlices.label>Сира рибна нарізка</HH_Dish_RawFishSlices.label>
+  <HH_Dish_RawFishSlices.description>Нарізана тим, хто колись дивився відео про це.</HH_Dish_RawFishSlices.description>
+  <HH_Dish_PanFriedFish.label>Риба, обсмажена на сковороді</HH_Dish_PanFriedFish.label>
+  <HH_Dish_PanFriedFish.description>Якщо вчора плавала, сьогодні смажиться.</HH_Dish_PanFriedFish.description>
+  <HH_Dish_AgavePancakes.label>Оладки з агави</HH_Dish_AgavePancakes.label>
+  <HH_Dish_AgavePancakes.description>Складені високо, щоб приховати, що яйце лише одне.</HH_Dish_AgavePancakes.description>
+  <HH_Dish_FruitBowl.label>Миска фруктів</HH_Dish_FruitBowl.label>
+  <HH_Dish_FruitBowl.description>Корисна, свіжа і зникає за чотири секунди, коли приходять діти.</HH_Dish_FruitBowl.description>
+  <HH_Dish_MushroomPlate.label>Грибна тарілка</HH_Dish_MushroomPlate.label>
+  <HH_Dish_MushroomPlate.description>Охолоджені гриби, бо холодильник уже працював.</HH_Dish_MushroomPlate.description>
+  <HH_Dish_CrimsonSmoothie.label>Багряний смузі</HH_Dish_CrimsonSmoothie.label>
+  <HH_Dish_CrimsonSmoothie.description>Ягоди, молоко і таємний рожевий.</HH_Dish_CrimsonSmoothie.description>
+  <HH_Dish_SmokedJerkyStrips.label>Копчена в'ялена смужка</HH_Dish_SmokedJerkyStrips.label>
+  <HH_Dish_SmokedJerkyStrips.description>Тримається вічно, так само довго її й жувати.</HH_Dish_SmokedJerkyStrips.description>
+  <HH_Dish_BratwurstAndBeer.label>Братвурст із пивом</HH_Dish_BratwurstAndBeer.label>
+  <HH_Dish_BratwurstAndBeer.description>Ковбаска в булочці, пиво в кухлі, жаль зранку.</HH_Dish_BratwurstAndBeer.description>
+  <HH_Dish_InsectTacos.label>Тако з комахами</HH_Dish_InsectTacos.label>
+  <HH_Dish_InsectTacos.description>Три тако, нуль запитань і дуже добрий соус.</HH_Dish_InsectTacos.description>
+  <HH_Dish_FishAndChips.label>Риба з картоплею фрі</HH_Dish_FishAndChips.label>
+  <HH_Dish_FishAndChips.description>Смажена двічі на удачу і раз із зла.</HH_Dish_FishAndChips.description>
+  <HH_Dish_MuffaloRamen.label>Рамен з маффало</HH_Dish_MuffaloRamen.label>
+  <HH_Dish_MuffaloRamen.description>Голосно сьорбайте. Якщо б'єтеся за останню миску, сьорбайте ще голосніше.</HH_Dish_MuffaloRamen.description>
+  <HH_Dish_EggFriedRice.label>Смажений рис з яйцем</HH_Dish_EggFriedRice.label>
+  <HH_Dish_EggFriedRice.description>Вчорашній рис, сьогоднішня проблема, завтрашній обід.</HH_Dish_EggFriedRice.description>
+  <HH_Dish_PadThrumbo.label>Пад тромбо</HH_Dish_PadThrumbo.label>
+  <HH_Dish_PadThrumbo.description>Солодко-кисле сплетіння локшини й хрусту, обсмажене у воку, доки не почне слухатися.</HH_Dish_PadThrumbo.description>
+  <HH_Dish_ChiliConCarne.label>Чилі кон карне</HH_Dish_ChiliConCarne.label>
+  <HH_Dish_ChiliConCarne.description>Так гаряче, що припікає. Не вживати як ліки. Вживати як ліки.</HH_Dish_ChiliConCarne.description>
+  <HH_Dish_JollofRice.label>Джолоф</HH_Dish_JollofRice.label>
+  <HH_Dish_JollofRice.description>Рецепт — це бійка між трьома колоніями, і всі вони праві.</HH_Dish_JollofRice.description>
+  <HH_Dish_UgaliWithStew.label>Угалі з рагу</HH_Dish_UgaliWithStew.label>
+  <HH_Dish_UgaliWithStew.description>Кукурудзяне тісто, яке їдять руками, тож нічого не пропаде, коли доведеться тікати.</HH_Dish_UgaliWithStew.description>
+  <HH_Dish_BakedEggs.label>Запечені яйця</HH_Dish_BakedEggs.label>
+  <HH_Dish_BakedEggs.description>Яйця, які багато пережили і вийшли в соусі.</HH_Dish_BakedEggs.description>
+  <HH_Dish_HashBrowns.label>Картопляні хашбрауни</HH_Dish_HashBrowns.label>
+  <HH_Dish_HashBrowns.description>Картопляний оладок, який багато чого бачив у драйв-тру.</HH_Dish_HashBrowns.description>
+  <HH_Dish_CornFritters.label>Кукурудзяні фрітери</HH_Dish_CornFritters.label>
+  <HH_Dish_CornFritters.description>Смажені, золоті і зниклі, поки хтось згадає поділитися.</HH_Dish_CornFritters.description>
+  <HH_Dish_PotatoGratin.label>Картопляний гратен</HH_Dish_PotatoGratin.label>
+  <HH_Dish_PotatoGratin.description>Вершки, картопля, терпіння. На Периферії ніщо інше не працює так добре.</HH_Dish_PotatoGratin.description>
+  <HH_Dish_MushroomRisotto.label>Грибне різотто</HH_Dish_MushroomRisotto.label>
+  <HH_Dish_MushroomRisotto.description>Мішайте двадцять хвилин або втратите друга. Ваш вибір.</HH_Dish_MushroomRisotto.description>
+  <HH_Dish_SteamedBuns.label>Парові булочки</HH_Dish_SteamedBuns.label>
+  <HH_Dish_SteamedBuns.description>М'які, як подушка, з начинкою, яка точно колись була м'ясом.</HH_Dish_SteamedBuns.description>
+  <HH_Dish_ChocolatePudding.label>Шоколадний пудинг</HH_Dish_ChocolatePudding.label>
+  <HH_Dish_ChocolatePudding.description>Причина, через яку рейди переносять рівно на один десерт.</HH_Dish_ChocolatePudding.description>
+  <HH_Dish_Ceviche.label>Севіче</HH_Dish_Ceviche.label>
+  <HH_Dish_Ceviche.description>Риба, приготована лише кислотою, як і більшість колоній.</HH_Dish_Ceviche.description>
+  <HH_Dish_MuffaloGoulash.label>Гуляш з маффало</HH_Dish_MuffaloGoulash.label>
+  <HH_Dish_MuffaloGoulash.description>Червоний, густий і офіційно неофіційна національна суперечка.</HH_Dish_MuffaloGoulash.description>
+  <HH_Dish_EggFlan.label>Яєчний флан</HH_Dish_EggFlan.label>
+  <HH_Dish_EggFlan.description>Хитається, як колоніст наприкінці довгої зміни.</HH_Dish_EggFlan.description>
+  <HH_Dish_BeerBatteredInsects.label>Комахи в пивному клярі</HH_Dish_BeerBatteredInsects.label>
+  <HH_Dish_BeerBatteredInsects.description>Хрусткі, піняві, і ні слова сусідам.</HH_Dish_BeerBatteredInsects.description>
+  <HH_Dish_CreamyNoodleBake.label>Запечена локшина у вершках</HH_Dish_CreamyNoodleBake.label>
+  <HH_Dish_CreamyNoodleBake.description>Запіканка, яка тримає колонію разом краще, ніж її керівники.</HH_Dish_CreamyNoodleBake.description>
+  <HH_Dish_FermentedMushrooms.label>Ферментовані гриби</HH_Dish_FermentedMushrooms.label>
+  <HH_Dish_FermentedMushrooms.description>Ферментовані, злі і важко прощаються. Кажуть, для шлунку корисно.</HH_Dish_FermentedMushrooms.description>
+  <HH_Dish_RimMein.label>Рім-мейн</HH_Dish_RimMein.label>
+  <HH_Dish_RimMein.description>Смажена локшина, обсмажена у воку, і рівно така корисна, як виглядає.</HH_Dish_RimMein.description>
+  <HH_Dish_ColdPotatoSalad.label>Холодний картопляний салат</HH_Dish_ColdPotatoSalad.label>
+  <HH_Dish_ColdPotatoSalad.description>Страва з потлуку, яку ніхто не планував і всі доїдають.</HH_Dish_ColdPotatoSalad.description>
+  <HH_Dish_CreamyMushroomNoodles.label>Локшина з грибами у вершках</HH_Dish_CreamyMushroomNoodles.label>
+  <HH_Dish_CreamyMushroomNoodles.description>Локшина у вершках, як паста, яку ви пам'ятаєте, після кількох раундів чуток.</HH_Dish_CreamyMushroomNoodles.description>
+  <HH_Dish_LongPorkStew.label>Рагу з довгої свинини</HH_Dish_LongPorkStew.label>
+  <HH_Dish_LongPorkStew.description>Рецепт — таємниця. Інгредієнт — ні.</HH_Dish_LongPorkStew.description>
+  <HH_Dish_SmokedLongJerky.label>Копчене довге в'ялене</HH_Dish_SmokedLongJerky.label>
+  <HH_Dish_SmokedLongJerky.description>Тримається всю зиму. Так само й провина.</HH_Dish_SmokedLongJerky.description>
+  <HH_Dish_CongeeOfTheFallen.label>Конджі полеглих</HH_Dish_CongeeOfTheFallen.label>
+  <HH_Dish_CongeeOfTheFallen.description>Тепла каша для холодного, дуже холодного сумління.</HH_Dish_CongeeOfTheFallen.description>
+  <HH_Dish_BloodBroth.label>Кривавий бульйон</HH_Dish_BloodBroth.label>
+  <HH_Dish_BloodBroth.description>Темний, насичений бульйон для спраглих і ввічливих.</HH_Dish_BloodBroth.description>
+  <HH_Dish_HemogenBlackPudding.label>Кров'янка з гемогеном</HH_Dish_HemogenBlackPudding.label>
+  <HH_Dish_HemogenBlackPudding.description>Смажена, доки не перестане дивитися на вас.</HH_Dish_HemogenBlackPudding.description>
+  <HH_Dish_MuffaloBourguignon.label>Маффало бургіньйон</HH_Dish_MuffaloBourguignon.label>
+  <HH_Dish_MuffaloBourguignon.description>Тушкована в пиві, бо вино закінчилося на другий день.</HH_Dish_MuffaloBourguignon.description>
+  <HH_Dish_ColonyPaella.label>Колоніальна паелья</HH_Dish_ColonyPaella.label>
+  <HH_Dish_ColonyPaella.description>Усе, що було в коморі, викладено з великою гідністю.</HH_Dish_ColonyPaella.description>
+  <HH_Dish_NigiriPlatter.label>Ассорті нігірі</HH_Dish_NigiriPlatter.label>
+  <HH_Dish_NigiriPlatter.description>Рис і риба, сформовані тим, хто мав би бути на передовій.</HH_Dish_NigiriPlatter.description>
+  <HH_Dish_ThrumboPho.label>Тромбо фо</HH_Dish_ThrumboPho.label>
+  <HH_Dish_ThrumboPho.description>Прозорий бульйон із дуже довгим списком справ позаду.</HH_Dish_ThrumboPho.description>
+  <HH_Dish_Biryani.label>Бірьяні</HH_Dish_Biryani.label>
+  <HH_Dish_Biryani.description>Шари рису, м'яса і дипломатії, запечатані кришкою.</HH_Dish_Biryani.description>
+  <HH_Dish_DromedaryTagine.label>Таджин з дромедара</HH_Dish_DromedaryTagine.label>
+  <HH_Dish_DromedaryTagine.description>Тушкований у глиняному конусі, як більшість людей хотіли б тривати.</HH_Dish_DromedaryTagine.description>
+  <HH_Dish_MushroomMoussaka.label>Грибна мусака</HH_Dish_MushroomMoussaka.label>
+  <HH_Dish_MushroomMoussaka.description>Сім шарів завглибшки, і кожен шар має свою думку.</HH_Dish_MushroomMoussaka.description>
+  <HH_Dish_LacqueredThrumbo.label>Лаковане тромбо</HH_Dish_LacqueredThrumbo.label>
+  <HH_Dish_LacqueredThrumbo.description>Глазуроване до блиску, який сяє яскравіше за банківський рахунок колонії.</HH_Dish_LacqueredThrumbo.description>
+  <HH_Dish_TomYumSoup.label>Суп том ям</HH_Dish_TomYumSoup.label>
+  <HH_Dish_TomYumSoup.description>Кислий, гострий, прочистить вам синуси і борги.</HH_Dish_TomYumSoup.description>
+  <HH_Dish_Laksa.label>Лакса</HH_Dish_Laksa.label>
+  <HH_Dish_Laksa.description>Карі-суп без кокоса, який не перепрошує.</HH_Dish_Laksa.description>
+  <HH_Dish_Tamales.label>Тамалес</HH_Dish_Tamales.label>
+  <HH_Dish_Tamales.description>Загорнуті в листя, як подарунок, про який ніхто не просив.</HH_Dish_Tamales.description>
+  <HH_Dish_DimSumBasket.label>Кошик дім сам</HH_Dish_DimSumBasket.label>
+  <HH_Dish_DimSumBasket.description>Крихітні порції для крихітних бюджетів із величезними претензіями.</HH_Dish_DimSumBasket.description>
+  <HH_Dish_ChocolateLayerCake.label>Шоколадний торт</HH_Dish_ChocolateLayerCake.label>
+  <HH_Dish_ChocolateLayerCake.description>Багато шарів, жоден з них не чесний.</HH_Dish_ChocolateLayerCake.description>
+  <HH_Dish_GravyFries.label>Картопля фрі з підливою</HH_Dish_GravyFries.label>
+  <HH_Dish_GravyFries.description>Фрі, підлива і тиха мить національної гордості.</HH_Dish_GravyFries.description>
+  <HH_Dish_SmokedBrisket.label>Копчена грудинка</HH_Dish_SmokedBrisket.label>
+  <HH_Dish_SmokedBrisket.description>Коптилася дванадцять годин людиною, яка не розповість як.</HH_Dish_SmokedBrisket.description>
+  <HH_Dish_Churros.label>Чурос</HH_Dish_Churros.label>
+  <HH_Dish_Churros.description>Смажене тісто з шоколадним соусом і без жодного каяття.</HH_Dish_Churros.description>
+  <HH_Dish_Bibimbap.label>Бібімбап</HH_Dish_Bibimbap.label>
+  <HH_Dish_Bibimbap.description>Змішайте все в одній мисці, точно як сама колонія.</HH_Dish_Bibimbap.description>
+  <HH_Dish_MongolianMuffalo.label>Монгольський маффало</HH_Dish_MongolianMuffalo.label>
+  <HH_Dish_MongolianMuffalo.description>Смажений у воку, солодкий, липкий і трохи надто гучний.</HH_Dish_MongolianMuffalo.description>
+  <HH_Dish_ColdNoodleSalad.label>Салат з холодною локшиною</HH_Dish_ColdNoodleSalad.label>
+  <HH_Dish_ColdNoodleSalad.description>Подається настільки холодним, що локшина подає скарги.</HH_Dish_ColdNoodleSalad.description>
+  <HH_Dish_MuffaloCarpaccio.label>Карпаччо з маффало</HH_Dish_MuffaloCarpaccio.label>
+  <HH_Dish_MuffaloCarpaccio.description>Нарізано так тонко, що крізь нього можна читати меню.</HH_Dish_MuffaloCarpaccio.description>
+  <HH_Dish_ThrumboTartare.label>Тартар з тромбо</HH_Dish_ThrumboTartare.label>
+  <HH_Dish_ThrumboTartare.description>Сире, дике і відважне. Спершу підпишіть відмову.</HH_Dish_ThrumboTartare.description>
+  <HH_Dish_DanDanNoodles.label>Дань-дань локшина</HH_Dish_DanDanNoodles.label>
+  <HH_Dish_DanDanNoodles.description>Гостра локшина, яка попереджає заздалегідь і все одно перемагає.</HH_Dish_DanDanNoodles.description>
+  <HH_Dish_GrilledLongPorkRibs.label>Грильовані ребра з довгої свинини</HH_Dish_GrilledLongPorkRibs.label>
+  <HH_Dish_GrilledLongPorkRibs.description>Димні, солодкі і надзвичайно важко пояснити на вечірці.</HH_Dish_GrilledLongPorkRibs.description>
+  <HH_Dish_LongPorkDumplings.label>Пельмені з довгої свинини</HH_Dish_LongPorkDumplings.label>
+  <HH_Dish_LongPorkDumplings.description>Складені вручну, з начинкою, про яку двічі ніхто не питає.</HH_Dish_LongPorkDumplings.description>
+  <HH_Dish_StrangersRoast.label>Печеня від чужинця</HH_Dish_StrangersRoast.label>
+  <HH_Dish_StrangersRoast.description>Недільна вечеря з гостем, який прийшов не добровільно.</HH_Dish_StrangersRoast.description>
+  <HH_Dish_CannibalsChili.label>Чилі канібала</HH_Dish_CannibalsChili.label>
+  <HH_Dish_CannibalsChili.description>Досить гостре, щоб приховати смак і думку.</HH_Dish_CannibalsChili.description>
+  <HH_Dish_HemogenRisotto.label>Різотто з гемогеном</HH_Dish_HemogenRisotto.label>
+  <HH_Dish_HemogenRisotto.description>Вершкове, червоне і трохи надто інтенсивне.</HH_Dish_HemogenRisotto.description>
+  <HH_Dish_RedSteakVeryRare.label>Червоний стейк, дуже рідкий</HH_Dish_RedSteakVeryRare.label>
+  <HH_Dish_RedSteakVeryRare.description>Майже мекає. Приготовано саме так, як замовив сангвіфаг.</HH_Dish_RedSteakVeryRare.description>
+  <HH_Dish_TwistedMeatBao.label>Скручений м'ясний бао</HH_Dish_TwistedMeatBao.label>
+  <HH_Dish_TwistedMeatBao.description>Булочка ледь помітно смикається. Будь ласка, не кажіть начинці.</HH_Dish_TwistedMeatBao.description>
+  <HH_Dish_MuffaloWellington.label>Маффало веллінгтон</HH_Dish_MuffaloWellington.label>
+  <HH_Dish_MuffaloWellington.description>Загорнутий у тісто, крихітна ізоляція для дуже величного его.</HH_Dish_MuffaloWellington.description>
+  <HH_Dish_BoomalopeConfit.label>Конфі з бумалопа</HH_Dish_BoomalopeConfit.label>
+  <HH_Dish_BoomalopeConfit.description>Тушкований у власному жирі. Не стійте поруч із каструлею.</HH_Dish_BoomalopeConfit.description>
+  <HH_Dish_FishThermidor.label>Риба термідор</HH_Dish_FishThermidor.label>
+  <HH_Dish_FishThermidor.description>Вершкова, запечена з сиром і абсурдно горда собою.</HH_Dish_FishThermidor.description>
+  <HH_Dish_Rendang.label>Рендан</HH_Dish_Rendang.label>
+  <HH_Dish_Rendang.description>Тушкований, доки соус не здасться і не злиється з м'ясом.</HH_Dish_Rendang.description>
+  <HH_Dish_MoleNegro.label>Моле негро</HH_Dish_MoleNegro.label>
+  <HH_Dish_MoleNegro.description>Темне, гірке і солодке: як найкраща порада.</HH_Dish_MoleNegro.description>
+  <HH_Dish_ChocolateSouffle.label>Шоколадне суфле</HH_Dish_ChocolateSouffle.label>
+  <HH_Dish_ChocolateSouffle.description>Піднімається, як погана чутка, і падає так само швидко.</HH_Dish_ChocolateSouffle.description>
+  <HH_Dish_CremeBrulee.label>Крем-брюле</HH_Dish_CremeBrulee.label>
+  <HH_Dish_CremeBrulee.description>Скоринка тріскає під ложкою, як під тиском.</HH_Dish_CremeBrulee.description>
+  <HH_Dish_AgaveBaklava.label>Агавова пахлава</HH_Dish_AgaveBaklava.label>
+  <HH_Dish_AgaveBaklava.description>Настільки солодка, що знадобляться і лікар, і поет.</HH_Dish_AgaveBaklava.description>
+  <HH_Dish_MuffaloStroganoff.label>Маффало строганов</HH_Dish_MuffaloStroganoff.label>
+  <HH_Dish_MuffaloStroganoff.description>Вершкове, багате і зникле до третьої ложки.</HH_Dish_MuffaloStroganoff.description>
+  <HH_Dish_OmakaseNigiri.label>Омакасе нігірі</HH_Dish_OmakaseNigiri.label>
+  <HH_Dish_OmakaseNigiri.description>Шеф вирішує, що ви їсте. Ви вирішуєте бути вражені.</HH_Dish_OmakaseNigiri.description>
+  <HH_Dish_TeppanFeast.label>Теппан-бенкет</HH_Dish_TeppanFeast.label>
+  <HH_Dish_TeppanFeast.description>Палаючий гриль, лопатка, що літає, і вогнегасник поруч.</HH_Dish_TeppanFeast.description>
+  <HH_Dish_ClayOvenMuffalo.label>Маффало з глиняної печі</HH_Dish_ClayOvenMuffalo.label>
+  <HH_Dish_ClayOvenMuffalo.description>Замариновано за ніч, запечено в глиняній печі і подано з зарозумілістю.</HH_Dish_ClayOvenMuffalo.description>
+  <HH_Dish_Churrasco.label>Чурраско</HH_Dish_Churrasco.label>
+  <HH_Dish_Churrasco.description>М'ясо на шампурах, подається, доки не здасться.</HH_Dish_Churrasco.description>
+  <HH_Dish_HuntersBigos.label>Мисливський бігос</HH_Dish_HuntersBigos.label>
+  <HH_Dish_HuntersBigos.description>Рагу, яке з кожним днем смакує краще і пахне гірше.</HH_Dish_HuntersBigos.description>
+  <HH_Dish_LambKoftasWithRice.label>Кефта з баранини з рисом</HH_Dish_LambKoftasWithRice.label>
+  <HH_Dish_LambKoftasWithRice.description>Приправлена, сформована і подана на рисі, як дуже смачна лекція.</HH_Dish_LambKoftasWithRice.description>
+  <HH_Dish_SevenCourseColonyMenu.label>Семистравне колоніальне меню</HH_Dish_SevenCourseColonyMenu.label>
+  <HH_Dish_SevenCourseColonyMenu.description>Закуска, закуска, закуска, основна страва, десерт, десерт і тост.</HH_Dish_SevenCourseColonyMenu.description>
+  <HH_Dish_TartareOfTheFallen.label>Тартар полеглих</HH_Dish_TartareOfTheFallen.label>
+  <HH_Dish_TartareOfTheFallen.description>Подається сирим, бо готувати варто лише тим, кому є що приховувати.</HH_Dish_TartareOfTheFallen.description>
+  <HH_Dish_HemogenCarpaccio.label>Карпаччо з гемогеном</HH_Dish_HemogenCarpaccio.label>
+  <HH_Dish_HemogenCarpaccio.description>Тонке, червоне і подане з поглядом.</HH_Dish_HemogenCarpaccio.description>
+  <HH_Dish_TwistedHotpot.label>Скручений хотпот</HH_Dish_TwistedHotpot.label>
+  <HH_Dish_TwistedHotpot.description>Булькає саме по собі. Ніхто не вмикав плиту.</HH_Dish_TwistedHotpot.description>
+  <HH_Dish_CheeseFondue.label>Сирне фондю</HH_Dish_CheeseFondue.label>
+  <HH_Dish_CheeseFondue.description>Горщик розтопленого сиру і правило: хто впустить хліб, той платить.</HH_Dish_CheeseFondue.description>
+  <HH_Dish_PumpkinAndCheeseGratin.label>Гарбузовий гратен із сиром</HH_Dish_PumpkinAndCheeseGratin.label>
+  <HH_Dish_PumpkinAndCheeseGratin.description>Помаранчевий, сирний і прикрашений тонким шаром небезпеки.</HH_Dish_PumpkinAndCheeseGratin.description>
+  <HH_Dish_FlourDumplingSoup.label>Суп із борошняними пельменями</HH_Dish_FlourDumplingSoup.label>
+  <HH_Dish_FlourDumplingSoup.description>Пельмені розміром з кулак, для тих, хто любить суп із характером.</HH_Dish_FlourDumplingSoup.description>
+  <HH_Dish_CheeseOmelette.label>Омлет із сиром</HH_Dish_CheeseOmelette.label>
+  <HH_Dish_CheeseOmelette.description>Омлет, який ні за що не перепрошує і ні перед ким не складається.</HH_Dish_CheeseOmelette.description>
+  <HH_Dish_FruitGlazedRoast.label>Печеня в фруктовій глазурі</HH_Dish_FruitGlazedRoast.label>
+  <HH_Dish_FruitGlazedRoast.description>Липка, солодка, і її несуть до столу з рукавицями і молитвами.</HH_Dish_FruitGlazedRoast.description>
+  <HH_Dish_SushiRollSet.label>Набір суші-роллів</HH_Dish_SushiRollSet.label>
+  <HH_Dish_SushiRollSet.description>Туго скручені, злегка вмочені і з'їдені, поки хтось не почав мріяти.</HH_Dish_SushiRollSet.description>
+  <HH_Dish_WasabiGlazedFish.label>Риба в глазурі з васабі</HH_Dish_WasabiGlazedFish.label>
+  <HH_Dish_WasabiGlazedFish.description>Прочищає ніс, горло і всі попередні думки.</HH_Dish_WasabiGlazedFish.description>
+  <HH_Dish_TempuraSushi.label>Суші темпура</HH_Dish_TempuraSushi.label>
+  <HH_Dish_TempuraSushi.description>Суші, що звернув не туди у фритюрницю і йому сподобалося.</HH_Dish_TempuraSushi.description>
+  <HH_Dish_HeartyWinterStew.label>Ситне зимове рагу</HH_Dish_HeartyWinterStew.label>
+  <HH_Dish_HeartyWinterStew.description>Варилося днями над піччю на дровах. Їжте, доки горщик не почав відповідати.</HH_Dish_HeartyWinterStew.description>
+  <HH_Dish_LongNightMushroomStew.label>Грибне рагу довгої ночі</HH_Dish_LongNightMushroomStew.label>
+  <HH_Dish_LongNightMushroomStew.description>Тушкувалося всю ніч кимось, хто не мав кращих планів.</HH_Dish_LongNightMushroomStew.description>
+  <HH_Dish_StewOfQuestionableMeat.label>Рагу сумнівного м'яса</HH_Dish_StewOfQuestionableMeat.label>
+  <HH_Dish_StewOfQuestionableMeat.description>Рагу знімає жалкування про комах. Жалкування про рагу залишається.</HH_Dish_StewOfQuestionableMeat.description>
+  <HH_Dish_SugarCookies.label>Цукрове печиво</HH_Dish_SugarCookies.label>
+  <HH_Dish_SugarCookies.description>Прикрашене колоністом, чиї руки тремтять після бою, і це видно.</HH_Dish_SugarCookies.description>
+  <HH_Dish_FancyCupcakes.label>Вишукані капкейки</HH_Dish_FancyCupcakes.label>
+  <HH_Dish_FancyCupcakes.description>Крихітний кекс з великою проблемою посипки.</HH_Dish_FancyCupcakes.description>
+  <HH_Dish_GlazedDonuts.label>Глазуровані пончики</HH_Dish_GlazedDonuts.label>
+  <HH_Dish_GlazedDonuts.description>Кільце тіста навколо діри в бюджеті.</HH_Dish_GlazedDonuts.description>
+  <HH_Dish_HauteCuisineTastingMenu.label>Дегустаційне меню вишуканої кухні</HH_Dish_HauteCuisineTastingMenu.label>
+  <HH_Dish_HauteCuisineTastingMenu.description>Вісім крихітних тарілок, один величезний рахунок.</HH_Dish_HauteCuisineTastingMenu.description>
+  <HH_Dish_GlazedFruitTart.label>глазурований фруктовий тарт</HH_Dish_GlazedFruitTart.label>
+  <HH_Dish_GlazedFruitTart.description>Тарт, де фруктів більше, ніж каркасу, і це правильне співвідношення.</HH_Dish_GlazedFruitTart.description>
+  <HH_Dish_PickledVegetableSalad.label>салат із маринованих овочів</HH_Dish_PickledVegetableSalad.label>
+  <HH_Dish_PickledVegetableSalad.description>Замаринований настільки, що пережив першого лідера колонії.</HH_Dish_PickledVegetableSalad.description>
+  <HH_Dish_HerbRoastedPotatoes.label>картопля з травами</HH_Dish_HerbRoastedPotatoes.label>
+  <HH_Dish_HerbRoastedPotatoes.description>Картопля, яка побувала на садовій вечірці і повернулася з рослиною.</HH_Dish_HerbRoastedPotatoes.description>
+  <HH_Dish_BerryAndNutBreakfastBowl.label>миска сніданку з ягодами та горіхами</HH_Dish_BerryAndNutBreakfastBowl.label>
+  <HH_Dish_BerryAndNutBreakfastBowl.description>Хрусткий, корисний і зовсім не те, що просили рейдери.</HH_Dish_BerryAndNutBreakfastBowl.description>
+  <HH_Dish_TeaSmokedMeat.label>м'ясо, копчене на чаї</HH_Dish_TeaSmokedMeat.label>
+  <HH_Dish_TeaSmokedMeat.description>Копчене на чаї, бо чому б і м'ясу не розслабитися.</HH_Dish_TeaSmokedMeat.description>
+  <HH_Dish_StrawFlourFlatbread.label>коржик із соломяного борошна</HH_Dish_StrawFlourFlatbread.label>
+  <HH_Dish_StrawFlourFlatbread.description>Плоский, чесний і трохи піщаний, як пустеля, звідки він родом.</HH_Dish_StrawFlourFlatbread.description>
+  <HH_Dish_CactusFruitSalad.label>салат із плодів кактуса</HH_Dish_CactusFruitSalad.label>
+  <HH_Dish_CactusFruitSalad.description>Солодкий і колючий, так само як ваш найкращий друг.</HH_Dish_CactusFruitSalad.description>
+  <HH_Dish_GreenfruitStew.label>рагу із зеленого фрукта</HH_Dish_GreenfruitStew.label>
+  <HH_Dish_GreenfruitStew.description>Рагу настільки зелене, що мулафон образився.</HH_Dish_GreenfruitStew.description>
+  <HH_Dish_StrawflourDumplings.label>пельмені з соломяного борошна</HH_Dish_StrawflourDumplings.label>
+  <HH_Dish_StrawflourDumplings.description>Пельмені з пустки, з начинкою, яка, можливо, колись була м'ясом.</HH_Dish_StrawflourDumplings.description>
+  <HH_Dish_DesertBreadAndBeer.label>хліб і пиво з пустелі</HH_Dish_DesertBreadAndBeer.label>
+  <HH_Dish_DesertBreadAndBeer.description>Рідкий і твердий сніданок, у правильному порядку.</HH_Dish_DesertBreadAndBeer.description>
+  <HH_Dish_GrilledWholeFish.label>риба, запечена на грилі цілком</HH_Dish_GrilledWholeFish.label>
+  <HH_Dish_GrilledWholeFish.description>Ціла риба, трохи солі й жодних вибачень рибі.</HH_Dish_GrilledWholeFish.description>
+  <HH_Dish_FishStew.label>рибне рагу</HH_Dish_FishStew.label>
+  <HH_Dish_FishStew.description>Усе, що плаває, рано чи пізно опиняється тут.</HH_Dish_FishStew.description>
+  <HH_Dish_SmokedFishFillet.label>філе копченої риби</HH_Dish_SmokedFishFillet.label>
+  <HH_Dish_SmokedFishFillet.description>Філе дня, копчене, доки не забуло річку.</HH_Dish_SmokedFishFillet.description>
+  <HH_Dish_SashimiPlate.label>тарілка сасімі</HH_Dish_SashimiPlate.label>
+  <HH_Dish_SashimiPlate.description>Сира риба, тонко нарізана, і маленька моральна дилема.</HH_Dish_SashimiPlate.description>
+  <HH_Dish_FishTacos.label>рибні тако</HH_Dish_FishTacos.label>
+  <HH_Dish_FishTacos.description>Риба в коржику, доставлена колоністом, який біг усю дорогу.</HH_Dish_FishTacos.description>
+</LanguageData>

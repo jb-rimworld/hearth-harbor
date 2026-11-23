@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_BackRoomDoor.label>porta da sala dos fundos</HH_BackRoomDoor.label>
+  <HH_BackRoomDoor.description>Uma porta de aparência comum com uma boa fechadura. Só os seus e os convidados suspeitos podem abri-la. Uma sala atrás de nada além de portas de sala dos fundos não conta contra o renome da sua casa.</HH_BackRoomDoor.description>
+  <HH_FightPitMarker.label>marcador do poço de luta</HH_FightPitMarker.label>
+  <HH_FightPitMarker.description>Marca uma arena cercada ao redor dele. Construa uma cerca fechada (um portão serve) com pelo menos 3 por 3 casas por dentro, coloque este marcador no meio e o poço abre: voluntários, prisioneiros e animais lutam, os convidados apostam, e a casa fica com um décimo do bolo. Os combates terminam quando alguém se rende ou cai; até a morte só a partir do conteúdo Sombrio, nunca com voluntários, nunca com crianças.</HH_FightPitMarker.description>
+  <HH_FenceCounter.label>balcão do receptador</HH_FenceCounter.label>
+  <HH_FenceCounter.description>Um balcão marcado onde um receptador de confiança compra bens roubados por quarenta por cento do valor e os vende a compradores suspeitos por setenta. O receptador trabalha com caixa próprio, reabastecido pela sua gaveta. Os donos dos bens às vezes descobrem.</HH_FenceCounter.description>
+  <HH_SmugglerDock.label>cais de contrabandistas</HH_SmugglerDock.label>
+  <HH_SmugglerDock.description>Uma plataforma de pouso nua com uma lâmpada sombreada. À noite, um caixote às vezes desce e uma voz o oferece barato, sem perguntas. De vez em quando alguém percebe a lâmpada.</HH_SmugglerDock.description>
+  <HH_HuntingGroundMarker.label>marcador de terreno de caça</HH_HuntingGroundMarker.label>
+  <HH_HuntingGroundMarker.description>Marca um terreno de caça cercado (pelo menos sessenta casas, fechado). Caçadores ricos pagam para atirar nos animais que trazem para dentro. Com conteúdo Sombrio e a ideologia certa, um prisioneiro pode ser a presa; isso é ativado separadamente, atrás de um aviso.</HH_HuntingGroundMarker.description>
+  <HH_OrganClinic.label>balcão da clínica</HH_OrganClinic.label>
+  <HH_OrganClinic.description>Um balcão frio onde órgãos colhidos são deixados para doadores anônimos, que os recolhem à noite e pagam sem dizer uma palavra. Só com conteúdo Sombrio ou Macabro. Ideologias que repudiam o tráfico de órgãos vão guardar isso contra você.</HH_OrganClinic.description>
+</LanguageData>

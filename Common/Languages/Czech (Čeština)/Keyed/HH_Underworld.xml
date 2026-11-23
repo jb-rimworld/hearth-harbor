@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.Underworld>Podsvětí</HH.Tab.Underworld>
+  <HH.Underworld.GateClosed>Nedostupné: podsvětí je v této hře zavřené.</HH.Underworld.GateClosed>
+  <HH.Underworld.BackRoomDoorInfo>Otevřít tyto dveře mohou jen zaměstnanci, kolonisté a pochybní hosté.</HH.Underworld.BackRoomDoorInfo>
+  <HH.Underworld.Stranger.Title>Cizinec u brány</HH.Underworld.Stranger.Title>
+  <HH.Underworld.Stranger.Text>Cizinec se staženým kloboukem čeká u vašich dveří, dokud personál neodejde z doslechu.\n\n„Pěkné místo,“ řekne. „Máte zadní místnost?“\n\nNeřekne, co tím myslí. Nemusí.</HH.Underworld.Stranger.Text>
+  <HH.Underworld.Stranger.Show>Ukažte mi ji</HH.Underworld.Stranger.Show>
+  <HH.Underworld.Stranger.No>Nemám zájem</HH.Underworld.Stranger.No>
+  <HH.Underworld.Stranger.Never>Už se neptat</HH.Underworld.Stranger.Never>
+  <HH.Underworld.Unlocked.Title>Zadní místnost</HH.Underworld.Unlocked.Title>
+  <HH.Underworld.Unlocked.Text>Ukázali jste mu zadní místnost a on přikývl, jako byste složil zkoušku. Otevřela se vám nová linie výzkumu: zadní místnost s dveřmi, jámou na boje, pultem příjemce, pašeráckým dokem a salónkem. Vaše Šepty (pověst v podsvětí) nyní budou sledovat, co postavíte.\n\nNemusíte na to nic dělat. Nic z toho není povinné.</HH.Underworld.Unlocked.Text>
+  <HH.Underworld.Warn.Title>Varování o obsahu</HH.Underworld.Warn.Title>
+  <HH.Underworld.Warn.Dark>Temný obsah rozšiřuje podsvětí: vězni se mohou v jámě bojovat na život a na smrt, gangy mohou vězně vyslýchat tvrději, lovci mohou lovit vězně (s odpovídající ideologií) a klinický pult vykupuje odebrané orgány.\n\nZobrazuje se pouze jako text a běžná herní zranění. Děti se nikdy neúčastní a nic se nezapne samo od sebe.\n\nChcete tento obsah v této hře?</HH.Underworld.Warn.Dark>
+  <HH.Underworld.Warn.Grim>Krutý obsah zahrnuje vše z temného obsahu a lov na vězně se už neptá na vaši ideologii. Kupci orgánů zadávají objednávky s termínem.\n\nZobrazuje se pouze jako text a běžná herní zranění. Děti se nikdy neúčastní a nic se nezapne samo od sebe.\n\nChcete tento obsah v této hře?</HH.Underworld.Warn.Grim>
+  <HH.Underworld.Warn.Accept>Ano, rozumím</HH.Underworld.Warn.Accept>
+  <HH.Underworld.Warn.Back>Ne, zpět na standardní</HH.Underworld.Warn.Back>
+  <HH.Underworld.Warn.Hunt>Chystáte se povolit lov vězňů v loveckém revíru. Vězeň je vypuštěn do revíru s náskokem; pokud vydrží stanovený čas nebo dojde k plotu, je svobodný, a jeho frakce se o tom v každém případě dozví. Pokud zemře, jeho frakce, vaši kolonisté i hosté vám to neodpustí.\n\nZobrazuje se pouze jako text. Chcete to povolit?</HH.Underworld.Warn.Hunt>
+  <HH.Underworld.Warn.Organ>Klinický pult kupuje odebrané orgány od anonymních dárců v noci. Ideologie, které obchod s orgány odsuzují, vám to budou pamatovat a vaše Šepty s každým prodejem porostou.\n\nZobrazuje se pouze jako text. Chcete to ponechat?</HH.Underworld.Warn.Organ>
+  <HH.Underworld.Warn.Keep>Ano, ponechat</HH.Underworld.Warn.Keep>
+  <HH.Underworld.Warn.Remove>Ne, odebrat</HH.Underworld.Warn.Remove>
+  <HH.Underworld.Scandal.BackRoomFound.Title>Zadní místnost byla odhalena</HH.Underworld.Scandal.BackRoomFound.Title>
+  <HH.Underworld.Scandal.BackRoomFound.Text>Váženého hosta zavedly dveře na špatném místě a uviděl, co dům za nimi skrývá. Do večera to bude vědět celé město.</HH.Underworld.Scandal.BackRoomFound.Text>
+  <HH.Underworld.Scandal.LeakedLedger.Title>Uniklá účetní kniha</HH.Underworld.Scandal.LeakedLedger.Title>
+  <HH.Underworld.Scandal.LeakedLedger.Text>Stránka z příjemcova účetnictví se dostala do nesprávných rukou. Zboží je vystopováno zpět k vašemu pultu.</HH.Underworld.Scandal.LeakedLedger.Text>
+  <HH.Underworld.Scandal.SecretCasinoRumour.Title>Pověst o tajném kasinu</HH.Underworld.Scandal.SecretCasinoRumour.Title>
+  <HH.Underworld.Scandal.SecretCasinoRumour.Text>Po městě se šíří zvěst, že váš dům skrývá kasino pro lidi, kteří o něm nemluví. Movití hazardéři hledají dveře.</HH.Underworld.Scandal.SecretCasinoRumour.Text>
+  <HH.Underworld.Scandal.HonourAmongThieves.Title>Čest mezi zloději</HH.Underworld.Scandal.HonourAmongThieves.Title>
+  <HH.Underworld.Scandal.HonourAmongThieves.Text>Jeden gang mluví o vašem domě dobře na místech, kde na tom záleží.</HH.Underworld.Scandal.HonourAmongThieves.Text>
+  <HH.Underworld.Scandal.Effects>Šepty {0}, sláva {1}.</HH.Underworld.Scandal.Effects>
+  <HH.Underworld.Pit.Enabled>Jáma otevřena</HH.Underworld.Pit.Enabled>
+  <HH.Underworld.Pit.Enabled.Desc>Plánovat zápasy v této jámě.</HH.Underworld.Pit.Enabled.Desc>
+  <HH.Underworld.Pit.Animals>Zvířata</HH.Underworld.Pit.Animals>
+  <HH.Underworld.Pit.Animals.Desc>Zvířata vaší kolonie zde mohou bojovat.</HH.Underworld.Pit.Animals.Desc>
+  <HH.Underworld.Pit.Volunteers>Dobrovolníci</HH.Underworld.Pit.Volunteers>
+  <HH.Underworld.Pit.Volunteers.Desc>Kolonisté, kterým se líbí rvačka (krvežíznivost nebo dobrý boj zblízka), se mohou přihlásit. Dobrovolníci nikdy nebojují na život a na smrt.</HH.Underworld.Pit.Volunteers.Desc>
+  <HH.Underworld.Pit.Prisoners>Vězni</HH.Underworld.Pit.Prisoners>
+  <HH.Underworld.Pit.Prisoners.Desc>Vězni mohou být posláni do jámy. Pouze dospělí.</HH.Underworld.Pit.Prisoners.Desc>
+  <HH.Underworld.Pit.Lethal>Na smrt</HH.Underworld.Pit.Lethal>
+  <HH.Underworld.Pit.Lethal.Desc>Zápasy mezi vězni a zvířaty končí teprve tehdy, když je jeden z nich na zemi. Nikdy pro dobrovolníky.</HH.Underworld.Pit.Lethal.Desc>
+  <HH.Underworld.Pit.StartNow>Zahájit zápas</HH.Underworld.Pit.StartNow>
+  <HH.Underworld.Pit.StartNow.Desc>Vyberte nyní dva férové bojovníky a nechte hosty sázet.</HH.Underworld.Pit.StartNow.Desc>
+  <HH.Underworld.Pit.CannotStart>Zápas nelze zahájit: {0}</HH.Underworld.Pit.CannotStart>
+  <HH.Underworld.Pit.ArenaOk>Aréna: {0} polí, uzavřená.</HH.Underworld.Pit.ArenaOk>
+  <HH.Underworld.Pit.ArenaOpen>Aréna je otevřená nebo příliš velká: uzavřete ohradu.</HH.Underworld.Pit.ArenaOpen>
+  <HH.Underworld.Pit.NoFighters>méně než dva povolení bojovníci</HH.Underworld.Pit.NoFighters>
+  <HH.Underworld.Pit.NoFairPair>není k dispozici férová dvojice bojovníků</HH.Underworld.Pit.NoFairPair>
+  <HH.Underworld.Pit.BoutRunning>Zápas: {0} proti {1}.</HH.Underworld.Pit.BoutRunning>
+  <HH.Underworld.Pit.BoutAnnounced>Zápas v jámě: {0} proti {1}. Sázky jsou otevřené.</HH.Underworld.Pit.BoutAnnounced>
+  <HH.Underworld.Pit.Won>{0} vyhrává zápas. Dům si ponechá {1} stříbrných.</HH.Underworld.Pit.Won>
+  <HH.Underworld.Pit.Draw>Zápas končí bez vítěze. Všechny vklady se vracejí.</HH.Underworld.Pit.Draw>
+  <HH.Underworld.Fence.Inspect>Zásoby: {0} předmětů v hodnotě {1} stříbrných. Pokladnička: {2} stříbrných.</HH.Underworld.Fence.Inspect>
+  <HH.Underworld.Fence.Fund>Doplnit pokladničku</HH.Underworld.Fence.Fund>
+  <HH.Underworld.Fence.Fund.Desc>Přesunout stříbro ze šuplíku do pokladničky příjemce, až do limitu v nastavení.</HH.Underworld.Fence.Fund.Desc>
+  <HH.Underworld.Fence.Funded>{0} stříbrných přesunuto do pokladničky.</HH.Underworld.Fence.Funded>
+  <HH.Underworld.Fence.NoCash>Pokladnička je prázdná.</HH.Underworld.Fence.NoCash>
+  <HH.Underworld.Fence.CannotPay>Kupec nemůže zaplatit.</HH.Underworld.Fence.CannotPay>
+  <HH.Underworld.Fence.Exposed>Zboží pochází od {0} a ví, kde skončilo.</HH.Underworld.Fence.Exposed>
+  <HH.Underworld.Gang.Title>Gang u dveří</HH.Underworld.Gang.Title>
+  <HH.Underworld.Gang.Text>{0} lidí z {1} tiše přichází, kývne na personál a žádá zadní místnost. Mají peníze a žádné otázky nečekají.</HH.Underworld.Gang.Text>
+  <HH.Underworld.Gang.Demand.Title>Přátelská nabídka</HH.Underworld.Gang.Demand.Title>
+  <HH.Underworld.Gang.Demand.Text>Vůdce gangu z {0} se opírá o váš pult. „Pěkný dům. Byla by škoda, kdyby se mu něco stalo. Za {1} stříbrných zajistíme, že se nestane nic.“</HH.Underworld.Gang.Demand.Text>
+  <HH.Underworld.Gang.Demand.Pay>Zaplatit {0} stříbrných</HH.Underworld.Gang.Demand.Pay>
+  <HH.Underworld.Gang.Demand.Refuse>Ukázat jim dveře</HH.Underworld.Gang.Demand.Refuse>
+  <HH.Underworld.Gang.Demand.NoCash>v šuplíku není dost</HH.Underworld.Gang.Demand.NoCash>
+  <HH.Underworld.Tour.IntelTitle>Něco z výslechu</HH.Underworld.Tour.IntelTitle>
+  <HH.Underworld.Tour.IntelText>Po hodině s {0} zanechal gang na pultu lístek: jméno, místo, den. Někdo tam venku něco plánuje a vy o tom teď víte o něco víc.</HH.Underworld.Tour.IntelText>
+  <HH.Underworld.Smuggler.Title>Bedna u doku</HH.Underworld.Smuggler.Title>
+  <HH.Underworld.Smuggler.Text>U doku dosedla loď se zhasnutými světly. Hlas nabízí {0} předmětů v hodnotě asi {1} stříbrných za {2}. Žádné otázky, žádný účet.</HH.Underworld.Smuggler.Text>
+  <HH.Underworld.Smuggler.Buy>Koupit za {0} stříbrných</HH.Underworld.Smuggler.Buy>
+  <HH.Underworld.Smuggler.Decline>Vykázat je</HH.Underworld.Smuggler.Decline>
+  <HH.Underworld.Smuggler.NoCash>v šuplíku není dost</HH.Underworld.Smuggler.NoCash>
+  <HH.Underworld.Smuggler.InspectTitle>Hlídka si všimla lampy</HH.Underworld.Smuggler.InspectTitle>
+  <HH.Underworld.Smuggler.InspectText>Císařská hlídka viděla světla u vašeho doku a zapsala si to.</HH.Underworld.Smuggler.InspectText>
+  <HH.Underworld.Hunt.Title>Lovecká výprava</HH.Underworld.Hunt.Title>
+  <HH.Underworld.Hunt.Text>{0} lovců přijíždí s puškami a penězi. Za revír zaplatili {1} stříbrných a do něj bylo vypuštěno {2} zvířat.</HH.Underworld.Hunt.Text>
+  <HH.Underworld.Hunt.GroundOk>Lovecký revír: {0} polí, uzavřený. Kořist: {1}.</HH.Underworld.Hunt.GroundOk>
+  <HH.Underworld.Hunt.QuarryAnimals>zvířata</HH.Underworld.Hunt.QuarryAnimals>
+  <HH.Underworld.Hunt.QuarryHuman>zvířata a vězeň</HH.Underworld.Hunt.QuarryHuman>
+  <HH.Underworld.Hunt.Prisoners>Vězeň jako kořist</HH.Underworld.Hunt.Prisoners>
+  <HH.Underworld.Hunt.Prisoners.Desc>Nechat lovce lovit vězně vypuštěného do revíru. Pouze s temným obsahem a odpovídající ideologií.</HH.Underworld.Hunt.Prisoners.Desc>
+  <HH.Underworld.Hunt.GateContent>Vyžaduje potvrzený temný nebo krutý obsah.</HH.Underworld.Hunt.GateContent>
+  <HH.Underworld.Hunt.GatePrecept>Ideologie kolonie to nedovoluje.</HH.Underworld.Hunt.GatePrecept>
+  <HH.Underworld.Hunt.DeathTitle>Při honu zemřel člověk</HH.Underworld.Hunt.DeathTitle>
+  <HH.Underworld.Hunt.DeathText>{0} hon nepřežil. Jeho lidé se to dozvědí a stejně tak každý, kdo se díval.</HH.Underworld.Hunt.DeathText>
+  <HH.Underworld.Hunt.FreedTitle>Kořist utekla</HH.Underworld.Hunt.FreedTitle>
+  <HH.Underworld.Hunt.FreedText>{0} vydržel stanovený čas a odchází na svobodu. Lovci odešli rozzlobeni; jeho frakce se dozví, jak to proběhlo.</HH.Underworld.Hunt.FreedText>
+  <HH.Underworld.Organ.Inspect>Čekající orgány: {0}. Otevřené objednávky: {1}.</HH.Underworld.Organ.Inspect>
+  <HH.Underworld.Organ.Sold>Od pultu kliniky vyzvednuto {0} orgánů.</HH.Underworld.Organ.Sold>
+  <HH.Underworld.Organ.OrderTitle>Objednávka</HH.Underworld.Organ.OrderTitle>
+  <HH.Underworld.Organ.OrderText>Kupec chce {0} do {1} dnů a za včasné dodání platí prémii.</HH.Underworld.Organ.OrderText>
+  <HH.Underworld.Organ.OrderDone>Objednávka na {0} byla splněna.</HH.Underworld.Organ.OrderDone>
+  <HH.Underworld.Organ.OrderMissed>Objednávka na {0} nebyla včas splněna.</HH.Underworld.Organ.OrderMissed>
+  <HH.Underworld.Page.Title>Podsvětí</HH.Underworld.Page.Title>
+  <HH.Underworld.Page.Whispers>Šepty: {0} ze 100.</HH.Underworld.Page.Whispers>
+  <HH.Underworld.Page.Weights>Váhy příchodů: váženým x{0}, psancům x{1}.</HH.Underworld.Page.Weights>
+  <HH.Underworld.Page.Content>Obsah: {0} (platí: {1}).</HH.Underworld.Page.Content>
+  <HH.Underworld.Page.Stats1>Jáma na boje: {0} zápasů, {1} sázek, dům si vzal {2} stříbrných.</HH.Underworld.Page.Stats1>
+  <HH.Underworld.Page.Stats2>Příjemce: {0} koupeno, {1} prodáno, zisk {2} stříbrných.</HH.Underworld.Page.Stats2>
+  <HH.Underworld.Page.Stats3>Návštěvy salónku {0}, návštěvy gangů {1}, přistání {2}, lovy {3}, orgány {4}.</HH.Underworld.Page.Stats3>
+  <HH.Underworld.Page.HighRollers>Pověst o tajném kasinu láká movité hazardéry.</HH.Underworld.Page.HighRollers>
+</LanguageData>

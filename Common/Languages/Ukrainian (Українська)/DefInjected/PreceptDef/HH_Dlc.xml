@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Indulgences_NotAThing.label>такого немає</HH_Indulgences_NotAThing.label>
+  <HH_Indulgences_NotAThing.description>Ніхто тут ніколи не думав продавати прощення. Нема чого купувати, нема до чого чіплятися.</HH_Indulgences_NotAThing.description>
+  <HH_Indulgences_Abhorrent.label>огидно</HH_Indulgences_Abhorrent.label>
+  <HH_Indulgences_Abhorrent.description>Прощення не є товаром. Того, хто його продає, слід вигнати з храму.</HH_Indulgences_Abhorrent.description>
+  <HH_Indulgences_Disapproved.label>не схвалюється</HH_Indulgences_Disapproved.label>
+  <HH_Indulgences_Disapproved.description>Купувати відпущення — неприємна звичка. Це працює, але ніхто не має пишатися цим.</HH_Indulgences_Disapproved.description>
+  <HH_Indulgences_Accepted.label>прийнято</HH_Indulgences_Accepted.label>
+  <HH_Indulgences_Accepted.description>Чесна плата за чесну милість. Ціна написана на табличці.</HH_Indulgences_Accepted.description>
+  <HH_Indulgences_Sacred.label>священне</HH_Indulgences_Sacred.label>
+  <HH_Indulgences_Sacred.description>Сплачувати борги — таїнство. Вірні отримують знижку, а дешева совість — це обов'язок.</HH_Indulgences_Sacred.description>
+  <HH_PaidAscension_NotAThing.label>такого немає</HH_PaidAscension_NotAThing.label>
+  <HH_PaidAscension_NotAThing.description>Ранг тут заслуговують, а не купують. Нема чого купувати, нема до чого чіплятися.</HH_PaidAscension_NotAThing.description>
+  <HH_PaidAscension_Abhorrent.label>огидно</HH_PaidAscension_Abhorrent.label>
+  <HH_PaidAscension_Abhorrent.description>Віра не продається. Той, хто продає ранг, уже втратив його.</HH_PaidAscension_Abhorrent.description>
+  <HH_PaidAscension_Disapproved.label>не схвалюється</HH_PaidAscension_Disapproved.label>
+  <HH_PaidAscension_Disapproved.description>Куплений ранг — порожній ранг. Громада бачить це наскрізь.</HH_PaidAscension_Disapproved.description>
+  <HH_PaidAscension_Accepted.label>прийнято</HH_PaidAscension_Accepted.label>
+  <HH_PaidAscension_Accepted.description>Ранг можна купити за оголошеною ціною, як і все інше цінне.</HH_PaidAscension_Accepted.description>
+  <HH_PaidAscension_Sacred.label>священне</HH_PaidAscension_Sacred.label>
+  <HH_PaidAscension_Sacred.description>Драбина і є віра. Кожен купений щабель — це піднятий щабель, а ті, що внизу, дивляться вгору з повагою.</HH_PaidAscension_Sacred.description>
+</LanguageData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchScreening.reportString>смотрит фильм.</HH_WatchScreening.reportString>
+  <HH_SalonSit.reportString>ждёт новый образ.</HH_SalonSit.reportString>
+  <HH_SalonStyle.reportString>делает причёску клиенту TargetA.</HH_SalonStyle.reportString>
+  <HH_SalonSelf.reportString>делает себе новую стрижку.</HH_SalonSelf.reportString>
+  <HH_GalleryVisit.reportString>смотрит на искусство.</HH_GalleryVisit.reportString>
+  <HH_ParkRest.reportString>сидит на скамейке.</HH_ParkRest.reportString>
+  <HH_TaxiDeparture.reportString>ждёт такси.</HH_TaxiDeparture.reportString>
+  <HH_Bodyguard.reportString>охраняет TargetA.</HH_Bodyguard.reportString>
+</LanguageData>

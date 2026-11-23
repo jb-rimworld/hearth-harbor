@@ -1,0 +1,24 @@
+{
+ "keyed": {
+  "HH.Compat.DialogTitle": "Hospitality est actif en parallèle de Hearth & Harbor. Le désactiver pour vous ?",
+  "HH.Compat.DialogBody": "Hearth & Harbor remplace Hospitality et ses extensions. Tant que les deux sont actifs, Hearth & Harbor a désactivé Hospitality pour cette session : ses correctifs, événements, bâtiments et onglet d'invités ne font rien. Vos lits et zones d'invités Hospitality sont conservés et repris lorsque Hospitality disparaît.",
+  "HH.Compat.DialogListHeader": "Ces mods seront désactivés :",
+  "HH.Compat.DialogMentionHeader": "Ces mods d'invités restent tels quels ; leurs visiteurs leur appartiennent toujours :",
+  "HH.Compat.DialogFailed": "La liste des mods n'a pas pu être modifiée automatiquement ({0}). Veuillez le faire à la main :",
+  "HH.Compat.DialogStep1": "1. Menu principal → Mods",
+  "HH.Compat.DialogStep2": "2. Décochez les mods listés ci-dessus",
+  "HH.Compat.DialogStep3": "3. Enregistrez la liste des mods et redémarrez le jeu",
+  "HH.Compat.Yes": "Oui, désactiver et redémarrer",
+  "HH.Compat.OpenMods": "Ouvrir la liste des mods",
+  "HH.Compat.Later": "Plus tard",
+  "HH.Compat.Never": "Ne plus demander",
+  "HH.Compat.ImportLetterTitle": "Importé depuis Hospitality",
+  "HH.Compat.ImportLetterText": "Cette colonie a été jouée avec Hospitality. Hearth & Harbor a repris ce qu'il pouvait.\\n\\nImporté : {0}.\\nAbandonné : {1}.\\n\\nLes lits d'invités importés redeviennent des lits normaux et sont mémorisés comme lits d'invités ; la partie invités de Hearth & Harbor les reprend. Rien d'autre dans votre colonie n'a changé.",
+  "HH.Compat.ImportNothing": "rien",
+  "HH.Setting.compat.hospitalityNeverAsk": "Ne pas proposer de désactiver Hospitality",
+  "HH.Setting.compat.hospitalityNeverAsk.Desc": "Quand Hospitality tourne en parallèle de Hearth & Harbor, Hearth & Harbor le désactive pour la session et propose de le désactiver dans le menu principal. Activé : plus aucune proposition (la désactivation pour la session a tout de même lieu).",
+  "HH.Setting.compat.importLetter": "Lettre après l'importation d'une sauvegarde Hospitality",
+  "HH.Setting.compat.importLetter.Desc": "Après le chargement d'une sauvegarde jouée avec Hospitality, une lettre indique ce que Hearth & Harbor a repris (lits d'invités, zones, visiteurs) et ce qui a été abandonné."
+ },
+ "defs": {}
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_NobleStay.label>séjour noble</HH_NobleStay.label>
+  <HH_NobleStay.letterLabel>Séjour noble proposé</HH_NobleStay.letterLabel>
+  <HH_NobleStay.letterText>Un cortège noble demande à être hébergé.</HH_NobleStay.letterText>
+  <HH_ImperialBilleting.label>cantonnement impérial</HH_ImperialBilleting.label>
+  <HH_ImperialBilleting.letterLabel>Cantonnement impérial</HH_ImperialBilleting.letterLabel>
+  <HH_ImperialBilleting.letterText>L'Empire exige un logement.</HH_ImperialBilleting.letterText>
+</LanguageData>

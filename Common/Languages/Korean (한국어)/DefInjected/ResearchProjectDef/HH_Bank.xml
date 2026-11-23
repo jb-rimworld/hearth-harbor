@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Banking.label>자동 출납기</SL_Banking.label>
+  <SL_Banking.description>정확한 네 자리 숫자를 입력하는 누구에게나 은화를 내주는 기계. ATM과 야간 금고를 해금합니다.</SL_Banking.description>
+  <SL_Branches.label>은행 지점</SL_Branches.label>
+  <SL_Branches.description>제대로 된 창구, 제대로 된 금고, 제대로 된 대기 줄. 은행 창구를 해금합니다: 즉시 예금, 즉시 현금, 대출 신청은 직접.</SL_Branches.description>
+  <SL_Credit.label>소비자 신용</SL_Credit.label>
+  <SL_Credit.description>가지고 있지 않은 돈을, 가지고 있지 않은 사람들에게 빌려줍니다. 대출, 신용 점수, 그리고 필요하다면 추심 회사를 해금합니다.</SL_Credit.description>
+</LanguageData>

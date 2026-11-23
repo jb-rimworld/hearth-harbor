@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ServiceQuality.label>качество обслуживания</HH_ServiceQuality.label>
+  <HH_ServiceQuality.description>Насколько приятно обслуживать этого человека. Добавляется к удовлетворённости гостей, с которыми он разговаривает, и учитывается магазинами, кухнями и стойкой регистрации.</HH_ServiceQuality.description>
+  <HH_HostingLearn.label>обучение гостеприимству</HH_HostingLearn.label>
+  <HH_HostingLearn.description>Множитель социального опыта, получаемого при приёме гостей.</HH_HostingLearn.description>
+  <HH_GuestExpectation.label>ожидания гостя</HH_GuestExpectation.label>
+  <HH_GuestExpectation.description>Добавляется к тому, чего гость ждёт от пребывания. Положительное значение — труднее угодить. Обаяние и хорошие манеры снижают его; изысканный вкус повышает.</HH_GuestExpectation.description>
+  <HH_GamblingJoy.label>удовольствие от азарта</HH_GamblingJoy.label>
+  <HH_GamblingJoy.description>Множитель удовольствия, которое этот человек получает от азартных игр.</HH_GamblingJoy.description>
+  <HH_GamblingAddiction.label>шанс зависимости от азарта</HH_GamblingAddiction.label>
+  <HH_GamblingAddiction.description>Множитель шанса, что азартные игры станут зависимостью. Ноль означает, что этот человек никогда не подсядет.</HH_GamblingAddiction.description>
+  <HH_Dexterity.label>ловкость рук</HH_Dexterity.label>
+  <HH_Dexterity.description>Уровни навыка, добавляемые к тонкой работе за столами: раздаче, тасовке и жульничеству в заведении.</HH_Dexterity.description>
+  <HH_TableSkill.label>навык счёта</HH_TableSkill.label>
+  <HH_TableSkill.description>Уровни навыка, добавляемые при работе крупье, кассиром или банковским служащим.</HH_TableSkill.description>
+  <HH_FraudDetection.label>обнаружение мошенничества</HH_FraudDetection.label>
+  <HH_FraudDetection.description>Множитель вероятности заметить поддельные фишки, жульничающих гостей и недостачу сдачи.</HH_FraudDetection.description>
+  <HH_TheftChance.label>кража в их комнате</HH_TheftChance.label>
+  <HH_TheftChance.description>Множитель шанса, что в комнате, за которой этот человек присматривает, что-то украдут.</HH_TheftChance.description>
+  <HH_BrawlRisk.label>риск драк вокруг них</HH_BrawlRisk.label>
+  <HH_BrawlRisk.description>Множитель шанса, что ссора в комнате этого человека перерастёт в драку.</HH_BrawlRisk.description>
+  <HH_RumorSpread.label>распространение слухов</HH_RumorSpread.label>
+  <HH_RumorSpread.description>Множитель того, насколько далеко расходятся истории о доме, хорошие или плохие.</HH_RumorSpread.description>
+  <HH_CareProgress.label>прогресс ухода</HH_CareProgress.label>
+  <HH_CareProgress.description>Множитель прогресса пациента и реабилитации, пока этот человек за ним ухаживает.</HH_CareProgress.description>
+  <HH_BankFeeFactor.label>банковские комиссии</HH_BankFeeFactor.label>
+  <HH_BankFeeFactor.description>Множитель комиссий, которые банк взимает с этого человека.</HH_BankFeeFactor.description>
+  <HH_Negotiation.label>бонус к переговорам</HH_Negotiation.label>
+  <HH_Negotiation.description>Добавляется к переговорам по страховкам и контрактам.</HH_Negotiation.description>
+  <HH_RecruitPrice.label>наценка за вербовку</HH_RecruitPrice.label>
+  <HH_RecruitPrice.description>Множитель наценки сверх минимальной цены при покупке лояльности гостя.</HH_RecruitPrice.description>
+  <HH_ServeRestFactor.label>усталость при обслуживании</HH_ServeRestFactor.label>
+  <HH_ServeRestFactor.description>Множитель скорости, с которой уменьшается отдых во время обслуживания столиков или работы у стойки.</HH_ServeRestFactor.description>
+  <HH_TipFactor.label>чаевые</HH_TipFactor.label>
+  <HH_TipFactor.description>Множитель чаевых, которые этот человек оставляет как гость.</HH_TipFactor.description>
+  <HH_DishQuality.label>шанс улучшить качество блюда</HH_DishQuality.label>
+  <HH_DishQuality.description>Шанс поднять качество приготовленного блюда на одну ступень.</HH_DishQuality.description>
+  <HH_FamilyCheer.label>настроение семьи</HH_FamilyCheer.label>
+  <HH_FamilyCheer.description>Добавляется к удовлетворённости семей и детей, которые находятся на попечении этого человека.</HH_FamilyCheer.description>
+  <HH_PriceFeel.label>восприятие цен</HH_PriceFeel.label>
+  <HH_PriceFeel.description>Добавляется к тому, насколько дорогими гости считают цены этого человека.</HH_PriceFeel.description>
+</LanguageData>

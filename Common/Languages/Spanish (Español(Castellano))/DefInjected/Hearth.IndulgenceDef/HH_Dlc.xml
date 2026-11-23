@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Ind_ExpressAbsolution.label>absolución exprés</HH_Ind_ExpressAbsolution.label>
+  <HH_Ind_ExpressAbsolution.description>Una papeleta sellada que borra un recuerdo de un mandamiento roto. El sacerdote no pregunta qué hiciste.</HH_Ind_ExpressAbsolution.description>
+  <HH_Ind_MinorMercy.label>clemencia menor</HH_Ind_MinorMercy.label>
+  <HH_Ind_MinorMercy.description>Una venda bendecida, vendida al precio de dos dosis de medicina. Cura una herida reciente de hasta 10 puntos de vida.</HH_Ind_MinorMercy.description>
+  <HH_Ind_UnshakenFaith.label>certificado de fe inquebrantable</HH_Ind_UnshakenFaith.label>
+  <HH_Ind_UnshakenFaith.description>Un certificado enmarcado que dice que nunca dudaste. Sube la certeza diez puntos porcentuales.</HH_Ind_UnshakenFaith.description>
+  <HH_Ind_GreaterMercy.label>clemencia mayor</HH_Ind_GreaterMercy.label>
+  <HH_Ind_GreaterMercy.description>Un milagro con precio. Cura para siempre una cicatriz permanente o una herida antigua.</HH_Ind_GreaterMercy.description>
+  <HH_Asc_Rank1.label>ascensión: buscador</HH_Asc_Rank1.label>
+  <HH_Asc_Rank1.description>Paga la cuota de entrada y conviértete en Buscador. Un comienzo, nada más.</HH_Asc_Rank1.description>
+  <HH_Asc_Rank2.label>ascensión: adepto</HH_Asc_Rank2.label>
+  <HH_Asc_Rank2.description>Rango II, Adepto. A partir de aquí el titular puede vender indulgencias en el altar a huéspedes y visitantes de otras casas.</HH_Asc_Rank2.description>
+  <HH_Asc_Rank3.label>ascensión: luminaria</HH_Asc_Rank3.label>
+  <HH_Asc_Rank3.description>Rango III, Luminaria. Lo bastante luminoso como para verse desde lejos.</HH_Asc_Rank3.description>
+  <HH_Asc_Rank4.label>ascensión: ascendente</HH_Asc_Rank4.label>
+  <HH_Asc_Rank4.description>Rango IV, Ascendente. La cima de la escalera, para quienes pueden pagar la vista.</HH_Asc_Rank4.description>
+  <HH_Ind_ReformTithe.label>diezmo de reforma</HH_Ind_ReformTithe.label>
+  <HH_Ind_ReformTithe.description>Un diezmo voluntario para la próxima reforma de una ideología fluida: un punto de reforma.</HH_Ind_ReformTithe.description>
+</LanguageData>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Setting.venues.browseTicks>Doba prohlížení (ticky)</HH.Setting.venues.browseTicks>
+  <HH.Setting.venues.browseTicks.Desc>Jak dlouho si host prohlíží zboží, než se rozhodne. 60 ticků je jedna sekunda při normální rychlosti.</HH.Setting.venues.browseTicks.Desc>
+  <HH.Setting.venues.dayClose>Denní předvolba zavírá</HH.Setting.venues.dayClose>
+  <HH.Setting.venues.dayClose.Desc>Hodina, kdy se zavírá předvolba „Den“.</HH.Setting.venues.dayClose.Desc>
+  <HH.Setting.venues.dayOpen>Denní předvolba otevírá</HH.Setting.venues.dayOpen>
+  <HH.Setting.venues.dayOpen.Desc>Hodina, kdy se v dialogu otevírací doby cedule otevírá předvolba „Den“.</HH.Setting.venues.dayOpen.Desc>
+  <HH.Setting.venues.drinkGapHours>Hodiny mezi nápoji</HH.Setting.venues.drinkGapHours>
+  <HH.Setting.venues.drinkGapHours.Desc>Host si neobjedná další nápoj, dokud neuplyne tolik hodin.</HH.Setting.venues.drinkGapHours.Desc>
+  <HH.Setting.venues.eveningClose>Večerní předvolba zavírá</HH.Setting.venues.eveningClose>
+  <HH.Setting.venues.eveningClose.Desc>Hodina, kdy se zavírá předvolba „Večer“ (dřívější hodina, než je otevírací, znamená dobu po půlnoci).</HH.Setting.venues.eveningClose.Desc>
+  <HH.Setting.venues.eveningOpen>Večerní předvolba otevírá</HH.Setting.venues.eveningOpen>
+  <HH.Setting.venues.eveningOpen.Desc>Hodina, kdy se otevírá předvolba „Večer“.</HH.Setting.venues.eveningOpen.Desc>
+  <HH.Setting.venues.hideVanilla>Skrýt nahrazený vanilla nábytek</HH.Setting.venues.hideVanilla>
+  <HH.Setting.venues.hideVanilla.Desc>Když budova Hearth &amp; Harbor nahradí vanilla budovu (například kartový stolek pokerovým stolem), vanilla verze zmizí z nabídky stavby, jakmile je náhrada dostupná. Už postavené budovy zůstanou. Projeví se po restartu nebo dalším načtení hry.</HH.Setting.venues.hideVanilla.Desc>
+  <HH.Setting.venues.lastOrdersMinutes>Poslední objednávky (minuty před zavřením)</HH.Setting.venues.lastOrdersMinutes>
+  <HH.Setting.venues.lastOrdersMinutes.Desc>V tomto posledním úseku před zavíracím časem si hosté ve spěchu objednají ještě jedno kolo, žádný host nezačne dlouhé prohlížení a nákup, který už probíhá, se obslouží i po zavření. 0 = žádné poslední objednávky.</HH.Setting.venues.lastOrdersMinutes.Desc>
+  <HH.Setting.venues.marketCaravans>Obchodní karavany na trh</HH.Setting.venues.marketCaravans>
+  <HH.Setting.venues.marketCaravans.Desc>Kolik obchodních karavan přijede v tržní den (méně, pokud je přátelských frakcí málo).</HH.Setting.venues.marketCaravans.Desc>
+  <HH.Setting.venues.marketDays>Dny mezi trhy</HH.Setting.venues.marketDays>
+  <HH.Setting.venues.marketDays.Desc>Průměrný interval velkého trhu, s trochou náhody.</HH.Setting.venues.marketDays.Desc>
+  <HH.Setting.venues.marketEnabled>Velký trh</HH.Setting.venues.marketEnabled>
+  <HH.Setting.venues.marketEnabled.Desc>Přátelské frakce čas od času přivezou najednou několik obchodních karavan a denní návštěvníky. Děje se to jen tehdy, když provozujete alespoň jeden obchod.</HH.Setting.venues.marketEnabled.Desc>
+  <HH.Setting.venues.marketRenown>Sláva potřebná pro trh</HH.Setting.venues.marketRenown>
+  <HH.Setting.venues.marketRenown.Desc>Minimální sláva (0–100), aby obchodníci a návštěvníci chtěli s vámi uspořádat trh. Bez systému slávy je kolonie považována za neutrální (50).</HH.Setting.venues.marketRenown.Desc>
+  <HH.Setting.venues.marketStalls>Potřebné tržní stánky</HH.Setting.venues.marketStalls>
+  <HH.Setting.venues.marketStalls.Desc>Velký trh se uskuteční, až vlastníte tolik volně stojících tržních stánků (obchodníci se u nich rozloží). Při menším počtu stánků přijede méně karavan.</HH.Setting.venues.marketStalls.Desc>
+  <HH.Setting.venues.marketVisitors>Skupiny návštěvníků na trh</HH.Setting.venues.marketVisitors>
+  <HH.Setting.venues.marketVisitors.Desc>Kolik skupin denních návštěvníků přijde v tržní den nakupovat do vašich provozoven.</HH.Setting.venues.marketVisitors.Desc>
+  <HH.Setting.venues.maxPurchases>Nákupy na hosta a pobyt</HH.Setting.venues.maxPurchases>
+  <HH.Setting.venues.maxPurchases.Desc>Host přestane nakupovat po tolika nákupech během jednoho pobytu.</HH.Setting.venues.maxPurchases.Desc>
+  <HH.Setting.venues.nightBell>Noční zvonek</HH.Setting.venues.nightBell>
+  <HH.Setting.venues.nightBell.Desc>Hosté mohou zazvonit u zavřené provozovny. Probuzení kolonisté s prací Obsluha přijdou a za příplatek ji otevřou. Nikdo se nebudí.</HH.Setting.venues.nightBell.Desc>
+  <HH.Setting.venues.nightBellMin>Minimální poplatek za noční zvonek</HH.Setting.venues.nightBellMin>
+  <HH.Setting.venues.nightBellMin.Desc>Služba zvonku nikdy nestojí méně než tolik (stříbro).</HH.Setting.venues.nightBellMin.Desc>
+  <HH.Setting.venues.nightBellSurcharge>Příplatek za noční zvonek</HH.Setting.venues.nightBellSurcharge>
+  <HH.Setting.venues.nightBellSurcharge.Desc>Dodatečný podíl ceny, který hosté platí, když zvoní mimo otevírací dobu.</HH.Setting.venues.nightBellSurcharge.Desc>
+  <HH.Setting.venues.nightBellWaitHours>Trpělivost u nočního zvonku (hodiny)</HH.Setting.venues.nightBellWaitHours>
+  <HH.Setting.venues.nightBellWaitHours.Desc>Jak dlouho host po zazvonění čeká, než to vzdá („Zazvonil. Nikdo nepřišel.“).</HH.Setting.venues.nightBellWaitHours.Desc>
+  <HH.Setting.venues.nightClose>Noční předvolba zavírá</HH.Setting.venues.nightClose>
+  <HH.Setting.venues.nightClose.Desc>Hodina, kdy se zavírá předvolba „Noc“.</HH.Setting.venues.nightClose.Desc>
+  <HH.Setting.venues.nightOpen>Noční předvolba otevírá</HH.Setting.venues.nightOpen>
+  <HH.Setting.venues.nightOpen.Desc>Hodina, kdy se otevírá předvolba „Noc“.</HH.Setting.venues.nightOpen.Desc>
+  <HH.Setting.venues.priceTolerance>Cenová tolerance hostů</HH.Setting.venues.priceTolerance>
+  <HH.Setting.venues.priceTolerance.Desc>Kolik hosté snesou. Nad 1 přijímají strmější ceny, pod 1 se smlouvají nohama. Řídí se posuvníkem obtížnosti.</HH.Setting.venues.priceTolerance.Desc>
+  <HH.Setting.venues.selfService>Sleva za samoobsluhu</HH.Setting.venues.selfService>
+  <HH.Setting.venues.selfService.Desc>Provozovny, které nepotřebují personál, ale za pultem nikdo nestojí, účtují o tolik méně (host si všechno obstará sám).</HH.Setting.venues.selfService.Desc>
+  <HH.Setting.venues.shopDesire>Chuť hostů nakupovat</HH.Setting.venues.shopDesire>
+  <HH.Setting.venues.shopDesire.Desc>Jak ochotně hosté vcházejí do obchodů a hospod ve srovnání s jinými činnostmi, které by mohli dělat. 0 = nikdy nenakupují.</HH.Setting.venues.shopDesire.Desc>
+  <HH.Setting.venues.shopPrice>Cenová úroveň obchodů</HH.Setting.venues.shopPrice>
+  <HH.Setting.venues.shopPrice.Desc>Násobí tržní hodnotu zboží prodávaného v obchodech a hospodách, navíc ke koeficientu ceny každé cedule.</HH.Setting.venues.shopPrice.Desc>
+  <HH.Setting.venues.stallFee>Poplatek za stánek na obchodníka</HH.Setting.venues.stallFee>
+  <HH.Setting.venues.stallFee.Desc>Každá obchodní karavana v tržní den zaplatí za svůj stánek tolik stříbra (jde do pokladny kolonie).</HH.Setting.venues.stallFee.Desc>
+  <HH.Setting.venues.tendHours>Hodiny na směnu</HH.Setting.venues.tendHours>
+  <HH.Setting.venues.tendHours.Desc>Jak dlouho kolonista obsluhuje provozovnu, než začne hledat jinou práci (přestane také, když se provozovna zavře).</HH.Setting.venues.tendHours.Desc>
+  <HH.Setting.venues.vendingPrice>Cenová úroveň automatů</HH.Setting.venues.vendingPrice>
+  <HH.Setting.venues.vendingPrice.Desc>Násobí tržní hodnotu toho, co automaty prodávají.</HH.Setting.venues.vendingPrice.Desc>
+  <HH.Setting.venues.waitForStaffTicks>Trpělivost hosta s personálem (ticky)</HH.Setting.venues.waitForStaffTicks>
+  <HH.Setting.venues.waitForStaffTicks.Desc>Host čeká tak dlouho, než se k otevřené, ale neobsazené provozovně někdo přijde, a pak naštvaně odejde.</HH.Setting.venues.waitForStaffTicks.Desc>
+  <HH.Venue.AlwaysOpen>otevřeno non-stop</HH.Venue.AlwaysOpen>
+  <HH.Venue.Bargain>Výhodné!</HH.Venue.Bargain>
+  <HH.Venue.BellRung>*zvonk*</HH.Venue.BellRung>
+  <HH.Venue.CheckCounter>Pult pro obsluhu</HH.Venue.CheckCounter>
+  <HH.Venue.CheckDrinks>Nápoje na skladě</HH.Venue.CheckDrinks>
+  <HH.Venue.CheckNoCounter>Žádný pult (volitelný) → obsluha stojí vedle cedule</HH.Venue.CheckNoCounter>
+  <HH.Venue.CheckNoDrinks>Žádné nápoje na skladě → uložte do místnosti pivo nebo jiné nápoje</HH.Venue.CheckNoDrinks>
+  <HH.Venue.CheckNoStock>Žádné zboží k prodeji → umístěte do místnosti regál nebo sklad se zbožím</HH.Venue.CheckNoStock>
+  <HH.Venue.CheckNoWorker>Nikdo nemá zapnutou práci Obsluha</HH.Venue.CheckNoWorker>
+  <HH.Venue.CheckStock>Zboží na regálech</HH.Venue.CheckStock>
+  <HH.Venue.CheckWorker>Kolonista vykonává práci Obsluha</HH.Venue.CheckWorker>
+  <HH.Venue.ChooseType>Druh provozovny</HH.Venue.ChooseType>
+  <HH.Venue.ChooseTypeDesc>Vyberte, jakou provozovnu představuje místnost této cedule: hospodu, obchod, restauraci, kasino, lázně nebo salónek.</HH.Venue.ChooseTypeDesc>
+  <HH.Venue.Closed>zavřeno</HH.Venue.Closed>
+  <HH.Venue.Closes>Zavírá v</HH.Venue.Closes>
+  <HH.Venue.ColonyMayTake>Kolonie smí brát zboží</HH.Venue.ColonyMayTake>
+  <HH.Venue.ColonyMayTakeDesc>Vypnuto: zboží k prodeji v této místnosti je pro vaše kolonisty zakázané, takže nikdo nenosí váš sklad pryč. Zapnuto: kolonisté s ním zacházejí jako s jakoukoli jinou uskladněnou věcí.</HH.Venue.ColonyMayTakeDesc>
+  <HH.Venue.ColonyMayTakeShort>kolonie smí brát zboží</HH.Venue.ColonyMayTakeShort>
+  <HH.Venue.Current>aktuální</HH.Venue.Current>
+  <HH.Venue.CustomersOnly>jen zákazníci</HH.Venue.CustomersOnly>
+  <HH.Venue.Done>Hotovo</HH.Venue.Done>
+  <HH.Venue.ForSale>K prodeji</HH.Venue.ForSale>
+  <HH.Venue.GoodService>Přátelská obsluha</HH.Venue.GoodService>
+  <HH.Venue.GoodValue>Dobrá hodnota</HH.Venue.GoodValue>
+  <HH.Venue.Hours>Otevírací doba</HH.Venue.Hours>
+  <HH.Venue.HoursDesc>Nastavte, kdy je provozovna otevřená. Předvolby pro den, večer, noc a non-stop.</HH.Venue.HoursDesc>
+  <HH.Venue.HoursHint>Zavírací hodina dřívější než otevírací znamená, že provozovna zůstane otevřená i po půlnoci.</HH.Venue.HoursHint>
+  <HH.Venue.HoursTitle>Otevírací doba</HH.Venue.HoursTitle>
+  <HH.Venue.LastOrders>poslední objednávky</HH.Venue.LastOrders>
+  <HH.Venue.MarketFees>Obchodníci platí {0} stříbra za své stánky.</HH.Venue.MarketFees>
+  <HH.Venue.MarketLabel>Tržní den</HH.Venue.MarketLabel>
+  <HH.Venue.MarketText>Zpráva se roznesla: je tržní den. {0} obchodních karavan a {1} skupin návštěvníků z {2} míří do vaší kolonie. Obchodníci budou obchodovat jako obvykle ve svých táborech; návštěvníci budou nakupovat ve vašich obchodech a hospodách, pokud jsou otevřené.\n\nDoplňte regály a zajistěte obsluhu u pultů.</HH.Venue.MarketText>
+  <HH.Venue.NoRoom>Zatím žádná provozovna: cedule potřebuje uzavřenou místnost se střechou.</HH.Venue.NoRoom>
+  <HH.Venue.NoStaffState>otevřeno, ale nikdo na směně</HH.Venue.NoStaffState>
+  <HH.Venue.NoTypes>Žádný dostupný druh provozovny</HH.Venue.NoTypes>
+  <HH.Venue.Nobody>nikdo</HH.Venue.Nobody>
+  <HH.Venue.NobodyCameBell>Zazvonil. Nikdo nepřišel.</HH.Venue.NobodyCameBell>
+  <HH.Venue.NobodyCameStaff>Čekal na obsluhu. Nikdo nepřišel.</HH.Venue.NobodyCameStaff>
+  <HH.Venue.Off>vypnuto</HH.Venue.Off>
+  <HH.Venue.On>zapnuto</HH.Venue.On>
+  <HH.Venue.Open>otevřeno</HH.Venue.Open>
+  <HH.Venue.Opens>Otevírá v</HH.Venue.Opens>
+  <HH.Venue.PresetAlways>Vždy</HH.Venue.PresetAlways>
+  <HH.Venue.PresetDay>Den</HH.Venue.PresetDay>
+  <HH.Venue.PresetEvening>Večer</HH.Venue.PresetEvening>
+  <HH.Venue.PresetNight>Noc</HH.Venue.PresetNight>
+  <HH.Venue.Price>Ceny</HH.Venue.Price>
+  <HH.Venue.PriceDesc>Cenový koeficient na vše, co tato provozovna prodává. Hosté se odradí příliš vysokými cenami.</HH.Venue.PriceDesc>
+  <HH.Venue.PriceFactor>Cenový koeficient</HH.Venue.PriceFactor>
+  <HH.Venue.PriceHint>Hosté porovnávají cenu s tím, kolik pro ně položka stojí. Bohatší hosté snesou víc. Provozovny bez personálu účtují o něco méně (samoobsluha); služba nočního zvonku stojí navíc. Zdarma znamená zdarma.</HH.Venue.PriceHint>
+  <HH.Venue.PriceLine>Ceny</HH.Venue.PriceLine>
+  <HH.Venue.PriceTitle>Ceny</HH.Venue.PriceTitle>
+  <HH.Venue.Pricey>Drahé</HH.Venue.Pricey>
+  <HH.Venue.Rename>Přejmenovat</HH.Venue.Rename>
+  <HH.Venue.RenameDesc>Dejte této provozovně název.</HH.Venue.RenameDesc>
+  <HH.Venue.RenameTitle>Pojmenujte provozovnu</HH.Venue.RenameTitle>
+  <HH.Venue.Reset>Použít výchozí název</HH.Venue.Reset>
+  <HH.Venue.Restock>Doplňování</HH.Venue.Restock>
+  <HH.Venue.RestockDesc>Nechte tuto ceduli nastavit úložná místa v její místnosti na prioritu Důležité, aby přepravci udržovali regály plné. Volitelné; původní nastavení se vrátí, až to vypnete.</HH.Venue.RestockDesc>
+  <HH.Venue.RestockHint>Když je zapnuto, každé úložné místo v této místnosti (skladové zóny a regály, vaše i cizí) přijímá níže zaškrtnuté zboží s prioritou Důležité, takže vaši přepravci udržují místnost zásobenou. Původní nastavení míst se vrátí, až to vypnete.</HH.Venue.RestockHint>
+  <HH.Venue.RestockNoShop>Tato provozovna z místnosti nic neprodává, takže není co doplňovat.</HH.Venue.RestockNoShop>
+  <HH.Venue.RestockSwitchOff>Doplňování je ZAPNUTO – vypnout a vrátit sklad</HH.Venue.RestockSwitchOff>
+  <HH.Venue.RestockSwitchOn>Doplňování je vypnuto – zapnout</HH.Venue.RestockSwitchOn>
+  <HH.Venue.RestockTitle>Doplňování</HH.Venue.RestockTitle>
+  <HH.Venue.RippedOff>Oklamaní</HH.Venue.RippedOff>
+  <HH.Venue.Sales>Dnešní tržby</HH.Venue.Sales>
+  <HH.Venue.SalesTotal>celkem</HH.Venue.SalesTotal>
+  <HH.Venue.Silver>stříbro</HH.Venue.Silver>
+  <HH.Venue.StacksWord>hromádek</HH.Venue.StacksWord>
+  <HH.Venue.Staff>Na směně</HH.Venue.Staff>
+  <HH.Venue.Tier.Budget>Úsporná</HH.Venue.Tier.Budget>
+  <HH.Venue.Tier.Charity>Charitativní</HH.Venue.Tier.Charity>
+  <HH.Venue.Tier.Discount>Slevová</HH.Venue.Tier.Discount>
+  <HH.Venue.Tier.Free>Zdarma</HH.Venue.Tier.Free>
+  <HH.Venue.Tier.Luxury>Luxusní</HH.Venue.Tier.Luxury>
+  <HH.Venue.Tier.Premium>Prémiová</HH.Venue.Tier.Premium>
+  <HH.Venue.Tier.Standard>Standardní</HH.Venue.Tier.Standard>
+</LanguageData>

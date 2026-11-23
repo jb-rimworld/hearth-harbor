@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingWithdrawal.stages.0.label>abstinence od hazardu (mírná)</HH_GamblingWithdrawal.stages.0.label>
+  <HH_GamblingWithdrawal.stages.0.description>Pořád myslím na stoly. Jedna hra přece neuškodí.</HH_GamblingWithdrawal.stages.0.description>
+  <HH_GamblingWithdrawal.stages.1.label>abstinence od hazardu (střední)</HH_GamblingWithdrawal.stages.1.label>
+  <HH_GamblingWithdrawal.stages.1.description>Nemůžu se soustředit. Musím hrát.</HH_GamblingWithdrawal.stages.1.description>
+  <HH_GamblingWithdrawal.stages.2.label>abstinence od hazardu (silná)</HH_GamblingWithdrawal.stages.2.label>
+  <HH_GamblingWithdrawal.stages.2.description>Všechno je šedé, kromě kola štěstí.</HH_GamblingWithdrawal.stages.2.description>
+  <HH_GamblingWithdrawal.stages.3.label>abstinence od hazardu (těžká)</HH_GamblingWithdrawal.stages.3.label>
+  <HH_GamblingWithdrawal.stages.3.description>Třesou se mi ruce. Někdo musí mít balíček karet.</HH_GamblingWithdrawal.stages.3.description>
+  <HH_GamblingWithdrawal.stages.4.label>abstinence od hazardu (extrémní)</HH_GamblingWithdrawal.stages.4.label>
+  <HH_GamblingWithdrawal.stages.4.description>Nic jiného už nemá smysl.</HH_GamblingWithdrawal.stages.4.description>
+  <HH_WonAtTheTables.stages.0.label>vyhrál u stolů</HH_WonAtTheTables.stages.0.label>
+  <HH_WonAtTheTables.stages.0.description>Žetony mi padly. Jednou.</HH_WonAtTheTables.stages.0.description>
+  <HH_LostAtTheTables.stages.0.label>u stolů prohrál všechno</HH_LostAtTheTables.stages.0.label>
+  <HH_LostAtTheTables.stages.0.description>Každý žeton pryč. Byly zdarma, a přesto to bolí.</HH_LostAtTheTables.stages.0.description>
+</LanguageData>

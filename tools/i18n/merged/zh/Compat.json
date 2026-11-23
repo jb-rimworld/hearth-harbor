@@ -1,0 +1,24 @@
+{
+ "keyed": {
+  "HH.Compat.DialogTitle": "Hearth & Harbor 运行时仍启用了 Hospitality。要为你禁用它吗？",
+  "HH.Compat.DialogBody": "Hearth & Harbor 会取代 Hospitality 及其附加模组。两者同时启用时，Hearth & Harbor 已在本次游戏中关闭 Hospitality：它的补丁、事件、建筑和访客标签页都不会生效。你在 Hospitality 中的访客床位和区域会被保留，并在 Hospitality 被移除后由 Hearth & Harbor 接管。",
+  "HH.Compat.DialogListHeader": "以下模组将被禁用：",
+  "HH.Compat.DialogMentionHeader": "以下访客模组保持不变；其访客仍归它们所有：",
+  "HH.Compat.DialogFailed": "无法自动修改模组列表（{0}）。请手动操作：",
+  "HH.Compat.DialogStep1": "1. 主菜单 → 模组",
+  "HH.Compat.DialogStep2": "2. 取消勾选上面列出的模组",
+  "HH.Compat.DialogStep3": "3. 保存模组列表并重启游戏",
+  "HH.Compat.Yes": "是，禁用并重启",
+  "HH.Compat.OpenMods": "打开模组列表",
+  "HH.Compat.Later": "稍后",
+  "HH.Compat.Never": "不再询问",
+  "HH.Compat.ImportLetterTitle": "已从 Hospitality 导入",
+  "HH.Compat.ImportLetterText": "这个殖民地曾使用 Hospitality 游玩。Hearth & Harbor 已尽可能接管其内容。\\n\\n已导入：{0}。\\n已丢弃：{1}。\\n\\n导入的访客床位会恢复为普通床位，并被记录为访客床位；Hearth & Harbor 的访客部分会接手它们。殖民地的其他内容没有任何变化。",
+  "HH.Compat.ImportNothing": "无",
+  "HH.Setting.compat.hospitalityNeverAsk": "不再提议禁用 Hospitality",
+  "HH.Setting.compat.hospitalityNeverAsk.Desc": "当 Hospitality 与 Hearth & Harbor 同时运行时，Hearth & Harbor 会在本次游戏中将其关闭，并在主菜单中提议禁用它。开启后将不再提议（关闭仍会发生）。",
+  "HH.Setting.compat.importLetter": "导入 Hospitality 存档后的信件",
+  "HH.Setting.compat.importLetter.Desc": "加载一个曾用 Hospitality 游玩的存档后，一封信会列出 Hearth & Harbor 接管了什么（访客床位、区域、访客）以及丢弃了什么。"
+ },
+ "defs": {}
+}

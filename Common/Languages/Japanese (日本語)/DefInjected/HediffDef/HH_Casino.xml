@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingAddiction.label>ギャンブル依存</HH_GamblingAddiction.label>
+  <HH_GamblingAddiction.description>テーブルに取り憑かれてしまいました。定期的に遊ばないと離脱症状が現れます: 気分の悪化、短気、そして最も深い段階ではギャンブルの暴走。一度もセッションをしない期間を続けることでしか治らず、その後の渇望期間中は再発しやすいです。\n\n銀はかかりませんが、時間、気分、そして気力がかかります。</HH_GamblingAddiction.description>
+  <HH_GamblingAddiction.stages.1.label>離脱症状（軽度）</HH_GamblingAddiction.stages.1.label>
+  <HH_GamblingAddiction.stages.2.label>離脱症状（中度）</HH_GamblingAddiction.stages.2.label>
+  <HH_GamblingAddiction.stages.3.label>離脱症状（強）</HH_GamblingAddiction.stages.3.label>
+  <HH_GamblingAddiction.stages.4.label>離脱症状（重度）</HH_GamblingAddiction.stages.4.label>
+  <HH_GamblingAddiction.stages.5.label>離脱症状（極度）</HH_GamblingAddiction.stages.5.label>
+</LanguageData>

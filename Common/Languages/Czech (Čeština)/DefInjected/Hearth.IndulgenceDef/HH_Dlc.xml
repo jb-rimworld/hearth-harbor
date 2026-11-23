@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Ind_ExpressAbsolution.label>expresní rozhřešení</HH_Ind_ExpressAbsolution.label>
+  <HH_Ind_ExpressAbsolution.description>Orazítkovaný lístek, který smaže jednu vzpomínku na porušené přikázání. Kněz se neptá, co jsi udělal.</HH_Ind_ExpressAbsolution.description>
+  <HH_Ind_MinorMercy.label>menší milost</HH_Ind_MinorMercy.label>
+  <HH_Ind_MinorMercy.description>Požehnaný obvaz za cenu dvou dávek léků. Vyléčí jednu čerstvou ránu do 10 bodů zdraví.</HH_Ind_MinorMercy.description>
+  <HH_Ind_UnshakenFaith.label>certifikát neotřesené víry</HH_Ind_UnshakenFaith.label>
+  <HH_Ind_UnshakenFaith.description>Zarámovaný certifikát, že jsi nikdy nepochyboval. Zvýší jistotu o deset procentních bodů.</HH_Ind_UnshakenFaith.description>
+  <HH_Ind_GreaterMercy.label>větší milost</HH_Ind_GreaterMercy.label>
+  <HH_Ind_GreaterMercy.description>Zpoplatněný zázrak. Trvale vyléčí jednu trvalou jizvu nebo starou ránu.</HH_Ind_GreaterMercy.description>
+  <HH_Asc_Rank1.label>vzestup: hledající</HH_Asc_Rank1.label>
+  <HH_Asc_Rank1.description>Zaplať vstupní poplatek a staň se Hledajícím. Začátek, nic víc.</HH_Asc_Rank1.description>
+  <HH_Asc_Rank2.label>vzestup: adept</HH_Asc_Rank2.label>
+  <HH_Asc_Rank2.description>II. hodnost, Adept. Od teď smí držitel prodávat odpustky u oltáře hostům a návštěvníkům z jiných domů.</HH_Asc_Rank2.description>
+  <HH_Asc_Rank3.label>vzestup: osvícený</HH_Asc_Rank3.label>
+  <HH_Asc_Rank3.description>III. hodnost, Osvícený. Dost jasný, aby byl vidět z velké dálky.</HH_Asc_Rank3.description>
+  <HH_Asc_Rank4.label>vzestup: vznešený</HH_Asc_Rank4.label>
+  <HH_Asc_Rank4.description>IV. hodnost, Vznešený. Vrchol žebříku pro ty, kdo si výhled mohou dovolit.</HH_Asc_Rank4.description>
+  <HH_Ind_ReformTithe.label>reformní desátek</HH_Ind_ReformTithe.label>
+  <HH_Ind_ReformTithe.description>Dobrovolný desátek na příští reformu tekuté ideologie: jeden bod reformy.</HH_Ind_ReformTithe.description>
+</LanguageData>

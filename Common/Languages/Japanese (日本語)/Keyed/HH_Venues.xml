@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Setting.venues.browseTicks>閲覧時間（ティック）</HH.Setting.venues.browseTicks>
+  <HH.Setting.venues.browseTicks.Desc>客が品物を見て購入を決めるまでの時間。通常速度では60ティックが1秒。</HH.Setting.venues.browseTicks.Desc>
+  <HH.Setting.venues.dayClose>「昼」プリセットの閉店時刻</HH.Setting.venues.dayClose>
+  <HH.Setting.venues.dayClose.Desc>「昼」プリセットが閉まる時刻。</HH.Setting.venues.dayClose.Desc>
+  <HH.Setting.venues.dayOpen>「昼」プリセットの開店時刻</HH.Setting.venues.dayOpen>
+  <HH.Setting.venues.dayOpen.Desc>看板の営業時間ダイアログで「昼」プリセットが開く時刻。</HH.Setting.venues.dayOpen.Desc>
+  <HH.Setting.venues.drinkGapHours>飲み物の注文間隔（時間）</HH.Setting.venues.drinkGapHours>
+  <HH.Setting.venues.drinkGapHours.Desc>客は、この時間が経過するまで次の飲み物を注文しない。</HH.Setting.venues.drinkGapHours.Desc>
+  <HH.Setting.venues.eveningClose>「夕方」プリセットの閉店時刻</HH.Setting.venues.eveningClose>
+  <HH.Setting.venues.eveningClose.Desc>「夕方」プリセットが閉まる時刻（開店時刻より早い時刻を指定すると深夜0時をまたぐ）。</HH.Setting.venues.eveningClose.Desc>
+  <HH.Setting.venues.eveningOpen>「夕方」プリセットの開店時刻</HH.Setting.venues.eveningOpen>
+  <HH.Setting.venues.eveningOpen.Desc>「夕方」プリセットが開く時刻。</HH.Setting.venues.eveningOpen.Desc>
+  <HH.Setting.venues.hideVanilla>置き換えられたバニラ家具を隠す</HH.Setting.venues.hideVanilla>
+  <HH.Setting.venues.hideVanilla.Desc>Hearth &amp; Harbor の建物がバニラの建物を置き換える場合（例：カードテーブルがポーカーテーブルを置き換える場合）、代替品が使えるようになると、バニラ版は建築メニューから消える。既に設置済みの建物はそのまま残る。再起動または次回のゲーム読み込み後に反映される。</HH.Setting.venues.hideVanilla.Desc>
+  <HH.Setting.venues.lastOrdersMinutes>ラストオーダー（閉店何分前から）</HH.Setting.venues.lastOrdersMinutes>
+  <HH.Setting.venues.lastOrdersMinutes.Desc>閉店前のこの時間帯には、急いでいる客がもう一杯だけ買う。長い閲覧を始める客はいなくなり、既に進行中の購入は閉店後も対応される。0 = ラストオーダーなし。</HH.Setting.venues.lastOrdersMinutes.Desc>
+  <HH.Setting.venues.marketCaravans>市場1回あたりの交易キャラバン数</HH.Setting.venues.marketCaravans>
+  <HH.Setting.venues.marketCaravans.Desc>市場の日に何台の交易キャラバンが来るか（友好的な派閥が少なければ減る）。</HH.Setting.venues.marketCaravans.Desc>
+  <HH.Setting.venues.marketDays>市場の開催間隔（日）</HH.Setting.venues.marketDays>
+  <HH.Setting.venues.marketDays.Desc>大市場の平均的な開催間隔。多少のばらつきがある。</HH.Setting.venues.marketDays.Desc>
+  <HH.Setting.venues.marketEnabled>大市場</HH.Setting.venues.marketEnabled>
+  <HH.Setting.venues.marketEnabled.Desc>友好的な派閥が、交易キャラバンと日帰りの客をまとめて連れてくることが時々ある。店舗を1つ以上運営している間だけ起こる。</HH.Setting.venues.marketEnabled.Desc>
+  <HH.Setting.venues.marketRenown>市場に必要な名声</HH.Setting.venues.marketRenown>
+  <HH.Setting.venues.marketRenown.Desc>交易商や客があなたと市場を開きたいと思う最低の名声（0〜100）。名声システムがない場合、入植地は中立（50）として扱われる。</HH.Setting.venues.marketRenown.Desc>
+  <HH.Setting.venues.marketStalls>必要な露店数</HH.Setting.venues.marketStalls>
+  <HH.Setting.venues.marketStalls.Desc>大市場は、自由に置ける露店をこの数だけ所有しているときにだけ開かれる（交易商はそこに店を構える）。露店が少ないと来るキャラバンも減る。</HH.Setting.venues.marketStalls.Desc>
+  <HH.Setting.venues.marketVisitors>市場1回あたりの客グループ数</HH.Setting.venues.marketVisitors>
+  <HH.Setting.venues.marketVisitors.Desc>市場の日に、あなたの店舗で買い物をしに来る日帰り客のグループ数。</HH.Setting.venues.marketVisitors.Desc>
+  <HH.Setting.venues.maxPurchases>1人の客が1回の滞在で買う上限</HH.Setting.venues.maxPurchases>
+  <HH.Setting.venues.maxPurchases.Desc>1回の滞在でこの回数の購入を済ませた客は、買い物をやめる。</HH.Setting.venues.maxPurchases.Desc>
+  <HH.Setting.venues.nightBell>夜間ベル</HH.Setting.venues.nightBell>
+  <HH.Setting.venues.nightBell.Desc>客は閉まっている店のベルを鳴らせる。接客作業を持つ起きている入植者が来て、割増料金で店を開ける。誰も起こされることはない。</HH.Setting.venues.nightBell.Desc>
+  <HH.Setting.venues.nightBellMin>夜間ベルの最低料金</HH.Setting.venues.nightBellMin>
+  <HH.Setting.venues.nightBellMin.Desc>ベルによる対応は、これより安くならない（銀）。</HH.Setting.venues.nightBellMin.Desc>
+  <HH.Setting.venues.nightBellSurcharge>夜間ベルの割増料金</HH.Setting.venues.nightBellSurcharge>
+  <HH.Setting.venues.nightBellSurcharge.Desc>営業時間外にベルを鳴らしたとき、客が払う価格への追加割合。</HH.Setting.venues.nightBellSurcharge.Desc>
+  <HH.Setting.venues.nightBellWaitHours>夜間ベルの待ち時間（時間）</HH.Setting.venues.nightBellWaitHours>
+  <HH.Setting.venues.nightBellWaitHours.Desc>ベルを鳴らした客が諦めるまでの待ち時間（「ベルを鳴らした。誰も来なかった。」）。</HH.Setting.venues.nightBellWaitHours.Desc>
+  <HH.Setting.venues.nightClose>「夜」プリセットの閉店時刻</HH.Setting.venues.nightClose>
+  <HH.Setting.venues.nightClose.Desc>「夜」プリセットが閉まる時刻。</HH.Setting.venues.nightClose.Desc>
+  <HH.Setting.venues.nightOpen>「夜」プリセットの開店時刻</HH.Setting.venues.nightOpen>
+  <HH.Setting.venues.nightOpen.Desc>「夜」プリセットが開く時刻。</HH.Setting.venues.nightOpen.Desc>
+  <HH.Setting.venues.priceTolerance>客の価格許容度</HH.Setting.venues.priceTolerance>
+  <HH.Setting.venues.priceTolerance.Desc>客がどれだけ我慢するか。1より上では高い価格も受け入れ、1より下では客は足を運ばなくなる。難易度スライダーに従う。</HH.Setting.venues.priceTolerance.Desc>
+  <HH.Setting.venues.selfService>セルフサービス割引</HH.Setting.venues.selfService>
+  <HH.Setting.venues.selfService.Desc>人手は要らないが、カウンターの向こうに誰もいない店は、この割合だけ安くする（客が自分で全部取る）。</HH.Setting.venues.selfService.Desc>
+  <HH.Setting.venues.shopDesire>客の買い物意欲</HH.Setting.venues.shopDesire>
+  <HH.Setting.venues.shopDesire.Desc>他にできることと比べて、客がどれだけ熱心に商店や酒場に入るか。0 = 客は一切買い物をしない。</HH.Setting.venues.shopDesire.Desc>
+  <HH.Setting.venues.shopPrice>商店の価格水準</HH.Setting.venues.shopPrice>
+  <HH.Setting.venues.shopPrice.Desc>商店や酒場で売られる品物の市場価値に掛ける倍率。各看板の価格係数に加えて適用される。</HH.Setting.venues.shopPrice.Desc>
+  <HH.Setting.venues.stallFee>交易商1組あたりの露店料</HH.Setting.venues.stallFee>
+  <HH.Setting.venues.stallFee.Desc>市場の日、交易キャラバンは露店の代金としてこの銀を支払う（入植地の金庫に入る）。</HH.Setting.venues.stallFee.Desc>
+  <HH.Setting.venues.tendHours>1回の勤務時間（時間）</HH.Setting.venues.tendHours>
+  <HH.Setting.venues.tendHours.Desc>入植者が店で働いてから、別の仕事を探すまでの時間（閉店時にも勤務は終わる）。</HH.Setting.venues.tendHours.Desc>
+  <HH.Setting.venues.vendingPrice>自動販売機の価格水準</HH.Setting.venues.vendingPrice>
+  <HH.Setting.venues.vendingPrice.Desc>自動販売機が売る品物の市場価値に掛ける倍率。</HH.Setting.venues.vendingPrice.Desc>
+  <HH.Setting.venues.waitForStaffTicks>スタッフを待つ客の忍耐（ティック）</HH.Setting.venues.waitForStaffTicks>
+  <HH.Setting.venues.waitForStaffTicks.Desc>開いているが人のいない店で、客はこの時間だけ誰か来るのを待ち、それから不機嫌に諦める。</HH.Setting.venues.waitForStaffTicks.Desc>
+  <HH.Venue.AlwaysOpen>年中無休</HH.Venue.AlwaysOpen>
+  <HH.Venue.Bargain>お買い得！</HH.Venue.Bargain>
+  <HH.Venue.BellRung>*ディンドン*</HH.Venue.BellRung>
+  <HH.Venue.CheckCounter>会計用のカウンター</HH.Venue.CheckCounter>
+  <HH.Venue.CheckDrinks>飲み物の在庫</HH.Venue.CheckDrinks>
+  <HH.Venue.CheckNoCounter>カウンターなし（任意）→ 会計係は看板のそばに立つ</HH.Venue.CheckNoCounter>
+  <HH.Venue.CheckNoDrinks>飲み物の在庫なし → 部屋にビールなどの飲み物を保管する</HH.Venue.CheckNoDrinks>
+  <HH.Venue.CheckNoStock>販売品がない → 部屋に品物のある棚か備蓄エリアを置く</HH.Venue.CheckNoStock>
+  <HH.Venue.CheckNoWorker>接客作業をオンにしている人がいない</HH.Venue.CheckNoWorker>
+  <HH.Venue.CheckStock>棚に並んだ品物</HH.Venue.CheckStock>
+  <HH.Venue.CheckWorker>接客作業をする入植者がいる</HH.Venue.CheckWorker>
+  <HH.Venue.ChooseType>店の種類</HH.Venue.ChooseType>
+  <HH.Venue.ChooseTypeDesc>この看板の部屋がどんな店かを選ぶ：酒場、商店、レストラン、カジノ、スパ、ラウンジ。</HH.Venue.ChooseTypeDesc>
+  <HH.Venue.Closed>閉店中</HH.Venue.Closed>
+  <HH.Venue.Closes>閉店時刻</HH.Venue.Closes>
+  <HH.Venue.ColonyMayTake>入植地は品物を持ち出してよい</HH.Venue.ColonyMayTake>
+  <HH.Venue.ColonyMayTakeDesc>オフ：この部屋で販売する品物は入植者にとって持ち出し禁止になり、在庫を運び出されない。オン：入植者はその品物を、保管されている他の物と同じように扱う。</HH.Venue.ColonyMayTakeDesc>
+  <HH.Venue.ColonyMayTakeShort>入植地が品物を持ち出せる</HH.Venue.ColonyMayTakeShort>
+  <HH.Venue.Current>現在</HH.Venue.Current>
+  <HH.Venue.CustomersOnly>客専用</HH.Venue.CustomersOnly>
+  <HH.Venue.Done>完了</HH.Venue.Done>
+  <HH.Venue.ForSale>販売中</HH.Venue.ForSale>
+  <HH.Venue.GoodService>親切な接客</HH.Venue.GoodService>
+  <HH.Venue.GoodValue>お値打ち</HH.Venue.GoodValue>
+  <HH.Venue.Hours>営業時間</HH.Venue.Hours>
+  <HH.Venue.HoursDesc>店が営業する時間を設定する。昼、夕方、夜、年中無休のプリセットがある。</HH.Venue.HoursDesc>
+  <HH.Venue.HoursHint>閉店時刻を開店時刻より早くすると、店は深夜0時を過ぎても開いたままになる。</HH.Venue.HoursHint>
+  <HH.Venue.HoursTitle>営業時間</HH.Venue.HoursTitle>
+  <HH.Venue.LastOrders>ラストオーダー</HH.Venue.LastOrders>
+  <HH.Venue.MarketFees>交易商は露店の代金として {0} 銀を支払う。</HH.Venue.MarketFees>
+  <HH.Venue.MarketLabel>市場の日</HH.Venue.MarketLabel>
+  <HH.Venue.MarketText>噂が広まった：今日は市場の日だ。{0} 組の交易キャラバンと、{2} から来た {1} 組の客が入植地に向かっている。交易商は野営地でいつも通り取引する。客は開いている商店や酒場で買い物をする。\n\n棚の品物を切らさず、カウンターには人を置いておこう。</HH.Venue.MarketText>
+  <HH.Venue.NoRoom>まだ店ではない：看板には囲まれた屋根のある部屋が必要。</HH.Venue.NoRoom>
+  <HH.Venue.NoStaffState>営業中だが、勤務者がいない</HH.Venue.NoStaffState>
+  <HH.Venue.NoTypes>利用できる店の種類がない</HH.Venue.NoTypes>
+  <HH.Venue.Nobody>誰もいない</HH.Venue.Nobody>
+  <HH.Venue.NobodyCameBell>ベルを鳴らした。誰も来なかった。</HH.Venue.NobodyCameBell>
+  <HH.Venue.NobodyCameStaff>接客を待った。誰も来なかった。</HH.Venue.NobodyCameStaff>
+  <HH.Venue.Off>オフ</HH.Venue.Off>
+  <HH.Venue.On>オン</HH.Venue.On>
+  <HH.Venue.Open>営業中</HH.Venue.Open>
+  <HH.Venue.Opens>開店時刻</HH.Venue.Opens>
+  <HH.Venue.PresetAlways>常時</HH.Venue.PresetAlways>
+  <HH.Venue.PresetDay>昼</HH.Venue.PresetDay>
+  <HH.Venue.PresetEvening>夕方</HH.Venue.PresetEvening>
+  <HH.Venue.PresetNight>夜</HH.Venue.PresetNight>
+  <HH.Venue.Price>価格</HH.Venue.Price>
+  <HH.Venue.PriceDesc>この店が売るすべてのものへの価格係数。高すぎる価格は客を遠ざける。</HH.Venue.PriceDesc>
+  <HH.Venue.PriceFactor>価格係数</HH.Venue.PriceFactor>
+  <HH.Venue.PriceHint>客は価格を、品物が自分にとってどれだけの価値があるかと比べる。裕福な客はより多く我慢する。勤務者のいない店は少し安くする（セルフサービス）。夜間ベルの対応は追加料金になる。無料は本当に無料。</HH.Venue.PriceHint>
+  <HH.Venue.PriceLine>価格</HH.Venue.PriceLine>
+  <HH.Venue.PriceTitle>価格</HH.Venue.PriceTitle>
+  <HH.Venue.Pricey>割高</HH.Venue.Pricey>
+  <HH.Venue.Rename>改名</HH.Venue.Rename>
+  <HH.Venue.RenameDesc>この店に名前を付ける。</HH.Venue.RenameDesc>
+  <HH.Venue.RenameTitle>店の名前を付ける</HH.Venue.RenameTitle>
+  <HH.Venue.Reset>既定の名前に戻す</HH.Venue.Reset>
+  <HH.Venue.Restock>補充</HH.Venue.Restock>
+  <HH.Venue.RestockDesc>この看板に、部屋の保管場所を「重要」優先度で品物を受け入れさせ、運搬係が棚を満たし続けるようにする。オプトイン制。オフにすると元の設定が戻る。</HH.Venue.RestockDesc>
+  <HH.Venue.RestockHint>オンにすると、この部屋のすべての保管場所（備蓄エリアと棚、あなたのものでも他人のものでも）が、下でチェックした品物を「重要」優先度で受け入れ、運搬係が部屋を品物で満たし続ける。オフにすると保管場所の元の設定が戻る。</HH.Venue.RestockHint>
+  <HH.Venue.RestockNoShop>この店は部屋から何も売っていないので、補充するものがない。</HH.Venue.RestockNoShop>
+  <HH.Venue.RestockSwitchOff>補充はオン – オフにして保管場所を戻す</HH.Venue.RestockSwitchOff>
+  <HH.Venue.RestockSwitchOn>補充はオフ – オンにする</HH.Venue.RestockSwitchOn>
+  <HH.Venue.RestockTitle>補充</HH.Venue.RestockTitle>
+  <HH.Venue.RippedOff>ぼったくられた</HH.Venue.RippedOff>
+  <HH.Venue.Sales>本日の売上</HH.Venue.Sales>
+  <HH.Venue.SalesTotal>合計</HH.Venue.SalesTotal>
+  <HH.Venue.Silver>銀</HH.Venue.Silver>
+  <HH.Venue.StacksWord>スタック</HH.Venue.StacksWord>
+  <HH.Venue.Staff>勤務中</HH.Venue.Staff>
+  <HH.Venue.Tier.Budget>格安</HH.Venue.Tier.Budget>
+  <HH.Venue.Tier.Charity>慈善</HH.Venue.Tier.Charity>
+  <HH.Venue.Tier.Discount>割引</HH.Venue.Tier.Discount>
+  <HH.Venue.Tier.Free>無料</HH.Venue.Tier.Free>
+  <HH.Venue.Tier.Luxury>豪華</HH.Venue.Tier.Luxury>
+  <HH.Venue.Tier.Premium>上等</HH.Venue.Tier.Premium>
+  <HH.Venue.Tier.Standard>標準</HH.Venue.Tier.Standard>
+</LanguageData>

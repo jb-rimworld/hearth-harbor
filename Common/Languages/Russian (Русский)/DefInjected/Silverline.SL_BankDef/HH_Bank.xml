@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Mutual.label>Silverline Mutual</SL_Mutual.label>
+  <SL_Mutual.description>Спокойный, нейтральный вариант по умолчанию. Тихо хранит ваше серебро, берёт честные комиссии и ни разу не попадал в новости. Клерки подозрительно хорошо отдохнули.</SL_Mutual.description>
+  <SL_Mutual.slogan>Тихо храним вещи со времён Третьего краха.</SL_Mutual.slogan>
+  <SL_TooBigToFail.label>First Rim Bank of Too Big To Fail</SL_TooBigToFail.label>
+  <SL_TooBigToFail.description>Сатира в мраморном холле. Выше доходность, выше комиссии, и раз в игровой год банк спасёт клиента, который был по-настоящему, эффектно богат и теперь уже не богат. Спасение — это кредит, а не подарок. Этой части никто не читает.</SL_TooBigToFail.description>
+  <SL_TooBigToFail.slogan>Так велик, что название пришлось написать дважды.</SL_TooBigToFail.slogan>
+  <SL_ImperialTreasury.label>Imperial Treasury</SL_ImperialTreasury.label>
+  <SL_ImperialTreasury.description>Собственная казначейская контора Трона. Низкие комиссии, слабый запах мастики для полов и кредит только для тех, кто носит титул. Снятие называется «выплатой» и сопровождается небольшим поклоном.</SL_ImperialTreasury.description>
+  <SL_ImperialTreasury.slogan>На каждой монете профиль Трона. Пожалуйста, не кусайте её.</SL_ImperialTreasury.slogan>
+  <SL_OrbitalExchange.label>Orbital Exchange</SL_OrbitalExchange.label>
+  <SL_OrbitalExchange.description>Банк торговой гильдии на очень дорогом вращающемся кольце. Лучший доступ к рынку на Окраине, самые высокие комиссии на Окраине, и к каждой квитанции прилагается маленький график, который идёт вверх и вправо.</SL_OrbitalExchange.description>
+  <SL_OrbitalExchange.slogan>Ликвидность со скоростью света. Комиссии тоже.</SL_OrbitalExchange.slogan>
+  <SL_BlackLedger.label>The Black Ledger</SL_BlackLedger.label>
+  <SL_BlackLedger.description>Никаких вопросов, никаких анкет, никаких имён. Выдаёт кредиты любому, вне зависимости от рейтинга, по цене. Время от времени какая-то книга «пропадает» вместе с долей вкладов.</SL_BlackLedger.description>
+  <SL_BlackLedger.slogan>Мы не спрашиваем. Вы не рассказываете. Проценты всё равно начисляются.</SL_BlackLedger.slogan>
+  <SL_CompoundInterest.label>First Church of Compound Interest</SL_CompoundInterest.label>
+  <SL_CompoundInterest.description>Община, поклоняющаяся чуду экспоненциального роста. Скромные комиссии, гимн для каждого баланса и ящик для пожертвований, который, строго говоря, необязателен.</SL_CompoundInterest.description>
+  <SL_CompoundInterest.slogan>В сложных процентах — наша вера. Десятину — рано и часто.</SL_CompoundInterest.slogan>
+</LanguageData>

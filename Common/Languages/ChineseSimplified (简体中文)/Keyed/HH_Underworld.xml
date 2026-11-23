@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.Underworld>地下世界</HH.Tab.Underworld>
+  <HH.Underworld.GateClosed>不可用：本局游戏中地下世界尚未开放。</HH.Underworld.GateClosed>
+  <HH.Underworld.BackRoomDoorInfo>只有员工、殖民者和可疑的客人能打开这扇门。</HH.Underworld.BackRoomDoorInfo>
+  <HH.Underworld.Stranger.Title>门口的陌生人</HH.Underworld.Stranger.Title>
+  <HH.Underworld.Stranger.Text>一个压低帽檐的陌生人，趁员工走远后，在你的门外等候。\n\n“不错的地方，”他说，“有后屋吗？”\n\n他没有说明这句话是什么意思，也不需要说明。</HH.Underworld.Stranger.Text>
+  <HH.Underworld.Stranger.Show>带我去看看</HH.Underworld.Stranger.Show>
+  <HH.Underworld.Stranger.No>没兴趣</HH.Underworld.Stranger.No>
+  <HH.Underworld.Stranger.Never>不要再问</HH.Underworld.Stranger.Never>
+  <HH.Underworld.Unlocked.Title>后屋</HH.Underworld.Unlocked.Title>
+  <HH.Underworld.Unlocked.Text>你带他看了后屋，他点点头，仿佛你通过了一项考验。一条新的研究路线现在对你开放：后屋，配有门、格斗坑、销赃柜台、走私码头和休息室。你的耳语值（地下世界中的声誉）今后会跟随你的经营。\n\n你可以完全无视这一切，没有任何东西是强制的。</HH.Underworld.Unlocked.Text>
+  <HH.Underworld.Warn.Title>内容警告</HH.Underworld.Warn.Title>
+  <HH.Underworld.Warn.Dark>黑暗内容会为地下世界增添内容：囚犯可能在格斗坑中战至死亡，帮派可能更严厉地审问囚犯，猎人可能猎杀囚犯（需符合相应意识形态），诊所柜台会收购摘取的器官。\n\n这些内容仅以文字和普通的游戏伤害呈现。儿童永远不会参与，这些内容也不会自行开启。\n\n你要在本局游戏中启用它吗？</HH.Underworld.Warn.Dark>
+  <HH.Underworld.Warn.Grim>残酷内容包含黑暗内容的全部，而且猎杀囚犯时不再询问你的意识形态。器官买家会下达附带期限的订单。\n\n这些内容仅以文字和普通的游戏伤害呈现。儿童永远不会参与，这些内容也不会自行开启。\n\n你要在本局游戏中启用它吗？</HH.Underworld.Warn.Grim>
+  <HH.Underworld.Warn.Accept>是的，我明白了</HH.Underworld.Warn.Accept>
+  <HH.Underworld.Warn.Back>不，返回标准</HH.Underworld.Warn.Back>
+  <HH.Underworld.Warn.Hunt>你即将允许在猎场中猎杀囚犯。囚犯会带着先行优势被放入猎场；若他坚持到设定时间或抵达围栏线，便获得自由，无论哪种情况，他的派系都会得知。若他死亡，他的派系、你的殖民者和你的客人都不会原谅这件事。\n\n此内容仅以文字呈现。你要允许吗？</HH.Underworld.Warn.Hunt>
+  <HH.Underworld.Warn.Organ>诊所柜台会在夜间从匿名捐献者手中收购摘取的器官。憎恶器官交易的意识形态会因此记恨你，而每卖出一件，你的耳语值都会上升。\n\n此内容仅以文字呈现。你要保留它吗？</HH.Underworld.Warn.Organ>
+  <HH.Underworld.Warn.Keep>是的，保留</HH.Underworld.Warn.Keep>
+  <HH.Underworld.Warn.Remove>不，移除</HH.Underworld.Warn.Remove>
+  <HH.Underworld.Scandal.BackRoomFound.Title>后屋被发现了</HH.Underworld.Scandal.BackRoomFound.Title>
+  <HH.Underworld.Scandal.BackRoomFound.Text>一位体面的客人推错了门，看见了这栋宅邸在门后藏着的东西。到傍晚，全城都会知道。</HH.Underworld.Scandal.BackRoomFound.Text>
+  <HH.Underworld.Scandal.LeakedLedger.Title>账本泄露</HH.Underworld.Scandal.LeakedLedger.Title>
+  <HH.Underworld.Scandal.LeakedLedger.Text>销赃账目的一页落入了不该落入的人手中。货物一路被追查到你的柜台。</HH.Underworld.Scandal.LeakedLedger.Text>
+  <HH.Underworld.Scandal.SecretCasinoRumour.Title>秘密赌场的传闻</HH.Underworld.Scandal.SecretCasinoRumour.Title>
+  <HH.Underworld.Scandal.SecretCasinoRumour.Text>风声已经传开，说你的宅邸暗中藏着一座不对外声张的赌场。大赌客们正在寻找那扇门。</HH.Underworld.Scandal.SecretCasinoRumour.Text>
+  <HH.Underworld.Scandal.HonourAmongThieves.Title>盗亦有道</HH.Underworld.Scandal.HonourAmongThieves.Title>
+  <HH.Underworld.Scandal.HonourAmongThieves.Text>一个帮派在关键场合为你的宅邸说好话。</HH.Underworld.Scandal.HonourAmongThieves.Text>
+  <HH.Underworld.Scandal.Effects>耳语 {0}，声望 {1}。</HH.Underworld.Scandal.Effects>
+  <HH.Underworld.Pit.Enabled>格斗坑开放</HH.Underworld.Pit.Enabled>
+  <HH.Underworld.Pit.Enabled.Desc>为此坑安排比赛。</HH.Underworld.Pit.Enabled.Desc>
+  <HH.Underworld.Pit.Animals>动物</HH.Underworld.Pit.Animals>
+  <HH.Underworld.Pit.Animals.Desc>你殖民地的动物可以在此战斗。</HH.Underworld.Pit.Animals.Desc>
+  <HH.Underworld.Pit.Volunteers>志愿者</HH.Underworld.Pit.Volunteers>
+  <HH.Underworld.Pit.Volunteers.Desc>喜欢打斗的殖民者（嗜血或近战出色）可以自愿参赛。志愿者永远不会战至死亡。</HH.Underworld.Pit.Volunteers.Desc>
+  <HH.Underworld.Pit.Prisoners>囚犯</HH.Underworld.Pit.Prisoners>
+  <HH.Underworld.Pit.Prisoners.Desc>囚犯可以被送入格斗坑。仅限成年人。</HH.Underworld.Pit.Prisoners.Desc>
+  <HH.Underworld.Pit.Lethal>战至死亡</HH.Underworld.Pit.Lethal>
+  <HH.Underworld.Pit.Lethal.Desc>囚犯与动物之间的比赛只有在一方倒下时才结束。志愿者永远不适用。</HH.Underworld.Pit.Lethal.Desc>
+  <HH.Underworld.Pit.StartNow>开始一场比赛</HH.Underworld.Pit.StartNow>
+  <HH.Underworld.Pit.StartNow.Desc>立即挑选两名势均力敌的斗士，让客人下注。</HH.Underworld.Pit.StartNow.Desc>
+  <HH.Underworld.Pit.CannotStart>无法开赛：{0}</HH.Underworld.Pit.CannotStart>
+  <HH.Underworld.Pit.ArenaOk>竞技场：{0} 格，已封闭。</HH.Underworld.Pit.ArenaOk>
+  <HH.Underworld.Pit.ArenaOpen>竞技场未封闭或过大：请关闭围栏。</HH.Underworld.Pit.ArenaOpen>
+  <HH.Underworld.Pit.NoFighters>允许参赛的斗士不足两名</HH.Underworld.Pit.NoFighters>
+  <HH.Underworld.Pit.NoFairPair>找不到势均力敌的斗士组合</HH.Underworld.Pit.NoFairPair>
+  <HH.Underworld.Pit.BoutRunning>比赛进行中：{0} 对 {1}。</HH.Underworld.Pit.BoutRunning>
+  <HH.Underworld.Pit.BoutAnnounced>格斗坑中有一场比赛：{0} 对 {1}。投注开始。</HH.Underworld.Pit.BoutAnnounced>
+  <HH.Underworld.Pit.Won>{0} 赢得比赛。宅邸抽取 {1} 银币。</HH.Underworld.Pit.Won>
+  <HH.Underworld.Pit.Draw>比赛无胜者结束。所有赌注已退还。</HH.Underworld.Pit.Draw>
+  <HH.Underworld.Fence.Inspect>库存：{0} 件物品，价值 {1} 银币。现金箱：{2} 银币。</HH.Underworld.Fence.Inspect>
+  <HH.Underworld.Fence.Fund>注满现金箱</HH.Underworld.Fence.Fund>
+  <HH.Underworld.Fence.Fund.Desc>将钱柜中的银币转入销赃者的现金箱，上限为设置中的限额。</HH.Underworld.Fence.Fund.Desc>
+  <HH.Underworld.Fence.Funded>已将 {0} 银币转入现金箱。</HH.Underworld.Fence.Funded>
+  <HH.Underworld.Fence.NoCash>现金箱是空的。</HH.Underworld.Fence.NoCash>
+  <HH.Underworld.Fence.CannotPay>买家无力付款。</HH.Underworld.Fence.CannotPay>
+  <HH.Underworld.Fence.Exposed>这些货物来自 {0}，而他们知道货物最后流向了哪里。</HH.Underworld.Fence.Exposed>
+  <HH.Underworld.Gang.Title>门口的一伙帮派</HH.Underworld.Gang.Title>
+  <HH.Underworld.Gang.Text>来自 {1} 的 {0} 个人悄无声息地到来，向员工点头致意，并要求去后屋。他们有钱，也不指望被问任何问题。</HH.Underworld.Gang.Text>
+  <HH.Underworld.Gang.Demand.Title>友善的提议</HH.Underworld.Gang.Demand.Title>
+  <HH.Underworld.Gang.Demand.Text>来自 {0} 的帮派头目斜靠在你的柜台上。“好一座宅子。要是出点什么事，那就太可惜了。给我 {1} 银币，我保证什么事都不会发生。”</HH.Underworld.Gang.Demand.Text>
+  <HH.Underworld.Gang.Demand.Pay>支付 {0} 银币</HH.Underworld.Gang.Demand.Pay>
+  <HH.Underworld.Gang.Demand.Refuse>请他们离开</HH.Underworld.Gang.Demand.Refuse>
+  <HH.Underworld.Gang.Demand.NoCash>钱柜里的钱不够</HH.Underworld.Gang.Demand.NoCash>
+  <HH.Underworld.Tour.IntelTitle>审问中得到的消息</HH.Underworld.Tour.IntelTitle>
+  <HH.Underworld.Tour.IntelText>与 {0} 审问了一个小时后，帮派在柜台上留下一张纸条：一个名字、一个地点、一个日期。外面有人正在策划什么，而你现在多知道了一点。</HH.Underworld.Tour.IntelText>
+  <HH.Underworld.Smuggler.Title>码头上的一个箱子</HH.Underworld.Smuggler.Title>
+  <HH.Underworld.Smuggler.Text>一艘熄灯的穿梭机悄悄降落在码头。一个声音提出以 {2} 的价格出售价值约 {1} 银币的 {0} 件物品。不问来历，也不开收据。</HH.Underworld.Smuggler.Text>
+  <HH.Underworld.Smuggler.Buy>以 {0} 银币购入</HH.Underworld.Smuggler.Buy>
+  <HH.Underworld.Smuggler.Decline>把他们赶走</HH.Underworld.Smuggler.Decline>
+  <HH.Underworld.Smuggler.NoCash>钱柜里的钱不够</HH.Underworld.Smuggler.NoCash>
+  <HH.Underworld.Smuggler.InspectTitle>巡逻队注意到了灯光</HH.Underworld.Smuggler.InspectTitle>
+  <HH.Underworld.Smuggler.InspectText>一支帝国巡逻队看到了你码头上的灯光，并已将此记录在案。</HH.Underworld.Smuggler.InspectText>
+  <HH.Underworld.Hunt.Title>狩猎队</HH.Underworld.Hunt.Title>
+  <HH.Underworld.Hunt.Text>{0} 名猎人带着步枪和现金到来。他们为这片猎场支付了 {1} 银币，并且有 {2} 只动物被放入其中。</HH.Underworld.Hunt.Text>
+  <HH.Underworld.Hunt.GroundOk>猎场：{0} 格，已封闭。猎物：{1}。</HH.Underworld.Hunt.GroundOk>
+  <HH.Underworld.Hunt.QuarryAnimals>动物</HH.Underworld.Hunt.QuarryAnimals>
+  <HH.Underworld.Hunt.QuarryHuman>动物和一名囚犯</HH.Underworld.Hunt.QuarryHuman>
+  <HH.Underworld.Hunt.Prisoners>囚犯作为猎物</HH.Underworld.Hunt.Prisoners>
+  <HH.Underworld.Hunt.Prisoners.Desc>允许猎人猎杀被放入猎场的囚犯。仅限黑暗内容，且需符合相应意识形态。</HH.Underworld.Hunt.Prisoners.Desc>
+  <HH.Underworld.Hunt.GateContent>需要已确认启用的黑暗或残酷内容。</HH.Underworld.Hunt.GateContent>
+  <HH.Underworld.Hunt.GatePrecept>殖民地的意识形态不允许此事。</HH.Underworld.Hunt.GatePrecept>
+  <HH.Underworld.Hunt.DeathTitle>狩猎中有人死亡</HH.Underworld.Hunt.DeathTitle>
+  <HH.Underworld.Hunt.DeathText>{0} 没能在狩猎中活下来。他的同伴会得知此事，所有旁观者也会知道。</HH.Underworld.Hunt.DeathText>
+  <HH.Underworld.Hunt.FreedTitle>猎物逃脱了</HH.Underworld.Hunt.FreedTitle>
+  <HH.Underworld.Hunt.FreedText>{0} 坚持到了时限，获得自由。猎人愤怒地回家了；他的派系会听说事情的经过。</HH.Underworld.Hunt.FreedText>
+  <HH.Underworld.Organ.Inspect>待收的器官：{0}。未完成的订单：{1}。</HH.Underworld.Organ.Inspect>
+  <HH.Underworld.Organ.Sold>在诊所柜台收取了 {0} 个器官。</HH.Underworld.Organ.Sold>
+  <HH.Underworld.Organ.OrderTitle>一份订单</HH.Underworld.Organ.OrderTitle>
+  <HH.Underworld.Organ.OrderText>一位买家想要一个{0}，限 {1} 天内交付，并愿意支付溢价。</HH.Underworld.Organ.OrderText>
+  <HH.Underworld.Organ.OrderDone>一个{0}的订单已完成。</HH.Underworld.Organ.OrderDone>
+  <HH.Underworld.Organ.OrderMissed>一个{0}的订单未能按时完成。</HH.Underworld.Organ.OrderMissed>
+  <HH.Underworld.Page.Title>地下世界</HH.Underworld.Page.Title>
+  <HH.Underworld.Page.Whispers>耳语值：{0}/100。</HH.Underworld.Page.Whispers>
+  <HH.Underworld.Page.Weights>访客权重：体面人士 x{0}，亡命之徒 x{1}。</HH.Underworld.Page.Weights>
+  <HH.Underworld.Page.Content>内容：{0}（生效：{1}）。</HH.Underworld.Page.Content>
+  <HH.Underworld.Page.Stats1>格斗坑：{0} 场比赛，{1} 次投注，宅邸抽成 {2} 银币。</HH.Underworld.Page.Stats1>
+  <HH.Underworld.Page.Stats2>销赃柜台：买入 {0}，卖出 {1}，利润 {2} 银币。</HH.Underworld.Page.Stats2>
+  <HH.Underworld.Page.Stats3>休息室场次 {0}，帮派来访 {1}，登陆 {2}，狩猎 {3}，器官 {4}。</HH.Underworld.Page.Stats3>
+  <HH.Underworld.Page.HighRollers>一则关于秘密赌场的传闻正在吸引大赌客。</HH.Underworld.Page.HighRollers>
+</LanguageData>

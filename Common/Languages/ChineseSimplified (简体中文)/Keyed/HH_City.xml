@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.City>城市生活</HH.Tab.City>
+  <HH.City.TabTitle>城市生活</HH.City.TabTitle>
+  <HH.City.TabResearch>研究：一级（电影院、沙龙、画廊）：{0}；二级（出租车、保安）：{1}</HH.City.TabResearch>
+  <HH.Enum.CityResearchMode.Full>完整</HH.Enum.CityResearchMode.Full>
+  <HH.Enum.CityResearchMode.Off>关闭（全部可用）</HH.Enum.CityResearchMode.Off>
+  <HH.City.ScreenNoPower>没有电力：屏幕保持黑暗。</HH.City.ScreenNoPower>
+  <HH.City.ScreenShowing>正在放映《{0}》（剩余{1}，{2}人观看）</HH.City.ScreenShowing>
+  <HH.City.ScreenIdle>没有正在放映的电影。</HH.City.ScreenIdle>
+  <HH.City.ScreenBusy>已经有电影在放映</HH.City.ScreenBusy>
+  <HH.City.NoSeats>屏幕前没有座位</HH.City.NoSeats>
+  <HH.City.MovieNightLabel>电影之夜</HH.City.MovieNightLabel>
+  <HH.City.MovieNightDesc>召集殖民地到这块屏幕前参加电影之夜。凡是坐下来的人都会获得娱乐和好心情。</HH.City.MovieNightDesc>
+  <HH.City.MovieNightFailed>现在无法开始电影之夜：需要一块有电的屏幕、足够的座位，以及有空闲的殖民者。</HH.City.MovieNightFailed>
+  <HH.City.LordReport>和殖民地一起看电影</HH.City.LordReport>
+  <HH.City.Film.0>Muffalo之恋III</HH.City.Film.0>
+  <HH.City.Film.1>最后的Thrumbo</HH.City.Film.1>
+  <HH.City.Film.2>货舱舱体蓝调</HH.City.Film.2>
+  <HH.City.Film.3>星际尘埃之间</HH.City.Film.3>
+  <HH.City.Film.4>一只Boomalope的故事</HH.City.Film.4>
+  <HH.City.Film.5>石匠山之围</HH.City.Film.5>
+  <HH.City.Film.6>漫长的沉睡</HH.City.Film.6>
+  <HH.City.Film.7>Haven上空的烟</HH.City.Film.7>
+  <HH.City.SalonGuests>向访客开放</HH.City.SalonGuests>
+  <HH.City.SalonGuestsDesc>访客可以坐上这把椅子，支付费用做一次理发（房间需要有美容沙龙的招牌，并且有人负责服务）。</HH.City.SalonGuestsDesc>
+  <HH.City.SalonCustomer>顾客：{0}</HH.City.SalonCustomer>
+  <HH.City.NewHaircut>换一个新发型</HH.City.NewHaircut>
+  <HH.City.TaxiFree>出租车正在等候。</HH.City.TaxiFree>
+  <HH.City.TaxiBusy>出租车正在外出载客。</HH.City.TaxiBusy>
+  <HH.City.TaxiStats>发车：{0}，到达：{1}，营收：{2}银币</HH.City.TaxiStats>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_NobleStay.label>貴族の滞在</HH_NobleStay.label>
+  <HH_NobleStay.letterLabel>貴族の滞在の申し出</HH_NobleStay.letterLabel>
+  <HH_NobleStay.letterText>貴族の一行が宿泊を願い出ています。</HH_NobleStay.letterText>
+  <HH_ImperialBilleting.label>帝国の宿営</HH_ImperialBilleting.label>
+  <HH_ImperialBilleting.letterLabel>帝国の宿営</HH_ImperialBilleting.letterLabel>
+  <HH_ImperialBilleting.letterText>帝国が宿泊を要求しています。</HH_ImperialBilleting.letterText>
+</LanguageData>

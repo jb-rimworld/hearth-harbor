@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ProjectorScreen.label>Projektorleinwand</HH_ProjectorScreen.label>
+  <HH_ProjectorScreen.description>Eine breite Leinwand, über der ein Projektor am Deckenbalken festgeschraubt ist. Stell Stühle davor, ein Geschäftsschild in den Raum und dimm das Licht: Gäste zahlen für einen Sitzplatz, Kolonisten bekommen einen Filmabend. Die Filme sind alt, laut, und niemand weiß mehr, wer sie gedreht hat.</HH_ProjectorScreen.description>
+  <HH_SalonChair.label>Salonstuhl</HH_SalonChair.label>
+  <HH_SalonChair.description>Ein gepolsterter, höhenverstellbarer Stuhl mit Umhang, einem Spiegel an der Wand dahinter und einer Schublade voller Scheren. Ein Kolonist hinter dem Stuhl verpasst der Person darauf einen neuen Look. Kolonisten nutzen ihn kostenlos, Gäste zahlen.</HH_SalonChair.description>
+  <HH_ParkBench.label>Parkbank</HH_ParkBench.label>
+  <HH_ParkBench.description>Eine schlichte Bank für zwei, mit Aussicht. Nichts zu kaufen, nichts zu unterschreiben: Die Leute setzen sich, schauen auf das, was es eben zu sehen gibt, und fühlen sich danach ein bisschen besser. Je schöner die Umgebung, desto besser.</HH_ParkBench.description>
+  <HH_TaxiStand.label>Taxistand</HH_TaxiStand.label>
+  <HH_TaxiStand.description>Ein aufgemaltes Stück Boden, ein Wegweiser und eine Rufsäule. Abreisende Gäste, die nicht bis zum Kartenrand laufen wollen, rufen hier einen kleinen Shuttle und bezahlen die Fahrt; manche ankommenden Gäste werden standesgemäß am Taxistand abgesetzt. Braucht freien Himmel darüber, damit das Taxi landen kann.</HH_TaxiStand.description>
+  <HH_TaxiIncoming.label>Taxi (ankommend)</HH_TaxiIncoming.label>
+  <HH_TaxiLeaving.label>Taxi (abfahrend)</HH_TaxiLeaving.label>
+</LanguageData>

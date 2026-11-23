@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingAddiction.label>dépendance au jeu</HH_GamblingAddiction.label>
+  <HH_GamblingAddiction.description>Les tables ont pris le dessus. Sans parties régulières, le manque s'installe : mauvaise humeur, irritabilité et, aux stades les plus profonds, accès de jeu incontrôlés. Seul le temps sans aucune session guérit, et une rechute est facile pendant la période de manque qui suit.\n\nElle ne coûte aucun argent, seulement du temps, du moral et des nerfs.</HH_GamblingAddiction.description>
+  <HH_GamblingAddiction.stages.1.label>manque (léger)</HH_GamblingAddiction.stages.1.label>
+  <HH_GamblingAddiction.stages.2.label>manque (modéré)</HH_GamblingAddiction.stages.2.label>
+  <HH_GamblingAddiction.stages.3.label>manque (fort)</HH_GamblingAddiction.stages.3.label>
+  <HH_GamblingAddiction.stages.4.label>manque (sévère)</HH_GamblingAddiction.stages.4.label>
+  <HH_GamblingAddiction.stages.5.label>manque (extrême)</HH_GamblingAddiction.stages.5.label>
+</LanguageData>

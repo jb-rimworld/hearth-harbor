@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Bank.Building.Account>{0}: saldo {1}</HH.Bank.Building.Account>
+  <HH.Bank.Building.DirectDeposit>Depósito direto</HH.Bank.Building.DirectDeposit>
+  <HH.Bank.Building.DirectDepositDesc>Ligado: o caixa dos seus negócios é depositado na sua conta bancária à meia-noite. Desligado: a receita fica guardada como prata ao lado do cofre.</HH.Bank.Building.DirectDepositDesc>
+  <HH.Bank.Building.NoAccount>Ainda sem conta. Abra uma aqui ou em um console de comunicação.</HH.Bank.Building.NoAccount>
+  <HH.Bank.Building.SafeDirect>A receita vai direto para a conta à meia-noite.</HH.Bank.Building.SafeDirect>
+  <HH.Bank.Building.SafeFloor>A receita fica guardada como prata à meia-noite.</HH.Bank.Building.SafeFloor>
+  <HH.Bank.Building.SafeNoAccount>Sem conta bancária: a receita fica guardada como prata à meia-noite.</HH.Bank.Building.SafeNoAccount>
+  <HH.Bank.Building.UseAtm>Usar o caixa eletrônico</HH.Bank.Building.UseAtm>
+  <HH.Bank.Building.UseBranch>Ir ao balcão</HH.Bank.Building.UseBranch>
+  <HH.Bank.Chart.DayN>dia {0}</HH.Bank.Chart.DayN>
+  <HH.Bank.Chart.Tip>Dia {0}: {1} de prata</HH.Bank.Chart.Tip>
+  <HH.Bank.Chart.Today>hoje</HH.Bank.Chart.Today>
+  <HH.Bank.Choose.Current>seu banco</HH.Bank.Choose.Current>
+  <HH.Bank.Choose.Intro>Transferir a conta custa {0} de prata, descontados da conta. Os empréstimos continuam com o banco que os concedeu.</HH.Bank.Choose.Intro>
+  <HH.Bank.Choose.Switch>Trocar ({0})</HH.Bank.Choose.Switch>
+  <HH.Bank.Choose.Title>Trocar de banco</HH.Bank.Choose.Title>
+  <HH.Bank.Comm.Call>Ligar para a Silverline</HH.Bank.Comm.Call>
+  <HH.Bank.Comm.Info>Operações bancárias, empréstimos e uma ocasional observação seca.</HH.Bank.Comm.Info>
+  <HH.Bank.Greet.Afternoon>Boa tarde</HH.Bank.Greet.Afternoon>
+  <HH.Bank.Greet.Evening>Boa noite</HH.Bank.Greet.Evening>
+  <HH.Bank.Greet.Morning>Bom dia</HH.Bank.Greet.Morning>
+  <HH.Bank.Greet.Night>Boa madrugada</HH.Bank.Greet.Night>
+  <HH.Bank.Header.Tier>Faixa de patrimônio: {0}</HH.Bank.Header.Tier>
+  <HH.Bank.Header.TierTip>Patrimônio líquido = conta + prata em casa − dívidas: {0} de prata. A faixa só muda depois que um novo valor se mantiver por um dia inteiro. Ela define o humor da colônia a partir deste banco (configuração: bank.moodOn).</HH.Bank.Header.TierTip>
+  <HH.Bank.Hist.Amount>Valor (5 casas decimais)</HH.Bank.Hist.Amount>
+  <HH.Bank.Hist.Empty>Nenhuma transação ainda.</HH.Bank.Hist.Empty>
+  <HH.Bank.Hist.TotalFees>Taxas pagas até agora</HH.Bank.Hist.TotalFees>
+  <HH.Bank.Hist.TotalFeesTip>Todas as taxas, multas por atraso e o custo de trocar de banco.</HH.Bank.Hist.TotalFeesTip>
+  <HH.Bank.Hist.TotalInterest>Juros recebidos até agora</HH.Bank.Hist.TotalInterest>
+  <HH.Bank.Hist.TotalInterestTip>Tudo o que o banco pagou a você em juros (juros negativos foram descontados).</HH.Bank.Hist.TotalInterestTip>
+  <HH.Bank.Hist.What>O quê</HH.Bank.Hist.What>
+  <HH.Bank.Hist.When>Quando</HH.Bank.Hist.When>
+  <HH.Bank.Letter.Bailout>{0} decidiu que você é, de fato, grande demais para quebrar e o resgatou com um empréstimo sem juros de {1} de prata. O prazo é de 60 dias. Isto é um empréstimo, não um presente. Ninguém nunca lê essa parte.</HH.Bank.Letter.Bailout>
+  <HH.Bank.Letter.BailoutTitle>Resgate</HH.Bank.Letter.BailoutTitle>
+  <HH.Bank.Letter.Late>Prezado cliente,
+
+O empréstimo {0} está agora vários dias em atraso. Foi acrescentada uma multa por atraso e sua pontuação de crédito sofreu um pequeno e inevitável arranhão. O valor devido é {1} de prata.
+
+O tom dessas cartas vai mudar.
+
+Atenciosamente,
+Atendente Ottoline</HH.Bank.Letter.Late>
+  <HH.Bank.Letter.LateTitle>Pagamento em atraso</HH.Bank.Letter.LateTitle>
+  <HH.Bank.Letter.Offset>Até que o empréstimo {0} seja quitado, metade de todo depósito que chegar à sua conta será aplicada à dívida, e nenhum novo empréstimo estará disponível. Esta é a parte do contrato que ninguém se lembra de ter assinado.</HH.Bank.Letter.Offset>
+  <HH.Bank.Letter.OffsetTitle>Compensação sobre depósitos</HH.Bank.Letter.OffsetTitle>
+  <HH.Bank.Letter.Reminder>Prezado cliente,
+
+Notamos que uma parcela de {0} de prata do empréstimo {1} ainda não chegou até nós. Temos certeza de que se trata de um descuido, e continuamos, como sempre, inteiramente à sua disposição.
+
+Com os melhores cumprimentos,
+Atendente Ottoline, {2}</HH.Bank.Letter.Reminder>
+  <HH.Bank.Letter.ReminderTitle>Um lembrete gentil</HH.Bank.Letter.ReminderTitle>
+  <HH.Bank.Letter.Seized>Um funcionário de {0} lamenta informar que {1} de prata do seu saldo foi "realocado por motivos administrativos". Não há formulário de recurso. Há, porém, uma caneta muito bonita.</HH.Bank.Letter.Seized>
+  <HH.Bank.Letter.SeizedTitle>Auditoria de contas</HH.Bank.Letter.SeizedTitle>
+  <HH.Bank.Letter.Visit>Dois representantes da Rim Recovery Partners chegaram. Usam chapéus-coco. Não têm armas nem hora marcada. Ficarão parados perto da sua porta, com toda a calma, até que o empréstimo {0} seja pago. Nunca atacam, e vão embora no momento em que o dinheiro for pago.</HH.Bank.Letter.Visit>
+  <HH.Bank.Letter.VisitTitle>Uma visita amigável</HH.Bank.Letter.VisitTitle>
+  <HH.Bank.Loans.Available>Disponível</HH.Bank.Loans.Available>
+  <HH.Bank.Loans.BailoutTag> (resgate, sem juros)</HH.Bank.Loans.BailoutTag>
+  <HH.Bank.Loans.Credit>Seu crédito</HH.Bank.Loans.Credit>
+  <HH.Bank.Loans.DaysShort> d</HH.Bank.Loans.DaysShort>
+  <HH.Bank.Loans.Limit>Limite de crédito</HH.Bank.Loans.Limit>
+  <HH.Bank.Loans.LimitTip>0,15 × patrimônio × (pontuação − 300) / 550, sendo patrimônio = patrimônio líquido + um quarto da riqueza da colônia. No mínimo o crédito inicial ({0} de prata) para uma boa pontuação.</HH.Bank.Loans.LimitTip>
+  <HH.Bank.Loans.Line>Empréstimo {0}: {1} tomados, {2} ainda devidos</HH.Bank.Loans.Line>
+  <HH.Bank.Loans.Mine>Seus empréstimos</HH.Bank.Loans.Mine>
+  <HH.Bank.Loans.New>Novo empréstimo</HH.Bank.Loans.New>
+  <HH.Bank.Loans.NextDue>próxima parcela {0} em {1}</HH.Bank.Loans.NextDue>
+  <HH.Bank.Loans.None>Nenhum empréstimo. A Ottoline quase se decepciona.</HH.Bank.Loans.None>
+  <HH.Bank.Loans.Overdue>VENCIDO, estágio {0}: {1} devido</HH.Bank.Loans.Overdue>
+  <HH.Bank.Loans.Quote>{0} de prata a {1} % ao ano: {2} a cada {3} dias, {4} no total ({5} de juros).</HH.Bank.Loans.Quote>
+  <HH.Bank.Loans.Rate>Taxa por ano de jogo</HH.Bank.Loans.Rate>
+  <HH.Bank.Loans.RateTip>Taxa básica máx(2 %, M − 1) = {0} % mais o spread do seu banco ({1} pontos). Acompanha o controle de rentabilidade, por isso tomar emprestado para investir nunca tem expectativa positiva.</HH.Bank.Loans.RateTip>
+  <HH.Bank.Loans.Repay100>Quitar {0}</HH.Bank.Loans.Repay100>
+  <HH.Bank.Loans.RepayAll>Quitar tudo</HH.Bank.Loans.RepayAll>
+  <HH.Bank.Loans.Score>Pontuação de crédito</HH.Bank.Loans.Score>
+  <HH.Bank.Loans.ScoreTip>De 300 a 850, começa em 600. Parcela em dia +4, cada dia de atraso −6, inadimplência −120, uso de mais de 70 % do limite −20, mais 20 × log10(patrimônio / 10.000). Pontuação base {0}.</HH.Bank.Loans.ScoreTip>
+  <HH.Bank.Loans.Take>Contratar o empréstimo</HH.Bank.Loans.Take>
+  <HH.Bank.Loans.Term>Prazo</HH.Bank.Loans.Term>
+  <HH.Bank.Loans.Used>Em uso</HH.Bank.Loans.Used>
+  <HH.Bank.Lobby.Accounts>Contas</HH.Bank.Lobby.Accounts>
+  <HH.Bank.Lobby.Amount>Valor</HH.Bank.Lobby.Amount>
+  <HH.Bank.Lobby.Balance>Saldo</HH.Bank.Lobby.Balance>
+  <HH.Bank.Lobby.BalanceTip>Exato: {0} de prata.
+Juros todo dia: saldo × (M^({1} × {2} / 60) − 1), com M = {3} por ano de jogo (o controle de rentabilidade). Isso equivale a {4:0.##} % por dia.</HH.Bank.Lobby.BalanceTip>
+  <HH.Bank.Lobby.Cash>Dinheiro em casa</HH.Bank.Lobby.Cash>
+  <HH.Bank.Lobby.CashTip>Prata espalhada pelos seus mapas domésticos.</HH.Bank.Lobby.CashTip>
+  <HH.Bank.Lobby.ChangeBank>Trocar de banco</HH.Bank.Lobby.ChangeBank>
+  <HH.Bank.Lobby.Chart>Últimos 30 dias</HH.Bank.Lobby.Chart>
+  <HH.Bank.Lobby.Debt>Dívida</HH.Bank.Lobby.Debt>
+  <HH.Bank.Lobby.DebtTip>Soma dos seus empréstimos em aberto, incluindo juros acumulados.</HH.Bank.Lobby.DebtTip>
+  <HH.Bank.Lobby.DepDelay>creditado após {0}</HH.Bank.Lobby.DepDelay>
+  <HH.Bank.Lobby.DepInstant>lançado de imediato</HH.Bank.Lobby.DepInstant>
+  <HH.Bank.Lobby.Deposit>Depósito</HH.Bank.Lobby.Deposit>
+  <HH.Bank.Lobby.Direct>Depósito direto</HH.Bank.Lobby.Direct>
+  <HH.Bank.Lobby.DirectTip>O caixa dos seus negócios é depositado na conta à meia-noite, descontados {0} %.</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.Interest>Juros deste quadrum</HH.Bank.Lobby.Interest>
+  <HH.Bank.Lobby.InterestTip>Juros pagos sobre o saldo desde o início do quadrum (15 dias).</HH.Bank.Lobby.InterestTip>
+  <HH.Bank.Lobby.Max>Máx.</HH.Bank.Lobby.Max>
+  <HH.Bank.Lobby.Net>Patrimônio líquido</HH.Bank.Lobby.Net>
+  <HH.Bank.Lobby.NetTip>Conta + prata em casa − dívidas. Define sua faixa de patrimônio.</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.Nothing>Nada ainda. Um depósito seria um ótimo começo.</HH.Bank.Lobby.Nothing>
+  <HH.Bank.Lobby.PendingDep>↓ {0} chegando em {1}</HH.Bank.Lobby.PendingDep>
+  <HH.Bank.Lobby.PendingWd>↑ {0} por cápsula em {1}</HH.Bank.Lobby.PendingWd>
+  <HH.Bank.Lobby.Recent>Atividade recente</HH.Bank.Lobby.Recent>
+  <HH.Bank.Lobby.Trade>Depositar automaticamente a prata de comércio</HH.Bank.Lobby.Trade>
+  <HH.Bank.Lobby.TradeTip>A prata que você recebe de comerciantes e navios de comércio vai para a conta logo após o negócio, com a mesma taxa do depósito direto, em vez de ficar no chão como moedas. Requer depósito direto. Desligado por padrão, para que você ainda possa pagar o próximo comerciante em dinheiro. Caravanas não são afetadas.</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.Transfer>Depositar e sacar</HH.Bank.Lobby.Transfer>
+  <HH.Bank.Lobby.TransferInfo>Em armazenamento: {0}. Depósito {1}. Taxa de saque {2}, {3}.</HH.Bank.Lobby.TransferInfo>
+  <HH.Bank.Lobby.Transit>Em trânsito</HH.Bank.Lobby.Transit>
+  <HH.Bank.Lobby.TransitTip>Prata que saiu do seu armazenamento mas ainda não foi creditada (atraso de depósito sem agência ou caixa eletrônico).</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.WdInstant>dinheiro no prédio na hora</HH.Bank.Lobby.WdInstant>
+  <HH.Bank.Lobby.WdPod>cápsula de queda em {0} para {1} h</HH.Bank.Lobby.WdPod>
+  <HH.Bank.Lobby.Withdraw>Sacar</HH.Bank.Lobby.Withdraw>
+  <HH.Bank.Lobby.WithdrawPod>Sacar (cápsula)</HH.Bank.Lobby.WithdrawPod>
+  <HH.Bank.Memo.AccountFee>Taxa de conta</HH.Bank.Memo.AccountFee>
+  <HH.Bank.Memo.Bailout>Empréstimo de resgate</HH.Bank.Memo.Bailout>
+  <HH.Bank.Memo.Deposit>Depósito (prata)</HH.Bank.Memo.Deposit>
+  <HH.Bank.Memo.DepositTransit>Depósito em trânsito</HH.Bank.Memo.DepositTransit>
+  <HH.Bank.Memo.Installment>Empréstimo {0}: parcela</HH.Bank.Memo.Installment>
+  <HH.Bank.Memo.Interest>Juros</HH.Bank.Memo.Interest>
+  <HH.Bank.Memo.Late>Empréstimo {0}: pagamento atrasado</HH.Bank.Memo.Late>
+  <HH.Bank.Memo.LateFee>Empréstimo {0}: multa por atraso</HH.Bank.Memo.LateFee>
+  <HH.Bank.Memo.Loan>Empréstimo {0}</HH.Bank.Memo.Loan>
+  <HH.Bank.Memo.LoanInterest>Empréstimo {0}: juros</HH.Bank.Memo.LoanInterest>
+  <HH.Bank.Memo.NegInterest>Juros negativos</HH.Bank.Memo.NegInterest>
+  <HH.Bank.Memo.Offset>Compensação de cobrança</HH.Bank.Memo.Offset>
+  <HH.Bank.Memo.Repay>Empréstimo {0}: quitação</HH.Bank.Memo.Repay>
+  <HH.Bank.Memo.Seized>Apreendido</HH.Bank.Memo.Seized>
+  <HH.Bank.Memo.Seizure>Produto da apreensão (empréstimo {0})</HH.Bank.Memo.Seizure>
+  <HH.Bank.Memo.SeizurePay>Empréstimo {0}: pago por apreensão</HH.Bank.Memo.SeizurePay>
+  <HH.Bank.Memo.Trade>Receita de comércio</HH.Bank.Memo.Trade>
+  <HH.Bank.Memo.Withdraw>Saque (dinheiro)</HH.Bank.Memo.Withdraw>
+  <HH.Bank.Memo.WithdrawCash>Saque (dinheiro)</HH.Bank.Memo.WithdrawCash>
+  <HH.Bank.Memo.WithdrawFee>Taxa: saque</HH.Bank.Memo.WithdrawFee>
+  <HH.Bank.Memo.WithdrawPod>Saque por cápsula de queda</HH.Bank.Memo.WithdrawPod>
+  <HH.Bank.Msg.DepositArrived>{0} de prata foram creditados na sua conta.</HH.Bank.Msg.DepositArrived>
+  <HH.Bank.Msg.LoanRepaid>O empréstimo {0} está totalmente quitado.</HH.Bank.Msg.LoanRepaid>
+  <HH.Bank.Msg.Missed>A parcela do empréstimo {0} não pôde ser paga.</HH.Bank.Msg.Missed>
+  <HH.Bank.Msg.Opened>Conta aberta em {0}.</HH.Bank.Msg.Opened>
+  <HH.Bank.Msg.PodsComing>{0} de prata estão a caminho, em cápsulas de queda.</HH.Bank.Msg.PodsComing>
+  <HH.Bank.Msg.Settled>O empréstimo {0} voltou a estar em dia.</HH.Bank.Msg.Settled>
+  <HH.Bank.Msg.Switched>Sua conta agora fica em {0}.</HH.Bank.Msg.Switched>
+  <HH.Bank.Msg.TradeDeposit>Receita de comércio de {0} de prata foi direto para sua conta em {1}.</HH.Bank.Msg.TradeDeposit>
+  <HH.Bank.Open.Button>Abrir conta</HH.Bank.Open.Button>
+  <HH.Bank.Open.Direct>Enviar o dinheiro do caixa direto ao banco à meia-noite</HH.Bank.Open.Direct>
+  <HH.Bank.Open.DirectTip>A receita das suas lojas, da hospedaria e do cassino vai para a conta em vez de ficar espalhada como prata. Você pode mudar isso depois em um cofre noturno ou nas configurações (bank.directDeposit).</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.Intro>Escolha um banco. Abrir a conta é gratuito; transferi-la depois custa {0} de prata. Enquanto você não tiver conta, nada aqui incomoda: nenhuma carta, nenhum humor, nenhuma taxa.</HH.Bank.Open.Intro>
+  <HH.Bank.Open.Sub>Sua prata, nosso problema.</HH.Bank.Open.Sub>
+  <HH.Bank.Open.Title>Silverline: abrir conta</HH.Bank.Open.Title>
+  <HH.Bank.Quip.A>Sua prata está segura*. *Aplicam-se condições.</HH.Bank.Quip.A>
+  <HH.Bank.Quip.B>Por favor, pegue uma senha. Não usamos senhas desde o Terceiro Colapso, mas o gesto importa.</HH.Bank.Quip.B>
+  <HH.Bank.Quip.C>Cada moeda aqui está contabilizada. Principalmente por mim. À noite.</HH.Bank.Quip.C>
+  <HH.Bank.Quip.Collectors>Meus colegas dos chapéus não estão aqui por sua causa. Não olhe para eles. Eles sabem.</HH.Bank.Quip.Collectors>
+  <HH.Bank.Quip.D>Colchões não são produto financeiro. Embora eu ouça que têm muitos seguidores.</HH.Bank.Quip.D>
+  <HH.Bank.Quip.Debt>Dívida é só poupança do futuro. O futuro está muito ansioso para tê-la de volta.</HH.Bank.Quip.Debt>
+  <HH.Bank.Quip.E>Se alguém perguntar, a caneta não está à venda.</HH.Bank.Quip.E>
+  <HH.Bank.Quip.Empty>Uma conta vazia é apenas uma conta muito honesta.</HH.Bank.Quip.Empty>
+  <HH.Bank.Quip.Huge>Nesta escala já não somos o seu banco. Somos o seu clima.</HH.Bank.Quip.Huge>
+  <HH.Bank.Quip.Interest>Juros deste quadrum: {0}. Ou seja, se eu contei direito, algumas refeições. Parabéns?</HH.Bank.Quip.Interest>
+  <HH.Bank.Quip.Overdue>Não queremos alarmá-lo. Apenas reparamos que o senhor não reparou.</HH.Bank.Quip.Overdue>
+  <HH.Bank.Quip.Rich>Quatro dígitos. Seu chapéu é praticamente uma cartola.</HH.Bank.Quip.Rich>
+  <HH.Bank.Raid.Bounty>{0} vendeu a dívida do empréstimo {1} a pessoas que não enviam cartas. Há um preço pela cabeça do líder da colônia.</HH.Bank.Raid.Bounty>
+  <HH.Bank.Raid.BountyTitle>Recompensa</HH.Bank.Raid.BountyTitle>
+  <HH.Bank.Raid.Text>A Rim Recovery Partners perdeu a paciência com o empréstimo {0}. Seus agentes vêm buscar objetos de valor superior à dívida. Levarão o que conseguirem carregar e irão embora.</HH.Bank.Raid.Text>
+  <HH.Bank.Raid.Title>Ataque de cobrança</HH.Bank.Raid.Title>
+  <HH.Bank.Reason.Amount>Escolha primeiro um valor.</HH.Bank.Reason.Amount>
+  <HH.Bank.Reason.Arrears>Você está atrasado em um pagamento. Ninguém empresta a você até que isso seja resolvido.</HH.Bank.Reason.Arrears>
+  <HH.Bank.Reason.AtmLimit>O caixa eletrônico só libera mais {0} hoje.</HH.Bank.Reason.AtmLimit>
+  <HH.Bank.Reason.BankUnavailable>Esse banco não está aberto para você.</HH.Bank.Reason.BankUnavailable>
+  <HH.Bank.Reason.Funds>A conta não cobre {0} mais {1} de taxas.</HH.Bank.Reason.Funds>
+  <HH.Bank.Reason.Funds2>A conta não tem {0}.</HH.Bank.Reason.Funds2>
+  <HH.Bank.Reason.LoansResearch>Empréstimos exigem o projeto de pesquisa "crédito ao consumidor".</HH.Bank.Reason.LoansResearch>
+  <HH.Bank.Reason.MinLoan>O menor empréstimo é de {0} de prata.</HH.Bank.Reason.MinLoan>
+  <HH.Bank.Reason.NoAccount>Ainda não há conta.</HH.Bank.Reason.NoAccount>
+  <HH.Bank.Reason.NoCredit>Seu limite de crédito está esgotado (restam {0} de prata).</HH.Bank.Reason.NoCredit>
+  <HH.Bank.Reason.NoSilver>Prata insuficiente no armazenamento ou no farol de comércio (disponível: {0}).</HH.Bank.Reason.NoSilver>
+  <HH.Bank.Reason.OverLimit>Isso é mais do que os {0} de prata que você ainda pode tomar emprestado.</HH.Bank.Reason.OverLimit>
+  <HH.Bank.Reason.SameBank>Você já tem conta lá.</HH.Bank.Reason.SameBank>
+  <HH.Bank.Reason.SwitchFunds>Transferir a conta custa {0} de prata, e a conta não tem esse valor.</HH.Bank.Reason.SwitchFunds>
+  <HH.Bank.Reason.Title>{0} só empresta a portadores de título real.</HH.Bank.Reason.Title>
+  <HH.Bank.Seizure.Allow>Deixar que levem os objetos de valor</HH.Bank.Seizure.Allow>
+  <HH.Bank.Seizure.Done>A equipe carregou {0} de prata em seus pertences ({1}) e foi embora assobiando. A dívida agora é de {2}.</HH.Bank.Seizure.Done>
+  <HH.Bank.Seizure.DoneTitle>Apreendido</HH.Bank.Seizure.DoneTitle>
+  <HH.Bank.Seizure.Partly>quitado só em parte</HH.Bank.Seizure.Partly>
+  <HH.Bank.Seizure.Refuse>Recusar</HH.Bank.Seizure.Refuse>
+  <HH.Bank.Seizure.Refused>A equipe de cobrança deixa, educadamente, de ser educada.</HH.Bank.Seizure.Refused>
+  <HH.Bank.Seizure.RefusedTitle>Eles não vão embora</HH.Bank.Seizure.RefusedTitle>
+  <HH.Bank.Seizure.Settled>quitado</HH.Bank.Seizure.Settled>
+  <HH.Bank.Seizure.Text>Uma equipe de apreensão da Rim Recovery Partners está na porta com uma ordem judicial que parece um guardanapo plastificado. Querem objetos de valor de cerca de {0} de prata (120 % do empréstimo {1}). Deixe que levem, e o empréstimo some. Recuse, e eles levarão à força.</HH.Bank.Seizure.Text>
+  <HH.Bank.Seizure.Title>Aviso de apreensão</HH.Bank.Seizure.Title>
+  <HH.Bank.Tab.History>Histórico</HH.Bank.Tab.History>
+  <HH.Bank.Tab.Loans>Empréstimos</HH.Bank.Tab.Loans>
+  <HH.Bank.Tab.Lobby>Saguão</HH.Bank.Tab.Lobby>
+  <HH.Bank.Tab.Terms>Condições</HH.Bank.Tab.Terms>
+  <HH.Bank.Terms.AccFee>Taxa de conta por quadrum</HH.Bank.Terms.AccFee>
+  <HH.Bank.Terms.AccountDaily>Sua conta por dia</HH.Bank.Terms.AccountDaily>
+  <HH.Bank.Terms.AccountDailyTip>Múltiplo da conta por ano = M^({0} × {1}) = {2}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.Anchors>Por dificuldade</HH.Bank.Terms.Anchors>
+  <HH.Bank.Terms.AnchorsHead>M por ano / estágio mais alto de cobrança</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.Atm>Caixa eletrônico</HH.Bank.Terms.Atm>
+  <HH.Bank.Terms.Auto>Automático</HH.Bank.Terms.Auto>
+  <HH.Bank.Terms.AutoTip>Volta a seguir o controle de dificuldade ({0} na dificuldade atual).</HH.Bank.Terms.AutoTip>
+  <HH.Bank.Terms.Daily>Por dia (índice)</HH.Bank.Terms.Daily>
+  <HH.Bank.Terms.DailyTip>M^(1/60) − 1. Um ano de jogo tem 60 dias.</HH.Bank.Terms.DailyTip>
+  <HH.Bank.Terms.Dep>Depósito</HH.Bank.Terms.Dep>
+  <HH.Bank.Terms.Direct>Depósito direto</HH.Bank.Terms.Direct>
+  <HH.Bank.Terms.Fees>Taxas do seu banco</HH.Bank.Terms.Fees>
+  <HH.Bank.Terms.FeesNote>Todas as taxas acompanham a configuração "nível de taxa bancária" ({0} %).</HH.Bank.Terms.FeesNote>
+  <HH.Bank.Terms.Preview>1.000 de prata no índice viram {0} após um ano de jogo e {1} após dez.</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Profit>Rentabilidade</HH.Bank.Terms.Profit>
+  <HH.Bank.Terms.ProfitIntro>Quanto o dinheiro investido cresce, em média, por ano de jogo (60 dias). 1,0 é mais ou menos nada, 1,2 é +20 % ao ano. Isso também define o custo dos empréstimos. É uma configuração deste save.</HH.Bank.Terms.ProfitIntro>
+  <HH.Bank.Terms.StageNote>Escada de cobrança: 1 lembrete, 2 multa por atraso, 3 compensação com depósitos, 4 visita amigável, 5 equipe de apreensão, 6 incursão de cobrança, 7 recompensa. Agora: para no estágio {0}.</HH.Bank.Terms.StageNote>
+  <HH.Bank.Terms.Switch>Trocar de banco</HH.Bank.Terms.Switch>
+  <HH.Bank.Terms.Wd>Saque (cápsula / guichê)</HH.Bank.Terms.Wd>
+  <HH.Bank.Tier.0>Afogado em dívidas</HH.Bank.Tier.0>
+  <HH.Bank.Tier.1>Quebrado</HH.Bank.Tier.1>
+  <HH.Bank.Tier.2>Sobrevivendo</HH.Bank.Tier.2>
+  <HH.Bank.Tier.3>Levando a vida</HH.Bank.Tier.3>
+  <HH.Bank.Tier.4>Confortável</HH.Bank.Tier.4>
+  <HH.Bank.Tier.5>Abastado</HH.Bank.Tier.5>
+  <HH.Bank.Tier.6>Rico</HH.Bank.Tier.6>
+  <HH.Bank.Tier.7>Podre de rico</HH.Bank.Tier.7>
+  <HH.Bank.Tier.8>Grande demais para quebrar</HH.Bank.Tier.8>
+  <HH.Bank.Tier.Name0>Cortesia da casa</HH.Bank.Tier.Name0>
+  <HH.Bank.Tier.Name1>Tudo incluído</HH.Bank.Tier.Name1>
+  <HH.Bank.Tier.Name2>Cama e café</HH.Bank.Tier.Name2>
+  <HH.Bank.Tier.Name3>Quarto standard</HH.Bank.Tier.Name3>
+  <HH.Bank.Tier.Name4>Overbooking</HH.Bank.Tier.Name4>
+  <HH.Bank.Tier.Name5>Avaliação de uma estrela</HH.Bank.Tier.Name5>
+  <HH.Bank.Tier.Name6>Por que você está se fazendo mal?</HH.Bank.Tier.Name6>
+  <HH.Bank.Time.DayHour>dia {0}, {1}:00</HH.Bank.Time.DayHour>
+  <HH.Bank.Time.Hours>{0} h</HH.Bank.Time.Hours>
+  <HH.Bank.Time.Minutes>{0} min</HH.Bank.Time.Minutes>
+</LanguageData>

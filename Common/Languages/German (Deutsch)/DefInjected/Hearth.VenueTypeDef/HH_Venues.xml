@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Tavern.label>Taverne</HH_Venue_Tavern.label>
+  <HH_Venue_Tavern.description>Ein Raum, in dem Gäste ein Getränk kaufen und es gleich vor Ort trinken. Bestücke den Raum mit Bier oder anderen Getränken in einem Regal oder einer Lagerzone; ein Barkeeper hinter dem Schild oder der Theke hält ihn geöffnet. Getränke im Raum sind für Kunden reserviert, sofern das Schild nichts anderes sagt.</HH_Venue_Tavern.description>
+  <HH_Venue_Shop.label>Laden</HH_Venue_Shop.label>
+  <HH_Venue_Shop.description>Ein Raum, in dem Gäste Waren kaufen. Alles, was in Regalen und Lagerzonen im Raum liegt, steht zum Verkauf, zum Marktwert mal dem Preisfaktor des Schilds. Ohne Verkäufer läuft der Laden als Selbstbedienung mit kleinem Rabatt.</HH_Venue_Shop.description>
+  <HH_Venue_Restaurant.label>Restaurant</HH_Venue_Restaurant.label>
+  <HH_Venue_Restaurant.description>Ein Raum, in dem Gäste sich setzen und essen. Tische, eine Küche und ein Kellner machen daraus ein Restaurant; die Speisen selbst kommen aus der Küche.</HH_Venue_Restaurant.description>
+  <HH_Venue_Casino.label>Casino</HH_Venue_Casino.label>
+  <HH_Venue_Casino.description>Ein Raum voller Kartentische, Spielautomaten und Croupiers. Gäste setzen ihr Silber bei Glücksspielen ein; das Haus behält einen kleinen, ehrlichen Vorteil.</HH_Venue_Casino.description>
+  <HH_Venue_Spa.label>Spa</HH_Venue_Spa.label>
+  <HH_Venue_Spa.description>Ein ruhiger Raum für Bäder, Dampf und Erholung. Ein Bademeister hält die Handtücher warm; Gäste zahlen pro Besuch.</HH_Venue_Spa.description>
+  <HH_Venue_Lounge.label>Lounge</HH_Venue_Lounge.label>
+  <HH_Venue_Lounge.description>Ein Wartezimmer mit Sitzplätzen. Gäste, die ein Geschäft geschlossen oder unbesetzt vorfinden, warten hier statt in der Tür, und zwar geduldiger. Immer geöffnet, kein Personal nötig.</HH_Venue_Lounge.description>
+  <HH_Venue_Chapel.label>Gästekapelle</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>Ein ruhiger Raum mit einem Gästealtar, in dem Besucher jeden Glaubens beten. Gäste zahlen nichts, gehen aber ruhiger; eine Kapelle mit schönem Altar und ein paar Bänken ist ein guter Nachbar für ein Gasthaus. Tagsüber immer geöffnet, kein Personal nötig.</HH_Venue_Chapel.description>
+</LanguageData>

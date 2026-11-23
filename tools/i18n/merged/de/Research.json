@@ -1,0 +1,9 @@
+{
+ "keyed": {
+  "HH.Setting.core.researchMode": "Forschungsmodus",
+  "HH.Setting.core.researchMode.Desc": "Voll: Die Forschungsbäume von Hearth & Harbor und Silverline schalten ihre Gebäude und Funktionen frei. Aus: Alles ist von Anfang an verfügbar (die dunklen Projekte der Unterwelt brauchen trotzdem ihre Entdeckung).",
+  "HH.Enum.CoreResearchMode.Full": "Voll",
+  "HH.Enum.CoreResearchMode.Off": "Aus"
+ },
+ "defs": {}
+}

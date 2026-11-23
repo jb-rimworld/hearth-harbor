@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Innkeeping.label>трактирное дело</HH_Innkeeping.label>
+  <HH_Innkeeping.description>Классы номеров, ценовые категории, таверна, стойка регистрации, коновязь и первые платные блюда. Всё, что нужно дому, когда первые гости остаются на вторую ночь. Открывает коптильню, печь, гостевой алтарь и второй уровень обучения кухне.</HH_Innkeeping.description>
+  <HH_Gastronomy.label>гастрономия</HH_Gastronomy.label>
+  <HH_Gastronomy.description>Меню, официанты, стили кухни и настоящий обеденный зал. Открывает пароварку, станцию вок, холодную станцию и третий уровень обучения кухне.</HH_Gastronomy.description>
+  <HH_HotelManagement.label>управление отелем</HH_HotelManagement.label>
+  <HH_HotelManagement.description>Терминалы бронирования, прогнозы прибытия, смены и фритюр. Разница между постоялым двором и отелем в том, что отель знает, кто приедет.</HH_HotelManagement.description>
+  <HH_FineDining.label>высокая кухня</HH_FineDining.label>
+  <HH_FineDining.description>Льняные скатерти, сомелье и критики. Четвёртый уровень обучения кухне: «фирменная» подача каждого блюда.</HH_FineDining.description>
+</LanguageData>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Dlc.Bought>{0} compró {1} por {2} de plata.</HH.Dlc.Bought>
+  <HH.Dlc.Gizmo.Buy>Indulgencias</HH.Dlc.Gizmo.Buy>
+  <HH.Dlc.Gizmo.BuyDesc>Compra absolución, clemencia o rango para un colono. Los precios siguen la postura de su ideología. La plata sale de las reservas de la colonia o de su propio bolsillo.</HH.Dlc.Gizmo.BuyDesc>
+  <HH.Dlc.Gizmo.ChooseFaith>Elegir fe</HH.Dlc.Gizmo.ChooseFaith>
+  <HH.Dlc.Gizmo.ChooseFaithDesc>Consagra este altar a una ideología. Sus seguidores entre tus huéspedes vendrán aquí a rezar.</HH.Dlc.Gizmo.ChooseFaithDesc>
+  <HH.Dlc.Gizmo.FundDesc>Adonde van los pagos de tus colonos. La deidad los conserva para siempre; una facción de la misma fe se acerca a ti (+1 de buena voluntad por cada 500 de plata, como máximo +5 por cuadrante).</HH.Dlc.Gizmo.FundDesc>
+  <HH.Dlc.Gizmo.ToDeity>Ofrendas: a la deidad</HH.Dlc.Gizmo.ToDeity>
+  <HH.Dlc.Gizmo.ToFaction>Ofrendas: a la facción de la fe</HH.Dlc.Gizmo.ToFaction>
+  <HH.Dlc.NoBuyers>ningún colono con ideología</HH.Dlc.NoBuyers>
+  <HH.Dlc.NoFaith>Aún no se ha elegido ninguna fe.</HH.Dlc.NoFaith>
+  <HH.Dlc.Noble.AcceptOrders>Obedecer la orden</HH.Dlc.Noble.AcceptOrders>
+  <HH.Dlc.Noble.Arrived>Un {0} y su séquito llegan por {1} días.</HH.Dlc.Noble.Arrived>
+  <HH.Dlc.Noble.BilletText>El Imperio ordena alojar a un {0} y a {1} sirvientes durante {2} días. Esperan un dormitorio digno de su rango ({3}). Recibirás unos {4} de plata para gastos. Negarse cuesta buena voluntad y honor.</HH.Dlc.Noble.BilletText>
+  <HH.Dlc.Noble.Left>El grupo noble se marcha. Pago: {0} de plata.</HH.Dlc.Noble.Left>
+  <HH.Dlc.Noble.OfferText>Un {0} con {1} sirvientes pide quedarse {2} días y pagará unos {3} de plata si está a gusto. Esperan: {4}. Rechazar no cuesta nada.</HH.Dlc.Noble.OfferText>
+  <HH.Dlc.Noble.Refuse>Rechazar (sufren la buena voluntad y el honor)</HH.Dlc.Noble.Refuse>
+  <HH.Dlc.NothingOffered>su fe no ofrece nada a la venta</HH.Dlc.NothingOffered>
+  <HH.Dlc.Reason.Abhorrent>su fe aborrece esto</HH.Dlc.Reason.Abhorrent>
+  <HH.Dlc.Reason.CannotPay>no puede pagar {0}</HH.Dlc.Reason.CannotPay>
+  <HH.Dlc.Reason.CapColony>la colonia ya ha comprado esto este cuadrante</HH.Dlc.Reason.CapColony>
+  <HH.Dlc.Reason.CapIdeo>la ideología ya ha tenido bastante de esto en este cuadrante</HH.Dlc.Reason.CapIdeo>
+  <HH.Dlc.Reason.CapPawnQ>límite alcanzado para este cuadrante</HH.Dlc.Reason.CapPawnQ>
+  <HH.Dlc.Reason.CapPawnY>límite alcanzado para este año</HH.Dlc.Reason.CapPawnY>
+  <HH.Dlc.Reason.CertainEnough>la certeza ya está completa</HH.Dlc.Reason.CertainEnough>
+  <HH.Dlc.Reason.NeedRank>requiere el rango {0}</HH.Dlc.Reason.NeedRank>
+  <HH.Dlc.Reason.NeedRoyalty>requiere Realeza</HH.Dlc.Reason.NeedRoyalty>
+  <HH.Dlc.Reason.NoFresh>no hay herida reciente de hasta 10 puntos de vida</HH.Dlc.Reason.NoFresh>
+  <HH.Dlc.Reason.NoGuilt>no hay recuerdo de un mandamiento roto</HH.Dlc.Reason.NoGuilt>
+  <HH.Dlc.Reason.NoIdeo>sin ideología</HH.Dlc.Reason.NoIdeo>
+  <HH.Dlc.Reason.NoScar>no hay cicatriz permanente</HH.Dlc.Reason.NoScar>
+  <HH.Dlc.Reason.NotAThing>su fe no conoce tal cosa</HH.Dlc.Reason.NotAThing>
+  <HH.Dlc.Reason.NotFluid>solo las ideologías fluidas pueden reformarse</HH.Dlc.Reason.NotFluid>
+  <HH.Dlc.Reason.NotPsychic>no puede formar un psylink</HH.Dlc.Reason.NotPsychic>
+  <HH.Dlc.Reason.PsylinkMax>el psylink ya está en su límite</HH.Dlc.Reason.PsylinkMax>
+  <HH.Dlc.Reason.RankHeld>ya posee este rango o uno superior</HH.Dlc.Reason.RankHeld>
+  <HH.Dlc.Reason.RankOrder>requiere primero el rango anterior</HH.Dlc.Reason.RankOrder>
+  <HH.Dlc.Reason.ReformReady>la reforma ya es posible</HH.Dlc.Reason.ReformReady>
+  <HH.Dlc.ShrineQuality>Fe: {0}. Calidad de la capilla: {1}.</HH.Dlc.ShrineQuality>
+  <HH.Dlc.TempleFund>Fondo del templo: {0} de plata</HH.Dlc.TempleFund>
+  <HH.Setting.dlc.traitSpawn>Aparecen nuevos rasgos en las personas generadas</HH.Setting.dlc.traitSpawn>
+  <HH.Setting.dlc.traitSpawn.Desc>Afortunado, Desafortunado, Anfitrión nato y otros rasgos de Hearth &amp; Harbor pueden aparecer en los colonos recién generados. Los existentes conservan los suyos. Desactivado: solo se añaden a mano o con el editor.</HH.Setting.dlc.traitSpawn.Desc>
+  <HH.Setting.dlc.traitRarity>Frecuencia de rasgos</HH.Setting.dlc.traitRarity>
+  <HH.Setting.dlc.traitRarity.Desc>Multiplicador de la frecuencia con que se sortean nuestros rasgos para los colonos nuevos (1 = la misma rareza que la mayoría de rasgos de vanilla).</HH.Setting.dlc.traitRarity.Desc>
+</LanguageData>

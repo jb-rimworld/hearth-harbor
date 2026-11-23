@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchBout.reportString>assistindo ao poço.</HH_WatchBout.reportString>
+  <HH_BackRoomVisit.reportString>usando a sala dos fundos.</HH_BackRoomVisit.reportString>
+  <HH_FenceDeal.reportString>negociando no balcão do receptador.</HH_FenceDeal.reportString>
+  <HH_UseLounge.reportString>relaxando no salão.</HH_UseLounge.reportString>
+  <HH_Interrogate.reportString>interrogando TargetA.</HH_Interrogate.reportString>
+  <HH_HuntQuarry.reportString>caçando TargetA.</HH_HuntQuarry.reportString>
+  <HH_QuarryFlee.reportString>correndo.</HH_QuarryFlee.reportString>
+</LanguageData>

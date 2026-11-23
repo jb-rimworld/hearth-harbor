@@ -1,0 +1,24 @@
+{
+ "keyed": {
+  "HH.Compat.DialogTitle": "Hospitality está activo junto a Hearth & Harbor. ¿Desactivarlo para ti?",
+  "HH.Compat.DialogBody": "Hearth & Harbor reemplaza a Hospitality y sus complementos. Mientras ambos estén activos, Hearth & Harbor ha desactivado Hospitality para esta sesión: sus parches, eventos, edificios y pestaña de huéspedes no hacen nada. Tus camas y zonas de huéspedes de Hospitality se conservan y se hacen cargo de ellas cuando Hospitality ya no esté.",
+  "HH.Compat.DialogListHeader": "Estos mods se desactivarán:",
+  "HH.Compat.DialogMentionHeader": "Estos mods de huéspedes siguen como están; sus visitantes seguirán siendo suyos:",
+  "HH.Compat.DialogFailed": "No se pudo cambiar la lista de mods automáticamente ({0}). Hazlo a mano, por favor:",
+  "HH.Compat.DialogStep1": "1. Menú principal → Mods",
+  "HH.Compat.DialogStep2": "2. Desmarca los mods listados arriba",
+  "HH.Compat.DialogStep3": "3. Guarda la lista de mods y reinicia el juego",
+  "HH.Compat.Yes": "Sí, desactivar y reiniciar",
+  "HH.Compat.OpenMods": "Abrir la lista de mods",
+  "HH.Compat.Later": "Más tarde",
+  "HH.Compat.Never": "No volver a preguntar",
+  "HH.Compat.ImportLetterTitle": "Importado de Hospitality",
+  "HH.Compat.ImportLetterText": "Esta colonia se jugó con Hospitality. Hearth & Harbor asumió lo que pudo.\\n\\nImportado: {0}.\\nDescartado: {1}.\\n\\nLas camas de huéspedes importadas vuelven a ser camas normales y quedan recordadas como camas de huéspedes; la parte de huéspedes de Hearth & Harbor las recoge. Nada más de tu colonia ha cambiado.",
+  "HH.Compat.ImportNothing": "nada",
+  "HH.Setting.compat.hospitalityNeverAsk": "No ofrecer desactivar Hospitality",
+  "HH.Setting.compat.hospitalityNeverAsk.Desc": "Cuando Hospitality funciona junto a Hearth & Harbor, Hearth & Harbor lo desactiva durante la sesión y ofrece desactivarlo en el menú principal. Activado: no se volverán a hacer ofertas (la desactivación sigue ocurriendo).",
+  "HH.Setting.compat.importLetter": "Carta tras importar una partida de Hospitality",
+  "HH.Setting.compat.importLetter.Desc": "Tras cargar una partida jugada con Hospitality, una carta indica lo que Hearth & Harbor asumió (camas de huéspedes, zonas, visitantes) y lo que se descartó."
+ },
+ "defs": {}
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Guide_OpeningDay.label>Eröffnungstag</HH_Guide_OpeningDay.label>
+  <HH_Guide_OpeningDay.description>Drei Schritte von einem Bett zum ersten Silber. Keine Forschung, keine Zonen, keine Einstellungen.</HH_Guide_OpeningDay.description>
+  <HH_Guide_YourGuests.label>Deine Gäste auf einen Blick</HH_Guide_YourGuests.label>
+  <HH_Guide_YourGuests.description>Wo du siehst, wie es deinen Gästen geht.</HH_Guide_YourGuests.description>
+  <HH_Guide_FirstVenue.label>Dein erstes Geschäft</HH_Guide_FirstVenue.label>
+  <HH_Guide_FirstVenue.description>Ein Schild macht aus einem Raum ein Geschäft.</HH_Guide_FirstVenue.description>
+  <HH_Guide_Bank.label>Geld auf der Bank</HH_Guide_Bank.label>
+  <HH_Guide_Bank.description>Silverline verwahrt deine Einnahmen sicher und lässt Gäste per Karte zahlen.</HH_Guide_Bank.description>
+</LanguageData>

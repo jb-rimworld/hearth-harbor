@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_SlotMachine.label>jednoruký muffalo</HH_SlotMachine.label>
+  <HH_SlotMachine.description>Automat žerající mince se třemi válci a pákou ve tvaru muffalího rohu. Kurzy určuje banka, světla ne. Hosté hrají bez krupiéra; kolonisté hrají bezcennými žetony banky.\n\nVolatilitu (jak často a jak velké výhry vyplácí) nastavíte tlačítkem na stroji.</HH_SlotMachine.description>
+  <HH_RouletteTable.label>ruletový stůl</HH_RouletteTable.label>
+  <HH_RouletteTable.description>Plsťový stůl se zabudovaným kolem. Položte žetony, o zbytku rozhodne kulička. Pro hosty ho musí obsluhovat krupiér (kolonista s pracovním typem Obsluha). Kolonisté si mohou pro radost hrát i bez krupiéra, s žetony banky.</HH_RouletteTable.description>
+  <HH_BlackjackTable.label>stůl blackjack</HH_BlackjackTable.label>
+  <HH_BlackjackTable.description>Půlkruhový stůl s karetním boxem. Snažte se dostat blíže k 21 než krupiér, aniž byste přestřelili. Dobří hráči prohrávají méně; výhoda domu závisí na pravidlech a na tom, jak dobře hráč hraje. Pro hosty je potřeba krupiér.</HH_BlackjackTable.description>
+  <HH_PokerTable.label>stůl Rimdeck</HH_PokerTable.label>
+  <HH_PokerTable.description>Banka rozdává Rimdeck, karetní hru proti ostatním hráčům: banka si z každého banku nechá jen malý poplatek. Chytří a společenští hráči vyhrávají častěji. Nahrazuje vanilkový pokerový stůl. Pro hosty je potřeba krupiér.</HH_PokerTable.description>
+  <HH_CashierCage.label>pokladní mříž</HH_CashierCage.label>
+  <HH_CashierCage.description>Mřížované okénko, kde se stříbro mění na žetony a zpět. S mříží v kolonii hosté hrají za žetony: přinesou asi o 5 % víc a někteří odejdou se žetony, které mimo dům nemají cenu (zásoba žetonů zůstává v pokladně). Noční tržba kasina se sem ukládá jako stříbro.</HH_CashierCage.description>
+  <HH_CasinoChips.label>kasinový žeton</HH_CasinoChips.label>
+  <HH_CasinoChips.description>Hliněný žeton s značkou domu. Stojí jedno stříbro u mříže, která ho prodala, a nikde jinde: obchodníci se ho nedotknou a nepočítá se do vašeho bohatství.</HH_CasinoChips.description>
+  <HH_GamblingSession.label>hazard</HH_GamblingSession.label>
+  <HH_GamblingSession.description>Sezení u stolů, řízené zásadami pro drogy jako droga: zda je povoleno pro zábavu, jak často a zda mohou závislí hrát. Není to předmět a nikdy neexistuje ve světě.</HH_GamblingSession.description>
+</LanguageData>

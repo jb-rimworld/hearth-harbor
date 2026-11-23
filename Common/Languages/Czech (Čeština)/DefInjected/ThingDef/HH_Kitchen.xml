@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Cookbook.label>kniha receptů</HH_Cookbook.label>
+  <HH_Cookbook.description>Mastná, ohmataná kniha receptů, poznámky v ní psal někdo, kdo evidentně vařil pod palbou. Čtení naučí kolonii pokrmy, které obsahuje.</HH_Cookbook.description>
+  <HH_Plate_Soup.label>miska polévky</HH_Plate_Soup.label>
+  <HH_Plate_Soup.description>Miska něčeho horkého a mokrého. Jí se lžící, modlitbou, nebo obojím.</HH_Plate_Soup.description>
+  <HH_Plate_Stew.label>hrnec dušeniny</HH_Plate_Stew.label>
+  <HH_Plate_Stew.description>Těžká miska pomalu vařené dušeniny, která slibuje přídavek.</HH_Plate_Stew.description>
+  <HH_Plate_Grill.label>grilovací talíř</HH_Plate_Grill.label>
+  <HH_Plate_Grill.description>Maso, které se pokusilo o rozhovor s otevřeným ohněm a prohrálo.</HH_Plate_Grill.description>
+  <HH_Plate_Noodles.label>miska nudlí</HH_Plate_Noodles.label>
+  <HH_Plate_Noodles.description>Spleť nudlí v míse. Slupání je povinné.</HH_Plate_Noodles.description>
+  <HH_Plate_Rice.label>rýžový pokrm</HH_Plate_Rice.label>
+  <HH_Plate_Rice.description>Hora rýže s názory, podaná na talíři s vidličkou, o kterou nikdo nežádal.</HH_Plate_Rice.description>
+  <HH_Plate_Bake.label>pečený pokrm</HH_Plate_Bake.label>
+  <HH_Plate_Bake.description>Něco, co šlo do trouby jako suroviny a vyšlo jako rozhodnutí.</HH_Plate_Bake.description>
+  <HH_Plate_Fry.label>smažený talíř</HH_Plate_Fry.label>
+  <HH_Plate_Fry.description>Zlatavé, křupavé a šíleně nezdravé. Přesně to, co kolonie objednala.</HH_Plate_Fry.description>
+  <HH_Plate_Salad.label>talíř salátu</HH_Plate_Salad.label>
+  <HH_Plate_Salad.description>Studený talíř plný listí, s velmi malými výčitkami svědomí a krátkou trvanlivostí.</HH_Plate_Salad.description>
+  <HH_Plate_Raw.label>talíř syrových pokrmů</HH_Plate_Raw.label>
+  <HH_Plate_Raw.description>Tence nakrájené, draho naaranžované a rozhodně neuvařené.</HH_Plate_Raw.description>
+  <HH_Plate_Breakfast.label>snídaňový talíř</HH_Plate_Breakfast.label>
+  <HH_Plate_Breakfast.description>Talíř, který oznamuje, že den začal, ať se vám to líbí, nebo ne.</HH_Plate_Breakfast.description>
+  <HH_Plate_Dessert.label>miska dezertu</HH_Plate_Dessert.label>
+  <HH_Plate_Dessert.description>Malá, sladká odměna za přežití dalšího dne na Rimu.</HH_Plate_Dessert.description>
+  <HH_Plate_StreetFood.label>tácek pouličního jídla</HH_Plate_StreetFood.label>
+  <HH_Plate_StreetFood.description>Horké, do ruky a nejlépe se jí ve stoje, rychle, s jedním okem na východech.</HH_Plate_StreetFood.description>
+  <HH_Station_PrepCounter.label>přípravný pult</HH_Station_PrepCounter.label>
+  <HH_Station_PrepCounter.description>Opotřebovaný pult s prkénkem, dobrým nožem a odtokovou drážkou, na kterou se nikdo neptal. Krájejte, plátkujte a porcujte zde; ostatní zařízení pro přípravu jídla musí stát nablízku.</HH_Station_PrepCounter.description>
+  <HH_Station_StockPot.label>vývarový hrnec</HH_Station_StockPot.label>
+  <HH_Station_StockPot.description>Velký železný hrnec nad dřevěným ohněm. Probublává, vaří a dusí cokoli, co kdy bylo živé. Při práci spaluje dřevo.</HH_Station_StockPot.description>
+  <HH_Station_Grill.label>gril</HH_Station_Grill.label>
+  <HH_Station_Grill.description>Rošt nad žhavým uhlím. Maso se položí syrové a vyjde s názory. Při práci spaluje dřevo.</HH_Station_Grill.description>
+  <HH_Station_Oven.label>trouba</HH_Station_Oven.label>
+  <HH_Station_Oven.description>Kamenná a železná trouba na pečení. Dlouho se rozehřívá a krátce ničí večeři. Při práci spaluje dřevo.</HH_Station_Oven.description>
+  <HH_Station_WokStation.label>wok stanice</HH_Station_WokStation.label>
+  <HH_Station_WokStation.description>Pánev s kulatým dnem nad divoce hořícím plamenem. Všechno se tu restuje, včetně kuchařova obočí. Při práci spaluje dřevo.</HH_Station_WokStation.description>
+  <HH_Station_DeepFryer.label>fritéza</HH_Station_DeepFryer.label>
+  <HH_Station_DeepFryer.description>Kádev vroucího oleje s košíkem a silným pocitem vlastního nebezpečí. Elektrická. Chytá dřív než cokoli jiného v kuchyni.</HH_Station_DeepFryer.description>
+  <HH_Station_Smoker.label>udírna</HH_Station_Smoker.label>
+  <HH_Station_Smoker.description>Vysoká dřevěná skříň, která mění maso v něco, co vydrží. Potřebuje dřevěné třísky, trpělivost a žádné sousedy. Při práci spaluje dřevo.</HH_Station_Smoker.description>
+  <HH_Station_Steamer.label>napařovač</HH_Station_Steamer.label>
+  <HH_Station_Steamer.description>Naskládané bambusové košíky nad hrncem vroucí vody. Měkký, jemný a téměř nemožné ho spálit. Při práci spaluje dřevo.</HH_Station_Steamer.description>
+  <HH_Station_DoughBench.label>stůl na těsto</HH_Station_DoughBench.label>
+  <HH_Station_DoughBench.description>Těžký stůl s moučnou pokrývkou. Rýže a kukuřice se tu tluče na těsto, což vychází levněji než terapie.</HH_Station_DoughBench.description>
+  <HH_Station_ColdStation.label>chladicí stanice</HH_Station_ColdStation.label>
+  <HH_Station_ColdStation.description>Chlazený pult, který udržuje saláty křupavé a dezerty pevné. Elektrická.</HH_Station_ColdStation.description>
+</LanguageData>

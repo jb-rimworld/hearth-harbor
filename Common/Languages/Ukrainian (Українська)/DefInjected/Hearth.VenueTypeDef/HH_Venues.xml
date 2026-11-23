@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Tavern.label>таверна</HH_Venue_Tavern.label>
+  <HH_Venue_Tavern.description>Кімната, де гості купують напій і п'ють його на місці. Наповніть кімнату пивом або іншими напоями на полиці чи в складі; бармен за вивіскою або прилавком тримає її відкритою. Напої в кімнаті призначені для клієнтів, якщо вивіска не каже інакше.</HH_Venue_Tavern.description>
+  <HH_Venue_Shop.label>крамниця</HH_Venue_Shop.label>
+  <HH_Venue_Shop.description>Кімната, де гості купують товари. Усе, що лежить на полицях і в складах усередині кімнати, продається за ринковою вартістю, помноженою на коефіцієнт ціни вивіски. Без продавця крамниця працює як самообслуговування зі знижкою.</HH_Venue_Shop.description>
+  <HH_Venue_Restaurant.label>ресторан</HH_Venue_Restaurant.label>
+  <HH_Venue_Restaurant.description>Кімната, де гості сідають і їдять. Столи, кухня та офіціант роблять її рестораном; самі страви готує кухня.</HH_Venue_Restaurant.description>
+  <HH_Venue_Casino.label>казино</HH_Venue_Casino.label>
+  <HH_Venue_Casino.description>Кімната з карточними столами, ігровими автоматами та крупʼє. Гості ставлять срібло на азартні ігри; дім тримає невелику, чесну перевагу.</HH_Venue_Casino.description>
+  <HH_Venue_Spa.label>спа</HH_Venue_Spa.label>
+  <HH_Venue_Spa.description>Тиха кімната для купелі, пари й відпочинку. Доглядач тримає рушники теплими; гості платять за кожне відвідування.</HH_Venue_Spa.description>
+  <HH_Venue_Lounge.label>лаунж</HH_Venue_Lounge.label>
+  <HH_Venue_Lounge.description>Зал очікування з місцями. Гості, які бачать заклад зачиненим або без персоналу, чекають тут, а не у дверях, і терплячіше. Завжди відкрито, персонал не потрібен.</HH_Venue_Lounge.description>
+  <HH_Venue_Chapel.label>гостьова капличка</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>Тиха кімната з гостьовим вівтарем, де гості всіх віровизнань моляться. Гості нічого не платять, але йдуть спокійнішими; капличка з гарним вівтарем і кількома лавами — добрий сусід для корчми. Завжди відкрита вдень, персонал не потрібен.</HH_Venue_Chapel.description>
+</LanguageData>

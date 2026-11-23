@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Bank.Building.Account>{0}: 잔액 {1}</HH.Bank.Building.Account>
+  <HH.Bank.Building.DirectDeposit>직접 입금</HH.Bank.Building.DirectDeposit>
+  <HH.Bank.Building.DirectDepositDesc>켜짐: 사업체의 매장 금고가 매일 자정에 비워져 계좌로 입금됩니다. 꺼짐: 수입이 은화 상태로 금고 옆에 놓입니다.</HH.Bank.Building.DirectDepositDesc>
+  <HH.Bank.Building.NoAccount>아직 계좌가 없습니다. 여기서나 통신 콘솔에서 개설할 수 있습니다.</HH.Bank.Building.NoAccount>
+  <HH.Bank.Building.SafeDirect>매장 수입은 자정에 바로 계좌로 들어갑니다.</HH.Bank.Building.SafeDirect>
+  <HH.Bank.Building.SafeFloor>매장 수입은 자정에 은화 상태로 놓입니다.</HH.Bank.Building.SafeFloor>
+  <HH.Bank.Building.SafeNoAccount>은행 계좌가 없습니다: 수입은 자정에 은화 상태로 놓입니다.</HH.Bank.Building.SafeNoAccount>
+  <HH.Bank.Building.UseAtm>현금인출기 이용</HH.Bank.Building.UseAtm>
+  <HH.Bank.Building.UseBranch>창구로 가기</HH.Bank.Building.UseBranch>
+  <HH.Bank.Chart.DayN>{0}일째</HH.Bank.Chart.DayN>
+  <HH.Bank.Chart.Tip>{0}일째: 은화 {1}</HH.Bank.Chart.Tip>
+  <HH.Bank.Chart.Today>오늘</HH.Bank.Chart.Today>
+  <HH.Bank.Choose.Current>현재 거래 은행</HH.Bank.Choose.Current>
+  <HH.Bank.Choose.Intro>계좌를 옮기는 데 은화 {0}의 비용이 들며, 계좌에서 차감됩니다. 대출은 그 대출을 내준 은행에 그대로 남습니다.</HH.Bank.Choose.Intro>
+  <HH.Bank.Choose.Switch>변경 ({0})</HH.Bank.Choose.Switch>
+  <HH.Bank.Choose.Title>은행 변경</HH.Bank.Choose.Title>
+  <HH.Bank.Comm.Call>실버라인에 전화하기</HH.Bank.Comm.Call>
+  <HH.Bank.Comm.Info>입출금, 대출, 그리고 가끔 건조한 한마디.</HH.Bank.Comm.Info>
+  <HH.Bank.Greet.Afternoon>좋은 오후입니다</HH.Bank.Greet.Afternoon>
+  <HH.Bank.Greet.Evening>좋은 저녁입니다</HH.Bank.Greet.Evening>
+  <HH.Bank.Greet.Morning>좋은 아침입니다</HH.Bank.Greet.Morning>
+  <HH.Bank.Greet.Night>안녕히 주무세요</HH.Bank.Greet.Night>
+  <HH.Bank.Header.Tier>자산 등급: {0}</HH.Bank.Header.Tier>
+  <HH.Bank.Header.TierTip>순자산 = 계좌 + 집의 은화 − 부채: 은화 {0}. 등급은 새 값이 하루 내내 유지된 뒤에야 바뀝니다. 이 은행을 통해 식민지 기분에 영향을 줍니다(설정: bank.moodOn).</HH.Bank.Header.TierTip>
+  <HH.Bank.Hist.Amount>금액 (소수 5자리)</HH.Bank.Hist.Amount>
+  <HH.Bank.Hist.Empty>아직 거래 내역이 없습니다.</HH.Bank.Hist.Empty>
+  <HH.Bank.Hist.TotalFees>지금까지 낸 수수료</HH.Bank.Hist.TotalFees>
+  <HH.Bank.Hist.TotalFeesTip>모든 수수료, 연체료, 은행 변경 비용을 합한 금액입니다.</HH.Bank.Hist.TotalFeesTip>
+  <HH.Bank.Hist.TotalInterest>지금까지 받은 이자</HH.Bank.Hist.TotalInterest>
+  <HH.Bank.Hist.TotalInterestTip>은행이 이자로 지급한 금액 전체입니다(마이너스 이자는 은행에 불리하게 집계됩니다).</HH.Bank.Hist.TotalInterestTip>
+  <HH.Bank.Hist.What>내용</HH.Bank.Hist.What>
+  <HH.Bank.Hist.When>시기</HH.Bank.Hist.When>
+  <HH.Bank.Letter.Bailout>{0}은(는) 귀하가 실제로는 너무 커서 망하게 둘 수 없다고 판단했습니다. 이자 없는 대출 은화 {1}을 내주어 구제해 드렸습니다. 기간은 60일입니다. 이것은 선물이 아니라 대출입니다. 그 부분을 끝까지 읽는 사람은 없습니다.</HH.Bank.Letter.Bailout>
+  <HH.Bank.Letter.BailoutTitle>구제금융</HH.Bank.Letter.BailoutTitle>
+  <HH.Bank.Letter.Late>고객님께,
+
+대출 {0}의 상환이 이제 며칠째 밀려 있습니다. 연체료가 추가되었고, 신용 점수도 불가피하게 조금 깎였습니다. 청구 금액은 은화 {1}입니다.
+
+앞으로 이 편지들의 어조가 달라질 것입니다.
+
+창구 직원 오토라인</HH.Bank.Letter.Late>
+  <HH.Bank.Letter.LateTitle>납부 기한 경과</HH.Bank.Letter.LateTitle>
+  <HH.Bank.Letter.Offset>대출 {0}이 전액 상환될 때까지, 계좌에 들어오는 입금의 절반이 부채에 상계됩니다. 또한 새 대출은 이용할 수 없습니다. 계약서에 서명했던 사실을 아무도 기억하지 못하는 부분입니다.</HH.Bank.Letter.Offset>
+  <HH.Bank.Letter.OffsetTitle>입금액 상계</HH.Bank.Letter.OffsetTitle>
+  <HH.Bank.Letter.Reminder>고객님께,
+
+대출 {1}의 할부금 은화 {0}이 아직 저희에게 도착하지 않은 것을 확인했습니다. 단순한 실수라고 확신하며, 변함없이 성심껏 도와드리겠습니다.
+
+따뜻한 인사를 담아,
+창구 직원 오토라인, {2}</HH.Bank.Letter.Reminder>
+  <HH.Bank.Letter.ReminderTitle>가벼운 알림</HH.Bank.Letter.ReminderTitle>
+  <HH.Bank.Letter.Seized>{0} 직원이 유감스럽게도 알려 드립니다. 잔액 중 은화 {1}이 "행정상의 이유로 재배정"되었습니다. 이의 신청서는 없습니다. 다만 아주 좋은 펜이 하나 있습니다.</HH.Bank.Letter.Seized>
+  <HH.Bank.Letter.SeizedTitle>장부 감사</HH.Bank.Letter.SeizedTitle>
+  <HH.Bank.Letter.Visit>림 회수 파트너스의 직원 두 명이 도착했습니다. 그들은 중절모를 쓰고 있습니다. 무기도 없고 약속도 없습니다. 대출 {0}이 상환될 때까지 문 근처에 아주 차분하게 서 있을 것입니다. 그들은 절대 공격하지 않으며, 돈이 갚히는 순간 떠납니다.</HH.Bank.Letter.Visit>
+  <HH.Bank.Letter.VisitTitle>친절한 방문</HH.Bank.Letter.VisitTitle>
+  <HH.Bank.Loans.Available>이용 가능</HH.Bank.Loans.Available>
+  <HH.Bank.Loans.BailoutTag> (구제금융, 무이자)</HH.Bank.Loans.BailoutTag>
+  <HH.Bank.Loans.Credit>신용도</HH.Bank.Loans.Credit>
+  <HH.Bank.Loans.DaysShort> 일</HH.Bank.Loans.DaysShort>
+  <HH.Bank.Loans.Limit>대출 한도</HH.Bank.Loans.Limit>
+  <HH.Bank.Loans.LimitTip>0.15 × 자산 × (점수 − 300) / 550, 여기서 자산 = 순자산 + 식민지 재산의 4분의 1. 양호한 점수일 때는 최소한 기본 신용({0} 은화)이 보장됩니다.</HH.Bank.Loans.LimitTip>
+  <HH.Bank.Loans.Line>대출 {0}: {1} 차입, {2} 미상환</HH.Bank.Loans.Line>
+  <HH.Bank.Loans.Mine>내 대출</HH.Bank.Loans.Mine>
+  <HH.Bank.Loans.New>새 대출</HH.Bank.Loans.New>
+  <HH.Bank.Loans.NextDue>다음 할부 {0}, {1} 후</HH.Bank.Loans.NextDue>
+  <HH.Bank.Loans.None>대출이 없습니다. 오토라인은 거의 실망한 기색입니다.</HH.Bank.Loans.None>
+  <HH.Bank.Loans.Overdue>연체, {0}단계: {1} 납부 필요</HH.Bank.Loans.Overdue>
+  <HH.Bank.Loans.Quote>은화 {0}, 연 {1} %: {3}일마다 {2}, 총 {4} (이자 {5}).</HH.Bank.Loans.Quote>
+  <HH.Bank.Loans.Rate>게임 1년당 금리</HH.Bank.Loans.Rate>
+  <HH.Bank.Loans.RateTip>기준 금리 max(2 %, M − 1) = {0} % + 은행 가산금리({1} 포인트). 수익성 슬라이더를 따르므로, 투자를 위해 빌리는 것은 기대 수익이 양수가 될 수 없습니다.</HH.Bank.Loans.RateTip>
+  <HH.Bank.Loans.Repay100>{0} 상환</HH.Bank.Loans.Repay100>
+  <HH.Bank.Loans.RepayAll>전액 상환</HH.Bank.Loans.RepayAll>
+  <HH.Bank.Loans.Score>장부 점수</HH.Bank.Loans.Score>
+  <HH.Bank.Loans.ScoreTip>300~850, 600에서 시작. 기한 내 할부 +4, 연체 1일마다 −6, 채무 불이행 −120, 한도의 70 % 초과 사용 −20, 그리고 20 × log10(자산 / 10,000)을 더합니다. 기본 점수 {0}.</HH.Bank.Loans.ScoreTip>
+  <HH.Bank.Loans.Take>대출 받기</HH.Bank.Loans.Take>
+  <HH.Bank.Loans.Term>기간</HH.Bank.Loans.Term>
+  <HH.Bank.Loans.Used>사용 중</HH.Bank.Loans.Used>
+  <HH.Bank.Lobby.Accounts>계좌</HH.Bank.Lobby.Accounts>
+  <HH.Bank.Lobby.Amount>금액</HH.Bank.Lobby.Amount>
+  <HH.Bank.Lobby.Balance>잔액</HH.Bank.Lobby.Balance>
+  <HH.Bank.Lobby.BalanceTip>정확히: 은화 {0}.
+매일 이자: 잔액 × (M^({1} × {2} / 60) − 1), 여기서 M = 게임 1년당 {3} (수익성 슬라이더). 하루 {4:0.##} %에 해당합니다.</HH.Bank.Lobby.BalanceTip>
+  <HH.Bank.Lobby.Cash>집에 있는 현금</HH.Bank.Lobby.Cash>
+  <HH.Bank.Lobby.CashTip>집 지도 여기저기 굴러다니는 은화.</HH.Bank.Lobby.CashTip>
+  <HH.Bank.Lobby.ChangeBank>은행 변경</HH.Bank.Lobby.ChangeBank>
+  <HH.Bank.Lobby.Chart>최근 30일</HH.Bank.Lobby.Chart>
+  <HH.Bank.Lobby.Debt>부채</HH.Bank.Lobby.Debt>
+  <HH.Bank.Lobby.DebtTip>이자가 누적된 미상환 대출의 합계.</HH.Bank.Lobby.DebtTip>
+  <HH.Bank.Lobby.DepDelay>{0} 후 입금</HH.Bank.Lobby.DepDelay>
+  <HH.Bank.Lobby.DepInstant>즉시 기장</HH.Bank.Lobby.DepInstant>
+  <HH.Bank.Lobby.Deposit>입금</HH.Bank.Lobby.Deposit>
+  <HH.Bank.Lobby.Direct>직접 입금</HH.Bank.Lobby.Direct>
+  <HH.Bank.Lobby.DirectTip>사업체의 매장 금고가 자정에 계좌로 비워지며, {0} %가 차감됩니다.</HH.Bank.Lobby.DirectTip>
+  <HH.Bank.Lobby.Interest>이번 분기 이자</HH.Bank.Lobby.Interest>
+  <HH.Bank.Lobby.InterestTip>분기(15일)가 시작된 이후 잔액에 지급된 이자.</HH.Bank.Lobby.InterestTip>
+  <HH.Bank.Lobby.Max>최대</HH.Bank.Lobby.Max>
+  <HH.Bank.Lobby.Net>순자산</HH.Bank.Lobby.Net>
+  <HH.Bank.Lobby.NetTip>계좌 + 집의 은화 − 부채. 자산 등급을 정합니다.</HH.Bank.Lobby.NetTip>
+  <HH.Bank.Lobby.Nothing>아직 아무것도 없습니다. 입금으로 시작하면 좋겠습니다.</HH.Bank.Lobby.Nothing>
+  <HH.Bank.Lobby.PendingDep>↓ {0}, {1} 후 도착</HH.Bank.Lobby.PendingDep>
+  <HH.Bank.Lobby.PendingWd>↑ {0}, 낙하 포드로 {1} 후</HH.Bank.Lobby.PendingWd>
+  <HH.Bank.Lobby.Recent>최근 활동</HH.Bank.Lobby.Recent>
+  <HH.Bank.Lobby.Trade>거래 은화 자동 입금</HH.Bank.Lobby.Trade>
+  <HH.Bank.Lobby.TradeTip>상인과 무역선에게서 받은 은화는 거래 직후 직접 입금과 같은 수수료로 계좌에 들어갑니다. 바닥에 동전으로 흩어지지 않습니다. 직접 입금이 켜져 있어야 합니다. 기본값은 꺼짐이라 다음 상인에게 현금으로 계속 지불할 수 있습니다. 캐러밴에는 영향이 없습니다.</HH.Bank.Lobby.TradeTip>
+  <HH.Bank.Lobby.Transfer>입금 및 출금</HH.Bank.Lobby.Transfer>
+  <HH.Bank.Lobby.TransferInfo>보관 중: {0}. 입금 {1}. 출금 수수료 {2}, {3}.</HH.Bank.Lobby.TransferInfo>
+  <HH.Bank.Lobby.Transit>이동 중</HH.Bank.Lobby.Transit>
+  <HH.Bank.Lobby.TransitTip>보관함에서 빠져나왔지만 아직 기장되지 않은 은화(지점이나 현금인출기 없이 입금이 지연되는 경우).</HH.Bank.Lobby.TransitTip>
+  <HH.Bank.Lobby.WdInstant>건물에서 즉시 현금 수령</HH.Bank.Lobby.WdInstant>
+  <HH.Bank.Lobby.WdPod>낙하 포드로 {0} 후, {1}시간</HH.Bank.Lobby.WdPod>
+  <HH.Bank.Lobby.Withdraw>출금</HH.Bank.Lobby.Withdraw>
+  <HH.Bank.Lobby.WithdrawPod>출금 (낙하 포드)</HH.Bank.Lobby.WithdrawPod>
+  <HH.Bank.Memo.AccountFee>계좌 수수료</HH.Bank.Memo.AccountFee>
+  <HH.Bank.Memo.Bailout>구제금융 대출</HH.Bank.Memo.Bailout>
+  <HH.Bank.Memo.Deposit>입금 (은화)</HH.Bank.Memo.Deposit>
+  <HH.Bank.Memo.DepositTransit>이동 중 입금</HH.Bank.Memo.DepositTransit>
+  <HH.Bank.Memo.Installment>대출 {0}: 할부금</HH.Bank.Memo.Installment>
+  <HH.Bank.Memo.Interest>이자</HH.Bank.Memo.Interest>
+  <HH.Bank.Memo.Late>대출 {0}: 연체</HH.Bank.Memo.Late>
+  <HH.Bank.Memo.LateFee>대출 {0}: 연체료</HH.Bank.Memo.LateFee>
+  <HH.Bank.Memo.Loan>대출 {0}</HH.Bank.Memo.Loan>
+  <HH.Bank.Memo.LoanInterest>대출 {0}: 이자</HH.Bank.Memo.LoanInterest>
+  <HH.Bank.Memo.NegInterest>마이너스 이자</HH.Bank.Memo.NegInterest>
+  <HH.Bank.Memo.Offset>추심 상계</HH.Bank.Memo.Offset>
+  <HH.Bank.Memo.Repay>대출 {0}: 상환</HH.Bank.Memo.Repay>
+  <HH.Bank.Memo.Seized>압류됨</HH.Bank.Memo.Seized>
+  <HH.Bank.Memo.Seizure>압류 수익 (대출 {0})</HH.Bank.Memo.Seizure>
+  <HH.Bank.Memo.SeizurePay>대출 {0}: 압류로 변제</HH.Bank.Memo.SeizurePay>
+  <HH.Bank.Memo.Trade>거래 수입</HH.Bank.Memo.Trade>
+  <HH.Bank.Memo.Withdraw>출금 (현금)</HH.Bank.Memo.Withdraw>
+  <HH.Bank.Memo.WithdrawCash>출금 (현금)</HH.Bank.Memo.WithdrawCash>
+  <HH.Bank.Memo.WithdrawFee>수수료: 출금</HH.Bank.Memo.WithdrawFee>
+  <HH.Bank.Memo.WithdrawPod>낙하 포드로 출금</HH.Bank.Memo.WithdrawPod>
+  <HH.Bank.Msg.DepositArrived>은화 {0}이 계좌에 입금되었습니다.</HH.Bank.Msg.DepositArrived>
+  <HH.Bank.Msg.LoanRepaid>대출 {0}이 전액 상환되었습니다.</HH.Bank.Msg.LoanRepaid>
+  <HH.Bank.Msg.Missed>대출 {0}의 할부금을 납부하지 못했습니다.</HH.Bank.Msg.Missed>
+  <HH.Bank.Msg.Opened>{0}에 계좌가 개설되었습니다.</HH.Bank.Msg.Opened>
+  <HH.Bank.Msg.PodsComing>은화 {0}이 낙하 포드로 내려오는 중입니다.</HH.Bank.Msg.PodsComing>
+  <HH.Bank.Msg.Settled>대출 {0}이 다시 정상 상태가 되었습니다.</HH.Bank.Msg.Settled>
+  <HH.Bank.Msg.Switched>이제 귀하의 계좌는 {0}에 있습니다.</HH.Bank.Msg.Switched>
+  <HH.Bank.Msg.TradeDeposit>거래 수입 은화 {0}이 {1}의 계좌에 바로 입금되었습니다.</HH.Bank.Msg.TradeDeposit>
+  <HH.Bank.Open.Button>계좌 개설</HH.Bank.Open.Button>
+  <HH.Bank.Open.Direct>창구 현금을 자정에 바로 은행으로 보내기</HH.Bank.Open.Direct>
+  <HH.Bank.Open.DirectTip>매장, 여관, 카지노의 수입이 은화 상태로 방치되지 않고 계좌로 들어갑니다. 나중에 야간 금고에서 또는 설정(bank.directDeposit)에서 바꿀 수 있습니다.</HH.Bank.Open.DirectTip>
+  <HH.Bank.Open.Intro>은행을 고르세요. 계좌 개설은 무료이며, 나중에 옮기려면 은화 {0}이 듭니다. 계좌를 개설하기 전까지는 여기서 아무것도 귀찮게 하지 않습니다. 편지도, 기분 변화도, 수수료도 없습니다.</HH.Bank.Open.Intro>
+  <HH.Bank.Open.Sub>당신의 은화, 우리의 걱정.</HH.Bank.Open.Sub>
+  <HH.Bank.Open.Title>실버라인: 계좌 개설</HH.Bank.Open.Title>
+  <HH.Bank.Quip.A>귀하의 은화는 안전합니다*. *약관 적용.</HH.Bank.Quip.A>
+  <HH.Bank.Quip.B>번호표를 뽑아 주십시오. 제3차 붕괴 이후 번호표를 쓴 적은 없지만, 그 몸짓이 중요합니다.</HH.Bank.Quip.B>
+  <HH.Bank.Quip.C>여기 있는 모든 동전은 기록되어 있습니다. 대부분은 제가 기록했습니다. 밤에.</HH.Bank.Quip.C>
+  <HH.Bank.Quip.Collectors>중절모를 쓴 제 동료들은 귀하를 찾아온 게 아닙니다. 그들을 쳐다보지 마세요. 그들도 알고 있습니다.</HH.Bank.Quip.Collectors>
+  <HH.Bank.Quip.D>매트리스는 금융 상품이 아닙니다. 다만 열성 팬이 있다고 들었습니다.</HH.Bank.Quip.D>
+  <HH.Bank.Quip.Debt>부채는 미래에서 빌려 온 저축일 뿐입니다. 미래는 그것을 돌려받기를 유난히 바라고 있습니다.</HH.Bank.Quip.Debt>
+  <HH.Bank.Quip.E>누가 묻더라도, 펜은 판매용이 아닙니다.</HH.Bank.Quip.E>
+  <HH.Bank.Quip.Empty>텅 빈 계좌는 그저 아주 정직한 계좌입니다.</HH.Bank.Quip.Empty>
+  <HH.Bank.Quip.Huge>이 규모에서 우리는 더 이상 귀하의 은행이 아닙니다. 귀하의 기후입니다.</HH.Bank.Quip.Huge>
+  <HH.Bank.Quip.Interest>이번 분기 이자: {0}. 제가 제대로 센다면 식사 몇 끼 분량입니다. 축하드립니다?</HH.Bank.Quip.Interest>
+  <HH.Bank.Quip.Overdue>놀라게 하고 싶지는 않습니다. 귀하가 아직 알아차리지 못했다는 것을 저희가 알아챘을 뿐입니다.</HH.Bank.Quip.Overdue>
+  <HH.Bank.Quip.Rich>네 자리 수입니다. 귀하의 모자는 사실상 실크햇입니다.</HH.Bank.Quip.Rich>
+  <HH.Bank.Raid.Bounty>{0}이(가) 대출 {1}의 채권을 편지를 보내지 않는 사람들에게 팔아넘겼습니다. 식민지 지도자의 머리에 현상금이 걸렸습니다.</HH.Bank.Raid.Bounty>
+  <HH.Bank.Raid.BountyTitle>현상금</HH.Bank.Raid.BountyTitle>
+  <HH.Bank.Raid.Text>림 회수 파트너스는 대출 {0}에 대한 인내심을 잃었습니다. 그들의 요원들이 부채보다 값진 귀중품을 가지러 옵니다. 들고 갈 수 있는 만큼 가져가고 떠날 것입니다.</HH.Bank.Raid.Text>
+  <HH.Bank.Raid.Title>추심 습격</HH.Bank.Raid.Title>
+  <HH.Bank.Reason.Amount>먼저 금액을 고르세요.</HH.Bank.Reason.Amount>
+  <HH.Bank.Reason.Arrears>납부가 밀려 있습니다. 그것이 해결될 때까지 아무도 대출을 내주지 않습니다.</HH.Bank.Reason.Arrears>
+  <HH.Bank.Reason.AtmLimit>오늘 현금인출기에서 더 낼 수 있는 금액은 {0}입니다.</HH.Bank.Reason.AtmLimit>
+  <HH.Bank.Reason.BankUnavailable>그 은행은 귀하에게 열려 있지 않습니다.</HH.Bank.Reason.BankUnavailable>
+  <HH.Bank.Reason.Funds>계좌 잔액이 {0}과 수수료 {1}을 감당하지 못합니다.</HH.Bank.Reason.Funds>
+  <HH.Bank.Reason.Funds2>계좌에 {0}이 없습니다.</HH.Bank.Reason.Funds2>
+  <HH.Bank.Reason.LoansResearch>대출에는 연구 프로젝트 "소비자 신용"이 필요합니다.</HH.Bank.Reason.LoansResearch>
+  <HH.Bank.Reason.MinLoan>가장 작은 대출 금액은 은화 {0}입니다.</HH.Bank.Reason.MinLoan>
+  <HH.Bank.Reason.NoAccount>아직 계좌가 없습니다.</HH.Bank.Reason.NoAccount>
+  <HH.Bank.Reason.NoCredit>신용 한도를 모두 썼습니다(남은 은화 {0}).</HH.Bank.Reason.NoCredit>
+  <HH.Bank.Reason.NoSilver>보관함이나 무역 신호기에 은화가 부족합니다(사용 가능 {0}).</HH.Bank.Reason.NoSilver>
+  <HH.Bank.Reason.OverLimit>차입 가능한 남은 금액인 은화 {0}을 넘습니다.</HH.Bank.Reason.OverLimit>
+  <HH.Bank.Reason.SameBank>이미 이 은행을 이용하고 있습니다.</HH.Bank.Reason.SameBank>
+  <HH.Bank.Reason.SwitchFunds>계좌 이동에는 은화 {0}이 들며, 계좌에 그만한 금액이 없습니다.</HH.Bank.Reason.SwitchFunds>
+  <HH.Bank.Reason.Title>{0}은(는) 왕실 칭호를 가진 사람에게만 대출합니다.</HH.Bank.Reason.Title>
+  <HH.Bank.Seizure.Allow>귀중품을 가져가게 한다</HH.Bank.Seizure.Allow>
+  <HH.Bank.Seizure.Done>팀이 은화 {0} 상당의 귀하의 소지품({1})을 싣고 휘파람을 불며 떠났습니다. 부채는 {2} 상태입니다.</HH.Bank.Seizure.Done>
+  <HH.Bank.Seizure.DoneTitle>압류 완료</HH.Bank.Seizure.DoneTitle>
+  <HH.Bank.Seizure.Partly>일부만 변제됨</HH.Bank.Seizure.Partly>
+  <HH.Bank.Seizure.Refuse>거부한다</HH.Bank.Seizure.Refuse>
+  <HH.Bank.Seizure.Refused>회수팀은 더 이상 정중한 척을 그만둡니다.</HH.Bank.Seizure.Refused>
+  <HH.Bank.Seizure.RefusedTitle>그들은 떠나지 않습니다</HH.Bank.Seizure.RefusedTitle>
+  <HH.Bank.Seizure.Settled>변제 완료</HH.Bank.Seizure.Settled>
+  <HH.Bank.Seizure.Text>림 회수 파트너스의 압류팀이 코팅된 냅킨처럼 보이는 법원 명령서를 들고 문 앞에 와 있습니다. 그들은 대출 {1}의 120 %에 해당하는 약 은화 {0} 상당의 귀중품을 원합니다. 가져가게 하면 대출은 사라집니다. 거부하면 힘든 방식으로 가져갈 것입니다.</HH.Bank.Seizure.Text>
+  <HH.Bank.Seizure.Title>압류 통지</HH.Bank.Seizure.Title>
+  <HH.Bank.Tab.History>내역</HH.Bank.Tab.History>
+  <HH.Bank.Tab.Loans>대출</HH.Bank.Tab.Loans>
+  <HH.Bank.Tab.Lobby>로비</HH.Bank.Tab.Lobby>
+  <HH.Bank.Tab.Terms>약관</HH.Bank.Tab.Terms>
+  <HH.Bank.Terms.AccFee>분기당 계좌 수수료</HH.Bank.Terms.AccFee>
+  <HH.Bank.Terms.AccountDaily>하루 기준 내 계좌</HH.Bank.Terms.AccountDaily>
+  <HH.Bank.Terms.AccountDailyTip>연간 배수 = M^({0} × {1}) = {2}.</HH.Bank.Terms.AccountDailyTip>
+  <HH.Bank.Terms.Anchors>난이도별</HH.Bank.Terms.Anchors>
+  <HH.Bank.Terms.AnchorsHead>연간 M / 최고 회수 단계</HH.Bank.Terms.AnchorsHead>
+  <HH.Bank.Terms.Atm>ATM</HH.Bank.Terms.Atm>
+  <HH.Bank.Terms.Auto>자동</HH.Bank.Terms.Auto>
+  <HH.Bank.Terms.AutoTip>현재 난이도({0})에 맞춰 난이도 슬라이더를 다시 따릅니다.</HH.Bank.Terms.AutoTip>
+  <HH.Bank.Terms.Daily>일일 (지수)</HH.Bank.Terms.Daily>
+  <HH.Bank.Terms.DailyTip>M^(1/60) − 1. 게임 1년은 60일입니다.</HH.Bank.Terms.DailyTip>
+  <HH.Bank.Terms.Dep>예금</HH.Bank.Terms.Dep>
+  <HH.Bank.Terms.Direct>급여 직접 입금</HH.Bank.Terms.Direct>
+  <HH.Bank.Terms.Fees>은행 수수료</HH.Bank.Terms.Fees>
+  <HH.Bank.Terms.FeesNote>모든 수수료는 "은행 수수료 수준" 설정({0} %)에 비례합니다.</HH.Bank.Terms.FeesNote>
+  <HH.Bank.Terms.Preview>지수 기준 은화 1,000은 게임 1년 후 {0}, 10년 후 {1}이 됩니다.</HH.Bank.Terms.Preview>
+  <HH.Bank.Terms.Profit>수익성</HH.Bank.Terms.Profit>
+  <HH.Bank.Terms.ProfitIntro>게임 1년(60일) 동안 투자금이 평균적으로 얼마나 불어나는지 나타냅니다. 1.0은 증감 없음, 1.2는 연 +20 %입니다. 대출 금리도 이 값으로 정해집니다. 이 값은 이 세이브 게임의 설정입니다.</HH.Bank.Terms.ProfitIntro>
+  <HH.Bank.Terms.StageNote>회수 단계: 1 독촉장, 2 연체료, 3 예금과 상계, 4 방문 상담, 5 압류팀, 6 회수 급습, 7 현상금. 현재: {0}단계에서 멈춤.</HH.Bank.Terms.StageNote>
+  <HH.Bank.Terms.Switch>은행 변경</HH.Bank.Terms.Switch>
+  <HH.Bank.Terms.Wd>출금 (포드 / 창구)</HH.Bank.Terms.Wd>
+  <HH.Bank.Tier.0>빚더미</HH.Bank.Tier.0>
+  <HH.Bank.Tier.1>무일푼</HH.Bank.Tier.1>
+  <HH.Bank.Tier.2>간신히 버팀</HH.Bank.Tier.2>
+  <HH.Bank.Tier.3>근근이 버팀</HH.Bank.Tier.3>
+  <HH.Bank.Tier.4>여유 있음</HH.Bank.Tier.4>
+  <HH.Bank.Tier.5>유복함</HH.Bank.Tier.5>
+  <HH.Bank.Tier.6>부자</HH.Bank.Tier.6>
+  <HH.Bank.Tier.7>엄청난 부자</HH.Bank.Tier.7>
+  <HH.Bank.Tier.8>대마불사</HH.Bank.Tier.8>
+  <HH.Bank.Tier.Name0>무료 숙박</HH.Bank.Tier.Name0>
+  <HH.Bank.Tier.Name1>올인클루시브</HH.Bank.Tier.Name1>
+  <HH.Bank.Tier.Name2>조식 제공 숙소</HH.Bank.Tier.Name2>
+  <HH.Bank.Tier.Name3>일반실</HH.Bank.Tier.Name3>
+  <HH.Bank.Tier.Name4>초과 예약</HH.Bank.Tier.Name4>
+  <HH.Bank.Tier.Name5>별점 1개 리뷰</HH.Bank.Tier.Name5>
+  <HH.Bank.Tier.Name6>왜 스스로를 이렇게 몰아붙이나요?</HH.Bank.Tier.Name6>
+  <HH.Bank.Time.DayHour>{0}일차, {1}:00</HH.Bank.Time.DayHour>
+  <HH.Bank.Time.Hours>{0} 시간</HH.Bank.Time.Hours>
+  <HH.Bank.Time.Minutes>{0} 분</HH.Bank.Time.Minutes>
+</LanguageData>

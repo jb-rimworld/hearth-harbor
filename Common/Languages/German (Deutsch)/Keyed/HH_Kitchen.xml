@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Kitchen.Missing>Fehlt: {0}</HH.Kitchen.Missing>
+  <HH.Kitchen.RecipeInfo>Geräte: {0}. Schritte: {1}.</HH.Kitchen.RecipeInfo>
+  <HH.Kitchen.Finishing>ein letzter Schliff (Milch, Eier, Schokolade, Bier, Beeren oder Pilze)</HH.Kitchen.Finishing>
+  <HH.Kitchen.Finishing2>ein zweiter letzter Schliff (Bier, Beeren oder Pilze)</HH.Kitchen.Finishing2>
+  <HH.Kitchen.Inspiration>Inspiration: {0}</HH.Kitchen.Inspiration>
+  <HH.Kitchen.Cuisine>Küche: {0}</HH.Kitchen.Cuisine>
+  <HH.Kitchen.Cooked>Gekocht an: {0} ({1})</HH.Kitchen.Cooked>
+  <HH.Kitchen.Made>Zubereitet aus: {0}</HH.Kitchen.Made>
+  <HH.Kitchen.Signature>Spezialität des Hauses</HH.Kitchen.Signature>
+  <HH.Kitchen.Fine>Feines Gericht</HH.Kitchen.Fine>
+  <HH.Kitchen.Everyday>Alltagsgericht</HH.Kitchen.Everyday>
+  <HH.Kitchen.Level>Stufe {0}</HH.Kitchen.Level>
+  <HH.Kitchen.Stale>Abgestanden: kein Gut genährt, kein Stimmungsbonus.</HH.Kitchen.Stale>
+  <HH.Kitchen.FreshFor>Frisch für {0}</HH.Kitchen.FreshFor>
+  <HH.Kitchen.Stat.Well>Gut genährt</HH.Kitchen.Stat.Well>
+  <HH.Kitchen.Stat.WellDesc>Wie lange der Hunger nach diesem Gericht langsamer sinkt. Skaliert mit Lernstufe und Qualität.</HH.Kitchen.Stat.WellDesc>
+  <HH.Kitchen.Stat.Mood>Stimmung beim Essen</HH.Kitchen.Stat.Mood>
+  <HH.Kitchen.Stat.MoodDesc>Stimmungsbonus durch ein ordentliches Gericht, je nach Lernstufe und Qualität (abgestandene Gerichte geben keinen).</HH.Kitchen.Stat.MoodDesc>
+  <HH.Tab.Kitchen>Kochbuch</HH.Tab.Kitchen>
+  <HH.Kitchen.Cookbook.Title>Kochbuch der Kolonie</HH.Kitchen.Cookbook.Title>
+  <HH.Kitchen.Cookbook.Known>{0} von {1} Gerichten bekannt</HH.Kitchen.Cookbook.Known>
+  <HH.Kitchen.Cookbook.Unknown>???</HH.Kitchen.Cookbook.Unknown>
+  <HH.Kitchen.Cookbook.UnknownHint>Noch nicht gelernt. Erforsche {0} oder finde ein Kochbuch.</HH.Kitchen.Cookbook.UnknownHint>
+  <HH.Kitchen.Cookbook.Level>Stufe {0}</HH.Kitchen.Cookbook.Level>
+  <HH.Kitchen.Cookbook.NoRecipe>Kein Rezept: {0}</HH.Kitchen.Cookbook.NoRecipe>
+  <HH.Kitchen.Cookbook.Dark>Verborgen: Die dunkle Speisekarte ist aus.</HH.Kitchen.Cookbook.Dark>
+  <HH.Kitchen.Cookbook.Filter>Nur Bekanntes zeigen</HH.Kitchen.Cookbook.Filter>
+  <HH.Kitchen.Cookbook.Search>Suchen</HH.Kitchen.Cookbook.Search>
+  <HH.Kitchen.Station.PrepCounter>Vorbereitungstisch</HH.Kitchen.Station.PrepCounter>
+  <HH.Kitchen.Station.StockPot>Suppentopf</HH.Kitchen.Station.StockPot>
+  <HH.Kitchen.Station.Grill>Grill</HH.Kitchen.Station.Grill>
+  <HH.Kitchen.Station.Oven>Ofen</HH.Kitchen.Station.Oven>
+  <HH.Kitchen.Station.Wok>Wok-Station</HH.Kitchen.Station.Wok>
+  <HH.Kitchen.Station.Fryer>Fritteuse</HH.Kitchen.Station.Fryer>
+  <HH.Kitchen.Station.Smoker>Räucherofen</HH.Kitchen.Station.Smoker>
+  <HH.Kitchen.Station.Steamer>Dampfgarer</HH.Kitchen.Station.Steamer>
+  <HH.Kitchen.Station.DoughBench>Teigtisch</HH.Kitchen.Station.DoughBench>
+  <HH.Kitchen.Station.ColdStation>Kaltküche</HH.Kitchen.Station.ColdStation>
+  <HH.Kitchen.Station.Campfire>Lagerfeuer</HH.Kitchen.Station.Campfire>
+  <HH.Kitchen.Station.Stove>Herd</HH.Kitchen.Station.Stove>
+  <HH.Kitchen.Station.ButcherTable>Schlachttisch</HH.Kitchen.Station.ButcherTable>
+  <HH.Kitchen.Step.Chop>schneiden</HH.Kitchen.Step.Chop>
+  <HH.Kitchen.Step.Simmer>köcheln</HH.Kitchen.Step.Simmer>
+  <HH.Kitchen.Step.Boil>kochen</HH.Kitchen.Step.Boil>
+  <HH.Kitchen.Step.Grill>grillen</HH.Kitchen.Step.Grill>
+  <HH.Kitchen.Step.KneadDough>Teig kneten</HH.Kitchen.Step.KneadDough>
+  <HH.Kitchen.Step.Smoke>räuchern</HH.Kitchen.Step.Smoke>
+  <HH.Kitchen.Step.Roast>braten</HH.Kitchen.Step.Roast>
+  <HH.Kitchen.Step.StirFry>anbraten im Wok</HH.Kitchen.Step.StirFry>
+  <HH.Kitchen.Step.DeepFry>frittieren</HH.Kitchen.Step.DeepFry>
+  <HH.Kitchen.Step.Steam>dämpfen</HH.Kitchen.Step.Steam>
+  <HH.Kitchen.Step.Chill>kühlen</HH.Kitchen.Step.Chill>
+  <HH.Kitchen.Step.Carve>tranchieren</HH.Kitchen.Step.Carve>
+  <HH.Kitchen.Step.SpitRoast>am Spieß braten</HH.Kitchen.Step.SpitRoast>
+  <HH.Kitchen.Step.PanFry>in der Pfanne braten</HH.Kitchen.Step.PanFry>
+  <HH.Kitchen.Step.Sear>scharf anbraten</HH.Kitchen.Step.Sear>
+  <HH.Kitchen.Cuisine.Frontier>Rustikal / Grenzland</HH.Kitchen.Cuisine.Frontier>
+  <HH.Kitchen.Cuisine.TribalFeast>Stammesfest</HH.Kitchen.Cuisine.TribalFeast>
+  <HH.Kitchen.Cuisine.TavernFare>Wirtshausküche</HH.Kitchen.Cuisine.TavernFare>
+  <HH.Kitchen.Cuisine.ImperialHaute>Kaiserliche Haute Cuisine</HH.Kitchen.Cuisine.ImperialHaute>
+  <HH.Kitchen.Cuisine.GlitterFusion>Glitzer-Fusion</HH.Kitchen.Cuisine.GlitterFusion>
+  <HH.Kitchen.Cuisine.Street>Straßenküche</HH.Kitchen.Cuisine.Street>
+  <HH.Kitchen.Cuisine.Seafood>Meeresfrüchte</HH.Kitchen.Cuisine.Seafood>
+  <HH.Kitchen.Cuisine.Insect>Insekten</HH.Kitchen.Cuisine.Insect>
+  <HH.Kitchen.Cuisine.Fungal>Pilze</HH.Kitchen.Cuisine.Fungal>
+  <HH.Kitchen.Cuisine.Vegetarian>Vegetarisch</HH.Kitchen.Cuisine.Vegetarian>
+  <HH.Kitchen.Cuisine.Ascetic>Asketisch</HH.Kitchen.Cuisine.Ascetic>
+  <HH.Kitchen.Cuisine.LongPork>Langschwein</HH.Kitchen.Cuisine.LongPork>
+  <HH.Kitchen.Ingredient.meat>Fleisch</HH.Kitchen.Ingredient.meat>
+  <HH.Kitchen.Ingredient.insectmeat>Insektenfleisch</HH.Kitchen.Ingredient.insectmeat>
+  <HH.Kitchen.Ingredient.humanmeat>Menschenfleisch</HH.Kitchen.Ingredient.humanmeat>
+  <HH.Kitchen.Ingredient.twistedmeat>Verdrehtes Fleisch</HH.Kitchen.Ingredient.twistedmeat>
+  <HH.Kitchen.Ingredient.fish>Fisch</HH.Kitchen.Ingredient.fish>
+  <HH.Kitchen.Ingredient.eggs>Eier</HH.Kitchen.Ingredient.eggs>
+  <HH.Kitchen.Ingredient.milk>Milch</HH.Kitchen.Ingredient.milk>
+  <HH.Kitchen.Ingredient.potatoes>Kartoffeln</HH.Kitchen.Ingredient.potatoes>
+  <HH.Kitchen.Ingredient.corn>Mais</HH.Kitchen.Ingredient.corn>
+  <HH.Kitchen.Ingredient.rice>Reis</HH.Kitchen.Ingredient.rice>
+  <HH.Kitchen.Ingredient.berries>Beeren</HH.Kitchen.Ingredient.berries>
+  <HH.Kitchen.Ingredient.agave>Agavenfrucht</HH.Kitchen.Ingredient.agave>
+  <HH.Kitchen.Ingredient.mushrooms>Pilze</HH.Kitchen.Ingredient.mushrooms>
+  <HH.Kitchen.Ingredient.chocolate>Schokolade</HH.Kitchen.Ingredient.chocolate>
+  <HH.Kitchen.Ingredient.beer>Bier</HH.Kitchen.Ingredient.beer>
+  <HH.Kitchen.Ingredient.hemogen>Hämogenbeutel</HH.Kitchen.Ingredient.hemogen>
+  <HH.Kitchen.Ingredient.cheese>Käse</HH.Kitchen.Ingredient.cheese>
+  <HH.Kitchen.Ingredient.pumpkin>Kürbis</HH.Kitchen.Ingredient.pumpkin>
+  <HH.Kitchen.Ingredient.flour>Mehl</HH.Kitchen.Ingredient.flour>
+  <HH.Kitchen.Ingredient.fruit>Obst</HH.Kitchen.Ingredient.fruit>
+  <HH.Kitchen.Ingredient.soysauce>Sojasauce</HH.Kitchen.Ingredient.soysauce>
+  <HH.Kitchen.Ingredient.wasabi>Wasabipaste</HH.Kitchen.Ingredient.wasabi>
+  <HH.Kitchen.Ingredient.vegetables>Gemüse</HH.Kitchen.Ingredient.vegetables>
+  <HH.Kitchen.Ingredient.sugar>Zucker</HH.Kitchen.Ingredient.sugar>
+  <HH.Kitchen.Ingredient.gourmet>Feinschmeckerzutaten</HH.Kitchen.Ingredient.gourmet>
+  <HH.Kitchen.Ingredient.herbs>Kräuter</HH.Kitchen.Ingredient.herbs>
+  <HH.Kitchen.Ingredient.nuts>Nüsse</HH.Kitchen.Ingredient.nuts>
+  <HH.Kitchen.Ingredient.tealeaves>Teeblätter</HH.Kitchen.Ingredient.tealeaves>
+  <HH.Kitchen.Ingredient.strawflour>Strohmehl</HH.Kitchen.Ingredient.strawflour>
+  <HH.Kitchen.Ingredient.pricklypear>Feigenkaktus</HH.Kitchen.Ingredient.pricklypear>
+  <HH.Kitchen.Ingredient.greenfruit>Grünfrucht</HH.Kitchen.Ingredient.greenfruit>
+  <HH.Setting.kitchen.shelfLife>Haltbarkeit der Gerichte</HH.Setting.kitchen.shelfLife>
+  <HH.Setting.kitchen.shelfLife.Desc>Wie lange Teller frisch bleiben, relativ zu den 3 bis 24 Stunden jedes Gerichts. Abgestandene Teller sind noch essbar, geben aber kein Gut genährt und keinen Stimmungsbonus.</HH.Setting.kitchen.shelfLife.Desc>
+  <HH.Setting.kitchen.wellFedStrength>Stärke von Gut genährt</HH.Setting.kitchen.wellFedStrength>
+  <HH.Setting.kitchen.wellFedStrength.Desc>Wie viel langsamer der Hunger nach einem ordentlichen Gericht sinkt (100 % = 40 % langsamer).</HH.Setting.kitchen.wellFedStrength.Desc>
+  <HH.Setting.kitchen.wellFedDuration>Dauer von Gut genährt</HH.Setting.kitchen.wellFedDuration>
+  <HH.Setting.kitchen.wellFedDuration.Desc>Wie lange der Zustand Gut genährt anhält, relativ zu 4 / 6 / 8 / 10 Stunden je nach Lernstufe (und Qualität).</HH.Setting.kitchen.wellFedDuration.Desc>
+  <HH.Setting.kitchen.menuPrice>Menüpreis</HH.Setting.kitchen.menuPrice>
+  <HH.Setting.kitchen.menuPrice.Desc>Preise, die ein Restaurant für Gerichte verlangt, relativ zur Standardkarte (Gerichtsstufe, Qualität und Form).</HH.Setting.kitchen.menuPrice.Desc>
+  <HH.Setting.kitchen.poisonRule>Keine Lebensmittelvergiftung aus einer guten Küche</HH.Setting.kitchen.poisonRule>
+  <HH.Setting.kitchen.poisonRule.Desc>Teller, die ein Koch mit Kochen 4 oder höher in einer sauberen Küche zubereitet (Sauberkeit -0,2 oder besser), können nie vergiften. Aus: Es gelten die Vanilla-Würfe.</HH.Setting.kitchen.poisonRule.Desc>
+  <HH.Setting.kitchen.variants>Feine und Spezialitäten-Formen</HH.Setting.kitchen.variants>
+  <HH.Setting.kitchen.variants.Desc>Bietet jedes Gericht in einer feinen Form (mehr und bessere Zutaten, bessere Chance auf gute Qualität) und einer Spezialitäten-Form (Forschung nötig) an.</HH.Setting.kitchen.variants.Desc>
+  <HH.Setting.kitchen.allKnown>Alle Gerichte bekannt</HH.Setting.kitchen.allKnown>
+  <HH.Setting.kitchen.allKnown.Desc>Lernen überspringen: Jedes Gericht der Karte kann gekocht werden, sobald die Geräte stehen.</HH.Setting.kitchen.allKnown.Desc>
+  <HH.Setting.kitchen.darkMenu>Dunkle Speisekarte (Langschwein)</HH.Setting.kitchen.darkMenu>
+  <HH.Setting.kitchen.darkMenu.Desc>Erlaubt die Langschwein-Gerichte. Sie werden auch von einer Ideologie freigeschaltet, die Kannibalismus gutheißt.</HH.Setting.kitchen.darkMenu.Desc>
+  <HH.Kitchen.Cookbook.Teaches>Lehrt: {0}</HH.Kitchen.Cookbook.Teaches>
+  <HH.Kitchen.Cookbook.Empty>Die Seiten sind leer.</HH.Kitchen.Cookbook.Empty>
+  <HH.Kitchen.Cookbook.AllKnown>Die Kolonie kennt bereits jedes Gericht in diesem Buch.</HH.Kitchen.Cookbook.AllKnown>
+  <HH.Kitchen.Cookbook.CannotCook>Kann nicht kochen.</HH.Kitchen.Cookbook.CannotCook>
+  <HH.Kitchen.Cookbook.Learned>{0} studiert das Buch. Die Kolonie kann jetzt kochen: {1}.</HH.Kitchen.Cookbook.Learned>
+  <HH.Kitchen.TestKitchen.Success>{0} hat herausgefunden, wie man {1} kocht. Die Kolonie wird sich erinnern.</HH.Kitchen.TestKitchen.Success>
+  <HH.Kitchen.TestKitchen.Failure>{0} hat versucht, {1} zu kochen, und einen schrecklichen Teller daraus gemacht. Vielleicht klappt es beim nächsten Mal.</HH.Kitchen.TestKitchen.Failure>
+  <HH.Kitchen.NoNeighbours>Kein anderes Küchengerät in Reichweite.</HH.Kitchen.NoNeighbours>
+  <HH.Kitchen.Neighbours>In Reichweite: {0}</HH.Kitchen.Neighbours>
+  <HH.Kitchen.FreshHours>Frisch für {0} Std.</HH.Kitchen.FreshHours>
+</LanguageData>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Compat.DialogTitle>Hospitality работает вместе с Hearth &amp; Harbor. Отключить его для вас?</HH.Compat.DialogTitle>
+  <HH.Compat.DialogBody>Hearth &amp; Harbor заменяет Hospitality и его дополнения. Пока оба активны, Hearth &amp; Harbor отключил Hospitality на эту сессию: его патчи, события, постройки и вкладка гостей не работают. Ваши гостевые кровати и зоны Hospitality сохраняются и переходят к Hearth &amp; Harbor, когда Hospitality будет убран.</HH.Compat.DialogBody>
+  <HH.Compat.DialogListHeader>Эти моды будут отключены:</HH.Compat.DialogListHeader>
+  <HH.Compat.DialogMentionHeader>Эти гостевые моды остаются как есть; их посетители остаются за ними:</HH.Compat.DialogMentionHeader>
+  <HH.Compat.DialogFailed>Список модов не удалось изменить автоматически ({0}). Пожалуйста, сделайте это вручную:</HH.Compat.DialogFailed>
+  <HH.Compat.DialogStep1>1. Главное меню → Моды</HH.Compat.DialogStep1>
+  <HH.Compat.DialogStep2>2. Снимите галочки с модов из списка выше</HH.Compat.DialogStep2>
+  <HH.Compat.DialogStep3>3. Сохраните список модов и перезапустите игру</HH.Compat.DialogStep3>
+  <HH.Compat.Yes>Да, отключить и перезапустить</HH.Compat.Yes>
+  <HH.Compat.OpenMods>Открыть список модов</HH.Compat.OpenMods>
+  <HH.Compat.Later>Позже</HH.Compat.Later>
+  <HH.Compat.Never>Больше не спрашивать</HH.Compat.Never>
+  <HH.Compat.ImportLetterTitle>Импорт из Hospitality</HH.Compat.ImportLetterTitle>
+  <HH.Compat.ImportLetterText>Эта колония велась с Hospitality. Hearth &amp; Harbor перенял то, что смог.\n\nПеренесено: {0}.\nОтброшено: {1}.\n\nПеренесённые гостевые кровати снова стали обычными кроватями и запомнены как гостевые; гостевая часть Hearth &amp; Harbor подхватит их. Ничто другое в вашей колонии не изменилось.</HH.Compat.ImportLetterText>
+  <HH.Compat.ImportNothing>ничего</HH.Compat.ImportNothing>
+  <HH.Setting.compat.hospitalityNeverAsk>Не предлагать отключить Hospitality</HH.Setting.compat.hospitalityNeverAsk>
+  <HH.Setting.compat.hospitalityNeverAsk.Desc>Если Hospitality работает вместе с Hearth &amp; Harbor, Hearth &amp; Harbor отключает его на время сессии и предлагает отключить его окончательно в главном меню. Включено: предложений больше не будет (отключение на сессию всё равно произойдёт).</HH.Setting.compat.hospitalityNeverAsk.Desc>
+  <HH.Setting.compat.importLetter>Письмо после импорта сохранения Hospitality</HH.Setting.compat.importLetter>
+  <HH.Setting.compat.importLetter.Desc>После загрузки сохранения, которое велось с Hospitality, письмо перечисляет, что Hearth &amp; Harbor перенял (гостевые кровати, зоны, посетителей), и что было отброшено.</HH.Setting.compat.importLetter.Desc>
+</LanguageData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_ProjectorScreen.label>projekční plátno</HH_ProjectorScreen.label>
+  <HH_ProjectorScreen.description>Široké plátno s projektorem přišroubovaným ke stropnímu trámu nad ním. Postavte před něj židle, pověste do místnosti cedulku a zhasněte: hosté zaplatí za místo a kolonisté dostanou filmový večer. Filmy jsou staré, hlasité a nikdo si nepamatuje, kdo je natočil.</HH_ProjectorScreen.description>
+  <HH_SalonChair.label>kadeřnické křeslo</HH_SalonChair.label>
+  <HH_SalonChair.description>Polstrované křeslo s nastavitelnou výškou, pláštěm, zrcadlem na zdi za ním a zásuvkou plnou nůžek. Kolonista stojící za křeslem dá sedícímu nový vzhled. Kolonisté ho používají zdarma; hosté platí.</HH_SalonChair.description>
+  <HH_ParkBench.label>lavička v parku</HH_ParkBench.label>
+  <HH_ParkBench.description>Prostá lavička pro dva s výhledem. Nic se nekupuje, nic se nepodepisuje: lidé si sednou, dívají se na to, co je k vidění, a je jim z toho trochu lépe. Čím hezčí okolí, tím lépe.</HH_ParkBench.description>
+  <HH_TaxiStand.label>taxi stanoviště</HH_TaxiStand.label>
+  <HH_TaxiStand.description>Vymalovaný čtverec země, ukazatel a volací box. Odjíždějící hosté, kteří nechtějí jít pěšky k okraji mapy, sem zavolají malý člunový taxík a zaplatí jízdu; některé příjezdy sem slavnostně přistanou. Potřebuje volné nebe nad sebou, aby na něj mohl taxík přistát.</HH_TaxiStand.description>
+  <HH_TaxiIncoming.label>taxi (přijíždí)</HH_TaxiIncoming.label>
+  <HH_TaxiLeaving.label>taxi (odjíždí)</HH_TaxiLeaving.label>
+</LanguageData>

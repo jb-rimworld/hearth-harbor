@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Setting.wellness.priceHotTub>Preis Whirlpool</HH.Setting.wellness.priceHotTub>
+  <HH.Setting.wellness.priceHotTub.Desc>Was ein Gast für ein Bad im Whirlpool zahlt. Wird mit dem Preisfaktor des Geschäfts multipliziert.</HH.Setting.wellness.priceHotTub.Desc>
+  <HH.Setting.wellness.priceSauna>Preis Sauna</HH.Setting.wellness.priceSauna>
+  <HH.Setting.wellness.priceSauna.Desc>Was ein Gast für einen Saunagang zahlt.</HH.Setting.wellness.priceSauna.Desc>
+  <HH.Setting.wellness.priceMassage>Preis Massage</HH.Setting.wellness.priceMassage>
+  <HH.Setting.wellness.priceMassage.Desc>Was ein Gast für eine Massage zahlt. Wird nur angeboten, wenn ein Kolonist mit dem Arbeitstyp Bedienen Zeit dafür hat.</HH.Setting.wellness.priceMassage.Desc>
+  <HH.Setting.wellness.dayPass>Tageskarten verkaufen</HH.Setting.wellness.dayPass>
+  <HH.Setting.wellness.dayPass.Desc>Wohlhabendere Gäste kaufen eine Tageskarte, statt pro Anwendung zu zahlen. Sie deckt Whirlpool und Sauna ab, aber keine Massage.</HH.Setting.wellness.dayPass.Desc>
+  <HH.Setting.wellness.priceDayPass>Preis Tageskarte</HH.Setting.wellness.priceDayPass>
+  <HH.Setting.wellness.priceDayPass.Desc>Preis der Spa-Tageskarte (Whirlpool und Sauna für die Dauer der Karte).</HH.Setting.wellness.priceDayPass.Desc>
+  <HH.Setting.wellness.dayPassHours>Gültigkeit der Tageskarte (Stunden)</HH.Setting.wellness.dayPassHours>
+  <HH.Setting.wellness.dayPassHours.Desc>Wie lange eine Tageskarte gültig bleibt.</HH.Setting.wellness.dayPassHours.Desc>
+  <HH.Setting.wellness.selfServiceDiscount>Selbstbedienungsrabatt</HH.Setting.wellness.selfServiceDiscount>
+  <HH.Setting.wellness.selfServiceDiscount.Desc>Preisnachlass, wenn sich kein Personal im Raum befindet. Ein Kolonist mit dem Arbeitstyp Bedienen, der im Raum steht, zählt als Personal.</HH.Setting.wellness.selfServiceDiscount.Desc>
+  <HH.Setting.wellness.hoursHotTub>Whirlpool-Sitzung (Stunden)</HH.Setting.wellness.hoursHotTub>
+  <HH.Setting.wellness.hoursHotTub.Desc>Wie lange ein Bad dauert.</HH.Setting.wellness.hoursHotTub.Desc>
+  <HH.Setting.wellness.hoursSauna>Saunagang (Stunden)</HH.Setting.wellness.hoursSauna>
+  <HH.Setting.wellness.hoursSauna.Desc>Wie lange ein Saunagang dauert.</HH.Setting.wellness.hoursSauna.Desc>
+  <HH.Setting.wellness.hoursMassage>Massage (Stunden)</HH.Setting.wellness.hoursMassage>
+  <HH.Setting.wellness.hoursMassage.Desc>Wie lange eine Massage dauert. Masseur und Kunde sind so lange beschäftigt.</HH.Setting.wellness.hoursMassage.Desc>
+  <HH.Setting.wellness.massageWaitHours>Warten auf einen Masseur (Stunden)</HH.Setting.wellness.massageWaitHours>
+  <HH.Setting.wellness.massageWaitHours.Desc>Wie lange jemand auf der Liege auf einen Masseur wartet, bevor er aufgibt.</HH.Setting.wellness.massageWaitHours.Desc>
+  <HH.Setting.wellness.saunaMinTemp>Mindesttemperatur der Sauna (°C)</HH.Setting.wellness.saunaMinTemp>
+  <HH.Setting.wellness.saunaMinTemp.Desc>Ein Saunaofen zählt nur dann als funktionierende Sauna, wenn sein Raum mindestens so warm ist.</HH.Setting.wellness.saunaMinTemp.Desc>
+  <HH.Setting.wellness.joyFactor>Erholungsfaktor</HH.Setting.wellness.joyFactor>
+  <HH.Setting.wellness.joyFactor.Desc>Multiplikator auf die Erholung, die Kolonisten durch Whirlpool, Sauna und Massage gewinnen.</HH.Setting.wellness.joyFactor.Desc>
+  <HH.Setting.wellness.restBonus>Ruhebonus pro Anwendung</HH.Setting.wellness.restBonus>
+  <HH.Setting.wellness.restBonus.Desc>Anteil des Ruhebalkens, der durch eine Anwendung aufgefüllt wird (bei einer Massage etwas mehr). Auf 0 setzen für keinen Bonus.</HH.Setting.wellness.restBonus.Desc>
+  <HH.Setting.wellness.soothe>Beruhigt nach einer Anwendung</HH.Setting.wellness.soothe>
+  <HH.Setting.wellness.soothe.Desc>Nach einer Anwendung ist die Spielfigur etwa einen Tag lang beruhigt: Schmerz wird um 15 % schwächer empfunden.</HH.Setting.wellness.soothe.Desc>
+  <HH.Setting.wellness.massageXp>Masseur-Erfahrung pro Massage</HH.Setting.wellness.massageXp>
+  <HH.Setting.wellness.massageXp.Desc>Erfahrung in Soziales und Medizin, die der Masseur für eine vollständige Massage erhält.</HH.Setting.wellness.massageXp.Desc>
+  <HH.Setting.wellness.satisfaction>Gästezufriedenheit pro Anwendung</HH.Setting.wellness.satisfaction>
+  <HH.Setting.wellness.satisfaction.Desc>Wie stark eine abgeschlossene Anwendung die Zufriedenheit eines Gastes steigert (Skala -1 bis +1).</HH.Setting.wellness.satisfaction.Desc>
+  <HH.Setting.wellness.guestWeight>Interesse der Gäste am Spa</HH.Setting.wellness.guestWeight>
+  <HH.Setting.wellness.guestWeight.Desc>Wie sehr Gäste das Spa im Vergleich zu anderen Aktivitäten wollen. 0 = sie gehen nie hin.</HH.Setting.wellness.guestWeight.Desc>
+  <HH.Setting.wellness.guestCooldownHours>Pause der Gäste zwischen Anwendungen (Stunden)</HH.Setting.wellness.guestCooldownHours>
+  <HH.Setting.wellness.guestCooldownHours.Desc>Ein Gast beginnt frühestens nach dieser Zeit eine weitere Spa-Anwendung.</HH.Setting.wellness.guestCooldownHours.Desc>
+  <HH.Setting.wellness.rehabJoy>Patienten dürfen das Spa nutzen</HH.Setting.wellness.rehabJoy>
+  <HH.Setting.wellness.rehabJoy.Desc>Ist RimWard aktiv, dürfen gehfähige Patienten in einem Krankenbett der Kolonie Whirlpool, Sauna und Massageliege zur Erholung besuchen (nie die Sauna nach einer Operation oder mit offenen Wunden).</HH.Setting.wellness.rehabJoy.Desc>
+  <HH.Wellness.Yes>ja</HH.Wellness.Yes>
+  <HH.Wellness.No>nein</HH.Wellness.No>
+  <HH.Wellness.Inspect.SaunaReady>Sauna bereit: {0} °C.</HH.Wellness.Inspect.SaunaReady>
+  <HH.Wellness.Inspect.SaunaNotReady>Noch keine funktionierende Sauna: {0} °C von nötigen {1} °C ({2}).</HH.Wellness.Inspect.SaunaNotReady>
+  <HH.Wellness.Inspect.TubReady>Whirlpool bereit.</HH.Wellness.Inspect.TubReady>
+  <HH.Wellness.Inspect.TubNotReady>Whirlpool unbenutzbar: {0}.</HH.Wellness.Inspect.TubNotReady>
+  <HH.Wellness.Inspect.MassageFree>Massageliege frei.</HH.Wellness.Inspect.MassageFree>
+  <HH.Wellness.Inspect.MassageWaiting>Jemand wartet auf einen Masseur.</HH.Wellness.Inspect.MassageWaiting>
+  <HH.Wellness.Inspect.MassageRunning>Massage läuft.</HH.Wellness.Inspect.MassageRunning>
+  <HH.Wellness.Inspect.Users>Kolonisten dürfen nutzen: {0}. Gäste dürfen nutzen: {1}.</HH.Wellness.Inspect.Users>
+  <HH.Wellness.Gizmo.Colonists>Kolonisten dürfen nutzen</HH.Wellness.Gizmo.Colonists>
+  <HH.Wellness.Gizmo.ColonistsDesc>Kolonisten erlauben, dies zur Erholung zu nutzen. Ausschalten, solange das Spa für Kundschaft geöffnet ist.</HH.Wellness.Gizmo.ColonistsDesc>
+  <HH.Wellness.Gizmo.Guests>Gäste dürfen nutzen</HH.Wellness.Gizmo.Guests>
+  <HH.Wellness.Gizmo.GuestsDesc>Gästen erlauben, dies zu nutzen (sie zahlen, wenn es in einem Spa-Geschäft steht).</HH.Wellness.Gizmo.GuestsDesc>
+</LanguageData>

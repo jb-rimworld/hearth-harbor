@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Gene_Hospitable.label>gastfreundlich</HH_Gene_Hospitable.label>
+  <HH_Gene_Hospitable.description>Träger sind warmherzig, ohne sich anzustrengen. Gäste fühlen sich in ihrer Nähe wohl, und das Gastgeben geht ihnen leichter von der Hand.</HH_Gene_Hospitable.description>
+  <HH_Gene_AddictionProofReward.label>suchtfestes Belohnungssystem</HH_Gene_AddictionProofReward.label>
+  <HH_Gene_AddictionProofReward.description>Das Belohnungssystem des Gehirns reagiert kaum auf Risiko und Zufall. Glücksspiel wird nur selten zur Gewohnheit.</HH_Gene_AddictionProofReward.description>
+  <HH_Gene_Compulsive.label>zwanghaft</HH_Gene_Compulsive.label>
+  <HH_Gene_Compulsive.description>Ein überaktives Belohnungssystem. Glücksspiel macht etwas mehr Spaß und fällt viel schwerer, wieder sein zu lassen.</HH_Gene_Compulsive.description>
+  <HH_Gene_DexterousFingers.label>geschickte Finger</HH_Gene_DexterousFingers.label>
+  <HH_Gene_DexterousFingers.description>Ungewöhnlich feine Handkontrolle: Mischen, Austeilen und Wegpalmieren gehen wie von selbst.</HH_Gene_DexterousFingers.description>
+  <HH_Gene_RefinedPalate.label>feiner Gaumen</HH_Gene_RefinedPalate.label>
+  <HH_Gene_RefinedPalate.description>Eine Zunge, die gute Küche von bloß Essbarem unterscheidet. Köche heben die Qualität ihrer Gerichte öfter an; als Gast erwartet der Träger mehr und gibt mehr Trinkgeld.</HH_Gene_RefinedPalate.description>
+  <HH_Gene_NumberSense.label>Zahlensinn</HH_Gene_NumberSense.label>
+  <HH_Gene_NumberSense.description>Zahlen ordnen sich von selbst. Croupiers, Kassierer und Bankangestellte mit diesem Gen arbeiten, als wären sie drei Fertigkeitsstufen besser.</HH_Gene_NumberSense.description>
+  <HH_Gene_TirelessSmile.label>unermüdliches Lächeln</HH_Gene_TirelessSmile.label>
+  <HH_Gene_TirelessSmile.description>Die Lächelmuskeln ermüden nicht. Das Bedienen an Tischen und Tresen zehrt viel langsamer an der Erholung.</HH_Gene_TirelessSmile.description>
+  <HH_Gene_SilverTongue.label>Silberzunge</HH_Gene_SilverTongue.label>
+  <HH_Gene_SilverTongue.description>Eine Stimme, die jeden Preis wie ein Schnäppchen klingen lässt. Gäste erwarten etwas weniger, und Treue wird billiger.</HH_Gene_SilverTongue.description>
+  <HH_Gene_HighRoller.label>Hochspieler</HH_Gene_HighRoller.label>
+  <HH_Gene_HighRoller.description>Träger fühlen sich am lebendigsten, wenn viel auf dem Spiel steht. Sie setzen mehr, genießen es mehr und geben großzügig Trinkgeld, lassen sich aber auch schwerer vom Tisch wegziehen.</HH_Gene_HighRoller.description>
+</LanguageData>

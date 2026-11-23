@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Cinema.label>cinema</HH_Venue_Cinema.label>
+  <HH_Venue_Cinema.description>Uma sala escura com uma tela de projeção e muitas cadeiras. Visitantes compram ingresso para a próxima sessão; uma sessão dura o tempo do filme e ninguém recebe reembolso por ter dormido. Precisa de uma tela de projeção com energia e pelo menos alguns assentos em frente.</HH_Venue_Cinema.description>
+  <HH_Venue_Salon.label>salão de beleza</HH_Venue_Salon.label>
+  <HH_Venue_Salon.description>Um cômodo com cadeiras de salão. Visitantes pagam por corte de cabelo, novo penteado, coloração ou, com a ideologia certa, uma tatuagem; um colono com a tarefa de servir faz o trabalho. Sem ninguém para atender, o salão fica fechado.</HH_Venue_Salon.description>
+  <HH_Venue_Gallery.label>galeria</HH_Venue_Gallery.label>
+  <HH_Venue_Gallery.description>Um cômodo cheio de esculturas, expostas com boa iluminação. Visitantes pagam uma pequena taxa de entrada e passam pelas peças uma a uma; quanto mais bonita a arte, mais feliz sai o visitante. Precisa de um punhado de obras de arte no cômodo.</HH_Venue_Gallery.description>
+</LanguageData>

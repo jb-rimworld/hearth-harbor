@@ -1,0 +1,9 @@
+{
+ "keyed": {
+  "HH.Setting.core.researchMode": "Modo de pesquisa",
+  "HH.Setting.core.researchMode.Desc": "Completo: as árvores de pesquisa de Hearth & Harbor e Silverline controlam as construções e os recursos. Desligado: tudo está disponível desde o início (os projetos sombrios do submundo ainda precisam ser descobertos).",
+  "HH.Enum.CoreResearchMode.Full": "Completo",
+  "HH.Enum.CoreResearchMode.Off": "Desligado"
+ },
+ "defs": {}
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Guide_OpeningDay.label>Jour d'ouverture</HH_Guide_OpeningDay.label>
+  <HH_Guide_OpeningDay.description>Trois étapes entre un lit et votre premier argent. Pas de recherche, pas de zones, pas de réglages.</HH_Guide_OpeningDay.description>
+  <HH_Guide_YourGuests.label>Vos hôtes en un coup d'œil</HH_Guide_YourGuests.label>
+  <HH_Guide_YourGuests.description>Où voir comment vont vos hôtes.</HH_Guide_YourGuests.description>
+  <HH_Guide_FirstVenue.label>Votre premier établissement</HH_Guide_FirstVenue.label>
+  <HH_Guide_FirstVenue.description>Une enseigne transforme une pièce en commerce.</HH_Guide_FirstVenue.description>
+  <HH_Guide_Bank.label>L'argent à la banque</HH_Guide_Bank.label>
+  <HH_Guide_Bank.description>Silverline garde vos recettes en sécurité et permet aux hôtes de payer par carte.</HH_Guide_Bank.description>
+</LanguageData>

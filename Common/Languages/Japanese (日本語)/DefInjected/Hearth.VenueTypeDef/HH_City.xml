@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Cinema.label>映画館</HH_Venue_Cinema.label>
+  <HH_Venue_Cinema.description>プロジェクタースクリーンと多数の座席のある暗い部屋。客は次の上映のチケットを買います。上映は映画の長さの間続き、居眠りしても返金はありません。電源の入ったプロジェクタースクリーンと、その前に少なくとも数席が必要です。</HH_Venue_Cinema.description>
+  <HH_Venue_Salon.label>美容院</HH_Venue_Salon.label>
+  <HH_Venue_Salon.description>サロンチェアのある部屋。客はヘアカット、新しいスタイル、染髪、または正しい思想があればタトゥーに料金を払います。接客作業の作業種別を持つ入植者が施術します。接客する者がいなければサロンは閉店です。</HH_Venue_Salon.description>
+  <HH_Venue_Gallery.label>ギャラリー</HH_Venue_Gallery.label>
+  <HH_Venue_Gallery.description>彫刻で満たされた、よい光の入る部屋。客は少額の入場料を払い、作品を一つずつ通り過ぎます。芸術が美しいほど、客は満足して帰ります。部屋に数点の芸術作品が必要です。</HH_Venue_Gallery.description>
+</LanguageData>

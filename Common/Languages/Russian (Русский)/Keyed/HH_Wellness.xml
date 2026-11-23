@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Setting.wellness.priceHotTub>Цена джакузи</HH.Setting.wellness.priceHotTub>
+  <HH.Setting.wellness.priceHotTub.Desc>Сколько гость платит за одно погружение в джакузи. Умножается на коэффициент цен заведения.</HH.Setting.wellness.priceHotTub.Desc>
+  <HH.Setting.wellness.priceSauna>Цена сауны</HH.Setting.wellness.priceSauna>
+  <HH.Setting.wellness.priceSauna.Desc>Сколько гость платит за один сеанс в сауне.</HH.Setting.wellness.priceSauna.Desc>
+  <HH.Setting.wellness.priceMassage>Цена массажа</HH.Setting.wellness.priceMassage>
+  <HH.Setting.wellness.priceMassage.Desc>Сколько гость платит за один массаж. Предлагается, только если свободен колонист с типом работы «Обслуживание».</HH.Setting.wellness.priceMassage.Desc>
+  <HH.Setting.wellness.dayPass>Продавать дневные абонементы</HH.Setting.wellness.dayPass>
+  <HH.Setting.wellness.dayPass.Desc>Состоятельные гости покупают дневной абонемент вместо оплаты каждого сеанса. Он действует на джакузи и сауну, но не на массаж.</HH.Setting.wellness.dayPass.Desc>
+  <HH.Setting.wellness.priceDayPass>Цена дневного абонемента</HH.Setting.wellness.priceDayPass>
+  <HH.Setting.wellness.priceDayPass.Desc>Цена дневного абонемента в спа (джакузи и сауна на время действия абонемента).</HH.Setting.wellness.priceDayPass.Desc>
+  <HH.Setting.wellness.dayPassHours>Срок действия абонемента (часы)</HH.Setting.wellness.dayPassHours>
+  <HH.Setting.wellness.dayPassHours.Desc>Как долго действует дневной абонемент.</HH.Setting.wellness.dayPassHours.Desc>
+  <HH.Setting.wellness.selfServiceDiscount>Скидка за самообслуживание</HH.Setting.wellness.selfServiceDiscount>
+  <HH.Setting.wellness.selfServiceDiscount.Desc>Снижение цены, когда в помещении никого из персонала нет. Колонист с типом работы «Обслуживание», стоящий в помещении, считается персоналом.</HH.Setting.wellness.selfServiceDiscount.Desc>
+  <HH.Setting.wellness.hoursHotTub>Сеанс в джакузи (часы)</HH.Setting.wellness.hoursHotTub>
+  <HH.Setting.wellness.hoursHotTub.Desc>Как долго длится одно погружение.</HH.Setting.wellness.hoursHotTub.Desc>
+  <HH.Setting.wellness.hoursSauna>Сеанс в сауне (часы)</HH.Setting.wellness.hoursSauna>
+  <HH.Setting.wellness.hoursSauna.Desc>Как долго длится один сеанс в сауне.</HH.Setting.wellness.hoursSauna.Desc>
+  <HH.Setting.wellness.hoursMassage>Массаж (часы)</HH.Setting.wellness.hoursMassage>
+  <HH.Setting.wellness.hoursMassage.Desc>Как долго длится один массаж. Массажист и клиент все это время заняты.</HH.Setting.wellness.hoursMassage.Desc>
+  <HH.Setting.wellness.massageWaitHours>Ожидание массажиста (часы)</HH.Setting.wellness.massageWaitHours>
+  <HH.Setting.wellness.massageWaitHours.Desc>Как долго человек лежит на столе и ждет массажиста, прежде чем сдаться.</HH.Setting.wellness.massageWaitHours.Desc>
+  <HH.Setting.wellness.saunaMinTemp>Минимальная температура сауны (°C)</HH.Setting.wellness.saunaMinTemp>
+  <HH.Setting.wellness.saunaMinTemp.Desc>Печь сауны считается рабочей, только если в её помещении не холоднее этой температуры.</HH.Setting.wellness.saunaMinTemp.Desc>
+  <HH.Setting.wellness.joyFactor>Коэффициент прироста развлечения</HH.Setting.wellness.joyFactor>
+  <HH.Setting.wellness.joyFactor.Desc>Множитель развлечения, которое колонисты получают от джакузи, сауны и массажа.</HH.Setting.wellness.joyFactor.Desc>
+  <HH.Setting.wellness.restBonus>Бонус отдыха за сеанс</HH.Setting.wellness.restBonus>
+  <HH.Setting.wellness.restBonus.Desc>Доля шкалы отдыха, восстанавливаемая за сеанс (за массаж чуть больше). Поставьте 0, чтобы бонуса не было.</HH.Setting.wellness.restBonus.Desc>
+  <HH.Setting.wellness.soothe>Успокоение после сеанса</HH.Setting.wellness.soothe>
+  <HH.Setting.wellness.soothe.Desc>После сеанса пешка успокаивается примерно на день: боль ощущается на 15 % слабее.</HH.Setting.wellness.soothe.Desc>
+  <HH.Setting.wellness.massageXp>Опыт массажиста за массаж</HH.Setting.wellness.massageXp>
+  <HH.Setting.wellness.massageXp.Desc>Опыт в Общении и Медицине, который массажист получает за полный массаж.</HH.Setting.wellness.massageXp.Desc>
+  <HH.Setting.wellness.satisfaction>Удовлетворенность гостя за сеанс</HH.Setting.wellness.satisfaction>
+  <HH.Setting.wellness.satisfaction.Desc>Насколько законченный сеанс повышает удовлетворенность гостя (шкала от -1 до +1).</HH.Setting.wellness.satisfaction.Desc>
+  <HH.Setting.wellness.guestWeight>Интерес гостей к спа</HH.Setting.wellness.guestWeight>
+  <HH.Setting.wellness.guestWeight.Desc>Насколько гости хотят пойти в спа по сравнению с другими занятиями. 0 означает, что они не придут никогда.</HH.Setting.wellness.guestWeight.Desc>
+  <HH.Setting.wellness.guestCooldownHours>Пауза гостя между сеансами (часы)</HH.Setting.wellness.guestCooldownHours>
+  <HH.Setting.wellness.guestCooldownHours.Desc>Гость не начнет следующий сеанс в спа раньше, чем через это время.</HH.Setting.wellness.guestCooldownHours.Desc>
+  <HH.Setting.wellness.rehabJoy>Пациентам можно пользоваться спа</HH.Setting.wellness.rehabJoy>
+  <HH.Setting.wellness.rehabJoy.Desc>Если активен RimWard, ходячие пациенты на медицинской койке колонии могут ради развлечения заходить в джакузи, сауну и на массажный стол (но никогда в сауну после операции или с открытыми ранами).</HH.Setting.wellness.rehabJoy.Desc>
+  <HH.Wellness.Yes>да</HH.Wellness.Yes>
+  <HH.Wellness.No>нет</HH.Wellness.No>
+  <HH.Wellness.Inspect.SaunaReady>Сауна готова: {0} °C.</HH.Wellness.Inspect.SaunaReady>
+  <HH.Wellness.Inspect.SaunaNotReady>Сауна пока не работает: {0} °C из {1} °C нужных ({2}).</HH.Wellness.Inspect.SaunaNotReady>
+  <HH.Wellness.Inspect.TubReady>Джакузи готово.</HH.Wellness.Inspect.TubReady>
+  <HH.Wellness.Inspect.TubNotReady>Джакузи не работает: {0}.</HH.Wellness.Inspect.TubNotReady>
+  <HH.Wellness.Inspect.MassageFree>Массажный стол свободен.</HH.Wellness.Inspect.MassageFree>
+  <HH.Wellness.Inspect.MassageWaiting>Кто-то ждет массажиста.</HH.Wellness.Inspect.MassageWaiting>
+  <HH.Wellness.Inspect.MassageRunning>Идет массаж.</HH.Wellness.Inspect.MassageRunning>
+  <HH.Wellness.Inspect.Users>Колонисты могут пользоваться: {0}. Гости могут пользоваться: {1}.</HH.Wellness.Inspect.Users>
+  <HH.Wellness.Gizmo.Colonists>Колонисты могут пользоваться</HH.Wellness.Gizmo.Colonists>
+  <HH.Wellness.Gizmo.ColonistsDesc>Разрешить колонистам пользоваться этим для отдыха. Выключите, пока спа работает для гостей.</HH.Wellness.Gizmo.ColonistsDesc>
+  <HH.Wellness.Gizmo.Guests>Гости могут пользоваться</HH.Wellness.Gizmo.Guests>
+  <HH.Wellness.Gizmo.GuestsDesc>Разрешить гостям пользоваться этим (они платят, если это стоит в помещении спа).</HH.Wellness.Gizmo.GuestsDesc>
+</LanguageData>

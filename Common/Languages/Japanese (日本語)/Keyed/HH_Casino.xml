@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.Casino>カジノ</HH.Tab.Casino>
+  <HH.Casino.TabTitle>カジノ</HH.Casino.TabTitle>
+  <HH.Casino.LimitsToggle>テーブルの上限を適用する（賭け金 {0}〜{1} 銀）</HH.Casino.LimitsToggle>
+  <HH.Casino.LosingWarning>この賭けでは店が損をしています: {0}。このオッズでは、客は賭け金より多く稼ぎます。</HH.Casino.LosingWarning>
+  <HH.Casino.BalancedBadge>どのゲームにも胴元の取り分（ハウスエッジ）があり、長期的にはカジノが儲かります。</HH.Casino.BalancedBadge>
+  <HH.Casino.Houses>店</HH.Casino.Houses>
+  <HH.Casino.NoHouses>まだ誰も賭けていません。最初の参加金が出たときに、店の帳簿が開かれます。</HH.Casino.NoHouses>
+  <HH.Casino.HouseOfMap>{0}のカジノ</HH.Casino.HouseOfMap>
+  <HH.Casino.Drawer>引き出し: {0}</HH.Casino.Drawer>
+  <HH.Casino.TodayNet>本日: {0}</HH.Casino.TodayNet>
+  <HH.Casino.HouseTip>今、客は {0} 銀で遊んでいます。店は {1} 銀の手元資金（フロート）を持ち、それを超える分は閉店までコロニーに渡されます。</HH.Casino.HouseTip>
+  <HH.Casino.Games>ゲーム: 実際の払い戻し率と設計上の払い戻し率</HH.Casino.Games>
+  <HH.Casino.ColGame>ゲーム</HH.Casino.ColGame>
+  <HH.Casino.ColRounds>回数</HH.Casino.ColRounds>
+  <HH.Casino.ColStaked>賭け金総額</HH.Casino.ColStaked>
+  <HH.Casino.ColRtp>払い戻し率（実績）</HH.Casino.ColRtp>
+  <HH.Casino.ColExpected>払い戻し率（設計）</HH.Casino.ColExpected>
+  <HH.Casino.ColLuck>運</HH.Casino.ColLuck>
+  <HH.Casino.ColHouse>店の収支</HH.Casino.ColHouse>
+  <HH.Casino.Game.Slots>スロットマシン</HH.Casino.Game.Slots>
+  <HH.Casino.Game.Roulette>ルーレット</HH.Casino.Game.Roulette>
+  <HH.Casino.Game.Blackjack>ブラックジャック</HH.Casino.Game.Blackjack>
+  <HH.Casino.Game.Poker>Rimdeck</HH.Casino.Game.Poker>
+  <HH.Casino.Gamblers>賭けをするコロニスト</HH.Casino.Gamblers>
+  <HH.Casino.NoGamblers>コロニーで賭けをした人はまだいません。</HH.Casino.NoGamblers>
+  <HH.Casino.InspectGame>{0}: 席 {2} 中 {1} 席が埋まっています</HH.Casino.InspectGame>
+  <HH.Casino.InspectBooks>{0} 回 · 店の収支 {1} · 実際のエッジ {2} %（設計 {3} %）</HH.Casino.InspectBooks>
+  <HH.Casino.InspectToday>本日: {0} 回、店の収支 {1}</HH.Casino.InspectToday>
+  <HH.Casino.InspectLuck>通算の運: {0}</HH.Casino.InspectLuck>
+  <HH.Casino.Staffed>ディーラーが対応中</HH.Casino.Staffed>
+  <HH.Casino.NoCroupier>ディーラーなし</HH.Casino.NoCroupier>
+  <HH.Casino.Vol.Low>低ボラティリティ</HH.Casino.Vol.Low>
+  <HH.Casino.Vol.Medium>中ボラティリティ</HH.Casino.Vol.Medium>
+  <HH.Casino.Vol.High>高ボラティリティ</HH.Casino.Vol.High>
+  <HH.Casino.VolDesc>クリックで払い方を変更します。どの設定でも的中率 {0}、賭け金の {1} 倍の振れ幅、ジャックポット ×{2}、払い戻し率 {3} %。</HH.Casino.VolDesc>
+  <HH.Casino.OpenToGuests>客に開放</HH.Casino.OpenToGuests>
+  <HH.Casino.OpenToGuestsDesc>オフにすると、この装置はコロニストだけが使えます。</HH.Casino.OpenToGuestsDesc>
+  <HH.Casino.TryDemo>試す（練習用チップ）</HH.Casino.TryDemo>
+  <HH.Casino.TryDemoDesc>練習用チップで数回遊んでみます。銀は使いません。</HH.Casino.TryDemoDesc>
+  <HH.Casino.Simulate>1万回をシミュレート</HH.Casino.Simulate>
+  <HH.Casino.SimulateDesc>ピットボス: 現在のオッズで 1 万回を紙上でプレイし、結果を報告します。何も記帳されません。</HH.Casino.SimulateDesc>
+  <HH.Casino.SimResult>ピットボス: 紙上の {0} 回で、賭け金の {1} % が払い戻されました（設計: {2} %）。</HH.Casino.SimResult>
+  <HH.Casino.LuckNoData>まだ回数が少なすぎます</HH.Casino.LuckNoData>
+  <HH.Casino.LuckNormal>平均的な運</HH.Casino.LuckNormal>
+  <HH.Casino.LuckHouseUp>店に運あり</HH.Casino.LuckHouseUp>
+  <HH.Casino.LuckHouseDown>店に運なし</HH.Casino.LuckHouseDown>
+  <HH.Casino.LuckHouseWayUp>店にかなり運あり</HH.Casino.LuckHouseWayUp>
+  <HH.Casino.LuckHouseWayDown>店にかなり運なし</HH.Casino.LuckHouseWayDown>
+  <HH.Casino.BigWin>{0} が {2} で大当たり: チップ {1} 銀相当。</HH.Casino.BigWin>
+  <HH.Casino.DemoInfo>練習用チップのみで、ここでは銀はかかりません。このコロニーの設定オッズ: {ODDS}。賭け金は確定済みで、再読み込みしても結果は変わりません。</HH.Casino.DemoInfo>
+  <HH.Casino.DemoChips>練習用チップ: {0} · 回数: {1}</HH.Casino.DemoChips>
+  <HH.Casino.DemoReset>最初からやり直す</HH.Casino.DemoReset>
+  <HH.Casino.DemoStake>賭け金</HH.Casino.DemoStake>
+  <HH.Casino.DemoBet>賭ける</HH.Casino.DemoBet>
+  <HH.Casino.DemoBroke>その賭け金に対する練習用チップが足りません。</HH.Casino.DemoBroke>
+  <HH.Casino.DemoPays>×{0} 払い</HH.Casino.DemoPays>
+  <HH.Casino.DemoNoWin>ハズレ</HH.Casino.DemoNoWin>
+  <HH.Casino.DemoPoker>常連3人と同じテーブルに座ります。全員が賭け金を出し、店はレイク（場代）を取ります。</HH.Casino.DemoPoker>
+  <HH.Casino.DemoStats>これまでの払い戻し: 賭け金の {0} %（設計: {1} %）</HH.Casino.DemoStats>
+  <HH.Casino.Spin>回す</HH.Casino.Spin>
+  <HH.Casino.Deal>配る</HH.Casino.Deal>
+  <HH.Casino.Hit>ヒット</HH.Casino.Hit>
+  <HH.Casino.Stand>スタンド</HH.Casino.Stand>
+  <HH.Casino.DoubleDown>ダブル</HH.Casino.DoubleDown>
+  <HH.Casino.HelpHint>現実でギャンブルが問題になっている場合、相談窓口があります: {LINK}</HH.Casino.HelpHint>
+  <HH.Casino.HelpHintTip>クリックで相談窓口を開きます。右クリックでこの表示を隠せます（Mod設定で再表示できます）。</HH.Casino.HelpHintTip>
+  <HH.Casino.HideHint>このヒントを隠す</HH.Casino.HideHint>
+  <HH.Casino.OpenHelpline>相談窓口を開く</HH.Casino.OpenHelpline>
+  <HH.Casino.AddictionBrackets>段階 {0}、{2} 日中 {1} 日間ギャンブルなし</HH.Casino.AddictionBrackets>
+  <HH.Casino.AddictionTip>依存の段階 {0}。セッションなしの日数: 必要 {2} 日中 {1} 日。満足を保つには1日約 {3} 回のセッションが必要です。治せるのは断つことだけです。</HH.Casino.AddictionTip>
+  <HH.Casino.AddictedTitle>{0}: ギャンブル依存</HH.Casino.AddictedTitle>
+  <HH.Casino.AddictedText>{0} は遊びすぎてしまい、今やギャンブルに依存しています。定期的に遊べないと離脱症状が {PAWN_objective} を苦しめます: 気分の悪化、そして深い段階ではギャンブルの暴走。銀は失われていません。チップは無料でしたが、時間と気力は失われています。\n\n一定期間まったくセッションをしないことでのみ治ります。{PAWN_nameDef} が薬物ポリシーで何をしてよいかは（「ギャンブル」の行）変更できます。</HH.Casino.AddictedText>
+  <HH.Casino.RelapseTitle>{0}: 再発</HH.Casino.RelapseTitle>
+  <HH.Casino.RelapseText>{0} は治療後の渇望期間中にテーブルに座ってしまい、依存が再発しました（以前より1段階低い段階）。再び長期間セッションをしないことが必要です。</HH.Casino.RelapseText>
+  <HH.Casino.CuredMessage>{0} はギャンブルの習慣を断ちました。今後 {1} 日間は、どのセッションも再発の危険があります。</HH.Casino.CuredMessage>
+  <HH.Casino.SpreeReason>ギャンブル離脱症状</HH.Casino.SpreeReason>
+  <HH.Casino.Counter>3日間で {0} / {1} セッション。</HH.Casino.Counter>
+  <HH.Casino.CounterNext>3日間で {0} / {1} セッション – 次のセッションは依存のリスクがあります。</HH.Casino.CounterNext>
+  <HH.Casino.CounterRisk>3日間で {0} セッション – 次のセッションの依存リスクは {1}。</HH.Casino.CounterRisk>
+  <HH.Casino.CounterAddicted>依存状態。直近3日間で {0} セッション。</HH.Casino.CounterAddicted>
+</LanguageData>

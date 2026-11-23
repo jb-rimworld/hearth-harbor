@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Hosting.labelShort>Gastgeben</HH_Hosting.labelShort>
+  <HH_Hosting.pawnLabel>Gastgeber</HH_Hosting.pawnLabel>
+  <HH_Hosting.gerundLabel>Gastgeben</HH_Hosting.gerundLabel>
+  <HH_Hosting.description>Gäste ein- und auschecken, herumführen, unterhalten und zum Bleiben (oder Anheuern) überreden.</HH_Hosting.description>
+  <HH_Hosting.verb>Gastgeben</HH_Hosting.verb>
+  <HH_Serving.labelShort>Bedienen</HH_Serving.labelShort>
+  <HH_Serving.pawnLabel>Bedienung</HH_Serving.pawnLabel>
+  <HH_Serving.gerundLabel>Bedienen</HH_Serving.gerundLabel>
+  <HH_Serving.description>Theken, Tische und Kassen besetzen: Bestellungen aufnehmen, Essen und Getränke servieren, den Casinosaal betreuen, Regale auffüllen.</HH_Serving.description>
+  <HH_Serving.verb>Bedienen</HH_Serving.verb>
+</LanguageData>

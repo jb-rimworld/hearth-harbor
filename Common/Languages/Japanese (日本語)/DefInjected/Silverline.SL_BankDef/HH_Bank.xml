@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Mutual.label>Silverline Mutual</SL_Mutual.label>
+  <SL_Mutual.description>落ち着いた中立のデフォルト。あなたの銀貨を静かに預かり、良心的な手数料を取り、一度もニュースに載ったことがない。窓口係は不自然なほど元気そうだ。</SL_Mutual.description>
+  <SL_Mutual.slogan>第三次崩壊以来、静かにお預かりしています。</SL_Mutual.slogan>
+  <SL_TooBigToFail.label>First Rim Bank of Too Big To Fail</SL_TooBigToFail.label>
+  <SL_TooBigToFail.description>大理石のロビーで演じる風刺。利回りは高く、手数料も高い。そして一年に一度、本当に桁外れに裕福だったのに今はそうでなくなった顧客を救済する。救済は贈与ではなく融資だ。その部分を読む者はいない。</SL_TooBigToFail.description>
+  <SL_TooBigToFail.slogan>あまりに大きいので、名前を二回言う必要がありました。</SL_TooBigToFail.slogan>
+  <SL_ImperialTreasury.label>Imperial Treasury</SL_ImperialTreasury.label>
+  <SL_ImperialTreasury.description>王座直属の金庫番。手数料は安く、床磨きの匂いがほのかに漂い、爵位を持つ者だけに信用貸しがある。引き出しは「支払い」と呼ばれ、小さな礼が添えられる。</SL_ImperialTreasury.description>
+  <SL_ImperialTreasury.slogan>すべての硬貨には王座の横顔が刻まれています。かじらないでください。</SL_ImperialTreasury.slogan>
+  <SL_OrbitalExchange.label>Orbital Exchange</SL_OrbitalExchange.label>
+  <SL_OrbitalExchange.description>非常に高価な回転リング上の取引ギルド銀行。辺境で最高の市場アクセス、辺境で最高の手数料。そして受領書にはすべて、右上がりの小さなチャートが付く。</SL_OrbitalExchange.description>
+  <SL_OrbitalExchange.slogan>光速の流動性。手数料も光速です。</SL_OrbitalExchange.slogan>
+  <SL_BlackLedger.label>The Black Ledger</SL_BlackLedger.label>
+  <SL_BlackLedger.description>質問もなければ、書類もなく、名前もない。スコアを問わず誰にでも、相応の値段で貸す。時折、帳簿が「行方不明」になり、預金の一部も一緒に消える。</SL_BlackLedger.description>
+  <SL_BlackLedger.slogan>お尋ねしません。おっしゃらなくて結構です。利息は複利で増えます。</SL_BlackLedger.slogan>
+  <SL_CompoundInterest.label>First Church of Compound Interest</SL_CompoundInterest.label>
+  <SL_CompoundInterest.description>指数関数的な成長の奇跡を崇める信徒団。手数料は控えめ、貸借対照表ごとに讃美歌があり、献金箱は厳密に言えば任意だ。</SL_CompoundInterest.description>
+  <SL_CompoundInterest.slogan>複利を信じます。早く、何度でも献金を。</SL_CompoundInterest.slogan>
+</LanguageData>

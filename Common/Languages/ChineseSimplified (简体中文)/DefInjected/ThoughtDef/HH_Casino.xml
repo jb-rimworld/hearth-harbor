@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingWithdrawal.stages.0.label>赌博戒断（轻度）</HH_GamblingWithdrawal.stages.0.label>
+  <HH_GamblingWithdrawal.stages.0.description>我总想着那些赌桌。玩一局应该没什么关系吧。</HH_GamblingWithdrawal.stages.0.description>
+  <HH_GamblingWithdrawal.stages.1.label>赌博戒断（中度）</HH_GamblingWithdrawal.stages.1.label>
+  <HH_GamblingWithdrawal.stages.1.description>我无法集中精神。我必须去玩。</HH_GamblingWithdrawal.stages.1.description>
+  <HH_GamblingWithdrawal.stages.2.label>赌博戒断（强烈）</HH_GamblingWithdrawal.stages.2.label>
+  <HH_GamblingWithdrawal.stages.2.description>除了转盘，一切都是灰色的。</HH_GamblingWithdrawal.stages.2.description>
+  <HH_GamblingWithdrawal.stages.3.label>赌博戒断（严重）</HH_GamblingWithdrawal.stages.3.label>
+  <HH_GamblingWithdrawal.stages.3.description>我的手在发抖。谁身上一定有副扑克牌。</HH_GamblingWithdrawal.stages.3.description>
+  <HH_GamblingWithdrawal.stages.4.label>赌博戒断（极端）</HH_GamblingWithdrawal.stages.4.label>
+  <HH_GamblingWithdrawal.stages.4.description>其他什么都不重要。</HH_GamblingWithdrawal.stages.4.description>
+  <HH_WonAtTheTables.stages.0.label>在赌桌上赢了</HH_WonAtTheTables.stages.0.label>
+  <HH_WonAtTheTables.stages.0.description>这次筹码站在了我这边。难得一次。</HH_WonAtTheTables.stages.0.description>
+  <HH_LostAtTheTables.stages.0.label>在赌桌上输光了</HH_LostAtTheTables.stages.0.label>
+  <HH_LostAtTheTables.stages.0.description>每一枚筹码都没了。它们本来就是免费的，可还是很痛。</HH_LostAtTheTables.stages.0.description>
+</LanguageData>

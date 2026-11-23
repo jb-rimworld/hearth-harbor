@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Compat.DialogTitle>Hospitality が Hearth &amp; Harbor と並行して有効です。無効にしますか？</HH.Compat.DialogTitle>
+  <HH.Compat.DialogBody>Hearth &amp; Harbor は Hospitality とそのアドオンを置き換えます。両方が有効な間、Hearth &amp; Harbor はこのセッションで Hospitality をオフにしました。そのパッチ、イベント、建物、ゲストタブは何もしません。Hospitality のゲストベッドとエリアは残り、Hospitality がなくなると引き継がれます。</HH.Compat.DialogBody>
+  <HH.Compat.DialogListHeader>以下の Mod が無効になります:</HH.Compat.DialogListHeader>
+  <HH.Compat.DialogMentionHeader>以下のゲスト Mod はそのままです。その訪問者は引き続きそれぞれの Mod に属します:</HH.Compat.DialogMentionHeader>
+  <HH.Compat.DialogFailed>Mod リストを自動で変更できませんでした（{0}）。手動で行ってください:</HH.Compat.DialogFailed>
+  <HH.Compat.DialogStep1>1. メインメニュー → Mod</HH.Compat.DialogStep1>
+  <HH.Compat.DialogStep2>2. 上に挙げた Mod のチェックを外す</HH.Compat.DialogStep2>
+  <HH.Compat.DialogStep3>3. Mod リストを保存してゲームを再起動する</HH.Compat.DialogStep3>
+  <HH.Compat.Yes>はい、無効にして再起動</HH.Compat.Yes>
+  <HH.Compat.OpenMods>Mod リストを開く</HH.Compat.OpenMods>
+  <HH.Compat.Later>あとで</HH.Compat.Later>
+  <HH.Compat.Never>今後は表示しない</HH.Compat.Never>
+  <HH.Compat.ImportLetterTitle>Hospitality からインポート</HH.Compat.ImportLetterTitle>
+  <HH.Compat.ImportLetterText>このコロニーは Hospitality でプレイされていました。Hearth &amp; Harbor は引き継げるものを引き継ぎました。\n\nインポート: {0}。\n破棄: {1}。\n\nインポートされたゲストベッドは通常のベッドに戻り、ゲストベッドとして記憶されます。Hearth &amp; Harbor のゲスト部分がそれを引き継ぎます。コロニーのほかの部分は変更されていません。</HH.Compat.ImportLetterText>
+  <HH.Compat.ImportNothing>なし</HH.Compat.ImportNothing>
+  <HH.Setting.compat.hospitalityNeverAsk>Hospitality の無効化を提案しない</HH.Setting.compat.hospitalityNeverAsk>
+  <HH.Setting.compat.hospitalityNeverAsk.Desc>Hospitality が Hearth &amp; Harbor と並行して動いているとき、Hearth &amp; Harbor はセッション中それをオフにし、メインメニューで無効化を提案します。オンにすると提案は出なくなります（オフにする処理は行われます）。</HH.Setting.compat.hospitalityNeverAsk.Desc>
+  <HH.Setting.compat.importLetter>Hospitality のセーブをインポートした後の手紙</HH.Setting.compat.importLetter>
+  <HH.Setting.compat.importLetter.Desc>Hospitality でプレイされたセーブを読み込んだ後、手紙で Hearth &amp; Harbor が引き継いだもの（ゲストベッド、エリア、訪問者）と破棄されたものを一覧表示します。</HH.Setting.compat.importLetter.Desc>
+</LanguageData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Hosting.labelShort>接客</HH_Hosting.labelShort>
+  <HH_Hosting.pawnLabel>接客係</HH_Hosting.pawnLabel>
+  <HH_Hosting.gerundLabel>接客</HH_Hosting.gerundLabel>
+  <HH_Hosting.description>客のチェックイン・チェックアウトを行い、施設を案内し、客を楽しませ、滞在（あるいは加入）するよう説得する。</HH_Hosting.description>
+  <HH_Hosting.verb>接客する</HH_Hosting.verb>
+  <HH_Serving.labelShort>給仕</HH_Serving.labelShort>
+  <HH_Serving.pawnLabel>給仕係</HH_Serving.pawnLabel>
+  <HH_Serving.gerundLabel>給仕</HH_Serving.gerundLabel>
+  <HH_Serving.description>カウンター、テーブル、レジを担当する: 注文を取り、料理と飲み物を出し、カジノフロアを運営し、棚を補充する。</HH_Serving.description>
+  <HH_Serving.verb>給仕する</HH_Serving.verb>
+</LanguageData>

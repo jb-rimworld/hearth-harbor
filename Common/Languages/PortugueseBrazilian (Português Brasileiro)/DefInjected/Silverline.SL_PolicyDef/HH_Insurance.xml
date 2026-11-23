@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ActsOfStoryteller.label>Atos do Narrador Excluídos</SL_ActsOfStoryteller.label>
+  <SL_ActsOfStoryteller.description>Paga por edifícios destruídos por invasores, mecanoides e pelo ocasional mal-entendido com um engenho de cerco. Não vale para incêndios, clima ou você.</SL_ActsOfStoryteller.description>
+  <SL_ActsOfStoryteller.slogan>Estamos cobrindo você.*</SL_ActsOfStoryteller.slogan>
+  <SL_MuffaloMachine.label>Cobertura para Muffalo e Máquinas</SL_MuffaloMachine.label>
+  <SL_MuffaloMachine.description>Para o que se move ou voa: naves, cápsulas de queda e veículos destruídos por um inimigo.</SL_MuffaloMachine.description>
+  <SL_MuffaloMachine.slogan>Rodas, rotores e um formulário bem completo.</SL_MuffaloMachine.slogan>
+  <SL_RoofOverHead.label>Teto Sobre a Cabeça</SL_RoofOverHead.label>
+  <SL_RoofOverHead.description>Fogo, explosões e raios. O fogo, porém, tem que ser de outra pessoa.</SL_RoofOverHead.description>
+  <SL_RoofOverHead.slogan>Paredes quentes, conforto frio, prêmios trimestrais.</SL_RoofOverHead.slogan>
+  <SL_ItWasntMe.label>Responsabilidade "Não Fui Eu"</SL_ItWasntMe.label>
+  <SL_ItWasntMe.description>Para danos a hóspedes, comerciantes e suas mercadorias, causados sob sua guarda e definitivamente não por você.</SL_ItWasntMe.description>
+  <SL_ItWasntMe.slogan>Alguém tem que pagar. De preferência nós, mediante taxa.</SL_ItWasntMe.slogan>
+  <SL_LegalShield.label>Legal Shield</SL_LegalShield.label>
+  <SL_LegalShield.description>A Brix &amp; Partners paga suas multas e discute com quem as aplicou. Também ajuda contra a Clawback Mutual, desde que ninguém leia a cláusula 40.</SL_LegalShield.description>
+  <SL_LegalShield.slogan>Brix &amp; Partners: ética sob contrato de retenção.</SL_LegalShield.slogan>
+  <SL_RimHealth.label>Plano de Saúde do Rim</SL_RimHealth.label>
+  <SL_RimHealth.description>Um valor fixo para cada colono que passa um dia numa cama de enfermaria.</SL_RimHealth.description>
+  <SL_RimHealth.slogan>Melhoras logo. Ou pelo menos melhore trimestralmente.</SL_RimHealth.slogan>
+  <SL_GoldenYears.label>Plano Anos Dourados</SL_GoldenYears.label>
+  <SL_GoldenYears.description>Uma aposentadoria para colonos que chegaram aos sessenta. O prêmio é barato enquanto são jovens, e esse é o ponto.</SL_GoldenYears.description>
+  <SL_GoldenYears.slogan>Aposente-se cedo. Depois tarde. Depois trimestralmente.</SL_GoldenYears.slogan>
+  <SL_BlightBeGone.label>Praga, Nunca Mais</SL_BlightBeGone.label>
+  <SL_BlightBeGone.description>Geadas e precipitação tóxica devoram as plantações. Isto devora a perda.</SL_BlightBeGone.description>
+  <SL_BlightBeGone.slogan>Colha o que pagamos.</SL_BlightBeGone.slogan>
+  <SL_ClosedForRepairs.label>Fechado para Reparos</SL_ClosedForRepairs.label>
+  <SL_ClosedForRepairs.description>Quando seu negócio tem que fechar, a renda não fecha.</SL_ClosedForRepairs.description>
+  <SL_ClosedForRepairs.slogan>Fora de serviço não é fora do prêmio.</SL_ClosedForRepairs.slogan>
+  <SL_UnspeakableEvents.label>Adicional de Eventos Inomináveis</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>Para danos que o texto da apólice não consegue descrever sem um advogado na sala.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>Algumas coisas são melhor seguradas do que nomeadas.</SL_UnspeakableEvents.slogan>
+  <SL_Wanderlust.label>Seguro de Viagem Wanderlust</SL_Wanderlust.label>
+  <SL_Wanderlust.description>Para caravanas: um seguro que está lá quando você não está. Cobrado por cabeça e dia de viagem, somente enquanto as pessoas estão na estrada.</SL_Wanderlust.description>
+  <SL_Wanderlust.slogan>Queria que estivesse aqui. Cobrimos a parte em que você não está.</SL_Wanderlust.slogan>
+  <SL_LimbByLimb.label>Plano de Acidentes Membro a Membro</SL_LimbByLimb.label>
+  <SL_LimbByLimb.description>Cada membro tem um preço. Nós o escrevemos. Está na última página, na Tabela de Membros.</SL_LimbByLimb.description>
+  <SL_LimbByLimb.slogan>Cada membro tem um preço. Nós o escrevemos.</SL_LimbByLimb.slogan>
+</LanguageData>

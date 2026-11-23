@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GuestRoomVerdict.stages.0.label>жахливий гостьовий номер</HH_GuestRoomVerdict.stages.0.label>
+  <HH_GuestRoomVerdict.stages.0.description>Я за це платив? Я спав краще в канаві, і канава не брала грошей.</HH_GuestRoomVerdict.stages.0.description>
+  <HH_GuestRoomVerdict.stages.1.label>розчаровуючий гостьовий номер</HH_GuestRoomVerdict.stages.1.label>
+  <HH_GuestRoomVerdict.stages.1.description>Кімната була нижча за мої очікування. Значно нижча.</HH_GuestRoomVerdict.stages.1.description>
+  <HH_GuestRoomVerdict.stages.2.label>посередній гостьовий номер</HH_GuestRoomVerdict.stages.2.label>
+  <HH_GuestRoomVerdict.stages.2.description>Кімната була нормальна, якщо придивитися.</HH_GuestRoomVerdict.stages.2.description>
+  <HH_GuestRoomVerdict.stages.3.label>пристойний гостьовий номер</HH_GuestRoomVerdict.stages.3.label>
+  <HH_GuestRoomVerdict.stages.3.description>Нормальне ліжко і двері, що зачиняються. Більше нічого й не треба.</HH_GuestRoomVerdict.stages.3.description>
+  <HH_GuestRoomVerdict.stages.4.label>добрий гостьовий номер</HH_GuestRoomVerdict.stages.4.label>
+  <HH_GuestRoomVerdict.stages.4.description>Чудова кімната. Я спав добре.</HH_GuestRoomVerdict.stages.4.description>
+  <HH_GuestRoomVerdict.stages.5.label>розкішний гостьовий номер</HH_GuestRoomVerdict.stages.5.label>
+  <HH_GuestRoomVerdict.stages.5.description>Така кімната робить усю подорож вартою того.</HH_GuestRoomVerdict.stages.5.description>
+  <HH_GuestAccompanied.stages.0.label>незручна компанія</HH_GuestAccompanied.stages.0.label>
+  <HH_GuestAccompanied.stages.0.description>Один із господарів склав мені компанію. Ми говорили про погоду. Довго.</HH_GuestAccompanied.stages.0.description>
+  <HH_GuestAccompanied.stages.1.label>гарна компанія</HH_GuestAccompanied.stages.1.label>
+  <HH_GuestAccompanied.stages.1.description>Один із господарів показав мені околиці й склав компанію.</HH_GuestAccompanied.stages.1.description>
+  <HH_GuestAccompanied.stages.2.label>чарівна компанія</HH_GuestAccompanied.stages.2.label>
+  <HH_GuestAccompanied.stages.2.description>Господар був чудовий. Я, можливо, засміявся вголос.</HH_GuestAccompanied.stages.2.description>
+  <HH_GuestAccompanied.stages.3.label>чудова компанія</HH_GuestAccompanied.stages.3.label>
+  <HH_GuestAccompanied.stages.3.description>За мною так добре не дбали вже багато років.</HH_GuestAccompanied.stages.3.description>
+  <HH_GuestPestered.stages.0.label>приставали, щоб вступив</HH_GuestPestered.stages.0.label>
+  <HH_GuestPestered.stages.0.description>Я прийшов спати, а не щоб мене вербували.</HH_GuestPestered.stages.0.description>
+  <HH_HostedWell.stages.0.label>добрі розмови</HH_HostedWell.stages.0.label>
+  <HH_HostedWell.stages.0.description>У нас були чудові розмови.</HH_HostedWell.stages.0.description>
+  <HH_GuestWaited.stages.0.label>трохи почекав</HH_GuestWaited.stages.0.label>
+  <HH_GuestWaited.stages.0.description>Мені довелося чекати, поки мене обслужать. Недовго, але я помітив.</HH_GuestWaited.stages.0.description>
+  <HH_GuestWaited.stages.1.label>чекав даремно</HH_GuestWaited.stages.1.label>
+  <HH_GuestWaited.stages.1.description>Я чекав і чекав, але ніхто так і не прийшов мене обслужити.</HH_GuestWaited.stages.1.description>
+  <HH_GuestBellNobody.stages.0.label>подзвонив, ніхто не прийшов</HH_GuestBellNobody.stages.0.label>
+  <HH_GuestBellNobody.stages.0.description>Подзвонив. Ніхто не прийшов.</HH_GuestBellNobody.stages.0.description>
+  <HH_GuestWaitingRoom.stages.0.label>звичайна зала очікування</HH_GuestWaitingRoom.stages.0.label>
+  <HH_GuestWaitingRoom.stages.0.description>Принаймні було де сісти, поки чекаєш.</HH_GuestWaitingRoom.stages.0.description>
+  <HH_GuestWaitingRoom.stages.1.label>пристойна зала очікування</HH_GuestWaitingRoom.stages.1.label>
+  <HH_GuestWaitingRoom.stages.1.description>Зала очікування була досить зручна.</HH_GuestWaitingRoom.stages.1.description>
+  <HH_GuestWaitingRoom.stages.2.label>гарна зала очікування</HH_GuestWaitingRoom.stages.2.label>
+  <HH_GuestWaitingRoom.stages.2.description>Чекати там було майже задоволенням.</HH_GuestWaitingRoom.stages.2.description>
+  <HH_GuestWaitingRoom.stages.3.label>чудова зала очікування</HH_GuestWaitingRoom.stages.3.label>
+  <HH_GuestWaitingRoom.stages.3.description>У такій кімнаті я б не заперечував чекати довше.</HH_GuestWaitingRoom.stages.3.description>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_NobleStay.label>귀족 체류</HH_NobleStay.label>
+  <HH_NobleStay.letterLabel>귀족 체류 제안</HH_NobleStay.letterLabel>
+  <HH_NobleStay.letterText>귀족 일행이 숙소를 청합니다.</HH_NobleStay.letterText>
+  <HH_ImperialBilleting.label>제국 숙박 배정</HH_ImperialBilleting.label>
+  <HH_ImperialBilleting.letterLabel>제국 숙박 배정</HH_ImperialBilleting.letterLabel>
+  <HH_ImperialBilleting.letterText>제국이 숙소를 요구합니다.</HH_ImperialBilleting.letterText>
+</LanguageData>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_Mattress.label>Mattress Plus</SL_Asset_Mattress.label>
+  <SL_Asset_Mattress.description>Ощадний рахунок. Гроші лежать у дуже надійному матраці й трохи зростають. Під час паніки в банку зняття заблоковано на два дні.</SL_Asset_Mattress.description>
+  <SL_Asset_OutlanderBond.label>Облігація інфраструктури Союзу Outlander</SL_Asset_OutlanderBond.label>
+  <SL_Asset_OutlanderBond.description>Позики союзу зовнішніх містечок, який будує дороги, колодязі та один оспорюваний міст. Виплачує вчасно, доки не перестає. Після дефолту повертається приблизно третина.</SL_Asset_OutlanderBond.description>
+  <SL_Asset_EmpireWarBond.label>Військові облігації Імперії</SL_Asset_EmpireWarBond.label>
+  <SL_Asset_EmpireWarBond.description>Облігації, що фінансують війну Імперії. Після перемоги вони різко зростають, після поразки стають гарною рамкою. Війна триває дуже довго, переважно в брошурах.</SL_Asset_EmpireWarBond.description>
+  <SL_Asset_Index.label>RimIndex 50</SL_Asset_Index.label>
+  <SL_Asset_Index.description>П'ятдесят найбільших компаній Ободу в одному продукті. Еталон для всього іншого на цій сторінці: повзунок прибутковості визначається тим, скільки в середньому заробляє цей індекс.</SL_Asset_Index.description>
+  <SL_Asset_StockMicaton.label>MCTN, Ліга Мікатон</SL_Asset_StockMicaton.label>
+  <SL_Asset_StockMicaton.description>Акції ліги зовнішніх містечок. Квартальні цифри рухають ціну; так само, трохи, і ваші стосунки з лігою. Дивідендів не платить, зате надсилає чудовий календар.</SL_Asset_StockMicaton.description>
+  <SL_Asset_StockTribal.label>HIDE, Кооператив «Шкури і Вогнище»</SL_Asset_StockTribal.label>
+  <SL_Asset_StockTribal.description>Акції племінного кооперативу, який продає шкури, дрова для вогнища та напрочуд багато гостинності. Сильно залежить від погоди та настрою одного дуже великого дядька.</SL_Asset_StockTribal.description>
+  <SL_Asset_StockEmpire.label>IMPR, Імперські урочистості Лтд.</SL_Asset_StockEmpire.label>
+  <SL_Asset_StockEmpire.description>Компанія, що стоїть за імперськими церемоніями: прапори, труби і крихітні корони. Прибутки залежать від того, скільки знатних осіб ображаються через те, наскільки мало їм дісталося.</SL_Asset_StockEmpire.description>
+  <SL_Asset_StockColony.label>HHH, Hearth Harbor Holdings</SL_Asset_StockColony.label>
+  <SL_Asset_StockColony.description>Холдинг, що володіє лише однією річчю: переконанням, що ваша колонія — місце призначення. Реагує на ваш добробут і на рейди, які ви пережили. Ви зацікавлені в його успіху, але так само зацікавлений кожен, хто це читає.</SL_Asset_StockColony.description>
+  <SL_Asset_GrowthFund.label>Фонд зростання Glitterworld</SL_Asset_GrowthFund.label>
+  <SL_Asset_GrowthFund.description>Активно керований фонд. У менеджерів дуже вражаюча брошура та човен. Їхня майстерність у середньому трохи від'ємна, і це було визначено ще при заснуванні фонду.</SL_Asset_GrowthFund.description>
+  <SL_Asset_PietyBonds.label>Облігації благочестя</SL_Asset_PietyBonds.label>
+  <SL_Asset_PietyBonds.description>Облігації, забезпечені пожертвами сімнадцяти віровчень, кожне переконане, що інші шістнадцять роблять усе неправильно. Стабільні, урочисті і трохи самовдоволені.</SL_Asset_PietyBonds.description>
+  <SL_Asset_RelicFutures.label>Ф'ючерси на реліквії</SL_Asset_RelicFutures.label>
+  <SL_Asset_RelicFutures.description>Ф'ючерси на реліквії, які можуть існувати, а можуть і не існувати, доставляти їх має кур'єр, який може бути пророком, а може й ні. Контракт освячено.</SL_Asset_RelicFutures.description>
+  <SL_Asset_RimCoin.label>RimCoin</SL_Asset_RimCoin.label>
+  <SL_Asset_RimCoin.description>Цифрова монета, зроблена цілком із електрики та переконання. Коливається на кілька відсотків на день, робить стрибки, які ніхто не може пояснити, і торгується на біржі, яку вже зламували. І зламають ще.</SL_Asset_RimCoin.description>
+  <SL_Asset_MemeThrumbo.label>$THRUMBO</SL_Asset_MemeThrumbo.label>
+  <SL_Asset_MemeThrumbo.description>Монета, названа на честь рідкісного звіра і забезпечена рівно стільки ж. Білого паперу немає, є малюнок тромбо. Засновник, згідно з малюнком, і є тромбо.</SL_Asset_MemeThrumbo.description>
+  <SL_Asset_MemeBoomalope.label>Монета Boomalope</SL_Asset_MemeBoomalope.label>
+  <SL_Asset_MemeBoomalope.description>Монета, вартість якої вибухає. А іноді просто вибухає. Популярна серед тих, кому подобається запах спаленого грошей.</SL_Asset_MemeBoomalope.description>
+  <SL_Asset_MemeMuffalo.label>MUFFALO MOON</SL_Asset_MemeMuffalo.label>
+  <SL_Asset_MemeMuffalo.description>Спільнотна монета всіх, хто любить маффало і більше нічого. Її дорожня карта — малюнок маффало, що дивиться на місяць. Дорожня карта не змінилася.</SL_Asset_MemeMuffalo.description>
+  <SL_Asset_NftThrumbos.label>Невзаємозамінні тромбо</SL_Asset_NftThrumbos.label>
+  <SL_Asset_NftThrumbos.description>Колекція малюнків тромбо, кожен унікальний, кожен трохи схожий на інших. Ви володієте квитанцією на малюнок малюнка. Покупці з'являються повільно і хочуть знижку.</SL_Asset_NftThrumbos.description>
+  <SL_Asset_NftMuffalo.label>Сертифікат власності: малюнок маффало</SL_Asset_NftMuffalo.label>
+  <SL_Asset_NftMuffalo.description>Сертифікат власності на малюнок маффало. Малюнок зберігається десь. Сертифікат зберігається у вашому обліковому записі. Жоден із них не пахне маффало.</SL_Asset_NftMuffalo.description>
+</LanguageData>

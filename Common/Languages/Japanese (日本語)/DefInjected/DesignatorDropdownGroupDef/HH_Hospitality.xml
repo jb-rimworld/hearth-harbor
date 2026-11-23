@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Group_Casino.label>カジノ</HH_Group_Casino.label>
+  <HH_Group_Casino.description>スロットマシン、ゲームテーブル、そして出納の檻。</HH_Group_Casino.description>
+  <HH_Group_Wellness.label>ウェルネス</HH_Group_Wellness.label>
+  <HH_Group_Wellness.description>サウナ、ホットタブ、そしてマッサージ台。</HH_Group_Wellness.description>
+  <HH_Group_City.label>都市生活</HH_Group_City.label>
+  <HH_Group_City.description>映画スクリーン、サロンチェア、公園のベンチ、そしてタクシー乗り場。</HH_Group_City.description>
+  <HH_Group_Underworld.label>裏部屋</HH_Group_Underworld.label>
+  <HH_Group_Underworld.description>誰も口にしないもののための扉、穴、カウンター、そして埠頭。地下社会を発見して初めて表示される。</HH_Group_Underworld.description>
+</LanguageData>

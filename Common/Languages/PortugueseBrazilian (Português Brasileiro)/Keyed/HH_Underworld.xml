@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.Underworld>Submundo</HH.Tab.Underworld>
+  <HH.Underworld.GateClosed>Indisponível: o submundo está fechado neste jogo.</HH.Underworld.GateClosed>
+  <HH.Underworld.BackRoomDoorInfo>Só a equipe, os colonos e convidados suspeitos podem abrir esta porta.</HH.Underworld.BackRoomDoorInfo>
+  <HH.Underworld.Stranger.Title>Um estranho no portão</HH.Underworld.Stranger.Title>
+  <HH.Underworld.Stranger.Text>Um estranho, com o chapéu puxado para baixo, espera do lado de fora da sua porta até a equipe se afastar.\n\n"Lugar bonito", diz ele. "Tem uma sala dos fundos?"\n\nEle não diz o que quer dizer com isso. Não precisa.</HH.Underworld.Stranger.Text>
+  <HH.Underworld.Stranger.Show>Me mostre</HH.Underworld.Stranger.Show>
+  <HH.Underworld.Stranger.No>Não tenho interesse</HH.Underworld.Stranger.No>
+  <HH.Underworld.Stranger.Never>Nunca perguntar de novo</HH.Underworld.Stranger.Never>
+  <HH.Underworld.Unlocked.Title>A sala dos fundos</HH.Underworld.Unlocked.Title>
+  <HH.Underworld.Unlocked.Text>Você mostrou a sala dos fundos, e ele assentiu como se você tivesse passado num teste. Uma nova linha de pesquisa está aberta: a sala dos fundos, com portas, um poço de luta, o balcão de um receptador, um cais de contrabandistas e um salão. Seus Sussurros (a reputação no submundo) agora vão acompanhar o que você construir.\n\nVocê pode ignorar tudo isso. Nada aqui é obrigatório.</HH.Underworld.Unlocked.Text>
+  <HH.Underworld.Warn.Title>Aviso de conteúdo</HH.Underworld.Warn.Title>
+  <HH.Underworld.Warn.Dark>Conteúdo Sombrio acrescenta ao submundo: prisioneiros podem lutar até a morte no poço, bandos podem interrogar prisioneiros com mais dureza, caçadores podem caçar prisioneiros (com uma ideologia adequada), e um balcão de clínica compra órgãos colhidos.\n\nIsso aparece apenas como texto e ferimentos comuns do jogo. Crianças nunca participam, e nada disso é ativado por conta própria.\n\nVocê quer isso neste jogo?</HH.Underworld.Warn.Dark>
+  <HH.Underworld.Warn.Grim>Conteúdo Macabro inclui tudo do conteúdo Sombrio, e a caça a prisioneiros deixa de perguntar sobre a sua ideologia. Compradores de órgãos fazem pedidos com prazo.\n\nIsso aparece apenas como texto e ferimentos comuns do jogo. Crianças nunca participam, e nada disso é ativado por conta própria.\n\nVocê quer isso neste jogo?</HH.Underworld.Warn.Grim>
+  <HH.Underworld.Warn.Accept>Sim, entendo</HH.Underworld.Warn.Accept>
+  <HH.Underworld.Warn.Back>Não, voltar ao Padrão</HH.Underworld.Warn.Back>
+  <HH.Underworld.Warn.Hunt>Você está prestes a permitir a caça a prisioneiros em um terreno de caça. Um prisioneiro é solto no terreno com vantagem inicial; se sobreviver ao tempo definido ou alcançar a cerca, ele fica livre, e a facção dele ficará sabendo de qualquer forma. Se ele morrer, a facção dele, seus colonos e seus convidados não vão perdoar.\n\nIsso é mostrado apenas como texto. Você quer permitir?</HH.Underworld.Warn.Hunt>
+  <HH.Underworld.Warn.Organ>Um balcão de clínica compra órgãos colhidos de doadores anônimos à noite. Ideologias que repudiam o tráfico de órgãos vão guardar isso contra você, e seus Sussurros sobem a cada venda.\n\nIsso é mostrado apenas como texto. Você quer mantê-lo?</HH.Underworld.Warn.Organ>
+  <HH.Underworld.Warn.Keep>Sim, manter</HH.Underworld.Warn.Keep>
+  <HH.Underworld.Warn.Remove>Não, remover</HH.Underworld.Warn.Remove>
+  <HH.Underworld.Scandal.BackRoomFound.Title>A sala dos fundos foi descoberta</HH.Underworld.Scandal.BackRoomFound.Title>
+  <HH.Underworld.Scandal.BackRoomFound.Text>Um hóspede respeitável abriu a porta errada e viu o que a casa guarda atrás dela. Até o fim do dia, toda a cidade vai saber.</HH.Underworld.Scandal.BackRoomFound.Text>
+  <HH.Underworld.Scandal.LeakedLedger.Title>Livro-caixa vazado</HH.Underworld.Scandal.LeakedLedger.Title>
+  <HH.Underworld.Scandal.LeakedLedger.Text>Uma página da contabilidade do receptador foi parar nas mãos erradas. Os bens são rastreados até o seu balcão.</HH.Underworld.Scandal.LeakedLedger.Text>
+  <HH.Underworld.Scandal.SecretCasinoRumour.Title>Boato de um cassino secreto</HH.Underworld.Scandal.SecretCasinoRumour.Title>
+  <HH.Underworld.Scandal.SecretCasinoRumour.Text>Espalhou-se o boato de que sua casa esconde um cassino para quem não fala sobre ele. Apostadores de alto calibre estão procurando a porta.</HH.Underworld.Scandal.SecretCasinoRumour.Text>
+  <HH.Underworld.Scandal.HonourAmongThieves.Title>Honra entre ladrões</HH.Underworld.Scandal.HonourAmongThieves.Title>
+  <HH.Underworld.Scandal.HonourAmongThieves.Text>Um bando fala bem da sua casa nos lugares que importam.</HH.Underworld.Scandal.HonourAmongThieves.Text>
+  <HH.Underworld.Scandal.Effects>Sussurros {0}, renome {1}.</HH.Underworld.Scandal.Effects>
+  <HH.Underworld.Pit.Enabled>Poço aberto</HH.Underworld.Pit.Enabled>
+  <HH.Underworld.Pit.Enabled.Desc>Agendar combates neste poço.</HH.Underworld.Pit.Enabled.Desc>
+  <HH.Underworld.Pit.Animals>Animais</HH.Underworld.Pit.Animals>
+  <HH.Underworld.Pit.Animals.Desc>Animais da sua colônia podem lutar aqui.</HH.Underworld.Pit.Animals.Desc>
+  <HH.Underworld.Pit.Volunteers>Voluntários</HH.Underworld.Pit.Volunteers>
+  <HH.Underworld.Pit.Volunteers.Desc>Colonos que gostam de uma briga (sede de sangue ou bons em combate corpo a corpo) podem se oferecer. Voluntários nunca lutam até a morte.</HH.Underworld.Pit.Volunteers.Desc>
+  <HH.Underworld.Pit.Prisoners>Prisioneiros</HH.Underworld.Pit.Prisoners>
+  <HH.Underworld.Pit.Prisoners.Desc>Prisioneiros podem ser enviados ao poço. Apenas adultos.</HH.Underworld.Pit.Prisoners.Desc>
+  <HH.Underworld.Pit.Lethal>Até a morte</HH.Underworld.Pit.Lethal>
+  <HH.Underworld.Pit.Lethal.Desc>Combates entre prisioneiros e animais só terminam quando um deles cai. Nunca com voluntários.</HH.Underworld.Pit.Lethal.Desc>
+  <HH.Underworld.Pit.StartNow>Iniciar um combate</HH.Underworld.Pit.StartNow>
+  <HH.Underworld.Pit.StartNow.Desc>Escolha agora dois lutadores justos e deixe os convidados apostarem.</HH.Underworld.Pit.StartNow.Desc>
+  <HH.Underworld.Pit.CannotStart>Sem combate: {0}</HH.Underworld.Pit.CannotStart>
+  <HH.Underworld.Pit.ArenaOk>Arena: {0} casas, fechada.</HH.Underworld.Pit.ArenaOk>
+  <HH.Underworld.Pit.ArenaOpen>Arena aberta ou grande demais: feche a cerca.</HH.Underworld.Pit.ArenaOpen>
+  <HH.Underworld.Pit.NoFighters>menos de dois lutadores permitidos</HH.Underworld.Pit.NoFighters>
+  <HH.Underworld.Pit.NoFairPair>nenhum par justo de lutadores</HH.Underworld.Pit.NoFairPair>
+  <HH.Underworld.Pit.BoutRunning>Combate: {0} contra {1}.</HH.Underworld.Pit.BoutRunning>
+  <HH.Underworld.Pit.BoutAnnounced>Um combate no poço: {0} contra {1}. As apostas estão abertas.</HH.Underworld.Pit.BoutAnnounced>
+  <HH.Underworld.Pit.Won>{0} vence o combate. A casa fica com {1} de prata.</HH.Underworld.Pit.Won>
+  <HH.Underworld.Pit.Draw>O combate termina sem vencedor. Todas as apostas são devolvidas.</HH.Underworld.Pit.Draw>
+  <HH.Underworld.Fence.Inspect>Estoque: {0} itens valendo {1} de prata. Caixa: {2} de prata.</HH.Underworld.Fence.Inspect>
+  <HH.Underworld.Fence.Fund>Encher o caixa</HH.Underworld.Fence.Fund>
+  <HH.Underworld.Fence.Fund.Desc>Transferir prata da gaveta para o caixa do receptador, até o limite das configurações.</HH.Underworld.Fence.Fund.Desc>
+  <HH.Underworld.Fence.Funded>{0} de prata transferidos para o caixa.</HH.Underworld.Fence.Funded>
+  <HH.Underworld.Fence.NoCash>O caixa está vazio.</HH.Underworld.Fence.NoCash>
+  <HH.Underworld.Fence.CannotPay>O comprador não pode pagar.</HH.Underworld.Fence.CannotPay>
+  <HH.Underworld.Fence.Exposed>Os bens vieram de {0}, e eles sabem para onde foram parar.</HH.Underworld.Fence.Exposed>
+  <HH.Underworld.Gang.Title>Um bando na porta</HH.Underworld.Gang.Title>
+  <HH.Underworld.Gang.Text>{0} pessoas de {1} chegam discretamente, acenam para a equipe e pedem a sala dos fundos. Têm dinheiro e não esperam perguntas.</HH.Underworld.Gang.Text>
+  <HH.Underworld.Gang.Demand.Title>Uma oferta amigável</HH.Underworld.Gang.Demand.Title>
+  <HH.Underworld.Gang.Demand.Text>O líder do bando de {0} se apoia no seu balcão. "Uma bela casa. Seria uma pena se algo acontecesse com ela. Por {1} de prata, garantimos que nada aconteça."</HH.Underworld.Gang.Demand.Text>
+  <HH.Underworld.Gang.Demand.Pay>Pagar {0} de prata</HH.Underworld.Gang.Demand.Pay>
+  <HH.Underworld.Gang.Demand.Refuse>Mostrar a porta</HH.Underworld.Gang.Demand.Refuse>
+  <HH.Underworld.Gang.Demand.NoCash>não há prata suficiente na gaveta</HH.Underworld.Gang.Demand.NoCash>
+  <HH.Underworld.Tour.IntelTitle>Algo do interrogatório</HH.Underworld.Tour.IntelTitle>
+  <HH.Underworld.Tour.IntelText>Depois de uma hora com {0}, o bando deixou um bilhete no balcão: um nome, um lugar, um dia. Alguém lá fora está planejando algo, e agora você sabe um pouco mais.</HH.Underworld.Tour.IntelText>
+  <HH.Underworld.Smuggler.Title>Um caixote no cais</HH.Underworld.Smuggler.Title>
+  <HH.Underworld.Smuggler.Text>Uma lançadeira com as luzes apagadas pousou no cais. Uma voz oferece {0} itens valendo cerca de {1} de prata por {2}. Sem perguntas, sem recibo.</HH.Underworld.Smuggler.Text>
+  <HH.Underworld.Smuggler.Buy>Comprar por {0} de prata</HH.Underworld.Smuggler.Buy>
+  <HH.Underworld.Smuggler.Decline>Mandar embora</HH.Underworld.Smuggler.Decline>
+  <HH.Underworld.Smuggler.NoCash>não há prata suficiente na gaveta</HH.Underworld.Smuggler.NoCash>
+  <HH.Underworld.Smuggler.InspectTitle>Uma patrulha viu a lâmpada</HH.Underworld.Smuggler.InspectTitle>
+  <HH.Underworld.Smuggler.InspectText>Uma patrulha imperial viu as luzes do seu cais e anotou.</HH.Underworld.Smuggler.InspectText>
+  <HH.Underworld.Hunt.Title>Um grupo de caça</HH.Underworld.Hunt.Title>
+  <HH.Underworld.Hunt.Text>{0} caçadores chegam com rifles e dinheiro. Pagaram {1} de prata pelo terreno, e {2} animais foram soltos nele.</HH.Underworld.Hunt.Text>
+  <HH.Underworld.Hunt.GroundOk>Terreno de caça: {0} casas, fechado. Presas: {1}.</HH.Underworld.Hunt.GroundOk>
+  <HH.Underworld.Hunt.QuarryAnimals>animais</HH.Underworld.Hunt.QuarryAnimals>
+  <HH.Underworld.Hunt.QuarryHuman>animais e um prisioneiro</HH.Underworld.Hunt.QuarryHuman>
+  <HH.Underworld.Hunt.Prisoners>Prisioneiros como presa</HH.Underworld.Hunt.Prisoners>
+  <HH.Underworld.Hunt.Prisoners.Desc>Deixar os caçadores caçarem um prisioneiro solto no terreno. Apenas com conteúdo Sombrio ou Macabro, e com uma ideologia adequada.</HH.Underworld.Hunt.Prisoners.Desc>
+  <HH.Underworld.Hunt.GateContent>Requer conteúdo Sombrio ou Macabro, confirmado.</HH.Underworld.Hunt.GateContent>
+  <HH.Underworld.Hunt.GatePrecept>A ideologia da colônia não permite isso.</HH.Underworld.Hunt.GatePrecept>
+  <HH.Underworld.Hunt.DeathTitle>Uma pessoa morreu na caçada</HH.Underworld.Hunt.DeathTitle>
+  <HH.Underworld.Hunt.DeathText>{0} não sobreviveu à caçada. O povo dele vai ficar sabendo, e todos que estavam assistindo também.</HH.Underworld.Hunt.DeathText>
+  <HH.Underworld.Hunt.FreedTitle>A presa escapou</HH.Underworld.Hunt.FreedTitle>
+  <HH.Underworld.Hunt.FreedText>{0} aguentou o tempo e segue livre. Os caçadores voltaram para casa furiosos; a facção dele vai ouvir como tudo aconteceu.</HH.Underworld.Hunt.FreedText>
+  <HH.Underworld.Organ.Inspect>Órgãos aguardando: {0}. Pedidos em aberto: {1}.</HH.Underworld.Organ.Inspect>
+  <HH.Underworld.Organ.Sold>{0} órgãos recolhidos no balcão da clínica.</HH.Underworld.Organ.Sold>
+  <HH.Underworld.Organ.OrderTitle>Um pedido</HH.Underworld.Organ.OrderTitle>
+  <HH.Underworld.Organ.OrderText>Um comprador quer um {0} em {1} dias e paga um prêmio.</HH.Underworld.Organ.OrderText>
+  <HH.Underworld.Organ.OrderDone>O pedido de um {0} foi atendido.</HH.Underworld.Organ.OrderDone>
+  <HH.Underworld.Organ.OrderMissed>O pedido de um {0} não foi atendido a tempo.</HH.Underworld.Organ.OrderMissed>
+  <HH.Underworld.Page.Title>Submundo</HH.Underworld.Page.Title>
+  <HH.Underworld.Page.Whispers>Sussurros: {0} de 100.</HH.Underworld.Page.Whispers>
+  <HH.Underworld.Page.Weights>Pesos de chegada: respeitáveis x{0}, foras da lei x{1}.</HH.Underworld.Page.Weights>
+  <HH.Underworld.Page.Content>Conteúdo: {0} (aplica-se: {1}).</HH.Underworld.Page.Content>
+  <HH.Underworld.Page.Stats1>Poço de luta: {0} combates, {1} apostas, parte da casa {2} de prata.</HH.Underworld.Page.Stats1>
+  <HH.Underworld.Page.Stats2>Receptador: {0} comprados, {1} vendidos, lucro {2} de prata.</HH.Underworld.Page.Stats2>
+  <HH.Underworld.Page.Stats3>Sessões no salão {0}, visitas de bandos {1}, desembarques {2}, caçadas {3}, órgãos {4}.</HH.Underworld.Page.Stats3>
+  <HH.Underworld.Page.HighRollers>Um boato sobre um cassino secreto está atraindo apostadores de alto calibre.</HH.Underworld.Page.HighRollers>
+</LanguageData>

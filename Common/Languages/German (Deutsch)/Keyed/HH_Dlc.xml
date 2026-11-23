@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Dlc.Bought>{0} hat {1} für {2} Silber gekauft.</HH.Dlc.Bought>
+  <HH.Dlc.Gizmo.Buy>Ablässe</HH.Dlc.Gizmo.Buy>
+  <HH.Dlc.Gizmo.BuyDesc>Kaufe Absolution, Gnade oder Rang für einen Kolonisten. Die Preise richten sich nach der Haltung seiner Ideoligion. Das Silber stammt aus dem Kolonievorrat oder aus der eigenen Tasche.</HH.Dlc.Gizmo.BuyDesc>
+  <HH.Dlc.Gizmo.ChooseFaith>Glauben wählen</HH.Dlc.Gizmo.ChooseFaith>
+  <HH.Dlc.Gizmo.ChooseFaithDesc>Weihe diesen Altar einer Ideoligion. Ihre Anhänger unter deinen Gästen kommen hierher, um zu beten.</HH.Dlc.Gizmo.ChooseFaithDesc>
+  <HH.Dlc.Gizmo.FundDesc>Wohin die Zahlungen deiner Kolonisten fließen. Die Gottheit behält sie für immer; eine Fraktion desselben Glaubens fasst Zuneigung zu dir (+1 Wohlwollen je 500 Silber, höchstens +5 pro Quadrum).</HH.Dlc.Gizmo.FundDesc>
+  <HH.Dlc.Gizmo.ToDeity>Opfergaben: an die Gottheit</HH.Dlc.Gizmo.ToDeity>
+  <HH.Dlc.Gizmo.ToFaction>Opfergaben: an die Fraktion des Glaubens</HH.Dlc.Gizmo.ToFaction>
+  <HH.Dlc.NoBuyers>kein Kolonist mit Ideoligion</HH.Dlc.NoBuyers>
+  <HH.Dlc.NoFaith>Noch kein Glaube gewählt.</HH.Dlc.NoFaith>
+  <HH.Dlc.Noble.AcceptOrders>Dem Befehl gehorchen</HH.Dlc.Noble.AcceptOrders>
+  <HH.Dlc.Noble.Arrived>Ein {0} samt Gefolge trifft für {1} Tage ein.</HH.Dlc.Noble.Arrived>
+  <HH.Dlc.Noble.BilletText>Das Imperium befiehlt dir, einen {0} und {1} Gefolgsleute für {2} Tage einzuquartieren. Sie erwarten ein Schlafzimmer, das ihrem Rang würdig ist ({3}). Für die Unkosten erhältst du etwa {4} Silber. Eine Weigerung kostet Wohlwollen und Ehre.</HH.Dlc.Noble.BilletText>
+  <HH.Dlc.Noble.Left>Die Adelsgesellschaft reist ab. Bezahlung: {0} Silber.</HH.Dlc.Noble.Left>
+  <HH.Dlc.Noble.OfferText>Ein {0} mit {1} Gefolgsleuten bittet darum, {2} Tage zu bleiben, und zahlt etwa {3} Silber, wenn er es bequem hat. Erwartet wird: {4}. Ablehnen kostet nichts.</HH.Dlc.Noble.OfferText>
+  <HH.Dlc.Noble.Refuse>Ablehnen (Wohlwollen und Ehre leiden)</HH.Dlc.Noble.Refuse>
+  <HH.Dlc.NothingOffered>ihr Glaube bietet nichts zum Verkauf an</HH.Dlc.NothingOffered>
+  <HH.Dlc.Reason.Abhorrent>ihr Glaube verabscheut das</HH.Dlc.Reason.Abhorrent>
+  <HH.Dlc.Reason.CannotPay>kann {0} nicht bezahlen</HH.Dlc.Reason.CannotPay>
+  <HH.Dlc.Reason.CapColony>die Kolonie hat das in diesem Quadrum schon gekauft</HH.Dlc.Reason.CapColony>
+  <HH.Dlc.Reason.CapIdeo>die Ideoligion hat in diesem Quadrum genug davon gehabt</HH.Dlc.Reason.CapIdeo>
+  <HH.Dlc.Reason.CapPawnQ>Grenze für dieses Quadrum erreicht</HH.Dlc.Reason.CapPawnQ>
+  <HH.Dlc.Reason.CapPawnY>Grenze für dieses Jahr erreicht</HH.Dlc.Reason.CapPawnY>
+  <HH.Dlc.Reason.CertainEnough>Gewissheit ist bereits voll</HH.Dlc.Reason.CertainEnough>
+  <HH.Dlc.Reason.NeedRank>benötigt Rang {0}</HH.Dlc.Reason.NeedRank>
+  <HH.Dlc.Reason.NeedRoyalty>benötigt Royalty</HH.Dlc.Reason.NeedRoyalty>
+  <HH.Dlc.Reason.NoFresh>keine frische Wunde bis 10 Trefferpunkte</HH.Dlc.Reason.NoFresh>
+  <HH.Dlc.Reason.NoGuilt>keine Erinnerung an ein gebrochenes Gebot</HH.Dlc.Reason.NoGuilt>
+  <HH.Dlc.Reason.NoIdeo>keine Ideoligion</HH.Dlc.Reason.NoIdeo>
+  <HH.Dlc.Reason.NoScar>keine bleibende Narbe</HH.Dlc.Reason.NoScar>
+  <HH.Dlc.Reason.NotAThing>ihr Glaube kennt so etwas nicht</HH.Dlc.Reason.NotAThing>
+  <HH.Dlc.Reason.NotFluid>nur fließende Ideoligionen können sich reformieren</HH.Dlc.Reason.NotFluid>
+  <HH.Dlc.Reason.NotPsychic>kann keine Psylink bilden</HH.Dlc.Reason.NotPsychic>
+  <HH.Dlc.Reason.PsylinkMax>Psylink ist bereits am Limit</HH.Dlc.Reason.PsylinkMax>
+  <HH.Dlc.Reason.RankHeld>hat diesen oder einen höheren Rang bereits</HH.Dlc.Reason.RankHeld>
+  <HH.Dlc.Reason.RankOrder>benötigt zuerst den vorherigen Rang</HH.Dlc.Reason.RankOrder>
+  <HH.Dlc.Reason.ReformReady>Reform ist bereits möglich</HH.Dlc.Reason.ReformReady>
+  <HH.Dlc.ShrineQuality>Glaube: {0}. Qualität der Kapelle: {1}.</HH.Dlc.ShrineQuality>
+  <HH.Dlc.TempleFund>Tempelfonds: {0} Silber</HH.Dlc.TempleFund>
+  <HH.Setting.dlc.traitSpawn>Neue Eigenschaften bei erzeugten Personen</HH.Setting.dlc.traitSpawn>
+  <HH.Setting.dlc.traitSpawn.Desc>Glückspilz, Pechvogel, Geborener Gastgeber und die anderen Eigenschaften von Hearth &amp; Harbor können bei neu erzeugten Personen auftauchen. Bestehende Personen behalten ihre. Aus: nur per Hand oder Editor hinzufügbar.</HH.Setting.dlc.traitSpawn.Desc>
+  <HH.Setting.dlc.traitRarity>Häufigkeit der Eigenschaften</HH.Setting.dlc.traitRarity>
+  <HH.Setting.dlc.traitRarity.Desc>Multiplikator dafür, wie oft unsere Eigenschaften für neue Personen gewürfelt werden (1 = so selten wie die meisten Vanilla-Eigenschaften).</HH.Setting.dlc.traitRarity.Desc>
+</LanguageData>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_XenoHosp_Baseliner.label>基准人类</HH_XenoHosp_Baseliner.label>
+  <HH_XenoHosp_Baseliner.description>普通人：口味朴素，花钱谨慎。人数多、规模大的团体。</HH_XenoHosp_Baseliner.description>
+  <HH_XenoHosp_Sanguophage.label>嗜血者</HH_XenoHosp_Sanguophage.label>
+  <HH_XenoHosp_Sanguophage.description>嗜血者需要昏暗的房间，并且要能随手取到血原小酒吧。他们愿意为一间死眠休息室付钱。</HH_XenoHosp_Sanguophage.description>
+  <HH_XenoHosp_Hemogenic.label>造血基因型（任意基因型）</HH_XenoHosp_Hemogenic.label>
+  <HH_XenoHosp_Hemogenic.description>携带造血基因的人，包括自定义基因型，都和嗜血者一样偏爱昏暗的房间和血原包。</HH_XenoHosp_Hemogenic.description>
+  <HH_XenoHosp_UVSensitive.label>紫外线敏感者（任意基因型）</HH_XenoHosp_UVSensitive.label>
+  <HH_XenoHosp_UVSensitive.description>阳光会伤害他们。昏暗的室内房间才让他们舒服。</HH_XenoHosp_UVSensitive.description>
+  <HH_XenoHosp_Dirtmole.label>土鼹鼠人</HH_XenoHosp_Dirtmole.label>
+  <HH_XenoHosp_Dirtmole.description>土鼹鼠人偏爱昏暗、没有窗户的房间，以及蘑菇菜肴。他们愿意付钱参加矿井导览。</HH_XenoHosp_Dirtmole.description>
+  <HH_XenoHosp_Genie.label>天才人</HH_XenoHosp_Genie.label>
+  <HH_XenoHosp_Genie.description>天才人期待一个阅读角和一张安静的桌子。他们会租用研究室。</HH_XenoHosp_Genie.description>
+  <HH_XenoHosp_Hussar.label>轻骑兵人</HH_XenoHosp_Hussar.label>
+  <HH_XenoHosp_Hussar.description>轻骑兵人在酒吧里大手大脚，喜欢一场痛快的群殴，随之而来的争执他们也照单全收。</HH_XenoHosp_Hussar.description>
+  <HH_XenoHosp_Neanderthal.label>尼安德特人</HH_XenoHosp_Neanderthal.label>
+  <HH_XenoHosp_Neanderthal.description>分量大，房间简单。家具陈设对他们来说没那么重要。</HH_XenoHosp_Neanderthal.description>
+  <HH_XenoHosp_Pigskin.label>猪皮人</HH_XenoHosp_Pigskin.label>
+  <HH_XenoHosp_Pigskin.description>猪皮人几乎什么都吃，也不介意房间乱一点。</HH_XenoHosp_Pigskin.description>
+  <HH_XenoHosp_Impid.label>小恶魔人</HH_XenoHosp_Impid.label>
+  <HH_XenoHosp_Impid.description>小恶魔人喜欢温暖的房间和辛辣的食物。他们会分享一部分营业收入来换取表演机会。</HH_XenoHosp_Impid.description>
+  <HH_XenoHosp_Waster.label>挥霍者</HH_XenoHosp_Waster.label>
+  <HH_XenoHosp_Waster.description>挥霍者在脏乱的房间里如鱼得水，花钱大手大脚，还会把地方弄得一团糟。</HH_XenoHosp_Waster.description>
+  <HH_XenoHosp_Yttakin.label>伊塔金人</HH_XenoHosp_Yttakin.label>
+  <HH_XenoHosp_Yttakin.description>伊塔金人需要凉爽的房间，温暖的房间会让他们很难受。</HH_XenoHosp_Yttakin.description>
+  <HH_XenoHosp_Highmate.label>高伴侣人</HH_XenoHosp_Highmate.label>
+  <HH_XenoHosp_Highmate.description>高伴侣人热爱美好与陪伴。漂亮的共享房间会让他们很满意。</HH_XenoHosp_Highmate.description>
+</LanguageData>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.Underworld>Підпілля</HH.Tab.Underworld>
+  <HH.Underworld.GateClosed>Недоступно: підпілля в цій грі закрите.</HH.Underworld.GateClosed>
+  <HH.Underworld.BackRoomDoorInfo>Відчинити ці двері можуть лише персонал, колоністи та сумнівні гості.</HH.Underworld.BackRoomDoorInfo>
+  <HH.Underworld.Stranger.Title>Незнайомець біля воріт</HH.Underworld.Stranger.Title>
+  <HH.Underworld.Stranger.Text>Незнайомець із низько насунутим капелюхом чекає біля ваших дверей, доки персонал не відійде достатньо далеко.\n\n«Гарне місце, — каже він. — Є задня кімната?»\n\nЩо він має на увазі, не пояснює. І не мусить.</HH.Underworld.Stranger.Text>
+  <HH.Underworld.Stranger.Show>Покажіть мені</HH.Underworld.Stranger.Show>
+  <HH.Underworld.Stranger.No>Не цікавить</HH.Underworld.Stranger.No>
+  <HH.Underworld.Stranger.Never>Більше не питати</HH.Underworld.Stranger.Never>
+  <HH.Underworld.Unlocked.Title>Задня кімната</HH.Underworld.Unlocked.Title>
+  <HH.Underworld.Unlocked.Text>Ви показали йому задню кімнату, і він кивнув так, ніби ви склали іспит. Тепер вам відкрито нову гілку досліджень: задня кімната з дверима, ямою для бійок, прилавком скупника, контрабандистським причалом і салоном. Ваш Шепіт (репутація в підпіллі) тепер слідуватиме за тим, що ви будуєте.\n\nМожна все це ігнорувати. Нічого з цього не обов'язково.</HH.Underworld.Unlocked.Text>
+  <HH.Underworld.Warn.Title>Попередження про вміст</HH.Underworld.Warn.Title>
+  <HH.Underworld.Warn.Dark>Темний вміст додає до підпілля: полонені можуть битися насмерть у ямі, банди можуть допитувати полонених жорсткіше, мисливці можуть полювати на полонених (за відповідної ідеології), а клінічний прилавок скуповує вилучені органи.\n\nЦе показується лише як текст і звичайні ігрові поранення. Діти ніколи не беруть участі, і нічого з цього не вмикається само собою.\n\nХочете мати це в цій грі?</HH.Underworld.Warn.Dark>
+  <HH.Underworld.Warn.Grim>Похмурий вміст — це все з темного вмісту, а полювання на полонених більше не питає про вашу ідеологію. Покупці органів розміщують замовлення з термінами.\n\nЦе показується лише як текст і звичайні ігрові поранення. Діти ніколи не беруть участі, і нічого з цього не вмикається само собою.\n\nХочете мати це в цій грі?</HH.Underworld.Warn.Grim>
+  <HH.Underworld.Warn.Accept>Так, я розумію</HH.Underworld.Warn.Accept>
+  <HH.Underworld.Warn.Back>Ні, назад до стандартного</HH.Underworld.Warn.Back>
+  <HH.Underworld.Warn.Hunt>Ви збираєтеся дозволити полювання на полонених на мисливських угіддях. Полонений випускається на угіддя з форою; якщо він протримається встановлений час або дістанеться лінії огорожі, він вільний, і його фракція про це дізнається в будь-якому разі. Якщо він загине, його фракція, ваші колоністи та гості цього не пробачать.\n\nЦе показується лише як текст. Дозволити?</HH.Underworld.Warn.Hunt>
+  <HH.Underworld.Warn.Organ>Прилавок клініки вночі скуповує вилучені органи від анонімних донорів. Ідеології, що відкидають торгівлю органами, триматимуть це проти вас, а ваш Шепіт зростатиме з кожним продажем.\n\nЦе показується лише як текст. Залишити?</HH.Underworld.Warn.Organ>
+  <HH.Underworld.Warn.Keep>Так, залишити</HH.Underworld.Warn.Keep>
+  <HH.Underworld.Warn.Remove>Ні, прибрати</HH.Underworld.Warn.Remove>
+  <HH.Underworld.Scandal.BackRoomFound.Title>Задню кімнату викрили</HH.Underworld.Scandal.BackRoomFound.Title>
+  <HH.Underworld.Scandal.BackRoomFound.Text>Поважний гість відчинив не ті двері й побачив, що дім приховує за ними. До вечора про це знатиме все місто.</HH.Underworld.Scandal.BackRoomFound.Text>
+  <HH.Underworld.Scandal.LeakedLedger.Title>Витеклий журнал</HH.Underworld.Scandal.LeakedLedger.Title>
+  <HH.Underworld.Scandal.LeakedLedger.Text>Сторінка з облікової книги скупника потрапила не в ті руки. Товар простежують до вашого прилавка.</HH.Underworld.Scandal.LeakedLedger.Text>
+  <HH.Underworld.Scandal.SecretCasinoRumour.Title>Чутка про таємне казино</HH.Underworld.Scandal.SecretCasinoRumour.Title>
+  <HH.Underworld.Scandal.SecretCasinoRumour.Text>По місту пішла чутка, що ваш дім ховає казино для тих, хто не говорить про це. Високі гравці шукають двері.</HH.Underworld.Scandal.SecretCasinoRumour.Text>
+  <HH.Underworld.Scandal.HonourAmongThieves.Title>Честь серед злодіїв</HH.Underworld.Scandal.HonourAmongThieves.Title>
+  <HH.Underworld.Scandal.HonourAmongThieves.Text>Одна з банд добре відгукується про ваш дім там, де це має значення.</HH.Underworld.Scandal.HonourAmongThieves.Text>
+  <HH.Underworld.Scandal.Effects>Шепіт {0}, слава {1}.</HH.Underworld.Scandal.Effects>
+  <HH.Underworld.Pit.Enabled>Яма відкрита</HH.Underworld.Pit.Enabled>
+  <HH.Underworld.Pit.Enabled.Desc>Призначати бої в цій ямі.</HH.Underworld.Pit.Enabled.Desc>
+  <HH.Underworld.Pit.Animals>Тварини</HH.Underworld.Pit.Animals>
+  <HH.Underworld.Pit.Animals.Desc>Тварини вашої колонії можуть битися тут.</HH.Underworld.Pit.Animals.Desc>
+  <HH.Underworld.Pit.Volunteers>Добровольці</HH.Underworld.Pit.Volunteers>
+  <HH.Underworld.Pit.Volunteers.Desc>Колоністи, яким до вподоби бійка (кровожерливість або добрий ближній бій), можуть зголоситися. Добровольці ніколи не б'ються насмерть.</HH.Underworld.Pit.Volunteers.Desc>
+  <HH.Underworld.Pit.Prisoners>Полонені</HH.Underworld.Pit.Prisoners>
+  <HH.Underworld.Pit.Prisoners.Desc>Полонених можна відправити в яму. Лише дорослі.</HH.Underworld.Pit.Prisoners.Desc>
+  <HH.Underworld.Pit.Lethal>До смерті</HH.Underworld.Pit.Lethal>
+  <HH.Underworld.Pit.Lethal.Desc>Бої між полоненими та тваринами завершуються лише тоді, коли один із них повалений. Ніколи для добровольців.</HH.Underworld.Pit.Lethal.Desc>
+  <HH.Underworld.Pit.StartNow>Почати бій</HH.Underworld.Pit.StartNow>
+  <HH.Underworld.Pit.StartNow.Desc>Оберіть зараз двох чесних бійців і дозвольте гостям робити ставки.</HH.Underworld.Pit.StartNow.Desc>
+  <HH.Underworld.Pit.CannotStart>Бою не буде: {0}</HH.Underworld.Pit.CannotStart>
+  <HH.Underworld.Pit.ArenaOk>Арена: {0} клітинок, закрита.</HH.Underworld.Pit.ArenaOk>
+  <HH.Underworld.Pit.ArenaOpen>Арена відкрита або завелика: зачиніть огорожу.</HH.Underworld.Pit.ArenaOpen>
+  <HH.Underworld.Pit.NoFighters>дозволено менше двох бійців</HH.Underworld.Pit.NoFighters>
+  <HH.Underworld.Pit.NoFairPair>немає чесної пари бійців</HH.Underworld.Pit.NoFairPair>
+  <HH.Underworld.Pit.BoutRunning>Бій: {0} проти {1}.</HH.Underworld.Pit.BoutRunning>
+  <HH.Underworld.Pit.BoutAnnounced>Бій у ямі: {0} проти {1}. Ставки прийнято.</HH.Underworld.Pit.BoutAnnounced>
+  <HH.Underworld.Pit.Won>{0} перемагає в бою. Дім забирає {1} срібла.</HH.Underworld.Pit.Won>
+  <HH.Underworld.Pit.Draw>Бій завершується без переможця. Усі ставки повертаються.</HH.Underworld.Pit.Draw>
+  <HH.Underworld.Fence.Inspect>Товар: {0} предметів вартістю {1} срібла. Скарбничка: {2} срібла.</HH.Underworld.Fence.Inspect>
+  <HH.Underworld.Fence.Fund>Поповнити скарбничку</HH.Underworld.Fence.Fund>
+  <HH.Underworld.Fence.Fund.Desc>Перенести срібло з каси до скарбнички скупника, до ліміту в налаштуваннях.</HH.Underworld.Fence.Fund.Desc>
+  <HH.Underworld.Fence.Funded>{0} срібла перенесено до скарбнички.</HH.Underworld.Fence.Funded>
+  <HH.Underworld.Fence.NoCash>Скарбничка порожня.</HH.Underworld.Fence.NoCash>
+  <HH.Underworld.Fence.CannotPay>Покупець не може заплатити.</HH.Underworld.Fence.CannotPay>
+  <HH.Underworld.Fence.Exposed>Товар походить із {0}, і там знають, куди він потрапив.</HH.Underworld.Fence.Exposed>
+  <HH.Underworld.Gang.Title>Банда біля дверей</HH.Underworld.Gang.Title>
+  <HH.Underworld.Gang.Text>{0} людей з {1} тихо заходять, киваючи персоналу, і питають про задню кімнату. У них є гроші, і вони не чекають запитань.</HH.Underworld.Gang.Text>
+  <HH.Underworld.Gang.Demand.Title>Дружня пропозиція</HH.Underworld.Gang.Demand.Title>
+  <HH.Underworld.Gang.Demand.Text>Ватажок банди з {0} спирається на ваш прилавок. «Гарний дім. Було б прикро, якби з ним щось сталося. За {1} срібла ми подбаємо, щоб нічого не сталося.»</HH.Underworld.Gang.Demand.Text>
+  <HH.Underworld.Gang.Demand.Pay>Заплатити {0} срібла</HH.Underworld.Gang.Demand.Pay>
+  <HH.Underworld.Gang.Demand.Refuse>Показати їм двері</HH.Underworld.Gang.Demand.Refuse>
+  <HH.Underworld.Gang.Demand.NoCash>у касі недостатньо</HH.Underworld.Gang.Demand.NoCash>
+  <HH.Underworld.Tour.IntelTitle>Дещо з допиту</HH.Underworld.Tour.IntelTitle>
+  <HH.Underworld.Tour.IntelText>Після години з {0} банда залишила на прилавку записку: ім'я, місце, день. Хтось там щось планує, і тепер ви знаєте трохи більше.</HH.Underworld.Tour.IntelText>
+  <HH.Underworld.Smuggler.Title>Ящик на причалі</HH.Underworld.Smuggler.Title>
+  <HH.Underworld.Smuggler.Text>Шатл із погашеними вогнями сів на причал. Голос пропонує {0} предметів вартістю приблизно {1} срібла за {2}. Без запитань і без квитанції.</HH.Underworld.Smuggler.Text>
+  <HH.Underworld.Smuggler.Buy>Купити за {0} срібла</HH.Underworld.Smuggler.Buy>
+  <HH.Underworld.Smuggler.Decline>Відправити геть</HH.Underworld.Smuggler.Decline>
+  <HH.Underworld.Smuggler.NoCash>у касі недостатньо</HH.Underworld.Smuggler.NoCash>
+  <HH.Underworld.Smuggler.InspectTitle>Патруль помітив ліхтар</HH.Underworld.Smuggler.InspectTitle>
+  <HH.Underworld.Smuggler.InspectText>Імперський патруль побачив вогні на вашому причалі й записав це.</HH.Underworld.Smuggler.InspectText>
+  <HH.Underworld.Hunt.Title>Мисливська група</HH.Underworld.Hunt.Title>
+  <HH.Underworld.Hunt.Text>Прибули {0} мисливців зі рушницями та грошима. Вони заплатили {1} срібла за угіддя, і в нього випустили {2} тварин.</HH.Underworld.Hunt.Text>
+  <HH.Underworld.Hunt.GroundOk>Мисливські угіддя: {0} клітинок, закриті. Здобич: {1}.</HH.Underworld.Hunt.GroundOk>
+  <HH.Underworld.Hunt.QuarryAnimals>тварини</HH.Underworld.Hunt.QuarryAnimals>
+  <HH.Underworld.Hunt.QuarryHuman>тварини та полонений</HH.Underworld.Hunt.QuarryHuman>
+  <HH.Underworld.Hunt.Prisoners>Полонений як здобич</HH.Underworld.Hunt.Prisoners>
+  <HH.Underworld.Hunt.Prisoners.Desc>Дозволити мисливцям полювати на полоненого, випущеного на угіддя. Лише з темним вмістом і відповідною ідеологією.</HH.Underworld.Hunt.Prisoners.Desc>
+  <HH.Underworld.Hunt.GateContent>Потрібен темний або похмурий вміст, підтверджений.</HH.Underworld.Hunt.GateContent>
+  <HH.Underworld.Hunt.GatePrecept>Ідеологія колонії цього не дозволяє.</HH.Underworld.Hunt.GatePrecept>
+  <HH.Underworld.Hunt.DeathTitle>Людина загинула на полюванні</HH.Underworld.Hunt.DeathTitle>
+  <HH.Underworld.Hunt.DeathText>{0} не пережив полювання. Його люди дізнаються про це, як і всі, хто дивився.</HH.Underworld.Hunt.DeathText>
+  <HH.Underworld.Hunt.FreedTitle>Здобич втекла</HH.Underworld.Hunt.FreedTitle>
+  <HH.Underworld.Hunt.FreedText>{0} протримався відведений час і йде вільним. Мисливці пішли додому злі; його фракція дізнається, як усе було.</HH.Underworld.Hunt.FreedText>
+  <HH.Underworld.Organ.Inspect>Органів чекає: {0}. Відкритих замовлень: {1}.</HH.Underworld.Organ.Inspect>
+  <HH.Underworld.Organ.Sold>{0} органів зібрано на прилавку клініки.</HH.Underworld.Organ.Sold>
+  <HH.Underworld.Organ.OrderTitle>Замовлення</HH.Underworld.Organ.OrderTitle>
+  <HH.Underworld.Organ.OrderText>Покупець хоче {0} протягом {1} днів і платить із надбавкою.</HH.Underworld.Organ.OrderText>
+  <HH.Underworld.Organ.OrderDone>Замовлення на {0} виконано.</HH.Underworld.Organ.OrderDone>
+  <HH.Underworld.Organ.OrderMissed>Замовлення на {0} не виконано вчасно.</HH.Underworld.Organ.OrderMissed>
+  <HH.Underworld.Page.Title>Підпілля</HH.Underworld.Page.Title>
+  <HH.Underworld.Page.Whispers>Шепіт: {0} зі 100.</HH.Underworld.Page.Whispers>
+  <HH.Underworld.Page.Weights>Ваги прибуття: поважні x{0}, поза законом x{1}.</HH.Underworld.Page.Weights>
+  <HH.Underworld.Page.Content>Вміст: {0} (застосовано: {1}).</HH.Underworld.Page.Content>
+  <HH.Underworld.Page.Stats1>Яма для бійок: {0} боїв, {1} ставок, частка дому {2} срібла.</HH.Underworld.Page.Stats1>
+  <HH.Underworld.Page.Stats2>Скупник: {0} куплено, {1} продано, прибуток {2} срібла.</HH.Underworld.Page.Stats2>
+  <HH.Underworld.Page.Stats3>Сеансів у салоні {0}, візитів банд {1}, посадок {2}, полювань {3}, органів {4}.</HH.Underworld.Page.Stats3>
+  <HH.Underworld.Page.HighRollers>Чутка про таємне казино приваблює високих гравців.</HH.Underworld.Page.HighRollers>
+</LanguageData>

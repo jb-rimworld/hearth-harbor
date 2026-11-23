@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_TendVenue.reportString>obsluhuje provozovnu.</HH_TendVenue.reportString>
+  <HH_BuyGoods.reportString>nakupuje TargetA.</HH_BuyGoods.reportString>
+  <HH_BuyDrink.reportString>objednává TargetA.</HH_BuyDrink.reportString>
+  <HH_WaitAtVenue.reportString>čeká na obsluhu.</HH_WaitAtVenue.reportString>
+</LanguageData>

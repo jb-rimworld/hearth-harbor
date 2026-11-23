@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchScreening.reportString>дивиться фільм.</HH_WatchScreening.reportString>
+  <HH_SalonSit.reportString>чекає на нову зачіску.</HH_SalonSit.reportString>
+  <HH_SalonStyle.reportString>робить зачіску клієнту TargetA.</HH_SalonStyle.reportString>
+  <HH_SalonSelf.reportString>робить собі нову стрижку.</HH_SalonSelf.reportString>
+  <HH_GalleryVisit.reportString>дивиться на мистецтво.</HH_GalleryVisit.reportString>
+  <HH_ParkRest.reportString>сидить на лавці.</HH_ParkRest.reportString>
+  <HH_TaxiDeparture.reportString>чекає на таксі.</HH_TaxiDeparture.reportString>
+  <HH_Bodyguard.reportString>охороняє TargetA.</HH_Bodyguard.reportString>
+</LanguageData>

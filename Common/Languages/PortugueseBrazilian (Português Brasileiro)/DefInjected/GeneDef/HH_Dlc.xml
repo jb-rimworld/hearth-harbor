@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Gene_Hospitable.label>hospitaleiro</HH_Gene_Hospitable.label>
+  <HH_Gene_Hospitable.description>Os portadores são calorosos sem esforço. Os hóspedes acham fácil conviver com eles, e receber hóspedes lhes vem mais rápido.</HH_Gene_Hospitable.description>
+  <HH_Gene_AddictionProofReward.label>circuito de recompensa à prova de vício</HH_Gene_AddictionProofReward.label>
+  <HH_Gene_AddictionProofReward.description>O circuito de recompensa do cérebro quase não reage a risco e sorte. O jogo raramente vira hábito.</HH_Gene_AddictionProofReward.description>
+  <HH_Gene_Compulsive.label>compulsivo</HH_Gene_Compulsive.label>
+  <HH_Gene_Compulsive.description>Circuito de recompensa hiperativo. Apostar é um pouco mais divertido e muito mais difícil de largar.</HH_Gene_Compulsive.description>
+  <HH_Gene_DexterousFingers.label>dedos ágeis</HH_Gene_DexterousFingers.label>
+  <HH_Gene_DexterousFingers.description>Controle de mão incomumente fino: embaralhar, distribuir e fazer passes de mão vêm naturalmente.</HH_Gene_DexterousFingers.description>
+  <HH_Gene_RefinedPalate.label>paladar refinado</HH_Gene_RefinedPalate.label>
+  <HH_Gene_RefinedPalate.description>Uma língua que distingue boa cozinha de mera comestibilidade. Cozinheiros elevam a qualidade dos pratos com mais frequência; como hóspede, o portador espera mais e dá gorjetas maiores.</HH_Gene_RefinedPalate.description>
+  <HH_Gene_NumberSense.label>senso numérico</HH_Gene_NumberSense.label>
+  <HH_Gene_NumberSense.description>Os números se organizam sozinhos. Crupiês, caixas e bancários com este gene trabalham como se tivessem três níveis de habilidade a mais.</HH_Gene_NumberSense.description>
+  <HH_Gene_TirelessSmile.label>sorriso incansável</HH_Gene_TirelessSmile.label>
+  <HH_Gene_TirelessSmile.description>Os músculos do sorriso não se cansam. Servir em mesas e balcões gasta descanso muito mais devagar.</HH_Gene_TirelessSmile.description>
+  <HH_Gene_SilverTongue.label>língua de prata</HH_Gene_SilverTongue.label>
+  <HH_Gene_SilverTongue.description>Uma voz que faz qualquer preço soar como pechincha. Os hóspedes esperam um pouco menos e a lealdade sai mais barata.</HH_Gene_SilverTongue.description>
+  <HH_Gene_HighRoller.label>apostador de alto risco</HH_Gene_HighRoller.label>
+  <HH_Gene_HighRoller.description>Os portadores se sentem mais vivos quando o risco é alto. Apostam mais, aproveitam mais e dão gorjetas generosas, mas são difíceis de tirar da mesa.</HH_Gene_HighRoller.description>
+</LanguageData>

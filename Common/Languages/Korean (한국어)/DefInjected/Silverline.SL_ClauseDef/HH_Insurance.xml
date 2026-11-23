@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Clause_1.label>대기 기간</SL_Clause_1.label>
+  <SL_Clause_1.description>대기 기간이 지나야 보장이 시작됩니다.</SL_Clause_1.description>
+  <SL_Clause_3_2.label>사고와 요리</SL_Clause_3_2.label>
+  <SL_Clause_3_2.description>질병은 사고가 아닙니다.</SL_Clause_3_2.description>
+  <SL_Clause_4.label>이야기꾼의 행위</SL_Clause_4.label>
+  <SL_Clause_4.description>날씨 피해는 회색지대입니다.</SL_Clause_4.description>
+  <SL_Clause_7b.label>습격과 포위</SL_Clause_7b.label>
+  <SL_Clause_7b.description>포위 공격과 기계 군집은 회색지대입니다.</SL_Clause_7b.description>
+  <SL_Clause_9.label>기존 질환</SL_Clause_9.label>
+  <SL_Clause_9.description>이전부터 있던 피해는 공제됩니다.</SL_Clause_9.description>
+  <SL_Clause_11.label>자해 피해</SL_Clause_11.label>
+  <SL_Clause_11.description>정착지 구성원이 입힌 피해는 제외됩니다.</SL_Clause_11.description>
+  <SL_Clause_14b.label>벽과 문</SL_Clause_14b.label>
+  <SL_Clause_14b.description>부서진 문은 회색지대입니다.</SL_Clause_14b.description>
+  <SL_Clause_17.label>그 밖의 조항</SL_Clause_17.label>
+  <SL_Clause_17.description>심사에 하루가 더 걸립니다. Overbooked 단계부터는 회색지대입니다.</SL_Clause_17.description>
+  <SL_Clause_21.label>생체 부품</SL_Clause_21.label>
+  <SL_Clause_21.description>생체 부품은 장비로 취급됩니다.</SL_Clause_21.description>
+  <SL_Clause_22.label>재생</SL_Clause_22.label>
+  <SL_Clause_22.description>잃은 부위가 다시 자라면 보상 청구도 함께 환수됩니다.</SL_Clause_22.description>
+  <SL_Clause_23.label>평가와 사망</SL_Clause_23.label>
+  <SL_Clause_23.description>평가가 끝나기 전에 사망하면 평가도 끝납니다.</SL_Clause_23.description>
+  <SL_Clause_26.label>위험 변화</SL_Clause_26.label>
+  <SL_Clause_26.description>보험료는 위험을 따라갑니다.</SL_Clause_26.description>
+  <SL_Clause_30.label>양식 C-7</SL_Clause_30.label>
+  <SL_Clause_30.description>해지 신청이 양식 오류로 반려될 수 있습니다.</SL_Clause_30.description>
+  <SL_Clause_31.label>자동 갱신</SL_Clause_31.label>
+  <SL_Clause_31.description>보험은 스스로 갱신됩니다.</SL_Clause_31.description>
+  <SL_Clause_40.label>이해 상충</SL_Clause_40.label>
+  <SL_Clause_40.description>Overbooked 단계부터는 법률 방패가 클로백 뮤추얼에 대해 도움이 되지 않습니다.</SL_Clause_40.description>
+</LanguageData>

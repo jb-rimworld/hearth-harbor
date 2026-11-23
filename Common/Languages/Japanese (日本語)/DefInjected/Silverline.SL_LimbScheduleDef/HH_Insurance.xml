@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_LimbSchedule_Standard.label>四肢給付表</SL_LimbSchedule_Standard.label>
+  <SL_LimbSchedule_Standard.description>標準の給付表（付録B.2）が組み込まれています。改造された身体部位の行は、ここに追加してください。</SL_LimbSchedule_Standard.description>
+</LanguageData>

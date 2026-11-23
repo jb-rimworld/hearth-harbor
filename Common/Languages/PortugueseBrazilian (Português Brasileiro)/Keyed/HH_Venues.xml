@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Setting.venues.browseTicks>Tempo de navegação (ticks)</HH.Setting.venues.browseTicks>
+  <HH.Setting.venues.browseTicks.Desc>Quanto tempo um hóspede observa um item antes de decidir. 60 ticks equivalem a um segundo na velocidade normal.</HH.Setting.venues.browseTicks.Desc>
+  <HH.Setting.venues.dayClose>Predefinição 'Dia' fecha</HH.Setting.venues.dayClose>
+  <HH.Setting.venues.dayClose.Desc>Hora em que a predefinição 'Dia' fecha.</HH.Setting.venues.dayClose.Desc>
+  <HH.Setting.venues.dayOpen>Predefinição 'Dia' abre</HH.Setting.venues.dayOpen>
+  <HH.Setting.venues.dayOpen.Desc>Hora em que a predefinição 'Dia' do diálogo de horários da placa abre.</HH.Setting.venues.dayOpen.Desc>
+  <HH.Setting.venues.drinkGapHours>Horas entre bebidas</HH.Setting.venues.drinkGapHours>
+  <HH.Setting.venues.drinkGapHours.Desc>Um hóspede não pede outra bebida antes que tenham passado este número de horas.</HH.Setting.venues.drinkGapHours.Desc>
+  <HH.Setting.venues.eveningClose>Predefinição 'Noite' fecha</HH.Setting.venues.eveningClose>
+  <HH.Setting.venues.eveningClose.Desc>Hora em que a predefinição 'Noite' fecha (uma hora anterior à de abertura significa depois da meia-noite).</HH.Setting.venues.eveningClose.Desc>
+  <HH.Setting.venues.eveningOpen>Predefinição 'Noite' abre</HH.Setting.venues.eveningOpen>
+  <HH.Setting.venues.eveningOpen.Desc>Hora em que a predefinição 'Noite' abre.</HH.Setting.venues.eveningOpen.Desc>
+  <HH.Setting.venues.hideVanilla>Ocultar mobília original substituída</HH.Setting.venues.hideVanilla>
+  <HH.Setting.venues.hideVanilla.Desc>Quando uma construção de Hearth &amp; Harbor substitui uma original (por exemplo, a mesa de cartas pela mesa de pôquer), a original desaparece do menu de construção assim que a substituta estiver disponível. As construções já colocadas permanecem. Tem efeito após reiniciar ou ao carregar o próximo jogo.</HH.Setting.venues.hideVanilla.Desc>
+  <HH.Setting.venues.lastOrdersMinutes>Últimos pedidos (minutos antes do fechamento)</HH.Setting.venues.lastOrdersMinutes>
+  <HH.Setting.venues.lastOrdersMinutes.Desc>Nesse último período antes do fechamento, hóspedes com pressa pedem mais uma rodada, nenhum hóspede começa uma navegação longa, e uma compra já em andamento ainda é atendida após o fechamento. 0 = sem últimos pedidos.</HH.Setting.venues.lastOrdersMinutes.Desc>
+  <HH.Setting.venues.marketCaravans>Caravanas de comerciantes por feira</HH.Setting.venues.marketCaravans>
+  <HH.Setting.venues.marketCaravans.Desc>Quantas caravanas de comerciantes chegam no dia da feira (menos, se poucas facções forem amistosas).</HH.Setting.venues.marketCaravans.Desc>
+  <HH.Setting.venues.marketDays>Dias entre as feiras</HH.Setting.venues.marketDays>
+  <HH.Setting.venues.marketDays.Desc>Intervalo médio da grande feira, com um pouco de aleatoriedade.</HH.Setting.venues.marketDays.Desc>
+  <HH.Setting.venues.marketEnabled>Grande feira</HH.Setting.venues.marketEnabled>
+  <HH.Setting.venues.marketEnabled.Desc>De tempos em tempos, facções amistosas trazem várias caravanas de comerciantes e visitantes do dia de uma só vez. Só acontece enquanto você mantém pelo menos uma loja em funcionamento.</HH.Setting.venues.marketEnabled.Desc>
+  <HH.Setting.venues.marketRenown>Renome necessário para a feira</HH.Setting.venues.marketRenown>
+  <HH.Setting.venues.marketRenown.Desc>Renome mínimo (0-100) para que comerciantes e visitantes queiram realizar uma feira com você. Sem um sistema de renome, a colônia conta como neutra (50).</HH.Setting.venues.marketRenown.Desc>
+  <HH.Setting.venues.marketStalls>Barracas de feira necessárias</HH.Setting.venues.marketStalls>
+  <HH.Setting.venues.marketStalls.Desc>A grande feira só acontece quando você possui este número de barracas de feira independentes (os comerciantes montam nelas). Com menos barracas, menos caravanas chegam.</HH.Setting.venues.marketStalls.Desc>
+  <HH.Setting.venues.marketVisitors>Grupos de visitantes por feira</HH.Setting.venues.marketVisitors>
+  <HH.Setting.venues.marketVisitors.Desc>Quantos grupos de visitantes do dia chegam no dia da feira para comprar nas suas lojas.</HH.Setting.venues.marketVisitors.Desc>
+  <HH.Setting.venues.maxPurchases>Compras por hóspede e estadia</HH.Setting.venues.maxPurchases>
+  <HH.Setting.venues.maxPurchases.Desc>Um hóspede para de comprar após este número de compras em uma estadia.</HH.Setting.venues.maxPurchases.Desc>
+  <HH.Setting.venues.nightBell>Campainha noturna</HH.Setting.venues.nightBell>
+  <HH.Setting.venues.nightBell.Desc>Hóspedes podem tocar a campainha de um estabelecimento fechado. Colonos acordados com o tipo de trabalho Atendimento vêm e o abrem por um adicional. Ninguém é acordado.</HH.Setting.venues.nightBell.Desc>
+  <HH.Setting.venues.nightBellMin>Cobrança mínima da campainha noturna</HH.Setting.venues.nightBellMin>
+  <HH.Setting.venues.nightBellMin.Desc>Um serviço de campainha nunca custa menos que isto (prata).</HH.Setting.venues.nightBellMin.Desc>
+  <HH.Setting.venues.nightBellSurcharge>Adicional da campainha noturna</HH.Setting.venues.nightBellSurcharge>
+  <HH.Setting.venues.nightBellSurcharge.Desc>Parcela extra do preço que os hóspedes pagam quando tocam a campainha fora do horário de funcionamento.</HH.Setting.venues.nightBellSurcharge.Desc>
+  <HH.Setting.venues.nightBellWaitHours>Paciência na campainha noturna (horas)</HH.Setting.venues.nightBellWaitHours>
+  <HH.Setting.venues.nightBellWaitHours.Desc>Quanto tempo um hóspede espera depois de tocar antes de desistir ('Tocou a campainha. Ninguém veio.').</HH.Setting.venues.nightBellWaitHours.Desc>
+  <HH.Setting.venues.nightClose>Predefinição 'Madrugada' fecha</HH.Setting.venues.nightClose>
+  <HH.Setting.venues.nightClose.Desc>Hora em que a predefinição 'Madrugada' fecha.</HH.Setting.venues.nightClose.Desc>
+  <HH.Setting.venues.nightOpen>Predefinição 'Madrugada' abre</HH.Setting.venues.nightOpen>
+  <HH.Setting.venues.nightOpen.Desc>Hora em que a predefinição 'Madrugada' abre.</HH.Setting.venues.nightOpen.Desc>
+  <HH.Setting.venues.priceTolerance>Tolerância de preço dos hóspedes</HH.Setting.venues.priceTolerance>
+  <HH.Setting.venues.priceTolerance.Desc>Quanto os hóspedes aguentam. Acima de 1, aceitam preços mais salgados; abaixo de 1, regateiam com os pés. Segue o controle de dificuldade.</HH.Setting.venues.priceTolerance.Desc>
+  <HH.Setting.venues.selfService>Desconto de autoatendimento</HH.Setting.venues.selfService>
+  <HH.Setting.venues.selfService.Desc>Estabelecimentos que não precisam de funcionários, mas não têm ninguém atrás do balcão, cobram este tanto a menos (o hóspede pega tudo sozinho).</HH.Setting.venues.selfService.Desc>
+  <HH.Setting.venues.shopDesire>Apetite dos hóspedes por compras</HH.Setting.venues.shopDesire>
+  <HH.Setting.venues.shopDesire.Desc>Quão ansiosamente os hóspedes entram em lojas e tavernas em comparação com outras coisas que poderiam fazer. 0 = nunca compram.</HH.Setting.venues.shopDesire.Desc>
+  <HH.Setting.venues.shopPrice>Nível de preço das lojas</HH.Setting.venues.shopPrice>
+  <HH.Setting.venues.shopPrice.Desc>Multiplica o valor de mercado das mercadorias vendidas em lojas e tavernas, além do fator de preço de cada placa.</HH.Setting.venues.shopPrice.Desc>
+  <HH.Setting.venues.stallFee>Taxa de barraca por comerciante</HH.Setting.venues.stallFee>
+  <HH.Setting.venues.stallFee.Desc>Cada caravana de comerciantes paga esta quantia em prata pela sua barraca no dia da feira (vai para o caixa da colônia).</HH.Setting.venues.stallFee.Desc>
+  <HH.Setting.venues.tendHours>Horas por turno</HH.Setting.venues.tendHours>
+  <HH.Setting.venues.tendHours.Desc>Por quanto tempo um colono cuida de um estabelecimento antes de procurar outro trabalho (eles também param quando ele fecha).</HH.Setting.venues.tendHours.Desc>
+  <HH.Setting.venues.vendingPrice>Nível de preço das máquinas de venda</HH.Setting.venues.vendingPrice>
+  <HH.Setting.venues.vendingPrice.Desc>Multiplica o valor de mercado do que as máquinas de venda vendem.</HH.Setting.venues.vendingPrice.Desc>
+  <HH.Setting.venues.waitForStaffTicks>Paciência dos hóspedes com o pessoal (ticks)</HH.Setting.venues.waitForStaffTicks>
+  <HH.Setting.venues.waitForStaffTicks.Desc>Um hóspede espera este tempo até que alguém venha a um estabelecimento aberto, mas sem funcionários, e então desiste irritado.</HH.Setting.venues.waitForStaffTicks.Desc>
+  <HH.Venue.AlwaysOpen>aberto o tempo todo</HH.Venue.AlwaysOpen>
+  <HH.Venue.Bargain>Pechincha!</HH.Venue.Bargain>
+  <HH.Venue.BellRung>*ding*</HH.Venue.BellRung>
+  <HH.Venue.CheckCounter>Balcão para o atendente</HH.Venue.CheckCounter>
+  <HH.Venue.CheckDrinks>Bebidas em estoque</HH.Venue.CheckDrinks>
+  <HH.Venue.CheckNoCounter>Sem balcão (opcional) → o atendente fica ao lado da placa</HH.Venue.CheckNoCounter>
+  <HH.Venue.CheckNoDrinks>Sem bebidas em estoque → armazene cerveja ou outras bebidas no cômodo</HH.Venue.CheckNoDrinks>
+  <HH.Venue.CheckNoStock>Sem mercadorias à venda → coloque uma prateleira ou depósito com mercadorias no cômodo</HH.Venue.CheckNoStock>
+  <HH.Venue.CheckNoWorker>Ninguém tem o tipo de trabalho Atendimento ativado</HH.Venue.CheckNoWorker>
+  <HH.Venue.CheckStock>Mercadorias nas prateleiras</HH.Venue.CheckStock>
+  <HH.Venue.CheckWorker>Um colono faz trabalho de Atendimento</HH.Venue.CheckWorker>
+  <HH.Venue.ChooseType>Tipo de negócio</HH.Venue.ChooseType>
+  <HH.Venue.ChooseTypeDesc>Escolha o tipo de negócio do cômodo desta placa: taverna, loja, restaurante, cassino, spa ou salão.</HH.Venue.ChooseTypeDesc>
+  <HH.Venue.Closed>fechado</HH.Venue.Closed>
+  <HH.Venue.Closes>Fecha às</HH.Venue.Closes>
+  <HH.Venue.ColonyMayTake>A colônia pode pegar mercadorias</HH.Venue.ColonyMayTake>
+  <HH.Venue.ColonyMayTakeDesc>Desligado: mercadorias à venda neste cômodo são proibidas para os seus colonos, então ninguém leva o seu estoque embora. Ligado: os colonos tratam as mercadorias como qualquer outro item armazenado.</HH.Venue.ColonyMayTakeDesc>
+  <HH.Venue.ColonyMayTakeShort>colônia pode pegar mercadorias</HH.Venue.ColonyMayTakeShort>
+  <HH.Venue.Current>atual</HH.Venue.Current>
+  <HH.Venue.CustomersOnly>somente clientes</HH.Venue.CustomersOnly>
+  <HH.Venue.Done>Concluído</HH.Venue.Done>
+  <HH.Venue.ForSale>À venda</HH.Venue.ForSale>
+  <HH.Venue.GoodService>Atendimento simpático</HH.Venue.GoodService>
+  <HH.Venue.GoodValue>Bom custo-benefício</HH.Venue.GoodValue>
+  <HH.Venue.Hours>Horário de funcionamento</HH.Venue.Hours>
+  <HH.Venue.HoursDesc>Define quando o negócio está aberto. Predefinições para dia, noite, madrugada e o tempo todo.</HH.Venue.HoursDesc>
+  <HH.Venue.HoursHint>Uma hora de fechamento anterior à de abertura significa que o negócio continua aberto depois da meia-noite.</HH.Venue.HoursHint>
+  <HH.Venue.HoursTitle>Horário de funcionamento</HH.Venue.HoursTitle>
+  <HH.Venue.LastOrders>últimos pedidos</HH.Venue.LastOrders>
+  <HH.Venue.MarketFees>Os comerciantes pagam {0} de prata por suas barracas.</HH.Venue.MarketFees>
+  <HH.Venue.MarketLabel>Dia de feira</HH.Venue.MarketLabel>
+  <HH.Venue.MarketText>A notícia se espalhou: é dia de feira. {0} caravanas de comerciantes e {1} grupos de visitantes de {2} estão a caminho da sua colônia. Os comerciantes negociarão como de costume em seus acampamentos; os visitantes vão percorrer suas lojas e tavernas, se estiverem abertas.\n\nMantenha suas prateleiras abastecidas e seus balcões com pessoal.</HH.Venue.MarketText>
+  <HH.Venue.NoRoom>Ainda não é um negócio: a placa precisa de um cômodo fechado e coberto.</HH.Venue.NoRoom>
+  <HH.Venue.NoStaffState>aberto, mas ninguém de serviço</HH.Venue.NoStaffState>
+  <HH.Venue.NoTypes>Nenhum tipo de negócio disponível</HH.Venue.NoTypes>
+  <HH.Venue.Nobody>ninguém</HH.Venue.Nobody>
+  <HH.Venue.NobodyCameBell>Tocou a campainha. Ninguém veio.</HH.Venue.NobodyCameBell>
+  <HH.Venue.NobodyCameStaff>Esperou atendimento. Ninguém veio.</HH.Venue.NobodyCameStaff>
+  <HH.Venue.Off>desligado</HH.Venue.Off>
+  <HH.Venue.On>ligado</HH.Venue.On>
+  <HH.Venue.Open>aberto</HH.Venue.Open>
+  <HH.Venue.Opens>Abre às</HH.Venue.Opens>
+  <HH.Venue.PresetAlways>Sempre</HH.Venue.PresetAlways>
+  <HH.Venue.PresetDay>Dia</HH.Venue.PresetDay>
+  <HH.Venue.PresetEvening>Noite</HH.Venue.PresetEvening>
+  <HH.Venue.PresetNight>Madrugada</HH.Venue.PresetNight>
+  <HH.Venue.Price>Preços</HH.Venue.Price>
+  <HH.Venue.PriceDesc>Fator de preço sobre tudo o que este negócio vende. Os hóspedes se afastam de preços altos demais.</HH.Venue.PriceDesc>
+  <HH.Venue.PriceFactor>Fator de preço</HH.Venue.PriceFactor>
+  <HH.Venue.PriceHint>Os hóspedes comparam o preço com o valor que o item tem para eles. Hóspedes ricos aguentam mais. Estabelecimentos sem ninguém de serviço cobram um pouco menos (autoatendimento); um serviço de campainha noturna custa a mais. Grátis significa grátis.</HH.Venue.PriceHint>
+  <HH.Venue.PriceLine>Preços</HH.Venue.PriceLine>
+  <HH.Venue.PriceTitle>Preços</HH.Venue.PriceTitle>
+  <HH.Venue.Pricey>Caro</HH.Venue.Pricey>
+  <HH.Venue.Rename>Renomear</HH.Venue.Rename>
+  <HH.Venue.RenameDesc>Dê um nome a este negócio.</HH.Venue.RenameDesc>
+  <HH.Venue.RenameTitle>Nomear este negócio</HH.Venue.RenameTitle>
+  <HH.Venue.Reset>Usar nome padrão</HH.Venue.Reset>
+  <HH.Venue.Restock>Reabastecer</HH.Venue.Restock>
+  <HH.Venue.RestockDesc>Deixe esta placa definir os locais de armazenamento do cômodo para aceitar suas mercadorias com prioridade Importante, para que os carregadores mantenham as prateleiras cheias. Opcional; as configurações antigas voltam quando você desliga.</HH.Venue.RestockDesc>
+  <HH.Venue.RestockHint>Quando ligado, todo local de armazenamento deste cômodo (zonas de estoque e prateleiras, seus ou de qualquer um) aceita as mercadorias marcadas abaixo com prioridade Importante, para que seus carregadores mantenham o cômodo abastecido. As configurações antigas dos locais voltam quando você desliga isto.</HH.Venue.RestockHint>
+  <HH.Venue.RestockNoShop>Este negócio não vende nada do seu cômodo, então não há nada para reabastecer.</HH.Venue.RestockNoShop>
+  <HH.Venue.RestockSwitchOff>Reabastecimento LIGADO – desligar e devolver o armazenamento</HH.Venue.RestockSwitchOff>
+  <HH.Venue.RestockSwitchOn>Reabastecimento desligado – ligar</HH.Venue.RestockSwitchOn>
+  <HH.Venue.RestockTitle>Reabastecer</HH.Venue.RestockTitle>
+  <HH.Venue.RippedOff>Enganado</HH.Venue.RippedOff>
+  <HH.Venue.Sales>Vendas de hoje</HH.Venue.Sales>
+  <HH.Venue.SalesTotal>total</HH.Venue.SalesTotal>
+  <HH.Venue.Silver>prata</HH.Venue.Silver>
+  <HH.Venue.StacksWord>pilhas</HH.Venue.StacksWord>
+  <HH.Venue.Staff>De serviço</HH.Venue.Staff>
+  <HH.Venue.Tier.Budget>Econômico</HH.Venue.Tier.Budget>
+  <HH.Venue.Tier.Charity>Beneficente</HH.Venue.Tier.Charity>
+  <HH.Venue.Tier.Discount>Promocional</HH.Venue.Tier.Discount>
+  <HH.Venue.Tier.Free>Grátis</HH.Venue.Tier.Free>
+  <HH.Venue.Tier.Luxury>Luxuoso</HH.Venue.Tier.Luxury>
+  <HH.Venue.Tier.Premium>Premium</HH.Venue.Tier.Premium>
+  <HH.Venue.Tier.Standard>Padrão</HH.Venue.Tier.Standard>
+</LanguageData>

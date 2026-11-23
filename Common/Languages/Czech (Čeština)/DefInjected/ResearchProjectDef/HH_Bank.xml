@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Banking.label>automatické pokladny</SL_Banking.label>
+  <SL_Banking.description>Stroje, které vydávají stříbro každému, kdo vyťuká správné čtyři číslice. Odemyká bankomat a noční trezor.</SL_Banking.description>
+  <SL_Branches.label>bankovní pobočky</SL_Branches.label>
+  <SL_Branches.description>Pořádná přepážka, pořádný trezor a pořádná fronta. Odemyká bankovní přepážku: okamžité vklady, okamžitou hotovost a žádosti o půjčku osobně.</SL_Branches.description>
+  <SL_Credit.label>spotřebitelský úvěr</SL_Credit.label>
+  <SL_Credit.description>Peníze, které nemáš, pro lidi, kteří je nemají. Odemyká půjčky, úvěrové skóre a případně i vymáhací agenturu.</SL_Credit.description>
+</LanguageData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_WatchScreening.reportString>영화를 보고 있습니다.</HH_WatchScreening.reportString>
+  <HH_SalonSit.reportString>새 모습을 기다리고 있습니다.</HH_SalonSit.reportString>
+  <HH_SalonStyle.reportString>TargetA의 손님을 손질하고 있습니다.</HH_SalonStyle.reportString>
+  <HH_SalonSelf.reportString>새 머리를 자르고 있습니다.</HH_SalonSelf.reportString>
+  <HH_GalleryVisit.reportString>예술 작품을 보고 있습니다.</HH_GalleryVisit.reportString>
+  <HH_ParkRest.reportString>벤치에 앉아 있습니다.</HH_ParkRest.reportString>
+  <HH_TaxiDeparture.reportString>택시를 기다리고 있습니다.</HH_TaxiDeparture.reportString>
+  <HH_Bodyguard.reportString>TargetA를 경호하고 있습니다.</HH_Bodyguard.reportString>
+</LanguageData>

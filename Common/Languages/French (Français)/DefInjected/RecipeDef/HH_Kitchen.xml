@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_TestKitchen.label>expérimenter un nouveau plat</HH_TestKitchen.label>
+  <HH_TestKitchen.description>Jeter des aliments crus sur le plan de travail pour voir ce qui en sort. Parfois la colonie trouve un nouveau plat (plus le cuisinier est bon, plus c'est probable) ; sinon l'expérience finit en une assiette épouvantable de ce plat.</HH_TestKitchen.description>
+  <HH_TestKitchen.jobString>Expérimentation d'un nouveau plat.</HH_TestKitchen.jobString>
+</LanguageData>

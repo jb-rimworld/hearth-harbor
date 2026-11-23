@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Cookbook.label>livro de receitas</HH_Cookbook.label>
+  <HH_Cookbook.description>Um livro gorduroso, com as páginas dobradas, anotado por alguém que claramente cozinhou sob fogo. Lê-lo ensina à colônia os pratos que contém.</HH_Cookbook.description>
+  <HH_Plate_Soup.label>tigela de sopa</HH_Plate_Soup.label>
+  <HH_Plate_Soup.description>Uma tigela de algo quente e líquido. Comido com colher, com uma oração, ou com as duas coisas.</HH_Plate_Soup.description>
+  <HH_Plate_Stew.label>panela de ensopado</HH_Plate_Stew.label>
+  <HH_Plate_Stew.description>Uma tigela pesada de ensopado cozido em fogo lento, fumegando com a promessa de uma segunda porção.</HH_Plate_Stew.description>
+  <HH_Plate_Grill.label>travessa grelhada</HH_Plate_Grill.label>
+  <HH_Plate_Grill.description>Carne que teve uma conversa com uma chama aberta e perdeu.</HH_Plate_Grill.description>
+  <HH_Plate_Noodles.label>tigela de macarrão</HH_Plate_Noodles.label>
+  <HH_Plate_Noodles.description>Um emaranhado de macarrão numa tigela. Fazer barulho ao sorver não é opcional.</HH_Plate_Noodles.description>
+  <HH_Plate_Rice.label>prato de arroz</HH_Plate_Rice.label>
+  <HH_Plate_Rice.description>Um monte de arroz com opiniões, servido num prato com um garfo que ninguém pediu.</HH_Plate_Rice.description>
+  <HH_Plate_Bake.label>prato assado</HH_Plate_Bake.label>
+  <HH_Plate_Bake.description>Algo que entrou no forno como ingredientes e saiu como uma decisão.</HH_Plate_Bake.description>
+  <HH_Plate_Fry.label>prato frito</HH_Plate_Fry.label>
+  <HH_Plate_Fry.description>Dourado, crocante e loucamente pouco saudável. Exatamente o que a colônia pediu.</HH_Plate_Fry.description>
+  <HH_Plate_Salad.label>prato de salada</HH_Plate_Salad.label>
+  <HH_Plate_Salad.description>Um prato frio com muitas folhas, muito pouco remorso e pouca validade.</HH_Plate_Salad.description>
+  <HH_Plate_Raw.label>prato cru</HH_Plate_Raw.label>
+  <HH_Plate_Raw.description>Fatiado fino, arranjado com requinte e definitivamente não cozido.</HH_Plate_Raw.description>
+  <HH_Plate_Breakfast.label>prato de café da manhã</HH_Plate_Breakfast.label>
+  <HH_Plate_Breakfast.description>Um prato que anuncia que o dia começou, quer você goste ou não.</HH_Plate_Breakfast.description>
+  <HH_Plate_Dessert.label>prato de sobremesa</HH_Plate_Dessert.label>
+  <HH_Plate_Dessert.description>Uma pequena recompensa por sobreviver mais um dia no Rim.</HH_Plate_Dessert.description>
+  <HH_Plate_StreetFood.label>bandeja de comida de rua</HH_Plate_StreetFood.label>
+  <HH_Plate_StreetFood.description>Quente, para segurar na mão e melhor comida em pé, depressa, com um olho nas saídas.</HH_Plate_StreetFood.description>
+  <HH_Station_PrepCounter.label>balcão de preparo</HH_Station_PrepCounter.label>
+  <HH_Station_PrepCounter.description>Um balcão marcado, com tábua de corte, uma boa faca e um sulco de drenagem sobre o qual ninguém perguntou. Pique, fatie e corte aqui; os outros equipamentos de um prato devem ficar por perto.</HH_Station_PrepCounter.description>
+  <HH_Station_StockPot.label>panela de caldo</HH_Station_StockPot.label>
+  <HH_Station_StockPot.description>Uma panela de ferro grande sobre fogo de lenha. Cozinha em fogo brando, ferve e ensopa qualquer coisa que um dia esteve viva. Queima lenha enquanto trabalha.</HH_Station_StockPot.description>
+  <HH_Station_Grill.label>grelha</HH_Station_Grill.label>
+  <HH_Station_Grill.description>Uma grade sobre brasas incandescentes. A carne vai crua e sai com opiniões. Queima lenha enquanto trabalha.</HH_Station_Grill.description>
+  <HH_Station_Oven.label>forno</HH_Station_Oven.label>
+  <HH_Station_Oven.description>Um forno de pedra e ferro para assar e gratinar. Leva muito tempo para aquecer e pouco tempo para arruinar o jantar. Queima lenha enquanto trabalha.</HH_Station_Oven.description>
+  <HH_Station_WokStation.label>estação de wok</HH_Station_WokStation.label>
+  <HH_Station_WokStation.description>Uma frigideira de fundo redondo sobre uma chama forte. Tudo é salteado aqui, inclusive as sobrancelhas do cozinheiro. Queima lenha enquanto trabalha.</HH_Station_WokStation.description>
+  <HH_Station_DeepFryer.label>fritadeira</HH_Station_DeepFryer.label>
+  <HH_Station_DeepFryer.description>Uma cuba de óleo fervente com cesto e um forte senso do próprio perigo. Elétrica. Pega fogo mais facilmente do que qualquer outra coisa na cozinha.</HH_Station_DeepFryer.description>
+  <HH_Station_Smoker.label>defumador</HH_Station_Smoker.label>
+  <HH_Station_Smoker.description>Um armário alto de madeira que transforma carne em algo que dura. Precisa de lascas de madeira, paciência e nenhum vizinho. Queima lenha enquanto trabalha.</HH_Station_Smoker.description>
+  <HH_Station_Steamer.label>vaporeira</HH_Station_Steamer.label>
+  <HH_Station_Steamer.description>Cestos de bambu empilhados sobre uma panela de água fervente. Macio, gentil e quase impossível de queimar. Queima lenha enquanto trabalha.</HH_Station_Steamer.description>
+  <HH_Station_DoughBench.label>bancada de massa</HH_Station_DoughBench.label>
+  <HH_Station_DoughBench.description>Uma bancada pesada com tampo polvilhado de farinha. Arroz e milho são socados até virar massa aqui, o que sai mais barato que terapia.</HH_Station_DoughBench.description>
+  <HH_Station_ColdStation.label>estação fria</HH_Station_ColdStation.label>
+  <HH_Station_ColdStation.description>Um balcão refrigerado que mantém as saladas crocantes e as sobremesas firmes. Elétrica.</HH_Station_ColdStation.description>
+</LanguageData>

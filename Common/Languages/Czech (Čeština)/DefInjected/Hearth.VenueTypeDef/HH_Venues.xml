@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Tavern.label>hospoda</HH_Venue_Tavern.label>
+  <HH_Venue_Tavern.description>Místnost, kde hosté koupí nápoj a vypijí ho na místě. Naplňte místnost pivem nebo jinými nápoji na regálu nebo ve skladu; barman za cedulí nebo u pultu ji udržuje otevřenou. Nápoje v místnosti jsou vyhrazeny zákazníkům, pokud cedule nestanoví jinak.</HH_Venue_Tavern.description>
+  <HH_Venue_Shop.label>obchod</HH_Venue_Shop.label>
+  <HH_Venue_Shop.description>Místnost, kde hosté kupují zboží. Vše uložené na regálech a ve skladech uvnitř místnosti je na prodej, za tržní cenu násobenou koeficientem ceny cedule. Bez prodavače běží obchod jako samoobsluha se slevou.</HH_Venue_Shop.description>
+  <HH_Venue_Restaurant.label>restaurace</HH_Venue_Restaurant.label>
+  <HH_Venue_Restaurant.description>Místnost, kde hosté sedí a jedí. Stoly, kuchyně a číšník z ní dělají restauraci; jídla samotná řeší kuchyně.</HH_Venue_Restaurant.description>
+  <HH_Venue_Casino.label>kasino</HH_Venue_Casino.label>
+  <HH_Venue_Casino.description>Místnost plná hracích stolů, hracích automatů a krupiérů. Hosté vsazí stříbro na hry štěstí; dům si nechává malou, poctivou výhodu.</HH_Venue_Casino.description>
+  <HH_Venue_Spa.label>lázně</HH_Venue_Spa.label>
+  <HH_Venue_Spa.description>Tichá místnost pro koupele, páru a odpočinek. Ošetřovatel drží ručníky v teple; hosté platí za každou návštěvu.</HH_Venue_Spa.description>
+  <HH_Venue_Lounge.label>salónek</HH_Venue_Lounge.label>
+  <HH_Venue_Lounge.description>Čekárna se sedadly. Hosté, kteří zjistí, že provozovna je zavřená nebo bez obsluhy, čekají tady, a ne ve dveřích, a čekají trpělivěji. Vždy otevřeno, personál není potřeba.</HH_Venue_Lounge.description>
+  <HH_Venue_Chapel.label>hostovská kaple</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>Tichá místnost s hostovským oltářem, kam přicházejí modlit se návštěvníci všech vyznání. Hosté nic neplatí, ale odcházejí klidnější; kaple s pěkným oltářem a pár lavicemi je dobrý soused hostince. Přes den vždy otevřeno, personál není potřeba.</HH_Venue_Chapel.description>
+</LanguageData>

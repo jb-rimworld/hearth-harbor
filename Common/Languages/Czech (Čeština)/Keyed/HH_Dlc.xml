@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Dlc.Bought>{0} koupil(a) {1} za {2} stříbra.</HH.Dlc.Bought>
+  <HH.Dlc.Gizmo.Buy>Odpustky</HH.Dlc.Gizmo.Buy>
+  <HH.Dlc.Gizmo.BuyDesc>Kup kolonistovi rozhřešení, milost nebo hodnost. Ceny se řídí postojem jeho ideologie. Stříbro pochází ze zásob kolonie nebo z jeho vlastní kapsy.</HH.Dlc.Gizmo.BuyDesc>
+  <HH.Dlc.Gizmo.ChooseFaith>Zvolit víru</HH.Dlc.Gizmo.ChooseFaith>
+  <HH.Dlc.Gizmo.ChooseFaithDesc>Zasvěť tento oltář ideologii. Její věřící mezi tvými hosty sem přijdou se modlit.</HH.Dlc.Gizmo.ChooseFaithDesc>
+  <HH.Dlc.Gizmo.FundDesc>Kam jdou platby kolonistů. Božstvo si je ponechá navždy; frakce stejné víry si k tobě získá sympatie (+1 dobré vůle za každých 500 stříbra, nejvýše +5 za čtvrtletí).</HH.Dlc.Gizmo.FundDesc>
+  <HH.Dlc.Gizmo.ToDeity>Obětiny: božstvu</HH.Dlc.Gizmo.ToDeity>
+  <HH.Dlc.Gizmo.ToFaction>Obětiny: frakci dané víry</HH.Dlc.Gizmo.ToFaction>
+  <HH.Dlc.NoBuyers>žádný kolonista s ideologií</HH.Dlc.NoBuyers>
+  <HH.Dlc.NoFaith>Zatím není zvolena žádná víra.</HH.Dlc.NoFaith>
+  <HH.Dlc.Noble.AcceptOrders>Poslechnout rozkaz</HH.Dlc.Noble.AcceptOrders>
+  <HH.Dlc.Noble.Arrived>{0} a jeho družina přijíždějí na {1} dní.</HH.Dlc.Noble.Arrived>
+  <HH.Dlc.Noble.BilletText>Říše nařizuje ubytovat {0} a {1} družinníků na {2} dní. Očekávají ložnici odpovídající jejich hodnosti ({3}). Na výdaje dostanete asi {4} stříbra. Odmítnutí stojí dobrou vůli a čest.</HH.Dlc.Noble.BilletText>
+  <HH.Dlc.Noble.Left>Šlechtická družina odjíždí. Platba: {0} stříbra.</HH.Dlc.Noble.Left>
+  <HH.Dlc.Noble.OfferText>{0} s {1} družinníky žádá o pobyt na {2} dní a zaplatí asi {3} stříbra, pokud bude spokojen. Očekává: {4}. Odmítnutí nic nestojí.</HH.Dlc.Noble.OfferText>
+  <HH.Dlc.Noble.Refuse>Odmítnout (klesne dobrá vůle a čest)</HH.Dlc.Noble.Refuse>
+  <HH.Dlc.NothingOffered>jejich víra nenabízí nic k prodeji</HH.Dlc.NothingOffered>
+  <HH.Dlc.Reason.Abhorrent>jejich víra to odsuzuje</HH.Dlc.Reason.Abhorrent>
+  <HH.Dlc.Reason.CannotPay>nedokáže zaplatit {0}</HH.Dlc.Reason.CannotPay>
+  <HH.Dlc.Reason.CapColony>kolonie to již tento čtvrtletí koupila</HH.Dlc.Reason.CapColony>
+  <HH.Dlc.Reason.CapIdeo>ideologie má toho tento čtvrtletí dost</HH.Dlc.Reason.CapIdeo>
+  <HH.Dlc.Reason.CapPawnQ>limit pro toto čtvrtletí dosažen</HH.Dlc.Reason.CapPawnQ>
+  <HH.Dlc.Reason.CapPawnY>limit pro tento rok dosažen</HH.Dlc.Reason.CapPawnY>
+  <HH.Dlc.Reason.CertainEnough>jistota je již plná</HH.Dlc.Reason.CertainEnough>
+  <HH.Dlc.Reason.NeedRank>vyžaduje hodnost {0}</HH.Dlc.Reason.NeedRank>
+  <HH.Dlc.Reason.NeedRoyalty>vyžaduje Royalty</HH.Dlc.Reason.NeedRoyalty>
+  <HH.Dlc.Reason.NoFresh>žádná čerstvá rána do 10 bodů zdraví</HH.Dlc.Reason.NoFresh>
+  <HH.Dlc.Reason.NoGuilt>žádná vzpomínka na porušené přikázání</HH.Dlc.Reason.NoGuilt>
+  <HH.Dlc.Reason.NoIdeo>žádná ideologie</HH.Dlc.Reason.NoIdeo>
+  <HH.Dlc.Reason.NoScar>žádná trvalá jizva</HH.Dlc.Reason.NoScar>
+  <HH.Dlc.Reason.NotAThing>jejich víra takovou věc nezná</HH.Dlc.Reason.NotAThing>
+  <HH.Dlc.Reason.NotFluid>reformovat se mohou jen tekuté ideologie</HH.Dlc.Reason.NotFluid>
+  <HH.Dlc.Reason.NotPsychic>nelze vytvořit psylink</HH.Dlc.Reason.NotPsychic>
+  <HH.Dlc.Reason.PsylinkMax>psylink je již na svém limitu</HH.Dlc.Reason.PsylinkMax>
+  <HH.Dlc.Reason.RankHeld>tuto nebo vyšší hodnost již drží</HH.Dlc.Reason.RankHeld>
+  <HH.Dlc.Reason.RankOrder>nejdřív je třeba předchozí hodnost</HH.Dlc.Reason.RankOrder>
+  <HH.Dlc.Reason.ReformReady>reforma je již možná</HH.Dlc.Reason.ReformReady>
+  <HH.Dlc.ShrineQuality>Víra: {0}. Kvalita kaple: {1}.</HH.Dlc.ShrineQuality>
+  <HH.Dlc.TempleFund>Chrámový fond: {0} stříbra</HH.Dlc.TempleFund>
+  <HH.Setting.dlc.traitSpawn>Nové vlastnosti se objevují u vygenerovaných lidí</HH.Setting.dlc.traitSpawn>
+  <HH.Setting.dlc.traitSpawn.Desc>Šťastlivec, Nešťastník, Narozený hostitel a další vlastnosti Hearth &amp; Harbor se mohou objevit u nově vygenerovaných postav. Stávající postavy si ponechají své. Vypnuto: vlastnosti se přidají jen ručně nebo v editoru.</HH.Setting.dlc.traitSpawn.Desc>
+  <HH.Setting.dlc.traitRarity>Četnost vlastností</HH.Setting.dlc.traitRarity>
+  <HH.Setting.dlc.traitRarity.Desc>Násobitel toho, jak často se naše vlastnosti losují u nových postav (1 = stejná vzácnost jako u většiny vanilla vlastností).</HH.Setting.dlc.traitRarity.Desc>
+</LanguageData>

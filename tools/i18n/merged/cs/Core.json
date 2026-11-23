@@ -1,0 +1,8 @@
+{
+ "keyed": {},
+ "defs": {
+  "DesignationCategoryDef/HH_Bank.label": "Banka",
+  "DesignationCategoryDef/HH_Bank.description": "Bankomaty, přepážky a noční trezory banky a pracovní stoly její pojišťovny.",
+  "ResearchTabDef/HH_Banking.label": "Bankovnictví"
+ }
+}

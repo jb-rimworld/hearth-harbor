@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Guide_OpeningDay.label>開店初日</HH_Guide_OpeningDay.label>
+  <HH_Guide_OpeningDay.description>ベッドから最初の銀貨まで三段階。研究、ゾーン、設定は不要。</HH_Guide_OpeningDay.description>
+  <HH_Guide_YourGuests.label>ひと目でわかるゲスト</HH_Guide_YourGuests.label>
+  <HH_Guide_YourGuests.description>ゲストの様子を確認できる場所。</HH_Guide_YourGuests.description>
+  <HH_Guide_FirstVenue.label>最初の施設</HH_Guide_FirstVenue.label>
+  <HH_Guide_FirstVenue.description>看板が部屋を商売に変える。</HH_Guide_FirstVenue.description>
+  <HH_Guide_Bank.label>銀行のお金</HH_Guide_Bank.label>
+  <HH_Guide_Bank.description>Silverline が売上を安全に保管し、ゲストはカードで支払える。</HH_Guide_Bank.description>
+</LanguageData>

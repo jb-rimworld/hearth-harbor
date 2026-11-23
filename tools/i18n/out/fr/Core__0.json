@@ -1,0 +1,5 @@
+{
+ "d:DesignationCategoryDef/HH_Bank.label": "Banque",
+ "d:DesignationCategoryDef/HH_Bank.description": "Distributeurs de billets, guichets et coffres de nuit de la banque, ainsi que les bureaux de son agence d'assurance.",
+ "d:ResearchTabDef/HH_Banking.label": "Services bancaires"
+}

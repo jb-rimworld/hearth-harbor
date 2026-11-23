@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ActsOfStoryteller.label>Дії оповідача виключено</SL_ActsOfStoryteller.label>
+  <SL_ActsOfStoryteller.description>Відшкодовує будівлі, знищені рейдерами, механоїдами та час від часу непорозумінням з облоговою машиною. Не діє для пожеж, погоди чи вас.</SL_ActsOfStoryteller.description>
+  <SL_ActsOfStoryteller.slogan>Ми вас прикриваємо.*</SL_ActsOfStoryteller.slogan>
+  <SL_MuffaloMachine.label>Покриття мафало та машин</SL_MuffaloMachine.label>
+  <SL_MuffaloMachine.description>Для всього, що рухається або літає: шатлів, капсул висадки та техніки, знищеної ворогом.</SL_MuffaloMachine.description>
+  <SL_MuffaloMachine.slogan>Колеса, ротори і дуже ретельна форма.</SL_MuffaloMachine.slogan>
+  <SL_RoofOverHead.label>Дах над головою</SL_RoofOverHead.label>
+  <SL_RoofOverHead.description>Вогонь, вибухи й блискавка. Вогонь, утім, має бути чужим.</SL_RoofOverHead.description>
+  <SL_RoofOverHead.slogan>Теплі стіни, холодний комфорт, квартальні премії.</SL_RoofOverHead.slogan>
+  <SL_ItWasntMe.label>Відповідальність «Це не я»</SL_ItWasntMe.label>
+  <SL_ItWasntMe.description>За шкоду гостям, торговцям і їхнім товарам, заподіяну під вашим наглядом і точно не вами.</SL_ItWasntMe.description>
+  <SL_ItWasntMe.slogan>Хтось має платити. Бажано ми, за плату.</SL_ItWasntMe.slogan>
+  <SL_LegalShield.label>Legal Shield</SL_LegalShield.label>
+  <SL_LegalShield.description>Контора Brix &amp; Partners сплачує ваші штрафи і сперечається з тими, хто їх виписав. Також допомагає проти Clawback Mutual, доки ніхто не читає пункт 40.</SL_LegalShield.description>
+  <SL_LegalShield.slogan>Brix &amp; Partners: етика на утриманні.</SL_LegalShield.slogan>
+  <SL_RimHealth.label>План здоров'я Rim</SL_RimHealth.label>
+  <SL_RimHealth.description>Фіксована сума за кожного колоніста, що провів день у лікарняному ліжку.</SL_RimHealth.description>
+  <SL_RimHealth.slogan>Одужуйте швидко. Або хоча б щокварталу.</SL_RimHealth.slogan>
+  <SL_GoldenYears.label>План «Золоті роки»</SL_GoldenYears.label>
+  <SL_GoldenYears.description>Пенсія для колоністів, що дожили до шістдесяти. Премія дешева, поки вони молоді, і в цьому суть.</SL_GoldenYears.description>
+  <SL_GoldenYears.slogan>Виходьте на пенсію рано. Потім пізно. Потім щокварталу.</SL_GoldenYears.slogan>
+  <SL_BlightBeGone.label>Геть хвороби</SL_BlightBeGone.label>
+  <SL_BlightBeGone.description>Морози й токсичні опади псують урожай. Це покриває втрату.</SL_BlightBeGone.description>
+  <SL_BlightBeGone.slogan>Збираємо урожай, за який платимо.</SL_BlightBeGone.slogan>
+  <SL_ClosedForRepairs.label>Зачинено на ремонт</SL_ClosedForRepairs.label>
+  <SL_ClosedForRepairs.description>Коли бізнес мусить зачинитися, дохід — ні.</SL_ClosedForRepairs.description>
+  <SL_ClosedForRepairs.slogan>Не працює — не означає не платити премію.</SL_ClosedForRepairs.slogan>
+  <SL_UnspeakableEvents.label>Доповнення «Невимовні події»</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>Для пошкоджень, які формулювання полісу не може описати без юриста в кімнаті.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>Деякі речі краще застрахувати, ніж називати.</SL_UnspeakableEvents.slogan>
+  <SL_Wanderlust.label>Страхування подорожей «Wanderlust»</SL_Wanderlust.label>
+  <SL_Wanderlust.description>Для караванів: страховка, що є там, де вас немає. Нараховується за особу і день подорожі, лише поки люди в дорозі.</SL_Wanderlust.description>
+  <SL_Wanderlust.slogan>Шкода, що вас тут немає. Покриємо частину, де ви не є.</SL_Wanderlust.slogan>
+  <SL_LimbByLimb.label>План «Кінцівка за кінцівкою»</SL_LimbByLimb.label>
+  <SL_LimbByLimb.description>Кожна кінцівка має ціну. Ми її записали. Вона на останній сторінці, у таблиці кінцівок.</SL_LimbByLimb.description>
+  <SL_LimbByLimb.slogan>Кожна кінцівка має ціну. Ми її записали.</SL_LimbByLimb.slogan>
+</LanguageData>

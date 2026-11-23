@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Tab.City>Městský život</HH.Tab.City>
+  <HH.City.TabTitle>Městský život</HH.City.TabTitle>
+  <HH.City.TabResearch>Výzkum: úroveň 1 (kino, salon, galerie): {0}; úroveň 2 (taxi, ochranka): {1}</HH.City.TabResearch>
+  <HH.Enum.CityResearchMode.Full>Plný</HH.Enum.CityResearchMode.Full>
+  <HH.Enum.CityResearchMode.Off>Vypnuto (vše dostupné)</HH.Enum.CityResearchMode.Off>
+  <HH.City.ScreenNoPower>Bez proudu: plátno zůstává tmavé.</HH.City.ScreenNoPower>
+  <HH.City.ScreenShowing>Promítá se „{0}“ (zbývá {1}, sleduje {2})</HH.City.ScreenShowing>
+  <HH.City.ScreenIdle>Nic se nepromítá.</HH.City.ScreenIdle>
+  <HH.City.ScreenBusy>Film už běží</HH.City.ScreenBusy>
+  <HH.City.NoSeats>Před plátnem nejsou žádná sedadla</HH.City.NoSeats>
+  <HH.City.MovieNightLabel>Filmový večer</HH.City.MovieNightLabel>
+  <HH.City.MovieNightDesc>Svolat kolonii na filmový večer k tomuto plátnu. Každý, kdo si sedne, získá odpočinek a dobrou náladu.</HH.City.MovieNightDesc>
+  <HH.City.MovieNightFailed>Filmový večer teď nelze spustit: potřebuje plátno s proudem, dost sedadel a kolonisty, kteří mají volno.</HH.City.MovieNightFailed>
+  <HH.City.LordReport>sleduje film s kolonií</HH.City.LordReport>
+  <HH.City.Film.0>Muffalo Love III</HH.City.Film.0>
+  <HH.City.Film.1>Poslední Thrumbo</HH.City.Film.1>
+  <HH.City.Film.2>Blues nákladní kapsle</HH.City.Film.2>
+  <HH.City.Film.3>Prach mezi hvězdami</HH.City.Film.3>
+  <HH.City.Film.4>Příběh boomalopa</HH.City.Film.4>
+  <HH.City.Film.5>Obležení Kamenořezova kopce</HH.City.Film.5>
+  <HH.City.Film.6>Dlouhý spánek</HH.City.Film.6>
+  <HH.City.Film.7>Smoke over Haven</HH.City.Film.7>
+  <HH.City.SalonGuests>Otevřeno hostům</HH.City.SalonGuests>
+  <HH.City.SalonGuestsDesc>Hosté si mohou sednout do tohoto křesla na placený střih (místnost potřebuje cedulku kadeřnictví a někoho, kdo obsluhuje).</HH.City.SalonGuestsDesc>
+  <HH.City.SalonCustomer>Zákazník: {0}</HH.City.SalonCustomer>
+  <HH.City.NewHaircut>Nechat si ostříhat vlasy</HH.City.NewHaircut>
+  <HH.City.TaxiFree>Taxík čeká.</HH.City.TaxiFree>
+  <HH.City.TaxiBusy>Taxík je na jízdě.</HH.City.TaxiBusy>
+  <HH.City.TaxiStats>Odjezdy: {0}, příjezdy: {1}, tržba: {2} stříbra</HH.City.TaxiStats>
+</LanguageData>

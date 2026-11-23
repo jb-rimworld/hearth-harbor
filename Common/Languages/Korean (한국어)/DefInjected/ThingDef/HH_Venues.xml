@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_VenueSign.label>영업 간판</HH_VenueSign.label>
+  <HH_VenueSign.description>간판이 서 있는 방을 영업장으로 바꾸는 간판입니다: 술집, 상점, 식당, 카지노, 스파 또는 라운지. 영업 종류, 영업시간, 가격은 간판의 조작창에서 고릅니다. 간판이 없으면 방은 그저 방일 뿐입니다.</HH_VenueSign.description>
+  <HH_VenueSignWall.label>영업 간판(벽걸이)</HH_VenueSignWall.label>
+  <HH_VenueSignWall.description>같은 간판을 벽에 건 것입니다. 마주 보는 방이 영업장이 됩니다. 영업 종류, 영업시간, 가격은 간판의 조작창에서 고릅니다.</HH_VenueSignWall.description>
+  <HH_ShopCounter.label>상점 카운터</HH_ShopCounter.label>
+  <HH_ShopCounter.description>상인이나 바텐더를 위한 카운터입니다. 영업장을 돌보는 사람이 그 뒤에 서며, 하루 매출은 자정에 여기 은화로 놓입니다. 카운터는 선택 사항이라, 없으면 돌보는 사람은 간판 옆에 섭니다.</HH_ShopCounter.description>
+  <HH_MarketStall.label>장터 노점</HH_MarketStall.label>
+  <HH_MarketStall.description>줄무늬 차양이 달린 독립형 노점입니다. 큰 장은 노점을 충분히 보유해야만 열립니다(영업 설정 참고). 모든 상인 캐러밴은 노점 하나에 자리를 잡고 노점 사용료를 당신의 금고에 냅니다. 밖에 서 있으면 날씨와 상관없이 작동하지만 독자적인 영업장은 아닙니다.</HH_MarketStall.description>
+  <HH_VendingMachine.label>자판기</HH_VendingMachine.label>
+  <HH_VendingMachine.description>음식, 음료, 약물, 의약품을 담는 전원 장치 캐비닛입니다. 손님은 직원 없이도 언제든 시장 가치에 맞춰 구매합니다. 운반원은 선반처럼 채웁니다. 개척민은 공짜로 집어 먹을 수 있고, 기계는 손님에게만 요금을 받습니다. 판매하려면 전력이 필요합니다.</HH_VendingMachine.description>
+</LanguageData>

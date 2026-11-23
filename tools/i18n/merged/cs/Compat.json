@@ -1,0 +1,24 @@
+{
+ "keyed": {
+  "HH.Compat.DialogTitle": "Hospitality běží vedle Hearth & Harbor. Má se pro tebe deaktivovat?",
+  "HH.Compat.DialogBody": "Hearth & Harbor nahrazuje Hospitality a jeho doplňky. Dokud jsou aktivní oba, Hearth & Harbor Hospitality pro tuto relaci vypnul: jeho patche, události, budovy a záložka hostů nedělají nic. Tvoje hostovská lůžka a oblasti z Hospitality zůstanou zachovány a převezmou se, až bude Hospitality odstraněno.",
+  "HH.Compat.DialogListHeader": "Tyto mody budou deaktivovány:",
+  "HH.Compat.DialogMentionHeader": "Tyto hostovské mody zůstávají beze změny; jejich návštěvníci zůstávají jejich:",
+  "HH.Compat.DialogFailed": "Seznam modů nebylo možné změnit automaticky ({0}). Udělej to prosím ručně:",
+  "HH.Compat.DialogStep1": "1. Hlavní menu → Mody",
+  "HH.Compat.DialogStep2": "2. Odznač výše uvedené mody",
+  "HH.Compat.DialogStep3": "3. Ulož seznam modů a restartuj hru",
+  "HH.Compat.Yes": "Ano, deaktivovat a restartovat",
+  "HH.Compat.OpenMods": "Otevřít seznam modů",
+  "HH.Compat.Later": "Později",
+  "HH.Compat.Never": "Už se neptat",
+  "HH.Compat.ImportLetterTitle": "Importováno z Hospitality",
+  "HH.Compat.ImportLetterText": "Tato kolonie byla hrána s Hospitality. Hearth & Harbor převzal, co mohl.\\n\\nImportováno: {0}.\\nZahozeno: {1}.\\n\\nImportovaná hostovská lůžka jsou znovu běžnými postelemi a jsou zapamatována jako hostovská lůžka; hostovská část Hearth & Harbor je převezme. Nic jiného ve tvé kolonii se nezměnilo.",
+  "HH.Compat.ImportNothing": "nic",
+  "HH.Setting.compat.hospitalityNeverAsk": "Nenabízet deaktivaci Hospitality",
+  "HH.Setting.compat.hospitalityNeverAsk.Desc": "Když Hospitality běží vedle Hearth & Harbor, Hearth & Harbor ho pro relaci vypne a v hlavním menu nabídne jeho deaktivaci. Zapnuto: žádné další nabídky (vypnutí proběhne i tak).",
+  "HH.Setting.compat.importLetter": "Dopis po importu uložené hry Hospitality",
+  "HH.Setting.compat.importLetter.Desc": "Po načtení uložené hry, která byla hrána s Hospitality, dopis vypíše, co Hearth & Harbor převzal (hostovská lůžka, oblasti, návštěvníky) a co bylo zahozeno."
+ },
+ "defs": {}
+}

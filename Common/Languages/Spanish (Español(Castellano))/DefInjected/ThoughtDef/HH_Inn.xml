@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GuestRoomVerdict.stages.0.label>pésima habitación de huéspedes</HH_GuestRoomVerdict.stages.0.label>
+  <HH_GuestRoomVerdict.stages.0.description>¿Pagué por esto? He dormido mejor en una zanja, y la zanja no cobra.</HH_GuestRoomVerdict.stages.0.description>
+  <HH_GuestRoomVerdict.stages.1.label>decepcionante habitación de huéspedes</HH_GuestRoomVerdict.stages.1.label>
+  <HH_GuestRoomVerdict.stages.1.description>La habitación estaba por debajo de lo que esperaba. Muy por debajo.</HH_GuestRoomVerdict.stages.1.description>
+  <HH_GuestRoomVerdict.stages.2.label>habitación de huéspedes regular</HH_GuestRoomVerdict.stages.2.label>
+  <HH_GuestRoomVerdict.stages.2.description>La habitación estaba bien, si entrecierras los ojos.</HH_GuestRoomVerdict.stages.2.description>
+  <HH_GuestRoomVerdict.stages.3.label>digna habitación de huéspedes</HH_GuestRoomVerdict.stages.3.label>
+  <HH_GuestRoomVerdict.stages.3.description>Una cama como Dios manda y una puerta que cierra. Es todo lo que pido.</HH_GuestRoomVerdict.stages.3.description>
+  <HH_GuestRoomVerdict.stages.4.label>buena habitación de huéspedes</HH_GuestRoomVerdict.stages.4.label>
+  <HH_GuestRoomVerdict.stages.4.description>Una habitación preciosa. He dormido bien.</HH_GuestRoomVerdict.stages.4.description>
+  <HH_GuestRoomVerdict.stages.5.label>espléndida habitación de huéspedes</HH_GuestRoomVerdict.stages.5.label>
+  <HH_GuestRoomVerdict.stages.5.description>Una habitación así hace que valga la pena todo el viaje.</HH_GuestRoomVerdict.stages.5.description>
+  <HH_GuestAccompanied.stages.0.label>compañía incómoda</HH_GuestAccompanied.stages.0.label>
+  <HH_GuestAccompanied.stages.0.description>Uno de los anfitriones me hizo compañía. Hablamos del tiempo. Largo rato.</HH_GuestAccompanied.stages.0.description>
+  <HH_GuestAccompanied.stages.1.label>buena compañía</HH_GuestAccompanied.stages.1.label>
+  <HH_GuestAccompanied.stages.1.description>Uno de los anfitriones me enseñó el lugar y me hizo compañía.</HH_GuestAccompanied.stages.1.description>
+  <HH_GuestAccompanied.stages.2.label>compañía encantadora</HH_GuestAccompanied.stages.2.label>
+  <HH_GuestAccompanied.stages.2.description>El anfitrión fue un encanto. Puede que me riera en voz alta.</HH_GuestAccompanied.stages.2.description>
+  <HH_GuestAccompanied.stages.3.label>compañía maravillosa</HH_GuestAccompanied.stages.3.label>
+  <HH_GuestAccompanied.stages.3.description>Hacía años que nadie me cuidaba tan bien.</HH_GuestAccompanied.stages.3.description>
+  <HH_GuestPestered.stages.0.label>acosado para unirse</HH_GuestPestered.stages.0.label>
+  <HH_GuestPestered.stages.0.description>Vine aquí a dormir, no a que me reclutaran.</HH_GuestPestered.stages.0.description>
+  <HH_HostedWell.stages.0.label>buenas charlas</HH_HostedWell.stages.0.label>
+  <HH_HostedWell.stages.0.description>Hemos tenido algunas buenas conversaciones.</HH_HostedWell.stages.0.description>
+  <HH_GuestWaited.stages.0.label>esperó un poco</HH_GuestWaited.stages.0.label>
+  <HH_GuestWaited.stages.0.description>Tuve que esperar a que me atendieran. No mucho, pero me di cuenta.</HH_GuestWaited.stages.0.description>
+  <HH_GuestWaited.stages.1.label>esperó en vano</HH_GuestWaited.stages.1.label>
+  <HH_GuestWaited.stages.1.description>Esperé y esperé, y nadie vino a atenderme.</HH_GuestWaited.stages.1.description>
+  <HH_GuestBellNobody.stages.0.label>tocó la campanilla, nadie vino</HH_GuestBellNobody.stages.0.label>
+  <HH_GuestBellNobody.stages.0.description>Toqué la campanilla. Nadie vino.</HH_GuestBellNobody.stages.0.description>
+  <HH_GuestWaitingRoom.stages.0.label>sala de espera sencilla</HH_GuestWaitingRoom.stages.0.label>
+  <HH_GuestWaitingRoom.stages.0.description>Al menos había dónde sentarse mientras esperaba.</HH_GuestWaitingRoom.stages.0.description>
+  <HH_GuestWaitingRoom.stages.1.label>sala de espera digna</HH_GuestWaitingRoom.stages.1.label>
+  <HH_GuestWaitingRoom.stages.1.description>La sala de espera era lo bastante cómoda.</HH_GuestWaitingRoom.stages.1.description>
+  <HH_GuestWaitingRoom.stages.2.label>bonita sala de espera</HH_GuestWaitingRoom.stages.2.label>
+  <HH_GuestWaitingRoom.stages.2.description>Esperar allí casi era un placer.</HH_GuestWaitingRoom.stages.2.description>
+  <HH_GuestWaitingRoom.stages.3.label>espléndida sala de espera</HH_GuestWaitingRoom.stages.3.label>
+  <HH_GuestWaitingRoom.stages.3.description>No me habría importado esperar más tiempo en una sala así.</HH_GuestWaitingRoom.stages.3.description>
+</LanguageData>

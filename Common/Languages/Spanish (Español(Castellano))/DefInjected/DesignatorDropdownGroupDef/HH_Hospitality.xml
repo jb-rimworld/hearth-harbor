@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Group_Casino.label>casino</HH_Group_Casino.label>
+  <HH_Group_Casino.description>Tragaperras, mesas de juego y la caja del casino.</HH_Group_Casino.description>
+  <HH_Group_Wellness.label>bienestar</HH_Group_Wellness.label>
+  <HH_Group_Wellness.description>Saunas, jacuzzis y camillas de masaje.</HH_Group_Wellness.description>
+  <HH_Group_City.label>vida urbana</HH_Group_City.label>
+  <HH_Group_City.description>Pantallas de cine, sillones de peluquería, bancos de parque y la parada de taxis.</HH_Group_City.description>
+  <HH_Group_Underworld.label>trastienda</HH_Group_Underworld.label>
+  <HH_Group_Underworld.description>Puertas, fosas, mostradores y muelles para las cosas de las que nadie habla. Solo se muestra cuando has descubierto el inframundo.</HH_Group_Underworld.description>
+</LanguageData>

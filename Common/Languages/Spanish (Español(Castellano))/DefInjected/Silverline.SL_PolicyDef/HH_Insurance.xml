@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ActsOfStoryteller.label>Actos del narrador excluidos</SL_ActsOfStoryteller.label>
+  <SL_ActsOfStoryteller.description>Paga por los edificios destruidos por saqueadores, mecanoides y, de vez en cuando, por un malentendido con una máquina de asedio. No válido para incendios, clima ni para ti.</SL_ActsOfStoryteller.description>
+  <SL_ActsOfStoryteller.slogan>Te tenemos cubierto.*</SL_ActsOfStoryteller.slogan>
+  <SL_MuffaloMachine.label>Cobertura de muffalos y máquinas</SL_MuffaloMachine.label>
+  <SL_MuffaloMachine.description>Para lo que se mueve o vuela: lanzaderas, cápsulas de caída y vehículos destruidos por un enemigo.</SL_MuffaloMachine.description>
+  <SL_MuffaloMachine.slogan>Ruedas, rotores y un formulario muy minucioso.</SL_MuffaloMachine.slogan>
+  <SL_RoofOverHead.label>Un techo sobre tu cabeza</SL_RoofOverHead.label>
+  <SL_RoofOverHead.description>Fuego, explosiones y rayos. Eso sí, el fuego tiene que ser de otro.</SL_RoofOverHead.description>
+  <SL_RoofOverHead.slogan>Muros cálidos, consuelo frío, primas trimestrales.</SL_RoofOverHead.slogan>
+  <SL_ItWasntMe.label>Responsabilidad «No fui yo»</SL_ItWasntMe.label>
+  <SL_ItWasntMe.description>Por daños a huéspedes, comerciantes y sus mercancías, causados bajo tu cuidado y desde luego no por ti.</SL_ItWasntMe.description>
+  <SL_ItWasntMe.slogan>Alguien tiene que pagar. Preferiblemente nosotros, por una tarifa.</SL_ItWasntMe.slogan>
+  <SL_LegalShield.label>Escudo Legal</SL_LegalShield.label>
+  <SL_LegalShield.description>El bufete Brix &amp; Partners paga tus multas y discute con quienes las impusieron. También ayuda frente a Clawback Mutual, siempre que nadie lea la cláusula 40.</SL_LegalShield.description>
+  <SL_LegalShield.slogan>Brix &amp; Partners: ética con iguala.</SL_LegalShield.slogan>
+  <SL_RimHealth.label>Plan sanitario Rim</SL_RimHealth.label>
+  <SL_RimHealth.description>Una suma fija por cada colono que pase un día en la cama de enfermo.</SL_RimHealth.description>
+  <SL_RimHealth.slogan>Que te mejores pronto. O, como mínimo, cada trimestre.</SL_RimHealth.slogan>
+  <SL_GoldenYears.label>Plan Años Dorados</SL_GoldenYears.label>
+  <SL_GoldenYears.description>Una pensión para los colonos que llegan a los sesenta. La prima es barata mientras son jóvenes, que es justo el objetivo.</SL_GoldenYears.description>
+  <SL_GoldenYears.slogan>Jubílate pronto. Luego, tarde. Luego, trimestralmente.</SL_GoldenYears.slogan>
+  <SL_BlightBeGone.label>Adiós al tizón</SL_BlightBeGone.label>
+  <SL_BlightBeGone.description>Las heladas y la precipitación tóxica devoran los cultivos. Esto devora la pérdida.</SL_BlightBeGone.description>
+  <SL_BlightBeGone.slogan>Cosecha lo que pagamos.</SL_BlightBeGone.slogan>
+  <SL_ClosedForRepairs.label>Cerrado por reparaciones</SL_ClosedForRepairs.label>
+  <SL_ClosedForRepairs.description>Cuando tu negocio tiene que cerrar, los ingresos no.</SL_ClosedForRepairs.description>
+  <SL_ClosedForRepairs.slogan>Fuera de servicio no es fuera de prima.</SL_ClosedForRepairs.slogan>
+  <SL_UnspeakableEvents.label>Anexo de sucesos innombrables</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>Para daños que el texto de la póliza no puede describir sin un abogado en la sala.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>Algunas cosas están mejor aseguradas que nombradas.</SL_UnspeakableEvents.slogan>
+  <SL_Wanderlust.label>Seguro de viaje Wanderlust</SL_Wanderlust.label>
+  <SL_Wanderlust.description>Para caravanas: un seguro que está ahí cuando tú no. Se factura por cabeza y día de viaje, solo mientras la gente está en camino.</SL_Wanderlust.description>
+  <SL_Wanderlust.slogan>Ojalá estuvieras aquí. Cubrimos la parte en la que no estás.</SL_Wanderlust.slogan>
+  <SL_LimbByLimb.label>Plan de accidentes miembro a miembro</SL_LimbByLimb.label>
+  <SL_LimbByLimb.description>Cada miembro tiene un precio. Lo pusimos por escrito. Está en la última página, en la Tabla de miembros.</SL_LimbByLimb.description>
+  <SL_LimbByLimb.slogan>Cada miembro tiene un precio. Lo pusimos por escrito.</SL_LimbByLimb.slogan>
+</LanguageData>

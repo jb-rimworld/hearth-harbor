@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Cookbook.label>книга рецептов</HH_Cookbook.label>
+  <HH_Cookbook.description>Засаленная, с загнутыми уголками книга рецептов, испещренная пометками того, кто явно готовил под обстрелом. Чтение учит колонию блюдам, которые в ней содержатся.</HH_Cookbook.description>
+  <HH_Plate_Soup.label>миска супа</HH_Plate_Soup.label>
+  <HH_Plate_Soup.description>Миска чего-то горячего и жидкого. Едят ложкой, молитвой или тем и другим.</HH_Plate_Soup.description>
+  <HH_Plate_Stew.label>кастрюля рагу</HH_Plate_Stew.label>
+  <HH_Plate_Stew.description>Тяжёлая миска томлёного рагу, дымящаяся обещанием добавки.</HH_Plate_Stew.description>
+  <HH_Plate_Grill.label>блюдо с гриля</HH_Plate_Grill.label>
+  <HH_Plate_Grill.description>Мясо, которое поговорило с открытым огнём и проиграло.</HH_Plate_Grill.description>
+  <HH_Plate_Noodles.label>миска лапши</HH_Plate_Noodles.label>
+  <HH_Plate_Noodles.description>Клубок лапши в миске. Прихлёбывать обязательно.</HH_Plate_Noodles.description>
+  <HH_Plate_Rice.label>блюдо с рисом</HH_Plate_Rice.label>
+  <HH_Plate_Rice.description>Горка риса со своим мнением, подана на тарелке с вилкой, которую никто не заказывал.</HH_Plate_Rice.description>
+  <HH_Plate_Bake.label>блюдо из духовки</HH_Plate_Bake.label>
+  <HH_Plate_Bake.description>То, что попало в духовку ингредиентами, а вышло решением.</HH_Plate_Bake.description>
+  <HH_Plate_Fry.label>жареная тарелка</HH_Plate_Fry.label>
+  <HH_Plate_Fry.description>Золотистое, хрустящее и безумно вредное. Именно то, что заказала колония.</HH_Plate_Fry.description>
+  <HH_Plate_Salad.label>тарелка салата</HH_Plate_Salad.label>
+  <HH_Plate_Salad.description>Холодная тарелка с кучей листьев, очень малым раскаянием и коротким сроком годности.</HH_Plate_Salad.description>
+  <HH_Plate_Raw.label>тарелка сырого</HH_Plate_Raw.label>
+  <HH_Plate_Raw.description>Тонко нарезано, дорого сервировано и абсолютно не готовилось.</HH_Plate_Raw.description>
+  <HH_Plate_Breakfast.label>тарелка завтрака</HH_Plate_Breakfast.label>
+  <HH_Plate_Breakfast.description>Тарелка, которая сообщает, что день начался, нравится вам это или нет.</HH_Plate_Breakfast.description>
+  <HH_Plate_Dessert.label>тарелка десерта</HH_Plate_Dessert.label>
+  <HH_Plate_Dessert.description>Маленькая сладкая награда за то, что вы пережили ещё один день на Окраине.</HH_Plate_Dessert.description>
+  <HH_Plate_StreetFood.label>поднос уличной еды</HH_Plate_StreetFood.label>
+  <HH_Plate_StreetFood.description>Горячее, в руку, лучше есть стоя и быстро, поглядывая на выходы.</HH_Plate_StreetFood.description>
+  <HH_Station_PrepCounter.label>стол для подготовки</HH_Station_PrepCounter.label>
+  <HH_Station_PrepCounter.description>Исцарапанная стойка с разделочной доской, хорошим ножом и желобом для стока, о котором никто не спрашивал. Здесь режут, нарезают и разделывают; другие устройства для блюда должны стоять рядом.</HH_Station_PrepCounter.description>
+  <HH_Station_StockPot.label>котёл для бульона</HH_Station_StockPot.label>
+  <HH_Station_StockPot.description>Большой чугунный котёл над дровяным огнём. Томит, кипятит и тушит всё, что когда-либо было живым. Пока работает, жжёт дрова.</HH_Station_StockPot.description>
+  <HH_Station_Grill.label>гриль</HH_Station_Grill.label>
+  <HH_Station_Grill.description>Решётка над тлеющими углями. Мясо кладут сырым, снимают с мнением. Пока работает, жжёт дрова.</HH_Station_Grill.description>
+  <HH_Station_Oven.label>печь</HH_Station_Oven.label>
+  <HH_Station_Oven.description>Каменная и железная печь для жаркого и выпечки. Долго нагревается и быстро портит ужин. Пока работает, жжёт дрова.</HH_Station_Oven.description>
+  <HH_Station_WokStation.label>станция вока</HH_Station_WokStation.label>
+  <HH_Station_WokStation.description>Сковорода с круглым дном над ревущим пламенем. Здесь всё обжаривают на сильном огне, включая брови повара. Пока работает, жжёт дрова.</HH_Station_WokStation.description>
+  <HH_Station_DeepFryer.label>фритюрница</HH_Station_DeepFryer.label>
+  <HH_Station_DeepFryer.description>Чан кипящего масла с корзиной и сильным чувством собственной опасности. Электрическая. Загорается охотнее, чем что-либо ещё на кухне.</HH_Station_DeepFryer.description>
+  <HH_Station_Smoker.label>коптильня</HH_Station_Smoker.label>
+  <HH_Station_Smoker.description>Высокий деревянный шкаф, который превращает мясо во что-то долговечное. Нужны щепа, терпение и никаких соседей. Пока работает, жжёт дрова.</HH_Station_Smoker.description>
+  <HH_Station_Steamer.label>пароварка</HH_Station_Steamer.label>
+  <HH_Station_Steamer.description>Сложенные бамбуковые корзины над кастрюлей кипятка. Мягко, нежно и почти невозможно подгореть. Пока работает, жжёт дрова.</HH_Station_Steamer.description>
+  <HH_Station_DoughBench.label>стол для теста</HH_Station_DoughBench.label>
+  <HH_Station_DoughBench.description>Тяжёлый стол с присыпанной мукой столешницей. Здесь рис и кукурузу превращают в тесто, что дешевле терапии.</HH_Station_DoughBench.description>
+  <HH_Station_ColdStation.label>холодная станция</HH_Station_ColdStation.label>
+  <HH_Station_ColdStation.description>Охлаждаемый прилавок, который держит салаты хрусткими, а десерты твёрдыми. Электрический.</HH_Station_ColdStation.description>
+</LanguageData>

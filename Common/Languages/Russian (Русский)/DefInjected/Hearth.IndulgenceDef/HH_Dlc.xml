@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Ind_ExpressAbsolution.label>экспресс-отпущение</HH_Ind_ExpressAbsolution.label>
+  <HH_Ind_ExpressAbsolution.description>Штампованный талон, который стирает одно воспоминание о нарушенной заповеди. Священник не спрашивает, что вы сделали.</HH_Ind_ExpressAbsolution.description>
+  <HH_Ind_MinorMercy.label>малая милость</HH_Ind_MinorMercy.label>
+  <HH_Ind_MinorMercy.description>Освящённая повязка по цене двух доз лекарства. Исцеляет одну свежую рану до 10 очков здоровья.</HH_Ind_MinorMercy.description>
+  <HH_Ind_UnshakenFaith.label>сертификат непоколебимой веры</HH_Ind_UnshakenFaith.label>
+  <HH_Ind_UnshakenFaith.description>Рамка с сертификатом, подтверждающим, что вы никогда не сомневались. Повышает уверенность на десять процентных пунктов.</HH_Ind_UnshakenFaith.description>
+  <HH_Ind_GreaterMercy.label>великая милость</HH_Ind_GreaterMercy.label>
+  <HH_Ind_GreaterMercy.description>Оплаченное чудо. Навсегда исцеляет один постоянный шрам или старую рану.</HH_Ind_GreaterMercy.description>
+  <HH_Asc_Rank1.label>восхождение: искатель</HH_Asc_Rank1.label>
+  <HH_Asc_Rank1.description>Заплатите вступительный взнос и станете Искателем. Это начало, не более.</HH_Asc_Rank1.description>
+  <HH_Asc_Rank2.label>восхождение: адепт</HH_Asc_Rank2.label>
+  <HH_Asc_Rank2.description>Ранг II, Адепт. Отныне обладатель может продавать индульгенции у алтаря гостям и посетителям других домов.</HH_Asc_Rank2.description>
+  <HH_Asc_Rank3.label>восхождение: светоч</HH_Asc_Rank3.label>
+  <HH_Asc_Rank3.description>Ранг III, Светоч. Достаточно яркий, чтобы его заметили издалека.</HH_Asc_Rank3.description>
+  <HH_Asc_Rank4.label>восхождение: возвышенный</HH_Asc_Rank4.label>
+  <HH_Asc_Rank4.description>Ранг IV, Возвышенный. Вершина лестницы для тех, кто может позволить себе этот вид.</HH_Asc_Rank4.description>
+  <HH_Ind_ReformTithe.label>десятина на реформу</HH_Ind_ReformTithe.label>
+  <HH_Ind_ReformTithe.description>Добровольная десятина на следующую реформу текучей идеологии: одно очко реформы.</HH_Ind_ReformTithe.description>
+</LanguageData>

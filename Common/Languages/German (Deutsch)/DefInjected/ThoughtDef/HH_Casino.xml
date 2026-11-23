@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingWithdrawal.stages.0.label>Glücksspielentzug (leicht)</HH_GamblingWithdrawal.stages.0.label>
+  <HH_GamblingWithdrawal.stages.0.description>Ich denke ständig an die Tische. Eine Runde würde nicht schaden.</HH_GamblingWithdrawal.stages.0.description>
+  <HH_GamblingWithdrawal.stages.1.label>Glücksspielentzug (mäßig)</HH_GamblingWithdrawal.stages.1.label>
+  <HH_GamblingWithdrawal.stages.1.description>Ich kann mich nicht konzentrieren. Ich muss spielen.</HH_GamblingWithdrawal.stages.1.description>
+  <HH_GamblingWithdrawal.stages.2.label>Glücksspielentzug (stark)</HH_GamblingWithdrawal.stages.2.label>
+  <HH_GamblingWithdrawal.stages.2.description>Alles ist grau, außer dem Rad.</HH_GamblingWithdrawal.stages.2.description>
+  <HH_GamblingWithdrawal.stages.3.label>Glücksspielentzug (schwer)</HH_GamblingWithdrawal.stages.3.label>
+  <HH_GamblingWithdrawal.stages.3.description>Meine Hände zittern. Irgendwer muss doch ein Kartenspiel haben.</HH_GamblingWithdrawal.stages.3.description>
+  <HH_GamblingWithdrawal.stages.4.label>Glücksspielentzug (extrem)</HH_GamblingWithdrawal.stages.4.label>
+  <HH_GamblingWithdrawal.stages.4.description>Nichts anderes zählt.</HH_GamblingWithdrawal.stages.4.description>
+  <HH_WonAtTheTables.stages.0.label>an den Tischen gewonnen</HH_WonAtTheTables.stages.0.label>
+  <HH_WonAtTheTables.stages.0.description>Die Jetons sind zu meinen Gunsten gefallen. Ausnahmsweise.</HH_WonAtTheTables.stages.0.description>
+  <HH_LostAtTheTables.stages.0.label>an den Tischen alles verloren</HH_LostAtTheTables.stages.0.label>
+  <HH_LostAtTheTables.stages.0.description>Jeder Jeton weg. Sie waren kostenlos, und es tut trotzdem weh.</HH_LostAtTheTables.stages.0.description>
+</LanguageData>

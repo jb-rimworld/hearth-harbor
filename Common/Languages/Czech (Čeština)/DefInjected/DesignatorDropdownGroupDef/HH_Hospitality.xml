@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Group_Casino.label>kasino</HH_Group_Casino.label>
+  <HH_Group_Casino.description>Herní automaty, herní stoly a pokladní přepážka.</HH_Group_Casino.description>
+  <HH_Group_Wellness.label>wellness</HH_Group_Wellness.label>
+  <HH_Group_Wellness.description>Sauny, vířivky a masážní stoly.</HH_Group_Wellness.description>
+  <HH_Group_City.label>městský život</HH_Group_City.label>
+  <HH_Group_City.description>Kinopromítací plátna, kadeřnické křeslo, parkové lavičky a stanoviště taxi.</HH_Group_City.description>
+  <HH_Group_Underworld.label>zadní místnost</HH_Group_Underworld.label>
+  <HH_Group_Underworld.description>Dveře, jámy, pulty a doky pro věci, o kterých se nemluví. Zobrazí se teprve poté, co objevíte podsvětí.</HH_Group_Underworld.description>
+</LanguageData>

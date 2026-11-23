@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_SlotMachine.label>machine à sous muffalo à un bras</HH_SlotMachine.label>
+  <HH_SlotMachine.description>Une machine à pièces dévoreuse avec trois rouleaux et un levier en forme de corne de muffalo. Les probabilités sont fixées par la maison, les lumières non. Les clients jouent sans croupier ; les colons jouent avec des jetons de la maison sans valeur.\n\nChoisissez sa volatilité (fréquence et ampleur des gains) avec le bouton de la machine.</HH_SlotMachine.description>
+  <HH_RouletteTable.label>table de roulette</HH_RouletteTable.label>
+  <HH_RouletteTable.description>Un tapis de feutre avec une roue encastrée. Placez vos jetons ; la bille décide. Il faut un croupier (un colon affecté au travail Service) pour le faire tourner pour les clients. Les colons peuvent jouer pour le plaisir avec des jetons de la maison, sans croupier.</HH_RouletteTable.description>
+  <HH_BlackjackTable.label>table de blackjack</HH_BlackjackTable.label>
+  <HH_BlackjackTable.description>Une table en demi-lune avec un sabot. Approchez-vous de 21 sans le dépasser, et plus près que le croupier. Les bons joueurs perdent moins ; l'avantage de la maison dépend des règles et de la qualité du jeu. Il faut un croupier pour les clients.</HH_BlackjackTable.description>
+  <HH_PokerTable.label>table de Rimdeck</HH_PokerTable.label>
+  <HH_PokerTable.description>La maison distribue le Rimdeck, un jeu de cartes joué contre les autres joueurs : la maison ne prélève qu'une petite commission sur chaque pot. Les joueurs malins et sociables gagnent plus souvent. Remplace la table de poker d'origine. Il faut un croupier pour les clients.</HH_PokerTable.description>
+  <HH_CashierCage.label>guichet de caisse</HH_CashierCage.label>
+  <HH_CashierCage.description>Un guichet grillagé où l'argent devient jetons et inversement. Avec un guichet dans la colonie, les clients jouent avec des jetons : ils en apportent environ 5 % de plus et quelques-uns repartent avec des jetons sans valeur hors de la maison (la réserve reste dans le tiroir). Les recettes nocturnes du casino y sont versées en argent.</HH_CashierCage.description>
+  <HH_CasinoChips.label>jeton de casino</HH_CasinoChips.label>
+  <HH_CasinoChips.description>Un jeton d'argile frappé de la marque d'une maison. Vaut un d'argent au guichet qui l'a vendu et rien ailleurs : les marchands n'en veulent pas et il ne compte pas dans votre richesse.</HH_CasinoChips.description>
+  <HH_GamblingSession.label>jeu</HH_GamblingSession.label>
+  <HH_GamblingSession.description>Une session aux tables, gérée par la politique des drogues comme une drogue : autorisée ou non pour le plaisir, fréquence, et si les personnes dépendantes peuvent jouer. Ce n'est pas un objet et il n'existe jamais dans le monde.</HH_GamblingSession.description>
+</LanguageData>

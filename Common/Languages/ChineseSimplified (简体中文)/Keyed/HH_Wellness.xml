@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH.Setting.wellness.priceHotTub>热水浴缸价格</HH.Setting.wellness.priceHotTub>
+  <HH.Setting.wellness.priceHotTub.Desc>访客每泡一次热水浴缸需支付的费用。会乘以场所的价格系数。</HH.Setting.wellness.priceHotTub.Desc>
+  <HH.Setting.wellness.priceSauna>桑拿价格</HH.Setting.wellness.priceSauna>
+  <HH.Setting.wellness.priceSauna.Desc>访客每次使用一次桑拿需支付的费用。</HH.Setting.wellness.priceSauna.Desc>
+  <HH.Setting.wellness.priceMassage>按摩价格</HH.Setting.wellness.priceMassage>
+  <HH.Setting.wellness.priceMassage.Desc>访客每次按摩需支付的费用。仅当一名负责“服务”工作类型的殖民者有空时才会提供。</HH.Setting.wellness.priceMassage.Desc>
+  <HH.Setting.wellness.dayPass>出售日票</HH.Setting.wellness.dayPass>
+  <HH.Setting.wellness.dayPass.Desc>较富裕的访客会购买日票，而不是每次单独付费。日票涵盖热水浴缸和桑拿，不包括按摩。</HH.Setting.wellness.dayPass.Desc>
+  <HH.Setting.wellness.priceDayPass>日票价格</HH.Setting.wellness.priceDayPass>
+  <HH.Setting.wellness.priceDayPass.Desc>水疗日票的价格（日票有效期内可使用热水浴缸和桑拿）。</HH.Setting.wellness.priceDayPass.Desc>
+  <HH.Setting.wellness.dayPassHours>日票有效时长（小时）</HH.Setting.wellness.dayPassHours>
+  <HH.Setting.wellness.dayPassHours.Desc>日票保持有效的时长。</HH.Setting.wellness.dayPassHours.Desc>
+  <HH.Setting.wellness.selfServiceDiscount>自助服务折扣</HH.Setting.wellness.selfServiceDiscount>
+  <HH.Setting.wellness.selfServiceDiscount.Desc>房间内没有工作人员时的降价幅度。站在房间里的、负责“服务”工作类型的殖民者算作工作人员。</HH.Setting.wellness.selfServiceDiscount.Desc>
+  <HH.Setting.wellness.hoursHotTub>热水浴缸单次时长（小时）</HH.Setting.wellness.hoursHotTub>
+  <HH.Setting.wellness.hoursHotTub.Desc>每次泡澡持续的时长。</HH.Setting.wellness.hoursHotTub.Desc>
+  <HH.Setting.wellness.hoursSauna>桑拿单次时长（小时）</HH.Setting.wellness.hoursSauna>
+  <HH.Setting.wellness.hoursSauna.Desc>每次桑拿持续的时长。</HH.Setting.wellness.hoursSauna.Desc>
+  <HH.Setting.wellness.hoursMassage>按摩时长（小时）</HH.Setting.wellness.hoursMassage>
+  <HH.Setting.wellness.hoursMassage.Desc>每次按摩持续的时长。按摩师和客人在此期间都会一直忙碌。</HH.Setting.wellness.hoursMassage.Desc>
+  <HH.Setting.wellness.massageWaitHours>等待按摩师的时间（小时）</HH.Setting.wellness.massageWaitHours>
+  <HH.Setting.wellness.massageWaitHours.Desc>有人躺在按摩台上等待按摩师的时长，超时后便会放弃。</HH.Setting.wellness.massageWaitHours.Desc>
+  <HH.Setting.wellness.saunaMinTemp>桑拿最低温度（°C）</HH.Setting.wellness.saunaMinTemp>
+  <HH.Setting.wellness.saunaMinTemp.Desc>只有房间温度至少达到此值时，桑拿炉才算正常工作的桑拿。</HH.Setting.wellness.saunaMinTemp.Desc>
+  <HH.Setting.wellness.joyFactor>娱乐收益系数</HH.Setting.wellness.joyFactor>
+  <HH.Setting.wellness.joyFactor.Desc>殖民者从热水浴缸、桑拿和按摩中获得的娱乐收益乘数。</HH.Setting.wellness.joyFactor.Desc>
+  <HH.Setting.wellness.restBonus>每次使用的休息加成</HH.Setting.wellness.restBonus>
+  <HH.Setting.wellness.restBonus.Desc>一次使用所恢复的休息条比例（按摩会略多一些）。设为 0 则没有加成。</HH.Setting.wellness.restBonus.Desc>
+  <HH.Setting.wellness.soothe>使用后舒缓</HH.Setting.wellness.soothe>
+  <HH.Setting.wellness.soothe.Desc>一次使用后，小人会舒缓大约一天：感受到的疼痛减少 15%。</HH.Setting.wellness.soothe.Desc>
+  <HH.Setting.wellness.massageXp>每次按摩获得的按摩师经验</HH.Setting.wellness.massageXp>
+  <HH.Setting.wellness.massageXp.Desc>按摩师完成一次完整按摩所获得的社交和医疗经验。</HH.Setting.wellness.massageXp.Desc>
+  <HH.Setting.wellness.satisfaction>每次使用带来的访客满意度</HH.Setting.wellness.satisfaction>
+  <HH.Setting.wellness.satisfaction.Desc>一次完整使用能提升多少访客满意度（范围 -1 到 +1）。</HH.Setting.wellness.satisfaction.Desc>
+  <HH.Setting.wellness.guestWeight>访客对水疗的兴趣</HH.Setting.wellness.guestWeight>
+  <HH.Setting.wellness.guestWeight.Desc>与其他活动相比，访客想去水疗的强烈程度。0 = 他们从不前往。</HH.Setting.wellness.guestWeight.Desc>
+  <HH.Setting.wellness.guestCooldownHours>访客两次使用之间的间隔（小时）</HH.Setting.wellness.guestCooldownHours>
+  <HH.Setting.wellness.guestCooldownHours.Desc>访客再次开始水疗使用之前，至少需要等待的时长。</HH.Setting.wellness.guestCooldownHours.Desc>
+  <HH.Setting.wellness.rehabJoy>病人可以使用水疗</HH.Setting.wellness.rehabJoy>
+  <HH.Setting.wellness.rehabJoy.Desc>启用 RimWard 时，能够行走的殖民地医疗床病人可以去热水浴缸、桑拿和按摩台享受娱乐（手术后或有开放性伤口时绝不允许使用桑拿）。</HH.Setting.wellness.rehabJoy.Desc>
+  <HH.Wellness.Yes>是</HH.Wellness.Yes>
+  <HH.Wellness.No>否</HH.Wellness.No>
+  <HH.Wellness.Inspect.SaunaReady>桑拿已就绪：{0} °C。</HH.Wellness.Inspect.SaunaReady>
+  <HH.Wellness.Inspect.SaunaNotReady>尚不能作为正常工作的桑拿：当前 {0} °C，需要 {1} °C（{2}）。</HH.Wellness.Inspect.SaunaNotReady>
+  <HH.Wellness.Inspect.TubReady>热水浴缸已就绪。</HH.Wellness.Inspect.TubReady>
+  <HH.Wellness.Inspect.TubNotReady>热水浴缸无法使用：{0}。</HH.Wellness.Inspect.TubNotReady>
+  <HH.Wellness.Inspect.MassageFree>按摩台空闲。</HH.Wellness.Inspect.MassageFree>
+  <HH.Wellness.Inspect.MassageWaiting>有人在等待按摩师。</HH.Wellness.Inspect.MassageWaiting>
+  <HH.Wellness.Inspect.MassageRunning>正在按摩。</HH.Wellness.Inspect.MassageRunning>
+  <HH.Wellness.Inspect.Users>殖民者可使用：{0}。访客可使用：{1}。</HH.Wellness.Inspect.Users>
+  <HH.Wellness.Gizmo.Colonists>殖民者可使用</HH.Wellness.Gizmo.Colonists>
+  <HH.Wellness.Gizmo.ColonistsDesc>允许殖民者将此设施用于娱乐。水疗营业期间请关闭。</HH.Wellness.Gizmo.ColonistsDesc>
+  <HH.Wellness.Gizmo.Guests>访客可使用</HH.Wellness.Gizmo.Guests>
+  <HH.Wellness.Gizmo.GuestsDesc>允许访客使用此设施（若它位于水疗场所内，访客需要付费）。</HH.Wellness.Gizmo.GuestsDesc>
+</LanguageData>

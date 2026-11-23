@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Ind_ExpressAbsolution.label>Expressabsolution</HH_Ind_ExpressAbsolution.label>
+  <HH_Ind_ExpressAbsolution.description>Ein abgestempelter Zettel, der eine Erinnerung an ein gebrochenes Gebot löscht. Der Priester fragt nicht, was du getan hast.</HH_Ind_ExpressAbsolution.description>
+  <HH_Ind_MinorMercy.label>kleine Gnade</HH_Ind_MinorMercy.label>
+  <HH_Ind_MinorMercy.description>Ein gesegneter Verband, verkauft zum Preis von zwei Dosen Medizin. Heilt eine frische Wunde von bis zu 10 Trefferpunkten.</HH_Ind_MinorMercy.description>
+  <HH_Ind_UnshakenFaith.label>Zertifikat unerschütterlichen Glaubens</HH_Ind_UnshakenFaith.label>
+  <HH_Ind_UnshakenFaith.description>Ein gerahmtes Zertifikat, das bestätigt, dass du nie gezweifelt hast. Erhöht die Gewissheit um zehn Prozentpunkte.</HH_Ind_UnshakenFaith.description>
+  <HH_Ind_GreaterMercy.label>große Gnade</HH_Ind_GreaterMercy.label>
+  <HH_Ind_GreaterMercy.description>Ein Wunder mit Preisschild. Heilt eine bleibende Narbe oder alte Wunde für immer.</HH_Ind_GreaterMercy.description>
+  <HH_Asc_Rank1.label>Aufstieg: Suchender</HH_Asc_Rank1.label>
+  <HH_Asc_Rank1.description>Zahle die Aufnahmegebühr und werde Suchender. Ein Anfang, mehr nicht.</HH_Asc_Rank1.description>
+  <HH_Asc_Rank2.label>Aufstieg: Adept</HH_Asc_Rank2.label>
+  <HH_Asc_Rank2.description>Rang II, Adept. Ab hier darf der Träger am Altar Ablässe an Gäste und Besucher anderer Häuser verkaufen.</HH_Asc_Rank2.description>
+  <HH_Asc_Rank3.label>Aufstieg: Leuchte</HH_Asc_Rank3.label>
+  <HH_Asc_Rank3.description>Rang III, Leuchte. Hell genug, um aus der Ferne bemerkt zu werden.</HH_Asc_Rank3.description>
+  <HH_Asc_Rank4.label>Aufstieg: Aufgestiegener</HH_Asc_Rank4.label>
+  <HH_Asc_Rank4.description>Rang IV, Aufgestiegener. Die Spitze der Leiter, für alle, die sich die Aussicht leisten können.</HH_Asc_Rank4.description>
+  <HH_Ind_ReformTithe.label>Reformzehnt</HH_Ind_ReformTithe.label>
+  <HH_Ind_ReformTithe.description>Ein freiwilliger Zehnt für die nächste Reform einer fließenden Ideoligion: ein Reformpunkt.</HH_Ind_ReformTithe.description>
+</LanguageData>

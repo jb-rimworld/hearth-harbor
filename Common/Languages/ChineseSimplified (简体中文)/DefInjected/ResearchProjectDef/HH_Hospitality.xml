@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Innkeeping.label>旅店经营</HH_Innkeeping.label>
+  <HH_Innkeeping.description>客房等级、价格档次、酒馆、前台、拴马桩和第一批收费菜肴。客人第二晚还留宿时，这座房子需要的一切都在这里。解锁烟熏炉、烤箱、客人祭坛，以及厨房的第 2 级学习。</HH_Innkeeping.description>
+  <HH_Gastronomy.label>美食学</HH_Gastronomy.label>
+  <HH_Gastronomy.description>菜单、侍应、厨房风格和像样的餐厅。解锁蒸笼、炒锅工位、冷菜工位，以及厨房的第 3 级学习。</HH_Gastronomy.description>
+  <HH_HotelManagement.label>酒店管理</HH_HotelManagement.label>
+  <HH_HotelManagement.description>预订终端、抵店预测、轮班和深炸锅。旅店与酒店的区别在于，酒店知道谁会来。</HH_HotelManagement.description>
+  <HH_FineDining.label>高级餐饮</HH_FineDining.label>
+  <HH_FineDining.description>亚麻织品、侍酒师和评论家。厨房的第 4 级学习：每道菜的招牌形式。</HH_FineDining.description>
+</LanguageData>

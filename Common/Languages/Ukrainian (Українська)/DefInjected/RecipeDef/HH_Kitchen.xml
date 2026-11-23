@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_TestKitchen.label>експеримент з новою стравою</HH_TestKitchen.label>
+  <HH_TestKitchen.description>Кинь сиру їжу на прилавок і подивись, що вийде. Іноді колонія вигадує нову страву (чим кращий кухар, тим імовірніше); інакше експеримент закінчується жахливою тарілкою цієї страви.</HH_TestKitchen.description>
+  <HH_TestKitchen.jobString>Експериментую з новою стравою.</HH_TestKitchen.jobString>
+</LanguageData>

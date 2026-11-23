@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_TestKitchen.label>새 요리 실험하기</HH_TestKitchen.label>
+  <HH_TestKitchen.description>조리대에 날 식재료를 던져 놓고 무엇이 나오는지 본다. 때로는 식민지가 새 요리를 알아내고(요리사가 실력이 좋을수록 확률이 높다), 그렇지 않으면 실험은 그 요리의 끔찍한 한 접시로 끝난다.</HH_TestKitchen.description>
+  <HH_TestKitchen.jobString>새 요리를 실험하는 중.</HH_TestKitchen.jobString>
+</LanguageData>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_GamblingWithdrawal.stages.0.label>도박 금단 (경미)</HH_GamblingWithdrawal.stages.0.label>
+  <HH_GamblingWithdrawal.stages.0.description>자꾸 테이블 생각이 난다. 한 판 정도야 괜찮겠지.</HH_GamblingWithdrawal.stages.0.description>
+  <HH_GamblingWithdrawal.stages.1.label>도박 금단 (중간)</HH_GamblingWithdrawal.stages.1.label>
+  <HH_GamblingWithdrawal.stages.1.description>집중할 수가 없다. 해야만 한다.</HH_GamblingWithdrawal.stages.1.description>
+  <HH_GamblingWithdrawal.stages.2.label>도박 금단 (강함)</HH_GamblingWithdrawal.stages.2.label>
+  <HH_GamblingWithdrawal.stages.2.description>세상은 잿빛이고, 오직 룰렛만 보인다.</HH_GamblingWithdrawal.stages.2.description>
+  <HH_GamblingWithdrawal.stages.3.label>도박 금단 (심각)</HH_GamblingWithdrawal.stages.3.label>
+  <HH_GamblingWithdrawal.stages.3.description>손이 떨린다. 누구 카드 한 벌 없나?</HH_GamblingWithdrawal.stages.3.description>
+  <HH_GamblingWithdrawal.stages.4.label>도박 금단 (극심)</HH_GamblingWithdrawal.stages.4.label>
+  <HH_GamblingWithdrawal.stages.4.description>다른 건 아무것도 중요하지 않다.</HH_GamblingWithdrawal.stages.4.description>
+  <HH_WonAtTheTables.stages.0.label>테이블에서 땀</HH_WonAtTheTables.stages.0.label>
+  <HH_WonAtTheTables.stages.0.description>이번에는 칩이 내 쪽으로 기울었다.</HH_WonAtTheTables.stages.0.description>
+  <HH_LostAtTheTables.stages.0.label>테이블에서 전부 잃음</HH_LostAtTheTables.stages.0.label>
+  <HH_LostAtTheTables.stages.0.description>칩이 전부 사라졌다. 공짜였는데도 아프다.</HH_LostAtTheTables.stages.0.description>
+</LanguageData>
