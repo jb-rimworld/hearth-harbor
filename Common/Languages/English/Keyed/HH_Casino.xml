@@ -182,4 +182,28 @@
   <HH.Thrumbo.Err.HandOpen>A hand is still open.</HH.Thrumbo.Err.HandOpen>
   <HH.Thrumbo.Err.NoHand>There is no open hand.</HH.Thrumbo.Err.NoHand>
   <HH.Thrumbo.Err.NoDouble>You can only double down on your first two cards.</HH.Thrumbo.Err.NoDouble>
+  <HH.Thrumbo.Ago>ago</HH.Thrumbo.Ago>
+  <HH.Thrumbo.Sym.cherry>cherry</HH.Thrumbo.Sym.cherry>
+  <HH.Thrumbo.Sym.lemon>lemon</HH.Thrumbo.Sym.lemon>
+  <HH.Thrumbo.Sym.plum>plum</HH.Thrumbo.Sym.plum>
+  <HH.Thrumbo.Sym.bell>bell</HH.Thrumbo.Sym.bell>
+  <HH.Thrumbo.Sym.bar>bar</HH.Thrumbo.Sym.bar>
+  <HH.Thrumbo.Sym.seven>seven</HH.Thrumbo.Sym.seven>
+  <HH.Thrumbo.Sym.muffalo>muffalo</HH.Thrumbo.Sym.muffalo>
+  <HH.Thrumbo.Pay.Three>3 × {0}</HH.Thrumbo.Pay.Three>
+  <HH.Thrumbo.Pay.Cherry2>2 × cherry (reels 1+2)</HH.Thrumbo.Pay.Cherry2>
+  <HH.Thrumbo.Pay.Cherry1>cherry on reel 1</HH.Thrumbo.Pay.Cherry1>
+  <HH.Thrumbo.Bet.Straight>Straight {0}</HH.Thrumbo.Bet.Straight>
+  <HH.Thrumbo.Bet.Split>Split {0}/{1}</HH.Thrumbo.Bet.Split>
+  <HH.Thrumbo.Bet.Street>Street {0}-{1}</HH.Thrumbo.Bet.Street>
+  <HH.Thrumbo.Bet.Corner>Corner {0}</HH.Thrumbo.Bet.Corner>
+  <HH.Thrumbo.Bet.SixLine>Six line {0}-{1}</HH.Thrumbo.Bet.SixLine>
+  <HH.Thrumbo.Bet.Column>Column {0}</HH.Thrumbo.Bet.Column>
+  <HH.Thrumbo.Bet.Dozen>Dozen {0}</HH.Thrumbo.Bet.Dozen>
+  <HH.Thrumbo.Bet.Red>Red</HH.Thrumbo.Bet.Red>
+  <HH.Thrumbo.Bet.Black>Black</HH.Thrumbo.Bet.Black>
+  <HH.Thrumbo.Bet.Odd>Odd</HH.Thrumbo.Bet.Odd>
+  <HH.Thrumbo.Bet.Even>Even</HH.Thrumbo.Bet.Even>
+  <HH.Thrumbo.Bet.Low>Low 1-18</HH.Thrumbo.Bet.Low>
+  <HH.Thrumbo.Bet.High>High 19-36</HH.Thrumbo.Bet.High>
 </LanguageData>

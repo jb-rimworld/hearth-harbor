@@ -38,7 +38,7 @@ namespace Hearth.Casino.PlayerHouse
         Vector2 histScroll;
         public static int DrawCount;
 
-        public override Vector2 InitialSize => new Vector2(780f, 700f);
+        public override Vector2 InitialSize => new Vector2(780f, 720f);
         public bool ShowsHelpHint => CasinoUI.HelpHintText() != null;
         public ThrumboGame Game { get => game; set => game = value; }
 
@@ -59,6 +59,20 @@ namespace Hearth.Casino.PlayerHouse
         }
 
         ThrumboSeat Seat => ThrumboSeat.For(negotiator, from);
+
+#if HH_TESTS
+        /// <summary>Showcase/test hooks: drive the window like a click would.</summary>
+        public void TestPlay(string what, string stake)
+        {
+            stakeText = stake; var seat = Seat;
+            switch (what)
+            {
+                case "slots": game = ThrumboGame.Slots; DoSlots(seat); break;
+                case "roulette": game = ThrumboGame.Roulette; bet = RouletteBet.Straight(17); DoRoulette(seat); bet = RouletteBet.Dozen(2); break;
+                case "deal": game = ThrumboGame.Blackjack; DoDeal(seat); break;
+            }
+        }
+#endif
 
         // ---------------------------------------------------------------------------------------------------------
         static readonly Color[] symbolColors =
@@ -84,7 +98,7 @@ namespace Hearth.Casino.PlayerHouse
                 y = DrawSource(inRect, seat, y, hand != null);
                 y = DrawGameTabs(inRect, y, hand != null);
                 y = DrawStake(inRect, seat, y);
-                float gameH = 214f;
+                float gameH = 232f;
                 var area = new Rect(0, y, inRect.width, gameH);
                 Widgets.DrawBoxSolid(area, new Color(0.10f, 0.13f, 0.11f, 0.55f)); Widgets.DrawBox(area, 1);
                 switch (game)
@@ -106,10 +120,11 @@ namespace Hearth.Casino.PlayerHouse
         {
             var logo = new Rect(0, 0, 480f, 80f);
             GUI.DrawTexture(logo, ThrumboIcons.Logo, ScaleMode.ScaleToFit);
+            Widgets.DrawBoxSolid(new Rect(100f, 10f, 376f, 62f), new Color(0.05f, 0.07f, 0.14f, 0.62f));
             Text.Font = GameFont.Medium; GUI.color = new Color(0.97f, 0.93f, 0.82f);
-            Widgets.Label(new Rect(104f, 14f, 370f, 34f), "HH.Thrumbo.Title".Translate());
-            Text.Font = GameFont.Tiny; GUI.color = new Color(0.8f, 0.82f, 0.9f);
-            Widgets.Label(new Rect(104f, 46f, 370f, 24f), "HH.Thrumbo.Tagline".Translate());
+            Widgets.Label(new Rect(106f, 10f, 366f, 30f), "HH.Thrumbo.Title".Translate());
+            Text.Font = GameFont.Tiny; GUI.color = new Color(0.82f, 0.85f, 0.95f);
+            Widgets.Label(new Rect(106f, 38f, 366f, 34f), "HH.Thrumbo.Tagline".Translate());
             GUI.color = Color.white; Text.Font = GameFont.Small;
             // the edges of the house, the same numbers the games use
             Text.Anchor = TextAnchor.UpperRight;
@@ -148,7 +163,14 @@ namespace Hearth.Casino.PlayerHouse
         {
             if (on) Widgets.DrawBoxSolid(r, new Color(0.25f, 0.45f, 0.30f, 0.55f));
             if (!enabled) GUI.color = new Color(1f, 1f, 1f, 0.45f);
-            bool click = Widgets.ButtonText(r, label, !on, true, enabled);
+            bool click;
+            if (on)
+            {
+                // selected: a plain, centred label on the green plate (a background-less button would left-align it like a text field)
+                var oa = Text.Anchor; Text.Anchor = TextAnchor.MiddleCenter; GUI.color = new Color(0.92f, 1f, 0.92f, enabled ? 1f : 0.45f);
+                Widgets.Label(r, "<b>" + label + "</b>"); Text.Anchor = oa; click = false;
+            }
+            else click = Widgets.ButtonText(r, label, true, true, enabled);
             GUI.color = Color.white;
             if (on) Widgets.DrawBox(r, 1);
             if (tip != null) TooltipHandler.TipRegion(r, tip);
@@ -214,7 +236,9 @@ namespace Hearth.Casino.PlayerHouse
             else if (last != null && !last.Text.NullOrEmpty())
             {
                 var net = last.Net; GUI.color = net.Micro > 0 ? good : (net.Micro < 0 ? bad : Color.white);
-                Widgets.Label(line, last.Text + "   " + "HH.Thrumbo.Net".Translate((net.Micro >= 0 ? "+" : "") + net.ToStringShort()));
+                bool openHand = !last.Done && ThrumboHouse.CurrentHand() != null;   // an open hand is not lost yet: no red, no "-stake"
+                if (openHand) GUI.color = Color.white;
+                Widgets.Label(line, openHand ? last.Text : last.Text + "   " + "HH.Thrumbo.Net".Translate((net.Micro >= 0 ? "+" : "") + net.ToStringShort()).ToString());
             }
             Text.Anchor = TextAnchor.UpperLeft; GUI.color = dim; Text.Font = GameFont.Tiny;
             Widgets.Label(new Rect(0, y + 28f, r.width, 18f), "HH.Thrumbo.Sealed".Translate());
@@ -243,7 +267,7 @@ namespace Hearth.Casino.PlayerHouse
                 if (yy + rowH < histScroll.y || yy > histScroll.y + list.height) continue;
                 var row = new Rect(0, yy, view.width, rowH);
                 if (i % 2 == 0) Widgets.DrawBoxSolid(row, new Color(1f, 1f, 1f, 0.04f));
-                GUI.color = dim; Widgets.Label(new Rect(2f, yy, 80f, rowH), (now - e.Tick).ToStringTicksToPeriod(false, true, false, false) + " ago");
+                GUI.color = dim; Widgets.Label(new Rect(2f, yy, 80f, rowH), (now - e.Tick).ToStringTicksToPeriod(false, true, false, false) + " " + "HH.Thrumbo.Ago".Translate());
                 GUI.color = Color.white; Widgets.Label(new Rect(84f, yy, 90f, rowH), ("HH.Thrumbo.Game." + (ThrumboGame)e.Game).Translate());
                 Widgets.Label(new Rect(176f, yy, view.width - 176f - 190f, rowH), e.Text ?? "");
                 var net = e.Net; GUI.color = net.Micro > 0 ? good : (net.Micro < 0 ? bad : Color.white);
@@ -266,7 +290,7 @@ namespace Hearth.Casino.PlayerHouse
                 var reel = new Rect(x, a.y + 4f, 112f, 84f); x += 120f;
                 Widgets.DrawBoxSolid(reel, new Color(0.93f, 0.9f, 0.8f, 0.96f)); Widgets.DrawBox(reel, 2);
                 Text.Font = GameFont.Medium; Text.Anchor = TextAnchor.MiddleCenter;
-                if (reels != null) { GUI.color = symbolColors[reels[i]]; Widgets.DrawBoxSolid(new Rect(reel.x + 6f, reel.yMax - 12f, reel.width - 12f, 5f), symbolColors[reels[i]]); GUI.color = new Color(0.12f, 0.1f, 0.09f); Widgets.Label(reel, SlotPaytable.SymbolNames[reels[i]]); }
+                if (reels != null) { GUI.color = symbolColors[reels[i]]; Widgets.DrawBoxSolid(new Rect(reel.x + 6f, reel.yMax - 12f, reel.width - 12f, 5f), symbolColors[reels[i]]); GUI.color = new Color(0.12f, 0.1f, 0.09f); Widgets.Label(reel, ThrumboNames.Symbol(reels[i])); }
                 else { GUI.color = new Color(0.3f, 0.27f, 0.22f); Widgets.Label(reel, "?"); }
                 Text.Anchor = TextAnchor.UpperLeft; Text.Font = GameFont.Small; GUI.color = Color.white;
             }
@@ -288,7 +312,7 @@ namespace Hearth.Casino.PlayerHouse
             float ty = table.y + 18f;
             foreach (var row in pt.Rows())
             {
-                Widgets.Label(new Rect(table.x, ty, table.width - 90f, 15f), row.label);
+                Widgets.Label(new Rect(table.x, ty, table.width - 90f, 15f), ThrumboNames.PayRow(row.label));
                 Text.Anchor = TextAnchor.UpperRight; Widgets.Label(new Rect(table.xMax - 90f, ty, 90f, 15f), "×" + row.multiplier.ToString(row.multiplier >= 100 ? "N0" : "0.##")); Text.Anchor = TextAnchor.UpperLeft;
                 ty += 15f; if (ty > table.yMax - 12f) break;
             }
@@ -307,7 +331,7 @@ namespace Hearth.Casino.PlayerHouse
         void DrawRoulette(Rect a, ThrumboSeat seat)
         {
             var rules = ThrumboOdds.Roulette(TS.Shift);
-            const float cw = 34f, chh = 28f;
+            const float cw = 34f, chh = 36f;
             float ox = a.x, oy = a.y;
             // zero column
             var zero = new Rect(ox, oy, cw, rules.Zeros == 2 ? chh * 1.5f : chh * 3f);
@@ -322,15 +346,15 @@ namespace Hearth.Casino.PlayerHouse
             // column bets
             for (int row = 0; row < 3; row++) OutsideCell(new Rect(ox + cw + 12 * cw, oy + row * chh, 44f, chh), "2:1", RouletteBet.Column(3 - row));
             float by = oy + 3 * chh + 3f;
-            for (int d = 0; d < 3; d++) OutsideCell(new Rect(ox + cw + d * 4 * cw, by, 4 * cw, 26f), ("HH.Thrumbo.Roulette.Dozen" + (d + 1)).Translate(), RouletteBet.Dozen(d + 1));
-            by += 29f;
+            for (int d = 0; d < 3; d++) OutsideCell(new Rect(ox + cw + d * 4 * cw, by, 4 * cw, 30f), ("HH.Thrumbo.Roulette.Dozen" + (d + 1)).Translate(), RouletteBet.Dozen(d + 1));
+            by += 33f;
             var outside = new[] { RouletteBet.Low(), RouletteBet.Even(), RouletteBet.Red(), RouletteBet.Black(), RouletteBet.Odd(), RouletteBet.High() };
             float ow = (12 * cw) / 6f;
-            for (int i = 0; i < 6; i++) OutsideCell(new Rect(ox + cw + i * ow, by, ow, 26f), ("HH.Thrumbo.Roulette." + outsideLabels[i]).Translate(), outside[i]);
+            for (int i = 0; i < 6; i++) OutsideCell(new Rect(ox + cw + i * ow, by, ow, 30f), ("HH.Thrumbo.Roulette." + outsideLabels[i]).Translate(), outside[i]);
             // right: the bet, the ball, the spin
             float rx = ox + cw + 12 * cw + 56f; float rw = a.xMax - rx;
             Text.Font = GameFont.Tiny; GUI.color = dim;
-            Widgets.Label(new Rect(rx, a.y, rw, 36f), "HH.Thrumbo.Roulette.YourBet".Translate(bet.Label, bet.Odds.ToString()));
+            Widgets.Label(new Rect(rx, a.y, rw, 36f), "HH.Thrumbo.Roulette.YourBet".Translate(ThrumboNames.Bet(bet), bet.Odds.ToString()));
             GUI.color = Color.white; Text.Font = GameFont.Small;
             if (Widgets.ButtonText(new Rect(rx, a.y + 40f, Math.Min(120f, rw), 34f), "HH.Thrumbo.Spin".Translate())) DoRoulette(seat);
             if (lastPocket >= 0)
@@ -374,7 +398,7 @@ namespace Hearth.Casino.PlayerHouse
             Widgets.DrawBoxSolid(r.ContractedBy(1f), c);
             if (sel) { Widgets.DrawBoxSolid(r.ContractedBy(1f), new Color(1f, 0.9f, 0.4f, 0.3f)); Widgets.DrawBox(r, 2); }
             Text.Anchor = TextAnchor.MiddleCenter; Text.Font = GameFont.Tiny; Widgets.Label(r, label); Text.Anchor = TextAnchor.UpperLeft; Text.Font = GameFont.Small;
-            if (Mouse.IsOver(r)) TooltipHandler.TipRegion(r, "HH.Thrumbo.Roulette.OutsideTip".Translate(b.Label, b.Odds.ToString()));
+            if (Mouse.IsOver(r)) TooltipHandler.TipRegion(r, "HH.Thrumbo.Roulette.OutsideTip".Translate(ThrumboNames.Bet(b), b.Odds.ToString()));
             if (Widgets.ButtonInvisible(r)) bet = b;
         }
 
