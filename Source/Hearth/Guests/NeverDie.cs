@@ -18,9 +18,18 @@ namespace Hearth.Guests
 
         static MethodBase TargetMethod() => AccessTools.Method(typeof(Pawn_HealthTracker), "ShouldBeDead");
 
+        // A vanilla visitor stops counting as a guest once it is downed (it leaves its lord); the ones we saw as guests stay protected.
+        static readonly System.Collections.Generic.HashSet<int> seen = new System.Collections.Generic.HashSet<int>();
+        static Patch_HealthTracker_ShouldBeDead() { HearthGame.OnGameInit += () => seen.Clear(); }
+
         /// <summary>True when the pawn is a guest that the switch protects.</summary>
-        public static bool Protects(Pawn p) => p != null && !p.Dead && CoreSettings.Switch(Switch) && Modules.On(ModuleId.Inn) && !p.IsPrisoner && !p.IsColonist
-            && p.Faction != null && !p.Faction.IsPlayer && !p.HostileTo(Faction.OfPlayer) && GuestApi.IsGuest(p);
+        public static bool Protects(Pawn p)
+        {
+            if (p == null || p.Dead || !CoreSettings.Switch(Switch) || !Modules.On(ModuleId.Inn) || p.IsPrisoner || p.IsColonist) return false;
+            if (p.Faction == null || p.Faction.IsPlayer || p.HostileTo(Faction.OfPlayer)) return false;
+            if (GuestApi.IsGuest(p)) { seen.Add(p.thingIDNumber); return true; }
+            return seen.Contains(p.thingIDNumber);
+        }
 
         static void Postfix(Pawn_HealthTracker __instance, ref bool __result)
         {
