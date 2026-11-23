@@ -50,7 +50,9 @@ namespace Hearth.Kitchen
         public override void PrepareRemoval(List<string> report)
         {
             // Plates keep working as ordinary food: the dish comp loads without the mod as an unknown comp and is dropped. Nothing to undo.
-            report.Add("Kitchen: plates and recipes stay as vanilla-like food; bills for dishes disappear.");
+            int bills = 0;
+            Guard.Run(Id, "Kitchen.RemoveBills", () => bills = RecipeBuilder.RemoveOurBills());
+            report.Add("Kitchen: plates stay as vanilla-like food; " + bills + " bill(s) for dishes were removed from work tables (the cooking recipes are generated at startup and would not exist without the module).");
         }
 
         public override IEnumerable<string> Diagnosis()

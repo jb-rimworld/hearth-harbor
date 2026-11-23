@@ -334,7 +334,7 @@ namespace Hearth.ShopsFood
             {
                 bool counter = VenueApi.CounterOf(v) != null;
                 yield return counter ? ok + "HH.Venue.CheckCounter".TranslateOr("Counter for the tender") : no + "HH.Venue.CheckNoCounter".TranslateOr("No counter (optional) → the tender stands next to the sign");
-                bool anyone = parent.Map.mapPawns.FreeColonistsSpawned.Any(p => !p.WorkTypeIsDisabled(HHVenueDefOf.HH_Serving) && p.workSettings != null && p.workSettings.GetPriority(HHVenueDefOf.HH_Serving) > 0);
+                bool anyone = parent.Map.mapPawns.FreeColonistsSpawned.Any(p => !p.WorkTypeIsDisabled(HHVenueDefOf.HH_Serving) && p.workSettings != null && p.workSettings.WorkIsActive(HHVenueDefOf.HH_Serving));   // WorkIsActive, not GetPriority: work tab replacements hook the vanilla API
                 yield return anyone ? ok + "HH.Venue.CheckWorker".TranslateOr("A colonist does Serving work") : no + "HH.Venue.CheckNoWorker".TranslateOr("Nobody has the Serving work type switched on");
             }
         }

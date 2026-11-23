@@ -76,6 +76,7 @@ namespace Hearth.ShopsFood
                 {
                     list.RemoveAt(i);
                     hidden[def] = new Hidden { Category = cat, Removed = d, Index = i };
+                    cat.DirtyCache();   // other architect mods (menus, search) cache the designator list of a category
                     HLog.Info("Venues", "Hidden from architect menu: " + def.defName);
                     return;
                 }
@@ -86,6 +87,7 @@ namespace Hearth.ShopsFood
                     {
                         hidden[def] = new Hidden { Category = cat, Removed = elems[j], Dropdown = dd, Index = j };
                         elems.RemoveAt(j);
+                        cat.DirtyCache();
                         HLog.Info("Venues", "Hidden from architect menu (dropdown): " + def.defName);
                         return;
                     }
@@ -98,13 +100,17 @@ namespace Hearth.ShopsFood
         {
             if (!hidden.TryGetValue(def, out var h)) return;
             hidden.Remove(def);
+            // The saved index can be stale when another mod changed the list meanwhile: clamp it, never insert twice, and tell the category to rebuild its caches.
             if (h.Dropdown != null && dropdownElements?.GetValue(h.Dropdown) is List<Designator> elems)
-                elems.Insert(Math.Min(h.Index, elems.Count), h.Removed);
+            {
+                if (!elems.Contains(h.Removed)) elems.Insert(Math.Max(0, Math.Min(h.Index, elems.Count)), h.Removed);
+            }
             else
             {
                 var list = h.Category.AllResolvedDesignators;
-                list.Insert(Math.Min(h.Index, list.Count), h.Removed);
+                if (!list.Contains(h.Removed)) list.Insert(Math.Max(0, Math.Min(h.Index, list.Count)), h.Removed);
             }
+            h.Category.DirtyCache();
             HLog.Info("Venues", "Back in the architect menu: " + def.defName);
         }
     }

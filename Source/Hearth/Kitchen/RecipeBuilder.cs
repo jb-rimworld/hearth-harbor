@@ -66,9 +66,34 @@ namespace Hearth.Kitchen
 
         public static int Built, Unavailable;
 
+        /// <summary>
+        /// True for a recipe that only exists with this module: generated dish recipes (HH_Cook_*) and the test-kitchen recipe.
+        /// Without the mod a save still loads (vanilla drops a bill whose recipe it cannot resolve, with an error line in the log),
+        /// but removing our bills before the module goes keeps the log clean and tells the player what happened.
+        /// </summary>
+        public static bool IsOurRecipe(RecipeDef r) => r != null && (DishRecipeExtension.Of(r) != null || r.GetModExtension<TestKitchenExtension>() != null || r.defName.StartsWith("HH_Cook_"));
+
+        /// <summary>Removes our bills from every bill stack on every map (work tables, benches, pawns). Returns the number of bills removed.</summary>
+        public static int RemoveOurBills()
+        {
+            int n = 0;
+            foreach (var map in Find.Maps)
+            {
+                var things = map.listerThings.AllThings;
+                for (int i = 0; i < things.Count; i++)
+                {
+                    if (!(things[i] is IBillGiver giver)) continue;
+                    var bills = giver.BillStack?.Bills; if (bills == null) continue;
+                    for (int j = bills.Count - 1; j >= 0; j--)
+                        if (IsOurRecipe(bills[j].recipe)) { giver.BillStack.Delete(bills[j]); n++; }
+                }
+            }
+            return n;
+        }
+
         public static void BuildAll()
         {
-            Built = 0; Unavailable = 0;
+            Built = 0; Unavailable = 0; DishRecipeExtension.Clear();
             var touched = new HashSet<ThingDef>();
             var fin = FinisherFilters();
             foreach (var dish in DefDatabase<DishDef>.AllDefs.OrderBy(d => d.level).ThenBy(d => d.defName).ToList())
@@ -117,6 +142,7 @@ namespace Hearth.Kitchen
 
         static RecipeDef MakeRecipe(DishDef dish, int variant, List<(IngredientClass c, float share)> classes, List<ThingDef> mains, (ThingFilter any, ThingFilter a, ThingFilter b) fin)
         {
+            var ext = new DishRecipeExtension { dish = dish, variant = variant };
             var r = new RecipeDef
             {
                 defName = "HH_Cook_" + dish.Id + (variant == 0 ? "" : "_" + VariantName[variant]),
@@ -134,7 +160,7 @@ namespace Hearth.Kitchen
                 recipeUsers = new List<ThingDef>(Stations.MainDefs(dish.MainStation)),
                 products = new List<ThingDefCountClass> { new ThingDefCountClass(dish.plateDef, 1) },
                 skillRequirements = new List<SkillRequirement> { new SkillRequirement { skill = SkillDefOf.Cooking, minLevel = Mathf.Min(20, dish.minCooking + VariantSkill[variant]) } },
-                modExtensions = new List<DefModExtension> { new DishRecipeExtension { dish = dish, variant = variant } },
+                modExtensions = new List<DefModExtension> { ext },
                 ingredients = new List<IngredientCount>(),
                 fixedIngredientFilter = new ThingFilter(),
                 generated = true,
@@ -173,6 +199,7 @@ namespace Hearth.Kitchen
             r.defaultIngredientFilter.CopyAllowancesFrom(r.fixedIngredientFilter);
             r.ResolveReferences();
             DefDatabase<RecipeDef>.Add(r);
+            DishRecipeExtension.Register(r, ext);
             return r;
         }
     }

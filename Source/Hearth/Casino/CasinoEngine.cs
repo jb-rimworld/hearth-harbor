@@ -28,7 +28,7 @@ namespace Hearth.Casino
             if (kind != SessionKind.Demo && !pawn.DevelopmentalStage.Adult()) { failure = "children do not gamble"; return null; }
 
             int now = Find.TickManager.TicksGame;
-            var s = new GamblerSession { Pawn = pawn, Device = comp.parent, Kind = kind, Spree = spree, StartTick = now, StakeShare = 0.03f };
+            var s = new GamblerSession { Pawn = pawn, Device = comp.parent, Kind = kind, Spree = spree, StartTick = now, StakeShare = 0.10f };
             if (kind == SessionKind.Guest)
             {
                 var info = GuestApi.Info(pawn);

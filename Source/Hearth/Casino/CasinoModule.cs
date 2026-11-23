@@ -82,6 +82,8 @@ namespace Hearth.Casino
         public string Id => "casino.play";
         public ModuleId Module => ModuleId.Casino;
         static readonly Dictionary<int, int> played = new Dictionary<int, int>();
+        // thingIDNumbers repeat between saves: never carry the counts over to another game
+        static CasinoGuestActivity() { HearthGame.OnGameInit += () => played.Clear(); }
 
         public float Desire(Pawn guest, GuestInfo info)
         {

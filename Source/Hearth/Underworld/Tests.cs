@@ -403,6 +403,23 @@ namespace Hearth.Underworld
             t.Check(UwKit.Till(map) - till2 == new Money(real.Result.HouseMicro), "till got exactly the house take");
             t.Check(!a.Dead && !b.Dead, "nobody died in a non-lethal bout");
             t.Check(Underworld.Comp.Bouts >= 5 && Underworld.Whispers > 0f, "bouts counted, whispers up");
+            // 5b: the damage guard lets damage through for fit fighters and nulls it for beaten ones (without cancelling PreApplyDamage)
+            var c1 = UwKit.TameAnimal(map, cells[3], "Boar", "Muffalo"); var c2 = UwKit.TameAnimal(map, cells[45], "Boar", "Muffalo");
+            var guardBout = FightBout.Start(pit, c1, c2, true, 0);
+            c1.TakeDamage(new DamageInfo(DamageDefOf.Cut, 3f, 0f, -1f, c2));
+            t.Check(c1.health.hediffSet.hediffs.Count > 0, "a fit fighter still takes damage in a bout");
+            HealthUtility.DamageUntilDowned(c1);
+            if (!c1.Dead)
+            {
+                t.Check(guardBout.ShouldAbsorb(c1), "a downed fighter of a non-lethal bout is beaten");
+                int injuries = c1.health.hediffSet.hediffs.Count; float hp = c1.health.summaryHealth.SummaryHealthPercent;
+                c1.TakeDamage(new DamageInfo(DamageDefOf.Cut, 25f, 0f, -1f, c2));
+                c1.TakeDamage(new DamageInfo(DamageDefOf.Blunt, 25f, 0f, -1f, c2));
+                t.Check(!c1.Dead && c1.health.hediffSet.hediffs.Count == injuries && c1.health.summaryHealth.SummaryHealthPercent >= hp - 1e-4f, "no further damage once beaten (injuries " + injuries + " -> " + c1.health.hediffSet.hediffs.Count + ")");
+            }
+            else t.Note("fighter died while being downed; absorb check skipped");
+            guardBout.Abort("test");
+            if (!c1.Dead) { var before = c1.health.hediffSet.hediffs.Count; c1.TakeDamage(new DamageInfo(DamageDefOf.Cut, 5f, 0f, -1f, c2)); t.Check(c1.Dead || c1.health.hediffSet.hediffs.Count >= before, "outside a bout damage is normal again"); }
             // 6: broken arena
             var gap = new IntVec3(inner.CenterCell.x, 0, inner.ExpandedBy(1).minZ); gap.GetEdifice(map)?.Destroy(); pit.Invalidate();
             t.Check(!pit.ArenaValid, "a gap in the fence invalidates the arena");

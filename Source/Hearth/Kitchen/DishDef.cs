@@ -120,7 +120,24 @@ namespace Hearth.Kitchen
     {
         public DishDef dish;
         public int variant;
-        public static DishRecipeExtension Of(RecipeDef r) => r?.GetModExtension<DishRecipeExtension>();
+        // Filled once by RecipeBuilder (startup, main thread) and only read afterwards: a hash lookup instead of a scan of modExtensions,
+        // safe for mods that query recipes from several threads. Recipes without any extension return before the lookup.
+        // Keyed by reference: Def.GetHashCode/Equals are not free (measured ~0.7 us per lookup with the default comparer).
+        sealed class RefComparer : IEqualityComparer<RecipeDef>
+        {
+            public bool Equals(RecipeDef a, RecipeDef b) => ReferenceEquals(a, b);
+            public int GetHashCode(RecipeDef r) => System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(r);
+        }
+        static readonly Dictionary<RecipeDef, DishRecipeExtension> byRecipe = new Dictionary<RecipeDef, DishRecipeExtension>(new RefComparer());
+        internal static void Clear() => byRecipe.Clear();
+        internal static void Register(RecipeDef r, DishRecipeExtension e) => byRecipe[r] = e;
+        public static int RegisteredCount => byRecipe.Count;
+        public static DishRecipeExtension Of(RecipeDef r)
+        {
+            if (r == null || r.modExtensions == null) return null;
+            byRecipe.TryGetValue(r, out var e);
+            return e;
+        }
     }
 
     /// <summary>Marks a building as a kitchen device of a kind (our own devices carry it; other mods may add it by patch).</summary>

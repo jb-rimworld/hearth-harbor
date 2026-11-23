@@ -32,9 +32,9 @@ namespace Hearth.Kitchen
         static void Postfix(RecipeDef __instance, ref bool __result)
         {
             if (!__result || __instance.modExtensions == null) return;
-            var ext = __instance.GetModExtension<DishRecipeExtension>();
+            var ext = DishRecipeExtension.Of(__instance);   // hash lookup, no list scan
             if (ext?.dish == null) return;
-            if (!Modules.On(ModuleId.ShopsFood)) { __result = false; return; }
+            if (!Modules.On(ModuleId.ShopsFood)) { __result = false; return; }   // our recipes only: a module that is off offers no dish
             if (ext.variant > 0 && !HSettings.GetBool("kitchen.variants")) { __result = false; return; }
             if (!DishKnowledge.IsKnown(ext.dish)) __result = false;
         }
@@ -46,7 +46,7 @@ namespace Hearth.Kitchen
         static void Postfix(Bill_Production __instance, ref bool __result)
         {
             if (!__result || __instance.recipe.modExtensions == null) return;
-            var ext = __instance.recipe.GetModExtension<DishRecipeExtension>();
+            var ext = DishRecipeExtension.Of(__instance.recipe);
             if (ext?.dish == null || !Modules.On(ModuleId.ShopsFood)) return;
             if (!(__instance.billStack?.billGiver is Thing giver) || !giver.Spawned) return;
             if (Stations.Missing(giver, ext.dish).Count > 0) __result = false;
@@ -60,7 +60,7 @@ namespace Hearth.Kitchen
         static void Postfix(Bill_Production __instance, ref string __result)
         {
             if (__instance.recipe.modExtensions == null || !__result.NullOrEmpty()) return;
-            var ext = __instance.recipe.GetModExtension<DishRecipeExtension>();
+            var ext = DishRecipeExtension.Of(__instance.recipe);
             if (ext?.dish == null || !Modules.On(ModuleId.ShopsFood)) return;
             if (__instance.billStack?.billGiver is Thing giver && giver.Spawned) __result = Stations.MissingText(giver, ext.dish);
         }
@@ -72,7 +72,7 @@ namespace Hearth.Kitchen
         static void Postfix(Thing __result, RecipeDef recipeDef, Pawn worker)
         {
             if (__result == null || recipeDef.modExtensions == null) return;
-            var ext = recipeDef.GetModExtension<DishRecipeExtension>();
+            var ext = DishRecipeExtension.Of(recipeDef);
             if (ext?.dish == null) return;
             var comp = __result.TryGetComp<CompDish>();
             if (comp == null) return;
@@ -136,11 +136,10 @@ namespace Hearth.Kitchen
         static readonly AccessTools.FieldRef<Need, Pawn> pawnRef = AccessTools.FieldRefAccess<Need, Pawn>("pawn");
         static void Postfix(Need_Food __instance, ref float __result)
         {
-            if (__result <= 0f) return;
+            if (__result <= 0f || !Modules.On(ModuleId.ShopsFood)) return;
             if (wellFed == null && (wellFed = DefDatabase<HediffDef>.GetNamedSilentFail("HH_WellFed")) == null) return;
             var set = pawnRef(__instance)?.health?.hediffSet;
             if (set == null || !set.HasHediff(wellFed)) return;
-            if (!Modules.On(ModuleId.ShopsFood)) return;
             __result *= 1f - DishEffects.HungerReduction;
         }
     }

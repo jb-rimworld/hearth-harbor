@@ -113,8 +113,9 @@ namespace Hearth.Dlc
         public static StatDef ServeRestFactor => Get<StatDef>("HH_ServeRestFactor");
         public static StatDef GamblingJoy => Get<StatDef>("HH_GamblingJoy");
         public static StatDef GamblingAddiction => Get<StatDef>("HH_GamblingAddiction");
-        public static WorkTypeDef Hosting => Get<WorkTypeDef>("HH_Hosting");
-        public static WorkTypeDef Serving => Get<WorkTypeDef>("HH_Serving");
+        static WorkTypeDef hosting, serving;   // defs never change during a run: cached for the hot skill/need patches
+        public static WorkTypeDef Hosting => hosting ?? (hosting = Get<WorkTypeDef>("HH_Hosting"));
+        public static WorkTypeDef Serving => serving ?? (serving = Get<WorkTypeDef>("HH_Serving"));
         public static TraitDef Lucky => Get<TraitDef>("HH_Lucky");
         public static TraitDef Unlucky => Get<TraitDef>("HH_Unlucky");
         public static TraitDef GamblingAverse => Get<TraitDef>("HH_GamblingAverse");
@@ -186,6 +187,7 @@ namespace Hearth.Dlc
     {
         static readonly Dictionary<int, int> streak = new Dictionary<int, int>();
         static readonly Dictionary<int, int> lottoBought = new Dictionary<int, int>();
+        static LuckApi() { HearthGame.OnGameInit += () => { streak.Clear(); lottoBought.Clear(); }; }
 
         public static bool IsLucky(Pawn p) => p?.story?.traits != null && DlcDefs.Lucky != null && p.story.traits.HasTrait(DlcDefs.Lucky);
         public static bool IsUnlucky(Pawn p) => p?.story?.traits != null && DlcDefs.Unlucky != null && p.story.traits.HasTrait(DlcDefs.Unlucky);

@@ -66,14 +66,14 @@ namespace Hearth.Casino
             HSettings.Float(M, "Tables", MaxBet, 25f, 1f, 200f, "Maximum bet (silver)", "Largest stake at any game while limits are enforced.", hardMin: 0.1f, hardMax: 100000f);
             HSettings.Bool(M, "Tables", RiskLimit, true, "Protect the house from ruin", "Caps each bet at cash ÷ (4 · σ · √rounds per day): a bad night cannot break the house. The cap shrinks when the cash is low.");
             HSettings.Bool(M, "Tables", Croupier, true, "Tables need a croupier", "Roulette, blackjack and Rimdeck only run for guests while a colonist with the Serving work type staffs the table. Slot machines never need one.");
-            HSettings.Int(M, "Tables", RoundsSlot, 200, 60, 600, "Slot spins per hour", "How fast a machine spins. Roughly 200 on a lever machine, 400 on a video machine.", hardMin: 10, hardMax: 2500);
-            HSettings.Int(M, "Tables", RoundsRoulette, 30, 10, 120, "Roulette spins per hour", null, hardMin: 5, hardMax: 600);
-            HSettings.Int(M, "Tables", RoundsBlackjack, 60, 20, 200, "Blackjack hands per hour", null, hardMin: 5, hardMax: 600);
-            HSettings.Int(M, "Tables", RoundsPoker, 25, 10, 100, "Rimdeck hands per hour", null, hardMin: 5, hardMax: 600);
+            HSettings.Int(M, "Tables", RoundsSlot, 40, 10, 200, "Slot spins per hour", "How fast a machine spins, per in-game hour (2500 ticks, so 40 is a spin every 1 to 2 real seconds at normal speed).", hardMin: 2, hardMax: 2500);
+            HSettings.Int(M, "Tables", RoundsRoulette, 10, 3, 60, "Roulette spins per hour", "Spins per in-game hour.", hardMin: 2, hardMax: 600);
+            HSettings.Int(M, "Tables", RoundsBlackjack, 18, 5, 90, "Blackjack hands per hour", "Hands per in-game hour.", hardMin: 2, hardMax: 600);
+            HSettings.Int(M, "Tables", RoundsPoker, 8, 3, 50, "Rimdeck hands per hour", "Hands per in-game hour.", hardMin: 2, hardMax: 600);
             HSettings.Silver(M, "Tables", HouseFloat, 300, 0, 2000, "House float (silver)", "Cash the house keeps in its drawer. Whatever it wins above this (plus what guests currently play with) goes to the colony till when the casino closes.");
 
             HSettings.Percent(M, "Guests", GuestShare, 0.25f, 0.05f, 0.6f, "Gambling budget of guests", "Share of a guest's remaining budget they bring to the tables (before personality).");
-            HSettings.Percent(M, "Guests", GuestBetShare, 0.03f, 0.005f, 0.15f, "Guest bet size", "A guest stakes this share of their gambling money per round.");
+            HSettings.Percent(M, "Guests", GuestBetShare, 0.10f, 0.01f, 0.30f, "Guest bet size", "A guest stakes this share of their gambling money per round. The default is larger than in a real casino because the tables run far fewer rounds per in-game hour; hourly takings stay about the same.");
             HSettings.Percent(M, "Guests", GuestStopLoss, 0.4f, 0.1f, 1f, "Guests stop after losing", "A guest leaves the tables after losing this share of their gambling money.");
             HSettings.Percent(M, "Guests", GuestWinTarget, 0.5f, 0.1f, 3f, "Guests cash out after winning", "A guest cashes out after winning this share on top of their gambling money.");
             HSettings.Silver(M, "Guests", GuestMinBuyIn, 8, 1, 100, "Smallest buy-in (silver)", "Guests with less to spend do not gamble.");
@@ -104,10 +104,10 @@ namespace Hearth.Casino
         {
             switch (g)
             {
-                case CasinoGame.Slots: return Math.Max(5, HSettings.GetInt(RoundsSlot));
-                case CasinoGame.Roulette: return Math.Max(5, HSettings.GetInt(RoundsRoulette));
-                case CasinoGame.Blackjack: return Math.Max(5, HSettings.GetInt(RoundsBlackjack));
-                default: return Math.Max(5, HSettings.GetInt(RoundsPoker));
+                case CasinoGame.Slots: return Math.Max(2, HSettings.GetInt(RoundsSlot));
+                case CasinoGame.Roulette: return Math.Max(2, HSettings.GetInt(RoundsRoulette));
+                case CasinoGame.Blackjack: return Math.Max(2, HSettings.GetInt(RoundsBlackjack));
+                default: return Math.Max(2, HSettings.GetInt(RoundsPoker));
             }
         }
         /// <summary>Ticks between two rounds of a game (2500 ticks per hour).</summary>
