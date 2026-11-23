@@ -446,6 +446,9 @@ namespace Hearth.Guests
             var col = TestSetup.Colonist(map, 0, c => c.Awake()) ?? map.mapPawns.FreeColonistsSpawned.FirstOrDefault(c => !c.Downed && c.Awake()) ?? map.mapPawns.FreeColonistsSpawned.FirstOrDefault();
             if (col == null) { t.Note("no free colonist on the map: handling checks skipped"); InnTestKit.RemoveAllGuests(map); InnTestKit.Teardown(site, map); MapComponent_HH_GuestScheduler.SuspendedForTests = false; yield break; }
             if (col.needs?.rest != null) col.needs.rest.CurLevel = 1f;
+            // a tired guest goes to bed right after the check-in and the work giver rightly refuses a sleeping guest (matrix flake): rested guest, awake
+            if (a.Pawn.needs?.rest != null) a.Pawn.needs.rest.CurLevel = 1f;
+            if (a.Pawn.InBed() || !a.Pawn.Awake()) { t.Note("guest was in bed or asleep after the check-in: woken up"); a.Pawn.jobs?.EndCurrentJob(JobCondition.InterruptForced); yield return 60; }
             var wg = new WorkGiver_HH_AccompanyGuest();
             bool has = wg.HasJobOnThing(col, a.Pawn, forced: true);
             t.Check(has, "work giver offers to keep the guest company");
