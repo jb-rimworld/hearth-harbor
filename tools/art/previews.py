@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Steam Workshop preview images composed from our own sprites (KONZEPT 14.3, N05).
+"""SUPERSEDED (24.11.2026): the Workshop previews About/Preview.png and About/Silverline_Preview.png are now the illustrated
+thumbnails of the JB house style (see 22_RimWorld/_Planung_Marketing_2026-11-24/thumbs/compose.py). Do not run this script
+for a release; it would overwrite them with the old sprite collage.
+
+Steam Workshop preview images composed from our own sprites (KONZEPT 14.3, N05).
 
   uv run --with resvg-py --with pillow python3 tools/art/previews.py
 Writes About/Preview.png (Hearth & Harbor, ribbon "Main Mod", no other text) and About/Silverline_Preview.png (the standalone bank, no text).
