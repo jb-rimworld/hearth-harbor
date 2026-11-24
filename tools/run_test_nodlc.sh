@@ -40,7 +40,9 @@ V=$(sed -n 's/.*<version>\(.*\)<\/version>.*/\1/p' "$HOME/Library/Application Su
   echo "</activeMods><knownExpansions>$dlcknown</knownExpansions></ModsConfigData>"; } > "$C/ModsConfig.xml"
 OUT=$S/result_$LABEL.txt; LOG=$S/player_$LABEL.log; rm -f $OUT
 cd "$G/RimWorld.app/Contents/MacOS"
-HOME=$FH HH_TEST="$SUITES" HH_TEST_OUT=$OUT timeout ${TIMEOUT:-900} ./RimWorld -quicktest > $LOG 2>&1
+# test instances run without a window (engine offscreen backend, virtual 1920x1080 screen) and muted; see _Tools/rwquiet/README.md
+sed -i '' -e 's#<volumeMaster>[^<]*</volumeMaster>#<volumeMaster>0</volumeMaster>#' "$FH/Library/Application Support/RimWorld/Config/Prefs.xml" 2>/dev/null
+HOME=$FH HH_TEST="$SUITES" HH_TEST_OUT=$OUT timeout ${TIMEOUT:-900} env WAYLITH_BACKEND=offscreen ./RimWorld -quicktest > $LOG 2>&1
 code=$?
 cp "$C/HearthHarbor.log" $S/hh_$LABEL.log 2>/dev/null
 echo "slot $slot · exit $code · log $LOG · hh-log $S/hh_$LABEL.log"

@@ -70,7 +70,9 @@ QT=-quicktest; [ -n "$LOAD" ] && QT=""
 [ -n "$PROBE_DAYS" ] && export HH_PROBE_DAYS=$PROBE_DAYS
 [ -n "$PROBE_SAVE" ] && export HH_PROBE_SAVE=$PROBE_SAVE
 cd "$G/RimWorld.app/Contents/MacOS"
-HOME=$FH HH_TEST="$SUITES" HH_TEST_OUT=$OUT timeout ${TIMEOUT:-900} ./RimWorld $QT > $LOG 2>&1
+# test instances run without a window (engine offscreen backend, virtual 1920x1080 screen) and muted; see _Tools/rwquiet/README.md
+sed -i '' -e 's#<volumeMaster>[^<]*</volumeMaster>#<volumeMaster>0</volumeMaster>#' "$FH/Library/Application Support/RimWorld/Config/Prefs.xml" 2>/dev/null
+HOME=$FH HH_TEST="$SUITES" HH_TEST_OUT=$OUT timeout ${TIMEOUT:-900} env WAYLITH_BACKEND=offscreen ./RimWorld $QT > $LOG 2>&1
 code=$?
 if [ -n "$SAVES_OUT" ]; then mkdir -p "$SAVES_OUT"; cp "$FH/Library/Application Support/RimWorld/Saves/"* "$SAVES_OUT/" 2>/dev/null; rm -f "$SAVES_OUT/autostart.rws"; fi
 cp "$C/HearthHarbor.log" $S/hh_$LABEL.log 2>/dev/null
