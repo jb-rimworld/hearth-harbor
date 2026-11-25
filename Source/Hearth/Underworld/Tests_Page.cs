@@ -51,10 +51,12 @@ namespace Hearth.Underworld
                 t.Check(UwBuild.DesignatorFor(UwDefs.HuntingGround, out string why) == null && why == UwPay.T("Page.Build.Research", UwDefs.ResHunt.LabelCap.ToString()), "hunting ground: Build is disabled with the research it needs (" + why + ")");
             }
             else t.Note("the hunt is researched in this game: research reason not checked");
+            var huntRow = rows.First(r => r.Id == FacilityStatus.HuntId);
+            t.Check(huntRow.Line == (UwDefs.ResHunt.IsFinished ? UwPay.T("Hunt.Status.NotBuiltResearched", Hunts.MinCells, Hunts.MaxCells) : UwPay.T("Hunt.Status.NotBuilt", Hunts.MinCells)), "hunt row asks for research only while it is not done: " + huntRow.Line);
             t.Check(ReferenceEquals(UnderworldPage.Rows(map), UnderworldPage.Rows(map)), "rows are cached between frames");
 
-            HearthProfile.Current.Content = ContentIntensity.Dark; FacilityStatus.MarkDirty();
-            t.Check(UnderworldPage.Rows(map, refresh: true).Any(r => r.Id == FacilityStatus.ClinicId), "Dark: the clinic row appears");
+            HearthProfile.Current.Content = ContentIntensity.Dark;
+            t.Check(UnderworldPage.Rows(map, refresh: true).Any(r => r.Id == FacilityStatus.ClinicId), "Dark: the clinic row appears at once (no dirty flag, no ticks)");
             HearthProfile.Current.Content = ContentIntensity.Cozy; FacilityStatus.MarkDirty();
             t.Check(UnderworldPage.Rows(map, refresh: true).Count == 0 && !HearthTabs.VisiblePages.Any(p => p.Id == "underworld"), "Cozy: no rows and no page");
             HearthProfile.Current.Content = ContentIntensity.Standard; FacilityStatus.MarkDirty();

@@ -30,7 +30,7 @@
   <ResearchProjectDef>
     <defName>HH_TheHunt</defName>
     <label>the hunt</label>
-    <description>A fenced hunting ground. Rich visitors pay well to shoot what you release into it. From Dark content on, a prisoner can be the quarry if you allow it on the marker.</description>
+    <description>A fenced hunting ground. Rich visitors pay well to shoot what you release into it. With Dark content and a fitting ideology, or with Grim content, a prisoner can be the quarry if you allow it on the marker.</description>
     <baseCost>1200</baseCost>
     <techLevel>Industrial</techLevel>
     <tab>HH_Hospitality</tab>

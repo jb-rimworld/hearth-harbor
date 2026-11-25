@@ -37,7 +37,16 @@ namespace Hearth.Underworld
         const float RefreshSeconds = 0.5f;
 
         /// <summary>Forget the cached rows (after a button press, a new game, a test).</summary>
-        public static void Invalidate() { rows = null; offers = null; }
+        public static void Invalidate() { rows = null; offers = null; offerCan.Clear(); }
+
+        /// <summary>Accept state of each open offer, computed with the rows (StillValid looks up the dock and the till, not per frame).</summary>
+        static readonly Dictionary<UwOffer, KeyValuePair<bool, string>> offerCan = new Dictionary<UwOffer, KeyValuePair<bool, string>>();
+
+        static bool CanAcceptCached(UwOffer o, out string why)
+        {
+            if (!offerCan.TryGetValue(o, out var v)) { bool can = FacilityStatus.CanAccept(o, out string w); v = new KeyValuePair<bool, string>(can, w); offerCan[o] = v; }
+            why = v.Value; return v.Key;
+        }
 
         static void EnsureRows(Map map, bool refresh)
         {
@@ -46,6 +55,8 @@ namespace Hearth.Underworld
             if (!refresh && rows != null && rowsMap == id && now - rowsTime < RefreshSeconds && now >= rowsTime) return;
             rows = Guard.Run(ModuleId.Underworld, "Page.Rows", () => BuildRows(map), new List<UwPageRow>());
             offers = map == null ? new List<UwOffer>() : Guard.Run(ModuleId.Underworld, "Page.Offers", () => FacilityStatus.OpenOffers(map), new List<UwOffer>());
+            offerCan.Clear();
+            foreach (var o in offers) Guard.Run(ModuleId.Underworld, "Page.OfferCan", () => { CanAcceptCached(o, out _); });
             rowsTime = now; rowsMap = id;
         }
 
@@ -213,7 +224,7 @@ namespace Hearth.Underworld
             if (Mouse.IsOver(row)) Widgets.DrawHighlight(row);
             Widgets.DrawBoxSolid(new Rect(4f, y + 7f, 9f, 9f), UiStyle.Amber);
             Widgets.Label(new Rect(20f, y + 2f, tw, th), line);
-            bool can = FacilityStatus.CanAccept(o, out string why);
+            bool can = CanAcceptCached(o, out string why);
             var ar = new Rect(vw - bw, y + 2f, bw, 28f);
             if (can) { if (Widgets.ButtonText(ar, acc)) AcceptOffer(o); }
             else { Widgets.ButtonText(ar, acc, true, true, false); TooltipHandler.TipRegion(ar, why); }
@@ -256,14 +267,14 @@ namespace Hearth.Underworld
             if (fighters != null)
             {
                 var b = new Rect(vw - bw, by, bw, 28f);
-                if (Widgets.ButtonText(b, fighters)) Window_PitFighters.Open(row.Pit);
+                if (Widgets.ButtonText(b, fighters)) { if (row.Pit.parent != null && row.Pit.parent.Spawned && !row.Pit.parent.Destroyed) Window_PitFighters.Open(row.Pit); else Invalidate(); }
                 TooltipHandler.TipRegion(b, UwPay.T("Pit.FightersBtn.Desc"));
                 by += 32f;
             }
             if (jump != null)
             {
                 var b = new Rect(vw - bw, by, bw, 28f);
-                if (Widgets.ButtonText(b, jump)) JumpTo(row.Pit.parent);
+                if (Widgets.ButtonText(b, jump)) { if (row.Pit.parent != null && row.Pit.parent.Spawned) JumpTo(row.Pit.parent); else Invalidate(); }
                 by += 32f;
             }
             Widgets.DrawBoxSolid(new Rect(0f, y + h + 0.5f, vw, 1f), UiStyle.Line);

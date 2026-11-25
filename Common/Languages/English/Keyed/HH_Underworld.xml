@@ -50,13 +50,13 @@
   <HH.Underworld.Pit.FightHere.Queue>Fight in the pit (next bout)</HH.Underworld.Pit.FightHere.Queue>
   <HH.Underworld.Pit.Status.Running>Bout running: {0} against {1}.</HH.Underworld.Pit.Status.Running>
   <HH.Underworld.Pit.Status.Next>Next bout in {0} h.</HH.Underworld.Pit.Status.Next>
-  <HH.Underworld.Pit.Status.WaitFighter>Waiting for a second fighter: tick a colonist under Fighters, allow prisoners, or call an opponent.</HH.Underworld.Pit.Status.WaitFighter>
+  <HH.Underworld.Pit.Status.WaitFighter>Waiting for a second fighter: tick more colonists under Fighters, allow prisoners, or press "Call an opponent" on the marker.</HH.Underworld.Pit.Status.WaitFighter>
   <HH.Underworld.Pit.Status.WaitGuests>Waiting for guests to bet (you can start a bout yourself).</HH.Underworld.Pit.Status.WaitGuests>
   <HH.Underworld.Pit.Status.AutoFailed>No automatic bout: {0}. Start a bout yourself or call an opponent.</HH.Underworld.Pit.Status.AutoFailed>
   <HH.Underworld.Pit.ArenaSmall>Arena too small: {0} tiles, at least {1} needed.</HH.Underworld.Pit.ArenaSmall>
   <HH.Underworld.Pit.ArenaBig>Arena open or larger than {0} tiles: close the fence around a smaller area.</HH.Underworld.Pit.ArenaBig>
   <HH.Underworld.Pit.CallOpponent.For>Fights it: {0}.</HH.Underworld.Pit.CallOpponent.For>
-  <HH.Underworld.Pit.Status.Closed>Closed.</HH.Underworld.Pit.Status.Closed>
+  <HH.Underworld.Pit.Status.Closed>Closed: switch on "Pit open" on the marker.</HH.Underworld.Pit.Status.Closed>
   <HH.Underworld.Pit.Status.Off>The underworld is switched off (module or Cozy content).</HH.Underworld.Pit.Status.Off>
   <HH.Underworld.Pit.Status.Peaceful>Peaceful underworld is on: no fights.</HH.Underworld.Pit.Status.Peaceful>
   <HH.Underworld.Pit.Status.NeedArena>Waiting for a closed arena.</HH.Underworld.Pit.Status.NeedArena>
@@ -179,6 +179,7 @@
   <HH.Underworld.Gang.Why.NoEntry>no way onto the map</HH.Underworld.Gang.Why.NoEntry>
   <HH.Underworld.Gang.Why.NoPawns>no gang members could be found</HH.Underworld.Gang.Why.NoPawns>
   <HH.Underworld.Gang.Status.NotBuilt>Gangs come once you have a back room, a fence counter or a fight pit.</HH.Underworld.Gang.Status.NotBuilt>
+  <HH.Underworld.Gang.Status.DemandAbove>A demand is waiting above.</HH.Underworld.Gang.Status.DemandAbove>
   <HH.Underworld.Gang.Status.Waiting>Waiting for the next gang.</HH.Underworld.Gang.Status.Waiting>
   <HH.Underworld.Gang.Status.Retry>The last gang could not come: {0}. Next try in {1}.</HH.Underworld.Gang.Status.Retry>
   <HH.Underworld.Gang.Status.Here>A gang of {0} is here.</HH.Underworld.Gang.Status.Here>
@@ -210,7 +211,7 @@
   <HH.Underworld.Hunt.QuarryAnimals>animals</HH.Underworld.Hunt.QuarryAnimals>
   <HH.Underworld.Hunt.QuarryHuman>animals and a prisoner</HH.Underworld.Hunt.QuarryHuman>
   <HH.Underworld.Hunt.Prisoners>Prisoner quarry</HH.Underworld.Hunt.Prisoners>
-  <HH.Underworld.Hunt.Prisoners.Desc>Let hunters hunt a prisoner released into the ground. Dark content only, with a fitting ideology.</HH.Underworld.Hunt.Prisoners.Desc>
+  <HH.Underworld.Hunt.Prisoners.Desc>Let hunters hunt a prisoner released into the ground. Dark content with a fitting ideology, or Grim content.</HH.Underworld.Hunt.Prisoners.Desc>
   <HH.Underworld.Hunt.GateContent>Needs Dark or Grim content.</HH.Underworld.Hunt.GateContent>
   <HH.Underworld.Hunt.GatePrecept>The colony's ideology does not allow this.</HH.Underworld.Hunt.GatePrecept>
   <HH.Underworld.Hunt.DeathTitle>A person died in the hunt</HH.Underworld.Hunt.DeathTitle>
@@ -224,6 +225,7 @@
   <HH.Underworld.Hunt.Running>A hunt is on.</HH.Underworld.Hunt.Running>
   <HH.Underworld.Hunt.Next>Next hunting party in about {0}.</HH.Underworld.Hunt.Next>
   <HH.Underworld.Hunt.Status.NotBuilt>Research the hunt, then put a hunting ground marker inside a closed fence of at least {0} tiles.</HH.Underworld.Hunt.Status.NotBuilt>
+  <HH.Underworld.Hunt.Status.NotBuiltResearched>Put a hunting ground marker inside a closed fence of {0} to {1} tiles.</HH.Underworld.Hunt.Status.NotBuiltResearched>
   <HH.Underworld.Hunt.Status.Last>Last hunt: {0} ago.</HH.Underworld.Hunt.Status.Last>
   <HH.Underworld.Organ.Inspect>Organs waiting: {0}. Open orders: {1}.</HH.Underworld.Organ.Inspect>
   <HH.Underworld.Organ.Sold>{0} organs collected at the clinic counter.</HH.Underworld.Organ.Sold>
@@ -232,6 +234,7 @@
   <HH.Underworld.Organ.OrderDone>The order for a {0} was filled.</HH.Underworld.Organ.OrderDone>
   <HH.Underworld.Organ.OrderMissed>The order for a {0} was not filled in time.</HH.Underworld.Organ.OrderMissed>
   <HH.Underworld.Organ.Status.NotBuilt>Research the black clinic and build its counter.</HH.Underworld.Organ.Status.NotBuilt>
+  <HH.Underworld.Organ.Status.NotBuiltResearched>Build the organ clinic counter.</HH.Underworld.Organ.Status.NotBuiltResearched>
   <HH.Underworld.Organ.Status.Waiting>Organs left on the counter are collected at night (23:00 to 04:00).</HH.Underworld.Organ.Status.Waiting>
   <HH.Underworld.Organ.Status.Last>Last sale: {0} ago.</HH.Underworld.Organ.Status.Last>
   <HH.Underworld.Lounge.Status.NotBuilt>Put a venue sign of type drug lounge into a room with two couches or armchairs.</HH.Underworld.Lounge.Status.NotBuilt>
@@ -257,7 +260,7 @@
   <HH.Underworld.Page.Row.gangs>Gangs</HH.Underworld.Page.Row.gangs>
   <HH.Underworld.Page.Row.hunt>Hunting ground</HH.Underworld.Page.Row.hunt>
   <HH.Underworld.Page.Row.clinic>Organ clinic</HH.Underworld.Page.Row.clinic>
-  <HH.Underworld.Page.Pit.NotBuilt>Build a closed fence (a gate is fine) and put a fight pit marker inside.</HH.Underworld.Page.Pit.NotBuilt>
+  <HH.Underworld.Page.Pit.NotBuilt>Build a closed fence (a gate is fine) around 9 to 700 tiles and put a fight pit marker inside.</HH.Underworld.Page.Pit.NotBuilt>
   <HH.Underworld.Page.State.NotBuilt>Not built yet.</HH.Underworld.Page.State.NotBuilt>
   <HH.Underworld.Page.State.Waiting>Built, but waiting for something.</HH.Underworld.Page.State.Waiting>
   <HH.Underworld.Page.State.Working>Working.</HH.Underworld.Page.State.Working>

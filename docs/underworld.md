@@ -63,6 +63,8 @@ Who can fight (`PitFighters.Build`, cached per pit for 250 ticks, refreshed when
 - prisoners (toggle "Prisoners", off): brought into the arena and back like animals, and they do not try to escape on the way;
 - colonists and slaves only when the player ticks them under "Fighters…" or right-clicks the marker with them ("Fight in the pit"). No random roll,
   no trait requirement. A colonist who asks while a bout runs fights in the next one;
+  pits from old saves keep the former volunteer rule (bloodlust or melee 8 fight without a tick, `allowVolunteers`, toggle
+  "Volunteers (old saves)" on the marker) until the player switches it off;
 - a lone fighter: "Call an opponent" hires a pit beast matched to his combat power (fee `underworld.pit.opponentFee`, 40 silver, from the till;
   the gizmo says why when the till cannot pay). The beast is gone after the bout, also after an abort, a removed pit or a save/load in between.
   A humanlike prizefighter is not built (left out of package B).

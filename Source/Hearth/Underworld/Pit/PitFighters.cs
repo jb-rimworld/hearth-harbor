@@ -9,6 +9,8 @@ using Verse.AI.Group;
 namespace Hearth.Underworld
 {
     /// <summary>Who a fighter is, for grouping and for the rules of the bout.</summary>
+    /// <remarks>Prizefighter (5) is unreachable since 1.2.0 (PitOpponents.IsPrizefighter is always false, its keys are gone). The value stays so
+    /// the numbering is stable; remove it together with the IsPrizefighter checks when this code is next reworked.</remarks>
     public enum PitKind { Colonist = 0, Prisoner = 1, Animal = 2, Guest = 3, Beast = 4, Prizefighter = 5 }
 
     /// <summary>One row of the fighter list: the pawn, its group and why it cannot fight now (null = ready).</summary>

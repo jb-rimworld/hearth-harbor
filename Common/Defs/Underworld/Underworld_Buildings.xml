@@ -28,7 +28,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>HH_FightPitMarker</defName>
     <label>fight pit marker</label>
-    <description>Marks a fenced arena. Build a closed fence (a gate is fine) at least 3 by 3 tiles inside and put this marker in the middle. Your animals, guests who like a brawl, the colonists you tick under "Fighters…" and, if you allow it, prisoners fight here while guests bet. Bouts with a guest or a colonist are fought for points, so nobody gets hurt. To start one, right-click the marker with a colonist, use "Fighters…", or "Call an opponent" when you are alone. Children never fight.</description>
+    <description>Marks a fenced arena. Build a closed fence (a gate is fine) around 9 to 700 tiles (about 3 by 3 up to about 25 by 25) and put this marker in the middle. Your animals, guests who like a brawl, the colonists you tick under "Fighters…" and, if you allow it, prisoners fight here while guests bet. Bouts with a guest or a colonist are fought for points, so nobody gets hurt. To start one, right-click the marker with a colonist, use "Fighters…", or "Call an opponent" when you are alone. With two fighters ready and a guest to bet, a bout starts by itself every few hours. Children never fight.</description>
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
@@ -137,7 +137,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>HH_HuntingGroundMarker</defName>
     <label>hunting ground marker</label>
-    <description>Marks a fenced hunting ground. Put it inside a closed fence of at least sixty tiles; rich hunters then come now and then and pay to shoot the animals they bring into it. With Dark content and the right ideology a prisoner can be the quarry; you switch this on separately on the marker.</description>
+    <description>Marks a fenced hunting ground. Put it inside a closed fence of at least sixty and at most 1600 tiles; rich hunters then come now and then and pay to shoot the animals they bring into it. With Dark content and a fitting ideology, or with Grim content, a prisoner can be the quarry; you switch this on separately on the marker.</description>
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>

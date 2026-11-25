@@ -10,6 +10,7 @@ The Underworld is reworked so that it just works.
   - Bouts with a guest or a colonist are fought for points. Hits are counted, not felt: nobody gets injured or downed, nothing drops, and nobody holds a grudge or loses goodwill. The loser walks away with a bruise or two. A usual bout lasts half a minute.
   - Guests who like a brawl challenge your fighters: shady guests and gang members, and other guests with Bloodlust, Brawler or good melee who are not kind. A winning guest gets a small purse out of the house take.
   - Colonists and slaves fight when you tick them in the new "Fighters…" window or right-click the marker with them ("Fight in the pit"). No random roll, no trait needed.
+  - Pits from old saves keep an off switch for the former volunteer rule ("Volunteers (old saves)" on the marker).
   - Alone? "Call an opponent" hires a pit beast that matches your fighter (40 silver from the till). It leaves after the bout.
   - "Start a bout" works without guests. Prisoners are brought into the arena and back, and do not run off on the way.
   - The marker always says what it waits for, who is ready and how the last bout ended. Every bout ends with a message.
