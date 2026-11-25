@@ -38,8 +38,6 @@
   <HH_Dish_FruitBowl.description>Полезно, свежо и исчезает за четыре секунды, когда приходят дети.</HH_Dish_FruitBowl.description>
   <HH_Dish_MushroomPlate.label>Тарелка грибов</HH_Dish_MushroomPlate.label>
   <HH_Dish_MushroomPlate.description>Охлажденные грибы, потому что холодильник и так уже работал.</HH_Dish_MushroomPlate.description>
-  <HH_Dish_CrimsonSmoothie.label>Багровый смузи</HH_Dish_CrimsonSmoothie.label>
-  <HH_Dish_CrimsonSmoothie.description>Ягоды, молоко и секретный розовый оттенок.</HH_Dish_CrimsonSmoothie.description>
   <HH_Dish_SmokedJerkyStrips.label>Копченые полоски вяленого мяса</HH_Dish_SmokedJerkyStrips.label>
   <HH_Dish_SmokedJerkyStrips.description>Хранятся вечно, столько же времени и жуются.</HH_Dish_SmokedJerkyStrips.description>
   <HH_Dish_BratwurstAndBeer.label>Братвурст с пивом</HH_Dish_BratwurstAndBeer.label>
@@ -92,10 +90,6 @@
   <HH_Dish_SmokedLongJerky.description>Хватает на всю зиму. Вина тоже.</HH_Dish_SmokedLongJerky.description>
   <HH_Dish_CongeeOfTheFallen.label>Рисовая каша павших</HH_Dish_CongeeOfTheFallen.label>
   <HH_Dish_CongeeOfTheFallen.description>Тёплая каша для холодной, очень холодной совести.</HH_Dish_CongeeOfTheFallen.description>
-  <HH_Dish_BloodBroth.label>Кровяной бульон</HH_Dish_BloodBroth.label>
-  <HH_Dish_BloodBroth.description>Тёмный, наваристый бульон для жаждущих и вежливых.</HH_Dish_BloodBroth.description>
-  <HH_Dish_HemogenBlackPudding.label>Кровяная колбаса с гемогеном</HH_Dish_HemogenBlackPudding.label>
-  <HH_Dish_HemogenBlackPudding.description>Жарится, пока не перестанет смотреть на тебя.</HH_Dish_HemogenBlackPudding.description>
   <HH_Dish_ColonyPaella.label>Колониальная паэлья</HH_Dish_ColonyPaella.label>
   <HH_Dish_ColonyPaella.description>Всё, что нашлось в кладовой, с большим достоинством выложено на блюдо.</HH_Dish_ColonyPaella.description>
   <HH_Dish_NigiriPlatter.label>Блюдо нигири</HH_Dish_NigiriPlatter.label>
@@ -134,12 +128,6 @@
   <HH_Dish_StrangersRoast.description>Воскресный обед с гостем, который пришёл не по своей воле.</HH_Dish_StrangersRoast.description>
   <HH_Dish_CannibalsChili.label>Чили каннибала</HH_Dish_CannibalsChili.label>
   <HH_Dish_CannibalsChili.description>Настолько острое, что скрывает и вкус, и мысли о нём.</HH_Dish_CannibalsChili.description>
-  <HH_Dish_HemogenRisotto.label>Ризотто с гемогеном</HH_Dish_HemogenRisotto.label>
-  <HH_Dish_HemogenRisotto.description>Сливочное, красное и чуточку слишком интенсивное.</HH_Dish_HemogenRisotto.description>
-  <HH_Dish_RedSteakVeryRare.label>Красный стейк, почти сырой</HH_Dish_RedSteakVeryRare.label>
-  <HH_Dish_RedSteakVeryRare.description>Почти мычит. Приготовлено ровно так, как заказал санугофаг.</HH_Dish_RedSteakVeryRare.description>
-  <HH_Dish_TwistedMeatBao.label>Скрученное мясное бао</HH_Dish_TwistedMeatBao.label>
-  <HH_Dish_TwistedMeatBao.description>Булочка слегка подёргивается. Пожалуйста, не рассказывайте начинке.</HH_Dish_TwistedMeatBao.description>
   <HH_Dish_FishThermidor.label>Рыба термидор</HH_Dish_FishThermidor.label>
   <HH_Dish_FishThermidor.description>Сливочная, золотистая и безумно гордая собой.</HH_Dish_FishThermidor.description>
   <HH_Dish_Rendang.label>Ренданг</HH_Dish_Rendang.label>
@@ -164,70 +152,6 @@
   <HH_Dish_SevenCourseColonyMenu.description>Закуска, закуска, закуска, основное, десерт, десерт и тост.</HH_Dish_SevenCourseColonyMenu.description>
   <HH_Dish_TartareOfTheFallen.label>Тартар павших</HH_Dish_TartareOfTheFallen.label>
   <HH_Dish_TartareOfTheFallen.description>Подаётся сырым, потому что готовка для тех, кому есть что скрывать.</HH_Dish_TartareOfTheFallen.description>
-  <HH_Dish_HemogenCarpaccio.label>Карпаччо с гемогеном</HH_Dish_HemogenCarpaccio.label>
-  <HH_Dish_HemogenCarpaccio.description>Тонкое, красное и подаётся с взглядом.</HH_Dish_HemogenCarpaccio.description>
-  <HH_Dish_TwistedHotpot.label>Скрученный хотпот</HH_Dish_TwistedHotpot.label>
-  <HH_Dish_TwistedHotpot.description>Булькает сам по себе. Никто не включал плиту.</HH_Dish_TwistedHotpot.description>
-  <HH_Dish_CheeseFondue.label>Сырное фондю</HH_Dish_CheeseFondue.label>
-  <HH_Dish_CheeseFondue.description>Кастрюля расплавленного сыра и правило: кто уронит хлеб, тот платит.</HH_Dish_CheeseFondue.description>
-  <HH_Dish_PumpkinAndCheeseGratin.label>Гратен из тыквы и сыра</HH_Dish_PumpkinAndCheeseGratin.label>
-  <HH_Dish_PumpkinAndCheeseGratin.description>Оранжевый, сырный и украшенный тонким слоем опасности.</HH_Dish_PumpkinAndCheeseGratin.description>
-  <HH_Dish_FlourDumplingSoup.label>Суп с мучными клёцками</HH_Dish_FlourDumplingSoup.label>
-  <HH_Dish_FlourDumplingSoup.description>Клёцки размером с кулак для тех, кто любит суп с характером.</HH_Dish_FlourDumplingSoup.description>
-  <HH_Dish_CheeseOmelette.label>Сырный омлет</HH_Dish_CheeseOmelette.label>
-  <HH_Dish_CheeseOmelette.description>Омлет, который ни за что не извиняется и никому не поддаётся.</HH_Dish_CheeseOmelette.description>
-  <HH_Dish_FruitGlazedRoast.label>Жаркое в фруктовой глазури</HH_Dish_FruitGlazedRoast.label>
-  <HH_Dish_FruitGlazedRoast.description>Липкое, сладкое, и несут его на стол в прихватках и с молитвой.</HH_Dish_FruitGlazedRoast.description>
-  <HH_Dish_SushiRollSet.label>Набор роллов</HH_Dish_SushiRollSet.label>
-  <HH_Dish_SushiRollSet.description>Туго свёрнуты, слегка обмакнуты и съедены раньше, чем кому-то придёт в голову мысль.</HH_Dish_SushiRollSet.description>
-  <HH_Dish_WasabiGlazedFish.label>Рыба в васаби-глазури</HH_Dish_WasabiGlazedFish.label>
-  <HH_Dish_WasabiGlazedFish.description>Прочищает нос, горло и любое прежнее мнение.</HH_Dish_WasabiGlazedFish.description>
-  <HH_Dish_TempuraSushi.label>Суши темпура</HH_Dish_TempuraSushi.label>
-  <HH_Dish_TempuraSushi.description>Суши, которые свернули не туда, в фритюр, и им понравилось.</HH_Dish_TempuraSushi.description>
-  <HH_Dish_HeartyWinterStew.label>Сытное зимнее рагу</HH_Dish_HeartyWinterStew.label>
-  <HH_Dish_HeartyWinterStew.description>Варится несколько дней над дровяной печью. Съешь, пока кастрюля не заговорила.</HH_Dish_HeartyWinterStew.description>
-  <HH_Dish_LongNightMushroomStew.label>Грибное рагу долгой ночи</HH_Dish_LongNightMushroomStew.label>
-  <HH_Dish_LongNightMushroomStew.description>Томилось всю ночь под присмотром того, у кого не было планов получше.</HH_Dish_LongNightMushroomStew.description>
-  <HH_Dish_StewOfQuestionableMeat.label>Рагу из сомнительного мяса</HH_Dish_StewOfQuestionableMeat.label>
-  <HH_Dish_StewOfQuestionableMeat.description>Рагу снимает сожаление о насекомых. Сожаление о рагу остаётся.</HH_Dish_StewOfQuestionableMeat.description>
-  <HH_Dish_SugarCookies.label>Сахарное печенье</HH_Dish_SugarCookies.label>
-  <HH_Dish_SugarCookies.description>Украшено колонистом, чьи руки дрожат после боя, и это видно.</HH_Dish_SugarCookies.description>
-  <HH_Dish_FancyCupcakes.label>Изысканные капкейки</HH_Dish_FancyCupcakes.label>
-  <HH_Dish_FancyCupcakes.description>Крошечный кекс с большой проблемой с посыпкой.</HH_Dish_FancyCupcakes.description>
-  <HH_Dish_GlazedDonuts.label>Глазированные пончики</HH_Dish_GlazedDonuts.label>
-  <HH_Dish_GlazedDonuts.description>Кольцо из теста вокруг дыры в бюджете.</HH_Dish_GlazedDonuts.description>
-  <HH_Dish_HauteCuisineTastingMenu.label>Дегустационное меню высокой кухни</HH_Dish_HauteCuisineTastingMenu.label>
-  <HH_Dish_HauteCuisineTastingMenu.description>Восемь крошечных тарелок, один огромный счёт.</HH_Dish_HauteCuisineTastingMenu.description>
-  <HH_Dish_GlazedFruitTart.label>фруктовый тарт в глазури</HH_Dish_GlazedFruitTart.label>
-  <HH_Dish_GlazedFruitTart.description>Тарт, в котором фруктов больше, чем основы, и это правильное соотношение.</HH_Dish_GlazedFruitTart.description>
-  <HH_Dish_PickledVegetableSalad.label>салат из маринованных овощей</HH_Dish_PickledVegetableSalad.label>
-  <HH_Dish_PickledVegetableSalad.description>Замаринован так крепко, что пережил первого руководителя колонии.</HH_Dish_PickledVegetableSalad.description>
-  <HH_Dish_HerbRoastedPotatoes.label>картофель, запечённый с травами</HH_Dish_HerbRoastedPotatoes.label>
-  <HH_Dish_HerbRoastedPotatoes.description>Картофель, который побывал на садовой вечеринке и вернулся с растением.</HH_Dish_HerbRoastedPotatoes.description>
-  <HH_Dish_BerryAndNutBreakfastBowl.label>миска завтрака с ягодами и орехами</HH_Dish_BerryAndNutBreakfastBowl.label>
-  <HH_Dish_BerryAndNutBreakfastBowl.description>Хрустящая, полезная и совершенно не то, что просили рейдеры.</HH_Dish_BerryAndNutBreakfastBowl.description>
-  <HH_Dish_TeaSmokedMeat.label>мясо, копчёное на чае</HH_Dish_TeaSmokedMeat.label>
-  <HH_Dish_TeaSmokedMeat.description>Закопчено на чае: почему бы мясу тоже не расслабиться.</HH_Dish_TeaSmokedMeat.description>
-  <HH_Dish_StrawFlourFlatbread.label>лепёшка из соломенной муки</HH_Dish_StrawFlourFlatbread.label>
-  <HH_Dish_StrawFlourFlatbread.description>Плоская, честная и слегка песчаная. Как пустыня, из которой она родом.</HH_Dish_StrawFlourFlatbread.description>
-  <HH_Dish_CactusFruitSalad.label>салат из фруктов кактуса</HH_Dish_CactusFruitSalad.label>
-  <HH_Dish_CactusFruitSalad.description>Сладкий и колючий, точь-в-точь как ваш лучший друг.</HH_Dish_CactusFruitSalad.description>
-  <HH_Dish_GreenfruitStew.label>рагу из зелёных плодов</HH_Dish_GreenfruitStew.label>
-  <HH_Dish_GreenfruitStew.description>Рагу настолько зелёное, что мафало обиделся.</HH_Dish_GreenfruitStew.description>
-  <HH_Dish_StrawflourDumplings.label>пельмени из соломенной муки</HH_Dish_StrawflourDumplings.label>
-  <HH_Dish_StrawflourDumplings.description>Пельмени из пустоши, с начинкой, которая, возможно, когда-то была мясом.</HH_Dish_StrawflourDumplings.description>
-  <HH_Dish_DesertBreadAndBeer.label>пустынный хлеб с пивом</HH_Dish_DesertBreadAndBeer.label>
-  <HH_Dish_DesertBreadAndBeer.description>Жидкий и твёрдый завтрак, в правильном порядке.</HH_Dish_DesertBreadAndBeer.description>
-  <HH_Dish_GrilledWholeFish.label>рыба целиком на гриле</HH_Dish_GrilledWholeFish.label>
-  <HH_Dish_GrilledWholeFish.description>Целая рыба, немного соли и никаких извинений перед рыбой.</HH_Dish_GrilledWholeFish.description>
-  <HH_Dish_FishStew.label>рыбная похлёбка</HH_Dish_FishStew.label>
-  <HH_Dish_FishStew.description>Всё, что плавает, рано или поздно оказывается здесь.</HH_Dish_FishStew.description>
-  <HH_Dish_SmokedFishFillet.label>филе копчёной рыбы</HH_Dish_SmokedFishFillet.label>
-  <HH_Dish_SmokedFishFillet.description>Филе дня, копчёное, пока не забыло про реку.</HH_Dish_SmokedFishFillet.description>
-  <HH_Dish_SashimiPlate.label>тарелка сашими</HH_Dish_SashimiPlate.label>
-  <HH_Dish_SashimiPlate.description>Сырая рыба, тонко нарезанная, и крошечная моральная дилемма.</HH_Dish_SashimiPlate.description>
-  <HH_Dish_FishTacos.label>рыбные тако</HH_Dish_FishTacos.label>
-  <HH_Dish_FishTacos.description>Рыба в лепёшке, доставлена колонистом, который бежал всю дорогу.</HH_Dish_FishTacos.description>
   <HH_Dish_BoomalopeConfit.description>Томится в собственном жиру. Не стойте рядом с кастрюлей. Традиционно готовится из бумалопа, осторожно.</HH_Dish_BoomalopeConfit.description>
   <HH_Dish_BoomalopeConfit.label>томлёное мясо конфи</HH_Dish_BoomalopeConfit.label>
   <HH_Dish_CampfireStew.description>В котёл попало всё, включая спор о том, что всё это значит. Традиционно готовится из маффало.</HH_Dish_CampfireStew.description>

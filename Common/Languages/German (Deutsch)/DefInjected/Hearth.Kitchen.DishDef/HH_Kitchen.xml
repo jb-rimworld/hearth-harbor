@@ -38,8 +38,6 @@
   <HH_Dish_FruitBowl.description>Gesund, frisch und in vier Sekunden weg, wenn die Kinder kommen.</HH_Dish_FruitBowl.description>
   <HH_Dish_MushroomPlate.label>Pilzteller</HH_Dish_MushroomPlate.label>
   <HH_Dish_MushroomPlate.description>Gekühlte Pilze, weil der Kühlschrank ohnehin lief.</HH_Dish_MushroomPlate.description>
-  <HH_Dish_CrimsonSmoothie.label>Purpurner Smoothie</HH_Dish_CrimsonSmoothie.label>
-  <HH_Dish_CrimsonSmoothie.description>Beeren, Milch und ein geheimes Rosa.</HH_Dish_CrimsonSmoothie.description>
   <HH_Dish_SmokedJerkyStrips.label>Geräucherte Jerky-Streifen</HH_Dish_SmokedJerkyStrips.label>
   <HH_Dish_SmokedJerkyStrips.description>Halten ewig, so lange dauert auch das Kauen.</HH_Dish_SmokedJerkyStrips.description>
   <HH_Dish_BratwurstAndBeer.label>Bratwurst und Bier</HH_Dish_BratwurstAndBeer.label>
@@ -92,10 +90,6 @@
   <HH_Dish_SmokedLongJerky.description>Hält den ganzen Winter. Die Schuldgefühle auch.</HH_Dish_SmokedLongJerky.description>
   <HH_Dish_CongeeOfTheFallen.label>Congee der Gefallenen</HH_Dish_CongeeOfTheFallen.label>
   <HH_Dish_CongeeOfTheFallen.description>Ein warmer Brei für ein kaltes, kaltes Gewissen.</HH_Dish_CongeeOfTheFallen.description>
-  <HH_Dish_BloodBroth.label>Blutbrühe</HH_Dish_BloodBroth.label>
-  <HH_Dish_BloodBroth.description>Eine dunkle, kräftige Brühe für die Durstigen und die Höflichen.</HH_Dish_BloodBroth.description>
-  <HH_Dish_HemogenBlackPudding.label>Hämogen-Blutwurst</HH_Dish_HemogenBlackPudding.label>
-  <HH_Dish_HemogenBlackPudding.description>Gebraten, bis sie aufhört, dich anzustarren.</HH_Dish_HemogenBlackPudding.description>
   <HH_Dish_ColonyPaella.label>Kolonie-Paella</HH_Dish_ColonyPaella.label>
   <HH_Dish_ColonyPaella.description>Alles, was in der Vorratskammer war, mit großer Würde angerichtet.</HH_Dish_ColonyPaella.description>
   <HH_Dish_NigiriPlatter.label>Nigiri-Platte</HH_Dish_NigiriPlatter.label>
@@ -134,12 +128,6 @@
   <HH_Dish_StrangersRoast.description>Sonntagsessen, mit einem Gast, der nicht freiwillig kam.</HH_Dish_StrangersRoast.description>
   <HH_Dish_CannibalsChili.label>Kannibalen-Chili</HH_Dish_CannibalsChili.label>
   <HH_Dish_CannibalsChili.description>Scharf genug, um den Geschmack zu verbergen, und den Gedanken.</HH_Dish_CannibalsChili.description>
-  <HH_Dish_HemogenRisotto.label>Hämogen-Risotto</HH_Dish_HemogenRisotto.label>
-  <HH_Dish_HemogenRisotto.description>Cremig, rot und eine Spur zu intensiv.</HH_Dish_HemogenRisotto.description>
-  <HH_Dish_RedSteakVeryRare.label>Rotes Steak, ganz blutig</HH_Dish_RedSteakVeryRare.label>
-  <HH_Dish_RedSteakVeryRare.description>Praktisch noch am Blöken. Genau so zubereitet, wie es ein Sanguophage bestellt hat.</HH_Dish_RedSteakVeryRare.description>
-  <HH_Dish_TwistedMeatBao.label>Verdrehtes-Fleisch-Bao</HH_Dish_TwistedMeatBao.label>
-  <HH_Dish_TwistedMeatBao.description>Der Teigball zuckt nur ein bisschen. Sag es bloß nicht der Füllung.</HH_Dish_TwistedMeatBao.description>
   <HH_Dish_FishThermidor.label>Fisch Thermidor</HH_Dish_FishThermidor.label>
   <HH_Dish_FishThermidor.description>Cremig, überbacken und absurd stolz auf sich selbst.</HH_Dish_FishThermidor.description>
   <HH_Dish_Rendang.label>Rendang</HH_Dish_Rendang.label>
@@ -164,70 +152,6 @@
   <HH_Dish_SevenCourseColonyMenu.description>Vorspeise, Vorspeise, Vorspeise, Hauptgang, Nachtisch, Nachtisch und ein Toast.</HH_Dish_SevenCourseColonyMenu.description>
   <HH_Dish_TartareOfTheFallen.label>Tatar der Gefallenen</HH_Dish_TartareOfTheFallen.label>
   <HH_Dish_TartareOfTheFallen.description>Roh serviert, denn Kochen ist für Leute, die etwas zu verbergen haben.</HH_Dish_TartareOfTheFallen.description>
-  <HH_Dish_HemogenCarpaccio.label>Hämogen-Carpaccio</HH_Dish_HemogenCarpaccio.label>
-  <HH_Dish_HemogenCarpaccio.description>Dünn, rot und mit einem Starren serviert.</HH_Dish_HemogenCarpaccio.description>
-  <HH_Dish_TwistedHotpot.label>Verdrehter Feuertopf</HH_Dish_TwistedHotpot.label>
-  <HH_Dish_TwistedHotpot.description>Er blubbert von selbst. Niemand hat den Herd angemacht.</HH_Dish_TwistedHotpot.description>
-  <HH_Dish_CheeseFondue.label>Käsefondue</HH_Dish_CheeseFondue.label>
-  <HH_Dish_CheeseFondue.description>Ein Topf geschmolzener Käse und die Regel, dass zahlt, wer das Brot fallen lässt.</HH_Dish_CheeseFondue.description>
-  <HH_Dish_PumpkinAndCheeseGratin.label>Kürbis-Käse-Gratin</HH_Dish_PumpkinAndCheeseGratin.label>
-  <HH_Dish_PumpkinAndCheeseGratin.description>Orange, käsig und mit einer dünnen Schicht Gefahr dekoriert.</HH_Dish_PumpkinAndCheeseGratin.description>
-  <HH_Dish_FlourDumplingSoup.label>Mehlklößchen-Suppe</HH_Dish_FlourDumplingSoup.label>
-  <HH_Dish_FlourDumplingSoup.description>Klöße in Faustgröße, für Leute, die ihre Suppe mit Wumms mögen.</HH_Dish_FlourDumplingSoup.description>
-  <HH_Dish_CheeseOmelette.label>Käseomelett</HH_Dish_CheeseOmelette.label>
-  <HH_Dish_CheeseOmelette.description>Das Omelett, das sich für nichts entschuldigt und vor niemandem klappt.</HH_Dish_CheeseOmelette.description>
-  <HH_Dish_FruitGlazedRoast.label>Obstglasierter Braten</HH_Dish_FruitGlazedRoast.label>
-  <HH_Dish_FruitGlazedRoast.description>Klebrig, süß und mit Ofenhandschuhen und Gebeten zum Tisch getragen.</HH_Dish_FruitGlazedRoast.description>
-  <HH_Dish_SushiRollSet.label>Sushi-Rollen-Set</HH_Dish_SushiRollSet.label>
-  <HH_Dish_SushiRollSet.description>Fest gerollt, leicht getunkt und gegessen, bevor jemand auf Ideen kommt.</HH_Dish_SushiRollSet.description>
-  <HH_Dish_WasabiGlazedFish.label>Wasabi-glasierter Fisch</HH_Dish_WasabiGlazedFish.label>
-  <HH_Dish_WasabiGlazedFish.description>Er befreit Nase, Hals und jede bisherige Meinung.</HH_Dish_WasabiGlazedFish.description>
-  <HH_Dish_TempuraSushi.label>Tempura-Sushi</HH_Dish_TempuraSushi.label>
-  <HH_Dish_TempuraSushi.description>Sushi, das falsch abgebogen und in der Fritteuse gelandet ist und es mochte.</HH_Dish_TempuraSushi.description>
-  <HH_Dish_HeartyWinterStew.label>Deftiger Wintereintopf</HH_Dish_HeartyWinterStew.label>
-  <HH_Dish_HeartyWinterStew.description>Tagelang im holzbefeuerten Topf gekocht. Iss ihn, bevor der Topf widerspricht.</HH_Dish_HeartyWinterStew.description>
-  <HH_Dish_LongNightMushroomStew.label>Lange-Nacht-Pilzeintopf</HH_Dish_LongNightMushroomStew.label>
-  <HH_Dish_LongNightMushroomStew.description>Die ganze Nacht geköchelt von jemandem ohne bessere Pläne.</HH_Dish_LongNightMushroomStew.description>
-  <HH_Dish_StewOfQuestionableMeat.label>Eintopf mit fragwürdigem Fleisch</HH_Dish_StewOfQuestionableMeat.label>
-  <HH_Dish_StewOfQuestionableMeat.description>Der Eintopf nimmt dir jede Reue wegen der Insekten. Die Reue wegen des Eintopfs bleibt.</HH_Dish_StewOfQuestionableMeat.description>
-  <HH_Dish_SugarCookies.label>Zuckerplätzchen</HH_Dish_SugarCookies.label>
-  <HH_Dish_SugarCookies.description>Verziert von einem Kolonisten, dessen Hände vom Kampf zittern, und man sieht es.</HH_Dish_SugarCookies.description>
-  <HH_Dish_FancyCupcakes.label>Feine Cupcakes</HH_Dish_FancyCupcakes.label>
-  <HH_Dish_FancyCupcakes.description>Ein winziger Kuchen mit einem großen Streuselproblem.</HH_Dish_FancyCupcakes.description>
-  <HH_Dish_GlazedDonuts.label>Glasierte Donuts</HH_Dish_GlazedDonuts.label>
-  <HH_Dish_GlazedDonuts.description>Ein Teigring um ein Loch im Budget.</HH_Dish_GlazedDonuts.description>
-  <HH_Dish_HauteCuisineTastingMenu.label>Haute-Cuisine-Degustationsmenü</HH_Dish_HauteCuisineTastingMenu.label>
-  <HH_Dish_HauteCuisineTastingMenu.description>Acht winzige Teller, eine riesige Rechnung.</HH_Dish_HauteCuisineTastingMenu.description>
-  <HH_Dish_GlazedFruitTart.label>glasierte Fruchttarte</HH_Dish_GlazedFruitTart.label>
-  <HH_Dish_GlazedFruitTart.description>Eine Tarte mit mehr Obst als Struktur, was das richtige Verhältnis ist.</HH_Dish_GlazedFruitTart.description>
-  <HH_Dish_PickledVegetableSalad.label>Salat aus eingelegtem Gemüse</HH_Dish_PickledVegetableSalad.label>
-  <HH_Dish_PickledVegetableSalad.description>So hart eingelegt, dass er den ersten Anführer der Kolonie überlebt hat.</HH_Dish_PickledVegetableSalad.description>
-  <HH_Dish_HerbRoastedPotatoes.label>Kräuterkartoffeln</HH_Dish_HerbRoastedPotatoes.label>
-  <HH_Dish_HerbRoastedPotatoes.description>Kartoffeln, die auf einer Gartenparty waren und eine Pflanze mitgebracht haben.</HH_Dish_HerbRoastedPotatoes.description>
-  <HH_Dish_BerryAndNutBreakfastBowl.label>Beeren-Nuss-Frühstücksschale</HH_Dish_BerryAndNutBreakfastBowl.label>
-  <HH_Dish_BerryAndNutBreakfastBowl.description>Knackig, gesund und ganz bestimmt nicht das, was die Plünderer bestellt hatten.</HH_Dish_BerryAndNutBreakfastBowl.description>
-  <HH_Dish_TeaSmokedMeat.label>teegeräuchertes Fleisch</HH_Dish_TeaSmokedMeat.label>
-  <HH_Dish_TeaSmokedMeat.description>Mit Tee geräuchert, denn warum sollte sich das Fleisch nicht auch entspannen.</HH_Dish_TeaSmokedMeat.description>
-  <HH_Dish_StrawFlourFlatbread.label>Strohmehl-Fladenbrot</HH_Dish_StrawFlourFlatbread.label>
-  <HH_Dish_StrawFlourFlatbread.description>Flach, ehrlich und ein bisschen sandig. Wie die Wüste, aus der es stammt.</HH_Dish_StrawFlourFlatbread.description>
-  <HH_Dish_CactusFruitSalad.label>Kaktusfruchtsalat</HH_Dish_CactusFruitSalad.label>
-  <HH_Dish_CactusFruitSalad.description>Süß und stachelig, genau wie dein bester Freund.</HH_Dish_CactusFruitSalad.description>
-  <HH_Dish_GreenfruitStew.label>Grünfrucht-Eintopf</HH_Dish_GreenfruitStew.label>
-  <HH_Dish_GreenfruitStew.description>Ein Eintopf so grün, dass die Muffalos beleidigt waren.</HH_Dish_GreenfruitStew.description>
-  <HH_Dish_StrawflourDumplings.label>Strohmehl-Knödel</HH_Dish_StrawflourDumplings.label>
-  <HH_Dish_StrawflourDumplings.description>Knödel aus dem Ödland, gefüllt mit etwas, das möglicherweise Fleisch war.</HH_Dish_StrawflourDumplings.description>
-  <HH_Dish_DesertBreadAndBeer.label>Wüstenbrot und Bier</HH_Dish_DesertBreadAndBeer.label>
-  <HH_Dish_DesertBreadAndBeer.description>Flüssiges und festes Frühstück, in der richtigen Reihenfolge.</HH_Dish_DesertBreadAndBeer.description>
-  <HH_Dish_GrilledWholeFish.label>gegrillter ganzer Fisch</HH_Dish_GrilledWholeFish.label>
-  <HH_Dish_GrilledWholeFish.description>Ein ganzer Fisch, etwas Salz und keine Entschuldigung an den Fisch.</HH_Dish_GrilledWholeFish.description>
-  <HH_Dish_FishStew.label>Fischeintopf</HH_Dish_FishStew.label>
-  <HH_Dish_FishStew.description>Alles, was schwimmt, landet früher oder später hier.</HH_Dish_FishStew.description>
-  <HH_Dish_SmokedFishFillet.label>geräuchertes Fischfilet</HH_Dish_SmokedFishFillet.label>
-  <HH_Dish_SmokedFishFillet.description>Filet des Tages, so lange geräuchert, bis es den Fluss vergessen hat.</HH_Dish_SmokedFishFillet.description>
-  <HH_Dish_SashimiPlate.label>Sashimi-Teller</HH_Dish_SashimiPlate.label>
-  <HH_Dish_SashimiPlate.description>Roher Fisch, hauchdünn geschnitten, und ein winziges moralisches Dilemma.</HH_Dish_SashimiPlate.description>
-  <HH_Dish_FishTacos.label>Fisch-Tacos</HH_Dish_FishTacos.label>
-  <HH_Dish_FishTacos.description>Fisch in einer Tortilla, geliefert von einem Kolonisten, der den ganzen Weg gerannt ist.</HH_Dish_FishTacos.description>
   <HH_Dish_BoomalopeConfit.description>Langsam im eigenen Fett gegart. Nicht neben den Topf stellen. Traditionell aus Boomalope, mit viel Vorsicht.</HH_Dish_BoomalopeConfit.description>
   <HH_Dish_BoomalopeConfit.label>Schmorfleisch-Confit</HH_Dish_BoomalopeConfit.label>
   <HH_Dish_CampfireStew.description>Alles kam in den Topf, auch der Streit darüber, was alles heißt. Traditionell aus Muffalo.</HH_Dish_CampfireStew.description>

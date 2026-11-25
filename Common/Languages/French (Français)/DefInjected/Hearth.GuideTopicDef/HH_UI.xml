@@ -8,4 +8,23 @@
   <HH_Guide_FirstVenue.description>Une enseigne transforme une pièce en commerce.</HH_Guide_FirstVenue.description>
   <HH_Guide_Bank.label>L'argent à la banque</HH_Guide_Bank.label>
   <HH_Guide_Bank.description>Silverline garde vos recettes en sécurité et permet aux hôtes de payer par carte.</HH_Guide_Bank.description>
+  <HH_Guide_Bank.steps.0.description>Facultatif. Sans compte, la banque vous laisse tranquille.</HH_Guide_Bank.steps.0.description>
+  <HH_Guide_Bank.steps.0.label>Ouvrez un compte Silverline dans un bâtiment de la banque.</HH_Guide_Bank.steps.0.label>
+  <HH_Guide_Bank.steps.1.label>Activez le dépôt direct pour que les caisses se vident sur le compte.</HH_Guide_Bank.steps.1.label>
+  <HH_Guide_Bank.steps.2.label>Surveillez le solde sur la page Vue d'ensemble.</HH_Guide_Bank.steps.2.label>
+  <HH_Guide_FirstVenue.steps.0.label>Posez une enseigne de commerce dans une pièce couverte.</HH_Guide_FirstVenue.steps.0.label>
+  <HH_Guide_FirstVenue.steps.1.label>Ouvrez l'onglet Installation de l'enseigne et construisez tout ce qui est marqué Requis.</HH_Guide_FirstVenue.steps.1.label>
+  <HH_Guide_FirstVenue.steps.2.label>Vérifiez les horaires d'ouverture. Les clients n'achètent que pendant l'ouverture.</HH_Guide_FirstVenue.steps.2.label>
+  <HH_Guide_FirstVenue.steps.3.label>Encaissez vos premières pièces d'argent.</HH_Guide_FirstVenue.steps.3.label>
+  <HH_Guide_OpeningDay.steps.0.description>Les hôtes ne viennent qu'une fois que vous avez préparé quelque chose pour eux. D'ici là, le jeu se joue comme sans le mod.</HH_Guide_OpeningDay.steps.0.description>
+  <HH_Guide_OpeningDay.steps.0.label>Désignez un lit comme lit d'invité, ou posez une enseigne de commerce dans une pièce couverte.</HH_Guide_OpeningDay.steps.0.label>
+  <HH_Guide_OpeningDay.steps.1.description>Vous recevez une lettre quand un groupe est en route.</HH_Guide_OpeningDay.steps.1.description>
+  <HH_Guide_OpeningDay.steps.1.label>Attendez les premiers hôtes. Ils arrivent sous trois jours environ.</HH_Guide_OpeningDay.steps.1.label>
+  <HH_Guide_OpeningDay.steps.2.description>Les paiements arrivent dans la caisse et sont comptés sur la page Vue d'ensemble.</HH_Guide_OpeningDay.steps.2.description>
+  <HH_Guide_OpeningDay.steps.2.label>Faites payer quelque chose à un hôte.</HH_Guide_OpeningDay.steps.2.label>
+  <HH_Guide_YourGuests.steps.0.description>Une ligne par hôte : humeur, satisfaction, budget et moment du départ. Cliquez sur une ligne pour aller à l'hôte.</HH_Guide_YourGuests.steps.0.description>
+  <HH_Guide_YourGuests.steps.0.label>Ouvrez la page Clients dans l'onglet Hearth &amp; Harbor.</HH_Guide_YourGuests.steps.0.label>
+  <HH_Guide_YourGuests.steps.1.description>Montre ce que pense l'hôte et permet de choisir Services de base, Accompagner ou Recruter.</HH_Guide_YourGuests.steps.1.description>
+  <HH_Guide_YourGuests.steps.1.label>Sélectionnez un hôte et ouvrez l'onglet Hôte.</HH_Guide_YourGuests.steps.1.label>
+  <HH_Guide_YourGuests.steps.2.label>Essayez une autre prise en charge avec un hôte qui vous plaît.</HH_Guide_YourGuests.steps.2.label>
 </LanguageData>

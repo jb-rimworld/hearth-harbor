@@ -8,4 +8,23 @@
   <HH_Guide_FirstVenue.description>一块招牌就能把房间变成生意。</HH_Guide_FirstVenue.description>
   <HH_Guide_Bank.label>银行里的钱</HH_Guide_Bank.label>
   <HH_Guide_Bank.description>Silverline 会替你保管营业收入，并允许访客用卡付款。</HH_Guide_Bank.description>
+  <HH_Guide_Bank.steps.0.description>可选。没有账户时，银行不会打扰你。</HH_Guide_Bank.steps.0.description>
+  <HH_Guide_Bank.steps.0.label>在银行建筑开设 Silverline 账户。</HH_Guide_Bank.steps.0.label>
+  <HH_Guide_Bank.steps.1.label>开启直接存款，让钱柜里的钱自动转入账户。</HH_Guide_Bank.steps.1.label>
+  <HH_Guide_Bank.steps.2.label>在概览页面查看余额。</HH_Guide_Bank.steps.2.label>
+  <HH_Guide_FirstVenue.steps.0.label>在有屋顶的房间里放置营业招牌。</HH_Guide_FirstVenue.steps.0.label>
+  <HH_Guide_FirstVenue.steps.1.label>打开招牌的布置标签页，建造所有标为必需的东西。</HH_Guide_FirstVenue.steps.1.label>
+  <HH_Guide_FirstVenue.steps.2.label>检查营业时间。访客只在营业时购买。</HH_Guide_FirstVenue.steps.2.label>
+  <HH_Guide_FirstVenue.steps.3.label>赚到你的第一笔银币。</HH_Guide_FirstVenue.steps.3.label>
+  <HH_Guide_OpeningDay.steps.0.description>只有在你为访客准备好东西之后，他们才会来。在此之前，游戏和原版一样。</HH_Guide_OpeningDay.steps.0.description>
+  <HH_Guide_OpeningDay.steps.0.label>把一张床标记为访客床，或在有屋顶的房间里放置营业招牌。</HH_Guide_OpeningDay.steps.0.label>
+  <HH_Guide_OpeningDay.steps.1.description>有队伍上路时，你会收到一封信。</HH_Guide_OpeningDay.steps.1.description>
+  <HH_Guide_OpeningDay.steps.1.label>等待第一批访客。他们大约三天内到达。</HH_Guide_OpeningDay.steps.1.label>
+  <HH_Guide_OpeningDay.steps.2.description>付款进入钱柜，并在概览页面统计。</HH_Guide_OpeningDay.steps.2.description>
+  <HH_Guide_OpeningDay.steps.2.label>让一位访客为某样东西付款。</HH_Guide_OpeningDay.steps.2.label>
+  <HH_Guide_YourGuests.steps.0.description>每位访客一行：心情、满意度、预算和离开时间。点击某一行可跳转到该访客。</HH_Guide_YourGuests.steps.0.description>
+  <HH_Guide_YourGuests.steps.0.label>在 Hearth &amp; Harbor 标签页中打开访客页面。</HH_Guide_YourGuests.steps.0.label>
+  <HH_Guide_YourGuests.steps.1.description>显示访客的想法，并让你选择基础、陪同或拉拢。</HH_Guide_YourGuests.steps.1.description>
+  <HH_Guide_YourGuests.steps.1.label>选中一位访客并打开访客标签页。</HH_Guide_YourGuests.steps.1.label>
+  <HH_Guide_YourGuests.steps.2.label>对你喜欢的访客试试另一种接待方式。</HH_Guide_YourGuests.steps.2.label>
 </LanguageData>

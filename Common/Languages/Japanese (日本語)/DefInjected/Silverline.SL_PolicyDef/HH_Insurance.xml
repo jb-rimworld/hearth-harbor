@@ -27,9 +27,6 @@
   <SL_ClosedForRepairs.label>修理のため休業</SL_ClosedForRepairs.label>
   <SL_ClosedForRepairs.description>事業を休業せざるを得ないとき、収入は止まりません。</SL_ClosedForRepairs.description>
   <SL_ClosedForRepairs.slogan>故障中でも、保険料は故障しません。</SL_ClosedForRepairs.slogan>
-  <SL_UnspeakableEvents.label>口にできない出来事の特約</SL_UnspeakableEvents.label>
-  <SL_UnspeakableEvents.description>弁護士が同席しなければ約款で表現できない損害が対象です。</SL_UnspeakableEvents.description>
-  <SL_UnspeakableEvents.slogan>名前をつけるより、保険に入るほうがよいものもあります。</SL_UnspeakableEvents.slogan>
   <SL_Wanderlust.label>放浪者の旅行補償</SL_Wanderlust.label>
   <SL_Wanderlust.description>隊商のための保険です。あなたがいないときにも、そこにあります。人数と移動日単位で、人々が旅路にいる間だけ請求されます。</SL_Wanderlust.description>
   <SL_Wanderlust.slogan>会いたかったです。あなたがいない部分は、私たちが補償します。</SL_Wanderlust.slogan>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_EmpireWarBond.label>帝国戦時債</SL_Asset_EmpireWarBond.label>
+  <SL_Asset_EmpireWarBond.description>帝国の戦争を資金調達する債券。戦争に勝利すると値が跳ね上がり、敗北すると額縁に入れて飾れる程度の価値になります。戦争は長く続いていますが、主にパンフレットの中で。</SL_Asset_EmpireWarBond.description>
+  <SL_Asset_StockEmpire.label>IMPR、帝国儀礼株式会社</SL_Asset_StockEmpire.label>
+  <SL_Asset_StockEmpire.description>帝国の儀式を手がける会社：旗、トランペット、小さな王冠。利益は、わずかな扱いに気分を害する貴族の数で決まります。</SL_Asset_StockEmpire.description>
+</LanguageData>

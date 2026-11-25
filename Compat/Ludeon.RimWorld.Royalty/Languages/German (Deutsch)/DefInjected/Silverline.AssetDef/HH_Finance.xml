@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_EmpireWarBond.label>Kriegsanleihen des Imperiums</SL_Asset_EmpireWarBond.label>
+  <SL_Asset_EmpireWarBond.description>Anleihen, die einen Krieg des Imperiums finanzieren. Endet der Krieg mit einem Sieg, schießen sie hoch; bei einer Niederlage sind sie einen netten Rahmen wert. Der Krieg dauert schon lange, hauptsächlich in den Broschüren.</SL_Asset_EmpireWarBond.description>
+  <SL_Asset_StockEmpire.label>IMPR, Imperial Pageantry Ltd</SL_Asset_StockEmpire.label>
+  <SL_Asset_StockEmpire.description>Das Unternehmen hinter den imperialen Zeremonien: Banner, Trompeten und winzige Kronen. Die Gewinne hängen davon ab, wie viele Adlige sich von wie wenig beleidigt fühlen.</SL_Asset_StockEmpire.description>
+</LanguageData>

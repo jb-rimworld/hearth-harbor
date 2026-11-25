@@ -18,6 +18,10 @@ FIELDS = {"label", "description", "labelShort", "pawnLabel", "gerundLabel", "ver
           "successfulInspectLine", "fixedName", "labelMale", "labelFemale", "inspectString", "skillLabel", "labelPlural", "slogan"}
 
 
+# lists whose items carry label/description, injected by index (DefInjected path <defName>.<list>.<n>.<field>); keep in sync with delta.STAGE
+NESTED = ("stages", "steps")
+
+
 def module_of(path: Path) -> str:
     parts = path.relative_to(R / "Common").parts
     if parts[0] == "Defs" and len(parts) > 2:
@@ -48,12 +52,13 @@ def main():
             for child in d:
                 if child.tag in FIELDS and child.text and child.text.strip():
                     data.setdefault(mod, {"keyed": {}, "defs": {}})["defs"][f"{d.tag}/{dn}.{child.tag}"] = child.text.strip()
-                # one level of nested lists commonly translated: stages/li/label
-                if child.tag == "stages":
+                # one level of nested lists commonly translated: stages/li/label, and the steps of a guide topic (1.1.1: the checklist
+                # of the guide card stayed English in every language because "steps" was not collected)
+                if child.tag in NESTED:
                     for i, st in enumerate(child):
                         for sub in st:
                             if sub.tag in ("label", "description") and sub.text and sub.text.strip():
-                                data.setdefault(mod, {"keyed": {}, "defs": {}})["defs"][f"{d.tag}/{dn}.stages.{i}.{sub.tag}"] = sub.text.strip()
+                                data.setdefault(mod, {"keyed": {}, "defs": {}})["defs"][f"{d.tag}/{dn}.{child.tag}.{i}.{sub.tag}"] = sub.text.strip()
     total = 0
     for mod, d in data.items():
         (OUT / f"{mod}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")

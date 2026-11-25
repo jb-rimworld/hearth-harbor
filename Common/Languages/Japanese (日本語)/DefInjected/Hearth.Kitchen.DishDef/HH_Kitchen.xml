@@ -38,8 +38,6 @@
   <HH_Dish_FruitBowl.description>健康的で新鮮。子どもたちが来ると四秒でなくなる。</HH_Dish_FruitBowl.description>
   <HH_Dish_MushroomPlate.label>キノコの皿盛り</HH_Dish_MushroomPlate.label>
   <HH_Dish_MushroomPlate.description>冷蔵庫はもう動いているので、冷やしたキノコ。</HH_Dish_MushroomPlate.description>
-  <HH_Dish_CrimsonSmoothie.label>真紅のスムージー</HH_Dish_CrimsonSmoothie.label>
-  <HH_Dish_CrimsonSmoothie.description>ベリーと牛乳と、ひそかなピンク色。</HH_Dish_CrimsonSmoothie.description>
   <HH_Dish_SmokedJerkyStrips.label>燻製ジャーキーの細切り</HH_Dish_SmokedJerkyStrips.label>
   <HH_Dish_SmokedJerkyStrips.description>永遠に持つ。噛み切るのにも同じくらい時間がかかる。</HH_Dish_SmokedJerkyStrips.description>
   <HH_Dish_BratwurstAndBeer.label>ブラートヴルストとビール</HH_Dish_BratwurstAndBeer.label>
@@ -92,10 +90,6 @@
   <HH_Dish_SmokedLongJerky.description>冬じゅう持つ。罪悪感もね。</HH_Dish_SmokedLongJerky.description>
   <HH_Dish_CongeeOfTheFallen.label>倒れた者たちのお粥</HH_Dish_CongeeOfTheFallen.label>
   <HH_Dish_CongeeOfTheFallen.description>冷え切った良心のための、温かな粥。</HH_Dish_CongeeOfTheFallen.description>
-  <HH_Dish_BloodBroth.label>血のブロス</HH_Dish_BloodBroth.label>
-  <HH_Dish_BloodBroth.description>喉の渇いた人と礼儀正しい人のための、濃く深い色のブロス。</HH_Dish_BloodBroth.description>
-  <HH_Dish_HemogenBlackPudding.label>ヘモジェンのブラックプディング</HH_Dish_HemogenBlackPudding.label>
-  <HH_Dish_HemogenBlackPudding.description>こちらを見なくなるまで揚げ焼きにした。</HH_Dish_HemogenBlackPudding.description>
   <HH_Dish_ColonyPaella.label>コロニー・パエリア</HH_Dish_ColonyPaella.label>
   <HH_Dish_ColonyPaella.description>パントリーにあったものを、威厳をもって盛り付けた。</HH_Dish_ColonyPaella.description>
   <HH_Dish_NigiriPlatter.label>握りの盛り合わせ</HH_Dish_NigiriPlatter.label>
@@ -134,12 +128,6 @@
   <HH_Dish_StrangersRoast.description>日曜の夕食。来たくて来たわけではないゲストつき。</HH_Dish_StrangersRoast.description>
   <HH_Dish_CannibalsChili.label>人食いのチリ</HH_Dish_CannibalsChili.label>
   <HH_Dish_CannibalsChili.description>辛さで味も、そして考えも隠せる。</HH_Dish_CannibalsChili.description>
-  <HH_Dish_HemogenRisotto.label>ヘモジェンのリゾット</HH_Dish_HemogenRisotto.label>
-  <HH_Dish_HemogenRisotto.description>クリーミーで赤く、ほんの少しだけ濃すぎる。</HH_Dish_HemogenRisotto.description>
-  <HH_Dish_RedSteakVeryRare.label>レアの赤いステーキ</HH_Dish_RedSteakVeryRare.label>
-  <HH_Dish_RedSteakVeryRare.description>ほぼ鳴き声のよう。吸血鬼の注文どおりの焼き加減。</HH_Dish_RedSteakVeryRare.description>
-  <HH_Dish_TwistedMeatBao.label>ねじれ肉バオ</HH_Dish_TwistedMeatBao.label>
-  <HH_Dish_TwistedMeatBao.description>バンズがわずかに動いている。中身には言わないでほしい。</HH_Dish_TwistedMeatBao.description>
   <HH_Dish_FishThermidor.label>魚のテルミドール</HH_Dish_FishThermidor.label>
   <HH_Dish_FishThermidor.description>クリーミーでグラタン状、そして見当違いに自分を誇らしく思っている。</HH_Dish_FishThermidor.description>
   <HH_Dish_Rendang.label>ルンダン</HH_Dish_Rendang.label>
@@ -164,70 +152,6 @@
   <HH_Dish_SevenCourseColonyMenu.description>前菜、前菜、前菜、メイン、デザート、デザート、そして乾杯。</HH_Dish_SevenCourseColonyMenu.description>
   <HH_Dish_TartareOfTheFallen.label>倒れた者たちのタルタル</HH_Dish_TartareOfTheFallen.label>
   <HH_Dish_TartareOfTheFallen.description>生で出す。加熱は、隠し事のある者がするものだから。</HH_Dish_TartareOfTheFallen.description>
-  <HH_Dish_HemogenCarpaccio.label>ヘモジェンのカルパッチョ</HH_Dish_HemogenCarpaccio.label>
-  <HH_Dish_HemogenCarpaccio.description>薄く、赤く、そして睨みつけるように出す。</HH_Dish_HemogenCarpaccio.description>
-  <HH_Dish_TwistedHotpot.label>ねじれ火鍋</HH_Dish_TwistedHotpot.label>
-  <HH_Dish_TwistedHotpot.description>勝手にぐつぐつ沸いている。誰もコンロをつけていない。</HH_Dish_TwistedHotpot.description>
-  <HH_Dish_CheeseFondue.label>チーズフォンデュ</HH_Dish_CheeseFondue.label>
-  <HH_Dish_CheeseFondue.description>溶けたチーズの鍋と、パンを落とした者が払うという掟。</HH_Dish_CheeseFondue.description>
-  <HH_Dish_PumpkinAndCheeseGratin.label>カボチャとチーズのグラタン</HH_Dish_PumpkinAndCheeseGratin.label>
-  <HH_Dish_PumpkinAndCheeseGratin.description>オレンジ色でチーズたっぷり。薄い危険の層で飾られている。</HH_Dish_PumpkinAndCheeseGratin.description>
-  <HH_Dish_FlourDumplingSoup.label>粉団子スープ</HH_Dish_FlourDumplingSoup.label>
-  <HH_Dish_FlourDumplingSoup.description>こぶし大の団子。パンチの効いたスープが好きな人向け。</HH_Dish_FlourDumplingSoup.description>
-  <HH_Dish_CheeseOmelette.label>チーズオムレツ</HH_Dish_CheeseOmelette.label>
-  <HH_Dish_CheeseOmelette.description>何にも謝らず、誰のためにも折りたたまれないオムレツ。</HH_Dish_CheeseOmelette.description>
-  <HH_Dish_FruitGlazedRoast.label>フルーツグレーズのロースト</HH_Dish_FruitGlazedRoast.label>
-  <HH_Dish_FruitGlazedRoast.description>ベタついて甘く、オーブンミトンと祈りを添えて食卓へ運ばれる。</HH_Dish_FruitGlazedRoast.description>
-  <HH_Dish_SushiRollSet.label>巻き寿司セット</HH_Dish_SushiRollSet.label>
-  <HH_Dish_SushiRollSet.description>きつく巻き、軽くつけ、誰かが余計なことを考える前に食べる。</HH_Dish_SushiRollSet.description>
-  <HH_Dish_WasabiGlazedFish.label>わさびグレーズの魚</HH_Dish_WasabiGlazedFish.label>
-  <HH_Dish_WasabiGlazedFish.description>鼻も喉も、それまでの意見もすべてすっきりする。</HH_Dish_WasabiGlazedFish.description>
-  <HH_Dish_TempuraSushi.label>天ぷら寿司</HH_Dish_TempuraSushi.label>
-  <HH_Dish_TempuraSushi.description>寿司が揚げ場に迷い込み、そして気に入ってしまった。</HH_Dish_TempuraSushi.description>
-  <HH_Dish_HeartyWinterStew.label>冬の滋味シチュー</HH_Dish_HeartyWinterStew.label>
-  <HH_Dish_HeartyWinterStew.description>薪の火で何日も煮込んだ。鍋が口をきく前に食べきろう。</HH_Dish_HeartyWinterStew.description>
-  <HH_Dish_LongNightMushroomStew.label>長い夜のキノコシチュー</HH_Dish_LongNightMushroomStew.label>
-  <HH_Dish_LongNightMushroomStew.description>ほかに予定のなかった誰かが、一晩中煮込んだ。</HH_Dish_LongNightMushroomStew.description>
-  <HH_Dish_StewOfQuestionableMeat.label>怪しい肉のシチュー</HH_Dish_StewOfQuestionableMeat.label>
-  <HH_Dish_StewOfQuestionableMeat.description>シチューが虫への後悔を消してくれる。シチューへの後悔は残る。</HH_Dish_StewOfQuestionableMeat.description>
-  <HH_Dish_SugarCookies.label>シュガークッキー</HH_Dish_SugarCookies.label>
-  <HH_Dish_SugarCookies.description>戦闘で手が震える入植者が飾り付けた。見ればわかる。</HH_Dish_SugarCookies.description>
-  <HH_Dish_FancyCupcakes.label>豪華カップケーキ</HH_Dish_FancyCupcakes.label>
-  <HH_Dish_FancyCupcakes.description>小さなケーキに、大きなスプリンクルの問題。</HH_Dish_FancyCupcakes.description>
-  <HH_Dish_GlazedDonuts.label>グレーズドーナツ</HH_Dish_GlazedDonuts.label>
-  <HH_Dish_GlazedDonuts.description>予算に空いた穴のまわりを囲む、ドーナツ生地のリング。</HH_Dish_GlazedDonuts.description>
-  <HH_Dish_HauteCuisineTastingMenu.label>オートクチュール試食メニュー</HH_Dish_HauteCuisineTastingMenu.label>
-  <HH_Dish_HauteCuisineTastingMenu.description>小皿八つ、請求書は特大。</HH_Dish_HauteCuisineTastingMenu.description>
-  <HH_Dish_GlazedFruitTart.label>フルーツのグレーズタルト</HH_Dish_GlazedFruitTart.label>
-  <HH_Dish_GlazedFruitTart.description>土台よりも果物の方が多いタルト。これが正しい比率だ。</HH_Dish_GlazedFruitTart.description>
-  <HH_Dish_PickledVegetableSalad.label>野菜の漬物サラダ</HH_Dish_PickledVegetableSalad.label>
-  <HH_Dish_PickledVegetableSalad.description>漬けすぎて、入植地の初代指導者より長生きしてしまった。</HH_Dish_PickledVegetableSalad.description>
-  <HH_Dish_HerbRoastedPotatoes.label>ハーブのロースト・ポテト</HH_Dish_HerbRoastedPotatoes.label>
-  <HH_Dish_HerbRoastedPotatoes.description>ガーデンパーティーに出かけて、植物を連れて帰ってきたジャガイモ。</HH_Dish_HerbRoastedPotatoes.description>
-  <HH_Dish_BerryAndNutBreakfastBowl.label>ベリーとナッツの朝食ボウル</HH_Dish_BerryAndNutBreakfastBowl.label>
-  <HH_Dish_BerryAndNutBreakfastBowl.description>サクサクしていて健康的。そして襲撃者たちが求めていたものとは、まったく違う。</HH_Dish_BerryAndNutBreakfastBowl.description>
-  <HH_Dish_TeaSmokedMeat.label>茶燻し肉</HH_Dish_TeaSmokedMeat.label>
-  <HH_Dish_TeaSmokedMeat.description>お茶で燻した。肉だってリラックスしてもいいだろう？</HH_Dish_TeaSmokedMeat.description>
-  <HH_Dish_StrawFlourFlatbread.label>藁粉のフラットブレッド</HH_Dish_StrawFlourFlatbread.label>
-  <HH_Dish_StrawFlourFlatbread.description>平たく、正直で、少しじゃりっとする。その出身地の砂漠にそっくりだ。</HH_Dish_StrawFlourFlatbread.description>
-  <HH_Dish_CactusFruitSalad.label>サボテンの実のフルーツサラダ</HH_Dish_CactusFruitSalad.label>
-  <HH_Dish_CactusFruitSalad.description>甘くて、トゲがある。まるであなたの一番の親友のようだ。</HH_Dish_CactusFruitSalad.description>
-  <HH_Dish_GreenfruitStew.label>グリーンフルーツのシチュー</HH_Dish_GreenfruitStew.label>
-  <HH_Dish_GreenfruitStew.description>あまりに緑色なので、ムファロが気を悪くした。</HH_Dish_GreenfruitStew.description>
-  <HH_Dish_StrawflourDumplings.label>藁粉の団子</HH_Dish_StrawflourDumplings.label>
-  <HH_Dish_StrawflourDumplings.description>荒野の団子。中身は肉だったかもしれないものが詰まっている。</HH_Dish_StrawflourDumplings.description>
-  <HH_Dish_DesertBreadAndBeer.label>砂漠のパンとビール</HH_Dish_DesertBreadAndBeer.label>
-  <HH_Dish_DesertBreadAndBeer.description>液体と固体の朝食を、正しい順番で。</HH_Dish_DesertBreadAndBeer.description>
-  <HH_Dish_GrilledWholeFish.label>魚の丸焼き</HH_Dish_GrilledWholeFish.label>
-  <HH_Dish_GrilledWholeFish.description>魚をまるごと一匹、少しの塩。魚に対しての謝罪は一切ない。</HH_Dish_GrilledWholeFish.description>
-  <HH_Dish_FishStew.label>魚のシチュー</HH_Dish_FishStew.label>
-  <HH_Dish_FishStew.description>泳ぐものは、遅かれ早かれ、全部ここに行き着く。</HH_Dish_FishStew.description>
-  <HH_Dish_SmokedFishFillet.label>燻製魚のフィレ</HH_Dish_SmokedFishFillet.label>
-  <HH_Dish_SmokedFishFillet.description>本日のフィレ。川のことを忘れるまで燻された。</HH_Dish_SmokedFishFillet.description>
-  <HH_Dish_SashimiPlate.label>刺身の盛り合わせ</HH_Dish_SashimiPlate.label>
-  <HH_Dish_SashimiPlate.description>生の魚を薄く切って。ささやかな道徳的ジレンマ付き。</HH_Dish_SashimiPlate.description>
-  <HH_Dish_FishTacos.label>フィッシュタコス</HH_Dish_FishTacos.label>
-  <HH_Dish_FishTacos.description>魚をトルティーヤで包んだもの。全力で走ってきた入植者が届けてくれた。</HH_Dish_FishTacos.description>
   <HH_Dish_BoomalopeConfit.description>自身の脂でじっくり煮込む。鍋のそばに立つな。伝統的にはブーマロープで作られる。慎重に。</HH_Dish_BoomalopeConfit.description>
   <HH_Dish_BoomalopeConfit.label>肉のコンフィ（低温焼き）</HH_Dish_BoomalopeConfit.label>
   <HH_Dish_CampfireStew.description>何もかも鍋に放り込んだ。それが何を意味するかをめぐる口論ごと。伝統的にはマフアロで作られる。</HH_Dish_CampfireStew.description>

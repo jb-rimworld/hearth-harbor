@@ -27,9 +27,6 @@
   <SL_ClosedForRepairs.label>Зачинено на ремонт</SL_ClosedForRepairs.label>
   <SL_ClosedForRepairs.description>Коли бізнес мусить зачинитися, дохід — ні.</SL_ClosedForRepairs.description>
   <SL_ClosedForRepairs.slogan>Не працює — не означає не платити премію.</SL_ClosedForRepairs.slogan>
-  <SL_UnspeakableEvents.label>Доповнення «Невимовні події»</SL_UnspeakableEvents.label>
-  <SL_UnspeakableEvents.description>Для пошкоджень, які формулювання полісу не може описати без юриста в кімнаті.</SL_UnspeakableEvents.description>
-  <SL_UnspeakableEvents.slogan>Деякі речі краще застрахувати, ніж називати.</SL_UnspeakableEvents.slogan>
   <SL_Wanderlust.label>Страхування подорожей «Wanderlust»</SL_Wanderlust.label>
   <SL_Wanderlust.description>Для караванів: страховка, що є там, де вас немає. Нараховується за особу і день подорожі, лише поки люди в дорозі.</SL_Wanderlust.description>
   <SL_Wanderlust.slogan>Шкода, що вас тут немає. Покриємо частину, де ви не є.</SL_Wanderlust.slogan>

@@ -94,6 +94,16 @@ namespace HHProbe
                 try { GameDataSaveLoader.SaveGame(save); report.AppendLine("saved as " + save); }
                 catch (Exception e) { report.AppendLine("SAVE FAILED " + e.Message); }
             }
+            // translation load errors of the active language (the game only logs their number, as one warning); 1.1.1
+            try
+            {
+                var lang = LanguageDatabase.activeLanguage;
+                var errs = new System.Collections.Generic.List<string>(lang.loadErrors);
+                foreach (var di in lang.defInjections) errs.AddRange(di.loadErrors);
+                report.AppendLine("langErrors=" + errs.Count + " (" + lang.folderName + ")");
+                foreach (var e in errs.Take(120)) report.AppendLine("LANG " + e);
+            }
+            catch (Exception e) { report.AppendLine("langErrors failed: " + e.Message); }
             report.AppendLine("PROBE DONE errors=" + ProbeMod.Errors);
             try { File.WriteAllText(ProbeMod.Env("HH_PROBE_OUT") ?? Path.Combine(GenFilePaths.ConfigFolderPath, "hh_probe.txt"), report.ToString()); } catch (Exception e) { Log.Warning("[HHPROBE] " + e.Message); }
             Log.Message("[HHPROBE] done:\n" + report);

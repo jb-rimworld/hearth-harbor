@@ -8,4 +8,23 @@
   <HH_Guide_FirstVenue.description>Ein Schild macht aus einem Raum ein Geschäft.</HH_Guide_FirstVenue.description>
   <HH_Guide_Bank.label>Geld auf der Bank</HH_Guide_Bank.label>
   <HH_Guide_Bank.description>Silverline verwahrt deine Einnahmen sicher und lässt Gäste per Karte zahlen.</HH_Guide_Bank.description>
+  <HH_Guide_Bank.steps.0.description>Freiwillig. Ohne Konto lässt dich die Bank in Ruhe.</HH_Guide_Bank.steps.0.description>
+  <HH_Guide_Bank.steps.0.label>Eröffne an einem Bankgebäude ein Silverline-Konto.</HH_Guide_Bank.steps.0.label>
+  <HH_Guide_Bank.steps.1.label>Schalte die Direkteinzahlung ein, damit die Kassen aufs Konto geleert werden.</HH_Guide_Bank.steps.1.label>
+  <HH_Guide_Bank.steps.2.label>Behalte den Kontostand auf der Seite Übersicht im Blick.</HH_Guide_Bank.steps.2.label>
+  <HH_Guide_FirstVenue.steps.0.label>Stelle in einem überdachten Raum ein Geschäftsschild auf.</HH_Guide_FirstVenue.steps.0.label>
+  <HH_Guide_FirstVenue.steps.1.label>Öffne den Tab Einrichtung des Schilds und baue alles, was als Erforderlich markiert ist.</HH_Guide_FirstVenue.steps.1.label>
+  <HH_Guide_FirstVenue.steps.2.label>Prüfe die Öffnungszeiten. Gäste kaufen nur, solange geöffnet ist.</HH_Guide_FirstVenue.steps.2.label>
+  <HH_Guide_FirstVenue.steps.3.label>Verdiene dein erstes Silber.</HH_Guide_FirstVenue.steps.3.label>
+  <HH_Guide_OpeningDay.steps.0.description>Gäste kommen erst, wenn du etwas für sie vorbereitet hast. Bis dahin spielt sich das Spiel wie ohne die Mod.</HH_Guide_OpeningDay.steps.0.description>
+  <HH_Guide_OpeningDay.steps.0.label>Markiere ein Bett als Gästebett oder stelle in einem überdachten Raum ein Geschäftsschild auf.</HH_Guide_OpeningDay.steps.0.label>
+  <HH_Guide_OpeningDay.steps.1.description>Du bekommst einen Brief, sobald eine Gruppe unterwegs ist.</HH_Guide_OpeningDay.steps.1.description>
+  <HH_Guide_OpeningDay.steps.1.label>Warte auf die ersten Gäste. Sie kommen innerhalb von etwa drei Tagen.</HH_Guide_OpeningDay.steps.1.label>
+  <HH_Guide_OpeningDay.steps.2.description>Zahlungen landen in der Kasse und werden auf der Seite Übersicht gezählt.</HH_Guide_OpeningDay.steps.2.description>
+  <HH_Guide_OpeningDay.steps.2.label>Lass einen Gast für etwas bezahlen.</HH_Guide_OpeningDay.steps.2.label>
+  <HH_Guide_YourGuests.steps.0.description>Eine Zeile je Gast: Stimmung, Zufriedenheit, Budget und Abreise. Klicke auf eine Zeile, um zum Gast zu springen.</HH_Guide_YourGuests.steps.0.description>
+  <HH_Guide_YourGuests.steps.0.label>Öffne die Seite Gäste im Hearth &amp; Harbor-Tab.</HH_Guide_YourGuests.steps.0.label>
+  <HH_Guide_YourGuests.steps.1.description>Zeigt, was der Gast denkt, und lässt dich Grundversorgung, Begleiten oder Anwerben wählen.</HH_Guide_YourGuests.steps.1.description>
+  <HH_Guide_YourGuests.steps.1.label>Wähle einen Gast aus und öffne den Tab Gast.</HH_Guide_YourGuests.steps.1.label>
+  <HH_Guide_YourGuests.steps.2.label>Probiere bei einem Gast, den du magst, eine andere Betreuung aus.</HH_Guide_YourGuests.steps.2.label>
 </LanguageData>

@@ -8,4 +8,23 @@
   <HH_Guide_FirstVenue.description>간판 하나면 방이 사업장이 됩니다.</HH_Guide_FirstVenue.description>
   <HH_Guide_Bank.label>은행의 돈</HH_Guide_Bank.label>
   <HH_Guide_Bank.description>Silverline이 매출을 안전하게 보관하고, 손님이 카드로 결제할 수 있게 해 줍니다.</HH_Guide_Bank.description>
+  <HH_Guide_Bank.steps.0.description>선택 사항입니다. 계좌가 없으면 은행은 방해하지 않습니다.</HH_Guide_Bank.steps.0.description>
+  <HH_Guide_Bank.steps.0.label>은행 건물에서 실버라인 계좌를 개설하세요.</HH_Guide_Bank.steps.0.label>
+  <HH_Guide_Bank.steps.1.label>직접 입금을 켜서 금고의 돈이 계좌로 들어가게 하세요.</HH_Guide_Bank.steps.1.label>
+  <HH_Guide_Bank.steps.2.label>개요 페이지에서 잔액을 확인하세요.</HH_Guide_Bank.steps.2.label>
+  <HH_Guide_FirstVenue.steps.0.label>지붕이 있는 방에 영업 간판을 세우세요.</HH_Guide_FirstVenue.steps.0.label>
+  <HH_Guide_FirstVenue.steps.1.label>간판의 설치 탭을 열고 필수로 표시된 것을 모두 지으세요.</HH_Guide_FirstVenue.steps.1.label>
+  <HH_Guide_FirstVenue.steps.2.label>영업시간을 확인하세요. 손님은 영업 중에만 구매합니다.</HH_Guide_FirstVenue.steps.2.label>
+  <HH_Guide_FirstVenue.steps.3.label>첫 은화를 벌어 보세요.</HH_Guide_FirstVenue.steps.3.label>
+  <HH_Guide_OpeningDay.steps.0.description>손님은 맞이할 준비를 해 둔 뒤에야 찾아옵니다. 그 전까지는 바닐라와 똑같이 진행됩니다.</HH_Guide_OpeningDay.steps.0.description>
+  <HH_Guide_OpeningDay.steps.0.label>침대를 손님용 침대로 지정하거나, 지붕이 있는 방에 영업 간판을 세우세요.</HH_Guide_OpeningDay.steps.0.label>
+  <HH_Guide_OpeningDay.steps.1.description>일행이 오는 중이면 편지를 받습니다.</HH_Guide_OpeningDay.steps.1.description>
+  <HH_Guide_OpeningDay.steps.1.label>첫 손님을 기다리세요. 약 3일 안에 도착합니다.</HH_Guide_OpeningDay.steps.1.label>
+  <HH_Guide_OpeningDay.steps.2.description>결제 금액은 금고에 들어가고 개요 페이지에서 집계됩니다.</HH_Guide_OpeningDay.steps.2.description>
+  <HH_Guide_OpeningDay.steps.2.label>손님이 무언가에 돈을 내게 하세요.</HH_Guide_OpeningDay.steps.2.label>
+  <HH_Guide_YourGuests.steps.0.description>손님마다 한 줄: 기분, 만족도, 예산, 떠나는 시각. 줄을 클릭하면 해당 손님에게 이동합니다.</HH_Guide_YourGuests.steps.0.description>
+  <HH_Guide_YourGuests.steps.0.label>Hearth &amp; Harbor 탭에서 손님 페이지를 여세요.</HH_Guide_YourGuests.steps.0.label>
+  <HH_Guide_YourGuests.steps.1.description>손님의 생각을 보여 주고 기본, 동행, 영입 중에서 고를 수 있습니다.</HH_Guide_YourGuests.steps.1.description>
+  <HH_Guide_YourGuests.steps.1.label>손님을 선택하고 손님 탭을 여세요.</HH_Guide_YourGuests.steps.1.label>
+  <HH_Guide_YourGuests.steps.2.label>마음에 드는 손님에게 다른 응대 방식을 시도해 보세요.</HH_Guide_YourGuests.steps.2.label>
 </LanguageData>

@@ -4,24 +4,16 @@
   <SL_Asset_Mattress.description>Un compte d'épargne. L'argent repose dans un matelas très sûr et grossit un peu. En cas de ruée sur la banque, les retraits sont bloqués pendant deux jours.</SL_Asset_Mattress.description>
   <SL_Asset_OutlanderBond.label>Obligation d'infrastructure de l'Union des villes outlander</SL_Asset_OutlanderBond.label>
   <SL_Asset_OutlanderBond.description>Prêts à une union de villes outlander qui construit des routes, des puits et un pont très contesté. Paie à temps, jusqu'à ce qu'il ne le fasse plus. Après un défaut, on récupère environ un tiers.</SL_Asset_OutlanderBond.description>
-  <SL_Asset_EmpireWarBond.label>Bons de guerre de l'Empire</SL_Asset_EmpireWarBond.label>
-  <SL_Asset_EmpireWarBond.description>Des bons qui financent une guerre de l'Empire. En cas de victoire, ils grimpent ; en cas de défaite, ils valent un joli cadre. La guerre dure depuis longtemps, surtout dans les brochures.</SL_Asset_EmpireWarBond.description>
   <SL_Asset_Index.label>RimIndex 50</SL_Asset_Index.label>
   <SL_Asset_Index.description>Les cinquante plus grandes entreprises du Rim dans un seul produit. La référence pour tout le reste de cette page : le curseur de rentabilité est défini par ce que celui-ci rapporte en moyenne.</SL_Asset_Index.description>
   <SL_Asset_StockMicaton.label>MCTN, Ligue de Micaton</SL_Asset_StockMicaton.label>
   <SL_Asset_StockMicaton.description>Actions d'une ligue de villes outlander. Les chiffres trimestriels font bouger le cours ; vos relations avec la ligue aussi, un peu. Elle ne verse aucun dividende, mais envoie un calendrier ravissant.</SL_Asset_StockMicaton.description>
   <SL_Asset_StockTribal.label>HIDE, Coopérative Peaux et Foyer</SL_Asset_StockTribal.label>
   <SL_Asset_StockTribal.description>Actions d'une coopérative tribale qui vend des peaux, du bois de foyer et une quantité étonnante d'hospitalité. Très dépendante de la météo et de l'humeur d'un oncle très important.</SL_Asset_StockTribal.description>
-  <SL_Asset_StockEmpire.label>IMPR, Pompes impériales Ltd</SL_Asset_StockEmpire.label>
-  <SL_Asset_StockEmpire.description>La société derrière les cérémonies impériales : bannières, trompettes et minuscules couronnes. Les bénéfices dépendent du nombre de nobles froissés par si peu de chose.</SL_Asset_StockEmpire.description>
   <SL_Asset_StockColony.label>HHH, Hearth Harbor Holdings</SL_Asset_StockColony.label>
   <SL_Asset_StockColony.description>Une holding qui ne possède qu'une seule chose : l'idée que votre colonie est une destination. Réagit à votre richesse et aux raids que vous survivez. Vous avez intérêt à sa réussite, mais tous ceux qui ont lu ceci aussi.</SL_Asset_StockColony.description>
   <SL_Asset_GrowthFund.label>Fonds de croissance Glitterworld</SL_Asset_GrowthFund.label>
   <SL_Asset_GrowthFund.description>Un fonds activement géré. Les gestionnaires ont une brochure très impressionnante et un bateau. Leur talent est, en moyenne, légèrement négatif, et il a été fixé à la création du fonds.</SL_Asset_GrowthFund.description>
-  <SL_Asset_PietyBonds.label>Obligations de piété</SL_Asset_PietyBonds.label>
-  <SL_Asset_PietyBonds.description>Obligations adossées aux dons de dix-sept religions, chacune convaincue que les seize autres se trompent. Stables, solennelles et très légèrement suffisantes.</SL_Asset_PietyBonds.description>
-  <SL_Asset_RelicFutures.label>Contrats à terme sur reliques</SL_Asset_RelicFutures.label>
-  <SL_Asset_RelicFutures.description>Contrats à terme sur des reliques qui existent peut-être, à livrer par un coursier qui est peut-être un prophète. Le contrat a été béni.</SL_Asset_RelicFutures.description>
   <SL_Asset_RimCoin.label>RimCoin</SL_Asset_RimCoin.label>
   <SL_Asset_RimCoin.description>Une monnaie numérique faite entièrement d'électricité et de conviction. Varie de plusieurs pour cent par jour, fait des bonds que personne n'explique et se trouve sur une bourse déjà piratée. Et le sera encore.</SL_Asset_RimCoin.description>
   <SL_Asset_MemeThrumbo.label>$THRUMBO</SL_Asset_MemeThrumbo.label>

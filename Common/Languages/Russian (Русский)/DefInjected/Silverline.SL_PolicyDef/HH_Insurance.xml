@@ -27,9 +27,6 @@
   <SL_ClosedForRepairs.label>Закрыто на ремонт</SL_ClosedForRepairs.label>
   <SL_ClosedForRepairs.description>Когда ваше дело вынуждено закрыться, доход — нет.</SL_ClosedForRepairs.description>
   <SL_ClosedForRepairs.slogan>Не работает — не значит не платит взносы.</SL_ClosedForRepairs.slogan>
-  <SL_UnspeakableEvents.label>Приложение «Неописуемые события»</SL_UnspeakableEvents.label>
-  <SL_UnspeakableEvents.description>Для ущерба, который формулировки полиса не могут описать без юриста в комнате.</SL_UnspeakableEvents.description>
-  <SL_UnspeakableEvents.slogan>Некоторые вещи лучше застраховать, чем назвать.</SL_UnspeakableEvents.slogan>
   <SL_Wanderlust.label>Страхование путешествий «Жажда странствий»</SL_Wanderlust.label>
   <SL_Wanderlust.description>Для караванов: страховка, которая есть там, где вас нет. Начисляется за человека и день пути, только пока люди в дороге.</SL_Wanderlust.description>
   <SL_Wanderlust.slogan>Жаль, что вас здесь нет. Мы покроем ту часть, где вас нет.</SL_Wanderlust.slogan>

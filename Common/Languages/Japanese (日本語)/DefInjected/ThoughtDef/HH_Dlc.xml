@@ -1,49 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <HH_FaithForSale.stages.0.label>免罪符を売っている</HH_FaithForSale.stages.0.label>
-  <HH_FaithForSale.stages.0.description>彼らは赦しを、かぶの束のように公然と売っています。</HH_FaithForSale.stages.0.description>
-  <HH_FaithNotForSale.stages.0.label>階級を売っている</HH_FaithNotForSale.stages.0.label>
-  <HH_FaithNotForSale.stages.0.description>信仰は売り物ではないはずです。それなのに値段表があります。</HH_FaithNotForSale.stages.0.description>
-  <HH_BoughtMyWayOut.stages.0.label>金で切り抜けた</HH_BoughtMyWayOut.stages.0.label>
-  <HH_BoughtMyWayOut.stages.0.description>うまくいきました。ですが、代価を払ったのです。自分がどういう人間になったのか、よくわかっています。</HH_BoughtMyWayOut.stages.0.description>
-  <HH_PaidMyDues.stages.0.label>務めを果たした</HH_PaidMyDues.stages.0.label>
-  <HH_PaidMyDues.stages.0.description>務めは果たしました。帳簿は清らかで、良心も同様です。</HH_PaidMyDues.stages.0.description>
-  <HH_StingySoul.stages.0.label>けちな魂</HH_StingySoul.stages.0.label>
-  <HH_StingySoul.stages.0.description>一クァドルムもの間、務めを果たしていません。恥ずべきことです。</HH_StingySoul.stages.0.description>
-  <HH_AscensionMood.stages.0.label>階級I</HH_AscensionMood.stages.0.label>
-  <HH_AscensionMood.stages.0.description>階段の最初の一歩を踏み出しました。</HH_AscensionMood.stages.0.description>
-  <HH_AscensionMood.stages.1.label>階級II</HH_AscensionMood.stages.1.label>
-  <HH_AscensionMood.stages.1.description>二段目です。人々が私の肩書きを使い始めました。</HH_AscensionMood.stages.1.description>
-  <HH_AscensionMood.stages.2.label>階級III</HH_AscensionMood.stages.2.label>
-  <HH_AscensionMood.stages.2.description>三段目です。景色はすでに良くなりました。</HH_AscensionMood.stages.2.description>
-  <HH_AscensionMood.stages.3.label>階級IV</HH_AscensionMood.stages.3.label>
-  <HH_AscensionMood.stages.3.description>最後の段です。私の上にあるのは空だけです。</HH_AscensionMood.stages.3.description>
-  <HH_AscensionDisapproval.stages.0.label>買われた階級</HH_AscensionDisapproval.stages.0.label>
-  <HH_AscensionDisapproval.stages.0.description>あの階級は買われたものです。何の意味もありません。</HH_AscensionDisapproval.stages.0.description>
-  <HH_AscensionRespect.stages.0.label>上位の階級</HH_AscensionRespect.stages.0.label>
-  <HH_AscensionRespect.stages.0.description>あの人は私より高く登りました。それは尊敬に値します。</HH_AscensionRespect.stages.0.description>
-  <HH_PlaceToPray.stages.0.label>祈りの場所</HH_PlaceToPray.stages.0.label>
-  <HH_PlaceToPray.stages.0.description>祈りのための質素な片隅です。何もないよりはましです。</HH_PlaceToPray.stages.0.description>
-  <HH_PlaceToPray.stages.1.label>祈りの場所</HH_PlaceToPray.stages.1.label>
-  <HH_PlaceToPray.stages.1.description>静かで立派な礼拝堂です。ここでなら祈れます。</HH_PlaceToPray.stages.1.description>
-  <HH_PlaceToPray.stages.2.label>祈りの場所</HH_PlaceToPray.stages.2.label>
-  <HH_PlaceToPray.stages.2.description>故郷から遠く離れた、自分の信仰の見事な礼拝堂です。感謝しています。</HH_PlaceToPray.stages.2.description>
-  <HH_PlaceToPray.stages.3.label>祈りの場所</HH_PlaceToPray.stages.3.label>
-  <HH_PlaceToPray.stages.3.description>ふさわしい座席のある美しい礼拝堂です。私の信仰が認められました。</HH_PlaceToPray.stages.3.description>
-  <HH_PlaceToPray.stages.4.label>祈りの場所</HH_PlaceToPray.stages.4.label>
-  <HH_PlaceToPray.stages.4.description>素晴らしい。ここでは私の神のための家まで建ててくれました。この恩は忘れません。</HH_PlaceToPray.stages.4.description>
-  <HH_HereticShrine.stages.0.label>我が土地にある異端の祠</HH_HereticShrine.stages.0.label>
-  <HH_HereticShrine.stages.0.description>我が土地に、偽りの信仰の祠があります。</HH_HereticShrine.stages.0.description>
-  <HH_HereticShrine.stages.1.label>我が土地にある異端の祠</HH_HereticShrine.stages.1.label>
-  <HH_HereticShrine.stages.1.description>偽りの信仰の祠を、同胞が黙認しています。恥ずべきことです。</HH_HereticShrine.stages.1.description>
-  <HH_HereticShrine.stages.2.label>我が土地にある異端の祠</HH_HereticShrine.stages.2.label>
-  <HH_HereticShrine.stages.2.description>異端者のための祠を、我が家のすぐ隣に建てたのです。耐えられません。</HH_HereticShrine.stages.2.description>
-  <HH_ShrineRespected.stages.0.label>他の信仰が尊重されている</HH_ShrineRespected.stages.0.label>
-  <HH_ShrineRespected.stages.0.description>私たちは他の信仰のための場所を設けています。それが当然のあり方です。</HH_ShrineRespected.stages.0.description>
-  <HH_ShrineRespected.stages.1.label>他の信仰が尊重されている</HH_ShrineRespected.stages.1.label>
-  <HH_ShrineRespected.stages.1.description>通り過ぎるあらゆる信仰のための祠があります。それが当然のあり方です。</HH_ShrineRespected.stages.1.description>
-  <HH_ShrineRespected.stages.2.label>他の信仰が軽んじられている</HH_ShrineRespected.stages.2.label>
-  <HH_ShrineRespected.stages.2.description>間違ったことを信じる人々のために、なぜ祠を建てるのでしょうか。</HH_ShrineRespected.stages.2.description>
   <HH_LuckyStreak.stages.0.label>ツキの連続</HH_LuckyStreak.stages.0.label>
   <HH_LuckyStreak.stages.0.description>今夜はサイコロがずっと私に味方している。</HH_LuckyStreak.stages.0.description>
   <HH_OfCourseILost.stages.0.label>やっぱり負けた</HH_OfCourseILost.stages.0.label>

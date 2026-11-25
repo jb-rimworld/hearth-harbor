@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_FaithForSale.stages.0.label>indulgences en vente</HH_FaithForSale.stages.0.label>
+  <HH_FaithForSale.stages.0.description>Ils vendent le pardon à la vue de tous, comme des navets.</HH_FaithForSale.stages.0.description>
+  <HH_FaithNotForSale.stages.0.label>rang à vendre</HH_FaithNotForSale.stages.0.label>
+  <HH_FaithNotForSale.stages.0.description>La foi n'est pas à vendre. Et pourtant il y a une liste de prix.</HH_FaithNotForSale.stages.0.description>
+  <HH_BoughtMyWayOut.stages.0.label>je m'en suis tiré en payant</HH_BoughtMyWayOut.stages.0.label>
+  <HH_BoughtMyWayOut.stages.0.description>Ça a marché, mais je l'ai payé, et je sais exactement ce que cela fait de moi.</HH_BoughtMyWayOut.stages.0.description>
+  <HH_PaidMyDues.stages.0.label>à jour de mes cotisations</HH_PaidMyDues.stages.0.label>
+  <HH_PaidMyDues.stages.0.description>Mes cotisations sont payées. Les comptes sont propres, et ma conscience aussi.</HH_PaidMyDues.stages.0.description>
+  <HH_StingySoul.stages.0.label>âme avare</HH_StingySoul.stages.0.label>
+  <HH_StingySoul.stages.0.description>Tout un quadrum sans payer mes cotisations. J'ai de quoi avoir honte.</HH_StingySoul.stages.0.description>
+  <HH_AscensionMood.stages.0.label>rang I</HH_AscensionMood.stages.0.label>
+  <HH_AscensionMood.stages.0.description>J'ai franchi la première marche de l'échelle.</HH_AscensionMood.stages.0.description>
+  <HH_AscensionMood.stages.1.label>rang II</HH_AscensionMood.stages.1.label>
+  <HH_AscensionMood.stages.1.description>Le deuxième échelon. Les gens commencent à employer mon titre.</HH_AscensionMood.stages.1.description>
+  <HH_AscensionMood.stages.2.label>rang III</HH_AscensionMood.stages.2.label>
+  <HH_AscensionMood.stages.2.description>Le troisième échelon. La vue est déjà meilleure.</HH_AscensionMood.stages.2.description>
+  <HH_AscensionMood.stages.3.label>rang IV</HH_AscensionMood.stages.3.label>
+  <HH_AscensionMood.stages.3.description>Le dernier échelon. Personne au-dessus de moi, sinon le ciel.</HH_AscensionMood.stages.3.description>
+  <HH_AscensionDisapproval.stages.0.label>rang acheté</HH_AscensionDisapproval.stages.0.label>
+  <HH_AscensionDisapproval.stages.0.description>Ce rang, ils l'ont acheté. Il ne veut rien dire.</HH_AscensionDisapproval.stages.0.description>
+  <HH_AscensionRespect.stages.0.label>rang supérieur</HH_AscensionRespect.stages.0.label>
+  <HH_AscensionRespect.stages.0.description>Ils sont montés plus haut que moi. Je respecte cela.</HH_AscensionRespect.stages.0.description>
+  <HH_PlaceToPray.stages.0.label>un lieu pour prier</HH_PlaceToPray.stages.0.label>
+  <HH_PlaceToPray.stages.0.description>Un coin modeste pour la prière. Mieux que rien.</HH_PlaceToPray.stages.0.description>
+  <HH_PlaceToPray.stages.1.label>un lieu pour prier</HH_PlaceToPray.stages.1.label>
+  <HH_PlaceToPray.stages.1.description>Une chapelle calme et convenable. Je pourrais prier ici.</HH_PlaceToPray.stages.1.description>
+  <HH_PlaceToPray.stages.2.label>un lieu pour prier</HH_PlaceToPray.stages.2.label>
+  <HH_PlaceToPray.stages.2.description>Une belle chapelle de ma propre foi, loin de chez moi. Je suis reconnaissant.</HH_PlaceToPray.stages.2.description>
+  <HH_PlaceToPray.stages.3.label>un lieu pour prier</HH_PlaceToPray.stages.3.label>
+  <HH_PlaceToPray.stages.3.description>Une magnifique chapelle avec de vrais bancs. Ma foi a été remarquée.</HH_PlaceToPray.stages.3.description>
+  <HH_PlaceToPray.stages.4.label>un lieu pour prier</HH_PlaceToPray.stages.4.label>
+  <HH_PlaceToPray.stages.4.description>Splendide. On a bâti une maison pour mon dieu ici. Je m'en souviendrai.</HH_PlaceToPray.stages.4.description>
+  <HH_HereticShrine.stages.0.label>sanctuaire hérétique sur nos terres</HH_HereticShrine.stages.0.label>
+  <HH_HereticShrine.stages.0.description>Il y a un sanctuaire à une fausse foi sur nos terres.</HH_HereticShrine.stages.0.description>
+  <HH_HereticShrine.stages.1.label>sanctuaire hérétique sur nos terres</HH_HereticShrine.stages.1.label>
+  <HH_HereticShrine.stages.1.description>Un sanctuaire à une fausse foi, toléré par mon propre peuple. Honteux.</HH_HereticShrine.stages.1.description>
+  <HH_HereticShrine.stages.2.label>sanctuaire hérétique sur nos terres</HH_HereticShrine.stages.2.label>
+  <HH_HereticShrine.stages.2.description>On a bâti un sanctuaire pour des hérétiques à côté de notre maison. Je ne le supporte pas.</HH_HereticShrine.stages.2.description>
+  <HH_ShrineRespected.stages.0.label>autres croyances honorées</HH_ShrineRespected.stages.0.label>
+  <HH_ShrineRespected.stages.0.description>Nous faisons de la place aux autres croyances. C'est ainsi que cela doit être.</HH_ShrineRespected.stages.0.description>
+  <HH_ShrineRespected.stages.1.label>autres croyances honorées</HH_ShrineRespected.stages.1.label>
+  <HH_ShrineRespected.stages.1.description>Un sanctuaire pour chaque foi qui passe. C'est ainsi que cela doit être.</HH_ShrineRespected.stages.1.description>
+  <HH_ShrineRespected.stages.2.label>autres croyances méprisées</HH_ShrineRespected.stages.2.label>
+  <HH_ShrineRespected.stages.2.description>Pourquoi bâtir des sanctuaires pour des gens qui croient les mauvaises choses ?</HH_ShrineRespected.stages.2.description>
+</LanguageData>

@@ -4,24 +4,16 @@
   <SL_Asset_Mattress.description>Ein Sparkonto. Das Geld liegt in einer sehr sicheren Matratze und wächst ein bisschen. Bei einem Bankansturm sind Abhebungen zwei Tage lang gesperrt.</SL_Asset_Mattress.description>
   <SL_Asset_OutlanderBond.label>Infrastrukturanleihe der Außenländer-Union</SL_Asset_OutlanderBond.label>
   <SL_Asset_OutlanderBond.description>Kredite an eine Union von Außenländer-Städten, die Straßen, Brunnen und eine umstrittene Brücke baut. Zahlt pünktlich, bis es nicht mehr tut. Nach einem Zahlungsausfall bekommst du etwa ein Drittel zurück.</SL_Asset_OutlanderBond.description>
-  <SL_Asset_EmpireWarBond.label>Kriegsanleihen des Imperiums</SL_Asset_EmpireWarBond.label>
-  <SL_Asset_EmpireWarBond.description>Anleihen, die einen Krieg des Imperiums finanzieren. Endet der Krieg mit einem Sieg, schießen sie hoch; bei einer Niederlage sind sie einen netten Rahmen wert. Der Krieg dauert schon lange, hauptsächlich in den Broschüren.</SL_Asset_EmpireWarBond.description>
   <SL_Asset_Index.label>RimIndex 50</SL_Asset_Index.label>
   <SL_Asset_Index.description>Die fünfzig größten Unternehmen der Randwelten in einem Produkt. Der Maßstab für alles andere auf dieser Seite: Der Renditeregler ist dadurch definiert, was dieses Produkt im Schnitt abwirft.</SL_Asset_Index.description>
   <SL_Asset_StockMicaton.label>MCTN, Liga von Micaton</SL_Asset_StockMicaton.label>
   <SL_Asset_StockMicaton.description>Aktien einer Liga von Außenländer-Städten. Quartalszahlen bewegen den Kurs; deine Beziehungen zur Liga ein wenig auch. Sie zahlt keine Dividende, schickt aber einen hübschen Kalender.</SL_Asset_StockMicaton.description>
   <SL_Asset_StockTribal.label>HIDE, Fell-und-Herd-Genossenschaft</SL_Asset_StockTribal.label>
   <SL_Asset_StockTribal.description>Aktien einer Stammesgenossenschaft, die Felle, Feuerholz und erstaunlich viel Gastfreundschaft verkauft. Stark abhängig vom Wetter und von der Laune eines sehr großen Onkels.</SL_Asset_StockTribal.description>
-  <SL_Asset_StockEmpire.label>IMPR, Imperial Pageantry Ltd</SL_Asset_StockEmpire.label>
-  <SL_Asset_StockEmpire.description>Das Unternehmen hinter den imperialen Zeremonien: Banner, Trompeten und winzige Kronen. Die Gewinne hängen davon ab, wie viele Adlige sich von wie wenig beleidigt fühlen.</SL_Asset_StockEmpire.description>
   <SL_Asset_StockColony.label>HHH, Hearth Harbor Holdings</SL_Asset_StockColony.label>
   <SL_Asset_StockColony.description>Eine Holding, die genau eine Sache besitzt: die Idee, dass deine Siedlung ein Reiseziel ist. Reagiert auf deinen Wohlstand und auf Überfälle, die du überlebst. Du hast Anteil an ihrem Erfolg, aber jeder andere, der das hier gelesen hat, auch.</SL_Asset_StockColony.description>
   <SL_Asset_GrowthFund.label>Glitzerwelt-Wachstumsfonds</SL_Asset_GrowthFund.label>
   <SL_Asset_GrowthFund.description>Ein aktiv verwalteter Fonds. Die Manager haben eine sehr beeindruckende Broschüre und ein Boot. Ihr Können ist im Schnitt leicht negativ, und das wurde bei der Gründung des Fonds so festgelegt.</SL_Asset_GrowthFund.description>
-  <SL_Asset_PietyBonds.label>Frömmigkeitsanleihen</SL_Asset_PietyBonds.label>
-  <SL_Asset_PietyBonds.description>Anleihen, gedeckt durch die Spenden von siebzehn Glaubensrichtungen, die alle überzeugt sind, dass die anderen sechzehn es falsch machen. Stetig, feierlich und ganz leicht selbstgefällig.</SL_Asset_PietyBonds.description>
-  <SL_Asset_RelicFutures.label>Reliquien-Futures</SL_Asset_RelicFutures.label>
-  <SL_Asset_RelicFutures.description>Terminkontrakte auf Reliquien, die existieren können oder auch nicht, zu liefern von einem Kurier, der ein Prophet sein kann oder auch nicht. Der Vertrag wurde gesegnet.</SL_Asset_RelicFutures.description>
   <SL_Asset_RimCoin.label>RimCoin</SL_Asset_RimCoin.label>
   <SL_Asset_RimCoin.description>Eine digitale Münze, die vollständig aus Strom und Überzeugung besteht. Schwankt um mehrere Prozent am Tag, macht Sprünge, die niemand erklären kann, und liegt an einer Börse, die schon einmal gehackt wurde. Und es wieder wird.</SL_Asset_RimCoin.description>
   <SL_Asset_MemeThrumbo.label>$THRUMBO</SL_Asset_MemeThrumbo.label>

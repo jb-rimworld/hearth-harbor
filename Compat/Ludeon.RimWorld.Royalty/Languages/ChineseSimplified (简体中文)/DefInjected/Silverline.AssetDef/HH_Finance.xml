@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_EmpireWarBond.label>帝国战争债券</SL_Asset_EmpireWarBond.label>
+  <SL_Asset_EmpireWarBond.description>为帝国某场战争融资的债券。战争以胜利告终时它们会暴涨，战败时则只值一个漂亮的相框。这场战争已经打了很久，主要存在于宣传册里。</SL_Asset_EmpireWarBond.description>
+  <SL_Asset_StockEmpire.label>IMPR，帝国典礼有限公司</SL_Asset_StockEmpire.label>
+  <SL_Asset_StockEmpire.description>帝国典礼背后的公司：旗帜、号角和小小的王冠。利润取决于有多少贵族会因得到的太少而感到冒犯。</SL_Asset_StockEmpire.description>
+</LanguageData>

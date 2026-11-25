@@ -48,10 +48,10 @@ def main():
     OUT.mkdir(exist_ok=True)
 
     # ---- main mod
-    for d in ["About", "Common"] + VERSIONS:
+    for d in ["About", "Common", "Compat"] + VERSIONS:   # Compat: translations of optional content, see tools/i18n/split_optional.py
         if (R / d).exists():
             shutil.copytree(R / d, MAIN / d, ignore=shutil.ignore_patterns("*.pdb", ".DS_Store", "Silverline_*"))
-    for f in ["LoadFolders.xml", "LICENSE", "README.md", "AGENTS.md", "CREDITS.md"]:
+    for f in ["LoadFolders.xml", "LICENSE", "README.md", "CHANGELOG.md", "AGENTS.md", "CREDITS.md"]:
         if (R / f).exists():
             shutil.copy2(R / f, MAIN / f)
 
@@ -87,11 +87,6 @@ def main():
             shutil.copy2(src, BANK / "About" / extra)
     if (R / "About" / "Silverline_PublishedFileId.txt").exists():
         shutil.copy2(R / "About" / "Silverline_PublishedFileId.txt", BANK / "About" / "PublishedFileId.txt")
-    lf = ['<?xml version="1.0" encoding="utf-8"?>', "<loadFolders>"]
-    for v in VERSIONS:
-        lf.append(f'  <v{v}><li>/</li><li>Content/Always</li><li IfModNotActive="juliusberger00.hearthharbor">Content/Common</li><li IfModNotActive="juliusberger00.hearthharbor">Content/{v}</li></v{v}>')
-    lf.append("</loadFolders>")
-    (BANK / "LoadFolders.xml").write_text("\n".join(lf) + "\n", encoding="utf-8")
     # Always-loaded stub: with Hearth & Harbor active every other content folder is skipped, and RimWorld would log
     # "did not load any content" (red error). One tiny texture under a Silverline-only path counts as content.
     stub = BANK / "Content" / "Always" / "Textures" / "Silverline" / "Stub.png"
@@ -105,27 +100,56 @@ def main():
     for d in BANK_DEF_DIRS:
         if (R / "Common" / "Defs" / d).exists():
             shutil.copytree(R / "Common" / "Defs" / d, C / "Defs" / d)
-    for lang in (R / "Common" / "Languages").iterdir():
-        for f in BANK_LANG:
-            src = lang / "Keyed" / f
-            if src.exists():
-                (C / "Languages" / lang.name / "Keyed").mkdir(parents=True, exist_ok=True)
-                shutil.copy2(src, C / "Languages" / lang.name / "Keyed" / f)
-        di = lang / "DefInjected"
-        if di.is_dir():
-            for sub in di.iterdir():
+    # defs the bank package really ships: a translation is only taken along when its def is (1.1.1: the prefix alone also took
+    # HH_BankFeeFactor, a stat of the DLC folder, and every language but English then reported two load errors)
+    bank_defs = set()
+    for xf in (C / "Defs").rglob("*.xml"):
+        bank_defs.update(re.findall(r"<defName>\s*([^<\s]+)\s*</defName>", xf.read_text(encoding="utf-8")))
+
+    def copy_languages(src_root: Path, dst_root: Path, keyed: bool):
+        """Languages of one load folder (Common, or Compat/<ids>: translations of content that needs a DLC or another mod)."""
+        for lang in sorted(src_root.iterdir()):
+            if keyed:
+                for f in BANK_LANG:
+                    src = lang / "Keyed" / f
+                    if src.exists():
+                        (dst_root / lang.name / "Keyed").mkdir(parents=True, exist_ok=True)
+                        shutil.copy2(src, dst_root / lang.name / "Keyed" / f)
+            di = lang / "DefInjected"
+            if not di.is_dir():
+                continue
+            for sub in sorted(di.iterdir()):
                 if not sub.is_dir():
                     continue
-                dst = C / "Languages" / lang.name / "DefInjected" / sub.name
+                dst = dst_root / lang.name / "DefInjected" / sub.name
                 if sub.name.startswith("Silverline."):
                     shutil.copytree(sub, dst)
                     continue
-                for xf in sub.glob("*.xml"):
+                for xf in sorted(sub.glob("*.xml")):
                     txt = xf.read_text(encoding="utf-8")
-                    keep = [m.group(0) for m in re.finditer(r"^\s*<([A-Za-z0-9_]+)\.[^>]*>.*?</\1\.[^>]*>\s*$", txt, flags=re.M | re.S) if m.group(1).startswith(BANK_DEFINJ_PREFIX)]
+                    keep = [m.group(0) for m in re.finditer(r"^\s*<([A-Za-z0-9_]+)\.[^>]*>.*?</\1\.[^>]*>\s*$", txt, flags=re.M | re.S)
+                            if m.group(1).startswith(BANK_DEFINJ_PREFIX) and m.group(1) in bank_defs]
                     if keep:
                         dst.mkdir(parents=True, exist_ok=True)
                         (dst / xf.name).write_text('<?xml version="1.0" encoding="utf-8"?>\n<LanguageData>\n' + "\n".join(k.rstrip() for k in keep) + "\n</LanguageData>\n", encoding="utf-8")
+
+    copy_languages(R / "Common" / "Languages", C / "Languages", keyed=True)
+    compat = []   # [(folder name, package ids)] of the conditional folders that hold something for the bank
+    for cf in sorted((R / "Compat").iterdir()) if (R / "Compat").exists() else []:
+        if (cf / "Languages").is_dir():
+            dst = BANK / "Content" / "Compat" / cf.name / "Languages"
+            copy_languages(cf / "Languages", dst, keyed=False)
+            if dst.exists():
+                compat.append((cf.name, cf.name.replace("+", ",")))
+    lf = ['<?xml version="1.0" encoding="utf-8"?>', "<loadFolders>"]
+    for v in VERSIONS:
+        lf.append(f"  <v{v}>")
+        lf += ["    <li>/</li>", "    <li>Content/Always</li>", '    <li IfModNotActive="juliusberger00.hearthharbor">Content/Common</li>',
+               f'    <li IfModNotActive="juliusberger00.hearthharbor">Content/{v}</li>']
+        lf += [f'    <li IfModActive="{ids}" IfModNotActive="juliusberger00.hearthharbor">Content/Compat/{name}</li>' for name, ids in compat]
+        lf.append(f"  </v{v}>")
+    lf.append("</loadFolders>")
+    (BANK / "LoadFolders.xml").write_text("\n".join(lf) + "\n", encoding="utf-8")
     for t in BANK_TEX:
         if (R / "Common" / "Textures" / t).exists():
             shutil.copytree(R / "Common" / "Textures" / t, C / "Textures" / t)
@@ -138,6 +162,8 @@ def main():
         for dll in ("Hearth.Core.dll", "Silverline.dll"):
             shutil.copy2(R / v / "Assemblies" / dll, BANK / "Content" / v / "Assemblies" / dll)
     shutil.copy2(R / "LICENSE", BANK / "LICENSE"); shutil.copy2(R / "CREDITS.md", BANK / "CREDITS.md")
+    if (R / "CHANGELOG.md").exists():
+        shutil.copy2(R / "CHANGELOG.md", BANK / "CHANGELOG.md")
 
     # ---- byte identity
     bad = []
@@ -145,7 +171,8 @@ def main():
         for dll in ("Hearth.Core.dll", "Silverline.dll"):
             if sha(MAIN / v / "Assemblies" / dll) != sha(BANK / "Content" / v / "Assemblies" / dll):
                 bad.append(f"{v}/{dll}")
-    for f in (BANK / "Content" / "Common").rglob("*"):
+    shared = list((BANK / "Content" / "Common").rglob("*")) + list((BANK / "Content" / "Compat").rglob("*"))
+    for f in shared:
         if f.is_file() and not ("DefInjected" in f.parts and not any(p.startswith("Silverline.") for p in f.parts)):
             rel = f.relative_to(BANK / "Content")
             if not (MAIN / rel).exists() or sha(MAIN / rel) != sha(f):

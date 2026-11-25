@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_FaithForSale.stages.0.label>면죄부 판매</HH_FaithForSale.stages.0.label>
+  <HH_FaithForSale.stages.0.description>그들은 순무처럼 공공연하게 용서를 팝니다.</HH_FaithForSale.stages.0.description>
+  <HH_FaithNotForSale.stages.0.label>계급 판매</HH_FaithNotForSale.stages.0.label>
+  <HH_FaithNotForSale.stages.0.description>신앙은 팔 것이 아닙니다. 그런데도 가격표가 있습니다.</HH_FaithNotForSale.stages.0.description>
+  <HH_BoughtMyWayOut.stages.0.label>돈으로 빠져나왔다</HH_BoughtMyWayOut.stages.0.label>
+  <HH_BoughtMyWayOut.stages.0.description>효과는 있었지만 대가를 치렀고, 그것이 나를 어떤 사람으로 만드는지 정확히 압니다.</HH_BoughtMyWayOut.stages.0.description>
+  <HH_PaidMyDues.stages.0.label>회비를 냈다</HH_PaidMyDues.stages.0.label>
+  <HH_PaidMyDues.stages.0.description>회비를 냈습니다. 장부는 깨끗하고, 양심도 그렇습니다.</HH_PaidMyDues.stages.0.description>
+  <HH_StingySoul.stages.0.label>인색한 영혼</HH_StingySoul.stages.0.label>
+  <HH_StingySoul.stages.0.description>한 분기 내내 회비를 내지 않았습니다. 부끄러워해야 합니다.</HH_StingySoul.stages.0.description>
+  <HH_AscensionMood.stages.0.label>계급 I</HH_AscensionMood.stages.0.label>
+  <HH_AscensionMood.stages.0.description>사다리의 첫 계단을 올랐습니다.</HH_AscensionMood.stages.0.description>
+  <HH_AscensionMood.stages.1.label>계급 II</HH_AscensionMood.stages.1.label>
+  <HH_AscensionMood.stages.1.description>두 번째 계단. 사람들이 내 직함을 쓰기 시작합니다.</HH_AscensionMood.stages.1.description>
+  <HH_AscensionMood.stages.2.label>계급 III</HH_AscensionMood.stages.2.label>
+  <HH_AscensionMood.stages.2.description>세 번째 계단. 전망이 벌써 더 좋습니다.</HH_AscensionMood.stages.2.description>
+  <HH_AscensionMood.stages.3.label>계급 IV</HH_AscensionMood.stages.3.label>
+  <HH_AscensionMood.stages.3.description>마지막 계단. 나보다 위에는 하늘밖에 없습니다.</HH_AscensionMood.stages.3.description>
+  <HH_AscensionDisapproval.stages.0.label>산 계급</HH_AscensionDisapproval.stages.0.label>
+  <HH_AscensionDisapproval.stages.0.description>그들은 그 계급을 샀습니다. 아무 의미도 없습니다.</HH_AscensionDisapproval.stages.0.description>
+  <HH_AscensionRespect.stages.0.label>더 높은 계급</HH_AscensionRespect.stages.0.label>
+  <HH_AscensionRespect.stages.0.description>그들은 나보다 높이 올라갔습니다. 존경합니다.</HH_AscensionRespect.stages.0.description>
+  <HH_PlaceToPray.stages.0.label>기도할 곳</HH_PlaceToPray.stages.0.label>
+  <HH_PlaceToPray.stages.0.description>기도를 위한 소박한 구석. 없는 것보다는 낫습니다.</HH_PlaceToPray.stages.0.description>
+  <HH_PlaceToPray.stages.1.label>기도할 곳</HH_PlaceToPray.stages.1.label>
+  <HH_PlaceToPray.stages.1.description>조용하고 괜찮은 예배당. 여기서 기도할 수 있습니다.</HH_PlaceToPray.stages.1.description>
+  <HH_PlaceToPray.stages.2.label>기도할 곳</HH_PlaceToPray.stages.2.label>
+  <HH_PlaceToPray.stages.2.description>먼 타지에서 만난 내 신앙의 좋은 예배당. 감사합니다.</HH_PlaceToPray.stages.2.description>
+  <HH_PlaceToPray.stages.3.label>기도할 곳</HH_PlaceToPray.stages.3.label>
+  <HH_PlaceToPray.stages.3.description>적절한 좌석이 있는 아름다운 예배당. 내 신앙이 존중받았습니다.</HH_PlaceToPray.stages.3.description>
+  <HH_PlaceToPray.stages.4.label>기도할 곳</HH_PlaceToPray.stages.4.label>
+  <HH_PlaceToPray.stages.4.description>훌륭합니다. 여기에 내 신을 위한 집을 지어 주었군요. 이 일을 기억하겠습니다.</HH_PlaceToPray.stages.4.description>
+  <HH_HereticShrine.stages.0.label>우리 땅의 이단 신전</HH_HereticShrine.stages.0.label>
+  <HH_HereticShrine.stages.0.description>우리 땅에 거짓 신앙의 신전이 있습니다.</HH_HereticShrine.stages.0.description>
+  <HH_HereticShrine.stages.1.label>우리 땅의 이단 신전</HH_HereticShrine.stages.1.label>
+  <HH_HereticShrine.stages.1.description>거짓 신앙의 신전인데 우리 백성이 용인하고 있습니다. 부끄럽습니다.</HH_HereticShrine.stages.1.description>
+  <HH_HereticShrine.stages.2.label>우리 땅의 이단 신전</HH_HereticShrine.stages.2.label>
+  <HH_HereticShrine.stages.2.description>그들은 우리 집 옆에 이단자들을 위한 신전을 지었습니다. 견딜 수 없습니다.</HH_HereticShrine.stages.2.description>
+  <HH_ShrineRespected.stages.0.label>다른 신앙을 존중함</HH_ShrineRespected.stages.0.label>
+  <HH_ShrineRespected.stages.0.description>다른 신앙을 위한 자리를 마련합니다. 원래 그래야 합니다.</HH_ShrineRespected.stages.0.description>
+  <HH_ShrineRespected.stages.1.label>다른 신앙을 존중함</HH_ShrineRespected.stages.1.label>
+  <HH_ShrineRespected.stages.1.description>지나가는 모든 신앙을 위한 신전. 원래 그래야 합니다.</HH_ShrineRespected.stages.1.description>
+  <HH_ShrineRespected.stages.2.label>다른 신앙을 경멸함</HH_ShrineRespected.stages.2.label>
+  <HH_ShrineRespected.stages.2.description>잘못된 것을 믿는 사람들을 위해 왜 신전을 짓는 거지?</HH_ShrineRespected.stages.2.description>
+</LanguageData>

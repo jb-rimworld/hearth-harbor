@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_GrilledWholeFish.label>рыба целиком на гриле</HH_Dish_GrilledWholeFish.label>
+  <HH_Dish_GrilledWholeFish.description>Целая рыба, немного соли и никаких извинений перед рыбой.</HH_Dish_GrilledWholeFish.description>
+  <HH_Dish_FishStew.label>рыбная похлёбка</HH_Dish_FishStew.label>
+  <HH_Dish_FishStew.description>Всё, что плавает, рано или поздно оказывается здесь.</HH_Dish_FishStew.description>
+  <HH_Dish_SmokedFishFillet.label>филе копчёной рыбы</HH_Dish_SmokedFishFillet.label>
+  <HH_Dish_SmokedFishFillet.description>Филе дня, копчёное, пока не забыло про реку.</HH_Dish_SmokedFishFillet.description>
+  <HH_Dish_SashimiPlate.label>тарелка сашими</HH_Dish_SashimiPlate.label>
+  <HH_Dish_SashimiPlate.description>Сырая рыба, тонко нарезанная, и крошечная моральная дилемма.</HH_Dish_SashimiPlate.description>
+  <HH_Dish_FishTacos.label>рыбные тако</HH_Dish_FishTacos.label>
+  <HH_Dish_FishTacos.description>Рыба в лепёшке, доставлена колонистом, который бежал всю дорогу.</HH_Dish_FishTacos.description>
+</LanguageData>

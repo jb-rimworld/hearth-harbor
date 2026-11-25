@@ -27,9 +27,6 @@
   <SL_ClosedForRepairs.label>Fermé pour travaux</SL_ClosedForRepairs.label>
   <SL_ClosedForRepairs.description>Lorsque votre commerce doit fermer, le revenu, lui, ne ferme pas.</SL_ClosedForRepairs.description>
   <SL_ClosedForRepairs.slogan>Hors service n'est pas hors prime.</SL_ClosedForRepairs.slogan>
-  <SL_UnspeakableEvents.label>Avenant aux événements innommables</SL_UnspeakableEvents.label>
-  <SL_UnspeakableEvents.description>Pour les dommages que la formulation de la police ne peut décrire sans un avocat dans la pièce.</SL_UnspeakableEvents.description>
-  <SL_UnspeakableEvents.slogan>Certaines choses sont mieux assurées que nommées.</SL_UnspeakableEvents.slogan>
   <SL_Wanderlust.label>Couverture voyage Wanderlust</SL_Wanderlust.label>
   <SL_Wanderlust.description>Pour les caravanes : une assurance présente quand vous ne l'êtes pas. Facturée par tête et par jour de voyage, uniquement pendant que les gens sont sur la route.</SL_Wanderlust.description>
   <SL_Wanderlust.slogan>Dommage que vous ne soyez pas là. Nous couvrons la partie où vous n'êtes pas.</SL_Wanderlust.slogan>

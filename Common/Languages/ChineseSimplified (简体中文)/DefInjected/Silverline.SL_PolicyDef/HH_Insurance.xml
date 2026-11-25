@@ -27,9 +27,6 @@
   <SL_ClosedForRepairs.label>维修停业</SL_ClosedForRepairs.label>
   <SL_ClosedForRepairs.description>当你的生意不得不停业时，收入并不停。</SL_ClosedForRepairs.description>
   <SL_ClosedForRepairs.slogan>停用不等于停缴保费。</SL_ClosedForRepairs.slogan>
-  <SL_UnspeakableEvents.label>无法言说事件附加条款</SL_UnspeakableEvents.label>
-  <SL_UnspeakableEvents.description>针对保单措辞若没有律师在场便无法描述的损害。</SL_UnspeakableEvents.description>
-  <SL_UnspeakableEvents.slogan>有些事，宁可投保也不宜点名。</SL_UnspeakableEvents.slogan>
   <SL_Wanderlust.label>漫游者旅行保险</SL_Wanderlust.label>
   <SL_Wanderlust.description>为商队提供：你不在时依然在场的保险。按人头及旅行日计费，只在人们上路时生效。</SL_Wanderlust.description>
   <SL_Wanderlust.slogan>想念你。我们会承保你不在的那部分。</SL_Wanderlust.slogan>

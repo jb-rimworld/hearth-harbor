@@ -50,6 +50,9 @@ def main():
             d.mkdir(parents=True, exist_ok=True)
             (d / f"HH_{mod}.xml").write_text('<?xml version="1.0" encoding="utf-8"?>\n<LanguageData>\n' + "\n".join(lines) + "\n</LanguageData>\n", encoding="utf-8")
     print(f"{lang}: written; {len(review)} strings kept in English for review")
+    # this writes everything to Common; translations of optional content (MayRequire defs) then move to their conditional folder
+    import subprocess
+    subprocess.run([sys.executable, str(R / "tools" / "i18n" / "split_optional.py")], check=True)
     if review:
         (R / "tools" / "i18n" / f"review_{lang.split(' ')[0]}.txt").write_text("\n".join(review) + "\n", encoding="utf-8")
 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_EmpireWarBond.label>Títulos de Guerra do Império</SL_Asset_EmpireWarBond.label>
+  <SL_Asset_EmpireWarBond.description>Títulos que financiam uma guerra do Império. Quando a guerra termina em vitória, disparam; em derrota, valem um belo quadro na parede. A guerra já dura muito tempo, principalmente nos folhetos.</SL_Asset_EmpireWarBond.description>
+  <SL_Asset_StockEmpire.label>IMPR, Pompas Imperiais Ltda.</SL_Asset_StockEmpire.label>
+  <SL_Asset_StockEmpire.description>A empresa por trás das cerimônias imperiais: bandeiras, trombetas e pequenas coroas. Os lucros dependem de quantos nobres se ofendem com o quão pouco.</SL_Asset_StockEmpire.description>
+</LanguageData>

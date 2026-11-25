@@ -27,9 +27,6 @@
   <SL_ClosedForRepairs.label>Fechado para Reparos</SL_ClosedForRepairs.label>
   <SL_ClosedForRepairs.description>Quando seu negócio tem que fechar, a renda não fecha.</SL_ClosedForRepairs.description>
   <SL_ClosedForRepairs.slogan>Fora de serviço não é fora do prêmio.</SL_ClosedForRepairs.slogan>
-  <SL_UnspeakableEvents.label>Adicional de Eventos Inomináveis</SL_UnspeakableEvents.label>
-  <SL_UnspeakableEvents.description>Para danos que o texto da apólice não consegue descrever sem um advogado na sala.</SL_UnspeakableEvents.description>
-  <SL_UnspeakableEvents.slogan>Algumas coisas são melhor seguradas do que nomeadas.</SL_UnspeakableEvents.slogan>
   <SL_Wanderlust.label>Seguro de Viagem Wanderlust</SL_Wanderlust.label>
   <SL_Wanderlust.description>Para caravanas: um seguro que está lá quando você não está. Cobrado por cabeça e dia de viagem, somente enquanto as pessoas estão na estrada.</SL_Wanderlust.description>
   <SL_Wanderlust.slogan>Queria que estivesse aqui. Cobrimos a parte em que você não está.</SL_Wanderlust.slogan>

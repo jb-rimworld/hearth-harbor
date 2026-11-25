@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_EmpireWarBond.label>Военные облигации Империи</SL_Asset_EmpireWarBond.label>
+  <SL_Asset_EmpireWarBond.description>Облигации, финансирующие войну Империи. В случае победы подскакивают, при поражении стоят красивую рамку. Война идёт уже очень долго, в основном в брошюрах.</SL_Asset_EmpireWarBond.description>
+  <SL_Asset_StockEmpire.label>IMPR, Имперские церемонии ООО</SL_Asset_StockEmpire.label>
+  <SL_Asset_StockEmpire.description>Компания, стоящая за имперскими церемониями: знамёна, трубы и крошечные короны. Прибыль зависит от того, сколько знати оскорбляется малостью.</SL_Asset_StockEmpire.description>
+</LanguageData>

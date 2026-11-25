@@ -1,49 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <HH_FaithForSale.stages.0.label>赎罪券出售中</HH_FaithForSale.stages.0.label>
-  <HH_FaithForSale.stages.0.description>他们公开出售宽恕，就像卖萝卜一样。</HH_FaithForSale.stages.0.description>
-  <HH_FaithNotForSale.stages.0.label>身份出售中</HH_FaithNotForSale.stages.0.label>
-  <HH_FaithNotForSale.stages.0.description>信仰不是待售品。可偏偏有一张价目表。</HH_FaithNotForSale.stages.0.description>
-  <HH_BoughtMyWayOut.stages.0.label>我用钱买了出路</HH_BoughtMyWayOut.stages.0.label>
-  <HH_BoughtMyWayOut.stages.0.description>确实有效，但我是花钱买的，而我清楚这让我成了什么人。</HH_BoughtMyWayOut.stages.0.description>
-  <HH_PaidMyDues.stages.0.label>我缴清了我的份额</HH_PaidMyDues.stages.0.label>
-  <HH_PaidMyDues.stages.0.description>我的份额已经缴清。账目干净，良心也一样。</HH_PaidMyDues.stages.0.description>
-  <HH_StingySoul.stages.0.label>吝啬的灵魂</HH_StingySoul.stages.0.label>
-  <HH_StingySoul.stages.0.description>整整一季没有缴纳我的份额。我应该感到羞愧。</HH_StingySoul.stages.0.description>
-  <HH_AscensionMood.stages.0.label>一级身份</HH_AscensionMood.stages.0.label>
-  <HH_AscensionMood.stages.0.description>我已踏上阶梯的第一级。</HH_AscensionMood.stages.0.description>
-  <HH_AscensionMood.stages.1.label>二级身份</HH_AscensionMood.stages.1.label>
-  <HH_AscensionMood.stages.1.description>阶梯的第二级。人们开始称呼我的头衔了。</HH_AscensionMood.stages.1.description>
-  <HH_AscensionMood.stages.2.label>三级身份</HH_AscensionMood.stages.2.label>
-  <HH_AscensionMood.stages.2.description>阶梯的第三级。视野已经好多了。</HH_AscensionMood.stages.2.description>
-  <HH_AscensionMood.stages.3.label>四级身份</HH_AscensionMood.stages.3.label>
-  <HH_AscensionMood.stages.3.description>阶梯的最后一级。我之上只剩天空。</HH_AscensionMood.stages.3.description>
-  <HH_AscensionDisapproval.stages.0.label>买来的身份</HH_AscensionDisapproval.stages.0.label>
-  <HH_AscensionDisapproval.stages.0.description>他们买下了那个身份。那毫无意义。</HH_AscensionDisapproval.stages.0.description>
-  <HH_AscensionRespect.stages.0.label>更高的身份</HH_AscensionRespect.stages.0.label>
-  <HH_AscensionRespect.stages.0.description>他们攀得比我高。我尊重这一点。</HH_AscensionRespect.stages.0.description>
-  <HH_PlaceToPray.stages.0.label>一处祈祷之地</HH_PlaceToPray.stages.0.label>
-  <HH_PlaceToPray.stages.0.description>一个简朴的祈祷角落。总比没有强。</HH_PlaceToPray.stages.0.description>
-  <HH_PlaceToPray.stages.1.label>一处祈祷之地</HH_PlaceToPray.stages.1.label>
-  <HH_PlaceToPray.stages.1.description>一座安静体面的礼拜堂。我可以在这里祈祷。</HH_PlaceToPray.stages.1.description>
-  <HH_PlaceToPray.stages.2.label>一处祈祷之地</HH_PlaceToPray.stages.2.label>
-  <HH_PlaceToPray.stages.2.description>远离故土的一座像样的本信仰礼拜堂。我心怀感激。</HH_PlaceToPray.stages.2.description>
-  <HH_PlaceToPray.stages.3.label>一处祈祷之地</HH_PlaceToPray.stages.3.label>
-  <HH_PlaceToPray.stages.3.description>一座带有像样座椅的美丽礼拜堂。我的信仰被看见了。</HH_PlaceToPray.stages.3.description>
-  <HH_PlaceToPray.stages.4.label>一处祈祷之地</HH_PlaceToPray.stages.4.label>
-  <HH_PlaceToPray.stages.4.description>太棒了。他们在这里为我的神修建了一座房子。我会记住这件事。</HH_PlaceToPray.stages.4.description>
-  <HH_HereticShrine.stages.0.label>自家土地上的异端神龛</HH_HereticShrine.stages.0.label>
-  <HH_HereticShrine.stages.0.description>我们的土地上有一座供奉伪信仰的神龛。</HH_HereticShrine.stages.0.description>
-  <HH_HereticShrine.stages.1.label>自家土地上的异端神龛</HH_HereticShrine.stages.1.label>
-  <HH_HereticShrine.stages.1.description>一座供奉伪信仰的神龛，竟被我自己的人容忍。可耻。</HH_HereticShrine.stages.1.description>
-  <HH_HereticShrine.stages.2.label>自家土地上的异端神龛</HH_HereticShrine.stages.2.label>
-  <HH_HereticShrine.stages.2.description>他们在我们的住所旁边为异端修建了神龛。我无法忍受。</HH_HereticShrine.stages.2.description>
-  <HH_ShrineRespected.stages.0.label>其他信仰受到尊重</HH_ShrineRespected.stages.0.label>
-  <HH_ShrineRespected.stages.0.description>我们为途经的其他信仰留出空间。本该如此。</HH_ShrineRespected.stages.0.description>
-  <HH_ShrineRespected.stages.1.label>其他信仰受到尊重</HH_ShrineRespected.stages.1.label>
-  <HH_ShrineRespected.stages.1.description>为每一种途经的信仰设一座神龛。本该如此。</HH_ShrineRespected.stages.1.description>
-  <HH_ShrineRespected.stages.2.label>其他信仰遭鄙视</HH_ShrineRespected.stages.2.label>
-  <HH_ShrineRespected.stages.2.description>为什么要为那些信奉错误事物的人修建神龛？</HH_ShrineRespected.stages.2.description>
   <HH_LuckyStreak.stages.0.label>手气正旺</HH_LuckyStreak.stages.0.label>
   <HH_LuckyStreak.stages.0.description>今晚骰子一直朝我这边落。</HH_LuckyStreak.stages.0.description>
   <HH_OfCourseILost.stages.0.label>果然输了</HH_OfCourseILost.stages.0.label>

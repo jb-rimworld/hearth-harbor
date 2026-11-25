@@ -10,7 +10,7 @@ apply: updates the language files in place: a key that already exists in some fi
        DefInjected/<Type>/HH_<Module>.xml); keys that no longer exist in English are removed. Placeholders ({0}, [token],
        <color>) must match the English text, else the English text is used and the key is listed in delta/review_<code>.txt.
 """
-import json, re, sys
+import json, re, subprocess, sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -34,8 +34,24 @@ def load_src(d):
 
 
 def lang_files(lang):
+    """Every file of a language: Common/Languages/<lang> plus the conditional folders Compat/<ids>/Languages/<lang> (translations of
+    content that needs a DLC or another mod; tools/i18n/split_optional.py moves them there)."""
     base = R / "Common" / "Languages" / lang
-    return list((base / "Keyed").glob("*.xml")) + list((base / "DefInjected").rglob("*.xml")), base
+    files = list((base / "Keyed").glob("*.xml")) + list((base / "DefInjected").rglob("*.xml"))
+    for c in sorted((R / "Compat").glob("*/Languages/" + glob_escape(lang) + "/DefInjected")) if (R / "Compat").exists() else []:
+        files += list(c.rglob("*.xml"))
+    return files, base
+
+
+def glob_escape(s):
+    return re.sub(r"([\[\]*?])", r"[\1]", s)
+
+
+def def_type(f):
+    """DefInjected folder of a file as the game sees it: the path below .../DefInjected (Common or Compat)."""
+    parts = f.parent.parts
+    i = len(parts) - 1 - parts[::-1].index("DefInjected")
+    return "/".join(parts[i + 1:])
 
 
 def lang_entries(lang):
@@ -49,7 +65,7 @@ def lang_entries(lang):
         if f.parent.name == "Keyed":
             for e in root: have["k:" + e.tag] = f
         else:
-            t = f.parent.relative_to(base / "DefInjected").as_posix()
+            t = def_type(f)
             for e in root: have[f"d:{t}/{e.tag}"] = f
     return have
 
@@ -77,11 +93,11 @@ def write_xml(path, pairs):
     path.write_text('<?xml version="1.0" encoding="utf-8"?>\n<LanguageData>\n' + body + ("\n" if body else "") + "</LanguageData>\n", encoding="utf-8")
 
 
-# def fields extract.py collects (keep in sync with extract.FIELDS); "stages.<n>.label/description" too
+# def fields extract.py collects (keep in sync with extract.FIELDS); "stages.<n>.label/description" and "steps.<n>.…" too (extract.NESTED)
 FIELDS = {"label", "description", "labelShort", "pawnLabel", "gerundLabel", "verb", "jobString", "reportString", "letterLabel",
           "letterText", "baseInspectLine", "labelNoun", "labelNounPretty", "pawnsPlural", "beginLetter", "beginLetterLabel",
           "successfulInspectLine", "fixedName", "labelMale", "labelFemale", "inspectString", "skillLabel", "labelPlural", "slogan"}
-STAGE = re.compile(r"^stages\.\d+\.(label|description)$")
+STAGE = re.compile(r"^(stages|steps)\.\d+\.(label|description)$")
 
 
 def managed(fk, known_defs):
@@ -114,9 +130,12 @@ def apply():
                 content[f] = [(e.tag, e.text or "") for e in ET.parse(f).getroot()]
             except Exception:
                 content[f] = []
+        # only files whose entries change are written back: a file is rewritten as flat <key>text</key> pairs, which would empty the
+        # hand-made nested ones (rulesStrings lists of RulePackDefs) if they were rewritten too (that happened in 1.1.0 and again in 1.1.1)
+        before = {f: list(pairs) for f, pairs in content.items()}
         index = {}
         for f, pairs in content.items():
-            pre = "k:" if f.parent.name == "Keyed" else "d:" + f.parent.relative_to(base / "DefInjected").as_posix() + "/"
+            pre = "k:" if f.parent.name == "Keyed" else "d:" + def_type(f) + "/"
             for i, (k, _) in enumerate(pairs): index[pre + k] = (f, i)
         # remove keys that no longer exist in English, but only keys extract.py manages: Keyed keys, and def fields it extracts of defs
         # it knows. Everything else (rulesStrings of RulePackDefs, scenario parts, defs from the version folders such as 1.7/Defs/Scenarios)
@@ -142,10 +161,13 @@ def apply():
                 content.setdefault(f, []).append((tag, t))
         for f, pairs in content.items():
             pairs = [p for p in pairs if p]
+            if pairs == before.get(f): continue
             if pairs: write_xml(f, pairs)
             elif f.exists(): f.unlink()
         if review: (I / "delta" / f"review_{code}.txt").write_text("\n".join(review) + "\n", encoding="utf-8")
         print(code, "applied", len(tr), "translations;", len(review), "kept English (placeholder mismatch or empty)")
+    # new entries were written to Common; those of optional content (MayRequire defs) belong in their conditional folder
+    subprocess.run([sys.executable, str(I / "split_optional.py")], check=True)
 
 
 if __name__ == "__main__":

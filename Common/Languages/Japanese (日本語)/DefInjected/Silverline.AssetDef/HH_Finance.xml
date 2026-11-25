@@ -4,24 +4,16 @@
   <SL_Asset_Mattress.description>普通預金。お金は非常に安全なマットレスの中に眠り、少しだけ増えます。銀行の取り付け騒ぎの際は、引き出しが2日間ロックされます。</SL_Asset_Mattress.description>
   <SL_Asset_OutlanderBond.label>アウトランダー連合インフラ債</SL_Asset_OutlanderBond.label>
   <SL_Asset_OutlanderBond.description>アウトランダーの町々の連合への融資。道路、井戸、そして係争中の橋1本を建設中です。払われなくなるまでは期日どおりに払われます。債務不履行の後は、約3分の1が戻ってきます。</SL_Asset_OutlanderBond.description>
-  <SL_Asset_EmpireWarBond.label>帝国戦時債</SL_Asset_EmpireWarBond.label>
-  <SL_Asset_EmpireWarBond.description>帝国の戦争を資金調達する債券。戦争に勝利すると値が跳ね上がり、敗北すると額縁に入れて飾れる程度の価値になります。戦争は長く続いていますが、主にパンフレットの中で。</SL_Asset_EmpireWarBond.description>
   <SL_Asset_Index.label>RimIndex 50</SL_Asset_Index.label>
   <SL_Asset_Index.description>リムで最大の企業50社を1つの商品にまとめたもの。このページの他の全ての基準です。収益性スライダーは、この指数の平均的な利益で定義されています。</SL_Asset_Index.description>
   <SL_Asset_StockMicaton.label>MCTN、ミカトン同盟</SL_Asset_StockMicaton.label>
   <SL_Asset_StockMicaton.description>アウトランダーの町々の同盟の株式。四半期の決算で株価が動き、同盟との関係でも少しだけ動きます。配当はありませんが、すてきなカレンダーが届きます。</SL_Asset_StockMicaton.description>
   <SL_Asset_StockTribal.label>HIDE、ハイド・アンド・ハース協同組合</SL_Asset_StockTribal.label>
   <SL_Asset_StockTribal.description>毛皮、炉用の薪、そして驚くほど大量のもてなしを売る部族の協同組合の株式。天候と、非常に大柄な一人のおじの機嫌に大きく左右されます。</SL_Asset_StockTribal.description>
-  <SL_Asset_StockEmpire.label>IMPR、帝国儀礼株式会社</SL_Asset_StockEmpire.label>
-  <SL_Asset_StockEmpire.description>帝国の儀式を手がける会社：旗、トランペット、小さな王冠。利益は、わずかな扱いに気分を害する貴族の数で決まります。</SL_Asset_StockEmpire.description>
   <SL_Asset_StockColony.label>HHH、Hearth Harbor Holdings</SL_Asset_StockColony.label>
   <SL_Asset_StockColony.description>たった一つのものを所有する持株会社：あなたの入植地が目的地であるという考え。あなたの富と、生き延びた襲撃に反応します。成功はあなたにもかかっていますが、これを読んだ全員にもかかっています。</SL_Asset_StockColony.description>
   <SL_Asset_GrowthFund.label>グリッターワールド成長ファンド</SL_Asset_GrowthFund.label>
   <SL_Asset_GrowthFund.description>能動運用ファンド。運用者たちは非常に立派なパンフレットと一艘の船を持っています。平均的な運用能力はわずかにマイナスで、それはファンド設立時に確定していました。</SL_Asset_GrowthFund.description>
-  <SL_Asset_PietyBonds.label>敬虔債券</SL_Asset_PietyBonds.label>
-  <SL_Asset_PietyBonds.description>17の信仰による寄付に裏付けられた債券。どの信仰も、残りの16が間違っていると確信しています。堅実で厳粛、そしてほんの少し独善的です。</SL_Asset_PietyBonds.description>
-  <SL_Asset_RelicFutures.label>聖遺物先物</SL_Asset_RelicFutures.label>
-  <SL_Asset_RelicFutures.description>存在するかもしれず、しないかもしれない聖遺物の先物。預言者かもしれず、そうでないかもしれない配達人が届けます。契約は祝福されています。</SL_Asset_RelicFutures.description>
   <SL_Asset_RimCoin.label>RimCoin</SL_Asset_RimCoin.label>
   <SL_Asset_RimCoin.description>電気と確信だけでできたデジタルコイン。1日に数パーセント変動し、誰も説明できない急騰を起こし、過去にハッキングされたことのある取引所で扱われます。そして、また狙われるでしょう。</SL_Asset_RimCoin.description>
   <SL_Asset_MemeThrumbo.label>$THRUMBO</SL_Asset_MemeThrumbo.label>

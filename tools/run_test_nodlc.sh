@@ -1,7 +1,7 @@
 #!/bin/bash
 # In-game test run WITHOUT (or with a chosen subset of) DLC. Copy of run_test.sh owned by the DLC module.
 #   NO_DLC=1 (default): only Core is active.   DLCS=royalty,biotech  enables just those (royalty,ideology,biotech,anomaly,odyssey).
-#   NO_DLC=0 and no DLCS: all DLC like run_test.sh.
+#   NO_DLC=0 and no DLCS: all DLC like run_test.sh.   GAME_LANG="German (Deutsch)" starts the test profile in that language.
 # In-game test run (RimWorld 1.7, isolated profile, never touches Julius' own game).
 # Usage: tools/run_test.sh <suites|all> [label] [extra packageIds ...]
 #   env MODDIR=<path to a HearthHarbor checkout> (default: this repo), TIMEOUT=seconds (default 900), BUILD=0 to skip the build
@@ -34,6 +34,7 @@ sed -i '' '/<incompatibleWith>/,/<\/incompatibleWith>/d' $SD/mod/About/About.xml
 ln -sfn $SD/mod "$G/Mods/_hh_slot$slot"
 FH=$SD/home; C="$FH/Library/Application Support/RimWorld/Config"; rm -rf "$FH"; mkdir -p "$C"
 cp "$HOME/Library/Application Support/RimWorld/Config/Prefs.xml" "$C/" 2>/dev/null
+[ -n "${GAME_LANG:-}" ] && sed -i '' -e "s#<langFolderName>[^<]*</langFolderName>#<langFolderName>$GAME_LANG</langFolderName>#" "$C/Prefs.xml"
 V=$(sed -n 's/.*<version>\(.*\)<\/version>.*/\1/p' "$HOME/Library/Application Support/RimWorld/Config/ModsConfig.xml")
 { echo '<?xml version="1.0" encoding="utf-8"?><ModsConfigData><version>'$V'</version><activeMods>'
   for p in brrainz.harmony ludeon.rimworld $dlcids "$@" juliusberger00.hearthharbor.slot$slot; do echo "<li>$p</li>"; done

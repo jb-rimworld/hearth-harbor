@@ -8,4 +8,23 @@
   <HH_Guide_FirstVenue.description>Cedule promění místnost v podnik.</HH_Guide_FirstVenue.description>
   <HH_Guide_Bank.label>Peníze v bance</HH_Guide_Bank.label>
   <HH_Guide_Bank.description>Silverline bezpečně uchovává tržby a umožňuje hostům platit kartou.</HH_Guide_Bank.description>
+  <HH_Guide_Bank.steps.0.description>Nepovinné. Bez účtu tě banka nechá na pokoji.</HH_Guide_Bank.steps.0.description>
+  <HH_Guide_Bank.steps.0.label>Otevři si účet Silverline v budově banky.</HH_Guide_Bank.steps.0.label>
+  <HH_Guide_Bank.steps.1.label>Zapni přímý vklad, aby se pokladny vyprazdňovaly na účet.</HH_Guide_Bank.steps.1.label>
+  <HH_Guide_Bank.steps.2.label>Sleduj zůstatek na stránce Přehled.</HH_Guide_Bank.steps.2.label>
+  <HH_Guide_FirstVenue.steps.0.label>Umísti ceduli provozovny do zastřešené místnosti.</HH_Guide_FirstVenue.steps.0.label>
+  <HH_Guide_FirstVenue.steps.1.label>Otevři u cedule záložku Vybavení a postav vše, co je označeno jako Povinné.</HH_Guide_FirstVenue.steps.1.label>
+  <HH_Guide_FirstVenue.steps.2.label>Zkontroluj otevírací dobu. Hosté nakupují, jen když je otevřeno.</HH_Guide_FirstVenue.steps.2.label>
+  <HH_Guide_FirstVenue.steps.3.label>Vydělej své první stříbro.</HH_Guide_FirstVenue.steps.3.label>
+  <HH_Guide_OpeningDay.steps.0.description>Hosté přijdou, až pro ně něco připravíš. Do té doby se hra hraje jako bez modu.</HH_Guide_OpeningDay.steps.0.description>
+  <HH_Guide_OpeningDay.steps.0.label>Označ postel jako hostovské lůžko, nebo umísti ceduli provozovny do zastřešené místnosti.</HH_Guide_OpeningDay.steps.0.label>
+  <HH_Guide_OpeningDay.steps.1.description>Když je skupina na cestě, dostaneš dopis.</HH_Guide_OpeningDay.steps.1.description>
+  <HH_Guide_OpeningDay.steps.1.label>Počkej na první hosty. Dorazí zhruba do tří dnů.</HH_Guide_OpeningDay.steps.1.label>
+  <HH_Guide_OpeningDay.steps.2.description>Platby končí v pokladně a počítají se na stránce Přehled.</HH_Guide_OpeningDay.steps.2.description>
+  <HH_Guide_OpeningDay.steps.2.label>Nech hosta za něco zaplatit.</HH_Guide_OpeningDay.steps.2.label>
+  <HH_Guide_YourGuests.steps.0.description>Jeden řádek na hosta: nálada, spokojenost, rozpočet a kdy odchází. Kliknutím na řádek přejdeš k hostovi.</HH_Guide_YourGuests.steps.0.description>
+  <HH_Guide_YourGuests.steps.0.label>Otevři stránku Hosté v záložce Hearth &amp; Harbor.</HH_Guide_YourGuests.steps.0.label>
+  <HH_Guide_YourGuests.steps.1.description>Ukazuje, co si host myslí, a umožní zvolit Základy, Doprovázet nebo Nábor.</HH_Guide_YourGuests.steps.1.description>
+  <HH_Guide_YourGuests.steps.1.label>Vyber hosta a otevři záložku Host.</HH_Guide_YourGuests.steps.1.label>
+  <HH_Guide_YourGuests.steps.2.label>Vyzkoušej jinou péči u hosta, který se ti líbí.</HH_Guide_YourGuests.steps.2.label>
 </LanguageData>

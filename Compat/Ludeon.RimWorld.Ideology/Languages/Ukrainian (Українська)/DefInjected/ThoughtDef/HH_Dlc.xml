@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_FaithForSale.stages.0.label>індульгенції на продаж</HH_FaithForSale.stages.0.label>
+  <HH_FaithForSale.stages.0.description>Прощення продають відкрито, як ріпу.</HH_FaithForSale.stages.0.description>
+  <HH_FaithNotForSale.stages.0.label>ранг на продаж</HH_FaithNotForSale.stages.0.label>
+  <HH_FaithNotForSale.stages.0.description>Віра не продається. І все ж є прейскурант.</HH_FaithNotForSale.stages.0.description>
+  <HH_BoughtMyWayOut.stages.0.label>відкупився</HH_BoughtMyWayOut.stages.0.label>
+  <HH_BoughtMyWayOut.stages.0.description>Спрацювало, але я заплатив, і знаю, ким це мене робить.</HH_BoughtMyWayOut.stages.0.description>
+  <HH_PaidMyDues.stages.0.label>сплатив внески</HH_PaidMyDues.stages.0.label>
+  <HH_PaidMyDues.stages.0.description>Мої внески сплачено. Книги чисті, і совість теж.</HH_PaidMyDues.stages.0.description>
+  <HH_StingySoul.stages.0.label>скупа душа</HH_StingySoul.stages.0.label>
+  <HH_StingySoul.stages.0.description>Цілий квадрум без сплати внесків. Мені має бути соромно.</HH_StingySoul.stages.0.description>
+  <HH_AscensionMood.stages.0.label>ранг I</HH_AscensionMood.stages.0.label>
+  <HH_AscensionMood.stages.0.description>Я зробив перший крок драбиною.</HH_AscensionMood.stages.0.description>
+  <HH_AscensionMood.stages.1.label>ранг II</HH_AscensionMood.stages.1.label>
+  <HH_AscensionMood.stages.1.description>Другий щабель. Люди вже вживають мій титул.</HH_AscensionMood.stages.1.description>
+  <HH_AscensionMood.stages.2.label>ранг III</HH_AscensionMood.stages.2.label>
+  <HH_AscensionMood.stages.2.description>Третій щабель. Вид уже кращий.</HH_AscensionMood.stages.2.description>
+  <HH_AscensionMood.stages.3.label>ранг IV</HH_AscensionMood.stages.3.label>
+  <HH_AscensionMood.stages.3.description>Останній щабель. Наді мною нікого, крім неба.</HH_AscensionMood.stages.3.description>
+  <HH_AscensionDisapproval.stages.0.label>куплений ранг</HH_AscensionDisapproval.stages.0.label>
+  <HH_AscensionDisapproval.stages.0.description>Цей ранг купили. Він нічого не значить.</HH_AscensionDisapproval.stages.0.description>
+  <HH_AscensionRespect.stages.0.label>вищий ранг</HH_AscensionRespect.stages.0.label>
+  <HH_AscensionRespect.stages.0.description>Вони піднялися вище за мене. Я їх поважаю.</HH_AscensionRespect.stages.0.description>
+  <HH_PlaceToPray.stages.0.label>місце для молитви</HH_PlaceToPray.stages.0.label>
+  <HH_PlaceToPray.stages.0.description>Скромний куточок для молитви. Краще, ніж нічого.</HH_PlaceToPray.stages.0.description>
+  <HH_PlaceToPray.stages.1.label>місце для молитви</HH_PlaceToPray.stages.1.label>
+  <HH_PlaceToPray.stages.1.description>Тиха, пристойна каплиця. Тут можна молитися.</HH_PlaceToPray.stages.1.description>
+  <HH_PlaceToPray.stages.2.label>місце для молитви</HH_PlaceToPray.stages.2.label>
+  <HH_PlaceToPray.stages.2.description>Гарна каплиця моєї віри далеко від дому. Я вдячний.</HH_PlaceToPray.stages.2.description>
+  <HH_PlaceToPray.stages.3.label>місце для молитви</HH_PlaceToPray.stages.3.label>
+  <HH_PlaceToPray.stages.3.description>Чудова каплиця з належними місцями для сидіння. Мою віру помітили.</HH_PlaceToPray.stages.3.description>
+  <HH_PlaceToPray.stages.4.label>місце для молитви</HH_PlaceToPray.stages.4.label>
+  <HH_PlaceToPray.stages.4.description>Чудово. Тут збудували дім для мого бога. Я це запам'ятаю.</HH_PlaceToPray.stages.4.description>
+  <HH_HereticShrine.stages.0.label>єретична святиня на нашій землі</HH_HereticShrine.stages.0.label>
+  <HH_HereticShrine.stages.0.description>На нашій землі є святиня фальшивої віри.</HH_HereticShrine.stages.0.description>
+  <HH_HereticShrine.stages.1.label>єретична святиня на нашій землі</HH_HereticShrine.stages.1.label>
+  <HH_HereticShrine.stages.1.description>Святиня фальшивої віри, яку терплять мої власні люди. Ганьба.</HH_HereticShrine.stages.1.description>
+  <HH_HereticShrine.stages.2.label>єретична святиня на нашій землі</HH_HereticShrine.stages.2.label>
+  <HH_HereticShrine.stages.2.description>Вони збудували святиню для єретиків поруч із нашим домом. Я цього не витримую.</HH_HereticShrine.stages.2.description>
+  <HH_ShrineRespected.stages.0.label>інші віри шануються</HH_ShrineRespected.stages.0.label>
+  <HH_ShrineRespected.stages.0.description>Ми даємо місце іншим віруванням. Так і має бути.</HH_ShrineRespected.stages.0.description>
+  <HH_ShrineRespected.stages.1.label>інші віри шануються</HH_ShrineRespected.stages.1.label>
+  <HH_ShrineRespected.stages.1.description>Святиня для кожної віри, що проходить повз. Так і має бути.</HH_ShrineRespected.stages.1.description>
+  <HH_ShrineRespected.stages.2.label>інші віри зневажаються</HH_ShrineRespected.stages.2.label>
+  <HH_ShrineRespected.stages.2.description>Навіщо будувати святині для людей, які вірять у неправильні речі?</HH_ShrineRespected.stages.2.description>
+</LanguageData>

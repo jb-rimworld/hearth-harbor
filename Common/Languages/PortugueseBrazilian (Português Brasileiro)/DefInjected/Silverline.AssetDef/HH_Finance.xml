@@ -4,24 +4,16 @@
   <SL_Asset_Mattress.description>Uma conta poupança. O dinheiro fica em um colchão muito seguro e cresce um pouco. Em uma corrida ao banco, os saques ficam bloqueados por dois dias.</SL_Asset_Mattress.description>
   <SL_Asset_OutlanderBond.label>Título de Infraestrutura da União Outlander</SL_Asset_OutlanderBond.label>
   <SL_Asset_OutlanderBond.description>Empréstimos a uma união de cidades outlander que constrói estradas, poços e uma ponte disputada. Paga em dia, até deixar de pagar. Após um calote, recupera-se cerca de um terço.</SL_Asset_OutlanderBond.description>
-  <SL_Asset_EmpireWarBond.label>Títulos de Guerra do Império</SL_Asset_EmpireWarBond.label>
-  <SL_Asset_EmpireWarBond.description>Títulos que financiam uma guerra do Império. Quando a guerra termina em vitória, disparam; em derrota, valem um belo quadro na parede. A guerra já dura muito tempo, principalmente nos folhetos.</SL_Asset_EmpireWarBond.description>
   <SL_Asset_Index.label>RimIndex 50</SL_Asset_Index.label>
   <SL_Asset_Index.description>As cinquenta maiores empresas do Rim em um único produto. A referência para tudo o mais nesta página: o controle de lucratividade é definido pelo que este índice rende em média.</SL_Asset_Index.description>
   <SL_Asset_StockMicaton.label>MCTN, Liga de Micaton</SL_Asset_StockMicaton.label>
   <SL_Asset_StockMicaton.description>Ações de uma liga de cidades outlander. Os números trimestrais movem o preço; as suas relações com a liga também, um pouco. Não paga dividendos, mas envia um calendário lindo.</SL_Asset_StockMicaton.description>
   <SL_Asset_StockTribal.label>HIDE, Cooperativa Couro e Lareira</SL_Asset_StockTribal.label>
   <SL_Asset_StockTribal.description>Ações de uma cooperativa tribal que vende couro, lenha para a lareira e uma quantidade surpreendente de hospitalidade. Muito dependente do clima e do humor de um tio muito grande.</SL_Asset_StockTribal.description>
-  <SL_Asset_StockEmpire.label>IMPR, Pompas Imperiais Ltda.</SL_Asset_StockEmpire.label>
-  <SL_Asset_StockEmpire.description>A empresa por trás das cerimônias imperiais: bandeiras, trombetas e pequenas coroas. Os lucros dependem de quantos nobres se ofendem com o quão pouco.</SL_Asset_StockEmpire.description>
   <SL_Asset_StockColony.label>HHH, Hearth Harbor Holdings</SL_Asset_StockColony.label>
   <SL_Asset_StockColony.description>Uma holding que possui exatamente uma coisa: a ideia de que sua colônia é um destino. Reage à sua riqueza e aos ataques que você sobrevive. Você tem interesse no sucesso dela, mas todos que leram isto também.</SL_Asset_StockColony.description>
   <SL_Asset_GrowthFund.label>Fundo de Crescimento Glitterworld</SL_Asset_GrowthFund.label>
   <SL_Asset_GrowthFund.description>Um fundo com gestão ativa. Os gestores têm um folheto muito impressionante e um barco. A habilidade deles é, em média, levemente negativa, e isso já estava fixado quando o fundo foi criado.</SL_Asset_GrowthFund.description>
-  <SL_Asset_PietyBonds.label>Títulos da Piedade</SL_Asset_PietyBonds.label>
-  <SL_Asset_PietyBonds.description>Títulos respaldados pelas doações de dezessete fés, cada uma convencida de que as outras dezesseis estão erradas. Estáveis, solenes e levemente presunçosos.</SL_Asset_PietyBonds.description>
-  <SL_Asset_RelicFutures.label>Futuros de Relíquias</SL_Asset_RelicFutures.label>
-  <SL_Asset_RelicFutures.description>Futuros sobre relíquias que podem ou não existir, a serem entregues por um mensageiro que pode ou não ser um profeta. O contrato foi abençoado.</SL_Asset_RelicFutures.description>
   <SL_Asset_RimCoin.label>RimCoin</SL_Asset_RimCoin.label>
   <SL_Asset_RimCoin.description>Uma moeda digital feita inteiramente de eletricidade e convicção. Oscila vários por cento por dia, dá saltos que ninguém consegue explicar e fica em uma bolsa que já foi invadida antes. E será de novo.</SL_Asset_RimCoin.description>
   <SL_Asset_MemeThrumbo.label>$THRUMBO</SL_Asset_MemeThrumbo.label>

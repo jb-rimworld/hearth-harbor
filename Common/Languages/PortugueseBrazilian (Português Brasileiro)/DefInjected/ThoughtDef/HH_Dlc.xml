@@ -1,49 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <HH_FaithForSale.stages.0.label>indulgências à venda</HH_FaithForSale.stages.0.label>
-  <HH_FaithForSale.stages.0.description>Vendem perdão às claras, como nabos.</HH_FaithForSale.stages.0.description>
-  <HH_FaithNotForSale.stages.0.label>postos à venda</HH_FaithNotForSale.stages.0.label>
-  <HH_FaithNotForSale.stages.0.description>A fé não está à venda. E mesmo assim há uma tabela de preços.</HH_FaithNotForSale.stages.0.description>
-  <HH_BoughtMyWayOut.stages.0.label>comprei minha saída</HH_BoughtMyWayOut.stages.0.label>
-  <HH_BoughtMyWayOut.stages.0.description>Funcionou, mas paguei por isso, e sei exatamente o que isso me faz.</HH_BoughtMyWayOut.stages.0.description>
-  <HH_PaidMyDues.stages.0.label>dívidas pagas</HH_PaidMyDues.stages.0.label>
-  <HH_PaidMyDues.stages.0.description>Minhas dívidas estão pagas. As contas estão limpas, e a consciência também.</HH_PaidMyDues.stages.0.description>
-  <HH_StingySoul.stages.0.label>alma mesquinha</HH_StingySoul.stages.0.label>
-  <HH_StingySoul.stages.0.description>Um quadrum inteiro sem pagar minhas dívidas. Deveria sentir vergonha.</HH_StingySoul.stages.0.description>
-  <HH_AscensionMood.stages.0.label>posto I</HH_AscensionMood.stages.0.label>
-  <HH_AscensionMood.stages.0.description>Dei o primeiro degrau da escada.</HH_AscensionMood.stages.0.description>
-  <HH_AscensionMood.stages.1.label>posto II</HH_AscensionMood.stages.1.label>
-  <HH_AscensionMood.stages.1.description>O segundo degrau. As pessoas começam a usar meu título.</HH_AscensionMood.stages.1.description>
-  <HH_AscensionMood.stages.2.label>posto III</HH_AscensionMood.stages.2.label>
-  <HH_AscensionMood.stages.2.description>O terceiro degrau. A vista já é melhor.</HH_AscensionMood.stages.2.description>
-  <HH_AscensionMood.stages.3.label>posto IV</HH_AscensionMood.stages.3.label>
-  <HH_AscensionMood.stages.3.description>O último degrau. Não há ninguém acima de mim além do céu.</HH_AscensionMood.stages.3.description>
-  <HH_AscensionDisapproval.stages.0.label>posto comprado</HH_AscensionDisapproval.stages.0.label>
-  <HH_AscensionDisapproval.stages.0.description>Compraram esse posto. Não significa nada.</HH_AscensionDisapproval.stages.0.description>
-  <HH_AscensionRespect.stages.0.label>posto superior</HH_AscensionRespect.stages.0.label>
-  <HH_AscensionRespect.stages.0.description>Subiram mais alto do que eu. Respeito isso.</HH_AscensionRespect.stages.0.description>
-  <HH_PlaceToPray.stages.0.label>um lugar para rezar</HH_PlaceToPray.stages.0.label>
-  <HH_PlaceToPray.stages.0.description>Um canto modesto para orar. Melhor que nada.</HH_PlaceToPray.stages.0.description>
-  <HH_PlaceToPray.stages.1.label>um lugar para rezar</HH_PlaceToPray.stages.1.label>
-  <HH_PlaceToPray.stages.1.description>Uma capela discreta e decente. Dá para rezar aqui.</HH_PlaceToPray.stages.1.description>
-  <HH_PlaceToPray.stages.2.label>um lugar para rezar</HH_PlaceToPray.stages.2.label>
-  <HH_PlaceToPray.stages.2.description>Uma bela capela da minha própria fé, longe de casa. Sou grato.</HH_PlaceToPray.stages.2.description>
-  <HH_PlaceToPray.stages.3.label>um lugar para rezar</HH_PlaceToPray.stages.3.label>
-  <HH_PlaceToPray.stages.3.description>Uma linda capela com bancos adequados. Minha fé foi notada.</HH_PlaceToPray.stages.3.description>
-  <HH_PlaceToPray.stages.4.label>um lugar para rezar</HH_PlaceToPray.stages.4.label>
-  <HH_PlaceToPray.stages.4.description>Esplêndido. Construíram uma casa para o meu deus aqui. Vou me lembrar disso.</HH_PlaceToPray.stages.4.description>
-  <HH_HereticShrine.stages.0.label>santuário herege em nossa terra</HH_HereticShrine.stages.0.label>
-  <HH_HereticShrine.stages.0.description>Há um santuário de uma fé falsa em nossa terra.</HH_HereticShrine.stages.0.description>
-  <HH_HereticShrine.stages.1.label>santuário herege em nossa terra</HH_HereticShrine.stages.1.label>
-  <HH_HereticShrine.stages.1.description>Um santuário de fé falsa, tolerado pelo meu próprio povo. Vergonhoso.</HH_HereticShrine.stages.1.description>
-  <HH_HereticShrine.stages.2.label>santuário herege em nossa terra</HH_HereticShrine.stages.2.label>
-  <HH_HereticShrine.stages.2.description>Construíram um santuário para hereges ao lado da nossa casa. Não suporto.</HH_HereticShrine.stages.2.description>
-  <HH_ShrineRespected.stages.0.label>outras fés respeitadas</HH_ShrineRespected.stages.0.label>
-  <HH_ShrineRespected.stages.0.description>Abrimos espaço para outras fés. Assim deve ser.</HH_ShrineRespected.stages.0.description>
-  <HH_ShrineRespected.stages.1.label>outras fés respeitadas</HH_ShrineRespected.stages.1.label>
-  <HH_ShrineRespected.stages.1.description>Um santuário para cada fé que passa por aqui. Assim deve ser.</HH_ShrineRespected.stages.1.description>
-  <HH_ShrineRespected.stages.2.label>outras fés desprezadas</HH_ShrineRespected.stages.2.label>
-  <HH_ShrineRespected.stages.2.description>Por que construir santuários para gente que acredita nas coisas erradas?</HH_ShrineRespected.stages.2.description>
   <HH_LuckyStreak.stages.0.label>maré de sorte</HH_LuckyStreak.stages.0.label>
   <HH_LuckyStreak.stages.0.description>Os dados não param de cair do meu lado esta noite.</HH_LuckyStreak.stages.0.description>
   <HH_OfCourseILost.stages.0.label>claro que perdi</HH_OfCourseILost.stages.0.label>

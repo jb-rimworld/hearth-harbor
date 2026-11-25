@@ -8,4 +8,23 @@
   <HH_Guide_FirstVenue.description>Вывеска превращает комнату в бизнес.</HH_Guide_FirstVenue.description>
   <HH_Guide_Bank.label>Деньги в банке</HH_Guide_Bank.label>
   <HH_Guide_Bank.description>Silverline хранит вашу выручку в целости и позволяет гостям платить картой.</HH_Guide_Bank.description>
+  <HH_Guide_Bank.steps.0.description>Необязательно. Без счёта банк вас не беспокоит.</HH_Guide_Bank.steps.0.description>
+  <HH_Guide_Bank.steps.0.label>Откройте счёт Silverline в здании банка.</HH_Guide_Bank.steps.0.label>
+  <HH_Guide_Bank.steps.1.label>Включите прямое зачисление, чтобы выручка из касс уходила на счёт.</HH_Guide_Bank.steps.1.label>
+  <HH_Guide_Bank.steps.2.label>Следите за балансом на странице «Обзор».</HH_Guide_Bank.steps.2.label>
+  <HH_Guide_FirstVenue.steps.0.label>Поставьте табличку заведения в комнате под крышей.</HH_Guide_FirstVenue.steps.0.label>
+  <HH_Guide_FirstVenue.steps.1.label>Откройте вкладку «Настройка» у таблички и постройте всё, что помечено «Обязательно».</HH_Guide_FirstVenue.steps.1.label>
+  <HH_Guide_FirstVenue.steps.2.label>Проверьте часы работы. Гости покупают, только пока заведение открыто.</HH_Guide_FirstVenue.steps.2.label>
+  <HH_Guide_FirstVenue.steps.3.label>Заработайте первое серебро.</HH_Guide_FirstVenue.steps.3.label>
+  <HH_Guide_OpeningDay.steps.0.description>Гости приходят, только когда вы что-то для них подготовили. До тех пор игра идёт как без мода.</HH_Guide_OpeningDay.steps.0.description>
+  <HH_Guide_OpeningDay.steps.0.label>Отметьте кровать как гостевую койку или поставьте табличку заведения в комнате под крышей.</HH_Guide_OpeningDay.steps.0.label>
+  <HH_Guide_OpeningDay.steps.1.description>Вы получите письмо, когда группа будет в пути.</HH_Guide_OpeningDay.steps.1.description>
+  <HH_Guide_OpeningDay.steps.1.label>Дождитесь первых гостей. Они приходят примерно в течение трёх дней.</HH_Guide_OpeningDay.steps.1.label>
+  <HH_Guide_OpeningDay.steps.2.description>Платежи попадают в кассу и учитываются на странице «Обзор».</HH_Guide_OpeningDay.steps.2.description>
+  <HH_Guide_OpeningDay.steps.2.label>Дайте гостю за что-нибудь заплатить.</HH_Guide_OpeningDay.steps.2.label>
+  <HH_Guide_YourGuests.steps.0.description>По строке на гостя: настроение, удовлетворённость, бюджет и время отъезда. Нажмите на строку, чтобы перейти к гостю.</HH_Guide_YourGuests.steps.0.description>
+  <HH_Guide_YourGuests.steps.0.label>Откройте страницу «Гости» на вкладке Hearth &amp; Harbor.</HH_Guide_YourGuests.steps.0.label>
+  <HH_Guide_YourGuests.steps.1.description>Показывает, что думает гость, и позволяет выбрать «Основное», «Сопровождение» или «Вербовка».</HH_Guide_YourGuests.steps.1.description>
+  <HH_Guide_YourGuests.steps.1.label>Выберите гостя и откройте вкладку «Гость».</HH_Guide_YourGuests.steps.1.label>
+  <HH_Guide_YourGuests.steps.2.label>Попробуйте другое обращение с гостем, который вам нравится.</HH_Guide_YourGuests.steps.2.label>
 </LanguageData>

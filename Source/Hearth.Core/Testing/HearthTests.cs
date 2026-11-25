@@ -390,6 +390,25 @@ namespace Hearth.Testing
             var a = JRand.Sealed("smoke.x"); ulong c0 = a.Counter; double v1 = a.NextDouble();
             var b = new RngStream(a.Seed, a.StreamId, c0); t.Check(Math.Abs(b.NextDouble() - v1) < 1e-15, "sealed stream reproducible");
             foreach (var m in HearthMod.ModuleObjects) t.Note("module " + m.Id + " on=" + Modules.On(m.Id));
+            // 1.1.1: translation load errors of the active language that come from our files (the game only logs their number as one warning).
+            // English has no injections; run with GAME_LANG="German (Deutsch)" etc. to check a language.
+            var lang = LanguageDatabase.activeLanguage;
+            if (lang != null)
+            {
+                var errs = new List<string>(lang.loadErrors);
+                foreach (var di in lang.defInjections) errs.AddRange(di.loadErrors);
+                var ours = errs.Where(e => e.Contains("HH_") || e.Contains("HH.") || e.Contains("SL_") || e.Contains("Hearth.") || e.Contains("Silverline.")).ToList();
+                foreach (var e in ours.Take(80)) t.Note("LANG " + e);
+                foreach (var e in errs.Except(ours).Take(12)) t.Note("LANG (not ours) " + e);
+                t.Note("language " + lang.folderName + ": " + errs.Count + " translation load errors, " + ours.Count + " from our files");
+                t.Check(ours.Count == 0, "no translation load errors from our files in " + lang.folderName + " (" + ours.Count + ")");
+                // translations of optional content come from the conditional load folders (Compat/<ids>): show a few so a run log proves they load
+                foreach (var name in new[] { "HH_Gene_Hospitable", "HH_Dish_GrilledWholeFish", "HH_NobleStay" })
+                {
+                    var d = GenDefDatabase.AllDefTypesWithDatabases().Select(ty => GenDefDatabase.GetDefSilentFail(ty, name, false)).FirstOrDefault(x => x != null);
+                    if (d != null) t.Note("optional content label: " + name + " = " + d.label);
+                }
+            }
             yield return 600;
             t.Check(Find.TickManager.TicksGame > 0, "game ticks");
             t.Check(Guard.Paused.Count() == 0, "no module paused: " + string.Join(", ", Guard.PauseReasons));

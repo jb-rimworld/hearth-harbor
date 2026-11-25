@@ -8,4 +8,23 @@
   <HH_Guide_FirstVenue.description>Un cartel convierte una habitación en un negocio.</HH_Guide_FirstVenue.description>
   <HH_Guide_Bank.label>Dinero en el banco</HH_Guide_Bank.label>
   <HH_Guide_Bank.description>Silverline guarda a salvo tus ingresos y permite a los huéspedes pagar con tarjeta.</HH_Guide_Bank.description>
+  <HH_Guide_Bank.steps.0.description>Opcional. Sin cuenta, el banco no te molesta.</HH_Guide_Bank.steps.0.description>
+  <HH_Guide_Bank.steps.0.label>Abre una cuenta de Silverline en un edificio del banco.</HH_Guide_Bank.steps.0.label>
+  <HH_Guide_Bank.steps.1.label>Activa el depósito directo para que las cajas se vacíen en la cuenta.</HH_Guide_Bank.steps.1.label>
+  <HH_Guide_Bank.steps.2.label>Vigila el saldo en la página Resumen.</HH_Guide_Bank.steps.2.label>
+  <HH_Guide_FirstVenue.steps.0.label>Coloca un cartel de local en una habitación techada.</HH_Guide_FirstVenue.steps.0.label>
+  <HH_Guide_FirstVenue.steps.1.label>Abre la pestaña Montaje del cartel y construye todo lo marcado como Obligatorio.</HH_Guide_FirstVenue.steps.1.label>
+  <HH_Guide_FirstVenue.steps.2.label>Revisa el horario de apertura. Los huéspedes solo compran mientras está abierto.</HH_Guide_FirstVenue.steps.2.label>
+  <HH_Guide_FirstVenue.steps.3.label>Gana tu primera plata.</HH_Guide_FirstVenue.steps.3.label>
+  <HH_Guide_OpeningDay.steps.0.description>Los huéspedes solo vienen cuando has preparado algo para ellos. Hasta entonces, el juego es como sin el mod.</HH_Guide_OpeningDay.steps.0.description>
+  <HH_Guide_OpeningDay.steps.0.label>Marca una cama como cama de huéspedes o coloca un cartel de local en una habitación techada.</HH_Guide_OpeningDay.steps.0.label>
+  <HH_Guide_OpeningDay.steps.1.description>Recibes una carta cuando un grupo está en camino.</HH_Guide_OpeningDay.steps.1.description>
+  <HH_Guide_OpeningDay.steps.1.label>Espera a los primeros huéspedes. Llegan en unos tres días.</HH_Guide_OpeningDay.steps.1.label>
+  <HH_Guide_OpeningDay.steps.2.description>Los pagos van a la caja y se cuentan en la página Resumen.</HH_Guide_OpeningDay.steps.2.description>
+  <HH_Guide_OpeningDay.steps.2.label>Deja que un huésped pague por algo.</HH_Guide_OpeningDay.steps.2.label>
+  <HH_Guide_YourGuests.steps.0.description>Una fila por huésped: ánimo, satisfacción, presupuesto y cuándo se va. Haz clic en una fila para ir al huésped.</HH_Guide_YourGuests.steps.0.description>
+  <HH_Guide_YourGuests.steps.0.label>Abre la página Huéspedes en la pestaña de Hearth &amp; Harbor.</HH_Guide_YourGuests.steps.0.label>
+  <HH_Guide_YourGuests.steps.1.description>Muestra lo que piensa el huésped y te deja elegir Básico, Acompañar o Reclutar.</HH_Guide_YourGuests.steps.1.description>
+  <HH_Guide_YourGuests.steps.1.label>Selecciona un huésped y abre la pestaña Huésped.</HH_Guide_YourGuests.steps.1.label>
+  <HH_Guide_YourGuests.steps.2.label>Prueba otro trato con un huésped que te guste.</HH_Guide_YourGuests.steps.2.label>
 </LanguageData>

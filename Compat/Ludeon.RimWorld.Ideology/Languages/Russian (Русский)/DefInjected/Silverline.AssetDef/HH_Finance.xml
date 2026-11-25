@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_PietyBonds.label>Облигации благочестия</SL_Asset_PietyBonds.label>
+  <SL_Asset_PietyBonds.description>Облигации, обеспеченные пожертвованиями семнадцати вероисповеданий, каждое из которых убеждено, что остальные шестнадцать делают всё неправильно. Устойчивые, торжественные и чуть-чуть самодовольные.</SL_Asset_PietyBonds.description>
+  <SL_Asset_RelicFutures.label>Фьючерсы на реликвии</SL_Asset_RelicFutures.label>
+  <SL_Asset_RelicFutures.description>Фьючерсы на реликвии, которые могут существовать, а могут и нет, доставляемые курьером, который может быть пророком, а может и нет. Контракт освящён.</SL_Asset_RelicFutures.description>
+</LanguageData>

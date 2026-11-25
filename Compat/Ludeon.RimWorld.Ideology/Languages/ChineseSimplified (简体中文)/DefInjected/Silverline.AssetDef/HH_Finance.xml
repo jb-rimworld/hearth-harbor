@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_PietyBonds.label>虔诚债券</SL_Asset_PietyBonds.label>
+  <SL_Asset_PietyBonds.description>由十七种信仰的捐款作担保的债券，每一种都确信其他十六种做错了。稳健、庄重，还带着一丝极轻微的自满。</SL_Asset_PietyBonds.description>
+  <SL_Asset_RelicFutures.label>圣物期货</SL_Asset_RelicFutures.label>
+  <SL_Asset_RelicFutures.description>针对可能存在也可能不存在的圣物的期货，由一名可能是先知也可能不是的信使送达。合同已经过祝福。</SL_Asset_RelicFutures.description>
+</LanguageData>
