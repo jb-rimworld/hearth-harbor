@@ -35,7 +35,9 @@ namespace Hearth.Underworld
         {
             var c = Underworld.Comp; if (c == null) return;
             var homes = new List<Map>(); foreach (var m in Find.Maps) if (m.IsPlayerHome) homes.Add(m);
-            Map gangMap = null; foreach (var m in homes) if (Gangs.HasGangFacility(m)) { gangMap = m; break; }
+            // every home map with something gangs use may get the visit; one global timer
+            var gangMaps = new List<Map>(); foreach (var m in homes) if (Gangs.HasGangFacility(m)) gangMaps.Add(m);
+            Map gangMap = gangMaps.Count == 0 ? null : gangMaps.Count == 1 ? gangMaps[0] : gangMaps[JRand.Stream("underworld.gang").Range(0, gangMaps.Count)];
             // first customers: 0.5 to 1.5 days after the first facility gangs use (also pulls an old, long timer of an old save forward)
             if (c.GangVisits == 0 && !c.FirstGangPlanned && gangMap != null)
             {
@@ -50,7 +52,7 @@ namespace Hearth.Underworld
             // the gang timer moves forward only when a visit really started; a failed attempt retries after a few hours and says why
             if (t >= c.NextGangTick && gangMap != null)
             {
-                if (Gangs.Fire(gangMap, out _, out string why)) { c.NextGangTick = t + Next(HSettings.Get("underworld.gang.intervalDays")); c.GangRetryKey = null; c.GangRetryTick = -1; }
+                if (Gangs.Fire(gangMap, out _, out string why)) c.NextGangTick = t + Next(HSettings.Get("underworld.gang.intervalDays"));   // Fire clears the retry reason
                 else
                 {
                     c.NextGangTick = t + (int)(HSettings.Get("underworld.gang.retryHours") * GenDate.TicksPerHour);

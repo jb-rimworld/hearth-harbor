@@ -162,10 +162,11 @@ namespace Hearth.Underworld
             return rows;
         }
 
-        static int GangHere(Map map)
+        /// <summary>Members of a gang visit on the map (not the Inn's shady guests).</summary>
+        internal static int GangHere(Map map)
         {
             int n = 0; var all = map.mapPawns.AllPawnsSpawned;
-            for (int i = 0; i < all.Count; i++) { var p = all[i]; if (p.RaceProps.Humanlike && !p.Dead && Underworld.IsShady(p) && p.GetLord() != null && !p.IsColonist) n++; }
+            for (int i = 0; i < all.Count; i++) { var p = all[i]; if (p.RaceProps.Humanlike && !p.Dead && !p.IsColonist && p.GetLord() != null && Underworld.Comp.IsGang(p)) n++; }
             return n;
         }
 

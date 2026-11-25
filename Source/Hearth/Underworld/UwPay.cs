@@ -15,11 +15,13 @@ namespace Hearth.Underworld
         /// <summary>True when the Inn module books this pawn as a guest (it then owns the budget).</summary>
         static bool InnBooks(Pawn p) => p != null && GuestApi.Impl != null && Modules.On(ModuleId.Inn) && GuestApi.Impl.Info(p) != null;
 
-        /// <summary>Spending budget of a pawn for underworld services: the Inn's budget for a booked guest, otherwise the silver the pawn carries (same source as Payments).</summary>
+        /// <summary>Spending budget of a pawn for underworld services. A shady pawn the Inn does not book (a gang member) spends the silver he carries
+        /// (same source as Payments); everyone else has the guest budget of <see cref="GuestApi"/> (the Inn's, or the fallback of a vanilla visitor,
+        /// who may pay "virtually" in <see cref="Charge"/>).</summary>
         public static Money Budget(Pawn p)
         {
             if (p == null) return Money.Zero;
-            return InnBooks(p) ? GuestApi.Budget(p) : Payments.Available(p);
+            return !InnBooks(p) && Underworld.IsShady(p) ? Payments.Available(p) : GuestApi.Budget(p);
         }
 
         /// <summary>Takes money from a guest and books it to an account (not necessarily the till). Mirrors GuestApi.ChargeGuest, which only knows the till.</summary>

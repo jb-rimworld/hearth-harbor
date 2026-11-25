@@ -42,24 +42,46 @@ namespace Hearth.Underworld
             if (!parent.Spawned) return null;
             var line = FenceTrade.StockLine(this);
             var why = FenceTrade.CannotBuyReason(this);
-            return why == null ? line : line + "\n" + UwPay.T("Fence.CannotBuy", why);
+            if (why != null) return line + "\n" + UwPay.T("Fence.CannotBuy", why);
+            var low = FenceTrade.LowCashLine(this);
+            return low == null ? line : line + "\n" + low;
         }
 
-        /// <summary>Drops the whole stock next to the counter as ordinary items (the stolen origin is forgotten). Returns the number of stacks.</summary>
+        /// <summary>Drops the whole stock next to the counter as ordinary items (the stolen origin of what left is forgotten). Returns the number of
+        /// stacks put out; stacks that found no free cell stay in stock and keep their origin.</summary>
         public int TakeOut()
         {
             var map = parent.MapHeld; if (map == null || stock.Count == 0) return 0;
-            int n = stock.Count;
-            stock.TryDropAll(parent.PositionHeld, map, ThingPlaceMode.Near);
-            from.Clear();
-            return n - stock.Count;
+            return DropAll(parent.PositionHeld, map);
+        }
+
+        int DropAll(IntVec3 at, Map map)
+        {
+            var before = new List<Thing>(stock);
+            stock.TryDropAll(at, map, ThingPlaceMode.Near);
+            return ForgetGone(before);
+        }
+
+        /// <summary>Forgets the origin of each of <paramref name="before"/> that is no longer in stock. Returns how many left.</summary>
+        internal int ForgetGone(List<Thing> before)
+        {
+            int n = 0;
+            foreach (var t in before) if (!stock.Contains(t)) { from.Remove(t); n++; }
+            return n;
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
             base.PostDestroy(mode, previousMap);
             // deconstructed or destroyed: the goods are not lost with the counter
-            if (mode != DestroyMode.Vanish && previousMap != null && stock.Count > 0) { stock.TryDropAll(parent.Position, previousMap, ThingPlaceMode.Near); from.Clear(); }
+            if (mode != DestroyMode.Vanish && previousMap != null && stock.Count > 0) DropAll(parent.Position, previousMap);
+        }
+
+        /// <summary>The message after Take goods out: how many stacks, and whether some found no room.</summary>
+        public static string TookOutText(int put, int had)
+        {
+            if (put < had) return UwPay.T("Fence.TookOut.NoRoom", had - put, had);
+            return put == 1 ? UwPay.T("Fence.TookOut.One") : UwPay.T("Fence.TookOut", put);
         }
 
         /// <summary>A deal message, at most one per in-game hour for this counter.</summary>
@@ -82,7 +104,11 @@ namespace Hearth.Underworld
             var take = new Command_Action
             {
                 defaultLabel = UwPay.T("Fence.TakeOut"), defaultDesc = UwPay.T("Fence.TakeOut.Desc"), icon = OfferIcons.TakeOut,
-                action = () => { int n = TakeOut(); Messages.Message(UwPay.T("Fence.TookOut", n), parent, MessageTypeDefOf.NeutralEvent, false); }
+                action = () =>
+                {
+                    int had = stock.Count, n = TakeOut();
+                    Messages.Message(TookOutText(n, had), parent, n < had ? MessageTypeDefOf.RejectInput : MessageTypeDefOf.NeutralEvent, false);
+                }
             };
             if (stock.Count == 0) take.Disable(UwPay.T("Fence.TakeOut.Empty"));
             yield return take;
@@ -125,9 +151,23 @@ namespace Hearth.Underworld
         public static string CannotBuyReason(CompFenceStock fs)
         {
             if (!Underworld.Unlocked) return UwPay.T("Fence.Why.Closed");
-            var have = UwPay.Balance(fs.Account) + UwPay.Balance(Underworld.Till(fs.Map));
-            if (have < Money.FromSilver(1)) return UwPay.T("Fence.Why.TillEmpty");
+            if (OnHand(fs) < Money.FromSilver(1)) return UwPay.T("Fence.Why.TillEmpty");
             return null;
+        }
+
+        /// <summary>Market value of the dearest loot gangs carry (<see cref="Loot.Equip"/>).</summary>
+        public const float LootMaxValue = 350f;
+
+        /// <summary>Silver the fence can pay with right now: its cash box plus the till.</summary>
+        public static Money OnHand(CompFenceStock fs) => UwPay.Balance(fs.Account) + UwPay.Balance(Underworld.Till(fs.Map));
+
+        /// <summary>"Only 30 silver on hand …" when the fence cannot pay for the dearer loot gangs bring (translated), or null.</summary>
+        public static string LowCashLine(CompFenceStock fs)
+        {
+            if (!Underworld.Unlocked) return null;
+            var have = OnHand(fs);
+            var dear = new Money(UnderworldMath.FenceBuyPrice(Money.FromSilver(LootMaxValue).Micro, BuyPct));
+            return have < dear ? UwPay.T("Fence.LowCash", have.ToStringShort(), dear.ToStringShort()) : null;
         }
 
         public static Money TopUp(CompFenceStock fs, Money target)
@@ -164,7 +204,8 @@ namespace Hearth.Underworld
             if (Ledger.Current.Balance(fs.Account) < price) TopUp(fs, price);
             if (Ledger.Current.Balance(fs.Account) < price)
             {
-                why = UwPay.T("Fence.Why.TillEmpty");
+                var have = Ledger.Current.Balance(fs.Account);   // after the top-up the till is empty: all there is sits in the cash box
+                why = have < Money.FromSilver(1) ? UwPay.T("Fence.Why.TillEmpty") : UwPay.T("Fence.Why.TooLittle", have.ToStringShort(), price.ToStringShort());
                 fs.Say(UwPay.T("Fence.BuyFailed", item.LabelCap, why), MessageTypeDefOf.NegativeEvent);
                 return false;
             }
@@ -238,7 +279,7 @@ namespace Hearth.Underworld
             int n = JRand.Stream("underworld.loot").Range(0, 3);
             for (int i = 0; i < n; i++)
             {
-                var t = UwPay.MakeGoods(25, 350); if (t == null) continue;
+                var t = UwPay.MakeGoods(25, FenceTrade.LootMaxValue); if (t == null) continue;
                 if (p.inventory.innerContainer.TryAdd(t, false)) Underworld.Comp.MarkStolen(t, from); else t.Destroy();
             }
         }

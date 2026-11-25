@@ -43,6 +43,7 @@ namespace Hearth.Underworld
         // pawn marks (thingIDNumber)
         List<int> shady = new List<int>();
         List<int> hunters = new List<int>();
+        List<int> gang = new List<int>();           // members of gang visits (shady Inn guests are shady too, but no gang)
         List<int> paidFee = new List<int>();
         List<int> stolenThings = new List<int>();   // thing ids of loot carried by outlaws
         List<int> stolenFactions = new List<int>(); // parallel: faction loadID the loot came from
@@ -100,6 +101,8 @@ namespace Hearth.Underworld
         // ---- marks -----------------------------------------------------------------------------------------
         public bool IsShady(Pawn p) => shady.Contains(p.thingIDNumber);
         public void MarkShady(Pawn p) { if (!shady.Contains(p.thingIDNumber)) { shady.Add(p.thingIDNumber); Trim(shady); } }
+        public bool IsGang(Pawn p) => gang.Contains(p.thingIDNumber);
+        public void MarkGang(Pawn p) { if (!gang.Contains(p.thingIDNumber)) { gang.Add(p.thingIDNumber); Trim(gang); } }
         public bool IsHunter(Pawn p) => hunters.Contains(p.thingIDNumber);
         public void MarkHunter(Pawn p) { if (!hunters.Contains(p.thingIDNumber)) { hunters.Add(p.thingIDNumber); Trim(hunters); } }
         public bool PaidFee(Pawn p) => paidFee.Contains(p.thingIDNumber);
@@ -141,6 +144,7 @@ namespace Hearth.Underworld
             Scribe_Values.Look(ref HighRollersUntil, "highRollersUntil");
             Scribe_Collections.Look(ref shady, "shady", LookMode.Value);
             Scribe_Collections.Look(ref hunters, "hunters", LookMode.Value);
+            Scribe_Collections.Look(ref gang, "gangPawns", LookMode.Value);
             Scribe_Collections.Look(ref paidFee, "paidFee", LookMode.Value);
             Scribe_Collections.Look(ref stolenThings, "stolenThings", LookMode.Value);
             Scribe_Collections.Look(ref stolenFactions, "stolenFactions", LookMode.Value);
@@ -172,6 +176,7 @@ namespace Hearth.Underworld
                 if (scandalTick == null) scandalTick = new Dictionary<int, int>();
                 if (shady == null) shady = new List<int>();
                 if (hunters == null) hunters = new List<int>();
+                if (gang == null) gang = new List<int>();
                 if (paidFee == null) paidFee = new List<int>();
                 if (stolenThings == null) stolenThings = new List<int>();
                 if (stolenFactions == null) stolenFactions = new List<int>();

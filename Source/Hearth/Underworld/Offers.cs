@@ -25,10 +25,21 @@ namespace Hearth.Underworld
             return l;
         }
 
+        /// <summary>The stuff to make the thing from: the saved one when it still fits the def (a mod may have changed it), else the default; null when none fits.</summary>
+        ThingDef UsableStuff()
+        {
+            if (def == null || !def.MadeFromStuff) return null;
+            if (stuff != null && stuff.IsStuff && stuff.stuffProps.CanMake(def)) return stuff;
+            return GenStuff.DefaultStuffFor(def);
+        }
+
+        /// <summary>The line can still be made (its def exists and, if it needs stuff, some stuff fits).</summary>
+        public bool CanMake => def != null && (!def.MadeFromStuff || UsableStuff() != null);
+
         public Thing Make()
         {
-            if (def == null) return null;
-            var t = ThingMaker.MakeThing(def, def.MadeFromStuff ? (stuff ?? GenStuff.DefaultStuffFor(def)) : null);
+            if (!CanMake) return null;
+            var t = ThingMaker.MakeThing(def, UsableStuff());
             t.stackCount = Math.Max(1, Math.Min(count, def.stackLimit));
             if (quality >= 0) t.TryGetComp<CompQuality>()?.SetQuality((QualityCategory)quality, ArtGenerationContext.Outsider);
             return t;
@@ -80,7 +91,7 @@ namespace Hearth.Underworld
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 if (goods == null) goods = new List<UwGoodsLine>();
-                goods.RemoveAll(g => g == null || g.def == null);
+                goods.RemoveAll(g => g == null || !g.CanMake);
             }
         }
     }
@@ -159,7 +170,7 @@ namespace Hearth.Underworld
         static bool StillValid(UwOffer o)
         {
             var map = o.Map; if (map == null) return false;
-            if (o.kind == UwOfferKind.Smuggler) return Smuggler.Dock(map) != null && o.goods.Count > 0;
+            if (o.kind == UwOfferKind.Smuggler) { if (Smuggler.Dock(map) == null) return false; foreach (var g in o.goods) if (g.CanMake) return true; return false; }
             var p = o.leader;
             return p != null && !p.Dead && p.Spawned && p.Map == map && o.faction != null && !o.faction.defeated && !o.faction.HostileTo(Faction.OfPlayer)
                    && Underworld.Allows(UwFeature.ProtectionRacket);
@@ -196,7 +207,8 @@ namespace Hearth.Underworld
         public static bool CanAccept(UwOffer o, out string why)
         {
             why = null; var map = o?.Map;
-            if (o == null || map == null || !o.Announced || !StillValid(o)) { why = UwPay.T("Offer.Gone"); return false; }
+            // a stale reference (the tab caches its rows) to an offer that was answered, ran out or was closed is gone too
+            if (o == null || map == null || !o.Announced || !IsOpen(o) || !StillValid(o)) { why = UwPay.T("Offer.Gone"); return false; }
             if (Ledger.Current.Balance(Underworld.Till(map)) < o.price) { why = UwPay.T(o.kind == UwOfferKind.Smuggler ? "Smuggler.NoCash" : "Gang.Demand.NoCash"); return false; }
             return true;
         }
@@ -206,8 +218,15 @@ namespace Hearth.Underworld
         {
             if (!CanAccept(o, out why)) return false;
             var map = o.Map;
-            bool ok = o.kind == UwOfferKind.Smuggler ? Smuggler.Buy(map, o) : Gangs.PayProtection(map, o.faction, o.price);
-            if (!ok) { why = UwPay.T(o.kind == UwOfferKind.Smuggler ? "Smuggler.NoCash" : "Gang.Demand.NoCash"); return false; }
+            bool ok;
+            if (o.kind == UwOfferKind.Smuggler) ok = Smuggler.Buy(map, o, out why);
+            else { ok = Gangs.PayProtection(map, o.faction, o.price); if (!ok) why = UwPay.T("Gang.Demand.NoCash"); }
+            if (!ok)
+            {
+                // nothing of the crate can be made any more (a removed mod): the offer is over, not short of cash
+                if (why == UwPay.T("Offer.Gone")) Close(o);
+                return false;
+            }
             Close(o);
             Messages.Message(UwPay.T(o.kind == UwOfferKind.Smuggler ? "Smuggler.Bought" : "Gang.Demand.Paid", o.price.ToStringShort()),
                 o.kind == UwOfferKind.Smuggler ? new LookTargets(new TargetInfo(Smuggler.Dock(map)?.Position ?? IntVec3.Invalid, map)) : new LookTargets(o.leader), MessageTypeDefOf.NeutralEvent, false);
@@ -217,7 +236,7 @@ namespace Hearth.Underworld
         /// <summary>The player says no, or the time ran out: the boat leaves (nothing else), the gang takes the refusal as refusals were always taken.</summary>
         public static void Decline(UwOffer o, bool expired = false)
         {
-            if (o == null) return;
+            if (o == null || !IsOpen(o)) return;   // answered or closed already: a second refusal must not cost goodwill again
             var map = o.Map;
             if (o.kind == UwOfferKind.Protection && map != null && o.faction != null) Gangs.RefuseProtection(map, o.faction);
             Close(o);
@@ -226,10 +245,15 @@ namespace Hearth.Underworld
                 MessageTypeDefOf.NeutralEvent, false);
         }
 
-        /// <summary>Removes the offer and its letter (if the letter is still in the stack).</summary>
+        /// <summary>The offer is still in the list of offers (not answered, run out or closed).</summary>
+        public static bool IsOpen(UwOffer o) { var l = List; return o != null && l != null && l.Contains(o); }
+
+        /// <summary>Removes the offer and its letter (if the letter is still in the stack). A held reference then reads as not announced.</summary>
         public static void Close(UwOffer o)
         {
+            if (o == null) return;
             List?.Remove(o);
+            o.expireTick = -1;
             if (o.letterId >= 0 && Find.LetterStack != null)
             {
                 var ls = Find.LetterStack.LettersListForReading;

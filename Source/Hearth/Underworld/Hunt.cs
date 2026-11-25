@@ -21,12 +21,26 @@ namespace Hearth.Underworld
     {
         public bool allowPrisoners;
         Arena.Info cache;
+        /// <summary>Tiles of a closed ground that is larger than <see cref="Hunts.MaxCells"/> (counted up to <see cref="Hunts.CheckCells"/>), else -1.</summary>
+        int tooBig = -1;
         public Arena.Info ArenaInfo()
         {
             if (!parent.Spawned) return null;
-            if (cache == null || Find.TickManager.TicksGame - cache.Builtick > 250) cache = Arena.Flood(parent.Map, parent.Position, 1600);
+            if (cache == null || Find.TickManager.TicksGame - cache.Builtick > 250)
+            {
+                cache = Arena.Flood(parent.Map, parent.Position, Hunts.MaxCells);
+                tooBig = -1;
+                // the flood stopped at the cap: look further once to tell a large closed pasture from a gap in the fence
+                if (!cache.Closed && cache.Cells.Count > Hunts.MaxCells)
+                {
+                    var wide = Arena.Flood(parent.Map, parent.Position, Hunts.CheckCells);
+                    if (wide.Closed) tooBig = wide.Cells.Count;
+                }
+            }
             return cache;
         }
+        /// <summary>The ground is fenced in but larger than <see cref="Hunts.MaxCells"/>.</summary>
+        public bool TooBig => ArenaInfo() != null && tooBig > 0;
         public bool Valid => ArenaInfo() is Arena.Info a && a.Closed && a.Cells.Count >= Hunts.MinCells;
 
         /// <summary>Why no hunting party can come to this ground (translated), or null when the ground is fine.</summary>
@@ -34,7 +48,7 @@ namespace Hearth.Underworld
         {
             if (!Underworld.Allows(UwFeature.HuntAnimals)) return UwPay.T("Hunt.Closed");
             var a = ArenaInfo(); if (a == null) return null;
-            if (!a.Closed) return UwPay.T("Hunt.Open");
+            if (!a.Closed) return tooBig > 0 ? UwPay.T("Hunt.TooBig", tooBig, Hunts.MaxCells) : UwPay.T("Hunt.Open", Hunts.MaxCells);
             if (a.Cells.Count < Hunts.MinCells) return UwPay.T("Hunt.TooSmall", a.Cells.Count, Hunts.MinCells);
             return null;
         }
@@ -78,6 +92,8 @@ namespace Hearth.Underworld
         static readonly List<Session> sessions = new List<Session>();
         /// <summary>Smallest closed hunting ground (tiles).</summary>
         public const int MinCells = 60;
+        /// <summary>Largest hunting ground (tiles); a closed ground up to <see cref="CheckCells"/> tiles is reported as too big rather than open.</summary>
+        public const int MaxCells = 1600, CheckCells = 6000;
         public static bool Running(Map map) { foreach (var s in sessions) if (s.Map == map && s.Ground != null && s.Ground.parent.Spawned && !s.Done) return true; return false; }
 
         public static CompHuntingGround FindGround(Map map)

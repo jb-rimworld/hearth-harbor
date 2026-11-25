@@ -55,6 +55,24 @@ namespace Hearth.Underworld
             return UwKit.SpawnBuilding(UwDefs.SmugglerDock, cell, map);
         }
 
+        /// <summary>A w×h rect whose surrounding ring of cells is free (standable, no building, not fogged, reachable), and whose centre is free.</summary>
+        public static bool TryFindRing(Map map, int w, int h, out CellRect rect)
+        {
+            rect = default;
+            var center = TestCells.Anchor(map);
+            foreach (var c in GenRadial.RadialCellsAround(center, 60f, true))
+            {
+                var r = CellRect.CenteredOn(c, w, h); var ring = r.ExpandedBy(1);
+                if (!ring.ExpandedBy(1).InBounds(map)) continue;
+                bool ok = true;
+                foreach (var e in ring.EdgeCells) if (!e.Standable(map) || e.GetFirstBuilding(map) != null || e.Fogged(map) || e.GetDoor(map) != null) { ok = false; break; }
+                var mid = r.CenterCell;
+                if (ok && (!mid.Standable(map) || mid.GetFirstBuilding(map) != null || mid.Fogged(map))) ok = false;
+                if (ok) { rect = r; return true; }
+            }
+            return false;
+        }
+
         public static bool HasKey(string s, string key) => !s.NullOrEmpty() && s.Contains(key.Translate().ToString().Split('{')[0].Trim());
     }
 
@@ -125,6 +143,10 @@ namespace Hearth.Underworld
             var fs = FacKit.Fence(map, t);
             FacKit.Refresh(map);
             t.Check(Gangs.HasGangFacility(map), "a fence counter is a facility gangs use");
+            // a shady guest (as the Inn's shady stays are marked) is no gang: the row does not say a gang is here
+            var innShady = UwKit.Guests(map, 1, UwKit.Friendly(), shady: true)[0];
+            FacilityStatus.MarkDirty();
+            t.Check(FacilityStatus.GangHere(map) == 0 && FacilityStatus.Get(map, FacilityStatus.GangsId).State != FacilityState.Working, "a shady Inn guest does not count as a gang: " + FacilityStatus.Get(map, FacilityStatus.GangsId).Line);
             UwTicker.Events(now);
             float first = HSettings.Get("underworld.gang.firstDays");
             int lo = now + (int)(60000 * first * 0.5f) - 1, hi = now + (int)(60000 * first * 1.5f) + 1;
@@ -146,7 +168,20 @@ namespace Hearth.Underworld
             var gang = FacKit.TrackGangs(map);
             t.Check(c.GangVisits == 1 && gang.Count >= 2, "the retry brought a gang: " + gang.Count);
             t.Check(c.GangRetryKey == null && c.NextGangTick > now + 60000, "reason cleared, next visit in " + ((c.NextGangTick - now) / 60000f).ToString("0.0") + " days");
+            int members = gang.Count(p => p != innShady);
+            FacilityStatus.MarkDirty();
+            var here = FacilityStatus.Get(map, FacilityStatus.GangsId);
+            t.Check(FacilityStatus.GangHere(map) == members && here.State == FacilityState.Working && here.Line == UwPay.T("Gang.Status.Here", members), "the row counts only the gang: " + here.Line);
+            // a failed timer attempt, then a visit from elsewhere (storyteller incident, dev mode): the old reason goes
+            Gangs.TestFailKey = "NoEntry"; c.NextGangTick = now; UwTicker.Events(now); Gangs.TestFailKey = null;
+            t.Check(c.GangRetryKey == "NoEntry", "another failed attempt keeps its reason");
+            bool came2 = Gangs.Fire(map, out var gang2, force: true);
+            if (gang2 != null) foreach (var p in gang2) UwKit.Track(p);
+            t.Check(came2 && c.GangRetryKey == null && c.GangRetryTick == -1, "a visit outside the timer clears the reason");
+            FacilityStatus.MarkDirty();
+            t.Check(FacilityStatus.GangRetryReason() == null && FacilityStatus.Get(map, FacilityStatus.GangsId).Line.IndexOf(UwPay.T("Gang.Why.NoEntry"), StringComparison.OrdinalIgnoreCase) < 0, "the row no longer names the old reason");
             foreach (var k in new[] { "NoFacility", "NoFaction", "NoEntry", "NoPawns" }) t.Check(!UwPay.T("Gang.Why." + k).Contains("HH.Underworld"), "reason keyed: " + k);
+            c.GangVisits = visits0;
             FacKit.CloseOffers();
             c.GangVisits = visits0; c.NextGangTick = next0; c.FirstGangPlanned = planned0; c.GangRetryKey = key0;
             UwKit.End();
@@ -193,6 +228,19 @@ namespace Hearth.Underworld
                 t.Check(Lounge.Session(other, drug), "a second member pays the fee and then a real lounge session");
             }
             else t.Note("second member's ideology forbids drugs: real session skipped");
+            // an ordinary (not shady) visitor the Inn does not book carries no silver: he keeps his guest budget (and may pay virtually)
+            var plain = UwKit.Guests(map, 1, pawns[0].Faction)[0];
+            foreach (var s in plain.inventory.innerContainer.ToList()) if (s.def == ThingDefOf.Silver) s.Destroy();
+            var gi = GuestApi.Info(plain);
+            if (gi != null)
+            {
+                gi.Budget = Money.FromSilver(150);
+                t.Check(UwPay.Budget(plain) == Money.FromSilver(150) && UwPay.Budget(plain) >= lounge, "unbooked, silverless visitor: budget is the guest budget (" + UwPay.Budget(plain) + ")");
+            }
+            else t.Note("the visitor is no guest here; budget check skipped");
+            var shadyBroke = UwKit.Guests(map, 1, pawns[0].Faction, shady: true)[0];
+            foreach (var s in shadyBroke.inventory.innerContainer.ToList()) if (s.def == ThingDefOf.Silver) s.Destroy();
+            t.Check(UwPay.Budget(shadyBroke) == Money.Zero, "a shady pawn without silver has nothing to spend (" + UwPay.Budget(shadyBroke) + ")");
             t.Check(Ledger.Current.SumAll() == 0, "ledger balanced");
             FacKit.CloseOffers();
             c.GangVisits = visits0;
@@ -222,8 +270,17 @@ namespace Hearth.Underworld
             fs.LastMessageTick = -999999;
             t.Check(!FenceTrade.BuyFrom(fs, seller, item, out string why) && why == UwPay.T("Fence.Why.TillEmpty"), "no cash: the deal fails with the reason (" + why + ")");
             t.Check(fs.LastMessageTick == Find.TickManager.TicksGame, "the failure was told once");
+            // a little silver, less than the price: the reason says how much there is and what it costs
+            Payments.CreditColony(map, Money.FromSilver(30), "test");
+            var price = FenceTrade.BuyPrice(item);
+            t.Check(price > Money.FromSilver(30), "the loot costs more than 30 silver (" + price + ")");
+            t.Check(FenceTrade.CannotBuyReason(fs) == null && FenceTrade.LowCashLine(fs) != null && fs.CompInspectStringExtra().Contains(FenceTrade.LowCashLine(fs)), "30 silver on hand: inspect says it is little: " + fs.CompInspectStringExtra().Replace("\n", " | "));
+            fs.LastMessageTick = -999999;
+            t.Check(!FenceTrade.BuyFrom(fs, seller, item, out why) && why == UwPay.T("Fence.Why.TooLittle", Money.FromSilver(30).ToStringShort(), price.ToStringShort()), "too little: the reason names the amount (" + why + ")");
+            t.Check(why != UwPay.T("Fence.Why.TillEmpty"), "and does not claim the till is empty");
             // with cash: two deals in one hour give one message
             Payments.CreditColony(map, Money.FromSilver(2000), "test");
+            t.Check(FenceTrade.LowCashLine(fs) == null, "enough silver: no low-cash line");
             t.Check(FenceTrade.CannotBuyReason(fs) == null, "with silver in the till: no reason line");
             fs.LastMessageTick = -999999;
             t.Check(FenceTrade.BuyFrom(fs, seller, item, out why), "deal works (" + why + ")");
@@ -237,6 +294,12 @@ namespace Hearth.Underworld
             var gizmo = fs.CompGetGizmosExtra().OfType<Command_Action>().FirstOrDefault(g => g.defaultLabel == UwPay.T("Fence.TakeOut"));
             t.Check(gizmo != null && !gizmo.Disabled, "Take goods out gizmo is there and enabled");
             var stocked = fs.Stock.ToList();
+            // a stack that did not leave the stock keeps its origin; only what left is forgotten
+            var ghost = ThingMaker.MakeThing(ThingDefOf.MedicineHerbal);
+            t.Check(fs.ForgetGone(new List<Thing>(stocked) { ghost }) == 1 && stocked.All(x => fs.SourceFaction(x) == f), "stacks still in stock keep their stolen origin");
+            ghost.Destroy();
+            t.Check(CompFenceStock.TookOutText(2, 2) == UwPay.T("Fence.TookOut", 2) && CompFenceStock.TookOutText(1, 1) == UwPay.T("Fence.TookOut.One")
+                    && CompFenceStock.TookOutText(0, 2) == UwPay.T("Fence.TookOut.NoRoom", 2, 2), "take-out message: plural, one stack, no room");
             t.Check(fs.TakeOut() == 2 && fs.Stock.Count == 0, "Take goods out empties the stock");
             t.Check(stocked.All(x => x.Spawned && x.Position.InHorDistOf(counter.Position, 6f)), "the goods lie next to the counter");
             t.Check(stocked.All(x => !x.IsForbidden(Faction.OfPlayer)), "and the colony may use them");
@@ -273,6 +336,18 @@ namespace Hearth.Underworld
             var dock = FacKit.Dock(map, t); FacKit.Refresh(map);
             Payments.CreditColony(map, Money.FromSilver(3000), "test");
             int lettersBefore = Find.LetterStack.LettersListForReading.Count;
+            // ---- dock line without a boat
+            int nextS0 = c.NextSmugglerTick, now0 = Find.TickManager.TicksGame;
+            c.NextSmugglerTick = now0 + 3 * 60000;
+            string ins0 = dock.GetInspectString();
+            t.Check(ins0.Contains(UwPay.T("Smuggler.Next", (3 * 60000).ToStringTicksToPeriod())), "no boat: the dock says when the next lands: " + ins0.Replace("\n", " | "));
+            t.Check(UwPay.T("Smuggler.Next", "x").EndsWith("."), "the sentence ends with a period");
+            c.NextSmugglerTick = now0 - 1;
+            t.Check(dock.GetInspectString().Contains(UwPay.T("Smuggler.NextSoon")), "overdue: next landing soon");
+            HearthProfile.Current.Content = ContentIntensity.Cozy;
+            t.Check(dock.GetInspectString().Contains(UwPay.T("Facility.Off")), "Cozy: the dock says the underworld is off");
+            HearthProfile.Current.Content = ContentIntensity.Standard;
+            c.NextSmugglerTick = nextS0;
             // ---- smuggler landing
             t.Check(Smuggler.Fire(map, force: true), "a boat lands");
             t.Check(!FacKit.NodeTreeOpen(), "no dialog opened by the landing");
@@ -307,6 +382,10 @@ namespace Hearth.Underworld
             buy.action();
             t.Check(till0 - UwKit.Till(map) == o.price && Offers.OpenOf(UwOfferKind.Smuggler, map) == null, "Buy: price paid, offer closed");
             t.Check(!Find.LetterStack.LettersListForReading.Any(l => l.ID == o.letterId), "its letter left the stack");
+            // a stale reference (the tab caches rows): the closed offer cannot be bought again
+            till0 = UwKit.Till(map);
+            t.Check(!o.Announced && !Offers.CanAccept(o, out string staleWhy) && staleWhy == UwPay.T("Offer.Gone"), "a closed offer reads as gone");
+            t.Check(!Offers.Accept(o, out _) && UwKit.Till(map) == till0, "a stale Buy pays nothing");
             t.Check(ledger.SumAll() == 0, "ledger balanced");
             // decline
             Smuggler.Fire(map, force: true); o = Offers.OpenOf(UwOfferKind.Smuggler, map); till0 = UwKit.Till(map);
@@ -317,6 +396,16 @@ namespace Hearth.Underworld
             var keep = UwKit.Till(map); ledger.Post(Underworld.Till(map), "world", keep, "test drain");
             t.Check(!Offers.CanAccept(o, out string why) && why == UwPay.T("Smuggler.NoCash"), "empty till: buy refused with the reason (" + why + ")");
             ledger.Post("world", Underworld.Till(map), keep, "test refill");
+            // a crate nothing of which can be made any more (a removed mod): gone, not 'not enough in the till'
+            Offers.Close(o); Smuggler.Fire(map, force: true); o = Offers.OpenOf(UwOfferKind.Smuggler, map);
+            var defs = o.goods.Select(g => g.def).ToList();
+            foreach (var g in o.goods) g.def = null;
+            till0 = UwKit.Till(map);
+            t.Check(!Offers.CanAccept(o, out why) && why == UwPay.T("Offer.Gone"), "unmakeable crate: the offer is gone (" + why + ")");
+            t.Check(!Smuggler.Buy(map, o, out why) && why == UwPay.T("Offer.Gone") && UwKit.Till(map) == till0, "Buy refuses it as gone and takes no money (" + why + ")");
+            Offers.Tick(Find.TickManager.TicksGame);
+            t.Check(Offers.OpenOf(UwOfferKind.Smuggler, map) == null, "the ticker closes it");
+            Smuggler.Fire(map, force: true); o = Offers.OpenOf(UwOfferKind.Smuggler, map);
             // expiry = the boat leaves
             o.expireTick = Find.TickManager.TicksGame - 1; till0 = UwKit.Till(map);
             Offers.Tick(Find.TickManager.TicksGame);
@@ -348,6 +437,10 @@ namespace Hearth.Underworld
             pay.action();
             t.Check(till0 - UwKit.Till(map) == d.price && !c.Offers.Contains(d), "Pay: the fee left the till, the demand is closed");
             t.Check(d.faction.PlayerGoodwill >= gw0, "paying does not cost goodwill");
+            // a stale Refuse on the answered demand does nothing
+            int gwPaid = d.faction.PlayerGoodwill; float wPaid = Underworld.Whispers;
+            Offers.Decline(d);
+            t.Check(d.faction.PlayerGoodwill == gwPaid && Underworld.Whispers <= wPaid + 0.01f, "a stale Refuse costs no goodwill and adds no whispers");
             // an unanswered demand counts as a refusal
             var d2 = Gangs.PlanDemand(map, d.faction, gang[0], Find.TickManager.TicksGame);
             Offers.Tick(Find.TickManager.TicksGame);
@@ -384,12 +477,54 @@ namespace Hearth.Underworld
             t.Check(!g.Valid && line == UwPay.T("Hunt.TooSmall", 25, Hunts.MinCells), "a closed 5x5 ground: " + line);
             var open = UwKit.SpawnBuilding(UwDefs.HuntingGround, UwKit.TryFindRect(map, 3, 3, out var r, 20) ? r.CenterCell : t.FreeCellNearCenter(), map).TryGetComp<CompHuntingGround>();
             yield return 2;
-            t.Check(open.CompInspectStringExtra() == UwPay.T("Hunt.Open"), "a marker in the open: " + open.CompInspectStringExtra());
+            t.Check(open.CompInspectStringExtra() == UwPay.T("Hunt.Open", Hunts.MaxCells), "a marker in the open: " + open.CompInspectStringExtra());
             HearthProfile.Current.Content = ContentIntensity.Cozy;
             t.Check(g.ReasonLine() == UwPay.T("Hunt.Closed"), "not allowed: says so");
             HearthProfile.Current.Content = ContentIntensity.Standard;
+            FacilityStatus.MarkDirty();   // rows are cached for 250 ticks; an earlier suite may have read them this tick
             var row = FacilityStatus.Get(map, FacilityStatus.HuntId);
-            t.Check(row != null && row.State == FacilityState.Waiting && (row.Line == UwPay.T("Hunt.TooSmall", 25, Hunts.MinCells) || row.Line == UwPay.T("Hunt.Open")), "Underworld tab row waits with the reason: " + row?.Line);
+            t.Check(row != null && row.State == FacilityState.Waiting && (row.Line == UwPay.T("Hunt.TooSmall", 25, Hunts.MinCells) || row.Line == UwPay.T("Hunt.Open", Hunts.MaxCells)), "Underworld tab row waits with the reason: " + row?.Line);
+            // a closed ground larger than the maximum: too big, not open (a fence ring on free cells; rock or buildings inside are fine)
+            if (FacKit.TryFindRing(map, 44, 44, out var big))
+            {
+                UwKit.BuildFence(map, big.ExpandedBy(1));
+                var bg = UwKit.SpawnBuilding(UwDefs.HuntingGround, big.CenterCell, map).TryGetComp<CompHuntingGround>();
+                yield return 2;
+                var wide = Arena.Flood(map, bg.parent.Position, Hunts.CheckCells);
+                if (wide.Closed && wide.Cells.Count > Hunts.MaxCells)
+                    t.Check(!bg.Valid && bg.TooBig && bg.ReasonLine() == UwPay.T("Hunt.TooBig", wide.Cells.Count, Hunts.MaxCells), "a closed ground of " + wide.Cells.Count + " tiles: " + bg.ReasonLine());
+                else t.Note("the ring holds only " + wide.Cells.Count + " walkable tiles (closed " + wide.Closed + "); too-big check skipped");
+                bg.parent.Destroy();
+            }
+            else t.Note("no room for a 44x44 fence ring; too-big check skipped");
+            // a valid ground: next hunting party, then a running hunt
+            var c = Underworld.Comp; int nextH0 = c.NextHuntTick;
+            if (UwKit.TryFindRect(map, 9, 9, out var mid, 10))
+            {
+                UwKit.BuildFence(map, mid.ExpandedBy(1));
+                var vg = UwKit.SpawnBuilding(UwDefs.HuntingGround, mid.CenterCell, map).TryGetComp<CompHuntingGround>();
+                yield return 2;
+                t.Check(vg.Valid, "a closed 9x9 ground is valid");
+                c.NextHuntTick = Find.TickManager.TicksGame + 2 * 60000;
+                var vl = vg.CompInspectStringExtra();
+                t.Check(vl.Contains(UwPay.T("Hunt.Next", (2 * 60000).ToStringTicksToPeriod())), "valid ground: next hunting party: " + vl.Replace("\n", " | "));
+                FacilityStatus.MarkDirty();
+                var hr = FacilityStatus.Get(map, FacilityStatus.HuntId);
+                t.Check(hr.Next == UwPay.T("Hunt.Next", (2 * 60000).ToStringTicksToPeriod()), "tab row: next hunting party (" + hr.Next + ")");
+                Payments.CreditColony(map, Money.FromSilver(10), "test");
+                if (UwKit.Friendly() != null && Hunts.Fire(map, out var hunters, force: true))
+                {
+                    foreach (var h in hunters) UwKit.Track(h);
+                    foreach (var a in map.mapPawns.AllPawnsSpawned.Where(p => p.RaceProps.Animal && p.Faction == Faction.OfPlayer && vg.ArenaInfo().Cells.Contains(p.Position)).ToList()) UwKit.Track(a);
+                    t.Check(Hunts.Running(map) && vg.CompInspectStringExtra().Contains(UwPay.T("Hunt.Running")), "a running hunt: " + vg.CompInspectStringExtra().Replace("\n", " | "));
+                    FacilityStatus.MarkDirty();
+                    t.Check(FacilityStatus.Get(map, FacilityStatus.HuntId).Line == UwPay.T("Hunt.Running"), "tab row: a hunt is on");
+                }
+                else t.Note("no hunting party could come; running check skipped");
+            }
+            else t.Note("no free 9x9 area; valid-ground checks skipped");
+            c.NextHuntTick = nextH0;
+            t.Check(Ledger.Current.SumAll() == 0, "ledger balanced");
             UwKit.End();
         }
     }

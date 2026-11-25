@@ -58,7 +58,7 @@ namespace Hearth.Underworld
             var comp = Underworld.Comp; var rng = JRand.Stream("underworld.gang");
             foreach (var p in pawns)
             {
-                comp.MarkShady(p);
+                comp.MarkShady(p); comp.MarkGang(p);
                 UwPay.GiveSilver(p, (int)(HSettings.Get("underworld.gang.feeMax") * 2 + rng.Range(0, 200)));
                 Loot.Equip(p, Find.FactionManager.AllFactionsVisible.Where(f => f != faction && !f.IsPlayer).RandomElementWithFallback());
             }
@@ -83,7 +83,10 @@ namespace Hearth.Underworld
             int size = JRand.Stream("underworld.gang").Range(2, Math.Max(3, HSettings.GetInt("underworld.gang.sizeMax") + 1));
             pawns = Spawn(map, faction, size, out var lord, out whyKey);
             if (pawns.Count == 0) { whyKey = whyKey ?? "NoPawns"; return false; }
-            Underworld.Comp.GangVisits++; Underworld.Comp.NoteEvent(FacilityStatus.GangsId);
+            var c = Underworld.Comp;
+            c.GangVisits++; c.NoteEvent(FacilityStatus.GangsId);
+            // a visit came (from the timer, the storyteller or dev mode): the reason of an earlier failed attempt is no longer true
+            c.GangRetryKey = null; c.GangRetryTick = -1;
             Underworld.AddWhispers(HSettings.Get("underworld.whispers.gang"), "gang visit");
             Find.LetterStack.ReceiveLetter(UwPay.T("Gang.Title"), UwPay.T("Gang.Text", pawns.Count, faction.Name), LetterDefOf.NeutralEvent, pawns[0]);
             HLog.Info("Underworld", $"Gang of {pawns.Count} from {faction.Name} arrived");
