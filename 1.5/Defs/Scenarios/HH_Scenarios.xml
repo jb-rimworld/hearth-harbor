@@ -226,14 +226,9 @@
             <li>Underworld</li>
             <li>Bank</li>
           </modulesOn>
-          <underworldDiscovered>true</underworldDiscovered>
           <settings>
             <li><key>core.peacefulUnderworld</key><value>0</value></li>
           </settings>
-        </li>
-        <li Class="Hearth.ScenPart_HHStartingResearch">
-          <def>HH_ScenStartingResearch</def>
-          <project>HH_Underworld_Discovery</project>
         </li>
         <li Class="Silverline.ScenPart_SLStartingAccount">
           <def>SL_ScenStartingAccount</def>

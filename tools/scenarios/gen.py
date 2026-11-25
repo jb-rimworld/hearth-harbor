@@ -27,6 +27,7 @@ def rules(tier, content, on, off, discovered, settings):
     s = '        <li Class="Hearth.ScenPart_HHRules">\n          <def>HH_ScenRules</def>\n          <tier>%s</tier>\n          <content>%s</content>\n' % (tier, content)
     s += '          <modulesOn>\n' + "".join('            <li>%s</li>\n' % m for m in on) + '          </modulesOn>\n'
     if off: s += '          <modulesOff>\n' + "".join('            <li>%s</li>\n' % m for m in off) + '          </modulesOff>\n'
+    # <underworldDiscovered> (until 1.1.x) still parses but is ignored since 1.2.0: no discovery any more
     if discovered: s += '          <underworldDiscovered>true</underworldDiscovered>\n'
     s += '          <settings>\n' + "".join('            <li><key>%s</key><value>%s</value></li>\n' % kv for kv in settings) + '          </settings>\n        </li>\n'
     return s
@@ -65,8 +66,8 @@ SCEN = [
                + thing("Silver", 600) + thing("MealSurvivalPack", 30) + thing("MedicineIndustrial", 15) + thing("ComponentIndustrial", 15)
                + thing("SmokeleafJoint", 30) + thing("Beer", 20) + thing("Gun_Revolver", 2) + thing("MeleeWeapon_Knife", 2, stuff="Steel")
                + scatter("WoodLog", 450) + scatter("Steel", 300)
-               + rules("4", "Dark", ["Inn", "ShopsFood", "Casino", "Underworld", "Bank"], [], True, [("core.peacefulUnderworld", "0")])
-               + research("HH_Underworld_Discovery") + account("SL_BlackLedger", 100, loan=1500, days=45)
+               + rules("4", "Dark", ["Inn", "ShopsFood", "Casino", "Underworld", "Bank"], [], False, [("core.peacefulUnderworld", "0")])
+               + account("SL_BlackLedger", 100, loan=1500, days=45)
                + dialog("HH.Scen.BackRoom.Intro")),
 ]
 
