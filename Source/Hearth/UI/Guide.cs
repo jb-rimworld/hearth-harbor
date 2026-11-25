@@ -158,6 +158,12 @@ namespace Hearth.Shell
     public static class GuidePanel
     {
         public const int WindowId = 76136313;
+        /// <summary>
+        /// The card sits on the game's own UI layer, below every dialog (1.1.1). It used to sit on the top layer like vanilla's learning helper,
+        /// so it was painted over settings windows, the bank, trade dialogs and other mods' windows and still took clicks while a modal
+        /// dialog was open. A window stack keeps layers in order, so a dialog opened at any time covers the card and a modal one also blocks its input.
+        /// </summary>
+        public const WindowLayer Layer = WindowLayer.GameUI;
         const float Margin = 8f, Inner = 9f;
         /// <summary>Width of the card: about a sixth of the screen (F35), between 260 and 400 px.</summary>
         public static float W => Mathf.Clamp(HUI.ScreenW * 0.17f, 260f, 400f);
@@ -221,7 +227,7 @@ namespace Hearth.Shell
             float maxH = Mathf.Max(120f, UI.screenHeight - y - 60f);
             var rect = new Rect(UI.screenWidth - Margin - W, y, W, Mathf.Min(contentHeight + Inner * 2f, maxH));
             lastRect = rect; DrawCount++; UiProbe.Hit("guide");
-            Find.WindowStack.ImmediateWindow(WindowId, rect, WindowLayer.Super, () => Guard.Run(ModuleId.Core, "UI.Guide", () => DrawContents(rect, active, hidden)), doBackground: false);
+            Find.WindowStack.ImmediateWindow(WindowId, rect, Layer, () => Guard.Run(ModuleId.Core, "UI.Guide", () => DrawContents(rect, active, hidden)), doBackground: false);
         }
 
         static void DrawContents(Rect windowRect, List<GuideState.TopicView> active, int hidden)

@@ -245,6 +245,14 @@ namespace Hearth.Shell.Tests
         }
     }
 
+    /// <summary>A plain dialog-layer window (what every vanilla or modded dialog is) laid over the guide card by ui.guide.</summary>
+    sealed class LayerProbeWindow : Window
+    {
+        public LayerProbeWindow() { layer = WindowLayer.Dialog; forcePause = false; absorbInputAroundWindow = false; doCloseX = true; draggable = false; }
+        public override Vector2 InitialSize => new Vector2(320f, 200f);
+        public override void DoWindowContents(Rect inRect) { Widgets.Label(inRect, "Dialog laid over the guide card (layer test)"); }
+    }
+
     /// <summary>The guide: topics unlock and tick off from game state; tutorial levels; hiding.</summary>
     public sealed class GuideSuite : HearthTestSuite
     {
@@ -350,6 +358,60 @@ namespace Hearth.Shell.Tests
             int c0 = GuidePanel.DrawCount;
             yield return 60;
             UiTestUtil.DrawCheck(t, !GuidePanel.Enabled() || GuidePanel.DrawCount > c0, "guide panel was drawn in-game (" + (GuidePanel.DrawCount - c0) + " frames)");
+
+            // 1.1.1: the card stays behind dialogs (it used to be painted over them). A dialog laid over the card must be above it in the window stack
+            // and must be the window under the mouse there.
+            if (GuidePanel.Enabled() && GuidePanel.DrawCount > c0)
+            {
+                var card = GuidePanel.LastRect;
+                var dlg = new LayerProbeWindow();   // not a Dialog_MessageBox: the test runner closes those at once
+                Find.WindowStack.Add(dlg);
+                dlg.windowRect = new Rect(card.x - 40f, card.y, card.width + 30f, Mathf.Max(card.height, 160f));
+                yield return 30;
+                var stack = Find.WindowStack.Windows;
+                int iCard = -1, iDlg = -1;
+                for (int i = 0; i < stack.Count; i++) { if (stack[i].ID == -GuidePanel.WindowId) iCard = i; if (stack[i] == dlg) iDlg = i; }
+                UiTestUtil.DrawCheck(t, iCard >= 0 && iDlg > iCard, "a dialog lies above the guide card in the window stack (card " + iCard + ", dialog " + iDlg + ")");
+                UiTestUtil.DrawCheck(t, iCard < 0 || Find.WindowStack.GetWindowAt(card.center) == dlg, "the dialog, not the card, is the window at the card's centre");
+                UiTestUtil.Shot("guide_behind_dialog"); yield return 10;
+                dlg.Close(false);
+                yield return 5;
+            }
+
+            // With HH_UI_SHOTS: the card on a 1280x720 screen (UI scale on the 1080 px test screen), alone and behind the settings windows that
+            // reach under it at that size: ours and, when loaded, JB Framework's page (the card used to cover its search box).
+            if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("HH_UI_SHOTS")) && GuidePanel.Enabled())
+            {
+                float scaleWas = Prefs.UIScale;
+                var tutorialWas = UiState.Value("tutorial", (int)TutorialMode.Short);
+                try
+                {
+                    Prefs.UIScale = Mathf.Clamp((Screen.height > 0 ? Screen.height : 1080f) / 720f, 0.25f, 4f);
+                    UiState.SetValue("tutorial", (int)TutorialMode.AlwaysFull);
+                    GuideState.Update();
+                    yield return 40;
+                    t.Note("virtual screen " + UI.screenWidth + "x" + UI.screenHeight + ", guide card " + GuidePanel.LastRect);
+                    UiTestUtil.Shot("guide_720_alone"); yield return 20;
+                    foreach (var mod in LoadedModManager.ModHandles)
+                    {
+                        string id = mod.Content?.PackageId ?? "";
+                        if (mod.SettingsCategory().NullOrEmpty() || !(id.Contains("jbframework") || id.Contains("hearthharbor"))) continue;
+                        var win = UiTestUtil.NoPause(new Dialog_ModSettings(mod));
+                        Find.WindowStack.Add(win);
+                        yield return 40;
+                        var st = Find.WindowStack.Windows;
+                        int iCard = -1, iWin = -1;
+                        for (int i = 0; i < st.Count; i++) { if (st[i].ID == -GuidePanel.WindowId) iCard = i; if (st[i] == win) iWin = i; }
+                        bool overlap = win.windowRect.Overlaps(GuidePanel.LastRect);
+                        UiTestUtil.DrawCheck(t, iCard < 0 || iWin > iCard, "1280x720: settings window of " + id + " lies above the guide card (card " + iCard + ", window " + iWin + ", overlap " + overlap + ")");
+                        UiTestUtil.Shot("guide_720_behind_" + (id.Contains("jbframework") ? "jbframework" : "hearthharbor")); yield return 20;
+                        win.Close(false);
+                        yield return 5;
+                    }
+                }
+                finally { Prefs.UIScale = scaleWas; UiState.SetValue("tutorial", tutorialWas); GuideState.Update(); }
+                yield return 10;
+            }
         }
     }
 
