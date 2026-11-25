@@ -78,7 +78,7 @@ namespace Hearth.Underworld
         static readonly List<Session> sessions = new List<Session>();
         /// <summary>Smallest closed hunting ground (tiles).</summary>
         public const int MinCells = 60;
-        public static bool Running(Map map) { foreach (var s in sessions) if (s.Map == map) return true; return false; }
+        public static bool Running(Map map) { foreach (var s in sessions) if (s.Map == map && s.Ground != null && s.Ground.parent.Spawned && !s.Done) return true; return false; }
 
         public static CompHuntingGround FindGround(Map map)
         {
