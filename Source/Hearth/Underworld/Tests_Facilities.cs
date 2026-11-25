@@ -367,5 +367,31 @@ namespace Hearth.Underworld
             UwKit.End();
         }
     }
+    /// <summary>The hunting ground marker says why no hunters come: too small, open, or not allowed.</summary>
+    public sealed class UwHuntFeedbackSuite : HearthTestSuite
+    {
+        public override string Name => "underworld.hunt.feedback";
+        public override ModuleId Module => ModuleId.Underworld;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var map = t.Map;
+            UwKit.Begin(ContentIntensity.Standard);
+            if (!UwKit.TryFindRect(map, 5, 5, out var small)) { t.Note("no free area; skipped"); UwKit.End(); yield break; }
+            UwKit.BuildFence(map, small.ExpandedBy(1));
+            var g = UwKit.SpawnBuilding(UwDefs.HuntingGround, small.CenterCell, map).TryGetComp<CompHuntingGround>();
+            yield return 2;
+            var line = g.CompInspectStringExtra();
+            t.Check(!g.Valid && line == UwPay.T("Hunt.TooSmall", 25, Hunts.MinCells), "a closed 5x5 ground: " + line);
+            var open = UwKit.SpawnBuilding(UwDefs.HuntingGround, UwKit.TryFindRect(map, 3, 3, out var r, 20) ? r.CenterCell : t.FreeCellNearCenter(), map).TryGetComp<CompHuntingGround>();
+            yield return 2;
+            t.Check(open.CompInspectStringExtra() == UwPay.T("Hunt.Open"), "a marker in the open: " + open.CompInspectStringExtra());
+            HearthProfile.Current.Content = ContentIntensity.Cozy;
+            t.Check(g.ReasonLine() == UwPay.T("Hunt.Closed"), "not allowed: says so");
+            HearthProfile.Current.Content = ContentIntensity.Standard;
+            var row = FacilityStatus.Get(map, FacilityStatus.HuntId);
+            t.Check(row != null && row.State == FacilityState.Waiting && (row.Line == UwPay.T("Hunt.TooSmall", 25, Hunts.MinCells) || row.Line == UwPay.T("Hunt.Open")), "Underworld tab row waits with the reason: " + row?.Line);
+            UwKit.End();
+        }
+    }
 }
 #endif

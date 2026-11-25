@@ -204,6 +204,9 @@ namespace Hearth.SaveLoad
             else t.Note("no free 5x5 patch for the dock");
             if (Hearth.Underworld.Gangs.Fire(map, out var gang, force: true) && gang.Count > 0)
             {
+                // the gang's own silver would leave the map with it (or go to the till when it shops) and break the physical-silver check of the
+                // prepare phase, which is about the bank's payouts: the test gang comes without money
+                foreach (var gp in gang) foreach (var st in gp.inventory.innerContainer.Where(x => x.def == ThingDefOf.Silver).ToList()) st.Destroy();
                 var d = Hearth.Underworld.Gangs.PlanDemand(map, gang[0].Faction, gang[0], Find.TickManager.TicksGame);
                 Hearth.Underworld.Offers.Announce(d);
                 t.Check(d.Announced, "a gang leader's protection demand is open");
