@@ -11,11 +11,12 @@ License: MIT, everything we write. Never copy code from Hospitality/GPL/unlicens
 
 ## Layout
 ```
-About/ LoadFolders.xml           mod metadata (Common + version folder)
+About/ LoadFolders.xml           mod metadata (Common + version folder + conditional Compat folders; written by tools/i18n/split_optional.py)
 Common/Defs/<Module>/*.xml       defs, one folder per module (Core, Inn, ShopsFood, Kitchen, Casino, Bank, Insurance, UI …)
 Common/Languages/English/Keyed/HH_<Module>.xml   translation keys "HH.<Module>.<Thing>" — one file per module
 Common/Textures/Things/HH/<Module>/…  Common/Textures/UI/HH/<Module>/…   our textures (never vanilla paths)
 Common/Sounds/HH/…               sounds
+Compat/<ids>/Languages/…         translations of defs that need a DLC or another mod (MayRequire); loaded only when that mod is active
 1.7/Assemblies 1.6/Assemblies 1.5/Assemblies   build output (do not edit)
 Source/Hearth.Core/   Foundation (settings, profile, ledger, log, guard, caretaker, random), Contracts (Payments), Pure (no game refs), Testing
 Source/Silverline/    the bank (namespace Silverline); Contracts/BankApi.cs
@@ -63,10 +64,16 @@ Dependency direction: `Hearth → Silverline → Hearth.Core`. Silverline must n
 8. **Nothing forced (N08):** without guest beds, venue signs or a bank account, a module must have no visible effect.
 9. **Defs:** prefix `HH_` (`SL_` for the bank), designators in our own categories (`HH_Hospitality`, `HH_Bank`), research in tabs
    `HH_Hospitality` / `HH_Banking`. DLC content uses `MayRequire="Ludeon.RimWorld.Royalty"` etc.
-10. **Texts:** English is the main language. No sexual content (no sex work, no erotic items). No real companies, persons or
+10. **Translations:** `tools/i18n/extract.py` → `delta.py plan <old src>` → translate `delta/<code>/*.json` into `delta_out/` → `delta.py apply`
+    (writes only changed files, then runs `split_optional.py`). A def with `MayRequire`/`MayRequireAnyOf` keeps its translations in
+    `Compat/<ids>`, never in `Common/Languages`: there the game reports "Found no <Def>" for every player without that DLC or mod and logs
+    "Translation data for language X has N errors". `smoke` fails on any translation load error from our files; check a language with
+    `GAME_LANG="German (Deutsch)" tools/run_test.sh smoke <label>` (and `tools/run_test_nodlc.sh` for a game without DLC).
+    Items of lists inside a def are injected by index (`<defName>.steps.0.label`); `extract.py` only collects the lists named in `NESTED`.
+11. **Texts:** English is the main language. No sexual content (no sex work, no erotic items). No real companies, persons or
     organisations in game texts. Gambling screens show the help hint when `core.helpHint` is on (KONZEPT K28).
-11. **Other mods:** only soft (reflection / `MayRequire` / `ModsConfig.IsActive`), with a log line when the integration is active.
-12. **Performance:** no LINQ in per-tick code paths, cache per map with a dirty flag or a 250-tick refresh, rare ticks (`TickRare`/`% 250`).
+12. **Other mods:** only soft (reflection / `MayRequire` / `ModsConfig.IsActive`), with a log line when the integration is active.
+13. **Performance:** no LINQ in per-tick code paths, cache per map with a dirty flag or a 250-tick refresh, rare ticks (`TickRare`/`% 250`).
 
 ## Contracts between modules (do not change without telling the integrator)
 - `Hearth.Core/Contracts/Payments.cs` — `Payments.TryCharge`, providers, tills (`Payments.ColonyTill(map)`), `Tills.BankSink`.
