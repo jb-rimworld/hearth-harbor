@@ -15,6 +15,9 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from xml.sax.saxutils import escape
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import extract  # noqa: E402  (the rules which def texts are collected)
+
 R = Path(__file__).resolve().parents[2]
 I = R / "tools" / "i18n"
 LANGS = {"de": "German (Deutsch)", "fr": "French (Français)", "es": "Spanish (Español(Castellano))", "pt": "PortugueseBrazilian (Português Brasileiro)",
@@ -93,27 +96,39 @@ def write_xml(path, pairs):
     path.write_text('<?xml version="1.0" encoding="utf-8"?>\n<LanguageData>\n' + body + ("\n" if body else "") + "</LanguageData>\n", encoding="utf-8")
 
 
-# def fields extract.py collects (keep in sync with extract.FIELDS); "stages.<n>.label/description" and "steps.<n>.…" too (extract.NESTED)
-FIELDS = {"label", "description", "labelShort", "pawnLabel", "gerundLabel", "verb", "jobString", "reportString", "letterLabel",
-          "letterText", "baseInspectLine", "labelNoun", "labelNounPretty", "pawnsPlural", "beginLetter", "beginLetterLabel",
-          "successfulInspectLine", "fixedName", "labelMale", "labelFemale", "inspectString", "skillLabel", "labelPlural", "slogan"}
-STAGE = re.compile(r"^(stages|steps)\.\d+\.(label|description)$")
+def known_defs_of(src):
+    """{"<DefType>/<defName>"} of every def in src. The def type may contain dots (Silverline.SL_PolicyDef), the defName never does;
+    until 1.1.2 this cut at the first dot of the whole key, so no def of our own types was ever known and their stale keys stayed."""
+    out = set()
+    for k in src:
+        if k.startswith("d:"):
+            dtype, rest = k[2:].split("/", 1)
+            out.add(dtype + "/" + rest.split(".", 1)[0])
+    return out
 
 
 def managed(fk, known_defs):
-    """True for a key apply() may delete when it is missing from src."""
+    """True for a key apply() may delete when it is missing from src: a Keyed key, or a def field extract.py collects (its FIELDS,
+    TYPE_FIELDS and NESTED rules, read from extract.py itself so the two cannot drift apart) of a def it knows."""
     if fk.startswith("k:"):
         return True
     dtype, rest = fk[2:].split("/", 1)
     defname, _, field = rest.partition(".")
     if f"{dtype}/{defname}" not in known_defs:
         return False
-    return field in FIELDS or bool(STAGE.match(field))
+    if field in extract.top_fields(dtype):
+        return True
+    if dtype not in _NESTED_RX:
+        _NESTED_RX[dtype] = extract.nested_pattern(dtype)
+    return bool(_NESTED_RX[dtype] and _NESTED_RX[dtype].match(field))
+
+
+_NESTED_RX = {}
 
 
 def apply():
     new = load_src(I / "src")
-    known_defs = {k[2:].split(".", 1)[0] for k in new if k.startswith("d:")}
+    known_defs = known_defs_of(new)
     for code, lang in LANGS.items():
         tr = {}
         for p in sorted((I / "delta_out" / code).glob("*.json")):

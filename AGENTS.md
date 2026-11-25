@@ -69,7 +69,15 @@ Dependency direction: `Hearth → Silverline → Hearth.Core`. Silverline must n
     `Compat/<ids>`, never in `Common/Languages`: there the game reports "Found no <Def>" for every player without that DLC or mod and logs
     "Translation data for language X has N errors". `smoke` fails on any translation load error from our files; check a language with
     `GAME_LANG="German (Deutsch)" tools/run_test.sh smoke <label>` (and `tools/run_test_nodlc.sh` for a game without DLC).
-    Items of lists inside a def are injected by index (`<defName>.steps.0.label`); `extract.py` only collects the lists named in `NESTED`.
+    A file in `Compat/<ids>` must not have the name of a file in `Common` or in another Compat folder (same path below the language
+    folder): the game reads only one of them and skips the rest silently, which turned 270 translated texts per language English in
+    1.1.1. `split_optional.py` names them `<file>__<ids>.xml` and stops on a clash; `smoke` checks it in the game.
+    `extract.py` collects only what its three tables name: `FIELDS` (vanilla text fields of any def), `TYPE_FIELDS` (text fields of our
+    own def types, e.g. `coversText`) and `NESTED` (texts inside lists, injected by position: `<defName>.steps.0.label`,
+    `<defName>.modExtensions.1.requirements.0.hint`, `<defName>.fields.0.options.2.label`). A new text field or a new list with texts
+    in a def class needs a line there, otherwise it stays English in every language without any error. `delta.py` reads the same tables.
+    A list that also gets items from a parent def of ours cannot be addressed by position (`extract.py` stops); the comps of a ThingDef
+    are addressed by handle (`comps.CompUsable.useLabel`) because vanilla parents bring comps of their own.
 11. **Texts:** English is the main language. No sexual content (no sex work, no erotic items). No real companies, persons or
     organisations in game texts. Gambling screens show the help hint when `core.helpHint` is on (KONZEPT K28).
 12. **Other mods:** only soft (reflection / `MayRequire` / `ModsConfig.IsActive`), with a log line when the integration is active.

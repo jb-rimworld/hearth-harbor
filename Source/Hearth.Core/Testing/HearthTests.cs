@@ -402,13 +402,38 @@ namespace Hearth.Testing
                 foreach (var e in errs.Except(ours).Take(12)) t.Note("LANG (not ours) " + e);
                 t.Note("language " + lang.folderName + ": " + errs.Count + " translation load errors, " + ours.Count + " from our files");
                 t.Check(ours.Count == 0, "no translation load errors from our files in " + lang.folderName + " (" + ours.Count + ")");
-                // translations of optional content come from the conditional load folders (Compat/<ids>): show a few so a run log proves they load
-                foreach (var name in new[] { "HH_Gene_Hospitable", "HH_Dish_GrilledWholeFish", "HH_NobleStay" })
+                // translations of optional content come from the conditional load folders (Compat/<ids>): show a few so a run log proves they load,
+                // and two defs that are always there but whose def type also has a file in a Compat folder (these went English in 1.1.1)
+                foreach (var name in new[] { "HH_Gene_Hospitable", "HH_Dish_GrilledWholeFish", "HH_NobleStay", "HH_Venue_Tavern", "SL_ActsOfStoryteller" })
                 {
                     var d = GenDefDatabase.AllDefTypesWithDatabases().Select(ty => GenDefDatabase.GetDefSilentFail(ty, name, false)).FirstOrDefault(x => x != null);
                     if (d != null) t.Note("optional content label: " + name + " = " + d.label);
                 }
             }
+            // 1.1.2: within one mod the game reads a language file only once per path below the language folder (LoadedLanguage.TryRegisterFileIfNew);
+            // a file of the same name in a second load folder (Common and Compat/<ids>) is skipped without any message. 1.1.1 shipped that:
+            // with a DLC active the Common files of the same name were not read and their texts fell back to English. Checked for every language.
+            var pack = LoadedModManager.RunningModsListForReading.FirstOrDefault(m => m.assemblies != null && m.assemblies.loadedAssemblies.Contains(typeof(HearthTestSuite).Assembly));
+            if (pack != null)
+            {
+                var seen = new Dictionary<string, string>(); var clash = new List<string>(); int files = 0;
+                foreach (var folder in pack.foldersToLoadDescendingOrder)
+                {
+                    string langs = Path.Combine(folder, "Languages");
+                    if (!Directory.Exists(langs)) continue;
+                    foreach (var langDir in Directory.GetDirectories(langs))
+                        foreach (var f in Directory.GetFiles(langDir, "*", SearchOption.AllDirectories))
+                        {
+                            files++;
+                            string key = (Path.GetFileName(langDir) + f.Substring(langDir.Length)).ToLowerInvariant();
+                            if (seen.TryGetValue(key, out var other)) clash.Add(f + " == " + other); else seen[key] = f;
+                        }
+                }
+                foreach (var c in clash.Take(10)) t.Note("LANGFILE " + c);
+                t.Note("language files in " + pack.foldersToLoadDescendingOrder.Count + " load folders: " + files);
+                t.Check(clash.Count == 0, "no language file shares its path with a file of another load folder (" + clash.Count + ")");
+            }
+            else t.Check(false, "mod content pack of the test assembly found");
             yield return 600;
             t.Check(Find.TickManager.TicksGame > 0, "game ticks");
             t.Check(Guard.Paused.Count() == 0, "no module paused: " + string.Join(", ", Guard.PauseReasons));

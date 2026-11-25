@@ -11,7 +11,11 @@ mods; far more without DLCs).
 What it does:
   1. Reads every def with MayRequire/MayRequireAnyOf on its root element (Common/Defs and the version folders).
   2. Moves their entries from Common/Languages/<lang>/DefInjected/<Type>/<file>.xml to
-     Compat/<ids>/Languages/<lang>/DefInjected/<Type>/<file>.xml  (<ids> = the package ids, joined with "+").
+     Compat/<ids>/Languages/<lang>/DefInjected/<Type>/<file>__<ids>.xml  (<ids> = the package ids, joined with "+").
+     The file name must differ from the one in Common and from those in the other Compat folders: within one mod the game loads a
+     language file only once per path below the language folder (LoadedLanguage.TryRegisterFileIfNew), the later load folder
+     wins, and the others are skipped without any message. 1.1.1 kept the name, so with a DLC active the Common file of the same
+     name was not read: every venue type, policy, bank, investment and base dish went back to English in all ten languages.
   3. Writes LoadFolders.xml: Common, the version folder, then one <li IfModActive="ids">Compat/<ids></li> per folder
      (IfModActive = any of the ids, which is what MayRequire with one id and MayRequireAnyOf mean; a MayRequire with several ids
      would need all of them and is refused here until one exists).
@@ -54,6 +58,28 @@ def gated_defs():
 
 def slug(ids):
     return ids.replace(",", "+")
+
+
+def compat_name(name, ids):
+    """File name inside Compat/<ids>: <stem>__<ids>.xml, unique across the load folders (see the docstring, point 2)."""
+    stem = name[:-4]
+    tail = "__" + slug(ids)
+    return name if stem.endswith(tail) else stem + tail + ".xml"
+
+
+def collisions():
+    """Language files of different load folders with the same path below the language folder: the game reads only one of them."""
+    seen, out = {}, []
+    bases = [R / "Common"] + (sorted(p for p in (R / "Compat").iterdir() if p.is_dir()) if (R / "Compat").exists() else [])
+    for base in bases:
+        for lang in sorted((base / "Languages").iterdir()) if (base / "Languages").is_dir() else []:
+            for f in sorted(lang.rglob("*")):
+                if f.is_file():
+                    key = (lang.name, f.relative_to(lang).as_posix().lower())
+                    if key in seen:
+                        out.append(f"{f.relative_to(R)}  ==  {seen[key].relative_to(R)}")
+                    seen.setdefault(key, f)
+    return out
 
 
 def entries(path):
@@ -118,7 +144,7 @@ def main():
             if check:
                 continue
             for ids, pairs in out.items():
-                dst = R / "Compat" / slug(ids) / "Languages" / lang.name / "DefInjected" / dtype / f.name
+                dst = R / "Compat" / slug(ids) / "Languages" / lang.name / "DefInjected" / dtype / compat_name(f.name, ids)
                 have = entries(dst) if dst.exists() else []
                 new = dict(pairs)
                 merged = [(t, new.pop(t, r)) for t, r in have] + [(t, r) for t, r in pairs if t in new]
@@ -131,6 +157,24 @@ def main():
                     f.parent.rmdir()
     # every Compat folder that exists gets a load folder line (sorted: DLCs first, then mods)
     ids_by_slug = {slug(i): i for i in set(gated.values())}
+    # files written by 1.1.1 still carry the name of their Common sibling: rename them (merging into a file that already has the new name)
+    renamed = 0
+    for cdir in sorted(p for p in (R / "Compat").iterdir() if p.is_dir()) if (R / "Compat").exists() else []:
+        if cdir.name not in ids_by_slug:
+            continue
+        for f in sorted(cdir.rglob("DefInjected/**/*.xml")):
+            new = f.with_name(compat_name(f.name, ids_by_slug[cdir.name]))
+            if new == f:
+                continue
+            renamed += 1
+            if check:
+                continue
+            if new.exists():
+                have, add = entries(new), dict(entries(f))
+                write(new, [(t, add.pop(t, r)) for t, r in have] + [(t, r) for t, r in entries(f) if t in add])
+                f.unlink()
+            else:
+                f.rename(new)
     present = sorted(p.name for p in (R / "Compat").iterdir() if p.is_dir()) if (R / "Compat").exists() else []
     unknown = [s for s in present if s not in ids_by_slug]
     if unknown:
@@ -139,14 +183,20 @@ def main():
     lf = load_folders([(s, ids_by_slug[s]) for s in order])
     cur = (R / "LoadFolders.xml").read_text(encoding="utf-8")
     if check:
-        if moved or (present and cur != lf):
-            print(f"split_optional: {moved} entries would move; LoadFolders.xml {'differs' if cur != lf else 'ok'}")
+        clash = collisions()
+        if moved or renamed or clash or (present and cur != lf):
+            print(f"split_optional: {moved} entries would move; {renamed} files would be renamed; {len(clash)} files share a path with "
+                  f"another load folder; LoadFolders.xml {'differs' if cur != lf else 'ok'}")
             sys.exit(1)
         print("split_optional: nothing to do")
         return
     if cur != lf:
         (R / "LoadFolders.xml").write_text(lf, encoding="utf-8")
-    print(f"split_optional: moved {moved} entries; {len(order)} Compat folders; LoadFolders.xml {'written' if cur != lf else 'unchanged'}")
+    print(f"split_optional: moved {moved} entries; renamed {renamed} files; {len(order)} Compat folders; LoadFolders.xml {'written' if cur != lf else 'unchanged'}")
+    clash = collisions()
+    if clash:
+        print("\n".join(clash[:20]))
+        sys.exit(f"split_optional: {len(clash)} language files share their path with a file of another load folder; the game reads only one of them")
 
 
 if __name__ == "__main__":
