@@ -309,7 +309,7 @@ namespace Hearth.Underworld
     {
         public override string Name => "underworld.pit.fighters";
         public override ModuleId Module => ModuleId.Underworld;
-        public override int MaxTicks => 12000;
+        public override int MaxTicks => 24000;
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map; var f = UwKit.Friendly();
@@ -360,6 +360,33 @@ namespace Hearth.Underworld
                 t.Check(l1.Any(x => x.Pawn == kind && x.Kind == PitKind.Guest), "guests listed when allowed");
                 pit.SetTicked(col, true);
                 t.Check(!ReferenceEquals(l1, pit.Candidates()), "ticking a box refreshes the cache");
+                pit.SetTicked(col, false);
+                // guests alone are enough: two willing guests fight each other in an automatic bout (they walk in through the gate)
+                var extra = UwKit.Guests(map, 1, f, shady: true)[0];
+                arrive = 0;
+                while (arrive < 4000 && !PitFighters.StayToil(extra)) { yield return 100; arrive += 100; }
+                PitKit.Put(extra, CellFinder.RandomClosewalkCellNear(outside, map, 4));
+                Underworld.MarkShady(kind); kind.story.traits.allTraits.RemoveAll(x => x.def == TraitDefOf.Kind);
+                foreach (var g in new[] { extra, shady }) g.jobs.StopAll();
+                var willing = new[] { extra, shady }.Where(g => !g.WorkTagIsDisabled(WorkTags.Violent)).ToList();
+                pit.allowAnimals = false;
+                var ready = pit.Ready(true);
+                t.Note("ready for an automatic bout: " + string.Join(", ", ready.Select(c => c.Pawn.LabelShort + "(" + c.Kind + ")")) + "; reasons: " + string.Join(", ", pit.Candidates().Where(c => c.Kind == PitKind.Guest && !c.Ready).Select(c => c.Pawn.LabelShort + "=" + c.Reason)));
+                if (willing.Count == 2 && ready.Count(c => c.Kind == PitKind.Guest) >= 2)
+                {
+                    pit.nextBoutTick = Find.TickManager.TicksGame;
+                    pit.CompTickRare();
+                    var auto = FightBout.OfPit(pit);
+                    t.Check(auto != null && auto.KindA == PitKind.Guest && auto.KindB == PitKind.Guest && !auto.Manual, "an automatic bout between two guests started");
+                    if (auto != null)
+                    {
+                        int w2 = 0;
+                        while (w2 < 4000 && auto.phase == FightBout.Phase.Assemble && !auto.Finished) { yield return 60; w2 += 60; }
+                        t.Check(auto.phase != FightBout.Phase.Assemble && !(auto.Finished && auto.Result == null), "both guests walked into the arena (" + w2 + " ticks, phase " + auto.phase + ", last message " + FightBout.LastMessage + ")");
+                        auto.Abort("test", null);
+                    }
+                }
+                else t.Note("fewer than two willing guests (pacifist roll or busy); automatic guest bout skipped");
             }
             // saved fields (values only; references are covered by the save/load suites)
             var oldTicked = pit.Ticked.ToList(); foreach (var p in oldTicked) pit.SetTicked(p, false);
