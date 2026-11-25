@@ -42,8 +42,6 @@ a("HH.UI.Modules.BankHint","Bank: use the bank inside Hearth & Harbor and switch
 a("HH.UI.Modules.Content","Content intensity"); a("HH.UI.Modules.ContentDesc","How dark the optional content may get. Never sexual content, whatever you pick.")
 for c,(n,t) in {"Cozy":("Cozy","Mild stories and consequences only."),"Standard":("Standard","The default. Rough edges, nothing nasty."),"Dark":("Dark","Crime, debts and violence may show up."),"Grim":("Grim","Everything the game offers, in full.")}.items():
     a("HH.UI.Content."+c,n); a("HH.UI.Content."+c+".Tip",t)
-a("HH.UI.Underworld.Discover","Discover in game"); a("HH.UI.Underworld.On","On"); a("HH.UI.Underworld.Off","Off")
-a("HH.UI.Underworld.Discover.Tip","Off the radar until a shady stranger turns up in your game."); a("HH.UI.Underworld.On.Tip","Available from the start."); a("HH.UI.Underworld.Off.Tip","Never available. The shady stranger stays away too.")
 mods = {"Inn":"Guests, guest beds, wings, reception, travellers and recruiting.","ShopsFood":"Venue signs, shops, vending, markets, restaurants and dishes.","Casino":"Tables, slot machines, chips and the risks of gambling for guests and colonists.","Wellness":"Spa, sauna and rehabilitation stays.","CityLife":"Cinema, mall, salon, temples, taxis and security.","Underworld":"A discreet back room, a fight pit and a fence. Found in game, never forced.","Bank":"Silverline: accounts, payments, ATMs, investments, loans, insurance and lottery.","AiFlavour":"Optional flavour texts written by an AI through a relay. Off by default."}
 for k,v in mods.items(): a("HH.UI.ModuleDesc."+k,v)
 # --- difficulty
@@ -178,7 +176,6 @@ a('HH.Setting.core.ironBank','Iron bank')
 a('HH.Setting.core.ironBank.Desc','Debt collection always climbs to the highest stage, whatever the difficulty. Nobody quietly defers your instalments.')
 a('HH.Setting.core.peacefulUnderworld.Desc','Dark venues work without violence: no fight pit, no questioning, no hunting of people, no clinic, no protection racket. Back room, fence and drug lounge stay.')
 a('HH.Setting.core.perfMode.Desc','Guest planning and room checks run half as often. Helps on slow computers; guests may react a little later.')
-a('HH.UI.Content.Decline','No, keep {0}')   # was only in the XML (review fix 97142ff); kept here so regeneration does not drop it
 a('HH.Setting.core.windowScale','Size of Hearth & Harbor windows')
 a('HH.Setting.core.windowScale.Desc','All Hearth & Harbor and Silverline windows grow or shrink by this factor (on top of the automatic size for large screens).')
 

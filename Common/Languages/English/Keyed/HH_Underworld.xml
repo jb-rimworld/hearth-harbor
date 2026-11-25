@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Tab.Underworld>Underworld</HH.Tab.Underworld>
-  <HH.Underworld.GateClosed>Not available: the underworld is closed in this game.</HH.Underworld.GateClosed>
+  <HH.Underworld.GateClosed>Not available in this game: the Underworld module is off, or the content intensity does not allow it (Settings, Modules).</HH.Underworld.GateClosed>
   <HH.Underworld.BackRoomDoorInfo>Only staff, colonists and shady guests can open this door.</HH.Underworld.BackRoomDoorInfo>
-  <HH.Underworld.Stranger.Title>A stranger at the gate</HH.Underworld.Stranger.Title>
-  <HH.Underworld.Stranger.Text>A stranger with his hat low waits outside your door until the staff are out of earshot.\n\n"Nice place," he says. "Got a back room?"\n\nHe does not say what he means by that. He does not need to.</HH.Underworld.Stranger.Text>
-  <HH.Underworld.Stranger.Show>Show me</HH.Underworld.Stranger.Show>
-  <HH.Underworld.Stranger.No>Not interested</HH.Underworld.Stranger.No>
-  <HH.Underworld.Stranger.Never>Never ask again</HH.Underworld.Stranger.Never>
-  <HH.Underworld.Unlocked.Title>The back room</HH.Underworld.Unlocked.Title>
-  <HH.Underworld.Unlocked.Text>You showed him the back room, and he nodded as if you had passed a test. A new line of research is open to you: the back room, with doors, a fight pit, a fence's counter, a smuggler's dock and a lounge. Your Whispers (the reputation in the underworld) will now follow what you build.\n\nYou can ignore all of it. Nothing here is required.</HH.Underworld.Unlocked.Text>
-  <HH.Underworld.Warn.Title>Content warning</HH.Underworld.Warn.Title>
-  <HH.Underworld.Warn.Dark>Dark content adds to the underworld: prisoners may fight to the death in the pit, gangs may question prisoners harder, hunters may hunt prisoners (with a fitting ideology), and a clinic counter buys harvested organs.\n\nIt appears as text and ordinary game injuries only. Children never take part, and nothing here is switched on by itself.\n\nDo you want this in this game?</HH.Underworld.Warn.Dark>
-  <HH.Underworld.Warn.Grim>Grim content is everything of Dark content, and the hunt on prisoners no longer asks about your ideology. Organ buyers place orders with deadlines.\n\nIt appears as text and ordinary game injuries only. Children never take part, and nothing here is switched on by itself.\n\nDo you want this in this game?</HH.Underworld.Warn.Grim>
-  <HH.Underworld.Warn.Accept>Yes, I understand</HH.Underworld.Warn.Accept>
-  <HH.Underworld.Warn.Back>No, back to Standard</HH.Underworld.Warn.Back>
-  <HH.Underworld.Warn.Hunt>You are about to allow hunting prisoners in a hunting ground. A prisoner is released into the ground with a head start; if he lasts the set time or reaches the fence line he is free, and his faction will hear about it either way. If he dies, his faction, your colonists and your guests will not forgive it.\n\nThis is shown as text only. Do you want to allow it?</HH.Underworld.Warn.Hunt>
-  <HH.Underworld.Warn.Organ>A clinic counter buys harvested organs from anonymous donors at night. Ideologies that abhor the organ trade will hold it against you, and your Whispers rise with every sale.\n\nThis is shown as text only. Do you want to keep it?</HH.Underworld.Warn.Organ>
-  <HH.Underworld.Warn.Keep>Yes, keep it</HH.Underworld.Warn.Keep>
-  <HH.Underworld.Warn.Remove>No, remove it</HH.Underworld.Warn.Remove>
   <HH.Underworld.Scandal.BackRoomFound.Title>The back room was found out</HH.Underworld.Scandal.BackRoomFound.Title>
   <HH.Underworld.Scandal.BackRoomFound.Text>A respectable guest opened the wrong door and saw what the house keeps behind it. By evening everyone in town will know.</HH.Underworld.Scandal.BackRoomFound.Text>
   <HH.Underworld.Scandal.LeakedLedger.Title>Leaked ledger</HH.Underworld.Scandal.LeakedLedger.Title>
@@ -79,7 +63,7 @@
   <HH.Underworld.Hunt.QuarryHuman>animals and a prisoner</HH.Underworld.Hunt.QuarryHuman>
   <HH.Underworld.Hunt.Prisoners>Prisoner quarry</HH.Underworld.Hunt.Prisoners>
   <HH.Underworld.Hunt.Prisoners.Desc>Let hunters hunt a prisoner released into the ground. Dark content only, with a fitting ideology.</HH.Underworld.Hunt.Prisoners.Desc>
-  <HH.Underworld.Hunt.GateContent>Needs Dark or Grim content, confirmed.</HH.Underworld.Hunt.GateContent>
+  <HH.Underworld.Hunt.GateContent>Needs Dark or Grim content.</HH.Underworld.Hunt.GateContent>
   <HH.Underworld.Hunt.GatePrecept>The colony's ideology does not allow this.</HH.Underworld.Hunt.GatePrecept>
   <HH.Underworld.Hunt.DeathTitle>A person died in the hunt</HH.Underworld.Hunt.DeathTitle>
   <HH.Underworld.Hunt.DeathText>{0} did not survive the hunt. His people will hear of it, and so will everyone who was watching.</HH.Underworld.Hunt.DeathText>

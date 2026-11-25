@@ -17,8 +17,6 @@
   <HH.Enum.StaffRule.AlwaysRequired>Always required</HH.Enum.StaffRule.AlwaysRequired>
   <HH.Enum.StaffRule.NeverRequired>Never required</HH.Enum.StaffRule.NeverRequired>
   <HH.Enum.StaffRule.PerVenueType>Per venue type</HH.Enum.StaffRule.PerVenueType>
-  <HH.Enum.UnderworldMode.AlwaysOn>Always on</HH.Enum.UnderworldMode.AlwaysOn>
-  <HH.Enum.UnderworldMode.DiscoverInGame>Discover in game</HH.Enum.UnderworldMode.DiscoverInGame>
   <HH.Setting.bank.accountBeta>Account interest exponent (not used since 1.1.0)</HH.Setting.bank.accountBeta>
   <HH.Setting.bank.accountBeta.Desc>Replaced by 'Account interest: share of the market return'. Kept so older save games load; changing it does nothing.</HH.Setting.bank.accountBeta.Desc>
   <HH.Setting.bank.accountShare>Account interest: share of the market return</HH.Setting.bank.accountShare>
@@ -424,8 +422,6 @@
   <HH.Setting.underworld.hunt.quarryHours.Desc>A prisoner who survives this long or reaches the fence line is free.</HH.Setting.underworld.hunt.quarryHours.Desc>
   <HH.Setting.underworld.lounge.price>Price of a session</HH.Setting.underworld.lounge.price>
   <HH.Setting.underworld.lounge.price.Desc>What a guest pays in the drug lounge. Guests only take what their ideology allows.</HH.Setting.underworld.lounge.price.Desc>
-  <HH.Setting.underworld.mode>How the underworld appears</HH.Setting.underworld.mode>
-  <HH.Setting.underworld.mode.Desc>Discover in game: a shady stranger asks if you have a back room, and only a yes opens the dark side. Always on: it is open from the start. (Off is the module switch; Cozy content intensity hides it completely.)</HH.Setting.underworld.mode.Desc>
   <HH.Setting.underworld.organ.orderDays>Days to deliver an order</HH.Setting.underworld.organ.orderDays>
   <HH.Setting.underworld.organ.orderPremium>Premium on ordered organs</HH.Setting.underworld.organ.orderPremium>
   <HH.Setting.underworld.organ.orderPremium.Desc>Grim only: a ready organ delivered within the deadline pays this many times the normal price.</HH.Setting.underworld.organ.orderPremium.Desc>
@@ -455,14 +451,6 @@
   <HH.Setting.underworld.smuggler.maxValue.Desc>Market value of the biggest crate offered.</HH.Setting.underworld.smuggler.maxValue.Desc>
   <HH.Setting.underworld.smuggler.priceFactor>Contraband price</HH.Setting.underworld.smuggler.priceFactor>
   <HH.Setting.underworld.smuggler.priceFactor.Desc>Share of the market value you pay for a crate.</HH.Setting.underworld.smuggler.priceFactor.Desc>
-  <HH.Setting.underworld.strangerCooldownDays>Days before he asks again</HH.Setting.underworld.strangerCooldownDays>
-  <HH.Setting.underworld.strangerCooldownDays.Desc>After "Not interested" the stranger waits this many days before he asks again.</HH.Setting.underworld.strangerCooldownDays.Desc>
-  <HH.Setting.underworld.strangerMaxAsks>How often he asks</HH.Setting.underworld.strangerMaxAsks>
-  <HH.Setting.underworld.strangerMaxAsks.Desc>After this many refusals the stranger gives up for good.</HH.Setting.underworld.strangerMaxAsks.Desc>
-  <HH.Setting.underworld.strangerMaxWhispers>Highest Whispers for the stranger</HH.Setting.underworld.strangerMaxWhispers>
-  <HH.Setting.underworld.strangerMaxWhispers.Desc>He only turns up while your Whispers are at or below this value.</HH.Setting.underworld.strangerMaxWhispers.Desc>
-  <HH.Setting.underworld.strangerMeanDays>Days until the stranger shows up</HH.Setting.underworld.strangerMeanDays>
-  <HH.Setting.underworld.strangerMeanDays.Desc>Average number of days between the moments the stranger may come (once the colony has guests or a venue, and your Whispers are low).</HH.Setting.underworld.strangerMeanDays.Desc>
   <HH.Setting.underworld.whispers.fence>Whispers per fence deal</HH.Setting.underworld.whispers.fence>
   <HH.Setting.underworld.whispers.gang>Whispers per gang visit</HH.Setting.underworld.whispers.gang>
   <HH.Setting.underworld.whispers.hunt>Whispers per hunt</HH.Setting.underworld.whispers.hunt>
@@ -481,7 +469,6 @@
   <HH.SettingCat.Compatibility>Compatibility</HH.SettingCat.Compatibility>
   <HH.SettingCat.DLCandtraits>DLC and traits</HH.SettingCat.DLCandtraits>
   <HH.SettingCat.Difficulty>Difficulty</HH.SettingCat.Difficulty>
-  <HH.SettingCat.Discovery>Discovery</HH.SettingCat.Discovery>
   <HH.SettingCat.Druglounge>Drug lounge</HH.SettingCat.Druglounge>
   <HH.SettingCat.Effects>Effects</HH.SettingCat.Effects>
   <HH.SettingCat.Factionprojects>Faction projects</HH.SettingCat.Factionprojects>
