@@ -86,7 +86,7 @@ namespace Hearth.Underworld
             l.Gap(2f);
             l.Label(UwPay.T("Page.Whispers", Underworld.Whispers.ToString("0.0")));
             l.Label(UwPay.T("Page.Weights", Underworld.RespectableArrivalFactor.ToString("0.00"), Underworld.OutlawArrivalFactor.ToString("0.00")));
-            l.Label(UwPay.T("Page.Content", Underworld.Intensity.ToString(), Underworld.Effective.ToString()));
+            l.Label(UwPay.T("Page.ContentLevel", ("HH.UI.Content." + Underworld.Intensity).Translate().Resolve()));
             l.GapLine();
             l.Label(UwPay.T("Page.Stats1", c.Bouts, c.Bets, new Money(c.HouseTakeMicro).ToStringShort()));
             l.Label(UwPay.T("Page.Stats2", c.DealsBought, c.DealsSold, new Money(c.FenceProfitMicro).ToStringShort()));

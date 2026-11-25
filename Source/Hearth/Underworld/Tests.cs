@@ -105,7 +105,7 @@ namespace Hearth.Underworld
         {
             var map = t.Map; var f = UwKit.Friendly();
             UwKit.Begin(ContentIntensity.Cozy);
-            t.Check(UwDefs.ResMain != null && UwDefs.BackRoomDoor != null, "defs present");
+            t.Check(DefDatabase<ResearchProjectDef>.GetNamedSilentFail("HH_Underworld_1") != null && UwDefs.BackRoomDoor != null, "defs present (HH_Underworld_1 kept for old saves)");
             t.Check(!Underworld.Visible && !Underworld.Unlocked, "Cozy: underworld not visible");
             t.Check(UwDefs.ResHunt.IsHidden && UwDefs.ResClinic.IsHidden, "Cozy: research hidden");
             t.Check(!UwDefs.ResHunt.CanStartNow, "Cozy: research cannot start");
@@ -163,11 +163,13 @@ namespace Hearth.Underworld
             }
             t.Check(UwDefs.LoungeVenue != null && UwDefs.LoungeVenue.researchPrerequisite == null && UwDefs.Open(UwDefs.LoungeVenue.GetModExtension<UwGateExtension>()), "drug lounge venue type: no research, gate open");
             t.Check(Tab() != null && TabShown(), "Underworld tab visible");
-            t.Check(UwDefs.ResMain.IsHidden && UwDefs.ResDiscovery.IsHidden, "research tab shows neither HH_Underworld_1 nor the old key project");
+            var resMain = DefDatabase<ResearchProjectDef>.GetNamedSilentFail("HH_Underworld_1"); var resKey = DefDatabase<ResearchProjectDef>.GetNamedSilentFail("HH_Underworld_Discovery");
+            t.Check(resMain != null && resKey != null && resMain.IsHidden && resKey.IsHidden, "research tab shows neither HH_Underworld_1 nor the old key project");
             foreach (var r in new[] { UwDefs.ResHunt, UwDefs.ResClinic })
-                t.Check((r.prerequisites ?? new List<ResearchProjectDef>()).Concat(r.hiddenPrerequisites ?? new List<ResearchProjectDef>()).All(q => q != UwDefs.ResMain && q != UwDefs.ResDiscovery), r.defName + " no longer needs HH_Underworld_1");
+                t.Check((r.prerequisites ?? new List<ResearchProjectDef>()).Concat(r.hiddenPrerequisites ?? new List<ResearchProjectDef>()).All(q => q != resMain && q != resKey), r.defName + " no longer needs HH_Underworld_1");
             t.Check(!UwDefs.ResHunt.IsHidden && UwDefs.ResClinic.IsHidden, "Standard: the hunt research visible, the clinic research hidden");
-            t.Check(DefDatabase<ThingDef>.AllDefs.All(d => d.researchPrerequisites == null || !d.researchPrerequisites.Contains(UwDefs.ResMain)), "no building needs HH_Underworld_1");
+            t.Check(DefDatabase<ThingDef>.AllDefs.All(d => d.researchPrerequisites == null || !d.researchPrerequisites.Contains(resMain)), "no building needs HH_Underworld_1");
+            t.Check(LanguageDatabase.defaultLanguage.HaveTextForKey("HH.Underworld.Page.ContentLevel") && !LanguageDatabase.activeLanguage.HaveTextForKey("HH.Underworld.Page.Content") && !LanguageDatabase.defaultLanguage.HaveTextForKey("HH.Underworld.Page.Content") && !UwPay.T("Page.ContentLevel", "HH.UI.Content.Standard".Translate().Resolve()).Contains("{"), "Underworld tab: one content line, no second 'applies' level");
             t.Check(HSettings.Find("underworld.mode") == null && HSettings.Find("underworld.strangerMeanDays") == null && !HSettings.All.Any(x => x.Category == "Discovery"), "discovery settings are gone");
             t.Check(DefDatabase<IncidentDef>.GetNamedSilentFail("HH_UnderworldStranger") == null, "the stranger incident is gone");
             // old save: the flag says "not discovered" → still open; stored values of removed settings stay silent

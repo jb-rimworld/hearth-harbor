@@ -78,7 +78,7 @@
   <HH.Underworld.Page.Title>Underworld</HH.Underworld.Page.Title>
   <HH.Underworld.Page.Whispers>Whispers: {0} of 100.</HH.Underworld.Page.Whispers>
   <HH.Underworld.Page.Weights>Arrival weights: respectable x{0}, outlaws x{1}.</HH.Underworld.Page.Weights>
-  <HH.Underworld.Page.Content>Content: {0} (applies: {1}).</HH.Underworld.Page.Content>
+  <HH.Underworld.Page.ContentLevel>Content intensity: {0}.</HH.Underworld.Page.ContentLevel>
   <HH.Underworld.Page.Stats1>Fight pit: {0} bouts, {1} bets, house take {2} silver.</HH.Underworld.Page.Stats1>
   <HH.Underworld.Page.Stats2>Fence: {0} bought, {1} sold, profit {2} silver.</HH.Underworld.Page.Stats2>
   <HH.Underworld.Page.Stats3>Lounge sessions {0}, gang visits {1}, landings {2}, hunts {3}, organs {4}.</HH.Underworld.Page.Stats3>

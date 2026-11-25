@@ -13,7 +13,7 @@ namespace Hearth.Underworld
     public static class UwDefs
     {
         public static ThingDef BackRoomDoor, FightPit, FenceCounter, SmugglerDock, HuntingGround, OrganClinic;
-        public static ResearchProjectDef ResDiscovery, ResMain, ResHunt, ResClinic;
+        public static ResearchProjectDef ResHunt, ResClinic;
         public static VenueTypeDef LoungeVenue;
         public static ThingCategoryDef CatOrgans; public static HediffDef Bruise;
         public static JobDef JobWatchBout, JobBackRoom, JobFenceDeal, JobLounge, JobInterrogate, JobHunt, JobQuarryFlee;
@@ -28,7 +28,6 @@ namespace Hearth.Underworld
         {
             BackRoomDoor = Underworld.Def("HH_BackRoomDoor"); FightPit = Underworld.Def("HH_FightPitMarker"); FenceCounter = Underworld.Def("HH_FenceCounter");
             SmugglerDock = Underworld.Def("HH_SmugglerDock"); HuntingGround = Underworld.Def("HH_HuntingGroundMarker"); OrganClinic = Underworld.Def("HH_OrganClinic");
-            ResDiscovery = Underworld.Def<ResearchProjectDef>("HH_Underworld_Discovery"); ResMain = Underworld.Def<ResearchProjectDef>("HH_Underworld_1");
             ResHunt = Underworld.Def<ResearchProjectDef>("HH_TheHunt"); ResClinic = Underworld.Def<ResearchProjectDef>("HH_BlackClinic");
             CatOrgans = Underworld.Def<ThingCategoryDef>("BodyPartsNatural"); Bruise = Underworld.Def<HediffDef>("Bruise");
             LoungeVenue = Underworld.Def<VenueTypeDef>("HH_Venue_DrugLounge");
