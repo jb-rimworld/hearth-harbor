@@ -92,8 +92,8 @@ namespace Hearth
 
     // ================================================================================================ rules
     /// <summary>
-    /// "Hearth &amp; Harbor rules" (scenario editor, category Rule): module switches, hosting difficulty, content intensity, underworld
-    /// discovery and any number of per-colony settings. Only what is explicitly set here overrides the template for new games; the player
+    /// "Hearth &amp; Harbor rules" (scenario editor, category Rule): module switches, hosting difficulty, content intensity
+    /// and any number of per-colony settings. Only what is explicitly set here overrides the template for new games; the player
     /// can still change everything on the storyteller page. Saved only inside the "hhParts" node (RemovalSafeSave), never in vanilla data.
     /// </summary>
     public class ScenPart_HHRules : ScenPart, IHearthScenarioSeed
