@@ -80,7 +80,7 @@ namespace Hearth.Underworld
                 var rows = cands.Where(c => c.Kind == g && c.Pawn != null && !c.Pawn.Destroyed).ToList();
                 string off = GroupOff(g);
                 if (rows.Count == 0 && off == null && g != PitKind.Colonist) continue;
-                y = UiStyle.Section(0f, y, view.width, UwPay.T("Pit.Win.Group." + g));
+                y += UiStyle.Section(0f, y, view.width, UwPay.T("Pit.Win.Group." + g));
                 if (off != null) { UiStyle.LabelColored(new Rect(8f, y, view.width - 8f, 22f), off, UiStyle.DimGrey); y += 24f; continue; }
                 if (rows.Count == 0) { UiStyle.LabelColored(new Rect(8f, y, view.width - 8f, 22f), UwPay.T("Pit.Win.Nobody"), UiStyle.DimGrey); y += 24f; continue; }
                 foreach (var c in rows) { DrawRow(new Rect(0f, y, view.width, RowH), c); y += RowH; }
