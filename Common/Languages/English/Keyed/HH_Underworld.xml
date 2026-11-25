@@ -38,10 +38,7 @@
   <HH.Underworld.Pit.ArenaOpen>Arena open or too big: close the fence.</HH.Underworld.Pit.ArenaOpen>
   <HH.Underworld.Pit.NoFighters>fewer than two fighters allowed</HH.Underworld.Pit.NoFighters>
   <HH.Underworld.Pit.NoFairPair>no fair pair of fighters</HH.Underworld.Pit.NoFairPair>
-  <HH.Underworld.Pit.BoutRunning>Bout: {0} against {1}.</HH.Underworld.Pit.BoutRunning>
   <HH.Underworld.Pit.BoutAnnounced>A bout in the pit: {0} against {1}. Bets are open.</HH.Underworld.Pit.BoutAnnounced>
-  <HH.Underworld.Pit.Won>{0} wins the bout. The house keeps {1} silver.</HH.Underworld.Pit.Won>
-  <HH.Underworld.Pit.Draw>The bout ends without a winner. All stakes are returned.</HH.Underworld.Pit.Draw>
   <HH.Underworld.Pit.Guests>Guest challengers</HH.Underworld.Pit.Guests>
   <HH.Underworld.Pit.Guests.Desc>Guests may fight here: shady guests and gang members always, other adult guests when they are not kind and have bloodlust, the brawler trait or melee 6 and more. Only guests who are awake, idle, healthy and staying a while. Their bouts are fought for points: nobody gets hurt, and a winning guest gets a small purse from the house take.</HH.Underworld.Pit.Guests.Desc>
   <HH.Underworld.Pit.FightersBtn>Fighters…</HH.Underworld.Pit.FightersBtn>
@@ -123,14 +120,12 @@
   <HH.Underworld.Pit.Kind.Animal>animal</HH.Underworld.Pit.Kind.Animal>
   <HH.Underworld.Pit.Kind.Guest>guest</HH.Underworld.Pit.Kind.Guest>
   <HH.Underworld.Pit.Kind.Beast>hired opponent</HH.Underworld.Pit.Kind.Beast>
-  <HH.Underworld.Pit.Kind.Prizefighter>prizefighter</HH.Underworld.Pit.Kind.Prizefighter>
   <HH.Underworld.Pit.Win.Title>Fighters of the pit</HH.Underworld.Pit.Win.Title>
   <HH.Underworld.Pit.Win.Group.Colonist>Colonists and slaves</HH.Underworld.Pit.Win.Group.Colonist>
   <HH.Underworld.Pit.Win.Group.Prisoner>Prisoners</HH.Underworld.Pit.Win.Group.Prisoner>
   <HH.Underworld.Pit.Win.Group.Animal>Animals</HH.Underworld.Pit.Win.Group.Animal>
   <HH.Underworld.Pit.Win.Group.Guest>Guests</HH.Underworld.Pit.Win.Group.Guest>
   <HH.Underworld.Pit.Win.Group.Beast>Hired opponents</HH.Underworld.Pit.Win.Group.Beast>
-  <HH.Underworld.Pit.Win.Group.Prizefighter>Prizefighters</HH.Underworld.Pit.Win.Group.Prizefighter>
   <HH.Underworld.Pit.Win.GroupOff>Off: switch on "{0}" on the marker.</HH.Underworld.Pit.Win.GroupOff>
   <HH.Underworld.Pit.Win.Nobody>nobody here</HH.Underworld.Pit.Win.Nobody>
   <HH.Underworld.Pit.Win.Tick>Fights in this pit</HH.Underworld.Pit.Win.Tick>
@@ -142,11 +137,9 @@
   <HH.Underworld.Pit.Win.Anyone>anyone suitable</HH.Underworld.Pit.Win.Anyone>
   <HH.Underworld.Pit.Win.Start>Start the bout now</HH.Underworld.Pit.Win.Start>
   <HH.Underworld.Pit.Win.PickSides>Pick the sides, or leave "anyone suitable" for the closest match.</HH.Underworld.Pit.Win.PickSides>
-  <HH.Underworld.Fence.Inspect>Stock: {0} items worth {1} silver. Cash box: {2} silver.</HH.Underworld.Fence.Inspect>
   <HH.Underworld.Fence.Fund>Fill cash box</HH.Underworld.Fence.Fund>
   <HH.Underworld.Fence.Fund.Desc>Move silver from the till into the fence's cash box, up to the limit in the settings.</HH.Underworld.Fence.Fund.Desc>
   <HH.Underworld.Fence.Funded>{0} silver moved into the cash box.</HH.Underworld.Fence.Funded>
-  <HH.Underworld.Fence.NoCash>The cash box is empty.</HH.Underworld.Fence.NoCash>
   <HH.Underworld.Fence.CannotPay>The buyer cannot pay.</HH.Underworld.Fence.CannotPay>
   <HH.Underworld.Fence.Exposed>The goods came from {0}, and they know where they ended up.</HH.Underworld.Fence.Exposed>
   <HH.Underworld.Fence.Stock>Stock: {0} items worth {1} silver. Cash box: {2} silver.</HH.Underworld.Fence.Stock>
@@ -249,7 +242,31 @@
   <HH.Underworld.Page.Title>Underworld</HH.Underworld.Page.Title>
   <HH.Underworld.Page.Whispers>Whispers: {0} of 100.</HH.Underworld.Page.Whispers>
   <HH.Underworld.Page.Weights>Arrival weights: respectable x{0}, outlaws x{1}.</HH.Underworld.Page.Weights>
-  <HH.Underworld.Page.ContentLevel>Content intensity: {0}.</HH.Underworld.Page.ContentLevel>
+  <HH.Underworld.Page.ContentLevel>Content intensity: {0}. You can change it in the settings, on the Modules page.</HH.Underworld.Page.ContentLevel>
+  <HH.Underworld.Page.Whispers.Desc>Every bout, deal and gang visit adds whispers, and they fade over time. More whispers bring more outlaws and fewer respectable guests.</HH.Underworld.Page.Whispers.Desc>
+  <HH.Underworld.Page.Offers>Waiting for your answer</HH.Underworld.Page.Offers>
+  <HH.Underworld.Page.Facilities>Your back room business</HH.Underworld.Page.Facilities>
+  <HH.Underworld.Page.WhispersHead>Whispers</HH.Underworld.Page.WhispersHead>
+  <HH.Underworld.Page.StatsHead>Takings so far</HH.Underworld.Page.StatsHead>
+  <HH.Underworld.Page.NoMap>Open a map of your colony to see what is built there.</HH.Underworld.Page.NoMap>
+  <HH.Underworld.Page.Row.backroom>Back rooms</HH.Underworld.Page.Row.backroom>
+  <HH.Underworld.Page.Row.pit>Fight pit</HH.Underworld.Page.Row.pit>
+  <HH.Underworld.Page.Row.fence>Fence</HH.Underworld.Page.Row.fence>
+  <HH.Underworld.Page.Row.lounge>Drug lounge</HH.Underworld.Page.Row.lounge>
+  <HH.Underworld.Page.Row.dock>Smuggler's dock</HH.Underworld.Page.Row.dock>
+  <HH.Underworld.Page.Row.gangs>Gangs</HH.Underworld.Page.Row.gangs>
+  <HH.Underworld.Page.Row.hunt>Hunting ground</HH.Underworld.Page.Row.hunt>
+  <HH.Underworld.Page.Row.clinic>Organ clinic</HH.Underworld.Page.Row.clinic>
+  <HH.Underworld.Page.Pit.NotBuilt>Build a closed fence (a gate is fine) and put a fight pit marker inside.</HH.Underworld.Page.Pit.NotBuilt>
+  <HH.Underworld.Page.State.NotBuilt>Not built yet.</HH.Underworld.Page.State.NotBuilt>
+  <HH.Underworld.Page.State.Waiting>Built, but waiting for something.</HH.Underworld.Page.State.Waiting>
+  <HH.Underworld.Page.State.Working>Working.</HH.Underworld.Page.State.Working>
+  <HH.Underworld.Page.Build>Build</HH.Underworld.Page.Build>
+  <HH.Underworld.Page.Build.Desc>Closes this tab and picks the {0} from the build menu.</HH.Underworld.Page.Build.Desc>
+  <HH.Underworld.Page.Build.Research>Needs research first: {0}.</HH.Underworld.Page.Build.Research>
+  <HH.Underworld.Page.Build.Hidden>Not in the build menu right now.</HH.Underworld.Page.Build.Hidden>
+  <HH.Underworld.Page.Build.Missing>Not in the build menu of this game.</HH.Underworld.Page.Build.Missing>
+  <HH.Underworld.Page.Show>Show</HH.Underworld.Page.Show>
   <HH.Underworld.Page.Stats1>Fight pit: {0} bouts, {1} bets, house take {2} silver.</HH.Underworld.Page.Stats1>
   <HH.Underworld.Page.Stats2>Fence: {0} bought, {1} sold, profit {2} silver.</HH.Underworld.Page.Stats2>
   <HH.Underworld.Page.Stats3>Lounge sessions {0}, gang visits {1}, landings {2}, hunts {3}, organs {4}.</HH.Underworld.Page.Stats3>

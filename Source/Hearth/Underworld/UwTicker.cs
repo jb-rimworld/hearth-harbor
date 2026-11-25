@@ -15,6 +15,7 @@ namespace Hearth.Underworld
         {
             FightBout.AbortAll("game (re)started");
             Underworld.ClearInUse();
+            UnderworldPage.Invalidate(); UwBuild.Clear();
         }
 
         public static void Tick(int t)
@@ -94,31 +95,6 @@ namespace Hearth.Underworld
                 if (bal.Micro > 0 && FenceTrade.FindCounter(m) == null) { UwPay.Sweep(acc, m, "Fence: cash box closed"); Caretaker.Fixed("Underworld.FenceCash", $"{bal.ToStringShort()} silver in a fence cash box without a counter"); n++; }
             }
             return n;
-        }
-    }
-
-    /// <summary>The "Underworld" page of the Hearth &amp; Harbor main tab (visible whenever the underworld is visible: module on, content not Cozy).</summary>
-    public static class UnderworldPage
-    {
-        static Vector2 scroll; static float viewH = 400f;
-        public static void Draw(Rect r)
-        {
-            var c = Underworld.Comp; if (c == null) return;
-            var body = Hearth.Shell.PageFrame.Header(r, UwPay.T("Page.Title"), "HH.UI.Page.Sub.underworld".TranslateOr("Whispers, arrival weights and the takings of the dark side."));
-            float vw = Hearth.Shell.PageFrame.BeginScroll(body, ref scroll, viewH);
-            var l = new Listing_Standard(); l.Begin(new Rect(0f, 0f, vw, 3000f));
-            l.Gap(2f);
-            l.Label(UwPay.T("Page.Whispers", Underworld.Whispers.ToString("0.0")));
-            l.Label(UwPay.T("Page.Weights", Underworld.RespectableArrivalFactor.ToString("0.00"), Underworld.OutlawArrivalFactor.ToString("0.00")));
-            l.Label(UwPay.T("Page.ContentLevel", ("HH.UI.Content." + Underworld.Intensity).Translate().Resolve()));
-            l.GapLine();
-            l.Label(UwPay.T("Page.Stats1", c.Bouts, c.Bets, new Money(c.HouseTakeMicro).ToStringShort()));
-            l.Label(UwPay.T("Page.Stats2", c.DealsBought, c.DealsSold, new Money(c.FenceProfitMicro).ToStringShort()));
-            l.Label(UwPay.T("Page.Stats3", c.LoungeSessions, c.GangVisits, c.Smuggles, c.Hunts, c.OrgansSold));
-            if (Underworld.HighRollersActive) l.Label(UwPay.T("Page.HighRollers"));
-            float used = l.CurHeight;
-            l.End();
-            viewH = Hearth.Shell.PageFrame.EndScroll(used);
         }
     }
 }

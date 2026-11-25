@@ -255,6 +255,15 @@ namespace Hearth.Underworld
             return UwPay.T("Pit.Status.Next", h.ToString("0.0"));
         }
 
+        /// <summary>For the Underworld tab: Working while a bout runs or automatic bouts are planned, else Waiting (<see cref="StatusLine"/> says why).
+        /// Reads the same caches as the status line.</summary>
+        public FacilityState PageState()
+        {
+            if (FightBout.OfPit(this) != null) return FacilityState.Working;
+            if (GateReason() != null || ArenaProblem() != null || Ready().Count < 2 || !AdultGuestOn(Map) || lastAutoFail != null) return FacilityState.Waiting;
+            return FacilityState.Working;
+        }
+
         public string ReadyLine()
         {
             var ready = Ready();
