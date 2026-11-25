@@ -394,7 +394,10 @@ namespace Hearth.Underworld
             // no cash: buy disabled with the reason
             Smuggler.Fire(map, force: true); o = Offers.OpenOf(UwOfferKind.Smuggler, map);
             var keep = UwKit.Till(map); ledger.Post(Underworld.Till(map), "world", keep, "test drain");
-            t.Check(!Offers.CanAccept(o, out string why) && why == UwPay.T("Smuggler.NoCash"), "empty till: buy refused with the reason (" + why + ")");
+            UwKit.HideColonySilver(map);
+            string why = null;
+            if (Silverline.BankApi.ColonyBalance.Micro <= 0) t.Check(!Offers.CanAccept(o, out why) && why == UwPay.ShortOf(map, o.price), "no money: buy refused with the reason (" + why + ")");
+            UwKit.ShowColonySilver();
             ledger.Post("world", Underworld.Till(map), keep, "test refill");
             // a crate nothing of which can be made any more (a removed mod): gone, not 'not enough in the till'
             Offers.Close(o); Smuggler.Fire(map, force: true); o = Offers.OpenOf(UwOfferKind.Smuggler, map);

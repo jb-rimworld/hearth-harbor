@@ -33,6 +33,7 @@ namespace Hearth.Underworld
         {
             foreach (var t in Spawned.ToList()) if (t != null && !t.Destroyed) { try { t.Destroy(); } catch { } }
             Spawned.Clear();
+            ShowColonySilver();
             var p = HearthProfile.Current; if (saved) { p.Content = oldContent; p.Tier = oldTier; saved = false; }
             FightBout.AbortAll("test end");
             Underworld.MarkInUseDirty(null);
@@ -90,6 +91,29 @@ namespace Hearth.Underworld
 
         public static int Silver(Pawn p) { int n = 0; foreach (var t in p.inventory.innerContainer) if (t.def == ThingDefOf.Silver) n += t.stackCount; return n; }
         public static Money Till(Map map) => Ledger.Current.Balance(Underworld.Till(map));
+
+        static readonly List<Thing> hiddenSilver = new List<Thing>();
+        /// <summary>Forbids the colony's silver on the map, so a check of "the colony cannot pay" sees only the till (and the bank, if any). Undone by <see cref="ShowColonySilver"/> or <see cref="End"/>.</summary>
+        public static void HideColonySilver(Map map)
+        {
+            foreach (var s in map.listerThings.ThingsOfDef(ThingDefOf.Silver).ToList()) if (!s.IsForbidden(Faction.OfPlayer)) { s.SetForbidden(true, false); hiddenSilver.Add(s); }
+            UwPay.ForgetFunds();
+        }
+        /// <summary>Puts <paramref name="n"/> silver near <paramref name="near"/> as colony stock (home area, not forbidden) and tracks it for <see cref="End"/>.</summary>
+        public static Thing StockSilver(Map map, IntVec3 near, int n)
+        {
+            var s = ThingMaker.MakeThing(ThingDefOf.Silver); s.stackCount = n;
+            if (!GenPlace.TryPlaceThing(s, near, map, ThingPlaceMode.Near, out Thing placed)) return null;
+            placed = placed ?? s;
+            map.areaManager.Home[placed.Position] = true; placed.SetForbidden(false, false);
+            Track(placed); UwPay.ForgetFunds();
+            return placed;
+        }
+        public static void ShowColonySilver()
+        {
+            foreach (var s in hiddenSilver) if (s != null && !s.Destroyed) s.SetForbidden(false, false);
+            hiddenSilver.Clear(); UwPay.ForgetFunds();
+        }
         public static PawnKindDef Animal(params string[] names) { foreach (var n in names) { var k = DefDatabase<PawnKindDef>.GetNamedSilentFail(n); if (k != null) return k; } return PawnKindDefOf.Muffalo; }
         public static Pawn TameAnimal(Map map, IntVec3 c, params string[] kinds)
         {
@@ -734,7 +758,9 @@ namespace Hearth.Underworld
             t.Check(landed, "crate dropped near the dock");
             t.Check(Ledger.Current.SumAll() == 0, "ledger balanced");
             var poor = Smuggler.MakeOffer(map); Ledger.Current.Post(Underworld.Till(map), "world", UwKit.Till(map), "drain");
-            t.Check(!Smuggler.Buy(map, poor), "no cash, no crate");
+            UwKit.HideColonySilver(map);
+            if (Silverline.BankApi.ColonyBalance.Micro <= 0) t.Check(!Smuggler.Buy(map, poor), "no cash, no crate");
+            UwKit.ShowColonySilver();
             UwKit.End();
         }
     }

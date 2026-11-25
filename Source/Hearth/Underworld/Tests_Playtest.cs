@@ -147,8 +147,10 @@ namespace Hearth.Underworld
             R("    bottom: " + UwPay.T("Pit.Win.PickSides") + " | `" + UwPay.T("Pit.Win.SideA") + ": " + UwPay.T("Pit.Win.Anyone") + "` `" + UwPay.T("Pit.Win.SideB") + ": " + UwPay.T("Pit.Win.Anyone") + "`");
             var manual = pit.ManualReady();
             R("    side menus list: " + (manual.Count == 0 ? "only `" + UwPay.T("Pit.Win.Anyone") + "`" : string.Join(", ", manual.Select(c => c.Pawn.LabelShortCap + " (" + PitFighters.KindLabel(c.Kind) + ")"))));
-            string closed = pit.ClosedReason() ?? (FightBout.OfPit(pit) != null ? UwPay.T("Pit.Why.BoutRunning") : null);
+            string closed = pit.ClosedReason() ?? (FightBout.OfPit(pit) != null ? UwPay.T("Pit.Why.BoutRunning") : null) ?? pit.ManualShortage(manual);
             R("    button `" + UwPay.T("Pit.Win.Start") + "`: " + (closed == null ? "clickable" : "greyed out, tooltip: " + closed));
+            string hw = PitOpponents.CannotHire(pit, pit.LoneFighter());
+            R("    button `" + PitOpponents.CallLabel + "`: " + (hw == null ? "clickable, fights it: " + pit.LoneFighter()?.LabelShortCap : "greyed out, tooltip: " + hw));
         }
 
         static void Tab(TestContext t, Map map, string title)
@@ -286,6 +288,9 @@ namespace Hearth.Underworld
                 R("Kept: " + col.LabelShortCap + " (" + col.story?.TitleCap + ", melee " + col.skills?.GetSkill(SkillDefOf.Melee)?.Level + ", traits " + string.Join(", ", col.story?.traits?.allTraits?.Select(x => x.LabelCap) ?? new string[0]) + "). Everyone else was taken off the map.");
                 R("Colony till (the account bouts and the opponent fee use): " + UwKit.Till(map).ToStringShort() + ". Silver lying on the map: " + map.resourceCounter.Silver + ".");
                 t.Check(map.mapPawns.FreeColonistsSpawnedCount == 1 && map.mapPawns.SpawnedColonyAnimals.Count == 0 && !GuestApi.GuestsOn(map).Any(), "one colonist, no animals, no guests");
+                // the commenter's case: nothing in the till (no guests ever paid); the suite never puts silver into it
+                if (UwKit.Till(map).Micro > 0) { R("The suite empties the till (" + UwKit.Till(map).ToStringShort() + ")."); Ledger.Current.Post(Underworld.Till(map), "world", UwKit.Till(map), "playtest: empty till"); }
+                R("Opponents hired in this game so far: " + Underworld.Comp.OpponentsHired + " (the first one is free).");
                 Drain(t);
                 Find.DesignatorManager.Deselect(); Find.Selector.ClearSelection();
                 UnderworldPage.Invalidate(); FacilityStatus.MarkDirty();
@@ -420,25 +425,15 @@ namespace Hearth.Underworld
 
                 // ---- 6. way 3: Call an opponent
                 H("6. Way 3: \"Call an opponent\"");
-                var hireCmd = OurGizmo(pit, UwPay.T("Pit.CallOpponent", PitFighters.Silver(PitOpponents.Fee)));
+                var hireCmd = OurGizmo(pit, PitOpponents.CallLabel);
                 R("Gizmo `" + hireCmd?.LabelCap + "`: " + (hireCmd == null ? "missing" : hireCmd.Disabled ? "greyed out, tooltip ends with: " + One(hireCmd.disabledReason) : "clickable") + " | tooltip: " + One(hireCmd?.Desc));
                 var tillBefore = UwKit.Till(map);
-                if (hireCmd != null && hireCmd.Disabled)
-                {
-                    R("**Stuck here as a real player:** the gizmo stays greyed out. The till has " + tillBefore.ToStringShort() + " and the map has " + map.resourceCounter.Silver + " silver lying around, but only the till counts.");
-                    t.Note("Call an opponent is disabled for a lone colonist with an empty till: " + hireCmd.disabledReason);
-                    Payments.CreditColony(map, PitOpponents.Fee + Money.FromSilver(50), "playtest: money a guest would have paid");
-                    R("The suite now puts " + (PitOpponents.Fee + Money.FromSilver(50)).ToStringShort() + " into the till (as if a guest had paid) to see the rest of the way. Till: " + UwKit.Till(map).ToStringShort() + ".");
-                    yield return 5;
-                    Drain(t);
-                    hireCmd = OurGizmo(pit, UwPay.T("Pit.CallOpponent", PitFighters.Silver(PitOpponents.Fee)));
-                    R("Gizmo now: " + (hireCmd == null ? "missing" : hireCmd.Disabled ? "greyed out: " + hireCmd.disabledReason : "clickable") + " | tooltip: " + One(hireCmd?.Desc));
-                    FloatMenu(t, col, pit, "colonist ticked, till filled");
-                }
+                t.Check(hireCmd != null && !hireCmd.Disabled && UwKit.Till(map).Micro == 0, "with an empty till and no silver given, Call an opponent is clickable: " + (hireCmd?.disabledReason ?? "ok"));
+                if (hireCmd != null && hireCmd.Disabled) R("**Stuck here as a real player:** the gizmo stays greyed out: " + hireCmd.disabledReason);
                 tillBefore = UwKit.Till(map);
                 var healthBefore = col.health.summaryHealth.SummaryHealthPercent;
                 int inj0 = col.health.hediffSet.hediffs.Count(h => h is Hediff_Injury && h.def != PitSetup.Bruise);
-                if (hireCmd == null || hireCmd.Disabled) { t.Check(false, "Call an opponent cannot be used even with money in the till: " + hireCmd?.disabledReason); yield break; }
+                if (hireCmd == null || hireCmd.Disabled) yield break;
                 R("The player clicks `" + hireCmd.LabelCap + "`.");
                 (hireCmd as Command_Action)?.action?.Invoke();
                 yield return 2;
@@ -503,7 +498,7 @@ namespace Hearth.Underworld
                 // ---- extra: a tab with an open offer (for the screenshot)
                 H("8. Extra: the tab with an open offer (a smuggler's dock placed by the suite)");
                 var dock = FacKit.Dock(map, t); FacKit.Refresh(map);
-                Payments.CreditColony(map, Money.FromSilver(3000), "playtest: money for a smuggler crate");
+                // (no money is given: the offer row then shows what the colony is short of)
                 bool fired = Smuggler.Fire(map, force: true);
                 yield return 5;
                 Drain(t);

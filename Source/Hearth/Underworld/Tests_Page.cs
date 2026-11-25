@@ -120,11 +120,19 @@ namespace Hearth.Underworld
                 yield return 3;
                 t.Check(Find.WindowStack.IsOpen<Window_PitFighters>(), "Fighters… opens the Fighters window");
                 w?.Close(false); Find.WindowStack.TryRemove(typeof(Window_PitFighters), false);
+                // independent of what earlier suites left behind: no other window, nothing selected, this map shown, no world view
+                foreach (var win in Find.WindowStack.Windows.ToList()) if (!(win is ImmediateWindow) && !(win is MainTabWindow)) win.Close(false);
+                Find.Selector.ClearSelection(); Find.DesignatorManager.Deselect();
+                if (Find.CurrentMap != map) Current.Game.CurrentMap = map;
+                CameraJumper.TryHideWorld();
                 Find.MainTabsRoot.SetCurrentTab(tabDef, false);
                 yield return 3;
+                bool tabWasOpen = Find.MainTabsRoot.OpenTab == tabDef;
+                // checked right after the call (JumpTo works at once): a later tick may change the selection for reasons of its own
                 UnderworldPage.JumpTo(pit.parent);
-                yield return 2;
-                t.Check(Find.MainTabsRoot.OpenTab == null && Find.Selector.IsSelected(pit.parent), "Show closes the tab and selects the marker");
+                bool tabClosed = Find.MainTabsRoot.OpenTab == null, selected = Find.Selector.IsSelected(pit.parent);
+                t.Check(tabClosed && selected, "Show closes the tab and selects the marker (tab was open " + tabWasOpen + ", closed " + tabClosed + ", selected " + selected
+                    + ", selection " + Find.Selector.NumSelected + ")");
                 Find.Selector.ClearSelection();
             }
             else t.Note("no room for an arena: pit working state not checked");
@@ -142,8 +150,13 @@ namespace Hearth.Underworld
                 t.Check(FacilityStatus.OfferLine(o).Contains(Offers.TimeLeft(o)), "the offer line says the time left");
                 t.Check(Row(map, FacilityStatus.DockId)?.State == FacilityState.Working, "the dock row is green while a boat waits");
                 var keep = UwKit.Till(map); Ledger.Current.Post(Underworld.Till(map), "world", keep, "test drain");
-                t.Check(!FacilityStatus.CanAccept(o, out string why) && why == UwPay.T("Smuggler.NoCash"), "empty till: Accept disabled, the reason is the tooltip (" + why + ")");
-                t.Check(!UnderworldPage.AcceptOffer(o) && Offers.IsOpen(o), "a click on the disabled Accept does nothing");
+                UwKit.HideColonySilver(map);
+                if (Silverline.BankApi.ColonyBalance.Micro <= 0)
+                {
+                    t.Check(!FacilityStatus.CanAccept(o, out string why) && why == UwPay.ShortOf(map, o.price), "no money: Accept disabled, the reason is the tooltip (" + why + ")");
+                    t.Check(!UnderworldPage.AcceptOffer(o) && Offers.IsOpen(o), "a click on the disabled Accept does nothing");
+                }
+                UwKit.ShowColonySilver();
                 Ledger.Current.Post("world", Underworld.Till(map), keep, "test refill");
                 UnderworldPage.DeclineOffer(o);
                 t.Check(!Offers.IsOpen(o) && UnderworldPage.Offers(map).Count == 0, "Decline closes the offer and the row goes away");

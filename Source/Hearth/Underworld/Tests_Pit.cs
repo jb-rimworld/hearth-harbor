@@ -417,19 +417,37 @@ namespace Hearth.Underworld
                 foreach (var h in tmp) { try { edge.health.RemoveHediff(h); } catch { } }
             }
 
-            // ---- 3: what the pit cannot rule out: a vanilla social fight between the two ex-fighters (nothing of the bout's guard is left then)
-            t.Check(FightBout.OfPawn(a) == null && FightBout.OfPawn(b) == null, "the bout is gone, so the damage guard no longer covers the two (a quarrel is real damage)");
-            if (a.Downed || b.Downed || a.Dead || b.Dead || a.InMentalState || b.InMentalState) { t.Note("one of them is already down or quarrelling; the forced fight is skipped"); UwKit.End(); yield break; }
-            var toil0 = a.GetLord()?.CurLordToil?.GetType().Name;
-            var gw3 = PitKit.Goodwill();
-            a.interactions.StartSocialFight(b);
-            t.Check(a.InMentalState && b.InMentalState, "a forced social fight started between the two ex-fighters");
-            int sw = 0; string downed = null;
-            while (sw < 3000 && a.InMentalState && b.InMentalState && !a.Downed && !b.Downed) { yield return 30; sw += 30; }
-            if (a.Downed) downed = a.LabelShort; else if (b.Downed) downed = b.LabelShort;
+            // ---- 3: no vanilla social fight between the two ex-fighters (Patch_PitNoQuarrel): the bout's damage guard is gone, a quarrel would be real damage
+            t.Check(FightBout.OfPawn(a) == null && FightBout.OfPawn(b) == null, "the bout is gone, so the damage guard no longer covers the two");
+            if (a.Downed || b.Downed || a.Dead || b.Dead || a.InMentalState || b.InMentalState) { t.Note("one of them is already down or quarrelling; the quarrel check is skipped"); UwKit.End(); yield break; }
+            t.Check(FightBout.KeepFromQuarrel(a) && FightBout.KeepFromQuarrel(b) && !a.interactions.SocialFightPossible(b) && !b.interactions.SocialFightPossible(a)
+                && a.interactions.SocialFightChance(InteractionDefOf.Insult, b) == 0f && b.interactions.SocialFightChance(InteractionDefOf.Insult, a) == 0f,
+                "for an hour after the bout a social fight with either of the two is not possible (chance 0)");
+            // force the attempt the way vanilla makes it after an insult, many times over, in both directions and with a watcher
+            bool wasRandom = DebugSettings.enableRandomMentalStates; DebugSettings.enableRandomMentalStates = true;
+            var watcher = gs.FirstOrDefault(g => g != a && g != b && g.Spawned && !g.Dead && !g.Downed && !g.InMentalState);
+            int started = 0;
+            try
+            {
+                for (int i = 0; i < 300; i++)
+                {
+                    if (a.interactions.CheckSocialFightStart(InteractionDefOf.Insult, b)) started++;
+                    if (b.interactions.CheckSocialFightStart(InteractionDefOf.Insult, a)) started++;
+                    if (watcher != null && watcher.interactions.CheckSocialFightStart(InteractionDefOf.Insult, a)) started++;
+                    if (watcher != null && a.interactions.CheckSocialFightStart(InteractionDefOf.Insult, watcher)) started++;
+                }
+            }
+            finally { DebugSettings.enableRandomMentalStates = wasRandom; }
+            t.Check(started == 0 && !a.InMentalState && !b.InMentalState && (watcher == null || !watcher.InMentalState),
+                "1200 forced insult attempts after the bout: no social fight starts (" + started + " started; watcher " + (watcher?.LabelShort ?? "none") + ")");
+            if (watcher != null && gs.Count > 1)
+            {
+                // the guard is narrow: two pawns that did not fight keep the vanilla rules
+                var other = gs.FirstOrDefault(g => g != a && g != b && g != watcher && g.Spawned && !g.Dead);
+                if (other != null) t.Note("two pawns who did not fight: social fight possible " + watcher.interactions.SocialFightPossible(other) + " (vanilla rules)");
+            }
             yield return 60;
-            t.Note("forced social fight: ended after " + sw + " ticks, downed: " + (downed ?? "nobody") + "; lord toil " + toil0 + " -> " + a.GetLord()?.CurLordToil?.GetType().Name + " / " + b.GetLord()?.CurLordToil?.GetType().Name
-                + "; goodwill " + PitKit.GoodwillDiff(gw3) + "; " + PitKit.Dump(a) + " | " + PitKit.Dump(b));
+            t.Check(!a.InMentalState && !b.InMentalState, "a minute later the two are still calm");
             UwKit.End();
         }
 
@@ -451,8 +469,12 @@ namespace Hearth.Underworld
             var col = PitKit.Fighter(map);
             if (pit == null || col == null) { t.Note("no area or no colonist who can fight; skipped"); UwKit.End(); yield break; }
             pit.Candidates(true);
-            t.Check(pit.LoneFighter() == null, "nobody ticked: no lone fighter (an unticked colonist is never called into a bout): " + pit.LoneFighter()?.LabelShort);
-            t.Check(PitOpponents.CannotHire(pit, pit.LoneFighter()) != null, "nobody ticked: 'Call an opponent' is disabled: " + PitOpponents.CannotHire(pit, pit.LoneFighter()));
+            if (pit.Candidates().Count(c => c.Kind == PitKind.Colonist) > 1)
+            {
+                t.Check(pit.LoneFighter() == null, "nobody ticked: no lone fighter (an unticked colonist is never called into a bout): " + pit.LoneFighter()?.LabelShort);
+                t.Check(PitOpponents.CannotHire(pit, pit.LoneFighter()) != null, "nobody ticked: 'Call an opponent' is disabled: " + PitOpponents.CannotHire(pit, pit.LoneFighter()));
+            }
+            else t.Check(pit.LoneFighter() == col, "a colony of one: its only colonist is the lone fighter, ticked when the opponent is called: " + pit.LoneFighter()?.LabelShort);
             pit.SetTicked(col, true);
             PitKit.Put(col, CellFinder.RandomClosewalkCellNear(outside, map, 2));
             var ready = pit.Ready(true);
@@ -461,46 +483,67 @@ namespace Hearth.Underworld
             t.Check(pit.LoneFighter() == col, "the lone fighter is the ticked colonist");
             var hireGizmo = pit.CompGetGizmosExtra().OfType<Command>().FirstOrDefault(g => g.icon == PitSetup.IconOpponent);
             t.Check(hireGizmo != null && hireGizmo.defaultDesc.Contains(UwPay.T("Pit.CallOpponent.For", col.LabelShortCap)), "the gizmo names who will fight: " + hireGizmo?.defaultDesc);
-            var fee = PitOpponents.Fee;
-            // an empty till disables the gizmo with the reason
-            var tillAcc = Underworld.Till(map); var have = Ledger.Current.Balance(tillAcc);
-            if (have.Micro > 0) Ledger.Current.Post(tillAcc, "world", have, "test: empty till");
-            t.Check(PitOpponents.CannotHire(pit, col) == UwPay.T("Pit.Why.TillShort", PitFighters.Silver(fee)), "empty till: " + PitOpponents.CannotHire(pit, col));
-            Payments.CreditColony(map, Money.FromSilver(100), "test");
-            var till0 = UwKit.Till(map);
+            // ---- 1: the first opponent of a game is free: a colony without any silver (empty till, no stock, no bank) can call one
+            int hired0 = Underworld.Comp.OpponentsHired;
+            Underworld.Comp.OpponentsHired = 0;
+            UwKit.HideColonySilver(map);
+            var tillAcc = Underworld.Till(map);
+            if (UwKit.Till(map).Micro > 0) Ledger.Current.Post(tillAcc, "world", UwKit.Till(map), "test: empty till");
+            bool noBank = Silverline.BankApi.ColonyBalance.Micro <= 0;
+            t.Check(PitOpponents.Fee.Micro == 0 && PitOpponents.CannotHire(pit, col) == null && PitOpponents.CallLabel == UwPay.T("Pit.CallOpponent.Free"), "first opponent: free, open without any silver (" + PitOpponents.CannotHire(pit, col) + ")");
             var gw = PitKit.Goodwill(); var sc = PitKit.Snap.Of(col);
             var bout = PitOpponents.HireBeast(pit, col, out string why);
-            t.Check(bout != null, "a pit beast was hired (" + why + ")");
-            if (bout == null) { UwKit.End(); yield break; }
+            t.Check(bout != null, "the free pit beast was hired (" + why + ")");
+            if (bout == null) { Underworld.Comp.OpponentsHired = hired0; UwKit.End(); yield break; }
             var beast = bout.B;
+            var fee = HSettings.GetSilver("underworld.pit.opponentFee");
             t.Check(PitOpponents.IsBeast(beast) && beast.Faction == Faction.OfPlayer && pit.ArenaInfo().Cells.Contains(beast.Position), "beast in the arena, the house's: " + beast.kindDef.defName + " power " + beast.kindDef.combatPower + " vs " + PitFighters.Power(col));
-            t.Check(UwKit.Till(map) == till0 - fee, "fee booked from the till: " + (till0 - UwKit.Till(map)).ToStringShort());
+            t.Check(beast.LabelShort == UwPay.T("Pit.BeastName", beast.kindDef.label) && !PawnUtility.ShouldDisplayFactionInInspectString(beast), "a plain label, no faction line: " + beast.LabelShort);
+            t.Check(bout.FeePaid.Micro == 0 && UwKit.Till(map).Micro == 0 && Underworld.Comp.OpponentsHired == 1, "nothing paid for the first one, it counts as hired");
+            t.Check(PitOpponents.Fee == fee && !PitOpponents.FirstIsFree, "later opponents cost the set fee: " + PitOpponents.Fee.ToStringShort());
             t.Check(!new Designator_Slaughter().CanDesignateThing(beast).Accepted, "the beast cannot be slaughtered");
             t.Check(!TradeUtility.AllSellableColonyPawns(map).Contains(beast), "the beast cannot be sold");
             t.Check(bout.Scored, "colonist against beast is scored");
             foreach (var w in PitKit.Await(t, bout, 15000)) yield return w;
             t.Check(bout.Finished && (bout.Result != null), "the bout ran to a result");
-            t.Check(FightBout.LastMessage != null && FightBout.LastMessage.Contains(col.LabelShortCap), "result message: " + FightBout.LastMessage);
+            string cn = col.LabelShortCap, bn = beast.LabelShortCap;
+            string head = UwPay.T("Pit.Result.WonNoBets", cn, bn), headB = UwPay.T("Pit.Result.WonNoBets", bn, cn), headD = UwPay.T("Pit.Result.DrawNoBets", cn, bn);
+            string tail = " " + UwPay.T("Pit.Result.Points", cn);
+            t.Check(FightBout.LastMessage == head + tail || FightBout.LastMessage == headB + tail || FightBout.LastMessage == headD + tail, "result message: no pool, the fighter only has bruises: " + FightBout.LastMessage);
+            var lastLine = pit.LastBoutLine();
+            t.Check(lastLine == UwPay.T("Pit.Last.NoBets", cn, bn) || lastLine == UwPay.T("Pit.Last.NoBets", bn, cn) || lastLine == UwPay.T("Pit.Last.Draw", cn, bn), "last bout line without a pool: " + lastLine);
             yield return 300;
             t.Check(beast.Destroyed && !beast.Spawned && !PitOpponents.IsBeast(beast) && !pit.HasBeast && !map.mapPawns.AllPawns.Contains(beast), "the beast is gone (destroyed " + beast.Destroyed + ", spawned " + beast.Spawned + ")");
             t.Check(beast.Corpse == null || beast.Corpse.Destroyed, "no corpse left");
             sc.Check(t, "colonist", beast);
             t.Check(PitKit.GoodwillDiff(gw) == "none", "goodwill unchanged: " + PitKit.GoodwillDiff(gw));
             t.Check(Ledger.Current.SumAll() == 0, "ledger balanced");
-            // an aborted bout sends the beast away too
-            Payments.CreditColony(map, Money.FromSilver(100), "test");
-            var tillHire = UwKit.Till(map);
+
+            // ---- 2: the second one costs the fee; with no money at all the reason says what is short
+            if (UwKit.Till(map).Micro > 0) Ledger.Current.Post(tillAcc, "world", UwKit.Till(map), "test: empty till");
+            UwPay.ForgetFunds();
+            if (noBank) t.Check(PitOpponents.CannotHire(pit, col) == UwPay.T("Pay.Short", "0", PitFighters.Silver(fee)), "no money at all: " + PitOpponents.CannotHire(pit, col));
+            else t.Note("the colony has a bank account; the no-money case is skipped");
+
+            // ---- 3: an empty till with silver in stock (home area, not forbidden): the stock pays
+            var stock = UwKit.StockSilver(map, col.Position, 100);
+            UwPay.ForgetFunds();
+            t.Check(stock != null && PitOpponents.CannotHire(pit, col) == null, "an empty till, 100 silver in stock: 'Call an opponent' is open (" + PitOpponents.CannotHire(pit, col) + ")");
             // a fighter drafted since the gizmo's cache was built is checked again: no beast, no fee
+            int coinsD = Hearth.Dlc.ColonySilver.CountStock(map);
             col.drafter.Drafted = true;
-            t.Check(PitOpponents.HireBeast(pit, col, out why) == null && why == UwPay.T("Pit.Why.Drafted") && UwKit.Till(map) == tillHire && !pit.HasBeast, "drafted fighter: no hire, no fee (" + why + ")");
+            t.Check(PitOpponents.HireBeast(pit, col, out why) == null && why == UwPay.T("Pit.Why.Drafted") && Hearth.Dlc.ColonySilver.CountStock(map) == coinsD && !pit.HasBeast, "drafted fighter: no hire, no fee (" + why + ")");
             col.drafter.Drafted = false;
+            int coins0 = Hearth.Dlc.ColonySilver.CountStock(map); var tillS = UwKit.Till(map);
             var b2 = PitOpponents.HireBeast(pit, col, out why);
-            t.Check(b2 != null, "second beast hired (" + why + ")");
+            t.Check(b2 != null && coins0 - Hearth.Dlc.ColonySilver.CountStock(map) == fee.WholeSilver && UwKit.Till(map) == tillS && b2.FeePaid == fee,
+                "the fee came from the silver in stock (" + (coins0 - Hearth.Dlc.ColonySilver.CountStock(map)) + " coins, till unchanged, " + why + ")");
+            t.Check(Ledger.Current.SumAll() == 0, "ledger balanced after a stock payment");
             if (b2 != null)
             {
                 var beast2 = b2.B;
-                t.Check(UwKit.Till(map) == tillHire - fee && b2.FeePaid == fee, "fee booked for the second beast");
                 yield return 120;
+                // an aborted bout sends the beast away too, and the fee goes back (into the till)
                 int abortTick = Find.TickManager.TicksGame; var tillAbort = UwKit.Till(map);
                 b2.Abort("test", UwPay.T("Pit.Abort.Closed"));
                 // checked at once and in the journal: other suites' guests may pay into the same till while we wait
@@ -511,6 +554,8 @@ namespace Hearth.Underworld
                 t.Check(Ledger.Current.SumAll() == 0, "ledger balanced after the refund");
                 t.Check(FightBout.LastMessage == UwPay.T("Pit.CalledOff", UwPay.T("Pit.Abort.Closed")), "called-off message: " + FightBout.LastMessage);
             }
+            UwKit.ShowColonySilver();
+            Underworld.Comp.OpponentsHired = hired0;
             pit.SetTicked(col, false);
             UwKit.End();
         }
@@ -712,7 +757,7 @@ namespace Hearth.Underworld
                 t.Check(!want.StartsWith("HH."), what + ": key translated (" + key + ")");
             }
             // no fighters at all
-            Expect("Pit.Status.WaitFighter", "no fighter");
+            Expect("Pit.Status.NoFighter", "no fighter");
             t.Check(!pit.ManualReady(true).Any(c => c.Kind == PitKind.Colonist), "nobody ticked: no colonist for a manual start either");
             var col = PitKit.Fighter(map); var col2 = PitKit.Fighter(map, 1);
             bool guestsAlready = GuestApi.GuestsOn(map).Any(g => !Underworld.IsMinor(g));
