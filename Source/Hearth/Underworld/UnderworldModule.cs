@@ -39,7 +39,7 @@ namespace Hearth.Underworld
             HSettings.Silver(M, "Fight pit", "underworld.pit.betMax", 120, 20, 1000, "Largest bet", "Guests bet at most this much silver (and never more than a third of their budget).");
             HSettings.Float(M, "Fight pit", "underworld.pit.fairRatio", 2.2f, 1f, 6f, "Matchmaking fairness", "The stronger fighter may have at most this many times the combat power of the weaker one.", nerd: true, hardMin: 1f, hardMax: 100f);
             HSettings.Percent(M, "Fight pit", "underworld.pit.yieldHealth", 0.35f, 0.1f, 0.8f, "Yield at health", "A bout ends when a fighter drops below this share of health, unless it is to the death.", nerd: true, hardMin: 0.05f, hardMax: 0.95f);
-            HSettings.Int(M, "Fight pit", "underworld.pit.maxBoutTicks", 5000, 1000, 20000, "Longest bout (ticks)", "A bout nobody wins within this time is a draw: all stakes are returned.", nerd: true, hardMin: 300, hardMax: 120000);
+            HSettings.Int(M, "Fight pit", "underworld.pit.maxBoutTicks", 5000, 1000, 20000, "Longest bout (ticks)", "After this time the fighter with the smaller share of his point limit wins. Equal shares are a draw, and all stakes are returned.", nerd: true, hardMin: 300, hardMax: 120000);
             PitSetup.RegisterSettings(M);
             // fence
             HSettings.Percent(M, "Fence", "underworld.fence.buyPercent", 0.40f, 0.1f, 0.9f, "Fence buys at", "Share of the market value the fence pays for stolen goods.", hardMin: 0.01f, hardMax: 2f);
@@ -52,7 +52,7 @@ namespace Hearth.Underworld
             HSettings.Silver(M, "Gangs", "underworld.gang.feeMin", 40, 10, 300, "Back room fee (lowest)", "What a gang member pays for the back room.");
             HSettings.Silver(M, "Gangs", "underworld.gang.feeMax", 120, 20, 500, "Back room fee (highest)", null);
             HSettings.Int(M, "Gangs", "underworld.gang.sizeMax", 5, 2, 10, "Largest gang", null, hardMin: 1, hardMax: 30);
-            HSettings.Percent(M, "Gangs", "underworld.gang.intimidateChance", 0.12f, 0f, 0.6f, "Chance a gang demands protection money", "Follows the difficulty slider; Standard Room and easier never forces anything on you but a dialog you can refuse.", tiers: IntimidateTiers);
+            HSettings.Percent(M, "Gangs", "underworld.gang.intimidateChance", 0.12f, 0f, 0.6f, "Chance a gang demands protection money", "Follows the difficulty slider. On Standard Room and easier it is never more than an offer you can refuse.", tiers: IntimidateTiers);
             HSettings.Silver(M, "Gangs", "underworld.gang.protectionFee", 150, 20, 800, "Protection money demanded", null);
             HSettings.Bool(M, "Gangs", "underworld.gang.prisonAccess", false, "Gangs may visit the prison", "Allows the holding cells tour (questioning of prisoners) for gang guests. Off by default; prisons are closed to every guest otherwise.");
             HSettings.Silver(M, "Gangs", "underworld.gang.tourFee", 70, 10, 400, "Holding cells tour fee", "Paid by a gang member for questioning a prisoner for an hour.");
@@ -85,6 +85,7 @@ namespace Hearth.Underworld
             GuestActivities.Register(new Activities.LoungeActivity());
             GuestActivities.Register(new Activities.FenceActivity());
             Guard.Run(M, "Underworld.FacilitySetup", FacilitySetup.OnDefsLoaded);
+            Guard.Run(M, "Underworld.Guide", UwGuide.Register);
             HearthTabs.Register(new HearthTabPage { Id = "underworld", LabelKey = "HH.Tab.Underworld", LabelEn = "Underworld", Module = M, Order = 900, Draw = UnderworldPage.Draw, Visible = () => Underworld.Visible });
         }
 
@@ -102,8 +103,13 @@ namespace Hearth.Underworld
 
         public override void PrepareRemoval(List<string> report)
         {
-            report.Add("Underworld: bets in progress are refunded; fight pit fighters go back to normal life; hunting ground quarry stays as ordinary animals.");
+            report.Add("Underworld: bets in progress are refunded; fight pit fighters go back to normal life; hunting ground quarry stays as ordinary animals; open offers are closed with their letters.");
             FightBout.AbortAll("module removed");
+            Guard.Run(M, "Underworld.CloseOffers", () =>
+            {
+                var c = Underworld.Comp; if (c == null) return;
+                for (int i = c.Offers.Count - 1; i >= 0; i--) if (i < c.Offers.Count) Offers.Close(c.Offers[i]);
+            });
         }
     }
 }

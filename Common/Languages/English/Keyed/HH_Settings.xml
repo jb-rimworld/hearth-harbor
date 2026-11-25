@@ -410,7 +410,7 @@
   <HH.Setting.underworld.gang.intervalDays>Days between gang visits</HH.Setting.underworld.gang.intervalDays>
   <HH.Setting.underworld.gang.intervalDays.Desc>Average time between gang visits once the back room, fight pit or fence exists.</HH.Setting.underworld.gang.intervalDays.Desc>
   <HH.Setting.underworld.gang.intimidateChance>Chance a gang demands protection money</HH.Setting.underworld.gang.intimidateChance>
-  <HH.Setting.underworld.gang.intimidateChance.Desc>Follows the difficulty slider; Standard Room and easier never forces anything on you but a dialog you can refuse.</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>Follows the difficulty slider. On Standard Room and easier it is never more than an offer you can refuse.</HH.Setting.underworld.gang.intimidateChance.Desc>
   <HH.Setting.underworld.gang.prisonAccess>Gangs may visit the prison</HH.Setting.underworld.gang.prisonAccess>
   <HH.Setting.underworld.gang.prisonAccess.Desc>Allows the holding cells tour (questioning of prisoners) for gang guests. Off by default; prisons are closed to every guest otherwise.</HH.Setting.underworld.gang.prisonAccess.Desc>
   <HH.Setting.underworld.gang.protectionFee>Protection money demanded</HH.Setting.underworld.gang.protectionFee>
@@ -446,7 +446,7 @@
   <HH.Setting.underworld.pit.intervalHours>Hours between bouts</HH.Setting.underworld.pit.intervalHours>
   <HH.Setting.underworld.pit.intervalHours.Desc>A fight pit with enough fighters and spectators starts a bout this often.</HH.Setting.underworld.pit.intervalHours.Desc>
   <HH.Setting.underworld.pit.maxBoutTicks>Longest bout (ticks)</HH.Setting.underworld.pit.maxBoutTicks>
-  <HH.Setting.underworld.pit.maxBoutTicks.Desc>A bout nobody wins within this time is a draw: all stakes are returned.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>After this time the fighter with the smaller share of his point limit wins. Equal shares are a draw, and all stakes are returned.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
   <HH.Setting.underworld.pit.opponentFee>Fee for a hired opponent</HH.Setting.underworld.pit.opponentFee>
   <HH.Setting.underworld.pit.opponentFee.Desc>"Call an opponent" hires a pit beast for a lone fighter; the till pays this fee.</HH.Setting.underworld.pit.opponentFee.Desc>
   <HH.Setting.underworld.pit.scoreLimit>Points to lose a bout</HH.Setting.underworld.pit.scoreLimit>

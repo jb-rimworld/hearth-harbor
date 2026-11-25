@@ -2,7 +2,8 @@
 <Defs>
   <!-- Lessons of the Hearth & Harbor Guide (4.10). Steps check themselves from game state; "manual" steps are ticked by the player.
        Other mods can add topics the same way. unlockedBy / check ids: always, hosting, guestBed, venueSign, venueReady, venueOpenNow, guestArrived,
-       firstPayment, bankAccount, directDeposit, seenGuestsPage, seenGuestTab, venue:<VenueTypeDef>, not:<id>, manual. -->
+       firstPayment, bankAccount, directDeposit, seenGuestsPage, seenGuestTab, venue:<VenueTypeDef>, not:<id>, manual; Underworld module: underworldVisible, uwPitArena, uwBoutSettled,
+       uwBackRoom, uwGangVisit, uwFence. -->
 
   <Hearth.GuideTopicDef>
     <defName>HH_Guide_OpeningDay</defName>
@@ -128,6 +129,57 @@
         <check>manual</check>
         <jump>tab:overview</jump>
         <module>Bank</module>
+      </li>
+    </steps>
+  </Hearth.GuideTopicDef>
+
+  <Hearth.GuideTopicDef>
+    <defName>HH_Guide_BackRoom</defName>
+    <label>The back room</label>
+    <description>Fights, a fence and gangs. All optional: nothing of it happens until you build it.</description>
+    <module>Underworld</module>
+    <order>50</order>
+    <unlockedBy>underworldVisible</unlockedBy>
+    <steps>
+      <li>
+        <id>pit</id>
+        <label>Build a closed fence and put a fight pit marker inside.</label>
+        <description>A gate in the fence is fine. The arena needs at least 3 by 3 tiles. The marker says what it still waits for.</description>
+        <check>uwPitArena</check>
+        <jump>tab:underworld</jump>
+        <module>Underworld</module>
+      </li>
+      <li>
+        <id>bout</id>
+        <label>Let the first bout end.</label>
+        <description>Right-click the marker with a colonist, tick fighters under "Fighters…", or use "Call an opponent" when you are alone. Bouts with a guest or a colonist are fought for points, so nobody gets hurt.</description>
+        <check>uwBoutSettled</check>
+        <jump>tab:underworld</jump>
+        <module>Underworld</module>
+      </li>
+      <li>
+        <id>backroom</id>
+        <label>Build a room whose only doors are back room doors.</label>
+        <description>Gangs meet there and pay for it. Respectable guests may stumble on it now and then.</description>
+        <check>uwBackRoom</check>
+        <jump>tab:underworld</jump>
+        <module>Underworld</module>
+      </li>
+      <li>
+        <id>gang</id>
+        <label>Wait for the first gang visit.</label>
+        <description>The first gang comes about a day after your first back room, fence counter or fight pit. The Underworld page says when.</description>
+        <check>uwGangVisit</check>
+        <jump>tab:underworld</jump>
+        <module>Underworld</module>
+      </li>
+      <li>
+        <id>fence</id>
+        <label>Build a fence counter.</label>
+        <description>Gangs sell their loot to it and buy from its stock. It pays from its own cash box.</description>
+        <check>uwFence</check>
+        <jump>tab:underworld</jump>
+        <module>Underworld</module>
       </li>
     </steps>
   </Hearth.GuideTopicDef>
