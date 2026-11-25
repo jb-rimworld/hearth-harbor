@@ -2,7 +2,7 @@
 
 Hearth & Harbor and Silverline (the standalone bank) are built from this repository and share one version number.
 
-## 1.1.2 (not released yet)
+## 1.1.2 (2026-11-25)
 - Fixes a translation fault of 1.1.1: with a DLC active, texts that had been translated since 1.0 were English again in all ten languages. Up to 270 texts per language: the names and descriptions of all base dishes, the insurance policies, the investments, the banks, the kinds of business and six thoughts. 1.1.1 moved the translations of optional content into their own load folders but kept the file names, and the game reads a language file only once per name inside a mod, so the main file of the same name was skipped without any message. The files in `Compat/` now carry the ids in their name (`HH_Insurance__Ludeon.RimWorld.Anomaly.xml`). Silverline standalone had the same fault and gets the same fix.
 - The remaining English texts in the ten translations are translated: 438 per language (German, French, Spanish, Brazilian Portuguese, Russian, Ukrainian, Czech, Simplified Chinese, Japanese, Korean). The translation tool had never collected them, so they stayed English without any error:
   - the setup tab of a venue sign: what each kind of business needs and why (108 texts);

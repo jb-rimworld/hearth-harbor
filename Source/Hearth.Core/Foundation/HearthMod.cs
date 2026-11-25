@@ -68,7 +68,7 @@ namespace Hearth
 
     public class HearthMod : Mod
     {
-        public const string Version = "1.1.1";
+        public const string Version = "1.1.2";
         public const string HarmonyId = "juliusberger00.hearthharbor";
         public static HearthMod Instance;
         public static HearthTemplate Template => Instance?.GetSettings<HearthTemplate>() ?? fallbackTemplate;
