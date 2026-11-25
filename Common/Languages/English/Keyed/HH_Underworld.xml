@@ -16,14 +16,14 @@
   <HH.Underworld.Pit.Enabled.Desc>Schedule bouts in this pit.</HH.Underworld.Pit.Enabled.Desc>
   <HH.Underworld.Pit.Animals>Animals</HH.Underworld.Pit.Animals>
   <HH.Underworld.Pit.Animals.Desc>Animals of your colony may fight here.</HH.Underworld.Pit.Animals.Desc>
-  <HH.Underworld.Pit.Volunteers>Volunteers</HH.Underworld.Pit.Volunteers>
-  <HH.Underworld.Pit.Volunteers.Desc>Colonists who like a fight (bloodlust or good melee) may volunteer. Volunteers never fight to the death.</HH.Underworld.Pit.Volunteers.Desc>
+  <HH.Underworld.Pit.Volunteers>Volunteers (old saves)</HH.Underworld.Pit.Volunteers>
+  <HH.Underworld.Pit.Volunteers.Desc>From an older save: colonists with bloodlust or melee 8 and more also fight without being ticked under Fighters. Switch it off to let only the ticked colonists fight. Colonists never fight to the death.</HH.Underworld.Pit.Volunteers.Desc>
   <HH.Underworld.Pit.Prisoners>Prisoners</HH.Underworld.Pit.Prisoners>
-  <HH.Underworld.Pit.Prisoners.Desc>Prisoners may be sent into the pit. Adults only.</HH.Underworld.Pit.Prisoners.Desc>
+  <HH.Underworld.Pit.Prisoners.Desc>Prisoners of the colony may fight here (adults only). The guards bring them into the arena and back to their cell.</HH.Underworld.Pit.Prisoners.Desc>
   <HH.Underworld.Pit.Lethal>To the death</HH.Underworld.Pit.Lethal>
-  <HH.Underworld.Pit.Lethal.Desc>Bouts between prisoners and animals only end when one of them is down. Never for volunteers.</HH.Underworld.Pit.Lethal.Desc>
+  <HH.Underworld.Pit.Lethal.Desc>Bouts between prisoners and animals only end when one of them is down. Never for guests, colonists or slaves: their bouts are always fought for points.</HH.Underworld.Pit.Lethal.Desc>
   <HH.Underworld.Pit.StartNow>Start a bout</HH.Underworld.Pit.StartNow>
-  <HH.Underworld.Pit.StartNow.Desc>Pick two fair fighters now and let the guests bet.</HH.Underworld.Pit.StartNow.Desc>
+  <HH.Underworld.Pit.StartNow.Desc>Start a bout now: the sides picked under Fighters, or the two closest fighters. No guests needed, and the fairness limit does not apply.</HH.Underworld.Pit.StartNow.Desc>
   <HH.Underworld.Pit.CannotStart>No bout: {0}</HH.Underworld.Pit.CannotStart>
   <HH.Underworld.Pit.ArenaOk>Arena: {0} tiles, closed.</HH.Underworld.Pit.ArenaOk>
   <HH.Underworld.Pit.ArenaOpen>Arena open or too big: close the fence.</HH.Underworld.Pit.ArenaOpen>
@@ -33,6 +33,106 @@
   <HH.Underworld.Pit.BoutAnnounced>A bout in the pit: {0} against {1}. Bets are open.</HH.Underworld.Pit.BoutAnnounced>
   <HH.Underworld.Pit.Won>{0} wins the bout. The house keeps {1} silver.</HH.Underworld.Pit.Won>
   <HH.Underworld.Pit.Draw>The bout ends without a winner. All stakes are returned.</HH.Underworld.Pit.Draw>
+  <HH.Underworld.Pit.Guests>Guest challengers</HH.Underworld.Pit.Guests>
+  <HH.Underworld.Pit.Guests.Desc>Guests may fight here: shady guests and gang members always, other adult guests when they are not kind and have bloodlust, the brawler trait or melee 6 and more. Only guests who are awake, idle, healthy and staying a while. Their bouts are fought for points: nobody gets hurt, and a winning guest gets a small purse from the house take.</HH.Underworld.Pit.Guests.Desc>
+  <HH.Underworld.Pit.FightersBtn>Fighters…</HH.Underworld.Pit.FightersBtn>
+  <HH.Underworld.Pit.FightersBtn.Desc>Everyone who could fight in this pit, why someone cannot fight now, which colonists fight here, and a bout you start yourself.</HH.Underworld.Pit.FightersBtn.Desc>
+  <HH.Underworld.Pit.CallOpponent>Call an opponent ({0})</HH.Underworld.Pit.CallOpponent>
+  <HH.Underworld.Pit.CallOpponent.Desc>Hire a pit beast for a lone fighter: an animal about as strong as your fighter, brought into the arena for one bout and taken away afterwards. The till pays {0} silver.</HH.Underworld.Pit.CallOpponent.Desc>
+  <HH.Underworld.Pit.FightHere>Fight in the pit</HH.Underworld.Pit.FightHere>
+  <HH.Underworld.Pit.FightHere.Against>Fight in the pit against {0}</HH.Underworld.Pit.FightHere.Against>
+  <HH.Underworld.Pit.FightHere.Queue>Fight in the pit (next bout)</HH.Underworld.Pit.FightHere.Queue>
+  <HH.Underworld.Pit.Status.Running>Bout running: {0} against {1}.</HH.Underworld.Pit.Status.Running>
+  <HH.Underworld.Pit.Status.Next>Next bout in {0} h.</HH.Underworld.Pit.Status.Next>
+  <HH.Underworld.Pit.Status.WaitFighter>Waiting for a second fighter: tick a colonist under Fighters, allow prisoners, or call an opponent.</HH.Underworld.Pit.Status.WaitFighter>
+  <HH.Underworld.Pit.Status.WaitGuests>Waiting for guests to bet (you can start a bout yourself).</HH.Underworld.Pit.Status.WaitGuests>
+  <HH.Underworld.Pit.Status.AutoFailed>No automatic bout: {0}. Start a bout yourself or call an opponent.</HH.Underworld.Pit.Status.AutoFailed>
+  <HH.Underworld.Pit.ArenaSmall>Arena too small: {0} tiles, at least {1} needed.</HH.Underworld.Pit.ArenaSmall>
+  <HH.Underworld.Pit.ArenaBig>Arena open or larger than {0} tiles: close the fence around a smaller area.</HH.Underworld.Pit.ArenaBig>
+  <HH.Underworld.Pit.CallOpponent.For>Fights it: {0}.</HH.Underworld.Pit.CallOpponent.For>
+  <HH.Underworld.Pit.Status.Closed>Closed.</HH.Underworld.Pit.Status.Closed>
+  <HH.Underworld.Pit.Status.Off>The underworld is switched off (module or Cozy content).</HH.Underworld.Pit.Status.Off>
+  <HH.Underworld.Pit.Status.Peaceful>Peaceful underworld is on: no fights.</HH.Underworld.Pit.Status.Peaceful>
+  <HH.Underworld.Pit.Status.NeedArena>Waiting for a closed arena.</HH.Underworld.Pit.Status.NeedArena>
+  <HH.Underworld.Pit.Ready>Fighters ready: {0} ({1}).</HH.Underworld.Pit.Ready>
+  <HH.Underworld.Pit.Ready.None>Fighters ready: none.</HH.Underworld.Pit.Ready.None>
+  <HH.Underworld.Pit.Ready.One.Colonist>{0} colonist</HH.Underworld.Pit.Ready.One.Colonist>
+  <HH.Underworld.Pit.Ready.Many.Colonist>{0} colonists</HH.Underworld.Pit.Ready.Many.Colonist>
+  <HH.Underworld.Pit.Ready.One.Prisoner>{0} prisoner</HH.Underworld.Pit.Ready.One.Prisoner>
+  <HH.Underworld.Pit.Ready.Many.Prisoner>{0} prisoners</HH.Underworld.Pit.Ready.Many.Prisoner>
+  <HH.Underworld.Pit.Ready.One.Animal>{0} animal</HH.Underworld.Pit.Ready.One.Animal>
+  <HH.Underworld.Pit.Ready.Many.Animal>{0} animals</HH.Underworld.Pit.Ready.Many.Animal>
+  <HH.Underworld.Pit.Ready.One.Guest>{0} guest</HH.Underworld.Pit.Ready.One.Guest>
+  <HH.Underworld.Pit.Ready.Many.Guest>{0} guests</HH.Underworld.Pit.Ready.Many.Guest>
+  <HH.Underworld.Pit.Last>Last bout: {0} beat {1}, pool {2}, house {3}.</HH.Underworld.Pit.Last>
+  <HH.Underworld.Pit.Last.Draw>Last bout: {0} against {1}, no winner.</HH.Underworld.Pit.Last.Draw>
+  <HH.Underworld.Pit.Result.Won>{0} beat {1} in the pit. Pool {2} silver, house {3} silver.</HH.Underworld.Pit.Result.Won>
+  <HH.Underworld.Pit.Result.Draw>{0} against {1}: no winner. All stakes are returned.</HH.Underworld.Pit.Result.Draw>
+  <HH.Underworld.Pit.PursePaid>{0} takes a purse of {1} silver.</HH.Underworld.Pit.PursePaid>
+  <HH.Underworld.Pit.CalledOff>Bout called off: {0}.</HH.Underworld.Pit.CalledOff>
+  <HH.Underworld.Pit.Abort.Gone>{0} is gone</HH.Underworld.Pit.Abort.Gone>
+  <HH.Underworld.Pit.Abort.Mental>{0} lost control</HH.Underworld.Pit.Abort.Mental>
+  <HH.Underworld.Pit.Abort.Drafted>{0} was drafted</HH.Underworld.Pit.Abort.Drafted>
+  <HH.Underworld.Pit.Abort.Hurt>{0} cannot fight on</HH.Underworld.Pit.Abort.Hurt>
+  <HH.Underworld.Pit.Abort.Left>{0} had to leave</HH.Underworld.Pit.Abort.Left>
+  <HH.Underworld.Pit.Abort.NoShow>{0} could not reach the arena</HH.Underworld.Pit.Abort.NoShow>
+  <HH.Underworld.Pit.Abort.Closed>the pit was closed</HH.Underworld.Pit.Abort.Closed>
+  <HH.Underworld.Pit.Why.Gone>not here</HH.Underworld.Pit.Why.Gone>
+  <HH.Underworld.Pit.Why.Child>child</HH.Underworld.Pit.Why.Child>
+  <HH.Underworld.Pit.Why.Downed>downed</HH.Underworld.Pit.Why.Downed>
+  <HH.Underworld.Pit.Why.Mental>in a mental state</HH.Underworld.Pit.Why.Mental>
+  <HH.Underworld.Pit.Why.Burning>on fire</HH.Underworld.Pit.Why.Burning>
+  <HH.Underworld.Pit.Why.Hurt>hurt</HH.Underworld.Pit.Why.Hurt>
+  <HH.Underworld.Pit.Why.InBout>already in a bout</HH.Underworld.Pit.Why.InBout>
+  <HH.Underworld.Pit.Why.Drafted>drafted</HH.Underworld.Pit.Why.Drafted>
+  <HH.Underworld.Pit.Why.NoViolence>incapable of violence</HH.Underworld.Pit.Why.NoViolence>
+  <HH.Underworld.Pit.Why.NotTicked>not ticked to fight here</HH.Underworld.Pit.Why.NotTicked>
+  <HH.Underworld.Pit.Why.Asleep>asleep</HH.Underworld.Pit.Why.Asleep>
+  <HH.Underworld.Pit.Why.QuestGuest>quest guest</HH.Underworld.Pit.Why.QuestGuest>
+  <HH.Underworld.Pit.Why.Trader>trader</HH.Underworld.Pit.Why.Trader>
+  <HH.Underworld.Pit.Why.Leaving>arriving or leaving</HH.Underworld.Pit.Why.Leaving>
+  <HH.Underworld.Pit.Why.NotGuest>not a guest of the house</HH.Underworld.Pit.Why.NotGuest>
+  <HH.Underworld.Pit.Why.LeavingSoon>leaves soon</HH.Underworld.Pit.Why.LeavingSoon>
+  <HH.Underworld.Pit.Why.Kind>does not want to: kind</HH.Underworld.Pit.Why.Kind>
+  <HH.Underworld.Pit.Why.NoTaste>does not want to: no taste for fighting</HH.Underworld.Pit.Why.NoTaste>
+  <HH.Underworld.Pit.Why.Busy>busy</HH.Underworld.Pit.Why.Busy>
+  <HH.Underworld.Pit.Why.BoutRunning>a bout is running</HH.Underworld.Pit.Why.BoutRunning>
+  <HH.Underworld.Pit.Why.BeastThere>an opponent is already in the arena</HH.Underworld.Pit.Why.BeastThere>
+  <HH.Underworld.Pit.Why.NoLoneFighter>nobody to fight it: tick a colonist under Fighters</HH.Underworld.Pit.Why.NoLoneFighter>
+  <HH.Underworld.Pit.Why.TillShort>the till cannot pay {0} silver</HH.Underworld.Pit.Why.TillShort>
+  <HH.Underworld.Pit.Why.NoBeastKind>no animal fits</HH.Underworld.Pit.Why.NoBeastKind>
+  <HH.Underworld.Pit.Why.ArenaFull>no free tile in the arena</HH.Underworld.Pit.Why.ArenaFull>
+  <HH.Underworld.Pit.Why.NoBout>the bout could not start</HH.Underworld.Pit.Why.NoBout>
+  <HH.Underworld.Pit.Why.NoOpponent>no opponent</HH.Underworld.Pit.Why.NoOpponent>
+  <HH.Underworld.Pit.Why.NoOpponentFor>nobody to fight {0}</HH.Underworld.Pit.Why.NoOpponentFor>
+  <HH.Underworld.Pit.BeastNotYours>This animal is only hired for the fight pit.</HH.Underworld.Pit.BeastNotYours>
+  <HH.Underworld.Pit.Rating.Even>An even match.</HH.Underworld.Pit.Rating.Even>
+  <HH.Underworld.Pit.Rating.Favourite>{0} is the favourite.</HH.Underworld.Pit.Rating.Favourite>
+  <HH.Underworld.Pit.Rating.Clear>{0} is the clear favourite.</HH.Underworld.Pit.Rating.Clear>
+  <HH.Underworld.Pit.Kind.Colonist>colonist</HH.Underworld.Pit.Kind.Colonist>
+  <HH.Underworld.Pit.Kind.Prisoner>prisoner</HH.Underworld.Pit.Kind.Prisoner>
+  <HH.Underworld.Pit.Kind.Animal>animal</HH.Underworld.Pit.Kind.Animal>
+  <HH.Underworld.Pit.Kind.Guest>guest</HH.Underworld.Pit.Kind.Guest>
+  <HH.Underworld.Pit.Kind.Beast>hired opponent</HH.Underworld.Pit.Kind.Beast>
+  <HH.Underworld.Pit.Kind.Prizefighter>prizefighter</HH.Underworld.Pit.Kind.Prizefighter>
+  <HH.Underworld.Pit.Win.Title>Fighters of the pit</HH.Underworld.Pit.Win.Title>
+  <HH.Underworld.Pit.Win.Group.Colonist>Colonists and slaves</HH.Underworld.Pit.Win.Group.Colonist>
+  <HH.Underworld.Pit.Win.Group.Prisoner>Prisoners</HH.Underworld.Pit.Win.Group.Prisoner>
+  <HH.Underworld.Pit.Win.Group.Animal>Animals</HH.Underworld.Pit.Win.Group.Animal>
+  <HH.Underworld.Pit.Win.Group.Guest>Guests</HH.Underworld.Pit.Win.Group.Guest>
+  <HH.Underworld.Pit.Win.Group.Beast>Hired opponents</HH.Underworld.Pit.Win.Group.Beast>
+  <HH.Underworld.Pit.Win.Group.Prizefighter>Prizefighters</HH.Underworld.Pit.Win.Group.Prizefighter>
+  <HH.Underworld.Pit.Win.GroupOff>Off: switch on "{0}" on the marker.</HH.Underworld.Pit.Win.GroupOff>
+  <HH.Underworld.Pit.Win.Nobody>nobody here</HH.Underworld.Pit.Win.Nobody>
+  <HH.Underworld.Pit.Win.Tick>Fights in this pit</HH.Underworld.Pit.Win.Tick>
+  <HH.Underworld.Pit.Win.Ready>ready</HH.Underworld.Pit.Win.Ready>
+  <HH.Underworld.Pit.Win.Melee>melee {0}</HH.Underworld.Pit.Win.Melee>
+  <HH.Underworld.Pit.Win.Power>power {0}</HH.Underworld.Pit.Win.Power>
+  <HH.Underworld.Pit.Win.SideA>Side A</HH.Underworld.Pit.Win.SideA>
+  <HH.Underworld.Pit.Win.SideB>Side B</HH.Underworld.Pit.Win.SideB>
+  <HH.Underworld.Pit.Win.Anyone>anyone suitable</HH.Underworld.Pit.Win.Anyone>
+  <HH.Underworld.Pit.Win.Start>Start the bout now</HH.Underworld.Pit.Win.Start>
+  <HH.Underworld.Pit.Win.PickSides>Pick the sides, or leave "anyone suitable" for the closest match.</HH.Underworld.Pit.Win.PickSides>
   <HH.Underworld.Fence.Inspect>Stock: {0} items worth {1} silver. Cash box: {2} silver.</HH.Underworld.Fence.Inspect>
   <HH.Underworld.Fence.Fund>Fill cash box</HH.Underworld.Fence.Fund>
   <HH.Underworld.Fence.Fund.Desc>Move silver from the till into the fence's cash box, up to the limit in the settings.</HH.Underworld.Fence.Fund.Desc>

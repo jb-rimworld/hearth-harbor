@@ -751,17 +751,10 @@ namespace Hearth.Underworld
             var map = t.Map; var f = UwKit.Friendly();
             UwKit.Begin(ContentIntensity.Standard);
             if (f == null || !UwKit.TryFindRect(map, 7, 7, out var inner)) { t.Note("no friendly faction or free area; skipped"); UwKit.End(); yield break; }
-            var outer = inner.ExpandedBy(1);
-            UwKit.BuildFence(map, outer);
-            var gateCell = new IntVec3(inner.CenterCell.x, 0, outer.minZ);
-            gateCell.GetEdifice(map)?.Destroy();
-            var gateDef = DefDatabase<ThingDef>.GetNamedSilentFail("FenceGate");
-            if (gateDef != null) UwKit.SpawnBuilding(gateDef, gateCell, map);
-            map.regionAndRoomUpdater.TryRebuildDirtyRegionsAndRooms();
-            var marker = UwKit.SpawnBuilding(UwDefs.FightPit, inner.CenterCell, map);
-            var pit = marker.TryGetComp<CompFightPit>();
+            // the gate goes on a side the colony can walk to (PitKit.Arena); before 1.2.0 it was always the south side, which a random map can wall off
+            var pit = PitKit.Arena(map, out inner, out var outside);
+            pit.allowAnimals = true;
             t.Check(pit.ArenaValid && pit.ArenaInfo().Cells.Count == 49, "arena with a gate is valid and the gate is not part of it");
-            var outside = new IntVec3(gateCell.x, 0, gateCell.z - 3);
             var a = UwKit.TameAnimal(map, outside, "Boar", "Muffalo"); var b = UwKit.TameAnimal(map, outside + new IntVec3(1, 0, 0), "Boar", "Muffalo");
             var guests = UwKit.Guests(map, 3, f);
             var till0 = UwKit.Till(map); long take0 = Underworld.Comp.HouseTakeMicro;
