@@ -30,7 +30,8 @@ namespace Hearth.Underworld
 
         static int Next(float meanDays) => (int)(60000f * meanDays * Rand.Range(0.6f, 1.4f));
 
-        static void Events(int t)
+        /// <summary>The 2500-tick pass over gangs, smuggler landings and hunts (internal: the tests call it directly).</summary>
+        internal static void Events(int t)
         {
             var c = Underworld.Comp; if (c == null) return;
             var homes = new List<Map>(); foreach (var m in Find.Maps) if (m.IsPlayerHome) homes.Add(m);

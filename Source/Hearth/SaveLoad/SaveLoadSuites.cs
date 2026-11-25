@@ -68,6 +68,7 @@ namespace Hearth.SaveLoad
             l.Add("uwContent=" + HearthProfile.Current?.Content);
             // facts are taken at save time and right after the load, i.e. at the same tick: the decaying whispers compare as they are
             l.Add("whispers=" + UW.Comp?.WhispersAt(Find.TickManager.TicksGame).ToString("0.000"));
+            l.Add("uwOffers=" + string.Join(";", (UW.Comp?.Offers ?? new List<Hearth.Underworld.UwOffer>()).Select(o => o.id + ":" + o.kind + ":" + o.price.ToStringFull() + ":" + o.goods.Count + ":" + o.expireTick + ":" + (o.leader?.ThingID ?? "-") + ":" + (o.faction?.loadID.ToString() ?? "-"))));
             l.Add("setting " + ChangedSetting + "=" + HSettings.Get(ChangedSetting));
             l.Add("venueSigns=" + string.Join(";", map.listerThings.AllThings.Select(t => t.TryGetComp<CompVenueSignHH>()).Where(c => c != null)
                 .Select(c => c.parent.ThingID + ":" + c.type?.defName + ":" + c.customName + ":" + c.alwaysOpen + ":" + c.priceFactor).OrderBy(x => x)));
@@ -191,6 +192,24 @@ namespace Hearth.SaveLoad
             var prof = HearthProfile.Current;
             UW.AddWhispers(12.5f, "save/load test");
             t.Check(UW.Unlocked && UW.Whispers > 10f, "underworld unlocked, whispers " + UW.Whispers.ToString("0.0"));
+            // 1.2.0: open offers of the underworld at save time (a boat at a smuggler's dock, a gang leader's protection demand). Saved in our
+            // component (leader and faction by reference), announced by vanilla standard letters: a raw removal must load without red errors.
+            if (TestCells.TryFindFreeRect(map, 5, 5, out var dockRect))
+            {
+                var dockDef = Hearth.Underworld.UwDefs.SmugglerDock;
+                var dock = ThingMaker.MakeThing(dockDef, dockDef.MadeFromStuff ? ThingDefOf.WoodLog : null); dock.SetFaction(Faction.OfPlayer);
+                GenSpawn.Spawn(dock, dockRect.CenterCell, map);
+                t.Check(Hearth.Underworld.Smuggler.Fire(map, force: true), "a smuggler's boat waits at the dock");
+            }
+            else t.Note("no free 5x5 patch for the dock");
+            if (Hearth.Underworld.Gangs.Fire(map, out var gang, force: true) && gang.Count > 0)
+            {
+                var d = Hearth.Underworld.Gangs.PlanDemand(map, gang[0].Faction, gang[0], Find.TickManager.TicksGame);
+                Hearth.Underworld.Offers.Announce(d);
+                t.Check(d.Announced, "a gang leader's protection demand is open");
+            }
+            else t.Note("no gang could come for the protection demand");
+            t.Check(Hearth.Underworld.Offers.Open(map).Count > 0, "open underworld offers in the save: " + Hearth.Underworld.Offers.Open(map).Count);
 
             // a movie night of the colony (a player-faction lord with our LordJob) that is running at save time
             HSettings.Set(CitySettings.CinemaShowTicks, 20000);

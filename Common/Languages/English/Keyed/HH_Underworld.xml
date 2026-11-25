@@ -3,7 +3,7 @@
   <HH.Tab.Underworld>Underworld</HH.Tab.Underworld>
   <HH.Underworld.GateClosed>Not available in this game: the Underworld module is off, or the content intensity does not allow it (Settings, Modules).</HH.Underworld.GateClosed>
   <HH.Underworld.BackRoomDoorInfo>Only staff, colonists and shady guests can open this door.</HH.Underworld.BackRoomDoorInfo>
-  <HH.Underworld.BackRoom.Yes>Back room: yes ({0} tiles).</HH.Underworld.BackRoom.Yes>
+  <HH.Underworld.BackRoom.Yes>This is a back room ({0} tiles).</HH.Underworld.BackRoom.Yes>
   <HH.Underworld.BackRoom.NoOrdinaryDoor>Not a back room yet: this room also has an ordinary door.</HH.Underworld.BackRoom.NoOrdinaryDoor>
   <HH.Underworld.BackRoom.NoOutside>Not a back room yet: the room is open to the outside.</HH.Underworld.BackRoom.NoOutside>
   <HH.Underworld.BackRoom.NoRoom>Not a back room yet: no room behind this door.</HH.Underworld.BackRoom.NoRoom>

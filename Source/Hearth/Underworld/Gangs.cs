@@ -65,12 +65,19 @@ namespace Hearth.Underworld
             return pawns;
         }
 
+#if HH_TESTS
+        /// <summary>Test hook: every visit fails with this reason key while it is set.</summary>
+        internal static string TestFailKey;
+#endif
         public static bool Fire(Map map, out List<Pawn> pawns, bool force = false) => Fire(map, out pawns, out _, force);
 
         /// <summary>A gang arrives. On failure <paramref name="whyKey"/> names the reason (key below HH.Underworld.Gang.Why.: NoFacility, NoFaction, NoEntry, NoPawns).</summary>
         public static bool Fire(Map map, out List<Pawn> pawns, out string whyKey, bool force = false)
         {
             pawns = null; whyKey = null;
+#if HH_TESTS
+            if (TestFailKey != null) { whyKey = TestFailKey; return false; }
+#endif
             if (!force && !HasGangFacility(map)) { whyKey = "NoFacility"; return false; }
             var faction = PickFaction(); if (faction == null) { whyKey = "NoFaction"; return false; }
             int size = JRand.Stream("underworld.gang").Range(2, Math.Max(3, HSettings.GetInt("underworld.gang.sizeMax") + 1));
