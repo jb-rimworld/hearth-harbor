@@ -15,7 +15,7 @@ namespace Hearth.Underworld
 
     /// <summary>
     /// The hunting ground marker (6.11 "The Hunt"): marks a fenced area. Rich hunters pay to hunt animals released into it.
-    /// From Dark on a prisoner may be the quarry (with a clear warning dialog and the ideology condition; Grim drops the condition).
+    /// From Dark on a prisoner may be the quarry (the player switches it on at the marker; the ideology condition applies, Grim drops it).
     /// </summary>
     public class CompHuntingGround : ThingComp
     {
@@ -45,7 +45,7 @@ namespace Hearth.Underworld
                 {
                     if (allowPrisoners) { allowPrisoners = false; return; }
                     if (!Hunts.HumanQuarryAllowed(out string why)) { Messages.Message(why, parent, MessageTypeDefOf.RejectInput, false); return; }
-                    UwWarnings.FirstBuildWarning(true, () => allowPrisoners = true, () => { });
+                    allowPrisoners = true;
                 }
             };
         }
@@ -70,9 +70,9 @@ namespace Hearth.Underworld
             return null;
         }
 
-        public static bool Possible(Map map) => Underworld.Allows(UwFeature.HuntAnimals) && Underworld.Discovered && map != null && map.IsPlayerHome && FindGround(map) != null;
+        public static bool Possible(Map map) => Underworld.Allows(UwFeature.HuntAnimals) && map != null && map.IsPlayerHome && FindGround(map) != null;
 
-        /// <summary>Ideology gate for hunting people (Dark): the colony's ideology must not forbid it. Grim has no condition. Without Ideology the extra warning dialog stands in.</summary>
+        /// <summary>Ideology gate for hunting people (Dark): the colony's ideology must not forbid it. Grim has no condition. Without Ideology there is no condition.</summary>
         public static bool HumanQuarryAllowed(out string why)
         {
             why = null;
@@ -135,7 +135,7 @@ namespace Hearth.Underworld
             foreach (var p in pawns) Underworld.Comp.MarkHunter(p);
             if (!UwPay.Charge(pawns[0], fee, Underworld.Till(map), "underworld.hunt", "The Hunt: fee", ignoreBudget: true)) { fee = Money.Zero; s.Fee = fee; }
             s.Quarry = SpawnQuarry(map, ground, HSettings.GetInt("underworld.hunt.quarryCount"));
-            if (ground.allowPrisoners && HumanQuarryAllowed(out _) && (Underworld.Comp?.HuntWarningAck ?? false)) TryAddHuman(s);
+            if (ground.allowPrisoners && HumanQuarryAllowed(out _)) TryAddHuman(s);
             sessions.Add(s);
             Underworld.Comp.Hunts++; UwActivity.Note(map);
             Underworld.AddWhispers(HSettings.Get("underworld.whispers.hunt"), "the hunt");

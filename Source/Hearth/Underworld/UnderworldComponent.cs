@@ -33,9 +33,9 @@ namespace Hearth.Underworld
 
         // whispers (decay is applied lazily on read/write)
         float whispers; int whispersTick;
-        // discovery
+        // legacy (until 1.1.x): the stranger's discovery and the three content warnings. Since 1.2.0 nothing reads them; they are only
+        // kept (read and written as before) so old saves load and keep their data. Do not build new behaviour on them.
         public bool NeverAsk; public int LastAskTick = -9_999_999; public int AskCount; public int StrangerFirstTick = -1;
-        // confirmations of dark content (once per save)
         public bool ContentWarningAck, HuntWarningAck, OrganWarningAck;
         // scandals: map id → last tick
         Dictionary<int, int> scandalTick = new Dictionary<int, int>();

@@ -70,7 +70,7 @@ namespace Hearth.Underworld
         /// <summary>Checks that run every ~2 hours per home map: a respectable guest stumbles on the back room; a rumour about a secret casino.</summary>
         public static void Check(Map map)
         {
-            var comp = Underworld.Comp; if (comp == null || !Underworld.Unlocked) return;
+            var comp = Underworld.Comp; if (comp == null || !Underworld.InUse(map)) return;   // N08: no scandal without a facility
             int now = Find.TickManager.TicksGame;
             if (now - comp.ScandalTickOn(map) < HSettings.GetInt("underworld.scandalCooldownDays") * 60000) return;
             float p = HSettings.Get("underworld.exposureChance") / Math.Max(1f, Hearth.Dlc.DlcApi.ColonyWatchfulness(map));   // eagle eye: someone keeps watch

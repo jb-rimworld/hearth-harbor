@@ -14,6 +14,7 @@ namespace Hearth.Underworld
         public static void OnGame()
         {
             FightBout.AbortAll("game (re)started");
+            Underworld.ClearInUse();
         }
 
         public static void Tick(int t)
@@ -21,11 +22,8 @@ namespace Hearth.Underworld
             if (t % 15 == 0) FightBout.TickAll(t);
             if (t % 60 == 7) Hunts.Tick(t);
             if (t % 250 == 91) Gangs.TickDemands(t);
-            if (t % 600 == 3) { Discovery.EnsureAlwaysOn(); UwWarnings.Tick(); }
-            if (!Underworld.Visible) return;
-            if (t % 120 == 31) foreach (var m in Find.Maps) if (m.IsPlayerHome) UwDirector.Tick(m);
-            if (t % 2500 == 13) foreach (var m in Find.Maps) if (m.IsPlayerHome) Discovery.Roll(m);
             if (!Underworld.Unlocked) return;
+            if (t % 120 == 31) foreach (var m in Find.Maps) if (m.IsPlayerHome) UwDirector.Tick(m);
             if (t % 2500 == 713) foreach (var m in Find.Maps) if (m.IsPlayerHome) Scandals.Check(m);
             if (t % 2500 == 1313) { Events(t); Organs_.TickOrders(t); }
         }
@@ -75,7 +73,7 @@ namespace Hearth.Underworld
         }
     }
 
-    /// <summary>The "Underworld" page of the Hearth &amp; Harbor main tab (visible once the dark side is open).</summary>
+    /// <summary>The "Underworld" page of the Hearth &amp; Harbor main tab (visible whenever the underworld is visible: module on, content not Cozy).</summary>
     public static class UnderworldPage
     {
         static Vector2 scroll; static float viewH = 400f;

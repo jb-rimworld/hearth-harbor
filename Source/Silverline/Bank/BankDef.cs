@@ -50,7 +50,9 @@ namespace Silverline
                 if (requiresModule.NullOrEmpty()) return true;
                 if (!System.Enum.TryParse(requiresModule, out ModuleId m)) return false;
                 if (!Modules.On(m)) return false;
-                if (m == ModuleId.Underworld && HearthProfile.Current != null && !HearthProfile.Current.UnderworldDiscovered) return false;
+                // Underworld-bound banks show while the underworld is visible (module on, content not Cozy). Silverline standalone has no
+                // Underworld module: Modules.On is false there, so such banks stay hidden as before.
+                if (m == ModuleId.Underworld && HearthProfile.Current != null && HearthProfile.Current.Content == ContentIntensity.Cozy) return false;
                 return true;
             }
         }

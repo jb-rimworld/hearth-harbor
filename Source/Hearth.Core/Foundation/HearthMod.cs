@@ -219,7 +219,7 @@ namespace Hearth
         public static void Register()
         {
             HSettings.Enum(ModuleId.Core, "Research", ResearchModeKey, CoreResearchMode.Full, "Research mode",
-                "Full: the Hearth & Harbor and Silverline research trees gate their buildings and features. Off: everything is available from the start (the dark projects of the underworld still need their discovery).");
+                "Full: the Hearth & Harbor and Silverline research trees gate their buildings and features. Off: everything is available from the start (the underworld's projects too; content intensity still decides what is shown).");
             HSettings.Enum(ModuleId.Core, "Randomness", "core.rngAlgorithm", RngAlgorithm.SplitMix64, "Random number algorithm",
                 "Algorithm for all Hearth & Harbor random streams. Same odds for all, only the sequence differs. ChaCha8 is cryptographic (paranoid), SplitMix64 is fastest.", nerd: true);
             HSettings.Bool(ModuleId.Core, "Randomness", "core.sealedFate", false, "Sealed fate",

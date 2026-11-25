@@ -18,9 +18,9 @@
     <designatorDropdown>HH_Group_Underworld</designatorDropdown>
     <uiOrder>900</uiOrder>
     <designationHotKey>Misc2</designationHotKey>
-    <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
     <building><isStuffableAirtight>true</isStuffableAirtight></building>
+    <comps><li Class="Hearth.Underworld.CompProperties_UwFacility" /></comps>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
   </ThingDef>
 
@@ -55,9 +55,8 @@
     <designationCategory>HH_Hospitality</designationCategory>
     <designatorDropdown>HH_Group_Underworld</designatorDropdown>
     <uiOrder>910</uiOrder>
-    <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
-    <comps><li Class="Hearth.Underworld.CompProperties_FightPit" /></comps>
+    <comps><li Class="Hearth.Underworld.CompProperties_FightPit" /><li Class="Hearth.Underworld.CompProperties_UwFacility" /></comps>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
   </ThingDef>
 
@@ -95,9 +94,8 @@
     <designationCategory>HH_Hospitality</designationCategory>
     <designatorDropdown>HH_Group_Underworld</designatorDropdown>
     <uiOrder>920</uiOrder>
-    <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
-    <comps><li Class="Hearth.Underworld.CompProperties_FenceStock" /><li Class="Hearth.CompProperties_FlipWorkSide" /></comps>
+    <comps><li Class="Hearth.Underworld.CompProperties_FenceStock" /><li Class="Hearth.CompProperties_FlipWorkSide" /><li Class="Hearth.Underworld.CompProperties_UwFacility" /></comps>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
   </ThingDef>
 
@@ -130,8 +128,8 @@
     <designationCategory>HH_Hospitality</designationCategory>
     <designatorDropdown>HH_Group_Underworld</designatorDropdown>
     <uiOrder>930</uiOrder>
-    <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
+    <comps><li Class="Hearth.Underworld.CompProperties_UwFacility" /></comps>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
   </ThingDef>
 
@@ -139,7 +137,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>HH_HuntingGroundMarker</defName>
     <label>hunting ground marker</label>
-    <description>Marks a fenced hunting ground (at least sixty tiles, closed). Rich hunters pay to shoot the animals they bring into it. With Dark content and the right ideology a prisoner can be the quarry; this is switched on separately, behind a warning.</description>
+    <description>Marks a fenced hunting ground (at least sixty tiles, closed). Rich hunters pay to shoot the animals they bring into it. With Dark content and the right ideology a prisoner can be the quarry; this is switched on separately on the marker.</description>
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
@@ -166,7 +164,7 @@
     <uiOrder>940</uiOrder>
     <researchPrerequisites><li>HH_TheHunt</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
-    <comps><li Class="Hearth.Underworld.CompProperties_HuntingGround" /></comps>
+    <comps><li Class="Hearth.Underworld.CompProperties_HuntingGround" /><li Class="Hearth.Underworld.CompProperties_UwFacility" /></comps>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
   </ThingDef>
 
@@ -196,6 +194,7 @@
     </statBases>
     <comps Inherit="False">
       <li Class="Hearth.Underworld.CompProperties_OrganClinic" />
+      <li Class="Hearth.Underworld.CompProperties_UwFacility" />
     </comps>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
     <building>

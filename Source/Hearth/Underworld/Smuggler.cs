@@ -17,7 +17,7 @@ namespace Hearth.Underworld
             return null;
         }
 
-        public static bool Possible(Map map) => Underworld.Unlocked && map != null && map.IsPlayerHome && Dock(map) != null;
+        public static bool Possible(Map map) => map != null && map.IsPlayerHome && Underworld.InUse(map) && Dock(map) != null;
 
         public sealed class Offer { public List<Thing> Goods = new List<Thing>(); public Money Price; public Money MarketValue; }
 

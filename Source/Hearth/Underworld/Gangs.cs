@@ -26,7 +26,7 @@ namespace Hearth.Underworld
 
         public static bool Possible(Map map)
         {
-            if (!Underworld.Unlocked || map == null || !map.IsPlayerHome) return false;
+            if (map == null || !map.IsPlayerHome || !Underworld.InUse(map)) return false;   // N08: only once a facility exists
             bool anything = BackRoom.HasBackRoom(map) || FenceTrade.FindCounter(map) != null || map.listerThings.ThingsOfDef(UwDefs.FightPit ?? ThingDefOf.Silver).Count > 0;
             return anything && PickFaction() != null;
         }

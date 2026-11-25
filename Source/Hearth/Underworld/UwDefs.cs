@@ -18,7 +18,9 @@ namespace Hearth.Underworld
         public static ThingCategoryDef CatOrgans; public static HediffDef Bruise;
         public static JobDef JobWatchBout, JobBackRoom, JobFenceDeal, JobLounge, JobInterrogate, JobHunt, JobQuarryFlee;
         public static ThoughtDef ThoughtSawFightKind, ThoughtSawFightBloodlust, ThoughtInterrogated, ThoughtOrganOutrage, ThoughtHuntKnown;
-        public static IncidentDef IncStranger, IncGang, IncHunt, IncSmuggler;
+        public static IncidentDef IncGang, IncHunt, IncSmuggler;
+        /// <summary>The buildings that make the underworld "in use" on a map (N08 guard, <see cref="Underworld.InUse"/>); only defs that exist.</summary>
+        public static readonly List<ThingDef> Facilities = new List<ThingDef>();
         public static readonly HashSet<ResearchProjectDef> GatedResearch = new HashSet<ResearchProjectDef>();
         public static readonly HashSet<BuildableDef> GatedBuildings = new HashSet<BuildableDef>();
 
@@ -34,23 +36,44 @@ namespace Hearth.Underworld
             JobLounge = Underworld.Def<JobDef>("HH_UseLounge"); JobInterrogate = Underworld.Def<JobDef>("HH_Interrogate"); JobHunt = Underworld.Def<JobDef>("HH_HuntQuarry"); JobQuarryFlee = Underworld.Def<JobDef>("HH_QuarryFlee");
             ThoughtSawFightKind = Underworld.Def<ThoughtDef>("HH_SawFightPit_Kind"); ThoughtSawFightBloodlust = Underworld.Def<ThoughtDef>("HH_SawFightPit_Bloodlust");
             ThoughtInterrogated = Underworld.Def<ThoughtDef>("HH_Interrogated"); ThoughtOrganOutrage = Underworld.Def<ThoughtDef>("HH_OrganTradeOutrage"); ThoughtHuntKnown = Underworld.Def<ThoughtDef>("HH_HuntOnPrisoners");
-            IncStranger = Underworld.Def<IncidentDef>("HH_UnderworldStranger"); IncGang = Underworld.Def<IncidentDef>("HH_GangVisit");
+            IncGang = Underworld.Def<IncidentDef>("HH_GangVisit");
             IncHunt = Underworld.Def<IncidentDef>("HH_HuntParty"); IncSmuggler = Underworld.Def<IncidentDef>("HH_SmugglerLanding");
 
+            Facilities.Clear();
+            foreach (var d in new[] { BackRoomDoor, FightPit, FenceCounter, SmugglerDock, HuntingGround, OrganClinic }) if (d != null) Facilities.Add(d);
             foreach (var r in DefDatabase<ResearchProjectDef>.AllDefs) if (r.GetModExtension<UwGateExtension>() != null) GatedResearch.Add(r);
             foreach (var d in DefDatabase<ThingDef>.AllDefs) if (d.GetModExtension<UwGateExtension>() != null) GatedBuildings.Add(d);
             HLog.Info("Underworld", $"Defs: {GatedBuildings.Count} gated buildings, {GatedResearch.Count} gated research projects, door={(BackRoomDoor != null)}, pit={(FightPit != null)}, fence={(FenceCounter != null)}");
         }
 
-        /// <summary>Does the gate extension of a def let it show/work right now?</summary>
+        /// <summary>Does the gate extension of a def let it show/work right now? Module on, content not Cozy and at least minContent (needsDiscovery is ignored since 1.2.0).</summary>
         public static bool Open(UwGateExtension e)
         {
             if (e == null) return true;
             if (e.alwaysHidden) return false;
             if (!Underworld.Visible) return false;
             if ((int)Underworld.Effective < (int)e.minContent) return false;
-            if (e.needsDiscovery && !Underworld.Discovered) return false;
             return true;
+        }
+    }
+
+    /// <summary>On every underworld facility (XML): tells the N08 guard <see cref="Underworld.InUse"/> that the map changed. No saved data.</summary>
+    public class CompProperties_UwFacility : CompProperties { public CompProperties_UwFacility() { compClass = typeof(CompUwFacility); } }
+    public class CompUwFacility : ThingComp
+    {
+        public override void PostSpawnSetup(bool respawningAfterLoad) { base.PostSpawnSetup(respawningAfterLoad); Underworld.MarkInUseDirty(parent.Map); }
+        public override void PostDeSpawn(Map map
+#if RW16PLUS
+            , DestroyMode mode = DestroyMode.Vanish
+#endif
+            )
+        {
+            base.PostDeSpawn(map
+#if RW16PLUS
+                , mode
+#endif
+                );
+            Underworld.MarkInUseDirty(map);
         }
     }
 

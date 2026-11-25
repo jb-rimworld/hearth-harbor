@@ -10,7 +10,6 @@
     <iconPath>UI/HH/Underworld/DrugLounge</iconPath>
     <needsStaff>false</needsStaff>
     <priceFactor>1</priceFactor>
-    <researchPrerequisite>HH_Underworld_1</researchPrerequisite>
     <nameRules>HH_VenueNames_DrugLounge</nameRules>
     <color>(0.45, 0.30, 0.55)</color>
     <modExtensions>
@@ -85,14 +84,6 @@
     <stages><li><label>a person died in the hunt</label><description>They hunted a person on our grounds. I cannot stop thinking about it.</description><baseMoodEffect>-5</baseMoodEffect></li></stages>
   </ThoughtDef>
 
-  <IncidentDef>
-    <defName>HH_UnderworldStranger</defName>
-    <label>stranger asks about a back room</label>
-    <targetTags><li>Map_PlayerHome</li></targetTags>
-    <workerClass>Hearth.Underworld.IncidentWorker_UnderworldStranger</workerClass>
-    <category>Misc</category>
-    <baseChance>0</baseChance>
-  </IncidentDef>
   <IncidentDef>
     <defName>HH_GangVisit</defName>
     <label>gang visit</label>

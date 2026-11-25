@@ -19,15 +19,8 @@ namespace Hearth.Underworld
 
         public override void RegisterSettings()
         {
-            // discovery and whispers
-            HSettings.Enum(M, "Discovery", "underworld.mode", UnderworldMode.DiscoverInGame, "How the underworld appears",
-                "Discover in game: a shady stranger asks if you have a back room, and only a yes opens the dark side. Always on: it is open from the start. (Off is the module switch; Cozy content intensity hides it completely.)");
-            HSettings.Float(M, "Discovery", "underworld.strangerMeanDays", 6f, 1f, 30f, "Days until the stranger shows up",
-                "Average number of days between the moments the stranger may come (once the colony has guests or a venue, and your Whispers are low).", hardMin: 0.25f, hardMax: 200f);
-            HSettings.Int(M, "Discovery", "underworld.strangerCooldownDays", 12, 3, 60, "Days before he asks again",
-                "After \"Not interested\" the stranger waits this many days before he asks again.", hardMin: 1, hardMax: 400);
-            HSettings.Int(M, "Discovery", "underworld.strangerMaxAsks", 3, 1, 10, "How often he asks", "After this many refusals the stranger gives up for good.", hardMin: 1, hardMax: 50);
-            HSettings.Float(M, "Discovery", "underworld.strangerMaxWhispers", 5f, 0f, 30f, "Highest Whispers for the stranger", "He only turns up while your Whispers are at or below this value.", hardMin: 0f, hardMax: 100f);
+            // whispers (1.2.0: the discovery settings underworld.mode and underworld.stranger* are gone; values stored in old saves or the
+            // settings file stay in the store unread, which is silent: HearthSettingsStore keeps unknown keys, nothing looks them up)
             HSettings.Percent(M, "Whispers", "underworld.whispersDecay", 0.02f, 0f, 0.2f, "Whispers decay per 15 days", "Whispers lose this share of their value every 15 days.", hardMin: 0f, hardMax: 0.9f);
             HSettings.Int(M, "Whispers", "underworld.scandalCooldownDays", 10, 1, 60, "Days between scandals", "At most one scandal per map in this many days.", hardMin: 1, hardMax: 400);
             HSettings.Percent(M, "Whispers", "underworld.exposureChance", 0.08f, 0f, 0.5f, "Chance a respectable guest stumbles on the back room",
@@ -88,7 +81,7 @@ namespace Hearth.Underworld
             GuestActivities.Register(new Activities.PitActivity());
             GuestActivities.Register(new Activities.LoungeActivity());
             GuestActivities.Register(new Activities.FenceActivity());
-            HearthTabs.Register(new HearthTabPage { Id = "underworld", LabelKey = "HH.Tab.Underworld", LabelEn = "Underworld", Module = M, Order = 900, Draw = UnderworldPage.Draw, Visible = () => Underworld.Unlocked });
+            HearthTabs.Register(new HearthTabPage { Id = "underworld", LabelKey = "HH.Tab.Underworld", LabelEn = "Underworld", Module = M, Order = 900, Draw = UnderworldPage.Draw, Visible = () => Underworld.Visible });
         }
 
         public override void OnGameStarted() => UwTicker.OnGame();
@@ -99,7 +92,7 @@ namespace Hearth.Underworld
         public override IEnumerable<string> Diagnosis()
         {
             var c = Underworld.Comp;
-            yield return $"Underworld: content {Underworld.Intensity} (effective {Underworld.Effective}), discovered {Underworld.Discovered}, whispers {Underworld.Whispers:0.0}";
+            yield return $"Underworld: content {Underworld.Intensity}, whispers {Underworld.Whispers:0.0}";
             if (c != null) yield return $"  bouts {c.Bouts} · bets {c.Bets} · fence {c.DealsBought}/{c.DealsSold} · lounge {c.LoungeSessions} · gangs {c.GangVisits} · hunts {c.Hunts} · organs {c.OrgansSold} · scandals {c.Scandals}";
         }
 
