@@ -53,7 +53,8 @@ namespace Hearth.Underworld
                 var r = CellRect.CenteredOn(c, w, h);
                 if (!r.InBounds(map)) continue;
                 bool ok = true;
-                foreach (var cell in r.ExpandedBy(1)) { if (!cell.InBounds(map) || !cell.Standable(map) || cell.GetFirstBuilding(map) != null || cell.Fogged(map) || cell.GetTerrain(map).passability == Traversability.Impassable) { ok = false; break; } }
+                foreach (var cell in r.ExpandedBy(1)) { if (!cell.InBounds(map) || !cell.Standable(map) || cell.GetFirstBuilding(map) != null || cell.Fogged(map) || cell.GetTerrain(map).passability == Traversability.Impassable
+                    || cell.GetTerrain(map).affordances?.Contains(TerrainAffordanceDefOf.Light) != true) { ok = false; break; } }   // light buildings (fence, marker) must be placeable: no marsh or mud
                 // a free patch is no use when it sits in a pocket the colonists and the visitors cannot walk to (water, cliffs, rock on a random map)
                 if (ok && !TestCells.Reachable(map, center, r.CenterCell)) ok = false;
                 if (ok) { rect = r; return true; }
