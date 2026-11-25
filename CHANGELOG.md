@@ -2,6 +2,27 @@
 
 Hearth & Harbor and Silverline (the standalone bank) are built from this repository and share one version number.
 
+## 1.2.0 (not released yet)
+The Underworld is reworked so that it just works.
+- Open from the start. There is no stranger to wait for, no "Show me", no warning dialog and no research for the basics: back room doors, the fight pit marker, the fence counter, the smuggler's dock and the drug lounge can be built at once. The Hunt and the black clinic keep their research and follow the research setting like every other project. The module switch is the one on/off; Cozy content still hides everything. Nothing happens until you build something.
+- Dark and Grim content take effect as soon as you pick them. The tooltips of the two chips say what each level adds.
+- The fight pit is reworked:
+  - Bouts with a guest or a colonist are fought for points. Hits are counted, not felt: nobody gets injured or downed, nothing drops, and nobody holds a grudge or loses goodwill. The loser walks away with a bruise or two. A usual bout lasts half a minute.
+  - Guests who like a brawl challenge your fighters: shady guests and gang members, and other guests with Bloodlust, Brawler or good melee who are not kind. A winning guest gets a small purse out of the house take.
+  - Colonists and slaves fight when you tick them in the new "Fighters…" window or right-click the marker with them ("Fight in the pit"). No random roll, no trait needed.
+  - Alone? "Call an opponent" hires a pit beast that matches your fighter (40 silver from the till). It leaves after the bout.
+  - "Start a bout" works without guests. Prisoners are brought into the arena and back, and do not run off on the way.
+  - The marker always says what it waits for, who is ready and how the last bout ended. Every bout ends with a message.
+- Every underworld building says why it is waiting: the back room door, the fence counter, the dock and the hunting ground marker.
+- Smuggler boats and protection demands arrive as letters. You answer with the buttons on the dock or on the gang leader, or on the Underworld tab. An unanswered boat leaves; an unanswered demand counts as a refusal. No more pop-up dialogs.
+- The first gang comes about a day after your first back room, fence counter or fight pit. A gang visit that cannot happen is tried again a few hours later, and the Underworld tab says why. Gang members spend the silver they carry.
+- The fence reports its deals, says when the till is empty and has "Take goods out". A deconstructed fence counter drops its goods.
+- The Underworld tab shows every part of the back room with a coloured dot (not built, waiting, working), what it is doing, and a Build button that picks the building for you. Open offers wait there with Accept and Decline.
+- New guide topic "The back room": fence and pit marker, the first bout, a back room, the first gang, a fence counter.
+- The building descriptions say how to use each thing.
+- Old saves: the discovery and its settings are gone; values stored for them are ignored. A save with Dark or Grim content but no confirmed warning now plays at that level. Research of the old "the back room" project stays in the save but is hidden and unlocks nothing.
+- Removed: the shady stranger, the "Discover / On / Off" choice, the "Underworld already discovered" scenario rule (old scenarios still load), the content, hunt and clinic warnings, and the research "the back room".
+
 ## 1.1.2 (2026-11-25)
 - Fixes a translation fault of 1.1.1: with a DLC active, texts that had been translated since 1.0 were English again in all ten languages. Up to 270 texts per language: the names and descriptions of all base dishes, the insurance policies, the investments, the banks, the kinds of business and six thoughts. 1.1.1 moved the translations of optional content into their own load folders but kept the file names, and the game reads a language file only once per name inside a mod, so the main file of the same name was skipped without any message. The files in `Compat/` now carry the ids in their name (`HH_Insurance__Ludeon.RimWorld.Anomaly.xml`). Silverline standalone had the same fault and gets the same fix.
 - The remaining English texts in the ten translations are translated: 438 per language (German, French, Spanish, Brazilian Portuguese, Russian, Ukrainian, Czech, Simplified Chinese, Japanese, Korean). The translation tool had never collected them, so they stayed English without any error:

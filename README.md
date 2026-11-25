@@ -13,7 +13,7 @@ is a setting.
 | Casino | slots, roulette, blackjack, Rimdeck poker with exact payout rates; The Lucky Thrumbo, an animated orbital casino where you gamble yourself |
 | Wellness | hot tub, sauna, massage, day passes |
 | City Life | cinema, salon, gallery, park, taxi stand, bodyguards |
-| Underworld | on, but hidden until a stranger offers it (Discover mode); back rooms, fight pit, fence, smuggling, gangs, Whispers and scandals |
+| Underworld | on; nothing happens until you build it. Back rooms, fight pit (bouts with guests and colonists are scored, nobody gets hurt), fence, drug lounge, smuggling, gangs, Whispers and scandals; the Underworld tab shows what each part is doing |
 | Silverline | six banks, interest, loans, 17 investments, a lottery, twelve insurance policies |
 | AI flavour | optional, off until you opt in: Ottoline answers bank questions, AI guest reviews, market headlines and insurance letters through a small relay (no key needed) |
 | DLC extras | Royalty, Ideology and Biotech content, plus 14 traits |

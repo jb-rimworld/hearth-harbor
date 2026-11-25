@@ -18,7 +18,7 @@ Everything here belongs to the Core module (always on). Code: `Source/Hearth/Sto
 ## Scenario parts (F08)
 | Part | Def | What it does |
 |---|---|---|
-| `Hearth.ScenPart_HHRules` | `HH_ScenRules` (max 1) | modules on/off, hosting difficulty, content intensity, underworld discovered, any per-colony settings; "More settings…" opens the full settings window against the part |
+| `Hearth.ScenPart_HHRules` | `HH_ScenRules` (max 1) | modules on/off, hosting difficulty, content intensity, any per-colony settings; "More settings…" opens the full settings window against the part |
 | `Hearth.ScenPart_HHSetting` | `HH_ScenSetting` | one setting = one value |
 | `Hearth.ScenPart_HHStartingResearch` | `HH_ScenStartingResearch` | finishes one of our research projects at the start |
 | `Silverline.ScenPart_SLStartingAccount` | `SL_ScenStartingAccount` (max 1) | account at a bank, opening balance, optional starting loan |
@@ -30,7 +30,7 @@ Everything here belongs to the Core module (always on). Code: `Source/Hearth/Sto
   <content>Cozy</content>              <!-- Cozy, Standard, Dark, Grim; leave out = template -->
   <modulesOn><li>Inn</li></modulesOn>
   <modulesOff><li>Underworld</li></modulesOff>
-  <underworldDiscovered>false</underworldDiscovered>
+  <!-- <underworldDiscovered> of 1.1 scenarios is still read and ignored: since 1.2.0 the underworld is open whenever it is visible -->
   <settings><li><key>inn.arrivalRate</key><value>1.4</value></li></settings>
 </li>
 ```
