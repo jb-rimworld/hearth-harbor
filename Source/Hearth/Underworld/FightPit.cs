@@ -96,7 +96,7 @@ namespace Hearth.Underworld
             if (cache == null || Find.TickManager.TicksGame - cache.Builtick > 250 || Find.TickManager.TicksGame < cache.Builtick) cache = Arena.Flood(parent.Map, parent.Position, 700);
             return cache;
         }
-        public void Invalidate() { cache = null; cands = null; }
+        public void Invalidate() { cache = null; cands = null; guestsDirty = true; }
 
         public bool ArenaValid => ArenaInfo() is Arena.Info a && a.Closed && a.Cells.Count >= 9;
 
@@ -169,10 +169,17 @@ namespace Hearth.Underworld
             return null;
         }
 
-        static bool AdultGuestOn(Map map)
+        bool guestsOn, guestsDirty = true; int guestsTick;
+        /// <summary>At least one adult guest on the map (bets are the point of an automatic show). Cached for 250 ticks: the inspect string asks every frame.</summary>
+        bool AdultGuestOn(Map map, bool refresh = false)
         {
-            foreach (var g in GuestApi.GuestsOn(map)) if (!Underworld.IsMinor(g) && !PitOpponents.IsPrizefighter(g)) return true;
-            return false;
+            int now = Find.TickManager.TicksGame;
+            if (refresh || guestsDirty || now - guestsTick >= 250 || now < guestsTick)
+            {
+                guestsOn = false; guestsTick = now; guestsDirty = false;
+                foreach (var g in GuestApi.GuestsOn(map)) if (!Underworld.IsMinor(g) && !PitOpponents.IsPrizefighter(g)) { guestsOn = true; break; }
+            }
+            return guestsOn;
         }
 
         // ---- inspect ------------------------------------------------------------------------------------------------
@@ -336,7 +343,7 @@ namespace Hearth.Underworld
                 }
             }
             if (now < nextBoutTick) return;
-            if (!AdultGuestOn(Map)) { nextBoutTick = now + 2500; return; }   // nobody to bet: no show
+            if (!AdultGuestOn(Map, true)) { nextBoutTick = now + 2500; return; }   // nobody to bet: no show
             if (FightBout.TryStartFor(this, false, out _)) nextBoutTick = now + (int)interval;
             else nextBoutTick = now + 2500;
         }

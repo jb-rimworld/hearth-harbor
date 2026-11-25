@@ -25,7 +25,9 @@ namespace Hearth.Underworld
         [HarmonyPriority(Priority.Last)]
         public static bool Prefix(Pawn __instance, ref DamageInfo dinfo, ref bool absorbed)
         {
-            if (FightBout.ActiveCount == 0 || !Modules.On(ModuleId.Underworld)) return true;
+            // A running bout is itself proof that the module was on: the guard stays in force until the bout is gone (switching the module off
+            // aborts every bout through ModuleGate.Changed, see PitSetup), so a hit in between can never land for real.
+            if (FightBout.ActiveCount == 0) return true;
             var b = FightBout.OfPawn(__instance);
             if (b == null) return true;
             if (b.Scored)
@@ -49,7 +51,7 @@ namespace Hearth.Underworld
     {
         public static bool Prefix(Pawn member, DamageInfo dinfo)
         {
-            if (FightBout.ActiveCount == 0 || !Modules.On(ModuleId.Underworld)) return true;
+            if (FightBout.ActiveCount == 0) return true;   // as the damage guard: only a running bout counts
             var b = FightBout.OfPawn(member);
             return b == null || !b.IsPair(member, dinfo.Instigator);
         }

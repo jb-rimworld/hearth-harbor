@@ -72,7 +72,7 @@ namespace Hearth.Underworld
             if (pit.HasBeast) return UwPay.T("Pit.Why.BeastThere");
             if (fighter == null) return UwPay.T("Pit.Why.NoLoneFighter");
             if (Ledger.Current.Balance(Underworld.Till(pit.Map)) < Fee) return UwPay.T("Pit.Why.TillShort", PitFighters.Silver(Fee));
-            if (KindFor(PitFighters.Power(fighter), pit.Map) == null) return UwPay.T("Pit.Why.NoBeastKind");
+            // (no animal-kind lookup here: this runs for the gizmo every frame; KindFor always finds the closest animal anyway)
             return null;
         }
 

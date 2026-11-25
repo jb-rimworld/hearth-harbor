@@ -29,6 +29,8 @@ namespace Hearth.Underworld
             JobWait = DefDatabase<JobDef>.GetNamedSilentFail("HH_PitWait");
             Bruise = DefDatabase<HediffDef>.GetNamedSilentFail("Bruise");
             if (JobGoto == null || JobFight == null || JobWait == null) HLog.Warn("Underworld", "Fight pit job defs missing: bouts cannot be fought");
+            // a bout must not outlive the module: with the module off the damage guard stands aside, so the fighters would hit for real
+            ModuleGate.Changed += _ => Guard.Run(ModuleId.Underworld, "Pit.ModuleSwitch", () => { if (!Modules.On(ModuleId.Underworld) && FightBout.ActiveCount > 0) FightBout.AbortAll("module switched off"); });
         }
 
         public static bool IsPitJob(JobDef d) => d != null && (d == JobGoto || d == JobFight || d == JobWait);

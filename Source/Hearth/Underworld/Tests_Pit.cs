@@ -519,6 +519,15 @@ namespace Hearth.Underworld
             t.Check(pit.StatusLine() == UwPay.T("Pit.Status.Off"), "Cozy: " + pit.StatusLine());
             t.Check(!pit.CompGetGizmosExtra().Any(), "Cozy: no gizmos");
             HearthProfile.Current.Content = ContentIntensity.Standard;
+            // switching the module off ends a running bout at once (the damage guard would otherwise outlive the module)
+            if (col != null && col2 != null && col != col2)
+            {
+                var mb = FightBout.Start(pit, col, col2, true, 600, manual: true);
+                t.Check(mb != null, "a bout runs before the switch");
+                HearthProfile.Current.SetModule(ModuleId.Underworld, false);
+                t.Check(FightBout.ActiveCount == 0, "module switched off: no bout left");
+                HearthProfile.Current.SetModule(ModuleId.Underworld, true);
+            }
             // the gizmos all have their own icons and keyed labels
             var gizmos = pit.CompGetGizmosExtra().OfType<Command>().ToList();
             t.Check(gizmos.Count >= 7 && gizmos.All(g => !g.defaultLabel.StartsWith("HH.") && !g.defaultDesc.NullOrEmpty() && !g.defaultDesc.StartsWith("HH.")), "gizmos keyed: " + string.Join(" | ", gizmos.Select(g => g.defaultLabel)));
