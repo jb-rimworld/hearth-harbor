@@ -439,12 +439,18 @@
   <HH.Setting.underworld.pit.betMin.Desc>Guests bet at least this much silver.</HH.Setting.underworld.pit.betMin.Desc>
   <HH.Setting.underworld.pit.fairRatio>Matchmaking fairness</HH.Setting.underworld.pit.fairRatio>
   <HH.Setting.underworld.pit.fairRatio.Desc>The stronger fighter may have at most this many times the combat power of the weaker one.</HH.Setting.underworld.pit.fairRatio.Desc>
+  <HH.Setting.underworld.pit.guestPurse>Purse for a winning guest</HH.Setting.underworld.pit.guestPurse>
+  <HH.Setting.underworld.pit.guestPurse.Desc>A guest who wins a bout gets this much silver, paid out of the house take of that bout (no take, no purse).</HH.Setting.underworld.pit.guestPurse.Desc>
   <HH.Setting.underworld.pit.houseCut>House cut on bets</HH.Setting.underworld.pit.houseCut>
   <HH.Setting.underworld.pit.houseCut.Desc>The share of the betting pool the house keeps (totalisator).</HH.Setting.underworld.pit.houseCut.Desc>
   <HH.Setting.underworld.pit.intervalHours>Hours between bouts</HH.Setting.underworld.pit.intervalHours>
   <HH.Setting.underworld.pit.intervalHours.Desc>A fight pit with enough fighters and spectators starts a bout this often.</HH.Setting.underworld.pit.intervalHours.Desc>
   <HH.Setting.underworld.pit.maxBoutTicks>Longest bout (ticks)</HH.Setting.underworld.pit.maxBoutTicks>
   <HH.Setting.underworld.pit.maxBoutTicks.Desc>A bout nobody wins within this time is a draw: all stakes are returned.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.opponentFee>Fee for a hired opponent</HH.Setting.underworld.pit.opponentFee>
+  <HH.Setting.underworld.pit.opponentFee.Desc>"Call an opponent" hires a pit beast for a lone fighter; the till pays this fee.</HH.Setting.underworld.pit.opponentFee.Desc>
+  <HH.Setting.underworld.pit.scoreLimit>Points to lose a bout</HH.Setting.underworld.pit.scoreLimit>
+  <HH.Setting.underworld.pit.scoreLimit.Desc>Bouts with a guest, colonist or slave are fought for points: a fighter loses when the damage he would have taken reaches this many points times his health scale. Nobody is hurt.</HH.Setting.underworld.pit.scoreLimit.Desc>
   <HH.Setting.underworld.pit.yieldHealth>Yield at health</HH.Setting.underworld.pit.yieldHealth>
   <HH.Setting.underworld.pit.yieldHealth.Desc>A bout ends when a fighter drops below this share of health, unless it is to the death.</HH.Setting.underworld.pit.yieldHealth.Desc>
   <HH.Setting.underworld.scandalCooldownDays>Days between scandals</HH.Setting.underworld.scandalCooldownDays>
