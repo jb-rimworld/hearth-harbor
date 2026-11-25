@@ -114,9 +114,14 @@ namespace Hearth.Underworld
             t.Check(!new PlaceWorker_UnderworldGate().IsBuildDesignatorVisible(door), "Cozy: designator hidden");
             if (f != null) UwKit.Guests(map, 2, f);
             t.Check(!Gangs.Possible(map) && !Smuggler.Possible(map) && !Hunts.Possible(map), "Cozy: no gang, smuggler or hunt");
-            int letters = Find.LetterStack.LettersListForReading.Count; int bouts = Underworld.Comp.Bouts;
+            var lettersBefore = new HashSet<Letter>(Find.LetterStack.LettersListForReading); int bouts = Underworld.Comp.Bouts;
             yield return 3000;
-            t.Check(Find.LetterStack.LettersListForReading.Count == letters, "Cozy: no new letters in 3000 ticks");
+            // only letters of the underworld count: in the shared test game the storyteller and other suites' guests may send their own
+            var uwTitles = new HashSet<string>(new[] { "Gang.Demand.Title", "Gang.Title", "Hunt.DeathTitle", "Hunt.FreedTitle", "Hunt.Title", "Organ.OrderTitle", "Smuggler.InspectTitle", "Smuggler.Title", "Tour.IntelTitle" }.Select(k => UwPay.T(k)));
+            foreach (ScandalKind k in Enum.GetValues(typeof(ScandalKind))) uwTitles.Add(("HH.Underworld.Scandal." + k + ".Title").Translate());
+            var newLetters = Find.LetterStack.LettersListForReading.Where(l => !lettersBefore.Contains(l)).ToList();
+            foreach (var l in newLetters) t.Note("new letter (not ours unless flagged): " + l.Label);
+            t.Check(!newLetters.Any(l => uwTitles.Contains(l.Label.ToString())), "Cozy: no underworld letter in 3000 ticks (" + newLetters.Count + " other letters)");
             t.Check(Underworld.Comp.Bouts == bouts, "Cozy: nothing happened");
             t.Check(!Find.WindowStack.IsOpen<Dialog_NodeTree>(), "Cozy: no dialog");
             // module switch
