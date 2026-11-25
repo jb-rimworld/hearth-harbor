@@ -1,13 +1,52 @@
 // SPDX-License-Identifier: MIT
+using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace Hearth.Underworld
 {
-    /// <summary>Package-owned setup hooks: settings registered from UnderworldModule.RegisterSettings, def lookups from OnDefsLoaded.</summary>
+    /// <summary>Package-owned setup hooks of the fight pit: settings registered from UnderworldModule.RegisterSettings, def lookups from OnDefsLoaded, gizmo icons.</summary>
     public static class PitSetup
     {
-        public static void RegisterSettings(ModuleId m) { }
+        public static JobDef JobGoto, JobFight, JobWait;
+        public static HediffDef Bruise;
 
-        public static void OnDefsLoaded() { }
+        public static void RegisterSettings(ModuleId m)
+        {
+            HSettings.Silver(m, "Fight pit", "underworld.pit.guestPurse", 25, 0, 200, "Purse for a winning guest",
+                "A guest who wins a bout gets this much silver, paid out of the house take of that bout (no take, no purse).");
+            HSettings.Silver(m, "Fight pit", "underworld.pit.opponentFee", 40, 0, 500, "Fee for a hired opponent",
+                "\"Call an opponent\" hires a pit beast for a lone fighter; the till pays this fee.");
+            HSettings.Float(m, "Fight pit", "underworld.pit.scoreLimit", 100f, 20f, 400f, "Points to lose a bout",
+                "Bouts with a guest, colonist or slave are fought for points: a fighter loses when the damage he would have taken reaches this many points times his health scale. Nobody is hurt.",
+                nerd: true, hardMin: 5f, hardMax: 5000f);
+        }
+
+        public static void OnDefsLoaded()
+        {
+            JobGoto = DefDatabase<JobDef>.GetNamedSilentFail("HH_PitGoto");
+            JobFight = DefDatabase<JobDef>.GetNamedSilentFail("HH_PitFight");
+            JobWait = DefDatabase<JobDef>.GetNamedSilentFail("HH_PitWait");
+            Bruise = DefDatabase<HediffDef>.GetNamedSilentFail("Bruise");
+            if (JobGoto == null || JobFight == null || JobWait == null) HLog.Warn("Underworld", "Fight pit job defs missing: bouts cannot be fought");
+        }
+
+        public static bool IsPitJob(JobDef d) => d != null && (d == JobGoto || d == JobFight || d == JobWait);
+
+        // ---- gizmo icons (loaded on first use, on the main thread) -------------------------------------------
+        static Texture2D open, animals, guests, prisoners, lethal, fighters, start, opponent;
+        static Texture2D Tex(ref Texture2D cache, string path)
+        {
+            if (cache == null) cache = ContentFinder<Texture2D>.Get(path, false) ?? TexCommand.Attack;
+            return cache;
+        }
+        public static Texture2D IconOpen => Tex(ref open, "UI/HH/Underworld/PitOpen");
+        public static Texture2D IconAnimals => Tex(ref animals, "UI/HH/Underworld/PitAnimals");
+        public static Texture2D IconGuests => Tex(ref guests, "UI/HH/Underworld/PitGuests");
+        public static Texture2D IconPrisoners => Tex(ref prisoners, "UI/HH/Underworld/PitPrisoners");
+        public static Texture2D IconLethal => Tex(ref lethal, "UI/HH/Underworld/PitLethal");
+        public static Texture2D IconFighters => Tex(ref fighters, "UI/HH/Underworld/PitFighters");
+        public static Texture2D IconStart => Tex(ref start, "UI/HH/Underworld/PitStart");
+        public static Texture2D IconOpponent => Tex(ref opponent, "UI/HH/Underworld/PitOpponent");
     }
 }

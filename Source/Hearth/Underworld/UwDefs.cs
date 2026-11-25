@@ -104,25 +104,5 @@ namespace Hearth.Underworld
         }
     }
 
-    /// <summary>
-    /// During a non-lethal bout nobody takes damage once beaten (downed or below the yield line). Only an active bout of that very pawn is touched;
-    /// everything else (and a module that is off) returns at once. The blow is not cancelled (no "return false"): its amount is set to 0, so every other
-    /// prefix and postfix on PreApplyDamage (Combat Extended armour/stagger, shields, Vanilla Expanded) still runs on the damage pipeline as usual.
-    /// </summary>
-    [HarmonyPatch(typeof(Pawn), nameof(Pawn.PreApplyDamage))]
-    public static class Patch_PitDamageGuard
-    {
-        [HarmonyPriority(Priority.Last)]
-        public static bool Prefix(Pawn __instance, ref DamageInfo dinfo, out bool absorbed)
-        {
-            absorbed = false;
-            if (FightBout.ActiveCount == 0 || !Modules.On(ModuleId.Underworld)) return true;
-            var b = FightBout.OfPawn(__instance);
-            if (b == null) return true;
-            if (b.ShouldAbsorb(__instance)) { dinfo.SetAmount(0f); return true; }
-            // non-lethal: a heavy blow on a fighter close to the yield line (a muffalo's kick) must not kill before the bout referee notices; soften it there
-            if (b.NonLethal && b.IsNearYield(__instance)) dinfo.SetAmount(dinfo.Amount * 0.3f);
-            return true;
-        }
-    }
+    // The damage guard of the fight pit lives in Pit/PitSafety.cs since 1.2.0 (Patch_PitDamageGuard).
 }
