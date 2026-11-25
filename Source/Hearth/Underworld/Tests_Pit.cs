@@ -48,7 +48,7 @@ namespace Hearth.Underworld
         /// <summary>An adult colonist who can fight (a generated one when none of the quicktest colonists fits).</summary>
         public static Pawn Fighter(Map map, int skip = 0)
         {
-            var p = TestSetup.Colonist(map, skip, x => !x.WorkTagIsDisabled(WorkTags.Violent) && x.health.summaryHealth.SummaryHealthPercent > 0.95f && !x.health.hediffSet.hediffs.Any(h => h is Hediff_Injury));
+            var p = TestSetup.Colonist(map, skip, x => !x.WorkTagIsDisabled(WorkTags.Violent) && x.health.summaryHealth.SummaryHealthPercent > 0.9f && !x.health.hediffSet.hediffs.Any(h => h is Hediff_Injury && h.def != PitSetup.Bruise));
             if (p == null) return null;
             if (p.Drafted) p.drafter.Drafted = false;
             return p;
@@ -418,7 +418,7 @@ namespace Hearth.Underworld
                 yield return 5;
                 var rk = PitFighters.Guest(kind); var rp = PitFighters.Guest(plain); var rs = PitFighters.Guest(shady);
                 t.Check(kind.WorkTagIsDisabled(WorkTags.Violent) || rk.Reason == UwPay.T("Pit.Why.Kind"), "kind guest: " + rk.Reason);
-                t.Check(plain.WorkTagIsDisabled(WorkTags.Violent) || rp.Reason == UwPay.T("Pit.Why.NoTaste"), "guest without taste: " + rp.Reason);
+                t.Check(plain.WorkTagIsDisabled(WorkTags.Violent) || rp.Reason == UwPay.T("Pit.Why.NoTaste"), "guest without taste: " + (rp.Reason ?? "ready") + " (traits " + string.Join("/", plain.story.traits.allTraits.Select(x => x.def.defName)) + ", melee " + plain.skills.GetSkill(SkillDefOf.Melee).Level + ", shady " + Underworld.IsShady(plain) + ")");
                 t.Check(shady.WorkTagIsDisabled(WorkTags.Violent) || rs.Reason == null || rs.Reason == UwPay.T("Pit.Why.Busy") || rs.Reason == UwPay.T("Pit.Why.Asleep"), "shady guest needs no trait or skill: " + (rs.Reason ?? "ready"));
                 // cache: the list is not rebuilt within 250 ticks unless asked
                 pit.allowGuests = true;
