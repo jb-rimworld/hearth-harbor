@@ -166,12 +166,14 @@ namespace Hearth.Shell
 
         // vanilla's own sorting icons (same paths as PawnColumnWorker); kept out of literal form so the placeholder tool never shadows them
         const string SortPath = "UI/Icons/Sorting", SortDescPath = "UI/Icons/SortingDescending";
-        static Texture2D sortUp, sortDown;
-        static Texture2D SortIcon(bool desc)
+        /// <summary>Loaded once on the main thread at startup (a lazy static texture field in GuestsPage itself made the game warn at startup).</summary>
+        [StaticConstructorOnStartup]
+        static class SortTex
         {
-            if (sortUp == null) { sortUp = ContentFinder<Texture2D>.Get(SortPath, false); sortDown = ContentFinder<Texture2D>.Get(SortDescPath, false); }
-            return desc ? sortDown : sortUp;
+            public static readonly Texture2D Up = ContentFinder<Texture2D>.Get(SortPath, false);
+            public static readonly Texture2D Down = ContentFinder<Texture2D>.Get(SortDescPath, false);
         }
+        static Texture2D SortIcon(bool desc) => desc ? SortTex.Down : SortTex.Up;
 
         static bool GuestsHearthTracked() => HearthUI.GuestsViaInn;
 

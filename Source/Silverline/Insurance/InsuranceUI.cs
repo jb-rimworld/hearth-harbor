@@ -33,7 +33,6 @@ namespace Silverline
         static Vector2 scrollShop, scrollMine, scrollClaims, scrollFine, scrollCover;
         static readonly Dictionary<string, CardState> cards = new Dictionary<string, CardState>();
         static readonly HashSet<int> expandedClaims = new HashSet<int>();
-        static Texture2D logo; static bool logoTried;
 
         // palette: Clawback Mutual blue in its own window; inside the bank window the lobby look (walnut, brass, green) so the bank stays one place (KONZEPT 8.4)
         [ThreadStatic] static bool bankSkin;
@@ -56,14 +55,7 @@ namespace Silverline
             try { Draw(rect); } finally { bankSkin = was; }
         }
 
-        public static Texture2D Logo
-        {
-            get
-            {
-                if (!logoTried) { logoTried = true; logo = ContentFinder<Texture2D>.Get("UI/HH/Insurance/ClawbackLogo", false); }
-                return logo;
-            }
-        }
+        public static Texture2D Logo => SilverlineTex.ClawbackLogo;
 
         /// <summary>Selects the page of the desk (0 policies, 1 my policies, 2 claims, 3 fine print) and optionally expands cards. Used by tests and screenshots.</summary>
         public static void ShowPage(int p, bool expandAll = false)

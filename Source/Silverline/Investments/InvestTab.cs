@@ -86,13 +86,11 @@ namespace Silverline
         }
 
         // ---- news ticker ---------------------------------------------------------------------------------------------------------------
-        static Texture2D iconChance, iconYou;
         static void DrawNews(Rect r, FinanceGame g)
         {
             Widgets.DrawBoxSolid(r, FinUi.Panel);
             FinUi.Label(new Rect(r.x + 4, r.y, 160, 16), FT.T("HH.Finance.News.Title"), GameFont.Tiny, FinUi.Dim);
-            iconChance = iconChance ?? ContentFinder<Texture2D>.Get("UI/HH/Finance/NewsChance", false);
-            iconYou = iconYou ?? ContentFinder<Texture2D>.Get("UI/HH/Finance/NewsYou", false);
+            Texture2D iconChance = SilverlineTex.NewsChance, iconYou = SilverlineTex.NewsYou;
             float y = r.y + 16f; int shown = 0;
             for (int i = g.news.Count - 1; i >= 0 && shown < 3; i--, shown++)
             {

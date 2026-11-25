@@ -16,6 +16,8 @@ namespace Hearth.Casino.PlayerHouse
     public static class ThrumboIcons
     {
         public static readonly Texture2D Logo = ContentFinder<Texture2D>.Get("UI/HH/Casino/LuckyThrumbo", false) ?? BaseContent.BadTex;
+        /// <summary>Square mark for the comms console entry; null when missing (the console then shows its vanilla fallback).</summary>
+        public static readonly Texture2D Mark = ContentFinder<Texture2D>.Get("UI/HH/Casino/ThrumboMark", false);
     }
 
     /// <summary>

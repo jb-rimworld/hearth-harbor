@@ -35,18 +35,10 @@ namespace Silverline
             return FloatMenuUtility.DecoratePrioritizedTask(opt, negotiator, console);
         }
 
-        static Texture2D silverlineMark, financeMark; static bool marksTried;
-        static void LoadMarks()
-        {
-            if (marksTried) return;
-            marksTried = true;
-            silverlineMark = ContentFinder<Texture2D>.Get("UI/HH/Bank/SilverlineMark", false);
-            financeMark = ContentFinder<Texture2D>.Get("UI/HH/Finance/FinanceMark", false);
-        }
-        /// <summary>Silverline's own coin mark (comms console entry before an account exists).</summary>
-        public static Texture2D SilverlineMark { get { LoadMarks(); return silverlineMark; } }
+        /// <summary>Silverline's own coin mark (comms console entry before an account exists). Textures live in SilverlineTex.</summary>
+        public static Texture2D SilverlineMark => SilverlineTex.SilverlineMark;
         /// <summary>Investments and lottery mark.</summary>
-        public static Texture2D FinanceMark { get { LoadMarks(); return financeMark; } }
+        public static Texture2D FinanceMark => SilverlineTex.FinanceMark;
     }
 
     /// <summary>"Call Silverline" in the comms console menu (8.2).</summary>
