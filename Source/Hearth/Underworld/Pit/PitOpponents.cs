@@ -71,7 +71,7 @@ namespace Hearth.Underworld
             if (FightBout.OfPit(pit) != null) return UwPay.T("Pit.Why.BoutRunning");
             if (pit.HasBeast) return UwPay.T("Pit.Why.BeastThere");
             if (fighter == null) return UwPay.T("Pit.Why.NoLoneFighter");
-            if (Ledger.Current.Balance(Underworld.Till(pit.Map)) < Fee) return UwPay.T("Pit.Why.TillShort", Fee.ToStringShort());
+            if (Ledger.Current.Balance(Underworld.Till(pit.Map)) < Fee) return UwPay.T("Pit.Why.TillShort", PitFighters.Silver(Fee));
             if (KindFor(PitFighters.Power(fighter), pit.Map) == null) return UwPay.T("Pit.Why.NoBeastKind");
             return null;
         }
@@ -123,9 +123,9 @@ namespace Hearth.Underworld
             if (!Ledger.Current.Post(Underworld.Till(map), "world", Fee, "Fight pit: opponent fee"))
             {
                 Dismiss(beast); pit.RemoveBeast(beast);
-                why = UwPay.T("Pit.Why.TillShort", Fee.ToStringShort()); return null;
+                why = UwPay.T("Pit.Why.TillShort", PitFighters.Silver(Fee)); return null;
             }
-            HLog.Info("Underworld", $"Pit beast hired: {beast.LabelShort} ({kind.defName}, power {kind.combatPower:0}) for {fighter.LabelShort} (power {PitFighters.Power(fighter):0}), fee {Fee.ToStringShort()}");
+            HLog.Info("Underworld", $"Pit beast hired: {beast.LabelShort} ({kind.defName}, power {kind.combatPower:0}) for {fighter.LabelShort} (power {PitFighters.Power(fighter):0}), fee {PitFighters.Silver(Fee)}");
             var bout = FightBout.Start(pit, fighter, beast, false, 300, manual: true);
             if (bout == null) { Dismiss(beast); pit.RemoveBeast(beast); why = UwPay.T("Pit.Why.NoBout"); }
             return bout;

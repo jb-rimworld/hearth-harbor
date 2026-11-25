@@ -208,7 +208,7 @@ namespace Hearth.Underworld
             if (lastTick < 0 || lastA == null) return null;
             if (lastWinner < 0) return UwPay.T("Pit.Last.Draw", lastA, lastB);
             string w = lastWinner == 0 ? lastA : lastB, l = lastWinner == 0 ? lastB : lastA;
-            return UwPay.T("Pit.Last", w, l, new Money(lastPoolMicro).ToStringShort(), new Money(lastHouseMicro).ToStringShort());
+            return UwPay.T("Pit.Last", w, l, PitFighters.Silver(new Money(lastPoolMicro)), PitFighters.Silver(new Money(lastHouseMicro)));
         }
 
         public override string CompInspectStringExtra()
@@ -252,7 +252,7 @@ namespace Hearth.Underworld
             var lone = LoneFighter();
             var hire = new Command_Action
             {
-                defaultLabel = UwPay.T("Pit.CallOpponent", PitOpponents.Fee.ToStringShort()), defaultDesc = UwPay.T("Pit.CallOpponent.Desc", PitOpponents.Fee.ToStringShort()), icon = PitSetup.IconOpponent,
+                defaultLabel = UwPay.T("Pit.CallOpponent", PitFighters.Silver(PitOpponents.Fee)), defaultDesc = UwPay.T("Pit.CallOpponent.Desc", PitFighters.Silver(PitOpponents.Fee)), icon = PitSetup.IconOpponent,
                 action = () => { var f = LoneFighter(); if (PitOpponents.HireBeast(this, f, out string why) == null) Messages.Message(UwPay.T("Pit.CannotStart", why), parent, MessageTypeDefOf.RejectInput, false); }
             };
             string hw = PitOpponents.CannotHire(this, lone);
@@ -303,7 +303,7 @@ namespace Hearth.Underworld
             }
             yield return new FloatMenuOption(label + ": " + UwPay.T("Pit.Why.NoOpponent"), null);
             string hw = PitOpponents.CannotHire(this, selPawn);
-            var hire = new FloatMenuOption(UwPay.T("Pit.CallOpponent", PitOpponents.Fee.ToStringShort()) + (hw != null ? ": " + hw : ""), hw != null ? (Action)null : () =>
+            var hire = new FloatMenuOption(UwPay.T("Pit.CallOpponent", PitFighters.Silver(PitOpponents.Fee)) + (hw != null ? ": " + hw : ""), hw != null ? (Action)null : () =>
             {
                 SetTicked(selPawn, true);
                 if (PitOpponents.HireBeast(this, selPawn, out string why) == null) Messages.Message(UwPay.T("Pit.CannotStart", why), parent, MessageTypeDefOf.RejectInput, false);
@@ -725,6 +725,8 @@ namespace Hearth.Underworld
             last = now;
             var a = Pit.ArenaInfo(); if (a == null || a.Cells.Count == 0) return;
             var cell = a.Cells[JRand.Stream("underworld.pit.cell").Range(0, a.Cells.Count)];
+            // prisoners are always brought in by the guards (and back to their cell afterwards), never walked across the colony
+            if (p.IsPrisoner) { PitOpponents.BringIn(p, cell); return; }
             if (!p.CanReach(cell, PathEndMode.OnCell, Danger.Deadly))
             {
                 // animals cannot open fence gates and prisoners cannot leave the prison: their handlers bring them in (and back afterwards).
@@ -872,8 +874,8 @@ namespace Hearth.Underworld
             Pit?.Record(this, Result.PoolMicro, Math.Max(0L, rest.Micro));
             var w = winnerSide == 0 ? A : B; var lo = winnerSide == 0 ? B : A;
             string text = Draw ? UwPay.T("Pit.Result.Draw", A?.LabelShortCap ?? "-", B?.LabelShortCap ?? "-")
-                : UwPay.T("Pit.Result.Won", w?.LabelShortCap ?? "-", lo?.LabelShortCap ?? "-", new Money(Result.PoolMicro).ToStringShort(), new Money(Math.Max(0L, rest.Micro)).ToStringShort());
-            if (PursePaid.Micro > 0) text += " " + UwPay.T("Pit.PursePaid", w?.LabelShortCap ?? "-", PursePaid.ToStringShort());
+                : UwPay.T("Pit.Result.Won", w?.LabelShortCap ?? "-", lo?.LabelShortCap ?? "-", PitFighters.Silver(new Money(Result.PoolMicro)), PitFighters.Silver(new Money(Math.Max(0L, rest.Micro))));
+            if (PursePaid.Micro > 0) text += " " + UwPay.T("Pit.PursePaid", w?.LabelShortCap ?? "-", PitFighters.Silver(PursePaid));
             LastMessage = text;
             Messages.Message(text, Pit?.parent, MessageTypeDefOf.NeutralEvent, false);
             HLog.Info("Underworld", $"Bout settled: winner side {winnerSide}, pool {Result.PoolMicro / 100000.0:0.##}, house {Result.HouseMicro / 100000.0:0.##}, purse {PursePaid.ToStringShort()}, bets {Bets.Count}, points {ScoreA:0}/{LimitA:0} vs {ScoreB:0}/{LimitB:0}");

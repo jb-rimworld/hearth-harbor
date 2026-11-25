@@ -58,13 +58,14 @@ namespace Hearth.Underworld
         /// <summary>What a fighter is before the bout; compared afterwards (no injury beyond bruises, gear, lord, toil, guilt, HarmedMe).</summary>
         public sealed class Snap
         {
-            public Pawn P; public int Injuries; public float InjurySeverity, Bleed; public Thing Weapon; public int Apparel, Items; public Lord Lord; public LordToil Toil; public bool Hostile;
+            public Pawn P; public int Injuries, Bruises; public float InjurySeverity, Bleed, BruiseSeverity; public Thing Weapon; public int Apparel, Items; public Lord Lord; public LordToil Toil; public bool Hostile;
             public static Snap Of(Pawn p) => new Snap
             {
-                P = p, Injuries = Inj(p).Count(), InjurySeverity = Inj(p).Sum(h => h.Severity), Bleed = p.health.hediffSet.BleedRateTotal, Weapon = p.equipment?.Primary,
+                P = p, Injuries = Inj(p).Count(), InjurySeverity = Inj(p).Sum(h => h.Severity), Bleed = p.health.hediffSet.BleedRateTotal, Bruises = Br(p).Count(), BruiseSeverity = Br(p).Sum(h => h.Severity), Weapon = p.equipment?.Primary,
                 Apparel = p.apparel?.WornApparelCount ?? 0, Items = NonSilver(p), Lord = p.GetLord(), Toil = p.GetLord()?.CurLordToil, Hostile = p.HostileTo(Faction.OfPlayer)
             };
             static IEnumerable<Hediff> Inj(Pawn p) => p.health.hediffSet.hediffs.Where(h => h is Hediff_Injury && h.def != PitSetup.Bruise);
+            static IEnumerable<Hediff> Br(Pawn p) => p.health.hediffSet.hediffs.Where(h => h.def == PitSetup.Bruise);
             static int NonSilver(Pawn p) => p.inventory?.innerContainer?.Count(t => t.def != ThingDefOf.Silver) ?? 0;
 
             public void Check(TestContext t, string who, Pawn other)
@@ -73,6 +74,8 @@ namespace Hearth.Underworld
                 t.Check(!p.Dead && !p.Downed && p.Spawned, who + ": alive, up and on the map");
                 t.Check(Inj(p).Count() == Injuries && Math.Abs(Inj(p).Sum(h => h.Severity) - InjurySeverity) < 0.01f, who + ": no injury beyond bruises (" + Injuries + " -> " + Inj(p).Count() + ", bruises " + p.health.hediffSet.hediffs.Count(h => h.def == PitSetup.Bruise) + ")");
                 t.Check(p.health.hediffSet.BleedRateTotal <= Bleed + 0.0001f, who + ": bleeds no more than before");
+                int nb = Br(p).Count() - Bruises; float sb = Br(p).Sum(h => h.Severity) - BruiseSeverity;
+                t.Check(nb >= 0 && nb <= 2 && sb <= 5.01f, who + ": at most the two small bruises of the loser (" + nb + " new, severity " + sb.ToString("0.0") + ")");
                 t.Check(p.equipment?.Primary == Weapon && (p.apparel?.WornApparelCount ?? 0) == Apparel && NonSilver(p) == Items, who + ": gear still carried (weapon, " + Apparel + " apparel, " + Items + " items)");
                 t.Check(p.GetLord() == Lord && p.GetLord()?.CurLordToil == Toil, who + ": same lord and lord toil (" + Toil?.GetType().Name + " -> " + p.GetLord()?.CurLordToil?.GetType().Name + ")");
                 t.Check(p.HostileTo(Faction.OfPlayer) == Hostile, who + ": hostility unchanged");
@@ -91,6 +94,20 @@ namespace Hearth.Underworld
             int waited = 0;
             while (!b.Finished && waited < max) { yield return 60; waited += 60; }
             t.Note($"bout {b.A?.LabelShort} vs {b.B?.LabelShort}: finished={b.Finished} after {waited} ticks, fight {(b.FightTick > 0 ? Find.TickManager.TicksGame - b.FightTick : -1)} ticks, points {b.ScoreA:0}/{b.LimitA:0} vs {b.ScoreB:0}/{b.LimitB:0}, winner {b.WinnerSide}");
+        }
+
+        /// <summary>Waits after a bout and notes every change of job, mental state, downed state and bruise count of the two (diagnosis of after-bout fights).</summary>
+        public static IEnumerable<int> Watch(TestContext t, Pawn a, Pawn b, int ticks)
+        {
+            string Line(Pawn p) => p.LabelShort + ":" + (p.CurJobDef?.defName ?? "-") + (p.CurJob?.targetA.Thing is Pawn tp ? ">" + tp.LabelShort : "") + (p.InMentalState ? " mental=" + p.MentalStateDef.defName : "") + (p.Downed ? " DOWNED" : "") + (p.Spawned ? "" : " unspawned")
+                + " bruises=" + p.health.hediffSet.hediffs.Count(h => h.def == PitSetup.Bruise) + " threat=" + (p.mindState?.meleeThreat?.LabelShort ?? "-");
+            string last = null;
+            for (int w = 0; w < ticks; w += 30)
+            {
+                string now = Line(a) + " | " + Line(b);
+                if (now != last) { t.Note("after the bout +" + w + ": " + now); last = now; }
+                yield return 30;
+            }
         }
 
         /// <summary>One Inn day guest (registered stay) when the Inn is on, else null.</summary>
@@ -150,7 +167,7 @@ namespace Hearth.Underworld
                     foreach (var w in PitKit.Await(t, bout)) yield return w;
                     t.Check(bout.Finished && bout.Result != null, "the bout came to a result");
                     t.Check(bout.ScoreA + bout.ScoreB > 0f, "hits were scored: " + bout.ScoreA.ToString("0") + " / " + bout.ScoreB.ToString("0"));
-                    yield return 600;   // the after-bout window in which a victim would swing back for real
+                    foreach (var w in PitKit.Watch(t, col, guest, 600)) yield return w;   // the after-bout window in which a victim would swing back for real
                     t.Check(PitKit.GoodwillDiff(gw) == "none", "goodwill of every faction unchanged: " + PitKit.GoodwillDiff(gw));
                     sc.Check(t, "colonist", guest);
                     sg.Check(t, "guest", col);
@@ -179,7 +196,7 @@ namespace Hearth.Underworld
                 t.Check(gg.TryBet(gs[2], 0, 100) && gg.TryBet(gs[3], 1, 100), "two bets placed");
                 t.Check(!gg.TryBet(gs[0], 1, 10), "a fighter cannot bet on his own bout");
                 foreach (var w in PitKit.Await(t, gg)) yield return w;
-                yield return 600;
+                foreach (var w in PitKit.Watch(t, gs[0], gs[1], 600)) yield return w;
                 t.Check(gg.Finished && gg.Result != null, "guest bout came to a result");
                 t.Check(PitKit.GoodwillDiff(gw2) == "none", "goodwill unchanged after the guest bout: " + PitKit.GoodwillDiff(gw2));
                 s0.Check(t, "guest A", gs[1]); s1.Check(t, "guest B", gs[0]);
@@ -227,7 +244,7 @@ namespace Hearth.Underworld
             // an empty till disables the gizmo with the reason
             var tillAcc = Underworld.Till(map); var have = Ledger.Current.Balance(tillAcc);
             if (have.Micro > 0) Ledger.Current.Post(tillAcc, "world", have, "test: empty till");
-            t.Check(PitOpponents.CannotHire(pit, col) == UwPay.T("Pit.Why.TillShort", fee.ToStringShort()), "empty till: " + PitOpponents.CannotHire(pit, col));
+            t.Check(PitOpponents.CannotHire(pit, col) == UwPay.T("Pit.Why.TillShort", PitFighters.Silver(fee)), "empty till: " + PitOpponents.CannotHire(pit, col));
             Payments.CreditColony(map, Money.FromSilver(100), "test");
             var till0 = UwKit.Till(map);
             var gw = PitKit.Goodwill(); var sc = PitKit.Snap.Of(col);
@@ -300,6 +317,38 @@ namespace Hearth.Underworld
                 t.Check(!animal.Dead && !animal.Downed && animal.health.hediffSet.hediffs.Count(h => h is Hediff_Injury && h.def != PitSetup.Bruise) == sa.Injuries, "animal unhurt beyond bruises");
             }
             pit.pickA = pit.pickB = null; pit.SetTicked(col, false);
+            // a prisoner of a friendly faction against an animal (real damage, non-lethal): brought in and back, no escape, no goodwill
+            var f = UwKit.Friendly();
+            if (f != null)
+            {
+                pit.allowPrisoners = true;
+                var pr = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Villager, f, PawnGenerationContext.NonPlayer, map.Tile, canGeneratePawnRelations: false, mustBeCapableOfViolence: true));
+                if (!pr.DevelopmentalStage.Adult()) { pr.ageTracker.AgeBiologicalTicks = 25L * 3600000L; pr.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
+                var home = CellFinder.RandomClosewalkCellNear(outside, map, 3);
+                GenSpawn.Spawn(pr, home, map); UwKit.Track(pr);
+                pr.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
+                var beast2 = UwKit.TameAnimal(map, CellFinder.RandomClosewalkCellNear(outside, map, 2), "Boar", "Muffalo");
+                var from = pr.Position;
+                var gw = PitKit.Goodwill();
+                var pb = FightBout.Start(pit, pr, beast2, false, 60, manual: true);
+                t.Check(pb != null && !pb.Scored && pb.NonLethal, "prisoner against animal: real damage, non-lethal");
+                if (pb != null)
+                {
+                    int waited = 0; bool seenIn = false, escaped = false;
+                    while (!pb.Finished && waited < 12000)
+                    {
+                        yield return 30; waited += 30;
+                        if (pit.ArenaInfo().Cells.Contains(pr.Position)) seenIn = true;
+                        if (pr.CurJob != null && pr.CurJob.exitMapOnArrival) escaped = true;
+                    }
+                    t.Check(pb.Finished && seenIn, "the prisoner was brought into the arena and the bout ended (" + waited + " ticks)");
+                    t.Check(!escaped, "the prisoner never tried to escape");
+                    yield return 60;
+                    t.Check(pr.Spawned && pr.IsPrisonerOfColony && !pit.ArenaInfo().Cells.Contains(pr.Position) && pr.Position.DistanceTo(from) < 8f, "the prisoner is back where he was (" + from + " -> " + pr.Position + ")");
+                    t.Check(!pr.Dead && !beast2.Dead, "nobody died");
+                    t.Check(PitKit.GoodwillDiff(gw) == "none", "goodwill of the prisoner's faction unchanged: " + PitKit.GoodwillDiff(gw));
+                }
+            }
             UwKit.End();
         }
     }
@@ -402,7 +451,7 @@ namespace Hearth.Underworld
             catch (Exception e) { ok = false; err = e.Message; try { Scribe.ForceStop(); } catch { } }
             t.Check(ok, "pit fields written and read back " + err);
             t.Check(copy.allowVolunteers && !copy.allowGuests && copy.lastA == "Alpha" && copy.lastWinner == 1 && copy.lastPoolMicro == 8400000 && copy.settled == 3, "old allowVolunteers, new allowGuests and the last bout survive");
-            t.Check(copy.LastBoutLine() == UwPay.T("Pit.Last", "Beta", "Alpha", new Money(8400000).ToStringShort(), new Money(800000).ToStringShort()), "last bout line: " + copy.LastBoutLine());
+            t.Check(copy.LastBoutLine() == UwPay.T("Pit.Last", "Beta", "Alpha", PitFighters.Silver(new Money(8400000)), PitFighters.Silver(new Money(800000))), "last bout line: " + copy.LastBoutLine());
             try { System.IO.File.Delete(path); } catch { }
             foreach (var p in oldTicked) pit.SetTicked(p, true);
             UwKit.End();

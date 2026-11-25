@@ -168,5 +168,8 @@ namespace Hearth.Underworld
         }
 
         public static string KindLabel(PitKind k) => UwPay.T("Pit.Kind." + k);
+
+        /// <summary>Silver for the pit's texts: whole coins ("84", not "84.00").</summary>
+        public static string Silver(Money m) => Math.Round(m.Silver, MidpointRounding.AwayFromZero).ToString("0");
     }
 }
