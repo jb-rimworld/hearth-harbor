@@ -175,7 +175,7 @@ namespace Hearth.Shell
             var t = HearthMod.Template.Profile;
             var keep = UiState.OwnKeys().Where(k => cur.Store.Has(k)).Select(k => { cur.Store.TryGet(k, out float v); return new KeyValuePair<string, float>(k, v); }).ToList();
             cur.modules = new Dictionary<ModuleId, bool>(t.modules);
-            cur.Tier = t.Tier; cur.Content = t.Content; cur.UnderworldDiscovered = t.UnderworldDiscovered;
+            cur.Tier = t.Tier; cur.Content = t.Content;
             cur.Store = t.Store.Clone();
             foreach (var kv in keep) cur.Store.Set(kv.Key, kv.Value);
             Messages.Message("HH.UI.Settings.TemplateApplied".Translate(), MessageTypeDefOf.TaskCompletion, false);
@@ -358,11 +358,9 @@ namespace Hearth.Shell
                 float lw = ModLabelW(w);
                 string descText = avail ? ("HH.UI.ModuleDesc." + m).Translate().ToString() : "HH.UI.Modules.NotInstalled".Translate().ToString();
                 float descW = w - lw - 70f - (ScenarioMode ? ScenResetW : 0f) - 12f;
-                float h = m == ModuleId.Underworld ? 44f : Mathf.Max(44f, HUI.TextH(descText, descW, GameFont.Tiny) + 12f);
+                float h = Mathf.Max(44f, HUI.TextH(descText, descW, GameFont.Tiny) + 12f);
                 var row = new Rect(0, y, w, h);
                 if (Mouse.IsOver(row)) Widgets.DrawHighlight(row);
-                if (m == ModuleId.Underworld) DrawUnderworld(row, target, avail);
-                else
                 {
                     bool on = target.ModuleOn(m), nb = on;
                     Widgets.Checkbox(new Vector2(row.x + 4f, row.y + (h - 24f) / 2f), ref nb, 24f, !avail);
@@ -397,25 +395,12 @@ namespace Hearth.Shell
             return y;
         }
 
-        /// <summary>Dark and Grim need a confirmation right where they are chosen (same text as the in-game content warning).</summary>
+        /// <summary>The choice applies at once (1.2.0: no confirmation dialog; the chip tooltips say what Dark and Grim add).</summary>
         static void ChooseContent(HearthProfile target, ContentIntensity c)
         {
-            if (c < ContentIntensity.Dark || target.Content == c || target.Content >= ContentIntensity.Dark && c <= target.Content) { target.Content = c; return; }
-            var previous = target.Content;
-            var node = new DiaNode((c >= ContentIntensity.Grim ? "HH.Underworld.Warn.Grim" : "HH.Underworld.Warn.Dark").Translate());
-            node.options.Add(new DiaOption("HH.Underworld.Warn.Accept".Translate())
-            {
-                action = () =>
-                {
-                    target.Content = c;
-                    // only the running game's own profile acknowledges the warning of the running game (the mod-wide template does not)
-                    var comp = Hearth.Underworld.Underworld.Comp; if (comp != null && target == HearthProfile.Current) comp.ContentWarningAck = true;
-                    HLog.Info("UI", "Content " + c + " confirmed in settings");
-                },
-                resolveTree = true
-            });
-            node.options.Add(new DiaOption("HH.UI.Content.Decline".Translate(("HH.UI.Content." + previous).Translate())) { action = () => target.Content = previous, resolveTree = true });
-            Find.WindowStack.Add(new Dialog_NodeTree(node, true, false, "HH.Underworld.Warn.Title".Translate()));
+            if (target.Content == c) return;
+            target.Content = c;
+            HLog.Info("UI", "Content " + c + " chosen in settings");
         }
 
         const float ScenResetW = 56f;
@@ -429,30 +414,7 @@ namespace Hearth.Shell
             Widgets.DrawBoxSolid(new Rect(row.x, row.y + 4f, 2f, row.height - 8f), UiStyle.Amber);
             var b = new Rect(row.xMax - ScenResetW + 4f, row.y + (row.height - 22f) / 2f, ScenResetW - 6f, 22f);
             TooltipHandler.TipRegion(b, "HH.Scen.Editor.ModuleResetTip".TranslateOr("Leave this module to the player's template."));
-            if (Widgets.ButtonText(b, "HH.UI.Row.Reset".Translate()))
-            {
-                target.modules.Remove(m);
-                if (m == ModuleId.Underworld) target.UnderworldDiscovered = false;
-            }
-        }
-
-        static void DrawUnderworld(Rect row, HearthProfile target, bool avail)
-        {
-            bool on = target.ModuleOn(ModuleId.Underworld);
-            float lw = ModLabelW(row.width);
-            HHIcons.Draw(new Rect(row.x + 34f, row.y + (row.height - 24f) / 2f, 24f, 24f), HHIcons.Module(ModuleId.Underworld), !avail || !on);
-            UiStyle.LabelColored(new Rect(row.x + 66f, row.y, lw, row.height), Modules.Label(ModuleId.Underworld), avail ? Color.white : UiStyle.DimGrey, TextAnchor.MiddleLeft);
-            int state = !on ? 2 : (target.UnderworldDiscovered ? 1 : 0); // 0 discover, 1 on, 2 off
-            float x = row.x + 70f + lw, cw = Mathf.Min(150f, (row.width - 80f - lw - (ScenarioMode ? ScenResetW : 0f)) / 3f - 4f);
-            string[] names = { "HH.UI.Underworld.Discover", "HH.UI.Underworld.On", "HH.UI.Underworld.Off" };
-            for (int i = 0; i < 3; i++)
-            {
-                if (UiStyle.Chip(new Rect(x + i * (cw + 4f), row.y + (row.height - 30f) / 2f, cw, 30f), names[i].Translate(), state == i, (names[i] + ".Tip").Translate(), avail))
-                {
-                    target.SetModule(ModuleId.Underworld, i != 2);
-                    target.UnderworldDiscovered = i == 1;
-                }
-            }
+            if (Widgets.ButtonText(b, "HH.UI.Row.Reset".Translate())) target.modules.Remove(m);
         }
 
         static float DrawAbout(float w)
