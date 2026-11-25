@@ -13,22 +13,23 @@ namespace Hearth.Underworld
     /// <summary>Finds the fenced area around a marker: flood fill over walkable cells; doors, walls and fences are the boundary. Open areas (reaching the map edge or too big) are invalid.</summary>
     public static class Arena
     {
-        public sealed class Info { public List<IntVec3> Cells = new List<IntVec3>(); public bool Closed; public IntVec3 Center; public int Builtick; }
+        /// <summary>Closed: the fill stopped at fences, walls and doors. ReachedEdge: it reached the map edge. TooBig: it passed the cap before either (an open area or a very big pen).</summary>
+        public sealed class Info { public List<IntVec3> Cells = new List<IntVec3>(); public bool Closed, ReachedEdge, TooBig; public int Cap; public IntVec3 Center; public int Builtick; }
 
         public static Info Flood(Map map, IntVec3 start, int cap)
         {
-            var info = new Info { Builtick = Find.TickManager.TicksGame };
+            var info = new Info { Builtick = Find.TickManager.TicksGame, Cap = cap };
             var seen = new HashSet<IntVec3> { start }; var q = new Queue<IntVec3>(); q.Enqueue(start);
             bool leaked = false;
             while (q.Count > 0)
             {
                 var c = q.Dequeue();
                 info.Cells.Add(c);
-                if (info.Cells.Count > cap) { leaked = true; break; }
+                if (info.Cells.Count > cap) { leaked = true; info.TooBig = true; break; }
                 for (int i = 0; i < 4; i++)
                 {
                     var n = c + GenAdj.CardinalDirections[i];
-                    if (!n.InBounds(map)) { leaked = true; continue; }
+                    if (!n.InBounds(map)) { leaked = true; info.ReachedEdge = true; continue; }
                     if (seen.Contains(n)) continue;
                     if (!n.Walkable(map) || n.GetDoor(map) != null) continue;
                     seen.Add(n); q.Enqueue(n);
@@ -74,12 +75,18 @@ namespace Hearth.Underworld
         public int nextBoutTick = -1;
         List<Pawn> ticked = new List<Pawn>();
         List<Pawn> beastList = new List<Pawn>();
+        /// <summary>Pawns this pit brought into the arena (animals behind a pen fence, prisoners) and the cell each came from. Saved, so a game loaded in
+        /// the middle of a bout (bouts are not saved) still takes them back: a prisoner left in the open arena would otherwise walk off.</summary>
+        List<Pawn> broughtIn = new List<Pawn>(); List<IntVec3> broughtFrom = new List<IntVec3>();
         // last bout (kept for the inspect string and the Underworld tab)
         public string lastA, lastB; public int lastWinner = -2, lastTick = -1, settled; public long lastPoolMicro, lastHouseMicro;
         // transient
         Arena.Info cache;
         List<PitCandidate> cands; int candTick = int.MinValue;
         int lastAbortMsgTick = -999999;
+        /// <summary>Why the last automatic attempt found no bout (translated, e.g. "no fair pair of fighters"), shown in the status line until the next
+        /// attempt succeeds or the fighters change. Not saved.</summary>
+        internal string lastAutoFail;
         /// <summary>Sides picked in the Fighters window (null = anyone suitable). Not saved.</summary>
         public Pawn pickA, pickB;
         /// <summary>A colonist who asked to fight (right-click) while a bout was running; starts the next bout. Not saved.</summary>
@@ -96,9 +103,20 @@ namespace Hearth.Underworld
             if (cache == null || Find.TickManager.TicksGame - cache.Builtick > 250 || Find.TickManager.TicksGame < cache.Builtick) cache = Arena.Flood(parent.Map, parent.Position, 700);
             return cache;
         }
-        public void Invalidate() { cache = null; cands = null; guestsDirty = true; }
+        public void Invalidate() { cache = null; cands = null; guestsDirty = true; lastAutoFail = null; }
 
-        public bool ArenaValid => ArenaInfo() is Arena.Info a && a.Closed && a.Cells.Count >= 9;
+        public const int MinArenaCells = 9;
+        public bool ArenaValid => ArenaInfo() is Arena.Info a && a.Closed && a.Cells.Count >= MinArenaCells;
+
+        /// <summary>What is wrong with the arena (translated), or null when it is fine: open at the map edge, open or bigger than the cap, too small.</summary>
+        public string ArenaProblem()
+        {
+            var a = ArenaInfo();
+            if (a == null) return UwPay.T("Pit.ArenaOpen");
+            if (a.Closed) return a.Cells.Count >= MinArenaCells ? null : UwPay.T("Pit.ArenaSmall", a.Cells.Count, MinArenaCells);
+            if (a.TooBig) return UwPay.T("Pit.ArenaBig", a.Cap);
+            return UwPay.T("Pit.ArenaOpen");
+        }
 
         // ---- ticked colonists, beasts ----------------------------------------------------------------------
         public bool IsTicked(Pawn p) => p != null && ticked.Contains(p);
@@ -106,7 +124,7 @@ namespace Hearth.Underworld
         {
             if (p == null) return;
             if (on) { if (!ticked.Contains(p)) ticked.Add(p); } else ticked.Remove(p);
-            cands = null;
+            cands = null; lastAutoFail = null;
         }
         public IReadOnlyList<Pawn> Ticked => ticked;
         public bool HasBeast { get { for (int i = 0; i < beastList.Count; i++) if (beastList[i] != null && !beastList[i].Destroyed) return true; return false; } }
@@ -114,8 +132,39 @@ namespace Hearth.Underworld
         internal void RemoveBeast(Pawn p) { beastList.Remove(p); cands = null; }
         internal void NoteBeasts() { foreach (var b in beastList) PitOpponents.NoteBeast(b); }
 
-        /// <summary>Beasts with no bout of their own left (after a load, an abort, a removed pit) are sent back. Called by the bout caretaker.</summary>
-        internal int DismissIdleBeasts()
+        internal void NoteBroughtIn(Pawn p, IntVec3 from)
+        {
+            if (p == null || broughtIn.Contains(p)) return;
+            broughtIn.Add(p); broughtFrom.Add(from);
+        }
+        internal void ForgetBroughtIn(Pawn p)
+        {
+            int i = broughtIn.IndexOf(p);
+            if (i < 0) return;
+            broughtIn.RemoveAt(i); if (i < broughtFrom.Count) broughtFrom.RemoveAt(i);
+        }
+        public bool WasBroughtIn(Pawn p) => p != null && broughtIn.Contains(p);
+
+        /// <summary>Takes back every pawn this pit brought in that has no bout any more (after a load or a removed pit). Returns how many.</summary>
+        internal int TakeBackIdle()
+        {
+            int n = 0;
+            for (int i = broughtIn.Count - 1; i >= 0; i--)
+            {
+                var p = broughtIn[i];
+                if (p != null && FightBout.OfPawn(p) != null) continue;
+                var from = i < broughtFrom.Count ? broughtFrom[i] : IntVec3.Invalid;
+                broughtIn.RemoveAt(i); if (i < broughtFrom.Count) broughtFrom.RemoveAt(i);
+                if (p == null) continue;
+                PitOpponents.TakeBackTo(p, from);
+                n++;
+            }
+            return n;
+        }
+
+        /// <summary>Beasts with no bout of their own left (after a load, an abort, a removed pit) are sent back. Called by the bout caretaker.
+        /// <paramref name="refund"/>: the bout of such a beast was lost with a load (bouts are not saved), so its fee goes back to the till.</summary>
+        internal int DismissIdleBeasts(bool refund = false)
         {
             int n = 0;
             for (int i = beastList.Count - 1; i >= 0; i--)
@@ -123,7 +172,10 @@ namespace Hearth.Underworld
                 var b = beastList[i];
                 if (b != null && FightBout.OfPawn(b) != null) continue;
                 beastList.RemoveAt(i);
-                if (b != null) { PitOpponents.Dismiss(b); n++; }
+                if (b == null) continue;
+                var map = b.MapHeld ?? (parent.Spawned ? parent.Map : null);
+                PitOpponents.Dismiss(b); n++;
+                if (refund && map != null) Ledger.Current.Post("world", Underworld.Till(map), PitOpponents.Fee, "Fight pit: opponent fee refunded (bout lost with a load)");
             }
             if (n > 0) cands = null;
             return n;
@@ -159,13 +211,15 @@ namespace Hearth.Underworld
         }
 
         /// <summary>Why this pit holds no bout at all right now (translated), or null when it is open: module/Cozy, peaceful switch, closed, open arena.</summary>
-        public string ClosedReason()
+        public string ClosedReason() => GateReason() ?? ArenaProblem();
+
+        /// <summary>The part of <see cref="ClosedReason"/> that is not about the arena: module/Cozy, peaceful switch, pit closed.</summary>
+        string GateReason()
         {
             if (!Underworld.Visible) return UwPay.T("Pit.Status.Off");
             if (Underworld.Peaceful) return UwPay.T("Pit.Status.Peaceful");
             if (!Underworld.Allows(UwFeature.PitToIncapacitation)) return UwPay.T("Pit.Status.Off");
             if (!enabled) return UwPay.T("Pit.Status.Closed");
-            if (!ArenaValid) return UwPay.T("Pit.ArenaOpen");
             return null;
         }
 
@@ -188,10 +242,14 @@ namespace Hearth.Underworld
         {
             var b = FightBout.OfPit(this);
             if (b != null) return UwPay.T("Pit.Status.Running", b.A?.LabelShortCap ?? "?", b.B?.LabelShortCap ?? "?");
-            string closed = ClosedReason();
-            if (closed != null) return closed == UwPay.T("Pit.ArenaOpen") ? UwPay.T("Pit.Status.NeedArena") : closed;
+            string gate = GateReason();
+            if (gate != null) return gate;
+            string arena = ArenaProblem();
+            // an open arena: "waiting for a closed arena"; a closed one that is too small says so itself (the fence has no gap to look for)
+            if (arena != null) return ArenaInfo() is Arena.Info ai && ai.Closed ? arena : UwPay.T("Pit.Status.NeedArena");
             if (Ready().Count < 2) return UwPay.T("Pit.Status.WaitFighter");
             if (!AdultGuestOn(Map)) return UwPay.T("Pit.Status.WaitGuests");
+            if (lastAutoFail != null) return UwPay.T("Pit.Status.AutoFailed", lastAutoFail);
             int now = Find.TickManager.TicksGame;
             float h = nextBoutTick < 0 ? HSettings.Get("underworld.pit.intervalHours") * 0.5f : Math.Max(0, nextBoutTick - now) / 2500f;
             return UwPay.T("Pit.Status.Next", h.ToString("0.0"));
@@ -224,7 +282,7 @@ namespace Hearth.Underworld
             {
                 var lines = new List<string>();
                 var a = ArenaInfo();
-                if (a != null) lines.Add(a.Closed && a.Cells.Count >= 9 ? UwPay.T("Pit.ArenaOk", a.Cells.Count) : UwPay.T("Pit.ArenaOpen"));
+                if (a != null) lines.Add(ArenaProblem() ?? UwPay.T("Pit.ArenaOk", a.Cells.Count));
                 if (Underworld.Visible && !Underworld.Peaceful) lines.Add(ReadyLine());
                 lines.Add(StatusLine());
                 var last = LastBoutLine(); if (last != null) lines.Add(last);
@@ -259,8 +317,10 @@ namespace Hearth.Underworld
             var lone = LoneFighter();
             var hire = new Command_Action
             {
-                defaultLabel = UwPay.T("Pit.CallOpponent", PitFighters.Silver(PitOpponents.Fee)), defaultDesc = UwPay.T("Pit.CallOpponent.Desc", PitFighters.Silver(PitOpponents.Fee)), icon = PitSetup.IconOpponent,
-                action = () => { var f = LoneFighter(); if (PitOpponents.HireBeast(this, f, out string why) == null) Messages.Message(UwPay.T("Pit.CannotStart", why), parent, MessageTypeDefOf.RejectInput, false); }
+                defaultLabel = UwPay.T("Pit.CallOpponent", PitFighters.Silver(PitOpponents.Fee)),
+                defaultDesc = UwPay.T("Pit.CallOpponent.Desc", PitFighters.Silver(PitOpponents.Fee)) + (lone != null ? "\n\n" + UwPay.T("Pit.CallOpponent.For", lone.LabelShortCap) : ""),
+                icon = PitSetup.IconOpponent,
+                action = () => { if (PitOpponents.HireBeast(this, lone, out string why) == null) Messages.Message(UwPay.T("Pit.CannotStart", why), parent, MessageTypeDefOf.RejectInput, false); }
             };
             string hw = PitOpponents.CannotHire(this, lone);
             if (hw != null) hire.Disable(hw);
@@ -270,10 +330,11 @@ namespace Hearth.Underworld
         Command_Toggle Toggle(string key, Texture2D icon, Func<bool> get, Action<bool> set) => new Command_Toggle
         {
             defaultLabel = UwPay.T(key), defaultDesc = UwPay.T(key + ".Desc"), icon = icon,
-            isActive = get, toggleAction = () => { set(!get()); cands = null; }
+            isActive = get, toggleAction = () => { set(!get()); cands = null; lastAutoFail = null; }
         };
 
-        /// <summary>The fighter a hired opponent is matched to: side A of the window, else a fighter a manual start may use (ticked colonists first).</summary>
+        /// <summary>The fighter a hired opponent is matched to: side A of the window, else a fighter a manual start may use: a ticked colonist or slave
+        /// first (never an unticked one: "not ticked" is a hard reason), then an animal, prisoner or guest. The gizmo's tooltip names him.</summary>
         public Pawn LoneFighter()
         {
             if (pickA != null && !pickA.Destroyed && pickA.Spawned && pickA.Map == Map && FightBout.OfPawn(pickA) == null) return pickA;
@@ -344,8 +405,8 @@ namespace Hearth.Underworld
             }
             if (now < nextBoutTick) return;
             if (!AdultGuestOn(Map, true)) { nextBoutTick = now + 2500; return; }   // nobody to bet: no show
-            if (FightBout.TryStartFor(this, false, out _)) nextBoutTick = now + (int)interval;
-            else nextBoutTick = now + 2500;
+            if (FightBout.TryStartFor(this, false, out string why)) { nextBoutTick = now + (int)interval; lastAutoFail = null; }
+            else { nextBoutTick = now + 2500; lastAutoFail = why; }
         }
 
         internal bool MayTellAbort(int now)
@@ -372,6 +433,10 @@ namespace Hearth.Underworld
             if (Scribe.mode == LoadSaveMode.Saving) { ticked.RemoveAll(p => p == null || p.Destroyed || p.Dead); beastList.RemoveAll(p => p == null || p.Destroyed); }
             Scribe_Collections.Look(ref ticked, "fighters", LookMode.Reference);
             Scribe_Collections.Look(ref beastList, "beasts", LookMode.Reference);
+            if (Scribe.mode == LoadSaveMode.Saving)
+                for (int i = broughtIn.Count - 1; i >= 0; i--) if (broughtIn[i] == null || broughtIn[i].Destroyed || i >= broughtFrom.Count) { broughtIn.RemoveAt(i); if (i < broughtFrom.Count) broughtFrom.RemoveAt(i); }
+            Scribe_Collections.Look(ref broughtIn, "broughtIn", LookMode.Reference);
+            Scribe_Collections.Look(ref broughtFrom, "broughtFrom", LookMode.Value);
             Scribe_Values.Look(ref lastA, "lastA"); Scribe_Values.Look(ref lastB, "lastB");
             Scribe_Values.Look(ref lastWinner, "lastWinner", -2); Scribe_Values.Look(ref lastTick, "lastTick", -1);
             Scribe_Values.Look(ref lastPoolMicro, "lastPool"); Scribe_Values.Look(ref lastHouseMicro, "lastHouse");
@@ -380,6 +445,11 @@ namespace Hearth.Underworld
             {
                 if (ticked == null) ticked = new List<Pawn>(); ticked.RemoveAll(p => p == null);
                 if (beastList == null) beastList = new List<Pawn>(); beastList.RemoveAll(p => p == null);
+                if (broughtIn == null) broughtIn = new List<Pawn>();
+                if (broughtFrom == null) broughtFrom = new List<IntVec3>();
+                // a pawn that is gone stays as null next to its cell until the load sweep (TakeBackIdle) drops both together
+                while (broughtFrom.Count < broughtIn.Count) broughtFrom.Add(IntVec3.Invalid);
+                if (broughtFrom.Count > broughtIn.Count) broughtFrom.RemoveRange(broughtIn.Count, broughtFrom.Count - broughtIn.Count);
                 foreach (var b in beastList) PitOpponents.NoteBeast(b);   // still not the colony's until the caretaker sends it back
             }
         }
@@ -404,6 +474,7 @@ namespace Hearth.Underworld
             all.Remove(this);
             FightBout.OfPit(this)?.Abort("pit removed", null);
             DismissIdleBeasts();
+            TakeBackIdle();
         }
 
     }
@@ -451,6 +522,10 @@ namespace Hearth.Underworld
         static bool sweepPending; static int lastCare;
         public static int ActiveCount => active.Count;
         public static IReadOnlyList<FightBout> All => active;
+#if HH_TESTS
+        /// <summary>Tests: drops every bout without releasing anything, as a load does (bouts are not saved).</summary>
+        internal static void ForgetAllForTests() { active.Clear(); PitOpponents.ForgetReturningForTests(); }
+#endif
         public static FightBout OfPawn(Pawn p) { if (p == null) return null; for (int i = 0; i < active.Count; i++) if (active[i].A == p || active[i].B == p) return active[i]; return null; }
         public static FightBout OfPit(CompFightPit pit) { for (int i = 0; i < active.Count; i++) if (active[i].Pit == pit) return active[i]; return null; }
         public static FightBout OfMap(Map m) { for (int i = 0; i < active.Count; i++) if (active[i].Map == m && active[i].phase != Phase.Done) return active[i]; return null; }
@@ -472,6 +547,8 @@ namespace Hearth.Underworld
         public readonly List<UnderworldMath.Bet> Bets = new List<UnderworldMath.Bet>();
         public UnderworldMath.Settlement Result; public int WinnerSide = -2;
         public Money PursePaid;
+        /// <summary>Fee paid for a hired opponent of this bout (till → world); booked back when the bout is called off without a result.</summary>
+        public Money FeePaid;
         int lastOrderA, lastOrderB;
         Verse.AI.Group.LordToil toilA, toilB;
         public string PitAccount => Underworld.PitAccount(Map);
@@ -532,7 +609,7 @@ namespace Hearth.Underworld
             why = pit.ClosedReason();
             if (why != null) return false;
             if (OfPit(pit) != null) { why = UwPay.T("Pit.Why.BoutRunning"); return false; }
-            var c = manual ? pit.ManualReady(true) : pit.Ready();
+            var c = manual ? pit.ManualReady(true) : pit.Ready(true);
             if (manual)
             {
                 Pawn a = Valid(pit.pickA, c) ? pit.pickA : null, b = Valid(pit.pickB, c) && pit.pickB != a ? pit.pickB : null;
@@ -589,9 +666,9 @@ namespace Hearth.Underworld
         {
             foreach (var b in active.ToList()) b.Abort(why, null);
             sweepPending = true;
-            // right now (a load calls this from LoadedGame, before the first tick): melee threats between pawns whose pit jobs came from the save.
-            // The jobs themselves fail on their first tick, but a threat left in place makes JobGiver_ReactToCloseMeleeThreat swing back for real.
-            Guard.Run(ModuleId.Underworld, "FightBout.ClearThreats", ClearLoadedThreats);
+            // right now (a load calls this from LoadedGame, before the first tick, also with the module switched off: then no module tick ever runs the
+            // sweep): melee threats and vanilla attacks between the two fighters of a lost bout, pawns brought into the arena, hired beasts.
+            Guard.Run(ModuleId.Underworld, "FightBout.LoadSweep", LoadSweep);
         }
 
         // ---- betting -----------------------------------------------------------------------------------
@@ -638,37 +715,99 @@ namespace Hearth.Underworld
             }
         }
 
-        /// <summary>After a load (bouts are not saved): ends every job of ours that has no bout and clears the melee threats between pawns that held them.</summary>
+        /// <summary>First module tick after a load (bouts are not saved): ends every job of ours that has no bout and every vanilla attack between the two
+        /// fighters of a lost bout, and clears the melee threats between them. <see cref="LoadSweep"/> did the same at load time already (the jobs got a
+        /// fail condition there); this is the second line for anything that slipped in between.</summary>
         static void Sweep()
         {
             if (Find.Maps == null) return;
             int n = 0;
             foreach (var map in Find.Maps)
+            {
+                var arena = ArenaCells(map);
                 foreach (var p in map.mapPawns.AllPawnsSpawned.ToList())
                 {
-                    if (p.jobs?.curJob == null || !PitSetup.IsPitJob(p.CurJobDef) || OfPawn(p) != null) continue;
-                    if (p.CurJob.targetA.Thing is Pawn foe && foe.mindState?.meleeThreat == p) foe.mindState.meleeThreat = null;
+                    var job = p.jobs?.curJob;
+                    if (job == null || OfPawn(p) != null) continue;
+                    if (!PitSetup.IsPitJob(job.def) && !VanillaPairAttack(p, job, arena)) continue;
+                    if (job.targetA.Thing is Pawn foe && foe.mindState?.meleeThreat == p) foe.mindState.meleeThreat = null;
                     if (p.mindState != null) p.mindState.meleeThreat = null;
                     p.jobs.EndCurrentJob(JobCondition.InterruptForced, true);
                     n++;
                 }
+            }
             PitOpponents.ResetBeasts();
-            foreach (var pit in CompFightPit.All.ToList()) { pit.NoteBeasts(); n += pit.DismissIdleBeasts(); }
-            if (n > 0) HLog.Info("Underworld", $"Pit sweep after load: {n} jobs/beasts without a bout ended");
+            foreach (var pit in CompFightPit.All.ToList()) { pit.NoteBeasts(); n += pit.DismissIdleBeasts(); n += pit.TakeBackIdle(); }
+            if (n > 0) HLog.Info("Underworld", $"Pit sweep after load: {n} jobs/beasts/brought-in pawns without a bout handled");
         }
 
-        static void ClearLoadedThreats()
+        /// <summary>
+        /// At load time (and whenever every bout is aborted): bouts are not saved, so whatever a bout held in the save is undone before the first tick.
+        /// <list type="bullet">
+        /// <item>Jobs: a pit job fails on its first tick by itself; a vanilla AttackMelee between two non-hostile pawns that were fighting each other in
+        /// the pit (the foe holds a pit job or an attack on him, or both stand in an arena) gets a fail condition, so it ends before its first blow.</item>
+        /// <item>Melee threats of both, so JobGiver_ReactToCloseMeleeThreat does not swing back for real.</item>
+        /// <item>Pawns the pit brought in (saved per pit) go back where they came from; a prisoner of an older save left in an arena goes to his bed.</item>
+        /// <item>Hired beasts without a bout are sent away, their fee goes back to the till.</item>
+        /// </list>
+        /// </summary>
+        static void LoadSweep()
         {
             if (Current.Game == null || Find.Maps == null) return;
+            int jobs = 0, back = 0, beasts = 0;
             foreach (var map in Find.Maps)
-                foreach (var p in map.mapPawns.AllPawnsSpawned)
+            {
+                var arena = ArenaCells(map);
+                var pawns = map.mapPawns.AllPawnsSpawned.ToList();
+                foreach (var p in pawns)
                 {
                     var job = p.jobs?.curJob;
-                    if (job == null || !PitSetup.IsPitJob(job.def) || OfPawn(p) != null) continue;
+                    if (job == null || OfPawn(p) != null) continue;
+                    bool ours = PitSetup.IsPitJob(job.def), vanilla = !ours && VanillaPairAttack(p, job, arena);
+                    if (!ours && !vanilla) continue;
                     if (p.mindState != null) p.mindState.meleeThreat = null;
                     if (job.targetA.Thing is Pawn foe && foe.mindState?.meleeThreat == p) foe.mindState.meleeThreat = null;
-                    foreach (var q in map.mapPawns.AllPawnsSpawned) if (q.mindState?.meleeThreat == p) q.mindState.meleeThreat = null;
+                    foreach (var q in pawns) if (q.mindState?.meleeThreat == p) q.mindState.meleeThreat = null;
+                    if (vanilla && p.jobs.curDriver != null) { var j = job; p.jobs.curDriver.AddEndCondition(() => p.CurJob == j ? JobCondition.Incompletable : JobCondition.Ongoing); jobs++; }
                 }
+            }
+            PitOpponents.ResetBeasts();
+            foreach (var pit in CompFightPit.All.ToList()) { pit.NoteBeasts(); beasts += pit.DismissIdleBeasts(refund: true); back += pit.TakeBackIdle(); }
+            // older saves (before the pit kept its list): a prisoner of the colony who stands in an arena without a bout goes to his bed
+            foreach (var map in Find.Maps)
+            {
+                var arena = ArenaCells(map);
+                if (arena.Count == 0) continue;
+                foreach (var p in map.mapPawns.PrisonersOfColonySpawned.ToList())
+                {
+                    if (OfPawn(p) != null || !arena.Contains(p.Position)) continue;
+                    if (p.ownership?.OwnedBed is Building_Bed bed && bed.Spawned && bed.Map == map) { PitOpponents.TakeBackTo(p, bed.Position); back++; }
+                }
+            }
+            if (jobs + back + beasts > 0) HLog.Info("Underworld", $"Pit load sweep: {jobs} vanilla attacks between former fighters ended, {back} pawns taken back from the arena, {beasts} hired beasts sent away");
+        }
+
+        /// <summary>Every arena cell of the closed pits on the map.</summary>
+        static HashSet<IntVec3> ArenaCells(Map map)
+        {
+            var set = new HashSet<IntVec3>();
+            foreach (var pit in CompFightPit.All)
+            {
+                if (pit.Map != map) continue;
+                var a = pit.ArenaInfo();
+                if (a != null && a.Closed) foreach (var c in a.Cells) set.Add(c);
+            }
+            return set;
+        }
+
+        /// <summary>A vanilla melee attack of <paramref name="p"/> on a pawn he is not hostile to, who was his pit opponent: the foe holds a pit job or an
+        /// attack on him, or both stand in a pit arena. Only asked when no bout holds <paramref name="p"/>.</summary>
+        static bool VanillaPairAttack(Pawn p, Job job, HashSet<IntVec3> arena)
+        {
+            if (job.def != JobDefOf.AttackMelee || !(job.targetA.Thing is Pawn foe) || !foe.Spawned || foe.Map != p.Map || p.HostileTo(foe)) return false;
+            var fj = foe.CurJob;
+            if (fj != null && fj.targetA.Thing == p && (PitSetup.IsPitJob(fj.def) || fj.def == JobDefOf.AttackMelee)) return true;
+            return arena.Count > 0 && arena.Contains(p.Position) && arena.Contains(foe.Position);
         }
 
         /// <summary>Caretaker every 250 ticks: beasts whose bout is over go home.</summary>
@@ -733,12 +872,12 @@ namespace Hearth.Underworld
             var a = Pit.ArenaInfo(); if (a == null || a.Cells.Count == 0) return;
             var cell = a.Cells[JRand.Stream("underworld.pit.cell").Range(0, a.Cells.Count)];
             // prisoners are always brought in by the guards (and back to their cell afterwards), never walked across the colony
-            if (p.IsPrisoner) { PitOpponents.BringIn(p, cell); return; }
+            if (p.IsPrisoner) { PitOpponents.BringIn(p, cell, Pit); return; }
             if (!p.CanReach(cell, PathEndMode.OnCell, Danger.Deadly))
             {
                 // animals cannot open fence gates and prisoners cannot leave the prison: their handlers bring them in (and back afterwards).
                 // People who cannot get in simply do not show up (the bout is called off).
-                if (MayBeBroughtIn(p)) PitOpponents.BringIn(p, cell);
+                if (MayBeBroughtIn(p)) PitOpponents.BringIn(p, cell, Pit);
                 return;
             }
             if (PitSetup.JobGoto == null) return;
@@ -758,8 +897,11 @@ namespace Hearth.Underworld
         {
             if (p.Downed || p.Dead || foe.Dead || PitSetup.JobFight == null) return;
             var cur = p.CurJob;
-            if (cur != null && (cur.def == PitSetup.JobFight || cur.def == JobDefOf.AttackMelee) && cur.targetA.Thing == foe) return;
-            if (now - last < 20) return;
+            if (cur != null && cur.def == PitSetup.JobFight && cur.targetA.Thing == foe) return;
+            // a vanilla attack on the opponent (a retaliation the think tree handed out before Patch_PitNoRetaliation, another mod's job giver) is
+            // replaced at once: it has no fail condition of ours, so saved with the game it would land one real blow after the load
+            bool vanillaOnFoe = cur != null && cur.def == JobDefOf.AttackMelee && cur.targetA.Thing == foe;
+            if (!vanillaOnFoe && now - last < 20) return;
             last = now;
             var job = JobMaker.MakeJob(PitSetup.JobFight, foe); job.expiryInterval = 900; job.checkOverrideOnExpire = false; job.killIncappedTarget = false;
             p.jobs.StartJob(job, JobCondition.InterruptForced);
@@ -807,7 +949,7 @@ namespace Hearth.Underworld
                 if (!Scored && ThoughtDefOf.HarmedMe != null) p.needs?.mood?.thoughts?.memories?.RemoveMemoriesOfDefWhereOtherPawnIs(ThoughtDefOf.HarmedMe, Other(p));
             }
             foreach (var p in new[] { A, B }) if (p?.mindState != null && p.mindState.meleeThreat == Other(p)) p.mindState.meleeThreat = null;
-            foreach (var p in new[] { A, B }) PitOpponents.TakeBack(p);
+            foreach (var p in new[] { A, B }) PitOpponents.TakeBack(p, Pit);
             foreach (var p in new[] { A, B }) if (p != null && PitOpponents.IsBeast(p)) { PitOpponents.Dismiss(p); Pit?.RemoveBeast(p); }
         }
 
@@ -922,6 +1064,7 @@ namespace Hearth.Underworld
             Result = UnderworldMath.Settle(Bets, -1, 0);
             for (int i = 0; i < Bets.Count; i++) { var g = Bettors[Bets[i].Bettor]; if (g != null && !g.Destroyed && Bets[i].PayoutMicro > 0) UwPay.PayOut(g, new Money(Bets[i].PayoutMicro), PitAccount, "Fight pit: refund"); }
             var rest = UwPay.Balance(PitAccount); if (rest.Micro > 0 && Map != null) Ledger.Current.Post(PitAccount, Underworld.Till(Map), rest, "Fight pit: leftover");
+            if (FeePaid.Micro > 0 && Map != null) { Ledger.Current.Post("world", Underworld.Till(Map), FeePaid, "Fight pit: opponent fee refunded"); FeePaid = Money.Zero; }
             try { Release(); } catch (Exception e) { HLog.Warn("Underworld", "releasing the fighters failed: " + e.Message); }
             active.Remove(this);
             if (playerText != null && Pit?.parent != null && Pit.parent.Spawned && Pit.MayTellAbort(Find.TickManager.TicksGame))

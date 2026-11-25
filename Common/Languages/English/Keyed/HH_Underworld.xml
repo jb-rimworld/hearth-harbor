@@ -46,6 +46,10 @@
   <HH.Underworld.Pit.Status.Next>Next bout in {0} h.</HH.Underworld.Pit.Status.Next>
   <HH.Underworld.Pit.Status.WaitFighter>Waiting for a second fighter: tick a colonist under Fighters, allow prisoners, or call an opponent.</HH.Underworld.Pit.Status.WaitFighter>
   <HH.Underworld.Pit.Status.WaitGuests>Waiting for guests to bet (you can start a bout yourself).</HH.Underworld.Pit.Status.WaitGuests>
+  <HH.Underworld.Pit.Status.AutoFailed>No automatic bout: {0}. Start a bout yourself or call an opponent.</HH.Underworld.Pit.Status.AutoFailed>
+  <HH.Underworld.Pit.ArenaSmall>Arena too small: {0} tiles, at least {1} needed.</HH.Underworld.Pit.ArenaSmall>
+  <HH.Underworld.Pit.ArenaBig>Arena open or larger than {0} tiles: close the fence around a smaller area.</HH.Underworld.Pit.ArenaBig>
+  <HH.Underworld.Pit.CallOpponent.For>Fights it: {0}.</HH.Underworld.Pit.CallOpponent.For>
   <HH.Underworld.Pit.Status.Closed>Closed.</HH.Underworld.Pit.Status.Closed>
   <HH.Underworld.Pit.Status.Off>The underworld is switched off (module or Cozy content).</HH.Underworld.Pit.Status.Off>
   <HH.Underworld.Pit.Status.Peaceful>Peaceful underworld is on: no fights.</HH.Underworld.Pit.Status.Peaceful>

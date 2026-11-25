@@ -44,6 +44,49 @@ namespace Hearth.Underworld
         }
     }
 
+    /// <summary>
+    /// Melee maneuvers that add a hediff without damage (vanilla KickMaterialInEyes on sand, soil or shallow water; modded Verb_MeleeApplyHediff tools)
+    /// never reach Pawn.PreApplyDamage, so the damage guard cannot see them. In a scored bout such a hit between the two fighters adds nothing and scores
+    /// a small fixed number of points instead (nobody leaves with sand in the eyes). Real bouts (prisoners, animals) keep the vanilla effect.
+    /// </summary>
+    [HarmonyPatch(typeof(Verb_MeleeApplyHediff), "ApplyMeleeDamageToTarget")]
+    public static class Patch_PitMeleeHediff
+    {
+        /// <summary>Points for one such hit: about one fist blow.</summary>
+        public const float Points = 3f;
+
+        public static bool Prefix(Verb_MeleeApplyHediff __instance, LocalTargetInfo target, ref DamageWorker.DamageResult __result)
+        {
+            if (FightBout.ActiveCount == 0) return true;   // as the damage guard: only a running bout counts
+            if (!(target.Thing is Pawn victim)) return true;
+            var b = FightBout.OfPawn(victim);
+            if (b == null || !b.Scored || !b.IsPair(victim, __instance.CasterPawn)) return true;
+            b.Score(victim, Points);
+            __result = new DamageWorker.DamageResult();
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// No vanilla retaliation inside a bout: every swing sets the victim's mindState.meleeThreat, and JobGiver_ReactToCloseMeleeThreat (high in the humanlike
+    /// and animal think trees) would hand out a vanilla AttackMelee on the opponent whenever the pit job ends or expires. That job has no fail condition of
+    /// ours; saved with the game it lands a real blow after the load. In a running bout the fighter waits for the next pit job instead (FightBout.Order).
+    /// </summary>
+    [HarmonyPatch(typeof(JobGiver_ReactToCloseMeleeThreat), "TryGiveJob")]
+    public static class Patch_PitNoRetaliation
+    {
+        public static bool Prefix(Pawn pawn, ref Job __result)
+        {
+            if (FightBout.ActiveCount == 0) return true;   // a running bout is proof the module was on (switching it off aborts every bout)
+            var threat = pawn?.mindState?.meleeThreat;
+            if (threat == null) return true;
+            var b = FightBout.OfPawn(pawn);
+            if (b == null || b.Other(pawn) != threat) return true;
+            __result = null;
+            return false;
+        }
+    }
+
     /// <summary>Safety net for real-damage bouts (a prisoner of a non-hostile faction): a hit between the two fighters of a bout never costs goodwill
     /// and never turns a faction hostile (factionHostileOnHarmByPlayer). Scored bouts never get here.</summary>
     [HarmonyPatch(typeof(Faction), nameof(Faction.Notify_MemberTookDamage))]

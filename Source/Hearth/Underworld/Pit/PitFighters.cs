@@ -18,7 +18,8 @@ namespace Hearth.Underworld
         public PitKind Kind;
         /// <summary>Keyed reason, already translated; null when the pawn may fight now.</summary>
         public string Reason;
-        /// <summary>True when the reason only keeps the pawn out of automatic bouts (asleep, not ticked); a manual start may still use it.</summary>
+        /// <summary>True when the reason only keeps the pawn out of automatic bouts (asleep); a manual start may still use it. "Not ticked" is a hard
+        /// reason: colonists and slaves fight only when the player ticks them (B.1), also in manual starts (the right-click ticks the asking colonist first).</summary>
         public bool SoftReason;
         public float Power;
         public bool Ready => Reason == null;
@@ -81,7 +82,7 @@ namespace Hearth.Underworld
             if (why != null) return Make(p, PitKind.Colonist, why);
             bool ticked = pit.IsTicked(p);
             bool volunteer = !ticked && pit.allowVolunteers && (p.story?.traits?.HasTrait(TraitDefOf.Bloodlust) == true || (p.skills?.GetSkill(SkillDefOf.Melee)?.Level ?? 0) >= 8);
-            if (!ticked && !volunteer) return Make(p, PitKind.Colonist, R("NotTicked"), soft: true);
+            if (!ticked && !volunteer) return Make(p, PitKind.Colonist, R("NotTicked"));
             if (!RestUtility.Awake(p)) return Make(p, PitKind.Colonist, R("Asleep"), soft: true);
             return Make(p, PitKind.Colonist, null);
         }

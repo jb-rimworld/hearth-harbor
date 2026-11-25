@@ -220,7 +220,8 @@ namespace Hearth.Underworld
                 s0.Check(t, "guest A", gs[1]); s1.Check(t, "guest B", gs[0]);
                 var r = gg.Result;
                 long payouts = gg.Bets.Sum(x => x.PayoutMicro);
-                t.Check(r.PoolMicro == Money.FromSilver(200).Micro && r.PoolMicro == payouts + r.HouseMicro, "pool = payouts + house (" + r.PoolMicro + " = " + payouts + " + " + r.HouseMicro + ")");
+                // the two test bets, plus any spectator of another suite who walked by and bet on his own (PitActivity)
+                t.Check(r.PoolMicro >= Money.FromSilver(200).Micro && r.PoolMicro == gg.Bets.Sum(x => x.StakeMicro) && r.PoolMicro == payouts + r.HouseMicro, "pool = stakes = payouts + house (" + r.PoolMicro + " = " + payouts + " + " + r.HouseMicro + ", " + gg.Bets.Count + " bets)");
                 if (!gg.Draw)
                 {
                     var winner = gg.WinnerSide == 0 ? gs[0] : gs[1];
@@ -252,12 +253,17 @@ namespace Hearth.Underworld
             var pit = PitKit.Arena(map, out var inner, out var outside);
             var col = PitKit.Fighter(map);
             if (pit == null || col == null) { t.Note("no area or no colonist who can fight; skipped"); UwKit.End(); yield break; }
+            pit.Candidates(true);
+            t.Check(pit.LoneFighter() == null, "nobody ticked: no lone fighter (an unticked colonist is never called into a bout): " + pit.LoneFighter()?.LabelShort);
+            t.Check(PitOpponents.CannotHire(pit, pit.LoneFighter()) != null, "nobody ticked: 'Call an opponent' is disabled: " + PitOpponents.CannotHire(pit, pit.LoneFighter()));
             pit.SetTicked(col, true);
             PitKit.Put(col, CellFinder.RandomClosewalkCellNear(outside, map, 2));
             var ready = pit.Ready(true);
             t.Check(ready.Count == 1 && ready[0].Pawn == col, "only the ticked colonist is ready: " + string.Join(", ", ready.Select(c => c.Pawn.LabelShort)));
             t.Check(pit.StatusLine() == UwPay.T("Pit.Status.WaitFighter"), "status says it waits for a second fighter: " + pit.StatusLine());
             t.Check(pit.LoneFighter() == col, "the lone fighter is the ticked colonist");
+            var hireGizmo = pit.CompGetGizmosExtra().OfType<Command>().FirstOrDefault(g => g.icon == PitSetup.IconOpponent);
+            t.Check(hireGizmo != null && hireGizmo.defaultDesc.Contains(UwPay.T("Pit.CallOpponent.For", col.LabelShortCap)), "the gizmo names who will fight: " + hireGizmo?.defaultDesc);
             var fee = PitOpponents.Fee;
             // an empty till disables the gizmo with the reason
             var tillAcc = Underworld.Till(map); var have = Ledger.Current.Balance(tillAcc);
@@ -286,15 +292,26 @@ namespace Hearth.Underworld
             t.Check(Ledger.Current.SumAll() == 0, "ledger balanced");
             // an aborted bout sends the beast away too
             Payments.CreditColony(map, Money.FromSilver(100), "test");
+            var tillHire = UwKit.Till(map);
+            // a fighter drafted since the gizmo's cache was built is checked again: no beast, no fee
+            col.drafter.Drafted = true;
+            t.Check(PitOpponents.HireBeast(pit, col, out why) == null && why == UwPay.T("Pit.Why.Drafted") && UwKit.Till(map) == tillHire && !pit.HasBeast, "drafted fighter: no hire, no fee (" + why + ")");
+            col.drafter.Drafted = false;
             var b2 = PitOpponents.HireBeast(pit, col, out why);
             t.Check(b2 != null, "second beast hired (" + why + ")");
             if (b2 != null)
             {
                 var beast2 = b2.B;
+                t.Check(UwKit.Till(map) == tillHire - fee && b2.FeePaid == fee, "fee booked for the second beast");
                 yield return 120;
+                int abortTick = Find.TickManager.TicksGame; var tillAbort = UwKit.Till(map);
                 b2.Abort("test", UwPay.T("Pit.Abort.Closed"));
+                // checked at once and in the journal: other suites' guests may pay into the same till while we wait
+                t.Check(UwKit.Till(map) == tillAbort + fee, "called off without a result: the fee is back in the till (" + (UwKit.Till(map) - tillAbort).ToStringShort() + ")");
+                t.Check(Ledger.Current.Journal.Count(e => e.Tick >= abortTick && e.From == "world" && e.To == Underworld.Till(map) && e.Amount == fee && e.Memo == "Fight pit: opponent fee refunded") == 1, "one refund booking in the journal");
                 yield return 300;
                 t.Check(beast2.Destroyed && !pit.HasBeast, "aborted: the beast is gone");
+                t.Check(Ledger.Current.SumAll() == 0, "ledger balanced after the refund");
                 t.Check(FightBout.LastMessage == UwPay.T("Pit.CalledOff", UwPay.T("Pit.Abort.Closed")), "called-off message: " + FightBout.LastMessage);
             }
             pit.SetTicked(col, false);
@@ -390,7 +407,8 @@ namespace Hearth.Underworld
             t.Check(c.Reason == UwPay.T("Pit.Why.Drafted") && !c.ManualOk, "drafted colonist: " + c.Reason);
             col.drafter.Drafted = false;
             c = PitFighters.Colonist(pit, col);
-            t.Check(c.Reason == UwPay.T("Pit.Why.NotTicked") && c.SoftReason && c.ManualOk, "unticked colonist: soft reason " + c.Reason);
+            t.Check(c.Reason == UwPay.T("Pit.Why.NotTicked") && !c.SoftReason && !c.ManualOk, "unticked colonist: hard reason, no manual start either: " + c.Reason);
+            t.Check(!pit.ManualReady(true).Any(x => x.Kind == PitKind.Colonist && !pit.IsTicked(x.Pawn)), "manual starts hold no unticked colonist: " + string.Join(", ", pit.ManualReady().Select(x => x.Pawn.LabelShort)));
             pit.SetTicked(col, true);
             t.Check(PitFighters.Colonist(pit, col).Ready, "ticked colonist is ready");
             // the legacy volunteer field: a melee colonist fights without a tick
@@ -418,7 +436,8 @@ namespace Hearth.Underworld
                 yield return 5;
                 var rk = PitFighters.Guest(kind); var rp = PitFighters.Guest(plain); var rs = PitFighters.Guest(shady);
                 t.Check(kind.WorkTagIsDisabled(WorkTags.Violent) || rk.Reason == UwPay.T("Pit.Why.Kind"), "kind guest: " + rk.Reason);
-                t.Check(plain.WorkTagIsDisabled(WorkTags.Violent) || rp.Reason == UwPay.T("Pit.Why.NoTaste"), "guest without taste: " + (rp.Reason ?? "ready") + " (traits " + string.Join("/", plain.story.traits.allTraits.Select(x => x.def.defName)) + ", melee " + plain.skills.GetSkill(SkillDefOf.Melee).Level + ", shady " + Underworld.IsShady(plain) + ")");
+                if (plain.skills.GetSkill(SkillDefOf.Melee).Level >= 6) t.Note("the plain guest's genes give melee " + plain.skills.GetSkill(SkillDefOf.Melee).Level + " even at skill 2 (aptitude); no-taste check skipped");
+                else t.Check(plain.WorkTagIsDisabled(WorkTags.Violent) || rp.Reason == UwPay.T("Pit.Why.NoTaste"), "guest without taste: " + (rp.Reason ?? "ready") + " (traits " + string.Join("/", plain.story.traits.allTraits.Select(x => x.def.defName)) + ", melee " + plain.skills.GetSkill(SkillDefOf.Melee).Level + ", shady " + Underworld.IsShady(plain) + ")");
                 t.Check(shady.WorkTagIsDisabled(WorkTags.Violent) || rs.Reason == null || rs.Reason == UwPay.T("Pit.Why.Busy") || rs.Reason == UwPay.T("Pit.Why.Asleep"), "shady guest needs no trait or skill: " + (rs.Reason ?? "ready"));
                 // cache: the list is not rebuilt within 250 ticks unless asked
                 pit.allowGuests = true;
@@ -497,7 +516,45 @@ namespace Hearth.Underworld
             }
             // no fighters at all
             Expect("Pit.Status.WaitFighter", "no fighter");
+            t.Check(!pit.ManualReady(true).Any(c => c.Kind == PitKind.Colonist), "nobody ticked: no colonist for a manual start either");
             var col = PitKit.Fighter(map); var col2 = PitKit.Fighter(map, 1);
+            bool guestsAlready = GuestApi.GuestsOn(map).Any(g => !Underworld.IsMinor(g));
+            if (col != null)
+            {
+                // one ticked colonist alone: still waiting for a second fighter
+                pit.SetTicked(col, true); pit.Invalidate();
+                Expect("Pit.Status.WaitFighter", "one ticked colonist");
+                // one ticked colonist and an animal of the colony: two fighters, no guests to bet
+                pit.allowAnimals = true;
+                var boar = UwKit.TameAnimal(map, CellFinder.RandomClosewalkCellNear(outside, map, 2), "Boar", "Muffalo");
+                pit.Invalidate();
+                t.Check(pit.Ready(true).Count >= 2, "ticked colonist + animal are two ready fighters: " + string.Join(", ", pit.Ready().Select(c => c.Pawn.LabelShort + "(" + c.Kind + ")")));
+                if (!guestsAlready) Expect("Pit.Status.WaitGuests", "ticked colonist + animal, no guests");
+                else t.Note("guests of another suite on the map; waiting-for-guests line with an animal not checked");
+                boar.Destroy(); pit.allowAnimals = false; pit.Invalidate();
+                // an unfair pair and a guest: the automatic attempt fails and the status line says why (not "next bout in ...")
+                var big = DefDatabase<PawnKindDef>.GetNamedSilentFail("Thrumbo") ?? DefDatabase<PawnKindDef>.AllDefsListForReading.Where(k => k.RaceProps != null && k.RaceProps.Animal && k.combatPower >= 300f).OrderByDescending(k => k.combatPower).FirstOrDefault();
+                if (f != null && big != null)
+                {
+                    pit.allowAnimals = true;
+                    var giant = UwKit.Track(PawnGenerator.GeneratePawn(big, Faction.OfPlayer)); GenSpawn.Spawn(giant, CellFinder.RandomClosewalkCellNear(outside, map, 3), map);
+                    UwKit.Guests(map, 1, f); pit.Invalidate();
+                    var rd = pit.Ready(true);
+                    t.Note("unfair pair: " + string.Join(", ", rd.Select(c => c.Pawn.LabelShort + " " + c.Power.ToString("0"))));
+                    if (rd.Count == 2 && !UnderworldMath.FairPair(rd[0].Power, rd[1].Power, HSettings.Get("underworld.pit.fairRatio")))
+                    {
+                        pit.nextBoutTick = Find.TickManager.TicksGame;
+                        pit.CompTickRare();
+                        t.Check(FightBout.OfPit(pit) == null, "no automatic bout with an unfair pair");
+                        Expect("Pit.Status.AutoFailed", "unfair pair and a guest", UwPay.T("Pit.NoFairPair"));
+                        pit.SetTicked(col, false); pit.SetTicked(col, true);
+                        t.Check(pit.StatusLine() != UwPay.T("Pit.Status.AutoFailed", UwPay.T("Pit.NoFairPair")), "ticking a box clears the old failure: " + pit.StatusLine());
+                    }
+                    else t.Note("the test map gave another ready set; unfair-pair line not checked");
+                    giant.Destroy(); pit.allowAnimals = false; pit.Invalidate();
+                }
+                pit.SetTicked(col, false); pit.Invalidate();
+            }
             if (col != null && col2 != null && col != col2)
             {
                 pit.SetTicked(col, true); pit.SetTicked(col2, true); pit.Invalidate();
@@ -505,14 +562,30 @@ namespace Hearth.Underworld
                 if (!guests) Expect("Pit.Status.WaitGuests", "two fighters, no guests");
                 if (f != null)
                 {
-                    UwKit.Guests(map, 1, f); pit.Invalidate();
+                    if (!guests) UwKit.Guests(map, 1, f);
+                    pit.Invalidate();
                     pit.nextBoutTick = Find.TickManager.TicksGame + 2500 * 3;
                     Expect("Pit.Status.Next", "two fighters and a guest", "3.0");
                 }
                 t.Check(pit.ReadyLine() == UwPay.T("Pit.Ready", 2, UwPay.T("Pit.Ready.Many.Colonist", 2)), "ready line: " + pit.ReadyLine());
                 pit.SetTicked(col, false); pit.SetTicked(col2, false);
             }
-            else t.Note("fewer than two colonists; waiting-for-guests and next-bout lines skipped");
+            else t.Note("fewer than two colonists; two-colonist lines skipped");
+            // a closed pen that is too small says so (no gap to look for)
+            if (UwKit.TryFindRect(map, 2, 3, out var small))
+            {
+                UwKit.BuildFence(map, small.ExpandedBy(1));
+                map.regionAndRoomUpdater.TryRebuildDirtyRegionsAndRooms();
+                var sp = UwKit.SpawnBuilding(UwDefs.FightPit, small.CenterCell, map).TryGetComp<CompFightPit>();
+                var sa = sp.ArenaInfo();
+                string want = UwPay.T("Pit.ArenaSmall", sa.Cells.Count, CompFightPit.MinArenaCells);
+                t.Check(sa.Closed && sa.Cells.Count < CompFightPit.MinArenaCells, "small pen: closed, " + sa.Cells.Count + " tiles");
+                t.Check(sp.ClosedReason() == want && sp.StatusLine() == want && sp.CompInspectStringExtra().Contains(want) && !sp.CompInspectStringExtra().Contains(UwPay.T("Pit.ArenaOpen")), "small pen: 'too small', not 'open': " + sp.StatusLine());
+                var startG = sp.CompGetGizmosExtra().OfType<Command>().FirstOrDefault(g => g.icon == PitSetup.IconStart);
+                t.Check(startG != null && startG.Disabled && startG.disabledReason == want, "small pen: start disabled with the reason: " + startG?.disabledReason);
+                sp.parent.Destroy();
+            }
+            else t.Note("no room for a small pen; too-small line not checked");
             pit.enabled = false; pit.Invalidate(); Expect("Pit.Status.Closed", "closed"); pit.enabled = true;
             HSettings.Set("core.peacefulUnderworld", 1f); Expect("Pit.Status.Peaceful", "peaceful"); HSettings.Set("core.peacefulUnderworld", 0f);
             HearthProfile.Current.Content = ContentIntensity.Cozy; Underworld.MarkInUseDirty(null);
@@ -535,7 +608,8 @@ namespace Hearth.Underworld
             // an open arena
             var gap = new IntVec3(inner.minX, 0, inner.ExpandedBy(1).maxZ); gap.GetEdifice(map)?.Destroy(); pit.Invalidate();
             Expect("Pit.Status.NeedArena", "open arena");
-            t.Check(pit.CompInspectStringExtra().Contains(UwPay.T("Pit.ArenaOpen")), "arena line says to close the fence");
+            var oa = pit.ArenaInfo();
+            t.Check(pit.CompInspectStringExtra().Contains(oa.TooBig ? UwPay.T("Pit.ArenaBig", oa.Cap) : UwPay.T("Pit.ArenaOpen")), "arena line says to close the fence (" + (oa.TooBig ? "big" : "edge") + "): " + pit.CompInspectStringExtra());
             yield return 1;
             UwKit.End();
         }
@@ -583,6 +657,108 @@ namespace Hearth.Underworld
         }
     }
 
+    /// <summary>
+    /// The review fixes of 1.2.0 around retaliation, terrain kicks and lost bouts, in one running game:
+    /// (1) inside a scored bout JobGiver_ReactToCloseMeleeThreat gives no vanilla attack on the opponent, and one given anyway is replaced by the pit job;
+    /// (2) a terrain kick (Verb_MeleeApplyHediff) between the two adds no hediff and scores points instead;
+    /// (3) a bout lost the way a load loses it (no Release): the vanilla attacks between the two end before a blow and the threats are cleared,
+    /// a brought-in prisoner is taken back, a hired beast is sent away and its fee returned.
+    /// </summary>
+    public sealed class PitLostBoutSuite : HearthTestSuite
+    {
+        public override string Name => "underworld.pit.lostbout";
+        public override ModuleId Module => ModuleId.Underworld;
+        public override int MaxTicks => 24000;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var map = t.Map; var f = UwKit.Friendly();
+            UwKit.Begin(ContentIntensity.Standard);
+            CellRect inner = default; IntVec3 outside = IntVec3.Invalid; CompFightPit pit = null;
+            if (f != null) pit = PitKit.Arena(map, out inner, out outside);
+            var col = PitKit.Fighter(map);
+            if (pit == null || col == null) { t.Note("no friendly faction, area or colonist; skipped"); UwKit.End(); yield break; }
+            var guest = UwKit.Guests(map, 1, f)[0];
+            int arrive = 0;
+            while (arrive < 4000 && !PitFighters.StayToil(guest)) { yield return 100; arrive += 100; }   // the snapshot compares lord toils: the visit must have arrived
+            var cells = pit.ArenaInfo().Cells;
+            PitKit.Put(col, cells[3]); PitKit.Put(guest, cells[45]);
+            HSettings.Set("underworld.pit.scoreLimit", 4000f);   // long enough for every step below
+            var gw = PitKit.Goodwill(); var sc = PitKit.Snap.Of(col); var sg = PitKit.Snap.Of(guest);
+            var bout = FightBout.Start(pit, col, guest, true, 0, manual: true);
+            int waited = 0;
+            while (bout != null && !bout.Finished && waited < 3000 && !(col.CurJobDef == PitSetup.JobFight && guest.CurJobDef == PitSetup.JobFight)) { yield return 15; waited += 15; }
+            t.Check(bout != null && !bout.Finished && col.CurJobDef == PitSetup.JobFight, "the scored bout is in its fight phase (" + col.CurJobDef?.defName + ")");
+            if (bout == null || bout.Finished) { HSettings.Set("underworld.pit.scoreLimit", 100f); UwKit.End(); yield break; }
+
+            // (1) no vanilla retaliation inside the bout
+            col.mindState.meleeThreat = guest; col.mindState.lastMeleeThreatHarmTick = Find.TickManager.TicksGame;
+            var giver = new JobGiver_ReactToCloseMeleeThreat();
+            var res = giver.TryIssueJobPackage(col, default(JobIssueParams));
+            t.Check(res.Job == null, "in a bout the close-melee-threat giver hands out no attack on the opponent (" + res.Job?.def?.defName + ")");
+            var vj = JobMaker.MakeJob(JobDefOf.AttackMelee, guest); vj.maxNumMeleeAttacks = 1; vj.expiryInterval = 200; vj.reactingToMeleeThreat = true;
+            col.jobs.StartJob(vj, JobCondition.InterruptForced);
+            yield return 31;
+            t.Check(col.CurJobDef == PitSetup.JobFight, "a vanilla attack on the opponent is replaced by the pit job at once (" + col.CurJobDef?.defName + ")");
+
+            // (2) a terrain kick in a scored bout
+            var sand = DefDatabase<HediffDef>.GetNamedSilentFail("SandInEyes");
+            if (sand != null)
+            {
+                var verb = new Verb_MeleeApplyHediff { caster = col, tool = new Tool { label = "kick", hediff = sand }, verbProps = new VerbProperties { verbClass = typeof(Verb_MeleeApplyHediff), bodypartTagTarget = BodyPartTagDefOf.SightSource } };
+                var apply = HarmonyLib.AccessTools.Method(typeof(Verb_MeleeApplyHediff), "ApplyMeleeDamageToTarget");
+                float before = bout.ScoreB;
+                apply.Invoke(verb, new object[] { new LocalTargetInfo(guest) });
+                t.Check(!guest.health.hediffSet.HasHediff(sand), "a terrain kick between the two adds no hediff to the guest");
+                t.Check(bout.ScoreB - before == Patch_PitMeleeHediff.Points, "and scores " + Patch_PitMeleeHediff.Points + " points (" + (bout.ScoreB - before) + ")");
+            }
+            else t.Note("no SandInEyes hediff in this game; terrain kick not checked");
+
+            // (3) the bout is lost as by a load: both hold a vanilla attack on each other, threats set, no Release
+            foreach (var pair in new[] { (col, guest), (guest, col) })
+            {
+                var j = JobMaker.MakeJob(JobDefOf.AttackMelee, pair.Item2); j.maxNumMeleeAttacks = 1; j.expiryInterval = 200; j.reactingToMeleeThreat = true;
+                pair.Item1.jobs.StartJob(j, JobCondition.InterruptForced);
+                pair.Item1.mindState.meleeThreat = pair.Item2; pair.Item1.mindState.lastMeleeThreatHarmTick = Find.TickManager.TicksGame;
+            }
+            FightBout.ForgetAllForTests();
+            FightBout.AbortAll("test: lost bout");
+            t.Check(FightBout.ActiveCount == 0 && col.mindState.meleeThreat == null && guest.mindState.meleeThreat == null, "lost bout: threats of both cleared at once");
+            yield return 5;
+            t.Check(!(col.CurJobDef == JobDefOf.AttackMelee && col.CurJob.targetA.Thing == guest) && !(guest.CurJobDef == JobDefOf.AttackMelee && guest.CurJob.targetA.Thing == col), "lost bout: the vanilla attacks ended before a blow (" + col.CurJobDef?.defName + ", " + guest.CurJobDef?.defName + ")");
+            foreach (var w in PitKit.Watch(t, col, guest, 600)) yield return w;
+            HSettings.Set("underworld.pit.scoreLimit", 100f);
+            t.Check(PitKit.GoodwillDiff(gw) == "none", "lost bout: goodwill unchanged: " + PitKit.GoodwillDiff(gw));
+            sc.Check(t, "colonist", guest); sg.Check(t, "guest", col);
+
+            // (3b) a prisoner brought in against a hired beast, lost the same way
+            pit.allowPrisoners = true;
+            var pr = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Villager, f, PawnGenerationContext.NonPlayer, map.Tile, canGeneratePawnRelations: false, mustBeCapableOfViolence: true));
+            if (!pr.DevelopmentalStage.Adult()) { pr.ageTracker.AgeBiologicalTicks = 25L * 3600000L; pr.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
+            GenSpawn.Spawn(pr, CellFinder.RandomClosewalkCellNear(outside, map, 2), map); UwKit.Track(pr);
+            pr.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
+            var from = pr.Position;
+            Payments.CreditColony(map, Money.FromSilver(100), "test");
+            var till0 = UwKit.Till(map);
+            var hb = PitOpponents.HireBeast(pit, pr, out string why);
+            t.Check(hb != null, "a beast hired for the prisoner (" + why + ")");
+            if (hb != null)
+            {
+                var beast = hb.B;
+                int w3 = 0;
+                while (!hb.Finished && w3 < 2000 && !pit.ArenaInfo().Cells.Contains(pr.Position)) { yield return 15; w3 += 15; }
+                t.Check(pit.WasBroughtIn(pr), "the prisoner was brought in and the pit noted where he came from");
+                FightBout.ForgetAllForTests();
+                FightBout.AbortAll("test: lost bout");
+                t.Check(pr.Spawned && !pit.ArenaInfo().Cells.Contains(pr.Position) && pr.Position.DistanceTo(from) < 8f && !pit.WasBroughtIn(pr), "lost bout: the prisoner is back where he was (" + from + " -> " + pr.Position + ")");
+                t.Check(beast.Destroyed && !pit.HasBeast && !PitOpponents.IsBeast(beast), "lost bout: the hired beast is gone");
+                t.Check(UwKit.Till(map) == till0, "lost bout: the fee is back in the till (" + (till0 - UwKit.Till(map)).ToStringShort() + " missing)");
+                t.Check(Ledger.Current.SumAll() == 0, "ledger balanced");
+                t.Check(pr.IsPrisonerOfColony, "still a prisoner of the colony");   // (he was spawned in the open, so vanilla may let him try to escape from there)
+            }
+            UwKit.End();
+        }
+    }
+
     /// <summary>Phase 1 of the bout save test (tools/run_test.sh with SAVES_OUT): a scored colonist-against-guest bout in its fight phase is saved as hh_pitbout.</summary>
     public sealed class PitSaveBoutSuite : HearthTestSuite
     {
@@ -601,6 +777,26 @@ namespace Hearth.Underworld
             if (pit == null || col == null) { t.Check(false, "setup: friendly faction, area and colonist"); yield break; }
             var guest = UwKit.Guests(map, 1, f)[0];
             var cells = pit.ArenaInfo().Cells;
+            // a second arena: a prisoner and a pen animal are brought in (they cannot walk in) and wait in the betting phase when the game is saved
+            var extra = new List<string>();
+            var pit2 = PitKit.Arena(map, out var inner2, out var outside2);
+            if (pit2 != null && pit2 != pit)
+            {
+                var pr = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Villager, f, PawnGenerationContext.NonPlayer, map.Tile, canGeneratePawnRelations: false, mustBeCapableOfViolence: true));
+                if (!pr.DevelopmentalStage.Adult()) { pr.ageTracker.AgeBiologicalTicks = 25L * 3600000L; pr.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
+                GenSpawn.Spawn(pr, CellFinder.RandomClosewalkCellNear(outside2, map, 2), map);
+                pr.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
+                var pen = UwKit.TameAnimal(map, CellFinder.RandomClosewalkCellNear(outside2, map, 2), "Boar", "Muffalo");
+                IntVec3 prFrom = pr.Position, penFrom = pen.Position;
+                var pb = FightBout.Start(pit2, pr, pen, false, 20000, manual: true);
+                int w2 = 0;
+                while (pb != null && !pb.Finished && w2 < 3000 && pb.phase == FightBout.Phase.Assemble) { yield return 30; w2 += 30; }
+                bool inside = pit2.ArenaInfo().Cells.Contains(pr.Position);
+                t.Check(pb != null && !pb.Finished && inside && pit2.WasBroughtIn(pr), "the prisoner was brought into the second arena and waits there at save time (phase " + pb?.phase + ")");
+                extra.Add("prisoner=" + pr.ThingID); extra.Add("prisonerFrom=" + prFrom.x + "," + prFrom.z);
+                if (pit2.WasBroughtIn(pen)) { extra.Add("pen=" + pen.ThingID); extra.Add("penFrom=" + penFrom.x + "," + penFrom.z); }
+            }
+            else t.Note("no room for a second arena; the prisoner part is not saved");
             PitKit.Put(col, cells[3]); PitKit.Put(guest, cells[45]);
             HSettings.Set("underworld.pit.scoreLimit", 4000f);   // the bout must still run when the game is saved
             var bout = FightBout.Start(pit, col, guest, true, 0, manual: true);
@@ -609,8 +805,18 @@ namespace Hearth.Underworld
             t.Check(bout != null && !bout.Finished && col.CurJobDef == PitSetup.JobFight && guest.CurJobDef == PitSetup.JobFight, "both fighters attack each other at save time (" + col.CurJobDef?.defName + ", " + guest.CurJobDef?.defName + ")");
             yield return 120;
             t.Check(bout.ScoreA + bout.ScoreB > 0, "hits were scored before the save");
+            // the worst case of the review: both fighters hold a vanilla AttackMelee on each other when the game is saved (a retaliation the think tree
+            // handed out between two pit jobs), with the melee threats of both set. Saved at once, before FightBout.Order replaces them.
+            foreach (var pair in new[] { (col, guest), (guest, col) })
+            {
+                var j = JobMaker.MakeJob(JobDefOf.AttackMelee, pair.Item2); j.maxNumMeleeAttacks = 1; j.expiryInterval = 200; j.reactingToMeleeThreat = true;
+                pair.Item1.jobs.StartJob(j, JobCondition.InterruptForced);
+                pair.Item1.mindState.meleeThreat = pair.Item2; pair.Item1.mindState.lastMeleeThreatHarmTick = Find.TickManager.TicksGame;
+            }
+            t.Check(col.CurJobDef == JobDefOf.AttackMelee && guest.CurJobDef == JobDefOf.AttackMelee, "both fighters hold a vanilla attack on each other at save time");
             var lines = new List<string> { "colonist=" + col.ThingID, "guest=" + guest.ThingID, "faction=" + guest.Faction.loadID, "goodwill=" + guest.Faction.PlayerGoodwill,
                 "colInj=" + col.health.hediffSet.hediffs.Count(h => h is Hediff_Injury), "guestInj=" + guest.health.hediffSet.hediffs.Count(h => h is Hediff_Injury) };
+            lines.AddRange(extra);
             SaveLoadKit.WriteSide(Save, "pit", lines);
             HSettings.Set("underworld.pit.scoreLimit", 100f);
             try { GameDataSaveLoader.SaveGame(Save); } catch (Exception e) { t.Check(false, "save threw " + e.Message); }
@@ -641,6 +847,20 @@ namespace Hearth.Underworld
             if (col == null || guest == null) yield break;
             int gw = int.Parse(V("goodwill")), ci = int.Parse(V("colInj")), gi = int.Parse(V("guestInj"));
             t.Check(FightBout.ActiveCount == 0, "no bout after the load (bouts are not saved)");
+            t.Check(col.mindState.meleeThreat == null && guest.mindState.meleeThreat == null, "melee threats of both cleared at load time");
+            var pr = V("prisoner") != null ? map.mapPawns.AllPawns.FirstOrDefault(p => p.ThingID == V("prisoner")) : null;
+            var pen = V("pen") != null ? map.mapPawns.AllPawns.FirstOrDefault(p => p.ThingID == V("pen")) : null;
+            IntVec3 Cell(string k) { var v = V(k); if (v == null) return IntVec3.Invalid; var xs = v.Split(','); return new IntVec3(int.Parse(xs[0]), 0, int.Parse(xs[1])); }
+            var arena = new HashSet<IntVec3>(CompFightPit.All.Where(c => c.Map == map).SelectMany(c => c.ArenaInfo().Cells));
+            void Back(Pawn p, string what, IntVec3 from) => t.Check(p != null && p.Spawned && !arena.Contains(p.Position) && from.IsValid && p.Position.DistanceTo(from) < 8f, what + " taken back from the arena at load time (" + from + " -> " + p?.Position + ")");
+            if (V("prisoner") != null)
+            {
+                Back(pr, "prisoner", Cell("prisonerFrom"));
+                t.Check(pr != null && pr.IsPrisonerOfColony, "still a prisoner of the colony");
+            }
+            else t.Note("the save has no prisoner part");
+            if (V("pen") != null) Back(pen, "pen animal", Cell("penFrom"));
+            yield return 2;   // the loaded jobs tick once: a vanilla attack would land its blow now, unless the load sweep failed it
             for (int i = 0; i < 6; i++)
             {
                 t.Check(!PitSetup.IsPitJob(col.CurJobDef) && !PitSetup.IsPitJob(guest.CurJobDef) && !(col.CurJobDef == JobDefOf.AttackMelee && col.CurJob.targetA.Thing == guest) && !(guest.CurJobDef == JobDefOf.AttackMelee && guest.CurJob.targetA.Thing == col),

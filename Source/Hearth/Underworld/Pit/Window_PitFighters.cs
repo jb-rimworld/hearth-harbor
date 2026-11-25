@@ -123,7 +123,7 @@ namespace Hearth.Underworld
                 last = new Rect(last.x + 30f, last.y, last.width - 30f, last.height);
             }
             if (c.Reason == null) UiStyle.LabelColored(last, UwPay.T("Pit.Win.Ready"), UiStyle.Good, TextAnchor.MiddleLeft);
-            else UiStyle.LabelColored(last, c.Reason, c.SoftReason ? UiStyle.Amber : UiStyle.Bad, TextAnchor.MiddleLeft);
+            else UiStyle.LabelColored(last, c.Reason, c.SoftReason || c.Reason == UwPay.T("Pit.Why.NotTicked") ? UiStyle.Amber : UiStyle.Bad, TextAnchor.MiddleLeft);   // not ticked: the box next to it fixes it
             Text.Anchor = TextAnchor.UpperLeft;
             TooltipHandler.TipRegion(r, p.LabelCap + (c.Reason != null ? "\n" + c.Reason : ""));
         }

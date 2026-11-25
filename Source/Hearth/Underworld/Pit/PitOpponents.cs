@@ -33,26 +33,41 @@ namespace Hearth.Underworld
         /// <summary>Step 2 of B.2 (humanlike prizefighter) is not built in 1.2.0; kept as the one place the fighter list asks.</summary>
         public static bool IsPrizefighter(Pawn p) => false;
 
+#if HH_TESTS
+        internal static void ForgetReturningForTests() => returning.Clear();
+#endif
         public static bool AnyReturning => returning.Count > 0;
         public static bool IsReturning(Pawn p) => p != null && returning.Count > 0 && returning.ContainsKey(p);
 
         // ---- bring in and take back ----------------------------------------------------------------------
-        /// <summary>Puts a pawn that cannot walk into the arena (animal behind a pen fence, prisoner behind a prison door) onto an arena cell and remembers where it came from.</summary>
-        public static bool BringIn(Pawn p, IntVec3 cell)
+        /// <summary>Puts a pawn that cannot walk into the arena (animal behind a pen fence, prisoner behind a prison door) onto an arena cell and remembers where it came from
+        /// (here for the running game, and in the pit's saved list for a game saved before the bout ends).</summary>
+        public static bool BringIn(Pawn p, IntVec3 cell, CompFightPit pit = null)
         {
             if (p == null || !p.Spawned || p.Downed) return false;
-            if (!returning.ContainsKey(p)) returning[p] = p.Position;
+            if (!returning.ContainsKey(p)) { returning[p] = p.Position; pit?.NoteBroughtIn(p, p.Position); }
             p.jobs?.StopAll();
             p.Position = cell; p.Notify_Teleported(true, true);
             return true;
         }
 
         /// <summary>Takes a pawn that was brought in back to where it stood before the bout (or the nearest free cell).</summary>
-        public static void TakeBack(Pawn p)
+        public static void TakeBack(Pawn p, CompFightPit pit = null)
         {
-            if (p == null || !returning.TryGetValue(p, out var from)) return;
+            if (p == null) return;
+            pit?.ForgetBroughtIn(p);
+            if (!returning.TryGetValue(p, out var from)) return;
+            TakeBackTo(p, from);
+        }
+
+        /// <summary>Teleports a pawn back to <paramref name="from"/> (or the nearest standable cell; a prisoner without a valid cell goes to his bed).</summary>
+        internal static void TakeBackTo(Pawn p, IntVec3 from)
+        {
+            if (p == null) return;
             returning.Remove(p);
             if (!p.Spawned || p.Dead) return;
+            if (!from.IsValid && p.IsPrisonerOfColony && p.ownership?.OwnedBed is Building_Bed bed && bed.Spawned && bed.Map == p.Map) from = bed.Position;
+            if (!from.IsValid) return;
             var map = p.Map;
             if (!from.InBounds(map) || !from.Standable(map)) from = CellFinder.StandableCellNear(from, map, 6f);
             if (!from.IsValid) return;
@@ -95,11 +110,20 @@ namespace Hearth.Underworld
             return pool[JRand.Stream("underworld.pit.beast").Range(0, pool.Count)];
         }
 
-        /// <summary>Hires a beast for the fighter and starts the bout at once (manual start). The fee is booked only after the beast stands in the arena.</summary>
+        /// <summary>Hires a beast for the fighter and starts the bout at once (manual start). The fee is booked only after the beast stands in the arena,
+        /// and goes back to the till when the bout does not start or is called off without a result (fighter drafted, mental break, no show, load).</summary>
         public static FightBout HireBeast(CompFightPit pit, Pawn fighter, out string why)
         {
             why = CannotHire(pit, fighter);
             if (why != null) return null;
+            // the gizmo's fighter comes from a cache of up to 250 ticks: check him again (drafted, asleep in a bout, gone since)
+            PitCandidate me = null;
+            foreach (var c in pit.Candidates(true)) if (c.Pawn == fighter) { me = c; break; }
+            if (me == null || !me.ManualOk || me.Kind == PitKind.Beast || me.Kind == PitKind.Prizefighter)
+            {
+                why = me == null ? UwPay.T("Pit.Why.Gone") : me.Reason ?? UwPay.T("Pit.Why.NoBout");
+                return null;
+            }
             var map = pit.Map;
             var kind = KindFor(PitFighters.Power(fighter), map);
             var arena = pit.ArenaInfo();
@@ -127,7 +151,13 @@ namespace Hearth.Underworld
             }
             HLog.Info("Underworld", $"Pit beast hired: {beast.LabelShort} ({kind.defName}, power {kind.combatPower:0}) for {fighter.LabelShort} (power {PitFighters.Power(fighter):0}), fee {PitFighters.Silver(Fee)}");
             var bout = FightBout.Start(pit, fighter, beast, false, 300, manual: true);
-            if (bout == null) { Dismiss(beast); pit.RemoveBeast(beast); why = UwPay.T("Pit.Why.NoBout"); }
+            if (bout == null)
+            {
+                Dismiss(beast); pit.RemoveBeast(beast); why = UwPay.T("Pit.Why.NoBout");
+                Ledger.Current.Post("world", Underworld.Till(map), Fee, "Fight pit: opponent fee refunded");
+                return null;
+            }
+            bout.FeePaid = Fee;   // refunded when the bout is called off without a result
             return bout;
         }
 
