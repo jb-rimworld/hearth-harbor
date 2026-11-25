@@ -175,7 +175,9 @@ namespace Hearth.Underworld
                 if (b == null) continue;
                 var map = b.MapHeld ?? (parent.Spawned ? parent.Map : null);
                 PitOpponents.Dismiss(b); n++;
-                if (refund && map != null) Ledger.Current.Post("world", Underworld.Till(map), PitOpponents.Fee, "Fight pit: opponent fee refunded (bout lost with a load)");
+                // (the fee is not saved with the beast: the set fee, unless the only hire of the game was the free one)
+                var paid = HSettings.GetSilver("underworld.pit.opponentFee");
+                if (refund && map != null && paid.Micro > 0 && (Underworld.Comp?.OpponentsHired ?? 0) > 1) Ledger.Current.Post("world", Underworld.Till(map), paid, "Fight pit: opponent fee refunded (bout lost with a load)");
             }
             if (n > 0) cands = null;
             return n;
@@ -208,6 +210,14 @@ namespace Hearth.Underworld
             var r = new List<PitCandidate>();
             foreach (var c in Candidates(refresh)) if (c.ManualOk && c.Kind != PitKind.Beast && c.Kind != PitKind.Prizefighter && c.Pawn != null && !c.Pawn.Destroyed) r.Add(c);
             return r;
+        }
+
+        /// <summary>Why a bout the player starts himself cannot start for lack of fighters (translated), or null: nobody, or only one fighter.</summary>
+        public string ManualShortage(List<PitCandidate> manual = null)
+        {
+            int n = (manual ?? ManualReady()).Count;
+            if (n >= 2) return null;
+            return n == 0 ? UwPay.T("Pit.Status.NoFighter") : UwPay.T("Pit.Why.OnlyOne");
         }
 
         /// <summary>Why this pit holds no bout at all right now (translated), or null when it is open: module/Cozy, peaceful switch, closed, open arena.</summary>
@@ -247,7 +257,9 @@ namespace Hearth.Underworld
             string arena = ArenaProblem();
             // an open arena: "waiting for a closed arena"; a closed one that is too small says so itself (the fence has no gap to look for)
             if (arena != null) return ArenaInfo() is Arena.Info ai && ai.Closed ? arena : UwPay.T("Pit.Status.NeedArena");
-            if (Ready().Count < 2) return UwPay.T("Pit.Status.WaitFighter");
+            int ready = Ready().Count;
+            if (ready == 0) return UwPay.T("Pit.Status.NoFighter");
+            if (ready < 2) return UwPay.T("Pit.Status.WaitFighter");
             if (!AdultGuestOn(Map)) return UwPay.T("Pit.Status.WaitGuests");
             if (lastAutoFail != null) return UwPay.T("Pit.Status.AutoFailed", lastAutoFail);
             int now = Find.TickManager.TicksGame;
@@ -282,6 +294,7 @@ namespace Hearth.Underworld
             if (lastTick < 0 || lastA == null) return null;
             if (lastWinner < 0) return UwPay.T("Pit.Last.Draw", lastA, lastB);
             string w = lastWinner == 0 ? lastA : lastB, l = lastWinner == 0 ? lastB : lastA;
+            if (lastPoolMicro <= 0 && lastHouseMicro <= 0) return UwPay.T("Pit.Last.NoBets", w, l);   // nobody bet (a hired beast): no pool to talk about
             return UwPay.T("Pit.Last", w, l, PitFighters.Silver(new Money(lastPoolMicro)), PitFighters.Silver(new Money(lastHouseMicro)));
         }
 
@@ -292,7 +305,8 @@ namespace Hearth.Underworld
                 var lines = new List<string>();
                 var a = ArenaInfo();
                 if (a != null) lines.Add(ArenaProblem() ?? UwPay.T("Pit.ArenaOk", a.Cells.Count));
-                if (Underworld.Visible && !Underworld.Peaceful) lines.Add(ReadyLine());
+                // (no "Fighters ready: none." line: the status line says it and how to change it; the pane must not be cut at 1280x720)
+                if (Underworld.Visible && !Underworld.Peaceful && Ready().Count > 0) lines.Add(ReadyLine());
                 lines.Add(StatusLine());
                 var last = LastBoutLine(); if (last != null) lines.Add(last);
                 return string.Join("\n", lines);
@@ -322,18 +336,26 @@ namespace Hearth.Underworld
             string closed = ClosedReason();
             if (closed != null) start.Disable(closed);
             else if (FightBout.OfPit(this) != null) start.Disable(UwPay.T("Pit.Why.BoutRunning"));
+            else if (ManualShortage() is string few) start.Disable(few);
             yield return start;
             var lone = LoneFighter();
             var hire = new Command_Action
             {
-                defaultLabel = UwPay.T("Pit.CallOpponent", PitFighters.Silver(PitOpponents.Fee)),
-                defaultDesc = UwPay.T("Pit.CallOpponent.Desc", PitFighters.Silver(PitOpponents.Fee)) + (lone != null ? "\n\n" + UwPay.T("Pit.CallOpponent.For", lone.LabelShortCap) : ""),
+                defaultLabel = PitOpponents.CallLabel,
+                defaultDesc = PitOpponents.CallDesc + (lone != null ? "\n\n" + UwPay.T("Pit.CallOpponent.For", lone.LabelShortCap) : ""),
                 icon = PitSetup.IconOpponent,
-                action = () => { if (PitOpponents.HireBeast(this, lone, out string why) == null) Messages.Message(UwPay.T("Pit.CannotStart", why), parent, MessageTypeDefOf.RejectInput, false); }
+                action = () => CallOpponentFor(lone)
             };
             string hw = PitOpponents.CannotHire(this, lone);
             if (hw != null) hire.Disable(hw);
             yield return hire;
+        }
+
+        /// <summary>The "Call an opponent" button of the marker and of the Fighters window: ticks a lone colonist first (as the right-click does), then hires.</summary>
+        public void CallOpponentFor(Pawn lone)
+        {
+            if (lone != null && lone.RaceProps.Humanlike && (lone.Faction == Faction.OfPlayer || lone.IsSlaveOfColony) && !lone.IsPrisoner && !IsTicked(lone)) SetTicked(lone, true);
+            if (PitOpponents.HireBeast(this, lone, out string why) == null) Messages.Message(UwPay.T("Pit.CannotStart", why), parent, MessageTypeDefOf.RejectInput, false);
         }
 
         Command_Toggle Toggle(string key, Texture2D icon, Func<bool> get, Action<bool> set) => new Command_Toggle
@@ -343,13 +365,18 @@ namespace Hearth.Underworld
         };
 
         /// <summary>The fighter a hired opponent is matched to: side A of the window, else a fighter a manual start may use: a ticked colonist or slave
-        /// first (never an unticked one: "not ticked" is a hard reason), then an animal, prisoner or guest. The gizmo's tooltip names him.</summary>
+        /// first; then, on a map with only one colonist, that colonist even when he is not ticked yet ("Call an opponent" ticks him, as the right-click does);
+        /// then an animal, prisoner or guest. With two or more colonists an unticked one is never picked. The gizmo's tooltip names him.</summary>
         public Pawn LoneFighter()
         {
             if (pickA != null && !pickA.Destroyed && pickA.Spawned && pickA.Map == Map && FightBout.OfPawn(pickA) == null) return pickA;
             var m = ManualReady();
             foreach (var c in m) if (c.Kind == PitKind.Colonist && IsTicked(c.Pawn)) return c.Pawn;
             foreach (var c in m) if (c.Kind == PitKind.Colonist) return c.Pawn;
+            // a colony of one: its only colonist, ticked on hire (as the right-click does) when "not ticked" is the only thing in his way
+            PitCandidate only = null; int n = 0;
+            foreach (var c in Candidates()) if (c.Kind == PitKind.Colonist) { n++; only = c; }
+            if (n == 1 && only.Pawn != null && !only.Pawn.Destroyed && only.Reason == UwPay.T("Pit.Why.NotTicked")) return only.Pawn;
             return m.Count > 0 ? m[0].Pawn : null;
         }
 
@@ -380,7 +407,7 @@ namespace Hearth.Underworld
             }
             yield return new FloatMenuOption(label + ": " + UwPay.T("Pit.Why.NoOpponent"), null);
             string hw = PitOpponents.CannotHire(this, selPawn);
-            var hire = new FloatMenuOption(UwPay.T("Pit.CallOpponent", PitFighters.Silver(PitOpponents.Fee)) + (hw != null ? ": " + hw : ""), hw != null ? (Action)null : () =>
+            var hire = new FloatMenuOption(PitOpponents.CallLabel + (hw != null ? ": " + hw : ""), hw != null ? (Action)null : () =>
             {
                 SetTicked(selPawn, true);
                 if (PitOpponents.HireBeast(this, selPawn, out string why) == null) Messages.Message(UwPay.T("Pit.CannotStart", why), parent, MessageTypeDefOf.RejectInput, false);
@@ -535,6 +562,34 @@ namespace Hearth.Underworld
         /// <summary>Tests: drops every bout without releasing anything, as a load does (bouts are not saved).</summary>
         internal static void ForgetAllForTests() { active.Clear(); PitOpponents.ForgetReturningForTests(); }
 #endif
+        // fighters of bouts that ended lately: kept out of vanilla quarrels for a while (Patch_PitNoQuarrel). Not saved: a load ends the cool-down.
+        static readonly Dictionary<Pawn, int> recent = new Dictionary<Pawn, int>();
+        public const int QuarrelCooldownTicks = 2500;
+        static int recentEnd = -1;
+        /// <summary>A fighter of a bout that ended less than <see cref="QuarrelCooldownTicks"/> ago is still kept from quarrels. Clears the list once the last one is over.</summary>
+        public static bool AnyRecent
+        {
+            get
+            {
+                if (recent.Count == 0) return false;
+                int now = Find.TickManager.TicksGame;
+                if (now < recentEnd && now >= recentEnd - QuarrelCooldownTicks) return true;
+                recent.Clear(); return false;
+            }
+        }
+        internal static void ForgetRecent() { recent.Clear(); recentEnd = -1; }
+        /// <summary>True while <paramref name="p"/> fights in a bout or fought in one less than an hour ago: a vanilla social fight with him must not start.</summary>
+        public static bool KeepFromQuarrel(Pawn p)
+        {
+            if (p == null) return false;
+            if (OfPawn(p) != null) return true;
+            if (recent.Count == 0 || !recent.TryGetValue(p, out int t)) return false;
+            int now = Find.TickManager.TicksGame;
+            if (now >= t && now - t < QuarrelCooldownTicks) return true;
+            recent.Remove(p);
+            return false;
+        }
+
         public static FightBout OfPawn(Pawn p) { if (p == null) return null; for (int i = 0; i < active.Count; i++) if (active[i].A == p || active[i].B == p) return active[i]; return null; }
         public static FightBout OfPit(CompFightPit pit) { for (int i = 0; i < active.Count; i++) if (active[i].Pit == pit) return active[i]; return null; }
         public static FightBout OfMap(Map m) { for (int i = 0; i < active.Count; i++) if (active[i].Map == m && active[i].phase != Phase.Done) return active[i]; return null; }
@@ -633,7 +688,7 @@ namespace Hearth.Underworld
                         if (r < best) { best = r; a = c[i].Pawn; b = c[j].Pawn; }
                     }
                 }
-                if (a == null || b == null) { why = UwPay.T("Pit.NoFighters"); return false; }
+                if (a == null || b == null) { why = pit.ManualShortage(c) ?? UwPay.T("Pit.NoFighters"); return false; }
                 return Start(pit, a, b, false, 600, manual: true) != null;
             }
             if (c.Count < 2) { why = UwPay.T("Pit.NoFighters"); return false; }
@@ -665,7 +720,9 @@ namespace Hearth.Underworld
             Underworld.Comp.Bouts++; UwActivity.Note(bout.Map);
             Underworld.AddWhispers(HSettings.Get("underworld.whispers.pit"), "fight pit bout");
             HLog.Info("Underworld", $"Bout: {a.LabelShortCap} ({bout.KindA}) vs {b.LabelShortCap} ({bout.KindB}), scored={bout.Scored}, non-lethal={bout.NonLethal}, manual={manual}");
-            Messages.Message(UwPay.T("Pit.BoutAnnounced", a.LabelShortCap, b.LabelShortCap), pit.parent, MessageTypeDefOf.NeutralEvent, false);
+            var beastSide = PitOpponents.IsBeast(b) ? b : PitOpponents.IsBeast(a) ? a : null;
+            if (beastSide != null) Messages.Message(UwPay.T("Pit.BoutAnnounced.Beast", (beastSide == a ? b : a).LabelShortCap, beastSide.LabelShort), pit.parent, MessageTypeDefOf.NeutralEvent, false);
+            else Messages.Message(UwPay.T("Pit.BoutAnnounced", a.LabelShortCap, b.LabelShortCap), pit.parent, MessageTypeDefOf.NeutralEvent, false);
             pit.Invalidate();
             return bout;
         }
@@ -948,6 +1005,11 @@ namespace Hearth.Underworld
         /// <summary>Ends the fight jobs and the after-bout retaliation (meleeThreat), removes HarmedMe between the two after a real bout.</summary>
         void Release()
         {
+            int nowR = Find.TickManager.TicksGame;
+            if (recent.Count > 32) { var old = new List<Pawn>(); foreach (var kv in recent) if (nowR - kv.Value >= QuarrelCooldownTicks || nowR < kv.Value) old.Add(kv.Key); foreach (var o in old) recent.Remove(o); }
+            if (A != null) recent[A] = nowR;
+            if (B != null) recent[B] = nowR;
+            recentEnd = nowR + QuarrelCooldownTicks;
             // threats first: ending a job lets the think tree pick the next one at once, and JobGiver_ReactToCloseMeleeThreat would swing back for real
             foreach (var p in new[] { A, B }) if (p?.mindState != null && p.mindState.meleeThreat == Other(p)) p.mindState.meleeThreat = null;
             foreach (var p in new[] { A, B })
@@ -1049,8 +1111,14 @@ namespace Hearth.Underworld
             if (rest.Micro > 0) { l.Post(PitAccount, Underworld.Till(Map), rest, "Fight pit: house take"); Underworld.Comp.HouseTakeMicro += rest.Micro; }
             Pit?.Record(this, Result.PoolMicro, Math.Max(0L, rest.Micro));
             var w = winnerSide == 0 ? A : B; var lo = winnerSide == 0 ? B : A;
-            string text = Draw ? UwPay.T("Pit.Result.Draw", A?.LabelShortCap ?? "-", B?.LabelShortCap ?? "-")
+            bool noBets = Bets.Count == 0;   // a bout nobody bet on (a lone colonist and a hired beast): no pool, no stakes to talk about
+            string text = Draw ? UwPay.T(noBets ? "Pit.Result.DrawNoBets" : "Pit.Result.Draw", A?.LabelShortCap ?? "-", B?.LabelShortCap ?? "-")
+                : noBets ? UwPay.T("Pit.Result.WonNoBets", w?.LabelShortCap ?? "-", lo?.LabelShortCap ?? "-")
                 : UwPay.T("Pit.Result.Won", w?.LabelShortCap ?? "-", lo?.LabelShortCap ?? "-", PitFighters.Silver(new Money(Result.PoolMicro)), PitFighters.Silver(new Money(Math.Max(0L, rest.Micro))));
+            // a bout against a hired beast: say plainly that the fighter is only bruised (it is fought for points)
+            var person = KindA == PitKind.Beast ? B : KindB == PitKind.Beast ? A : null;
+            if (Scored && person != null) text += " " + UwPay.T("Pit.Result.Points", person.LabelShortCap);
+            else if (noBets && Scored) text += " " + UwPay.T("Pit.Result.PointsAll");
             if (PursePaid.Micro > 0) text += " " + UwPay.T("Pit.PursePaid", w?.LabelShortCap ?? "-", PitFighters.Silver(PursePaid));
             LastMessage = text;
             Messages.Message(text, Pit?.parent, MessageTypeDefOf.NeutralEvent, false);

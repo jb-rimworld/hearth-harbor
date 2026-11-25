@@ -89,8 +89,14 @@ namespace Hearth.Underworld
 
         static UwPageRow PitRow(Map map)
         {
-            CompFightPit pit = null;
-            foreach (var p in CompFightPit.All) if (p.Map == map) { pit = p; break; }
+            // one row for the pits of the map: the one with a running bout, else the first; the others are counted in the sub line
+            CompFightPit pit = null; int pits = 0;
+            foreach (var p in CompFightPit.All)
+            {
+                if (p.Map != map) continue;
+                pits++;
+                if (pit == null || (FightBout.OfPit(pit) == null && FightBout.OfPit(p) != null)) pit = p;
+            }
             if (!Underworld.Unlocked) return null;
             // a built pit under "peaceful underworld" stays on the page so it can say why it holds no bouts
             if (!Underworld.Allows(UwFeature.PitToIncapacitation) && pit == null) return null;
@@ -104,6 +110,7 @@ namespace Hearth.Underworld
             r.State = pit.PageState(); r.Line = pit.StatusLine();
             if (Underworld.Allows(UwFeature.PitToIncapacitation)) r.Sub.Add(pit.ReadyLine());
             var last = pit.LastBoutLine(); if (last != null) r.Sub.Add(last);
+            if (pits > 1) r.Sub.Add(UwPay.T("Page.Pit.More", pits - 1));
             return r;
         }
 
@@ -179,6 +186,8 @@ namespace Hearth.Underworld
             var list = Rows(map);
             if (list.Count == 0) { y = Para(UwPay.T("Page.NoMap"), y, vw, UiStyle.Grey); }
             foreach (var row in list) y = DrawRow(row, y, vw);
+            // rows that Standard hides: one grey line says what Dark would add
+            if (Underworld.Visible && Underworld.Intensity == ContentIntensity.Standard) y = Para(UwPay.T("Page.DarkAdds"), y, vw, UiStyle.Grey);
             y += 6f;
 
             // whispers

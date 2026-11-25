@@ -45,6 +45,38 @@ namespace Hearth.Underworld
     }
 
     /// <summary>
+    /// No vanilla social fight with a pit fighter while his bout runs or for an hour after it (<see cref="FightBout.QuarrelCooldownTicks"/>).
+    /// The pit puts two guests of one faction close together for a long time; an insult between them (or with a watcher) could turn into a real
+    /// fistfight that ends only when one is down, which the bout's damage guard does not cover once the bout is over. SocialFightPossible is the
+    /// gate of every social fight chance (insults, slights); the early-out is two field reads when no bout runs and none ended lately.
+    /// The same method exists in 1.5, 1.6 and 1.7 (nameof makes each build check it).
+    /// </summary>
+    [HarmonyPatch(typeof(Pawn_InteractionsTracker), nameof(Pawn_InteractionsTracker.SocialFightPossible))]
+    public static class Patch_PitNoQuarrel
+    {
+        static readonly AccessTools.FieldRef<Pawn_InteractionsTracker, Pawn> PawnRef = AccessTools.FieldRefAccess<Pawn_InteractionsTracker, Pawn>("pawn");
+        [HarmonyPriority(Priority.Last)]
+        public static void Postfix(Pawn_InteractionsTracker __instance, Pawn otherPawn, ref bool __result)
+        {
+            if (!__result || (FightBout.ActiveCount == 0 && !FightBout.AnyRecent)) return;
+            if (!Modules.On(ModuleId.Underworld)) return;
+            if (FightBout.KeepFromQuarrel(PawnRef(__instance)) || FightBout.KeepFromQuarrel(otherPawn)) __result = false;
+        }
+    }
+
+    /// <summary>A hired pit beast is the house's animal for one bout: its inspect pane does not name the player's faction ("of New Arrivals").
+    /// Asked only for the selected pawn; the early-out is one count.</summary>
+    [HarmonyPatch(typeof(PawnUtility), nameof(PawnUtility.ShouldDisplayFactionInInspectString))]
+    public static class Patch_PitBeastNoFaction
+    {
+        public static void Postfix(Pawn p, ref bool __result)
+        {
+            if (!__result || !PitOpponents.AnyBeast || !Modules.On(ModuleId.Underworld)) return;
+            if (PitOpponents.IsBeast(p)) __result = false;
+        }
+    }
+
+    /// <summary>
     /// Melee maneuvers that add a hediff without damage (vanilla KickMaterialInEyes on sand, soil or shallow water; modded Verb_MeleeApplyHediff tools)
     /// never reach Pawn.PreApplyDamage, so the damage guard cannot see them. In a scored bout such a hit between the two fighters adds nothing and scores
     /// a small fixed number of points instead (nobody leaves with sand in the eyes). Real bouts (prisoners, animals) keep the vanilla effect.

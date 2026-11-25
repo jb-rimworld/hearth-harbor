@@ -49,16 +49,16 @@ namespace Hearth.Underworld
         public static bool Buy(Map map, UwOffer offer) => Buy(map, offer, out _);
 
         /// <summary>Pays from the till and drops the crate at the dock. Whispers +1; may attract an inspection.
-        /// On failure <paramref name="why"/> is the translated reason: Offer.Gone (no dock, nothing of the crate can be made) or Smuggler.NoCash.</summary>
+        /// On failure <paramref name="why"/> is the translated reason: Offer.Gone (no dock, nothing of the crate can be made) or what the colony is short of (UwPay.ShortOf).</summary>
         public static bool Buy(Map map, UwOffer offer, out string why)
         {
             why = UwPay.T("Offer.Gone");
             var dock = Dock(map); if (dock == null || offer == null) return false;
-            if (Ledger.Current.Balance(Underworld.Till(map)) < offer.price) { why = UwPay.T("Smuggler.NoCash"); return false; }
+            if (UwPay.ColonyFunds(map) < offer.price) { why = UwPay.ShortOf(map, offer.price); return false; }
             var things = new List<Thing>();
             foreach (var g in offer.goods) { var t = g.Make(); if (t != null) things.Add(t); }
             if (things.Count == 0) return false;
-            if (!Ledger.Current.Post(Underworld.Till(map), "world", offer.price, "Smuggler: contraband crate")) { foreach (var t in things) t.Destroy(); why = UwPay.T("Smuggler.NoCash"); return false; }
+            if (!UwPay.PayFromColony(map, offer.price, "world", "Smuggler: contraband crate")) { foreach (var t in things) t.Destroy(); why = UwPay.ShortOf(map, offer.price); return false; }
             why = null;
             DropPodUtility.DropThingsNear(dock.Position, map, things, forbid: false);
             Underworld.Comp.Smuggles++; UwActivity.Note(map); Underworld.Comp.NoteEvent(FacilityStatus.DockId);

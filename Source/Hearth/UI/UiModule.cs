@@ -30,7 +30,7 @@ namespace Hearth.Shell
             HSettings.Bool(ModuleId.Core, special, "core.picky", false, "Picky guests", "Guests expect a little more from every stay (expectation +0.1).");
             HSettings.Bool(ModuleId.Core, special, "core.ironBank", false, "Iron bank", "Debt collection always climbs to the highest stage, whatever the difficulty. Nobody quietly defers your instalments.");
             HSettings.Bool(ModuleId.Core, special, "core.noResearchGating", false, "No research gating", "Everything on the Hearth & Harbor and Silverline trees is available from the start.");
-            HSettings.Bool(ModuleId.Core, special, "core.peacefulUnderworld", false, "Peaceful underworld", "Dark venues work without violence: no fight pit, no questioning, no hunting of people, no clinic, no protection racket. Back room, fence and drug lounge stay.");
+            HSettings.Bool(ModuleId.Core, special, "core.peacefulUnderworld", false, "Peaceful underworld", "Dark venues work without violence. This closes the fight pit completely, bouts fought for points included, and stops questioning, hunting of people, the organ clinic and protection money. Back room, fence and drug lounge stay.");
             HSettings.Bool(ModuleId.Core, special, "core.showMath", false, "Show me the math", "Shows nerd settings and formulas everywhere.");
             HSettings.Bool(ModuleId.Core, special, "core.perfMode", false, "Performance mode", "Guest planning and room checks run half as often. Helps on slow computers; guests may react a little later.");
 

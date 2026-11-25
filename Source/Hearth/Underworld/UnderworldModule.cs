@@ -38,7 +38,7 @@ namespace Hearth.Underworld
             HSettings.Silver(M, "Fight pit", "underworld.pit.betMin", 10, 1, 100, "Smallest bet", "Guests bet at least this much silver.");
             HSettings.Silver(M, "Fight pit", "underworld.pit.betMax", 120, 20, 1000, "Largest bet", "Guests bet at most this much silver (and never more than a third of their budget).");
             HSettings.Float(M, "Fight pit", "underworld.pit.fairRatio", 2.2f, 1f, 6f, "Matchmaking fairness", "The stronger fighter may have at most this many times the combat power of the weaker one.", nerd: true, hardMin: 1f, hardMax: 100f);
-            HSettings.Percent(M, "Fight pit", "underworld.pit.yieldHealth", 0.35f, 0.1f, 0.8f, "Yield at health", "A bout ends when a fighter drops below this share of health, unless it is to the death.", nerd: true, hardMin: 0.05f, hardMax: 0.95f);
+            HSettings.Percent(M, "Fight pit", "underworld.pit.yieldHealth", 0.35f, 0.1f, 0.8f, "Yield at health", "Bouts of prisoners and animals end when a fighter drops below this share of health, unless they are to the death. Bouts with people end on points.", nerd: true, hardMin: 0.05f, hardMax: 0.95f);
             HSettings.Int(M, "Fight pit", "underworld.pit.maxBoutTicks", 5000, 1000, 20000, "Longest bout (ticks)", "After this time the fighter with the smaller share of his point limit wins. Equal shares are a draw, and all stakes are returned.", nerd: true, hardMin: 300, hardMax: 120000);
             PitSetup.RegisterSettings(M);
             // fence

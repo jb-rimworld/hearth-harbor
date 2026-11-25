@@ -59,7 +59,7 @@ namespace Hearth.Underworld
                 float y = 38f;
                 UiStyle.LabelColored(new Rect(0f, y, inRect.width, 24f), pit.StatusLine(), UiStyle.Grey);
                 y += 26f;
-                float bottomH = 118f;
+                float bottomH = 128f;
                 var listRect = new Rect(0f, y, inRect.width, inRect.height - y - bottomH);
                 DrawList(listRect);
                 DrawBottom(new Rect(0f, inRect.height - bottomH + 6f, inRect.width, bottomH - 6f));
@@ -140,19 +140,33 @@ namespace Hearth.Underworld
             y += 34f;
             var a = pit.pickA; var b = pit.pickB;
             if (a != null && b == null) b = FightBout.BestOpponent(pit, a, manual);
-            if (a != null && b != null) UiStyle.LabelColored(new Rect(r.x, y, r.width * 0.6f, 26f), a.LabelShortCap + " – " + b.LabelShortCap + ": " + PitFighters.Rating(a, b), UiStyle.Grey, TextAnchor.MiddleLeft);
+            if (a != null && b != null) UiStyle.LabelColored(new Rect(r.x, y + 34f, r.width, 26f), a.LabelShortCap + " – " + b.LabelShortCap + ": " + PitFighters.Rating(a, b), UiStyle.Grey, TextAnchor.MiddleLeft);
             var btn = new Rect(r.xMax - 220f, y, 220f, 32f);
-            string closed = pit.ClosedReason() ?? (FightBout.OfPit(pit) != null ? UwPay.T("Pit.Why.BoutRunning") : null);
-            if (closed != null)
-            {
-                GUI.color = UiStyle.DimGrey; Widgets.DrawBoxSolid(btn, new Color(0.2f, 0.2f, 0.2f, 0.5f)); GUI.color = Color.white;
-                Text.Anchor = TextAnchor.MiddleCenter; Widgets.Label(btn, UwPay.T("Pit.Win.Start")); Text.Anchor = TextAnchor.UpperLeft;
-                TooltipHandler.TipRegion(btn, closed);
-            }
+            string closed = pit.ClosedReason() ?? (FightBout.OfPit(pit) != null ? UwPay.T("Pit.Why.BoutRunning") : null)
+                ?? pit.ManualShortage(manual);
+            if (closed != null) DisabledButton(btn, UwPay.T("Pit.Win.Start"), closed);
             else if (Widgets.ButtonText(btn, UwPay.T("Pit.Win.Start")))
             {
                 if (!FightBout.TryStartFor(pit, true, out string why)) Messages.Message(UwPay.T("Pit.CannotStart", why), pit.parent, MessageTypeDefOf.RejectInput, false);
             }
+            // a lone fighter: hire a pit beast from here too (the same rules and reason as the marker's button)
+            var hireBtn = new Rect(btn.x - 232f, y, 220f, 32f);
+            var lone = pit.LoneFighter();
+            string label = PitOpponents.CallLabel;
+            string hw = PitOpponents.CannotHire(pit, lone);
+            if (hw != null) DisabledButton(hireBtn, label, hw);
+            else
+            {
+                TooltipHandler.TipRegion(hireBtn, PitOpponents.CallDesc + "\n\n" + UwPay.T("Pit.CallOpponent.For", lone.LabelShortCap));
+                if (Widgets.ButtonText(hireBtn, label)) pit.CallOpponentFor(lone);
+            }
+        }
+
+        static void DisabledButton(Rect btn, string label, string why)
+        {
+            GUI.color = UiStyle.DimGrey; Widgets.DrawBoxSolid(btn, new Color(0.2f, 0.2f, 0.2f, 0.5f)); GUI.color = Color.white;
+            Text.Anchor = TextAnchor.MiddleCenter; Widgets.Label(btn, label); Text.Anchor = TextAnchor.UpperLeft;
+            TooltipHandler.TipRegion(btn, why);
         }
 
         void SideButton(Rect r, string label, bool sideA, List<PitCandidate> manual)

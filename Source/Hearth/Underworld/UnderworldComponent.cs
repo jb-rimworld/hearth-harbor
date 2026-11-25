@@ -55,6 +55,8 @@ namespace Hearth.Underworld
         public int Bouts, Bets, DealsBought, DealsSold, LoungeSessions, GangVisits, Tours, Hunts, OrgansSold, Scandals, Smuggles;
         public long HouseTakeMicro, FenceProfitMicro;
         public float RenownApplied;
+        /// <summary>Pit beasts hired in this game (the first one is free, see PitOpponents.Fee).</summary>
+        public int OpponentsHired;
         // 1.2.0 (package C): open offers (smuggler landings, protection demands) and the gang timer's state
         public List<UwOffer> Offers = new List<UwOffer>();
         public int NextOfferId = 1;
@@ -161,6 +163,7 @@ namespace Hearth.Underworld
             string h = HouseTakeMicro.ToString(), f = FenceProfitMicro.ToString();
             Scribe_Values.Look(ref h, "houseTake"); Scribe_Values.Look(ref f, "fenceProfit");
             Scribe_Values.Look(ref RenownApplied, "renownApplied");
+            Scribe_Values.Look(ref OpponentsHired, "opponentsHired");
             Scribe_Collections.Look(ref Offers, "offers", LookMode.Deep);
             Scribe_Values.Look(ref NextOfferId, "nextOfferId", 1);
             Scribe_Values.Look(ref FirstGangPlanned, "firstGangPlanned");

@@ -71,6 +71,78 @@ namespace Hearth.Underworld
 
         public static Money Balance(string acc) => Ledger.Current?.Balance(acc) ?? Money.Zero;
 
+        // ---- the colony pays (pit opponent fee, smuggler crates, protection money) -------------------------------------------
+        static int fundsFrame = -999, fundsMap = -1; static Money fundsCache;
+
+        /// <summary>All the colony could pay with right now: the till, then stock silver on the map (not forbidden, in a stockpile or the home area,
+        /// <see cref="Hearth.Dlc.ColonySilver.CountStock"/>), then the Silverline account. The silver count and the bank balance are cached for 30 frames
+        /// (gizmos and the tab ask every frame); the till is read fresh.</summary>
+        public static Money ColonyFunds(Map map)
+        {
+            if (map == null || Ledger.Current == null) return Money.Zero;
+            int f = UnityEngine.Time.frameCount;
+            if (fundsMap != map.uniqueID || f - fundsFrame >= 30 || f < fundsFrame)
+            {
+                fundsCache = Money.FromSilver(Hearth.Dlc.ColonySilver.CountStock(map)) + Silverline.BankApi.ColonyBalance; fundsMap = map.uniqueID; fundsFrame = f;
+            }
+            return Money.Max(Money.Zero, Balance(Payments.ColonyTill(map))) + fundsCache;
+        }
+
+        /// <summary>Drops the cached silver count (after silver was taken, forbidden or added outside a payment).</summary>
+        public static void ForgetFunds() => fundsFrame = -999;
+
+        /// <summary>The reason shown when the colony cannot pay: "the colony has 12 of 40 silver".</summary>
+        public static string ShortOf(Map map, Money price)
+        {
+            var have = ColonyFunds(map);
+            return T("Pay.Short", Math.Floor(have.Silver + 1e-9).ToString("0"), PitFighters.Silver(price));
+        }
+
+        /// <summary>Pays <paramref name="amount"/> for the colony into <paramref name="toAccount"/>: the till first, then stock silver, then the bank.
+        /// All-or-nothing: false and nothing moved when everything together is not enough. Coins are whole: the change of the last coin goes to the till.</summary>
+        public static bool PayFromColony(Map map, Money amount, string toAccount, string memo)
+        {
+            var l = Ledger.Current;
+            if (map == null || l == null || amount.Micro < 0) return false;
+            if (amount.Micro == 0) return true;
+            ForgetFunds();
+            string till = Payments.ColonyTill(map);
+            Money tillHas = Money.Max(Money.Zero, l.Balance(till)), bank = Silverline.BankApi.ColonyBalance;
+            int coins = Hearth.Dlc.ColonySilver.CountStock(map);
+            Money fromTill = Money.Min(tillHas, amount), left = amount - fromTill;
+            Money fromBank = Money.Zero; int fromCoins = 0;
+            if (left.Micro > 0)
+            {
+                int need = left.CeilSilver;
+                if (coins >= need) fromCoins = need;
+                else { fromCoins = coins; fromBank = left - Money.FromSilver(coins); }
+                if (fromBank > bank) return false;
+            }
+            if (fromTill.Micro > 0 && !l.Post(till, toAccount, fromTill, memo)) return false;
+            if (fromCoins > 0)
+            {
+                if (!Hearth.Dlc.ColonySilver.TakeStock(map, fromCoins))
+                {
+                    if (fromTill.Micro > 0) l.Post(toAccount, till, fromTill, memo + " (undone)", allowNegative: true);
+                    return false;
+                }
+                // the coins leave the map as things and enter the ledger as money; what the last coin paid too much goes to the till
+                var coinMoney = Money.FromSilver(fromCoins);
+                var due = left - fromBank;
+                l.Post("world", toAccount, coinMoney, memo + " (colony silver)");
+                if (coinMoney > due) l.Post(toAccount, till, coinMoney - due, "Change from " + memo, allowNegative: true);
+            }
+            if (fromBank.Micro > 0 && !Silverline.BankApi.TryPay(toAccount, fromBank, memo + " (bank)"))
+            {
+                // the coins are gone: book their value back into the till rather than spawn silver
+                var back = fromTill + (fromCoins > 0 ? left - fromBank : Money.Zero);
+                if (back.Micro > 0) l.Post(toAccount, till, back, memo + " (undone)", allowNegative: true);
+                return false;
+            }
+            ForgetFunds();
+            return true;
+        }
+
         /// <summary>Moves what is left on an account into the colony till.</summary>
         public static void Sweep(string from, Map map, string memo)
         {

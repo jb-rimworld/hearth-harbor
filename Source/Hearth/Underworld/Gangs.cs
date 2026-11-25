@@ -103,7 +103,7 @@ namespace Hearth.Underworld
 
         public static bool PayProtection(Map map, Faction f, Money fee)
         {
-            if (!Ledger.Current.Post(Underworld.Till(map), "world", fee, "Protection money")) return false;
+            if (!UwPay.PayFromColony(map, fee, "world", "Protection money")) return false;
             Underworld.AddWhispers(1f, "paid protection");
             Underworld.AffectGoodwill(f, 3, "paid up");
             return true;

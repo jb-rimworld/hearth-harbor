@@ -76,7 +76,11 @@ namespace Hearth.Underworld
         }
 
         // ---- the pit beast ----------------------------------------------------------------------------------
-        public static Money Fee => HSettings.GetSilver("underworld.pit.opponentFee");
+        /// <summary>The fee of the next hire: the first opponent of a game is on the house (a lone colonist may have no silver at all), every later one costs the set fee.</summary>
+        public static Money Fee => FirstIsFree ? Money.Zero : HSettings.GetSilver("underworld.pit.opponentFee");
+        public static bool FirstIsFree => (Underworld.Comp?.OpponentsHired ?? 1) == 0;
+        public static string CallLabel => FirstIsFree ? UwPay.T("Pit.CallOpponent.Free") : UwPay.T("Pit.CallOpponent", PitFighters.Silver(Fee));
+        public static string CallDesc => UwPay.T("Pit.CallOpponent.Desc", PitFighters.Silver(HSettings.GetSilver("underworld.pit.opponentFee"))) + (FirstIsFree ? " " + UwPay.T("Pit.CallOpponent.FreeDesc") : "");
 
         /// <summary>Why the "Call an opponent" gizmo cannot be used now (translated), or null.</summary>
         public static string CannotHire(CompFightPit pit, Pawn fighter)
@@ -86,12 +90,14 @@ namespace Hearth.Underworld
             if (FightBout.OfPit(pit) != null) return UwPay.T("Pit.Why.BoutRunning");
             if (pit.HasBeast) return UwPay.T("Pit.Why.BeastThere");
             if (fighter == null) return UwPay.T("Pit.Why.NoLoneFighter");
-            if (Ledger.Current.Balance(Underworld.Till(pit.Map)) < Fee) return UwPay.T("Pit.Why.TillShort", PitFighters.Silver(Fee));
+            var fee = Fee;
+            if (UwPay.ColonyFunds(pit.Map) < fee) return UwPay.ShortOf(pit.Map, fee);
             // (no animal-kind lookup here: this runs for the gizmo every frame; KindFor always finds the closest animal anyway)
             return null;
         }
 
-        /// <summary>An animal kind whose combat power is close to the fighter's: the map's wild animals first, then any animal. Power ratio within the fairness limit.</summary>
+        /// <summary>An animal kind whose combat power is close to the fighter's: the map's wild animals first, then any animal. Power ratio within the fairness limit,
+        /// and of those the kinds no stronger than the fighter when there are any (a paid bout should not be a beating).</summary>
         public static PawnKindDef KindFor(float power, Map map)
         {
             float ratio = Math.Max(1.1f, Math.Min(1.6f, HSettings.Get("underworld.pit.fairRatio")));
@@ -100,6 +106,9 @@ namespace Hearth.Underworld
                 && k.race?.tradeTags?.Contains("AnimalInsectSpace") != true;
             var wild = map?.Biome?.AllWildAnimals?.Where(Fits).ToList();
             var pool = wild != null && wild.Count > 0 ? wild : DefDatabase<PawnKindDef>.AllDefsListForReading.Where(Fits).ToList();
+            var weaker = pool.Where(k => k.combatPower <= power * 1.05f).ToList();
+            if (weaker.Count == 0 && pool == wild) weaker = DefDatabase<PawnKindDef>.AllDefsListForReading.Where(k => Fits(k) && k.combatPower <= power * 1.05f).ToList();
+            if (weaker.Count > 0) pool = weaker;
             if (pool.Count == 0)
             {
                 // nothing within the ratio: the closest animal there is
@@ -139,25 +148,29 @@ namespace Hearth.Underworld
                     long adult = (long)(stages[stages.Count - 1].minAge * 3600000f) + 60000L;
                     beast.ageTracker.AgeBiologicalTicks = adult; beast.ageTracker.AgeChronologicalTicks = Math.Max(beast.ageTracker.AgeChronologicalTicks, adult);
                 }
+                // a plain name instead of "Timber wolf 1": it is the house's beast for one bout, not a new colony animal
+                beast.Name = new NameSingle(UwPay.T("Pit.BeastName", kind.label));
                 var cell = cells[JRand.Stream("underworld.pit.beast").Range(0, cells.Count)];
                 GenSpawn.Spawn(beast, cell, map);
             }
             catch (Exception e) { HLog.Error("Underworld", "Could not hire a pit beast", e); if (beast != null && !beast.Destroyed) beast.Destroy(); why = UwPay.T("Pit.Why.NoBeastKind"); return null; }
             NoteBeast(beast); pit.AddBeast(beast);
-            if (!Ledger.Current.Post(Underworld.Till(map), "world", Fee, "Fight pit: opponent fee"))
+            var fee = Fee;
+            if (!UwPay.PayFromColony(map, fee, "world", "Fight pit: opponent fee"))
             {
                 Dismiss(beast); pit.RemoveBeast(beast);
-                why = UwPay.T("Pit.Why.TillShort", PitFighters.Silver(Fee)); return null;
+                why = UwPay.ShortOf(map, fee); return null;
             }
-            HLog.Info("Underworld", $"Pit beast hired: {beast.LabelShort} ({kind.defName}, power {kind.combatPower:0}) for {fighter.LabelShort} (power {PitFighters.Power(fighter):0}), fee {PitFighters.Silver(Fee)}");
+            HLog.Info("Underworld", $"Pit beast hired: {beast.LabelShort} ({kind.defName}, power {kind.combatPower:0}) for {fighter.LabelShort} (power {PitFighters.Power(fighter):0}), fee {PitFighters.Silver(fee)}");
             var bout = FightBout.Start(pit, fighter, beast, false, 300, manual: true);
             if (bout == null)
             {
                 Dismiss(beast); pit.RemoveBeast(beast); why = UwPay.T("Pit.Why.NoBout");
-                Ledger.Current.Post("world", Underworld.Till(map), Fee, "Fight pit: opponent fee refunded");
+                if (fee.Micro > 0) Ledger.Current.Post("world", Underworld.Till(map), fee, "Fight pit: opponent fee refunded");
                 return null;
             }
-            bout.FeePaid = Fee;   // refunded when the bout is called off without a result
+            bout.FeePaid = fee;   // refunded when the bout is called off without a result
+            if (Underworld.Comp != null) Underworld.Comp.OpponentsHired++;
             return bout;
         }
 

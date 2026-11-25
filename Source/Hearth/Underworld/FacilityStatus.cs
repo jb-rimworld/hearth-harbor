@@ -113,6 +113,8 @@ namespace Hearth.Underworld
             }
             if (g.State != FacilityState.NotBuilt && c.NextGangTick >= 0) g.Next = UwPay.T("Gang.Status.Next", In(c.NextGangTick));
             if (Offers.OpenOf(UwOfferKind.Protection, map) != null) g.Line += " " + UwPay.T("Gang.Status.DemandAbove");
+            if (g.State != FacilityState.NotBuilt && Underworld.Allows(UwFeature.PrisonInterrogation) && !HSettings.GetBool("underworld.gang.prisonAccess") && map.mapPawns.PrisonersOfColonySpawnedCount > 0)
+                g.Line += " " + UwPay.T("Gang.Status.PrisonOff");
             rows.Add(g);
 
             // fence

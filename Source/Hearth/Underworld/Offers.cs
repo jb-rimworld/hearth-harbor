@@ -209,7 +209,7 @@ namespace Hearth.Underworld
             why = null; var map = o?.Map;
             // a stale reference (the tab caches its rows) to an offer that was answered, ran out or was closed is gone too
             if (o == null || map == null || !o.Announced || !IsOpen(o) || !StillValid(o)) { why = UwPay.T("Offer.Gone"); return false; }
-            if (Ledger.Current.Balance(Underworld.Till(map)) < o.price) { why = UwPay.T(o.kind == UwOfferKind.Smuggler ? "Smuggler.NoCash" : "Gang.Demand.NoCash"); return false; }
+            if (UwPay.ColonyFunds(map) < o.price) { why = UwPay.ShortOf(map, o.price); return false; }
             return true;
         }
 
@@ -220,7 +220,7 @@ namespace Hearth.Underworld
             var map = o.Map;
             bool ok;
             if (o.kind == UwOfferKind.Smuggler) ok = Smuggler.Buy(map, o, out why);
-            else { ok = Gangs.PayProtection(map, o.faction, o.price); if (!ok) why = UwPay.T("Gang.Demand.NoCash"); }
+            else { ok = Gangs.PayProtection(map, o.faction, o.price); if (!ok) why = UwPay.ShortOf(map, o.price); }
             if (!ok)
             {
                 // nothing of the crate can be made any more (a removed mod): the offer is over, not short of cash
