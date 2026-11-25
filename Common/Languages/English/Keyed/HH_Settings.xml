@@ -400,9 +400,13 @@
   <HH.Setting.underworld.fence.goodwillHit.Desc>Before the difficulty cap of your tier.</HH.Setting.underworld.fence.goodwillHit.Desc>
   <HH.Setting.underworld.fence.sellPercent>Fence sells at</HH.Setting.underworld.fence.sellPercent>
   <HH.Setting.underworld.fence.sellPercent.Desc>Share of the market value shady buyers pay.</HH.Setting.underworld.fence.sellPercent.Desc>
+  <HH.Setting.underworld.gang.demandHours>Hours to answer a protection demand</HH.Setting.underworld.gang.demandHours>
+  <HH.Setting.underworld.gang.demandHours.Desc>A demand you do not answer within this time counts as a refusal.</HH.Setting.underworld.gang.demandHours.Desc>
   <HH.Setting.underworld.gang.feeMax>Back room fee (highest)</HH.Setting.underworld.gang.feeMax>
   <HH.Setting.underworld.gang.feeMin>Back room fee (lowest)</HH.Setting.underworld.gang.feeMin>
   <HH.Setting.underworld.gang.feeMin.Desc>What a gang member pays for the back room.</HH.Setting.underworld.gang.feeMin.Desc>
+  <HH.Setting.underworld.gang.firstDays>Days until the first gang</HH.Setting.underworld.gang.firstDays>
+  <HH.Setting.underworld.gang.firstDays.Desc>The first gang comes about this many days (half to one and a half times) after the first back room, fence counter or fight pit exists.</HH.Setting.underworld.gang.firstDays.Desc>
   <HH.Setting.underworld.gang.intervalDays>Days between gang visits</HH.Setting.underworld.gang.intervalDays>
   <HH.Setting.underworld.gang.intervalDays.Desc>Average time between gang visits once the back room, fight pit or fence exists.</HH.Setting.underworld.gang.intervalDays.Desc>
   <HH.Setting.underworld.gang.intimidateChance>Chance a gang demands protection money</HH.Setting.underworld.gang.intimidateChance>
@@ -410,6 +414,8 @@
   <HH.Setting.underworld.gang.prisonAccess>Gangs may visit the prison</HH.Setting.underworld.gang.prisonAccess>
   <HH.Setting.underworld.gang.prisonAccess.Desc>Allows the holding cells tour (questioning of prisoners) for gang guests. Off by default; prisons are closed to every guest otherwise.</HH.Setting.underworld.gang.prisonAccess.Desc>
   <HH.Setting.underworld.gang.protectionFee>Protection money demanded</HH.Setting.underworld.gang.protectionFee>
+  <HH.Setting.underworld.gang.retryHours>Hours before a failed gang visit is tried again</HH.Setting.underworld.gang.retryHours>
+  <HH.Setting.underworld.gang.retryHours.Desc>When a gang cannot come (no friendly faction, no way onto the map), the next try is this many hours later.</HH.Setting.underworld.gang.retryHours.Desc>
   <HH.Setting.underworld.gang.sizeMax>Largest gang</HH.Setting.underworld.gang.sizeMax>
   <HH.Setting.underworld.gang.tourFee>Holding cells tour fee</HH.Setting.underworld.gang.tourFee>
   <HH.Setting.underworld.gang.tourFee.Desc>Paid by a gang member for questioning a prisoner for an hour.</HH.Setting.underworld.gang.tourFee.Desc>
@@ -449,6 +455,8 @@
   <HH.Setting.underworld.smuggler.intervalDays.Desc>Average time between night landings at a smuggler's dock.</HH.Setting.underworld.smuggler.intervalDays.Desc>
   <HH.Setting.underworld.smuggler.maxValue>Largest crate</HH.Setting.underworld.smuggler.maxValue>
   <HH.Setting.underworld.smuggler.maxValue.Desc>Market value of the biggest crate offered.</HH.Setting.underworld.smuggler.maxValue.Desc>
+  <HH.Setting.underworld.smuggler.offerHours>Hours a smuggler's boat waits</HH.Setting.underworld.smuggler.offerHours>
+  <HH.Setting.underworld.smuggler.offerHours.Desc>A boat you do not answer within this time leaves; nothing else happens.</HH.Setting.underworld.smuggler.offerHours.Desc>
   <HH.Setting.underworld.smuggler.priceFactor>Contraband price</HH.Setting.underworld.smuggler.priceFactor>
   <HH.Setting.underworld.smuggler.priceFactor.Desc>Share of the market value you pay for a crate.</HH.Setting.underworld.smuggler.priceFactor.Desc>
   <HH.Setting.underworld.whispers.fence>Whispers per fence deal</HH.Setting.underworld.whispers.fence>

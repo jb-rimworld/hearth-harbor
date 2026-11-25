@@ -21,6 +21,8 @@ namespace Hearth.Underworld
         List<Thing> metaThings; List<int> metaFactions;     // for saving: loot → faction it was stolen from
         Dictionary<Thing, int> from = new Dictionary<Thing, int>();
         public int NextDealTick;
+        /// <summary>Last deal message of this counter (at most one per in-game hour).</summary>
+        public int LastMessageTick = -999999;
 
         public CompFenceStock() { stock = new ThingOwner<Thing>(this); }
         public ThingOwner<Thing> Stock => stock;
@@ -36,7 +38,38 @@ namespace Hearth.Underworld
         public Faction SourceFaction(Thing t) => from.TryGetValue(t, out int id) && id >= 0 ? Find.FactionManager.AllFactionsListForReading.FirstOrDefault(f => f.loadID == id) : null;
 
         public override string CompInspectStringExtra()
-            => UwPay.T("Fence.Inspect", stock.Count, StockValue.ToStringShort(), UwPay.Balance(Account).ToStringShort());
+        {
+            if (!parent.Spawned) return null;
+            var line = FenceTrade.StockLine(this);
+            var why = FenceTrade.CannotBuyReason(this);
+            return why == null ? line : line + "\n" + UwPay.T("Fence.CannotBuy", why);
+        }
+
+        /// <summary>Drops the whole stock next to the counter as ordinary items (the stolen origin is forgotten). Returns the number of stacks.</summary>
+        public int TakeOut()
+        {
+            var map = parent.MapHeld; if (map == null || stock.Count == 0) return 0;
+            int n = stock.Count;
+            stock.TryDropAll(parent.PositionHeld, map, ThingPlaceMode.Near);
+            from.Clear();
+            return n - stock.Count;
+        }
+
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            base.PostDestroy(mode, previousMap);
+            // deconstructed or destroyed: the goods are not lost with the counter
+            if (mode != DestroyMode.Vanish && previousMap != null && stock.Count > 0) { stock.TryDropAll(parent.Position, previousMap, ThingPlaceMode.Near); from.Clear(); }
+        }
+
+        /// <summary>A deal message, at most one per in-game hour for this counter.</summary>
+        public void Say(string text, MessageTypeDef type)
+        {
+            int now = Find.TickManager.TicksGame;
+            if (now - LastMessageTick < GenDate.TicksPerHour && now >= LastMessageTick) return;
+            LastMessageTick = now;
+            Messages.Message(text, parent, type, false);
+        }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
@@ -46,6 +79,13 @@ namespace Hearth.Underworld
                 defaultLabel = UwPay.T("Fence.Fund"), defaultDesc = UwPay.T("Fence.Fund.Desc"), icon = TexCommand.Attack,
                 action = () => { var n = FenceTrade.TopUp(this, Money.FromSilver(HSettings.Get("underworld.fence.capital"))); Messages.Message(UwPay.T("Fence.Funded", n.ToStringShort()), parent, MessageTypeDefOf.NeutralEvent, false); }
             };
+            var take = new Command_Action
+            {
+                defaultLabel = UwPay.T("Fence.TakeOut"), defaultDesc = UwPay.T("Fence.TakeOut.Desc"), icon = OfferIcons.TakeOut,
+                action = () => { int n = TakeOut(); Messages.Message(UwPay.T("Fence.TookOut", n), parent, MessageTypeDefOf.NeutralEvent, false); }
+            };
+            if (stock.Count == 0) take.Disable(UwPay.T("Fence.TakeOut.Empty"));
+            yield return take;
             if (Prefs.DevMode)
                 yield return new Command_Action { defaultLabel = "DEV: spawn loot", action = () => { var t = UwPay.MakeGoods(30, 300); if (t != null) FenceTrade.Stock(this, t, null); } };
         }
@@ -54,6 +94,7 @@ namespace Hearth.Underworld
         {
             Scribe_Deep.Look(ref stock, "stock", this);
             Scribe_Values.Look(ref NextDealTick, "nextDeal");
+            Scribe_Values.Look(ref LastMessageTick, "lastMessage", -999999);
             if (Scribe.mode == LoadSaveMode.Saving) { metaThings = new List<Thing>(from.Keys.Where(t => stock.Contains(t))); metaFactions = metaThings.Select(t => from[t]).ToList(); }
             Scribe_Collections.Look(ref metaThings, "metaThings", LookMode.Reference);
             Scribe_Collections.Look(ref metaFactions, "metaFactions", LookMode.Value);
@@ -77,6 +118,18 @@ namespace Hearth.Underworld
         public static Money SellPrice(Thing t) => new Money(UnderworldMath.FenceSellPrice(Money.FromSilver(t.MarketValue * t.stackCount).Micro, SellPct));
 
         /// <summary>Moves money from the till into the fence's cash box up to the target. Returns what was moved.</summary>
+        /// <summary>"Stock: 3 items worth 210 silver. Cash box: 600 silver."</summary>
+        public static string StockLine(CompFenceStock fs) => UwPay.T("Fence.Stock", fs.Stock.Count, fs.StockValue.ToStringShort(), UwPay.Balance(fs.Account).ToStringShort());
+
+        /// <summary>Why the fence cannot buy anything right now (translated), or null when it can.</summary>
+        public static string CannotBuyReason(CompFenceStock fs)
+        {
+            if (!Underworld.Unlocked) return UwPay.T("Fence.Why.Closed");
+            var have = UwPay.Balance(fs.Account) + UwPay.Balance(Underworld.Till(fs.Map));
+            if (have < Money.FromSilver(1)) return UwPay.T("Fence.Why.TillEmpty");
+            return null;
+        }
+
         public static Money TopUp(CompFenceStock fs, Money target)
         {
             var l = Ledger.Current; var have = l.Balance(fs.Account);
@@ -109,7 +162,12 @@ namespace Hearth.Underworld
             if (item == null || item.Destroyed || item.stackCount <= 0) { why = "nothing to buy"; return false; }
             var price = BuyPrice(item);
             if (Ledger.Current.Balance(fs.Account) < price) TopUp(fs, price);
-            if (Ledger.Current.Balance(fs.Account) < price) { why = UwPay.T("Fence.NoCash"); return false; }
+            if (Ledger.Current.Balance(fs.Account) < price)
+            {
+                why = UwPay.T("Fence.Why.TillEmpty");
+                fs.Say(UwPay.T("Fence.BuyFailed", item.LabelCap, why), MessageTypeDefOf.NegativeEvent);
+                return false;
+            }
             Faction src = null; Underworld.Comp.IsStolen(item, out src);
             if (!Ledger.Current.Post(fs.Account, "world", price, "Fence: bought loot")) { why = "ledger"; return false; }
             UwPay.GiveSilver(seller, price.WholeSilver);
@@ -119,9 +177,10 @@ namespace Hearth.Underworld
             Underworld.Comp.ForgetStolen(item);
             if (fs.Stock.TryAdd(taken, false)) fs.NoteFrom(taken, src);
             else taken.Destroy();
-            Underworld.Comp.DealsBought++;
+            Underworld.Comp.DealsBought++; Underworld.Comp.NoteEvent(FacilityStatus.FenceId);
             Underworld.AddWhispers(HSettings.Get("underworld.whispers.fence"), "fence deal (bought)");
             UwActivity.Note(fs.Map);
+            fs.Say(UwPay.T("Fence.Bought", taken.LabelCap, price.ToStringShort()), MessageTypeDefOf.NeutralEvent);
             return true;
         }
 
@@ -137,7 +196,8 @@ namespace Hearth.Underworld
             var cost = BuyPrice(item);
             var thing = fs.Stock.Take(item, item.stackCount); fs.ForgetFrom(item);
             if (!buyer.inventory.innerContainer.TryAdd(thing)) GenPlace.TryPlaceThing(thing, buyer.Position, buyer.Map, ThingPlaceMode.Near);
-            Underworld.Comp.DealsSold++; Underworld.Comp.FenceProfitMicro += price.Micro - cost.Micro;
+            Underworld.Comp.DealsSold++; Underworld.Comp.FenceProfitMicro += price.Micro - cost.Micro; Underworld.Comp.NoteEvent(FacilityStatus.FenceId);
+            fs.Say(UwPay.T("Fence.Sold", thing.LabelCap, price.ToStringShort()), MessageTypeDefOf.NeutralEvent);
             Underworld.AddWhispers(HSettings.Get("underworld.whispers.fence"), "fence deal (sold)");
             UwActivity.Note(fs.Map);
             Surplus(fs);
@@ -229,7 +289,7 @@ namespace Hearth.Underworld
                     var fs = (job.targetA.Thing as ThingWithComps)?.GetComp<CompFenceStock>(); if (fs == null) return;
                     var loot = Loot.PickStolen(pawn);
                     if (loot != null) { FenceTrade.BuyFrom(fs, pawn, loot, out _); return; }
-                    var item = fs.Stock.InRandomOrder().FirstOrDefault(t => GuestApi.Budget(pawn) >= FenceTrade.SellPrice(t));
+                    var item = fs.Stock.InRandomOrder().FirstOrDefault(t => UwPay.Budget(pawn) >= FenceTrade.SellPrice(t));
                     if (item != null) FenceTrade.SellTo(fs, pawn, item, out _);
                 }
             };

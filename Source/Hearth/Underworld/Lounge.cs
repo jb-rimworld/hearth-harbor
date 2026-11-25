@@ -67,7 +67,7 @@ namespace Hearth.Underworld
             try { drug.Ingested(p, drugDef.ingestible?.CachedNutrition ?? 0f); }
             catch (Exception e) { HLog.Error("Underworld", "Drug ingestion failed", e); }
             if (!drug.Destroyed) drug.Destroy();
-            Underworld.Comp.LoungeSessions++; UwActivity.Note(map);
+            Underworld.Comp.LoungeSessions++; UwActivity.Note(map); Underworld.Comp.NoteEvent(FacilityStatus.LoungeId);
             Underworld.AddWhispers(HSettings.Get("underworld.whispers.lounge"), "drug lounge session");
             GuestApi.AddSatisfaction(p, 0.08f, "drug lounge");
             if (!wasAddicted && IsAddicted(p) && Underworld.Tier >= 4f && p.Faction != null && !p.Faction.IsPlayer)
@@ -88,7 +88,7 @@ namespace Hearth.Underworld
             {
                 if (!Underworld.Unlocked || UwDefs.JobLounge == null || Lounge.AllowedLevel(guest) == 0 || guest.Map == null) return 0f;
                 if (Lounge.OpenLounge(guest.Map) == null) return 0f;
-                if (info == null || info.Budget < HSettings.GetSilver("underworld.lounge.price")) return 0f;
+                if (UwPay.Budget(guest) < HSettings.GetSilver("underworld.lounge.price")) return 0f;
                 return 0.9f;
             }
             public Job TryGiveJob(Pawn guest, GuestInfo info)

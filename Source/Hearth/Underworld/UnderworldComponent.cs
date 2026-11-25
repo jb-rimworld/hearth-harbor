@@ -54,6 +54,18 @@ namespace Hearth.Underworld
         public int Bouts, Bets, DealsBought, DealsSold, LoungeSessions, GangVisits, Tours, Hunts, OrgansSold, Scandals, Smuggles;
         public long HouseTakeMicro, FenceProfitMicro;
         public float RenownApplied;
+        // 1.2.0 (package C): open offers (smuggler landings, protection demands) and the gang timer's state
+        public List<UwOffer> Offers = new List<UwOffer>();
+        public int NextOfferId = 1;
+        /// <summary>The first gang visit was planned 0.5 to 1.5 days after the first facility gangs use (set once per save).</summary>
+        public bool FirstGangPlanned;
+        /// <summary>Key (below HH.Underworld.Gang.Why.) of the reason the last gang visit failed, null when the last attempt worked; and its tick.</summary>
+        public string GangRetryKey; public int GangRetryTick = -1;
+        // last event per facility id (FacilityStatus ids): tick
+        Dictionary<string, int> lastEvent = new Dictionary<string, int>();
+        List<string> lek; List<int> lev;
+        public int LastEvent(string id) => lastEvent.TryGetValue(id, out int t) ? t : -1;
+        public void NoteEvent(string id) { if (Find.TickManager != null) lastEvent[id] = Find.TickManager.TicksGame; }
 
         public UnderworldComponent(Game game) { GameRef = game; }
 
@@ -145,6 +157,12 @@ namespace Hearth.Underworld
             string h = HouseTakeMicro.ToString(), f = FenceProfitMicro.ToString();
             Scribe_Values.Look(ref h, "houseTake"); Scribe_Values.Look(ref f, "fenceProfit");
             Scribe_Values.Look(ref RenownApplied, "renownApplied");
+            Scribe_Collections.Look(ref Offers, "offers", LookMode.Deep);
+            Scribe_Values.Look(ref NextOfferId, "nextOfferId", 1);
+            Scribe_Values.Look(ref FirstGangPlanned, "firstGangPlanned");
+            Scribe_Values.Look(ref GangRetryKey, "gangRetryKey");
+            Scribe_Values.Look(ref GangRetryTick, "gangRetryTick", -1);
+            Scribe_Collections.Look(ref lastEvent, "lastEvent", LookMode.Value, LookMode.Value, ref lek, ref lev);
             if (Scribe.mode == LoadSaveMode.LoadingVars)
             {
                 long.TryParse(h, out HouseTakeMicro); long.TryParse(f, out FenceProfitMicro);
@@ -159,6 +177,9 @@ namespace Hearth.Underworld
                 if (stolenFactions == null) stolenFactions = new List<int>();
                 if (Orders == null) Orders = new List<OrganOrder>();
                 Orders.RemoveAll(o => o == null || o.organ == null);
+                if (Offers == null) Offers = new List<UwOffer>();
+                Offers.RemoveAll(o => o == null || !o.LoadedOk);
+                if (lastEvent == null) lastEvent = new Dictionary<string, int>();
                 int n = Math.Min(stolenThings.Count, stolenFactions.Count);
                 if (stolenThings.Count != n) stolenThings.RemoveRange(n, stolenThings.Count - n);
                 if (stolenFactions.Count != n) stolenFactions.RemoveRange(n, stolenFactions.Count - n);

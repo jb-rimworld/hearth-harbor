@@ -64,7 +64,7 @@ namespace Hearth.Underworld
                 if (order != null) { order.done = true; Messages.Message(UwPay.T("Organ.OrderDone", t.LabelNoCount), clinic.parent, MessageTypeDefOf.PositiveEvent, false); }
                 t.Destroy();
                 sold += count;
-                Underworld.Comp.OrgansSold += count;
+                Underworld.Comp.OrgansSold += count; Underworld.Comp.NoteEvent(FacilityStatus.ClinicId);
                 Underworld.AddWhispers(HSettings.Get("underworld.whispers.organ") * count, "organ sale");
                 UwActivity.Note(map);
                 Outrage(map);

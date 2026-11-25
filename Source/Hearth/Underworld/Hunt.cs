@@ -27,12 +27,27 @@ namespace Hearth.Underworld
             if (cache == null || Find.TickManager.TicksGame - cache.Builtick > 250) cache = Arena.Flood(parent.Map, parent.Position, 1600);
             return cache;
         }
-        public bool Valid => ArenaInfo() is Arena.Info a && a.Closed && a.Cells.Count >= 60;
+        public bool Valid => ArenaInfo() is Arena.Info a && a.Closed && a.Cells.Count >= Hunts.MinCells;
+
+        /// <summary>Why no hunting party can come to this ground (translated), or null when the ground is fine.</summary>
+        public string ReasonLine()
+        {
+            if (!Underworld.Allows(UwFeature.HuntAnimals)) return UwPay.T("Hunt.Closed");
+            var a = ArenaInfo(); if (a == null) return null;
+            if (!a.Closed) return UwPay.T("Hunt.Open");
+            if (a.Cells.Count < Hunts.MinCells) return UwPay.T("Hunt.TooSmall", a.Cells.Count, Hunts.MinCells);
+            return null;
+        }
 
         public override string CompInspectStringExtra()
         {
             var a = ArenaInfo(); if (a == null) return null;
-            return a.Closed ? UwPay.T("Hunt.GroundOk", a.Cells.Count, allowPrisoners ? UwPay.T("Hunt.QuarryHuman") : UwPay.T("Hunt.QuarryAnimals")) : UwPay.T("Pit.ArenaOpen");
+            var why = ReasonLine(); if (why != null) return why;
+            var s = UwPay.T("Hunt.GroundOk", a.Cells.Count, allowPrisoners ? UwPay.T("Hunt.QuarryHuman") : UwPay.T("Hunt.QuarryAnimals"));
+            var c = Underworld.Comp;
+            if (Hunts.Running(parent.Map)) s += "\n" + UwPay.T("Hunt.Running");
+            else if (c != null && c.NextHuntTick > Find.TickManager.TicksGame) s += "\n" + UwPay.T("Hunt.Next", (c.NextHuntTick - Find.TickManager.TicksGame).ToStringTicksToPeriod());
+            return s;
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -61,6 +76,9 @@ namespace Hearth.Underworld
             public Pawn Human; public int Start, HumanStart; public Money Fee; public bool Done;
         }
         static readonly List<Session> sessions = new List<Session>();
+        /// <summary>Smallest closed hunting ground (tiles).</summary>
+        public const int MinCells = 60;
+        public static bool Running(Map map) { foreach (var s in sessions) if (s.Map == map) return true; return false; }
 
         public static CompHuntingGround FindGround(Map map)
         {
@@ -137,7 +155,7 @@ namespace Hearth.Underworld
             s.Quarry = SpawnQuarry(map, ground, HSettings.GetInt("underworld.hunt.quarryCount"));
             if (ground.allowPrisoners && HumanQuarryAllowed(out _)) TryAddHuman(s);
             sessions.Add(s);
-            Underworld.Comp.Hunts++; UwActivity.Note(map);
+            Underworld.Comp.Hunts++; UwActivity.Note(map); Underworld.Comp.NoteEvent(FacilityStatus.HuntId);
             Underworld.AddWhispers(HSettings.Get("underworld.whispers.hunt"), "the hunt");
             Find.LetterStack.ReceiveLetter(UwPay.T("Hunt.Title"), UwPay.T("Hunt.Text", pawns.Count, fee.ToStringShort(), s.Quarry.Count), LetterDefOf.NeutralEvent, ground.parent);
             hunters = pawns;
