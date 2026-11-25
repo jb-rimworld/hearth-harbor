@@ -208,14 +208,14 @@ namespace Hearth.Kitchen.Tests
             t.Check(!DishKnowledge.IsKnown(dark) || DishKnowledge.DarkAllowed(), "dark menu hidden by default");
             {
                 // the dark menu needs content Dark or Grim even when the setting is on
-                var prof = HearthProfile.Current; var oldC = prof.Content; var uwc = Hearth.Underworld.Underworld.Comp; bool oldAck = uwc?.ContentWarningAck ?? false;
+                var prof = HearthProfile.Current; var oldC = prof.Content;
                 HSettings.Set("kitchen.darkMenu", 1f);
                 prof.Content = ContentIntensity.Standard;
                 t.Check(!DishKnowledge.DarkAllowed(), "dark menu setting alone does not open it at content Standard");
-                prof.Content = ContentIntensity.Dark; if (uwc != null) uwc.ContentWarningAck = true;
+                prof.Content = ContentIntensity.Dark;   // applies at once since 1.2.0 (no confirmation)
                 t.Check(DishKnowledge.DarkAllowed(), "dark menu opens at content Dark with the setting on");
                 HSettings.Set("kitchen.darkMenu", 0f);
-                prof.Content = oldC; if (uwc != null) uwc.ContentWarningAck = oldAck;
+                prof.Content = oldC;
             }
             HSettings.Set("kitchen.variants", 0f); t.Check(!l1.recipes[1].AvailableNow && l1.recipes[0].AvailableNow, "Fine and Signature forms can be switched off"); HSettings.Set("kitchen.variants", 1f);
             t.Check(DishKnowledge.Known().Count() >= 21, "known dishes listed: " + DishKnowledge.Known().Count());

@@ -65,7 +65,7 @@ namespace Hearth.SaveLoad
             l.Add("lotteryTickets=" + (LotteryGame.Current?.tickets.Count ?? -1));
             l.Add("casinoSessions=" + (CasinoComponent.Get()?.Sessions.Count ?? -1));
             l.Add("screenings=" + map.lordManager.lords.Count(x => x.LordJob is LordJob_Joinable_Screening));
-            l.Add("uwDiscovered=" + UW.Discovered);
+            l.Add("uwContent=" + HearthProfile.Current?.Content);
             // facts are taken at save time and right after the load, i.e. at the same tick: the decaying whispers compare as they are
             l.Add("whispers=" + UW.Comp?.WhispersAt(Find.TickManager.TicksGame).ToString("0.000"));
             l.Add("setting " + ChangedSetting + "=" + HSettings.Get(ChangedSetting));
@@ -187,10 +187,8 @@ namespace Hearth.SaveLoad
             var lot = LotteryGame.Current;
             if (lot != null) { var r = lot.BuyGlobalTicket(new[] { 3, 7, 12, 21, 33 }, 4); t.Check(r.Ok, "lottery ticket bought: " + r.Message); lot.QuickPick(3); }
 
-            // underworld discovered, with whispers
+            // underworld open (1.2.0: no discovery), with whispers
             var prof = HearthProfile.Current;
-            prof.UnderworldDiscovered = true;
-            UW.Comp.ContentWarningAck = true;
             UW.AddWhispers(12.5f, "save/load test");
             t.Check(UW.Unlocked && UW.Whispers > 10f, "underworld unlocked, whispers " + UW.Whispers.ToString("0.0"));
 
@@ -420,7 +418,7 @@ namespace Hearth.SaveLoad
             SaveLoadKit.CompareFingerprints(save, t, 40);
             foreach (var m in SaveModulesOffSuite.Switched) t.Check(!Modules.On(m), m + " is still off after the load");
             // casinoSessions: 0 on both sides, the session was cashed out when the Casino was switched off (saveload.modulesoff checks that)
-            Facts.CompareAfterLoad(t, save, new[] { "casinoSessions", "lotteryTickets", "policies", "bankBalance", "portfolio", "uwDiscovered", "whispers", "ledgerSum", "guests", "guestRecords" }, "kept while off: ");
+            Facts.CompareAfterLoad(t, save, new[] { "casinoSessions", "lotteryTickets", "policies", "bankBalance", "portfolio", "uwContent", "whispers", "ledgerSum", "guests", "guestRecords" }, "kept while off: ");
             t.Check(CasinoComponent.Get().Sessions.Count == 0, "no casino session waiting in limbo while the module is off: " + CasinoComponent.Get().Sessions.Count);
             var prof = HearthProfile.Current;
             foreach (var m in SaveModulesOffSuite.Switched) { prof.SetModule(m, true); t.Check(Modules.On(m), m + " switched on again"); }

@@ -625,7 +625,6 @@ namespace Hearth.Shell.Tests
             foreach (HostingPreset p in Enum.GetValues(typeof(HostingPreset))) { Need("HH.UI.Preset." + p); Need("HH.UI.Preset." + p + ".Desc"); }
             foreach (GuestsPage.Col c in Enum.GetValues(typeof(GuestsPage.Col))) Need("HH.UI.Guests.Col." + c);
             foreach (var m in Modules.All.Where(m => m != ModuleId.Core)) Need("HH.UI.ModuleDesc." + m);
-            foreach (var u in new[] { "Discover", "On", "Off" }) { Need("HH.UI.Underworld." + u); Need("HH.UI.Underworld." + u + ".Tip"); }
             foreach (var st in HSettings.All.Where(x => x.Module == ModuleId.Core && x.Key != "core.rngAlgorithm" && x.Key != "core.sealedFate" && x.Key != "core.helpHint" && x.Key != "core.guide")) { Need("HH.Setting." + st.Key); Need("HH.Setting." + st.Key + ".Desc"); }
             t.Check(missing.Count == 0, "all dynamic translation keys exist" + (missing.Count > 0 ? ": " + string.Join(", ", missing) : ""));
             t.Check("HH.UI.Row.Limited".Translate("5").ToString().Contains("5"), "format arguments work");

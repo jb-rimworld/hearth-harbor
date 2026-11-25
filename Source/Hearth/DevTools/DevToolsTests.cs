@@ -69,7 +69,6 @@ namespace Hearth.DevTools
             }
             else t.Note("no HH_SlotMachine def: jackpot not tested");
 
-            Run(t, "stranger", HearthDebugActions.Stranger);
             Run(t, "caretaker", HearthDebugActions.RunCaretaker);
             Run(t, "diagnosis dump", HearthDebugActions.DumpDiagnosis);
             yield return 5;

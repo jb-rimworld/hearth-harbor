@@ -15,24 +15,27 @@ namespace Hearth.Underworld
     static class UwKit
     {
         public static readonly List<Thing> Spawned = new List<Thing>();
-        static ContentIntensity oldContent; static bool oldDiscovered; static float oldTier;
+        static ContentIntensity oldContent; static float oldTier; static bool saved;
 
-        public static void Begin(ContentIntensity c, bool discovered, bool ack = true, float tier = 3f)
+        /// <summary>Sets the content intensity and tier for a suite (1.2.0: no discovery, no warnings). Nested calls keep the first saved state.</summary>
+        public static void Begin(ContentIntensity c, float tier = 3f)
         {
-            var p = HearthProfile.Current; oldContent = p.Content; oldDiscovered = p.UnderworldDiscovered; oldTier = p.Tier;
-            p.Content = c; p.UnderworldDiscovered = discovered; p.Tier = tier;
-            var comp = Underworld.Comp; comp.ContentWarningAck = ack; comp.HuntWarningAck = ack; comp.OrganWarningAck = ack;
-            comp.NeverAsk = false; comp.AskCount = 0; comp.LastAskTick = -9_999_999; comp.StrangerFirstTick = -1;
+            var p = HearthProfile.Current;
+            if (!saved) { oldContent = p.Content; oldTier = p.Tier; saved = true; }
+            p.Content = c; p.Tier = tier;
+            var comp = Underworld.Comp;
             comp.SetWhispers(0, Find.TickManager.TicksGame);
             comp.Orders.Clear();
+            Underworld.MarkInUseDirty(null);
         }
 
         public static void End()
         {
             foreach (var t in Spawned.ToList()) if (t != null && !t.Destroyed) { try { t.Destroy(); } catch { } }
             Spawned.Clear();
-            var p = HearthProfile.Current; p.Content = oldContent; p.UnderworldDiscovered = oldDiscovered; p.Tier = oldTier;
+            var p = HearthProfile.Current; if (saved) { p.Content = oldContent; p.Tier = oldTier; saved = false; }
             FightBout.AbortAll("test end");
+            Underworld.MarkInUseDirty(null);
         }
 
         public static Faction Friendly() => Find.FactionManager.AllFactionsVisible.FirstOrDefault(f => !f.IsPlayer && !f.defeated && f.def.humanlikeFaction && !f.HostileTo(Faction.OfPlayer) && !f.def.hidden);
@@ -101,133 +104,131 @@ namespace Hearth.Underworld
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map; var f = UwKit.Friendly();
-            UwKit.Begin(ContentIntensity.Cozy, false);
+            UwKit.Begin(ContentIntensity.Cozy);
             t.Check(UwDefs.ResMain != null && UwDefs.BackRoomDoor != null, "defs present");
             t.Check(!Underworld.Visible && !Underworld.Unlocked, "Cozy: underworld not visible");
-            t.Check(UwDefs.ResMain.IsHidden, "Cozy: research hidden");
-            t.Check(!UwDefs.ResMain.CanStartNow, "Cozy: research cannot start");
+            t.Check(UwDefs.ResHunt.IsHidden && UwDefs.ResClinic.IsHidden, "Cozy: research hidden");
+            t.Check(!UwDefs.ResHunt.CanStartNow, "Cozy: research cannot start");
             foreach (var d in UwDefs.GatedBuildings) t.Check(d.GetModExtension<UwGateExtension>() != null && !UwDefs.Open(d.GetModExtension<UwGateExtension>()), "Cozy: " + d.defName + " gate shut");
             var door = UwDefs.BackRoomDoor;
             t.Check(!new PlaceWorker_UnderworldGate().IsBuildDesignatorVisible(door), "Cozy: designator hidden");
             if (f != null) UwKit.Guests(map, 2, f);
-            t.Check(!Discovery.AskConditionsMet(map, out string why), "Cozy: stranger never asks (" + why + ")");
-            t.Check(!UwDefs.IncStranger.Worker.CanFireNow(new IncidentParms { target = map }), "Cozy: stranger incident cannot fire");
             t.Check(!Gangs.Possible(map) && !Smuggler.Possible(map) && !Hunts.Possible(map), "Cozy: no gang, smuggler or hunt");
-            HearthProfile.Current.UnderworldDiscovered = true;
-            t.Check(!Underworld.Unlocked && !Underworld.Allows(UwFeature.Facilities), "Cozy + discovered still closed");
-            HearthProfile.Current.UnderworldDiscovered = false;
             int letters = Find.LetterStack.LettersListForReading.Count; int bouts = Underworld.Comp.Bouts;
             yield return 3000;
             t.Check(Find.LetterStack.LettersListForReading.Count == letters, "Cozy: no new letters in 3000 ticks");
-            t.Check(!HearthProfile.Current.UnderworldDiscovered && Underworld.Comp.Bouts == bouts && Underworld.Comp.AskCount == 0, "Cozy: nothing happened");
+            t.Check(Underworld.Comp.Bouts == bouts, "Cozy: nothing happened");
             t.Check(!Find.WindowStack.IsOpen<Dialog_NodeTree>(), "Cozy: no dialog");
             // module switch
-            UwKit.Begin(ContentIntensity.Standard, true);
-            t.Check(Underworld.Unlocked, "Standard + discovered: unlocked");
+            UwKit.Begin(ContentIntensity.Standard);
+            t.Check(Underworld.Unlocked, "Standard: unlocked");
             HearthProfile.Current.SetModule(ModuleId.Underworld, false);
             t.Check(!Underworld.Visible && !Underworld.Unlocked, "module off: closed");
             HearthProfile.Current.SetModule(ModuleId.Underworld, true);
-            // Standard without discovery
-            HearthProfile.Current.UnderworldDiscovered = false;
-            t.Check(Underworld.Visible && !Underworld.Unlocked && UwDefs.ResMain.IsHidden, "Standard, not discovered: research still hidden");
-            // Dark without confirmation behaves like Standard
-            UwKit.Begin(ContentIntensity.Dark, true, ack: false);
-            t.Check(Underworld.Effective == ContentIntensity.Standard && !Underworld.Allows(UwFeature.OrganClinic), "Dark unconfirmed = Standard");
-            Underworld.Comp.ContentWarningAck = true;
-            t.Check(Underworld.Effective == ContentIntensity.Dark && Underworld.Allows(UwFeature.OrganClinic) && Underworld.Allows(UwFeature.HuntPrisoners) && !Underworld.Allows(UwFeature.HuntPrisonersNoPrecept), "Dark confirmed: organs and prisoner hunt, no Grim extras");
+            // Dark applies at once (no warning dialog since 1.2.0)
+            UwKit.Begin(ContentIntensity.Dark);
+            t.Check(Underworld.Effective == ContentIntensity.Dark && Underworld.Allows(UwFeature.OrganClinic) && Underworld.Allows(UwFeature.HuntPrisoners) && !Underworld.Allows(UwFeature.HuntPrisonersNoPrecept), "Dark: organs and prisoner hunt at once, no Grim extras");
             UwKit.End();
         }
     }
 
+    /// <summary>1.2.0 package A: the underworld just works. Fresh Standard game, Dark and Grim without dialogs, old saves, Cozy, the N08 guard.</summary>
     public sealed class UwGatesSuite : HearthTestSuite
     {
         public override string Name => "underworld.gates";
         public override ModuleId Module => ModuleId.Underworld;
+        public override int MaxTicks => 20000;
         public override IEnumerable<int> Run(TestContext t)
         {
-            var pw = new PlaceWorker_UnderworldGate();
-            foreach (var (c, expClinic) in new[] { (ContentIntensity.Standard, false), (ContentIntensity.Dark, true), (ContentIntensity.Grim, true) })
+            var map = t.Map; var pw = new PlaceWorker_UnderworldGate();
+            var basics = new[] { UwDefs.BackRoomDoor, UwDefs.FightPit, UwDefs.FenceCounter, UwDefs.SmugglerDock };
+            HearthTabPage Tab() => HearthTabs.Pages.FirstOrDefault(p => p.Id == "underworld");
+            bool TabShown() => HearthTabs.VisiblePages.Contains(Tab());
+            // a fresh profile is Standard with the module on
+            var fresh = new HearthProfile();
+            t.Check(fresh.Content == ContentIntensity.Standard && fresh.ModuleOn(ModuleId.Underworld) && Modules.DefaultOn(ModuleId.Underworld), "a new profile: Standard content, Underworld module on");
+            UwKit.Begin(ContentIntensity.Standard);
+            HearthProfile.Current.SetModule(ModuleId.Underworld, true);
+            t.Check(Underworld.Visible && Underworld.Unlocked, "fresh Standard game: the underworld is open");
+            foreach (var d in basics)
             {
-                UwKit.Begin(c, true);
-                t.Check(pw.IsBuildDesignatorVisible(UwDefs.BackRoomDoor) && pw.IsBuildDesignatorVisible(UwDefs.FightPit) && pw.IsBuildDesignatorVisible(UwDefs.FenceCounter) && pw.IsBuildDesignatorVisible(UwDefs.SmugglerDock) && pw.IsBuildDesignatorVisible(UwDefs.HuntingGround), c + ": facilities visible");
-                t.Check(pw.IsBuildDesignatorVisible(UwDefs.OrganClinic) == expClinic, c + ": clinic visible = " + expClinic);
-                t.Check(UwDefs.ResClinic.IsHidden == !expClinic, c + ": clinic research hidden = " + !expClinic);
-                t.Check(UwDefs.ResDiscovery.IsHidden, c + ": key project always hidden");
-                t.Check(Underworld.Allows(UwFeature.HuntPrisonersNoPrecept) == (c == ContentIntensity.Grim), c + ": hunt without precept only in Grim");
-                t.Check(Underworld.Allows(UwFeature.OrganOrders) == (c == ContentIntensity.Grim), c + ": organ orders only in Grim");
-                var acc = pw.AllowsPlacing(UwDefs.OrganClinic, IntVec3.Zero, Rot4.North, t.Map);
-                t.Check(acc.Accepted == expClinic, c + ": placing the clinic allowed = " + expClinic);
-                yield return 1;
+                t.Check(d != null && pw.IsBuildDesignatorVisible(d), d?.defName + ": designator visible");
+                t.Check(d != null && d.IsResearchFinished, d?.defName + ": needs no research");
+                t.Check(d != null && pw.AllowsPlacing(d, IntVec3.Zero, Rot4.North, map).Accepted, d?.defName + ": the gate allows placing");
             }
-            UwKit.Begin(ContentIntensity.Standard, false);
-            t.Check(!pw.IsBuildDesignatorVisible(UwDefs.BackRoomDoor), "undiscovered: designator hidden");
-            t.Check(UwDefs.LoungeVenue != null && !UwDefs.Open(UwDefs.LoungeVenue.GetModExtension<UwGateExtension>()), "undiscovered: lounge venue gated");
-            UwKit.Begin(ContentIntensity.Standard, true);
-            t.Check(UwDefs.Open(UwDefs.LoungeVenue.GetModExtension<UwGateExtension>()), "discovered: lounge venue open");
-            t.Check(Underworld.IsMinor(null), "null pawn counts as minor (safe default)");
-            UwKit.End();
-        }
-    }
-
-    public sealed class UwDiscoverySuite : HearthTestSuite
-    {
-        public override string Name => "underworld.discovery";
-        public override ModuleId Module => ModuleId.Underworld;
-        public override IEnumerable<int> Run(TestContext t)
-        {
-            var map = t.Map; var f = UwKit.Friendly();
-            UwKit.Begin(ContentIntensity.Standard, false);
-            var comp = Underworld.Comp;
-            t.Check(!Discovery.AskConditionsMet(map, out string why0), "no guests, no venue: no stranger (" + why0 + ")");
-            if (f == null) { t.Note("no friendly faction in this world; guest checks skipped"); }
+            t.Check(UwDefs.LoungeVenue != null && UwDefs.LoungeVenue.researchPrerequisite == null && UwDefs.Open(UwDefs.LoungeVenue.GetModExtension<UwGateExtension>()), "drug lounge venue type: no research, gate open");
+            t.Check(Tab() != null && TabShown(), "Underworld tab visible");
+            t.Check(UwDefs.ResMain.IsHidden && UwDefs.ResDiscovery.IsHidden, "research tab shows neither HH_Underworld_1 nor the old key project");
+            foreach (var r in new[] { UwDefs.ResHunt, UwDefs.ResClinic })
+                t.Check((r.prerequisites ?? new List<ResearchProjectDef>()).Concat(r.hiddenPrerequisites ?? new List<ResearchProjectDef>()).All(q => q != UwDefs.ResMain && q != UwDefs.ResDiscovery), r.defName + " no longer needs HH_Underworld_1");
+            t.Check(!UwDefs.ResHunt.IsHidden && UwDefs.ResClinic.IsHidden, "Standard: the hunt research visible, the clinic research hidden");
+            t.Check(DefDatabase<ThingDef>.AllDefs.All(d => d.researchPrerequisites == null || !d.researchPrerequisites.Contains(UwDefs.ResMain)), "no building needs HH_Underworld_1");
+            t.Check(HSettings.Find("underworld.mode") == null && HSettings.Find("underworld.strangerMeanDays") == null && !HSettings.All.Any(x => x.Category == "Discovery"), "discovery settings are gone");
+            t.Check(DefDatabase<IncidentDef>.GetNamedSilentFail("HH_UnderworldStranger") == null, "the stranger incident is gone");
+            // old save: the flag says "not discovered" → still open; stored values of removed settings stay silent
+            var prof = HearthProfile.Current; bool oldFlag = prof.UnderworldDiscovered; int errs0 = HLog.ErrorCount;
+            prof.UnderworldDiscovered = false;
+            prof.Store.Set("underworld.mode", 0f); prof.Store.Set("underworld.strangerMaxAsks", 3f);
+            t.Check(Underworld.Unlocked && pw.IsBuildDesignatorVisible(UwDefs.FightPit) && TabShown(), "old save with underworldDiscovered=false: unlocked");
+            prof.Store.Remove("underworld.mode"); prof.Store.Remove("underworld.strangerMaxAsks"); prof.UnderworldDiscovered = oldFlag;
+            t.Check(HLog.ErrorCount == errs0, "stored values of removed settings cause no error");
+            // N08 guard: nothing reaches a colony without a facility
+            UwKit.Begin(ContentIntensity.Standard);
+            bool anyFacility = UwDefs.Facilities.Any(d => map.listerThings.ThingsOfDef(d).Any(x => x.Faction == Faction.OfPlayer)) || Venues.OfType(map, UwDefs.LoungeVenue).Any();
+            if (anyFacility) t.Note("the test map already has an underworld facility; the 'not in use' checks are skipped");
             else
             {
-                UwKit.Guests(map, 2, f);
-                t.Check(Discovery.AskConditionsMet(map, out string why1), "guests present: stranger may come (" + why1 + ")");
-                comp.SetWhispers(40, Find.TickManager.TicksGame);
-                t.Check(!Discovery.AskConditionsMet(map, out string why2), "high whispers: no stranger (" + why2 + ")");
-                comp.SetWhispers(0, Find.TickManager.TicksGame);
+                t.Check(!Underworld.InUse(map), "no facility: not in use");
+                t.Check(!Gangs.Possible(map) && !Smuggler.Possible(map), "no facility: no gang, no smuggler");
+                var f = UwKit.Friendly();
+                if (f != null)
+                {
+                    Underworld.Comp.SetWhispers(60f, Find.TickManager.TicksGame);
+                    float w = 1f + Math.Max(0, f.PlayerGoodwill) / 25f;
+                    t.Check(Math.Abs(Hearth.Guests.MapComponent_HH_GuestScheduler.FactionWeight(f, map) - w) < 1e-4f, "no facility: whispers do not change arrival weights");
+                    Underworld.Comp.SetWhispers(0f, Find.TickManager.TicksGame);
+                }
+                var cell = UwKit.TryFindRect(map, 3, 3, out var rr) ? rr.CenterCell : t.FreeCellNearCenter();
+                var pit = UwKit.SpawnBuilding(UwDefs.FightPit, cell, map);
+                t.Check(Underworld.InUse(map), "a fight pit marker puts the underworld in use at once");
+                if (f != null)
+                {
+                    Underworld.Comp.SetWhispers(60f, Find.TickManager.TicksGame);
+                    float w = 1f + Math.Max(0, f.PlayerGoodwill) / 25f;
+                    t.Check(Math.Abs(Hearth.Guests.MapComponent_HH_GuestScheduler.FactionWeight(f, map) - w) > 1e-3f, "with a facility: whispers change arrival weights");
+                    Underworld.Comp.SetWhispers(0f, Find.TickManager.TicksGame);
+                }
+                pit.Destroy(); UwKit.Spawned.Remove(pit);
+                t.Check(!Underworld.InUse(map), "removing it: not in use again");
+                HearthProfile.Current.Content = ContentIntensity.Cozy; Underworld.MarkInUseDirty(map);
+                var pit2 = UwKit.SpawnBuilding(UwDefs.FightPit, cell, map);
+                t.Check(!Underworld.InUse(map), "Cozy: never in use, even with a facility");
+                pit2.Destroy(); UwKit.Spawned.Remove(pit2);
+                HearthProfile.Current.Content = ContentIntensity.Standard;
             }
-            var node = Discovery.Fire(map, false);
-            t.Check(node.options.Count == 3, "dialog has three options");
-            t.Check(node.text.ToString().Contains("back room"), "text asks about a back room");
-            // Not interested
-            node.options[1].action();
-            t.Check(comp.AskCount == 1 && !HearthProfile.Current.UnderworldDiscovered, "Not interested: counted, nothing unlocked");
-            if (f != null) t.Check(!Discovery.AskConditionsMet(map, out string why3), "cooldown after refusal (" + why3 + ")");
-            comp.LastAskTick = -9_999_999;
-            // Never ask again
-            node.options[2].action();
-            t.Check(comp.NeverAsk, "Never ask again recorded");
-            if (f != null) t.Check(!Discovery.AskConditionsMet(map, out string why4), "never ask: no stranger (" + why4 + ")");
-            comp.NeverAsk = false; comp.AskCount = 0;
-            // the dialog really opens
-            Discovery.Fire(map, true);
-            t.Check(Find.WindowStack.IsOpen<Dialog_NodeTree>(), "stranger dialog opens");
+            // Dark and Grim: open at once, no dialog opens on its own
             Find.WindowStack.TryRemove(typeof(Dialog_NodeTree), false);
-            yield return 2;
-            // Show me
-            t.Check(UwDefs.ResMain.IsHidden, "before: research hidden");
-            t.Check(!UwDefs.ResDiscovery.IsFinished, "before: key project open");
-            node.options[0].action();
-            t.Check(HearthProfile.Current.UnderworldDiscovered, "Show me: discovered flag set");
-            t.Check(UwDefs.ResDiscovery.IsFinished, "Show me: key project finished");
-            t.Check(!UwDefs.ResMain.IsHidden && UwDefs.ResMain.PrerequisitesCompleted, "Show me: HH_Underworld_1 visible and available");
-            t.Check(Underworld.Unlocked, "Show me: unlocked");
-            t.Check(!Discovery.AskConditionsMet(map, out string why5), "discovered: stranger is done (" + why5 + ")");
-            // always-on mode opens without a stranger
-            HearthProfile.Current.UnderworldDiscovered = false;
-            HSettings.Set("underworld.mode", (float)UnderworldMode.AlwaysOn);
-            Discovery.EnsureAlwaysOn();
-            t.Check(HearthProfile.Current.UnderworldDiscovered, "always-on mode discovers by itself");
-            t.Check(!Discovery.AskConditionsMet(map, out _), "always-on: no stranger");
-            HSettings.Set("underworld.mode", (float)UnderworldMode.DiscoverInGame);
-            // Cozy: always-on does nothing
-            UwKit.Begin(ContentIntensity.Cozy, false);
-            HSettings.Set("underworld.mode", (float)UnderworldMode.AlwaysOn);
-            Discovery.EnsureAlwaysOn();
-            t.Check(!HearthProfile.Current.UnderworldDiscovered, "Cozy + always-on: still closed");
-            HSettings.Set("underworld.mode", (float)UnderworldMode.DiscoverInGame);
+            foreach (var c in new[] { ContentIntensity.Dark, ContentIntensity.Grim })
+            {
+                UwKit.Begin(c);
+                t.Check(Underworld.Effective == c, c + ": applies at once (effective " + Underworld.Effective + ")");
+                t.Check(Underworld.Allows(UwFeature.OrganClinic) && Underworld.Allows(UwFeature.PitToDeath) && Underworld.Allows(UwFeature.HuntPrisoners), c + ": dark features open");
+                t.Check(pw.IsBuildDesignatorVisible(UwDefs.OrganClinic) && pw.AllowsPlacing(UwDefs.OrganClinic, IntVec3.Zero, Rot4.North, map).Accepted, c + ": clinic placeable");
+                t.Check(!UwDefs.ResClinic.IsHidden, c + ": clinic research visible");
+                t.Check(Underworld.Allows(UwFeature.HuntPrisonersNoPrecept) == (c == ContentIntensity.Grim), c + ": hunt without precept only in Grim");
+                t.Check(Underworld.Allows(UwFeature.OrganOrders) == (c == ContentIntensity.Grim), c + ": organ orders only in Grim");
+                yield return 3000;
+                t.Check(!Find.WindowStack.IsOpen<Dialog_NodeTree>(), c + ": no dialog opened on its own within 3000 ticks");
+                Find.WindowStack.TryRemove(typeof(Dialog_NodeTree), false);
+            }
+            // Cozy hides everything
+            UwKit.Begin(ContentIntensity.Cozy);
+            t.Check(!Underworld.Visible && !Underworld.Unlocked && !Underworld.InUse(map), "Cozy: closed");
+            foreach (var d in UwDefs.GatedBuildings) t.Check(!pw.IsBuildDesignatorVisible(d), "Cozy: " + d.defName + " hidden");
+            t.Check(!TabShown(), "Cozy: no Underworld tab");
+            t.Check(UwDefs.ResHunt.IsHidden && UwDefs.ResClinic.IsHidden, "Cozy: research hidden");
+            t.Check(!UwDefs.Open(UwDefs.LoungeVenue.GetModExtension<UwGateExtension>()), "Cozy: lounge venue gated");
+            t.Check(Underworld.IsMinor(null), "null pawn counts as minor (safe default)");
             UwKit.End();
         }
     }
@@ -239,7 +240,7 @@ namespace Hearth.Underworld
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map; var comp = Underworld.Comp; int now = Find.TickManager.TicksGame;
-            UwKit.Begin(ContentIntensity.Standard, true, tier: 3f);
+            UwKit.Begin(ContentIntensity.Standard, tier: 3f);
             comp.SetWhispers(50f, now);
             t.Check(Math.Abs(Underworld.Whispers - 50f) < 0.05f, "stored value read back: " + Underworld.Whispers);
             float d15 = comp.WhispersAt(now + 15 * 60000), d30 = comp.WhispersAt(now + 30 * 60000);
@@ -291,7 +292,7 @@ namespace Hearth.Underworld
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map; var f = UwKit.Friendly();
-            UwKit.Begin(ContentIntensity.Standard, true);
+            UwKit.Begin(ContentIntensity.Standard);
             if (!UwKit.TryFindRect(map, 5, 5, out var inner)) { t.Note("no free 5x5 area, skipped"); UwKit.End(); yield break; }
             var outer = inner.ExpandedBy(1);
             foreach (var c in outer.EdgeCells) { var w = ThingMaker.MakeThing(ThingDefOf.Wall, ThingDefOf.WoodLog); w.SetFaction(Faction.OfPlayer); GenSpawn.Spawn(w, c, map); UwKit.Track(w); }
@@ -314,9 +315,9 @@ namespace Hearth.Underworld
                 var colonist = map.mapPawns.FreeColonistsSpawned.FirstOrDefault();
                 if (colonist != null) t.Check(door.PawnCanOpen(colonist), "colonist can");
                 t.Check(BackRoom.MayEnter(g) == false && BackRoom.MayEnter(shady), "MayEnter matches");
-                HearthProfile.Current.UnderworldDiscovered = false;
-                t.Check(BackRoom.MayEnter(g), "switched off: a plain door");
-                HearthProfile.Current.UnderworldDiscovered = true;
+                HearthProfile.Current.Content = ContentIntensity.Cozy;
+                t.Check(BackRoom.MayEnter(g), "switched off (Cozy): a plain door");
+                HearthProfile.Current.Content = ContentIntensity.Standard;
             }
             // a second, ordinary door makes the room an ordinary room again
             var other = new IntVec3(outer.CenterCell.x, 0, outer.maxZ);
@@ -344,7 +345,7 @@ namespace Hearth.Underworld
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map; var f = UwKit.Friendly();
-            UwKit.Begin(ContentIntensity.Standard, true);
+            UwKit.Begin(ContentIntensity.Standard);
             if (f == null || !UwKit.TryFindRect(map, 7, 7, out var inner)) { t.Note("no friendly faction or free area; skipped"); UwKit.End(); yield break; }
             UwKit.BuildFence(map, inner.ExpandedBy(1));
             var marker = UwKit.SpawnBuilding(UwDefs.FightPit, inner.CenterCell, map);
@@ -427,7 +428,7 @@ namespace Hearth.Underworld
             var gap = new IntVec3(inner.CenterCell.x, 0, inner.ExpandedBy(1).minZ); gap.GetEdifice(map)?.Destroy(); pit.Invalidate();
             t.Check(!pit.ArenaValid, "a gap in the fence invalidates the arena");
             // 7: gates
-            UwKit.Begin(ContentIntensity.Cozy, true);
+            UwKit.Begin(ContentIntensity.Cozy);
             t.Check(!FightBout.TryStartFor(pit, true, out _), "Cozy: no bout can start");
             UwKit.End();
         }
@@ -440,7 +441,7 @@ namespace Hearth.Underworld
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map; var f = UwKit.Friendly();
-            UwKit.Begin(ContentIntensity.Standard, true);
+            UwKit.Begin(ContentIntensity.Standard);
             if (f == null) { t.Note("no friendly faction; skipped"); UwKit.End(); yield break; }
             var cell = UwKit.TryFindRect(map, 3, 3, out var r) ? r.CenterCell : t.FreeCellNearCenter();
             var counter = UwKit.SpawnBuilding(UwDefs.FenceCounter, cell, map);
@@ -494,7 +495,7 @@ namespace Hearth.Underworld
             t.Check(fac.PlayerGoodwill <= gw0 && fac.PlayerGoodwill >= gw0 - 7, $"goodwill drop stays small on Standard Room (cap 5 plus vanilla rounding): {gw0} -> {fac.PlayerGoodwill}");
             t.Check(Underworld.Whispers > w1 + 5f, "leaked ledger raises whispers");
             // gates
-            UwKit.Begin(ContentIntensity.Cozy, true);
+            UwKit.Begin(ContentIntensity.Cozy);
             t.Check(!FenceTrade.BuyFrom(fs, seller, item3, out _), "Cozy: no deals");
             UwKit.End();
         }
@@ -510,7 +511,7 @@ namespace Hearth.Underworld
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map; var f = UwKit.Friendly();
-            UwKit.Begin(ContentIntensity.Standard, true);
+            UwKit.Begin(ContentIntensity.Standard);
             if (f == null || !UwKit.TryFindRect(map, 5, 5, out var inner)) { t.Note("no friendly faction or free area; skipped"); UwKit.End(); yield break; }
             var outer = inner.ExpandedBy(1);
             foreach (var c in outer.EdgeCells) { var w = ThingMaker.MakeThing(ThingDefOf.Wall, ThingDefOf.WoodLog); w.SetFaction(Faction.OfPlayer); GenSpawn.Spawn(w, c, map); UwKit.Track(w); }
@@ -576,7 +577,7 @@ namespace Hearth.Underworld
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map; var f = UwKit.Friendly();
-            UwKit.Begin(ContentIntensity.Standard, true);
+            UwKit.Begin(ContentIntensity.Standard);
             if (f == null) { t.Note("no friendly faction; skipped"); UwKit.End(); yield break; }
             var g = UwKit.Guests(map, 1, f)[0];
             t.Check(Lounge.AllowedLevel(g) >= 0, "ideology level computed");
@@ -610,7 +611,7 @@ namespace Hearth.Underworld
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map; var f = UwKit.Friendly();
-            UwKit.Begin(ContentIntensity.Standard, true);
+            UwKit.Begin(ContentIntensity.Standard);
             t.Check(!Hunts.HumanQuarryAllowed(out string whyStd), "Standard: no human quarry (" + whyStd + ")");
             HearthProfile.Current.Content = ContentIntensity.Grim;
             t.Check(Hunts.HumanQuarryAllowed(out _), "Grim: human quarry allowed without precept");
@@ -649,7 +650,7 @@ namespace Hearth.Underworld
             while (!inside.Any(q => q.Dead) && waited < 9000) { waited += 100; yield return 100; if (!quarry.Dead && hunter.Spawned && !hunter.Downed && hunter.CurJob?.def != UwDefs.JobHunt && waited % 300 == 0) { var alive = inside.Where(q => !q.Dead && q.Spawned).ToList(); if (alive.Count > 0) quarry = alive[(waited / 300) % alive.Count]; hunter.jobs.StartJob(JobMaker.MakeJob(UwDefs.JobHunt, quarry), JobCondition.InterruptForced); } /* some small quarry cannot be targeted from every spot (the job ends Incompletable at the cast position): try the next animal. the director re-issues the hunt job in the real game (its job ends when the quarry flees out of reach) */ if (waited % 1000 == 0) t.Note($"hunter job={hunter.CurJobDef?.defName} pos={hunter.Position} quarry={quarry.Position} health={quarry.health.summaryHealth.SummaryHealthPercent:0.00} verb={hunter.CurJob?.verbToUse?.GetType().Name} downed={hunter.Downed}"); }
             t.Check(inside.Any(q => q.Dead), "a quarry animal was shot after " + waited + " ticks");
             // gates
-            UwKit.Begin(ContentIntensity.Cozy, true);
+            UwKit.Begin(ContentIntensity.Cozy);
             t.Check(!Hunts.Possible(map), "Cozy: no hunt");
             UwKit.End();
         }
@@ -662,7 +663,7 @@ namespace Hearth.Underworld
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map;
-            UwKit.Begin(ContentIntensity.Dark, true);
+            UwKit.Begin(ContentIntensity.Dark);
             var cell = UwKit.TryFindRect(map, 3, 3, out var r) ? r.CenterCell : t.FreeCellNearCenter();
             var clinic = UwKit.SpawnBuilding(UwDefs.OrganClinic, cell, map);
             var comp = clinic.TryGetComp<CompOrganClinic>();
@@ -680,12 +681,12 @@ namespace Hearth.Underworld
             t.Check(Ledger.Current.SumAll() == 0, "ledger balanced");
             t.Check(Underworld.Comp.OrgansSold == 1, "counter");
             // Standard: counter does nothing by itself
-            UwKit.Begin(ContentIntensity.Standard, true);
+            UwKit.Begin(ContentIntensity.Standard);
             var o2 = ThingMaker.MakeThing(kidney); GenSpawn.Spawn(o2, cell, map); UwKit.Track(o2);
             comp.CompTickRare();
             t.Check(!o2.Destroyed, "Standard: no organ trade");
             // Grim: orders pay a premium
-            UwKit.Begin(ContentIntensity.Grim, true);
+            UwKit.Begin(ContentIntensity.Grim);
             Underworld.Comp.Orders.Add(new OrganOrder { organ = kidney, deadlineTick = Find.TickManager.TicksGame + 60000, premium = 2f });
             var price = Organs_.Price(o2, out var order);
             t.Check(order != null && Math.Abs(price.Silver - o2.MarketValue * HSettings.Get("underworld.organ.priceFactor") * 2.0) < 0.01, "Grim: a matching order doubles the price");
@@ -706,7 +707,7 @@ namespace Hearth.Underworld
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map;
-            UwKit.Begin(ContentIntensity.Standard, true);
+            UwKit.Begin(ContentIntensity.Standard);
             t.Check(!Smuggler.Possible(map), "no dock, no landing");
             var cell = UwKit.TryFindRect(map, 3, 3, out var r) ? r.CenterCell : t.FreeCellNearCenter();
             var dock = UwKit.SpawnBuilding(UwDefs.SmugglerDock, cell, map);
@@ -741,7 +742,7 @@ namespace Hearth.Underworld
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map; var f = UwKit.Friendly();
-            UwKit.Begin(ContentIntensity.Standard, true);
+            UwKit.Begin(ContentIntensity.Standard);
             if (f == null || !UwKit.TryFindRect(map, 7, 7, out var inner)) { t.Note("no friendly faction or free area; skipped"); UwKit.End(); yield break; }
             var outer = inner.ExpandedBy(1);
             UwKit.BuildFence(map, outer);
@@ -798,7 +799,7 @@ namespace Hearth.Underworld
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map; var f = UwKit.Friendly();
-            UwKit.Begin(ContentIntensity.Standard, true);
+            UwKit.Begin(ContentIntensity.Standard);
             if (f == null || !UwKit.TryFindRect(map, 5, 5, out var inner)) { t.Note("no friendly faction or free area; skipped"); UwKit.End(); yield break; }
             var outer = inner.ExpandedBy(1);
             foreach (var c in outer.EdgeCells) { var w = ThingMaker.MakeThing(ThingDefOf.Wall, ThingDefOf.WoodLog); w.SetFaction(Faction.OfPlayer); GenSpawn.Spawn(w, c, map); UwKit.Track(w); }
@@ -833,7 +834,7 @@ namespace Hearth.Underworld
         public override IEnumerable<int> Run(TestContext t)
         {
             var map = t.Map; var f = UwKit.Friendly();
-            UwKit.Begin(ContentIntensity.Standard, true);
+            UwKit.Begin(ContentIntensity.Standard);
             if (f == null) { t.Note("no friendly faction; skipped"); UwKit.End(); yield break; }
             var spot = UwKit.TryFindRect(map, 5, 5, out var r) ? r.CenterCell : t.FreeCellNearCenter();
             // fence deal as a real job
@@ -892,7 +893,7 @@ namespace Hearth.Underworld
         public override IEnumerable<int> Run(TestContext t)
         {
             var comp = Underworld.Comp; int now = Find.TickManager.TicksGame;
-            UwKit.Begin(ContentIntensity.Standard, true);
+            UwKit.Begin(ContentIntensity.Standard);
             comp.SetWhispers(33.5f, now); comp.NeverAsk = true; comp.AskCount = 2; comp.HuntWarningAck = true; comp.OrganWarningAck = false; comp.ContentWarningAck = true;
             comp.Bouts = 7; comp.DealsSold = 3; comp.HouseTakeMicro = 123456789L; comp.FenceProfitMicro = 4242L;
             var fakeShady = 987654; comp.NoteScandal(t.Map, now - 500);
@@ -918,7 +919,7 @@ namespace Hearth.Underworld
             if (ok && copy != null)
             {
                 t.Check(Math.Abs(copy.WhispersAt(now) - 33.5f) < 0.01f, "whispers survived");
-                t.Check(copy.NeverAsk && copy.AskCount == 2 && copy.HuntWarningAck && !copy.OrganWarningAck && copy.ContentWarningAck, "flags survived");
+                t.Check(copy.NeverAsk && copy.AskCount == 2 && copy.HuntWarningAck && !copy.OrganWarningAck && copy.ContentWarningAck, "legacy flags of old saves are still read (and ignored)");
                 t.Check(copy.Bouts == 7 && copy.DealsSold == 3 && copy.HouseTakeMicro == 123456789L && copy.FenceProfitMicro == 4242L, "statistics survived");
                 t.Check(copy.Orders.Count == 1 && copy.Orders[0].organ == kidney && Math.Abs(copy.Orders[0].premium - 1.9f) < 0.001f, "order book survived");
                 t.Check(copy.IsHunter(pawn) && copy.IsShady(pawn), "pawn marks survived");
