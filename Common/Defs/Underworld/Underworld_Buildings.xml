@@ -129,7 +129,7 @@
     <designatorDropdown>HH_Group_Underworld</designatorDropdown>
     <uiOrder>930</uiOrder>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
-    <comps><li Class="Hearth.Underworld.CompProperties_UwFacility" /></comps>
+    <comps><li Class="Hearth.Underworld.CompProperties_SmugglerDock" /><li Class="Hearth.Underworld.CompProperties_UwFacility" /></comps>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
   </ThingDef>
 

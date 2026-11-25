@@ -28,7 +28,7 @@ namespace Hearth.Underworld
         public override string GetInspectString()
         {
             string s = base.GetInspectString();
-            string extra = "HH.Underworld.BackRoomDoorInfo".Translate();
+            string extra = "HH.Underworld.BackRoomDoorInfo".Translate() + "\n" + BackRoom.StatusLine(this);
             return s.NullOrEmpty() ? extra : s + "\n" + extra;
         }
 
@@ -47,7 +47,15 @@ namespace Hearth.Underworld
 
     public static class BackRoom
     {
-        sealed class MapCache { public int builtTick = -9999; public bool dirty = true; public HashSet<Room> rooms = new HashSet<Room>(); public HashSet<IntVec3> cells = new HashSet<IntVec3>(); public List<Building_BackRoomDoor> doors = new List<Building_BackRoomDoor>(); }
+        sealed class MapCache
+        {
+            public int builtTick = -9999; public bool dirty = true; public HashSet<Room> rooms = new HashSet<Room>(); public HashSet<IntVec3> cells = new HashSet<IntVec3>();
+            public List<Building_BackRoomDoor> doors = new List<Building_BackRoomDoor>();
+            /// <summary>Per door: status (see <see cref="DoorState"/>) and the size of its back room.</summary>
+            public Dictionary<Building_BackRoomDoor, (DoorState state, int cells)> status = new Dictionary<Building_BackRoomDoor, (DoorState, int)>();
+        }
+        /// <summary>Why a back room door does (not) make a back room. Ordered: the first one that applies to a side wins.</summary>
+        public enum DoorState { BackRoom = 0, OrdinaryDoor = 1, OpenToOutside = 2, NoRoom = 3 }
         static readonly Dictionary<int, MapCache> caches = new Dictionary<int, MapCache>();
 
         public static void MarkDirty(Map map) { if (map != null && caches.TryGetValue(map.uniqueID, out var c)) c.dirty = true; }
@@ -73,18 +81,54 @@ namespace Hearth.Underworld
 
         static void Rebuild(Map map, MapCache c, int now)
         {
-            c.dirty = false; c.builtTick = now; c.rooms.Clear(); c.doors.Clear(); c.cells.Clear();
+            c.dirty = false; c.builtTick = now; c.rooms.Clear(); c.doors.Clear(); c.cells.Clear(); c.status.Clear();
             var def = UwDefs.BackRoomDoor; if (def == null) return;
             foreach (var t in map.listerThings.ThingsOfDef(def))
                 if (t is Building_BackRoomDoor d && d.Spawned) c.doors.Add(d);
             foreach (var d in c.doors)
+            {
+                var best = DoorState.NoRoom; int size = 0;
                 foreach (var cell in GenAdj.CellsAdjacentCardinal(d))
                 {
                     if (!cell.InBounds(map)) continue;
                     var room = cell.GetRoom(map);
-                    if (room == null || room.IsDoorway || room.PsychologicallyOutdoors || c.rooms.Contains(room)) continue;
-                    if (OnlyBackRoomDoors(room, map)) { c.rooms.Add(room); foreach (var rc in room.Cells) c.cells.Add(rc); }
+                    if (room == null || room.IsDoorway) continue;
+                    DoorState k;
+                    if (room.PsychologicallyOutdoors) k = DoorState.OpenToOutside;
+                    else if (c.rooms.Contains(room) || OnlyBackRoomDoors(room, map))
+                    {
+                        k = DoorState.BackRoom;
+                        if (c.rooms.Add(room)) foreach (var rc in room.Cells) c.cells.Add(rc);
+                        size = Math.Max(size, room.CellCount);
+                    }
+                    else k = DoorState.OrdinaryDoor;
+                    if (k < best) best = k;
                 }
+                c.status[d] = (best, size);
+            }
+        }
+
+        /// <summary>Does this door make a back room right now, and if not, why not (cached with the back rooms, at most 500 ticks old).</summary>
+        public static DoorState StateOf(Building_BackRoomDoor door, out int cells)
+        {
+            cells = 0;
+            if (door == null || !door.Spawned) return DoorState.NoRoom;
+            var c = Cache(door.Map);
+            if (!c.status.TryGetValue(door, out var st)) { c.dirty = true; c = Cache(door.Map); if (!c.status.TryGetValue(door, out st)) return DoorState.NoRoom; }
+            cells = st.cells; return st.state;
+        }
+
+        /// <summary>One line for the inspect string and the Underworld tab: "Back room: yes (38 tiles)" or why not.</summary>
+        public static string StatusLine(Building_BackRoomDoor door)
+        {
+            if (!Underworld.Unlocked) return UwPay.T("BackRoom.Off");
+            switch (StateOf(door, out int cells))
+            {
+                case DoorState.BackRoom: return UwPay.T("BackRoom.Yes", cells);
+                case DoorState.OrdinaryDoor: return UwPay.T("BackRoom.NoOrdinaryDoor");
+                case DoorState.OpenToOutside: return UwPay.T("BackRoom.NoOutside");
+                default: return UwPay.T("BackRoom.NoRoom");
+            }
         }
 
         /// <summary>True if the room has at least one door and all of its doors are back room doors.</summary>

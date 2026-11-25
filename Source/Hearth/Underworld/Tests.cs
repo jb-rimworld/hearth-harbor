@@ -719,25 +719,22 @@ namespace Hearth.Underworld
             var cell = UwKit.TryFindRect(map, 3, 3, out var r) ? r.CenterCell : t.FreeCellNearCenter();
             var dock = UwKit.SpawnBuilding(UwDefs.SmugglerDock, cell, map);
             t.Check(Smuggler.Possible(map), "dock makes landings possible");
-            var offer = Smuggler.MakeOffer();
-            t.Check(offer.Goods.Count > 0 && offer.Price < offer.MarketValue, "an offer with goods below market value: " + offer.Price + " for " + offer.MarketValue);
-            t.Check(Math.Abs(offer.Price.Silver - offer.MarketValue.Silver * HSettings.Get("underworld.smuggler.priceFactor")) < 0.01, "price is the set share of market value");
-            Payments.CreditColony(map, offer.Price + Money.FromSilver(50), "test");
-            var till0 = UwKit.Till(map); int items0 = map.listerThings.AllThings.Count;
+            var offer = Smuggler.MakeOffer(map);
+            t.Check(offer.goods.Count > 0 && offer.price < offer.marketValue, "an offer with goods below market value: " + offer.price + " for " + offer.marketValue);
+            t.Check(Math.Abs(offer.price.Silver - offer.marketValue.Silver * HSettings.Get("underworld.smuggler.priceFactor")) < 0.01, "price is the set share of market value");
+            Payments.CreditColony(map, offer.price + Money.FromSilver(50), "test");
+            var till0 = UwKit.Till(map);
             t.Check(Smuggler.Buy(map, offer), "buying works");
-            t.Check(till0 - UwKit.Till(map) == offer.Price, "the price left the till");
+            t.Check(till0 - UwKit.Till(map) == offer.price, "the price left the till");
             yield return 600;
-            // the old check compared the map's total thing count, which also drops when anything else (filth, visitors, animals) leaves:
             // look for the ordered goods themselves (landed, merged into a stack nearby, or still in an incoming pod)
-            var goodDefs = new HashSet<ThingDef>(offer.Goods.Select(g => g.def));
+            var goodDefs = new HashSet<ThingDef>(offer.goods.Select(g => g.def));
             bool landed = map.listerThings.AllThings.Any(x => goodDefs.Contains(x.def) && x.Spawned && x.Position.InHorDistOf(dock.Position, 30f))
-                          || map.listerThings.ThingsOfDef(ThingDefOf.ActiveDropPod).Count > 0 || map.listerThings.ThingsOfDef(ThingDefOf.DropPodIncoming).Count > 0
-                          || offer.Goods.Any(g => g.Spawned);
+                          || map.listerThings.ThingsOfDef(ThingDefOf.ActiveDropPod).Count > 0 || map.listerThings.ThingsOfDef(ThingDefOf.DropPodIncoming).Count > 0;
             t.Check(landed, "crate dropped near the dock");
             t.Check(Ledger.Current.SumAll() == 0, "ledger balanced");
-            var poor = Smuggler.MakeOffer(); Ledger.Current.Post(Underworld.Till(map), "world", UwKit.Till(map), "drain");
+            var poor = Smuggler.MakeOffer(map); Ledger.Current.Post(Underworld.Till(map), "world", UwKit.Till(map), "drain");
             t.Check(!Smuggler.Buy(map, poor), "no cash, no crate");
-            foreach (var g in poor.Goods) g.Destroy();
             UwKit.End();
         }
     }
@@ -880,9 +877,10 @@ namespace Hearth.Underworld
             // smuggler offer dialog
             var dockCell = UwKit.TryFindRect(map, 3, 3, out var dr) ? dr.CenterCell : t.FreeCellNearCenter();
             UwKit.SpawnBuilding(UwDefs.SmugglerDock, dockCell, map);
-            t.Check(Smuggler.Fire(map), "smuggler dialog fires");
-            t.Check(Find.WindowStack.IsOpen<Dialog_NodeTree>(), "smuggler dialog is open");
             Find.WindowStack.TryRemove(typeof(Dialog_NodeTree), false);
+            t.Check(Smuggler.Fire(map), "a smuggler landing fires");
+            t.Check(!Find.WindowStack.IsOpen<Dialog_NodeTree>() && Offers.OpenOf(UwOfferKind.Smuggler, map) != null, "1.2.0: no dialog, an open offer instead");
+            var so = Offers.OpenOf(UwOfferKind.Smuggler, map); if (so != null) Offers.Close(so);
             UwKit.End();
         }
     }

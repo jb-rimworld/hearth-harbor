@@ -128,6 +128,8 @@ namespace Hearth.ShopsFood
 
         public override void ExposeData()
         {
+            // a plate eaten since the last sync (at most 250 ticks ago) is destroyed: a reference to it would load as null
+            if (Scribe.mode == LoadSaveMode.Saving) forbiddenByUs.RemoveWhere(t => t == null || t.Destroyed);
             Scribe_Collections.Look(ref forbiddenByUs, "forbiddenByUs", LookMode.Reference);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {

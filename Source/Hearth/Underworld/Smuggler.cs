@@ -19,43 +19,49 @@ namespace Hearth.Underworld
 
         public static bool Possible(Map map) => map != null && map.IsPlayerHome && Underworld.InUse(map) && Dock(map) != null;
 
-        public sealed class Offer { public List<Thing> Goods = new List<Thing>(); public Money Price; public Money MarketValue; }
-
-        public static Offer MakeOffer()
+        /// <summary>A crate offer as a saved recipe (1.2.0): the goods are made only when the player buys. Not yet added to the open offers.</summary>
+        public static UwOffer MakeOffer(Map map = null)
         {
-            var o = new Offer(); double mv = 0; double max = HSettings.Get("underworld.smuggler.maxValue");
+            var o = new UwOffer { kind = UwOfferKind.Smuggler, mapId = map?.uniqueID ?? -1 }; double mv = 0; double max = HSettings.Get("underworld.smuggler.maxValue");
             for (int i = 0; i < 3 && mv < max * 0.5; i++)
             {
                 var t = UwPay.MakeGoods(20, (float)Math.Max(30, max - mv), d => d.IsDrug || d.IsWeapon || d.IsMedicine);
                 if (t == null) break;
-                o.Goods.Add(t); mv += t.MarketValue * t.stackCount;
+                o.goods.Add(UwGoodsLine.Of(t)); mv += t.MarketValue * t.stackCount;
+                t.Destroy();
             }
-            o.MarketValue = Money.FromSilver(mv);
-            o.Price = o.MarketValue * HSettings.Get("underworld.smuggler.priceFactor");
+            o.marketValue = Money.FromSilver(mv);
+            o.price = o.marketValue * HSettings.Get("underworld.smuggler.priceFactor");
             return o;
         }
 
+        /// <summary>A boat lands: the offer is saved and announced by a standard letter; the player answers with the gizmos on the dock. No dialog.</summary>
         public static bool Fire(Map map, bool force = false)
         {
             if (!force && !Possible(map)) return false;
-            var offer = MakeOffer(); if (offer.Goods.Count == 0) return false;
-            var dock = Dock(map);
-            var node = new DiaNode(UwPay.T("Smuggler.Text", offer.Goods.Count, offer.MarketValue.ToStringShort(), offer.Price.ToStringShort()));
-            var buy = new DiaOption(UwPay.T("Smuggler.Buy", offer.Price.ToStringShort())) { action = () => Buy(map, offer), resolveTree = true };
-            if (Ledger.Current.Balance(Underworld.Till(map)) < offer.Price) buy.Disable(UwPay.T("Smuggler.NoCash"));
-            node.options.Add(buy);
-            node.options.Add(new DiaOption(UwPay.T("Smuggler.Decline")) { action = () => { foreach (var t in offer.Goods) t.Destroy(); }, resolveTree = true });
-            Find.WindowStack.Add(new Dialog_NodeTree(node, true, false, UwPay.T("Smuggler.Title")));
+            if (Dock(map) == null || Offers.Any(UwOfferKind.Smuggler, map)) return false;   // one boat at a time
+            var offer = MakeOffer(map); if (offer.goods.Count == 0) return false;
+            Offers.Add(offer);
+            Offers.Announce(offer);
             return true;
         }
 
-        /// <summary>Pays from the till and drops the crate at the dock. Whispers +1; may attract an inspection.</summary>
-        public static bool Buy(Map map, Offer offer)
+        public static bool Buy(Map map, UwOffer offer) => Buy(map, offer, out _);
+
+        /// <summary>Pays from the till and drops the crate at the dock. Whispers +1; may attract an inspection.
+        /// On failure <paramref name="why"/> is the translated reason: Offer.Gone (no dock, nothing of the crate can be made) or Smuggler.NoCash.</summary>
+        public static bool Buy(Map map, UwOffer offer, out string why)
         {
-            var dock = Dock(map); if (dock == null) return false;
-            if (!Ledger.Current.Post(Underworld.Till(map), "world", offer.Price, "Smuggler: contraband crate")) return false;
-            DropPodUtility.DropThingsNear(dock.Position, map, offer.Goods, forbid: false);
-            Underworld.Comp.Smuggles++; UwActivity.Note(map);
+            why = UwPay.T("Offer.Gone");
+            var dock = Dock(map); if (dock == null || offer == null) return false;
+            if (Ledger.Current.Balance(Underworld.Till(map)) < offer.price) { why = UwPay.T("Smuggler.NoCash"); return false; }
+            var things = new List<Thing>();
+            foreach (var g in offer.goods) { var t = g.Make(); if (t != null) things.Add(t); }
+            if (things.Count == 0) return false;
+            if (!Ledger.Current.Post(Underworld.Till(map), "world", offer.price, "Smuggler: contraband crate")) { foreach (var t in things) t.Destroy(); why = UwPay.T("Smuggler.NoCash"); return false; }
+            why = null;
+            DropPodUtility.DropThingsNear(dock.Position, map, things, forbid: false);
+            Underworld.Comp.Smuggles++; UwActivity.Note(map); Underworld.Comp.NoteEvent(FacilityStatus.DockId);
             Underworld.AddWhispers(1f, "smuggler's crate");
             Inspection(map);
             return true;
@@ -72,6 +78,21 @@ namespace Hearth.Underworld
         }
 
         public static bool Night(Map map) { int h = GenLocalDate.HourOfDay(map); return h >= 22 || h < 4; }
+    }
+
+    public class CompProperties_SmugglerDock : CompProperties { public CompProperties_SmugglerDock() { compClass = typeof(CompSmugglerDock); } }
+
+    /// <summary>The dock's inspect line (next landing or the waiting boat) and the buy / send-away buttons of an open offer.</summary>
+    public class CompSmugglerDock : ThingComp
+    {
+        public override string CompInspectStringExtra() => parent.Spawned ? FacilityStatus.DockLine(parent.Map) : null;
+
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+            if (parent.Faction != Faction.OfPlayer || !parent.Spawned || !Modules.On(ModuleId.Underworld)) yield break;
+            var o = Offers.OpenOf(UwOfferKind.Smuggler, parent.Map); if (o == null) yield break;
+            foreach (var g in Offers.Gizmos(o)) yield return g;
+        }
     }
 
     public class IncidentWorker_SmugglerLanding : IncidentWorker

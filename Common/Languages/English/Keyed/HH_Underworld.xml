@@ -3,6 +3,15 @@
   <HH.Tab.Underworld>Underworld</HH.Tab.Underworld>
   <HH.Underworld.GateClosed>Not available in this game: the Underworld module is off, or the content intensity does not allow it (Settings, Modules).</HH.Underworld.GateClosed>
   <HH.Underworld.BackRoomDoorInfo>Only staff, colonists and shady guests can open this door.</HH.Underworld.BackRoomDoorInfo>
+  <HH.Underworld.BackRoom.Yes>This is a back room ({0} tiles).</HH.Underworld.BackRoom.Yes>
+  <HH.Underworld.BackRoom.NoOrdinaryDoor>Not a back room yet: this room also has an ordinary door.</HH.Underworld.BackRoom.NoOrdinaryDoor>
+  <HH.Underworld.BackRoom.NoOutside>Not a back room yet: the room is open to the outside.</HH.Underworld.BackRoom.NoOutside>
+  <HH.Underworld.BackRoom.NoRoom>Not a back room yet: no room behind this door.</HH.Underworld.BackRoom.NoRoom>
+  <HH.Underworld.BackRoom.Off>A plain door: the underworld is switched off (module or Cozy content).</HH.Underworld.BackRoom.Off>
+  <HH.Underworld.BackRoom.Status.NotBuilt>Build a room whose only doors are back room doors.</HH.Underworld.BackRoom.Status.NotBuilt>
+  <HH.Underworld.BackRoom.Status.Last>Last back room fee: {0} ago.</HH.Underworld.BackRoom.Status.Last>
+  <HH.Underworld.Facility.Off>The underworld is switched off (module or Cozy content).</HH.Underworld.Facility.Off>
+  <HH.Underworld.Offer.Gone>The offer is off: the boat or the gang is gone.</HH.Underworld.Offer.Gone>
   <HH.Underworld.Scandal.BackRoomFound.Title>The back room was found out</HH.Underworld.Scandal.BackRoomFound.Title>
   <HH.Underworld.Scandal.BackRoomFound.Text>A respectable guest opened the wrong door and saw what the house keeps behind it. By evening everyone in town will know.</HH.Underworld.Scandal.BackRoomFound.Text>
   <HH.Underworld.Scandal.LeakedLedger.Title>Leaked ledger</HH.Underworld.Scandal.LeakedLedger.Title>
@@ -140,6 +149,24 @@
   <HH.Underworld.Fence.NoCash>The cash box is empty.</HH.Underworld.Fence.NoCash>
   <HH.Underworld.Fence.CannotPay>The buyer cannot pay.</HH.Underworld.Fence.CannotPay>
   <HH.Underworld.Fence.Exposed>The goods came from {0}, and they know where they ended up.</HH.Underworld.Fence.Exposed>
+  <HH.Underworld.Fence.Stock>Stock: {0} items worth {1} silver. Cash box: {2} silver.</HH.Underworld.Fence.Stock>
+  <HH.Underworld.Fence.CannotBuy>Cannot buy now: {0}.</HH.Underworld.Fence.CannotBuy>
+  <HH.Underworld.Fence.Why.TillEmpty>the till and the cash box are empty</HH.Underworld.Fence.Why.TillEmpty>
+  <HH.Underworld.Fence.Why.TooLittle>only {0} silver on hand, the price is {1}</HH.Underworld.Fence.Why.TooLittle>
+  <HH.Underworld.Fence.LowCash>Only {0} silver on hand (till and cash box): the fence turns away goods that cost more, up to {1} for the dearest loot.</HH.Underworld.Fence.LowCash>
+  <HH.Underworld.Fence.Why.Closed>the underworld is switched off</HH.Underworld.Fence.Why.Closed>
+  <HH.Underworld.Fence.Bought>The fence bought {0} for {1} silver.</HH.Underworld.Fence.Bought>
+  <HH.Underworld.Fence.Sold>The fence sold {0} for {1} silver.</HH.Underworld.Fence.Sold>
+  <HH.Underworld.Fence.BuyFailed>The fence could not buy {0}: {1}.</HH.Underworld.Fence.BuyFailed>
+  <HH.Underworld.Fence.TakeOut>Take goods out</HH.Underworld.Fence.TakeOut>
+  <HH.Underworld.Fence.TakeOut.Desc>Put the whole stock on the floor next to the counter. The goods become ordinary items your colony can use or sell; the fence forgets where they were stolen.</HH.Underworld.Fence.TakeOut.Desc>
+  <HH.Underworld.Fence.TakeOut.Empty>nothing in stock</HH.Underworld.Fence.TakeOut.Empty>
+  <HH.Underworld.Fence.TookOut>{0} stacks put next to the counter.</HH.Underworld.Fence.TookOut>
+  <HH.Underworld.Fence.TookOut.One>One stack put next to the counter.</HH.Underworld.Fence.TookOut.One>
+  <HH.Underworld.Fence.TookOut.NoRoom>Not enough room next to the counter: {0} of {1} stacks are still in stock.</HH.Underworld.Fence.TookOut.NoRoom>
+  <HH.Underworld.Fence.Status.NotBuilt>Build a fence counter: gangs sell it their loot and buy from its stock.</HH.Underworld.Fence.Status.NotBuilt>
+  <HH.Underworld.Fence.Status.Waiting>Waiting for a gang with goods to sell.</HH.Underworld.Fence.Status.Waiting>
+  <HH.Underworld.Fence.Status.Last>Last deal: {0} ago.</HH.Underworld.Fence.Status.Last>
   <HH.Underworld.Gang.Title>A gang at the door</HH.Underworld.Gang.Title>
   <HH.Underworld.Gang.Text>{0} people from {1} arrive quietly, nod at the staff and ask for the back room. They have money and they expect no questions.</HH.Underworld.Gang.Text>
   <HH.Underworld.Gang.Demand.Title>A friendly offer</HH.Underworld.Gang.Demand.Title>
@@ -147,6 +174,23 @@
   <HH.Underworld.Gang.Demand.Pay>Pay {0} silver</HH.Underworld.Gang.Demand.Pay>
   <HH.Underworld.Gang.Demand.Refuse>Show them the door</HH.Underworld.Gang.Demand.Refuse>
   <HH.Underworld.Gang.Demand.NoCash>not enough in the till</HH.Underworld.Gang.Demand.NoCash>
+  <HH.Underworld.Gang.Demand.Letter.How>Select {0} to pay or to refuse. The offer stands for {1} hours; letting it run out counts as a refusal.</HH.Underworld.Gang.Demand.Letter.How>
+  <HH.Underworld.Gang.Demand.Pay.Desc>Pay from the till. The gang leaves you alone and its faction thinks a little better of you.</HH.Underworld.Gang.Demand.Pay.Desc>
+  <HH.Underworld.Gang.Demand.Refuse.Desc>Refuse. The gang's faction takes it badly and loses goodwill.</HH.Underworld.Gang.Demand.Refuse.Desc>
+  <HH.Underworld.Gang.Demand.Paid>Paid {0} silver protection money.</HH.Underworld.Gang.Demand.Paid>
+  <HH.Underworld.Gang.Demand.Refused>You showed the gang the door.</HH.Underworld.Gang.Demand.Refused>
+  <HH.Underworld.Gang.Demand.Expired>You did not answer the gang: they take it as a no.</HH.Underworld.Gang.Demand.Expired>
+  <HH.Underworld.Gang.Demand.Waiting>{0} wants {1} silver protection money (answer within {2}).</HH.Underworld.Gang.Demand.Waiting>
+  <HH.Underworld.Gang.Why.NoFacility>no back room, fence counter or fight pit</HH.Underworld.Gang.Why.NoFacility>
+  <HH.Underworld.Gang.Why.NoFaction>no friendly faction</HH.Underworld.Gang.Why.NoFaction>
+  <HH.Underworld.Gang.Why.NoEntry>no way onto the map</HH.Underworld.Gang.Why.NoEntry>
+  <HH.Underworld.Gang.Why.NoPawns>no gang members could be found</HH.Underworld.Gang.Why.NoPawns>
+  <HH.Underworld.Gang.Status.NotBuilt>Gangs come once you have a back room, a fence counter or a fight pit.</HH.Underworld.Gang.Status.NotBuilt>
+  <HH.Underworld.Gang.Status.Waiting>Waiting for the next gang.</HH.Underworld.Gang.Status.Waiting>
+  <HH.Underworld.Gang.Status.Retry>The last gang could not come: {0}. Next try in {1}.</HH.Underworld.Gang.Status.Retry>
+  <HH.Underworld.Gang.Status.Here>A gang of {0} is here.</HH.Underworld.Gang.Status.Here>
+  <HH.Underworld.Gang.Status.Next>Next gang visit in about {0}.</HH.Underworld.Gang.Status.Next>
+  <HH.Underworld.Gang.Status.Last>Last gang visit: {0} ago.</HH.Underworld.Gang.Status.Last>
   <HH.Underworld.Tour.IntelTitle>Something from the questioning</HH.Underworld.Tour.IntelTitle>
   <HH.Underworld.Tour.IntelText>After an hour with {0} the gang left a note on the counter: a name, a place, a day. Somebody out there is planning something, and now you know a little more.</HH.Underworld.Tour.IntelText>
   <HH.Underworld.Smuggler.Title>A crate at the dock</HH.Underworld.Smuggler.Title>
@@ -156,6 +200,17 @@
   <HH.Underworld.Smuggler.NoCash>not enough in the till</HH.Underworld.Smuggler.NoCash>
   <HH.Underworld.Smuggler.InspectTitle>A patrol noticed the lamp</HH.Underworld.Smuggler.InspectTitle>
   <HH.Underworld.Smuggler.InspectText>An imperial patrol saw the lights at your dock and has written it down.</HH.Underworld.Smuggler.InspectText>
+  <HH.Underworld.Smuggler.Letter.How>Select the dock to buy the crate or to send the boat away. It waits {0} hours, then it leaves.</HH.Underworld.Smuggler.Letter.How>
+  <HH.Underworld.Smuggler.Buy.Desc>Pay from the till. The crate is dropped next to the dock.</HH.Underworld.Smuggler.Buy.Desc>
+  <HH.Underworld.Smuggler.Decline.Desc>Send the boat away. Nothing else happens.</HH.Underworld.Smuggler.Decline.Desc>
+  <HH.Underworld.Smuggler.Bought>The crate is yours: {0} silver from the till.</HH.Underworld.Smuggler.Bought>
+  <HH.Underworld.Smuggler.Declined>The boat left without a deal.</HH.Underworld.Smuggler.Declined>
+  <HH.Underworld.Smuggler.Left>The boat at the dock did not wait any longer and left.</HH.Underworld.Smuggler.Left>
+  <HH.Underworld.Smuggler.Waiting>A boat is waiting at the dock: {0} items for {1} silver (leaves in {2}).</HH.Underworld.Smuggler.Waiting>
+  <HH.Underworld.Smuggler.Next>Next landing: at night, in about {0}.</HH.Underworld.Smuggler.Next>
+  <HH.Underworld.Smuggler.NextSoon>Next landing: at night, soon.</HH.Underworld.Smuggler.NextSoon>
+  <HH.Underworld.Smuggler.Status.NotBuilt>Build a smuggler's dock: boats land at night with cheap contraband.</HH.Underworld.Smuggler.Status.NotBuilt>
+  <HH.Underworld.Smuggler.Status.Last>Last landing: {0} ago.</HH.Underworld.Smuggler.Status.Last>
   <HH.Underworld.Hunt.Title>A hunting party</HH.Underworld.Hunt.Title>
   <HH.Underworld.Hunt.Text>{0} hunters arrive with rifles and money. They paid {1} silver for the ground, and {2} animals were released into it.</HH.Underworld.Hunt.Text>
   <HH.Underworld.Hunt.GroundOk>Hunting ground: {0} tiles, closed. Quarry: {1}.</HH.Underworld.Hunt.GroundOk>
@@ -169,12 +224,28 @@
   <HH.Underworld.Hunt.DeathText>{0} did not survive the hunt. His people will hear of it, and so will everyone who was watching.</HH.Underworld.Hunt.DeathText>
   <HH.Underworld.Hunt.FreedTitle>The quarry got away</HH.Underworld.Hunt.FreedTitle>
   <HH.Underworld.Hunt.FreedText>{0} lasted the time and walks free. The hunters went home angry; his faction will hear how it was done.</HH.Underworld.Hunt.FreedText>
+  <HH.Underworld.Hunt.Open>Open: close the fence around the hunting ground (at most {0} tiles).</HH.Underworld.Hunt.Open>
+  <HH.Underworld.Hunt.TooBig>Too big: {0} tiles, at most {1}.</HH.Underworld.Hunt.TooBig>
+  <HH.Underworld.Hunt.TooSmall>Too small: {0} of {1} tiles.</HH.Underworld.Hunt.TooSmall>
+  <HH.Underworld.Hunt.Closed>No hunts: the module or the content intensity does not allow them.</HH.Underworld.Hunt.Closed>
+  <HH.Underworld.Hunt.Running>A hunt is on.</HH.Underworld.Hunt.Running>
+  <HH.Underworld.Hunt.Next>Next hunting party in about {0}.</HH.Underworld.Hunt.Next>
+  <HH.Underworld.Hunt.Status.NotBuilt>Research the hunt, then put a hunting ground marker inside a closed fence of at least {0} tiles.</HH.Underworld.Hunt.Status.NotBuilt>
+  <HH.Underworld.Hunt.Status.Last>Last hunt: {0} ago.</HH.Underworld.Hunt.Status.Last>
   <HH.Underworld.Organ.Inspect>Organs waiting: {0}. Open orders: {1}.</HH.Underworld.Organ.Inspect>
   <HH.Underworld.Organ.Sold>{0} organs collected at the clinic counter.</HH.Underworld.Organ.Sold>
   <HH.Underworld.Organ.OrderTitle>An order</HH.Underworld.Organ.OrderTitle>
   <HH.Underworld.Organ.OrderText>A buyer wants a {0} within {1} days and pays a premium.</HH.Underworld.Organ.OrderText>
   <HH.Underworld.Organ.OrderDone>The order for a {0} was filled.</HH.Underworld.Organ.OrderDone>
   <HH.Underworld.Organ.OrderMissed>The order for a {0} was not filled in time.</HH.Underworld.Organ.OrderMissed>
+  <HH.Underworld.Organ.Status.NotBuilt>Research the black clinic and build its counter.</HH.Underworld.Organ.Status.NotBuilt>
+  <HH.Underworld.Organ.Status.Waiting>Organs left on the counter are collected at night (23:00 to 04:00).</HH.Underworld.Organ.Status.Waiting>
+  <HH.Underworld.Organ.Status.Last>Last sale: {0} ago.</HH.Underworld.Organ.Status.Last>
+  <HH.Underworld.Lounge.Status.NotBuilt>Put a venue sign of type drug lounge into a room with two couches or armchairs.</HH.Underworld.Lounge.Status.NotBuilt>
+  <HH.Underworld.Lounge.Status.NotReady>The lounge is not set up yet.</HH.Underworld.Lounge.Status.NotReady>
+  <HH.Underworld.Lounge.Status.Closed>Closed now: the lounge opens in the evening.</HH.Underworld.Lounge.Status.Closed>
+  <HH.Underworld.Lounge.Status.Open>Open.</HH.Underworld.Lounge.Status.Open>
+  <HH.Underworld.Lounge.Status.Last>Last session: {0} ago.</HH.Underworld.Lounge.Status.Last>
   <HH.Underworld.Page.Title>Underworld</HH.Underworld.Page.Title>
   <HH.Underworld.Page.Whispers>Whispers: {0} of 100.</HH.Underworld.Page.Whispers>
   <HH.Underworld.Page.Weights>Arrival weights: respectable x{0}, outlaws x{1}.</HH.Underworld.Page.Weights>
