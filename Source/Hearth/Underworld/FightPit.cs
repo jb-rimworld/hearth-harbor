@@ -983,23 +983,41 @@ namespace Hearth.Underworld
             Settled?.Invoke(this);
         }
 
-        /// <summary>The loser of a scored bout walks away with one or two small vanilla bruises (no lord signal: AddHediff, not damage).</summary>
-        void Bruise(Pawn loser)
+        /// <summary>The body parts a bruise of a scored bout may land on: outer parts of some size, never a source of consciousness.</summary>
+        internal static List<BodyPartRecord> BruiseParts(Pawn p) =>
+            p.health.hediffSet.GetNotMissingParts().Where(pt => pt.depth == BodyPartDepth.Outside && pt.coverageAbs > 0f && pt.def.hitPoints >= 10 && !pt.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource)).ToList();
+
+        /// <summary>Most pain two bruises can add: two at the top severity, with the pain per severity the def really has, times 1.5 for pawns who feel pain more
+        /// (a child's body, a pain-sensitive gene: the tests measured 1.1).</summary>
+        internal static float WorstBruisePain() => 1.5f * 2f * 2.5f * (PitSetup.Bruise?.injuryProps?.painPerSeverity ?? 0.0125f);
+
+        /// <summary>The loser of a scored bout walks away with one or two small vanilla bruises (no lord signal: AddHediff, not damage). A pawn who is already
+        /// so close to his pain shock threshold that two bruises could tip him over gets none, and bruises that would down him anyway (a body already near the
+        /// edge of Moving or Consciousness) are taken off again: the pit never sends a guest to the floor.</summary>
+        internal void Bruise(Pawn loser)
         {
             var def = PitSetup.Bruise;
-            if (def == null || loser == null || loser.Dead || loser.health?.hediffSet == null || PitOpponents.IsBeast(loser)) return;
+            if (def == null || loser == null || loser.Dead || loser.Downed || loser.health?.hediffSet == null || PitOpponents.IsBeast(loser)) return;
             try
             {
-                var parts = loser.health.hediffSet.GetNotMissingParts().Where(pt => pt.depth == BodyPartDepth.Outside && pt.coverageAbs > 0f && pt.def.hitPoints >= 10 && !pt.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource)).ToList();
+                if (loser.health.hediffSet.PainTotal + WorstBruisePain() >= loser.GetStatValue(StatDefOf.PainShockThreshold) - 0.02f) return;
+                var parts = BruiseParts(loser);
                 if (parts.Count == 0) return;
                 var rng = JRand.Stream("underworld.pit.bruise");
                 int n = 1 + rng.Range(0, 2);
+                var added = new List<Hediff>();
                 for (int i = 0; i < n; i++)
                 {
                     var part = parts[rng.Range(0, parts.Count)];
                     var h = (Hediff_Injury)HediffMaker.MakeHediff(def, loser, part);
                     h.Severity = (float)rng.Range(1.0, 2.5);
                     loser.health.AddHediff(h, part);
+                    added.Add(h);
+                }
+                if (loser.Downed && !loser.Dead)
+                {
+                    foreach (var h in added) loser.health.RemoveHediff(h);
+                    HLog.Info("Underworld", "Bruises of " + loser.LabelShort + " would have downed him; taken off again");
                 }
             }
             catch (Exception e) { HLog.Warn("Underworld", "bruises for " + loser.LabelShort + " failed: " + e.Message); }

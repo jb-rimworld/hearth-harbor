@@ -104,18 +104,70 @@ namespace Hearth.Underworld
             t.Note($"bout {b.A?.LabelShort} vs {b.B?.LabelShort}: finished={b.Finished} after {waited} ticks, fight {(b.FightTick > 0 ? Find.TickManager.TicksGame - b.FightTick : -1)} ticks, points {b.ScoreA:0}/{b.LimitA:0} vs {b.ScoreB:0}/{b.LimitB:0}, winner {b.WinnerSide}");
         }
 
-        /// <summary>Waits after a bout and notes every change of job, mental state, downed state and bruise count of the two (diagnosis of after-bout fights).</summary>
-        public static IEnumerable<int> Watch(TestContext t, Pawn a, Pawn b, int ticks)
+        /// <summary>Waits after a bout and notes every change of job, mental state, downed state and bruise count of the two (diagnosis of after-bout fights).
+        /// Every 30 ticks it also audits the map (<see cref="Audit"/>); each new finding is noted and, when <paramref name="alerts"/> is given, collected there.
+        /// The first time one of the two is downed, <see cref="Dump"/> says why (injuries with their source, pain against the shock threshold, capacities).</summary>
+        public static IEnumerable<int> Watch(TestContext t, Pawn a, Pawn b, int ticks, List<string> alerts = null)
         {
             string Line(Pawn p) => p.LabelShort + ":" + (p.CurJobDef?.defName ?? "-") + (p.CurJob?.targetA.Thing is Pawn tp ? ">" + tp.LabelShort : "") + (p.InMentalState ? " mental=" + p.MentalStateDef.defName : "") + (p.Downed ? " DOWNED" : "") + (p.Spawned ? "" : " unspawned")
                 + " bruises=" + p.health.hediffSet.hediffs.Count(h => h.def == PitSetup.Bruise) + " threat=" + (p.mindState?.meleeThreat?.LabelShort ?? "-");
-            string last = null;
+            string last = null; bool dumped = false; var seen = new HashSet<string>();
             for (int w = 0; w < ticks; w += 30)
             {
                 string now = Line(a) + " | " + Line(b);
                 if (now != last) { t.Note("after the bout +" + w + ": " + now); last = now; }
+                if (!dumped && (a.Downed || b.Downed || a.Dead || b.Dead))
+                {
+                    dumped = true;
+                    t.Note("after the bout +" + w + ": SOMEONE IS DOWN. " + Dump(a) + " || " + Dump(b));
+                }
+                foreach (var f in Audit(a.Map ?? b.Map, a, b)) if (seen.Add(f)) { t.Note("after the bout +" + w + ": audit: " + f); alerts?.Add(f); }
                 yield return 30;
             }
+        }
+
+        /// <summary>Everything that can explain a fighter who is down or hurt: injuries (bruises counted, the rest with their source), pain against the
+        /// shock threshold, bleeding, the capacities that down a pawn, mental state, fire, and the damage the pawn took in total (records).</summary>
+        public static string Dump(Pawn p)
+        {
+            if (p == null) return "-";
+            var hs = p.health.hediffSet;
+            int bruises = hs.hediffs.Count(h => h.def == PitSetup.Bruise);
+            var other = hs.hediffs.Where(h => h.def != PitSetup.Bruise).Select(h => h.def.defName + (h.Part != null ? "@" + h.Part.Label : "") + ":" + h.Severity.ToString("0.0") + (h is Hediff_Injury ? " src=" + (h.sourceDef?.defName ?? h.sourceLabel ?? "-") : ""));
+            return p.LabelShort + " [downed " + p.Downed + ", dead " + p.Dead + ", hp " + p.health.summaryHealth.SummaryHealthPercent.ToString("0.00") + ", bruises " + bruises + ", pain " + hs.PainTotal.ToString("0.00") + " of shock " + p.GetStatValue(StatDefOf.PainShockThreshold).ToString("0.00")
+                + ", bleed " + hs.BleedRateTotal.ToString("0.00") + ", moving " + p.health.capacities.GetLevel(PawnCapacityDefOf.Moving).ToString("0.00") + ", consciousness " + p.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness).ToString("0.00")
+                + ", burning " + p.IsBurning() + ", mental " + (p.MentalStateDef?.defName ?? "-") + ", damage taken " + p.records.GetValue(RecordDefOf.DamageTaken).ToString("0.0") + ", hediffs: " + string.Join("; ", other) + "]";
+        }
+
+        /// <summary>What on the map could still hurt the two former fighters: another pawn who targets or threatens one of them (attack job, melee threat, social fight),
+        /// a pawn hostile to one of them within 20 cells, one of them burning or in a mental state. Empty when nothing does.</summary>
+        /// <summary>Prefix of audit lines that are a vanilla social fight (a quarrel between two pawns of one faction, nothing the pit did).</summary>
+        public const string Quarrel = "[vanilla quarrel] ";
+        public static bool IsQuarrel(string line) => line.StartsWith(Quarrel);
+        public static List<string> Audit(Map map, Pawn a, Pawn b)
+        {
+            var found = new List<string>();
+            if (map == null) return found;
+            foreach (var p in map.mapPawns.AllPawnsSpawned)
+            {
+                if (p == a || p == b || p.Dead) continue;
+                foreach (var f in new[] { a, b })
+                {
+                    if (f == null || !f.Spawned) continue;
+                    if (p.mindState?.meleeThreat == f) found.Add(p.LabelShort + " has " + f.LabelShort + " as melee threat");
+                    var j = p.CurJob;
+                    if (j != null && j.targetA.Thing == f && (j.def == JobDefOf.AttackMelee || j.def == JobDefOf.AttackStatic || j.def == JobDefOf.Wait_Combat)) found.Add(p.LabelShort + " attacks " + f.LabelShort + " (" + j.def.defName + ")");
+                    if (p.MentalState is MentalState_SocialFighting sf && sf.otherPawn == f) found.Add(Quarrel + p.LabelShort + " is in a social fight with " + f.LabelShort);
+                    if (p.HostileTo(f) && p.Position.DistanceTo(f.Position) < 20f && !p.Downed) found.Add(p.LabelShort + " (" + p.kindDef.defName + ") is hostile to " + f.LabelShort + " within 20 cells");
+                }
+            }
+            foreach (var f in new[] { a, b })
+            {
+                if (f == null) continue;
+                if (f.IsBurning()) found.Add(f.LabelShort + " is burning");
+                if (f.InMentalState) found.Add((f.MentalStateDef == MentalStateDefOf.SocialFighting ? Quarrel : "") + f.LabelShort + " is in mental state " + f.MentalStateDef.defName);
+            }
+            return found;
         }
 
         /// <summary>One Inn day guest (registered stay) when the Inn is on, else null.</summary>
@@ -175,10 +227,13 @@ namespace Hearth.Underworld
                     foreach (var w in PitKit.Await(t, bout)) yield return w;
                     t.Check(bout.Finished && bout.Result != null, "the bout came to a result");
                     t.Check(bout.ScoreA + bout.ScoreB > 0f, "hits were scored: " + bout.ScoreA.ToString("0") + " / " + bout.ScoreB.ToString("0"));
-                    foreach (var w in PitKit.Watch(t, col, guest, 600)) yield return w;   // the after-bout window in which a victim would swing back for real
-                    t.Check(PitKit.GoodwillDiff(gw) == "none", "goodwill of every faction unchanged: " + PitKit.GoodwillDiff(gw));
-                    sc.Check(t, "colonist", guest);
-                    sg.Check(t, "guest", col);
+                    var alerts1 = new List<string>();
+                    foreach (var w in PitKit.Watch(t, col, guest, 600, alerts1)) yield return w;   // the after-bout window in which a victim would swing back for real
+                    var hard1 = alerts1.Where(x => !PitKit.IsQuarrel(x)).ToList(); bool quarrel1 = alerts1.Count > hard1.Count;
+                    t.Check(hard1.Count == 0, "nothing on the map (apart from a vanilla quarrel) threatens the two for 600 ticks after the bout" + (hard1.Count > 0 ? ": " + string.Join("; ", hard1) : ""));
+                    if (quarrel1) t.Note("a vanilla social fight broke out around the fighters (" + string.Join("; ", alerts1.Where(PitKit.IsQuarrel)) + "): injuries, mental state and goodwill are vanilla's here, those checks are skipped for this part");
+                    if (!quarrel1) t.Check(PitKit.GoodwillDiff(gw) == "none", "goodwill of every faction unchanged: " + PitKit.GoodwillDiff(gw));
+                    if (!quarrel1) { sc.Check(t, "colonist", guest); sg.Check(t, "guest", col); }
                     t.Check(GuestApi.Info(guest) != null && (!innStay || GuestApi.Impl?.Info(guest) != null), "the guest's stay record still exists");
                     t.Check(!PitOpponents.IsReturning(col) && !PitOpponents.IsReturning(guest), "nobody waits to be taken back");
                 }
@@ -214,10 +269,14 @@ namespace Hearth.Underworld
                 t.Check(bets, "two bets placed");
                 t.Check(!selfBet, "a fighter cannot bet on his own bout");
                 foreach (var w in PitKit.Await(t, gg)) yield return w;
-                foreach (var w in PitKit.Watch(t, gs[0], gs[1], 600)) yield return w;
+                var alerts2 = new List<string>();
+                foreach (var w in PitKit.Watch(t, gs[0], gs[1], 600, alerts2)) yield return w;
+                var hard2 = alerts2.Where(x => !PitKit.IsQuarrel(x)).ToList(); bool quarrel2 = alerts2.Count > hard2.Count;
+                t.Check(hard2.Count == 0, "nothing on the map (apart from a vanilla quarrel) threatens the two guests for 600 ticks after the bout" + (hard2.Count > 0 ? ": " + string.Join("; ", hard2) : ""));
+                if (quarrel2) t.Note("a vanilla social fight broke out around the fighters (" + string.Join("; ", alerts2.Where(PitKit.IsQuarrel)) + ", Plum or another guest of the same faction stands close): injuries, mental state and goodwill are vanilla's here, those checks are skipped for this part");
                 t.Check(gg.Finished && gg.Result != null, "guest bout came to a result");
-                t.Check(PitKit.GoodwillDiff(gw2) == "none", "goodwill unchanged after the guest bout: " + PitKit.GoodwillDiff(gw2));
-                s0.Check(t, "guest A", gs[1]); s1.Check(t, "guest B", gs[0]);
+                if (!quarrel2) t.Check(PitKit.GoodwillDiff(gw2) == "none", "goodwill unchanged after the guest bout: " + PitKit.GoodwillDiff(gw2));
+                if (!quarrel2) { s0.Check(t, "guest A", gs[1]); s1.Check(t, "guest B", gs[0]); }
                 var r = gg.Result;
                 long payouts = gg.Bets.Sum(x => x.PayoutMicro);
                 // the two test bets, plus any spectator of another suite who walked by and bet on his own (PitActivity)
@@ -238,6 +297,144 @@ namespace Hearth.Underworld
             }
             UwKit.End();
         }
+    }
+
+    /// <summary>The window after a scored guest-versus-guest bout (package B saw one guest downed within 600 ticks once, never reproduced). Proves what can be
+    /// proved: (1) the worst bruises the pit could ever give cannot down even a very old guest (pain, capacities); (2) a scored bout leaves the opinion of
+    /// the two of each other, and so their chance to quarrel, exactly as it was; (3) nobody else swings at, threatens or burns them in the 600 ticks after.
+    /// And it shows the one cause the pit cannot rule out: a vanilla social fight between the two (the pit's damage guard ends with the bout) does down a
+    /// guest and sends the group home with the wounded one (notes only, the outcome is vanilla's).</summary>
+    public sealed class PitAftermathSuite : HearthTestSuite
+    {
+        public override string Name => "underworld.pit.aftermath";
+        public override ModuleId Module => ModuleId.Underworld;
+        public override int MaxTicks => 40000;
+        public override IEnumerable<int> Run(TestContext t)
+        {
+            var map = t.Map; var f = UwKit.Friendly();
+            UwKit.Begin(ContentIntensity.Standard);
+            CellRect inner = default; IntVec3 outside = IntVec3.Invalid; CompFightPit pit = null;
+            if (f != null) pit = PitKit.Arena(map, out inner, out outside);
+            if (pit == null || PitSetup.Bruise == null) { t.Note("no friendly faction, free area or Bruise def; skipped"); UwKit.End(); yield break; }
+            var cells = pit.ArenaInfo().Cells;
+
+            // ---- 1: the worst bruises the pit can give: the two parts that hurt movement most, at the top severity (the game gives one or two of 1.0 to 2.5),
+            // on a very old guest and on young ones. Then the bound that cannot happen (a bruise at 2.5 on every allowed part), as notes.
+            var old = PawnGenerator.GeneratePawn(new PawnGenerationRequest(f.RandomPawnKind() ?? PawnKindDefOf.Villager, f, PawnGenerationContext.NonPlayer, map.Tile, canGeneratePawnRelations: false, fixedBiologicalAge: 85f, fixedChronologicalAge: 85f));
+            GenSpawn.Spawn(old, CellFinder.RandomClosewalkCellNear(TestCells.Anchor(map), map, 12), map); UwKit.Track(old);
+            var gs = UwKit.Guests(map, 4, f);
+            var subjects = new List<Pawn> { old }; subjects.AddRange(gs);
+            float worstPain = FightBout.WorstBruisePain(); var edgeCases = new List<Pawn>();
+            foreach (var p in subjects)
+            {
+                var parts = FightBout.BruiseParts(p);
+                bool downedBefore = p.Downed; float painBefore = p.health.hediffSet.PainTotal, shock = p.GetStatValue(StatDefOf.PainShockThreshold);
+                var byMoving = new List<KeyValuePair<float, BodyPartRecord>>();
+                foreach (var part in parts)
+                {
+                    var h = (Hediff_Injury)HediffMaker.MakeHediff(PitSetup.Bruise, p, part); h.Severity = 2.5f; p.health.AddHediff(h, part);
+                    byMoving.Add(new KeyValuePair<float, BodyPartRecord>(p.health.capacities.GetLevel(PawnCapacityDefOf.Moving) + p.health.capacities.GetLevel(PawnCapacityDefOf.Manipulation), part));
+                    p.health.RemoveHediff(h);
+                }
+                var worst = byMoving.OrderBy(k => k.Key).Take(2).Select(k => k.Value).ToList();
+                var added = new List<Hediff>();
+                foreach (var part in worst) { var h = (Hediff_Injury)HediffMaker.MakeHediff(PitSetup.Bruise, p, part); h.Severity = 2.5f; p.health.AddHediff(h, part); added.Add(h); }
+                float painAfter = p.health.hediffSet.PainTotal;
+                string label = p.LabelShort + " (age " + p.ageTracker.AgeBiologicalYears + ", hp " + p.health.summaryHealth.SummaryHealthPercent.ToString("0.00") + ", shock " + shock.ToString("0.00") + ")";
+                bool ruleAllows = painBefore + worstPain < shock - 0.02f;   // the pit's headroom rule (FightBout.Bruise)
+                t.Check(painAfter - painBefore <= worstPain + 0.001f, label + ": two bruises add " + (painAfter - painBefore).ToString("0.000") + " pain at most (" + worstPain.ToString("0.000") + " with the margin)");
+                if (ruleAllows) t.Check(p.Downed == downedBefore && !p.Dead, label + ": the headroom rule lets him be bruised, and the two worst bruises do not down him (pain " + painBefore.ToString("0.00") + " -> " + painAfter.ToString("0.00") + ")");
+                else
+                {
+                    t.Note(label + ": pain " + painBefore.ToString("0.00") + " leaves too little headroom: the two worst bruises would " + (p.Downed && !downedBefore ? "DOWN him (the old rule did exactly that)" : "not down him this time") + "; the rule gives him none");
+                    edgeCases.Add(p);
+                }
+                foreach (var h in added) p.health.RemoveHediff(h);
+                var all = new List<Hediff>();
+                foreach (var part in parts) { var h = (Hediff_Injury)HediffMaker.MakeHediff(PitSetup.Bruise, p, part); h.Severity = 2.5f; p.health.AddHediff(h, part); all.Add(h); }
+                t.Note(label + ": (impossible case) " + parts.Count + " bruises at 2.5 = pain " + p.health.hediffSet.PainTotal.ToString("0.00") + ", downed " + p.Downed + ", moving " + p.health.capacities.GetLevel(PawnCapacityDefOf.Moving).ToString("0.00"));
+                foreach (var h in all) p.health.RemoveHediff(h);
+            }
+            var a = gs[0]; var b = gs[1];
+
+            // ---- 2: a scored guest-versus-guest bout adds nothing of the pit to how the two feel about each other (vanilla chatter between two pawns standing in one
+            // arena does: insults and kind words are normal memories, they are only listed)
+            int arrive = 0;
+            while (arrive < 4000 && !gs.All(PitFighters.StayToil)) { yield return 100; arrive += 100; }
+            PitKit.Put(a, cells[10]); PitKit.Put(b, cells[38]);
+            foreach (var x in gs.Skip(2)) PitKit.Put(x, CellFinder.RandomClosewalkCellNear(outside, map, 2));
+            yield return 30;
+            var memBefore = Mems(a, b).Concat(Mems(b, a)).ToList();
+            var gw = PitKit.Goodwill();
+            var bout = FightBout.Start(pit, a, b, true, 600, manual: true);
+            t.Check(bout != null && bout.Scored, "guest against guest is scored");
+            if (bout == null) { UwKit.End(); yield break; }
+            foreach (var w in PitKit.Await(t, bout)) yield return w;
+            if (!bout.Finished || bout.FightTick <= 0) { t.Note("the bout did not reach a fight (" + FightBout.LastMessage + "); the rest is skipped"); UwKit.End(); yield break; }
+            var alerts = new List<string>();
+            foreach (var w in PitKit.Watch(t, a, b, 600, alerts)) yield return w;
+            var newMems = Mems(a, b).Concat(Mems(b, a)).Except(memBefore).ToList();
+            t.Note("new memories about the other fighter: " + (newMems.Count == 0 ? "none" : string.Join(", ", newMems)));
+            t.Check(!newMems.Contains("HarmedMe") && !newMems.Contains("WitnessedDeathNonAlly") && !newMems.Any(m => m.IndexOf("Fight", StringComparison.OrdinalIgnoreCase) >= 0 && m != "HadAngeringFight" && m != "HadCatharticFight"),
+                "none of them comes from the pit's blows (no HarmedMe)");
+            var hard = alerts.Where(x => !PitKit.IsQuarrel(x)).ToList();
+            t.Check(hard.Count == 0, "nobody else swung at, threatened or burned the two for 600 ticks" + (hard.Count > 0 ? ": " + string.Join("; ", hard) : ""));
+            bool quarrel = alerts.Count > hard.Count;
+            if (quarrel) t.Note("a vanilla quarrel broke out in the window: " + string.Join("; ", alerts.Where(PitKit.IsQuarrel)));
+            else
+            {
+                t.Check(!a.Downed && !b.Downed && !a.Dead && !b.Dead, "both fighters are up 600 ticks after the bout: " + PitKit.Dump(a) + " | " + PitKit.Dump(b));
+                t.Check(PitKit.GoodwillDiff(gw) == "none", "goodwill unchanged: " + PitKit.GoodwillDiff(gw));
+            }
+
+            // ---- 2a: pawns who naturally stand too close to their shock threshold get no bruise from the real thing
+            foreach (var p in edgeCases)
+            {
+                int before = p.health.hediffSet.hediffs.Count(h => h.def == PitSetup.Bruise);
+                bout.Bruise(p);
+                t.Check(!p.Downed && p.health.hediffSet.hediffs.Count(h => h.def == PitSetup.Bruise) == before, p.LabelShort + ": FightBout.Bruise gave no bruise and left him up (pain " + p.health.hediffSet.PainTotal.ToString("0.00") + " of shock " + p.GetStatValue(StatDefOf.PainShockThreshold).ToString("0.00") + ")");
+            }
+
+            // ---- 2b: the pain headroom rule: a spectator whose pain stands a hair under his shock threshold gets no bruise (and is not downed by one)
+            var edge = gs[3];
+            {
+                var parts = FightBout.BruiseParts(edge); float shock = edge.GetStatValue(StatDefOf.PainShockThreshold);
+                var tmp = new List<Hediff>(); int guard = 0;
+                while (guard++ < 60 && shock - edge.health.hediffSet.PainTotal > 0.04f)
+                {
+                    var part = parts[guard % parts.Count];
+                    var h = (Hediff_Injury)HediffMaker.MakeHediff(PitSetup.Bruise, edge, part); h.Severity = 2.5f; edge.health.AddHediff(h, part); tmp.Add(h);
+                    if (edge.Downed) break;
+                }
+                float head = shock - edge.health.hediffSet.PainTotal;
+                int before = edge.health.hediffSet.hediffs.Count(h => h.def == PitSetup.Bruise);
+                if (!edge.Downed && head > 0f && head < worstPain)
+                {
+                    bout.Bruise(edge);
+                    t.Check(!edge.Downed && edge.health.hediffSet.hediffs.Count(h => h.def == PitSetup.Bruise) == before, "pain " + edge.health.hediffSet.PainTotal.ToString("0.000") + " of shock " + shock.ToString("0.00") + " (headroom " + head.ToString("0.000") + "): no bruise given, not downed");
+                }
+                else t.Note("pain headroom case not reached (" + head.ToString("0.000") + ", downed " + edge.Downed + "); skipped");
+                foreach (var h in tmp) { try { edge.health.RemoveHediff(h); } catch { } }
+            }
+
+            // ---- 3: what the pit cannot rule out: a vanilla social fight between the two ex-fighters (nothing of the bout's guard is left then)
+            t.Check(FightBout.OfPawn(a) == null && FightBout.OfPawn(b) == null, "the bout is gone, so the damage guard no longer covers the two (a quarrel is real damage)");
+            if (a.Downed || b.Downed || a.Dead || b.Dead || a.InMentalState || b.InMentalState) { t.Note("one of them is already down or quarrelling; the forced fight is skipped"); UwKit.End(); yield break; }
+            var toil0 = a.GetLord()?.CurLordToil?.GetType().Name;
+            var gw3 = PitKit.Goodwill();
+            a.interactions.StartSocialFight(b);
+            t.Check(a.InMentalState && b.InMentalState, "a forced social fight started between the two ex-fighters");
+            int sw = 0; string downed = null;
+            while (sw < 3000 && a.InMentalState && b.InMentalState && !a.Downed && !b.Downed) { yield return 30; sw += 30; }
+            if (a.Downed) downed = a.LabelShort; else if (b.Downed) downed = b.LabelShort;
+            yield return 60;
+            t.Note("forced social fight: ended after " + sw + " ticks, downed: " + (downed ?? "nobody") + "; lord toil " + toil0 + " -> " + a.GetLord()?.CurLordToil?.GetType().Name + " / " + b.GetLord()?.CurLordToil?.GetType().Name
+                + "; goodwill " + PitKit.GoodwillDiff(gw3) + "; " + PitKit.Dump(a) + " | " + PitKit.Dump(b));
+            UwKit.End();
+        }
+
+        /// <summary>Def names of the memories <paramref name="p"/> keeps about <paramref name="other"/>.</summary>
+        static IEnumerable<string> Mems(Pawn p, Pawn other) => (p.needs?.mood?.thoughts?.memories?.Memories ?? new List<Thought_Memory>()).Where(m => m.otherPawn == other).Select(m => m.def.defName).ToList();
     }
 
     /// <summary>A lone colonist, no guests, no animals: "Call an opponent" hires a pit beast; the bout runs to a result, the fee is booked, the beast is gone.</summary>
