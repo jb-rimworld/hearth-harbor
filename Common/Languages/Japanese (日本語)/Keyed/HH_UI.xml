@@ -68,12 +68,6 @@
   <HH.UI.Content.Dark.Tip>犯罪、借金、暴力が現れることがあります。</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>陰惨</HH.UI.Content.Grim>
   <HH.UI.Content.Grim.Tip>ゲームが提供するすべてを、そのまま含みます。</HH.UI.Content.Grim.Tip>
-  <HH.UI.Underworld.Discover>ゲーム内で発見</HH.UI.Underworld.Discover>
-  <HH.UI.Underworld.On>オン</HH.UI.Underworld.On>
-  <HH.UI.Underworld.Off>オフ</HH.UI.Underworld.Off>
-  <HH.UI.Underworld.Discover.Tip>怪しげな見知らぬ人物がゲームに現れるまで、表には出てきません。</HH.UI.Underworld.Discover.Tip>
-  <HH.UI.Underworld.On.Tip>最初から利用できます。</HH.UI.Underworld.On.Tip>
-  <HH.UI.Underworld.Off.Tip>決して利用できません。怪しげな見知らぬ人物も現れません。</HH.UI.Underworld.Off.Tip>
   <HH.UI.ModuleDesc.Inn>宿泊客、客室ベッド、棟、受付、旅人、勧誘。</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>店の看板、商店、自販機、市場、飲食店、料理。</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>テーブル、スロットマシン、チップ、宿泊客とコロニストのギャンブルの危険。</HH.UI.ModuleDesc.Casino>
@@ -294,7 +288,6 @@
   <HH.UI.Overview.Arrivals>到着予定、次の24時間: {0}、1日あたり約 {1} 組を見込む。</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>まだ予定なし</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>{0} 組を予定（約 {1} 名）</HH.UI.Overview.Arrivals.Planned>
-  <HH.UI.Content.Decline>いいえ、{0} を続ける</HH.UI.Content.Decline>
   <HH.UI.Diff.Ladder>裏社会: 事件ごとの罰則の上限</HH.UI.Diff.Ladder>
   <HH.UI.Diff.WarnHard>「過剰予約」からは、裏社会の事件が本物の好意、名声、銀を失わせることがある（下の上限を参照）。</HH.UI.Diff.WarnHard>
   <HH.UI.Feel.4>裏社会の事件で、好意、名声、罰金を失い始める。</HH.UI.Feel.4>

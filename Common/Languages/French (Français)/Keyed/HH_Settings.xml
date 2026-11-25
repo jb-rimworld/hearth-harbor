@@ -16,8 +16,6 @@
   <HH.Enum.StaffRule.AlwaysRequired>Toujours requis</HH.Enum.StaffRule.AlwaysRequired>
   <HH.Enum.StaffRule.NeverRequired>Jamais requis</HH.Enum.StaffRule.NeverRequired>
   <HH.Enum.StaffRule.PerVenueType>Selon le type de lieu</HH.Enum.StaffRule.PerVenueType>
-  <HH.Enum.UnderworldMode.AlwaysOn>Toujours actif</HH.Enum.UnderworldMode.AlwaysOn>
-  <HH.Enum.UnderworldMode.DiscoverInGame>À découvrir en jeu</HH.Enum.UnderworldMode.DiscoverInGame>
   <HH.Setting.bank.accountBeta>Exposant des intérêts du compte (non utilisé depuis 1.1.0)</HH.Setting.bank.accountBeta>
   <HH.Setting.bank.accountBeta.Desc>Remplacé par « Intérêts du compte : part du rendement du marché ». Conservé pour que les anciennes sauvegardes se chargent ; le modifier ne fait rien.</HH.Setting.bank.accountBeta.Desc>
   <HH.Setting.bank.accountShare>Intérêts du compte : part du rendement du marché</HH.Setting.bank.accountShare>
@@ -423,8 +421,6 @@
   <HH.Setting.underworld.hunt.quarryHours.Desc>Un prisonnier qui survit aussi longtemps ou atteint la limite du terrain est libre.</HH.Setting.underworld.hunt.quarryHours.Desc>
   <HH.Setting.underworld.lounge.price>Prix d'une séance</HH.Setting.underworld.lounge.price>
   <HH.Setting.underworld.lounge.price.Desc>Ce qu'un visiteur paie au salon. Les visiteurs ne prennent que ce que leur idéologie autorise.</HH.Setting.underworld.lounge.price.Desc>
-  <HH.Setting.underworld.mode>Comment le monde souterrain apparaît</HH.Setting.underworld.mode>
-  <HH.Setting.underworld.mode.Desc>Découverte en jeu : un inconnu louche demande si vous avez une arrière-salle, et seul un oui ouvre le côté obscur. Toujours actif : ouvert dès le départ. (Désactivé est l'interrupteur du module ; l'intensité du contenu Cozy le masque complètement.)</HH.Setting.underworld.mode.Desc>
   <HH.Setting.underworld.organ.orderDays>Jours pour livrer une commande</HH.Setting.underworld.organ.orderDays>
   <HH.Setting.underworld.organ.orderPremium>Prime sur les organes commandés</HH.Setting.underworld.organ.orderPremium>
   <HH.Setting.underworld.organ.orderPremium.Desc>Grim uniquement : un organe prêt livré dans les délais est payé ce nombre de fois son prix normal.</HH.Setting.underworld.organ.orderPremium.Desc>
@@ -454,14 +450,6 @@
   <HH.Setting.underworld.smuggler.maxValue.Desc>Valeur marchande de la plus grosse caisse proposée.</HH.Setting.underworld.smuggler.maxValue.Desc>
   <HH.Setting.underworld.smuggler.priceFactor>Prix de la contrebande</HH.Setting.underworld.smuggler.priceFactor>
   <HH.Setting.underworld.smuggler.priceFactor.Desc>Part de la valeur marchande que vous payez pour une caisse.</HH.Setting.underworld.smuggler.priceFactor.Desc>
-  <HH.Setting.underworld.strangerCooldownDays>Jours avant qu'il ne revienne</HH.Setting.underworld.strangerCooldownDays>
-  <HH.Setting.underworld.strangerCooldownDays.Desc>Après « Pas intéressé », l'inconnu attend ce nombre de jours avant de redemander.</HH.Setting.underworld.strangerCooldownDays.Desc>
-  <HH.Setting.underworld.strangerMaxAsks>Fréquence de ses propositions</HH.Setting.underworld.strangerMaxAsks>
-  <HH.Setting.underworld.strangerMaxAsks.Desc>Après ce nombre de refus, l'inconnu abandonne pour de bon.</HH.Setting.underworld.strangerMaxAsks.Desc>
-  <HH.Setting.underworld.strangerMaxWhispers>Murmures maximum pour l'inconnu</HH.Setting.underworld.strangerMaxWhispers>
-  <HH.Setting.underworld.strangerMaxWhispers.Desc>Il ne se présente que lorsque vos Murmures sont égaux ou inférieurs à cette valeur.</HH.Setting.underworld.strangerMaxWhispers.Desc>
-  <HH.Setting.underworld.strangerMeanDays>Jours avant l'apparition de l'inconnu</HH.Setting.underworld.strangerMeanDays>
-  <HH.Setting.underworld.strangerMeanDays.Desc>Durée moyenne entre les moments où l'inconnu peut venir (une fois la colonie dotée d'invités ou d'un établissement, et vos Murmures bas).</HH.Setting.underworld.strangerMeanDays.Desc>
   <HH.Setting.underworld.whispers.fence>Murmures par transaction avec le receleur</HH.Setting.underworld.whispers.fence>
   <HH.Setting.underworld.whispers.gang>Murmures par visite de gang</HH.Setting.underworld.whispers.gang>
   <HH.Setting.underworld.whispers.hunt>Murmures par chasse</HH.Setting.underworld.whispers.hunt>
@@ -480,7 +468,6 @@
   <HH.SettingCat.Compatibility>Compatibilité</HH.SettingCat.Compatibility>
   <HH.SettingCat.DLCandtraits>DLC et traits</HH.SettingCat.DLCandtraits>
   <HH.SettingCat.Difficulty>Difficulté</HH.SettingCat.Difficulty>
-  <HH.SettingCat.Discovery>Découverte</HH.SettingCat.Discovery>
   <HH.SettingCat.Druglounge>Salon de drogue</HH.SettingCat.Druglounge>
   <HH.SettingCat.Effects>Effets</HH.SettingCat.Effects>
   <HH.SettingCat.Factionprojects>Projets de faction</HH.SettingCat.Factionprojects>

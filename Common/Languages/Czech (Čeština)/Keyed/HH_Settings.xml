@@ -16,8 +16,6 @@
   <HH.Enum.StaffRule.AlwaysRequired>Vždy potřeba</HH.Enum.StaffRule.AlwaysRequired>
   <HH.Enum.StaffRule.NeverRequired>Nikdy nepotřeba</HH.Enum.StaffRule.NeverRequired>
   <HH.Enum.StaffRule.PerVenueType>Podle typu provozovny</HH.Enum.StaffRule.PerVenueType>
-  <HH.Enum.UnderworldMode.AlwaysOn>Vždy zapnuto</HH.Enum.UnderworldMode.AlwaysOn>
-  <HH.Enum.UnderworldMode.DiscoverInGame>Objevit ve hře</HH.Enum.UnderworldMode.DiscoverInGame>
   <HH.Setting.bank.accountBeta>Exponent úroku účtu (od 1.1.0 nepoužíván)</HH.Setting.bank.accountBeta>
   <HH.Setting.bank.accountBeta.Desc>Nahrazeno položkou „Úrok účtu: podíl na výnosu trhu“. Ponecháno kvůli načtení starších uložených her; změna nedělá nic.</HH.Setting.bank.accountBeta.Desc>
   <HH.Setting.bank.accountShare>Úrok účtu: podíl na výnosu trhu</HH.Setting.bank.accountShare>
@@ -423,8 +421,6 @@
   <HH.Setting.underworld.hunt.quarryHours.Desc>Vězeň, který tuto dobu přežije nebo dosáhne plotu, je volný.</HH.Setting.underworld.hunt.quarryHours.Desc>
   <HH.Setting.underworld.lounge.price>Cena sezení</HH.Setting.underworld.lounge.price>
   <HH.Setting.underworld.lounge.price.Desc>Co host zaplatí v drogovém salonku. Hosté si berou jen to, co jejich ideologie dovoluje.</HH.Setting.underworld.lounge.price.Desc>
-  <HH.Setting.underworld.mode>Jak se podsvětí objevuje</HH.Setting.underworld.mode>
-  <HH.Setting.underworld.mode.Desc>Objevit ve hře: podezřelý cizinec se zeptá, zda máte zadní místnost, a teprve kladná odpověď otevře temnou stránku. Vždy zapnuto: je otevřeno od začátku. (Vypnuto je přepínač modulu; Intenzita obsahu Pohodlí ji zcela skryje.)</HH.Setting.underworld.mode.Desc>
   <HH.Setting.underworld.organ.orderDays>Dny na doručení objednávky</HH.Setting.underworld.organ.orderDays>
   <HH.Setting.underworld.organ.orderPremium>Příplatek za objednané orgány</HH.Setting.underworld.organ.orderPremium>
   <HH.Setting.underworld.organ.orderPremium.Desc>Jen Grim: hotový orgán doručený v termínu se zaplatí tolikrát násobku běžné ceny.</HH.Setting.underworld.organ.orderPremium.Desc>
@@ -454,14 +450,6 @@
   <HH.Setting.underworld.smuggler.maxValue.Desc>Tržní hodnota největší nabízené bedny.</HH.Setting.underworld.smuggler.maxValue.Desc>
   <HH.Setting.underworld.smuggler.priceFactor>Cena pašovaného zboží</HH.Setting.underworld.smuggler.priceFactor>
   <HH.Setting.underworld.smuggler.priceFactor.Desc>Podíl tržní hodnoty, který zaplatíš za bednu.</HH.Setting.underworld.smuggler.priceFactor.Desc>
-  <HH.Setting.underworld.strangerCooldownDays>Dny, než se zeptá znovu</HH.Setting.underworld.strangerCooldownDays>
-  <HH.Setting.underworld.strangerCooldownDays.Desc>Po odpovědi „Nemám zájem“ počká cizinec tolik dní, než se zeptá znovu.</HH.Setting.underworld.strangerCooldownDays.Desc>
-  <HH.Setting.underworld.strangerMaxAsks>Jak často se ptá</HH.Setting.underworld.strangerMaxAsks>
-  <HH.Setting.underworld.strangerMaxAsks.Desc>Po tolika odmítnutích cizinec navždy rezignuje.</HH.Setting.underworld.strangerMaxAsks.Desc>
-  <HH.Setting.underworld.strangerMaxWhispers>Nejvyšší šepty pro cizince</HH.Setting.underworld.strangerMaxWhispers>
-  <HH.Setting.underworld.strangerMaxWhispers.Desc>Objeví se jen tehdy, když jsou tvé šepty na této hodnotě nebo pod ní.</HH.Setting.underworld.strangerMaxWhispers.Desc>
-  <HH.Setting.underworld.strangerMeanDays>Dny, než se cizinec ukáže</HH.Setting.underworld.strangerMeanDays>
-  <HH.Setting.underworld.strangerMeanDays.Desc>Průměrný počet dní mezi okamžiky, kdy se cizinec může objevit (jakmile má kolonie hosty nebo podnik a tvé šepty jsou nízké).</HH.Setting.underworld.strangerMeanDays.Desc>
   <HH.Setting.underworld.whispers.fence>Šepty za obchod s překupníkem</HH.Setting.underworld.whispers.fence>
   <HH.Setting.underworld.whispers.gang>Šepty za návštěvu gangu</HH.Setting.underworld.whispers.gang>
   <HH.Setting.underworld.whispers.hunt>Šepty za lov</HH.Setting.underworld.whispers.hunt>
@@ -480,7 +468,6 @@
   <HH.SettingCat.Compatibility>Kompatibilita</HH.SettingCat.Compatibility>
   <HH.SettingCat.DLCandtraits>DLC a rysy</HH.SettingCat.DLCandtraits>
   <HH.SettingCat.Difficulty>Obtížnost</HH.SettingCat.Difficulty>
-  <HH.SettingCat.Discovery>Objevování</HH.SettingCat.Discovery>
   <HH.SettingCat.Druglounge>Drogový salonek</HH.SettingCat.Druglounge>
   <HH.SettingCat.Effects>Účinky</HH.SettingCat.Effects>
   <HH.SettingCat.Factionprojects>Projekty frakcí</HH.SettingCat.Factionprojects>

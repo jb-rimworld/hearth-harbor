@@ -3,22 +3,6 @@
   <HH.Tab.Underworld>Підпілля</HH.Tab.Underworld>
   <HH.Underworld.GateClosed>Недоступно: підпілля в цій грі закрите.</HH.Underworld.GateClosed>
   <HH.Underworld.BackRoomDoorInfo>Відчинити ці двері можуть лише персонал, колоністи та сумнівні гості.</HH.Underworld.BackRoomDoorInfo>
-  <HH.Underworld.Stranger.Title>Незнайомець біля воріт</HH.Underworld.Stranger.Title>
-  <HH.Underworld.Stranger.Text>Незнайомець із низько насунутим капелюхом чекає біля ваших дверей, доки персонал не відійде достатньо далеко.\n\n«Гарне місце, — каже він. — Є задня кімната?»\n\nЩо він має на увазі, не пояснює. І не мусить.</HH.Underworld.Stranger.Text>
-  <HH.Underworld.Stranger.Show>Покажіть мені</HH.Underworld.Stranger.Show>
-  <HH.Underworld.Stranger.No>Не цікавить</HH.Underworld.Stranger.No>
-  <HH.Underworld.Stranger.Never>Більше не питати</HH.Underworld.Stranger.Never>
-  <HH.Underworld.Unlocked.Title>Задня кімната</HH.Underworld.Unlocked.Title>
-  <HH.Underworld.Unlocked.Text>Ви показали йому задню кімнату, і він кивнув так, ніби ви склали іспит. Тепер вам відкрито нову гілку досліджень: задня кімната з дверима, ямою для бійок, прилавком скупника, контрабандистським причалом і салоном. Ваш Шепіт (репутація в підпіллі) тепер слідуватиме за тим, що ви будуєте.\n\nМожна все це ігнорувати. Нічого з цього не обов'язково.</HH.Underworld.Unlocked.Text>
-  <HH.Underworld.Warn.Title>Попередження про вміст</HH.Underworld.Warn.Title>
-  <HH.Underworld.Warn.Dark>Темний вміст додає до підпілля: полонені можуть битися насмерть у ямі, банди можуть допитувати полонених жорсткіше, мисливці можуть полювати на полонених (за відповідної ідеології), а клінічний прилавок скуповує вилучені органи.\n\nЦе показується лише як текст і звичайні ігрові поранення. Діти ніколи не беруть участі, і нічого з цього не вмикається само собою.\n\nХочете мати це в цій грі?</HH.Underworld.Warn.Dark>
-  <HH.Underworld.Warn.Grim>Похмурий вміст — це все з темного вмісту, а полювання на полонених більше не питає про вашу ідеологію. Покупці органів розміщують замовлення з термінами.\n\nЦе показується лише як текст і звичайні ігрові поранення. Діти ніколи не беруть участі, і нічого з цього не вмикається само собою.\n\nХочете мати це в цій грі?</HH.Underworld.Warn.Grim>
-  <HH.Underworld.Warn.Accept>Так, я розумію</HH.Underworld.Warn.Accept>
-  <HH.Underworld.Warn.Back>Ні, назад до стандартного</HH.Underworld.Warn.Back>
-  <HH.Underworld.Warn.Hunt>Ви збираєтеся дозволити полювання на полонених на мисливських угіддях. Полонений випускається на угіддя з форою; якщо він протримається встановлений час або дістанеться лінії огорожі, він вільний, і його фракція про це дізнається в будь-якому разі. Якщо він загине, його фракція, ваші колоністи та гості цього не пробачать.\n\nЦе показується лише як текст. Дозволити?</HH.Underworld.Warn.Hunt>
-  <HH.Underworld.Warn.Organ>Прилавок клініки вночі скуповує вилучені органи від анонімних донорів. Ідеології, що відкидають торгівлю органами, триматимуть це проти вас, а ваш Шепіт зростатиме з кожним продажем.\n\nЦе показується лише як текст. Залишити?</HH.Underworld.Warn.Organ>
-  <HH.Underworld.Warn.Keep>Так, залишити</HH.Underworld.Warn.Keep>
-  <HH.Underworld.Warn.Remove>Ні, прибрати</HH.Underworld.Warn.Remove>
   <HH.Underworld.Scandal.BackRoomFound.Title>Задню кімнату викрили</HH.Underworld.Scandal.BackRoomFound.Title>
   <HH.Underworld.Scandal.BackRoomFound.Text>Поважний гість відчинив не ті двері й побачив, що дім приховує за ними. До вечора про це знатиме все місто.</HH.Underworld.Scandal.BackRoomFound.Text>
   <HH.Underworld.Scandal.LeakedLedger.Title>Витеклий журнал</HH.Underworld.Scandal.LeakedLedger.Title>
@@ -94,7 +78,6 @@
   <HH.Underworld.Page.Title>Підпілля</HH.Underworld.Page.Title>
   <HH.Underworld.Page.Whispers>Шепіт: {0} зі 100.</HH.Underworld.Page.Whispers>
   <HH.Underworld.Page.Weights>Ваги прибуття: поважні x{0}, поза законом x{1}.</HH.Underworld.Page.Weights>
-  <HH.Underworld.Page.Content>Вміст: {0} (застосовано: {1}).</HH.Underworld.Page.Content>
   <HH.Underworld.Page.Stats1>Яма для бійок: {0} боїв, {1} ставок, частка дому {2} срібла.</HH.Underworld.Page.Stats1>
   <HH.Underworld.Page.Stats2>Скупник: {0} куплено, {1} продано, прибуток {2} срібла.</HH.Underworld.Page.Stats2>
   <HH.Underworld.Page.Stats3>Сеансів у салоні {0}, візитів банд {1}, посадок {2}, полювань {3}, органів {4}.</HH.Underworld.Page.Stats3>

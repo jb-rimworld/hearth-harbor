@@ -16,8 +16,6 @@
   <HH.Enum.StaffRule.AlwaysRequired>Sempre exigido</HH.Enum.StaffRule.AlwaysRequired>
   <HH.Enum.StaffRule.NeverRequired>Nunca exigido</HH.Enum.StaffRule.NeverRequired>
   <HH.Enum.StaffRule.PerVenueType>Por tipo de local</HH.Enum.StaffRule.PerVenueType>
-  <HH.Enum.UnderworldMode.AlwaysOn>Sempre ativo</HH.Enum.UnderworldMode.AlwaysOn>
-  <HH.Enum.UnderworldMode.DiscoverInGame>Descobrir no jogo</HH.Enum.UnderworldMode.DiscoverInGame>
   <HH.Setting.bank.accountBeta>Expoente de juros da conta (não usado desde 1.1.0)</HH.Setting.bank.accountBeta>
   <HH.Setting.bank.accountBeta.Desc>Substituído por 'Juros da conta: parcela do retorno de mercado'. Mantido para que salvamentos antigos carreguem; alterá-lo não faz nada.</HH.Setting.bank.accountBeta.Desc>
   <HH.Setting.bank.accountShare>Juros da conta: parcela do retorno de mercado</HH.Setting.bank.accountShare>
@@ -423,8 +421,6 @@
   <HH.Setting.underworld.hunt.quarryHours.Desc>Um prisioneiro que sobreviver este tempo ou chegar à linha da cerca fica livre.</HH.Setting.underworld.hunt.quarryHours.Desc>
   <HH.Setting.underworld.lounge.price>Preço de uma sessão</HH.Setting.underworld.lounge.price>
   <HH.Setting.underworld.lounge.price.Desc>O que um hóspede paga na sala de drogas. Os hóspedes só consomem o que a sua ideologia permite.</HH.Setting.underworld.lounge.price.Desc>
-  <HH.Setting.underworld.mode>Como o submundo aparece</HH.Setting.underworld.mode>
-  <HH.Setting.underworld.mode.Desc>Descobrir no jogo: um estranho suspeito pergunta se você tem uma sala dos fundos, e só um sim abre o lado sombrio. Sempre ligado: aberto desde o início. (Desligado é a chave do módulo; a intensidade de conteúdo Aconchegante o esconde por completo.)</HH.Setting.underworld.mode.Desc>
   <HH.Setting.underworld.organ.orderDays>Dias para entregar um pedido</HH.Setting.underworld.organ.orderDays>
   <HH.Setting.underworld.organ.orderPremium>Prêmio em órgãos encomendados</HH.Setting.underworld.organ.orderPremium>
   <HH.Setting.underworld.organ.orderPremium.Desc>Só no modo Sombrio: um órgão pronto entregue dentro do prazo paga esta quantidade de vezes o preço normal.</HH.Setting.underworld.organ.orderPremium.Desc>
@@ -454,14 +450,6 @@
   <HH.Setting.underworld.smuggler.maxValue.Desc>Valor de mercado do maior caixote oferecido.</HH.Setting.underworld.smuggler.maxValue.Desc>
   <HH.Setting.underworld.smuggler.priceFactor>Preço do contrabando</HH.Setting.underworld.smuggler.priceFactor>
   <HH.Setting.underworld.smuggler.priceFactor.Desc>Parcela do valor de mercado que você paga por um caixote.</HH.Setting.underworld.smuggler.priceFactor.Desc>
-  <HH.Setting.underworld.strangerCooldownDays>Dias até ele perguntar de novo</HH.Setting.underworld.strangerCooldownDays>
-  <HH.Setting.underworld.strangerCooldownDays.Desc>Depois de "Não tenho interesse", o estranho espera este número de dias antes de perguntar de novo.</HH.Setting.underworld.strangerCooldownDays.Desc>
-  <HH.Setting.underworld.strangerMaxAsks>Com que frequência ele pergunta</HH.Setting.underworld.strangerMaxAsks>
-  <HH.Setting.underworld.strangerMaxAsks.Desc>Depois de tantas recusas, o estranho desiste de vez.</HH.Setting.underworld.strangerMaxAsks.Desc>
-  <HH.Setting.underworld.strangerMaxWhispers>Sussurros máximos para o estranho</HH.Setting.underworld.strangerMaxWhispers>
-  <HH.Setting.underworld.strangerMaxWhispers.Desc>Ele só aparece enquanto os seus Sussurros estiverem neste valor ou abaixo.</HH.Setting.underworld.strangerMaxWhispers.Desc>
-  <HH.Setting.underworld.strangerMeanDays>Dias até o estranho aparecer</HH.Setting.underworld.strangerMeanDays>
-  <HH.Setting.underworld.strangerMeanDays.Desc>Média de dias entre os momentos em que o estranho pode aparecer (quando a colônia já tem hóspedes ou um estabelecimento, e os seus Sussurros estão baixos).</HH.Setting.underworld.strangerMeanDays.Desc>
   <HH.Setting.underworld.whispers.fence>Sussurros por negócio com o receptador</HH.Setting.underworld.whispers.fence>
   <HH.Setting.underworld.whispers.gang>Sussurros por visita de gangue</HH.Setting.underworld.whispers.gang>
   <HH.Setting.underworld.whispers.hunt>Sussurros por caçada</HH.Setting.underworld.whispers.hunt>
@@ -480,7 +468,6 @@
   <HH.SettingCat.Compatibility>Compatibilidade</HH.SettingCat.Compatibility>
   <HH.SettingCat.DLCandtraits>DLCs e traços</HH.SettingCat.DLCandtraits>
   <HH.SettingCat.Difficulty>Dificuldade</HH.SettingCat.Difficulty>
-  <HH.SettingCat.Discovery>Descobertas</HH.SettingCat.Discovery>
   <HH.SettingCat.Druglounge>Salão de drogas</HH.SettingCat.Druglounge>
   <HH.SettingCat.Effects>Efeitos</HH.SettingCat.Effects>
   <HH.SettingCat.Factionprojects>Projetos de facções</HH.SettingCat.Factionprojects>

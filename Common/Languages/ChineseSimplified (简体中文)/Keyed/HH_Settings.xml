@@ -16,8 +16,6 @@
   <HH.Enum.StaffRule.AlwaysRequired>始终需要</HH.Enum.StaffRule.AlwaysRequired>
   <HH.Enum.StaffRule.NeverRequired>从不需要</HH.Enum.StaffRule.NeverRequired>
   <HH.Enum.StaffRule.PerVenueType>按场馆类型</HH.Enum.StaffRule.PerVenueType>
-  <HH.Enum.UnderworldMode.AlwaysOn>始终开启</HH.Enum.UnderworldMode.AlwaysOn>
-  <HH.Enum.UnderworldMode.DiscoverInGame>游戏中发现</HH.Enum.UnderworldMode.DiscoverInGame>
   <HH.Setting.bank.accountBeta>账户利息指数（自 1.1.0 起不再使用）</HH.Setting.bank.accountBeta>
   <HH.Setting.bank.accountBeta.Desc>已由“账户利息：占市场回报的比例”取代。保留此项只为让旧存档能够读取；改动它没有任何效果。</HH.Setting.bank.accountBeta.Desc>
   <HH.Setting.bank.accountShare>账户利息：占市场回报的比例</HH.Setting.bank.accountShare>
@@ -423,8 +421,6 @@
   <HH.Setting.underworld.hunt.quarryHours.Desc>存活这么久或抵达围栏线的囚犯即获得自由。</HH.Setting.underworld.hunt.quarryHours.Desc>
   <HH.Setting.underworld.lounge.price>每次消费的价格</HH.Setting.underworld.lounge.price>
   <HH.Setting.underworld.lounge.price.Desc>客人在休息室的花费。客人只会选择其意识形态允许的内容。</HH.Setting.underworld.lounge.price.Desc>
-  <HH.Setting.underworld.mode>地下世界如何显现</HH.Setting.underworld.mode>
-  <HH.Setting.underworld.mode.Desc>游戏中发现：一个鬼祟的陌生人会问您是否有后屋，只有肯定的回答才会打开暗面。始终开启：从一开始就开放。（「关闭」是模块开关；「温馨内容」强度会将其完全隐藏。）</HH.Setting.underworld.mode.Desc>
   <HH.Setting.underworld.organ.orderDays>器官订单交付天数</HH.Setting.underworld.organ.orderDays>
   <HH.Setting.underworld.organ.orderPremium>订购器官的溢价</HH.Setting.underworld.organ.orderPremium>
   <HH.Setting.underworld.organ.orderPremium.Desc>仅冷酷模式：在期限内交付的现成器官，按正常价格的这个倍数支付。</HH.Setting.underworld.organ.orderPremium.Desc>
@@ -454,14 +450,6 @@
   <HH.Setting.underworld.smuggler.maxValue.Desc>提供的最大货箱的市场价值。</HH.Setting.underworld.smuggler.maxValue.Desc>
   <HH.Setting.underworld.smuggler.priceFactor>违禁品价格</HH.Setting.underworld.smuggler.priceFactor>
   <HH.Setting.underworld.smuggler.priceFactor.Desc>购买一个货箱时支付的市场价值比例。</HH.Setting.underworld.smuggler.priceFactor.Desc>
-  <HH.Setting.underworld.strangerCooldownDays>陌生人再次询问前的天数</HH.Setting.underworld.strangerCooldownDays>
-  <HH.Setting.underworld.strangerCooldownDays.Desc>选择「没兴趣」后，陌生人要等这么多天才会再次询问。</HH.Setting.underworld.strangerCooldownDays.Desc>
-  <HH.Setting.underworld.strangerMaxAsks>询问频率</HH.Setting.underworld.strangerMaxAsks>
-  <HH.Setting.underworld.strangerMaxAsks.Desc>被拒绝这么多次后，陌生人将彻底放弃。</HH.Setting.underworld.strangerMaxAsks.Desc>
-  <HH.Setting.underworld.strangerMaxWhispers>陌生人出现时的耳语值上限</HH.Setting.underworld.strangerMaxWhispers>
-  <HH.Setting.underworld.strangerMaxWhispers.Desc>只有当你的耳语值不高于此数值时他才会出现。</HH.Setting.underworld.strangerMaxWhispers.Desc>
-  <HH.Setting.underworld.strangerMeanDays>陌生人出现的平均间隔（天）</HH.Setting.underworld.strangerMeanDays>
-  <HH.Setting.underworld.strangerMeanDays.Desc>陌生人可能现身的时机之间的平均天数（殖民地有客人或营业场所之后，且你的耳语值较低时）。</HH.Setting.underworld.strangerMeanDays.Desc>
   <HH.Setting.underworld.whispers.fence>每笔销赃交易的耳语值</HH.Setting.underworld.whispers.fence>
   <HH.Setting.underworld.whispers.gang>每次帮派拜访的耳语值</HH.Setting.underworld.whispers.gang>
   <HH.Setting.underworld.whispers.hunt>每次狩猎的耳语值</HH.Setting.underworld.whispers.hunt>
@@ -480,7 +468,6 @@
   <HH.SettingCat.Compatibility>兼容性</HH.SettingCat.Compatibility>
   <HH.SettingCat.DLCandtraits>DLC 与特质</HH.SettingCat.DLCandtraits>
   <HH.SettingCat.Difficulty>难度</HH.SettingCat.Difficulty>
-  <HH.SettingCat.Discovery>发现</HH.SettingCat.Discovery>
   <HH.SettingCat.Druglounge>毒品休闲室</HH.SettingCat.Druglounge>
   <HH.SettingCat.Effects>效果</HH.SettingCat.Effects>
   <HH.SettingCat.Factionprojects>派系项目</HH.SettingCat.Factionprojects>

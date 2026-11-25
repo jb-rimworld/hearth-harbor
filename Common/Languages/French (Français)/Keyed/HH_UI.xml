@@ -68,12 +68,6 @@
   <HH.UI.Content.Dark.Tip>Crimes, dettes et violences peuvent apparaître.</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>Lugubre</HH.UI.Content.Grim>
   <HH.UI.Content.Grim.Tip>Tout ce que le jeu propose, en entier.</HH.UI.Content.Grim.Tip>
-  <HH.UI.Underworld.Discover>Découverte en jeu</HH.UI.Underworld.Discover>
-  <HH.UI.Underworld.On>Activé</HH.UI.Underworld.On>
-  <HH.UI.Underworld.Off>Désactivé</HH.UI.Underworld.Off>
-  <HH.UI.Underworld.Discover.Tip>Hors de vue jusqu'à ce qu'un individu louche se présente dans votre partie.</HH.UI.Underworld.Discover.Tip>
-  <HH.UI.Underworld.On.Tip>Disponible dès le début.</HH.UI.Underworld.On.Tip>
-  <HH.UI.Underworld.Off.Tip>Jamais disponible. L'individu louche reste lui aussi à l'écart.</HH.UI.Underworld.Off.Tip>
   <HH.UI.ModuleDesc.Inn>Clients, lits d'invités, ailes, accueil, voyageurs et recrutement.</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>Enseignes, boutiques, distributeurs, marchés, restaurants et plats.</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>Tables, machines à sous, jetons et risques du jeu pour les clients et les colons.</HH.UI.ModuleDesc.Casino>
@@ -294,7 +288,6 @@
   <HH.UI.Overview.Arrivals>Arrivées, prochaines 24 h : {0}, environ {1} groupes par jour attendus.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>personne n'est encore prévu</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>{0} groupe(s) prévu(s) (environ {1} client(s))</HH.UI.Overview.Arrivals.Planned>
-  <HH.UI.Content.Decline>Non, garder {0}</HH.UI.Content.Decline>
   <HH.UI.Diff.Ladder>Pègre : plafonds de pénalité par incident</HH.UI.Diff.Ladder>
   <HH.UI.Diff.WarnHard>À partir de Surréservé, les incidents de la pègre peuvent coûter une vraie bonne volonté, de la renommée et de l'argent (voir les plafonds ci-dessous).</HH.UI.Diff.WarnHard>
   <HH.UI.Feel.4>Les incidents de la pègre commencent à coûter bonne volonté, renommée et amendes.</HH.UI.Feel.4>

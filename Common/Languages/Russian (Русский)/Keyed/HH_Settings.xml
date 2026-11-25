@@ -16,8 +16,6 @@
   <HH.Enum.StaffRule.AlwaysRequired>Всегда нужен</HH.Enum.StaffRule.AlwaysRequired>
   <HH.Enum.StaffRule.NeverRequired>Никогда не нужен</HH.Enum.StaffRule.NeverRequired>
   <HH.Enum.StaffRule.PerVenueType>По типу заведения</HH.Enum.StaffRule.PerVenueType>
-  <HH.Enum.UnderworldMode.AlwaysOn>Всегда включено</HH.Enum.UnderworldMode.AlwaysOn>
-  <HH.Enum.UnderworldMode.DiscoverInGame>Открывается в игре</HH.Enum.UnderworldMode.DiscoverInGame>
   <HH.Setting.bank.accountBeta>Показатель процентов по счёту (не используется с 1.1.0)</HH.Setting.bank.accountBeta>
   <HH.Setting.bank.accountBeta.Desc>Заменён на «Проценты по счёту: доля рыночной доходности». Оставлен, чтобы старые сохранения загружались; изменение ничего не делает.</HH.Setting.bank.accountBeta.Desc>
   <HH.Setting.bank.accountShare>Проценты по счёту: доля рыночной доходности</HH.Setting.bank.accountShare>
@@ -423,8 +421,6 @@
   <HH.Setting.underworld.hunt.quarryHours.Desc>Заключённый, который выдержит это время или доберётся до линии ограды, свободен.</HH.Setting.underworld.hunt.quarryHours.Desc>
   <HH.Setting.underworld.lounge.price>Цена сеанса</HH.Setting.underworld.lounge.price>
   <HH.Setting.underworld.lounge.price.Desc>Сколько гость платит в комнате отдыха с наркотиками. Гости берут только то, что позволяет их идеология.</HH.Setting.underworld.lounge.price.Desc>
-  <HH.Setting.underworld.mode>Как проявляется подполье</HH.Setting.underworld.mode>
-  <HH.Setting.underworld.mode.Desc>«Открывается в игре»: незнакомец спрашивает, есть ли у вас задняя комната, и только «да» открывает тёмную сторону. «Всегда»: открыто с самого начала. (Выкл. — переключатель модуля; «Cozy content intensity» скрывает его полностью.)</HH.Setting.underworld.mode.Desc>
   <HH.Setting.underworld.organ.orderDays>Дней на доставку заказа</HH.Setting.underworld.organ.orderDays>
   <HH.Setting.underworld.organ.orderPremium>Надбавка за заказанные органы</HH.Setting.underworld.organ.orderPremium>
   <HH.Setting.underworld.organ.orderPremium.Desc>Только для Grim: готовый орган, доставленный в срок, оплачивается в столько раз дороже обычной цены.</HH.Setting.underworld.organ.orderPremium.Desc>
@@ -454,14 +450,6 @@
   <HH.Setting.underworld.smuggler.maxValue.Desc>Рыночная стоимость самого большого предлагаемого ящика.</HH.Setting.underworld.smuggler.maxValue.Desc>
   <HH.Setting.underworld.smuggler.priceFactor>Цена контрабанды</HH.Setting.underworld.smuggler.priceFactor>
   <HH.Setting.underworld.smuggler.priceFactor.Desc>Доля рыночной стоимости, которую вы платите за ящик.</HH.Setting.underworld.smuggler.priceFactor.Desc>
-  <HH.Setting.underworld.strangerCooldownDays>Дней до его следующей попытки</HH.Setting.underworld.strangerCooldownDays>
-  <HH.Setting.underworld.strangerCooldownDays.Desc>После «Не интересно» незнакомец ждёт столько дней, прежде чем снова предложит сделку.</HH.Setting.underworld.strangerCooldownDays.Desc>
-  <HH.Setting.underworld.strangerMaxAsks>Как часто он предлагает</HH.Setting.underworld.strangerMaxAsks>
-  <HH.Setting.underworld.strangerMaxAsks.Desc>После такого числа отказов незнакомец отступается окончательно.</HH.Setting.underworld.strangerMaxAsks.Desc>
-  <HH.Setting.underworld.strangerMaxWhispers>Наибольшее число Шёпотов для незнакомца</HH.Setting.underworld.strangerMaxWhispers>
-  <HH.Setting.underworld.strangerMaxWhispers.Desc>Он появляется, только пока ваши Шёпоты не выше этого значения.</HH.Setting.underworld.strangerMaxWhispers.Desc>
-  <HH.Setting.underworld.strangerMeanDays>Дней до появления незнакомца</HH.Setting.underworld.strangerMeanDays>
-  <HH.Setting.underworld.strangerMeanDays.Desc>Среднее число дней между моментами, когда незнакомец может прийти (когда у колонии есть гости или заведение, а ваши Шёпоты низкие).</HH.Setting.underworld.strangerMeanDays.Desc>
   <HH.Setting.underworld.whispers.fence>Шёпоты за сделку со скупщиком</HH.Setting.underworld.whispers.fence>
   <HH.Setting.underworld.whispers.gang>Шёпоты за визит банды</HH.Setting.underworld.whispers.gang>
   <HH.Setting.underworld.whispers.hunt>Шёпоты за охоту</HH.Setting.underworld.whispers.hunt>
@@ -480,7 +468,6 @@
   <HH.SettingCat.Compatibility>Совместимость</HH.SettingCat.Compatibility>
   <HH.SettingCat.DLCandtraits>DLC и черты</HH.SettingCat.DLCandtraits>
   <HH.SettingCat.Difficulty>Сложность</HH.SettingCat.Difficulty>
-  <HH.SettingCat.Discovery>Открытия</HH.SettingCat.Discovery>
   <HH.SettingCat.Druglounge>Дурманная комната</HH.SettingCat.Druglounge>
   <HH.SettingCat.Effects>Эффекты</HH.SettingCat.Effects>
   <HH.SettingCat.Factionprojects>Проекты фракций</HH.SettingCat.Factionprojects>

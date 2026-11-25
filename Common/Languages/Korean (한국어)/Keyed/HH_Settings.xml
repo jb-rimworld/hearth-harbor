@@ -16,8 +16,6 @@
   <HH.Enum.StaffRule.AlwaysRequired>항상 필요</HH.Enum.StaffRule.AlwaysRequired>
   <HH.Enum.StaffRule.NeverRequired>필요 없음</HH.Enum.StaffRule.NeverRequired>
   <HH.Enum.StaffRule.PerVenueType>영업장 종류별</HH.Enum.StaffRule.PerVenueType>
-  <HH.Enum.UnderworldMode.AlwaysOn>항상 켜짐</HH.Enum.UnderworldMode.AlwaysOn>
-  <HH.Enum.UnderworldMode.DiscoverInGame>게임 중 발견</HH.Enum.UnderworldMode.DiscoverInGame>
   <HH.Setting.bank.accountBeta>계좌 이자 지수 (1.1.0부터 사용 안 함)</HH.Setting.bank.accountBeta>
   <HH.Setting.bank.accountBeta.Desc>'계좌 이자: 시장 수익 비율'로 대체되었습니다. 예전 저장 파일을 불러올 수 있도록 남겨 두었으며, 바꿔도 아무 일도 일어나지 않습니다.</HH.Setting.bank.accountBeta.Desc>
   <HH.Setting.bank.accountShare>계좌 이자: 시장 수익 비율</HH.Setting.bank.accountShare>
@@ -423,8 +421,6 @@
   <HH.Setting.underworld.hunt.quarryHours.Desc>이 시간을 버티거나 울타리 선에 도달한 죄수는 자유로워집니다.</HH.Setting.underworld.hunt.quarryHours.Desc>
   <HH.Setting.underworld.lounge.price>한 번 이용료</HH.Setting.underworld.lounge.price>
   <HH.Setting.underworld.lounge.price.Desc>마약 휴게실에서 손님이 내는 요금. 손님은 자신의 이데올로기가 허락하는 것만 받습니다.</HH.Setting.underworld.lounge.price.Desc>
-  <HH.Setting.underworld.mode>뒷세계가 나타나는 방식</HH.Setting.underworld.mode>
-  <HH.Setting.underworld.mode.Desc>게임 중 발견: 수상한 낯선 사람이 뒷방이 있냐고 묻고, '예'라고 해야만 어두운 면이 열립니다. 항상 켜짐: 처음부터 열려 있습니다. (끄기는 모듈 스위치이며, 아늑한 콘텐츠 강도에서는 완전히 숨겨집니다.)</HH.Setting.underworld.mode.Desc>
   <HH.Setting.underworld.organ.orderDays>주문 배송 기간(일)</HH.Setting.underworld.organ.orderDays>
   <HH.Setting.underworld.organ.orderPremium>주문 장기 할증</HH.Setting.underworld.organ.orderPremium>
   <HH.Setting.underworld.organ.orderPremium.Desc>그림(Grim) 전용: 기한 안에 배송된 완성 장기는 정상 가격의 이 배율만큼 값을 받습니다.</HH.Setting.underworld.organ.orderPremium.Desc>
@@ -454,14 +450,6 @@
   <HH.Setting.underworld.smuggler.maxValue.Desc>제공되는 가장 큰 상자의 시장 가치.</HH.Setting.underworld.smuggler.maxValue.Desc>
   <HH.Setting.underworld.smuggler.priceFactor>밀수품 가격</HH.Setting.underworld.smuggler.priceFactor>
   <HH.Setting.underworld.smuggler.priceFactor.Desc>상자 하나에 지불하는 시장 가치의 비율.</HH.Setting.underworld.smuggler.priceFactor.Desc>
-  <HH.Setting.underworld.strangerCooldownDays>다시 제안하기까지(일)</HH.Setting.underworld.strangerCooldownDays>
-  <HH.Setting.underworld.strangerCooldownDays.Desc>「관심 없음」 후 낯선 사람은 이 일수를 기다린 뒤 다시 제안합니다.</HH.Setting.underworld.strangerCooldownDays.Desc>
-  <HH.Setting.underworld.strangerMaxAsks>제안 횟수</HH.Setting.underworld.strangerMaxAsks>
-  <HH.Setting.underworld.strangerMaxAsks.Desc>이만큼 거절당하면 낯선 사람은 완전히 포기합니다.</HH.Setting.underworld.strangerMaxAsks.Desc>
-  <HH.Setting.underworld.strangerMaxWhispers>낯선 사람이 나타나는 속삭임 상한</HH.Setting.underworld.strangerMaxWhispers>
-  <HH.Setting.underworld.strangerMaxWhispers.Desc>속삭임(Whispers) 수치가 이 값 이하일 때만 나타납니다.</HH.Setting.underworld.strangerMaxWhispers.Desc>
-  <HH.Setting.underworld.strangerMeanDays>낯선 사람이 나타나기까지(일)</HH.Setting.underworld.strangerMeanDays>
-  <HH.Setting.underworld.strangerMeanDays.Desc>낯선 사람이 찾아올 수 있는 순간 사이의 평균 일수(식민지에 손님이나 영업장이 있고 속삭임이 낮을 때부터).</HH.Setting.underworld.strangerMeanDays.Desc>
   <HH.Setting.underworld.whispers.fence>장물아비 거래당 속삭임</HH.Setting.underworld.whispers.fence>
   <HH.Setting.underworld.whispers.gang>갱단 방문당 속삭임</HH.Setting.underworld.whispers.gang>
   <HH.Setting.underworld.whispers.hunt>사냥당 속삭임</HH.Setting.underworld.whispers.hunt>
@@ -480,7 +468,6 @@
   <HH.SettingCat.Compatibility>호환성</HH.SettingCat.Compatibility>
   <HH.SettingCat.DLCandtraits>DLC와 특성</HH.SettingCat.DLCandtraits>
   <HH.SettingCat.Difficulty>난이도</HH.SettingCat.Difficulty>
-  <HH.SettingCat.Discovery>발견</HH.SettingCat.Discovery>
   <HH.SettingCat.Druglounge>약물 휴게실</HH.SettingCat.Druglounge>
   <HH.SettingCat.Effects>효과</HH.SettingCat.Effects>
   <HH.SettingCat.Factionprojects>진영 프로젝트</HH.SettingCat.Factionprojects>

@@ -68,12 +68,6 @@
   <HH.UI.Content.Dark.Tip>Pueden aparecer crímenes, deudas y violencia.</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>Sombrío</HH.UI.Content.Grim>
   <HH.UI.Content.Grim.Tip>Todo lo que ofrece el juego, sin reservas.</HH.UI.Content.Grim.Tip>
-  <HH.UI.Underworld.Discover>Descubrir en el juego</HH.UI.Underworld.Discover>
-  <HH.UI.Underworld.On>Activado</HH.UI.Underworld.On>
-  <HH.UI.Underworld.Off>Desactivado</HH.UI.Underworld.Off>
-  <HH.UI.Underworld.Discover.Tip>Fuera del radar hasta que aparezca un desconocido sospechoso en tu partida.</HH.UI.Underworld.Discover.Tip>
-  <HH.UI.Underworld.On.Tip>Disponible desde el principio.</HH.UI.Underworld.On.Tip>
-  <HH.UI.Underworld.Off.Tip>Nunca disponible. El desconocido sospechoso tampoco aparece.</HH.UI.Underworld.Off.Tip>
   <HH.UI.ModuleDesc.Inn>Huéspedes, camas para huéspedes, alas, recepción, viajeros y reclutamiento.</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>Carteles de local, tiendas, máquinas expendedoras, mercados, restaurantes y platos.</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>Mesas, tragaperras, fichas y los riesgos del juego para huéspedes y colonos.</HH.UI.ModuleDesc.Casino>
@@ -294,7 +288,6 @@
   <HH.UI.Overview.Arrivals>Llegadas, próximas 24 h: {0}, se esperan unos {1} grupos al día.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>nadie planeado todavía</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>{0} grupo(s) planeado(s) (unos {1} huésped(es))</HH.UI.Overview.Arrivals.Planned>
-  <HH.UI.Content.Decline>No, mantener {0}</HH.UI.Content.Decline>
   <HH.UI.Diff.Ladder>Bajos fondos: penalización máxima por incidente</HH.UI.Diff.Ladder>
   <HH.UI.Diff.WarnHard>Desde Sobrereservado, los incidentes de bajos fondos pueden costar buena voluntad, renombre y plata de verdad (ver los límites de abajo).</HH.UI.Diff.WarnHard>
   <HH.UI.Feel.4>Los incidentes de bajos fondos empiezan a costar buena voluntad, renombre y multas.</HH.UI.Feel.4>

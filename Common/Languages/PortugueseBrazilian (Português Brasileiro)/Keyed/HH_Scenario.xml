@@ -16,11 +16,9 @@
   <HH.Scen.Picker.Title>Escolha uma configuração de Hearth &amp; Harbor</HH.Scen.Picker.Title>
   <HH.Scen.Rules.Content>Conteúdo: {0}</HH.Scen.Rules.Content>
   <HH.Scen.Rules.Count>{0} configuração(ões) definida(s); adicione configurações individuais pela parte 'Configuração de Hearth &amp; Harbor'.</HH.Scen.Rules.Count>
-  <HH.Scen.Rules.Discovered>Submundo já descoberto</HH.Scen.Rules.Discovered>
   <HH.Scen.Rules.More>Mais configurações… ({0} definidas)</HH.Scen.Rules.More>
   <HH.Scen.Rules.MoreTip>Abre todas as configurações de Hearth &amp; Harbor deste cenário. Só o que você mudar lá é definido pelo cenário.</HH.Scen.Rules.MoreTip>
   <HH.Scen.Rules.SumContent>conteúdo: {0}</HH.Scen.Rules.SumContent>
-  <HH.Scen.Rules.SumDiscovered>o submundo já conhece você</HH.Scen.Rules.SumDiscovered>
   <HH.Scen.Rules.SumMore>e mais {0} configurações</HH.Scen.Rules.SumMore>
   <HH.Scen.Rules.SumNothing>tudo como no modelo</HH.Scen.Rules.SumNothing>
   <HH.Scen.Rules.SumOff>desligado: {0}</HH.Scen.Rules.SumOff>

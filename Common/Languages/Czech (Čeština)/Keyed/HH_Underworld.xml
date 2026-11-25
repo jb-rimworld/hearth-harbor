@@ -3,22 +3,6 @@
   <HH.Tab.Underworld>Podsvětí</HH.Tab.Underworld>
   <HH.Underworld.GateClosed>Nedostupné: podsvětí je v této hře zavřené.</HH.Underworld.GateClosed>
   <HH.Underworld.BackRoomDoorInfo>Otevřít tyto dveře mohou jen zaměstnanci, kolonisté a pochybní hosté.</HH.Underworld.BackRoomDoorInfo>
-  <HH.Underworld.Stranger.Title>Cizinec u brány</HH.Underworld.Stranger.Title>
-  <HH.Underworld.Stranger.Text>Cizinec se staženým kloboukem čeká u vašich dveří, dokud personál neodejde z doslechu.\n\n„Pěkné místo,“ řekne. „Máte zadní místnost?“\n\nNeřekne, co tím myslí. Nemusí.</HH.Underworld.Stranger.Text>
-  <HH.Underworld.Stranger.Show>Ukažte mi ji</HH.Underworld.Stranger.Show>
-  <HH.Underworld.Stranger.No>Nemám zájem</HH.Underworld.Stranger.No>
-  <HH.Underworld.Stranger.Never>Už se neptat</HH.Underworld.Stranger.Never>
-  <HH.Underworld.Unlocked.Title>Zadní místnost</HH.Underworld.Unlocked.Title>
-  <HH.Underworld.Unlocked.Text>Ukázali jste mu zadní místnost a on přikývl, jako byste složil zkoušku. Otevřela se vám nová linie výzkumu: zadní místnost s dveřmi, jámou na boje, pultem příjemce, pašeráckým dokem a salónkem. Vaše Šepty (pověst v podsvětí) nyní budou sledovat, co postavíte.\n\nNemusíte na to nic dělat. Nic z toho není povinné.</HH.Underworld.Unlocked.Text>
-  <HH.Underworld.Warn.Title>Varování o obsahu</HH.Underworld.Warn.Title>
-  <HH.Underworld.Warn.Dark>Temný obsah rozšiřuje podsvětí: vězni se mohou v jámě bojovat na život a na smrt, gangy mohou vězně vyslýchat tvrději, lovci mohou lovit vězně (s odpovídající ideologií) a klinický pult vykupuje odebrané orgány.\n\nZobrazuje se pouze jako text a běžná herní zranění. Děti se nikdy neúčastní a nic se nezapne samo od sebe.\n\nChcete tento obsah v této hře?</HH.Underworld.Warn.Dark>
-  <HH.Underworld.Warn.Grim>Krutý obsah zahrnuje vše z temného obsahu a lov na vězně se už neptá na vaši ideologii. Kupci orgánů zadávají objednávky s termínem.\n\nZobrazuje se pouze jako text a běžná herní zranění. Děti se nikdy neúčastní a nic se nezapne samo od sebe.\n\nChcete tento obsah v této hře?</HH.Underworld.Warn.Grim>
-  <HH.Underworld.Warn.Accept>Ano, rozumím</HH.Underworld.Warn.Accept>
-  <HH.Underworld.Warn.Back>Ne, zpět na standardní</HH.Underworld.Warn.Back>
-  <HH.Underworld.Warn.Hunt>Chystáte se povolit lov vězňů v loveckém revíru. Vězeň je vypuštěn do revíru s náskokem; pokud vydrží stanovený čas nebo dojde k plotu, je svobodný, a jeho frakce se o tom v každém případě dozví. Pokud zemře, jeho frakce, vaši kolonisté i hosté vám to neodpustí.\n\nZobrazuje se pouze jako text. Chcete to povolit?</HH.Underworld.Warn.Hunt>
-  <HH.Underworld.Warn.Organ>Klinický pult kupuje odebrané orgány od anonymních dárců v noci. Ideologie, které obchod s orgány odsuzují, vám to budou pamatovat a vaše Šepty s každým prodejem porostou.\n\nZobrazuje se pouze jako text. Chcete to ponechat?</HH.Underworld.Warn.Organ>
-  <HH.Underworld.Warn.Keep>Ano, ponechat</HH.Underworld.Warn.Keep>
-  <HH.Underworld.Warn.Remove>Ne, odebrat</HH.Underworld.Warn.Remove>
   <HH.Underworld.Scandal.BackRoomFound.Title>Zadní místnost byla odhalena</HH.Underworld.Scandal.BackRoomFound.Title>
   <HH.Underworld.Scandal.BackRoomFound.Text>Váženého hosta zavedly dveře na špatném místě a uviděl, co dům za nimi skrývá. Do večera to bude vědět celé město.</HH.Underworld.Scandal.BackRoomFound.Text>
   <HH.Underworld.Scandal.LeakedLedger.Title>Uniklá účetní kniha</HH.Underworld.Scandal.LeakedLedger.Title>
@@ -94,7 +78,6 @@
   <HH.Underworld.Page.Title>Podsvětí</HH.Underworld.Page.Title>
   <HH.Underworld.Page.Whispers>Šepty: {0} ze 100.</HH.Underworld.Page.Whispers>
   <HH.Underworld.Page.Weights>Váhy příchodů: váženým x{0}, psancům x{1}.</HH.Underworld.Page.Weights>
-  <HH.Underworld.Page.Content>Obsah: {0} (platí: {1}).</HH.Underworld.Page.Content>
   <HH.Underworld.Page.Stats1>Jáma na boje: {0} zápasů, {1} sázek, dům si vzal {2} stříbrných.</HH.Underworld.Page.Stats1>
   <HH.Underworld.Page.Stats2>Příjemce: {0} koupeno, {1} prodáno, zisk {2} stříbrných.</HH.Underworld.Page.Stats2>
   <HH.Underworld.Page.Stats3>Návštěvy salónku {0}, návštěvy gangů {1}, přistání {2}, lovy {3}, orgány {4}.</HH.Underworld.Page.Stats3>

@@ -68,12 +68,6 @@
   <HH.UI.Content.Dark.Tip>Crime, dívidas e violência podem aparecer.</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>Sinistro</HH.UI.Content.Grim>
   <HH.UI.Content.Grim.Tip>Tudo o que o jogo oferece, por completo.</HH.UI.Content.Grim.Tip>
-  <HH.UI.Underworld.Discover>Descobrir no jogo</HH.UI.Underworld.Discover>
-  <HH.UI.Underworld.On>Ligado</HH.UI.Underworld.On>
-  <HH.UI.Underworld.Off>Desligado</HH.UI.Underworld.Off>
-  <HH.UI.Underworld.Discover.Tip>Fora do radar até que um estranho suspeito apareça no seu jogo.</HH.UI.Underworld.Discover.Tip>
-  <HH.UI.Underworld.On.Tip>Disponível desde o início.</HH.UI.Underworld.On.Tip>
-  <HH.UI.Underworld.Off.Tip>Nunca disponível. O estranho suspeito também fica longe.</HH.UI.Underworld.Off.Tip>
   <HH.UI.ModuleDesc.Inn>Hóspedes, camas de hóspedes, alas, recepção, viajantes e recrutamento.</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>Placas de estabelecimentos, lojas, máquinas de venda, mercados, restaurantes e pratos.</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>Mesas, caça-níqueis, fichas e os riscos do jogo para hóspedes e colonos.</HH.UI.ModuleDesc.Casino>
@@ -294,7 +288,6 @@
   <HH.UI.Overview.Arrivals>Chegadas, próximas 24 h: {0}, cerca de {1} grupos por dia esperados.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>ninguém agendado ainda</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>{0} grupo(s) agendado(s) (cerca de {1} hóspede(s))</HH.UI.Overview.Arrivals.Planned>
-  <HH.UI.Content.Decline>Não, manter {0}</HH.UI.Content.Decline>
   <HH.UI.Diff.Ladder>Submundo: limites de penalidade por incidente</HH.UI.Diff.Ladder>
   <HH.UI.Diff.WarnHard>A partir de Overbooked, incidentes do submundo podem custar boa vontade, renome e prata de verdade (veja os limites abaixo).</HH.UI.Diff.WarnHard>
   <HH.UI.Feel.4>Incidentes do submundo passam a custar boa vontade, renome e multas.</HH.UI.Feel.4>

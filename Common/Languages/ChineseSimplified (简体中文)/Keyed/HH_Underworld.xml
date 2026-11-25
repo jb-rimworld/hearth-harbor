@@ -3,22 +3,6 @@
   <HH.Tab.Underworld>地下世界</HH.Tab.Underworld>
   <HH.Underworld.GateClosed>不可用：本局游戏中地下世界尚未开放。</HH.Underworld.GateClosed>
   <HH.Underworld.BackRoomDoorInfo>只有员工、殖民者和可疑的客人能打开这扇门。</HH.Underworld.BackRoomDoorInfo>
-  <HH.Underworld.Stranger.Title>门口的陌生人</HH.Underworld.Stranger.Title>
-  <HH.Underworld.Stranger.Text>一个压低帽檐的陌生人，趁员工走远后，在你的门外等候。\n\n“不错的地方，”他说，“有后屋吗？”\n\n他没有说明这句话是什么意思，也不需要说明。</HH.Underworld.Stranger.Text>
-  <HH.Underworld.Stranger.Show>带我去看看</HH.Underworld.Stranger.Show>
-  <HH.Underworld.Stranger.No>没兴趣</HH.Underworld.Stranger.No>
-  <HH.Underworld.Stranger.Never>不要再问</HH.Underworld.Stranger.Never>
-  <HH.Underworld.Unlocked.Title>后屋</HH.Underworld.Unlocked.Title>
-  <HH.Underworld.Unlocked.Text>你带他看了后屋，他点点头，仿佛你通过了一项考验。一条新的研究路线现在对你开放：后屋，配有门、格斗坑、销赃柜台、走私码头和休息室。你的耳语值（地下世界中的声誉）今后会跟随你的经营。\n\n你可以完全无视这一切，没有任何东西是强制的。</HH.Underworld.Unlocked.Text>
-  <HH.Underworld.Warn.Title>内容警告</HH.Underworld.Warn.Title>
-  <HH.Underworld.Warn.Dark>黑暗内容会为地下世界增添内容：囚犯可能在格斗坑中战至死亡，帮派可能更严厉地审问囚犯，猎人可能猎杀囚犯（需符合相应意识形态），诊所柜台会收购摘取的器官。\n\n这些内容仅以文字和普通的游戏伤害呈现。儿童永远不会参与，这些内容也不会自行开启。\n\n你要在本局游戏中启用它吗？</HH.Underworld.Warn.Dark>
-  <HH.Underworld.Warn.Grim>残酷内容包含黑暗内容的全部，而且猎杀囚犯时不再询问你的意识形态。器官买家会下达附带期限的订单。\n\n这些内容仅以文字和普通的游戏伤害呈现。儿童永远不会参与，这些内容也不会自行开启。\n\n你要在本局游戏中启用它吗？</HH.Underworld.Warn.Grim>
-  <HH.Underworld.Warn.Accept>是的，我明白了</HH.Underworld.Warn.Accept>
-  <HH.Underworld.Warn.Back>不，返回标准</HH.Underworld.Warn.Back>
-  <HH.Underworld.Warn.Hunt>你即将允许在猎场中猎杀囚犯。囚犯会带着先行优势被放入猎场；若他坚持到设定时间或抵达围栏线，便获得自由，无论哪种情况，他的派系都会得知。若他死亡，他的派系、你的殖民者和你的客人都不会原谅这件事。\n\n此内容仅以文字呈现。你要允许吗？</HH.Underworld.Warn.Hunt>
-  <HH.Underworld.Warn.Organ>诊所柜台会在夜间从匿名捐献者手中收购摘取的器官。憎恶器官交易的意识形态会因此记恨你，而每卖出一件，你的耳语值都会上升。\n\n此内容仅以文字呈现。你要保留它吗？</HH.Underworld.Warn.Organ>
-  <HH.Underworld.Warn.Keep>是的，保留</HH.Underworld.Warn.Keep>
-  <HH.Underworld.Warn.Remove>不，移除</HH.Underworld.Warn.Remove>
   <HH.Underworld.Scandal.BackRoomFound.Title>后屋被发现了</HH.Underworld.Scandal.BackRoomFound.Title>
   <HH.Underworld.Scandal.BackRoomFound.Text>一位体面的客人推错了门，看见了这栋宅邸在门后藏着的东西。到傍晚，全城都会知道。</HH.Underworld.Scandal.BackRoomFound.Text>
   <HH.Underworld.Scandal.LeakedLedger.Title>账本泄露</HH.Underworld.Scandal.LeakedLedger.Title>
@@ -94,7 +78,6 @@
   <HH.Underworld.Page.Title>地下世界</HH.Underworld.Page.Title>
   <HH.Underworld.Page.Whispers>耳语值：{0}/100。</HH.Underworld.Page.Whispers>
   <HH.Underworld.Page.Weights>访客权重：体面人士 x{0}，亡命之徒 x{1}。</HH.Underworld.Page.Weights>
-  <HH.Underworld.Page.Content>内容：{0}（生效：{1}）。</HH.Underworld.Page.Content>
   <HH.Underworld.Page.Stats1>格斗坑：{0} 场比赛，{1} 次投注，宅邸抽成 {2} 银币。</HH.Underworld.Page.Stats1>
   <HH.Underworld.Page.Stats2>销赃柜台：买入 {0}，卖出 {1}，利润 {2} 银币。</HH.Underworld.Page.Stats2>
   <HH.Underworld.Page.Stats3>休息室场次 {0}，帮派来访 {1}，登陆 {2}，狩猎 {3}，器官 {4}。</HH.Underworld.Page.Stats3>

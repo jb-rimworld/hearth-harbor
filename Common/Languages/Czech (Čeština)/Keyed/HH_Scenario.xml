@@ -16,11 +16,9 @@
   <HH.Scen.Picker.Title>Vyberte nastavení Hearth &amp; Harbor</HH.Scen.Picker.Title>
   <HH.Scen.Rules.Content>Obsah: {0}</HH.Scen.Rules.Content>
   <HH.Scen.Rules.Count>Nastavených položek: {0}; jednotlivá nastavení přidáte částí „Nastavení Hearth &amp; Harbor“.</HH.Scen.Rules.Count>
-  <HH.Scen.Rules.Discovered>Podsvětí už je objeveno</HH.Scen.Rules.Discovered>
   <HH.Scen.Rules.More>Další nastavení… (nastaveno {0})</HH.Scen.Rules.More>
   <HH.Scen.Rules.MoreTip>Otevře celé nastavení Hearth &amp; Harbor pro tento scénář. Scénář nastavuje jen to, co tam změníte.</HH.Scen.Rules.MoreTip>
   <HH.Scen.Rules.SumContent>obsah: {0}</HH.Scen.Rules.SumContent>
-  <HH.Scen.Rules.SumDiscovered>podsvětí vás už zná</HH.Scen.Rules.SumDiscovered>
   <HH.Scen.Rules.SumMore>a dalších {0} nastavení</HH.Scen.Rules.SumMore>
   <HH.Scen.Rules.SumNothing>vše jako v šabloně</HH.Scen.Rules.SumNothing>
   <HH.Scen.Rules.SumOff>vypnuto: {0}</HH.Scen.Rules.SumOff>

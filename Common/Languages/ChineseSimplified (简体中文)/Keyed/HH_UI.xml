@@ -68,12 +68,6 @@
   <HH.UI.Content.Dark.Tip>可能出现犯罪、债务与暴力。</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>严酷</HH.UI.Content.Grim>
   <HH.UI.Content.Grim.Tip>游戏提供的全部内容，完整呈现。</HH.UI.Content.Grim.Tip>
-  <HH.UI.Underworld.Discover>在游戏中发现</HH.UI.Underworld.Discover>
-  <HH.UI.Underworld.On>开启</HH.UI.Underworld.On>
-  <HH.UI.Underworld.Off>关闭</HH.UI.Underworld.Off>
-  <HH.UI.Underworld.Discover.Tip>在某个可疑的陌生人出现在你的游戏中之前，它不会被注意到。</HH.UI.Underworld.Discover.Tip>
-  <HH.UI.Underworld.On.Tip>从一开始就可用。</HH.UI.Underworld.On.Tip>
-  <HH.UI.Underworld.Off.Tip>永远不可用。那个可疑的陌生人也不会出现。</HH.UI.Underworld.Off.Tip>
   <HH.UI.ModuleDesc.Inn>访客、访客床位、客房区、接待处、旅人与招募。</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>店招、商店、自动售货机、市场、餐厅与菜品。</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>牌桌、老虎机、筹码，以及访客与殖民者赌博的风险。</HH.UI.ModuleDesc.Casino>
@@ -294,7 +288,6 @@
   <HH.UI.Overview.Arrivals>未来 24 小时到访：{0}，预计每天约 {1} 批客人。</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>尚无人计划</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>已计划 {0} 批（约 {1} 位客人）</HH.UI.Overview.Arrivals.Planned>
-  <HH.UI.Content.Decline>不，保留 {0}</HH.UI.Content.Decline>
   <HH.UI.Diff.Ladder>地下世界：每次事件的惩罚上限</HH.UI.Diff.Ladder>
   <HH.UI.Diff.WarnHard>从「超额预订」起，地下世界事件可能真正损失好感、声望和银币（见下方上限）。</HH.UI.Diff.WarnHard>
   <HH.UI.Feel.4>地下世界事件开始让你损失好感、声望并支付罚款。</HH.UI.Feel.4>

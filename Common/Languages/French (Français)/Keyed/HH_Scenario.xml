@@ -16,11 +16,9 @@
   <HH.Scen.Picker.Title>Choisir un réglage Hearth &amp; Harbor</HH.Scen.Picker.Title>
   <HH.Scen.Rules.Content>Contenu : {0}</HH.Scen.Rules.Content>
   <HH.Scen.Rules.Count>{0} réglage(s) défini(s) ; ajoutez des réglages isolés avec la partie « Réglage Hearth &amp; Harbor ».</HH.Scen.Rules.Count>
-  <HH.Scen.Rules.Discovered>Le monde souterrain est déjà découvert</HH.Scen.Rules.Discovered>
   <HH.Scen.Rules.More>Autres réglages… ({0} définis)</HH.Scen.Rules.More>
   <HH.Scen.Rules.MoreTip>Ouvre tous les réglages Hearth &amp; Harbor de ce scénario. Seul ce que vous y modifiez est fixé par le scénario.</HH.Scen.Rules.MoreTip>
   <HH.Scen.Rules.SumContent>contenu : {0}</HH.Scen.Rules.SumContent>
-  <HH.Scen.Rules.SumDiscovered>le monde souterrain vous connaît déjà</HH.Scen.Rules.SumDiscovered>
   <HH.Scen.Rules.SumMore>et {0} autres réglages</HH.Scen.Rules.SumMore>
   <HH.Scen.Rules.SumNothing>tout comme dans votre modèle</HH.Scen.Rules.SumNothing>
   <HH.Scen.Rules.SumOff>désactivés : {0}</HH.Scen.Rules.SumOff>

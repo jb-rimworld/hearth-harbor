@@ -16,11 +16,9 @@
   <HH.Scen.Picker.Title>Hearth &amp; Harbor 설정 고르기</HH.Scen.Picker.Title>
   <HH.Scen.Rules.Content>내용: {0}</HH.Scen.Rules.Content>
   <HH.Scen.Rules.Count>설정 {0}개가 지정됨. 개별 설정은 'Hearth &amp; Harbor 설정' 항목으로 추가하세요.</HH.Scen.Rules.Count>
-  <HH.Scen.Rules.Discovered>지하세계를 이미 발견함</HH.Scen.Rules.Discovered>
   <HH.Scen.Rules.More>더 많은 설정… (지정 {0}개)</HH.Scen.Rules.More>
   <HH.Scen.Rules.MoreTip>이 시나리오의 Hearth &amp; Harbor 전체 설정을 엽니다. 거기서 바꾼 항목만 시나리오가 설정합니다.</HH.Scen.Rules.MoreTip>
   <HH.Scen.Rules.SumContent>내용: {0}</HH.Scen.Rules.SumContent>
-  <HH.Scen.Rules.SumDiscovered>지하세계가 이미 당신을 압니다</HH.Scen.Rules.SumDiscovered>
   <HH.Scen.Rules.SumMore>그 밖에 설정 {0}개</HH.Scen.Rules.SumMore>
   <HH.Scen.Rules.SumNothing>모두 당신의 템플릿과 같음</HH.Scen.Rules.SumNothing>
   <HH.Scen.Rules.SumOff>끔: {0}</HH.Scen.Rules.SumOff>

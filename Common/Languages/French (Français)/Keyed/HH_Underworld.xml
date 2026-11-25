@@ -3,22 +3,6 @@
   <HH.Tab.Underworld>Pègre</HH.Tab.Underworld>
   <HH.Underworld.GateClosed>Indisponible : la pègre est fermée dans cette partie.</HH.Underworld.GateClosed>
   <HH.Underworld.BackRoomDoorInfo>Seuls le personnel, les colons et quelques invités louches peuvent ouvrir cette porte.</HH.Underworld.BackRoomDoorInfo>
-  <HH.Underworld.Stranger.Title>Un inconnu à la porte</HH.Underworld.Stranger.Title>
-  <HH.Underworld.Stranger.Text>Un inconnu, chapeau rabattu sur les yeux, attend devant votre porte que le personnel soit hors de portée de voix.\n\n« Joli endroit, » dit-il. « Vous avez une arrière-salle ? »\n\nIl ne précise pas ce qu'il entend par là. Il n'en a pas besoin.</HH.Underworld.Stranger.Text>
-  <HH.Underworld.Stranger.Show>Montrez-moi</HH.Underworld.Stranger.Show>
-  <HH.Underworld.Stranger.No>Pas intéressé</HH.Underworld.Stranger.No>
-  <HH.Underworld.Stranger.Never>Ne plus me le demander</HH.Underworld.Stranger.Never>
-  <HH.Underworld.Unlocked.Title>L'arrière-salle</HH.Underworld.Unlocked.Title>
-  <HH.Underworld.Unlocked.Text>Vous lui avez montré l'arrière-salle, et il a hoché la tête comme si vous aviez réussi un examen. Une nouvelle voie de recherche s'ouvre à vous : l'arrière-salle, avec ses portes, une fosse de combat, un comptoir de receleur, un quai de contrebandier et un salon. Vos Murmures (votre réputation dans la pègre) suivront désormais ce que vous construirez.\n\nVous pouvez tout ignorer. Rien ici n'est obligatoire.</HH.Underworld.Unlocked.Text>
-  <HH.Underworld.Warn.Title>Avertissement de contenu</HH.Underworld.Warn.Title>
-  <HH.Underworld.Warn.Dark>Le contenu sombre enrichit la pègre : des prisonniers peuvent se battre à mort dans la fosse, des bandes peuvent interroger les prisonniers plus durement, des chasseurs peuvent traquer des prisonniers (avec une idéologie adaptée), et un comptoir de clinique rachète les organes prélevés.\n\nCela n'apparaît qu'en texte et sous forme de blessures ordinaires du jeu. Les enfants ne participent jamais, et rien ici ne s'active de soi-même.\n\nVoulez-vous ce contenu dans cette partie ?</HH.Underworld.Warn.Dark>
-  <HH.Underworld.Warn.Grim>Le contenu macabre comprend tout le contenu sombre, et la chasse aux prisonniers ne tient plus compte de votre idéologie. Les acheteurs d'organes passent des commandes assorties de délais.\n\nCela n'apparaît qu'en texte et sous forme de blessures ordinaires du jeu. Les enfants ne participent jamais, et rien ici ne s'active de soi-même.\n\nVoulez-vous ce contenu dans cette partie ?</HH.Underworld.Warn.Grim>
-  <HH.Underworld.Warn.Accept>Oui, je comprends</HH.Underworld.Warn.Accept>
-  <HH.Underworld.Warn.Back>Non, retour au mode standard</HH.Underworld.Warn.Back>
-  <HH.Underworld.Warn.Hunt>Vous êtes sur le point d'autoriser la chasse aux prisonniers sur un terrain de chasse. Un prisonnier est lâché sur le terrain avec une avance ; s'il tient le temps imparti ou atteint la clôture, il est libre, et sa faction en sera informée dans les deux cas. S'il meurt, sa faction, vos colons et vos invités ne le pardonneront pas.\n\nCela n'est présenté que sous forme de texte. Voulez-vous l'autoriser ?</HH.Underworld.Warn.Hunt>
-  <HH.Underworld.Warn.Organ>Un comptoir de clinique rachète, la nuit, des organes prélevés auprès de donneurs anonymes. Les idéologies qui réprouvent le trafic d'organes vous en tiendront rigueur, et vos Murmures augmenteront à chaque vente.\n\nCela n'est présenté que sous forme de texte. Voulez-vous le conserver ?</HH.Underworld.Warn.Organ>
-  <HH.Underworld.Warn.Keep>Oui, le conserver</HH.Underworld.Warn.Keep>
-  <HH.Underworld.Warn.Remove>Non, le retirer</HH.Underworld.Warn.Remove>
   <HH.Underworld.Scandal.BackRoomFound.Title>L'arrière-salle a été découverte</HH.Underworld.Scandal.BackRoomFound.Title>
   <HH.Underworld.Scandal.BackRoomFound.Text>Un invité respectable a ouvert la mauvaise porte et a vu ce que la maison garde derrière. Le soir même, toute la ville sera au courant.</HH.Underworld.Scandal.BackRoomFound.Text>
   <HH.Underworld.Scandal.LeakedLedger.Title>Registre divulgué</HH.Underworld.Scandal.LeakedLedger.Title>
@@ -94,7 +78,6 @@
   <HH.Underworld.Page.Title>Pègre</HH.Underworld.Page.Title>
   <HH.Underworld.Page.Whispers>Murmures : {0} sur 100.</HH.Underworld.Page.Whispers>
   <HH.Underworld.Page.Weights>Poids d'arrivée : respectables x{0}, hors-la-loi x{1}.</HH.Underworld.Page.Weights>
-  <HH.Underworld.Page.Content>Contenu : {0} (appliqué : {1}).</HH.Underworld.Page.Content>
   <HH.Underworld.Page.Stats1>Fosse de combat : {0} combats, {1} paris, part de la maison {2} argent.</HH.Underworld.Page.Stats1>
   <HH.Underworld.Page.Stats2>Receleur : {0} achetés, {1} vendus, bénéfice {2} argent.</HH.Underworld.Page.Stats2>
   <HH.Underworld.Page.Stats3>Séances au salon {0}, visites de bandes {1}, débarquements {2}, chasses {3}, organes {4}.</HH.Underworld.Page.Stats3>

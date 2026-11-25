@@ -16,11 +16,9 @@
   <HH.Scen.Picker.Title>Elige un ajuste de Hearth &amp; Harbor</HH.Scen.Picker.Title>
   <HH.Scen.Rules.Content>Contenido: {0}</HH.Scen.Rules.Content>
   <HH.Scen.Rules.Count>{0} ajuste(s) definido(s); añade ajustes sueltos con la parte «Ajuste de Hearth &amp; Harbor».</HH.Scen.Rules.Count>
-  <HH.Scen.Rules.Discovered>El inframundo ya descubierto</HH.Scen.Rules.Discovered>
   <HH.Scen.Rules.More>Más ajustes… ({0} definidos)</HH.Scen.Rules.More>
   <HH.Scen.Rules.MoreTip>Abre todos los ajustes de Hearth &amp; Harbor de este escenario. Solo lo que cambies ahí lo fija el escenario.</HH.Scen.Rules.MoreTip>
   <HH.Scen.Rules.SumContent>contenido: {0}</HH.Scen.Rules.SumContent>
-  <HH.Scen.Rules.SumDiscovered>el inframundo ya te conoce</HH.Scen.Rules.SumDiscovered>
   <HH.Scen.Rules.SumMore>y {0} ajustes más</HH.Scen.Rules.SumMore>
   <HH.Scen.Rules.SumNothing>todo como en tu plantilla</HH.Scen.Rules.SumNothing>
   <HH.Scen.Rules.SumOff>desactivado: {0}</HH.Scen.Rules.SumOff>

@@ -16,11 +16,9 @@
   <HH.Scen.Picker.Title>Hearth &amp; Harbor-Einstellung wählen</HH.Scen.Picker.Title>
   <HH.Scen.Rules.Content>Inhalt: {0}</HH.Scen.Rules.Content>
   <HH.Scen.Rules.Count>{0} Einstellung(en) gesetzt; einzelne Einstellungen fügst du mit dem Teil „Hearth &amp; Harbor-Einstellung“ hinzu.</HH.Scen.Rules.Count>
-  <HH.Scen.Rules.Discovered>Unterwelt bereits entdeckt</HH.Scen.Rules.Discovered>
   <HH.Scen.Rules.More>Weitere Einstellungen… ({0} gesetzt)</HH.Scen.Rules.More>
   <HH.Scen.Rules.MoreTip>Öffnet die vollständigen Hearth &amp; Harbor-Einstellungen für dieses Szenario. Nur was du dort änderst, wird vom Szenario festgelegt.</HH.Scen.Rules.MoreTip>
   <HH.Scen.Rules.SumContent>Inhalt: {0}</HH.Scen.Rules.SumContent>
-  <HH.Scen.Rules.SumDiscovered>die Unterwelt kennt dich schon</HH.Scen.Rules.SumDiscovered>
   <HH.Scen.Rules.SumMore>und {0} weitere Einstellungen</HH.Scen.Rules.SumMore>
   <HH.Scen.Rules.SumNothing>alles wie in deiner Vorlage</HH.Scen.Rules.SumNothing>
   <HH.Scen.Rules.SumOff>aus: {0}</HH.Scen.Rules.SumOff>

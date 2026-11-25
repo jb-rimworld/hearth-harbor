@@ -62,19 +62,12 @@
   <HH.UI.Modules.ContentDesc>Wie düster der optionale Inhalt werden darf. Niemals sexuelle Inhalte, egal was du wählst.</HH.UI.Modules.ContentDesc>
   <HH.UI.Content.Cozy>Gemütlich</HH.UI.Content.Cozy>
   <HH.UI.Content.Cozy.Tip>Nur milde Geschichten und Folgen.</HH.UI.Content.Cozy.Tip>
-  <HH.UI.Content.Decline>Nein, bei {0} bleiben</HH.UI.Content.Decline>
   <HH.UI.Content.Standard>Standard</HH.UI.Content.Standard>
   <HH.UI.Content.Standard.Tip>Die Voreinstellung. Ecken und Kanten, nichts Fieses.</HH.UI.Content.Standard.Tip>
   <HH.UI.Content.Dark>Düster</HH.UI.Content.Dark>
   <HH.UI.Content.Dark.Tip>Verbrechen, Schulden und Gewalt können auftauchen.</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>Grimmig</HH.UI.Content.Grim>
   <HH.UI.Content.Grim.Tip>Alles, was das Spiel bietet, in voller Länge.</HH.UI.Content.Grim.Tip>
-  <HH.UI.Underworld.Discover>Im Spiel entdecken</HH.UI.Underworld.Discover>
-  <HH.UI.Underworld.On>An</HH.UI.Underworld.On>
-  <HH.UI.Underworld.Off>Aus</HH.UI.Underworld.Off>
-  <HH.UI.Underworld.Discover.Tip>Unter dem Radar, bis ein zwielichtiger Fremder in deinem Spiel auftaucht.</HH.UI.Underworld.Discover.Tip>
-  <HH.UI.Underworld.On.Tip>Von Anfang an verfügbar.</HH.UI.Underworld.On.Tip>
-  <HH.UI.Underworld.Off.Tip>Nie verfügbar. Auch der zwielichtige Fremde bleibt weg.</HH.UI.Underworld.Off.Tip>
   <HH.UI.ModuleDesc.Inn>Gäste, Gästebetten, Flügel, Rezeption, Reisende und Anwerben.</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>Geschäftsschilder, Läden, Automaten, Märkte, Restaurants und Gerichte.</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>Tische, Spielautomaten, Chips und die Risiken des Glücksspiels für Gäste und Kolonisten.</HH.UI.ModuleDesc.Casino>

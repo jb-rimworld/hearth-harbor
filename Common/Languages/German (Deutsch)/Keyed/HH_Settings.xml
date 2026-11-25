@@ -16,8 +16,6 @@
   <HH.Enum.StaffRule.AlwaysRequired>Immer erforderlich</HH.Enum.StaffRule.AlwaysRequired>
   <HH.Enum.StaffRule.NeverRequired>Nie erforderlich</HH.Enum.StaffRule.NeverRequired>
   <HH.Enum.StaffRule.PerVenueType>Je Geschäftstyp</HH.Enum.StaffRule.PerVenueType>
-  <HH.Enum.UnderworldMode.AlwaysOn>Immer an</HH.Enum.UnderworldMode.AlwaysOn>
-  <HH.Enum.UnderworldMode.DiscoverInGame>Im Spiel entdecken</HH.Enum.UnderworldMode.DiscoverInGame>
   <HH.Setting.bank.accountBeta>Kontozins-Exponent (seit 1.1.0 nicht mehr verwendet)</HH.Setting.bank.accountBeta>
   <HH.Setting.bank.accountBeta.Desc>Ersetzt durch „Kontozins: Anteil der Marktrendite“. Bleibt erhalten, damit ältere Spielstände laden; eine Änderung bewirkt nichts.</HH.Setting.bank.accountBeta.Desc>
   <HH.Setting.bank.accountShare>Kontozins: Anteil der Marktrendite</HH.Setting.bank.accountShare>
@@ -423,8 +421,6 @@
   <HH.Setting.underworld.hunt.quarryHours.Desc>Ein Gefangener, der so lange überlebt oder die Zaunlinie erreicht, ist frei.</HH.Setting.underworld.hunt.quarryHours.Desc>
   <HH.Setting.underworld.lounge.price>Preis einer Sitzung</HH.Setting.underworld.lounge.price>
   <HH.Setting.underworld.lounge.price.Desc>Was ein Gast in der Drogenlounge zahlt. Gäste nehmen nur, was ihre Ideologie erlaubt.</HH.Setting.underworld.lounge.price.Desc>
-  <HH.Setting.underworld.mode>Wie die Unterwelt erscheint</HH.Setting.underworld.mode>
-  <HH.Setting.underworld.mode.Desc>Im Spiel entdecken: Ein zwielichtiger Fremder fragt, ob du ein Hinterzimmer hast, und erst ein Ja öffnet die dunkle Seite. Immer an: Sie ist von Anfang an offen. (Aus ist der Modulschalter; die Inhaltsstärke Gemütlich blendet sie ganz aus.)</HH.Setting.underworld.mode.Desc>
   <HH.Setting.underworld.organ.orderDays>Tage bis zur Lieferung einer Bestellung</HH.Setting.underworld.organ.orderDays>
   <HH.Setting.underworld.organ.orderPremium>Aufpreis auf bestellte Organe</HH.Setting.underworld.organ.orderPremium>
   <HH.Setting.underworld.organ.orderPremium.Desc>Nur grimmig: Ein fertiges Organ, das innerhalb der Frist geliefert wird, bringt das Soundsovielfache des normalen Preises.</HH.Setting.underworld.organ.orderPremium.Desc>
@@ -454,14 +450,6 @@
   <HH.Setting.underworld.smuggler.maxValue.Desc>Marktwert der größten angebotenen Kiste.</HH.Setting.underworld.smuggler.maxValue.Desc>
   <HH.Setting.underworld.smuggler.priceFactor>Preis für Schmuggelware</HH.Setting.underworld.smuggler.priceFactor>
   <HH.Setting.underworld.smuggler.priceFactor.Desc>Anteil am Marktwert, den du für eine Kiste zahlst.</HH.Setting.underworld.smuggler.priceFactor.Desc>
-  <HH.Setting.underworld.strangerCooldownDays>Tage, bis er wieder fragt</HH.Setting.underworld.strangerCooldownDays>
-  <HH.Setting.underworld.strangerCooldownDays.Desc>Nach „Kein Interesse“ wartet der Fremde so viele Tage, bevor er erneut fragt.</HH.Setting.underworld.strangerCooldownDays.Desc>
-  <HH.Setting.underworld.strangerMaxAsks>Wie oft er fragt</HH.Setting.underworld.strangerMaxAsks>
-  <HH.Setting.underworld.strangerMaxAsks.Desc>Nach so vielen Absagen gibt der Fremde für immer auf.</HH.Setting.underworld.strangerMaxAsks.Desc>
-  <HH.Setting.underworld.strangerMaxWhispers>Höchster Flüsterruf für den Fremden</HH.Setting.underworld.strangerMaxWhispers>
-  <HH.Setting.underworld.strangerMaxWhispers.Desc>Er taucht nur auf, solange dein Flüsterruf auf oder unter diesem Wert liegt.</HH.Setting.underworld.strangerMaxWhispers.Desc>
-  <HH.Setting.underworld.strangerMeanDays>Tage bis zum Auftauchen des Fremden</HH.Setting.underworld.strangerMeanDays>
-  <HH.Setting.underworld.strangerMeanDays.Desc>Durchschnittliche Anzahl Tage zwischen den Zeitpunkten, zu denen der Fremde kommen darf (sobald die Kolonie Gäste oder ein Geschäft hat und dein Flüsterruf niedrig ist).</HH.Setting.underworld.strangerMeanDays.Desc>
   <HH.Setting.underworld.whispers.fence>Flüsterruf pro Hehlergeschäft</HH.Setting.underworld.whispers.fence>
   <HH.Setting.underworld.whispers.gang>Flüsterruf pro Banden-Besuch</HH.Setting.underworld.whispers.gang>
   <HH.Setting.underworld.whispers.hunt>Flüsterruf pro Jagd</HH.Setting.underworld.whispers.hunt>
@@ -480,7 +468,6 @@
   <HH.SettingCat.Compatibility>Kompatibilität</HH.SettingCat.Compatibility>
   <HH.SettingCat.DLCandtraits>DLC und Eigenschaften</HH.SettingCat.DLCandtraits>
   <HH.SettingCat.Difficulty>Schwierigkeit</HH.SettingCat.Difficulty>
-  <HH.SettingCat.Discovery>Entdeckung</HH.SettingCat.Discovery>
   <HH.SettingCat.Druglounge>Drogenlounge</HH.SettingCat.Druglounge>
   <HH.SettingCat.Effects>Effekte</HH.SettingCat.Effects>
   <HH.SettingCat.Factionprojects>Fraktionsprojekte</HH.SettingCat.Factionprojects>
