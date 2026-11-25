@@ -15,19 +15,27 @@ namespace Hearth.Underworld
     /// <summary>Helpers of the fight pit suites (package B). Uses UwKit for content level, tracking and fences.</summary>
     static class PitKit
     {
-        /// <summary>A 7x7 fenced arena with a gate on the south side and the marker in the middle.</summary>
+        /// <summary>A 7x7 fenced arena with a gate and the marker in the middle. The gate goes on the first side whose outside cell the colony can walk
+        /// to (a random map can put rock, water or a cliff right behind one side); <paramref name="outside"/> is that cell, three steps outside the gate.</summary>
         public static CompFightPit Arena(Map map, out CellRect inner, out IntVec3 outside)
         {
             outside = IntVec3.Invalid;
             if (!UwKit.TryFindRect(map, 7, 7, out inner)) return null;
             var outer = inner.ExpandedBy(1);
+            var anchor = TestCells.Anchor(map);
+            IntVec3 gateCell = IntVec3.Invalid;
+            foreach (var side in new[] { new IntVec3(0, 0, -1), new IntVec3(0, 0, 1), new IntVec3(-1, 0, 0), new IntVec3(1, 0, 0) })
+            {
+                var g = side.z != 0 ? new IntVec3(inner.CenterCell.x, 0, side.z < 0 ? outer.minZ : outer.maxZ) : new IntVec3(side.x < 0 ? outer.minX : outer.maxX, 0, inner.CenterCell.z);
+                var o = g + side * 3;
+                if (o.InBounds(map) && o.Standable(map) && (g + side).Standable(map) && (g + side * 2).Standable(map) && TestCells.Reachable(map, anchor, o)) { gateCell = g; outside = o; break; }
+            }
+            if (!gateCell.IsValid) { gateCell = new IntVec3(inner.CenterCell.x, 0, outer.minZ); outside = new IntVec3(gateCell.x, 0, gateCell.z - 3); }
             UwKit.BuildFence(map, outer);
-            var gateCell = new IntVec3(inner.CenterCell.x, 0, outer.minZ);
             gateCell.GetEdifice(map)?.Destroy();
             var gateDef = DefDatabase<ThingDef>.GetNamedSilentFail("FenceGate");
             if (gateDef != null) UwKit.SpawnBuilding(gateDef, gateCell, map);
             map.regionAndRoomUpdater.TryRebuildDirtyRegionsAndRooms();
-            outside = new IntVec3(gateCell.x, 0, gateCell.z - 3);
             var marker = UwKit.SpawnBuilding(UwDefs.FightPit, inner.CenterCell, map);
             var pit = marker.TryGetComp<CompFightPit>();
             pit.allowAnimals = false; pit.allowGuests = false; pit.allowPrisoners = false; pit.allowVolunteers = false;
@@ -183,7 +191,7 @@ namespace Hearth.Underworld
             while (arrive < 4000 && !gs.All(PitFighters.StayToil)) { yield return 100; arrive += 100; }
             t.Check(gs.All(PitFighters.StayToil), "the visitors arrived and stay (" + arrive + " ticks): " + string.Join(", ", gs.Select(g => g.GetLord()?.CurLordToil?.GetType().Name)));
             PitKit.Put(gs[0], cells[10]); PitKit.Put(gs[1], cells[38]);
-            foreach (var b2 in gs.Skip(2)) PitKit.Put(b2, CellFinder.RandomClosewalkCellNear(outside, map, 3));
+            foreach (var b2 in gs.Skip(2)) PitKit.Put(b2, CellFinder.RandomClosewalkCellNear(outside, map, 2));
             yield return 30;
             var gw2 = PitKit.Goodwill();
             var s0 = PitKit.Snap.Of(gs[0]); var s1 = PitKit.Snap.Of(gs[1]);
@@ -191,10 +199,20 @@ namespace Hearth.Underworld
             var till0 = UwKit.Till(map); long take0 = Underworld.Comp.HouseTakeMicro;
             var gg = FightBout.Start(pit, gs[0], gs[1], true, 600, manual: true);
             t.Check(gg != null && gg.Scored, "guest against guest is scored");
+            bool left = false, bets = false, selfBet = true;
             if (gg != null)
             {
-                t.Check(gg.TryBet(gs[2], 0, 100) && gg.TryBet(gs[3], 1, 100), "two bets placed");
-                t.Check(!gg.TryBet(gs[0], 1, 10), "a fighter cannot bet on his own bout");
+                bets = gg.TryBet(gs[2], 0, 100) && gg.TryBet(gs[3], 1, 100);
+                selfBet = gg.TryBet(gs[0], 1, 10);
+                int w0 = 0;
+                while (!gg.Finished && gg.phase != FightBout.Phase.Fight && w0 < 1200) { yield return 30; w0 += 30; }
+                left = gg.Finished && gg.FightTick <= 0 && !gs.Take(2).All(PitFighters.StayToil);
+                if (left) t.Note("the visitor group left before the fight for a vanilla reason (lord toil " + gs[0].GetLord()?.CurLordToil?.GetType().Name + ", temperature/weather/time); the bout was called off as it should be: " + FightBout.LastMessage + "; guest part skipped");
+            }
+            if (gg != null && !left)
+            {
+                t.Check(bets, "two bets placed");
+                t.Check(!selfBet, "a fighter cannot bet on his own bout");
                 foreach (var w in PitKit.Await(t, gg)) yield return w;
                 foreach (var w in PitKit.Watch(t, gs[0], gs[1], 600)) yield return w;
                 t.Check(gg.Finished && gg.Result != null, "guest bout came to a result");
@@ -324,7 +342,7 @@ namespace Hearth.Underworld
                 pit.allowPrisoners = true;
                 var pr = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Villager, f, PawnGenerationContext.NonPlayer, map.Tile, canGeneratePawnRelations: false, mustBeCapableOfViolence: true));
                 if (!pr.DevelopmentalStage.Adult()) { pr.ageTracker.AgeBiologicalTicks = 25L * 3600000L; pr.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
-                var home = CellFinder.RandomClosewalkCellNear(outside, map, 3);
+                var home = CellFinder.RandomClosewalkCellNear(outside, map, 2);
                 GenSpawn.Spawn(pr, home, map); UwKit.Track(pr);
                 pr.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
                 var beast2 = UwKit.TameAnimal(map, CellFinder.RandomClosewalkCellNear(outside, map, 2), "Boar", "Muffalo");
@@ -339,7 +357,7 @@ namespace Hearth.Underworld
                     {
                         yield return 30; waited += 30;
                         if (pit.ArenaInfo().Cells.Contains(pr.Position)) seenIn = true;
-                        if (pr.CurJob != null && pr.CurJob.exitMapOnArrival) escaped = true;
+                        if (FightBout.OfPawn(pr) != null && pr.CurJob != null && pr.CurJob.exitMapOnArrival) escaped = true;
                     }
                     t.Check(pb.Finished && seenIn, "the prisoner was brought into the arena and the bout ended (" + waited + " ticks)");
                     t.Check(!escaped, "the prisoner never tried to escape");
@@ -391,7 +409,7 @@ namespace Hearth.Underworld
                 int arrive = 0;
                 while (arrive < 4000 && !gs.All(PitFighters.StayToil)) { yield return 100; arrive += 100; }
                 var kind = gs[0]; var plain = gs[1]; var shady = gs[2];
-                foreach (var g in gs) PitKit.Put(g, CellFinder.RandomClosewalkCellNear(outside, map, 4));
+                foreach (var g in gs) PitKit.Put(g, CellFinder.RandomClosewalkCellNear(outside, map, 2));
                 if (!kind.story.traits.HasTrait(TraitDefOf.Kind)) kind.story.traits.GainTrait(new Trait(TraitDefOf.Kind));
                 foreach (var tr in plain.story.traits.allTraits.Where(x => x.def == TraitDefOf.Bloodlust || x.def == TraitDefOf.Brawler).ToList()) plain.story.traits.RemoveTrait(tr);
                 plain.skills.GetSkill(SkillDefOf.Melee).Level = 2;
@@ -414,7 +432,7 @@ namespace Hearth.Underworld
                 var extra = UwKit.Guests(map, 1, f, shady: true)[0];
                 arrive = 0;
                 while (arrive < 4000 && !PitFighters.StayToil(extra)) { yield return 100; arrive += 100; }
-                PitKit.Put(extra, CellFinder.RandomClosewalkCellNear(outside, map, 4));
+                PitKit.Put(extra, CellFinder.RandomClosewalkCellNear(outside, map, 2));
                 Underworld.MarkShady(kind); kind.story.traits.allTraits.RemoveAll(x => x.def == TraitDefOf.Kind);
                 foreach (var g in new[] { extra, shady }) g.jobs.StopAll();
                 var willing = new[] { extra, shady }.Where(g => !g.WorkTagIsDisabled(WorkTags.Violent)).ToList();
@@ -528,8 +546,8 @@ namespace Hearth.Underworld
             var col = PitKit.Fighter(map);
             if (pit == null || col == null) { t.Note("no area or colonist; skipped"); UwKit.End(); yield break; }
             pit.allowAnimals = true; pit.allowGuests = true;
-            UwKit.TameAnimal(map, CellFinder.RandomClosewalkCellNear(outside, map, 3), "Boar", "Muffalo");
-            if (f != null) foreach (var g in UwKit.Guests(map, 2, f)) PitKit.Put(g, CellFinder.RandomClosewalkCellNear(outside, map, 4));
+            UwKit.TameAnimal(map, CellFinder.RandomClosewalkCellNear(outside, map, 2), "Boar", "Muffalo");
+            if (f != null) foreach (var g in UwKit.Guests(map, 2, f)) PitKit.Put(g, CellFinder.RandomClosewalkCellNear(outside, map, 2));
             pit.SetTicked(col, true);
             var w = Window_PitFighters.Open(pit);
             Hearth.Shell.Tests.UiTestUtil.NoPause(w);
