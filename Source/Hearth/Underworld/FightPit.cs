@@ -582,6 +582,9 @@ namespace Hearth.Underworld
         {
             foreach (var b in active.ToList()) b.Abort(why, null);
             sweepPending = true;
+            // right now (a load calls this from LoadedGame, before the first tick): melee threats between pawns whose pit jobs came from the save.
+            // The jobs themselves fail on their first tick, but a threat left in place makes JobGiver_ReactToCloseMeleeThreat swing back for real.
+            Guard.Run(ModuleId.Underworld, "FightBout.ClearThreats", ClearLoadedThreats);
         }
 
         // ---- betting -----------------------------------------------------------------------------------
@@ -645,6 +648,20 @@ namespace Hearth.Underworld
             PitOpponents.ResetBeasts();
             foreach (var pit in CompFightPit.All.ToList()) { pit.NoteBeasts(); n += pit.DismissIdleBeasts(); }
             if (n > 0) HLog.Info("Underworld", $"Pit sweep after load: {n} jobs/beasts without a bout ended");
+        }
+
+        static void ClearLoadedThreats()
+        {
+            if (Current.Game == null || Find.Maps == null) return;
+            foreach (var map in Find.Maps)
+                foreach (var p in map.mapPawns.AllPawnsSpawned)
+                {
+                    var job = p.jobs?.curJob;
+                    if (job == null || !PitSetup.IsPitJob(job.def) || OfPawn(p) != null) continue;
+                    if (p.mindState != null) p.mindState.meleeThreat = null;
+                    if (job.targetA.Thing is Pawn foe && foe.mindState?.meleeThreat == p) foe.mindState.meleeThreat = null;
+                    foreach (var q in map.mapPawns.AllPawnsSpawned) if (q.mindState?.meleeThreat == p) q.mindState.meleeThreat = null;
+                }
         }
 
         /// <summary>Caretaker every 250 ticks: beasts whose bout is over go home.</summary>
