@@ -112,6 +112,10 @@ namespace Hearth.Underworld
     /// middle of a bout: bouts are not saved) ends on its very first tick instead of attacking for real.</summary>
     public class JobDriver_PitFight : JobDriver_AttackMelee
     {
+        /// <summary>No attack-target reservation: nobody else needs to be kept off the opponent, and a reservation saved with the game outlives the
+        /// job's vanilla stand-in when the mod is removed ("Attack target reservation manager failed to clean up").</summary>
+        public override bool TryMakePreToilReservations(bool errorOnFailed) => true;
+
         protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOn(() => !FightBout.Holds(pawn, job.targetA.Thing as Pawn));
