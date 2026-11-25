@@ -12,20 +12,32 @@ namespace Hearth.Underworld
     {
         public static string T(string key, params NamedArgument[] args) => ("HH.Underworld." + key).Translate(args).ToString();
 
+        /// <summary>True when the Inn module books this pawn as a guest (it then owns the budget).</summary>
+        static bool InnBooks(Pawn p) => p != null && GuestApi.Impl != null && Modules.On(ModuleId.Inn) && GuestApi.Impl.Info(p) != null;
+
+        /// <summary>Spending budget of a pawn for underworld services: the Inn's budget for a booked guest, otherwise the silver the pawn carries (same source as Payments).</summary>
+        public static Money Budget(Pawn p)
+        {
+            if (p == null) return Money.Zero;
+            return InnBooks(p) ? GuestApi.Budget(p) : Payments.Available(p);
+        }
+
         /// <summary>Takes money from a guest and books it to an account (not necessarily the till). Mirrors GuestApi.ChargeGuest, which only knows the till.</summary>
         public static bool Charge(Pawn guest, Money price, string toAccount, string category, string memo, bool ignoreBudget = false)
         {
             if (guest == null || price.Micro <= 0) return price.Micro == 0;
             GuestApi.EnsureFunds(guest, price);
-            if (!ignoreBudget && GuestApi.Budget(guest) < price) return false;
+            if (!ignoreBudget && Budget(guest) < price) return false;
             bool inn = GuestApi.Impl != null && Modules.On(ModuleId.Inn);
+            bool booked = InnBooks(guest);
             if (!Payments.TryCharge(guest, price, toAccount, memo, out _))
             {
                 if (inn) return false;
                 // vanilla visitors without silver pay "virtually" in fallback mode
                 if (!Ledger.Current.Post("world", toAccount, price, memo + " (visitor)")) return false;
             }
-            GuestApi.Spend(guest, price, category);
+            // a fee forced past the budget must not eat the budget a second time (only the Inn's own record keeps its Spent total)
+            if (!ignoreBudget || booked) GuestApi.Spend(guest, price, category);
             return true;
         }
 

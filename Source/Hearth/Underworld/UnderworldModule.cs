@@ -40,6 +40,7 @@ namespace Hearth.Underworld
             HSettings.Float(M, "Fight pit", "underworld.pit.fairRatio", 2.2f, 1f, 6f, "Matchmaking fairness", "The stronger fighter may have at most this many times the combat power of the weaker one.", nerd: true, hardMin: 1f, hardMax: 100f);
             HSettings.Percent(M, "Fight pit", "underworld.pit.yieldHealth", 0.35f, 0.1f, 0.8f, "Yield at health", "A bout ends when a fighter drops below this share of health, unless it is to the death.", nerd: true, hardMin: 0.05f, hardMax: 0.95f);
             HSettings.Int(M, "Fight pit", "underworld.pit.maxBoutTicks", 5000, 1000, 20000, "Longest bout (ticks)", "A bout nobody wins within this time is a draw: all stakes are returned.", nerd: true, hardMin: 300, hardMax: 120000);
+            PitSetup.RegisterSettings(M);
             // fence
             HSettings.Percent(M, "Fence", "underworld.fence.buyPercent", 0.40f, 0.1f, 0.9f, "Fence buys at", "Share of the market value the fence pays for stolen goods.", hardMin: 0.01f, hardMax: 2f);
             HSettings.Percent(M, "Fence", "underworld.fence.sellPercent", 0.70f, 0.2f, 1.2f, "Fence sells at", "Share of the market value shady buyers pay.", hardMin: 0.01f, hardMax: 3f);
@@ -61,6 +62,7 @@ namespace Hearth.Underworld
             HSettings.Percent(M, "Smuggler's dock", "underworld.smuggler.priceFactor", 0.30f, 0.1f, 1f, "Contraband price", "Share of the market value you pay for a crate.", hardMin: 0.01f, hardMax: 3f);
             HSettings.Percent(M, "Smuggler's dock", "underworld.smuggler.inspectChance", 0.10f, 0f, 0.5f, "Chance of an inspection", "Per landing, if an imperial authority exists.", hardMin: 0f, hardMax: 1f);
             HSettings.Silver(M, "Smuggler's dock", "underworld.smuggler.maxValue", 600, 100, 3000, "Largest crate", "Market value of the biggest crate offered.");
+            FacilitySetup.RegisterSettings(M);
             // hunt
             HSettings.Silver(M, "The Hunt", "underworld.hunt.feeMin", 500, 100, 3000, "Hunt fee (lowest)", null);
             HSettings.Silver(M, "The Hunt", "underworld.hunt.feeMax", 2000, 200, 6000, "Hunt fee (highest)", null);
@@ -76,11 +78,13 @@ namespace Hearth.Underworld
         public override void OnDefsLoaded()
         {
             Guard.Run(M, "Underworld.Defs", UwDefs.Init);
+            Guard.Run(M, "Underworld.PitSetup", PitSetup.OnDefsLoaded);
             Caretaker.Register(M, "Underworld.PitCash", Caretakers.PitCash);
             Caretaker.Register(M, "Underworld.FenceCash", Caretakers.FenceCash);
             GuestActivities.Register(new Activities.PitActivity());
             GuestActivities.Register(new Activities.LoungeActivity());
             GuestActivities.Register(new Activities.FenceActivity());
+            Guard.Run(M, "Underworld.FacilitySetup", FacilitySetup.OnDefsLoaded);
             HearthTabs.Register(new HearthTabPage { Id = "underworld", LabelKey = "HH.Tab.Underworld", LabelEn = "Underworld", Module = M, Order = 900, Draw = UnderworldPage.Draw, Visible = () => Underworld.Visible });
         }
 
