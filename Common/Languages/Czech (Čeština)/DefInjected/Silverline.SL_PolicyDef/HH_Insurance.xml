@@ -33,4 +33,70 @@
   <SL_LimbByLimb.label>Pojištění úrazů končetina po končetině</SL_LimbByLimb.label>
   <SL_LimbByLimb.description>Každá končetina má cenu. Zapsali jsme ji. Je na poslední straně, v tabulce končetin.</SL_LimbByLimb.description>
   <SL_LimbByLimb.slogan>Každá končetina má cenu. Zapsali jsme ji.</SL_LimbByLimb.slogan>
+  <SL_ActsOfStoryteller.benefitBare>Hotovost za zničenou budovu, po odečtení vašeho podílu.</SL_ActsOfStoryteller.benefitBare>
+  <SL_ActsOfStoryteller.benefitGood>Hotovost, nebo stavební materiál dodaný kapslí.</SL_ActsOfStoryteller.benefitGood>
+  <SL_ActsOfStoryteller.benefitPremium>Náhradní hodnota, vyplacená okamžitě kapslí. Jednou ročně vstřícné gesto.</SL_ActsOfStoryteller.benefitPremium>
+  <SL_ActsOfStoryteller.coversText>Budovy vaší kolonie zničené nepřátelskou rukou (nájezdy, obléhání, mechanoidi). Ne požár, ne bouře, ne vaše vlastní střílny.</SL_ActsOfStoryteller.coversText>
+  <SL_ActsOfStoryteller.riders.0.description>Vyplatí o 10 % víc z každé škody (nikdy víc než samotná škoda).</SL_ActsOfStoryteller.riders.0.description>
+  <SL_ActsOfStoryteller.riders.0.label>Prominutí opotřebení</SL_ActsOfStoryteller.riders.0.label>
+  <SL_ActsOfStoryteller.riders.1.description>Oddělení pojistných událostí se na vaši událost podívá o den dřív.</SL_ActsOfStoryteller.riders.1.description>
+  <SL_ActsOfStoryteller.riders.1.label>Expresní papírování</SL_ActsOfStoryteller.riders.1.label>
+  <SL_BlightBeGone.benefitBare>Hotovost za ztracenou úrodu, po odečtení vašeho podílu.</SL_BlightBeGone.benefitBare>
+  <SL_BlightBeGone.benefitGood>Hotovost, 80 % časové hodnoty.</SL_BlightBeGone.benefitGood>
+  <SL_BlightBeGone.benefitPremium>Plná hodnota úrody, okamžitě.</SL_BlightBeGone.benefitPremium>
+  <SL_BlightBeGone.coversText>Vaše plodiny při mrazu nebo toxickém spadu.</SL_BlightBeGone.coversText>
+  <SL_BlightBeGone.riders.0.description>Vyplatí o 10 % víc z každé škody (nikdy víc než samotná škoda).</SL_BlightBeGone.riders.0.description>
+  <SL_BlightBeGone.riders.0.label>Prominutí opotřebení</SL_BlightBeGone.riders.0.label>
+  <SL_ClosedForRepairs.benefitBare>Paušální den, ať už stál den cokoli.</SL_ClosedForRepairs.benefitBare>
+  <SL_ClosedForRepairs.benefitGood>Průměrná denní ztráta, až pět dní.</SL_ClosedForRepairs.benefitGood>
+  <SL_ClosedForRepairs.benefitPremium>Denní ztráta až za 15 dní.</SL_ClosedForRepairs.benefitPremium>
+  <SL_ClosedForRepairs.coversText>Ušlý příjem po uzavření vašeho podniku, hlášený podniky Hearth &amp; Harbor.</SL_ClosedForRepairs.coversText>
+  <SL_GoldenYears.benefitBare>Pojistná částka, jednorázově, když kolonistovi bude 60.</SL_GoldenYears.benefitBare>
+  <SL_GoldenYears.benefitGood>0,4 % pojistné částky denně, od 60 let.</SL_GoldenYears.benefitGood>
+  <SL_GoldenYears.benefitPremium>0,6 % pojistné částky denně, od 60 let. Oslava odchodu do penze je myslitelná.</SL_GoldenYears.benefitPremium>
+  <SL_GoldenYears.coversText>Jeden kolonista, kterému ještě není 60. Od věku 60 let Clawback Mutual vyplácí denní penzi (Jen nejnutnější: jednorázovou částku). Pojistné roste, čím blíž je kolonista k 60; ve 60 nebo později si penzi nikdo koupit nemůže.</SL_GoldenYears.coversText>
+  <SL_ItWasntMe.benefitBare>Polovina odškodného, vyplacená frakci poškozeného.</SL_ItWasntMe.benefitBare>
+  <SL_ItWasntMe.benefitGood>80 % odškodného. Ztráta dobré vůle poloviční.</SL_ItWasntMe.benefitGood>
+  <SL_ItWasntMe.benefitPremium>Všechno. O pověst je také postaráno.</SL_ItWasntMe.benefitPremium>
+  <SL_ItWasntMe.coversText>Škody na hostech a zboží obchodníků, za které odpovídá vaše kolonie. Hlásí hostinec, trh a obchodní přepážka.</SL_ItWasntMe.coversText>
+  <SL_ItWasntMe.riders.0.description>Oddělení pojistných událostí se na vaši událost podívá o den dřív.</SL_ItWasntMe.riders.0.description>
+  <SL_ItWasntMe.riders.0.label>Expresní papírování</SL_ItWasntMe.riders.0.label>
+  <SL_LegalShield.benefitBare>50 % každé pokuty.</SL_LegalShield.benefitBare>
+  <SL_LegalShield.benefitGood>80 % každé pokuty a podává se odvolání.</SL_LegalShield.benefitGood>
+  <SL_LegalShield.benefitPremium>Celá pokuta. Advokát Brix čte vaše formuláře dřív než vy.</SL_LegalShield.benefitPremium>
+  <SL_LegalShield.coversText>Pokuty a postihy od inspektorů, potíže s licencemi a spory o vymáhání. Také snižuje šanci, že Clawback Mutual zamítne vaše pojistné události, a opravuje vaše výpovědní formuláře.</SL_LegalShield.coversText>
+  <SL_LegalShield.riders.0.description>Oddělení pojistných událostí se na vaši událost podívá o den dřív.</SL_LegalShield.riders.0.description>
+  <SL_LegalShield.riders.0.label>Expresní papírování</SL_LegalShield.riders.0.label>
+  <SL_LimbByLimb.benefitBare>Lineárně podle Tabulky končetin, od 20 % invalidity. Částečné ztráty se nevyplácejí.</SL_LimbByLimb.benefitBare>
+  <SL_LimbByLimb.benefitGood>Progrese 225 % od 5 % invalidity. Částečné ztráty se vyplácejí.</SL_LimbByLimb.benefitGood>
+  <SL_LimbByLimb.benefitPremium>Progrese 350 % od 1 % invalidity. Každý prst má cenu.</SL_LimbByLimb.benefitPremium>
+  <SL_LimbByLimb.coversText>Jeden kolonista. Trvalé následky úrazů podle Tabulky končetin a smrt úrazem (20 % částky). Posuzuje se kvadrum po úrazu. Operace nejsou úrazy.</SL_LimbByLimb.coversText>
+  <SL_LimbByLimb.riders.0.description>Úrazy na úrovni Premium se vyplácejí podle tabulky 500 % místo 350 %. Záleží jen u těch velkých.</SL_LimbByLimb.riders.0.description>
+  <SL_LimbByLimb.riders.0.label>Progrese Plus (500 %)</SL_LimbByLimb.riders.0.label>
+  <SL_LimbByLimb.riders.1.description>Částka za smrt úrazem roste z 20 % na 30 % základní částky.</SL_LimbByLimb.riders.1.description>
+  <SL_LimbByLimb.riders.1.label>Navýšení plnění při smrti</SL_LimbByLimb.riders.1.label>
+  <SL_MuffaloMachine.benefitBare>Peníze na opravu, polovina časové hodnoty.</SL_MuffaloMachine.benefitBare>
+  <SL_MuffaloMachine.benefitGood>Hotovost nebo díly kapslí, 80 % časové hodnoty.</SL_MuffaloMachine.benefitGood>
+  <SL_MuffaloMachine.benefitPremium>Náhradní hodnota, okamžitě. Odtahový dron je váš.</SL_MuffaloMachine.benefitPremium>
+  <SL_MuffaloMachine.coversText>Raketoplány, výsadkové kapsle a vozidla zničená nepřátelskými silami. Bionické části jsou vybavení a v principu mají být také tady. V praxi: viz Pojištění úrazů.</SL_MuffaloMachine.coversText>
+  <SL_MuffaloMachine.riders.0.description>Vyplatí o 10 % víc z každé škody (nikdy víc než samotná škoda).</SL_MuffaloMachine.riders.0.description>
+  <SL_MuffaloMachine.riders.0.label>Prominutí opotřebení</SL_MuffaloMachine.riders.0.label>
+  <SL_RimHealth.benefitBare>10 stříbra za upoutaného kolonistu a den, až 5 dní z 15.</SL_RimHealth.benefitBare>
+  <SL_RimHealth.benefitGood>15 stříbra za upoutaného kolonistu a den, až 5 dní z 15.</SL_RimHealth.benefitGood>
+  <SL_RimHealth.benefitPremium>25 stříbra za upoutaného kolonistu a den, až 5 dní z 15. Druhý názor je zdarma.</SL_RimHealth.benefitPremium>
+  <SL_RimHealth.coversText>Každý den, kdy je kolonista upoután na lůžko nemocí nebo zraněním vyžadujícím ošetření, ale nejvýš 5 placených dní na kolonistu v jakýchkoli 15 dnech (strop nemocničního odškodného). Otrava jídlem je nehoda při vaření a počítá se i tak.</SL_RimHealth.coversText>
+  <SL_RimHealth.riders.0.description>Vyplatí o 10 % víc za každý den na lůžku.</SL_RimHealth.riders.0.description>
+  <SL_RimHealth.riders.0.label>Nemocniční pohostinnost</SL_RimHealth.riders.0.label>
+  <SL_RoofOverHead.benefitBare>Hotovost za spálenou budovu, po odečtení vašeho podílu.</SL_RoofOverHead.benefitBare>
+  <SL_RoofOverHead.benefitGood>Hotovost, nebo stavební materiál kapslí.</SL_RoofOverHead.benefitGood>
+  <SL_RoofOverHead.benefitPremium>Náhradní hodnota, okamžitě kapslí. Popel v ceně není.</SL_RoofOverHead.benefitPremium>
+  <SL_RoofOverHead.coversText>Budovy vaší kolonie zničené požárem, výbuchy a bouřemi. Požáry a výbuchy způsobené vašimi vlastními lidmi jsou vyloučeny (§11).</SL_RoofOverHead.coversText>
+  <SL_RoofOverHead.riders.0.description>Vyplatí o 10 % víc z každé škody (nikdy víc než samotná škoda).</SL_RoofOverHead.riders.0.description>
+  <SL_RoofOverHead.riders.0.label>Prominutí opotřebení</SL_RoofOverHead.riders.0.label>
+  <SL_RoofOverHead.riders.1.description>Oddělení pojistných událostí se na vaši událost podívá o den dřív.</SL_RoofOverHead.riders.1.description>
+  <SL_RoofOverHead.riders.1.label>Expresní papírování</SL_RoofOverHead.riders.1.label>
+  <SL_Wanderlust.benefitBare>Částka na hlavu, jen když někdo zemře na cestě.</SL_Wanderlust.benefitBare>
+  <SL_Wanderlust.benefitGood>Smrt a ztracené části těla podle Tabulky končetin.</SL_Wanderlust.benefitGood>
+  <SL_Wanderlust.benefitPremium>Vše výše a paušální částka za každé jednotlivé zranění.</SL_Wanderlust.benefitPremium>
+  <SL_Wanderlust.coversText>Kolonisté v karavanách. Jen nejnutnější vyplácí pouze smrt, Dost dobré také ztracené části těla, Premium každé škrábnutí.</SL_Wanderlust.coversText>
 </LanguageData>

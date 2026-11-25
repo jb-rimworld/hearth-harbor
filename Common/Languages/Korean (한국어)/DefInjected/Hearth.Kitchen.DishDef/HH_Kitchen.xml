@@ -184,4 +184,96 @@
   <HH_Dish_ThrumboPho.label>고기 쌀국수</HH_Dish_ThrumboPho.label>
   <HH_Dish_ThrumboTartare.description>날것이고 맹렬하며 용감합니다. 먼저 면책 동의서에 서명하세요. 콜로니가 운이 좋다면 전통적으로 썸보로 만듭니다.</HH_Dish_ThrumboTartare.description>
   <HH_Dish_ThrumboTartare.label>고기 타르타르</HH_Dish_ThrumboTartare.label>
+  <HH_Dish_AgaveBaklava.inspiration>레반트와 오스만 세계</HH_Dish_AgaveBaklava.inspiration>
+  <HH_Dish_AgavePancakes.inspiration>멕시코와 미국</HH_Dish_AgavePancakes.inspiration>
+  <HH_Dish_BakedEggs.inspiration>북아프리카와 레반트</HH_Dish_BakedEggs.inspiration>
+  <HH_Dish_BeerBatteredInsects.inspiration>벨기에와 태국</HH_Dish_BeerBatteredInsects.inspiration>
+  <HH_Dish_BerryCompote.inspiration>북유럽</HH_Dish_BerryCompote.inspiration>
+  <HH_Dish_Bibimbap.inspiration>한국</HH_Dish_Bibimbap.inspiration>
+  <HH_Dish_Biryani.inspiration>남아시아</HH_Dish_Biryani.inspiration>
+  <HH_Dish_BoomalopeConfit.inspiration>프랑스</HH_Dish_BoomalopeConfit.inspiration>
+  <HH_Dish_BratwurstAndBeer.inspiration>독일</HH_Dish_BratwurstAndBeer.inspiration>
+  <HH_Dish_BugSkewers.inspiration>동남아시아</HH_Dish_BugSkewers.inspiration>
+  <HH_Dish_CampfireStew.inspiration>어디서나 떠도는 부족들</HH_Dish_CampfireStew.inspiration>
+  <HH_Dish_CannibalsChili.inspiration>멕시코와 텍사스</HH_Dish_CannibalsChili.inspiration>
+  <HH_Dish_Ceviche.inspiration>페루</HH_Dish_Ceviche.inspiration>
+  <HH_Dish_ChiliConCarne.inspiration>멕시코와 텍사스</HH_Dish_ChiliConCarne.inspiration>
+  <HH_Dish_ChocolateLayerCake.inspiration>이탈리아와 오스트리아</HH_Dish_ChocolateLayerCake.inspiration>
+  <HH_Dish_ChocolatePudding.inspiration>전 세계</HH_Dish_ChocolatePudding.inspiration>
+  <HH_Dish_ChocolateSouffle.inspiration>프랑스</HH_Dish_ChocolateSouffle.inspiration>
+  <HH_Dish_Churrasco.inspiration>브라질</HH_Dish_Churrasco.inspiration>
+  <HH_Dish_Churros.inspiration>스페인과 라틴아메리카</HH_Dish_Churros.inspiration>
+  <HH_Dish_ClayOvenMuffalo.inspiration>인도 (탄두리)</HH_Dish_ClayOvenMuffalo.inspiration>
+  <HH_Dish_ColdNoodleSalad.inspiration>한국</HH_Dish_ColdNoodleSalad.inspiration>
+  <HH_Dish_ColdPotatoSalad.inspiration>독일</HH_Dish_ColdPotatoSalad.inspiration>
+  <HH_Dish_ColonyPaella.inspiration>스페인</HH_Dish_ColonyPaella.inspiration>
+  <HH_Dish_Congee.inspiration>중국</HH_Dish_Congee.inspiration>
+  <HH_Dish_CongeeOfTheFallen.inspiration>중국</HH_Dish_CongeeOfTheFallen.inspiration>
+  <HH_Dish_CornFritters.inspiration>오스트레일리아와 아프리카</HH_Dish_CornFritters.inspiration>
+  <HH_Dish_CornPorridge.inspiration>남아프리카 (팝)</HH_Dish_CornPorridge.inspiration>
+  <HH_Dish_CreamyMushroomNoodles.inspiration>이탈리아</HH_Dish_CreamyMushroomNoodles.inspiration>
+  <HH_Dish_CreamyNoodleBake.inspiration>미국</HH_Dish_CreamyNoodleBake.inspiration>
+  <HH_Dish_CremeBrulee.inspiration>프랑스</HH_Dish_CremeBrulee.inspiration>
+  <HH_Dish_DanDanNoodles.inspiration>중국 쓰촨</HH_Dish_DanDanNoodles.inspiration>
+  <HH_Dish_DimSumBasket.inspiration>중국</HH_Dish_DimSumBasket.inspiration>
+  <HH_Dish_DromedaryTagine.inspiration>모로코</HH_Dish_DromedaryTagine.inspiration>
+  <HH_Dish_EggDropSoup.inspiration>중국</HH_Dish_EggDropSoup.inspiration>
+  <HH_Dish_EggFlan.inspiration>스페인</HH_Dish_EggFlan.inspiration>
+  <HH_Dish_EggFriedRice.inspiration>중국</HH_Dish_EggFriedRice.inspiration>
+  <HH_Dish_FermentedMushrooms.inspiration>한국 (김치 풍)</HH_Dish_FermentedMushrooms.inspiration>
+  <HH_Dish_FishAndChips.inspiration>브리튼 제도</HH_Dish_FishAndChips.inspiration>
+  <HH_Dish_FishThermidor.inspiration>프랑스</HH_Dish_FishThermidor.inspiration>
+  <HH_Dish_FriedMushrooms.inspiration>중부 유럽</HH_Dish_FriedMushrooms.inspiration>
+  <HH_Dish_FruitBowl.inspiration>전 세계</HH_Dish_FruitBowl.inspiration>
+  <HH_Dish_GravyFries.inspiration>캐나다 (푸틴 풍)</HH_Dish_GravyFries.inspiration>
+  <HH_Dish_GrilledLongPorkRibs.inspiration>바비큐, 전 세계</HH_Dish_GrilledLongPorkRibs.inspiration>
+  <HH_Dish_HashAndEgg.inspiration>북아메리카</HH_Dish_HashAndEgg.inspiration>
+  <HH_Dish_HashBrowns.inspiration>북아메리카</HH_Dish_HashBrowns.inspiration>
+  <HH_Dish_HuntersBigos.inspiration>폴란드</HH_Dish_HuntersBigos.inspiration>
+  <HH_Dish_InsectTacos.inspiration>멕시코</HH_Dish_InsectTacos.inspiration>
+  <HH_Dish_JollofRice.inspiration>서아프리카</HH_Dish_JollofRice.inspiration>
+  <HH_Dish_LacqueredThrumbo.inspiration>중국 (베이징 풍)</HH_Dish_LacqueredThrumbo.inspiration>
+  <HH_Dish_Laksa.inspiration>말레이시아</HH_Dish_Laksa.inspiration>
+  <HH_Dish_LambKoftasWithRice.inspiration>튀르키예와 페르시아</HH_Dish_LambKoftasWithRice.inspiration>
+  <HH_Dish_LongPorkDumplings.inspiration>중국 (찜)</HH_Dish_LongPorkDumplings.inspiration>
+  <HH_Dish_LongPorkStew.inspiration>투박하고 금지된 맛</HH_Dish_LongPorkStew.inspiration>
+  <HH_Dish_MilkRicePudding.inspiration>인도 (키르)와 유럽</HH_Dish_MilkRicePudding.inspiration>
+  <HH_Dish_MoleNegro.inspiration>멕시코</HH_Dish_MoleNegro.inspiration>
+  <HH_Dish_MongolianMuffalo.inspiration>중국</HH_Dish_MongolianMuffalo.inspiration>
+  <HH_Dish_MuffaloBourguignon.inspiration>프랑스 부르고뉴</HH_Dish_MuffaloBourguignon.inspiration>
+  <HH_Dish_MuffaloCarpaccio.inspiration>이탈리아</HH_Dish_MuffaloCarpaccio.inspiration>
+  <HH_Dish_MuffaloGoulash.inspiration>헝가리</HH_Dish_MuffaloGoulash.inspiration>
+  <HH_Dish_MuffaloRamen.inspiration>일본</HH_Dish_MuffaloRamen.inspiration>
+  <HH_Dish_MuffaloStroganoff.inspiration>러시아</HH_Dish_MuffaloStroganoff.inspiration>
+  <HH_Dish_MuffaloWellington.inspiration>브리튼 제도</HH_Dish_MuffaloWellington.inspiration>
+  <HH_Dish_MushroomMoussaka.inspiration>그리스</HH_Dish_MushroomMoussaka.inspiration>
+  <HH_Dish_MushroomPlate.inspiration>동유럽</HH_Dish_MushroomPlate.inspiration>
+  <HH_Dish_MushroomRisotto.inspiration>이탈리아</HH_Dish_MushroomRisotto.inspiration>
+  <HH_Dish_NigiriPlatter.inspiration>일본</HH_Dish_NigiriPlatter.inspiration>
+  <HH_Dish_OmakaseNigiri.inspiration>일본</HH_Dish_OmakaseNigiri.inspiration>
+  <HH_Dish_PadThrumbo.inspiration>태국</HH_Dish_PadThrumbo.inspiration>
+  <HH_Dish_PanFriedFish.inspiration>유럽 해안 지역</HH_Dish_PanFriedFish.inspiration>
+  <HH_Dish_PlainSteamedRice.inspiration>동아시아</HH_Dish_PlainSteamedRice.inspiration>
+  <HH_Dish_PotatoGratin.inspiration>프랑스</HH_Dish_PotatoGratin.inspiration>
+  <HH_Dish_PotatoSoup.inspiration>중부 유럽</HH_Dish_PotatoSoup.inspiration>
+  <HH_Dish_RawFishSlices.inspiration>태평양 연안</HH_Dish_RawFishSlices.inspiration>
+  <HH_Dish_Rendang.inspiration>인도네시아</HH_Dish_Rendang.inspiration>
+  <HH_Dish_RimMein.inspiration>중국 (차우멘)</HH_Dish_RimMein.inspiration>
+  <HH_Dish_RoastCornOnTheCob.inspiration>라틴아메리카 (엘로테)</HH_Dish_RoastCornOnTheCob.inspiration>
+  <HH_Dish_RoastPotatoes.inspiration>브리튼 제도</HH_Dish_RoastPotatoes.inspiration>
+  <HH_Dish_ScrambledEggs.inspiration>전 세계</HH_Dish_ScrambledEggs.inspiration>
+  <HH_Dish_SevenCourseColonyMenu.inspiration>어디에나</HH_Dish_SevenCourseColonyMenu.inspiration>
+  <HH_Dish_SmokedBrisket.inspiration>텍사스</HH_Dish_SmokedBrisket.inspiration>
+  <HH_Dish_SmokedJerkyStrips.inspiration>북아메리카</HH_Dish_SmokedJerkyStrips.inspiration>
+  <HH_Dish_SmokedLongJerky.inspiration>북아메리카</HH_Dish_SmokedLongJerky.inspiration>
+  <HH_Dish_SpitRoastedHaunch.inspiration>부족 잔치, 전 세계</HH_Dish_SpitRoastedHaunch.inspiration>
+  <HH_Dish_SteamedBuns.inspiration>중국 (바오)</HH_Dish_SteamedBuns.inspiration>
+  <HH_Dish_StrangersRoast.inspiration>브리튼 제도 (선데이 로스트)</HH_Dish_StrangersRoast.inspiration>
+  <HH_Dish_Tamales.inspiration>멕시코</HH_Dish_Tamales.inspiration>
+  <HH_Dish_TartareOfTheFallen.inspiration>프랑스</HH_Dish_TartareOfTheFallen.inspiration>
+  <HH_Dish_TeppanFeast.inspiration>일본</HH_Dish_TeppanFeast.inspiration>
+  <HH_Dish_ThrumboPho.inspiration>베트남</HH_Dish_ThrumboPho.inspiration>
+  <HH_Dish_ThrumboTartare.inspiration>프랑스</HH_Dish_ThrumboTartare.inspiration>
+  <HH_Dish_TomYumSoup.inspiration>태국</HH_Dish_TomYumSoup.inspiration>
+  <HH_Dish_UgaliWithStew.inspiration>동아프리카</HH_Dish_UgaliWithStew.inspiration>
 </LanguageData>

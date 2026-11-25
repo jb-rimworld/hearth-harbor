@@ -46,4 +46,5 @@
   <HH_Station_DoughBench.description>Тяжёлый стол с присыпанной мукой столешницей. Здесь рис и кукурузу превращают в тесто, что дешевле терапии.</HH_Station_DoughBench.description>
   <HH_Station_ColdStation.label>холодная станция</HH_Station_ColdStation.label>
   <HH_Station_ColdStation.description>Охлаждаемый прилавок, который держит салаты хрусткими, а десерты твёрдыми. Электрический.</HH_Station_ColdStation.description>
+  <HH_Cookbook.comps.CompUsable.useLabel>Изучить книгу рецептов</HH_Cookbook.comps.CompUsable.useLabel>
 </LanguageData>

@@ -26,4 +26,17 @@
   <SL_Asset_NftThrumbos.description>Eine Sammlung von Thrumbo-Bildern, jedes einzigartig, jedes ein bisschen wie die anderen. Du besitzt eine Quittung für ein Bild von einem Bild. Käufer tauchen langsam auf und wollen Rabatt.</SL_Asset_NftThrumbos.description>
   <SL_Asset_NftMuffalo.label>Eigentumszertifikat: Bild eines Muffalos</SL_Asset_NftMuffalo.label>
   <SL_Asset_NftMuffalo.description>Ein Eigentumszertifikat für ein Bild eines Muffalos. Das Bild liegt irgendwo. Das Zertifikat liegt in deinem Konto. Keines von beiden riecht nach Muffalo.</SL_Asset_NftMuffalo.description>
+  <SL_Asset_GrowthFund.tagline>Unsere Manager schlagen den Markt (welchen, haben wir nicht gesagt).</SL_Asset_GrowthFund.tagline>
+  <SL_Asset_Index.tagline>Alles besitzen, nichts verstehen.</SL_Asset_Index.tagline>
+  <SL_Asset_Mattress.tagline>Dein Geld ist sicher*. *Es gelten Bedingungen.</SL_Asset_Mattress.tagline>
+  <SL_Asset_MemeBoomalope.tagline>Mit Absicht volatil, von Natur aus brennbar.</SL_Asset_MemeBoomalope.tagline>
+  <SL_Asset_MemeMuffalo.tagline>Muh. Das ist das Whitepaper.</SL_Asset_MemeMuffalo.tagline>
+  <SL_Asset_MemeThrumbo.tagline>Zum Mond, zu Fuß, langsam.</SL_Asset_MemeThrumbo.tagline>
+  <SL_Asset_NftMuffalo.tagline>Dir gehört die Idee des Bildes.</SL_Asset_NftMuffalo.tagline>
+  <SL_Asset_NftThrumbos.tagline>Einzigartig, wie bei allen anderen.</SL_Asset_NftThrumbos.tagline>
+  <SL_Asset_OutlanderBond.tagline>Leih Leuten mit Speeren Geld!</SL_Asset_OutlanderBond.tagline>
+  <SL_Asset_RimCoin.tagline>Vertrau der Mathematik. Nicht der Börse.</SL_Asset_RimCoin.tagline>
+  <SL_Asset_StockColony.tagline>Gastlichkeit, aber vierteljährlich.</SL_Asset_StockColony.tagline>
+  <SL_Asset_StockMicaton.tagline>Quartalszahlen, Quartalsgefühle.</SL_Asset_StockMicaton.tagline>
+  <SL_Asset_StockTribal.tagline>Warm, lokal und leicht verraucht.</SL_Asset_StockTribal.tagline>
 </LanguageData>

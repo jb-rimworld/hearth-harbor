@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Venue_DrugLounge.label>salão de entorpecentes</HH_Venue_DrugLounge.label>
   <HH_Venue_DrugLounge.description>Uma sala escura com sofás e um livro-caixa que ninguém lê. Os convidados pagam por uma sessão; pegam apenas o que a ideologia deles permite. Aberto à noite.</HH_Venue_DrugLounge.description>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>Os hóspedes se acomodam em assentos macios. Pelo menos dois.</HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>sofás</HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>Algo para apoiar as coisas.</HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>uma mesa baixa</HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>
 </LanguageData>

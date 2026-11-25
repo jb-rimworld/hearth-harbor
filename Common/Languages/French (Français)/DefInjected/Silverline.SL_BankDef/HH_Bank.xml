@@ -9,4 +9,12 @@
   <SL_BlackLedger.label>The Black Ledger</SL_BlackLedger.label>
   <SL_BlackLedger.description>Pas de questions, pas de formulaires, pas de noms. Elle prête à n'importe qui, quel que soit son score, moyennant un prix. De temps en temps, un registre « disparaît » avec une part des dépôts.</SL_BlackLedger.description>
   <SL_BlackLedger.slogan>On ne demande rien. Tu ne dis rien. Les intérêts composent quand même.</SL_BlackLedger.slogan>
+  <SL_BlackLedger.perks.0>Les prêts ignorent votre cote de crédit (et vos sentiments).</SL_BlackLedger.perks.0>
+  <SL_BlackLedger.perks.1>Chaque quadrum, 1 % de risque qu'un quart du solde soit « saisi ».</SL_BlackLedger.perks.1>
+  <SL_BlackLedger.perks.2>Réservé aux colonies qui ont découvert le milieu clandestin.</SL_BlackLedger.perks.2>
+  <SL_Mutual.perks.0>Neutre et équitable : pas de tours, pas de surprises.</SL_Mutual.perks.0>
+  <SL_Mutual.perks.1>Frais : 1 % au retrait (minimum 5), distributeur 2 + 1 %.</SL_Mutual.perks.1>
+  <SL_TooBigToFail.perks.0>Meilleur rendement de compte parmi les banques classiques (+10 % dans l'exposant).</SL_TooBigToFail.perks.0>
+  <SL_TooBigToFail.perks.1>Renflouement : une fois par année de jeu, un client qui était Too Big To Fail il y a dix minutes et qui est maintenant dans le rouge reçoit un prêt sans intérêt de 60 jours (jusqu'à 10 % du sommet).</SL_TooBigToFail.perks.1>
+  <SL_TooBigToFail.perks.2>Frais de compte de 6 argent par quadrum.</SL_TooBigToFail.perks.2>
 </LanguageData>

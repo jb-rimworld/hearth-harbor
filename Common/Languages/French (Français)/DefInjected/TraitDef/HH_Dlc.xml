@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_BornHost.degreeDatas.0.description>{PAWN_nameDef} retient les noms, remplit les verres avant qu'ils soient vides et donne aux inconnus l'impression d'être attendus. Apprend plus vite l'accueil.</HH_BornHost.degreeDatas.0.description>
+  <HH_BornHost.degreeDatas.0.label>hôte-né</HH_BornHost.degreeDatas.0.label>
+  <HH_Caregiver.degreeDatas.0.description>{PAWN_nameDef} veille les malades et remarque qui ne mange pas. Les massages que {PAWN_pronoun} donne font plus de bien, et les enfants et les familles que {PAWN_pronoun} accueille ou guide sont un peu plus heureux.</HH_Caregiver.degreeDatas.0.description>
+  <HH_Caregiver.degreeDatas.0.label>soignant</HH_Caregiver.degreeDatas.0.label>
+  <HH_EagleEye.degreeDatas.0.description>{PAWN_nameDef} remarque qui se promène où il ne devrait pas. Tant que {PAWN_pronoun} est sur la carte, les invités respectables tombent moins souvent sur l'arrière-salle.</HH_EagleEye.degreeDatas.0.description>
+  <HH_EagleEye.degreeDatas.0.label>œil de lynx</HH_EagleEye.degreeDatas.0.label>
+  <HH_Gambler.degreeDatas.0.description>{PAWN_nameDef} adore la table : la rotation, le battage, la pause avant que la carte se retourne. Jouer est plus amusant, et plus dangereux, pour {PAWN_objective}. En tant qu'invité, {PAWN_pronoun} apporte une plus grosse cagnotte et mise plus gros, et au blackjack comme au poker, {PAWN_pronoun} joue un peu plus finement.</HH_Gambler.degreeDatas.0.description>
+  <HH_Gambler.degreeDatas.0.label>joueur</HH_Gambler.degreeDatas.0.label>
+  <HH_GamblingAverse.degreeDatas.0.description>{PAWN_nameDef} refuse de jouer, ne devient jamais accro et se sent mal à l'aise dans les pièces où la maison prend des paris.</HH_GamblingAverse.degreeDatas.0.description>
+  <HH_GamblingAverse.degreeDatas.0.label>réfractaire au jeu</HH_GamblingAverse.degreeDatas.0.label>
+  <HH_Gossip.degreeDatas.0.description>{PAWN_nameDef} est incapable de garder une histoire pour {PAWN_objective}. Quand les invités partent, ce qu'ils racontent aux autres fait avancer la renommée de la maison, en bien comme en mal.</HH_Gossip.degreeDatas.0.description>
+  <HH_Gossip.degreeDatas.0.label>commère</HH_Gossip.degreeDatas.0.label>
+  <HH_Grump.degreeDatas.0.description>{PAWN_nameDef} tient la réception comme un poste de douane. Les invités avec qui {PAWN_pronoun} discute repartent un peu moins heureux.</HH_Grump.degreeDatas.0.description>
+  <HH_Grump.degreeDatas.0.label>grincheux</HH_Grump.degreeDatas.0.label>
+  <HH_KidMagnet.degreeDatas.0.description>Les enfants suivent {PAWN_nameDef} comme des canetons. Les enfants et les familles que {PAWN_pronoun} accueille ou guide sont plus heureux.</HH_KidMagnet.degreeDatas.0.description>
+  <HH_KidMagnet.degreeDatas.0.label>aimant à enfants</HH_KidMagnet.degreeDatas.0.label>
+  <HH_Lucky.degreeDatas.0.description>{PAWN_nameDef} a le don de tomber du bon côté de la pièce. Aux jeux de la maison du casino, {PAWN_pronoun} joue avec un plan de gains un peu plus clément, et deux séances gagnantes d'affilée suffisent pour une série de chance. Tant que {PAWN_pronoun} vit dans la colonie, un billet de loterie sur dix acheté par la colonie est gratuit.</HH_Lucky.degreeDatas.0.description>
+  <HH_Lucky.degreeDatas.0.label>chanceux</HH_Lucky.degreeDatas.0.label>
+  <HH_Peacemaker.degreeDatas.0.description>{PAWN_nameDef} s'interpose entre les voix qui s'élèvent et les fait redescendre. Les disputes dans la même pièce que {PAWN_objective} dégénèrent moins souvent en bagarres.</HH_Peacemaker.degreeDatas.0.description>
+  <HH_Peacemaker.degreeDatas.0.label>conciliateur</HH_Peacemaker.degreeDatas.0.label>
+  <HH_PennyPincher.degreeDatas.0.description>{PAWN_nameDef} lit chaque ligne de chaque contrat, deux fois. Tant que {PAWN_pronoun} vit dans la colonie, la banque prélève 20 % de frais en moins. Les invités trouvent les prix un peu salés quand {PAWN_pronoun} les sert.</HH_PennyPincher.degreeDatas.0.description>
+  <HH_PennyPincher.degreeDatas.0.label>radin</HH_PennyPincher.degreeDatas.0.label>
+  <HH_SilverTongue.degreeDatas.0.description>{PAWN_nameDef} réussirait à convaincre une rivière de changer de lit. Les invités attendent un peu moins après que {PAWN_pronoun} les a accueillis à la réception ou leur a fait visiter les lieux, et un invité qui rejoint la colonie coûte moins de bonne volonté quand c'est {PAWN_pronoun} qui l'a convaincu.</HH_SilverTongue.degreeDatas.0.description>
+  <HH_SilverTongue.degreeDatas.0.label>langue d'argent</HH_SilverTongue.degreeDatas.0.label>
+  <HH_SteadyHands.degreeDatas.0.description>Les doigts de {PAWN_nameDef} ne tremblent pas. En tant que croupier, {PAWN_pronoun} distribue nettement plus vite.</HH_SteadyHands.degreeDatas.0.description>
+  <HH_SteadyHands.degreeDatas.0.label>mains sûres</HH_SteadyHands.degreeDatas.0.label>
+  <HH_Unlucky.degreeDatas.0.description>{PAWN_nameDef} fait toujours tomber les tartines côté beurre. Aux jeux de la maison du casino, le plan de gains tourne un peu plus mal pour {PAWN_objective}, et chaque séance perdue fait mal.</HH_Unlucky.degreeDatas.0.description>
+  <HH_Unlucky.degreeDatas.0.label>malchanceux</HH_Unlucky.degreeDatas.0.label>
+</LanguageData>

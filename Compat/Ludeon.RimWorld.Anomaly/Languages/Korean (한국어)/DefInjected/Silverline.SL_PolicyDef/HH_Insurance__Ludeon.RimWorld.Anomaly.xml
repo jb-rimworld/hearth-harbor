@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_UnspeakableEvents.label>말할 수 없는 사건 특약</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>변호사가 같은 방에 있지 않으면 약관 문구로 설명할 수 없는 피해를 보장합니다.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>어떤 일은 이름을 붙이기보다 보험에 드는 편이 낫습니다.</SL_UnspeakableEvents.slogan>
+  <SL_UnspeakableEvents.benefitBare>현금, 자기부담금 제외. 그 존재를 묘사하지 말아 주십시오.</SL_UnspeakableEvents.benefitBare>
+  <SL_UnspeakableEvents.benefitGood>현금 또는 캡슐로 보내는 자재.</SL_UnspeakableEvents.benefitGood>
+  <SL_UnspeakableEvents.benefitPremium>재조달 가치를 즉시 지급. 전문가가 전화로 대기 중입니다.</SL_UnspeakableEvents.benefitPremium>
+  <SL_UnspeakableEvents.coversText>이상 개체에게 파괴된 건물.</SL_UnspeakableEvents.coversText>
+</LanguageData>

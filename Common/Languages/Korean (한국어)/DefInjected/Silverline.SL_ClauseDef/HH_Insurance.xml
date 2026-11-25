@@ -30,4 +30,19 @@
   <SL_Clause_31.description>보험은 스스로 갱신됩니다.</SL_Clause_31.description>
   <SL_Clause_40.label>이해 상충</SL_Clause_40.label>
   <SL_Clause_40.description>Overbooked 단계부터는 법률 방패가 클로백 뮤추얼에 대해 도움이 되지 않습니다.</SL_Clause_40.description>
+  <SL_Clause_1.text>보장은 대기 기간이 지나야 시작되며, 대기 기간은 보장이 시작된 뒤에 시작됩니다.</SL_Clause_1.text>
+  <SL_Clause_11.text>자해 피해에는 고객님, 고객님의 식민지 주민, 동물, 터렛, 그리고 그 근처에 서 있던 모든 사람이 입힌 피해가 포함됩니다.</SL_Clause_11.text>
+  <SL_Clause_14b.text>벽은 벽이어야 합니다. 문이 달린 벽은 문입니다.</SL_Clause_14b.text>
+  <SL_Clause_17.text>17조는 별첨되어 있으며, 트럼보어로 작성되어 있습니다.</SL_Clause_17.text>
+  <SL_Clause_21.text>생체 부품은 장비이며, 머팔로 &amp; 기계 보험으로 보장됩니다. 고객님께는 해당 보험이 없습니다.</SL_Clause_21.text>
+  <SL_Clause_22.text>잃은 부위가 다시 자라면 저희의 청구권도 함께 자랍니다.</SL_Clause_22.text>
+  <SL_Clause_23.text>평가가 끝나기 전에 사망하면 평가도 끝납니다.</SL_Clause_23.text>
+  <SL_Clause_26.text>위험 변화는 하루 이내에 신고해야 합니다. 검도 포함됩니다.</SL_Clause_26.text>
+  <SL_Clause_30.text>해지에는 양식 C-7이 필요하며, 3부를 저희가 보관 중인 잉크 색으로 서명해야 합니다.</SL_Clause_30.text>
+  <SL_Clause_31.text>고객님의 약관은 결정의 부담을 덜어 드리기 위해 자동으로 갱신됩니다.</SL_Clause_31.text>
+  <SL_Clause_3_2.text>사고는 갑작스러운 외부 사건입니다. 트럼보는 외부입니다. 고객님의 요리는 아닙니다.</SL_Clause_3_2.text>
+  <SL_Clause_4.text>이야기꾼의 행위는 이야기꾼이 합리적으로 행동한 경우를 제외하고 면책됩니다.</SL_Clause_4.text>
+  <SL_Clause_40.text>법률 방패는 클로백 상호보험과의 분쟁을 보장하지 않으며, 그 이유는 설명할 의무가 없습니다.</SL_Clause_40.text>
+  <SL_Clause_7b.text>습격은 전쟁이 아닙니다. 포위는 전쟁입니다. 기계 군집은 날씨입니다.</SL_Clause_7b.text>
+  <SL_Clause_9.text>기존 질환에는 이 약관 이전, 도중 또는 직후에 존재한 질환이 포함됩니다.</SL_Clause_9.text>
 </LanguageData>

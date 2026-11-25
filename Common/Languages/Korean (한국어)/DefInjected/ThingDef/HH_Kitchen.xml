@@ -46,4 +46,5 @@
   <HH_Station_DoughBench.description>밀가루가 뿌려진 상판이 달린 묵직한 벤치. 쌀과 옥수수를 여기서 찧어 반죽으로 만드는데, 치료받는 것보다 싸게 먹힌다.</HH_Station_DoughBench.description>
   <HH_Station_ColdStation.label>냉장 스테이션</HH_Station_ColdStation.label>
   <HH_Station_ColdStation.description>샐러드를 아삭하게, 디저트를 단단하게 지켜 주는 냉장 작업대. 전기로 작동한다.</HH_Station_ColdStation.description>
+  <HH_Cookbook.comps.CompUsable.useLabel>레시피 책 읽기</HH_Cookbook.comps.CompUsable.useLabel>
 </LanguageData>

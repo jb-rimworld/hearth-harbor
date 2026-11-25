@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Chapel.label>гостевая часовня</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>Тихое помещение с гостевым алтарём, где посетители любой веры приходят молиться. Гости ничего не платят, но уходят спокойнее; часовня с красивым алтарём и парой скамей — хороший сосед для гостиницы. Днём открыта всегда, персонал не нужен.</HH_Venue_Chapel.description>
+  <HH_Venue_Chapel.modExtensions.1.requirements.0.hint>Гости любой веры молятся у гостевого алтаря.</HH_Venue_Chapel.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.0.label>гостевой алтарь</HH_Venue_Chapel.modExtensions.1.requirements.0.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.1.hint>Не меньше двух мест для тех, кто задержится.</HH_Venue_Chapel.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.1.label>скамьи или стулья</HH_Venue_Chapel.modExtensions.1.requirements.1.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.2.hint>Немного зелени делает любую комнату приятнее.</HH_Venue_Chapel.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.2.label>горшечное растение</HH_Venue_Chapel.modExtensions.1.requirements.2.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.3.hint>Хороший свет делает комнату уютной с наступлением темноты.</HH_Venue_Chapel.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.3.label>торшер</HH_Venue_Chapel.modExtensions.1.requirements.3.label>
+</LanguageData>

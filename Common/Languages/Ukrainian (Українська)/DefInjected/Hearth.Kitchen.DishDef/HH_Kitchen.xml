@@ -184,4 +184,96 @@
   <HH_Dish_ThrumboPho.label>м'ясний фо</HH_Dish_ThrumboPho.label>
   <HH_Dish_ThrumboTartare.description>Сире, гостре й сміливе. Спершу підпишіть відмову від відповідальності. Традиційно готується з трамбо, якщо колонії так пощастить.</HH_Dish_ThrumboTartare.description>
   <HH_Dish_ThrumboTartare.label>м'ясний тартар</HH_Dish_ThrumboTartare.label>
+  <HH_Dish_AgaveBaklava.inspiration>Левант і османський світ</HH_Dish_AgaveBaklava.inspiration>
+  <HH_Dish_AgavePancakes.inspiration>Мексика і США</HH_Dish_AgavePancakes.inspiration>
+  <HH_Dish_BakedEggs.inspiration>Північна Африка і Левант</HH_Dish_BakedEggs.inspiration>
+  <HH_Dish_BeerBatteredInsects.inspiration>Бельгія і Таїланд</HH_Dish_BeerBatteredInsects.inspiration>
+  <HH_Dish_BerryCompote.inspiration>Північна Європа</HH_Dish_BerryCompote.inspiration>
+  <HH_Dish_Bibimbap.inspiration>Корея</HH_Dish_Bibimbap.inspiration>
+  <HH_Dish_Biryani.inspiration>Південна Азія</HH_Dish_Biryani.inspiration>
+  <HH_Dish_BoomalopeConfit.inspiration>Франція</HH_Dish_BoomalopeConfit.inspiration>
+  <HH_Dish_BratwurstAndBeer.inspiration>Німеччина</HH_Dish_BratwurstAndBeer.inspiration>
+  <HH_Dish_BugSkewers.inspiration>Південно-Східна Азія</HH_Dish_BugSkewers.inspiration>
+  <HH_Dish_CampfireStew.inspiration>Мандрівні племена, усюди</HH_Dish_CampfireStew.inspiration>
+  <HH_Dish_CannibalsChili.inspiration>Мексика і Техас</HH_Dish_CannibalsChili.inspiration>
+  <HH_Dish_Ceviche.inspiration>Перу</HH_Dish_Ceviche.inspiration>
+  <HH_Dish_ChiliConCarne.inspiration>Мексика і Техас</HH_Dish_ChiliConCarne.inspiration>
+  <HH_Dish_ChocolateLayerCake.inspiration>Італія та Австрія</HH_Dish_ChocolateLayerCake.inspiration>
+  <HH_Dish_ChocolatePudding.inspiration>Увесь світ</HH_Dish_ChocolatePudding.inspiration>
+  <HH_Dish_ChocolateSouffle.inspiration>Франція</HH_Dish_ChocolateSouffle.inspiration>
+  <HH_Dish_Churrasco.inspiration>Бразилія</HH_Dish_Churrasco.inspiration>
+  <HH_Dish_Churros.inspiration>Іспанія та Латинська Америка</HH_Dish_Churros.inspiration>
+  <HH_Dish_ClayOvenMuffalo.inspiration>Індія (тандурі)</HH_Dish_ClayOvenMuffalo.inspiration>
+  <HH_Dish_ColdNoodleSalad.inspiration>Корея</HH_Dish_ColdNoodleSalad.inspiration>
+  <HH_Dish_ColdPotatoSalad.inspiration>Німеччина</HH_Dish_ColdPotatoSalad.inspiration>
+  <HH_Dish_ColonyPaella.inspiration>Іспанія</HH_Dish_ColonyPaella.inspiration>
+  <HH_Dish_Congee.inspiration>Китай</HH_Dish_Congee.inspiration>
+  <HH_Dish_CongeeOfTheFallen.inspiration>Китай</HH_Dish_CongeeOfTheFallen.inspiration>
+  <HH_Dish_CornFritters.inspiration>Австралія та Африка</HH_Dish_CornFritters.inspiration>
+  <HH_Dish_CornPorridge.inspiration>Південна Африка (пап)</HH_Dish_CornPorridge.inspiration>
+  <HH_Dish_CreamyMushroomNoodles.inspiration>Італія</HH_Dish_CreamyMushroomNoodles.inspiration>
+  <HH_Dish_CreamyNoodleBake.inspiration>США</HH_Dish_CreamyNoodleBake.inspiration>
+  <HH_Dish_CremeBrulee.inspiration>Франція</HH_Dish_CremeBrulee.inspiration>
+  <HH_Dish_DanDanNoodles.inspiration>Сичуань, Китай</HH_Dish_DanDanNoodles.inspiration>
+  <HH_Dish_DimSumBasket.inspiration>Китай</HH_Dish_DimSumBasket.inspiration>
+  <HH_Dish_DromedaryTagine.inspiration>Марокко</HH_Dish_DromedaryTagine.inspiration>
+  <HH_Dish_EggDropSoup.inspiration>Китай</HH_Dish_EggDropSoup.inspiration>
+  <HH_Dish_EggFlan.inspiration>Іспанія</HH_Dish_EggFlan.inspiration>
+  <HH_Dish_EggFriedRice.inspiration>Китай</HH_Dish_EggFriedRice.inspiration>
+  <HH_Dish_FermentedMushrooms.inspiration>Корея (у стилі кімчі)</HH_Dish_FermentedMushrooms.inspiration>
+  <HH_Dish_FishAndChips.inspiration>Британські острови</HH_Dish_FishAndChips.inspiration>
+  <HH_Dish_FishThermidor.inspiration>Франція</HH_Dish_FishThermidor.inspiration>
+  <HH_Dish_FriedMushrooms.inspiration>Центральна Європа</HH_Dish_FriedMushrooms.inspiration>
+  <HH_Dish_FruitBowl.inspiration>Увесь світ</HH_Dish_FruitBowl.inspiration>
+  <HH_Dish_GravyFries.inspiration>Канада (у стилі путину)</HH_Dish_GravyFries.inspiration>
+  <HH_Dish_GrilledLongPorkRibs.inspiration>Барбекю, увесь світ</HH_Dish_GrilledLongPorkRibs.inspiration>
+  <HH_Dish_HashAndEgg.inspiration>Північна Америка</HH_Dish_HashAndEgg.inspiration>
+  <HH_Dish_HashBrowns.inspiration>Північна Америка</HH_Dish_HashBrowns.inspiration>
+  <HH_Dish_HuntersBigos.inspiration>Польща</HH_Dish_HuntersBigos.inspiration>
+  <HH_Dish_InsectTacos.inspiration>Мексика</HH_Dish_InsectTacos.inspiration>
+  <HH_Dish_JollofRice.inspiration>Західна Африка</HH_Dish_JollofRice.inspiration>
+  <HH_Dish_LacqueredThrumbo.inspiration>Китай (по-пекінськи)</HH_Dish_LacqueredThrumbo.inspiration>
+  <HH_Dish_Laksa.inspiration>Малайзія</HH_Dish_Laksa.inspiration>
+  <HH_Dish_LambKoftasWithRice.inspiration>Туреччина та Персія</HH_Dish_LambKoftasWithRice.inspiration>
+  <HH_Dish_LongPorkDumplings.inspiration>Китай (на пару)</HH_Dish_LongPorkDumplings.inspiration>
+  <HH_Dish_LongPorkStew.inspiration>Сільська кухня, заборонена</HH_Dish_LongPorkStew.inspiration>
+  <HH_Dish_MilkRicePudding.inspiration>Індія (кір) та Європа</HH_Dish_MilkRicePudding.inspiration>
+  <HH_Dish_MoleNegro.inspiration>Мексика</HH_Dish_MoleNegro.inspiration>
+  <HH_Dish_MongolianMuffalo.inspiration>Китай</HH_Dish_MongolianMuffalo.inspiration>
+  <HH_Dish_MuffaloBourguignon.inspiration>Бургундія, Франція</HH_Dish_MuffaloBourguignon.inspiration>
+  <HH_Dish_MuffaloCarpaccio.inspiration>Італія</HH_Dish_MuffaloCarpaccio.inspiration>
+  <HH_Dish_MuffaloGoulash.inspiration>Угорщина</HH_Dish_MuffaloGoulash.inspiration>
+  <HH_Dish_MuffaloRamen.inspiration>Японія</HH_Dish_MuffaloRamen.inspiration>
+  <HH_Dish_MuffaloStroganoff.inspiration>Росія</HH_Dish_MuffaloStroganoff.inspiration>
+  <HH_Dish_MuffaloWellington.inspiration>Британські острови</HH_Dish_MuffaloWellington.inspiration>
+  <HH_Dish_MushroomMoussaka.inspiration>Греція</HH_Dish_MushroomMoussaka.inspiration>
+  <HH_Dish_MushroomPlate.inspiration>Східна Європа</HH_Dish_MushroomPlate.inspiration>
+  <HH_Dish_MushroomRisotto.inspiration>Італія</HH_Dish_MushroomRisotto.inspiration>
+  <HH_Dish_NigiriPlatter.inspiration>Японія</HH_Dish_NigiriPlatter.inspiration>
+  <HH_Dish_OmakaseNigiri.inspiration>Японія</HH_Dish_OmakaseNigiri.inspiration>
+  <HH_Dish_PadThrumbo.inspiration>Таїланд</HH_Dish_PadThrumbo.inspiration>
+  <HH_Dish_PanFriedFish.inspiration>Узбережжя Європи</HH_Dish_PanFriedFish.inspiration>
+  <HH_Dish_PlainSteamedRice.inspiration>Східна Азія</HH_Dish_PlainSteamedRice.inspiration>
+  <HH_Dish_PotatoGratin.inspiration>Франція</HH_Dish_PotatoGratin.inspiration>
+  <HH_Dish_PotatoSoup.inspiration>Центральна Європа</HH_Dish_PotatoSoup.inspiration>
+  <HH_Dish_RawFishSlices.inspiration>Узбережжя Тихого океану</HH_Dish_RawFishSlices.inspiration>
+  <HH_Dish_Rendang.inspiration>Індонезія</HH_Dish_Rendang.inspiration>
+  <HH_Dish_RimMein.inspiration>Китай (чау-мейн)</HH_Dish_RimMein.inspiration>
+  <HH_Dish_RoastCornOnTheCob.inspiration>Латинська Америка (елоте)</HH_Dish_RoastCornOnTheCob.inspiration>
+  <HH_Dish_RoastPotatoes.inspiration>Британські острови</HH_Dish_RoastPotatoes.inspiration>
+  <HH_Dish_ScrambledEggs.inspiration>Увесь світ</HH_Dish_ScrambledEggs.inspiration>
+  <HH_Dish_SevenCourseColonyMenu.inspiration>Усюди</HH_Dish_SevenCourseColonyMenu.inspiration>
+  <HH_Dish_SmokedBrisket.inspiration>Техас</HH_Dish_SmokedBrisket.inspiration>
+  <HH_Dish_SmokedJerkyStrips.inspiration>Північна Америка</HH_Dish_SmokedJerkyStrips.inspiration>
+  <HH_Dish_SmokedLongJerky.inspiration>Північна Америка</HH_Dish_SmokedLongJerky.inspiration>
+  <HH_Dish_SpitRoastedHaunch.inspiration>Бенкет племені, увесь світ</HH_Dish_SpitRoastedHaunch.inspiration>
+  <HH_Dish_SteamedBuns.inspiration>Китай (бао)</HH_Dish_SteamedBuns.inspiration>
+  <HH_Dish_StrangersRoast.inspiration>Британські острови (недільна печеня)</HH_Dish_StrangersRoast.inspiration>
+  <HH_Dish_Tamales.inspiration>Мексика</HH_Dish_Tamales.inspiration>
+  <HH_Dish_TartareOfTheFallen.inspiration>Франція</HH_Dish_TartareOfTheFallen.inspiration>
+  <HH_Dish_TeppanFeast.inspiration>Японія</HH_Dish_TeppanFeast.inspiration>
+  <HH_Dish_ThrumboPho.inspiration>В'єтнам</HH_Dish_ThrumboPho.inspiration>
+  <HH_Dish_ThrumboTartare.inspiration>Франція</HH_Dish_ThrumboTartare.inspiration>
+  <HH_Dish_TomYumSoup.inspiration>Таїланд</HH_Dish_TomYumSoup.inspiration>
+  <HH_Dish_UgaliWithStew.inspiration>Східна Африка</HH_Dish_UgaliWithStew.inspiration>
 </LanguageData>

@@ -4,4 +4,6 @@
   <HH_SalonStyleWork.verb>стричь</HH_SalonStyleWork.verb>
   <HH_BodyguardWork.label>охрана гостя</HH_BodyguardWork.label>
   <HH_BodyguardWork.verb>охранять</HH_BodyguardWork.verb>
+  <HH_BodyguardWork.gerund>охранять</HH_BodyguardWork.gerund>
+  <HH_SalonStyleWork.gerund>делать укладку</HH_SalonStyleWork.gerund>
 </LanguageData>

@@ -4,4 +4,5 @@
   <HH_GamblingSpree.beginLetterLabel>surto de jogatina</HH_GamblingSpree.beginLetterLabel>
   <HH_GamblingSpree.beginLetter>{0} não consegue mais ficar longe das mesas e entra em um surto de jogatina, ignorando todas as regras da política de drogas.</HH_GamblingSpree.beginLetter>
   <HH_GamblingSpree.baseInspectLine>Estado mental: surto de jogatina</HH_GamblingSpree.baseInspectLine>
+  <HH_GamblingSpree.recoveryMessage>{0} saiu da farra de apostas.</HH_GamblingSpree.recoveryMessage>
 </LanguageData>

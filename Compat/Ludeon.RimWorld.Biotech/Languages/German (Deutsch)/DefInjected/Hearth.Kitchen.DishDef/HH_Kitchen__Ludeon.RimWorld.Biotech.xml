@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_CrimsonSmoothie.label>Purpurner Smoothie</HH_Dish_CrimsonSmoothie.label>
+  <HH_Dish_CrimsonSmoothie.description>Beeren, Milch und ein geheimes Rosa.</HH_Dish_CrimsonSmoothie.description>
+  <HH_Dish_BloodBroth.label>Blutbrühe</HH_Dish_BloodBroth.label>
+  <HH_Dish_BloodBroth.description>Eine dunkle, kräftige Brühe für die Durstigen und die Höflichen.</HH_Dish_BloodBroth.description>
+  <HH_Dish_HemogenBlackPudding.label>Hämogen-Blutwurst</HH_Dish_HemogenBlackPudding.label>
+  <HH_Dish_HemogenBlackPudding.description>Gebraten, bis sie aufhört, dich anzustarren.</HH_Dish_HemogenBlackPudding.description>
+  <HH_Dish_HemogenRisotto.label>Hämogen-Risotto</HH_Dish_HemogenRisotto.label>
+  <HH_Dish_HemogenRisotto.description>Cremig, rot und eine Spur zu intensiv.</HH_Dish_HemogenRisotto.description>
+  <HH_Dish_RedSteakVeryRare.label>Rotes Steak, ganz blutig</HH_Dish_RedSteakVeryRare.label>
+  <HH_Dish_RedSteakVeryRare.description>Praktisch noch am Blöken. Genau so zubereitet, wie es ein Sanguophage bestellt hat.</HH_Dish_RedSteakVeryRare.description>
+  <HH_Dish_HemogenCarpaccio.label>Hämogen-Carpaccio</HH_Dish_HemogenCarpaccio.label>
+  <HH_Dish_HemogenCarpaccio.description>Dünn, rot und mit einem Starren serviert.</HH_Dish_HemogenCarpaccio.description>
+  <HH_Dish_BloodBroth.inspiration>Osteuropa</HH_Dish_BloodBroth.inspiration>
+  <HH_Dish_CrimsonSmoothie.inspiration>Überall</HH_Dish_CrimsonSmoothie.inspiration>
+  <HH_Dish_HemogenBlackPudding.inspiration>Britische Inseln</HH_Dish_HemogenBlackPudding.inspiration>
+  <HH_Dish_HemogenCarpaccio.inspiration>Italien</HH_Dish_HemogenCarpaccio.inspiration>
+  <HH_Dish_HemogenRisotto.inspiration>Italien</HH_Dish_HemogenRisotto.inspiration>
+  <HH_Dish_RedSteakVeryRare.inspiration>Argentinien und Frankreich</HH_Dish_RedSteakVeryRare.inspiration>
+</LanguageData>

@@ -6,4 +6,28 @@
   <HH_Venue_Salon.description>Místnost s kadeřnickými křesly. Hosté platí za střih, nový účes, barvení nebo, se správnou ideologií, tetování; práci dělá kolonista s pracovním typem obsluhy. Bez někoho, kdo obsluhuje, je salon zavřený.</HH_Venue_Salon.description>
   <HH_Venue_Gallery.label>galerie</HH_Venue_Gallery.label>
   <HH_Venue_Gallery.description>Místnost plná soch, pověšených v dobrém světle. Hosté zaplatí malé vstupné a procházejí kolem exponátů jeden po druhém; čím krásnější umění, tím spokojenější odcházejí. Potřebuje hrstku uměleckých děl v místnosti.</HH_Venue_Gallery.description>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.hint>Film se promítá na plátně s proudem.</HH_Venue_Cinema.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.label>projekční plátno</HH_Venue_Cinema.modExtensions.0.requirements.0.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.hint>Sedadla před plátnem: tolik, kolik žádá nastavení Života ve městě „Potřebná sedadla“.</HH_Venue_Cinema.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.label>sedadla před plátnem</HH_Venue_Cinema.modExtensions.0.requirements.1.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.hint>Bez proudu žádný film.</HH_Venue_Cinema.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.label>proud pro projektor</HH_Venue_Cinema.modExtensions.0.requirements.2.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.hint>Pult u dveří vypadá správně.</HH_Venue_Cinema.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.label>pokladna na lístky</HH_Venue_Cinema.modExtensions.0.requirements.3.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.hint>Občerstvení a nápoje k filmu, prodávané bez obsluhy.</HH_Venue_Cinema.modExtensions.0.requirements.4.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.label>automat</HH_Venue_Cinema.modExtensions.0.requirements.4.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.hint>Sochy v místnosti: tolik, kolik žádá nastavení Života ve městě „Potřebná umělecká díla“. Umělci je vyrábějí na umělecké pracovní lavici.</HH_Venue_Gallery.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.label>umělecká díla</HH_Venue_Gallery.modExtensions.0.requirements.0.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.hint>Návštěvníci si rádi sednou před nejlepší kus.</HH_Venue_Gallery.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.label>lavice k prohlížení</HH_Venue_Gallery.modExtensions.0.requirements.1.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.hint>Dobré světlo dělá z místnosti po setmění příjemné místo.</HH_Venue_Gallery.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.label>stojací lampa</HH_Venue_Gallery.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.hint>Střihy, účesy a barvení se dějí v kadeřnickém křesle.</HH_Venue_Salon.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.label>kadeřnické křeslo</HH_Venue_Salon.modExtensions.0.requirements.0.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.hint>Práci odvádí kolonista s pracovním typem Obsluha.</HH_Venue_Salon.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.label>kadeřník (práce Obsluha)</HH_Venue_Salon.modExtensions.0.requirements.1.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.hint>Hosté čekající na řadu rádi sedí.</HH_Venue_Salon.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.label>sedadla pro čekající hosty</HH_Venue_Salon.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.hint>Dobré světlo dělá z místnosti po setmění příjemné místo.</HH_Venue_Salon.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.label>stojací lampa</HH_Venue_Salon.modExtensions.0.requirements.3.label>
 </LanguageData>

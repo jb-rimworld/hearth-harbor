@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_EmpireWarBond.label>Válečné dluhopisy Impéria</SL_Asset_EmpireWarBond.label>
+  <SL_Asset_EmpireWarBond.description>Dluhopisy financující válku Impéria. Když válka skončí vítězstvím, vyskočí; při porážce mají hodnotu hezkého rámu. Válka trvá už velmi dlouho, hlavně v brožurách.</SL_Asset_EmpireWarBond.description>
+  <SL_Asset_StockEmpire.label>IMPR, Imperial Pageantry Ltd</SL_Asset_StockEmpire.label>
+  <SL_Asset_StockEmpire.description>Firma za císařskými obřady: prapory, trubky a drobné koruny. Zisky závisejí na tom, kolik šlechty se urazí tím, jak málo se jí dostane.</SL_Asset_StockEmpire.description>
+  <SL_Asset_EmpireWarBond.tagline>Vlastenectví s kupónem.</SL_Asset_EmpireWarBond.tagline>
+  <SL_Asset_StockEmpire.tagline>Všechno chce obřad.</SL_Asset_StockEmpire.tagline>
+</LanguageData>

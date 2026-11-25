@@ -46,4 +46,5 @@
   <HH_Station_DoughBench.description>Важкий стіл із верхом, припорошеним борошном. Тут рис і кукурудзу товчуть у тісто, що дешевше за терапію.</HH_Station_DoughBench.description>
   <HH_Station_ColdStation.label>холодна станція</HH_Station_ColdStation.label>
   <HH_Station_ColdStation.description>Охолоджена стійка, яка тримає салати хрусткими, а десерти твердими. Електрична.</HH_Station_ColdStation.description>
+  <HH_Cookbook.comps.CompUsable.useLabel>Вивчити книгу рецептів</HH_Cookbook.comps.CompUsable.useLabel>
 </LanguageData>

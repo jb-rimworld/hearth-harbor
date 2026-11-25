@@ -46,4 +46,5 @@
   <HH_Station_DoughBench.description>Un lourd plan de travail au dessus poudré de farine. Le riz et le maïs y sont pilés en pâte, ce qui coûte moins cher qu'une thérapie.</HH_Station_DoughBench.description>
   <HH_Station_ColdStation.label>poste froid</HH_Station_ColdStation.label>
   <HH_Station_ColdStation.description>Un comptoir réfrigéré qui garde les salades croquantes et les desserts fermes. Électrique.</HH_Station_ColdStation.description>
+  <HH_Cookbook.comps.CompUsable.useLabel>Étudier le livre de recettes</HH_Cookbook.comps.CompUsable.useLabel>
 </LanguageData>

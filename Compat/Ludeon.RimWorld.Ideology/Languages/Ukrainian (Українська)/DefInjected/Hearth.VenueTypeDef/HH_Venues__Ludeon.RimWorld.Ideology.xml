@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Chapel.label>гостьова капличка</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>Тиха кімната з гостьовим вівтарем, де гості всіх віровизнань моляться. Гості нічого не платять, але йдуть спокійнішими; капличка з гарним вівтарем і кількома лавами — добрий сусід для корчми. Завжди відкрита вдень, персонал не потрібен.</HH_Venue_Chapel.description>
+  <HH_Venue_Chapel.modExtensions.1.requirements.0.hint>Гості будь-якої віри моляться біля гостьового вівтаря.</HH_Venue_Chapel.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.0.label>гостьовий вівтар</HH_Venue_Chapel.modExtensions.1.requirements.0.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.1.hint>Принаймні два місця для тих, хто затримується.</HH_Venue_Chapel.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.1.label>лави або стільці</HH_Venue_Chapel.modExtensions.1.requirements.1.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.2.hint>Трохи зелені робить будь-яку кімнату приємнішою.</HH_Venue_Chapel.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.2.label>рослина в горщику</HH_Venue_Chapel.modExtensions.1.requirements.2.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.3.hint>Гарне світло робить кімнату привітнішою після настання темряви.</HH_Venue_Chapel.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.3.label>торшер</HH_Venue_Chapel.modExtensions.1.requirements.3.label>
+</LanguageData>

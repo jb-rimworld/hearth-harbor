@@ -4,4 +4,5 @@
   <SL_CollectionsAgency.description>Une agence de recouvrement. Polie jusqu'à ce qu'elle ne le soit plus.</SL_CollectionsAgency.description>
   <SL_CollectionsAgency.pawnsPlural>agents de recouvrement</SL_CollectionsAgency.pawnsPlural>
   <SL_CollectionsAgency.fixedName>Rim Recovery Partners</SL_CollectionsAgency.fixedName>
+  <SL_CollectionsAgency.pawnSingular>agent de recouvrement</SL_CollectionsAgency.pawnSingular>
 </LanguageData>

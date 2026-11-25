@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_SugarCookies.label>Цукрове печиво</HH_Dish_SugarCookies.label>
+  <HH_Dish_SugarCookies.description>Прикрашене колоністом, чиї руки тремтять після бою, і це видно.</HH_Dish_SugarCookies.description>
+  <HH_Dish_FancyCupcakes.label>Вишукані капкейки</HH_Dish_FancyCupcakes.label>
+  <HH_Dish_FancyCupcakes.description>Крихітний кекс з великою проблемою посипки.</HH_Dish_FancyCupcakes.description>
+  <HH_Dish_GlazedDonuts.label>Глазуровані пончики</HH_Dish_GlazedDonuts.label>
+  <HH_Dish_GlazedDonuts.description>Кільце тіста навколо діри в бюджеті.</HH_Dish_GlazedDonuts.description>
+  <HH_Dish_FancyCupcakes.inspiration>Vanilla Cooking Expanded - Bakery</HH_Dish_FancyCupcakes.inspiration>
+  <HH_Dish_GlazedDonuts.inspiration>Vanilla Cooking Expanded - Bakery</HH_Dish_GlazedDonuts.inspiration>
+  <HH_Dish_SugarCookies.inspiration>Vanilla Cooking Expanded - Bakery</HH_Dish_SugarCookies.inspiration>
+</LanguageData>

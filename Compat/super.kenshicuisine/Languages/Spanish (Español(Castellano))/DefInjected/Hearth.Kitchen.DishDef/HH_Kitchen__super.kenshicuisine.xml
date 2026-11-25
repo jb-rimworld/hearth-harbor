@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_StrawFlourFlatbread.label>Pan plano de harina de paja</HH_Dish_StrawFlourFlatbread.label>
+  <HH_Dish_StrawFlourFlatbread.description>Plano, honesto y un poco arenoso. Como el desierto del que viene.</HH_Dish_StrawFlourFlatbread.description>
+  <HH_Dish_CactusFruitSalad.label>Ensalada de fruta de cactus</HH_Dish_CactusFruitSalad.label>
+  <HH_Dish_CactusFruitSalad.description>Dulce y espinosa, como tu mejor amigo.</HH_Dish_CactusFruitSalad.description>
+  <HH_Dish_GreenfruitStew.label>Guiso de fruta verde</HH_Dish_GreenfruitStew.label>
+  <HH_Dish_GreenfruitStew.description>Un guiso tan verde que el muffalo se ofendió.</HH_Dish_GreenfruitStew.description>
+  <HH_Dish_StrawflourDumplings.label>Bolitas de masa de harina de paja</HH_Dish_StrawflourDumplings.label>
+  <HH_Dish_StrawflourDumplings.description>Bolitas de masa del páramo, rellenas de algo que quizá fue carne.</HH_Dish_StrawflourDumplings.description>
+  <HH_Dish_DesertBreadAndBeer.label>Pan y cerveza del desierto</HH_Dish_DesertBreadAndBeer.label>
+  <HH_Dish_DesertBreadAndBeer.description>Desayuno líquido y sólido, en el orden correcto.</HH_Dish_DesertBreadAndBeer.description>
+  <HH_Dish_CactusFruitSalad.inspiration>Kenshi Cuisine</HH_Dish_CactusFruitSalad.inspiration>
+  <HH_Dish_DesertBreadAndBeer.inspiration>Kenshi Cuisine</HH_Dish_DesertBreadAndBeer.inspiration>
+  <HH_Dish_GreenfruitStew.inspiration>Kenshi Cuisine</HH_Dish_GreenfruitStew.inspiration>
+  <HH_Dish_StrawFlourFlatbread.inspiration>Kenshi Cuisine</HH_Dish_StrawFlourFlatbread.inspiration>
+  <HH_Dish_StrawflourDumplings.inspiration>Kenshi Cuisine</HH_Dish_StrawflourDumplings.inspiration>
+</LanguageData>

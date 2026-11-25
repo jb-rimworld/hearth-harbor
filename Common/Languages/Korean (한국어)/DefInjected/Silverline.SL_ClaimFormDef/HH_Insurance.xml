@@ -6,4 +6,37 @@
   <SL_ClaimForm_Person.label>개인 청구서</SL_ClaimForm_Person.label>
   <SL_ClaimForm_Property.description>파괴된 건물, 차량, 작물에 대한 B-4 양식: 무슨 일이 있었는지, 피해가 얼마나 컸는지, 누가 봤는지, 어떻게 보상받고 싶은지.</SL_ClaimForm_Property.description>
   <SL_ClaimForm_Property.label>재산 청구서</SL_ClaimForm_Property.label>
+  <SL_ClaimForm_Money.fields.0.description>형식적인 항목입니다.</SL_ClaimForm_Money.fields.0.description>
+  <SL_ClaimForm_Money.fields.0.label>원인</SL_ClaimForm_Money.fields.0.label>
+  <SL_ClaimForm_Money.fields.0.options.0.label>점검</SL_ClaimForm_Money.fields.0.options.0.label>
+  <SL_ClaimForm_Money.fields.0.options.1.label>손님 또는 상인</SL_ClaimForm_Money.fields.0.options.1.label>
+  <SL_ClaimForm_Money.fields.0.options.2.label>오해</SL_ClaimForm_Money.fields.0.options.2.label>
+  <SL_ClaimForm_Money.fields.0.options.3.label>기타</SL_ClaimForm_Money.fields.0.options.3.label>
+  <SL_ClaimForm_Money.fields.1.description>확인해 줄 수 있는 식민지 주민.</SL_ClaimForm_Money.fields.1.description>
+  <SL_ClaimForm_Money.fields.1.label>목격자</SL_ClaimForm_Money.fields.1.label>
+  <SL_ClaimForm_Person.fields.0.description>어떻게 일어났는지. 양식의 대부분이 그렇듯 형식적인 항목입니다.</SL_ClaimForm_Person.fields.0.description>
+  <SL_ClaimForm_Person.fields.0.label>경위</SL_ClaimForm_Person.fields.0.label>
+  <SL_ClaimForm_Person.fields.0.options.0.label>전투</SL_ClaimForm_Person.fields.0.options.0.label>
+  <SL_ClaimForm_Person.fields.0.options.1.label>작업 사고</SL_ClaimForm_Person.fields.0.options.1.label>
+  <SL_ClaimForm_Person.fields.0.options.2.label>동물</SL_ClaimForm_Person.fields.0.options.2.label>
+  <SL_ClaimForm_Person.fields.0.options.3.label>질병</SL_ClaimForm_Person.fields.0.options.3.label>
+  <SL_ClaimForm_Person.fields.0.options.4.label>기타</SL_ClaimForm_Person.fields.0.options.4.label>
+  <SL_ClaimForm_Person.fields.1.description>그것을 본 식민지 주민.</SL_ClaimForm_Person.fields.1.description>
+  <SL_ClaimForm_Person.fields.1.label>목격자</SL_ClaimForm_Person.fields.1.label>
+  <SL_ClaimForm_Property.fields.0.description>클로백 상호보험이 접수하고, 읽고, 늘 그렇듯 결정합니다.</SL_ClaimForm_Property.fields.0.description>
+  <SL_ClaimForm_Property.fields.0.label>무슨 일이 있었습니까?</SL_ClaimForm_Property.fields.0.label>
+  <SL_ClaimForm_Property.fields.0.options.0.label>습격 또는 포위</SL_ClaimForm_Property.fields.0.options.0.label>
+  <SL_ClaimForm_Property.fields.0.options.1.label>화재 또는 폭발</SL_ClaimForm_Property.fields.0.options.1.label>
+  <SL_ClaimForm_Property.fields.0.options.2.label>번개 또는 날씨</SL_ClaimForm_Property.fields.0.options.2.label>
+  <SL_ClaimForm_Property.fields.0.options.3.label>사고</SL_ClaimForm_Property.fields.0.options.3.label>
+  <SL_ClaimForm_Property.fields.0.options.4.label>그 밖의 일</SL_ClaimForm_Property.fields.0.options.4.label>
+  <SL_ClaimForm_Property.fields.1.description>경미, 중대 또는 전손. 평가인은 보지 않을 것입니다.</SL_ClaimForm_Property.fields.1.description>
+  <SL_ClaimForm_Property.fields.1.label>피해 정도</SL_ClaimForm_Property.fields.1.label>
+  <SL_ClaimForm_Property.fields.1.options.0.label>경미</SL_ClaimForm_Property.fields.1.options.0.label>
+  <SL_ClaimForm_Property.fields.1.options.1.label>중대</SL_ClaimForm_Property.fields.1.options.1.label>
+  <SL_ClaimForm_Property.fields.1.options.2.label>전손</SL_ClaimForm_Property.fields.1.options.2.label>
+  <SL_ClaimForm_Property.fields.2.description>그것을 본 식민지 주민. 진술서는 양식과 함께 접수됩니다.</SL_ClaimForm_Property.fields.2.description>
+  <SL_ClaimForm_Property.fields.2.label>목격자</SL_ClaimForm_Property.fields.2.label>
+  <SL_ClaimForm_Property.fields.3.description>통상 경로로 은화를 받거나, 건축 자재를 강하 캡슐로 받습니다 ('그럭저럭 충분함'과 '프리미엄 중의 프리미엄'만 해당). 이것이 의미 있는 유일한 항목입니다.</SL_ClaimForm_Property.fields.3.description>
+  <SL_ClaimForm_Property.fields.3.label>어떻게 지급받기를 원하십니까?</SL_ClaimForm_Property.fields.3.label>
 </LanguageData>

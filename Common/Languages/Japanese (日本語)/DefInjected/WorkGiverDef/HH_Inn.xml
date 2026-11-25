@@ -4,4 +4,6 @@
   <HH_AccompanyGuest.verb>付き添う</HH_AccompanyGuest.verb>
   <HH_StaffFrontDesk.label>フロントを担当する</HH_StaffFrontDesk.label>
   <HH_StaffFrontDesk.verb>担当</HH_StaffFrontDesk.verb>
+  <HH_AccompanyGuest.gerund>の相手をする</HH_AccompanyGuest.gerund>
+  <HH_StaffFrontDesk.gerund>の受付に就く</HH_StaffFrontDesk.gerund>
 </LanguageData>

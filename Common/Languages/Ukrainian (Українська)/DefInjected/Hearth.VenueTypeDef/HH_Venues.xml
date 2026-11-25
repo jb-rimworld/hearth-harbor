@@ -12,4 +12,76 @@
   <HH_Venue_Spa.description>Тиха кімната для купелі, пари й відпочинку. Доглядач тримає рушники теплими; гості платять за кожне відвідування.</HH_Venue_Spa.description>
   <HH_Venue_Lounge.label>лаунж</HH_Venue_Lounge.label>
   <HH_Venue_Lounge.description>Зал очікування з місцями. Гості, які бачать заклад зачиненим або без персоналу, чекають тут, а не у дверях, і терплячіше. Завжди відкрито, персонал не потрібен.</HH_Venue_Lounge.description>
+  <HH_Venue_Casino.modExtensions.1.requirements.0.hint>Принаймні один ігровий автомат або ігровий стіл. Казино без ігор — просто кімната.</HH_Venue_Casino.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.0.label>гра</HH_Venue_Casino.modExtensions.1.requirements.0.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.1.hint>Ігрові автомати й освітлені столи працюють лише від струму.</HH_Venue_Casino.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.1.label>живлення для автоматів</HH_Venue_Casino.modExtensions.1.requirements.1.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.2.hint>Ігрові столи потребують крупʼє: колоніста з типом роботи «Обслуговування».</HH_Venue_Casino.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.2.label>крупʼє (робота «Обслуговування»)</HH_Venue_Casino.modExtensions.1.requirements.2.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.3.hint>Гості, які сидять зручно, залишаються довше й ставлять більше. Позначені місця навколо кожного столу потребують стільця.</HH_Venue_Casino.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.3.label>стільці на ігрових місцях</HH_Venue_Casino.modExtensions.1.requirements.3.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.4.hint>Гості міняють срібло на фішки в касі й ставлять трохи більше.</HH_Venue_Casino.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.4.label>каса-клітка</HH_Venue_Casino.modExtensions.1.requirements.4.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.5.hint>Гарне світло робить кімнату привітнішою після настання темряви.</HH_Venue_Casino.modExtensions.1.requirements.5.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.5.label>торшер</HH_Venue_Casino.modExtensions.1.requirements.5.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.0.hint>Гості чекають тут сидячи. Принаймні два місця.</HH_Venue_Lounge.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.0.label>місця</HH_Venue_Lounge.modExtensions.1.requirements.0.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.1.hint>Місце, куди можна поставити чашку.</HH_Venue_Lounge.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.1.label>маленький столик</HH_Venue_Lounge.modExtensions.1.requirements.1.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.2.hint>Трохи зелені робить будь-яку кімнату приємнішою.</HH_Venue_Lounge.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.2.label>рослина в горщику</HH_Venue_Lounge.modExtensions.1.requirements.2.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.3.hint>Гарне світло робить кімнату привітнішою після настання темряви.</HH_Venue_Lounge.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.3.label>торшер</HH_Venue_Lounge.modExtensions.1.requirements.3.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.0.hint>Гості сідають їсти; ресторан без столів — це кухня.</HH_Venue_Restaurant.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.0.label>стіл</HH_Venue_Restaurant.modExtensions.1.requirements.0.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.1.hint>Принаймні два стільці за столами.</HH_Venue_Restaurant.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.1.label>місця</HH_Venue_Restaurant.modExtensions.1.requirements.1.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.2.hint>Приготовані страви на полиці чи столі в кімнаті входять до меню.</HH_Venue_Restaurant.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.2.label>страви на продаж</HH_Venue_Restaurant.modExtensions.1.requirements.2.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.3.hint>Колоніст із типом роботи «Обслуговування» приймає замовлення й тримає ресторан відкритим.</HH_Venue_Restaurant.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.3.label>офіціант (робота «Обслуговування»)</HH_Venue_Restaurant.modExtensions.1.requirements.3.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.4.hint>Прилавок дає офіціанту пост і є місцем, де складають виручку за день.</HH_Venue_Restaurant.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.4.label>прилавок</HH_Venue_Restaurant.modExtensions.1.requirements.4.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.5.hint>Страви, що чекають на полиці, подаються швидше.</HH_Venue_Restaurant.modExtensions.1.requirements.5.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.5.label>полиця для страв</HH_Venue_Restaurant.modExtensions.1.requirements.5.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.6.hint>Вісім місць або більше для людних вечорів.</HH_Venue_Restaurant.modExtensions.1.requirements.6.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.6.label>місце для натовпу</HH_Venue_Restaurant.modExtensions.1.requirements.6.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.7.hint>Гарне світло робить кімнату привітнішою після настання темряви.</HH_Venue_Restaurant.modExtensions.1.requirements.7.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.7.label>торшер</HH_Venue_Restaurant.modExtensions.1.requirements.7.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.0.hint>Усе, що зберігається на полицях і в складах у кімнаті, продається.</HH_Venue_Shop.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.0.label>полиця або склад</HH_Venue_Shop.modExtensions.1.requirements.0.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.1.hint>Покладіть те, що хочете продати, у сховище кімнати.</HH_Venue_Shop.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.1.label>товари на полицях</HH_Venue_Shop.modExtensions.1.requirements.1.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.2.hint>З крамарем за прилавком крамниця бере повну ціну замість знижки за самообслуговування.</HH_Venue_Shop.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.2.label>прилавок</HH_Venue_Shop.modExtensions.1.requirements.2.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.3.hint>Необов'язково: колоніст на роботі «Обслуговування» продає за повною ціною й робить гостей щасливішими.</HH_Venue_Shop.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.3.label>крамар (робота «Обслуговування»)</HH_Venue_Shop.modExtensions.1.requirements.3.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.4.hint>Гарне світло робить кімнату привітнішою після настання темряви.</HH_Venue_Shop.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.4.label>торшер</HH_Venue_Shop.modExtensions.1.requirements.4.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.0.hint>Гості платять за джакузі, сауну чи масаж.</HH_Venue_Spa.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.0.label>купіль, сауна або масажний стіл</HH_Venue_Spa.modExtensions.1.requirements.0.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.1.hint>Обладнання, що потребує струму, працює лише з ним.</HH_Venue_Spa.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.1.label>живлення для обладнання</HH_Venue_Spa.modExtensions.1.requirements.1.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.2.hint>Колоніст із типом роботи «Обслуговування» дбає про гостей.</HH_Venue_Spa.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.2.label>доглядач (робота «Обслуговування»)</HH_Venue_Spa.modExtensions.1.requirements.2.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.3.hint>Гості люблять сісти між купіллю й сауною.</HH_Venue_Spa.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.3.label>місця для відпочинку</HH_Venue_Spa.modExtensions.1.requirements.3.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.4.hint>Трохи зелені робить будь-яку кімнату приємнішою.</HH_Venue_Spa.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.4.label>рослина в горщику</HH_Venue_Spa.modExtensions.1.requirements.4.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.0.hint>Бармен стоїть за ним, і гості замовляють там. Виручку за день кладуть на нього опівночі. Не потрібен за чесною системою (ніхто не обслуговує).</HH_Venue_Tavern.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.0.label>прилавок</HH_Venue_Tavern.modExtensions.1.requirements.0.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.1.hint>Гості п'ють за столом, а не стоячи в дверях.</HH_Venue_Tavern.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.1.label>стіл</HH_Venue_Tavern.modExtensions.1.requirements.1.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.2.hint>Принаймні два місця: стільці, табурети, крісла чи лави.</HH_Venue_Tavern.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.2.label>місця</HH_Venue_Tavern.modExtensions.1.requirements.2.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.3.hint>Пиво й інші напої, що зберігаються в кімнаті, продаються.</HH_Venue_Tavern.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.3.label>напої на складі</HH_Venue_Tavern.modExtensions.1.requirements.3.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.4.hint>Колоніст із типом роботи «Обслуговування» тримає таверну відкритою.</HH_Venue_Tavern.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.4.label>бармен (робота «Обслуговування»)</HH_Venue_Tavern.modExtensions.1.requirements.4.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.5.hint>Напої на полиці лежать охайно, і їх легко поповнювати.</HH_Venue_Tavern.modExtensions.1.requirements.5.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.5.label>полиця для напоїв</HH_Venue_Tavern.modExtensions.1.requirements.5.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.6.hint>Шість місць або більше, щоб компанія могла зайти разом.</HH_Venue_Tavern.modExtensions.1.requirements.6.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.6.label>місце для натовпу</HH_Venue_Tavern.modExtensions.1.requirements.6.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.7.hint>Гарне світло робить кімнату привітнішою після настання темряви.</HH_Venue_Tavern.modExtensions.1.requirements.7.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.7.label>торшер</HH_Venue_Tavern.modExtensions.1.requirements.7.label>
 </LanguageData>

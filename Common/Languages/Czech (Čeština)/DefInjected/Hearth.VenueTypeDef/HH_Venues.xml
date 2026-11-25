@@ -12,4 +12,76 @@
   <HH_Venue_Spa.description>Tichá místnost pro koupele, páru a odpočinek. Ošetřovatel drží ručníky v teple; hosté platí za každou návštěvu.</HH_Venue_Spa.description>
   <HH_Venue_Lounge.label>salónek</HH_Venue_Lounge.label>
   <HH_Venue_Lounge.description>Čekárna se sedadly. Hosté, kteří zjistí, že provozovna je zavřená nebo bez obsluhy, čekají tady, a ne ve dveřích, a čekají trpělivěji. Vždy otevřeno, personál není potřeba.</HH_Venue_Lounge.description>
+  <HH_Venue_Casino.modExtensions.1.requirements.0.hint>Alespoň jeden hrací automat nebo hrací stůl. Kasino bez her je jen místnost.</HH_Venue_Casino.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.0.label>hra</HH_Venue_Casino.modExtensions.1.requirements.0.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.1.hint>Hrací automaty a osvětlené stoly běží jen s proudem.</HH_Venue_Casino.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.1.label>proud pro automaty</HH_Venue_Casino.modExtensions.1.requirements.1.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.2.hint>Hrací stoly potřebují krupiéra: kolonistu s pracovním typem Obsluha.</HH_Venue_Casino.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.2.label>krupiér (práce Obsluha)</HH_Venue_Casino.modExtensions.1.requirements.2.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.3.hint>Hosté, kteří pohodlně sedí, zůstanou déle a vsadí víc. Označená místa kolem každého stolu chtějí židli.</HH_Venue_Casino.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.3.label>židle u herních míst</HH_Venue_Casino.modExtensions.1.requirements.3.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.4.hint>U mříže hosté vymění stříbro za žetony a vsadí o něco víc.</HH_Venue_Casino.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.4.label>pokladní mříž</HH_Venue_Casino.modExtensions.1.requirements.4.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.5.hint>Dobré světlo dělá z místnosti po setmění příjemné místo.</HH_Venue_Casino.modExtensions.1.requirements.5.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.5.label>stojací lampa</HH_Venue_Casino.modExtensions.1.requirements.5.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.0.hint>Hosté tu čekají vsedě. Alespoň dvě sedadla.</HH_Venue_Lounge.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.0.label>sedadla</HH_Venue_Lounge.modExtensions.1.requirements.0.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.1.hint>Místo, kam se dá odložit šálek.</HH_Venue_Lounge.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.1.label>malý stolek</HH_Venue_Lounge.modExtensions.1.requirements.1.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.2.hint>Trocha zeleně udělá z každé místnosti příjemnější místo.</HH_Venue_Lounge.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.2.label>pokojová rostlina</HH_Venue_Lounge.modExtensions.1.requirements.2.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.3.hint>Dobré světlo dělá z místnosti po setmění příjemné místo.</HH_Venue_Lounge.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.3.label>stojací lampa</HH_Venue_Lounge.modExtensions.1.requirements.3.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.0.hint>Hosté se usadí k jídlu; restaurace bez stolů je kuchyně.</HH_Venue_Restaurant.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.0.label>stůl</HH_Venue_Restaurant.modExtensions.1.requirements.0.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.1.hint>Alespoň dvě židle u stolů.</HH_Venue_Restaurant.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.1.label>sedadla</HH_Venue_Restaurant.modExtensions.1.requirements.1.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.2.hint>Uvařená jídla na polici nebo stole v místnosti jsou v nabídce.</HH_Venue_Restaurant.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.2.label>talíře na prodej</HH_Venue_Restaurant.modExtensions.1.requirements.2.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.3.hint>Kolonista s pracovním typem Obsluha přijímá objednávky a drží restauraci otevřenou.</HH_Venue_Restaurant.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.3.label>číšník (práce Obsluha)</HH_Venue_Restaurant.modExtensions.1.requirements.3.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.4.hint>Pult dává číšníkovi stanoviště a skládají se na něj denní tržby.</HH_Venue_Restaurant.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.4.label>pult</HH_Venue_Restaurant.modExtensions.1.requirements.4.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.5.hint>Talíře čekající na polici se podávají rychleji.</HH_Venue_Restaurant.modExtensions.1.requirements.5.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.5.label>police na talíře</HH_Venue_Restaurant.modExtensions.1.requirements.5.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.6.hint>Osm sedadel a více pro rušné večery.</HH_Venue_Restaurant.modExtensions.1.requirements.6.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.6.label>místo pro dav</HH_Venue_Restaurant.modExtensions.1.requirements.6.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.7.hint>Dobré světlo dělá z místnosti po setmění příjemné místo.</HH_Venue_Restaurant.modExtensions.1.requirements.7.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.7.label>stojací lampa</HH_Venue_Restaurant.modExtensions.1.requirements.7.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.0.hint>Vše uložené na policích a ve skladech uvnitř místnosti je na prodej.</HH_Venue_Shop.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.0.label>police nebo sklad</HH_Venue_Shop.modExtensions.1.requirements.0.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.1.hint>Co chcete prodávat, uložte do skladu místnosti.</HH_Venue_Shop.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.1.label>zboží na policích</HH_Venue_Shop.modExtensions.1.requirements.1.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.2.hint>S prodavačem za pultem obchod účtuje plnou cenu místo slevy samoobsluhy.</HH_Venue_Shop.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.2.label>pult</HH_Venue_Shop.modExtensions.1.requirements.2.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.3.hint>Volitelné: kolonista s prací Obsluha prodává za plnou cenu a hosty to těší.</HH_Venue_Shop.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.3.label>prodavač (práce Obsluha)</HH_Venue_Shop.modExtensions.1.requirements.3.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.4.hint>Dobré světlo dělá z místnosti po setmění příjemné místo.</HH_Venue_Shop.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.4.label>stojací lampa</HH_Venue_Shop.modExtensions.1.requirements.4.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.0.hint>Hosté platí za horkou vanu, saunu nebo masáž.</HH_Venue_Spa.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.0.label>vana, sauna nebo masážní stůl</HH_Venue_Spa.modExtensions.1.requirements.0.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.1.hint>Zařízení, která potřebují proud, fungují jen s ním.</HH_Venue_Spa.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.1.label>proud pro zařízení</HH_Venue_Spa.modExtensions.1.requirements.1.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.2.hint>Kolonista s pracovním typem Obsluha se stará o hosty.</HH_Venue_Spa.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.2.label>ošetřovatel (práce Obsluha)</HH_Venue_Spa.modExtensions.1.requirements.2.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.3.hint>Hosté si rádi sednou mezi koupelí a saunou.</HH_Venue_Spa.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.3.label>sedadla k odpočinku</HH_Venue_Spa.modExtensions.1.requirements.3.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.4.hint>Trocha zeleně udělá z každé místnosti příjemnější místo.</HH_Venue_Spa.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.4.label>pokojová rostlina</HH_Venue_Spa.modExtensions.1.requirements.4.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.0.hint>Stojí za ním barman a hosté si tu objednávají. O půlnoci se na něj skládají denní tržby. S režimem důvěry (nikdo neobsluhuje) není potřeba.</HH_Venue_Tavern.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.0.label>pult</HH_Venue_Tavern.modExtensions.1.requirements.0.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.1.hint>Hosté pijí u stolu, ne ve dveřích.</HH_Venue_Tavern.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.1.label>stůl</HH_Venue_Tavern.modExtensions.1.requirements.1.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.2.hint>Alespoň dvě sedadla: židle, stoličky, křesla nebo lavice.</HH_Venue_Tavern.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.2.label>sedadla</HH_Venue_Tavern.modExtensions.1.requirements.2.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.3.hint>Pivo a jiné nápoje uložené v místnosti jsou na prodej.</HH_Venue_Tavern.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.3.label>zásoba nápojů</HH_Venue_Tavern.modExtensions.1.requirements.3.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.4.hint>Kolonista s pracovním typem Obsluha drží hospodu otevřenou.</HH_Venue_Tavern.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.4.label>barman (práce Obsluha)</HH_Venue_Tavern.modExtensions.1.requirements.4.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.5.hint>Nápoje na polici zůstanou uklizené a snadno se doplňují.</HH_Venue_Tavern.modExtensions.1.requirements.5.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.5.label>police na nápoje</HH_Venue_Tavern.modExtensions.1.requirements.5.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.6.hint>Šest sedadel a více, aby mohla přijít celá parta.</HH_Venue_Tavern.modExtensions.1.requirements.6.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.6.label>místo pro dav</HH_Venue_Tavern.modExtensions.1.requirements.6.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.7.hint>Dobré světlo dělá z místnosti po setmění příjemné místo.</HH_Venue_Tavern.modExtensions.1.requirements.7.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.7.label>stojací lampa</HH_Venue_Tavern.modExtensions.1.requirements.7.label>
 </LanguageData>

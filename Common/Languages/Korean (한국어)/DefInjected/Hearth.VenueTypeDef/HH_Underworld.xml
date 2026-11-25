@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Venue_DrugLounge.label>마약 휴게실</HH_Venue_DrugLounge.label>
   <HH_Venue_DrugLounge.description>소파와 아무도 읽지 않는 장부가 있는 어두운 방입니다. 손님들은 한 번 이용할 때마다 돈을 내며, 그들의 이데올로기가 허용하는 것만 취합니다. 밤에 엽니다.</HH_Venue_DrugLounge.description>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>손님은 푹신한 자리에 자리 잡습니다. 두 개 이상 필요합니다.</HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>소파</HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>물건을 올려 둘 곳입니다.</HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>낮은 탁자</HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>
 </LanguageData>

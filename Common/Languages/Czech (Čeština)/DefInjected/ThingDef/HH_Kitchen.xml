@@ -46,4 +46,5 @@
   <HH_Station_DoughBench.description>Těžký stůl s moučnou pokrývkou. Rýže a kukuřice se tu tluče na těsto, což vychází levněji než terapie.</HH_Station_DoughBench.description>
   <HH_Station_ColdStation.label>chladicí stanice</HH_Station_ColdStation.label>
   <HH_Station_ColdStation.description>Chlazený pult, který udržuje saláty křupavé a dezerty pevné. Elektrická.</HH_Station_ColdStation.description>
+  <HH_Cookbook.comps.CompUsable.useLabel>Prostudovat kuchařku</HH_Cookbook.comps.CompUsable.useLabel>
 </LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_TwistedMeatBao.label>Bao de carne torcida</HH_Dish_TwistedMeatBao.label>
+  <HH_Dish_TwistedMeatBao.description>O pão se contorce só um pouco. Por favor, não conte ao recheio.</HH_Dish_TwistedMeatBao.description>
+  <HH_Dish_TwistedHotpot.label>Hotpot torcido</HH_Dish_TwistedHotpot.label>
+  <HH_Dish_TwistedHotpot.description>Borbulha sozinho. Ninguém ligou o fogão.</HH_Dish_TwistedHotpot.description>
+  <HH_Dish_TwistedHotpot.inspiration>Sichuan, China</HH_Dish_TwistedHotpot.inspiration>
+  <HH_Dish_TwistedMeatBao.inspiration>China (no vapor)</HH_Dish_TwistedMeatBao.inspiration>
+</LanguageData>

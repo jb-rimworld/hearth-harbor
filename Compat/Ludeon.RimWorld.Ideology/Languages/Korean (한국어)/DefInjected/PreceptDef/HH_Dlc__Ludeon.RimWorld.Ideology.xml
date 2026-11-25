@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Indulgences_NotAThing.label>해당 없음</HH_Indulgences_NotAThing.label>
+  <HH_Indulgences_NotAThing.description>여기서는 아무도 용서를 파는 생각을 해 본 적이 없습니다. 살 것도, 반대할 것도 없습니다.</HH_Indulgences_NotAThing.description>
+  <HH_Indulgences_Abhorrent.label>혐오</HH_Indulgences_Abhorrent.label>
+  <HH_Indulgences_Abhorrent.description>용서는 상품이 아닙니다. 그것을 파는 자는 신전에서 쫓겨나야 합니다.</HH_Indulgences_Abhorrent.description>
+  <HH_Indulgences_Disapproved.label>비난받음</HH_Indulgences_Disapproved.label>
+  <HH_Indulgences_Disapproved.description>사죄를 사는 것은 초라한 습관입니다. 효과는 있지만 누구도 자랑스러워해서는 안 됩니다.</HH_Indulgences_Disapproved.description>
+  <HH_Indulgences_Accepted.label>인정됨</HH_Indulgences_Accepted.label>
+  <HH_Indulgences_Accepted.description>공정한 자비에 대한 공정한 헌금. 가격은 간판에 적혀 있습니다.</HH_Indulgences_Accepted.description>
+  <HH_Indulgences_Sacred.label>신성함</HH_Indulgences_Sacred.label>
+  <HH_Indulgences_Sacred.description>빚을 갚는 것은 성사입니다. 신도는 할인을 받고, 값싼 양심을 지키는 것도 의무입니다.</HH_Indulgences_Sacred.description>
+  <HH_PaidAscension_NotAThing.label>해당 없음</HH_PaidAscension_NotAThing.label>
+  <HH_PaidAscension_NotAThing.description>여기서 계급은 얻는 것이지 사는 것이 아닙니다. 살 것도, 반대할 것도 없습니다.</HH_PaidAscension_NotAThing.description>
+  <HH_PaidAscension_Abhorrent.label>혐오</HH_PaidAscension_Abhorrent.label>
+  <HH_PaidAscension_Abhorrent.description>신앙은 팔 것이 아닙니다. 계급을 파는 자는 이미 신앙을 잃은 것입니다.</HH_PaidAscension_Abhorrent.description>
+  <HH_PaidAscension_Disapproved.label>비난받음</HH_PaidAscension_Disapproved.label>
+  <HH_PaidAscension_Disapproved.description>산 계급은 속이 빈 계급입니다. 신도들은 그것을 꿰뚫어 봅니다.</HH_PaidAscension_Disapproved.description>
+  <HH_PaidAscension_Accepted.label>인정됨</HH_PaidAscension_Accepted.label>
+  <HH_PaidAscension_Accepted.description>다른 모든 귀한 것처럼, 계급도 게시된 가격에 살 수 있습니다.</HH_PaidAscension_Accepted.description>
+  <HH_PaidAscension_Sacred.label>신성함</HH_PaidAscension_Sacred.label>
+  <HH_PaidAscension_Sacred.description>사다리가 곧 신앙입니다. 살 때마다 한 칸을 오르는 것이고, 아래에 있는 이들은 존경을 담아 올려다봅니다.</HH_PaidAscension_Sacred.description>
+  <HH_Indulgences_Abhorrent.comps.0.description>지도에서 면죄부가 판매됨</HH_Indulgences_Abhorrent.comps.0.description>
+  <HH_Indulgences_Sacred.comps.1.description>한 분기 동안 면죄부를 사지 않음</HH_Indulgences_Sacred.comps.1.description>
+  <HH_PaidAscension_Abhorrent.comps.0.description>지도에서 계급이 판매됨</HH_PaidAscension_Abhorrent.comps.0.description>
+  <HH_PaidAscension_Sacred.comps.0.description>계급</HH_PaidAscension_Sacred.comps.0.description>
+</LanguageData>

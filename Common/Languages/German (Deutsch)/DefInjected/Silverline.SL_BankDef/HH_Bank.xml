@@ -9,4 +9,12 @@
   <SL_BlackLedger.label>The Black Ledger</SL_BlackLedger.label>
   <SL_BlackLedger.description>Keine Fragen, keine Formulare, keine Namen. Verleiht an jeden, egal welche Bonität, zu einem Preis. Hin und wieder „verschwindet“ ein Hauptbuch, und ein Teil der Einlagen mit ihm.</SL_BlackLedger.description>
   <SL_BlackLedger.slogan>Wir fragen nicht. Du sagst nichts. Die Zinsen laufen trotzdem.</SL_BlackLedger.slogan>
+  <SL_BlackLedger.perks.0>Kredite ignorieren deine Bonität (und deine Gefühle).</SL_BlackLedger.perks.0>
+  <SL_BlackLedger.perks.1>In jedem Quadrum besteht ein Risiko von 1 %, dass ein Viertel des Guthabens „beschlagnahmt“ wird.</SL_BlackLedger.perks.1>
+  <SL_BlackLedger.perks.2>Nur für Kolonien offen, die die Unterwelt gefunden haben.</SL_BlackLedger.perks.2>
+  <SL_Mutual.perks.0>Neutral und fair: keine Tricks, keine Überraschungen.</SL_Mutual.perks.0>
+  <SL_Mutual.perks.1>Gebühren: 1 % beim Abheben (mindestens 5), Geldautomat 2 + 1 %.</SL_Mutual.perks.1>
+  <SL_TooBigToFail.perks.0>Beste Kontorendite der Großbanken (+10 % im Exponenten).</SL_TooBigToFail.perks.0>
+  <SL_TooBigToFail.perks.1>Rettungspaket: Einmal pro Spieljahr bekommt ein Kunde, der vor zehn Minuten noch Too Big To Fail war und nun im Minus steht, einen zinslosen 60-Tage-Kredit (bis zu 10 % des Höchststands).</SL_TooBigToFail.perks.1>
+  <SL_TooBigToFail.perks.2>Kontogebühr 6 Silber pro Quadrum.</SL_TooBigToFail.perks.2>
 </LanguageData>

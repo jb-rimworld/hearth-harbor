@@ -6,4 +6,28 @@
   <HH_Venue_Salon.description>Um cômodo com cadeiras de salão. Visitantes pagam por corte de cabelo, novo penteado, coloração ou, com a ideologia certa, uma tatuagem; um colono com a tarefa de servir faz o trabalho. Sem ninguém para atender, o salão fica fechado.</HH_Venue_Salon.description>
   <HH_Venue_Gallery.label>galeria</HH_Venue_Gallery.label>
   <HH_Venue_Gallery.description>Um cômodo cheio de esculturas, expostas com boa iluminação. Visitantes pagam uma pequena taxa de entrada e passam pelas peças uma a uma; quanto mais bonita a arte, mais feliz sai o visitante. Precisa de um punhado de obras de arte no cômodo.</HH_Venue_Gallery.description>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.hint>O filme passa numa tela de projeção ligada à energia.</HH_Venue_Cinema.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.label>uma tela de projeção</HH_Venue_Cinema.modExtensions.0.requirements.0.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.hint>Assentos diante da tela: tantos quanto a configuração 'Assentos necessários' de Vida na Cidade exige.</HH_Venue_Cinema.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.label>assentos voltados para a tela</HH_Venue_Cinema.modExtensions.0.requirements.1.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.hint>Sem energia, sem filme.</HH_Venue_Cinema.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.label>energia para o projetor</HH_Venue_Cinema.modExtensions.0.requirements.2.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.hint>Um balcão na porta dá o clima certo.</HH_Venue_Cinema.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.label>um balcão de ingressos</HH_Venue_Cinema.modExtensions.0.requirements.3.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.hint>Lanches e bebidas para o filme, vendidos sem funcionários.</HH_Venue_Cinema.modExtensions.0.requirements.4.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.label>uma máquina de venda</HH_Venue_Cinema.modExtensions.0.requirements.4.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.hint>Esculturas no cômodo: tantas quanto a configuração 'Obras de arte necessárias' de Vida na Cidade exige. Os artistas as fazem numa bancada de arte.</HH_Venue_Gallery.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.label>obras de arte</HH_Venue_Gallery.modExtensions.0.requirements.0.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.hint>Os visitantes gostam de sentar diante da melhor peça.</HH_Venue_Gallery.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.label>um banco para contemplar</HH_Venue_Gallery.modExtensions.0.requirements.1.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.hint>Uma boa iluminação deixa o cômodo acolhedor depois do anoitecer.</HH_Venue_Gallery.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.label>uma luminária de pé</HH_Venue_Gallery.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.hint>Cortes, penteados e tinturas acontecem na cadeira de salão.</HH_Venue_Salon.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.label>uma cadeira de salão</HH_Venue_Salon.modExtensions.0.requirements.0.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.hint>Um colono com o tipo de trabalho Servir faz o serviço.</HH_Venue_Salon.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.label>um cabeleireiro (trabalho de Servir)</HH_Venue_Salon.modExtensions.0.requirements.1.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.hint>Quem espera a vez gosta de sentar.</HH_Venue_Salon.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.label>assentos para hóspedes em espera</HH_Venue_Salon.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.hint>Uma boa iluminação deixa o cômodo acolhedor depois do anoitecer.</HH_Venue_Salon.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.label>uma luminária de pé</HH_Venue_Salon.modExtensions.0.requirements.3.label>
 </LanguageData>

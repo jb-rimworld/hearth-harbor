@@ -2,4 +2,7 @@
 <LanguageData>
   <HH_Screening.label>Filmabend</HH_Screening.label>
   <HH_Screening.letterText>{ORGANIZER_labelShort} hat die Kolonie zu einem Filmabend überredet. Jeder, der sich vor der Leinwand hinsetzt, gewinnt Erholung und einen Abend voll guter Stimmung.</HH_Screening.letterText>
+  <HH_Screening.calledOffMessage>Der Filmabend wurde abgesagt.</HH_Screening.calledOffMessage>
+  <HH_Screening.finishedMessage>Der Filmabend ist vorbei.</HH_Screening.finishedMessage>
+  <HH_Screening.letterTitle>Filmabend</HH_Screening.letterTitle>
 </LanguageData>

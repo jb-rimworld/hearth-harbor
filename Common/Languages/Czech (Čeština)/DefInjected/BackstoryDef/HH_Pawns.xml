@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Creator_HarbourTinkerer.description>[PAWN_nameDef] vyrůstal mezi jeřáby nákladního přístavu malého městečka a rozebíral, co dokeři vyhodili, aby to pak složil o něco lépe než předtím.\n\nHostinský z vedlejšího domu platil [PAWN_objective] koláči za opravu vrzajících dveří a [PAWN_pronoun] se brzy naučil, že teplý pokoj a plný talíř udělají z cizinců přátele.</HH_Creator_HarbourTinkerer.description>
   <HH_Creator_WanderingInnkeeper.description>[PAWN_nameDef] nikdy nezůstal na jednom místě dlouho. S kufříkem nářadí, ošuntělou knihou receptů a příliš mnoha plány se [PAWN_pronoun] toulal po okraji a stavěl hostince, banky a malé ošetřovny pro každého, kdo je potřeboval, a pak předal klíče a šel dál.\n\nOsadníci podél obchodních cest ještě vyprávějí o cizinci, který jim opravil střechu, uvařil večeři a zmizel dřív, než mohl kdokoli zaplatit. Někde tam venku [PAWN_pronoun] pořád něco staví pro někoho jiného.</HH_Creator_WanderingInnkeeper.description>
+  <HH_Creator_HarbourTinkerer.title>přístavní kutil</HH_Creator_HarbourTinkerer.title>
+  <HH_Creator_HarbourTinkerer.titleShort>kutil</HH_Creator_HarbourTinkerer.titleShort>
+  <HH_Creator_WanderingInnkeeper.title>potulný hostinský</HH_Creator_WanderingInnkeeper.title>
+  <HH_Creator_WanderingInnkeeper.titleShort>hostinský</HH_Creator_WanderingInnkeeper.titleShort>
 </LanguageData>

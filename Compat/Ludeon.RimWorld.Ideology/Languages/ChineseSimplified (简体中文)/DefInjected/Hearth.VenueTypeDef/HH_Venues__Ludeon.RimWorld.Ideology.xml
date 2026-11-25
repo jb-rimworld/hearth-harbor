@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Chapel.label>宾客礼拜堂</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>一个安静的房间，内设宾客祭坛，各种信仰的访客都会来此祈祷。宾客无需付费，但离开时会更加平静；带有一座精致祭坛和几排长椅的礼拜堂，是旅店的好邻居。白天始终开放，无需员工。</HH_Venue_Chapel.description>
+  <HH_Venue_Chapel.modExtensions.1.requirements.0.hint>各种信仰的访客都会在访客祭坛前祈祷。</HH_Venue_Chapel.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.0.label>一座访客祭坛</HH_Venue_Chapel.modExtensions.1.requirements.0.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.1.hint>至少两个座位，供停留片刻的人使用。</HH_Venue_Chapel.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.1.label>长椅或椅子</HH_Venue_Chapel.modExtensions.1.requirements.1.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.2.hint>一点绿意能让任何房间更宜人。</HH_Venue_Chapel.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.2.label>一盆盆栽</HH_Venue_Chapel.modExtensions.1.requirements.2.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.3.hint>光线充足的房间在天黑后显得更温馨。</HH_Venue_Chapel.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.3.label>一盏落地灯</HH_Venue_Chapel.modExtensions.1.requirements.3.label>
+</LanguageData>

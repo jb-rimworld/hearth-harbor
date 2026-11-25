@@ -2,4 +2,7 @@
 <LanguageData>
   <HH_Screening.label>noche de cine</HH_Screening.label>
   <HH_Screening.letterText>{ORGANIZER_labelShort} ha convencido a la colonia para una noche de cine. Todos los que se sienten frente a la pantalla ganarán recreo y un buen ánimo para la velada.</HH_Screening.letterText>
+  <HH_Screening.calledOffMessage>Se ha cancelado la noche de cine.</HH_Screening.calledOffMessage>
+  <HH_Screening.finishedMessage>La noche de cine ha terminado.</HH_Screening.finishedMessage>
+  <HH_Screening.letterTitle>Noche de cine</HH_Screening.letterTitle>
 </LanguageData>

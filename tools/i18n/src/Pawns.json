@@ -1,7 +1,11 @@
 {
  "keyed": {},
  "defs": {
+  "BackstoryDef/HH_Creator_HarbourTinkerer.title": "harbour tinkerer",
+  "BackstoryDef/HH_Creator_HarbourTinkerer.titleShort": "tinkerer",
   "BackstoryDef/HH_Creator_HarbourTinkerer.description": "[PAWN_nameDef] grew up between the cargo cranes of a small harbour town, taking apart whatever the dockworkers threw away and putting it back together a little better than before.\\n\\nThe innkeeper next door paid [PAWN_objective] in pie to fix the creaking doors, and [PAWN_pronoun] learned early that a warm room and a full plate turn strangers into friends.",
+  "BackstoryDef/HH_Creator_WanderingInnkeeper.title": "wandering innkeeper",
+  "BackstoryDef/HH_Creator_WanderingInnkeeper.titleShort": "innkeeper",
   "BackstoryDef/HH_Creator_WanderingInnkeeper.description": "[PAWN_nameDef] never stayed anywhere for long. With a toolbox, a battered recipe book and far too many plans, [PAWN_pronoun] wandered the rim building inns, banks and little infirmaries for whoever needed one - then handed over the keys and moved on.\\n\\nSettlers along the trade roads still tell of the stranger who fixed their roof, cooked them dinner and was gone before anyone could pay. Somewhere out there, [PAWN_pronoun] is still building something for someone else."
  }
 }

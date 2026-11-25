@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Venue_DrugLounge.label>Drogenlounge</HH_Venue_DrugLounge.label>
   <HH_Venue_DrugLounge.description>Ein schummriger Raum mit Sofas und einem Kassenbuch, das niemand liest. Gäste zahlen für eine Sitzung; sie nehmen nur, was ihre Ideologie erlaubt. Nachts geöffnet.</HH_Venue_DrugLounge.description>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>Gäste machen es sich auf weichen Sitzen bequem. Mindestens zwei.</HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>Sofas</HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>Etwas, um Dinge abzulegen.</HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>ein niedriger Tisch</HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>
 </LanguageData>

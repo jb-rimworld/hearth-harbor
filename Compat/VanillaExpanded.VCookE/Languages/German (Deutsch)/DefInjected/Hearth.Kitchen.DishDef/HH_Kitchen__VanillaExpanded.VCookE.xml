@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_CheeseFondue.label>Käsefondue</HH_Dish_CheeseFondue.label>
+  <HH_Dish_CheeseFondue.description>Ein Topf geschmolzener Käse und die Regel, dass zahlt, wer das Brot fallen lässt.</HH_Dish_CheeseFondue.description>
+  <HH_Dish_PumpkinAndCheeseGratin.label>Kürbis-Käse-Gratin</HH_Dish_PumpkinAndCheeseGratin.label>
+  <HH_Dish_PumpkinAndCheeseGratin.description>Orange, käsig und mit einer dünnen Schicht Gefahr dekoriert.</HH_Dish_PumpkinAndCheeseGratin.description>
+  <HH_Dish_FlourDumplingSoup.label>Mehlklößchen-Suppe</HH_Dish_FlourDumplingSoup.label>
+  <HH_Dish_FlourDumplingSoup.description>Klöße in Faustgröße, für Leute, die ihre Suppe mit Wumms mögen.</HH_Dish_FlourDumplingSoup.description>
+  <HH_Dish_CheeseOmelette.label>Käseomelett</HH_Dish_CheeseOmelette.label>
+  <HH_Dish_CheeseOmelette.description>Das Omelett, das sich für nichts entschuldigt und vor niemandem klappt.</HH_Dish_CheeseOmelette.description>
+  <HH_Dish_FruitGlazedRoast.label>Obstglasierter Braten</HH_Dish_FruitGlazedRoast.label>
+  <HH_Dish_FruitGlazedRoast.description>Klebrig, süß und mit Ofenhandschuhen und Gebeten zum Tisch getragen.</HH_Dish_FruitGlazedRoast.description>
+  <HH_Dish_CheeseFondue.inspiration>Vanilla Cooking Expanded</HH_Dish_CheeseFondue.inspiration>
+  <HH_Dish_CheeseOmelette.inspiration>Vanilla Cooking Expanded</HH_Dish_CheeseOmelette.inspiration>
+  <HH_Dish_FlourDumplingSoup.inspiration>Vanilla Cooking Expanded</HH_Dish_FlourDumplingSoup.inspiration>
+  <HH_Dish_FruitGlazedRoast.inspiration>Vanilla Cooking Expanded</HH_Dish_FruitGlazedRoast.inspiration>
+  <HH_Dish_PumpkinAndCheeseGratin.inspiration>Vanilla Cooking Expanded</HH_Dish_PumpkinAndCheeseGratin.inspiration>
+</LanguageData>

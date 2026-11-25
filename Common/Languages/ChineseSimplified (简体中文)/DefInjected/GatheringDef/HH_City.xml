@@ -2,4 +2,7 @@
 <LanguageData>
   <HH_Screening.label>电影之夜</HH_Screening.label>
   <HH_Screening.letterText>{ORGANIZER_labelShort}说服了殖民地举办一场电影之夜。凡是坐到屏幕前的人都会获得娱乐，并度过一个美好的夜晚。</HH_Screening.letterText>
+  <HH_Screening.calledOffMessage>电影之夜已被取消。</HH_Screening.calledOffMessage>
+  <HH_Screening.finishedMessage>电影之夜结束了。</HH_Screening.finishedMessage>
+  <HH_Screening.letterTitle>电影之夜</HH_Screening.letterTitle>
 </LanguageData>

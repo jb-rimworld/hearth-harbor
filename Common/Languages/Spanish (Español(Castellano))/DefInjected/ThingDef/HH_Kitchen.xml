@@ -46,4 +46,5 @@
   <HH_Station_DoughBench.description>Un banco pesado con la superficie espolvoreada de harina. Aquí se machacan arroz y maíz hasta hacer masa, lo cual sale más barato que la terapia.</HH_Station_DoughBench.description>
   <HH_Station_ColdStation.label>estación fría</HH_Station_ColdStation.label>
   <HH_Station_ColdStation.description>Una encimera refrigerada que mantiene crujientes las ensaladas y firmes los postres. Eléctrica.</HH_Station_ColdStation.description>
+  <HH_Cookbook.comps.CompUsable.useLabel>Estudiar libro de recetas</HH_Cookbook.comps.CompUsable.useLabel>
 </LanguageData>

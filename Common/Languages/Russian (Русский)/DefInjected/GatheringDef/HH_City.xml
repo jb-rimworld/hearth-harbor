@@ -2,4 +2,7 @@
 <LanguageData>
   <HH_Screening.label>киновечер</HH_Screening.label>
   <HH_Screening.letterText>{ORGANIZER_labelShort} уговорил колонию устроить киновечер. Каждый, кто сядет перед экраном, получит отдых и хорошее настроение на весь вечер.</HH_Screening.letterText>
+  <HH_Screening.calledOffMessage>Киновечер отменён.</HH_Screening.calledOffMessage>
+  <HH_Screening.finishedMessage>Киновечер закончился.</HH_Screening.finishedMessage>
+  <HH_Screening.letterTitle>Киновечер</HH_Screening.letterTitle>
 </LanguageData>

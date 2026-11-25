@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-  <SL_Asset_EmpireWarBond.label>제국 전쟁 채권</SL_Asset_EmpireWarBond.label>
-  <SL_Asset_EmpireWarBond.description>제국의 전쟁 자금을 조달하는 채권입니다. 전쟁이 승리로 끝나면 가격이 뛰고, 패배하면 근사한 액자 값 정도가 됩니다. 전쟁은 오래전부터 이어지고 있으며, 대부분 홍보 책자 속에서 벌어지고 있습니다.</SL_Asset_EmpireWarBond.description>
-  <SL_Asset_StockEmpire.label>IMPR, 제국 장엄 행사 주식회사</SL_Asset_StockEmpire.label>
-  <SL_Asset_StockEmpire.description>제국 의식을 맡은 회사입니다: 깃발, 트럼펫, 작은 왕관. 이익은 조금밖에 대접받지 못했다고 느끼는 귀족이 얼마나 많은지에 달려 있습니다.</SL_Asset_StockEmpire.description>
-</LanguageData>

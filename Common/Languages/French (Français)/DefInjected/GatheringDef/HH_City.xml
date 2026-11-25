@@ -2,4 +2,7 @@
 <LanguageData>
   <HH_Screening.label>soirée cinéma</HH_Screening.label>
   <HH_Screening.letterText>{ORGANIZER_labelShort} a convaincu la colonie d'organiser une soirée cinéma. Chacun qui s'assoit devant l'écran gagnera en loisirs et une bonne soirée d'humeur.</HH_Screening.letterText>
+  <HH_Screening.calledOffMessage>La soirée cinéma a été annulée.</HH_Screening.calledOffMessage>
+  <HH_Screening.finishedMessage>La soirée cinéma est terminée.</HH_Screening.finishedMessage>
+  <HH_Screening.letterTitle>Soirée cinéma</HH_Screening.letterTitle>
 </LanguageData>

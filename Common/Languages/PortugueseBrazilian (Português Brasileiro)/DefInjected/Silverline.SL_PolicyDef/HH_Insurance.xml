@@ -33,4 +33,70 @@
   <SL_LimbByLimb.label>Plano de Acidentes Membro a Membro</SL_LimbByLimb.label>
   <SL_LimbByLimb.description>Cada membro tem um preço. Nós o escrevemos. Está na última página, na Tabela de Membros.</SL_LimbByLimb.description>
   <SL_LimbByLimb.slogan>Cada membro tem um preço. Nós o escrevemos.</SL_LimbByLimb.slogan>
+  <SL_ActsOfStoryteller.benefitBare>Dinheiro pelo edifício destruído, descontada a sua parte.</SL_ActsOfStoryteller.benefitBare>
+  <SL_ActsOfStoryteller.benefitGood>Dinheiro, ou os materiais de construção entregues por cápsula.</SL_ActsOfStoryteller.benefitGood>
+  <SL_ActsOfStoryteller.benefitPremium>Valor de reposição, pago na hora por cápsula. Gesto de boa vontade uma vez por ano.</SL_ActsOfStoryteller.benefitPremium>
+  <SL_ActsOfStoryteller.coversText>Edifícios da sua colônia destruídos por mãos inimigas (ataques, cercos, mecanoides). Não por fogo, não por tempestades, não pelas suas próprias torretas.</SL_ActsOfStoryteller.coversText>
+  <SL_ActsOfStoryteller.riders.0.description>Paga 10 % a mais de cada perda (nunca mais do que a própria perda).</SL_ActsOfStoryteller.riders.0.description>
+  <SL_ActsOfStoryteller.riders.0.label>Isenção de desgaste</SL_ActsOfStoryteller.riders.0.label>
+  <SL_ActsOfStoryteller.riders.1.description>O departamento de sinistros analisa o seu sinistro um dia antes.</SL_ActsOfStoryteller.riders.1.description>
+  <SL_ActsOfStoryteller.riders.1.label>Papelada expressa</SL_ActsOfStoryteller.riders.1.label>
+  <SL_BlightBeGone.benefitBare>Dinheiro pela colheita perdida, descontada a sua parte.</SL_BlightBeGone.benefitBare>
+  <SL_BlightBeGone.benefitGood>Dinheiro, 80 % do valor da época.</SL_BlightBeGone.benefitGood>
+  <SL_BlightBeGone.benefitPremium>Valor integral da colheita, na hora.</SL_BlightBeGone.benefitPremium>
+  <SL_BlightBeGone.coversText>Suas plantações numa onda de frio ou precipitação tóxica.</SL_BlightBeGone.coversText>
+  <SL_BlightBeGone.riders.0.description>Paga 10 % a mais de cada perda (nunca mais do que a própria perda).</SL_BlightBeGone.riders.0.description>
+  <SL_BlightBeGone.riders.0.label>Isenção de desgaste</SL_BlightBeGone.riders.0.label>
+  <SL_ClosedForRepairs.benefitBare>Uma diária fixa, valesse o dia o que valesse.</SL_ClosedForRepairs.benefitBare>
+  <SL_ClosedForRepairs.benefitGood>A perda diária média, por até cinco dias.</SL_ClosedForRepairs.benefitGood>
+  <SL_ClosedForRepairs.benefitPremium>Perda diária por até 15 dias.</SL_ClosedForRepairs.benefitPremium>
+  <SL_ClosedForRepairs.coversText>Renda perdida após o fechamento do seu estabelecimento, informada pelos negócios do Hearth &amp; Harbor.</SL_ClosedForRepairs.coversText>
+  <SL_GoldenYears.benefitBare>A soma segurada, uma vez, quando o colono completa 60 anos.</SL_GoldenYears.benefitBare>
+  <SL_GoldenYears.benefitGood>0,4 % da soma segurada por dia, a partir dos 60.</SL_GoldenYears.benefitGood>
+  <SL_GoldenYears.benefitPremium>0,6 % da soma segurada por dia, a partir dos 60. Uma festa de aposentadoria é concebível.</SL_GoldenYears.benefitPremium>
+  <SL_GoldenYears.coversText>Um colono que ainda não tem 60 anos. A partir dos 60, a Clawback Mutual paga uma pensão diária (Mínimo Essencial: uma única quantia). O prêmio sobe quanto mais perto o colono estiver dos 60; ninguém pode comprar uma pensão aos 60 ou depois.</SL_GoldenYears.coversText>
+  <SL_ItWasntMe.benefitBare>Metade da indenização, paga à facção da parte lesada.</SL_ItWasntMe.benefitBare>
+  <SL_ItWasntMe.benefitGood>80 % da indenização. Perda de boa vontade pela metade.</SL_ItWasntMe.benefitGood>
+  <SL_ItWasntMe.benefitPremium>Tudo. O boato também é resolvido.</SL_ItWasntMe.benefitPremium>
+  <SL_ItWasntMe.coversText>Danos a hóspedes e às mercadorias de comerciantes pelos quais sua colônia é responsável. Informados pela estalagem, pela feira e pelo balcão de comércio.</SL_ItWasntMe.coversText>
+  <SL_ItWasntMe.riders.0.description>O departamento de sinistros analisa o seu sinistro um dia antes.</SL_ItWasntMe.riders.0.description>
+  <SL_ItWasntMe.riders.0.label>Papelada expressa</SL_ItWasntMe.riders.0.label>
+  <SL_LegalShield.benefitBare>50 % de cada multa.</SL_LegalShield.benefitBare>
+  <SL_LegalShield.benefitGood>80 % de cada multa, e um recurso é apresentado.</SL_LegalShield.benefitGood>
+  <SL_LegalShield.benefitPremium>A multa inteira. O advogado Brix lê seus formulários antes de você.</SL_LegalShield.benefitPremium>
+  <SL_LegalShield.coversText>Multas e penalidades de fiscais, problemas de licença e disputas de cobrança. Também reduz a chance de a Clawback Mutual negar seus sinistros e corrige seus formulários de cancelamento.</SL_LegalShield.coversText>
+  <SL_LegalShield.riders.0.description>O departamento de sinistros analisa o seu sinistro um dia antes.</SL_LegalShield.riders.0.description>
+  <SL_LegalShield.riders.0.label>Papelada expressa</SL_LegalShield.riders.0.label>
+  <SL_LimbByLimb.benefitBare>Linear pela Tabela de Membros, a partir de 20 % de invalidez. Perdas parciais não são pagas.</SL_LimbByLimb.benefitBare>
+  <SL_LimbByLimb.benefitGood>Progressão de 225 % a partir de 5 % de invalidez. Perdas parciais são pagas.</SL_LimbByLimb.benefitGood>
+  <SL_LimbByLimb.benefitPremium>Progressão de 350 % a partir de 1 % de invalidez. Cada dedo tem um preço.</SL_LimbByLimb.benefitPremium>
+  <SL_LimbByLimb.coversText>Um colono. Sequelas permanentes de acidentes pela Tabela de Membros e morte acidental (20 % da soma). Avaliado um quadrum após o acidente. Operações não são acidentes.</SL_LimbByLimb.coversText>
+  <SL_LimbByLimb.riders.0.description>Acidentes Premium do Premium pagam pela tabela de 500 % em vez de 350 %. Só importa para os grandes.</SL_LimbByLimb.riders.0.description>
+  <SL_LimbByLimb.riders.0.label>Progressão Plus (500 %)</SL_LimbByLimb.riders.0.label>
+  <SL_LimbByLimb.riders.1.description>A soma por morte acidental sobe de 20 % para 30 % da soma básica.</SL_LimbByLimb.riders.1.description>
+  <SL_LimbByLimb.riders.1.label>Reforço do benefício por morte</SL_LimbByLimb.riders.1.label>
+  <SL_MuffaloMachine.benefitBare>Dinheiro para reparos, metade do valor da época.</SL_MuffaloMachine.benefitBare>
+  <SL_MuffaloMachine.benefitGood>Dinheiro ou peças por cápsula, 80 % do valor da época.</SL_MuffaloMachine.benefitGood>
+  <SL_MuffaloMachine.benefitPremium>Valor de reposição, na hora. O drone de reboque é seu.</SL_MuffaloMachine.benefitPremium>
+  <SL_MuffaloMachine.coversText>Naves, cápsulas de queda e veículos destruídos por forças hostis. Partes biônicas são equipamentos e, em princípio, também deveriam estar aqui. Na prática: veja o Plano de Acidentes.</SL_MuffaloMachine.coversText>
+  <SL_MuffaloMachine.riders.0.description>Paga 10 % a mais de cada perda (nunca mais do que a própria perda).</SL_MuffaloMachine.riders.0.description>
+  <SL_MuffaloMachine.riders.0.label>Isenção de desgaste</SL_MuffaloMachine.riders.0.label>
+  <SL_RimHealth.benefitBare>10 de prata por colono acamado e dia, até 5 dias em 15.</SL_RimHealth.benefitBare>
+  <SL_RimHealth.benefitGood>15 de prata por colono acamado e dia, até 5 dias em 15.</SL_RimHealth.benefitGood>
+  <SL_RimHealth.benefitPremium>25 de prata por colono acamado e dia, até 5 dias em 15. A segunda opinião é grátis.</SL_RimHealth.benefitPremium>
+  <SL_RimHealth.coversText>Cada dia em que um colono fica acamado por uma doença ou ferimento que exige tratamento, mas no máximo 5 dias pagos por colono em quaisquer 15 dias (o teto da indenização hospitalar). Intoxicação alimentar é um acidente de culinária e conta mesmo assim.</SL_RimHealth.coversText>
+  <SL_RimHealth.riders.0.description>Paga 10 % a mais por cada dia de cama.</SL_RimHealth.riders.0.description>
+  <SL_RimHealth.riders.0.label>Hospitalidade hospitalar</SL_RimHealth.riders.0.label>
+  <SL_RoofOverHead.benefitBare>Dinheiro pelo edifício queimado, descontada a sua parte.</SL_RoofOverHead.benefitBare>
+  <SL_RoofOverHead.benefitGood>Dinheiro, ou materiais de construção por cápsula.</SL_RoofOverHead.benefitGood>
+  <SL_RoofOverHead.benefitPremium>Valor de reposição, na hora por cápsula. Cinzas não incluídas.</SL_RoofOverHead.benefitPremium>
+  <SL_RoofOverHead.coversText>Edifícios da sua colônia destruídos por fogo, explosões e tempestades. Incêndios e explosões causados pelo seu próprio pessoal são excluídos (§11).</SL_RoofOverHead.coversText>
+  <SL_RoofOverHead.riders.0.description>Paga 10 % a mais de cada perda (nunca mais do que a própria perda).</SL_RoofOverHead.riders.0.description>
+  <SL_RoofOverHead.riders.0.label>Isenção de desgaste</SL_RoofOverHead.riders.0.label>
+  <SL_RoofOverHead.riders.1.description>O departamento de sinistros analisa o seu sinistro um dia antes.</SL_RoofOverHead.riders.1.description>
+  <SL_RoofOverHead.riders.1.label>Papelada expressa</SL_RoofOverHead.riders.1.label>
+  <SL_Wanderlust.benefitBare>A soma por cabeça, só se alguém morrer na estrada.</SL_Wanderlust.benefitBare>
+  <SL_Wanderlust.benefitGood>Morte e partes do corpo perdidas pela Tabela de Membros.</SL_Wanderlust.benefitGood>
+  <SL_Wanderlust.benefitPremium>Tudo acima, e uma quantia fixa para cada ferimento.</SL_Wanderlust.benefitPremium>
+  <SL_Wanderlust.coversText>Colonos em caravanas. O Mínimo Essencial paga só uma morte, o Suficientemente Bom também partes do corpo perdidas, o Premium do Premium cada arranhão.</SL_Wanderlust.coversText>
 </LanguageData>

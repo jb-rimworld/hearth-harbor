@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_CheeseFondue.label>芝士火锅</HH_Dish_CheeseFondue.label>
+  <HH_Dish_CheeseFondue.description>一锅融化的奶酪，外加一条规矩：谁把面包掉进锅里，谁来买单。</HH_Dish_CheeseFondue.description>
+  <HH_Dish_PumpkinAndCheeseGratin.label>南瓜芝士焗菜</HH_Dish_PumpkinAndCheeseGratin.label>
+  <HH_Dish_PumpkinAndCheeseGratin.description>橙色、拉丝，表面覆着一层薄薄的危险。</HH_Dish_PumpkinAndCheeseGratin.description>
+  <HH_Dish_FlourDumplingSoup.label>面团饺子汤</HH_Dish_FlourDumplingSoup.label>
+  <HH_Dish_FlourDumplingSoup.description>拳头大小的面团饺子，适合偏爱有劲儿的汤的人。</HH_Dish_FlourDumplingSoup.description>
+  <HH_Dish_CheeseOmelette.label>芝士煎蛋卷</HH_Dish_CheeseOmelette.label>
+  <HH_Dish_CheeseOmelette.description>从不为任何事道歉，也从不迁就任何人的煎蛋卷。</HH_Dish_CheeseOmelette.description>
+  <HH_Dish_FruitGlazedRoast.label>水果釉烤肉</HH_Dish_FruitGlazedRoast.label>
+  <HH_Dish_FruitGlazedRoast.description>黏甜，戴着隔热手套、一路祈祷着端上桌。</HH_Dish_FruitGlazedRoast.description>
+  <HH_Dish_CheeseFondue.inspiration>Vanilla Cooking Expanded</HH_Dish_CheeseFondue.inspiration>
+  <HH_Dish_CheeseOmelette.inspiration>Vanilla Cooking Expanded</HH_Dish_CheeseOmelette.inspiration>
+  <HH_Dish_FlourDumplingSoup.inspiration>Vanilla Cooking Expanded</HH_Dish_FlourDumplingSoup.inspiration>
+  <HH_Dish_FruitGlazedRoast.inspiration>Vanilla Cooking Expanded</HH_Dish_FruitGlazedRoast.inspiration>
+  <HH_Dish_PumpkinAndCheeseGratin.inspiration>Vanilla Cooking Expanded</HH_Dish_PumpkinAndCheeseGratin.inspiration>
+</LanguageData>

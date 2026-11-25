@@ -4,4 +4,6 @@
   <HH_AccompanyGuest.verb>dělat společnost</HH_AccompanyGuest.verb>
   <HH_StaffFrontDesk.label>obsluhovat recepci</HH_StaffFrontDesk.label>
   <HH_StaffFrontDesk.verb>obsluhovat</HH_StaffFrontDesk.verb>
+  <HH_AccompanyGuest.gerund>dělat společnost</HH_AccompanyGuest.gerund>
+  <HH_StaffFrontDesk.gerund>sloužit na</HH_StaffFrontDesk.gerund>
 </LanguageData>

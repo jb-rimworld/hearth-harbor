@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_GrilledWholeFish.label>риба, запечена на грилі цілком</HH_Dish_GrilledWholeFish.label>
+  <HH_Dish_GrilledWholeFish.description>Ціла риба, трохи солі й жодних вибачень рибі.</HH_Dish_GrilledWholeFish.description>
+  <HH_Dish_FishStew.label>рибне рагу</HH_Dish_FishStew.label>
+  <HH_Dish_FishStew.description>Усе, що плаває, рано чи пізно опиняється тут.</HH_Dish_FishStew.description>
+  <HH_Dish_SmokedFishFillet.label>філе копченої риби</HH_Dish_SmokedFishFillet.label>
+  <HH_Dish_SmokedFishFillet.description>Філе дня, копчене, доки не забуло річку.</HH_Dish_SmokedFishFillet.description>
+  <HH_Dish_SashimiPlate.label>тарілка сасімі</HH_Dish_SashimiPlate.label>
+  <HH_Dish_SashimiPlate.description>Сира риба, тонко нарізана, і маленька моральна дилема.</HH_Dish_SashimiPlate.description>
+  <HH_Dish_FishTacos.label>рибні тако</HH_Dish_FishTacos.label>
+  <HH_Dish_FishTacos.description>Риба в коржику, доставлена колоністом, який біг усю дорогу.</HH_Dish_FishTacos.description>
+  <HH_Dish_FishStew.inspiration>Модифікації про рибу</HH_Dish_FishStew.inspiration>
+  <HH_Dish_FishTacos.inspiration>Модифікації про рибу</HH_Dish_FishTacos.inspiration>
+  <HH_Dish_GrilledWholeFish.inspiration>Модифікації про рибу</HH_Dish_GrilledWholeFish.inspiration>
+  <HH_Dish_SashimiPlate.inspiration>Модифікації про рибу</HH_Dish_SashimiPlate.inspiration>
+  <HH_Dish_SmokedFishFillet.inspiration>Модифікації про рибу</HH_Dish_SmokedFishFillet.inspiration>
+</LanguageData>

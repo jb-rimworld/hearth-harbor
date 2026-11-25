@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ImperialTreasury.label>Imperial Treasury</SL_ImperialTreasury.label>
+  <SL_ImperialTreasury.description>王座自己的钱庄。手续费低，空气里隐约有地板蜡的味道，信贷只对有头衔的人开放。取款被称作“拨付”，并附带一个小小的鞠躬。</SL_ImperialTreasury.description>
+  <SL_ImperialTreasury.slogan>每枚银币上都印着王座的侧影。请勿咬币。</SL_ImperialTreasury.slogan>
+  <SL_ImperialTreasury.perks.0>费用最低：取款 0.5%（最低 2）。</SL_ImperialTreasury.perks.0>
+  <SL_ImperialTreasury.perks.1>仅当殖民地中有人持有皇室头衔才可贷款；利息很低。</SL_ImperialTreasury.perks.1>
+  <SL_ImperialTreasury.perks.2>账户收益略低（指数 -10%）。</SL_ImperialTreasury.perks.2>
+</LanguageData>

@@ -9,4 +9,12 @@
   <SL_BlackLedger.label>The Black Ledger</SL_BlackLedger.label>
   <SL_BlackLedger.description>Žádné otázky, žádné formuláře, žádná jména. Půjčí komukoli bez ohledu na jeho skóre, za cenu. Občas některá kniha „zmizí“ i s částí vkladů.</SL_BlackLedger.description>
   <SL_BlackLedger.slogan>Neptáme se. Ty neříkáš. Úroky se přesto skládají.</SL_BlackLedger.slogan>
+  <SL_BlackLedger.perks.0>Půjčky ignorují vaše skóre (i vaše city).</SL_BlackLedger.perks.0>
+  <SL_BlackLedger.perks.1>Každý kvadrum hrozí s 1% pravděpodobností, že čtvrtina zůstatku bude „zabavena“.</SL_BlackLedger.perks.1>
+  <SL_BlackLedger.perks.2>Jen pro kolonie, které našly podsvětí.</SL_BlackLedger.perks.2>
+  <SL_Mutual.perks.0>Neutrální a férová: žádné triky, žádná překvapení.</SL_Mutual.perks.0>
+  <SL_Mutual.perks.1>Poplatky: 1 % za výběr (minimum 5), bankomat 2 + 1 %.</SL_Mutual.perks.1>
+  <SL_TooBigToFail.perks.0>Nejlepší výnos účtu mezi běžnými bankami (+10 % v exponentu).</SL_TooBigToFail.perks.0>
+  <SL_TooBigToFail.perks.1>Záchrana: jednou za herní rok dostane zákazník, který byl před deseti minutami Too Big To Fail a teď je v mínusu, bezúročnou půjčku na 60 dní (až 10 % maxima).</SL_TooBigToFail.perks.1>
+  <SL_TooBigToFail.perks.2>Poplatek za účet 6 stříbra za kvadrum.</SL_TooBigToFail.perks.2>
 </LanguageData>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Indulgences_NotAThing.label>不存在此事</HH_Indulgences_NotAThing.label>
+  <HH_Indulgences_NotAThing.description>这里从没有人想过出售宽恕。没有可买的东西，也没有可反对的理由。</HH_Indulgences_NotAThing.description>
+  <HH_Indulgences_Abhorrent.label>令人憎恶</HH_Indulgences_Abhorrent.label>
+  <HH_Indulgences_Abhorrent.description>宽恕不是商品。出售宽恕的人应被逐出神殿。</HH_Indulgences_Abhorrent.description>
+  <HH_Indulgences_Disapproved.label>不被认可</HH_Indulgences_Disapproved.label>
+  <HH_Indulgences_Disapproved.description>买赦免是一种寒酸的习惯。它确实有效，但没有人应该为此感到骄傲。</HH_Indulgences_Disapproved.description>
+  <HH_Indulgences_Accepted.label>可以接受</HH_Indulgences_Accepted.label>
+  <HH_Indulgences_Accepted.description>以合理的供奉换取合理的怜悯。价格写在牌子上。</HH_Indulgences_Accepted.description>
+  <HH_Indulgences_Sacred.label>神圣</HH_Indulgences_Sacred.label>
+  <HH_Indulgences_Sacred.description>缴纳应尽的份额是一种圣礼。信徒可享折扣，而廉价的良心本身就是一种义务。</HH_Indulgences_Sacred.description>
+  <HH_PaidAscension_NotAThing.label>不存在此事</HH_PaidAscension_NotAThing.label>
+  <HH_PaidAscension_NotAThing.description>身份只能靠挣得，绝不能买。没有可买的东西，也没有可反对的理由。</HH_PaidAscension_NotAThing.description>
+  <HH_PaidAscension_Abhorrent.label>令人憎恶</HH_PaidAscension_Abhorrent.label>
+  <HH_PaidAscension_Abhorrent.description>信仰不是待售品。出售身份的人早已失去了它。</HH_PaidAscension_Abhorrent.description>
+  <HH_PaidAscension_Disapproved.label>不被认可</HH_PaidAscension_Disapproved.label>
+  <HH_PaidAscension_Disapproved.description>买来的身份是空洞的身份。会众一眼就能看穿。</HH_PaidAscension_Disapproved.description>
+  <HH_PaidAscension_Accepted.label>可以接受</HH_PaidAscension_Accepted.label>
+  <HH_PaidAscension_Accepted.description>身份可以按标价购买，和其他任何有价值的东西一样。</HH_PaidAscension_Accepted.description>
+  <HH_PaidAscension_Sacred.label>神圣</HH_PaidAscension_Sacred.label>
+  <HH_PaidAscension_Sacred.description>阶梯即是信仰。每买下一级，就是攀上一级；下面的人仰望时都怀着敬意。</HH_PaidAscension_Sacred.description>
+  <HH_Indulgences_Abhorrent.comps.0.description>地图上有赎罪券出售</HH_Indulgences_Abhorrent.comps.0.description>
+  <HH_Indulgences_Sacred.comps.1.description>一个季度内未购买赎罪券</HH_Indulgences_Sacred.comps.1.description>
+  <HH_PaidAscension_Abhorrent.comps.0.description>地图上有官阶出售</HH_PaidAscension_Abhorrent.comps.0.description>
+  <HH_PaidAscension_Sacred.comps.0.description>官阶</HH_PaidAscension_Sacred.comps.0.description>
+</LanguageData>

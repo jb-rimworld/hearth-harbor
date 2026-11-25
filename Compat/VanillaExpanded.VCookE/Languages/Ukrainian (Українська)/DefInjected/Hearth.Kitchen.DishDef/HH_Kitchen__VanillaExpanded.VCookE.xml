@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_CheeseFondue.label>Сирне фондю</HH_Dish_CheeseFondue.label>
+  <HH_Dish_CheeseFondue.description>Горщик розтопленого сиру і правило: хто впустить хліб, той платить.</HH_Dish_CheeseFondue.description>
+  <HH_Dish_PumpkinAndCheeseGratin.label>Гарбузовий гратен із сиром</HH_Dish_PumpkinAndCheeseGratin.label>
+  <HH_Dish_PumpkinAndCheeseGratin.description>Помаранчевий, сирний і прикрашений тонким шаром небезпеки.</HH_Dish_PumpkinAndCheeseGratin.description>
+  <HH_Dish_FlourDumplingSoup.label>Суп із борошняними пельменями</HH_Dish_FlourDumplingSoup.label>
+  <HH_Dish_FlourDumplingSoup.description>Пельмені розміром з кулак, для тих, хто любить суп із характером.</HH_Dish_FlourDumplingSoup.description>
+  <HH_Dish_CheeseOmelette.label>Омлет із сиром</HH_Dish_CheeseOmelette.label>
+  <HH_Dish_CheeseOmelette.description>Омлет, який ні за що не перепрошує і ні перед ким не складається.</HH_Dish_CheeseOmelette.description>
+  <HH_Dish_FruitGlazedRoast.label>Печеня в фруктовій глазурі</HH_Dish_FruitGlazedRoast.label>
+  <HH_Dish_FruitGlazedRoast.description>Липка, солодка, і її несуть до столу з рукавицями і молитвами.</HH_Dish_FruitGlazedRoast.description>
+  <HH_Dish_CheeseFondue.inspiration>Vanilla Cooking Expanded</HH_Dish_CheeseFondue.inspiration>
+  <HH_Dish_CheeseOmelette.inspiration>Vanilla Cooking Expanded</HH_Dish_CheeseOmelette.inspiration>
+  <HH_Dish_FlourDumplingSoup.inspiration>Vanilla Cooking Expanded</HH_Dish_FlourDumplingSoup.inspiration>
+  <HH_Dish_FruitGlazedRoast.inspiration>Vanilla Cooking Expanded</HH_Dish_FruitGlazedRoast.inspiration>
+  <HH_Dish_PumpkinAndCheeseGratin.inspiration>Vanilla Cooking Expanded</HH_Dish_PumpkinAndCheeseGratin.inspiration>
+</LanguageData>

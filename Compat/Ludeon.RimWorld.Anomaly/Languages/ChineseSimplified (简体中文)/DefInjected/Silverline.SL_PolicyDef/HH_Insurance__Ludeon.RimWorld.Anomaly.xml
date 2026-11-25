@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_UnspeakableEvents.label>无法言说事件附加条款</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>针对保单措辞若没有律师在场便无法描述的损害。</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>有些事，宁可投保也不宜点名。</SL_UnspeakableEvents.slogan>
+  <SL_UnspeakableEvents.benefitBare>赔付现金，扣除您自担的部分。请勿描述该实体。</SL_UnspeakableEvents.benefitBare>
+  <SL_UnspeakableEvents.benefitGood>赔付现金，或通过空投舱送达材料。</SL_UnspeakableEvents.benefitGood>
+  <SL_UnspeakableEvents.benefitPremium>按重置价值即时赔付。专家已在线等候。</SL_UnspeakableEvents.benefitPremium>
+  <SL_UnspeakableEvents.coversText>被异常实体摧毁的建筑。</SL_UnspeakableEvents.coversText>
+</LanguageData>

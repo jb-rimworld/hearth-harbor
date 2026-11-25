@@ -33,4 +33,70 @@
   <SL_LimbByLimb.label>逐肢意外计划</SL_LimbByLimb.label>
   <SL_LimbByLimb.description>每一肢都有价格。我们把它写下来了，就在最后一页的肢体赔付表中。</SL_LimbByLimb.description>
   <SL_LimbByLimb.slogan>每一肢都有价格。我们把它写下来了。</SL_LimbByLimb.slogan>
+  <SL_ActsOfStoryteller.benefitBare>为被毁建筑赔付现金，扣除您自担的部分。</SL_ActsOfStoryteller.benefitBare>
+  <SL_ActsOfStoryteller.benefitGood>赔付现金，或通过空投舱送达建材。</SL_ActsOfStoryteller.benefitGood>
+  <SL_ActsOfStoryteller.benefitPremium>按重置价值即时通过空投舱赔付。每年一次善意补偿。</SL_ActsOfStoryteller.benefitPremium>
+  <SL_ActsOfStoryteller.coversText>您殖民地中被敌人摧毁的建筑（袭击、围攻、机械族）。不含火灾、风暴，也不含您自己的炮塔。</SL_ActsOfStoryteller.coversText>
+  <SL_ActsOfStoryteller.riders.0.description>每笔损失多赔 10%（不会超过损失本身）。</SL_ActsOfStoryteller.riders.0.description>
+  <SL_ActsOfStoryteller.riders.0.label>损耗豁免</SL_ActsOfStoryteller.riders.0.label>
+  <SL_ActsOfStoryteller.riders.1.description>理赔部提前一天处理您的理赔。</SL_ActsOfStoryteller.riders.1.description>
+  <SL_ActsOfStoryteller.riders.1.label>加急文书</SL_ActsOfStoryteller.riders.1.label>
+  <SL_BlightBeGone.benefitBare>为损失的收成赔付现金，扣除您自担的部分。</SL_BlightBeGone.benefitBare>
+  <SL_BlightBeGone.benefitGood>赔付现金，按时值的 80%。</SL_BlightBeGone.benefitGood>
+  <SL_BlightBeGone.benefitPremium>收成的全额价值，即时赔付。</SL_BlightBeGone.benefitPremium>
+  <SL_BlightBeGone.coversText>您的作物在寒潮或有毒沉降物中遭受的损失。</SL_BlightBeGone.coversText>
+  <SL_BlightBeGone.riders.0.description>每笔损失多赔 10%（不会超过损失本身）。</SL_BlightBeGone.riders.0.description>
+  <SL_BlightBeGone.riders.0.label>损耗豁免</SL_BlightBeGone.riders.0.label>
+  <SL_ClosedForRepairs.benefitBare>按固定天数赔付，不论那天值多少。</SL_ClosedForRepairs.benefitBare>
+  <SL_ClosedForRepairs.benefitGood>日均损失，最多五天。</SL_ClosedForRepairs.benefitGood>
+  <SL_ClosedForRepairs.benefitPremium>每日损失，最多 15 天。</SL_ClosedForRepairs.benefitPremium>
+  <SL_ClosedForRepairs.coversText>营业场所停业后的收入损失，由 Hearth &amp; Harbor 的各家店铺申报。</SL_ClosedForRepairs.coversText>
+  <SL_GoldenYears.benefitBare>殖民者满 60 岁时，一次性支付保险金额。</SL_GoldenYears.benefitBare>
+  <SL_GoldenYears.benefitGood>自 60 岁起，每天支付保险金额的 0.4%。</SL_GoldenYears.benefitGood>
+  <SL_GoldenYears.benefitPremium>自 60 岁起，每天支付保险金额的 0.6%。办场退休派对不是不可能。</SL_GoldenYears.benefitPremium>
+  <SL_GoldenYears.coversText>一名尚未满 60 岁的殖民者。自 60 岁起，Clawback Mutual 按日支付养老金（最低保障：一次性总付）。殖民者越接近 60 岁，保费越高；60 岁及以后无法购买养老金。</SL_GoldenYears.coversText>
+  <SL_ItWasntMe.benefitBare>赔偿金的一半，支付给受害方所属派系。</SL_ItWasntMe.benefitBare>
+  <SL_ItWasntMe.benefitGood>赔偿金的 80%。好感损失减半。</SL_ItWasntMe.benefitGood>
+  <SL_ItWasntMe.benefitPremium>全额赔付。连谣言也一并处理。</SL_ItWasntMe.benefitPremium>
+  <SL_ItWasntMe.coversText>您的殖民地需担责的客人和商贩货物损害。由客栈、市场和交易台申报。</SL_ItWasntMe.coversText>
+  <SL_ItWasntMe.riders.0.description>理赔部提前一天处理您的理赔。</SL_ItWasntMe.riders.0.description>
+  <SL_ItWasntMe.riders.0.label>加急文书</SL_ItWasntMe.riders.0.label>
+  <SL_LegalShield.benefitBare>每笔罚款的 50%。</SL_LegalShield.benefitBare>
+  <SL_LegalShield.benefitGood>每笔罚款的 80%，并提出申诉。</SL_LegalShield.benefitGood>
+  <SL_LegalShield.benefitPremium>全额罚款。Brix 律师会赶在您之前读您的表格。</SL_LegalShield.benefitPremium>
+  <SL_LegalShield.coversText>检查员开出的罚款和处罚、执照问题以及催收纠纷。同时降低 Clawback Mutual 拒赔的几率，并帮您修正退保表格。</SL_LegalShield.coversText>
+  <SL_LegalShield.riders.0.description>理赔部提前一天处理您的理赔。</SL_LegalShield.riders.0.description>
+  <SL_LegalShield.riders.0.label>加急文书</SL_LegalShield.riders.0.label>
+  <SL_LimbByLimb.benefitBare>按肢体赔付表线性赔付，自 20% 伤残起。部分损失不予赔付。</SL_LimbByLimb.benefitBare>
+  <SL_LimbByLimb.benefitGood>自 5% 伤残起，按 225% 累进赔付。部分损失也予赔付。</SL_LimbByLimb.benefitGood>
+  <SL_LimbByLimb.benefitPremium>自 1% 伤残起，按 350% 累进赔付。每根手指都有价码。</SL_LimbByLimb.benefitPremium>
+  <SL_LimbByLimb.coversText>一名殖民者。按肢体赔付表赔付意外造成的永久性后果，以及意外身故（金额的 20%）。事故发生一个季度后评定。手术不是意外。</SL_LimbByLimb.coversText>
+  <SL_LimbByLimb.riders.0.description>高端意外按 500% 的赔付表而非 350% 赔付。只对重大事故有意义。</SL_LimbByLimb.riders.0.description>
+  <SL_LimbByLimb.riders.0.label>累进加强版（500%）</SL_LimbByLimb.riders.0.label>
+  <SL_LimbByLimb.riders.1.description>意外身故金从基础金额的 20% 提高到 30%。</SL_LimbByLimb.riders.1.description>
+  <SL_LimbByLimb.riders.1.label>身故金加成</SL_LimbByLimb.riders.1.label>
+  <SL_MuffaloMachine.benefitBare>维修费，按时值的一半。</SL_MuffaloMachine.benefitBare>
+  <SL_MuffaloMachine.benefitGood>现金或通过空投舱送达零件，按时值的 80%。</SL_MuffaloMachine.benefitGood>
+  <SL_MuffaloMachine.benefitPremium>按重置价值即时赔付。拖车无人机归您。</SL_MuffaloMachine.benefitPremium>
+  <SL_MuffaloMachine.coversText>被敌对势力摧毁的穿梭机、空投舱和载具。仿生部件属于设备，原则上也应在此承保。实际操作：见逐肢意外计划。</SL_MuffaloMachine.coversText>
+  <SL_MuffaloMachine.riders.0.description>每笔损失多赔 10%（不会超过损失本身）。</SL_MuffaloMachine.riders.0.description>
+  <SL_MuffaloMachine.riders.0.label>损耗豁免</SL_MuffaloMachine.riders.0.label>
+  <SL_RimHealth.benefitBare>每名卧床殖民者每天 10 银币，每 15 天内最多 5 天。</SL_RimHealth.benefitBare>
+  <SL_RimHealth.benefitGood>每名卧床殖民者每天 15 银币，每 15 天内最多 5 天。</SL_RimHealth.benefitGood>
+  <SL_RimHealth.benefitPremium>每名卧床殖民者每天 25 银币，每 15 天内最多 5 天。第二诊疗意见免费。</SL_RimHealth.benefitPremium>
+  <SL_RimHealth.coversText>殖民者因需治疗的疾病或伤势卧床的每一天，但每名殖民者在任意 15 天内最多赔付 5 天（住院津贴上限）。食物中毒属于烹饪意外，照样算数。</SL_RimHealth.coversText>
+  <SL_RimHealth.riders.0.description>每个卧床日多赔 10%。</SL_RimHealth.riders.0.description>
+  <SL_RimHealth.riders.0.label>医院待客之道</SL_RimHealth.riders.0.label>
+  <SL_RoofOverHead.benefitBare>为烧毁的建筑赔付现金，扣除您自担的部分。</SL_RoofOverHead.benefitBare>
+  <SL_RoofOverHead.benefitGood>赔付现金，或通过空投舱送达建材。</SL_RoofOverHead.benefitGood>
+  <SL_RoofOverHead.benefitPremium>按重置价值即时通过空投舱赔付。骨灰不含在内。</SL_RoofOverHead.benefitPremium>
+  <SL_RoofOverHead.coversText>您殖民地中被火灾、爆炸和风暴摧毁的建筑。由您自己人引发的火灾和爆炸不在承保范围（第11条）。</SL_RoofOverHead.coversText>
+  <SL_RoofOverHead.riders.0.description>每笔损失多赔 10%（不会超过损失本身）。</SL_RoofOverHead.riders.0.description>
+  <SL_RoofOverHead.riders.0.label>损耗豁免</SL_RoofOverHead.riders.0.label>
+  <SL_RoofOverHead.riders.1.description>理赔部提前一天处理您的理赔。</SL_RoofOverHead.riders.1.description>
+  <SL_RoofOverHead.riders.1.label>加急文书</SL_RoofOverHead.riders.1.label>
+  <SL_Wanderlust.benefitBare>按人头赔付的金额，仅在有人死于路上时支付。</SL_Wanderlust.benefitBare>
+  <SL_Wanderlust.benefitGood>身故，以及按肢体赔付表赔付的失去部位。</SL_Wanderlust.benefitGood>
+  <SL_Wanderlust.benefitPremium>以上全部，外加每一处伤的固定金额。</SL_Wanderlust.benefitPremium>
+  <SL_Wanderlust.coversText>商队中的殖民者。最低保障只赔身故，够用就好另赔失去的部位，高端中的高端连每道擦伤都赔。</SL_Wanderlust.coversText>
 </LanguageData>

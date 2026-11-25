@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_TwistedMeatBao.label>뒤틀린 고기 바오</HH_Dish_TwistedMeatBao.label>
+  <HH_Dish_TwistedMeatBao.description>빵이 아주 살짝 꿈틀댄다. 속재료에게는 말하지 마라.</HH_Dish_TwistedMeatBao.description>
+  <HH_Dish_TwistedHotpot.label>뒤틀린 전골</HH_Dish_TwistedHotpot.label>
+  <HH_Dish_TwistedHotpot.description>혼자서 끓는다. 아무도 가스레인지를 켜지 않았다.</HH_Dish_TwistedHotpot.description>
+  <HH_Dish_TwistedHotpot.inspiration>중국 쓰촨</HH_Dish_TwistedHotpot.inspiration>
+  <HH_Dish_TwistedMeatBao.inspiration>중국 (찜)</HH_Dish_TwistedMeatBao.inspiration>
+</LanguageData>

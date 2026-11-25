@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_GlazedFruitTart.label>釉光水果挞</HH_Dish_GlazedFruitTart.label>
+  <HH_Dish_GlazedFruitTart.description>果多皮少的挞，比例正确。</HH_Dish_GlazedFruitTart.description>
+  <HH_Dish_PickledVegetableSalad.label>腌菜沙拉</HH_Dish_PickledVegetableSalad.label>
+  <HH_Dish_PickledVegetableSalad.description>腌得太狠，已经比殖民地的第一任领袖活得还久。</HH_Dish_PickledVegetableSalad.description>
+  <HH_Dish_HerbRoastedPotatoes.label>香草烤土豆</HH_Dish_HerbRoastedPotatoes.label>
+  <HH_Dish_HerbRoastedPotatoes.description>土豆去参加了一场花园派对，回来时还带了一株植物。</HH_Dish_HerbRoastedPotatoes.description>
+  <HH_Dish_BerryAndNutBreakfastBowl.label>莓果坚果早餐碗</HH_Dish_BerryAndNutBreakfastBowl.label>
+  <HH_Dish_BerryAndNutBreakfastBowl.description>脆口、健康，而且完全不是劫掠者点的那一样。</HH_Dish_BerryAndNutBreakfastBowl.description>
+  <HH_Dish_TeaSmokedMeat.label>茶熏肉</HH_Dish_TeaSmokedMeat.label>
+  <HH_Dish_TeaSmokedMeat.description>用茶来熏，毕竟肉也该放松一下吧。</HH_Dish_TeaSmokedMeat.description>
+  <HH_Dish_BerryAndNutBreakfastBowl.inspiration>Vanilla Plants Expanded</HH_Dish_BerryAndNutBreakfastBowl.inspiration>
+  <HH_Dish_GlazedFruitTart.inspiration>Vanilla Plants Expanded</HH_Dish_GlazedFruitTart.inspiration>
+  <HH_Dish_HerbRoastedPotatoes.inspiration>Vanilla Plants Expanded</HH_Dish_HerbRoastedPotatoes.inspiration>
+  <HH_Dish_PickledVegetableSalad.inspiration>Vanilla Plants Expanded</HH_Dish_PickledVegetableSalad.inspiration>
+  <HH_Dish_TeaSmokedMeat.inspiration>Vanilla Plants Expanded</HH_Dish_TeaSmokedMeat.inspiration>
+</LanguageData>

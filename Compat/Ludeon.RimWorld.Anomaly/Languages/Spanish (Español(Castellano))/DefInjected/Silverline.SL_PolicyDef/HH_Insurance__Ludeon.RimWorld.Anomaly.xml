@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_UnspeakableEvents.label>Anexo de sucesos innombrables</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>Para daños que el texto de la póliza no puede describir sin un abogado en la sala.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>Algunas cosas están mejor aseguradas que nombradas.</SL_UnspeakableEvents.slogan>
+  <SL_UnspeakableEvents.benefitBare>Dinero, una vez descontada tu parte. Por favor, no describas a la entidad.</SL_UnspeakableEvents.benefitBare>
+  <SL_UnspeakableEvents.benefitGood>Dinero o materiales en cápsula.</SL_UnspeakableEvents.benefitGood>
+  <SL_UnspeakableEvents.benefitPremium>Valor de reposición, al instante. Hay un especialista al teléfono.</SL_UnspeakableEvents.benefitPremium>
+  <SL_UnspeakableEvents.coversText>Edificios destruidos por entidades anómalas.</SL_UnspeakableEvents.coversText>
+</LanguageData>

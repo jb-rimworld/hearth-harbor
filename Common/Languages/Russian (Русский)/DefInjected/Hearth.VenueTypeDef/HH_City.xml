@@ -6,4 +6,28 @@
   <HH_Venue_Salon.description>Комната с креслами для салона. Гости платят за стрижку, новую укладку, окрашивание или, при нужной идеологии, татуировку; работу выполняет колонист с трудовым типом «обслуживание». Без того, кто обслуживает, салон закрыт.</HH_Venue_Salon.description>
   <HH_Venue_Gallery.label>галерея</HH_Venue_Gallery.label>
   <HH_Venue_Gallery.description>Комната, полная скульптур, развешанных при хорошем свете. Гости платят небольшой входной взнос и проходят мимо работ одну за другой; чем красивее искусство, тем довольнее они уходят. Нужно несколько произведений искусства в комнате.</HH_Venue_Gallery.description>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.hint>Фильм идёт на проекционном экране с питанием.</HH_Venue_Cinema.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.label>проекционный экран</HH_Venue_Cinema.modExtensions.0.requirements.0.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.hint>Места перед экраном: столько, сколько требует настройка «Городская жизнь» — «Нужно мест».</HH_Venue_Cinema.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.label>места лицом к экрану</HH_Venue_Cinema.modExtensions.0.requirements.1.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.hint>Нет питания — нет кино.</HH_Venue_Cinema.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.label>питание для проектора</HH_Venue_Cinema.modExtensions.0.requirements.2.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.hint>Стойка у входа придаёт нужный вид.</HH_Venue_Cinema.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.label>билетная стойка</HH_Venue_Cinema.modExtensions.0.requirements.3.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.hint>Закуски и напитки к фильму, продаются без персонала.</HH_Venue_Cinema.modExtensions.0.requirements.4.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.label>торговый автомат</HH_Venue_Cinema.modExtensions.0.requirements.4.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.hint>Скульптуры в комнате: столько, сколько требует настройка «Городская жизнь» — «Нужно произведений». Художники делают их на арт-верстаке.</HH_Venue_Gallery.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.label>произведения искусства</HH_Venue_Gallery.modExtensions.0.requirements.0.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.hint>Посетители любят присесть перед лучшим экспонатом.</HH_Venue_Gallery.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.label>скамья для осмотра</HH_Venue_Gallery.modExtensions.0.requirements.1.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.hint>Хороший свет делает комнату уютной с наступлением темноты.</HH_Venue_Gallery.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.label>торшер</HH_Venue_Gallery.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.hint>Стрижки, укладки и окрашивание делают в кресле салона.</HH_Venue_Salon.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.label>кресло салона</HH_Venue_Salon.modExtensions.0.requirements.0.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.hint>Работу делает колонист с типом работы «Обслуживание».</HH_Venue_Salon.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.label>стилист (работа «Обслуживание»)</HH_Venue_Salon.modExtensions.0.requirements.1.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.hint>Гости, ждущие своей очереди, любят сидеть.</HH_Venue_Salon.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.label>сиденья для ожидающих гостей</HH_Venue_Salon.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.hint>Хороший свет делает комнату уютной с наступлением темноты.</HH_Venue_Salon.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.label>торшер</HH_Venue_Salon.modExtensions.0.requirements.3.label>
 </LanguageData>

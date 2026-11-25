@@ -6,4 +6,37 @@
   <SL_ClaimForm_Person.label>formulaire de réclamation personnelle</SL_ClaimForm_Person.label>
   <SL_ClaimForm_Property.description>Formulaire B-4 pour bâtiments, véhicules et cultures détruits : ce qui s'est passé, la gravité, qui l'a vu et comment vous souhaitez être indemnisé.</SL_ClaimForm_Property.description>
   <SL_ClaimForm_Property.label>formulaire de réclamation de biens</SL_ClaimForm_Property.label>
+  <SL_ClaimForm_Money.fields.0.description>Cosmétique.</SL_ClaimForm_Money.fields.0.description>
+  <SL_ClaimForm_Money.fields.0.label>Cause</SL_ClaimForm_Money.fields.0.label>
+  <SL_ClaimForm_Money.fields.0.options.0.label>Inspection</SL_ClaimForm_Money.fields.0.options.0.label>
+  <SL_ClaimForm_Money.fields.0.options.1.label>Invité ou marchand</SL_ClaimForm_Money.fields.0.options.1.label>
+  <SL_ClaimForm_Money.fields.0.options.2.label>Malentendu</SL_ClaimForm_Money.fields.0.options.2.label>
+  <SL_ClaimForm_Money.fields.0.options.3.label>Autre</SL_ClaimForm_Money.fields.0.options.3.label>
+  <SL_ClaimForm_Money.fields.1.description>Un colon qui peut le confirmer.</SL_ClaimForm_Money.fields.1.description>
+  <SL_ClaimForm_Money.fields.1.label>Témoin</SL_ClaimForm_Money.fields.1.label>
+  <SL_ClaimForm_Person.fields.0.description>Comment c'est arrivé. Cosmétique, comme la plupart du formulaire.</SL_ClaimForm_Person.fields.0.description>
+  <SL_ClaimForm_Person.fields.0.label>Circonstances</SL_ClaimForm_Person.fields.0.label>
+  <SL_ClaimForm_Person.fields.0.options.0.label>Combat</SL_ClaimForm_Person.fields.0.options.0.label>
+  <SL_ClaimForm_Person.fields.0.options.1.label>Accident du travail</SL_ClaimForm_Person.fields.0.options.1.label>
+  <SL_ClaimForm_Person.fields.0.options.2.label>Animal</SL_ClaimForm_Person.fields.0.options.2.label>
+  <SL_ClaimForm_Person.fields.0.options.3.label>Maladie</SL_ClaimForm_Person.fields.0.options.3.label>
+  <SL_ClaimForm_Person.fields.0.options.4.label>Autre</SL_ClaimForm_Person.fields.0.options.4.label>
+  <SL_ClaimForm_Person.fields.1.description>Un colon qui l'a vu.</SL_ClaimForm_Person.fields.1.description>
+  <SL_ClaimForm_Person.fields.1.label>Témoin</SL_ClaimForm_Person.fields.1.label>
+  <SL_ClaimForm_Property.fields.0.description>Clawback Mutual l'enregistre, le lit, puis décide comme toujours.</SL_ClaimForm_Property.fields.0.description>
+  <SL_ClaimForm_Property.fields.0.label>Que s'est-il passé ?</SL_ClaimForm_Property.fields.0.label>
+  <SL_ClaimForm_Property.fields.0.options.0.label>Raid ou siège</SL_ClaimForm_Property.fields.0.options.0.label>
+  <SL_ClaimForm_Property.fields.0.options.1.label>Incendie ou explosion</SL_ClaimForm_Property.fields.0.options.1.label>
+  <SL_ClaimForm_Property.fields.0.options.2.label>Foudre ou intempéries</SL_ClaimForm_Property.fields.0.options.2.label>
+  <SL_ClaimForm_Property.fields.0.options.3.label>Accident</SL_ClaimForm_Property.fields.0.options.3.label>
+  <SL_ClaimForm_Property.fields.0.options.4.label>Autre chose</SL_ClaimForm_Property.fields.0.options.4.label>
+  <SL_ClaimForm_Property.fields.1.description>Mineur, majeur ou total. L'expert ne regardera pas.</SL_ClaimForm_Property.fields.1.description>
+  <SL_ClaimForm_Property.fields.1.label>Étendue des dégâts</SL_ClaimForm_Property.fields.1.label>
+  <SL_ClaimForm_Property.fields.1.options.0.label>Mineurs</SL_ClaimForm_Property.fields.1.options.0.label>
+  <SL_ClaimForm_Property.fields.1.options.1.label>Majeurs</SL_ClaimForm_Property.fields.1.options.1.label>
+  <SL_ClaimForm_Property.fields.1.options.2.label>Perte totale</SL_ClaimForm_Property.fields.1.options.2.label>
+  <SL_ClaimForm_Property.fields.2.description>Un colon qui l'a vu. Sa déclaration est jointe au formulaire.</SL_ClaimForm_Property.fields.2.description>
+  <SL_ClaimForm_Property.fields.2.label>Témoin</SL_ClaimForm_Property.fields.2.label>
+  <SL_ClaimForm_Property.fields.3.description>De l'argent par la voie habituelle, ou les matériaux de construction par capsule de largage (Suffisant et Premium seulement). C'est le seul champ qui compte.</SL_ClaimForm_Property.fields.3.description>
+  <SL_ClaimForm_Property.fields.3.label>Comment souhaitez-vous être payé ?</SL_ClaimForm_Property.fields.3.label>
 </LanguageData>

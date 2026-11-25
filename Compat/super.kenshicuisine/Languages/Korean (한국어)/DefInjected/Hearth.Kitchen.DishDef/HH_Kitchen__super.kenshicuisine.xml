@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_StrawFlourFlatbread.label>짚가루 납작빵</HH_Dish_StrawFlourFlatbread.label>
+  <HH_Dish_StrawFlourFlatbread.description>납작하고 솔직하며 살짝 모래가 씹힌다. 출신지인 사막을 닮았다.</HH_Dish_StrawFlourFlatbread.description>
+  <HH_Dish_CactusFruitSalad.label>선인장 열매 샐러드</HH_Dish_CactusFruitSalad.label>
+  <HH_Dish_CactusFruitSalad.description>달콤하고 가시가 돋쳐 있다. 가장 친한 친구와 꼭 닮았다.</HH_Dish_CactusFruitSalad.description>
+  <HH_Dish_GreenfruitStew.label>녹과일 스튜</HH_Dish_GreenfruitStew.label>
+  <HH_Dish_GreenfruitStew.description>너무 푸른 나머지 머스팔로가 기분 상한 스튜.</HH_Dish_GreenfruitStew.description>
+  <HH_Dish_StrawflourDumplings.label>짚가루 만두</HH_Dish_StrawflourDumplings.label>
+  <HH_Dish_StrawflourDumplings.description>황무지에서 빚은 만두. 속에 든 것은 한때 고기였을지도 모른다.</HH_Dish_StrawflourDumplings.description>
+  <HH_Dish_DesertBreadAndBeer.label>사막 빵과 맥주</HH_Dish_DesertBreadAndBeer.label>
+  <HH_Dish_DesertBreadAndBeer.description>액체와 고체, 올바른 순서로 즐기는 아침 식사.</HH_Dish_DesertBreadAndBeer.description>
+  <HH_Dish_CactusFruitSalad.inspiration>Kenshi Cuisine</HH_Dish_CactusFruitSalad.inspiration>
+  <HH_Dish_DesertBreadAndBeer.inspiration>Kenshi Cuisine</HH_Dish_DesertBreadAndBeer.inspiration>
+  <HH_Dish_GreenfruitStew.inspiration>Kenshi Cuisine</HH_Dish_GreenfruitStew.inspiration>
+  <HH_Dish_StrawFlourFlatbread.inspiration>Kenshi Cuisine</HH_Dish_StrawFlourFlatbread.inspiration>
+  <HH_Dish_StrawflourDumplings.inspiration>Kenshi Cuisine</HH_Dish_StrawflourDumplings.inspiration>
+</LanguageData>

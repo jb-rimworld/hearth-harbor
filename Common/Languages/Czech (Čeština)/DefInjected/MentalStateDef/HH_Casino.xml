@@ -4,4 +4,5 @@
   <HH_GamblingSpree.beginLetterLabel>hazardní záchvat</HH_GamblingSpree.beginLetterLabel>
   <HH_GamblingSpree.beginLetter>{0} se od stolů už nemůže odtrhnout a upadl do hazardního záchvatu, ignoruje každé pravidlo zásad pro drogy.</HH_GamblingSpree.beginLetter>
   <HH_GamblingSpree.baseInspectLine>Duševní stav: hazardní záchvat</HH_GamblingSpree.baseInspectLine>
+  <HH_GamblingSpree.recoveryMessage>{0} se vzpamatoval z hráčské horečky.</HH_GamblingSpree.recoveryMessage>
 </LanguageData>

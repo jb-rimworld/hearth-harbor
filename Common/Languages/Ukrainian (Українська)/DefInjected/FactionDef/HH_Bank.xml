@@ -4,4 +4,5 @@
   <SL_CollectionsAgency.description>Агенція стягнення боргів. Ввічлива, доки не перестає бути такою.</SL_CollectionsAgency.description>
   <SL_CollectionsAgency.pawnsPlural>агенти з повернення боргів</SL_CollectionsAgency.pawnsPlural>
   <SL_CollectionsAgency.fixedName>Rim Recovery Partners</SL_CollectionsAgency.fixedName>
+  <SL_CollectionsAgency.pawnSingular>агент зі стягнення</SL_CollectionsAgency.pawnSingular>
 </LanguageData>

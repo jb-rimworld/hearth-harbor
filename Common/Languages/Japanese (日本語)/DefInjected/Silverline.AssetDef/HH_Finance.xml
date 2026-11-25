@@ -26,4 +26,17 @@
   <SL_Asset_NftThrumbos.description>スラムボの絵のコレクション。それぞれがユニークで、それぞれが少しずつ似ています。あなたは絵の絵の領収書を所有しています。買い手はゆっくり現れ、値引きを求めます。</SL_Asset_NftThrumbos.description>
   <SL_Asset_NftMuffalo.label>所有証明書：マフェローの絵</SL_Asset_NftMuffalo.label>
   <SL_Asset_NftMuffalo.description>マフェローの絵の所有証明書。絵はどこかに保管されています。証明書はあなたのアカウントに保管されています。どちらもマフェローの匂いはしません。</SL_Asset_NftMuffalo.description>
+  <SL_Asset_GrowthFund.tagline>当社の運用者は市場に勝ちます（どの市場かは申し上げておりません）。</SL_Asset_GrowthFund.tagline>
+  <SL_Asset_Index.tagline>すべてを持ち、何も理解しない。</SL_Asset_Index.tagline>
+  <SL_Asset_Mattress.tagline>あなたのお金は安全です*。*約款が適用されます。</SL_Asset_Mattress.tagline>
+  <SL_Asset_MemeBoomalope.tagline>設計からして乱高下、性質からして可燃性。</SL_Asset_MemeBoomalope.tagline>
+  <SL_Asset_MemeMuffalo.tagline>モー。これがホワイトペーパーです。</SL_Asset_MemeMuffalo.tagline>
+  <SL_Asset_MemeThrumbo.tagline>月まで、徒歩で、ゆっくりと。</SL_Asset_MemeThrumbo.tagline>
+  <SL_Asset_NftMuffalo.tagline>あなたが持つのは、絵のアイデアです。</SL_Asset_NftMuffalo.tagline>
+  <SL_Asset_NftThrumbos.tagline>唯一無二。みんなのと同じように。</SL_Asset_NftThrumbos.tagline>
+  <SL_Asset_OutlanderBond.tagline>槍を持つ人々にお金を貸そう！</SL_Asset_OutlanderBond.tagline>
+  <SL_Asset_RimCoin.tagline>数学を信じよう。取引所は信じるな。</SL_Asset_RimCoin.tagline>
+  <SL_Asset_StockColony.tagline>おもてなし、ただし四半期決算で。</SL_Asset_StockColony.tagline>
+  <SL_Asset_StockMicaton.tagline>四半期の数字、四半期の感情。</SL_Asset_StockMicaton.tagline>
+  <SL_Asset_StockTribal.tagline>あたたかく、地元密着で、ちょっと煙たい。</SL_Asset_StockTribal.tagline>
 </LanguageData>

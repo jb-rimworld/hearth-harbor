@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Creator_HarbourTinkerer.description>[PAWN_nameDef] a grandi entre les grues d'un petit port, à démonter tout ce que les dockers jetaient pour le remonter un peu mieux qu'avant.\n\nL'aubergiste d'à côté payait [PAWN_objective] en tourte pour réparer les portes qui grinçaient, et [PAWN_pronoun] a vite compris qu'une pièce chaude et une assiette pleine transforment les inconnus en amis.</HH_Creator_HarbourTinkerer.description>
   <HH_Creator_WanderingInnkeeper.description>[PAWN_nameDef] ne s'attardait jamais nulle part. Avec une boîte à outils, un livre de recettes cabossé et bien trop de projets, [PAWN_pronoun] parcourait la périphérie pour bâtir auberges, banques et petits dispensaires à ceux qui en avaient besoin, puis remettait les clés et repartait.\n\nLes habitants des routes commerciales racontent encore l'étranger qui a réparé leur toit, cuisiné leur dîner et disparu avant qu'on puisse le payer. Quelque part là-bas, [PAWN_pronoun] construit encore quelque chose pour quelqu'un d'autre.</HH_Creator_WanderingInnkeeper.description>
+  <HH_Creator_HarbourTinkerer.title>bricoleur du port</HH_Creator_HarbourTinkerer.title>
+  <HH_Creator_HarbourTinkerer.titleShort>bricoleur</HH_Creator_HarbourTinkerer.titleShort>
+  <HH_Creator_WanderingInnkeeper.title>aubergiste itinérant</HH_Creator_WanderingInnkeeper.title>
+  <HH_Creator_WanderingInnkeeper.titleShort>aubergiste</HH_Creator_WanderingInnkeeper.titleShort>
 </LanguageData>

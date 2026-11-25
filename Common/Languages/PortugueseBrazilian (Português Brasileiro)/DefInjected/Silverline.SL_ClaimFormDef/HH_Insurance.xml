@@ -6,4 +6,37 @@
   <SL_ClaimForm_Person.label>formulário de sinistro pessoal</SL_ClaimForm_Person.label>
   <SL_ClaimForm_Property.description>Formulário B-4 para edifícios, veículos e plantações destruídos: o que aconteceu, a gravidade, quem viu e como você quer ser pago.</SL_ClaimForm_Property.description>
   <SL_ClaimForm_Property.label>formulário de sinistro patrimonial</SL_ClaimForm_Property.label>
+  <SL_ClaimForm_Money.fields.0.description>Cosmético.</SL_ClaimForm_Money.fields.0.description>
+  <SL_ClaimForm_Money.fields.0.label>Causa</SL_ClaimForm_Money.fields.0.label>
+  <SL_ClaimForm_Money.fields.0.options.0.label>Inspeção</SL_ClaimForm_Money.fields.0.options.0.label>
+  <SL_ClaimForm_Money.fields.0.options.1.label>Hóspede ou comerciante</SL_ClaimForm_Money.fields.0.options.1.label>
+  <SL_ClaimForm_Money.fields.0.options.2.label>Mal-entendido</SL_ClaimForm_Money.fields.0.options.2.label>
+  <SL_ClaimForm_Money.fields.0.options.3.label>Outro</SL_ClaimForm_Money.fields.0.options.3.label>
+  <SL_ClaimForm_Money.fields.1.description>Um colono que possa confirmar.</SL_ClaimForm_Money.fields.1.description>
+  <SL_ClaimForm_Money.fields.1.label>Testemunha</SL_ClaimForm_Money.fields.1.label>
+  <SL_ClaimForm_Person.fields.0.description>Como aconteceu. Cosmético, como a maior parte do formulário.</SL_ClaimForm_Person.fields.0.description>
+  <SL_ClaimForm_Person.fields.0.label>Circunstâncias</SL_ClaimForm_Person.fields.0.label>
+  <SL_ClaimForm_Person.fields.0.options.0.label>Combate</SL_ClaimForm_Person.fields.0.options.0.label>
+  <SL_ClaimForm_Person.fields.0.options.1.label>Acidente de trabalho</SL_ClaimForm_Person.fields.0.options.1.label>
+  <SL_ClaimForm_Person.fields.0.options.2.label>Animal</SL_ClaimForm_Person.fields.0.options.2.label>
+  <SL_ClaimForm_Person.fields.0.options.3.label>Doença</SL_ClaimForm_Person.fields.0.options.3.label>
+  <SL_ClaimForm_Person.fields.0.options.4.label>Outro</SL_ClaimForm_Person.fields.0.options.4.label>
+  <SL_ClaimForm_Person.fields.1.description>Um colono que viu.</SL_ClaimForm_Person.fields.1.description>
+  <SL_ClaimForm_Person.fields.1.label>Testemunha</SL_ClaimForm_Person.fields.1.label>
+  <SL_ClaimForm_Property.fields.0.description>A Clawback Mutual arquiva, lê e depois decide como sempre.</SL_ClaimForm_Property.fields.0.description>
+  <SL_ClaimForm_Property.fields.0.label>O que aconteceu?</SL_ClaimForm_Property.fields.0.label>
+  <SL_ClaimForm_Property.fields.0.options.0.label>Ataque ou cerco</SL_ClaimForm_Property.fields.0.options.0.label>
+  <SL_ClaimForm_Property.fields.0.options.1.label>Incêndio ou explosão</SL_ClaimForm_Property.fields.0.options.1.label>
+  <SL_ClaimForm_Property.fields.0.options.2.label>Raio ou clima</SL_ClaimForm_Property.fields.0.options.2.label>
+  <SL_ClaimForm_Property.fields.0.options.3.label>Acidente</SL_ClaimForm_Property.fields.0.options.3.label>
+  <SL_ClaimForm_Property.fields.0.options.4.label>Outra coisa</SL_ClaimForm_Property.fields.0.options.4.label>
+  <SL_ClaimForm_Property.fields.1.description>Leve, grave ou total. O avaliador não vai olhar.</SL_ClaimForm_Property.fields.1.description>
+  <SL_ClaimForm_Property.fields.1.label>Extensão do dano</SL_ClaimForm_Property.fields.1.label>
+  <SL_ClaimForm_Property.fields.1.options.0.label>Leve</SL_ClaimForm_Property.fields.1.options.0.label>
+  <SL_ClaimForm_Property.fields.1.options.1.label>Grave</SL_ClaimForm_Property.fields.1.options.1.label>
+  <SL_ClaimForm_Property.fields.1.options.2.label>Perda total</SL_ClaimForm_Property.fields.1.options.2.label>
+  <SL_ClaimForm_Property.fields.2.description>Um colono que viu. O depoimento dele é anexado ao formulário.</SL_ClaimForm_Property.fields.2.description>
+  <SL_ClaimForm_Property.fields.2.label>Testemunha</SL_ClaimForm_Property.fields.2.label>
+  <SL_ClaimForm_Property.fields.3.description>Prata pela via habitual, ou os materiais de construção por cápsula de queda (só Suficientemente Bom e Premium do Premium). Este é o único campo que conta.</SL_ClaimForm_Property.fields.3.description>
+  <SL_ClaimForm_Property.fields.3.label>Como você gostaria de ser pago?</SL_ClaimForm_Property.fields.3.label>
 </LanguageData>

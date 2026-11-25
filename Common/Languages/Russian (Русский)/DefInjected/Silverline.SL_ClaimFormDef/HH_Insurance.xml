@@ -6,4 +6,37 @@
   <SL_ClaimForm_Person.label>личная форма претензии</SL_ClaimForm_Person.label>
   <SL_ClaimForm_Property.description>Форма И-4 для разрушенных построек, транспорта и посевов: что случилось, насколько серьёзно, кто видел и как вы хотите получить выплату.</SL_ClaimForm_Property.description>
   <SL_ClaimForm_Property.label>форма претензии на имущество</SL_ClaimForm_Property.label>
+  <SL_ClaimForm_Money.fields.0.description>Для галочки.</SL_ClaimForm_Money.fields.0.description>
+  <SL_ClaimForm_Money.fields.0.label>Причина</SL_ClaimForm_Money.fields.0.label>
+  <SL_ClaimForm_Money.fields.0.options.0.label>Проверка</SL_ClaimForm_Money.fields.0.options.0.label>
+  <SL_ClaimForm_Money.fields.0.options.1.label>Гость или торговец</SL_ClaimForm_Money.fields.0.options.1.label>
+  <SL_ClaimForm_Money.fields.0.options.2.label>Недоразумение</SL_ClaimForm_Money.fields.0.options.2.label>
+  <SL_ClaimForm_Money.fields.0.options.3.label>Другое</SL_ClaimForm_Money.fields.0.options.3.label>
+  <SL_ClaimForm_Money.fields.1.description>Колонист, который может это подтвердить.</SL_ClaimForm_Money.fields.1.description>
+  <SL_ClaimForm_Money.fields.1.label>Свидетель</SL_ClaimForm_Money.fields.1.label>
+  <SL_ClaimForm_Person.fields.0.description>Как это случилось. Для галочки, как и большая часть формы.</SL_ClaimForm_Person.fields.0.description>
+  <SL_ClaimForm_Person.fields.0.label>Обстоятельства</SL_ClaimForm_Person.fields.0.label>
+  <SL_ClaimForm_Person.fields.0.options.0.label>Бой</SL_ClaimForm_Person.fields.0.options.0.label>
+  <SL_ClaimForm_Person.fields.0.options.1.label>Несчастный случай на работе</SL_ClaimForm_Person.fields.0.options.1.label>
+  <SL_ClaimForm_Person.fields.0.options.2.label>Животное</SL_ClaimForm_Person.fields.0.options.2.label>
+  <SL_ClaimForm_Person.fields.0.options.3.label>Болезнь</SL_ClaimForm_Person.fields.0.options.3.label>
+  <SL_ClaimForm_Person.fields.0.options.4.label>Другое</SL_ClaimForm_Person.fields.0.options.4.label>
+  <SL_ClaimForm_Person.fields.1.description>Колонист, который это видел.</SL_ClaimForm_Person.fields.1.description>
+  <SL_ClaimForm_Person.fields.1.label>Свидетель</SL_ClaimForm_Person.fields.1.label>
+  <SL_ClaimForm_Property.fields.0.description>Clawback Mutual подшивает её, читает её и затем решает, как всегда.</SL_ClaimForm_Property.fields.0.description>
+  <SL_ClaimForm_Property.fields.0.label>Что произошло?</SL_ClaimForm_Property.fields.0.label>
+  <SL_ClaimForm_Property.fields.0.options.0.label>Рейд или осада</SL_ClaimForm_Property.fields.0.options.0.label>
+  <SL_ClaimForm_Property.fields.0.options.1.label>Пожар или взрыв</SL_ClaimForm_Property.fields.0.options.1.label>
+  <SL_ClaimForm_Property.fields.0.options.2.label>Молния или погода</SL_ClaimForm_Property.fields.0.options.2.label>
+  <SL_ClaimForm_Property.fields.0.options.3.label>Несчастный случай</SL_ClaimForm_Property.fields.0.options.3.label>
+  <SL_ClaimForm_Property.fields.0.options.4.label>Что-то другое</SL_ClaimForm_Property.fields.0.options.4.label>
+  <SL_ClaimForm_Property.fields.1.description>Незначительный, серьёзный или полный. Оценщик смотреть не станет.</SL_ClaimForm_Property.fields.1.description>
+  <SL_ClaimForm_Property.fields.1.label>Степень ущерба</SL_ClaimForm_Property.fields.1.label>
+  <SL_ClaimForm_Property.fields.1.options.0.label>Незначительный</SL_ClaimForm_Property.fields.1.options.0.label>
+  <SL_ClaimForm_Property.fields.1.options.1.label>Серьёзный</SL_ClaimForm_Property.fields.1.options.1.label>
+  <SL_ClaimForm_Property.fields.1.options.2.label>Полная потеря</SL_ClaimForm_Property.fields.1.options.2.label>
+  <SL_ClaimForm_Property.fields.2.description>Колонист, который это видел. Его показания подшиваются к форме.</SL_ClaimForm_Property.fields.2.description>
+  <SL_ClaimForm_Property.fields.2.label>Свидетель</SL_ClaimForm_Property.fields.2.label>
+  <SL_ClaimForm_Property.fields.3.description>Серебром обычным путём или стройматериалами в капсуле сброса (только «Достаточно хорошо» и «Премиум»). Это единственное поле, которое имеет значение.</SL_ClaimForm_Property.fields.3.description>
+  <SL_ClaimForm_Property.fields.3.label>Как вы хотите получить выплату?</SL_ClaimForm_Property.fields.3.label>
 </LanguageData>

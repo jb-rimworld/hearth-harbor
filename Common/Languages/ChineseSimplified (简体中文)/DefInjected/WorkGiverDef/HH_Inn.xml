@@ -4,4 +4,6 @@
   <HH_AccompanyGuest.verb>陪伴</HH_AccompanyGuest.verb>
   <HH_StaffFrontDesk.label>前台值班</HH_StaffFrontDesk.label>
   <HH_StaffFrontDesk.verb>值守</HH_StaffFrontDesk.verb>
+  <HH_AccompanyGuest.gerund>陪伴</HH_AccompanyGuest.gerund>
+  <HH_StaffFrontDesk.gerund>值守</HH_StaffFrontDesk.gerund>
 </LanguageData>

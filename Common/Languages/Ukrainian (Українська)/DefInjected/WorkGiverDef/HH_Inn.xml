@@ -4,4 +4,6 @@
   <HH_AccompanyGuest.verb>складати компанію</HH_AccompanyGuest.verb>
   <HH_StaffFrontDesk.label>чергувати на рецепції</HH_StaffFrontDesk.label>
   <HH_StaffFrontDesk.verb>чергувати</HH_StaffFrontDesk.verb>
+  <HH_AccompanyGuest.gerund>складати компанію</HH_AccompanyGuest.gerund>
+  <HH_StaffFrontDesk.gerund>чергувати на</HH_StaffFrontDesk.gerund>
 </LanguageData>

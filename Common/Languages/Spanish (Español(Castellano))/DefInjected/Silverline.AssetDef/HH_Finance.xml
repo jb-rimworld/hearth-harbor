@@ -26,4 +26,17 @@
   <SL_Asset_NftThrumbos.description>Una colección de imágenes de thrumbos, cada una única, cada una un poco parecida a las demás. Tienes un recibo de una imagen de una imagen. Los compradores aparecen despacio y piden descuento.</SL_Asset_NftThrumbos.description>
   <SL_Asset_NftMuffalo.label>Certificado de propiedad: imagen de un muffalo</SL_Asset_NftMuffalo.label>
   <SL_Asset_NftMuffalo.description>Un certificado de propiedad de una imagen de un muffalo. La imagen está guardada en algún sitio. El certificado está guardado en tu cuenta. Ninguno de los dos huele a muffalo.</SL_Asset_NftMuffalo.description>
+  <SL_Asset_GrowthFund.tagline>Nuestros gestores baten al mercado (no dijimos a cuál).</SL_Asset_GrowthFund.tagline>
+  <SL_Asset_Index.tagline>Posee todo, no entiendas nada.</SL_Asset_Index.tagline>
+  <SL_Asset_Mattress.tagline>Tu dinero está a salvo*. *Se aplican condiciones.</SL_Asset_Mattress.tagline>
+  <SL_Asset_MemeBoomalope.tagline>Volátil por diseño, inflamable por naturaleza.</SL_Asset_MemeBoomalope.tagline>
+  <SL_Asset_MemeMuffalo.tagline>Muu. Ese es el libro blanco.</SL_Asset_MemeMuffalo.tagline>
+  <SL_Asset_MemeThrumbo.tagline>A la luna, a pie y despacio.</SL_Asset_MemeThrumbo.tagline>
+  <SL_Asset_NftMuffalo.tagline>Posees la idea de la imagen.</SL_Asset_NftMuffalo.tagline>
+  <SL_Asset_NftThrumbos.tagline>Únicos, como los de todos los demás.</SL_Asset_NftThrumbos.tagline>
+  <SL_Asset_OutlanderBond.tagline>¡Presta a gente con lanzas!</SL_Asset_OutlanderBond.tagline>
+  <SL_Asset_RimCoin.tagline>Confía en las matemáticas. No en la casa de cambio.</SL_Asset_RimCoin.tagline>
+  <SL_Asset_StockColony.tagline>Hospitalidad, pero trimestral.</SL_Asset_StockColony.tagline>
+  <SL_Asset_StockMicaton.tagline>Cifras trimestrales, sentimientos trimestrales.</SL_Asset_StockMicaton.tagline>
+  <SL_Asset_StockTribal.tagline>Cálido, local y algo ahumado.</SL_Asset_StockTribal.tagline>
 </LanguageData>

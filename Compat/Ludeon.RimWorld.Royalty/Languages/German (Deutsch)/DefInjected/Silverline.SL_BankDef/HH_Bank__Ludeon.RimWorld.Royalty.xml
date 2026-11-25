@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ImperialTreasury.label>Imperial Treasury</SL_ImperialTreasury.label>
+  <SL_ImperialTreasury.description>Das hauseigene Zählhaus des Throns. Niedrige Gebühren, ein leichter Geruch nach Bodenpolitur und Kredit nur für Titelträger. Abhebungen heißen „Auszahlungen“ und kommen mit einer kleinen Verbeugung.</SL_ImperialTreasury.description>
+  <SL_ImperialTreasury.slogan>Jede Münze trägt das Profil des Throns. Bitte nicht draufbeißen.</SL_ImperialTreasury.slogan>
+  <SL_ImperialTreasury.perks.0>Niedrigste Gebühren: 0,5 % beim Abheben (mindestens 2).</SL_ImperialTreasury.perks.0>
+  <SL_ImperialTreasury.perks.1>Kredite nur, wenn jemand in der Kolonie einen königlichen Titel trägt; sehr günstige Zinsen.</SL_ImperialTreasury.perks.1>
+  <SL_ImperialTreasury.perks.2>Etwas geringere Kontorendite (-10 % im Exponenten).</SL_ImperialTreasury.perks.2>
+</LanguageData>

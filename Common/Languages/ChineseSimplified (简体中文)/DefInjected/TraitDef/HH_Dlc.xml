@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_BornHost.degreeDatas.0.description>{PAWN_nameDef}记得住每个名字，杯子没空就先添满，让陌生人觉得自己是被期待的。学习接待更快。</HH_BornHost.degreeDatas.0.description>
+  <HH_BornHost.degreeDatas.0.label>天生东道主</HH_BornHost.degreeDatas.0.label>
+  <HH_Caregiver.degreeDatas.0.description>{PAWN_nameDef}会陪在病人身边，留意谁没吃饭。{PAWN_pronoun}做的按摩更有疗效，{PAWN_pronoun}迎接或带着参观的孩子和家庭会更开心一些。</HH_Caregiver.degreeDatas.0.description>
+  <HH_Caregiver.degreeDatas.0.label>照护者</HH_Caregiver.degreeDatas.0.label>
+  <HH_EagleEye.degreeDatas.0.description>{PAWN_nameDef}总能留意到谁闯进了不该去的地方。{PAWN_pronoun}在地图上时，体面的客人撞见后屋的次数会更少。</HH_EagleEye.degreeDatas.0.description>
+  <HH_EagleEye.degreeDatas.0.label>鹰眼</HH_EagleEye.degreeDatas.0.label>
+  <HH_Gambler.degreeDatas.0.description>{PAWN_nameDef}爱极了牌桌：转盘的旋转、洗牌的声响、翻牌前的那一停顿。赌博对{PAWN_objective}来说更有趣，也更危险。作为客人，{PAWN_pronoun}带的赌本更多，下注也更大；玩二十一点和扑克时，{PAWN_pronoun}也更精明一点。</HH_Gambler.degreeDatas.0.description>
+  <HH_Gambler.degreeDatas.0.label>赌徒</HH_Gambler.degreeDatas.0.label>
+  <HH_GamblingAverse.degreeDatas.0.description>{PAWN_nameDef}拒绝赌博，从不上瘾，在庄家收注的房间里会感到不安。</HH_GamblingAverse.degreeDatas.0.description>
+  <HH_GamblingAverse.degreeDatas.0.label>厌赌</HH_GamblingAverse.degreeDatas.0.label>
+  <HH_Gossip.degreeDatas.0.description>{PAWN_nameDef}肚子里藏不住故事，连{PAWN_objective}自己都拦不住。客人离开后对别人讲的话，会让店铺的名声变得更好或更坏，幅度更大。</HH_Gossip.degreeDatas.0.description>
+  <HH_Gossip.degreeDatas.0.label>长舌</HH_Gossip.degreeDatas.0.label>
+  <HH_Grump.degreeDatas.0.description>{PAWN_nameDef}把前台当成海关岗哨来管。和{PAWN_pronoun}聊过天的客人离开时会稍微更不高兴一点。</HH_Grump.degreeDatas.0.description>
+  <HH_Grump.degreeDatas.0.label>臭脾气</HH_Grump.degreeDatas.0.label>
+  <HH_KidMagnet.degreeDatas.0.description>孩子们像小鸭子一样跟在{PAWN_nameDef}身后。{PAWN_pronoun}迎接或带着参观的孩子和家庭更开心。</HH_KidMagnet.degreeDatas.0.description>
+  <HH_KidMagnet.degreeDatas.0.label>孩子王</HH_KidMagnet.degreeDatas.0.label>
+  <HH_Lucky.degreeDatas.0.description>{PAWN_nameDef}天生擅长押中硬币的正确一面。玩赌场的庄家游戏时，{PAWN_pronoun}适用的赔率方案略为宽厚，连赢两局就足以进入好运连胜。{PAWN_pronoun}住在殖民地期间，殖民地每买十张彩票就有一张免费。</HH_Lucky.degreeDatas.0.description>
+  <HH_Lucky.degreeDatas.0.label>幸运</HH_Lucky.degreeDatas.0.label>
+  <HH_Peacemaker.degreeDatas.0.description>{PAWN_nameDef}会挡在高声争吵的人中间，把声音再压下去。和{PAWN_objective}同处一室的争吵，演变成斗殴的几率更低。</HH_Peacemaker.degreeDatas.0.description>
+  <HH_Peacemaker.degreeDatas.0.label>和事佬</HH_Peacemaker.degreeDatas.0.label>
+  <HH_PennyPincher.degreeDatas.0.description>{PAWN_nameDef}每份合同的每一行都要读两遍。{PAWN_pronoun}住在殖民地期间，银行收费低 20%。由{PAWN_pronoun}接待时，客人会觉得价格有点贵。</HH_PennyPincher.degreeDatas.0.description>
+  <HH_PennyPincher.degreeDatas.0.label>锱铢必较</HH_PennyPincher.degreeDatas.0.label>
+  <HH_SilverTongue.degreeDatas.0.description>{PAWN_nameDef}能说得河流改道。{PAWN_pronoun}在前台迎接或带客人参观后，客人的期望会低一点；而当{PAWN_pronoun}是说服客人加入殖民地的人时，客人入伙所花的好感也更少。</HH_SilverTongue.degreeDatas.0.description>
+  <HH_SilverTongue.degreeDatas.0.label>巧舌如簧</HH_SilverTongue.degreeDatas.0.label>
+  <HH_SteadyHands.degreeDatas.0.description>{PAWN_nameDef}的手指从不发抖。担任荷官时，{PAWN_pronoun}发牌明显更快。</HH_SteadyHands.degreeDatas.0.description>
+  <HH_SteadyHands.degreeDatas.0.label>稳手</HH_SteadyHands.degreeDatas.0.label>
+  <HH_Unlucky.degreeDatas.0.description>{PAWN_nameDef}掉下的吐司永远是涂黄油的一面着地。玩赌场的庄家游戏时，{PAWN_objective}的赔率方案略差，每输一局都格外难受。</HH_Unlucky.degreeDatas.0.description>
+  <HH_Unlucky.degreeDatas.0.label>倒霉</HH_Unlucky.degreeDatas.0.label>
+</LanguageData>

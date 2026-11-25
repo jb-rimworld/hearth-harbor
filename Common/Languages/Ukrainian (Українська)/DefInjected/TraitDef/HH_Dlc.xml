@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_BornHost.degreeDatas.0.description>{PAWN_nameDef} пам'ятає імена, доливає келихи, поки вони не спорожніли, і дає чужинцям відчути, що на них чекали. Швидше вчиться гостинності.</HH_BornHost.degreeDatas.0.description>
+  <HH_BornHost.degreeDatas.0.label>вроджений господар</HH_BornHost.degreeDatas.0.label>
+  <HH_Caregiver.degreeDatas.0.description>{PAWN_nameDef} сидить біля хворих і помічає, хто не їсть. Масажі, які робить {PAWN_pronoun}, приносять більше користі, а діти й сім'ї, яких {PAWN_pronoun} зустрічає чи проводить екскурсією, трохи щасливіші.</HH_Caregiver.degreeDatas.0.description>
+  <HH_Caregiver.degreeDatas.0.label>дбайливий</HH_Caregiver.degreeDatas.0.label>
+  <HH_EagleEye.degreeDatas.0.description>{PAWN_nameDef} помічає, хто блукає там, де не слід. Поки {PAWN_pronoun} на мапі, поважні гості рідше натрапляють на задню кімнату.</HH_EagleEye.degreeDatas.0.description>
+  <HH_EagleEye.degreeDatas.0.label>орлиний зір</HH_EagleEye.degreeDatas.0.label>
+  <HH_Gambler.degreeDatas.0.description>{PAWN_nameDef} обожнює стіл: обертання, тасування, паузу перед тим, як перевернеться карта. Азартні ігри для {PAWN_objective} веселіші, а також небезпечніші. Як гість {PAWN_pronoun} приносить більший банкрол і ставить більше, а в блекджек і покер {PAWN_pronoun} грає трохи вправніше.</HH_Gambler.degreeDatas.0.description>
+  <HH_Gambler.degreeDatas.0.label>азартний</HH_Gambler.degreeDatas.0.label>
+  <HH_GamblingAverse.degreeDatas.0.description>{PAWN_nameDef} відмовляється грати, ніколи не підсідає на азарт і почувається ніяково в кімнатах, де заклад приймає ставки.</HH_GamblingAverse.degreeDatas.0.description>
+  <HH_GamblingAverse.degreeDatas.0.label>проти азартних ігор</HH_GamblingAverse.degreeDatas.0.label>
+  <HH_Gossip.degreeDatas.0.description>{PAWN_nameDef} не вміє мовчати: жодна історія не затримується біля {PAWN_objective}. Коли гості йдуть, те, що вони розповідають іншим, просуває славу закладу далі, на добре чи на зле.</HH_Gossip.degreeDatas.0.description>
+  <HH_Gossip.degreeDatas.0.label>пліткар</HH_Gossip.degreeDatas.0.label>
+  <HH_Grump.degreeDatas.0.description>{PAWN_nameDef} керує рецепцією, як митним постом. Гості, з якими {PAWN_pronoun} розмовляє, йдуть трохи менш задоволеними.</HH_Grump.degreeDatas.0.description>
+  <HH_Grump.degreeDatas.0.label>буркун</HH_Grump.degreeDatas.0.label>
+  <HH_KidMagnet.degreeDatas.0.description>Діти ходять за {PAWN_nameDef}, як каченята. Діти й сім'ї, яких {PAWN_pronoun} зустрічає чи проводить екскурсією, щасливіші.</HH_KidMagnet.degreeDatas.0.description>
+  <HH_KidMagnet.degreeDatas.0.label>магніт для дітей</HH_KidMagnet.degreeDatas.0.label>
+  <HH_Lucky.degreeDatas.0.description>{PAWN_nameDef} має хист падати на правий бік монети. В іграх казино з перевагою закладу {PAWN_pronoun} грає за трохи добрішою схемою виплат, а двох виграшних сесій поспіль досить для смуги везіння. Поки {PAWN_pronoun} живе в колонії, кожен десятий лотерейний квиток, який купує колонія, безкоштовний.</HH_Lucky.degreeDatas.0.description>
+  <HH_Lucky.degreeDatas.0.label>везучий</HH_Lucky.degreeDatas.0.label>
+  <HH_Peacemaker.degreeDatas.0.description>{PAWN_nameDef} стає між піднесеними голосами й знову знижує їх. Сварки в одній кімнаті з {PAWN_objective} рідше переростають у бійки.</HH_Peacemaker.degreeDatas.0.description>
+  <HH_Peacemaker.degreeDatas.0.label>миротворець</HH_Peacemaker.degreeDatas.0.label>
+  <HH_PennyPincher.degreeDatas.0.description>{PAWN_nameDef} читає кожен рядок кожного договору, двічі. Поки {PAWN_pronoun} живе в колонії, банк бере комісії на 20 % нижчі. Гостям ціни здаються трохи високими, коли їх обслуговує {PAWN_pronoun}.</HH_PennyPincher.degreeDatas.0.description>
+  <HH_PennyPincher.degreeDatas.0.label>скнара</HH_PennyPincher.degreeDatas.0.label>
+  <HH_SilverTongue.degreeDatas.0.description>{PAWN_nameDef} умовить річку змінити русло. Гості чекають трохи менше, коли {PAWN_pronoun} зустрічає їх на рецепції чи проводить екскурсією, а гість, який приєднується до колонії, коштує менше прихильності, якщо його вмовив саме {PAWN_pronoun}.</HH_SilverTongue.degreeDatas.0.description>
+  <HH_SilverTongue.degreeDatas.0.label>срібний язик</HH_SilverTongue.degreeDatas.0.label>
+  <HH_SteadyHands.degreeDatas.0.description>У {PAWN_nameDef} пальці не тремтять. Як крупʼє {PAWN_pronoun} роздає помітно швидше.</HH_SteadyHands.degreeDatas.0.description>
+  <HH_SteadyHands.degreeDatas.0.label>тверді руки</HH_SteadyHands.degreeDatas.0.label>
+  <HH_Unlucky.degreeDatas.0.description>{PAWN_nameDef} впускає грінки маслом донизу. В іграх казино з перевагою закладу схема виплат для {PAWN_objective} трохи гірша, і кожна програна сесія болить.</HH_Unlucky.degreeDatas.0.description>
+  <HH_Unlucky.degreeDatas.0.label>невезучий</HH_Unlucky.degreeDatas.0.label>
+</LanguageData>

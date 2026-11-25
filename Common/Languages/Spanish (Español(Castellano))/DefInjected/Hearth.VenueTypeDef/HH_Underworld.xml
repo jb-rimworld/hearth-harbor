@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Venue_DrugLounge.label>salón de drogas</HH_Venue_DrugLounge.label>
   <HH_Venue_DrugLounge.description>Una habitación tenue con sofás y un libro de cuentas que nadie lee. Los huéspedes pagan por una sesión; solo toman lo que su ideología permite. Abierto de noche.</HH_Venue_DrugLounge.description>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>Los huéspedes se acomodan en asientos blandos. Al menos dos.</HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>sofás</HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>Algo donde dejar las cosas.</HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>una mesa baja</HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>
 </LanguageData>

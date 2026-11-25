@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Creator_HarbourTinkerer.description>[PAWN_nameDef] creció entre las grúas de un pequeño pueblo portuario, desmontando lo que los estibadores tiraban y volviéndolo a montar un poco mejor que antes.\n\nEl posadero de al lado pagó a [PAWN_objective] en tarta por arreglar las puertas que chirriaban, y [PAWN_pronoun] aprendió pronto que una habitación cálida y un plato lleno convierten a los desconocidos en amigos.</HH_Creator_HarbourTinkerer.description>
   <HH_Creator_WanderingInnkeeper.description>[PAWN_nameDef] nunca se quedó mucho tiempo en ningún sitio. Con una caja de herramientas, un libro de recetas desgastado y demasiados planes, [PAWN_pronoun] recorrió el borde levantando posadas, bancos y pequeños botiquines para quien los necesitara; luego entregaba las llaves y seguía su camino.\n\nLos colonos de las rutas comerciales aún cuentan la historia del forastero que les arregló el tejado, les cocinó la cena y se fue antes de que nadie pudiera pagarle. Por ahí fuera, [PAWN_pronoun] sigue construyendo algo para otra persona.</HH_Creator_WanderingInnkeeper.description>
+  <HH_Creator_HarbourTinkerer.title>manitas del puerto</HH_Creator_HarbourTinkerer.title>
+  <HH_Creator_HarbourTinkerer.titleShort>manitas</HH_Creator_HarbourTinkerer.titleShort>
+  <HH_Creator_WanderingInnkeeper.title>posadero errante</HH_Creator_WanderingInnkeeper.title>
+  <HH_Creator_WanderingInnkeeper.titleShort>posadero</HH_Creator_WanderingInnkeeper.titleShort>
 </LanguageData>

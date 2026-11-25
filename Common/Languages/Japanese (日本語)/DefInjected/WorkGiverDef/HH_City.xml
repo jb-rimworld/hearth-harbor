@@ -4,4 +4,6 @@
   <HH_SalonStyleWork.verb>整える</HH_SalonStyleWork.verb>
   <HH_BodyguardWork.label>客を護衛する</HH_BodyguardWork.label>
   <HH_BodyguardWork.verb>護衛する</HH_BodyguardWork.verb>
+  <HH_BodyguardWork.gerund>を護衛する</HH_BodyguardWork.gerund>
+  <HH_SalonStyleWork.gerund>のスタイリングをする</HH_SalonStyleWork.gerund>
 </LanguageData>

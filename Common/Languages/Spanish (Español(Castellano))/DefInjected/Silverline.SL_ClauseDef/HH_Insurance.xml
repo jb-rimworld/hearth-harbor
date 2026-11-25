@@ -30,4 +30,19 @@
   <SL_Clause_31.description>Las pólizas se renuevan solas.</SL_Clause_31.description>
   <SL_Clause_40.label>conflicto de intereses</SL_Clause_40.label>
   <SL_Clause_40.description>Desde Overbooked, Legal Shield no ayuda frente a Clawback Mutual.</SL_Clause_40.description>
+  <SL_Clause_1.text>La cobertura empieza tras el periodo de carencia, que empieza después de que empiece la cobertura.</SL_Clause_1.text>
+  <SL_Clause_11.text>Los daños autoinfligidos incluyen los causados por ti, tus colonos, tus animales, tus torretas y cualquiera que esté cerca de ellos.</SL_Clause_11.text>
+  <SL_Clause_14b.text>Los muros deben ser muros. Un muro con una puerta es una puerta.</SL_Clause_14b.text>
+  <SL_Clause_17.text>La cláusula 17 se adjunta por separado, en thrumbo.</SL_Clause_17.text>
+  <SL_Clause_21.text>Las partes biónicas son equipo y se aseguran con la Cobertura de muffalos y máquinas, que no tienes.</SL_Clause_21.text>
+  <SL_Clause_22.text>Si una parte perdida vuelve a crecer, nuestra reclamación también.</SL_Clause_22.text>
+  <SL_Clause_23.text>Morir antes de la evaluación pone fin a la evaluación.</SL_Clause_23.text>
+  <SL_Clause_26.text>Los cambios en el riesgo deben comunicarse en el plazo de un día. Esto incluye las espadas.</SL_Clause_26.text>
+  <SL_Clause_30.text>Las cancelaciones requieren el Formulario C-7, firmado por triplicado, con un color de tinta que tengamos registrado.</SL_Clause_30.text>
+  <SL_Clause_31.text>Tu póliza se renueva automáticamente para ahorrarte la carga de decidir.</SL_Clause_31.text>
+  <SL_Clause_3_2.text>Un accidente es un suceso externo repentino. Los thrumbos son externos. Tu cocina, no.</SL_Clause_3_2.text>
+  <SL_Clause_4.text>Los actos del narrador quedan excluidos, salvo que el narrador haya actuado con razonabilidad.</SL_Clause_4.text>
+  <SL_Clause_40.text>El Escudo Legal no cubre disputas con Clawback Mutual, por motivos que no estamos obligados a explicar.</SL_Clause_40.text>
+  <SL_Clause_7b.text>Las incursiones no son guerra. Los asedios son guerra. Los grupos de mecanoides son clima.</SL_Clause_7b.text>
+  <SL_Clause_9.text>Las preexistencias incluyen las dolencias que existían antes, durante o poco después de esta póliza.</SL_Clause_9.text>
 </LanguageData>

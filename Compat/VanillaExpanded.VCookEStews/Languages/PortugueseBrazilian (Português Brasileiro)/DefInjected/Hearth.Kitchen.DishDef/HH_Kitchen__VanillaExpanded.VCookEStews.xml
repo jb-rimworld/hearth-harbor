@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_HeartyWinterStew.label>Ensopado reconfortante de inverno</HH_Dish_HeartyWinterStew.label>
+  <HH_Dish_HeartyWinterStew.description>Cozido por dias numa panela sobre fogo de lenha. Coma antes que a panela responda.</HH_Dish_HeartyWinterStew.description>
+  <HH_Dish_LongNightMushroomStew.label>Ensopado de cogumelos da longa noite</HH_Dish_LongNightMushroomStew.label>
+  <HH_Dish_LongNightMushroomStew.description>Cozido a noite toda por alguém que não tinha planos melhores.</HH_Dish_LongNightMushroomStew.description>
+  <HH_Dish_StewOfQuestionableMeat.label>Ensopado de carne duvidosa</HH_Dish_StewOfQuestionableMeat.label>
+  <HH_Dish_StewOfQuestionableMeat.description>O ensopado remove qualquer arrependimento sobre os insetos. O arrependimento sobre o ensopado permanece.</HH_Dish_StewOfQuestionableMeat.description>
+  <HH_Dish_HeartyWinterStew.inspiration>Vanilla Cooking Expanded - Stews</HH_Dish_HeartyWinterStew.inspiration>
+  <HH_Dish_LongNightMushroomStew.inspiration>Vanilla Cooking Expanded - Stews</HH_Dish_LongNightMushroomStew.inspiration>
+  <HH_Dish_StewOfQuestionableMeat.inspiration>Vanilla Cooking Expanded - Stews</HH_Dish_StewOfQuestionableMeat.inspiration>
+</LanguageData>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_CheeseFondue.label>チーズフォンデュ</HH_Dish_CheeseFondue.label>
+  <HH_Dish_CheeseFondue.description>溶けたチーズの鍋と、パンを落とした者が払うという掟。</HH_Dish_CheeseFondue.description>
+  <HH_Dish_PumpkinAndCheeseGratin.label>カボチャとチーズのグラタン</HH_Dish_PumpkinAndCheeseGratin.label>
+  <HH_Dish_PumpkinAndCheeseGratin.description>オレンジ色でチーズたっぷり。薄い危険の層で飾られている。</HH_Dish_PumpkinAndCheeseGratin.description>
+  <HH_Dish_FlourDumplingSoup.label>粉団子スープ</HH_Dish_FlourDumplingSoup.label>
+  <HH_Dish_FlourDumplingSoup.description>こぶし大の団子。パンチの効いたスープが好きな人向け。</HH_Dish_FlourDumplingSoup.description>
+  <HH_Dish_CheeseOmelette.label>チーズオムレツ</HH_Dish_CheeseOmelette.label>
+  <HH_Dish_CheeseOmelette.description>何にも謝らず、誰のためにも折りたたまれないオムレツ。</HH_Dish_CheeseOmelette.description>
+  <HH_Dish_FruitGlazedRoast.label>フルーツグレーズのロースト</HH_Dish_FruitGlazedRoast.label>
+  <HH_Dish_FruitGlazedRoast.description>ベタついて甘く、オーブンミトンと祈りを添えて食卓へ運ばれる。</HH_Dish_FruitGlazedRoast.description>
+  <HH_Dish_CheeseFondue.inspiration>Vanilla Cooking Expanded</HH_Dish_CheeseFondue.inspiration>
+  <HH_Dish_CheeseOmelette.inspiration>Vanilla Cooking Expanded</HH_Dish_CheeseOmelette.inspiration>
+  <HH_Dish_FlourDumplingSoup.inspiration>Vanilla Cooking Expanded</HH_Dish_FlourDumplingSoup.inspiration>
+  <HH_Dish_FruitGlazedRoast.inspiration>Vanilla Cooking Expanded</HH_Dish_FruitGlazedRoast.inspiration>
+  <HH_Dish_PumpkinAndCheeseGratin.inspiration>Vanilla Cooking Expanded</HH_Dish_PumpkinAndCheeseGratin.inspiration>
+</LanguageData>

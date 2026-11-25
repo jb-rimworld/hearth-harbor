@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ImperialTreasury.label>Imperial Treasury</SL_ImperialTreasury.label>
+  <SL_ImperialTreasury.description>왕좌 직속 금고. 낮은 수수료, 은은한 바닥 광택제 냄새, 작위를 가진 자에게만 주어지는 신용. 출금은 "지급"이라 부르며 작은 인사가 곁들여집니다.</SL_ImperialTreasury.description>
+  <SL_ImperialTreasury.slogan>모든 동전에는 왕좌의 얼굴이 새겨져 있습니다. 깨물지 마십시오.</SL_ImperialTreasury.slogan>
+  <SL_ImperialTreasury.perks.0>가장 낮은 수수료: 인출 시 0.5 % (최소 2).</SL_ImperialTreasury.perks.0>
+  <SL_ImperialTreasury.perks.1>정착지에 왕실 작위 보유자가 있을 때만 대출 가능. 이자는 매우 저렴합니다.</SL_ImperialTreasury.perks.1>
+  <SL_ImperialTreasury.perks.2>계좌 수익률이 약간 낮습니다 (지수에서 -10 %).</SL_ImperialTreasury.perks.2>
+</LanguageData>

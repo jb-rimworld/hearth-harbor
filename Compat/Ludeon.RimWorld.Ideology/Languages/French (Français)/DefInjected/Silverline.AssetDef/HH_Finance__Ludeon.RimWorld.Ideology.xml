@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_PietyBonds.label>Obligations de piété</SL_Asset_PietyBonds.label>
+  <SL_Asset_PietyBonds.description>Obligations adossées aux dons de dix-sept religions, chacune convaincue que les seize autres se trompent. Stables, solennelles et très légèrement suffisantes.</SL_Asset_PietyBonds.description>
+  <SL_Asset_RelicFutures.label>Contrats à terme sur reliques</SL_Asset_RelicFutures.label>
+  <SL_Asset_RelicFutures.description>Contrats à terme sur des reliques qui existent peut-être, à livrer par un coursier qui est peut-être un prophète. Le contrat a été béni.</SL_Asset_RelicFutures.description>
+  <SL_Asset_PietyBonds.tagline>La foi, avec une date d'échéance.</SL_Asset_PietyBonds.tagline>
+  <SL_Asset_RelicFutures.tagline>À conserver pour l'au-delà.</SL_Asset_RelicFutures.tagline>
+</LanguageData>

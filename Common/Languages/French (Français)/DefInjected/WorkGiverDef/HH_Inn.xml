@@ -4,4 +4,6 @@
   <HH_AccompanyGuest.verb>tenir compagnie</HH_AccompanyGuest.verb>
   <HH_StaffFrontDesk.label>tenir la réception</HH_StaffFrontDesk.label>
   <HH_StaffFrontDesk.verb>tenir</HH_StaffFrontDesk.verb>
+  <HH_AccompanyGuest.gerund>tient compagnie à</HH_AccompanyGuest.gerund>
+  <HH_StaffFrontDesk.gerund>tient</HH_StaffFrontDesk.gerund>
 </LanguageData>

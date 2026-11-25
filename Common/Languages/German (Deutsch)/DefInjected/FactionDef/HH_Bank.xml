@@ -4,4 +4,5 @@
   <SL_CollectionsAgency.description>Ein Inkassobüro. Höflich, bis es das nicht mehr ist.</SL_CollectionsAgency.description>
   <SL_CollectionsAgency.pawnsPlural>Inkassoagenten</SL_CollectionsAgency.pawnsPlural>
   <SL_CollectionsAgency.fixedName>Rim Recovery Partners</SL_CollectionsAgency.fixedName>
+  <SL_CollectionsAgency.pawnSingular>Inkassoagent</SL_CollectionsAgency.pawnSingular>
 </LanguageData>

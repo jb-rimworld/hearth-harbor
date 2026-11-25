@@ -33,4 +33,70 @@
   <SL_LimbByLimb.label>Glied-für-Glied-Unfallplan</SL_LimbByLimb.label>
   <SL_LimbByLimb.description>Jedes Körperteil hat einen Preis. Wir haben ihn aufgeschrieben. Er steht auf der letzten Seite, in der Gliedertabelle.</SL_LimbByLimb.description>
   <SL_LimbByLimb.slogan>Jedes Körperteil hat einen Preis. Wir haben ihn aufgeschrieben.</SL_LimbByLimb.slogan>
+  <SL_ActsOfStoryteller.benefitBare>Geld für das zerstörte Gebäude, nach deinem Eigenanteil.</SL_ActsOfStoryteller.benefitBare>
+  <SL_ActsOfStoryteller.benefitGood>Geld oder die Baumaterialien, per Kapsel geliefert.</SL_ActsOfStoryteller.benefitGood>
+  <SL_ActsOfStoryteller.benefitPremium>Wiederbeschaffungswert, sofort per Kapsel gezahlt. Einmal im Jahr Wohlwollen.</SL_ActsOfStoryteller.benefitPremium>
+  <SL_ActsOfStoryteller.coversText>Gebäude deiner Kolonie, die durch feindliche Hand zerstört werden (Überfälle, Belagerungen, Mechanoiden). Nicht Feuer, nicht Stürme, nicht deine eigenen Geschütztürme.</SL_ActsOfStoryteller.coversText>
+  <SL_ActsOfStoryteller.riders.0.description>Zahlt bei jedem Schaden 10 % mehr (nie mehr als den Schaden selbst).</SL_ActsOfStoryteller.riders.0.description>
+  <SL_ActsOfStoryteller.riders.0.label>Verschleißverzicht</SL_ActsOfStoryteller.riders.0.label>
+  <SL_ActsOfStoryteller.riders.1.description>Die Schadensabteilung sieht sich deinen Fall einen Tag früher an.</SL_ActsOfStoryteller.riders.1.description>
+  <SL_ActsOfStoryteller.riders.1.label>Express-Papierkram</SL_ActsOfStoryteller.riders.1.label>
+  <SL_BlightBeGone.benefitBare>Geld für die verlorene Ernte, nach deinem Eigenanteil.</SL_BlightBeGone.benefitBare>
+  <SL_BlightBeGone.benefitGood>Geld, 80 % des Zeitwerts.</SL_BlightBeGone.benefitGood>
+  <SL_BlightBeGone.benefitPremium>Voller Wert der Ernte, sofort.</SL_BlightBeGone.benefitPremium>
+  <SL_BlightBeGone.coversText>Deine Feldfrüchte bei einem Kälteeinbruch oder giftigem Niederschlag.</SL_BlightBeGone.coversText>
+  <SL_BlightBeGone.riders.0.description>Zahlt bei jedem Schaden 10 % mehr (nie mehr als den Schaden selbst).</SL_BlightBeGone.riders.0.description>
+  <SL_BlightBeGone.riders.0.label>Verschleißverzicht</SL_BlightBeGone.riders.0.label>
+  <SL_ClosedForRepairs.benefitBare>Ein Pauschaltag, egal was der Tag wert war.</SL_ClosedForRepairs.benefitBare>
+  <SL_ClosedForRepairs.benefitGood>Der durchschnittliche Tagesverlust, bis zu fünf Tage.</SL_ClosedForRepairs.benefitGood>
+  <SL_ClosedForRepairs.benefitPremium>Tagesverlust für bis zu 15 Tage.</SL_ClosedForRepairs.benefitPremium>
+  <SL_ClosedForRepairs.coversText>Entgangenes Einkommen nach einer Schließung deines Geschäfts, gemeldet von den Betrieben von Hearth &amp; Harbor.</SL_ClosedForRepairs.coversText>
+  <SL_GoldenYears.benefitBare>Die Versicherungssumme, einmalig, wenn der Kolonist 60 wird.</SL_GoldenYears.benefitBare>
+  <SL_GoldenYears.benefitGood>0,4 % der Versicherungssumme pro Tag, ab 60.</SL_GoldenYears.benefitGood>
+  <SL_GoldenYears.benefitPremium>0,6 % der Versicherungssumme pro Tag, ab 60. Eine Rentnerfeier ist denkbar.</SL_GoldenYears.benefitPremium>
+  <SL_GoldenYears.coversText>Ein Kolonist, der noch nicht 60 ist. Ab dem 60. Lebensjahr zahlt Clawback Mutual eine tägliche Rente (Bare Minimum: eine einmalige Pauschale). Die Prämie steigt, je näher der Kolonist der 60 kommt; mit 60 oder später kann niemand mehr eine Rente kaufen.</SL_GoldenYears.coversText>
+  <SL_ItWasntMe.benefitBare>Die Hälfte der Entschädigung, gezahlt an die Fraktion der geschädigten Partei.</SL_ItWasntMe.benefitBare>
+  <SL_ItWasntMe.benefitGood>80 % der Entschädigung. Wohlwollensverlust halbiert.</SL_ItWasntMe.benefitGood>
+  <SL_ItWasntMe.benefitPremium>Alles davon. Um das Gerücht kümmern wir uns auch.</SL_ItWasntMe.benefitPremium>
+  <SL_ItWasntMe.coversText>Schäden an Gästen und an den Waren von Händlern, für die deine Kolonie haftet. Gemeldet von Gasthaus, Markt und Handelsschalter.</SL_ItWasntMe.coversText>
+  <SL_ItWasntMe.riders.0.description>Die Schadensabteilung sieht sich deinen Fall einen Tag früher an.</SL_ItWasntMe.riders.0.description>
+  <SL_ItWasntMe.riders.0.label>Express-Papierkram</SL_ItWasntMe.riders.0.label>
+  <SL_LegalShield.benefitBare>50 % jedes Bußgelds.</SL_LegalShield.benefitBare>
+  <SL_LegalShield.benefitGood>80 % jedes Bußgelds, und ein Einspruch wird eingelegt.</SL_LegalShield.benefitGood>
+  <SL_LegalShield.benefitPremium>Das ganze Bußgeld. Rechtsanwalt Brix liest deine Formulare vor dir.</SL_LegalShield.benefitPremium>
+  <SL_LegalShield.coversText>Bußgelder und Strafen von Kontrolleuren, Ärger mit Lizenzen und Inkassostreitigkeiten. Senkt außerdem die Chance, dass Clawback Mutual deine Schadensfälle ablehnt, und bessert deine Kündigungsformulare aus.</SL_LegalShield.coversText>
+  <SL_LegalShield.riders.0.description>Die Schadensabteilung sieht sich deinen Fall einen Tag früher an.</SL_LegalShield.riders.0.description>
+  <SL_LegalShield.riders.0.label>Express-Papierkram</SL_LegalShield.riders.0.label>
+  <SL_LimbByLimb.benefitBare>Linear nach der Gliedertabelle, ab 20 % Invalidität. Teilverluste werden nicht gezahlt.</SL_LimbByLimb.benefitBare>
+  <SL_LimbByLimb.benefitGood>225 % Progression ab 5 % Invalidität. Teilverluste werden gezahlt.</SL_LimbByLimb.benefitGood>
+  <SL_LimbByLimb.benefitPremium>350 % Progression ab 1 % Invalidität. Jeder Finger hat einen Preis.</SL_LimbByLimb.benefitPremium>
+  <SL_LimbByLimb.coversText>Ein Kolonist. Dauerhafte Unfallfolgen nach der Gliedertabelle sowie Unfalltod (20 % der Summe). Begutachtet ein Quadrum nach dem Unfall. Operationen sind keine Unfälle.</SL_LimbByLimb.coversText>
+  <SL_LimbByLimb.riders.0.description>Premium-Unfälle werden nach der 500-%-Tabelle statt nach 350 % gezahlt. Zählt nur bei den großen.</SL_LimbByLimb.riders.0.description>
+  <SL_LimbByLimb.riders.0.label>Progression Plus (500 %)</SL_LimbByLimb.riders.0.label>
+  <SL_LimbByLimb.riders.1.description>Die Unfalltodsumme steigt von 20 % auf 30 % der Grundsumme.</SL_LimbByLimb.riders.1.description>
+  <SL_LimbByLimb.riders.1.label>Todesfall-Aufstockung</SL_LimbByLimb.riders.1.label>
+  <SL_MuffaloMachine.benefitBare>Reparaturgeld, die Hälfte des Zeitwerts.</SL_MuffaloMachine.benefitBare>
+  <SL_MuffaloMachine.benefitGood>Geld oder Teile per Kapsel, 80 % des Zeitwerts.</SL_MuffaloMachine.benefitGood>
+  <SL_MuffaloMachine.benefitPremium>Wiederbeschaffungswert, sofort. Die Abschleppdrohne gehört dir.</SL_MuffaloMachine.benefitPremium>
+  <SL_MuffaloMachine.coversText>Shuttles, Landekapseln und Fahrzeuge, die von feindlichen Kräften zerstört werden. Bionische Teile sind Ausrüstung und sollen im Prinzip auch hier stehen. In der Praxis: siehe Unfallplan.</SL_MuffaloMachine.coversText>
+  <SL_MuffaloMachine.riders.0.description>Zahlt bei jedem Schaden 10 % mehr (nie mehr als den Schaden selbst).</SL_MuffaloMachine.riders.0.description>
+  <SL_MuffaloMachine.riders.0.label>Verschleißverzicht</SL_MuffaloMachine.riders.0.label>
+  <SL_RimHealth.benefitBare>10 Silber pro bettlägerigem Kolonisten und Tag, bis zu 5 Tage in 15.</SL_RimHealth.benefitBare>
+  <SL_RimHealth.benefitGood>15 Silber pro bettlägerigem Kolonisten und Tag, bis zu 5 Tage in 15.</SL_RimHealth.benefitGood>
+  <SL_RimHealth.benefitPremium>25 Silber pro bettlägerigem Kolonisten und Tag, bis zu 5 Tage in 15. Die zweite Meinung ist gratis.</SL_RimHealth.benefitPremium>
+  <SL_RimHealth.coversText>Jeder Tag, an dem ein Kolonist mit einer Krankheit oder einer behandlungsbedürftigen Verletzung bettlägerig ist, aber höchstens 5 bezahlte Tage pro Kolonist in beliebigen 15 Tagen (die Krankenhaustagegeld-Grenze). Lebensmittelvergiftung ist ein Kochunfall und zählt trotzdem.</SL_RimHealth.coversText>
+  <SL_RimHealth.riders.0.description>Zahlt für jeden Krankenbetttag 10 % mehr.</SL_RimHealth.riders.0.description>
+  <SL_RimHealth.riders.0.label>Krankenhaus-Gastlichkeit</SL_RimHealth.riders.0.label>
+  <SL_RoofOverHead.benefitBare>Geld für das abgebrannte Gebäude, nach deinem Eigenanteil.</SL_RoofOverHead.benefitBare>
+  <SL_RoofOverHead.benefitGood>Geld oder Baumaterialien per Kapsel.</SL_RoofOverHead.benefitGood>
+  <SL_RoofOverHead.benefitPremium>Wiederbeschaffungswert, sofort per Kapsel. Asche nicht inbegriffen.</SL_RoofOverHead.benefitPremium>
+  <SL_RoofOverHead.coversText>Gebäude deiner Kolonie, die durch Feuer, Explosionen und Stürme zerstört werden. Brände und Explosionen, die deine eigenen Leute verursachen, sind ausgeschlossen (§11).</SL_RoofOverHead.coversText>
+  <SL_RoofOverHead.riders.0.description>Zahlt bei jedem Schaden 10 % mehr (nie mehr als den Schaden selbst).</SL_RoofOverHead.riders.0.description>
+  <SL_RoofOverHead.riders.0.label>Verschleißverzicht</SL_RoofOverHead.riders.0.label>
+  <SL_RoofOverHead.riders.1.description>Die Schadensabteilung sieht sich deinen Fall einen Tag früher an.</SL_RoofOverHead.riders.1.description>
+  <SL_RoofOverHead.riders.1.label>Express-Papierkram</SL_RoofOverHead.riders.1.label>
+  <SL_Wanderlust.benefitBare>Die Summe pro Kopf, nur wenn jemand unterwegs stirbt.</SL_Wanderlust.benefitBare>
+  <SL_Wanderlust.benefitGood>Tod und verlorene Körperteile nach der Gliedertabelle.</SL_Wanderlust.benefitGood>
+  <SL_Wanderlust.benefitPremium>Alles Obige und eine Pauschale für jede einzelne Verletzung.</SL_Wanderlust.benefitPremium>
+  <SL_Wanderlust.coversText>Kolonisten auf Karawanen. Bare Minimum zahlt nur einen Todesfall, Good Enough auch verlorene Körperteile, Premium jeden Kratzer.</SL_Wanderlust.coversText>
 </LanguageData>

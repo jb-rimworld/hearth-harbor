@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Venue_DrugLounge.label>薬物ラウンジ</HH_Venue_DrugLounge.label>
   <HH_Venue_DrugLounge.description>ソファと、誰も読まない帳簿のある薄暗い部屋です。客はセッションに対して支払い、その思想が許す分だけを摂取します。夜に営業します。</HH_Venue_DrugLounge.description>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>客は柔らかい席にくつろぐ。最低2席。</HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>ソファ</HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>物を置く場所。</HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>ローテーブル</HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>
 </LanguageData>

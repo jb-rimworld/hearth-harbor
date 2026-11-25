@@ -4,4 +4,6 @@
   <HH_SalonStyleWork.verb>stylen</HH_SalonStyleWork.verb>
   <HH_BodyguardWork.label>einen Gast bewachen</HH_BodyguardWork.label>
   <HH_BodyguardWork.verb>bewachen</HH_BodyguardWork.verb>
+  <HH_BodyguardWork.gerund>Bewachen von</HH_BodyguardWork.gerund>
+  <HH_SalonStyleWork.gerund>Stylen von</HH_SalonStyleWork.gerund>
 </LanguageData>

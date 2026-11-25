@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_GrilledWholeFish.label>생선 통구이</HH_Dish_GrilledWholeFish.label>
+  <HH_Dish_GrilledWholeFish.description>생선 한 마리, 약간의 소금, 그리고 생선에게 미안해하는 기색은 없다.</HH_Dish_GrilledWholeFish.description>
+  <HH_Dish_FishStew.label>생선 스튜</HH_Dish_FishStew.label>
+  <HH_Dish_FishStew.description>헤엄치는 것치고 결국 여기로 오지 않는 것은 없다.</HH_Dish_FishStew.description>
+  <HH_Dish_SmokedFishFillet.label>훈제 생선 필레</HH_Dish_SmokedFishFillet.label>
+  <HH_Dish_SmokedFishFillet.description>오늘의 필레. 강을 잊어버릴 때까지 훈연했다.</HH_Dish_SmokedFishFillet.description>
+  <HH_Dish_SashimiPlate.label>사시미 접시</HH_Dish_SashimiPlate.label>
+  <HH_Dish_SashimiPlate.description>생선을 얇게 썬 날것, 그리고 작은 도덕적 딜레마 한 접시.</HH_Dish_SashimiPlate.description>
+  <HH_Dish_FishTacos.label>생선 타코</HH_Dish_FishTacos.label>
+  <HH_Dish_FishTacos.description>토르티야에 싼 생선. 콜로니스트 한 명이 전력 질주해서 배달했다.</HH_Dish_FishTacos.description>
+  <HH_Dish_FishStew.inspiration>물고기 모드</HH_Dish_FishStew.inspiration>
+  <HH_Dish_FishTacos.inspiration>물고기 모드</HH_Dish_FishTacos.inspiration>
+  <HH_Dish_GrilledWholeFish.inspiration>물고기 모드</HH_Dish_GrilledWholeFish.inspiration>
+  <HH_Dish_SashimiPlate.inspiration>물고기 모드</HH_Dish_SashimiPlate.inspiration>
+  <HH_Dish_SmokedFishFillet.inspiration>물고기 모드</HH_Dish_SmokedFishFillet.inspiration>
+</LanguageData>

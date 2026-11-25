@@ -6,4 +6,28 @@
   <HH_Venue_Salon.description>Ein Raum mit Salonstühlen. Gäste zahlen für einen Haarschnitt, einen neuen Stil, eine Färbung oder, mit der passenden Ideologie, ein Tattoo; ein Kolonist mit der Arbeitsart Bedienen erledigt die Arbeit. Ohne jemanden zum Bedienen ist der Salon geschlossen.</HH_Venue_Salon.description>
   <HH_Venue_Gallery.label>Galerie</HH_Venue_Gallery.label>
   <HH_Venue_Gallery.description>Ein Raum voller Skulpturen, in gutem Licht aufgehängt. Gäste zahlen einen kleinen Eintritt und gehen Stück für Stück an den Werken vorbei; je schöner die Kunst, desto zufriedener gehen sie. Braucht eine Handvoll Kunstwerke im Raum.</HH_Venue_Gallery.description>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.hint>Der Film läuft auf einer Projektorleinwand mit Strom.</HH_Venue_Cinema.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.label>eine Projektorleinwand</HH_Venue_Cinema.modExtensions.0.requirements.0.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.hint>Sitzplätze vor der Leinwand: so viele, wie die Stadtleben-Einstellung „Benötigte Sitzplätze“ verlangt.</HH_Venue_Cinema.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.label>Sitzplätze vor der Leinwand</HH_Venue_Cinema.modExtensions.0.requirements.1.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.hint>Kein Strom, kein Film.</HH_Venue_Cinema.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.label>Strom für den Projektor</HH_Venue_Cinema.modExtensions.0.requirements.2.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.hint>Eine Theke an der Tür gehört einfach dazu.</HH_Venue_Cinema.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.label>eine Kartentheke</HH_Venue_Cinema.modExtensions.0.requirements.3.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.hint>Snacks und Getränke zum Film, ohne Personal verkauft.</HH_Venue_Cinema.modExtensions.0.requirements.4.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.label>ein Verkaufsautomat</HH_Venue_Cinema.modExtensions.0.requirements.4.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.hint>Skulpturen im Raum: so viele, wie die Stadtleben-Einstellung „Benötigte Kunstwerke“ verlangt. Künstler fertigen sie an einer Kunstbank.</HH_Venue_Gallery.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.label>Kunstwerke</HH_Venue_Gallery.modExtensions.0.requirements.0.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.hint>Besucher setzen sich gern vor das schönste Stück.</HH_Venue_Gallery.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.label>eine Bank zum Betrachten</HH_Venue_Gallery.modExtensions.0.requirements.1.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.hint>Gutes Licht macht einen Raum nach Einbruch der Dunkelheit einladend.</HH_Venue_Gallery.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.label>eine Stehlampe</HH_Venue_Gallery.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.hint>Haarschnitte, neue Stile und Färbungen gibt es im Salonstuhl.</HH_Venue_Salon.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.label>ein Salonstuhl</HH_Venue_Salon.modExtensions.0.requirements.0.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.hint>Ein Kolonist mit dem Arbeitstyp Bedienen erledigt die Arbeit.</HH_Venue_Salon.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.label>ein Stylist (Arbeit: Bedienen)</HH_Venue_Salon.modExtensions.0.requirements.1.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.hint>Gäste, die auf ihren Termin warten, sitzen gern.</HH_Venue_Salon.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.label>Sitzplätze für wartende Gäste</HH_Venue_Salon.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.hint>Gutes Licht macht einen Raum nach Einbruch der Dunkelheit einladend.</HH_Venue_Salon.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.label>eine Stehlampe</HH_Venue_Salon.modExtensions.0.requirements.3.label>
 </LanguageData>

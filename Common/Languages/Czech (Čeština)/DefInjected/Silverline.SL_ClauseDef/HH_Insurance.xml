@@ -30,4 +30,19 @@
   <SL_Clause_31.description>Pojistky se obnovují samy.</SL_Clause_31.description>
   <SL_Clause_40.label>střet zájmů</SL_Clause_40.label>
   <SL_Clause_40.description>Od Přeplněného Legal Shield proti Clawback Mutual nepomůže.</SL_Clause_40.description>
+  <SL_Clause_1.text>Krytí začíná po čekací době, která začíná po začátku krytí.</SL_Clause_1.text>
+  <SL_Clause_11.text>Škoda způsobená sám sobě zahrnuje škodu způsobenou vámi, vašimi kolonisty, vašimi zvířaty, vašimi střílnami a kýmkoli, kdo stojí poblíž nich.</SL_Clause_11.text>
+  <SL_Clause_14b.text>Zdi musí být zdi. Zeď se dveřmi jsou dveře.</SL_Clause_14b.text>
+  <SL_Clause_17.text>Doložka 17 je přiložena zvlášť, v thrumbovi.</SL_Clause_17.text>
+  <SL_Clause_21.text>Bionické části jsou vybavení a pojišťují se v rámci Krytí muffalů a strojů, které nemáte.</SL_Clause_21.text>
+  <SL_Clause_22.text>Pokud ztracená část doroste, naroste i náš nárok.</SL_Clause_22.text>
+  <SL_Clause_23.text>Zemřít před koncem posouzení ukončí posouzení.</SL_Clause_23.text>
+  <SL_Clause_26.text>Změny rizika se musí hlásit do jednoho dne. To zahrnuje meče.</SL_Clause_26.text>
+  <SL_Clause_30.text>Výpovědi vyžadují formulář C-7, podepsaný trojmo, barvou inkoustu, kterou máme v evidenci.</SL_Clause_30.text>
+  <SL_Clause_31.text>Vaše pojistka se obnovuje automaticky, aby vám byla ušetřena tíha rozhodování.</SL_Clause_31.text>
+  <SL_Clause_3_2.text>Úraz je náhlá vnější událost. Thrumbové jsou vnější. Vaše vaření není.</SL_Clause_3_2.text>
+  <SL_Clause_4.text>Činy vypravěče jsou vyloučeny, pokud vypravěč nejednal rozumně.</SL_Clause_4.text>
+  <SL_Clause_40.text>Právní štít nekryje spory s Clawback Mutual, z důvodů, které nejsme povinni vysvětlovat.</SL_Clause_40.text>
+  <SL_Clause_7b.text>Nájezdy nejsou válka. Obléhání je válka. Shluky mechanoidů jsou počasí.</SL_Clause_7b.text>
+  <SL_Clause_9.text>Předchozí stavy zahrnují stavy, které existovaly před touto pojistkou, během ní nebo krátce po ní.</SL_Clause_9.text>
 </LanguageData>

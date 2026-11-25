@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_BornHost.degreeDatas.0.description>{PAWN_nameDef}は名前を覚え、グラスが空になる前に注ぎ足し、見知らぬ人にも待たれていたと感じさせる。接客の習得が速い。</HH_BornHost.degreeDatas.0.description>
+  <HH_BornHost.degreeDatas.0.label>生まれながらの主人</HH_BornHost.degreeDatas.0.label>
+  <HH_Caregiver.degreeDatas.0.description>{PAWN_nameDef}は病人に付き添い、食事をとっていない人に気づく。{PAWN_pronoun}が行うマッサージはより効果が高く、{PAWN_pronoun}が迎えたり案内したりする子供や家族は、少しだけ機嫌がよくなる。</HH_Caregiver.degreeDatas.0.description>
+  <HH_Caregiver.degreeDatas.0.label>世話好き</HH_Caregiver.degreeDatas.0.label>
+  <HH_EagleEye.degreeDatas.0.description>{PAWN_nameDef}は、入ってはいけない所をうろつく者に気づく。{PAWN_pronoun}がマップにいる間、まっとうな客が裏部屋に迷い込むことは減る。</HH_EagleEye.degreeDatas.0.description>
+  <HH_EagleEye.degreeDatas.0.label>鷹の目</HH_EagleEye.degreeDatas.0.label>
+  <HH_Gambler.degreeDatas.0.description>{PAWN_nameDef}はテーブルが大好きだ。回るホイール、カードを切る音、カードがめくられる前の間。{PAWN_objective}にとってギャンブルはより楽しく、そしてより危険になる。客としては{PAWN_pronoun}はより多くの資金を持ち込んで大きく賭け、ブラックジャックとポーカーでは{PAWN_pronoun}の腕が少し冴える。</HH_Gambler.degreeDatas.0.description>
+  <HH_Gambler.degreeDatas.0.label>ギャンブラー</HH_Gambler.degreeDatas.0.label>
+  <HH_GamblingAverse.degreeDatas.0.description>{PAWN_nameDef}は賭け事を拒み、のめり込むこともなく、胴元が賭けを受け付ける部屋では落ち着かない。</HH_GamblingAverse.degreeDatas.0.description>
+  <HH_GamblingAverse.degreeDatas.0.label>賭け事嫌い</HH_GamblingAverse.degreeDatas.0.label>
+  <HH_Gossip.degreeDatas.0.description>{PAWN_nameDef}は話を{PAWN_objective}の胸にしまっておけない。客が帰るとき、他人に語る内容が、良くも悪くも店の評判を大きく動かす。</HH_Gossip.degreeDatas.0.description>
+  <HH_Gossip.degreeDatas.0.label>噂好き</HH_Gossip.degreeDatas.0.label>
+  <HH_Grump.degreeDatas.0.description>{PAWN_nameDef}はフロントを税関のように切り盛りする。{PAWN_pronoun}と話した客は、少しだけ機嫌を損ねて帰る。</HH_Grump.degreeDatas.0.description>
+  <HH_Grump.degreeDatas.0.label>気難し屋</HH_Grump.degreeDatas.0.label>
+  <HH_KidMagnet.degreeDatas.0.description>子供たちは、アヒルの子のように{PAWN_nameDef}の後をついて回る。{PAWN_pronoun}が迎えたり案内したりする子供や家族は、機嫌がよくなる。</HH_KidMagnet.degreeDatas.0.description>
+  <HH_KidMagnet.degreeDatas.0.label>子供に大人気</HH_KidMagnet.degreeDatas.0.label>
+  <HH_Lucky.degreeDatas.0.description>{PAWN_nameDef}は、コインの良い側を引き当てるコツを心得ている。カジノのハウスゲームでは、{PAWN_pronoun}に対する配当設定がわずかに甘く、2セッション続けて勝てばツキの連続になる。{PAWN_pronoun}が入植地に住んでいる間、入植地が買う宝くじは10枚に1枚が無料になる。</HH_Lucky.degreeDatas.0.description>
+  <HH_Lucky.degreeDatas.0.label>幸運</HH_Lucky.degreeDatas.0.label>
+  <HH_Peacemaker.degreeDatas.0.description>{PAWN_nameDef}は荒れた声の間に割って入り、鎮めてしまう。{PAWN_objective}と同じ部屋での口論は、殴り合いに発展しにくい。</HH_Peacemaker.degreeDatas.0.description>
+  <HH_Peacemaker.degreeDatas.0.label>仲裁者</HH_Peacemaker.degreeDatas.0.label>
+  <HH_PennyPincher.degreeDatas.0.description>{PAWN_nameDef}はあらゆる契約の全行を二度読む。{PAWN_pronoun}が入植地に住んでいる間、銀行の手数料が20%安くなる。{PAWN_pronoun}が給仕すると、客は値段が少し高いと感じる。</HH_PennyPincher.degreeDatas.0.description>
+  <HH_PennyPincher.degreeDatas.0.label>締まり屋</HH_PennyPincher.degreeDatas.0.label>
+  <HH_SilverTongue.degreeDatas.0.description>{PAWN_nameDef}なら、川の流れさえ別の川床へ説き伏せられる。{PAWN_pronoun}がフロントで迎えたり案内したりした客は、期待を少し控えめにする。{PAWN_pronoun}が口説き落とした客が入植地に加わるときは、好感度の消費も少なくて済む。</HH_SilverTongue.degreeDatas.0.description>
+  <HH_SilverTongue.degreeDatas.0.label>口達者</HH_SilverTongue.degreeDatas.0.label>
+  <HH_SteadyHands.degreeDatas.0.description>{PAWN_nameDef}の指は震えない。ディーラーとして、{PAWN_pronoun}は目に見えて速くカードを配る。</HH_SteadyHands.degreeDatas.0.description>
+  <HH_SteadyHands.degreeDatas.0.label>確かな手</HH_SteadyHands.degreeDatas.0.label>
+  <HH_Unlucky.degreeDatas.0.description>{PAWN_nameDef}のトーストは、いつもバターを塗った面を下に落ちる。カジノのハウスゲームでは、{PAWN_objective}に対する配当設定がわずかに厳しく、負けたセッションはひとつひとつ堪える。</HH_Unlucky.degreeDatas.0.description>
+  <HH_Unlucky.degreeDatas.0.label>不運</HH_Unlucky.degreeDatas.0.label>
+</LanguageData>

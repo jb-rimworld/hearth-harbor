@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_UnspeakableEvents.label>Доповнення «Невимовні події»</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>Для пошкоджень, які формулювання полісу не може описати без юриста в кімнаті.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>Деякі речі краще застрахувати, ніж називати.</SL_UnspeakableEvents.slogan>
+  <SL_UnspeakableEvents.benefitBare>Готівка, після вашої власної частки. Будь ласка, не описуйте сутність.</SL_UnspeakableEvents.benefitBare>
+  <SL_UnspeakableEvents.benefitGood>Готівка або матеріали капсулою.</SL_UnspeakableEvents.benefitGood>
+  <SL_UnspeakableEvents.benefitPremium>Відновна вартість, миттєво. Спеціаліст на телефоні.</SL_UnspeakableEvents.benefitPremium>
+  <SL_UnspeakableEvents.coversText>Будівлі, знищені аномальними сутностями.</SL_UnspeakableEvents.coversText>
+</LanguageData>

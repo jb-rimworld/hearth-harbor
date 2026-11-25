@@ -9,4 +9,12 @@
   <SL_BlackLedger.label>The Black Ledger</SL_BlackLedger.label>
   <SL_BlackLedger.description>Sin preguntas, sin formularios, sin nombres. Presta a cualquiera, sea cual sea su puntuación, a un precio. De vez en cuando un libro mayor "desaparece" y con él una parte de los depósitos.</SL_BlackLedger.description>
   <SL_BlackLedger.slogan>No preguntamos. Tú no cuentas. Los intereses siguen compuestos.</SL_BlackLedger.slogan>
+  <SL_BlackLedger.perks.0>Los préstamos ignoran tu puntuación crediticia (y tus sentimientos).</SL_BlackLedger.perks.0>
+  <SL_BlackLedger.perks.1>Cada cuadrante hay un 1 % de riesgo de que una cuarta parte del saldo sea «incautada».</SL_BlackLedger.perks.1>
+  <SL_BlackLedger.perks.2>Solo para colonias que han descubierto el inframundo.</SL_BlackLedger.perks.2>
+  <SL_Mutual.perks.0>Neutral y justo: sin trucos, sin sorpresas.</SL_Mutual.perks.0>
+  <SL_Mutual.perks.1>Comisiones: 1 % por retirada (mínimo 5), cajero 2 + 1 %.</SL_Mutual.perks.1>
+  <SL_TooBigToFail.perks.0>El mejor rendimiento de cuenta de los bancos convencionales (+10 % en el exponente).</SL_TooBigToFail.perks.0>
+  <SL_TooBigToFail.perks.1>Rescate: una vez por año de juego, un cliente que hace diez minutos era Too Big To Fail y ahora está en números rojos recibe un préstamo a 60 días sin intereses (hasta el 10 % del máximo).</SL_TooBigToFail.perks.1>
+  <SL_TooBigToFail.perks.2>Cuota de cuenta de 6 de plata por cuadrante.</SL_TooBigToFail.perks.2>
 </LanguageData>

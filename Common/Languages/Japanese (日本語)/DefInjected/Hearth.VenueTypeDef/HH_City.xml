@@ -6,4 +6,28 @@
   <HH_Venue_Salon.description>サロンチェアのある部屋。客はヘアカット、新しいスタイル、染髪、または正しい思想があればタトゥーに料金を払います。接客作業の作業種別を持つ入植者が施術します。接客する者がいなければサロンは閉店です。</HH_Venue_Salon.description>
   <HH_Venue_Gallery.label>ギャラリー</HH_Venue_Gallery.label>
   <HH_Venue_Gallery.description>彫刻で満たされた、よい光の入る部屋。客は少額の入場料を払い、作品を一つずつ通り過ぎます。芸術が美しいほど、客は満足して帰ります。部屋に数点の芸術作品が必要です。</HH_Venue_Gallery.description>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.hint>映画は、電力で動くプロジェクタースクリーンに映される。</HH_Venue_Cinema.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.label>プロジェクタースクリーン</HH_Venue_Cinema.modExtensions.0.requirements.0.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.hint>スクリーンの前の座席。数は、シティライフ設定の「必要な座席数」に従う。</HH_Venue_Cinema.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.label>スクリーンに向いた座席</HH_Venue_Cinema.modExtensions.0.requirements.1.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.hint>電力がなければ、映画もない。</HH_Venue_Cinema.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.label>プロジェクター用の電力</HH_Venue_Cinema.modExtensions.0.requirements.2.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.hint>入口のカウンターがあると、それらしくなる。</HH_Venue_Cinema.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.label>チケットカウンター</HH_Venue_Cinema.modExtensions.0.requirements.3.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.hint>映画のお供のお菓子と飲み物。人手なしで売れる。</HH_Venue_Cinema.modExtensions.0.requirements.4.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.label>自動販売機</HH_Venue_Cinema.modExtensions.0.requirements.4.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.hint>部屋に置かれた彫刻。数は、シティライフ設定の「必要な芸術品数」に従う。芸術家が美術台で作る。</HH_Venue_Gallery.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.label>芸術品</HH_Venue_Gallery.modExtensions.0.requirements.0.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.hint>訪問者は、一番の作品の前で腰を下ろしたがる。</HH_Venue_Gallery.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.label>鑑賞用のベンチ</HH_Venue_Gallery.modExtensions.0.requirements.1.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.hint>良い明かりは、日没後の部屋を居心地よくする。</HH_Venue_Gallery.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.label>スタンドライト</HH_Venue_Gallery.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.hint>カット、スタイリング、カラーリングは、サロンチェアで行われる。</HH_Venue_Salon.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.label>サロンチェア</HH_Venue_Salon.modExtensions.0.requirements.0.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.hint>給仕の作業種類を持つ入植者が施術を担当する。</HH_Venue_Salon.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.label>スタイリスト（給仕作業）</HH_Venue_Salon.modExtensions.0.requirements.1.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.hint>順番を待つ客は座りたがる。</HH_Venue_Salon.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.label>待つ客用の座席</HH_Venue_Salon.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.hint>良い明かりは、日没後の部屋を居心地よくする。</HH_Venue_Salon.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.label>スタンドライト</HH_Venue_Salon.modExtensions.0.requirements.3.label>
 </LanguageData>

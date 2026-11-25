@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_UnspeakableEvents.label>Avenant aux événements innommables</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>Pour les dommages que la formulation de la police ne peut décrire sans un avocat dans la pièce.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>Certaines choses sont mieux assurées que nommées.</SL_UnspeakableEvents.slogan>
+  <SL_UnspeakableEvents.benefitBare>De l'argent, après votre part. Merci de ne pas décrire l'entité.</SL_UnspeakableEvents.benefitBare>
+  <SL_UnspeakableEvents.benefitGood>De l'argent ou des matériaux par capsule.</SL_UnspeakableEvents.benefitGood>
+  <SL_UnspeakableEvents.benefitPremium>Valeur de remplacement, instantanément. Un spécialiste est au téléphone.</SL_UnspeakableEvents.benefitPremium>
+  <SL_UnspeakableEvents.coversText>Bâtiments détruits par des entités anormales.</SL_UnspeakableEvents.coversText>
+</LanguageData>

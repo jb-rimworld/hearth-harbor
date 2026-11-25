@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_OrbitalExchange.label>Orbital Exchange</SL_OrbitalExchange.label>
+  <SL_OrbitalExchange.description>Банк торговой гильдии на очень дорогом вращающемся кольце. Лучший доступ к рынку на Окраине, самые высокие комиссии на Окраине, и к каждой квитанции прилагается маленький график, который идёт вверх и вправо.</SL_OrbitalExchange.description>
+  <SL_OrbitalExchange.slogan>Ликвидность со скоростью света. Комиссии тоже.</SL_OrbitalExchange.slogan>
+  <SL_OrbitalExchange.perks.0>Лучший доступ к рынку, когда исследованы инвестиции.</SL_OrbitalExchange.perks.0>
+  <SL_OrbitalExchange.perks.1>Самые высокие комиссии: 0,5 % за внесение, 2 % за снятие (минимум 10), плата за счёт 10 серебра за квадрум.</SL_OrbitalExchange.perks.1>
+</LanguageData>

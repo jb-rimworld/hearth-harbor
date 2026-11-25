@@ -6,4 +6,37 @@
   <SL_ClaimForm_Person.label>форма особистої заяви</SL_ClaimForm_Person.label>
   <SL_ClaimForm_Property.description>Форма B-4 для знищених будівель, транспорту та посівів: що сталося, наскільки сильно, хто бачив і як ви хочете отримати виплату.</SL_ClaimForm_Property.description>
   <SL_ClaimForm_Property.label>форма заяви про майно</SL_ClaimForm_Property.label>
+  <SL_ClaimForm_Money.fields.0.description>Косметичне.</SL_ClaimForm_Money.fields.0.description>
+  <SL_ClaimForm_Money.fields.0.label>Причина</SL_ClaimForm_Money.fields.0.label>
+  <SL_ClaimForm_Money.fields.0.options.0.label>Перевірка</SL_ClaimForm_Money.fields.0.options.0.label>
+  <SL_ClaimForm_Money.fields.0.options.1.label>Гість або торговець</SL_ClaimForm_Money.fields.0.options.1.label>
+  <SL_ClaimForm_Money.fields.0.options.2.label>Непорозуміння</SL_ClaimForm_Money.fields.0.options.2.label>
+  <SL_ClaimForm_Money.fields.0.options.3.label>Інше</SL_ClaimForm_Money.fields.0.options.3.label>
+  <SL_ClaimForm_Money.fields.1.description>Колоніст, який може це підтвердити.</SL_ClaimForm_Money.fields.1.description>
+  <SL_ClaimForm_Money.fields.1.label>Свідок</SL_ClaimForm_Money.fields.1.label>
+  <SL_ClaimForm_Person.fields.0.description>Як до цього дійшло. Косметичне, як і більша частина форми.</SL_ClaimForm_Person.fields.0.description>
+  <SL_ClaimForm_Person.fields.0.label>Обставини</SL_ClaimForm_Person.fields.0.label>
+  <SL_ClaimForm_Person.fields.0.options.0.label>Бій</SL_ClaimForm_Person.fields.0.options.0.label>
+  <SL_ClaimForm_Person.fields.0.options.1.label>Нещасний випадок на роботі</SL_ClaimForm_Person.fields.0.options.1.label>
+  <SL_ClaimForm_Person.fields.0.options.2.label>Тварина</SL_ClaimForm_Person.fields.0.options.2.label>
+  <SL_ClaimForm_Person.fields.0.options.3.label>Хвороба</SL_ClaimForm_Person.fields.0.options.3.label>
+  <SL_ClaimForm_Person.fields.0.options.4.label>Інше</SL_ClaimForm_Person.fields.0.options.4.label>
+  <SL_ClaimForm_Person.fields.1.description>Колоніст, який це бачив.</SL_ClaimForm_Person.fields.1.description>
+  <SL_ClaimForm_Person.fields.1.label>Свідок</SL_ClaimForm_Person.fields.1.label>
+  <SL_ClaimForm_Property.fields.0.description>Clawback Mutual реєструє її, читає, а потім вирішує, як завжди.</SL_ClaimForm_Property.fields.0.description>
+  <SL_ClaimForm_Property.fields.0.label>Що сталося?</SL_ClaimForm_Property.fields.0.label>
+  <SL_ClaimForm_Property.fields.0.options.0.label>Рейд або облога</SL_ClaimForm_Property.fields.0.options.0.label>
+  <SL_ClaimForm_Property.fields.0.options.1.label>Пожежа або вибух</SL_ClaimForm_Property.fields.0.options.1.label>
+  <SL_ClaimForm_Property.fields.0.options.2.label>Блискавка або негода</SL_ClaimForm_Property.fields.0.options.2.label>
+  <SL_ClaimForm_Property.fields.0.options.3.label>Нещасний випадок</SL_ClaimForm_Property.fields.0.options.3.label>
+  <SL_ClaimForm_Property.fields.0.options.4.label>Щось інше</SL_ClaimForm_Property.fields.0.options.4.label>
+  <SL_ClaimForm_Property.fields.1.description>Незначна, велика чи повна. Оцінювач не дивитиметься.</SL_ClaimForm_Property.fields.1.description>
+  <SL_ClaimForm_Property.fields.1.label>Розмір шкоди</SL_ClaimForm_Property.fields.1.label>
+  <SL_ClaimForm_Property.fields.1.options.0.label>Незначна</SL_ClaimForm_Property.fields.1.options.0.label>
+  <SL_ClaimForm_Property.fields.1.options.1.label>Велика</SL_ClaimForm_Property.fields.1.options.1.label>
+  <SL_ClaimForm_Property.fields.1.options.2.label>Повна втрата</SL_ClaimForm_Property.fields.1.options.2.label>
+  <SL_ClaimForm_Property.fields.2.description>Колоніст, який це бачив. Його свідчення додається до форми.</SL_ClaimForm_Property.fields.2.description>
+  <SL_ClaimForm_Property.fields.2.label>Свідок</SL_ClaimForm_Property.fields.2.label>
+  <SL_ClaimForm_Property.fields.3.description>Срібло звичайним шляхом або будівельні матеріали капсулою скидання (лише «Досить добре» та «Преміум від преміуму»). Це єдине поле, яке має значення.</SL_ClaimForm_Property.fields.3.description>
+  <SL_ClaimForm_Property.fields.3.label>Як ви бажаєте отримати виплату?</SL_ClaimForm_Property.fields.3.label>
 </LanguageData>

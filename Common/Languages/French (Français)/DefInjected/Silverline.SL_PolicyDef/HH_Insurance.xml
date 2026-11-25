@@ -33,4 +33,70 @@
   <SL_LimbByLimb.label>Régime accident membre par membre</SL_LimbByLimb.label>
   <SL_LimbByLimb.description>Chaque membre a un prix. Nous l'avons écrit. C'est en dernière page, dans le Tableau des membres.</SL_LimbByLimb.description>
   <SL_LimbByLimb.slogan>Chaque membre a un prix. Nous l'avons écrit.</SL_LimbByLimb.slogan>
+  <SL_ActsOfStoryteller.benefitBare>De l'argent pour le bâtiment détruit, après votre part.</SL_ActsOfStoryteller.benefitBare>
+  <SL_ActsOfStoryteller.benefitGood>De l'argent, ou les matériaux de construction livrés par capsule.</SL_ActsOfStoryteller.benefitGood>
+  <SL_ActsOfStoryteller.benefitPremium>Valeur de remplacement, versée instantanément par capsule. Un geste commercial une fois par an.</SL_ActsOfStoryteller.benefitPremium>
+  <SL_ActsOfStoryteller.coversText>Bâtiments de votre colonie détruits par des mains ennemies (raids, sièges, mécanoïdes). Pas le feu, pas les tempêtes, pas vos propres tourelles.</SL_ActsOfStoryteller.coversText>
+  <SL_ActsOfStoryteller.riders.0.description>Verse 10 % de plus sur chaque perte (jamais plus que la perte elle-même).</SL_ActsOfStoryteller.riders.0.description>
+  <SL_ActsOfStoryteller.riders.0.label>Renonciation à l'usure</SL_ActsOfStoryteller.riders.0.label>
+  <SL_ActsOfStoryteller.riders.1.description>Le service des sinistres examine votre sinistre un jour plus tôt.</SL_ActsOfStoryteller.riders.1.description>
+  <SL_ActsOfStoryteller.riders.1.label>Paperasse express</SL_ActsOfStoryteller.riders.1.label>
+  <SL_BlightBeGone.benefitBare>De l'argent pour la récolte perdue, après votre part.</SL_BlightBeGone.benefitBare>
+  <SL_BlightBeGone.benefitGood>De l'argent, 80 % de la valeur actuelle.</SL_BlightBeGone.benefitGood>
+  <SL_BlightBeGone.benefitPremium>Pleine valeur de la récolte, instantanément.</SL_BlightBeGone.benefitPremium>
+  <SL_BlightBeGone.coversText>Vos cultures lors d'une vague de froid ou de retombées toxiques.</SL_BlightBeGone.coversText>
+  <SL_BlightBeGone.riders.0.description>Verse 10 % de plus sur chaque perte (jamais plus que la perte elle-même).</SL_BlightBeGone.riders.0.description>
+  <SL_BlightBeGone.riders.0.label>Renonciation à l'usure</SL_BlightBeGone.riders.0.label>
+  <SL_ClosedForRepairs.benefitBare>Une journée forfaitaire, quelle qu'ait été sa valeur.</SL_ClosedForRepairs.benefitBare>
+  <SL_ClosedForRepairs.benefitGood>La perte journalière moyenne, jusqu'à cinq jours.</SL_ClosedForRepairs.benefitGood>
+  <SL_ClosedForRepairs.benefitPremium>Perte journalière pendant 15 jours maximum.</SL_ClosedForRepairs.benefitPremium>
+  <SL_ClosedForRepairs.coversText>Revenus perdus après la fermeture de votre commerce, déclarée par les commerces de Hearth &amp; Harbor.</SL_ClosedForRepairs.coversText>
+  <SL_GoldenYears.benefitBare>La somme assurée, une seule fois, quand le colon atteint 60 ans.</SL_GoldenYears.benefitBare>
+  <SL_GoldenYears.benefitGood>0,4 % de la somme assurée par jour, à partir de 60 ans.</SL_GoldenYears.benefitGood>
+  <SL_GoldenYears.benefitPremium>0,6 % de la somme assurée par jour, à partir de 60 ans. Une fête de départ à la retraite est envisageable.</SL_GoldenYears.benefitPremium>
+  <SL_GoldenYears.coversText>Un colon qui n'a pas encore 60 ans. À partir de 60 ans, Clawback Mutual verse une pension journalière (Strict minimum : un versement unique). La cotisation augmente à mesure que le colon approche de 60 ans ; nul ne peut souscrire une pension à 60 ans ou plus.</SL_GoldenYears.coversText>
+  <SL_ItWasntMe.benefitBare>La moitié de l'indemnisation, versée à la faction de la partie lésée.</SL_ItWasntMe.benefitBare>
+  <SL_ItWasntMe.benefitGood>80 % de l'indemnisation. Perte de bonne volonté réduite de moitié.</SL_ItWasntMe.benefitGood>
+  <SL_ItWasntMe.benefitPremium>La totalité. La rumeur est également prise en charge.</SL_ItWasntMe.benefitPremium>
+  <SL_ItWasntMe.coversText>Dommages causés à des invités et aux marchandises de marchands dont votre colonie est responsable. Déclarés par l'auberge, le marché et le comptoir commercial.</SL_ItWasntMe.coversText>
+  <SL_ItWasntMe.riders.0.description>Le service des sinistres examine votre sinistre un jour plus tôt.</SL_ItWasntMe.riders.0.description>
+  <SL_ItWasntMe.riders.0.label>Paperasse express</SL_ItWasntMe.riders.0.label>
+  <SL_LegalShield.benefitBare>50 % de chaque amende.</SL_LegalShield.benefitBare>
+  <SL_LegalShield.benefitGood>80 % de chaque amende, et un recours est déposé.</SL_LegalShield.benefitGood>
+  <SL_LegalShield.benefitPremium>L'amende entière. Maître Brix lit vos formulaires avant vous.</SL_LegalShield.benefitPremium>
+  <SL_LegalShield.coversText>Amendes et pénalités des inspecteurs, ennuis de licence et litiges de recouvrement. Réduit aussi la chance que Clawback Mutual refuse vos sinistres, et corrige vos formulaires de résiliation.</SL_LegalShield.coversText>
+  <SL_LegalShield.riders.0.description>Le service des sinistres examine votre sinistre un jour plus tôt.</SL_LegalShield.riders.0.description>
+  <SL_LegalShield.riders.0.label>Paperasse express</SL_LegalShield.riders.0.label>
+  <SL_LimbByLimb.benefitBare>Linéaire selon le Tableau des membres, à partir de 20 % d'invalidité. Les pertes partielles ne sont pas indemnisées.</SL_LimbByLimb.benefitBare>
+  <SL_LimbByLimb.benefitGood>Progression de 225 % à partir de 5 % d'invalidité. Les pertes partielles sont indemnisées.</SL_LimbByLimb.benefitGood>
+  <SL_LimbByLimb.benefitPremium>Progression de 350 % à partir de 1 % d'invalidité. Chaque doigt a un prix.</SL_LimbByLimb.benefitPremium>
+  <SL_LimbByLimb.coversText>Un colon. Séquelles permanentes d'accidents selon le Tableau des membres, et décès accidentel (20 % de la somme). Évalué un quadrum après l'accident. Les opérations ne sont pas des accidents.</SL_LimbByLimb.coversText>
+  <SL_LimbByLimb.riders.0.description>Les accidents Premium sont indemnisés selon le barème à 500 % au lieu de 350 %. Ne compte que pour les gros.</SL_LimbByLimb.riders.0.description>
+  <SL_LimbByLimb.riders.0.label>Progression Plus (500 %)</SL_LimbByLimb.riders.0.label>
+  <SL_LimbByLimb.riders.1.description>La somme du décès accidentel passe de 20 % à 30 % de la somme de base.</SL_LimbByLimb.riders.1.description>
+  <SL_LimbByLimb.riders.1.label>Capital décès renforcé</SL_LimbByLimb.riders.1.label>
+  <SL_MuffaloMachine.benefitBare>De l'argent de réparation, la moitié de la valeur actuelle.</SL_MuffaloMachine.benefitBare>
+  <SL_MuffaloMachine.benefitGood>De l'argent ou des pièces par capsule, 80 % de la valeur actuelle.</SL_MuffaloMachine.benefitGood>
+  <SL_MuffaloMachine.benefitPremium>Valeur de remplacement, instantanément. Le drone de remorquage est à vous.</SL_MuffaloMachine.benefitPremium>
+  <SL_MuffaloMachine.coversText>Navettes, capsules de largage et véhicules détruits par des forces hostiles. Les pièces bioniques sont de l'équipement et, en principe, sont aussi censées figurer ici. En pratique : voir le Régime accident.</SL_MuffaloMachine.coversText>
+  <SL_MuffaloMachine.riders.0.description>Verse 10 % de plus sur chaque perte (jamais plus que la perte elle-même).</SL_MuffaloMachine.riders.0.description>
+  <SL_MuffaloMachine.riders.0.label>Renonciation à l'usure</SL_MuffaloMachine.riders.0.label>
+  <SL_RimHealth.benefitBare>10 argent par colon alité et par jour, jusqu'à 5 jours sur 15.</SL_RimHealth.benefitBare>
+  <SL_RimHealth.benefitGood>15 argent par colon alité et par jour, jusqu'à 5 jours sur 15.</SL_RimHealth.benefitGood>
+  <SL_RimHealth.benefitPremium>25 argent par colon alité et par jour, jusqu'à 5 jours sur 15. Le deuxième avis est gratuit.</SL_RimHealth.benefitPremium>
+  <SL_RimHealth.coversText>Chaque jour où un colon est alité à cause d'une maladie ou d'une blessure nécessitant des soins, mais au plus 5 jours payés par colon sur 15 jours (le plafond d'indemnité d'hospitalisation). L'intoxication alimentaire est un accident de cuisine et compte quand même.</SL_RimHealth.coversText>
+  <SL_RimHealth.riders.0.description>Verse 10 % de plus pour chaque jour passé au lit.</SL_RimHealth.riders.0.description>
+  <SL_RimHealth.riders.0.label>Hospitalité hospitalière</SL_RimHealth.riders.0.label>
+  <SL_RoofOverHead.benefitBare>De l'argent pour le bâtiment brûlé, après votre part.</SL_RoofOverHead.benefitBare>
+  <SL_RoofOverHead.benefitGood>De l'argent, ou des matériaux de construction par capsule.</SL_RoofOverHead.benefitGood>
+  <SL_RoofOverHead.benefitPremium>Valeur de remplacement, instantanément par capsule. Cendres non incluses.</SL_RoofOverHead.benefitPremium>
+  <SL_RoofOverHead.coversText>Bâtiments de votre colonie détruits par le feu, des explosions et des tempêtes. Les incendies et explosions déclenchés par vos propres gens sont exclus (§11).</SL_RoofOverHead.coversText>
+  <SL_RoofOverHead.riders.0.description>Verse 10 % de plus sur chaque perte (jamais plus que la perte elle-même).</SL_RoofOverHead.riders.0.description>
+  <SL_RoofOverHead.riders.0.label>Renonciation à l'usure</SL_RoofOverHead.riders.0.label>
+  <SL_RoofOverHead.riders.1.description>Le service des sinistres examine votre sinistre un jour plus tôt.</SL_RoofOverHead.riders.1.description>
+  <SL_RoofOverHead.riders.1.label>Paperasse express</SL_RoofOverHead.riders.1.label>
+  <SL_Wanderlust.benefitBare>La somme par tête, seulement si quelqu'un meurt en route.</SL_Wanderlust.benefitBare>
+  <SL_Wanderlust.benefitGood>Décès, et membres perdus selon le Tableau des membres.</SL_Wanderlust.benefitGood>
+  <SL_Wanderlust.benefitPremium>Tout ce qui précède, et une somme forfaitaire pour chaque blessure.</SL_Wanderlust.benefitPremium>
+  <SL_Wanderlust.coversText>Colons en caravane. Strict minimum ne verse qu'un décès, Suffisant aussi les membres perdus, Premium la moindre égratignure.</SL_Wanderlust.coversText>
 </LanguageData>

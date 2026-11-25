@@ -71,6 +71,7 @@
   "JobDef/HH_GiveMassage.reportString": "massaging TargetB.",
   "WorkGiverDef/HH_GiveMassage.label": "give massage",
   "WorkGiverDef/HH_GiveMassage.verb": "massage",
+  "WorkGiverDef/HH_GiveMassage.gerund": "massaging",
   "ResearchProjectDef/HH_Bathhouse.label": "bathhouse",
   "ResearchProjectDef/HH_Bathhouse.description": "Wood-fired saunas and massage tables. Hot rooms, warm company, and a reason for guests to stay another afternoon.",
   "ResearchProjectDef/HH_Wellness.label": "wellness",

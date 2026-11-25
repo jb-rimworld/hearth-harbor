@@ -4,4 +4,5 @@
   <HH_GamblingSpree.beginLetterLabel>accès de jeu</HH_GamblingSpree.beginLetterLabel>
   <HH_GamblingSpree.beginLetter>{0} ne peut plus rester loin des tables et part dans un accès de jeu, ignorant toutes les règles de la politique des drogues.</HH_GamblingSpree.beginLetter>
   <HH_GamblingSpree.baseInspectLine>État mental : accès de jeu</HH_GamblingSpree.baseInspectLine>
+  <HH_GamblingSpree.recoveryMessage>{0} est sorti de sa frénésie de jeu.</HH_GamblingSpree.recoveryMessage>
 </LanguageData>

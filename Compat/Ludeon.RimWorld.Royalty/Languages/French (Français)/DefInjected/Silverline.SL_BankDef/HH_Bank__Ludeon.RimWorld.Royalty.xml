@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ImperialTreasury.label>Imperial Treasury</SL_ImperialTreasury.label>
+  <SL_ImperialTreasury.description>La chambre des comptes du Trône. Frais réduits, une vague odeur de cire à parquet et du crédit réservé à ceux qui portent un titre. Les retraits s'appellent « décaissements » et s'accompagnent d'une petite révérence.</SL_ImperialTreasury.description>
+  <SL_ImperialTreasury.slogan>Chaque pièce porte le profil du Trône. Merci de ne pas la mordre.</SL_ImperialTreasury.slogan>
+  <SL_ImperialTreasury.perks.0>Frais les plus bas : 0,5 % au retrait (minimum 2).</SL_ImperialTreasury.perks.0>
+  <SL_ImperialTreasury.perks.1>Prêts uniquement si quelqu'un dans la colonie détient un titre royal ; intérêts très bas.</SL_ImperialTreasury.perks.1>
+  <SL_ImperialTreasury.perks.2>Rendement de compte légèrement inférieur (−10 % dans l'exposant).</SL_ImperialTreasury.perks.2>
+</LanguageData>

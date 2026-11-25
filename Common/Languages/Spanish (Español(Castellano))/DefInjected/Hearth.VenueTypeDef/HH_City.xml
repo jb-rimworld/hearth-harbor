@@ -6,4 +6,28 @@
   <HH_Venue_Salon.description>Una sala con sillas de salón. Los visitantes pagan por un corte de pelo, un peinado nuevo, un tinte o, con la ideología adecuada, un tatuaje; un colono con el trabajo de atender se encarga. Sin nadie que atienda, el salón está cerrado.</HH_Venue_Salon.description>
   <HH_Venue_Gallery.label>galería</HH_Venue_Gallery.label>
   <HH_Venue_Gallery.description>Una sala llena de esculturas, colgadas con buena luz. Los visitantes pagan una pequeña entrada y pasan junto a las piezas una a una; cuanto más bello el arte, más contentos se marchan. Necesita un puñado de obras de arte en la sala.</HH_Venue_Gallery.description>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.hint>La película se proyecta en una pantalla de proyector con energía.</HH_Venue_Cinema.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.label>una pantalla de proyector</HH_Venue_Cinema.modExtensions.0.requirements.0.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.hint>Asientos delante de la pantalla: tantos como pida el ajuste «Asientos necesarios» de City Life.</HH_Venue_Cinema.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.label>asientos frente a la pantalla</HH_Venue_Cinema.modExtensions.0.requirements.1.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.hint>Sin energía, no hay película.</HH_Venue_Cinema.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.label>energía para el proyector</HH_Venue_Cinema.modExtensions.0.requirements.2.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.hint>Un mostrador junto a la puerta da buena imagen.</HH_Venue_Cinema.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.label>una taquilla</HH_Venue_Cinema.modExtensions.0.requirements.3.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.hint>Aperitivos y bebidas para la película, vendidos sin personal.</HH_Venue_Cinema.modExtensions.0.requirements.4.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.label>una máquina expendedora</HH_Venue_Cinema.modExtensions.0.requirements.4.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.hint>Esculturas en la sala: tantas como pida el ajuste «Obras de arte necesarias» de City Life. Los artistas las hacen en un banco de arte.</HH_Venue_Gallery.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.label>obras de arte</HH_Venue_Gallery.modExtensions.0.requirements.0.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.hint>A los visitantes les gusta sentarse frente a la mejor pieza.</HH_Venue_Gallery.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.label>un banco para contemplar</HH_Venue_Gallery.modExtensions.0.requirements.1.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.hint>Una buena luz hace que la sala resulte acogedora al caer la noche.</HH_Venue_Gallery.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.label>una lámpara de pie</HH_Venue_Gallery.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.hint>Los cortes, peinados y tintes se hacen en la silla de salón.</HH_Venue_Salon.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.label>una silla de salón</HH_Venue_Salon.modExtensions.0.requirements.0.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.hint>Un colono con el tipo de trabajo Servicio hace el trabajo.</HH_Venue_Salon.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.label>un estilista (trabajo de Servicio)</HH_Venue_Salon.modExtensions.0.requirements.1.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.hint>A los huéspedes que esperan su turno les gusta sentarse.</HH_Venue_Salon.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.label>asientos para los huéspedes en espera</HH_Venue_Salon.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.hint>Una buena luz hace que la sala resulte acogedora al caer la noche.</HH_Venue_Salon.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.label>una lámpara de pie</HH_Venue_Salon.modExtensions.0.requirements.3.label>
 </LanguageData>

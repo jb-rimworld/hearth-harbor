@@ -2,4 +2,7 @@
 <LanguageData>
   <HH_Screening.label>вечір кіно</HH_Screening.label>
   <HH_Screening.letterText>{ORGANIZER_labelShort} умовив колонію на вечір кіно. Кожен, хто сяде перед екраном, отримає відпочинок і добрий вечірній настрій.</HH_Screening.letterText>
+  <HH_Screening.calledOffMessage>Кіновечір скасовано.</HH_Screening.calledOffMessage>
+  <HH_Screening.finishedMessage>Кіновечір завершено.</HH_Screening.finishedMessage>
+  <HH_Screening.letterTitle>Кіновечір</HH_Screening.letterTitle>
 </LanguageData>

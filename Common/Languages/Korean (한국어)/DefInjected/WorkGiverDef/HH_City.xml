@@ -4,4 +4,6 @@
   <HH_SalonStyleWork.verb>손질하기</HH_SalonStyleWork.verb>
   <HH_BodyguardWork.label>손님 경호하기</HH_BodyguardWork.label>
   <HH_BodyguardWork.verb>경호하기</HH_BodyguardWork.verb>
+  <HH_BodyguardWork.gerund> 경호</HH_BodyguardWork.gerund>
+  <HH_SalonStyleWork.gerund> 손질</HH_SalonStyleWork.gerund>
 </LanguageData>

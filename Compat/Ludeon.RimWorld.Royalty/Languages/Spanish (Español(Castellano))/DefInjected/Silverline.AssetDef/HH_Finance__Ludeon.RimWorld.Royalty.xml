@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_EmpireWarBond.label>Bonos de guerra del Imperio</SL_Asset_EmpireWarBond.label>
+  <SL_Asset_EmpireWarBond.description>Bonos que financian una guerra del Imperio. Cuando la guerra acaba en victoria se disparan; en derrota valen lo que un buen marco. La guerra lleva mucho tiempo en marcha, sobre todo en los folletos.</SL_Asset_EmpireWarBond.description>
+  <SL_Asset_StockEmpire.label>IMPR, Imperial Pageantry Ltd</SL_Asset_StockEmpire.label>
+  <SL_Asset_StockEmpire.description>La empresa tras las ceremonias imperiales: estandartes, trompetas y coronas diminutas. Los beneficios dependen de cuántos nobles se sienten ofendidos por lo poco que se les ofrece.</SL_Asset_StockEmpire.description>
+  <SL_Asset_EmpireWarBond.tagline>Patriotismo con cupón.</SL_Asset_EmpireWarBond.tagline>
+  <SL_Asset_StockEmpire.tagline>Todo necesita una ceremonia.</SL_Asset_StockEmpire.tagline>
+</LanguageData>

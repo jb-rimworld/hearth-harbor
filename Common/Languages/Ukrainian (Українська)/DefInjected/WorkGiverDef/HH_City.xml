@@ -4,4 +4,6 @@
   <HH_SalonStyleWork.verb>робити зачіску</HH_SalonStyleWork.verb>
   <HH_BodyguardWork.label>охороняти гостя</HH_BodyguardWork.label>
   <HH_BodyguardWork.verb>охороняти</HH_BodyguardWork.verb>
+  <HH_BodyguardWork.gerund>охороняти</HH_BodyguardWork.gerund>
+  <HH_SalonStyleWork.gerund>робити зачіски</HH_SalonStyleWork.gerund>
 </LanguageData>

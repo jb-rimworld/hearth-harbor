@@ -26,4 +26,17 @@
   <SL_Asset_NftThrumbos.description>Колекція малюнків тромбо, кожен унікальний, кожен трохи схожий на інших. Ви володієте квитанцією на малюнок малюнка. Покупці з'являються повільно і хочуть знижку.</SL_Asset_NftThrumbos.description>
   <SL_Asset_NftMuffalo.label>Сертифікат власності: малюнок маффало</SL_Asset_NftMuffalo.label>
   <SL_Asset_NftMuffalo.description>Сертифікат власності на малюнок маффало. Малюнок зберігається десь. Сертифікат зберігається у вашому обліковому записі. Жоден із них не пахне маффало.</SL_Asset_NftMuffalo.description>
+  <SL_Asset_GrowthFund.tagline>Наші керуючі обігрують ринок (який саме, ми не казали).</SL_Asset_GrowthFund.tagline>
+  <SL_Asset_Index.tagline>Володійте всім, не розумійте нічого.</SL_Asset_Index.tagline>
+  <SL_Asset_Mattress.tagline>Ваші гроші в безпеці*. *Діють умови.</SL_Asset_Mattress.tagline>
+  <SL_Asset_MemeBoomalope.tagline>Мінливий за задумом, легкозаймистий за натурою.</SL_Asset_MemeBoomalope.tagline>
+  <SL_Asset_MemeMuffalo.tagline>Му. Це і є білий документ.</SL_Asset_MemeMuffalo.tagline>
+  <SL_Asset_MemeThrumbo.tagline>На Місяць, пішки, повільно.</SL_Asset_MemeThrumbo.tagline>
+  <SL_Asset_NftMuffalo.tagline>Ви володієте ідеєю картинки.</SL_Asset_NftMuffalo.tagline>
+  <SL_Asset_NftThrumbos.tagline>Унікальні, як і в усіх інших.</SL_Asset_NftThrumbos.tagline>
+  <SL_Asset_OutlanderBond.tagline>Позичайте людям зі списами!</SL_Asset_OutlanderBond.tagline>
+  <SL_Asset_RimCoin.tagline>Довіряйте математиці. Не біржі.</SL_Asset_RimCoin.tagline>
+  <SL_Asset_StockColony.tagline>Гостинність, але поквартально.</SL_Asset_StockColony.tagline>
+  <SL_Asset_StockMicaton.tagline>Квартальні цифри, квартальні почуття.</SL_Asset_StockMicaton.tagline>
+  <SL_Asset_StockTribal.tagline>Тепло, по-місцевому й трохи з димком.</SL_Asset_StockTribal.tagline>
 </LanguageData>

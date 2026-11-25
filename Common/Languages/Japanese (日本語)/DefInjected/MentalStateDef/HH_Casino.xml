@@ -4,4 +4,5 @@
   <HH_GamblingSpree.beginLetterLabel>ギャンブル暴走</HH_GamblingSpree.beginLetterLabel>
   <HH_GamblingSpree.beginLetter>{0} はもうテーブルから離れていられず、薬物ポリシーを無視してギャンブル暴走に入ります。</HH_GamblingSpree.beginLetter>
   <HH_GamblingSpree.baseInspectLine>精神状態: ギャンブル暴走</HH_GamblingSpree.baseInspectLine>
+  <HH_GamblingSpree.recoveryMessage>{0}はギャンブル暴走から冷めた。</HH_GamblingSpree.recoveryMessage>
 </LanguageData>

@@ -30,4 +30,19 @@
   <SL_Clause_31.description>Les polices se renouvellent d'elles-mêmes.</SL_Clause_31.description>
   <SL_Clause_40.label>conflit d'intérêts</SL_Clause_40.label>
   <SL_Clause_40.description>Dès Overbooked, Legal Shield ne vous aide pas contre Clawback Mutual.</SL_Clause_40.description>
+  <SL_Clause_1.text>La couverture commence après le délai de carence, qui commence après le début de la couverture.</SL_Clause_1.text>
+  <SL_Clause_11.text>Les dommages auto-infligés comprennent les dommages causés par vous, vos colons, vos animaux, vos tourelles et toute personne se trouvant à proximité.</SL_Clause_11.text>
+  <SL_Clause_14b.text>Les murs doivent être des murs. Un mur avec une porte est une porte.</SL_Clause_14b.text>
+  <SL_Clause_17.text>La clause 17 est jointe séparément, dans Thrumbo.</SL_Clause_17.text>
+  <SL_Clause_21.text>Les pièces bioniques sont de l'équipement et sont assurées au titre de la Couverture Muffalo &amp; Machine, que vous n'avez pas.</SL_Clause_21.text>
+  <SL_Clause_22.text>Si une partie perdue repousse, notre réclamation aussi.</SL_Clause_22.text>
+  <SL_Clause_23.text>Mourir avant l'expertise met fin à l'expertise.</SL_Clause_23.text>
+  <SL_Clause_26.text>Les changements de risque doivent être déclarés sous un jour. Cela inclut les épées.</SL_Clause_26.text>
+  <SL_Clause_30.text>Les résiliations exigent le formulaire C-7, signé en trois exemplaires, dans une couleur d'encre que nous avons en dossier.</SL_Clause_30.text>
+  <SL_Clause_31.text>Votre contrat se renouvelle automatiquement pour vous épargner le fardeau de décider.</SL_Clause_31.text>
+  <SL_Clause_3_2.text>Un accident est un événement extérieur soudain. Les thrumbos sont extérieurs. Votre cuisine ne l'est pas.</SL_Clause_3_2.text>
+  <SL_Clause_4.text>Les actes du conteur sont exclus, sauf si le conteur a agi raisonnablement.</SL_Clause_4.text>
+  <SL_Clause_40.text>Legal Shield ne couvre pas les litiges avec Clawback Mutual, pour des raisons que nous ne sommes pas tenus d'expliquer.</SL_Clause_40.text>
+  <SL_Clause_7b.text>Les raids ne sont pas la guerre. Les sièges sont la guerre. Les grappes de mécanoïdes sont de la météo.</SL_Clause_7b.text>
+  <SL_Clause_9.text>Les affections préexistantes comprennent les affections qui existaient avant, pendant ou peu après ce contrat.</SL_Clause_9.text>
 </LanguageData>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_UnspeakableEvents.label>Doložka nevyslovitelných událostí</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>Pro škody, které znění smlouvy nedokáže popsat bez právníka v místnosti.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>Některé věci je lepší pojistit, než pojmenovat.</SL_UnspeakableEvents.slogan>
+  <SL_UnspeakableEvents.benefitBare>Hotovost, po odečtení vašeho podílu. Nepopisujte prosím tu entitu.</SL_UnspeakableEvents.benefitBare>
+  <SL_UnspeakableEvents.benefitGood>Hotovost nebo materiál kapslí.</SL_UnspeakableEvents.benefitGood>
+  <SL_UnspeakableEvents.benefitPremium>Náhradní hodnota, okamžitě. Specialista je na telefonu.</SL_UnspeakableEvents.benefitPremium>
+  <SL_UnspeakableEvents.coversText>Budovy zničené entitami z anomálie.</SL_UnspeakableEvents.coversText>
+</LanguageData>

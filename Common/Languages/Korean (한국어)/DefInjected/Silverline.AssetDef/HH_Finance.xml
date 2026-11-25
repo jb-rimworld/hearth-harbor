@@ -26,4 +26,17 @@
   <SL_Asset_NftThrumbos.description>thrumbo 그림 모음입니다. 각각 유일하지만 서로 조금씩 닮았습니다. 당신은 그림의 그림에 대한 영수증을 소유하고 있습니다. 구매자는 천천히 나타나며 할인을 원합니다.</SL_Asset_NftThrumbos.description>
   <SL_Asset_NftMuffalo.label>소유권 증명서: muffalo 그림</SL_Asset_NftMuffalo.label>
   <SL_Asset_NftMuffalo.description>muffalo 그림의 소유권 증명서입니다. 그림은 어딘가에 저장되어 있고, 증명서는 당신의 계정에 저장되어 있습니다. 둘 중 어느 것도 muffalo 냄새가 나지 않습니다.</SL_Asset_NftMuffalo.description>
+  <SL_Asset_GrowthFund.tagline>저희 운용자는 시장을 이깁니다 (어느 시장인지는 말씀드리지 않았습니다).</SL_Asset_GrowthFund.tagline>
+  <SL_Asset_Index.tagline>전부 소유하세요. 아무것도 이해하지 못한 채.</SL_Asset_Index.tagline>
+  <SL_Asset_Mattress.tagline>고객님의 돈은 안전합니다*. *약관이 적용됩니다.</SL_Asset_Mattress.tagline>
+  <SL_Asset_MemeBoomalope.tagline>설계상 변동성이 크고, 본성상 불에 탑니다.</SL_Asset_MemeBoomalope.tagline>
+  <SL_Asset_MemeMuffalo.tagline>음머. 이것이 백서입니다.</SL_Asset_MemeMuffalo.tagline>
+  <SL_Asset_MemeThrumbo.tagline>달까지, 걸어서, 천천히.</SL_Asset_MemeThrumbo.tagline>
+  <SL_Asset_NftMuffalo.tagline>그림이라는 발상을 소유하게 됩니다.</SL_Asset_NftMuffalo.tagline>
+  <SL_Asset_NftThrumbos.tagline>유일합니다, 다른 모든 것과 마찬가지로.</SL_Asset_NftThrumbos.tagline>
+  <SL_Asset_OutlanderBond.tagline>창 든 사람들에게 빌려주세요!</SL_Asset_OutlanderBond.tagline>
+  <SL_Asset_RimCoin.tagline>수학을 믿으세요. 거래소는 말고.</SL_Asset_RimCoin.tagline>
+  <SL_Asset_StockColony.tagline>환대를, 분기별로.</SL_Asset_StockColony.tagline>
+  <SL_Asset_StockMicaton.tagline>분기별 숫자, 분기별 기분.</SL_Asset_StockMicaton.tagline>
+  <SL_Asset_StockTribal.tagline>따뜻하고, 현지적이고, 약간 그을린 맛.</SL_Asset_StockTribal.tagline>
 </LanguageData>

@@ -6,4 +6,28 @@
   <HH_Venue_Salon.description>Une pièce avec des fauteuils de salon. Les visiteurs paient une coupe, un nouveau style, une teinture ou, avec la bonne idéologie, un tatouage ; un colon ayant le travail de service s'en charge. Sans personne pour servir, le salon est fermé.</HH_Venue_Salon.description>
   <HH_Venue_Gallery.label>galerie</HH_Venue_Gallery.label>
   <HH_Venue_Gallery.description>Une pièce pleine de sculptures, accrochées dans une belle lumière. Les visiteurs paient un petit droit d'entrée et passent devant les pièces une à une ; plus l'art est beau, plus ils repartent heureux. Il faut quelques œuvres d'art dans la pièce.</HH_Venue_Gallery.description>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.hint>Le film passe sur un écran de projection alimenté.</HH_Venue_Cinema.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.label>un écran de projection</HH_Venue_Cinema.modExtensions.0.requirements.0.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.hint>Des sièges devant l'écran : autant que le demande le paramètre « Sièges requis » de la vie en ville.</HH_Venue_Cinema.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.label>des sièges face à l'écran</HH_Venue_Cinema.modExtensions.0.requirements.1.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.hint>Pas de courant, pas de film.</HH_Venue_Cinema.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.label>du courant pour le projecteur</HH_Venue_Cinema.modExtensions.0.requirements.2.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.hint>Un comptoir près de la porte fait son effet.</HH_Venue_Cinema.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.label>un comptoir de billetterie</HH_Venue_Cinema.modExtensions.0.requirements.3.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.hint>Des en-cas et des boissons pour le film, vendus sans personnel.</HH_Venue_Cinema.modExtensions.0.requirements.4.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.label>un distributeur automatique</HH_Venue_Cinema.modExtensions.0.requirements.4.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.hint>Des sculptures dans la pièce : autant que le demande le paramètre « Œuvres requises » de la vie en ville. Les artistes les réalisent à l'établi d'art.</HH_Venue_Gallery.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.label>des œuvres d'art</HH_Venue_Gallery.modExtensions.0.requirements.0.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.hint>Les visiteurs aiment s'asseoir devant la plus belle pièce.</HH_Venue_Gallery.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.label>un banc pour regarder</HH_Venue_Gallery.modExtensions.0.requirements.1.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.hint>Une bonne lumière rend une pièce accueillante après la tombée de la nuit.</HH_Venue_Gallery.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.label>un lampadaire</HH_Venue_Gallery.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.hint>Coupes, coiffures et colorations se font dans le fauteuil de coiffure.</HH_Venue_Salon.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.label>un fauteuil de coiffure</HH_Venue_Salon.modExtensions.0.requirements.0.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.hint>Un colon avec le type de travail Servir fait le travail.</HH_Venue_Salon.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.label>un coiffeur (travail de service)</HH_Venue_Salon.modExtensions.0.requirements.1.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.hint>Les invités qui attendent leur tour aiment s'asseoir.</HH_Venue_Salon.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.label>des sièges pour les invités en attente</HH_Venue_Salon.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.hint>Une bonne lumière rend une pièce accueillante après la tombée de la nuit.</HH_Venue_Salon.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.label>un lampadaire</HH_Venue_Salon.modExtensions.0.requirements.3.label>
 </LanguageData>

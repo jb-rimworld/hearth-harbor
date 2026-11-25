@@ -4,4 +4,6 @@
   <HH_SalonStyleWork.verb>coiffer</HH_SalonStyleWork.verb>
   <HH_BodyguardWork.label>protéger un visiteur</HH_BodyguardWork.label>
   <HH_BodyguardWork.verb>protéger</HH_BodyguardWork.verb>
+  <HH_BodyguardWork.gerund>protège</HH_BodyguardWork.gerund>
+  <HH_SalonStyleWork.gerund>coiffe</HH_SalonStyleWork.gerund>
 </LanguageData>

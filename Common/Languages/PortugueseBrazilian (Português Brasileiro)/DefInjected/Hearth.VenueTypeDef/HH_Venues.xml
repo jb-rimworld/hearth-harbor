@@ -12,4 +12,76 @@
   <HH_Venue_Spa.description>Um cômodo tranquilo para banhos, vapor e descanso. Um atendente mantém as toalhas aquecidas; os hóspedes pagam por visita.</HH_Venue_Spa.description>
   <HH_Venue_Lounge.label>salão de espera</HH_Venue_Lounge.label>
   <HH_Venue_Lounge.description>Uma sala de espera com assentos. Hóspedes que encontram um negócio fechado ou sem pessoal esperam aqui, em vez de na porta, e esperam com mais paciência. Sempre aberto, sem necessidade de funcionários.</HH_Venue_Lounge.description>
+  <HH_Venue_Casino.modExtensions.1.requirements.0.hint>Pelo menos um muffalo de um braço ou uma mesa de jogo. Um cassino sem jogos é só um cômodo.</HH_Venue_Casino.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.0.label>um jogo</HH_Venue_Casino.modExtensions.1.requirements.0.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.1.hint>Os muffalos de um braço e as mesas iluminadas só funcionam com energia.</HH_Venue_Casino.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.1.label>energia para as máquinas</HH_Venue_Casino.modExtensions.1.requirements.1.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.2.hint>As mesas de jogo precisam de um crupiê: um colono com o tipo de trabalho Servir.</HH_Venue_Casino.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.2.label>um crupiê (trabalho de Servir)</HH_Venue_Casino.modExtensions.1.requirements.2.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.3.hint>Hóspedes bem sentados ficam mais tempo e apostam mais. Os lugares marcados ao redor de cada mesa pedem uma cadeira.</HH_Venue_Casino.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.3.label>cadeiras nos lugares de jogo</HH_Venue_Casino.modExtensions.1.requirements.3.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.4.hint>Os hóspedes trocam prata por fichas no guichê e apostam um pouco mais.</HH_Venue_Casino.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.4.label>um guichê do caixa</HH_Venue_Casino.modExtensions.1.requirements.4.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.5.hint>Uma boa iluminação deixa o cômodo acolhedor depois do anoitecer.</HH_Venue_Casino.modExtensions.1.requirements.5.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.5.label>uma luminária de pé</HH_Venue_Casino.modExtensions.1.requirements.5.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.0.hint>Os hóspedes esperam aqui sentados. Pelo menos dois assentos.</HH_Venue_Lounge.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.0.label>assentos</HH_Venue_Lounge.modExtensions.1.requirements.0.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.1.hint>Um lugar para apoiar a xícara.</HH_Venue_Lounge.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.1.label>uma mesinha</HH_Venue_Lounge.modExtensions.1.requirements.1.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.2.hint>Um pouco de verde deixa qualquer cômodo mais agradável.</HH_Venue_Lounge.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.2.label>uma planta em vaso</HH_Venue_Lounge.modExtensions.1.requirements.2.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.3.hint>Uma boa iluminação deixa o cômodo acolhedor depois do anoitecer.</HH_Venue_Lounge.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.3.label>uma luminária de pé</HH_Venue_Lounge.modExtensions.1.requirements.3.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.0.hint>Os hóspedes sentam para comer; um restaurante sem mesas é uma cozinha.</HH_Venue_Restaurant.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.0.label>uma mesa</HH_Venue_Restaurant.modExtensions.1.requirements.0.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.1.hint>Pelo menos duas cadeiras nas mesas.</HH_Venue_Restaurant.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.1.label>assentos</HH_Venue_Restaurant.modExtensions.1.requirements.1.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.2.hint>Os pratos prontos numa prateleira ou mesa do cômodo estão no cardápio.</HH_Venue_Restaurant.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.2.label>pratos à venda</HH_Venue_Restaurant.modExtensions.1.requirements.2.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.3.hint>Um colono com o tipo de trabalho Servir anota os pedidos e mantém o restaurante aberto.</HH_Venue_Restaurant.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.3.label>um garçom (trabalho de Servir)</HH_Venue_Restaurant.modExtensions.1.requirements.3.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.4.hint>Um balcão dá um posto ao garçom e é onde se deixa a féria do dia.</HH_Venue_Restaurant.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.4.label>um balcão</HH_Venue_Restaurant.modExtensions.1.requirements.4.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.5.hint>Pratos esperando numa prateleira saem mais rápido.</HH_Venue_Restaurant.modExtensions.1.requirements.5.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.5.label>uma prateleira para pratos</HH_Venue_Restaurant.modExtensions.1.requirements.5.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.6.hint>Oito assentos ou mais para as noites movimentadas.</HH_Venue_Restaurant.modExtensions.1.requirements.6.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.6.label>espaço para uma multidão</HH_Venue_Restaurant.modExtensions.1.requirements.6.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.7.hint>Uma boa iluminação deixa o cômodo acolhedor depois do anoitecer.</HH_Venue_Restaurant.modExtensions.1.requirements.7.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.7.label>uma luminária de pé</HH_Venue_Restaurant.modExtensions.1.requirements.7.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.0.hint>Tudo o que estiver guardado em prateleiras e depósitos dentro do cômodo está à venda.</HH_Venue_Shop.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.0.label>uma prateleira ou depósito</HH_Venue_Shop.modExtensions.1.requirements.0.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.1.hint>Coloque o que quer vender no armazenamento do cômodo.</HH_Venue_Shop.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.1.label>mercadorias nas prateleiras</HH_Venue_Shop.modExtensions.1.requirements.1.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.2.hint>Com um lojista atrás do balcão, a loja cobra o preço cheio em vez do desconto de autoatendimento.</HH_Venue_Shop.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.2.label>um balcão</HH_Venue_Shop.modExtensions.1.requirements.2.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.3.hint>Opcional: um colono que faz o trabalho de Servir vende pelo preço cheio e deixa os hóspedes mais felizes.</HH_Venue_Shop.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.3.label>um lojista (trabalho de Servir)</HH_Venue_Shop.modExtensions.1.requirements.3.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.4.hint>Uma boa iluminação deixa o cômodo acolhedor depois do anoitecer.</HH_Venue_Shop.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.4.label>uma luminária de pé</HH_Venue_Shop.modExtensions.1.requirements.4.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.0.hint>Os hóspedes pagam por uma hidromassagem, pela sauna ou por uma massagem.</HH_Venue_Spa.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.0.label>uma banheira, sauna ou mesa de massagem</HH_Venue_Spa.modExtensions.1.requirements.0.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.1.hint>As instalações que precisam de energia só funcionam com ela.</HH_Venue_Spa.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.1.label>energia para as instalações</HH_Venue_Spa.modExtensions.1.requirements.1.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.2.hint>Um colono com o tipo de trabalho Servir cuida dos hóspedes.</HH_Venue_Spa.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.2.label>um atendente (trabalho de Servir)</HH_Venue_Spa.modExtensions.1.requirements.2.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.3.hint>Os hóspedes gostam de sentar entre o banho e a sauna.</HH_Venue_Spa.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.3.label>assentos para descansar</HH_Venue_Spa.modExtensions.1.requirements.3.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.4.hint>Um pouco de verde deixa qualquer cômodo mais agradável.</HH_Venue_Spa.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.4.label>uma planta em vaso</HH_Venue_Spa.modExtensions.1.requirements.4.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.0.hint>O barman fica atrás dele e os hóspedes pedem ali. A féria do dia é deixada nele à meia-noite. Dispensável no sistema de confiança (ninguém serve).</HH_Venue_Tavern.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.0.label>um balcão</HH_Venue_Tavern.modExtensions.1.requirements.0.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.1.hint>Os hóspedes bebem numa mesa, não parados na porta.</HH_Venue_Tavern.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.1.label>uma mesa</HH_Venue_Tavern.modExtensions.1.requirements.1.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.2.hint>Pelo menos dois assentos: cadeiras, banquetas, poltronas ou bancos.</HH_Venue_Tavern.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.2.label>assentos</HH_Venue_Tavern.modExtensions.1.requirements.2.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.3.hint>A cerveja e outras bebidas guardadas no cômodo estão à venda.</HH_Venue_Tavern.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.3.label>bebidas em estoque</HH_Venue_Tavern.modExtensions.1.requirements.3.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.4.hint>Um colono com o tipo de trabalho Servir mantém a taverna aberta.</HH_Venue_Tavern.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.4.label>um barman (trabalho de Servir)</HH_Venue_Tavern.modExtensions.1.requirements.4.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.5.hint>Bebidas numa prateleira ficam organizadas e são fáceis de repor.</HH_Venue_Tavern.modExtensions.1.requirements.5.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.5.label>uma prateleira para as bebidas</HH_Venue_Tavern.modExtensions.1.requirements.5.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.6.hint>Seis assentos ou mais, para que um grupo entre junto.</HH_Venue_Tavern.modExtensions.1.requirements.6.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.6.label>espaço para uma multidão</HH_Venue_Tavern.modExtensions.1.requirements.6.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.7.hint>Uma boa iluminação deixa o cômodo acolhedor depois do anoitecer.</HH_Venue_Tavern.modExtensions.1.requirements.7.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.7.label>uma luminária de pé</HH_Venue_Tavern.modExtensions.1.requirements.7.label>
 </LanguageData>

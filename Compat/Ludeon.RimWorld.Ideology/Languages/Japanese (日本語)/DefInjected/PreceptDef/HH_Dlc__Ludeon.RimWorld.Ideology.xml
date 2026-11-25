@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Indulgences_NotAThing.label>存在しない</HH_Indulgences_NotAThing.label>
+  <HH_Indulgences_NotAThing.description>ここでは誰も赦しを売ることなど考えたことがありません。買うものもなく、反対するものもありません。</HH_Indulgences_NotAThing.description>
+  <HH_Indulgences_Abhorrent.label>忌むべき</HH_Indulgences_Abhorrent.label>
+  <HH_Indulgences_Abhorrent.description>赦しは商品ではありません。それを売る者は神殿から追い出されるべきです。</HH_Indulgences_Abhorrent.description>
+  <HH_Indulgences_Disapproved.label>不評</HH_Indulgences_Disapproved.label>
+  <HH_Indulgences_Disapproved.description>赦しを買うのはみっともない習慣です。効果はありますが、誇れるものではありません。</HH_Indulgences_Disapproved.description>
+  <HH_Indulgences_Accepted.label>容認</HH_Indulgences_Accepted.label>
+  <HH_Indulgences_Accepted.description>正当な慈悲には正当なお布施を。値段は看板に書いてあります。</HH_Indulgences_Accepted.description>
+  <HH_Indulgences_Sacred.label>神聖</HH_Indulgences_Sacred.label>
+  <HH_Indulgences_Sacred.description>務めを果たすことは秘跡です。信者は割引を受けられ、安い良心を保つことが務めとされます。</HH_Indulgences_Sacred.description>
+  <HH_PaidAscension_NotAThing.label>存在しない</HH_PaidAscension_NotAThing.label>
+  <HH_PaidAscension_NotAThing.description>ここでは階級は買うものではなく、得るものです。買うものもなく、反対するものもありません。</HH_PaidAscension_NotAThing.description>
+  <HH_PaidAscension_Abhorrent.label>忌むべき</HH_PaidAscension_Abhorrent.label>
+  <HH_PaidAscension_Abhorrent.description>信仰は売り物ではありません。階級を売る者は、すでに信仰を失っています。</HH_PaidAscension_Abhorrent.description>
+  <HH_PaidAscension_Disapproved.label>不評</HH_PaidAscension_Disapproved.label>
+  <HH_PaidAscension_Disapproved.description>買われた階級は中身のない階級です。信徒たちはそれを見抜いています。</HH_PaidAscension_Disapproved.description>
+  <HH_PaidAscension_Accepted.label>容認</HH_PaidAscension_Accepted.label>
+  <HH_PaidAscension_Accepted.description>階級は、ほかのあらゆる価値あるものと同じく、表示された価格で買うことができます。</HH_PaidAscension_Accepted.description>
+  <HH_PaidAscension_Sacred.label>神聖</HH_PaidAscension_Sacred.label>
+  <HH_PaidAscension_Sacred.description>階段こそが信仰です。買われた一段は登られた一段であり、下にいる者たちは敬意をもって見上げます。</HH_PaidAscension_Sacred.description>
+  <HH_Indulgences_Abhorrent.comps.0.description>マップ上で免罪符が売られている</HH_Indulgences_Abhorrent.comps.0.description>
+  <HH_Indulgences_Sacred.comps.1.description>1四半期の間、免罪符を買っていない</HH_Indulgences_Sacred.comps.1.description>
+  <HH_PaidAscension_Abhorrent.comps.0.description>マップ上で地位が売られている</HH_PaidAscension_Abhorrent.comps.0.description>
+  <HH_PaidAscension_Sacred.comps.0.description>地位</HH_PaidAscension_Sacred.comps.0.description>
+</LanguageData>

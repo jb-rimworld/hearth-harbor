@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Creator_HarbourTinkerer.description>[PAWN_nameDef] cresceu entre os guindastes de carga de uma pequena cidade portuária, desmontando tudo o que os estivadores jogavam fora e remontando um pouco melhor do que antes.\n\nO dono da estalagem ao lado pagou [PAWN_objective] com torta para consertar as portas rangedoras, e [PAWN_pronoun] logo aprendeu que um quarto aquecido e um prato cheio transformam estranhos em amigos.</HH_Creator_HarbourTinkerer.description>
   <HH_Creator_WanderingInnkeeper.description>[PAWN_nameDef] nunca ficava muito tempo em lugar nenhum. Com uma caixa de ferramentas, um livro de receitas surrado e planos demais, [PAWN_pronoun] percorreu a borda construindo estalagens, bancos e pequenas enfermarias para quem precisasse, e depois entregava as chaves e seguia viagem.\n\nOs colonos das rotas de comércio ainda contam a história do estranho que consertou seus telhados, cozinhou o jantar e já tinha partido antes que alguém pudesse pagar. Em algum lugar lá fora, [PAWN_pronoun] ainda está construindo algo para outra pessoa.</HH_Creator_WanderingInnkeeper.description>
+  <HH_Creator_HarbourTinkerer.title>faz-tudo do porto</HH_Creator_HarbourTinkerer.title>
+  <HH_Creator_HarbourTinkerer.titleShort>faz-tudo</HH_Creator_HarbourTinkerer.titleShort>
+  <HH_Creator_WanderingInnkeeper.title>estalajadeiro andarilho</HH_Creator_WanderingInnkeeper.title>
+  <HH_Creator_WanderingInnkeeper.titleShort>estalajadeiro</HH_Creator_WanderingInnkeeper.titleShort>
 </LanguageData>

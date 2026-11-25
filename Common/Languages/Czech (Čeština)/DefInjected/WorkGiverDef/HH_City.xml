@@ -4,4 +4,6 @@
   <HH_SalonStyleWork.verb>stylizovat</HH_SalonStyleWork.verb>
   <HH_BodyguardWork.label>hlídat hosta</HH_BodyguardWork.label>
   <HH_BodyguardWork.verb>hlídat</HH_BodyguardWork.verb>
+  <HH_BodyguardWork.gerund>hlídat</HH_BodyguardWork.gerund>
+  <HH_SalonStyleWork.gerund>stylizovat</HH_SalonStyleWork.gerund>
 </LanguageData>

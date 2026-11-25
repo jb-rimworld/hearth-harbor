@@ -6,4 +6,28 @@
   <HH_Venue_Salon.description>一个摆放沙龙椅的房间。访客付费理发、换新造型、染发，或者在持有相应理念的前提下纹身；由具备服务工作类型的殖民者负责操作。没有人负责服务时，沙龙关闭。</HH_Venue_Salon.description>
   <HH_Venue_Gallery.label>画廊</HH_Venue_Gallery.label>
   <HH_Venue_Gallery.description>一个摆满雕塑、光线良好的房间。访客支付少量入场费，逐件走过展品；艺术品越美，他们离开时越开心。房间里需要有若干件艺术品。</HH_Venue_Gallery.description>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.hint>影片在通电的投影屏幕上放映。</HH_Venue_Cinema.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.label>一块投影屏幕</HH_Venue_Cinema.modExtensions.0.requirements.0.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.hint>屏幕前的座位：数量需达到城市生活设置中「所需座位数」的要求。</HH_Venue_Cinema.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.label>面向屏幕的座位</HH_Venue_Cinema.modExtensions.0.requirements.1.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.hint>没有电，就没有电影。</HH_Venue_Cinema.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.label>为投影仪供电</HH_Venue_Cinema.modExtensions.0.requirements.2.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.hint>门边摆一个柜台，更像那么回事。</HH_Venue_Cinema.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.label>一个售票柜台</HH_Venue_Cinema.modExtensions.0.requirements.3.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.hint>看电影用的零食和饮料，无需员工即可出售。</HH_Venue_Cinema.modExtensions.0.requirements.4.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.label>一台自动售货机</HH_Venue_Cinema.modExtensions.0.requirements.4.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.hint>房间里的雕塑：数量需达到城市生活设置中「所需艺术品数」的要求。艺术家在艺术工作台上制作。</HH_Venue_Gallery.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.label>艺术品</HH_Venue_Gallery.modExtensions.0.requirements.0.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.hint>访客喜欢坐在最好的作品前欣赏。</HH_Venue_Gallery.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.label>一张观赏长凳</HH_Venue_Gallery.modExtensions.0.requirements.1.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.hint>光线充足的房间在天黑后显得更温馨。</HH_Venue_Gallery.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.label>一盏落地灯</HH_Venue_Gallery.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.hint>理发、造型和染发都在沙龙椅上进行。</HH_Venue_Salon.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.label>一把沙龙椅</HH_Venue_Salon.modExtensions.0.requirements.0.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.hint>由一名启用了服务工作类型的殖民者来做。</HH_Venue_Salon.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.label>一名造型师（服务工作）</HH_Venue_Salon.modExtensions.0.requirements.1.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.hint>等候的客人喜欢坐着。</HH_Venue_Salon.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.label>供等候客人使用的座位</HH_Venue_Salon.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.hint>光线充足的房间在天黑后显得更温馨。</HH_Venue_Salon.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.label>一盏落地灯</HH_Venue_Salon.modExtensions.0.requirements.3.label>
 </LanguageData>

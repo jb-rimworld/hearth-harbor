@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Venue_DrugLounge.label>салон с дурманом</HH_Venue_DrugLounge.label>
   <HH_Venue_DrugLounge.description>Полутёмная комната с диванами и книгой учёта, которую никто не читает. Гости платят за сеанс и берут только то, что допускает их идеология. Открыто ночью.</HH_Venue_DrugLounge.description>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>Гости устраиваются на мягких сиденьях. Не меньше двух.</HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>диваны</HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>Чтобы было куда что-нибудь поставить.</HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>низкий столик</HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>
 </LanguageData>

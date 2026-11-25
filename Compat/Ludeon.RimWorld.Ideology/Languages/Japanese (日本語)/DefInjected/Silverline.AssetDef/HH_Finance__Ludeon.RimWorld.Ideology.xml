@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_PietyBonds.label>敬虔債券</SL_Asset_PietyBonds.label>
+  <SL_Asset_PietyBonds.description>17の信仰による寄付に裏付けられた債券。どの信仰も、残りの16が間違っていると確信しています。堅実で厳粛、そしてほんの少し独善的です。</SL_Asset_PietyBonds.description>
+  <SL_Asset_RelicFutures.label>聖遺物先物</SL_Asset_RelicFutures.label>
+  <SL_Asset_RelicFutures.description>存在するかもしれず、しないかもしれない聖遺物の先物。預言者かもしれず、そうでないかもしれない配達人が届けます。契約は祝福されています。</SL_Asset_RelicFutures.description>
+  <SL_Asset_PietyBonds.tagline>信仰に、満期日を。</SL_Asset_PietyBonds.tagline>
+  <SL_Asset_RelicFutures.tagline>来世まで持ち続けましょう。</SL_Asset_RelicFutures.tagline>
+</LanguageData>

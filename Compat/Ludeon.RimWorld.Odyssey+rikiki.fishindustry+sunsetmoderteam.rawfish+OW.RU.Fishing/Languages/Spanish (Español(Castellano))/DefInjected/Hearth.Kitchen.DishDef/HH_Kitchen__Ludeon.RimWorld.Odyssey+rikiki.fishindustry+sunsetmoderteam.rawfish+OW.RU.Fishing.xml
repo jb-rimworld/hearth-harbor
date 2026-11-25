@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_GrilledWholeFish.label>Pescado entero a la parrilla</HH_Dish_GrilledWholeFish.label>
+  <HH_Dish_GrilledWholeFish.description>Un pescado entero, un poco de sal y ninguna disculpa al pescado.</HH_Dish_GrilledWholeFish.description>
+  <HH_Dish_FishStew.label>Guiso de pescado</HH_Dish_FishStew.label>
+  <HH_Dish_FishStew.description>Todo lo que nada acaba aquí tarde o temprano.</HH_Dish_FishStew.description>
+  <HH_Dish_SmokedFishFillet.label>Filete de pescado ahumado</HH_Dish_SmokedFishFillet.label>
+  <HH_Dish_SmokedFishFillet.description>Filete del día, ahumado hasta olvidar el río.</HH_Dish_SmokedFishFillet.description>
+  <HH_Dish_SashimiPlate.label>Plato de sashimi</HH_Dish_SashimiPlate.label>
+  <HH_Dish_SashimiPlate.description>Pescado crudo en láminas finas y un pequeño dilema moral.</HH_Dish_SashimiPlate.description>
+  <HH_Dish_FishTacos.label>Tacos de pescado</HH_Dish_FishTacos.label>
+  <HH_Dish_FishTacos.description>Pescado en tortilla, entregado por una colona que corrió todo el camino.</HH_Dish_FishTacos.description>
+  <HH_Dish_FishStew.inspiration>Mods de pescado</HH_Dish_FishStew.inspiration>
+  <HH_Dish_FishTacos.inspiration>Mods de pescado</HH_Dish_FishTacos.inspiration>
+  <HH_Dish_GrilledWholeFish.inspiration>Mods de pescado</HH_Dish_GrilledWholeFish.inspiration>
+  <HH_Dish_SashimiPlate.inspiration>Mods de pescado</HH_Dish_SashimiPlate.inspiration>
+  <HH_Dish_SmokedFishFillet.inspiration>Mods de pescado</HH_Dish_SmokedFishFillet.inspiration>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_EmpireWarBond.label>Bons de guerre de l'Empire</SL_Asset_EmpireWarBond.label>
+  <SL_Asset_EmpireWarBond.description>Des bons qui financent une guerre de l'Empire. En cas de victoire, ils grimpent ; en cas de défaite, ils valent un joli cadre. La guerre dure depuis longtemps, surtout dans les brochures.</SL_Asset_EmpireWarBond.description>
+  <SL_Asset_StockEmpire.label>IMPR, Pompes impériales Ltd</SL_Asset_StockEmpire.label>
+  <SL_Asset_StockEmpire.description>La société derrière les cérémonies impériales : bannières, trompettes et minuscules couronnes. Les bénéfices dépendent du nombre de nobles froissés par si peu de chose.</SL_Asset_StockEmpire.description>
+  <SL_Asset_EmpireWarBond.tagline>Du patriotisme avec coupon.</SL_Asset_EmpireWarBond.tagline>
+  <SL_Asset_StockEmpire.tagline>Tout mérite une cérémonie.</SL_Asset_StockEmpire.tagline>
+</LanguageData>

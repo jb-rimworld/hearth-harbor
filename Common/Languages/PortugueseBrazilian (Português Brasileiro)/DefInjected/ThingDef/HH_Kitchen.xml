@@ -46,4 +46,5 @@
   <HH_Station_DoughBench.description>Uma bancada pesada com tampo polvilhado de farinha. Arroz e milho são socados até virar massa aqui, o que sai mais barato que terapia.</HH_Station_DoughBench.description>
   <HH_Station_ColdStation.label>estação fria</HH_Station_ColdStation.label>
   <HH_Station_ColdStation.description>Um balcão refrigerado que mantém as saladas crocantes e as sobremesas firmes. Elétrica.</HH_Station_ColdStation.description>
+  <HH_Cookbook.comps.CompUsable.useLabel>Estudar livro de receitas</HH_Cookbook.comps.CompUsable.useLabel>
 </LanguageData>

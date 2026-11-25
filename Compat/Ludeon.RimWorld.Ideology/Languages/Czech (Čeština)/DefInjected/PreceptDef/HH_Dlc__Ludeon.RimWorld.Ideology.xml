@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Indulgences_NotAThing.label>nezná to</HH_Indulgences_NotAThing.label>
+  <HH_Indulgences_NotAThing.description>Nikdo tady nikdy nepomyslel na prodej odpuštění. Není co kupovat, není proti čemu protestovat.</HH_Indulgences_NotAThing.description>
+  <HH_Indulgences_Abhorrent.label>odporné</HH_Indulgences_Abhorrent.label>
+  <HH_Indulgences_Abhorrent.description>Odpuštění není zboží. Kdo ho prodává, měl by být vyhnán z chrámu.</HH_Indulgences_Abhorrent.description>
+  <HH_Indulgences_Disapproved.label>neschvalované</HH_Indulgences_Disapproved.label>
+  <HH_Indulgences_Disapproved.description>Kupovat rozhřešení je ošklivý zvyk. Funguje to, ale nikdo by na to neměl být hrdý.</HH_Indulgences_Disapproved.description>
+  <HH_Indulgences_Accepted.label>přijímané</HH_Indulgences_Accepted.label>
+  <HH_Indulgences_Accepted.description>Férová oběť za férovou milost. Cena je na ceduli.</HH_Indulgences_Accepted.description>
+  <HH_Indulgences_Sacred.label>posvátné</HH_Indulgences_Sacred.label>
+  <HH_Indulgences_Sacred.description>Splácet své dluhy je svátost. Věřící dostávají slevu a levné svědomí je povinnost.</HH_Indulgences_Sacred.description>
+  <HH_PaidAscension_NotAThing.label>nezná to</HH_PaidAscension_NotAThing.label>
+  <HH_PaidAscension_NotAThing.description>Hodnost se tady získává, nikdy se nekupuje. Není co kupovat, není proti čemu protestovat.</HH_PaidAscension_NotAThing.description>
+  <HH_PaidAscension_Abhorrent.label>odporné</HH_PaidAscension_Abhorrent.label>
+  <HH_PaidAscension_Abhorrent.description>Víra není na prodej. Kdo prodává hodnost, už ji ztratil.</HH_PaidAscension_Abhorrent.description>
+  <HH_PaidAscension_Disapproved.label>neschvalované</HH_PaidAscension_Disapproved.label>
+  <HH_PaidAscension_Disapproved.description>Koupená hodnost je prázdná. Shromáždění to prohlédne.</HH_PaidAscension_Disapproved.description>
+  <HH_PaidAscension_Accepted.label>přijímané</HH_PaidAscension_Accepted.label>
+  <HH_PaidAscension_Accepted.description>Hodnost lze koupit za vyvěšenou cenu jako všechno ostatní cenné.</HH_PaidAscension_Accepted.description>
+  <HH_PaidAscension_Sacred.label>posvátné</HH_PaidAscension_Sacred.label>
+  <HH_PaidAscension_Sacred.description>Žebřík je víra. Každá koupená příčka je vystoupená příčka a ti pod tebou se na tebe dívají s respektem.</HH_PaidAscension_Sacred.description>
+  <HH_Indulgences_Abhorrent.comps.0.description>Odpustky prodávané na mapě</HH_Indulgences_Abhorrent.comps.0.description>
+  <HH_Indulgences_Sacred.comps.1.description>Žádné odpustky nekoupené po dobu kvadrumu</HH_Indulgences_Sacred.comps.1.description>
+  <HH_PaidAscension_Abhorrent.comps.0.description>Hodnost prodávaná na mapě</HH_PaidAscension_Abhorrent.comps.0.description>
+  <HH_PaidAscension_Sacred.comps.0.description>Hodnost</HH_PaidAscension_Sacred.comps.0.description>
+</LanguageData>

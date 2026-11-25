@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_TwistedMeatBao.label>扭曲肉包</HH_Dish_TwistedMeatBao.label>
+  <HH_Dish_TwistedMeatBao.description>包子只微微抽动了一下。请不要告诉馅料。</HH_Dish_TwistedMeatBao.description>
+  <HH_Dish_TwistedHotpot.label>扭曲火锅</HH_Dish_TwistedHotpot.label>
+  <HH_Dish_TwistedHotpot.description>它自己会冒泡，没人开过火。</HH_Dish_TwistedHotpot.description>
+  <HH_Dish_TwistedHotpot.inspiration>中国四川</HH_Dish_TwistedHotpot.inspiration>
+  <HH_Dish_TwistedMeatBao.inspiration>中国（蒸制）</HH_Dish_TwistedMeatBao.inspiration>
+</LanguageData>

@@ -4,4 +4,6 @@
   <HH_AccompanyGuest.verb>Gesellschaft leisten</HH_AccompanyGuest.verb>
   <HH_StaffFrontDesk.label>Rezeption besetzen</HH_StaffFrontDesk.label>
   <HH_StaffFrontDesk.verb>besetzen</HH_StaffFrontDesk.verb>
+  <HH_AccompanyGuest.gerund>Gesellschaft leisten für</HH_AccompanyGuest.gerund>
+  <HH_StaffFrontDesk.gerund>Besetzen von</HH_StaffFrontDesk.gerund>
 </LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ImperialTreasury.label>Imperial Treasury</SL_ImperialTreasury.label>
+  <SL_ImperialTreasury.description>La propia casa de cuentas del Trono. Comisiones bajas, un ligero olor a cera de suelos y crédito solo para quienes llevan título. Las retiradas se llaman "desembolsos" y vienen con una pequeña reverencia.</SL_ImperialTreasury.description>
+  <SL_ImperialTreasury.slogan>Cada moneda lleva el perfil del Trono. Por favor, no la muerda.</SL_ImperialTreasury.slogan>
+  <SL_ImperialTreasury.perks.0>Las comisiones más bajas: 0,5 % por retirada (mínimo 2).</SL_ImperialTreasury.perks.0>
+  <SL_ImperialTreasury.perks.1>Préstamos solo si alguien de la colonia ostenta un título real; intereses muy baratos.</SL_ImperialTreasury.perks.1>
+  <SL_ImperialTreasury.perks.2>Rendimiento de cuenta algo menor (-10 % en el exponente).</SL_ImperialTreasury.perks.2>
+</LanguageData>

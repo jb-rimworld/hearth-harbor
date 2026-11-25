@@ -9,4 +9,12 @@
   <SL_BlackLedger.label>The Black Ledger</SL_BlackLedger.label>
   <SL_BlackLedger.description>질문도, 양식도, 이름도 없습니다. 신용 점수와 상관없이 누구에게나 대가를 받고 빌려줍니다. 가끔 장부 한 권이 "행방불명"되고, 예금의 일부도 함께 사라집니다.</SL_BlackLedger.description>
   <SL_BlackLedger.slogan>묻지 않습니다. 말하지 마십시오. 이자는 그래도 복리로 불어납니다.</SL_BlackLedger.slogan>
+  <SL_BlackLedger.perks.0>대출은 신용 점수(와 고객님의 기분)를 무시합니다.</SL_BlackLedger.perks.0>
+  <SL_BlackLedger.perks.1>분기마다 1 %의 확률로 잔액의 4분의 1이 "압류"됩니다.</SL_BlackLedger.perks.1>
+  <SL_BlackLedger.perks.2>지하세계를 발견한 정착지에만 열려 있습니다.</SL_BlackLedger.perks.2>
+  <SL_Mutual.perks.0>중립적이고 공정함: 속임수도, 깜짝 놀랄 일도 없습니다.</SL_Mutual.perks.0>
+  <SL_Mutual.perks.1>수수료: 인출 시 1 % (최소 5), ATM 2 + 1 %.</SL_Mutual.perks.1>
+  <SL_TooBigToFail.perks.0>주류 은행 중 최고의 계좌 수익률 (지수에서 +10 %).</SL_TooBigToFail.perks.0>
+  <SL_TooBigToFail.perks.1>구제 금융: 게임 내 1년에 한 번, 10분 전까지 Too Big To Fail 고객이었다가 지금은 적자인 고객에게 무이자 60일 대출을 해 줍니다 (최고점의 최대 10 %).</SL_TooBigToFail.perks.1>
+  <SL_TooBigToFail.perks.2>분기당 계좌 수수료 은화 6.</SL_TooBigToFail.perks.2>
 </LanguageData>

@@ -4,4 +4,5 @@
   <HH_GamblingSpree.beginLetterLabel>Spielrausch</HH_GamblingSpree.beginLetterLabel>
   <HH_GamblingSpree.beginLetter>{0} hält es nicht länger von den Tischen fern und geht auf einen Spielrausch, ohne sich um die Drogenrichtlinie zu scheren.</HH_GamblingSpree.beginLetter>
   <HH_GamblingSpree.baseInspectLine>Mentaler Zustand: Spielrausch</HH_GamblingSpree.baseInspectLine>
+  <HH_GamblingSpree.recoveryMessage>{0} hat den Spielrausch hinter sich.</HH_GamblingSpree.recoveryMessage>
 </LanguageData>

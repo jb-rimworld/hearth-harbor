@@ -30,4 +30,19 @@
   <SL_Clause_31.description>保单自动续期。</SL_Clause_31.description>
   <SL_Clause_40.label>利益冲突</SL_Clause_40.label>
   <SL_Clause_40.description>在超额预订阶段，法律护盾对 Clawback Mutual 无效。</SL_Clause_40.description>
+  <SL_Clause_1.text>保障自等待期结束后开始，而等待期自保障开始后起算。</SL_Clause_1.text>
+  <SL_Clause_11.text>自我造成的损害包括由您、您的殖民者、您的动物、您的炮塔以及站在它们附近的任何人造成的损害。</SL_Clause_11.text>
+  <SL_Clause_14b.text>墙必须是墙。带门的墙就是门。</SL_Clause_14b.text>
+  <SL_Clause_17.text>第17条另行附上，以 Thrumbo 的形式。</SL_Clause_17.text>
+  <SL_Clause_21.text>仿生部件属于设备，投保于穆法洛与机械保险，而您并未购买。</SL_Clause_21.text>
+  <SL_Clause_22.text>若失去的部位重新长出，我们的追索权也随之重新长出。</SL_Clause_22.text>
+  <SL_Clause_23.text>评定结束前死亡，则评定随之结束。</SL_Clause_23.text>
+  <SL_Clause_26.text>风险变化须在一天内申报。这包括剑。</SL_Clause_26.text>
+  <SL_Clause_30.text>退保须填写 C-7 表，一式三份签字，墨水颜色须与我们存档的一致。</SL_Clause_30.text>
+  <SL_Clause_31.text>您的保单将自动续期，免去您做决定的负担。</SL_Clause_31.text>
+  <SL_Clause_3_2.text>意外是突发的外部事件。Thrumbo 是外部的。您的厨艺不是。</SL_Clause_3_2.text>
+  <SL_Clause_4.text>叙事者的行为不在承保范围，除非叙事者的行为合理。</SL_Clause_4.text>
+  <SL_Clause_40.text>法律护盾不涵盖与 Clawback Mutual 的纠纷，原因我们无须解释。</SL_Clause_40.text>
+  <SL_Clause_7b.text>袭击不是战争。围攻是战争。机械族集群是天气。</SL_Clause_7b.text>
+  <SL_Clause_9.text>既有状况包括在本保单之前、期间或不久之后存在的状况。</SL_Clause_9.text>
 </LanguageData>

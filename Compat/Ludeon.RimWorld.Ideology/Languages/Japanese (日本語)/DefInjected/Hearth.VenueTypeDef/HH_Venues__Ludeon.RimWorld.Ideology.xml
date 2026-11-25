@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Chapel.label>客用礼拝堂</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>あらゆる信仰の訪問者が祈りに来る、客用の祭壇がある静かな部屋。客は何も払わないが、より穏やかになって帰る。立派な祭壇と数列の長椅子がある礼拝堂は、宿屋にとってよい隣人になる。昼間はいつでも開いており、人手は要らない。</HH_Venue_Chapel.description>
+  <HH_Venue_Chapel.modExtensions.1.requirements.0.hint>どんな信仰の訪問者も、来客用の祭壇で祈る。</HH_Venue_Chapel.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.0.label>来客用の祭壇</HH_Venue_Chapel.modExtensions.1.requirements.0.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.1.hint>しばらく留まる人のために、最低2席。</HH_Venue_Chapel.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.1.label>長椅子か椅子</HH_Venue_Chapel.modExtensions.1.requirements.1.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.2.hint>少しの緑があれば、どんな部屋も過ごしやすくなる。</HH_Venue_Chapel.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.2.label>鉢植え</HH_Venue_Chapel.modExtensions.1.requirements.2.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.3.hint>良い明かりは、日没後の部屋を居心地よくする。</HH_Venue_Chapel.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.3.label>スタンドライト</HH_Venue_Chapel.modExtensions.1.requirements.3.label>
+</LanguageData>

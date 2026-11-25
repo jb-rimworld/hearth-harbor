@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Venue_DrugLounge.label>наркотичний салон</HH_Venue_DrugLounge.label>
   <HH_Venue_DrugLounge.description>Тьмяна кімната з канапами та журналом, який ніхто не читає. Гості платять за сеанс; беруть лише те, що дозволяє їхня ідеологія. Відкрито вночі.</HH_Venue_DrugLounge.description>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>Гості вмощуються на м'яких сидіннях. Принаймні два.</HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>дивани</HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>Місце, куди можна щось покласти.</HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>низький столик</HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>
 </LanguageData>

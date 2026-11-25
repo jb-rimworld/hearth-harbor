@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ImperialTreasury.label>Imperial Treasury</SL_ImperialTreasury.label>
+  <SL_ImperialTreasury.description>Лічильня самого Трону. Низькі комісії, ледь помітний запах мастики для підлоги і кредит лише для тих, хто має титул. Зняття коштів тут називають «виплатами» і супроводжують невеликим поклоном.</SL_ImperialTreasury.description>
+  <SL_ImperialTreasury.slogan>Кожна монета несе профіль Трону. Будь ласка, не кусайте її.</SL_ImperialTreasury.slogan>
+  <SL_ImperialTreasury.perks.0>Найнижчі комісії: 0,5 % за зняття (мінімум 2).</SL_ImperialTreasury.perks.0>
+  <SL_ImperialTreasury.perks.1>Позики лише якщо хтось у колонії має королівський титул; дуже дешеві відсотки.</SL_ImperialTreasury.perks.1>
+  <SL_ImperialTreasury.perks.2>Трохи нижча дохідність рахунку (−10 % у показнику степеня).</SL_ImperialTreasury.perks.2>
+</LanguageData>

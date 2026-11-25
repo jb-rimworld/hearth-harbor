@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Creator_HarbourTinkerer.description>[PAWN_nameDef]은(는) 작은 항구 마을의 짐 크레인 사이에서 자랐습니다. 부두 노동자들이 버린 것이라면 무엇이든 분해했다가, 전보다 조금 더 낫게 다시 조립하곤 했습니다.\n\n옆집 여관 주인은 삐걱이는 문을 고쳐 준 대가로 [PAWN_objective]에게 파이를 주었고, [PAWN_pronoun]은 일찍부터 따뜻한 방과 가득 찬 접시가 낯선 사람을 친구로 만든다는 것을 배웠습니다.</HH_Creator_HarbourTinkerer.description>
   <HH_Creator_WanderingInnkeeper.description>[PAWN_nameDef]은(는) 어디에도 오래 머무른 적이 없었습니다. 공구 상자, 낡은 요리책, 그리고 너무 많은 계획을 들고, [PAWN_pronoun]은 림을 떠돌며 필요한 누군가를 위해 여관, 은행, 작은 진료소를 지었습니다. 그러고 나서는 열쇠를 넘겨주고 떠났습니다.\n\n교역로의 정착민들은 지붕을 고쳐 주고 저녁을 차려 주고 값을 치르기도 전에 사라져 버린 그 낯선 사람 이야기를 아직도 합니다. 어딘가에서 [PAWN_pronoun]은 지금도 누군가를 위해 무언가를 짓고 있습니다.</HH_Creator_WanderingInnkeeper.description>
+  <HH_Creator_HarbourTinkerer.title>항구 땜장이</HH_Creator_HarbourTinkerer.title>
+  <HH_Creator_HarbourTinkerer.titleShort>땜장이</HH_Creator_HarbourTinkerer.titleShort>
+  <HH_Creator_WanderingInnkeeper.title>떠돌이 여관 주인</HH_Creator_WanderingInnkeeper.title>
+  <HH_Creator_WanderingInnkeeper.titleShort>여관 주인</HH_Creator_WanderingInnkeeper.titleShort>
 </LanguageData>

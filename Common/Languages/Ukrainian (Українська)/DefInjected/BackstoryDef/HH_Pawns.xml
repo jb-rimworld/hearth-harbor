@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Creator_HarbourTinkerer.description>[PAWN_nameDef] виріс між портовими кранами маленького портового міста, розбираючи все, що викидали докери, і складаючи назад трохи краще, ніж було.\n\nСусідній корчмар платив [PAWN_objective] пирогами за ремонт скрипучих дверей, і [PAWN_pronoun] рано зрозумів, що тепла кімната та повна тарілка перетворюють незнайомців на друзів.</HH_Creator_HarbourTinkerer.description>
   <HH_Creator_WanderingInnkeeper.description>[PAWN_nameDef] ніде не залишався надовго. З ящиком інструментів, потертою книжкою рецептів і забагато планами [PAWN_pronoun] блукав по околицях і будував корчми, банки та маленькі лікарні для тих, кому вони були потрібні, а потім віддавав ключі й рушав далі.\n\nПоселенці торгових шляхів досі розповідають про незнайомця, який полагодив їм дах, приготував вечерю і зник, перш ніж хтось встиг заплатити. Десь там [PAWN_pronoun] і досі будує щось для когось іншого.</HH_Creator_WanderingInnkeeper.description>
+  <HH_Creator_HarbourTinkerer.title>портовий умілець</HH_Creator_HarbourTinkerer.title>
+  <HH_Creator_HarbourTinkerer.titleShort>умілець</HH_Creator_HarbourTinkerer.titleShort>
+  <HH_Creator_WanderingInnkeeper.title>мандрівний корчмар</HH_Creator_WanderingInnkeeper.title>
+  <HH_Creator_WanderingInnkeeper.titleShort>корчмар</HH_Creator_WanderingInnkeeper.titleShort>
 </LanguageData>

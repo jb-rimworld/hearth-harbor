@@ -26,4 +26,17 @@
   <SL_Asset_NftThrumbos.description>Kolekce obrázků thrumbů, každý jedinečný, každý trochu jako ostatní. Vlastníte doklad o obrázku obrázku. Kupci se objevují pomalu a chtějí slevu.</SL_Asset_NftThrumbos.description>
   <SL_Asset_NftMuffalo.label>Vlastnický certifikát: obrázek muffala</SL_Asset_NftMuffalo.label>
   <SL_Asset_NftMuffalo.description>Vlastnický certifikát k obrázku muffala. Obrázek je uložen někde jinde. Certifikát je uložen ve vašem účtu. Ani jedno nevoní po muffalovi.</SL_Asset_NftMuffalo.description>
+  <SL_Asset_GrowthFund.tagline>Naši správci porážejí trh (neřekli jsme který).</SL_Asset_GrowthFund.tagline>
+  <SL_Asset_Index.tagline>Vlastňte všechno, nechápejte nic.</SL_Asset_Index.tagline>
+  <SL_Asset_Mattress.tagline>Vaše peníze jsou v bezpečí*. *Platí podmínky.</SL_Asset_Mattress.tagline>
+  <SL_Asset_MemeBoomalope.tagline>Volatilní záměrně, hořlavý přirozeně.</SL_Asset_MemeBoomalope.tagline>
+  <SL_Asset_MemeMuffalo.tagline>Bú. To je celý whitepaper.</SL_Asset_MemeMuffalo.tagline>
+  <SL_Asset_MemeThrumbo.tagline>Na Měsíc, pěšky, pomalu.</SL_Asset_MemeThrumbo.tagline>
+  <SL_Asset_NftMuffalo.tagline>Vlastníte představu obrázku.</SL_Asset_NftMuffalo.tagline>
+  <SL_Asset_NftThrumbos.tagline>Jedinečné, jako všichni ostatní.</SL_Asset_NftThrumbos.tagline>
+  <SL_Asset_OutlanderBond.tagline>Půjčujte lidem s kopími!</SL_Asset_OutlanderBond.tagline>
+  <SL_Asset_RimCoin.tagline>Věřte matematice. Ne burze.</SL_Asset_RimCoin.tagline>
+  <SL_Asset_StockColony.tagline>Pohostinnost, ale čtvrtletně.</SL_Asset_StockColony.tagline>
+  <SL_Asset_StockMicaton.tagline>Čtvrtletní čísla, čtvrtletní pocity.</SL_Asset_StockMicaton.tagline>
+  <SL_Asset_StockTribal.tagline>Teplé, místní a lehce zakouřené.</SL_Asset_StockTribal.tagline>
 </LanguageData>

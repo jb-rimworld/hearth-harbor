@@ -46,4 +46,5 @@
   <HH_Station_DoughBench.description>小麦粉をまぶした天板の、重い作業台。米とトウモロコシをここで突いて生地にする。セラピーより安上がりだ。</HH_Station_DoughBench.description>
   <HH_Station_ColdStation.label>冷製台</HH_Station_ColdStation.label>
   <HH_Station_ColdStation.description>冷えたカウンター。サラダをパリッと、デザートを固く保つ。電動。</HH_Station_ColdStation.description>
+  <HH_Cookbook.comps.CompUsable.useLabel>レシピ本を読む</HH_Cookbook.comps.CompUsable.useLabel>
 </LanguageData>

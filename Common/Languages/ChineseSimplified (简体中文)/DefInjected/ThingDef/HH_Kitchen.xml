@@ -46,4 +46,5 @@
   <HH_Station_DoughBench.description>一张沉重的长台，台面撒满面粉。米和玉米在这里被捣成面团，比心理治疗便宜。</HH_Station_DoughBench.description>
   <HH_Station_ColdStation.label>冷藏台</HH_Station_ColdStation.label>
   <HH_Station_ColdStation.description>一张冷藏台面，让沙拉保持脆爽、甜点保持紧实。用电。</HH_Station_ColdStation.description>
+  <HH_Cookbook.comps.CompUsable.useLabel>研读食谱</HH_Cookbook.comps.CompUsable.useLabel>
 </LanguageData>

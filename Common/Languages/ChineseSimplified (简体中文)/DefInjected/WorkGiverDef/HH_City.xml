@@ -4,4 +4,6 @@
   <HH_SalonStyleWork.verb>做造型</HH_SalonStyleWork.verb>
   <HH_BodyguardWork.label>保护访客</HH_BodyguardWork.label>
   <HH_BodyguardWork.verb>保护</HH_BodyguardWork.verb>
+  <HH_BodyguardWork.gerund>保护</HH_BodyguardWork.gerund>
+  <HH_SalonStyleWork.gerund>造型</HH_SalonStyleWork.gerund>
 </LanguageData>

@@ -33,4 +33,70 @@
   <SL_LimbByLimb.label>План «Конечность за конечностью»</SL_LimbByLimb.label>
   <SL_LimbByLimb.description>У каждой конечности есть цена. Мы записали её. Она на последней странице, в таблице конечностей.</SL_LimbByLimb.description>
   <SL_LimbByLimb.slogan>У каждой конечности есть цена. Мы записали её.</SL_LimbByLimb.slogan>
+  <SL_ActsOfStoryteller.benefitBare>Деньги за разрушенное здание, за вычетом вашей доли.</SL_ActsOfStoryteller.benefitBare>
+  <SL_ActsOfStoryteller.benefitGood>Деньги или стройматериалы, доставленные капсулой.</SL_ActsOfStoryteller.benefitGood>
+  <SL_ActsOfStoryteller.benefitPremium>Восстановительная стоимость, мгновенно капсулой. Жест доброй воли раз в год.</SL_ActsOfStoryteller.benefitPremium>
+  <SL_ActsOfStoryteller.coversText>Здания вашей колонии, разрушенные вражескими руками (рейды, осады, механоиды). Не пожар, не бури, не ваши собственные турели.</SL_ActsOfStoryteller.coversText>
+  <SL_ActsOfStoryteller.riders.0.description>Выплачивает на 10 % больше по каждому убытку (но не больше самого убытка).</SL_ActsOfStoryteller.riders.0.description>
+  <SL_ActsOfStoryteller.riders.0.label>Отказ от износа</SL_ActsOfStoryteller.riders.0.label>
+  <SL_ActsOfStoryteller.riders.1.description>Отдел урегулирования обращений рассматривает ваше обращение на один день раньше.</SL_ActsOfStoryteller.riders.1.description>
+  <SL_ActsOfStoryteller.riders.1.label>Срочное оформление</SL_ActsOfStoryteller.riders.1.label>
+  <SL_BlightBeGone.benefitBare>Деньги за потерянный урожай, за вычетом вашей доли.</SL_BlightBeGone.benefitBare>
+  <SL_BlightBeGone.benefitGood>Деньги, 80 % от текущей стоимости.</SL_BlightBeGone.benefitGood>
+  <SL_BlightBeGone.benefitPremium>Полная стоимость урожая, мгновенно.</SL_BlightBeGone.benefitPremium>
+  <SL_BlightBeGone.coversText>Ваши посевы при похолодании или токсичных осадках.</SL_BlightBeGone.coversText>
+  <SL_BlightBeGone.riders.0.description>Выплачивает на 10 % больше по каждому убытку (но не больше самого убытка).</SL_BlightBeGone.riders.0.description>
+  <SL_BlightBeGone.riders.0.label>Отказ от износа</SL_BlightBeGone.riders.0.label>
+  <SL_ClosedForRepairs.benefitBare>Фиксированный день, чего бы он ни стоил.</SL_ClosedForRepairs.benefitBare>
+  <SL_ClosedForRepairs.benefitGood>Средний дневной убыток, до пяти дней.</SL_ClosedForRepairs.benefitGood>
+  <SL_ClosedForRepairs.benefitPremium>Дневной убыток до 15 дней.</SL_ClosedForRepairs.benefitPremium>
+  <SL_ClosedForRepairs.coversText>Потерянный доход после закрытия вашего заведения, о котором сообщают предприятия Hearth &amp; Harbor.</SL_ClosedForRepairs.coversText>
+  <SL_GoldenYears.benefitBare>Страховая сумма, один раз, когда колонисту исполняется 60.</SL_GoldenYears.benefitBare>
+  <SL_GoldenYears.benefitGood>0,4 % страховой суммы в день, начиная с 60.</SL_GoldenYears.benefitGood>
+  <SL_GoldenYears.benefitPremium>0,6 % страховой суммы в день, начиная с 60. Пенсионная вечеринка не исключена.</SL_GoldenYears.benefitPremium>
+  <SL_GoldenYears.coversText>Один колонист, которому ещё нет 60. С возраста 60 лет Clawback Mutual выплачивает ежедневную пенсию (Минимум: единовременную сумму). Взнос растёт по мере приближения колониста к 60; в 60 и позже пенсию купить нельзя.</SL_GoldenYears.coversText>
+  <SL_ItWasntMe.benefitBare>Половина компенсации, выплачивается фракции пострадавшего.</SL_ItWasntMe.benefitBare>
+  <SL_ItWasntMe.benefitGood>80 % компенсации. Потеря расположения вдвое меньше.</SL_ItWasntMe.benefitGood>
+  <SL_ItWasntMe.benefitPremium>Вся компенсация. Слухами мы тоже займёмся.</SL_ItWasntMe.benefitPremium>
+  <SL_ItWasntMe.coversText>Ущерб гостям и товарам торговцев, за который отвечает ваша колония. Сообщают гостиница, рынок и торговая стойка.</SL_ItWasntMe.coversText>
+  <SL_ItWasntMe.riders.0.description>Отдел урегулирования обращений рассматривает ваше обращение на один день раньше.</SL_ItWasntMe.riders.0.description>
+  <SL_ItWasntMe.riders.0.label>Срочное оформление</SL_ItWasntMe.riders.0.label>
+  <SL_LegalShield.benefitBare>50 % каждого штрафа.</SL_LegalShield.benefitBare>
+  <SL_LegalShield.benefitGood>80 % каждого штрафа и подана апелляция.</SL_LegalShield.benefitGood>
+  <SL_LegalShield.benefitPremium>Весь штраф. Адвокат Брикс читает ваши бумаги раньше вас.</SL_LegalShield.benefitPremium>
+  <SL_LegalShield.coversText>Штрафы и взыскания инспекторов, проблемы с лицензиями и споры со взыскателями. Также снижает шанс, что Clawback Mutual откажет в ваших обращениях, и исправляет ваши формы расторжения.</SL_LegalShield.coversText>
+  <SL_LegalShield.riders.0.description>Отдел урегулирования обращений рассматривает ваше обращение на один день раньше.</SL_LegalShield.riders.0.description>
+  <SL_LegalShield.riders.0.label>Срочное оформление</SL_LegalShield.riders.0.label>
+  <SL_LimbByLimb.benefitBare>Линейно по таблице конечностей, от 20 % инвалидности. Частичные потери не выплачиваются.</SL_LimbByLimb.benefitBare>
+  <SL_LimbByLimb.benefitGood>Прогрессия 225 % от 5 % инвалидности. Частичные потери выплачиваются.</SL_LimbByLimb.benefitGood>
+  <SL_LimbByLimb.benefitPremium>Прогрессия 350 % от 1 % инвалидности. У каждого пальца есть цена.</SL_LimbByLimb.benefitPremium>
+  <SL_LimbByLimb.coversText>Один колонист. Необратимые последствия несчастных случаев по таблице конечностей и смерть от несчастного случая (20 % суммы). Оценка проводится через квадрум после случая. Операции — не несчастные случаи.</SL_LimbByLimb.coversText>
+  <SL_LimbByLimb.riders.0.description>Несчастные случаи по тарифу «Премиум» выплачиваются по таблице 500 % вместо 350 %. Важно только для крупных.</SL_LimbByLimb.riders.0.description>
+  <SL_LimbByLimb.riders.0.label>Прогрессия Плюс (500 %)</SL_LimbByLimb.riders.0.label>
+  <SL_LimbByLimb.riders.1.description>Сумма за смерть от несчастного случая растёт с 20 % до 30 % от основной суммы.</SL_LimbByLimb.riders.1.description>
+  <SL_LimbByLimb.riders.1.label>Повышенная выплата при смерти</SL_LimbByLimb.riders.1.label>
+  <SL_MuffaloMachine.benefitBare>Деньги на ремонт, половина текущей стоимости.</SL_MuffaloMachine.benefitBare>
+  <SL_MuffaloMachine.benefitGood>Деньги или запчасти капсулой, 80 % от текущей стоимости.</SL_MuffaloMachine.benefitGood>
+  <SL_MuffaloMachine.benefitPremium>Восстановительная стоимость, мгновенно. Буксирный дрон ваш.</SL_MuffaloMachine.benefitPremium>
+  <SL_MuffaloMachine.coversText>Шаттлы, капсулы высадки и транспорт, уничтоженные враждебными силами. Бионические части — оборудование и в принципе тоже должны быть здесь. На практике: см. план от несчастных случаев.</SL_MuffaloMachine.coversText>
+  <SL_MuffaloMachine.riders.0.description>Выплачивает на 10 % больше по каждому убытку (но не больше самого убытка).</SL_MuffaloMachine.riders.0.description>
+  <SL_MuffaloMachine.riders.0.label>Отказ от износа</SL_MuffaloMachine.riders.0.label>
+  <SL_RimHealth.benefitBare>10 серебра за колониста на койке в день, до 5 дней из 15.</SL_RimHealth.benefitBare>
+  <SL_RimHealth.benefitGood>15 серебра за колониста на койке в день, до 5 дней из 15.</SL_RimHealth.benefitGood>
+  <SL_RimHealth.benefitPremium>25 серебра за колониста на койке в день, до 5 дней из 15. Второе мнение бесплатно.</SL_RimHealth.benefitPremium>
+  <SL_RimHealth.coversText>Каждый день, который колонист проводит на койке с болезнью или травмой, требующей лечения, но не больше 5 оплачиваемых дней на колониста за любые 15 дней (лимит больничного возмещения). Пищевое отравление — несчастный случай на кухне и засчитывается в любом случае.</SL_RimHealth.coversText>
+  <SL_RimHealth.riders.0.description>Выплачивает на 10 % больше за каждый день на больничной койке.</SL_RimHealth.riders.0.description>
+  <SL_RimHealth.riders.0.label>Больничное гостеприимство</SL_RimHealth.riders.0.label>
+  <SL_RoofOverHead.benefitBare>Деньги за сгоревшее здание, за вычетом вашей доли.</SL_RoofOverHead.benefitBare>
+  <SL_RoofOverHead.benefitGood>Деньги или стройматериалы капсулой.</SL_RoofOverHead.benefitGood>
+  <SL_RoofOverHead.benefitPremium>Восстановительная стоимость, мгновенно капсулой. Пепел в комплект не входит.</SL_RoofOverHead.benefitPremium>
+  <SL_RoofOverHead.coversText>Здания вашей колонии, уничтоженные огнём, взрывами и бурями. Пожары и взрывы, устроенные вашими собственными людьми, исключены (§11).</SL_RoofOverHead.coversText>
+  <SL_RoofOverHead.riders.0.description>Выплачивает на 10 % больше по каждому убытку (но не больше самого убытка).</SL_RoofOverHead.riders.0.description>
+  <SL_RoofOverHead.riders.0.label>Отказ от износа</SL_RoofOverHead.riders.0.label>
+  <SL_RoofOverHead.riders.1.description>Отдел урегулирования обращений рассматривает ваше обращение на один день раньше.</SL_RoofOverHead.riders.1.description>
+  <SL_RoofOverHead.riders.1.label>Срочное оформление</SL_RoofOverHead.riders.1.label>
+  <SL_Wanderlust.benefitBare>Сумма на человека, только если кто-то погибнет в пути.</SL_Wanderlust.benefitBare>
+  <SL_Wanderlust.benefitGood>Смерть и утраченные части тела по таблице конечностей.</SL_Wanderlust.benefitGood>
+  <SL_Wanderlust.benefitPremium>Всё вышеперечисленное и фиксированная сумма за каждую травму.</SL_Wanderlust.benefitPremium>
+  <SL_Wanderlust.coversText>Колонисты в караванах. Минимум выплачивает только за смерть, «Достаточно хорошо» — ещё и за утраченные части тела, «Премиум» — за каждую царапину.</SL_Wanderlust.coversText>
 </LanguageData>

@@ -33,4 +33,70 @@
   <SL_LimbByLimb.label>四肢ごとの事故プラン</SL_LimbByLimb.label>
   <SL_LimbByLimb.description>手足ひとつひとつに値段がついています。私たちはそれを書き留めました。最後のページの四肢給付表にあります。</SL_LimbByLimb.description>
   <SL_LimbByLimb.slogan>手足ひとつひとつに値段がついています。私たちはそれを書き留めました。</SL_LimbByLimb.slogan>
+  <SL_ActsOfStoryteller.benefitBare>破壊された建物の現金。自己負担分は差し引きます。</SL_ActsOfStoryteller.benefitBare>
+  <SL_ActsOfStoryteller.benefitGood>現金、または建築資材をカプセルで配送。</SL_ActsOfStoryteller.benefitGood>
+  <SL_ActsOfStoryteller.benefitPremium>再調達価額を、カプセルで即時お支払い。年に一度、御見舞金つき。</SL_ActsOfStoryteller.benefitPremium>
+  <SL_ActsOfStoryteller.coversText>敵の手によって破壊された入植地の建物（襲撃、包囲、機械化兵）。火災、嵐、ご自身のタレットは対象外。</SL_ActsOfStoryteller.coversText>
+  <SL_ActsOfStoryteller.riders.0.description>あらゆる損失の支払いが10%増えます（損失そのものを上回ることはありません）。</SL_ActsOfStoryteller.riders.0.description>
+  <SL_ActsOfStoryteller.riders.0.label>経年劣化免責の放棄</SL_ActsOfStoryteller.riders.0.label>
+  <SL_ActsOfStoryteller.riders.1.description>請求部門が、お客様の請求を1日早く確認します。</SL_ActsOfStoryteller.riders.1.description>
+  <SL_ActsOfStoryteller.riders.1.label>特急書類処理</SL_ActsOfStoryteller.riders.1.label>
+  <SL_BlightBeGone.benefitBare>失われた収穫の現金。自己負担分は差し引きます。</SL_BlightBeGone.benefitBare>
+  <SL_BlightBeGone.benefitGood>現金、時価の80%。</SL_BlightBeGone.benefitGood>
+  <SL_BlightBeGone.benefitPremium>収穫の全額を、即時お支払い。</SL_BlightBeGone.benefitPremium>
+  <SL_BlightBeGone.coversText>寒波または有毒な降下物による作物。</SL_BlightBeGone.coversText>
+  <SL_BlightBeGone.riders.0.description>あらゆる損失の支払いが10%増えます（損失そのものを上回ることはありません）。</SL_BlightBeGone.riders.0.description>
+  <SL_BlightBeGone.riders.0.label>経年劣化免責の放棄</SL_BlightBeGone.riders.0.label>
+  <SL_ClosedForRepairs.benefitBare>その日の価値にかかわらず、定額で1日分。</SL_ClosedForRepairs.benefitBare>
+  <SL_ClosedForRepairs.benefitGood>1日あたりの平均損失を、最大5日分。</SL_ClosedForRepairs.benefitGood>
+  <SL_ClosedForRepairs.benefitPremium>1日あたりの損失を、最大15日分。</SL_ClosedForRepairs.benefitPremium>
+  <SL_ClosedForRepairs.coversText>Hearth &amp; Harborの事業が報告した、施設の休業後の逸失収入。</SL_ClosedForRepairs.coversText>
+  <SL_GoldenYears.benefitBare>入植者が60歳になったとき、保険金額を一度だけ。</SL_GoldenYears.benefitBare>
+  <SL_GoldenYears.benefitGood>60歳から、1日あたり保険金額の0.4%。</SL_GoldenYears.benefitGood>
+  <SL_GoldenYears.benefitPremium>60歳から、1日あたり保険金額の0.6%。退職パーティーも夢ではありません。</SL_GoldenYears.benefitPremium>
+  <SL_GoldenYears.coversText>まだ60歳に達していない入植者1名。60歳からClawback Mutualが日額の年金を支払います（最低限: 一時金1回）。保険料は、入植者が60歳に近いほど高くなります。60歳以上の方は年金に加入できません。</SL_GoldenYears.coversText>
+  <SL_ItWasntMe.benefitBare>賠償額の半分を、被害者側の派閥へ。</SL_ItWasntMe.benefitBare>
+  <SL_ItWasntMe.benefitGood>賠償額の80%。好感度の低下は半分に。</SL_ItWasntMe.benefitGood>
+  <SL_ItWasntMe.benefitPremium>全額。噂の処理も含まれます。</SL_ItWasntMe.benefitPremium>
+  <SL_ItWasntMe.coversText>入植地に責任のある、客人および交易商人の商品への損害。宿屋、市場、交易窓口が報告します。</SL_ItWasntMe.coversText>
+  <SL_ItWasntMe.riders.0.description>請求部門が、お客様の請求を1日早く確認します。</SL_ItWasntMe.riders.0.description>
+  <SL_ItWasntMe.riders.0.label>特急書類処理</SL_ItWasntMe.riders.0.label>
+  <SL_LegalShield.benefitBare>罰金のたびに50%。</SL_LegalShield.benefitBare>
+  <SL_LegalShield.benefitGood>罰金のたびに80%。さらに異議申し立てを行います。</SL_LegalShield.benefitGood>
+  <SL_LegalShield.benefitPremium>罰金の全額。Brix弁護士が、お客様より先に書式を読みます。</SL_LegalShield.benefitPremium>
+  <SL_LegalShield.coversText>検査官による罰金・科料、免許のトラブル、回収をめぐる紛争。Clawback Mutualが請求を却下する可能性も下げ、解約書式も整えます。</SL_LegalShield.coversText>
+  <SL_LegalShield.riders.0.description>請求部門が、お客様の請求を1日早く確認します。</SL_LegalShield.riders.0.description>
+  <SL_LegalShield.riders.0.label>特急書類処理</SL_LegalShield.riders.0.label>
+  <SL_LimbByLimb.benefitBare>四肢給付表に基づく比例払い、後遺障害20%から。部分的な損失は支払われません。</SL_LimbByLimb.benefitBare>
+  <SL_LimbByLimb.benefitGood>後遺障害5%から、225%の累進。部分的な損失も支払われます。</SL_LimbByLimb.benefitGood>
+  <SL_LimbByLimb.benefitPremium>後遺障害1%から、350%の累進。指1本ごとに値段があります。</SL_LimbByLimb.benefitPremium>
+  <SL_LimbByLimb.coversText>入植者1名。四肢給付表に基づく事故の永続的な後遺症と、事故死（保険金額の20%）。事故の1四半期後に査定します。手術は事故ではありません。</SL_LimbByLimb.coversText>
+  <SL_LimbByLimb.riders.0.description>プレミアムの事故は、350%ではなく500%の表で支払われます。大きな事故にしか効きません。</SL_LimbByLimb.riders.0.description>
+  <SL_LimbByLimb.riders.0.label>累進プラス（500%）</SL_LimbByLimb.riders.0.label>
+  <SL_LimbByLimb.riders.1.description>事故死の保険金が、基本金額の20%から30%に上がります。</SL_LimbByLimb.riders.1.description>
+  <SL_LimbByLimb.riders.1.label>死亡給付金の増額</SL_LimbByLimb.riders.1.label>
+  <SL_MuffaloMachine.benefitBare>修理費。時価の半分。</SL_MuffaloMachine.benefitBare>
+  <SL_MuffaloMachine.benefitGood>現金、または部品をカプセルで。時価の80%。</SL_MuffaloMachine.benefitGood>
+  <SL_MuffaloMachine.benefitPremium>再調達価額を即時お支払い。レッカードローンはお客様のものです。</SL_MuffaloMachine.benefitPremium>
+  <SL_MuffaloMachine.coversText>敵対勢力に破壊されたシャトル、ドロップポッド、車両。バイオニック部位は装備品であり、原則としてこちらも対象のはずです。実際には、事故プランをご覧ください。</SL_MuffaloMachine.coversText>
+  <SL_MuffaloMachine.riders.0.description>あらゆる損失の支払いが10%増えます（損失そのものを上回ることはありません）。</SL_MuffaloMachine.riders.0.description>
+  <SL_MuffaloMachine.riders.0.label>経年劣化免責の放棄</SL_MuffaloMachine.riders.0.label>
+  <SL_RimHealth.benefitBare>寝たきりの入植者1人につき1日銀10。15日のうち最大5日まで。</SL_RimHealth.benefitBare>
+  <SL_RimHealth.benefitGood>寝たきりの入植者1人につき1日銀15。15日のうち最大5日まで。</SL_RimHealth.benefitGood>
+  <SL_RimHealth.benefitPremium>寝たきりの入植者1人につき1日銀25。15日のうち最大5日まで。セカンドオピニオンは無料です。</SL_RimHealth.benefitPremium>
+  <SL_RimHealth.coversText>入植者が、治療を要する病気や怪我で寝たきりになった日。ただし入植者1人につき、15日間のうち支払いは最大5日まで（入院給付の上限）。食中毒は料理による事故であり、それでも対象です。</SL_RimHealth.coversText>
+  <SL_RimHealth.riders.0.description>病床の日ごとの支払いが10%増えます。</SL_RimHealth.riders.0.description>
+  <SL_RimHealth.riders.0.label>病院のおもてなし</SL_RimHealth.riders.0.label>
+  <SL_RoofOverHead.benefitBare>焼けた建物の現金。自己負担分は差し引きます。</SL_RoofOverHead.benefitBare>
+  <SL_RoofOverHead.benefitGood>現金、または建築資材をカプセルで。</SL_RoofOverHead.benefitGood>
+  <SL_RoofOverHead.benefitPremium>再調達価額を、カプセルで即時お支払い。灰は含まれません。</SL_RoofOverHead.benefitPremium>
+  <SL_RoofOverHead.coversText>火災、爆発、嵐で破壊された入植地の建物。ご自身の人員が起こした火災や爆発は対象外です（§11）。</SL_RoofOverHead.coversText>
+  <SL_RoofOverHead.riders.0.description>あらゆる損失の支払いが10%増えます（損失そのものを上回ることはありません）。</SL_RoofOverHead.riders.0.description>
+  <SL_RoofOverHead.riders.0.label>経年劣化免責の放棄</SL_RoofOverHead.riders.0.label>
+  <SL_RoofOverHead.riders.1.description>請求部門が、お客様の請求を1日早く確認します。</SL_RoofOverHead.riders.1.description>
+  <SL_RoofOverHead.riders.1.label>特急書類処理</SL_RoofOverHead.riders.1.label>
+  <SL_Wanderlust.benefitBare>道中で誰かが死亡した場合のみ、1人あたりの金額。</SL_Wanderlust.benefitBare>
+  <SL_Wanderlust.benefitGood>死亡、および四肢給付表に基づく部位の喪失。</SL_Wanderlust.benefitGood>
+  <SL_Wanderlust.benefitPremium>上記のすべてに加え、怪我1件ごとに定額。</SL_Wanderlust.benefitPremium>
+  <SL_Wanderlust.coversText>隊商にいる入植者。最低限は死亡のみ、まずまずは部位の喪失も、プレミアムはかすり傷まで支払います。</SL_Wanderlust.coversText>
 </LanguageData>

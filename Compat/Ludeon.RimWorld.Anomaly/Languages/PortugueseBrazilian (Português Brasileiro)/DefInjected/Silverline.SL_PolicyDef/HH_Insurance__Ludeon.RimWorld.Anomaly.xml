@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_UnspeakableEvents.label>Adicional de Eventos Inomináveis</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>Para danos que o texto da apólice não consegue descrever sem um advogado na sala.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>Algumas coisas são melhor seguradas do que nomeadas.</SL_UnspeakableEvents.slogan>
+  <SL_UnspeakableEvents.benefitBare>Dinheiro, descontada a sua parte. Por favor, não descreva a entidade.</SL_UnspeakableEvents.benefitBare>
+  <SL_UnspeakableEvents.benefitGood>Dinheiro ou materiais por cápsula.</SL_UnspeakableEvents.benefitGood>
+  <SL_UnspeakableEvents.benefitPremium>Valor de reposição, na hora. Um especialista está ao telefone.</SL_UnspeakableEvents.benefitPremium>
+  <SL_UnspeakableEvents.coversText>Edifícios destruídos por entidades de anomalia.</SL_UnspeakableEvents.coversText>
+</LanguageData>

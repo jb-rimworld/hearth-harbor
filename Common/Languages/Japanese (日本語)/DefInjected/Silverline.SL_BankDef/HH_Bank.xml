@@ -9,4 +9,12 @@
   <SL_BlackLedger.label>The Black Ledger</SL_BlackLedger.label>
   <SL_BlackLedger.description>質問もなければ、書類もなく、名前もない。スコアを問わず誰にでも、相応の値段で貸す。時折、帳簿が「行方不明」になり、預金の一部も一緒に消える。</SL_BlackLedger.description>
   <SL_BlackLedger.slogan>お尋ねしません。おっしゃらなくて結構です。利息は複利で増えます。</SL_BlackLedger.slogan>
+  <SL_BlackLedger.perks.0>融資は信用スコア（とあなたの気持ち）を無視する。</SL_BlackLedger.perks.0>
+  <SL_BlackLedger.perks.1>1四半期ごとに1%の確率で、残高の4分の1が「差し押さえ」られる。</SL_BlackLedger.perks.1>
+  <SL_BlackLedger.perks.2>裏社会を見つけた入植地だけが利用できる。</SL_BlackLedger.perks.2>
+  <SL_Mutual.perks.0>中立で公正: 小細工も、驚きもない。</SL_Mutual.perks.0>
+  <SL_Mutual.perks.1>手数料: 引き出し1%（最低5）、ATM 2 + 1%。</SL_Mutual.perks.1>
+  <SL_TooBigToFail.perks.0>主要銀行で最高の口座利回り（指数部で+10%）。</SL_TooBigToFail.perks.0>
+  <SL_TooBigToFail.perks.1>救済: ゲーム内1年に1回、10分前までToo Big To Failだったのに今は赤字の顧客に、無利子の60日融資（ピーク時の最大10%まで）。</SL_TooBigToFail.perks.1>
+  <SL_TooBigToFail.perks.2>口座手数料は1四半期につき銀6。</SL_TooBigToFail.perks.2>
 </LanguageData>

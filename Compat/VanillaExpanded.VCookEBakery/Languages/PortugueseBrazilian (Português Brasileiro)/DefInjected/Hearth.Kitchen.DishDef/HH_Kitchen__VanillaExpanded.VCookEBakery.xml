@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_SugarCookies.label>Biscoitos de açúcar</HH_Dish_SugarCookies.label>
+  <HH_Dish_SugarCookies.description>Decorados por um colono cujas mãos tremem por causa do combate, e isso se nota.</HH_Dish_SugarCookies.description>
+  <HH_Dish_FancyCupcakes.label>Cupcakes finos</HH_Dish_FancyCupcakes.label>
+  <HH_Dish_FancyCupcakes.description>Um bolinho pequeno com um grande problema de granulado.</HH_Dish_FancyCupcakes.description>
+  <HH_Dish_GlazedDonuts.label>Rosquinhas glaceadas</HH_Dish_GlazedDonuts.label>
+  <HH_Dish_GlazedDonuts.description>Um anel de massa em volta de um buraco no orçamento.</HH_Dish_GlazedDonuts.description>
+  <HH_Dish_FancyCupcakes.inspiration>Vanilla Cooking Expanded - Bakery</HH_Dish_FancyCupcakes.inspiration>
+  <HH_Dish_GlazedDonuts.inspiration>Vanilla Cooking Expanded - Bakery</HH_Dish_GlazedDonuts.inspiration>
+  <HH_Dish_SugarCookies.inspiration>Vanilla Cooking Expanded - Bakery</HH_Dish_SugarCookies.inspiration>
+</LanguageData>

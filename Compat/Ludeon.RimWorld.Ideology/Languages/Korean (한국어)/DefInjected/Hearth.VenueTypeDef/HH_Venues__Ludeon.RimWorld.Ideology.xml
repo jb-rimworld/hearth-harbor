@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Chapel.label>손님 예배당</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>모든 신앙의 방문객이 기도하러 오는 손님용 제단이 있는 조용한 방입니다. 손님은 아무것도 내지 않지만 더 차분해져 돌아갑니다. 멋진 제단과 긴 의자 몇 개가 있는 예배당은 여관의 좋은 이웃입니다. 낮에는 항상 열려 있고 직원도 필요 없습니다.</HH_Venue_Chapel.description>
+  <HH_Venue_Chapel.modExtensions.1.requirements.0.hint>모든 신앙의 방문객이 손님용 제단에서 기도합니다.</HH_Venue_Chapel.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.0.label>손님용 제단</HH_Venue_Chapel.modExtensions.1.requirements.0.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.1.hint>잠시 머무르는 사람을 위한 좌석이 두 개 이상 필요합니다.</HH_Venue_Chapel.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.1.label>장의자 또는 의자</HH_Venue_Chapel.modExtensions.1.requirements.1.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.2.hint>약간의 초록은 어떤 방이든 더 쾌적하게 만듭니다.</HH_Venue_Chapel.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.2.label>화분</HH_Venue_Chapel.modExtensions.1.requirements.2.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.3.hint>좋은 조명은 해가 진 뒤에도 방을 아늑하게 만들어 줍니다.</HH_Venue_Chapel.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.3.label>스탠딩 램프</HH_Venue_Chapel.modExtensions.1.requirements.3.label>
+</LanguageData>

@@ -4,4 +4,6 @@
   <HH_AccompanyGuest.verb>hacer compañía</HH_AccompanyGuest.verb>
   <HH_StaffFrontDesk.label>atender la recepción</HH_StaffFrontDesk.label>
   <HH_StaffFrontDesk.verb>atender</HH_StaffFrontDesk.verb>
+  <HH_AccompanyGuest.gerund>hacer compañía a</HH_AccompanyGuest.gerund>
+  <HH_StaffFrontDesk.gerund>atender en</HH_StaffFrontDesk.gerund>
 </LanguageData>

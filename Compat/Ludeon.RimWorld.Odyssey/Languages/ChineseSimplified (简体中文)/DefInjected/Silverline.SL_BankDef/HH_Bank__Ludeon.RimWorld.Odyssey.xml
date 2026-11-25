@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_OrbitalExchange.label>Orbital Exchange</SL_OrbitalExchange.label>
+  <SL_OrbitalExchange.description>一家交易行公会经营的银行，位于一个造价极高的旋转环上。边缘地带最好的市场准入，也是边缘地带最高的手续费；每张收据上都附着一张向右上方攀升的小图表。</SL_OrbitalExchange.description>
+  <SL_OrbitalExchange.slogan>流动性如光速。手续费也是。</SL_OrbitalExchange.slogan>
+  <SL_OrbitalExchange.perks.0>研究投资后，拥有最好的市场准入。</SL_OrbitalExchange.perks.0>
+  <SL_OrbitalExchange.perks.1>费用最高：存款 0.5%，取款 2%（最低 10），账户费每季度 10 银币。</SL_OrbitalExchange.perks.1>
+</LanguageData>

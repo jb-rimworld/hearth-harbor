@@ -4,4 +4,5 @@
   <HH_GamblingSpree.beginLetterLabel>derroche de juego</HH_GamblingSpree.beginLetterLabel>
   <HH_GamblingSpree.beginLetter>{0} no puede seguir alejado de las mesas y se lanza a un derroche de juego, ignorando todas las reglas de la política de drogas.</HH_GamblingSpree.beginLetter>
   <HH_GamblingSpree.baseInspectLine>Estado mental: derroche de juego</HH_GamblingSpree.baseInspectLine>
+  <HH_GamblingSpree.recoveryMessage>{0} ha superado el derroche de juego.</HH_GamblingSpree.recoveryMessage>
 </LanguageData>

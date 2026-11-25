@@ -26,4 +26,17 @@
   <SL_Asset_NftThrumbos.description>一批 thrumbo 图片的收藏，每张都独一无二，又都有点像其他的。你拥有的是一张图片的图片的收据。买家慢慢现身，并且想要折扣。</SL_Asset_NftThrumbos.description>
   <SL_Asset_NftMuffalo.label>所有权证书：一张 muffalo 图片</SL_Asset_NftMuffalo.label>
   <SL_Asset_NftMuffalo.description>一张 muffalo 图片的所有权证书。图片存放在某处，证书存放在你的账户里。两者都没有 muffalo 的气味。</SL_Asset_NftMuffalo.description>
+  <SL_Asset_GrowthFund.tagline>我们的经理跑赢了市场（我们没说是哪个市场）。</SL_Asset_GrowthFund.tagline>
+  <SL_Asset_Index.tagline>什么都持有，什么都不懂。</SL_Asset_Index.tagline>
+  <SL_Asset_Mattress.tagline>您的钱很安全*。*条款适用。</SL_Asset_Mattress.tagline>
+  <SL_Asset_MemeBoomalope.tagline>设计上波动，本性上易燃。</SL_Asset_MemeBoomalope.tagline>
+  <SL_Asset_MemeMuffalo.tagline>哞。这就是白皮书。</SL_Asset_MemeMuffalo.tagline>
+  <SL_Asset_MemeThrumbo.tagline>登月之路，步行前往，慢慢来。</SL_Asset_MemeThrumbo.tagline>
+  <SL_Asset_NftMuffalo.tagline>您拥有的是这幅画的概念。</SL_Asset_NftMuffalo.tagline>
+  <SL_Asset_NftThrumbos.tagline>独一无二，和所有人的一样。</SL_Asset_NftThrumbos.tagline>
+  <SL_Asset_OutlanderBond.tagline>借钱给拿长矛的人！</SL_Asset_OutlanderBond.tagline>
+  <SL_Asset_RimCoin.tagline>相信数学，别信交易所。</SL_Asset_RimCoin.tagline>
+  <SL_Asset_StockColony.tagline>待客之道，按季度结算。</SL_Asset_StockColony.tagline>
+  <SL_Asset_StockMicaton.tagline>季度数字，季度心情。</SL_Asset_StockMicaton.tagline>
+  <SL_Asset_StockTribal.tagline>温暖、本地，略带烟熏味。</SL_Asset_StockTribal.tagline>
 </LanguageData>

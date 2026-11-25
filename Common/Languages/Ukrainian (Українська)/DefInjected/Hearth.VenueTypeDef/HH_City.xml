@@ -6,4 +6,28 @@
   <HH_Venue_Salon.description>Кімната з кріслами салону. Гості платять за стрижку, нову укладку, фарбування або, за правильної ідеології, татуювання; роботу виконує колоніст із видом роботи «обслуговування». Без того, хто обслуговує, салон зачинено.</HH_Venue_Salon.description>
   <HH_Venue_Gallery.label>галерея</HH_Venue_Gallery.label>
   <HH_Venue_Gallery.description>Кімната із скульптурами, розвішаними в гарному світлі. Гості платять невеликий вхідний внесок і проходять повз експонати один за одним; чим гарніше мистецтво, тим щасливішими вони йдуть. Потрібна жменька творів мистецтва в кімнаті.</HH_Venue_Gallery.description>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.hint>Фільм іде на екрані з живленням.</HH_Venue_Cinema.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.0.label>проекційний екран</HH_Venue_Cinema.modExtensions.0.requirements.0.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.hint>Місця перед екраном: стільки, скільки просить налаштування «Потрібно місць» міського життя.</HH_Venue_Cinema.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.1.label>місця навпроти екрана</HH_Venue_Cinema.modExtensions.0.requirements.1.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.hint>Немає струму — немає фільму.</HH_Venue_Cinema.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.2.label>живлення для проєктора</HH_Venue_Cinema.modExtensions.0.requirements.2.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.hint>Прилавок біля дверей виглядає як належить.</HH_Venue_Cinema.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.3.label>квиткова каса</HH_Venue_Cinema.modExtensions.0.requirements.3.label>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.hint>Закуски й напої до фільму, що продаються без персоналу.</HH_Venue_Cinema.modExtensions.0.requirements.4.hint>
+  <HH_Venue_Cinema.modExtensions.0.requirements.4.label>торговий автомат</HH_Venue_Cinema.modExtensions.0.requirements.4.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.hint>Скульптури в кімнаті: стільки, скільки просить налаштування «Потрібно творів» міського життя. Митці виготовляють їх за мистецьким верстаком.</HH_Venue_Gallery.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.0.label>витвори мистецтва</HH_Venue_Gallery.modExtensions.0.requirements.0.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.hint>Відвідувачам подобається сісти перед найкращим твором.</HH_Venue_Gallery.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.1.label>лавка для споглядання</HH_Venue_Gallery.modExtensions.0.requirements.1.label>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.hint>Гарне світло робить кімнату привітнішою після настання темряви.</HH_Venue_Gallery.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Gallery.modExtensions.0.requirements.2.label>торшер</HH_Venue_Gallery.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.hint>Стрижки, зачіски й фарбування відбуваються в кріслі салону.</HH_Venue_Salon.modExtensions.0.requirements.0.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.0.label>крісло салону</HH_Venue_Salon.modExtensions.0.requirements.0.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.hint>Роботу виконує колоніст із типом роботи «Обслуговування».</HH_Venue_Salon.modExtensions.0.requirements.1.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.1.label>стиліст (робота «Обслуговування»)</HH_Venue_Salon.modExtensions.0.requirements.1.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.hint>Гості, які чекають на свою чергу, люблять сидіти.</HH_Venue_Salon.modExtensions.0.requirements.2.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.2.label>місця для гостей, що чекають</HH_Venue_Salon.modExtensions.0.requirements.2.label>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.hint>Гарне світло робить кімнату привітнішою після настання темряви.</HH_Venue_Salon.modExtensions.0.requirements.3.hint>
+  <HH_Venue_Salon.modExtensions.0.requirements.3.label>торшер</HH_Venue_Salon.modExtensions.0.requirements.3.label>
 </LanguageData>

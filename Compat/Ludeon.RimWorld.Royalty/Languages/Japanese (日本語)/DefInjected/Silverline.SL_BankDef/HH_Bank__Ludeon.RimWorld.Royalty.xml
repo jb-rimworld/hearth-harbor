@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ImperialTreasury.label>Imperial Treasury</SL_ImperialTreasury.label>
+  <SL_ImperialTreasury.description>王座直属の金庫番。手数料は安く、床磨きの匂いがほのかに漂い、爵位を持つ者だけに信用貸しがある。引き出しは「支払い」と呼ばれ、小さな礼が添えられる。</SL_ImperialTreasury.description>
+  <SL_ImperialTreasury.slogan>すべての硬貨には王座の横顔が刻まれています。かじらないでください。</SL_ImperialTreasury.slogan>
+  <SL_ImperialTreasury.perks.0>最低の手数料: 引き出しは0.5%（最低2）。</SL_ImperialTreasury.perks.0>
+  <SL_ImperialTreasury.perks.1>融資は入植地の誰かが帝国の爵位を持つ場合のみ。金利はとても安い。</SL_ImperialTreasury.perks.1>
+  <SL_ImperialTreasury.perks.2>口座の利回りはやや低め（指数部で-10%）。</SL_ImperialTreasury.perks.2>
+</LanguageData>

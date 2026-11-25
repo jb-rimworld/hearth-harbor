@@ -46,4 +46,5 @@
   <HH_Station_DoughBench.description>Eine schwere Bank mit mehlbestäubter Platte. Reis und Mais werden hier zu Teig gestampft, was billiger ist als eine Therapie.</HH_Station_DoughBench.description>
   <HH_Station_ColdStation.label>Kühlstation</HH_Station_ColdStation.label>
   <HH_Station_ColdStation.description>Eine gekühlte Theke, die Salate knackig und Desserts fest hält. Elektrisch.</HH_Station_ColdStation.description>
+  <HH_Cookbook.comps.CompUsable.useLabel>Rezeptbuch studieren</HH_Cookbook.comps.CompUsable.useLabel>
 </LanguageData>

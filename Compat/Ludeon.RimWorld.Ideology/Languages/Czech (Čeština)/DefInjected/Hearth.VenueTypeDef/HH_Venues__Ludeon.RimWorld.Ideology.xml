@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Chapel.label>hostovská kaple</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>Tichá místnost s hostovským oltářem, kam přicházejí modlit se návštěvníci všech vyznání. Hosté nic neplatí, ale odcházejí klidnější; kaple s pěkným oltářem a pár lavicemi je dobrý soused hostince. Přes den vždy otevřeno, personál není potřeba.</HH_Venue_Chapel.description>
+  <HH_Venue_Chapel.modExtensions.1.requirements.0.hint>Návštěvníci všech vyznání se modlí u hostinského oltáře.</HH_Venue_Chapel.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.0.label>hostinský oltář</HH_Venue_Chapel.modExtensions.1.requirements.0.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.1.hint>Alespoň dvě místa pro ty, kdo se zdrží.</HH_Venue_Chapel.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.1.label>lavice nebo židle</HH_Venue_Chapel.modExtensions.1.requirements.1.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.2.hint>Trocha zeleně udělá z každé místnosti příjemnější místo.</HH_Venue_Chapel.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.2.label>pokojová rostlina</HH_Venue_Chapel.modExtensions.1.requirements.2.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.3.hint>Dobré světlo dělá z místnosti po setmění příjemné místo.</HH_Venue_Chapel.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.3.label>stojací lampa</HH_Venue_Chapel.modExtensions.1.requirements.3.label>
+</LanguageData>

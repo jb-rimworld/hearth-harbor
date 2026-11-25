@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_UnspeakableEvents.label>Zusatz für unaussprechliche Ereignisse</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>Für Schäden, die der Vertragstext nicht ohne einen Anwalt im Raum beschreiben kann.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>Manches versichert man besser, als es zu benennen.</SL_UnspeakableEvents.slogan>
+  <SL_UnspeakableEvents.benefitBare>Geld, nach deinem Eigenanteil. Bitte beschreibe das Wesen nicht.</SL_UnspeakableEvents.benefitBare>
+  <SL_UnspeakableEvents.benefitGood>Geld oder Materialien per Kapsel.</SL_UnspeakableEvents.benefitGood>
+  <SL_UnspeakableEvents.benefitPremium>Wiederbeschaffungswert, sofort. Ein Spezialist ist am Telefon.</SL_UnspeakableEvents.benefitPremium>
+  <SL_UnspeakableEvents.coversText>Gebäude, die von Anomalie-Wesen zerstört werden.</SL_UnspeakableEvents.coversText>
+</LanguageData>

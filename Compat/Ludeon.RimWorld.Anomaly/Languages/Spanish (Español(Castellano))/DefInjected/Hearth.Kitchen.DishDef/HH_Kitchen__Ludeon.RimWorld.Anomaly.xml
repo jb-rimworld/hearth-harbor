@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_TwistedMeatBao.label>bao de carne retorcida</HH_Dish_TwistedMeatBao.label>
+  <HH_Dish_TwistedMeatBao.description>El bollo apenas se mueve. Por favor, no se lo digas al relleno.</HH_Dish_TwistedMeatBao.description>
+  <HH_Dish_TwistedHotpot.label>olla retorcida</HH_Dish_TwistedHotpot.label>
+  <HH_Dish_TwistedHotpot.description>Burbujea sola. Nadie encendió el fuego.</HH_Dish_TwistedHotpot.description>
+  <HH_Dish_TwistedHotpot.inspiration>Sichuan, China</HH_Dish_TwistedHotpot.inspiration>
+  <HH_Dish_TwistedMeatBao.inspiration>China (al vapor)</HH_Dish_TwistedMeatBao.inspiration>
+</LanguageData>

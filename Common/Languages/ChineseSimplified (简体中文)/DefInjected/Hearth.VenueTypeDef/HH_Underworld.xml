@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Venue_DrugLounge.label>药物休息室</HH_Venue_DrugLounge.label>
   <HH_Venue_DrugLounge.description>一间光线昏暗的房间，摆着沙发和一本没人阅读的账本。客人为一场体验付费；他们只取用其意识形态允许的东西。夜间营业。</HH_Venue_DrugLounge.description>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>客人坐进柔软的座位里。至少两个。</HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>沙发</HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>可以放东西的地方。</HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>一张矮桌</HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>
 </LanguageData>

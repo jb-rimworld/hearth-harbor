@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_UnspeakableEvents.label>口にできない出来事の特約</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>弁護士が同席しなければ約款で表現できない損害が対象です。</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>名前をつけるより、保険に入るほうがよいものもあります。</SL_UnspeakableEvents.slogan>
+  <SL_UnspeakableEvents.benefitBare>現金。自己負担分は差し引きます。存在については描写なさらないでください。</SL_UnspeakableEvents.benefitBare>
+  <SL_UnspeakableEvents.benefitGood>現金、または資材をカプセルで。</SL_UnspeakableEvents.benefitGood>
+  <SL_UnspeakableEvents.benefitPremium>再調達価額を即時お支払い。専門家が電話口に待機しています。</SL_UnspeakableEvents.benefitPremium>
+  <SL_UnspeakableEvents.coversText>アノマリーの存在によって破壊された建物。</SL_UnspeakableEvents.coversText>
+</LanguageData>

@@ -4,4 +4,6 @@
   <HH_AccompanyGuest.verb>составлять компанию</HH_AccompanyGuest.verb>
   <HH_StaffFrontDesk.label>дежурить на стойке регистрации</HH_StaffFrontDesk.label>
   <HH_StaffFrontDesk.verb>дежурить</HH_StaffFrontDesk.verb>
+  <HH_AccompanyGuest.gerund>составлять компанию</HH_AccompanyGuest.gerund>
+  <HH_StaffFrontDesk.gerund>дежурить на</HH_StaffFrontDesk.gerund>
 </LanguageData>

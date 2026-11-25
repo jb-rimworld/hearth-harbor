@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_Asset_PietyBonds.label>경건 채권</SL_Asset_PietyBonds.label>
+  <SL_Asset_PietyBonds.description>열일곱 신앙의 기부금으로 뒷받침되는 채권입니다. 각 신앙은 나머지 열여섯 개가 잘못하고 있다고 확신합니다. 꾸준하고 엄숙하며, 아주 약간 우쭐합니다.</SL_Asset_PietyBonds.description>
+  <SL_Asset_RelicFutures.label>유물 선물</SL_Asset_RelicFutures.label>
+  <SL_Asset_RelicFutures.description>존재할지도, 아닐지도 모르는 유물에 대한 선물 거래입니다. 예언자일지도, 아닐지도 모르는 전달자가 배송합니다. 계약서는 축복받았습니다.</SL_Asset_RelicFutures.description>
+  <SL_Asset_PietyBonds.tagline>만기일이 있는 신앙.</SL_Asset_PietyBonds.tagline>
+  <SL_Asset_RelicFutures.tagline>내세를 위해 보유하세요.</SL_Asset_RelicFutures.tagline>
+</LanguageData>

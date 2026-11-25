@@ -2,4 +2,7 @@
 <LanguageData>
   <HH_Screening.label>filmový večer</HH_Screening.label>
   <HH_Screening.letterText>{ORGANIZER_labelShort} přemluvil kolonii na filmový večer. Každý, kdo si sedne před plátno, získá odpočinek a dobrou náladu na celý večer.</HH_Screening.letterText>
+  <HH_Screening.calledOffMessage>Filmový večer byl zrušen.</HH_Screening.calledOffMessage>
+  <HH_Screening.finishedMessage>Filmový večer skončil.</HH_Screening.finishedMessage>
+  <HH_Screening.letterTitle>Filmový večer</HH_Screening.letterTitle>
 </LanguageData>

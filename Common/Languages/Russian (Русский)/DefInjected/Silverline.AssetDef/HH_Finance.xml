@@ -26,4 +26,17 @@
   <SL_Asset_NftThrumbos.description>Коллекция картинок трумбо: каждая уникальна, каждая немного похожа на остальные. Вы владеете квитанцией на картинку картинки. Покупатели появляются медленно и хотят скидку.</SL_Asset_NftThrumbos.description>
   <SL_Asset_NftMuffalo.label>Сертификат владения: картинка маффало</SL_Asset_NftMuffalo.label>
   <SL_Asset_NftMuffalo.description>Сертификат владения картинкой маффало. Картинка хранится где-то. Сертификат — в вашем аккаунте. Ни от одного из них не пахнет маффало.</SL_Asset_NftMuffalo.description>
+  <SL_Asset_GrowthFund.tagline>Наши управляющие обгоняют рынок (какой именно, мы не уточняли).</SL_Asset_GrowthFund.tagline>
+  <SL_Asset_Index.tagline>Владейте всем, не понимая ничего.</SL_Asset_Index.tagline>
+  <SL_Asset_Mattress.tagline>Ваши деньги в безопасности*. *Условия применяются.</SL_Asset_Mattress.tagline>
+  <SL_Asset_MemeBoomalope.tagline>Нестабилен по замыслу, огнеопасен по природе.</SL_Asset_MemeBoomalope.tagline>
+  <SL_Asset_MemeMuffalo.tagline>Муу. Это и есть white paper.</SL_Asset_MemeMuffalo.tagline>
+  <SL_Asset_MemeThrumbo.tagline>На Луну, пешком, не спеша.</SL_Asset_MemeThrumbo.tagline>
+  <SL_Asset_NftMuffalo.tagline>Вы владеете идеей картинки.</SL_Asset_NftMuffalo.tagline>
+  <SL_Asset_NftThrumbos.tagline>Уникальные, как и у всех остальных.</SL_Asset_NftThrumbos.tagline>
+  <SL_Asset_OutlanderBond.tagline>Давайте в долг людям с копьями!</SL_Asset_OutlanderBond.tagline>
+  <SL_Asset_RimCoin.tagline>Верьте математике. Не бирже.</SL_Asset_RimCoin.tagline>
+  <SL_Asset_StockColony.tagline>Гостеприимство, но поквартально.</SL_Asset_StockColony.tagline>
+  <SL_Asset_StockMicaton.tagline>Квартальные цифры, квартальные чувства.</SL_Asset_StockMicaton.tagline>
+  <SL_Asset_StockTribal.tagline>Тёплое, местное и слегка с дымком.</SL_Asset_StockTribal.tagline>
 </LanguageData>

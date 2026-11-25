@@ -4,4 +4,5 @@
   <SL_CollectionsAgency.description>取り立て会社。相手が折れるまでは礼儀正しい。</SL_CollectionsAgency.description>
   <SL_CollectionsAgency.pawnsPlural>回収員</SL_CollectionsAgency.pawnsPlural>
   <SL_CollectionsAgency.fixedName>Rim Recovery Partners</SL_CollectionsAgency.fixedName>
+  <SL_CollectionsAgency.pawnSingular>回収係</SL_CollectionsAgency.pawnSingular>
 </LanguageData>

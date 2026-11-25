@@ -12,4 +12,76 @@
   <HH_Venue_Spa.description>목욕, 증기, 휴식을 위한 조용한 방입니다. 직원이 수건을 따뜻하게 유지하며, 손님은 방문 한 번에 요금을 냅니다.</HH_Venue_Spa.description>
   <HH_Venue_Lounge.label>라운지</HH_Venue_Lounge.label>
   <HH_Venue_Lounge.description>좌석이 있는 대기실입니다. 영업장이 닫혀 있거나 직원이 없는 것을 본 손님은 문간 대신 여기서 기다리며, 더 참을성 있게 기다립니다. 항상 열려 있고 직원도 필요 없습니다.</HH_Venue_Lounge.description>
+  <HH_Venue_Casino.modExtensions.1.requirements.0.hint>슬롯머신이나 게임 테이블이 하나 이상 필요합니다. 게임 없는 카지노는 그냥 방입니다.</HH_Venue_Casino.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.0.label>게임</HH_Venue_Casino.modExtensions.1.requirements.0.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.1.hint>슬롯머신과 조명 켜진 테이블은 전력이 있어야 작동합니다.</HH_Venue_Casino.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.1.label>기계용 전력</HH_Venue_Casino.modExtensions.1.requirements.1.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.2.hint>게임 테이블에는 크루피에가 필요합니다. '서빙' 작업 유형의 식민지 주민이 맡습니다.</HH_Venue_Casino.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.2.label>크루피에 (서빙 작업)</HH_Venue_Casino.modExtensions.1.requirements.2.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.3.hint>편하게 앉은 손님은 더 오래 머물고 더 많이 겁니다. 각 테이블 주위에 표시된 자리마다 의자가 필요합니다.</HH_Venue_Casino.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.3.label>게임 자리의 의자</HH_Venue_Casino.modExtensions.1.requirements.3.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.4.hint>손님은 창구에서 은화를 칩으로 바꾸고 조금 더 겁니다.</HH_Venue_Casino.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.4.label>출납 창구</HH_Venue_Casino.modExtensions.1.requirements.4.label>
+  <HH_Venue_Casino.modExtensions.1.requirements.5.hint>좋은 조명은 해가 진 뒤에도 방을 아늑하게 만들어 줍니다.</HH_Venue_Casino.modExtensions.1.requirements.5.hint>
+  <HH_Venue_Casino.modExtensions.1.requirements.5.label>스탠딩 램프</HH_Venue_Casino.modExtensions.1.requirements.5.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.0.hint>손님은 여기 앉아서 기다립니다. 좌석이 두 개 이상 필요합니다.</HH_Venue_Lounge.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.0.label>좌석</HH_Venue_Lounge.modExtensions.1.requirements.0.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.1.hint>잔을 내려놓을 곳입니다.</HH_Venue_Lounge.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.1.label>작은 탁자</HH_Venue_Lounge.modExtensions.1.requirements.1.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.2.hint>약간의 초록은 어떤 방이든 더 쾌적하게 만듭니다.</HH_Venue_Lounge.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.2.label>화분</HH_Venue_Lounge.modExtensions.1.requirements.2.label>
+  <HH_Venue_Lounge.modExtensions.1.requirements.3.hint>좋은 조명은 해가 진 뒤에도 방을 아늑하게 만들어 줍니다.</HH_Venue_Lounge.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Lounge.modExtensions.1.requirements.3.label>스탠딩 램프</HH_Venue_Lounge.modExtensions.1.requirements.3.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.0.hint>손님은 앉아서 먹습니다. 테이블 없는 식당은 주방일 뿐입니다.</HH_Venue_Restaurant.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.0.label>테이블</HH_Venue_Restaurant.modExtensions.1.requirements.0.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.1.hint>테이블에 의자가 두 개 이상 필요합니다.</HH_Venue_Restaurant.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.1.label>좌석</HH_Venue_Restaurant.modExtensions.1.requirements.1.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.2.hint>방 안의 선반이나 테이블에 놓인 조리된 요리가 메뉴가 됩니다.</HH_Venue_Restaurant.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.2.label>판매용 접시</HH_Venue_Restaurant.modExtensions.1.requirements.2.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.3.hint>'서빙' 작업 유형의 식민지 주민이 주문을 받고 식당을 열어 둡니다.</HH_Venue_Restaurant.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.3.label>웨이터 (서빙 작업)</HH_Venue_Restaurant.modExtensions.1.requirements.3.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.4.hint>카운터는 웨이터의 자리가 되고, 하루 수입이 놓이는 곳입니다.</HH_Venue_Restaurant.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.4.label>카운터</HH_Venue_Restaurant.modExtensions.1.requirements.4.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.5.hint>선반에 대기 중인 접시는 더 빨리 나갑니다.</HH_Venue_Restaurant.modExtensions.1.requirements.5.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.5.label>접시용 선반</HH_Venue_Restaurant.modExtensions.1.requirements.5.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.6.hint>붐비는 저녁을 위해 좌석이 여덟 개 이상 필요합니다.</HH_Venue_Restaurant.modExtensions.1.requirements.6.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.6.label>많은 손님을 위한 공간</HH_Venue_Restaurant.modExtensions.1.requirements.6.label>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.7.hint>좋은 조명은 해가 진 뒤에도 방을 아늑하게 만들어 줍니다.</HH_Venue_Restaurant.modExtensions.1.requirements.7.hint>
+  <HH_Venue_Restaurant.modExtensions.1.requirements.7.label>스탠딩 램프</HH_Venue_Restaurant.modExtensions.1.requirements.7.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.0.hint>방 안의 선반과 보관 구역에 있는 모든 것이 판매 대상입니다.</HH_Venue_Shop.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.0.label>선반 또는 보관 구역</HH_Venue_Shop.modExtensions.1.requirements.0.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.1.hint>팔고 싶은 물건을 방의 보관 공간에 넣으세요.</HH_Venue_Shop.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.1.label>선반 위의 상품</HH_Venue_Shop.modExtensions.1.requirements.1.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.2.hint>카운터 뒤에 상점 주인이 있으면 셀프 서비스 할인 없이 정가를 받습니다.</HH_Venue_Shop.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.2.label>카운터</HH_Venue_Shop.modExtensions.1.requirements.2.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.3.hint>선택 사항: 서빙 작업을 하는 식민지 주민이 정가로 판매하고 손님을 더 기쁘게 합니다.</HH_Venue_Shop.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.3.label>상점 주인 (서빙 작업)</HH_Venue_Shop.modExtensions.1.requirements.3.label>
+  <HH_Venue_Shop.modExtensions.1.requirements.4.hint>좋은 조명은 해가 진 뒤에도 방을 아늑하게 만들어 줍니다.</HH_Venue_Shop.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Shop.modExtensions.1.requirements.4.label>스탠딩 램프</HH_Venue_Shop.modExtensions.1.requirements.4.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.0.hint>손님은 온탕, 사우나 또는 마사지에 돈을 냅니다.</HH_Venue_Spa.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.0.label>욕조, 사우나 또는 마사지 테이블</HH_Venue_Spa.modExtensions.1.requirements.0.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.1.hint>전력이 필요한 시설은 전력이 있어야만 작동합니다.</HH_Venue_Spa.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.1.label>시설용 전력</HH_Venue_Spa.modExtensions.1.requirements.1.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.2.hint>'서빙' 작업 유형의 식민지 주민이 손님을 돌봅니다.</HH_Venue_Spa.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.2.label>안내 직원 (서빙 작업)</HH_Venue_Spa.modExtensions.1.requirements.2.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.3.hint>손님은 목욕과 사우나 사이에 앉아 쉬기를 좋아합니다.</HH_Venue_Spa.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.3.label>휴식용 좌석</HH_Venue_Spa.modExtensions.1.requirements.3.label>
+  <HH_Venue_Spa.modExtensions.1.requirements.4.hint>약간의 초록은 어떤 방이든 더 쾌적하게 만듭니다.</HH_Venue_Spa.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Spa.modExtensions.1.requirements.4.label>화분</HH_Venue_Spa.modExtensions.1.requirements.4.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.0.hint>바텐더가 그 뒤에 서고 손님은 거기서 주문합니다. 하루 수입은 자정에 그 위에 놓입니다. 신뢰 시스템(서빙하는 사람이 없음)에서는 필요 없습니다.</HH_Venue_Tavern.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.0.label>카운터</HH_Venue_Tavern.modExtensions.1.requirements.0.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.1.hint>손님은 문간에 선 채가 아니라 테이블에서 마십니다.</HH_Venue_Tavern.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.1.label>테이블</HH_Venue_Tavern.modExtensions.1.requirements.1.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.2.hint>좌석이 두 개 이상 필요합니다: 의자, 스툴, 안락의자 또는 벤치.</HH_Venue_Tavern.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.2.label>좌석</HH_Venue_Tavern.modExtensions.1.requirements.2.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.3.hint>방 안에 보관된 맥주와 다른 음료가 판매 대상입니다.</HH_Venue_Tavern.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.3.label>재고 음료</HH_Venue_Tavern.modExtensions.1.requirements.3.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.4.hint>'서빙' 작업 유형의 식민지 주민이 술집을 열어 둡니다.</HH_Venue_Tavern.modExtensions.1.requirements.4.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.4.label>바텐더 (서빙 작업)</HH_Venue_Tavern.modExtensions.1.requirements.4.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.5.hint>선반 위의 음료는 깔끔하게 정리되고 다시 채우기 쉽습니다.</HH_Venue_Tavern.modExtensions.1.requirements.5.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.5.label>음료용 선반</HH_Venue_Tavern.modExtensions.1.requirements.5.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.6.hint>좌석이 여섯 개 이상 있어야 일행이 함께 들어올 수 있습니다.</HH_Venue_Tavern.modExtensions.1.requirements.6.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.6.label>많은 손님을 위한 공간</HH_Venue_Tavern.modExtensions.1.requirements.6.label>
+  <HH_Venue_Tavern.modExtensions.1.requirements.7.hint>좋은 조명은 해가 진 뒤에도 방을 아늑하게 만들어 줍니다.</HH_Venue_Tavern.modExtensions.1.requirements.7.hint>
+  <HH_Venue_Tavern.modExtensions.1.requirements.7.label>스탠딩 램프</HH_Venue_Tavern.modExtensions.1.requirements.7.label>
 </LanguageData>

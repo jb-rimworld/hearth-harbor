@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_ImperialTreasury.label>Imperial Treasury</SL_ImperialTreasury.label>
+  <SL_ImperialTreasury.description>Собственная казначейская контора Трона. Низкие комиссии, слабый запах мастики для полов и кредит только для тех, кто носит титул. Снятие называется «выплатой» и сопровождается небольшим поклоном.</SL_ImperialTreasury.description>
+  <SL_ImperialTreasury.slogan>На каждой монете профиль Трона. Пожалуйста, не кусайте её.</SL_ImperialTreasury.slogan>
+  <SL_ImperialTreasury.perks.0>Самые низкие комиссии: 0,5 % за снятие (минимум 2).</SL_ImperialTreasury.perks.0>
+  <SL_ImperialTreasury.perks.1>Кредиты только если кто-то в колонии носит королевский титул; очень дешёвые проценты.</SL_ImperialTreasury.perks.1>
+  <SL_ImperialTreasury.perks.2>Доходность счёта чуть ниже (−10 % в показателе степени).</SL_ImperialTreasury.perks.2>
+</LanguageData>

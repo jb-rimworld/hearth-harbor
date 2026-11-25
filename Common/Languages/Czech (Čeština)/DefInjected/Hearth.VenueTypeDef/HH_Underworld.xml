@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Venue_DrugLounge.label>drogový salónek</HH_Venue_DrugLounge.label>
   <HH_Venue_DrugLounge.description>Tlumená místnost s pohovkami a účetní knihou, kterou nikdo nečte. Hosté platí za návštěvu; berou jen to, co dovoluje jejich ideologie. Otevřeno v noci.</HH_Venue_DrugLounge.description>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>Hosté se usadí na měkkých sedadlech. Alespoň dvě.</HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>pohovky</HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>Něco, kam se dají věci položit.</HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>nízký stolek</HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>
 </LanguageData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Venue_Chapel.label>capela para hóspedes</HH_Venue_Chapel.label>
+  <HH_Venue_Chapel.description>Um cômodo tranquilo com um altar para hóspedes, onde visitantes de todas as crenças vêm rezar. Os hóspedes não pagam nada, mas saem mais calmos; uma capela com um altar bonito e alguns bancos é uma boa vizinha para uma estalagem. Sempre aberta durante o dia, sem necessidade de funcionários.</HH_Venue_Chapel.description>
+  <HH_Venue_Chapel.modExtensions.1.requirements.0.hint>Visitantes de todas as crenças rezam no altar dos hóspedes.</HH_Venue_Chapel.modExtensions.1.requirements.0.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.0.label>um altar para hóspedes</HH_Venue_Chapel.modExtensions.1.requirements.0.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.1.hint>Pelo menos dois assentos para quem fica um tempo.</HH_Venue_Chapel.modExtensions.1.requirements.1.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.1.label>bancos de igreja ou cadeiras</HH_Venue_Chapel.modExtensions.1.requirements.1.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.2.hint>Um pouco de verde deixa qualquer cômodo mais agradável.</HH_Venue_Chapel.modExtensions.1.requirements.2.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.2.label>uma planta em vaso</HH_Venue_Chapel.modExtensions.1.requirements.2.label>
+  <HH_Venue_Chapel.modExtensions.1.requirements.3.hint>Uma boa iluminação deixa o cômodo acolhedor depois do anoitecer.</HH_Venue_Chapel.modExtensions.1.requirements.3.hint>
+  <HH_Venue_Chapel.modExtensions.1.requirements.3.label>uma luminária de pé</HH_Venue_Chapel.modExtensions.1.requirements.3.label>
+</LanguageData>

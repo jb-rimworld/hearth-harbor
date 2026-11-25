@@ -4,4 +4,5 @@
   <HH_GamblingSpree.beginLetterLabel>도박 광기</HH_GamblingSpree.beginLetterLabel>
   <HH_GamblingSpree.beginLetter>{0}은(는) 더 이상 테이블을 멀리할 수 없어 도박 광기에 빠졌고, 약물 정책의 모든 규칙을 무시합니다.</HH_GamblingSpree.beginLetter>
   <HH_GamblingSpree.baseInspectLine>정신 상태: 도박 광기</HH_GamblingSpree.baseInspectLine>
+  <HH_GamblingSpree.recoveryMessage>{0}의 도박 광기가 가라앉았습니다.</HH_GamblingSpree.recoveryMessage>
 </LanguageData>

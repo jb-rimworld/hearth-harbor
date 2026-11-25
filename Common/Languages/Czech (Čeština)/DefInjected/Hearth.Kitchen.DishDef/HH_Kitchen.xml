@@ -184,4 +184,96 @@
   <HH_Dish_ThrumboPho.label>Masová pho</HH_Dish_ThrumboPho.label>
   <HH_Dish_ThrumboTartare.description>Syrové, divoké a odvážné. Nejdřív podepište prohlášení o vzdání se odpovědnosti. Tradičně z thrumba, pokud má kolonie štěstí.</HH_Dish_ThrumboTartare.description>
   <HH_Dish_ThrumboTartare.label>Masový tatarák</HH_Dish_ThrumboTartare.label>
+  <HH_Dish_AgaveBaklava.inspiration>Levanta a osmanský svět</HH_Dish_AgaveBaklava.inspiration>
+  <HH_Dish_AgavePancakes.inspiration>Mexiko a Spojené státy</HH_Dish_AgavePancakes.inspiration>
+  <HH_Dish_BakedEggs.inspiration>Severní Afrika a Levanta</HH_Dish_BakedEggs.inspiration>
+  <HH_Dish_BeerBatteredInsects.inspiration>Belgie a Thajsko</HH_Dish_BeerBatteredInsects.inspiration>
+  <HH_Dish_BerryCompote.inspiration>Severní Evropa</HH_Dish_BerryCompote.inspiration>
+  <HH_Dish_Bibimbap.inspiration>Korea</HH_Dish_Bibimbap.inspiration>
+  <HH_Dish_Biryani.inspiration>Jižní Asie</HH_Dish_Biryani.inspiration>
+  <HH_Dish_BoomalopeConfit.inspiration>Francie</HH_Dish_BoomalopeConfit.inspiration>
+  <HH_Dish_BratwurstAndBeer.inspiration>Německo</HH_Dish_BratwurstAndBeer.inspiration>
+  <HH_Dish_BugSkewers.inspiration>Jihovýchodní Asie</HH_Dish_BugSkewers.inspiration>
+  <HH_Dish_CampfireStew.inspiration>Potulné kmeny všude</HH_Dish_CampfireStew.inspiration>
+  <HH_Dish_CannibalsChili.inspiration>Mexiko a Texas</HH_Dish_CannibalsChili.inspiration>
+  <HH_Dish_Ceviche.inspiration>Peru</HH_Dish_Ceviche.inspiration>
+  <HH_Dish_ChiliConCarne.inspiration>Mexiko a Texas</HH_Dish_ChiliConCarne.inspiration>
+  <HH_Dish_ChocolateLayerCake.inspiration>Itálie a Rakousko</HH_Dish_ChocolateLayerCake.inspiration>
+  <HH_Dish_ChocolatePudding.inspiration>Celý svět</HH_Dish_ChocolatePudding.inspiration>
+  <HH_Dish_ChocolateSouffle.inspiration>Francie</HH_Dish_ChocolateSouffle.inspiration>
+  <HH_Dish_Churrasco.inspiration>Brazílie</HH_Dish_Churrasco.inspiration>
+  <HH_Dish_Churros.inspiration>Španělsko a Latinská Amerika</HH_Dish_Churros.inspiration>
+  <HH_Dish_ClayOvenMuffalo.inspiration>Indie (tandúri)</HH_Dish_ClayOvenMuffalo.inspiration>
+  <HH_Dish_ColdNoodleSalad.inspiration>Korea</HH_Dish_ColdNoodleSalad.inspiration>
+  <HH_Dish_ColdPotatoSalad.inspiration>Německo</HH_Dish_ColdPotatoSalad.inspiration>
+  <HH_Dish_ColonyPaella.inspiration>Španělsko</HH_Dish_ColonyPaella.inspiration>
+  <HH_Dish_Congee.inspiration>Čína</HH_Dish_Congee.inspiration>
+  <HH_Dish_CongeeOfTheFallen.inspiration>Čína</HH_Dish_CongeeOfTheFallen.inspiration>
+  <HH_Dish_CornFritters.inspiration>Austrálie a Afrika</HH_Dish_CornFritters.inspiration>
+  <HH_Dish_CornPorridge.inspiration>Jižní Afrika (pap)</HH_Dish_CornPorridge.inspiration>
+  <HH_Dish_CreamyMushroomNoodles.inspiration>Itálie</HH_Dish_CreamyMushroomNoodles.inspiration>
+  <HH_Dish_CreamyNoodleBake.inspiration>Spojené státy</HH_Dish_CreamyNoodleBake.inspiration>
+  <HH_Dish_CremeBrulee.inspiration>Francie</HH_Dish_CremeBrulee.inspiration>
+  <HH_Dish_DanDanNoodles.inspiration>Sečuán, Čína</HH_Dish_DanDanNoodles.inspiration>
+  <HH_Dish_DimSumBasket.inspiration>Čína</HH_Dish_DimSumBasket.inspiration>
+  <HH_Dish_DromedaryTagine.inspiration>Maroko</HH_Dish_DromedaryTagine.inspiration>
+  <HH_Dish_EggDropSoup.inspiration>Čína</HH_Dish_EggDropSoup.inspiration>
+  <HH_Dish_EggFlan.inspiration>Španělsko</HH_Dish_EggFlan.inspiration>
+  <HH_Dish_EggFriedRice.inspiration>Čína</HH_Dish_EggFriedRice.inspiration>
+  <HH_Dish_FermentedMushrooms.inspiration>Korea (styl kimči)</HH_Dish_FermentedMushrooms.inspiration>
+  <HH_Dish_FishAndChips.inspiration>Britské ostrovy</HH_Dish_FishAndChips.inspiration>
+  <HH_Dish_FishThermidor.inspiration>Francie</HH_Dish_FishThermidor.inspiration>
+  <HH_Dish_FriedMushrooms.inspiration>Střední Evropa</HH_Dish_FriedMushrooms.inspiration>
+  <HH_Dish_FruitBowl.inspiration>Celý svět</HH_Dish_FruitBowl.inspiration>
+  <HH_Dish_GravyFries.inspiration>Kanada (styl poutine)</HH_Dish_GravyFries.inspiration>
+  <HH_Dish_GrilledLongPorkRibs.inspiration>Grilování, celý svět</HH_Dish_GrilledLongPorkRibs.inspiration>
+  <HH_Dish_HashAndEgg.inspiration>Severní Amerika</HH_Dish_HashAndEgg.inspiration>
+  <HH_Dish_HashBrowns.inspiration>Severní Amerika</HH_Dish_HashBrowns.inspiration>
+  <HH_Dish_HuntersBigos.inspiration>Polsko</HH_Dish_HuntersBigos.inspiration>
+  <HH_Dish_InsectTacos.inspiration>Mexiko</HH_Dish_InsectTacos.inspiration>
+  <HH_Dish_JollofRice.inspiration>Západní Afrika</HH_Dish_JollofRice.inspiration>
+  <HH_Dish_LacqueredThrumbo.inspiration>Čína (pekingský styl)</HH_Dish_LacqueredThrumbo.inspiration>
+  <HH_Dish_Laksa.inspiration>Malajsie</HH_Dish_Laksa.inspiration>
+  <HH_Dish_LambKoftasWithRice.inspiration>Turecko a Persie</HH_Dish_LambKoftasWithRice.inspiration>
+  <HH_Dish_LongPorkDumplings.inspiration>Čína (na páře)</HH_Dish_LongPorkDumplings.inspiration>
+  <HH_Dish_LongPorkStew.inspiration>Rustikální a zakázané</HH_Dish_LongPorkStew.inspiration>
+  <HH_Dish_MilkRicePudding.inspiration>Indie (khír) a Evropa</HH_Dish_MilkRicePudding.inspiration>
+  <HH_Dish_MoleNegro.inspiration>Mexiko</HH_Dish_MoleNegro.inspiration>
+  <HH_Dish_MongolianMuffalo.inspiration>Čína</HH_Dish_MongolianMuffalo.inspiration>
+  <HH_Dish_MuffaloBourguignon.inspiration>Burgundsko, Francie</HH_Dish_MuffaloBourguignon.inspiration>
+  <HH_Dish_MuffaloCarpaccio.inspiration>Itálie</HH_Dish_MuffaloCarpaccio.inspiration>
+  <HH_Dish_MuffaloGoulash.inspiration>Maďarsko</HH_Dish_MuffaloGoulash.inspiration>
+  <HH_Dish_MuffaloRamen.inspiration>Japonsko</HH_Dish_MuffaloRamen.inspiration>
+  <HH_Dish_MuffaloStroganoff.inspiration>Rusko</HH_Dish_MuffaloStroganoff.inspiration>
+  <HH_Dish_MuffaloWellington.inspiration>Britské ostrovy</HH_Dish_MuffaloWellington.inspiration>
+  <HH_Dish_MushroomMoussaka.inspiration>Řecko</HH_Dish_MushroomMoussaka.inspiration>
+  <HH_Dish_MushroomPlate.inspiration>Východní Evropa</HH_Dish_MushroomPlate.inspiration>
+  <HH_Dish_MushroomRisotto.inspiration>Itálie</HH_Dish_MushroomRisotto.inspiration>
+  <HH_Dish_NigiriPlatter.inspiration>Japonsko</HH_Dish_NigiriPlatter.inspiration>
+  <HH_Dish_OmakaseNigiri.inspiration>Japonsko</HH_Dish_OmakaseNigiri.inspiration>
+  <HH_Dish_PadThrumbo.inspiration>Thajsko</HH_Dish_PadThrumbo.inspiration>
+  <HH_Dish_PanFriedFish.inspiration>Pobřežní Evropa</HH_Dish_PanFriedFish.inspiration>
+  <HH_Dish_PlainSteamedRice.inspiration>Východní Asie</HH_Dish_PlainSteamedRice.inspiration>
+  <HH_Dish_PotatoGratin.inspiration>Francie</HH_Dish_PotatoGratin.inspiration>
+  <HH_Dish_PotatoSoup.inspiration>Střední Evropa</HH_Dish_PotatoSoup.inspiration>
+  <HH_Dish_RawFishSlices.inspiration>Tichomořská pobřeží</HH_Dish_RawFishSlices.inspiration>
+  <HH_Dish_Rendang.inspiration>Indonésie</HH_Dish_Rendang.inspiration>
+  <HH_Dish_RimMein.inspiration>Čína (chow mein)</HH_Dish_RimMein.inspiration>
+  <HH_Dish_RoastCornOnTheCob.inspiration>Latinská Amerika (elote)</HH_Dish_RoastCornOnTheCob.inspiration>
+  <HH_Dish_RoastPotatoes.inspiration>Britské ostrovy</HH_Dish_RoastPotatoes.inspiration>
+  <HH_Dish_ScrambledEggs.inspiration>Celý svět</HH_Dish_ScrambledEggs.inspiration>
+  <HH_Dish_SevenCourseColonyMenu.inspiration>Všude</HH_Dish_SevenCourseColonyMenu.inspiration>
+  <HH_Dish_SmokedBrisket.inspiration>Texas</HH_Dish_SmokedBrisket.inspiration>
+  <HH_Dish_SmokedJerkyStrips.inspiration>Severní Amerika</HH_Dish_SmokedJerkyStrips.inspiration>
+  <HH_Dish_SmokedLongJerky.inspiration>Severní Amerika</HH_Dish_SmokedLongJerky.inspiration>
+  <HH_Dish_SpitRoastedHaunch.inspiration>Kmenová hostina, celý svět</HH_Dish_SpitRoastedHaunch.inspiration>
+  <HH_Dish_SteamedBuns.inspiration>Čína (bao)</HH_Dish_SteamedBuns.inspiration>
+  <HH_Dish_StrangersRoast.inspiration>Britské ostrovy (nedělní pečeně)</HH_Dish_StrangersRoast.inspiration>
+  <HH_Dish_Tamales.inspiration>Mexiko</HH_Dish_Tamales.inspiration>
+  <HH_Dish_TartareOfTheFallen.inspiration>Francie</HH_Dish_TartareOfTheFallen.inspiration>
+  <HH_Dish_TeppanFeast.inspiration>Japonsko</HH_Dish_TeppanFeast.inspiration>
+  <HH_Dish_ThrumboPho.inspiration>Vietnam</HH_Dish_ThrumboPho.inspiration>
+  <HH_Dish_ThrumboTartare.inspiration>Francie</HH_Dish_ThrumboTartare.inspiration>
+  <HH_Dish_TomYumSoup.inspiration>Thajsko</HH_Dish_TomYumSoup.inspiration>
+  <HH_Dish_UgaliWithStew.inspiration>Východní Afrika</HH_Dish_UgaliWithStew.inspiration>
 </LanguageData>

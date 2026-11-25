@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_GlazedFruitTart.label>과일 글레이즈 타르트</HH_Dish_GlazedFruitTart.label>
+  <HH_Dish_GlazedFruitTart.description>타르트 틀보다 과일이 더 많다. 올바른 비율이다.</HH_Dish_GlazedFruitTart.description>
+  <HH_Dish_PickledVegetableSalad.label>절임 채소 샐러드</HH_Dish_PickledVegetableSalad.label>
+  <HH_Dish_PickledVegetableSalad.description>너무 오래 절여서 콜로니의 초대 지도자보다 더 오래 살아남았다.</HH_Dish_PickledVegetableSalad.description>
+  <HH_Dish_HerbRoastedPotatoes.label>허브 구운 감자</HH_Dish_HerbRoastedPotatoes.label>
+  <HH_Dish_HerbRoastedPotatoes.description>정원 파티에 다녀오더니 식물 한 포기를 데리고 돌아온 감자.</HH_Dish_HerbRoastedPotatoes.description>
+  <HH_Dish_BerryAndNutBreakfastBowl.label>베리와 견과류 아침 그릇</HH_Dish_BerryAndNutBreakfastBowl.label>
+  <HH_Dish_BerryAndNutBreakfastBowl.description>바삭하고 건강하며, 습격자들이 주문한 것과는 극과 극이다.</HH_Dish_BerryAndNutBreakfastBowl.description>
+  <HH_Dish_TeaSmokedMeat.label>차 훈제 고기</HH_Dish_TeaSmokedMeat.label>
+  <HH_Dish_TeaSmokedMeat.description>차 향으로 훈연했다. 고기도 좀 쉬어야 하지 않겠나.</HH_Dish_TeaSmokedMeat.description>
+  <HH_Dish_BerryAndNutBreakfastBowl.inspiration>Vanilla Plants Expanded</HH_Dish_BerryAndNutBreakfastBowl.inspiration>
+  <HH_Dish_GlazedFruitTart.inspiration>Vanilla Plants Expanded</HH_Dish_GlazedFruitTart.inspiration>
+  <HH_Dish_HerbRoastedPotatoes.inspiration>Vanilla Plants Expanded</HH_Dish_HerbRoastedPotatoes.inspiration>
+  <HH_Dish_PickledVegetableSalad.inspiration>Vanilla Plants Expanded</HH_Dish_PickledVegetableSalad.inspiration>
+  <HH_Dish_TeaSmokedMeat.inspiration>Vanilla Plants Expanded</HH_Dish_TeaSmokedMeat.inspiration>
+</LanguageData>

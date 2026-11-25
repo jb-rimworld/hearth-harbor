@@ -33,4 +33,70 @@
   <SL_LimbByLimb.label>사지별 상해 플랜</SL_LimbByLimb.label>
   <SL_LimbByLimb.description>사지마다 가격이 있습니다. 저희가 적어 두었습니다. 마지막 쪽, 사지 보상표에 있습니다.</SL_LimbByLimb.description>
   <SL_LimbByLimb.slogan>사지마다 가격이 있습니다. 저희가 적어 두었습니다.</SL_LimbByLimb.slogan>
+  <SL_ActsOfStoryteller.benefitBare>파괴된 건물에 대한 현금, 자기부담금 제외.</SL_ActsOfStoryteller.benefitBare>
+  <SL_ActsOfStoryteller.benefitGood>현금, 또는 캡슐로 배송되는 건축 자재.</SL_ActsOfStoryteller.benefitGood>
+  <SL_ActsOfStoryteller.benefitPremium>재조달 가치를 캡슐로 즉시 지급. 연 1회 호의적 배려.</SL_ActsOfStoryteller.benefitPremium>
+  <SL_ActsOfStoryteller.coversText>적의 손에 파괴된 정착지의 건물 (습격, 포위, 기계 군집). 화재, 폭풍, 고객님 자신의 터렛은 제외됩니다.</SL_ActsOfStoryteller.coversText>
+  <SL_ActsOfStoryteller.riders.0.description>모든 손실에 대해 10 % 더 지급합니다 (손실액 자체를 넘지는 않습니다).</SL_ActsOfStoryteller.riders.0.description>
+  <SL_ActsOfStoryteller.riders.0.label>자연 마모 면제</SL_ActsOfStoryteller.riders.0.label>
+  <SL_ActsOfStoryteller.riders.1.description>보상부가 청구를 하루 일찍 검토합니다.</SL_ActsOfStoryteller.riders.1.description>
+  <SL_ActsOfStoryteller.riders.1.label>신속 서류 처리</SL_ActsOfStoryteller.riders.1.label>
+  <SL_BlightBeGone.benefitBare>잃은 수확물에 대한 현금, 자기부담금 제외.</SL_BlightBeGone.benefitBare>
+  <SL_BlightBeGone.benefitGood>현금, 시가의 80 %.</SL_BlightBeGone.benefitGood>
+  <SL_BlightBeGone.benefitPremium>수확물의 전체 가치를 즉시 지급.</SL_BlightBeGone.benefitPremium>
+  <SL_BlightBeGone.coversText>한파나 독성 낙진을 맞은 작물.</SL_BlightBeGone.coversText>
+  <SL_BlightBeGone.riders.0.description>모든 손실에 대해 10 % 더 지급합니다 (손실액 자체를 넘지는 않습니다).</SL_BlightBeGone.riders.0.description>
+  <SL_BlightBeGone.riders.0.label>자연 마모 면제</SL_BlightBeGone.riders.0.label>
+  <SL_ClosedForRepairs.benefitBare>그날의 가치와 상관없이 정액 하루치.</SL_ClosedForRepairs.benefitBare>
+  <SL_ClosedForRepairs.benefitGood>일평균 손실액, 최대 5일.</SL_ClosedForRepairs.benefitGood>
+  <SL_ClosedForRepairs.benefitPremium>일 손실액, 최대 15일.</SL_ClosedForRepairs.benefitPremium>
+  <SL_ClosedForRepairs.coversText>영업장 휴업 후의 손실 수입. Hearth &amp; Harbor의 사업장이 보고합니다.</SL_ClosedForRepairs.coversText>
+  <SL_GoldenYears.benefitBare>식민지 주민이 60세가 될 때 보험금액을 한 번 지급.</SL_GoldenYears.benefitBare>
+  <SL_GoldenYears.benefitGood>60세부터 하루에 보험금액의 0.4 %.</SL_GoldenYears.benefitGood>
+  <SL_GoldenYears.benefitPremium>60세부터 하루에 보험금액의 0.6 %. 은퇴 파티도 생각해 볼 만합니다.</SL_GoldenYears.benefitPremium>
+  <SL_GoldenYears.coversText>아직 60세가 되지 않은 식민지 주민 한 명. 60세부터 클로백 상호보험이 매일 연금을 지급합니다 ('최소한만': 일시금 한 번). 보험료는 60세에 가까울수록 오르며, 60세 이후에는 아무도 연금에 가입할 수 없습니다.</SL_GoldenYears.coversText>
+  <SL_ItWasntMe.benefitBare>배상금의 절반, 피해자의 진영에 지급.</SL_ItWasntMe.benefitBare>
+  <SL_ItWasntMe.benefitGood>배상금의 80 %. 호감도 손실이 절반으로 줄어듭니다.</SL_ItWasntMe.benefitGood>
+  <SL_ItWasntMe.benefitPremium>전액. 소문도 함께 처리됩니다.</SL_ItWasntMe.benefitPremium>
+  <SL_ItWasntMe.coversText>정착지에 책임이 있는 손님과 상인 물품의 피해. 여관, 시장, 거래 창구가 보고합니다.</SL_ItWasntMe.coversText>
+  <SL_ItWasntMe.riders.0.description>보상부가 청구를 하루 일찍 검토합니다.</SL_ItWasntMe.riders.0.description>
+  <SL_ItWasntMe.riders.0.label>신속 서류 처리</SL_ItWasntMe.riders.0.label>
+  <SL_LegalShield.benefitBare>모든 벌금의 50 %.</SL_LegalShield.benefitBare>
+  <SL_LegalShield.benefitGood>모든 벌금의 80 %, 그리고 이의 신청도 제출됩니다.</SL_LegalShield.benefitGood>
+  <SL_LegalShield.benefitPremium>벌금 전액. 브릭스 변호사가 고객님보다 먼저 양식을 읽습니다.</SL_LegalShield.benefitPremium>
+  <SL_LegalShield.coversText>조사관의 벌금과 과태료, 면허 문제, 채권 추심 분쟁. 클로백 상호보험이 청구를 거절할 확률도 낮추고, 해지 양식도 바로잡아 줍니다.</SL_LegalShield.coversText>
+  <SL_LegalShield.riders.0.description>보상부가 청구를 하루 일찍 검토합니다.</SL_LegalShield.riders.0.description>
+  <SL_LegalShield.riders.0.label>신속 서류 처리</SL_LegalShield.riders.0.label>
+  <SL_LimbByLimb.benefitBare>사지 보상표에 따라 비례 지급, 장해율 20 %부터. 일부 손실은 지급하지 않습니다.</SL_LimbByLimb.benefitBare>
+  <SL_LimbByLimb.benefitGood>장해율 5 %부터 225 % 누진. 일부 손실도 지급합니다.</SL_LimbByLimb.benefitGood>
+  <SL_LimbByLimb.benefitPremium>장해율 1 %부터 350 % 누진. 손가락마다 가격이 있습니다.</SL_LimbByLimb.benefitPremium>
+  <SL_LimbByLimb.coversText>식민지 주민 한 명. 사고의 영구적 후유증은 사지 보상표에 따라, 사고 사망은 보험금액의 20 %. 사고 한 분기 뒤에 평가합니다. 수술은 사고가 아닙니다.</SL_LimbByLimb.coversText>
+  <SL_LimbByLimb.riders.0.description>프리미엄 사고는 350 % 대신 500 % 표로 지급합니다. 큰 사고에만 의미가 있습니다.</SL_LimbByLimb.riders.0.description>
+  <SL_LimbByLimb.riders.0.label>누진 플러스 (500 %)</SL_LimbByLimb.riders.0.label>
+  <SL_LimbByLimb.riders.1.description>사고 사망 보험금이 기본 금액의 20 %에서 30 %로 오릅니다.</SL_LimbByLimb.riders.1.description>
+  <SL_LimbByLimb.riders.1.label>사망 보험금 증액</SL_LimbByLimb.riders.1.label>
+  <SL_MuffaloMachine.benefitBare>수리비, 시가의 절반.</SL_MuffaloMachine.benefitBare>
+  <SL_MuffaloMachine.benefitGood>현금 또는 캡슐로 보내는 부품, 시가의 80 %.</SL_MuffaloMachine.benefitGood>
+  <SL_MuffaloMachine.benefitPremium>재조달 가치를 즉시 지급. 견인 드론은 고객님 것입니다.</SL_MuffaloMachine.benefitPremium>
+  <SL_MuffaloMachine.coversText>적대 세력에게 파괴된 셔틀, 강하 포드, 차량. 생체 부품은 장비이므로 원칙적으로 여기에도 해당합니다. 실제로는 사고 플랜을 참조하십시오.</SL_MuffaloMachine.coversText>
+  <SL_MuffaloMachine.riders.0.description>모든 손실에 대해 10 % 더 지급합니다 (손실액 자체를 넘지는 않습니다).</SL_MuffaloMachine.riders.0.description>
+  <SL_MuffaloMachine.riders.0.label>자연 마모 면제</SL_MuffaloMachine.riders.0.label>
+  <SL_RimHealth.benefitBare>병상에 누운 식민지 주민당 하루 은화 10, 15일 중 최대 5일.</SL_RimHealth.benefitBare>
+  <SL_RimHealth.benefitGood>병상에 누운 식민지 주민당 하루 은화 15, 15일 중 최대 5일.</SL_RimHealth.benefitGood>
+  <SL_RimHealth.benefitPremium>병상에 누운 식민지 주민당 하루 은화 25, 15일 중 최대 5일. 두 번째 소견은 무료입니다.</SL_RimHealth.benefitPremium>
+  <SL_RimHealth.coversText>식민지 주민이 치료가 필요한 질병이나 부상으로 병상에 누워 있는 모든 날. 단, 식민지 주민당 15일 중 최대 5일까지만 지급합니다 (입원 일당 한도). 식중독은 요리 사고이며 어쨌든 인정됩니다.</SL_RimHealth.coversText>
+  <SL_RimHealth.riders.0.description>병상에서 보내는 모든 날에 10 % 더 지급합니다.</SL_RimHealth.riders.0.description>
+  <SL_RimHealth.riders.0.label>병원 환대</SL_RimHealth.riders.0.label>
+  <SL_RoofOverHead.benefitBare>불탄 건물에 대한 현금, 자기부담금 제외.</SL_RoofOverHead.benefitBare>
+  <SL_RoofOverHead.benefitGood>현금, 또는 캡슐로 보내는 건축 자재.</SL_RoofOverHead.benefitGood>
+  <SL_RoofOverHead.benefitPremium>재조달 가치를 캡슐로 즉시 지급. 재는 포함되지 않습니다.</SL_RoofOverHead.benefitPremium>
+  <SL_RoofOverHead.coversText>화재, 폭발, 폭풍으로 파괴된 정착지의 건물. 고객님 쪽 사람이 일으킨 화재와 폭발은 제외됩니다 (11조).</SL_RoofOverHead.coversText>
+  <SL_RoofOverHead.riders.0.description>모든 손실에 대해 10 % 더 지급합니다 (손실액 자체를 넘지는 않습니다).</SL_RoofOverHead.riders.0.description>
+  <SL_RoofOverHead.riders.0.label>자연 마모 면제</SL_RoofOverHead.riders.0.label>
+  <SL_RoofOverHead.riders.1.description>보상부가 청구를 하루 일찍 검토합니다.</SL_RoofOverHead.riders.1.description>
+  <SL_RoofOverHead.riders.1.label>신속 서류 처리</SL_RoofOverHead.riders.1.label>
+  <SL_Wanderlust.benefitBare>길에서 누군가 사망한 경우에만 1인당 보험금액 지급.</SL_Wanderlust.benefitBare>
+  <SL_Wanderlust.benefitGood>사망, 그리고 사지 보상표에 따른 신체 부위 손실.</SL_Wanderlust.benefitGood>
+  <SL_Wanderlust.benefitPremium>위의 모든 것과, 부상 하나하나에 대한 정액.</SL_Wanderlust.benefitPremium>
+  <SL_Wanderlust.coversText>캐러밴의 식민지 주민. '최소한만'은 사망만, '그럭저럭 충분함'은 신체 부위 손실까지, '프리미엄 중의 프리미엄'은 긁힌 상처까지 지급합니다.</SL_Wanderlust.coversText>
 </LanguageData>

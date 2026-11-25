@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_UnspeakableEvents.label>Приложение «Неописуемые события»</SL_UnspeakableEvents.label>
+  <SL_UnspeakableEvents.description>Для ущерба, который формулировки полиса не могут описать без юриста в комнате.</SL_UnspeakableEvents.description>
+  <SL_UnspeakableEvents.slogan>Некоторые вещи лучше застраховать, чем назвать.</SL_UnspeakableEvents.slogan>
+  <SL_UnspeakableEvents.benefitBare>Деньги, за вычетом вашей доли. Пожалуйста, не описывайте сущность.</SL_UnspeakableEvents.benefitBare>
+  <SL_UnspeakableEvents.benefitGood>Деньги или материалы капсулой.</SL_UnspeakableEvents.benefitGood>
+  <SL_UnspeakableEvents.benefitPremium>Восстановительная стоимость, мгновенно. Специалист уже на телефоне.</SL_UnspeakableEvents.benefitPremium>
+  <SL_UnspeakableEvents.coversText>Здания, разрушенные аномальными сущностями.</SL_UnspeakableEvents.coversText>
+</LanguageData>

@@ -9,4 +9,12 @@
   <SL_BlackLedger.label>The Black Ledger</SL_BlackLedger.label>
   <SL_BlackLedger.description>不问，不填表，不记名。无论信用如何都放贷，价格另议。偶尔会有一本账簿“不见了”，连同一部分存款一起消失。</SL_BlackLedger.description>
   <SL_BlackLedger.slogan>我们不问，你不说。利息照样复利。</SL_BlackLedger.slogan>
+  <SL_BlackLedger.perks.0>贷款无视您的信用评分（以及您的感受）。</SL_BlackLedger.perks.0>
+  <SL_BlackLedger.perks.1>每个季度有 1% 的风险，四分之一的余额会被「查封」。</SL_BlackLedger.perks.1>
+  <SL_BlackLedger.perks.2>仅向发现了地下世界的殖民地开放。</SL_BlackLedger.perks.2>
+  <SL_Mutual.perks.0>中立公平：没有花招，没有惊喜。</SL_Mutual.perks.0>
+  <SL_Mutual.perks.1>费用：取款 1%（最低 5），自动取款机 2 + 1%。</SL_Mutual.perks.1>
+  <SL_TooBigToFail.perks.0>主流银行中账户收益最高（指数 +10%）。</SL_TooBigToFail.perks.0>
+  <SL_TooBigToFail.perks.1>救助：每个游戏年一次，十分钟前还是「大到不能倒」、现在却陷入赤字的客户，可获得 60 天免息贷款（最高为峰值的 10%）。</SL_TooBigToFail.perks.1>
+  <SL_TooBigToFail.perks.2>账户费每季度 6 银币。</SL_TooBigToFail.perks.2>
 </LanguageData>

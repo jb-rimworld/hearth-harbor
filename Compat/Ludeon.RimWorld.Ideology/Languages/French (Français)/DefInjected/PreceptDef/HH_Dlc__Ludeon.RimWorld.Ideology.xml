@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Indulgences_NotAThing.label>sans objet</HH_Indulgences_NotAThing.label>
+  <HH_Indulgences_NotAThing.description>Personne ici n'a jamais songé à vendre le pardon. Rien à acheter, rien à reprocher.</HH_Indulgences_NotAThing.description>
+  <HH_Indulgences_Abhorrent.label>abominable</HH_Indulgences_Abhorrent.label>
+  <HH_Indulgences_Abhorrent.description>Le pardon n'est pas une marchandise. Quiconque le vend devrait être chassé du temple.</HH_Indulgences_Abhorrent.description>
+  <HH_Indulgences_Disapproved.label>désapprouvé</HH_Indulgences_Disapproved.label>
+  <HH_Indulgences_Disapproved.description>Acheter l'absolution est une vilaine habitude. Ça marche, mais personne ne devrait en être fier.</HH_Indulgences_Disapproved.description>
+  <HH_Indulgences_Accepted.label>accepté</HH_Indulgences_Accepted.label>
+  <HH_Indulgences_Accepted.description>Une offrande juste pour une clémence juste. Le prix est affiché sur l'enseigne.</HH_Indulgences_Accepted.description>
+  <HH_Indulgences_Sacred.label>sacré</HH_Indulgences_Sacred.label>
+  <HH_Indulgences_Sacred.description>Payer ce qu'on doit est un sacrement. Les fidèles obtiennent une remise, et une conscience bon marché est un devoir.</HH_Indulgences_Sacred.description>
+  <HH_PaidAscension_NotAThing.label>sans objet</HH_PaidAscension_NotAThing.label>
+  <HH_PaidAscension_NotAThing.description>Le rang se gagne ici, il ne s'achète jamais. Rien à acheter, rien à reprocher.</HH_PaidAscension_NotAThing.description>
+  <HH_PaidAscension_Abhorrent.label>abominable</HH_PaidAscension_Abhorrent.label>
+  <HH_PaidAscension_Abhorrent.description>La foi n'est pas à vendre. Quiconque vend un rang l'a déjà perdu.</HH_PaidAscension_Abhorrent.description>
+  <HH_PaidAscension_Disapproved.label>désapprouvé</HH_PaidAscension_Disapproved.label>
+  <HH_PaidAscension_Disapproved.description>Un rang acheté est un rang creux. La congrégation voit clair dans le jeu.</HH_PaidAscension_Disapproved.description>
+  <HH_PaidAscension_Accepted.label>accepté</HH_PaidAscension_Accepted.label>
+  <HH_PaidAscension_Accepted.description>Le rang peut s'acheter, au prix affiché, comme tout ce qui a de la valeur.</HH_PaidAscension_Accepted.description>
+  <HH_PaidAscension_Sacred.label>sacré</HH_PaidAscension_Sacred.label>
+  <HH_PaidAscension_Sacred.description>L'échelle, c'est la foi. Chaque échelon acheté est un échelon gravi, et ceux d'en bas lèvent les yeux avec respect.</HH_PaidAscension_Sacred.description>
+  <HH_Indulgences_Abhorrent.comps.0.description>Indulgences vendues sur la carte</HH_Indulgences_Abhorrent.comps.0.description>
+  <HH_Indulgences_Sacred.comps.1.description>Aucune indulgence achetée pendant un quadrum</HH_Indulgences_Sacred.comps.1.description>
+  <HH_PaidAscension_Abhorrent.comps.0.description>Rang vendu sur la carte</HH_PaidAscension_Abhorrent.comps.0.description>
+  <HH_PaidAscension_Sacred.comps.0.description>Rang</HH_PaidAscension_Sacred.comps.0.description>
+</LanguageData>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-  <SL_Asset_EmpireWarBond.label>Військові облігації Імперії</SL_Asset_EmpireWarBond.label>
-  <SL_Asset_EmpireWarBond.description>Облігації, що фінансують війну Імперії. Після перемоги вони різко зростають, після поразки стають гарною рамкою. Війна триває дуже довго, переважно в брошурах.</SL_Asset_EmpireWarBond.description>
-  <SL_Asset_StockEmpire.label>IMPR, Імперські урочистості Лтд.</SL_Asset_StockEmpire.label>
-  <SL_Asset_StockEmpire.description>Компанія, що стоїть за імперськими церемоніями: прапори, труби і крихітні корони. Прибутки залежать від того, скільки знатних осіб ображаються через те, наскільки мало їм дісталося.</SL_Asset_StockEmpire.description>
-</LanguageData>

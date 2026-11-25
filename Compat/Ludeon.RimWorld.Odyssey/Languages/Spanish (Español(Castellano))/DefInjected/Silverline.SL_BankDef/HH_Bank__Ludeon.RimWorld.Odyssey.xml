@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SL_OrbitalExchange.label>Orbital Exchange</SL_OrbitalExchange.label>
+  <SL_OrbitalExchange.description>Un banco de gremio de comercio en un anillo giratorio carísimo. El mejor acceso al mercado del Borde, las comisiones más altas del Borde, y cada recibo llega con un pequeño gráfico que sube hacia la derecha.</SL_OrbitalExchange.description>
+  <SL_OrbitalExchange.slogan>Liquidez a la velocidad de la luz. Las comisiones, también.</SL_OrbitalExchange.slogan>
+  <SL_OrbitalExchange.perks.0>El mejor acceso al mercado una vez investigadas las inversiones.</SL_OrbitalExchange.perks.0>
+  <SL_OrbitalExchange.perks.1>Las comisiones más altas: 0,5 % por ingreso, 2 % por retirada (mínimo 10), cuota de cuenta de 10 de plata por cuadrante.</SL_OrbitalExchange.perks.1>
+</LanguageData>

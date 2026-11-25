@@ -2,4 +2,8 @@
 <LanguageData>
   <HH_Venue_DrugLounge.label>salon à stupéfiants</HH_Venue_DrugLounge.label>
   <HH_Venue_DrugLounge.description>Une pièce sombre avec des canapés et un registre que personne ne lit. Les invités paient une séance ; ils ne prennent que ce que leur idéologie autorise. Ouvert la nuit.</HH_Venue_DrugLounge.description>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>Les invités s'installent sur des sièges moelleux. Au moins deux.</HH_Venue_DrugLounge.modExtensions.1.requirements.0.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>des canapés</HH_Venue_DrugLounge.modExtensions.1.requirements.0.label>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>De quoi poser des choses.</HH_Venue_DrugLounge.modExtensions.1.requirements.1.hint>
+  <HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>une table basse</HH_Venue_DrugLounge.modExtensions.1.requirements.1.label>
 </LanguageData>

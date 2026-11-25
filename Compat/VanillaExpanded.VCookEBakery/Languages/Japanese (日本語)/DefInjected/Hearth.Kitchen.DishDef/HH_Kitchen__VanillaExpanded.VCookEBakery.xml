@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HH_Dish_SugarCookies.label>シュガークッキー</HH_Dish_SugarCookies.label>
+  <HH_Dish_SugarCookies.description>戦闘で手が震える入植者が飾り付けた。見ればわかる。</HH_Dish_SugarCookies.description>
+  <HH_Dish_FancyCupcakes.label>豪華カップケーキ</HH_Dish_FancyCupcakes.label>
+  <HH_Dish_FancyCupcakes.description>小さなケーキに、大きなスプリンクルの問題。</HH_Dish_FancyCupcakes.description>
+  <HH_Dish_GlazedDonuts.label>グレーズドーナツ</HH_Dish_GlazedDonuts.label>
+  <HH_Dish_GlazedDonuts.description>予算に空いた穴のまわりを囲む、ドーナツ生地のリング。</HH_Dish_GlazedDonuts.description>
+  <HH_Dish_FancyCupcakes.inspiration>Vanilla Cooking Expanded - Bakery</HH_Dish_FancyCupcakes.inspiration>
+  <HH_Dish_GlazedDonuts.inspiration>Vanilla Cooking Expanded - Bakery</HH_Dish_GlazedDonuts.inspiration>
+  <HH_Dish_SugarCookies.inspiration>Vanilla Cooking Expanded - Bakery</HH_Dish_SugarCookies.inspiration>
+</LanguageData>
