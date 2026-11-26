@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Setting.core.researchMode>Režim výzkumu</HH.Setting.core.researchMode>
-  <HH.Setting.core.researchMode.Desc>Plný: stromy výzkumu Hearth &amp; Harbor a Silverline určují, které budovy a funkce jsou dostupné. Vypnuto: vše je dostupné od začátku (temné projekty podsvětí stále vyžadují objevení).</HH.Setting.core.researchMode.Desc>
+  <HH.Setting.core.researchMode.Desc>Plný: výzkumné stromy Hearth &amp; Harbor a Silverline zamykají své stavby a funkce. Vypnuto: všechno je dostupné od začátku.</HH.Setting.core.researchMode.Desc>
   <HH.Enum.CoreResearchMode.Full>Plný</HH.Enum.CoreResearchMode.Full>
   <HH.Enum.CoreResearchMode.Off>Vypnuto</HH.Enum.CoreResearchMode.Off>
   <HH.Gate.ModuleOff>Modul vypnut: {0}</HH.Gate.ModuleOff>

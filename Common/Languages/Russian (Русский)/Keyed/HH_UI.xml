@@ -61,19 +61,19 @@
   <HH.UI.Modules.Content>Интенсивность контента</HH.UI.Modules.Content>
   <HH.UI.Modules.ContentDesc>Насколько мрачным может быть необязательный контент. Сексуального контента не будет, что бы вы ни выбрали.</HH.UI.Modules.ContentDesc>
   <HH.UI.Content.Cozy>Уютный</HH.UI.Content.Cozy>
-  <HH.UI.Content.Cozy.Tip>Только мягкие истории и последствия.</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Cozy.Tip>Только мягкие истории и последствия. Скрывает всё подполье: заднюю комнату, яму, скупщика, салон с дурманом и банды.</HH.UI.Content.Cozy.Tip>
   <HH.UI.Content.Standard>Стандартный</HH.UI.Content.Standard>
   <HH.UI.Content.Standard.Tip>По умолчанию. Шероховатости есть, ничего неприятного.</HH.UI.Content.Standard.Tip>
   <HH.UI.Content.Dark>Тёмный</HH.UI.Content.Dark>
-  <HH.UI.Content.Dark.Tip>Могут появляться преступления, долги и насилие.</HH.UI.Content.Dark.Tip>
+  <HH.UI.Content.Dark.Tip>Добавляет к стандартному: пленники могут драться насмерть, их могут жёстче допрашивать и на них могут охотиться (при подходящей идеологии), становятся возможны клиника органов и тёмное меню.</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>Мрачный</HH.UI.Content.Grim>
-  <HH.UI.Content.Grim.Tip>Всё, что предлагает игра, в полном объёме.</HH.UI.Content.Grim.Tip>
+  <HH.UI.Content.Grim.Tip>Добавляет к тёмному: охота на пленников не требует подходящей идеологии, а покупатели органов делают заказы со сроками.</HH.UI.Content.Grim.Tip>
   <HH.UI.ModuleDesc.Inn>Гости, гостевые кровати, крылья, приёмная, путешественники и вербовка.</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>Вывески заведений, магазины, торговые автоматы, рынки, рестораны и блюда.</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>Столы, игровые автоматы, фишки и риски азартных игр для гостей и колонистов.</HH.UI.ModuleDesc.Casino>
   <HH.UI.ModuleDesc.Wellness>Спа, сауна и курсы реабилитации.</HH.UI.ModuleDesc.Wellness>
   <HH.UI.ModuleDesc.CityLife>Кинотеатр, торговый центр, салон, храмы, такси и охрана.</HH.UI.ModuleDesc.CityLife>
-  <HH.UI.ModuleDesc.Underworld>Закрытая комната, арена для боёв и скупщик краденого. Находится в игре, никогда не навязывается.</HH.UI.ModuleDesc.Underworld>
+  <HH.UI.ModuleDesc.Underworld>Неприметная задняя комната, яма для боёв и скупщик. Ничего из этого не происходит, пока вы это не построите.</HH.UI.ModuleDesc.Underworld>
   <HH.UI.ModuleDesc.Bank>Silverline: счета, платежи, банкоматы, инвестиции, кредиты, страхование и лотерея.</HH.UI.ModuleDesc.Bank>
   <HH.UI.ModuleDesc.AiFlavour>Необязательные тексты-добавки, написанные ИИ через ретрансляцию. По умолчанию выключено.</HH.UI.ModuleDesc.AiFlavour>
   <HH.UI.Diff.Title>Сложность хостинга</HH.UI.Diff.Title>
@@ -304,7 +304,7 @@
   <HH.Setting.core.neverDie.Desc>Гостей вырубают вместо убийства. Они остаются живы, лежа без сознания, пока кто-нибудь о них не позаботится.</HH.Setting.core.neverDie.Desc>
   <HH.Setting.core.infiniteMoney.Desc>Гости, прибывшие при включённой настройке, носят с собой бездонный кошелёк. Множитель денег гостей на них не действует.</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.ironBank.Desc>Взыскание долга всегда доходит до высшей стадии, при любой сложности. Никто тихо не откладывает ваши взносы.</HH.Setting.core.ironBank.Desc>
-  <HH.Setting.core.peacefulUnderworld.Desc>Тёмные заведения работают без насилия: нет ямы для боёв, допросов, охоты на людей, клиники и рэкета. Подсобка, скупщик и курильня остаются.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Тёмные заведения работают без насилия. Это полностью закрывает яму, в том числе поединки на очки, и прекращает допросы, охоту на людей, клинику органов и поборы. Задняя комната, скупщик и салон с дурманом остаются.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>Планирование гостей и проверки комнат идут вдвое реже. Помогает на слабых компьютерах; гости могут реагировать немного позже.</HH.Setting.core.perfMode.Desc>
   <HH.Kitchen.Cookbook.ColCuisine>Кухня</HH.Kitchen.Cookbook.ColCuisine>
   <HH.Kitchen.Cookbook.ColDish>Блюдо</HH.Kitchen.Cookbook.ColDish>
@@ -327,5 +327,5 @@
   <HH.UI.Page.Sub.city>Кинотеатр, салон, галерея, парк, такси и охрана: что построено и что приносит.</HH.UI.Page.Sub.city>
   <HH.UI.Page.Sub.guests>Все, кто живёт в вашей гостинице или приходит в неё. Щёлкните строку, чтобы перейти к гостю; щёлкните ячейку обращения, чтобы его сменить.</HH.UI.Page.Sub.guests>
   <HH.UI.Page.Sub.overview>Сегодня одним взглядом: гости, выручка и состояние каждого заведения.</HH.UI.Page.Sub.overview>
-  <HH.UI.Page.Sub.underworld>Шепотки, веса прибытия и выручка тёмной стороны.</HH.UI.Page.Sub.underworld>
+  <HH.UI.Page.Sub.underworld>Что делает каждая часть задней комнаты, предложения, которые ждут вас, шепотки и выручка.</HH.UI.Page.Sub.underworld>
 </LanguageData>

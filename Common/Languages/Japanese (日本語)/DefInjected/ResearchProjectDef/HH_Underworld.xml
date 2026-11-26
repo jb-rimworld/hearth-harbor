@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_Underworld_Discovery.label>奥の部屋(鍵)</HH_Underworld_Discovery.label>
-  <HH_Underworld_Discovery.description>内部用の鍵となるプロジェクト。見知らぬ男の申し出が受け入れられた時点で完了。表示されることはない。</HH_Underworld_Discovery.description>
+  <HH_Underworld_Discovery.description>古いセーブのために残してある内部用の古い研究項目です。表示されず、何も解放しません。</HH_Underworld_Discovery.description>
   <HH_Underworld_1.label>奥の部屋</HH_Underworld_1.label>
-  <HH_Underworld_1.description>奥の部屋の扉、闘技場、故買屋のカウンター、密輸者の桟橋、そして薬物ラウンジ。メニューには載らない商売に、店が必要とするすべてのもの。</HH_Underworld_1.description>
+  <HH_Underworld_1.description>古いセーブのために残してある古い研究項目です。表示されず、何も解放しません。奥の部屋の扉、闘技場、故買屋のカウンター、密輸者の桟橋、ドラッグラウンジに研究は不要です。</HH_Underworld_1.description>
   <HH_TheHunt.label>狩り</HH_TheHunt.label>
-  <HH_TheHunt.description>柵で囲まれた狩場。裕福な来訪者は、そこへ放たれたものを撃つために高い金を払います。ダークな内容以降、囚人を明確な警告の上で獲物にできます。</HH_TheHunt.description>
+  <HH_TheHunt.description>柵で囲まれた狩場。裕福な来訪者は、そこへ放たれたものを撃つために高い金を払います。ダークな内容と適合するイデオロギー、または陰惨な内容なら、マーカーで許可した場合に囚人が獲物になることもあります。</HH_TheHunt.description>
   <HH_BlackClinic.label>闇の診療所</HH_BlackClinic.label>
   <HH_BlackClinic.description>匿名の提供者が摘出された臓器を、質問なしで買うカウンター。ダークまたはグリムな内容のときのみ。</HH_BlackClinic.description>
 </LanguageData>

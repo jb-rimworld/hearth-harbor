@@ -27,4 +27,16 @@
   <HH_Guide_YourGuests.steps.1.description>Показує, що думає гість, і дає обрати «Базове», «Супровід» або «Вербування».</HH_Guide_YourGuests.steps.1.description>
   <HH_Guide_YourGuests.steps.1.label>Виберіть гостя й відкрийте вкладку «Гість».</HH_Guide_YourGuests.steps.1.label>
   <HH_Guide_YourGuests.steps.2.label>Спробуйте інше обслуговування для гостя, який вам подобається.</HH_Guide_YourGuests.steps.2.label>
+  <HH_Guide_BackRoom.description>Бої, скупник і банди. Усе за бажанням: нічого не станеться, поки ви цього не збудуєте.</HH_Guide_BackRoom.description>
+  <HH_Guide_BackRoom.label>Задня кімната</HH_Guide_BackRoom.label>
+  <HH_Guide_BackRoom.steps.0.description>Хвіртка в огорожі підійде. Арені потрібно щонайменше 3 на 3 клітинки. Маркер підкаже, чого йому ще бракує.</HH_Guide_BackRoom.steps.0.description>
+  <HH_Guide_BackRoom.steps.0.label>Збудуйте закриту огорожу й поставте всередині маркер ями для бійок.</HH_Guide_BackRoom.steps.0.label>
+  <HH_Guide_BackRoom.steps.1.description>Клацніть маркер правою кнопкою з колоністом, позначте бійців у «Бійці…» або натисніть «Покликати суперника», якщо ви сам. Бої з гостем чи колоністом ідуть на очки, тож ніхто не постраждає.</HH_Guide_BackRoom.steps.1.description>
+  <HH_Guide_BackRoom.steps.1.label>Дочекайтеся кінця першого бою.</HH_Guide_BackRoom.steps.1.label>
+  <HH_Guide_BackRoom.steps.2.description>Банди зустрічаються там і платять за це. Поважні гості іноді забрідають туди випадково.</HH_Guide_BackRoom.steps.2.description>
+  <HH_Guide_BackRoom.steps.2.label>Збудуйте кімнату, до якої ведуть лише двері задньої кімнати.</HH_Guide_BackRoom.steps.2.label>
+  <HH_Guide_BackRoom.steps.3.description>Перша банда приходить приблизно за день після вашої першої задньої кімнати, прилавка скупника чи ями. Коли саме, сказано на сторінці «Підпілля».</HH_Guide_BackRoom.steps.3.description>
+  <HH_Guide_BackRoom.steps.3.label>Дочекайтеся першого візиту банди.</HH_Guide_BackRoom.steps.3.label>
+  <HH_Guide_BackRoom.steps.4.description>Банди продають йому здобич і купують із його запасів. Платить він зі своєї каси.</HH_Guide_BackRoom.steps.4.description>
+  <HH_Guide_BackRoom.steps.4.label>Збудуйте прилавок скупника.</HH_Guide_BackRoom.steps.4.label>
 </LanguageData>

@@ -7,4 +7,7 @@
   <HH_Interrogate.reportString>interrogando a TargetA.</HH_Interrogate.reportString>
   <HH_HuntQuarry.reportString>cazando a TargetA.</HH_HuntQuarry.reportString>
   <HH_QuarryFlee.reportString>huyendo.</HH_QuarryFlee.reportString>
+  <HH_PitFight.reportString>luchando contra TargetA en el foso.</HH_PitFight.reportString>
+  <HH_PitGoto.reportString>entrando en el foso de combate.</HH_PitGoto.reportString>
+  <HH_PitWait.reportString>esperando el combate.</HH_PitWait.reportString>
 </LanguageData>

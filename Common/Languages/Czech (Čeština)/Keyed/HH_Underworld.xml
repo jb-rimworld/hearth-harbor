@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Tab.Underworld>Podsvětí</HH.Tab.Underworld>
-  <HH.Underworld.GateClosed>Nedostupné: podsvětí je v této hře zavřené.</HH.Underworld.GateClosed>
+  <HH.Underworld.GateClosed>V této hře nedostupné: modul Podsvětí je vypnutý, nebo to intenzita obsahu nedovoluje (Nastavení, Moduly).</HH.Underworld.GateClosed>
   <HH.Underworld.BackRoomDoorInfo>Otevřít tyto dveře mohou jen zaměstnanci, kolonisté a pochybní hosté.</HH.Underworld.BackRoomDoorInfo>
   <HH.Underworld.Scandal.BackRoomFound.Title>Zadní místnost byla odhalena</HH.Underworld.Scandal.BackRoomFound.Title>
   <HH.Underworld.Scandal.BackRoomFound.Text>Váženého hosta zavedly dveře na špatném místě a uviděl, co dům za nimi skrývá. Do večera to bude vědět celé město.</HH.Underworld.Scandal.BackRoomFound.Text>
@@ -16,28 +16,23 @@
   <HH.Underworld.Pit.Enabled.Desc>Plánovat zápasy v této jámě.</HH.Underworld.Pit.Enabled.Desc>
   <HH.Underworld.Pit.Animals>Zvířata</HH.Underworld.Pit.Animals>
   <HH.Underworld.Pit.Animals.Desc>Zvířata vaší kolonie zde mohou bojovat.</HH.Underworld.Pit.Animals.Desc>
-  <HH.Underworld.Pit.Volunteers>Dobrovolníci</HH.Underworld.Pit.Volunteers>
-  <HH.Underworld.Pit.Volunteers.Desc>Kolonisté, kterým se líbí rvačka (krvežíznivost nebo dobrý boj zblízka), se mohou přihlásit. Dobrovolníci nikdy nebojují na život a na smrt.</HH.Underworld.Pit.Volunteers.Desc>
+  <HH.Underworld.Pit.Volunteers>Dobrovolníci (staré uložení)</HH.Underworld.Pit.Volunteers>
+  <HH.Underworld.Pit.Volunteers.Desc>Ze staršího uložení: kolonisté s touhou po krvi nebo s bojem zblízka 8 a víc bojují i bez zaškrtnutí pod Bojovníci. Vypněte to a budou bojovat jen zaškrtnutí kolonisté. Kolonisté nikdy nebojují na smrt.</HH.Underworld.Pit.Volunteers.Desc>
   <HH.Underworld.Pit.Prisoners>Vězni</HH.Underworld.Pit.Prisoners>
-  <HH.Underworld.Pit.Prisoners.Desc>Vězni mohou být posláni do jámy. Pouze dospělí.</HH.Underworld.Pit.Prisoners.Desc>
+  <HH.Underworld.Pit.Prisoners.Desc>V této jámě smějí bojovat vězni kolonie ve věku 18 let a víc. Stráže je přivedou do arény a zpět do cely.</HH.Underworld.Pit.Prisoners.Desc>
   <HH.Underworld.Pit.Lethal>Na smrt</HH.Underworld.Pit.Lethal>
-  <HH.Underworld.Pit.Lethal.Desc>Zápasy mezi vězni a zvířaty končí teprve tehdy, když je jeden z nich na zemi. Nikdy pro dobrovolníky.</HH.Underworld.Pit.Lethal.Desc>
+  <HH.Underworld.Pit.Lethal.Desc>Zápasy mezi vězni a zvířaty končí, jen když jeden z nich padne. Nikdy pro hosty, kolonisty ani otroky: jejich zápasy se vždy bojují o body.</HH.Underworld.Pit.Lethal.Desc>
   <HH.Underworld.Pit.StartNow>Zahájit zápas</HH.Underworld.Pit.StartNow>
-  <HH.Underworld.Pit.StartNow.Desc>Vyberte nyní dva férové bojovníky a nechte hosty sázet.</HH.Underworld.Pit.StartNow.Desc>
+  <HH.Underworld.Pit.StartNow.Desc>Spustí zápas hned: strany vybrané pod Bojovníci, nebo dva nejbližší bojovníci. Hosté nejsou potřeba a limit spravedlnosti neplatí.</HH.Underworld.Pit.StartNow.Desc>
   <HH.Underworld.Pit.CannotStart>Zápas nelze zahájit: {0}</HH.Underworld.Pit.CannotStart>
   <HH.Underworld.Pit.ArenaOk>Aréna: {0} polí, uzavřená.</HH.Underworld.Pit.ArenaOk>
   <HH.Underworld.Pit.ArenaOpen>Aréna je otevřená nebo příliš velká: uzavřete ohradu.</HH.Underworld.Pit.ArenaOpen>
-  <HH.Underworld.Pit.NoFighters>méně než dva povolení bojovníci</HH.Underworld.Pit.NoFighters>
+  <HH.Underworld.Pit.NoFighters>méně než dva bojovníci</HH.Underworld.Pit.NoFighters>
   <HH.Underworld.Pit.NoFairPair>není k dispozici férová dvojice bojovníků</HH.Underworld.Pit.NoFairPair>
-  <HH.Underworld.Pit.BoutRunning>Zápas: {0} proti {1}.</HH.Underworld.Pit.BoutRunning>
   <HH.Underworld.Pit.BoutAnnounced>Zápas v jámě: {0} proti {1}. Sázky jsou otevřené.</HH.Underworld.Pit.BoutAnnounced>
-  <HH.Underworld.Pit.Won>{0} vyhrává zápas. Dům si ponechá {1} stříbrných.</HH.Underworld.Pit.Won>
-  <HH.Underworld.Pit.Draw>Zápas končí bez vítěze. Všechny vklady se vracejí.</HH.Underworld.Pit.Draw>
-  <HH.Underworld.Fence.Inspect>Zásoby: {0} předmětů v hodnotě {1} stříbrných. Pokladnička: {2} stříbrných.</HH.Underworld.Fence.Inspect>
   <HH.Underworld.Fence.Fund>Doplnit pokladničku</HH.Underworld.Fence.Fund>
   <HH.Underworld.Fence.Fund.Desc>Přesunout stříbro ze šuplíku do pokladničky příjemce, až do limitu v nastavení.</HH.Underworld.Fence.Fund.Desc>
   <HH.Underworld.Fence.Funded>{0} stříbrných přesunuto do pokladničky.</HH.Underworld.Fence.Funded>
-  <HH.Underworld.Fence.NoCash>Pokladnička je prázdná.</HH.Underworld.Fence.NoCash>
   <HH.Underworld.Fence.CannotPay>Kupec nemůže zaplatit.</HH.Underworld.Fence.CannotPay>
   <HH.Underworld.Fence.Exposed>Zboží pochází od {0} a ví, kde skončilo.</HH.Underworld.Fence.Exposed>
   <HH.Underworld.Gang.Title>Gang u dveří</HH.Underworld.Gang.Title>
@@ -46,14 +41,12 @@
   <HH.Underworld.Gang.Demand.Text>Vůdce gangu z {0} se opírá o váš pult. „Pěkný dům. Byla by škoda, kdyby se mu něco stalo. Za {1} stříbrných zajistíme, že se nestane nic.“</HH.Underworld.Gang.Demand.Text>
   <HH.Underworld.Gang.Demand.Pay>Zaplatit {0} stříbrných</HH.Underworld.Gang.Demand.Pay>
   <HH.Underworld.Gang.Demand.Refuse>Ukázat jim dveře</HH.Underworld.Gang.Demand.Refuse>
-  <HH.Underworld.Gang.Demand.NoCash>v šuplíku není dost</HH.Underworld.Gang.Demand.NoCash>
   <HH.Underworld.Tour.IntelTitle>Něco z výslechu</HH.Underworld.Tour.IntelTitle>
   <HH.Underworld.Tour.IntelText>Po hodině s {0} zanechal gang na pultu lístek: jméno, místo, den. Někdo tam venku něco plánuje a vy o tom teď víte o něco víc.</HH.Underworld.Tour.IntelText>
   <HH.Underworld.Smuggler.Title>Bedna u doku</HH.Underworld.Smuggler.Title>
-  <HH.Underworld.Smuggler.Text>U doku dosedla loď se zhasnutými světly. Hlas nabízí {0} předmětů v hodnotě asi {1} stříbrných za {2}. Žádné otázky, žádný účet.</HH.Underworld.Smuggler.Text>
+  <HH.Underworld.Smuggler.Text>K doku připlula loď se zhasnutými světly. Hlas nabízí {0} v hodnotě asi {1} stříbrných za {2} stříbrných. Bez otázek, bez účtenky.</HH.Underworld.Smuggler.Text>
   <HH.Underworld.Smuggler.Buy>Koupit za {0} stříbrných</HH.Underworld.Smuggler.Buy>
   <HH.Underworld.Smuggler.Decline>Vykázat je</HH.Underworld.Smuggler.Decline>
-  <HH.Underworld.Smuggler.NoCash>v šuplíku není dost</HH.Underworld.Smuggler.NoCash>
   <HH.Underworld.Smuggler.InspectTitle>Hlídka si všimla lampy</HH.Underworld.Smuggler.InspectTitle>
   <HH.Underworld.Smuggler.InspectText>Císařská hlídka viděla světla u vašeho doku a zapsala si to.</HH.Underworld.Smuggler.InspectText>
   <HH.Underworld.Hunt.Title>Lovecká výprava</HH.Underworld.Hunt.Title>
@@ -62,8 +55,8 @@
   <HH.Underworld.Hunt.QuarryAnimals>zvířata</HH.Underworld.Hunt.QuarryAnimals>
   <HH.Underworld.Hunt.QuarryHuman>zvířata a vězeň</HH.Underworld.Hunt.QuarryHuman>
   <HH.Underworld.Hunt.Prisoners>Vězeň jako kořist</HH.Underworld.Hunt.Prisoners>
-  <HH.Underworld.Hunt.Prisoners.Desc>Nechat lovce lovit vězně vypuštěného do revíru. Pouze s temným obsahem a odpovídající ideologií.</HH.Underworld.Hunt.Prisoners.Desc>
-  <HH.Underworld.Hunt.GateContent>Vyžaduje potvrzený temný nebo krutý obsah.</HH.Underworld.Hunt.GateContent>
+  <HH.Underworld.Hunt.Prisoners.Desc>Nechat lovce lovit vězně vypuštěného do revíru. Temný obsah s odpovídající ideologií, nebo krutý obsah.</HH.Underworld.Hunt.Prisoners.Desc>
+  <HH.Underworld.Hunt.GateContent>Vyžaduje temný nebo krutý obsah.</HH.Underworld.Hunt.GateContent>
   <HH.Underworld.Hunt.GatePrecept>Ideologie kolonie to nedovoluje.</HH.Underworld.Hunt.GatePrecept>
   <HH.Underworld.Hunt.DeathTitle>Při honu zemřel člověk</HH.Underworld.Hunt.DeathTitle>
   <HH.Underworld.Hunt.DeathText>{0} hon nepřežil. Jeho lidé se to dozvědí a stejně tak každý, kdo se díval.</HH.Underworld.Hunt.DeathText>
@@ -78,8 +71,231 @@
   <HH.Underworld.Page.Title>Podsvětí</HH.Underworld.Page.Title>
   <HH.Underworld.Page.Whispers>Šepty: {0} ze 100.</HH.Underworld.Page.Whispers>
   <HH.Underworld.Page.Weights>Váhy příchodů: váženým x{0}, psancům x{1}.</HH.Underworld.Page.Weights>
-  <HH.Underworld.Page.Stats1>Jáma na boje: {0} zápasů, {1} sázek, dům si vzal {2} stříbrných.</HH.Underworld.Page.Stats1>
+  <HH.Underworld.Page.Stats1>Zápasy v jámě: {0}. Sázky: {1}. Podíl domu: {2} stříbrných.</HH.Underworld.Page.Stats1>
   <HH.Underworld.Page.Stats2>Příjemce: {0} koupeno, {1} prodáno, zisk {2} stříbrných.</HH.Underworld.Page.Stats2>
   <HH.Underworld.Page.Stats3>Návštěvy salónku {0}, návštěvy gangů {1}, přistání {2}, lovy {3}, orgány {4}.</HH.Underworld.Page.Stats3>
   <HH.Underworld.Page.HighRollers>Pověst o tajném kasinu láká movité hazardéry.</HH.Underworld.Page.HighRollers>
+  <HH.Underworld.Ago.Moment>okamžik</HH.Underworld.Ago.Moment>
+  <HH.Underworld.BackRoom.NoOrdinaryDoor>Zatím to není zadní místnost: tato místnost má i obyčejné dveře.</HH.Underworld.BackRoom.NoOrdinaryDoor>
+  <HH.Underworld.BackRoom.NoOutside>Zatím to není zadní místnost: místnost je otevřená ven.</HH.Underworld.BackRoom.NoOutside>
+  <HH.Underworld.BackRoom.NoRoom>Zatím to není zadní místnost: za těmito dveřmi není žádná místnost.</HH.Underworld.BackRoom.NoRoom>
+  <HH.Underworld.BackRoom.Off>Obyčejné dveře: Podsvětí je vypnuté (modul nebo Útulný obsah).</HH.Underworld.BackRoom.Off>
+  <HH.Underworld.BackRoom.Status.Last>Poslední poplatek za zadní místnost: před {0}.</HH.Underworld.BackRoom.Status.Last>
+  <HH.Underworld.BackRoom.Status.NotBuilt>Postavte místnost, jejíž jediné dveře jsou dveře zadní místnosti.</HH.Underworld.BackRoom.Status.NotBuilt>
+  <HH.Underworld.BackRoom.Yes>Toto je zadní místnost ({0} polí).</HH.Underworld.BackRoom.Yes>
+  <HH.Underworld.Facility.Off>Podsvětí je vypnuté (modul nebo Útulný obsah).</HH.Underworld.Facility.Off>
+  <HH.Underworld.Fence.Bought>Příjemce koupil {0} za {1} stříbrných.</HH.Underworld.Fence.Bought>
+  <HH.Underworld.Fence.BuyFailed>Příjemce nemohl koupit {0}: {1}.</HH.Underworld.Fence.BuyFailed>
+  <HH.Underworld.Fence.CannotBuy>Teď nelze koupit: {0}.</HH.Underworld.Fence.CannotBuy>
+  <HH.Underworld.Fence.LowCash>Jen {0} stříbrných po ruce (kasa a pokladnička): příjemce odmítá zboží, které stojí víc, nejvýš {1} za nejdražší kořist.</HH.Underworld.Fence.LowCash>
+  <HH.Underworld.Fence.Sold>Příjemce prodal {0} za {1} stříbrných.</HH.Underworld.Fence.Sold>
+  <HH.Underworld.Fence.Status.Last>Poslední obchod: před {0}.</HH.Underworld.Fence.Status.Last>
+  <HH.Underworld.Fence.Status.NotBuilt>Postavte pult příjemce: gangy mu prodávají kořist a nakupují z jeho zásob.</HH.Underworld.Fence.Status.NotBuilt>
+  <HH.Underworld.Fence.Status.Waiting>Čeká na gang se zbožím k prodeji.</HH.Underworld.Fence.Status.Waiting>
+  <HH.Underworld.Fence.Stock>Zásoby: {0} předmětů v hodnotě {1} stříbrných. Pokladnička: {2} stříbrných.</HH.Underworld.Fence.Stock>
+  <HH.Underworld.Fence.TakeOut>Vzít zboží ven</HH.Underworld.Fence.TakeOut>
+  <HH.Underworld.Fence.TakeOut.Desc>Vyloží všechny zásoby na zem vedle pultu. Zboží se stane obyčejnými předměty, které může kolonie používat nebo prodat; příjemce zapomene, kde bylo ukradeno.</HH.Underworld.Fence.TakeOut.Desc>
+  <HH.Underworld.Fence.TakeOut.Empty>nic na skladě</HH.Underworld.Fence.TakeOut.Empty>
+  <HH.Underworld.Fence.TookOut>{0} hromádek položeno vedle pultu.</HH.Underworld.Fence.TookOut>
+  <HH.Underworld.Fence.TookOut.NoRoom>Vedle pultu není dost místa: {0} z {1} hromádek je stále na skladě.</HH.Underworld.Fence.TookOut.NoRoom>
+  <HH.Underworld.Fence.TookOut.One>Jedna hromádka položena vedle pultu.</HH.Underworld.Fence.TookOut.One>
+  <HH.Underworld.Fence.Why.Closed>Podsvětí je vypnuté</HH.Underworld.Fence.Why.Closed>
+  <HH.Underworld.Fence.Why.TillEmpty>kasa i pokladnička jsou prázdné</HH.Underworld.Fence.Why.TillEmpty>
+  <HH.Underworld.Fence.Why.TooLittle>po ruce je jen {0} stříbrných, cena je {1}</HH.Underworld.Fence.Why.TooLittle>
+  <HH.Underworld.Gang.Demand.Expired>Gangu jste neodpověděli: berou to jako ne.</HH.Underworld.Gang.Demand.Expired>
+  <HH.Underworld.Gang.Demand.Letter.How>Vyberte {0} nebo otevřete kartu Podsvětí a zaplaťte, nebo odmítněte. Kolonie platí z kasy, ze stříbra ve skladu nebo z banky. Nabídka platí {1} hodin; nechat ji vypršet se počítá jako odmítnutí.</HH.Underworld.Gang.Demand.Letter.How>
+  <HH.Underworld.Gang.Demand.Paid>Zaplaceno {0} stříbrných výpalného.</HH.Underworld.Gang.Demand.Paid>
+  <HH.Underworld.Gang.Demand.Pay.Desc>Kolonie platí z kasy, ze stříbra ve skladu nebo z banky. Gang vás nechá na pokoji a jeho frakce o vás smýšlí o něco lépe.</HH.Underworld.Gang.Demand.Pay.Desc>
+  <HH.Underworld.Gang.Demand.Refuse.Desc>Odmítnout. Frakce gangu to nese špatně a ztrácí dobrou vůli.</HH.Underworld.Gang.Demand.Refuse.Desc>
+  <HH.Underworld.Gang.Demand.Refused>Ukázali jste gangu dveře.</HH.Underworld.Gang.Demand.Refused>
+  <HH.Underworld.Gang.Demand.Waiting>{0} chce {1} stříbrných výpalného (odpovězte do {2}).</HH.Underworld.Gang.Demand.Waiting>
+  <HH.Underworld.Gang.Status.DemandAbove>Nahoře čeká žádost.</HH.Underworld.Gang.Status.DemandAbove>
+  <HH.Underworld.Gang.Status.Here>Je tu gang o {0} lidech.</HH.Underworld.Gang.Status.Here>
+  <HH.Underworld.Gang.Status.Last>Poslední návštěva gangu: před {0}.</HH.Underworld.Gang.Status.Last>
+  <HH.Underworld.Gang.Status.Next>Další návštěva gangu asi za {0}.</HH.Underworld.Gang.Status.Next>
+  <HH.Underworld.Gang.Status.NotBuilt>Gangy přijdou, až budete mít zadní místnost, pult příjemce nebo jámu na boje.</HH.Underworld.Gang.Status.NotBuilt>
+  <HH.Underworld.Gang.Status.PrisonOff>Gangy mohou vyslýchat vaše vězně, pokud to povolíte v nastavení.</HH.Underworld.Gang.Status.PrisonOff>
+  <HH.Underworld.Gang.Status.Retry>Poslední gang nemohl přijít: {0}. Další pokus za {1}.</HH.Underworld.Gang.Status.Retry>
+  <HH.Underworld.Gang.Status.Waiting>Čeká na další gang.</HH.Underworld.Gang.Status.Waiting>
+  <HH.Underworld.Gang.Why.NoEntry>žádná cesta na mapu</HH.Underworld.Gang.Why.NoEntry>
+  <HH.Underworld.Gang.Why.NoFacility>žádná zadní místnost, pult příjemce ani jáma na boje</HH.Underworld.Gang.Why.NoFacility>
+  <HH.Underworld.Gang.Why.NoFaction>žádná přátelská frakce</HH.Underworld.Gang.Why.NoFaction>
+  <HH.Underworld.Gang.Why.NoPawns>nepodařilo se najít žádné členy gangu</HH.Underworld.Gang.Why.NoPawns>
+  <HH.Underworld.Hunt.Closed>Žádné lovy: modul nebo intenzita obsahu je nedovoluje.</HH.Underworld.Hunt.Closed>
+  <HH.Underworld.Hunt.Next>Další lovecká výprava asi za {0}.</HH.Underworld.Hunt.Next>
+  <HH.Underworld.Hunt.Open>Otevřeno: uzavřete ohradu kolem loveckého revíru (nejvýš {0} polí).</HH.Underworld.Hunt.Open>
+  <HH.Underworld.Hunt.Running>Lov probíhá.</HH.Underworld.Hunt.Running>
+  <HH.Underworld.Hunt.Status.Last>Poslední lov: před {0}.</HH.Underworld.Hunt.Status.Last>
+  <HH.Underworld.Hunt.Status.NotBuilt>Prozkoumejte lov, pak umístěte značku loveckého revíru do uzavřené ohrady o nejméně {0} polích.</HH.Underworld.Hunt.Status.NotBuilt>
+  <HH.Underworld.Hunt.Status.NotBuiltResearched>Umístěte značku loveckého revíru do uzavřené ohrady o {0} až {1} polích.</HH.Underworld.Hunt.Status.NotBuiltResearched>
+  <HH.Underworld.Hunt.TooBig>Příliš velké: {0} polí, nejvýš {1}.</HH.Underworld.Hunt.TooBig>
+  <HH.Underworld.Hunt.TooSmall>Příliš malé: {0} z {1} polí.</HH.Underworld.Hunt.TooSmall>
+  <HH.Underworld.Lounge.Status.Closed>Teď zavřeno: salonek se otevírá večer.</HH.Underworld.Lounge.Status.Closed>
+  <HH.Underworld.Lounge.Status.Last>Poslední posezení: před {0}.</HH.Underworld.Lounge.Status.Last>
+  <HH.Underworld.Lounge.Status.NotBuilt>Dejte cedulku podniku typu salonek s drogami do místnosti se dvěma pohovkami nebo křesly.</HH.Underworld.Lounge.Status.NotBuilt>
+  <HH.Underworld.Lounge.Status.NotReady>Salonek ještě není připraven.</HH.Underworld.Lounge.Status.NotReady>
+  <HH.Underworld.Lounge.Status.Open>Otevřeno.</HH.Underworld.Lounge.Status.Open>
+  <HH.Underworld.Offer.Gone>Nabídka je pryč: loď nebo gang odešel.</HH.Underworld.Offer.Gone>
+  <HH.Underworld.Organ.Status.Last>Poslední prodej: před {0}.</HH.Underworld.Organ.Status.Last>
+  <HH.Underworld.Organ.Status.NotBuilt>Prozkoumejte černou kliniku a postavte její pult.</HH.Underworld.Organ.Status.NotBuilt>
+  <HH.Underworld.Organ.Status.NotBuiltResearched>Postavte pult orgánové kliniky.</HH.Underworld.Organ.Status.NotBuiltResearched>
+  <HH.Underworld.Organ.Status.Waiting>Orgány ponechané na pultu se vyzvedávají v noci (23:00 až 04:00).</HH.Underworld.Organ.Status.Waiting>
+  <HH.Underworld.Page.Build>Postavit</HH.Underworld.Page.Build>
+  <HH.Underworld.Page.Build.Desc>Zavře tuto kartu a vybere {0} z nabídky stavění.</HH.Underworld.Page.Build.Desc>
+  <HH.Underworld.Page.Build.Hidden>Teď není v nabídce stavění.</HH.Underworld.Page.Build.Hidden>
+  <HH.Underworld.Page.Build.Missing>V nabídce stavění této hry není.</HH.Underworld.Page.Build.Missing>
+  <HH.Underworld.Page.Build.Research>Napřed je třeba výzkum: {0}.</HH.Underworld.Page.Build.Research>
+  <HH.Underworld.Page.ContentLevel>Intenzita obsahu: {0}. Můžete ji změnit v nastavení na stránce Moduly.</HH.Underworld.Page.ContentLevel>
+  <HH.Underworld.Page.DarkAdds>Temný obsah by přidal orgánovou kliniku, lov vězňů a boje vězňů na smrt.</HH.Underworld.Page.DarkAdds>
+  <HH.Underworld.Page.Facilities>Váš podnik v zadní místnosti</HH.Underworld.Page.Facilities>
+  <HH.Underworld.Page.NoMap>Otevřete mapu své kolonie a uvidíte, co je tam postaveno.</HH.Underworld.Page.NoMap>
+  <HH.Underworld.Page.Offers>Čeká na vaši odpověď</HH.Underworld.Page.Offers>
+  <HH.Underworld.Page.Pit.More>Na této mapě je dalších jam: {0}. Vyberte jejich značky a uvidíte je.</HH.Underworld.Page.Pit.More>
+  <HH.Underworld.Page.Pit.NotBuilt>Postavte uzavřenou ohradu (brána stačí) o 9 až 700 polích a dovnitř dejte značku jámy na boje.</HH.Underworld.Page.Pit.NotBuilt>
+  <HH.Underworld.Page.Row.backroom>Zadní místnosti</HH.Underworld.Page.Row.backroom>
+  <HH.Underworld.Page.Row.clinic>Orgánová klinika</HH.Underworld.Page.Row.clinic>
+  <HH.Underworld.Page.Row.dock>Pašerácký dok</HH.Underworld.Page.Row.dock>
+  <HH.Underworld.Page.Row.fence>Příjemce kradeného zboží</HH.Underworld.Page.Row.fence>
+  <HH.Underworld.Page.Row.gangs>Gangy</HH.Underworld.Page.Row.gangs>
+  <HH.Underworld.Page.Row.hunt>Lovecký revír</HH.Underworld.Page.Row.hunt>
+  <HH.Underworld.Page.Row.lounge>Salonek s drogami</HH.Underworld.Page.Row.lounge>
+  <HH.Underworld.Page.Row.pit>Jáma na boje</HH.Underworld.Page.Row.pit>
+  <HH.Underworld.Page.Show>Ukázat</HH.Underworld.Page.Show>
+  <HH.Underworld.Page.State.NotBuilt>Zatím nepostaveno.</HH.Underworld.Page.State.NotBuilt>
+  <HH.Underworld.Page.State.Waiting>Postaveno, ale na něco čeká.</HH.Underworld.Page.State.Waiting>
+  <HH.Underworld.Page.State.Working>Funguje.</HH.Underworld.Page.State.Working>
+  <HH.Underworld.Page.StatsHead>Dosavadní tržby</HH.Underworld.Page.StatsHead>
+  <HH.Underworld.Page.Whispers.Desc>Každý zápas, obchod a návštěva gangu přidává šepty, které časem slábnou. Víc šeptů přivádí víc psanců a méně slušných hostů.</HH.Underworld.Page.Whispers.Desc>
+  <HH.Underworld.Page.WhispersHead>Šepty</HH.Underworld.Page.WhispersHead>
+  <HH.Underworld.Pay.Loose>stříbro se počítá jen ve skladišti nebo v domácí oblasti</HH.Underworld.Pay.Loose>
+  <HH.Underworld.Pay.Short>kolonie má {0} z {1} stříbrných</HH.Underworld.Pay.Short>
+  <HH.Underworld.Pit.Abort.Closed>jáma byla zavřena</HH.Underworld.Pit.Abort.Closed>
+  <HH.Underworld.Pit.Abort.Drafted>{0} byl povolán</HH.Underworld.Pit.Abort.Drafted>
+  <HH.Underworld.Pit.Abort.Gone>{0} je pryč</HH.Underworld.Pit.Abort.Gone>
+  <HH.Underworld.Pit.Abort.Hurt>{0} nemůže bojovat dál</HH.Underworld.Pit.Abort.Hurt>
+  <HH.Underworld.Pit.Abort.Left>{0} musel odejít</HH.Underworld.Pit.Abort.Left>
+  <HH.Underworld.Pit.Abort.Mental>{0} ztratil kontrolu</HH.Underworld.Pit.Abort.Mental>
+  <HH.Underworld.Pit.Abort.NoShow>{0} se nedostal do arény</HH.Underworld.Pit.Abort.NoShow>
+  <HH.Underworld.Pit.ArenaBig>Aréna je otevřená nebo větší než {0} polí: uzavřete ohradu kolem menší oblasti.</HH.Underworld.Pit.ArenaBig>
+  <HH.Underworld.Pit.ArenaSmall>Aréna je příliš malá: {0} polí, potřeba alespoň {1}.</HH.Underworld.Pit.ArenaSmall>
+  <HH.Underworld.Pit.BeastName>jáma {0}</HH.Underworld.Pit.BeastName>
+  <HH.Underworld.Pit.BeastNotYours>Toto zvíře je najaté jen pro jámu na boje.</HH.Underworld.Pit.BeastNotYours>
+  <HH.Underworld.Pit.BeastRef>{0}</HH.Underworld.Pit.BeastRef>
+  <HH.Underworld.Pit.BoutAnnounced.Beast>Zápas v jámě: {0} proti {1}. Bojuje se o body, takže {0} nanejvýš dostane pár modřin.</HH.Underworld.Pit.BoutAnnounced.Beast>
+  <HH.Underworld.Pit.BoutAnnounced.Plain>Zápas v jámě: {0} proti {1}.</HH.Underworld.Pit.BoutAnnounced.Plain>
+  <HH.Underworld.Pit.CallOpponent>Zavolat soupeře ({0})</HH.Underworld.Pit.CallOpponent>
+  <HH.Underworld.Pit.CallOpponent.Desc>Najmout jámové zvíře pro osamělého bojovníka: zvíře zhruba stejně silné jako váš bojovník, na jeden zápas. Kolonie platí {0} stříbrných: nejdřív z kasy, pak ze stříbra ve skladu, pak z banky.</HH.Underworld.Pit.CallOpponent.Desc>
+  <HH.Underworld.Pit.CallOpponent.For>Bojuje s ním: {0}.</HH.Underworld.Pit.CallOpponent.For>
+  <HH.Underworld.Pit.CallOpponent.Free>Zavolat soupeře (první zdarma)</HH.Underworld.Pit.CallOpponent.Free>
+  <HH.Underworld.Pit.CallOpponent.FreeDesc>První soupeř je na účet domu.</HH.Underworld.Pit.CallOpponent.FreeDesc>
+  <HH.Underworld.Pit.CalledOff>Zápas zrušen: {0}.</HH.Underworld.Pit.CalledOff>
+  <HH.Underworld.Pit.FightHere>Bojovat v jámě</HH.Underworld.Pit.FightHere>
+  <HH.Underworld.Pit.FightHere.Against>Bojovat v jámě proti {0}</HH.Underworld.Pit.FightHere.Against>
+  <HH.Underworld.Pit.FightHere.Queue>Bojovat v jámě (příští zápas)</HH.Underworld.Pit.FightHere.Queue>
+  <HH.Underworld.Pit.FightersBtn>Bojovníci…</HH.Underworld.Pit.FightersBtn>
+  <HH.Underworld.Pit.FightersBtn.Desc>Všichni, kdo by mohli v této jámě bojovat, a proč někdo teď bojovat nemůže. Zaškrtněte kolonisty, kteří tu smějí bojovat, vyberte dvě strany a spusťte zápas, nebo zavolejte soupeře pro osamělého bojovníka.</HH.Underworld.Pit.FightersBtn.Desc>
+  <HH.Underworld.Pit.Guests>Hosté jako vyzyvatelé</HH.Underworld.Pit.Guests>
+  <HH.Underworld.Pit.Guests.Desc>Hosté tu smějí bojovat: pochybní hosté a členové gangu vždy, ostatní dospělí hosté, když nejsou laskaví a mají touhu po krvi, vlastnost rváč nebo boj zblízka 6 a víc. Jen hosté, kteří jsou vzhůru, nic nedělají, jsou zdraví a zůstanou delší dobu. Jejich zápasy se bojují o body: nikdo se nezraní a vítězný host dostane malou odměnu z podílu domu.</HH.Underworld.Pit.Guests.Desc>
+  <HH.Underworld.Pit.Hint.Animals>povolit zvířata</HH.Underworld.Pit.Hint.Animals>
+  <HH.Underworld.Pit.Hint.Call>zavolat soupeře</HH.Underworld.Pit.Hint.Call>
+  <HH.Underworld.Pit.Hint.Guests>povolit hosty</HH.Underworld.Pit.Hint.Guests>
+  <HH.Underworld.Pit.Hint.Or>{0} nebo {1}</HH.Underworld.Pit.Hint.Or>
+  <HH.Underworld.Pit.Hint.Tick>zaškrtnout druhého kolonistu</HH.Underworld.Pit.Hint.Tick>
+  <HH.Underworld.Pit.Hint.Wait>počkat na hosta, který rád bojuje</HH.Underworld.Pit.Hint.Wait>
+  <HH.Underworld.Pit.Kind.Animal>zvíře</HH.Underworld.Pit.Kind.Animal>
+  <HH.Underworld.Pit.Kind.Beast>najatý soupeř</HH.Underworld.Pit.Kind.Beast>
+  <HH.Underworld.Pit.Kind.Colonist>kolonista</HH.Underworld.Pit.Kind.Colonist>
+  <HH.Underworld.Pit.Kind.Guest>host</HH.Underworld.Pit.Kind.Guest>
+  <HH.Underworld.Pit.Kind.Prisoner>vězeň</HH.Underworld.Pit.Kind.Prisoner>
+  <HH.Underworld.Pit.Last>Poslední zápas: {0} porazil {1}, banka {2}, dům {3}.</HH.Underworld.Pit.Last>
+  <HH.Underworld.Pit.Last.Draw>Poslední zápas: {0} proti {1}, bez vítěze.</HH.Underworld.Pit.Last.Draw>
+  <HH.Underworld.Pit.Last.NoBets>Poslední zápas: {0} porazil {1}.</HH.Underworld.Pit.Last.NoBets>
+  <HH.Underworld.Pit.PursePaid>{0} dostává odměnu {1} stříbrných.</HH.Underworld.Pit.PursePaid>
+  <HH.Underworld.Pit.Rating.Clear>{0} je jasný favorit.</HH.Underworld.Pit.Rating.Clear>
+  <HH.Underworld.Pit.Rating.Even>Vyrovnaný zápas.</HH.Underworld.Pit.Rating.Even>
+  <HH.Underworld.Pit.Rating.Favourite>{0} je favorit.</HH.Underworld.Pit.Rating.Favourite>
+  <HH.Underworld.Pit.Ready>Bojovníci připraveni: {0} ({1}).</HH.Underworld.Pit.Ready>
+  <HH.Underworld.Pit.Ready.Many.Animal>{0} zvířat</HH.Underworld.Pit.Ready.Many.Animal>
+  <HH.Underworld.Pit.Ready.Many.Colonist>{0} kolonistů</HH.Underworld.Pit.Ready.Many.Colonist>
+  <HH.Underworld.Pit.Ready.Many.Guest>{0} hostů</HH.Underworld.Pit.Ready.Many.Guest>
+  <HH.Underworld.Pit.Ready.Many.Prisoner>{0} vězňů</HH.Underworld.Pit.Ready.Many.Prisoner>
+  <HH.Underworld.Pit.Ready.None>Bojovníci připraveni: nikdo.</HH.Underworld.Pit.Ready.None>
+  <HH.Underworld.Pit.Ready.One.Animal>{0} zvíře</HH.Underworld.Pit.Ready.One.Animal>
+  <HH.Underworld.Pit.Ready.One.Colonist>{0} kolonista</HH.Underworld.Pit.Ready.One.Colonist>
+  <HH.Underworld.Pit.Ready.One.Guest>{0} host</HH.Underworld.Pit.Ready.One.Guest>
+  <HH.Underworld.Pit.Ready.One.Prisoner>{0} vězeň</HH.Underworld.Pit.Ready.One.Prisoner>
+  <HH.Underworld.Pit.Result.Draw>{0} proti {1}: bez vítěze. Všechny sázky se vracejí.</HH.Underworld.Pit.Result.Draw>
+  <HH.Underworld.Pit.Result.DrawNoBets>{0} proti {1}: bez vítěze.</HH.Underworld.Pit.Result.DrawNoBets>
+  <HH.Underworld.Pit.Result.Points>Bojovalo se o body: {0} má nanejvýš pár modřin.</HH.Underworld.Pit.Result.Points>
+  <HH.Underworld.Pit.Result.PointsAll>Bojovalo se o body: nanejvýš pár modřin.</HH.Underworld.Pit.Result.PointsAll>
+  <HH.Underworld.Pit.Result.Won>{0} porazil {1} v jámě. Banka {2} stříbrných, dům {3} stříbrných.</HH.Underworld.Pit.Result.Won>
+  <HH.Underworld.Pit.Result.WonNoBets>{0} porazil {1} v jámě.</HH.Underworld.Pit.Result.WonNoBets>
+  <HH.Underworld.Pit.Status.AutoFailed>Žádný automatický zápas: {0}. Spusťte zápas sami nebo zavolejte soupeře.</HH.Underworld.Pit.Status.AutoFailed>
+  <HH.Underworld.Pit.Status.Closed>Zavřeno: zapněte na značce „Jáma otevřená“.</HH.Underworld.Pit.Status.Closed>
+  <HH.Underworld.Pit.Status.NeedArena>Čeká na uzavřenou arénu.</HH.Underworld.Pit.Status.NeedArena>
+  <HH.Underworld.Pit.Status.Next>Další zápas za {0} h.</HH.Underworld.Pit.Status.Next>
+  <HH.Underworld.Pit.Status.NoFighter>Zatím žádní bojovníci: klikněte na značku pravým tlačítkem s kolonistou, nebo jednoho zaškrtněte pod Bojovníci.</HH.Underworld.Pit.Status.NoFighter>
+  <HH.Underworld.Pit.Status.Off>Podsvětí je vypnuté (modul nebo Útulný obsah).</HH.Underworld.Pit.Status.Off>
+  <HH.Underworld.Pit.Status.Peaceful>Mírné podsvětí je zapnuté: žádné boje.</HH.Underworld.Pit.Status.Peaceful>
+  <HH.Underworld.Pit.Status.Running>Zápas probíhá: {0} proti {1}.</HH.Underworld.Pit.Status.Running>
+  <HH.Underworld.Pit.Status.WaitFighter>Čeká na druhého bojovníka: {0}.</HH.Underworld.Pit.Status.WaitFighter>
+  <HH.Underworld.Pit.Status.WaitGuests>Čeká na hosty, kteří by sázeli (zápas můžete spustit sami).</HH.Underworld.Pit.Status.WaitGuests>
+  <HH.Underworld.Pit.Why.ArenaFull>v aréně není volné pole</HH.Underworld.Pit.Why.ArenaFull>
+  <HH.Underworld.Pit.Why.Asleep>spí</HH.Underworld.Pit.Why.Asleep>
+  <HH.Underworld.Pit.Why.BeastThere>soupeř už je v aréně</HH.Underworld.Pit.Why.BeastThere>
+  <HH.Underworld.Pit.Why.BoutRunning>zápas probíhá</HH.Underworld.Pit.Why.BoutRunning>
+  <HH.Underworld.Pit.Why.Burning>hoří</HH.Underworld.Pit.Why.Burning>
+  <HH.Underworld.Pit.Why.Busy>zaneprázdněn</HH.Underworld.Pit.Why.Busy>
+  <HH.Underworld.Pit.Why.Child>mladší 18 let</HH.Underworld.Pit.Why.Child>
+  <HH.Underworld.Pit.Why.Downed>sražen k zemi</HH.Underworld.Pit.Why.Downed>
+  <HH.Underworld.Pit.Why.Drafted>povolán</HH.Underworld.Pit.Why.Drafted>
+  <HH.Underworld.Pit.Why.Gone>není tu</HH.Underworld.Pit.Why.Gone>
+  <HH.Underworld.Pit.Why.Hurt>zraněn</HH.Underworld.Pit.Why.Hurt>
+  <HH.Underworld.Pit.Why.InBout>už je v zápase</HH.Underworld.Pit.Why.InBout>
+  <HH.Underworld.Pit.Why.Kind>nechce: je laskavý</HH.Underworld.Pit.Why.Kind>
+  <HH.Underworld.Pit.Why.Leaving>přichází nebo odchází</HH.Underworld.Pit.Why.Leaving>
+  <HH.Underworld.Pit.Why.LeavingSoon>brzy odchází</HH.Underworld.Pit.Why.LeavingSoon>
+  <HH.Underworld.Pit.Why.Mental>v duševním stavu</HH.Underworld.Pit.Why.Mental>
+  <HH.Underworld.Pit.Why.NoBeastKind>žádné zvíře se nehodí</HH.Underworld.Pit.Why.NoBeastKind>
+  <HH.Underworld.Pit.Why.NoBout>zápas se nepodařilo spustit</HH.Underworld.Pit.Why.NoBout>
+  <HH.Underworld.Pit.Why.NoLoneFighter>nikdo, kdo by s ním bojoval: klikněte na značku pravým tlačítkem s kolonistou, nebo jednoho zaškrtněte pod Bojovníci</HH.Underworld.Pit.Why.NoLoneFighter>
+  <HH.Underworld.Pit.Why.NoOpponent>žádný soupeř</HH.Underworld.Pit.Why.NoOpponent>
+  <HH.Underworld.Pit.Why.NoOpponentFor>nikdo, kdo by bojoval s {0}</HH.Underworld.Pit.Why.NoOpponentFor>
+  <HH.Underworld.Pit.Why.NoTaste>nechce: nemá chuť bojovat</HH.Underworld.Pit.Why.NoTaste>
+  <HH.Underworld.Pit.Why.NoViolence>neschopen násilí</HH.Underworld.Pit.Why.NoViolence>
+  <HH.Underworld.Pit.Why.NotGuest>není hostem domu</HH.Underworld.Pit.Why.NotGuest>
+  <HH.Underworld.Pit.Why.NotTicked>není zaškrtnut k boji tady</HH.Underworld.Pit.Why.NotTicked>
+  <HH.Underworld.Pit.Why.OnlyOne>Jen jeden bojovník: {0}.</HH.Underworld.Pit.Why.OnlyOne>
+  <HH.Underworld.Pit.Why.QuestGuest>host z úkolu</HH.Underworld.Pit.Why.QuestGuest>
+  <HH.Underworld.Pit.Why.Trader>obchodník</HH.Underworld.Pit.Why.Trader>
+  <HH.Underworld.Pit.Win.Anyone>kdokoli vhodný</HH.Underworld.Pit.Win.Anyone>
+  <HH.Underworld.Pit.Win.Group.Animal>Zvířata</HH.Underworld.Pit.Win.Group.Animal>
+  <HH.Underworld.Pit.Win.Group.Beast>Najatí soupeři</HH.Underworld.Pit.Win.Group.Beast>
+  <HH.Underworld.Pit.Win.Group.Colonist>Kolonisté a otroci</HH.Underworld.Pit.Win.Group.Colonist>
+  <HH.Underworld.Pit.Win.Group.Guest>Hosté</HH.Underworld.Pit.Win.Group.Guest>
+  <HH.Underworld.Pit.Win.Group.Prisoner>Vězni</HH.Underworld.Pit.Win.Group.Prisoner>
+  <HH.Underworld.Pit.Win.GroupOff>Vypnuto: zapněte na značce „{0}“.</HH.Underworld.Pit.Win.GroupOff>
+  <HH.Underworld.Pit.Win.Melee>boj zblízka {0}</HH.Underworld.Pit.Win.Melee>
+  <HH.Underworld.Pit.Win.Nobody>nikdo tu není</HH.Underworld.Pit.Win.Nobody>
+  <HH.Underworld.Pit.Win.PickSides>Vyberte strany, nebo nechte „kdokoli vhodný“ pro nejbližší shodu.</HH.Underworld.Pit.Win.PickSides>
+  <HH.Underworld.Pit.Win.Power>síla {0}</HH.Underworld.Pit.Win.Power>
+  <HH.Underworld.Pit.Win.Ready>připraven</HH.Underworld.Pit.Win.Ready>
+  <HH.Underworld.Pit.Win.SideA>Strana A</HH.Underworld.Pit.Win.SideA>
+  <HH.Underworld.Pit.Win.SideB>Strana B</HH.Underworld.Pit.Win.SideB>
+  <HH.Underworld.Pit.Win.Start>Spustit zápas hned</HH.Underworld.Pit.Win.Start>
+  <HH.Underworld.Pit.Win.Tick>Bojuje v této jámě</HH.Underworld.Pit.Win.Tick>
+  <HH.Underworld.Pit.Win.Title>Bojovníci jámy</HH.Underworld.Pit.Win.Title>
+  <HH.Underworld.Smuggler.Bought>Bedna je vaše za {0} stříbrných.</HH.Underworld.Smuggler.Bought>
+  <HH.Underworld.Smuggler.Buy.Desc>Kolonie platí z kasy, ze stříbra ve skladu nebo z banky. Bedna se spustí vedle doku.</HH.Underworld.Smuggler.Buy.Desc>
+  <HH.Underworld.Smuggler.Decline.Desc>Pošlete loď pryč. Nic dalšího se nestane.</HH.Underworld.Smuggler.Decline.Desc>
+  <HH.Underworld.Smuggler.Declined>Loď odplula bez obchodu.</HH.Underworld.Smuggler.Declined>
+  <HH.Underworld.Smuggler.Items.Many>{0} předmětů</HH.Underworld.Smuggler.Items.Many>
+  <HH.Underworld.Smuggler.Items.One>{0} předmět</HH.Underworld.Smuggler.Items.One>
+  <HH.Underworld.Smuggler.Left>Loď u doku už nečekala a odplula.</HH.Underworld.Smuggler.Left>
+  <HH.Underworld.Smuggler.Letter.How>Vyberte dok nebo otevřete kartu Podsvětí a bednu koupíte, nebo loď pošlete pryč. Kolonie platí z kasy, ze stříbra ve skladu nebo z banky. Loď čeká {0} hodin, pak odplyne.</HH.Underworld.Smuggler.Letter.How>
+  <HH.Underworld.Smuggler.Next>Další přistání: v noci, asi za {0}.</HH.Underworld.Smuggler.Next>
+  <HH.Underworld.Smuggler.NextSoon>Další přistání: v noci, brzy.</HH.Underworld.Smuggler.NextSoon>
+  <HH.Underworld.Smuggler.Status.Last>Poslední přistání: před {0}.</HH.Underworld.Smuggler.Status.Last>
+  <HH.Underworld.Smuggler.Status.NotBuilt>Postavte pašerácký dok: lodě v noci přistávají s levnou kontrabandou.</HH.Underworld.Smuggler.Status.NotBuilt>
+  <HH.Underworld.Smuggler.Waiting>U doku čeká loď: {0} za {1} stříbrných (odplyne za {2}).</HH.Underworld.Smuggler.Waiting>
 </LanguageData>

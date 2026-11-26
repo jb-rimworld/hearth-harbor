@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Tab.Underworld>Submundo</HH.Tab.Underworld>
-  <HH.Underworld.GateClosed>Indisponível: o submundo está fechado neste jogo.</HH.Underworld.GateClosed>
+  <HH.Underworld.GateClosed>Não disponível neste jogo: o módulo Submundo está desligado, ou a intensidade do conteúdo não permite (Configurações, Módulos).</HH.Underworld.GateClosed>
   <HH.Underworld.BackRoomDoorInfo>Só a equipe, os colonos e convidados suspeitos podem abrir esta porta.</HH.Underworld.BackRoomDoorInfo>
   <HH.Underworld.Scandal.BackRoomFound.Title>A sala dos fundos foi descoberta</HH.Underworld.Scandal.BackRoomFound.Title>
   <HH.Underworld.Scandal.BackRoomFound.Text>Um hóspede respeitável abriu a porta errada e viu o que a casa guarda atrás dela. Até o fim do dia, toda a cidade vai saber.</HH.Underworld.Scandal.BackRoomFound.Text>
@@ -16,28 +16,23 @@
   <HH.Underworld.Pit.Enabled.Desc>Agendar combates neste poço.</HH.Underworld.Pit.Enabled.Desc>
   <HH.Underworld.Pit.Animals>Animais</HH.Underworld.Pit.Animals>
   <HH.Underworld.Pit.Animals.Desc>Animais da sua colônia podem lutar aqui.</HH.Underworld.Pit.Animals.Desc>
-  <HH.Underworld.Pit.Volunteers>Voluntários</HH.Underworld.Pit.Volunteers>
-  <HH.Underworld.Pit.Volunteers.Desc>Colonos que gostam de uma briga (sede de sangue ou bons em combate corpo a corpo) podem se oferecer. Voluntários nunca lutam até a morte.</HH.Underworld.Pit.Volunteers.Desc>
+  <HH.Underworld.Pit.Volunteers>Voluntários (jogos salvos antigos)</HH.Underworld.Pit.Volunteers>
+  <HH.Underworld.Pit.Volunteers.Desc>De um jogo salvo antigo: colonos com sede de sangue ou combate corpo a corpo 8 ou mais também lutam sem estar marcados em Lutadores. Desligue para que só os colonos marcados lutem. Colonos nunca lutam até a morte.</HH.Underworld.Pit.Volunteers.Desc>
   <HH.Underworld.Pit.Prisoners>Prisioneiros</HH.Underworld.Pit.Prisoners>
-  <HH.Underworld.Pit.Prisoners.Desc>Prisioneiros podem ser enviados ao poço. Apenas adultos.</HH.Underworld.Pit.Prisoners.Desc>
+  <HH.Underworld.Pit.Prisoners.Desc>Prisioneiros da colônia com 18 anos ou mais podem lutar aqui. Os guardas os levam à arena e de volta à cela.</HH.Underworld.Pit.Prisoners.Desc>
   <HH.Underworld.Pit.Lethal>Até a morte</HH.Underworld.Pit.Lethal>
-  <HH.Underworld.Pit.Lethal.Desc>Combates entre prisioneiros e animais só terminam quando um deles cai. Nunca com voluntários.</HH.Underworld.Pit.Lethal.Desc>
+  <HH.Underworld.Pit.Lethal.Desc>Lutas entre prisioneiros e animais só terminam quando um deles cai. Nunca para hóspedes, colonos ou escravos: as lutas deles são sempre por pontos.</HH.Underworld.Pit.Lethal.Desc>
   <HH.Underworld.Pit.StartNow>Iniciar um combate</HH.Underworld.Pit.StartNow>
-  <HH.Underworld.Pit.StartNow.Desc>Escolha agora dois lutadores justos e deixe os convidados apostarem.</HH.Underworld.Pit.StartNow.Desc>
+  <HH.Underworld.Pit.StartNow.Desc>Inicia uma luta agora: os lados escolhidos em Lutadores, ou os dois lutadores mais próximos. Não são necessários hóspedes, e o limite de equilíbrio não vale.</HH.Underworld.Pit.StartNow.Desc>
   <HH.Underworld.Pit.CannotStart>Sem combate: {0}</HH.Underworld.Pit.CannotStart>
   <HH.Underworld.Pit.ArenaOk>Arena: {0} casas, fechada.</HH.Underworld.Pit.ArenaOk>
   <HH.Underworld.Pit.ArenaOpen>Arena aberta ou grande demais: feche a cerca.</HH.Underworld.Pit.ArenaOpen>
-  <HH.Underworld.Pit.NoFighters>menos de dois lutadores permitidos</HH.Underworld.Pit.NoFighters>
+  <HH.Underworld.Pit.NoFighters>menos de dois lutadores</HH.Underworld.Pit.NoFighters>
   <HH.Underworld.Pit.NoFairPair>nenhum par justo de lutadores</HH.Underworld.Pit.NoFairPair>
-  <HH.Underworld.Pit.BoutRunning>Combate: {0} contra {1}.</HH.Underworld.Pit.BoutRunning>
   <HH.Underworld.Pit.BoutAnnounced>Um combate no poço: {0} contra {1}. As apostas estão abertas.</HH.Underworld.Pit.BoutAnnounced>
-  <HH.Underworld.Pit.Won>{0} vence o combate. A casa fica com {1} de prata.</HH.Underworld.Pit.Won>
-  <HH.Underworld.Pit.Draw>O combate termina sem vencedor. Todas as apostas são devolvidas.</HH.Underworld.Pit.Draw>
-  <HH.Underworld.Fence.Inspect>Estoque: {0} itens valendo {1} de prata. Caixa: {2} de prata.</HH.Underworld.Fence.Inspect>
   <HH.Underworld.Fence.Fund>Encher o caixa</HH.Underworld.Fence.Fund>
   <HH.Underworld.Fence.Fund.Desc>Transferir prata da gaveta para o caixa do receptador, até o limite das configurações.</HH.Underworld.Fence.Fund.Desc>
   <HH.Underworld.Fence.Funded>{0} de prata transferidos para o caixa.</HH.Underworld.Fence.Funded>
-  <HH.Underworld.Fence.NoCash>O caixa está vazio.</HH.Underworld.Fence.NoCash>
   <HH.Underworld.Fence.CannotPay>O comprador não pode pagar.</HH.Underworld.Fence.CannotPay>
   <HH.Underworld.Fence.Exposed>Os bens vieram de {0}, e eles sabem para onde foram parar.</HH.Underworld.Fence.Exposed>
   <HH.Underworld.Gang.Title>Um bando na porta</HH.Underworld.Gang.Title>
@@ -46,14 +41,12 @@
   <HH.Underworld.Gang.Demand.Text>O líder do bando de {0} se apoia no seu balcão. "Uma bela casa. Seria uma pena se algo acontecesse com ela. Por {1} de prata, garantimos que nada aconteça."</HH.Underworld.Gang.Demand.Text>
   <HH.Underworld.Gang.Demand.Pay>Pagar {0} de prata</HH.Underworld.Gang.Demand.Pay>
   <HH.Underworld.Gang.Demand.Refuse>Mostrar a porta</HH.Underworld.Gang.Demand.Refuse>
-  <HH.Underworld.Gang.Demand.NoCash>não há prata suficiente na gaveta</HH.Underworld.Gang.Demand.NoCash>
   <HH.Underworld.Tour.IntelTitle>Algo do interrogatório</HH.Underworld.Tour.IntelTitle>
   <HH.Underworld.Tour.IntelText>Depois de uma hora com {0}, o bando deixou um bilhete no balcão: um nome, um lugar, um dia. Alguém lá fora está planejando algo, e agora você sabe um pouco mais.</HH.Underworld.Tour.IntelText>
   <HH.Underworld.Smuggler.Title>Um caixote no cais</HH.Underworld.Smuggler.Title>
-  <HH.Underworld.Smuggler.Text>Uma lançadeira com as luzes apagadas pousou no cais. Uma voz oferece {0} itens valendo cerca de {1} de prata por {2}. Sem perguntas, sem recibo.</HH.Underworld.Smuggler.Text>
+  <HH.Underworld.Smuggler.Text>Um barco com as luzes apagadas chegou ao cais. Uma voz oferece {0} no valor de cerca de {1} de prata por {2} de prata. Sem perguntas, sem recibo.</HH.Underworld.Smuggler.Text>
   <HH.Underworld.Smuggler.Buy>Comprar por {0} de prata</HH.Underworld.Smuggler.Buy>
   <HH.Underworld.Smuggler.Decline>Mandar embora</HH.Underworld.Smuggler.Decline>
-  <HH.Underworld.Smuggler.NoCash>não há prata suficiente na gaveta</HH.Underworld.Smuggler.NoCash>
   <HH.Underworld.Smuggler.InspectTitle>Uma patrulha viu a lâmpada</HH.Underworld.Smuggler.InspectTitle>
   <HH.Underworld.Smuggler.InspectText>Uma patrulha imperial viu as luzes do seu cais e anotou.</HH.Underworld.Smuggler.InspectText>
   <HH.Underworld.Hunt.Title>Um grupo de caça</HH.Underworld.Hunt.Title>
@@ -62,8 +55,8 @@
   <HH.Underworld.Hunt.QuarryAnimals>animais</HH.Underworld.Hunt.QuarryAnimals>
   <HH.Underworld.Hunt.QuarryHuman>animais e um prisioneiro</HH.Underworld.Hunt.QuarryHuman>
   <HH.Underworld.Hunt.Prisoners>Prisioneiros como presa</HH.Underworld.Hunt.Prisoners>
-  <HH.Underworld.Hunt.Prisoners.Desc>Deixar os caçadores caçarem um prisioneiro solto no terreno. Apenas com conteúdo Sombrio ou Macabro, e com uma ideologia adequada.</HH.Underworld.Hunt.Prisoners.Desc>
-  <HH.Underworld.Hunt.GateContent>Requer conteúdo Sombrio ou Macabro, confirmado.</HH.Underworld.Hunt.GateContent>
+  <HH.Underworld.Hunt.Prisoners.Desc>Deixe os caçadores caçarem um prisioneiro solto no terreno. Conteúdo Sombrio com uma ideologia adequada, ou conteúdo Sinistro.</HH.Underworld.Hunt.Prisoners.Desc>
+  <HH.Underworld.Hunt.GateContent>Requer conteúdo Sombrio ou Sinistro.</HH.Underworld.Hunt.GateContent>
   <HH.Underworld.Hunt.GatePrecept>A ideologia da colônia não permite isso.</HH.Underworld.Hunt.GatePrecept>
   <HH.Underworld.Hunt.DeathTitle>Uma pessoa morreu na caçada</HH.Underworld.Hunt.DeathTitle>
   <HH.Underworld.Hunt.DeathText>{0} não sobreviveu à caçada. O povo dele vai ficar sabendo, e todos que estavam assistindo também.</HH.Underworld.Hunt.DeathText>
@@ -78,8 +71,231 @@
   <HH.Underworld.Page.Title>Submundo</HH.Underworld.Page.Title>
   <HH.Underworld.Page.Whispers>Sussurros: {0} de 100.</HH.Underworld.Page.Whispers>
   <HH.Underworld.Page.Weights>Pesos de chegada: respeitáveis x{0}, foras da lei x{1}.</HH.Underworld.Page.Weights>
-  <HH.Underworld.Page.Stats1>Poço de luta: {0} combates, {1} apostas, parte da casa {2} de prata.</HH.Underworld.Page.Stats1>
+  <HH.Underworld.Page.Stats1>Lutas do poço: {0}. Apostas: {1}. Lucro da casa: {2} de prata.</HH.Underworld.Page.Stats1>
   <HH.Underworld.Page.Stats2>Receptador: {0} comprados, {1} vendidos, lucro {2} de prata.</HH.Underworld.Page.Stats2>
   <HH.Underworld.Page.Stats3>Sessões no salão {0}, visitas de bandos {1}, desembarques {2}, caçadas {3}, órgãos {4}.</HH.Underworld.Page.Stats3>
   <HH.Underworld.Page.HighRollers>Um boato sobre um cassino secreto está atraindo apostadores de alto calibre.</HH.Underworld.Page.HighRollers>
+  <HH.Underworld.Ago.Moment>um momento</HH.Underworld.Ago.Moment>
+  <HH.Underworld.BackRoom.NoOrdinaryDoor>Ainda não é uma sala dos fundos: esta sala também tem uma porta comum.</HH.Underworld.BackRoom.NoOrdinaryDoor>
+  <HH.Underworld.BackRoom.NoOutside>Ainda não é uma sala dos fundos: a sala está aberta para o exterior.</HH.Underworld.BackRoom.NoOutside>
+  <HH.Underworld.BackRoom.NoRoom>Ainda não é uma sala dos fundos: não há sala atrás desta porta.</HH.Underworld.BackRoom.NoRoom>
+  <HH.Underworld.BackRoom.Off>Uma porta comum: o submundo está desligado (módulo ou conteúdo Aconchegante).</HH.Underworld.BackRoom.Off>
+  <HH.Underworld.BackRoom.Status.Last>Última taxa da sala dos fundos: há {0}.</HH.Underworld.BackRoom.Status.Last>
+  <HH.Underworld.BackRoom.Status.NotBuilt>Construa uma sala cujas únicas portas sejam portas da sala dos fundos.</HH.Underworld.BackRoom.Status.NotBuilt>
+  <HH.Underworld.BackRoom.Yes>Esta é uma sala dos fundos ({0} casas).</HH.Underworld.BackRoom.Yes>
+  <HH.Underworld.Facility.Off>O submundo está desligado (módulo ou conteúdo Aconchegante).</HH.Underworld.Facility.Off>
+  <HH.Underworld.Fence.Bought>O receptador comprou {0} por {1} de prata.</HH.Underworld.Fence.Bought>
+  <HH.Underworld.Fence.BuyFailed>O receptador não conseguiu comprar {0}: {1}.</HH.Underworld.Fence.BuyFailed>
+  <HH.Underworld.Fence.CannotBuy>Não pode comprar agora: {0}.</HH.Underworld.Fence.CannotBuy>
+  <HH.Underworld.Fence.LowCash>Só há {0} de prata à mão (gaveta e caixa): o receptador recusa o que custar mais, até {1} para o saque mais caro.</HH.Underworld.Fence.LowCash>
+  <HH.Underworld.Fence.Sold>O receptador vendeu {0} por {1} de prata.</HH.Underworld.Fence.Sold>
+  <HH.Underworld.Fence.Status.Last>Último negócio: há {0}.</HH.Underworld.Fence.Status.Last>
+  <HH.Underworld.Fence.Status.NotBuilt>Construa um balcão do receptador: as gangues vendem o saque a ele e compram do estoque dele.</HH.Underworld.Fence.Status.NotBuilt>
+  <HH.Underworld.Fence.Status.Waiting>Esperando uma gangue com mercadorias para vender.</HH.Underworld.Fence.Status.Waiting>
+  <HH.Underworld.Fence.Stock>Estoque: {0} itens no valor de {1} de prata. Caixa: {2} de prata.</HH.Underworld.Fence.Stock>
+  <HH.Underworld.Fence.TakeOut>Retirar mercadorias</HH.Underworld.Fence.TakeOut>
+  <HH.Underworld.Fence.TakeOut.Desc>Coloque todo o estoque no chão ao lado do balcão. As mercadorias viram itens comuns que sua colônia pode usar ou vender, e o receptador esquece de onde foram roubadas.</HH.Underworld.Fence.TakeOut.Desc>
+  <HH.Underworld.Fence.TakeOut.Empty>não há estoque</HH.Underworld.Fence.TakeOut.Empty>
+  <HH.Underworld.Fence.TookOut>{0} pilhas deixadas ao lado do balcão.</HH.Underworld.Fence.TookOut>
+  <HH.Underworld.Fence.TookOut.NoRoom>Não há espaço suficiente ao lado do balcão: {0} de {1} pilhas continuam no estoque.</HH.Underworld.Fence.TookOut.NoRoom>
+  <HH.Underworld.Fence.TookOut.One>Uma pilha deixada ao lado do balcão.</HH.Underworld.Fence.TookOut.One>
+  <HH.Underworld.Fence.Why.Closed>o submundo está desligado</HH.Underworld.Fence.Why.Closed>
+  <HH.Underworld.Fence.Why.TillEmpty>a gaveta e o caixa estão vazios</HH.Underworld.Fence.Why.TillEmpty>
+  <HH.Underworld.Fence.Why.TooLittle>só há {0} de prata à mão e o preço é {1}</HH.Underworld.Fence.Why.TooLittle>
+  <HH.Underworld.Gang.Demand.Expired>Você não respondeu à gangue: eles tomam isso como um não.</HH.Underworld.Gang.Demand.Expired>
+  <HH.Underworld.Gang.Demand.Letter.How>Selecione {0}, ou abra a aba do Submundo, para pagar ou recusar. A colônia paga da gaveta, da prata em estoque ou do banco. A oferta vale por {1} horas; deixá-la expirar conta como recusa.</HH.Underworld.Gang.Demand.Letter.How>
+  <HH.Underworld.Gang.Demand.Paid>Você pagou {0} de prata de dinheiro de proteção.</HH.Underworld.Gang.Demand.Paid>
+  <HH.Underworld.Gang.Demand.Pay.Desc>A colônia paga da gaveta, da prata em estoque ou do banco. A gangue deixa você em paz e a facção dela passa a ver você com um pouco mais de bons olhos.</HH.Underworld.Gang.Demand.Pay.Desc>
+  <HH.Underworld.Gang.Demand.Refuse.Desc>Recusar. A facção da gangue leva isso a mal e perde boa vontade.</HH.Underworld.Gang.Demand.Refuse.Desc>
+  <HH.Underworld.Gang.Demand.Refused>Você mostrou a porta à gangue.</HH.Underworld.Gang.Demand.Refused>
+  <HH.Underworld.Gang.Demand.Waiting>{0} quer {1} de prata de dinheiro de proteção (responda em {2}).</HH.Underworld.Gang.Demand.Waiting>
+  <HH.Underworld.Gang.Status.DemandAbove>Há uma exigência esperando acima.</HH.Underworld.Gang.Status.DemandAbove>
+  <HH.Underworld.Gang.Status.Here>Há uma gangue de {0} aqui.</HH.Underworld.Gang.Status.Here>
+  <HH.Underworld.Gang.Status.Last>Última visita de uma gangue: há {0}.</HH.Underworld.Gang.Status.Last>
+  <HH.Underworld.Gang.Status.Next>Próxima visita de uma gangue em cerca de {0}.</HH.Underworld.Gang.Status.Next>
+  <HH.Underworld.Gang.Status.NotBuilt>As gangues vêm quando você tem uma sala dos fundos, um balcão do receptador ou um poço de luta.</HH.Underworld.Gang.Status.NotBuilt>
+  <HH.Underworld.Gang.Status.PrisonOff>As gangues podem interrogar seus prisioneiros se você permitir nas configurações.</HH.Underworld.Gang.Status.PrisonOff>
+  <HH.Underworld.Gang.Status.Retry>A última gangue não conseguiu vir: {0}. Próxima tentativa em {1}.</HH.Underworld.Gang.Status.Retry>
+  <HH.Underworld.Gang.Status.Waiting>Esperando a próxima gangue.</HH.Underworld.Gang.Status.Waiting>
+  <HH.Underworld.Gang.Why.NoEntry>sem acesso ao mapa</HH.Underworld.Gang.Why.NoEntry>
+  <HH.Underworld.Gang.Why.NoFacility>sem sala dos fundos, balcão do receptador nem poço de luta</HH.Underworld.Gang.Why.NoFacility>
+  <HH.Underworld.Gang.Why.NoFaction>sem facção amiga</HH.Underworld.Gang.Why.NoFaction>
+  <HH.Underworld.Gang.Why.NoPawns>não foi possível encontrar membros da gangue</HH.Underworld.Gang.Why.NoPawns>
+  <HH.Underworld.Hunt.Closed>Sem caçadas: o módulo ou a intensidade do conteúdo não permite.</HH.Underworld.Hunt.Closed>
+  <HH.Underworld.Hunt.Next>Próximo grupo de caça em cerca de {0}.</HH.Underworld.Hunt.Next>
+  <HH.Underworld.Hunt.Open>Aberto: feche a cerca em volta do terreno de caça (no máximo {0} casas).</HH.Underworld.Hunt.Open>
+  <HH.Underworld.Hunt.Running>Uma caçada está em andamento.</HH.Underworld.Hunt.Running>
+  <HH.Underworld.Hunt.Status.Last>Última caçada: há {0}.</HH.Underworld.Hunt.Status.Last>
+  <HH.Underworld.Hunt.Status.NotBuilt>Pesquise a caçada e depois coloque um marcador de terreno de caça dentro de uma cerca fechada de pelo menos {0} casas.</HH.Underworld.Hunt.Status.NotBuilt>
+  <HH.Underworld.Hunt.Status.NotBuiltResearched>Coloque um marcador de terreno de caça dentro de uma cerca fechada de {0} a {1} casas.</HH.Underworld.Hunt.Status.NotBuiltResearched>
+  <HH.Underworld.Hunt.TooBig>Grande demais: {0} casas, no máximo {1}.</HH.Underworld.Hunt.TooBig>
+  <HH.Underworld.Hunt.TooSmall>Pequeno demais: {0} de {1} casas.</HH.Underworld.Hunt.TooSmall>
+  <HH.Underworld.Lounge.Status.Closed>Fechado agora: o salão abre à noite.</HH.Underworld.Lounge.Status.Closed>
+  <HH.Underworld.Lounge.Status.Last>Última sessão: há {0}.</HH.Underworld.Lounge.Status.Last>
+  <HH.Underworld.Lounge.Status.NotBuilt>Coloque uma placa de estabelecimento do tipo salão de drogas numa sala com dois sofás ou poltronas.</HH.Underworld.Lounge.Status.NotBuilt>
+  <HH.Underworld.Lounge.Status.NotReady>O salão ainda não está pronto.</HH.Underworld.Lounge.Status.NotReady>
+  <HH.Underworld.Lounge.Status.Open>Aberto.</HH.Underworld.Lounge.Status.Open>
+  <HH.Underworld.Offer.Gone>A oferta caiu: o barco ou a gangue foi embora.</HH.Underworld.Offer.Gone>
+  <HH.Underworld.Organ.Status.Last>Última venda: há {0}.</HH.Underworld.Organ.Status.Last>
+  <HH.Underworld.Organ.Status.NotBuilt>Pesquise a clínica negra e construa o balcão dela.</HH.Underworld.Organ.Status.NotBuilt>
+  <HH.Underworld.Organ.Status.NotBuiltResearched>Construa o balcão da clínica de órgãos.</HH.Underworld.Organ.Status.NotBuiltResearched>
+  <HH.Underworld.Organ.Status.Waiting>Os órgãos deixados no balcão são recolhidos à noite (das 23:00 às 04:00).</HH.Underworld.Organ.Status.Waiting>
+  <HH.Underworld.Page.Build>Construir</HH.Underworld.Page.Build>
+  <HH.Underworld.Page.Build.Desc>Fechar esta aba e escolher {0} no menu de construção.</HH.Underworld.Page.Build.Desc>
+  <HH.Underworld.Page.Build.Hidden>Não está no menu de construção agora.</HH.Underworld.Page.Build.Hidden>
+  <HH.Underworld.Page.Build.Missing>Não está no menu de construção deste jogo.</HH.Underworld.Page.Build.Missing>
+  <HH.Underworld.Page.Build.Research>Precisa de pesquisa antes: {0}.</HH.Underworld.Page.Build.Research>
+  <HH.Underworld.Page.ContentLevel>Intensidade do conteúdo: {0}. Você pode mudar nas configurações, na página Módulos.</HH.Underworld.Page.ContentLevel>
+  <HH.Underworld.Page.DarkAdds>O conteúdo Sombrio acrescentaria a clínica de órgãos, as caçadas a prisioneiros e prisioneiros lutando até a morte.</HH.Underworld.Page.DarkAdds>
+  <HH.Underworld.Page.Facilities>O seu negócio da sala dos fundos</HH.Underworld.Page.Facilities>
+  <HH.Underworld.Page.NoMap>Abra um mapa da sua colônia para ver o que foi construído lá.</HH.Underworld.Page.NoMap>
+  <HH.Underworld.Page.Offers>Esperando a sua resposta</HH.Underworld.Page.Offers>
+  <HH.Underworld.Page.Pit.More>Mais {0} poço(s) neste mapa: selecione os marcadores deles para ver.</HH.Underworld.Page.Pit.More>
+  <HH.Underworld.Page.Pit.NotBuilt>Construa uma cerca fechada (um portão não atrapalha) em volta de 9 a 700 casas e coloque um marcador de poço de luta dentro.</HH.Underworld.Page.Pit.NotBuilt>
+  <HH.Underworld.Page.Row.backroom>Salas dos fundos</HH.Underworld.Page.Row.backroom>
+  <HH.Underworld.Page.Row.clinic>Clínica de órgãos</HH.Underworld.Page.Row.clinic>
+  <HH.Underworld.Page.Row.dock>Cais de contrabandistas</HH.Underworld.Page.Row.dock>
+  <HH.Underworld.Page.Row.fence>Receptador</HH.Underworld.Page.Row.fence>
+  <HH.Underworld.Page.Row.gangs>Gangues</HH.Underworld.Page.Row.gangs>
+  <HH.Underworld.Page.Row.hunt>Terreno de caça</HH.Underworld.Page.Row.hunt>
+  <HH.Underworld.Page.Row.lounge>Salão de drogas</HH.Underworld.Page.Row.lounge>
+  <HH.Underworld.Page.Row.pit>Poço de luta</HH.Underworld.Page.Row.pit>
+  <HH.Underworld.Page.Show>Mostrar</HH.Underworld.Page.Show>
+  <HH.Underworld.Page.State.NotBuilt>Ainda não construído.</HH.Underworld.Page.State.NotBuilt>
+  <HH.Underworld.Page.State.Waiting>Construído, mas esperando algo.</HH.Underworld.Page.State.Waiting>
+  <HH.Underworld.Page.State.Working>Funcionando.</HH.Underworld.Page.State.Working>
+  <HH.Underworld.Page.StatsHead>Faturamento até agora</HH.Underworld.Page.StatsHead>
+  <HH.Underworld.Page.Whispers.Desc>Cada luta, negócio e visita de gangue acrescenta sussurros, e eles se apagam com o tempo. Mais sussurros trazem mais foras da lei e menos hóspedes respeitáveis.</HH.Underworld.Page.Whispers.Desc>
+  <HH.Underworld.Page.WhispersHead>Sussurros</HH.Underworld.Page.WhispersHead>
+  <HH.Underworld.Pay.Loose>a prata só conta em um estoque ou na área da casa</HH.Underworld.Pay.Loose>
+  <HH.Underworld.Pay.Short>a colônia tem {0} de {1} de prata</HH.Underworld.Pay.Short>
+  <HH.Underworld.Pit.Abort.Closed>o poço foi fechado</HH.Underworld.Pit.Abort.Closed>
+  <HH.Underworld.Pit.Abort.Drafted>{0} foi convocado</HH.Underworld.Pit.Abort.Drafted>
+  <HH.Underworld.Pit.Abort.Gone>{0} não está mais aqui</HH.Underworld.Pit.Abort.Gone>
+  <HH.Underworld.Pit.Abort.Hurt>{0} não pode continuar lutando</HH.Underworld.Pit.Abort.Hurt>
+  <HH.Underworld.Pit.Abort.Left>{0} precisou ir embora</HH.Underworld.Pit.Abort.Left>
+  <HH.Underworld.Pit.Abort.Mental>{0} perdeu o controle</HH.Underworld.Pit.Abort.Mental>
+  <HH.Underworld.Pit.Abort.NoShow>{0} não conseguiu chegar à arena</HH.Underworld.Pit.Abort.NoShow>
+  <HH.Underworld.Pit.ArenaBig>A arena está aberta ou tem mais de {0} casas: feche a cerca em volta de uma área menor.</HH.Underworld.Pit.ArenaBig>
+  <HH.Underworld.Pit.ArenaSmall>Arena pequena demais: {0} casas, são necessárias pelo menos {1}.</HH.Underworld.Pit.ArenaSmall>
+  <HH.Underworld.Pit.BeastName>{0} do poço</HH.Underworld.Pit.BeastName>
+  <HH.Underworld.Pit.BeastNotYours>Este animal só foi contratado para o poço de luta.</HH.Underworld.Pit.BeastNotYours>
+  <HH.Underworld.Pit.BeastRef>o {0}</HH.Underworld.Pit.BeastRef>
+  <HH.Underworld.Pit.BoutAnnounced.Beast>Uma luta no poço: {0} contra {1}. É lutada por pontos, então {0} fica no máximo com alguns hematomas.</HH.Underworld.Pit.BoutAnnounced.Beast>
+  <HH.Underworld.Pit.BoutAnnounced.Plain>Uma luta no poço: {0} contra {1}.</HH.Underworld.Pit.BoutAnnounced.Plain>
+  <HH.Underworld.Pit.CallOpponent>Chamar um oponente ({0})</HH.Underworld.Pit.CallOpponent>
+  <HH.Underworld.Pit.CallOpponent.Desc>Contrata uma fera do poço para um lutador sozinho: um animal quase tão forte quanto o seu lutador, para uma luta. A colônia paga {0} de prata: primeiro da gaveta, depois da prata em estoque e depois do banco.</HH.Underworld.Pit.CallOpponent.Desc>
+  <HH.Underworld.Pit.CallOpponent.For>Quem luta contra ele: {0}.</HH.Underworld.Pit.CallOpponent.For>
+  <HH.Underworld.Pit.CallOpponent.Free>Chamar um oponente (o primeiro é grátis)</HH.Underworld.Pit.CallOpponent.Free>
+  <HH.Underworld.Pit.CallOpponent.FreeDesc>O primeiro oponente é por conta da casa.</HH.Underworld.Pit.CallOpponent.FreeDesc>
+  <HH.Underworld.Pit.CalledOff>Luta cancelada: {0}.</HH.Underworld.Pit.CalledOff>
+  <HH.Underworld.Pit.FightHere>Lutar no poço</HH.Underworld.Pit.FightHere>
+  <HH.Underworld.Pit.FightHere.Against>Lutar no poço contra {0}</HH.Underworld.Pit.FightHere.Against>
+  <HH.Underworld.Pit.FightHere.Queue>Lutar no poço (próxima luta)</HH.Underworld.Pit.FightHere.Queue>
+  <HH.Underworld.Pit.FightersBtn>Lutadores…</HH.Underworld.Pit.FightersBtn>
+  <HH.Underworld.Pit.FightersBtn.Desc>Todos que poderiam lutar neste poço e por que alguém não pode lutar agora. Marque os colonos que podem lutar aqui, escolha dois lados e inicie uma luta, ou chame um oponente para um lutador sozinho.</HH.Underworld.Pit.FightersBtn.Desc>
+  <HH.Underworld.Pit.Guests>Hóspedes desafiantes</HH.Underworld.Pit.Guests>
+  <HH.Underworld.Pit.Guests.Desc>Hóspedes podem lutar aqui: os suspeitos e membros de gangues sempre, outros hóspedes adultos quando não são gentis e têm sede de sangue, o traço brigão ou combate corpo a corpo 6 ou mais. Só hóspedes acordados, sem ocupação, saudáveis e que vão ficar um tempo. As lutas deles são por pontos: ninguém se fere, e um hóspede vencedor recebe uma pequena bolsa do que a casa ficou.</HH.Underworld.Pit.Guests.Desc>
+  <HH.Underworld.Pit.Hint.Animals>permitir animais</HH.Underworld.Pit.Hint.Animals>
+  <HH.Underworld.Pit.Hint.Call>chamar um oponente</HH.Underworld.Pit.Hint.Call>
+  <HH.Underworld.Pit.Hint.Guests>permitir hóspedes</HH.Underworld.Pit.Hint.Guests>
+  <HH.Underworld.Pit.Hint.Or>{0} ou {1}</HH.Underworld.Pit.Hint.Or>
+  <HH.Underworld.Pit.Hint.Tick>marcar um segundo colono</HH.Underworld.Pit.Hint.Tick>
+  <HH.Underworld.Pit.Hint.Wait>esperar um hóspede que goste de lutar</HH.Underworld.Pit.Hint.Wait>
+  <HH.Underworld.Pit.Kind.Animal>animal</HH.Underworld.Pit.Kind.Animal>
+  <HH.Underworld.Pit.Kind.Beast>oponente contratado</HH.Underworld.Pit.Kind.Beast>
+  <HH.Underworld.Pit.Kind.Colonist>colono</HH.Underworld.Pit.Kind.Colonist>
+  <HH.Underworld.Pit.Kind.Guest>hóspede</HH.Underworld.Pit.Kind.Guest>
+  <HH.Underworld.Pit.Kind.Prisoner>prisioneiro</HH.Underworld.Pit.Kind.Prisoner>
+  <HH.Underworld.Pit.Last>Última luta: {0} venceu {1}, prêmio {2}, casa {3}.</HH.Underworld.Pit.Last>
+  <HH.Underworld.Pit.Last.Draw>Última luta: {0} contra {1}, sem vencedor.</HH.Underworld.Pit.Last.Draw>
+  <HH.Underworld.Pit.Last.NoBets>Última luta: {0} venceu {1}.</HH.Underworld.Pit.Last.NoBets>
+  <HH.Underworld.Pit.PursePaid>{0} recebe uma bolsa de {1} de prata.</HH.Underworld.Pit.PursePaid>
+  <HH.Underworld.Pit.Rating.Clear>{0} é o claro favorito.</HH.Underworld.Pit.Rating.Clear>
+  <HH.Underworld.Pit.Rating.Even>Uma luta equilibrada.</HH.Underworld.Pit.Rating.Even>
+  <HH.Underworld.Pit.Rating.Favourite>{0} é o favorito.</HH.Underworld.Pit.Rating.Favourite>
+  <HH.Underworld.Pit.Ready>Lutadores prontos: {0} ({1}).</HH.Underworld.Pit.Ready>
+  <HH.Underworld.Pit.Ready.Many.Animal>{0} animais</HH.Underworld.Pit.Ready.Many.Animal>
+  <HH.Underworld.Pit.Ready.Many.Colonist>{0} colonos</HH.Underworld.Pit.Ready.Many.Colonist>
+  <HH.Underworld.Pit.Ready.Many.Guest>{0} hóspedes</HH.Underworld.Pit.Ready.Many.Guest>
+  <HH.Underworld.Pit.Ready.Many.Prisoner>{0} prisioneiros</HH.Underworld.Pit.Ready.Many.Prisoner>
+  <HH.Underworld.Pit.Ready.None>Lutadores prontos: nenhum.</HH.Underworld.Pit.Ready.None>
+  <HH.Underworld.Pit.Ready.One.Animal>{0} animal</HH.Underworld.Pit.Ready.One.Animal>
+  <HH.Underworld.Pit.Ready.One.Colonist>{0} colono</HH.Underworld.Pit.Ready.One.Colonist>
+  <HH.Underworld.Pit.Ready.One.Guest>{0} hóspede</HH.Underworld.Pit.Ready.One.Guest>
+  <HH.Underworld.Pit.Ready.One.Prisoner>{0} prisioneiro</HH.Underworld.Pit.Ready.One.Prisoner>
+  <HH.Underworld.Pit.Result.Draw>{0} contra {1}: sem vencedor. Todas as apostas são devolvidas.</HH.Underworld.Pit.Result.Draw>
+  <HH.Underworld.Pit.Result.DrawNoBets>{0} contra {1}: sem vencedor.</HH.Underworld.Pit.Result.DrawNoBets>
+  <HH.Underworld.Pit.Result.Points>Foi lutada por pontos: {0} tem no máximo alguns hematomas.</HH.Underworld.Pit.Result.Points>
+  <HH.Underworld.Pit.Result.PointsAll>Foi lutada por pontos: no máximo alguns hematomas.</HH.Underworld.Pit.Result.PointsAll>
+  <HH.Underworld.Pit.Result.Won>{0} venceu {1} no poço. Prêmio {2} de prata, casa {3} de prata.</HH.Underworld.Pit.Result.Won>
+  <HH.Underworld.Pit.Result.WonNoBets>{0} venceu {1} no poço.</HH.Underworld.Pit.Result.WonNoBets>
+  <HH.Underworld.Pit.Status.AutoFailed>Sem luta automática: {0}. Inicie uma luta você mesmo ou chame um oponente.</HH.Underworld.Pit.Status.AutoFailed>
+  <HH.Underworld.Pit.Status.Closed>Fechado: ligue "Poço aberto" no marcador.</HH.Underworld.Pit.Status.Closed>
+  <HH.Underworld.Pit.Status.NeedArena>Esperando uma arena fechada.</HH.Underworld.Pit.Status.NeedArena>
+  <HH.Underworld.Pit.Status.Next>Próxima luta em {0} h.</HH.Underworld.Pit.Status.Next>
+  <HH.Underworld.Pit.Status.NoFighter>Ainda não há lutadores: clique com o botão direito no marcador com um colono, ou marque um em Lutadores.</HH.Underworld.Pit.Status.NoFighter>
+  <HH.Underworld.Pit.Status.Off>O submundo está desligado (módulo ou conteúdo Aconchegante).</HH.Underworld.Pit.Status.Off>
+  <HH.Underworld.Pit.Status.Peaceful>Submundo pacífico ligado: sem lutas.</HH.Underworld.Pit.Status.Peaceful>
+  <HH.Underworld.Pit.Status.Running>Luta em andamento: {0} contra {1}.</HH.Underworld.Pit.Status.Running>
+  <HH.Underworld.Pit.Status.WaitFighter>Esperando um segundo lutador: {0}.</HH.Underworld.Pit.Status.WaitFighter>
+  <HH.Underworld.Pit.Status.WaitGuests>Esperando os hóspedes apostarem (você mesmo pode iniciar uma luta).</HH.Underworld.Pit.Status.WaitGuests>
+  <HH.Underworld.Pit.Why.ArenaFull>nenhuma casa livre na arena</HH.Underworld.Pit.Why.ArenaFull>
+  <HH.Underworld.Pit.Why.Asleep>dormindo</HH.Underworld.Pit.Why.Asleep>
+  <HH.Underworld.Pit.Why.BeastThere>já há um oponente na arena</HH.Underworld.Pit.Why.BeastThere>
+  <HH.Underworld.Pit.Why.BoutRunning>há uma luta em andamento</HH.Underworld.Pit.Why.BoutRunning>
+  <HH.Underworld.Pit.Why.Burning>em chamas</HH.Underworld.Pit.Why.Burning>
+  <HH.Underworld.Pit.Why.Busy>ocupado</HH.Underworld.Pit.Why.Busy>
+  <HH.Underworld.Pit.Why.Child>menor de 18</HH.Underworld.Pit.Why.Child>
+  <HH.Underworld.Pit.Why.Downed>caído</HH.Underworld.Pit.Why.Downed>
+  <HH.Underworld.Pit.Why.Drafted>convocado</HH.Underworld.Pit.Why.Drafted>
+  <HH.Underworld.Pit.Why.Gone>não está aqui</HH.Underworld.Pit.Why.Gone>
+  <HH.Underworld.Pit.Why.Hurt>ferido</HH.Underworld.Pit.Why.Hurt>
+  <HH.Underworld.Pit.Why.InBout>já em uma luta</HH.Underworld.Pit.Why.InBout>
+  <HH.Underworld.Pit.Why.Kind>não quer: é gentil</HH.Underworld.Pit.Why.Kind>
+  <HH.Underworld.Pit.Why.Leaving>chegando ou saindo</HH.Underworld.Pit.Why.Leaving>
+  <HH.Underworld.Pit.Why.LeavingSoon>vai embora logo</HH.Underworld.Pit.Why.LeavingSoon>
+  <HH.Underworld.Pit.Why.Mental>em surto mental</HH.Underworld.Pit.Why.Mental>
+  <HH.Underworld.Pit.Why.NoBeastKind>nenhum animal serve</HH.Underworld.Pit.Why.NoBeastKind>
+  <HH.Underworld.Pit.Why.NoBout>a luta não pôde começar</HH.Underworld.Pit.Why.NoBout>
+  <HH.Underworld.Pit.Why.NoLoneFighter>ninguém para lutar contra ele: clique com o botão direito no marcador com um colono, ou marque um em Lutadores</HH.Underworld.Pit.Why.NoLoneFighter>
+  <HH.Underworld.Pit.Why.NoOpponent>sem oponente</HH.Underworld.Pit.Why.NoOpponent>
+  <HH.Underworld.Pit.Why.NoOpponentFor>ninguém para lutar contra {0}</HH.Underworld.Pit.Why.NoOpponentFor>
+  <HH.Underworld.Pit.Why.NoTaste>não quer: não gosta de lutar</HH.Underworld.Pit.Why.NoTaste>
+  <HH.Underworld.Pit.Why.NoViolence>incapaz de violência</HH.Underworld.Pit.Why.NoViolence>
+  <HH.Underworld.Pit.Why.NotGuest>não é hóspede da casa</HH.Underworld.Pit.Why.NotGuest>
+  <HH.Underworld.Pit.Why.NotTicked>não marcado para lutar aqui</HH.Underworld.Pit.Why.NotTicked>
+  <HH.Underworld.Pit.Why.OnlyOne>Só um lutador: {0}.</HH.Underworld.Pit.Why.OnlyOne>
+  <HH.Underworld.Pit.Why.QuestGuest>hóspede de missão</HH.Underworld.Pit.Why.QuestGuest>
+  <HH.Underworld.Pit.Why.Trader>comerciante</HH.Underworld.Pit.Why.Trader>
+  <HH.Underworld.Pit.Win.Anyone>qualquer um adequado</HH.Underworld.Pit.Win.Anyone>
+  <HH.Underworld.Pit.Win.Group.Animal>Animais</HH.Underworld.Pit.Win.Group.Animal>
+  <HH.Underworld.Pit.Win.Group.Beast>Oponentes contratados</HH.Underworld.Pit.Win.Group.Beast>
+  <HH.Underworld.Pit.Win.Group.Colonist>Colonos e escravos</HH.Underworld.Pit.Win.Group.Colonist>
+  <HH.Underworld.Pit.Win.Group.Guest>Hóspedes</HH.Underworld.Pit.Win.Group.Guest>
+  <HH.Underworld.Pit.Win.Group.Prisoner>Prisioneiros</HH.Underworld.Pit.Win.Group.Prisoner>
+  <HH.Underworld.Pit.Win.GroupOff>Desligado: ligue "{0}" no marcador.</HH.Underworld.Pit.Win.GroupOff>
+  <HH.Underworld.Pit.Win.Melee>combate corpo a corpo {0}</HH.Underworld.Pit.Win.Melee>
+  <HH.Underworld.Pit.Win.Nobody>ninguém aqui</HH.Underworld.Pit.Win.Nobody>
+  <HH.Underworld.Pit.Win.PickSides>Escolha os lados, ou deixe "qualquer um adequado" para a combinação mais próxima.</HH.Underworld.Pit.Win.PickSides>
+  <HH.Underworld.Pit.Win.Power>poder {0}</HH.Underworld.Pit.Win.Power>
+  <HH.Underworld.Pit.Win.Ready>pronto</HH.Underworld.Pit.Win.Ready>
+  <HH.Underworld.Pit.Win.SideA>Lado A</HH.Underworld.Pit.Win.SideA>
+  <HH.Underworld.Pit.Win.SideB>Lado B</HH.Underworld.Pit.Win.SideB>
+  <HH.Underworld.Pit.Win.Start>Iniciar a luta agora</HH.Underworld.Pit.Win.Start>
+  <HH.Underworld.Pit.Win.Tick>Luta neste poço</HH.Underworld.Pit.Win.Tick>
+  <HH.Underworld.Pit.Win.Title>Lutadores do poço</HH.Underworld.Pit.Win.Title>
+  <HH.Underworld.Smuggler.Bought>O caixote é seu por {0} de prata.</HH.Underworld.Smuggler.Bought>
+  <HH.Underworld.Smuggler.Buy.Desc>A colônia paga da gaveta, da prata em estoque ou do banco. O caixote é deixado ao lado do cais.</HH.Underworld.Smuggler.Buy.Desc>
+  <HH.Underworld.Smuggler.Decline.Desc>Mande o barco embora. Nada mais acontece.</HH.Underworld.Smuggler.Decline.Desc>
+  <HH.Underworld.Smuggler.Declined>O barco foi embora sem negócio.</HH.Underworld.Smuggler.Declined>
+  <HH.Underworld.Smuggler.Items.Many>{0} itens</HH.Underworld.Smuggler.Items.Many>
+  <HH.Underworld.Smuggler.Items.One>{0} item</HH.Underworld.Smuggler.Items.One>
+  <HH.Underworld.Smuggler.Left>O barco no cais não esperou mais e foi embora.</HH.Underworld.Smuggler.Left>
+  <HH.Underworld.Smuggler.Letter.How>Selecione o cais, ou abra a aba do Submundo, para comprar o caixote ou mandar o barco embora. A colônia paga da gaveta, da prata em estoque ou do banco. Ele espera {0} horas e depois vai embora.</HH.Underworld.Smuggler.Letter.How>
+  <HH.Underworld.Smuggler.Next>Próximo pouso: à noite, em cerca de {0}.</HH.Underworld.Smuggler.Next>
+  <HH.Underworld.Smuggler.NextSoon>Próximo pouso: à noite, em breve.</HH.Underworld.Smuggler.NextSoon>
+  <HH.Underworld.Smuggler.Status.Last>Último pouso: há {0}.</HH.Underworld.Smuggler.Status.Last>
+  <HH.Underworld.Smuggler.Status.NotBuilt>Construa um cais de contrabandistas: os barcos chegam à noite com contrabando barato.</HH.Underworld.Smuggler.Status.NotBuilt>
+  <HH.Underworld.Smuggler.Waiting>Um barco espera no cais: {0} por {1} de prata (vai embora em {2}).</HH.Underworld.Smuggler.Waiting>
 </LanguageData>

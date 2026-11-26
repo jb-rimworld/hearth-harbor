@@ -7,4 +7,7 @@
   <HH_Interrogate.reportString>verhört TargetA.</HH_Interrogate.reportString>
   <HH_HuntQuarry.reportString>jagt TargetA.</HH_HuntQuarry.reportString>
   <HH_QuarryFlee.reportString>rennt.</HH_QuarryFlee.reportString>
+  <HH_PitFight.reportString>kämpft in der Grube gegen TargetA.</HH_PitFight.reportString>
+  <HH_PitGoto.reportString>geht in die Kampfgrube.</HH_PitGoto.reportString>
+  <HH_PitWait.reportString>wartet auf den Kampf.</HH_PitWait.reportString>
 </LanguageData>

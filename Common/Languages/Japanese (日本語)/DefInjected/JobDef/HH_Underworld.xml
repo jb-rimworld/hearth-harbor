@@ -7,4 +7,7 @@
   <HH_Interrogate.reportString>TargetA を尋問しています。</HH_Interrogate.reportString>
   <HH_HuntQuarry.reportString>TargetA を狩っています。</HH_HuntQuarry.reportString>
   <HH_QuarryFlee.reportString>逃げています。</HH_QuarryFlee.reportString>
+  <HH_PitFight.reportString>闘技場で TargetA と戦っている。</HH_PitFight.reportString>
+  <HH_PitGoto.reportString>闘技場へ向かっている。</HH_PitGoto.reportString>
+  <HH_PitWait.reportString>試合を待っている。</HH_PitWait.reportString>
 </LanguageData>

@@ -7,4 +7,7 @@
   <HH_Interrogate.reportString>TargetA을(를) 심문하고 있습니다.</HH_Interrogate.reportString>
   <HH_HuntQuarry.reportString>TargetA을(를) 사냥하고 있습니다.</HH_HuntQuarry.reportString>
   <HH_QuarryFlee.reportString>달아나고 있습니다.</HH_QuarryFlee.reportString>
+  <HH_PitFight.reportString>구덩이에서 TargetA와 싸우는 중.</HH_PitFight.reportString>
+  <HH_PitGoto.reportString>싸움터로 걸어가는 중.</HH_PitGoto.reportString>
+  <HH_PitWait.reportString>대결을 기다리는 중.</HH_PitWait.reportString>
 </LanguageData>

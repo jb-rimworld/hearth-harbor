@@ -405,7 +405,7 @@
   <HH.Setting.underworld.gang.intervalDays>Dny mezi návštěvami gangů</HH.Setting.underworld.gang.intervalDays>
   <HH.Setting.underworld.gang.intervalDays.Desc>Průměrný čas mezi návštěvami gangů, jakmile existuje zadní místnost, márnice rvaček nebo výkupčí.</HH.Setting.underworld.gang.intervalDays.Desc>
   <HH.Setting.underworld.gang.intimidateChance>Šance, že gang žádá výpalné</HH.Setting.underworld.gang.intimidateChance>
-  <HH.Setting.underworld.gang.intimidateChance.Desc>Řídí se posuvníkem obtížnosti; Standardní pokoj a nižší nikdy nevnutí nic jiného než dialog, který můžete odmítnout.</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>Řídí se posuvníkem obtížnosti. Na Standardní pokoj a lehčí je to vždy jen nabídka, kterou můžete odmítnout.</HH.Setting.underworld.gang.intimidateChance.Desc>
   <HH.Setting.underworld.gang.prisonAccess>Gangy smějí navštívit vězení</HH.Setting.underworld.gang.prisonAccess>
   <HH.Setting.underworld.gang.prisonAccess.Desc>Povoluje prohlídku cel (výslech vězňů) pro hosty z gangu. Ve výchozím stavu vypnuto; jinak jsou vězení pro každého hosta uzavřena.</HH.Setting.underworld.gang.prisonAccess.Desc>
   <HH.Setting.underworld.gang.protectionFee>Požadované výpalné</HH.Setting.underworld.gang.protectionFee>
@@ -437,9 +437,9 @@
   <HH.Setting.underworld.pit.intervalHours>Hodiny mezi zápasy</HH.Setting.underworld.pit.intervalHours>
   <HH.Setting.underworld.pit.intervalHours.Desc>Jáma s dostatkem bojovníků a diváků pořádá zápas tak často.</HH.Setting.underworld.pit.intervalHours.Desc>
   <HH.Setting.underworld.pit.maxBoutTicks>Nejdelší zápas (ticků)</HH.Setting.underworld.pit.maxBoutTicks>
-  <HH.Setting.underworld.pit.maxBoutTicks.Desc>Zápas, který do této doby nikdo nevyhraje, skončí remízou: všechny vklady se vrátí.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>Po této době vyhrává bojovník s menším podílem ze svého limitu bodů. Stejné podíly jsou remíza a všechny sázky se vrací.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
   <HH.Setting.underworld.pit.yieldHealth>Vzdání při zdraví</HH.Setting.underworld.pit.yieldHealth>
-  <HH.Setting.underworld.pit.yieldHealth.Desc>Zápas končí, když bojovník klesne pod tento podíl zdraví, pokud nejde o boj na život a na smrt.</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>Zápasy vězňů a zvířat skončí, když bojovníkovi klesne zdraví pod tento podíl, pokud nejsou na smrt. Zápasy mezi lidmi končí na body.</HH.Setting.underworld.pit.yieldHealth.Desc>
   <HH.Setting.underworld.scandalCooldownDays>Dny mezi skandály</HH.Setting.underworld.scandalCooldownDays>
   <HH.Setting.underworld.scandalCooldownDays.Desc>Nejvýš jeden skandál na mapu za tolik dní.</HH.Setting.underworld.scandalCooldownDays.Desc>
   <HH.Setting.underworld.smuggler.inspectChance>Šance na kontrolu</HH.Setting.underworld.smuggler.inspectChance>
@@ -531,4 +531,18 @@
   <HH.SettingCat.Wealthandmood>Bohatství a nálada</HH.SettingCat.Wealthandmood>
   <HH.SettingCat.Whispers>Šeptanda</HH.SettingCat.Whispers>
   <HH.SettingCat.Wing>Křídlo</HH.SettingCat.Wing>
+  <HH.Setting.underworld.gang.demandHours>Hodiny na odpověď na žádost o výpalné</HH.Setting.underworld.gang.demandHours>
+  <HH.Setting.underworld.gang.demandHours.Desc>Žádost, na kterou do této doby neodpovíte, se počítá jako odmítnutí.</HH.Setting.underworld.gang.demandHours.Desc>
+  <HH.Setting.underworld.gang.firstDays>Dny do prvního gangu</HH.Setting.underworld.gang.firstDays>
+  <HH.Setting.underworld.gang.firstDays.Desc>První gang přijde zhruba za tolik dní (půlka až jeden a půl násobku) poté, co vznikne první zadní místnost, pult příjemce nebo jáma na boje.</HH.Setting.underworld.gang.firstDays.Desc>
+  <HH.Setting.underworld.gang.retryHours>Hodiny do nového pokusu o návštěvu gangu</HH.Setting.underworld.gang.retryHours>
+  <HH.Setting.underworld.gang.retryHours.Desc>Když gang nemůže přijít (žádná přátelská frakce, žádná cesta na mapu), další pokus následuje po tolika hodinách.</HH.Setting.underworld.gang.retryHours.Desc>
+  <HH.Setting.underworld.pit.guestPurse>Odměna pro vítězného hosta</HH.Setting.underworld.pit.guestPurse>
+  <HH.Setting.underworld.pit.guestPurse.Desc>Host, který vyhraje zápas, dostane tolik stříbra z podílu domu z tohoto zápasu (bez podílu není odměna).</HH.Setting.underworld.pit.guestPurse.Desc>
+  <HH.Setting.underworld.pit.opponentFee>Poplatek za najatého soupeře</HH.Setting.underworld.pit.opponentFee>
+  <HH.Setting.underworld.pit.opponentFee.Desc>„Zavolat soupeře“ najme jámového zvíře pro osamělého bojovníka. Kolonie platí tento poplatek: nejdřív z kasy, pak ze stříbra ve skladu, pak z banky.</HH.Setting.underworld.pit.opponentFee.Desc>
+  <HH.Setting.underworld.pit.scoreLimit>Body k prohře zápasu</HH.Setting.underworld.pit.scoreLimit>
+  <HH.Setting.underworld.pit.scoreLimit.Desc>Zápasy s hostem, kolonistou nebo otrokem se bojují o body: bojovník prohrává, když poškození, které by utrpěl, dosáhne tolikanásobku jeho zdravotní míry. Nikdo se nezraní.</HH.Setting.underworld.pit.scoreLimit.Desc>
+  <HH.Setting.underworld.smuggler.offerHours>Hodiny, po které loď pašeráka čeká</HH.Setting.underworld.smuggler.offerHours>
+  <HH.Setting.underworld.smuggler.offerHours.Desc>Loď, které do této doby neodpovíte, odpluje. Nic dalšího se nestane.</HH.Setting.underworld.smuggler.offerHours.Desc>
 </LanguageData>

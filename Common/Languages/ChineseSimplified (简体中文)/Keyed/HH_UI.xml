@@ -61,19 +61,19 @@
   <HH.UI.Modules.Content>内容强度</HH.UI.Modules.Content>
   <HH.UI.Modules.ContentDesc>可选内容可以变得多黑暗。无论选择哪一档，都绝不会出现色情内容。</HH.UI.Modules.ContentDesc>
   <HH.UI.Content.Cozy>温馨</HH.UI.Content.Cozy>
-  <HH.UI.Content.Cozy.Tip>只有温和的故事与后果。</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Cozy.Tip>只有温和的故事与后果。会隐藏整个地下世界：后间、格斗坑、销赃人、毒品休息室和帮派。</HH.UI.Content.Cozy.Tip>
   <HH.UI.Content.Standard>标准</HH.UI.Content.Standard>
   <HH.UI.Content.Standard.Tip>默认设置。有些粗糙之处，但没有恶意。</HH.UI.Content.Standard.Tip>
   <HH.UI.Content.Dark>黑暗</HH.UI.Content.Dark>
-  <HH.UI.Content.Dark.Tip>可能出现犯罪、债务与暴力。</HH.UI.Content.Dark.Tip>
+  <HH.UI.Content.Dark.Tip>在“标准”之上增加：囚犯可能被打到死、被更严厉地审讯、被追捕（需要相符的意识形态），并可以建器官诊所和暗色菜单。</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>严酷</HH.UI.Content.Grim>
-  <HH.UI.Content.Grim.Tip>游戏提供的全部内容，完整呈现。</HH.UI.Content.Grim.Tip>
+  <HH.UI.Content.Grim.Tip>在“黑暗”之上增加：追捕囚犯不再需要相符的意识形态，器官买家会下达有期限的订单。</HH.UI.Content.Grim.Tip>
   <HH.UI.ModuleDesc.Inn>访客、访客床位、客房区、接待处、旅人与招募。</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>店招、商店、自动售货机、市场、餐厅与菜品。</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>牌桌、老虎机、筹码，以及访客与殖民者赌博的风险。</HH.UI.ModuleDesc.Casino>
   <HH.UI.ModuleDesc.Wellness>水疗、桑拿与康复入住。</HH.UI.ModuleDesc.Wellness>
   <HH.UI.ModuleDesc.CityLife>电影院、商场、美容院、神殿、出租车与安保。</HH.UI.ModuleDesc.CityLife>
-  <HH.UI.ModuleDesc.Underworld>一间隐秘的后间、一个斗殴场与一个销赃人。在游戏中发现，绝不强制。</HH.UI.ModuleDesc.Underworld>
+  <HH.UI.ModuleDesc.Underworld>一个隐秘的后间、一个格斗坑和一个销赃人。你不建造，什么都不会发生。</HH.UI.ModuleDesc.Underworld>
   <HH.UI.ModuleDesc.Bank>Silverline：账户、支付、取款机、投资、贷款、保险与彩票。</HH.UI.ModuleDesc.Bank>
   <HH.UI.ModuleDesc.AiFlavour>由 AI 通过中继生成的可选风味文本。默认关闭。</HH.UI.ModuleDesc.AiFlavour>
   <HH.UI.Diff.Title>经营难度</HH.UI.Diff.Title>
@@ -304,7 +304,7 @@
   <HH.Setting.core.neverDie.Desc>访客会被击倒而不是杀死。他们会倒地但仍活着，直到有人照料他们。</HH.Setting.core.neverDie.Desc>
   <HH.Setting.core.infiniteMoney.Desc>此开关开启期间抵达的访客携带无底钱包。访客资金系数对他们无效。</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.ironBank.Desc>无论难度如何，债务催收都会升到最高阶段。没有人会悄悄替你延后分期付款。</HH.Setting.core.ironBank.Desc>
-  <HH.Setting.core.peacefulUnderworld.Desc>阴暗场所不使用暴力：没有斗殴场、没有审讯、没有追捕人、没有诊所、没有保护费勒索。后间、销赃人和毒品休息室保留。</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>阴暗场所不使用暴力。这会完全关闭格斗坑（包括按点数决胜的比赛），并停止审讯、追捕人、器官诊所和保护费。后间、销赃人和毒品休息室保留。</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>访客规划和房间检查的频率减半。对慢速电脑有帮助；访客的反应可能略慢。</HH.Setting.core.perfMode.Desc>
   <HH.Kitchen.Cookbook.ColCuisine>菜系</HH.Kitchen.Cookbook.ColCuisine>
   <HH.Kitchen.Cookbook.ColDish>菜品</HH.Kitchen.Cookbook.ColDish>
@@ -327,5 +327,5 @@
   <HH.UI.Page.Sub.city>电影院、沙龙、画廊、公园、出租车和安保：建了什么，各自能赚多少。</HH.UI.Page.Sub.city>
   <HH.UI.Page.Sub.guests>所有住在或来访你旅店的人。点击一行可跳到该访客；点击处理方式一格可更改。</HH.UI.Page.Sub.guests>
   <HH.UI.Page.Sub.overview>今日一览：访客、营收，以及每家营业场所的状态。</HH.UI.Page.Sub.overview>
-  <HH.UI.Page.Sub.underworld>耳语、到访权重，以及黑暗一面的营收。</HH.UI.Page.Sub.underworld>
+  <HH.UI.Page.Sub.underworld>后间各个部分正在做什么、等你回应的提议、耳语和收入。</HH.UI.Page.Sub.underworld>
 </LanguageData>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Setting.core.researchMode>연구 모드</HH.Setting.core.researchMode>
-  <HH.Setting.core.researchMode.Desc>전체: Hearth &amp; Harbor와 Silverline 연구 트리가 건물과 기능을 잠급니다. 끔: 모든 것이 처음부터 사용 가능합니다(지하 세계의 어두운 프로젝트는 여전히 발견이 필요합니다).</HH.Setting.core.researchMode.Desc>
+  <HH.Setting.core.researchMode.Desc>전체: Hearth &amp; Harbor와 Silverline 연구 트리가 건물과 기능을 잠급니다. 끔: 모든 것이 처음부터 사용 가능합니다.</HH.Setting.core.researchMode.Desc>
   <HH.Enum.CoreResearchMode.Full>전체</HH.Enum.CoreResearchMode.Full>
   <HH.Enum.CoreResearchMode.Off>끔</HH.Enum.CoreResearchMode.Off>
   <HH.Gate.ModuleOff>모듈 꺼짐: {0}</HH.Gate.ModuleOff>

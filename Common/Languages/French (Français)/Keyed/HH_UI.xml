@@ -61,19 +61,19 @@
   <HH.UI.Modules.Content>Intensité du contenu</HH.UI.Modules.Content>
   <HH.UI.Modules.ContentDesc>Jusqu'où le contenu optionnel peut devenir sombre. Jamais de contenu sexuel, quel que soit votre choix.</HH.UI.Modules.ContentDesc>
   <HH.UI.Content.Cozy>Douillet</HH.UI.Content.Cozy>
-  <HH.UI.Content.Cozy.Tip>Histoires et conséquences légères uniquement.</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Cozy.Tip>Histoires et conséquences légères uniquement. Cache toute la pègre : arrière-salle, fosse de combat, receleur, salon de drogue et gangs.</HH.UI.Content.Cozy.Tip>
   <HH.UI.Content.Standard>Standard</HH.UI.Content.Standard>
   <HH.UI.Content.Standard.Tip>Le réglage par défaut. Des aspérités, rien de désagréable.</HH.UI.Content.Standard.Tip>
   <HH.UI.Content.Dark>Sombre</HH.UI.Content.Dark>
-  <HH.UI.Content.Dark.Tip>Crimes, dettes et violences peuvent apparaître.</HH.UI.Content.Dark.Tip>
+  <HH.UI.Content.Dark.Tip>S'ajoute à Standard : les prisonniers peuvent se battre à mort, être interrogés plus durement et être chassés (avec une idéologie adaptée), et une clinique d'organes et le menu sombre deviennent possibles.</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>Lugubre</HH.UI.Content.Grim>
-  <HH.UI.Content.Grim.Tip>Tout ce que le jeu propose, en entier.</HH.UI.Content.Grim.Tip>
+  <HH.UI.Content.Grim.Tip>S'ajoute à Sombre : chasser des prisonniers n'exige plus d'idéologie adaptée, et les acheteurs d'organes passent des commandes avec des délais.</HH.UI.Content.Grim.Tip>
   <HH.UI.ModuleDesc.Inn>Clients, lits d'invités, ailes, accueil, voyageurs et recrutement.</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>Enseignes, boutiques, distributeurs, marchés, restaurants et plats.</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>Tables, machines à sous, jetons et risques du jeu pour les clients et les colons.</HH.UI.ModuleDesc.Casino>
   <HH.UI.ModuleDesc.Wellness>Séjours au spa, au sauna et en rééducation.</HH.UI.ModuleDesc.Wellness>
   <HH.UI.ModuleDesc.CityLife>Cinéma, centre commercial, salon de coiffure, temples, taxis et sécurité.</HH.UI.ModuleDesc.CityLife>
-  <HH.UI.ModuleDesc.Underworld>Un arrière-salon discret, une fosse de combat et un receleur. Trouvé en jeu, jamais imposé.</HH.UI.ModuleDesc.Underworld>
+  <HH.UI.ModuleDesc.Underworld>Une arrière-salle discrète, une fosse de combat et un receleur. Rien de cela n'arrive avant que vous le construisiez.</HH.UI.ModuleDesc.Underworld>
   <HH.UI.ModuleDesc.Bank>Silverline : comptes, paiements, distributeurs, placements, prêts, assurances et loterie.</HH.UI.ModuleDesc.Bank>
   <HH.UI.ModuleDesc.AiFlavour>Textes d'ambiance facultatifs rédigés par une IA via un relais. Désactivé par défaut.</HH.UI.ModuleDesc.AiFlavour>
   <HH.UI.Diff.Title>Difficulté d'hébergement</HH.UI.Diff.Title>
@@ -304,7 +304,7 @@
   <HH.Setting.core.neverDie.Desc>Les invités sont assommés au lieu d'être tués. Ils restent en vie, à terre, jusqu'à ce que quelqu'un s'occupe d'eux.</HH.Setting.core.neverDie.Desc>
   <HH.Setting.core.infiniteMoney.Desc>Les invités qui arrivent pendant que ce réglage est actif ont une bourse sans fond. Le facteur d'argent des invités n'a aucun effet sur eux.</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.ironBank.Desc>Le recouvrement des dettes monte toujours au stade le plus élevé, quelle que soit la difficulté. Personne ne reporte discrètement vos échéances.</HH.Setting.core.ironBank.Desc>
-  <HH.Setting.core.peacefulUnderworld.Desc>Les lieux sombres fonctionnent sans violence : pas d'arène de combat, pas d'interrogatoires, pas de chasse aux personnes, pas de clinique, pas de racket. L'arrière-salle, le receleur et le salon de drogue restent.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Les lieux sombres fonctionnent sans violence. Cela ferme complètement la fosse de combat, combats aux points compris, et supprime les interrogatoires, la chasse aux personnes, la clinique d'organes et l'argent de protection. L'arrière-salle, le receleur et le salon de drogue restent.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>La planification des invités et les contrôles de pièces tournent deux fois moins souvent. Utile sur les ordinateurs lents ; les invités peuvent réagir un peu plus tard.</HH.Setting.core.perfMode.Desc>
   <HH.Kitchen.Cookbook.ColCuisine>Cuisine</HH.Kitchen.Cookbook.ColCuisine>
   <HH.Kitchen.Cookbook.ColDish>Plat</HH.Kitchen.Cookbook.ColDish>
@@ -327,5 +327,5 @@
   <HH.UI.Page.Sub.city>Cinéma, salon, galerie, parc, taxi et sécurité : ce qui est construit et ce que cela rapporte.</HH.UI.Page.Sub.city>
   <HH.UI.Page.Sub.guests>Tous ceux qui logent ou rendent visite à votre auberge. Cliquez sur une ligne pour aller à l'invité ; cliquez sur la case de prise en charge pour la changer.</HH.UI.Page.Sub.guests>
   <HH.UI.Page.Sub.overview>Aujourd'hui en un coup d'œil : invités, recettes et l'état de chaque commerce.</HH.UI.Page.Sub.overview>
-  <HH.UI.Page.Sub.underworld>Rumeurs, poids des arrivées et recettes du côté obscur.</HH.UI.Page.Sub.underworld>
+  <HH.UI.Page.Sub.underworld>Ce que fait chaque partie de l'arrière-salle, les offres qui vous attendent, les murmures et les recettes.</HH.UI.Page.Sub.underworld>
 </LanguageData>

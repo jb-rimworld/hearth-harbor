@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_Underworld_Discovery.label>뒷방 (핵심)</HH_Underworld_Discovery.label>
-  <HH_Underworld_Discovery.description>내부용 핵심 프로젝트. 낯선 사람의 제안을 받아들이면 완료됩니다. 표시되지 않습니다.</HH_Underworld_Discovery.description>
+  <HH_Underworld_Discovery.description>옛 내부 열쇠 프로젝트로, 옛 저장 파일을 위해 남겨 두었습니다. 표시되지 않고 아무것도 해금하지 않습니다.</HH_Underworld_Discovery.description>
   <HH_Underworld_1.label>뒷방</HH_Underworld_1.label>
-  <HH_Underworld_1.description>뒷방 문, 싸움터, 장물아비의 카운터, 밀수꾼의 부두, 그리고 마약 휴게실. 메뉴에 없는 거래를 위해 집에 필요한 모든 것입니다.</HH_Underworld_1.description>
+  <HH_Underworld_1.description>옛 프로젝트로, 옛 저장 파일을 위해 남겨 두었습니다. 표시되지 않고 아무것도 해금하지 않습니다: 뒷방 문, 싸움터, 장물 카운터, 밀수 부두, 약물 라운지는 연구가 필요 없습니다.</HH_Underworld_1.description>
   <HH_TheHunt.label>사냥</HH_TheHunt.label>
-  <HH_TheHunt.description>울타리 친 사냥터입니다. 부유한 방문객들은 그곳에 풀어 놓은 것을 쏘는 대가로 많은 돈을 냅니다. 어두운 내용부터는 명확한 경고와 함께 죄수가 사냥감이 될 수 있습니다.</HH_TheHunt.description>
+  <HH_TheHunt.description>울타리를 친 사냥터. 돈 많은 방문객이 그곳에 풀어 놓은 것을 쏘기 위해 큰돈을 냅니다. 어두움 내용과 맞는 이데올로기가 있거나 암울함 내용이면, 표지에서 허용했을 때 죄수가 사냥감이 될 수 있습니다.</HH_TheHunt.description>
   <HH_BlackClinic.label>암시장 진료소</HH_BlackClinic.label>
   <HH_BlackClinic.description>익명의 기증자들이 채취된 장기를 질문 없이 사는 카운터입니다. 어두운 내용이나 잔혹한 내용에서만 가능합니다.</HH_BlackClinic.description>
 </LanguageData>

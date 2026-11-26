@@ -405,7 +405,7 @@
   <HH.Setting.underworld.gang.intervalDays>Днів між візитами банд</HH.Setting.underworld.gang.intervalDays>
   <HH.Setting.underworld.gang.intervalDays.Desc>Середній час між візитами банд, щойно з’являються задня кімната, яма для бійок або скупник.</HH.Setting.underworld.gang.intervalDays.Desc>
   <HH.Setting.underworld.gang.intimidateChance>Шанс, що банда вимагає грошей за захист</HH.Setting.underworld.gang.intimidateChance>
-  <HH.Setting.underworld.gang.intimidateChance.Desc>Слідує за повзунком складності; на Стандартній кімнаті й легше банда нічого не примушує, крім діалогу, від якого можна відмовитися.</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>Залежить від повзунка складності. На «Стандартній кімнаті» та простіше це лише пропозиція, від якої можна відмовитися.</HH.Setting.underworld.gang.intimidateChance.Desc>
   <HH.Setting.underworld.gang.prisonAccess>Бандитам дозволено відвідувати в’язницю</HH.Setting.underworld.gang.prisonAccess>
   <HH.Setting.underworld.gang.prisonAccess.Desc>Дозволяє екскурсію камерами (допит в’язнів) для гостей із банд. Вимкнено за замовчуванням; інакше в’язниці закриті для всіх гостей.</HH.Setting.underworld.gang.prisonAccess.Desc>
   <HH.Setting.underworld.gang.protectionFee>Вимагана плата за захист</HH.Setting.underworld.gang.protectionFee>
@@ -437,9 +437,9 @@
   <HH.Setting.underworld.pit.intervalHours>Години між боями</HH.Setting.underworld.pit.intervalHours>
   <HH.Setting.underworld.pit.intervalHours.Desc>Яма бійок із достатньою кількістю бійців і глядачів починає бій так часто.</HH.Setting.underworld.pit.intervalHours.Desc>
   <HH.Setting.underworld.pit.maxBoutTicks>Найдовший бій (тіки)</HH.Setting.underworld.pit.maxBoutTicks>
-  <HH.Setting.underworld.pit.maxBoutTicks.Desc>Бій, який ніхто не виграв за цей час, вважається нічиєю: усі ставки повертаються.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>Після спливу цього часу перемагає той, у кого менша частка від ліміту очок. За рівних часток нічия, і всі ставки повертаються.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
   <HH.Setting.underworld.pit.yieldHealth>Здатися при здоров'ї</HH.Setting.underworld.pit.yieldHealth>
-  <HH.Setting.underworld.pit.yieldHealth.Desc>Бій завершується, коли один із бійців опускається нижче цієї частки здоров'я, якщо це не бій до смерті.</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>Бої полонених і тварин закінчуються, коли в бійця лишається менше цієї частки здоров'я, якщо тільки вони не до смерті. Бої людей закінчуються за очками.</HH.Setting.underworld.pit.yieldHealth.Desc>
   <HH.Setting.underworld.scandalCooldownDays>Днів між скандалами</HH.Setting.underworld.scandalCooldownDays>
   <HH.Setting.underworld.scandalCooldownDays.Desc>Не більше одного скандалу на карту за стільки днів.</HH.Setting.underworld.scandalCooldownDays.Desc>
   <HH.Setting.underworld.smuggler.inspectChance>Шанс перевірки</HH.Setting.underworld.smuggler.inspectChance>
@@ -531,4 +531,18 @@
   <HH.SettingCat.Wealthandmood>Багатство і настрій</HH.SettingCat.Wealthandmood>
   <HH.SettingCat.Whispers>Шепіт</HH.SettingCat.Whispers>
   <HH.SettingCat.Wing>Крило</HH.SettingCat.Wing>
+  <HH.Setting.underworld.gang.demandHours>Годин на відповідь на вимогу поборів</HH.Setting.underworld.gang.demandHours>
+  <HH.Setting.underworld.gang.demandHours.Desc>Вимога, на яку ви не відповіли за цей час, вважається відмовою.</HH.Setting.underworld.gang.demandHours.Desc>
+  <HH.Setting.underworld.gang.firstDays>Днів до першої банди</HH.Setting.underworld.gang.firstDays>
+  <HH.Setting.underworld.gang.firstDays.Desc>Перша банда приходить приблизно через стільки днів (від половини до півтора раза) після появи першої задньої кімнати, прилавка скупника чи ями.</HH.Setting.underworld.gang.firstDays.Desc>
+  <HH.Setting.underworld.gang.retryHours>Годин до нової спроби після невдалого візиту банди</HH.Setting.underworld.gang.retryHours>
+  <HH.Setting.underworld.gang.retryHours.Desc>Якщо банда не може прийти (немає дружньої фракції чи шляху на мапу), наступна спроба буде через стільки годин.</HH.Setting.underworld.gang.retryHours.Desc>
+  <HH.Setting.underworld.pit.guestPurse>Приз гостю-переможцю</HH.Setting.underworld.pit.guestPurse>
+  <HH.Setting.underworld.pit.guestPurse.Desc>Гість, який виграв бій, отримує стільки срібла з частки дому від цього бою (немає частки, немає призу).</HH.Setting.underworld.pit.guestPurse.Desc>
+  <HH.Setting.underworld.pit.opponentFee>Плата за найнятого суперника</HH.Setting.underworld.pit.opponentFee>
+  <HH.Setting.underworld.pit.opponentFee.Desc>«Покликати суперника» наймає звіра для самотнього бійця. Колонія платить цю суму: спочатку з каси, потім сріблом на складі, потім з банку.</HH.Setting.underworld.pit.opponentFee.Desc>
+  <HH.Setting.underworld.pit.scoreLimit>Очок до програшу бою</HH.Setting.underworld.pit.scoreLimit>
+  <HH.Setting.underworld.pit.scoreLimit.Desc>Бої з гостем, колоністом або рабом ідуть на очки: боєць програє, коли шкода, яку він отримав би, сягає цього числа очок, помноженого на його шкалу здоров'я. Ніхто не поранений.</HH.Setting.underworld.pit.scoreLimit.Desc>
+  <HH.Setting.underworld.smuggler.offerHours>Годин очікування човна контрабандистів</HH.Setting.underworld.smuggler.offerHours>
+  <HH.Setting.underworld.smuggler.offerHours.Desc>Човен, на який ви не відповіли за цей час, відпливає; більше нічого не відбувається.</HH.Setting.underworld.smuggler.offerHours.Desc>
 </LanguageData>

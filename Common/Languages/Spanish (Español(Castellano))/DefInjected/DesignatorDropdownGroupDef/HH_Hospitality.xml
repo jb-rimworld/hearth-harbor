@@ -7,5 +7,5 @@
   <HH_Group_City.label>vida urbana</HH_Group_City.label>
   <HH_Group_City.description>Pantallas de cine, sillones de peluquería, bancos de parque y la parada de taxis.</HH_Group_City.description>
   <HH_Group_Underworld.label>trastienda</HH_Group_Underworld.label>
-  <HH_Group_Underworld.description>Puertas, fosas, mostradores y muelles para las cosas de las que nadie habla. Solo se muestra cuando has descubierto el inframundo.</HH_Group_Underworld.description>
+  <HH_Group_Underworld.description>Puertas, fosos, mostradores y muelles para lo que nadie menciona. Se muestra mientras el módulo del Inframundo esté activo y la intensidad del contenido no sea Acogedor.</HH_Group_Underworld.description>
 </LanguageData>

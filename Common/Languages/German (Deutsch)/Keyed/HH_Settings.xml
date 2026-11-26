@@ -405,7 +405,7 @@
   <HH.Setting.underworld.gang.intervalDays>Tage zwischen Bandenbesuchen</HH.Setting.underworld.gang.intervalDays>
   <HH.Setting.underworld.gang.intervalDays.Desc>Durchschnittliche Zeit zwischen Bandenbesuchen, sobald es Hinterzimmer, Kampfgrube oder Hehler gibt.</HH.Setting.underworld.gang.intervalDays.Desc>
   <HH.Setting.underworld.gang.intimidateChance>Chance, dass eine Bande Schutzgeld verlangt</HH.Setting.underworld.gang.intimidateChance>
-  <HH.Setting.underworld.gang.intimidateChance.Desc>Folgt dem Schwierigkeitsregler; im Standardzimmer und leichter wird dir nie etwas aufgezwungen außer einem Dialog, den du ablehnen kannst.</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>Stunden, bis ein gescheiterter Bandenbesuch neu versucht wird</HH.Setting.underworld.gang.intimidateChance.Desc>
   <HH.Setting.underworld.gang.prisonAccess>Banden dürfen das Gefängnis besuchen</HH.Setting.underworld.gang.prisonAccess>
   <HH.Setting.underworld.gang.prisonAccess.Desc>Erlaubt Bandengästen die Zellenführung (Befragung von Gefangenen). Standardmäßig aus; Gefängnisse sind sonst für jeden Gast gesperrt.</HH.Setting.underworld.gang.prisonAccess.Desc>
   <HH.Setting.underworld.gang.protectionFee>Geforderte Schutzgeldsumme</HH.Setting.underworld.gang.protectionFee>
@@ -437,9 +437,9 @@
   <HH.Setting.underworld.pit.intervalHours>Stunden zwischen den Kämpfen</HH.Setting.underworld.pit.intervalHours>
   <HH.Setting.underworld.pit.intervalHours.Desc>Eine Kampfgrube mit genug Kämpfern und Zuschauern startet in diesem Abstand einen Kampf.</HH.Setting.underworld.pit.intervalHours.Desc>
   <HH.Setting.underworld.pit.maxBoutTicks>Längster Kampf (Ticks)</HH.Setting.underworld.pit.maxBoutTicks>
-  <HH.Setting.underworld.pit.maxBoutTicks.Desc>Ein Kampf, den in dieser Zeit niemand gewinnt, endet unentschieden: Alle Einsätze werden zurückgegeben.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>Nach dieser Zeit gewinnt der Kämpfer, der weniger von seiner Punktegrenze verbraucht hat. Gleiche Anteile sind ein Unentschieden, und alle Einsätze gehen zurück.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
   <HH.Setting.underworld.pit.yieldHealth>Aufgabe bei Gesundheit</HH.Setting.underworld.pit.yieldHealth>
-  <HH.Setting.underworld.pit.yieldHealth.Desc>Ein Kampf endet, wenn ein Kämpfer unter diesen Gesundheitsanteil fällt, außer er geht auf Leben und Tod.</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>Kämpfe von Gefangenen und Tieren enden, wenn ein Kämpfer unter diesen Gesundheitsanteil fällt, außer sie gehen auf Leben und Tod. Kämpfe mit Menschen enden nach Punkten.</HH.Setting.underworld.pit.yieldHealth.Desc>
   <HH.Setting.underworld.scandalCooldownDays>Tage zwischen Skandalen</HH.Setting.underworld.scandalCooldownDays>
   <HH.Setting.underworld.scandalCooldownDays.Desc>Höchstens ein Skandal pro Karte in dieser Anzahl Tage.</HH.Setting.underworld.scandalCooldownDays.Desc>
   <HH.Setting.underworld.smuggler.inspectChance>Kontrollwahrscheinlichkeit</HH.Setting.underworld.smuggler.inspectChance>
@@ -531,4 +531,18 @@
   <HH.SettingCat.Wealthandmood>Wohlstand und Stimmung</HH.SettingCat.Wealthandmood>
   <HH.SettingCat.Whispers>Gerüchte</HH.SettingCat.Whispers>
   <HH.SettingCat.Wing>Flügel</HH.SettingCat.Wing>
+  <HH.Setting.underworld.gang.demandHours>Stunden, um auf eine Schutzgeldforderung zu antworten</HH.Setting.underworld.gang.demandHours>
+  <HH.Setting.underworld.gang.demandHours.Desc>Eine Forderung, die du in dieser Zeit nicht beantwortest, gilt als Ablehnung.</HH.Setting.underworld.gang.demandHours.Desc>
+  <HH.Setting.underworld.gang.firstDays>Tage bis zur ersten Bande</HH.Setting.underworld.gang.firstDays>
+  <HH.Setting.underworld.gang.firstDays.Desc>Die erste Bande kommt etwa so viele Tage (halb bis anderthalb Mal so lang) nachdem das erste Hinterzimmer, der erste Hehlertresen oder die erste Kampfgrube steht.</HH.Setting.underworld.gang.firstDays.Desc>
+  <HH.Setting.underworld.gang.retryHours>Wenn eine Bande nicht kommen kann (keine befreundete Fraktion, kein Weg auf die Karte), folgt der nächste Versuch so viele Stunden später.</HH.Setting.underworld.gang.retryHours>
+  <HH.Setting.underworld.gang.retryHours.Desc>Das hängt vom Schwierigkeitsregler ab. Im Standardzimmer und leichter ist es nie mehr als ein Angebot, das du ablehnen kannst.</HH.Setting.underworld.gang.retryHours.Desc>
+  <HH.Setting.underworld.pit.guestPurse>Beutel für einen siegreichen Gast</HH.Setting.underworld.pit.guestPurse>
+  <HH.Setting.underworld.pit.guestPurse.Desc>Ein Gast, der einen Kampf gewinnt, bekommt so viel Silber, gezahlt aus dem Anteil des Hauses an diesem Kampf (kein Anteil, kein Beutel).</HH.Setting.underworld.pit.guestPurse.Desc>
+  <HH.Setting.underworld.pit.opponentFee>Gebühr für einen gemieteten Gegner</HH.Setting.underworld.pit.opponentFee>
+  <HH.Setting.underworld.pit.opponentFee.Desc>„Gegner rufen“ mietet ein Grubentier für einen einzelnen Kämpfer. Die Kolonie zahlt diese Gebühr: erst aus der Kasse, dann aus dem Silber im Lager, dann von der Bank.</HH.Setting.underworld.pit.opponentFee.Desc>
+  <HH.Setting.underworld.pit.scoreLimit>Punkte, um einen Kampf zu verlieren</HH.Setting.underworld.pit.scoreLimit>
+  <HH.Setting.underworld.pit.scoreLimit.Desc>Kämpfe mit einem Gast, Kolonisten oder Sklaven gehen um Punkte: Ein Kämpfer verliert, wenn der Schaden, den er genommen hätte, so viele Punkte mal seine Gesundheitsskala erreicht. Niemand wird verletzt.</HH.Setting.underworld.pit.scoreLimit.Desc>
+  <HH.Setting.underworld.smuggler.offerHours>Stunden, die das Boot eines Schmugglers wartet</HH.Setting.underworld.smuggler.offerHours>
+  <HH.Setting.underworld.smuggler.offerHours.Desc>Ein Boot, dem du in dieser Zeit nicht antwortest, fährt ab; sonst passiert nichts.</HH.Setting.underworld.smuggler.offerHours.Desc>
 </LanguageData>

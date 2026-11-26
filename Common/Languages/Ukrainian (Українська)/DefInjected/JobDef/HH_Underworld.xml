@@ -7,4 +7,7 @@
   <HH_Interrogate.reportString>допитує TargetA.</HH_Interrogate.reportString>
   <HH_HuntQuarry.reportString>полює на TargetA.</HH_HuntQuarry.reportString>
   <HH_QuarryFlee.reportString>тікає.</HH_QuarryFlee.reportString>
+  <HH_PitFight.reportString>б'ється з TargetA в ямі.</HH_PitFight.reportString>
+  <HH_PitGoto.reportString>йде в яму для бійок.</HH_PitGoto.reportString>
+  <HH_PitWait.reportString>чекає на бій.</HH_PitWait.reportString>
 </LanguageData>

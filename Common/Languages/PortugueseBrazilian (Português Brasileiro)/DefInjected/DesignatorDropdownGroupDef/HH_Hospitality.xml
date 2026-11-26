@@ -7,5 +7,5 @@
   <HH_Group_City.label>vida urbana</HH_Group_City.label>
   <HH_Group_City.description>Telas de cinema, cadeiras de salão de beleza, bancos de parque e o ponto de táxi.</HH_Group_City.description>
   <HH_Group_Underworld.label>sala dos fundos</HH_Group_Underworld.label>
-  <HH_Group_Underworld.description>Portas, poços, balcões e docas para as coisas de que ninguém fala. Só aparece depois que você descobrir o submundo.</HH_Group_Underworld.description>
+  <HH_Group_Underworld.description>Portas, poços, balcões e cais para o que ninguém comenta. Aparece enquanto o módulo Submundo estiver ligado e a intensidade do conteúdo não for Aconchegante.</HH_Group_Underworld.description>
 </LanguageData>

@@ -405,7 +405,7 @@
   <HH.Setting.underworld.gang.intervalDays>帮派来访间隔（天）</HH.Setting.underworld.gang.intervalDays>
   <HH.Setting.underworld.gang.intervalDays.Desc>后屋、格斗坑或销赃者存在之后，帮派来访之间的平均间隔。</HH.Setting.underworld.gang.intervalDays.Desc>
   <HH.Setting.underworld.gang.intimidateChance>帮派索要保护费的几率</HH.Setting.underworld.gang.intimidateChance>
-  <HH.Setting.underworld.gang.intimidateChance.Desc>随难度滑块变化；「标准房」及更简单的难度下，除了可以拒绝的对话外，绝不会强迫您做任何事。</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>随难度滑块变化。在“标准房”及更简单的难度下，它至多只是一个可以拒绝的提议。</HH.Setting.underworld.gang.intimidateChance.Desc>
   <HH.Setting.underworld.gang.prisonAccess>帮派可以参观监狱</HH.Setting.underworld.gang.prisonAccess>
   <HH.Setting.underworld.gang.prisonAccess.Desc>允许帮派客人参观牢房（审问囚犯）。默认关闭；否则所有客人都不得进入监狱。</HH.Setting.underworld.gang.prisonAccess.Desc>
   <HH.Setting.underworld.gang.protectionFee>索要的保护费</HH.Setting.underworld.gang.protectionFee>
@@ -437,9 +437,9 @@
   <HH.Setting.underworld.pit.intervalHours>两场比斗的间隔（小时）</HH.Setting.underworld.pit.intervalHours>
   <HH.Setting.underworld.pit.intervalHours.Desc>格斗场拥有足够的斗士和观众时，每隔这么久开始一场比斗。</HH.Setting.underworld.pit.intervalHours.Desc>
   <HH.Setting.underworld.pit.maxBoutTicks>最长比斗时长（tick）</HH.Setting.underworld.pit.maxBoutTicks>
-  <HH.Setting.underworld.pit.maxBoutTicks.Desc>在此时间内无人获胜的比斗判为平局，所有赌注全部退还。</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>超过这个时间后，得分占点数上限比例较小的一方获胜。比例相同则为平局，所有赌注退还。</HH.Setting.underworld.pit.maxBoutTicks.Desc>
   <HH.Setting.underworld.pit.yieldHealth>认输血量</HH.Setting.underworld.pit.yieldHealth>
-  <HH.Setting.underworld.pit.yieldHealth.Desc>斗士的生命值低于此比例时比斗结束，除非是不死不休的决斗。</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>囚犯与动物的比赛，在一方的健康低于这个比例时结束，除非是生死战。人与人的比赛按点数结束。</HH.Setting.underworld.pit.yieldHealth.Desc>
   <HH.Setting.underworld.scandalCooldownDays>丑闻间隔（天）</HH.Setting.underworld.scandalCooldownDays>
   <HH.Setting.underworld.scandalCooldownDays.Desc>每张地图在这么多天内最多发生一起丑闻。</HH.Setting.underworld.scandalCooldownDays.Desc>
   <HH.Setting.underworld.smuggler.inspectChance>被检查的概率</HH.Setting.underworld.smuggler.inspectChance>
@@ -531,4 +531,18 @@
   <HH.SettingCat.Wealthandmood>财富与心情</HH.SettingCat.Wealthandmood>
   <HH.SettingCat.Whispers>耳语</HH.SettingCat.Whispers>
   <HH.SettingCat.Wing>客翼</HH.SettingCat.Wing>
+  <HH.Setting.underworld.gang.demandHours>回应保护费要求的时限（小时）</HH.Setting.underworld.gang.demandHours>
+  <HH.Setting.underworld.gang.demandHours.Desc>在此时限内没有回应的要求，视为拒绝。</HH.Setting.underworld.gang.demandHours.Desc>
+  <HH.Setting.underworld.gang.firstDays>第一个帮派出现前的天数</HH.Setting.underworld.gang.firstDays>
+  <HH.Setting.underworld.gang.firstDays.Desc>在第一个后间、销赃柜台或格斗坑出现后，第一个帮派会在大约这么多天（一半到一倍半之间）后到来。</HH.Setting.underworld.gang.firstDays.Desc>
+  <HH.Setting.underworld.gang.retryHours>帮派来访失败后再次尝试前的等待小时数</HH.Setting.underworld.gang.retryHours>
+  <HH.Setting.underworld.gang.retryHours.Desc>帮派无法到来时（没有友好派系，或没有进入地图的路），下一次尝试在这么多小时之后。</HH.Setting.underworld.gang.retryHours.Desc>
+  <HH.Setting.underworld.pit.guestPurse>获胜访客的奖金</HH.Setting.underworld.pit.guestPurse>
+  <HH.Setting.underworld.pit.guestPurse.Desc>赢下比赛的访客可获得这么多银币，从该场比赛宅邸的抽成中支付（没有抽成，就没有奖金）。</HH.Setting.underworld.pit.guestPurse.Desc>
+  <HH.Setting.underworld.pit.opponentFee>雇佣对手的费用</HH.Setting.underworld.pit.opponentFee>
+  <HH.Setting.underworld.pit.opponentFee.Desc>“叫来对手”会为单人格斗者雇一头坑兽。殖民地支付这笔费用：先从钱柜付，再用库存银币，最后用银行。</HH.Setting.underworld.pit.opponentFee.Desc>
+  <HH.Setting.underworld.pit.scoreLimit>输掉比赛的点数</HH.Setting.underworld.pit.scoreLimit>
+  <HH.Setting.underworld.pit.scoreLimit.Desc>与访客、殖民者或奴隶的比赛按点数决胜：当一方本会受到的伤害达到这个点数乘以其健康系数时，该方落败。没有人受伤。</HH.Setting.underworld.pit.scoreLimit.Desc>
+  <HH.Setting.underworld.smuggler.offerHours>走私船等待的小时数</HH.Setting.underworld.smuggler.offerHours>
+  <HH.Setting.underworld.smuggler.offerHours.Desc>在此时限内没有回应，船就会离开；不会发生别的事。</HH.Setting.underworld.smuggler.offerHours.Desc>
 </LanguageData>

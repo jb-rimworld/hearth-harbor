@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Setting.core.researchMode>Режим исследований</HH.Setting.core.researchMode>
-  <HH.Setting.core.researchMode.Desc>Полный: дерево исследований Hearth &amp; Harbor и дерево Silverline ограничивают постройки и функции. Выкл.: всё доступно с самого начала (тёмным проектам подземелья всё равно нужно открытие).</HH.Setting.core.researchMode.Desc>
+  <HH.Setting.core.researchMode.Desc>Полный: исследования Hearth &amp; Harbor и Silverline открывают постройки и функции. Выкл.: всё доступно с самого начала.</HH.Setting.core.researchMode.Desc>
   <HH.Enum.CoreResearchMode.Full>Полный</HH.Enum.CoreResearchMode.Full>
   <HH.Enum.CoreResearchMode.Off>Выкл.</HH.Enum.CoreResearchMode.Off>
   <HH.Gate.ModuleOff>Модуль выключен: {0}</HH.Gate.ModuleOff>

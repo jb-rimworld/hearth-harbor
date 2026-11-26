@@ -405,7 +405,7 @@
   <HH.Setting.underworld.gang.intervalDays>갱단 방문 간격(일)</HH.Setting.underworld.gang.intervalDays>
   <HH.Setting.underworld.gang.intervalDays.Desc>뒷방, 격투장 또는 장물아비가 생긴 뒤 갱단 방문 사이의 평균 시간.</HH.Setting.underworld.gang.intervalDays.Desc>
   <HH.Setting.underworld.gang.intimidateChance>갱단이 보호비를 요구할 확률</HH.Setting.underworld.gang.intimidateChance>
-  <HH.Setting.underworld.gang.intimidateChance.Desc>난이도 슬라이더를 따릅니다. 표준 객실 이하에서는 거절할 수 있는 대화창 말고는 아무것도 강요하지 않습니다.</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>난이도 슬라이더를 따릅니다. 표준 객실 이하에서는 거절할 수 있는 제안에 그칩니다.</HH.Setting.underworld.gang.intimidateChance.Desc>
   <HH.Setting.underworld.gang.prisonAccess>갱단의 감옥 방문 허용</HH.Setting.underworld.gang.prisonAccess>
   <HH.Setting.underworld.gang.prisonAccess.Desc>갱단 손님에게 유치장 견학(수감자 심문)을 허용합니다. 기본값은 꺼짐이며, 그 밖에는 모든 손님에게 감옥이 닫혀 있습니다.</HH.Setting.underworld.gang.prisonAccess.Desc>
   <HH.Setting.underworld.gang.protectionFee>요구하는 보호비</HH.Setting.underworld.gang.protectionFee>
@@ -437,9 +437,9 @@
   <HH.Setting.underworld.pit.intervalHours>경기 간격(시간)</HH.Setting.underworld.pit.intervalHours>
   <HH.Setting.underworld.pit.intervalHours.Desc>투사와 관중이 충분한 투기장은 이 간격마다 경기를 시작합니다.</HH.Setting.underworld.pit.intervalHours.Desc>
   <HH.Setting.underworld.pit.maxBoutTicks>최장 경기 시간(틱)</HH.Setting.underworld.pit.maxBoutTicks>
-  <HH.Setting.underworld.pit.maxBoutTicks.Desc>이 시간 안에 승자가 나지 않으면 무승부로 보고 모든 판돈을 돌려줍니다.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>이 시간이 지나면 점수 한도 대비 점수 비율이 더 낮은 쪽이 이깁니다. 비율이 같으면 무승부이고 모든 판돈은 돌려줍니다.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
   <HH.Setting.underworld.pit.yieldHealth>항복 체력</HH.Setting.underworld.pit.yieldHealth>
-  <HH.Setting.underworld.pit.yieldHealth.Desc>투사의 체력이 이 비율 아래로 떨어지면 경기가 끝납니다. 죽을 때까지 싸우는 경기는 예외입니다.</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>죄수와 동물의 대결은 한쪽의 건강이 이 비율 아래로 떨어지면 끝납니다. 죽을 때까지 싸우는 경우는 예외입니다. 사람이 하는 대결은 점수로 끝납니다.</HH.Setting.underworld.pit.yieldHealth.Desc>
   <HH.Setting.underworld.scandalCooldownDays>스캔들 사이 간격(일)</HH.Setting.underworld.scandalCooldownDays>
   <HH.Setting.underworld.scandalCooldownDays.Desc>맵마다 이 기간 동안 스캔들은 최대 한 번만 일어납니다.</HH.Setting.underworld.scandalCooldownDays.Desc>
   <HH.Setting.underworld.smuggler.inspectChance>단속 확률</HH.Setting.underworld.smuggler.inspectChance>
@@ -531,4 +531,18 @@
   <HH.SettingCat.Wealthandmood>재산과 기분</HH.SettingCat.Wealthandmood>
   <HH.SettingCat.Whispers>속삭임</HH.SettingCat.Whispers>
   <HH.SettingCat.Wing>동</HH.SettingCat.Wing>
+  <HH.Setting.underworld.gang.demandHours>보호비 요구에 답할 시간(시간)</HH.Setting.underworld.gang.demandHours>
+  <HH.Setting.underworld.gang.demandHours.Desc>이 시간 안에 답하지 않은 요구는 거절로 간주됩니다.</HH.Setting.underworld.gang.demandHours.Desc>
+  <HH.Setting.underworld.gang.firstDays>첫 갱단까지의 일수</HH.Setting.underworld.gang.firstDays>
+  <HH.Setting.underworld.gang.firstDays.Desc>첫 뒷방, 장물 카운터, 싸움터가 생기고 약 이 일수(절반에서 1.5배 사이)가 지나면 첫 갱단이 옵니다.</HH.Setting.underworld.gang.firstDays.Desc>
+  <HH.Setting.underworld.gang.retryHours>실패한 갱단 방문을 다시 시도하기까지의 시간(시간)</HH.Setting.underworld.gang.retryHours>
+  <HH.Setting.underworld.gang.retryHours.Desc>갱단이 올 수 없을 때(우호 진영이 없거나 맵에 들어올 길이 없을 때) 이 시간 뒤에 다시 시도합니다.</HH.Setting.underworld.gang.retryHours.Desc>
+  <HH.Setting.underworld.pit.guestPurse>이긴 손님에게 주는 상금</HH.Setting.underworld.pit.guestPurse>
+  <HH.Setting.underworld.pit.guestPurse.Desc>대결에서 이긴 손님은 그 대결에서 집이 가져간 몫에서 이만큼의 은화를 받습니다(몫이 없으면 상금도 없습니다).</HH.Setting.underworld.pit.guestPurse.Desc>
+  <HH.Setting.underworld.pit.opponentFee>고용한 상대의 수수료</HH.Setting.underworld.pit.opponentFee>
+  <HH.Setting.underworld.pit.opponentFee.Desc>"상대 부르기"는 혼자인 싸움꾼에게 싸움터 짐승을 고용해 줍니다. 식민지가 이 수수료를 냅니다: 먼저 금전 서랍, 다음 재고 은화, 그다음 은행 순입니다.</HH.Setting.underworld.pit.opponentFee.Desc>
+  <HH.Setting.underworld.pit.scoreLimit>대결에서 지는 점수</HH.Setting.underworld.pit.scoreLimit>
+  <HH.Setting.underworld.pit.scoreLimit.Desc>손님, 식민지 주민, 노예와의 대결은 점수로 겨룹니다: 받았을 피해가 이 점수에 건강 배율을 곱한 값에 이르면 패배합니다. 아무도 다치지 않습니다.</HH.Setting.underworld.pit.scoreLimit.Desc>
+  <HH.Setting.underworld.smuggler.offerHours>밀수선이 기다리는 시간(시간)</HH.Setting.underworld.smuggler.offerHours>
+  <HH.Setting.underworld.smuggler.offerHours.Desc>이 시간 안에 답하지 않은 배는 떠나며, 다른 일은 일어나지 않습니다.</HH.Setting.underworld.smuggler.offerHours.Desc>
 </LanguageData>

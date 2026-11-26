@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_Underworld_Discovery.label>后屋（关键项目）</HH_Underworld_Discovery.label>
-  <HH_Underworld_Discovery.description>内部关键项目。在陌生人的提议被接受后完成。从不显示。</HH_Underworld_Discovery.description>
+  <HH_Underworld_Discovery.description>旧的内部钥匙项目，为旧存档保留。永不显示，也不解锁任何东西。</HH_Underworld_Discovery.description>
   <HH_Underworld_1.label>后屋</HH_Underworld_1.label>
-  <HH_Underworld_1.description>后屋门、格斗坑、销赃柜台、走私码头和药物休息室：一座宅邸经营菜单之外那门生意所需的一切。</HH_Underworld_1.description>
+  <HH_Underworld_1.description>旧项目，为旧存档保留。永不显示，也不解锁任何东西：后间门、格斗坑、销赃柜台、走私码头和毒品休息室都不需要研究。</HH_Underworld_1.description>
   <HH_TheHunt.label>狩猎</HH_TheHunt.label>
-  <HH_TheHunt.description>一块围栏猎场。有钱的访客愿意花大价钱射杀你放入其中的东西。从黑暗内容起，囚犯可以成为猎物，但会附带清楚的警告。</HH_TheHunt.description>
+  <HH_TheHunt.description>一片围起来的猎场。有钱的访客愿意出大价钱，来射杀你放进去的东西。在黑暗内容且意识形态相符时，或在严酷内容下，只要你在标记上允许，囚犯也可以成为猎物。</HH_TheHunt.description>
   <HH_BlackClinic.label>黑市诊所</HH_BlackClinic.label>
   <HH_BlackClinic.description>一个柜台，匿名捐献者在此购买摘取的器官，不问任何问题。仅在黑暗或残酷内容下可用。</HH_BlackClinic.description>
 </LanguageData>

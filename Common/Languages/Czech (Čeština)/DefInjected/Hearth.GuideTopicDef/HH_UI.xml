@@ -27,4 +27,16 @@
   <HH_Guide_YourGuests.steps.1.description>Ukazuje, co si host myslí, a umožní zvolit Základy, Doprovázet nebo Nábor.</HH_Guide_YourGuests.steps.1.description>
   <HH_Guide_YourGuests.steps.1.label>Vyber hosta a otevři záložku Host.</HH_Guide_YourGuests.steps.1.label>
   <HH_Guide_YourGuests.steps.2.label>Vyzkoušej jinou péči u hosta, který se ti líbí.</HH_Guide_YourGuests.steps.2.label>
+  <HH_Guide_BackRoom.description>Zápasy, příjemce kradeného zboží a gangy. Vše je volitelné: nic z toho se nestane, dokud to nepostavíte.</HH_Guide_BackRoom.description>
+  <HH_Guide_BackRoom.label>Zadní místnost</HH_Guide_BackRoom.label>
+  <HH_Guide_BackRoom.steps.0.description>Brána v ohradě nevadí. Aréna musí mít alespoň 3 na 3 pole. Značka říká, na co ještě čeká.</HH_Guide_BackRoom.steps.0.description>
+  <HH_Guide_BackRoom.steps.0.label>Postavte uzavřenou ohradu a dovnitř dejte značku jámy na boje.</HH_Guide_BackRoom.steps.0.label>
+  <HH_Guide_BackRoom.steps.1.description>Klikněte pravým tlačítkem na značku s kolonistou, zaškrtněte bojovníky pod „Bojovníci…“, nebo použijte „Zavolat soupeře“, když jste sami. Zápasy s hostem nebo kolonistou se bojují o body, takže nikdo nepřijde k úhoně.</HH_Guide_BackRoom.steps.1.description>
+  <HH_Guide_BackRoom.steps.1.label>Nechte skončit první zápas.</HH_Guide_BackRoom.steps.1.label>
+  <HH_Guide_BackRoom.steps.2.description>Gangy se tam scházejí a platí za to. Slušní hosté na ni občas narazí.</HH_Guide_BackRoom.steps.2.description>
+  <HH_Guide_BackRoom.steps.2.label>Postavte místnost, jejíž jediné dveře jsou dveře zadní místnosti.</HH_Guide_BackRoom.steps.2.label>
+  <HH_Guide_BackRoom.steps.3.description>První gang přijde zhruba den po vaší první zadní místnosti, pultu příjemce nebo jámě na boje. Stránka Podsvětí říká kdy.</HH_Guide_BackRoom.steps.3.description>
+  <HH_Guide_BackRoom.steps.3.label>Počkejte na první návštěvu gangu.</HH_Guide_BackRoom.steps.3.label>
+  <HH_Guide_BackRoom.steps.4.description>Gangy mu prodávají kořist a nakupují z jeho zásob. Platí z vlastní pokladničky.</HH_Guide_BackRoom.steps.4.description>
+  <HH_Guide_BackRoom.steps.4.label>Postavte pult příjemce kradeného zboží.</HH_Guide_BackRoom.steps.4.label>
 </LanguageData>

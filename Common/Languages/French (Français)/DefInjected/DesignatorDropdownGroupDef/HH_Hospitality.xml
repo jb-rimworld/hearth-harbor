@@ -7,5 +7,5 @@
   <HH_Group_City.label>vie urbaine</HH_Group_City.label>
   <HH_Group_City.description>Écrans de cinéma, fauteuils de salon de coiffure, bancs de parc et station de taxis.</HH_Group_City.description>
   <HH_Group_Underworld.label>arrière-salle</HH_Group_Underworld.label>
-  <HH_Group_Underworld.description>Portes, fosses, comptoirs et quais pour les choses dont personne ne parle. Visible seulement une fois le monde souterrain découvert.</HH_Group_Underworld.description>
+  <HH_Group_Underworld.description>Portes, fosses, comptoirs et quais pour ce dont personne ne parle. Affiché tant que le module Pègre est activé et que l'intensité du contenu n'est pas Douillet.</HH_Group_Underworld.description>
 </LanguageData>

@@ -7,5 +7,5 @@
   <HH_Group_City.label>城市生活</HH_Group_City.label>
   <HH_Group_City.description>电影银幕、理发椅、公园长椅和出租车站。</HH_Group_City.description>
   <HH_Group_Underworld.label>暗室</HH_Group_Underworld.label>
-  <HH_Group_Underworld.description>门、坑、柜台和码头，用于那些没人愿意谈论的东西。只有发现地下世界后才会显示。</HH_Group_Underworld.description>
+  <HH_Group_Underworld.description>为那些没人愿意提起的事准备的门、坑、柜台和码头。地下世界模块开启且内容强度不是温馨时显示。</HH_Group_Underworld.description>
 </LanguageData>

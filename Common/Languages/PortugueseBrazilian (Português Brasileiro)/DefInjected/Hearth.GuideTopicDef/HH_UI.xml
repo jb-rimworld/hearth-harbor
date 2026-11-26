@@ -27,4 +27,16 @@
   <HH_Guide_YourGuests.steps.1.description>Mostra o que o hóspede pensa e permite escolher Básico, Acompanhar ou Recrutar.</HH_Guide_YourGuests.steps.1.description>
   <HH_Guide_YourGuests.steps.1.label>Selecione um hóspede e abra a aba Hóspede.</HH_Guide_YourGuests.steps.1.label>
   <HH_Guide_YourGuests.steps.2.label>Experimente outro atendimento com um hóspede de que você goste.</HH_Guide_YourGuests.steps.2.label>
+  <HH_Guide_BackRoom.description>Lutas, um receptador e gangues. Tudo é opcional: nada disso acontece até você construir.</HH_Guide_BackRoom.description>
+  <HH_Guide_BackRoom.label>A sala dos fundos</HH_Guide_BackRoom.label>
+  <HH_Guide_BackRoom.steps.0.description>Um portão na cerca não atrapalha. A arena precisa de pelo menos 3 por 3 casas. O marcador diz o que ainda falta.</HH_Guide_BackRoom.steps.0.description>
+  <HH_Guide_BackRoom.steps.0.label>Construa uma cerca fechada e coloque um marcador de poço de luta dentro.</HH_Guide_BackRoom.steps.0.label>
+  <HH_Guide_BackRoom.steps.1.description>Clique com o botão direito no marcador com um colono, marque lutadores em "Lutadores…" ou use "Chamar um oponente" quando estiver sozinho. Combates com um hóspede ou um colono são lutados por pontos, então ninguém se fere.</HH_Guide_BackRoom.steps.1.description>
+  <HH_Guide_BackRoom.steps.1.label>Deixe a primeira luta terminar.</HH_Guide_BackRoom.steps.1.label>
+  <HH_Guide_BackRoom.steps.2.description>As gangues se reúnem ali e pagam por isso. Hóspedes respeitáveis podem topar com ela de vez em quando.</HH_Guide_BackRoom.steps.2.description>
+  <HH_Guide_BackRoom.steps.2.label>Construa uma sala cujas únicas portas sejam portas da sala dos fundos.</HH_Guide_BackRoom.steps.2.label>
+  <HH_Guide_BackRoom.steps.3.description>A primeira gangue chega cerca de um dia depois da sua primeira sala dos fundos, balcão do receptador ou poço de luta. A página do Submundo diz quando.</HH_Guide_BackRoom.steps.3.description>
+  <HH_Guide_BackRoom.steps.3.label>Espere a primeira visita de uma gangue.</HH_Guide_BackRoom.steps.3.label>
+  <HH_Guide_BackRoom.steps.4.description>As gangues vendem o saque a ele e compram do estoque dele. Ele paga com o próprio caixa.</HH_Guide_BackRoom.steps.4.description>
+  <HH_Guide_BackRoom.steps.4.label>Construa um balcão do receptador.</HH_Guide_BackRoom.steps.4.label>
 </LanguageData>

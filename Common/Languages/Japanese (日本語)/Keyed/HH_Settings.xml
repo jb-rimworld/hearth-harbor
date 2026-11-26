@@ -405,7 +405,7 @@
   <HH.Setting.underworld.gang.intervalDays>ギャングの訪問間隔（日）</HH.Setting.underworld.gang.intervalDays>
   <HH.Setting.underworld.gang.intervalDays.Desc>裏部屋、格闘場、故買屋が存在すると、ギャングの平均訪問間隔。</HH.Setting.underworld.gang.intervalDays.Desc>
   <HH.Setting.underworld.gang.intimidateChance>みかじめ料を要求される確率</HH.Setting.underworld.gang.intimidateChance>
-  <HH.Setting.underworld.gang.intimidateChance.Desc>難易度スライダーに従う。標準の部屋と易しい設定では、拒否できる対話以外は何も押し付けない。</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>難易度スライダーに従う。「標準の部屋」以下では、断れる申し出以上のものにはならない。</HH.Setting.underworld.gang.intimidateChance.Desc>
   <HH.Setting.underworld.gang.prisonAccess>ギャングが刑務所を訪れてよい</HH.Setting.underworld.gang.prisonAccess>
   <HH.Setting.underworld.gang.prisonAccess.Desc>ギャングの客に拘置所の見学（囚人への尋問）を許可。初期はオフ。それ以外では、すべての客に刑務所は閉鎖されています。</HH.Setting.underworld.gang.prisonAccess.Desc>
   <HH.Setting.underworld.gang.protectionFee>要求するみかじめ料</HH.Setting.underworld.gang.protectionFee>
@@ -437,9 +437,9 @@
   <HH.Setting.underworld.pit.intervalHours>試合の間隔（時間）</HH.Setting.underworld.pit.intervalHours>
   <HH.Setting.underworld.pit.intervalHours.Desc>戦う者と観客が十分にいる闘技場は、この間隔で試合を始める。</HH.Setting.underworld.pit.intervalHours.Desc>
   <HH.Setting.underworld.pit.maxBoutTicks>最長試合時間（ティック）</HH.Setting.underworld.pit.maxBoutTicks>
-  <HH.Setting.underworld.pit.maxBoutTicks.Desc>この時間内に勝者が決まらなかった試合は引き分け。全ての賭け金は返還される。</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>この時間が過ぎると、点数の上限に対する割合が小さい方の戦う者が勝つ。割合が同じなら引き分けで、賭け金はすべて返される。</HH.Setting.underworld.pit.maxBoutTicks.Desc>
   <HH.Setting.underworld.pit.yieldHealth>降参する体力</HH.Setting.underworld.pit.yieldHealth>
-  <HH.Setting.underworld.pit.yieldHealth.Desc>戦う者の体力がこの割合を下回ると試合は終わる（死闘の場合を除く）。</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>囚人と動物の試合は、戦う者の体力がこの割合を下回ると終わる。ただし死ぬまでの試合を除く。人どうしの試合は点数で終わる。</HH.Setting.underworld.pit.yieldHealth.Desc>
   <HH.Setting.underworld.scandalCooldownDays>スキャンダルの間隔（日）</HH.Setting.underworld.scandalCooldownDays>
   <HH.Setting.underworld.scandalCooldownDays.Desc>マップごとに、この日数に最大1件までスキャンダルが起こる。</HH.Setting.underworld.scandalCooldownDays.Desc>
   <HH.Setting.underworld.smuggler.inspectChance>税関検査の確率</HH.Setting.underworld.smuggler.inspectChance>
@@ -531,4 +531,18 @@
   <HH.SettingCat.Wealthandmood>財産と気分</HH.SettingCat.Wealthandmood>
   <HH.SettingCat.Whispers>ささやき</HH.SettingCat.Whispers>
   <HH.SettingCat.Wing>棟</HH.SettingCat.Wing>
+  <HH.Setting.underworld.gang.demandHours>みかじめ料の要求に答える時間</HH.Setting.underworld.gang.demandHours>
+  <HH.Setting.underworld.gang.demandHours.Desc>この時間内に答えなかった要求は、拒否したものとみなされる。</HH.Setting.underworld.gang.demandHours.Desc>
+  <HH.Setting.underworld.gang.firstDays>最初のギャングまでの日数</HH.Setting.underworld.gang.firstDays>
+  <HH.Setting.underworld.gang.firstDays.Desc>最初のギャングは、最初の奥の部屋、故買屋のカウンター、闘技場ができてから、約この日数後(半分から 1.5 倍の幅)に来る。</HH.Setting.underworld.gang.firstDays.Desc>
+  <HH.Setting.underworld.gang.retryHours>失敗したギャングの来訪を再試行するまでの時間</HH.Setting.underworld.gang.retryHours>
+  <HH.Setting.underworld.gang.retryHours.Desc>ギャングが来られないとき(友好的な勢力がない、マップに入る道がない)、次の試行はこの時間後になる。</HH.Setting.underworld.gang.retryHours.Desc>
+  <HH.Setting.underworld.pit.guestPurse>勝った客への賞金</HH.Setting.underworld.pit.guestPurse>
+  <HH.Setting.underworld.pit.guestPurse.Desc>試合に勝った客は、その試合の店の取り分からこの額の銀を受け取る(取り分がなければ賞金もない)。</HH.Setting.underworld.pit.guestPurse.Desc>
+  <HH.Setting.underworld.pit.opponentFee>雇った対戦相手の料金</HH.Setting.underworld.pit.opponentFee>
+  <HH.Setting.underworld.pit.opponentFee.Desc>「対戦相手を呼ぶ」は、一人の戦う者のために闘技場の獣を雇う。植民地がこの料金を払う。まず金庫から、次に備蓄の銀、最後に銀行から。</HH.Setting.underworld.pit.opponentFee.Desc>
+  <HH.Setting.underworld.pit.scoreLimit>試合に負ける点数</HH.Setting.underworld.pit.scoreLimit>
+  <HH.Setting.underworld.pit.scoreLimit.Desc>客、入植者、奴隷との試合は点数で決着する。受けたはずのダメージがこの点数に健康度の倍率をかけた値に達した方が負ける。誰も怪我をしない。</HH.Setting.underworld.pit.scoreLimit.Desc>
+  <HH.Setting.underworld.smuggler.offerHours>密輸者の船が待つ時間</HH.Setting.underworld.smuggler.offerHours>
+  <HH.Setting.underworld.smuggler.offerHours.Desc>この時間内に答えなかった船は去る。他には何も起きない。</HH.Setting.underworld.smuggler.offerHours.Desc>
 </LanguageData>

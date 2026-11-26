@@ -27,4 +27,16 @@
   <HH_Guide_YourGuests.steps.1.description>Montre ce que pense l'hôte et permet de choisir Services de base, Accompagner ou Recruter.</HH_Guide_YourGuests.steps.1.description>
   <HH_Guide_YourGuests.steps.1.label>Sélectionnez un hôte et ouvrez l'onglet Hôte.</HH_Guide_YourGuests.steps.1.label>
   <HH_Guide_YourGuests.steps.2.label>Essayez une autre prise en charge avec un hôte qui vous plaît.</HH_Guide_YourGuests.steps.2.label>
+  <HH_Guide_BackRoom.description>Des combats, un receleur et des gangs. Tout est facultatif : rien de cela n'arrive avant que vous le construisiez.</HH_Guide_BackRoom.description>
+  <HH_Guide_BackRoom.label>L'arrière-salle</HH_Guide_BackRoom.label>
+  <HH_Guide_BackRoom.steps.0.description>Un portail dans la clôture convient. L'arène doit faire au moins 3 sur 3 cases. Le marqueur indique ce qu'il attend encore.</HH_Guide_BackRoom.steps.0.description>
+  <HH_Guide_BackRoom.steps.0.label>Construisez une clôture fermée et placez-y un marqueur de fosse de combat.</HH_Guide_BackRoom.steps.0.label>
+  <HH_Guide_BackRoom.steps.1.description>Faites un clic droit sur le marqueur avec un colon, cochez des combattants sous « Combattants… », ou utilisez « Appeler un adversaire » si vous êtes seul. Les combats avec un invité ou un colon se jouent aux points : personne n'est blessé.</HH_Guide_BackRoom.steps.1.description>
+  <HH_Guide_BackRoom.steps.1.label>Laissez le premier combat se terminer.</HH_Guide_BackRoom.steps.1.label>
+  <HH_Guide_BackRoom.steps.2.description>Les gangs s'y retrouvent et paient pour cela. Les invités respectables y tombent parfois par hasard.</HH_Guide_BackRoom.steps.2.description>
+  <HH_Guide_BackRoom.steps.2.label>Construisez une pièce dont les seules portes sont des portes d'arrière-salle.</HH_Guide_BackRoom.steps.2.label>
+  <HH_Guide_BackRoom.steps.3.description>Le premier gang arrive environ un jour après votre première arrière-salle, votre premier comptoir de receleur ou votre première fosse de combat. La page Pègre indique quand.</HH_Guide_BackRoom.steps.3.description>
+  <HH_Guide_BackRoom.steps.3.label>Attendez la première visite d'un gang.</HH_Guide_BackRoom.steps.3.label>
+  <HH_Guide_BackRoom.steps.4.description>Les gangs lui vendent leur butin et lui achètent dans son stock. Il paie avec sa propre caisse.</HH_Guide_BackRoom.steps.4.description>
+  <HH_Guide_BackRoom.steps.4.label>Construisez un comptoir de receleur.</HH_Guide_BackRoom.steps.4.label>
 </LanguageData>

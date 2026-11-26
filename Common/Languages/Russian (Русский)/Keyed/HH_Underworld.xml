@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Tab.Underworld>Подполье</HH.Tab.Underworld>
-  <HH.Underworld.GateClosed>Недоступно: подполье в этой игре закрыто.</HH.Underworld.GateClosed>
+  <HH.Underworld.GateClosed>Недоступно в этой игре: модуль «Подполье» выключен или интенсивность содержимого этого не допускает (Настройки, Модули).</HH.Underworld.GateClosed>
   <HH.Underworld.BackRoomDoorInfo>Открыть эту дверь могут только персонал, колонисты и сомнительные гости.</HH.Underworld.BackRoomDoorInfo>
   <HH.Underworld.Scandal.BackRoomFound.Title>Заднюю комнату раскрыли</HH.Underworld.Scandal.BackRoomFound.Title>
   <HH.Underworld.Scandal.BackRoomFound.Text>Уважаемый гость открыл не ту дверь и увидел, что дом прячет за ними. К вечеру об этом узнает весь город.</HH.Underworld.Scandal.BackRoomFound.Text>
@@ -16,28 +16,23 @@
   <HH.Underworld.Pit.Enabled.Desc>Назначать поединки в этой яме.</HH.Underworld.Pit.Enabled.Desc>
   <HH.Underworld.Pit.Animals>Животные</HH.Underworld.Pit.Animals>
   <HH.Underworld.Pit.Animals.Desc>Животные ваших колонистов могут драться здесь.</HH.Underworld.Pit.Animals.Desc>
-  <HH.Underworld.Pit.Volunteers>Добровольцы</HH.Underworld.Pit.Volunteers>
-  <HH.Underworld.Pit.Volunteers.Desc>Колонисты, которым нравится драка (жажда крови или хороший ближний бой), могут вызваться. Добровольцы никогда не дерутся насмерть.</HH.Underworld.Pit.Volunteers.Desc>
+  <HH.Underworld.Pit.Volunteers>Добровольцы (старые сохранения)</HH.Underworld.Pit.Volunteers>
+  <HH.Underworld.Pit.Volunteers.Desc>Из старого сохранения: колонисты с жаждой крови или ближним боем 8 и выше тоже дерутся без отметки в «Бойцах». Выключите, чтобы дрались только отмеченные колонисты. Колонисты никогда не дерутся насмерть.</HH.Underworld.Pit.Volunteers.Desc>
   <HH.Underworld.Pit.Prisoners>Пленники</HH.Underworld.Pit.Prisoners>
-  <HH.Underworld.Pit.Prisoners.Desc>Пленников можно отправлять в яму. Только взрослые.</HH.Underworld.Pit.Prisoners.Desc>
+  <HH.Underworld.Pit.Prisoners.Desc>Здесь могут драться пленники колонии от 18 лет. Стража приводит их на арену и возвращает в камеру.</HH.Underworld.Pit.Prisoners.Desc>
   <HH.Underworld.Pit.Lethal>До смерти</HH.Underworld.Pit.Lethal>
-  <HH.Underworld.Pit.Lethal.Desc>Поединки пленников с животными заканчиваются, только когда один из них повержен. Для добровольцев никогда.</HH.Underworld.Pit.Lethal.Desc>
+  <HH.Underworld.Pit.Lethal.Desc>Поединки пленников и животных заканчиваются, только когда один из них повержен. Никогда для гостей, колонистов и рабов: их поединки всегда идут на очки.</HH.Underworld.Pit.Lethal.Desc>
   <HH.Underworld.Pit.StartNow>Начать поединок</HH.Underworld.Pit.StartNow>
-  <HH.Underworld.Pit.StartNow.Desc>Выбрать сейчас двух честных бойцов и пусть гости делают ставки.</HH.Underworld.Pit.StartNow.Desc>
+  <HH.Underworld.Pit.StartNow.Desc>Начать поединок сейчас: стороны, выбранные в «Бойцах», или два ближайших бойца. Гости не нужны, а предел справедливости не действует.</HH.Underworld.Pit.StartNow.Desc>
   <HH.Underworld.Pit.CannotStart>Поединка не будет: {0}</HH.Underworld.Pit.CannotStart>
   <HH.Underworld.Pit.ArenaOk>Арена: {0} клеток, закрыта.</HH.Underworld.Pit.ArenaOk>
   <HH.Underworld.Pit.ArenaOpen>Арена открыта или слишком большая: закройте ограждение.</HH.Underworld.Pit.ArenaOpen>
-  <HH.Underworld.Pit.NoFighters>допущено меньше двух бойцов</HH.Underworld.Pit.NoFighters>
+  <HH.Underworld.Pit.NoFighters>меньше двух бойцов</HH.Underworld.Pit.NoFighters>
   <HH.Underworld.Pit.NoFairPair>нет честной пары бойцов</HH.Underworld.Pit.NoFairPair>
-  <HH.Underworld.Pit.BoutRunning>Поединок: {0} против {1}.</HH.Underworld.Pit.BoutRunning>
   <HH.Underworld.Pit.BoutAnnounced>Поединок в яме: {0} против {1}. Ставки принимаются.</HH.Underworld.Pit.BoutAnnounced>
-  <HH.Underworld.Pit.Won>{0} побеждает в поединке. Дом забирает {1} серебра.</HH.Underworld.Pit.Won>
-  <HH.Underworld.Pit.Draw>Поединок заканчивается без победителя. Все ставки возвращены.</HH.Underworld.Pit.Draw>
-  <HH.Underworld.Fence.Inspect>Запас: {0} предметов на {1} серебра. Касса: {2} серебра.</HH.Underworld.Fence.Inspect>
   <HH.Underworld.Fence.Fund>Пополнить кассу</HH.Underworld.Fence.Fund>
   <HH.Underworld.Fence.Fund.Desc>Перевести серебро из кассы дома в кассу скупщика, до лимита из настроек.</HH.Underworld.Fence.Fund.Desc>
   <HH.Underworld.Fence.Funded>{0} серебра переведено в кассу.</HH.Underworld.Fence.Funded>
-  <HH.Underworld.Fence.NoCash>Касса пуста.</HH.Underworld.Fence.NoCash>
   <HH.Underworld.Fence.CannotPay>Покупатель не может заплатить.</HH.Underworld.Fence.CannotPay>
   <HH.Underworld.Fence.Exposed>Товар происходит из {0}, и там знают, где он оказался.</HH.Underworld.Fence.Exposed>
   <HH.Underworld.Gang.Title>Банда у двери</HH.Underworld.Gang.Title>
@@ -46,14 +41,12 @@
   <HH.Underworld.Gang.Demand.Text>Главарь банды из {0} опирается на ваш прилавок. «Славный дом. Было бы жаль, если бы с ним что-нибудь случилось. За {1} серебра мы позаботимся, чтобы ничего не случилось.»</HH.Underworld.Gang.Demand.Text>
   <HH.Underworld.Gang.Demand.Pay>Заплатить {0} серебра</HH.Underworld.Gang.Demand.Pay>
   <HH.Underworld.Gang.Demand.Refuse>Показать им дверь</HH.Underworld.Gang.Demand.Refuse>
-  <HH.Underworld.Gang.Demand.NoCash>в кассе не хватает</HH.Underworld.Gang.Demand.NoCash>
   <HH.Underworld.Tour.IntelTitle>Кое-что из допроса</HH.Underworld.Tour.IntelTitle>
   <HH.Underworld.Tour.IntelText>После часа с {0} банда оставила на прилавке записку: имя, место, день. Кто-то там что-то замышляет, и теперь вы знаете немного больше.</HH.Underworld.Tour.IntelText>
   <HH.Underworld.Smuggler.Title>Ящик у причала</HH.Underworld.Smuggler.Title>
-  <HH.Underworld.Smuggler.Text>Шаттл с погашенными огнями опустился у причала. Голос предлагает {0} предметов примерно на {1} серебра за {2}. Без вопросов и без чека.</HH.Underworld.Smuggler.Text>
+  <HH.Underworld.Smuggler.Text>К причалу подошла лодка с погашенными огнями. Голос предлагает {0} примерно на {1} серебра за {2} серебра. Без вопросов, без чека.</HH.Underworld.Smuggler.Text>
   <HH.Underworld.Smuggler.Buy>Купить за {0} серебра</HH.Underworld.Smuggler.Buy>
   <HH.Underworld.Smuggler.Decline>Отослать их</HH.Underworld.Smuggler.Decline>
-  <HH.Underworld.Smuggler.NoCash>в кассе не хватает</HH.Underworld.Smuggler.NoCash>
   <HH.Underworld.Smuggler.InspectTitle>Патруль заметил фонарь</HH.Underworld.Smuggler.InspectTitle>
   <HH.Underworld.Smuggler.InspectText>Имперский патруль увидел огни у вашего причала и записал это.</HH.Underworld.Smuggler.InspectText>
   <HH.Underworld.Hunt.Title>Охотничья группа</HH.Underworld.Hunt.Title>
@@ -62,8 +55,8 @@
   <HH.Underworld.Hunt.QuarryAnimals>животные</HH.Underworld.Hunt.QuarryAnimals>
   <HH.Underworld.Hunt.QuarryHuman>животные и пленник</HH.Underworld.Hunt.QuarryHuman>
   <HH.Underworld.Hunt.Prisoners>Пленник как дичь</HH.Underworld.Hunt.Prisoners>
-  <HH.Underworld.Hunt.Prisoners.Desc>Разрешить охотникам охотиться на пленника, выпущенного на угодья. Только при тёмном содержимом и подходящей идеологии.</HH.Underworld.Hunt.Prisoners.Desc>
-  <HH.Underworld.Hunt.GateContent>Нужно тёмное или мрачное содержимое, подтверждённое.</HH.Underworld.Hunt.GateContent>
+  <HH.Underworld.Hunt.Prisoners.Desc>Разрешить охотникам охотиться на пленника, выпущенного на угодья. Тёмное содержимое с подходящей идеологией или мрачное содержимое.</HH.Underworld.Hunt.Prisoners.Desc>
+  <HH.Underworld.Hunt.GateContent>Нужно тёмное или мрачное содержимое.</HH.Underworld.Hunt.GateContent>
   <HH.Underworld.Hunt.GatePrecept>Идеология колонии это не разрешает.</HH.Underworld.Hunt.GatePrecept>
   <HH.Underworld.Hunt.DeathTitle>Человек погиб на охоте</HH.Underworld.Hunt.DeathTitle>
   <HH.Underworld.Hunt.DeathText>{0} не пережил охоту. Его люди об этом узнают, и все, кто наблюдал, тоже.</HH.Underworld.Hunt.DeathText>
@@ -78,8 +71,231 @@
   <HH.Underworld.Page.Title>Подполье</HH.Underworld.Page.Title>
   <HH.Underworld.Page.Whispers>Шёпоты: {0} из 100.</HH.Underworld.Page.Whispers>
   <HH.Underworld.Page.Weights>Веса прибытия: солидные гости x{0}, изгои x{1}.</HH.Underworld.Page.Weights>
-  <HH.Underworld.Page.Stats1>Яма для боёв: {0} поединков, {1} ставок, доход дома {2} серебра.</HH.Underworld.Page.Stats1>
+  <HH.Underworld.Page.Stats1>Поединков в яме: {0}. Ставок: {1}. Доля дома: {2} серебра.</HH.Underworld.Page.Stats1>
   <HH.Underworld.Page.Stats2>Скупщик: куплено {0}, продано {1}, прибыль {2} серебра.</HH.Underworld.Page.Stats2>
   <HH.Underworld.Page.Stats3>Сеансы в салоне {0}, визиты банд {1}, высадки {2}, охоты {3}, органы {4}.</HH.Underworld.Page.Stats3>
   <HH.Underworld.Page.HighRollers>Слух о тайном казино привлекает крупных игроков.</HH.Underworld.Page.HighRollers>
+  <HH.Underworld.Ago.Moment>минуту</HH.Underworld.Ago.Moment>
+  <HH.Underworld.BackRoom.NoOrdinaryDoor>Пока не задняя комната: в этой комнате есть и обычная дверь.</HH.Underworld.BackRoom.NoOrdinaryDoor>
+  <HH.Underworld.BackRoom.NoOutside>Пока не задняя комната: комната открыта наружу.</HH.Underworld.BackRoom.NoOutside>
+  <HH.Underworld.BackRoom.NoRoom>Пока не задняя комната: за этой дверью нет комнаты.</HH.Underworld.BackRoom.NoRoom>
+  <HH.Underworld.BackRoom.Off>Обычная дверь: подполье выключено (модуль или «Уютное» содержимое).</HH.Underworld.BackRoom.Off>
+  <HH.Underworld.BackRoom.Status.Last>Последняя плата за заднюю комнату: {0} назад.</HH.Underworld.BackRoom.Status.Last>
+  <HH.Underworld.BackRoom.Status.NotBuilt>Постройте комнату, в которую ведут только двери задней комнаты.</HH.Underworld.BackRoom.Status.NotBuilt>
+  <HH.Underworld.BackRoom.Yes>Это задняя комната ({0} клеток).</HH.Underworld.BackRoom.Yes>
+  <HH.Underworld.Facility.Off>Подполье выключено (модуль или «Уютное» содержимое).</HH.Underworld.Facility.Off>
+  <HH.Underworld.Fence.Bought>Скупщик купил {0} за {1} серебра.</HH.Underworld.Fence.Bought>
+  <HH.Underworld.Fence.BuyFailed>Скупщик не смог купить {0}: {1}.</HH.Underworld.Fence.BuyFailed>
+  <HH.Underworld.Fence.CannotBuy>Сейчас купить нельзя: {0}.</HH.Underworld.Fence.CannotBuy>
+  <HH.Underworld.Fence.LowCash>Наличных только {0} серебра (касса и ящик): скупщик отказывается от товара дороже, самое дорогое он берёт до {1}.</HH.Underworld.Fence.LowCash>
+  <HH.Underworld.Fence.Sold>Скупщик продал {0} за {1} серебра.</HH.Underworld.Fence.Sold>
+  <HH.Underworld.Fence.Status.Last>Последняя сделка: {0} назад.</HH.Underworld.Fence.Status.Last>
+  <HH.Underworld.Fence.Status.NotBuilt>Постройте прилавок скупщика: банды продают ему добычу и покупают из его запасов.</HH.Underworld.Fence.Status.NotBuilt>
+  <HH.Underworld.Fence.Status.Waiting>Ждёт банду с товаром на продажу.</HH.Underworld.Fence.Status.Waiting>
+  <HH.Underworld.Fence.Stock>Запас: {0} предметов на {1} серебра. Ящик с деньгами: {2} серебра.</HH.Underworld.Fence.Stock>
+  <HH.Underworld.Fence.TakeOut>Забрать товар</HH.Underworld.Fence.TakeOut>
+  <HH.Underworld.Fence.TakeOut.Desc>Выложить весь запас на пол рядом с прилавком. Товар становится обычными вещами, которые колония может использовать или продать; скупщик забывает, откуда они украдены.</HH.Underworld.Fence.TakeOut.Desc>
+  <HH.Underworld.Fence.TakeOut.Empty>на складе пусто</HH.Underworld.Fence.TakeOut.Empty>
+  <HH.Underworld.Fence.TookOut>Рядом с прилавком выложено стопок: {0}.</HH.Underworld.Fence.TookOut>
+  <HH.Underworld.Fence.TookOut.NoRoom>У прилавка мало места: на складе осталось стопок: {0} из {1}.</HH.Underworld.Fence.TookOut.NoRoom>
+  <HH.Underworld.Fence.TookOut.One>Рядом с прилавком выложена одна стопка.</HH.Underworld.Fence.TookOut.One>
+  <HH.Underworld.Fence.Why.Closed>подполье выключено</HH.Underworld.Fence.Why.Closed>
+  <HH.Underworld.Fence.Why.TillEmpty>касса и ящик пусты</HH.Underworld.Fence.Why.TillEmpty>
+  <HH.Underworld.Fence.Why.TooLittle>наличных только {0} серебра, цена {1}</HH.Underworld.Fence.Why.TooLittle>
+  <HH.Underworld.Gang.Demand.Expired>Вы не ответили банде: она считает это отказом.</HH.Underworld.Gang.Demand.Expired>
+  <HH.Underworld.Gang.Demand.Letter.How>Выберите {0} или откройте вкладку «Подполье», чтобы заплатить или отказать. Колония платит из кассы, серебром на складе или из банка. Предложение действует {1} ч; если оно истечёт, это отказ.</HH.Underworld.Gang.Demand.Letter.How>
+  <HH.Underworld.Gang.Demand.Paid>Заплачено {0} серебра за защиту.</HH.Underworld.Gang.Demand.Paid>
+  <HH.Underworld.Gang.Demand.Pay.Desc>Колония платит из кассы, серебром на складе или из банка. Банда оставляет вас в покое, а её фракция относится к вам чуть лучше.</HH.Underworld.Gang.Demand.Pay.Desc>
+  <HH.Underworld.Gang.Demand.Refuse.Desc>Отказать. Фракция банды воспринимает это плохо и теряет расположение.</HH.Underworld.Gang.Demand.Refuse.Desc>
+  <HH.Underworld.Gang.Demand.Refused>Вы показали банде на дверь.</HH.Underworld.Gang.Demand.Refused>
+  <HH.Underworld.Gang.Demand.Waiting>{0} хочет {1} серебра за защиту (ответьте в течение {2}).</HH.Underworld.Gang.Demand.Waiting>
+  <HH.Underworld.Gang.Status.DemandAbove>Выше ждёт требование.</HH.Underworld.Gang.Status.DemandAbove>
+  <HH.Underworld.Gang.Status.Here>Здесь банда из {0} человек.</HH.Underworld.Gang.Status.Here>
+  <HH.Underworld.Gang.Status.Last>Последний визит банды: {0} назад.</HH.Underworld.Gang.Status.Last>
+  <HH.Underworld.Gang.Status.Next>Следующий визит банды примерно через {0}.</HH.Underworld.Gang.Status.Next>
+  <HH.Underworld.Gang.Status.NotBuilt>Банды приходят, когда у вас есть задняя комната, прилавок скупщика или яма.</HH.Underworld.Gang.Status.NotBuilt>
+  <HH.Underworld.Gang.Status.PrisonOff>Банды могут допрашивать ваших пленников, если вы разрешите это в настройках.</HH.Underworld.Gang.Status.PrisonOff>
+  <HH.Underworld.Gang.Status.Retry>Последняя банда не смогла прийти: {0}. Следующая попытка через {1}.</HH.Underworld.Gang.Status.Retry>
+  <HH.Underworld.Gang.Status.Waiting>Ждёт следующую банду.</HH.Underworld.Gang.Status.Waiting>
+  <HH.Underworld.Gang.Why.NoEntry>нет пути на карту</HH.Underworld.Gang.Why.NoEntry>
+  <HH.Underworld.Gang.Why.NoFacility>нет задней комнаты, прилавка скупщика или ямы</HH.Underworld.Gang.Why.NoFacility>
+  <HH.Underworld.Gang.Why.NoFaction>нет дружественной фракции</HH.Underworld.Gang.Why.NoFaction>
+  <HH.Underworld.Gang.Why.NoPawns>не нашлось членов банды</HH.Underworld.Gang.Why.NoPawns>
+  <HH.Underworld.Hunt.Closed>Охоты нет: модуль или интенсивность содержимого её не допускают.</HH.Underworld.Hunt.Closed>
+  <HH.Underworld.Hunt.Next>Следующая охота примерно через {0}.</HH.Underworld.Hunt.Next>
+  <HH.Underworld.Hunt.Open>Открыто: замкните ограждение вокруг угодий (не больше {0} клеток).</HH.Underworld.Hunt.Open>
+  <HH.Underworld.Hunt.Running>Идёт охота.</HH.Underworld.Hunt.Running>
+  <HH.Underworld.Hunt.Status.Last>Последняя охота: {0} назад.</HH.Underworld.Hunt.Status.Last>
+  <HH.Underworld.Hunt.Status.NotBuilt>Изучите охоту, затем поставьте маркер угодий внутри закрытого ограждения не меньше {0} клеток.</HH.Underworld.Hunt.Status.NotBuilt>
+  <HH.Underworld.Hunt.Status.NotBuiltResearched>Поставьте маркер угодий внутри закрытого ограждения на {0}-{1} клеток.</HH.Underworld.Hunt.Status.NotBuiltResearched>
+  <HH.Underworld.Hunt.TooBig>Слишком много: {0} клеток, не больше {1}.</HH.Underworld.Hunt.TooBig>
+  <HH.Underworld.Hunt.TooSmall>Слишком мало: {0} из {1} клеток.</HH.Underworld.Hunt.TooSmall>
+  <HH.Underworld.Lounge.Status.Closed>Сейчас закрыто: салон открывается вечером.</HH.Underworld.Lounge.Status.Closed>
+  <HH.Underworld.Lounge.Status.Last>Последний сеанс: {0} назад.</HH.Underworld.Lounge.Status.Last>
+  <HH.Underworld.Lounge.Status.NotBuilt>Поставьте вывеску заведения «салон с дурманом» в комнату с двумя диванами или креслами.</HH.Underworld.Lounge.Status.NotBuilt>
+  <HH.Underworld.Lounge.Status.NotReady>Салон ещё не готов.</HH.Underworld.Lounge.Status.NotReady>
+  <HH.Underworld.Lounge.Status.Open>Открыто.</HH.Underworld.Lounge.Status.Open>
+  <HH.Underworld.Offer.Gone>Предложение снято: лодки или банды уже нет.</HH.Underworld.Offer.Gone>
+  <HH.Underworld.Organ.Status.Last>Последняя продажа: {0} назад.</HH.Underworld.Organ.Status.Last>
+  <HH.Underworld.Organ.Status.NotBuilt>Изучите чёрную клинику и постройте её прилавок.</HH.Underworld.Organ.Status.NotBuilt>
+  <HH.Underworld.Organ.Status.NotBuiltResearched>Постройте прилавок клиники органов.</HH.Underworld.Organ.Status.NotBuiltResearched>
+  <HH.Underworld.Organ.Status.Waiting>Органы, оставленные на прилавке, забирают ночью (с 23:00 до 04:00).</HH.Underworld.Organ.Status.Waiting>
+  <HH.Underworld.Page.Build>Построить</HH.Underworld.Page.Build>
+  <HH.Underworld.Page.Build.Desc>Закрывает эту вкладку и выбирает {0} в меню строительства.</HH.Underworld.Page.Build.Desc>
+  <HH.Underworld.Page.Build.Hidden>Сейчас нет в меню строительства.</HH.Underworld.Page.Build.Hidden>
+  <HH.Underworld.Page.Build.Missing>Нет в меню строительства этой игры.</HH.Underworld.Page.Build.Missing>
+  <HH.Underworld.Page.Build.Research>Сначала нужно исследование: {0}.</HH.Underworld.Page.Build.Research>
+  <HH.Underworld.Page.ContentLevel>Интенсивность содержимого: {0}. Её можно изменить в настройках, на странице «Модули».</HH.Underworld.Page.ContentLevel>
+  <HH.Underworld.Page.DarkAdds>Тёмное содержимое добавило бы клинику органов, охоту на пленников и бои пленников насмерть.</HH.Underworld.Page.DarkAdds>
+  <HH.Underworld.Page.Facilities>Ваше дело в задней комнате</HH.Underworld.Page.Facilities>
+  <HH.Underworld.Page.NoMap>Откройте карту своей колонии, чтобы увидеть, что там построено.</HH.Underworld.Page.NoMap>
+  <HH.Underworld.Page.Offers>Ждёт вашего ответа</HH.Underworld.Page.Offers>
+  <HH.Underworld.Page.Pit.More>Ещё ям на этой карте: {0}. Выберите их маркеры, чтобы увидеть.</HH.Underworld.Page.Pit.More>
+  <HH.Underworld.Page.Pit.NotBuilt>Постройте закрытое ограждение (калитка подойдёт) на 9-700 клеток и поставьте внутри маркер ямы для боёв.</HH.Underworld.Page.Pit.NotBuilt>
+  <HH.Underworld.Page.Row.backroom>Задние комнаты</HH.Underworld.Page.Row.backroom>
+  <HH.Underworld.Page.Row.clinic>Клиника органов</HH.Underworld.Page.Row.clinic>
+  <HH.Underworld.Page.Row.dock>Причал контрабандистов</HH.Underworld.Page.Row.dock>
+  <HH.Underworld.Page.Row.fence>Скупщик</HH.Underworld.Page.Row.fence>
+  <HH.Underworld.Page.Row.gangs>Банды</HH.Underworld.Page.Row.gangs>
+  <HH.Underworld.Page.Row.hunt>Охотничьи угодья</HH.Underworld.Page.Row.hunt>
+  <HH.Underworld.Page.Row.lounge>Салон с дурманом</HH.Underworld.Page.Row.lounge>
+  <HH.Underworld.Page.Row.pit>Яма для боёв</HH.Underworld.Page.Row.pit>
+  <HH.Underworld.Page.Show>Показать</HH.Underworld.Page.Show>
+  <HH.Underworld.Page.State.NotBuilt>Ещё не построено.</HH.Underworld.Page.State.NotBuilt>
+  <HH.Underworld.Page.State.Waiting>Построено, но чего-то ждёт.</HH.Underworld.Page.State.Waiting>
+  <HH.Underworld.Page.State.Working>Работает.</HH.Underworld.Page.State.Working>
+  <HH.Underworld.Page.StatsHead>Выручка на сегодня</HH.Underworld.Page.StatsHead>
+  <HH.Underworld.Page.Whispers.Desc>Каждый поединок, сделка и визит банды добавляют шепотки, и со временем они затихают. Больше шепотков: больше изгоев и меньше уважаемых гостей.</HH.Underworld.Page.Whispers.Desc>
+  <HH.Underworld.Page.WhispersHead>Шепотки</HH.Underworld.Page.WhispersHead>
+  <HH.Underworld.Pay.Loose>серебро считается только на складе или в домашней зоне</HH.Underworld.Pay.Loose>
+  <HH.Underworld.Pay.Short>у колонии {0} из {1} серебра</HH.Underworld.Pay.Short>
+  <HH.Underworld.Pit.Abort.Closed>яма закрыта</HH.Underworld.Pit.Abort.Closed>
+  <HH.Underworld.Pit.Abort.Drafted>{0} в боевом режиме</HH.Underworld.Pit.Abort.Drafted>
+  <HH.Underworld.Pit.Abort.Gone>{0} больше нет на карте</HH.Underworld.Pit.Abort.Gone>
+  <HH.Underworld.Pit.Abort.Hurt>{0} не может драться дальше</HH.Underworld.Pit.Abort.Hurt>
+  <HH.Underworld.Pit.Abort.Left>{0} пришлось уйти</HH.Underworld.Pit.Abort.Left>
+  <HH.Underworld.Pit.Abort.Mental>{0} теряет контроль</HH.Underworld.Pit.Abort.Mental>
+  <HH.Underworld.Pit.Abort.NoShow>{0} не может добраться до арены</HH.Underworld.Pit.Abort.NoShow>
+  <HH.Underworld.Pit.ArenaBig>Арена открыта или больше {0} клеток: замкните ограждение вокруг меньшей площади.</HH.Underworld.Pit.ArenaBig>
+  <HH.Underworld.Pit.ArenaSmall>Арена слишком мала: {0} клеток, нужно не меньше {1}.</HH.Underworld.Pit.ArenaSmall>
+  <HH.Underworld.Pit.BeastName>зверь ямы {0}</HH.Underworld.Pit.BeastName>
+  <HH.Underworld.Pit.BeastNotYours>Это животное нанято только для ямы.</HH.Underworld.Pit.BeastNotYours>
+  <HH.Underworld.Pit.BeastRef>{0}</HH.Underworld.Pit.BeastRef>
+  <HH.Underworld.Pit.BoutAnnounced.Beast>Поединок в яме: {0} против {1}. Он идёт на очки, так что {0} получит в худшем случае пару синяков.</HH.Underworld.Pit.BoutAnnounced.Beast>
+  <HH.Underworld.Pit.BoutAnnounced.Plain>Поединок в яме: {0} против {1}.</HH.Underworld.Pit.BoutAnnounced.Plain>
+  <HH.Underworld.Pit.CallOpponent>Позвать соперника ({0})</HH.Underworld.Pit.CallOpponent>
+  <HH.Underworld.Pit.CallOpponent.Desc>Нанять зверя для одинокого бойца: животное примерно вашей силы, на один поединок. Колония платит {0} серебра: сначала из кассы, потом серебром на складе, потом из банка.</HH.Underworld.Pit.CallOpponent.Desc>
+  <HH.Underworld.Pit.CallOpponent.For>Будет драться: {0}.</HH.Underworld.Pit.CallOpponent.For>
+  <HH.Underworld.Pit.CallOpponent.Free>Позвать соперника (первый бесплатно)</HH.Underworld.Pit.CallOpponent.Free>
+  <HH.Underworld.Pit.CallOpponent.FreeDesc>Первый соперник за счёт заведения.</HH.Underworld.Pit.CallOpponent.FreeDesc>
+  <HH.Underworld.Pit.CalledOff>Поединок отменён: {0}.</HH.Underworld.Pit.CalledOff>
+  <HH.Underworld.Pit.FightHere>Драться в яме</HH.Underworld.Pit.FightHere>
+  <HH.Underworld.Pit.FightHere.Against>Драться в яме против {0}</HH.Underworld.Pit.FightHere.Against>
+  <HH.Underworld.Pit.FightHere.Queue>Драться в яме (следующий поединок)</HH.Underworld.Pit.FightHere.Queue>
+  <HH.Underworld.Pit.FightersBtn>Бойцы…</HH.Underworld.Pit.FightersBtn>
+  <HH.Underworld.Pit.FightersBtn.Desc>Все, кто мог бы драться в этой яме, и почему кто-то сейчас не может. Отметьте колонистов, которым можно здесь драться, выберите две стороны и начните поединок или позовите соперника для одинокого бойца.</HH.Underworld.Pit.FightersBtn.Desc>
+  <HH.Underworld.Pit.Guests>Гости-бойцы</HH.Underworld.Pit.Guests>
+  <HH.Underworld.Pit.Guests.Desc>Гости могут драться здесь: сомнительные гости и члены банд всегда, остальные взрослые гости, если они не добрые и у них есть жажда крови, черта «драчун» или ближний бой 6 и выше. Только гости, которые бодрствуют, свободны, здоровы и задержатся. Их поединки идут на очки: никто не пострадает, а выигравший гость получает небольшой приз из доли дома.</HH.Underworld.Pit.Guests.Desc>
+  <HH.Underworld.Pit.Hint.Animals>разрешите животных</HH.Underworld.Pit.Hint.Animals>
+  <HH.Underworld.Pit.Hint.Call>позовите соперника</HH.Underworld.Pit.Hint.Call>
+  <HH.Underworld.Pit.Hint.Guests>разрешите гостей</HH.Underworld.Pit.Hint.Guests>
+  <HH.Underworld.Pit.Hint.Or>{0} или {1}</HH.Underworld.Pit.Hint.Or>
+  <HH.Underworld.Pit.Hint.Tick>отметьте второго колониста</HH.Underworld.Pit.Hint.Tick>
+  <HH.Underworld.Pit.Hint.Wait>дождитесь гостя, который любит драться</HH.Underworld.Pit.Hint.Wait>
+  <HH.Underworld.Pit.Kind.Animal>животное</HH.Underworld.Pit.Kind.Animal>
+  <HH.Underworld.Pit.Kind.Beast>нанятый соперник</HH.Underworld.Pit.Kind.Beast>
+  <HH.Underworld.Pit.Kind.Colonist>колонист</HH.Underworld.Pit.Kind.Colonist>
+  <HH.Underworld.Pit.Kind.Guest>гость</HH.Underworld.Pit.Kind.Guest>
+  <HH.Underworld.Pit.Kind.Prisoner>пленник</HH.Underworld.Pit.Kind.Prisoner>
+  <HH.Underworld.Pit.Last>Последний поединок: {0} побеждает {1}, банк {2}, дом {3}.</HH.Underworld.Pit.Last>
+  <HH.Underworld.Pit.Last.Draw>Последний поединок: {0} против {1}, без победителя.</HH.Underworld.Pit.Last.Draw>
+  <HH.Underworld.Pit.Last.NoBets>Последний поединок: {0} побеждает {1}.</HH.Underworld.Pit.Last.NoBets>
+  <HH.Underworld.Pit.PursePaid>{0} получает приз в {1} серебра.</HH.Underworld.Pit.PursePaid>
+  <HH.Underworld.Pit.Rating.Clear>{0} явный фаворит.</HH.Underworld.Pit.Rating.Clear>
+  <HH.Underworld.Pit.Rating.Even>Равный бой.</HH.Underworld.Pit.Rating.Even>
+  <HH.Underworld.Pit.Rating.Favourite>{0} фаворит.</HH.Underworld.Pit.Rating.Favourite>
+  <HH.Underworld.Pit.Ready>Бойцы готовы: {0} ({1}).</HH.Underworld.Pit.Ready>
+  <HH.Underworld.Pit.Ready.Many.Animal>животных: {0}</HH.Underworld.Pit.Ready.Many.Animal>
+  <HH.Underworld.Pit.Ready.Many.Colonist>колонистов: {0}</HH.Underworld.Pit.Ready.Many.Colonist>
+  <HH.Underworld.Pit.Ready.Many.Guest>гостей: {0}</HH.Underworld.Pit.Ready.Many.Guest>
+  <HH.Underworld.Pit.Ready.Many.Prisoner>пленников: {0}</HH.Underworld.Pit.Ready.Many.Prisoner>
+  <HH.Underworld.Pit.Ready.None>Бойцы готовы: никого.</HH.Underworld.Pit.Ready.None>
+  <HH.Underworld.Pit.Ready.One.Animal>{0} животное</HH.Underworld.Pit.Ready.One.Animal>
+  <HH.Underworld.Pit.Ready.One.Colonist>{0} колонист</HH.Underworld.Pit.Ready.One.Colonist>
+  <HH.Underworld.Pit.Ready.One.Guest>{0} гость</HH.Underworld.Pit.Ready.One.Guest>
+  <HH.Underworld.Pit.Ready.One.Prisoner>{0} пленник</HH.Underworld.Pit.Ready.One.Prisoner>
+  <HH.Underworld.Pit.Result.Draw>{0} против {1}: без победителя. Все ставки возвращены.</HH.Underworld.Pit.Result.Draw>
+  <HH.Underworld.Pit.Result.DrawNoBets>{0} против {1}: без победителя.</HH.Underworld.Pit.Result.DrawNoBets>
+  <HH.Underworld.Pit.Result.Points>Поединок шёл на очки: {0} получает в худшем случае пару синяков.</HH.Underworld.Pit.Result.Points>
+  <HH.Underworld.Pit.Result.PointsAll>Поединок шёл на очки: в худшем случае пара синяков.</HH.Underworld.Pit.Result.PointsAll>
+  <HH.Underworld.Pit.Result.Won>{0} побеждает {1} в яме. Банк {2} серебра, дом {3} серебра.</HH.Underworld.Pit.Result.Won>
+  <HH.Underworld.Pit.Result.WonNoBets>{0} побеждает {1} в яме.</HH.Underworld.Pit.Result.WonNoBets>
+  <HH.Underworld.Pit.Status.AutoFailed>Автоматического поединка нет: {0}. Начните поединок сами или позовите соперника.</HH.Underworld.Pit.Status.AutoFailed>
+  <HH.Underworld.Pit.Status.Closed>Закрыто: включите «Яма открыта» на маркере.</HH.Underworld.Pit.Status.Closed>
+  <HH.Underworld.Pit.Status.NeedArena>Ждёт закрытую арену.</HH.Underworld.Pit.Status.NeedArena>
+  <HH.Underworld.Pit.Status.Next>Следующий поединок через {0} ч.</HH.Underworld.Pit.Status.Next>
+  <HH.Underworld.Pit.Status.NoFighter>Бойцов пока нет: щёлкните маркер правой кнопкой с колонистом или отметьте одного в «Бойцах».</HH.Underworld.Pit.Status.NoFighter>
+  <HH.Underworld.Pit.Status.Off>Подполье выключено (модуль или «Уютное» содержимое).</HH.Underworld.Pit.Status.Off>
+  <HH.Underworld.Pit.Status.Peaceful>Мирное подполье включено: боёв нет.</HH.Underworld.Pit.Status.Peaceful>
+  <HH.Underworld.Pit.Status.Running>Идёт поединок: {0} против {1}.</HH.Underworld.Pit.Status.Running>
+  <HH.Underworld.Pit.Status.WaitFighter>Ждёт второго бойца: {0}.</HH.Underworld.Pit.Status.WaitFighter>
+  <HH.Underworld.Pit.Status.WaitGuests>Ждёт гостей для ставок (можно начать поединок самому).</HH.Underworld.Pit.Status.WaitGuests>
+  <HH.Underworld.Pit.Why.ArenaFull>на арене нет свободной клетки</HH.Underworld.Pit.Why.ArenaFull>
+  <HH.Underworld.Pit.Why.Asleep>спит</HH.Underworld.Pit.Why.Asleep>
+  <HH.Underworld.Pit.Why.BeastThere>соперник уже на арене</HH.Underworld.Pit.Why.BeastThere>
+  <HH.Underworld.Pit.Why.BoutRunning>идёт поединок</HH.Underworld.Pit.Why.BoutRunning>
+  <HH.Underworld.Pit.Why.Burning>горит</HH.Underworld.Pit.Why.Burning>
+  <HH.Underworld.Pit.Why.Busy>занят</HH.Underworld.Pit.Why.Busy>
+  <HH.Underworld.Pit.Why.Child>младше 18</HH.Underworld.Pit.Why.Child>
+  <HH.Underworld.Pit.Why.Downed>лежит без сил</HH.Underworld.Pit.Why.Downed>
+  <HH.Underworld.Pit.Why.Drafted>в боевом режиме</HH.Underworld.Pit.Why.Drafted>
+  <HH.Underworld.Pit.Why.Gone>его нет</HH.Underworld.Pit.Why.Gone>
+  <HH.Underworld.Pit.Why.Hurt>ранен</HH.Underworld.Pit.Why.Hurt>
+  <HH.Underworld.Pit.Why.InBout>уже в поединке</HH.Underworld.Pit.Why.InBout>
+  <HH.Underworld.Pit.Why.Kind>не хочет: добрый</HH.Underworld.Pit.Why.Kind>
+  <HH.Underworld.Pit.Why.Leaving>приходит или уходит</HH.Underworld.Pit.Why.Leaving>
+  <HH.Underworld.Pit.Why.LeavingSoon>скоро уйдёт</HH.Underworld.Pit.Why.LeavingSoon>
+  <HH.Underworld.Pit.Why.Mental>в психическом срыве</HH.Underworld.Pit.Why.Mental>
+  <HH.Underworld.Pit.Why.NoBeastKind>ни одно животное не подходит</HH.Underworld.Pit.Why.NoBeastKind>
+  <HH.Underworld.Pit.Why.NoBout>поединок не удалось начать</HH.Underworld.Pit.Why.NoBout>
+  <HH.Underworld.Pit.Why.NoLoneFighter>некому драться: щёлкните маркер правой кнопкой с колонистом или отметьте одного в «Бойцах»</HH.Underworld.Pit.Why.NoLoneFighter>
+  <HH.Underworld.Pit.Why.NoOpponent>нет соперника</HH.Underworld.Pit.Why.NoOpponent>
+  <HH.Underworld.Pit.Why.NoOpponentFor>некому драться с {0}</HH.Underworld.Pit.Why.NoOpponentFor>
+  <HH.Underworld.Pit.Why.NoTaste>не хочет: нет вкуса к дракам</HH.Underworld.Pit.Why.NoTaste>
+  <HH.Underworld.Pit.Why.NoViolence>неспособен к насилию</HH.Underworld.Pit.Why.NoViolence>
+  <HH.Underworld.Pit.Why.NotGuest>не гость заведения</HH.Underworld.Pit.Why.NotGuest>
+  <HH.Underworld.Pit.Why.NotTicked>не отмечен для боёв здесь</HH.Underworld.Pit.Why.NotTicked>
+  <HH.Underworld.Pit.Why.OnlyOne>Только один боец: {0}.</HH.Underworld.Pit.Why.OnlyOne>
+  <HH.Underworld.Pit.Why.QuestGuest>гость задания</HH.Underworld.Pit.Why.QuestGuest>
+  <HH.Underworld.Pit.Why.Trader>торговец</HH.Underworld.Pit.Why.Trader>
+  <HH.Underworld.Pit.Win.Anyone>любой подходящий</HH.Underworld.Pit.Win.Anyone>
+  <HH.Underworld.Pit.Win.Group.Animal>Животные</HH.Underworld.Pit.Win.Group.Animal>
+  <HH.Underworld.Pit.Win.Group.Beast>Нанятые соперники</HH.Underworld.Pit.Win.Group.Beast>
+  <HH.Underworld.Pit.Win.Group.Colonist>Колонисты и рабы</HH.Underworld.Pit.Win.Group.Colonist>
+  <HH.Underworld.Pit.Win.Group.Guest>Гости</HH.Underworld.Pit.Win.Group.Guest>
+  <HH.Underworld.Pit.Win.Group.Prisoner>Пленники</HH.Underworld.Pit.Win.Group.Prisoner>
+  <HH.Underworld.Pit.Win.GroupOff>Выключено: включите «{0}» на маркере.</HH.Underworld.Pit.Win.GroupOff>
+  <HH.Underworld.Pit.Win.Melee>ближний бой {0}</HH.Underworld.Pit.Win.Melee>
+  <HH.Underworld.Pit.Win.Nobody>здесь никого</HH.Underworld.Pit.Win.Nobody>
+  <HH.Underworld.Pit.Win.PickSides>Выберите стороны или оставьте «любой подходящий» для ближайшей пары.</HH.Underworld.Pit.Win.PickSides>
+  <HH.Underworld.Pit.Win.Power>сила {0}</HH.Underworld.Pit.Win.Power>
+  <HH.Underworld.Pit.Win.Ready>готов</HH.Underworld.Pit.Win.Ready>
+  <HH.Underworld.Pit.Win.SideA>Сторона А</HH.Underworld.Pit.Win.SideA>
+  <HH.Underworld.Pit.Win.SideB>Сторона Б</HH.Underworld.Pit.Win.SideB>
+  <HH.Underworld.Pit.Win.Start>Начать поединок сейчас</HH.Underworld.Pit.Win.Start>
+  <HH.Underworld.Pit.Win.Tick>Дерётся в этой яме</HH.Underworld.Pit.Win.Tick>
+  <HH.Underworld.Pit.Win.Title>Бойцы ямы</HH.Underworld.Pit.Win.Title>
+  <HH.Underworld.Smuggler.Bought>Ящик ваш за {0} серебра.</HH.Underworld.Smuggler.Bought>
+  <HH.Underworld.Smuggler.Buy.Desc>Колония платит из кассы, серебром на складе или из банка. Ящик сбрасывают рядом с причалом.</HH.Underworld.Smuggler.Buy.Desc>
+  <HH.Underworld.Smuggler.Decline.Desc>Прогнать лодку. Больше ничего не происходит.</HH.Underworld.Smuggler.Decline.Desc>
+  <HH.Underworld.Smuggler.Declined>Лодка уплыла без сделки.</HH.Underworld.Smuggler.Declined>
+  <HH.Underworld.Smuggler.Items.Many>{0} шт.</HH.Underworld.Smuggler.Items.Many>
+  <HH.Underworld.Smuggler.Items.One>{0} предмет</HH.Underworld.Smuggler.Items.One>
+  <HH.Underworld.Smuggler.Left>Лодка у причала не стала ждать дольше и уплыла.</HH.Underworld.Smuggler.Left>
+  <HH.Underworld.Smuggler.Letter.How>Выберите причал или откройте вкладку «Подполье», чтобы купить ящик или прогнать лодку. Колония платит из кассы, серебром на складе или из банка. Лодка ждёт {0} ч, потом уплывает.</HH.Underworld.Smuggler.Letter.How>
+  <HH.Underworld.Smuggler.Next>Следующая посадка: ночью, примерно через {0}.</HH.Underworld.Smuggler.Next>
+  <HH.Underworld.Smuggler.NextSoon>Следующая посадка: ночью, скоро.</HH.Underworld.Smuggler.NextSoon>
+  <HH.Underworld.Smuggler.Status.Last>Последняя посадка: {0} назад.</HH.Underworld.Smuggler.Status.Last>
+  <HH.Underworld.Smuggler.Status.NotBuilt>Постройте причал контрабандистов: ночью к нему пристают лодки с дешёвой контрабандой.</HH.Underworld.Smuggler.Status.NotBuilt>
+  <HH.Underworld.Smuggler.Waiting>У причала ждёт лодка: {0} за {1} серебра (уплывёт через {2}).</HH.Underworld.Smuggler.Waiting>
 </LanguageData>
