@@ -81,7 +81,7 @@ namespace Hearth.Underworld
             {
                 var kind = f.RandomPawnKind() ?? PawnKindDefOf.Villager;
                 var p = PawnGenerator.GeneratePawn(new PawnGenerationRequest(kind, f, PawnGenerationContext.NonPlayer, map.Tile, canGeneratePawnRelations: false));
-                if (!p.DevelopmentalStage.Adult()) { p.ageTracker.AgeBiologicalTicks = 25L * 3600000L; p.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
+                if (Underworld.IsMinor(p)) { p.ageTracker.AgeBiologicalTicks = 25L * 3600000L; p.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
                 GenSpawn.Spawn(p, CellFinder.RandomClosewalkCellNear(TestCells.Anchor(map), map, 12), map); Track(p);
                 list.Add(p);
             }
@@ -581,7 +581,7 @@ namespace Hearth.Underworld
             HSettings.Set("underworld.gang.prisonAccess", 1f);
             t.Check(Interrogation.Allowed(), "opt-in switch enables the tour");
             var prisoner = PawnGenerator.GeneratePawn(PawnKindDefOf.Villager, f);
-            if (!prisoner.DevelopmentalStage.Adult()) { prisoner.ageTracker.AgeBiologicalTicks = 25L * 3600000L; prisoner.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
+            if (Underworld.IsMinor(prisoner)) { prisoner.ageTracker.AgeBiologicalTicks = 25L * 3600000L; prisoner.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
             GenSpawn.Spawn(prisoner, CellFinder.RandomClosewalkCellNear(TestCells.Anchor(map), map, 10), map); UwKit.Track(prisoner);
             prisoner.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
             int tr0 = Underworld.Comp.Tours;
@@ -891,7 +891,7 @@ namespace Hearth.Underworld
             HSettings.Set("underworld.gang.prisonAccess", 1f);
             var visitor = UwKit.Guests(map, 1, f, shady: true)[0];
             var prisoner = PawnGenerator.GeneratePawn(PawnKindDefOf.Villager, f);
-            if (!prisoner.DevelopmentalStage.Adult()) { prisoner.ageTracker.AgeBiologicalTicks = 25L * 3600000L; prisoner.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
+            if (Underworld.IsMinor(prisoner)) { prisoner.ageTracker.AgeBiologicalTicks = 25L * 3600000L; prisoner.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
             GenSpawn.Spawn(prisoner, CellFinder.RandomClosewalkCellNear(TestCells.Anchor(map), map, 10), map); UwKit.Track(prisoner);
             prisoner.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
             // a walkable cell next to the prisoner: two cells east can be rock, a tree or water on a random map and the visitor then cannot reach anybody

@@ -48,7 +48,7 @@ namespace Hearth.Underworld
         /// <summary>An adult colonist who can fight (a generated one when none of the quicktest colonists fits).</summary>
         public static Pawn Fighter(Map map, int skip = 0)
         {
-            var p = TestSetup.Colonist(map, skip, x => !x.WorkTagIsDisabled(WorkTags.Violent) && x.health.summaryHealth.SummaryHealthPercent > 0.9f && !x.health.hediffSet.hediffs.Any(h => h is Hediff_Injury && h.def != PitSetup.Bruise));
+            var p = TestSetup.Colonist(map, skip, x => !Underworld.IsMinor(x) && !x.WorkTagIsDisabled(WorkTags.Violent) && x.health.summaryHealth.SummaryHealthPercent > 0.9f && !x.health.hediffSet.hediffs.Any(h => h is Hediff_Injury && h.def != PitSetup.Bruise));
             if (p == null) return null;
             if (p.Drafted) p.drafter.Drafted = false;
             return p;
@@ -183,7 +183,7 @@ namespace Hearth.Underworld
             while (waited < 2000) { p = GuestRegistry.Instance.Members(g).FirstOrDefault()?.Pawn; if (p != null && p.Spawned) break; yield return 60; waited += 60; }
             if (p != null && p.Spawned)
             {
-                if (!p.DevelopmentalStage.Adult()) { p.ageTracker.AgeBiologicalTicks = 25L * 3600000L; p.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
+                if (Underworld.IsMinor(p)) { p.ageTracker.AgeBiologicalTicks = 25L * 3600000L; p.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
                 UwKit.Track(p); into.Add(p);
             }
         }
@@ -479,7 +479,8 @@ namespace Hearth.Underworld
             PitKit.Put(col, CellFinder.RandomClosewalkCellNear(outside, map, 2));
             var ready = pit.Ready(true);
             t.Check(ready.Count == 1 && ready[0].Pawn == col, "only the ticked colonist is ready: " + string.Join(", ", ready.Select(c => c.Pawn.LabelShort)));
-            t.Check(pit.StatusLine() == UwPay.T("Pit.Status.WaitFighter"), "status says it waits for a second fighter: " + pit.StatusLine());
+            t.Check(pit.StatusLine() == UwPay.T("Pit.Status.WaitFighter", pit.Hint()), "status says it waits for a second fighter: " + pit.StatusLine());
+            t.Check(!pit.Hint().Contains(UwPay.T("Pit.Hint.Animals")) || (!pit.allowAnimals && map.mapPawns.SpawnedColonyAnimals.Count > 0), "'allow animals' only when they are off and the colony has some: " + pit.Hint());
             t.Check(pit.LoneFighter() == col, "the lone fighter is the ticked colonist");
             var hireGizmo = pit.CompGetGizmosExtra().OfType<Command>().FirstOrDefault(g => g.icon == PitSetup.IconOpponent);
             t.Check(hireGizmo != null && hireGizmo.defaultDesc.Contains(UwPay.T("Pit.CallOpponent.For", col.LabelShortCap)), "the gizmo names who will fight: " + hireGizmo?.defaultDesc);
@@ -506,8 +507,9 @@ namespace Hearth.Underworld
             t.Check(bout.Scored, "colonist against beast is scored");
             foreach (var w in PitKit.Await(t, bout, 15000)) yield return w;
             t.Check(bout.Finished && (bout.Result != null), "the bout ran to a result");
-            string cn = col.LabelShortCap, bn = beast.LabelShortCap;
-            string head = UwPay.T("Pit.Result.WonNoBets", cn, bn), headB = UwPay.T("Pit.Result.WonNoBets", bn, cn), headD = UwPay.T("Pit.Result.DrawNoBets", cn, bn);
+            string cn = col.LabelShortCap, bn = PitFighters.Name(beast, PitKind.Beast);
+            t.Check(bn == UwPay.T("Pit.BeastRef", beast.LabelShort), "the beast is named one way in every text: " + bn);
+            string head = UwPay.T("Pit.Result.WonNoBets", cn, bn).CapitalizeFirst(), headB = UwPay.T("Pit.Result.WonNoBets", bn, cn).CapitalizeFirst(), headD = UwPay.T("Pit.Result.DrawNoBets", cn, bn).CapitalizeFirst();
             string tail = " " + UwPay.T("Pit.Result.Points", cn);
             t.Check(FightBout.LastMessage == head + tail || FightBout.LastMessage == headB + tail || FightBout.LastMessage == headD + tail, "result message: no pool, the fighter only has bruises: " + FightBout.LastMessage);
             var lastLine = pit.LastBoutLine();
@@ -522,7 +524,12 @@ namespace Hearth.Underworld
             // ---- 2: the second one costs the fee; with no money at all the reason says what is short
             if (UwKit.Till(map).Micro > 0) Ledger.Current.Post(tillAcc, "world", UwKit.Till(map), "test: empty till");
             UwPay.ForgetFunds();
-            if (noBank) t.Check(PitOpponents.CannotHire(pit, col) == UwPay.T("Pay.Short", "0", PitFighters.Silver(fee)), "no money at all: " + PitOpponents.CannotHire(pit, col));
+            if (noBank)
+            {
+                t.Check(PitOpponents.CannotHire(pit, col)?.StartsWith(UwPay.T("Pay.Short", "0", PitFighters.Silver(fee))) == true, "no money at all: " + PitOpponents.CannotHire(pit, col));
+                pit.Invalidate();
+                t.Check(!pit.Hint().Contains(UwPay.T("Pit.Hint.Call")), "the colony cannot pay: no 'call an opponent' in the hints: " + pit.Hint());
+            }
             else t.Note("the colony has a bank account; the no-money case is skipped");
 
             // ---- 3: an empty till with silver in stock (home area, not forbidden): the stock pays
@@ -600,7 +607,7 @@ namespace Hearth.Underworld
             {
                 pit.allowPrisoners = true;
                 var pr = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Villager, f, PawnGenerationContext.NonPlayer, map.Tile, canGeneratePawnRelations: false, mustBeCapableOfViolence: true));
-                if (!pr.DevelopmentalStage.Adult()) { pr.ageTracker.AgeBiologicalTicks = 25L * 3600000L; pr.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
+                if (Underworld.IsMinor(pr)) { pr.ageTracker.AgeBiologicalTicks = 25L * 3600000L; pr.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
                 var home = CellFinder.RandomClosewalkCellNear(outside, map, 2);
                 GenSpawn.Spawn(pr, home, map); UwKit.Track(pr);
                 pr.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
@@ -765,7 +772,7 @@ namespace Hearth.Underworld
             {
                 // one ticked colonist alone: still waiting for a second fighter
                 pit.SetTicked(col, true); pit.Invalidate();
-                Expect("Pit.Status.WaitFighter", "one ticked colonist");
+                Expect("Pit.Status.WaitFighter", "one ticked colonist", pit.Hint());
                 // one ticked colonist and an animal of the colony: two fighters, no guests to bet
                 pit.allowAnimals = true;
                 var boar = UwKit.TameAnimal(map, CellFinder.RandomClosewalkCellNear(outside, map, 2), "Boar", "Muffalo");
@@ -975,7 +982,7 @@ namespace Hearth.Underworld
             // (3b) a prisoner brought in against a hired beast, lost the same way
             pit.allowPrisoners = true;
             var pr = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Villager, f, PawnGenerationContext.NonPlayer, map.Tile, canGeneratePawnRelations: false, mustBeCapableOfViolence: true));
-            if (!pr.DevelopmentalStage.Adult()) { pr.ageTracker.AgeBiologicalTicks = 25L * 3600000L; pr.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
+            if (Underworld.IsMinor(pr)) { pr.ageTracker.AgeBiologicalTicks = 25L * 3600000L; pr.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
             GenSpawn.Spawn(pr, CellFinder.RandomClosewalkCellNear(outside, map, 2), map); UwKit.Track(pr);
             pr.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
             var from = pr.Position;
@@ -1025,7 +1032,7 @@ namespace Hearth.Underworld
             if (pit2 != null && pit2 != pit)
             {
                 var pr = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Villager, f, PawnGenerationContext.NonPlayer, map.Tile, canGeneratePawnRelations: false, mustBeCapableOfViolence: true));
-                if (!pr.DevelopmentalStage.Adult()) { pr.ageTracker.AgeBiologicalTicks = 25L * 3600000L; pr.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
+                if (Underworld.IsMinor(pr)) { pr.ageTracker.AgeBiologicalTicks = 25L * 3600000L; pr.ageTracker.AgeChronologicalTicks = 25L * 3600000L; }
                 GenSpawn.Spawn(pr, CellFinder.RandomClosewalkCellNear(outside2, map, 2), map);
                 pr.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
                 var pen = UwKit.TameAnimal(map, CellFinder.RandomClosewalkCellNear(outside2, map, 2), "Boar", "Muffalo");

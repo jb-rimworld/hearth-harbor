@@ -45,7 +45,7 @@ namespace Hearth.Underworld
                 var kind = faction.RandomPawnKind(); if (kind == null) continue;
                 var req = new PawnGenerationRequest(kind, faction, PawnGenerationContext.NonPlayer, map.Tile, forceGenerateNewPawn: false, canGeneratePawnRelations: false, mustBeCapableOfViolence: false);
                 var p = PawnGenerator.GeneratePawn(req);
-                if (p == null || p.DevelopmentalStage.Adult() == false) { if (p != null) Find.WorldPawns.PassToWorld(p, PawnDiscardDecideMode.Discard); continue; }
+                if (p == null || Underworld.IsMinor(p)) { if (p != null) Find.WorldPawns.PassToWorld(p, PawnDiscardDecideMode.Discard); continue; }
                 pawns.Add(p);
             }
             if (pawns.Count == 0) { whyKey = "NoPawns"; return pawns; }

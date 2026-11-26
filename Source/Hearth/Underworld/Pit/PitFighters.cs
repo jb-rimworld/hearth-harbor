@@ -23,6 +23,8 @@ namespace Hearth.Underworld
         /// <summary>True when the reason only keeps the pawn out of automatic bouts (asleep); a manual start may still use it. "Not ticked" is a hard
         /// reason: colonists and slaves fight only when the player ticks them (B.1), also in manual starts (the right-click ticks the asking colonist first).</summary>
         public bool SoftReason;
+        /// <summary>The only reason is that the player has not ticked this colonist or slave (the right-click and "Call an opponent" tick him first).</summary>
+        public bool NotTicked;
         public float Power;
         public bool Ready => Reason == null;
         public bool ManualOk => Reason == null || SoftReason;
@@ -84,7 +86,7 @@ namespace Hearth.Underworld
             if (why != null) return Make(p, PitKind.Colonist, why);
             bool ticked = pit.IsTicked(p);
             bool volunteer = !ticked && pit.allowVolunteers && (p.story?.traits?.HasTrait(TraitDefOf.Bloodlust) == true || (p.skills?.GetSkill(SkillDefOf.Melee)?.Level ?? 0) >= 8);
-            if (!ticked && !volunteer) return Make(p, PitKind.Colonist, R("NotTicked"));
+            if (!ticked && !volunteer) { var c = Make(p, PitKind.Colonist, R("NotTicked")); c.NotTicked = true; return c; }
             if (!RestUtility.Awake(p)) return Make(p, PitKind.Colonist, R("Asleep"), soft: true);
             return Make(p, PitKind.Colonist, null);
         }
@@ -171,6 +173,14 @@ namespace Hearth.Underworld
         }
 
         public static string KindLabel(PitKind k) => UwPay.T("Pit.Kind." + k);
+
+        /// <summary>A fighter as the pit's texts name him: a hired beast as "the pit gazelle" (its name is lower case, the sentence capitalises it
+        /// when it comes first), everyone else by his short name.</summary>
+        public static string Name(Pawn p, PitKind kind)
+        {
+            if (p == null) return "-";
+            return kind == PitKind.Beast ? UwPay.T("Pit.BeastRef", p.LabelShort) : p.LabelShortCap;
+        }
 
         /// <summary>Silver for the pit's texts: whole coins ("84", not "84.00").</summary>
         public static string Silver(Money m) => Math.Round(m.Silver, MidpointRounding.AwayFromZero).ToString("0");

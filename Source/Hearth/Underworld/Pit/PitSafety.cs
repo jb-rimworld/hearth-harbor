@@ -54,13 +54,29 @@ namespace Hearth.Underworld
     [HarmonyPatch(typeof(Pawn_InteractionsTracker), nameof(Pawn_InteractionsTracker.SocialFightPossible))]
     public static class Patch_PitNoQuarrel
     {
-        static readonly AccessTools.FieldRef<Pawn_InteractionsTracker, Pawn> PawnRef = AccessTools.FieldRefAccess<Pawn_InteractionsTracker, Pawn>("pawn");
+        // resolved on first use, not in the type initializer: a renamed field must not throw from the social-fight gate of every pawn
+        static AccessTools.FieldRef<Pawn_InteractionsTracker, Pawn> pawnRef; static bool pawnRefFailed;
+
+        static Pawn PawnOf(Pawn_InteractionsTracker t)
+        {
+            if (pawnRef == null && !pawnRefFailed)
+            {
+                try { pawnRef = AccessTools.FieldRefAccess<Pawn_InteractionsTracker, Pawn>("pawn"); }
+                catch (Exception e) { pawnRefFailed = true; HLog.Warn("Underworld", "Pawn_InteractionsTracker.pawn not found, the quarrel guard checks only the other pawn: " + e.Message); }
+            }
+            return pawnRef != null ? pawnRef(t) : null;
+        }
+
         [HarmonyPriority(Priority.Last)]
         public static void Postfix(Pawn_InteractionsTracker __instance, Pawn otherPawn, ref bool __result)
         {
             if (!__result || (FightBout.ActiveCount == 0 && !FightBout.AnyRecent)) return;
             if (!Modules.On(ModuleId.Underworld)) return;
-            if (FightBout.KeepFromQuarrel(PawnRef(__instance)) || FightBout.KeepFromQuarrel(otherPawn)) __result = false;
+            try
+            {
+                if (FightBout.KeepFromQuarrel(PawnOf(__instance)) || FightBout.KeepFromQuarrel(otherPawn)) __result = false;
+            }
+            catch (Exception e) { HLog.Once("pit.noQuarrel", LogLevel.Error, "Underworld", "Quarrel guard failed: " + e); }
         }
     }
 

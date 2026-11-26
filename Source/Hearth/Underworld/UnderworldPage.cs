@@ -108,7 +108,8 @@ namespace Hearth.Underworld
                 return r;
             }
             r.State = pit.PageState(); r.Line = pit.StatusLine();
-            if (Underworld.Allows(UwFeature.PitToIncapacitation)) r.Sub.Add(pit.ReadyLine());
+            // (no "Fighters ready" line while a bout runs: the green line names who fights)
+            if (Underworld.Allows(UwFeature.PitToIncapacitation) && FightBout.OfPit(pit) == null) r.Sub.Add(pit.ReadyLine());
             var last = pit.LastBoutLine(); if (last != null) r.Sub.Add(last);
             if (pits > 1) r.Sub.Add(UwPay.T("Page.Pit.More", pits - 1));
             return r;
@@ -187,7 +188,7 @@ namespace Hearth.Underworld
             if (list.Count == 0) { y = Para(UwPay.T("Page.NoMap"), y, vw, UiStyle.Grey); }
             foreach (var row in list) y = DrawRow(row, y, vw);
             // rows that Standard hides: one grey line says what Dark would add
-            if (Underworld.Visible && Underworld.Intensity == ContentIntensity.Standard) y = Para(UwPay.T("Page.DarkAdds"), y, vw, UiStyle.Grey);
+            if (Underworld.Visible && !Underworld.Peaceful && Underworld.Intensity == ContentIntensity.Standard) y = Para(UwPay.T("Page.DarkAdds"), y, vw, UiStyle.Grey);
             y += 6f;
 
             // whispers

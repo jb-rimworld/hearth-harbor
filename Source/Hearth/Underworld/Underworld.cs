@@ -169,12 +169,17 @@ namespace Hearth.Underworld
         public static T Def<T>(string name) where T : Def => DefDatabase<T>.GetNamedSilentFail(name);
 
         // ---- pawn rules ------------------------------------------------------------------------------------------------
-        /// <summary>Children never take part in gambling-adjacent dark mechanics (fights, hunts, interrogations, organs). Not switchable.</summary>
+        /// <summary>Age from which a humanlike counts as an adult here. Vanilla makes pawns adults at 13; the underworld waits until 18.</summary>
+        public const int AdultAge = 18;
+
+        /// <summary>Minors never take part in gambling-adjacent dark mechanics (fights, bets, hunts, gang sales, the lounge, organs). Not switchable.
+        /// A humanlike under <see cref="AdultAge"/> biological years is a minor, also when vanilla already calls him an adult (13 to 17).</summary>
         public static bool IsMinor(Pawn p)
         {
             if (p == null) return true;
             if (!p.RaceProps.Humanlike) return false;
-            return !p.DevelopmentalStage.Adult();
+            if (!p.DevelopmentalStage.Adult()) return true;
+            return p.ageTracker == null || p.ageTracker.AgeBiologicalYears < AdultAge;
         }
 
         public static bool Home(Map m) => m != null && m.IsPlayerHome;

@@ -155,7 +155,7 @@ namespace Hearth.Underworld
             }
             catch (Exception e) { HLog.Error("Underworld", "Could not hire a pit beast", e); if (beast != null && !beast.Destroyed) beast.Destroy(); why = UwPay.T("Pit.Why.NoBeastKind"); return null; }
             NoteBeast(beast); pit.AddBeast(beast);
-            var fee = Fee;
+            var fee = Fee; bool free = FirstIsFree;
             if (!UwPay.PayFromColony(map, fee, "world", "Fight pit: opponent fee"))
             {
                 Dismiss(beast); pit.RemoveBeast(beast);
@@ -170,6 +170,8 @@ namespace Hearth.Underworld
                 return null;
             }
             bout.FeePaid = fee;   // refunded when the bout is called off without a result
+            bout.FreeHire = free;  // given back then too
+            pit.NoteBeastFee(fee);
             if (Underworld.Comp != null) Underworld.Comp.OpponentsHired++;
             return bout;
         }

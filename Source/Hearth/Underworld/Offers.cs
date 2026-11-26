@@ -99,6 +99,9 @@ namespace Hearth.Underworld
     /// <summary>Open offers: creation, letters, answers, expiry. Ticked every 250 ticks from <see cref="UwTicker"/>.</summary>
     public static class Offers
     {
+        /// <summary>"1 item", "3 items" for the smuggler's texts.</summary>
+        public static string Items(int n) => UwPay.T(n == 1 ? "Smuggler.Items.One" : "Smuggler.Items.Many", n);
+
         static List<UwOffer> List => Underworld.Comp?.Offers;
         static int Now => Find.TickManager.TicksGame;
 
@@ -187,7 +190,7 @@ namespace Hearth.Underworld
             {
                 var dock = Smuggler.Dock(map);
                 label = UwPay.T("Smuggler.Title");
-                text = UwPay.T("Smuggler.Text", o.GoodsCount, o.marketValue.ToStringShort(), o.price.ToStringShort()) + "\n\n" + UwPay.T("Smuggler.Letter.How", hours);
+                text = UwPay.T("Smuggler.Text", Offers.Items(o.GoodsCount), o.marketValue.ToStringShort(), o.price.ToStringShort()) + "\n\n" + UwPay.T("Smuggler.Letter.How", hours);
                 look = dock != null ? new LookTargets(new TargetInfo(dock.Position, map)) : LookTargets.Invalid;
                 Underworld.Comp?.NoteEvent(FacilityStatus.DockId);
             }
@@ -267,7 +270,7 @@ namespace Hearth.Underworld
         /// <summary>The one-line summary of an offer (dock inspect string, Underworld tab).</summary>
         public static string Line(UwOffer o)
         {
-            if (o.kind == UwOfferKind.Smuggler) return UwPay.T("Smuggler.Waiting", o.GoodsCount, o.price.ToStringShort(), TimeLeft(o));
+            if (o.kind == UwOfferKind.Smuggler) return UwPay.T("Smuggler.Waiting", Offers.Items(o.GoodsCount), o.price.ToStringShort(), TimeLeft(o));
             return UwPay.T("Gang.Demand.Waiting", o.leader?.LabelShortCap ?? "?", o.price.ToStringShort(), TimeLeft(o));
         }
 

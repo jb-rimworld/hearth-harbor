@@ -28,7 +28,7 @@
   <HH.Underworld.Pit.Volunteers>Volunteers (old saves)</HH.Underworld.Pit.Volunteers>
   <HH.Underworld.Pit.Volunteers.Desc>From an older save: colonists with bloodlust or melee 8 and more also fight without being ticked under Fighters. Switch it off to let only the ticked colonists fight. Colonists never fight to the death.</HH.Underworld.Pit.Volunteers.Desc>
   <HH.Underworld.Pit.Prisoners>Prisoners</HH.Underworld.Pit.Prisoners>
-  <HH.Underworld.Pit.Prisoners.Desc>Prisoners of the colony may fight here (adults only). The guards bring them into the arena and back to their cell.</HH.Underworld.Pit.Prisoners.Desc>
+  <HH.Underworld.Pit.Prisoners.Desc>Prisoners of the colony aged 18 or older may fight here. The guards bring them into the arena and back to their cell.</HH.Underworld.Pit.Prisoners.Desc>
   <HH.Underworld.Pit.Lethal>To the death</HH.Underworld.Pit.Lethal>
   <HH.Underworld.Pit.Lethal.Desc>Bouts between prisoners and animals only end when one of them is down. Never for guests, colonists or slaves: their bouts are always fought for points.</HH.Underworld.Pit.Lethal.Desc>
   <HH.Underworld.Pit.StartNow>Start a bout</HH.Underworld.Pit.StartNow>
@@ -37,11 +37,19 @@
   <HH.Underworld.Pit.ArenaOk>Arena: {0} tiles, closed.</HH.Underworld.Pit.ArenaOk>
   <HH.Underworld.Pit.ArenaOpen>Arena open or too big: close the fence.</HH.Underworld.Pit.ArenaOpen>
   <HH.Underworld.Pit.NoFighters>fewer than two fighters</HH.Underworld.Pit.NoFighters>
-  <HH.Underworld.Pit.Why.OnlyOne>Only one fighter: call an opponent, tick a second colonist or allow animals.</HH.Underworld.Pit.Why.OnlyOne>
+  <HH.Underworld.Pit.Why.OnlyOne>Only one fighter: {0}.</HH.Underworld.Pit.Why.OnlyOne>
+  <HH.Underworld.Pit.Hint.Call>call an opponent</HH.Underworld.Pit.Hint.Call>
+  <HH.Underworld.Pit.Hint.Tick>tick a second colonist</HH.Underworld.Pit.Hint.Tick>
+  <HH.Underworld.Pit.Hint.Animals>allow animals</HH.Underworld.Pit.Hint.Animals>
+  <HH.Underworld.Pit.Hint.Guests>allow guests</HH.Underworld.Pit.Hint.Guests>
+  <HH.Underworld.Pit.Hint.Wait>wait for a guest who likes to fight</HH.Underworld.Pit.Hint.Wait>
+  <HH.Underworld.Pit.Hint.Or>{0} or {1}</HH.Underworld.Pit.Hint.Or>
   <HH.Underworld.Pit.NoFairPair>no fair pair of fighters</HH.Underworld.Pit.NoFairPair>
   <HH.Underworld.Pit.BoutAnnounced>A bout in the pit: {0} against {1}. Bets are open.</HH.Underworld.Pit.BoutAnnounced>
-  <HH.Underworld.Pit.BoutAnnounced.Beast>A bout in the pit: {0} against the {1}. It is fought for points, so {0} gets a few bruises at most.</HH.Underworld.Pit.BoutAnnounced.Beast>
+  <HH.Underworld.Pit.BoutAnnounced.Beast>A bout in the pit: {0} against {1}. It is fought for points, so {0} gets a few bruises at most.</HH.Underworld.Pit.BoutAnnounced.Beast>
+  <HH.Underworld.Pit.BoutAnnounced.Plain>A bout in the pit: {0} against {1}.</HH.Underworld.Pit.BoutAnnounced.Plain>
   <HH.Underworld.Pit.BeastName>pit {0}</HH.Underworld.Pit.BeastName>
+  <HH.Underworld.Pit.BeastRef>the {0}</HH.Underworld.Pit.BeastRef>
   <HH.Underworld.Pit.Guests>Guest challengers</HH.Underworld.Pit.Guests>
   <HH.Underworld.Pit.Guests.Desc>Guests may fight here: shady guests and gang members always, other adult guests when they are not kind and have bloodlust, the brawler trait or melee 6 and more. Only guests who are awake, idle, healthy and staying a while. Their bouts are fought for points: nobody gets hurt, and a winning guest gets a small purse from the house take.</HH.Underworld.Pit.Guests.Desc>
   <HH.Underworld.Pit.FightersBtn>Fighters…</HH.Underworld.Pit.FightersBtn>
@@ -55,7 +63,7 @@
   <HH.Underworld.Pit.FightHere.Queue>Fight in the pit (next bout)</HH.Underworld.Pit.FightHere.Queue>
   <HH.Underworld.Pit.Status.Running>Bout running: {0} against {1}.</HH.Underworld.Pit.Status.Running>
   <HH.Underworld.Pit.Status.Next>Next bout in {0} h.</HH.Underworld.Pit.Status.Next>
-  <HH.Underworld.Pit.Status.WaitFighter>Waiting for a second fighter: right-click the marker with a colonist, tick one, allow animals or call an opponent.</HH.Underworld.Pit.Status.WaitFighter>
+  <HH.Underworld.Pit.Status.WaitFighter>Waiting for a second fighter: {0}.</HH.Underworld.Pit.Status.WaitFighter>
   <HH.Underworld.Pit.Status.NoFighter>No fighters yet: right-click the marker with a colonist, or tick one under Fighters.</HH.Underworld.Pit.Status.NoFighter>
   <HH.Underworld.Pit.Status.WaitGuests>Waiting for guests to bet (you can start a bout yourself).</HH.Underworld.Pit.Status.WaitGuests>
   <HH.Underworld.Pit.Status.AutoFailed>No automatic bout: {0}. Start a bout yourself or call an opponent.</HH.Underworld.Pit.Status.AutoFailed>
@@ -95,7 +103,7 @@
   <HH.Underworld.Pit.Abort.NoShow>{0} could not reach the arena</HH.Underworld.Pit.Abort.NoShow>
   <HH.Underworld.Pit.Abort.Closed>the pit was closed</HH.Underworld.Pit.Abort.Closed>
   <HH.Underworld.Pit.Why.Gone>not here</HH.Underworld.Pit.Why.Gone>
-  <HH.Underworld.Pit.Why.Child>child</HH.Underworld.Pit.Why.Child>
+  <HH.Underworld.Pit.Why.Child>under 18</HH.Underworld.Pit.Why.Child>
   <HH.Underworld.Pit.Why.Downed>downed</HH.Underworld.Pit.Why.Downed>
   <HH.Underworld.Pit.Why.Mental>in a mental state</HH.Underworld.Pit.Why.Mental>
   <HH.Underworld.Pit.Why.Burning>on fire</HH.Underworld.Pit.Why.Burning>
@@ -117,6 +125,7 @@
   <HH.Underworld.Pit.Why.BeastThere>an opponent is already in the arena</HH.Underworld.Pit.Why.BeastThere>
   <HH.Underworld.Pit.Why.NoLoneFighter>nobody to fight it: right-click the marker with a colonist, or tick one under Fighters</HH.Underworld.Pit.Why.NoLoneFighter>
   <HH.Underworld.Pay.Short>the colony has {0} of {1} silver</HH.Underworld.Pay.Short>
+  <HH.Underworld.Pay.Loose>silver counts only in a stockpile or the home area</HH.Underworld.Pay.Loose>
   <HH.Underworld.Pit.Why.NoBeastKind>no animal fits</HH.Underworld.Pit.Why.NoBeastKind>
   <HH.Underworld.Pit.Why.ArenaFull>no free tile in the arena</HH.Underworld.Pit.Why.ArenaFull>
   <HH.Underworld.Pit.Why.NoBout>the bout could not start</HH.Underworld.Pit.Why.NoBout>
@@ -199,7 +208,9 @@
   <HH.Underworld.Tour.IntelTitle>Something from the questioning</HH.Underworld.Tour.IntelTitle>
   <HH.Underworld.Tour.IntelText>After an hour with {0} the gang left a note on the counter: a name, a place, a day. Somebody out there is planning something, and now you know a little more.</HH.Underworld.Tour.IntelText>
   <HH.Underworld.Smuggler.Title>A crate at the dock</HH.Underworld.Smuggler.Title>
-  <HH.Underworld.Smuggler.Text>A shuttle with its lights out has set down at the dock. A voice offers {0} items worth about {1} silver for {2} silver. No questions, no receipt.</HH.Underworld.Smuggler.Text>
+  <HH.Underworld.Smuggler.Text>A boat with its lights out has come in at the dock. A voice offers {0} worth about {1} silver for {2} silver. No questions, no receipt.</HH.Underworld.Smuggler.Text>
+  <HH.Underworld.Smuggler.Items.One>{0} item</HH.Underworld.Smuggler.Items.One>
+  <HH.Underworld.Smuggler.Items.Many>{0} items</HH.Underworld.Smuggler.Items.Many>
   <HH.Underworld.Smuggler.Buy>Buy for {0} silver</HH.Underworld.Smuggler.Buy>
   <HH.Underworld.Smuggler.Decline>Send them away</HH.Underworld.Smuggler.Decline>
   <HH.Underworld.Smuggler.InspectTitle>A patrol noticed the lamp</HH.Underworld.Smuggler.InspectTitle>
@@ -210,11 +221,12 @@
   <HH.Underworld.Smuggler.Bought>The crate is yours for {0} silver.</HH.Underworld.Smuggler.Bought>
   <HH.Underworld.Smuggler.Declined>The boat left without a deal.</HH.Underworld.Smuggler.Declined>
   <HH.Underworld.Smuggler.Left>The boat at the dock did not wait any longer and left.</HH.Underworld.Smuggler.Left>
-  <HH.Underworld.Smuggler.Waiting>A boat is waiting at the dock: {0} items for {1} silver (leaves in {2}).</HH.Underworld.Smuggler.Waiting>
+  <HH.Underworld.Smuggler.Waiting>A boat is waiting at the dock: {0} for {1} silver (leaves in {2}).</HH.Underworld.Smuggler.Waiting>
   <HH.Underworld.Smuggler.Next>Next landing: at night, in about {0}.</HH.Underworld.Smuggler.Next>
   <HH.Underworld.Smuggler.NextSoon>Next landing: at night, soon.</HH.Underworld.Smuggler.NextSoon>
   <HH.Underworld.Smuggler.Status.NotBuilt>Build a smuggler's dock: boats land at night with cheap contraband.</HH.Underworld.Smuggler.Status.NotBuilt>
   <HH.Underworld.Smuggler.Status.Last>Last landing: {0} ago.</HH.Underworld.Smuggler.Status.Last>
+  <HH.Underworld.Ago.Moment>a moment</HH.Underworld.Ago.Moment>
   <HH.Underworld.Hunt.Title>A hunting party</HH.Underworld.Hunt.Title>
   <HH.Underworld.Hunt.Text>{0} hunters arrive with rifles and money. They paid {1} silver for the ground, and {2} animals were released into it.</HH.Underworld.Hunt.Text>
   <HH.Underworld.Hunt.GroundOk>Hunting ground: {0} tiles, closed. Quarry: {1}.</HH.Underworld.Hunt.GroundOk>
@@ -282,7 +294,7 @@
   <HH.Underworld.Page.Build.Hidden>Not in the build menu right now.</HH.Underworld.Page.Build.Hidden>
   <HH.Underworld.Page.Build.Missing>Not in the build menu of this game.</HH.Underworld.Page.Build.Missing>
   <HH.Underworld.Page.Show>Show</HH.Underworld.Page.Show>
-  <HH.Underworld.Page.Stats1>Fight pit: {0} bouts, {1} bets, house take {2} silver.</HH.Underworld.Page.Stats1>
+  <HH.Underworld.Page.Stats1>Fight pit bouts: {0}. Bets: {1}. House take: {2} silver.</HH.Underworld.Page.Stats1>
   <HH.Underworld.Page.Stats2>Fence: {0} bought, {1} sold, profit {2} silver.</HH.Underworld.Page.Stats2>
   <HH.Underworld.Page.Stats3>Lounge sessions {0}, gang visits {1}, landings {2}, hunts {3}, organs {4}.</HH.Underworld.Page.Stats3>
   <HH.Underworld.Page.HighRollers>A rumour about a secret casino is drawing high rollers.</HH.Underworld.Page.HighRollers>

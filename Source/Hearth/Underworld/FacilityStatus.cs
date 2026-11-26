@@ -78,7 +78,8 @@ namespace Hearth.Underworld
             return UwPay.T("Gang.Why." + c.GangRetryKey);
         }
 
-        static string Ago(int tick) => Math.Max(0, Find.TickManager.TicksGame - tick).ToStringTicksToPeriod();
+        /// <summary>"3 hours", or "a moment" under one in-game hour ("Last landing: a moment ago.", not "0 seconds ago").</summary>
+        static string Ago(int tick) { int d = Math.Max(0, Find.TickManager.TicksGame - tick); return d < 2500 ? UwPay.T("Ago.Moment") : d.ToStringTicksToPeriod(); }
         static string In(int tick) => Math.Max(0, tick - Find.TickManager.TicksGame).ToStringTicksToPeriod();
         static string Last(string id, string key) { int t = Underworld.Comp?.LastEvent(id) ?? -1; return t < 0 ? null : UwPay.T(key, Ago(t)); }
 

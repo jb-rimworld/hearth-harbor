@@ -72,30 +72,57 @@ namespace Hearth.Underworld
         public static Money Balance(string acc) => Ledger.Current?.Balance(acc) ?? Money.Zero;
 
         // ---- the colony pays (pit opponent fee, smuggler crates, protection money) -------------------------------------------
-        static int fundsFrame = -999, fundsMap = -1; static Money fundsCache;
+        sealed class Funds { public int Frame = -999; public Money StockAndBank; public int Loose; }
+        /// <summary>Per map (uniqueID): a colony with two maps, or a tab showing another map than the selected pit, must not recount every frame.</summary>
+        static readonly Dictionary<int, Funds> funds = new Dictionary<int, Funds>();
+
+        static UwPay() { HearthGame.OnGameInit += () => funds.Clear(); }
+
+        static Funds FundsOf(Map map)
+        {
+            int f = UnityEngine.Time.frameCount;
+            if (!funds.TryGetValue(map.uniqueID, out var c)) { c = new Funds(); funds[map.uniqueID] = c; }
+            if (f - c.Frame >= 30 || f < c.Frame)
+            {
+                c.StockAndBank = Money.FromSilver(Hearth.Dlc.ColonySilver.CountStock(map)) + Silverline.BankApi.ColonyBalance;
+                c.Loose = LooseSilver(map); c.Frame = f;
+            }
+            return c;
+        }
+
+        /// <summary>Silver of the colony that does not count as stock: not forbidden, but outside every stockpile and the home area.</summary>
+        static int LooseSilver(Map map)
+        {
+            int n = 0;
+            var list = map.listerThings.ThingsOfDef(ThingDefOf.Silver);
+            for (int i = 0; i < list.Count; i++)
+            {
+                var t = list[i];
+                if (t != null && t.Spawned && t.stackCount > 0 && !t.IsForbidden(Faction.OfPlayer) && !Hearth.Dlc.ColonySilver.InStock(t, map)) n += t.stackCount;
+            }
+            return n;
+        }
 
         /// <summary>All the colony could pay with right now: the till, then stock silver on the map (not forbidden, in a stockpile or the home area,
         /// <see cref="Hearth.Dlc.ColonySilver.CountStock"/>), then the Silverline account. The silver count and the bank balance are cached for 30 frames
-        /// (gizmos and the tab ask every frame); the till is read fresh.</summary>
+        /// per map (gizmos and the tab ask every frame); the till is read fresh.</summary>
         public static Money ColonyFunds(Map map)
         {
             if (map == null || Ledger.Current == null) return Money.Zero;
-            int f = UnityEngine.Time.frameCount;
-            if (fundsMap != map.uniqueID || f - fundsFrame >= 30 || f < fundsFrame)
-            {
-                fundsCache = Money.FromSilver(Hearth.Dlc.ColonySilver.CountStock(map)) + Silverline.BankApi.ColonyBalance; fundsMap = map.uniqueID; fundsFrame = f;
-            }
-            return Money.Max(Money.Zero, Balance(Payments.ColonyTill(map))) + fundsCache;
+            return Money.Max(Money.Zero, Balance(Payments.ColonyTill(map))) + FundsOf(map).StockAndBank;
         }
 
-        /// <summary>Drops the cached silver count (after silver was taken, forbidden or added outside a payment).</summary>
-        public static void ForgetFunds() => fundsFrame = -999;
+        /// <summary>Drops the cached silver counts (after silver was taken, forbidden or added outside a payment).</summary>
+        public static void ForgetFunds() { foreach (var c in funds.Values) c.Frame = -999; }
 
-        /// <summary>The reason shown when the colony cannot pay: "the colony has 12 of 40 silver".</summary>
+        /// <summary>The reason shown when the colony cannot pay: "the colony has 12 of 40 silver", plus a hint when silver lies outside
+        /// stockpiles and the home area (it does not count there).</summary>
         public static string ShortOf(Map map, Money price)
         {
             var have = ColonyFunds(map);
-            return T("Pay.Short", Math.Floor(have.Silver + 1e-9).ToString("0"), PitFighters.Silver(price));
+            string s = T("Pay.Short", Math.Floor(have.Silver + 1e-9).ToString("0"), PitFighters.Silver(price));
+            if (map != null && Ledger.Current != null && FundsOf(map).Loose > 0) s += " (" + T("Pay.Loose") + ")";
+            return s;
         }
 
         /// <summary>Pays <paramref name="amount"/> for the colony into <paramref name="toAccount"/>: the till first, then stock silver, then the bank.
