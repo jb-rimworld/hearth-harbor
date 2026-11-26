@@ -186,7 +186,7 @@
   <HH.Underworld.Pit.CallOpponent>Gegner rufen ({0})</HH.Underworld.Pit.CallOpponent>
   <HH.Underworld.Pit.CallOpponent.Desc>Miete ein Grubentier für einen einzelnen Kämpfer: ein Tier, etwa so stark wie dein Kämpfer, für einen Kampf. Die Kolonie zahlt {0} Silber: erst aus der Kasse, dann aus dem Silber im Lager, dann von der Bank.</HH.Underworld.Pit.CallOpponent.Desc>
   <HH.Underworld.Pit.CallOpponent.For>Kämpft gegen: {0}.</HH.Underworld.Pit.CallOpponent.For>
-  <HH.Underworld.Pit.CallOpponent.Free>Gegner rufen (der erste ist frei)</HH.Underworld.Pit.CallOpponent.Free>
+  <HH.Underworld.Pit.CallOpponent.Free>Gegner rufen (der erste gratis)</HH.Underworld.Pit.CallOpponent.Free>
   <HH.Underworld.Pit.CallOpponent.FreeDesc>Der erste Gegner geht aufs Haus.</HH.Underworld.Pit.CallOpponent.FreeDesc>
   <HH.Underworld.Pit.CalledOff>Kampf abgebrochen: {0}.</HH.Underworld.Pit.CalledOff>
   <HH.Underworld.Pit.FightHere>In der Grube kämpfen</HH.Underworld.Pit.FightHere>
