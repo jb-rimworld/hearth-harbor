@@ -435,17 +435,18 @@ namespace Hearth.Guests
             var cands = CandidateFactions();
             cands.RemoveAll(f => forecast.Any(g => g.Faction != null && g.Faction.HostileTo(f) && Overlaps(g, from, to)));
             if (cands.Count == 0) return null;
-            float total = cands.Sum(f => FactionWeight(f));
+            float total = cands.Sum(f => FactionWeight(f, map));
             double roll = rng.NextDouble() * total;
-            foreach (var f in cands) { roll -= FactionWeight(f); if (roll <= 0) return f; }
+            foreach (var f in cands) { roll -= FactionWeight(f, map); if (roll <= 0) return f; }
             return cands[cands.Count - 1];
         }
 
-        /// <summary>Goodwill weight; with a visible underworld, respectable factions × exp(−N/40), rough ones × (0.2 + N/50) (5.14 Whispers).</summary>
-        public static float FactionWeight(Faction f)
+        /// <summary>Goodwill weight; when the underworld is in use on <paramref name="map"/> (N08: a facility exists), respectable factions × exp(−N/40),
+        /// rough ones × (0.2 + N/50) (5.14 Whispers). Without a map the whispers do not count.</summary>
+        public static float FactionWeight(Faction f, Map map = null)
         {
             float w = 1f + Mathf.Max(0, f.PlayerGoodwill) / 25f;
-            if (Modules.On(ModuleId.Underworld) && Hearth.Underworld.Underworld.Visible)
+            if (Modules.On(ModuleId.Underworld) && Hearth.Underworld.Underworld.InUse(map))
                 w *= GuestArrival.IsRoughFaction(f) ? Hearth.Underworld.Underworld.OutlawArrivalFactor : Hearth.Underworld.Underworld.RespectableArrivalFactor;
             return Mathf.Max(0.01f, w);
         }

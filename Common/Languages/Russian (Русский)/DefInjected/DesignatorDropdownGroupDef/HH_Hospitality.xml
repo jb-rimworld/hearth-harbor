@@ -7,5 +7,5 @@
   <HH_Group_City.label>городская жизнь</HH_Group_City.label>
   <HH_Group_City.description>Экраны кинотеатра, парикмахерские кресла, скамейки в парке и стоянка такси.</HH_Group_City.description>
   <HH_Group_Underworld.label>задняя комната</HH_Group_Underworld.label>
-  <HH_Group_Underworld.description>Двери, ямы, стойки и причалы для того, о чём не говорят. Показывается, только когда вы обнаружили подполье.</HH_Group_Underworld.description>
+  <HH_Group_Underworld.description>Двери, ямы, прилавки и причалы для дел, о которых не говорят. Показывается, пока модуль «Подполье» включён, а содержимое не «Уютное».</HH_Group_Underworld.description>
 </LanguageData>

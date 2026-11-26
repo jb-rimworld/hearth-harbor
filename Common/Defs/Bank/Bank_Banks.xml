@@ -112,7 +112,7 @@
     <perks>
       <li>Loans ignore your credit score (and your feelings).</li>
       <li>Every quadrum there is a 1 % risk that a quarter of the balance is "seized".</li>
-      <li>Only open to colonies that found the underworld.</li>
+      <li>Only open while the Underworld is on and the content is not Cozy.</li>
     </perks>
   </Silverline.SL_BankDef>
 

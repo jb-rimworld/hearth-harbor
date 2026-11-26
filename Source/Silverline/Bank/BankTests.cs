@@ -580,15 +580,17 @@ namespace Silverline
         public override IEnumerable<int> Run(TestContext t)
         {
             var c = BT.C; var map = t.Map; var profile = HearthProfile.Current;
-            int oldMode = HSettings.GetInt("bank.researchMode"); float oldTier = profile.Tier; bool oldDisc = profile.UnderworldDiscovered;
+            int oldMode = HSettings.GetInt("bank.researchMode"); float oldTier = profile.Tier; var oldContent = profile.Content;
             HSettings.Set("bank.researchMode", 1f); BankCaretaker.CheckResearchOff(); profile.Tier = 3f;
             var black = DefDatabase<SL_BankDef>.GetNamed("SL_BlackLedger");
-            profile.UnderworldDiscovered = false;
-            t.Check(!black.Available, "The Black Ledger stays hidden until the underworld is discovered");
+            profile.Content = ContentIntensity.Cozy;
+            t.Check(!black.Available, "The Black Ledger stays hidden while the underworld is hidden (Cozy)");
             c.TestReset(false);
             t.Check(!c.CanOpenAccount(black, out _) && !c.OpenAccount(black, false), "no account at a hidden bank");
-            profile.UnderworldDiscovered = true;
-            t.Check(black.Available == Modules.On(ModuleId.Underworld), "after discovery the Black Ledger is available when the underworld module is on");
+            profile.Content = ContentIntensity.Standard;
+            bool oldDisc = profile.UnderworldDiscovered; profile.UnderworldDiscovered = false;
+            t.Check(black.Available == Modules.On(ModuleId.Underworld), "the Black Ledger is available whenever the underworld module is on and content is not Cozy (an old save's discovery flag does not matter)");
+            profile.UnderworldDiscovered = oldDisc;
             // Black Ledger: no questions
             c.TestReset(true, "SL_BlackLedger"); c.TestSetScore(300); BT.Fund(Money.FromSilver(4000));
             t.Check(c.EffectiveScore() == 700, "Black Ledger ignores the credit score");
@@ -645,7 +647,7 @@ namespace Silverline
             c.DailyStep(day + 4);
             t.Check(!c.Loans.Any(l => l.Bailout), "Silverline Mutual does not bail anyone out");
             c.TestReset(true);
-            profile.UnderworldDiscovered = oldDisc; profile.Tier = oldTier; HSettings.Set("bank.researchMode", oldMode);
+            profile.Content = oldContent; profile.Tier = oldTier; HSettings.Set("bank.researchMode", oldMode);
             HSettings.Reset(HSettings.Find("bank.profit"));
             yield return 1;
         }

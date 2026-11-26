@@ -27,4 +27,16 @@
   <HH_Guide_YourGuests.steps.1.description>Zeigt, was der Gast denkt, und lässt dich Grundversorgung, Begleiten oder Anwerben wählen.</HH_Guide_YourGuests.steps.1.description>
   <HH_Guide_YourGuests.steps.1.label>Wähle einen Gast aus und öffne den Tab Gast.</HH_Guide_YourGuests.steps.1.label>
   <HH_Guide_YourGuests.steps.2.label>Probiere bei einem Gast, den du magst, eine andere Betreuung aus.</HH_Guide_YourGuests.steps.2.label>
+  <HH_Guide_BackRoom.description>Kämpfe, ein Hehler und Banden. Alles ist freiwillig: Nichts davon passiert, bevor du es baust.</HH_Guide_BackRoom.description>
+  <HH_Guide_BackRoom.label>Das Hinterzimmer</HH_Guide_BackRoom.label>
+  <HH_Guide_BackRoom.steps.0.description>Ein Tor im Zaun ist in Ordnung. Die Arena braucht mindestens 3 mal 3 Felder. Die Markierung sagt dir, worauf sie noch wartet.</HH_Guide_BackRoom.steps.0.description>
+  <HH_Guide_BackRoom.steps.0.label>Baue einen geschlossenen Zaun und setze eine Kampfgrubenmarkierung hinein.</HH_Guide_BackRoom.steps.0.label>
+  <HH_Guide_BackRoom.steps.1.description>Klicke die Markierung mit einem Kolonisten rechts an, hake unter „Kämpfer…“ Kämpfer an oder nutze „Gegner rufen“, wenn du allein bist. Kämpfe mit einem Gast oder Kolonisten gehen um Punkte, also wird niemand verletzt.</HH_Guide_BackRoom.steps.1.description>
+  <HH_Guide_BackRoom.steps.1.label>Lass den ersten Kampf zu Ende gehen.</HH_Guide_BackRoom.steps.1.label>
+  <HH_Guide_BackRoom.steps.2.description>Banden treffen sich dort und zahlen dafür. Ehrbare Gäste stolpern ab und zu darüber.</HH_Guide_BackRoom.steps.2.description>
+  <HH_Guide_BackRoom.steps.2.label>Baue einen Raum, dessen einzige Türen Hinterzimmertüren sind.</HH_Guide_BackRoom.steps.2.label>
+  <HH_Guide_BackRoom.steps.3.description>Die erste Bande kommt etwa einen Tag nach deinem ersten Hinterzimmer, Hehlertresen oder deiner ersten Kampfgrube. Die Unterwelt-Seite sagt, wann.</HH_Guide_BackRoom.steps.3.description>
+  <HH_Guide_BackRoom.steps.3.label>Warte auf den ersten Bandenbesuch.</HH_Guide_BackRoom.steps.3.label>
+  <HH_Guide_BackRoom.steps.4.description>Banden verkaufen ihm ihre Beute und kaufen aus seinem Bestand. Er zahlt aus seiner eigenen Geldkassette.</HH_Guide_BackRoom.steps.4.description>
+  <HH_Guide_BackRoom.steps.4.label>Baue einen Hehlertresen.</HH_Guide_BackRoom.steps.4.label>
 </LanguageData>

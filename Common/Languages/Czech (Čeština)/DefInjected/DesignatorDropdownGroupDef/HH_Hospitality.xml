@@ -7,5 +7,5 @@
   <HH_Group_City.label>městský život</HH_Group_City.label>
   <HH_Group_City.description>Kinopromítací plátna, kadeřnické křeslo, parkové lavičky a stanoviště taxi.</HH_Group_City.description>
   <HH_Group_Underworld.label>zadní místnost</HH_Group_Underworld.label>
-  <HH_Group_Underworld.description>Dveře, jámy, pulty a doky pro věci, o kterých se nemluví. Zobrazí se teprve poté, co objevíte podsvětí.</HH_Group_Underworld.description>
+  <HH_Group_Underworld.description>Dveře, jámy, pulty a doky pro věci, o kterých se nemluví. Zobrazuje se, dokud je zapnutý modul Podsvětí a intenzita obsahu není Útulný.</HH_Group_Underworld.description>
 </LanguageData>

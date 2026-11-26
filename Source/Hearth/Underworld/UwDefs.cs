@@ -13,12 +13,14 @@ namespace Hearth.Underworld
     public static class UwDefs
     {
         public static ThingDef BackRoomDoor, FightPit, FenceCounter, SmugglerDock, HuntingGround, OrganClinic;
-        public static ResearchProjectDef ResDiscovery, ResMain, ResHunt, ResClinic;
+        public static ResearchProjectDef ResHunt, ResClinic;
         public static VenueTypeDef LoungeVenue;
         public static ThingCategoryDef CatOrgans; public static HediffDef Bruise;
         public static JobDef JobWatchBout, JobBackRoom, JobFenceDeal, JobLounge, JobInterrogate, JobHunt, JobQuarryFlee;
         public static ThoughtDef ThoughtSawFightKind, ThoughtSawFightBloodlust, ThoughtInterrogated, ThoughtOrganOutrage, ThoughtHuntKnown;
-        public static IncidentDef IncStranger, IncGang, IncHunt, IncSmuggler;
+        public static IncidentDef IncGang, IncHunt, IncSmuggler;
+        /// <summary>The buildings that make the underworld "in use" on a map (N08 guard, <see cref="Underworld.InUse"/>); only defs that exist.</summary>
+        public static readonly List<ThingDef> Facilities = new List<ThingDef>();
         public static readonly HashSet<ResearchProjectDef> GatedResearch = new HashSet<ResearchProjectDef>();
         public static readonly HashSet<BuildableDef> GatedBuildings = new HashSet<BuildableDef>();
 
@@ -26,7 +28,6 @@ namespace Hearth.Underworld
         {
             BackRoomDoor = Underworld.Def("HH_BackRoomDoor"); FightPit = Underworld.Def("HH_FightPitMarker"); FenceCounter = Underworld.Def("HH_FenceCounter");
             SmugglerDock = Underworld.Def("HH_SmugglerDock"); HuntingGround = Underworld.Def("HH_HuntingGroundMarker"); OrganClinic = Underworld.Def("HH_OrganClinic");
-            ResDiscovery = Underworld.Def<ResearchProjectDef>("HH_Underworld_Discovery"); ResMain = Underworld.Def<ResearchProjectDef>("HH_Underworld_1");
             ResHunt = Underworld.Def<ResearchProjectDef>("HH_TheHunt"); ResClinic = Underworld.Def<ResearchProjectDef>("HH_BlackClinic");
             CatOrgans = Underworld.Def<ThingCategoryDef>("BodyPartsNatural"); Bruise = Underworld.Def<HediffDef>("Bruise");
             LoungeVenue = Underworld.Def<VenueTypeDef>("HH_Venue_DrugLounge");
@@ -34,23 +35,44 @@ namespace Hearth.Underworld
             JobLounge = Underworld.Def<JobDef>("HH_UseLounge"); JobInterrogate = Underworld.Def<JobDef>("HH_Interrogate"); JobHunt = Underworld.Def<JobDef>("HH_HuntQuarry"); JobQuarryFlee = Underworld.Def<JobDef>("HH_QuarryFlee");
             ThoughtSawFightKind = Underworld.Def<ThoughtDef>("HH_SawFightPit_Kind"); ThoughtSawFightBloodlust = Underworld.Def<ThoughtDef>("HH_SawFightPit_Bloodlust");
             ThoughtInterrogated = Underworld.Def<ThoughtDef>("HH_Interrogated"); ThoughtOrganOutrage = Underworld.Def<ThoughtDef>("HH_OrganTradeOutrage"); ThoughtHuntKnown = Underworld.Def<ThoughtDef>("HH_HuntOnPrisoners");
-            IncStranger = Underworld.Def<IncidentDef>("HH_UnderworldStranger"); IncGang = Underworld.Def<IncidentDef>("HH_GangVisit");
+            IncGang = Underworld.Def<IncidentDef>("HH_GangVisit");
             IncHunt = Underworld.Def<IncidentDef>("HH_HuntParty"); IncSmuggler = Underworld.Def<IncidentDef>("HH_SmugglerLanding");
 
+            Facilities.Clear();
+            foreach (var d in new[] { BackRoomDoor, FightPit, FenceCounter, SmugglerDock, HuntingGround, OrganClinic }) if (d != null) Facilities.Add(d);
             foreach (var r in DefDatabase<ResearchProjectDef>.AllDefs) if (r.GetModExtension<UwGateExtension>() != null) GatedResearch.Add(r);
             foreach (var d in DefDatabase<ThingDef>.AllDefs) if (d.GetModExtension<UwGateExtension>() != null) GatedBuildings.Add(d);
             HLog.Info("Underworld", $"Defs: {GatedBuildings.Count} gated buildings, {GatedResearch.Count} gated research projects, door={(BackRoomDoor != null)}, pit={(FightPit != null)}, fence={(FenceCounter != null)}");
         }
 
-        /// <summary>Does the gate extension of a def let it show/work right now?</summary>
+        /// <summary>Does the gate extension of a def let it show/work right now? Module on, content not Cozy and at least minContent (needsDiscovery is ignored since 1.2.0).</summary>
         public static bool Open(UwGateExtension e)
         {
             if (e == null) return true;
             if (e.alwaysHidden) return false;
             if (!Underworld.Visible) return false;
             if ((int)Underworld.Effective < (int)e.minContent) return false;
-            if (e.needsDiscovery && !Underworld.Discovered) return false;
             return true;
+        }
+    }
+
+    /// <summary>On every underworld facility (XML): tells the N08 guard <see cref="Underworld.InUse"/> that the map changed. No saved data.</summary>
+    public class CompProperties_UwFacility : CompProperties { public CompProperties_UwFacility() { compClass = typeof(CompUwFacility); } }
+    public class CompUwFacility : ThingComp
+    {
+        public override void PostSpawnSetup(bool respawningAfterLoad) { base.PostSpawnSetup(respawningAfterLoad); Underworld.MarkInUseDirty(parent.Map); }
+        public override void PostDeSpawn(Map map
+#if RW16PLUS
+            , DestroyMode mode = DestroyMode.Vanish
+#endif
+            )
+        {
+            base.PostDeSpawn(map
+#if RW16PLUS
+                , mode
+#endif
+                );
+            Underworld.MarkInUseDirty(map);
         }
     }
 
@@ -82,25 +104,5 @@ namespace Hearth.Underworld
         }
     }
 
-    /// <summary>
-    /// During a non-lethal bout nobody takes damage once beaten (downed or below the yield line). Only an active bout of that very pawn is touched;
-    /// everything else (and a module that is off) returns at once. The blow is not cancelled (no "return false"): its amount is set to 0, so every other
-    /// prefix and postfix on PreApplyDamage (Combat Extended armour/stagger, shields, Vanilla Expanded) still runs on the damage pipeline as usual.
-    /// </summary>
-    [HarmonyPatch(typeof(Pawn), nameof(Pawn.PreApplyDamage))]
-    public static class Patch_PitDamageGuard
-    {
-        [HarmonyPriority(Priority.Last)]
-        public static bool Prefix(Pawn __instance, ref DamageInfo dinfo, out bool absorbed)
-        {
-            absorbed = false;
-            if (FightBout.ActiveCount == 0 || !Modules.On(ModuleId.Underworld)) return true;
-            var b = FightBout.OfPawn(__instance);
-            if (b == null) return true;
-            if (b.ShouldAbsorb(__instance)) { dinfo.SetAmount(0f); return true; }
-            // non-lethal: a heavy blow on a fighter close to the yield line (a muffalo's kick) must not kill before the bout referee notices; soften it there
-            if (b.NonLethal && b.IsNearYield(__instance)) dinfo.SetAmount(dinfo.Amount * 0.3f);
-            return true;
-        }
-    }
+    // The damage guard of the fight pit lives in Pit/PitSafety.cs since 1.2.0 (Patch_PitDamageGuard).
 }

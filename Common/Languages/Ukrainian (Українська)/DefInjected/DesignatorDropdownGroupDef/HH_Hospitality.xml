@@ -7,5 +7,5 @@
   <HH_Group_City.label>міське життя</HH_Group_City.label>
   <HH_Group_City.description>Екрани кінотеатру, салонні крісла, лавки в парку та стоянка таксі.</HH_Group_City.description>
   <HH_Group_Underworld.label>задня кімната</HH_Group_Underworld.label>
-  <HH_Group_Underworld.description>Двері, ями, прилавки та причали для речей, про які ніхто не говорить. Показується лише після того, як ви відкрили підземний світ.</HH_Group_Underworld.description>
+  <HH_Group_Underworld.description>Двері, ями, прилавки та причали для справ, про які не говорять. Показується, поки модуль «Підпілля» ввімкнений, а вміст не «Затишний».</HH_Group_Underworld.description>
 </LanguageData>

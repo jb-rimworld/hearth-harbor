@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_BackRoomDoor.label>뒷방 문</HH_BackRoomDoor.label>
-  <HH_BackRoomDoor.description>평범해 보이지만 잠금장치가 좋은 문입니다. 우리 사람들과 수상한 손님만 열 수 있습니다. 뒷방 문만으로 이루어진 방은 집의 명성에 포함되지 않습니다.</HH_BackRoomDoor.description>
+  <HH_BackRoomDoor.description>평범해 보이지만 자물쇠가 좋은 문으로, 식민지 주민과 수상한 손님만 열 수 있습니다. 문이 전부 뒷방 문인 방을 지으면 뒷방이 됩니다. 갱단이 그곳에서 만나고 돈을 내며, 집의 명성에는 반영되지 않습니다.</HH_BackRoomDoor.description>
   <HH_FightPitMarker.label>싸움터 표식</HH_FightPitMarker.label>
-  <HH_FightPitMarker.description>주변에 울타리 친 경기장을 표시합니다. 안쪽으로 최소 3x3칸 크기의 닫힌 울타리(문은 괜찮음)를 세우고 이 표식을 가운데에 두면 싸움터가 열립니다. 자원자, 죄수, 동물이 싸우고 손님들이 내기를 하며, 집은 판돈의 10분의 1을 가집니다. 대결은 한쪽이 항복하거나 쓰러져야 끝납니다. 죽을 때까지 싸우는 것은 어두운 내용부터만 가능하며, 자원자와 아이들에게는 결코 적용되지 않습니다.</HH_FightPitMarker.description>
+  <HH_FightPitMarker.description>9~700칸의 닫힌 울타리 안에 놓으세요. 식민지 주민으로 우클릭해 싸우거나 "싸움꾼…"과 "상대 부르기"를 쓰세요. 사람끼리의 대결은 점수로 겨루며 멍이 드는 정도로 끝납니다. 싸움터는 갱단을 끌어들이고 식민지에 속삭임이 돕니다.</HH_FightPitMarker.description>
   <HH_FenceCounter.label>장물아비의 카운터</HH_FenceCounter.label>
-  <HH_FenceCounter.description>흠집 난 카운터로, 신뢰받는 장물아비가 훔친 물품을 가치의 40퍼센트에 사들이고 수상한 구매자에게 70퍼센트에 되팝니다. 장물아비는 자체 금고로 움직이며, 금고는 당신의 금전 서랍에서 채워집니다. 물품의 주인이 때때로 이를 알아내기도 합니다.</HH_FenceCounter.description>
+  <HH_FenceCounter.description>흠집 난 카운터로, 믿을 만한 장물아비가 훔친 물건을 싸게 사서 수상한 구매자에게 팝니다. 완성되면 갱단이 전리품을 여기에 팔고 재고를 사 갑니다. 대금은 금전 서랍에서 채운 자체 금고에서 나가며, "물건 꺼내기"로 선반을 비웁니다. 물건 주인이 가끔 알아냅니다.</HH_FenceCounter.description>
   <HH_SmugglerDock.label>밀수꾼의 부두</HH_SmugglerDock.label>
-  <HH_SmugglerDock.description>그늘진 등이 달린 맨 착륙대입니다. 밤이면 상자가 내려오기도 하고, 한 목소리가 질문 없이 싸게 내놓습니다. 가끔 누군가 등불을 알아챕니다.</HH_SmugglerDock.description>
+  <HH_SmugglerDock.description>등불에 갓을 씌운 허름한 착륙장. 완성되면 가끔 밤에 배가 와서 상자 하나를 싸게 내놓으며 아무것도 묻지 않습니다. 편지로 알려 주면 부두의 버튼으로 사거나 돌려보냅니다. 가끔 누군가 등불을 알아챕니다.</HH_SmugglerDock.description>
   <HH_HuntingGroundMarker.label>사냥터 표식</HH_HuntingGroundMarker.label>
-  <HH_HuntingGroundMarker.description>울타리 친 사냥터(최소 60칸, 닫힘)를 표시합니다. 부유한 사냥꾼들은 그곳에 풀어 놓은 동물을 쏘는 대가로 돈을 냅니다. 어두운 내용과 어울리는 이데올로기가 있으면 죄수가 사냥감이 될 수 있으며, 이는 경고와 함께 별도로 켜야 합니다.</HH_HuntingGroundMarker.description>
+  <HH_HuntingGroundMarker.description>울타리를 친 사냥터를 표시합니다. 60칸 이상 1600칸 이하의 닫힌 울타리 안에 놓으세요. 그러면 부유한 사냥꾼이 가끔 와서, 들여놓은 동물을 쏘려고 돈을 냅니다. 어두움 내용과 맞는 이데올로기가 있거나 암울함 내용이면 죄수가 사냥감이 될 수 있으며, 표지에서 따로 켭니다.</HH_HuntingGroundMarker.description>
   <HH_OrganClinic.label>진료소 카운터</HH_OrganClinic.label>
-  <HH_OrganClinic.description>채취된 장기를 익명의 기증자에게 내놓는 차가운 카운터입니다. 기증자들은 밤에 와서 장기를 가져가고 한마디 없이 값을 치릅니다. 어두운 내용이나 잔혹한 내용에서만 사용할 수 있습니다. 장기 매매를 혐오하는 이데올로기는 이를 당신에게 불리하게 기억할 것입니다.</HH_OrganClinic.description>
+  <HH_OrganClinic.description>장기 거래를 위한 차가운 카운터로, 어두움 또는 암울함 내용에서만 쓸 수 있습니다. 적출한 장기를 올려 두면 익명의 구매자가 밤에 가져가고 말없이 돈을 냅니다. 장기 거래를 혐오하는 이데올로기는 이를 마음에 담아 둡니다.</HH_OrganClinic.description>
 </LanguageData>

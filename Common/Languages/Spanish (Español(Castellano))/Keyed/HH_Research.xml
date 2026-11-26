@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Setting.core.researchMode>Modo de investigación</HH.Setting.core.researchMode>
-  <HH.Setting.core.researchMode.Desc>Completo: los árboles de investigación de Hearth &amp; Harbor y Silverline condicionan sus edificios y funciones. Desactivado: todo está disponible desde el inicio (los proyectos oscuros del inframundo siguen necesitando su descubrimiento).</HH.Setting.core.researchMode.Desc>
+  <HH.Setting.core.researchMode.Desc>Completo: los árboles de investigación de Hearth &amp; Harbor y Silverline condicionan sus edificios y funciones. Desactivado: todo está disponible desde el inicio.</HH.Setting.core.researchMode.Desc>
   <HH.Enum.CoreResearchMode.Full>Completo</HH.Enum.CoreResearchMode.Full>
   <HH.Enum.CoreResearchMode.Off>Desactivado</HH.Enum.CoreResearchMode.Off>
   <HH.Gate.ModuleOff>Módulo desactivado: {0}</HH.Gate.ModuleOff>

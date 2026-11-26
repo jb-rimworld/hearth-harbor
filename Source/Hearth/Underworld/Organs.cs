@@ -15,18 +15,6 @@ namespace Hearth.Underworld
     /// </summary>
     public class CompOrganClinic : ThingComp
     {
-        public override void PostSpawnSetup(bool respawningAfterLoad)
-        {
-            base.PostSpawnSetup(respawningAfterLoad);
-            if (respawningAfterLoad || !parent.Spawned || parent.Faction != Faction.OfPlayer) return;
-            var p = parent;
-            LongEventHandler.ExecuteWhenFinished(() =>
-            {
-                if (p.Destroyed || !p.Spawned) return;
-                UwWarnings.FirstBuildWarning(false, null, () => { if (!p.Destroyed) p.Destroy(DestroyMode.Cancel); });
-            });
-        }
-
         public IEnumerable<Thing> Organs()
         {
             if (!parent.Spawned) yield break;
@@ -38,7 +26,7 @@ namespace Hearth.Underworld
 
         public override void CompTickRare()
         {
-            if (!parent.Spawned || parent.Faction != Faction.OfPlayer || !Underworld.Allows(UwFeature.OrganClinic) || !Underworld.Discovered) return;
+            if (!parent.Spawned || parent.Faction != Faction.OfPlayer || !Underworld.Allows(UwFeature.OrganClinic)) return;
             if (!Organs_.Night(parent.Map)) return;
             Organs_.Collect(this);
         }
@@ -76,7 +64,7 @@ namespace Hearth.Underworld
                 if (order != null) { order.done = true; Messages.Message(UwPay.T("Organ.OrderDone", t.LabelNoCount), clinic.parent, MessageTypeDefOf.PositiveEvent, false); }
                 t.Destroy();
                 sold += count;
-                Underworld.Comp.OrgansSold += count;
+                Underworld.Comp.OrgansSold += count; Underworld.Comp.NoteEvent(FacilityStatus.ClinicId);
                 Underworld.AddWhispers(HSettings.Get("underworld.whispers.organ") * count, "organ sale");
                 UwActivity.Note(map);
                 Outrage(map);
@@ -99,7 +87,7 @@ namespace Hearth.Underworld
         public static void TickOrders(int now)
         {
             var comp = Underworld.Comp; if (comp == null) return;
-            if (!Underworld.Allows(UwFeature.OrganOrders) || !Underworld.Discovered) return;
+            if (!Underworld.Allows(UwFeature.OrganOrders)) return;
             if (!HomeHasClinic()) return;
             foreach (var o in comp.Orders.ToList())
             {

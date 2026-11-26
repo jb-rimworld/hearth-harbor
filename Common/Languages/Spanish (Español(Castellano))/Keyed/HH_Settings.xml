@@ -16,8 +16,6 @@
   <HH.Enum.StaffRule.AlwaysRequired>Siempre necesario</HH.Enum.StaffRule.AlwaysRequired>
   <HH.Enum.StaffRule.NeverRequired>Nunca necesario</HH.Enum.StaffRule.NeverRequired>
   <HH.Enum.StaffRule.PerVenueType>Según el tipo de local</HH.Enum.StaffRule.PerVenueType>
-  <HH.Enum.UnderworldMode.AlwaysOn>Siempre activo</HH.Enum.UnderworldMode.AlwaysOn>
-  <HH.Enum.UnderworldMode.DiscoverInGame>Descubrir en la partida</HH.Enum.UnderworldMode.DiscoverInGame>
   <HH.Setting.bank.accountBeta>Exponente de interés de cuenta (sin uso desde 1.1.0)</HH.Setting.bank.accountBeta>
   <HH.Setting.bank.accountBeta.Desc>Sustituido por «Interés de cuenta: parte del rendimiento del mercado». Se mantiene para que carguen las partidas antiguas; cambiarlo no hace nada.</HH.Setting.bank.accountBeta.Desc>
   <HH.Setting.bank.accountShare>Interés de cuenta: parte del rendimiento del mercado</HH.Setting.bank.accountShare>
@@ -407,7 +405,7 @@
   <HH.Setting.underworld.gang.intervalDays>Días entre visitas de bandas</HH.Setting.underworld.gang.intervalDays>
   <HH.Setting.underworld.gang.intervalDays.Desc>Tiempo medio entre visitas de bandas cuando existen la trastienda, el foso o el perista.</HH.Setting.underworld.gang.intervalDays.Desc>
   <HH.Setting.underworld.gang.intimidateChance>Probabilidad de que una banda exija dinero de protección</HH.Setting.underworld.gang.intimidateChance>
-  <HH.Setting.underworld.gang.intimidateChance.Desc>Sigue al control de dificultad; Habitación estándar y niveles más fáciles nunca te imponen nada salvo un diálogo que puedes rechazar.</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>Sigue al control de dificultad. En Habitación estándar y niveles más fáciles nunca es más que una oferta que puedes rechazar.</HH.Setting.underworld.gang.intimidateChance.Desc>
   <HH.Setting.underworld.gang.prisonAccess>Las bandas pueden visitar la prisión</HH.Setting.underworld.gang.prisonAccess>
   <HH.Setting.underworld.gang.prisonAccess.Desc>Permite a los huéspedes de bandas la visita a las celdas de retención (interrogatorio de prisioneros). Desactivado por defecto; de otro modo las prisiones están cerradas a todos los huéspedes.</HH.Setting.underworld.gang.prisonAccess.Desc>
   <HH.Setting.underworld.gang.protectionFee>Dinero de protección exigido</HH.Setting.underworld.gang.protectionFee>
@@ -423,8 +421,6 @@
   <HH.Setting.underworld.hunt.quarryHours.Desc>Un prisionero que aguante este tiempo o llegue a la valla queda libre.</HH.Setting.underworld.hunt.quarryHours.Desc>
   <HH.Setting.underworld.lounge.price>Precio de una sesión</HH.Setting.underworld.lounge.price>
   <HH.Setting.underworld.lounge.price.Desc>Lo que paga un huésped en el salón de drogas. Los huéspedes solo toman lo que permite su ideología.</HH.Setting.underworld.lounge.price.Desc>
-  <HH.Setting.underworld.mode>Cómo aparece el inframundo</HH.Setting.underworld.mode>
-  <HH.Setting.underworld.mode.Desc>Descubrir en partida: un desconocido de aspecto sospechoso pregunta si tienes trastienda, y solo un sí abre el lado oscuro. Siempre activo: está abierto desde el principio. (Desactivado es el interruptor del módulo; la intensidad de contenido Acogedor lo oculta por completo.)</HH.Setting.underworld.mode.Desc>
   <HH.Setting.underworld.organ.orderDays>Días para entregar un encargo</HH.Setting.underworld.organ.orderDays>
   <HH.Setting.underworld.organ.orderPremium>Recargo en los órganos encargados</HH.Setting.underworld.organ.orderPremium>
   <HH.Setting.underworld.organ.orderPremium.Desc>Solo en modo Sombrío: un órgano listo que se entregue dentro del plazo se paga tantas veces el precio normal como indique este valor.</HH.Setting.underworld.organ.orderPremium.Desc>
@@ -441,9 +437,9 @@
   <HH.Setting.underworld.pit.intervalHours>Horas entre combates</HH.Setting.underworld.pit.intervalHours>
   <HH.Setting.underworld.pit.intervalHours.Desc>Un foso de combate con suficientes luchadores y espectadores empieza un combate con esta frecuencia.</HH.Setting.underworld.pit.intervalHours.Desc>
   <HH.Setting.underworld.pit.maxBoutTicks>Combate más largo (ticks)</HH.Setting.underworld.pit.maxBoutTicks>
-  <HH.Setting.underworld.pit.maxBoutTicks.Desc>Un combate que nadie gana en este tiempo es empate: se devuelven todas las apuestas.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>Pasado este tiempo gana el luchador con la menor parte de su límite de puntos. Partes iguales son un empate y se devuelven todas las apuestas.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
   <HH.Setting.underworld.pit.yieldHealth>Rendición con la salud en</HH.Setting.underworld.pit.yieldHealth>
-  <HH.Setting.underworld.pit.yieldHealth.Desc>Un combate termina cuando un luchador baja de esta fracción de salud, salvo que sea a muerte.</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>Los combates de prisioneros y animales terminan cuando un luchador cae por debajo de esta parte de su salud, salvo que sean a muerte. Los combates con personas terminan por puntos.</HH.Setting.underworld.pit.yieldHealth.Desc>
   <HH.Setting.underworld.scandalCooldownDays>Días entre escándalos</HH.Setting.underworld.scandalCooldownDays>
   <HH.Setting.underworld.scandalCooldownDays.Desc>Como máximo un escándalo por mapa cada tantos días.</HH.Setting.underworld.scandalCooldownDays.Desc>
   <HH.Setting.underworld.smuggler.inspectChance>Probabilidad de inspección</HH.Setting.underworld.smuggler.inspectChance>
@@ -454,14 +450,6 @@
   <HH.Setting.underworld.smuggler.maxValue.Desc>Valor de mercado del cajón más grande ofrecido.</HH.Setting.underworld.smuggler.maxValue.Desc>
   <HH.Setting.underworld.smuggler.priceFactor>Precio del contrabando</HH.Setting.underworld.smuggler.priceFactor>
   <HH.Setting.underworld.smuggler.priceFactor.Desc>Parte del valor de mercado que pagas por un cajón.</HH.Setting.underworld.smuggler.priceFactor.Desc>
-  <HH.Setting.underworld.strangerCooldownDays>Días hasta que vuelve a preguntar</HH.Setting.underworld.strangerCooldownDays>
-  <HH.Setting.underworld.strangerCooldownDays.Desc>Tras "No me interesa", el desconocido espera tantos días antes de volver a preguntar.</HH.Setting.underworld.strangerCooldownDays.Desc>
-  <HH.Setting.underworld.strangerMaxAsks>Con qué frecuencia pregunta</HH.Setting.underworld.strangerMaxAsks>
-  <HH.Setting.underworld.strangerMaxAsks.Desc>Tras tantas negativas, el desconocido se rinde para siempre.</HH.Setting.underworld.strangerMaxAsks.Desc>
-  <HH.Setting.underworld.strangerMaxWhispers>Susurros máximos para el desconocido</HH.Setting.underworld.strangerMaxWhispers>
-  <HH.Setting.underworld.strangerMaxWhispers.Desc>Solo aparece mientras tus Susurros estén en o por debajo de este valor.</HH.Setting.underworld.strangerMaxWhispers.Desc>
-  <HH.Setting.underworld.strangerMeanDays>Días hasta que aparece el desconocido</HH.Setting.underworld.strangerMeanDays>
-  <HH.Setting.underworld.strangerMeanDays.Desc>Tiempo medio entre los momentos en que puede presentarse el desconocido (una vez que la colonia tenga huéspedes o un local, y tus Susurros estén bajos).</HH.Setting.underworld.strangerMeanDays.Desc>
   <HH.Setting.underworld.whispers.fence>Susurros por trato con el perista</HH.Setting.underworld.whispers.fence>
   <HH.Setting.underworld.whispers.gang>Susurros por visita de la banda</HH.Setting.underworld.whispers.gang>
   <HH.Setting.underworld.whispers.hunt>Susurros por cacería</HH.Setting.underworld.whispers.hunt>
@@ -480,7 +468,6 @@
   <HH.SettingCat.Compatibility>Compatibilidad</HH.SettingCat.Compatibility>
   <HH.SettingCat.DLCandtraits>DLC y rasgos</HH.SettingCat.DLCandtraits>
   <HH.SettingCat.Difficulty>Dificultad</HH.SettingCat.Difficulty>
-  <HH.SettingCat.Discovery>Descubrimiento</HH.SettingCat.Discovery>
   <HH.SettingCat.Druglounge>Salón de drogas</HH.SettingCat.Druglounge>
   <HH.SettingCat.Effects>Efectos</HH.SettingCat.Effects>
   <HH.SettingCat.Factionprojects>Proyectos de facción</HH.SettingCat.Factionprojects>
@@ -544,4 +531,18 @@
   <HH.SettingCat.Wealthandmood>Riqueza y ánimo</HH.SettingCat.Wealthandmood>
   <HH.SettingCat.Whispers>Susurros</HH.SettingCat.Whispers>
   <HH.SettingCat.Wing>Ala</HH.SettingCat.Wing>
+  <HH.Setting.underworld.gang.demandHours>Horas para responder a una exigencia de protección</HH.Setting.underworld.gang.demandHours>
+  <HH.Setting.underworld.gang.demandHours.Desc>Una exigencia que no respondas en este tiempo cuenta como un rechazo.</HH.Setting.underworld.gang.demandHours.Desc>
+  <HH.Setting.underworld.gang.firstDays>Días hasta la primera banda</HH.Setting.underworld.gang.firstDays>
+  <HH.Setting.underworld.gang.firstDays.Desc>La primera banda llega unos tantos días (de la mitad a una vez y media) después de que exista la primera trastienda, mostrador del perista o foso de combate.</HH.Setting.underworld.gang.firstDays.Desc>
+  <HH.Setting.underworld.gang.retryHours>Horas hasta reintentar una visita de banda fallida</HH.Setting.underworld.gang.retryHours>
+  <HH.Setting.underworld.gang.retryHours.Desc>Cuando una banda no puede venir (sin facción amiga, sin acceso al mapa), el siguiente intento es tantas horas después.</HH.Setting.underworld.gang.retryHours.Desc>
+  <HH.Setting.underworld.pit.guestPurse>Bolsa para un huésped ganador</HH.Setting.underworld.pit.guestPurse>
+  <HH.Setting.underworld.pit.guestPurse.Desc>Un huésped que gana un combate recibe esta cantidad de plata, pagada de lo que la casa se queda en ese combate (sin ganancia, sin bolsa).</HH.Setting.underworld.pit.guestPurse.Desc>
+  <HH.Setting.underworld.pit.opponentFee>Tarifa de un rival contratado</HH.Setting.underworld.pit.opponentFee>
+  <HH.Setting.underworld.pit.opponentFee.Desc>"Llamar a un rival" contrata una bestia del foso para un luchador solo. La colonia paga esta tarifa: primero de la caja registradora, luego de la plata en existencias y luego del banco.</HH.Setting.underworld.pit.opponentFee.Desc>
+  <HH.Setting.underworld.pit.scoreLimit>Puntos para perder un combate</HH.Setting.underworld.pit.scoreLimit>
+  <HH.Setting.underworld.pit.scoreLimit.Desc>Los combates con un huésped, colono o esclavo se luchan por puntos: un luchador pierde cuando el daño que habría recibido alcanza esta cantidad de puntos por su escala de salud. Nadie sale herido.</HH.Setting.underworld.pit.scoreLimit.Desc>
+  <HH.Setting.underworld.smuggler.offerHours>Horas que espera la barca de un contrabandista</HH.Setting.underworld.smuggler.offerHours>
+  <HH.Setting.underworld.smuggler.offerHours.Desc>Una barca a la que no respondas en este tiempo se va. No pasa nada más.</HH.Setting.underworld.smuggler.offerHours.Desc>
 </LanguageData>

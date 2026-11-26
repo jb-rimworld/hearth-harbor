@@ -16,8 +16,6 @@
   <HH.Enum.StaffRule.AlwaysRequired>始终需要</HH.Enum.StaffRule.AlwaysRequired>
   <HH.Enum.StaffRule.NeverRequired>从不需要</HH.Enum.StaffRule.NeverRequired>
   <HH.Enum.StaffRule.PerVenueType>按场馆类型</HH.Enum.StaffRule.PerVenueType>
-  <HH.Enum.UnderworldMode.AlwaysOn>始终开启</HH.Enum.UnderworldMode.AlwaysOn>
-  <HH.Enum.UnderworldMode.DiscoverInGame>游戏中发现</HH.Enum.UnderworldMode.DiscoverInGame>
   <HH.Setting.bank.accountBeta>账户利息指数（自 1.1.0 起不再使用）</HH.Setting.bank.accountBeta>
   <HH.Setting.bank.accountBeta.Desc>已由“账户利息：占市场回报的比例”取代。保留此项只为让旧存档能够读取；改动它没有任何效果。</HH.Setting.bank.accountBeta.Desc>
   <HH.Setting.bank.accountShare>账户利息：占市场回报的比例</HH.Setting.bank.accountShare>
@@ -407,7 +405,7 @@
   <HH.Setting.underworld.gang.intervalDays>帮派来访间隔（天）</HH.Setting.underworld.gang.intervalDays>
   <HH.Setting.underworld.gang.intervalDays.Desc>后屋、格斗坑或销赃者存在之后，帮派来访之间的平均间隔。</HH.Setting.underworld.gang.intervalDays.Desc>
   <HH.Setting.underworld.gang.intimidateChance>帮派索要保护费的几率</HH.Setting.underworld.gang.intimidateChance>
-  <HH.Setting.underworld.gang.intimidateChance.Desc>随难度滑块变化；「标准房」及更简单的难度下，除了可以拒绝的对话外，绝不会强迫您做任何事。</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>随难度滑块变化。在“标准房”及更简单的难度下，它至多只是一个可以拒绝的提议。</HH.Setting.underworld.gang.intimidateChance.Desc>
   <HH.Setting.underworld.gang.prisonAccess>帮派可以参观监狱</HH.Setting.underworld.gang.prisonAccess>
   <HH.Setting.underworld.gang.prisonAccess.Desc>允许帮派客人参观牢房（审问囚犯）。默认关闭；否则所有客人都不得进入监狱。</HH.Setting.underworld.gang.prisonAccess.Desc>
   <HH.Setting.underworld.gang.protectionFee>索要的保护费</HH.Setting.underworld.gang.protectionFee>
@@ -423,8 +421,6 @@
   <HH.Setting.underworld.hunt.quarryHours.Desc>存活这么久或抵达围栏线的囚犯即获得自由。</HH.Setting.underworld.hunt.quarryHours.Desc>
   <HH.Setting.underworld.lounge.price>每次消费的价格</HH.Setting.underworld.lounge.price>
   <HH.Setting.underworld.lounge.price.Desc>客人在休息室的花费。客人只会选择其意识形态允许的内容。</HH.Setting.underworld.lounge.price.Desc>
-  <HH.Setting.underworld.mode>地下世界如何显现</HH.Setting.underworld.mode>
-  <HH.Setting.underworld.mode.Desc>游戏中发现：一个鬼祟的陌生人会问您是否有后屋，只有肯定的回答才会打开暗面。始终开启：从一开始就开放。（「关闭」是模块开关；「温馨内容」强度会将其完全隐藏。）</HH.Setting.underworld.mode.Desc>
   <HH.Setting.underworld.organ.orderDays>器官订单交付天数</HH.Setting.underworld.organ.orderDays>
   <HH.Setting.underworld.organ.orderPremium>订购器官的溢价</HH.Setting.underworld.organ.orderPremium>
   <HH.Setting.underworld.organ.orderPremium.Desc>仅冷酷模式：在期限内交付的现成器官，按正常价格的这个倍数支付。</HH.Setting.underworld.organ.orderPremium.Desc>
@@ -441,9 +437,9 @@
   <HH.Setting.underworld.pit.intervalHours>两场比斗的间隔（小时）</HH.Setting.underworld.pit.intervalHours>
   <HH.Setting.underworld.pit.intervalHours.Desc>格斗场拥有足够的斗士和观众时，每隔这么久开始一场比斗。</HH.Setting.underworld.pit.intervalHours.Desc>
   <HH.Setting.underworld.pit.maxBoutTicks>最长比斗时长（tick）</HH.Setting.underworld.pit.maxBoutTicks>
-  <HH.Setting.underworld.pit.maxBoutTicks.Desc>在此时间内无人获胜的比斗判为平局，所有赌注全部退还。</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>超过这个时间后，得分占点数上限比例较小的一方获胜。比例相同则为平局，所有赌注退还。</HH.Setting.underworld.pit.maxBoutTicks.Desc>
   <HH.Setting.underworld.pit.yieldHealth>认输血量</HH.Setting.underworld.pit.yieldHealth>
-  <HH.Setting.underworld.pit.yieldHealth.Desc>斗士的生命值低于此比例时比斗结束，除非是不死不休的决斗。</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>囚犯与动物的比赛，在一方的健康低于这个比例时结束，除非是生死战。人与人的比赛按点数结束。</HH.Setting.underworld.pit.yieldHealth.Desc>
   <HH.Setting.underworld.scandalCooldownDays>丑闻间隔（天）</HH.Setting.underworld.scandalCooldownDays>
   <HH.Setting.underworld.scandalCooldownDays.Desc>每张地图在这么多天内最多发生一起丑闻。</HH.Setting.underworld.scandalCooldownDays.Desc>
   <HH.Setting.underworld.smuggler.inspectChance>被检查的概率</HH.Setting.underworld.smuggler.inspectChance>
@@ -454,14 +450,6 @@
   <HH.Setting.underworld.smuggler.maxValue.Desc>提供的最大货箱的市场价值。</HH.Setting.underworld.smuggler.maxValue.Desc>
   <HH.Setting.underworld.smuggler.priceFactor>违禁品价格</HH.Setting.underworld.smuggler.priceFactor>
   <HH.Setting.underworld.smuggler.priceFactor.Desc>购买一个货箱时支付的市场价值比例。</HH.Setting.underworld.smuggler.priceFactor.Desc>
-  <HH.Setting.underworld.strangerCooldownDays>陌生人再次询问前的天数</HH.Setting.underworld.strangerCooldownDays>
-  <HH.Setting.underworld.strangerCooldownDays.Desc>选择「没兴趣」后，陌生人要等这么多天才会再次询问。</HH.Setting.underworld.strangerCooldownDays.Desc>
-  <HH.Setting.underworld.strangerMaxAsks>询问频率</HH.Setting.underworld.strangerMaxAsks>
-  <HH.Setting.underworld.strangerMaxAsks.Desc>被拒绝这么多次后，陌生人将彻底放弃。</HH.Setting.underworld.strangerMaxAsks.Desc>
-  <HH.Setting.underworld.strangerMaxWhispers>陌生人出现时的耳语值上限</HH.Setting.underworld.strangerMaxWhispers>
-  <HH.Setting.underworld.strangerMaxWhispers.Desc>只有当你的耳语值不高于此数值时他才会出现。</HH.Setting.underworld.strangerMaxWhispers.Desc>
-  <HH.Setting.underworld.strangerMeanDays>陌生人出现的平均间隔（天）</HH.Setting.underworld.strangerMeanDays>
-  <HH.Setting.underworld.strangerMeanDays.Desc>陌生人可能现身的时机之间的平均天数（殖民地有客人或营业场所之后，且你的耳语值较低时）。</HH.Setting.underworld.strangerMeanDays.Desc>
   <HH.Setting.underworld.whispers.fence>每笔销赃交易的耳语值</HH.Setting.underworld.whispers.fence>
   <HH.Setting.underworld.whispers.gang>每次帮派拜访的耳语值</HH.Setting.underworld.whispers.gang>
   <HH.Setting.underworld.whispers.hunt>每次狩猎的耳语值</HH.Setting.underworld.whispers.hunt>
@@ -480,7 +468,6 @@
   <HH.SettingCat.Compatibility>兼容性</HH.SettingCat.Compatibility>
   <HH.SettingCat.DLCandtraits>DLC 与特质</HH.SettingCat.DLCandtraits>
   <HH.SettingCat.Difficulty>难度</HH.SettingCat.Difficulty>
-  <HH.SettingCat.Discovery>发现</HH.SettingCat.Discovery>
   <HH.SettingCat.Druglounge>毒品休闲室</HH.SettingCat.Druglounge>
   <HH.SettingCat.Effects>效果</HH.SettingCat.Effects>
   <HH.SettingCat.Factionprojects>派系项目</HH.SettingCat.Factionprojects>
@@ -544,4 +531,18 @@
   <HH.SettingCat.Wealthandmood>财富与心情</HH.SettingCat.Wealthandmood>
   <HH.SettingCat.Whispers>耳语</HH.SettingCat.Whispers>
   <HH.SettingCat.Wing>客翼</HH.SettingCat.Wing>
+  <HH.Setting.underworld.gang.demandHours>回应保护费要求的时限（小时）</HH.Setting.underworld.gang.demandHours>
+  <HH.Setting.underworld.gang.demandHours.Desc>在此时限内没有回应的要求，视为拒绝。</HH.Setting.underworld.gang.demandHours.Desc>
+  <HH.Setting.underworld.gang.firstDays>第一个帮派出现前的天数</HH.Setting.underworld.gang.firstDays>
+  <HH.Setting.underworld.gang.firstDays.Desc>在第一个后间、销赃柜台或格斗坑出现后，第一个帮派会在大约这么多天（一半到一倍半之间）后到来。</HH.Setting.underworld.gang.firstDays.Desc>
+  <HH.Setting.underworld.gang.retryHours>帮派来访失败后再次尝试前的等待小时数</HH.Setting.underworld.gang.retryHours>
+  <HH.Setting.underworld.gang.retryHours.Desc>帮派无法到来时（没有友好派系，或没有进入地图的路），下一次尝试在这么多小时之后。</HH.Setting.underworld.gang.retryHours.Desc>
+  <HH.Setting.underworld.pit.guestPurse>获胜访客的奖金</HH.Setting.underworld.pit.guestPurse>
+  <HH.Setting.underworld.pit.guestPurse.Desc>赢下比赛的访客可获得这么多银币，从该场比赛宅邸的抽成中支付（没有抽成，就没有奖金）。</HH.Setting.underworld.pit.guestPurse.Desc>
+  <HH.Setting.underworld.pit.opponentFee>雇佣对手的费用</HH.Setting.underworld.pit.opponentFee>
+  <HH.Setting.underworld.pit.opponentFee.Desc>“叫来对手”会为单人格斗者雇一头坑兽。殖民地支付这笔费用：先从钱柜付，再用库存银币，最后用银行。</HH.Setting.underworld.pit.opponentFee.Desc>
+  <HH.Setting.underworld.pit.scoreLimit>输掉比赛的点数</HH.Setting.underworld.pit.scoreLimit>
+  <HH.Setting.underworld.pit.scoreLimit.Desc>与访客、殖民者或奴隶的比赛按点数决胜：当一方本会受到的伤害达到这个点数乘以其健康系数时，该方落败。没有人受伤。</HH.Setting.underworld.pit.scoreLimit.Desc>
+  <HH.Setting.underworld.smuggler.offerHours>走私船等待的小时数</HH.Setting.underworld.smuggler.offerHours>
+  <HH.Setting.underworld.smuggler.offerHours.Desc>在此时限内没有回应，船就会离开；不会发生别的事。</HH.Setting.underworld.smuggler.offerHours.Desc>
 </LanguageData>

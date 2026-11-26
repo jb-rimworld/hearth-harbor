@@ -61,25 +61,19 @@
   <HH.UI.Modules.Content>Intensidade do conteúdo</HH.UI.Modules.Content>
   <HH.UI.Modules.ContentDesc>O quão sombrio o conteúdo opcional pode ficar. Nunca conteúdo sexual, seja qual for a escolha.</HH.UI.Modules.ContentDesc>
   <HH.UI.Content.Cozy>Aconchegante</HH.UI.Content.Cozy>
-  <HH.UI.Content.Cozy.Tip>Apenas histórias e consequências leves.</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Cozy.Tip>Só histórias e consequências leves. Esconde todo o Submundo: sala dos fundos, poço de luta, receptador, salão de drogas e gangues.</HH.UI.Content.Cozy.Tip>
   <HH.UI.Content.Standard>Padrão</HH.UI.Content.Standard>
   <HH.UI.Content.Standard.Tip>O padrão. Arestas ásperas, nada desagradável.</HH.UI.Content.Standard.Tip>
   <HH.UI.Content.Dark>Sombrio</HH.UI.Content.Dark>
-  <HH.UI.Content.Dark.Tip>Crime, dívidas e violência podem aparecer.</HH.UI.Content.Dark.Tip>
+  <HH.UI.Content.Dark.Tip>Soma ao Padrão: prisioneiros podem lutar até a morte, ser interrogados com mais dureza e ser caçados (com uma ideologia adequada), e passam a ser possíveis uma clínica de órgãos e o menu sombrio.</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>Sinistro</HH.UI.Content.Grim>
-  <HH.UI.Content.Grim.Tip>Tudo o que o jogo oferece, por completo.</HH.UI.Content.Grim.Tip>
-  <HH.UI.Underworld.Discover>Descobrir no jogo</HH.UI.Underworld.Discover>
-  <HH.UI.Underworld.On>Ligado</HH.UI.Underworld.On>
-  <HH.UI.Underworld.Off>Desligado</HH.UI.Underworld.Off>
-  <HH.UI.Underworld.Discover.Tip>Fora do radar até que um estranho suspeito apareça no seu jogo.</HH.UI.Underworld.Discover.Tip>
-  <HH.UI.Underworld.On.Tip>Disponível desde o início.</HH.UI.Underworld.On.Tip>
-  <HH.UI.Underworld.Off.Tip>Nunca disponível. O estranho suspeito também fica longe.</HH.UI.Underworld.Off.Tip>
+  <HH.UI.Content.Grim.Tip>Soma ao Sombrio: caçar prisioneiros não exige uma ideologia adequada, e os compradores de órgãos fazem pedidos com prazo.</HH.UI.Content.Grim.Tip>
   <HH.UI.ModuleDesc.Inn>Hóspedes, camas de hóspedes, alas, recepção, viajantes e recrutamento.</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>Placas de estabelecimentos, lojas, máquinas de venda, mercados, restaurantes e pratos.</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>Mesas, caça-níqueis, fichas e os riscos do jogo para hóspedes e colonos.</HH.UI.ModuleDesc.Casino>
   <HH.UI.ModuleDesc.Wellness>Estadias em spa, sauna e reabilitação.</HH.UI.ModuleDesc.Wellness>
   <HH.UI.ModuleDesc.CityLife>Cinema, shopping, salão de beleza, templos, táxis e segurança.</HH.UI.ModuleDesc.CityLife>
-  <HH.UI.ModuleDesc.Underworld>Um salão reservado, um ringue de luta e um receptador. Encontrado no jogo, nunca imposto.</HH.UI.ModuleDesc.Underworld>
+  <HH.UI.ModuleDesc.Underworld>Uma sala dos fundos discreta, um poço de luta e um receptador. Nada disso acontece até você construir.</HH.UI.ModuleDesc.Underworld>
   <HH.UI.ModuleDesc.Bank>Silverline: contas, pagamentos, caixas eletrônicos, investimentos, empréstimos, seguros e loteria.</HH.UI.ModuleDesc.Bank>
   <HH.UI.ModuleDesc.AiFlavour>Textos de ambientação opcionais escritos por uma IA por meio de um relay. Desligado por padrão.</HH.UI.ModuleDesc.AiFlavour>
   <HH.UI.Diff.Title>Dificuldade de hospedagem</HH.UI.Diff.Title>
@@ -294,7 +288,6 @@
   <HH.UI.Overview.Arrivals>Chegadas, próximas 24 h: {0}, cerca de {1} grupos por dia esperados.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>ninguém agendado ainda</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>{0} grupo(s) agendado(s) (cerca de {1} hóspede(s))</HH.UI.Overview.Arrivals.Planned>
-  <HH.UI.Content.Decline>Não, manter {0}</HH.UI.Content.Decline>
   <HH.UI.Diff.Ladder>Submundo: limites de penalidade por incidente</HH.UI.Diff.Ladder>
   <HH.UI.Diff.WarnHard>A partir de Overbooked, incidentes do submundo podem custar boa vontade, renome e prata de verdade (veja os limites abaixo).</HH.UI.Diff.WarnHard>
   <HH.UI.Feel.4>Incidentes do submundo passam a custar boa vontade, renome e multas.</HH.UI.Feel.4>
@@ -311,7 +304,7 @@
   <HH.Setting.core.neverDie.Desc>Hóspedes são derrubados em vez de mortos. Continuam vivos, caídos, até alguém cuidar deles.</HH.Setting.core.neverDie.Desc>
   <HH.Setting.core.infiniteMoney.Desc>Hóspedes que chegam com esta opção ligada levam uma carteira sem fundo. O fator de dinheiro dos hóspedes não tem efeito sobre eles.</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.ironBank.Desc>A cobrança de dívidas sempre sobe à etapa mais alta, qualquer que seja a dificuldade. Ninguém adia suas parcelas em silêncio.</HH.Setting.core.ironBank.Desc>
-  <HH.Setting.core.peacefulUnderworld.Desc>Locais sombrios funcionam sem violência: sem ringue de luta, sem interrogatório, sem caça a pessoas, sem clínica, sem extorsão de proteção. Sala dos fundos, receptador e lounge de drogas permanecem.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Os locais sombrios funcionam sem violência. Isso fecha o poço de luta por completo, inclusive as lutas por pontos, e para os interrogatórios, a caça a pessoas, a clínica de órgãos e o dinheiro de proteção. Sala dos fundos, receptador e salão de drogas ficam.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>O planejamento dos hóspedes e as verificações de cômodos rodam pela metade das vezes. Ajuda em computadores lentos; os hóspedes podem reagir um pouco mais tarde.</HH.Setting.core.perfMode.Desc>
   <HH.Kitchen.Cookbook.ColCuisine>Culinária</HH.Kitchen.Cookbook.ColCuisine>
   <HH.Kitchen.Cookbook.ColDish>Prato</HH.Kitchen.Cookbook.ColDish>
@@ -334,5 +327,5 @@
   <HH.UI.Page.Sub.city>Cinema, salão, galeria, parque, táxi e segurança: o que foi construído e quanto rende.</HH.UI.Page.Sub.city>
   <HH.UI.Page.Sub.guests>Todos que estão hospedados ou visitando sua hospedaria. Clique numa linha para ir até o hóspede; clique na célula de atendimento para mudá-lo.</HH.UI.Page.Sub.guests>
   <HH.UI.Page.Sub.overview>Hoje num relance: hóspedes, faturamento e o estado de cada estabelecimento.</HH.UI.Page.Sub.overview>
-  <HH.UI.Page.Sub.underworld>Sussurros, pesos de chegada e o faturamento do lado sombrio.</HH.UI.Page.Sub.underworld>
+  <HH.UI.Page.Sub.underworld>O que cada parte da sala dos fundos está fazendo, ofertas que esperam por você, sussurros e faturamento.</HH.UI.Page.Sub.underworld>
 </LanguageData>

@@ -27,4 +27,16 @@
   <HH_Guide_YourGuests.steps.1.description>Muestra lo que piensa el huésped y te deja elegir Básico, Acompañar o Reclutar.</HH_Guide_YourGuests.steps.1.description>
   <HH_Guide_YourGuests.steps.1.label>Selecciona un huésped y abre la pestaña Huésped.</HH_Guide_YourGuests.steps.1.label>
   <HH_Guide_YourGuests.steps.2.label>Prueba otro trato con un huésped que te guste.</HH_Guide_YourGuests.steps.2.label>
+  <HH_Guide_BackRoom.description>Peleas, un perista y bandas. Todo es opcional: nada de esto ocurre hasta que lo construyas.</HH_Guide_BackRoom.description>
+  <HH_Guide_BackRoom.label>La trastienda</HH_Guide_BackRoom.label>
+  <HH_Guide_BackRoom.steps.0.description>Una puerta en la valla no molesta. La arena necesita al menos 3 por 3 casillas. El marcador dice qué le falta aún.</HH_Guide_BackRoom.steps.0.description>
+  <HH_Guide_BackRoom.steps.0.label>Construye una valla cerrada y pon dentro un marcador de foso de combate.</HH_Guide_BackRoom.steps.0.label>
+  <HH_Guide_BackRoom.steps.1.description>Haz clic derecho en el marcador con un colono, marca luchadores en "Luchadores…", o usa "Llamar a un rival" si estás solo. Los combates con un huésped o un colono se luchan por puntos, así que nadie sale herido.</HH_Guide_BackRoom.steps.1.description>
+  <HH_Guide_BackRoom.steps.1.label>Deja que termine el primer combate.</HH_Guide_BackRoom.steps.1.label>
+  <HH_Guide_BackRoom.steps.2.description>Las bandas se reúnen allí y pagan por ello. Los huéspedes respetables pueden toparse con ella de vez en cuando.</HH_Guide_BackRoom.steps.2.description>
+  <HH_Guide_BackRoom.steps.2.label>Construye una sala cuyas únicas puertas sean puertas de trastienda.</HH_Guide_BackRoom.steps.2.label>
+  <HH_Guide_BackRoom.steps.3.description>La primera banda llega un día después de tu primera trastienda, mostrador del perista o foso de combate. La página del Inframundo dice cuándo.</HH_Guide_BackRoom.steps.3.description>
+  <HH_Guide_BackRoom.steps.3.label>Espera la primera visita de una banda.</HH_Guide_BackRoom.steps.3.label>
+  <HH_Guide_BackRoom.steps.4.description>Las bandas le venden su botín y le compran de sus existencias. Paga con su propia caja.</HH_Guide_BackRoom.steps.4.description>
+  <HH_Guide_BackRoom.steps.4.label>Construye un mostrador del perista.</HH_Guide_BackRoom.steps.4.label>
 </LanguageData>

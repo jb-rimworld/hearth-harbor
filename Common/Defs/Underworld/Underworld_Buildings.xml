@@ -4,7 +4,7 @@
   <ThingDef ParentName="DoorBase">
     <defName>HH_BackRoomDoor</defName>
     <label>back room door</label>
-    <description>A plain-looking door with a good lock. Only your own people and shady guests can open it. A room behind nothing but back room doors does not count against the renown of your house.</description>
+    <description>A plain-looking door with a good lock that only your own people and shady guests can open. Build a room whose only doors are back room doors and it becomes a back room. Gangs meet there and pay for it, and it does not count against the renown of your house.</description>
     <thingClass>Hearth.Underworld.Building_BackRoomDoor</thingClass>
     <statBases><WorkToBuild>1000</WorkToBuild></statBases>
     <graphicData>
@@ -18,9 +18,9 @@
     <designatorDropdown>HH_Group_Underworld</designatorDropdown>
     <uiOrder>900</uiOrder>
     <designationHotKey>Misc2</designationHotKey>
-    <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
     <building><isStuffableAirtight>true</isStuffableAirtight></building>
+    <comps><li Class="Hearth.Underworld.CompProperties_UwFacility" /></comps>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
   </ThingDef>
 
@@ -28,7 +28,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>HH_FightPitMarker</defName>
     <label>fight pit marker</label>
-    <description>Marks a fenced arena around it. Build a closed fence (a gate is fine) at least 3 by 3 tiles inside, put this marker in the middle and the pit opens: volunteers, prisoners and animals fight, guests bet, the house keeps a tenth of the pool. Bouts end when someone yields or falls; to the death only from Dark content on, never for volunteers, never for children.</description>
+    <description>Put it inside a closed fence of 9 to 700 tiles. Right-click it with a colonist to fight, or use "Fighters…" and "Call an opponent"; bouts with people are fought for points and leave a few bruises at most. A pit draws gangs and whispers to your colony.</description>
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
@@ -55,9 +55,8 @@
     <designationCategory>HH_Hospitality</designationCategory>
     <designatorDropdown>HH_Group_Underworld</designatorDropdown>
     <uiOrder>910</uiOrder>
-    <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
-    <comps><li Class="Hearth.Underworld.CompProperties_FightPit" /></comps>
+    <comps><li Class="Hearth.Underworld.CompProperties_FightPit" /><li Class="Hearth.Underworld.CompProperties_UwFacility" /></comps>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
   </ThingDef>
 
@@ -65,7 +64,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>HH_FenceCounter</defName>
     <label>fence's counter</label>
-    <description>A scarred counter where a trusted fence buys stolen goods at forty percent of their value and sells them to shady buyers at seventy. The fence works from its own cash box, topped up from your till. The owners of the goods sometimes find out.</description>
+    <description>A scarred counter where a trusted fence buys stolen goods cheap and sells them to shady buyers. Once it stands, gangs sell their loot to it and buy from its stock. It pays from its own cash box, topped up from your till, and "Take goods out" empties its shelf. The owners of the goods sometimes find out.</description>
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
@@ -95,9 +94,8 @@
     <designationCategory>HH_Hospitality</designationCategory>
     <designatorDropdown>HH_Group_Underworld</designatorDropdown>
     <uiOrder>920</uiOrder>
-    <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
-    <comps><li Class="Hearth.Underworld.CompProperties_FenceStock" /><li Class="Hearth.CompProperties_FlipWorkSide" /></comps>
+    <comps><li Class="Hearth.Underworld.CompProperties_FenceStock" /><li Class="Hearth.CompProperties_FlipWorkSide" /><li Class="Hearth.Underworld.CompProperties_UwFacility" /></comps>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
   </ThingDef>
 
@@ -105,7 +103,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>HH_SmugglerDock</defName>
     <label>smuggler's dock</label>
-    <description>A bare landing pad with a shaded lamp. At night a crate sometimes comes down and a voice offers it cheap, no questions. Now and then somebody notices the lamp.</description>
+    <description>A bare landing pad with a shaded lamp. Once it stands, a boat sometimes lands at night and offers a crate cheap, no questions. A letter tells you, and you buy or send it away with the buttons on the dock. Now and then somebody notices the lamp.</description>
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
@@ -130,8 +128,8 @@
     <designationCategory>HH_Hospitality</designationCategory>
     <designatorDropdown>HH_Group_Underworld</designatorDropdown>
     <uiOrder>930</uiOrder>
-    <researchPrerequisites><li>HH_Underworld_1</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
+    <comps><li Class="Hearth.Underworld.CompProperties_SmugglerDock" /><li Class="Hearth.Underworld.CompProperties_UwFacility" /></comps>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
   </ThingDef>
 
@@ -139,7 +137,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>HH_HuntingGroundMarker</defName>
     <label>hunting ground marker</label>
-    <description>Marks a fenced hunting ground (at least sixty tiles, closed). Rich hunters pay to shoot the animals they bring into it. With Dark content and the right ideology a prisoner can be the quarry; this is switched on separately, behind a warning.</description>
+    <description>Marks a fenced hunting ground. Put it inside a closed fence of at least sixty and at most 1600 tiles; rich hunters then come now and then and pay to shoot the animals they bring into it. With Dark content and a fitting ideology, or with Grim content, a prisoner can be the quarry; you switch this on separately on the marker.</description>
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
@@ -166,7 +164,7 @@
     <uiOrder>940</uiOrder>
     <researchPrerequisites><li>HH_TheHunt</li></researchPrerequisites>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
-    <comps><li Class="Hearth.Underworld.CompProperties_HuntingGround" /></comps>
+    <comps><li Class="Hearth.Underworld.CompProperties_HuntingGround" /><li Class="Hearth.Underworld.CompProperties_UwFacility" /></comps>
     <modExtensions><li Class="Hearth.Underworld.UwGateExtension"><minContent>Standard</minContent></li></modExtensions>
   </ThingDef>
 
@@ -174,7 +172,7 @@
   <ThingDef ParentName="ShelfBase">
     <defName>HH_OrganClinic</defName>
     <label>clinic counter</label>
-    <description>A cold counter where harvested organs are put down for anonymous donors, who collect them at night and pay without a word. Only with Dark or Grim content. Ideologies that abhor the organ trade will hold it against you.</description>
+    <description>A cold counter for the organ trade, only with Dark or Grim content. Haul harvested organs onto it; anonymous buyers collect them at night and pay without a word. Ideologies that abhor the organ trade will hold it against you.</description>
     <thingClass>Building_Storage</thingClass>
     <graphicData>
       <texPath>Things/HH/Underworld/OrganClinic</texPath>
@@ -196,6 +194,7 @@
     </statBases>
     <comps Inherit="False">
       <li Class="Hearth.Underworld.CompProperties_OrganClinic" />
+      <li Class="Hearth.Underworld.CompProperties_UwFacility" />
     </comps>
     <placeWorkers><li>Hearth.Underworld.PlaceWorker_UnderworldGate</li></placeWorkers>
     <building>

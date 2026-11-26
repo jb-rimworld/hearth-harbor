@@ -21,6 +21,7 @@ namespace Hearth
         /// <summary>Difficulty as continuous tier: 0 Comped … 3 Standard Room … 6 Why are you hurting yourself?</summary>
         public float Tier = 3f;
         public ContentIntensity Content = ContentIntensity.Standard;
+        /// <summary>Legacy (until 1.1.x, the stranger's discovery): still saved and loaded so old saves keep their data, never read since 1.2.0.</summary>
         public bool UnderworldDiscovered;
         public bool FirstStartCardDone;
         public HearthSettingsStore Store = new HearthSettingsStore();

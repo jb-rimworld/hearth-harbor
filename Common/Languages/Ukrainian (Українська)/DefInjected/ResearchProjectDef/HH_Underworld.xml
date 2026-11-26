@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_Underworld_Discovery.label>задня кімната (ключ)</HH_Underworld_Discovery.label>
-  <HH_Underworld_Discovery.description>Внутрішній ключовий проєкт. Завершується, коли пропозицію незнайомця прийнято. Ніколи не показується.</HH_Underworld_Discovery.description>
+  <HH_Underworld_Discovery.description>Старий внутрішній проєкт-ключ, залишений для старих збережень. Не показується й нічого не відкриває.</HH_Underworld_Discovery.description>
   <HH_Underworld_1.label>задня кімната</HH_Underworld_1.label>
-  <HH_Underworld_1.description>Двері задньої кімнати, яма для бійок, прилавок скупника, причал контрабандистів і наркотичний салон: усе, що потрібно домові для торгівлі, якої немає в меню.</HH_Underworld_1.description>
+  <HH_Underworld_1.description>Старий проєкт, залишений для старих збережень. Не показується й нічого не відкриває: двері задньої кімнати, яма, прилавок скупника, причал контрабандистів і наркотичний салон не потребують досліджень.</HH_Underworld_1.description>
   <HH_TheHunt.label>полювання</HH_TheHunt.label>
-  <HH_TheHunt.description>Огороджені мисливські угіддя. Поважні гості добре платять за те, щоб стріляти в те, що ви туди випустите. Від темного вмісту полонений може стати здобиччю, за чітким попередженням.</HH_TheHunt.description>
+  <HH_TheHunt.description>Огороджені мисливські угіддя. Багаті гості добре платять за те, щоб стріляти у випущених туди тварин. З темним вмістом і відповідною ідеологією або з похмурим вмістом здобиччю може стати полонений, якщо ви дозволите це на маркері.</HH_TheHunt.description>
   <HH_BlackClinic.label>чорна клініка</HH_BlackClinic.label>
   <HH_BlackClinic.description>Прилавок, де анонімні донори купують вилучені органи без жодних запитань. Лише з темним або похмурим вмістом.</HH_BlackClinic.description>
 </LanguageData>

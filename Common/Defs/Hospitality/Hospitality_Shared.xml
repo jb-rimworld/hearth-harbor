@@ -33,7 +33,7 @@
   <DesignationCategoryDef>
     <defName>HH_Hospitality</defName>
     <label>Hospitality</label>
-    <description>Signs, counters, shelves, tables and machines for guests: taverns, shops, casinos, spas, cinemas and, once you have found it, the back room.</description>
+    <description>Signs, counters, shelves, tables and machines for guests: taverns, shops, casinos, spas, cinemas and the back room.</description>
     <order>95</order>
     <specialDesignatorClasses>
       <li>Designator_Cancel</li>
@@ -66,7 +66,7 @@
   <DesignatorDropdownGroupDef>
     <defName>HH_Group_Underworld</defName>
     <label>back room</label>
-    <description>Doors, pits, counters and docks for the things nobody talks about. Only shown once you have discovered the underworld.</description>
+    <description>Doors, pits, counters and docks for the things nobody talks about. Shown while the Underworld module is on and the content intensity is not Cozy.</description>
     <iconSource>Placed</iconSource>
     <useGridMenu>true</useGridMenu>
   </DesignatorDropdownGroupDef>

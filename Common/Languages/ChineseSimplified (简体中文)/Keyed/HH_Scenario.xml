@@ -16,11 +16,9 @@
   <HH.Scen.Picker.Title>选择一项 Hearth &amp; Harbor 设置</HH.Scen.Picker.Title>
   <HH.Scen.Rules.Content>内容：{0}</HH.Scen.Rules.Content>
   <HH.Scen.Rules.Count>已设定 {0} 项设置；如需添加单项设置，请使用“Hearth &amp; Harbor 设置”部分。</HH.Scen.Rules.Count>
-  <HH.Scen.Rules.Discovered>地下世界已被发现</HH.Scen.Rules.Discovered>
   <HH.Scen.Rules.More>更多设置…（已设定 {0} 项）</HH.Scen.Rules.More>
   <HH.Scen.Rules.MoreTip>打开此情景的完整 Hearth &amp; Harbor 设置。只有你在那里改动的项目才会由情景设定。</HH.Scen.Rules.MoreTip>
   <HH.Scen.Rules.SumContent>内容：{0}</HH.Scen.Rules.SumContent>
-  <HH.Scen.Rules.SumDiscovered>地下世界已经认识你</HH.Scen.Rules.SumDiscovered>
   <HH.Scen.Rules.SumMore>另有 {0} 项设置</HH.Scen.Rules.SumMore>
   <HH.Scen.Rules.SumNothing>全部与模板相同</HH.Scen.Rules.SumNothing>
   <HH.Scen.Rules.SumOff>关闭：{0}</HH.Scen.Rules.SumOff>

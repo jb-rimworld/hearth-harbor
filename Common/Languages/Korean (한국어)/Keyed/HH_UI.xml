@@ -61,25 +61,19 @@
   <HH.UI.Modules.Content>콘텐츠 강도</HH.UI.Modules.Content>
   <HH.UI.Modules.ContentDesc>선택적 콘텐츠가 얼마나 어두워질 수 있는지. 무엇을 고르든 성적인 내용은 절대 없습니다.</HH.UI.Modules.ContentDesc>
   <HH.UI.Content.Cozy>아늑함</HH.UI.Content.Cozy>
-  <HH.UI.Content.Cozy.Tip>순한 이야기와 결과만 나옵니다.</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Cozy.Tip>순한 이야기와 결과만 나옵니다. 지하세계 전체를 숨깁니다: 뒷방, 싸움터, 장물아비, 약물 라운지, 갱단.</HH.UI.Content.Cozy.Tip>
   <HH.UI.Content.Standard>표준</HH.UI.Content.Standard>
   <HH.UI.Content.Standard.Tip>기본값입니다. 거친 면은 있지만 불쾌한 내용은 없습니다.</HH.UI.Content.Standard.Tip>
   <HH.UI.Content.Dark>어두움</HH.UI.Content.Dark>
-  <HH.UI.Content.Dark.Tip>범죄, 빚, 폭력이 나타날 수 있습니다.</HH.UI.Content.Dark.Tip>
+  <HH.UI.Content.Dark.Tip>표준에 더해집니다: 죄수가 죽을 때까지 싸우거나, 더 강하게 심문받거나, 사냥당할 수 있고(어울리는 이데올로기 필요), 장기 진료소와 어두운 메뉴가 가능해집니다.</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>암울함</HH.UI.Content.Grim>
-  <HH.UI.Content.Grim.Tip>게임이 제공하는 모든 것을 그대로 담습니다.</HH.UI.Content.Grim.Tip>
-  <HH.UI.Underworld.Discover>게임 중 발견</HH.UI.Underworld.Discover>
-  <HH.UI.Underworld.On>켬</HH.UI.Underworld.On>
-  <HH.UI.Underworld.Off>끔</HH.UI.Underworld.Off>
-  <HH.UI.Underworld.Discover.Tip>수상한 낯선 사람이 게임에 나타날 때까지 레이더 밖에 있습니다.</HH.UI.Underworld.Discover.Tip>
-  <HH.UI.Underworld.On.Tip>처음부터 이용할 수 있습니다.</HH.UI.Underworld.On.Tip>
-  <HH.UI.Underworld.Off.Tip>절대 이용할 수 없습니다. 수상한 낯선 사람도 나타나지 않습니다.</HH.UI.Underworld.Off.Tip>
+  <HH.UI.Content.Grim.Tip>어두움에 더해집니다: 죄수 사냥에 어울리는 이데올로기가 필요 없고, 장기 구매자가 기한이 있는 주문을 넣습니다.</HH.UI.Content.Grim.Tip>
   <HH.UI.ModuleDesc.Inn>손님, 손님 침대, 날개동, 접수, 여행자 및 모집.</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>간판, 상점, 자판기, 시장, 식당 및 요리.</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>테이블, 슬롯머신, 칩, 그리고 손님과 식민지 주민이 도박을 할 때의 위험.</HH.UI.ModuleDesc.Casino>
   <HH.UI.ModuleDesc.Wellness>스파, 사우나 및 재활 체류.</HH.UI.ModuleDesc.Wellness>
   <HH.UI.ModuleDesc.CityLife>영화관, 쇼핑몰, 미용실, 사원, 택시 및 경비.</HH.UI.ModuleDesc.CityLife>
-  <HH.UI.ModuleDesc.Underworld>은밀한 뒷방, 싸움터, 장물아비. 게임 중에 발견되며 강요되지 않습니다.</HH.UI.ModuleDesc.Underworld>
+  <HH.UI.ModuleDesc.Underworld>은밀한 뒷방, 싸움터, 장물아비. 직접 짓기 전에는 아무 일도 일어나지 않습니다.</HH.UI.ModuleDesc.Underworld>
   <HH.UI.ModuleDesc.Bank>Silverline: 계좌, 결제, 현금자동입출금기, 투자, 대출, 보험 및 복권.</HH.UI.ModuleDesc.Bank>
   <HH.UI.ModuleDesc.AiFlavour>AI가 중계 서버를 통해 쓴 선택적 분위기 문구. 기본값은 꺼짐.</HH.UI.ModuleDesc.AiFlavour>
   <HH.UI.Diff.Title>호스팅 난이도</HH.UI.Diff.Title>
@@ -294,7 +288,6 @@
   <HH.UI.Overview.Arrivals>다음 24시간 도착: {0}, 하루 약 {1}팀 예상.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>아직 아무도 예정되지 않았습니다</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>{0}팀 예정 (손님 약 {1}명)</HH.UI.Overview.Arrivals.Planned>
-  <HH.UI.Content.Decline>아니요, {0} 유지</HH.UI.Content.Decline>
   <HH.UI.Diff.Ladder>지하세계: 사건당 피해 상한</HH.UI.Diff.Ladder>
   <HH.UI.Diff.WarnHard>과밀 예약부터는 지하세계 사건이 실제 호감도, 명성, 은화를 깎을 수 있습니다 (아래 상한 참고).</HH.UI.Diff.WarnHard>
   <HH.UI.Feel.4>지하세계 사건으로 호감도, 명성, 벌금이 깎이기 시작합니다.</HH.UI.Feel.4>
@@ -311,7 +304,7 @@
   <HH.Setting.core.neverDie.Desc>손님은 죽는 대신 쓰러집니다. 누군가 돌보기 전까지 쓰러진 채로 살아 있습니다.</HH.Setting.core.neverDie.Desc>
   <HH.Setting.core.infiniteMoney.Desc>이 설정이 켜진 상태로 도착한 손님은 바닥없는 지갑을 가지고 옵니다. 손님 돈 배율은 이들에게 영향을 주지 않습니다.</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.ironBank.Desc>난이도와 관계없이 채권 추심은 항상 가장 높은 단계까지 올라갑니다. 아무도 할부금을 조용히 미뤄 주지 않습니다.</HH.Setting.core.ironBank.Desc>
-  <HH.Setting.core.peacefulUnderworld.Desc>어두운 시설은 폭력 없이 운영됩니다: 싸움터 없음, 심문 없음, 사람 사냥 없음, 진료소 없음, 보호비 갈취 없음. 뒷방, 장물아비, 약물 라운지는 남습니다.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>어두운 시설은 폭력 없이 운영됩니다. 점수로 겨루는 대결을 포함해 싸움터를 완전히 닫고, 심문, 사람 사냥, 장기 진료소, 보호비 갈취를 막습니다. 뒷방, 장물아비, 약물 라운지는 남습니다.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>손님 계획과 방 점검이 절반 빈도로 실행됩니다. 느린 컴퓨터에 도움이 되며, 손님의 반응이 조금 늦을 수 있습니다.</HH.Setting.core.perfMode.Desc>
   <HH.Kitchen.Cookbook.ColCuisine>요리 계열</HH.Kitchen.Cookbook.ColCuisine>
   <HH.Kitchen.Cookbook.ColDish>요리</HH.Kitchen.Cookbook.ColDish>
@@ -334,5 +327,5 @@
   <HH.UI.Page.Sub.city>영화관, 살롱, 갤러리, 공원, 택시, 경비: 무엇이 지어졌고 얼마를 버는지 보여줍니다.</HH.UI.Page.Sub.city>
   <HH.UI.Page.Sub.guests>여관에 묵거나 방문 중인 모든 사람. 줄을 누르면 손님에게 이동하고, 응대 칸을 누르면 바꿀 수 있습니다.</HH.UI.Page.Sub.guests>
   <HH.UI.Page.Sub.overview>오늘 한눈에: 손님, 수입, 그리고 모든 시설의 상태.</HH.UI.Page.Sub.overview>
-  <HH.UI.Page.Sub.underworld>소문, 도착 가중치, 그리고 어두운 쪽의 수입.</HH.UI.Page.Sub.underworld>
+  <HH.UI.Page.Sub.underworld>뒷방의 각 부분이 무엇을 하는지, 기다리는 제안, 속삭임, 수입을 보여줍니다.</HH.UI.Page.Sub.underworld>
 </LanguageData>

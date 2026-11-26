@@ -33,9 +33,9 @@ namespace Hearth.Underworld
 
         // whispers (decay is applied lazily on read/write)
         float whispers; int whispersTick;
-        // discovery
+        // legacy (until 1.1.x): the stranger's discovery and the three content warnings. Since 1.2.0 nothing reads them; they are only
+        // kept (read and written as before) so old saves load and keep their data. Do not build new behaviour on them.
         public bool NeverAsk; public int LastAskTick = -9_999_999; public int AskCount; public int StrangerFirstTick = -1;
-        // confirmations of dark content (once per save)
         public bool ContentWarningAck, HuntWarningAck, OrganWarningAck;
         // scandals: map id → last tick
         Dictionary<int, int> scandalTick = new Dictionary<int, int>();
@@ -43,6 +43,7 @@ namespace Hearth.Underworld
         // pawn marks (thingIDNumber)
         List<int> shady = new List<int>();
         List<int> hunters = new List<int>();
+        List<int> gang = new List<int>();           // members of gang visits (shady Inn guests are shady too, but no gang)
         List<int> paidFee = new List<int>();
         List<int> stolenThings = new List<int>();   // thing ids of loot carried by outlaws
         List<int> stolenFactions = new List<int>(); // parallel: faction loadID the loot came from
@@ -54,6 +55,20 @@ namespace Hearth.Underworld
         public int Bouts, Bets, DealsBought, DealsSold, LoungeSessions, GangVisits, Tours, Hunts, OrgansSold, Scandals, Smuggles;
         public long HouseTakeMicro, FenceProfitMicro;
         public float RenownApplied;
+        /// <summary>Pit beasts hired in this game (the first one is free, see PitOpponents.Fee).</summary>
+        public int OpponentsHired;
+        // 1.2.0 (package C): open offers (smuggler landings, protection demands) and the gang timer's state
+        public List<UwOffer> Offers = new List<UwOffer>();
+        public int NextOfferId = 1;
+        /// <summary>The first gang visit was planned 0.5 to 1.5 days after the first facility gangs use (set once per save).</summary>
+        public bool FirstGangPlanned;
+        /// <summary>Key (below HH.Underworld.Gang.Why.) of the reason the last gang visit failed, null when the last attempt worked; and its tick.</summary>
+        public string GangRetryKey; public int GangRetryTick = -1;
+        // last event per facility id (FacilityStatus ids): tick
+        Dictionary<string, int> lastEvent = new Dictionary<string, int>();
+        List<string> lek; List<int> lev;
+        public int LastEvent(string id) => lastEvent.TryGetValue(id, out int t) ? t : -1;
+        public void NoteEvent(string id) { if (Find.TickManager != null) lastEvent[id] = Find.TickManager.TicksGame; }
 
         public UnderworldComponent(Game game) { GameRef = game; }
 
@@ -88,6 +103,8 @@ namespace Hearth.Underworld
         // ---- marks -----------------------------------------------------------------------------------------
         public bool IsShady(Pawn p) => shady.Contains(p.thingIDNumber);
         public void MarkShady(Pawn p) { if (!shady.Contains(p.thingIDNumber)) { shady.Add(p.thingIDNumber); Trim(shady); } }
+        public bool IsGang(Pawn p) => gang.Contains(p.thingIDNumber);
+        public void MarkGang(Pawn p) { if (!gang.Contains(p.thingIDNumber)) { gang.Add(p.thingIDNumber); Trim(gang); } }
         public bool IsHunter(Pawn p) => hunters.Contains(p.thingIDNumber);
         public void MarkHunter(Pawn p) { if (!hunters.Contains(p.thingIDNumber)) { hunters.Add(p.thingIDNumber); Trim(hunters); } }
         public bool PaidFee(Pawn p) => paidFee.Contains(p.thingIDNumber);
@@ -129,6 +146,7 @@ namespace Hearth.Underworld
             Scribe_Values.Look(ref HighRollersUntil, "highRollersUntil");
             Scribe_Collections.Look(ref shady, "shady", LookMode.Value);
             Scribe_Collections.Look(ref hunters, "hunters", LookMode.Value);
+            Scribe_Collections.Look(ref gang, "gangPawns", LookMode.Value);
             Scribe_Collections.Look(ref paidFee, "paidFee", LookMode.Value);
             Scribe_Collections.Look(ref stolenThings, "stolenThings", LookMode.Value);
             Scribe_Collections.Look(ref stolenFactions, "stolenFactions", LookMode.Value);
@@ -145,6 +163,13 @@ namespace Hearth.Underworld
             string h = HouseTakeMicro.ToString(), f = FenceProfitMicro.ToString();
             Scribe_Values.Look(ref h, "houseTake"); Scribe_Values.Look(ref f, "fenceProfit");
             Scribe_Values.Look(ref RenownApplied, "renownApplied");
+            Scribe_Values.Look(ref OpponentsHired, "opponentsHired");
+            Scribe_Collections.Look(ref Offers, "offers", LookMode.Deep);
+            Scribe_Values.Look(ref NextOfferId, "nextOfferId", 1);
+            Scribe_Values.Look(ref FirstGangPlanned, "firstGangPlanned");
+            Scribe_Values.Look(ref GangRetryKey, "gangRetryKey");
+            Scribe_Values.Look(ref GangRetryTick, "gangRetryTick", -1);
+            Scribe_Collections.Look(ref lastEvent, "lastEvent", LookMode.Value, LookMode.Value, ref lek, ref lev);
             if (Scribe.mode == LoadSaveMode.LoadingVars)
             {
                 long.TryParse(h, out HouseTakeMicro); long.TryParse(f, out FenceProfitMicro);
@@ -154,11 +179,15 @@ namespace Hearth.Underworld
                 if (scandalTick == null) scandalTick = new Dictionary<int, int>();
                 if (shady == null) shady = new List<int>();
                 if (hunters == null) hunters = new List<int>();
+                if (gang == null) gang = new List<int>();
                 if (paidFee == null) paidFee = new List<int>();
                 if (stolenThings == null) stolenThings = new List<int>();
                 if (stolenFactions == null) stolenFactions = new List<int>();
                 if (Orders == null) Orders = new List<OrganOrder>();
                 Orders.RemoveAll(o => o == null || o.organ == null);
+                if (Offers == null) Offers = new List<UwOffer>();
+                Offers.RemoveAll(o => o == null || !o.LoadedOk);
+                if (lastEvent == null) lastEvent = new Dictionary<string, int>();
                 int n = Math.Min(stolenThings.Count, stolenFactions.Count);
                 if (stolenThings.Count != n) stolenThings.RemoveRange(n, stolenThings.Count - n);
                 if (stolenFactions.Count != n) stolenFactions.RemoveRange(n, stolenFactions.Count - n);

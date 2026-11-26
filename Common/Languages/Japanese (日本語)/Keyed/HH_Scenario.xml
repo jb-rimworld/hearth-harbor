@@ -16,11 +16,9 @@
   <HH.Scen.Picker.Title>Hearth &amp; Harbor の設定を選ぶ</HH.Scen.Picker.Title>
   <HH.Scen.Rules.Content>内容: {0}</HH.Scen.Rules.Content>
   <HH.Scen.Rules.Count>{0} 件の設定が指定されています。個別の設定は「Hearth &amp; Harbor の設定」パーツで追加してください。</HH.Scen.Rules.Count>
-  <HH.Scen.Rules.Discovered>地下世界はすでに発見済み</HH.Scen.Rules.Discovered>
   <HH.Scen.Rules.More>その他の設定… （{0} 件指定）</HH.Scen.Rules.More>
   <HH.Scen.Rules.MoreTip>このシナリオの Hearth &amp; Harbor 設定をすべて開きます。ここで変更したものだけが、シナリオで設定されます。</HH.Scen.Rules.MoreTip>
   <HH.Scen.Rules.SumContent>内容: {0}</HH.Scen.Rules.SumContent>
-  <HH.Scen.Rules.SumDiscovered>地下世界はすでにあなたを知っている</HH.Scen.Rules.SumDiscovered>
   <HH.Scen.Rules.SumMore>ほか {0} 件の設定</HH.Scen.Rules.SumMore>
   <HH.Scen.Rules.SumNothing>すべてテンプレートどおり</HH.Scen.Rules.SumNothing>
   <HH.Scen.Rules.SumOff>オフ: {0}</HH.Scen.Rules.SumOff>

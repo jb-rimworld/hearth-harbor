@@ -16,11 +16,9 @@
   <HH.Scen.Picker.Title>Оберіть налаштування Hearth &amp; Harbor</HH.Scen.Picker.Title>
   <HH.Scen.Rules.Content>Вміст: {0}</HH.Scen.Rules.Content>
   <HH.Scen.Rules.Count>Налаштувань задано: {0}. Окремі налаштування додавайте через частину «Налаштування Hearth &amp; Harbor».</HH.Scen.Rules.Count>
-  <HH.Scen.Rules.Discovered>Підземний світ уже відкрито</HH.Scen.Rules.Discovered>
   <HH.Scen.Rules.More>Більше налаштувань… (задано: {0})</HH.Scen.Rules.More>
   <HH.Scen.Rules.MoreTip>Відкриває повні налаштування Hearth &amp; Harbor для цього сценарію. Сценарій задає лише те, що ви змінили там.</HH.Scen.Rules.MoreTip>
   <HH.Scen.Rules.SumContent>вміст: {0}</HH.Scen.Rules.SumContent>
-  <HH.Scen.Rules.SumDiscovered>підземний світ уже знає вас</HH.Scen.Rules.SumDiscovered>
   <HH.Scen.Rules.SumMore>і ще {0} налаштувань</HH.Scen.Rules.SumMore>
   <HH.Scen.Rules.SumNothing>усе як у вашому шаблоні</HH.Scen.Rules.SumNothing>
   <HH.Scen.Rules.SumOff>вимкнено: {0}</HH.Scen.Rules.SumOff>

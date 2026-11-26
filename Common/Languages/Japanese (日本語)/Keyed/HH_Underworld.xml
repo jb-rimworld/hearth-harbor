@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Tab.Underworld>地下世界</HH.Tab.Underworld>
-  <HH.Underworld.GateClosed>利用不可: このゲームでは地下世界は閉ざされています。</HH.Underworld.GateClosed>
+  <HH.Underworld.GateClosed>このゲームでは使えません。裏社会モジュールがオフか、内容の濃さが許可していません(設定、モジュール)。</HH.Underworld.GateClosed>
   <HH.Underworld.BackRoomDoorInfo>スタッフ、入植者、そして怪しげな客だけがこの扉を開けられます。</HH.Underworld.BackRoomDoorInfo>
-  <HH.Underworld.Stranger.Title>門前の見知らぬ男</HH.Underworld.Stranger.Title>
-  <HH.Underworld.Stranger.Text>帽子を深くかぶった見知らぬ男が、スタッフの声が届かなくなるまで扉の前で待っています。\n\n「いい店だな」と彼は言います。「奥の部屋はあるか?」\n\nどういう意味かは言いません。言う必要もないのです。</HH.Underworld.Stranger.Text>
-  <HH.Underworld.Stranger.Show>見せてくれ</HH.Underworld.Stranger.Show>
-  <HH.Underworld.Stranger.No>興味はない</HH.Underworld.Stranger.No>
-  <HH.Underworld.Stranger.Never>二度と聞かないでくれ</HH.Underworld.Stranger.Never>
-  <HH.Underworld.Unlocked.Title>奥の部屋</HH.Underworld.Unlocked.Title>
-  <HH.Underworld.Unlocked.Text>奥の部屋を見せると、男は試験に合格させたかのようにうなずきました。新しい研究系統が開放されます: 扉、闘技場、故買屋のカウンター、密輸者の桟橋、そしてラウンジです。地下世界での評判である「囁き」は、あなたが築いたものに従って変動するようになります。\n\nすべて無視することもできます。ここにあるものは何も必須ではありません。</HH.Underworld.Unlocked.Text>
-  <HH.Underworld.Warn.Title>内容に関する注意</HH.Underworld.Warn.Title>
-  <HH.Underworld.Warn.Dark>ダークな内容を有効にすると、地下世界が広がります。囚人は闘技場で死ぬまで戦わされることがあり、ギャングは囚人をより厳しく尋問することがあり、狩人は(適合する信条がある場合)囚人を狩ることがあります。また、診療所のカウンターは摘出された臓器を買い取ります。\n\n表示はテキストと通常のゲーム内の負傷だけです。子供が参加することはなく、ここにあるものは自動的に有効になることはありません。\n\nこのゲームでこの内容を有効にしますか?</HH.Underworld.Warn.Dark>
-  <HH.Underworld.Warn.Grim>グリムな内容にはダークな内容のすべてが含まれ、さらに囚人への狩りは信条を問わなくなります。臓器の買い手は期限付きで注文を出します。\n\n表示はテキストと通常のゲーム内の負傷だけです。子供が参加することはなく、ここにあるものは自動的に有効になることはありません。\n\nこのゲームでこの内容を有効にしますか?</HH.Underworld.Warn.Grim>
-  <HH.Underworld.Warn.Accept>はい、理解しました</HH.Underworld.Warn.Accept>
-  <HH.Underworld.Warn.Back>いいえ、標準に戻る</HH.Underworld.Warn.Back>
-  <HH.Underworld.Warn.Hunt>狩場での囚人狩りを許可しようとしています。囚人は先行の余裕を与えられて狩場に放たれます。設定された時間を生き延びるか、柵線に到達すれば自由になり、どちらの場合も所属派閥にそのことが伝わります。死亡した場合、所属派閥、入植者、そして客はそれを許しません。\n\nこれはテキストでのみ表示されます。許可しますか?</HH.Underworld.Warn.Hunt>
-  <HH.Underworld.Warn.Organ>診療所のカウンターは、夜間に匿名の提供者から摘出された臓器を買い取ります。臓器取引を忌み嫌う思想は、あなたをそのことで責めるでしょう。販売のたびに「囁き」は高まります。\n\nこれはテキストでのみ表示されます。維持しますか?</HH.Underworld.Warn.Organ>
-  <HH.Underworld.Warn.Keep>はい、維持する</HH.Underworld.Warn.Keep>
-  <HH.Underworld.Warn.Remove>いいえ、取り除く</HH.Underworld.Warn.Remove>
   <HH.Underworld.Scandal.BackRoomFound.Title>奥の部屋が露見した</HH.Underworld.Scandal.BackRoomFound.Title>
   <HH.Underworld.Scandal.BackRoomFound.Text>ある立派な客が間違った扉を開け、この店が奥に隠しているものを目にしてしまいました。夕方までには町中の人が知ることになるでしょう。</HH.Underworld.Scandal.BackRoomFound.Text>
   <HH.Underworld.Scandal.LeakedLedger.Title>流出した帳簿</HH.Underworld.Scandal.LeakedLedger.Title>
@@ -32,28 +16,23 @@
   <HH.Underworld.Pit.Enabled.Desc>この闘技場で試合を予定します。</HH.Underworld.Pit.Enabled.Desc>
   <HH.Underworld.Pit.Animals>動物</HH.Underworld.Pit.Animals>
   <HH.Underworld.Pit.Animals.Desc>入植者の動物がここで戦うことがあります。</HH.Underworld.Pit.Animals.Desc>
-  <HH.Underworld.Pit.Volunteers>志願者</HH.Underworld.Pit.Volunteers>
-  <HH.Underworld.Pit.Volunteers.Desc>戦いを好む入植者(血に飢えた者や近接戦闘の得意な者)は志願できます。志願者が死ぬまで戦わされることはありません。</HH.Underworld.Pit.Volunteers.Desc>
+  <HH.Underworld.Pit.Volunteers>志願者 (古いセーブ)</HH.Underworld.Pit.Volunteers>
+  <HH.Underworld.Pit.Volunteers.Desc>古いセーブから: 血に飢えた入植者や近接戦闘 8 以上の入植者は、「戦う者」でチェックしなくても戦います。オフにすると、チェックした入植者だけが戦います。入植者が死ぬまで戦うことはありません。</HH.Underworld.Pit.Volunteers.Desc>
   <HH.Underworld.Pit.Prisoners>囚人</HH.Underworld.Pit.Prisoners>
-  <HH.Underworld.Pit.Prisoners.Desc>囚人を闘技場に送り込むことがあります。成人のみ。</HH.Underworld.Pit.Prisoners.Desc>
+  <HH.Underworld.Pit.Prisoners.Desc>植民地の 18 歳以上の囚人がここで戦えます。看守が囚人を闘技場へ連れて行き、独房へ連れ戻します。</HH.Underworld.Pit.Prisoners.Desc>
   <HH.Underworld.Pit.Lethal>死ぬまで</HH.Underworld.Pit.Lethal>
-  <HH.Underworld.Pit.Lethal.Desc>囚人と動物の試合は、どちらかが倒れて初めて終わります。志願者には決して適用されません。</HH.Underworld.Pit.Lethal.Desc>
+  <HH.Underworld.Pit.Lethal.Desc>囚人と動物の試合は、どちらかが倒れるまで終わりません。客、入植者、奴隷には決して適用されません。彼らの試合は常に点数で決着します。</HH.Underworld.Pit.Lethal.Desc>
   <HH.Underworld.Pit.StartNow>試合を始める</HH.Underworld.Pit.StartNow>
-  <HH.Underworld.Pit.StartNow.Desc>今すぐ公平な戦士を二人選び、客に賭けをさせます。</HH.Underworld.Pit.StartNow.Desc>
+  <HH.Underworld.Pit.StartNow.Desc>今すぐ試合を始めます。「戦う者」で選んだ側、または最も近い 2 人の戦う者です。客は不要で、公平さの制限も適用されません。</HH.Underworld.Pit.StartNow.Desc>
   <HH.Underworld.Pit.CannotStart>試合不可: {0}</HH.Underworld.Pit.CannotStart>
   <HH.Underworld.Pit.ArenaOk>闘技場: {0} マス、閉鎖済み。</HH.Underworld.Pit.ArenaOk>
   <HH.Underworld.Pit.ArenaOpen>闘技場が開いているか、大きすぎます: 柵を閉じてください。</HH.Underworld.Pit.ArenaOpen>
-  <HH.Underworld.Pit.NoFighters>許可された戦士が二人未満です</HH.Underworld.Pit.NoFighters>
+  <HH.Underworld.Pit.NoFighters>戦う者が 2 人未満</HH.Underworld.Pit.NoFighters>
   <HH.Underworld.Pit.NoFairPair>公平な組み合わせの戦士がいません</HH.Underworld.Pit.NoFairPair>
-  <HH.Underworld.Pit.BoutRunning>試合: {0} 対 {1}。</HH.Underworld.Pit.BoutRunning>
   <HH.Underworld.Pit.BoutAnnounced>闘技場での試合: {0} 対 {1}。賭けを受け付けています。</HH.Underworld.Pit.BoutAnnounced>
-  <HH.Underworld.Pit.Won>{0} が試合に勝ちました。店は {1} 銀貨を受け取ります。</HH.Underworld.Pit.Won>
-  <HH.Underworld.Pit.Draw>試合は勝者なしで終わりました。賭け金はすべて返却されます。</HH.Underworld.Pit.Draw>
-  <HH.Underworld.Fence.Inspect>在庫: {0} 点、価値 {1} 銀貨。現金箱: {2} 銀貨。</HH.Underworld.Fence.Inspect>
   <HH.Underworld.Fence.Fund>現金箱を補充</HH.Underworld.Fence.Fund>
   <HH.Underworld.Fence.Fund.Desc>設定の上限まで、金庫から故買屋の現金箱へ銀貨を移します。</HH.Underworld.Fence.Fund.Desc>
   <HH.Underworld.Fence.Funded>{0} 銀貨を現金箱へ移しました。</HH.Underworld.Fence.Funded>
-  <HH.Underworld.Fence.NoCash>現金箱は空です。</HH.Underworld.Fence.NoCash>
   <HH.Underworld.Fence.CannotPay>買い手が支払えません。</HH.Underworld.Fence.CannotPay>
   <HH.Underworld.Fence.Exposed>品物は {0} から来たもので、彼らは品物の行き先を知っています。</HH.Underworld.Fence.Exposed>
   <HH.Underworld.Gang.Title>扉前のギャング</HH.Underworld.Gang.Title>
@@ -62,14 +41,12 @@
   <HH.Underworld.Gang.Demand.Text>{0} のギャングの首領がカウンターにもたれかかります。「立派な店だ。何かあっては困るだろう。{1} 銀貨払えば、何も起きないよう取り計らうぜ。」</HH.Underworld.Gang.Demand.Text>
   <HH.Underworld.Gang.Demand.Pay>{0} 銀貨を支払う</HH.Underworld.Gang.Demand.Pay>
   <HH.Underworld.Gang.Demand.Refuse>出口を指し示す</HH.Underworld.Gang.Demand.Refuse>
-  <HH.Underworld.Gang.Demand.NoCash>金庫に足りません</HH.Underworld.Gang.Demand.NoCash>
   <HH.Underworld.Tour.IntelTitle>尋問で得た情報</HH.Underworld.Tour.IntelTitle>
   <HH.Underworld.Tour.IntelText>{0} を一時間尋問した後、ギャングはカウンターに一枚の書き置きを残しました。名前、場所、日付。外の誰かが何かを企んでいて、あなたは今それを少しだけ知ったのです。</HH.Underworld.Tour.IntelText>
   <HH.Underworld.Smuggler.Title>桟橋の木箱</HH.Underworld.Smuggler.Title>
-  <HH.Underworld.Smuggler.Text>ライトを消したシャトルが桟橋に降り立ちました。ある声が、{2} と引き換えに、およそ {1} 銀貨相当の {0} 点を提供しています。質問はなし、領収書もなし。</HH.Underworld.Smuggler.Text>
+  <HH.Underworld.Smuggler.Text>明かりを消した船が桟橋に着きました。ある声が、{0} をおよそ {1} 銀貨の値打ちのところ {2} 銀貨で差し出しています。質問はなし、領収書もなし。</HH.Underworld.Smuggler.Text>
   <HH.Underworld.Smuggler.Buy>{0} 銀貨で買う</HH.Underworld.Smuggler.Buy>
   <HH.Underworld.Smuggler.Decline>追い返す</HH.Underworld.Smuggler.Decline>
-  <HH.Underworld.Smuggler.NoCash>金庫に足りません</HH.Underworld.Smuggler.NoCash>
   <HH.Underworld.Smuggler.InspectTitle>パトロールがランプに気づいた</HH.Underworld.Smuggler.InspectTitle>
   <HH.Underworld.Smuggler.InspectText>帝国のパトロールが桟橋の明かりに気づき、記録に残しました。</HH.Underworld.Smuggler.InspectText>
   <HH.Underworld.Hunt.Title>狩猟隊</HH.Underworld.Hunt.Title>
@@ -78,8 +55,8 @@
   <HH.Underworld.Hunt.QuarryAnimals>動物</HH.Underworld.Hunt.QuarryAnimals>
   <HH.Underworld.Hunt.QuarryHuman>動物と囚人</HH.Underworld.Hunt.QuarryHuman>
   <HH.Underworld.Hunt.Prisoners>囚人を獲物にする</HH.Underworld.Hunt.Prisoners>
-  <HH.Underworld.Hunt.Prisoners.Desc>狩場に放たれた囚人を狩人に狩らせます。ダークな内容のみ、適合する信条がある場合に限る。</HH.Underworld.Hunt.Prisoners.Desc>
-  <HH.Underworld.Hunt.GateContent>ダークまたはグリムな内容が必要で、確認済みであること。</HH.Underworld.Hunt.GateContent>
+  <HH.Underworld.Hunt.Prisoners.Desc>狩場に放たれた囚人を狩人に狩らせます。ダークな内容と適合するイデオロギー、または陰惨な内容。</HH.Underworld.Hunt.Prisoners.Desc>
+  <HH.Underworld.Hunt.GateContent>ダークまたは陰惨な内容が必要です。</HH.Underworld.Hunt.GateContent>
   <HH.Underworld.Hunt.GatePrecept>入植地の戒律がこれを許しません。</HH.Underworld.Hunt.GatePrecept>
   <HH.Underworld.Hunt.DeathTitle>狩りで人が死んだ</HH.Underworld.Hunt.DeathTitle>
   <HH.Underworld.Hunt.DeathText>{0} は狩りを生き延びられませんでした。その人の仲間がそのことを耳にするでしょうし、見ていた者たちもみな同じです。</HH.Underworld.Hunt.DeathText>
@@ -94,9 +71,231 @@
   <HH.Underworld.Page.Title>地下世界</HH.Underworld.Page.Title>
   <HH.Underworld.Page.Whispers>囁き: 100 中 {0}。</HH.Underworld.Page.Whispers>
   <HH.Underworld.Page.Weights>来訪の重み: 立派な客 x{0}、無法者 x{1}。</HH.Underworld.Page.Weights>
-  <HH.Underworld.Page.Content>内容: {0} (適用中: {1})。</HH.Underworld.Page.Content>
-  <HH.Underworld.Page.Stats1>闘技場: 試合 {0} 回、賭け {1} 件、店の取り分 {2} 銀貨。</HH.Underworld.Page.Stats1>
+  <HH.Underworld.Page.Stats1>闘技場の試合: {0}。賭け: {1}。店の取り分: {2} 銀貨。</HH.Underworld.Page.Stats1>
   <HH.Underworld.Page.Stats2>故買屋: 購入 {0}、販売 {1}、利益 {2} 銀貨。</HH.Underworld.Page.Stats2>
   <HH.Underworld.Page.Stats3>ラウンジの利用 {0} 回、ギャングの来訪 {1} 回、着陸 {2} 回、狩り {3} 回、臓器 {4} 個。</HH.Underworld.Page.Stats3>
   <HH.Underworld.Page.HighRollers>秘密のカジノという噂が、大金を賭ける客を引き寄せています。</HH.Underworld.Page.HighRollers>
+  <HH.Underworld.Ago.Moment>ほんの少し</HH.Underworld.Ago.Moment>
+  <HH.Underworld.BackRoom.NoOrdinaryDoor>まだ奥の部屋ではありません。この部屋には普通の扉もあります。</HH.Underworld.BackRoom.NoOrdinaryDoor>
+  <HH.Underworld.BackRoom.NoOutside>まだ奥の部屋ではありません。部屋が外に開いています。</HH.Underworld.BackRoom.NoOutside>
+  <HH.Underworld.BackRoom.NoRoom>まだ奥の部屋ではありません。この扉の先に部屋がありません。</HH.Underworld.BackRoom.NoRoom>
+  <HH.Underworld.BackRoom.Off>ただの扉です。裏社会がオフです(モジュールまたは「のどか」の内容)。</HH.Underworld.BackRoom.Off>
+  <HH.Underworld.BackRoom.Status.Last>前回の奥の部屋の料金: {0}前。</HH.Underworld.BackRoom.Status.Last>
+  <HH.Underworld.BackRoom.Status.NotBuilt>扉がすべて奥の部屋の扉だけの部屋を作る。</HH.Underworld.BackRoom.Status.NotBuilt>
+  <HH.Underworld.BackRoom.Yes>ここは奥の部屋です({0} マス)。</HH.Underworld.BackRoom.Yes>
+  <HH.Underworld.Facility.Off>裏社会がオフです(モジュールまたは「のどか」の内容)。</HH.Underworld.Facility.Off>
+  <HH.Underworld.Fence.Bought>故買屋が {0} を {1} 銀貨で買いました。</HH.Underworld.Fence.Bought>
+  <HH.Underworld.Fence.BuyFailed>故買屋は {0} を買えませんでした: {1}。</HH.Underworld.Fence.BuyFailed>
+  <HH.Underworld.Fence.CannotBuy>今は買えません: {0}。</HH.Underworld.Fence.CannotBuy>
+  <HH.Underworld.Fence.LowCash>手元には {0} 銀貨しかありません(金庫と現金箱)。これより高い品物は断られ、最も高い戦利品でも {1} までです。</HH.Underworld.Fence.LowCash>
+  <HH.Underworld.Fence.Sold>故買屋が {0} を {1} 銀貨で売りました。</HH.Underworld.Fence.Sold>
+  <HH.Underworld.Fence.Status.Last>前回の取引: {0}前。</HH.Underworld.Fence.Status.Last>
+  <HH.Underworld.Fence.Status.NotBuilt>故買屋のカウンターを建てる。ギャングは戦利品をここに売り、在庫から買います。</HH.Underworld.Fence.Status.NotBuilt>
+  <HH.Underworld.Fence.Status.Waiting>売る品物を持ったギャングを待っています。</HH.Underworld.Fence.Status.Waiting>
+  <HH.Underworld.Fence.Stock>在庫: {0} 点、{1} 銀貨相当。現金箱: {2} 銀貨。</HH.Underworld.Fence.Stock>
+  <HH.Underworld.Fence.TakeOut>品物を取り出す</HH.Underworld.Fence.TakeOut>
+  <HH.Underworld.Fence.TakeOut.Desc>在庫をすべてカウンターの横の床に出します。品物は植民地で使ったり売ったりできる普通のアイテムになり、故買屋はどこで盗まれたかを忘れます。</HH.Underworld.Fence.TakeOut.Desc>
+  <HH.Underworld.Fence.TakeOut.Empty>在庫なし</HH.Underworld.Fence.TakeOut.Empty>
+  <HH.Underworld.Fence.TookOut>{0} 山をカウンターの横に置きました。</HH.Underworld.Fence.TookOut>
+  <HH.Underworld.Fence.TookOut.NoRoom>カウンターの横に十分な場所がありません。{1} 山のうち {0} 山がまだ在庫にあります。</HH.Underworld.Fence.TookOut.NoRoom>
+  <HH.Underworld.Fence.TookOut.One>1 山をカウンターの横に置きました。</HH.Underworld.Fence.TookOut.One>
+  <HH.Underworld.Fence.Why.Closed>裏社会がオフです</HH.Underworld.Fence.Why.Closed>
+  <HH.Underworld.Fence.Why.TillEmpty>金庫も現金箱も空です</HH.Underworld.Fence.Why.TillEmpty>
+  <HH.Underworld.Fence.Why.TooLittle>手元には {0} 銀貨しかなく、値段は {1} です</HH.Underworld.Fence.Why.TooLittle>
+  <HH.Underworld.Gang.Demand.Expired>ギャングに返事をしませんでした。断ったものとみなされます。</HH.Underworld.Gang.Demand.Expired>
+  <HH.Underworld.Gang.Demand.Letter.How>{0} を選ぶか、裏社会タブを開いて、支払うか断ります。植民地は金庫、備蓄の銀、または銀行から払います。申し出は {1} 時間有効で、時間切れは拒否とみなされます。</HH.Underworld.Gang.Demand.Letter.How>
+  <HH.Underworld.Gang.Demand.Paid>みかじめ料 {0} 銀貨を払いました。</HH.Underworld.Gang.Demand.Paid>
+  <HH.Underworld.Gang.Demand.Pay.Desc>植民地は金庫、備蓄の銀、または銀行から払います。ギャングは手を出さなくなり、その勢力はあなたを少しだけ良く思います。</HH.Underworld.Gang.Demand.Pay.Desc>
+  <HH.Underworld.Gang.Demand.Refuse.Desc>断ります。ギャングの勢力は不快に思い、好感度が下がります。</HH.Underworld.Gang.Demand.Refuse.Desc>
+  <HH.Underworld.Gang.Demand.Refused>ギャングに出口を指し示しました。</HH.Underworld.Gang.Demand.Refused>
+  <HH.Underworld.Gang.Demand.Waiting>{0} がみかじめ料 {1} 銀貨を要求しています({2}以内に返事)。</HH.Underworld.Gang.Demand.Waiting>
+  <HH.Underworld.Gang.Status.DemandAbove>上に要求が待っています。</HH.Underworld.Gang.Status.DemandAbove>
+  <HH.Underworld.Gang.Status.Here>{0} 人のギャングが来ています。</HH.Underworld.Gang.Status.Here>
+  <HH.Underworld.Gang.Status.Last>前回のギャングの来訪: {0}前。</HH.Underworld.Gang.Status.Last>
+  <HH.Underworld.Gang.Status.Next>次のギャングの来訪は約 {0} 後です。</HH.Underworld.Gang.Status.Next>
+  <HH.Underworld.Gang.Status.NotBuilt>奥の部屋、故買屋のカウンター、闘技場のどれかができると、ギャングが来ます。</HH.Underworld.Gang.Status.NotBuilt>
+  <HH.Underworld.Gang.Status.PrisonOff>設定で許可すると、ギャングが囚人を尋問できます。</HH.Underworld.Gang.Status.PrisonOff>
+  <HH.Underworld.Gang.Status.Retry>前回のギャングは来られませんでした: {0}。次の試行は {1} 後です。</HH.Underworld.Gang.Status.Retry>
+  <HH.Underworld.Gang.Status.Waiting>次のギャングを待っています。</HH.Underworld.Gang.Status.Waiting>
+  <HH.Underworld.Gang.Why.NoEntry>マップに入る道がない</HH.Underworld.Gang.Why.NoEntry>
+  <HH.Underworld.Gang.Why.NoFacility>奥の部屋、故買屋のカウンター、闘技場がない</HH.Underworld.Gang.Why.NoFacility>
+  <HH.Underworld.Gang.Why.NoFaction>友好的な勢力がない</HH.Underworld.Gang.Why.NoFaction>
+  <HH.Underworld.Gang.Why.NoPawns>ギャングのメンバーが見つからなかった</HH.Underworld.Gang.Why.NoPawns>
+  <HH.Underworld.Hunt.Closed>狩りはありません。モジュールか内容の濃さが許可していません。</HH.Underworld.Hunt.Closed>
+  <HH.Underworld.Hunt.Next>次の狩猟団は約 {0} 後です。</HH.Underworld.Hunt.Next>
+  <HH.Underworld.Hunt.Open>開いています。狩場の周りの柵を閉じてください(最大 {0} マス)。</HH.Underworld.Hunt.Open>
+  <HH.Underworld.Hunt.Running>狩りの最中です。</HH.Underworld.Hunt.Running>
+  <HH.Underworld.Hunt.Status.Last>前回の狩り: {0}前。</HH.Underworld.Hunt.Status.Last>
+  <HH.Underworld.Hunt.Status.NotBuilt>狩りを研究してから、{0} マス以上の閉じた柵の中に狩場マーカーを置く。</HH.Underworld.Hunt.Status.NotBuilt>
+  <HH.Underworld.Hunt.Status.NotBuiltResearched>{0} から {1} マスの閉じた柵の中に狩場マーカーを置く。</HH.Underworld.Hunt.Status.NotBuiltResearched>
+  <HH.Underworld.Hunt.TooBig>大きすぎます: {0} マス、最大 {1}。</HH.Underworld.Hunt.TooBig>
+  <HH.Underworld.Hunt.TooSmall>小さすぎます: {1} マス中 {0} マス。</HH.Underworld.Hunt.TooSmall>
+  <HH.Underworld.Lounge.Status.Closed>今は閉まっています。ラウンジは夕方に開きます。</HH.Underworld.Lounge.Status.Closed>
+  <HH.Underworld.Lounge.Status.Last>前回の利用: {0}前。</HH.Underworld.Lounge.Status.Last>
+  <HH.Underworld.Lounge.Status.NotBuilt>ソファか肘掛け椅子が 2 脚ある部屋に、ドラッグラウンジの種類の店の看板を置く。</HH.Underworld.Lounge.Status.NotBuilt>
+  <HH.Underworld.Lounge.Status.NotReady>ラウンジはまだ準備ができていません。</HH.Underworld.Lounge.Status.NotReady>
+  <HH.Underworld.Lounge.Status.Open>営業中。</HH.Underworld.Lounge.Status.Open>
+  <HH.Underworld.Offer.Gone>申し出は消えました。船かギャングが去りました。</HH.Underworld.Offer.Gone>
+  <HH.Underworld.Organ.Status.Last>前回の販売: {0}前。</HH.Underworld.Organ.Status.Last>
+  <HH.Underworld.Organ.Status.NotBuilt>闇診療所を研究して、そのカウンターを建てる。</HH.Underworld.Organ.Status.NotBuilt>
+  <HH.Underworld.Organ.Status.NotBuiltResearched>臓器診療所のカウンターを建てる。</HH.Underworld.Organ.Status.NotBuiltResearched>
+  <HH.Underworld.Organ.Status.Waiting>カウンターに置かれた臓器は夜に引き取られます(23:00 から 04:00)。</HH.Underworld.Organ.Status.Waiting>
+  <HH.Underworld.Page.Build>建てる</HH.Underworld.Page.Build>
+  <HH.Underworld.Page.Build.Desc>このタブを閉じて、建築メニューから {0} を選びます。</HH.Underworld.Page.Build.Desc>
+  <HH.Underworld.Page.Build.Hidden>今は建築メニューにありません。</HH.Underworld.Page.Build.Hidden>
+  <HH.Underworld.Page.Build.Missing>このゲームの建築メニューにはありません。</HH.Underworld.Page.Build.Missing>
+  <HH.Underworld.Page.Build.Research>先に研究が必要です: {0}。</HH.Underworld.Page.Build.Research>
+  <HH.Underworld.Page.ContentLevel>内容の濃さ: {0}。設定のモジュールページで変更できます。</HH.Underworld.Page.ContentLevel>
+  <HH.Underworld.Page.DarkAdds>ダークな内容では、臓器診療所、囚人狩り、囚人の死闘が加わります。</HH.Underworld.Page.DarkAdds>
+  <HH.Underworld.Page.Facilities>あなたの奥の部屋の商売</HH.Underworld.Page.Facilities>
+  <HH.Underworld.Page.NoMap>植民地のマップを開くと、そこに何が建っているか見られます。</HH.Underworld.Page.NoMap>
+  <HH.Underworld.Page.Offers>返事待ち</HH.Underworld.Page.Offers>
+  <HH.Underworld.Page.Pit.More>このマップにはほかに {0} か所の闘技場があります。マーカーを選ぶと見られます。</HH.Underworld.Page.Pit.More>
+  <HH.Underworld.Page.Pit.NotBuilt>9 から 700 マスを囲む閉じた柵(門があっても可)を作り、その中に闘技場マーカーを置く。</HH.Underworld.Page.Pit.NotBuilt>
+  <HH.Underworld.Page.Row.backroom>奥の部屋</HH.Underworld.Page.Row.backroom>
+  <HH.Underworld.Page.Row.clinic>臓器診療所</HH.Underworld.Page.Row.clinic>
+  <HH.Underworld.Page.Row.dock>密輸者の桟橋</HH.Underworld.Page.Row.dock>
+  <HH.Underworld.Page.Row.fence>故買屋</HH.Underworld.Page.Row.fence>
+  <HH.Underworld.Page.Row.gangs>ギャング</HH.Underworld.Page.Row.gangs>
+  <HH.Underworld.Page.Row.hunt>狩場</HH.Underworld.Page.Row.hunt>
+  <HH.Underworld.Page.Row.lounge>ドラッグラウンジ</HH.Underworld.Page.Row.lounge>
+  <HH.Underworld.Page.Row.pit>闘技場</HH.Underworld.Page.Row.pit>
+  <HH.Underworld.Page.Show>表示</HH.Underworld.Page.Show>
+  <HH.Underworld.Page.State.NotBuilt>まだ建てていません。</HH.Underworld.Page.State.NotBuilt>
+  <HH.Underworld.Page.State.Waiting>建てましたが、何かを待っています。</HH.Underworld.Page.State.Waiting>
+  <HH.Underworld.Page.State.Working>稼働中。</HH.Underworld.Page.State.Working>
+  <HH.Underworld.Page.StatsHead>これまでの売上</HH.Underworld.Page.StatsHead>
+  <HH.Underworld.Page.Whispers.Desc>試合、取引、ギャングの来訪のたびに囁きが増え、時間とともに薄れます。囁きが増えると、無法者が増え、まともな客が減ります。</HH.Underworld.Page.Whispers.Desc>
+  <HH.Underworld.Page.WhispersHead>囁き</HH.Underworld.Page.WhispersHead>
+  <HH.Underworld.Pay.Loose>銀貨は備蓄場所か家のエリアにあるものだけが数えられます</HH.Underworld.Pay.Loose>
+  <HH.Underworld.Pay.Short>植民地には {1} 銀貨のうち {0} 銀貨しかありません</HH.Underworld.Pay.Short>
+  <HH.Underworld.Pit.Abort.Closed>闘技場が閉鎖されました</HH.Underworld.Pit.Abort.Closed>
+  <HH.Underworld.Pit.Abort.Drafted>{0} が徴集されました</HH.Underworld.Pit.Abort.Drafted>
+  <HH.Underworld.Pit.Abort.Gone>{0} がいなくなりました</HH.Underworld.Pit.Abort.Gone>
+  <HH.Underworld.Pit.Abort.Hurt>{0} はこれ以上戦えません</HH.Underworld.Pit.Abort.Hurt>
+  <HH.Underworld.Pit.Abort.Left>{0} は去らなければなりませんでした</HH.Underworld.Pit.Abort.Left>
+  <HH.Underworld.Pit.Abort.Mental>{0} は自制を失いました</HH.Underworld.Pit.Abort.Mental>
+  <HH.Underworld.Pit.Abort.NoShow>{0} は闘技場にたどり着けませんでした</HH.Underworld.Pit.Abort.NoShow>
+  <HH.Underworld.Pit.ArenaBig>闘技場が開いているか、{0} マスより大きいです。もっと小さな範囲を柵で囲んでください。</HH.Underworld.Pit.ArenaBig>
+  <HH.Underworld.Pit.ArenaSmall>闘技場が小さすぎます: {0} マス。少なくとも {1} マス必要です。</HH.Underworld.Pit.ArenaSmall>
+  <HH.Underworld.Pit.BeastName>闘技場の {0}</HH.Underworld.Pit.BeastName>
+  <HH.Underworld.Pit.BeastNotYours>この動物は闘技場のためだけに雇われています。</HH.Underworld.Pit.BeastNotYours>
+  <HH.Underworld.Pit.BeastRef>{0}</HH.Underworld.Pit.BeastRef>
+  <HH.Underworld.Pit.BoutAnnounced.Beast>闘技場で試合: {0} 対 {1}。点数で決着するので、{0} はせいぜい軽い打ち身で済みます。</HH.Underworld.Pit.BoutAnnounced.Beast>
+  <HH.Underworld.Pit.BoutAnnounced.Plain>闘技場で試合: {0} 対 {1}。</HH.Underworld.Pit.BoutAnnounced.Plain>
+  <HH.Underworld.Pit.CallOpponent>対戦相手を呼ぶ ({0})</HH.Underworld.Pit.CallOpponent>
+  <HH.Underworld.Pit.CallOpponent.Desc>一人の戦う者のために闘技場の獣を雇います。戦う者と同じくらい強い動物で、1 試合限りです。植民地が {0} 銀貨を払います。まず金庫から、次に備蓄の銀、最後に銀行から。</HH.Underworld.Pit.CallOpponent.Desc>
+  <HH.Underworld.Pit.CallOpponent.For>戦う相手: {0}。</HH.Underworld.Pit.CallOpponent.For>
+  <HH.Underworld.Pit.CallOpponent.Free>対戦相手を呼ぶ (最初の 1 回は無料)</HH.Underworld.Pit.CallOpponent.Free>
+  <HH.Underworld.Pit.CallOpponent.FreeDesc>最初の対戦相手は店のおごりです。</HH.Underworld.Pit.CallOpponent.FreeDesc>
+  <HH.Underworld.Pit.CalledOff>試合が中止されました: {0}。</HH.Underworld.Pit.CalledOff>
+  <HH.Underworld.Pit.FightHere>闘技場で戦う</HH.Underworld.Pit.FightHere>
+  <HH.Underworld.Pit.FightHere.Against>闘技場で {0} と戦う</HH.Underworld.Pit.FightHere.Against>
+  <HH.Underworld.Pit.FightHere.Queue>闘技場で戦う (次の試合)</HH.Underworld.Pit.FightHere.Queue>
+  <HH.Underworld.Pit.FightersBtn>戦う者…</HH.Underworld.Pit.FightersBtn>
+  <HH.Underworld.Pit.FightersBtn.Desc>この闘技場で戦える全員と、今戦えない人がいる理由を表示します。ここで戦ってよい入植者にチェックを入れ、2 つの側を選んで試合を始めるか、一人の戦う者のために対戦相手を呼びます。</HH.Underworld.Pit.FightersBtn.Desc>
+  <HH.Underworld.Pit.Guests>客の挑戦者</HH.Underworld.Pit.Guests>
+  <HH.Underworld.Pit.Guests.Desc>客はここで戦えます。怪しい客とギャングのメンバーはいつでも、ほかの成人の客は優しくなく、血に飢えているか、喧嘩屋の特性か、近接戦闘 6 以上のときに限ります。起きていて、手が空いていて、健康で、しばらく滞在する客だけです。試合は点数で決着し、誰も怪我をしません。勝った客は店の取り分から少額の賞金を受け取ります。</HH.Underworld.Pit.Guests.Desc>
+  <HH.Underworld.Pit.Hint.Animals>動物を許可する</HH.Underworld.Pit.Hint.Animals>
+  <HH.Underworld.Pit.Hint.Call>対戦相手を呼ぶ</HH.Underworld.Pit.Hint.Call>
+  <HH.Underworld.Pit.Hint.Guests>客を許可する</HH.Underworld.Pit.Hint.Guests>
+  <HH.Underworld.Pit.Hint.Or>{0} または {1}</HH.Underworld.Pit.Hint.Or>
+  <HH.Underworld.Pit.Hint.Tick>2 人目の入植者にチェックを入れる</HH.Underworld.Pit.Hint.Tick>
+  <HH.Underworld.Pit.Hint.Wait>戦うのが好きな客を待つ</HH.Underworld.Pit.Hint.Wait>
+  <HH.Underworld.Pit.Kind.Animal>動物</HH.Underworld.Pit.Kind.Animal>
+  <HH.Underworld.Pit.Kind.Beast>雇った対戦相手</HH.Underworld.Pit.Kind.Beast>
+  <HH.Underworld.Pit.Kind.Colonist>入植者</HH.Underworld.Pit.Kind.Colonist>
+  <HH.Underworld.Pit.Kind.Guest>客</HH.Underworld.Pit.Kind.Guest>
+  <HH.Underworld.Pit.Kind.Prisoner>囚人</HH.Underworld.Pit.Kind.Prisoner>
+  <HH.Underworld.Pit.Last>前回の試合: {0} が {1} に勝利。賭け金の総額 {2}、店 {3}。</HH.Underworld.Pit.Last>
+  <HH.Underworld.Pit.Last.Draw>前回の試合: {0} 対 {1}、勝者なし。</HH.Underworld.Pit.Last.Draw>
+  <HH.Underworld.Pit.Last.NoBets>前回の試合: {0} が {1} に勝利。</HH.Underworld.Pit.Last.NoBets>
+  <HH.Underworld.Pit.PursePaid>{0} が賞金 {1} 銀貨を受け取りました。</HH.Underworld.Pit.PursePaid>
+  <HH.Underworld.Pit.Rating.Clear>{0} が圧倒的な本命です。</HH.Underworld.Pit.Rating.Clear>
+  <HH.Underworld.Pit.Rating.Even>互角の勝負です。</HH.Underworld.Pit.Rating.Even>
+  <HH.Underworld.Pit.Rating.Favourite>{0} が本命です。</HH.Underworld.Pit.Rating.Favourite>
+  <HH.Underworld.Pit.Ready>準備できた戦う者: {0} ({1})。</HH.Underworld.Pit.Ready>
+  <HH.Underworld.Pit.Ready.Many.Animal>動物 {0} 匹</HH.Underworld.Pit.Ready.Many.Animal>
+  <HH.Underworld.Pit.Ready.Many.Colonist>入植者 {0} 人</HH.Underworld.Pit.Ready.Many.Colonist>
+  <HH.Underworld.Pit.Ready.Many.Guest>客 {0} 人</HH.Underworld.Pit.Ready.Many.Guest>
+  <HH.Underworld.Pit.Ready.Many.Prisoner>囚人 {0} 人</HH.Underworld.Pit.Ready.Many.Prisoner>
+  <HH.Underworld.Pit.Ready.None>準備できた戦う者: なし。</HH.Underworld.Pit.Ready.None>
+  <HH.Underworld.Pit.Ready.One.Animal>動物 {0} 匹</HH.Underworld.Pit.Ready.One.Animal>
+  <HH.Underworld.Pit.Ready.One.Colonist>入植者 {0} 人</HH.Underworld.Pit.Ready.One.Colonist>
+  <HH.Underworld.Pit.Ready.One.Guest>客 {0} 人</HH.Underworld.Pit.Ready.One.Guest>
+  <HH.Underworld.Pit.Ready.One.Prisoner>囚人 {0} 人</HH.Underworld.Pit.Ready.One.Prisoner>
+  <HH.Underworld.Pit.Result.Draw>{0} 対 {1}: 勝者なし。賭け金はすべて返されます。</HH.Underworld.Pit.Result.Draw>
+  <HH.Underworld.Pit.Result.DrawNoBets>{0} 対 {1}: 勝者なし。</HH.Underworld.Pit.Result.DrawNoBets>
+  <HH.Underworld.Pit.Result.Points>点数で決着しました。{0} はせいぜい軽い打ち身で済みます。</HH.Underworld.Pit.Result.Points>
+  <HH.Underworld.Pit.Result.PointsAll>点数で決着しました。せいぜい軽い打ち身です。</HH.Underworld.Pit.Result.PointsAll>
+  <HH.Underworld.Pit.Result.Won>{0} が闘技場で {1} に勝ちました。賭け金の総額 {2} 銀貨、店 {3} 銀貨。</HH.Underworld.Pit.Result.Won>
+  <HH.Underworld.Pit.Result.WonNoBets>{0} が闘技場で {1} に勝ちました。</HH.Underworld.Pit.Result.WonNoBets>
+  <HH.Underworld.Pit.Status.AutoFailed>自動の試合はありません: {0}。自分で試合を始めるか、対戦相手を呼んでください。</HH.Underworld.Pit.Status.AutoFailed>
+  <HH.Underworld.Pit.Status.Closed>閉鎖中: マーカーの「闘技場を開く」をオンにしてください。</HH.Underworld.Pit.Status.Closed>
+  <HH.Underworld.Pit.Status.NeedArena>閉じた闘技場を待っています。</HH.Underworld.Pit.Status.NeedArena>
+  <HH.Underworld.Pit.Status.Next>次の試合まで {0} 時間。</HH.Underworld.Pit.Status.Next>
+  <HH.Underworld.Pit.Status.NoFighter>戦う者がまだいません。入植者でマーカーを右クリックするか、「戦う者」で 1 人にチェックを入れてください。</HH.Underworld.Pit.Status.NoFighter>
+  <HH.Underworld.Pit.Status.Off>裏社会がオフです(モジュールまたは「のどか」の内容)。</HH.Underworld.Pit.Status.Off>
+  <HH.Underworld.Pit.Status.Peaceful>平和な裏社会がオンです。戦いはありません。</HH.Underworld.Pit.Status.Peaceful>
+  <HH.Underworld.Pit.Status.Running>試合中: {0} 対 {1}。</HH.Underworld.Pit.Status.Running>
+  <HH.Underworld.Pit.Status.WaitFighter>2 人目の戦う者を待っています: {0}。</HH.Underworld.Pit.Status.WaitFighter>
+  <HH.Underworld.Pit.Status.WaitGuests>賭ける客を待っています(自分で試合を始めることもできます)。</HH.Underworld.Pit.Status.WaitGuests>
+  <HH.Underworld.Pit.Why.ArenaFull>闘技場に空きマスがない</HH.Underworld.Pit.Why.ArenaFull>
+  <HH.Underworld.Pit.Why.Asleep>眠っている</HH.Underworld.Pit.Why.Asleep>
+  <HH.Underworld.Pit.Why.BeastThere>対戦相手がすでに闘技場にいる</HH.Underworld.Pit.Why.BeastThere>
+  <HH.Underworld.Pit.Why.BoutRunning>試合中</HH.Underworld.Pit.Why.BoutRunning>
+  <HH.Underworld.Pit.Why.Burning>燃えている</HH.Underworld.Pit.Why.Burning>
+  <HH.Underworld.Pit.Why.Busy>作業中</HH.Underworld.Pit.Why.Busy>
+  <HH.Underworld.Pit.Why.Child>18 歳未満</HH.Underworld.Pit.Why.Child>
+  <HH.Underworld.Pit.Why.Downed>倒れている</HH.Underworld.Pit.Why.Downed>
+  <HH.Underworld.Pit.Why.Drafted>徴集中</HH.Underworld.Pit.Why.Drafted>
+  <HH.Underworld.Pit.Why.Gone>ここにいない</HH.Underworld.Pit.Why.Gone>
+  <HH.Underworld.Pit.Why.Hurt>負傷している</HH.Underworld.Pit.Why.Hurt>
+  <HH.Underworld.Pit.Why.InBout>すでに試合中</HH.Underworld.Pit.Why.InBout>
+  <HH.Underworld.Pit.Why.Kind>戦いたがらない: 優しい</HH.Underworld.Pit.Why.Kind>
+  <HH.Underworld.Pit.Why.Leaving>到着中または出発中</HH.Underworld.Pit.Why.Leaving>
+  <HH.Underworld.Pit.Why.LeavingSoon>まもなく去る</HH.Underworld.Pit.Why.LeavingSoon>
+  <HH.Underworld.Pit.Why.Mental>精神状態が不安定</HH.Underworld.Pit.Why.Mental>
+  <HH.Underworld.Pit.Why.NoBeastKind>合う動物がいない</HH.Underworld.Pit.Why.NoBeastKind>
+  <HH.Underworld.Pit.Why.NoBout>試合を始められなかった</HH.Underworld.Pit.Why.NoBout>
+  <HH.Underworld.Pit.Why.NoLoneFighter>戦う相手がいない: 入植者でマーカーを右クリックするか、「戦う者」で 1 人にチェックを入れてください</HH.Underworld.Pit.Why.NoLoneFighter>
+  <HH.Underworld.Pit.Why.NoOpponent>対戦相手がいない</HH.Underworld.Pit.Why.NoOpponent>
+  <HH.Underworld.Pit.Why.NoOpponentFor>{0} と戦う相手がいない</HH.Underworld.Pit.Why.NoOpponentFor>
+  <HH.Underworld.Pit.Why.NoTaste>戦いたがらない: 戦いが好きではない</HH.Underworld.Pit.Why.NoTaste>
+  <HH.Underworld.Pit.Why.NoViolence>暴力を振るえない</HH.Underworld.Pit.Why.NoViolence>
+  <HH.Underworld.Pit.Why.NotGuest>店の客ではない</HH.Underworld.Pit.Why.NotGuest>
+  <HH.Underworld.Pit.Why.NotTicked>ここで戦うようチェックされていない</HH.Underworld.Pit.Why.NotTicked>
+  <HH.Underworld.Pit.Why.OnlyOne>戦う者が 1 人だけ: {0}。</HH.Underworld.Pit.Why.OnlyOne>
+  <HH.Underworld.Pit.Why.QuestGuest>クエストの客</HH.Underworld.Pit.Why.QuestGuest>
+  <HH.Underworld.Pit.Why.Trader>商人</HH.Underworld.Pit.Why.Trader>
+  <HH.Underworld.Pit.Win.Anyone>適した相手なら誰でも</HH.Underworld.Pit.Win.Anyone>
+  <HH.Underworld.Pit.Win.Group.Animal>動物</HH.Underworld.Pit.Win.Group.Animal>
+  <HH.Underworld.Pit.Win.Group.Beast>雇った対戦相手</HH.Underworld.Pit.Win.Group.Beast>
+  <HH.Underworld.Pit.Win.Group.Colonist>入植者と奴隷</HH.Underworld.Pit.Win.Group.Colonist>
+  <HH.Underworld.Pit.Win.Group.Guest>客</HH.Underworld.Pit.Win.Group.Guest>
+  <HH.Underworld.Pit.Win.Group.Prisoner>囚人</HH.Underworld.Pit.Win.Group.Prisoner>
+  <HH.Underworld.Pit.Win.GroupOff>オフ: マーカーの「{0}」をオンにしてください。</HH.Underworld.Pit.Win.GroupOff>
+  <HH.Underworld.Pit.Win.Melee>近接 {0}</HH.Underworld.Pit.Win.Melee>
+  <HH.Underworld.Pit.Win.Nobody>ここには誰もいない</HH.Underworld.Pit.Win.Nobody>
+  <HH.Underworld.Pit.Win.PickSides>側を選ぶか、「適した相手なら誰でも」のままにして最も近い組み合わせにします。</HH.Underworld.Pit.Win.PickSides>
+  <HH.Underworld.Pit.Win.Power>戦力 {0}</HH.Underworld.Pit.Win.Power>
+  <HH.Underworld.Pit.Win.Ready>準備完了</HH.Underworld.Pit.Win.Ready>
+  <HH.Underworld.Pit.Win.SideA>A 側</HH.Underworld.Pit.Win.SideA>
+  <HH.Underworld.Pit.Win.SideB>B 側</HH.Underworld.Pit.Win.SideB>
+  <HH.Underworld.Pit.Win.Start>今すぐ試合を始める</HH.Underworld.Pit.Win.Start>
+  <HH.Underworld.Pit.Win.Tick>この闘技場で戦う</HH.Underworld.Pit.Win.Tick>
+  <HH.Underworld.Pit.Win.Title>闘技場の戦う者</HH.Underworld.Pit.Win.Title>
+  <HH.Underworld.Smuggler.Bought>木箱はあなたのものです。{0} 銀貨。</HH.Underworld.Smuggler.Bought>
+  <HH.Underworld.Smuggler.Buy.Desc>植民地は金庫、備蓄の銀、または銀行から払います。木箱は桟橋の横に降ろされます。</HH.Underworld.Smuggler.Buy.Desc>
+  <HH.Underworld.Smuggler.Decline.Desc>船を追い返します。他には何も起きません。</HH.Underworld.Smuggler.Decline.Desc>
+  <HH.Underworld.Smuggler.Declined>船は取引せずに去りました。</HH.Underworld.Smuggler.Declined>
+  <HH.Underworld.Smuggler.Items.Many>{0} 点</HH.Underworld.Smuggler.Items.Many>
+  <HH.Underworld.Smuggler.Items.One>{0} 点</HH.Underworld.Smuggler.Items.One>
+  <HH.Underworld.Smuggler.Left>桟橋の船は待ちきれず、去りました。</HH.Underworld.Smuggler.Left>
+  <HH.Underworld.Smuggler.Letter.How>桟橋を選ぶか、裏社会タブを開いて、木箱を買うか船を追い返します。植民地は金庫、備蓄の銀、または銀行から払います。船は {0} 時間待ち、その後去ります。</HH.Underworld.Smuggler.Letter.How>
+  <HH.Underworld.Smuggler.Next>次の着岸: 夜、約 {0} 後。</HH.Underworld.Smuggler.Next>
+  <HH.Underworld.Smuggler.NextSoon>次の着岸: 夜、まもなく。</HH.Underworld.Smuggler.NextSoon>
+  <HH.Underworld.Smuggler.Status.Last>前回の着岸: {0}前。</HH.Underworld.Smuggler.Status.Last>
+  <HH.Underworld.Smuggler.Status.NotBuilt>密輸者の桟橋を建てる。夜に船が着き、安い密輸品を運んできます。</HH.Underworld.Smuggler.Status.NotBuilt>
+  <HH.Underworld.Smuggler.Waiting>桟橋で船が待っています: {0}、{1} 銀貨 ({2}後に去ります)。</HH.Underworld.Smuggler.Waiting>
 </LanguageData>

@@ -135,14 +135,6 @@ namespace Hearth.DevTools
         }
 
         // ------------------------------------------------------------------ world events
-        [DebugAction(Cat, "Underworld: stranger asks now", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
-        internal static void Stranger()
-        {
-            if (!Modules.On(ModuleId.Underworld)) { Say("The Underworld module is off.", true); return; }
-            if (global::Hearth.Underworld.Underworld.Comp == null) { Say("No underworld data in this game.", true); return; }
-            global::Hearth.Underworld.Discovery.Fire(Find.CurrentMap, true);
-        }
-
         [DebugAction(Cat, "Casino: force a slot jackpot", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         internal static void Jackpot()
         {

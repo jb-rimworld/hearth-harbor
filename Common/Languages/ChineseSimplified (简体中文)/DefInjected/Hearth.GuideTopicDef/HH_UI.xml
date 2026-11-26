@@ -27,4 +27,16 @@
   <HH_Guide_YourGuests.steps.1.description>显示访客的想法，并让你选择基础、陪同或拉拢。</HH_Guide_YourGuests.steps.1.description>
   <HH_Guide_YourGuests.steps.1.label>选中一位访客并打开访客标签页。</HH_Guide_YourGuests.steps.1.label>
   <HH_Guide_YourGuests.steps.2.label>对你喜欢的访客试试另一种接待方式。</HH_Guide_YourGuests.steps.2.label>
+  <HH_Guide_BackRoom.description>格斗、销赃人和帮派。全部可选：你不建造，什么都不会发生。</HH_Guide_BackRoom.description>
+  <HH_Guide_BackRoom.label>后间</HH_Guide_BackRoom.label>
+  <HH_Guide_BackRoom.steps.0.description>围栏上有门也没关系。场地至少需要 3x3 格。标记会告诉你它还在等什么。</HH_Guide_BackRoom.steps.0.description>
+  <HH_Guide_BackRoom.steps.0.label>建一圈封闭的围栏，并在里面放一个格斗坑标记。</HH_Guide_BackRoom.steps.0.label>
+  <HH_Guide_BackRoom.steps.1.description>用殖民者右键点击标记，在“格斗者…”里勾选要上场的人；只有你一人时，可以用“叫来对手”。与访客或殖民者的比赛按点数决胜，所以没人会受伤。</HH_Guide_BackRoom.steps.1.description>
+  <HH_Guide_BackRoom.steps.1.label>让第一场比赛打完。</HH_Guide_BackRoom.steps.1.label>
+  <HH_Guide_BackRoom.steps.2.description>帮派在那里碰头，并为此付钱。体面的访客偶尔也会误打误撞地来到这里。</HH_Guide_BackRoom.steps.2.description>
+  <HH_Guide_BackRoom.steps.2.label>建一个所有门都是后间门的房间。</HH_Guide_BackRoom.steps.2.label>
+  <HH_Guide_BackRoom.steps.3.description>第一个帮派会在你建起第一个后间、销赃柜台或格斗坑后大约一天到来。地下世界页面会告诉你时间。</HH_Guide_BackRoom.steps.3.description>
+  <HH_Guide_BackRoom.steps.3.label>等待第一次帮派来访。</HH_Guide_BackRoom.steps.3.label>
+  <HH_Guide_BackRoom.steps.4.description>帮派把赃物卖给它，也从它的存货里买东西。它用自己的现金箱付款。</HH_Guide_BackRoom.steps.4.description>
+  <HH_Guide_BackRoom.steps.4.label>建一个销赃柜台。</HH_Guide_BackRoom.steps.4.label>
 </LanguageData>

@@ -2,15 +2,19 @@
 """Incremental translation (1.1.0): translate only new or changed English strings, keep every existing translation.
 
     python3 tools/i18n/delta.py plan <old_src_dir>        → tools/i18n/delta/<code>/<n>.json   (flat {"k:key"|"d:Type/def.field": English})
+    python3 tools/i18n/delta.py plan git:<ref>            the same against the English of a git ref (e.g. git:main, the last release):
+                                                          its Common/ is extracted with this extract.py into a temp folder, so a text
+                                                          whose English changed since then is planned again even when it is translated
     python3 tools/i18n/delta.py apply                     ← tools/i18n/delta_out/<code>/<n>.json (same keys, translated values)
 
 plan:  todo(lang) = English keys that are new since <old_src_dir>, whose English text changed, or that the language file lacks.
+       Also writes delta/stale_<code>.txt: keys of that language that no longer exist in English and that apply will remove.
 apply: updates the language files in place: a key that already exists in some file of that language (Keyed or the
        DefInjected/<Type> folder) is replaced there; new keys go into the module's file (Keyed/HH_<Module>.xml,
        DefInjected/<Type>/HH_<Module>.xml); keys that no longer exist in English are removed. Placeholders ({0}, [token],
        <color>) must match the English text, else the English text is used and the key is listed in delta/review_<code>.txt.
 """
-import json, re, subprocess, sys
+import json, re, shutil, subprocess, sys, tempfile
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -73,20 +77,41 @@ def lang_entries(lang):
     return have
 
 
+def src_of_ref(ref):
+    """English source of a git ref, extracted with today's extract.py (its tables) from that ref's Common/: {flat key: (module, English)}."""
+    tmp = Path(tempfile.mkdtemp(prefix="hh_i18n_"))
+    try:
+        arc = subprocess.run(["git", "-C", str(R), "archive", ref, "Common"], check=True, capture_output=True).stdout
+        subprocess.run(["tar", "-x", "-C", str(tmp)], input=arc, check=True)
+        (tmp / "tools" / "i18n" / "src").mkdir(parents=True)
+        shutil.copy(I / "extract.py", tmp / "tools" / "i18n" / "extract.py")
+        subprocess.run([sys.executable, str(tmp / "tools" / "i18n" / "extract.py")], check=True, capture_output=True)
+        return load_src(tmp / "tools" / "i18n" / "src")
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 def plan(old_dir):
-    new, old = load_src(I / "src"), load_src(old_dir)
+    new = load_src(I / "src")
+    old = src_of_ref(old_dir[4:]) if old_dir.startswith("git:") else load_src(old_dir)
+    known_defs = known_defs_of(new)
     out = I / "delta"
     if out.exists():
         for p in out.rglob("*.json"): p.unlink()
+        for p in out.glob("stale_*.txt"): p.unlink()
     total = {}
     for code, lang in LANGS.items():
         have = lang_entries(lang)
-        todo = {k: v for k, (m, v) in new.items() if v and v.strip() and (k not in have or k not in old or old[k][1] != v)}
+        missing = {k for k in new if k not in have}
+        changed = {k for k, (m, v) in new.items() if k in have and (k not in old or old[k][1] != v)}
+        todo = {k: v for k, (m, v) in new.items() if v and v.strip() and (k in missing or k in changed)}
         items = sorted(todo.items())
         d = out / code; d.mkdir(parents=True, exist_ok=True)
         for i in range(0, len(items), N):
             (d / f"{i // N:03d}.json").write_text(json.dumps(dict(items[i:i + N]), ensure_ascii=False, indent=1), encoding="utf-8")
-        total[code] = len(items)
+        stale = sorted(k for k in have if k not in new and managed(k, known_defs))
+        (out / f"stale_{code}.txt").write_text("".join(k + "\n" for k in stale), encoding="utf-8")
+        total[code] = {"todo": len(items), "missing": len(missing & todo.keys()), "changed": len(changed & todo.keys()), "stale": len(stale)}
     print(json.dumps(total))
 
 

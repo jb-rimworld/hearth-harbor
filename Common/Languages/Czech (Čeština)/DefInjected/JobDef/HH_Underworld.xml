@@ -7,4 +7,7 @@
   <HH_Interrogate.reportString>vyslýchá TargetA.</HH_Interrogate.reportString>
   <HH_HuntQuarry.reportString>loví TargetA.</HH_HuntQuarry.reportString>
   <HH_QuarryFlee.reportString>utíká.</HH_QuarryFlee.reportString>
+  <HH_PitFight.reportString>bojuje s TargetA v jámě.</HH_PitFight.reportString>
+  <HH_PitGoto.reportString>jde do jámy na boje.</HH_PitGoto.reportString>
+  <HH_PitWait.reportString>čeká na zápas.</HH_PitWait.reportString>
 </LanguageData>

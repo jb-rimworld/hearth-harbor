@@ -65,9 +65,10 @@ namespace Hearth.SaveLoad
             l.Add("lotteryTickets=" + (LotteryGame.Current?.tickets.Count ?? -1));
             l.Add("casinoSessions=" + (CasinoComponent.Get()?.Sessions.Count ?? -1));
             l.Add("screenings=" + map.lordManager.lords.Count(x => x.LordJob is LordJob_Joinable_Screening));
-            l.Add("uwDiscovered=" + UW.Discovered);
+            l.Add("uwContent=" + HearthProfile.Current?.Content);
             // facts are taken at save time and right after the load, i.e. at the same tick: the decaying whispers compare as they are
             l.Add("whispers=" + UW.Comp?.WhispersAt(Find.TickManager.TicksGame).ToString("0.000"));
+            l.Add("uwOffers=" + string.Join(";", (UW.Comp?.Offers ?? new List<Hearth.Underworld.UwOffer>()).Select(o => o.id + ":" + o.kind + ":" + o.price.ToStringFull() + ":" + o.goods.Count + ":" + o.expireTick + ":" + (o.leader?.ThingID ?? "-") + ":" + (o.faction?.loadID.ToString() ?? "-"))));
             l.Add("setting " + ChangedSetting + "=" + HSettings.Get(ChangedSetting));
             l.Add("venueSigns=" + string.Join(";", map.listerThings.AllThings.Select(t => t.TryGetComp<CompVenueSignHH>()).Where(c => c != null)
                 .Select(c => c.parent.ThingID + ":" + c.type?.defName + ":" + c.customName + ":" + c.alwaysOpen + ":" + c.priceFactor).OrderBy(x => x)));
@@ -187,12 +188,31 @@ namespace Hearth.SaveLoad
             var lot = LotteryGame.Current;
             if (lot != null) { var r = lot.BuyGlobalTicket(new[] { 3, 7, 12, 21, 33 }, 4); t.Check(r.Ok, "lottery ticket bought: " + r.Message); lot.QuickPick(3); }
 
-            // underworld discovered, with whispers
+            // underworld open (1.2.0: no discovery), with whispers
             var prof = HearthProfile.Current;
-            prof.UnderworldDiscovered = true;
-            UW.Comp.ContentWarningAck = true;
             UW.AddWhispers(12.5f, "save/load test");
             t.Check(UW.Unlocked && UW.Whispers > 10f, "underworld unlocked, whispers " + UW.Whispers.ToString("0.0"));
+            // 1.2.0: open offers of the underworld at save time (a boat at a smuggler's dock, a gang leader's protection demand). Saved in our
+            // component (leader and faction by reference), announced by vanilla standard letters: a raw removal must load without red errors.
+            if (TestCells.TryFindFreeRect(map, 5, 5, out var dockRect))
+            {
+                var dockDef = Hearth.Underworld.UwDefs.SmugglerDock;
+                var dock = ThingMaker.MakeThing(dockDef, dockDef.MadeFromStuff ? ThingDefOf.WoodLog : null); dock.SetFaction(Faction.OfPlayer);
+                GenSpawn.Spawn(dock, dockRect.CenterCell, map);
+                t.Check(Hearth.Underworld.Smuggler.Fire(map, force: true), "a smuggler's boat waits at the dock");
+            }
+            else t.Note("no free 5x5 patch for the dock");
+            if (Hearth.Underworld.Gangs.Fire(map, out var gang, force: true) && gang.Count > 0)
+            {
+                // the gang's own silver would leave the map with it (or go to the till when it shops) and break the physical-silver check of the
+                // prepare phase, which is about the bank's payouts: the test gang comes without money
+                foreach (var gp in gang) foreach (var st in gp.inventory.innerContainer.Where(x => x.def == ThingDefOf.Silver).ToList()) st.Destroy();
+                var d = Hearth.Underworld.Gangs.PlanDemand(map, gang[0].Faction, gang[0], Find.TickManager.TicksGame);
+                Hearth.Underworld.Offers.Announce(d);
+                t.Check(d.Announced, "a gang leader's protection demand is open");
+            }
+            else t.Note("no gang could come for the protection demand");
+            t.Check(Hearth.Underworld.Offers.Open(map).Count > 0, "open underworld offers in the save: " + Hearth.Underworld.Offers.Open(map).Count);
 
             // a movie night of the colony (a player-faction lord with our LordJob) that is running at save time
             HSettings.Set(CitySettings.CinemaShowTicks, 20000);
@@ -420,7 +440,7 @@ namespace Hearth.SaveLoad
             SaveLoadKit.CompareFingerprints(save, t, 40);
             foreach (var m in SaveModulesOffSuite.Switched) t.Check(!Modules.On(m), m + " is still off after the load");
             // casinoSessions: 0 on both sides, the session was cashed out when the Casino was switched off (saveload.modulesoff checks that)
-            Facts.CompareAfterLoad(t, save, new[] { "casinoSessions", "lotteryTickets", "policies", "bankBalance", "portfolio", "uwDiscovered", "whispers", "ledgerSum", "guests", "guestRecords" }, "kept while off: ");
+            Facts.CompareAfterLoad(t, save, new[] { "casinoSessions", "lotteryTickets", "policies", "bankBalance", "portfolio", "uwContent", "whispers", "ledgerSum", "guests", "guestRecords" }, "kept while off: ");
             t.Check(CasinoComponent.Get().Sessions.Count == 0, "no casino session waiting in limbo while the module is off: " + CasinoComponent.Get().Sessions.Count);
             var prof = HearthProfile.Current;
             foreach (var m in SaveModulesOffSuite.Switched) { prof.SetModule(m, true); t.Check(Modules.On(m), m + " switched on again"); }

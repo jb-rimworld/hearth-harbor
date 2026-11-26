@@ -3,7 +3,7 @@
   <!-- The shared spine of the Hospitality research tree (KONZEPT 7.2). The other branches live next to their module
        (Casino_, Wellness_, City_, Underworld_Research.xml, Kitchen/Research_Hediff.xml) and hang on these.
        Layout: columns (researchViewX) run left to right with the era, rows (researchViewY) are one branch each.
-         row 0.0 kitchen and hotel   row 0.7 casino and city life   row 1.4 wellness   row 3.0 underworld (hidden until discovered)
+         row 0.0 kitchen and hotel   row 0.7 casino and city life   row 1.4 wellness   row 3.0 underworld (hidden while the content level does not allow it)
        Everything the first inn needs is free (no research): guest beds, the Ledger stump, the venue sign, the campfire cookout, the prep
        counter, stock pot, grill and dough bench, and learning level 1.
        core.researchMode = Off finishes all of these quietly. -->

@@ -7,5 +7,5 @@
   <HH_Group_City.label>도시 생활</HH_Group_City.label>
   <HH_Group_City.description>영화관 스크린, 미용실 의자, 공원 벤치, 택시 승강장.</HH_Group_City.description>
   <HH_Group_Underworld.label>뒷방</HH_Group_Underworld.label>
-  <HH_Group_Underworld.description>문, 구덩이, 카운터, 부두. 아무도 입에 올리지 않는 물건들을 위한 것입니다. 지하세계를 발견한 뒤에만 표시됩니다.</HH_Group_Underworld.description>
+  <HH_Group_Underworld.description>아무도 입에 올리지 않는 일을 위한 문, 구덩이, 카운터, 부두. 지하세계 모듈이 켜져 있고 내용 강도가 아늑함이 아닐 때 표시됩니다.</HH_Group_Underworld.description>
 </LanguageData>

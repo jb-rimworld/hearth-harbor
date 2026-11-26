@@ -15,24 +15,53 @@ namespace Hearth.Underworld
 
     /// <summary>
     /// The hunting ground marker (6.11 "The Hunt"): marks a fenced area. Rich hunters pay to hunt animals released into it.
-    /// From Dark on a prisoner may be the quarry (with a clear warning dialog and the ideology condition; Grim drops the condition).
+    /// From Dark on a prisoner may be the quarry (the player switches it on at the marker; the ideology condition applies, Grim drops it).
     /// </summary>
     public class CompHuntingGround : ThingComp
     {
         public bool allowPrisoners;
         Arena.Info cache;
+        /// <summary>Tiles of a closed ground that is larger than <see cref="Hunts.MaxCells"/> (counted up to <see cref="Hunts.CheckCells"/>), else -1.</summary>
+        int tooBig = -1;
         public Arena.Info ArenaInfo()
         {
             if (!parent.Spawned) return null;
-            if (cache == null || Find.TickManager.TicksGame - cache.Builtick > 250) cache = Arena.Flood(parent.Map, parent.Position, 1600);
+            if (cache == null || Find.TickManager.TicksGame - cache.Builtick > 250)
+            {
+                cache = Arena.Flood(parent.Map, parent.Position, Hunts.MaxCells);
+                tooBig = -1;
+                // the flood stopped at the cap: look further once to tell a large closed pasture from a gap in the fence
+                if (!cache.Closed && cache.Cells.Count > Hunts.MaxCells)
+                {
+                    var wide = Arena.Flood(parent.Map, parent.Position, Hunts.CheckCells);
+                    if (wide.Closed) tooBig = wide.Cells.Count;
+                }
+            }
             return cache;
         }
-        public bool Valid => ArenaInfo() is Arena.Info a && a.Closed && a.Cells.Count >= 60;
+        /// <summary>The ground is fenced in but larger than <see cref="Hunts.MaxCells"/>.</summary>
+        public bool TooBig => ArenaInfo() != null && tooBig > 0;
+        public bool Valid => ArenaInfo() is Arena.Info a && a.Closed && a.Cells.Count >= Hunts.MinCells;
+
+        /// <summary>Why no hunting party can come to this ground (translated), or null when the ground is fine.</summary>
+        public string ReasonLine()
+        {
+            if (!Underworld.Allows(UwFeature.HuntAnimals)) return UwPay.T("Hunt.Closed");
+            var a = ArenaInfo(); if (a == null) return null;
+            if (!a.Closed) return tooBig > 0 ? UwPay.T("Hunt.TooBig", tooBig, Hunts.MaxCells) : UwPay.T("Hunt.Open", Hunts.MaxCells);
+            if (a.Cells.Count < Hunts.MinCells) return UwPay.T("Hunt.TooSmall", a.Cells.Count, Hunts.MinCells);
+            return null;
+        }
 
         public override string CompInspectStringExtra()
         {
             var a = ArenaInfo(); if (a == null) return null;
-            return a.Closed ? UwPay.T("Hunt.GroundOk", a.Cells.Count, allowPrisoners ? UwPay.T("Hunt.QuarryHuman") : UwPay.T("Hunt.QuarryAnimals")) : UwPay.T("Pit.ArenaOpen");
+            var why = ReasonLine(); if (why != null) return why;
+            var s = UwPay.T("Hunt.GroundOk", a.Cells.Count, allowPrisoners ? UwPay.T("Hunt.QuarryHuman") : UwPay.T("Hunt.QuarryAnimals"));
+            var c = Underworld.Comp;
+            if (Hunts.Running(parent.Map)) s += "\n" + UwPay.T("Hunt.Running");
+            else if (c != null && c.NextHuntTick > Find.TickManager.TicksGame) s += "\n" + UwPay.T("Hunt.Next", (c.NextHuntTick - Find.TickManager.TicksGame).ToStringTicksToPeriod());
+            return s;
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -45,7 +74,7 @@ namespace Hearth.Underworld
                 {
                     if (allowPrisoners) { allowPrisoners = false; return; }
                     if (!Hunts.HumanQuarryAllowed(out string why)) { Messages.Message(why, parent, MessageTypeDefOf.RejectInput, false); return; }
-                    UwWarnings.FirstBuildWarning(true, () => allowPrisoners = true, () => { });
+                    allowPrisoners = true;
                 }
             };
         }
@@ -61,6 +90,11 @@ namespace Hearth.Underworld
             public Pawn Human; public int Start, HumanStart; public Money Fee; public bool Done;
         }
         static readonly List<Session> sessions = new List<Session>();
+        /// <summary>Smallest closed hunting ground (tiles).</summary>
+        public const int MinCells = 60;
+        /// <summary>Largest hunting ground (tiles); a closed ground up to <see cref="CheckCells"/> tiles is reported as too big rather than open.</summary>
+        public const int MaxCells = 1600, CheckCells = 6000;
+        public static bool Running(Map map) { foreach (var s in sessions) if (s.Map == map && s.Ground != null && s.Ground.parent.Spawned && !s.Done) return true; return false; }
 
         public static CompHuntingGround FindGround(Map map)
         {
@@ -70,9 +104,9 @@ namespace Hearth.Underworld
             return null;
         }
 
-        public static bool Possible(Map map) => Underworld.Allows(UwFeature.HuntAnimals) && Underworld.Discovered && map != null && map.IsPlayerHome && FindGround(map) != null;
+        public static bool Possible(Map map) => Underworld.Allows(UwFeature.HuntAnimals) && map != null && map.IsPlayerHome && FindGround(map) != null;
 
-        /// <summary>Ideology gate for hunting people (Dark): the colony's ideology must not forbid it. Grim has no condition. Without Ideology the extra warning dialog stands in.</summary>
+        /// <summary>Ideology gate for hunting people (Dark): the colony's ideology must not forbid it. Grim has no condition. Without Ideology there is no condition.</summary>
         public static bool HumanQuarryAllowed(out string why)
         {
             why = null;
@@ -120,8 +154,8 @@ namespace Hearth.Underworld
             for (int i = 0; i < n; i++)
             {
                 var kind = faction.RandomPawnKind(); if (kind == null) continue;
-                var p = PawnGenerator.GeneratePawn(new PawnGenerationRequest(kind, faction, PawnGenerationContext.NonPlayer, map.Tile, canGeneratePawnRelations: false));
-                if (p.DevelopmentalStage.Adult() == false || p.WorkTagIsDisabled(WorkTags.Violent)) { Find.WorldPawns.PassToWorld(p, PawnDiscardDecideMode.Discard); continue; }
+                var p = Underworld.GenerateAdult(new PawnGenerationRequest(kind, faction, PawnGenerationContext.NonPlayer, map.Tile, canGeneratePawnRelations: false), x => !x.WorkTagIsDisabled(WorkTags.Violent));
+                if (p == null) continue;
                 if (weapon != null) { p.equipment.DestroyAllEquipment(); p.equipment.AddEquipment((ThingWithComps)ThingMaker.MakeThing(weapon, weapon.MadeFromStuff ? GenStuff.RandomStuffFor(weapon) : null)); }
                 pawns.Add(p);
             }
@@ -135,9 +169,9 @@ namespace Hearth.Underworld
             foreach (var p in pawns) Underworld.Comp.MarkHunter(p);
             if (!UwPay.Charge(pawns[0], fee, Underworld.Till(map), "underworld.hunt", "The Hunt: fee", ignoreBudget: true)) { fee = Money.Zero; s.Fee = fee; }
             s.Quarry = SpawnQuarry(map, ground, HSettings.GetInt("underworld.hunt.quarryCount"));
-            if (ground.allowPrisoners && HumanQuarryAllowed(out _) && (Underworld.Comp?.HuntWarningAck ?? false)) TryAddHuman(s);
+            if (ground.allowPrisoners && HumanQuarryAllowed(out _)) TryAddHuman(s);
             sessions.Add(s);
-            Underworld.Comp.Hunts++; UwActivity.Note(map);
+            Underworld.Comp.Hunts++; UwActivity.Note(map); Underworld.Comp.NoteEvent(FacilityStatus.HuntId);
             Underworld.AddWhispers(HSettings.Get("underworld.whispers.hunt"), "the hunt");
             Find.LetterStack.ReceiveLetter(UwPay.T("Hunt.Title"), UwPay.T("Hunt.Text", pawns.Count, fee.ToStringShort(), s.Quarry.Count), LetterDefOf.NeutralEvent, ground.parent);
             hunters = pawns;

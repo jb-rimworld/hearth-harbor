@@ -61,25 +61,19 @@
   <HH.UI.Modules.Content>Content intensity</HH.UI.Modules.Content>
   <HH.UI.Modules.ContentDesc>How dark the optional content may get. Never sexual content, whatever you pick.</HH.UI.Modules.ContentDesc>
   <HH.UI.Content.Cozy>Cozy</HH.UI.Content.Cozy>
-  <HH.UI.Content.Cozy.Tip>Mild stories and consequences only.</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Cozy.Tip>Mild stories and consequences only. Hides the whole Underworld: back room, fight pit, fence, drug lounge and gangs.</HH.UI.Content.Cozy.Tip>
   <HH.UI.Content.Standard>Standard</HH.UI.Content.Standard>
   <HH.UI.Content.Standard.Tip>The default. Rough edges, nothing nasty.</HH.UI.Content.Standard.Tip>
   <HH.UI.Content.Dark>Dark</HH.UI.Content.Dark>
-  <HH.UI.Content.Dark.Tip>Crime, debts and violence may show up.</HH.UI.Content.Dark.Tip>
+  <HH.UI.Content.Dark.Tip>Adds to Standard: prisoners may fight to the death, be questioned harder and be hunted (with a fitting ideology), and an organ clinic and the dark menu become possible.</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>Grim</HH.UI.Content.Grim>
-  <HH.UI.Content.Grim.Tip>Everything the game offers, in full.</HH.UI.Content.Grim.Tip>
-  <HH.UI.Underworld.Discover>Discover in game</HH.UI.Underworld.Discover>
-  <HH.UI.Underworld.On>On</HH.UI.Underworld.On>
-  <HH.UI.Underworld.Off>Off</HH.UI.Underworld.Off>
-  <HH.UI.Underworld.Discover.Tip>Off the radar until a shady stranger turns up in your game.</HH.UI.Underworld.Discover.Tip>
-  <HH.UI.Underworld.On.Tip>Available from the start.</HH.UI.Underworld.On.Tip>
-  <HH.UI.Underworld.Off.Tip>Never available. The shady stranger stays away too.</HH.UI.Underworld.Off.Tip>
+  <HH.UI.Content.Grim.Tip>Adds to Dark: hunting prisoners needs no fitting ideology, and organ buyers place orders with deadlines.</HH.UI.Content.Grim.Tip>
   <HH.UI.ModuleDesc.Inn>Guests, guest beds, wings, reception, travellers and recruiting.</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>Venue signs, shops, vending, markets, restaurants and dishes.</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>Tables, slot machines, chips and the risks of gambling for guests and colonists.</HH.UI.ModuleDesc.Casino>
   <HH.UI.ModuleDesc.Wellness>Spa, sauna and rehabilitation stays.</HH.UI.ModuleDesc.Wellness>
   <HH.UI.ModuleDesc.CityLife>Cinema, mall, salon, temples, taxis and security.</HH.UI.ModuleDesc.CityLife>
-  <HH.UI.ModuleDesc.Underworld>A discreet back room, a fight pit and a fence. Found in game, never forced.</HH.UI.ModuleDesc.Underworld>
+  <HH.UI.ModuleDesc.Underworld>A discreet back room, a fight pit and a fence. Nothing of it happens until you build it.</HH.UI.ModuleDesc.Underworld>
   <HH.UI.ModuleDesc.Bank>Silverline: accounts, payments, ATMs, investments, loans, insurance and lottery.</HH.UI.ModuleDesc.Bank>
   <HH.UI.ModuleDesc.AiFlavour>Optional flavour texts written by an AI through a relay. Off by default.</HH.UI.ModuleDesc.AiFlavour>
   <HH.UI.Diff.Title>Hosting difficulty</HH.UI.Diff.Title>
@@ -313,19 +307,18 @@
   <HH.Setting.core.noResearchGating>No research gating</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Everything on the Hearth &amp; Harbor and Silverline trees is available from the start.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>Peaceful underworld</HH.Setting.core.peacefulUnderworld>
-  <HH.Setting.core.peacefulUnderworld.Desc>Dark venues work without violence: no fight pit, no questioning, no hunting of people, no clinic, no protection racket. Back room, fence and drug lounge stay.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Dark venues work without violence. This closes the fight pit completely, bouts fought for points included, and stops questioning, hunting of people, the organ clinic and protection money. Back room, fence and drug lounge stay.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.showMath>Show me the math</HH.Setting.core.showMath>
   <HH.Setting.core.showMath.Desc>Shows nerd settings and formulas everywhere.</HH.Setting.core.showMath.Desc>
   <HH.Setting.core.perfMode>Performance mode</HH.Setting.core.perfMode>
   <HH.Setting.core.perfMode.Desc>Guest planning and room checks run half as often. Helps on slow computers; guests may react a little later.</HH.Setting.core.perfMode.Desc>
   <HH.UI.Calc.slotRtp>Slot machine payout (RTP)</HH.UI.Calc.slotRtp>
   <HH.UI.Calc.slotRtp.Desc>Share of every bet a slot machine pays back on average. The house keeps the rest.</HH.UI.Calc.slotRtp.Desc>
-  <HH.UI.Content.Decline>No, keep {0}</HH.UI.Content.Decline>
   <HH.UI.Page.Sub.overview>Today at a glance: guests, takings and every venue's state.</HH.UI.Page.Sub.overview>
   <HH.UI.Page.Sub.guests>Everyone staying at or visiting your inn. Click a row to jump to the guest; click the handling cell to change it.</HH.UI.Page.Sub.guests>
   <HH.UI.Page.Sub.casino>Houses, takings and how each game is doing against its odds.</HH.UI.Page.Sub.casino>
   <HH.UI.Page.Sub.city>Cinema, salon, gallery, park, taxi and security: what is built and what it earns.</HH.UI.Page.Sub.city>
-  <HH.UI.Page.Sub.underworld>Whispers, arrival weights and the takings of the dark side.</HH.UI.Page.Sub.underworld>
+  <HH.UI.Page.Sub.underworld>What each part of the back room is doing, offers that wait for you, whispers and takings.</HH.UI.Page.Sub.underworld>
   <HH.UI.Diag.Lines>{0} lines</HH.UI.Diag.Lines>
   <HH.UI.Diff.Jump>Jump to</HH.UI.Diff.Jump>
   <HH.UI.Diff.JumpTop>Tier and slider</HH.UI.Diff.JumpTop>

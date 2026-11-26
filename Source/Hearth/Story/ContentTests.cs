@@ -148,7 +148,11 @@ namespace Hearth.Story
             var q = new HearthProfile { Tier = 3f };
             ScenarioSeed.Apply(q, dark.scenario);
             t.Check(Math.Abs(q.Tier - 4f) < 0.001f && q.Content == ContentIntensity.Dark, "The Back Room: Overbooked, dark");
-            t.Check(q.ModuleOn(ModuleId.Underworld) && q.UnderworldDiscovered, "The Back Room: underworld on and discovered");
+            t.Check(q.ModuleOn(ModuleId.Underworld) && !q.UnderworldDiscovered, "The Back Room: underworld on (no discovery flag since 1.2.0)");
+            // an old scenario file with <underworldDiscovered>true</underworldDiscovered> still parses; the element is ignored
+            var oldRules = new ScenPart_HHRules { def = DefDatabase<ScenPartDef>.GetNamed("HH_ScenRules"), underworldDiscovered = true };
+            var o = new HearthProfile { Tier = 3f }; oldRules.Seed(o);
+            t.Check(!o.UnderworldDiscovered && o.modules.Count == 0 && !oldRules.SummaryLines().Any(x => x.Contains("underworld")), "old <underworldDiscovered> is ignored (no flag, no module, no summary line)");
             t.Check(q.Store.TryGet("core.peacefulUnderworld", out float pu) && pu < 0.5f, "The Back Room: violence allowed");
             // only explicit values: an untouched setting stays absent, global preferences and unknown keys are refused
             var rules = new ScenPart_HHRules { def = DefDatabase<ScenPartDef>.GetNamed("HH_ScenRules") };
@@ -197,7 +201,7 @@ namespace Hearth.Story
             Scenario loaded = null;
             bool ok = GameDataSaveLoader.TryLoadScenario(path, ScenarioCategory.CustomLocal, out loaded);
             var lr = loaded == null ? null : ContentTestKit.Part<ScenPart_HHRules>(loaded);
-            t.Check(ok && lr != null && Math.Abs(lr.tier - 4f) < 0.001f && lr.underworldDiscovered && lr.Content == ContentIntensity.Dark, "loading the file brings the rules part back with its values");
+            t.Check(ok && lr != null && Math.Abs(lr.tier - 4f) < 0.001f && lr.Content == ContentIntensity.Dark, "loading the file brings the rules part back with its values");
             var la = loaded == null ? null : ContentTestKit.Part<ScenPart_SLStartingAccount>(loaded);
             t.Check(la != null && la.bank == "SL_BlackLedger" && la.loan == 1500, "starting account part survives the file");
             t.Check(loaded != null && ScenarioSeed.PartsOf(loaded).Count == partsBefore, "same number of parts after loading (" + (loaded == null ? -1 : ScenarioSeed.PartsOf(loaded).Count) + "/" + partsBefore + ")");

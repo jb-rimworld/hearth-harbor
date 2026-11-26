@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_Underworld_Discovery.label>une arrière-salle (clé)</HH_Underworld_Discovery.label>
-  <HH_Underworld_Discovery.description>Projet clé interne. Terminé lorsque l'offre de l'inconnu est acceptée. Jamais affiché.</HH_Underworld_Discovery.description>
+  <HH_Underworld_Discovery.description>Ancien projet clé interne, gardé pour les anciennes sauvegardes. Jamais affiché, ne débloque rien.</HH_Underworld_Discovery.description>
   <HH_Underworld_1.label>l'arrière-salle</HH_Underworld_1.label>
-  <HH_Underworld_1.description>Portes d'arrière-salle, fosse de combat, comptoir de receleur, quai de contrebandier et salon à stupéfiants : tout ce qu'une maison doit posséder pour un commerce qui ne figure pas au menu.</HH_Underworld_1.description>
+  <HH_Underworld_1.description>Ancien projet, gardé pour les anciennes sauvegardes. Jamais affiché, ne débloque rien : les portes d'arrière-salle, la fosse de combat, le comptoir du receleur, le quai du contrebandier et le salon de drogue n'exigent aucune recherche.</HH_Underworld_1.description>
   <HH_TheHunt.label>la chasse</HH_TheHunt.label>
-  <HH_TheHunt.description>Un terrain de chasse clôturé. Les visiteurs fortunés paient bien pour abattre ce qu'on y lâche. À partir du contenu sombre, un prisonnier peut devenir la proie, derrière un avertissement clair.</HH_TheHunt.description>
+  <HH_TheHunt.description>Un terrain de chasse clôturé. Des visiteurs riches paient bien pour tirer sur ce que vous y lâchez. Avec un contenu Sombre et une idéologie adaptée, ou avec un contenu Lugubre, un prisonnier peut servir de gibier si vous l'autorisez sur le marqueur.</HH_TheHunt.description>
   <HH_BlackClinic.label>clinique noire</HH_BlackClinic.label>
   <HH_BlackClinic.description>Un comptoir où des donneurs anonymes achètent des organes prélevés, sans question. Uniquement avec le contenu sombre ou macabre.</HH_BlackClinic.description>
 </LanguageData>

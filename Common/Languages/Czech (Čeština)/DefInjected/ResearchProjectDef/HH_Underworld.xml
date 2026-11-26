@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_Underworld_Discovery.label>zadní místnost (klíč)</HH_Underworld_Discovery.label>
-  <HH_Underworld_Discovery.description>Interní klíčový projekt. Dokončen, když je přijata cizincova nabídka. Nikdy se nezobrazuje.</HH_Underworld_Discovery.description>
+  <HH_Underworld_Discovery.description>Starý interní klíčový projekt, ponechaný kvůli starým uložením. Nikdy se nezobrazí a nic neodemyká.</HH_Underworld_Discovery.description>
   <HH_Underworld_1.label>zadní místnost</HH_Underworld_1.label>
-  <HH_Underworld_1.description>Dveře zadní místnosti, jáma na boje, pult příjemce, pašerácký dok a drogový salónek: vše, co dům potřebuje pro obchod, který není na jídelním lístku.</HH_Underworld_1.description>
+  <HH_Underworld_1.description>Starý projekt, ponechaný kvůli starým uložením. Nikdy se nezobrazí a nic neodemyká: dveře zadní místnosti, jáma na boje, pult příjemce, pašerácký dok a salonek s drogami žádný výzkum nepotřebují.</HH_Underworld_1.description>
   <HH_TheHunt.label>lov</HH_TheHunt.label>
-  <HH_TheHunt.description>Ohrazený lovecký revír. Bohatí návštěvníci dobře platí za to, co do něj vypustíte. Od temného obsahu výše může být kořistí vězeň, s jasným varováním.</HH_TheHunt.description>
+  <HH_TheHunt.description>Ohrazený lovecký revír. Bohatí návštěvníci dobře platí za to, že mohou střílet, co do něj vypustíte. S temným obsahem a odpovídající ideologií, nebo s krutým obsahem, může být kořistí vězeň, pokud to na značce povolíte.</HH_TheHunt.description>
   <HH_BlackClinic.label>černá klinika</HH_BlackClinic.label>
   <HH_BlackClinic.description>Pult, na kterém anonymní dárci kupují odebrané orgány, bez otázek. Pouze s temným nebo krutým obsahem.</HH_BlackClinic.description>
 </LanguageData>

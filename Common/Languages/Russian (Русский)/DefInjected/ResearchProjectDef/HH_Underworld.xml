@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_Underworld_Discovery.label>задняя комната (ключ)</HH_Underworld_Discovery.label>
-  <HH_Underworld_Discovery.description>Внутренний ключевой проект. Завершается, когда принято предложение незнакомца. Никогда не показывается.</HH_Underworld_Discovery.description>
+  <HH_Underworld_Discovery.description>Старый внутренний проект-ключ, оставлен для старых сохранений. Не показывается и ничего не открывает.</HH_Underworld_Discovery.description>
   <HH_Underworld_1.label>задняя комната</HH_Underworld_1.label>
-  <HH_Underworld_1.description>Двери задних комнат, яма для боёв, прилавок скупщика, контрабандистский причал и салон с дурманом: всё, что дому нужно для торговли, которой нет в меню.</HH_Underworld_1.description>
+  <HH_Underworld_1.description>Старый проект, оставлен для старых сохранений. Не показывается и ничего не открывает: двери задней комнаты, яма, прилавок скупщика, причал контрабандистов и салон с дурманом не требуют исследований.</HH_Underworld_1.description>
   <HH_TheHunt.label>охота</HH_TheHunt.label>
-  <HH_TheHunt.description>Огороженные охотничьи угодья. Богатые гости хорошо платят за то, чтобы стрелять в то, что вы выпустите. Начиная с тёмного содержимого дичью может стать пленник, за понятным предупреждением.</HH_TheHunt.description>
+  <HH_TheHunt.description>Огороженные охотничьи угодья. Богатые гости хорошо платят за то, чтобы стрелять в выпущенных туда животных. При тёмном содержимом и подходящей идеологии или при мрачном содержимом дичью может стать пленник, если вы разрешите это на маркере.</HH_TheHunt.description>
   <HH_BlackClinic.label>чёрная клиника</HH_BlackClinic.label>
   <HH_BlackClinic.description>Прилавок, где анонимные доноры покупают изъятые органы без вопросов. Только при тёмном или мрачном содержимом.</HH_BlackClinic.description>
 </LanguageData>

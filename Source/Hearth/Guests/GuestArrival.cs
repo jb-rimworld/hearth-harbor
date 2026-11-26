@@ -140,7 +140,7 @@ namespace Hearth.Guests
             if (req.Returning != null && req.Returning.Count > 0)
                 foreach (var p in pawns) { var r = reg.Get(p); if (r == null) continue; r.Returner = true; r.Log("HH.Inn.Event.Returned".TranslateOr("Came back for another stay."), 3); }
             // shady / outlaw stays (5.2): the Underworld module lets them use back rooms, the fence and holding cells
-            bool shady = req.ForceShady ?? RollShady(f);
+            bool shady = req.ForceShady ?? RollShady(f, map);
             if (shady)
                 foreach (var p in pawns)
                 {
@@ -159,10 +159,10 @@ namespace Hearth.Guests
         /// <summary>Rough factions are the outlaws' factions (vanilla Rough outlanders and tribes, and modded ones named that way).</summary>
         public static bool IsRoughFaction(Faction f) => f?.def != null && (f.def.defName.IndexOf("Rough", StringComparison.OrdinalIgnoreCase) >= 0 || f.def.defName.IndexOf("Outlaw", StringComparison.OrdinalIgnoreCase) >= 0 || f.def.defName.IndexOf("Pirate", StringComparison.OrdinalIgnoreCase) >= 0);
 
-        /// <summary>Only with a visible, discovered underworld: a share of rough-faction groups are shady (more with higher whispers).</summary>
-        static bool RollShady(Faction f)
+        /// <summary>Only when the underworld is in use on this map (N08: a facility exists): a share of rough-faction groups are shady (more with higher whispers).</summary>
+        static bool RollShady(Faction f, Map map)
         {
-            if (!Modules.On(ModuleId.Underworld) || !Hearth.Underworld.Underworld.Unlocked || !IsRoughFaction(f)) return false;
+            if (!Modules.On(ModuleId.Underworld) || !Hearth.Underworld.Underworld.InUse(map) || !IsRoughFaction(f)) return false;
             float o = Hearth.Underworld.Underworld.OutlawArrivalFactor, r = Hearth.Underworld.Underworld.RespectableArrivalFactor;
             float chance = Mathf.Clamp01(0.3f * o / Mathf.Max(0.01f, o + r));
             return JRand.Stream("inn.shady").Chance(chance);

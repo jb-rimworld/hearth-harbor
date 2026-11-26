@@ -16,11 +16,9 @@
   <HH.Scen.Picker.Title>Выберите настройку Hearth &amp; Harbor</HH.Scen.Picker.Title>
   <HH.Scen.Rules.Content>Содержимое: {0}</HH.Scen.Rules.Content>
   <HH.Scen.Rules.Count>Задано настроек: {0}; отдельные настройки добавляются через часть «Настройка Hearth &amp; Harbor».</HH.Scen.Rules.Count>
-  <HH.Scen.Rules.Discovered>Подземный мир уже обнаружен</HH.Scen.Rules.Discovered>
   <HH.Scen.Rules.More>Ещё настройки… (задано: {0})</HH.Scen.Rules.More>
   <HH.Scen.Rules.MoreTip>Открывает полный набор настроек Hearth &amp; Harbor для этого сценария. Сценарий задаёт только то, что вы измените там.</HH.Scen.Rules.MoreTip>
   <HH.Scen.Rules.SumContent>содержимое: {0}</HH.Scen.Rules.SumContent>
-  <HH.Scen.Rules.SumDiscovered>подземный мир уже знает вас</HH.Scen.Rules.SumDiscovered>
   <HH.Scen.Rules.SumMore>и ещё настроек: {0}</HH.Scen.Rules.SumMore>
   <HH.Scen.Rules.SumNothing>всё как в вашем шаблоне</HH.Scen.Rules.SumNothing>
   <HH.Scen.Rules.SumOff>выкл.: {0}</HH.Scen.Rules.SumOff>

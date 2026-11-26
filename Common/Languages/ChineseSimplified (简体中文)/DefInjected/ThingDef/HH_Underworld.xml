@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_BackRoomDoor.label>后屋门</HH_BackRoomDoor.label>
-  <HH_BackRoomDoor.description>一扇外观朴素、锁却很好的门。只有你自己的人和可疑的客人能打开它。仅由后屋门围成的房间不计入宅邸的声望。</HH_BackRoomDoor.description>
+  <HH_BackRoomDoor.description>一扇看起来普通、锁很好的门，只有你的人和可疑的访客才能打开。建一个所有门都是后间门的房间，它就成了后间。帮派在那里碰头并为此付钱，而且它不计入你宅邸的声望。</HH_BackRoomDoor.description>
   <HH_FightPitMarker.label>格斗坑标记</HH_FightPitMarker.label>
-  <HH_FightPitMarker.description>标出其周围的一块围栏竞技场。在内侧至少 3×3 格的封闭围栏（门也可以）中央放置此标记，格斗坑即开放：志愿者、囚犯和动物战斗，客人下注，宅邸抽取奖池的十分之一。比赛在有人认输或倒下时结束；只有黑暗内容及以上才允许战至死亡，且永远不适用于志愿者和儿童。</HH_FightPitMarker.description>
+  <HH_FightPitMarker.description>放在 9 至 700 格的封闭围栏内。用殖民者右键点击它即可格斗，或使用“格斗者…”和“叫来对手”；人与人的比赛按点数决胜，最多留下几处淤青。格斗坑会吸引帮派，也会让你的殖民地传出耳语。</HH_FightPitMarker.description>
   <HH_FenceCounter.label>销赃柜台</HH_FenceCounter.label>
-  <HH_FenceCounter.description>一个满是划痕的柜台，可靠的销赃者在此以物品价值的四成买入赃物，再以七成卖给可疑的买家。销赃者使用自己的现金箱运作，现金箱从你的钱柜补充。货物的主人有时会查出真相。</HH_FenceCounter.description>
+  <HH_FenceCounter.description>一个满是划痕的柜台，可靠的销赃人在这里低价收赃物，再卖给可疑的买家。建成后，帮派把赃物卖给它，也从它的存货里买东西。它用自己的现金箱付款，现金箱由你的钱柜补充，“取出货物”会清空它的货架。货物的主人有时会查出来。</HH_FenceCounter.description>
   <HH_SmugglerDock.label>走私码头</HH_SmugglerDock.label>
-  <HH_SmugglerDock.description>一个光秃秃的降落平台，配有一盏加了遮光罩的灯。夜里偶尔会有一只箱子降落，一个声音不问来历地低价提供。偶尔会有人注意到那盏灯。</HH_SmugglerDock.description>
+  <HH_SmugglerDock.description>一块简陋的停靠平台，挂着一盏罩着灯罩的灯。建成后，夜里偶尔会有船靠岸，低价出售一箱货，不问来历。你会收到一封信，然后用码头上的按钮买下或打发船走。偶尔会有人注意到那盏灯。</HH_SmugglerDock.description>
   <HH_HuntingGroundMarker.label>猎场标记</HH_HuntingGroundMarker.label>
-  <HH_HuntingGroundMarker.description>标出一块围栏猎场（至少六十格，并且封闭）。有钱的猎人会付费射杀你带入其中的动物。在黑暗内容和相应意识形态下，囚犯也可以成为猎物；此项需单独开启，并附带警告。</HH_HuntingGroundMarker.description>
+  <HH_HuntingGroundMarker.description>标记一片围起来的猎场。把它放在至少 60 格、至多 1600 格的封闭围栏内；有钱的猎人会不时前来，付钱射杀你放进去的动物。在黑暗内容且意识形态相符时，或在严酷内容下，囚犯可以成为猎物；这一项要在标记上单独开启。</HH_HuntingGroundMarker.description>
   <HH_OrganClinic.label>诊所柜台</HH_OrganClinic.label>
-  <HH_OrganClinic.description>一个冰冷的柜台，摘取的器官会被放在这里，供匿名捐献者领取。他们在夜间取走，付款时一言不发。仅在黑暗或残酷内容下可用。憎恶器官交易的意识形态会因此记恨你。</HH_OrganClinic.description>
+  <HH_OrganClinic.description>器官交易用的冰冷柜台，仅限黑暗或严酷内容。把摘下的器官搬到它上面；匿名买家会在夜里来取，一句话不说就付钱。厌恶器官交易的意识形态会因此记恨你。</HH_OrganClinic.description>
 </LanguageData>

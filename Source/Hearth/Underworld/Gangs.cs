@@ -24,27 +24,32 @@ namespace Hearth.Underworld
             return (rough.Count > 0 ? rough : all).RandomElement();
         }
 
-        public static bool Possible(Map map)
+        /// <summary>The map has what gangs come for (back room, fence counter or fight pit marker) and the underworld is in use there.</summary>
+        public static bool HasGangFacility(Map map)
         {
-            if (!Underworld.Unlocked || map == null || !map.IsPlayerHome) return false;
-            bool anything = BackRoom.HasBackRoom(map) || FenceTrade.FindCounter(map) != null || map.listerThings.ThingsOfDef(UwDefs.FightPit ?? ThingDefOf.Silver).Count > 0;
-            return anything && PickFaction() != null;
+            if (map == null || !map.IsPlayerHome || !Underworld.InUse(map)) return false;   // N08: only once a facility exists
+            return BackRoom.HasBackRoom(map) || FenceTrade.FindCounter(map) != null || (UwDefs.FightPit != null && map.listerThings.ThingsOfDef(UwDefs.FightPit).Count > 0);
         }
 
-        public static List<Pawn> Spawn(Map map, Faction faction, int size, out Lord lord)
+        public static bool Possible(Map map) => HasGangFacility(map) && PickFaction() != null;
+
+        public static List<Pawn> Spawn(Map map, Faction faction, int size, out Lord lord) => Spawn(map, faction, size, out lord, out _);
+
+        /// <summary>Spawns the gang at the map edge. <paramref name="whyKey"/> (below HH.Underworld.Gang.Why.) says why the list is empty.</summary>
+        public static List<Pawn> Spawn(Map map, Faction faction, int size, out Lord lord, out string whyKey)
         {
-            lord = null;
+            lord = null; whyKey = null;
             var pawns = new List<Pawn>();
             for (int i = 0; i < size; i++)
             {
                 var kind = faction.RandomPawnKind(); if (kind == null) continue;
                 var req = new PawnGenerationRequest(kind, faction, PawnGenerationContext.NonPlayer, map.Tile, forceGenerateNewPawn: false, canGeneratePawnRelations: false, mustBeCapableOfViolence: false);
-                var p = PawnGenerator.GeneratePawn(req);
-                if (p == null || p.DevelopmentalStage.Adult() == false) { if (p != null) Find.WorldPawns.PassToWorld(p, PawnDiscardDecideMode.Discard); continue; }
+                var p = Underworld.GenerateAdult(req);
+                if (p == null) continue;
                 pawns.Add(p);
             }
-            if (pawns.Count == 0) return pawns;
-            if (!RCellFinder.TryFindRandomPawnEntryCell(out var entry, map, CellFinder.EdgeRoadChance_Friendly)) { foreach (var p in pawns) Find.WorldPawns.PassToWorld(p, PawnDiscardDecideMode.Discard); pawns.Clear(); return pawns; }
+            if (pawns.Count == 0) { whyKey = "NoPawns"; return pawns; }
+            if (!RCellFinder.TryFindRandomPawnEntryCell(out var entry, map, CellFinder.EdgeRoadChance_Friendly)) { foreach (var p in pawns) Find.WorldPawns.PassToWorld(p, PawnDiscardDecideMode.Discard); pawns.Clear(); whyKey = "NoEntry"; return pawns; }
             foreach (var p in pawns) GenSpawn.Spawn(p, CellFinder.RandomClosewalkCellNear(entry, map, 8), map);
             IntVec3 chill;
             if (!RCellFinder.TryFindRandomSpotJustOutsideColony(pawns[0], out chill)) chill = map.Center;
@@ -53,61 +58,52 @@ namespace Hearth.Underworld
             var comp = Underworld.Comp; var rng = JRand.Stream("underworld.gang");
             foreach (var p in pawns)
             {
-                comp.MarkShady(p);
+                comp.MarkShady(p); comp.MarkGang(p);
                 UwPay.GiveSilver(p, (int)(HSettings.Get("underworld.gang.feeMax") * 2 + rng.Range(0, 200)));
                 Loot.Equip(p, Find.FactionManager.AllFactionsVisible.Where(f => f != faction && !f.IsPlayer).RandomElementWithFallback());
             }
             return pawns;
         }
 
-        public static bool Fire(Map map, out List<Pawn> pawns, bool force = false)
+#if HH_TESTS
+        /// <summary>Test hook: every visit fails with this reason key while it is set.</summary>
+        internal static string TestFailKey;
+#endif
+        public static bool Fire(Map map, out List<Pawn> pawns, bool force = false) => Fire(map, out pawns, out _, force);
+
+        /// <summary>A gang arrives. On failure <paramref name="whyKey"/> names the reason (key below HH.Underworld.Gang.Why.: NoFacility, NoFaction, NoEntry, NoPawns).</summary>
+        public static bool Fire(Map map, out List<Pawn> pawns, out string whyKey, bool force = false)
         {
-            pawns = null;
-            if (!force && !Possible(map)) return false;
-            var faction = PickFaction(); if (faction == null) return false;
+            pawns = null; whyKey = null;
+#if HH_TESTS
+            if (TestFailKey != null) { whyKey = TestFailKey; return false; }
+#endif
+            if (!force && !HasGangFacility(map)) { whyKey = "NoFacility"; return false; }
+            var faction = PickFaction(); if (faction == null) { whyKey = "NoFaction"; return false; }
             int size = JRand.Stream("underworld.gang").Range(2, Math.Max(3, HSettings.GetInt("underworld.gang.sizeMax") + 1));
-            pawns = Spawn(map, faction, size, out var lord);
-            if (pawns.Count == 0) return false;
-            Underworld.Comp.GangVisits++;
+            pawns = Spawn(map, faction, size, out var lord, out whyKey);
+            if (pawns.Count == 0) { whyKey = whyKey ?? "NoPawns"; return false; }
+            var c = Underworld.Comp;
+            c.GangVisits++; c.NoteEvent(FacilityStatus.GangsId);
+            // a visit came (from the timer, the storyteller or dev mode): the reason of an earlier failed attempt is no longer true
+            c.GangRetryKey = null; c.GangRetryTick = -1;
             Underworld.AddWhispers(HSettings.Get("underworld.whispers.gang"), "gang visit");
             Find.LetterStack.ReceiveLetter(UwPay.T("Gang.Title"), UwPay.T("Gang.Text", pawns.Count, faction.Name), LetterDefOf.NeutralEvent, pawns[0]);
             HLog.Info("Underworld", $"Gang of {pawns.Count} from {faction.Name} arrived");
             if (JRand.Stream("underworld.gang").Chance(HSettings.Get("underworld.gang.intimidateChance")))
-                pending.Add(new Demand { Map = map, Faction = faction, Leader = pawns[0], Tick = Find.TickManager.TicksGame + 25000 });
+                PlanDemand(map, faction, pawns[0], Find.TickManager.TicksGame + 25000);
+            FacilityStatus.MarkDirty();
             return true;
         }
 
-        // ---- protection money ------------------------------------------------------------------------
-        sealed class Demand { public Map Map; public Faction Faction; public Pawn Leader; public int Tick; }
-        static readonly List<Demand> pending = new List<Demand>();
-
-        public static void TickDemands(int now)
-        {
-            for (int i = pending.Count - 1; i >= 0; i--)
-            {
-                var d = pending[i]; if (now < d.Tick) continue;
-                pending.RemoveAt(i);
-                if (d.Leader == null || d.Leader.Dead || !d.Leader.Spawned || !Underworld.Allows(UwFeature.ProtectionRacket)) continue;
-                AskProtection(d.Map, d.Faction, d.Leader);
-            }
-        }
-
-        public static DiaNode AskProtection(Map map, Faction f, Pawn leader)
-        {
-            var fee = HSettings.GetSilver("underworld.gang.protectionFee");
-            var till = Ledger.Current.Balance(Underworld.Till(map));
-            var node = new DiaNode(UwPay.T("Gang.Demand.Text", f.Name, fee.ToStringShort()));
-            var pay = new DiaOption(UwPay.T("Gang.Demand.Pay", fee.ToStringShort())) { action = () => PayProtection(map, f, fee), resolveTree = true };
-            if (till < fee) pay.Disable(UwPay.T("Gang.Demand.NoCash"));
-            node.options.Add(pay);
-            node.options.Add(new DiaOption(UwPay.T("Gang.Demand.Refuse")) { action = () => RefuseProtection(map, f), resolveTree = true });
-            Find.WindowStack.Add(new Dialog_NodeTree(node, true, false, UwPay.T("Gang.Demand.Title")));
-            return node;
-        }
+        // ---- protection money (1.2.0: a saved offer with a letter and gizmos on the leader, no dialog) ---------------------------------
+        /// <summary>The leader will ask for protection money at <paramref name="atTick"/> (a planned offer, announced by <see cref="Offers.Tick"/>).</summary>
+        public static UwOffer PlanDemand(Map map, Faction f, Pawn leader, int atTick)
+            => Offers.Add(new UwOffer { kind = UwOfferKind.Protection, mapId = map.uniqueID, faction = f, leader = leader, price = HSettings.GetSilver("underworld.gang.protectionFee"), openTick = atTick });
 
         public static bool PayProtection(Map map, Faction f, Money fee)
         {
-            if (!Ledger.Current.Post(Underworld.Till(map), "world", fee, "Protection money")) return false;
+            if (!UwPay.PayFromColony(map, fee, "world", "Protection money")) return false;
             Underworld.AddWhispers(1f, "paid protection");
             Underworld.AffectGoodwill(f, 3, "paid up");
             return true;
@@ -131,7 +127,8 @@ namespace Hearth.Underworld
     {
         static readonly Dictionary<int, int> nextAct = new Dictionary<int, int>();
 
-        static bool Idle(Pawn p)
+        /// <summary>Doing nothing in particular (wandering or waiting): free to be given an underworld job. Also used by the fight pit.</summary>
+        public static bool Idle(Pawn p)
         {
             var d = p.CurJobDef;
             return d == null || d == JobDefOf.Wait_Wander || d == JobDefOf.GotoWander || d == JobDefOf.Wait || d == JobDefOf.Wait_MaintainPosture;
@@ -189,7 +186,7 @@ namespace Hearth.Underworld
                     var comp = Underworld.Comp; if (comp == null || comp.PaidFee(pawn)) return;
                     var rng = JRand.Stream("underworld.gang");
                     var fee = Money.FromSilver(rng.Range((int)HSettings.Get("underworld.gang.feeMin"), (int)HSettings.Get("underworld.gang.feeMax") + 1));
-                    if (UwPay.Charge(pawn, fee, Underworld.Till(pawn.Map), "underworld.backroom", "Back room fee", ignoreBudget: true)) { comp.NotePaidFee(pawn); UwActivity.Note(pawn.Map); }
+                    if (UwPay.Charge(pawn, fee, Underworld.Till(pawn.Map), "underworld.backroom", "Back room fee", ignoreBudget: true)) { comp.NotePaidFee(pawn); UwActivity.Note(pawn.Map); comp.NoteEvent(FacilityStatus.BackRoomId); }
                 }
             };
             yield return new Toil { defaultCompleteMode = ToilCompleteMode.Delay, defaultDuration = 1800, tickAction = () => { UwPay.Comfort(pawn); } };

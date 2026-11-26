@@ -61,25 +61,19 @@
   <HH.UI.Modules.Content>Інтенсивність контенту</HH.UI.Modules.Content>
   <HH.UI.Modules.ContentDesc>Наскільки темним може ставати необов'язковий контент. Сексуального контенту немає за жодного вибору.</HH.UI.Modules.ContentDesc>
   <HH.UI.Content.Cozy>Затишно</HH.UI.Content.Cozy>
-  <HH.UI.Content.Cozy.Tip>Лише м'які історії та наслідки.</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Cozy.Tip>Лише м'які історії та наслідки. Приховує все підпілля: задню кімнату, яму, скупника, наркотичний салон і банди.</HH.UI.Content.Cozy.Tip>
   <HH.UI.Content.Standard>Стандартно</HH.UI.Content.Standard>
   <HH.UI.Content.Standard.Tip>Типово. Шорсткі краї, але нічого неприємного.</HH.UI.Content.Standard.Tip>
   <HH.UI.Content.Dark>Темно</HH.UI.Content.Dark>
-  <HH.UI.Content.Dark.Tip>Можуть траплятися злочини, борги та насильство.</HH.UI.Content.Dark.Tip>
+  <HH.UI.Content.Dark.Tip>Додає до стандартного: полонені можуть битися насмерть, їх можуть жорсткіше допитувати й на них можуть полювати (з відповідною ідеологією), стають можливі клініка органів і темне меню.</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>Похмуро</HH.UI.Content.Grim>
-  <HH.UI.Content.Grim.Tip>Усе, що пропонує гра, повністю.</HH.UI.Content.Grim.Tip>
-  <HH.UI.Underworld.Discover>Знайти в грі</HH.UI.Underworld.Discover>
-  <HH.UI.Underworld.On>Увімкнено</HH.UI.Underworld.On>
-  <HH.UI.Underworld.Off>Вимкнено</HH.UI.Underworld.Off>
-  <HH.UI.Underworld.Discover.Tip>Поза полем зору, доки в грі не з'явиться сумнівний незнайомець.</HH.UI.Underworld.Discover.Tip>
-  <HH.UI.Underworld.On.Tip>Доступно з початку.</HH.UI.Underworld.On.Tip>
-  <HH.UI.Underworld.Off.Tip>Ніколи не доступно. Сумнівний незнайомець теж не з'являється.</HH.UI.Underworld.Off.Tip>
+  <HH.UI.Content.Grim.Tip>Додає до темного: полювання на полонених не потребує відповідної ідеології, а покупці органів роблять замовлення зі строками.</HH.UI.Content.Grim.Tip>
   <HH.UI.ModuleDesc.Inn>Гості, ліжка для гостей, крила, рецепція, мандрівники та вербування.</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>Вивіски закладів, крамниці, автомати з продажу, ринки, ресторани та страви.</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>Столи, ігрові автомати, фішки та ризики азартних ігор для гостей і колоністів.</HH.UI.ModuleDesc.Casino>
   <HH.UI.ModuleDesc.Wellness>Спа, сауна та реабілітаційні перебування.</HH.UI.ModuleDesc.Wellness>
   <HH.UI.ModuleDesc.CityLife>Кінотеатр, торговий центр, салон, храми, таксі та охорона.</HH.UI.ModuleDesc.CityLife>
-  <HH.UI.ModuleDesc.Underworld>Таємна задня кімната, бійцівська яма та переробник краденого. Знаходиться в грі, ніколи не нав'язується.</HH.UI.ModuleDesc.Underworld>
+  <HH.UI.ModuleDesc.Underworld>Непримітна задня кімната, яма для бійок і скупник. Нічого з цього не відбувається, поки ви цього не збудуєте.</HH.UI.ModuleDesc.Underworld>
   <HH.UI.ModuleDesc.Bank>Silverline: рахунки, платежі, банкомати, інвестиції, кредити, страхування та лотерея.</HH.UI.ModuleDesc.Bank>
   <HH.UI.ModuleDesc.AiFlavour>Необов'язкові описові тексти, написані ШІ через ретранслятор. Типово вимкнено.</HH.UI.ModuleDesc.AiFlavour>
   <HH.UI.Diff.Title>Складність хостингу</HH.UI.Diff.Title>
@@ -294,7 +288,6 @@
   <HH.UI.Overview.Arrivals>Прибуття, наступні 24 год: {0}, очікується близько {1} груп на день.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>ще нікого не заплановано</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>заплановано груп: {0} (близько {1} гостей)</HH.UI.Overview.Arrivals.Planned>
-  <HH.UI.Content.Decline>Ні, залишити {0}</HH.UI.Content.Decline>
   <HH.UI.Diff.Ladder>Підпілля: ліміти штрафів за випадок</HH.UI.Diff.Ladder>
   <HH.UI.Diff.WarnHard>Від «Переповнено» підпільні випадки можуть коштувати справжньої прихильності, слави й срібла (див. ліміти нижче).</HH.UI.Diff.WarnHard>
   <HH.UI.Feel.4>Підпільні випадки починають коштувати прихильності, слави й штрафів.</HH.UI.Feel.4>
@@ -311,7 +304,7 @@
   <HH.Setting.core.neverDie.Desc>Гості не гинуть, а збиваються з ніг. Вони далі живі, лежачи, доки хтось не допоможе.</HH.Setting.core.neverDie.Desc>
   <HH.Setting.core.infiniteMoney.Desc>Гості, які прибувають, коли це увімкнено, мають бездонний гаманець. Коефіцієнт грошей гостей на них не діє.</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.ironBank.Desc>Стягнення боргу завжди доходить до найвищого етапу, незалежно від складності. Ніхто тихо не відстрочує ваші виплати.</HH.Setting.core.ironBank.Desc>
-  <HH.Setting.core.peacefulUnderworld.Desc>Темні заклади працюють без насильства: немає бійцівської ями, допитів, полювання на людей, клініки й рекету. Задня кімната, переробник і наркотична кімната лишаються.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Темні заклади працюють без насильства. Це повністю закриває яму, зокрема бої на очки, і припиняє допити, полювання на людей, клініку органів і побори. Задня кімната, скупник і наркотичний салон залишаються.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>Планування гостей і перевірки кімнат виконуються вдвічі рідше. Допомагає на повільних комп'ютерах; гості можуть реагувати трохи пізніше.</HH.Setting.core.perfMode.Desc>
   <HH.Kitchen.Cookbook.ColCuisine>Кухня</HH.Kitchen.Cookbook.ColCuisine>
   <HH.Kitchen.Cookbook.ColDish>Страва</HH.Kitchen.Cookbook.ColDish>
@@ -334,5 +327,5 @@
   <HH.UI.Page.Sub.city>Кінотеатр, салон, галерея, парк, таксі та охорона: що збудовано і що воно приносить.</HH.UI.Page.Sub.city>
   <HH.UI.Page.Sub.guests>Усі, хто живе в корчмі або приходить до неї. Натисніть рядок, щоб перейти до гостя; натисніть клітинку поводження, щоб його змінити.</HH.UI.Page.Sub.guests>
   <HH.UI.Page.Sub.overview>Сьогодні одним поглядом: гості, виручка та стан кожного закладу.</HH.UI.Page.Sub.overview>
-  <HH.UI.Page.Sub.underworld>Чутки, ваги прибуття та виручка темного боку.</HH.UI.Page.Sub.underworld>
+  <HH.UI.Page.Sub.underworld>Що робить кожна частина задньої кімнати, пропозиції, що чекають на вас, шепіт і виручка.</HH.UI.Page.Sub.underworld>
 </LanguageData>

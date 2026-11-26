@@ -8,8 +8,8 @@ namespace Hearth
 {
     /// <summary>
     /// The one place that honours the shared research mode (core.researchMode = Off, KONZEPT 7.1): every project of the tabs
-    /// HH_Hospitality and HH_Banking is finished quietly, so every building and feature behind research is open. Projects that carry
-    /// a gate extension of the underworld stay as they are: the discovery of the back room and the content intensity still apply.
+    /// HH_Hospitality and HH_Banking is finished quietly, so every building and feature behind research is open. Since 1.2.0 that includes
+    /// the projects of the underworld (they stay hidden while their content level is not allowed; the buildings keep their own content gate).
     /// Runs at game start, after loading, and now and then (the setting can change in the middle of a game).
     /// </summary>
     public static class ResearchGate
@@ -17,7 +17,7 @@ namespace Hearth
         public static bool IsOurs(ResearchProjectDef p) =>
             p?.tab != null && (p.tab.defName == "HH_Hospitality" || p.tab.defName == "HH_Banking");
 
-        /// <summary>Underworld projects are gated by their own discovery and content intensity, never by the research mode.</summary>
+        /// <summary>The project carries a gate extension of the underworld (content intensity). Since 1.2.0 the research mode applies to them as well.</summary>
         public static bool IsGated(ResearchProjectDef p)
         {
             var ext = p.modExtensions;
@@ -64,7 +64,7 @@ namespace Hearth
             for (int i = 0; i < all.Count; i++)
             {
                 var p = all[i];
-                if (!IsOurs(p) || p.IsFinished || IsGated(p)) continue;
+                if (!IsOurs(p) || p.IsFinished) continue;
                 try { Find.ResearchManager.FinishProject(p, doCompletionDialog: false, researcher: null, doCompletionLetter: false); n++; }
                 catch (Exception e) { HLog.Warn("Core", "Research off: could not finish " + p.defName + ": " + e.Message); }
             }

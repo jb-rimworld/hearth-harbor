@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_Underworld_Discovery.label>uma sala dos fundos (chave)</HH_Underworld_Discovery.label>
-  <HH_Underworld_Discovery.description>Projeto-chave interno. Concluído quando a oferta do estranho é aceita. Nunca exibido.</HH_Underworld_Discovery.description>
+  <HH_Underworld_Discovery.description>Antigo projeto interno chave, mantido para jogos salvos antigos. Nunca aparece e não libera nada.</HH_Underworld_Discovery.description>
   <HH_Underworld_1.label>a sala dos fundos</HH_Underworld_1.label>
-  <HH_Underworld_1.description>Portas de sala dos fundos, o poço de luta, o balcão do receptador, o cais de contrabandistas e o salão de entorpecentes: tudo o que uma casa precisa para o comércio que não está no cardápio.</HH_Underworld_1.description>
+  <HH_Underworld_1.description>Projeto antigo, mantido para jogos salvos antigos. Nunca aparece e não libera nada: portas da sala dos fundos, poço de luta, balcão do receptador, cais de contrabandistas e salão de drogas não precisam de pesquisa.</HH_Underworld_1.description>
   <HH_TheHunt.label>a caçada</HH_TheHunt.label>
-  <HH_TheHunt.description>Um terreno de caça cercado. Visitantes ricos pagam bem para atirar no que você soltar nele. A partir do conteúdo Sombrio, um prisioneiro pode ser a presa, atrás de um aviso claro.</HH_TheHunt.description>
+  <HH_TheHunt.description>Um terreno de caça cercado. Visitantes ricos pagam bem para atirar no que você soltar nele. Com conteúdo Sombrio e uma ideologia adequada, ou com conteúdo Sinistro, um prisioneiro pode ser a presa se você permitir no marcador.</HH_TheHunt.description>
   <HH_BlackClinic.label>clínica clandestina</HH_BlackClinic.label>
   <HH_BlackClinic.description>Um balcão onde doadores anônimos compram órgãos colhidos, sem perguntas. Só com conteúdo Sombrio ou Macabro.</HH_BlackClinic.description>
 </LanguageData>

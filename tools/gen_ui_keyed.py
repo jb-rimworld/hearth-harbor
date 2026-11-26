@@ -40,11 +40,9 @@ a("HH.UI.Modules.IntroTemplate","Modules for new colonies. Each colony can still
 a("HH.UI.Modules.NotInstalled","not part of this installation")
 a("HH.UI.Modules.BankHint","Bank: use the bank inside Hearth & Harbor and switch all guest modules off. You do not need the standalone entry.")
 a("HH.UI.Modules.Content","Content intensity"); a("HH.UI.Modules.ContentDesc","How dark the optional content may get. Never sexual content, whatever you pick.")
-for c,(n,t) in {"Cozy":("Cozy","Mild stories and consequences only."),"Standard":("Standard","The default. Rough edges, nothing nasty."),"Dark":("Dark","Crime, debts and violence may show up."),"Grim":("Grim","Everything the game offers, in full.")}.items():
+for c,(n,t) in {"Cozy":("Cozy","Mild stories and consequences only."),"Standard":("Standard","The default. Rough edges, nothing nasty."),"Dark":("Dark","Adds to Standard: prisoners may fight to the death, be questioned harder and be hunted (with a fitting ideology), and an organ clinic and the dark menu become possible."),"Grim":("Grim","Adds to Dark: hunting prisoners needs no fitting ideology, and organ buyers place orders with deadlines.")}.items():
     a("HH.UI.Content."+c,n); a("HH.UI.Content."+c+".Tip",t)
-a("HH.UI.Underworld.Discover","Discover in game"); a("HH.UI.Underworld.On","On"); a("HH.UI.Underworld.Off","Off")
-a("HH.UI.Underworld.Discover.Tip","Off the radar until a shady stranger turns up in your game."); a("HH.UI.Underworld.On.Tip","Available from the start."); a("HH.UI.Underworld.Off.Tip","Never available. The shady stranger stays away too.")
-mods = {"Inn":"Guests, guest beds, wings, reception, travellers and recruiting.","ShopsFood":"Venue signs, shops, vending, markets, restaurants and dishes.","Casino":"Tables, slot machines, chips and the risks of gambling for guests and colonists.","Wellness":"Spa, sauna and rehabilitation stays.","CityLife":"Cinema, mall, salon, temples, taxis and security.","Underworld":"A discreet back room, a fight pit and a fence. Found in game, never forced.","Bank":"Silverline: accounts, payments, ATMs, investments, loans, insurance and lottery.","AiFlavour":"Optional flavour texts written by an AI through a relay. Off by default."}
+mods = {"Inn":"Guests, guest beds, wings, reception, travellers and recruiting.","ShopsFood":"Venue signs, shops, vending, markets, restaurants and dishes.","Casino":"Tables, slot machines, chips and the risks of gambling for guests and colonists.","Wellness":"Spa, sauna and rehabilitation stays.","CityLife":"Cinema, mall, salon, temples, taxis and security.","Underworld":"A discreet back room, a fight pit and a fence. Nothing of it happens until you build it.","Bank":"Silverline: accounts, payments, ATMs, investments, loans, insurance and lottery.","AiFlavour":"Optional flavour texts written by an AI through a relay. Off by default."}
 for k,v in mods.items(): a("HH.UI.ModuleDesc."+k,v)
 # --- difficulty
 a("HH.UI.Diff.Title","Hosting difficulty"); a("HH.UI.Diff.Intensity","Hosting intensity {0} %"); a("HH.UI.Diff.ChipTip","{0}: about {1} % hosting intensity.")
@@ -178,9 +176,23 @@ a('HH.Setting.core.ironBank','Iron bank')
 a('HH.Setting.core.ironBank.Desc','Debt collection always climbs to the highest stage, whatever the difficulty. Nobody quietly defers your instalments.')
 a('HH.Setting.core.peacefulUnderworld.Desc','Dark venues work without violence: no fight pit, no questioning, no hunting of people, no clinic, no protection racket. Back room, fence and drug lounge stay.')
 a('HH.Setting.core.perfMode.Desc','Guest planning and room checks run half as often. Helps on slow computers; guests may react a little later.')
-a('HH.UI.Content.Decline','No, keep {0}')   # was only in the XML (review fix 97142ff); kept here so regeneration does not drop it
 a('HH.Setting.core.windowScale','Size of Hearth & Harbor windows')
 a('HH.Setting.core.windowScale.Desc','All Hearth & Harbor and Silverline windows grow or shrink by this factor (on top of the automatic size for large screens).')
+# added to the XML by hand in earlier rounds; kept here so regeneration reproduces the committed file
+a('HH.UI.Page.Sub.overview',"Today at a glance: guests, takings and every venue's state.")
+a('HH.UI.Page.Sub.guests','Everyone staying at or visiting your inn. Click a row to jump to the guest; click the handling cell to change it.')
+a('HH.UI.Page.Sub.casino','Houses, takings and how each game is doing against its odds.')
+a('HH.UI.Page.Sub.city','Cinema, salon, gallery, park, taxi and security: what is built and what it earns.')
+a('HH.UI.Page.Sub.underworld','Whispers, arrival weights and the takings of the dark side.')
+a('HH.UI.Diag.Lines','{0} lines')
+a('HH.UI.Diff.Jump','Jump to')
+a('HH.UI.Diff.JumpTop','Tier and slider')
+a('HH.Kitchen.Cookbook.ColLevel','Level')
+a('HH.Kitchen.Cookbook.ColDish','Dish')
+a('HH.Kitchen.Cookbook.ColCuisine','Cuisine')
+a('HH.Kitchen.Cookbook.ColStations','Cooked at')
+a('HH.Kitchen.Cookbook.ColSkill','Skill')
+a('HH.Kitchen.Cookbook.ColPrice','Price')
 
 # verify against source
 src = ""

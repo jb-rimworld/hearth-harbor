@@ -20,7 +20,7 @@
   "WorkTypeDef/HH_Serving.description": "Staff counters, tables and tills: take orders, serve food and drinks, run the casino floor, restock shelves.",
   "WorkTypeDef/HH_Serving.verb": "Serve",
   "DesignationCategoryDef/HH_Hospitality.label": "Hospitality",
-  "DesignationCategoryDef/HH_Hospitality.description": "Signs, counters, shelves, tables and machines for guests: taverns, shops, casinos, spas, cinemas and, once you have found it, the back room.",
+  "DesignationCategoryDef/HH_Hospitality.description": "Signs, counters, shelves, tables and machines for guests: taverns, shops, casinos, spas, cinemas and the back room.",
   "DesignatorDropdownGroupDef/HH_Group_Casino.label": "casino",
   "DesignatorDropdownGroupDef/HH_Group_Casino.description": "Slot machines, gaming tables and the cashier's cage.",
   "DesignatorDropdownGroupDef/HH_Group_Wellness.label": "wellness",
@@ -28,7 +28,7 @@
   "DesignatorDropdownGroupDef/HH_Group_City.label": "city life",
   "DesignatorDropdownGroupDef/HH_Group_City.description": "Cinema screens, salon chairs, park benches and the taxi stand.",
   "DesignatorDropdownGroupDef/HH_Group_Underworld.label": "back room",
-  "DesignatorDropdownGroupDef/HH_Group_Underworld.description": "Doors, pits, counters and docks for the things nobody talks about. Only shown once you have discovered the underworld.",
+  "DesignatorDropdownGroupDef/HH_Group_Underworld.description": "Doors, pits, counters and docks for the things nobody talks about. Shown while the Underworld module is on and the content intensity is not Cozy.",
   "ResearchTabDef/HH_Hospitality.label": "Hospitality"
  }
 }

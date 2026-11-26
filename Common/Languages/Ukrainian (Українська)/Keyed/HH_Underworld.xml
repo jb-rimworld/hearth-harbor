@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH.Tab.Underworld>Підпілля</HH.Tab.Underworld>
-  <HH.Underworld.GateClosed>Недоступно: підпілля в цій грі закрите.</HH.Underworld.GateClosed>
+  <HH.Underworld.GateClosed>Недоступно в цій грі: модуль «Підпілля» вимкнений або інтенсивність вмісту цього не дозволяє (Налаштування, Модулі).</HH.Underworld.GateClosed>
   <HH.Underworld.BackRoomDoorInfo>Відчинити ці двері можуть лише персонал, колоністи та сумнівні гості.</HH.Underworld.BackRoomDoorInfo>
-  <HH.Underworld.Stranger.Title>Незнайомець біля воріт</HH.Underworld.Stranger.Title>
-  <HH.Underworld.Stranger.Text>Незнайомець із низько насунутим капелюхом чекає біля ваших дверей, доки персонал не відійде достатньо далеко.\n\n«Гарне місце, — каже він. — Є задня кімната?»\n\nЩо він має на увазі, не пояснює. І не мусить.</HH.Underworld.Stranger.Text>
-  <HH.Underworld.Stranger.Show>Покажіть мені</HH.Underworld.Stranger.Show>
-  <HH.Underworld.Stranger.No>Не цікавить</HH.Underworld.Stranger.No>
-  <HH.Underworld.Stranger.Never>Більше не питати</HH.Underworld.Stranger.Never>
-  <HH.Underworld.Unlocked.Title>Задня кімната</HH.Underworld.Unlocked.Title>
-  <HH.Underworld.Unlocked.Text>Ви показали йому задню кімнату, і він кивнув так, ніби ви склали іспит. Тепер вам відкрито нову гілку досліджень: задня кімната з дверима, ямою для бійок, прилавком скупника, контрабандистським причалом і салоном. Ваш Шепіт (репутація в підпіллі) тепер слідуватиме за тим, що ви будуєте.\n\nМожна все це ігнорувати. Нічого з цього не обов'язково.</HH.Underworld.Unlocked.Text>
-  <HH.Underworld.Warn.Title>Попередження про вміст</HH.Underworld.Warn.Title>
-  <HH.Underworld.Warn.Dark>Темний вміст додає до підпілля: полонені можуть битися насмерть у ямі, банди можуть допитувати полонених жорсткіше, мисливці можуть полювати на полонених (за відповідної ідеології), а клінічний прилавок скуповує вилучені органи.\n\nЦе показується лише як текст і звичайні ігрові поранення. Діти ніколи не беруть участі, і нічого з цього не вмикається само собою.\n\nХочете мати це в цій грі?</HH.Underworld.Warn.Dark>
-  <HH.Underworld.Warn.Grim>Похмурий вміст — це все з темного вмісту, а полювання на полонених більше не питає про вашу ідеологію. Покупці органів розміщують замовлення з термінами.\n\nЦе показується лише як текст і звичайні ігрові поранення. Діти ніколи не беруть участі, і нічого з цього не вмикається само собою.\n\nХочете мати це в цій грі?</HH.Underworld.Warn.Grim>
-  <HH.Underworld.Warn.Accept>Так, я розумію</HH.Underworld.Warn.Accept>
-  <HH.Underworld.Warn.Back>Ні, назад до стандартного</HH.Underworld.Warn.Back>
-  <HH.Underworld.Warn.Hunt>Ви збираєтеся дозволити полювання на полонених на мисливських угіддях. Полонений випускається на угіддя з форою; якщо він протримається встановлений час або дістанеться лінії огорожі, він вільний, і його фракція про це дізнається в будь-якому разі. Якщо він загине, його фракція, ваші колоністи та гості цього не пробачать.\n\nЦе показується лише як текст. Дозволити?</HH.Underworld.Warn.Hunt>
-  <HH.Underworld.Warn.Organ>Прилавок клініки вночі скуповує вилучені органи від анонімних донорів. Ідеології, що відкидають торгівлю органами, триматимуть це проти вас, а ваш Шепіт зростатиме з кожним продажем.\n\nЦе показується лише як текст. Залишити?</HH.Underworld.Warn.Organ>
-  <HH.Underworld.Warn.Keep>Так, залишити</HH.Underworld.Warn.Keep>
-  <HH.Underworld.Warn.Remove>Ні, прибрати</HH.Underworld.Warn.Remove>
   <HH.Underworld.Scandal.BackRoomFound.Title>Задню кімнату викрили</HH.Underworld.Scandal.BackRoomFound.Title>
   <HH.Underworld.Scandal.BackRoomFound.Text>Поважний гість відчинив не ті двері й побачив, що дім приховує за ними. До вечора про це знатиме все місто.</HH.Underworld.Scandal.BackRoomFound.Text>
   <HH.Underworld.Scandal.LeakedLedger.Title>Витеклий журнал</HH.Underworld.Scandal.LeakedLedger.Title>
@@ -32,28 +16,23 @@
   <HH.Underworld.Pit.Enabled.Desc>Призначати бої в цій ямі.</HH.Underworld.Pit.Enabled.Desc>
   <HH.Underworld.Pit.Animals>Тварини</HH.Underworld.Pit.Animals>
   <HH.Underworld.Pit.Animals.Desc>Тварини вашої колонії можуть битися тут.</HH.Underworld.Pit.Animals.Desc>
-  <HH.Underworld.Pit.Volunteers>Добровольці</HH.Underworld.Pit.Volunteers>
-  <HH.Underworld.Pit.Volunteers.Desc>Колоністи, яким до вподоби бійка (кровожерливість або добрий ближній бій), можуть зголоситися. Добровольці ніколи не б'ються насмерть.</HH.Underworld.Pit.Volunteers.Desc>
+  <HH.Underworld.Pit.Volunteers>Добровольці (старі збереження)</HH.Underworld.Pit.Volunteers>
+  <HH.Underworld.Pit.Volunteers.Desc>Зі старого збереження: колоністи з кровожерливістю чи ближнім боєм 8 і вище теж б'ються без позначки в «Бійцях». Вимкніть, щоб билися лише позначені колоністи. Колоністи ніколи не б'ються насмерть.</HH.Underworld.Pit.Volunteers.Desc>
   <HH.Underworld.Pit.Prisoners>Полонені</HH.Underworld.Pit.Prisoners>
-  <HH.Underworld.Pit.Prisoners.Desc>Полонених можна відправити в яму. Лише дорослі.</HH.Underworld.Pit.Prisoners.Desc>
+  <HH.Underworld.Pit.Prisoners.Desc>Тут можуть битися полонені колонії від 18 років. Варта приводить їх на арену й повертає до камери.</HH.Underworld.Pit.Prisoners.Desc>
   <HH.Underworld.Pit.Lethal>До смерті</HH.Underworld.Pit.Lethal>
-  <HH.Underworld.Pit.Lethal.Desc>Бої між полоненими та тваринами завершуються лише тоді, коли один із них повалений. Ніколи для добровольців.</HH.Underworld.Pit.Lethal.Desc>
+  <HH.Underworld.Pit.Lethal.Desc>Бої полонених і тварин закінчуються, лише коли один із них повалений. Ніколи для гостей, колоністів і рабів: їхні бої завжди йдуть на очки.</HH.Underworld.Pit.Lethal.Desc>
   <HH.Underworld.Pit.StartNow>Почати бій</HH.Underworld.Pit.StartNow>
-  <HH.Underworld.Pit.StartNow.Desc>Оберіть зараз двох чесних бійців і дозвольте гостям робити ставки.</HH.Underworld.Pit.StartNow.Desc>
+  <HH.Underworld.Pit.StartNow.Desc>Почати бій зараз: сторони, обрані в «Бійцях», або два найближчі бійці. Гості не потрібні, а межа справедливості не діє.</HH.Underworld.Pit.StartNow.Desc>
   <HH.Underworld.Pit.CannotStart>Бою не буде: {0}</HH.Underworld.Pit.CannotStart>
   <HH.Underworld.Pit.ArenaOk>Арена: {0} клітинок, закрита.</HH.Underworld.Pit.ArenaOk>
   <HH.Underworld.Pit.ArenaOpen>Арена відкрита або завелика: зачиніть огорожу.</HH.Underworld.Pit.ArenaOpen>
-  <HH.Underworld.Pit.NoFighters>дозволено менше двох бійців</HH.Underworld.Pit.NoFighters>
+  <HH.Underworld.Pit.NoFighters>менше двох бійців</HH.Underworld.Pit.NoFighters>
   <HH.Underworld.Pit.NoFairPair>немає чесної пари бійців</HH.Underworld.Pit.NoFairPair>
-  <HH.Underworld.Pit.BoutRunning>Бій: {0} проти {1}.</HH.Underworld.Pit.BoutRunning>
   <HH.Underworld.Pit.BoutAnnounced>Бій у ямі: {0} проти {1}. Ставки прийнято.</HH.Underworld.Pit.BoutAnnounced>
-  <HH.Underworld.Pit.Won>{0} перемагає в бою. Дім забирає {1} срібла.</HH.Underworld.Pit.Won>
-  <HH.Underworld.Pit.Draw>Бій завершується без переможця. Усі ставки повертаються.</HH.Underworld.Pit.Draw>
-  <HH.Underworld.Fence.Inspect>Товар: {0} предметів вартістю {1} срібла. Скарбничка: {2} срібла.</HH.Underworld.Fence.Inspect>
   <HH.Underworld.Fence.Fund>Поповнити скарбничку</HH.Underworld.Fence.Fund>
   <HH.Underworld.Fence.Fund.Desc>Перенести срібло з каси до скарбнички скупника, до ліміту в налаштуваннях.</HH.Underworld.Fence.Fund.Desc>
   <HH.Underworld.Fence.Funded>{0} срібла перенесено до скарбнички.</HH.Underworld.Fence.Funded>
-  <HH.Underworld.Fence.NoCash>Скарбничка порожня.</HH.Underworld.Fence.NoCash>
   <HH.Underworld.Fence.CannotPay>Покупець не може заплатити.</HH.Underworld.Fence.CannotPay>
   <HH.Underworld.Fence.Exposed>Товар походить із {0}, і там знають, куди він потрапив.</HH.Underworld.Fence.Exposed>
   <HH.Underworld.Gang.Title>Банда біля дверей</HH.Underworld.Gang.Title>
@@ -62,14 +41,12 @@
   <HH.Underworld.Gang.Demand.Text>Ватажок банди з {0} спирається на ваш прилавок. «Гарний дім. Було б прикро, якби з ним щось сталося. За {1} срібла ми подбаємо, щоб нічого не сталося.»</HH.Underworld.Gang.Demand.Text>
   <HH.Underworld.Gang.Demand.Pay>Заплатити {0} срібла</HH.Underworld.Gang.Demand.Pay>
   <HH.Underworld.Gang.Demand.Refuse>Показати їм двері</HH.Underworld.Gang.Demand.Refuse>
-  <HH.Underworld.Gang.Demand.NoCash>у касі недостатньо</HH.Underworld.Gang.Demand.NoCash>
   <HH.Underworld.Tour.IntelTitle>Дещо з допиту</HH.Underworld.Tour.IntelTitle>
   <HH.Underworld.Tour.IntelText>Після години з {0} банда залишила на прилавку записку: ім'я, місце, день. Хтось там щось планує, і тепер ви знаєте трохи більше.</HH.Underworld.Tour.IntelText>
   <HH.Underworld.Smuggler.Title>Ящик на причалі</HH.Underworld.Smuggler.Title>
-  <HH.Underworld.Smuggler.Text>Шатл із погашеними вогнями сів на причал. Голос пропонує {0} предметів вартістю приблизно {1} срібла за {2}. Без запитань і без квитанції.</HH.Underworld.Smuggler.Text>
+  <HH.Underworld.Smuggler.Text>До причалу підійшов човен із погашеними вогнями. Голос пропонує {0} приблизно на {1} срібла за {2} срібла. Без запитань, без чека.</HH.Underworld.Smuggler.Text>
   <HH.Underworld.Smuggler.Buy>Купити за {0} срібла</HH.Underworld.Smuggler.Buy>
   <HH.Underworld.Smuggler.Decline>Відправити геть</HH.Underworld.Smuggler.Decline>
-  <HH.Underworld.Smuggler.NoCash>у касі недостатньо</HH.Underworld.Smuggler.NoCash>
   <HH.Underworld.Smuggler.InspectTitle>Патруль помітив ліхтар</HH.Underworld.Smuggler.InspectTitle>
   <HH.Underworld.Smuggler.InspectText>Імперський патруль побачив вогні на вашому причалі й записав це.</HH.Underworld.Smuggler.InspectText>
   <HH.Underworld.Hunt.Title>Мисливська група</HH.Underworld.Hunt.Title>
@@ -78,8 +55,8 @@
   <HH.Underworld.Hunt.QuarryAnimals>тварини</HH.Underworld.Hunt.QuarryAnimals>
   <HH.Underworld.Hunt.QuarryHuman>тварини та полонений</HH.Underworld.Hunt.QuarryHuman>
   <HH.Underworld.Hunt.Prisoners>Полонений як здобич</HH.Underworld.Hunt.Prisoners>
-  <HH.Underworld.Hunt.Prisoners.Desc>Дозволити мисливцям полювати на полоненого, випущеного на угіддя. Лише з темним вмістом і відповідною ідеологією.</HH.Underworld.Hunt.Prisoners.Desc>
-  <HH.Underworld.Hunt.GateContent>Потрібен темний або похмурий вміст, підтверджений.</HH.Underworld.Hunt.GateContent>
+  <HH.Underworld.Hunt.Prisoners.Desc>Дозволити мисливцям полювати на полоненого, випущеного на угіддя. Темний вміст із відповідною ідеологією або похмурий вміст.</HH.Underworld.Hunt.Prisoners.Desc>
+  <HH.Underworld.Hunt.GateContent>Потрібен темний або похмурий вміст.</HH.Underworld.Hunt.GateContent>
   <HH.Underworld.Hunt.GatePrecept>Ідеологія колонії цього не дозволяє.</HH.Underworld.Hunt.GatePrecept>
   <HH.Underworld.Hunt.DeathTitle>Людина загинула на полюванні</HH.Underworld.Hunt.DeathTitle>
   <HH.Underworld.Hunt.DeathText>{0} не пережив полювання. Його люди дізнаються про це, як і всі, хто дивився.</HH.Underworld.Hunt.DeathText>
@@ -94,9 +71,231 @@
   <HH.Underworld.Page.Title>Підпілля</HH.Underworld.Page.Title>
   <HH.Underworld.Page.Whispers>Шепіт: {0} зі 100.</HH.Underworld.Page.Whispers>
   <HH.Underworld.Page.Weights>Ваги прибуття: поважні x{0}, поза законом x{1}.</HH.Underworld.Page.Weights>
-  <HH.Underworld.Page.Content>Вміст: {0} (застосовано: {1}).</HH.Underworld.Page.Content>
-  <HH.Underworld.Page.Stats1>Яма для бійок: {0} боїв, {1} ставок, частка дому {2} срібла.</HH.Underworld.Page.Stats1>
+  <HH.Underworld.Page.Stats1>Боїв у ямі: {0}. Ставок: {1}. Частка дому: {2} срібла.</HH.Underworld.Page.Stats1>
   <HH.Underworld.Page.Stats2>Скупник: {0} куплено, {1} продано, прибуток {2} срібла.</HH.Underworld.Page.Stats2>
   <HH.Underworld.Page.Stats3>Сеансів у салоні {0}, візитів банд {1}, посадок {2}, полювань {3}, органів {4}.</HH.Underworld.Page.Stats3>
   <HH.Underworld.Page.HighRollers>Чутка про таємне казино приваблює високих гравців.</HH.Underworld.Page.HighRollers>
+  <HH.Underworld.Ago.Moment>мить</HH.Underworld.Ago.Moment>
+  <HH.Underworld.BackRoom.NoOrdinaryDoor>Поки не задня кімната: у цій кімнаті є й звичайні двері.</HH.Underworld.BackRoom.NoOrdinaryDoor>
+  <HH.Underworld.BackRoom.NoOutside>Поки не задня кімната: кімната відкрита назовні.</HH.Underworld.BackRoom.NoOutside>
+  <HH.Underworld.BackRoom.NoRoom>Поки не задня кімната: за цими дверима немає кімнати.</HH.Underworld.BackRoom.NoRoom>
+  <HH.Underworld.BackRoom.Off>Звичайні двері: підпілля вимкнене (модуль або «Затишний» вміст).</HH.Underworld.BackRoom.Off>
+  <HH.Underworld.BackRoom.Status.Last>Остання плата за задню кімнату: {0} тому.</HH.Underworld.BackRoom.Status.Last>
+  <HH.Underworld.BackRoom.Status.NotBuilt>Збудуйте кімнату, до якої ведуть лише двері задньої кімнати.</HH.Underworld.BackRoom.Status.NotBuilt>
+  <HH.Underworld.BackRoom.Yes>Це задня кімната ({0} клітинок).</HH.Underworld.BackRoom.Yes>
+  <HH.Underworld.Facility.Off>Підпілля вимкнене (модуль або «Затишний» вміст).</HH.Underworld.Facility.Off>
+  <HH.Underworld.Fence.Bought>Скупник купив {0} за {1} срібла.</HH.Underworld.Fence.Bought>
+  <HH.Underworld.Fence.BuyFailed>Скупник не зміг купити {0}: {1}.</HH.Underworld.Fence.BuyFailed>
+  <HH.Underworld.Fence.CannotBuy>Зараз купити не можна: {0}.</HH.Underworld.Fence.CannotBuy>
+  <HH.Underworld.Fence.LowCash>Готівки лише {0} срібла (каса й скриня): скупник відмовляється від дорожчого товару, найдорожчу здобич він бере до {1}.</HH.Underworld.Fence.LowCash>
+  <HH.Underworld.Fence.Sold>Скупник продав {0} за {1} срібла.</HH.Underworld.Fence.Sold>
+  <HH.Underworld.Fence.Status.Last>Остання угода: {0} тому.</HH.Underworld.Fence.Status.Last>
+  <HH.Underworld.Fence.Status.NotBuilt>Збудуйте прилавок скупника: банди продають йому здобич і купують із його запасів.</HH.Underworld.Fence.Status.NotBuilt>
+  <HH.Underworld.Fence.Status.Waiting>Чекає на банду з товаром на продаж.</HH.Underworld.Fence.Status.Waiting>
+  <HH.Underworld.Fence.Stock>Запас: {0} предметів на {1} срібла. Скриня з грошима: {2} срібла.</HH.Underworld.Fence.Stock>
+  <HH.Underworld.Fence.TakeOut>Забрати товар</HH.Underworld.Fence.TakeOut>
+  <HH.Underworld.Fence.TakeOut.Desc>Викласти весь запас на підлогу біля прилавка. Товар стає звичайними речами, які колонія може використати або продати; скупник забуває, звідки їх украдено.</HH.Underworld.Fence.TakeOut.Desc>
+  <HH.Underworld.Fence.TakeOut.Empty>на складі порожньо</HH.Underworld.Fence.TakeOut.Empty>
+  <HH.Underworld.Fence.TookOut>Біля прилавка викладено стосів: {0}.</HH.Underworld.Fence.TookOut>
+  <HH.Underworld.Fence.TookOut.NoRoom>Біля прилавка мало місця: на складі лишилося стосів: {0} з {1}.</HH.Underworld.Fence.TookOut.NoRoom>
+  <HH.Underworld.Fence.TookOut.One>Біля прилавка викладено один стос.</HH.Underworld.Fence.TookOut.One>
+  <HH.Underworld.Fence.Why.Closed>підпілля вимкнене</HH.Underworld.Fence.Why.Closed>
+  <HH.Underworld.Fence.Why.TillEmpty>каса і скриня порожні</HH.Underworld.Fence.Why.TillEmpty>
+  <HH.Underworld.Fence.Why.TooLittle>готівки лише {0} срібла, ціна {1}</HH.Underworld.Fence.Why.TooLittle>
+  <HH.Underworld.Gang.Demand.Expired>Ви не відповіли банді: вона вважає це відмовою.</HH.Underworld.Gang.Demand.Expired>
+  <HH.Underworld.Gang.Demand.Letter.How>Виберіть {0} або відкрийте вкладку «Підпілля», щоб заплатити чи відмовити. Колонія платить з каси, сріблом на складі чи з банку. Пропозиція діє {1} год; якщо вона спливе, це відмова.</HH.Underworld.Gang.Demand.Letter.How>
+  <HH.Underworld.Gang.Demand.Paid>Сплачено {0} срібла за захист.</HH.Underworld.Gang.Demand.Paid>
+  <HH.Underworld.Gang.Demand.Pay.Desc>Колонія платить з каси, сріблом на складі чи з банку. Банда лишає вас у спокої, а її фракція ставиться до вас трохи краще.</HH.Underworld.Gang.Demand.Pay.Desc>
+  <HH.Underworld.Gang.Demand.Refuse.Desc>Відмовити. Фракція банди сприймає це погано й втрачає прихильність.</HH.Underworld.Gang.Demand.Refuse.Desc>
+  <HH.Underworld.Gang.Demand.Refused>Ви показали банді на двері.</HH.Underworld.Gang.Demand.Refused>
+  <HH.Underworld.Gang.Demand.Waiting>{0} хоче {1} срібла за захист (дайте відповідь протягом {2}).</HH.Underworld.Gang.Demand.Waiting>
+  <HH.Underworld.Gang.Status.DemandAbove>Вище чекає вимога.</HH.Underworld.Gang.Status.DemandAbove>
+  <HH.Underworld.Gang.Status.Here>Тут банда з {0} осіб.</HH.Underworld.Gang.Status.Here>
+  <HH.Underworld.Gang.Status.Last>Останній візит банди: {0} тому.</HH.Underworld.Gang.Status.Last>
+  <HH.Underworld.Gang.Status.Next>Наступний візит банди приблизно через {0}.</HH.Underworld.Gang.Status.Next>
+  <HH.Underworld.Gang.Status.NotBuilt>Банди приходять, коли у вас є задня кімната, прилавок скупника чи яма.</HH.Underworld.Gang.Status.NotBuilt>
+  <HH.Underworld.Gang.Status.PrisonOff>Банди можуть допитувати ваших полонених, якщо ви дозволите це в налаштуваннях.</HH.Underworld.Gang.Status.PrisonOff>
+  <HH.Underworld.Gang.Status.Retry>Остання банда не змогла прийти: {0}. Наступна спроба через {1}.</HH.Underworld.Gang.Status.Retry>
+  <HH.Underworld.Gang.Status.Waiting>Чекає на наступну банду.</HH.Underworld.Gang.Status.Waiting>
+  <HH.Underworld.Gang.Why.NoEntry>немає шляху на мапу</HH.Underworld.Gang.Why.NoEntry>
+  <HH.Underworld.Gang.Why.NoFacility>немає задньої кімнати, прилавка скупника чи ями</HH.Underworld.Gang.Why.NoFacility>
+  <HH.Underworld.Gang.Why.NoFaction>немає дружньої фракції</HH.Underworld.Gang.Why.NoFaction>
+  <HH.Underworld.Gang.Why.NoPawns>не знайшлося членів банди</HH.Underworld.Gang.Why.NoPawns>
+  <HH.Underworld.Hunt.Closed>Полювань немає: модуль або інтенсивність вмісту їх не допускають.</HH.Underworld.Hunt.Closed>
+  <HH.Underworld.Hunt.Next>Наступне полювання приблизно через {0}.</HH.Underworld.Hunt.Next>
+  <HH.Underworld.Hunt.Open>Відкрито: замкніть огорожу навколо угідь (не більше {0} клітинок).</HH.Underworld.Hunt.Open>
+  <HH.Underworld.Hunt.Running>Триває полювання.</HH.Underworld.Hunt.Running>
+  <HH.Underworld.Hunt.Status.Last>Останнє полювання: {0} тому.</HH.Underworld.Hunt.Status.Last>
+  <HH.Underworld.Hunt.Status.NotBuilt>Дослідіть полювання, потім поставте маркер угідь усередині закритої огорожі щонайменше з {0} клітинок.</HH.Underworld.Hunt.Status.NotBuilt>
+  <HH.Underworld.Hunt.Status.NotBuiltResearched>Поставте маркер угідь усередині закритої огорожі на {0}-{1} клітинок.</HH.Underworld.Hunt.Status.NotBuiltResearched>
+  <HH.Underworld.Hunt.TooBig>Завелика площа: {0} клітинок, не більше {1}.</HH.Underworld.Hunt.TooBig>
+  <HH.Underworld.Hunt.TooSmall>Замала площа: {0} з {1} клітинок.</HH.Underworld.Hunt.TooSmall>
+  <HH.Underworld.Lounge.Status.Closed>Зараз зачинено: салон відчиняється ввечері.</HH.Underworld.Lounge.Status.Closed>
+  <HH.Underworld.Lounge.Status.Last>Останній сеанс: {0} тому.</HH.Underworld.Lounge.Status.Last>
+  <HH.Underworld.Lounge.Status.NotBuilt>Поставте вивіску закладу «наркотичний салон» у кімнату з двома диванами чи кріслами.</HH.Underworld.Lounge.Status.NotBuilt>
+  <HH.Underworld.Lounge.Status.NotReady>Салон ще не готовий.</HH.Underworld.Lounge.Status.NotReady>
+  <HH.Underworld.Lounge.Status.Open>Відчинено.</HH.Underworld.Lounge.Status.Open>
+  <HH.Underworld.Offer.Gone>Пропозицію знято: човна чи банди вже немає.</HH.Underworld.Offer.Gone>
+  <HH.Underworld.Organ.Status.Last>Останній продаж: {0} тому.</HH.Underworld.Organ.Status.Last>
+  <HH.Underworld.Organ.Status.NotBuilt>Дослідіть чорну клініку й збудуйте її прилавок.</HH.Underworld.Organ.Status.NotBuilt>
+  <HH.Underworld.Organ.Status.NotBuiltResearched>Збудуйте прилавок клініки органів.</HH.Underworld.Organ.Status.NotBuiltResearched>
+  <HH.Underworld.Organ.Status.Waiting>Органи, залишені на прилавку, забирають уночі (з 23:00 до 04:00).</HH.Underworld.Organ.Status.Waiting>
+  <HH.Underworld.Page.Build>Збудувати</HH.Underworld.Page.Build>
+  <HH.Underworld.Page.Build.Desc>Закриває цю вкладку й вибирає {0} у меню будівництва.</HH.Underworld.Page.Build.Desc>
+  <HH.Underworld.Page.Build.Hidden>Зараз немає в меню будівництва.</HH.Underworld.Page.Build.Hidden>
+  <HH.Underworld.Page.Build.Missing>Немає в меню будівництва цієї гри.</HH.Underworld.Page.Build.Missing>
+  <HH.Underworld.Page.Build.Research>Спочатку потрібне дослідження: {0}.</HH.Underworld.Page.Build.Research>
+  <HH.Underworld.Page.ContentLevel>Інтенсивність вмісту: {0}. Її можна змінити в налаштуваннях, на сторінці «Модулі».</HH.Underworld.Page.ContentLevel>
+  <HH.Underworld.Page.DarkAdds>Темний вміст додав би клініку органів, полювання на полонених і бої полонених насмерть.</HH.Underworld.Page.DarkAdds>
+  <HH.Underworld.Page.Facilities>Ваша справа в задній кімнаті</HH.Underworld.Page.Facilities>
+  <HH.Underworld.Page.NoMap>Відкрийте мапу своєї колонії, щоб побачити, що там збудовано.</HH.Underworld.Page.NoMap>
+  <HH.Underworld.Page.Offers>Чекає на вашу відповідь</HH.Underworld.Page.Offers>
+  <HH.Underworld.Page.Pit.More>Ще ям на цій мапі: {0}. Виберіть їхні маркери, щоб побачити.</HH.Underworld.Page.Pit.More>
+  <HH.Underworld.Page.Pit.NotBuilt>Збудуйте закриту огорожу (хвіртка підійде) на 9-700 клітинок і поставте всередині маркер ями для бійок.</HH.Underworld.Page.Pit.NotBuilt>
+  <HH.Underworld.Page.Row.backroom>Задні кімнати</HH.Underworld.Page.Row.backroom>
+  <HH.Underworld.Page.Row.clinic>Клініка органів</HH.Underworld.Page.Row.clinic>
+  <HH.Underworld.Page.Row.dock>Причал контрабандистів</HH.Underworld.Page.Row.dock>
+  <HH.Underworld.Page.Row.fence>Скупник</HH.Underworld.Page.Row.fence>
+  <HH.Underworld.Page.Row.gangs>Банди</HH.Underworld.Page.Row.gangs>
+  <HH.Underworld.Page.Row.hunt>Мисливські угіддя</HH.Underworld.Page.Row.hunt>
+  <HH.Underworld.Page.Row.lounge>Наркотичний салон</HH.Underworld.Page.Row.lounge>
+  <HH.Underworld.Page.Row.pit>Яма для бійок</HH.Underworld.Page.Row.pit>
+  <HH.Underworld.Page.Show>Показати</HH.Underworld.Page.Show>
+  <HH.Underworld.Page.State.NotBuilt>Ще не збудовано.</HH.Underworld.Page.State.NotBuilt>
+  <HH.Underworld.Page.State.Waiting>Збудовано, але чогось чекає.</HH.Underworld.Page.State.Waiting>
+  <HH.Underworld.Page.State.Working>Працює.</HH.Underworld.Page.State.Working>
+  <HH.Underworld.Page.StatsHead>Виручка на сьогодні</HH.Underworld.Page.StatsHead>
+  <HH.Underworld.Page.Whispers.Desc>Кожен бій, угода й візит банди додають шепіт, і з часом він стихає. Більше шепоту: більше ізгоїв і менше поважних гостей.</HH.Underworld.Page.Whispers.Desc>
+  <HH.Underworld.Page.WhispersHead>Шепіт</HH.Underworld.Page.WhispersHead>
+  <HH.Underworld.Pay.Loose>срібло враховується лише на складі чи в домашній зоні</HH.Underworld.Pay.Loose>
+  <HH.Underworld.Pay.Short>у колонії {0} зі {1} срібла</HH.Underworld.Pay.Short>
+  <HH.Underworld.Pit.Abort.Closed>яму закрито</HH.Underworld.Pit.Abort.Closed>
+  <HH.Underworld.Pit.Abort.Drafted>{0} у бойовому режимі</HH.Underworld.Pit.Abort.Drafted>
+  <HH.Underworld.Pit.Abort.Gone>{0} більше немає на мапі</HH.Underworld.Pit.Abort.Gone>
+  <HH.Underworld.Pit.Abort.Hurt>{0} не може битися далі</HH.Underworld.Pit.Abort.Hurt>
+  <HH.Underworld.Pit.Abort.Left>{0} довелося піти</HH.Underworld.Pit.Abort.Left>
+  <HH.Underworld.Pit.Abort.Mental>{0} втрачає контроль</HH.Underworld.Pit.Abort.Mental>
+  <HH.Underworld.Pit.Abort.NoShow>{0} не може дістатися арени</HH.Underworld.Pit.Abort.NoShow>
+  <HH.Underworld.Pit.ArenaBig>Арена відкрита або більша за {0} клітинок: замкніть огорожу навколо меншої площі.</HH.Underworld.Pit.ArenaBig>
+  <HH.Underworld.Pit.ArenaSmall>Арена замала: {0} клітинок, потрібно щонайменше {1}.</HH.Underworld.Pit.ArenaSmall>
+  <HH.Underworld.Pit.BeastName>звір ями {0}</HH.Underworld.Pit.BeastName>
+  <HH.Underworld.Pit.BeastNotYours>Ця тварина найнята лише для ями.</HH.Underworld.Pit.BeastNotYours>
+  <HH.Underworld.Pit.BeastRef>{0}</HH.Underworld.Pit.BeastRef>
+  <HH.Underworld.Pit.BoutAnnounced.Beast>Бій у ямі: {0} проти {1}. Він іде на очки, тож {0} отримає щонайбільше кілька синців.</HH.Underworld.Pit.BoutAnnounced.Beast>
+  <HH.Underworld.Pit.BoutAnnounced.Plain>Бій у ямі: {0} проти {1}.</HH.Underworld.Pit.BoutAnnounced.Plain>
+  <HH.Underworld.Pit.CallOpponent>Покликати суперника ({0})</HH.Underworld.Pit.CallOpponent>
+  <HH.Underworld.Pit.CallOpponent.Desc>Найняти звіра для самотнього бійця: тварину приблизно вашої сили, на один бій. Колонія платить {0} срібла: спочатку з каси, потім сріблом на складі, потім з банку.</HH.Underworld.Pit.CallOpponent.Desc>
+  <HH.Underworld.Pit.CallOpponent.For>Битиметься: {0}.</HH.Underworld.Pit.CallOpponent.For>
+  <HH.Underworld.Pit.CallOpponent.Free>Покликати суперника (перший безкоштовно)</HH.Underworld.Pit.CallOpponent.Free>
+  <HH.Underworld.Pit.CallOpponent.FreeDesc>Перший суперник за рахунок закладу.</HH.Underworld.Pit.CallOpponent.FreeDesc>
+  <HH.Underworld.Pit.CalledOff>Бій скасовано: {0}.</HH.Underworld.Pit.CalledOff>
+  <HH.Underworld.Pit.FightHere>Битися в ямі</HH.Underworld.Pit.FightHere>
+  <HH.Underworld.Pit.FightHere.Against>Битися в ямі проти {0}</HH.Underworld.Pit.FightHere.Against>
+  <HH.Underworld.Pit.FightHere.Queue>Битися в ямі (наступний бій)</HH.Underworld.Pit.FightHere.Queue>
+  <HH.Underworld.Pit.FightersBtn>Бійці…</HH.Underworld.Pit.FightersBtn>
+  <HH.Underworld.Pit.FightersBtn.Desc>Усі, хто міг би битися в цій ямі, і чому хтось зараз не може. Позначте колоністів, яким можна тут битися, виберіть дві сторони й почніть бій або покличте суперника для самотнього бійця.</HH.Underworld.Pit.FightersBtn.Desc>
+  <HH.Underworld.Pit.Guests>Гості-бійці</HH.Underworld.Pit.Guests>
+  <HH.Underworld.Pit.Guests.Desc>Гості можуть битися тут: сумнівні гості та члени банд завжди, решта дорослих гостей, якщо вони не добрі й мають кровожерливість, рису «бійка» або ближній бій 6 і вище. Лише гості, які не сплять, вільні, здорові й затримаються. Їхні бої ідуть на очки: ніхто не постраждає, а гість-переможець отримує невеликий приз із частки дому.</HH.Underworld.Pit.Guests.Desc>
+  <HH.Underworld.Pit.Hint.Animals>дозвольте тварин</HH.Underworld.Pit.Hint.Animals>
+  <HH.Underworld.Pit.Hint.Call>покличте суперника</HH.Underworld.Pit.Hint.Call>
+  <HH.Underworld.Pit.Hint.Guests>дозвольте гостей</HH.Underworld.Pit.Hint.Guests>
+  <HH.Underworld.Pit.Hint.Or>{0} або {1}</HH.Underworld.Pit.Hint.Or>
+  <HH.Underworld.Pit.Hint.Tick>позначте другого колоніста</HH.Underworld.Pit.Hint.Tick>
+  <HH.Underworld.Pit.Hint.Wait>дочекайтеся гостя, який любить битися</HH.Underworld.Pit.Hint.Wait>
+  <HH.Underworld.Pit.Kind.Animal>тварина</HH.Underworld.Pit.Kind.Animal>
+  <HH.Underworld.Pit.Kind.Beast>найнятий суперник</HH.Underworld.Pit.Kind.Beast>
+  <HH.Underworld.Pit.Kind.Colonist>колоніст</HH.Underworld.Pit.Kind.Colonist>
+  <HH.Underworld.Pit.Kind.Guest>гість</HH.Underworld.Pit.Kind.Guest>
+  <HH.Underworld.Pit.Kind.Prisoner>полонений</HH.Underworld.Pit.Kind.Prisoner>
+  <HH.Underworld.Pit.Last>Останній бій: {0} перемагає {1}, банк {2}, дім {3}.</HH.Underworld.Pit.Last>
+  <HH.Underworld.Pit.Last.Draw>Останній бій: {0} проти {1}, без переможця.</HH.Underworld.Pit.Last.Draw>
+  <HH.Underworld.Pit.Last.NoBets>Останній бій: {0} перемагає {1}.</HH.Underworld.Pit.Last.NoBets>
+  <HH.Underworld.Pit.PursePaid>{0} отримує приз у {1} срібла.</HH.Underworld.Pit.PursePaid>
+  <HH.Underworld.Pit.Rating.Clear>{0} явний фаворит.</HH.Underworld.Pit.Rating.Clear>
+  <HH.Underworld.Pit.Rating.Even>Рівний бій.</HH.Underworld.Pit.Rating.Even>
+  <HH.Underworld.Pit.Rating.Favourite>{0} фаворит.</HH.Underworld.Pit.Rating.Favourite>
+  <HH.Underworld.Pit.Ready>Бійці готові: {0} ({1}).</HH.Underworld.Pit.Ready>
+  <HH.Underworld.Pit.Ready.Many.Animal>тварин: {0}</HH.Underworld.Pit.Ready.Many.Animal>
+  <HH.Underworld.Pit.Ready.Many.Colonist>колоністів: {0}</HH.Underworld.Pit.Ready.Many.Colonist>
+  <HH.Underworld.Pit.Ready.Many.Guest>гостей: {0}</HH.Underworld.Pit.Ready.Many.Guest>
+  <HH.Underworld.Pit.Ready.Many.Prisoner>полонених: {0}</HH.Underworld.Pit.Ready.Many.Prisoner>
+  <HH.Underworld.Pit.Ready.None>Бійці готові: нікого.</HH.Underworld.Pit.Ready.None>
+  <HH.Underworld.Pit.Ready.One.Animal>{0} тварина</HH.Underworld.Pit.Ready.One.Animal>
+  <HH.Underworld.Pit.Ready.One.Colonist>{0} колоніст</HH.Underworld.Pit.Ready.One.Colonist>
+  <HH.Underworld.Pit.Ready.One.Guest>{0} гість</HH.Underworld.Pit.Ready.One.Guest>
+  <HH.Underworld.Pit.Ready.One.Prisoner>{0} полонений</HH.Underworld.Pit.Ready.One.Prisoner>
+  <HH.Underworld.Pit.Result.Draw>{0} проти {1}: без переможця. Усі ставки повернено.</HH.Underworld.Pit.Result.Draw>
+  <HH.Underworld.Pit.Result.DrawNoBets>{0} проти {1}: без переможця.</HH.Underworld.Pit.Result.DrawNoBets>
+  <HH.Underworld.Pit.Result.Points>Бій ішов на очки: {0} отримує щонайбільше кілька синців.</HH.Underworld.Pit.Result.Points>
+  <HH.Underworld.Pit.Result.PointsAll>Бій ішов на очки: щонайбільше кілька синців.</HH.Underworld.Pit.Result.PointsAll>
+  <HH.Underworld.Pit.Result.Won>{0} перемагає {1} в ямі. Банк {2} срібла, дім {3} срібла.</HH.Underworld.Pit.Result.Won>
+  <HH.Underworld.Pit.Result.WonNoBets>{0} перемагає {1} в ямі.</HH.Underworld.Pit.Result.WonNoBets>
+  <HH.Underworld.Pit.Status.AutoFailed>Автоматичного бою немає: {0}. Почніть бій самі або покличте суперника.</HH.Underworld.Pit.Status.AutoFailed>
+  <HH.Underworld.Pit.Status.Closed>Зачинено: ввімкніть «Яма відкрита» на маркері.</HH.Underworld.Pit.Status.Closed>
+  <HH.Underworld.Pit.Status.NeedArena>Чекає на закриту арену.</HH.Underworld.Pit.Status.NeedArena>
+  <HH.Underworld.Pit.Status.Next>Наступний бій через {0} год.</HH.Underworld.Pit.Status.Next>
+  <HH.Underworld.Pit.Status.NoFighter>Бійців поки немає: клацніть маркер правою кнопкою з колоністом або позначте одного в «Бійцях».</HH.Underworld.Pit.Status.NoFighter>
+  <HH.Underworld.Pit.Status.Off>Підпілля вимкнене (модуль або «Затишний» вміст).</HH.Underworld.Pit.Status.Off>
+  <HH.Underworld.Pit.Status.Peaceful>Мирне підпілля ввімкнене: боїв немає.</HH.Underworld.Pit.Status.Peaceful>
+  <HH.Underworld.Pit.Status.Running>Іде бій: {0} проти {1}.</HH.Underworld.Pit.Status.Running>
+  <HH.Underworld.Pit.Status.WaitFighter>Чекає на другого бійця: {0}.</HH.Underworld.Pit.Status.WaitFighter>
+  <HH.Underworld.Pit.Status.WaitGuests>Чекає на гостей для ставок (можна почати бій самому).</HH.Underworld.Pit.Status.WaitGuests>
+  <HH.Underworld.Pit.Why.ArenaFull>на арені немає вільної клітинки</HH.Underworld.Pit.Why.ArenaFull>
+  <HH.Underworld.Pit.Why.Asleep>спить</HH.Underworld.Pit.Why.Asleep>
+  <HH.Underworld.Pit.Why.BeastThere>суперник уже на арені</HH.Underworld.Pit.Why.BeastThere>
+  <HH.Underworld.Pit.Why.BoutRunning>триває бій</HH.Underworld.Pit.Why.BoutRunning>
+  <HH.Underworld.Pit.Why.Burning>горить</HH.Underworld.Pit.Why.Burning>
+  <HH.Underworld.Pit.Why.Busy>зайнятий</HH.Underworld.Pit.Why.Busy>
+  <HH.Underworld.Pit.Why.Child>молодше за 18</HH.Underworld.Pit.Why.Child>
+  <HH.Underworld.Pit.Why.Downed>лежить без сил</HH.Underworld.Pit.Why.Downed>
+  <HH.Underworld.Pit.Why.Drafted>у бойовому режимі</HH.Underworld.Pit.Why.Drafted>
+  <HH.Underworld.Pit.Why.Gone>його немає</HH.Underworld.Pit.Why.Gone>
+  <HH.Underworld.Pit.Why.Hurt>поранений</HH.Underworld.Pit.Why.Hurt>
+  <HH.Underworld.Pit.Why.InBout>уже в бою</HH.Underworld.Pit.Why.InBout>
+  <HH.Underworld.Pit.Why.Kind>не хоче: добрий</HH.Underworld.Pit.Why.Kind>
+  <HH.Underworld.Pit.Why.Leaving>приходить або йде</HH.Underworld.Pit.Why.Leaving>
+  <HH.Underworld.Pit.Why.LeavingSoon>скоро піде</HH.Underworld.Pit.Why.LeavingSoon>
+  <HH.Underworld.Pit.Why.Mental>у психічному зриві</HH.Underworld.Pit.Why.Mental>
+  <HH.Underworld.Pit.Why.NoBeastKind>жодна тварина не підходить</HH.Underworld.Pit.Why.NoBeastKind>
+  <HH.Underworld.Pit.Why.NoBout>бій не вдалося почати</HH.Underworld.Pit.Why.NoBout>
+  <HH.Underworld.Pit.Why.NoLoneFighter>нікому битися: клацніть маркер правою кнопкою з колоністом або позначте одного в «Бійцях»</HH.Underworld.Pit.Why.NoLoneFighter>
+  <HH.Underworld.Pit.Why.NoOpponent>немає суперника</HH.Underworld.Pit.Why.NoOpponent>
+  <HH.Underworld.Pit.Why.NoOpponentFor>нікому битися з {0}</HH.Underworld.Pit.Why.NoOpponentFor>
+  <HH.Underworld.Pit.Why.NoTaste>не хоче: немає смаку до бійок</HH.Underworld.Pit.Why.NoTaste>
+  <HH.Underworld.Pit.Why.NoViolence>нездатний до насильства</HH.Underworld.Pit.Why.NoViolence>
+  <HH.Underworld.Pit.Why.NotGuest>не гість закладу</HH.Underworld.Pit.Why.NotGuest>
+  <HH.Underworld.Pit.Why.NotTicked>не позначений для боїв тут</HH.Underworld.Pit.Why.NotTicked>
+  <HH.Underworld.Pit.Why.OnlyOne>Лише один боєць: {0}.</HH.Underworld.Pit.Why.OnlyOne>
+  <HH.Underworld.Pit.Why.QuestGuest>гість завдання</HH.Underworld.Pit.Why.QuestGuest>
+  <HH.Underworld.Pit.Why.Trader>торговець</HH.Underworld.Pit.Why.Trader>
+  <HH.Underworld.Pit.Win.Anyone>будь-хто підходящий</HH.Underworld.Pit.Win.Anyone>
+  <HH.Underworld.Pit.Win.Group.Animal>Тварини</HH.Underworld.Pit.Win.Group.Animal>
+  <HH.Underworld.Pit.Win.Group.Beast>Найняті суперники</HH.Underworld.Pit.Win.Group.Beast>
+  <HH.Underworld.Pit.Win.Group.Colonist>Колоністи та раби</HH.Underworld.Pit.Win.Group.Colonist>
+  <HH.Underworld.Pit.Win.Group.Guest>Гості</HH.Underworld.Pit.Win.Group.Guest>
+  <HH.Underworld.Pit.Win.Group.Prisoner>Полонені</HH.Underworld.Pit.Win.Group.Prisoner>
+  <HH.Underworld.Pit.Win.GroupOff>Вимкнено: ввімкніть «{0}» на маркері.</HH.Underworld.Pit.Win.GroupOff>
+  <HH.Underworld.Pit.Win.Melee>ближній бій {0}</HH.Underworld.Pit.Win.Melee>
+  <HH.Underworld.Pit.Win.Nobody>тут нікого</HH.Underworld.Pit.Win.Nobody>
+  <HH.Underworld.Pit.Win.PickSides>Виберіть сторони або залиште «будь-хто підходящий» для найближчої пари.</HH.Underworld.Pit.Win.PickSides>
+  <HH.Underworld.Pit.Win.Power>сила {0}</HH.Underworld.Pit.Win.Power>
+  <HH.Underworld.Pit.Win.Ready>готовий</HH.Underworld.Pit.Win.Ready>
+  <HH.Underworld.Pit.Win.SideA>Сторона А</HH.Underworld.Pit.Win.SideA>
+  <HH.Underworld.Pit.Win.SideB>Сторона Б</HH.Underworld.Pit.Win.SideB>
+  <HH.Underworld.Pit.Win.Start>Почати бій зараз</HH.Underworld.Pit.Win.Start>
+  <HH.Underworld.Pit.Win.Tick>Б'ється в цій ямі</HH.Underworld.Pit.Win.Tick>
+  <HH.Underworld.Pit.Win.Title>Бійці ями</HH.Underworld.Pit.Win.Title>
+  <HH.Underworld.Smuggler.Bought>Ящик ваш за {0} срібла.</HH.Underworld.Smuggler.Bought>
+  <HH.Underworld.Smuggler.Buy.Desc>Колонія платить з каси, сріблом на складі чи з банку. Ящик скидають біля причалу.</HH.Underworld.Smuggler.Buy.Desc>
+  <HH.Underworld.Smuggler.Decline.Desc>Прогнати човен. Більше нічого не відбувається.</HH.Underworld.Smuggler.Decline.Desc>
+  <HH.Underworld.Smuggler.Declined>Човен відплив без угоди.</HH.Underworld.Smuggler.Declined>
+  <HH.Underworld.Smuggler.Items.Many>{0} шт.</HH.Underworld.Smuggler.Items.Many>
+  <HH.Underworld.Smuggler.Items.One>{0} предмет</HH.Underworld.Smuggler.Items.One>
+  <HH.Underworld.Smuggler.Left>Човен біля причалу не став чекати довше й відплив.</HH.Underworld.Smuggler.Left>
+  <HH.Underworld.Smuggler.Letter.How>Виберіть причал або відкрийте вкладку «Підпілля», щоб купити ящик чи прогнати човен. Колонія платить з каси, сріблом на складі чи з банку. Човен чекає {0} год, потім відпливає.</HH.Underworld.Smuggler.Letter.How>
+  <HH.Underworld.Smuggler.Next>Наступна посадка: уночі, приблизно через {0}.</HH.Underworld.Smuggler.Next>
+  <HH.Underworld.Smuggler.NextSoon>Наступна посадка: уночі, скоро.</HH.Underworld.Smuggler.NextSoon>
+  <HH.Underworld.Smuggler.Status.Last>Остання посадка: {0} тому.</HH.Underworld.Smuggler.Status.Last>
+  <HH.Underworld.Smuggler.Status.NotBuilt>Збудуйте причал контрабандистів: уночі до нього пристають човни з дешевою контрабандою.</HH.Underworld.Smuggler.Status.NotBuilt>
+  <HH.Underworld.Smuggler.Waiting>Біля причалу чекає човен: {0} за {1} срібла (відпливе через {2}).</HH.Underworld.Smuggler.Waiting>
 </LanguageData>

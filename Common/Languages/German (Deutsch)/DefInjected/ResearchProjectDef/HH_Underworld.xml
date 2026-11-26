@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HH_Underworld_Discovery.label>ein Hinterzimmer (Schlüssel)</HH_Underworld_Discovery.label>
-  <HH_Underworld_Discovery.description>Internes Schlüsselprojekt. Abgeschlossen, wenn das Angebot des Fremden angenommen wird. Wird nie angezeigt.</HH_Underworld_Discovery.description>
+  <HH_Underworld_Discovery.description>Altes internes Schlüsselprojekt, nur für alte Spielstände. Wird nie angezeigt und schaltet nichts frei.</HH_Underworld_Discovery.description>
   <HH_Underworld_1.label>das Hinterzimmer</HH_Underworld_1.label>
-  <HH_Underworld_1.description>Hinterzimmertüren, die Kampfgrube, der Tresen des Hehlers, der Schmugglerdock und die Drogenlounge: alles, was ein Haus für das Geschäft braucht, das nicht auf der Speisekarte steht.</HH_Underworld_1.description>
+  <HH_Underworld_1.description>Altes Projekt, nur für alte Spielstände. Wird nie angezeigt und schaltet nichts frei: Hinterzimmertüren, die Kampfgrube, der Tresen des Hehlers, das Schmugglerdock und die Drogenlounge brauchen keine Forschung.</HH_Underworld_1.description>
   <HH_TheHunt.label>die Jagd</HH_TheHunt.label>
-  <HH_TheHunt.description>Ein umzäuntes Jagdgebiet. Reiche Besucher zahlen gut dafür, auf das zu schießen, was du hineinlässt. Ab düsteren Inhalten kann ein Gefangener die Beute sein, hinter einer deutlichen Warnung.</HH_TheHunt.description>
+  <HH_TheHunt.description>Ein eingezäuntes Jagdgebiet. Reiche Besucher zahlen gut dafür, auf das zu schießen, was du hineinlässt. Mit düsteren Inhalten und passender Ideologie oder mit grimmigen Inhalten kann ein Gefangener das Wild sein, wenn du es an der Markierung erlaubst.</HH_TheHunt.description>
   <HH_BlackClinic.label>Schwarzklinik</HH_BlackClinic.label>
   <HH_BlackClinic.description>Ein Schalter, an dem anonyme Spender entnommene Organe kaufen, ohne Fragen. Nur mit düsteren oder grimmigen Inhalten.</HH_BlackClinic.description>
 </LanguageData>

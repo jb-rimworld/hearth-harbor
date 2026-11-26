@@ -61,25 +61,19 @@
   <HH.UI.Modules.Content>Intenzita obsahu</HH.UI.Modules.Content>
   <HH.UI.Modules.ContentDesc>Jak temný smí být volitelný obsah. Sexuální obsah se nikdy neobjeví, ať zvolíte cokoli.</HH.UI.Modules.ContentDesc>
   <HH.UI.Content.Cozy>Útulný</HH.UI.Content.Cozy>
-  <HH.UI.Content.Cozy.Tip>Jen mírné příběhy a následky.</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Cozy.Tip>Jen mírné příběhy a následky. Skryje celé Podsvětí: zadní místnost, jámu na boje, příjemce kradeného zboží, salonek s drogami a gangy.</HH.UI.Content.Cozy.Tip>
   <HH.UI.Content.Standard>Standardní</HH.UI.Content.Standard>
   <HH.UI.Content.Standard.Tip>Výchozí volba. Drsnější hrany, nic ošklivého.</HH.UI.Content.Standard.Tip>
   <HH.UI.Content.Dark>Temný</HH.UI.Content.Dark>
-  <HH.UI.Content.Dark.Tip>Může se objevit zločin, dluhy a násilí.</HH.UI.Content.Dark.Tip>
+  <HH.UI.Content.Dark.Tip>Přidává ke Standardní: vězni mohou bojovat na smrt, být tvrději vyslýchaní a loveni (s odpovídající ideologií) a je možná orgánová klinika a temná nabídka.</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>Krutý</HH.UI.Content.Grim>
-  <HH.UI.Content.Grim.Tip>Všechno, co hra nabízí, celé.</HH.UI.Content.Grim.Tip>
-  <HH.UI.Underworld.Discover>Objevit ve hře</HH.UI.Underworld.Discover>
-  <HH.UI.Underworld.On>Zapnuto</HH.UI.Underworld.On>
-  <HH.UI.Underworld.Off>Vypnuto</HH.UI.Underworld.Off>
-  <HH.UI.Underworld.Discover.Tip>Skryté, dokud se ve hře neobjeví podezřelý cizinec.</HH.UI.Underworld.Discover.Tip>
-  <HH.UI.Underworld.On.Tip>Dostupné od začátku.</HH.UI.Underworld.On.Tip>
-  <HH.UI.Underworld.Off.Tip>Nikdy nedostupné. Podezřelý cizinec se také nevrátí.</HH.UI.Underworld.Off.Tip>
+  <HH.UI.Content.Grim.Tip>Přidává k Temné: lov vězňů nevyžaduje odpovídající ideologii a kupci orgánů zadávají zakázky s termíny.</HH.UI.Content.Grim.Tip>
   <HH.UI.ModuleDesc.Inn>Hosté, hostovské postele, křídla, recepce, cestující a nábor.</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>Značky provozoven, obchody, automaty, trhy, restaurace a jídla.</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>Stoly, automaty, žetony a rizika hazardu pro hosty i kolonisty.</HH.UI.ModuleDesc.Casino>
   <HH.UI.ModuleDesc.Wellness>Lázně, sauna a rehabilitační pobyty.</HH.UI.ModuleDesc.Wellness>
   <HH.UI.ModuleDesc.CityLife>Kino, obchodní centrum, kadeřnictví, chrámy, taxíky a ochranka.</HH.UI.ModuleDesc.CityLife>
-  <HH.UI.ModuleDesc.Underworld>Diskrétní zadní místnost, zápasnická jáma a výkupce. Nalezne se ve hře, nikdy není vnucen.</HH.UI.ModuleDesc.Underworld>
+  <HH.UI.ModuleDesc.Underworld>Nenápadná zadní místnost, jáma na boje a příjemce kradeného zboží. Nic z toho se nestane, dokud to nepostavíte.</HH.UI.ModuleDesc.Underworld>
   <HH.UI.ModuleDesc.Bank>Silverline: účty, platby, bankomaty, investice, půjčky, pojištění a loterie.</HH.UI.ModuleDesc.Bank>
   <HH.UI.ModuleDesc.AiFlavour>Volitelné texty s příchutí, které přes relay píše AI. Ve výchozím stavu vypnuto.</HH.UI.ModuleDesc.AiFlavour>
   <HH.UI.Diff.Title>Obtížnost hostování</HH.UI.Diff.Title>
@@ -294,7 +288,6 @@
   <HH.UI.Overview.Arrivals>Příjezdy, příštích 24 h: {0}, očekává se asi {1} skupin denně.</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>zatím nikdo neplánován</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>naplánováno skupin: {0} (asi hostů: {1})</HH.UI.Overview.Arrivals.Planned>
-  <HH.UI.Content.Decline>Ne, nechat {0}</HH.UI.Content.Decline>
   <HH.UI.Diff.Ladder>Podsvětí: stropy trestů za incident</HH.UI.Diff.Ladder>
   <HH.UI.Diff.WarnHard>Od stupně Přeplněno výš mohou incidenty podsvětí stát skutečnou dobrou vůli, pověst a stříbro (viz stropy níže).</HH.UI.Diff.WarnHard>
   <HH.UI.Feel.4>Incidenty podsvětí začínají stát dobrou vůli, pověst a pokuty.</HH.UI.Feel.4>
@@ -311,7 +304,7 @@
   <HH.Setting.core.neverDie.Desc>Hosté jsou sraženi k zemi místo zabití. Dál žijí, ležící, dokud se o ně někdo nepostará.</HH.Setting.core.neverDie.Desc>
   <HH.Setting.core.infiniteMoney.Desc>Hosté, kteří přijdou, když je to zapnuté, nosí bezedný měšec. Faktor peněz hostů na ně nemá vliv.</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.ironBank.Desc>Vymáhání dluhů vždy vyšplhá na nejvyšší stupeň, ať je obtížnost jakákoli. Nikdo vám tiše neodkládá splátky.</HH.Setting.core.ironBank.Desc>
-  <HH.Setting.core.peacefulUnderworld.Desc>Temné provozovny fungují bez násilí: žádná zápasnická jáma, žádný výslech, žádné lovení lidí, žádná klinika, žádné výpalné. Zadní místnost, výkupce a drogový salon zůstávají.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Temné podniky fungují bez násilí. Tohle úplně zavře jámu na boje, včetně zápasů o body, a zastaví výslechy, lov lidí, orgánovou kliniku a výpalné. Zadní místnost, příjemce kradeného zboží a salonek s drogami zůstanou.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>Plánování hostů a kontroly pokojů běží poloviční rychlostí. Pomůže na pomalých počítačích; hosté můžou reagovat o něco později.</HH.Setting.core.perfMode.Desc>
   <HH.Kitchen.Cookbook.ColCuisine>Kuchyně</HH.Kitchen.Cookbook.ColCuisine>
   <HH.Kitchen.Cookbook.ColDish>Pokrm</HH.Kitchen.Cookbook.ColDish>
@@ -334,5 +327,5 @@
   <HH.UI.Page.Sub.city>Kino, salon, galerie, park, taxi a ochranka: co je postaveno a co to vydělává.</HH.UI.Page.Sub.city>
   <HH.UI.Page.Sub.guests>Všichni, kdo bydlí nebo navštěvují tvůj hostinec. Klikni na řádek a přejdeš na hosta; klikni na buňku obsluhy a změníš ji.</HH.UI.Page.Sub.guests>
   <HH.UI.Page.Sub.overview>Dnes na první pohled: hosté, tržby a stav každého podniku.</HH.UI.Page.Sub.overview>
-  <HH.UI.Page.Sub.underworld>Šeptanda, váhy příchodů a tržby temné strany.</HH.UI.Page.Sub.underworld>
+  <HH.UI.Page.Sub.underworld>Co dělá každá část zadní místnosti, nabídky, které čekají na vás, šepty a tržby.</HH.UI.Page.Sub.underworld>
 </LanguageData>

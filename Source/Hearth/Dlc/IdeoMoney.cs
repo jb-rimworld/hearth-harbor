@@ -491,6 +491,36 @@ namespace Hearth.Dlc
             }
             return Ledger.Current?.Post("world", toAccount, Money.FromSilver(coins), memo + " (colony silver)") ?? false;
         }
+
+        /// <summary>Silver the colony keeps: spawned, not forbidden, in a stockpile or shelf or in the home area (what InsurerBooks.StorageSilver also counts).
+        /// Used by the Underworld for fees the colony pays (pit opponent, smuggler crate, protection money).</summary>
+        public static bool InStock(Thing t, Map map) => t != null && t.Spawned && t.stackCount > 0 && !t.IsForbidden(Faction.OfPlayer) && (t.IsInAnyStorage() || map.areaManager.Home[t.Position]);
+
+        public static int CountStock(Map map)
+        {
+            if (map == null) return 0; int n = 0;
+            var list = map.listerThings.ThingsOfDef(ThingDefOf.Silver);
+            for (int i = 0; i < list.Count; i++) if (InStock(list[i], map)) n += list[i].stackCount;
+            return n;
+        }
+
+        /// <summary>Destroys exactly <paramref name="coins"/> stock silver (smallest stacks first). False and nothing taken if there is not enough. Books nothing: the caller posts the money.</summary>
+        public static bool TakeStock(Map map, int coins)
+        {
+            if (map == null || coins <= 0 || CountStock(map) < coins) return false;
+            var things = new List<Thing>();
+            foreach (var t in map.listerThings.ThingsOfDef(ThingDefOf.Silver)) if (InStock(t, map)) things.Add(t);
+            things.Sort((x, y) => x.stackCount.CompareTo(y.stackCount));
+            int left = coins;
+            foreach (var t in things)
+            {
+                if (left <= 0) break;
+                int take = Math.Min(left, t.stackCount);
+                if (take == t.stackCount) t.Destroy(); else t.SplitOff(take).Destroy();
+                left -= take;
+            }
+            return left == 0;
+        }
     }
 
     // ---------------------------------------------------------------------------------------------------------------- office comp

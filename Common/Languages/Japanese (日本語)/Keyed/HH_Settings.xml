@@ -16,8 +16,6 @@
   <HH.Enum.StaffRule.AlwaysRequired>常に必要</HH.Enum.StaffRule.AlwaysRequired>
   <HH.Enum.StaffRule.NeverRequired>不要</HH.Enum.StaffRule.NeverRequired>
   <HH.Enum.StaffRule.PerVenueType>施設の種類ごと</HH.Enum.StaffRule.PerVenueType>
-  <HH.Enum.UnderworldMode.AlwaysOn>常に有効</HH.Enum.UnderworldMode.AlwaysOn>
-  <HH.Enum.UnderworldMode.DiscoverInGame>ゲーム内で発見</HH.Enum.UnderworldMode.DiscoverInGame>
   <HH.Setting.bank.accountBeta>口座の利息指数（1.1.0 以降は未使用）</HH.Setting.bank.accountBeta>
   <HH.Setting.bank.accountBeta.Desc>「口座の利息: 市場収益のうちの取り分」に置き換えられました。古いセーブデータを読めるように残してあるだけで、変更しても何も起きません。</HH.Setting.bank.accountBeta.Desc>
   <HH.Setting.bank.accountShare>口座の利息: 市場収益のうちの取り分</HH.Setting.bank.accountShare>
@@ -407,7 +405,7 @@
   <HH.Setting.underworld.gang.intervalDays>ギャングの訪問間隔（日）</HH.Setting.underworld.gang.intervalDays>
   <HH.Setting.underworld.gang.intervalDays.Desc>裏部屋、格闘場、故買屋が存在すると、ギャングの平均訪問間隔。</HH.Setting.underworld.gang.intervalDays.Desc>
   <HH.Setting.underworld.gang.intimidateChance>みかじめ料を要求される確率</HH.Setting.underworld.gang.intimidateChance>
-  <HH.Setting.underworld.gang.intimidateChance.Desc>難易度スライダーに従う。標準の部屋と易しい設定では、拒否できる対話以外は何も押し付けない。</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>難易度スライダーに従う。「標準の部屋」以下では、断れる申し出以上のものにはならない。</HH.Setting.underworld.gang.intimidateChance.Desc>
   <HH.Setting.underworld.gang.prisonAccess>ギャングが刑務所を訪れてよい</HH.Setting.underworld.gang.prisonAccess>
   <HH.Setting.underworld.gang.prisonAccess.Desc>ギャングの客に拘置所の見学（囚人への尋問）を許可。初期はオフ。それ以外では、すべての客に刑務所は閉鎖されています。</HH.Setting.underworld.gang.prisonAccess.Desc>
   <HH.Setting.underworld.gang.protectionFee>要求するみかじめ料</HH.Setting.underworld.gang.protectionFee>
@@ -423,8 +421,6 @@
   <HH.Setting.underworld.hunt.quarryHours.Desc>これだけの時間生き延びるか、フェンスラインに到達した囚人は自由になります。</HH.Setting.underworld.hunt.quarryHours.Desc>
   <HH.Setting.underworld.lounge.price>1回のセッションの料金</HH.Setting.underworld.lounge.price>
   <HH.Setting.underworld.lounge.price.Desc>ドラッグのラウンジで客が払う額。客はイデオロギーが許すものだけを取ります。</HH.Setting.underworld.lounge.price.Desc>
-  <HH.Setting.underworld.mode>裏社会の現れ方</HH.Setting.underworld.mode>
-  <HH.Setting.underworld.mode.Desc>ゲーム内で発見: 怪しい見知らぬ者があなたに裏部屋があるか尋ね、「はい」と答えたときだけ闇の側面が開く。常時: 最初から開いている。（オフはモジュールのスイッチ。コージーコンテンツの強度ではこれを完全に隠す。）</HH.Setting.underworld.mode.Desc>
   <HH.Setting.underworld.organ.orderDays>注文の納品日数</HH.Setting.underworld.organ.orderDays>
   <HH.Setting.underworld.organ.orderPremium>注文した臓器の割増</HH.Setting.underworld.organ.orderPremium>
   <HH.Setting.underworld.organ.orderPremium.Desc>陰惨モードのみ：期限内に届けられた完成済みの臓器は、通常価格のこの倍率で支払われる。</HH.Setting.underworld.organ.orderPremium.Desc>
@@ -441,9 +437,9 @@
   <HH.Setting.underworld.pit.intervalHours>試合の間隔（時間）</HH.Setting.underworld.pit.intervalHours>
   <HH.Setting.underworld.pit.intervalHours.Desc>戦う者と観客が十分にいる闘技場は、この間隔で試合を始める。</HH.Setting.underworld.pit.intervalHours.Desc>
   <HH.Setting.underworld.pit.maxBoutTicks>最長試合時間（ティック）</HH.Setting.underworld.pit.maxBoutTicks>
-  <HH.Setting.underworld.pit.maxBoutTicks.Desc>この時間内に勝者が決まらなかった試合は引き分け。全ての賭け金は返還される。</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>この時間が過ぎると、点数の上限に対する割合が小さい方の戦う者が勝つ。割合が同じなら引き分けで、賭け金はすべて返される。</HH.Setting.underworld.pit.maxBoutTicks.Desc>
   <HH.Setting.underworld.pit.yieldHealth>降参する体力</HH.Setting.underworld.pit.yieldHealth>
-  <HH.Setting.underworld.pit.yieldHealth.Desc>戦う者の体力がこの割合を下回ると試合は終わる（死闘の場合を除く）。</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>囚人と動物の試合は、戦う者の体力がこの割合を下回ると終わる。ただし死ぬまでの試合を除く。人どうしの試合は点数で終わる。</HH.Setting.underworld.pit.yieldHealth.Desc>
   <HH.Setting.underworld.scandalCooldownDays>スキャンダルの間隔（日）</HH.Setting.underworld.scandalCooldownDays>
   <HH.Setting.underworld.scandalCooldownDays.Desc>マップごとに、この日数に最大1件までスキャンダルが起こる。</HH.Setting.underworld.scandalCooldownDays.Desc>
   <HH.Setting.underworld.smuggler.inspectChance>税関検査の確率</HH.Setting.underworld.smuggler.inspectChance>
@@ -454,14 +450,6 @@
   <HH.Setting.underworld.smuggler.maxValue.Desc>提供される最大の木箱の市場価値。</HH.Setting.underworld.smuggler.maxValue.Desc>
   <HH.Setting.underworld.smuggler.priceFactor>密輸品の価格</HH.Setting.underworld.smuggler.priceFactor>
   <HH.Setting.underworld.smuggler.priceFactor.Desc>木箱に支払う市場価値の割合。</HH.Setting.underworld.smuggler.priceFactor.Desc>
-  <HH.Setting.underworld.strangerCooldownDays>男が再び話しかけるまでの日数</HH.Setting.underworld.strangerCooldownDays>
-  <HH.Setting.underworld.strangerCooldownDays.Desc>「興味なし」と断られた後、男はこの日数を待ってから再び話しかけてくる。</HH.Setting.underworld.strangerCooldownDays.Desc>
-  <HH.Setting.underworld.strangerMaxAsks>男の勧誘頻度</HH.Setting.underworld.strangerMaxAsks>
-  <HH.Setting.underworld.strangerMaxAsks.Desc>この回数断られると、男は完全に諦める。</HH.Setting.underworld.strangerMaxAsks.Desc>
-  <HH.Setting.underworld.strangerMaxWhispers>男が現れる囁きの上限</HH.Setting.underworld.strangerMaxWhispers>
-  <HH.Setting.underworld.strangerMaxWhispers.Desc>囁きがこの値以下のときにだけ男は現れる。</HH.Setting.underworld.strangerMaxWhispers.Desc>
-  <HH.Setting.underworld.strangerMeanDays>男が現れるまでの日数</HH.Setting.underworld.strangerMeanDays>
-  <HH.Setting.underworld.strangerMeanDays.Desc>男が訪れうる時点の平均間隔（入植地に客か店舗があり、囁きが少ないとき）。</HH.Setting.underworld.strangerMeanDays.Desc>
   <HH.Setting.underworld.whispers.fence>故買屋の取引ごとの囁き</HH.Setting.underworld.whispers.fence>
   <HH.Setting.underworld.whispers.gang>ギャングの訪問ごとの囁き</HH.Setting.underworld.whispers.gang>
   <HH.Setting.underworld.whispers.hunt>狩りごとの囁き</HH.Setting.underworld.whispers.hunt>
@@ -480,7 +468,6 @@
   <HH.SettingCat.Compatibility>互換性</HH.SettingCat.Compatibility>
   <HH.SettingCat.DLCandtraits>DLCと特性</HH.SettingCat.DLCandtraits>
   <HH.SettingCat.Difficulty>難易度</HH.SettingCat.Difficulty>
-  <HH.SettingCat.Discovery>発見</HH.SettingCat.Discovery>
   <HH.SettingCat.Druglounge>ドラッグラウンジ</HH.SettingCat.Druglounge>
   <HH.SettingCat.Effects>効果</HH.SettingCat.Effects>
   <HH.SettingCat.Factionprojects>派閥プロジェクト</HH.SettingCat.Factionprojects>
@@ -544,4 +531,18 @@
   <HH.SettingCat.Wealthandmood>財産と気分</HH.SettingCat.Wealthandmood>
   <HH.SettingCat.Whispers>ささやき</HH.SettingCat.Whispers>
   <HH.SettingCat.Wing>棟</HH.SettingCat.Wing>
+  <HH.Setting.underworld.gang.demandHours>みかじめ料の要求に答える時間</HH.Setting.underworld.gang.demandHours>
+  <HH.Setting.underworld.gang.demandHours.Desc>この時間内に答えなかった要求は、拒否したものとみなされる。</HH.Setting.underworld.gang.demandHours.Desc>
+  <HH.Setting.underworld.gang.firstDays>最初のギャングまでの日数</HH.Setting.underworld.gang.firstDays>
+  <HH.Setting.underworld.gang.firstDays.Desc>最初のギャングは、最初の奥の部屋、故買屋のカウンター、闘技場ができてから、約この日数後(半分から 1.5 倍の幅)に来る。</HH.Setting.underworld.gang.firstDays.Desc>
+  <HH.Setting.underworld.gang.retryHours>失敗したギャングの来訪を再試行するまでの時間</HH.Setting.underworld.gang.retryHours>
+  <HH.Setting.underworld.gang.retryHours.Desc>ギャングが来られないとき(友好的な勢力がない、マップに入る道がない)、次の試行はこの時間後になる。</HH.Setting.underworld.gang.retryHours.Desc>
+  <HH.Setting.underworld.pit.guestPurse>勝った客への賞金</HH.Setting.underworld.pit.guestPurse>
+  <HH.Setting.underworld.pit.guestPurse.Desc>試合に勝った客は、その試合の店の取り分からこの額の銀を受け取る(取り分がなければ賞金もない)。</HH.Setting.underworld.pit.guestPurse.Desc>
+  <HH.Setting.underworld.pit.opponentFee>雇った対戦相手の料金</HH.Setting.underworld.pit.opponentFee>
+  <HH.Setting.underworld.pit.opponentFee.Desc>「対戦相手を呼ぶ」は、一人の戦う者のために闘技場の獣を雇う。植民地がこの料金を払う。まず金庫から、次に備蓄の銀、最後に銀行から。</HH.Setting.underworld.pit.opponentFee.Desc>
+  <HH.Setting.underworld.pit.scoreLimit>試合に負ける点数</HH.Setting.underworld.pit.scoreLimit>
+  <HH.Setting.underworld.pit.scoreLimit.Desc>客、入植者、奴隷との試合は点数で決着する。受けたはずのダメージがこの点数に健康度の倍率をかけた値に達した方が負ける。誰も怪我をしない。</HH.Setting.underworld.pit.scoreLimit.Desc>
+  <HH.Setting.underworld.smuggler.offerHours>密輸者の船が待つ時間</HH.Setting.underworld.smuggler.offerHours>
+  <HH.Setting.underworld.smuggler.offerHours.Desc>この時間内に答えなかった船は去る。他には何も起きない。</HH.Setting.underworld.smuggler.offerHours.Desc>
 </LanguageData>

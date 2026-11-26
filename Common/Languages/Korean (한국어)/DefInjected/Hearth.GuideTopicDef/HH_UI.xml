@@ -27,4 +27,16 @@
   <HH_Guide_YourGuests.steps.1.description>손님의 생각을 보여 주고 기본, 동행, 영입 중에서 고를 수 있습니다.</HH_Guide_YourGuests.steps.1.description>
   <HH_Guide_YourGuests.steps.1.label>손님을 선택하고 손님 탭을 여세요.</HH_Guide_YourGuests.steps.1.label>
   <HH_Guide_YourGuests.steps.2.label>마음에 드는 손님에게 다른 응대 방식을 시도해 보세요.</HH_Guide_YourGuests.steps.2.label>
+  <HH_Guide_BackRoom.description>싸움, 장물아비, 갱단. 전부 선택 사항입니다: 직접 짓기 전에는 아무 일도 일어나지 않습니다.</HH_Guide_BackRoom.description>
+  <HH_Guide_BackRoom.label>뒷방</HH_Guide_BackRoom.label>
+  <HH_Guide_BackRoom.steps.0.description>울타리에 문이 있어도 괜찮습니다. 경기장은 최소 3x3칸이 필요합니다. 표지가 아직 무엇을 기다리는지 알려 줍니다.</HH_Guide_BackRoom.steps.0.description>
+  <HH_Guide_BackRoom.steps.0.label>닫힌 울타리를 짓고 안에 싸움터 표지를 놓으세요.</HH_Guide_BackRoom.steps.0.label>
+  <HH_Guide_BackRoom.steps.1.description>식민지 주민으로 표지를 우클릭하고 "싸움꾼…"에서 싸울 사람에 체크하세요. 혼자일 때는 "상대 부르기"를 쓰면 됩니다. 손님이나 식민지 주민과의 대결은 점수로 겨루니 아무도 다치지 않습니다.</HH_Guide_BackRoom.steps.1.description>
+  <HH_Guide_BackRoom.steps.1.label>첫 대결이 끝나게 두세요.</HH_Guide_BackRoom.steps.1.label>
+  <HH_Guide_BackRoom.steps.2.description>갱단이 그곳에서 만나고 돈을 냅니다. 점잖은 손님이 가끔 우연히 들를 수도 있습니다.</HH_Guide_BackRoom.steps.2.description>
+  <HH_Guide_BackRoom.steps.2.label>문이 전부 뒷방 문인 방을 지으세요.</HH_Guide_BackRoom.steps.2.label>
+  <HH_Guide_BackRoom.steps.3.description>첫 갱단은 첫 뒷방, 장물 카운터, 싸움터가 생기고 약 하루 뒤에 옵니다. 지하세계 페이지에서 시기를 알려 줍니다.</HH_Guide_BackRoom.steps.3.description>
+  <HH_Guide_BackRoom.steps.3.label>첫 갱단 방문을 기다리세요.</HH_Guide_BackRoom.steps.3.label>
+  <HH_Guide_BackRoom.steps.4.description>갱단은 전리품을 여기에 팔고 재고를 사 갑니다. 대금은 자체 금고에서 나갑니다.</HH_Guide_BackRoom.steps.4.description>
+  <HH_Guide_BackRoom.steps.4.label>장물 카운터를 지으세요.</HH_Guide_BackRoom.steps.4.label>
 </LanguageData>

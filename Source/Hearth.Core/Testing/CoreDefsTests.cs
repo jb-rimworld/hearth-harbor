@@ -66,16 +66,14 @@ namespace Hearth.Testing
             var progress = Traverse.Create(mgr).Field("progress").GetValue<Dictionary<ResearchProjectDef, float>>();
             var before = new Dictionary<ResearchProjectDef, float>();
             foreach (var p in projects) before[p] = progress.TryGetValue(p, out var v) ? v : 0f;
-            var wasOpen = projects.Where(p => !p.IsFinished && p.defName != "HH_Cooking_L1" && !ResearchGate.IsGated(p)).ToList();
-            var gatedOpen = projects.Where(p => !p.IsFinished && ResearchGate.IsGated(p)).ToList();
+            var wasOpen = projects.Where(p => !p.IsFinished && p.defName != "HH_Cooking_L1").ToList();
             float oldMode = HSettings.Get("core.researchMode");
             HSettings.Set("core.researchMode", 0f);
             t.Check(!CoreSettings.ResearchOff && ResearchGate.Apply() == 0, "mode Full finishes nothing");
             HSettings.Set("core.researchMode", 1f);
             t.Check(CoreSettings.ResearchOff, "mode Off is read");
             ResearchGate.Apply();
-            t.Check(projects.All(p => ResearchGate.IsGated(p) || p.IsFinished), "mode Off: every project of the trees is finished");
-            t.Check(gatedOpen.All(p => !p.IsFinished), "mode Off: underworld projects stay gated (" + gatedOpen.Count + ")");
+            t.Check(projects.All(p => p.IsFinished), "mode Off: every project of the trees is finished (1.2.0: the underworld's too)");
             t.Check(DishKnowledge_Unlocked(4), "mode Off: kitchen level 4 known");
             // restore the state so later suites see the research as before
             HSettings.Set("core.researchMode", oldMode);

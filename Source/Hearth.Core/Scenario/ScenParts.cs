@@ -92,8 +92,8 @@ namespace Hearth
 
     // ================================================================================================ rules
     /// <summary>
-    /// "Hearth &amp; Harbor rules" (scenario editor, category Rule): module switches, hosting difficulty, content intensity, underworld
-    /// discovery and any number of per-colony settings. Only what is explicitly set here overrides the template for new games; the player
+    /// "Hearth &amp; Harbor rules" (scenario editor, category Rule): module switches, hosting difficulty, content intensity
+    /// and any number of per-colony settings. Only what is explicitly set here overrides the template for new games; the player
     /// can still change everything on the storyteller page. Saved only inside the "hhParts" node (RemovalSafeSave), never in vanilla data.
     /// </summary>
     public class ScenPart_HHRules : ScenPart, IHearthScenarioSeed
@@ -104,6 +104,7 @@ namespace Hearth
         public string content;
         public List<string> modulesOn = new List<string>();
         public List<string> modulesOff = new List<string>();
+        /// <summary>Old element &lt;underworldDiscovered&gt; (until 1.1.x): still parsed so old scenario files load, ignored since 1.2.0 (there is no discovery).</summary>
         public bool underworldDiscovered;
         public List<HHScenSetting> settings = new List<HHScenSetting>();
 
@@ -141,14 +142,13 @@ namespace Hearth
                 int st = ModuleState(m);
                 if (st != 0) p.modules[m] = st == 1;   // direct write: the profile is not live yet, no switch-off side effects
             }
-            if (underworldDiscovered && Modules.Available(ModuleId.Underworld)) { p.UnderworldDiscovered = true; p.modules[ModuleId.Underworld] = true; }
             if (settings != null) foreach (var s in settings) if (s != null && !s.key.NullOrEmpty()) ScenarioSeed.SetSetting(p, s.key, s.value);
         }
 
         /// <summary>A scratch profile carrying exactly the overrides of this part (for the full settings editor).</summary>
         public HearthProfile ToScratch()
         {
-            var p = new HearthProfile { Tier = HasTier ? tier : HearthMod.Template.Profile.Tier, Content = Content ?? HearthMod.Template.Profile.Content, UnderworldDiscovered = underworldDiscovered };
+            var p = new HearthProfile { Tier = HasTier ? tier : HearthMod.Template.Profile.Tier, Content = Content ?? HearthMod.Template.Profile.Content };
             foreach (var m in Modules.All) { int st = ModuleState(m); if (st != 0) p.modules[m] = st == 1; }
             foreach (var s in settings) if (s != null && !s.key.NullOrEmpty()) p.Store.Set(s.key, s.value);
             return p;
@@ -160,7 +160,6 @@ namespace Hearth
             if (Math.Abs(p.Tier - tierBefore) > 0.0001f) tier = p.Tier;
             if (p.Content != contentBefore) content = p.Content.ToString();
             foreach (var m in Modules.All) if (m != ModuleId.Core) SetModuleState(m, p.modules.TryGetValue(m, out bool on) ? (on ? 1 : 2) : 0);
-            underworldDiscovered = p.UnderworldDiscovered;
             settings.Clear();
             foreach (var s in HSettings.All)
                 if (ScenUI.Settable(s) && p.Store.TryGet(s.Key, out float v)) settings.Add(new HHScenSetting(s.Key, v));
@@ -172,7 +171,7 @@ namespace Hearth
             var mods = Modules.All.Where(m => m != ModuleId.Core && Modules.Available(m)).ToList();
             float rh = RowHeight + 4f;
             int modRows = (mods.Count + 1) / 2;
-            float h = rh * (3 + modRows + 1) + 6f;
+            float h = rh * (3 + modRows) + 6f;
             var r = listing.GetScenPartRect(this, h);
             ScenarioSeed.GuardedEdit("Scenario.EditRules", () => DrawRules(r, mods, rh));
         }
@@ -227,15 +226,6 @@ namespace Hearth
                 GUI.color = old;
             }
             y += modRows * rh;
-            // underworld already discovered
-            row = new Rect(r.x, y, r.width, rh - 2f);
-            if (Modules.Available(ModuleId.Underworld))
-            {
-                bool d = underworldDiscovered;
-                Widgets.CheckboxLabeled(row, ScenUI.T("HH.Scen.Rules.Discovered", "Underworld already discovered"), ref d);
-                if (d != underworldDiscovered) { underworldDiscovered = d; if (d) SetModuleState(ModuleId.Underworld, 1); }
-            }
-            y += rh;
             // all other settings
             row = new Rect(r.x, y, r.width, rh - 2f);
             string more = ScenUI.T("HH.Scen.Rules.More", "More settings… ({0} set)", settings.Count);
@@ -267,7 +257,6 @@ namespace Hearth
             var off = Modules.All.Where(m => m != ModuleId.Core && Modules.Available(m) && ModuleState(m) == 2).Select(Modules.Label).ToList();
             if (on.Count > 0) yield return ScenUI.T("HH.Scen.Rules.SumOn", "on: {0}", string.Join(", ", on));
             if (off.Count > 0) yield return ScenUI.T("HH.Scen.Rules.SumOff", "off: {0}", string.Join(", ", off));
-            if (underworldDiscovered && Modules.Available(ModuleId.Underworld)) yield return ScenUI.T("HH.Scen.Rules.SumDiscovered", "the underworld already knows you");
             int shown = 0;
             foreach (var s in settings)
             {
@@ -276,7 +265,7 @@ namespace Hearth
                 yield return ScenUI.SettingLabel(s.key) + ": " + ScenUI.Value(s.key, s.value);
                 shown++;
             }
-            if (!HasTier && !c.HasValue && on.Count == 0 && off.Count == 0 && shown == 0 && !underworldDiscovered) yield return ScenUI.T("HH.Scen.Rules.SumNothing", "everything as in your template");
+            if (!HasTier && !c.HasValue && on.Count == 0 && off.Count == 0 && shown == 0) yield return ScenUI.T("HH.Scen.Rules.SumNothing", "everything as in your template");
         }
 
         protected override ScenPart CopyForEditingInner()
@@ -307,7 +296,7 @@ namespace Hearth
 
         public override int GetHashCode()
         {
-            int h = base.GetHashCode() ^ tier.GetHashCode() ^ (content ?? "").GetHashCode() ^ (underworldDiscovered ? 7 : 0);
+            int h = base.GetHashCode() ^ tier.GetHashCode() ^ (content ?? "").GetHashCode();
             foreach (var m in modulesOn) h = h * 31 + m.GetHashCode();
             foreach (var m in modulesOff) h = h * 37 + m.GetHashCode();
             foreach (var s in settings) if (s?.key != null) h = h * 41 + s.key.GetHashCode() ^ s.value.GetHashCode();

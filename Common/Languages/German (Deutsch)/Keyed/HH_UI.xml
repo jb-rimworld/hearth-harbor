@@ -61,26 +61,19 @@
   <HH.UI.Modules.Content>Inhaltsintensität</HH.UI.Modules.Content>
   <HH.UI.Modules.ContentDesc>Wie düster der optionale Inhalt werden darf. Niemals sexuelle Inhalte, egal was du wählst.</HH.UI.Modules.ContentDesc>
   <HH.UI.Content.Cozy>Gemütlich</HH.UI.Content.Cozy>
-  <HH.UI.Content.Cozy.Tip>Nur milde Geschichten und Folgen.</HH.UI.Content.Cozy.Tip>
-  <HH.UI.Content.Decline>Nein, bei {0} bleiben</HH.UI.Content.Decline>
+  <HH.UI.Content.Cozy.Tip>Nur milde Geschichten und Folgen. Verbirgt die ganze Unterwelt: Hinterzimmer, Kampfgrube, Hehler, Drogenlounge und Banden.</HH.UI.Content.Cozy.Tip>
   <HH.UI.Content.Standard>Standard</HH.UI.Content.Standard>
   <HH.UI.Content.Standard.Tip>Die Voreinstellung. Ecken und Kanten, nichts Fieses.</HH.UI.Content.Standard.Tip>
   <HH.UI.Content.Dark>Düster</HH.UI.Content.Dark>
-  <HH.UI.Content.Dark.Tip>Verbrechen, Schulden und Gewalt können auftauchen.</HH.UI.Content.Dark.Tip>
+  <HH.UI.Content.Dark.Tip>Baut auf Standard auf: Gefangene können auf Leben und Tod kämpfen, härter verhört und (mit passender Ideologie) gejagt werden, und eine Organklinik und das dunkle Menü werden möglich.</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>Grimmig</HH.UI.Content.Grim>
-  <HH.UI.Content.Grim.Tip>Alles, was das Spiel bietet, in voller Länge.</HH.UI.Content.Grim.Tip>
-  <HH.UI.Underworld.Discover>Im Spiel entdecken</HH.UI.Underworld.Discover>
-  <HH.UI.Underworld.On>An</HH.UI.Underworld.On>
-  <HH.UI.Underworld.Off>Aus</HH.UI.Underworld.Off>
-  <HH.UI.Underworld.Discover.Tip>Unter dem Radar, bis ein zwielichtiger Fremder in deinem Spiel auftaucht.</HH.UI.Underworld.Discover.Tip>
-  <HH.UI.Underworld.On.Tip>Von Anfang an verfügbar.</HH.UI.Underworld.On.Tip>
-  <HH.UI.Underworld.Off.Tip>Nie verfügbar. Auch der zwielichtige Fremde bleibt weg.</HH.UI.Underworld.Off.Tip>
+  <HH.UI.Content.Grim.Tip>Baut auf Düster auf: Gefangene zu jagen braucht keine passende Ideologie, und Organkäufer geben Bestellungen mit Fristen auf.</HH.UI.Content.Grim.Tip>
   <HH.UI.ModuleDesc.Inn>Gäste, Gästebetten, Flügel, Rezeption, Reisende und Anwerben.</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>Geschäftsschilder, Läden, Automaten, Märkte, Restaurants und Gerichte.</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>Tische, Spielautomaten, Chips und die Risiken des Glücksspiels für Gäste und Kolonisten.</HH.UI.ModuleDesc.Casino>
   <HH.UI.ModuleDesc.Wellness>Spa, Sauna und Reha-Aufenthalte.</HH.UI.ModuleDesc.Wellness>
   <HH.UI.ModuleDesc.CityLife>Kino, Einkaufszentrum, Salon, Tempel, Taxis und Sicherheitsdienst.</HH.UI.ModuleDesc.CityLife>
-  <HH.UI.ModuleDesc.Underworld>Ein diskretes Hinterzimmer, eine Kampfgrube und ein Hehler. Im Spiel zu finden, nie aufgezwungen.</HH.UI.ModuleDesc.Underworld>
+  <HH.UI.ModuleDesc.Underworld>Ein diskretes Hinterzimmer, eine Kampfgrube und ein Hehler. Nichts davon passiert, bevor du es baust.</HH.UI.ModuleDesc.Underworld>
   <HH.UI.ModuleDesc.Bank>Silverline: Konten, Zahlungen, Geldautomaten, Geldanlagen, Kredite, Versicherungen und Lotterie.</HH.UI.ModuleDesc.Bank>
   <HH.UI.ModuleDesc.AiFlavour>Optionale Stimmungstexte, die eine KI über ein Relay schreibt. Standardmäßig aus.</HH.UI.ModuleDesc.AiFlavour>
   <HH.UI.Diff.Title>Gastgeber-Schwierigkeit</HH.UI.Diff.Title>
@@ -308,7 +301,7 @@
   <HH.Setting.core.noResearchGating>Keine Forschungssperre</HH.Setting.core.noResearchGating>
   <HH.Setting.core.noResearchGating.Desc>Alles in den Hearth &amp; Harbor- und Silverline-Bäumen ist von Anfang an verfügbar.</HH.Setting.core.noResearchGating.Desc>
   <HH.Setting.core.peacefulUnderworld>Friedliche Unterwelt</HH.Setting.core.peacefulUnderworld>
-  <HH.Setting.core.peacefulUnderworld.Desc>Dunkle Betriebe laufen ohne Gewalt: keine Kampfgrube, keine Verhöre, keine Menschenjagd, keine Klinik, keine Schutzgelder. Hinterzimmer, Hehler und Lounge bleiben.</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>Dunkle Betriebe laufen ohne Gewalt. Das schließt die Kampfgrube ganz, auch Kämpfe um Punkte, und beendet Verhöre, Menschenjagd, die Organklinik und Schutzgeld. Hinterzimmer, Hehler und Drogenlounge bleiben.</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.showMath>Zeig mir die Mathematik</HH.Setting.core.showMath>
   <HH.Setting.core.showMath.Desc>Zeigt überall Nerd-Einstellungen und Formeln.</HH.Setting.core.showMath.Desc>
   <HH.Setting.core.perfMode>Leistungsmodus</HH.Setting.core.perfMode>
@@ -334,5 +327,5 @@
   <HH.UI.Page.Sub.city>Kino, Salon, Galerie, Park, Taxi und Sicherheit: was gebaut ist und was es einbringt.</HH.UI.Page.Sub.city>
   <HH.UI.Page.Sub.guests>Alle, die in deinem Gasthof übernachten oder ihn besuchen. Klicke auf eine Zeile, um zum Gast zu springen; klicke auf die Betreuungszelle, um sie zu ändern.</HH.UI.Page.Sub.guests>
   <HH.UI.Page.Sub.overview>Der heutige Tag auf einen Blick: Gäste, Einnahmen und der Zustand jedes Geschäfts.</HH.UI.Page.Sub.overview>
-  <HH.UI.Page.Sub.underworld>Gerüchte, Ankunftsgewichte und die Einnahmen der dunklen Seite.</HH.UI.Page.Sub.underworld>
+  <HH.UI.Page.Sub.underworld>Was jeder Teil des Hinterzimmers gerade tut, Angebote, die auf dich warten, Flüsterruf und Einnahmen.</HH.UI.Page.Sub.underworld>
 </LanguageData>

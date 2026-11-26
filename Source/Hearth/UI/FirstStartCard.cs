@@ -57,7 +57,6 @@ namespace Hearth.Shell
             var prof = HearthProfile.Current; if (prof == null) return;
             preset = p;
             foreach (var m in Modules.All.Where(m => m != ModuleId.Core)) prof.SetModule(m, Modules.DefaultOn(m));
-            prof.UnderworldDiscovered = false;
             switch (p)
             {
                 case HostingPreset.JustWork: prof.Tier = 3f; tutorial = TutorialMode.FullFirstTime; break;
@@ -169,7 +168,7 @@ namespace Hearth.Shell
 
             // modules
             y += UiStyle.Section(0f, y, w, "HH.UI.Card.Modules".Translate());
-            var mods = Modules.All.Where(m => m != ModuleId.Core && m != ModuleId.Underworld && m != ModuleId.AiFlavour && Modules.Available(m)).ToList();
+            var mods = Modules.All.Where(m => m != ModuleId.Core && m != ModuleId.AiFlavour && Modules.Available(m)).ToList();
             int mcols = w >= 700f ? 3 : 2;
             float mw = w / mcols;
             for (int i = 0; i < mods.Count; i++)
@@ -182,19 +181,6 @@ namespace Hearth.Shell
                 if (nb != on) { prof.SetModule(m, nb); preset = null; }
             }
             y += ((mods.Count + mcols - 1) / mcols) * 32f + 6f;
-            if (Modules.Available(ModuleId.Underworld))
-            {
-                string uwl = Modules.Label(ModuleId.Underworld);
-                float lw = Mathf.Clamp(HUI.TextW(uwl) + 16f, 140f, 260f);
-                UiStyle.LabelColored(new Rect(0f, y, lw, 32f), uwl, Color.white, TextAnchor.MiddleLeft);
-                bool on = prof.ModuleOn(ModuleId.Underworld); int state = !on ? 2 : (prof.UnderworldDiscovered ? 1 : 0);
-                string[] names = { "HH.UI.Underworld.Discover", "HH.UI.Underworld.On", "HH.UI.Underworld.Off" };
-                float cw = Mathf.Min(150f, (w - lw - 8f) / 3f - 4f);
-                for (int i = 0; i < 3; i++)
-                    if (UiStyle.Chip(new Rect(lw + i * (cw + 4f), y, cw, 32f), names[i].Translate(), state == i, (names[i] + ".Tip").Translate()))
-                    { prof.SetModule(ModuleId.Underworld, i != 2); prof.UnderworldDiscovered = i == 1; preset = null; }
-                y += 40f;
-            }
             string bankHint = "HH.UI.Modules.BankHint".Translate();
             float bh = HUI.TextH(bankHint, w, GameFont.Tiny);
             UiStyle.LabelColored(new Rect(0f, y, w, bh), bankHint, UiStyle.DimGrey, TextAnchor.UpperLeft, GameFont.Tiny);

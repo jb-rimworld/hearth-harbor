@@ -17,8 +17,6 @@
   <HH.Enum.StaffRule.AlwaysRequired>Always required</HH.Enum.StaffRule.AlwaysRequired>
   <HH.Enum.StaffRule.NeverRequired>Never required</HH.Enum.StaffRule.NeverRequired>
   <HH.Enum.StaffRule.PerVenueType>Per venue type</HH.Enum.StaffRule.PerVenueType>
-  <HH.Enum.UnderworldMode.AlwaysOn>Always on</HH.Enum.UnderworldMode.AlwaysOn>
-  <HH.Enum.UnderworldMode.DiscoverInGame>Discover in game</HH.Enum.UnderworldMode.DiscoverInGame>
   <HH.Setting.bank.accountBeta>Account interest exponent (not used since 1.1.0)</HH.Setting.bank.accountBeta>
   <HH.Setting.bank.accountBeta.Desc>Replaced by 'Account interest: share of the market return'. Kept so older save games load; changing it does nothing.</HH.Setting.bank.accountBeta.Desc>
   <HH.Setting.bank.accountShare>Account interest: share of the market return</HH.Setting.bank.accountShare>
@@ -402,16 +400,22 @@
   <HH.Setting.underworld.fence.goodwillHit.Desc>Before the difficulty cap of your tier.</HH.Setting.underworld.fence.goodwillHit.Desc>
   <HH.Setting.underworld.fence.sellPercent>Fence sells at</HH.Setting.underworld.fence.sellPercent>
   <HH.Setting.underworld.fence.sellPercent.Desc>Share of the market value shady buyers pay.</HH.Setting.underworld.fence.sellPercent.Desc>
+  <HH.Setting.underworld.gang.demandHours>Hours to answer a protection demand</HH.Setting.underworld.gang.demandHours>
+  <HH.Setting.underworld.gang.demandHours.Desc>A demand you do not answer within this time counts as a refusal.</HH.Setting.underworld.gang.demandHours.Desc>
   <HH.Setting.underworld.gang.feeMax>Back room fee (highest)</HH.Setting.underworld.gang.feeMax>
   <HH.Setting.underworld.gang.feeMin>Back room fee (lowest)</HH.Setting.underworld.gang.feeMin>
   <HH.Setting.underworld.gang.feeMin.Desc>What a gang member pays for the back room.</HH.Setting.underworld.gang.feeMin.Desc>
+  <HH.Setting.underworld.gang.firstDays>Days until the first gang</HH.Setting.underworld.gang.firstDays>
+  <HH.Setting.underworld.gang.firstDays.Desc>The first gang comes about this many days (half to one and a half times) after the first back room, fence counter or fight pit exists.</HH.Setting.underworld.gang.firstDays.Desc>
   <HH.Setting.underworld.gang.intervalDays>Days between gang visits</HH.Setting.underworld.gang.intervalDays>
   <HH.Setting.underworld.gang.intervalDays.Desc>Average time between gang visits once the back room, fight pit or fence exists.</HH.Setting.underworld.gang.intervalDays.Desc>
   <HH.Setting.underworld.gang.intimidateChance>Chance a gang demands protection money</HH.Setting.underworld.gang.intimidateChance>
-  <HH.Setting.underworld.gang.intimidateChance.Desc>Follows the difficulty slider; Standard Room and easier never forces anything on you but a dialog you can refuse.</HH.Setting.underworld.gang.intimidateChance.Desc>
+  <HH.Setting.underworld.gang.intimidateChance.Desc>Follows the difficulty slider. On Standard Room and easier it is never more than an offer you can refuse.</HH.Setting.underworld.gang.intimidateChance.Desc>
   <HH.Setting.underworld.gang.prisonAccess>Gangs may visit the prison</HH.Setting.underworld.gang.prisonAccess>
   <HH.Setting.underworld.gang.prisonAccess.Desc>Allows the holding cells tour (questioning of prisoners) for gang guests. Off by default; prisons are closed to every guest otherwise.</HH.Setting.underworld.gang.prisonAccess.Desc>
   <HH.Setting.underworld.gang.protectionFee>Protection money demanded</HH.Setting.underworld.gang.protectionFee>
+  <HH.Setting.underworld.gang.retryHours>Hours before a failed gang visit is tried again</HH.Setting.underworld.gang.retryHours>
+  <HH.Setting.underworld.gang.retryHours.Desc>When a gang cannot come (no friendly faction, no way onto the map), the next try is this many hours later.</HH.Setting.underworld.gang.retryHours.Desc>
   <HH.Setting.underworld.gang.sizeMax>Largest gang</HH.Setting.underworld.gang.sizeMax>
   <HH.Setting.underworld.gang.tourFee>Holding cells tour fee</HH.Setting.underworld.gang.tourFee>
   <HH.Setting.underworld.gang.tourFee.Desc>Paid by a gang member for questioning a prisoner for an hour.</HH.Setting.underworld.gang.tourFee.Desc>
@@ -424,8 +428,6 @@
   <HH.Setting.underworld.hunt.quarryHours.Desc>A prisoner who survives this long or reaches the fence line is free.</HH.Setting.underworld.hunt.quarryHours.Desc>
   <HH.Setting.underworld.lounge.price>Price of a session</HH.Setting.underworld.lounge.price>
   <HH.Setting.underworld.lounge.price.Desc>What a guest pays in the drug lounge. Guests only take what their ideology allows.</HH.Setting.underworld.lounge.price.Desc>
-  <HH.Setting.underworld.mode>How the underworld appears</HH.Setting.underworld.mode>
-  <HH.Setting.underworld.mode.Desc>Discover in game: a shady stranger asks if you have a back room, and only a yes opens the dark side. Always on: it is open from the start. (Off is the module switch; Cozy content intensity hides it completely.)</HH.Setting.underworld.mode.Desc>
   <HH.Setting.underworld.organ.orderDays>Days to deliver an order</HH.Setting.underworld.organ.orderDays>
   <HH.Setting.underworld.organ.orderPremium>Premium on ordered organs</HH.Setting.underworld.organ.orderPremium>
   <HH.Setting.underworld.organ.orderPremium.Desc>Grim only: a ready organ delivered within the deadline pays this many times the normal price.</HH.Setting.underworld.organ.orderPremium.Desc>
@@ -437,14 +439,20 @@
   <HH.Setting.underworld.pit.betMin.Desc>Guests bet at least this much silver.</HH.Setting.underworld.pit.betMin.Desc>
   <HH.Setting.underworld.pit.fairRatio>Matchmaking fairness</HH.Setting.underworld.pit.fairRatio>
   <HH.Setting.underworld.pit.fairRatio.Desc>The stronger fighter may have at most this many times the combat power of the weaker one.</HH.Setting.underworld.pit.fairRatio.Desc>
+  <HH.Setting.underworld.pit.guestPurse>Purse for a winning guest</HH.Setting.underworld.pit.guestPurse>
+  <HH.Setting.underworld.pit.guestPurse.Desc>A guest who wins a bout gets this much silver, paid out of the house take of that bout (no take, no purse).</HH.Setting.underworld.pit.guestPurse.Desc>
   <HH.Setting.underworld.pit.houseCut>House cut on bets</HH.Setting.underworld.pit.houseCut>
   <HH.Setting.underworld.pit.houseCut.Desc>The share of the betting pool the house keeps (totalisator).</HH.Setting.underworld.pit.houseCut.Desc>
   <HH.Setting.underworld.pit.intervalHours>Hours between bouts</HH.Setting.underworld.pit.intervalHours>
   <HH.Setting.underworld.pit.intervalHours.Desc>A fight pit with enough fighters and spectators starts a bout this often.</HH.Setting.underworld.pit.intervalHours.Desc>
   <HH.Setting.underworld.pit.maxBoutTicks>Longest bout (ticks)</HH.Setting.underworld.pit.maxBoutTicks>
-  <HH.Setting.underworld.pit.maxBoutTicks.Desc>A bout nobody wins within this time is a draw: all stakes are returned.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.maxBoutTicks.Desc>After this time the fighter with the smaller share of his point limit wins. Equal shares are a draw, and all stakes are returned.</HH.Setting.underworld.pit.maxBoutTicks.Desc>
+  <HH.Setting.underworld.pit.opponentFee>Fee for a hired opponent</HH.Setting.underworld.pit.opponentFee>
+  <HH.Setting.underworld.pit.opponentFee.Desc>"Call an opponent" hires a pit beast for a lone fighter. The colony pays this fee: from the till first, then silver in stock, then the bank.</HH.Setting.underworld.pit.opponentFee.Desc>
+  <HH.Setting.underworld.pit.scoreLimit>Points to lose a bout</HH.Setting.underworld.pit.scoreLimit>
+  <HH.Setting.underworld.pit.scoreLimit.Desc>Bouts with a guest, colonist or slave are fought for points: a fighter loses when the damage he would have taken reaches this many points times his health scale. Nobody is hurt.</HH.Setting.underworld.pit.scoreLimit.Desc>
   <HH.Setting.underworld.pit.yieldHealth>Yield at health</HH.Setting.underworld.pit.yieldHealth>
-  <HH.Setting.underworld.pit.yieldHealth.Desc>A bout ends when a fighter drops below this share of health, unless it is to the death.</HH.Setting.underworld.pit.yieldHealth.Desc>
+  <HH.Setting.underworld.pit.yieldHealth.Desc>Bouts of prisoners and animals end when a fighter drops below this share of health, unless they are to the death. Bouts with people end on points.</HH.Setting.underworld.pit.yieldHealth.Desc>
   <HH.Setting.underworld.scandalCooldownDays>Days between scandals</HH.Setting.underworld.scandalCooldownDays>
   <HH.Setting.underworld.scandalCooldownDays.Desc>At most one scandal per map in this many days.</HH.Setting.underworld.scandalCooldownDays.Desc>
   <HH.Setting.underworld.smuggler.inspectChance>Chance of an inspection</HH.Setting.underworld.smuggler.inspectChance>
@@ -453,16 +461,10 @@
   <HH.Setting.underworld.smuggler.intervalDays.Desc>Average time between night landings at a smuggler's dock.</HH.Setting.underworld.smuggler.intervalDays.Desc>
   <HH.Setting.underworld.smuggler.maxValue>Largest crate</HH.Setting.underworld.smuggler.maxValue>
   <HH.Setting.underworld.smuggler.maxValue.Desc>Market value of the biggest crate offered.</HH.Setting.underworld.smuggler.maxValue.Desc>
+  <HH.Setting.underworld.smuggler.offerHours>Hours a smuggler's boat waits</HH.Setting.underworld.smuggler.offerHours>
+  <HH.Setting.underworld.smuggler.offerHours.Desc>A boat you do not answer within this time leaves; nothing else happens.</HH.Setting.underworld.smuggler.offerHours.Desc>
   <HH.Setting.underworld.smuggler.priceFactor>Contraband price</HH.Setting.underworld.smuggler.priceFactor>
   <HH.Setting.underworld.smuggler.priceFactor.Desc>Share of the market value you pay for a crate.</HH.Setting.underworld.smuggler.priceFactor.Desc>
-  <HH.Setting.underworld.strangerCooldownDays>Days before he asks again</HH.Setting.underworld.strangerCooldownDays>
-  <HH.Setting.underworld.strangerCooldownDays.Desc>After "Not interested" the stranger waits this many days before he asks again.</HH.Setting.underworld.strangerCooldownDays.Desc>
-  <HH.Setting.underworld.strangerMaxAsks>How often he asks</HH.Setting.underworld.strangerMaxAsks>
-  <HH.Setting.underworld.strangerMaxAsks.Desc>After this many refusals the stranger gives up for good.</HH.Setting.underworld.strangerMaxAsks.Desc>
-  <HH.Setting.underworld.strangerMaxWhispers>Highest Whispers for the stranger</HH.Setting.underworld.strangerMaxWhispers>
-  <HH.Setting.underworld.strangerMaxWhispers.Desc>He only turns up while your Whispers are at or below this value.</HH.Setting.underworld.strangerMaxWhispers.Desc>
-  <HH.Setting.underworld.strangerMeanDays>Days until the stranger shows up</HH.Setting.underworld.strangerMeanDays>
-  <HH.Setting.underworld.strangerMeanDays.Desc>Average number of days between the moments the stranger may come (once the colony has guests or a venue, and your Whispers are low).</HH.Setting.underworld.strangerMeanDays.Desc>
   <HH.Setting.underworld.whispers.fence>Whispers per fence deal</HH.Setting.underworld.whispers.fence>
   <HH.Setting.underworld.whispers.gang>Whispers per gang visit</HH.Setting.underworld.whispers.gang>
   <HH.Setting.underworld.whispers.hunt>Whispers per hunt</HH.Setting.underworld.whispers.hunt>
@@ -481,7 +483,6 @@
   <HH.SettingCat.Compatibility>Compatibility</HH.SettingCat.Compatibility>
   <HH.SettingCat.DLCandtraits>DLC and traits</HH.SettingCat.DLCandtraits>
   <HH.SettingCat.Difficulty>Difficulty</HH.SettingCat.Difficulty>
-  <HH.SettingCat.Discovery>Discovery</HH.SettingCat.Discovery>
   <HH.SettingCat.Druglounge>Drug lounge</HH.SettingCat.Druglounge>
   <HH.SettingCat.Effects>Effects</HH.SettingCat.Effects>
   <HH.SettingCat.Factionprojects>Faction projects</HH.SettingCat.Factionprojects>

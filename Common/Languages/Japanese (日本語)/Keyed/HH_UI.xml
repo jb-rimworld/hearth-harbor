@@ -61,25 +61,19 @@
   <HH.UI.Modules.Content>コンテンツの濃さ</HH.UI.Modules.Content>
   <HH.UI.Modules.ContentDesc>任意のコンテンツがどこまで暗くなるかを決めます。何を選んでも、性的な内容は一切含まれません。</HH.UI.Modules.ContentDesc>
   <HH.UI.Content.Cozy>のどか</HH.UI.Content.Cozy>
-  <HH.UI.Content.Cozy.Tip>穏やかな話と結果だけです。</HH.UI.Content.Cozy.Tip>
+  <HH.UI.Content.Cozy.Tip>穏やかな話と結果だけです。裏社会がすべて隠れます。奥の部屋、闘技場、故買屋、ドラッグラウンジ、ギャング。</HH.UI.Content.Cozy.Tip>
   <HH.UI.Content.Standard>標準</HH.UI.Content.Standard>
   <HH.UI.Content.Standard.Tip>初期値です。ざらついた場面はあっても、いやな内容はありません。</HH.UI.Content.Standard.Tip>
   <HH.UI.Content.Dark>ダーク</HH.UI.Content.Dark>
-  <HH.UI.Content.Dark.Tip>犯罪、借金、暴力が現れることがあります。</HH.UI.Content.Dark.Tip>
+  <HH.UI.Content.Dark.Tip>「標準」に加えて、囚人が死ぬまで戦ったり、より厳しく尋問されたり、(適合するイデオロギーがあれば)狩られたりし、臓器診療所とダークなメニューが使えるようになります。</HH.UI.Content.Dark.Tip>
   <HH.UI.Content.Grim>陰惨</HH.UI.Content.Grim>
-  <HH.UI.Content.Grim.Tip>ゲームが提供するすべてを、そのまま含みます。</HH.UI.Content.Grim.Tip>
-  <HH.UI.Underworld.Discover>ゲーム内で発見</HH.UI.Underworld.Discover>
-  <HH.UI.Underworld.On>オン</HH.UI.Underworld.On>
-  <HH.UI.Underworld.Off>オフ</HH.UI.Underworld.Off>
-  <HH.UI.Underworld.Discover.Tip>怪しげな見知らぬ人物がゲームに現れるまで、表には出てきません。</HH.UI.Underworld.Discover.Tip>
-  <HH.UI.Underworld.On.Tip>最初から利用できます。</HH.UI.Underworld.On.Tip>
-  <HH.UI.Underworld.Off.Tip>決して利用できません。怪しげな見知らぬ人物も現れません。</HH.UI.Underworld.Off.Tip>
+  <HH.UI.Content.Grim.Tip>「ダーク」に加えて、囚人狩りに適合するイデオロギーが不要になり、臓器の買い手が期限付きの注文を出します。</HH.UI.Content.Grim.Tip>
   <HH.UI.ModuleDesc.Inn>宿泊客、客室ベッド、棟、受付、旅人、勧誘。</HH.UI.ModuleDesc.Inn>
   <HH.UI.ModuleDesc.ShopsFood>店の看板、商店、自販機、市場、飲食店、料理。</HH.UI.ModuleDesc.ShopsFood>
   <HH.UI.ModuleDesc.Casino>テーブル、スロットマシン、チップ、宿泊客とコロニストのギャンブルの危険。</HH.UI.ModuleDesc.Casino>
   <HH.UI.ModuleDesc.Wellness>スパ、サウナ、リハビリ滞在。</HH.UI.ModuleDesc.Wellness>
   <HH.UI.ModuleDesc.CityLife>映画館、ショッピングモール、美容室、神殿、タクシー、警備。</HH.UI.ModuleDesc.CityLife>
-  <HH.UI.ModuleDesc.Underworld>目立たない奥の部屋、闘技場、そして故買屋。ゲーム内で見つかり、強制されることはありません。</HH.UI.ModuleDesc.Underworld>
+  <HH.UI.ModuleDesc.Underworld>目立たない奥の部屋、闘技場、故買屋。建てるまで何も起きません。</HH.UI.ModuleDesc.Underworld>
   <HH.UI.ModuleDesc.Bank>Silverline：口座、支払い、ATM、投資、融資、保険、宝くじ。</HH.UI.ModuleDesc.Bank>
   <HH.UI.ModuleDesc.AiFlavour>中継サーバーを通じて AI が書いた、任意の風味テキストです。初期状態ではオフです。</HH.UI.ModuleDesc.AiFlavour>
   <HH.UI.Diff.Title>開催難易度</HH.UI.Diff.Title>
@@ -294,7 +288,6 @@
   <HH.UI.Overview.Arrivals>到着予定、次の24時間: {0}、1日あたり約 {1} 組を見込む。</HH.UI.Overview.Arrivals>
   <HH.UI.Overview.Arrivals.None>まだ予定なし</HH.UI.Overview.Arrivals.None>
   <HH.UI.Overview.Arrivals.Planned>{0} 組を予定（約 {1} 名）</HH.UI.Overview.Arrivals.Planned>
-  <HH.UI.Content.Decline>いいえ、{0} を続ける</HH.UI.Content.Decline>
   <HH.UI.Diff.Ladder>裏社会: 事件ごとの罰則の上限</HH.UI.Diff.Ladder>
   <HH.UI.Diff.WarnHard>「過剰予約」からは、裏社会の事件が本物の好意、名声、銀を失わせることがある（下の上限を参照）。</HH.UI.Diff.WarnHard>
   <HH.UI.Feel.4>裏社会の事件で、好意、名声、罰金を失い始める。</HH.UI.Feel.4>
@@ -311,7 +304,7 @@
   <HH.Setting.core.neverDie.Desc>ゲストは殺されず、倒れるだけになる。誰かが手当てするまで、倒れたまま生き続ける。</HH.Setting.core.neverDie.Desc>
   <HH.Setting.core.infiniteMoney.Desc>この設定がオンの間に到着したゲストは、底なしの財布を持つ。ゲストの金の係数は彼らには効かない。</HH.Setting.core.infiniteMoney.Desc>
   <HH.Setting.core.ironBank.Desc>難易度に関係なく、取り立ては必ず最も厳しい段階まで上がる。誰も分割払いを黙って延ばしてはくれない。</HH.Setting.core.ironBank.Desc>
-  <HH.Setting.core.peacefulUnderworld.Desc>暗い店は暴力なしで営業する: 闘技場も、尋問も、人狩りも、診療所も、みかじめ料もない。奥の部屋、故買屋、麻薬の溜まり場は残る。</HH.Setting.core.peacefulUnderworld.Desc>
+  <HH.Setting.core.peacefulUnderworld.Desc>ダークな店は暴力なしで営業する。闘技場は点数で決着する試合も含めて完全に閉じ、尋問、人間狩り、臓器診療所、みかじめ料も止まる。奥の部屋、故買屋、ドラッグラウンジは残る。</HH.Setting.core.peacefulUnderworld.Desc>
   <HH.Setting.core.perfMode.Desc>ゲストの計画と部屋の確認が半分の頻度になる。遅いパソコンに効く。ゲストの反応が少し遅れることがある。</HH.Setting.core.perfMode.Desc>
   <HH.Kitchen.Cookbook.ColCuisine>料理系統</HH.Kitchen.Cookbook.ColCuisine>
   <HH.Kitchen.Cookbook.ColDish>料理</HH.Kitchen.Cookbook.ColDish>
@@ -334,5 +327,5 @@
   <HH.UI.Page.Sub.city>映画館、サロン、ギャラリー、公園、タクシー、警備: 建てられているものと、その収益。</HH.UI.Page.Sub.city>
   <HH.UI.Page.Sub.guests>宿に泊まっている、または訪れているすべての人。行をクリックすると客の場所へ移動し、対応の欄をクリックすると対応を変えられます。</HH.UI.Page.Sub.guests>
   <HH.UI.Page.Sub.overview>今日の概要: 客、売上、各施設の状態。</HH.UI.Page.Sub.overview>
-  <HH.UI.Page.Sub.underworld>ささやき、到着の重み付け、そして裏社会の売上。</HH.UI.Page.Sub.underworld>
+  <HH.UI.Page.Sub.underworld>奥の部屋の各部分が何をしているか、あなたの返事を待つ申し出、囁き、売上。</HH.UI.Page.Sub.underworld>
 </LanguageData>
