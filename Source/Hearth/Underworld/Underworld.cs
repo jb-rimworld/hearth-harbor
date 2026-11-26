@@ -182,6 +182,20 @@ namespace Hearth.Underworld
             return p.ageTracker == null || p.ageTracker.AgeBiologicalYears < AdultAge;
         }
 
+        /// <summary>Generates a pawn of <paramref name="req"/> who is no minor (<see cref="IsMinor"/>), trying a few times; a minor is discarded at once.
+        /// Null when every try gave a minor (or <paramref name="accept"/> refused him). Gangs and hunting parties use it so a party keeps its size.</summary>
+        public static Pawn GenerateAdult(PawnGenerationRequest req, Func<Pawn, bool> accept = null, int tries = 4)
+        {
+            for (int i = 0; i < tries; i++)
+            {
+                var p = PawnGenerator.GeneratePawn(req);
+                if (p == null) continue;
+                if (!IsMinor(p) && (accept == null || accept(p))) return p;
+                Find.WorldPawns.PassToWorld(p, RimWorld.Planet.PawnDiscardDecideMode.Discard);
+            }
+            return null;
+        }
+
         public static bool Home(Map m) => m != null && m.IsPlayerHome;
         public static IEnumerable<Map> HomeMaps => Find.Maps.Where(m => m.IsPlayerHome);
 

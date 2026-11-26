@@ -154,8 +154,8 @@ namespace Hearth.Underworld
             for (int i = 0; i < n; i++)
             {
                 var kind = faction.RandomPawnKind(); if (kind == null) continue;
-                var p = PawnGenerator.GeneratePawn(new PawnGenerationRequest(kind, faction, PawnGenerationContext.NonPlayer, map.Tile, canGeneratePawnRelations: false));
-                if (Underworld.IsMinor(p) || p.WorkTagIsDisabled(WorkTags.Violent)) { Find.WorldPawns.PassToWorld(p, PawnDiscardDecideMode.Discard); continue; }
+                var p = Underworld.GenerateAdult(new PawnGenerationRequest(kind, faction, PawnGenerationContext.NonPlayer, map.Tile, canGeneratePawnRelations: false), x => !x.WorkTagIsDisabled(WorkTags.Violent));
+                if (p == null) continue;
                 if (weapon != null) { p.equipment.DestroyAllEquipment(); p.equipment.AddEquipment((ThingWithComps)ThingMaker.MakeThing(weapon, weapon.MadeFromStuff ? GenStuff.RandomStuffFor(weapon) : null)); }
                 pawns.Add(p);
             }
