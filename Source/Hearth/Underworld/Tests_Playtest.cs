@@ -29,7 +29,9 @@ namespace Hearth.Underworld
 
         // ---- transcript --------------------------------------------------------------------------------------------------
         static readonly List<string> lines = new List<string>();
-        static string outPath, lang;
+        static string outPath, lang, tag;
+        /// <summary>Silver the colony has in a stockpile at the start (env HH_PLAYTEST_SILVER, default 0: the commenter's colony with nothing at all).</summary>
+        static int silverN;
         static void R(string s) { lines.Add(s); Log.Message("[HHPLAY] " + s); }
         static void H(string s) { lines.Add(""); lines.Add("## " + s); lines.Add(""); Log.Message("[HHPLAY] ## " + s); }
         static void Flush()
@@ -201,7 +203,60 @@ namespace Hearth.Underworld
             foreach (var s in v.Steps) R("    - [" + (s.done ? "x" : " ") + "] " + s.step.label + (s.step.description.NullOrEmpty() ? "" : " :: " + One(s.step.description)));
         }
 
-        static void Shot(string name) => Hearth.Shell.Tests.UiTestUtil.Shot((lang ?? "xx") + "_" + name);
+        static void Shot(string name) => Hearth.Shell.Tests.UiTestUtil.Shot((tag ?? "xx") + "_" + name + "_v2");
+
+        static string Funds(Map map)
+        {
+            UwPay.ForgetFunds();
+            return UwPay.ColonyFunds(map).ToStringShort() + " (till " + UwKit.Till(map).ToStringShort() + ", silver in stock " + Hearth.Dlc.ColonySilver.CountStock(map)
+                + ", all silver on the map " + AllSilver(map) + ", bank " + Silverline.BankApi.ColonyBalance.ToStringShort() + ")";
+        }
+        static int AllSilver(Map map) { int n = 0; foreach (var s in map.listerThings.ThingsOfDef(ThingDefOf.Silver)) n += s.stackCount; return n; }
+
+        /// <summary>Puts <paramref name="n"/> silver onto a free cell of the stockpile (not forbidden), as hauled stock.</summary>
+        static Thing StockIn(Zone_Stockpile zone, Map map, int n)
+        {
+            if (zone == null || n <= 0) return null;
+            foreach (var c in zone.Cells)
+            {
+                if (c.GetFirstItem(map) != null) continue;
+                var s = ThingMaker.MakeThing(ThingDefOf.Silver); s.stackCount = n;
+                var placed = GenSpawn.Spawn(s, c, map); placed.SetForbidden(false, false); UwKit.Track(placed); UwPay.ForgetFunds();
+                return placed;
+            }
+            return null;
+        }
+
+        /// <summary>Lets a running bout play out and writes every change of phase, status line or job (the player watching).</summary>
+        static IEnumerable<int> Watch(TestContext t, CompFightPit pit, Pawn col, FightBout bout, int[] waitedOut)
+        {
+            string lastStatus = null; var lastPhase = (FightBout.Phase)(-1); string lastJob = null;
+            int waited = 0;
+            while (!bout.Finished && waited < 20000)
+            {
+                string st = pit.StatusLine(); string job = col.CurJobDef?.defName;
+                if (st != lastStatus || bout.phase != lastPhase || job != lastJob)
+                {
+                    R("- tick +" + waited + ": phase " + bout.phase + ", marker status `" + One(st) + "`, " + col.LabelShortCap + " job " + job + ", points " + bout.ScoreA.ToString("0") + "/" + bout.LimitA.ToString("0") + " vs " + bout.ScoreB.ToString("0") + "/" + bout.LimitB.ToString("0"));
+                    lastStatus = st; lastPhase = bout.phase; lastJob = job;
+                }
+                Drain(t);
+                yield return 30; waited += 30;
+            }
+            Drain(t);
+            waitedOut[0] = waited;
+        }
+
+        static IEnumerable<int> ShotInspect(Thing marker, string name)
+        {
+            Find.WindowStack.TryRemove(typeof(Window_PitFighters), false);
+            Find.Selector.ClearSelection();
+            CameraJumper.TryJumpAndSelect(marker);
+            Find.MainTabsRoot.SetCurrentTab(MainButtonDefOf.Inspect, false);
+            yield return 30;
+            Shot(name);
+            yield return 20;
+        }
 
         static void Designator(TestContext t, ThingDef d, IntVec3 cell, out Designator_Build des)
         {
@@ -256,17 +311,19 @@ namespace Hearth.Underworld
             int errors0 = HLog.ErrorCount;
             lines.Clear(); msgs.Clear(); seenLetters.Clear();
             lang = LanguageDatabase.activeLanguage?.folderName?.StartsWith("German") == true ? "de" : LanguageDatabase.activeLanguage?.folderName?.StartsWith("English") == true ? "en" : "xx";
+            silverN = int.TryParse(Environment.GetEnvironmentVariable("HH_PLAYTEST_SILVER") ?? "", out int sv) ? Math.Max(0, sv) : 0;
+            tag = lang + "_s" + silverN;
             outPath = Environment.GetEnvironmentVariable("HH_PLAYTEST_OUT");
-            if (outPath.NullOrEmpty()) outPath = "/private/tmp/claude-501/hh_tests/playtest_" + lang + ".md";
+            if (outPath.NullOrEmpty()) outPath = "/private/tmp/claude-501/hh_tests/playtest_" + tag + ".md";
             foreach (var l in Find.LetterStack.LettersListForReading) seenLetters.Add(l);
             var harmony = new Harmony(HarmonyId);
             var msgMethod = AccessTools.Method(typeof(Messages), nameof(Messages.Message), new[] { typeof(Message), typeof(bool) });
             if (msgMethod != null) harmony.Patch(msgMethod, postfix: new HarmonyMethod(typeof(UwPlaytestOneColonistSuite), nameof(MessagePostfix)));
             var removed = new List<(Pawn p, IntVec3 c)>();
-            Pawn col = null;
+            Pawn col = null; Zone_Stockpile zone = null;
             try
             {
-                R("# Playtest \"one colonist\" (transcript, " + LanguageDatabase.activeLanguage?.folderName + ")");
+                R("# Playtest \"one colonist\" v2 (transcript, " + LanguageDatabase.activeLanguage?.folderName + ", " + silverN + " silver in stock)");
                 R("");
                 R("Game " + VersionControl.CurrentVersionStringWithRev + ", map " + map.Size.x + "x" + map.Size.z + ", tick " + Find.TickManager.TicksGame + ". Messages patch: " + (msgMethod != null));
                 R("Settings as the save has them (nothing changed by the suite): content level " + Underworld.Intensity + ", tier " + HearthProfile.Current.Tier + ", Underworld module on " + Modules.On(ModuleId.Underworld) + ", visible " + Underworld.Visible + ", peaceful " + Underworld.Peaceful
@@ -286,10 +343,36 @@ namespace Hearth.Underworld
                 foreach (var g in guests) if (g.Spawned) g.Destroy();
                 if (col.Drafted) col.drafter.Drafted = false;
                 R("Kept: " + col.LabelShortCap + " (" + col.story?.TitleCap + ", melee " + col.skills?.GetSkill(SkillDefOf.Melee)?.Level + ", traits " + string.Join(", ", col.story?.traits?.allTraits?.Select(x => x.LabelCap) ?? new string[0]) + "). Everyone else was taken off the map.");
-                R("Colony till (the account bouts and the opponent fee use): " + UwKit.Till(map).ToStringShort() + ". Silver lying on the map: " + map.resourceCounter.Silver + ".");
+                R("Colony till (where guest money lands): " + UwKit.Till(map).ToStringShort() + ". Silver lying on the map at the start: " + AllSilver(map) + ".");
                 t.Check(map.mapPawns.FreeColonistsSpawnedCount == 1 && map.mapPawns.SpawnedColonyAnimals.Count == 0 && !GuestApi.GuestsOn(map).Any(), "one colonist, no animals, no guests");
                 // the commenter's case: nothing in the till (no guests ever paid); the suite never puts silver into it
                 if (UwKit.Till(map).Micro > 0) { R("The suite empties the till (" + UwKit.Till(map).ToStringShort() + ")."); Ledger.Current.Post(Underworld.Till(map), "world", UwKit.Till(map), "playtest: empty till"); }
+                // the commenter's colony: no silver lying around except what the scenario puts into a stockpile
+                foreach (var s in map.listerThings.ThingsOfDef(ThingDefOf.Silver).ToList()) s.Destroy();
+                if (!UwKit.TryFindRect(map, 7, 7, out var inner)) { t.Check(false, "no free 9x9 patch for the arena"); yield break; }
+                var outer = inner.ExpandedBy(1);
+                if (silverN > 0)
+                {
+                    var keepOut = outer.ExpandedBy(2);
+                    IntVec3 corner = IntVec3.Invalid;
+                    foreach (var c in GenRadial.RadialCellsAround(col.Position, 20f, true))
+                    {
+                        var r2 = new CellRect(c.x, c.z, 2, 2); bool ok = true;
+                        foreach (var x in r2) if (!x.InBounds(map) || !x.Standable(map) || keepOut.Contains(x) || x.Fogged(map) || map.zoneManager.ZoneAt(x) != null || x.GetFirstBuilding(map) != null || x.GetFirstItem(map) != null || x.GetFirstPawn(map) != null) { ok = false; break; }
+                        if (ok) { corner = c; break; }
+                    }
+                    if (corner.IsValid)
+                    {
+                        zone = new Zone_Stockpile(StorageSettingsPreset.DefaultStockpile, map.zoneManager);
+                        map.zoneManager.RegisterZone(zone);
+                        foreach (var x in new CellRect(corner.x, corner.z, 2, 2)) zone.AddCell(x);
+                        StockIn(zone, map, silverN);
+                    }
+                    R("Scenario: " + silverN + " silver in a 2x2 stockpile (" + zone?.label + ") near " + col.LabelShortCap + ". Nothing else in the till or the bank.");
+                    t.Check(Hearth.Dlc.ColonySilver.CountStock(map) == silverN, "the stockpile silver counts as colony stock (" + Hearth.Dlc.ColonySilver.CountStock(map) + ")");
+                }
+                else R("Scenario: no silver at all (none on the map, till 0, no bank account).");
+                R("Colony funds as the game counts them for payments: " + Funds(map) + ".");
                 R("Opponents hired in this game so far: " + Underworld.Comp.OpponentsHired + " (the first one is free).");
                 Drain(t);
                 Find.DesignatorManager.Deselect(); Find.Selector.ClearSelection();
@@ -313,8 +396,6 @@ namespace Hearth.Underworld
 
                 // ---- 2. the designators
                 H("2. Can the player build it? (architect)");
-                if (!UwKit.TryFindRect(map, 7, 7, out var inner)) { t.Check(false, "no free 9x9 patch for the arena"); yield break; }
-                var outer = inner.ExpandedBy(1);
                 var fenceDef = DefDatabase<ThingDef>.GetNamedSilentFail("Fence");
                 var gateDef = DefDatabase<ThingDef>.GetNamedSilentFail("FenceGate");
                 Designator(t, fenceDef, outer.EdgeCells.First(), out var fenceDes);
@@ -373,12 +454,7 @@ namespace Hearth.Underworld
                 yield return 20;
                 Find.MainTabsRoot.EscapeCurrentTab(false);
                 HUI.TestScreen = null;
-                Find.Selector.ClearSelection();
-                CameraJumper.TryJumpAndSelect(marker);
-                Find.MainTabsRoot.SetCurrentTab(MainButtonDefOf.Inspect, false);
-                yield return 30;
-                Shot("pit_inspect_gizmos");
-                yield return 20;
+                foreach (var w in ShotInspect(marker, "pit_inspect_gizmos")) yield return w;
                 Flush();
 
                 // ---- 4. way 1: right-click on the marker
@@ -408,11 +484,12 @@ namespace Hearth.Underworld
                 yield return 5;
                 FightersWindow(t, pit, "colonist ticked");
                 R("The player presses `" + UwPay.T("Pit.Win.Start") + "`:");
-                if (pit.ClosedReason() == null && FightBout.OfPit(pit) == null)
+                string startBlock = pit.ClosedReason() ?? (FightBout.OfPit(pit) != null ? UwPay.T("Pit.Why.BoutRunning") : null) ?? pit.ManualShortage();
+                if (startBlock == null)
                 {
                     if (!FightBout.TryStartFor(pit, true, out string why)) Messages.Message(UwPay.T("Pit.CannotStart", why), pit.parent, MessageTypeDefOf.RejectInput, false);
                 }
-                else R("    (greyed out, nothing happens)");
+                else R("    (greyed out, nothing happens; tooltip: " + One(startBlock) + ")");
                 Drain(t);
                 yield return 10;
                 Shot("pit_fighters_window_ticked");
@@ -427,7 +504,7 @@ namespace Hearth.Underworld
                 H("6. Way 3: \"Call an opponent\"");
                 var hireCmd = OurGizmo(pit, PitOpponents.CallLabel);
                 R("Gizmo `" + hireCmd?.LabelCap + "`: " + (hireCmd == null ? "missing" : hireCmd.Disabled ? "greyed out, tooltip ends with: " + One(hireCmd.disabledReason) : "clickable") + " | tooltip: " + One(hireCmd?.Desc));
-                var tillBefore = UwKit.Till(map);
+                var tillBefore = UwKit.Till(map); int stockBefore = Hearth.Dlc.ColonySilver.CountStock(map);
                 t.Check(hireCmd != null && !hireCmd.Disabled && UwKit.Till(map).Micro == 0, "with an empty till and no silver given, Call an opponent is clickable: " + (hireCmd?.disabledReason ?? "ok"));
                 if (hireCmd != null && hireCmd.Disabled) R("**Stuck here as a real player:** the gizmo stays greyed out: " + hireCmd.disabledReason);
                 tillBefore = UwKit.Till(map);
@@ -442,7 +519,8 @@ namespace Hearth.Underworld
                 t.Check(bout != null, "a bout starts after Call an opponent");
                 if (bout == null) { yield break; }
                 var beast = bout.Other(col);
-                R("A beast appears: " + beast?.LabelCap + " (" + beast?.kindDef?.defName + ", combat power " + beast?.kindDef?.combatPower + " vs " + col.LabelShortCap + " " + PitFighters.Power(col).ToString("0") + "), inside the arena: " + (beast != null && pit.ArenaInfo().Cells.Contains(beast.Position)) + ". Till " + tillBefore.ToStringShort() + " -> " + UwKit.Till(map).ToStringShort() + ".");
+                R("A beast appears: " + beast?.LabelCap + " (" + beast?.kindDef?.defName + ", combat power " + beast?.kindDef?.combatPower + " vs " + col.LabelShortCap + " " + PitFighters.Power(col).ToString("0") + "), inside the arena: " + (beast != null && pit.ArenaInfo().Cells.Contains(beast.Position)) + ". Till " + tillBefore.ToStringShort() + " -> " + UwKit.Till(map).ToStringShort() + ", silver in stock " + stockBefore + " -> " + Hearth.Dlc.ColonySilver.CountStock(map) + ".");
+                t.Check(Hearth.Dlc.ColonySilver.CountStock(map) == stockBefore && UwKit.Till(map) == tillBefore, "the first opponent costs nothing (stock " + stockBefore + " -> " + Hearth.Dlc.ColonySilver.CountStock(map) + ")");
                 R("The bout: scored " + bout.Scored + ", non-lethal " + bout.NonLethal + ", limits " + bout.LimitA.ToString("0") + " / " + bout.LimitB.ToString("0") + ", max ticks " + bout.MaxTicks + ".");
                 Inspect(t, marker, "bout announced");
                 Gizmos(t, marker, "bout announced");
@@ -450,20 +528,9 @@ namespace Hearth.Underworld
                 Tab(t, map, "bout running");
                 Inspect(t, beast, "the beast");
                 Flush();
-                string lastStatus = null; var lastPhase = (FightBout.Phase)(-1); string lastJob = null;
-                int waited = 0;
-                while (!bout.Finished && waited < 20000)
-                {
-                    string st = pit.StatusLine(); string job = col.CurJobDef?.defName;
-                    if (st != lastStatus || bout.phase != lastPhase || job != lastJob)
-                    {
-                        R("- tick +" + waited + ": phase " + bout.phase + ", marker status `" + One(st) + "`, " + col.LabelShortCap + " job " + job + ", points " + bout.ScoreA.ToString("0") + "/" + bout.LimitA.ToString("0") + " vs " + bout.ScoreB.ToString("0") + "/" + bout.LimitB.ToString("0"));
-                        lastStatus = st; lastPhase = bout.phase; lastJob = job;
-                    }
-                    Drain(t);
-                    yield return 30; waited += 30;
-                }
-                Drain(t);
+                var wo = new int[1];
+                foreach (var w in Watch(t, pit, col, bout, wo)) yield return w;
+                int waited = wo[0];
                 t.Check(bout.Finished, "the bout ends (" + waited + " ticks)");
                 R("Bout over after " + waited + " ticks: winner side " + bout.WinnerSide + ", draw " + bout.Draw + ", points " + bout.ScoreA.ToString("0") + "/" + bout.LimitA.ToString("0") + " vs " + bout.ScoreB.ToString("0") + "/" + bout.LimitB.ToString("0") + ".");
                 R("Last message of the bout: " + One(FightBout.LastMessage));
@@ -477,6 +544,85 @@ namespace Hearth.Underworld
                 FloatMenu(t, col, pit, "after the bout");
                 Tab(t, map, "after the bout");
                 Guide("after the bout");
+                foreach (var w in ShotInspect(marker, "pit_inspect_after_bout")) yield return w;
+                Flush();
+
+                // ---- 6b. the second opponent: the free one is used up
+                H("6b. The next opponent (the free one is used up)");
+                var fee2 = HSettings.GetSilver("underworld.pit.opponentFee");
+                R("Opponents hired so far: " + Underworld.Comp.OpponentsHired + ", next fee " + PitFighters.Silver(PitOpponents.Fee) + ". Colony funds: " + Funds(map) + ".");
+                Gizmos(t, marker, "after the free bout");
+                FloatMenu(t, col, pit, "after the free bout");
+                (OurGizmo(pit, UwPay.T("Pit.FightersBtn")) as Command_Action)?.action?.Invoke();
+                yield return 20;
+                var win2 = Find.WindowStack.WindowOfType<Window_PitFighters>();
+                if (win2 != null) Hearth.Shell.Tests.UiTestUtil.NoPause(win2);
+                FightersWindow(t, pit, "after the free bout");
+                yield return 10;
+                Shot("pit_fighters_window_after_bout");
+                yield return 20;
+                win2?.Close(false);
+                var hire2 = OurGizmo(pit, PitOpponents.CallLabel);
+                bool canPay = UwPay.ColonyFunds(map) >= fee2;
+                t.Check(hire2 != null && hire2.Disabled == !canPay, "the second Call an opponent is " + (canPay ? "clickable" : "greyed out") + " with " + Funds(map) + ": " + (hire2?.disabledReason ?? "clickable"));
+                if (!canPay) t.Check(hire2?.disabledReason?.Contains(Math.Min(silverN, 39).ToString()) == true, "the reason names what the colony has: " + hire2?.disabledReason);
+                if (silverN == 0)
+                {
+                    // silver lying in the open (dropped by a trader or a raid, not hauled): does the reason tell the player why it does not count?
+                    IntVec3 open = IntVec3.Invalid;
+                    foreach (var c in GenRadial.RadialCellsAround(col.Position, 30f, true))
+                        if (c.InBounds(map) && c.Standable(map) && !c.Fogged(map) && !map.areaManager.Home[c] && map.zoneManager.ZoneAt(c) == null && c.GetFirstItem(map) == null && c.GetFirstBuilding(map) == null && !outer.ExpandedBy(1).Contains(c)) { open = c; break; }
+                    if (open.IsValid)
+                    {
+                        var loose = ThingMaker.MakeThing(ThingDefOf.Silver); loose.stackCount = 50;
+                        loose = GenSpawn.Spawn(loose, open, map); loose.SetForbidden(false, false); UwKit.Track(loose); UwPay.ForgetFunds();
+                        var h3 = OurGizmo(pit, PitOpponents.CallLabel);
+                        R("The player has 50 silver lying outside the home area and outside any stockpile (not forbidden, dropped by a trader, say). Colony funds: " + Funds(map) + ". Gizmo `" + h3?.LabelCap + "`: " + (h3 == null ? "missing" : h3.Disabled ? "greyed out, tooltip ends with: " + One(h3.disabledReason) : "clickable") + ".");
+                        map.areaManager.Home[open] = true; UwPay.ForgetFunds();
+                        var h4 = OurGizmo(pit, PitOpponents.CallLabel);
+                        R("The same silver after the player paints the home area over it: colony funds " + Funds(map) + ". Gizmo: " + (h4 == null ? "missing" : h4.Disabled ? "greyed out: " + One(h4.disabledReason) : "clickable") + ".");
+                        map.areaManager.Home[open] = false;
+                        loose.Destroy(); UwPay.ForgetFunds();
+                    }
+                    else R("(no cell outside the home area near the colonist to try loose silver)");
+                }
+                else if (!canPay && zone != null)
+                {
+                    int more = fee2.CeilSilver - Hearth.Dlc.ColonySilver.CountStock(map);
+                    R("The player hauls " + more + " more silver into the stockpile.");
+                    StockIn(zone, map, more);
+                    yield return 5;
+                    var h5 = OurGizmo(pit, PitOpponents.CallLabel);
+                    R("Colony funds: " + Funds(map) + ". Gizmo `" + h5?.LabelCap + "`: " + (h5 == null ? "missing" : h5.Disabled ? "greyed out: " + One(h5.disabledReason) : "clickable") + " | tooltip: " + One(h5?.Desc));
+                    t.Check(h5 != null && !h5.Disabled, "with " + fee2.CeilSilver + " silver in the stockpile the second opponent can be called");
+                    if (h5 != null && !h5.Disabled)
+                    {
+                        var till2 = UwKit.Till(map); int stock2 = Hearth.Dlc.ColonySilver.CountStock(map);
+                        R("The player clicks `" + h5.LabelCap + "`.");
+                        (h5 as Command_Action)?.action?.Invoke();
+                        yield return 2;
+                        Drain(t);
+                        var bout2 = FightBout.OfPit(pit);
+                        t.Check(bout2 != null, "the paid bout starts");
+                        UwPay.ForgetFunds();
+                        R("Silver in stock " + stock2 + " -> " + Hearth.Dlc.ColonySilver.CountStock(map) + ", till " + till2.ToStringShort() + " -> " + UwKit.Till(map).ToStringShort() + ". Opponent: " + bout2?.Other(col)?.LabelCap + ".");
+                        t.Check(Hearth.Dlc.ColonySilver.CountStock(map) == stock2 - fee2.CeilSilver && UwKit.Till(map) == till2, "the fee came out of the stockpile, the till is unchanged");
+                        if (bout2 != null)
+                        {
+                            Inspect(t, marker, "paid bout running");
+                            var wo2 = new int[1];
+                            foreach (var w in Watch(t, pit, col, bout2, wo2)) yield return w;
+                            t.Check(bout2.Finished, "the paid bout ends (" + wo2[0] + " ticks)");
+                            R("Paid bout over after " + wo2[0] + " ticks: winner side " + bout2.WinnerSide + ", draw " + bout2.Draw + ". Last message: " + One(FightBout.LastMessage));
+                            yield return 120;
+                            Drain(t);
+                            R(col.LabelShortCap + ": health " + col.health.summaryHealth.SummaryHealthPercent.ToStringPercent() + ", downed " + col.Downed + ". Colony funds: " + Funds(map) + ".");
+                            Inspect(t, marker, "after the paid bout");
+                            Gizmos(t, marker, "after the paid bout");
+                        }
+                    }
+                }
+                Drain(t);
                 Flush();
 
                 // ---- extra: a pet on the map
@@ -527,6 +673,7 @@ namespace Hearth.Underworld
                 Find.WindowStack.TryRemove(typeof(Window_PitFighters), false);
                 if (col != null) foreach (var pit in CompFightPit.All) pit.SetTicked(col, false);
                 UwKit.End();
+                try { if (zone != null && map.zoneManager.AllZones.Contains(zone)) zone.Delete(); } catch (Exception e) { Log.Warning("[HHTEST] stockpile not removed: " + e.Message); }
                 foreach (var x in removed) if (!x.p.Destroyed && !x.p.Spawned) { try { GenSpawn.Spawn(x.p, x.c.IsValid && x.c.Standable(map) ? x.c : CellFinder.RandomClosewalkCellNear(t.Center, map, 8), map); } catch (Exception e) { Log.Warning("[HHTEST] could not put " + x.p.LabelShort + " back: " + e.Message); } }
                 UnderworldPage.Invalidate(); FacilityStatus.MarkDirty();
             }
