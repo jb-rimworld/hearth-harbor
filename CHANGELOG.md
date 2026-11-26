@@ -2,7 +2,7 @@
 
 Hearth & Harbor and Silverline (the standalone bank) are built from this repository and share one version number.
 
-## 1.2.0 (not released yet)
+## 1.2.0 (2026-11-26)
 The Underworld is reworked so that it just works.
 - Open from the start. There is no stranger to wait for, no "Show me", no warning dialog and no research for the basics: back room doors, the fight pit marker, the fence counter, the smuggler's dock and the drug lounge can be built at once. The Hunt and the black clinic keep their research and follow the research setting like every other project. The module switch is the one on/off; Cozy content still hides everything. Nothing happens until you build something.
 - Dark and Grim content take effect as soon as you pick them. The tooltips of the two chips say what each level adds.
@@ -11,10 +11,14 @@ The Underworld is reworked so that it just works.
   - Guests who like a brawl challenge your fighters: shady guests and gang members, and other guests with Bloodlust, Brawler or good melee who are not kind. A winning guest gets a small purse out of the house take.
   - Colonists and slaves fight when you tick them in the new "Fighters…" window or right-click the marker with them ("Fight in the pit"). No random roll, no trait needed.
   - Pits from old saves keep an off switch for the former volunteer rule ("Volunteers (old saves)" on the marker).
-  - Alone? "Call an opponent" hires a pit beast that matches your fighter (40 silver from the till). It leaves after the bout.
+  - Alone? "Call an opponent" hires a pit beast no stronger than your fighter. The first one is free, later ones cost 40 silver. The colony pays: the till first, then silver in a stockpile or the home area, then a Silverline account. With a single colonist the button picks him; you do not need to tick him first. The beast leaves after the bout.
+  - "Start the bout now" is greyed out with the reason when only one fighter is ready, and the Fighters window has its own "Call an opponent" button. The status line only suggests what can help right now.
+  - After a bout the two fighters do not start a brawl with each other or anyone else for an in-game hour.
   - "Start a bout" works without guests. Prisoners are brought into the arena and back, and do not run off on the way.
   - The marker always says what it waits for, who is ready and how the last bout ended. Every bout ends with a message.
 - Every underworld building says why it is waiting: the back room door, the fence counter, the dock and the hunting ground marker.
+- Smuggler crates and protection money are paid by the colony the same way as a pit beast (till, stock silver, bank), and every greyed-out button says how much is missing.
+- Pawns under 18 never take part in the Underworld: no pit, bets, drug lounge, prisoner hunts or sales to gangs (before, 13-year-olds counted as adults). Gangs and hunting parties are generated as adults.
 - Smuggler boats and protection demands arrive as letters. You answer with the buttons on the dock or on the gang leader, or on the Underworld tab. An unanswered boat leaves; an unanswered demand counts as a refusal. No more pop-up dialogs.
 - The first gang comes about a day after your first back room, fence counter or fight pit. A gang visit that cannot happen is tried again a few hours later, and the Underworld tab says why. Gang members spend the silver they carry.
 - The fence reports its deals, says when the till is empty and has "Take goods out". A deconstructed fence counter drops its goods.
@@ -22,6 +26,7 @@ The Underworld is reworked so that it just works.
 - New guide topic "The back room": fence and pit marker, the first bout, a back room, the first gang, a fence counter.
 - The building descriptions say how to use each thing.
 - Old saves: the discovery and its settings are gone; values stored for them are ignored. A save with Dark or Grim content but no confirmed warning now plays at that level. Research of the old "the back room" project stays in the save but is hidden and unlocks nothing.
+- All new and changed texts are translated into the ten languages, including the old texts that still described the former volunteer rule.
 - Removed: the shady stranger, the "Discover / On / Off" choice, the "Underworld already discovered" scenario rule (old scenarios still load), the content, hunt and clinic warnings, and the research "the back room".
 
 ## 1.1.2 (2026-11-25)

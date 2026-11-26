@@ -65,8 +65,12 @@ Who can fight (`PitFighters.Build`, cached per pit for 250 ticks, refreshed when
   no trait requirement. A colonist who asks while a bout runs fights in the next one;
   pits from old saves keep the former volunteer rule (bloodlust or melee 8 fight without a tick, `allowVolunteers`, toggle
   "Volunteers (old saves)" on the marker) until the player switches it off;
-- a lone fighter: "Call an opponent" hires a pit beast matched to his combat power (fee `underworld.pit.opponentFee`, 40 silver, from the till;
-  the gizmo says why when the till cannot pay). The beast is gone after the bout, also after an abort, a removed pit or a save/load in between.
+- a lone fighter: "Call an opponent" hires a pit beast no stronger than him (fee `underworld.pit.opponentFee`, 40 silver; the first hire of a game
+  is free and is given back if its bout is called off). The colony pays (`UwPay.PayFromColony`): the till first, then silver in a stockpile or the home
+  area, then the Silverline account; all or nothing. The gizmo, the right-click and the Fighters window say what is short ("the colony has 12 of 40
+  silver"). With exactly one free colonist, the button ticks him itself. Smuggler crates and protection money are paid the same way.
+- after a bout the two fighters do not start a vanilla social fight with each other or anyone for 2500 ticks (`Patch_PitNoQuarrel`).
+- humanlike pawns under 18 biological years are minors for the whole Underworld (`Underworld.AdultAge`): no pit, bets, lounge, hunts or gang sales. The beast is gone after the bout, also after an abort, a removed pit or a save/load in between.
   A humanlike prizefighter is not built (left out of package B).
 
 Automatic bouts start every `underworld.pit.intervalHours` when two fighters are ready and an adult guest is on the map (bets are the point).
