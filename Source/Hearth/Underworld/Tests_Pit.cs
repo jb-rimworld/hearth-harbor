@@ -371,6 +371,7 @@ namespace Hearth.Underworld
             if (bout == null) { UwKit.End(); yield break; }
             foreach (var w in PitKit.Await(t, bout)) yield return w;
             if (!bout.Finished || bout.FightTick <= 0) { t.Note("the bout did not reach a fight (" + FightBout.LastMessage + "); the rest is skipped"); UwKit.End(); yield break; }
+            int boutEndTick = Find.TickManager.TicksGame;
             var alerts = new List<string>();
             foreach (var w in PitKit.Watch(t, a, b, 600, alerts)) yield return w;
             var newMems = Mems(a, b).Concat(Mems(b, a)).Except(memBefore).ToList();
@@ -448,6 +449,17 @@ namespace Hearth.Underworld
             }
             yield return 60;
             t.Check(!a.InMentalState && !b.InMentalState, "a minute later the two are still calm");
+            // ---- 4: the whole cool-down (2500 ticks after the bout): neither fighter is downed, dead or in a mental state, whatever the cause
+            bool bad = false; string badWhy = null;
+            while (Find.TickManager.TicksGame - boutEndTick <= FightBout.QuarrelCooldownTicks + 30)
+            {
+                foreach (var fp in new[] { a, b })
+                {
+                    if (fp.Dead || fp.Downed || fp.InMentalState) { bad = true; badWhy = badWhy ?? (fp.LabelShort + " at +" + (Find.TickManager.TicksGame - boutEndTick) + ": " + PitKit.Dump(fp)); }
+                }
+                yield return 30;
+            }
+            t.Check(!bad, "2500 ticks after the bout neither fighter was downed, dead or in a mental state" + (bad ? ": " + badWhy : ""));
             UwKit.End();
         }
 
