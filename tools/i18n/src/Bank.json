@@ -291,7 +291,7 @@
   "Silverline.SL_BankDef/SL_BlackLedger.slogan": "We don't ask. You don't tell. The interest still compounds.",
   "Silverline.SL_BankDef/SL_BlackLedger.perks.0": "Loans ignore your credit score (and your feelings).",
   "Silverline.SL_BankDef/SL_BlackLedger.perks.1": "Every quadrum there is a 1 % risk that a quarter of the balance is \"seized\".",
-  "Silverline.SL_BankDef/SL_BlackLedger.perks.2": "Only open to colonies that found the underworld.",
+  "Silverline.SL_BankDef/SL_BlackLedger.perks.2": "Only open while the Underworld is on and the content is not Cozy.",
   "Silverline.SL_BankDef/SL_CompoundInterest.label": "First Church of Compound Interest",
   "Silverline.SL_BankDef/SL_CompoundInterest.description": "A congregation that worships the miracle of exponential growth. Modest fees, a hymn for every balance sheet and a donation box that is, strictly speaking, optional.",
   "Silverline.SL_BankDef/SL_CompoundInterest.slogan": "In compound we trust. Tithe early, tithe often.",

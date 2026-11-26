@@ -1,0 +1,7 @@
+k:HH.Underworld.Fence.Inspect
+k:HH.Underworld.Fence.NoCash
+k:HH.Underworld.Gang.Demand.NoCash
+k:HH.Underworld.Pit.BoutRunning
+k:HH.Underworld.Pit.Draw
+k:HH.Underworld.Pit.Won
+k:HH.Underworld.Smuggler.NoCash
