@@ -343,7 +343,19 @@ namespace Hearth.Underworld
                 string label = p.LabelShort + " (age " + p.ageTracker.AgeBiologicalYears + ", hp " + p.health.summaryHealth.SummaryHealthPercent.ToString("0.00") + ", shock " + shock.ToString("0.00") + ")";
                 bool ruleAllows = painBefore + worstPain < shock - 0.02f;   // the pit's headroom rule (FightBout.Bruise)
                 t.Check(painAfter - painBefore <= worstPain + 0.001f, label + ": two bruises add " + (painAfter - painBefore).ToString("0.000") + " pain at most (" + worstPain.ToString("0.000") + " with the margin)");
-                if (ruleAllows) t.Check(p.Downed == downedBefore && !p.Dead, label + ": the headroom rule lets him be bruised, and the two worst bruises do not down him (pain " + painBefore.ToString("0.00") + " -> " + painAfter.ToString("0.00") + ")");
+                if (ruleAllows)
+                {
+                    t.Check(!p.Dead, label + ": the two worst bruises do not kill him");
+                    if (p.Downed && !downedBefore)
+                    {
+                        // pain is not the only way down: a frail body near the edge of Moving falls over from two leg bruises. FightBout.Bruise takes them off again.
+                        float moving = p.health.capacities.GetLevel(PawnCapacityDefOf.Moving);
+                        foreach (var h in added) p.health.RemoveHediff(h);
+                        added.Clear();
+                        t.Check(!p.Downed, label + ": the two worst bruises would down him through Moving (" + moving.ToString("0.00") + ", pain " + painAfter.ToString("0.00") + "); taking them off again, as the pit does, stands him back up");
+                    }
+                    else t.Check(p.Downed == downedBefore, label + ": the headroom rule lets him be bruised, and the two worst bruises do not down him (pain " + painBefore.ToString("0.00") + " -> " + painAfter.ToString("0.00") + ")");
+                }
                 else
                 {
                     t.Note(label + ": pain " + painBefore.ToString("0.00") + " leaves too little headroom: the two worst bruises would " + (p.Downed && !downedBefore ? "DOWN him (the old rule did exactly that)" : "not down him this time") + "; the rule gives him none");
@@ -724,7 +736,9 @@ namespace Hearth.Underworld
                     pit.nextBoutTick = Find.TickManager.TicksGame;
                     pit.CompTickRare();
                     var auto = FightBout.OfPit(pit);
-                    t.Check(auto != null && auto.KindA == PitKind.Guest && auto.KindB == PitKind.Guest && !auto.Manual, "an automatic bout between two guests started");
+                    if (auto == null && pit.lastAutoFail == UwPay.T("Pit.NoFairPair"))
+                        t.Note("the two willing guests are no fair pair (" + string.Join(" / ", ready.Select(c => c.Pawn.LabelShort + " " + c.Power.ToString("0"))) + "), so no automatic bout, as designed; check skipped");
+                    else t.Check(auto != null && auto.KindA == PitKind.Guest && auto.KindB == PitKind.Guest && !auto.Manual, "an automatic bout between two guests started" + (auto == null ? " (reason: " + (pit.lastAutoFail ?? "none") + ")" : ""));
                     if (auto != null)
                     {
                         int w2 = 0;
