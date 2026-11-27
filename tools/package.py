@@ -8,7 +8,9 @@ Output (next to the repo, never inside it):
   ../_Release/Silverline/     standalone bank: Hearth.Core.dll + Silverline.dll, bank/insurance defs, languages, textures;
                               its content folders load only when Hearth & Harbor is NOT active (IfModNotActive; an always-loaded stub texture keeps it non-empty), so with both
                               active every type exists exactly once.
-Checks: identical SHA-256 of the shared DLLs and shared files in both packages; no Source/, no test harness in the DLLs.
+Checks: identical SHA-256 of the shared DLLs and shared files in both packages; no Source/, no test harness in the DLLs;
+no packaged file with a relative path longer than MAX_REL characters (1.2.1: on Windows the Workshop download of 1.2.0 failed on
+translation paths of up to 326 characters and left a mod folder without About.xml).
 """
 import hashlib, re, shutil, struct, subprocess, sys, zlib
 from pathlib import Path
@@ -23,6 +25,9 @@ BANK_LANG = ["HH_Bank.xml", "HH_Insurance.xml", "HH_Finance.xml", "HH_Research.x
 # DefInjected: Silverline.* folders whole; generic folders filtered to bank defNames (written fresh, so outside the byte-identity check)
 BANK_DEFINJ_PREFIX = ("SL_", "HH_Bank", "HH_Banking")
 BANK_SND = ["HH/Bank", "HH/Insurance"]
+# Longest relative path below the package folder (characters as Windows counts them, UTF-16 units). Steam puts about 80 characters
+# in front ("C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\downloads\\294100\\<id>\\"), Windows stops at 259.
+MAX_REL = 140
 BANK_TEX = ["UI/HH/Bank", "UI/HH/Insurance", "UI/HH/Finance", "Things/HH/Bank", "UI/HH/Core"]
 
 
@@ -107,7 +112,7 @@ def main():
         bank_defs.update(re.findall(r"<defName>\s*([^<\s]+)\s*</defName>", xf.read_text(encoding="utf-8")))
 
     def copy_languages(src_root: Path, dst_root: Path, keyed: bool):
-        """Languages of one load folder (Common, or Compat/<ids>: translations of content that needs a DLC or another mod)."""
+        """Languages of one load folder (Common, or Compat/<slug>: translations of content that needs a DLC or another mod)."""
         for lang in sorted(src_root.iterdir()):
             if keyed:
                 for f in BANK_LANG:
@@ -135,12 +140,19 @@ def main():
 
     copy_languages(R / "Common" / "Languages", C / "Languages", keyed=True)
     compat = []   # [(folder name, package ids)] of the conditional folders that hold something for the bank
+    # the package ids of a Compat folder come from the main LoadFolders.xml (folder names are short slugs since 1.2.1, see split_optional.py)
+    ids_of = {}
+    for m in re.finditer(r'<li IfModActive="([^"]+)">Compat/([^<]+)</li>', (R / "LoadFolders.xml").read_text(encoding="utf-8")):
+        if ids_of.setdefault(m.group(2), m.group(1)) != m.group(1):
+            sys.exit(f"LoadFolders.xml: Compat/{m.group(2)} has different IfModActive values")
     for cf in sorted((R / "Compat").iterdir()) if (R / "Compat").exists() else []:
         if (cf / "Languages").is_dir():
+            if cf.name not in ids_of:
+                sys.exit(f"Compat/{cf.name} is not in LoadFolders.xml (run tools/i18n/split_optional.py)")
             dst = BANK / "Content" / "Compat" / cf.name / "Languages"
             copy_languages(cf / "Languages", dst, keyed=False)
             if dst.exists():
-                compat.append((cf.name, cf.name.replace("+", ",")))
+                compat.append((cf.name, ids_of[cf.name]))
     lf = ['<?xml version="1.0" encoding="utf-8"?>', "<loadFolders>"]
     for v in VERSIONS:
         lf.append(f"  <v{v}>")
@@ -179,6 +191,22 @@ def main():
                 bad.append(str(rel))
     if bad:
         sys.exit("Byte identity broken: " + ", ".join(bad[:20]))
+
+    # ---- path length (Windows MAX_PATH with the Steam folder in front)
+    longest = []
+    for pkg in (MAIN, BANK):
+        for f in pkg.rglob("*"):
+            if f.is_file():
+                rel = f.relative_to(pkg).as_posix()
+                longest.append((len(rel.encode("utf-16-le")) // 2, pkg.name, rel))
+    longest.sort(reverse=True)
+    too_long = [x for x in longest if x[0] > MAX_REL]
+    if too_long:
+        sys.exit(f"{len(too_long)} packaged paths longer than {MAX_REL} characters (Windows cannot install them from the Workshop):\n"
+                 + "\n".join(f"  {n}  {pkg}/{rel}" for n, pkg, rel in too_long[:20]))
+    for pkg in (MAIN, BANK):
+        n, _, rel = next(x for x in longest if x[1] == pkg.name)
+        print(f"longest path in {pkg.name}: {n} characters (limit {MAX_REL})  {rel}")
     n_main = sum(1 for _ in MAIN.rglob("*") if _.is_file())
     n_bank = sum(1 for _ in BANK.rglob("*") if _.is_file())
     print(f"OK  {MAIN} ({n_main} files)  {BANK} ({n_bank} files)  – shared files byte-identical")

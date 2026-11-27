@@ -41,7 +41,7 @@ def load_src(d):
 
 
 def lang_files(lang):
-    """Every file of a language: Common/Languages/<lang> plus the conditional folders Compat/<ids>/Languages/<lang> (translations of
+    """Every file of a language: Common/Languages/<lang> plus the conditional folders Compat/<slug>/Languages/<lang> (translations of
     content that needs a DLC or another mod; tools/i18n/split_optional.py moves them there)."""
     base = R / "Common" / "Languages" / lang
     files = list((base / "Keyed").glob("*.xml")) + list((base / "DefInjected").rglob("*.xml"))

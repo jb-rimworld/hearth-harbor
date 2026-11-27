@@ -16,7 +16,7 @@ Common/Defs/<Module>/*.xml       defs, one folder per module (Core, Inn, ShopsFo
 Common/Languages/English/Keyed/HH_<Module>.xml   translation keys "HH.<Module>.<Thing>" — one file per module
 Common/Textures/Things/HH/<Module>/…  Common/Textures/UI/HH/<Module>/…   our textures (never vanilla paths)
 Common/Sounds/HH/…               sounds
-Compat/<ids>/Languages/…         translations of defs that need a DLC or another mod (MayRequire); loaded only when that mod is active
+Compat/<slug>/Languages/…        translations of defs that need a DLC or another mod (MayRequire); loaded only when that mod is active
 1.7/Assemblies 1.6/Assemblies 1.5/Assemblies   build output (do not edit)
 Source/Hearth.Core/   Foundation (settings, profile, ledger, log, guard, caretaker, random), Contracts (Payments), Pure (no game refs), Testing
 Source/Silverline/    the bank (namespace Silverline); Contracts/BankApi.cs
@@ -66,12 +66,16 @@ Dependency direction: `Hearth → Silverline → Hearth.Core`. Silverline must n
    `HH_Hospitality` / `HH_Banking`. DLC content uses `MayRequire="Ludeon.RimWorld.Royalty"` etc.
 10. **Translations:** `tools/i18n/extract.py` → `delta.py plan <old src>` → translate `delta/<code>/*.json` into `delta_out/` → `delta.py apply`
     (writes only changed files, then runs `split_optional.py`). A def with `MayRequire`/`MayRequireAnyOf` keeps its translations in
-    `Compat/<ids>`, never in `Common/Languages`: there the game reports "Found no <Def>" for every player without that DLC or mod and logs
+    `Compat/<slug>`, never in `Common/Languages`: there the game reports "Found no <Def>" for every player without that DLC or mod and logs
     "Translation data for language X has N errors". `smoke` fails on any translation load error from our files; check a language with
     `GAME_LANG="German (Deutsch)" tools/run_test.sh smoke <label>` (and `tools/run_test_nodlc.sh` for a game without DLC).
-    A file in `Compat/<ids>` must not have the name of a file in `Common` or in another Compat folder (same path below the language
+    A file in `Compat/<slug>` must not have the name of a file in `Common` or in another Compat folder (same path below the language
     folder): the game reads only one of them and skips the rest silently, which turned 270 translated texts per language English in
-    1.1.1. `split_optional.py` names them `<file>__<ids>.xml` and stops on a clash; `smoke` checks it in the game.
+    1.1.1. `split_optional.py` names them `<file>__<slug>.xml` and stops on a clash; `smoke` checks it in the game.
+    `<slug>` is short (`Anomaly`, `VCookEBakery`; id sets with several ids get a name in `SET_NAMES`, e.g. `Fishing`); `LoadFolders.xml`
+    keeps the real package ids in `IfModActive`. **Path length:** no packaged file may have a relative path longer than 140 characters
+    (Windows MAX_PATH 260 with the Steam folder in front; 1.2.0 could not be downloaded on Windows). `split_optional.py` and
+    `tools/package.py` stop on a longer one; keep new folder, def type and file names short.
     `extract.py` collects only what its three tables name: `FIELDS` (vanilla text fields of any def), `TYPE_FIELDS` (text fields of our
     own def types, e.g. `coversText`) and `NESTED` (texts inside lists, injected by position: `<defName>.steps.0.label`,
     `<defName>.modExtensions.1.requirements.0.hint`, `<defName>.fields.0.options.2.label`). A new text field or a new list with texts

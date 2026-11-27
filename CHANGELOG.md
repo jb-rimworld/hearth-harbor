@@ -2,6 +2,10 @@
 
 Hearth & Harbor and Silverline (the standalone bank) are built from this repository and share one version number.
 
+## 1.2.1 (2026-11-27)
+- Fixes the download of 1.2.0 on Windows. Some translation files had paths longer than Windows allows (the folder and file names carried the full ids of the DLCs and mods they belong to), so Steam stopped the download with "File commit failed: staging file is missing" and left a broken mod folder without `About/About.xml`; RimSort and the game then reported the mod as invalid. The folders in `Compat/` now have short names (`Compat/Anomaly`, `Compat/Fishing`, `Compat/VCookEBakery` …) and so do the files in them (`HH_Kitchen__Anomaly.xml`). Nothing else changes: the same translations load with the same DLCs and mods. Silverline standalone gets the same short names.
+- For contributors: `tools/package.py` stops a release when any file in either package has a relative path longer than 140 characters, and `tools/i18n/split_optional.py` refuses to write one and renames the old long folders and files itself.
+
 ## 1.2.0 (2026-11-26)
 The Underworld is reworked so that it just works.
 - Open from the start. There is no stranger to wait for, no "Show me", no warning dialog and no research for the basics: back room doors, the fight pit marker, the fence counter, the smuggler's dock and the drug lounge can be built at once. The Hunt and the black clinic keep their research and follow the research setting like every other project. The module switch is the one on/off; Cozy content still hides everything. Nothing happens until you build something.

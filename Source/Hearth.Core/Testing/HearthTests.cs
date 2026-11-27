@@ -402,7 +402,7 @@ namespace Hearth.Testing
                 foreach (var e in errs.Except(ours).Take(12)) t.Note("LANG (not ours) " + e);
                 t.Note("language " + lang.folderName + ": " + errs.Count + " translation load errors, " + ours.Count + " from our files");
                 t.Check(ours.Count == 0, "no translation load errors from our files in " + lang.folderName + " (" + ours.Count + ")");
-                // translations of optional content come from the conditional load folders (Compat/<ids>): show a few so a run log proves they load,
+                // translations of optional content come from the conditional load folders (Compat/<slug>): show a few so a run log proves they load,
                 // and two defs that are always there but whose def type also has a file in a Compat folder (these went English in 1.1.1)
                 foreach (var name in new[] { "HH_Gene_Hospitable", "HH_Dish_GrilledWholeFish", "HH_NobleStay", "HH_Venue_Tavern", "SL_ActsOfStoryteller" })
                 {
@@ -411,7 +411,7 @@ namespace Hearth.Testing
                 }
             }
             // 1.1.2: within one mod the game reads a language file only once per path below the language folder (LoadedLanguage.TryRegisterFileIfNew);
-            // a file of the same name in a second load folder (Common and Compat/<ids>) is skipped without any message. 1.1.1 shipped that:
+            // a file of the same name in a second load folder (Common and Compat/<slug>) is skipped without any message. 1.1.1 shipped that:
             // with a DLC active the Common files of the same name were not read and their texts fell back to English. Checked for every language.
             var pack = LoadedModManager.RunningModsListForReading.FirstOrDefault(m => m.assemblies != null && m.assemblies.loadedAssemblies.Contains(typeof(HearthTestSuite).Assembly));
             if (pack != null)
@@ -429,6 +429,25 @@ namespace Hearth.Testing
                             if (seen.TryGetValue(key, out var other)) clash.Add(f + " == " + other); else seen[key] = f;
                         }
                 }
+                // 1.2.1: Windows (MAX_PATH 260 with the Steam folder in front) could not download 1.2.0, whose translation paths reached 326
+                // characters. tools/package.py stops a release above 140; this checks the load folders of the running game the same way.
+                int longest = 0; string longestPath = ""; var tooLong = new List<string>();
+                string root = pack.RootDir.TrimEnd('/', '\\');
+                foreach (var folder in pack.foldersToLoadDescendingOrder)
+                {
+                    if (!Directory.Exists(folder)) continue;
+                    foreach (var f in Directory.GetFiles(folder, "*", SearchOption.AllDirectories))
+                    {
+                        if (!f.StartsWith(root)) continue;
+                        string rel = f.Substring(root.Length + 1);
+                        if (rel.Contains("Assemblies") && rel.EndsWith(".pdb")) continue;
+                        if (rel.Length > longest) { longest = rel.Length; longestPath = rel; }
+                        if (rel.Length > 140) tooLong.Add(rel.Length + " " + rel);
+                    }
+                }
+                foreach (var p in tooLong.Take(10)) t.Note("LONGPATH " + p);
+                t.Note("longest path in the load folders: " + longest + " characters (" + longestPath + ")");
+                t.Check(tooLong.Count == 0, "no file path in the load folders longer than 140 characters (" + tooLong.Count + ")");
                 foreach (var c in clash.Take(10)) t.Note("LANGFILE " + c);
                 t.Note("language files in " + pack.foldersToLoadDescendingOrder.Count + " load folders: " + files);
                 t.Check(clash.Count == 0, "no language file shares its path with a file of another load folder (" + clash.Count + ")");

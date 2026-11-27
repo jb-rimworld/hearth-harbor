@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Written by tools/i18n/split_optional.py. Compat/<ids> holds only translations of content that exists with that DLC or mod
+<!-- Written by tools/i18n/split_optional.py. Compat/<slug> holds only translations of content that exists with that DLC or mod
      (the defs themselves stay in Common with MayRequire); loading them always made every language but English report errors. -->
 <loadFolders>
   <v1.5>
     <li>Common</li>
     <li>1.5</li>
-    <li IfModActive="Ludeon.RimWorld.Anomaly">Compat/Ludeon.RimWorld.Anomaly</li>
-    <li IfModActive="Ludeon.RimWorld.Biotech">Compat/Ludeon.RimWorld.Biotech</li>
-    <li IfModActive="Ludeon.RimWorld.Ideology">Compat/Ludeon.RimWorld.Ideology</li>
-    <li IfModActive="Ludeon.RimWorld.Odyssey">Compat/Ludeon.RimWorld.Odyssey</li>
-    <li IfModActive="Ludeon.RimWorld.Odyssey,rikiki.fishindustry,sunsetmoderteam.rawfish,OW.RU.Fishing">Compat/Ludeon.RimWorld.Odyssey+rikiki.fishindustry+sunsetmoderteam.rawfish+OW.RU.Fishing</li>
-    <li IfModActive="Ludeon.RimWorld.Royalty">Compat/Ludeon.RimWorld.Royalty</li>
-    <li IfModActive="super.kenshicuisine">Compat/super.kenshicuisine</li>
-    <li IfModActive="VanillaExpanded.VCookE">Compat/VanillaExpanded.VCookE</li>
-    <li IfModActive="VanillaExpanded.VCookEBakery">Compat/VanillaExpanded.VCookEBakery</li>
-    <li IfModActive="VanillaExpanded.VCookEHaute">Compat/VanillaExpanded.VCookEHaute</li>
-    <li IfModActive="VanillaExpanded.VCookEStews">Compat/VanillaExpanded.VCookEStews</li>
-    <li IfModActive="VanillaExpanded.VCookESushi">Compat/VanillaExpanded.VCookESushi</li>
-    <li IfModActive="VanillaExpanded.VPlantsE">Compat/VanillaExpanded.VPlantsE</li>
+    <li IfModActive="Ludeon.RimWorld.Anomaly">Compat/Anomaly</li>
+    <li IfModActive="Ludeon.RimWorld.Biotech">Compat/Biotech</li>
+    <li IfModActive="Ludeon.RimWorld.Ideology">Compat/Ideology</li>
+    <li IfModActive="Ludeon.RimWorld.Odyssey">Compat/Odyssey</li>
+    <li IfModActive="Ludeon.RimWorld.Odyssey,rikiki.fishindustry,sunsetmoderteam.rawfish,OW.RU.Fishing">Compat/Fishing</li>
+    <li IfModActive="Ludeon.RimWorld.Royalty">Compat/Royalty</li>
+    <li IfModActive="super.kenshicuisine">Compat/kenshicuisine</li>
+    <li IfModActive="VanillaExpanded.VCookE">Compat/VCookE</li>
+    <li IfModActive="VanillaExpanded.VCookEBakery">Compat/VCookEBakery</li>
+    <li IfModActive="VanillaExpanded.VCookEHaute">Compat/VCookEHaute</li>
+    <li IfModActive="VanillaExpanded.VCookEStews">Compat/VCookEStews</li>
+    <li IfModActive="VanillaExpanded.VCookESushi">Compat/VCookESushi</li>
+    <li IfModActive="VanillaExpanded.VPlantsE">Compat/VPlantsE</li>
   </v1.5>
   <v1.6>
     <li>Common</li>
     <li>1.6</li>
-    <li IfModActive="Ludeon.RimWorld.Anomaly">Compat/Ludeon.RimWorld.Anomaly</li>
-    <li IfModActive="Ludeon.RimWorld.Biotech">Compat/Ludeon.RimWorld.Biotech</li>
-    <li IfModActive="Ludeon.RimWorld.Ideology">Compat/Ludeon.RimWorld.Ideology</li>
-    <li IfModActive="Ludeon.RimWorld.Odyssey">Compat/Ludeon.RimWorld.Odyssey</li>
-    <li IfModActive="Ludeon.RimWorld.Odyssey,rikiki.fishindustry,sunsetmoderteam.rawfish,OW.RU.Fishing">Compat/Ludeon.RimWorld.Odyssey+rikiki.fishindustry+sunsetmoderteam.rawfish+OW.RU.Fishing</li>
-    <li IfModActive="Ludeon.RimWorld.Royalty">Compat/Ludeon.RimWorld.Royalty</li>
-    <li IfModActive="super.kenshicuisine">Compat/super.kenshicuisine</li>
-    <li IfModActive="VanillaExpanded.VCookE">Compat/VanillaExpanded.VCookE</li>
-    <li IfModActive="VanillaExpanded.VCookEBakery">Compat/VanillaExpanded.VCookEBakery</li>
-    <li IfModActive="VanillaExpanded.VCookEHaute">Compat/VanillaExpanded.VCookEHaute</li>
-    <li IfModActive="VanillaExpanded.VCookEStews">Compat/VanillaExpanded.VCookEStews</li>
-    <li IfModActive="VanillaExpanded.VCookESushi">Compat/VanillaExpanded.VCookESushi</li>
-    <li IfModActive="VanillaExpanded.VPlantsE">Compat/VanillaExpanded.VPlantsE</li>
+    <li IfModActive="Ludeon.RimWorld.Anomaly">Compat/Anomaly</li>
+    <li IfModActive="Ludeon.RimWorld.Biotech">Compat/Biotech</li>
+    <li IfModActive="Ludeon.RimWorld.Ideology">Compat/Ideology</li>
+    <li IfModActive="Ludeon.RimWorld.Odyssey">Compat/Odyssey</li>
+    <li IfModActive="Ludeon.RimWorld.Odyssey,rikiki.fishindustry,sunsetmoderteam.rawfish,OW.RU.Fishing">Compat/Fishing</li>
+    <li IfModActive="Ludeon.RimWorld.Royalty">Compat/Royalty</li>
+    <li IfModActive="super.kenshicuisine">Compat/kenshicuisine</li>
+    <li IfModActive="VanillaExpanded.VCookE">Compat/VCookE</li>
+    <li IfModActive="VanillaExpanded.VCookEBakery">Compat/VCookEBakery</li>
+    <li IfModActive="VanillaExpanded.VCookEHaute">Compat/VCookEHaute</li>
+    <li IfModActive="VanillaExpanded.VCookEStews">Compat/VCookEStews</li>
+    <li IfModActive="VanillaExpanded.VCookESushi">Compat/VCookESushi</li>
+    <li IfModActive="VanillaExpanded.VPlantsE">Compat/VPlantsE</li>
   </v1.6>
   <v1.7>
     <li>Common</li>
     <li>1.7</li>
-    <li IfModActive="Ludeon.RimWorld.Anomaly">Compat/Ludeon.RimWorld.Anomaly</li>
-    <li IfModActive="Ludeon.RimWorld.Biotech">Compat/Ludeon.RimWorld.Biotech</li>
-    <li IfModActive="Ludeon.RimWorld.Ideology">Compat/Ludeon.RimWorld.Ideology</li>
-    <li IfModActive="Ludeon.RimWorld.Odyssey">Compat/Ludeon.RimWorld.Odyssey</li>
-    <li IfModActive="Ludeon.RimWorld.Odyssey,rikiki.fishindustry,sunsetmoderteam.rawfish,OW.RU.Fishing">Compat/Ludeon.RimWorld.Odyssey+rikiki.fishindustry+sunsetmoderteam.rawfish+OW.RU.Fishing</li>
-    <li IfModActive="Ludeon.RimWorld.Royalty">Compat/Ludeon.RimWorld.Royalty</li>
-    <li IfModActive="super.kenshicuisine">Compat/super.kenshicuisine</li>
-    <li IfModActive="VanillaExpanded.VCookE">Compat/VanillaExpanded.VCookE</li>
-    <li IfModActive="VanillaExpanded.VCookEBakery">Compat/VanillaExpanded.VCookEBakery</li>
-    <li IfModActive="VanillaExpanded.VCookEHaute">Compat/VanillaExpanded.VCookEHaute</li>
-    <li IfModActive="VanillaExpanded.VCookEStews">Compat/VanillaExpanded.VCookEStews</li>
-    <li IfModActive="VanillaExpanded.VCookESushi">Compat/VanillaExpanded.VCookESushi</li>
-    <li IfModActive="VanillaExpanded.VPlantsE">Compat/VanillaExpanded.VPlantsE</li>
+    <li IfModActive="Ludeon.RimWorld.Anomaly">Compat/Anomaly</li>
+    <li IfModActive="Ludeon.RimWorld.Biotech">Compat/Biotech</li>
+    <li IfModActive="Ludeon.RimWorld.Ideology">Compat/Ideology</li>
+    <li IfModActive="Ludeon.RimWorld.Odyssey">Compat/Odyssey</li>
+    <li IfModActive="Ludeon.RimWorld.Odyssey,rikiki.fishindustry,sunsetmoderteam.rawfish,OW.RU.Fishing">Compat/Fishing</li>
+    <li IfModActive="Ludeon.RimWorld.Royalty">Compat/Royalty</li>
+    <li IfModActive="super.kenshicuisine">Compat/kenshicuisine</li>
+    <li IfModActive="VanillaExpanded.VCookE">Compat/VCookE</li>
+    <li IfModActive="VanillaExpanded.VCookEBakery">Compat/VCookEBakery</li>
+    <li IfModActive="VanillaExpanded.VCookEHaute">Compat/VCookEHaute</li>
+    <li IfModActive="VanillaExpanded.VCookEStews">Compat/VCookEStews</li>
+    <li IfModActive="VanillaExpanded.VCookESushi">Compat/VCookESushi</li>
+    <li IfModActive="VanillaExpanded.VPlantsE">Compat/VPlantsE</li>
   </v1.7>
 </loadFolders>
